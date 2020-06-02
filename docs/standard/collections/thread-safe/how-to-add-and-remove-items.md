@@ -8,16 +8,16 @@ dev_langs:
 helpviewer_keywords:
 - thread-safe collections, concurrent dictionary
 ms.assetid: 81b64b95-13f7-4532-9249-ab532f629598
-ms.openlocfilehash: 6e5204c5a71232ef9d1a050891e7fe6d92c375f2
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: 6c093e907e43f9f2b978624a986dfe5d8a49869f
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82796116"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287897"
 ---
 # <a name="how-to-add-and-remove-items-from-a-concurrentdictionary"></a>Postupy: Přidávání a odebírání položek v ConcurrentDictionary
 
-Tento příklad ukazuje, jak přidat, načíst, aktualizovat a odebrat položky z <xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=nameWithType>. Tato třída kolekce je implementace bezpečná pro přístup z více vláken. Doporučujeme, abyste ho používali vždy, když se více vláken může pokusit o přístup k prvkům současně.
+Tento příklad ukazuje, jak přidat, načíst, aktualizovat a odebrat položky z <xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=nameWithType> . Tato třída kolekce je implementace bezpečná pro přístup z více vláken. Doporučujeme, abyste ho používali vždy, když se více vláken může pokusit o přístup k prvkům současně.
 
 <xref:System.Collections.Concurrent.ConcurrentDictionary%602>poskytuje několik praktických metod, které neumožňují kódu před tím, než se pokusí přidat nebo odebrat data, nejprve zkontrolovat, zda existuje klíč. Následující tabulka uvádí tyto praktické metody a popisuje, kdy je lze použít.
 
@@ -29,16 +29,16 @@ Tento příklad ukazuje, jak přidat, načíst, aktualizovat a odebrat položky 
 
 ## <a name="example"></a>Příklad
 
-Následující příklad používá dvě <xref:System.Threading.Tasks.Task> instance pro přidání některých prvků <xref:System.Collections.Concurrent.ConcurrentDictionary%602> souběžně a pak výstup všech obsahu, aby bylo možné zobrazit, že prvky byly úspěšně přidány. Příklad také ukazuje, jak použít metody <xref:System.Collections.Concurrent.ConcurrentDictionary%602.AddOrUpdate%2A>, <xref:System.Collections.Generic.Dictionary%602.TryGetValue%2A>a <xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A> pro přidání, aktualizaci a načtení položek z kolekce.
+Následující příklad používá dvě <xref:System.Threading.Tasks.Task> instance pro přidání některých prvků <xref:System.Collections.Concurrent.ConcurrentDictionary%602> souběžně a pak výstup všech obsahu, aby bylo možné zobrazit, že prvky byly úspěšně přidány. Příklad také ukazuje, jak použít <xref:System.Collections.Concurrent.ConcurrentDictionary%602.AddOrUpdate%2A> <xref:System.Collections.Generic.Dictionary%602.TryGetValue%2A> metody, a <xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A> pro přidání, aktualizaci a načtení položek z kolekce.
 
 [!code-csharp[CDS#16](../../../../samples/snippets/csharp/VS_Snippets_Misc/cds/cs/cds_dictionaryhowto.cs#16)]
 [!code-vb[CDS#16](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/cds/vb/cds_concdict.vb#16)]
 
 <xref:System.Collections.Concurrent.ConcurrentDictionary%602>je určen pro scénáře s více vlákny. K přidání nebo odebrání položek z kolekce není nutné v kódu používat zámky. Je však vždy možné, že jedno vlákno načte hodnotu a další vlákno okamžitě aktualizuje kolekci tím, že zadává stejnou klíčovou novou hodnotu.
 
-I když všechny metody <xref:System.Collections.Concurrent.ConcurrentDictionary%602> jsou bezpečné pro přístup z více vláken, ne všechny metody jsou atomické <xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A> , <xref:System.Collections.Concurrent.ConcurrentDictionary%602.AddOrUpdate%2A>konkrétně a. Uživatelský delegát, který je předán těmto metodám, je vyvolán mimo vnitřní zámek slovníku (to je provedeno, aby se zabránilo neznámému kódu v blokování všech vláken). Proto je možné, že dojde k této sekvenci událostí:
+I když všechny metody jsou bezpečné pro přístup z <xref:System.Collections.Concurrent.ConcurrentDictionary%602> více vláken, ne všechny metody jsou atomické, konkrétně <xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A> a <xref:System.Collections.Concurrent.ConcurrentDictionary%602.AddOrUpdate%2A> . Uživatelský delegát, který je předán těmto metodám, je vyvolán mimo vnitřní zámek slovníku (to je provedeno, aby se zabránilo neznámému kódu v blokování všech vláken). Proto je možné, že dojde k této sekvenci událostí:
 
-1. _vlákno_ volá <xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A>, nenalezne žádnou položku a vytvoří novou položku, která má být přidána, `valueFactory` voláním delegáta.
+1. _vlákno_ volá <xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A> , nenalezne žádnou položku a vytvoří novou položku, která má být přidána, voláním `valueFactory` delegáta.
 
 1. _threadB_ volání <xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A> současně, jeho `valueFactory` delegát je vyvolána a dorazí na interní zámek před _vláknem_, a proto je do slovníku přidána nová dvojice klíč-hodnota.
 
@@ -46,9 +46,9 @@ I když všechny metody <xref:System.Collections.Concurrent.ConcurrentDictionary
 
 1. _threadA_ provede "Get" a vrátí data, která byla dříve přidána pomocí _threadB_.
 
-Proto není zaručeno, že data, která jsou vrácena, <xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A> jsou stejná data, která byla vytvořena vláknem. `valueFactory` Podobná posloupnost událostí může nastat při <xref:System.Collections.Concurrent.ConcurrentDictionary%602.AddOrUpdate%2A> volání.
+Proto není zaručeno, že data, která jsou vrácena, <xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A> jsou stejná data, která byla vytvořena vláknem `valueFactory` . Podobná posloupnost událostí může nastat při <xref:System.Collections.Concurrent.ConcurrentDictionary%602.AddOrUpdate%2A> volání.
 
 ## <a name="see-also"></a>Viz také
 
 - <xref:System.Collections.Concurrent?displayProperty=nameWithType>
-- [Kolekce bezpečné pro přístup z více vláken](../../../../docs/standard/collections/thread-safe/index.md)
+- [Kolekce bezpečné pro přístup z více vláken](index.md)

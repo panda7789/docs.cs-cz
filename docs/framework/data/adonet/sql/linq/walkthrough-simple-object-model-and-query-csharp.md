@@ -1,13 +1,14 @@
 ---
 title: 'Návod: Jednoduchý objektový model a dotaz (C#)'
+description: Podle tohoto návodu vytvořte třídu entity, která modeluje tabulku ve vzorové databázi. Pak vytvořte jednoduchý dotaz pro vypsání zákazníků v určitém umístění.
 ms.date: 03/30/2017
 ms.assetid: 419961cc-92d6-45f5-ae8a-d485bdde3a37
-ms.openlocfilehash: a9b3b57e37331cd13f2cd30b8a7663f2fb39d8c1
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 4637fabecc1726d8fec12857a667073912cfbed5
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70792127"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286298"
 ---
 # <a name="walkthrough-simple-object-model-and-query-c"></a>Návod: Jednoduchý objektový model a dotaz (C#)
 
@@ -17,7 +18,7 @@ Tento názorný postup je orientovaný na kód, který usnadňuje zobrazení [!I
 
 [!INCLUDE[note_settings_general](../../../../../../includes/note-settings-general-md.md)]
 
-Tento návod byl napsán s použitím nastavení C# vizuálního vývoje.
+Tento návod byl napsán pomocí nastavení pro vývoj v jazyce Visual C#.
 
 ## <a name="prerequisites"></a>Požadavky
 
@@ -29,7 +30,7 @@ Tento návod byl napsán s použitím nastavení C# vizuálního vývoje.
 
 Tento názorný postup se skládá ze šesti hlavních úloh:
 
-- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Vytvoření řešení v aplikaci Visual Studio.
+- Vytvoření [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] řešení v aplikaci Visual Studio.
 
 - Mapování třídy na databázovou tabulku.
 
@@ -49,7 +50,7 @@ V tomto prvním úkolu vytvoříte řešení sady Visual Studio, které obsahuje
 
 1. V nabídce **soubor** v aplikaci Visual Studio přejděte na **Nový**a klikněte na **projekt**.
 
-2. V podokně **typy projektů** v dialogovém okně **Nový projekt** klikněte na položku **vizuál C#** .
+2. V podokně **typy projektů** v dialogovém okně **Nový projekt** klikněte na položku **Visual C#**.
 
 3. V podokně **šablony** klikněte na **Konzolová aplikace**.
 
@@ -57,7 +58,7 @@ V tomto prvním úkolu vytvoříte řešení sady Visual Studio, které obsahuje
 
 5. V poli **umístění** ověřte, kam chcete uložit soubory projektu.
 
-6. Klikněte na **OK**.
+6. Klikněte na tlačítko **OK**.
 
 ## <a name="adding-linq-references-and-directives"></a>Přidání odkazů a direktiv LINQ
 
@@ -77,11 +78,11 @@ Tento návod používá sestavení, která nemusí být nainstalována ve výcho
 
 ## <a name="mapping-a-class-to-a-database-table"></a>Mapování třídy na databázovou tabulku
 
-V tomto kroku vytvoříte třídu a namapujete ji na databázovou tabulku. Taková třída je označována jako *Třída entity*. Všimněte si, že mapování je provedeno pouhým přidáním <xref:System.Data.Linq.Mapping.TableAttribute> atributu. <xref:System.Data.Linq.Mapping.TableAttribute.Name%2A> Vlastnost určuje název tabulky v databázi.
+V tomto kroku vytvoříte třídu a namapujete ji na databázovou tabulku. Taková třída je označována jako *Třída entity*. Všimněte si, že mapování je provedeno pouhým přidáním <xref:System.Data.Linq.Mapping.TableAttribute> atributu. <xref:System.Data.Linq.Mapping.TableAttribute.Name%2A>Vlastnost určuje název tabulky v databázi.
 
 ### <a name="to-create-an-entity-class-and-map-it-to-a-database-table"></a>Vytvoření třídy entity a její mapování na databázovou tabulku
 
-- Zadejte nebo vložte následující kód do program.cs hned nad `Program` deklaraci třídy:
+- Zadejte nebo vložte následující kód do Program.cs hned nad `Program` deklaraci třídy:
 
      [!code-csharp[DLinqWalk1CS#2](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqWalk1CS/cs/Program.cs#2)]
 
@@ -93,25 +94,25 @@ V tomto kroku budete provádět několik úloh.
 
 - Určíte `CustomerID` vlastnost, která představuje sloupec primárního klíče v databázi.
 
-- `_CustomerID` Určíte`_City` pole pro soukromé úložiště. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]pak může ukládat a načítat hodnoty přímo místo použití veřejných přístupových objektů, které by mohly zahrnovat obchodní logiku.
+- Určíte `_CustomerID` `_City` pole pro soukromé úložiště. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]pak může ukládat a načítat hodnoty přímo místo použití veřejných přístupových objektů, které by mohly zahrnovat obchodní logiku.
 
 ### <a name="to-represent-characteristics-of-two-database-columns"></a>Reprezentace vlastností dvou databázových sloupců
 
-- Do program.cs do složených závorek `Customer` třídy zadejte nebo vložte následující kód.
+- Do Program.cs do složených závorek třídy zadejte nebo vložte následující kód `Customer` .
 
      [!code-csharp[DLinqWalk1CS#3](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqWalk1CS/cs/Program.cs#3)]
 
 ## <a name="specifying-the-connection-to-the-northwind-database"></a>Určení připojení k databázi Northwind
 
-V tomto kroku použijete <xref:System.Data.Linq.DataContext> objekt k navázání spojení mezi datovými strukturami založenými na kódu a databází samotné. <xref:System.Data.Linq.DataContext> Je hlavním kanálem, přes který načtete objekty z databáze a odešlete změny.
+V tomto kroku použijete <xref:System.Data.Linq.DataContext> objekt k navázání spojení mezi datovými strukturami založenými na kódu a databází samotné. <xref:System.Data.Linq.DataContext>Je hlavním kanálem, přes který načtete objekty z databáze a odešlete změny.
 
-Deklarujete také, `Table<Customer>` aby sloužil jako logická, typová tabulka pro dotazy na tabulce Customers v databázi. Tyto dotazy budete vytvářet a spouštět v pozdějších krocích.
+Deklarujete také `Table<Customer>` , aby sloužil jako logická, typová tabulka pro dotazy na tabulce Customers v databázi. Tyto dotazy budete vytvářet a spouštět v pozdějších krocích.
 
 ### <a name="to-specify-the-database-connection"></a>Určení připojení k databázi
 
-- Do `Main` metody zadejte nebo vložte následující kód.
+- Do metody zadejte nebo vložte následující kód `Main` .
 
-     Všimněte si, `northwnd.mdf` že se předpokládá, že se soubor nachází ve složce linqtest5. Další informace najdete v části požadavky výše v tomto návodu.
+     Všimněte si, že se předpokládá, že se `northwnd.mdf` soubor nachází ve složce linqtest5. Další informace najdete v části požadavky výše v tomto návodu.
 
      [!code-csharp[DLinqWalk1CS#4](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqWalk1CS/cs/Program.cs#4)]
 
@@ -119,11 +120,11 @@ Deklarujete také, `Table<Customer>` aby sloužil jako logická, typová tabulka
 
 V tomto kroku vytvoříte dotaz pro vyhledání zákazníků v tabulce Database Customers (zákazníci), kteří se nacházejí v Londýně. Dotazový kód v tomto kroku pouze popisuje dotaz. Nespustí ho. Tento přístup se označuje jako *odložené provádění*. Další informace najdete v tématu [Úvod do dotazů LINQ (C#)](../../../../../csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md).
 
-Vytvoří se také výstup protokolu pro zobrazení příkazů SQL, které [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] generují. Tato funkce protokolování (která používá <xref:System.Data.Linq.DataContext.Log%2A>) je užitečná při ladění a při určování, zda jsou příkazy, které jsou odesílány do databáze, přesně reprezentovány vaším dotazem.
+Vytvoří se také výstup protokolu pro zobrazení příkazů SQL, které [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] generují. Tato funkce protokolování (která používá <xref:System.Data.Linq.DataContext.Log%2A> ) je užitečná při ladění a při určování, zda jsou příkazy, které jsou odesílány do databáze, přesně reprezentovány vaším dotazem.
 
 ### <a name="to-create-a-simple-query"></a>Vytvoření jednoduchého dotazu
 
-- Zadejte nebo vložte následující kód do `Main` metody `Table<Customer>` po deklaraci.
+- Zadejte nebo vložte následující kód do `Main` metody po `Table<Customer>` deklaraci.
 
      [!code-csharp[DLinqWalk1ACS#5](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqWalk1ACS/cs/Program.cs#5)]
 
@@ -137,7 +138,7 @@ V tomto kroku ve skutečnosti spustíte dotaz. Výrazy dotazu, které jste vytvo
 
      [!code-csharp[DLinqWalk1ACS#6](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqWalk1ACS/cs/Program.cs#6)]
 
-2. Pro ladění aplikace stiskněte klávesu F5.
+2. Stisknutím klávesy F5 spusťte ladění aplikace.
 
     > [!NOTE]
     > Pokud vaše aplikace vygeneruje chybu za běhu, přečtěte si pokyny v části věnované řešení potíží v tématu [učení](learning-by-walkthroughs.md).
@@ -160,10 +161,10 @@ V tomto kroku ve skutečnosti spustíte dotaz. Výrazy dotazu, které jste vytvo
 
 ## <a name="next-steps"></a>Další kroky
 
-[Návod: Dotazování napříč relacemiC#(](walkthrough-querying-across-relationships-csharp.md) ) pokračuje v tom, kde tento návod skončí. Návod dotaz napříč relacemi ukazuje, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] jak se může dotazovat napříč tabulkami, podobně jako *spojení* v relační databázi.
+[Návod: dotazování napříč relacemi (C#)](walkthrough-querying-across-relationships-csharp.md) pokračuje tam, kde tento návod skončí. Návod dotaz napříč relacemi ukazuje, jak se [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] může dotazovat napříč tabulkami, podobně jako *spojení* v relační databázi.
 
 Pokud chcete dotaz provést napříč relacemi, nezapomeňte uložit řešení pro návod, který jste právě dokončili, což je předpoklad.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Učení podle návodů](learning-by-walkthroughs.md)

@@ -1,13 +1,14 @@
 ---
 title: Asynchronní programování
+description: Přečtěte si o asynchronním programování v .NET Framework Zprostředkovatel dat pro SQL Server, včetně vylepšení zavedených v .NET Framework 4,5.
 ms.date: 10/18/2018
 ms.assetid: 85da7447-7125-426e-aa5f-438a290d1f77
-ms.openlocfilehash: 7bf492e45a9ebabdd36caa8e21605739bb410695
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.openlocfilehash: 2e5f48b0818ab9cfabc75ba47c95c8198e0fe7fa
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75937581"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287100"
 ---
 # <a name="asynchronous-programming"></a>Asynchronní programování
 
@@ -15,7 +16,7 @@ Toto téma popisuje podporu asynchronního programování v .NET Framework Zpros
 
 ## <a name="legacy-asynchronous-programming"></a>Starší verze asynchronního programování
 
-Před .NET Framework 4,5 bylo asynchronní programování s SqlClient provedeno s následujícími metodami a vlastností připojení `Asynchronous Processing=true`:
+Před .NET Framework 4,5 bylo asynchronní programování s SqlClient provedeno s následujícími metodami a `Asynchronous Processing=true` vlastností připojení:
 
 1. <xref:System.Data.SqlClient.SqlCommand.BeginExecuteNonQuery%2A?displayProperty=nameWithType>
 
@@ -26,7 +27,7 @@ Před .NET Framework 4,5 bylo asynchronní programování s SqlClient provedeno 
 Tato funkce zůstává v SqlClient v .NET Framework 4,5.
 
 > [!TIP]
-> Počínaje .NET Framework 4,5 tyto starší metody již nevyžadují `Asynchronous Processing=true` v připojovacím řetězci.
+> Počínaje .NET Framework 4,5 tyto starší metody již nejsou `Asynchronous Processing=true` v připojovacím řetězci požadovány.
 
 ## <a name="asynchronous-programming-features-added-in-net-framework-45"></a>Funkce asynchronního programování přidané v .NET Framework 4,5
 
@@ -34,7 +35,7 @@ Nová funkce asynchronního programování poskytuje jednoduchou techniku pro as
 
 Další informace o funkci asynchronního programování, která byla představena v .NET Framework 4,5, naleznete zde:
 
-- [Asynchronní programování vC#](../../../csharp/async.md)
+- [Asynchronní programování v jazyce C #](../../../csharp/async.md)
 
 - [Asynchronní programování s modifikátorem Async a operátoru Await (Visual Basic)](../../../visual-basic/programming-guide/concepts/async/index.md)
 
@@ -46,12 +47,12 @@ Pokud vaše uživatelské rozhraní nereaguje nebo váš server není škálovat
 
 Nyní se můžete volat do asynchronních metod bez použití zpětných volání a bez rozdělení kódu napříč více metodami nebo lambda výrazy.
 
-Modifikátor `async` určuje, že metoda je asynchronní. Při volání metody `async` je vrácen úkol. Při použití operátoru `await` pro úlohu se aktuální metoda okamžitě ukončí. Po dokončení úlohy se provádění pokračuje ve stejné metodě.
+`async`Modifikátor určuje, že metoda je asynchronní. Při volání `async` metody je vrácen úkol. Při `await` použití operátoru na úlohu se aktuální metoda okamžitě ukončí. Po dokončení úlohy se provádění pokračuje ve stejné metodě.
 
 > [!WARNING]
-> Asynchronní volání nejsou podporovaná, pokud aplikace používá také klíčové slovo připojovacího řetězce `Context Connection`.
+> Asynchronní volání nejsou podporována, pokud aplikace používá také `Context Connection` klíčové slovo připojovacího řetězce.
 
-Volání metody `async` nealokuje žádné další podprocesy. Může na konci krátce použít stávající vlákno dokončení I/O.
+Volání `async` metody nealokuje žádné další podprocesy. Může na konci krátce použít stávající vlákno dokončení I/O.
 
 V .NET Framework 4,5 byly přidány následující metody pro podporu asynchronního programování:
 
@@ -92,7 +93,7 @@ V .NET Framework 4,5 byly přidány následující metody pro podporu asynchronn
  Pro podporu [streamování SqlClient](sqlclient-streaming-support.md)byly přidány další asynchronní členy.
 
 > [!TIP]
-> Nové asynchronní metody nevyžadují `Asynchronous Processing=true` v připojovacím řetězci.
+> Nové asynchronní metody nejsou `Asynchronous Processing=true` v připojovacím řetězci požadovány.
 
 ### <a name="synchronous-to-asynchronous-connection-open"></a>Synchronní s otevřeným asynchronním připojením
 
@@ -356,7 +357,7 @@ class Program {
 
 ### <a name="cancelling-an-asynchronous-operation"></a>Zrušení asynchronní operace
 
-Asynchronní požadavek můžete zrušit pomocí <xref:System.Threading.CancellationToken>.
+Asynchronní požadavek lze zrušit pomocí <xref:System.Threading.CancellationToken> .
 
 ```csharp
 using System;
@@ -397,7 +398,7 @@ namespace Samples {
 
 ### <a name="asynchronous-operations-with-sqlbulkcopy"></a>Asynchronní operace s SqlBulkCopy
 
-Do <xref:System.Data.SqlClient.SqlBulkCopy?displayProperty=nameWithType> s <xref:System.Data.SqlClient.SqlBulkCopy.WriteToServerAsync%2A?displayProperty=nameWithType>se přidaly taky asynchronní možnosti.
+Do se přidaly taky asynchronní <xref:System.Data.SqlClient.SqlBulkCopy?displayProperty=nameWithType> možnosti <xref:System.Data.SqlClient.SqlBulkCopy.WriteToServerAsync%2A?displayProperty=nameWithType> .
 
 ```csharp
 using System;
@@ -640,7 +641,7 @@ namespace SqlBulkCopyAsyncCodeSample {
 
 ## <a name="asynchronously-using-multiple-commands-with-mars"></a>Asynchronní použití více příkazů s MARS
 
-V tomto příkladu se otevře jedno připojení k databázi **AdventureWorks** . Při použití objektu <xref:System.Data.SqlClient.SqlCommand> se vytvoří <xref:System.Data.SqlClient.SqlDataReader>. Při použití čtecího modulu je otevřen druhý <xref:System.Data.SqlClient.SqlDataReader>, který používá data z první <xref:System.Data.SqlClient.SqlDataReader> jako vstup do klauzule WHERE pro druhý čtecí modul.
+V tomto příkladu se otevře jedno připojení k databázi **AdventureWorks** . <xref:System.Data.SqlClient.SqlCommand>Objekt je vytvořen pomocí objektu <xref:System.Data.SqlClient.SqlDataReader> . Při použití čtecího modulu <xref:System.Data.SqlClient.SqlDataReader> je otevřen druhý objekt, který používá data z prvního <xref:System.Data.SqlClient.SqlDataReader> jako vstup do klauzule WHERE pro druhý čtenář.
 
 > [!NOTE]
 > Následující příklad používá ukázkovou databázi **AdventureWorks** , která je součástí SQL Server. Připojovací řetězec uvedený v ukázkovém kódu předpokládá, že je databáze nainstalována a je k dispozici v místním počítači. Upravte připojovací řetězec podle potřeby pro vaše prostředí.
@@ -713,7 +714,7 @@ class Class1 {
 
 MARS umožňuje, aby se připojení používalo pro operace čtení i operace jazyka DML (data remanipulace Language) s více než jednou probíhající operací. Tato funkce eliminuje nutnost zabývat se chybami zaneprázdněnými připojením aplikace. MARS navíc může nahradit uživatele koncových ukazatelů na straně serveru, což obecně spotřebovává víc prostředků. Vzhledem k tomu, že více operací může pracovat s jedním připojením, může sdílet stejný kontext transakce, což eliminuje nutnost použít **sp_getbindtoken** a **sp_bindsession** systémových uložených procedur.
 
-Následující aplikace konzoly ukazuje, jak použít dva objekty <xref:System.Data.SqlClient.SqlDataReader> se třemi objekty <xref:System.Data.SqlClient.SqlCommand> a jeden objekt <xref:System.Data.SqlClient.SqlConnection> s povoleným MARS. První objekt příkazu načte seznam dodavatelů, jejichž kreditní hodnocení je 5. Druhý objekt příkazu používá ID dodavatele poskytnuté z <xref:System.Data.SqlClient.SqlDataReader> k načtení druhého <xref:System.Data.SqlClient.SqlDataReader> se všemi produkty pro konkrétního dodavatele. Druhý <xref:System.Data.SqlClient.SqlDataReader>navštíví každý záznam produktu. Provede se výpočet, který určí, co by mělo být nového v rámci **OrderQty** . Třetí objekt příkazu se pak použije k aktualizaci tabulky **ProductVendor** s novou hodnotou. Celý proces probíhá v rámci jedné transakce, která je vrácena zpět na konci.
+Následující aplikace konzoly ukazuje, jak použít dva <xref:System.Data.SqlClient.SqlDataReader> objekty se třemi <xref:System.Data.SqlClient.SqlCommand> objekty a jediným <xref:System.Data.SqlClient.SqlConnection> objektem s povolenou službou Mars. První objekt příkazu načte seznam dodavatelů, jejichž kreditní hodnocení je 5. Druhý objekt příkazu používá ID dodavatele poskytované od a <xref:System.Data.SqlClient.SqlDataReader> k načtení druhého <xref:System.Data.SqlClient.SqlDataReader> se všemi produkty pro konkrétního dodavatele. Každý záznam produktu se navštíví druhým <xref:System.Data.SqlClient.SqlDataReader> . Provede se výpočet, který určí, co by mělo být nového v rámci **OrderQty** . Třetí objekt příkazu se pak použije k aktualizaci tabulky **ProductVendor** s novou hodnotou. Celý proces probíhá v rámci jedné transakce, která je vrácena zpět na konci.
 
 > [!NOTE]
 > Následující příklad používá ukázkovou databázi **AdventureWorks** , která je součástí SQL Server. Připojovací řetězec uvedený v ukázkovém kódu předpokládá, že je databáze nainstalována a je k dispozici v místním počítači. Upravte připojovací řetězec podle potřeby pro vaše prostředí.
@@ -826,6 +827,6 @@ class Program {
 }
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Načítání a úpravy dat v ADO.NET](retrieving-and-modifying-data.md)

@@ -1,18 +1,19 @@
 ---
 title: Přehled
+description: Přečtěte si přehled ADO.NET v tématu .NET Framework a přečtěte si o prostředcích, kde najdete podrobnější vysvětlení a příklady.
 ms.date: 03/30/2017
 ms.assetid: ee3bc1d8-11db-4be4-89eb-c708cf04117d
-ms.openlocfilehash: d5dc9cf7081c6876118914a0b95853a5a7ca5e57
-ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
+ms.openlocfilehash: 2ff3b7ad197bfe1e1c12e382f3a59bd470c57a75
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76980337"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287152"
 ---
 # <a name="adonet-overview"></a>Přehled ADO.NET
 ADO.NET poskytuje konzistentní přístup ke zdrojům dat, jako jsou SQL Server a XML, a zdrojům dat, které jsou zpřístupněny prostřednictvím OLE DB a rozhraní ODBC. Aplikace příjemce pro sdílení dat můžou pomocí ADO.NET se připojit k těmto zdrojům dat a načítat, zpracovávat a aktualizovat data, která obsahují.  
   
- ADO.NET odděluje přístup k datům z manipulace s daty do diskrétních součástí, které lze použít samostatně nebo společně. ADO.NET zahrnuje .NET Framework poskytovatelé dat pro připojení k databázi, spouštění příkazů a načítání výsledků. Tyto výsledky se buď zpracovávají přímo, a jsou umístěné v objektu ADO.NET <xref:System.Data.DataSet>, aby je mohl uživatel zveřejnit v rámci ad hoc, a to v kombinaci s daty z více zdrojů nebo předanými mezi úrovněmi. Objekt `DataSet` lze také použít nezávisle na .NET Framework poskytovateli dat pro správu místních dat do aplikace nebo zdroje z XML.  
+ ADO.NET odděluje přístup k datům z manipulace s daty do diskrétních součástí, které lze použít samostatně nebo společně. ADO.NET zahrnuje .NET Framework poskytovatelé dat pro připojení k databázi, spouštění příkazů a načítání výsledků. Tyto výsledky se buď zpracovávají přímo, umístěné v objektu ADO.NET, aby <xref:System.Data.DataSet> je bylo možné uživatelům zpřístupnit ad hoc způsobem, v kombinaci s daty z více zdrojů nebo mezi vrstvami. `DataSet`Objekt lze také použít nezávisle .NET Framework poskytovatel dat ke správě dat v místní aplikaci nebo zdroji z XML.  
   
  Třídy ADO.NET se nacházejí v System. data. dll a jsou integrovány s třídami XML nalezenými v souboru System. XML. dll. Pro vzorový kód, který se připojuje k databázi, načte z něj data a pak tato data zobrazí v okně konzoly, viz [Příklady kódu ADO.NET](ado-net-code-examples.md).  
   
@@ -36,7 +37,7 @@ ADO.NET poskytuje konzistentní přístup ke zdrojům dat, jako jsou SQL Server 
  Poskytuje přehled návrhu .NET Frameworkho poskytovatele dat a .NET Framework zprostředkovatelů dat, které jsou součástí ADO.NET.  
   
  [Datové sady ADO.NET](ado-net-datasets.md)  
- Poskytuje přehled `DataSet` návrh a součásti.  
+ Poskytuje přehled `DataSet` návrhu a součástí.  
   
  [Souběžné spouštění v ADO.NET](side-by-side-execution.md)  
  Popisuje rozdíly ve verzích ADO.NET a jejich vlivu na souběžné spouštění a kompatibilitu aplikací.  
@@ -55,9 +56,9 @@ ADO.NET poskytuje konzistentní přístup ke zdrojům dat, jako jsou SQL Server 
  Popisuje mapování datových typů mezi .NET Frameworkmi datovými typy a .NET Framework zprostředkovateli dat.  
   
  [Načítání a úpravy dat v ADO.NET](retrieving-and-modifying-data.md)  
- Popisuje, jak se připojit ke zdroji dat, jak načítat data a upravovat data. To zahrnuje `DataReaders` a `DataAdapters`.  
+ Popisuje, jak se připojit ke zdroji dat, jak načítat data a upravovat data. To zahrnuje `DataReaders` a `DataAdapters` .  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [ADO.NET](index.md)
 - [Přístup k datům v sadě Visual Studio](/visualstudio/data-tools/accessing-data-in-visual-studio)

@@ -13,90 +13,90 @@ helpviewer_keywords:
 - composite formatting
 - objects [.NET Framework], formatting multiple objects
 ms.assetid: 87b7d528-73f6-43c6-b71a-f23043039a49
-ms.openlocfilehash: b1ec8cfc0f8c6e660d716c51bf3c3387b73a278f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2488a471af3e0dfc8ebf7dad1589c3c03ac15d86
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79400342"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289314"
 ---
 # <a name="composite-formatting"></a>Složené formátování
 
-Funkce složeného formátování .NET přebírá jako vstup seznam objektů a složený formátovací řetězec. Složený řetězec formátu se skládá z pevného textu smíšeného s indexovanými zástupnými symboly nazvanými „položky formátu“, které odpovídají objektům v seznamu. Výsledkem operace formátování je výsledný řetězec, který se skládá z původního pevného textu smíšeného s řetězcovou reprezentací objektů v seznamu.  
+Funkce složeného formátování .NET přebírá seznam objektů a složený řetězec formátu jako vstup. Složený řetězec formátu se skládá z pevného textu smíšeného s indexovanými zástupnými symboly nazvanými „položky formátu“, které odpovídají objektům v seznamu. Výsledkem operace formátování je výsledný řetězec, který se skládá z původního pevného textu smíšeného s řetězcovou reprezentací objektů v seznamu.  
   
 > [!IMPORTANT]
-> Místo použití složených formátovacích řetězců můžete použít *interpolované řetězce,* pokud je podporuje jazyková a jazyková verze, kterou používáte. Interpolovaný řetězec je řetězec, který obsahuje *interpolované výrazy*. Každý interpolovaný výraz je vyřešen s hodnotou výrazu a zahrnut do výsledného řetězce při přiřazení řetězce. Další informace naleznete [v tématu String interpolace (C# Reference)](../../csharp/language-reference/tokens/interpolated.md) a [interpolované řetězce (Visual Basic Reference)](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md).
+> Namísto použití složených formátovacích řetězců můžete použít *interpolované řetězce* , pokud jazyk a jazykovou verzi, kterou používáte, podporuje. Interpolovaná řetězcová událost je řetězec, který obsahuje *interpolované výrazy*. Každý interpolující výraz je vyřešen s hodnotou výrazu a je zahrnut ve výsledném řetězci při přiřazení řetězce. Další informace naleznete v tématu [interpolace řetězce (Referenční dokumentace jazyka C#)](../../csharp/language-reference/tokens/interpolated.md) a [interpolované řetězce (Visual Basic odkaz)](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md).
 
 Funkce složeného formátování je podporována například následujícími metodami:  
   
-- <xref:System.String.Format%2A?displayProperty=nameWithType>, který vrátí formátovaný výsledný řetězec.  
+- <xref:System.String.Format%2A?displayProperty=nameWithType>, který vrací formátovaný výsledný řetězec.  
   
-- <xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType>, který připojí formátovaný výsledný <xref:System.Text.StringBuilder> řetězec k objektu.
-- Některé přetížení <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> metody, které zobrazují formátovaný výsledný řetězec do konzoly.  
+- <xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType>, který připojí formátovaný výsledný řetězec k <xref:System.Text.StringBuilder> objektu.
+- Některá přetížení <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> metody, která zobrazuje formátovaný výsledný řetězec do konzoly.  
   
-- Některé přetížení <xref:System.IO.TextWriter.WriteLine%2A?displayProperty=nameWithType> metody, které zapisují formátovaný výsledný řetězec do datového proudu nebo souboru. Třídy odvozené <xref:System.IO.TextWriter>z <xref:System.IO.StreamWriter> , <xref:System.Web.UI.HtmlTextWriter>například a , také sdílet tuto funkci.  
+- Některá přetížení <xref:System.IO.TextWriter.WriteLine%2A?displayProperty=nameWithType> metody, která zapisují formátovaný výsledný řetězec do datového proudu nebo souboru. Třídy odvozené z <xref:System.IO.TextWriter> , například <xref:System.IO.StreamWriter> a <xref:System.Web.UI.HtmlTextWriter> , sdílejí také tuto funkci.  
   
-- <xref:System.Diagnostics.Debug.WriteLine%28System.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType>, který vyvodí formátovanou zprávu pro sledování posluchačů.  
+- <xref:System.Diagnostics.Debug.WriteLine%28System.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType>, což výstupuje formátovanou zprávu pro trasování posluchačů.  
   
-- Aplikace <xref:System.Diagnostics.Trace.TraceError%28System.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> <xref:System.Diagnostics.Trace.TraceInformation%28System.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType>, <xref:System.Diagnostics.Trace.TraceWarning%28System.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> a metody, které výstup emitované zprávy pro trasování posluchačů.  
+- <xref:System.Diagnostics.Trace.TraceError%28System.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType>Metody, <xref:System.Diagnostics.Trace.TraceInformation%28System.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> a <xref:System.Diagnostics.Trace.TraceWarning%28System.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> , které mají výstup formátované zprávy pro trasování posluchačů.  
   
-- Metoda, <xref:System.Diagnostics.TraceSource.TraceInformation%28System.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> která zapisuje informační metodu pro sledování posluchačů.  
+- <xref:System.Diagnostics.TraceSource.TraceInformation%28System.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType>Metoda, která zapisuje informační metodu pro trasování posluchačů.  
   
 ## <a name="composite-format-string"></a>Složený řetězec formátu  
  Složený řetězec formátu a seznam objektů se používají jako argumenty metod, které podporují funkci složeného formátování. Složený řetězec formátu se skládá z žádného výskytu nebo několika výskytů pevného textu smíšeného s jednou nebo několika položkami formátu. Pevný text je jakýkoli řetězec, který si zvolíte, a jednotlivé položky formátu odpovídají objektu nebo ohraničené struktuře v seznamu. Funkce složeného formátování vrátí nový výsledný řetězec, kde každá položka formátu je nahrazena řetězcovou reprezentací odpovídajícího objektu v seznamu.  
   
- Zvažte <xref:System.String.Format%2A> následující fragment kódu.  
+ Vezměte v úvahu následující <xref:System.String.Format%2A> fragment kódu.  
   
  [!code-csharp[Formatting.Composite#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Composite/cs/Composite1.cs#1)]
  [!code-vb[Formatting.Composite#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Composite/vb/Composite1.vb#1)]  
   
- Pevný text je`Name =` "`, hours =` " a " ". Položky formátu`{0}`jsou " ", jejichž index je `name`0,`{1:hh}`který odpovídá objektu , a " `DateTime.Now`", jehož index je 1, který odpovídá objektu .  
+ Pevný text je " `Name =` " a " `, hours =` ". Položky formátu jsou " `{0}` ", jejichž index je 0, který odpovídá objektu `name` a " `{1:hh}` ", jehož index je 1, což odpovídá objektu `DateTime.Now` .  
   
 ## <a name="format-item-syntax"></a>Syntaxe položky formátu  
  Jednotlivé položky formátu mají následující podobu a skládají se z následujících součástí:  
   
- `{`*index*`,`[*zarovnání*][`:`*formatString*]`}`  
+ `{`*index*[ `,` *Zarovnání*] [ `:` *formatString*]`}`  
   
  Jsou požadovány odpovídající složené závorky ("{" a "}").  
   
 ### <a name="index-component"></a>Součást Index  
- Povinná komponenta *indexu,* také nazývaná specifikátor parametrů, je číslo začínající od 0, které identifikuje odpovídající položku v seznamu objektů. To znamená, že položka formátu, jejíž specifikátor parametru je 0, formátuje první objekt v seznamu, položka formátu, jejíž specifikátor parametru je 1, formátuje druhý objekt v seznamu atd. Následující příklad obsahuje čtyři specifikátory parametrů s číslem od nuly do tří, které představují prvočísla menší než deset:  
+ Povinná součást *indexu* , označovaná také jako specifikátor parametru, je číslo od 0, které identifikuje odpovídající položku v seznamu objektů. To znamená, že položka formátu, jejíž specifikátor parametru je 0, formátuje první objekt v seznamu, položka formátu, jejíž specifikátor parametru je 1, formátuje druhý objekt v seznamu atd. Následující příklad obsahuje čtyři specifikátory parametrů, očíslované nula až tři, aby představovaly hlavní čísla menší než deset:  
   
  [!code-csharp[Formatting.Composite#7](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Composite/cs/index1.cs#7)]
  [!code-vb[Formatting.Composite#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Composite/vb/index1.vb#7)]  
   
- Více položek formátu může odkazovat na stejný prvek v seznamu objektů zadáním stejného specifikátoru parametru. Můžete například formátovat stejnou číselnou hodnotu v šestnáctkovém, vědeckém a číselném formátu zadáním{0:X} {0:E} {0:N}složeného formátovacího řetězce, například : "0x ", jak ukazuje následující příklad.  
+ Více položek formátu může odkazovat na stejný prvek v seznamu objektů zadáním stejného specifikátoru parametru. Můžete například formátovat stejnou číselnou hodnotu v šestnáctkovém, vědeckém a číselném formátu zadáním složeného formátovacího řetězce, například: 0x {0:X} {0:E} {0:N} , jak ukazuje následující příklad.  
   
  [!code-csharp[Formatting.Composite#10](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Composite/cs/index1.cs#10)]
  [!code-vb[Formatting.Composite#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Composite/vb/index1.vb#10)]  
   
- Každá položka formátu může odkazovat na libovolný objekt v seznamu. Pokud například existují tři objekty, můžete naformátovat druhý, první a třetí objekt zadáním složeného formátovacího řetězce takto: "{1} {0} {2}". Objekt, který není odkazován položkou formátu, je ignorován. A <xref:System.FormatException> je vyvolána za běhu, pokud specifikátor parametru označuje položku mimo hranice seznamu objektů.  
+ Každá položka formátu může odkazovat na libovolný objekt v seznamu. Například pokud existují tři objekty, lze naformátovat druhý, první a třetí objekt zadáním složeného formátu řetězce, například: " {1} {0} {2} ". Objekt, který není odkazován položkou formátu, je ignorován. <xref:System.FormatException>Je vyvolána v době běhu, pokud specifikátor parametru označuje položku mimo hranice seznamu objektů.  
   
 ### <a name="alignment-component"></a>Součást Zarovnání  
- Volitelná součást *zarovnání* je celé číslo podepsané, které označuje upřednostňovanou šířku formátovaného pole. Pokud je hodnota *zarovnání* menší než délka formátovaného řetězce, *zarovnání* se ignoruje a jako šířka pole se použije délka formátovaného řetězce. Formátovaná data v poli jsou zarovnána doprava, pokud je *zarovnání* kladné, a zarovnáno doleva, pokud je *zarovnání záporné.* Pokud je vyžadováno odsazení obsahu, jsou použity prázdné znaky. Čárka je vyžadována, pokud je *zadáno zarovnání.*  
+ Volitelná součást *Zarovnání* je celé číslo se znaménkem, které označuje upřednostňovanou šířku pole. Pokud je hodnota *Zarovnání* menší než délka formátovaného řetězce, *Zarovnání* je ignorováno a délka formátovaného řetězce se používá jako šířka pole. Formátovaná data v poli jsou zarovnána vpravo, pokud je *Zarovnání* kladné a zarovnané doleva, pokud je *Zarovnání* záporné. Pokud je vyžadováno odsazení obsahu, jsou použity prázdné znaky. Čárka je vyžadována, pokud je zadáno *Zarovnání* .  
   
- Následující příklad definuje dvě pole, jedno obsahující jména zaměstnanců a druhé obsahující hodiny, které pracovali během dvou týdnů. Složený formátovací řetězec zarovná názvy v poli o 20 znacích a zarovná jejich hodiny v pětiznakovém poli doprava. Všimněte si, že standardní formátovací řetězec "N1" se také používá k formátování hodin jednou zlomkovou číslicí.  
+ Následující příklad definuje dvě pole, jednu, která obsahuje jména zaměstnanců a druhý, které obsahují hodiny, které pracovaly po dobu dvou týdnů. Složený řetězec formátu vlevo zarovná názvy v poli o 20 znacích a v poli s pěti znaky Zarovná hodiny vpravo. Všimněte si, že standardní formátovací řetězec "N1" slouží také k formátování hodin s jednou zlomkovou číslicí.  
   
  [!code-csharp[Formatting.Composite#8](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Composite/cs/alignment1.cs#8)]
  [!code-vb[Formatting.Composite#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Composite/vb/alignment1.vb#8)]  
   
 ### <a name="format-string-component"></a>Součást Řetězec formátu  
- Volitelná komponenta *formatString* je formátovací řetězec, který je vhodný pro formátovaný typ objektu. Zadejte standardní nebo vlastní číselný formátovací řetězec, pokud je odpovídající objekt číselnou hodnotou, <xref:System.DateTime> standardním nebo vlastním formátovacím řetězcem data a času, pokud je odpovídající objekt objektem, nebo [řetězec formátu výčtu,](../../../docs/standard/base-types/enumeration-format-strings.md) pokud je odpovídající objekt hodnotou výčtu. Pokud *formatString* není zadán, obecné ("G") specifikátor formátu pro číselný, datum a čas nebo typ výčtu se používá. Dvojtečka je vyžadována, pokud *formatString* je zadán.  
+ Volitelná komponenta *formatString* je řetězec formátu, který je vhodný pro typ objektu, který se formátuje. Zadejte standardní nebo vlastní řetězec číselného formátu, pokud je odpovídajícím objektem číselná hodnota, standardní nebo vlastní řetězec formátu data a času, pokud je odpovídajícím objektem <xref:System.DateTime> objekt nebo [řetězec formátu výčtu](enumeration-format-strings.md) , pokud je odpovídajícím objektem hodnota výčtu. Pokud není zadán vlastnost *formatString* , je použit obecný specifikátor formátu ("G") pro číselný, datum a čas nebo typ výčtu. Dvojtečka je povinná, pokud je zadána vlastnost *formatString* .  
   
- Následující tabulka uvádí seznam typů nebo kategorií typů v knihovně tříd rozhraní .NET Framework, které podporují předdefinovanou množinu řetězců formátu, a obsahuje odkazy na témata, která poskytují seznam jednotlivých řetězců formátu. Formátování řetězců poskytuje rozšířitelný mechanismus, který umožňuje definovat nové řetězce formátu pro všechny existující typy a také definovat množinu řetězců formátu podporovaných typem definovaného aplikací. Další informace naleznete <xref:System.IFormattable> v <xref:System.ICustomFormatter> tématech a rozhraní.  
+ Následující tabulka uvádí seznam typů nebo kategorií typů v knihovně tříd rozhraní .NET Framework, které podporují předdefinovanou množinu řetězců formátu, a obsahuje odkazy na témata, která poskytují seznam jednotlivých řetězců formátu. Formátování řetězců poskytuje rozšířitelný mechanismus, který umožňuje definovat nové řetězce formátu pro všechny existující typy a také definovat množinu řetězců formátu podporovaných typem definovaného aplikací. Další informace najdete v <xref:System.IFormattable> <xref:System.ICustomFormatter> tématech rozhraní a.  
   
 |Typ nebo kategorie typů|Seznamte se s |  
 |---------------------------|---------|  
-|Typy a časové kategorie (<xref:System.DateTime>, <xref:System.DateTimeOffset>)|[Standardní řetězce formátu data a času](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)<br /><br /> [Vlastní řetězce formátu data a času](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)|  
-|Typy výčtu (všechny typy <xref:System.Enum?displayProperty=nameWithType>odvozené z )|[Výčet řetězců formátu](../../../docs/standard/base-types/enumeration-format-strings.md)|  
-|Číselné<xref:System.Numerics.BigInteger>typy <xref:System.Byte> <xref:System.Decimal>( <xref:System.Double> <xref:System.Int16>, <xref:System.Int32> <xref:System.Int64>, <xref:System.SByte> <xref:System.Single>, <xref:System.UInt16> <xref:System.UInt32>, <xref:System.UInt64>, , , , , , )|[Standardní řetězce číselného formátu](../../../docs/standard/base-types/standard-numeric-format-strings.md)<br /><br /> [Vlastní řetězce číselného formátu](../../../docs/standard/base-types/custom-numeric-format-strings.md)|  
+|Typy data a času ( <xref:System.DateTime> , <xref:System.DateTimeOffset> )|[Řetězce standardního formátu data a času](standard-date-and-time-format-strings.md)<br /><br /> [Vlastní řetězce formátu data a času](custom-date-and-time-format-strings.md)|  
+|Výčtové typy (všechny typy odvozené od <xref:System.Enum?displayProperty=nameWithType> )|[Řetězce formátu výčtu](enumeration-format-strings.md)|  
+|Číselné typy ( <xref:System.Numerics.BigInteger> , <xref:System.Byte> , <xref:System.Decimal> , <xref:System.Double> , <xref:System.Int16> , <xref:System.Int32> , <xref:System.Int64> , <xref:System.SByte> , <xref:System.Single> , <xref:System.UInt16> , <xref:System.UInt32> , <xref:System.UInt64> )|[Řetězce standardního číselného formátu](standard-numeric-format-strings.md)<br /><br /> [Vlastní řetězce číselného formátu](custom-numeric-format-strings.md)|  
 |<xref:System.Guid>|<xref:System.Guid.ToString%28System.String%29?displayProperty=nameWithType>|  
-|<xref:System.TimeSpan>|[Standardní řetězce formátu TimeSpan](../../../docs/standard/base-types/standard-timespan-format-strings.md)<br /><br /> [Vlastní řetězce formátu TimeSpan](../../../docs/standard/base-types/custom-timespan-format-strings.md)|  
+|<xref:System.TimeSpan>|[Standardní řetězce formátu TimeSpan](standard-timespan-format-strings.md)<br /><br /> [Vlastní řetězce formátu TimeSpan](custom-timespan-format-strings.md)|  
   
 ### <a name="escaping-braces"></a>Řídicí znaky pro složené závorky  
  Levá a pravá složená závorka se interpretuje jako počátek a konec položky formátu. V důsledku toho je nutné použít sekvenci řídicích znaků pro zobrazení literální levé a pravé složené závorky. Chcete-li zobrazit jednu levou složenou závorku ("{"), zadejte dvě levé složené závorky ("{{"); chcete-li zobrazit jednu pravou složenou závorku ("}"), zadejte dvě pravé závorky ("}}"). Složené závorky v položce formátu jsou interpretovány postupně v pořadí, v jakém se vyskytují. Interpretace vnořených složených závorek není podporována.  
   
- Způsob, jakým jsou interpretovány složené závorky vložené pomocí řídicích znaků, může vést k neočekávaným výsledkům. Zvažte například položku formátu{0:D}{{ }}", která je určena k zobrazení počáteční složená závorka, číselné hodnoty formátované jako desetinné číslo a uzavírací složená závorka. Položka formátu je však ve skutečnosti interpretována následujícím způsobem:  
+ Způsob, jakým jsou interpretovány složené závorky vložené pomocí řídicích znaků, může vést k neočekávaným výsledkům. Zvažte například položku formátu "{{ {0:D} }}", která je určena k zobrazení levé složené závorky, numerické hodnoty formátované jako desetinné číslo a uzavírací závorky. Položka formátu je však ve skutečnosti interpretována následujícím způsobem:  
   
 1. První dvě levé složené závorky ("{{") jsou tvořeny řídicími znaky, a proto je výsledkem jedna levá závorka.  
   
@@ -114,35 +114,35 @@ Funkce složeného formátování je podporována například následujícími m
  [!code-vb[Formatting.Composite#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Composite/vb/Escaping1.vb#2)]  
   
 ### <a name="processing-order"></a>Pořadí zpracování  
- Pokud volání metody složeného formátování obsahuje <xref:System.IFormatProvider> argument, jehož hodnota není `null` <xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType> , runtime <xref:System.ICustomFormatter> volá jeho metodu požádat o implementaci. Pokud metoda je schopna <xref:System.ICustomFormatter> vrátit implementaci, je uložena do mezipaměti po dobu trvání volání metody složeného formátování.
+ Pokud volání metody složeného formátování obsahuje <xref:System.IFormatProvider> argument, jehož hodnota není `null` , modul runtime volá svou <xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType> metodu pro vyžádání <xref:System.ICustomFormatter> implementace. Pokud metoda může vracet <xref:System.ICustomFormatter> implementaci, je ukládána do mezipaměti po dobu trvání volání metody složeného formátování.
   
  Každá hodnota v seznamu parametrů, která odpovídá položce formátu, je převedena na řetězec následujícím způsobem:  
   
-1. Pokud je `null`hodnota, která má být <xref:System.String.Empty?displayProperty=nameWithType> formátována , je vrácen prázdný řetězec.  
+1. Pokud je hodnota, která má být formátována `null` , je <xref:System.String.Empty?displayProperty=nameWithType> vrácen prázdný řetězec.  
   
-2. Pokud <xref:System.ICustomFormatter> je k dispozici implementace, <xref:System.ICustomFormatter.Format%2A> runtime volá jeho metodu. Předá metodu format item *formatString* hodnotu, pokud `null` je k dispozici, nebo <xref:System.IFormatProvider> pokud není, spolu s implementací. Pokud volání <xref:System.ICustomFormatter.Format%2A?displayProperty=nameWithType> metody vrátí `null`, exekuce pokračuje k dalšímu kroku; v opačném případě <xref:System.ICustomFormatter.Format%2A?displayProperty=nameWithType> je vrácen výsledek volání.
+2. Je-li <xref:System.ICustomFormatter> k dispozici implementace, modul runtime volá svou <xref:System.ICustomFormatter.Format%2A> metodu. Předá metodu hodnoty *formatString* položky formátu, pokud je k dispozici, nebo `null` Pokud není, společně s <xref:System.IFormatProvider> implementací. Pokud volání <xref:System.ICustomFormatter.Format%2A?displayProperty=nameWithType> metody vrátí `null` , provádění pokračuje k dalšímu kroku. v opačném případě <xref:System.ICustomFormatter.Format%2A?displayProperty=nameWithType> je vrácen výsledek volání.
   
-3. Pokud hodnota implementuje <xref:System.IFormattable> rozhraní, <xref:System.IFormattable.ToString%28System.String%2CSystem.IFormatProvider%29> je volána metoda rozhraní. Metoda je *předánformatString* hodnotu, pokud je k dispozici `null` v položce formátu, nebo pokud není. Argument <xref:System.IFormatProvider> je určen takto:  
+3. Pokud hodnota implementuje <xref:System.IFormattable> rozhraní, <xref:System.IFormattable.ToString%28System.String%2CSystem.IFormatProvider%29> je volána metoda rozhraní. Metodě je předána hodnota *formatString* , pokud je k dispozici ve formátu položky nebo `null` Pokud není. <xref:System.IFormatProvider>Argument je určen následujícím způsobem:  
   
-    - Pro číselnou hodnotu, pokud je volána metoda <xref:System.IFormatProvider> složeného formátování s argumentem <xref:System.Globalization.NumberFormatInfo> bez <xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType> null, runtime požaduje objekt z jeho metody. Pokud není schopen zadat jeden, pokud je `null`hodnota argumentu , nebo pokud metoda složenéformátování <xref:System.IFormatProvider> nemá <xref:System.Globalization.NumberFormatInfo> parametr, objekt pro aktuální jazykovou verzi vlákna se používá.  
+    - Pro číselnou hodnotu, pokud je volána metoda složeného formátování s nenulovým <xref:System.IFormatProvider> argumentem, modul runtime požádá o <xref:System.Globalization.NumberFormatInfo> objekt z jeho <xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType> metody. Pokud není možné ji dodat, pokud je hodnota argumentu `null` nebo pokud metoda složeného formátování nemá <xref:System.IFormatProvider> parametr, <xref:System.Globalization.NumberFormatInfo> je použit objekt pro aktuální jazykovou verzi vlákna.  
   
-    - Pro hodnotu data a času, pokud je volána <xref:System.IFormatProvider> metoda složeného formátování s argumentem bez null, runtime požaduje <xref:System.Globalization.DateTimeFormatInfo> objekt z jeho <xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType> metody. Pokud není schopen zadat jeden, pokud je `null`hodnota argumentu , nebo pokud metoda složenéformátování <xref:System.IFormatProvider> nemá <xref:System.Globalization.DateTimeFormatInfo> parametr, objekt pro aktuální jazykovou verzi vlákna se používá.  
+    - V případě hodnoty data a času, pokud je volána metoda složeného formátování s nenulovým <xref:System.IFormatProvider> argumentem, modul runtime požádá o <xref:System.Globalization.DateTimeFormatInfo> objekt z jeho <xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType> metody. Pokud není možné ji dodat, pokud je hodnota argumentu `null` nebo pokud metoda složeného formátování nemá <xref:System.IFormatProvider> parametr, <xref:System.Globalization.DateTimeFormatInfo> je použit objekt pro aktuální jazykovou verzi vlákna.  
   
-    - Pro objekty jiných typů, pokud je volána <xref:System.IFormatProvider> metoda složeného formátování s <xref:System.IFormattable.ToString%2A?displayProperty=nameWithType> argumentem, jeho hodnota je předána přímo do implementace. V `null` opačném případě <xref:System.IFormattable.ToString%2A?displayProperty=nameWithType> je předán a implementace.  
+    - Pro objekty jiných typů, pokud je metoda složeného formátování volána s <xref:System.IFormatProvider> argumentem, je jeho hodnota předána přímo <xref:System.IFormattable.ToString%2A?displayProperty=nameWithType> implementaci. V opačném případě `null` se předává do <xref:System.IFormattable.ToString%2A?displayProperty=nameWithType> implementace.  
   
-4. Metoda parametrless `ToString` typu, která přepíše <xref:System.Object.ToString?displayProperty=nameWithType> nebo zdědí chování jeho základní třídy, se nazývá. V tomto případě je ignorován formátovací řetězec určený komponentou *formatString* v položce formátu, pokud je k dispozici.  
+4. Metoda bez parametrů typu `ToString` , která buď Přepisuje <xref:System.Object.ToString?displayProperty=nameWithType> nebo dědí chování své základní třídy, je volána. V tomto případě je řetězec formátu určený komponentou *formatString* v položce formátu, pokud je přítomen, ignorován.  
   
  Zarovnání se použije po provedení předchozích kroků.  
   
 ## <a name="code-examples"></a>Příklady kódu  
- Následující příklad ukazuje jeden řetězec vytvořený pomocí složeného formátování a `ToString` jiný vytvořený metodou objektu. Oba typy formátování poskytují stejné výsledky.  
+ Následující příklad ukazuje jeden řetězec vytvořený pomocí složeného formátování a druhý vytvořený pomocí `ToString` metody objektu. Oba typy formátování poskytují stejné výsledky.  
   
  [!code-csharp[Formatting.Composite#3](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Composite/cs/Composite1.cs#3)]
  [!code-vb[Formatting.Composite#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Composite/vb/Composite1.vb#3)]  
   
- Za předpokladu, že aktuální den je čtvrtek v květnu, `Thursday May` hodnota obou řetězců v předchozím příkladu je v jazykové verzi angličtiny v USA.  
+ Za předpokladu, že aktuální den je čtvrtek v rámci květen, hodnota obou řetězců v předchozím příkladu je `Thursday May` v anglické jazykové verzi USA.  
   
- <xref:System.Console.WriteLine%2A?displayProperty=nameWithType>poskytuje stejné funkce jako <xref:System.String.Format%2A?displayProperty=nameWithType>. Jediný rozdíl mezi těmito <xref:System.String.Format%2A?displayProperty=nameWithType> dvěma metodami je, <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> že vrátí jeho výsledek jako <xref:System.Console> řetězec, zatímco zapíše výsledek do výstupního datového proudu přidruženého k objektu. Následující příklad používá <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> metodu k `MyInt` formátování hodnoty měny.  
+ <xref:System.Console.WriteLine%2A?displayProperty=nameWithType>zpřístupňuje stejné funkce jako <xref:System.String.Format%2A?displayProperty=nameWithType> . Jediným rozdílem mezi těmito dvěma metodami je, že <xref:System.String.Format%2A?displayProperty=nameWithType> vrátí výsledek jako řetězec, zatímco <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> zapíše výsledek do výstupního datového proudu přidruženého k <xref:System.Console> objektu. Následující příklad používá <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> metodu k naformátování hodnoty `MyInt` na hodnotu měny.  
   
  [!code-csharp[Formatting.Composite#4](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Composite/cs/Composite1.cs#4)]
  [!code-vb[Formatting.Composite#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Composite/vb/Composite1.vb#4)]  
@@ -152,7 +152,7 @@ Funkce složeného formátování je podporována například následujícími m
  [!code-csharp[Formatting.Composite#5](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Composite/cs/Composite1.cs#5)]
  [!code-vb[Formatting.Composite#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Composite/vb/Composite1.vb#5)]  
   
- Následující příklad znázorňuje použití zarovnání ve formátování. Argumenty, které jsou formátovány, jsou umístěny mezi znaky svislého pruhu (&#124;), aby se zvýraznilo výsledné zarovnání.  
+ Následující příklad znázorňuje použití zarovnání ve formátování. Argumenty, které jsou formátovány jsou umístěny mezi znaky svislé čáry (&#124;), chcete-li zvýraznit výsledné zarovnání.  
   
  [!code-csharp[Formatting.Composite#6](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Composite/cs/Composite1.cs#6)]
  [!code-vb[Formatting.Composite#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Composite/vb/Composite1.vb#6)]  
@@ -163,11 +163,11 @@ Funkce složeného formátování je podporována například následujícími m
 - <xref:System.String.Format%2A?displayProperty=nameWithType>
 - [Interpolace řetězců (C#)](../../csharp/language-reference/tokens/interpolated.md)
 - [Interpolace řetězců (Visual Basic)](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md)
-- [Typy formátování](../../../docs/standard/base-types/formatting-types.md)
-- [Standardní řetězce číselného formátu](../../../docs/standard/base-types/standard-numeric-format-strings.md)
-- [Vlastní řetězce číselného formátu](../../../docs/standard/base-types/custom-numeric-format-strings.md)
-- [Standardní řetězce formátu data a času](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)
-- [Vlastní řetězce formátu data a času](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)
-- [Standardní řetězce formátu TimeSpan](../../../docs/standard/base-types/standard-timespan-format-strings.md)
-- [Vlastní řetězce formátu TimeSpan](../../../docs/standard/base-types/custom-timespan-format-strings.md)
-- [Výčet řetězců formátu](../../../docs/standard/base-types/enumeration-format-strings.md)
+- [Typy formátování](formatting-types.md)
+- [Řetězce standardního číselného formátu](standard-numeric-format-strings.md)
+- [Vlastní řetězce číselného formátu](custom-numeric-format-strings.md)
+- [Řetězce standardního formátu data a času](standard-date-and-time-format-strings.md)
+- [Vlastní řetězce formátu data a času](custom-date-and-time-format-strings.md)
+- [Standardní řetězce formátu TimeSpan](standard-timespan-format-strings.md)
+- [Vlastní řetězce formátu TimeSpan](custom-timespan-format-strings.md)
+- [Řetězce formátu výčtu](enumeration-format-strings.md)

@@ -1,5 +1,5 @@
 ---
-title: <paramref>- Průvodce programováním jazyka C#
+title: <paramref>– Průvodce programováním v C#
 ms.date: 07/20/2015
 f1_keywords:
 - paramref
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - <paramref> C# XML tag
 - paramref C# XML tag
 ms.assetid: 756c24c1-f591-40e8-a838-559761539b0b
-ms.openlocfilehash: 12df257271369dc7f0a5c066b712a8d8e6c38761
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4f3b521d24c8b4677a05b0b145cb36c31b2793f2
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76793405"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287308"
 ---
-# <a name="paramref-c-programming-guide"></a>\<paramref> (průvodce programováním Jazyka C#)
+# <a name="paramref-c-programming-guide"></a>\<paramref>(Průvodce programováním v C#)
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -27,13 +27,13 @@ ms.locfileid: "76793405"
 
 - `name`
 
-  Název parametru, na který se má odkazovat. Název uzavřete do uvozovek (" ").
+  Název parametru, na který se má odkazovat Název uzavřete do uvozovek ("").
 
 ## <a name="remarks"></a>Poznámky
 
-Značka \<paramref> vám dává způsob, jak označit, že slovo \<v komentářích kódu, například v souhrnné> nebo \<poznámky> bloku odkazuje na parametr. Soubor XML lze zpracovat pro formátování tohoto slova nějakým odlišným způsobem, například tučným písmem nebo kurzívou.
+`<paramref>`Značka poskytuje způsob, jak označit, že slovo v komentářích kódu, například v `<summary>` bloku nebo, `<remarks>` odkazuje na parametr. Soubor XML lze zpracovat pro formátování tohoto slova nějakým způsobem, například tučným písmem nebo kurzívou.
 
-Kompilujte s [-doc](../../language-reference/compiler-options/doc-compiler-option.md) pro zpracování dokumentů komentáře do souboru.
+Zkompilujte s [-doc](../../language-reference/compiler-options/doc-compiler-option.md) a zpracujte komentáře k dokumentaci do souboru.
 
 ## <a name="example"></a>Příklad
 
@@ -41,5 +41,5 @@ Kompilujte s [-doc](../../language-reference/compiler-options/doc-compiler-optio
 
 ## <a name="see-also"></a>Viz také
 
-- [Programovací příručka jazyka C#](../index.md)
+- [Průvodce programováním v C#](../index.md)
 - [Doporučené značky pro komentáře dokumentace](./recommended-tags-for-documentation-comments.md)

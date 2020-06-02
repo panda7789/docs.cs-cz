@@ -3,12 +3,12 @@ title: Kopírování existujících uzlů z jednoho dokumentu do jiného
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 3caa78c1-3448-4b7b-b83c-228ee857635e
-ms.openlocfilehash: 4ee3f8d280b8bf0f2de067e7529d777e62bff406
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 8ae7fd04e5c85e59ca9bd629c6957ad470d36b48
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75711022"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289197"
 ---
 # <a name="copying-existing-nodes-from-one-document-to-another"></a>Kopírování existujících uzlů z jednoho dokumentu do jiného
 Metoda **ImportNode** je mechanismus, pomocí kterého se uzel nebo celý podstrom uzlu kopíruje z jednoho **XmlDocument** do jiného. Uzel vrácený voláním je kopie uzlu ze zdrojového dokumentu, včetně hodnot atributů, názvu uzlu, typu uzlu a všech atributů souvisejících s oborem názvů, jako je předpona, místní název a identifikátor URI (Uniform Resource Identifier). Zdrojový dokument se nemění. Po dokončení importu uzlu je stále nutné ho přidat do stromu pomocí jedné z metod, které se používají pro vkládání uzlů.  
@@ -21,7 +21,7 @@ Metoda **ImportNode** je mechanismus, pomocí kterého se uzel nebo celý podstr
   
 |Typ uzlu|*hluboký* parametr má hodnotu true.|*hluboký* parametr má hodnotu false.|  
 |---------------|------------------------------|-------------------------------|  
-|XmlAttribute|Vlastnost <xref:System.Xml.XmlAttribute.Specified%2A> je nastavena na **hodnotu true** na atributu XmlAttribute. Následníky zdroje **XmlAttribute** jsou rekurzivně importovány a výsledné uzly znovu sestaveny tak, aby tvořily odpovídající podstrom.|*Hluboký* parametr se nevztahuje na uzly **XmlAttribute** , protože při importu vždy přenesou jejich podřízené uzly.|  
+|XmlAttribute|<xref:System.Xml.XmlAttribute.Specified%2A>Vlastnost je nastavena na **hodnotu true** na atributu XmlAttribute. Následníky zdroje **XmlAttribute** jsou rekurzivně importovány a výsledné uzly znovu sestaveny tak, aby tvořily odpovídající podstrom.|*Hluboký* parametr se nevztahuje na uzly **XmlAttribute** , protože při importu vždy přenesou jejich podřízené uzly.|  
 |XmlCDataSection|Zkopíruje uzel, včetně jeho dat.|Zkopíruje uzel, včetně jeho dat.|  
 |XmlComment|Zkopíruje uzel, včetně jeho dat.|Zkopíruje uzel, včetně jeho dat.|  
 |XmlDocumentFragment|Následníky zdrojového uzlu jsou rekurzivně importovány a výsledné uzly znovu sestaveny tak, aby tvořily odpovídající podstrom.|Vytvoří se prázdná **XmlDocumentFragment** .|  
@@ -36,8 +36,8 @@ Metoda **ImportNode** je mechanismus, pomocí kterého se uzel nebo celý podstr
 |Všechny ostatní typy uzlů|Tyto typy uzlů nelze importovat.|Tyto typy uzlů nelze importovat.|  
   
 > [!NOTE]
-> I když lze importovat uzly DocumentType, může mít dokument pouze jeden DocumentType. Takže po importu typu dokumentu před jeho vložením do stromu je nutné se ujistit, že v dokumentu není žádný typ dokumentu. Informace o odebírání uzlů najdete v tématu [Odebrání uzlů, obsahu a hodnot z dokumentu XML](../../../../docs/standard/data/xml/removing-nodes-content-and-values-from-an-xml-document.md).  
+> I když lze importovat uzly DocumentType, může mít dokument pouze jeden DocumentType. Takže po importu typu dokumentu před jeho vložením do stromu je nutné se ujistit, že v dokumentu není žádný typ dokumentu. Informace o odebírání uzlů najdete v tématu [Odebrání uzlů, obsahu a hodnot z dokumentu XML](removing-nodes-content-and-values-from-an-xml-document.md).  
   
 ## <a name="see-also"></a>Viz také
 
-- [model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+- [model DOM (Document Object Model) dokumentu XML](xml-document-object-model-dom.md)

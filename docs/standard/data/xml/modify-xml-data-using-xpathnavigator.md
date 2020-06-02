@@ -7,19 +7,19 @@ dev_langs:
 - vb
 - cpp
 ms.assetid: 03a7c5a1-b296-4af4-b209-043c958dc0a5
-ms.openlocfilehash: ea42cbfe7427e026f5e3339af5f5a2ceec17dad3
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: 3b64bc8666274798ebaefc87ef3883fcec1ef6b1
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202205"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288833"
 ---
 # <a name="modify-xml-data-using-xpathnavigator"></a>Změna dat XML pomocí XPathNavigator
 <xref:System.Xml.XPath.XPathNavigator>Třída poskytuje sadu metod, které slouží k úpravě uzlů a hodnot v dokumentu XML. Aby bylo možné tyto metody použít, <xref:System.Xml.XPath.XPathNavigator> musí být objekt upravitelný, to znamená, že jeho <xref:System.Xml.XPath.XPathNavigator.CanEdit%2A> vlastnost musí být `true` .  
   
  <xref:System.Xml.XPath.XPathNavigator>objekty, které mohou upravovat dokument XML, jsou vytvořeny <xref:System.Xml.XmlDocument.CreateNavigator%2A> metodou <xref:System.Xml.XmlDocument> třídy. <xref:System.Xml.XPath.XPathNavigator>objekty vytvořené <xref:System.Xml.XPath.XPathDocument> třídou jsou jen pro čtení a všechny pokusy o použití metod úprav <xref:System.Xml.XPath.XPathNavigator> objektu vytvořeného objektem mají za <xref:System.Xml.XPath.XPathDocument> následek <xref:System.NotSupportedException> .  
   
- Další informace o vytváření upravitelných <xref:System.Xml.XPath.XPathNavigator> objektů najdete v tématu [čtení dat XML pomocí XPathDocument a XmlDocument](../../../../docs/standard/data/xml/reading-xml-data-using-xpathdocument-and-xmldocument.md).  
+ Další informace o vytváření upravitelných <xref:System.Xml.XPath.XPathNavigator> objektů najdete v tématu [čtení dat XML pomocí XPathDocument a XmlDocument](reading-xml-data-using-xpathdocument-and-xmldocument.md).  
   
 ## <a name="modifying-nodes"></a>Úprava uzlů  
  Jednoduchá technika pro změnu hodnoty uzlu je použití <xref:System.Xml.XPath.XPathNavigator.SetValue%2A> <xref:System.Xml.XPath.XPathNavigator.SetTypedValue%2A> metod a <xref:System.Xml.XPath.XPathNavigator> třídy.  
@@ -39,7 +39,7 @@ ms.locfileid: "84202205"
 > [!NOTE]
 > Úprava <xref:System.Xml.XPath.XPathNodeType.Namespace> uzlů nebo <xref:System.Xml.XPath.XPathNodeType.Root> uzlu není podporována.  
   
- <xref:System.Xml.XPath.XPathNavigator>Třída také poskytuje sadu metod, které se používají pro vkládání a odebírání uzlů. Další informace o vkládání a odebírání uzlů z dokumentu XML naleznete v tématu [vložení dat XML pomocí XPathNavigator](../../../../docs/standard/data/xml/insert-xml-data-using-xpathnavigator.md) a [Odebrání XML data pomocí témat XPathNavigator](../../../../docs/standard/data/xml/remove-xml-data-using-xpathnavigator.md) .  
+ <xref:System.Xml.XPath.XPathNavigator>Třída také poskytuje sadu metod, které se používají pro vkládání a odebírání uzlů. Další informace o vkládání a odebírání uzlů z dokumentu XML naleznete v tématu [vložení dat XML pomocí XPathNavigator](insert-xml-data-using-xpathnavigator.md) a [Odebrání XML data pomocí témat XPathNavigator](remove-xml-data-using-xpathnavigator.md) .  
   
 ### <a name="modifying-untyped-values"></a>Úprava netypových hodnot  
  <xref:System.Xml.XPath.XPathNavigator.SetValue%2A>Metoda jednoduše vloží netypové `string` hodnoty předané jako parametr jako hodnotu uzlu, <xref:System.Xml.XPath.XPathNavigator> na kterém je objekt aktuálně umístěn. Hodnota je vložena bez jakéhokoli typu nebo bez ověření, že nová hodnota je platná podle typu uzlu, pokud jsou k dispozici informace o schématu.  
@@ -113,7 +113,7 @@ navigator.SetTypedValue(DateTime.Now);
   
  Vzhledem k tomu, že platnost elementu je závislá na platnosti svých podřízených prvků a atributů, úpravy v důsledku změny platnosti prvku, pokud byl dříve platný. Konkrétně, pokud jsou podřízené prvky nebo atributy elementu vloženy, aktualizovány nebo smazány, pak platnost elementu bude neznáma. Toto je reprezentované <xref:System.Xml.Schema.IXmlSchemaInfo.Validity%2A> vlastností <xref:System.Xml.XPath.XPathNavigator.SchemaInfo%2A> vlastnosti elementu nastavenou na <xref:System.Xml.Schema.XmlSchemaValidity.NotKnown> . Kromě toho tento efekt kaskádě provede v dokumentu XML rekurzivně nahoru, protože platnost nadřazeného elementu elementu (a jeho nadřazeného elementu atd.) je také neznámá.  
   
- Další informace o ověřování schématu a <xref:System.Xml.XPath.XPathNavigator> třídě naleznete v tématu [ověřování schématu pomocí XPathNavigator](../../../../docs/standard/data/xml/schema-validation-using-xpathnavigator.md).  
+ Další informace o ověřování schématu a <xref:System.Xml.XPath.XPathNavigator> třídě naleznete v tématu [ověřování schématu pomocí XPathNavigator](schema-validation-using-xpathnavigator.md).  
   
 ### <a name="modifying-attributes"></a>Úprava atributů  
  <xref:System.Xml.XPath.XPathNavigator.SetValue%2A>Metody a <xref:System.Xml.XPath.XPathNavigator.SetTypedValue%2A> lze použít pro úpravu netypových a typových uzlů atributů a také jiných typů uzlů uvedených v části "Změna uzlů".  
@@ -244,13 +244,13 @@ Console.WriteLine(navigator.OuterXml);
 > Pokud je obsah elementu s `xsi:nil` atributem nastaveným na hodnotu `false` odstraněn, hodnota atributu není změněna na `true` .  
   
 ## <a name="saving-an-xml-document"></a>Uložení dokumentu XML  
- Uložení změn provedených <xref:System.Xml.XmlDocument> v objektu jako výsledek metod úprav popsaných v tomto tématu se provádí pomocí metod <xref:System.Xml.XmlDocument> třídy. Další informace o ukládání změn provedených v <xref:System.Xml.XmlDocument> objektu naleznete v tématu [ukládání a zápis dokumentu](../../../../docs/standard/data/xml/saving-and-writing-a-document.md).  
+ Uložení změn provedených <xref:System.Xml.XmlDocument> v objektu jako výsledek metod úprav popsaných v tomto tématu se provádí pomocí metod <xref:System.Xml.XmlDocument> třídy. Další informace o ukládání změn provedených v <xref:System.Xml.XmlDocument> objektu naleznete v tématu [ukládání a zápis dokumentu](saving-and-writing-a-document.md).  
   
 ## <a name="see-also"></a>Viz také
 
 - <xref:System.Xml.XmlDocument>
 - <xref:System.Xml.XPath.XPathDocument>
 - <xref:System.Xml.XPath.XPathNavigator>
-- [Zpracování dat XML pomocí modelu dat XPath](../../../../docs/standard/data/xml/process-xml-data-using-the-xpath-data-model.md)
-- [Vložení dat XML pomocí XPathNavigator](../../../../docs/standard/data/xml/insert-xml-data-using-xpathnavigator.md)
-- [Odebrání dat XML pomocí XPathNavigator](../../../../docs/standard/data/xml/remove-xml-data-using-xpathnavigator.md)
+- [Zpracování dat XML pomocí modelu dat XPath](process-xml-data-using-the-xpath-data-model.md)
+- [Vložení dat XML pomocí XPathNavigator](insert-xml-data-using-xpathnavigator.md)
+- [Odebrání dat XML pomocí XPathNavigator](remove-xml-data-using-xpathnavigator.md)

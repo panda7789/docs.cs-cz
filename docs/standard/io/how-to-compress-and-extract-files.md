@@ -1,5 +1,5 @@
 ---
-title: 'Postup: Komprese a extrahování souborů'
+title: 'Postupy: komprimace a extrakce souborů'
 ms.date: 01/14/2019
 ms.technology: dotnet-standard
 dev_langs:
@@ -10,16 +10,16 @@ helpviewer_keywords:
 - compression
 - compress files
 ms.assetid: e9876165-3c60-4c84-a272-513e47acf579
-ms.openlocfilehash: 10f990401830bc5f77176f4e586f15f7dd75ff14
-ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
+ms.openlocfilehash: 28f9a0baa73f58b0a5c7f93a4b0b3ece3b87c3a5
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80248014"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288560"
 ---
-# <a name="how-to-compress-and-extract-files"></a>Postup: Komprese a extrahování souborů
+# <a name="how-to-compress-and-extract-files"></a>Postupy: komprimace a extrakce souborů
 
-Obor <xref:System.IO.Compression> názvů obsahuje následující typy pro kompresi a dekompresi souborů a datových proudů. Tyto typy můžete také použít ke čtení a úpravám obsahu komprimovaného souboru.
+<xref:System.IO.Compression>Obor názvů obsahuje následující typy pro komprimaci a dekompresi souborů a datových proudů. Tyto typy můžete použít také ke čtení a úpravám obsahu komprimovaného souboru.
 
 - <xref:System.IO.Compression.ZipFile>
 - <xref:System.IO.Compression.ZipArchive>
@@ -27,47 +27,47 @@ Obor <xref:System.IO.Compression> názvů obsahuje následující typy pro kompr
 - <xref:System.IO.Compression.DeflateStream>
 - <xref:System.IO.Compression.GZipStream>
 
-Následující příklady ukazují některé operace, které lze provádět s komprimovanými soubory. Tyto příklady vyžadují následující balíčky NuGet, které mají být přidány do projektu:
+Následující příklady znázorňují některé operace, které můžete provádět s komprimovanými soubory. Tyto příklady vyžadují, aby byly do projektu přidány následující balíčky NuGet:
 
-- [System.io.compression](https://www.nuget.org/packages/System.IO.Compression)
-- [Soubor System.io.Compression.ZipFile](https://www.nuget.org/packages/System.IO.Compression.ZipFile)
+- [System. IO. Compression](https://www.nuget.org/packages/System.IO.Compression)
+- [System. IO. Compression. podřízený ZipFile](https://www.nuget.org/packages/System.IO.Compression.ZipFile)
 
-Pokud používáte rozhraní .NET Framework, přidejte do projektu odkazy na tyto dvě knihovny:
+Pokud používáte .NET Framework, přidejte do projektu odkazy na tyto dvě knihovny:
 
 - `System.IO.Compression`
 - `System.IO.Compression.FileSystem`
 
-## <a name="example-1-create-and-extract-a-zip-file"></a>Příklad 1: Vytvoření a extrahování souboru ZIP
+## <a name="example-1-create-and-extract-a-zip-file"></a>Příklad 1: vytvoření a extrakce souboru. zip
 
-Následující příklad ukazuje, jak vytvořit a extrahovat komprimovaný soubor *ZIP* pomocí <xref:System.IO.Compression.ZipFile> třídy. Příklad komprimuje obsah složky do nového souboru *ZIP* a potom extrahuje soubor ZIP do nové složky.
+Následující příklad ukazuje, jak vytvořit a extrahovat komprimovaný soubor s *příponou. zip* pomocí <xref:System.IO.Compression.ZipFile> třídy. V příkladu se komprimuje obsah složky do nového souboru *. zip* a pak se vyextrahuje soubor zip do nové složky.
 
-Chcete-li spustit ukázku, vytvořte *počáteční* složku ve složce programu a naplňte ji soubory, které chcete zip.
+Ukázku spustíte tak, že ve složce programu vytvoříte složku *Start* a naplníte ji soubory do souboru ZIP.
 
 [!code-csharp[System.IO.Compression.ZipFile#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.io.compression.zipfile/cs/program1.cs#1)]
 [!code-vb[System.IO.Compression.ZipFile#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.compression.zipfile/vb/program1.vb#1)]
 
-## <a name="example-2-extract-specific-file-extensions"></a>Příklad 2: Extrahovat konkrétní přípony souborů
+## <a name="example-2-extract-specific-file-extensions"></a>Příklad 2: extrakce konkrétních přípon souborů
 
-Další příklad itetuje obsah existujícího souboru *ZIP* a extrahuje soubory, které mají příponu *TXT.* Používá třídu <xref:System.IO.Compression.ZipArchive> pro přístup k <xref:System.IO.Compression.ZipArchiveEntry> zip a třídy ke kontrole jednotlivých položek. Metoda <xref:System.IO.Compression.ZipFileExtensions.ExtractToFile%2A> rozšíření pro <xref:System.IO.Compression.ZipArchiveEntry> objekt je <xref:System.IO.Compression.ZipFileExtensions?displayProperty=nameWithType> k dispozici ve třídě.
+Následující příklad prochází obsah existujícího souboru *zip* a extrahuje soubory, které mají příponu *. txt* . Používá <xref:System.IO.Compression.ZipArchive> třídu pro přístup k souboru zip a <xref:System.IO.Compression.ZipArchiveEntry> třídu pro kontrolu jednotlivých položek. Metoda rozšíření <xref:System.IO.Compression.ZipFileExtensions.ExtractToFile%2A> pro <xref:System.IO.Compression.ZipArchiveEntry> objekt je k dispozici ve <xref:System.IO.Compression.ZipFileExtensions?displayProperty=nameWithType> třídě.
 
-Chcete-li vzorek spustit, umístěte soubor *ZIP* s názvem *result.zip* do složky programu. Po zobrazení výzvy zadejte název složky, do které chcete extrahovat.
+Ukázku spustíte tak, že ve složce programu umístíte soubor *. zip* s názvem *Result. zip* . Po zobrazení výzvy zadejte název složky, do které se má extrahovat.
 
 > [!IMPORTANT]
-> Při rozbalení souborů je nutné vyhledat škodlivé cesty k souborům, které mohou uniknout z adresáře, do kterého rozbalíte. To se označuje jako cesta traversal útoku. Následující příklad ukazuje, jak zkontrolovat cesty škodlivého souboru a poskytuje bezpečný způsob, jak rozbalit.
+> V případě souborů rozzipovává je nutné vyhledat cesty ke škodlivým souborům, které mohou uniknout z adresáře, do kterého jste extrahováni. To se označuje jako útok pomocí cesty. Následující příklad ukazuje, jak kontrolovat škodlivé cesty k souborům a poskytuje bezpečný způsob, jak je rozbalit.
 
 [!code-csharp[System.IO.Compression.ZipArchive#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.io.compression.ziparchive/cs/program1.cs#1)]
 [!code-vb[System.IO.Compression.ZipArchive#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.compression.ziparchive/vb/program1.vb#1)]
 
-## <a name="example-3-add-a-file-to-an-existing-zip"></a>Příklad 3: Přidání souboru do existujícího zipu
+## <a name="example-3-add-a-file-to-an-existing-zip"></a>Příklad 3: Přidání souboru do existujícího souboru ZIP
 
-Následující příklad používá <xref:System.IO.Compression.ZipArchive> třídu pro přístup k existujícímu souboru *ZIP* a přidá k němu soubor. Nový soubor získá komprimované při přidání do existujícího zip.
+Následující příklad používá <xref:System.IO.Compression.ZipArchive> třídu pro přístup k existujícímu souboru *. zip* a přidává do něj soubor. Nový soubor se komprimuje, když ho přidáte do existujícího souboru ZIP.
 
 [!code-csharp[System.IO.Compression.ZipArchiveMode#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.io.compression.ziparchivemode/cs/program1.cs#1)]
 [!code-vb[System.IO.Compression.ZipArchiveMode#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.compression.ziparchivemode/vb/program1.vb#1)]
 
-## <a name="example-4-compress-and-decompress-gz-files"></a>Příklad 4: Komprese a dekomprese souborů GZ
+## <a name="example-4-compress-and-decompress-gz-files"></a>Příklad 4: komprimace a dekomprese souborů GZ
 
-Třídy <xref:System.IO.Compression.GZipStream> a <xref:System.IO.Compression.DeflateStream> můžete také použít ke kompresi a dekompresi dat. Používají stejný kompresní algoritmus. Objekty, <xref:System.IO.Compression.GZipStream> které jsou zapsány do souboru *GZ,* můžete dekomprimovat pomocí mnoha běžných nástrojů. Následující příklad ukazuje, jak komprimovat a dekomprimovat adresář souborů pomocí třídy: <xref:System.IO.Compression.GZipStream>
+Můžete také použít <xref:System.IO.Compression.GZipStream> <xref:System.IO.Compression.DeflateStream> třídy a pro komprimaci a dekomprimaci dat. Používají stejný kompresní algoritmus. Můžete dekomprimovat <xref:System.IO.Compression.GZipStream> objekty, které jsou zapsány do souboru *. gz* pomocí mnoha běžných nástrojů. Následující příklad ukazuje, jak komprimovat a dekomprimovat adresář souborů pomocí <xref:System.IO.Compression.GZipStream> třídy:
 
 [!code-csharp[IO.Compression.GZip1#1](../../../samples/snippets/csharp/VS_Snippets_CLR/IO.Compression.GZip1/CS/gziptest.cs#1)]
 [!code-vb[IO.Compression.GZip1#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/IO.Compression.GZip1/VB/gziptest.vb#1)]
@@ -79,4 +79,4 @@ Třídy <xref:System.IO.Compression.GZipStream> a <xref:System.IO.Compression.De
 - <xref:System.IO.Compression.ZipArchiveEntry>  
 - <xref:System.IO.Compression.DeflateStream>  
 - <xref:System.IO.Compression.GZipStream>  
-- [Vstup/výstup souborů a streamů](../../../docs/standard/io/index.md)
+- [Vstup/výstup souborů a streamů](index.md)

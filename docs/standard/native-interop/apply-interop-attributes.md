@@ -14,17 +14,17 @@ helpviewer_keywords:
 - COM interop, exposing COM components
 - COM interop, applying attributes
 ms.assetid: b6014613-641c-4912-9e2f-83a99210a037
-ms.openlocfilehash: 831f8d79030264ef013a75cd91cb771c9d168576
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: f9ccf59e52c1ef27649cd70a57f7b24bb5a8e9bf
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83420536"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291328"
 ---
 # <a name="applying-interop-attributes"></a>Použití atributů spolupráce
 <xref:System.Runtime.InteropServices>Obor názvů poskytuje tři kategorie atributů specifických pro spolupráci: ty, které jste použili v době návrhu, ty, které byly aplikovány pomocí nástrojů spolupráce modelu COM a rozhraní API během procesu převodu a které byly aplikovány vámi nebo zprostředkovatelem komunikace s objekty com.  
   
- Pokud nejste obeznámeni s úlohou použití atributů pro spravovaný kód, přečtěte si téma [rozšíření metadat pomocí atributů](../../../docs/standard/attributes/index.md). Podobně jako u jiných vlastních atributů můžete použít atributy specifické pro spolupráci na typy, metody, vlastnosti, parametry, pole a další členy.  
+ Pokud nejste obeznámeni s úlohou použití atributů pro spravovaný kód, přečtěte si téma [rozšíření metadat pomocí atributů](../attributes/index.md). Podobně jako u jiných vlastních atributů můžete použít atributy specifické pro spolupráci na typy, metody, vlastnosti, parametry, pole a další členy.  
   
 ## <a name="design-time-attributes"></a>Atributy doby návrhu  
  Můžete upravit výsledek procesu převodu prováděného pomocí nástrojů pro spolupráci s objekty COM a rozhraní API pomocí atributů pro dobu návrhu. Následující tabulka popisuje atributy, které lze použít pro spravovaný zdrojový kód. Nástroje pro vzájemné spolupráce modelu COM mohou také použít atributy popsané v této tabulce.  
@@ -70,7 +70,7 @@ ms.locfileid: "83420536"
 ## <a name="see-also"></a>Viz také
 
 - <xref:System.Runtime.InteropServices>
-- [Vystavení komponent architektury .NET Framework pro COM](../../../docs/framework/interop/exposing-dotnet-components-to-com.md)
-- [Atributy](../../../docs/standard/attributes/index.md)
-- [Kvalifikace typů .NET pro spolupráci](../../../docs/standard/native-interop/qualify-net-types-for-interoperation.md)
-- [Balení .NET Framework sestavení pro model COM](../../../docs/framework/interop/packaging-an-assembly-for-com.md)
+- [Vystavení komponent architektury .NET Framework pro COM](../../framework/interop/exposing-dotnet-components-to-com.md)
+- [Atributy](../attributes/index.md)
+- [Kvalifikace typů .NET pro spolupráci](qualify-net-types-for-interoperation.md)
+- [Balení .NET Framework sestavení pro model COM](../../framework/interop/packaging-an-assembly-for-com.md)

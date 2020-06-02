@@ -3,12 +3,12 @@ title: Integrace XML s relačními daty a ADO.NET
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: f6ebb1a1-f2ca-49b9-92c9-0150940cf6e6
-ms.openlocfilehash: 30b788c77a2352d0d02ee772ab3f428381facd9f
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: f54c7a890ada01f2cffdd54c024cfbc98777200d
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78155617"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289015"
 ---
 # <a name="xml-integration-with-relational-data-and-adonet"></a>Integrace XML s relačními daty a ADO.NET
 Třída **objektu XmlDataDocument** je odvozenou třídou **XmlDocument**a obsahuje data XML. Výhodou **objektu XmlDataDocument** je, že poskytuje most mezi relačními a hierarchickými daty. Je to **XmlDocument** , který může být svázán s **datovou sadou** a obě třídy mohou synchronizovat změny provedené v datech, která jsou obsažena v obou třídách. Element **XmlDocument** , který je svázán s **datovou sadou** , umožňuje integraci XML s relačními daty a vy nemusíte mít data reprezentovaná buď jako XML, nebo v relačním formátu. Můžete to provést i bez omezení na jednu reprezentaci dat.  
@@ -41,10 +41,10 @@ Třída **objektu XmlDataDocument** je odvozenou třídou **XmlDocument**a obsah
 |Zachování řazení elementů ve zdrojovém kódu XML není kritické.|Zachování řazení elementů ve zdrojovém kódu XML je kritické.|  
 |Prázdné znaky mezi elementy a formátování není nutné uchovávat ve zdrojovém kódu XML.|Zachování prázdného místa a formátování ve zdrojovém kódu XML je kritické.|  
   
- Pokud se načítají a zapisují XML přímo do nebo z **datové sady** , které vaše potřeby řeší, přečtěte si téma [načtení datové sady z XML](../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md) a [zápis datové sady jako XML data](../../../../docs/framework/data/adonet/dataset-datatable-dataview/writing-dataset-contents-as-xml-data.md).  
+ Pokud se načítají a zapisují XML přímo do nebo z **datové sady** , které vaše potřeby řeší, přečtěte si téma [načtení datové sady z XML](../../../framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md) a [zápis datové sady jako XML data](../../../framework/data/adonet/dataset-datatable-dataview/writing-dataset-contents-as-xml-data.md).  
   
- Pokud načítáte **datovou sadu** z **objektu XmlDataDocument** adres, přečtěte si článek [synchronizace datové sady s dokumentem XML](../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataset-and-xmldatadocument-synchronization.md).  
+ Pokud načítáte **datovou sadu** z **objektu XmlDataDocument** adres, přečtěte si článek [synchronizace datové sady s dokumentem XML](../../../framework/data/adonet/dataset-datatable-dataview/dataset-and-xmldatadocument-synchronization.md).  
   
 ## <a name="see-also"></a>Viz také
 
-- [Použití XML v datové sadě](../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)
+- [Použití XML v datové sadě](../../../framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)

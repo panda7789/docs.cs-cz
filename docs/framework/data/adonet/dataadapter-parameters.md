@@ -1,21 +1,22 @@
 ---
 title: Parametry adaptéru dat
+description: Přečtěte si o vlastnostech objekt DbDataAdapter, které vracejí data ze zdroje dat, a spravujte změny ve zdroji dat.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: f21e6aba-b76d-46ad-a83e-2ad8e0af1e12
-ms.openlocfilehash: 9954570dcf33c5eea4dcccf880de2c307de0aeca
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 74b6787162b48f83a48127257dc8e23e31a859b7
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79151543"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286983"
 ---
 # <a name="dataadapter-parameters"></a>Parametry adaptéru dat
-Má <xref:System.Data.Common.DbDataAdapter> čtyři vlastnosti, které se používají k načtení dat <xref:System.Data.Common.DbDataAdapter.SelectCommand%2A> ze zdroje dat a k aktualizaci dat: vlastnost vrátí data ze zdroje dat; a <xref:System.Data.Common.DbDataAdapter.InsertCommand%2A> vlastnosti <xref:System.Data.Common.DbDataAdapter.UpdateCommand%2A> <xref:System.Data.Common.DbDataAdapter.DeleteCommand%2A> , a slouží ke správě změn ve zdroji dat. Vlastnost `SelectCommand` musí být nastavena `Fill` před voláním metody `DataAdapter`. `InsertCommand`Vlastnosti `UpdateCommand`, `DeleteCommand` nebo musí být `Update` nastaveny `DataAdapter` před voláním metody je volána, <xref:System.Data.DataTable>v závislosti na jaké změny byly provedeny v datech v . Pokud byly například přidány řádky, musí být `Update`před voláním `InsertCommand` nastavena sada . Při `Update` zpracování vložený, aktualizovaný nebo odstraněný `DataAdapter` řádek, `Command` používá příslušné vlastnosti ke zpracování akce. Aktuální informace o změněném řádku `Command` jsou `Parameters` předány objektu prostřednictvím kolekce.  
+<xref:System.Data.Common.DbDataAdapter>Má čtyři vlastnosti, které se používají k načtení dat z a aktualizace dat na zdroj dat: <xref:System.Data.Common.DbDataAdapter.SelectCommand%2A> vlastnost vrací data ze zdroje dat a <xref:System.Data.Common.DbDataAdapter.InsertCommand%2A> <xref:System.Data.Common.DbDataAdapter.UpdateCommand%2A> vlastnosti, a <xref:System.Data.Common.DbDataAdapter.DeleteCommand%2A> se používají ke správě změn ve zdroji dat. `SelectCommand`Vlastnost musí být nastavena před voláním `Fill` metody `DataAdapter` . `InsertCommand`Vlastnosti, `UpdateCommand` nebo `DeleteCommand` musí být nastaveny před `Update` `DataAdapter` voláním metody, v závislosti na tom, jaké změny byly provedeny v datech v <xref:System.Data.DataTable> . Například pokud byly přidány řádky, `InsertCommand` musí být nastavena před voláním `Update` . Při `Update` zpracovávání vloženého, aktualizovaného nebo odstraněného řádku `DataAdapter` používá příslušná `Command` vlastnost ke zpracování akce. Aktuální informace o změněném řádku jsou předány `Command` objektu prostřednictvím `Parameters` kolekce.  
   
- Při aktualizaci řádku ve zdroji dat zavoláte příkaz UPDATE, který používá jedinečný identifikátor k identifikaci řádku v tabulce, který má být aktualizován. Jedinečný identifikátor je obvykle hodnota pole primárního klíče. Příkaz UPDATE používá parametry, které obsahují jedinečný identifikátor a sloupce a hodnoty, které mají být aktualizovány, jak je znázorněno v následujícím příkazu Transact-SQL.  
+ Když aktualizujete řádek ve zdroji dat, zavoláte příkaz UPDATE, který používá jedinečný identifikátor k identifikaci řádku v tabulce, která se má aktualizovat. Jedinečný identifikátor je obvykle hodnota pole primárního klíče. Příkaz UPDATE používá parametry, které obsahují jedinečný identifikátor i sloupce a hodnoty, které mají být aktualizovány, jak je znázorněno v následujícím příkazu jazyka Transact-SQL.  
   
 ```sql
 UPDATE Customers SET CompanyName = @CompanyName
@@ -23,9 +24,9 @@ UPDATE Customers SET CompanyName = @CompanyName
 ```  
   
 > [!NOTE]
-> Syntaxe pro zástupné symboly parametrů závisí na zdroji dat. Tento příklad ukazuje zástupné symboly pro zdroj dat serveru SQL Server. Použijte zástupné symboly otazníku (?) pro <xref:System.Data.OleDb> parametry. <xref:System.Data.Odbc>  
+> Syntaxe zástupných symbolů parametrů závisí na zdroji dat. Tento příklad ukazuje zástupné symboly pro zdroj dat SQL Server. Použijte zástupné symboly otazníku (?) pro <xref:System.Data.OleDb> <xref:System.Data.Odbc> parametry a.  
   
- V tomto `CompanyName` příkladu jazyka je pole aktualizováno `@CompanyName` hodnotou parametru pro řádek, kde `CustomerID` se rovná hodnotě parametru. `@CustomerID` Parametry načítají informace z upraveného řádku pomocí vlastnosti <xref:System.Data.SqlClient.SqlParameter.SourceColumn%2A> objektu. <xref:System.Data.SqlClient.SqlParameter> Následují parametry pro předchozí ukázkový příkaz UPDATE. Kód předpokládá, že `adapter` proměnná <xref:System.Data.SqlClient.SqlDataAdapter> představuje platný objekt.  
+ V tomto Visual Basic příkladu `CompanyName` je pole aktualizováno hodnotou `@CompanyName` parametru pro řádek, který se `CustomerID` rovná hodnotě `@CustomerID` parametru. Parametry načítají informace ze změněného řádku pomocí <xref:System.Data.SqlClient.SqlParameter.SourceColumn%2A> vlastnosti <xref:System.Data.SqlClient.SqlParameter> objektu. Níže jsou uvedené parametry předchozího příkazu Sample UPDATE. Kód předpokládá, že proměnná `adapter` představuje platný <xref:System.Data.SqlClient.SqlDataAdapter> objekt.  
   
 ```vb
 adapter.Parameters.Add( _  
@@ -36,33 +37,33 @@ Dim parameter As SqlParameter = _
 parameter.SourceVersion = DataRowVersion.Original  
 ```  
   
- Metoda `Add` `Parameters` kolekce má název parametru, datový typ, velikost (pokud je to možné pro <xref:System.Data.Common.DbParameter.SourceColumn%2A> typ) `DataTable`a název z . Všimněte <xref:System.Data.Common.DbParameter.SourceVersion%2A> si, `@CustomerID` že parametr `Original`je nastavenna . To zaručuje, že existující řádek ve zdroji dat je aktualizován, pokud byla změněna <xref:System.Data.DataRow>hodnota identifikačního sloupce nebo sloupců v upraveném . V takovém případě `Original` by hodnota řádku odpovídala aktuální hodnotě `Current` ve zdroji dat a hodnota řádku by obsahovala aktualizovanou hodnotu. Parametr `SourceVersion` pro `@CompanyName` parametr není nastaven a `Current` používá výchozí hodnotu řádku.  
+ `Add`Metoda `Parameters` kolekce přebírá název parametru, datový typ, velikost (Pokud je k dispozici pro typ) a název <xref:System.Data.Common.DbParameter.SourceColumn%2A> z `DataTable` . Všimněte si, že <xref:System.Data.Common.DbParameter.SourceVersion%2A> `@CustomerID` parametr je nastaven na hodnotu `Original` . Tím se zaručí, že existující řádek ve zdroji dat se aktualizuje, pokud se v úpravě změnila hodnota určujícího sloupce nebo sloupce <xref:System.Data.DataRow> . V takovém případě bude `Original` hodnota řádku odpovídat aktuální hodnotě ve zdroji dat a `Current` hodnota řádku by obsahovala aktualizovanou hodnotu. `SourceVersion`Pro parametr není `@CompanyName` nastavená a používá výchozí `Current` hodnotu řádku.  
   
 > [!NOTE]
-> Pro `Fill` operace `DataAdapter` a `Get` metody `DataReader`, typ rozhraní .NET Framework je odvozen z typu vráceného od zprostředkovatele dat rozhraní .NET Framework. Odvozené typy rozhraní .NET Framework a metody přistupujícího modulu pro datové typy Serveru Microsoft SQL Server, OLE DB a ODBC jsou popsány v [části Mapování datových typů v ADO.NET](data-type-mappings-in-ado-net.md).  
+> Pro `Fill` operace `DataAdapter` a `Get` metod `DataReader` , je typ .NET Framework odvozen od typu vráceného poskytovatelem dat .NET Framework. Odvozené .NET Framework typy a přístupové metody pro datové typy Microsoft SQL Server, OLE DB a ODBC jsou popsány v tématu [mapování datových typů v ADO.NET](data-type-mappings-in-ado-net.md).  
   
-## <a name="parametersourcecolumn-parametersourceversion"></a>Parametr.SourceColumn, Parametr.SourceVersion  
- A `SourceColumn` `SourceVersion` může být předánjako argumenty konstruktoru `Parameter` nebo nastaveny `Parameter`jako vlastnosti existujícího . Je `SourceColumn` název <xref:System.Data.DataColumn> z kde <xref:System.Data.DataRow> `Parameter` bude načtena hodnota bude načtena. Určuje `SourceVersion` `DataRow` verzi, která `DataAdapter` používá k načtení hodnoty.  
+## <a name="parametersourcecolumn-parametersourceversion"></a>Parametr. SourceColumn, Parameter. SourceVersion  
+ `SourceColumn`A `SourceVersion` mohou být předány jako argumenty `Parameter` konstruktoru nebo nastaveny jako vlastnosti existující `Parameter` . `SourceColumn`Je název <xref:System.Data.DataColumn> z, <xref:System.Data.DataRow> kde `Parameter` bude načtena hodnota. `SourceVersion`Určuje `DataRow` verzi, kterou `DataAdapter` používá k načtení hodnoty.  
   
- V následující tabulce <xref:System.Data.DataRowVersion> jsou uvedeny hodnoty `SourceVersion`výčtu, které jsou k dispozici pro použití s .  
+ V následující tabulce jsou uvedeny <xref:System.Data.DataRowVersion> hodnoty výčtu, které jsou k dispozici pro použití s `SourceVersion` .  
   
-|Výčet dataRowversion|Popis|  
+|Výčet DataRowVersion|Popis|  
 |--------------------------------|-----------------|  
 |`Current`|Parametr používá aktuální hodnotu sloupce. Toto nastavení je výchozí.|  
 |`Default`|Parametr používá `DefaultValue` sloupec.|  
 |`Original`|Parametr používá původní hodnotu sloupce.|  
 |`Proposed`|Parametr používá navrhovanou hodnotu.|  
   
- Příklad `SqlClient` <xref:System.Data.Common.DbDataAdapter.UpdateCommand%2A> kódu v další části definuje parametr, ve `CustomerID` kterém je `SourceColumn` sloupec použit jako `@CustomerID` `SET CustomerID = @CustomerID`pro dva`WHERE CustomerID = @OldCustomerID`parametry: ( ). `@OldCustomerID` Parametr `@CustomerID` se používá k aktualizaci sloupce **CustomerID** `DataRow`na aktuální hodnotu v rozhraní . V důsledku toho `CustomerID` `SourceColumn` se `SourceVersion` `Current` používá s a. Parametr `@OldCustomerID` slouží k identifikaci aktuálního řádku ve zdroji dat. Vzhledem k tomu, že `Original` odpovídající hodnota sloupce `SourceColumn` se`CustomerID`nachází `SourceVersion` ve `Original` verzi řádku, použije se stejná hodnota ( ) s a of.  
+ `SqlClient`Příklad kódu v další části definuje parametr pro <xref:System.Data.Common.DbDataAdapter.UpdateCommand%2A> , ve kterém `CustomerID` je sloupec použit jako `SourceColumn` pro dva parametry: `@CustomerID` ( `SET CustomerID = @CustomerID` ), a `@OldCustomerID` ( `WHERE CustomerID = @OldCustomerID` ). `@CustomerID`Parametr se používá k aktualizaci sloupce **KódZákazníka** na aktuální hodnotu v `DataRow` . Výsledkem je, že se `CustomerID` `SourceColumn` `SourceVersion` `Current` používá. `@OldCustomerID`Parametr slouží k identifikaci aktuálního řádku ve zdroji dat. Vzhledem k tomu, že hodnota odpovídajícího sloupce je nalezena ve `Original` verzi řádku, je použita stejná hodnota `SourceColumn` ( `CustomerID` ) s a `SourceVersion` `Original` .  
   
-## <a name="working-with-sqlclient-parameters"></a>Práce s parametry sqlclientu  
- Následující příklad ukazuje, jak <xref:System.Data.SqlClient.SqlDataAdapter> vytvořit a <xref:System.Data.Common.DataAdapter.MissingSchemaAction%2A> <xref:System.Data.MissingSchemaAction.AddWithKey> nastavit do, aby bylo možné načíst další informace o schématu z databáze. Sada <xref:System.Data.SqlClient.SqlDataAdapter.SelectCommand%2A> <xref:System.Data.SqlClient.SqlDataAdapter.InsertCommand%2A>vlastností , <xref:System.Data.SqlClient.SqlDataAdapter.UpdateCommand%2A>a <xref:System.Data.SqlClient.SqlDataAdapter.DeleteCommand%2A> jejich <xref:System.Data.SqlClient.SqlParameter> odpovídající chráničů, které jsou přidány do <xref:System.Data.SqlClient.SqlCommand.Parameters%2A> kolekce. Metoda vrátí `SqlDataAdapter` objekt.  
+## <a name="working-with-sqlclient-parameters"></a>Práce s parametry SqlClient  
+ Následující příklad ukazuje, jak vytvořit <xref:System.Data.SqlClient.SqlDataAdapter> a nastavit na, aby <xref:System.Data.Common.DataAdapter.MissingSchemaAction%2A> <xref:System.Data.MissingSchemaAction.AddWithKey> bylo možné načíst další informace o schématu z databáze. <xref:System.Data.SqlClient.SqlDataAdapter.SelectCommand%2A> <xref:System.Data.SqlClient.SqlDataAdapter.InsertCommand%2A> Nastavení vlastností,, a <xref:System.Data.SqlClient.SqlDataAdapter.UpdateCommand%2A> <xref:System.Data.SqlClient.SqlDataAdapter.DeleteCommand%2A> a jejich odpovídajících <xref:System.Data.SqlClient.SqlParameter> objektů přidaných do <xref:System.Data.SqlClient.SqlCommand.Parameters%2A> kolekce. Metoda vrací `SqlDataAdapter` objekt.  
   
  [!code-csharp[Classic WebData SqlDataAdapter.SqlDataAdapter Example#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlDataAdapter.SqlDataAdapter Example/CS/source.cs#1)]
  [!code-vb[Classic WebData SqlDataAdapter.SqlDataAdapter Example#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlDataAdapter.SqlDataAdapter Example/VB/source.vb#1)]  
   
 ## <a name="oledb-parameter-placeholders"></a>Zástupné symboly parametrů OleDb  
- Pro <xref:System.Data.OleDb.OleDbDataAdapter> objekty a <xref:System.Data.Odbc.OdbcDataAdapter> je nutné k identifikaci parametrů použít zástupné symboly otazníku (?).  
+ Pro <xref:System.Data.OleDb.OleDbDataAdapter> objekty a je <xref:System.Data.Odbc.OdbcDataAdapter> nutné použít zástupné symboly otazníku (?) k identifikaci parametrů.  
   
 ```vb  
 Dim selectSQL As String = _  
@@ -89,9 +90,9 @@ string updateSQL =
 string deleteSQL = "DELETE FROM Customers WHERE CustomerID = ?";  
 ```  
   
- Parametrizované příkazy dotazu definují, které vstupní a výstupní parametry musí být vytvořeny. Chcete-li vytvořit parametr, použijte metodu `Parameters.Add` nebo `Parameter` konstruktor k určení názvu sloupce, datového typu a velikosti. Pro vnitřní datové typy, například `Integer`, není nutné zahrnout velikost nebo můžete zadat výchozí velikost.  
+ Parametrizované příkazy dotazu definují, které vstupní a výstupní parametry je třeba vytvořit. Chcete-li vytvořit parametr, použijte `Parameters.Add` metodu nebo `Parameter` konstruktor k určení názvu, datového typu a velikosti sloupce. U vnitřních datových typů, například `Integer` nemusíte vkládat velikost, nebo můžete zadat výchozí velikost.  
   
- Následující příklad kódu vytvoří parametry pro příkaz SQL `DataSet`a potom vyplní .  
+ Následující příklad kódu vytvoří parametry pro příkaz SQL a pak vyplní `DataSet` .  
   
 ## <a name="oledb-example"></a>Příklad OleDb  
   
@@ -129,7 +130,7 @@ DataSet customers = new DataSet();
 adapter.Fill(customers, "Customers");  
 ```  
   
-## <a name="odbc-parameters"></a>Parametry Odbc  
+## <a name="odbc-parameters"></a>Parametry ODBC  
   
 ```vb  
 ' Assumes that connection is a valid OdbcConnection object.  
@@ -162,7 +163,7 @@ adapter.Fill(customers, "Customers");
 ```  
   
 > [!NOTE]
-> Pokud pro parametr není zadán název parametru, je mu přidělen přírůstkový výchozí název parametru*N* *,* počínaje parametrem "Parametr1". Doporučujeme vyhnout se konvence pojmenování parametru*N* při zadání názvu parametru, protože název, který `ParameterCollection`zadáte může být v konfliktu s existující výchozí název parametru v . Pokud zadaný název již existuje, je vyvolána výjimka.  
+> Pokud není zadán název parametru pro parametr, je parametrem udělen přírůstkový výchozí název parametru*N* *,* počínaje hodnotou "parametr1". Doporučujeme vyhnout se zásadám vytváření názvů parametrů*N* , pokud zadáte název parametru, protože název, který zadáte, může být v konfliktu s existujícím výchozím názvem parametru v `ParameterCollection` . Pokud zadaný název již existuje, je vyvolána výjimka.  
   
 ## <a name="see-also"></a>Viz také
 

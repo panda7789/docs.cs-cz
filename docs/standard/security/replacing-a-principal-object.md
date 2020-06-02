@@ -10,15 +10,15 @@ helpviewer_keywords:
 - security [.NET Framework], replacing principal objects
 - security [.NET Framework], principals
 ms.assetid: c323687e-b196-487b-beba-f38f9b3f961b
-ms.openlocfilehash: 89b7036215cb7998222e280ceef02073d455a1b2
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 056bd0bbafe0e7dc84d8d0c532ff844370c59230
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75705935"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291211"
 ---
 # <a name="replacing-a-principal-object"></a>Nahrazení objektu zabezpečení
-Aplikace, které poskytují ověřovací služby, musí být schopné nahradit objekt **zabezpečení** (<xref:System.Security.Principal.IPrincipal>) daného vlákna. Kromě toho systém zabezpečení musí pomoct chránit možnost nahradit **Hlavní** objekty, protože neoprávněně připojená, nesprávná **jistina** ohrožuje zabezpečení vaší aplikace tím, že nárokuje neplatnou identitu nebo roli. Proto musí být aplikacím, které vyžadují možnost nahradit **Hlavní** objekty, udělen objekt <xref:System.Security.Permissions.SecurityPermission?displayProperty=nameWithType> pro hlavní ovládací prvek. (Upozorňujeme, že toto oprávnění není vyžadováno pro provádění kontrol zabezpečení na základě rolí nebo pro vytváření objektů **zabezpečení** .)  
+Aplikace, které poskytují služby ověřování, musí být schopné nahradit objekt **zabezpečení** ( <xref:System.Security.Principal.IPrincipal> ) pro dané vlákno. Kromě toho systém zabezpečení musí pomoct chránit možnost nahradit **Hlavní** objekty, protože neoprávněně připojená, nesprávná **jistina** ohrožuje zabezpečení vaší aplikace tím, že nárokuje neplatnou identitu nebo roli. Proto musí být aplikace, které vyžadují možnost nahradit **Hlavní** objekty, uděleny <xref:System.Security.Permissions.SecurityPermission?displayProperty=nameWithType> objektu pro hlavní ovládací prvek. (Upozorňujeme, že toto oprávnění není vyžadováno pro provádění kontrol zabezpečení na základě rolí nebo pro vytváření objektů **zabezpečení** .)  
   
  Aktuální objekt **zabezpečení** může být nahrazen prováděním následujících úloh:  
   
@@ -32,7 +32,7 @@ Aplikace, které poskytují ověřovací služby, musí být schopné nahradit o
  [!code-csharp[SetCurrentPrincipal#1](../../../samples/snippets/csharp/VS_Snippets_CLR/SetCurrentPrincipal/CS/program.cs#1)]
  [!code-vb[SetCurrentPrincipal#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/SetCurrentPrincipal/VB/program.vb#1)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Security.Permissions.SecurityPermission?displayProperty=nameWithType>
-- [Objekty zabezpečení a identity](../../../docs/standard/security/principal-and-identity-objects.md)
+- [Objekty zabezpečení a identity](principal-and-identity-objects.md)

@@ -9,12 +9,12 @@ dev_langs:
 - vb
 ms.technology: dotnet-standard
 ms.assetid: c00939e1-59e3-4e61-8fe9-08ad6b3f1295
-ms.openlocfilehash: 76872f3ba3ed5106a4cb5bfdd918ae607acc092d
-ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
+ms.openlocfilehash: cd0260de3facdd37c46e9fb2f09ddc4cac08e71b
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82507517"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291068"
 ---
 # <a name="linq-language-integrated-query"></a>LINQ (integrovaný dotaz jazyka)
 
@@ -50,7 +50,7 @@ Dim linqExperts = programmers.Where(Function(p) p.IsNewToLINQ).
 
 ## <a name="linq-is-expressive"></a>LINQ je vyjádření
 
-Představte si, že máte seznam domácích, ale chcete ho převést do slovníku, kde můžete získat přístup k PET přímo podle `RFID` jeho hodnoty.
+Představte si, že máte seznam domácích, ale chcete ho převést do slovníku, kde můžete získat přístup k PET přímo podle jeho `RFID` hodnoty.
 
 Tradiční imperativní kód:
 
@@ -113,7 +113,7 @@ End Function
 
 Psaní kódu pro ruční procházení dokumentu XML k provedení této úlohy by bylo mnohem náročnější.
 
-Interakce s XML není jedinou věcí, kterou můžete dělat s poskytovateli LINQ. [LINQ to SQL](../../docs/framework/data/adonet/sql/linq/index.md) je poměrně prosté objekty – relační mapování (ORM) pro databázi serveru MSSQL. Knihovna [JSON.NET](https://www.newtonsoft.com/json/help/html/LINQtoJSON.htm) poskytuje efektivní procházení dokumentů JSON prostřednictvím LINQ. Kromě toho, pokud není k dispozici knihovna, která vyžaduje, můžete také [napsat vlastního poskytovatele LINQ](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2012/bb546158(v=vs.110)).
+Interakce s XML není jedinou věcí, kterou můžete dělat s poskytovateli LINQ. [LINQ to SQL](../framework/data/adonet/sql/linq/index.md) je poměrně prosté objekty – relační mapování (ORM) pro databázi serveru MSSQL. Knihovna [JSON.NET](https://www.newtonsoft.com/json/help/html/LINQtoJSON.htm) poskytuje efektivní procházení dokumentů JSON prostřednictvím LINQ. Kromě toho, pokud není k dispozici knihovna, která vyžaduje, můžete také [napsat vlastního poskytovatele LINQ](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2012/bb546158(v=vs.110)).
 
 ## <a name="why-use-the-query-syntax"></a>Proč použít syntaxi dotazu?
 
@@ -143,7 +143,7 @@ Dim filteredItems = From item In myItems
 
 Není syntaxí rozhraní API jenom výstižnější způsob, jak provádět syntaxi dotazů?
 
-Ne. Syntaxe dotazu umožňuje použití klauzule **let** , která umožňuje začlenit a vytvořit jeho proměnnou v rámci rozsahu výrazu a použít ji v následných částech výrazu. Reprodukce stejného kódu jenom pomocí syntaxe rozhraní API se dá provést, ale nejpravděpodobnější příčinou je, že je obtížné číst kód.
+No. Syntaxe dotazu umožňuje použití klauzule **let** , která umožňuje začlenit a vytvořit jeho proměnnou v rámci rozsahu výrazu a použít ji v následných částech výrazu. Reprodukce stejného kódu jenom pomocí syntaxe rozhraní API se dá provést, ale nejpravděpodobnější příčinou je, že je obtížné číst kód.
 
 Takže byste to begs na otázku, **měli byste pouze použít syntaxi dotazu?**
 
@@ -165,7 +165,7 @@ Odpověď na tuto **otázku není v případě.** ..
 
 Následuje rychlá ukázka některých základních částí jazyka LINQ. Tato možnost není nijak ucelená, protože LINQ poskytuje výrazně více funkcí, než se tady prezentuje.
 
-* Chléb a máslo – `Where` `Select`, a: `Aggregate`
+* Chléb a máslo –, `Where` `Select` a `Aggregate` :
 
 ```csharp
 // Filtering a list.
@@ -384,7 +384,7 @@ Public Shared GetAllFacebookUserLikesMessage(facebookUsers As IEnumerable(Of Fac
 }
 ```
 
-Tento kód bude v `facebookUsers` případě potřeby rozdělit do celého systémového vlákna a celková hodnota se v každém vlákně sečte, sečte výsledky vypočítané každým vláknem a projekt, který je výsledkem skvělého řetězce.
+Tento kód bude v případě potřeby rozdělit do `facebookUsers` celého systémového vlákna a celková hodnota se v každém vlákně sečte, sečte výsledky vypočítané každým vláknem a projekt, který je výsledkem skvělého řetězce.
 
 Ve tvaru diagramu:
 

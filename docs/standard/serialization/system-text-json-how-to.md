@@ -1,17 +1,21 @@
 ---
-title: ''
+title: Postup serializace a deserializace JSON pomocí C#-.NET
 description: V tomto článku se dozvíte, jak použít System.Text.Json obor názvů k serializaci a deserializaci z formátu JSON v rozhraní .NET. Obsahuje vzorový kód.
-ms.date: ''
+ms.date: 05/13/2020
 no-loc:
 - System.Text.Json
 - Newtonsoft.Json
-helpviewer_keywords: []
-ms.openlocfilehash: f1a5da448b08f9b4f1cf3fa6cba67fb376b00a6f
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+helpviewer_keywords:
+- JSON serialization
+- serializing objects
+- serialization
+- objects, serializing
+ms.openlocfilehash: 7ad2721f12c5d14b61b35ecf7696ff0d6a6f27da
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83702255"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289509"
 ---
 # <a name="how-to-serialize-and-deserialize-marshal-and-unmarshal-json-in-net"></a>Jak serializovat a deserializovat (zařazování a zrušit zařazení) JSON v .NET
 
@@ -380,46 +384,10 @@ Chcete-li vyloučit všechny vlastnosti hodnoty null, nastavte <xref:System.Text
 Zde je příklad objektu pro serializaci a výstup JSON:
 
 |Vlastnost |Hodnota  |
-|---
-title: Popis: v tomto článku se dozvíte, jak použít System.Text.Json obor názvů k serializaci a deserializaci z formátu JSON v rozhraní .NET. Obsahuje vzorový kód. '
-MS. Date: No – Loc:
-- 'System.Text.Json'
-- Newtonsoft.Jsonhelpviewer_keywords:
-- 
-- 
-- 
-- 
-
--
-title: Popis: v tomto článku se dozvíte, jak použít System.Text.Json obor názvů k serializaci a deserializaci z formátu JSON v rozhraní .NET. Obsahuje vzorový kód. '
-MS. Date: No – Loc:
-- 'System.Text.Json'
-- Newtonsoft.Jsonhelpviewer_keywords:
-- 
-- 
-- 
-- 
-
------| Název---: Popis: v tomto článku se dozvíte, jak použít System.Text.Json obor názvů k serializaci a deserializaci z formátu JSON v rozhraní .NET. Obsahuje vzorový kód. '
-MS. Date: No – Loc:
-- 'System.Text.Json'
-- Newtonsoft.Jsonhelpviewer_keywords:
-- 
-- 
-- 
-- 
-
--
-title: Popis: v tomto článku se dozvíte, jak použít System.Text.Json obor názvů k serializaci a deserializaci z formátu JSON v rozhraní .NET. Obsahuje vzorový kód. '
-MS. Date: No – Loc:
-- 'System.Text.Json'
-- Newtonsoft.Jsonhelpviewer_keywords:
-- 
-- 
-- 
-- 
-
------| | Datum | 8/1/2019 12:00:00 DOP. 07:00 | TemperatureCelsius | 25 | Souhrn | null |
+|---------|---------|
+| Datum    | 8/1/2019 12:00:00 DOP. 07:00|
+| TemperatureCelsius| 25 |
+| Souhrn| null|
 
 ```json
 {
@@ -524,7 +492,7 @@ Toto chování je určeno k tomu, aby se zabránilo náhodnému úniku dat v odv
 
 Chcete-li serializovat vlastnosti odvozeného typu v předchozím příkladu, použijte jeden z následujících přístupů:
 
-* Zavolejte přetížení <xref:System.Text.Json.JsonSerializer.Serialize%2A> , které umožňuje určit typ za běhu:
+* Zavolejte přetížení <xref:System.Text.Json.JsonSerializer.Serialize%2A> , které umožňuje určit typ v době běhu:
 
   [!code-csharp[](snippets/system-text-json-how-to/csharp/SerializePolymorphic.cs?name=SnippetSerializeGetType)]
 
@@ -672,65 +640,13 @@ Pokud deserializaci kódu JSON zobrazeného na zobrazeném typu, `DatesAvailable
 Při deserializaci formátu JSON zobrazeného dříve do tohoto ukázkového typu se data dalších dat stávají páry klíč-hodnota `ExtensionData` vlastnosti:
 
 |Vlastnost |Hodnota  |Poznámky  |
-|---
-title: Popis: v tomto článku se dozvíte, jak použít System.Text.Json obor názvů k serializaci a deserializaci z formátu JSON v rozhraní .NET. Obsahuje vzorový kód. '
-MS. Date: No – Loc:
-- 'System.Text.Json'
-- Newtonsoft.Jsonhelpviewer_keywords:
-- 
-- 
-- 
-- 
-
--
-title: Popis: v tomto článku se dozvíte, jak použít System.Text.Json obor názvů k serializaci a deserializaci z formátu JSON v rozhraní .NET. Obsahuje vzorový kód. '
-MS. Date: No – Loc:
-- 'System.Text.Json'
-- Newtonsoft.Jsonhelpviewer_keywords:
-- 
-- 
-- 
-- 
-
------| Název---: Popis: v tomto článku se dozvíte, jak použít System.Text.Json obor názvů k serializaci a deserializaci z formátu JSON v rozhraní .NET. Obsahuje vzorový kód. '
-MS. Date: No – Loc:
-- 'System.Text.Json'
-- Newtonsoft.Jsonhelpviewer_keywords:
-- 
-- 
-- 
-- 
-
--
-title: Popis: v tomto článku se dozvíte, jak použít System.Text.Json obor názvů k serializaci a deserializaci z formátu JSON v rozhraní .NET. Obsahuje vzorový kód. '
-MS. Date: No – Loc:
-- 'System.Text.Json'
-- Newtonsoft.Jsonhelpviewer_keywords:
-- 
-- 
-- 
-- 
-
------| Název---: Popis: v tomto článku se dozvíte, jak použít System.Text.Json obor názvů k serializaci a deserializaci z formátu JSON v rozhraní .NET. Obsahuje vzorový kód. '
-MS. Date: No – Loc:
-- 'System.Text.Json'
-- Newtonsoft.Jsonhelpviewer_keywords:
-- 
-- 
-- 
-- 
-
--
-title: Popis: v tomto článku se dozvíte, jak použít System.Text.Json obor názvů k serializaci a deserializaci z formátu JSON v rozhraní .NET. Obsahuje vzorový kód. '
-MS. Date: No – Loc:
-- 'System.Text.Json'
-- Newtonsoft.Jsonhelpviewer_keywords:
-- 
-- 
-- 
-- 
-
------| | Datum | 8/1/2019 12:00:00 DOP. 07:00 | | TemperatureCelsius | 0 | Neshoda malých a velkých písmen ( `temperatureCelsius` ve formátu JSON), takže vlastnost není nastavena. | | Souhrn | Horká | | | ExtensionData – | temperatureCelsius: 25 | Vzhledem k tomu, že se neshoduje velká a malá písmena, je tato vlastnost JSON extra a ve slovníku se stala dvojicí klíč-hodnota. | || DatesAvailable:<br>  8/1/2019 12:00:00 DOP. 07:00<br>8/2/2019 12:00:00 DOP. 07:00 | Vlastnost extra z formátu JSON se stávají dvojicí klíč-hodnota s polem jako objektem hodnoty. | | | SummaryWords:<br>Cool<br>Vítr<br>Humid | Vlastnost extra z formátu JSON se stávají dvojicí klíč-hodnota s polem jako objektem hodnoty. |
+|---------|---------|---------|
+| Datum    | 8/1/2019 12:00:00 DOP. 07:00||
+| TemperatureCelsius| 0 | Neshoda malých a velkých písmen ( `temperatureCelsius` ve formátu JSON), takže vlastnost není nastavena. |
+| Souhrn | Hot ||
+| ExtensionData – | temperatureCelsius: 25 |Vzhledem k tomu, že se neshoduje velká a malá písmena, je tato vlastnost JSON extra a ve slovníku se stala dvojicí klíč-hodnota.|
+|| DatesAvailable:<br>  8/1/2019 12:00:00 DOP. 07:00<br>8/2/2019 12:00:00 DOP. 07:00 |Vlastnost extra z formátu JSON se stávají dvojicí klíč-hodnota s polem jako objektem hodnoty.|
+| |SummaryWords:<br>Cool<br>Vítr<br>Humid |Vlastnost extra z formátu JSON se stávají dvojicí klíč-hodnota s polem jako objektem hodnoty.|
 
 Při serializaci cílového objektu se dvojice hodnoty klíče dat rozšíření stanou vlastnostmi JSON stejně, jako kdyby byly ve vstupním formátu JSON:
 

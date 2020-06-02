@@ -11,24 +11,24 @@ helpviewer_keywords:
 - asynchronous programming, state objects
 - IAsyncResult interface, samples
 ms.assetid: e3e5475d-c5e9-43f0-928e-d18df8ca1f1d
-ms.openlocfilehash: c7bd0a7606b5f93289cf39d33794457265e7e453
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e52ed550510253aba9401931c0f612211c7d1bf5
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73094607"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84276423"
 ---
 # <a name="using-an-asynccallback-delegate-and-state-object"></a>Použití delegáta AsyncCallback a stavového objektu
-Při použití <xref:System.AsyncCallback> delegáta ke zpracování výsledků asynchronní operace v samostatném vlákně, můžete použít objekt stavu předat informace mezi zpětná volání a načíst konečný výsledek. Toto téma ukazuje, že praxe rozbalením příklad u [použití AsyncCallback delegát a ukončit asynchronní operace](../../../docs/standard/asynchronous-programming-patterns/using-an-asynccallback-delegate-to-end-an-asynchronous-operation.md).  
+Použijete-li <xref:System.AsyncCallback> delegáta ke zpracování výsledků asynchronní operace v samostatném vlákně, můžete použít objekt stavu k předání informací mezi zpětnými voláními a k načtení konečného výsledku. Toto téma ukazuje tento postup rozbalením příkladu v tématu [použití delegáta AsyncCallback k ukončení asynchronní operace](using-an-asynccallback-delegate-to-end-an-asynchronous-operation.md).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu ukazuje použití asynchronních <xref:System.Net.Dns> metod ve třídě k načtení informací DNS (Domain Name System) pro počítače zadané uživatelem. Tento příklad definuje a `HostRequest` používá třídu k ukládání informací o stavu. Objekt `HostRequest` bude vytvořen pro každý název počítače zadaný uživatelem. Tento objekt je <xref:System.Net.Dns.BeginGetHostByName%2A> předán metodě. Metoda `ProcessDnsInformation` je volána při každém dokončení požadavku. Objekt `HostRequest` je načten pomocí <xref:System.IAsyncResult.AsyncState%2A> vlastnosti. Metoda `ProcessDnsInformation` používá `HostRequest` objekt k <xref:System.Net.IPHostEntry> uložení vrácené požadavek nebo <xref:System.Net.Sockets.SocketException> vyvolána požadavek. Po dokončení všech požadavků aplikace iterates `HostRequest` přes objekty a <xref:System.Net.Sockets.SocketException> zobrazí informace DNS nebo chybová zpráva.  
+ Následující příklad kódu ukazuje použití asynchronních metod ve <xref:System.Net.Dns> třídě pro načtení informací o systému DNS (Domain Name System) pro uživatelem definované počítače. Tento příklad definuje a používá `HostRequest` třídu k ukládání informací o stavu. Vytvoří se `HostRequest` objekt pro každý název počítače zadaný uživatelem. Tento objekt je předán <xref:System.Net.Dns.BeginGetHostByName%2A> metodě. `ProcessDnsInformation`Metoda je volána pokaždé, když je požadavek dokončen. `HostRequest`Objekt je načten pomocí <xref:System.IAsyncResult.AsyncState%2A> Vlastnosti. `ProcessDnsInformation`Metoda používá `HostRequest` objekt k uložení <xref:System.Net.IPHostEntry> vráceného požadavkem nebo <xref:System.Net.Sockets.SocketException> vyvolaným požadavkem. Po dokončení všech požadavků aplikace provede iteraci `HostRequest` objektů a zobrazí informace DNS nebo <xref:System.Net.Sockets.SocketException> chybovou zprávu.  
   
  [!code-csharp[AsyncDesignPattern#5](../../../samples/snippets/csharp/VS_Snippets_CLR/AsyncDesignPattern/CS/AsyncDelegateWithStateObject.cs#5)]
  [!code-vb[AsyncDesignPattern#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/AsyncDesignPattern/VB/AsyncDelegateWithStateObject.vb#5)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [Asynchronní vzor založený na událostech (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md)
-- [Přehled asynchronních vzorů založených na událostech](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)
-- [Použití delegáta AsyncCallback k ukončení asynchronní operace](../../../docs/standard/asynchronous-programming-patterns/using-an-asynccallback-delegate-to-end-an-asynchronous-operation.md)
+- [Asynchronní vzor založený na událostech (EAP)](event-based-asynchronous-pattern-eap.md)
+- [Přehled asynchronních vzorů založených na událostech](event-based-asynchronous-pattern-overview.md)
+- [Použití delegáta AsyncCallback k ukončení asynchronní operace](using-an-asynccallback-delegate-to-end-an-asynchronous-operation.md)

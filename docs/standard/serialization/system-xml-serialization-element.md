@@ -1,25 +1,25 @@
 ---
 title: Element <system.xml.serialization>
-description: Tento článek popisuje prvek <System. XML. Serialization>, který je prvkem nejvyšší úrovně pro řízení serializace XML.
+description: Tento článek popisuje prvek < System. XML. Serialization >, který je prvkem nejvyšší úrovně pro řízení serializace XML.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - system.xml.serialization element
 - XML serialization, configuration
 - <system.xml.serialization> element
 ms.assetid: 3ce45919-388a-418c-8968-6df0372c73ec
-ms.openlocfilehash: 1e66220004d561f937d03c506e6f30db4ccc635b
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: f69e80592e9321de64421b977a63b83d8be2ad9e
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83380119"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289483"
 ---
-# <a name="systemxmlserialization-element"></a>\<System. XML. Serialization – element>
+# <a name="systemxmlserialization-element"></a>Element \<system.xml.serialization>
 
-Element nejvyšší úrovně pro řízení serializace XML. Další informace o konfiguračních souborech najdete v tématu [Schéma konfiguračního souboru](../../../docs/framework/configure-apps/file-schema/index.md).
+Element nejvyšší úrovně pro řízení serializace XML. Další informace o konfiguračních souborech najdete v tématu [Schéma konfiguračního souboru](../../framework/configure-apps/file-schema/index.md).
 
-\<> Konfigurace \
-\<System. XML. Serialization –>
+\<configuration>\
+\<system.xml.serialization>
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -40,14 +40,14 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 |Prvek|Popis|
 |-------------|-----------------|
-|[\<dateTimeSerialization – element>](../../../docs/standard/serialization/datetimeserialization-element.md)|Určuje režim serializace <xref:System.DateTime> objekty.|
-|[\<schemaImporterExtensions – element>](../../../docs/standard/serialization/schemaimporterextensions-element.md)|Obsahuje typy, které jsou používány <xref:System.Xml.Serialization.XmlSchemaImporter> pro mapování typů XSD na typy rozhraní .NET Framework.|
+|[\<dateTimeSerialization>Objekt](datetimeserialization-element.md)|Určuje režim serializace <xref:System.DateTime> objekty.|
+|[\<schemaImporterExtensions>Objekt](schemaimporterextensions-element.md)|Obsahuje typy, které jsou používány <xref:System.Xml.Serialization.XmlSchemaImporter> pro mapování typů XSD na typy rozhraní .NET Framework.|
 
 ### <a name="parent-elements"></a>Nadřazené elementy
 
 |Prvek|Popis|
 |-------------|-----------------|
-|[\<Element> konfigurace](../../../docs/framework/configure-apps/file-schema/configuration-element.md)|Kořenový element v každém konfiguračním souboru, který je používán common language runtime a aplikacemi rozhraní .NET Framework.|
+|[\<configuration>Objekt](../../framework/configure-apps/file-schema/configuration-element.md)|Kořenový element v každém konfiguračním souboru, který je používán common language runtime a aplikacemi rozhraní .NET Framework.|
 
 ## <a name="example"></a>Příklad
 
@@ -71,7 +71,7 @@ Následující příklad kódu ukazuje, jak určit režim serializace <xref:Syst
 
 - <xref:System.Xml.Serialization.XmlSchemaImporter>
 - <xref:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode>
-- [Schéma konfiguračního souboru](../../../docs/framework/configure-apps/file-schema/index.md)
-- [\<dateTimeSerialization – element>](../../../docs/standard/serialization/datetimeserialization-element.md)
-- [\<schemaImporterExtensions – element>](../../../docs/standard/serialization/schemaimporterextensions-element.md)
-- [\<Přidat> element pro \<>schemaImporterExtensions](../../../docs/standard/serialization/add-element-for-schemaimporterextensions.md)
+- [Schéma konfiguračního souboru](../../framework/configure-apps/file-schema/index.md)
+- [\<dateTimeSerialization>Objekt](datetimeserialization-element.md)
+- [\<schemaImporterExtensions>Objekt](schemaimporterextensions-element.md)
+- [\<add>Element pro\<schemaImporterExtensions>](add-element-for-schemaimporterextensions.md)

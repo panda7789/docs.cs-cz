@@ -16,12 +16,12 @@ helpviewer_keywords:
 - security [.NET Framework], assemblies
 - integrity with assemblies
 ms.assetid: 1b5439c1-f3d5-4529-bd69-01814703d067
-ms.openlocfilehash: 7f897241b121cf1bd52d02ee5f487aeafafc3cb0
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: d0b822f725444248d1037c21ffea9afe1cebb7e2
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83378662"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290016"
 ---
 # <a name="assembly-security-considerations"></a>Důležité informace o zabezpečení sestavení
 Při sestavování sestavení můžete zadat sadu oprávnění, které sestavení vyžaduje ke spuštění. Zda jsou určitá oprávnění udělena nebo nejsou udělena sestavení, založena na legitimaci.  
@@ -39,7 +39,7 @@ Při sestavování sestavení můžete zadat sadu oprávnění, které sestaven�
 - Nepoužívejte žádost o oprávnění k získání oprávnění, která může váš kód potřebovat, ale připraví se pro zpracování výjimek zabezpečení, pokud nejsou udělená oprávnění.  
   
   > [!NOTE]
-  > Zabezpečení je složitá oblast a máte spoustu možností, jak vybírat. Další informace najdete v tématu [klíčové koncepty zabezpečení](../../standard/security/key-security-concepts.md).  
+  > Zabezpečení je složitá oblast a máte spoustu možností, jak vybírat. Další informace najdete v tématu [klíčové koncepty zabezpečení](../security/key-security-concepts.md).  
   
  V době načítání se legitimace sestavení používá jako vstup do zásad zabezpečení. Zásady zabezpečení jsou zřízené podnikem a správcem počítače a také nastavením zásad uživatele a určují sadu oprávnění, která jsou udělena všem spravovaným kód při spuštění. Zásady zabezpečení lze zřídit pro vydavatele sestavení (Pokud má podpis vygenerovaný nástrojem pro podpis), pro web a zónu (v terminologii aplikace Internet Explorer), ze kterého bylo sestavení staženo nebo pro silný název sestavení. Správce počítače může například vytvořit zásadu zabezpečení, která umožňuje veškerý kód stažený z webu a podepsaný danou softwarovou společností pro přístup k databázi v počítači, ale neuděluje přístup k zápisu do disku počítače.  
   

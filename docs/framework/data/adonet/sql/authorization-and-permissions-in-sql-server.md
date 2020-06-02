@@ -1,13 +1,14 @@
 ---
 title: Autorizace a oprávnění na SQL Serveru
+description: Naučte se explicitně udělit oprávnění k vytváření databázových objektů, které jsou k dispozici uživatelům v SQL Server pomocí ADO.NET.
 ms.date: 03/30/2017
 ms.assetid: d340405c-91f4-4837-a3cc-a238ee89888a
-ms.openlocfilehash: c9b041a078494cd29d6cab5297728d233dafa236
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: eb01e29b36da5e1793b9176301a968a42115d19c
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70782597"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286530"
 ---
 # <a name="authorization-and-permissions-in-sql-server"></a>Autorizace a oprávnění na SQL Serveru
 Při vytváření databázových objektů musíte explicitně udělit oprávnění, aby je bylo možné uživatelům zpřístupnit. Každý zabezpečitelný objekt má oprávnění, která lze udělit objektu zabezpečení pomocí příkazů oprávnění.  
@@ -35,12 +36,12 @@ Při vytváření databázových objektů musíte explicitně udělit oprávněn
 |--------------------------|-----------------|  
 |UDĚLIT|Udělí oprávnění.|  
 |ODVOLAT|Odvolá oprávnění. Toto je výchozí stav nového objektu. Oprávnění odvolaných uživatelem nebo rolí může být stále děděno z jiných skupin nebo rolí, ke kterým je objekt zabezpečení přiřazen.|  
-|ODMÍTNOUT|DENY odvolá oprávnění, aby ho nebylo možné dědit. ZAMÍTNUTí má přednost před všemi oprávněními, s výjimkou ODEPŘENí se nevztahuje na vlastníky `sysadmin`objektu nebo členy. Pokud odepřete oprávnění objektu k `public` roli, je odepřen všem uživatelům a rolím s výjimkou vlastníků a `sysadmin` členů objektu.|  
+|ODEPŘÍT|DENY odvolá oprávnění, aby ho nebylo možné dědit. ZAMÍTNUTí má přednost před všemi oprávněními, s výjimkou ODEPŘENí se nevztahuje na vlastníky objektu nebo členy `sysadmin` . Pokud ODEPŘEte oprávnění objektu k `public` roli, je odepřen všem uživatelům a rolím s výjimkou vlastníků a členů objektu `sysadmin` .|  
   
 - Příkaz GRANT může přiřadit oprávnění pro skupinu nebo roli, které mohou být děděny uživateli databáze. Nicméně příkaz Odepřít má přednost před všemi ostatními příkazy oprávnění. Proto uživatel, který byl odepřen oprávnění, nemůže dědit z jiné role.  
   
 > [!NOTE]
-> `sysadmin` Členové pevné role serveru a vlastníci objektu nelze odepřít oprávnění.  
+> Členové `sysadmin` pevné role serveru a vlastníci objektu nelze odepřít oprávnění.  
   
 ## <a name="ownership-chains"></a>Řetězení vlastnictví  
  SQL Server zajistí, že přístup k objektům mají jenom objekty zabezpečení, které mají udělená oprávnění. Pokud k sobě navzájem přistupuje více databázových objektů, sekvence je označována jako řetězec. Pokud SQL Server prochází odkazy v řetězu, vyhodnocuje oprávnění jinak, než by byla v případě, že k jednotlivým položkám přistupuje samostatně. Když je objekt otevřen prostřednictvím řetězce, SQL Server Nejprve porovná vlastníka objektu s vlastníkem volajícího objektu (předchozí odkaz v řetězci). Pokud mají oba objekty stejného vlastníka, oprávnění k odkazovanému objektu nejsou zaškrtnuta. Pokaždé, když objekt přistupuje k jinému objektu, který má jiného vlastníka, řetěz vlastnictví je přerušen a SQL Server musí kontrolovat kontext zabezpečení volajícího.  
@@ -54,11 +55,11 @@ Při vytváření databázových objektů musíte explicitně udělit oprávněn
 ## <a name="external-resources"></a>Externí zdroje  
  Další informace najdete v následujících materiálech.  
   
-|Resource|Popis|  
+|Prostředek|Popis|  
 |--------------|-----------------|  
 |[Oprávnění](/sql/relational-databases/security/permissions-database-engine)|Obsahuje témata popisující hierarchii oprávnění, zobrazení katalogu a oprávnění k pevnému serveru a databázovým rolím.|
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Zabezpečení aplikací ADO.NET](../securing-ado-net-applications.md)
 - [Scénáře zabezpečení aplikací na SQL Serveru](application-security-scenarios-in-sql-server.md)

@@ -1,5 +1,5 @@
 ---
-title: <para> - Průvodce programováním jazyka C#
+title: <para> – Průvodce programováním v C#
 ms.date: 07/20/2015
 f1_keywords:
 - <para>
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - <para> C# XML tag
 - para C# XML tag
 ms.assetid: c74b8705-29df-40b1-bff5-237492b0e978
-ms.openlocfilehash: b2740370106ce5b2812acbea212354ebea1f0e34
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d1fe81b1752d066c6b2e1ffe27f0c43fc4068edf
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76793409"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287295"
 ---
-# <a name="para-c-programming-guide"></a>\<para> (průvodce programováním Jazyka C#)
+# <a name="para-c-programming-guide"></a>\<para>(Průvodce programováním v C#)
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -27,17 +27,17 @@ ms.locfileid: "76793409"
 
 - `content`
 
-  Text odstavce.
+  Text odstavce
 
 ## <a name="remarks"></a>Poznámky
 
-Značka \<odstavec> je určen k použití uvnitř značky, například [ \<souhrnný>](./summary.md), [ \<poznámky>](./remarks.md)nebo [ \<vrátí>](./returns.md)a umožňuje přidat do textu strukturu.
+`<para>`Značka je určena pro použití uvnitř značky, jako například [\<summary>](./summary.md) , [\<remarks>](./remarks.md) nebo [\<returns>](./returns.md) , a umožňuje přidat do textu strukturu.
 
-Kompilujte s [-doc](../../language-reference/compiler-options/doc-compiler-option.md) pro zpracování dokumentů komentáře do souboru.
+Zkompilujte s [-doc](../../language-reference/compiler-options/doc-compiler-option.md) a zpracujte komentáře k dokumentaci do souboru.
 
 ## <a name="example"></a>Příklad
 
-Příklad použití \<odst.> viz [ \<souhrnná>.](./summary.md)
+Příklad použití naleznete v tématu [\<summary>](./summary.md) `<para>` .
 
 ## <a name="see-also"></a>Viz také
 

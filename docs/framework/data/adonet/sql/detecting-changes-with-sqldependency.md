@@ -1,24 +1,25 @@
 ---
 title: Detekce změn pomocí SqlDependency
+description: K detekci, kdy se výsledky dotazu liší od těch, které byly původně načteny v ADO.NET, přidružte objekt SqlDependency k objektu SqlCommand.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: e6a58316-f005-4477-92e1-45cc2eb8c5b4
-ms.openlocfilehash: 3719188064388b00c756dd037d4a475ca6debd13
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: b196d42477e1778c45df64b1390502645fdd649d
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70782418"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286465"
 ---
 # <a name="detecting-changes-with-sqldependency"></a>Detekce změn pomocí SqlDependency
 
-Objekt může být přidružen <xref:System.Data.SqlClient.SqlCommand> k objektu, aby zjistil, že se výsledky dotazu liší od původně načtených. <xref:System.Data.SqlClient.SqlDependency> Můžete také přiřadit delegáta `OnChange` události, která se aktivuje při změně výsledků pro přidružený příkaz. Před provedením příkazu <xref:System.Data.SqlClient.SqlDependency> je nutné připojit k příkazu příkaz. `HasChanges` Vlastnost<xref:System.Data.SqlClient.SqlDependency> lze také použít k určení, zda se od prvního načtení dat změnily výsledky dotazu.
+<xref:System.Data.SqlClient.SqlDependency>Objekt může být přidružen k objektu, <xref:System.Data.SqlClient.SqlCommand> aby zjistil, že se výsledky dotazu liší od původně načtených. Můžete také přiřadit delegáta `OnChange` události, která se aktivuje při změně výsledků pro přidružený příkaz. <xref:System.Data.SqlClient.SqlDependency>Před provedením příkazu je nutné připojit k příkazu příkaz. `HasChanges`Vlastnost <xref:System.Data.SqlClient.SqlDependency> lze také použít k určení, zda se od prvního načtení dat změnily výsledky dotazu.
 
-## <a name="security-considerations"></a>Důležité informace o zabezpečení
+## <a name="security-considerations"></a>Aspekty zabezpečení
 
-Infrastruktura závislostí závisí na typu <xref:System.Data.SqlClient.SqlConnection> , který je otevřen <xref:System.Data.SqlClient.SqlDependency.Start%2A> , když je volána, aby přijímal oznámení, že se pro daný příkaz změnila podkladová data. Schopnost klienta iniciovat volání `SqlDependency.Start` je řízena <xref:System.Data.SqlClient.SqlClientPermission> pomocí atributů zabezpečení přístupu kódu. Další informace najdete v tématu [Povolení oznámení dotazů](enabling-query-notifications.md) a [zabezpečení přístupu kódu a ADO.NET](../code-access-security.md).
+Infrastruktura závislostí závisí na typu <xref:System.Data.SqlClient.SqlConnection> , který je otevřen, když <xref:System.Data.SqlClient.SqlDependency.Start%2A> je volána, aby přijímal oznámení, že se pro daný příkaz změnila podkladová data. Schopnost klienta iniciovat volání `SqlDependency.Start` je řízena pomocí <xref:System.Data.SqlClient.SqlClientPermission> atributů zabezpečení přístupu kódu. Další informace najdete v tématu [Povolení oznámení dotazů](enabling-query-notifications.md) a [zabezpečení přístupu kódu a ADO.NET](../code-access-security.md).
 
 ### <a name="example"></a>Příklad
 
@@ -26,17 +27,17 @@ Následující postup ukazuje, jak deklarovat závislost, spustit příkaz a obd
 
 1. Navázat `SqlDependency` připojení k serveru.
 
-2. Vytvořte <xref:System.Data.SqlClient.SqlConnection>objektypropřipojení kserveruadefinujtepříkazTransact-SQL.<xref:System.Data.SqlClient.SqlCommand>
+2. Vytvořte <xref:System.Data.SqlClient.SqlConnection> <xref:System.Data.SqlClient.SqlCommand> objekty pro připojení k serveru a definujte příkaz Transact-SQL.
 
-3. Vytvořte nový `SqlDependency` objekt nebo použijte existující objekt a navažte jej `SqlCommand` na objekt. Interně to vytvoří <xref:System.Data.Sql.SqlNotificationRequest> objekt a váže ho k objektu Command podle potřeby. Tato žádost o oznámení obsahuje interní identifikátor, který tento `SqlDependency` objekt jednoznačně identifikuje. Také spustí naslouchací proces klienta, pokud ještě není aktivní.
+3. Vytvořte nový `SqlDependency` objekt nebo použijte existující objekt a navažte jej na `SqlCommand` objekt. Interně to vytvoří <xref:System.Data.Sql.SqlNotificationRequest> objekt a váže ho k objektu Command podle potřeby. Tato žádost o oznámení obsahuje interní identifikátor, který tento objekt jednoznačně identifikuje `SqlDependency` . Také spustí naslouchací proces klienta, pokud ještě není aktivní.
 
-4. Přihlaste se k odběru `OnChange` obslužné rutiny `SqlDependency` události pro událost objektu.
+4. Přihlaste se k odběru obslužné rutiny události pro `OnChange` událost `SqlDependency` objektu.
 
 5. Spusťte příkaz pomocí kterékoli z `Execute` metod `SqlCommand` objektu. Vzhledem k tomu, že příkaz je svázán s objektem oznámení, server rozpozná, že musí vygenerovat oznámení, a informace o frontě budou ukazovat na frontu závislostí.
 
 6. Zastavte `SqlDependency` připojení k serveru.
 
-Pokud některý uživatel následně změní podkladová data, Microsoft SQL Server zjistí, že pro takovou změnu čeká na oznámení, a odešle oznámení, které se zpracuje a přepošle klientovi prostřednictvím vytvořeného podkladu `SqlConnection` . voláním `SqlDependency.Start`. Naslouchací proces klienta obdrží zprávu o neplatnosti. Naslouchací proces klienta potom vyhledá přidružený `SqlDependency` objekt a `OnChange` aktivuje událost.
+Pokud některý uživatel následně změní podkladová data, Microsoft SQL Server zjistí, že pro takovou změnu čeká na oznámení, a odešle oznámení, které se zpracovává a přesměruje klientovi prostřednictvím podkladu `SqlConnection` vytvořeného voláním `SqlDependency.Start` . Naslouchací proces klienta obdrží zprávu o neplatnosti. Naslouchací proces klienta potom vyhledá přidružený `SqlDependency` objekt a aktivuje `OnChange` událost.
 
 Následující fragment kódu ukazuje vzor návrhu, který byste použili k vytvoření ukázkové aplikace.
 
@@ -125,7 +126,7 @@ void Termination()
 }
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Oznámení pro dotazy na SQL Serveru](query-notifications-in-sql-server.md)
 - [Přehled ADO.NET](../ado-net-overview.md)

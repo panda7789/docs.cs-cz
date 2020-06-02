@@ -1,5 +1,5 @@
 ---
-title: <example> - Průvodce programováním jazyka C#
+title: <example> – Průvodce programováním v C#
 ms.date: 07/20/2015
 f1_keywords:
 - <example>
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - <example> C# XML tag
 - example C# XML tag
 ms.assetid: 32d6e73b-2554-4abb-83ee-a1e321334fd2
-ms.openlocfilehash: 615eccbc427b6a5bbbed061acd0c8b0b9be7f46c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e8d26f82562cc5140662f5b32ea9fedf5481d8f8
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76789820"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287380"
 ---
-# <a name="example-c-programming-guide"></a>\<příklad> (průvodce programováním jazyka C#)
+# <a name="example-c-programming-guide"></a>\<example>(Průvodce programováním v C#)
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -31,9 +31,9 @@ ms.locfileid: "76789820"
 
 ## <a name="remarks"></a>Poznámky
 
-V \<příkladu> značka umožňuje určit příklad použití metody nebo jiného člena knihovny. To obvykle zahrnuje použití [ \<kódu>](./code.md) značky.
+`<example>`Značka umožňuje zadat příklad použití metody nebo jiného člena knihovny. To běžně zahrnuje použití [\<code>](./code.md) značky.
 
-Kompilujte s [-doc](../../language-reference/compiler-options/doc-compiler-option.md) pro zpracování dokumentů komentáře do souboru.
+Zkompilujte s [-doc](../../language-reference/compiler-options/doc-compiler-option.md) a zpracujte komentáře k dokumentaci do souboru.
 
 ## <a name="example"></a>Příklad
 
@@ -41,5 +41,5 @@ Kompilujte s [-doc](../../language-reference/compiler-options/doc-compiler-optio
 
 ## <a name="see-also"></a>Viz také
 
-- [Programovací příručka jazyka C#](../index.md)
+- [Průvodce programováním v C#](../index.md)
 - [Doporučené značky pro komentáře dokumentace](./recommended-tags-for-documentation-comments.md)

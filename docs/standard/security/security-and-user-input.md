@@ -1,6 +1,6 @@
 ---
 title: Zabezpečení a uživatelský vstup
-description: Váš kód může předat uživatelem zadaná data jako parametry jinému kódu, což může ovlivnit zabezpečení. Můžete provést kontrolu rozsahu a odmítnout problematický vstup.
+description: Váš kód může předat uživatelem zadaná data jako parametry do jiného kódu, což může mít vliv na zabezpečení. Můžete provést kontrolu rozsahu a zamítnout problematický vstup.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -9,55 +9,55 @@ helpviewer_keywords:
 - secure coding, user input
 - code security, user input
 ms.assetid: 9141076a-96c9-4b01-93de-366bb1d858bc
-ms.openlocfilehash: fa9f8d4708e928c51e446d8369c9b4556fc6fb77
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 995af30385790a88718193e7abad1db7bc4b56c3
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79186110"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84275942"
 ---
 # <a name="security-and-user-input"></a>Zabezpečení a uživatelský vstup
 
-Uživatelská data, což je jakýkoli druh vstupu (data z webového požadavku nebo adresy URL, vstup do ovládacích prvků aplikace Microsoft Windows Forms a tak dále), mohou nepříznivě ovlivnit kód, protože často se tato data používají přímo jako parametry pro volání jiného kódu. Tato situace je obdobou škodlivého kódu, který volá váš kód s podivnými parametry, a měla by být přijata stejná opatření. Vstup uživatele je ve skutečnosti těžší, aby bezpečné, protože neexistuje žádný rámec zásobníku sledovat přítomnost potenciálně nedůvěryhodných dat.
+Data uživatelů, což je jakýkoli druh vstupu (data z webového požadavku nebo adresy URL, vstup do ovládacích prvků aplikace Microsoft model Windows Forms a tak dále), mohou nepříznivě ovlivňovat kód, protože často se data používají přímo jako parametry pro volání jiného kódu. Tato situace je podobná škodlivému kódu volajícímu kód s neobvyklými parametry a je třeba vzít v nich stejná preventivní opatření. Vstup uživatele je ve skutečnosti těžší, protože není k dispozici žádný rámec zásobníku pro trasování přítomnosti potenciálně nedůvěryhodných dat.
 
-Jedná se o jedny z nejjemnějších a nejtěžších chyb zabezpečení, které lze najít, protože i když mohou existovat v kódu, který zdánlivě nesouvisí se zabezpečením, jsou bránou pro předání chybná data do jiného kódu. Chcete-li hledat tyto chyby, postupujte podle jakéhokoli druhu vstupních dat, představte si, jaký rozsah možných hodnot může být a zvažte, zda kód, který vidí tato data, může zpracovat všechny tyto případy. Tyto chyby můžete opravit kontrolou rozsahu a odmítnutím jakéhokoli vstupu, který kód nemůže zpracovat.
+Tyto chyby jsou z nejtěžších a nejzávažnější chyb zabezpečení, protože mohou existovat v kódu, který je zdánlivě nesouvisející se zabezpečením, jedná se o bránu pro předávání chybných dat do jiného kódu. Pokud chcete vyhledat tyto chyby, použijte libovolný druh vstupních dat, Představte si, co může být rozsah možných hodnot, a zvažte, jestli kód, který tato data zobrazuje, může zpracovat všechny tyto případy. Tyto chyby můžete opravit přes kontrolu rozsahu a odmítnutí jakéhokoli vstupu, který kód nemůže zpracovat.
 
-Některé důležité aspekty týkající se uživatelských dat zahrnují následující:
+Mezi důležité důležité informace týkající se uživatelských dat patří následující:
 
-- Všechna uživatelská data v odpovědi serveru jsou spuštěna v kontextu serveru v klientovi. Pokud webový server přebírá uživatelská data a vkládá je na vrácenou webovou stránku, může například obsahovat ** \<značku skriptu>** a spustit jako by ze serveru.
+- Veškerá uživatelská data v reakci serveru běží v kontextu lokality serveru v klientovi. Pokud váš webový server přebírá data uživatelů a vkládá je do vrácené webové stránky, může například obsahovat **\<script>** značku a spustit jako if ze serveru.
 
-- Nezapomeňte, že klient může požádat o libovolnou adresu URL.
+- Pamatujte, že klient si může vyžádat libovolnou adresu URL.
 
-- Zvažte složité nebo neplatné cesty:
+- Zvažte štych nebo neplatné cesty:
 
-  - .. \ , extrémně dlouhé cesty.
+  - .. \, extrémně dlouhé cesty.
 
   - Použití zástupných znaků (*).
 
-  - Rozšíření tokenu (%token%).
+  - Rozšíření tokenu (% token%)
 
-  - Podivné formy cest se zvláštním významem.
+  - Podivné formy cest se zvláštními významy.
 
-  - Alternativní názvy datových `filename::$DATA`proudů systému souborů, například .
+  - Alternativní názvy datových proudů systému souborů, jako je například `filename::$DATA` .
 
-  - Krátké verze názvů souborů, `longfi~1` `longfilename`například pro .
+  - Krátké verze názvů souborů, například `longfi~1` pro `longfilename` .
 
-- Nezapomeňte, že Eval(userdata) může dělat cokoliv.
+- Mějte na paměti, že Eval (UserData) může dělat cokoli.
 
-- Buďte opatrní pozdní vazby na název, který obsahuje některá uživatelská data.
+- Přistupují opatrně pozdní vazby na název, který obsahuje některá uživatelská data.
 
-- Pokud máte co do činění s webovými daty, zvažte různé formy úniky, které jsou přípustné, včetně:
+- Pokud pracujete s webovými daty, vezměte v úvahu různé formy řídicích znaků, které jsou povolené, včetně:
 
-  - Šestnáctkové úniky (%nn).
+  - Šestnáctkové řídicí znaky (% NN).
 
-  - Unicode unikne (%nnn).
+  - Řídicí znaky Unicode (% NNN).
 
-  - Overlong UTF-8 escapes (%nn%nn).
+  - Nenáročné řídicí sekvence UTF-8 (% NN% NN).
 
-  - Dvojité uniknutí (%nn se stane %mmnn, kde %mm je escape pro %').
+  - Dvojité řídicí znaky (% NN se stávají% mmnn, kde% mm je řídicí znak pro%).
 
-- Buďte opatrní na uživatelská jména, která mohou mít více než jeden kanonický formát. Často můžete například použít formulář\\*uživatelského jména* MYDOMAIN nebo formulář *uživatelského jména.* @mydomain.example.com
+- Přistupují opatrně uživatelských jmen, která mohou mít více než jeden Kanonický formát. Například můžete často použít buď formulář MYDOMAIN \\ *username* , nebo formulář *username* @mydomain.example.com .
 
 ## <a name="see-also"></a>Viz také
 
-- [Pokyny pro zabezpečené kódování](../../../docs/standard/security/secure-coding-guidelines.md)
+- [Pokyny pro zabezpečené kódování](secure-coding-guidelines.md)

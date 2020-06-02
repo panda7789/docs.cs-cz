@@ -16,18 +16,18 @@ helpviewer_keywords:
 - standard numeric format strings
 - formatting numbers [.NET Framework]
 - format specifiers, standard numeric format strings
-ms.openlocfilehash: 93f93574e6a3c24fc03a2cbc6c7d0f11f4fe61f6
-ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
+ms.openlocfilehash: 6b84fc752a7bb37ff64bf6cfa08879aed3f20010
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83440873"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288313"
 ---
 # <a name="standard-numeric-format-strings"></a>Standardní řetězce formátu čísla
 
 Řetězce standardního číselného formátu se používají pro formátování běžných číselných typů. Standardní číselný formátovací řetězec má formu `Axx` , kde:
 
-- `A`je jeden abecední znak nazvaný *specifikátor formátu*. Jakýkoli řetězec číselného formátu, který obsahuje více než jeden abecední znak, včetně prázdných znaků, je interpretován jako řetězec vlastního číselného formátu. Další informace najdete v tématu [vlastní číselné formátovací řetězce](../../../docs/standard/base-types/custom-numeric-format-strings.md).
+- `A`je jeden abecední znak nazvaný *specifikátor formátu*. Jakýkoli řetězec číselného formátu, který obsahuje více než jeden abecední znak, včetně prázdných znaků, je interpretován jako řetězec vlastního číselného formátu. Další informace najdete v tématu [vlastní číselné formátovací řetězce](custom-numeric-format-strings.md).
 
 - `xx`je volitelné celé číslo, které se nazývá *specifikátor přesnosti*. Specifikátor přesnosti má rozsah od 0 do 99 a má vliv na počet číslic ve výsledku. Všimněte si, že specifikátor přesnosti určuje počet číslic v řetězcové reprezentaci čísla. Neprovádí zaokrouhlení samotného čísla. K provedení operace zaokrouhlení použijte <xref:System.Math.Ceiling%2A?displayProperty=nameWithType> <xref:System.Math.Floor%2A?displayProperty=nameWithType> metodu, nebo <xref:System.Math.Round%2A?displayProperty=nameWithType> .
 
@@ -36,13 +36,13 @@ ms.locfileid: "83440873"
   - **V .NET Core 2,1 a novější**modul runtime vybírá výsledek s nejméně významnou číslicí (tj <xref:System.MidpointRounding.ToEven?displayProperty=nameWithType> . pomocí).
 
   > [!NOTE]
-  > Specifikátor přesnosti určuje počet číslic ve výsledném řetězci. Chcete-li doplnit výsledný řetězec pomocí počátečních nebo koncových mezer, použijte funkci [složeného formátování](../../../docs/standard/base-types/composite-formatting.md) a definujte *součást zarovnání* v položce formátu.
+  > Specifikátor přesnosti určuje počet číslic ve výsledném řetězci. Chcete-li doplnit výsledný řetězec pomocí počátečních nebo koncových mezer, použijte funkci [složeného formátování](composite-formatting.md) a definujte *součást zarovnání* v položce formátu.
 
 Standardní řetězce číselného formátu jsou podporovány v:
 
 - Některá přetížení `ToString` metody pro všechny číselné typy. Například můžete do metod a zadávat řetězec číselného formátu <xref:System.Int32.ToString%28System.String%29?displayProperty=nameWithType> <xref:System.Int32.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> .
 
-- [Funkce složeného formátování](../../../docs/standard/base-types/composite-formatting.md)rozhraní .NET, která je používána některými `Write` `WriteLine` metodami <xref:System.Console> a třídy a <xref:System.IO.StreamWriter> , metodou a <xref:System.String.Format%2A?displayProperty=nameWithType> <xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType> metodou. Funkce složeného formátu umožňuje zahrnout řetězcové vyjádření více datových položek do jednoho řetězce, zadat šířku pole a zarovnat čísla v poli. Další informace najdete v tématu [složené formátování](../../../docs/standard/base-types/composite-formatting.md).
+- [Funkce složeného formátování](composite-formatting.md)rozhraní .NET, která je používána některými `Write` `WriteLine` metodami <xref:System.Console> a třídy a <xref:System.IO.StreamWriter> , metodou a <xref:System.String.Format%2A?displayProperty=nameWithType> <xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType> metodou. Funkce složeného formátu umožňuje zahrnout řetězcové vyjádření více datových položek do jednoho řetězce, zadat šířku pole a zarovnat čísla v poli. Další informace najdete v tématu [složené formátování](composite-formatting.md).
 
 - [Interpolované řetězce](../../csharp/language-reference/tokens/interpolated.md) v jazyce C# a Visual Basic, které poskytují zjednodušenou syntaxi ve srovnání s řetězci složeného formátu.
 
@@ -78,7 +78,7 @@ Standardní řetězce číselného formátu jsou podporovány v:
   [!code-csharp-interactive[Formatting.Numeric.Standard#10](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/standardusage1.cs#10)]
   [!code-vb[Formatting.Numeric.Standard#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Numeric.Standard/vb/standardusage1.vb#10)]
 
-- Dá se zadat jako `formatString` argument v položce formátu používané s těmito metodami jako <xref:System.String.Format%2A?displayProperty=nameWithType> , <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> a <xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType> . Další informace najdete v tématu [složené formátování](../../../docs/standard/base-types/composite-formatting.md). Následující příklad používá položku formátu pro vložení hodnoty měny do řetězce.
+- Dá se zadat jako `formatString` argument v položce formátu používané s těmito metodami jako <xref:System.String.Format%2A?displayProperty=nameWithType> , <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> a <xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType> . Další informace najdete v tématu [složené formátování](composite-formatting.md). Následující příklad používá položku formátu pro vložení hodnoty měny do řetězce.
 
   [!code-cpp[Formatting.Numeric.Standard#11](../../../samples/snippets/cpp/VS_Snippets_CLR/Formatting.Numeric.Standard/cpp/standardusage1.cpp#11)]
   [!code-csharp-interactive[Formatting.Numeric.Standard#11](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/standardusage1.cs#11)]
@@ -384,9 +384,9 @@ Následující příklad formátuje číselnou integrální hodnotu a hodnotu s 
 ## <a name="see-also"></a>Viz také
 
 - <xref:System.Globalization.NumberFormatInfo>
-- [Vlastní řetězce číselného formátu](../../../docs/standard/base-types/custom-numeric-format-strings.md)
-- [Typy formátování](../../../docs/standard/base-types/formatting-types.md)
-- [Postupy: Vyplnění čísla úvodními nulami](../../../docs/standard/base-types/how-to-pad-a-number-with-leading-zeros.md)
-- [Složené formátování](../../../docs/standard/base-types/composite-formatting.md)
+- [Vlastní řetězce číselného formátu](custom-numeric-format-strings.md)
+- [Typy formátování](formatting-types.md)
+- [Postupy: Vyplnění čísla úvodními nulami](how-to-pad-a-number-with-leading-zeros.md)
+- [Složené formátování](composite-formatting.md)
 - [Ukázka: nástroj formátování WinForms pro .NET Core (C#)](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-cs)
 - [Ukázka: nástroj formátování WinForms pro .NET Core (Visual Basic)](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-vb)

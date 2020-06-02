@@ -8,30 +8,30 @@ dev_langs:
 helpviewer_keywords:
 - PLINQ queries, how to use execution mode
 ms.assetid: e52ff26c-c5d3-4fab-9fec-c937fb387963
-ms.openlocfilehash: f035dbcd5091d81a3cce3b9e9e683d836fe84bb7
-ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
+ms.openlocfilehash: 39ccde003b60ac9cbcff7ab824103a9cf37cc453
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80635811"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288092"
 ---
 # <a name="how-to-specify-the-execution-mode-in-plinq"></a>Postupy: Určení režimu spouštění v PLINQ
 
-Tento příklad ukazuje, jak vynutit PLINQ obejít jeho výchozí heuristiky a paralelizovat dotaz bez ohledu na tvar dotazu.  
+Tento příklad ukazuje, jak vynutit, aby PLINQ vynechal výchozí heuristické a paralelizovat dotaz bez ohledu na tvar dotazu.  
   
 > [!NOTE]
-> Tento příklad je určen k předvedení využití a nemusí běžet rychleji než ekvivalentní sekvenční LINQ na objekty dotazu. Další informace o zrychlení naleznete v [tématu Principy zrychlení v PLINQ](../../../docs/standard/parallel-programming/understanding-speedup-in-plinq.md).  
+> Tento příklad je určený k předvedení používání a nemusí běžet rychleji než ekvivalentní sekvenční LINQ to Objects dotaz. Další informace o zrychlení naleznete v tématu [Principy zrychlení v PLINQ](understanding-speedup-in-plinq.md).  
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[PLINQ#22](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/plinqsamples.cs#22)]
  [!code-vb[PLINQ#22](../../../samples/snippets/visualbasic/VS_Snippets_Misc/plinq/vb/plinqsnippets1.vb#22)]  
   
- PLINQ je navržen tak, aby využíval příležitostí pro paralelizaci. Však ne všechny dotazy těžit z paralelního provádění. Například pokud dotaz obsahuje delegáta jednoho uživatele, který dělá málo práce, dotaz obvykle běží rychleji postupně. Sekvenční spuštění je rychlejší, protože režie, která se podílí na povolení paralelního spuštění, je dražší než získané zrychlení. Proto PLINQ není automaticky paralelizovat každý dotaz. Nejprve zkoumá tvar dotazu a různé operátory, které jej tvoří. Na základě této analýzy PLINQ ve výchozím režimu spuštění se může rozhodnout provést některé nebo všechny dotazu postupně. V některých případech však můžete vědět více o dotazu než PLINQ je schopen určit z jeho analýzy. Například můžete vědět, že delegát je nákladné a že dotaz bude určitě těžit z paralelizace. V takových případech můžete <xref:System.Linq.ParallelEnumerable.WithExecutionMode%2A> použít metodu <xref:System.Linq.ParallelExecutionMode.ForceParallelism> a zadat hodnotu pokyn PLINQ vždy spustit dotaz jako paralelní.  
+ PLINQ je navržený tak, aby využil příležitostí k paralelnímu využití. Ale ne všechny dotazy využívají paralelní provádění. Pokud například dotaz obsahuje delegáta s jedním uživatelem, který je malý, bude dotaz většinou spouštěn rychleji. Sekvenční provádění je rychlejší, protože režie spojená s povolením provádění virtuálního je dražší než získaná zrychlení. Proto PLINQ automaticky paralelizovat každý dotaz. Nejprve prověřuje tvar dotazu a různé operátory, které jej tvoří. V závislosti na této analýze se PLINQ ve výchozím režimu spuštění může rozhodnout spustit některý nebo celý dotaz sekvenčně. V některých případech však můžete o dotazu zjistit více, než je PLINQ schopný určit z jeho analýzy. Například můžete zjistit, že delegát je nákladný a že dotaz bude mít jedinečnou výhodu od paralelismu. V takových případech můžete použít <xref:System.Linq.ParallelEnumerable.WithExecutionMode%2A> metodu a zadat <xref:System.Linq.ParallelExecutionMode.ForceParallelism> hodnotu, která dává pokyn pro PLINQ, aby dotaz vždy spouštěl paralelně.  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Vyjmout a vložit tento kód do [ukázky dat PLINQ](../../../docs/standard/parallel-programming/plinq-data-sample.md) a volání metody z `Main`.  
+ Vyjměte a vložte tento kód do [ukázky dat pro PLINQ](plinq-data-sample.md) a zavolejte metodu z `Main` .  
   
 ## <a name="see-also"></a>Viz také
 
 - <xref:System.Linq.ParallelEnumerable.AsSequential%2A>
-- [Paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/introduction-to-plinq.md)
+- [Paralelní LINQ (PLINQ)](introduction-to-plinq.md)

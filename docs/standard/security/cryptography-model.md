@@ -6,12 +6,12 @@ helpviewer_keywords:
 - cryptography [.NET Framework], model
 - encryption [.NET Framework], model
 ms.assetid: 12fecad4-fbab-432a-bade-2f05976a2971
-ms.openlocfilehash: f878f73497b83aaf31f2ba3b23cca1f685867b3e
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: c2d28abacd34736764b69be750a850a0f2e8db85
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77095265"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288378"
 ---
 # <a name="net-framework-cryptography-model"></a>Kryptografický model rozhraní .NET framework
 
@@ -21,17 +21,17 @@ ms.locfileid: "77095265"
 
 Systém zabezpečení .NET Framework implementuje rozšiřitelný vzor dědičnosti odvozené třídy. Hierarchie je následující:
 
-- Třída typu algoritmu, například <xref:System.Security.Cryptography.SymmetricAlgorithm>, <xref:System.Security.Cryptography.AsymmetricAlgorithm> nebo <xref:System.Security.Cryptography.HashAlgorithm>. Tato úroveň je abstraktní.
+- Třída typu algoritmu, například <xref:System.Security.Cryptography.SymmetricAlgorithm> <xref:System.Security.Cryptography.AsymmetricAlgorithm> nebo <xref:System.Security.Cryptography.HashAlgorithm> . Tato úroveň je abstraktní.
 
-- Třída algoritmu, která dědí z třídy typu algoritmu; například <xref:System.Security.Cryptography.Aes>, <xref:System.Security.Cryptography.RC2>nebo <xref:System.Security.Cryptography.ECDiffieHellman>. Tato úroveň je abstraktní.
+- Třída algoritmu, která dědí z třídy typu algoritmu; Například,, <xref:System.Security.Cryptography.Aes> <xref:System.Security.Cryptography.RC2> nebo <xref:System.Security.Cryptography.ECDiffieHellman> . Tato úroveň je abstraktní.
 
-- Implementace třídy algoritmu, která dědí z třídy algoritmu; například <xref:System.Security.Cryptography.AesManaged>, <xref:System.Security.Cryptography.RC2CryptoServiceProvider>nebo <xref:System.Security.Cryptography.ECDiffieHellmanCng>. Tato úroveň je plně implementovaná.
+- Implementace třídy algoritmu, která dědí z třídy algoritmu; Například,, <xref:System.Security.Cryptography.AesManaged> <xref:System.Security.Cryptography.RC2CryptoServiceProvider> nebo <xref:System.Security.Cryptography.ECDiffieHellmanCng> . Tato úroveň je plně implementovaná.
 
-Pomocí tohoto modelu odvozených tříd lze snadno přidat nový algoritmus nebo novou implementaci stávajícího algoritmu. Například pro vytvoření nového algoritmu veřejného klíče byste dědili z třídy <xref:System.Security.Cryptography.AsymmetricAlgorithm>. Chcete-li vytvořit novou implementaci konkrétního algoritmu, je třeba vytvořit neabstraktní odvozenou třídu tohoto algoritmu.
+Pomocí tohoto modelu odvozených tříd lze snadno přidat nový algoritmus nebo novou implementaci stávajícího algoritmu. Například pro vytvoření nového algoritmu veřejného klíče byste měli dědit z <xref:System.Security.Cryptography.AsymmetricAlgorithm> třídy. Chcete-li vytvořit novou implementaci konkrétního algoritmu, je třeba vytvořit neabstraktní odvozenou třídu tohoto algoritmu.
 
 ## <a name="how-algorithms-are-implemented-in-the-net-framework"></a>Jak jsou implementovány algoritmy v .NET Framework
 
-Jako příklad různých implementací dostupných pro algoritmus zvažte symetrické algoritmy. Základem všech symetrických algoritmů je <xref:System.Security.Cryptography.SymmetricAlgorithm>, které jsou zděděny následujícími algoritmy:
+Jako příklad různých implementací dostupných pro algoritmus zvažte symetrické algoritmy. Základem všech symetrických algoritmů je <xref:System.Security.Cryptography.SymmetricAlgorithm> , který dědí následující algoritmy:
 
 * <xref:System.Security.Cryptography.Aes>
 * <xref:System.Security.Cryptography.DES>
@@ -39,17 +39,17 @@ Jako příklad různých implementací dostupných pro algoritmus zvažte symetr
 * <xref:System.Security.Cryptography.Rijndael>
 * <xref:System.Security.Cryptography.TripleDES>
 
-<xref:System.Security.Cryptography.Aes> dědí dvě třídy: <xref:System.Security.Cryptography.AesCryptoServiceProvider> a <xref:System.Security.Cryptography.AesManaged>. Třída <xref:System.Security.Cryptography.AesCryptoServiceProvider> je Obálka kolem implementace rozhraní Windows Cryptography API (CAPI) pro AES, zatímco třída <xref:System.Security.Cryptography.AesManaged> je zapsána výhradně ve spravovaném kódu. Kromě implementace spravovaného rozhraní CAPI existuje také třetí typ implementace, kryptografická generace (CNG). Příkladem algoritmu CNG je <xref:System.Security.Cryptography.ECDiffieHellmanCng>. Algoritmy CNG jsou k dispozici v systému Windows Vista a novějších.
+<xref:System.Security.Cryptography.Aes>je zděděno dvěma třídami: <xref:System.Security.Cryptography.AesCryptoServiceProvider> a <xref:System.Security.Cryptography.AesManaged> . <xref:System.Security.Cryptography.AesCryptoServiceProvider>Třída je Obálka kolem implementace rozhraní Windows Cryptography API (CAPI) pro AES, zatímco <xref:System.Security.Cryptography.AesManaged> Třída je zapsána výhradně ve spravovaném kódu. Kromě implementace spravovaného rozhraní CAPI existuje také třetí typ implementace, kryptografická generace (CNG). Příkladem algoritmu CNG je <xref:System.Security.Cryptography.ECDiffieHellmanCng> . Algoritmy CNG jsou k dispozici v systému Windows Vista a novějších.
 
 Můžete zvolit, která implementace je pro vás nejvhodnější. Spravované implementace jsou k dispozici na všech platformách, které podporují .NET Framework. Implementace rozhraní CAPI jsou k dispozici ve starších operačních systémech a již nejsou vyvíjeny. CNG je nejnovější implementace, při které bude provedeno nové nasazení. Spravované implementace však nejsou certifikovány standardy FIPS (Federal Information Processing Standards) a mohou být nižší než obálkové třídy.
 
 ## <a name="stream-design"></a>Návrh streamu
 
-Modul common language runtime používá pro implementaci symetrických algoritmů a algoritmů hash návrh orientovaný na proud. Základem tohoto návrhu je <xref:System.Security.Cryptography.CryptoStream> třída, která je odvozena od <xref:System.IO.Stream> třídy. Kryptografické objekty založené na datových proudech podporují jedno standardní rozhraní (`CryptoStream`) pro zpracování části přenosu dat objektu. Vzhledem k tomu, že všechny objekty jsou postaveny na standardním rozhraní, můžete zřetězit více objektů (například objekt hash následovaný objektem šifrování) a můžete provádět více operací s daty, aniž byste pro ně potřebovali jakékoli zprostředkující úložiště. Model streamování také umožňuje vytvářet objekty z menších objektů. Například kombinované šifrování a algoritmus hash lze zobrazit jako jeden objekt datového proudu, i když tento objekt může být sestaven ze sady objektů datového proudu.
+Modul common language runtime používá pro implementaci symetrických algoritmů a algoritmů hash návrh orientovaný na proud. Základem tohoto návrhu je <xref:System.Security.Cryptography.CryptoStream> třída, která je odvozena od <xref:System.IO.Stream> třídy. Kryptografické objekty založené na datových proudech podporují jedno standardní rozhraní ( `CryptoStream` ) pro zpracování části přenosu dat objektu. Vzhledem k tomu, že všechny objekty jsou postaveny na standardním rozhraní, můžete zřetězit více objektů (například objekt hash následovaný objektem šifrování) a můžete provádět více operací s daty, aniž byste pro ně potřebovali jakékoli zprostředkující úložiště. Model streamování také umožňuje vytvářet objekty z menších objektů. Například kombinované šifrování a algoritmus hash lze zobrazit jako jeden objekt datového proudu, i když tento objekt může být sestaven ze sady objektů datového proudu.
 
 ## <a name="cryptographic-configuration"></a>Konfigurace kryptografie
 
-Kryptografická konfigurace umožňuje vyřešit konkrétní implementaci algoritmu pro název algoritmu a umožňuje rozšiřitelnost .NET Frameworkch kryptografických tříd. Můžete přidat vlastní hardware nebo softwarovou implementaci algoritmu a namapovat implementaci na název algoritmu podle vašeho výběru. Pokud v konfiguračním souboru není zadaný algoritmus, použijí se výchozí nastavení. Další informace o konfiguraci kryptografie naleznete v tématu [Configuring Cryptography Classes](../../../docs/framework/configure-apps/configure-cryptography-classes.md).
+Kryptografická konfigurace umožňuje vyřešit konkrétní implementaci algoritmu pro název algoritmu a umožňuje rozšiřitelnost .NET Frameworkch kryptografických tříd. Můžete přidat vlastní hardware nebo softwarovou implementaci algoritmu a namapovat implementaci na název algoritmu podle vašeho výběru. Pokud v konfiguračním souboru není zadaný algoritmus, použijí se výchozí nastavení. Další informace o konfiguraci kryptografie naleznete v tématu [Configuring Cryptography Classes](../../framework/configure-apps/configure-cryptography-classes.md).
 
 ## <a name="choosing-an-algorithm"></a>Výběr algoritmu
 
@@ -75,5 +75,5 @@ Tady je seznam doporučených algoritmů podle aplikace:
 
 ## <a name="see-also"></a>Viz také
 
-- [Kryptografické služby](../../../docs/standard/security/cryptographic-services.md)
+- [Kryptografické služby](cryptographic-services.md)
 - [Použití kryptografických protokolů, algoritmů a zdrojového kódu v C, Bruce Schneier](https://www.schneier.com/books/applied_cryptography/)

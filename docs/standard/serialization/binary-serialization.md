@@ -11,12 +11,12 @@ helpviewer_keywords:
 - serialization, cross-framework
 ms.assetid: 2b1ea3be-1152-4032-b2b3-07794054c405
 author: ViktorHofer
-ms.openlocfilehash: 4ed76437b743da842d6ba07d29fe7985f824abf0
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: c735d30920fd3c8cd13243b4a5a29489ce05b262
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83421277"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289691"
 ---
 # <a name="binary-serialization"></a>Binární serializace
 
@@ -344,10 +344,10 @@ Binární serializace umožňuje upravovat soukromé členy uvnitř objektu, a p
 - <xref:System.Runtime.Serialization>\
 Obsahuje třídy, které lze použít pro serializaci a deserializaci objektů.
 
-- [Serializace XML a SOAP](../../../docs/standard/serialization/xml-and-soap-serialization.md)\
+- [Serializace XML a SOAP](xml-and-soap-serialization.md)\
 Popisuje mechanismus serializace XML, který je součástí common language runtime.
 
-- [Zabezpečení a serializace](../../../docs/framework/misc/security-and-serialization.md)\
+- [Zabezpečení a serializace](../../framework/misc/security-and-serialization.md)\
 Popisuje zabezpečené kódování zásady dodržovat při psaní kódu, který provede serializaci.
 
 - [Vzdálená komunikace .NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/72x4h507(v=vs.100))\

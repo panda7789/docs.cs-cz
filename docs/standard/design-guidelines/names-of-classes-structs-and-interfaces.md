@@ -13,12 +13,12 @@ helpviewer_keywords:
 - interfaces [.NET Framework], names
 - generic type parameters
 ms.assetid: 87a4b0da-ed64-43b1-ac43-968576c444ce
-ms.openlocfilehash: e7eee414c5bf5c69f63543ef240e50a4d2d948a3
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: b9de9329cc8e1bfc47a46523c7119bb3b2c244d8
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83419080"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290211"
 ---
 # <a name="names-of-classes-structs-and-interfaces"></a>Názvy tříd, struktur a rozhraní
 Pokyny pro pojmenování, které následují, se týkají obecného typu pojmenování.
@@ -102,5 +102,5 @@ public interface ISessionChannel<TSession> where TSession : ISession {
 
 ## <a name="see-also"></a>Viz také
 
-- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)
-- [Pokyny pro pojmenování](../../../docs/standard/design-guidelines/naming-guidelines.md)
+- [Pokyny k návrhu architektury](index.md)
+- [Pokyny pro pojmenování](naming-guidelines.md)

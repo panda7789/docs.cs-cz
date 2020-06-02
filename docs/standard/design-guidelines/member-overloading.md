@@ -9,15 +9,15 @@ helpviewer_keywords:
 - overloaded members
 - signatures, members
 ms.assetid: 964ba19e-8b94-4b5b-b1e3-5a0b531a0bb1
-ms.openlocfilehash: c9cb178e838aab99c22089b527a6bd2e86b325de
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 6a2cd6d4dd293a7f4a408e1ee97a125c9454be41
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76727837"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289002"
 ---
 # <a name="member-overloading"></a>Přetížení člena
-Přetížení členů znamená vytvoření dvou nebo více členů na stejném typu, které se liší pouze počtem nebo typem parametrů, ale mají stejný název. Například v následujícím příkladu je přetížená metoda `WriteLine`:
+Přetížení členů znamená vytvoření dvou nebo více členů na stejném typu, které se liší pouze počtem nebo typem parametrů, ale mají stejný název. Například v následujícím příkladu `WriteLine` je metoda přetížena:
 
 ```csharp
 public static class Console {
@@ -34,19 +34,19 @@ public static class Console {
 
  ✔️ se pokuste použít názvy popisných parametrů k označení výchozí hodnoty používané kratšími přetíženími.
 
- ❌ v případě přetížení vyhnout proměnlivým názvům parametrů. Pokud parametr v jednom přetížení představuje stejný vstup jako parametr v jiném přetížení, musí mít parametry stejný název.
+ ❌Vyhněte se svévolnému proměnlivosti názvů parametrů v přetíženích. Pokud parametr v jednom přetížení představuje stejný vstup jako parametr v jiném přetížení, musí mít parametry stejný název.
 
- ❌ vyhnout nekonzistenci v pořadí parametrů v přetížených členech. Parametry se stejným názvem by měly být ve všech přetíženích ve stejné pozici.
+ ❌Vyhněte se nekonzistenci v pořadí parametrů v přetížených členech. Parametry se stejným názvem by měly být ve všech přetíženích ve stejné pozici.
 
  ✔️ UDĚLAT jenom nejdelší přetížený virtuální (Pokud se vyžaduje rozšiřitelnost). Kratší přetížení by se měla jednoduše volat na delší přetížení.
 
- ❌ nepoužívejte `ref` nebo `out` modifikátory pro přetížení členů.
+ ❌Nepoužívejte `ref` ani `out` modifikátory k přetížení členů.
 
  Některé jazyky nemůžou vyřešit volání přetížení, jako je to. Kromě toho taková přetížení obvykle mají zcela jinou sémantiku a pravděpodobně by neměla být přetížení, ale dvě samostatné metody.
 
- ❌ neobsahují přetížení s parametry na stejné pozici a podobných typech ještě s různou sémantikou.
+ ❌Nepoužívejte přetížení s parametry na stejné pozici a podobných typech ještě s různou sémantikou.
 
- ✔️ povolit, aby se `null` předala pro volitelné argumenty.
+ ✔️ je možné `null` předat pro volitelné argumenty.
 
  ✔️ použít přetížení členů namísto definování členů s výchozími argumenty.
 
@@ -58,5 +58,5 @@ public static class Console {
 
 ## <a name="see-also"></a>Viz také
 
-- [Pokyny k návrhu člena](../../../docs/standard/design-guidelines/member.md)
-- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)
+- [Pokyny pro návrh členů](member.md)
+- [Pokyny k návrhu architektury](index.md)

@@ -11,20 +11,20 @@ helpviewer_keywords:
 - Creating GenericPrincipal Objects
 - GenericIdentity Objects
 ms.assetid: 465694cf-258b-4747-9dae-35b01a5bcdbb
-ms.openlocfilehash: 546b4d20f7b6b7a8c448f704fefd9a39b3ebd1d7
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 10a71185db3359cda1c3bf7a12f5698929c98296
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75706146"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290860"
 ---
 # <a name="how-to-create-genericprincipal-and-genericidentity-objects"></a>Postupy: Vytváření objektů GenericPrincipal a GenericIdentity
 
-Třídu <xref:System.Security.Principal.GenericIdentity> lze použít ve spojení s třídou <xref:System.Security.Principal.GenericPrincipal> k vytvoření autorizačního schématu, které existuje nezávisle na doméně systému Windows.
+<xref:System.Security.Principal.GenericIdentity>Třídu můžete ve spojení s <xref:System.Security.Principal.GenericPrincipal> třídou použít k vytvoření autorizačního schématu, které existuje nezávisle na doméně systému Windows.
 
 ### <a name="to-create-a-genericprincipal-object"></a>Vytvoření objektu GenericPrincipal
 
-1. Vytvořte novou instanci třídy identity a inicializujte ji s názvem, který má být uchováván. Následující kód vytvoří nový objekt **GenericIdentity** a inicializuje jej s názvem `MyUser`.
+1. Vytvořte novou instanci třídy identity a inicializujte ji s názvem, který má být uchováván. Následující kód vytvoří nový objekt **GenericIdentity** a inicializuje jej s názvem `MyUser` .
 
     ```vb
     Dim myIdentity As New GenericIdentity("MyUser")
@@ -46,7 +46,7 @@ Třídu <xref:System.Security.Principal.GenericIdentity> lze použít ve spojen�
     GenericPrincipal myPrincipal = new GenericPrincipal(myIdentity, myStringArray);
     ```
 
-3. Použijte následující kód k připojení objektu zabezpečení k aktuálnímu vláknu. To je užitečné v situacích, kdy je nutné ověřit objekt zabezpečení několikrát, musí být ověřen jiným kódem spuštěným v aplikaci nebo musí být ověřen objektem <xref:System.Security.Permissions.PrincipalPermission>. Můžete i nadále provádět ověřování na základě rolí u objektu zabezpečení bez jeho připojení ke vláknu. Další informace naleznete v tématu [nahrazování objektu zabezpečení](../../../docs/standard/security/replacing-a-principal-object.md).
+3. Použijte následující kód k připojení objektu zabezpečení k aktuálnímu vláknu. To je užitečné v situacích, kdy je nutné ověřit objekt zabezpečení několikrát, musí být ověřen jiným kódem spuštěným ve vaší aplikaci nebo musí být ověřen <xref:System.Security.Permissions.PrincipalPermission> objektem. Můžete i nadále provádět ověřování na základě rolí u objektu zabezpečení bez jeho připojení ke vláknu. Další informace naleznete v tématu [nahrazování objektu zabezpečení](replacing-a-principal-object.md).
 
     ```vb
     Thread.CurrentPrincipal = myPrincipal
@@ -139,10 +139,10 @@ The IsAuthenticated is: True
 Is this a Manager? True
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Security.Principal.GenericIdentity>
 - <xref:System.Security.Principal.GenericPrincipal>
 - <xref:System.Security.Permissions.PrincipalPermission>
-- [Nahrazení objektu zabezpečení](../../../docs/standard/security/replacing-a-principal-object.md)
-- [Objekty zabezpečení a identity](../../../docs/standard/security/principal-and-identity-objects.md)
+- [Nahrazení objektu zabezpečení](replacing-a-principal-object.md)
+- [Objekty zabezpečení a identity](principal-and-identity-objects.md)

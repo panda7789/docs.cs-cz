@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Zarovnání čísla úvodními nulami'
+title: 'Postupy: Vyplnění čísla úvodními nulami'
 ms.date: 02/25/2019
 ms.technology: dotnet-standard
 dev_langs:
@@ -11,97 +11,97 @@ helpviewer_keywords:
 - number formatting [.NET Framework]
 - numbers [.NET Framework], format strings
 ms.assetid: 0b2c2cb5-c580-4891-8d81-cb632f5ec384
-ms.openlocfilehash: bc3c4b75c484274c214141d8fbfcf8ac592b0b99
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ef18fb1bb7b1592a4e92866028868bf1cf793bbf
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73131979"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290458"
 ---
-# <a name="how-to-pad-a-number-with-leading-zeros"></a>Postupy: Zarovnání čísla úvodními nulami
+# <a name="how-to-pad-a-number-with-leading-zeros"></a>Postupy: Vyplnění čísla úvodními nulami
 
-Počáteční nuly můžete přidat k celé číslo pomocí [standardního číselného formátovacího řetězce](../../../docs/standard/base-types/standard-numeric-format-strings.md) "D" s specifikátorem přesnosti. Počáteční nuly můžete přidat k číslům celého čísla i čísla s plovoucí desetinnou desetinnou hodnotou pomocí [vlastního číselného formátovacího řetězce](../../../docs/standard/base-types/custom-numeric-format-strings.md). Tento článek ukazuje, jak používat obě metody k vyložce číslo s úvodními nulami.
+Můžete přidat počáteční nuly k celému číslu pomocí [standardního číselného formátovacího řetězce](standard-numeric-format-strings.md) "D" se specifikátorem přesnosti. Pomocí [vlastního řetězce číselného formátu](custom-numeric-format-strings.md)lze přidat úvodní nuly k číslům Integer i s plovoucí desetinnou čárkou. Tento článek ukazuje, jak použít obě metody k vyplnění čísla počátečními nulami.
 
-## <a name="to-pad-an-integer-with-leading-zeros-to-a-specific-length"></a>Vytvoření celého čísla s počátečními nulami na určitou délku
+## <a name="to-pad-an-integer-with-leading-zeros-to-a-specific-length"></a>Vyplnění celého čísla počátečními nulami na určitou délku
 
-1. Určete minimální počet číslic, které chcete zobrazit v celé řadové hodnotě. Do tohoto čísla uveďte všechny úvodní číslice.
+1. Určete minimální počet číslic, které mají být zobrazeny v celočíselné hodnotě. V tomto čísle uveďte všechny úvodní číslice.
 
-1. Určete, zda chcete zobrazit celé číslo jako desetinnou hodnotu nebo šestnáctkovou hodnotu.
+1. Určete, zda chcete zobrazit celé číslo jako desítkovou hodnotu nebo hexadecimální hodnotu.
 
-    - Chcete-li zobrazit celé číslo jako desítkovou `ToString(String)` hodnotu, zavolejte jeho metodu a `format` předejte řetězec "D*n*" jako hodnotu parametru, kde *n* představuje minimální délku řetězce.
+    - Chcete-li zobrazit celé číslo jako desítkovou hodnotu, zavolejte svou `ToString(String)` metodu a předejte řetězec "D*n*" jako hodnotu `format` parametru, kde *n* představuje minimální délku řetězce.
 
-    - Chcete-li zobrazit celé číslo jako šestnáctkovou hodnotu, zavolejte její `ToString(String)` metodu a předejte řetězec "X*n*" jako hodnotu parametru format, kde *n* představuje minimální délku řetězce.
+    - Chcete-li zobrazit celé číslo jako šestnáctkovou hodnotu, zavolejte svou `ToString(String)` metodu a předejte řetězec "X*n*" jako hodnotu parametru Format, kde *n* představuje minimální délku řetězce.
 
-Formátovací řetězec můžete také použít v interpolovaném řetězci v [jazyce C#](../../csharp/language-reference/tokens/interpolated.md) i <xref:System.String.Format%2A?displayProperty=nameWithType> [jazyce Visual Basic](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md)nebo můžete volat metodu, například nebo <xref:System.Console.WriteLine%2A?displayProperty=nameWithType>, která používá složené [formátování](../../../docs/standard/base-types/composite-formatting.md).
+Řetězec formátu lze použít také v řetězci v [jazyce C#](../../csharp/language-reference/tokens/interpolated.md) i [Visual Basic](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md), nebo můžete zavolat metodu, například <xref:System.String.Format%2A?displayProperty=nameWithType> nebo <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> , která používá [složené formátování](composite-formatting.md).
 
-Následující příklad zformátuje několik vícečíselných hodnot s počátečními nulami tak, aby celková délka formátovaného čísla byla alespoň osm znaků.
+Následující příklad formátuje několik celočíselných hodnot s počátečními nulami tak, aby celková délka formátovaného čísla byla alespoň osm znaků.
 
 [!code-csharp[Formatting.HowTo.PadNumber#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.PadNumber/cs/Pad1.cs#1)]
 [!code-vb[Formatting.HowTo.PadNumber#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.PadNumber/vb/Pad1.vb#1)]
 
-## <a name="to-pad-an-integer-with-a-specific-number-of-leading-zeros"></a>Vytvoření celého čísla s určitým počtem počátečních nul
+## <a name="to-pad-an-integer-with-a-specific-number-of-leading-zeros"></a>Chcete-li doplnit celé číslo s určitým počtem počátečních nul
 
-1. Určete, kolik počátečních nul se má celá hodnota zobrazit.
+1. Určete, kolik počátečních nul má být celočíselná hodnota zobrazena.
 
-1. Určete, zda chcete zobrazit celé číslo jako desetinnou hodnotu nebo šestnáctkovou hodnotu.
+1. Určete, zda chcete zobrazit celé číslo jako desítkovou hodnotu nebo hexadecimální hodnotu.
 
-    - Formátování jako desetinné hodnoty vyžaduje použití standardního specifikátoru formátu D.
+    - Formátování jako Desítková hodnota vyžaduje použití specifikátoru standardního formátu "D".
 
-    - Formátování jako šestnáctkové hodnoty vyžaduje použití standardního specifikátoru formátu "X".
+    - Formátování jako hexadecimální hodnota vyžaduje použití specifikátoru standardního formátu "X".
 
-1. Určete délku nepolstrovaného číselného řetězce voláním `ToString("D").Length` `ToString("X").Length` celé hodnoty nebo metody.
+1. Určete délku nedoplněného číselného řetězce voláním celočíselné hodnoty `ToString("D").Length` nebo `ToString("X").Length` metody.
 
-1. Přidejte počet počátečních nul, které chcete zahrnout do formátovaného řetězce, na délku nepolstrovaného číselného řetězce. Přidáním počtu úvodních nul definujete celkovou délku polstrovaného řetězce.
+1. Přidejte počet počátečních nul, které chcete zahrnout do formátovaného řetězce, na délku nedoplněného číselného řetězce. Přidání počtu počátečních nul definuje celkovou délku čalouněného řetězce.
 
-1. Volat `ToString(String)` metodu hodnota celé číslo a předat řetězec "D*n*" pro desetinné řetězce a "X*n*" pro šestnáctkové řetězce, kde *n* představuje celkovou délku polstrovanéřetězce. Můžete také použít formátovací řetězec "D*n*" nebo "X*n*" v metodě, která podporuje složené formátování.
+1. Zavolejte metodu celočíselné hodnoty `ToString(String)` a předejte řetězec "D*n*" pro desítkové řetězce a "X*n*" pro šestnáctkové řetězce, kde *n* představuje celkovou délku čalouněného řetězce. Můžete také použít formátovací řetězec "D*n*" nebo "X*n*" v metodě, která podporuje složené formátování.
 
-Následující příklad vycpává hodnotu celéčíslo s pěti počátečními nulami.
+V následujícím příkladu je celočíselná hodnota s pěti počátečními nulami.
 
 [!code-csharp[Formatting.HowTo.PadNumber#2](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.PadNumber/cs/Pad1.cs#2)]
 [!code-vb[Formatting.HowTo.PadNumber#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.PadNumber/vb/Pad1.vb#2)]
 
-## <a name="to-pad-a-numeric-value-with-leading-zeros-to-a-specific-length"></a>Vyřadit číselnou hodnotu s počátečními nulami na určitou délku
+## <a name="to-pad-a-numeric-value-with-leading-zeros-to-a-specific-length"></a>Vyplnění číselné hodnoty počátečními nulami na určitou délku
 
-1. Určete, kolik číslic nalevo od desetinného místa chcete mít řetězcovou reprezentaci čísla. Do tohoto celkového počtu číslic zahrňte všechny počáteční nuly.
+1. Určete, kolik číslic nalevo od desetinné čárky má mít řetězcové vyjádření čísla. V tomto celkovém počtu číslic uveďte všechny úvodní nuly.
 
-1. Definujte vlastní číselný formátovací řetězec, který používá nulový zástupný symbol "0" k reprezentaci minimálního počtu nul.
+1. Definujte vlastní řetězec číselného formátu, který používá nulový zástupný symbol "0" k vyjádření minimálního počtu nul.
 
-1. Zavolejte `ToString(String)` metodu čísla a předejte mu vlastní formátovací řetězec. Můžete také použít vlastní formátovací řetězec s interpolací řetězců nebo s metodou, která podporuje složené formátování.
+1. Zavolejte `ToString(String)` metodu Number a předejte jí vlastní formátovací řetězec. Můžete také použít vlastní řetězec formátu s interpolací řetězce nebo metodou, která podporuje složené formátování.
 
-Následující příklad formátuje několik číselných hodnot s úvodními nulami. V důsledku toho je celková délka formátovaného čísla nejméně osm číslic nalevo od desetinného místa.
+Následující příklad formátuje několik číselných hodnot s počátečními nulami. V důsledku toho je celková délka formátovaného čísla aspoň osm číslic nalevo od desetinné čárky.
 
 [!code-csharp[Formatting.HowTo.PadNumber#3](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.PadNumber/cs/Pad1.cs#3)]
 [!code-vb[Formatting.HowTo.PadNumber#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.PadNumber/vb/Pad1.vb#3)]
 
-## <a name="to-pad-a-numeric-value-with-a-specific-number-of-leading-zeros"></a>Vytvoření číselné hodnoty s určitým počtem počátečních nul
+## <a name="to-pad-a-numeric-value-with-a-specific-number-of-leading-zeros"></a>Vyplnění číselné hodnoty určitým počtem počátečních nul
 
-1. Určete, kolik počátečních nul má číselná hodnota mít.
+1. Určete, kolik počátečních nul má číselná hodnota.
 
-1. Určete počet číslic nalevo od desetinného místa v nepolstrovaném číselném řetězci:
+1. Určuje počet číslic nalevo od desetinné čárky v nedoplněném číselném řetězci:
 
-    1. Určete, zda řetězcová reprezentace čísla obsahuje symbol desetinné čárky.
+    1. Určí, zda řetězcové vyjádření čísla obsahuje symbol desetinné čárky.
 
-    1. Pokud obsahuje symbol desetinné čárky, určete počet znaků nalevo od desetinné čárky.
+    1. Pokud obsahuje symbol desetinné čárky, určete počet znaků vlevo od desetinné čárky.
 
          -nebo-
 
          Pokud neobsahuje symbol desetinné čárky, určete délku řetězce.
 
-1. Vytvořte vlastní formátovací řetězec, který používá:
+1. Vytvořte vlastní řetězec formátu, který používá:
 
-    - Nulový zástupný symbol "0" pro každou z úvodních nul, která se zobrazí v řetězci.
+    - Nulový zástupný symbol "0" pro každou počáteční nuly, která se má objevit v řetězci.
 
-    - Buď žádný zástupný symbol nebo zástupný symbol číslice "#", který představuje každou číslici ve výchozím řetězci.
+    - Zástupný symbol nula nebo zástupný symbol číslice "#" pro reprezentaci každé číslice ve výchozím řetězci.
 
-1. Zadejte vlastní formátovací řetězec jako parametr `ToString(String)` metodu čísla nebo metodu, která podporuje složené formátování.
+1. Zadejte řetězec vlastního formátu jako parametr buď do metody Number, `ToString(String)` nebo do metody, která podporuje složené formátování.
 
-Následující příklad vycpává dvě <xref:System.Double> hodnoty s pěti počátečními nulami.
+Následující příklad <xref:System.Double> doplní dvě hodnoty pěti počátečními nulami.
 
 [!code-csharp[Formatting.HowTo.PadNumber#4](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.PadNumber/cs/Pad1.cs#4)]
 [!code-vb[Formatting.HowTo.PadNumber#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.PadNumber/vb/Pad1.vb#4)]
 
 ## <a name="see-also"></a>Viz také
 
-- [Vlastní řetězce číselného formátu](../../../docs/standard/base-types/custom-numeric-format-strings.md)
-- [Standardní řetězce číselného formátu](../../../docs/standard/base-types/standard-numeric-format-strings.md)
-- [Složené formátování](../../../docs/standard/base-types/composite-formatting.md)
+- [Vlastní řetězce číselného formátu](custom-numeric-format-strings.md)
+- [Řetězce standardního číselného formátu](standard-numeric-format-strings.md)
+- [Složené formátování](composite-formatting.md)

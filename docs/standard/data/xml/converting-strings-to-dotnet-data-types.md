@@ -6,15 +6,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 65455ef3-9120-412c-819b-d0f59f88ac09
-ms.openlocfilehash: e54990785cafd6061c6d53c13af6476a4b46e20e
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: fda5441c58d14b91a9eca16fff9149c8795f95b9
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78160349"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289223"
 ---
 # <a name="converting-strings-to-net-framework-data-types"></a>Převádění řetězců na datové typy rozhraní .NET Framework
-Chcete-li převést řetězec na datový typ .NET Framework, použijte metodu **XmlConvert** , která odpovídá požadavkům aplikace. Seznam všech metod převodu, které jsou k dispozici ve třídě **XmlConvert** , <xref:System.Xml.XmlConvert>naleznete v tématu.  
+Chcete-li převést řetězec na datový typ .NET Framework, použijte metodu **XmlConvert** , která odpovídá požadavkům aplikace. Seznam všech metod převodu, které jsou k dispozici ve třídě **XmlConvert** , naleznete v tématu <xref:System.Xml.XmlConvert> .  
   
  Řetězec vrácený metodou **ToString** je řetězcová verze dat, která je předána. Kromě toho existuje několik typů .NET Framework, které se převádějí pomocí třídy **XmlConvert** , ale nepoužívají metody ve třídě **System. Convert** . Třída **XmlConvert** se řídí specifikací datového typu XSD (XML Schema) a má datový typ, na který může **XmlConvert** mapovat.  
   
@@ -28,12 +28,12 @@ Chcete-li převést řetězec na datový typ .NET Framework, použijte metodu **
 |Double. PositiveInfinity|SOUBORŮ|  
 |Double. NegativeInfinity|"-INF"|  
 |DateTime|Formát je "rrrr-MM-ddTHH: mm: sszzzzzz" a jeho podmnožiny.|  
-|Časový interval|Formát je PnYnMnTnHnMnS, což `P2Y10M15DT10H30M20S` je doba 2 roky, 10 měsíců, 15 dní, 10 hodin, 30 minut a 20 sekund.|  
+|Časový interval|Formát je PnYnMnTnHnMnS, což je `P2Y10M15DT10H30M20S` doba 2 roky, 10 měsíců, 15 dní, 10 hodin, 30 minut a 20 sekund.|  
   
 > [!NOTE]
 > Pokud převedete některý z .NET Framework typů uvedených v tabulce na řetězec pomocí metody **ToString** , vrácený řetězec není základní typ, ale typ řetězce XML Schema (XSD).  
   
- Typ hodnoty **DateTime** a **TimeSpan** se liší v tom, že hodnota DateTime představuje okamžitý čas, zatímco **hodnota** **TimeSpan** představuje časový interval. Formáty **DateTime** a **TimeSpan** jsou zadány ve specifikaci datových typů schématu XML (XSD). Příklad:  
+ Typ hodnoty **DateTime** a **TimeSpan** se liší v tom, že hodnota DateTime představuje okamžitý čas, zatímco **hodnota** **TimeSpan** představuje časový interval. Formáty **DateTime** a **TimeSpan** jsou zadány ve specifikaci datových typů schématu XML (XSD). Například:  
   
 ```vb  
 Dim writer As New XmlTextWriter("myfile.xml", Nothing)  
@@ -119,7 +119,7 @@ Console.WriteLine(bvalue);
 |SOUBORŮ|Double. PositiveInfinity|  
 |"-INF"|Double. NegativeInfinity|  
   
- Následující zápis `<Infinity>INF</Infinity>`kódu:  
+ Následující zápis kódu `<Infinity>INF</Infinity>` :  
   
 ```vb  
 Dim value As Double = Double.PositiveInfinity  
@@ -133,5 +133,5 @@ writer.WriteElementString("Infinity", XmlConvert.ToString(value));
   
 ## <a name="see-also"></a>Viz také
 
-- [Převod datových typů XML](../../../../docs/standard/data/xml/conversion-of-xml-data-types.md)
-- [Převádění typů rozhraní .NET Framework na řetězce](../../../../docs/standard/data/xml/converting-dotnet-types-to-strings.md)
+- [Převod datových typů XML](conversion-of-xml-data-types.md)
+- [Převádění typů rozhraní .NET Framework na řetězce](converting-dotnet-types-to-strings.md)

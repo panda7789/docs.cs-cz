@@ -1,5 +1,5 @@
 ---
-title: <param> - Průvodce programováním jazyka C#
+title: <param> – Průvodce programováním v C#
 ms.date: 07/20/2015
 f1_keywords:
 - param
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - <param> C# XML tag
 - param C# XML tag
 ms.assetid: 46d329b1-5b84-4537-9e17-73ca97313e4e
-ms.openlocfilehash: d16070a82531519dd276b2ea999623017769d716
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 396ed716c246091a674268020261069f36dd2be8
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76789763"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287321"
 ---
-# <a name="param-c-programming-guide"></a>\<param> (průvodce programováním C#)
+# <a name="param-c-programming-guide"></a>\<param>(Průvodce programováním v C#)
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -27,19 +27,19 @@ ms.locfileid: "76789763"
 
 - `name`
 
-  Název parametru metody. Název uzavřete do uvozovek (" ").
+  Název parametru metody. Název uzavřete do uvozovek ("").
 
 - `description`
 
-  Popis parametru.
+  Popis parametru
 
 ## <a name="remarks"></a>Poznámky
 
-Značka \<param> by měla být použita v komentáři pro deklaraci metody k popisu jednoho z parametrů metody. Chcete-li dokumentovat více \<parametrů, použijte více značek> param.
+`<param>`Značka by měla být použita v komentáři pro deklaraci metody pro popis jednoho z parametrů pro metodu. Chcete-li dokumentovat více parametrů, použijte více `<param>` značek.
 
-Text značky \<param> se zobrazí v aplikaci IntelliSense, prohlížeči objektů a ve webové zprávě Skomentářem kódu.
+Text `<param>` značky je zobrazen v IntelliSense, prohlížeč objektů a webové sestavy komentáře kódu.
 
-Kompilujte s [-doc](../../language-reference/compiler-options/doc-compiler-option.md) pro zpracování dokumentů komentáře do souboru.
+Zkompilujte s [-doc](../../language-reference/compiler-options/doc-compiler-option.md) a zpracujte komentáře k dokumentaci do souboru.
 
 ## <a name="example"></a>Příklad
 

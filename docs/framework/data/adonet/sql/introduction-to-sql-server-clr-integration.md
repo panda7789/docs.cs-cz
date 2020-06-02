@@ -1,13 +1,14 @@
 ---
 title: Úvod k integraci modulu CLR na SQL Serveru
+description: Integrace CLR s SQL Server podporuje uložené procedury, triggery, uživatelsky definované funkce, uživatelsky definované typy a uživatelsky definované agregace ve spravovaném kódu.
 ms.date: 03/30/2017
 ms.assetid: 551d2290-ed80-49be-b377-44b32444da1c
-ms.openlocfilehash: 41dd89af4f45c673cf6b7283fc39aaf91fd9963c
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: fa2ef68792d09cf94b3e0680a14bd79f9b593999
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77452406"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286427"
 ---
 # <a name="introduction-to-sql-server-clr-integration"></a>Úvod k integraci modulu CLR na SQL Serveru
 Modul CLR (Common Language Runtime) je srdcem společnosti Microsoft .NET Framework a poskytuje spouštěcí prostředí pro veškerý kód .NET Framework. Kód, který běží v rámci CLR, je označován jako spravovaný kód. CLR poskytuje různé funkce a služby, které jsou nezbytné pro spuštění programu, včetně kompilace JIT (just-in-time), přidělování a správě paměti, vynucování bezpečnosti typů, zpracování výjimek, správy vláken a zabezpečení.  
@@ -23,7 +24,7 @@ Modul CLR (Common Language Runtime) je srdcem společnosti Microsoft .NET Framew
 - [Přehled integrace modulu CLR (Common Language Runtime)](/sql/relational-databases/clr-integration/common-language-runtime-integration-overview)  
   
 ## <a name="enabling-clr-integration"></a>Povolení integrace modulu CLR  
- Funkce integrace modulu CLR (Common Language Runtime) je ve výchozím nastavení vypnuta v Microsoft SQL Server a musí být povolena, aby bylo možné použít objekty, které jsou implementovány pomocí integrace modulu CLR. Chcete-li povolit integraci modulu CLR pomocí jazyka Transact-SQL, použijte možnost `clr enabled` uložené procedury `sp_configure`, jak je znázorněno níže:  
+ Funkce integrace modulu CLR (Common Language Runtime) je ve výchozím nastavení vypnuta v Microsoft SQL Server a musí být povolena, aby bylo možné použít objekty, které jsou implementovány pomocí integrace modulu CLR. Chcete-li povolit integraci modulu CLR pomocí jazyka Transact-SQL, použijte `clr enabled` možnost `sp_configure` uloženou proceduru, jak je znázorněno níže:  
   
 ```sql  
 sp_configure 'clr enabled', 1  
@@ -32,7 +33,7 @@ RECONFIGURE
 GO  
 ```  
   
- Integraci modulu CLR můžete zakázat nastavením možnosti `clr enabled` na hodnotu 0. Zakážete-li integraci modulu CLR, SQL Server zastaví provádění všech rutin CLR a uvolní všechny domény aplikace.  
+ Integraci CLR můžete zakázat nastavením `clr enabled` Možnosti na 0. Zakážete-li integraci modulu CLR, SQL Server zastaví provádění všech rutin CLR a uvolní všechny domény aplikace.  
   
  Podrobnější informace najdete v tématu verze SQL Server Knihy online pro verzi SQL Server, kterou používáte.  
   

@@ -1,5 +1,5 @@
 ---
-title: <returns> - Průvodce programováním jazyka C#
+title: <returns> – Průvodce programováním v C#
 ms.date: 07/20/2015
 f1_keywords:
 - returns
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - <returns> C# XML tag
 - returns C# XML tag
 ms.assetid: bb2d9958-62fc-47c7-9511-6311171f119f
-ms.openlocfilehash: 784d9effa589c962b8a2b982fd199f74309fb4dc
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7bc950a8d89a3ac2b5c3b7a68e05c7778e97f85c
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76789712"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287230"
 ---
-# <a name="returns-c-programming-guide"></a>\<vrátí> (průvodce programováním jazyka C#)
+# <a name="returns-c-programming-guide"></a>\<returns>(Průvodce programováním v C#)
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -27,13 +27,13 @@ ms.locfileid: "76789712"
 
 - `description`
 
-  Popis vrácené hodnoty.
+  Popis návratové hodnoty.
 
 ## <a name="remarks"></a>Poznámky
 
-Vratná \<značka> by měla být použita v komentáři pro deklaraci metody k popisu vrácené hodnoty.
+`<returns>`Značka by měla být použita v komentáři pro deklaraci metody k popisu návratové hodnoty.
 
-Kompilujte s [-doc](../../language-reference/compiler-options/doc-compiler-option.md) pro zpracování dokumentů komentáře do souboru.
+Zkompilujte s [-doc](../../language-reference/compiler-options/doc-compiler-option.md) a zpracujte komentáře k dokumentaci do souboru.
 
 ## <a name="example"></a>Příklad
 

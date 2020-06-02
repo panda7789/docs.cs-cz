@@ -12,12 +12,12 @@ helpviewer_keywords:
 - names [.NET Framework], type members
 - members [.NET Framework], type
 ms.assetid: af5a0903-36af-4c2a-b848-cf959affeaa5
-ms.openlocfilehash: 81c837bd045992043208a59f6ee16803c1d6eb3c
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 87cf793229cfc7d8d0547af935369a3febee41a3
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76744179"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290185"
 ---
 # <a name="names-of-type-members"></a>Názvy členů typu
 Typy jsou tvořeny členy: metody, vlastnosti, události, konstruktory a pole. Následující části popisují pokyny pro pojmenování členů typu.
@@ -40,7 +40,7 @@ public class String {
 
  ✔️ pojmenovat vlastnosti s použitím podstatného jména, fráze podstatného jména nebo přídavného jména.
 
- ❌ nemají vlastnosti, které se shodují s názvem metody Get, jako v následujícím příkladu:
+ ❌Nemusíte mít vlastnosti, které odpovídají názvu metody Get jako v následujícím příkladu:
 
  `public string TextWriter { get {...} set {...} }` `public string GetTextWriter(int value) { ... }`
 
@@ -48,11 +48,11 @@ public class String {
 
  ✔️ DO vlastností kolekce name pomocí množném fráze popisující položky v kolekci namísto použití fráze v jednotném čísle, za kterou následuje seznam nebo kolekce.
 
- ✔️ Pojmenujte logické vlastnosti s použitím kladné fráze (`CanSeek` namísto `CantSeek`). Volitelně můžete také zadat předponu logických vlastností pomocí "is", "Can" nebo "má", ale pouze tam, kde přidá hodnotu.
+ ✔️ Pojmenujte logické vlastnosti s použitím kladné fráze ( `CanSeek` místo `CantSeek` ). Volitelně můžete také zadat předponu logických vlastností pomocí "is", "Can" nebo "má", ale pouze tam, kde přidá hodnotu.
 
  ✔️ Zvažte vlastnost, která má stejný název jako jeho typ.
 
- Například následující vlastnost správně získá a nastaví hodnotu výčtu s názvem `Color`, takže vlastnost má název `Color`:
+ Například následující vlastnost správně získá a nastaví hodnotu výčtu s názvem `Color` , takže vlastnost má název `Color` :
 
 ```csharp
 public enum Color {...}
@@ -66,13 +66,13 @@ public class Control {
 
  ✔️ události s názvem pomocí příkazu nebo fráze.
 
- Příklady zahrnují `Clicked`, `Painting`, `DroppedDown`a tak dále.
+ Příklady zahrnují `Clicked` , `Painting` , `DroppedDown` a tak dále.
 
  ✔️ Přidávejte názvy událostí s konceptem před a po, a to pomocí současného a minulého časů.
 
- Například událost zavření, která je aktivována před zavřením okna, by byla volána `Closing`a ta, která je aktivována po zavření okna, by byla volána `Closed`.
+ Například událost zavření, která je aktivována před zavřením okna, by byla volána `Closing` a ta, která je aktivována po zavření okna, by byla volána `Closed` .
 
- ❌ nepoužívat předpony a přípony "Before" nebo "After" k označení před a po událostech. Použijte přítomné a dřívější časů, jak je popsáno výše.
+ ❌Nepoužívejte předpony a přípony "Before" nebo "After" k označení před a po událostech. Použijte přítomné a dřívější časů, jak je popsáno výše.
 
  ✔️ obslužné rutiny událostí názvů (Delegáti používané jako typy událostí) s příponou EventHandler, jak je znázorněno v následujícím příkladu:
 
@@ -80,18 +80,18 @@ public class Control {
 
  ✔️ použít dva parametry s názvem `sender` a `e` v obslužných rutinách událostí.
 
- Parametr Sender reprezentuje objekt, který vyvolal událost. Parametr sender je obvykle typu `object`, a to i v případě, že je možné využít konkrétnější typ.
+ Parametr Sender reprezentuje objekt, který vyvolal událost. Parametr sender je typicky typu `object` , i když je možné použít konkrétnější typ.
 
  ✔️ třídy argumentu události názvu s příponou EventArgs.
 
 ## <a name="names-of-fields"></a>Názvy polí
- Pokyny pro pojmenovávání polí se vztahují na statická veřejná a chráněná pole. Do interních a privátních polí se nevztahují pokyny a v [pokynech návrhu členů](../../../docs/standard/design-guidelines/member.md)nejsou povolena pole veřejné nebo chráněné instance.
+ Pokyny pro pojmenovávání polí se vztahují na statická veřejná a chráněná pole. Do interních a privátních polí se nevztahují pokyny a v [pokynech návrhu členů](member.md)nejsou povolena pole veřejné nebo chráněné instance.
 
  ✔️ používat PascalCasing v názvech polí.
 
  ✔️ pole DO pole název s použitím podstatného jména, věty nebo jména.
 
- ❌ nepoužívejte předponu pro názvy polí.
+ ❌Nepoužívejte předponu pro názvy polí.
 
  Například nepoužívejte "g_" nebo "s_" k označení statických polí.
 
@@ -101,5 +101,5 @@ public class Control {
 
 ## <a name="see-also"></a>Viz také
 
-- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)
-- [Pokyny pro pojmenování](../../../docs/standard/design-guidelines/naming-guidelines.md)
+- [Pokyny k návrhu architektury](index.md)
+- [Pokyny pro pojmenování](naming-guidelines.md)

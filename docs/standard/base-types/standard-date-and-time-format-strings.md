@@ -14,16 +14,16 @@ helpviewer_keywords:
 - formatting [.NET Framework], time
 - date and time strings
 ms.assetid: bb79761a-ca08-44ee-b142-b06b3e2fc22b
-ms.openlocfilehash: d6bde74441334a4454865c1fdb890a4e859bc072
-ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
+ms.openlocfilehash: 0ff187251831130c846a20473237b13268c768be
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83440899"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289301"
 ---
 # <a name="standard-date-and-time-format-strings"></a>Standardní řetězce formátu data a času
 
-Řetězec standardního formátu data a času používá pro definování textového vyjádření hodnoty data a času jeden specifikátor formátu. Libovolný řetězec formátu data a času, který obsahuje více než jeden znak, včetně prázdných znaků, je interpretován jako řetězec vlastního formátu data a času. Další informace naleznete v tématu [Vlastní řetězce formátu data a času](../../../docs/standard/base-types/custom-date-and-time-format-strings.md). Řetězec standardního nebo vlastního formátu lze používat dvěma způsoby:
+Řetězec standardního formátu data a času používá pro definování textového vyjádření hodnoty data a času jeden specifikátor formátu. Libovolný řetězec formátu data a času, který obsahuje více než jeden znak, včetně prázdných znaků, je interpretován jako řetězec vlastního formátu data a času. Další informace naleznete v tématu [Vlastní řetězce formátu data a času](custom-date-and-time-format-strings.md). Řetězec standardního nebo vlastního formátu lze používat dvěma způsoby:
 
 - Chcete-li definovat řetězec, který je výsledkem operace formátování.
 
@@ -450,7 +450,7 @@ Formátování je ovlivněno vlastnostmi aktuálního <xref:System.Globalization
 
 - <xref:System.DateTime?displayProperty=nameWithType>
 - <xref:System.DateTimeOffset?displayProperty=nameWithType>
-- [Typy formátování](../../../docs/standard/base-types/formatting-types.md)
-- [Vlastní řetězce formátu data a času](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)
+- [Typy formátování](formatting-types.md)
+- [Vlastní řetězce formátu data a času](custom-date-and-time-format-strings.md)
 - [Ukázka: nástroj formátování WinForms pro .NET Core (C#)](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-cs)
 - [Ukázka: nástroj formátování WinForms pro .NET Core (Visual Basic)](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-vb)

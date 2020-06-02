@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 76ee440b-d134-4f8f-8262-b917ad6dcbf6
-ms.openlocfilehash: 447cf18c7a9d24addf9d0a4ad523f46a45a5d27a
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: 623f997d1c11bc643ea4605614cac147b6069be5
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78155972"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287724"
 ---
 # <a name="how-to-perform-an-xslt-transformation-by-using-an-assembly"></a>Postupy: Provedení transformace XSLT pomocí sestavení
 Kompilátor XSLT (xsltc. exe) kompiluje šablony stylů XSLT a generuje sestavení. Sestavení lze předat přímo do <xref:System.Xml.Xsl.XslCompiledTransform.Load%28System.Type%29?displayProperty=nameWithType> metody.  
@@ -85,7 +85,7 @@ Kompilátor XSLT (xsltc. exe) kompiluje šablony stylů XSLT a generuje sestaven
     </xsl:stylesheet>  
     ```  
   
-- Zkopírujte soubor XML do místního počítače a pojmenujte ho `books.xml`.  
+- Zkopírujte soubor XML do místního počítače a pojmenujte ho `books.xml` .  
   
     ```xml  
     <?xml version="1.0"?>  
@@ -177,11 +177,11 @@ with
 xslt.Load(System.Reflection.Assembly.Load("Transform").GetType("Transform"));  
 ```
   
-v předchozím příkladu. Další informace o metodě Assembly. Load naleznete v tématu <xref:System.Reflection.Assembly.Load%2A>.  
+v předchozím příkladu. Další informace o metodě Assembly. Load naleznete v tématu <xref:System.Reflection.Assembly.Load%2A> .  
   
 ## <a name="see-also"></a>Viz také
 
 - <xref:System.Xml.Xsl.XslCompiledTransform>
-- [Kompilátor XSLT (xsltc.exe)](../../../../docs/standard/data/xml/xslt-compiler-xsltc-exe.md)
-- [Transformace XSLT](../../../../docs/standard/data/xml/xslt-transformations.md)
+- [Kompilátor XSLT (xsltc.exe)](xslt-compiler-xsltc-exe.md)
+- [Transformace XSLT](xslt-transformations.md)
 - [Sestavování pomocí programu csc.exe v příkazovém řádku](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md)

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - serialization, guidelines
 - binary serialization, guidelines
 ms.assetid: ebbeddff-179d-443f-bf08-9c373199a73a
-ms.openlocfilehash: af0b857e98ffbe0ff9f12108174b79f873c2b38f
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: eb11f0b8ddd34df7c6970c275d4b83cb95f59a53
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83378379"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287490"
 ---
 # <a name="serialization-guidelines"></a>Pokyny pro serializaci
 Tento dokument obsahuje seznam pokyny k serializaci zvážit při navrhování rozhraní API.  
@@ -79,7 +79,7 @@ Tento dokument obsahuje seznam pokyny k serializaci zvážit při navrhování r
      [!code-csharp[SerializationGuidelines#4](../../../samples/snippets/csharp/VS_Snippets_CFX/serializationguidelines/cs/source.cs#4)]
      [!code-vb[SerializationGuidelines#4](../../../samples/snippets/visualbasic/VS_Snippets_CFX/serializationguidelines/vb/source.vb#4)]  
   
-     V případech, kdy seznam známých typů není známý staticky (Pokud je třída **Person** zkompilována), může **KnownTypeAttribute** ukazovat na metodu, která vrací seznam známých typů za běhu.  
+     V případech, kdy seznam známých typů není známý staticky (Pokud je třída **Person** zkompilována), může **KnownTypeAttribute** odkazovat také na metodu, která vrací seznam známých typů za běhu.  
   
 5. Zvažte dopředné a zpětné kompatibility při vytváření nebo změně Serializovatelné typy.  
   
@@ -92,7 +92,7 @@ Tento dokument obsahuje seznam pokyny k serializaci zvážit při navrhování r
      [!code-csharp[SerializationGuidelines#5](../../../samples/snippets/csharp/VS_Snippets_CFX/serializationguidelines/cs/source.cs#5)]
      [!code-vb[SerializationGuidelines#5](../../../samples/snippets/visualbasic/VS_Snippets_CFX/serializationguidelines/vb/source.vb#5)]  
   
-     Další informace najdete v tématu [kontrakty dat kompatibilní s dopředné](../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md).  
+     Další informace najdete v tématu [kontrakty dat kompatibilní s dopředné](../../framework/wcf/feature-details/forward-compatible-data-contracts.md).  
   
 #### <a name="supporting-xml-serialization"></a>Podpora serializace XML  
  Data smlouvy serializace je hlavním (výchozí) serializace technologie v rozhraní .NET Framework, ale existují serializace scénáře, že data smlouvy serializace není podporováno. Můžete například ji vám neuděluje plnou kontrolu nad tvar XML vytvořeného nebo používané serializátor. Je-li takové přesné řízení vyžadováno, je nutné použít *serializaci XML* a je třeba navrhnout typy pro podporu této technologie serializace.  
@@ -140,10 +140,10 @@ Tento dokument obsahuje seznam pokyny k serializaci zvážit při navrhování r
   
 ## <a name="see-also"></a>Viz také
 
-- [Použití kontraktů dat](../../../docs/framework/wcf/feature-details/using-data-contracts.md)
-- [Serializátor kontraktu dat](../../../docs/framework/wcf/feature-details/data-contract-serializer.md)
-- [Typy podporované serializátorem kontraktu dat](../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md)
+- [Použití kontraktů dat](../../framework/wcf/feature-details/using-data-contracts.md)
+- [Serializátor kontraktu dat](../../framework/wcf/feature-details/data-contract-serializer.md)
+- [Typy podporované serializátorem kontraktu dat](../../framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md)
 - [Binární serializace](binary-serialization.md)
 - [Vzdálené komunikace pomocí rozhraní .NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/72x4h507(v=vs.100))
 - [Serializace XML a SOAP](xml-and-soap-serialization.md)
-- [Zabezpečení a serializace](../../../docs/framework/misc/security-and-serialization.md)
+- [Zabezpečení a serializace](../../framework/misc/security-and-serialization.md)

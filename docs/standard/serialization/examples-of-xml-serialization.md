@@ -14,16 +14,16 @@ helpviewer_keywords:
 - DataSet class, serializing
 - XML Schema, serializing
 ms.assetid: eec46337-9696-435b-a375-dc5effae6992
-ms.openlocfilehash: 73f21c7f7d0670022d757e6c4c00280bb79709b8
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 98cc4a983c9703e6c5ab132f6110a327c6081b6c
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83379182"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289626"
 ---
 # <a name="examples-of-xml-serialization"></a>Příklady serializace XML
 
-Serializace XML může trvat více než jeden formulář z snadno komplexní. Například můžete serializovat třídu, která se jednoduše skládá z veřejných polí a vlastností, jak je znázorněno v [úvodu do XML serializace](../../../docs/standard/serialization/introducing-xml-serialization.md). Následující příklady kódu adresa různých pokročilé scénáře, včetně použití serializace XML ke generování datový proud XML, který odpovídá určitého dokumentu schématu XML (XSD).
+Serializace XML může trvat více než jeden formulář z snadno komplexní. Například můžete serializovat třídu, která se jednoduše skládá z veřejných polí a vlastností, jak je znázorněno v [úvodu do XML serializace](introducing-xml-serialization.md). Následující příklady kódu adresa různých pokročilé scénáře, včetně použití serializace XML ke generování datový proud XML, který odpovídá určitého dokumentu schématu XML (XSD).
 
 ## <a name="serializing-a-dataset"></a>Serializace na sadu dat
 

@@ -3,12 +3,12 @@ title: Překlad externích prostředků
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: ad3fa320-4b8f-4e5c-b549-01157591007a
-ms.openlocfilehash: 05cc41cef7da07581d4f0ec8e584858b913d1a80
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 82e9231be8a3619f59313460f0d5e0b246eb9436
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710268"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291484"
 ---
 # <a name="resolving-external-resources"></a>Překlad externích prostředků
 Vlastnost **objekt XmlResolver** třídy **XmlDocument** je používána třídou **XmlDocument** k vyhledání prostředků, které nejsou vloženy do dat XML, jako jsou definice typu externího dokumentu (DTD), entity a schémata. Tyto položky se můžou nacházet v síti nebo na místním disku a dají se identifikovat pomocí identifikátoru URI (Uniform Resource Identifier). To umožňuje **XmlDocument** přeložit uzly **EntityReference** , které jsou k dispozici v dokumentu, a ověřit dokument v závislosti na externí specifikaci DTD nebo schématu.  
@@ -41,15 +41,15 @@ Vlastnost **objekt XmlResolver** třídy **XmlDocument** je používána třído
   
 |Vlastnost objekt XmlResolver|Funkce|Poznámky|  
 |--------------------------|--------------|-----------|  
-|Třída **objekt XmlResolver** používaná třídou **XmlDocument** je stejná jako ta, kterou používá objekt **XmlReader**.|**XmlDocument** používá **objekt XmlResolver** , který byl přiřazen objektu **XmlReader**.<br /><br /> Vlastnost **XmlDocument. překladač** nelze nastavit bez ohledu na úroveň vztahu důvěryhodnosti **XmlDocument** , protože načítá **objekt XmlResolver** z objektu **XmlReader**. Nemůžete se pokusit přepsat nastavení **objekt XmlResolver** objektů **XmlReader** nastavením vlastnosti **objekt XmlResolver** pro **XmlDocument**.|Objektem XmlReader může být **Třída** **XmlTextReader**, <xref:System.Xml.XmlReader>ověřování nebo uživatelsky napsané čtecí zařízení. Pokud čtečka podporuje řešení entit, vyřeší se externí entity. Pokud čtenář předaný není podporován odkazy na entity, odkazy na entity nejsou vyřešeny.|  
+|Třída **objekt XmlResolver** používaná třídou **XmlDocument** je stejná jako ta, kterou používá objekt **XmlReader**.|**XmlDocument** používá **objekt XmlResolver** , který byl přiřazen objektu **XmlReader**.<br /><br /> Vlastnost **XmlDocument. překladač** nelze nastavit bez ohledu na úroveň vztahu důvěryhodnosti **XmlDocument** , protože načítá **objekt XmlResolver** z objektu **XmlReader**. Nemůžete se pokusit přepsat nastavení **objekt XmlResolver** objektů **XmlReader** nastavením vlastnosti **objekt XmlResolver** pro **XmlDocument**.|Objektem **XmlReader** může být třída **XmlTextReader**, ověřování <xref:System.Xml.XmlReader> nebo uživatelsky napsané čtecí zařízení. Pokud čtečka podporuje řešení entit, vyřeší se externí entity. Pokud čtenář předaný není podporován odkazy na entity, odkazy na entity nejsou vyřešeny.|  
   
  Nastavení objekt XmlResolver tak, aby obsahovalo správné přihlašovací údaje, umožňuje přístup k externím prostředkům.  
   
 > [!NOTE]
-> Neexistuje žádný způsob, jak načíst vlastnost **objekt XmlResolver** . To pomáhá zabránit uživateli v použití **objekt XmlResolver** , u kterého byla nastavena pověření. Kromě toho, pokud **XmlTextReader** je použita položka <xref:System.Xml.XmlReader> XmlTextReader nebo Valid pro načtení souboru **XmlDocument** a prvek **XmlDocument** obsahuje překladač, který byl nastaven, překladače z těchto čtecích zařízení nejsou uloženy v mezipaměti **XmlDocument** po fázi **zatížení** , protože to také představuje bezpečnostní riziko.  
+> Neexistuje žádný způsob, jak načíst vlastnost **objekt XmlResolver** . To pomáhá zabránit uživateli v použití **objekt XmlResolver** , u kterého byla nastavena pověření. Kromě toho, pokud je použita položka **XmlTextReader** nebo Valid <xref:System.Xml.XmlReader> pro načtení souboru **XmlDocument** a prvek **XmlDocument** obsahuje překladač, který byl nastaven, překladače z těchto čtecích zařízení nejsou uloženy v mezipaměti **XmlDocument** po fázi **zatížení** , protože to také představuje bezpečnostní riziko.  
   
  Další informace naleznete v části poznámky na <xref:System.Xml.XmlResolver> referenční stránce.  
   
 ## <a name="see-also"></a>Viz také
 
-- [model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+- [model DOM (Document Object Model) dokumentu XML](xml-document-object-model-dom.md)

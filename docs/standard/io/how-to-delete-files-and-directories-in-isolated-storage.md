@@ -17,22 +17,22 @@ helpviewer_keywords:
 - storing data using isolated storage, deleting files and directories
 - deleting directories within isolated stage file
 ms.assetid: 8fcc0dea-435b-4d40-ba4d-ba056265c202
-ms.openlocfilehash: ec4de3e3a139cfcf66f1f6252c03c467f4ccfbc5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: dc84fefbde1177993b17e9ec687a1ef759b74735
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75707854"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291900"
 ---
 # <a name="how-to-delete-files-and-directories-in-isolated-storage"></a>Postupy: Odstraňování souborů a adresářů v izolovaném úložišti
-Adresáře a soubory v izolovaném souboru úložiště můžete odstranit. V rámci úložiště jsou názvy souborů a adresářů závislé na operačním systému a jsou určeny jako relativní ke kořenovému adresáři virtuálního systému souborů. V operačních systémech Windows nerozlišují malá a velká písmena.  
+V souboru izolovaného úložiště můžete odstraňovat adresáře a soubory. V rámci úložiště jsou názvy souborů a adresářů závislé na operačním systému a jsou určené jako relativní ke kořenu virtuálního systému souborů. V operačních systémech Windows nerozlišují velká a malá písmena.  
   
- Třída <xref:System.IO.IsolatedStorage.IsolatedStorageFile?displayProperty=nameWithType> poskytuje dvě metody pro odstranění adresářů <xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteDirectory%2A> a <xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteFile%2A>souborů: a . Pokud <xref:System.IO.IsolatedStorage.IsolatedStorageException> se pokusíte odstranit soubor nebo adresář, který neexistuje, je vyvolána výjimka. Pokud do názvu zahrnete <xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteDirectory%2A> zástupný <xref:System.IO.IsolatedStorage.IsolatedStorageException> znak, <xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteFile%2A> vyvolá výjimku a vyvolá výjimku. <xref:System.ArgumentException>  
+ <xref:System.IO.IsolatedStorage.IsolatedStorageFile?displayProperty=nameWithType>Třída poskytuje dvě metody pro odstraňování adresářů a souborů: <xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteDirectory%2A> a <xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteFile%2A> . <xref:System.IO.IsolatedStorage.IsolatedStorageException>Pokud se pokusíte odstranit soubor nebo adresář, který neexistuje, je vyvolána výjimka. Pokud zahrnete zástupný znak do názvu, <xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteDirectory%2A> vyvolá <xref:System.IO.IsolatedStorage.IsolatedStorageException> výjimku a <xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteFile%2A> vyvolá <xref:System.ArgumentException> výjimku.  
   
- Metoda <xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteDirectory%2A> se nezdaří, pokud adresář obsahuje soubory nebo podadresáře. Metody <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetFileNames%2A> a <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetDirectoryNames%2A> můžete použít k načtení existujících souborů a adresářů. Další informace o prohledání virtuálního systému souborů v úložišti naleznete v tématu [How to: Najít existující soubory a adresáře v izolovaném úložišti](../../../docs/standard/io/how-to-find-existing-files-and-directories-in-isolated-storage.md).  
+ <xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteDirectory%2A>Metoda se nezdařila, pokud adresář obsahuje nějaké soubory nebo podadresáře. Můžete použít <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetFileNames%2A> <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetDirectoryNames%2A> metody a k načtení existujících souborů a adresářů. Další informace o hledání ve virtuálním systému souborů v úložišti naleznete v tématu [How to: Find existující soubory a adresáře v izolovaném úložišti](how-to-find-existing-files-and-directories-in-isolated-storage.md).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu vytvoří a odstraní několik adresářů a souborů.  
+ Následující příklad kódu vytvoří a pak odstraní několik adresářů a souborů.  
   
  [!code-cpp[Conceptual.IsolatedStorage#4](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.isolatedstorage/cpp/source4.cpp#4)]
  [!code-csharp[Conceptual.IsolatedStorage#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.isolatedstorage/cs/source4.cs#4)]
@@ -41,4 +41,4 @@ Adresáře a soubory v izolovaném souboru úložiště můžete odstranit. V r�
 ## <a name="see-also"></a>Viz také
 
 - <xref:System.IO.IsolatedStorage.IsolatedStorageFile?displayProperty=nameWithType>
-- [Izolované úložiště](../../../docs/standard/io/isolated-storage.md)
+- [Izolované úložiště](isolated-storage.md)

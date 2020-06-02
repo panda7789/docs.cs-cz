@@ -11,25 +11,25 @@ helpviewer_keywords:
 - IAsyncResult interface, calling asynchronous methods
 - stopping asynchronous operations
 ms.assetid: 07fba116-045b-473c-a0b7-acdbeb49861f
-ms.openlocfilehash: 2a9ce8bc2d2edd09ef79c060b9bb173d4d054d02
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 88ca1b5bfbb8bfbdfef01dea8af07c5d56784c5c
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73121316"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289912"
 ---
 # <a name="calling-asynchronous-methods-using-iasyncresult"></a>Volání asynchronních metod pomocí rozhraní IAsyncResult
-Typy v rozhraní .NET Framework a knihovnách tříd třetích stran mohou poskytovat metody, které umožňují aplikaci pokračovat v provádění při provádění asynchronních operací v jiných vláknech než v hlavním vlákně aplikace. Následující části popisují a poskytují příklady kódu, které ukazují různé způsoby, <xref:System.IAsyncResult> jak můžete volat asynchronní metody, které používají návrhový vzor.  
+Typy v .NET Framework a knihovny tříd třetích stran mohou poskytovat metody, které umožní aplikaci pokračovat v provádění při provádění asynchronních operací v jiných vláknech než v rámci hlavního vlákna aplikace. Následující části popisují a poskytují příklady kódu, které ukazují různé způsoby, jak můžete volat asynchronní metody, které používají <xref:System.IAsyncResult> návrhový vzor.  
   
-- [Blokování spuštění aplikace ukončením asynchronní operace](../../../docs/standard/asynchronous-programming-patterns/blocking-application-execution-by-ending-an-async-operation.md).  
+- [Blokování provádění aplikace ukončením asynchronní operace](blocking-application-execution-by-ending-an-async-operation.md).  
   
-- [Blokování spuštění aplikace pomocí AsyncWaitHandle](../../../docs/standard/asynchronous-programming-patterns/blocking-application-execution-using-an-asyncwaithandle.md).  
+- [Blokování spuštění aplikace pomocí AsyncWaitHandle](blocking-application-execution-using-an-asyncwaithandle.md).  
   
-- [Dotazování na stav asynchronní operace](../../../docs/standard/asynchronous-programming-patterns/polling-for-the-status-of-an-asynchronous-operation.md).  
+- [Cyklické dotazování na stav asynchronní operace](polling-for-the-status-of-an-asynchronous-operation.md).  
   
-- [Použití asyncCallback delegáta ukončit asynchronní operaci](../../../docs/standard/asynchronous-programming-patterns/using-an-asynccallback-delegate-to-end-an-asynchronous-operation.md).  
+- [Použití delegáta AsyncCallback k ukončení asynchronní operace](using-an-asynccallback-delegate-to-end-an-asynchronous-operation.md).  
   
 ## <a name="see-also"></a>Viz také
 
-- [Asynchronní vzor založený na událostech (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md)
-- [Přehled asynchronních vzorů založených na událostech](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)
+- [Asynchronní vzor založený na událostech (EAP)](event-based-asynchronous-pattern-eap.md)
+- [Přehled asynchronních vzorů založených na událostech](event-based-asynchronous-pattern-overview.md)

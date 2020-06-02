@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - serializing objects
 - objects, serializing steps
-ms.openlocfilehash: 4037dee36aeb619eb2757016904fd877158e57cf
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: b6791ae0666aeb0ac02d8a38ca419d7de2b263cf
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78159894"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289600"
 ---
 # <a name="how-to-determine-if-a-net-standard-object-is-serializable"></a>Jak zjistit, zda je objekt .NET Standard serializovatelný
 
@@ -21,7 +21,7 @@ ms.locfileid: "78159894"
 
 Pokud jste vytvořili knihovnu, která cílí na .NET Standard, vaše knihovna může být spotřebována jakoukoli implementací .NET, která podporuje .NET Standard. To znamená, že nemůžete předem znát, zda je konkrétní typ serializovatelný; můžete určit, zda je v době běhu serializovatelný.
 
-Můžete určit, zda je objekt serializovatelný za běhu načtením hodnoty <xref:System.Type.IsSerializable> vlastnosti <xref:System.Type> objektu, který představuje tento typ objektu. Následující příklad poskytuje jednu implementaci. Definuje metodu `IsSerializable(Object)` rozšíření, která označuje, zda může <xref:System.Object> být jakákoli instance serializována.
+Můžete určit, zda je objekt serializovatelný za běhu načtením hodnoty <xref:System.Type.IsSerializable> vlastnosti <xref:System.Type> objektu, který představuje typ daného objektu. Následující příklad poskytuje jednu implementaci. Definuje `IsSerializable(Object)` metodu rozšíření, která označuje, zda <xref:System.Object> může být jakákoli instance serializována.
 
 [!code-csharp[is-a-type-serializable](~/samples/snippets/standard/serialization/is-serializable/csharp/program.cs#2)]
 [!code-vb[is-a-type-serializable](~/samples/snippets/standard/serialization/is-serializable/vb/library.vb#2)]

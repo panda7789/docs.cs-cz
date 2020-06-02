@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: ce2df341-a1a4-4e97-8e1b-cd45b8e3e71e
-ms.openlocfilehash: dd3292620cafc4e5d2494b3b5e18e04691910dc4
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: a77780621032e2ce59b9db04a179c7086588219b
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75711191"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291640"
 ---
 # <a name="accessing-attributes-in-the-dom"></a>Přístup k atributům v modelu DOM
 
@@ -190,7 +190,7 @@ public class Sample
 
 ## <a name="retrieving-an-individual-attribute-node"></a>Načtení jednotlivého uzlu atributu
 
-Chcete-li načíst jeden uzel atributu z prvku, je <xref:System.Xml.XmlElement.GetAttributeNode%2A?displayProperty=nameWithType> použita metoda. Vrátí objekt typu **XmlAttribute**. Po získání **atributu XmlAttribute**jsou všechny metody a vlastnosti, které jsou k dispozici ve <xref:System.Xml.XmlAttribute?displayProperty=nameWithType> třídě, k dispozici pro tento objekt, jako je například hledání **OwnerElement**.
+Chcete-li načíst jeden uzel atributu z prvku, <xref:System.Xml.XmlElement.GetAttributeNode%2A?displayProperty=nameWithType> je použita metoda. Vrátí objekt typu **XmlAttribute**. Po získání **atributu XmlAttribute**jsou všechny metody a vlastnosti, které jsou k dispozici ve <xref:System.Xml.XmlAttribute?displayProperty=nameWithType> třídě, k dispozici pro tento objekt, jako je například hledání **OwnerElement**.
 
 ```vb
 Imports System.IO
@@ -260,4 +260,4 @@ XmlAttribute attr = doc.DocumentElement.Attributes[0];
 
 ## <a name="see-also"></a>Viz také
 
-- [model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+- [model DOM (Document Object Model) dokumentu XML](xml-document-object-model-dom.md)

@@ -6,46 +6,46 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 60e2541b-0cea-4b2e-a4fa-85f4c50f1bef
-ms.openlocfilehash: 9bf57e0f74a353fb6512a24214e9479c1d813aab
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: aef2471a375469f7cd4dff27084b305ef9394d5e
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78160206"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291965"
 ---
-# <a name="xslt-stylesheet-scripting-using-msxslscript"></a>Skriptování šablony stylů XSLT \<pomocí msxsl: skript>
-<xref:System.Xml.Xsl.XslTransform> Třída podporuje vložené skriptování pomocí `script` elementu.  
+# <a name="xslt-stylesheet-scripting-using-msxslscript"></a>Skriptování šablony stylů XSLT pomocí\<msxsl:script>
+<xref:System.Xml.Xsl.XslTransform>Třída podporuje vložené skriptování pomocí `script` elementu.  
   
 > [!NOTE]
-> <xref:System.Xml.Xsl.XslTransform> Třída je zastaralá v .NET Framework 2,0. Transformace XSLT (Extensible Stylesheet Language) můžete použít k <xref:System.Xml.Xsl.XslCompiledTransform> transformaci pomocí třídy. Další informace najdete v tématu [použití třídy XslCompiledTransform](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md) a [migrace z třídy XslTransform](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md) .  
+> <xref:System.Xml.Xsl.XslTransform>Třída je zastaralá v .NET Framework 2,0. Transformace XSLT (Extensible Stylesheet Language) můžete použít k transformaci pomocí <xref:System.Xml.Xsl.XslCompiledTransform> třídy. Další informace najdete v tématu [použití třídy XslCompiledTransform](using-the-xslcompiledtransform-class.md) a [migrace z třídy XslTransform](migrating-from-the-xsltransform-class.md) .  
   
- <xref:System.Xml.Xsl.XslTransform> Třída podporuje vložené skriptování pomocí `script` elementu. Při načtení předlohy se styly se všechny definované funkce zkompiluje do jazyka MSIL (Microsoft Intermediate Language) zabalením do definice třídy a nedochází v důsledku ztráty výkonu.  
+ <xref:System.Xml.Xsl.XslTransform>Třída podporuje vložené skriptování pomocí `script` elementu. Při načtení předlohy se styly se všechny definované funkce zkompiluje do jazyka MSIL (Microsoft Intermediate Language) zabalením do definice třídy a nedochází v důsledku ztráty výkonu.  
   
- `<msxsl:script>` Element je definován níže:  
+ `<msxsl:script>`Element je definován níže:  
   
 ```xml  
 <msxsl:script language = "language-name" implements-prefix = "prefix of user namespace"> </msxsl:script>  
 ```  
   
- kde `msxsl` je předpona vázaná na obor názvů `urn:schemas-microsoft-com:xslt`.  
+ kde `msxsl` je předpona vázaná na obor názvů `urn:schemas-microsoft-com:xslt` .  
   
- `language` Atribut není povinný, ale je-li zadán, jeho hodnota musí být jedna z následujících hodnot: `C#`, `VB`, `JScript`, `JavaScript`, `VisualBasic`nebo `CSharp`. Pokud není zadaný, použije se výchozí jazyk JScript. V `language-name` nerozlišuje velká a malá písmena, takže ' JavaScript ' a ' JavaScript ' jsou ekvivalentní.  
+ `language`Atribut není povinný, ale je-li zadán, jeho hodnota musí být jedna z následujících hodnot: `C#` , `VB` , `JScript` , `JavaScript` , `VisualBasic` nebo `CSharp` . Pokud není zadaný, použije se výchozí jazyk JScript. V `language-name` nerozlišuje velká a malá písmena, takže ' JavaScript ' a ' JavaScript ' jsou ekvivalentní.  
   
- `implements-prefix` Atribut je povinný. Tento atribut slouží k deklaraci oboru názvů a k jeho přidružení ke bloku skriptu. Hodnota tohoto atributu je předpona, která představuje obor názvů. Tento obor názvů lze definovat někde v šabloně stylů.  
+ `implements-prefix`Atribut je povinný. Tento atribut slouží k deklaraci oboru názvů a k jeho přidružení ke bloku skriptu. Hodnota tohoto atributu je předpona, která představuje obor názvů. Tento obor názvů lze definovat někde v šabloně stylů.  
   
- Vzhledem k `msxsl:script` tomu, že element patří `urn:schemas-microsoft-com:xslt`do oboru názvů, šablona stylů musí zahrnovat deklaraci `xmlns:msxsl=urn:schemas-microsoft-com:xslt`oboru názvů.  
+ Vzhledem k tomu `msxsl:script` , že element patří do oboru názvů `urn:schemas-microsoft-com:xslt` , šablona stylů musí zahrnovat deklaraci oboru názvů `xmlns:msxsl=urn:schemas-microsoft-com:xslt` .  
   
- Pokud volající skriptu nemá <xref:System.Security.Permissions.SecurityPermissionFlag> přístupová oprávnění, skript v šabloně stylů nebude nikdy zkompilován a volání <xref:System.Xml.Xsl.XslTransform.Load%2A> se nezdaří.  
+ Pokud volající skriptu nemá <xref:System.Security.Permissions.SecurityPermissionFlag> přístupová oprávnění, skript v šabloně stylů nebude nikdy zkompilován a volání se <xref:System.Xml.Xsl.XslTransform.Load%2A> nezdaří.  
   
- Pokud má `UnmanagedCode` volající oprávnění, skript se zkompiluje, ale operace, které jsou povoleny, jsou závislé na legitimaci, která je zadána v době načítání.  
+ Pokud má volající `UnmanagedCode` oprávnění, skript se zkompiluje, ale operace, které jsou povoleny, jsou závislé na legitimaci, která je zadána v době načítání.  
   
- <xref:System.Xml.Xsl.XslTransform.Load%2A> Pokud používáte jednu z metod, které přijímají šablonu stylů <xref:System.Xml.XmlReader> nebo <xref:System.Xml.XPath.XPathNavigator> , je nutné použít <xref:System.Xml.Xsl.XslTransform.Load%2A> přetížení, které přijímá <xref:System.Security.Policy.Evidence> parametr jako jeden z jeho argumentů. Aby mohl volající poskytnout legitimaci, musí <xref:System.Security.Permissions.SecurityPermissionFlag> mít oprávnění k `Evidence` zadání sestavení skriptu. Pokud volající nemá toto oprávnění, pak může nastavit `Evidence` parametr na. `null` Způsobí to, <xref:System.Xml.Xsl.XslTransform.Load%2A> že funkce selže, pokud nalezne skript. `ControlEvidence` Oprávnění je považováno za velmi výkonné oprávnění, které by mělo být uděleno pouze vysoce důvěryhodnému kódu.  
+ Pokud používáte jednu z <xref:System.Xml.Xsl.XslTransform.Load%2A> metod, které přijímají <xref:System.Xml.XmlReader> <xref:System.Xml.XPath.XPathNavigator> šablonu stylů nebo, je nutné použít <xref:System.Xml.Xsl.XslTransform.Load%2A> přetížení, které přijímá <xref:System.Security.Policy.Evidence> parametr jako jeden z jeho argumentů. Aby mohl volající poskytnout legitimaci, musí mít <xref:System.Security.Permissions.SecurityPermissionFlag> oprávnění k zadání `Evidence` sestavení skriptu. Pokud volající nemá toto oprávnění, pak může nastavit `Evidence` parametr na `null` . Způsobí to, že <xref:System.Xml.Xsl.XslTransform.Load%2A> funkce selže, pokud nalezne skript. `ControlEvidence`Oprávnění je považováno za velmi výkonné oprávnění, které by mělo být uděleno pouze vysoce důvěryhodnému kódu.  
   
- Chcete-li získat legitimaci ze sestavení, `this.GetType().Assembly.Evidence`použijte. K získání legitimace z identifikátoru URI (Uniform Resource Identifier) použijte `Evidence e = XmlSecureResolver.CreateEvidenceForUrl(stylesheetURI)`.  
+ Chcete-li získat legitimaci ze sestavení, použijte `this.GetType().Assembly.Evidence` . K získání legitimace z identifikátoru URI (Uniform Resource Identifier) použijte `Evidence e = XmlSecureResolver.CreateEvidenceForUrl(stylesheetURI)` .  
   
- Použijete <xref:System.Xml.Xsl.XslTransform.Load%2A> -li metody, které <xref:System.Xml.XmlResolver> přijmou, `Evidence`ale ne, zóna zabezpečení pro sestavení má výchozí hodnotu úplný vztah důvěryhodnosti. Další informace najdete v tématu <xref:System.Security.SecurityZone> a [pojmenované sady oprávnění](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/4652tyx7(v=vs.100)).  
+ Použijete-li <xref:System.Xml.Xsl.XslTransform.Load%2A> metody, které přijmou <xref:System.Xml.XmlResolver> , ale ne `Evidence` , zóna zabezpečení pro sestavení má výchozí hodnotu úplný vztah důvěryhodnosti. Další informace najdete v tématu <xref:System.Security.SecurityZone> a [pojmenované sady oprávnění](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/4652tyx7(v=vs.100)).  
   
- Funkce mohou být deklarovány v `msxsl:script` rámci elementu. V následující tabulce jsou uvedeny obory názvů, které jsou ve výchozím nastavení podporovány. Můžete použít třídy mimo uvedené obory názvů. Nicméně tyto třídy musí být plně kvalifikované.  
+ Funkce mohou být deklarovány v rámci `msxsl:script` elementu. V následující tabulce jsou uvedeny obory názvů, které jsou ve výchozím nastavení podporovány. Můžete použít třídy mimo uvedené obory názvů. Nicméně tyto třídy musí být plně kvalifikované.  
   
 |Výchozí obory názvů|Popis|  
 |------------------------|-----------------|  
@@ -58,7 +58,7 @@ ms.locfileid: "78160206"
 |System.Xml.XPath|Třídy jazyka XML Path (XPath).|  
 |Microsoft. VisualBasic|Třídy pro skripty Microsoft Visual Basic.|  
   
- Je-li funkce deklarována, je obsažena v bloku skriptu. Šablony stylů mohou obsahovat více bloků skriptu, z nichž každý pracuje nezávisle na sobě. To znamená, že pokud provádíte uvnitř bloku skriptu, nemůžete volat funkci, která je definována v jiném bloku skriptu, pokud není deklarována tak, aby měla stejný obor názvů a stejný skriptovací jazyk. Vzhledem k tomu, že každý blok skriptu může být ve vlastním jazyce a blok je analyzován podle gramatických pravidel daného jazykového analyzátoru, je nutné použít správnou syntaxi používaného jazyka. Například pokud jste v bloku skriptu jazyka C#, pak se jedná o chybu při použití uzlu `<!-- an XML comment -->` komentáře XML v bloku.  
+ Je-li funkce deklarována, je obsažena v bloku skriptu. Šablony stylů mohou obsahovat více bloků skriptu, z nichž každý pracuje nezávisle na sobě. To znamená, že pokud provádíte uvnitř bloku skriptu, nemůžete volat funkci, která je definována v jiném bloku skriptu, pokud není deklarována tak, aby měla stejný obor názvů a stejný skriptovací jazyk. Vzhledem k tomu, že každý blok skriptu může být ve vlastním jazyce a blok je analyzován podle gramatických pravidel daného jazykového analyzátoru, je nutné použít správnou syntaxi používaného jazyka. Například pokud jste v bloku skriptu jazyka C#, pak se jedná o chybu při použití uzlu komentáře XML `<!-- an XML comment -->` v bloku.  
   
  Zadané argumenty a návratové hodnoty, které jsou definovány funkcemi skriptu, musí být jedním z typů XPath nebo XSLT typu konsorcium World Wide Web (W3C). V následující tabulce jsou uvedeny odpovídající typy W3C, ekvivalentní .NET Framework třídy (Type) a zda typ W3C je typ XPath nebo typ XSLT.  
   
@@ -96,7 +96,7 @@ ms.locfileid: "78160206"
 </msxsl:script>  
 ```  
   
- Vyvolá výjimku, protože ampersandy nejsou uvozeny řídicími znaky. Dokument je načten jako XML a pro text mezi značkami `msxsl:script` elementu není aplikováno žádné speciální zacházení.  
+ Vyvolá výjimku, protože ampersandy nejsou uvozeny řídicími znaky. Dokument je načten jako XML a pro text mezi značkami elementu není aplikováno žádné speciální zacházení `msxsl:script` .  
   
 ## <a name="example"></a>Příklad  
  V následujícím příkladu je použit vložený skript k výpočtu obvodu kružnice s daným poloměrem.  
@@ -231,4 +231,4 @@ public class Sample
   
 ## <a name="see-also"></a>Viz také
 
-- [Třída XslTransform implementuje procesor XSLT](../../../../docs/standard/data/xml/xsltransform-class-implements-the-xslt-processor.md)
+- [Třída XslTransform implementuje procesor XSLT](xsltransform-class-implements-the-xslt-processor.md)

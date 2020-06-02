@@ -1,5 +1,5 @@
 ---
-title: <permission> - Průvodce programováním jazyka C#
+title: <permission> – Průvodce programováním v C#
 ms.date: 07/20/2015
 f1_keywords:
 - permission
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - <permission> C# XML tag
 - permission C# XML tag
 ms.assetid: 769e93fe-8404-443f-bf99-577aa42b6a49
-ms.openlocfilehash: 4f76d28d5531c1b9f01fa950589407934cc1244a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bb7172042f0b472d03c3fa2d9dbd0d4d4265076b
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77093471"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287269"
 ---
-# <a name="permission-c-programming-guide"></a>\<> oprávnění (průvodce programováním jazyka C#)
+# <a name="permission-c-programming-guide"></a>\<permission>(Průvodce programováním v C#)
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -27,19 +27,19 @@ ms.locfileid: "77093471"
 
 - cref = " `member`"
 
-  Odkaz na člena nebo na pole, které lze volat z prostředí aktuální kompilace. Kompilátor zkontroluje, zda daný prvek `member` kódu existuje, a překládá se do názvu kanonického prvku ve výstupním XML. *člen* musí být uveden v uvozovkách (" ").
+  Odkaz na člena nebo na pole, které lze volat z prostředí aktuální kompilace. Kompilátor kontroluje, zda daný prvek kódu existuje, a překládá se na `member` název kanonického prvku ve výstupním souboru XML. *člen* musí být v uvozovkách ("").
 
-  Informace o tom, jak vytvořit odkaz na obecný typ, naleznete v [atributu cref](./cref-attribute.md).
+  Informace o tom, jak vytvořit odkaz cref na obecný typ, naleznete v tématu [atribut cref](./cref-attribute.md).
 
 - `description`
 
-  Popis přístupu k členu.
+  Popis přístupu ke členovi.
 
 ## <a name="remarks"></a>Poznámky
 
-Značka \<oprávnění> umožňuje dokumentovat přístup člena. Třída <xref:System.Security.PermissionSet> umožňuje určit přístup k členu.
+`<permission>`Značka vám umožní dokumentovat přístup člena. <xref:System.Security.PermissionSet>Třída umožňuje zadat přístup ke členu.
 
-Kompilujte s [-doc](../../language-reference/compiler-options/doc-compiler-option.md) pro zpracování dokumentů komentáře do souboru.
+Zkompilujte s [-doc](../../language-reference/compiler-options/doc-compiler-option.md) a zpracujte komentáře k dokumentaci do souboru.
 
 ## <a name="example"></a>Příklad
 

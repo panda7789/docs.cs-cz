@@ -1,14 +1,14 @@
 ---
 title: Co je tvůrce modelů a jak to funguje?
 description: Postup pro automatické učení modelu Machine Learning pomocí Tvůrce modelů ML.NET
-ms.date: 03/25/2020
+ms.date: 06/01/2020
 ms.custom: overview, mlnet-tooling
-ms.openlocfilehash: 4afdbfd1682a30647b09d05d51a5c73c214fe2bd
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 2ed4a0c3c94ae9f46bb1cf6ddb1e9774baf82367
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616926"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289496"
 ---
 # <a name="what-is-model-builder-and-how-does-it-work"></a>Co je tvůrce modelů a jak to funguje?
 
@@ -119,7 +119,7 @@ Pokud ještě nemáte vlastní data, vyzkoušejte jednu z těchto datových sad:
 
 ## <a name="train"></a>Trénování
 
-Když vyberete svůj scénář, data a popisek, tvůrce modelů navlakuje model.
+Jakmile vyberete svůj scénář, prostředí, data a popisek, bude model navlacích do Tvůrce modelů.
 
 ### <a name="what-is-training"></a>Co je školení?
 
@@ -149,6 +149,8 @@ Tato čísla jsou jenom orientační. Přesná délka školení závisí na:
 - typ sloupců
 - úkol ML
 - výkon procesoru, disku a paměti počítače, který se používá pro školení
+
+Obecně se doporučuje použít více než 100 řádků jako datových sad s menším množstvím, než které by mohly způsobit žádné výsledky a může to mít výrazně delší dobu.
 
 ## <a name="evaluate"></a>Vyhodnotit
 
@@ -193,7 +195,7 @@ Pokud vaše skóre výkonu vašeho modelu není tak dobré, jak chcete, můžete
 
 - Naučit se delší dobu. Pomocí automatizovaného strojového strojového učení s větším využitím algoritmů a nastavení se s víc časem experimentuje.
 
-- Přidejte další data. V některých případech se množství dat nestačí pro výuku vysoce kvalitního modelu strojového učení.
+- Přidejte další data. V některých případech se množství dat nestačí pro výuku vysoce kvalitního modelu strojového učení. To je obzvláště pravdivé u datových sad, které mají malý počet příkladů.
 
 - Vyvážení dat Pro úlohy klasifikace se ujistěte, že je sada školení vyrovnávána napříč kategoriemi. Například pokud máte čtyři třídy pro 100 příkladů a dvě první třídy (značky 1 a značka2) se používají pro 90 záznamů, ale ostatní dvě (značka3 a tag4) se používají jenom u zbývajících 10 záznamů, nedostatek vyvážených dat může způsobit, že váš model bude bojovat správně předpovědět značka3 nebo tag4.
 

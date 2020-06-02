@@ -9,12 +9,12 @@ helpviewer_keywords:
 - global applications, naming guidelines
 - international applications, naming guidelines
 ms.assetid: 8b0e97f3-7877-44fd-bc76-e05d36d5d79c
-ms.openlocfilehash: 95aff35569e58eacfd064609140a29b53e0036da
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 762ba99c4751ba40f5f33e99455cf950af35cdf6
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76743811"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290146"
 ---
 # <a name="naming-resources"></a>Prostředky pojmenování
 Vzhledem k tomu, že lokalizovatelné prostředky mohou být odkazovány prostřednictvím určitých objektů, jako by se jednalo o vlastnosti, pokyny pro pojmenování prostředků jsou podobné pravidlům vlastností.
@@ -23,7 +23,7 @@ Vzhledem k tomu, že lokalizovatelné prostředky mohou být odkazovány prostř
 
  ✔️ Zadejte popisný název místo krátkých identifikátorů.
 
- ❌ pro hlavní jazyky CLR nepoužívejte klíčová slova specifická pro jazyk.
+ ❌Nepoužívejte klíčová slova specifická pro jazyky modulu CLR.
 
  ✔️ v názvech prostředků používat pouze alfanumerické znaky a podtržítka.
 
@@ -40,5 +40,5 @@ Vzhledem k tomu, že lokalizovatelné prostředky mohou být odkazovány prostř
 
 ## <a name="see-also"></a>Viz také
 
-- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)
-- [Pokyny pro pojmenování](../../../docs/standard/design-guidelines/naming-guidelines.md)
+- [Pokyny k návrhu architektury](index.md)
+- [Pokyny pro pojmenování](naming-guidelines.md)

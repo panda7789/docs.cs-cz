@@ -16,12 +16,12 @@ helpviewer_keywords:
 - serialization, examples
 - serialization, attributes
 ms.assetid: 47d4c39d-30e1-4c7b-8a2e-301325390647
-ms.openlocfilehash: 4fc7667a2123a106b995a1ea3a31da4551ca650e
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 79c5541b4c384e91fbec8c8f1b2130887e79a252
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83375954"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289678"
 ---
 # <a name="controlling-xml-serialization-using-attributes"></a>Řízení serializace XML pomocí atributů
 
@@ -30,7 +30,7 @@ Atributy lze použít k řízení XML serializace objektu nebo k vytvoření alt
 > [!NOTE]
 > Pokud XML vygenerované musí odpovídat části 5 dokumentu konsorcium World Wide Web (W3C) s názvem [Simple Object Access Protocol (SOAP) 1,1](https://www.w3.org/TR/2000/NOTE-SOAP-20000508/), použijte atributy uvedené v [atributech, které řídí serializaci kódovaných SOAP](attributes-that-control-encoded-soap-serialization.md).
 
-Ve výchozím nastavení je název elementu XML určen název třída nebo člen. V jednoduché třídě s názvem `Book` , pole s názvem vytvoří `ISBN` značku XML typu \< ISBN>, jak je znázorněno v následujícím příkladu.
+Ve výchozím nastavení je název elementu XML určen název třída nebo člen. V jednoduché třídě s názvem `Book` pole s názvem vytvoří `ISBN` značku XML elementu \<ISBN> , jak je znázorněno v následujícím příkladu.
 
 ```vb
 Public Class Book
@@ -67,7 +67,7 @@ public class TaxRates {
 }
 ```
 
-Další informace o atributech naleznete v tématu [Attributes](../../../docs/standard/attributes/index.md). Seznam atributů, které řídí serializace XML, naleznete v tématu [atributy, které řídí serializaci XML](attributes-that-control-xml-serialization.md).
+Další informace o atributech naleznete v tématu [Attributes](../attributes/index.md). Seznam atributů, které řídí serializace XML, naleznete v tématu [atributy, které řídí serializaci XML](attributes-that-control-xml-serialization.md).
 
 ## <a name="controlling-array-serialization"></a>Řízení serializace pole
 

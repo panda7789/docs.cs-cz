@@ -14,16 +14,16 @@ helpviewer_keywords:
 - formatting [.NET Framework], time
 - date and time strings
 ms.assetid: 98b374e3-0cc2-4c78-ab44-efb671d71984
-ms.openlocfilehash: ae2711aac8bd864e623efe18e698c8de75a3ac32
-ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
+ms.openlocfilehash: 9aea3e9b52613add1ebc4cf7d9c0087088008d6e
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83440990"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84278996"
 ---
 # <a name="custom-date-and-time-format-strings"></a>Vlastní řetězce formátu data a času
 
-Formátovací řetězec data a času definuje textovou reprezentaci <xref:System.DateTime> <xref:System.DateTimeOffset> hodnoty nebo, která je výsledkem operace formátování. Může také definovat reprezentaci hodnoty data a času nezbytnou v rámci operace analýzy a úspěšně tak řetězec převést na datum a čas. Řetězec vlastního formátu se skládá z jednoho nebo více vlastních specifikátorů formátu data a času. Libovolný řetězec, který není [standardním řetězcem formátu data a času](../../../docs/standard/base-types/standard-date-and-time-format-strings.md) , je interpretován jako řetězec vlastního formátu data a času.
+Formátovací řetězec data a času definuje textovou reprezentaci <xref:System.DateTime> <xref:System.DateTimeOffset> hodnoty nebo, která je výsledkem operace formátování. Může také definovat reprezentaci hodnoty data a času nezbytnou v rámci operace analýzy a úspěšně tak řetězec převést na datum a čas. Řetězec vlastního formátu se skládá z jednoho nebo více vlastních specifikátorů formátu data a času. Libovolný řetězec, který není [standardním řetězcem formátu data a času](standard-date-and-time-format-strings.md) , je interpretován jako řetězec vlastního formátu data a času.
 
 > [!TIP]
 > Můžete si stáhnout **formátovací nástroj**, aplikaci .net Core model Windows Forms, která umožňuje použití řetězců formátu na číselné hodnoty nebo hodnoty data a času a zobrazuje výsledný řetězec. Zdrojový kód je k dispozici pro [C#](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-cs) a [Visual Basic](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-vb).
@@ -696,7 +696,7 @@ Výsledný řetězec vytvořený mnoha specifikátory vlastního formátu data a
 
 - <xref:System.DateTime?displayProperty=nameWithType>
 - <xref:System.IFormatProvider?displayProperty=nameWithType>
-- [Typy formátování](../../../docs/standard/base-types/formatting-types.md)
-- [Řetězce standardního formátu data a času](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)
+- [Typy formátování](formatting-types.md)
+- [Řetězce standardního formátu data a času](standard-date-and-time-format-strings.md)
 - [Ukázka: nástroj formátování WinForms pro .NET Core (C#)](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-cs)
 - [Ukázka: nástroj formátování WinForms pro .NET Core (Visual Basic)](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-vb)

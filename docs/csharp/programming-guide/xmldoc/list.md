@@ -1,5 +1,5 @@
 ---
-title: <list> - Průvodce programováním jazyka C#
+title: <list> – Průvodce programováním v C#
 ms.date: 07/20/2015
 f1_keywords:
 - list
@@ -12,14 +12,14 @@ helpviewer_keywords:
 - <item> C# XML tag
 - <list> C# XML tag
 ms.assetid: c9620b1b-c2e6-43f1-ab88-8ab47308ffec
-ms.openlocfilehash: cb289b26e9bc12d561892c421fb40da18d8c3513
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 78eec992671dab1aa59717a007a8e3a2662f6e87
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76789743"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287334"
 ---
-# <a name="list-c-programming-guide"></a>\<seznam> (Průvodce programováním jazyka C#)
+# <a name="list-c-programming-guide"></a>\<list>(Průvodce programováním v C#)
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -40,21 +40,21 @@ ms.locfileid: "76789743"
 
 - `term`
 
-  Termín definovat, který bude definován `description`v .
+  Pojem, který definuje, který bude definován v `description` .
 
 - `description`
 
-  Položka v odrážkách nebo číslovaném seznamu `term`nebo definice .
+  Buď položka v seznamu odrážek nebo číslovaný seznam, nebo definice `term` .
   
 ## <a name="remarks"></a>Poznámky
 
-Blok \<> záhlaví seznamu se používá k definování řádku záhlaví tabulky nebo seznamu definic. Při definování tabulky stačí zadat položku termínu v nadpisu.
+Tento `<listheader>` blok slouží k definování řádku záhlaví seznamu tabulek nebo definic. Při definování tabulky stačí zadat položku pro termín v záhlaví.
 
-Každá položka v seznamu je \<určena položkou> bloku. Při vytváření seznamu definic bude nutné `term` zadat `description`obě a . Pro tabulku, seznam s odrážkami nebo číslovaný seznam však `description`stačí zadat položku pro .
+Každá položka v seznamu je určena `<item>` blokem. Při vytváření seznamu definic budete muset zadat i `term` `description` . U tabulky, seznamu s odrážkami nebo číslovaného seznamu ale stačí zadat položku pro `description` .
 
-Seznam nebo tabulka může \<mít libovolný počet položek> bloky podle potřeby.
+Seznam nebo tabulka může mít tolik `<item>` bloků, kolik potřebujete.
 
-Kompilujte s [-doc](../../language-reference/compiler-options/doc-compiler-option.md) pro zpracování dokumentů komentáře do souboru.
+Zkompilujte s [-doc](../../language-reference/compiler-options/doc-compiler-option.md) a zpracujte komentáře k dokumentaci do souboru.
 
 ## <a name="example"></a>Příklad
 

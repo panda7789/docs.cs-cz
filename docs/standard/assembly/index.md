@@ -13,12 +13,12 @@ helpviewer_keywords:
 - assemblies [.NET Framework]
 - version boundaries
 - type boundaries
-ms.openlocfilehash: 87030bf9770c464709559b2fb8f4c0004009e48d
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 364a1a8c0fbaae93a02495aaf2e8c519ffb46451
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83379915"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290938"
 ---
 # <a name="assemblies-in-net"></a>Sestavení v .NET
 
@@ -86,7 +86,7 @@ Vzhledem k tomu, že sestavení obsahují informace o obsahu, správy verzí a z
 Chcete-li použít sestavení v aplikaci, je nutné přidat odkaz na něj. Jakmile je odkazováno na sestavení, všechny dostupné typy, vlastnosti, metody a další členy svých oborů názvů jsou k dispozici pro vaši aplikaci, jako by jejich kód byl součástí zdrojového souboru.
 
 > [!NOTE]
-> Většina sestavení z knihovny tříd .NET je odkazována automaticky. Pokud se na systémové sestavení neodkazuje automaticky, můžete pro .NET Core přidat odkaz na balíček NuGet, který obsahuje sestavení. Buď použijte Správce balíčků NuGet v aplikaci Visual Studio, nebo přidejte element [ \< PackageReference>](../../core/tools/dependencies.md#the-packagereference-element) pro sestavení do projektu *. csproj* nebo *. vbproj* . V .NET Framework můžete přidat odkaz na sestavení pomocí dialogového okna **Přidat odkaz** v aplikaci Visual Studio nebo pomocí `-reference` Možnosti příkazového řádku pro kompilátory [jazyka C#](../../csharp/language-reference/compiler-options/reference-compiler-option.md) nebo [Visual Basic](../../visual-basic/reference/command-line-compiler/reference.md) .
+> Většina sestavení z knihovny tříd .NET je odkazována automaticky. Pokud se na systémové sestavení neodkazuje automaticky, můžete pro .NET Core přidat odkaz na balíček NuGet, který obsahuje sestavení. Buď použijte Správce balíčků NuGet v aplikaci Visual Studio, nebo přidejte [\<PackageReference>](../../core/tools/dependencies.md#the-packagereference-element) element pro sestavení do projektu *. csproj* nebo *. vbproj* . V .NET Framework můžete přidat odkaz na sestavení pomocí dialogového okna **Přidat odkaz** v aplikaci Visual Studio nebo pomocí `-reference` Možnosti příkazového řádku pro kompilátory [jazyka C#](../../csharp/language-reference/compiler-options/reference-compiler-option.md) nebo [Visual Basic](../../visual-basic/reference/command-line-compiler/reference.md) .
 
 V jazyce C# můžete použít dvě verze stejného sestavení v jediné aplikaci. Další informace najdete v tématu [extern alias](../../csharp/language-reference/keywords/extern-alias.md).
 
@@ -102,10 +102,10 @@ V jazyce C# můžete použít dvě verze stejného sestavení v jediné aplikaci
 |[Správa verzí sestavení](versioning.md)|Přehled zásad správy verzí .NET Framework.|
 |[Umístění sestavení](../../framework/app-domains/assembly-placement.md)|Kam umístit sestavení.|
 |[Sestavení a souběžné spouštění](side-by-side-execution.md)|Použijte současně více verzí modulu runtime nebo sestavení.|
-|[Generování dynamických metod a sestavení](../../../docs/framework/reflection-and-codedom/emitting-dynamic-methods-and-assemblies.md)|Vytváření dynamických sestavení.|
-|[Způsob, jakým modul runtime vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)|Způsob, jakým .NET Framework řeší odkazy na sestavení v době běhu.|
+|[Generování dynamických metod a sestavení](../../framework/reflection-and-codedom/emitting-dynamic-methods-and-assemblies.md)|Vytváření dynamických sestavení.|
+|[Způsob, jakým modul runtime vyhledává sestavení](../../framework/deployment/how-the-runtime-locates-assemblies.md)|Způsob, jakým .NET Framework řeší odkazy na sestavení v době běhu.|
 
-## <a name="reference"></a>Referenční informace
+## <a name="reference"></a>Odkaz
 
 <xref:System.Reflection.Assembly?displayProperty=nameWithType>
 

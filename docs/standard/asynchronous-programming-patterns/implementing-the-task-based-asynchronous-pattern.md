@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Task-based Asynchronous Pattern, .NET Framework support for
 - .NET Framework, asynchronous design patterns
 ms.assetid: fab6bd41-91bd-44ad-86f9-d8319988aa78
-ms.openlocfilehash: 7d031bab6ba0a4420062eff107aeb1262d9b3b40
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: 1f2f44b6b92f66f95816778c6dc8e893f1291abe
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83421225"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289353"
 ---
 # <a name="implementing-the-task-based-asynchronous-pattern"></a>Implementace asynchronního vzoru založeného na úlohách
 Asynchronní vzor založený na úkolech (TAP) můžete implementovat třemi způsoby: pomocí kompilátorů jazyka C# a Visual Basic v sadě Visual Studio, ručně nebo kombinací obou metod. Jednotlivé metody jsou podrobně popsány v následujících částech. Můžete použít vzor klepnutí pro implementaci asynchronních operací vázaných na vstupně-výstupní operace I/O. Část [úlohy](#workloads) popisuje jednotlivé typy operací.
@@ -98,10 +98,10 @@ Asynchronní metody nejsou omezeny pouze na výpočetní nebo vstupně-výstupn�
 [!code-csharp[Conceptual.TAP_Patterns#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.tap_patterns/cs/patterns1.cs#7)]
 [!code-vb[Conceptual.TAP_Patterns#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.tap_patterns/vb/patterns1.vb#7)]
 
-Tento příklad také znázorňuje, jakým způsobem lze jeden token zrušení zřetězit prostřednictvím několika asynchronních operací. Další informace naleznete v části používání zrušení v tématu použití [asynchronního vzoru založeného na úlohách](../../../docs/standard/asynchronous-programming-patterns/consuming-the-task-based-asynchronous-pattern.md).
+Tento příklad také znázorňuje, jakým způsobem lze jeden token zrušení zřetězit prostřednictvím několika asynchronních operací. Další informace naleznete v části používání zrušení v tématu použití [asynchronního vzoru založeného na úlohách](consuming-the-task-based-asynchronous-pattern.md).
 
 ## <a name="see-also"></a>Viz také
 
-- [Asynchronní vzor založený na úlohách (TAP)](../../../docs/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md)
-- [Použití asynchronního vzoru založeného na úlohách](../../../docs/standard/asynchronous-programming-patterns/consuming-the-task-based-asynchronous-pattern.md)
-- [Interoperabilita s jinými asynchronními vzory a typy](../../../docs/standard/asynchronous-programming-patterns/interop-with-other-asynchronous-patterns-and-types.md)
+- [Asynchronní vzor založený na úlohách (TAP)](task-based-asynchronous-pattern-tap.md)
+- [Použití asynchronního vzoru založeného na úlohách](consuming-the-task-based-asynchronous-pattern.md)
+- [Interoperabilita s jinými asynchronními vzory a typy](interop-with-other-asynchronous-patterns-and-types.md)

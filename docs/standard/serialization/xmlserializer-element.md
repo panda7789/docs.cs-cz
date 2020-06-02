@@ -7,18 +7,18 @@ helpviewer_keywords:
 - XML serialization, configuration
 - xmlSerializer element
 ms.assetid: d129d10c-3eb7-45d9-8098-5fa853825e47
-ms.openlocfilehash: 68037959893ec307a896ea86d21e40a9d7aa824c
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 667d59f7eb0d1c7682afcdda584cc5b0ca2da802
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83380023"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288924"
 ---
-# <a name="xmlserializer-element"></a>\<xmlSerializer – element> elementu
+# <a name="xmlserializer-element"></a>Element \<xmlSerializer>
 Určuje, zda dodatečnou kontrolu průběh <xref:System.Xml.Serialization.XmlSerializer> je Hotovo.  
   
- \<> konfigurace  
-\<System. XML. Serialization –>  
+ \<configuration>  
+\<system.xml.serialization>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,7 +43,7 @@ Určuje, zda dodatečnou kontrolu průběh <xref:System.Xml.Serialization.XmlSer
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<System. XML. Serialization – element>](../../../docs/standard/serialization/system-xml-serialization-element.md)|Obsahuje nastavení konfigurace pro <xref:System.Xml.Serialization.XmlSerializer> a <xref:System.Xml.Serialization.XmlSchemaImporter> třídy.|  
+|[\<system.xml.serialization>Objekt](system-xml-serialization-element.md)|Obsahuje nastavení konfigurace pro <xref:System.Xml.Serialization.XmlSerializer> a <xref:System.Xml.Serialization.XmlSchemaImporter> třídy.|  
   
 ## <a name="remarks"></a>Poznámky  
  Ve výchozím nastavení <xref:System.Xml.Serialization.XmlSerializer> poskytuje další vrstvu zabezpečení proti potenciální odmítnutí útoků služby při deserializaci nedůvěryhodná data. Učiní tak pokusem o detekovat nekonečné smyčce během deserializace. Je-li taková podmínka zjištěna, je vyvolána výjimka s následující zprávou: "vnitřní chyba: deserializace nemohla pokračovat v podkladovém datovém proudu".  
@@ -64,5 +64,5 @@ Určuje, zda dodatečnou kontrolu průběh <xref:System.Xml.Serialization.XmlSer
 ## <a name="see-also"></a>Viz také
 
 - <xref:System.Xml.Serialization.XmlSerializer>
-- [\<System. XML. Serialization – element>](../../../docs/standard/serialization/system-xml-serialization-element.md)
-- [Serializace XML a SOAP](../../../docs/standard/serialization/xml-and-soap-serialization.md)
+- [\<system.xml.serialization>Objekt](system-xml-serialization-element.md)
+- [Serializace XML a SOAP](xml-and-soap-serialization.md)

@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 5412c90f-2703-4aa8-a9c4-1b8a35183c37
-ms.openlocfilehash: 715ce65bd932a45cc22d00a2346d18f3c5526229
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: 8ff02a81ab579cc0041074990a76166fcafe6eb5
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78156384"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288716"
 ---
 # <a name="ordered-node-retrieval-by-index"></a>Načtení seřazených uzlů podle indexu
 Konsorcium World Wide Web (W3C) XML model DOM (Document Object Model) (DOM) také popisuje seznam uzlů., který má schopnost zpracovávat uspořádaný seznam uzlů, na rozdíl od neuspořádané sady, která je zpracována **XmlNamedNodeMap**. Seznam uzlů. v Microsoft .NET Framework se nazývá **XmlNodeList**. Metody a vlastnosti, které vracejí **XmlNodeList** , jsou:  
@@ -53,7 +53,7 @@ for (int i=0; i < elemList.Count; i++)
 }
 ```  
   
- Kromě vlastnosti **Count** je k dispozici metoda **GetEnumerator** , která pro kolekci uzlů v **XmlNodeList**poskytuje `foreach` iteraci stylu. Následující příklad kódu ukazuje použití `foreach` příkazu.  
+ Kromě vlastnosti **Count** je k dispozici metoda **GetEnumerator** , která pro `foreach` kolekci uzlů v **XmlNodeList**poskytuje iteraci stylu. Následující příklad kódu ukazuje použití `foreach` příkazu.  
   
 ```vb  
 Dim doc As New XmlDocument()  
@@ -90,8 +90,8 @@ End While
   }  
 ```  
   
- Další informace o metodách a vlastnostech dostupných v **XmlNodeList**naleznete v tématu <xref:System.Xml.XmlNodeList>.  
+ Další informace o metodách a vlastnostech dostupných v **XmlNodeList**naleznete v tématu <xref:System.Xml.XmlNodeList> .  
   
 ## <a name="see-also"></a>Viz také
 
-- [model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+- [model DOM (Document Object Model) dokumentu XML](xml-document-object-model-dom.md)

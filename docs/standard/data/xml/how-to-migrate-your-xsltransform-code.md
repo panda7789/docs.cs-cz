@@ -6,15 +6,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 910beb2f-cfb3-4e8e-9936-f7e0c5f4064a
-ms.openlocfilehash: 2bc5cbc1b0857a82d3b0a11f05a4eb5756724546
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 42ca884c269611ebf7dae3b4e7aa8a39ba96b521
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710840"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287737"
 ---
 # <a name="how-to-migrate-your-xsltransform-code"></a>Postupy: Migrace kódu XslTransform
-Nové třídy XSLT byly navrženy tak, aby byly velmi podobné existujícím třídám. <xref:System.Xml.Xsl.XslCompiledTransform> Třída nahrazuje <xref:System.Xml.Xsl.XslTransform> třídu. Šablony stylů jsou kompilovány pomocí <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> metody. Transformace jsou spouštěny pomocí <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> metody. Následující postupy ukazují běžné úlohy XSLT a porovnávají kód pomocí <xref:System.Xml.Xsl.XslTransform> třídy versus <xref:System.Xml.Xsl.XslCompiledTransform> třídy.  
+Nové třídy XSLT byly navrženy tak, aby byly velmi podobné existujícím třídám. <xref:System.Xml.Xsl.XslCompiledTransform>Třída nahrazuje <xref:System.Xml.Xsl.XslTransform> třídu. Šablony stylů jsou kompilovány pomocí <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> metody. Transformace jsou spouštěny pomocí <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> metody. Následující postupy ukazují běžné úlohy XSLT a porovnávají kód pomocí <xref:System.Xml.Xsl.XslTransform> třídy versus <xref:System.Xml.Xsl.XslCompiledTransform> třídy.  
   
 ### <a name="to-transform-a-file-and-output-to-a-uri"></a>Transformace souboru a výstupu na identifikátor URI  
   
@@ -74,7 +74,7 @@ Nové třídy XSLT byly navrženy tak, aby byly velmi podobné existujícím tř
 - Kód pomocí <xref:System.Xml.Xsl.XslCompiledTransform> třídy.  
   
     > [!NOTE]
-    > <xref:System.Xml.Xsl.XslCompiledTransform> Třída nemá metodu, která vrátí výsledky transformace XSLT jako <xref:System.Xml.XmlReader> objekt. Můžete však výstup do souboru XML a načíst soubor XML do jiného objektu.  
+    > <xref:System.Xml.Xsl.XslCompiledTransform>Třída nemá metodu, která vrátí výsledky transformace XSLT jako <xref:System.Xml.XmlReader> objekt. Můžete však výstup do souboru XML a načíst soubor XML do jiného objektu.  
   
      [!code-csharp[XML_Migration#20](../../../../samples/snippets/csharp/VS_Snippets_Data/XML_Migration/CS/migration.cs#20)]
      [!code-vb[XML_Migration#20](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XML_Migration/VB/migration.vb#20)]  
@@ -93,5 +93,5 @@ Nové třídy XSLT byly navrženy tak, aby byly velmi podobné existujícím tř
   
 ## <a name="see-also"></a>Viz také
 
-- [Migrace z třídy XslTransform](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md)
-- [Používání třídy XslCompiledTransform](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md)
+- [Migrace z třídy XslTransform](migrating-from-the-xsltransform-class.md)
+- [Používání třídy XslCompiledTransform](using-the-xslcompiledtransform-class.md)

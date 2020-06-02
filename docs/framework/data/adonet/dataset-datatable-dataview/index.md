@@ -1,22 +1,23 @@
 ---
 title: Datové sady, datové tabulky a datová zobrazení
+description: Seznamte se s různými způsoby, jak pracovat s datovou sadou ADO.NET, což je reprezentace dat rezidentních v paměti, která poskytuje konzistentní relační programovací model.
 ms.date: 03/30/2017
 ms.assetid: 6d4c4b69-8919-4224-8a65-6cca1c61b48f
-ms.openlocfilehash: 1744f6c6d8ea3c28a8dab30c0d201ae1dacc7ee3
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: f6562452261cbc1f7ee36fb264b858646a42e4f5
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70786191"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286893"
 ---
 # <a name="datasets-datatables-and-dataviews"></a>Datové sady, datové tabulky a datová zobrazení
-ADO.NET <xref:System.Data.DataSet> je reprezentace dat rezidenta v paměti, která poskytuje konzistentní relační programovací model bez ohledu na zdroj dat, který obsahuje. <xref:System.Data.DataSet> Představuje kompletní sadu dat, včetně tabulek, které obsahují, vyřazení a omezení dat a také vztahů mezi tabulkami.  
+ADO.NET <xref:System.Data.DataSet> je reprezentace dat rezidenta v paměti, která poskytuje konzistentní relační programovací model bez ohledu na zdroj dat, který obsahuje. <xref:System.Data.DataSet>Představuje kompletní sadu dat, včetně tabulek, které obsahují, vyřazení a omezení dat a také vztahů mezi tabulkami.  
   
- Existuje několik způsobů práce s a <xref:System.Data.DataSet>, které lze použít nezávisle nebo v kombinaci. Můžete:  
+ Existuje několik způsobů práce s a <xref:System.Data.DataSet> , které lze použít nezávisle nebo v kombinaci. Další možnosti:  
   
-- Programové vytvoření <xref:System.Data.DataTable>, <xref:System.Data.DataRelation>a v rámci<xref:System.Data.DataSet> a naplnění tabulek daty. <xref:System.Data.Constraint>  
+- Programové vytvoření <xref:System.Data.DataTable> , a <xref:System.Data.DataRelation> <xref:System.Data.Constraint> v rámci <xref:System.Data.DataSet> a naplnění tabulek daty.  
   
-- Naplňte tabulky daty z existujícího relačního zdroje dat `DataAdapter`pomocí. <xref:System.Data.DataSet>  
+- Naplňte <xref:System.Data.DataSet> tabulky daty z existujícího relačního zdroje dat pomocí `DataAdapter` .  
   
 - Načtěte a zachovejte <xref:System.Data.DataSet> obsah pomocí XML. Další informace naleznete v tématu [using XML in a DataSet](using-xml-in-a-dataset.md).  
   
@@ -24,37 +25,37 @@ ADO.NET <xref:System.Data.DataSet> je reprezentace dat rezidenta v paměti, kter
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Vytvoření datové sady](creating-a-dataset.md)  
- Popisuje syntaxi pro vytvoření instance <xref:System.Data.DataSet>.  
+ Popisuje syntaxi pro vytvoření instance <xref:System.Data.DataSet> .  
   
  [Přidání datové tabulky do datové sady](adding-a-datatable-to-a-dataset.md)  
- Popisuje, jak vytvořit a přidat tabulky a sloupce do <xref:System.Data.DataSet>.  
+ Popisuje, jak vytvořit a přidat tabulky a sloupce do <xref:System.Data.DataSet> .  
   
  [Přidání datových relací](adding-datarelations.md)  
- Popisuje, jak vytvořit relace mezi tabulkami v <xref:System.Data.DataSet>.  
+ Popisuje, jak vytvořit relace mezi tabulkami v <xref:System.Data.DataSet> .  
   
  [Navigace v datových relacích](navigating-datarelations.md)  
  Popisuje, jak použít relace mezi tabulkami v <xref:System.Data.DataSet> k vrácení podřízených nebo nadřazených řádků relace typu nadřazený-podřízený.  
   
  [Slučování obsahu datové sady](merging-dataset-contents.md)  
- Popisuje, jak sloučit obsah <xref:System.Data.DataSet>jednoho, <xref:System.Data.DataTable>nebo <xref:System.Data.DataRow> pole do jiného <xref:System.Data.DataSet>.  
+ Popisuje, jak sloučit obsah jednoho <xref:System.Data.DataSet> , <xref:System.Data.DataTable> nebo <xref:System.Data.DataRow> pole do jiného <xref:System.Data.DataSet> .  
   
  [Kopírování obsahu datové sady](copying-dataset-contents.md)  
- Popisuje <xref:System.Data.DataSet> , jak vytvořit kopii, která může obsahovat schéma i zadaná data.  
+ Popisuje, jak vytvořit kopii <xref:System.Data.DataSet> , která může obsahovat schéma i zadaná data.  
   
  [Zpracování událostí datové sady](handling-dataset-events.md)  
  Popisuje události <xref:System.Data.DataSet> a, jak je používat.  
   
  [Typové datové sady](typed-datasets.md)  
- Popisuje, co je <xref:System.Data.DataSet> typu a jak ho vytvořit a použít.  
+ Popisuje <xref:System.Data.DataSet> , co je typu a jak ho vytvořit a použít.  
   
  [Datové tabulky](datatables.md)  
- Popisuje <xref:System.Data.DataTable>, jak vytvořit, definovat schéma a manipulovat s daty.  
+ Popisuje, jak vytvořit <xref:System.Data.DataTable> , definovat schéma a manipulovat s daty.  
   
  [Čtečky datových tabulek](datatablereaders.md)  
- Popisuje, jak vytvořit a použít <xref:System.Data.DataTableReader>.  
+ Popisuje, jak vytvořit a použít <xref:System.Data.DataTableReader> .  
   
  [Zobrazení dat](dataviews.md)  
- Popisuje, jak vytvořit a pracovat `DataViews` s <xref:System.Data.DataView> událostmi a pracovat s nimi.  
+ Popisuje, jak vytvořit a pracovat s `DataViews` událostmi a pracovat s nimi <xref:System.Data.DataView> .  
   
  [Použití XML v datové sadě](using-xml-in-a-dataset.md)  
  Popisuje, jak <xref:System.Data.DataSet> komunikuje s XML jako zdroj dat, včetně načítání a uchování obsahu <xref:System.Data.DataSet> jako XML data.  
@@ -78,7 +79,7 @@ ADO.NET <xref:System.Data.DataSet> je reprezentace dat rezidenta v paměti, kter
  [Přidání existujících omezení do datové sady](../adding-existing-constraints-to-a-dataset.md)  
  Popisuje, jak naplnit **datovou sadu** pomocí informací o primárním klíči ze zdroje dat.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [ADO.NET](../index.md)
 - [Přehled ADO.NET](../ado-net-overview.md)

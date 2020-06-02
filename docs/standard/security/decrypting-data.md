@@ -11,12 +11,12 @@ helpviewer_keywords:
 - asymmetric decryption
 - decryption
 ms.assetid: 9b266b6c-a9b2-4d20-afd8-b3a0d8fd48a0
-ms.openlocfilehash: 37194380d9f08d328f836bcb8648772348958768
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 844561c0d207106a183243f5f2b3e0cea3e70422
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75706237"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288365"
 ---
 # <a name="decrypting-data"></a>Dešifrování dat
 
@@ -24,9 +24,9 @@ Dešifrování je reverzní operace šifrování. U šifrování tajného klíč
 
 ## <a name="symmetric-decryption"></a>Symetrické dešifrování
 
-Dešifrování dat šifrovaných pomocí symetrických algoritmů je podobné procesu použitému k šifrování dat pomocí symetrických algoritmů. Třída <xref:System.Security.Cryptography.CryptoStream> se používá společně se třídami symetrického kryptografie, které poskytuje .NET Framework k dešifrování dat přečtených z libovolného spravovaného objektu streamu.
+Dešifrování dat šifrovaných pomocí symetrických algoritmů je podobné procesu použitému k šifrování dat pomocí symetrických algoritmů. <xref:System.Security.Cryptography.CryptoStream>Třída se používá se symetrickými třídami kryptografie poskytnutými .NET Framework k dešifrování dat přečtených z libovolného spravovaného objektu streamu.
 
-Následující příklad ukazuje, jak vytvořit novou instanci třídy <xref:System.Security.Cryptography.RijndaelManaged> a použít ji k dešifrování objektu <xref:System.Security.Cryptography.CryptoStream>. Tento příklad nejprve vytvoří novou instanci třídy **RijndaelManaged** . Dále vytvoří objekt **CryptoStream** a inicializuje jej na hodnotu spravovaného datového proudu s názvem `myStream`. Dále metoda **CreateDecryptor** z třídy **RijndaelManaged** předává stejný klíč a IV, který byl použit pro šifrování a je poté předán konstruktoru **CryptoStream** . Nakonec je výčet **CryptoStreamMode. Read** předán konstruktoru **CryptoStream** , který určuje přístup pro čtení ke streamu.
+Následující příklad ukazuje, jak vytvořit novou instanci <xref:System.Security.Cryptography.RijndaelManaged> třídy a použít ji k provedení dešifrování <xref:System.Security.Cryptography.CryptoStream> objektu. Tento příklad nejprve vytvoří novou instanci třídy **RijndaelManaged** . Dále vytvoří objekt **CryptoStream** a inicializuje jej na hodnotu spravovaného datového proudu `myStream` . Dále metoda **CreateDecryptor** z třídy **RijndaelManaged** předává stejný klíč a IV, který byl použit pro šifrování a je poté předán konstruktoru **CryptoStream** . Nakonec je výčet **CryptoStreamMode. Read** předán konstruktoru **CryptoStream** , který určuje přístup pro čtení ke streamu.
 
 ```vb
 Dim rmCrypto As New RijndaelManaged()
@@ -38,7 +38,7 @@ RijndaelManaged rmCrypto = new RijndaelManaged();
 CryptoStream cryptStream = new CryptoStream(myStream, rmCrypto.CreateDecryptor(Key, IV), CryptoStreamMode.Read);
 ```
 
-Následující příklad ukazuje celý proces vytvoření datového proudu, dešifrování datového proudu, čtení z datového proudu a zavření datových proudů. Vytvoří se objekt <xref:System.Net.Sockets.TcpListener>, který inicializuje síťový datový proud, když se vytvoří připojení k naslouchajícímu objektu. Síťový datový proud je poté dešifrován pomocí třídy **CryptoStream** a třídy **RijndaelManaged** . Tento příklad předpokládá, že klíč a hodnoty IV byly buď úspěšně přeneseny nebo dříve odsouhlaseny. Nezobrazuje kód potřebný k šifrování a přenos těchto hodnot.
+Následující příklad ukazuje celý proces vytvoření datového proudu, dešifrování datového proudu, čtení z datového proudu a zavření datových proudů. Vytvoří <xref:System.Net.Sockets.TcpListener> se objekt, který inicializuje síťový datový proud, když se vytvoří připojení k naslouchajícímu objektu. Síťový datový proud je poté dešifrován pomocí třídy **CryptoStream** a třídy **RijndaelManaged** . Tento příklad předpokládá, že klíč a hodnoty IV byly buď úspěšně přeneseny nebo dříve odsouhlaseny. Nezobrazuje kód potřebný k šifrování a přenos těchto hodnot.
 
 ```vb
 Imports System.IO
@@ -174,9 +174,9 @@ Aby předchozí ukázka fungovala, musí být na naslouchací proces provedeno �
 
 Strana (strana A) obvykle generuje veřejný i privátní klíč a ukládá klíč buď do paměti, nebo do kontejneru kryptografických klíčů. Strana A pak pošle veřejný klíč druhé straně (smluvní straně B). Když strana B použije veřejný klíč, zašifruje data a pošle je zpátky do strany A. Po přijetí dat ji strana dešifruje pomocí privátního klíče, který odpovídá. Dešifrování bude úspěšné pouze v případě, že strana A používá privátní klíč, který odpovídá veřejnému klíči B, který se používá k šifrování dat.
 
-Informace o tom, jak uložit asymetrický klíč do kontejneru zabezpečeného kryptografického klíče a jak později získat asymetrický klíč, najdete v tématu [Postupy: ukládání asymetrických klíčů v kontejneru klíčů](../../../docs/standard/security/how-to-store-asymmetric-keys-in-a-key-container.md).
+Informace o tom, jak uložit asymetrický klíč do kontejneru zabezpečeného kryptografického klíče a jak později získat asymetrický klíč, najdete v tématu [Postupy: ukládání asymetrických klíčů v kontejneru klíčů](how-to-store-asymmetric-keys-in-a-key-container.md).
 
-Následující příklad znázorňuje dešifrování dvou polí bajtů, které reprezentují symetrický klíč a IV. Informace o tom, jak extrahovat asymetrický veřejný klíč z objektu <xref:System.Security.Cryptography.RSACryptoServiceProvider> ve formátu, který lze snadno odeslat třetí straně, najdete v tématu [šifrování dat](../../../docs/standard/security/encrypting-data.md).
+Následující příklad znázorňuje dešifrování dvou polí bajtů, které reprezentují symetrický klíč a IV. Informace o tom, jak extrahovat asymetrický veřejný klíč z <xref:System.Security.Cryptography.RSACryptoServiceProvider> objektu ve formátu, který lze snadno odeslat třetí straně, najdete v tématu [šifrování dat](encrypting-data.md).
 
 ```vb
 'Create a new instance of the RSACryptoServiceProvider class.
@@ -202,8 +202,8 @@ symmetricKey = rsa.Decrypt(encryptedSymmetricKey, false);
 symmetricIV = rsa.Decrypt(encryptedSymmetricIV , false);
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Generování klíčů pro šifrování a dešifrování](../../../docs/standard/security/generating-keys-for-encryption-and-decryption.md)
-- [Šifrování dat](../../../docs/standard/security/encrypting-data.md)
-- [Kryptografické služby](../../../docs/standard/security/cryptographic-services.md)
+- [Generování klíčů pro šifrování a dešifrování](generating-keys-for-encryption-and-decryption.md)
+- [Šifrování dat](encrypting-data.md)
+- [Kryptografické služby](cryptographic-services.md)

@@ -10,25 +10,25 @@ helpviewer_keywords:
 - post-events
 - signatures, event handling
 ms.assetid: 67b3c6e2-6a8f-480d-a78f-ebeeaca1b95a
-ms.openlocfilehash: b44ee5933f8629b4dddbf3be1b79b2e77b0254f7
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 852c99b1a41691911f7ae82d3b8104526811757d
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76741684"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289821"
 ---
 # <a name="event-design"></a>Návrh události
-Události jsou nejčastěji používané formy zpětných volání (konstrukce, které umožňují rozhraní volat do uživatelského kódu). Mezi další mechanismy zpětného volání patří členové, kteří přijímají delegáty, virtuální členy a moduly plug-in založené na rozhraní. data z studií použitelnosti označují, že většina vývojářů je pohodlnější díky událostem, než používá jiné mechanismy zpětného volání. . Události jsou v ucelené integraci se sadou Visual Studio a mnoha jazyky.
+Události jsou nejčastěji používané formy zpětných volání (konstrukce, které umožňují rozhraní volat do uživatelského kódu). Mezi další mechanismy zpětného volání patří členové, kteří přijímají delegáty, virtuální členy a moduly plug-in založené na rozhraní. data z studií použitelnosti označují, že většina vývojářů je pohodlnější díky událostem, než používá jiné mechanismy zpětného volání. Události jsou v ucelené integraci se sadou Visual Studio a mnoha jazyky.
 
- Je důležité si uvědomit, že existují dvě skupiny událostí: události vyvolané před stavem změny systému, nazývané před událostmi a události vyvolané po změně stavu, označované po událostech. Příkladem předběžné události by byla `Form.Closing`, která je aktivována před zavřením formuláře. Příkladem následné události by byl `Form.Closed`, který je vyvolán po zavření formuláře.
+ Je důležité si uvědomit, že existují dvě skupiny událostí: události vyvolané před stavem změny systému, nazývané před událostmi a události vyvolané po změně stavu, označované po událostech. Příkladem předběžné události by byla `Form.Closing` vyvolána před zavřením formuláře. Příkladem následné události `Form.Closed` , která je vyvolána po zavření formuláře.
 
  ✔️ použít termín "vyvolat" pro události, nikoli "oheň" nebo "Trigger".
 
- ✔️ použít <xref:System.EventHandler%601?displayProperty=nameWithType> namísto ručního vytváření nových delegátů pro použití jako obslužných rutin událostí.
+ ✔️ použít <xref:System.EventHandler%601?displayProperty=nameWithType> místo ručního vytváření nových delegátů pro použití jako obslužných rutin událostí.
 
- ✔️ Zvažte použití podtřídy <xref:System.EventArgs> jako argumentu události, pokud nejste naprosto jistotu, že událost nebude nikdy potřebovat převést žádná data do metody zpracování událostí. v takovém případě lze typ `EventArgs` použít přímo.
+ ✔️ Zvažte použití podtřídy <xref:System.EventArgs> jako argumentu události, pokud nejste naprosto jistotu, že událost nebude nikdy potřebovat převést žádná data do metody zpracování událostí, v takovém případě lze `EventArgs` typ použít přímo.
 
- Pokud rozhraní API dodáváte přímo pomocí `EventArgs`, nebudete nikdy moci přidat žádná data, která by se měla přenést s událostí bez narušení kompatibility. Použijete-li podtřídu i v případě, že je zpočátku zcela prázdná, budete moci v případě potřeby přidat vlastnosti do podtřídy.
+ Pokud rozhraní API dodáváte přímo pomocí nástroje, nebudete `EventArgs` nikdy moci přidat žádná data, která by se měla přenést s událostí bez narušení kompatibility. Použijete-li podtřídu i v případě, že je zpočátku zcela prázdná, budete moci v případě potřeby přidat vlastnosti do podtřídy.
 
  k vyvolání každé události ✔️ použít chráněnou virtuální metodu. To platí pouze pro nestatické události pro nezapečetěné třídy, nikoli pro struktury, zapečetěné třídy nebo statické události.
 
@@ -40,30 +40,30 @@ Události jsou nejčastěji používané formy zpětných volání (konstrukce, 
 
  Parametr by měl mít název `e` a měl by být zadán jako třída argumentu události.
 
- Při vyvolání nestatické události ❌ Nepředávat jako odesilateli hodnotu null.
+ ❌Při vyvolávání nestatické události nepředávejte jako odesilatele hodnotu null.
 
  Při vyvolání statické události ✔️ předat jako odesilateli hodnotu null.
 
- Při vyvolání události ❌ Nepředávat jako datový parametr události hodnotu null.
+ ❌Při vyvolání události nepředávejte jako datový parametr události hodnotu null.
 
- Pokud nechcete předat žádná data do metody zpracování událostí, je vhodné předat `EventArgs.Empty`. Vývojáři očekávají, že tento parametr nemá hodnotu null.
+ Měli byste předat, `EventArgs.Empty` Pokud nechcete předat žádná data metodě zpracování událostí. Vývojáři očekávají, že tento parametr nemá hodnotu null.
 
  ✔️ Zvažte vyvolání událostí, které může koncový uživatel zrušit. To platí jenom pro předběžné události.
 
- Pokud chcete koncovému uživateli dovolit události zrušit, použijte <xref:System.ComponentModel.CancelEventArgs?displayProperty=nameWithType> nebo jeho podtřídu jako argument události.
+ Použijte <xref:System.ComponentModel.CancelEventArgs?displayProperty=nameWithType> nebo jeho podtřídu jako argument události, aby mohl koncový uživatel události zrušit.
 
 ### <a name="custom-event-handler-design"></a>Vlastní návrh obslužné rutiny událostí
- Existují případy, kdy `EventHandler<T>` nelze použít, například když rozhraní potřebuje pracovat se staršími verzemi modulu CLR, které nepodporovaly obecné typy. V takových případech může být nutné navrhnout a vyvinout delegáta vlastní obslužné rutiny události.
+ Existují případy `EventHandler<T>` , kdy nelze použít, například když rozhraní potřebuje pracovat s dřívějšími verzemi modulu CLR, které nepodporovaly obecné typy. V takových případech může být nutné navrhnout a vyvinout delegáta vlastní obslužné rutiny události.
 
  ✔️ použít návratový typ void pro obslužné rutiny událostí.
 
  Obslužná rutina události může vyvolat více metod zpracování událostí, případně u více objektů. Pokud metody zpracování událostí povolily vrácení hodnoty, bude pro každé vyvolání události k dispozici více vrácených hodnot.
 
- ✔️ Použijte `object` jako typ prvního parametru obslužné rutiny události a zavolejte ho `sender`.
+ ✔️ použít `object` jako typ prvního parametru obslužné rutiny události a zavolat ho `sender` .
 
- ✔️ Použijte <xref:System.EventArgs?displayProperty=nameWithType> nebo jeho podtřídu jako typ druhého parametru obslužné rutiny události a zavolejte ji `e`.
+ ✔️ použijte <xref:System.EventArgs?displayProperty=nameWithType> nebo jeho podtřídu jako typ druhého parametru obslužné rutiny události a zavolejte ji `e` .
 
- ❌ pro obslužné rutiny událostí neobsahují více než dva parametry.
+ ❌Nemusíte mít více než dva parametry pro obslužné rutiny událostí.
 
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*
 
@@ -71,5 +71,5 @@ Události jsou nejčastěji používané formy zpětných volání (konstrukce, 
 
 ## <a name="see-also"></a>Viz také
 
-- [Pokyny k návrhu člena](../../../docs/standard/design-guidelines/member.md)
-- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)
+- [Pokyny pro návrh členů](member.md)
+- [Pokyny k návrhu architektury](index.md)

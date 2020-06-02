@@ -1,107 +1,108 @@
 ---
-title: Konfigurace parametrů a datové typy parametrů
+title: Konfigurace parametrů a datových typů parametrů
+description: Objekty příkazu používají parametry k předávání hodnot příkazům SQL nebo uloženým procedurám, což zajišťuje kontrolu a ověřování typu v ADO.NET.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 537d8a2c-d40b-4000-83eb-bc1fcc93f707
-ms.openlocfilehash: 638e8177060c489a7469f80adde68cb9ba266365
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: a426eeae785274b0484a84a2fae2dce4572fb4c4
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65879959"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287113"
 ---
-# <a name="configuring-parameters-and-parameter-data-types"></a>Konfigurace parametrů a datové typy parametrů
+# <a name="configuring-parameters-and-parameter-data-types"></a>Konfigurace parametrů a datových typů parametrů
 
-Objekty příkazů použít parametry k předání hodnoty příkazy SQL nebo úložné procedury, kontrolu typu a ověření. Na rozdíl od text příkazu vstupní parametr je považován za hodnotu literálu, nikoli jako spustitelný kód. To pomáhá chránit před útoky "Útok prostřednictvím injektáže SQL", ve kterých útočník vloží příkaz tohoto ohrožení zabezpečení na serveru do příkazu SQL.
+Objekty příkazu používají parametry k předávání hodnot příkazům SQL nebo uloženým procedurám, což zajišťuje kontrolu a ověřování typu. Na rozdíl od textu příkazu je vstup parametru považován za hodnotu literálu, nikoli jako spustitelný kód. To pomáhá chránit před útoky typu "injektáže SQL", kdy útočník vloží příkaz, který ohrozí zabezpečení serveru, do příkazu SQL.
 
-Příkazy s parametry může také zvýšit výkon spuštění dotazů, protože mohou pomoci přesně odpovídat příchozí příkaz s plánem správné dotazu z mezipaměti databázového serveru. Další informace najdete v tématu [spuštění plánu ukládání do mezipaměti a opětovné používání](/sql/relational-databases/query-processing-architecture-guide#execution-plan-caching-and-reuse) a [parametry a provádění plán znovu použít](/sql/relational-databases/query-processing-architecture-guide#PlanReuse). Kromě výhod zabezpečení a výkonu příkazy s parametry poskytují vhodnou metodu pro uspořádání hodnoty předané ke zdroji dat.
+Parametrizované příkazy mohou také zlepšit výkon při provádění dotazů, protože pomůžou databázovému serveru přesně odpovídat příchozímu příkazu s řádným plánem dotazů v mezipaměti. Další informace najdete v tématu [ukládání do mezipaměti, opakované](/sql/relational-databases/query-processing-architecture-guide#execution-plan-caching-and-reuse) použití a [parametry a opakované použití plánu](/sql/relational-databases/query-processing-architecture-guide#PlanReuse)spuštění. Kromě výhod zabezpečení a výkonu poskytují parametrizované příkazy pohodlný způsob, jak uspořádat hodnoty předané zdroji dat.
 
-A <xref:System.Data.Common.DbParameter> objekt může být vytvořen pomocí konstruktoru, nebo jejím přidáním na <xref:System.Data.Common.DbCommand.DbParameterCollection%2A> voláním `Add` metodu <xref:System.Data.Common.DbParameterCollection> kolekce. `Add` Metoda vezme jako vstupní argumenty konstruktoru nebo existující objekt parametr, v závislosti na poskytovateli data.
+<xref:System.Data.Common.DbParameter>Objekt lze vytvořit pomocí jeho konstruktoru nebo jeho přidáním do objektu <xref:System.Data.Common.DbCommand.DbParameterCollection%2A> voláním `Add` metody <xref:System.Data.Common.DbParameterCollection> kolekce. `Add`Metoda provede jako vstup buď argumenty konstruktoru, nebo existující objekt parametru v závislosti na poskytovateli dat.
 
-## <a name="supplying-the-parameterdirection-property"></a>Zadání vlastnosti ParameterDirection
+## <a name="supplying-the-parameterdirection-property"></a>Poskytnutí vlastnosti ParameterDirection
 
-Při přidávání parametrů, je nutné zadat <xref:System.Data.ParameterDirection> vlastnost pro parametry, než jsou vstupní parametry. Následující tabulka ukazuje `ParameterDirection` hodnoty, které můžete používat <xref:System.Data.ParameterDirection> výčtu.
+Při přidávání parametrů je nutné zadat <xref:System.Data.ParameterDirection> vlastnost pro jiné parametry než vstupní parametry. V následující tabulce jsou uvedeny `ParameterDirection` hodnoty, které lze použít s <xref:System.Data.ParameterDirection> výčtem.
 
 |Název členu|Popis|
 |-----------------|-----------------|
 |<xref:System.Data.ParameterDirection.Input>|Parametr je vstupní parametr. Toto nastavení je výchozí.|
-|<xref:System.Data.ParameterDirection.InputOutput>|Tento parametr můžete provádět vstup a výstup.|
+|<xref:System.Data.ParameterDirection.InputOutput>|Parametr může provádět vstup i výstup.|
 |<xref:System.Data.ParameterDirection.Output>|Parametr je výstupní parametr.|
-|<xref:System.Data.ParameterDirection.ReturnValue>|Parametr reprezentuje návratovou hodnotu z určité operace, například uložené procedury, integrovaná funkce nebo uživatelem definované funkce.|
+|<xref:System.Data.ParameterDirection.ReturnValue>|Parametr představuje návratovou hodnotu z operace, jako je uložená procedura, integrovaná funkce nebo uživatelsky definovaná funkce.|
 
-## <a name="working-with-parameter-placeholders"></a>Práce se zástupnými symboly parametru
+## <a name="working-with-parameter-placeholders"></a>Práce se zástupnými symboly parametrů
 
-Syntaxe pro parametr zástupné symboly závisí na zdroji dat. Zprostředkovatelé dat .NET Framework zpracovat pojmenování a určení parametrů a proměnných parametrů odlišně. Tato syntaxe upravit tak, aby konkrétnímu zdroji dat, jak je popsáno v následující tabulce.
+Syntaxe zástupných symbolů parametrů závisí na zdroji dat. Poskytovatelé dat .NET Framework řídí pojmenování a zadání parametrů a zástupných symbolů parametrů odlišně. Tato syntaxe je přizpůsobená konkrétnímu zdroji dat, jak je popsáno v následující tabulce.
 
-|Zprostředkovatel dat|Pojmenování syntaxe parametru|
+|Poskytovatel dat|Syntaxe pojmenovávání parametrů|
 |-------------------|-----------------------------|
-|<xref:System.Data.SqlClient>|Použití pojmenované parametry ve formátu `@` *parametername*.|
-|<xref:System.Data.OleDb>|Používá značky pozičních parametrů více dopředu označeny otazníkem (`?`).|
-|<xref:System.Data.Odbc>|Používá značky pozičních parametrů více dopředu označeny otazníkem (`?`).|
-|<xref:System.Data.OracleClient>|Použití pojmenované parametry ve formátu `:` *parmname* (nebo *parmname*).|
+|<xref:System.Data.SqlClient>|Používá pojmenované parametry ve formátu `@` *ParameterName*.|
+|<xref:System.Data.OleDb>|Používá poziční značky parametrů, které jsou označeny otazníkem ( `?` ).|
+|<xref:System.Data.Odbc>|Používá poziční značky parametrů, které jsou označeny otazníkem ( `?` ).|
+|<xref:System.Data.OracleClient>|Používá pojmenované parametry ve formátu `:` *parmname* (nebo *parmname*).|
 
-## <a name="specifying-parameter-data-types"></a>Určení datové typy parametrů
+## <a name="specifying-parameter-data-types"></a>Určení datových typů parametrů
 
-Datový typ parametru je specifické pro zprostředkovatele dat .NET Framework. Určení typu převede hodnotu `Parameter` na typ zprostředkovatele dat .NET Framework před předáním této hodnoty ke zdroji dat. Můžete také zadat typ `Parameter` obecný způsobem tak, že nastavíte `DbType` vlastnost `Parameter` objekt ke konkrétní <xref:System.Data.DbType>.
+Datový typ parametru je specifický pro poskytovatele .NET Framework dat. Určení typu převede hodnotu `Parameter` typu na .NET Framework typ poskytovatele dat před předáním hodnoty zdroji dat. Můžete také určit typ `Parameter` obecného způsobu nastavením `DbType` vlastnosti `Parameter` objektu na určitou hodnotu <xref:System.Data.DbType> .
 
-Typ zprostředkovatele dat .NET Framework nástroje `Parameter` objekt je odvozen z typu rozhraní .NET Framework `Value` z `Parameter` objektu, nebo z `DbType` z `Parameter` objektu. V následující tabulce jsou uvedeny odvozené `Parameter` založený na objekt předaný jako typ `Parameter` hodnotu nebo zadaný `DbType`.
+Typ poskytovatele .NET Framework dat `Parameter` objektu je odvozený od .NET Frameworkho typu `Value` `Parameter` objektu nebo z `DbType` `Parameter` objektu. Následující tabulka ukazuje odvozený `Parameter` typ založený na objektu předaném jako `Parameter` hodnota nebo zadané `DbType` .
 
-|Typ rozhraní .NET Framework|DbType|SqlDbType|OleDbType|OdbcType|OracleType|
+|Typ rozhraní .NET Framework|DbType|Platná|OleDbType|OdbcType:|OracleType|
 |-------------------------|------------|---------------|---------------|--------------|----------------|
-|<xref:System.Boolean>|Boolean|bit|Boolean|bit|Byte|
+|<xref:System.Boolean>|Logická hodnota|40bitového|Logická hodnota|40bitového|Byte|
 |<xref:System.Byte>|Byte|TinyInt|UnsignedTinyInt|TinyInt|Byte|
-|Byte|binární|VarBinary. Toto implicitní převod selže, pokud bajtové pole je větší než maximální velikost parametru VarBinary, což je 8 000 bajtů. Bajtová pole větší než 8 000 bajtů, explicitně nastavit <xref:System.Data.SqlDbType>.|VarBinary|binární|nezpracované|
-|<xref:System.Char>| |Odvození <xref:System.Data.SqlDbType> z char není podporován.|Char|Char|Byte|
+|Byte []|Binární|VarBinary. Pokud je bajtové pole větší než maximální velikost VarBinary, což je 8000 bajtů, tento implicitní převod selže. Pro Bajtová pole větší než 8000 bajtů nastavte explicitně <xref:System.Data.SqlDbType> .|VarBinary|Binární|Žádný|
+|<xref:System.Char>| |Odvození od typu <xref:System.Data.SqlDbType> char není podporováno.|Char|Char|Byte|
 |<xref:System.DateTime>|DateTime|DateTime|DBTimeStamp|DateTime|DateTime|
-|<xref:System.DateTimeOffset>|DateTimeOffset|DateTimeOffset v systému SQL Server 2008. Odvození <xref:System.Data.SqlDbType> z DateTimeOffset není podporován ve verzích systému SQL Server starších než SQL Server 2008.|||DateTime|
+|<xref:System.DateTimeOffset>|DateTimeOffset|DateTimeOffset v SQL Server 2008. Odvození od typu <xref:System.Data.SqlDbType> DateTimeOffset není podporováno ve verzích SQL Server starších než SQL Server 2008.|||DateTime|
 |<xref:System.Decimal>|Desetinné číslo|Desetinné číslo|Desetinné číslo|Numeric|Číslo|
 |<xref:System.Double>|Double|Float|Double|Double|Double|
 |<xref:System.Single>|Single|Skutečné|Single|Skutečné|Float|
-|<xref:System.Guid>|Guid|uniqueidentifier|Guid|uniqueidentifier|nezpracované|
+|<xref:System.Guid>|Identifikátor GUID|UniqueIdentifier|Identifikátor GUID|UniqueIdentifier|Žádný|
 |<xref:System.Int16>|Int16|SmallInt|SmallInt|SmallInt|Int16|
 |<xref:System.Int32>|Int32|Int|Int|Int|Int32|
 |<xref:System.Int64>|Int64|BigInt|BigInt|BigInt|Číslo|
-|<xref:System.Object>|Objekt|Variant|Variant|Odvození OdbcType: z objektu se nepodporuje.|Blob|
-|<xref:System.String>|String|NVarChar. Toto implicitní převod se nezdaří, pokud řetězec je větší než maximální velikost NVarChar, což je 4000 znaků. Pro řetězce je větší než 4000 znaků, explicitně nastavit <xref:System.Data.SqlDbType>.|VarWChar|NVarChar|NVarChar|
-|<xref:System.TimeSpan>|Time|Čas v systému SQL Server 2008. Odvození <xref:System.Data.SqlDbType> z TimeSpan není podporován ve verzích systému SQL Server starších než SQL Server 2008.|DBTime|Time|DateTime|
-|<xref:System.UInt16>|UInt16|Odvození <xref:System.Data.SqlDbType> z UInt16 se nepodporuje.|UnsignedSmallInt|Int|UInt16|
-|<xref:System.UInt32>|UInt32|Odvození <xref:System.Data.SqlDbType> z UInt32 se nepodporuje.|UnsignedInt|BigInt|UInt32|
-|<xref:System.UInt64>|UInt64|Odvození <xref:System.Data.SqlDbType> z UInt64 se nepodporuje.|UnsignedBigInt|Numeric|Číslo|
+|<xref:System.Object>|Objekt|Variantní|Variantní|Odvození OdbcType: z objektu není podporováno.|Objekt blob|
+|<xref:System.String>|Řetězec|NVarChar. Tento implicitní převod se nezdaří, pokud je řetězec větší než maximální velikost NVarChar, což je 4000 znaků. Pro řetězce větší než 4000 znaků explicitně nastavte <xref:System.Data.SqlDbType> .|VarWChar|NVarChar|NVarChar|
+|<xref:System.TimeSpan>|Čas|Čas v SQL Server 2008. Odvození typu <xref:System.Data.SqlDbType> z TimeSpan není podporováno ve verzích SQL Server starších než SQL Server 2008.|DBTime|Čas|DateTime|
+|<xref:System.UInt16>|UInt16|Odvození <xref:System.Data.SqlDbType> od UInt16 se nepodporuje.|UnsignedSmallInt|Int|UInt16|
+|<xref:System.UInt32>|UInt32|Odvození z typu <xref:System.Data.SqlDbType> UInt32 není podporováno.|UnsignedInt|BigInt|UInt32|
+|<xref:System.UInt64>|UInt64|Odvození <xref:System.Data.SqlDbType> od UInt64 se nepodporuje.|UnsignedBigInt|Numeric|Číslo|
 ||AnsiString|VarChar|VarChar|VarChar|VarChar|
 ||AnsiStringFixedLength|Char|Char|Char|Char|
-||Měna|money|Měna|Odvození `OdbcType` z `Currency` se nepodporuje.|Číslo|
-||Datum|Datum v systému SQL Server 2008. Odvození <xref:System.Data.SqlDbType> od data není podporováno ve verzích systému SQL Server starších než SQL Server 2008.|DBDate|Datum|DateTime|
-||SByte|Odvození <xref:System.Data.SqlDbType> z SByte se nepodporuje.|TinyInt|Odvození `OdbcType` z SByte se nepodporuje.|SByte|
-||StringFixedLength|nChar|WChar|nChar|nChar|
-||Time|Čas v systému SQL Server 2008. Odvození <xref:System.Data.SqlDbType> od času není podporováno ve verzích systému SQL Server starších než SQL Server 2008.|DBTime|Time|DateTime|
-||VarNumeric|Odvození <xref:System.Data.SqlDbType> z VarNumeric se nepodporuje.|VarNumeric|Odvození `OdbcType` z VarNumeric se nepodporuje.|Číslo|
-|uživatelem definovaný typ (objekt s <xref:Microsoft.SqlServer.Server.SqlUserDefinedAggregateAttribute>|Objekt nebo řetězec, v závislosti poskytovatele (SqlClient vždy vrátí objekt, Odbc vždy vrátí hodnotu typu String a zprostředkovatele služeb OleDb spravovaných dat můžete zobrazit buď|SqlDbType.Udt Pokud <xref:Microsoft.SqlServer.Server.SqlUserDefinedTypeAttribute> je k dispozici, jinak Variant|OleDbType.VarWChar (Pokud je hodnota null) OleDbType.Variant jinak.|OdbcType.NVarChar|Nepodporuje se|
+||Měna|Peněžní částka|Měna|Odvození `OdbcType` od `Currency` není podporováno.|Číslo|
+||Datum|Datum v SQL Server 2008. Odvození <xref:System.Data.SqlDbType> od data není podporováno ve verzích SQL Server starších než SQL Server 2008.|DBDate|Datum|DateTime|
+||SByte|Odvození <xref:System.Data.SqlDbType> od SByte se nepodporuje.|TinyInt|Odvození `OdbcType` od SByte se nepodporuje.|SByte|
+||StringFixedLength|NChar|WChar|NChar|NChar|
+||Čas|Čas v SQL Server 2008. Odvození <xref:System.Data.SqlDbType> od času není podporováno ve verzích SQL Server starších než SQL Server 2008.|DBTime|Čas|DateTime|
+||VarNumeric|Odvození <xref:System.Data.SqlDbType> od VarNumeric se nepodporuje.|VarNumeric|Odvození `OdbcType` od VarNumeric se nepodporuje.|Číslo|
+|uživatelsky definovaný typ (objekt s<xref:Microsoft.SqlServer.Server.SqlUserDefinedAggregateAttribute>|Objekt nebo řetězec, v závislosti na poskytovateli (SqlClient vždy vrátí objekt, rozhraní ODBC vždycky vrátí řetězec a zprostředkovatel spravovaných dat OleDb uvidí buď|SqlDbType. UDT <xref:Microsoft.SqlServer.Server.SqlUserDefinedTypeAttribute> , pokud je k dispozici, jinak varianta|OleDbType. VarWChar (Pokud je hodnota null) jinak OleDbType. variant.|OdbcType:. NVarChar|nepodporováno|
 
 > [!NOTE]
-> Převody z desítkové na jiné typy jsou zužující převody, které zaokrouhlit desítkovou hodnotu směrem k nule na nejbližší celočíselnou hodnotu. Pokud není výsledek převodu reprezentovat typem cílové <xref:System.OverflowException> je vyvolána výjimka.
+> Převody z typu Decimal na jiné typy jsou zužující převody, které zaokrouhlují desítkovou hodnotu na nejbližší celočíselnou hodnotu směrem nula. Pokud výsledek převodu není reprezentovatelné v cílovém typu, <xref:System.OverflowException> je vyvolána výjimka.
 
 > [!NOTE]
-> Pokud je hodnota null parametru posíláte na server, je třeba zadat <xref:System.DBNull>, nikoli `null` (`Nothing` v jazyce Visual Basic). Hodnota null v systému je prázdný objekt, který nemá žádnou hodnotu. <xref:System.DBNull> slouží k reprezentaci hodnoty null. Další informace o databázi hodnoty Null, naleznete v tématu [zpracování hodnot Null](./sql/handling-null-values.md).
+> Když odešlete hodnotu parametru s hodnotou null na server, je nutné zadat <xref:System.DBNull> , ne `null` ( `Nothing` v Visual Basic). Hodnota null v systému je prázdný objekt, který nemá žádnou hodnotu. <xref:System.DBNull>slouží k reprezentaci hodnot null. Další informace o hodnotách null databáze naleznete v tématu [zpracování hodnot null](./sql/handling-null-values.md).
 
-## <a name="deriving-parameter-information"></a>Odvozené informace o parametrech
+## <a name="deriving-parameter-information"></a>Odvození informací o parametrech
 
-Parametry lze také odvodit z uložené procedury pomocí `DbCommandBuilder` třídy. Jak `SqlCommandBuilder` a `OleDbCommandBuilder` třídy poskytují statické metody `DeriveParameters`, který automaticky naplní kolekci parametrů příkazový objekt, který používá informace o parametrech z uložené procedury. Všimněte si, že `DeriveParameters` přepíše všechny stávající informace o parametrech pro příkaz.
-
-> [!NOTE]
-> Odvozené informace o parametrech způsobuje snížení výkonu, protože vyžaduje další výměnu zpráv pro zdroj dat pro načtení informací. Pokud informace o parametrech je znám v době návrhu, můžete zvýšit výkon vaší aplikace tak, že nastavíte parametry explicitně.
-
-Další informace najdete v tématu [generování příkazů s CommandBuilders](generating-commands-with-commandbuilders.md).
-
-## <a name="using-parameters-with-a-sqlcommand-and-a-stored-procedure"></a>Pomocí parametrů s SqlCommand a uložené procedury
-
-Uložené procedury nabízí celou řadu výhod v aplikace řízené daty. Pomocí uložených procedur databázových operací můžete být zapouzdřen v rámci jediného příkazu, optimalizované pro výkon a vylepšené o zvýšení zabezpečení. I když uložené procedury lze volat předáním názvu uložené procedury následuje argumenty jako příkaz jazyka SQL s použitím <xref:System.Data.Common.DbCommand.Parameters%2A> kolekce ADO.NET <xref:System.Data.Common.DbCommand> objektu umožňuje více explicitně definovat uložené procedury parametry a pro přístup k výstupní parametry a návratové hodnoty.
+Parametry lze také odvodit z uložené procedury pomocí `DbCommandBuilder` třídy. `SqlCommandBuilder` `OleDbCommandBuilder` Třídy i poskytují statickou metodu, `DeriveParameters` která automaticky naplní kolekci Parameters pro objekt příkazu, který používá informace o parametrech z uložené procedury. Všimněte si, že `DeriveParameters` přepíše všechny existující informace o parametrech pro příkaz.
 
 > [!NOTE]
-> Parametrizované příkazy jsou spouštěny na serveru s použitím `sp_executesql,` tomu pro opakované použití plánu dotazu. Kurzory místní nebo v proměnné `sp_executesql` batch nejsou viditelné na službu batch, která volá `sp_executesql`. Poslední změny v kontextu databáze pouze na konec objektu `sp_executesql` příkazu. Další informace najdete v tématu [sp_executesql (Transact-SQL)](/sql/relational-databases/system-stored-procedures/sp-executesql-transact-sql).
+> Vyloučení informací o parametrech má vliv na výkon, protože ke zdroji dat vyžaduje další zpáteční cestu, aby se tyto informace načetly. Pokud jsou informace o parametrech známy v době návrhu, můžete zvýšit výkon aplikace nastavením parametrů explicitně.
 
-Při použití s parametry <xref:System.Data.SqlClient.SqlCommand> ke spuštění systému SQL Server uložené procedury, názvy parametrů přidaných do <xref:System.Data.SqlClient.SqlCommand.Parameters%2A> kolekce musí shodovat s názvy značek parametr v uložené proceduře. Zprostředkovatel dat .NET Framework pro SQL Server nepodporuje zástupný znak otazníku (?) pro předání parametrů do příkazu SQL nebo uloženou proceduru. Považuje za parametry v uložené proceduře pojmenované parametry a hledá odpovídající parametr značek. Například `CustOrderHist` uloženou proceduru se definuje pomocí parametr s názvem `@CustomerID`. Pokud váš kód spustí uloženou proceduru, musíte taky použít parametr s názvem `@CustomerID`.
+Další informace najdete v tématu [generování příkazů pomocí CommandBuilders](generating-commands-with-commandbuilders.md).
+
+## <a name="using-parameters-with-a-sqlcommand-and-a-stored-procedure"></a>Použití parametrů s metodami SqlCommand a uloženou procedurou
+
+Uložené procedury nabízejí mnoho výhod v aplikacích řízených daty. Pomocí uložených procedur je možné databázové operace zapouzdřit do jediného příkazu, optimalizace pro zajištění nejlepšího výkonu a vylepšení s vyšším zabezpečením. I když uloženou proceduru lze volat předáním názvu uložené procedury následovaný argumenty parametru jako příkaz jazyka SQL, pomocí <xref:System.Data.Common.DbCommand.Parameters%2A> kolekce <xref:System.Data.Common.DbCommand> objektu ADO.NET můžete explicitně definovat parametry uložené procedury a získat přístup k výstupním parametrům a návratovým hodnotám.
+
+> [!NOTE]
+> Parametrizované příkazy jsou spouštěny na serveru pomocí příkazu `sp_executesql,` , který umožňuje opakované použití plánu dotazů. Místní kurzory nebo proměnné v `sp_executesql` dávce nejsou viditelné pro dávku, která volá `sp_executesql` . Změny v kontextu databáze poslední pouze na konci `sp_executesql` příkazu. Další informace naleznete v tématu [sp_executesql (Transact-SQL)](/sql/relational-databases/system-stored-procedures/sp-executesql-transact-sql).
+
+Při použití parametrů s a <xref:System.Data.SqlClient.SqlCommand> ke spuštění uložené procedury SQL Server musí názvy parametrů přidaných do <xref:System.Data.SqlClient.SqlCommand.Parameters%2A> kolekce odpovídat názvům značek parametrů v uložené proceduře. .NET Framework Zprostředkovatel dat pro SQL Server nepodporuje zástupné znaky otazníku (?) pro předávání parametrů příkazu SQL nebo uložené proceduře. Zpracovává parametry v uložené proceduře jako pojmenované parametry a hledá vyhovující značky parametrů. Například `CustOrderHist` uložená procedura je definována pomocí parametru s názvem `@CustomerID` . Když váš kód provede uloženou proceduru, musí také použít parametr s názvem `@CustomerID` .
 
 ```sql
 CREATE PROCEDURE dbo.CustOrderHist @CustomerID varchar(5)
@@ -109,25 +110,25 @@ CREATE PROCEDURE dbo.CustOrderHist @CustomerID varchar(5)
 
 ### <a name="example"></a>Příklad
 
-Tento příklad ukazuje, jak se volání procedury SQL serveru, které jsou uloženy `Northwind` ukázkovou databázi. Název uložené procedury je `dbo.SalesByCategory` a má vstupní parametr s názvem `@CategoryName` s datovým typem `nvarchar(15)`. Kód vytvoří novou <xref:System.Data.SqlClient.SqlConnection> uvnitř using blokovat tak, že připojení je uvolněna při ukončení procesu. <xref:System.Data.SqlClient.SqlCommand> a <xref:System.Data.SqlClient.SqlParameter> objekty jsou vytvořeny a nastavte jejich vlastnosti. A <xref:System.Data.SqlClient.SqlDataReader> provede `SqlCommand` a vrátí sadu z uložené procedury, v okně konzoly zobrazí výstup výsledků.
+Tento příklad ukazuje, jak volat SQL Server uloženou proceduru v `Northwind` ukázkové databázi. Název uložené procedury je `dbo.SalesByCategory` a má vstupní parametr s názvem `@CategoryName` s datovým typem `nvarchar(15)` . Kód vytvoří nový <xref:System.Data.SqlClient.SqlConnection> uvnitř bloku using, aby připojení bylo uvolněno při ukončení procedury. <xref:System.Data.SqlClient.SqlCommand>Objekty a <xref:System.Data.SqlClient.SqlParameter> jsou vytvořeny a jejich vlastnosti nastaveny. <xref:System.Data.SqlClient.SqlDataReader>Provede `SqlCommand` a vrátí sadu výsledků z uložené procedury a zobrazí výstup v okně konzoly.
 
 > [!NOTE]
-> Místo vytváření `SqlCommand` a `SqlParameter` objekty a upravením vlastnosti v samostatných příkazů, můžete místo toho se rozhodnout využít jednu z přetížených konstruktorů pro nastavení více vlastností v jediném příkazu.
+> Namísto vytváření `SqlCommand` a `SqlParameter` nastavování objektů a pak nastavení vlastností v samostatných příkazech můžete místo toho použít jeden z přetížených konstruktorů k nastavení více vlastností v jednom příkazu.
 
 [!code-csharp[DataWorks SqlClient.StoredProcedure#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlClient.StoredProcedure/CS/source.cs#1)]
 [!code-vb[DataWorks SqlClient.StoredProcedure#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlClient.StoredProcedure/VB/source.vb#1)]
 
-## <a name="using-parameters-with-an-oledbcommand-or-odbccommand"></a>Pomocí parametrů s OleDbCommand nebo OdbcCommand
+## <a name="using-parameters-with-an-oledbcommand-or-odbccommand"></a>Použití parametrů s OleDbCommand nebo OdbcCommand
 
-Při použití parametrů pomocí <xref:System.Data.OleDb.OleDbCommand> nebo <xref:System.Data.Odbc.OdbcCommand>, pořadí parametrů přidaných do `Parameters` kolekce musí odpovídat pořadí parametrů definovaných v uložené proceduře. Zprostředkovatel dat .NET Framework pro OLE DB a zprostředkovatele dat .NET Framework pro ODBC považovat za parametry v uložené proceduře zástupné symboly a použít hodnoty parametrů v pořadí. Kromě toho vrátí parametry s hodnotou musí být první parametrů přidaných do `Parameters` kolekce.
+Při použití parametrů s <xref:System.Data.OleDb.OleDbCommand> nebo se <xref:System.Data.Odbc.OdbcCommand> musí pořadí parametrů přidaných do `Parameters` kolekce shodovat s pořadím parametrů definovaných v uložené proceduře. .NET Framework Zprostředkovatel dat pro OLE DB a .NET Framework Zprostředkovatel dat pro rozhraní ODBC považovat parametry v uložené proceduře jako zástupné symboly a hodnoty parametrů v daném pořadí. Kromě toho musí být parametry návratové hodnoty prvními parametry přidanými do `Parameters` kolekce.
 
-Zprostředkovatel dat .NET Framework pro OLE DB a zprostředkovatele dat .NET Framework pro ODBC nepodporují pojmenované parametry pro předání parametrů do příkazu SQL nebo uloženou proceduru. V takovém případě musíte použít zástupný znak otazníku (?), jako v následujícím příkladu.
+Zprostředkovatel dat .NET Framework pro OLE DB a .NET Framework Zprostředkovatel dat pro rozhraní ODBC nepodporují pojmenované parametry pro předávání parametrů příkazu SQL nebo uložené proceduře. V takovém případě je nutné použít zástupný znak otazník (?), jak je uvedeno v následujícím příkladu.
 
 ```sql
 SELECT * FROM Customers WHERE CustomerID = ?
 ```
 
-V důsledku toho pořadí, ve kterém `Parameter` objekty jsou přidány do `Parameters` kolekce musí odpovídat přímo do polohy? Zástupný symbol pro parametr.
+V důsledku toho je pořadí, ve kterém `Parameter` jsou objekty přidány do `Parameters` kolekce, musí přímo odpovídat pozici? zástupný symbol pro parametr
 
 ### <a name="oledb-example"></a>Příklad OleDb
 
@@ -166,7 +167,7 @@ parameter = command.Parameters.Add(
 parameter.Direction = ParameterDirection.Output;
 ```
 
-## <a name="odbc-example"></a>Příklad rozhraní ODBC
+## <a name="odbc-example"></a>Příklad ODBC
 
 ```vb
 Dim command As OdbcCommand = New OdbcCommand( _
@@ -203,7 +204,7 @@ parameter = command.Parameters.Add( _
 parameter.Direction = ParameterDirection.Output;
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Příkazy a parametry](commands-and-parameters.md)
 - [Parametry adaptéru dat](dataadapter-parameters.md)

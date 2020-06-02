@@ -3,22 +3,22 @@ title: Pravidla pro odvození jednoduchých typů
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 394624d6-4da0-430a-8a88-46efe40f14de
-ms.openlocfilehash: 17429e77f7764873e607a8feaa62da1cc6e014a4
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 571019d13433312a5d31f581c3527aae901bbba7
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710229"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289067"
 ---
 # <a name="rules-for-inferring-simple-types"></a>Pravidla pro odvození jednoduchých typů
-Popisuje, jak <xref:System.Xml.Schema.XmlSchemaInference> třída odvodí datový typ pro atributy a elementy.  
+Popisuje, jak <xref:System.Xml.Schema.XmlSchemaInference> Třída odvodí datový typ pro atributy a elementy.  
   
- <xref:System.Xml.Schema.XmlSchemaInference> Třída odvodí datový typ pro atributy a elementy jako jednoduché typy. Tato část popisuje potenciální odvozené typy, způsob, jakým jsou více různých hodnot sloučeny na jeden typ a jak jsou zpracovávány atributy definující `xsi` schéma.  
+ <xref:System.Xml.Schema.XmlSchemaInference>Třída odvodí datový typ pro atributy a elementy jako jednoduché typy. Tato část popisuje potenciální odvozené typy, způsob, jakým jsou více různých hodnot sloučeny na jeden typ a jak `xsi` jsou zpracovávány atributy definující schéma.  
   
 ## <a name="inferred-types"></a>Odvozené typy  
- <xref:System.Xml.Schema.XmlSchemaInference> Třída odvodí elementy a hodnoty atributů jako jednoduché typy a obsahuje atribut typu ve výsledném schématu. Všechny odvozené typy jsou jednoduché typy. Jako součást výsledného schématu nejsou zahrnuté žádné základní typy ani omezující vlastnosti.  
+ <xref:System.Xml.Schema.XmlSchemaInference>Třída odvodí elementy a hodnoty atributů jako jednoduché typy a obsahuje atribut typu ve výsledném schématu. Všechny odvozené typy jsou jednoduché typy. Jako součást výsledného schématu nejsou zahrnuté žádné základní typy ani omezující vlastnosti.  
   
- Hodnoty jsou zkontrolovány jednotlivě, jak jsou zjištěny v dokumentu XML. Typ je odvozený pro hodnotu v okamžiku, kdy je vyhodnocena. Pokud byl typ odvozen pro atribut nebo element a byla zjištěna hodnota atributu nebo elementu, který neodpovídá aktuálně odvozenému typu, <xref:System.Xml.Schema.XmlSchemaInference> třída propaguje typ pro každou sadu pravidel. Tato pravidla jsou popsána v části propagace typů dále v tomto tématu.  
+ Hodnoty jsou zkontrolovány jednotlivě, jak jsou zjištěny v dokumentu XML. Typ je odvozený pro hodnotu v okamžiku, kdy je vyhodnocena. Pokud byl typ odvozen pro atribut nebo element a byla zjištěna hodnota atributu nebo elementu, který neodpovídá aktuálně odvozenému typu, <xref:System.Xml.Schema.XmlSchemaInference> Třída propaguje typ pro každou sadu pravidel. Tato pravidla jsou popsána v části propagace typů dále v tomto tématu.  
   
  V následující tabulce jsou uvedeny možné odvozené typy pro výsledné schéma.  
   
@@ -45,7 +45,7 @@ Popisuje, jak <xref:System.Xml.Schema.XmlSchemaInference> třída odvodí datov�
 |řetězec|Jeden nebo více znaků Unicode.|  
   
 ## <a name="type-promotion"></a>Propagace typu  
- <xref:System.Xml.Schema.XmlSchemaInference> Třída prověřuje hodnoty atributu a elementu v jednom okamžiku. V případě, že jsou zjištěny hodnoty, je odvozeno nejvíce omezující typ bez znaménka. Pokud byl typ odvozen pro atribut nebo element a byla zjištěna nová hodnota, která neodpovídá aktuálně odvozenému typu, odvozený typ je povýšen na nový typ, který se vztahuje na aktuálně odvozený typ i na novou hodnotu. <xref:System.Xml.Schema.XmlSchemaInference> Třída považuje předchozí hodnoty za povýšení odvozeného typu.  
+ <xref:System.Xml.Schema.XmlSchemaInference>Třída prověřuje hodnoty atributu a elementu v jednom okamžiku. V případě, že jsou zjištěny hodnoty, je odvozeno nejvíce omezující typ bez znaménka. Pokud byl typ odvozen pro atribut nebo element a byla zjištěna nová hodnota, která neodpovídá aktuálně odvozenému typu, odvozený typ je povýšen na nový typ, který se vztahuje na aktuálně odvozený typ i na novou hodnotu. <xref:System.Xml.Schema.XmlSchemaInference>Třída považuje předchozí hodnoty za povýšení odvozeného typu.  
   
  Zvažte například následující fragmenty kódu XML ze dvou dokumentů XML:  
   
@@ -53,7 +53,7 @@ Popisuje, jak <xref:System.Xml.Schema.XmlSchemaInference> třída odvodí datov�
   
  `<MyElement1 attr1="52344" />`  
   
- Když `attr1` je zjištěna první hodnota, typ `attr1` je odvozen jako `unsignedByte` na základě hodnoty. `12` Při výskytu `attr1` druhé je typ povýšen na `unsignedShort` základě aktuálně odvozeného typu `unsignedByte` a aktuální hodnoty. `52344`  
+ Když `attr1` je zjištěna první hodnota, typ `attr1` je odvozen jako na `unsignedByte` základě hodnoty `12` . Při výskytu druhé `attr1` je typ povýšen na `unsignedShort` základě aktuálně odvozeného typu `unsignedByte` a aktuální hodnoty `52344` .  
   
  Nyní zvažte následující XML ze dvou dokumentů XML:  
   
@@ -61,7 +61,7 @@ Popisuje, jak <xref:System.Xml.Schema.XmlSchemaInference> třída odvodí datov�
   
  `<MyElement2 attr2="true" />`  
   
- Když `attr2` je zjištěna první hodnota, typ `attr2` je odvozen jako `unsignedByte` na základě hodnoty. `0` Při výskytu `attr2` druhé je typ povýšen `string` na základě aktuálně odvozeného typu `unsignedByte` a aktuální hodnoty `true` , protože <xref:System.Xml.Schema.XmlSchemaInference> třída při zvyšování odvozeného typu zváží předchozí hodnoty. Pokud však byly obě instance `attr2` zjištěny ve stejném dokumentu XML a nikoli ve dvou různých dokumentech XML, jak je znázorněno výše `attr2` , by bylo odvozeno jako `boolean`.  
+ Když `attr2` je zjištěna první hodnota, typ `attr2` je odvozen jako na `unsignedByte` základě hodnoty `0` . Při výskytu druhé `attr2` je typ povýšen na `string` základě aktuálně odvozeného typu `unsignedByte` a aktuální hodnoty, `true` protože <xref:System.Xml.Schema.XmlSchemaInference> Třída při zvyšování odvozeného typu zváží předchozí hodnoty. Pokud však byly obě instance `attr2` zjištěny ve stejném dokumentu XML a nikoli ve dvou různých dokumentech XML, jak je znázorněno výše, `attr2` by bylo odvozeno jako `boolean` .  
   
 ### <a name="ignored-attributes-from-the-httpswwww3org2001xmlschema-instance-namespace"></a>Ignorované atributy z <https://www.w3.org/2001/XMLSchema-instance> oboru názvů
 
@@ -70,12 +70,12 @@ Níže jsou atributy definující schéma, které jsou ignorovány během odvoze
 |Atribut|Popis|  
 |---------------|-----------------|  
 |`xsi:type`|Pokud je nalezen element se `xsi:type` zadaným, `xsi:type` je ignorován.|  
-|`xsi:nil`|Pokud je nalezen element s `xsi:nil` atributem, jeho deklarace elementu v odvozeném schématu má hodnotu `nillable="true"`. Element s `xsi:nil` atributem nastaveným na `true` nemůže mít podřízené elementy.|  
+|`xsi:nil`|Pokud je nalezen element s `xsi:nil` atributem, jeho deklarace elementu v odvozeném schématu má hodnotu `nillable="true"` . Element s `xsi:nil` atributem nastaveným na `true` nemůže mít podřízené elementy.|  
 |`xsi:schemaLocation`|Pokud `xsi:schemaLocation` je zjištěno, je ignorováno.|  
 |`xsi:noNamespaceSchemaLocation`|Pokud `xsi:noNamespaceSchemaLocation` je zjištěno, je ignorováno.|  
   
 ## <a name="see-also"></a>Viz také
 
-- [Model objektu schématu (SOM) XML](../../../../docs/standard/data/xml/xml-schema-object-model-som.md)
-- [Odvození schémat z dokumentů XML](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)
-- [Pravidla pro odvození typů a struktury uzlů schémat](../../../../docs/standard/data/xml/rules-for-inferring-schema-node-types-and-structure.md)
+- [Model objektu schématu (SOM) XML](xml-schema-object-model-som.md)
+- [Odvození schémat z dokumentů XML](inferring-schemas-from-xml-documents.md)
+- [Pravidla pro odvození typů a struktury uzlů schémat](rules-for-inferring-schema-node-types-and-structure.md)

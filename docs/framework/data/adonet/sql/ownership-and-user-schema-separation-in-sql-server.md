@@ -1,13 +1,14 @@
 ---
 title: Vlastnictví a oddělení uživatelských schémat na SQL Serveru
+description: Přečtěte si, jak oddělení uživatelských schémat umožňuje flexibilitu při správě SQL Server oprávnění databázových objektů. Schémata seskupují objekty do samostatných oborů názvů.
 ms.date: 03/30/2017
 ms.assetid: 242830c1-31b5-4427-828c-cc22ff339f30
-ms.openlocfilehash: 5ad3d927bcf3534e134db2c98b79842b0e6148f3
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: 97e742979785fedd922dc887295b63e2d93bd147
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894434"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286259"
 ---
 # <a name="ownership-and-user-schema-separation-in-sql-server"></a>Vlastnictví a oddělení uživatelských schémat na SQL Serveru
 Základní pojem zabezpečení SQL Server je, že vlastníci objektů mají neodvolatelná oprávnění ke správě. Nemůžete odebrat oprávnění vlastníka objektu a nemůžete vyřadit uživatele z databáze, pokud v ní vlastní objekty.  
@@ -40,12 +41,12 @@ Server.Database.DatabaseSchema.DatabaseObject
  Pokud je z databáze modelů vyřadíte, nebudou se zobrazovat v nových databázích.  
   
 > [!NOTE]
-> Schémata `sys` a`INFORMATION_SCHEMA` jsou vyhrazena pro systémové objekty. V těchto schématech nemůžete vytvářet objekty a nemůžete je vyřadit.  
+> `sys`Schémata a `INFORMATION_SCHEMA` jsou vyhrazena pro systémové objekty. V těchto schématech nemůžete vytvářet objekty a nemůžete je vyřadit.  
   
 #### <a name="the-dbo-schema"></a>Schéma dbo  
- `dbo` Schéma je výchozí schéma pro nově vytvořenou databázi. `dbo` Schéma vlastní`dbo` tento uživatelský účet. Ve výchozím nastavení mají `dbo` uživatelé vytvořeni pomocí příkazu Transact-SQL Create User jako výchozí schéma.  
+ `dbo`Schéma je výchozí schéma pro nově vytvořenou databázi. `dbo`Schéma vlastní tento `dbo` uživatelský účet. Ve výchozím nastavení mají uživatelé vytvořeni pomocí příkazu Transact-SQL CREATE USER `dbo` jako výchozí schéma.  
   
- Uživatelé, kteří jsou přiřazeni `dbo` schématu, nedědí oprávnění `dbo` k uživatelskému účtu. Pro uživatele nejsou děděna žádná oprávnění od schématu. objektům databáze obsaženým ve schématu jsou zděděna oprávnění schématu.  
+ Uživatelé, kteří jsou přiřazeni `dbo` schématu, nedědí oprávnění k `dbo` uživatelskému účtu. Pro uživatele nejsou děděna žádná oprávnění od schématu. objektům databáze obsaženým ve schématu jsou zděděna oprávnění schématu.  
   
 > [!NOTE]
 > Pokud jsou objekty databáze odkazovány pomocí názvu jedné součásti, SQL Server nejprve vyhledá ve výchozím schématu uživatele. Pokud se objekt nenalezne, SQL Server ve `dbo` schématu dál. Pokud objekt není ve `dbo` schématu, je vrácena chyba.  
@@ -53,11 +54,11 @@ Server.Database.DatabaseSchema.DatabaseObject
 ## <a name="external-resources"></a>Externí zdroje  
  Další informace o vlastnictví objektů a schématech naleznete v následujících zdrojích informací.  
   
-|Resource|Popis|  
+|Prostředek|Popis|  
 |--------------|-----------------|  
 |[Oddělení schématu uživatele](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/ms190387(v=sql.105))|Popisuje změny zavedené oddělením schématu uživatele. Zahrnuje nové chování, jeho dopad na vlastnictví, zobrazení katalogu a oprávnění.|  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Zabezpečení aplikací ADO.NET](../securing-ado-net-applications.md)
 - [Scénáře zabezpečení aplikací na SQL Serveru](application-security-scenarios-in-sql-server.md)

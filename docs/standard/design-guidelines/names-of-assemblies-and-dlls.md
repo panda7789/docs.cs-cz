@@ -8,19 +8,19 @@ helpviewer_keywords:
 - assemblies [.NET Framework], names
 - DLLs, names
 ms.assetid: e800b610-31b4-4949-9c14-cb60e9f254be
-ms.openlocfilehash: f3c5997f777c937e9726b271afa0ae6d7a19b37d
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 138ae8154b0d10fb813f0c98ceb7c58a2471b780
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76744169"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291952"
 ---
 # <a name="names-of-assemblies-and-dlls"></a>Názvy sestavení a knihoven DLL
 Sestavení je jednotka nasazení a identita pro programy spravovaného kódu. Přestože sestavení mohou zahrnovat jeden nebo více souborů, obvykle sestavení mapuje 1:1 pomocí knihovny DLL. Proto tato část popisuje pouze konvence vytváření názvů knihoven DLL, které je možné namapovat na zásady vytváření názvů sestavení.
 
  ✔️ zvolit názvy pro knihovny DLL sestavení, které navrhují velké bloky funkčnosti, jako je System. data.
 
- Názvy sestavení a knihoven DLL nemusí odpovídat názvům oboru názvů, ale při pojmenování sestavení je vhodné použít název oboru názvů. Dobrým pravidlem obsluhy je pojmenování knihovny DLL na základě společné předpony oborů názvů obsažených v sestavení. Například sestavení se dvěma obory názvů, `MyCompany.MyTechnology.FirstFeature` a `MyCompany.MyTechnology.SecondFeature`, lze volat `MyCompany.MyTechnology.dll`.
+ Názvy sestavení a knihoven DLL nemusí odpovídat názvům oboru názvů, ale při pojmenování sestavení je vhodné použít název oboru názvů. Dobrým pravidlem obsluhy je pojmenování knihovny DLL na základě společné předpony oborů názvů obsažených v sestavení. Například sestavení se dvěma obory názvů `MyCompany.MyTechnology.FirstFeature` a, lze `MyCompany.MyTechnology.SecondFeature` volat `MyCompany.MyTechnology.dll` .
 
  ✔️ Zvažte pojmenování knihoven DLL podle následujícího vzoru:
 
@@ -36,5 +36,5 @@ Sestavení je jednotka nasazení a identita pro programy spravovaného kódu. P�
 
 ## <a name="see-also"></a>Viz také
 
-- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)
-- [Pokyny pro pojmenování](../../../docs/standard/design-guidelines/naming-guidelines.md)
+- [Pokyny k návrhu architektury](index.md)
+- [Pokyny pro pojmenování](naming-guidelines.md)

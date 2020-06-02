@@ -1,5 +1,5 @@
 ---
-title: 'Postup: Kopírování adresářů'
+title: 'Postupy: kopírování adresářů'
 ms.date: 12/27/2018
 ms.technology: dotnet-standard
 dev_langs:
@@ -12,19 +12,19 @@ helpviewer_keywords:
 - copying directories
 - directories [.NET Framework], copying
 ms.assetid: 5a969765-e5f8-4b4e-977e-90e2b0a1fe3c
-ms.openlocfilehash: 5d40db7f902dac8bd6bbdc1510be8e56a321be30
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f71f428037f33fdbc692ca2f02a4c767998d684e
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78159452"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288573"
 ---
-# <a name="how-to-copy-directories"></a>Postup: Kopírování adresářů
-Toto téma ukazuje, jak používat vstupně-v třídy synchronně kopírovat obsah adresáře do jiného umístění.
+# <a name="how-to-copy-directories"></a>Postupy: kopírování adresářů
+Toto téma ukazuje, jak použít třídy v/v k synchronnímu zkopírování obsahu adresáře do jiného umístění.
 
-Příklad asynchronní kopie souboru naleznete [v tématu V/V. asynchronního souboru](../../../docs/standard/io/asynchronous-file-i-o.md).
+Příklad asynchronního kopírování souborů najdete v tématu [asynchronní vstupně-výstupní operace se soubory](asynchronous-file-i-o.md).
 
-Tento příklad zkopíruje podadresáře `DirectoryCopy` nastavením `true` `copySubDirs` metody na . Metoda `DirectoryCopy` rekurzivně zkopíruje podadresáře voláním sebe sama v každém podadresáři, dokud nejsou k dispozici žádné další kopírování.  
+Tento příklad kopíruje podadresáře nastavením `copySubDirs` `DirectoryCopy` metody na `true` . `DirectoryCopy`Metoda rekurzivně kopíruje podadresáře tím, že zavolá sebe sama do každého podadresáře, dokud nebudete moci kopírovat.  
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[System.IO.Directory_Copy#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.Directory_Copy/cs/program.cs#1)]
@@ -37,6 +37,6 @@ Tento příklad zkopíruje podadresáře `DirectoryCopy` nastavením `true` `cop
 - <xref:System.IO.FileInfo>
 - <xref:System.IO.DirectoryInfo>
 - <xref:System.IO.FileStream>
-- [Vstupně-tono-videa](../../../docs/standard/io/index.md)
-- [Běžné vstupně-no úkoly](../../../docs/standard/io/common-i-o-tasks.md)
-- [Vstupně-nosný soubor asynchronní soubor](../../../docs/standard/io/asynchronous-file-i-o.md)
+- [Vstup/výstup souborů a streamů](index.md)
+- [Obecné vstupně-výstupní úlohy](common-i-o-tasks.md)
+- [Asynchronní souborový vstup-výstup](asynchronous-file-i-o.md)

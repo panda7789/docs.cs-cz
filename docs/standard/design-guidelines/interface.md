@@ -7,37 +7,37 @@ helpviewer_keywords:
 - type design guidelines, interfaces
 - class library design guidelines [.NET Framework], interfaces
 ms.assetid: a016bd18-6710-4358-9438-9f190a295392
-ms.openlocfilehash: 544035180a5004bfe2f4c75c680116e52bf25f98
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: f589d47d5b945179430275598996b2fb77e92848
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76744161"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289028"
 ---
 # <a name="interface-design"></a>Návrh rozhraní
 I když je většina rozhraní API nejlépe modelována pomocí tříd a struktur, existují případy, kdy jsou rozhraní lépe vhodná, nebo jenom možnost.
 
  CLR nepodporuje vícenásobnou dědičnost (tj. třídy CLR nemůžou dědit z více než jedné základní třídy), ale umožňuje typům implementovat jednu nebo více rozhraní kromě dědění ze základní třídy. Rozhraní se proto často používají k dosažení účinku vícenásobné dědičnosti. Například <xref:System.IDisposable> je rozhraní, které umožňuje typům podporovat disposability nezávisle na jakékoli jiné hierarchii dědičnosti, v níž se chtějí zúčastnit.
 
- Další situací, ve které je definování rozhraní vhodné, je vytvoření společného rozhraní, které může být podporováno několika typy, včetně některých typů hodnot. Typy hodnot nemůžou dědit z jiných typů než <xref:System.ValueType>, ale můžou implementovat rozhraní, takže použití rozhraní je jedinou možností, aby se poskytl běžný základní typ.
+ Další situací, ve které je definování rozhraní vhodné, je vytvoření společného rozhraní, které může být podporováno několika typy, včetně některých typů hodnot. Typy hodnot nemůžou dědit z jiných typů než <xref:System.ValueType> , ale můžou implementovat rozhraní, takže použití rozhraní je jedinou možností, aby se mohl poskytnout společný základní typ.
 
  ✔️ definovat rozhraní, pokud potřebujete některé společné rozhraní API podporovat sadou typů, které obsahují typy hodnot.
 
  ✔️ Zvažte definování rozhraní, pokud potřebujete podporovat jeho funkci u typů, které již dědí z jiného typu.
 
- ❌ nepoužívejte rozhraní značek (rozhraní bez členů).
+ ❌Vyhněte se použití rozhraní značek (rozhraní bez členů).
 
  Pokud potřebujete označit třídu jako se specifickou charakteristikou (marker), použijte obecně vlastní atribut, nikoli rozhraní.
 
  ✔️ Zadejte alespoň jeden typ, který je implementací rozhraní.
 
- To pomáhá ověřit návrh rozhraní. Například <xref:System.Collections.Generic.List%601> je implementace rozhraní <xref:System.Collections.Generic.IList%601>.
+ To pomáhá ověřit návrh rozhraní. Například <xref:System.Collections.Generic.List%601> je implementací <xref:System.Collections.Generic.IList%601> rozhraní.
 
  ✔️ Zadejte alespoň jedno rozhraní API, které využívá každé rozhraní, které definujete (metodu přebírající rozhraní jako parametr nebo vlastnost typu jako rozhraní).
 
- To pomáhá ověřit návrh rozhraní. Například <xref:System.Collections.Generic.List%601.Sort%2A?displayProperty=nameWithType> spotřebovává <xref:System.Collections.Generic.IComparer%601?displayProperty=nameWithType> rozhraní.
+ To pomáhá ověřit návrh rozhraní. Například <xref:System.Collections.Generic.List%601.Sort%2A?displayProperty=nameWithType> používá <xref:System.Collections.Generic.IComparer%601?displayProperty=nameWithType> rozhraní.
 
- ❌ Nepřidávat členy do rozhraní, které bylo dříve expedováno.
+ ❌Nepřidávat členy do rozhraní, které bylo dříve expedováno.
 
  Tím by došlo k přerušení implementace rozhraní. Aby nedocházelo k problémům se správou verzí, měli byste vytvořit nové rozhraní.
 
@@ -49,5 +49,5 @@ I když je většina rozhraní API nejlépe modelována pomocí tříd a struktu
 
 ## <a name="see-also"></a>Viz také
 
-- [Pokyny k návrhu typu](../../../docs/standard/design-guidelines/type.md)
-- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)
+- [Pokyny pro návrh typů](type.md)
+- [Pokyny k návrhu architektury](index.md)

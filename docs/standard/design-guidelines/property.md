@@ -6,12 +6,12 @@ helpviewer_keywords:
 - member design guidelines, properties
 - properties [.NET Framework], design guidelines
 ms.assetid: 127cbc0c-cbed-48fd-9c89-7c5d4f98f163
-ms.openlocfilehash: 8b6570b1b7c292729b78f2fe52f24f73319efe6c
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: c49b42ab369ace582c76d7f326da309415e8c45b
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76743667"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291939"
 ---
 # <a name="property-design"></a>Návrh vlastnosti
 I když jsou vlastnosti technicky velmi podobné metodám, jsou v souladu s jejich scénáři použití poměrně odlišné. Měly by se zobrazit jako inteligentní pole. Mají volání syntaxe polí a flexibilitu metod.
@@ -20,11 +20,11 @@ I když jsou vlastnosti technicky velmi podobné metodám, jsou v souladu s jeji
 
  Pamatujte, že pokud je typ vlastnosti proměnlivý typ odkazu, hodnota vlastnosti může být změněna i v případě, že je vlastnost určena pouze pro čtení.
 
- ❌ neposkytují vlastnosti nebo vlastnosti jen pro nastavení s vlastností setter širší přístupnost než getter.
+ ❌Neposkytněte vlastnosti nebo vlastnosti, které jsou jen pro nastavení, s setter větším usnadněním než getter.
 
  Nepoužívejte například vlastnosti s veřejnou setter a Protected getter.
 
- Pokud vlastnost getter nelze poskytnout, implementujte funkci namísto metody. Zvažte možnost spustit název metody s `Set` a sledujte, co byste měli pojmenovat vlastnost. Například <xref:System.AppDomain> má metodu nazvanou `SetCachePath` místo toho, aby byla vlastnost pouze set s názvem `CachePath`.
+ Pokud vlastnost getter nelze poskytnout, implementujte funkci namísto metody. Zvažte možnost začít s názvem metody `Set` a postupovat podle toho, co byste měli pojmenovat vlastnost. Například <xref:System.AppDomain> obsahuje metodu s názvem, `SetCachePath` místo aby byla volána vlastnost pouze pro nastavení `CachePath` .
 
  ✔️ poskytují výchozí hodnoty rozumné pro všechny vlastnosti, což zajistí, že výchozí hodnoty nebudou mít za následek bezpečnostní riziko ani vážně selhalo neefektivní kód.
 
@@ -34,53 +34,53 @@ I když jsou vlastnosti technicky velmi podobné metodám, jsou v souladu s jeji
 
  ✔️ zachovat předchozí hodnotu, pokud vlastnost setter vyvolá výjimku.
 
- ❌ Vyhněte se vyvolávání výjimek z mechanismů getter vlastnosti.
+ ❌Vyhněte se vyvolávání výjimek z mechanismů getter vlastnosti.
 
  Metody getter vlastnosti by měly být jednoduché operace a neměly by obsahovat žádné předběžné podmínky. Pokud getter může vyvolat výjimku, měla by být pravděpodobně přepracována jako metoda. Všimněte si, že toto pravidlo se nevztahuje na indexery, kde očekáváme výjimky v důsledku ověřování argumentů.
 
 ### <a name="indexed-property-design"></a>Návrh indexovaných vlastností
  Indexovaná vlastnost je speciální vlastnost, která může mít parametry a může být volána se speciální syntaxí podobnou indexování pole.
 
- Indexované vlastnosti se běžně označují jako indexery. Indexery by měly být používány pouze v rozhraních API, která poskytují přístup k položkám v logické kolekci. Například řetězec je kolekce znaků a indexer na <xref:System.String?displayProperty=nameWithType> byl přidán pro přístup ke svým znakům.
+ Indexované vlastnosti se běžně označují jako indexery. Indexery by měly být používány pouze v rozhraních API, která poskytují přístup k položkám v logické kolekci. Například řetězec je kolekce znaků a indexer <xref:System.String?displayProperty=nameWithType> přidaný pro přístup ke svým znakům.
 
  ✔️ Zvažte použití indexerů k poskytnutí přístupu k datům uloženým v interním poli.
 
  ✔️ Zvažte poskytování indexerů na typech představujících kolekce položek.
 
- ❌ se vyhnout použití indexovaných vlastností s více než jedním parametrem.
+ ❌Vyhněte se použití indexovaných vlastností s více než jedním parametrem.
 
- Pokud návrh vyžaduje více parametrů, převezměte v úvahu, zda vlastnost ve skutečnosti představuje přistupující objekt k logické kolekci. Pokud ne, použijte místo toho metody. Zvažte možnost spustit název metody pomocí `Get` nebo `Set`.
+ Pokud návrh vyžaduje více parametrů, převezměte v úvahu, zda vlastnost ve skutečnosti představuje přistupující objekt k logické kolekci. Pokud ne, použijte místo toho metody. Zvažte možnost spustit název metody s `Get` nebo `Set` .
 
- ❌ zabránit indexerům s jinými typy parametrů než <xref:System.Int32?displayProperty=nameWithType>, <xref:System.Int64?displayProperty=nameWithType>, <xref:System.String?displayProperty=nameWithType>, <xref:System.Object?displayProperty=nameWithType>nebo Enum.
+ ❌Vyhněte se indexerům s typy parametrů jinými než <xref:System.Int32?displayProperty=nameWithType> , <xref:System.Int64?displayProperty=nameWithType> ,, <xref:System.String?displayProperty=nameWithType> <xref:System.Object?displayProperty=nameWithType> nebo výčtem.
 
- Pokud návrh vyžaduje jiné typy parametrů, silně znovu Vyhodnoťte, jestli rozhraní API skutečně představuje přistupující objekt k logické kolekci. Pokud tomu tak není, použijte metodu. Zvažte možnost spustit název metody pomocí `Get` nebo `Set`.
+ Pokud návrh vyžaduje jiné typy parametrů, silně znovu Vyhodnoťte, jestli rozhraní API skutečně představuje přistupující objekt k logické kolekci. Pokud tomu tak není, použijte metodu. Zvažte možnost spustit název metody s `Get` nebo `Set` .
 
- ✔️ použít název `Item` u indexovaných vlastností, pokud neexistuje zjevně lepší název (například, viz vlastnost <xref:System.String.Chars%2A> na `System.String`).
+ ✔️ použít název `Item` indexovaných vlastností, pokud neexistuje zjevně lepší název (například, viz <xref:System.String.Chars%2A> vlastnost on `System.String` ).
 
- V C#nástroji jsou indexery ve výchozím nastavení pojmenované položky. K přizpůsobení tohoto názvu lze použít <xref:System.Runtime.CompilerServices.IndexerNameAttribute>.
+ V jazyce C# jsou indexery ve výchozím nastavení pojmenované položky. <xref:System.Runtime.CompilerServices.IndexerNameAttribute>K přizpůsobení tohoto názvu lze použít.
 
- ❌ neposkytují indexer a metody, které jsou sémanticky ekvivalentní.
+ ❌Neposkytněte indexer a metody, které jsou sémanticky ekvivalentní.
 
- ❌ neposkytují více než jednu skupinu přetížených indexerů v jednom typu.
+ ❌Neposkytněte více než jednu rodinu přetížených indexerů v jednom typu.
 
- Toto je vynutil C# kompilátorem.
+ Toto je vynutil kompilátorem jazyka C#.
 
- ❌ nepoužívat výchozí indexované vlastnosti.
+ ❌Nepoužívejte nevýchozí indexované vlastnosti.
 
- Toto je vynutil C# kompilátorem.
+ Toto je vynutil kompilátorem jazyka C#.
 
 ### <a name="property-change-notification-events"></a>Události upozornění na změnu vlastnosti
- Někdy je užitečné poskytnout událost upozorňující uživatele na změny v hodnotě vlastnosti. Například `System.Windows.Forms.Control` vyvolává událost `TextChanged` po změně hodnoty vlastnosti `Text`.
+ Někdy je užitečné poskytnout událost upozorňující uživatele na změny v hodnotě vlastnosti. Například `System.Windows.Forms.Control` vyvolá `TextChanged` událost po `Text` změně hodnoty vlastnosti.
 
  ✔️ Zvažte vyvolání události oznámení o změně při změně hodnot vlastností v rozhraních API na vysoké úrovni (obvykle komponent návrháře).
 
  Pokud je dobrým scénářem, že uživatel ví, kdy se změní vlastnost objektu, měl by objekt vyvolat událost upozornění na změnu pro vlastnost.
 
- Nepředpokládá se však, že bude nutné zvýšit nároky na vyvolání takových událostí pro rozhraní API nižší úrovně, jako jsou základní typy nebo kolekce. <xref:System.Collections.Generic.List%601> například nevyvolává takové události, když se do seznamu přidá nová položka a změní se vlastnost `Count`.
+ Nepředpokládá se však, že bude nutné zvýšit nároky na vyvolání takových událostí pro rozhraní API nižší úrovně, jako jsou základní typy nebo kolekce. Například <xref:System.Collections.Generic.List%601> by nevyvolávají takové události, když se do seznamu přidá nová položka a `Count` změní se vlastnost.
 
  ✔️ Zvažte vyvolání události oznámení o změně při změně hodnoty vlastnosti prostřednictvím externích sil.
 
- Pokud se hodnota vlastnosti mění přes některé externí síly (způsobem, který je jiný než voláním metod objektu), vyvolávají události upozorňující na vývojáře, že se hodnota mění a změnila. Dobrým příkladem je vlastnost `Text` ovládacího prvku textového pole. Když uživatel zadá text do `TextBox`, hodnota vlastnosti se automaticky změní.
+ Pokud se hodnota vlastnosti mění přes některé externí síly (způsobem, který je jiný než voláním metod objektu), vyvolávají události upozorňující na vývojáře, že se hodnota mění a změnila. Dobrým příkladem je `Text` vlastnost ovládacího prvku textový rámeček. Když uživatel zadá text do `TextBox` , hodnota vlastnosti se automaticky změní.
 
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*
 
@@ -88,5 +88,5 @@ I když jsou vlastnosti technicky velmi podobné metodám, jsou v souladu s jeji
 
 ## <a name="see-also"></a>Viz také
 
-- [Pokyny k návrhu člena](../../../docs/standard/design-guidelines/member.md)
-- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)
+- [Pokyny pro návrh členů](member.md)
+- [Pokyny k návrhu architektury](index.md)

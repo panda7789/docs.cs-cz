@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Equals method
 - collections [.NET Framework], comparisons
 ms.assetid: 5e4d3b45-97f0-423c-a65f-c492ed40e73b
-ms.openlocfilehash: 8e4530063f14211688e5ef2d2ec4ed7e4834cdf1
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: cb9dd3e8af570251b8bcd2e450e686ad69ab78c4
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83212964"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287975"
 ---
 # <a name="comparisons-and-sorts-within-collections"></a>Porovnávání a řazení v kolekcích
 
@@ -51,7 +51,7 @@ Výchozí porovnávání spoléhá alespoň na jeden objekt, který je porovnán
 
 Aby bylo možné poskytnout explicitní porovnání, některé metody přijímají implementaci **IComparer** jako parametr. Například <xref:System.Collections.Generic.List%601.Sort%2A?displayProperty=nameWithType> Metoda přijímá <xref:System.Collections.Generic.IComparer%601?displayProperty=nameWithType> implementaci.
 
-Aktuální nastavení jazykové verze systému může ovlivnit porovnání a seřazení v rámci kolekce. Ve výchozím nastavení porovnání a řazení v **kolekcích** tříd jsou závislé na jazykové verzi. Chcete-li ignorovat nastavení jazykové verze, a proto získat konzistentní porovnání a řazení výsledků, použijte <xref:System.Globalization.CultureInfo.InvariantCulture%2A> s přetíženími členů, které přijímají <xref:System.Globalization.CultureInfo> . Další informace naleznete v tématu [provádění řetězcových operací nezávislých na jazykové verzi v kolekcích](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations-in-collections.md) a [provádění řetězcových operací nezávislých na jazykové verzi v polích](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations-in-arrays.md).
+Aktuální nastavení jazykové verze systému může ovlivnit porovnání a seřazení v rámci kolekce. Ve výchozím nastavení porovnání a řazení v **kolekcích** tříd jsou závislé na jazykové verzi. Chcete-li ignorovat nastavení jazykové verze, a proto získat konzistentní porovnání a řazení výsledků, použijte <xref:System.Globalization.CultureInfo.InvariantCulture%2A> s přetíženími členů, které přijímají <xref:System.Globalization.CultureInfo> . Další informace naleznete v tématu [provádění řetězcových operací nezávislých na jazykové verzi v kolekcích](../globalization-localization/performing-culture-insensitive-string-operations-in-collections.md) a [provádění řetězcových operací nezávislých na jazykové verzi v polích](../globalization-localization/performing-culture-insensitive-string-operations-in-arrays.md).
 
 <a name="BKMK_Equalityandsortexample"></a>
 ## <a name="equality-and-sort-example"></a>Příklad rovnosti a řazení
