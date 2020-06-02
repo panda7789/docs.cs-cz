@@ -7,15 +7,15 @@ helpviewer_keywords:
 - schemaImporterExtensions element
 - <schemaImporterExtensions> element
 ms.assetid: 465ef2a0-f909-4ac1-9a56-0ead5c849698
-ms.openlocfilehash: 5b9820ccdf2c75bed9beda72358c4c4d82ff9ff7
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: c46c5cb6e01463723f0f2ce3873fb4a6ec0b4e60
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83379793"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84278399"
 ---
-# <a name="schemaimporterextensions-element"></a>\<schemaImporterExtensions – element>
-Obsahuje typy, které jsou používány <xref:System.Xml.Serialization.XmlSchemaImporter> pro mapování typů XSD na typy rozhraní .NET Framework. Další informace o konfiguračních souborech najdete v tématu [Schéma konfiguračního souboru](../../../docs/framework/configure-apps/file-schema/index.md).  
+# <a name="schemaimporterextensions-element"></a>Element \<schemaImporterExtensions>
+Obsahuje typy, které jsou používány <xref:System.Xml.Serialization.XmlSchemaImporter> pro mapování typů XSD na typy rozhraní .NET Framework. Další informace o konfiguračních souborech najdete v tématu [Schéma konfiguračního souboru](../../framework/configure-apps/file-schema/index.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -29,13 +29,13 @@ Obsahuje typy, které jsou používány <xref:System.Xml.Serialization.XmlSchema
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Přidat> element pro \<>schemaImporterExtensions](../../../docs/standard/serialization/add-element-for-schemaimporterextensions.md)|Přidá typy, které jsou používány <xref:System.Xml.Serialization.XmlSchemaImporter> k vytvoření mapování.|  
+|[\<add>Element pro\<schemaImporterExtensions>](add-element-for-schemaimporterextensions.md)|Přidá typy, které jsou používány <xref:System.Xml.Serialization.XmlSchemaImporter> k vytvoření mapování.|  
   
 ## <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<System. XML. Serialization – element>](../../../docs/standard/serialization/system-xml-serialization-element.md)|Element nejvyšší úrovně pro řízení serializace XML.|  
+|[\<system.xml.serialization>Objekt](system-xml-serialization-element.md)|Element nejvyšší úrovně pro řízení serializace XML.|  
   
 ## <a name="example"></a>Příklad  
  Následující příklad kódu ukazuje, jak přidat typy, které jsou používány <xref:System.Xml.Serialization.XmlSchemaImporter> při mapování typů XSD na typy rozhraní .NET Framework.  
@@ -55,7 +55,7 @@ Obsahuje typy, které jsou používány <xref:System.Xml.Serialization.XmlSchema
 
 - <xref:System.Xml.Serialization.XmlSchemaImporter>
 - <xref:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode>
-- [Schéma konfiguračního souboru](../../../docs/framework/configure-apps/file-schema/index.md)
-- [\<dateTimeSerialization – element>](../../../docs/standard/serialization/datetimeserialization-element.md)
-- [\<Přidat> element pro \<>schemaImporterExtensions](../../../docs/standard/serialization/add-element-for-schemaimporterextensions.md)
-- [\<System. XML. Serialization – element>](../../../docs/standard/serialization/system-xml-serialization-element.md)
+- [Schéma konfiguračního souboru](../../framework/configure-apps/file-schema/index.md)
+- [\<dateTimeSerialization>Objekt](datetimeserialization-element.md)
+- [\<add>Element pro\<schemaImporterExtensions>](add-element-for-schemaimporterextensions.md)
+- [\<system.xml.serialization>Objekt](system-xml-serialization-element.md)

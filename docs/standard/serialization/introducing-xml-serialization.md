@@ -13,12 +13,12 @@ helpviewer_keywords:
 - DataSet class, serializing
 - XML Schema, serializing
 ms.assetid: 8c63200d-db63-4a03-a93d-21641623df62
-ms.openlocfilehash: 7534ad702039b37a85a24223576320aea8052e9e
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: d9b71b7530debde7708ee107c990541e2b97cd44
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83421264"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84277957"
 ---
 # <a name="xml-serialization"></a>serializace XML
 
@@ -33,7 +33,7 @@ Serializace je proces převodu objektu do formuláře, který lze snadno přené
 
  Data v objektech jsou popsána pomocí konstrukcí programovacích jazyků, jako jsou třídy, pole, vlastnosti, primitivní typy, pole a dokonce i vložené XML ve formě objektů **XmlElement** nebo **XmlAttribute** . Máte možnost vytvořit vlastní třídy označena s atributy, nebo pomocí nástroje definici schématu XML vygenerovat třídy založen na stávajícím schématu XML.
 
- Pokud máte schématu XML, můžete spustit nástroj definici schématu XML k vytvoření sadu tříd, které jsou silného typu schématu a označena s atributy. Pokud instance této třídy serializován, generovaný XML dodržuje schématu XML. Za předpokladu tříd se můžete programovat proti snadno s ní manipulováno objektový model při zachování zajištěno, že generovaného kódu XML odpovídá schématu XML. Jedná se o alternativu k použití jiných tříd v .NET Framework, jako jsou třídy **XmlReader** a **XmlWriter** , k analýze a zápisu datového proudu XML. Další informace najdete v tématu [dokumenty a data XML](../../../docs/standard/data/xml/index.md). Tyto třídy umožňují analyzovat jakékoli datový proud XML. Naproti tomu **objekt XmlSerializer** použijte v případě, že se očekává, že datový proud XML odpovídá známému schématu XML.
+ Pokud máte schématu XML, můžete spustit nástroj definici schématu XML k vytvoření sadu tříd, které jsou silného typu schématu a označena s atributy. Pokud instance této třídy serializován, generovaný XML dodržuje schématu XML. Za předpokladu tříd se můžete programovat proti snadno s ní manipulováno objektový model při zachování zajištěno, že generovaného kódu XML odpovídá schématu XML. Jedná se o alternativu k použití jiných tříd v .NET Framework, jako jsou třídy **XmlReader** a **XmlWriter** , k analýze a zápisu datového proudu XML. Další informace najdete v tématu [dokumenty a data XML](../data/xml/index.md). Tyto třídy umožňují analyzovat jakékoli datový proud XML. Naproti tomu **objekt XmlSerializer** použijte v případě, že se očekává, že datový proud XML odpovídá známému schématu XML.
 
  Atributy řídí datový proud XML generovaný třídou **XmlSerializer** , což umožňuje nastavit obor názvů XML, název elementu, název atributu a tak dále pro datový proud XML. Další informace o těchto atributech a o tom, jak řídí serializace XML, naleznete v tématu [řízení serializace XML pomocí atributů](controlling-xml-serialization-using-attributes.md). Tabulka pro tyto atributy, které se používají k řízení vygenerovaného kódu XML, naleznete v tématu [atributy, které řídí serializaci XML](attributes-that-control-xml-serialization.md).
 

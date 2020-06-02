@@ -12,74 +12,74 @@ helpviewer_keywords:
 - parameterless constructors
 - static constructors
 ms.assetid: b4496afe-5fa7-4bb0-85ca-70b0ef21e6fc
-ms.openlocfilehash: 7ab795cd4c6e0ff5e1451c05987848c41bd69577
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a258bebac57258cc1e8fbe2d6b5ccce88cb28872
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79400601"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84280345"
 ---
 # <a name="constructor-design"></a>Návrh konstruktoru
 
-Existují dva druhy konstruktorů: typ konstruktory a instance konstruktory.
+Existují dva druhy konstruktorů: konstruktory typů a konstruktory instancí.
 
-Typ konstruktory jsou statické a jsou spuštěny CLR před použitím typu. Konstruktory instancí jsou spuštěny při vytvoření instance typu.
+Konstruktory typů jsou statické a jsou spuštěny modulem CLR před použitím typu. Konstruktory instancí jsou spouštěny při vytvoření instance typu.
 
-Typ konstruktory nemůže trvat žádné parametry. Instance konstruktory mohou. Instance konstruktory, které neberou žádné parametry se často nazývají konstruktory bez parametrů.
+Konstruktory typů nemůžou mít žádné parametry. Konstruktory instancí můžou. Konstruktory instancí, které nevyužívají žádné parametry, se často nazývají konstruktory bez parametrů.
 
-Konstruktory jsou nejpřirozenější způsob, jak vytvořit instance typu. Většina vývojářů bude hledat a pokusí se použít konstruktor před tím, než zváží alternativní způsoby vytváření instancí (například metody výroby).
+Konstruktory představují nejpřirozený způsob, jak vytvořit instance typu. Většina vývojářů hledá a pokusí se použít konstruktor předtím, než uvažují alternativní způsoby vytváření instancí (například metody výroby).
 
-✔️ zvažte poskytnutí jednoduchých, ideálně výchozích konstruktorů.
+✔️ Zvažte poskytování jednoduchých, ideálních, ideálních konstruktorů.
 
-Jednoduchý konstruktor má velmi malý počet parametrů a všechny parametry jsou primitiva nebo výčty. Takové jednoduché konstruktory zvyšují použitelnost rámce.
+Jednoduchý konstruktor má velmi malý počet parametrů a všechny parametry jsou primitivní nebo výčty. Takové jednoduché konstruktory zvyšují použitelnost rozhraní.
 
-✔️ zvažte použití statické tovární metody namísto konstruktoru, pokud sémantiku požadované operace nemapují přímo na konstrukci nové instance, nebo pokud se následující pokyny pro návrh konstruktoru cítí nepřirozeně.
+✔️ Zvažte použití statické metody Factory namísto konstruktoru, pokud sémantika požadované operace není mapována přímo na konstrukci nové instance, nebo pokud podle pokynů pro návrh konstruktoru nevidíte nepřirozeně.
 
-✔️ DO použít parametry konstruktoru jako zkratky pro nastavení hlavních vlastností.
+✔️ použít parametry konstruktoru jako zkratky pro nastavení hlavních vlastností.
 
-By měl být žádný rozdíl v sémantice mezi pomocí prázdný konstruktor následuje některé sady vlastností a pomocí konstruktoru s více argumenty.
+V sémantikě by neměl být žádný rozdíl mezi použitím prázdného konstruktoru následovanýho některými sadami vlastností a použitím konstruktoru s více argumenty.
 
-✔️ DO použít stejný název pro parametry konstruktoru a vlastnost, pokud parametry konstruktoru se používají k jednoduchému nastavení vlastnosti.
+✔️ použít stejný název pro parametry konstruktoru a vlastnost, pokud jsou parametry konstruktoru použity pro jednoduše nastavení vlastnosti.
 
-Jediným rozdílem mezi těmito parametry a vlastnostmi by měla být písmena.
+Jediný rozdíl mezi takovými parametry a vlastnostmi musí být velká a malá písmena.
 
-✔️ provést minimální práci v konstruktoru.
+✔️ UDĚLAT v konstruktoru minimální práci.
 
-Konstruktory by neměly dělat mnoho práce než zachytit parametry konstruktoru. Náklady na jakékoli jiné zpracování by měly být zpožděny, dokud nebude vyžadováno.
+Konstruktory by neměly dělat mnohem více práce než zachycení parametrů konstruktoru. Náklady na jakékoli jiné zpracování by měly být zpožděny, dokud není vyžadováno.
 
-✔️ DO vyvolat výjimky z konstruktorů instancí, pokud je to vhodné.
+Pokud je to vhodné, ✔️ vyvolat výjimky z konstruktorů instance.
 
-✔️ DO explicitně deklarovat veřejné konstruktoru bez parametrů ve třídách, pokud je takový konstruktor požadován.
+✔️ explicitně deklarovat veřejný konstruktor bez parametrů ve třídách, pokud je takový konstruktor požadován.
 
-Pokud explicitně nedeklarujete žádné konstruktory na typu, mnoho jazyků (například C#) automaticky přidá veřejný konstruktor bez parametrů. (Abstraktní třídy získat chráněný konstruktor.)
+Pokud nedeklarujete explicitně žádné konstruktory typu, mnoho jazyků (například C#) automaticky přidá veřejný konstruktor bez parametrů. (Abstraktní třídy získávají chráněný konstruktor.)
 
-Přidání parametrizovaného konstruktoru do třídy zabrání kompilátoru v přidání konstruktoru bez parametrů. To často způsobuje náhodné změny porušení.
+Přidání parametrizovaného konstruktoru do třídy znemožní kompilátoru přidat konstruktor bez parametrů. To často způsobí nechtěné změny.
 
-❌Vyhněte se explicitně definovat konstruktory bez parametrů na strukturách.
+❌Vyhněte se explicitnímu definování konstruktorů bez parametrů u struktur.
 
-To zrychluje vytváření pole, protože pokud není definován konstruktor bez parametrů, nemusí být spuštěn na každém slotu v poli. Všimněte si, že mnoho kompilátorů, včetně C#, neumožňují struktury mít konstruktory bez parametrů z tohoto důvodu.
+Díky tomu je vytvoření pole rychlejší, protože pokud konstruktor bez parametrů není definován, nemusí být spuštěn na všech slotech v poli. Všimněte si, že mnoho kompilátorů, včetně C#, neumožňuje strukturám mít z tohoto důvodu konstruktory bez parametrů.
 
-❌Vyhněte se volání virtuálních členů na objekt uvnitř jeho konstruktoru.
+❌Vyhněte se volání virtuálních členů objektu uvnitř jeho konstruktoru.
 
-Volání virtuálního člena způsobí, že nejvíce odvozené přepsání bude voláno, i když konstruktor nejvíce odvozeného typu ještě nebyl plně spuštěn.
+Volání virtuálního členu způsobí volání nejvíce odvozeného přepsání, a to i v případě, že konstruktor nejvíce odvozeného typu nebyl dosud zcela spuštěn.
 
-## <a name="type-constructor-guidelines"></a>Pokyny konstruktoru typu
+## <a name="type-constructor-guidelines"></a>Pokyny k konstruktoru typu
 
-✔️ do, aby statické konstruktory soukromé.
+✔️ UDĚLAT statické konstruktory jako soukromé.
 
-Statický konstruktor, nazývaný také konstruktor třídy, se používá k inicializaci typu. CLR volá statický konstruktor před vytvořením první instance typu nebo jsou volány všechny statické členy tohoto typu. Uživatel nemá žádnou kontrolu nad při volání statického konstruktoru. Pokud statický konstruktor není soukromý, může být volán jiným kódem než CLR. V závislosti na operacích prováděných v konstruktoru to může způsobit neočekávané chování. Kompilátor Jazyka C# vynutí, aby statické konstruktory byly soukromé.
+Pro inicializaci typu se používá statický konstruktor, označovaný také jako konstruktor třídy. Modul CLR volá statický konstruktor před vytvořením první instance typu nebo se zavoláním všech statických členů tohoto typu. Uživatel nemá žádné řízení při volání statického konstruktoru. Pokud statický konstruktor není privátní, může být volán jiným kódem než CLR. V závislosti na operacích provedených v konstruktoru to může způsobit neočekávané chování. Kompilátor jazyka C# vynutí, aby statické konstruktory byly privátní.
 
-❌NEVYVOLÁVAT výjimky ze statických konstruktorů.
+❌Nevyvolává výjimky ze statických konstruktorů.
 
-Pokud je vyvolána výjimka z konstruktoru typu, typ není použitelný v aktuální doméně aplikace.
+Je-li výjimka vyvolána z konstruktoru typu, nelze typ použít v aktuální doméně aplikace.
 
-✔️ zvážit inicializaci statických polí vřadit spíše než explicitně pomocí statických konstruktorů, protože runtime je schopen optimalizovat výkon typů, které nemají explicitně definovaný statický konstruktor.
+✔️ Zvažte inicializaci statických polí namísto explicitního použití statických konstruktorů, protože modul runtime může optimalizovat výkon typů, které nemají explicitně definovaný statický konstruktor.
 
 *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*
 
-*Přetištěno se svolením Pearson Education, Inc. z [Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) by Krzysztof Cwalina and Brad Abrams, published Oct 22, 2008 by Addison-Wesley Professional as part of the Microsoft Windows Development Series.*
+*Přetištěno oprávněním Pearsonova vzdělávání, Inc. z [pokynů pro návrh rozhraní: konvence, idiomy a vzory pro opakovaně použitelné knihovny .NET, druhá edice](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) od Krzysztof Cwalina a Brad Abrams, publikovaly 22. října 2008 Addison-Wesley Professional jako součást sady Microsoft Windows Development Series.*
 
 ## <a name="see-also"></a>Viz také
 
-- [Pokyny k návrhu člena](../../../docs/standard/design-guidelines/member.md)
-- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)
+- [Pokyny pro návrh členů](member.md)
+- [Pokyny k návrhu architektury](index.md)

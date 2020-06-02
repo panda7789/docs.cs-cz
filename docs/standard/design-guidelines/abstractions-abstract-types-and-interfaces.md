@@ -8,15 +8,15 @@ helpviewer_keywords:
 - abstract types [.NET Framework]
 - types [.NET Framework], abstract
 ms.assetid: 0a632bc7-9b03-44ee-8842-c82f88672a45
-ms.openlocfilehash: 6a4f511af72aad916d367153090504e2a8e11cb8
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: fd5b8fe10d0dcca5da3a2093f7be37f6d88b382a
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76741809"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84280611"
 ---
 # <a name="abstractions-abstract-types-and-interfaces"></a>Abstrakce (abstraktní typy a rozhraní)
-Abstrakce je typ, který popisuje kontrakt, ale neposkytuje úplnou implementaci kontraktu. Abstrakce jsou obvykle implementovány jako abstraktní třídy nebo rozhraní a jsou dodávány s dobře definovanou sadou Referenční dokumentace popisující požadovanou sémantiku typů, které implementují kontrakt. Mezi nejdůležitější abstrakce v .NET Framework patří <xref:System.IO.Stream>, <xref:System.Collections.Generic.IEnumerable%601>a <xref:System.Object>.
+Abstrakce je typ, který popisuje kontrakt, ale neposkytuje úplnou implementaci kontraktu. Abstrakce jsou obvykle implementovány jako abstraktní třídy nebo rozhraní a jsou dodávány s dobře definovanou sadou Referenční dokumentace popisující požadovanou sémantiku typů, které implementují kontrakt. Mezi nejdůležitější abstrakce v .NET Framework patří <xref:System.IO.Stream> , <xref:System.Collections.Generic.IEnumerable%601> a <xref:System.Object> .
 
  Rozhraní můžete roztáhnout implementací konkrétního typu, který podporuje kontrakt abstrakce, a použitím tohoto konkrétního typu s rozhraními API architektury, které spotřebovávají (pracuje na) abstrakce.
 
@@ -26,7 +26,7 @@ Abstrakce je typ, který popisuje kontrakt, ale neposkytuje úplnou implementaci
 
  Abstrakce však poskytují extrémně výkonnou rozšiřitelnost, kterou jiné mechanismy rozšíření nemůžou často porovnat. Jsou v jádru mnoha vzorů architektury, jako jsou moduly plug-in, inverze řídicích prvků (IoC), kanály atd. Jsou také mimořádně důležité pro testování architektur. Dobré abstrakce umožňují, aby byly pro účely testování částí využívány těžké závislosti. V souhrnu jsou abstrakce zodpovědné za hledané – po bohatosti moderních rozhraní orientovaných na objekty.
 
- ❌ neposkytuje abstrakce, pokud nejsou testovány vývojem několika konkrétních implementací a rozhraní API, které spotřebovávají abstrakce.
+ ❌Neposkytněte abstrakce, pokud nejsou testovány vývojem několika konkrétních implementací a rozhraní API, které spotřebovávají abstrakce.
 
  ✔️ Při navrhování abstrakce zvolit pečlivě mezi abstraktní třídou a rozhraním.
 
@@ -38,5 +38,5 @@ Abstrakce je typ, který popisuje kontrakt, ale neposkytuje úplnou implementaci
 
 ## <a name="see-also"></a>Viz také
 
-- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)
-- [Navrhování pro rozšiřitelnost](../../../docs/standard/design-guidelines/designing-for-extensibility.md)
+- [Pokyny k návrhu architektury](index.md)
+- [Navrhování pro rozšiřitelnost](designing-for-extensibility.md)

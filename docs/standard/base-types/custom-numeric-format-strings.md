@@ -16,18 +16,18 @@ helpviewer_keywords:
 - formatting numbers [.NET Framework]
 - format specifiers, custom numeric format strings
 ms.assetid: 6f74fd32-6c6b-48ed-8241-3c2b86dea5f4
-ms.openlocfilehash: 1e2456da9fd1b9bd26d0317c0d04c6d1b61cf16d
-ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
+ms.openlocfilehash: bc2ace5a068a49f19db55c6fcc3cfc7287b6f618
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83440912"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84278957"
 ---
 # <a name="custom-numeric-format-strings"></a>Vlastní řetězce číselného formátu
 
-Lze vytvořit vlastní číselný formátovací řetězec, který se skládá z jednoho nebo několika vlastních číselných specifikátorů pro definování formátování číselných dat. Vlastní řetězec číselného formátu je libovolný formátovací řetězec, který není [standardním číselným formátovacím řetězcem](../../../docs/standard/base-types/standard-numeric-format-strings.md).
+Lze vytvořit vlastní číselný formátovací řetězec, který se skládá z jednoho nebo několika vlastních číselných specifikátorů pro definování formátování číselných dat. Vlastní řetězec číselného formátu je libovolný formátovací řetězec, který není [standardním číselným formátovacím řetězcem](standard-numeric-format-strings.md).
 
-Vlastní řetězce číselného formátu jsou podporovány některými přetíženími `ToString` metody pro všechny číselné typy. Například můžete zadat řetězec číselného formátu do <xref:System.Int32.ToString%28System.String%29> <xref:System.Int32.ToString%28System.String%2CSystem.IFormatProvider%29> metody a <xref:System.Int32> typu. Vlastní řetězce číselného formátu jsou podporovány také [funkcí složeného formátování](../../../docs/standard/base-types/composite-formatting.md)aplikace .NET, která je používána některými `Write` a metodami `WriteLine` <xref:System.Console> třídy a <xref:System.IO.StreamWriter> , metody a <xref:System.String.Format%2A?displayProperty=nameWithType> <xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType> metody. Funkce [interpolace řetězců](../../csharp/language-reference/tokens/interpolated.md) podporuje také vlastní řetězce číselného formátu.
+Vlastní řetězce číselného formátu jsou podporovány některými přetíženími `ToString` metody pro všechny číselné typy. Například můžete zadat řetězec číselného formátu do <xref:System.Int32.ToString%28System.String%29> <xref:System.Int32.ToString%28System.String%2CSystem.IFormatProvider%29> metody a <xref:System.Int32> typu. Vlastní řetězce číselného formátu jsou podporovány také [funkcí složeného formátování](composite-formatting.md)aplikace .NET, která je používána některými `Write` a metodami `WriteLine` <xref:System.Console> třídy a <xref:System.IO.StreamWriter> , metody a <xref:System.String.Format%2A?displayProperty=nameWithType> <xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType> metody. Funkce [interpolace řetězců](../../csharp/language-reference/tokens/interpolated.md) podporuje také vlastní řetězce číselného formátu.
 
 > [!TIP]
 > Můžete si stáhnout **formátovací nástroj**, aplikaci .net Core model Windows Forms, která umožňuje použití řetězců formátu na číselné hodnoty nebo hodnoty data a času a zobrazuje výsledný řetězec. Zdrojový kód je k dispozici pro [C#](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-cs) a [Visual Basic](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-vb).
@@ -46,7 +46,7 @@ Vlastní řetězce číselného formátu jsou podporovány některými přetíž
 |"\\"|Řídicí znak|Způsobí, že následující znak je interpretován jako literál, nikoli jako specifikátor vlastního formátu.<br /><br /> Další informace: [ \\ řídicí znak ""](#SpecifierEscape).|987654 (" \\ # # #00 \\ #")-> #987654 #|
 |*řetězec "String*"<br /><br /> *řetězec "String*"|Oddělovač řetězcového literálu|Označuje, že uzavřené znaky by měly být zkopírovány do výsledného řetězce beze změny.<br/><br/>Další informace: [znakové literály](#character-literals).|68 ("# ' stupňů '") – > 68 stupňů<br /><br /> 68 ("# ' stupňů '") – > 68 stupňů|
 |;|Oddělovač oddílů|Definuje oddíly se zvláštními formátovacími řetězci pro kladná, záporná a nulová čísla.<br /><br /> Další informace: [";" Oddělovač oddílu](#SectionSeparator)|12,345 ("#0 0 #;(#0.0 #);-\ 0-") – > 12,35<br /><br /> 0 ("#0 0 #;(#0.0 #);-\ 0-")->-0-<br /><br /> -12,345 ("#0 0 #;(#0.0 #);-\ 0-")-> (12,35)<br /><br /> 12,345 ("#0 0 #;(#0.0 #)") – > 12,35<br /><br /> 0 ("#0 0 #;(#0.0 #)") – > 0,0<br /><br /> -12,345 ("#0 0 #;(#0.0 #)")-> (12,35)|
-|Jiné|Všechny ostatní znaky|Znak je zkopírován do výsledného řetězce beze změny.<br/><br/>Další informace: [znakové literály](#character-literals).|68 ("# °")-> 68 °|
+|Ostatní|Všechny ostatní znaky|Znak je zkopírován do výsledného řetězce beze změny.<br/><br/>Další informace: [znakové literály](#character-literals).|68 ("# °")-> 68 °|
 
 V následujících částech jsou uvedeny podrobné informace o jednotlivých vlastních specifikátorech číselného formátu.
 
@@ -84,7 +84,7 @@ Následující příklad zobrazí několik hodnot, které jsou formátovány pom
 [!code-csharp[Formatting.Numeric.Custom#2](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/custom.cs#2)]
 [!code-vb[Formatting.Numeric.Custom#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/formatting.numeric.custom/vb/Custom.vb#2)]
 
-Chcete-li vrátit výsledný řetězec, ve kterém jsou chybějící číslice nebo úvodní nuly nahrazeny mezerami, použijte [funkci složeného formátování](../../../docs/standard/base-types/composite-formatting.md) a určete šířku pole, jak ukazuje následující příklad.
+Chcete-li vrátit výsledný řetězec, ve kterém jsou chybějící číslice nebo úvodní nuly nahrazeny mezerami, použijte [funkci složeného formátování](composite-formatting.md) a určete šířku pole, jak ukazuje následující příklad.
 
 [!code-cpp[Formatting.Numeric.Custom#12](../../../samples/snippets/cpp/VS_Snippets_CLR/formatting.numeric.custom/cpp/SpaceOrDigit1.cpp#12)]
 [!code-csharp[Formatting.Numeric.Custom#12](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/SpaceOrDigit1.cs#12)]
@@ -288,8 +288,8 @@ Následující příklad ukazuje dva vlastní číselné formátovací řetězce
 ## <a name="see-also"></a>Viz také
 
 - <xref:System.Globalization.NumberFormatInfo?displayProperty=nameWithType>
-- [Typy formátování](../../../docs/standard/base-types/formatting-types.md)
-- [Řetězce standardního číselného formátu](../../../docs/standard/base-types/standard-numeric-format-strings.md)
-- [Postupy: Vyplnění čísla úvodními nulami](../../../docs/standard/base-types/how-to-pad-a-number-with-leading-zeros.md)
+- [Typy formátování](formatting-types.md)
+- [Řetězce standardního číselného formátu](standard-numeric-format-strings.md)
+- [Postupy: Vyplnění čísla úvodními nulami](how-to-pad-a-number-with-leading-zeros.md)
 - [Ukázka: nástroj formátování WinForms pro .NET Core (C#)](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-cs)
 - [Ukázka: nástroj formátování WinForms pro .NET Core (Visual Basic)](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-vb)

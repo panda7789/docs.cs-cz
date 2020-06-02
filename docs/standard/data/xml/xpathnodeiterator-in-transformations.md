@@ -6,17 +6,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 2bc6ddc6-674a-4f75-b264-abc35e4e5857
-ms.openlocfilehash: 63beeb3ca9d3f3cb6e6bde418e99ee2bd0a12e20
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 88b8f4acbb9fa92d71659ee006ee544275353954
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75709735"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84282750"
 ---
 # <a name="xpathnodeiterator-in-transformations"></a>XPathNodeIterator v transformacích
-<xref:System.Xml.XPath.XPathNodeIterator> Poskytuje metody pro iterování v rámci sady uzlů vytvořených jako výsledek dotazu jazyka XML Path (XPath) nebo fragmentu stromu výsledku převedený na uzel, který je použit metodou sady uzlů. <xref:System.Xml.XPath.XPathNodeIterator> Umožňuje iterovat uzly v rámci této sady uzlů. Po načtení sady uzlů poskytuje <xref:System.Xml.XPath.XPathNodeIterator> třída kurzor jen pro čtení na vybranou sadu uzlů. Sada uzlů je vytvořena v pořadí dokumentů, takže volání této metody se přesune na další uzel v pořadí dokumentů. <xref:System.Xml.XPath.XPathNodeIterator>nevytvoří strom uzlů všech uzlů v sadě. Místo toho poskytuje jedno okno s jedním uzlem na data a zveřejňuje základní uzel, na který směřuje při přesunu ve stromu. Metody a vlastnosti, které jsou k <xref:System.Xml.XPath.XPathNodeIterator> dispozici z třídy, umožňují získat informace z aktuálního uzlu. Seznam dostupných metod a vlastností naleznete v tématu <xref:System.Windows.Forms.ToolBar>.  
+<xref:System.Xml.XPath.XPathNodeIterator>Poskytuje metody pro iterování v rámci sady uzlů vytvořených jako výsledek dotazu jazyka XML Path (XPath) nebo fragmentu stromu výsledku převedený na uzel, který je použit metodou sady uzlů. <xref:System.Xml.XPath.XPathNodeIterator>Umožňuje iterovat uzly v rámci této sady uzlů. Po načtení sady uzlů <xref:System.Xml.XPath.XPathNodeIterator> poskytuje třída kurzor jen pro čtení na vybranou sadu uzlů. Sada uzlů je vytvořena v pořadí dokumentů, takže volání této metody se přesune na další uzel v pořadí dokumentů. <xref:System.Xml.XPath.XPathNodeIterator>nevytvoří strom uzlů všech uzlů v sadě. Místo toho poskytuje jedno okno s jedním uzlem na data a zveřejňuje základní uzel, na který směřuje při přesunu ve stromu. Metody a vlastnosti, které jsou k dispozici z <xref:System.Xml.XPath.XPathNodeIterator> třídy, umožňují získat informace z aktuálního uzlu. Seznam dostupných metod a vlastností naleznete v tématu <xref:System.Windows.Forms.ToolBar> .  
   
- Vzhledem k <xref:System.Xml.XPath.XPathNodeIterator> tomu, že se přesunete do sady uzlů vytvořených z dotazu XPath a přesouváte pouze vpřed, způsob přesunu je pomocí <xref:System.Xml.XPath.XPathNodeIterator.MoveNext%2A> metody. Návratový typ této metody je `Boolean`, vrátí `true` se, pokud se přesune k dalšímu vybranému uzlu, a `false` Pokud žádné další uzly nejsou vybrané. Pokud se vrátí `true`, zobrazí se v následujícím seznamu vlastnosti, které jsou k dispozici:  
+ Vzhledem k tomu, že se <xref:System.Xml.XPath.XPathNodeIterator> přesunete do sady uzlů vytvořených z dotazu XPath a přesouváte pouze vpřed, způsob přesunu je pomocí <xref:System.Xml.XPath.XPathNodeIterator.MoveNext%2A> metody. Návratový typ této metody je `Boolean` , vrátí se, `true` Pokud se přesune k dalšímu vybranému uzlu, a `false` Pokud žádné další uzly nejsou vybrané. Pokud se vrátí `true` , zobrazí se v následujícím seznamu vlastnosti, které jsou k dispozici:  
   
 - <xref:System.Xml.XPath.XPathNodeIterator.Current%2A>  
   
@@ -26,7 +26,7 @@ ms.locfileid: "75709735"
   
  Při prvním pohledu na uzel, který je nastaven poprvé, <xref:System.Xml.XPath.XPathNodeIterator.MoveNext%2A> musí být provedeno volání, aby bylo možné umístit <xref:System.Xml.XPath.XPathNodeIterator> na první uzel vybrané sady. To umožňuje zapsat smyčku while.  
   
- Následující příklad kódu ukazuje, jak předat <xref:System.Xml.XPath.XPathNodeIterator> do <xref:System.Xml.Xsl.XslTransform> jako parametr v. <xref:System.Xml.Xsl.XsltArgumentList> Vstup do kódu je **Books. XML**a předloha se styly je **text. xsl**. Soubor **test. XML** je <xref:System.Xml.XPath.XPathDocument>.  
+ Následující příklad kódu ukazuje, jak předat <xref:System.Xml.XPath.XPathNodeIterator> do <xref:System.Xml.Xsl.XslTransform> jako parametr v <xref:System.Xml.Xsl.XsltArgumentList> . Vstup do kódu je **Books. XML**a předloha se styly je **text. xsl**. Soubor **test. XML** je <xref:System.Xml.XPath.XPathDocument> .  
   
 ```vb  
 Imports System  
@@ -158,4 +158,4 @@ xmlns:msxsl="urn:schemas-microsoft-com:xslt" exclude-result-prefixes="msxsl">
   
 ## <a name="see-also"></a>Viz také
 
-- [Třída XslTransform implementuje procesor XSLT](../../../../docs/standard/data/xml/xsltransform-class-implements-the-xslt-processor.md)
+- [Třída XslTransform implementuje procesor XSLT](xsltransform-class-implements-the-xslt-processor.md)

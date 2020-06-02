@@ -12,17 +12,17 @@ helpviewer_keywords:
 - classes [.NET Framework], vs. structures
 - type design guidelines, classes
 ms.assetid: f8b8ec9b-0ba7-4dea-aadf-a93395cd804f
-ms.openlocfilehash: 76042bef1475f2fdf14e309390dcba6654ccfaa9
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 4b4a619214fe6ba49f21a88cd132dcb3f2704608
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76741744"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84280358"
 ---
 # <a name="choosing-between-class-and-struct"></a>Volba mezi třídou a strukturou
 Jedno ze základních rozhodnutí o návrhu každé plošky návrháře architektury je bez ohledu na to, zda je možné navrhnout typ jako třídu (odkazový typ) nebo jako strukturu (typ hodnoty). Dobrým porozumění rozdílům v chování typů odkazu a hodnot je rozhodující při této volbě.
 
- První rozdíl mezi typy odkazů a typy hodnot, které budeme brát v úvahu, je, že typy odkazů jsou přiděleny na haldě a uvolňování paměti, zatímco typy hodnot jsou přiděleny buď v zásobníku, nebo vloženy v případě, že je zásobník unwind nebo při zrušení přidělení jejich nadřazeného typu. Proto jsou alokace a navracení hodnotových typů všeobecně levnější než přidělení a zrušení přidělení typů odkazů.
+ První rozdíl mezi typy odkazů a typy hodnot, které budeme brát v úvahu, je, že typy odkazů jsou přiděleny na haldu a uvolňování paměti, zatímco typy hodnot jsou přiděleny buď v zásobníku, nebo vložené v rámci obsahující typy a navráceny, když se jejich nadřazený typ zruší. Proto jsou alokace a navracení hodnotových typů všeobecně levnější než přidělení a zrušení přidělení typů odkazů.
 
  Dále jsou pole typů odkazů rozdělena mimo řádek, což znamená, že prvky pole jsou pouze odkazy na instance typu odkazu, který je umístěn na haldě. Pole hodnot typu jsou přidělena jako vložená, což znamená, že prvky pole jsou skutečnými instancemi typu hodnoty. Proto jsou přidělení a dealokace polí hodnotových typů mnohem levnější než přidělení a zrušení přidělení polí typu odkazu. Kromě toho ve většině případů typ hodnoty pole představuje mnohem lepší rozsah odkazů.
 
@@ -36,9 +36,9 @@ Jedno ze základních rozhodnutí o návrhu každé plošky návrháře architek
 
  ✔️ Zvažte definování struktury namísto třídy, pokud jsou instance daného typu malé a běžně krátkodobé nebo jsou běžně vloženy do jiných objektů.
 
- ❌ se vyhnout definování struktury, pokud typ neobsahuje všechny následující charakteristiky:
+ ❌Vyhněte se definování struktury, pokud typ neobsahuje všechny následující charakteristiky:
 
-- Logicky představuje jedinou hodnotu, podobně jako primitivní typy (`int`, `double`atd.).
+- Logicky představuje jedinou hodnotu, podobně jako primitivní typy ( `int` , `double` atd.).
 
 - Má velikost instance 16 bajtů.
 
@@ -54,5 +54,5 @@ Jedno ze základních rozhodnutí o návrhu každé plošky návrháře architek
 
 ## <a name="see-also"></a>Viz také
 
-- [Pokyny k návrhu typu](../../../docs/standard/design-guidelines/type.md)
-- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)
+- [Pokyny pro návrh typů](type.md)
+- [Pokyny k návrhu architektury](index.md)

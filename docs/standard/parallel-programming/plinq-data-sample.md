@@ -8,30 +8,30 @@ dev_langs:
 helpviewer_keywords:
 - PLINQ queries, sample data
 ms.assetid: 4fccbb35-eaa5-44e9-a252-a5c3d4bc7604
-ms.openlocfilehash: 163aa70df78eecf5ee9f3970919bc514ec72e119
-ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
+ms.openlocfilehash: 44d3463f23269ceec6372b007ca8ba9684da8c02
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80588613"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291705"
 ---
 # <a name="plinq-data-sample"></a>Ukázková data pro PLINQ
-Tato ukázka obsahuje ukázková data ve formátu .csv spolu s metodami, které je transformují do kolekcí zákazníků, produktů, objednávek a podrobností objednávky v paměti. Chcete-li dále experimentovat s PLINQ, můžete vložit příklady kódu z některých `Main` jiných témat do kódu v tomto tématu a vyvolat jej z metody. Tato data můžete také použít s vlastními dotazy PLINQ.  
+Tato ukázka obsahuje ukázková data ve formátu CSV spolu s metodami, které ji transformují na kolekce v paměti pro zákazníky, produkty, objednávky a podrobnosti objednávky. Pro další experiment s PLINQ můžete vložit příklady kódu z některých dalších témat do kódu v tomto tématu a vyvolat ho z `Main` metody. Tato data můžete také použít s vlastními dotazy PLINQ.  
   
- Data představují podmnožinu databáze Northwind. Padesát (50) záznamů zákazníků jsou zahrnuty, ale ne všechna pole. Je zahrnuta podmnožina řádků z objednávek a odpovídajících Order_Detail dat pro každého zákazníka. Všechny produkty jsou zahrnuty.  
+ Data představují podmnožinu databáze Northwind. 50 (50) záznamy o zákaznících, ale ne všechna pole. Zahrnuje podmnožinu řádků z objednávek a odpovídajících Order_Detail dat pro každého zákazníka. Jsou zahrnuty všechny produkty.  
   
 > [!NOTE]
-> Sada dat není dostatečně velký, aby prokázal, že PLINQ je rychlejší než `where` `select` LINQ na objekty pro dotazy, které obsahují pouze základní a klauzule. Chcete-li sledovat zvýšení rychlosti pro malé datové sady, jako je tento, použijte dotazy, které obsahují výpočtově nákladné operace na každý prvek v sadě dat.  
+> Sada dat není dostatečně velká, aby ukázala, že PLINQ je rychlejší než LINQ to Objects pro dotazy, které obsahují pouze základní `where` a `select` klauzule. Chcete-li sledovat rychlost růstu malých datových sad, jako je například, použijte dotazy, které obsahují výpočetně náročné operace u každého prvku v sadě dat.  
   
-### <a name="to-set-up-this-sample"></a>Chcete-li nastavit tuto ukázku  
+### <a name="to-set-up-this-sample"></a>Nastavení této ukázky  
   
-1. Vytvořte projekt aplikace konzoly Visual Basic nebo Visual C#.  
+1. Vytvořte Visual Basic nebo projekt konzolové aplikace Visual C#.  
   
-2. Nahraďte obsah Module1.vb nebo Program.cs pomocí kódu, který následuje po těchto krocích.  
+2. Nahraďte obsah Module1. vb nebo Program.cs pomocí kódu, který následuje po tomto postupu.  
   
-3. V nabídce **Project** klikněte na **Add New Item**. Vyberte **Textový soubor** a klepněte na **tlačítko OK**. Zkopírujte data v tomto tématu a vložte je do nového textového souboru. V nabídce **Soubor** klepněte na tlačítko **Uložit**, pojmenujte soubor Plinqdata.csv a uložte jej do složky, která obsahuje soubory zdrojového kódu.  
+3. V nabídce **projekt** klikněte na příkaz **Přidat novou položku**. Vyberte **textový soubor** a pak klikněte na **OK**. Zkopírujte data v tomto tématu a vložte je do nového textového souboru. V nabídce **soubor** klikněte na **Uložit**, pojmenujte soubor Plinqdata. csv a uložte ho do složky, která obsahuje soubory zdrojového kódu.  
   
-4. Stisknutím klávesy F5 ověřte, zda se projekt sestavuje a spouští správně. V okně konzoly by měl být zobrazen následující výstup.  
+4. Stisknutím klávesy F5 ověřte, zda je projekt správně sestaven a spuštěn. Následující výstup by měl být zobrazen v okně konzoly.  
   
     ```console  
     Customer count: 50  
@@ -862,4 +862,4 @@ END PRODUCTS
   
 ## <a name="see-also"></a>Viz také
 
-- [Paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/introduction-to-plinq.md)
+- [Paralelní LINQ (PLINQ)](introduction-to-plinq.md)
