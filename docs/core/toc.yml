@@ -112,9 +112,9 @@
         - name: Ladění aplikace
           href: tutorials/debugging-with-visual-studio-code.md
           displayName: 'tutorials, visual studio code, vs code'
-        - name: Vytvoření konzolové aplikace a její publikování
-          href: tutorials/cli-create-console-app.md
-          displayName: 'tutorials, cli'
+        - name: Publikování aplikace
+          href: tutorials/publishing-with-visual-studio-code.md
+          displayName: 'tutorials, visual studio, vs'
         - name: Vytvoření knihovny s následným testem jednotek – macOS
           href: tutorials/using-on-macos.md
           displayName: 'tutorials, visual studio code, vs code, cli'
