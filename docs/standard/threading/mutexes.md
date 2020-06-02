@@ -8,44 +8,44 @@ helpviewer_keywords:
 - Mutex class, about Mutex class
 - threading [.NET Framework], cross-process synchronization
 ms.assetid: 9dd06e25-12c0-4a9e-855a-452dc83803e2
-ms.openlocfilehash: 3f020db49bcdcbf6ce3d573348a93b06e87db199
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.openlocfilehash: f9267bdd19a14995851f2689651c001815812912
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81242722"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291172"
 ---
 # <a name="mutexes"></a>Mutex – třídy
-Objekt můžete <xref:System.Threading.Mutex> použít k poskytnutí výhradnípřístup k prostředku. Třída <xref:System.Threading.Mutex> používá více systémových <xref:System.Threading.Monitor> prostředků než třída, ale může být zařazena přes hranice domény aplikace, může být použita s více čeká a lze ji použít k synchronizaci podprocesů v různých procesech. Porovnání mechanismů spravované synchronizace naleznete v [tématu Přehled primitiv synchronizace](../../../docs/standard/threading/overview-of-synchronization-primitives.md).  
+K <xref:System.Threading.Mutex> Poskytnutí výhradního přístupu k prostředku můžete použít objekt. <xref:System.Threading.Mutex>Třída používá více systémových prostředků než <xref:System.Threading.Monitor> třída, ale lze ji zařadit napříč hranicemi domény aplikace, lze ji použít s více čekacími procesy a lze ji použít k synchronizaci vláken v různých procesech. Porovnání mechanismů spravované synchronizace najdete v tématu [Přehled primitiv synchronizace](overview-of-synchronization-primitives.md).  
   
- Příklady kódu naleznete v referenční <xref:System.Threading.Mutex.%23ctor%2A> dokumentaci pro konstruktory.  
+ Příklady kódu naleznete v referenční dokumentaci pro <xref:System.Threading.Mutex.%23ctor%2A> konstruktory.  
   
 ## <a name="using-mutexes"></a>Použití mutexů  
- Vlákno volá <xref:System.Threading.WaitHandle.WaitOne%2A> metodu mutex požadovat vlastnictví. Volání blokuje, dokud mutex je k dispozici, nebo dokud neuplyne volitelný časový limit intervalu. Stav mutex je signalizován, pokud žádné vlákno vlastní.  
+ Vlákno volá <xref:System.Threading.WaitHandle.WaitOne%2A> metodu mutex pro vyžádání vlastnictví. Bloky volání, dokud není objekt mutex k dispozici, nebo dokud neuplyne časový interval volitelného časového limitu. Stav mutex je signalizována, pokud není vlastníkem vlákna.  
   
- Podproces uvolní mutex voláním <xref:System.Threading.Mutex.ReleaseMutex%2A> jeho metody. Objekty Mutex mají spřažení vláken; to znamená, že objekt mutex může být uvolněn pouze podprocesem, který jej vlastní. Pokud vlákno uvolní mutex, který nevlastní, <xref:System.ApplicationException> je vyvolána ve vlákně.  
+ Vlákno uvolňuje mutex voláním jeho <xref:System.Threading.Mutex.ReleaseMutex%2A> metody. Mutexy mají spřažení vlákna; To znamená, že mutex může být uvolněn pouze vláknem, které je vlastníkem. Pokud vlákno uvolní mutex, který nevlastní, <xref:System.ApplicationException> je vyvolána ve vlákně.  
   
- Vzhledem <xref:System.Threading.Mutex> k tomu, že třída je <xref:System.Threading.WaitHandle.WaitAll%2A> <xref:System.Threading.WaitHandle.WaitAny%2A> odvozena <xref:System.Threading.WaitHandle> z <xref:System.Threading.WaitHandle>, <xref:System.Threading.Mutex> můžete také volat statické nebo metody požadovat vlastnictví v kombinaci s jinými popisovače čekání.  
+ Vzhledem k tomu <xref:System.Threading.Mutex> , že třída je odvozena z <xref:System.Threading.WaitHandle> , můžete také volat statické <xref:System.Threading.WaitHandle.WaitAll%2A> <xref:System.Threading.WaitHandle.WaitAny%2A> metody nebo metody <xref:System.Threading.WaitHandle> pro vyžádání vlastnictví <xref:System.Threading.Mutex> v kombinaci s jinými obslužnými rutinami čekání.  
   
- Pokud vlákno vlastní <xref:System.Threading.Mutex>, toto vlákno <xref:System.Threading.Mutex> můžete zadat stejné v opakovaných volání čekání požadavku bez blokování jeho spuštění; však musí uvolnit <xref:System.Threading.Mutex> tolikrát uvolnit vlastnictví.  
+ Pokud vlákno vlastní a <xref:System.Threading.Mutex> , může toto vlákno určit stejné <xref:System.Threading.Mutex> v opakovaných voláních Wait-Request bez blokování jeho spuštění, ale musí vydávat tolik, <xref:System.Threading.Mutex> kolikrát se má uvolnit vlastnictví.  
   
-## <a name="abandoned-mutexes"></a>Opuštěné mutexes  
- Pokud vlákno ukončí bez <xref:System.Threading.Mutex>uvolnění , mutex se říká, že je opuštěn. To často označuje závažnou chybu programování, protože prostředek, který objekt mutex chrání, může být ponechán v nekonzistentním stavu. V rozhraní .NET Framework verze <xref:System.Threading.AbandonedMutexException> 2.0 je vyvolána v dalším vlákně, která získá mutex.  
+## <a name="abandoned-mutexes"></a>Opuštěné mutexy  
+ Pokud se vlákno ukončí bez uvolnění a <xref:System.Threading.Mutex> , je tento mutex označován jako opuštěno. To často znamená závažnou chybu při programování, protože prostředek, který zámek mutex chrání, může být ponechán v nekonzistentním stavu. V .NET Framework verze 2,0 <xref:System.Threading.AbandonedMutexException> je vyvolána v dalším vlákně, která získá mutex.  
   
 > [!NOTE]
-> V rozhraní .NET Framework verze 1.0 a 1.1 je opuštěné nastaveno <xref:System.Threading.Mutex> na signalizovaný stav a další čekající vlákno získá vlastnictví. Pokud žádné vlákno čeká, zůstane <xref:System.Threading.Mutex> v signalizovaném stavu. Žádná výjimka se nevyvolá.  
+> V .NET Framework verzích 1,0 a 1,1 je opuštění <xref:System.Threading.Mutex> nastavené na signálový stav a další čekající vlákno získá vlastnictví. Pokud žádné vlákno nečeká, <xref:System.Threading.Mutex> zůstane ve stavu signalizace. Žádná výjimka se nevyvolá.  
   
- V případě mutex celého systému, opuštěné mutex může znamenat, že aplikace byla ukončena náhle (například pomocí Správce úloh systému Windows).  
+ V případě mutexu v rámci systému může opuštěný mutex indikovat, že aplikace byla náhle ukončena (například pomocí Správce úloh systému Windows).  
   
-## <a name="local-and-system-mutexes"></a>Místní a systémové objekty Mutexes  
- Objekty mutex jsou dvou typů: místní objekty mutex a pojmenované objekty mutex systému. Pokud vytvoříte <xref:System.Threading.Mutex> objekt pomocí konstruktoru, který přijímá název, je přidružen k objektu operačního systému tohoto názvu. Pojmenované systémové objekty mutex jsou viditelné v celém operačním systému a lze je použít k synchronizaci aktivit procesů. Můžete vytvořit <xref:System.Threading.Mutex> více objektů, které představují stejný pojmenovaný systémmu <xref:System.Threading.Mutex.OpenExisting%2A> mutex a můžete použít metodu k otevření existujícího pojmenovaného objektu mutex systému.  
+## <a name="local-and-system-mutexes"></a>Místní a systémové mutexy  
+ Mutexy mají dva typy: místní mutexy a pojmenované mutexy systému. Vytvoříte <xref:System.Threading.Mutex> -li objekt pomocí konstruktoru, který přijímá název, je spojen s objektem operačního systému daného názvu. Pojmenované mutexy systému jsou viditelné v celém operačním systému a lze je použít k synchronizaci aktivit procesů. Můžete vytvořit více <xref:System.Threading.Mutex> objektů, které reprezentují stejný pojmenovaný mutex systému, a můžete použít <xref:System.Threading.Mutex.OpenExisting%2A> metodu k otevření existujícího pojmenovaného mutex systému.  
   
- Místní objekt mutex existuje pouze v rámci procesu. Může být použit libovolným vláknem v procesu, <xref:System.Threading.Mutex> který má odkaz na místní objekt. Každý <xref:System.Threading.Mutex> objekt je samostatný místní objekt mutex.  
+ Místní mutex existuje jenom v rámci vašeho procesu. Dá se použít v jakémkoli vlákně v procesu, který má odkaz na místní <xref:System.Threading.Mutex> objekt. Každý <xref:System.Threading.Mutex> objekt je samostatný místní mutex.  
   
-### <a name="access-control-security-for-system-mutexes"></a>Zabezpečení řízení přístupu pro objekty Mutexes systému  
- Rozhraní .NET Framework verze 2.0 poskytuje možnost dotazovat a nastavovat zabezpečení řízení přístupu systému Windows pro pojmenované systémové objekty. Ochrana objekty mutex systému od okamžiku vytvoření se doporučuje, protože systémové objekty jsou globální a proto lze uzamknout jiným kódem než vlastní.  
+### <a name="access-control-security-for-system-mutexes"></a>Access Control zabezpečení pro mutexy systému  
+ .NET Framework verze 2,0 poskytuje možnost dotazování a nastavení zabezpečení řízení přístupu systému Windows pro pojmenované systémové objekty. Doporučuje se chránit mutexy systému před vytvořením, protože systémové objekty jsou globální a proto je lze uzamknout jiným kódem než vlastním.  
   
- Informace o zabezpečení řízení přístupu pro objekty mutex naleznete v <xref:System.Threading.Mutex.GetAccessControl%2A> <xref:System.Threading.Mutex.SetAccessControl%2A>tématu <xref:System.Threading.Mutex.OpenExisting%2A> <xref:System.Threading.Mutex> <xref:System.Security.AccessControl.MutexSecurity> <xref:System.Security.AccessControl.MutexAccessRule> <xref:System.Security.AccessControl.MutexRights> a třídy, <xref:System.Threading.Mutex.%23ctor%28System.Boolean%2CSystem.String%2CSystem.Boolean%40%2CSystem.Security.AccessControl.MutexSecurity%29> výčet, , a metody třídy a konstruktoru.  
+ Informace o zabezpečení řízení přístupu pro mutexy naleznete v tématech <xref:System.Security.AccessControl.MutexSecurity> třídy a <xref:System.Security.AccessControl.MutexAccessRule> , <xref:System.Security.AccessControl.MutexRights> výčet, <xref:System.Threading.Mutex.GetAccessControl%2A> , <xref:System.Threading.Mutex.SetAccessControl%2A> a <xref:System.Threading.Mutex.OpenExisting%2A> metody <xref:System.Threading.Mutex> třídy a <xref:System.Threading.Mutex.%23ctor%28System.Boolean%2CSystem.String%2CSystem.Boolean%40%2CSystem.Security.AccessControl.MutexSecurity%29> konstruktoru.  
   
 ## <a name="see-also"></a>Viz také
 
@@ -55,5 +55,5 @@ Objekt můžete <xref:System.Threading.Mutex> použít k poskytnutí výhradníp
 - <xref:System.Security.AccessControl.MutexAccessRule?displayProperty=nameWithType>
 - <xref:System.Threading.Monitor?displayProperty=nameWithType>
 - [Dělení objektů a funkcí na vlákna](threading-objects-and-features.md)
-- [Závity a závity](threads-and-threading.md)
+- [Vlákna a dělení na vlákna](threads-and-threading.md)
 - [Dělení na vlákna](index.md)

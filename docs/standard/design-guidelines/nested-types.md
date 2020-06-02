@@ -10,12 +10,12 @@ helpviewer_keywords:
 - members [.NET Framework], type
 - class library design guidelines [.NET Framework], nested types
 ms.assetid: 12feb7f0-b793-4d96-b090-42d6473bab8c
-ms.openlocfilehash: dd13116b13ac8e2d7a3af6ef014eb4f393909515
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: a3b090b39e1e907826551ed152d4eece4885ce41
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76743699"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290133"
 ---
 # <a name="nested-types"></a>Vnořené typy
 Vnořený typ je typ definovaný v oboru jiného typu, který se nazývá nadřazený typ. Vnořený typ má přístup ke všem členům svého nadřazeného typu. Má například přístup k soukromým polím definovaným v nadřazeném typu a chráněným polím definovaným ve všech nadřazených členů nadřazených typů.
@@ -26,19 +26,19 @@ Vnořený typ je typ definovaný v oboru jiného typu, který se nazývá nadřa
 
  ✔️ použít vnořené typy, pokud je relace mezi vnořeným typem a jeho vnějším typem taková, že je žádoucí sémantika přístupnost členů.
 
- ❌ nepoužívejte veřejné vnořené typy jako konstrukci logického seskupení; Použijte obory názvů pro tento.
+ ❌Nepoužívejte veřejné vnořené typy jako konstrukce logického seskupení; Použijte obory názvů pro tento.
 
- ❌ Vyhněte se veřejně vystaveným vnořeným typům. Jedinou výjimkou je, že proměnné vnořeného typu musí být deklarovány pouze ve výjimečných scénářích, jako je například použití podtříd nebo jiné pokročilé scénáře přizpůsobení.
+ ❌Vyhněte se veřejně vystaveným vnořeným typům. Jedinou výjimkou je, že proměnné vnořeného typu musí být deklarovány pouze ve výjimečných scénářích, jako je například použití podtříd nebo jiné pokročilé scénáře přizpůsobení.
 
- ❌ nepoužívají vnořené typy, pokud je pravděpodobně odkazován na typ mimo nadřazený typ.
+ ❌Nepoužívejte vnořené typy, pokud je pravděpodobně odkazován na typ mimo nadřazený typ.
 
  Například výčet předaný metodě definovanému pro třídu by neměl být definován jako vnořený typ ve třídě.
 
- ❌ nepoužívají vnořené typy, pokud musí být vytvořeny instance klientského kódu.  Má-li typ veřejný konstruktor, neměl by být pravděpodobně vnořený.
+ ❌Nepoužívejte vnořené typy, pokud musí být vytvořeny instance klientského kódu.  Má-li typ veřejný konstruktor, neměl by být pravděpodobně vnořený.
 
  Pokud lze vytvořit instanci typu, která označuje, že typ má místo v rozhraní vlastní (můžete ho vytvořit, pracovat s ním a zničit jej bez použití vnějšího typu), a proto by neměl být vnořen. Vnitřní typy by se neměly široce používat vně vnějšího typu bez jakéhokoli vztahu k vnějšímu typu.
 
- ❌ nedefinovat vnořený typ jako člen rozhraní. Mnohé jazyky tuto konstrukci nepodporují.
+ ❌Nedefinujte vnořený typ jako člen rozhraní. Mnohé jazyky tuto konstrukci nepodporují.
 
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*
 
@@ -46,5 +46,5 @@ Vnořený typ je typ definovaný v oboru jiného typu, který se nazývá nadřa
 
 ## <a name="see-also"></a>Viz také
 
-- [Pokyny k návrhu typu](../../../docs/standard/design-guidelines/type.md)
-- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)
+- [Pokyny pro návrh typů](type.md)
+- [Pokyny k návrhu architektury](index.md)

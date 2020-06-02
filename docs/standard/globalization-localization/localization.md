@@ -14,26 +14,26 @@ helpviewer_keywords:
 - localization [.NET Framework], about localization
 - localizing resources
 ms.assetid: 49d520d7-92d7-44ee-bb24-8b615db1d41b
-ms.openlocfilehash: 89851c42570f301bee8a3eca744eb5d069347d4e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 68e877088c5c3d17b368561b563b4cb17d004e75
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73120871"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84278022"
 ---
 # <a name="localization"></a>Lokalizace
 
-Lokalizace je proces překladu prostředků aplikace do lokalizovaných verzí pro každou jazykovou verzi, kterou bude aplikace podporovat. Krok lokalizace byste měli přejít až po dokončení kroku [Kontrola lokalizovatelnosti,](../../../docs/standard/globalization-localization/localizability-review.md) abyste ověřili, zda je globalizovaná aplikace připravena k lokalizaci.
+Lokalizace je proces překladu prostředků aplikace na lokalizované verze pro každou jazykovou verzi, kterou bude aplikace podporovat. Do kroku lokalizace byste měli přejít až po dokončení kroku [kontroly lokalizace](localizability-review.md) , abyste ověřili, že je globální aplikace připravená na lokalizaci.
 
-Aplikace, která je připravena k lokalizaci, je rozdělena do dvou koncepčních bloků: blok, který obsahuje všechny prvky uživatelského rozhraní, a blok, který obsahuje spustitelný kód. Blok uživatelského rozhraní obsahuje pouze lokalizovatelné prvky uživatelského rozhraní, jako jsou řetězce, chybové zprávy, dialogová okna, nabídky, vložené prostředky objektů a tak dále pro neutrální jazykovou verzi. Blok kódu obsahuje pouze kód aplikace, který má být použit všemi podporovanými jazyky. Modul COMMON Language runtime podporuje model prostředků satelitního sestavení, který odděluje spustitelný kód aplikace od jejích prostředků. Další informace o implementaci tohoto modelu naleznete v tématu [Prostředky v rozhraní .NET](../../../docs/framework/resources/index.md).
+Aplikace, která je připravena k lokalizaci, je rozdělena do dvou koncepčních bloků: blok, který obsahuje všechny prvky uživatelského rozhraní a blok, který obsahuje spustitelný kód. Blok uživatelského rozhraní obsahuje pouze lokalizovatelné prvky uživatelského rozhraní, jako jsou například řetězce, chybové zprávy, dialogová okna, nabídky, vložené objekty objektů a tak dále pro neutrální jazykovou verzi. Blok kódu obsahuje pouze kód aplikace, který bude používán všemi podporovanými kulturami. Modul CLR (Common Language Runtime) podporuje model prostředků satelitního sestavení, který odděluje spustitelný kód aplikace od jeho prostředků. Další informace o implementaci tohoto modelu naleznete v tématu [prostředky v rozhraní .NET](../../framework/resources/index.md).
 
-Pro každou lokalizovanou verzi aplikace přidejte nové satelitní sestavení, které obsahuje blok lokalizovaného uživatelského rozhraní přeložený do příslušného jazyka pro cílovou jazykovou verzi. Blok kódu pro všechny jazykové verze by měl zůstat stejný. Kombinace lokalizované verze bloku uživatelského rozhraní s blokem kódu vytváří lokalizovanou verzi aplikace.
+Pro každou lokalizovanou verzi vaší aplikace přidejte nové satelitní sestavení, které obsahuje lokalizovaný blok uživatelského rozhraní přeložený do příslušného jazyka pro cílovou jazykovou verzi. Blok kódu pro všechny jazykové verze by měl zůstat stejný. Kombinace lokalizované verze bloku uživatelského rozhraní s blokem kódu vytváří lokalizovanou verzi aplikace.
 
-Sada SDK (Windows Software Development Kit) poskytuje editor prostředků systému Windows Forms (Winres.exe), který umožňuje rychle lokalizovat formuláře Systému Windows pro cílové jazykové verze. Informace o použití tohoto nástroje naleznete v [tématu Winres.exe (Windows Forms Resource Editor)](../../../docs/framework/tools/winres-exe-windows-forms-resource-editor.md).
+Sada Windows Software Development Kit (SDK) poskytuje editor prostředků model Windows Forms (Winres. exe), který umožňuje rychle lokalizovat model Windows Forms pro cílové jazykové verze. Informace o použití tohoto nástroje naleznete v tématu [Winres. exe (model Windows Forms editor prostředků)](../../framework/tools/winres-exe-windows-forms-resource-editor.md).
 
 ## <a name="see-also"></a>Viz také
 
-- [Globalizace a lokalizace](../../../docs/standard/globalization-localization/index.md)
-- [Kontrola lokalizovatelnosti](../../../docs/standard/globalization-localization/localizability-review.md)
-- [Globalizace](../../../docs/standard/globalization-localization/globalization.md)
-- [Prostředky v aplikacích klasické pracovní plochy](../../../docs/framework/resources/index.md)
+- [Globalizace a lokalizace](index.md)
+- [Kontrola lokalizovatelnosti](localizability-review.md)
+- [Globalizace](globalization.md)
+- [Prostředky v aplikacích klasické pracovní plochy](../../framework/resources/index.md)

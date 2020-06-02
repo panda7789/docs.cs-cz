@@ -6,15 +6,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 73a6c582-b9d7-4fa7-9a05-6d931e1f3de8
-ms.openlocfilehash: 56e9ef6031a5736acfa066ed6c068f954bd5af8d
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: e44f44db3e12c5e297f137fa247ecfc2d809dd4d
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710814"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287711"
 ---
 # <a name="how-to-transform-a-node-fragment"></a>Postupy: Transformace fragmentu uzlu
-Při transformaci dat obsažených v objektu <xref:System.Xml.XmlDocument> nebo <xref:System.Xml.XPath.XPathDocument> se transformace XSLT vztahují na dokument jako celek. Jinými slovy, Pokud předáte v jiném než kořenovém uzlu dokumentu, nezabrání to procesu transformace v přístupu ke všem uzlům v načteném dokumentu. Chcete-li transformovat fragment uzlu, je nutné vytvořit samostatný objekt obsahující pouze fragment uzlu a předat tento objekt <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> metodě.  
+Při transformaci dat obsažených v <xref:System.Xml.XmlDocument> objektu nebo <xref:System.Xml.XPath.XPathDocument> se transformace XSLT vztahují na dokument jako celek. Jinými slovy, Pokud předáte v jiném než kořenovém uzlu dokumentu, nezabrání to procesu transformace v přístupu ke všem uzlům v načteném dokumentu. Chcete-li transformovat fragment uzlu, je nutné vytvořit samostatný objekt obsahující pouze fragment uzlu a předat tento objekt <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> metodě.  
   
 ## <a name="procedures"></a>Procedury  
   
@@ -47,4 +47,4 @@ Při transformaci dat obsažených v objektu <xref:System.Xml.XmlDocument> nebo 
   
 ## <a name="see-also"></a>Viz také
 
-- [Používání třídy XslCompiledTransform](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md)
+- [Používání třídy XslCompiledTransform](using-the-xslcompiledtransform-class.md)

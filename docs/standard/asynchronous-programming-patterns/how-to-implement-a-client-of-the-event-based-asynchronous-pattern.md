@@ -18,22 +18,22 @@ helpviewer_keywords:
 - threading [Windows Forms], asynchronous features
 - AsyncCompletedEventArgs class
 ms.assetid: 21a858c1-3c99-4904-86ee-0d17b49804fa
-ms.openlocfilehash: 50aa36d2caf774638ad20323813f0de3703aab2f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f834ce4a0ec2208eee80ce8c3ffebfa6fdeeb5b1
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "69950720"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289405"
 ---
 # <a name="how-to-implement-a-client-of-the-event-based-asynchronous-pattern"></a>Postupy: Implementace klienta asynchronního vzoru založeného na událostech
-Následující příklad kódu ukazuje, jak používat komponentu, která dodržuje [přehled asynchronních vzorů založených na událostech](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md). Formulář pro tento příklad `PrimeNumberCalculator` používá komponentu popsanou v [návodu: Implementace komponenty, která podporuje asynchronní vzorek založený na událostech](../../../docs/standard/asynchronous-programming-patterns/component-that-supports-the-event-based-asynchronous-pattern.md).  
+Následující příklad kódu ukazuje, jak použít komponentu, která je v [přehledu asynchronního vzoru založeného na událostech](event-based-asynchronous-pattern-overview.md). Formulář pro tento příklad používá `PrimeNumberCalculator` komponentu popsanou v tématu [Postupy: Implementace komponenty, která podporuje asynchronní vzor založený na událostech](component-that-supports-the-event-based-asynchronous-pattern.md).  
   
- Při spuštění projektu, který používá tento příklad, se zobrazí formulář "Kalkulačka prvočísel" s mřížkou a dvěma tlačítky: **Spustit nový úkol** a **Zrušit**. Můžete klepnout na tlačítko **Spustit nový úkol** několikrát za sebou a pro každé kliknutí asynchronní operace zahájí výpočtu k určení, zda je náhodně generované číslo testu prvočíslo. Formulář bude pravidelně zobrazovat průběh a přírůstkové výsledky. Každé operaci je přiřazeno jedinečné ID úkolu. Výsledek výpočtu je zobrazen ve sloupci **Výsledek;** Pokud číslo testu není prvočíslo, je označeno jako **složené** a zobrazí se jeho první dělitel.  
+ Když spustíte projekt, který používá tento příklad, zobrazí se ve formě kalkulačky "základní číslo" s mřížkou a dvěma tlačítky: **spustit novou úlohu** a **Zrušit**. Můžete kliknout na tlačítko **spustit novou úlohu** několikrát po úspěchu a při každém kliknutí na tuto asynchronní operaci zahájit výpočet, který určí, jestli je náhodně generované číslo testu primární. Ve formuláři se budou pravidelně zobrazovat průběh a přírůstkové výsledky. Každé operaci je přiřazeno jedinečné ID úlohy. Výsledek výpočtu se zobrazí ve sloupci **výsledek** . Pokud číslo testu není primární, je označeno jako **složené** a zobrazí se jeho první dělitel.  
   
- Všechny nevyřízené operace mohou být zrušeny pomocí tlačítka **Storno.** Lze provést více výběrů.  
+ Můžete zrušit všechny probíhající operace tlačítkem **Storno** . Je možné provést vícenásobné výběry.  
   
 > [!NOTE]
-> Většina čísel nebude prvočíslo. Pokud jste po několika dokončených operacích nenašli prvočíslo, jednoduše spusťte další úkoly a nakonec najdete některá prvočísla.  
+> Většina čísel nebude primární. Pokud jste nenašli základní číslo po několika dokončených operacích, stačí spustit více úkolů a nakonec najít některá hlavní čísla.  
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[System.ComponentModel.AsyncOperationManager#10](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/CS/primenumbercalculatormain.cs#10)]

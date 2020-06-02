@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 2038a90b-92af-4a0a-baaa-08e688d95194
-ms.openlocfilehash: 55ea0e31bb8a2863dc0e0eb30f6ca5700c3110b8
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: 6847f3c5d233b720f8f4c41cfc52ac663e5e810f
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78155734"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288625"
 ---
 # <a name="unordered-node-retrieval-by-name-or-index"></a>Načtení uzlů bez stanoveného pořadí podle názvu nebo indexu
 **XmlNamedNodeMap** je popsána ve specifikaci konsorcium World Wide Web (W3C) jako NamedNodeMap a je vyžadována pro zpracování neuspořádané sady uzlů s možností odkazovat uzly podle jejich názvu nebo indexu. Jediným způsobem, jakým máte přístup k **XmlNamedNodeMap** , je, že **XmlNamedNodeMap** je vrácen prostřednictvím metody nebo vlastnosti. Existují tři metody nebo vlastnosti, které vracejí **XmlNamedNodeMap**:  
@@ -22,7 +22,7 @@ ms.locfileid: "78155734"
   
 - XmlDocumentType. Notation  
   
- Například vlastnost **XmlDocumentType. Entities** Získá kolekci uzlů **XmlEntity** deklarovaných v deklaraci typu dokumentu. Tato kolekce se vrátí jako **XmlNamedNodeMap**a můžete iterovat v rámci kolekce s použitím vlastnosti **Count** a informací o zobrazení entity. Příklad iterace prostřednictvím **XmlNamedNodeMap**naleznete v tématu <xref:System.Xml.XmlDocumentType.Entities%2A>.  
+ Například vlastnost **XmlDocumentType. Entities** Získá kolekci uzlů **XmlEntity** deklarovaných v deklaraci typu dokumentu. Tato kolekce se vrátí jako **XmlNamedNodeMap**a můžete iterovat v rámci kolekce s použitím vlastnosti **Count** a informací o zobrazení entity. Příklad iterace prostřednictvím **XmlNamedNodeMap**naleznete v tématu <xref:System.Xml.XmlDocumentType.Entities%2A> .  
   
  **Atribut XmlAttributeCollection** je odvozen z **XmlNamedNodeMap** a pouze atributy lze upravovat, zatímco zápisy a entity jsou jen pro čtení. Pomocí **XmlNamedNodeMap** pro atributy můžete získat uzly pro tyto atributy na základě jejich názvů XML. To poskytuje snadnou metodu pro manipulaci s kolekcí atributů v uzlu element. To může být kontrast přímo s **XmlNodeList**, které také implementuje rozhraní **IEnumerable** , ale s objektem pro přístup k indexu místo řetězce. Metody **RemoveNamedItem** a **SetNamedItem** se používají pouze proti **atributu XmlAttributeCollection**. Přidání nebo odebrání kolekce atributů bez ohledu na to, zda použití **atributucollection** nebo implementace **XmlNamedNodeMap** , upraví kolekci atributů na elementu. Následující příklad kódu ukazuje, jak přesunout atribut a vytvořit nový atribut.  
   
@@ -119,4 +119,4 @@ class test {
   
 ## <a name="see-also"></a>Viz také
 
-- [model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+- [model DOM (Document Object Model) dokumentu XML](xml-document-object-model-dom.md)

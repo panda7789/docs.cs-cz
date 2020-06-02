@@ -7,17 +7,17 @@ helpviewer_keywords:
 - XML serialization, configuration
 - <dateTimeSerialization> element
 ms.assetid: 90fda55c-7730-41e9-bc4b-6423a4b920af
-ms.openlocfilehash: 652a88e25f59cd905e47ef71351e47e67f375286
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: a2684ab72c1fb109d711e333e01836d3399caf86
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83375829"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289639"
 ---
-# <a name="datetimeserialization-element"></a>\<dateTimeSerialization – element>
+# <a name="datetimeserialization-element"></a>Element \<dateTimeSerialization>
 Určuje režim serializace <xref:System.DateTime> objekty.  
   
- \<> konfigurace  
+ \<configuration>  
 \<dateTimeSerialization>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -56,7 +56,7 @@ Určuje režim serializace <xref:System.DateTime> objekty.
 - <xref:System.DateTime>
 - <xref:System.Xml.Serialization.XmlSchemaImporter>
 - <xref:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode>
-- [Schéma konfiguračního souboru](../../../docs/framework/configure-apps/file-schema/index.md)
-- [\<schemaImporterExtensions – element>](../../../docs/standard/serialization/schemaimporterextensions-element.md)
-- [\<Přidat> element pro \<>schemaImporterExtensions](../../../docs/standard/serialization/add-element-for-schemaimporterextensions.md)
-- [\<System. XML. Serialization – element>](../../../docs/standard/serialization/system-xml-serialization-element.md)
+- [Schéma konfiguračního souboru](../../framework/configure-apps/file-schema/index.md)
+- [\<schemaImporterExtensions>Objekt](schemaimporterextensions-element.md)
+- [\<add>Element pro\<schemaImporterExtensions>](add-element-for-schemaimporterextensions.md)
+- [\<system.xml.serialization>Objekt](system-xml-serialization-element.md)

@@ -9,150 +9,150 @@ helpviewer_keywords:
 - regular expressions, behavior
 - .NET Framework regular expressions, behavior
 ms.assetid: 0ee1a6b8-caac-41d2-917f-d35570021b10
-ms.openlocfilehash: 0273d16028315452e35f83086dbc134d6fcb66c6
-ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
+ms.openlocfilehash: 802c84bf93b3821459ab652e69a12fcc50280b9e
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80635989"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290549"
 ---
 # <a name="details-of-regular-expression-behavior"></a>Podrobnosti o chování regulárních výrazů
 
-Modul regulárních výrazů rozhraní .NET Framework je backtrackingový matcher regulárních výrazů, který obsahuje tradiční modul NFA (Nondeterministic Finite Automaton), například modul používaný perlem, pythonem, emacsem a tcl. Tím se odlišuje od rychlejší, ale omezenější, čistě regulární výraz Deterministický konečný automaton (DFA) motory, jako jsou ty, které se nacházejí v awk, egrep, nebo lex. To také odlišuje od standardizované, ale pomalejší, POSIX NFAs. Následující část popisuje tři typy modulů regulárních výrazů a vysvětluje, proč jsou regulární výrazy v rozhraní .NET Framework implementovány pomocí tradičního modulu NFA.
+.NET Framework modul regulárních výrazů je zpětné navýšení shody regulárních výrazů, která zahrnuje tradiční Nedeterministický NFA modul pro nedeterministické konečné Automation (), jako je například jazyk Perl, Python, (Emacs) a TCL. Tím se odlišuje od rychlejšího, ale více omezených, čistě regulárního výrazu deterministického Automation (DFA) modulů, jako jsou ty, které se našly v AWK mají, egrep nebo Lex. Tím se také odlišuje od standardizovaného, ale pomalejšího NFAsu POSIX. V následující části jsou popsány tři typy modulů regulárních výrazů a vysvětlení, proč jsou regulární výrazy v .NET Framework implementovány pomocí tradičního modulu NFA.
 
-## <a name="benefits-of-the-nfa-engine"></a>Výhody motoru NFA
+## <a name="benefits-of-the-nfa-engine"></a>Výhody modulu NFA
 
- Když moduly DFA provádět porovnávání vzorů, jejich pořadí zpracování je řízeno vstupní řetězec. Modul začíná na začátku vstupního řetězce a pokračuje postupně k určení, zda další znak odpovídá vzoru regulárního výrazu. Mohou zaručit, že budou odpovídat nejdelšímu možnému řetězci. Protože nikdy testovat stejný znak dvakrát, DFA motory nepodporují navracení. Však vzhledem k tomu, že modul DFA obsahuje pouze konečný stav, nemůže odpovídat vzorek s backreferences a protože nevytváří explicitní rozšíření, nemůže zachytit podvýrazy.
+ Pokud DFA moduly provádějí porovnávání vzorů, jejich pořadí zpracování je ovládáno vstupním řetězcem. Modul začíná na začátku vstupního řetězce a pokračuje sekvenčně a určí, zda se další znak shoduje se vzorem regulárního výrazu. Můžou zaručit, aby odpovídaly nejdelšímu možnému řetězci. Vzhledem k tomu, že nikdy netestují stejný znak dvakrát, DFA moduly nepodporují navrácení. Vzhledem k tomu, že modul DFA obsahuje pouze omezený stav, nemůže odpovídat vzoru s zpětnými odkazy a protože nevytváří explicitní rozšíření, nemůže zachytit dílčí výrazy.
 
- Na rozdíl od modulů DFA, když tradiční moduly NFA provádějí porovnávání vzorů, jejich pořadí zpracování je řízeno vzorem regulárního výrazu. Při zpracování určitého prvku jazyka používá modul chamtivé párování; to znamená, že odpovídá co nejvíce vstupního řetězce, jak je to možné. Ale také uloží jeho stav po úspěšném porovnání dílčího výrazu. Pokud se shoda nakonec nezdaří, modul se může vrátit do uloženého stavu, aby mohl vyzkoušet další shody. Tento proces opuštění úspěšné shody podvýrazu tak, aby pozdější prvky jazyka v regulárním výrazu se také mohly shodovat, se označuje jako *backtracking*. Moduly NFA používají backtracking k testování všech možných rozšíření regulárního výrazu v určitém pořadí a přijmout první shodu. Vzhledem k tomu, že tradiční modul NFA vytvoří konkrétní rozšíření regulárního výrazu pro úspěšnou shodu, může zachytit shody podvýrazu a odpovídající zpětné odkazy. Však protože tradiční NFA backtracks, může navštívit stejný stav vícekrát, pokud dorazí do stavu přes různé cesty. V důsledku toho může běžet exponenciálně pomalu v nejhorším případě. Vzhledem k tomu, že tradiční modul NFA přijímá první shodu, kterou najde, může také ponechat jiné (případně delší) shody neobjevené.
+ Na rozdíl od DFA modulů, když tradiční moduly NFA provádějí porovnávání vzorů, jejich pořadí zpracování je založené na vzoru regulárního výrazu. Při zpracovávání konkrétního prvku jazyka používá modul hladový koshodě; To znamená, že odpovídá největšímu vstupnímu řetězci, což může být. Ale také uloží svůj stav po úspěšném porovnání dílčího výrazu. Pokud se shoda nakonec nezdařila, může se modul vrátit do uloženého stavu, aby se mohl pokusit o další shody. Tento proces opuštění úspěšné shody dílčího výrazu, aby se pozdější prvky jazyka regulárního výrazu mohly také shodovat, se označují jako *zpětné navrácení*. NFA moduly používají navrácení se změnami k otestování všech možných rozšíření regulárního výrazu v určitém pořadí a přijímají první shodu. Vzhledem k tomu, že tradiční modul NFA sestaví konkrétní rozšíření regulárního výrazu pro úspěšnou shodu, může zachytit shody dílčího výrazu a porovnat zpětná reference. Vzhledem k tomu, že tradiční NFAé zpětné navrácení, může přejít stejný stav několikrát, pokud dorazí na stav prostřednictvím různých cest. V důsledku toho může v nejhorším případě běžet exponenciálně pomalu. Vzhledem k tomu, že tradiční modul NFA akceptuje první nalezenou shodu, může také ponechávat jiné (pravděpodobně delší) shody, které se neobjevují.
 
- POSIX NFA motory jsou jako tradiční NFA motory, kromě toho, že i nadále ustoupit, dokud mohou zaručit, že našli nejdelší možnou shodu. V důsledku toho posix NFA motor je pomalejší než tradiční modul NFA a při použití modulu POSIX NFA, nelze upřednostnit kratší shoda přes delší změnou pořadí backtracking vyhledávání.
+ NFA moduly POSIX jsou podobné tradičním NFAm modulům, s tím rozdílem, že se budou i nadále přepracovat, dokud nebudou zárukou, že by zjistili nejdelší možný rozdíl. Výsledkem je, že NFA modul POSIX je pomalejší než tradiční modul NFA a když používáte modul NFA POSIX, nemůžete upřednostnit kratší porovnání po delším pořadí, protože se mění pořadí hledání zpětného navrácení.
 
- Tradiční moduly NFA jsou upřednostňovány programátory, protože nabízejí větší kontrolu nad porovnáváním řetězců než motory DFA nebo POSIX NFA. I když v nejhorším případě mohou běžet pomalu, můžete je nasměrovat k nalezení shody v lineárním nebo polynomickém čase pomocí vzorů, které snižují nejasnosti a omezují backtracking. Jinými slovy, i když nfa motory obchodu výkon pro výkon a flexibilitu, ve většině případů nabízejí dobré přijatelné výkon, pokud regulární výraz je dobře napsaný a vyhýbá se případy, ve kterých backtracking snižuje výkon exponenciálně.
+ Tradiční moduly NFA se přidávají programátorům, protože nabízejí větší kontrolu nad řetězcovým porovnáním, než DFA nebo POSIX NFA Engines. I když v nejhorším případě může běžet pomalu, můžete je pomocí vzorů, které snižují nejednoznačnosti a omezením zpětného navrácení, nařídit, aby vyhledaly shody lineární nebo polynom. Jinými slovy, i když NFA stroje v obchodním výkonu pro výkon a flexibilitu, ve většině případů nabízí dobrý výkon, pokud je regulární výraz dobře napsaný, a zabrání tak případům, kdy zpětné navrácení snižuje výkon exponenciálně.
 
 > [!NOTE]
-> Informace o snížení výkonu způsobené nadměrným navracením a způsoby vytvoření regulárního výrazu k jejich obejít, naleznete v [tématu Backtracking](../../../docs/standard/base-types/backtracking-in-regular-expressions.md).
+> Informace o penalizaci výkonu způsobené nadměrným navrácením a způsoby, jak vymezit regulární výrazy, najdete v tématu [navrácení](backtracking-in-regular-expressions.md).
 
-## <a name="net-framework-engine-capabilities"></a>Možnosti modulu rozhraní .NET Framework
+## <a name="net-framework-engine-capabilities"></a>Možnosti modulu .NET Framework
 
- Chcete-li využít výhod tradiční modul NFA, modul regulárních výrazů rozhraní .NET Framework obsahuje úplnou sadu konstrukcí, které umožňují programátorům řídit modul backtracking. Tyto konstrukce lze použít k nalezení shody rychleji nebo upřednostnit konkrétní rozšíření nad ostatními.
+ Aby bylo možné využít výhody tradičního stroje NFA, modul regulárních výrazů .NET Framework obsahuje kompletní sadu konstrukcí, která programátorům umožní řídit modul pro navrácení. Tyto konstrukce lze použít k vyhledání shody rychleji nebo k upřednostnění konkrétního rozšíření přes jiné.
 
- Mezi další funkce modulu regulárních výrazů rozhraní .NET Framework patří následující:
+ Mezi další funkce modulu .NET Framework regulárních výrazů patří následující:
 
-- `??`Opožděné kvantifikátory: , `*?`, `+?`, `{` *n*`,`*m*`}?`. Tyto konstrukce sdělit backtracking motoru hledat minimální počet opakování jako první. Naproti tomu obyčejné chamtivé kvantifikátory se nejprve snaží vyrovnat maximálnímu počtu opakování. Následující příklad ilustruje rozdíl mezi těmito dvěma. Regulární výraz odpovídá větě, která končí číslem, a zachytávající skupina je určena k extrahování tohoto čísla. Regulární `.+(\d+)\.` výraz obsahuje nenasytný kvantifikátor `.+`, který způsobí, že modul regulárních výrazů zachytí pouze poslední číslici čísla. Naproti tomu regulární výraz `.+?(\d+)\.` obsahuje `.+?`opožděný kvantifikátor , který způsobí, že modul regulárních výrazů zachytí celé číslo.
+- Opožděné kvantifikátory: `??` , `*?` , `+?` , `{` *n* `,` *m* `}?` . Tyto konstrukce instruují modul zpětného navrácení, aby nejdříve hledali minimální počet opakování. Oproti tomu běžné hladové kvantifikátory se snaží vyhledat maximální počet opakování jako první. Následující příklad znázorňuje rozdíl mezi těmito dvěma. Regulární výraz odpovídá větě, která končí číslem, a zachytávající skupina je určena k extrakci daného čísla. Regulární výraz `.+(\d+)\.` zahrnuje hladový kvantifikátor `.+` , který způsobí, že modul regulárních výrazů zachytí pouze poslední číslici čísla. Naopak regulární výraz `.+?(\d+)\.` obsahuje opožděný kvantifikátor `.+?` , který způsobí, že modul regulárních výrazů zachytí celé číslo.
 
      [!code-csharp[Conceptual.RegularExpressions.Design#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.design/cs/lazy1.cs#1)]
      [!code-vb[Conceptual.RegularExpressions.Design#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.design/vb/lazy1.vb#1)]
 
-     Chamtivé a opožděné verze tohoto regulárního výrazu jsou definovány tak, jak je znázorněno v následující tabulce:
+     Hladce a opožděné verze tohoto regulárního výrazu jsou definovány tak, jak je uvedeno v následující tabulce:
 
     |Vzor|Popis|
     |-------------|-----------------|
-    |`.+`(nenasytný kvantifikátor)|Porovná alespoň jeden výskyt libovolného znaku. To způsobí, že modul regulárních výrazů tak, aby odpovídaly celý řetězec a potom ustoupit podle potřeby tak, aby odpovídaly zbytek vzoru.|
-    |`.+?`(líný kvantifikátor)|Porovná alespoň jeden výskyt libovolného znaku, ale shoduje se co nejméně.|
-    |`(\d+)`|Porovná alespoň jeden číselný znak a přiřadí ho první zachytávající skupině.|
-    |`\.`|Porovná tečku.|
+    |`.+`(hladový kvantifikátor)|Porovnává alespoň jeden výskyt libovolného znaku. To způsobí, že modul regulárních výrazů bude odpovídat celému řetězci a následně k převrácení podle potřeby, aby odpovídal zbývajícímu vzoru.|
+    |`.+?`(opožděný kvantifikátor)|Porovnává alespoň jeden výskyt libovolného znaku, ale porovnává co nejvíce.|
+    |`(\d+)`|Porovnává alespoň jeden číselný znak a přiřadí ho první zachytávající skupině.|
+    |`\.`|Odpovídá tečkě.|
 
-     Další informace o opožděných kvantifikárech naleznete [v tématu Kvantifikátory](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md).
+     Další informace o opožděných kvantifikátorech naleznete v tématu [kvantifikátory](quantifiers-in-regular-expressions.md).
 
-- Pozitivní dopředné vyhledávání: `(?=` *podvýraz*`)`. Tato funkce umožňuje backtracking motoru vrátit na stejné místo v textu po odpovídající podvýraz. Je užitečné pro vyhledávání v celém textu ověřením více vzorků, které začínají ze stejné pozice. Také umožňuje modulu ověřit, že podřetězec existuje na konci shody bez zahrnutí podřetězce do odpovídajícího textu. Následující příklad používá pozitivní dopředné vyhledávání extrahovat slova ve větě, které nejsou následovány interpunkční symboly.
+- Pozitivní dopředného vyhledávání: dílčí `(?=` *výraz* `)` . Tato funkce umožňuje, aby se modul zpětného navracení vrátil na stejné místo v textu po porovnání dílčího výrazu. Je užitečné Hledat v celém textu tím, že ověřuje více vzorů, které začínají na stejné pozici. Umožňuje modulu také ověřit, zda podřetězec existuje na konci porovnávání bez zahrnutí podřetězce do odpovídajícího textu. Následující příklad používá pozitivní dopředného vyhledávání k extrakci slov ve větě, která nejsou následována symboly interpunkce.
 
      [!code-csharp[Conceptual.RegularExpressions.Design#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.design/cs/lookahead1.cs#2)]
      [!code-vb[Conceptual.RegularExpressions.Design#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.design/vb/lookahead1.vb#2)]
 
-     Regulární `\b[A-Z]+\b(?=\P{P})` výraz je definován tak, jak je znázorněno v následující tabulce.
+     Regulární výraz `\b[A-Z]+\b(?=\P{P})` je definován tak, jak je uvedeno v následující tabulce.
 
     |Vzor|Popis|
     |-------------|-----------------|
     |`\b`|Začne porovnání na hranici slova.|
-    |`[A-Z]+`|Porovná libovolný abecední znak jednou nebo vícekrát. Vzhledem <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType> k tomu, <xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase?displayProperty=nameWithType> že metoda je volána s možností, porovnání je malá a velká písmena.|
+    |`[A-Z]+`|Porovnává libovolný abecední znak jednou nebo vícekrát. Vzhledem k tomu <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType> , že je metoda volána s <xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase?displayProperty=nameWithType> možností, porovnávání rozlišuje velká a malá písmena.|
     |`\b`|Ukončí porovnání na hranici slova.|
-    |`(?=\P{P})`|Podívejte se dopředu a zjistěte, zda je dalším znakem symbol interpunkce. Pokud tomu tak není, shoda proběhne úspěšně.|
+    |`(?=\P{P})`|Před zjištěním, zda je další znak symbol interpunkce, se podívejte dopředu. Pokud tomu tak není, bude shoda úspěšná.|
 
-     Další informace o kontrolních výrazech pozitivního dopředného vyhledávání naleznete v [tématu Seskupování konstrukcí](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).
+     Další informace o kladném kontrolním výrazu dopředného vyhledávání naleznete v tématu [Grouping konstrukcís](grouping-constructs-in-regular-expressions.md).
 
-- Negativní dopředné vyhledávání: `(?!` *podvýraz*`)`. Tato funkce přidává možnost odpovídat výrazu pouze v případě, že dílčí výraz neodpovídá. To je silný pro prořezávání hledání, protože je často jednodušší poskytnout výraz pro případ, který by měl být odstraněn, než výraz pro případy, které musí být zahrnuty. Například je obtížné napsat výraz pro slova, která nezačínají na "non". Následující příklad používá negativní dopředné vyhledávání k jejich vyloučení.
+- Negativní dopředného vyhledávání: dílčí `(?!` *výraz* `)` . Tato funkce přidá schopnost vyhledat výraz pouze v případě, že se dílčí výraz neshoduje. To je výkonné pro vyřazení hledání, protože je často jednodušší poskytnout výraz pro případ, který by se měl vyloučit než výraz pro případy, které musí být zahrnuté. Například je obtížné napsat výraz pro slova, která nezačínají na "non". Následující příklad používá negativní dopředné vyhledávání k vyloučení.
 
      [!code-csharp[Conceptual.RegularExpressions.Design#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.design/cs/lookahead2.cs#3)]
      [!code-vb[Conceptual.RegularExpressions.Design#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.design/vb/lookahead2.vb#3)]
 
-     Vzor regulárního výrazu `\b(?!non)\w+\b` je definován tak, jak je znázorněno v následující tabulce.
+     Vzor regulárního výrazu `\b(?!non)\w+\b` je definován tak, jak je uvedeno v následující tabulce.
 
     |Vzor|Popis|
     |-------------|-----------------|
     |`\b`|Začne porovnání na hranici slova.|
-    |`(?!non)`|Podívejte se dopředu, abyste zajistili, že aktuální řetězec nezačíná na "non". Pokud ano, shoda se nezdaří.|
+    |`(?!non)`|Prohlédněte si, abyste zajistili, že aktuální řetězec nezačíná na "non". Pokud k tomu dojde, shoda se nezdařila.|
     |`(\w+)`|Porovná jeden nebo více znaků slova.|
     |`\b`|Ukončí porovnání na hranici slova.|
 
-     Další informace o kontrolních výrazech negativního dopředného vyhledávání naleznete v [tématu Seskupování konstrukcí](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).
+     Další informace o záporné kontrolní výrazy dopředného vyhledávání naleznete v tématu [Grouping konstrukcís](grouping-constructs-in-regular-expressions.md).
 
-- Podmíněné `(?(`vyhodnocení: *výraz*`)`*ano*`|`*ne* `)` a `(?(` *název*`)`*ano ne*`|`*no*`)`, kde *výraz* je podvýraz, který se má shodovat, *název* je název zachytávající skupiny, *ano* je řetězec, který odpovídá, pokud je *výraz* spárován nebo *název* je platná, neprázdná zachycená skupina a *ne* je dílčívýraz, který odpovídá, pokud *výraz* není spárován nebo *název* není platná, neprázdná zachycená skupina. Tato funkce umožňuje motoru prohledávat pomocí více než jeden alternativní vzorek, v závislosti na výsledku předchozí shody dílčího výrazu nebo výsledek kontrolnívýraz s nulovou šířkou. To umožňuje výkonnější formu zpětného odkazu, který umožňuje například odpovídající podvýraz na základě toho, zda byl spárován předchozí dílčí výraz. Regulární výraz v následujícím příkladu odpovídá odstavcům, které jsou určeny pro veřejné i interní použití. Odstavce určené pouze pro vnitřní `<PRIVATE>` použití začínají tagem. Vzor regulárního výrazu `^(?<Pvt>\<PRIVATE\>\s)?(?(Pvt)((\w+\p{P}?\s)+)|((\w+\p{P}?\s)+))\r?$` používá podmíněné vyhodnocení k přiřazení obsahu odstavců určených pro veřejné a interní použití k oddělení zachytávacích skupin. Tyto odstavce pak mohou být zpracovány odlišně.
+- Podmíněné vyhodnocení: `(?(` *výraz* `)` *Ano* `|` *ne* `)` a `(?(` *název* `)` *Ano* `|` *no* `)` , kde *výraz* je dílčí výraz, který se má shodovat *, název* je název zachytávající skupiny, *Ano* je řetězec, který se má shodovat, pokud je *výraz* shodný nebo je *název* platnou, neprázdnou zachycenou skupinou, a *ne* , *Pokud se* nejedná o platnou, neprázdnou zachycenou skupinu. *name* Tato funkce umožňuje modulu vyhledávat pomocí více než jednoho alternativního vzoru, v závislosti na výsledku předchozího dílčího výrazu nebo výsledku kontrolního výrazu s nulovou šířkou. To umožňuje výkonnější formu zpětného odkazování, které umožňuje například porovnání dílčího výrazu na základě toho, zda byl předchozí dílčí výraz spárován. Regulární výraz v následujícím příkladu odpovídá odstavcům, které jsou určeny pro veřejné i interní použití. Odstavce určené pouze pro interní použití začínají `<PRIVATE>` značkou. Vzor regulárního výrazu `^(?<Pvt>\<PRIVATE\>\s)?(?(Pvt)((\w+\p{P}?\s)+)|((\w+\p{P}?\s)+))\r?$` používá podmíněné vyhodnocení k přiřazení obsahu odstavců, které jsou určené pro veřejné a pro interní použití k oddělení zachycujících skupin. Tyto odstavce pak můžete zpracovat odlišně.
 
      [!code-csharp[Conceptual.RegularExpressions.Design#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.design/cs/conditional1.cs#4)]
      [!code-vb[Conceptual.RegularExpressions.Design#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.design/vb/conditional1.vb#4)]
 
-     Vzor regulárního výrazu je definován tak, jak je znázorněno v následující tabulce.
+     Vzor regulárního výrazu je definován tak, jak je uvedeno v následující tabulce.
 
     |Vzor|Popis|
     |-------------|-----------------|
-    |`^`|Začněte zápas na začátku řádku.|
-    |`(?<Pvt>\<PRIVATE\>\s)?`|Porovná nula nebo jeden `<PRIVATE>` výskyt řetězce následovaný znakem prázdnémezery. Přiřaďte shodu `Pvt`zachytávající skupině s názvem .|
-    |`(?(Pvt)((\w+\p{P}?\s)+)`|Pokud `Pvt` zachytávající skupina existuje, porovnejte jeden nebo více výskytů jednoho nebo více znaků slova následovaných nulou nebo jedním oddělovačem interpunkce následovaným bílým znakem. Přiřaďte podřetězec k první zachytávající skupině.|
-    |<code>&#124;((\w+\p{P}?\s)+))</code>|Pokud `Pvt` zachytávající skupina neexistuje, porovnejte jeden nebo více výskytů jednoho nebo více znaků slova následovaných nulou nebo jedním oddělovačem interpunkce následovaným znakem prázdného místa. Přiřaďte podřetězec třetí zachytávající skupině.|
-    |`\r?$`|Porovná konec řádku nebo konec řetězce.|
+    |`^`|Zahájí porovnávání na začátku řádku.|
+    |`(?<Pvt>\<PRIVATE\>\s)?`|Porovná žádný nebo jeden výskyt řetězce `<PRIVATE>` následovaný prázdným znakem. Přiřaďte shodu k zachycené skupině s názvem `Pvt` .|
+    |`(?(Pvt)((\w+\p{P}?\s)+)`|Pokud `Pvt` zachytávající skupina existuje, porovná jeden nebo více výskytů jednoho nebo více znaků slova následovaných žádným nebo jedním oddělovačem interpunkce následovaným prázdným znakem. Přiřaďte dílčí řetězec k první zachytávající skupině.|
+    |<code>&#124;((\w+\p{P}?\s)+))</code>|Pokud `Pvt` zachytávající skupina neexistuje, porovná jeden nebo více výskytů jednoho nebo více znaků slova následovaných žádným nebo jedním oddělovačem interpunkce následovaným prázdným znakem. Přiřaďte podřetězec třetí zachytávající skupině.|
+    |`\r?$`|Odpovídá konci řádku nebo konci řetězce.|
 
-     Další informace o podmíněném vyhodnocení naleznete v [tématu Alternation Constructs](../../../docs/standard/base-types/alternation-constructs-in-regular-expressions.md).
+     Další informace o podmíněném vyhodnocení naleznete v tématu [konstrukce alternace](alternation-constructs-in-regular-expressions.md).
 
-- Definice vyrovnávacích `(?<`skupin: *podvýraz*`)` *name1*`-`*name2* `>` . Tato funkce umožňuje modulu regulárních výrazů sledovat vnořené konstrukce, jako jsou závorky nebo otevírací a uzavírací závorky. Příklad naleznete v [tématu Seskupení konstrukce](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).
+- Definice vyrovnávání skupin: dílčí `(?<` *výraz název1* `-` *název2* `>` *subexpression* `)` . Tato funkce umožňuje modulu regulárních výrazů sledovat vnořené konstrukce, jako jsou závorky nebo levou a pravou hranaté závorky. Příklad naleznete v tématu [Grouping konstrukcís](grouping-constructs-in-regular-expressions.md).
 
-- Atomové `(?>`skupiny: *podvýraz*`)`. Tato funkce umožňuje backtracking motoru zaručit, že podvýraz odpovídá pouze první shodě nalezené pro tento dílčí výraz, jako kdyby výraz byl spuštěn nezávisle na jeho obsahující výraz. Pokud tuto konstrukci nepoužijete, může zpětné navracení hledání z většího výrazu změnit chování dílčího výrazu. Například regulární `(a+)\w` výraz odpovídá jednomu nebo více znakům "a" spolu se znakem slova, který následuje za posloupností znaků "a" a přiřazuje posloupnost znaků "a" první zachytávající skupině. Pokud je však konečný znak vstupního řetězce také "a", `\w` je porovnán s elementem jazyka a není zahrnut do zachycené skupiny.
+- Atomické skupiny: dílčí `(?>` *výraz* `)` . Tato funkce umožňuje modulu zpětného navrácení, aby se zaručilo, že dílčí výraz odpovídá pouze první shodě nalezené pro tento dílčí výraz, jako kdyby byl výraz spuštěn nezávisle na jeho obsahujícím výrazu. Pokud nepoužijete tuto konstrukci, hledání zpětného navrácení z většího výrazu může změnit chování dílčího výrazu. Například regulární výraz `(a+)\w` odpovídá jednomu nebo více znakům "a" společně se znakem slova, který následuje za sekvencí "a" a přiřadí sekvenci "a" do první zachytávající skupiny. Nicméně, pokud je konečný znak vstupního řetězce také "a", odpovídá `\w` prvku jazyka a není zahrnutý v zachycené skupině.
 
      [!code-csharp[Conceptual.RegularExpressions.Design#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.design/cs/nonbacktracking2.cs#7)]
      [!code-vb[Conceptual.RegularExpressions.Design#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.design/vb/nonbacktracking2.vb#7)]
 
-     Regulární `((?>a+))\w` výraz zabraňuje tomuto chování. Vzhledem k tomu, že všechny po sobě jdoucí znaky "a" jsou spárovány bez zpětného navracení, první zachytávající skupina obsahuje všechny po sobě jdoucí znaky "a". Pokud znaky "a" nejsou následovány alespoň jeden další znak než "a", shoda se nezdaří.
+     Regulární výraz `((?>a+))\w` zabrání tomuto chování. Vzhledem k tomu, že všechny po sobě jdoucí "a" znaky se shodují bez navrácení, první zachytávající skupina zahrnuje všechny po sobě jdoucí znaky "a". Pokud za znaky "a" nenásleduje aspoň jeden další znak jiný než "a", shoda se nezdařila.
 
      [!code-csharp[Conceptual.RegularExpressions.Design#8](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.design/cs/nonbacktracking1.cs#8)]
      [!code-vb[Conceptual.RegularExpressions.Design#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.design/vb/nonbacktracking1.vb#8)]
 
-     Další informace o atomických skupinách naleznete [v tématu Seskupování konstrukcí](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).
+     Další informace o atomických skupinách naleznete v tématu [Grouping konstrukcís](grouping-constructs-in-regular-expressions.md).
 
-- Párování zprava doleva, které je <xref:System.Text.RegularExpressions.RegexOptions.RightToLeft?displayProperty=nameWithType> určeno <xref:System.Text.RegularExpressions.Regex> zadáním možnosti konstruktoru třídy nebo statické metody párování instancí. Tato funkce je užitečná při hledání zprava doleva namísto zleva doprava nebo v případech, kdy je efektivnější začít shodu v pravé části vzoru namísto vlevo. Jak ukazuje následující příklad, použití porovnávání zprava doleva může změnit chování nenasytných kvantifikátorů. Příklad provádí dvě hledání věty, která končí číslem. Hledání zleva doprava, které používá nenasytný kvantifikátor, `+` odpovídá jedné ze šesti číslic ve větě, zatímco hledání zprava doleva odpovídá všem šesti číslicím. Popis vzoru regulárního výrazu naleznete v příkladu, který ilustruje opožděné kvantifikátory dříve v této části.
+- Shoda zprava doleva, která je určena zadáním <xref:System.Text.RegularExpressions.RegexOptions.RightToLeft?displayProperty=nameWithType> možnosti <xref:System.Text.RegularExpressions.Regex> konstruktoru třídy nebo metody pro porovnání statických instancí. Tato funkce je užitečná při hledání zprava doleva, nikoli zleva doprava, nebo v případech, kdy je efektivnější zahájit shodu v pravé části vzoru namísto levého. Jak ukazuje následující příklad, použití spárování zprava doleva může změnit chování hladových kvantifikátorů. V tomto příkladu se provádí dvě hledání věty, která končí číslem. Hledání zleva doprava, které používá hladce, `+` odpovídá jedné ze šesti číslic ve větě, zatímco hledání zprava doleva se shoduje se všemi šesti číslicemi. Popis vzoru regulárního výrazu naleznete v příkladu, který ukazuje opožděné kvantifikátory dříve v této části.
 
      [!code-csharp[Conceptual.RegularExpressions.Design#6](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.design/cs/rtl1.cs#6)]
      [!code-vb[Conceptual.RegularExpressions.Design#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.design/vb/rtl1.vb#6)]
 
-     Další informace o porovnávání zprava doleva naleznete v [tématu Možnosti regulárního výrazu](../../../docs/standard/base-types/regular-expression-options.md).
+     Další informace o porovnání zprava doleva naleznete v tématu [Možnosti regulárních výrazů](regular-expression-options.md).
 
-- Pozitivní a negativní `(?<=`zpětné vyhledávání: *dílčí* `)` výraz `(?<!`pro pozitivní zpětné vyhledávání a *dílčí výraz* `)` pro negativní zpětné vyhledávání. Tato funkce je podobná dopředné vyhledávání, která je popsána dříve v tomto tématu. Vzhledem k tomu, že modul regulárních výrazů umožňuje kompletní párování zprava doleva, umožňují regulární výrazy neomezená vyhledávání. Pozitivní a negativní zpětné vyhledávání lze také použít k zabránění vnoření kvantifikátory, když vnořený podvýraz je nadmnožinou vnějšího výrazu. Regulární výrazy s takovými vnořenými kvantifikátory často nabízejí nízký výkon. Například následující příklad ověří, zda řetězec začíná a končí alfanumerickým znakem a že jakýkoli jiný znak v řetězci je jedním z větší podmnožiny. Tvoří část regulárního výrazu používaného k ověření e-mailových adres; Další informace naleznete v [tématu Postup: Ověření, zda jsou řetězce v platném formátu e-mailu](../../../docs/standard/base-types/how-to-verify-that-strings-are-in-valid-email-format.md).
+- Pozitivní a negativní zpětné vyhledávání: dílčí `(?<=` *výraz* `)` pro pozitivní zpětné vyhledávání a dílčí `(?<!` *výraz* `)` pro negativní zpětné vyhledávání. Tato funkce se podobá dopřednému vyhledávání, který je popsaný výše v tomto tématu. Vzhledem k tomu, že modul regulárních výrazů umožňuje úplné porovnání zprava doleva, regulární výrazy povolují neomezený lookbehinds. Kladné a záporné zpětné vyhledávání lze také použít k zamezení vnořování kvantifikátorů, je-li vnořený dílčí výraz nadmnožinou vnějšího výrazu. Regulární výrazy s takovými vnořenými kvantifikátory často nabízejí nízký výkon. Například následující příklad ověřuje, že řetězec začíná a končí alfanumerickým znakem a že jakýkoli jiný znak v řetězci je jedna z větší podmnožiny. Tvoří část regulárního výrazu, který slouží k ověření e-mailových adres. Další informace najdete v tématu [Postup: ověření, zda jsou řetězce v platném formátu e-mailu](how-to-verify-that-strings-are-in-valid-email-format.md).
 
      [!code-csharp[Conceptual.RegularExpressions.Design#5](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.design/cs/lookbehind1.cs#5)]
      [!code-vb[Conceptual.RegularExpressions.Design#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.design/vb/lookbehind1.vb#5)]
 
-     Regulární ``^[A-Z0-9]([-!#$%&'.*+/=?^`{}|~\w])*(?<=[A-Z0-9])$`` výraz je definován tak, jak je znázorněno v následující tabulce.
+     Regulární výraz ``^[A-Z0-9]([-!#$%&'.*+/=?^`{}|~\w])*(?<=[A-Z0-9])$`` je definován tak, jak je uvedeno v následující tabulce.
 
     |Vzor|Popis|
     |-------------|-----------------|
-    |`^`|Začněte zápas na začátku řetězce.|
-    |`[A-Z0-9]`|Porovná libovolný číselný nebo alfanumerický znak. (Porovnání nerozlišuje malá a velká písmena.)|
-    |<code>([-!#$%&'.*+/=?^\`{}&#124;~\w])\*</code>|Shodovat nula nebo více výskytů libovolného znaku slova nebo některého z následujících znaků: -, !, #, $, %, &, ', ., \*, +, /, =, ^, &#96;, {, }, &#124; nebo ~.|
-    |`(?<=[A-Z0-9])`|Podívejte se za předchozí znak, který musí být číselný nebo alfanumerický. (Porovnání nerozlišuje malá a velká písmena.)|
-    |`$`|Ukončite shodu na konci řetězce.|
+    |`^`|Zahajte shodu na začátku řetězce.|
+    |`[A-Z0-9]`|Odpovídá jakémukoli číselnému nebo alfanumerickému znaku. (Porovnání nerozlišuje malá a velká písmena.)|
+    |<code>([-!#$%&'.*+/=?^\`{}&#124;~\w])\*</code>|Porovná žádný nebo více výskytů libovolného znaku slova nebo některý z následujících znaků:-,!, #, $,%, &, ',., \* , +,/, =,?, ^, &#96;, {,}, &#124; nebo ~.|
+    |`(?<=[A-Z0-9])`|Prohlédněte si předchozí znak, který musí být numerický nebo alfanumerický. (Porovnání nerozlišuje malá a velká písmena.)|
+    |`$`|Ukončí porovnávání na konci řetězce.|
 
-     Další informace o pozitivní matné a záporné zpětné vyhledávání naleznete v [tématu seskupení konstrukce](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).
+     Další informace o pozitivním a negativním zpětném vyhledávání najdete v tématu [seskupovací konstrukce](grouping-constructs-in-regular-expressions.md).
 
 ## <a name="related-articles"></a>Související články
 
 |Nadpis|Popis|
 |-----------|-----------------|
-|[Zpětné navracení](../../../docs/standard/base-types/backtracking-in-regular-expressions.md)|Obsahuje informace o tom, jak regulární výraz backtracking větve najít alternativní shody.|
-|[Kompilace a opětovné používání](../../../docs/standard/base-types/compilation-and-reuse-in-regular-expressions.md)|Obsahuje informace o kompilaci a opakovaném použití regulárních výrazů pro zvýšení výkonu.|
-|[Bezpečnost vlákna](../../../docs/standard/base-types/thread-safety-in-regular-expressions.md)|Obsahuje informace o bezpečnosti podprocesu regulárních výrazů a vysvětluje, kdy byste měli synchronizovat přístup k objektům regulárních výrazů.|
-|[.NET Framework – regulární výrazy](../../../docs/standard/base-types/regular-expressions.md)|Poskytuje přehled aspektu programovacího jazyka regulárních výrazů.|
-|[Model objektu regulárního výrazu](../../../docs/standard/base-types/the-regular-expression-object-model.md)|Obsahuje informace a příklady kódu znázorňující, jak používat třídy regulárních výrazů.|
-|[Jazyk regulárních výrazů – stručná referenční dokumentace](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)|Obsahuje informace o sadě znaků, operátorů a konstrukcí, které lze použít k definování regulárních výrazů.|
+|[Zpětné navracení](backtracking-in-regular-expressions.md)|Poskytuje informace o tom, jak se ve výrazech zpětného navrácení větví regulárních výrazů hledají alternativní shody.|
+|[Kompilace a opakované použití](compilation-and-reuse-in-regular-expressions.md)|Poskytuje informace o kompilaci a opětovném použití regulárních výrazů ke zvýšení výkonu.|
+|[Bezpečný přístup z více vláken](thread-safety-in-regular-expressions.md)|Poskytuje informace o bezpečnosti vláken regulárních výrazů a vysvětluje, kdy byste měli synchronizovat přístup k objektům regulárních výrazů.|
+|[.NET Framework – regulární výrazy](regular-expressions.md)|Poskytuje přehled aspektů regulárních výrazů programovacího jazyka.|
+|[Model objektu regulárního výrazu](the-regular-expression-object-model.md)|Poskytuje informace a příklady kódu ilustrující použití tříd regulárních výrazů.|
+|[Jazyk regulárních výrazů – stručná referenční dokumentace](regular-expression-language-quick-reference.md)|Poskytuje informace o sadě znaků, operátorech a konstrukcích, které lze použít k definování regulárních výrazů.|
 
-## <a name="reference"></a>Referenční informace
+## <a name="reference"></a>Reference
 
 - <xref:System.Text.RegularExpressions?displayProperty=nameWithType>

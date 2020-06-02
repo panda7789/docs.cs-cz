@@ -9,12 +9,12 @@ helpviewer_keywords:
 - namespaces [.NET Framework], names
 - names [.NET Framework], type names
 ms.assetid: a49058d2-0276-43a7-9502-04adddf857b2
-ms.openlocfilehash: 0ad98af240cf8d1041d6a8b64ab71a56e763f76f
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: e435e0281165b4a9f12bbccbeb10401b57375dcb
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83419054"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290198"
 ---
 # <a name="names-of-namespaces"></a>Názvy oborů názvů
 Stejně jako u jiných pokynů pro pojmenování je cílem při pojmenovávání oborů názvů vytváření dostatečné srozumitelnosti pro programátora pomocí rozhraní, aby okamžitě věděli, co může být obsah oboru názvů. Následující šablona určuje obecné pravidlo pro názvové obory názvů:
@@ -84,5 +84,5 @@ Stejně jako u jiných pokynů pro pojmenování je cílem při pojmenovávání
 
 ## <a name="see-also"></a>Viz také
 
-- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)
-- [Pokyny pro pojmenování](../../../docs/standard/design-guidelines/naming-guidelines.md)
+- [Pokyny k návrhu architektury](index.md)
+- [Pokyny pro pojmenování](naming-guidelines.md)

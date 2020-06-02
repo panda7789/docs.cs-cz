@@ -8,12 +8,12 @@ helpviewer_keywords:
 - class library design guidelines [.NET Framework], type design guidelines
 - types [.NET Framework], design guidelines
 ms.assetid: 6b49314e-8bba-43ea-97ca-4e0255812f95
-ms.openlocfilehash: 2a3cca0139974cbc92ce85a19db73dfb3d13d1a0
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 17bd300277a039818a3d563c8f2d5f99eb2fc68d
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76743566"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289561"
 ---
 # <a name="type-design-guidelines"></a>Pokyny k návrhu typu
 Z perspektivy CLR existují pouze dvě kategorie typů – typy odkazů a typy hodnot – ale pro účely diskuze o návrhu rozhraní rozdělíme typy do více logických skupin, z nichž každá má konkrétní pravidla návrhu.
@@ -33,10 +33,10 @@ Z perspektivy CLR existují pouze dvě kategorie typů – typy odkazů a typy h
  ✔️ Zajistěte, aby byl každý typ dobře definovanou sadou souvisejících členů, ne pouze náhodnou kolekcí nesouvisejících funkcí.
 
 ## <a name="in-this-section"></a>V tomto oddílu
- [Volba mezi třídou a strukturou](../../../docs/standard/design-guidelines/choosing-between-class-and-struct.md) [Návrh abstraktní třídy](../../../docs/standard/design-guidelines/abstract-class.md) design konstrukce rozhraní [design](../../../docs/standard/design-guidelines/static-class.md) [Interface](../../../docs/standard/design-guidelines/interface.md) [struktura](../../../docs/standard/design-guidelines/struct.md) návrh [výčtového](../../../docs/standard/design-guidelines/enum.md) [typu. vnořené typy](../../../docs/standard/design-guidelines/nested-types.md) *jsou © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*
+ [Volba mezi třídou a strukturou](choosing-between-class-and-struct.md) [Návrh abstraktní třídy](abstract-class.md) design konstrukce rozhraní [design](static-class.md) [Interface](interface.md) [struktura](struct.md) návrh [výčtového](enum.md) [typu. vnořené typy](nested-types.md) *jsou © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*
 
  *Přetištěno oprávněním Pearsonova vzdělávání, Inc. z [pokynů pro návrh rozhraní: konvence, idiomy a vzory pro opakovaně použitelné knihovny .NET, druhá edice](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) od Krzysztof Cwalina a Brad Abrams, publikovaly 22. října 2008 Addison-Wesley Professional jako součást sady Microsoft Windows Development Series.*
 
 ## <a name="see-also"></a>Viz také
 
-- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)
+- [Pokyny k návrhu architektury](index.md)

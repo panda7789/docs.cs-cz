@@ -8,17 +8,17 @@ helpviewer_keywords:
 - callback methods
 - callbacks
 ms.assetid: 48b55c60-495f-4089-9396-97f9122bba7c
-ms.openlocfilehash: 7dab759ba48104530fc41e46f6f2bba18d6c4456
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: ad7774fd197db80ce84b3b8a5baa4e9ee06b6cef
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76741654"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289795"
 ---
 # <a name="events-and-callbacks"></a>Události a zpětná volání
 Zpětná volání jsou body rozšiřitelnosti, které umožňují rozhraní volat zpět do uživatelského kódu prostřednictvím delegáta. Tyto delegáty jsou obvykle předávány rozhraní prostřednictvím parametru metody.
 
- Události jsou zvláštním případem zpětných volání, která podporují praktické a konzistentní syntaxi pro poskytnutí delegáta (obslužná rutina události). Kromě toho dokončování příkazů sady Visual Studio a návrháři poskytují podporu pro používání rozhraní API založených na událostech. (Viz [návrh události](../../../docs/standard/design-guidelines/event.md).)
+ Události jsou zvláštním případem zpětných volání, která podporují praktické a konzistentní syntaxi pro poskytnutí delegáta (obslužná rutina události). Kromě toho dokončování příkazů sady Visual Studio a návrháři poskytují podporu pro používání rozhraní API založených na událostech. (Viz [návrh události](event.md).)
 
  ✔️ Zvažte použití zpětných volání k umožnění uživatelům poskytnout vlastní kód, který má být spuštěn rozhraním.
 
@@ -26,15 +26,15 @@ Zpětná volání jsou body rozšiřitelnosti, které umožňují rozhraní vola
 
  ✔️ preferovat události proti prostým zpětným voláním, protože jsou více obeznámené s širší škálou vývojářů a jsou integrovány s dokončováním příkazů sady Visual Studio.
 
- ❌ Vyhněte se použití zpětných volání v rozhraních API citlivých na výkon.
+ ❌Vyhněte se použití zpětných volání v rozhraních API citlivých na výkon.
 
- Při definování rozhraní API pomocí zpětných volání ne✔️ použít nové typy `Func<...>`, `Action<...>`nebo `Expression<...>` a nikoli vlastní delegáty.
+ `Func<...>` `Action<...>` `Expression<...>` při definování rozhraní API pomocí zpětných volání ne✔️ použít nové typy, nebo namísto vlastních delegátů.
 
- `Func<...>` a `Action<...>` reprezentují Obecné delegáty. `Expression<...>` představuje definice funkcí, které lze zkompilovat a následně vyvolávat za běhu, ale mohou být také serializovány a předány vzdáleným procesům.
+ `Func<...>`a `Action<...>` představuje Obecné delegáty. `Expression<...>`představuje definice funkcí, které mohou být kompilovány a následně vyvolány v době běhu, ale mohou být také serializovány a předány vzdáleným procesům.
 
- místo použití `Func<...>` a `Action<...>` delegátů ✔️ měřit a porozumět důsledkům použití `Expression<...>`.
+ ✔️ měření a pochopení dopadu na výkon použití `Expression<...>` , místo použití `Func<...>` a `Action<...>` delegátů.
 
- typy `Expression<...>` jsou ve většině případů logicky ekvivalentní `Func<...>` a `Action<...>` delegáty. Hlavním rozdílem mezi nimi je to, že Delegáti mají být použiti v rámci scénářů místních procesů; výrazy jsou určené pro případy, kdy je výhodné a možné vyhodnotit výraz ve vzdáleném procesu nebo počítači.
+ `Expression<...>`typy jsou ve většině případů logicky ekvivalentní `Func<...>` a `Action<...>` delegáty. Hlavním rozdílem mezi nimi je to, že Delegáti mají být použiti v rámci scénářů místních procesů; výrazy jsou určené pro případy, kdy je výhodné a možné vyhodnotit výraz ve vzdáleném procesu nebo počítači.
 
  ✔️ pochopit, že voláním delegáta spouštíte libovolný kód, který by mohl mít zabezpečení, správnost a vliv na kompatibilitu.
 
@@ -44,5 +44,5 @@ Zpětná volání jsou body rozšiřitelnosti, které umožňují rozhraní vola
 
 ## <a name="see-also"></a>Viz také
 
-- [Navrhování pro rozšiřitelnost](../../../docs/standard/design-guidelines/designing-for-extensibility.md)
-- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)
+- [Navrhování pro rozšiřitelnost](designing-for-extensibility.md)
+- [Pokyny k návrhu architektury](index.md)

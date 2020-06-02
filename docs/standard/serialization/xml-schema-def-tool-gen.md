@@ -8,12 +8,12 @@ helpviewer_keywords:
 - XML Schema Definition tool, using to generate classes that conform to specific schema
 - XML Schema Definition tool, using to generate XML Schema Document
 ms.assetid: 51f0edc3-993d-4051-b7f2-77753694d3d1
-ms.openlocfilehash: 21ce4ad846e21a328ba199f6253bd259be9d932b
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 0e4e84ea7e11b2e7a00c852d4a2075747c71267e
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83379526"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288963"
 ---
 # <a name="how-to-use-the-xml-schema-definition-tool-to-generate-classes-and-xml-schema-documents"></a>Postupy: Generování tříd a dokumentace ke schématu XML pomocí nástroje XML Schema Definition
 Nástroj definici schématu XML (Xsd.exe) slouží ke generování schématu XML, která popisuje třídu nebo ke generování třídy definované ve schématu XML. Následující postupy ukazují, jak provádět tyto operace.
@@ -38,7 +38,7 @@ _C: \\ Program Files (x86) \\ Microsoft SDK \\ Windows \\ {Version} \\ bin \\ ne
     <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="" xmlns:xs="http://www.w3.org/2001/XMLSchema" />  
     ```  
   
-3. Upravte tříd pomocí metody, vlastnosti nebo pole, podle potřeby. Další informace o úpravách třídy s atributy naleznete v tématu [řízení serializace XML pomocí atributů](../../../docs/standard/serialization/controlling-xml-serialization-using-attributes.md) a [atributů, které řídí serializaci kódovaných SOAP](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md).  
+3. Upravte tříd pomocí metody, vlastnosti nebo pole, podle potřeby. Další informace o úpravách třídy s atributy naleznete v tématu [řízení serializace XML pomocí atributů](controlling-xml-serialization-using-attributes.md) a [atributů, které řídí serializaci kódovaných SOAP](attributes-that-control-encoded-soap-serialization.md).  
   
  Často je užitečné si prohlédnout schématu XML datový proud, který je generována, když jsou serializovat instance třídy (nebo třídy). Například může publikovat vaše schéma ostatním uživatelům, nebo vám může porovnat s schématu, ke které se snaží dosáhnout shody.  
   
@@ -59,9 +59,9 @@ _C: \\ Program Files (x86) \\ Microsoft SDK \\ Windows \\ {Version} \\ bin \\ ne
 ## <a name="see-also"></a>Viz také
 
 - <xref:System.Data.DataSet>
-- [Nástroj definice schématu XML a serializace XML](../../../docs/standard/serialization/the-xml-schema-definition-tool-and-xml-serialization.md)
-- [Představení serializace XML](../../../docs/standard/serialization/introducing-xml-serialization.md)
-- [Nástroj definice schématu XML (XSD. exe)](../../../docs/standard/serialization/xml-schema-definition-tool-xsd-exe.md)
+- [Nástroj definice schématu XML a serializace XML](the-xml-schema-definition-tool-and-xml-serialization.md)
+- [Představení serializace XML](introducing-xml-serialization.md)
+- [Nástroj definice schématu XML (XSD. exe)](xml-schema-definition-tool-xsd-exe.md)
 - <xref:System.Xml.Serialization.XmlSerializer>
-- [Postupy: Serializace objektu](../../../docs/standard/serialization/how-to-serialize-an-object.md)
-- [Postupy: Deserializace objektu](../../../docs/standard/serialization/how-to-deserialize-an-object.md)
+- [Postupy: Serializace objektu](how-to-serialize-an-object.md)
+- [Postupy: Deserializace objektu](how-to-deserialize-an-object.md)

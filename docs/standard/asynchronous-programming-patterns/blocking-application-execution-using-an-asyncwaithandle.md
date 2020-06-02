@@ -13,29 +13,29 @@ helpviewer_keywords:
 - stopping asynchronous operations
 - blocking application execution
 ms.assetid: 3e32daf2-8161-4e8f-addd-9fd9ff101b03
-ms.openlocfilehash: 16b5a297c13cd9096548ed489e4994b72a48da67
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 6184e52c3f6e39e452331af27b83520e498062aa
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73121430"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289925"
 ---
 # <a name="blocking-application-execution-using-an-asyncwaithandle"></a>Blokování provádění aplikací pomocí vlastnosti AsyncWaitHandle
-Aplikace, které nemohou pokračovat v jiné práci při čekání na výsledky asynchronní operace, musí blokovat, dokud nebude operace dokončena. Pomocí jedné z následujících možností zablokujte hlavní vlákno aplikace při čekání na dokončení asynchronní operace:  
+Aplikace, které nemohou pokračovat v provádění jiné práce při čekání na výsledky asynchronní operace musí blokovat až do dokončení operace. Použijte jednu z následujících možností k blokování hlavního vlákna aplikace při čekání na dokončení asynchronní operace:  
   
-- Použijte <xref:System.IAsyncResult.AsyncWaitHandle%2A> vlastnost vrácené <xref:System.IAsyncResult> metodou **Begin**_OperationName_ asynchronní operace. Tento přístup je demonstrován v tomto tématu.  
+- Použijte <xref:System.IAsyncResult.AsyncWaitHandle%2A> vlastnost <xref:System.IAsyncResult> vrácenou metodou **Begin**_OperationName_ asynchronní operace. Tento přístup je znázorněný v tomto tématu.  
   
-- Volání asynchronní operace **End**_OperationName_ metoda. Příklad, který ukazuje tento přístup, naleznete [v tématu blokování spuštění aplikace ukončením asynchronní operace](../../../docs/standard/asynchronous-programming-patterns/blocking-application-execution-by-ending-an-async-operation.md).  
+- Zavolejte metodu **End**_OperationName_ asynchronní operace. Příklad, který demonstruje tento přístup, naleznete v tématu [blokování provádění aplikace ukončením asynchronní operace](blocking-application-execution-by-ending-an-async-operation.md).  
   
- Aplikace, které používají <xref:System.Threading.WaitHandle> jeden nebo více objektů k zablokování, dokud není dokončena asynchronní operace, obvykle volají metodu **Begin**_OperationName,_ provádějí jakoukoli práci, kterou lze provést bez výsledků operace, a poté blokují, dokud nebude dokončena asynchronní operace. Aplikace může blokovat na jednu operaci <xref:System.Threading.WaitHandle.WaitOne%2A> voláním <xref:System.IAsyncResult.AsyncWaitHandle%2A>jedné z metod pomocí . Chcete-li blokovat při čekání na sadu asynchronních operací <xref:System.IAsyncResult.AsyncWaitHandle%2A> k dokončení, uložte <xref:System.Threading.WaitHandle.WaitAll%2A> přidružené objekty v poli a volání jedné z metod. Chcete-li blokovat při čekání na některou ze sady asynchronních <xref:System.IAsyncResult.AsyncWaitHandle%2A> operací k dokončení, uložte přidružené objekty v poli a volání jedné z <xref:System.Threading.WaitHandle.WaitAny%2A> metod.  
+ Aplikace, které používají jeden nebo více <xref:System.Threading.WaitHandle> objektů k blokování, dokud není dokončena asynchronní operace, obvykle zavolají metodu **Begin**_OperationName_ , provádějí všechny práce, které lze provést bez výsledků operace, a poté zablokují až po dokončení asynchronních operací. Aplikace může zablokovat jednotlivé operace voláním jedné z <xref:System.Threading.WaitHandle.WaitOne%2A> metod pomocí <xref:System.IAsyncResult.AsyncWaitHandle%2A> . Chcete-li blokovat při čekání na dokončení sady asynchronních operací, uložte přidružené <xref:System.IAsyncResult.AsyncWaitHandle%2A> objekty do pole a zavolejte jednu z <xref:System.Threading.WaitHandle.WaitAll%2A> metod. Chcete-li blokovat při čekání na dokončení některé ze sady asynchronních operací, uložte přidružené <xref:System.IAsyncResult.AsyncWaitHandle%2A> objekty do pole a zavolejte jednu z <xref:System.Threading.WaitHandle.WaitAny%2A> metod.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu ukazuje použití asynchronních metod ve třídě DNS k načtení informací o systému DNS pro počítač zadaný uživatelem. Příklad ukazuje blokování pomocí <xref:System.Threading.WaitHandle> přidružené asynchronní operace. Všimněte `null` `Nothing` si, že (v <xref:System.Net.Dns.BeginGetHostByName%2A> `requestCallback` jazyce Visual Basic) je předán pro parametry a, `stateObject` protože tyto nejsou vyžadovány při použití tohoto přístupu.  
+ Následující příklad kódu ukazuje použití asynchronních metod ve třídě DNS k načtení informací o systému názvů domén pro uživatelem zadaný počítač. Příklad ukazuje blokování pomocí elementu <xref:System.Threading.WaitHandle> přidruženého k asynchronní operaci. Všimněte si, že `null` ( `Nothing` v Visual Basic) je předán pro <xref:System.Net.Dns.BeginGetHostByName%2A> `requestCallback` parametry a, `stateObject` protože nejsou při použití tohoto přístupu vyžadovány.  
   
  [!code-csharp[AsyncDesignPattern#2](../../../samples/snippets/csharp/VS_Snippets_CLR/AsyncDesignPattern/CS/Async_EndBlockWait.cs#2)]
  [!code-vb[AsyncDesignPattern#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/AsyncDesignPattern/VB/Async_EndBlockWait.vb#2)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [Asynchronní vzor založený na událostech (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md)
-- [Přehled asynchronních vzorů založených na událostech](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)
+- [Asynchronní vzor založený na událostech (EAP)](event-based-asynchronous-pattern-eap.md)
+- [Přehled asynchronních vzorů založených na událostech](event-based-asynchronous-pattern-overview.md)

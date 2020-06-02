@@ -9,12 +9,12 @@ helpviewer_keywords:
 - WCF Data Services, querying
 - WCF Data Services, accessing data
 ms.assetid: 823e9444-27aa-4f1f-be8e-0486d67f54c0
-ms.openlocfilehash: 8ae4b4b9938f72f4f4fc011e180cd69440ec3dd9
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: 13334f6425c47e45d729d606d99602a99f35d8e6
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84201761"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286155"
 ---
 # <a name="querying-the-data-service-wcf-data-services"></a>Dotazování na datovou službu (WCF Data Services)
 
@@ -67,7 +67,7 @@ Další informace najdete v tématu věnovaném [hlediskům LINQ](linq-considera
 
 ## <a name="adding-query-options"></a>Přidání možností dotazu
 
-Dotazy na datové služby podporují všechny možnosti dotazů, které poskytuje služba WCF Data Service. Zavoláte <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> metodu pro připojení možností dotazu k <xref:System.Data.Services.Client.DataServiceQuery%601> instanci. <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A>Vrátí novou <xref:System.Data.Services.Client.DataServiceQuery%601> instanci, která je ekvivalentní původnímu dotazu, ale s nastavenou možností nového dotazu. Následující dotaz, pokud je proveden, vrátí `Orders` hodnoty, které jsou filtrovány podle `Freight` hodnoty a seřazeny `OrderID` sestupně:
+Dotazy na datové služby podporují všechny možnosti dotazů, které WCF Data Services poskytuje. Zavoláte <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> metodu pro připojení možností dotazu k <xref:System.Data.Services.Client.DataServiceQuery%601> instanci. <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A>Vrátí novou <xref:System.Data.Services.Client.DataServiceQuery%601> instanci, která je ekvivalentní původnímu dotazu, ale s nastavenou možností nového dotazu. Následující dotaz, pokud je proveden, vrátí `Orders` hodnoty, které jsou filtrovány podle `Freight` hodnoty a seřazeny `OrderID` sestupně:
 
 [!code-csharp[Astoria Northwind Client#AddQueryOptionsSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#addqueryoptionsspecific)]
 [!code-vb[Astoria Northwind Client#AddQueryOptionsSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#addqueryoptionsspecific)]

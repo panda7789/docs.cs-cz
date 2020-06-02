@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 76f28770-7126-428f-9ed5-7b5ae8bad5ee
-ms.openlocfilehash: af6df3729f1bd926e9a47cc5b9d9bf460c8e1225
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: 3d517652665d6d0693e141d623483ff8946bbbf4
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78159283"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290237"
 ---
 # <a name="xmlschemacollection-schema-compilation"></a>Kompilace schématu XmlSchemaCollection
 **XmlSchemaCollection** je mezipaměť nebo knihovna, kde mohou být uloženy a ověřeny schémata XML-data redukovaná (XDR) a XML Schema Definition Language (XSD). **XmlSchemaCollection** vylepšuje výkon ukládáním schémat do paměti místo přístupu ze souboru nebo adresy URL.  
@@ -20,7 +20,7 @@ ms.locfileid: "78159283"
 > I když třída **XmlSchemaCollection** ukládá schémata XDR i schémata XML, jakákoliv metoda a vlastnost, která přijímá nebo vrací objekt **XmlSchema** , podporuje pouze schémata XML.  
   
 > [!IMPORTANT]
-> <xref:System.Xml.Schema.XmlSchemaCollection> Třída je nyní zastaralá a byla nahrazena <xref:System.Xml.Schema.XmlSchemaSet> třídou. Další informace o <xref:System.Xml.Schema.XmlSchemaSet> třídě naleznete v tématu Třída [XmlSchemaSet pro kompilaci schématu](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md).  
+> <xref:System.Xml.Schema.XmlSchemaCollection>Třída je nyní zastaralá a byla nahrazena <xref:System.Xml.Schema.XmlSchemaSet> třídou. Další informace o <xref:System.Xml.Schema.XmlSchemaSet> třídě naleznete v tématu Třída [XmlSchemaSet pro kompilaci schématu](xmlschemaset-for-schema-compilation.md).  
   
 ## <a name="add-schemas-to-the-collection"></a>Přidání schémat do kolekce  
  Schémata jsou načtena do kolekce pomocí metody **Add** kolekce **XmlSchemaCollection**, v níž je schéma přidruženo k identifikátoru URI oboru názvů. V případě schémat XML bude identifikátor URI oboru názvů obvykle cílovým oborem názvů schématu. V případě schémat XDR je identifikátor URI oboru názvů zadaný při přidání schématu do kolekce.  
@@ -57,5 +57,5 @@ vr.Schemas.Add(xsc);
   
 ## <a name="see-also"></a>Viz také
 
-- [Ověření XDR s třídou XmlSchemaCollection](../../../../docs/standard/data/xml/xdr-validation-with-xmlschemacollection.md)
-- [Ověření schématu XML (XSD) s třídou XmlSchemaCollection](../../../../docs/standard/data/xml/xml-schema-xsd-validation-with-xmlschemacollection.md)
+- [Ověření XDR s třídou XmlSchemaCollection](xdr-validation-with-xmlschemacollection.md)
+- [Ověření schématu XML (XSD) s třídou XmlSchemaCollection](xml-schema-xsd-validation-with-xmlschemacollection.md)

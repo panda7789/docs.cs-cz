@@ -1,13 +1,14 @@
 ---
 title: Co je nového
+description: Seznamte se s novými funkcemi v ADO.NET v .NET Framework 4,5, včetně nových funkcí pro poskytovatele dat SqlClient a ADO.NET Entity Framework.
 ms.date: 03/30/2017
 ms.assetid: 3bb65d38-cce2-46f5-b979-e5c505e95e10
-ms.openlocfilehash: 2ac8ebced700dc6c874ac22304773b3b9c19f8b3
-ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
+ms.openlocfilehash: 536b9314dd83366202f7fd9b489759681021fd9e
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76979773"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286168"
 ---
 # <a name="whats-new-in-adonet"></a>Novinky v ADO.NET
 
@@ -17,7 +18,7 @@ V .NET Framework 4,5 jsou v ADO.NET nové následující funkce.
 
 V .NET Framework Zprostředkovatel dat pro SQL Server v .NET Framework 4,5 jsou tyto nové funkce:
 
-- Klíčová slova připojovacího řetězce atributu ConnectRetryCount a atributu ConnectRetryInterval (<xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>) umožňují řídit funkci odolnosti připojení nečinné.
+- Klíčová slova připojovacího řetězce atributu ConnectRetryCount a atributu ConnectRetryInterval ( <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A> ) umožňují řídit funkci odolnosti připojení nečinné.
 
 - Podpora streamování z SQL Server do aplikace podporuje scénáře, kdy data na serveru nejsou strukturovaná.  Další informace najdete v tématu [Podpora pro streamování SqlClient](sqlclient-streaming-support.md) .
 
@@ -27,9 +28,9 @@ V .NET Framework Zprostředkovatel dat pro SQL Server v .NET Framework 4,5 jsou 
 
 - SqlClient teď podporuje vysokou dostupnost SQL Server, funkce zotavení po havárii, AlwaysOn. Další informace najdete v tématu [Podpora společnosti SqlClient pro vysokou dostupnost a zotavení po havárii](./sql/sqlclient-support-for-high-availability-disaster-recovery.md).
 
-- Heslo lze předat jako <xref:System.Security.SecureString> při použití SQL Serverho ověřování. Další informace naleznete v tématu <xref:System.Data.SqlClient.SqlCredential>.
+- Heslo lze předat jako <xref:System.Security.SecureString> při použití SQL Server ověřování. Další informace naleznete v tématu <xref:System.Data.SqlClient.SqlCredential>.
 
-- Pokud je `TrustServerCertificate` false a `Encrypt` true, název serveru (nebo IP adresa) v certifikátu SQL Server SSL musí přesně odpovídat názvu serveru (nebo IP adrese) zadané v připojovacím řetězci. V opačném případě se pokus o připojení nezdaří. Další informace najdete v popisu možnosti připojení `Encrypt` v <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>.
+- Pokud `TrustServerCertificate` je hodnota false a `Encrypt` má hodnotu true, název serveru (nebo IP adresa) v SQL Server certifikát SSL musí přesně odpovídat názvu serveru (nebo IP adrese) zadané v připojovacím řetězci. V opačném případě se pokus o připojení nezdaří. Další informace najdete v popisu `Encrypt` Možnosti připojení v tématu <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A> .
 
   Pokud tato změna způsobí, že existující aplikace už nebude připojená, můžete aplikaci opravit pomocí jedné z následujících možností:
 
@@ -43,9 +44,9 @@ V .NET Framework Zprostředkovatel dat pro SQL Server v .NET Framework 4,5 jsou 
 
 - SqlClient podporuje připojení k databázím LocalDB. Další informace najdete v tématu [Podpora SqlClient pro LocalDB](./sql/sqlclient-support-for-localdb.md).
 
-- `Type System Version=SQL Server 2012;` je nová hodnota, která má být předána vlastnosti připojení `Type System Version`. Hodnota `Type System Version=Latest;` je nyní zastaralá a byla rovna `Type System Version=SQL Server 2008;`. Další informace najdete v tématu <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>.
+- `Type System Version=SQL Server 2012;`je nová hodnota, která se má předat `Type System Version` Vlastnosti připojení. `Type System Version=Latest;`Hodnota je nyní zastaralá a byla navázána jako ekvivalentní `Type System Version=SQL Server 2008;` . Další informace naleznete v tématu <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>.
 
-- SqlClient poskytuje další podporu pro zhuštěné sloupce, funkci přidanou v SQL Server 2008. Pokud vaše aplikace již přistupuje k datům v tabulce, která používá zhuštěné sloupce, měli byste vidět zvýšení výkonu. Sloupec IsColumnSet <xref:System.Data.SqlClient.SqlDataReader.GetSchemaTable%2A> označuje, zda je sloupec zhuštěným sloupcem, který je členem sady sloupců. <xref:System.Data.SqlClient.SqlConnection.GetSchema%2A> určuje, zda se jedná o zhuštěný sloupec (Další informace najdete v tématu [SQL Server kolekce schémat](sql-server-schema-collections.md) ). Další informace o zhuštěných sloupcích najdete v tématu [použití zhuštěných sloupců](/sql/relational-databases/tables/use-sparse-columns).
+- SqlClient poskytuje další podporu pro zhuštěné sloupce, funkci přidanou v SQL Server 2008. Pokud vaše aplikace již přistupuje k datům v tabulce, která používá zhuštěné sloupce, měli byste vidět zvýšení výkonu. Sloupec IsColumnSet pro <xref:System.Data.SqlClient.SqlDataReader.GetSchemaTable%2A> označuje, zda je sloupec zhuštěným sloupcem, který je členem sady sloupců. <xref:System.Data.SqlClient.SqlConnection.GetSchema%2A>označuje, zda se jedná o zhuštěný sloupec (Další informace naleznete v tématu [SQL Server Collection schemas](sql-server-schema-collections.md) ). Další informace o zhuštěných sloupcích najdete v tématu [použití zhuštěných sloupců](/sql/relational-databases/tables/use-sparse-columns).
 
 - Sestavení Microsoft. SqlServer. Types. dll, které obsahuje typy prostorových dat, bylo upgradováno z verze 10,0 na verzi 11,0. Aplikace, které odkazují na toto sestavení, mohou selhat. Další informace najdete v tématu [přerušující změny funkcí databázového stroje](https://docs.microsoft.com/previous-versions/sql/sql-server-2012/ms143179(v=sql.110)).
 
@@ -53,7 +54,7 @@ V .NET Framework Zprostředkovatel dat pro SQL Server v .NET Framework 4,5 jsou 
 
 .NET Framework 4,5 přidává rozhraní API, která umožňují nové scénáře při práci s Entity Framework 5,0. Další informace o vylepšeních a funkcích přidaných do Entity Framework 5,0 naleznete v následujících tématech: [co je nového](https://docs.microsoft.com/previous-versions/gg696190(v=vs.103)) a [Entity Framework vydání a správa verzí](/ef/ef6/what-is-new/past-releases).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [ADO.NET](index.md)
 - [Přehled ADO.NET](ado-net-overview.md)

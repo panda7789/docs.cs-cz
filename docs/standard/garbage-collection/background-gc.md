@@ -1,71 +1,71 @@
 ---
 title: Uvolňování paměti na pozadí
-description: Další informace o uvolňování paměti na pozadí v rozhraní .NET a o tom, jak se liší v uvolňování paměti pracovní stanice a serveru.
+description: Přečtěte si o uvolňování paměti na pozadí v rozhraní .NET a o tom, jak se liší v pracovní stanici a uvolňování paměti serveru.
 ms.date: 04/21/2020
 helpviewer_keywords:
 - garbage collection, background
 - background garbage collection
-ms.openlocfilehash: dcb1d348e679e07646273b8fbc4ea29b44ee4974
-ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
+ms.openlocfilehash: e2e25dcfff759d68087006b63544bf688798c029
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82103560"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286077"
 ---
 # <a name="background-garbage-collection"></a>Uvolňování paměti na pozadí
 
-V uvolňování paměti na pozadí (GC) dočasné generace (0 a 1) jsou shromažďovány podle potřeby, zatímco probíhá kolekce generace 2. Uvolňování paměti na pozadí se provádí na jednom nebo více vyhrazených vláknech v závislosti na tom, zda je to pozadí nebo server GC a platí pouze pro kolekce generace 2.
+V uvolňování paměti na pozadí (GC) jsou dočasné generace (0 a 1) shromažďovány podle potřeby, zatímco probíhá shromažďování 2. generace. Uvolňování paměti na pozadí se provádí v jednom nebo více vyhrazených vláknech v závislosti na tom, zda se jedná o pozadí nebo server GC, a vztahuje se pouze na kolekce 2. generace.
 
-Uvolnění paměti na pozadí je ve výchozím nastavení povoleno. Může být povolena nebo zakázána nastavením [konfigurace gcConcurrent](../../../docs/framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) v aplikacích rozhraní .NET Framework nebo [nastavenísystem.GC.Concurrent](../../core/run-time-config/garbage-collector.md#systemgcconcurrentcomplus_gcconcurrent) v aplikacích .NET Core.
+Uvolňování paměti na pozadí je ve výchozím nastavení povolené. Dá se zapnout nebo vypnout s nastavením konfigurace [gcConcurrent](../../framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) v aplikacích .NET Framework nebo v nastavení [System. GC. souběžné](../../core/run-time-config/garbage-collector.md#systemgcconcurrentcomplus_gcconcurrent) v aplikacích .NET Core.
 
 > [!NOTE]
-> Uvolňování paměti na pozadí nahrazuje [souběžné uvolňování paměti](#concurrent-garbage-collection) a je k dispozici v rozhraní .NET Framework 4 a novějších verzích. V rozhraní .NET Framework 4 je podporována pouze pro uvolňování paměti *pracovní stanice.* Počínaje rozhraním .NET Framework 4.5 je k dispozici uvolňování paměti na pozadí pro uvolňování paměti *pracovní stanice* i *serveru.*
+> Uvolňování paměti na pozadí nahrazuje [souběžné uvolňování paměti](#concurrent-garbage-collection) a je k dispozici v .NET Framework 4 a novějších verzích. V .NET Framework 4 se podporuje jenom pro uvolňování paměti *pracovní stanice* . Počínaje .NET Framework 4,5 se uvolňování paměti na pozadí dá použít jak pro *pracovní stanice* , tak pro uvolňování paměti *serveru* .
 
-Kolekce na dočasné generace během uvolňování paměti na pozadí se označuje jako uvolňování paměti *popředí.* Dojde-li k uvolnění paměti v popředí, jsou pozastavena všechna spravovaná vlákna.
+Kolekce na dočasných generacích během uvolňování paměti na pozadí je známá jako uvolnění paměti na *popředí* . Když dojde k uvolnění paměti na popředí, pozastaví se všechna spravovaná vlákna.
 
-Pokud probíhá uvolňování paměti na pozadí a v generaci 0 jste přidělili dostatek objektů, clr provádí generování 0 nebo generace 1 uvolňování paměti na popředí. Vyhrazené vlákno uvolňování paměti na pozadí kontroluje v častých bezpečných bodech k určení, zda existuje požadavek na uvolnění paměti v popředí. Pokud existuje, kolekce pozadí pozastaví sám tak, aby může dojít k uvolňování paměti popředí. Po dokončení uvolňování paměti na popředí, vyhrazené podprocesy uvolňování paměti na pozadí a vlákna uživatele pokračovat.
+Když probíhá uvolňování paměti na pozadí a přidělíte dostatek objektů v generaci 0, modul CLR provede uvolňování paměti od generace 0 nebo 1. generace v popředí. Vyhrazené vlákno uvolňování paměti na pozadí kontroluje v častých bezpečných bodech, aby bylo možné zjistit, zda existuje požadavek na uvolnění paměti na popředí. V takovém případě se kolekce na pozadí odblokuje, aby mohlo dojít k uvolnění paměti na popředí. Po dokončení uvolňování paměti na popředí se vyhradí vyhrazená vlákna uvolňování paměti na pozadí a obnovení uživatelských vláken.
 
-Uvolňování paměti na pozadí odebere omezení přidělení uložená souběžným uvolňováním paměti, protože dočasné uvolnění paměti může nastat během uvolňování paměti na pozadí. Uvolňování paměti na pozadí může odebrat nevrácené objekty v dočasných generacích. Může také rozbalit haldy v případě potřeby během uvolnění paměti generace 1.
+Uvolňování paměti na pozadí odebírá omezení přidělení, která jsou vynucená souběžným uvolňováním paměti, protože dočasné uvolňování paměti mohou nastat během uvolňování paměti na pozadí. Uvolňování paměti na pozadí může odebrat nedoručené objekty v dočasných generacích. Může také rozšířit haldu v případě potřeby během uvolňování paměti 1. generace.
 
-## <a name="background-workstation-vs-server-gc"></a>Pracovní stanice na pozadí vs. server GC
+## <a name="background-workstation-vs-server-gc"></a>Pracovní stanice na pozadí a uvolňování paměti serveru
 
-Počínaje rozhraním .NET Framework 4.5 je pro server GC k dispozici uvolňování paměti na pozadí. Gc na pozadí je výchozí režim pro uvolnění paměti serveru.
+Počínaje .NET Framework 4,5 je pro uvolňování paměti na pozadí k dispozici uvolňování paměti na pozadí. GC na pozadí je výchozím režimem pro uvolňování paměti serveru.
 
-Uvolňování paměti serveru na pozadí funguje podobně jako uvolňování paměti pracovní stanice na pozadí, ale existuje několik rozdílů:
+Uvolňování paměti serveru na pozadí funguje podobně jako uvolnění paměti pracovní stanice na pozadí, ale existuje několik rozdílů:
 
-- Uvolňování paměti pracovní stanice na pozadí používá jedno vyhrazené vlákno uvolňování paměti na pozadí, zatímco uvolňování paměti serveru na pozadí používá více vláken. Obvykle je vyhrazené vlákno pro každý logický procesor.
+- Uvolňování paměti pracovní stanice na pozadí používá jedno vyhrazené vlákno uvolňování paměti na pozadí, zatímco uvolňování paměti serveru na pozadí používá více vláken. Obvykle existuje vyhrazené vlákno pro každý logický procesor.
 
-- Na rozdíl od vlákna uvolňování paměti na pozadí pracovní stanice nejsou časový mj.
+- Na rozdíl od vlákna uvolňování paměti na pozadí pracovní stanice nevypršel časový limit vláken GC serveru na pozadí.
 
-Následující obrázek znázorňuje uvolňování paměti *pracovní stanice* na pozadí provedené v samostatném vyhrazeném vlákně:
+Následující obrázek znázorňuje uvolnění paměti *pracovní stanice* na pozadí v samostatném vyhrazeném vlákně:
 
 ![Uvolňování paměti pracovní stanice na pozadí](./media/fundamentals/background-workstation-garbage-collection.png)
 
-Následující obrázek znázorňuje uvolňování paměti *serveru* na pozadí prováděné v samostatných vyhrazených vláknech:
+Na následujícím obrázku je znázorněno uvolňování paměti *serveru* na pozadí provedené na samostatných vyhrazených vláknech:
 
-![Uvolnění paměti serveru na pozadí](./media/fundamentals/background-server-garbage-collection.png)
+![Uvolňování paměti serveru na pozadí](./media/fundamentals/background-server-garbage-collection.png)
 
 ## <a name="concurrent-garbage-collection"></a>Souběžné uvolňování paměti
 
 > [!TIP]
-> Tento oddíl se vztahuje na:
+> Tato část se týká:
 >
-> - Rozhraní .NET Framework 3.5 a starší pro uvolňování paměti pracovní stanice
-> - Rozhraní .NET Framework 4 a starší pro uvolnění paměti serveru
+> - Uvolňování paměti pro pracovní stanice .NET Framework 3,5 a starší
+> - .NET Framework 4 a starší pro uvolňování paměti serveru
 >
-> Souběžné nesmysly jsou nahrazeny uvolňováním paměti na pozadí v novějších verzích.
+> Souběžné uvolňování paměti je nahrazeno uvolňováním paměti na pozadí v novějších verzích.
 
-V uvolňování paměti pracovní stanice nebo serveru můžete [povolit souběžné uvolňování paměti](../../../docs/framework/configure-apps/file-schema/runtime/gcconcurrent-element.md), které umožňuje souběžné spuštění vláken s vyhrazeným vláknem, které provádí uvolňování paměti po většinu doby trvání kolekce. Tato možnost ovlivňuje pouze uvolňování paměti v generaci 2; generace 0 a 1 jsou vždy nesouběžné, protože se rychle dokončí.
+V pracovní stanici nebo uvolňování paměti serveru můžete [Povolit souběžné uvolňování paměti](../../framework/configure-apps/file-schema/runtime/gcconcurrent-element.md), které umožňuje spouštět vlákna souběžně s vyhrazeným vláknem, které provádí uvolňování paměti po většinu doby trvání kolekce. Tato možnost má vliv jenom na uvolňování paměti v generaci 2. generace 0 a 1 jsou vždy nesouběžná, protože dokončí rychlé.
 
-Souběžné uvolňování paměti umožňuje interaktivní masy lépe reagovat minimalizací pauzy pro kolekci. Spravovaná vlákna mohou pokračovat ve většině času při spuštění souběžného vlákna uvolňování paměti. To má za následek kratší pauzy při uvolňování paměti dochází.
+Souběžné uvolňování paměti umožňuje interaktivním aplikacím lépe reagovat tím, že minimalizuje pozastavení kolekce. Spravovaná vlákna mohou i nadále běžet v době, kdy běží souběžné vlákno uvolňování paměti. Výsledkem je kratší pozastavení během uvolňování paměti.
 
-Souběžné uvolňování paměti se provádí ve vyhrazeném vlákně. Ve výchozím nastavení clr spustí uvolňování paměti pracovní stanice s souběžným uvolňováním paměti povoleno v počítačích s jedním i více procesory.
+Souběžné uvolňování paměti se provádí ve vyhrazeném vlákně. Ve výchozím nastavení spustí modul CLR uvolňování paměti pracovní stanice s povoleným souběžným uvolňováním paměti na počítačích s jedním procesorem i s více procesory.
 
-Následující obrázek znázorňuje souběžné uvolňování paměti prováděné v samostatném vyhrazeném vlákně.
+Následující ilustrace znázorňuje souběžné uvolňování paměti prováděné na samostatném vyhrazeném vlákně.
 
 ![Souběžná vlákna uvolňování paměti](./media/gc-concurrent.png)
 
 ## <a name="see-also"></a>Viz také
 
-- [Uvolňování paměti pracovní stanice a serveru](workstation-server-gc.md)
-- [Možnosti konfigurace za běhu pro uvolňování paměti](../../core/run-time-config/garbage-collector.md)
+- [Uvolnění paměti pracovní stanice a serveru](workstation-server-gc.md)
+- [Možnosti konfigurace běhu pro uvolňování paměti](../../core/run-time-config/garbage-collector.md)

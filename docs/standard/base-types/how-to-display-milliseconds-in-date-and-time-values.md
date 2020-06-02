@@ -12,12 +12,12 @@ helpviewer_keywords:
 - dates [.NET Framework], milliseconds
 - milliseconds [.NET Framework]
 ms.assetid: ae1a0610-90b9-4877-8eb6-4e30bc5e00cf
-ms.openlocfilehash: 36d99753503d9ba4b1bde4143c86ba184674e53e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4c63e7e67d388b000954f3a53281f95b0f2522b9
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74960404"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290497"
 ---
 # <a name="how-to-display-milliseconds-in-date-and-time-values"></a>Postupy: Zobrazení milisekund v hodnotách data a času
 Výchozí metody pro formátování hodnot data a času, jako například <xref:System.DateTime.ToString?displayProperty=nameWithType>, zahrnují hodiny, minuty a sekundy příslušné časové hodnoty, ale neobsahují komponentu milisekund. Toto téma popisuje způsob začlenění komponenty milisekund do příslušné hodnoty data a času ve formátovaných řetězcích data a času.  
@@ -47,9 +47,9 @@ Výchozí metody pro formátování hodnot data a času, jako například <xref
  [!code-vb[Formatting.HowTo.Millisecond#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.Millisecond/vb/Millisecond.vb#3)]  
   
 > [!NOTE]
-> Je možné zobrazit velmi malé zlomkové jednotky sekundy, jako například desetitisíciny sekundy nebo stotisíciny sekundy. Tyto hodnoty však nemusí být smysluplné. Přesnost hodnot data a času závisí na rozlišení systémových hodin. V operačních systémech Windows NT 3.5 a novějších a operačních systémech Windows Vista je rozlišení hodin přibližně 10–15 milisekund.  
+> Je možné zobrazit velmi malé zlomkové jednotky sekundy, jako například desetitisíciny sekundy nebo stotisíciny sekundy. Tyto hodnoty však nemusí být smysluplné. Přesnost hodnot data a času závisí na rozlišení systémových hodin. V operačních systémech Windows NT 3,5 a novějších a Windows Vista je rozlišení hodin přibližně 10-15 milisekund.  
   
 ## <a name="see-also"></a>Viz také
 
 - <xref:System.Globalization.DateTimeFormatInfo>
-- [Vlastní řetězce formátu data a času](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)
+- [Vlastní řetězce formátu data a času](custom-date-and-time-format-strings.md)

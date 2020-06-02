@@ -7,12 +7,12 @@ helpviewer_keywords:
 - LOH
 - garbage collection, large object heap
 - GC [.NET ], large object heap
-ms.openlocfilehash: dae8a3690d63d77a47a5cd2e76f210ca8210f058
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: 87105acbd43eb8eda0daa00c65ca0635f5e1cc74
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83420575"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286025"
 ---
 # <a name="the-large-object-heap-on-windows-systems"></a>Halda velkých objektů v systémech Windows
 
@@ -203,7 +203,7 @@ Jak vidíte, jedná se o velmi jednoduchý test, který pouze přiděluje velké
 
 ### <a name="a-debugger"></a>Ladicí program
 
-Pokud je to výpis paměti a potřebujete zjistit, jaké objekty jsou ve skutečnosti na LOH, můžete použít [rozšíření ladicího programu SOS](../../../docs/framework/tools/sos-dll-sos-debugging-extension.md) , které poskytuje .NET.
+Pokud je to výpis paměti a potřebujete zjistit, jaké objekty jsou ve skutečnosti na LOH, můžete použít [rozšíření ladicího programu SOS](../../framework/tools/sos-dll-sos-debugging-extension.md) , které poskytuje .NET.
 
 > [!NOTE]
 > Příkazy ladění uvedené v této části platí pro [ladicí programy systému Windows](https://www.microsoft.com/whdc/devtools/debugging/default.mspx).

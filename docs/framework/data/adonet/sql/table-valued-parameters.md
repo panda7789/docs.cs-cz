@@ -1,16 +1,17 @@
 ---
 title: Parametry s hodnotami v tabulkách
+description: Naučte se, jak zařadit více řádků dat z klientské aplikace do SQL Server pomocí parametrů s hodnotou tabulky.
 ms.date: 10/12/2018
 dev_langs:
 - csharp
 - vb
 ms.assetid: 370c16d5-db7b-43e3-945b-ccaab35b739b
-ms.openlocfilehash: b968c599cf061fbd03b7ba8fb19470f6ace11a55
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: 7b1f0a6c416f660f06cea099197ba136f84407f9
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202177"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286194"
 ---
 # <a name="table-valued-parameters"></a>Parametry s hodnotami v tabulkách
 Parametry s hodnotou tabulky poskytují snadný způsob, jak zařadit více řádků dat z klientské aplikace do SQL Server bez vyžadování více zpátečních cest nebo speciální logiky na straně serveru pro zpracování dat. K zapouzdření řádků dat v klientské aplikaci a posílání dat na server v jednom parametrizovaném příkazu můžete použít parametry s hodnotou tabulky. Příchozí datové řádky jsou uloženy v proměnné tabulky, které lze následně provozovat pomocí jazyka Transact-SQL.  

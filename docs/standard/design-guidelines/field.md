@@ -7,12 +7,12 @@ helpviewer_keywords:
 - read-only fields
 - member design guidelines, fields
 ms.assetid: 7cb4b0f3-7a10-4c93-b84d-733f7134fcf8
-ms.openlocfilehash: c00929ca499e39bd4e24d482c9413beb9cccddc1
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 3a5ae985ab161899fbb5e96f9b0ef0cfa90b957c
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76741610"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289743"
 ---
 # <a name="field-design"></a>Návrh pole
 Principem zapouzdření je jeden z nejdůležitějších pojmů v objektově orientovaném návrhu. Tato zásada uvádí, že data uložená v objektu by měla být přístupná pouze k tomuto objektu.
@@ -21,7 +21,7 @@ Principem zapouzdření je jeden z nejdůležitějších pojmů v objektově ori
 
  Z tohoto striktního omezení vyloučíme pole s konstantním a statickým oprávněním jen pro čtení, protože taková pole, která jsou skoro podle definice, se nikdy nevyžadují ke změně.
 
- ❌ neposkytují pole instance, která jsou veřejná nebo chráněná.
+ ❌Neposkytněte pole instance, která jsou veřejná nebo chráněná.
 
  Měli byste poskytnout vlastnosti pro přístup k polím místo jejich veřejné nebo chráněné.
 
@@ -33,9 +33,9 @@ Principem zapouzdření je jeden z nejdůležitějších pojmů v objektově ori
 
  Pokud existují předdefinované instance typu, deklarujte je jako veřejná pole pouze pro čtení samotného typu.
 
- ❌ nepřiřazovat instance proměnlivých typů do polí `readonly`.
+ ❌Nepřiřazujte do polí instance proměnlivých typů `readonly` .
 
- Proměnlivý typ je typ s instancemi, které lze změnit po vytvoření instance. Například pole, většina kolekcí a datové proudy jsou proměnlivé typy, ale <xref:System.Int32?displayProperty=nameWithType>, <xref:System.Uri?displayProperty=nameWithType>a <xref:System.String?displayProperty=nameWithType> jsou všechny neměnné. Modifikátor jen pro čtení v poli typu odkazu brání instanci, která je uložena v poli, aby byla měněna, ale nezabrání v tom, aby byla data instance pole upravována voláním členů, kteří mění instanci.
+ Proměnlivý typ je typ s instancemi, které lze změnit po vytvoření instance. Například pole, většina kolekcí a datové proudy jsou proměnlivé typy, ale <xref:System.Int32?displayProperty=nameWithType> , <xref:System.Uri?displayProperty=nameWithType> a <xref:System.String?displayProperty=nameWithType> jsou všechny neměnné. Modifikátor jen pro čtení v poli typu odkazu brání instanci, která je uložena v poli, aby byla měněna, ale nezabrání v tom, aby byla data instance pole upravována voláním členů, kteří mění instanci.
 
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*
 
@@ -43,5 +43,5 @@ Principem zapouzdření je jeden z nejdůležitějších pojmů v objektově ori
 
 ## <a name="see-also"></a>Viz také
 
-- [Pokyny k návrhu člena](../../../docs/standard/design-guidelines/member.md)
-- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)
+- [Pokyny pro návrh členů](member.md)
+- [Pokyny k návrhu architektury](index.md)

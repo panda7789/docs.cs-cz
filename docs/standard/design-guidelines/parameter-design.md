@@ -9,32 +9,32 @@ helpviewer_keywords:
 - parameters, design guidelines
 - reserved parameters
 ms.assetid: 3f33bf46-4a7b-43b3-bb78-1ffebe0dcfa6
-ms.openlocfilehash: 78eb07503810e75d14bcd73740fe429e2f73475e
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 46c1b8f03d054a63ea837a73fd30eeed163ab0a4
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76743673"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290094"
 ---
 # <a name="parameter-design"></a>Návrh parametru
 
-Tato část obsahuje obecné pokyny pro návrh parametrů, včetně oddílů s pokyny pro kontrolu argumentů. Kromě toho byste měli postupovat podle pokynů popsaných v tématu [parametry pojmenování](../../../docs/standard/design-guidelines/naming-parameters.md).
+Tato část obsahuje obecné pokyny pro návrh parametrů, včetně oddílů s pokyny pro kontrolu argumentů. Kromě toho byste měli postupovat podle pokynů popsaných v tématu [parametry pojmenování](naming-parameters.md).
 
  ✔️ použít nejmenší odvozený typ parametru, který poskytuje funkce vyžadované členem.
 
- Předpokládejme například, že chcete navrhnout metodu, která vytvoří výčet kolekce a vytiskne každou položku do konzoly. Taková metoda by měla přijmout <xref:System.Collections.IEnumerable> jako parametr, ne <xref:System.Collections.ArrayList> nebo <xref:System.Collections.IList>, například.
+ Předpokládejme například, že chcete navrhnout metodu, která vytvoří výčet kolekce a vytiskne každou položku do konzoly. Taková metoda by měla být provedena <xref:System.Collections.IEnumerable> jako parametr, nikoli <xref:System.Collections.ArrayList> nebo <xref:System.Collections.IList> , například.
 
- ❌ nepoužívají rezervované parametry.
+ ❌Nepoužívejte rezervované parametry.
 
  Pokud je v některé budoucí verzi potřeba více vstupů ke členu, může být přidáno nové přetížení.
 
- ❌ nemají veřejně vystavené metody, které přebírají ukazatele, pole ukazatelů nebo multidimenzionální pole jako parametry.
+ ❌Nemají veřejně vystavené metody, které přebírají ukazatele, pole ukazatelů nebo multidimenzionální pole jako parametry.
 
  Ukazatele a multidimenzionální pole jsou poměrně obtížné použít. Ve většině případů je možné rozhraní API přenavrhovat, aby se předešlo přebírání těchto typů jako parametrů.
 
- ✔️ umístit všechny parametry `out` po všech parametrech podle hodnoty a `ref` (kromě polí parametrů), a to i v případě, že výsledkem je nekonzistence v pořadí parametrů mezi přetíženími (viz téma [přetížení člena](../../../docs/standard/design-guidelines/member-overloading.md)).
+ ✔️ umístit všechny `out` parametry za všechny parametry podle hodnoty a `ref` parametrů (kromě polí parametrů), a to i v případě, že výsledkem je nekonzistence v pořadí parametrů mezi přetíženími (viz téma [přetížení člena](member-overloading.md)).
 
- Parametry `out` lze zobrazit jako nadbytečné návratové hodnoty a jejich seskupení usnadňuje pochopení signatury metody.
+ `out`Parametry lze zobrazit jako nadbytečné návratové hodnoty a jejich seskupení usnadňuje pochopení signatury metody.
 
  ✔️ být v parametrech pojmenování konzistentní při přepisování členů nebo implementaci členů rozhraní.
 
@@ -43,43 +43,43 @@ Tato část obsahuje obecné pokyny pro návrh parametrů, včetně oddílů s p
 ### <a name="choose-between-enum-and-boolean-parameters"></a>Zvolit mezi výčtovým a logickým parametrem
  ✔️ použít výčty, pokud by měl člen jinak mít dva nebo více logických parametrů.
 
- ❌ nepoužívejte logické hodnoty, pokud si nejste jistí, že nikdy nebudete potřebovat více než dvě hodnoty.
+ ❌Nepoužívejte logické hodnoty, pokud nebudete naprosto jisti, že nikdy nebude potřeba více než dvě hodnoty.
 
- Výčty umožňují určit místo pro budoucí sčítání hodnot, ale měli byste si uvědomit o všech důsledcích přidávání hodnot do výčtů, které jsou popsány v [návrhu výčtu](../../../docs/standard/design-guidelines/enum.md).
+ Výčty umožňují určit místo pro budoucí sčítání hodnot, ale měli byste si uvědomit o všech důsledcích přidávání hodnot do výčtů, které jsou popsány v [návrhu výčtu](enum.md).
 
  ✔️ Zvažte použití logických hodnot pro parametry konstruktoru, které jsou skutečné hodnoty dvou stavů a slouží pouze k inicializaci logických vlastností.
 
 ### <a name="validate-arguments"></a>Ověřit argumenty
- ✔️ PROVÉST ověření argumentů předaných veřejným, chráněným nebo explicitně implementovaným členům. Pokud se ověření nepovede, vyvolejte <xref:System.ArgumentException?displayProperty=nameWithType>nebo jednu z jejích podtříd.
+ ✔️ PROVÉST ověření argumentů předaných veřejným, chráněným nebo explicitně implementovaným členům. Throw <xref:System.ArgumentException?displayProperty=nameWithType> nebo jedna z jejích podtříd, pokud se ověřování nezdařilo.
 
  Všimněte si, že skutečné ověření nemusí nutně probíhat ve veřejném nebo chráněném členu. Může dojít na nižší úrovni v některé soukromé nebo interní rutině. Hlavním bodem je, že celá oblast Surface, která je vystavena koncovým uživatelům, kontroluje argumenty.
 
- ✔️ vyvolat <xref:System.ArgumentNullException>, pokud je předán argument null a člen nepodporuje argumenty null.
+ ✔️ Vyvolejte <xref:System.ArgumentNullException> , pokud je předán argument null a člen nepodporuje argumenty null.
 
  ✔️ PROVÉST ověření parametrů výčtu.
 
  Nepředpokládat argumenty výčtu budou v rozsahu definovaném výčtem. Modul CLR umožňuje přetypování libovolné celočíselné hodnoty do hodnoty Enum i v případě, že ve výčtu není definována hodnota.
 
- ❌ nepoužívejte <xref:System.Enum.IsDefined%2A?displayProperty=nameWithType> pro kontroly rozsahu výčtu.
+ ❌Nepoužívejte <xref:System.Enum.IsDefined%2A?displayProperty=nameWithType> pro kontroly rozsahu výčtu.
 
  ✔️ Upozorňujeme, že po ověření se mohly změnit proměnlivé argumenty.
 
  Pokud je člen citlivý na zabezpečení, doporučujeme vytvořit kopii a pak ověřit a zpracovat argument.
 
-### <a name="pass-parameters"></a>Předat parametry
- Z perspektivy návrháře architektury existují tři hlavní skupiny parametrů: parametry podle hodnoty, parametry `ref` a parametry `out`.
+### <a name="pass-parameters"></a>Parametry předání
+ Z perspektivy návrháře architektury existují tři hlavní skupiny parametrů: parametry podle hodnoty, `ref` parametry a `out` parametry.
 
- Pokud je předán argument pomocí parametru podle hodnoty, člen obdrží kopii skutečného předaného argumentu. Pokud je argumentem hodnotový typ, je kopie argumentu vložena do zásobníku. Pokud je argumentem odkazový typ, kopie odkazu je vložena do zásobníku. Nejoblíbenější jazyky CLR, jako například C#, Visual Basic a C++, jsou ve výchozím nastavení k předávání parametrů podle hodnoty.
+ Pokud je předán argument pomocí parametru podle hodnoty, člen obdrží kopii skutečného předaného argumentu. Pokud je argumentem hodnotový typ, je kopie argumentu vložena do zásobníku. Pokud je argumentem odkazový typ, kopie odkazu je vložena do zásobníku. Nejoblíbenější jazyky CLR, jako je C#, Visual Basic a C++, jsou ve výchozím nastavení předány parametrům podle hodnoty.
 
- Pokud je předán argument pomocí parametru `ref`, člen obdrží odkaz na vlastní předaný argument. Pokud je argumentem hodnotový typ, odkaz na argument je vložen do zásobníku. Pokud je argumentem odkazový typ, odkaz na odkaz je vložen do zásobníku. parametry `Ref` lze použít k umožnění člena upravovat argumenty předané volajícím.
+ Když je argument předán pomocí `ref` parametru, člen obdrží odkaz na vlastní předaný argument. Pokud je argumentem hodnotový typ, odkaz na argument je vložen do zásobníku. Pokud je argumentem odkazový typ, odkaz na odkaz je vložen do zásobníku. `Ref`parametry lze použít k umožnění člena upravovat argumenty předané volajícím.
 
- parametry `Out` se podobají parametrům `ref` s malým rozdílem. Parametr je zpočátku považován za nepřiřazený a nemůže být načten v těle členu před tím, než se mu přiřadí nějaká hodnota. Parametr musí být také přiřazen určitou hodnotu před tím, než se člen vrátí.
+ `Out`parametry jsou podobné `ref` parametrům s malým rozdílem. Parametr je zpočátku považován za nepřiřazený a nemůže být načten v těle členu před tím, než se mu přiřadí nějaká hodnota. Parametr musí být také přiřazen určitou hodnotu před tím, než se člen vrátí.
 
- ❌ nepoužívejte parametry `out` nebo `ref`.
+ ❌Vyhněte se použití `out` `ref` parametrů nebo.
 
- Použití parametrů `out` nebo `ref` vyžaduje zkušenosti s ukazateli, porozumění způsobu, jakým se liší typy hodnot a referenční typy, a metody zpracování s více návratových hodnot. Rozdíl mezi parametry `out` a `ref` navíc není široce srozumitelný. Architektura architekt návrhu pro obecnou cílovou skupinu by neměla očekávat, že uživatelé budou hlavní pracovat s parametry `out` nebo `ref`.
+ Použití `out` `ref` parametrů or vyžaduje zkušenosti s ukazateli, porozumění způsobu, jakým se liší typy hodnot a typy odkazů, a metody zpracování s více návratových hodnot. Také rozdíl mezi `out` parametry a není `ref` široce srozumitelný. Architektura architekt návrhu pro obecnou cílovou skupinu by neměla očekávat, že uživatelé budou hlavní pracovat s `out` `ref` parametry nebo.
 
- ❌ nepředávejte odkazové typy odkazem.
+ ❌Nepředávejte odkazový typ odkazem.
 
  Na pravidlo existují omezené výjimky, jako je například metoda, kterou lze použít k prohození odkazů.
 
@@ -92,11 +92,11 @@ public class String {
 }
 ```
 
- Uživatel pak může zavolat metodu <xref:System.String.Format%2A?displayProperty=nameWithType>, a to následujícím způsobem:
+ Uživatel pak může zavolat <xref:System.String.Format%2A?displayProperty=nameWithType> metodu následujícím způsobem:
 
  `String.Format("File {0} not found in {1}",new object[]{filename,directory});`
 
- Přidáním klíčového slova C# params do parametru pole se změní parametr na parametr pole param, který se nazývá, a poskytuje zástupce pro vytvoření dočasného pole.
+ Přidáním klíčového slova param parametrů jazyka C# do parametru pole se změní parametr na parametr pole param, který se nazývá, a poskytuje zástupce pro vytvoření dočasného pole.
 
 ```csharp
 public class String {
@@ -112,11 +112,11 @@ public class String {
 
  ✔️ Zvažte přidání klíčového slova params do parametrů pole, pokud očekáváte, že koncoví uživatelé budou předávat pole s malým počtem prvků. Pokud se očekává, že se v běžných scénářích budou předávat i celá řada prvků, uživatelé pravděpodobně nebudou tyto prvky vložit do seznamu, takže klíčové slovo params není nutné.
 
- ❌ nepoužívejte pole param, pokud by volající téměř vždy měl vstup v poli.
+ ❌Vyhněte se použití polí param, pokud by volající téměř vždy měl vstup v poli.
 
  Například členy s parametry bajtového pole by se téměř nikdy nevolaly předáním jednotlivých bajtů. Z tohoto důvodu parametry bajtového pole v .NET Framework nepoužívají klíčové slovo params.
 
- ❌ pole params nepoužívejte, pokud je pole upraveno členem, který přebírá parametr pole param.
+ ❌Nepoužívejte pole param, pokud je pole upraveno členem, který přebírá parametr pole params.
 
  Vzhledem k tomu, že mnoho kompilátorů přepíná argumenty člena do dočasného pole na webu volání, pole může být dočasným objektem, a proto dojde ke ztrátě všech změn v poli.
 
@@ -136,16 +136,16 @@ public class String {
 
  Před zpracováním byste měli ověřit, že pole není null.
 
- ❌ nepoužívejte metody `varargs`, jinak označované jako tři tečky.
+ ❌Nepoužívejte `varargs` metody, jinak označované jako tři tečky.
 
- Některé jazyky CLR, například C++, podporují alternativní konvenci pro předávání seznamů parametrů proměnných s názvem `varargs` metody. Konvence by se neměla používat v rozhraních, protože není kompatibilní se specifikací CLS.
+ Některé jazyky CLR, jako je například C++, podporují alternativní konvenci pro předávání seznamů parametrů proměnných nazývaných `varargs` metody. Konvence by se neměla používat v rozhraních, protože není kompatibilní se specifikací CLS.
 
 ### <a name="pointer-parameters"></a>Parametry ukazatele
  Obecně platí, že by ukazatelé neměl být uveden v oblasti veřejného povrchu dobře navržené architektury spravovaného kódu. Ve většině případů by měly být ukazatele zapouzdřeny. V některých případech se ale vyžaduje, aby se v případě interoperability a používání ukazatelů v takových případech používaly příslušné ukazatele.
 
  ✔️ poskytují alternativu pro každého člena, který přebírá argument ukazatele, protože ukazatelé nejsou kompatibilní se specifikací CLS.
 
- Nepoužívejte ❌ nenáročných kontrol argumentů ukazatelů.
+ ❌Vyhněte se provádění náročných kontrol argumentů ukazatelů.
 
  ✔️ se při navrhování členů s ukazateli řídit běžnými konvencemi souvisejícími s ukazateli.
 
@@ -157,5 +157,5 @@ public class String {
 
 ## <a name="see-also"></a>Viz také
 
-- [Pokyny k návrhu člena](../../../docs/standard/design-guidelines/member.md)
-- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)
+- [Pokyny pro návrh členů](member.md)
+- [Pokyny k návrhu architektury](index.md)

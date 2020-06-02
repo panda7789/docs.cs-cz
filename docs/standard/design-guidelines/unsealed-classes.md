@@ -7,19 +7,19 @@ helpviewer_keywords:
 - unsealed classes
 - inheritance, classes
 ms.assetid: 9a3bd505-90f5-4053-9f0d-3cf5fa3d3ebf
-ms.openlocfilehash: 6804a79e8beee1d42e313509966b46239e66c25f
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 8e332a6382cf644c82d5e26cf5234cea08dcc693
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76743563"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289548"
 ---
 # <a name="unsealed-classes"></a>Nezapečetěné třídy
 Zapečetěné třídy nelze dědit z a znemožňují rozšiřitelnost. Naopak třídy, které lze zdědit z, se nazývají nezapečetěné třídy.
 
  ✔️ Zvažte použití nezapečetěných tříd bez přidaných virtuálních nebo chráněných členů jako skvělý způsob, jak poskytnout nenákladnou rozšiřitelnost rozhraní.
 
- Vývojáři často chtějí zdědit z nezapečetěných tříd, aby mohli přidat praktické členy, jako jsou vlastní konstruktory, nové metody nebo přetížení metod. Například `System.Messaging.MessageQueue` není zapečetěný, takže umožní uživatelům vytvářet vlastní fronty, které jsou ve výchozím nastavení pro konkrétní cestu fronty, nebo přidat vlastní metody, které zjednodušují rozhraní API pro konkrétní scénáře.
+ Vývojáři často chtějí zdědit z nezapečetěných tříd, aby mohli přidat praktické členy, jako jsou vlastní konstruktory, nové metody nebo přetížení metod. Například `System.Messaging.MessageQueue` není zapečetěný a umožňuje uživatelům vytvářet vlastní fronty, které jsou ve výchozím nastavení pro konkrétní cestu fronty, nebo přidávat vlastní metody, které zjednodušují rozhraní API pro konkrétní scénáře.
 
  Třídy jsou ve výchozím nastavení ve většině programovacích jazyků nezapečetěné a toto je také Doporučená výchozí hodnota pro většinu tříd v rozhraních. Rozšiřitelnost, kterou poskytují nezapečetěné typy, je mnohem vážíme od uživatelů rozhraní a poměrně levného, aby poskytovala z důvodu relativně nízkých nákladů na testování spojených s nezapečetěnými typy.
 
@@ -29,6 +29,6 @@ Zapečetěné třídy nelze dědit z a znemožňují rozšiřitelnost. Naopak t�
 
 ## <a name="see-also"></a>Viz také
 
-- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)
-- [Navrhování pro rozšiřitelnost](../../../docs/standard/design-guidelines/designing-for-extensibility.md)
-- [Zapečetění](../../../docs/standard/design-guidelines/sealing.md)
+- [Pokyny k návrhu architektury](index.md)
+- [Navrhování pro rozšiřitelnost](designing-for-extensibility.md)
+- [Zapečetění](sealing.md)

@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: caa92596-9e15-4d91-acbe-56911ef47a84
-ms.openlocfilehash: b9a8bd52b7dfe7a9bf43061d8f44747b3a847c68
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 08900f9e5b735065f97ef705dccd899eebe3bfe0
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83379127"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289613"
 ---
 # <a name="how-to-control-serialization-of-derived-classes"></a>Postupy: Řízení serializace odvozených tříd
 Použití atributu **třídě XmlElementAttribute** ke změně názvu elementu XML není jediným způsobem, jak přizpůsobit serializaci objektu. Datový proud XML můžete také upravit tak, že vyplývající z existující třídy a instruující <xref:System.Xml.Serialization.XmlSerializer> instance jak k serializaci nové třídy.  
@@ -239,6 +239,6 @@ public class Run
 - <xref:System.Xml.Serialization.XmlElementAttribute>
 - <xref:System.Xml.Serialization.XmlAttributes>
 - <xref:System.Xml.Serialization.XmlAttributeOverrides>
-- [Serializace XML a SOAP](../../../docs/standard/serialization/xml-and-soap-serialization.md)
-- [Postupy: Serializace objektu](../../../docs/standard/serialization/how-to-serialize-an-object.md)
-- [Postupy: Zadání alternativního názvu elementu pro XML stream](../../../docs/standard/serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md)
+- [Serializace XML a SOAP](xml-and-soap-serialization.md)
+- [Postupy: Serializace objektu](how-to-serialize-an-object.md)
+- [Postupy: Zadání alternativního názvu elementu pro XML stream](how-to-specify-an-alternate-element-name-for-an-xml-stream.md)

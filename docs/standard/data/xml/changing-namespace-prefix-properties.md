@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d5c87cbe-4d69-429f-aad5-3103c2ca2770
-ms.openlocfilehash: b1df520d00d3a98b2e518092d4eff51b5d0b7741
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: b817a68ff9789be414118ff4c1a3d88ca3ea9f01
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78158022"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290912"
 ---
 # <a name="changing-namespace-prefix-properties"></a>Změna vlastností předpony oboru názvů
 Třída **XmlNode** umožňuje změnit předponu oboru názvů přidružené k danému uzlu. Například následující kód ukazuje předponu měněného prvku.  
@@ -62,8 +62,8 @@ Console.WriteLine(doc.InnerXml);
 <a:test xmlns="123" xmlns:a="123" />  
 ```  
   
- V případě, že byl strom uložen do řetězce v důsledku volání metody **doc. InnerXml**, byl `xmlns:a='123'` přidán atribut pro zachování oboru názvů `test` elementu. Bylo `'123'`to a zůstalo `'123'`.  
+ V případě, že byl strom uložen do řetězce v důsledku volání metody **doc. InnerXml**, `xmlns:a='123'` byl přidán atribut pro zachování oboru názvů `test` elementu. Bylo to `'123'` a zůstalo `'123'` .  
   
 ## <a name="see-also"></a>Viz také
 
-- [model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+- [model DOM (Document Object Model) dokumentu XML](xml-document-object-model-dom.md)

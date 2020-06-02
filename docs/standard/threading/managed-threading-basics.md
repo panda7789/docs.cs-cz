@@ -8,57 +8,57 @@ helpviewer_keywords:
 - threading [.NET Framework], about threading
 - managed threading
 ms.assetid: b2944911-0e8f-427d-a8bb-077550618935
-ms.openlocfilehash: bec769043ab630b37609bed12302ceff5b90474a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4d2a96619fd1c48c79b5590efdb52c307d29710c
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73139233"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291003"
 ---
-# <a name="managed-threading-basics"></a>Základy spravovaného podprocesu
+# <a name="managed-threading-basics"></a>Základy spravovaného zřetězení
 
-Prvních pět témat této části je navrženo tak, aby vám pomohla určit, kdy použít spravované podprocesy, a vysvětlit některé základní funkce. Informace o třídách, které poskytují další funkce, naleznete v [tématu Objekty zřetězení a prvky](../../../docs/standard/threading/threading-objects-and-features.md) a [Přehled primitivnísynchronizace](../../../docs/standard/threading/overview-of-synchronization-primitives.md).  
+Prvních pět témat této části vám pomůže určit, kdy použít spravované zřetězení a vysvětlit některé základní funkce. Informace o třídách, které poskytují další funkce, naleznete v tématu [vlákna objektů a funkcí](threading-objects-and-features.md) a [Přehled základních synchronizací](overview-of-synchronization-primitives.md).  
   
- Ostatní témata v této části pokrývají pokročilá témata, včetně interakce spravovaného podprocesu s operačním systémem Windows.  
+ Zbývající témata v této části se týkají pokročilých témat, včetně interakce spravovaného vlákna s operačním systémem Windows.  
   
 > [!NOTE]
-> V rozhraní .NET Framework 4 poskytují paralelní knihovna úloh a PLINQ rozhraní API pro paralelismus úloh a dat v programech s více vlákny. Další informace naleznete [v tématu Paralelní programování](../../../docs/standard/parallel-programming/index.md).  
+> V .NET Framework 4 poskytuje Task Parallel Library a PLINQ rozhraní API pro paralelismus Task a data v programech s více vlákny. Další informace najdete v tématu [paralelní programování](../parallel-programming/index.md).  
   
-## <a name="in-this-section"></a>V tomto oddílu
+## <a name="in-this-section"></a>V této části
 
- [Vlákna a dělení na vlákna](../../../docs/standard/threading/threads-and-threading.md)  
- Popisuje výhody a nevýhody více vláken a popisuje scénáře, ve kterých můžete vytvořit vlákna nebo použít vlákna fondu vláken.  
+ [Vlákna a dělení na vlákna](threads-and-threading.md)  
+ Popisuje výhody a nevýhody více vláken a popisuje scénáře, ve kterých je možné vytvářet vlákna nebo používat vlákna fondu vláken.  
   
- [Výjimky ve spravovaných vláknech](../../../docs/standard/threading/exceptions-in-managed-threads.md)  
- Popisuje chování neošetřených výjimek ve vláknech pro různé verze rozhraní .NET Framework, zejména v situacích, ve kterých mají za následek ukončení aplikace.  
+ [Výjimky ve spravovaných vláknech](exceptions-in-managed-threads.md)  
+ Popisuje chování neošetřených výjimek v vláknech pro různé verze .NET Framework, zejména v situacích, kdy mají za následek ukončení aplikace.  
   
- [Synchronizace dat pro vícevláknové zpracování](../../../docs/standard/threading/synchronizing-data-for-multithreading.md)  
+ [Synchronizace dat pro vícevláknové zpracování](synchronizing-data-for-multithreading.md)  
  Popisuje strategie pro synchronizaci dat ve třídách, které budou použity s více vlákny.  
   
- [Vlákna v popředí a v pozadí](../../../docs/standard/threading/foreground-and-background-threads.md)  
- Vysvětluje rozdíly mezi popředí a podprocesů na pozadí.  
+ [Vlákna v popředí a v pozadí](foreground-and-background-threads.md)  
+ Vysvětluje rozdíly mezi vlákny v popředí a na pozadí.  
   
- [Dělení na spravovaná a nespravovaná vlákna ve Windows](../../../docs/standard/threading/managed-and-unmanaged-threading-in-windows.md)  
- Popisuje vztah mezi spravovaným a nespravovaným podprocesem, uvádí spravované ekvivalenty pro rozhraní API pro podprocesy systému Windows a popisuje interakci komoda a spravovaných vláken.  
+ [Dělení na spravovaná a nespravovaná vlákna ve Windows](managed-and-unmanaged-threading-in-windows.md)  
+ Popisuje vztah mezi spravovaným a nespravovaným vláknem, uvádí spravované ekvivalenty pro rozhraní API pro dělení na vlákna systému Windows a popisuje interakci objektů COM a spravovaných vláken.  
   
- [Úložiště vláken Thread Local: statická pole a datové sloty ve vztahu k vláknům](../../../docs/standard/threading/thread-local-storage-thread-relative-static-fields-and-data-slots.md)  
- Popisuje mechanismy úložiště relativní k vláknu.  
+ [Úložiště vláken Thread Local: statická pole a datové sloty ve vztahu k vláknům](thread-local-storage-thread-relative-static-fields-and-data-slots.md)  
+ Popisuje mechanismy úložiště související s vlákny.  
   
-## <a name="reference"></a>Referenční informace
+## <a name="reference"></a>Odkaz
 
  <xref:System.Threading.Thread>  
- Poskytuje referenční dokumentaci pro třídu **Thread,** která představuje spravované vlákno, zda pochází z nespravovaného kódu nebo byla vytvořena ve spravované aplikaci.  
+ Poskytuje referenční dokumentaci pro třídu **vlákna** , která představuje spravované vlákno, bez ohledu na to, zda pochází z nespravovaného kódu nebo byl vytvořen ve spravované aplikaci.  
   
  <xref:System.ComponentModel.BackgroundWorker>  
  Poskytuje bezpečný způsob implementace multithreading ve spojení s objekty uživatelského rozhraní.  
   
 ## <a name="related-sections"></a>Související oddíly
 
- [Přehled základních synchronizačních zařízení](../../../docs/standard/threading/overview-of-synchronization-primitives.md)  
- Popisuje spravované třídy používané k synchronizaci aktivit více vláken.  
+ [Přehled primitiv synchronizace](overview-of-synchronization-primitives.md)  
+ Popisuje spravované třídy, které slouží k synchronizaci aktivit více vláken.  
   
- [Doporučené postupy dělení na spravovaná vlákna](../../../docs/standard/threading/managed-threading-best-practices.md)  
- Popisuje běžné problémy s multithreading a strategie pro předcházení problémům.  
+ [Doporučené postupy dělení na spravovaná vlákna](managed-threading-best-practices.md)  
+ Popisuje běžné problémy s více vlákny a strategiemi pro předcházení problémů.  
   
- [Paralelní programování](../../../docs/standard/parallel-programming/index.md)  
- Popisuje paralelní knihovnu úloh a PLINQ, které výrazně zjednodušují práci při vytváření asynchronních a vícevláknových aplikací rozhraní .NET Framework.
+ [Paralelní programování](../parallel-programming/index.md)  
+ Popisuje úlohu Parallel Library and PLINQ, která významně zjednodušuje práci při vytváření asynchronních a vícevláknových .NET Framework aplikací.

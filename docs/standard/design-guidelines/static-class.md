@@ -10,25 +10,25 @@ helpviewer_keywords:
 - classes [.NET Framework], design guidelines
 - type design guidelines, classes
 ms.assetid: d67c14d8-c4dd-443f-affb-4ccae677c9b6
-ms.openlocfilehash: 104fa204a95ef31d34e224348068e3a6505aded5
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: c906502ed071e8515f101996ec42a04772f72b12
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76743592"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291926"
 ---
 # <a name="static-class-design"></a>Návrh statické třídy
-Statická třída je definována jako třída, která obsahuje pouze statické členy (samozřejmě kromě členů instance zděděných z <xref:System.Object?displayProperty=nameWithType> a případně z privátního konstruktoru). Některé jazyky poskytují integrovanou podporu pro statické třídy. V C# 2,0 a novějších, pokud je třída deklarována jako statická, je zapečetěná, abstraktní a žádné členy instance nelze přepsat nebo deklarovat.
+Statická třída je definována jako třída, která obsahuje pouze statické členy (samozřejmě kromě členů instance zděděných z <xref:System.Object?displayProperty=nameWithType> a případně z privátního konstruktoru). Některé jazyky poskytují integrovanou podporu pro statické třídy. V jazyce C# 2,0 a novějším, pokud je třída deklarována jako statická, je zapečetěná, abstraktní a žádné členy instance nelze přepsat nebo deklarovat.
 
- Statické třídy představují kompromis mezi čistě objektově orientovaným návrhem a jednoduchostí. Obvykle se používají k poskytnutí zástupců pro jiné operace (například <xref:System.IO.File?displayProperty=nameWithType>), držitelům rozšiřujících metod nebo funkcí, pro které není úplný objektově orientované obálka oprávněná (například <xref:System.Environment?displayProperty=nameWithType>).
+ Statické třídy představují kompromis mezi čistě objektově orientovaným návrhem a jednoduchostí. Obvykle se používají k poskytnutí zástupců pro jiné operace (například <xref:System.IO.File?displayProperty=nameWithType> ), držitelům rozšiřujících metod nebo funkcí, pro které je kompletní objektově orientované obálka neoprávněná (například <xref:System.Environment?displayProperty=nameWithType> ).
 
  ✔️ použít statické třídy zřídka.
 
  Statické třídy by měly být použity pouze jako podpůrné třídy pro objektově orientované jádro architektury.
 
- ❌ nepovažují statické třídy za různé intervaly.
+ ❌Nepovažujte statické třídy za různé intervaly.
 
- ❌ Nedeklarujte nebo přepište členy instance ve statických třídách.
+ ❌Nedeklarujte nebo přepište členy instance ve statických třídách.
 
  ✔️ deklarovat statické třídy jako zapečetěné, abstraktní a přidat konstruktor privátní instance, pokud váš programovací jazyk nemá integrovanou podporu pro statické třídy.
 
@@ -38,5 +38,5 @@ Statická třída je definována jako třída, která obsahuje pouze statické �
 
 ## <a name="see-also"></a>Viz také
 
-- [Pokyny k návrhu typu](../../../docs/standard/design-guidelines/type.md)
-- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)
+- [Pokyny pro návrh typů](type.md)
+- [Pokyny k návrhu architektury](index.md)

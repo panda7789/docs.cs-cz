@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a2758f40-e497-4964-8d8d-1bb68af14dcd
-ms.openlocfilehash: b8aa670764deb8e77cfb67fd16dbcf8b1cc9b4c0
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: e55486feeb427c95a9394ac83758e6052603921e
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75711126"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291575"
 ---
 # <a name="changing-namespace-declarations-in-an-xml-document"></a>Změna deklarací oboru názvů v dokumentu XML
 **XmlDocument** zpřístupňuje deklarace oboru názvů a atributy **xmlns** jako součást modelu objektu dokumentu. Ty jsou uloženy v dokumentu **XmlDocument**, takže když dokument uložíte, může zachovat umístění těchto atributů. Změna těchto atributů nemá žádný vliv na vlastnosti **Name**, **NamespaceURI**a **prefixu** dalších uzlů, které jsou již ve stromové struktuře. Například pokud načtete následující dokument, pak `test` element má **NamespaceURI**`123.`  
@@ -20,7 +20,7 @@ ms.locfileid: "75711126"
 <test xmlns="123"/>  
 ```  
   
- Pokud `xmlns` atribut odeberete následujícím způsobem, má `test` element stále **NamespaceURI** . `123`  
+ Pokud atribut odeberete následujícím `xmlns` způsobem, `test` má element stále **NamespaceURI** `123` .  
   
 ```vb  
 doc.documentElement.RemoveAttribute("xmlns")  
@@ -30,7 +30,7 @@ doc.documentElement.RemoveAttribute("xmlns")
 doc.documentElement.RemoveAttribute("xmlns");  
 ```  
   
- Podobně platí, že pokud `xmlns` přidáte jiný atribut `doc` prvku následujícím způsobem, pak má `test` element stále **NamespaceURI** `123`.  
+ Podobně platí, že pokud přidáte jiný `xmlns` atribut `doc` prvku následujícím způsobem, pak `test` má element stále **NamespaceURI** `123` .  
   
 ```vb  
 doc.documentElement.SetAttribute("xmlns","456")
@@ -44,4 +44,4 @@ doc.documentElement.SetAttribute("xmlns","456");
   
 ## <a name="see-also"></a>Viz také
 
-- [model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+- [model DOM (Document Object Model) dokumentu XML](xml-document-object-model-dom.md)

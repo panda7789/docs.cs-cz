@@ -2,12 +2,12 @@
 title: Závislosti a knihovny .NET
 description: Doporučení osvědčených postupů pro správu závislostí NuGet v knihovnách .NET.
 ms.date: 10/02/2018
-ms.openlocfilehash: 265e92e86d22c778f65476e7f1383d32e4964655
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: 344d5dff564b64b9d70bbd61afb0b7bc057c8f21
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82895711"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291367"
 ---
 # <a name="dependencies"></a>Závislosti
 
@@ -24,7 +24,7 @@ V době sestavení NuGet analyzuje všechny balíčky, na kterých projekt závi
 Většinu diamantových závislostí lze snadno vyřešit. můžou se ale v určitých případech vytvářet problémy:
 
 1. **Konfliktní odkazy na balíčky NuGet** brání v vyřešení verze během obnovování balíčku.
-2. **Narušením změn mezi verzemi** dojde k chybám a výjimkám za běhu.
+2. Zásadní **změny mezi verzemi** způsobují chyby a výjimky v době běhu.
 3. **Sestavení balíčku má silný název**, verze sestavení se změnila a aplikace je spuštěná na .NET Framework. Přesměrování vazby sestavení jsou povinná.
 
 Není možné zjistit, jaké balíčky se budou používat společně s vašimi vlastními. Dobrým způsobem, jak snížit pravděpodobnost přerušení vaší knihovny, je minimalizovat počet balíčků, na kterých jste závislí.
@@ -76,13 +76,13 @@ Sdílené zdrojové balíčky jsou skvělé pro zahrnutí malých kousků funkc�
 
 ![Sdílený zdrojový projekt](./media/dependencies/shared-source-project.png "Sdílený zdrojový projekt")
 
-Sdílené zdrojové balíčky mají určitá omezení. Mohou být odkazovány pouze pomocí `PackageReference`, aby byly `packages.config` vyloučeny starší projekty. Sdílené zdrojové balíčky jsou také použitelné pouze v projektech se stejným typem jazyka. Z důvodu těchto omezení jsou sdílené zdrojové balíčky nejlépe používány pro sdílení funkcí v rámci open source projektu.
+Sdílené zdrojové balíčky mají určitá omezení. Mohou být odkazovány pouze pomocí `PackageReference` , aby `packages.config` byly vyloučeny starší projekty. Sdílené zdrojové balíčky jsou také použitelné pouze v projektech se stejným typem jazyka. Z důvodu těchto omezení jsou sdílené zdrojové balíčky nejlépe používány pro sdílení funkcí v rámci open source projektu.
 
 ✔️ Zvažte odkazování na sdílené zdrojové balíčky pro malé, interní funkce.
 
 ✔️ Zvažte vytvoření balíčku sdíleného zdrojového kódu, pokud poskytuje malé, interní funkce.
 
-✔️ odkazují na sdílené zdrojové balíčky pomocí `PrivateAssets="All"`.
+✔️ odkazují na sdílené zdrojové balíčky pomocí `PrivateAssets="All"` .
 
 > Toto nastavení říká NuGet, že balíček se má použít jenom v době vývoje a neměl by být vystavený jako veřejná závislost.
 
@@ -97,5 +97,5 @@ Sdílené zdrojové balíčky mají určitá omezení. Mohou být odkazovány po
 > Publikujte sdílené zdrojové balíčky do [místního kanálu nebo MyGet](./publish-nuget-package.md) , aby je bylo možné interně spotřebovat ve vašem projektu.
 
 >[!div class="step-by-step"]
->[Předchozí](nuget.md)
->[Další](sourcelink.md)
+>[Předchozí](nuget.md) 
+> [Další](sourcelink.md)

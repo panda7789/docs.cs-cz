@@ -6,18 +6,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: ad0b5717-3d32-41ad-a4d7-072c3e492b82
-ms.openlocfilehash: 994153ba93848ebb120f23bdf6a979462a65142d
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: 2ff8a8b85c3bfa594bd958a9a3688380885e0426
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78159478"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290302"
 ---
 # <a name="xml-schema-xsd-validation-with-xmlschemacollection"></a>Ověření schématu XML (XSD) s třídou XmlSchemaCollection
-Můžete použít <xref:System.Xml.Schema.XmlSchemaCollection> k ověření dokumentu XML proti schématům XML Schema Definition Language (XSD). <xref:System.Xml.Schema.XmlSchemaCollection> Zlepšuje výkon tím, že ukládá schémata do kolekce, takže nejsou načteny do paměti pokaždé, když dojde k ověření. Pokud schéma existuje v kolekci schémat, je použit `schemaLocation` atribut k vyhledání schématu v kolekci.  
+Můžete použít <xref:System.Xml.Schema.XmlSchemaCollection> k ověření dokumentu XML proti schématům XML Schema Definition Language (XSD). <xref:System.Xml.Schema.XmlSchemaCollection>Zlepšuje výkon tím, že ukládá schémata do kolekce, takže nejsou načteny do paměti pokaždé, když dojde k ověření. Pokud schéma existuje v kolekci schémat, `schemaLocation` je použit atribut k vyhledání schématu v kolekci.  
   
 > [!IMPORTANT]
-> <xref:System.Xml.Schema.XmlSchemaCollection> Třída je nyní zastaralá a byla nahrazena <xref:System.Xml.Schema.XmlSchemaSet> třídou. Další informace o <xref:System.Xml.Schema.XmlSchemaSet> třídě naleznete v tématu Třída [XmlSchemaSet pro kompilaci schématu](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md).  
+> <xref:System.Xml.Schema.XmlSchemaCollection>Třída je nyní zastaralá a byla nahrazena <xref:System.Xml.Schema.XmlSchemaSet> třídou. Další informace o <xref:System.Xml.Schema.XmlSchemaSet> třídě naleznete v tématu Třída [XmlSchemaSet pro kompilaci schématu](xmlschemaset-for-schema-compilation.md).  
   
  Následující příklad ukazuje kořenový prvek datového souboru.  
   
@@ -28,9 +28,9 @@ Můžete použít <xref:System.Xml.Schema.XmlSchemaCollection> k ověření doku
     targetNamespace="urn:bookstore-schema">  
 ```  
   
- V tomto příkladu je hodnota `targetNamespace` atributu `urn:bookstore-schema`, což je stejný obor názvů, který se používá při přidávání schématu do. <xref:System.Xml.Schema.XmlSchemaCollection>  
+ V tomto příkladu je hodnota `targetNamespace` atributu `urn:bookstore-schema` , což je stejný obor názvů, který se používá při přidávání schématu do <xref:System.Xml.Schema.XmlSchemaCollection> .  
   
- Následující příklad kódu přidá schéma XML do <xref:System.Xml.Schema.XmlSchemaCollection>.  
+ Následující příklad kódu přidá schéma XML do <xref:System.Xml.Schema.XmlSchemaCollection> .  
   
 ```vb  
 Dim xsc As New XmlSchemaCollection()  
@@ -50,7 +50,7 @@ vreader = new XmlValidatingReader (reader);
 vreader.Schemas.Add(xsc);  
 ```  
   
- `targetNamespace` Atribut je obecně používán při přidání `namespaceURI` vlastnosti do <xref:System.Xml.Schema.XmlSchemaCollection.Add%2A> metody pro <xref:System.Xml.Schema.XmlSchemaCollection>. Před přidáním schématu do nástroje lze zadat odkaz s hodnotou null <xref:System.Xml.Schema.XmlSchemaCollection>. Pro schémata bez oboru názvů by měl být použit prázdný řetězec (""). <xref:System.Xml.Schema.XmlSchemaCollection> Může obsahovat pouze jedno schéma bez oboru názvů.  
+ `targetNamespace`Atribut je obecně používán při přidání `namespaceURI` vlastnosti do <xref:System.Xml.Schema.XmlSchemaCollection.Add%2A> metody pro <xref:System.Xml.Schema.XmlSchemaCollection> . Před přidáním schématu do nástroje lze zadat odkaz s hodnotou null <xref:System.Xml.Schema.XmlSchemaCollection> . Pro schémata bez oboru názvů by měl být použit prázdný řetězec (""). <xref:System.Xml.Schema.XmlSchemaCollection>Může obsahovat pouze jedno schéma bez oboru názvů.  
   
  Následující příklad kódu přidá schéma XML, #. xsd, do <xref:System.Xml.Schema.XmlSchemaCollection> a ověří soubor. XML.  
   
@@ -147,7 +147,7 @@ namespace ValidationSample
 </xs:schema>  
 ```  
   
- Následující příklad kódu vytvoří objekt <xref:System.Xml.XmlValidatingReader> , který převezme <xref:System.Xml.XmlTextReader>. Vstupní soubor sample4. XML je ověřen proti schématu XML sample4. xsd.  
+ Následující příklad kódu vytvoří objekt <xref:System.Xml.XmlValidatingReader> , který převezme <xref:System.Xml.XmlTextReader> . Vstupní soubor sample4. XML je ověřen proti schématu XML sample4. xsd.  
   
 ```vb  
 Dim tr As New XmlTextReader("sample4.xml")  
@@ -211,4 +211,4 @@ while(vr.Read()) {
 - <xref:System.Xml.XmlParserContext>
 - <xref:System.Xml.XmlValidatingReader.ValidationEventHandler?displayProperty=nameWithType>
 - <xref:System.Xml.XmlValidatingReader.Schemas%2A?displayProperty=nameWithType>
-- [Kompilace schématu XmlSchemaCollection](../../../../docs/standard/data/xml/xmlschemacollection-schema-compilation.md)
+- [Kompilace schématu XmlSchemaCollection](xmlschemacollection-schema-compilation.md)

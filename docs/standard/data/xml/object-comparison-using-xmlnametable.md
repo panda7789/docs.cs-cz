@@ -6,15 +6,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8d94e041-d340-4ddf-9a2c-d7319e3f4f86
-ms.openlocfilehash: 63278f1aa1fe47377d2dae322a9d12338bbe45dd
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 0dd68e8c9beadf26f858a4a5100e2824bbbd4a19
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710528"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84292030"
 ---
 # <a name="object-comparison-using-xmlnametable"></a>Porovnání objektů pomocí XmlNameTable
-V **případě, že**jsou vytvořeny, mají vytvořenou tabulku názvů specificky pro tento dokument. Když je do dokumentu načten kód XML, nebo jsou vytvořeny nové prvky nebo atributy, názvy atributů a elementů jsou vloženy do **XmlNameTable**. Můžete také vytvořit **XmlDocument** pomocí existující **NameTable** z jiného dokumentu. Když jsou vytvořeny **XmlDocument** pomocí konstruktoru, který přebírá parametr **XmlNameTable** , dokument má přístup k názvům uzlů, oborům názvů a předponám, které jsou již uloženy v **XmlNameTable**. Bez ohledu na to, jak je tabulka názvů načtena s názvy, jakmile jsou názvy uloženy v tabulce, lze názvy porovnávat rychle pomocí porovnání objektů namísto porovnání řetězců. Řetězce lze do tabulky názvů přidat také pomocí <xref:System.Xml.NameTable.Add%2A>. Následující ukázka kódu ukazuje vytvoření tabulky názvů a přidání řetězcové sady **MyString** do tabulky. Poté je vytvořen kód **XmlDocument** pomocí této tabulky a názvy elementů a atributů v **souboru MyFile. XML** jsou přidány do existující tabulky názvů.  
+V **případě, že**jsou vytvořeny, mají vytvořenou tabulku názvů specificky pro tento dokument. Když je do dokumentu načten kód XML, nebo jsou vytvořeny nové prvky nebo atributy, názvy atributů a elementů jsou vloženy do **XmlNameTable**. Můžete také vytvořit **XmlDocument** pomocí existující **NameTable** z jiného dokumentu. Když jsou vytvořeny **XmlDocument** pomocí konstruktoru, který přebírá parametr **XmlNameTable** , dokument má přístup k názvům uzlů, oborům názvů a předponám, které jsou již uloženy v **XmlNameTable**. Bez ohledu na to, jak je tabulka názvů načtena s názvy, jakmile jsou názvy uloženy v tabulce, lze názvy porovnávat rychle pomocí porovnání objektů namísto porovnání řetězců. Řetězce lze do tabulky názvů přidat také pomocí <xref:System.Xml.NameTable.Add%2A> . Následující ukázka kódu ukazuje vytvoření tabulky názvů a přidání řetězcové sady **MyString** do tabulky. Poté je vytvořen kód **XmlDocument** pomocí této tabulky a názvy elementů a atributů v **souboru MyFile. XML** jsou přidány do existující tabulky názvů.  
   
 ```vb  
 Dim nt As New NameTable()  
@@ -53,4 +53,4 @@ if (((object)node1.Name) == ((object)node2.Name))
   
 ## <a name="see-also"></a>Viz také
 
-- [model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+- [model DOM (Document Object Model) dokumentu XML](xml-document-object-model-dom.md)

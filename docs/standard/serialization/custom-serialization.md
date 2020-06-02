@@ -18,12 +18,12 @@ helpviewer_keywords:
 - OnDeserializedAttribute class, custom serialization
 - OnSerializingAttribute class, custom serialization
 ms.assetid: 12ed422d-5280-49b8-9b71-a2ed129c0384
-ms.openlocfilehash: dcd5fa2777d2f1e351179570806a95eb835ad843
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 1532c4eeb09e7110d0f369ec47f342256889e576
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83375998"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289652"
 ---
 # <a name="custom-serialization"></a>Vlastní serializace
 Vlastní serializace je proces řízení serializace a deserializace typu. Řízením serializace je možné zajistit kompatibilitu serializace, což je schopnost serializace a deserializace mezi verzemi typu bez narušení základní funkce typu. Například v první verzi typu, může existovat pouze dvě pole. V příští verzi typu jsou přidány několik více polí. Ještě druhý verze aplikace, musí mít k serializaci a deserializaci oba typy. Níže uvedené části popisují, jak řídit serializace.
@@ -184,4 +184,4 @@ End Class
 
 - [Binární serializace](binary-serialization.md)
 - [Serializace XML a SOAP](xml-and-soap-serialization.md)
-- [Zabezpečení a serializace](../../../docs/framework/misc/security-and-serialization.md)
+- [Zabezpečení a serializace](../../framework/misc/security-and-serialization.md)

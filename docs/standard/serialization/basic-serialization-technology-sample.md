@@ -3,12 +3,12 @@ title: Ukázka technologie základní serializace
 description: Tato ukázka předvádí možnost CLR k serializaci grafu objektů v paměti do datového proudu. Tato ukázka může používat SoapFormatter nebo BinaryFormatter.
 ms.date: 03/30/2017
 ms.assetid: 9d824e16-08d1-4a36-bc7f-2388c1f75f34
-ms.openlocfilehash: fcbf790c3b3d48a0aeb27fd1ef6f75dcd7609ae0
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 3f2273e6afb3a72f9734444ffe92d30871fb762b
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83378431"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84276566"
 ---
 # <a name="basic-serialization-technology-sample"></a>Ukázka technologie základní serializace
 
@@ -100,9 +100,9 @@ Následující odrážky Krátce popište, třídy a technologie používané v 
 - <xref:System.Runtime.Serialization.IFormatter>
 - <xref:System.SerializableAttribute>
 - <xref:System.Xml.Serialization>
-- [Základní serializace](../../../docs/standard/serialization/basic-serialization.md)
-- [Binární serializace](../../../docs/standard/serialization/binary-serialization.md)
-- [Řízení serializace XML pomocí atributů](../../../docs/standard/serialization/controlling-xml-serialization-using-attributes.md)
-- [Představení serializace XML](../../../docs/standard/serialization/introducing-xml-serialization.md)
-- [Serializace](../../../docs/standard/serialization/index.md)
-- [Serializace XML a SOAP](../../../docs/standard/serialization/xml-and-soap-serialization.md)
+- [Základní serializace](basic-serialization.md)
+- [Binární serializace](binary-serialization.md)
+- [Řízení serializace XML pomocí atributů](controlling-xml-serialization-using-attributes.md)
+- [Představení serializace XML](introducing-xml-serialization.md)
+- [Serializace](index.md)
+- [Serializace XML a SOAP](xml-and-soap-serialization.md)

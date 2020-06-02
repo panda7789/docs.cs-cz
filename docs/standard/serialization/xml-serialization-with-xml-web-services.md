@@ -18,18 +18,18 @@ helpviewer_keywords:
 - literal XML serialization
 - serialization, attributes
 ms.assetid: a416192f-8102-458e-bc0a-0b8f3f784da9
-ms.openlocfilehash: d15bf884640707cd2bd113422c837480ad73a74f
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: b03c25f745df9aa4afe44075506983cb14ed3da7
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83377258"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288950"
 ---
 # <a name="xml-serialization-with-xml-web-services"></a>Serializace XML pomocí webových služeb XML
-Serializace XML je základní přenos mechanismus použít v architektuře XML webových služeb, prováděné <xref:System.Xml.Serialization.XmlSerializer> třídy. Chcete-li řídit XML vygenerované webovou službou XML, můžete použít atributy uvedené v obou [atributech, které řídí serializaci XML](../../../docs/standard/serialization/attributes-that-control-xml-serialization.md) a [atributy, které řídí kódované serializace protokolu SOAP](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md) na třídy, vracet hodnoty, parametry a pole souboru používaného k vytvoření webové služby XML (. asmx). Další informace o vytvoření webové služby XML naleznete v tématu [webové služby XML pomocí ASP.NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ba0z6a33(v=vs.100)).  
+Serializace XML je základní přenos mechanismus použít v architektuře XML webových služeb, prováděné <xref:System.Xml.Serialization.XmlSerializer> třídy. Chcete-li řídit XML vygenerované webovou službou XML, můžete použít atributy uvedené v obou [atributech, které řídí serializaci XML](attributes-that-control-xml-serialization.md) a [atributy, které řídí kódované serializace protokolu SOAP](attributes-that-control-encoded-soap-serialization.md) na třídy, vracet hodnoty, parametry a pole souboru používaného k vytvoření webové služby XML (. asmx). Další informace o vytvoření webové služby XML naleznete v tématu [webové služby XML pomocí ASP.NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ba0z6a33(v=vs.100)).  
   
 ## <a name="literal-and-encoded-styles"></a>Literál a kódovaného stylů  
- KÓD XML generovaný webovou službou XML lze naformátovat jedním ze dvou způsobů, buď literálů, nebo kódovaných, jak je vysvětleno v tématu [Přizpůsobení formátování zpráv SOAP](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dkwy2d72(v=vs.100)). Proto existují dvě sady atributů, které řídí serializace XML. Atributy uvedené v [atributech, které řídí serializace XML,](../../../docs/standard/serialization/attributes-that-control-xml-serialization.md) jsou navrženy pro řízení literálového stylu XML. Atributy uvedené v [atributech, které ovládají ovládací prvek kódované serializaci protokolu SOAP](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md) , mají kódovaný styl. Použitím selektivní tyto atributy, můžete přizpůsobit aplikace má být vrácena, obojím stylů. Kromě toho tyto atributy lze použít (v závislosti) má být vrácen hodnoty a parametry.  
+ KÓD XML generovaný webovou službou XML lze naformátovat jedním ze dvou způsobů, buď literálů, nebo kódovaných, jak je vysvětleno v tématu [Přizpůsobení formátování zpráv SOAP](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dkwy2d72(v=vs.100)). Proto existují dvě sady atributů, které řídí serializace XML. Atributy uvedené v [atributech, které řídí serializace XML,](attributes-that-control-xml-serialization.md) jsou navrženy pro řízení literálového stylu XML. Atributy uvedené v [atributech, které ovládají ovládací prvek kódované serializaci protokolu SOAP](attributes-that-control-encoded-soap-serialization.md) , mají kódovaný styl. Použitím selektivní tyto atributy, můžete přizpůsobit aplikace má být vrácena, obojím stylů. Kromě toho tyto atributy lze použít (v závislosti) má být vrácen hodnoty a parametry.  
   
 ### <a name="example-of-using-both-styles"></a>Příklad použití obou stylů  
  Při vytváření webové služby XML, můžete použít obě sady atributů pro metody. V následujícím příkladu kódu s názvem třídy `MyService` obsahuje dvě metody webové služby XML, `MyLiteralMethod` a `MyEncodedMethod`. Obě metody provádět má stejnou funkci: vrací instanci `Order` třídy. Ve `Order` třídě <xref:System.Xml.Serialization.XmlTypeAttribute> <xref:System.Xml.Serialization.SoapTypeAttribute> jsou oba atributy aplikovány na `OrderID` pole a oba atributy mají svou `ElementName` vlastnost nastavenou na jiné hodnoty.  

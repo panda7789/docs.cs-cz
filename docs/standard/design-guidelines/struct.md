@@ -11,21 +11,21 @@ helpviewer_keywords:
 - type design guidelines, structures
 - structures [.NET Framework], design guidelines
 ms.assetid: 1f48b2d8-608c-4be6-9ba4-d8f203ed9f9f
-ms.openlocfilehash: b6d06bc8a1e8535f1452af0726138abaebfd4951
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: c6ac53014e048da3a90dd7b8e961176f61e90355
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76743615"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290808"
 ---
 # <a name="struct-design"></a>Návrh struktury
-Typ hodnoty pro obecné účely se nejčastěji označuje jako struktura a její C# klíčové slovo. V této části najdete pokyny pro obecný návrh struktury.
+Typ hodnoty pro obecné účely se nejčastěji označuje jako struktura, její klíčové slovo jazyka C#. V této části najdete pokyny pro obecný návrh struktury.
 
- ❌ neposkytují konstruktor bez parametrů pro strukturu.
+ ❌Neposkytněte konstruktor bez parametrů pro strukturu.
 
- Podle těchto pokynů umožňuje vytvořit pole struktur bez nutnosti spuštění konstruktoru pro každou položku pole. Všimněte si C# , že neumožňuje strukturám mít konstruktory bez parametrů.
+ Podle těchto pokynů umožňuje vytvořit pole struktur bez nutnosti spuštění konstruktoru pro každou položku pole. Všimněte si, že jazyk C# neumožňuje strukturám konstruktory bez parametrů.
 
- ❌ nedefinovat proměnlivé hodnoty typů.
+ ❌Nedefinujte proměnlivé hodnoty typů.
 
  Proměnlivé typy hodnot mají několik problémů. Například pokud vlastnost getter vrátí typ hodnoty, volající obdrží kopii. Vzhledem k tomu, že kopie je vytvořena implicitně, vývojáři nemusí vědět, že se jedná o kopii, a nikoli původní hodnotu. Také některé jazyky (například dynamické jazyky) mají problémy s použitím proměnlivých hodnotových typů, protože i místní proměnné, pokud jsou převedené, způsobují vytvoření kopie.
 
@@ -33,11 +33,11 @@ Typ hodnoty pro obecné účely se nejčastěji označuje jako struktura a její
 
  To brání nechtěnému vytvoření neplatných instancí při vytvoření pole struktury.
 
- ✔️ implementovat <xref:System.IEquatable%601> hodnotových typů.
+ ✔️ PROVÉST implementaci <xref:System.IEquatable%601> na typech hodnot.
 
- Metoda <xref:System.Object.Equals%2A?displayProperty=nameWithType> na hodnotových typech způsobuje zabalení a její výchozí implementace není velmi efektivní, protože používá reflexi. <xref:System.IEquatable%601.Equals%2A> může mít mnohem lepší výkon a může být implementováno tak, že nebude způsobovat zabalení.
+ <xref:System.Object.Equals%2A?displayProperty=nameWithType>Metoda na hodnotových typech způsobuje zabalení a její výchozí implementace není velmi efektivní, protože používá reflexi. <xref:System.IEquatable%601.Equals%2A>může mít mnohem lepší výkon a může být implementováno tak, že nebude způsobovat zabalení.
 
- ❌ explicitně nešíří <xref:System.ValueType>. Většinou tyto jazyky tuto skutečnost znemožňují.
+ ❌Nepoužívejte explicitně <xref:System.ValueType> . Většinou tyto jazyky tuto skutečnost znemožňují.
 
  Obecně mohou být struktury velmi užitečné, ale měly by být použity pouze pro malé, jednoduché, neměnné hodnoty, které nebudou často zabaleny.
 
@@ -47,6 +47,6 @@ Typ hodnoty pro obecné účely se nejčastěji označuje jako struktura a její
 
 ## <a name="see-also"></a>Viz také
 
-- [Pokyny k návrhu typu](../../../docs/standard/design-guidelines/type.md)
-- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)
-- [Volba mezi třídou a strukturou](../../../docs/standard/design-guidelines/choosing-between-class-and-struct.md)
+- [Pokyny pro návrh typů](type.md)
+- [Pokyny k návrhu architektury](index.md)
+- [Volba mezi třídou a strukturou](choosing-between-class-and-struct.md)

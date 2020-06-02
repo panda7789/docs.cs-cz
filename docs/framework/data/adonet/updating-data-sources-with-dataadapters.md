@@ -1,72 +1,73 @@
 ---
 title: Aktualizace zdrojů dat pomocí adaptérů dat
+description: Přečtěte si, jak metoda Update funkce DataAdapter vyřeší změny z datové sady zpátky na zdroj dat v aplikacích ADO.NET.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: d1bd9a8c-0e29-40e3-bda8-d89176b72fb1
-ms.openlocfilehash: 4a6e22352a309f9d624c6922abc531cb31a5baf1
-ms.sourcegitcommit: 878ca7550b653114c3968ef8906da2b3e60e3c7a
+ms.openlocfilehash: e2348a3a89aa1c28856bfc21aaa25f2c8327aac7
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71736689"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286181"
 ---
 # <a name="updating-data-sources-with-dataadapters"></a>Aktualizace zdrojů dat pomocí adaptérů dat
 
-Metoda `Update` <xref:System.Data.Common.DataAdapter> je volána k vyřešení změn z <xref:System.Data.DataSet> zpět do zdroje dat. Metoda `Update`, jako je například metoda `Fill`, přijímá jako argumenty instanci `DataSet`a nepovinný <xref:System.Data.DataTable> objekt nebo `DataTable` název. Instance `DataSet` je `DataSet` obsahující změny, které byly provedeny, a `DataTable` identifikuje tabulku, ze které se mají změny načíst. Pokud není zadán žádný `DataTable`, použije se první `DataTable` v `DataSet`.
+`Update`Metoda <xref:System.Data.Common.DataAdapter> je volána k vyřešení změn z <xref:System.Data.DataSet> zpátky na zdroj dat. `Update`Metoda, jako je například `Fill` metoda, přijímá jako argumenty instanci a, což `DataSet` je nepovinný <xref:System.Data.DataTable> objekt nebo `DataTable` název. `DataSet`Instance je `DataSet` , která obsahuje změny, které byly provedeny, a `DataTable` identifikuje tabulku, ze které se mají změny načíst. Pokud `DataTable` není zadán, použije se první `DataTable` v `DataSet` .
 
-Když zavoláte metodu `Update`, `DataAdapter` analyzuje provedené změny a spustí příslušný příkaz (INSERT, UPDATE nebo DELETE). Když `DataAdapter` narazí na změnu v <xref:System.Data.DataRow>, ke zpracování změny se použije <xref:System.Data.Common.DbDataAdapter.InsertCommand%2A>, <xref:System.Data.Common.DbDataAdapter.UpdateCommand%2A>nebo <xref:System.Data.Common.DbDataAdapter.DeleteCommand%2A>. Díky tomu můžete maximalizovat výkon aplikace ADO.NET zadáním syntaxe příkazu v době návrhu a pokud je to možné, pomocí uložených procedur. Před voláním `Update`je nutné explicitně nastavit příkazy. Pokud je zavolána `Update` a příslušný příkaz pro konkrétní aktualizaci neexistuje (například není `DeleteCommand` pro odstraněné řádky), je vyvolána výjimka.
-
-> [!NOTE]
-> Pokud používáte SQL Server uložené procedury k úpravám nebo odstraňování dat pomocí `DataAdapter`, ujistěte se, že v definici uložené procedury nepoužíváte nastavení počet. To způsobí, že počet ovlivněných řádků vrátil hodnotu nula, kterou `DataAdapter` interpretuje jako konflikt souběžnosti. V tomto případě bude vyvolána <xref:System.Data.DBConcurrencyException>.
-
-Parametry příkazu lze použít k určení vstupních a výstupních hodnot příkazu SQL nebo uložené procedury pro každý upravený řádek v `DataSet`. Další informace naleznete v tématu [parametry DataAdapter](dataadapter-parameters.md).
+Když zavoláte `Update` metodu, `DataAdapter` analyzuje provedené změny a provede příslušný příkaz (INSERT, Update nebo Delete). Když `DataAdapter` dojde ke změně <xref:System.Data.DataRow> , používá, <xref:System.Data.Common.DbDataAdapter.InsertCommand%2A> <xref:System.Data.Common.DbDataAdapter.UpdateCommand%2A> nebo <xref:System.Data.Common.DbDataAdapter.DeleteCommand%2A> ke zpracování změny. Díky tomu můžete maximalizovat výkon aplikace ADO.NET zadáním syntaxe příkazu v době návrhu a pokud je to možné, pomocí uložených procedur. Před voláním je nutné explicitně nastavit příkazy `Update` . Pokud `Update` je volána a příslušný příkaz pro konkrétní aktualizaci neexistuje (například ne `DeleteCommand` pro odstraněné řádky), je vyvolána výjimka.
 
 > [!NOTE]
-> Je důležité pochopit rozdíl mezi odstraněním řádku v <xref:System.Data.DataTable> a odebráním řádku. Když zavoláte metodu `Remove` nebo `RemoveAt`, řádek se okamžitě odebere. Pokud předáte `DataTable` nebo `DataSet` `DataAdapter` a zavoláte `Update`, nebudou ovlivněny žádné odpovídající řádky ve zdroji dat back-endu. Když použijete metodu `Delete`, řádek zůstane v `DataTable` a je označený k odstranění. Pokud předáte `DataTable` nebo `DataSet` `DataAdapter` a volání `Update`, je odstraněn odpovídající řádek ve zdroji dat back-endu.
+> Pokud používáte SQL Server uložené procedury k úpravám nebo odstraňování dat pomocí, ujistěte se `DataAdapter` , že v definici uložené procedury nepoužijete nastavení počet. To způsobí, že počet ovlivněných řádků vrátil hodnotu nula, což `DataAdapter` interpretuje jako konflikt souběžnosti. V tomto případě <xref:System.Data.DBConcurrencyException> bude vyvolána výjimka.
 
-Pokud se vaše `DataTable` mapuje na nebo je vygenerována z jedné tabulky databáze, můžete využít výhod objektu <xref:System.Data.Common.DbCommandBuilder> k automatickému vygenerování `DeleteCommand`ch, `InsertCommand`a `UpdateCommand` objektů pro `DataAdapter`. Další informace najdete v tématu [generování příkazů pomocí CommandBuilders](generating-commands-with-commandbuilders.md).
+Parametry příkazu lze použít k určení vstupních a výstupních hodnot příkazu SQL nebo uložené procedury pro každý upravený řádek v `DataSet` . Další informace naleznete v tématu [parametry DataAdapter](dataadapter-parameters.md).
+
+> [!NOTE]
+> Je důležité pochopit rozdíl mezi odstraněním řádku v <xref:System.Data.DataTable> a odebráním řádku. Při volání `Remove` metody nebo se `RemoveAt` řádek odebere okamžitě. Pokud pak předáte `DataTable` nebo `DataSet` k `DataAdapter` volání a, nebudou ovlivněny žádné odpovídající řádky ve zdroji dat back-end `Update` . Když použijete `Delete` metodu, řádek zůstane v `DataTable` a je označený k odstranění. Pokud předáte `DataTable` `DataSet` `DataAdapter` volání metody a a a `Update` , je odstraněn odpovídající řádek ve zdroji dat back-endu.
+
+Pokud vaše `DataTable` mapy nebo jsou vygenerovány z jedné tabulky databáze, můžete využít výhod <xref:System.Data.Common.DbCommandBuilder> objektu pro automatické generování `DeleteCommand` `InsertCommand` objektů, a `UpdateCommand` pro `DataAdapter` . Další informace najdete v tématu [generování příkazů pomocí CommandBuilders](generating-commands-with-commandbuilders.md).
 
 ## <a name="using-updatedrowsource-to-map-values-to-a-dataset"></a>Mapování hodnot na datovou sadu pomocí UpdatedRowSource
 
-Můžete určit, jak budou hodnoty vrácené ze zdroje dat mapovány zpět na `DataTable` po volání metody aktualizace `DataAdapter`pomocí vlastnosti <xref:System.Data.Common.DbCommand.UpdatedRowSource%2A> objektu <xref:System.Data.Common.DbCommand>. Nastavením vlastnosti `UpdatedRowSource` na jednu z hodnot výčtu <xref:System.Data.UpdateRowSource> můžete určit, zda budou výstupní parametry vrácené příkazy `DataAdapter` ignorovány nebo aplikovány na změněný řádek v `DataSet`. Můžete také určit, zda byl první vrácený řádek (pokud existuje) použit pro změněný řádek v `DataTable`.
+Můžete určit, jak budou hodnoty vrácené ze zdroje dat mapovány zpět na `DataTable` následující volání metody aktualizace pro `DataAdapter` , pomocí <xref:System.Data.Common.DbCommand.UpdatedRowSource%2A> vlastnosti <xref:System.Data.Common.DbCommand> objektu. Nastavením `UpdatedRowSource` vlastnosti na jednu z <xref:System.Data.UpdateRowSource> hodnot výčtu můžete určit, zda budou výstupní parametry vracené `DataAdapter` příkazy ignorovány nebo aplikovány na změněný řádek v `DataSet` . Můžete také určit, zda byl první vrácený řádek (pokud existuje) použit pro změněný řádek v `DataTable` .
 
-Následující tabulka popisuje různé hodnoty výčtu `UpdateRowSource` a způsob, jakým ovlivňují chování příkazu používaného s `DataAdapter`.
+V následující tabulce jsou popsány různé hodnoty `UpdateRowSource` výčtu a jejich vliv na chování příkazu používaného s `DataAdapter` .
 
 |Výčet UpdatedRowSource|Popis|
 |----------------------------------|-----------------|
-|<xref:System.Data.UpdateRowSource.Both>|Výstupní parametry a první řádek vrácené sady výsledků můžou být namapovány na změněný řádek v `DataSet`.|
-|<xref:System.Data.UpdateRowSource.FirstReturnedRecord>|Pouze data v prvním řádku vrácené sady výsledků můžou být namapována na změněný řádek v `DataSet`.|
+|<xref:System.Data.UpdateRowSource.Both>|Výstupní parametry a první řádek vrácené sady výsledků můžou být namapovány na změněný řádek v `DataSet` .|
+|<xref:System.Data.UpdateRowSource.FirstReturnedRecord>|Pouze data v prvním řádku vrácené sady výsledků dotazu mohou být mapována na změněný řádek v `DataSet` .|
 |<xref:System.Data.UpdateRowSource.None>|Všechny výstupní parametry nebo řádky vracené sady výsledků jsou ignorovány.|
-|<xref:System.Data.UpdateRowSource.OutputParameters>|Na změněný řádek v `DataSet`mohou být mapovány pouze výstupní parametry.|
+|<xref:System.Data.UpdateRowSource.OutputParameters>|Pouze výstupní parametry mohou být mapovány na změněný řádek v `DataSet` .|
 
-Metoda `Update` vyřeší změny zpět do zdroje dat; ostatní klienti však mohli data ze zdroje dat od posledního vyplňování `DataSet`upravovat. Chcete-li aktualizovat `DataSet` aktuálními daty, použijte metodu `DataAdapter` a `Fill`. Do tabulky budou přidány nové řádky a aktualizované informace budou zahrnuty do stávajících řádků. Metoda `Fill` určuje, zda bude přidán nový řádek, nebo bude aktualizován existující řádek tím, že prozkoumá hodnoty primárního klíče řádků v `DataSet` a řádky vracené `SelectCommand`. Pokud metoda `Fill` narazí na hodnotu primárního klíče pro řádek v `DataSet`, který se shoduje s hodnotou primárního klíče z řádku v výsledkůch vrácených `SelectCommand`, aktualizuje stávající řádek informacemi z řádku vráceného `SelectCommand` a nastaví <xref:System.Data.DataRow.RowState%2A> stávajícího řádku na `Unchanged`. Pokud řádek vrácený `SelectCommand` má hodnotu primárního klíče, která neodpovídá žádné hodnotě primárního klíče řádků v `DataSet`, metoda `Fill` přidá nový řádek s `RowState` `Unchanged`.
-
-> [!NOTE]
-> Pokud `SelectCommand` vrátí výsledky VNĚJŠÍho spojení, `DataAdapter` nenastaví `PrimaryKey` hodnotu pro výsledný `DataTable`. Aby bylo zajištěno, že duplicitní řádky budou správně vyřešeny, je nutné definovat `PrimaryKey` sami. Další informace najdete v tématu [Definování primárních klíčů](./dataset-datatable-dataview/defining-primary-keys.md).
-
-Chcete-li zpracovat výjimky, které mohou nastat při volání metody `Update`, můžete použít událost `RowUpdated` k reakci na chyby aktualizace řádků, jak se vyskytují (viz [zpracování událostí DataAdapter](handling-dataadapter-events.md)), nebo můžete nastavit `DataAdapter.ContinueUpdateOnError` na `true` před voláním `Update`a reagovat na informace o chybách uložené ve vlastnosti `RowError` určitého řádku po dokončení aktualizace (viz [informace o chybě řádku](./dataset-datatable-dataview/row-error-information.md)).
+`Update`Metoda vyřeší vaše změny zpátky na zdroj dat. ostatní klienti však mohou data ze zdroje dat od posledního vyplňování upravovat `DataSet` . Chcete-li aktualizovat `DataSet` aktuální data, použijte `DataAdapter` metodu a `Fill` . Do tabulky budou přidány nové řádky a aktualizované informace budou zahrnuty do stávajících řádků. `Fill`Metoda určuje, zda bude přidán nový řádek, nebo bude aktualizován existující řádek tím, že prozkoumá hodnoty primárního klíče řádků v řádcích `DataSet` a řádky vrácené `SelectCommand` . Pokud `Fill` Metoda narazí na hodnotu primárního klíče pro řádek v `DataSet` , který se shoduje s hodnotou primárního klíče z řádku v výsledkůch vrácených `SelectCommand` , aktualizuje stávající řádek informacemi z řádku vráceného `SelectCommand` a nastaví <xref:System.Data.DataRow.RowState%2A> existující řádek na `Unchanged` . Pokud řádek vrácený `SelectCommand` hodnotou má primární klíč, který se neshoduje s žádnou z hodnot primárního klíče v řádcích v `DataSet` , `Fill` Metoda přidá nový řádek s hodnotou `RowState` `Unchanged` .
 
 > [!NOTE]
-> Volání `AcceptChanges` na `DataSet`, `DataTable`nebo `DataRow` způsobí, že všechny `Original` hodnoty pro `DataRow` budou přepsány hodnotami `Current` pro `DataRow`. Pokud se hodnoty polí, které identifikují řádek jako jedinečné, změnily po volání `AcceptChanges` hodnoty `Original` již nebudou odpovídat hodnotám ve zdroji dat. `AcceptChanges` se při volání metody aktualizace `DataAdapter`nazývá automaticky pro každý řádek. Původní hodnoty můžete zachovat během volání metody Update tak, že nejprve nastavíte vlastnost `AcceptChangesDuringUpdate` `DataAdapter` na hodnotu false nebo vytvoříte obslužnou rutinu události pro událost `RowUpdated` a nastavíte <xref:System.Data.Common.RowUpdatedEventArgs.Status%2A> na <xref:System.Data.UpdateStatus.SkipCurrentRow>. Další informace najdete v tématech [sloučení obsahu datových sad](./dataset-datatable-dataview/merging-dataset-contents.md) a [zpracování událostí DataAdapter](handling-dataadapter-events.md).
+> Vrátí-li `SelectCommand` funkce výsledky vnějšího spojení, nebude `DataAdapter` `PrimaryKey` hodnota pro výsledný výsledek nastavena `DataTable` . Aby `PrimaryKey` bylo zajištěno, že duplicitní řádky budou správně vyřešeny, je nutné definovat sami sebe. Další informace najdete v tématu [Definování primárních klíčů](./dataset-datatable-dataview/defining-primary-keys.md).
+
+Chcete-li zpracovat výjimky, které mohou nastat při volání `Update` metody, můžete použít `RowUpdated` událost k reakci na chyby aktualizace řádků při jejich výskytu ( [Viz zpracování událostí DataAdapter](handling-dataadapter-events.md)), nebo můžete nastavit `DataAdapter.ContinueUpdateOnError` na hodnotu `true` před voláním `Update` a reagovat na informace o chybě uložené v `RowError` vlastnosti určitého řádku po dokončení aktualizace (viz [informace o chybě řádku](./dataset-datatable-dataview/row-error-information.md)).
+
+> [!NOTE]
+> Volání `AcceptChanges` na `DataSet` , `DataTable` , nebo způsobí, že `DataRow` všechny `Original` hodnoty pro a budou `DataRow` přepsány `Current` hodnotami pro `DataRow` . Pokud byly změněny hodnoty polí, které identifikují řádek jako jedinečné, potom po volání `AcceptChanges` `Original` hodnoty již nebudou hodnoty ve zdroji dat odpovídat. `AcceptChanges`je volána automaticky pro každý řádek při volání metody aktualizace pro `DataAdapter` . Původní hodnoty můžete zachovat během volání metody aktualizace – nejprve nastavte `AcceptChangesDuringUpdate` vlastnost na `DataAdapter` hodnotu false nebo vytvořením obslužné rutiny události pro `RowUpdated` událost a nastavením na <xref:System.Data.Common.RowUpdatedEventArgs.Status%2A> <xref:System.Data.UpdateStatus.SkipCurrentRow> . Další informace najdete v tématech [sloučení obsahu datových sad](./dataset-datatable-dataview/merging-dataset-contents.md) a [zpracování událostí DataAdapter](handling-dataadapter-events.md).
 
 ## <a name="example"></a>Příklad
 
-Následující příklady ukazují, jak provést aktualizace upravených řádků explicitním nastavením `UpdateCommand` `DataAdapter` a voláním metody `Update`. Všimněte si, že parametr zadaný v klauzuli WHERE příkazu UPDATE je nastaven na použití `Original` hodnoty `SourceColumn`. To je důležité, protože hodnota `Current` mohla být upravena a nemusí odpovídat hodnotě ve zdroji dat. Hodnota `Original` je hodnota, která byla použita k naplnění `DataTable` ze zdroje dat.
+Následující příklady ukazují, jak provést aktualizace upravených řádků explicitně nastavením typu `UpdateCommand` `DataAdapter` a a voláním `Update` metody. Všimněte si, že parametr zadaný v klauzuli WHERE příkazu UPDATE je nastaven na použití `Original` hodnoty `SourceColumn` . To je důležité, protože `Current` hodnota je možná upravená a nemusí odpovídat hodnotě ve zdroji dat. `Original`Hodnota je hodnota, která byla použita k naplnění `DataTable` zdroje dat.
 
 [!code-csharp[DataWorks SqlClient.DataAdapterUpdate#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlClient.DataAdapterUpdate/CS/source.cs#1)]
 [!code-vb[DataWorks SqlClient.DataAdapterUpdate#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlClient.DataAdapterUpdate/VB/source.vb#1)]
 
 ## <a name="autoincrement-columns"></a>Sloupce AutoIncrement
 
-Pokud tabulky ze zdroje dat mají automatické přírůstkové sloupce, sloupce můžete vyplnit v `DataSet` buď vrácením hodnoty automatického zvýšení jako výstupní parametr uložené procedury a mapováním na sloupec v tabulce, vrácením hodnoty AutoIncrement v prvním řádku výsledné sady vrácené uloženou procedurou nebo příkazem jazyka SQL, nebo pomocí `RowUpdated` události `DataAdapter` k provedení dalšího příkazu SELECT. Další informace a příklad najdete v tématu [načtení hodnot identity nebo Autonumber Values](retrieving-identity-or-autonumber-values.md).
+Pokud tabulky ze zdroje dat mají automatické přírůstkové sloupce, sloupce můžete vyplnit `DataSet` buď tak, že vrátíte hodnotu automatického zvýšení jako výstupní parametr uložené procedury a mapování na sloupec v tabulce, vrácením hodnoty AutoIncrement v prvním řádku výsledné sady vrácené uloženou procedurou nebo příkazem jazyka SQL nebo pomocí `RowUpdated` události `DataAdapter` ke spuštění dalšího příkazu SELECT. Další informace a příklad najdete v tématu [načtení hodnot identity nebo Autonumber Values](retrieving-identity-or-autonumber-values.md).
 
 ## <a name="ordering-of-inserts-updates-and-deletes"></a>Řazení vložení, aktualizací a odstranění
 
-V mnoha případech je důležité pořadí, ve kterém jsou změny provedené prostřednictvím `DataSet` odesílány zdroji dat. Například pokud je hodnota primárního klíče pro existující řádek aktualizována a nový řádek byl přidán s novou hodnotou primárního klíče jako cizí klíč, je důležité zpracovat aktualizaci před vložením.
+V mnoha případech je důležité pořadí, ve kterém se změny provedou při `DataSet` odeslání do zdroje dat. Například pokud je hodnota primárního klíče pro existující řádek aktualizována a nový řádek byl přidán s novou hodnotou primárního klíče jako cizí klíč, je důležité zpracovat aktualizaci před vložením.
 
-Metodu `Select` `DataTable` můžete použít k vrácení pole `DataRow`, které odkazuje pouze na řádky s konkrétním `RowState`. Pak můžete předávat vrácené `DataRow` pole do `Update` metody `DataAdapter` pro zpracování upravených řádků. Zadáním podmnožiny řádků, které se mají aktualizovat, můžete řídit pořadí, ve kterém se zpracují vložení, aktualizace a odstranění.
+Můžete použít `Select` metodu `DataTable` pro vrácení `DataRow` pole, které odkazuje pouze na řádky s určitým objektem `RowState` . Pak můžete předat vrácené `DataRow` pole `Update` metodě `DataAdapter` pro zpracování změněných řádků. Zadáním podmnožiny řádků, které se mají aktualizovat, můžete řídit pořadí, ve kterém se zpracují vložení, aktualizace a odstranění.
 
 ## <a name="example"></a>Příklad
 
@@ -180,7 +181,7 @@ ALTER TABLE [dbo].[Course] CHECK CONSTRAINT [FK_Course_Department]
 GO
 ```
 
-C#a Visual Basic projekty s touto ukázkou kódu najdete v [ukázkách kódu pro vývojáře](https://code.msdn.microsoft.com/site/search?f%5B0%5D.Type=SearchText&f%5B0%5D.Value=How%20to%20use%20DataAdapter%20to%20retrieve%20and%20update%20data&f%5B1%5D).
+Projekty C# a Visual Basic s touto ukázkou kódu najdete v [ukázkách kódu pro vývojáře](https://code.msdn.microsoft.com/site/search?f%5B0%5D.Type=SearchText&f%5B0%5D.Value=How%20to%20use%20DataAdapter%20to%20retrieve%20and%20update%20data&f%5B1%5D).
 
 ```csharp
 using System;
@@ -376,7 +377,7 @@ class Program {
 }
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Adaptéry a čtečky dat](dataadapters-and-datareaders.md)
 - [Stavy řádků a verze řádků](./dataset-datatable-dataview/row-states-and-row-versions.md)

@@ -18,12 +18,12 @@ helpviewer_keywords:
 - comparing strings
 - strings [.NET Framework],comparing
 ms.assetid: b9f0bf53-e2de-4116-8ce9-d4f91a1df4f7
-ms.openlocfilehash: 0fb7ec8d9de8fae7a0443984511e538d38d93c7a
-ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
+ms.openlocfilehash: 28c1397c71debeed181acb2c1acb01b0f8cee7c9
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83441003"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289362"
 ---
 # <a name="best-practices-for-using-strings-in-net"></a>Osvědčené postupy pro používání řetězců v .NET
 
@@ -199,7 +199,7 @@ V rovnováze má neutrální jazyková verze velmi málo vlastností, které jso
 
 Následující tabulka popisuje mapování z kontextu sémantického řetězce na <xref:System.StringComparison> člen výčtu:
 
-|Data|Chování|Odpovídající System. StringComparison<br /><br /> value|
+|Data|Chování|Odpovídající System. StringComparison<br /><br /> hodnota|
 |----------|--------------|-----------------------------------------------------|
 |Interní identifikátory s rozlišováním velkých a malých písmen.<br /><br /> Identifikátory citlivé na velká a malá písmena ve standardech, jako je XML a HTTP.<br /><br /> Nastavení související se zabezpečením velkých a malých písmen.|Nelingvistické identifikátory, kde se přesně shodují bajty.|<xref:System.StringComparison.Ordinal>|
 |Interní identifikátory bez rozlišení velkých a malých písmen.<br /><br /> Identifikátory bez rozlišení velkých a malých písmen ve standardech, jako je XML a HTTP.<br /><br /> Cesty k souborům.<br /><br /> Klíče a hodnoty registru.<br /><br /> Proměnné prostředí.<br /><br /> Identifikátory prostředků (například názvy popisovačů).<br /><br /> Nastavení týkající se zabezpečení nerozlišuje velká a malá písmena.|Nelingvistické identifikátory, kde Case není důležité; hlavně data uložená ve většině systémových služeb Windows.|<xref:System.StringComparison.OrdinalIgnoreCase>|
@@ -309,7 +309,7 @@ Následující příklad vytvoří instanci <xref:System.Collections.Hashtable> 
 Když zobrazíte data, která nejsou řetězcová, například čísla a data a časy, naformátujete je pomocí kulturního nastavení uživatele. Ve výchozím nastavení následující všechny používají aktuální jazykovou verzi vlákna při formátování operací:
 
 - Interpolované řetězce podporované kompilátory [C#](../../csharp/language-reference/tokens/interpolated.md) a [Visual Basic](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md) .
-- Operace zřetězení řetězců, které používají operátory zřetězení v [jazyce C#](../../csharp/language-reference/operators/addition-operator.md#string-concatenation) nebo [Visual Basic](../../visual-basic/programming-guide/language-features/operators-and-expressions/concatenation-operators.md ) nebo které volají <xref:System.String.Concat%2A?displayProperty=nameWithType> metodu přímo
+- Operace zřetězení řetězců, které používají operátory zřetězení v [jazyce C#](../../csharp/language-reference/operators/addition-operator.md#string-concatenation) nebo [Visual Basic](../../visual-basic/programming-guide/language-features/operators-and-expressions/concatenation-operators.md) nebo které volají <xref:System.String.Concat%2A?displayProperty=nameWithType> metodu přímo
 - <xref:System.String.Format%2A?displayProperty=nameWithType>Metoda.
 - `ToString`Metody číselné typy a typy data a času.
 

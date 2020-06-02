@@ -3,12 +3,12 @@ title: Správa oborů názvů v dokumentu XML
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 682643fc-b848-4e42-8c0d-50deeaeb5f2a
-ms.openlocfilehash: 1b3e57c0a8a37574a92d23cf1d623301cc54b984
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: b60e773183bd008c99022946a2ec53932234fe23
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82796149"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289145"
 ---
 # <a name="managing-namespaces-in-an-xml-document"></a>Správa oborů názvů v dokumentu XML
 Obory názvů XML přiřadí prvky a názvy atributů v dokumentu XML s vlastními a předdefinovanými identifikátory URI. Chcete-li vytvořit tato přidružení, definujete předpony pro identifikátor URI oboru názvů a použijete tyto předpony pro kvalifikaci názvů elementů a atributů v datech XML. Obory názvů zabraňují kolizím názvů prvků a atributů a umožňují, aby elementy a atributy stejného názvu byly zpracovány a ověřovány jinak.  
@@ -19,9 +19,9 @@ Obory názvů XML přiřadí prvky a názvy atributů v dokumentu XML s vlastní
   
  `xmlns:<name>=<"uri">`  
   
- kde `<name>` je předpona oboru názvů `<"uri">` a je identifikátor URI, který identifikuje obor názvů. Po deklaraci předpony ji můžete použít k získání prvků a atributů v dokumentu XML a jejich přidružení k identifikátoru URI oboru názvů. Vzhledem k tomu, že předpona oboru názvů se používá v celém dokumentu, měla by být krátká délka.  
+ kde `<name>` je předpona oboru názvů a `<"uri">` je identifikátor URI, který identifikuje obor názvů. Po deklaraci předpony ji můžete použít k získání prvků a atributů v dokumentu XML a jejich přidružení k identifikátoru URI oboru názvů. Vzhledem k tomu, že předpona oboru názvů se používá v celém dokumentu, měla by být krátká délka.  
   
- Tento příklad definuje dva `BOOK` prvky. První prvek je kvalifikován předponou `mybook`, a druhý prvek je kvalifikován předponou,. `bb` Každá předpona je přidružená k jinému identifikátoru URI oboru názvů:  
+ Tento příklad definuje dva `BOOK` prvky. První prvek je kvalifikován předponou, `mybook` a druhý prvek je kvalifikován předponou, `bb` . Každá předpona je přidružená k jinému identifikátoru URI oboru názvů:  
   
 ```xml  
 <mybook:BOOK xmlns:mybook="http://www.contoso.com/books.dtd">  
@@ -29,11 +29,11 @@ Obory názvů XML přiřadí prvky a názvy atributů v dokumentu XML s vlastní
 </mybook>
 ```  
   
- Chcete-li označit, že element je součástí konkrétního oboru názvů, přidejte do něj předponu oboru názvů. Například pokud `Author` prvek patří do `mybook` oboru názvů, je deklarován jako. `<mybook:Author>`  
+ Chcete-li označit, že element je součástí konkrétního oboru názvů, přidejte do něj předponu oboru názvů. Například pokud `Author` prvek patří do `mybook` oboru názvů, je deklarován jako `<mybook:Author>` .  
   
 <a name="scope"></a>
 ## <a name="declaration-scope"></a>Rozsah deklarace  
- Obor názvů je platný od svého bodu deklarace až do konce elementu, ve kterém byl deklarován. V tomto příkladu se obor názvů definovaný v `BOOK` elementu nevztahuje na prvky mimo `BOOK` prvek, jako je `Publisher` například element:  
+ Obor názvů je platný od svého bodu deklarace až do konce elementu, ve kterém byl deklarován. V tomto příkladu se obor názvů definovaný v `BOOK` elementu nevztahuje na prvky mimo `BOOK` prvek, jako je například `Publisher` element:  
   
 ```xml  
 <Author>Joe Smith</Author>  
@@ -59,7 +59,7 @@ Obory názvů XML přiřadí prvky a názvy atributů v dokumentu XML s vlastní
 ```  
   
 ## <a name="managing-namespaces"></a>Správa oborů názvů  
- <xref:System.Xml.XmlNamespaceManager> Třída ukládá kolekci identifikátorů URI oboru názvů a jejich předpon a umožňuje vyhledat, přidat a odebrat obory názvů z této kolekce. V některých kontextech je tato třída potřebná pro lepší výkon zpracování XML. Například <xref:System.Xml.Xsl.XsltContext> třída používá <xref:System.Xml.XmlNamespaceManager> pro podporu XPath.  
+ <xref:System.Xml.XmlNamespaceManager>Třída ukládá kolekci identifikátorů URI oboru názvů a jejich předpon a umožňuje vyhledat, přidat a odebrat obory názvů z této kolekce. V některých kontextech je tato třída potřebná pro lepší výkon zpracování XML. Například <xref:System.Xml.Xsl.XsltContext> Třída používá <xref:System.Xml.XmlNamespaceManager> pro podporu XPath.  
   
  Správce oboru názvů neprovádí žádné ověřování u oborů názvů, ale předpokládá, že předpony a obory názvů již byly ověřeny a odpovídají specifikaci [oborů názvů W3C](https://www.w3.org/TR/REC-xml-names/) .  
   
@@ -83,4 +83,4 @@ Obory názvů XML přiřadí prvky a názvy atributů v dokumentu XML s vlastní
 ## <a name="see-also"></a>Viz také
 
 - <xref:System.Xml.XmlNamespaceManager>
-- [Dokumenty a data XML](../../../../docs/standard/data/xml/index.md)
+- [Dokumenty a data XML](index.md)

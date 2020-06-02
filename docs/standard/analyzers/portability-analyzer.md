@@ -4,12 +4,12 @@ description: Naučte se používat nástroj Analyzátor přenositelnosti .NET k 
 ms.date: 09/13/2019
 ms.technology: dotnet-standard
 ms.assetid: 0375250f-5704-4993-a6d5-e21c499cea1e
-ms.openlocfilehash: 94dd6de8839b03bbdc33ae1ed03599853241d40b
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 815ac8e0f0c4392a3d89530947b0739d06a0b95d
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83209363"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84278360"
 ---
 # <a name="the-net-portability-analyzer"></a>Analyzátor přenositelnosti .NET
 
@@ -20,7 +20,7 @@ Po převedení projektu na cílení na novou platformu, jako je například .NET
 ## <a name="common-targets"></a>Společné cíle
 
 - [.NET Core](../../core/index.yml): má modulární návrh, podporuje souběžnou instalaci a cílí na scénáře pro různé platformy. Souběžná instalace umožňuje přijímat nové verze .NET Core bez porušení dalších aplikací. Pokud vaším cílem je přenést aplikaci do .NET Core a podporovat více platforem, jedná se o doporučený cíl.
-- . [NET Standard](../../standard/net-standard.md): zahrnuje rozhraní api pro .NET Standard dostupná ve všech implementacích .NET. Pokud je vaším cílem, aby se vaše knihovna spouštěla na všech platformách podporovaných .NET, je to doporučený cíl.
+- . [NET Standard](../net-standard.md): zahrnuje rozhraní api pro .NET Standard dostupná ve všech implementacích .NET. Pokud je vaším cílem, aby se vaše knihovna spouštěla na všech platformách podporovaných .NET, je to doporučený cíl.
 - [ASP.NET Core](/aspnet/core): moderní webové rozhraní postavené na .NET Core. Pokud je vaším cílem, aby vaše webová aplikace podporovala více platforem na .NET Core, jedná se o doporučený cíl.
 - Rozšíření .NET Core + [Platform](../../core/porting/windows-compat-pack.md): Kromě sady Windows Compatibility Pack obsahuje rozhraní API .NET Core, které poskytuje mnoho dostupných technologií .NET Framework. Toto je doporučený cíl pro přenos vaší aplikace z .NET Framework do .NET Core ve Windows.
 - Rozšíření .NET Standard + [platforma](../../core/porting/windows-compat-pack.md): Kromě sady Windows Compatibility Pack zahrnuje i rozhraní API .NET Standard, která poskytují mnoho dostupných technologií .NET Framework. Toto je doporučený cíl pro přenos knihovny z .NET Framework do .NET Core ve Windows.
