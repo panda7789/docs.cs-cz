@@ -2,12 +2,12 @@
 title: Implementace sběrnice událostí pomocí RabbitMQ pro vývojové nebo testovací prostředí
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Použijte RabbitMQ k implementaci zasílání zpráv služby Event Bus pro integrační události pro vývojová nebo testovací prostředí.
 ms.date: 10/02/2018
-ms.openlocfilehash: 32259c76fe81d324ba3ea9b35f7fddc6a0f9cdbc
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 1af72d18825eb610d6900178205450e2c2e34c25
+ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144289"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84306887"
 ---
 # <a name="implementing-an-event-bus-with-rabbitmq-for-the-development-or-test-environment"></a>Implementace sběrnice událostí pomocí RabbitMQ pro vývojové nebo testovací prostředí
 
@@ -114,7 +114,7 @@ V produkčních scénářích se podívejte na další níže uvedené prostřed
 
 ## <a name="additional-resources"></a>Další zdroje
 
-Řešení připravená pro produkční prostředí s podporou pro RabbitMQ.
+Řešení připravené pro produkční prostředí s podporou pro RabbitMQ.
 
 - **EasyNetQ** – Open Source klient .NET API pro RabbitMQ \
   <https://easynetq.com/>

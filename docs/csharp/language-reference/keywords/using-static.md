@@ -55,4 +55,4 @@ V tomto příkladu `using static` byla direktiva také použita pro <xref:System
 - [Reference jazyka C#](../index.md)
 - [Klíčová slova jazyka C#](index.md)
 - [Používání oborů názvů](../../programming-guide/namespaces/using-namespaces.md)
-- [Jmenné prostory](../../programming-guide/namespaces/index.md)
+- [Obory názvů](../../programming-guide/namespaces/index.md)

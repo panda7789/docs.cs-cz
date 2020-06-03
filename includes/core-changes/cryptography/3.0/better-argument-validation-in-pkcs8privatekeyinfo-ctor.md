@@ -24,7 +24,7 @@ var info = new Pkcs8PrivateKeyInfo(algorithmId, algorithmParameters, privateKey)
 byte[] encoded = info.Encode();
 ```
 
-Počínaje rozhraním .NET Core 3,0 Preview 9 je argument v konstruktoru ověřován a neplatná hodnota má za následek vyvolání metody <xref:System.Security.Cryptography.CryptographicException> . Tato změna přesune výjimku blíže ke zdroji chyby dat. Například:
+Počínaje rozhraním .NET Core 3,0 Preview 9 je argument v konstruktoru ověřován a neplatná hodnota má za následek vyvolání metody <xref:System.Security.Cryptography.CryptographicException> . Tato změna přesune výjimku blíže ke zdroji chyby dat. Příklad:
 
 ```csharp
 byte[] algorithmParameters = { 0x05, 0x00, 0x05, 0x00 };

@@ -2,12 +2,12 @@
 title: Návrh doménového modelu mikroslužby
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Princip klíčových konceptů při navrhování doménového modelu orientovaného na DDD
 ms.date: 01/30/2020
-ms.openlocfilehash: 234d6e518eac8de5b2f130b91adb32b6a24a7265
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: fe78e719570d5758b71531beab883e5c24a88dca
+ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144588"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84306904"
 ---
 # <a name="design-a-microservice-domain-model"></a>Návrh doménového modelu mikroslužeb
 
@@ -35,7 +35,7 @@ Obrázek 7-8 ukazuje doménovou entitu, která implementuje nejen atributy dat, 
 
 **Obrázek 7-8**. Příklad návrhu entity domény, který implementuje chování dat a chování
 
-Entita doménového modelu implementuje chování prostřednictvím metod, to znamená, že se nejedná o model "anemic". Samozřejmě, někdy můžete mít entity, které neimplementují žádnou logiku jako součást třídy entity. K tomu může dojít v případě podřízených entit v rámci agregace, pokud podřízená entita nemá žádnou speciální logiku, protože většina logiky je definována v agregačním kořenu. Pokud máte složitou mikroslužbu, která má spoustu logiky implementovanou v třídách služby místo v doménových entitách, mohli byste být do modelu domény anemic, který je vysvětlen v následující části.
+Entita doménového modelu implementuje chování prostřednictvím metod, to znamená, že se nejedná o model "anemic". Samozřejmě, někdy můžete mít entity, které neimplementují žádnou logiku jako součást třídy entity. K tomu může dojít v případě podřízených entit v rámci agregace, pokud podřízená entita nemá žádnou speciální logiku, protože většina logiky je definována v agregačním kořenu. Pokud máte komplexní mikroslužbu, která má logiku implementovanou v třídách služby místo v doménových entitách, můžete se do modelu domény anemic vysvětlit v následující části.
 
 ### <a name="rich-domain-model-versus-anemic-domain-model"></a>Model domény s bohatou doménou vs anemic
 
@@ -45,7 +45,7 @@ Základním příznakem doménového modelu Anemic je, že první růžová vypa
 
 Když použijete doménový model anemic, budou se tyto datové modely používat ze sady objektů služby (tradičně pojmenované *obchodní vrstvy*), které zachytí veškerou doménu nebo obchodní logiku. Obchodní vrstva je umístěná nad datovým modelem a používá datový model stejně jako data.
 
-Model domény anemic je jenom návrhem procedurálního stylu. Objekty entit Anemic nejsou reálné objekty, protože nemají chování (metody). Uchovávají pouze vlastnosti dat, takže se nejedná o objektově orientovaný návrh. Vložením veškerého chování do objektů služby (obchodní vrstva), které v podstatě končí [Spaghetti kódem](https://en.wikipedia.org/wiki/Spaghetti_code) nebo [skripty transakcí](https://martinfowler.com/eaaCatalog/transactionScript.html), a proto ztratíte výhody, které poskytuje doménový model.
+Model domény anemic je jenom návrhem procedurálního stylu. Objekty entit Anemic nejsou reálné objekty, protože nemají chování (metody). Uchovávají pouze vlastnosti dat, takže se nejedná o objektově orientovaný návrh. Vložením veškerého chování do objektů služby (obchodní vrstva) v podstatě zavedete [Spaghetti kód](https://en.wikipedia.org/wiki/Spaghetti_code) nebo [skripty transakcí](https://martinfowler.com/eaaCatalog/transactionScript.html), a proto ztratíte výhody, které poskytuje doménový model.
 
 Bez ohledu na to, jestli je váš mikroslužba nebo ohraničený kontext velmi jednoduchý (služba CRUD), model domény anemic ve formě objektů entity, které mají pouze vlastnosti dat, může být dostatečně dobrý a nemusí se jednat o implementaci složitějších vzorů DDD. V takovém případě bude jednoduše model trvalosti, protože jste záměrně vytvořili entitu s pouze daty pro účely CRUD.
 
@@ -114,14 +114,14 @@ Na obrázku 7-9 vidíte agregace ukázek, jako je agregace nákupčího, která 
 
 Doménový model DDD se skládá z agregací, agregace může mít pouze jednu entitu a může obsahovat také objekty hodnot. Počítejte s tím, že agregace nákupčího může mít další podřízené entity v závislosti na vaší doméně, stejně jako při řazení mikroslužby v referenční aplikaci eShopOnContainers. Obrázek 7-9 pouze ukazuje případ, ve kterém má kupující jednu entitu, jako příklad agregace, která obsahuje pouze agregovanou kořenovou hodnotu.
 
-Aby se zachovalo oddělení agregací a mělo mezi nimi jasné hranice, je dobrým zvykem, aby se zakázala přímá navigace mezi agregacemi a měla by se používat pole cizího klíče (FK), [jak je implementované](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.Domain/AggregatesModel/OrderAggregate/Order.cs) v eShopOnContainers. Entita Order má pouze pole FK pro kupující, ale ne EF Core navigační vlastnost, jak je znázorněno v následujícím kódu:
+Aby se zachovalo oddělení agregací a mělo mezi nimi jasné hranice, je dobrým zvykem, aby se zakázala přímá navigace mezi agregacemi a měla by se používat pole cizího klíče (FK), [jak je implementované](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.Domain/AggregatesModel/OrderAggregate/Order.cs) v eShopOnContainers. Entita Order má pouze pole cizího klíče pro kupující, ale ne EF Core navigační vlastnost, jak je znázorněno v následujícím kódu:
 
 ```csharp
 public class Order : Entity, IAggregateRoot
 {
     private DateTime _orderDate;
     public Address Address { get; private set; }
-    private int? _buyerId; //FK pointing to a different aggregate root
+    private int? _buyerId; // FK pointing to a different aggregate root
     public OrderStatus OrderStatus { get; private set; }
     private readonly List<OrderItem> _orderItems;
     public IReadOnlyCollection<OrderItem> OrderItems => _orderItems;

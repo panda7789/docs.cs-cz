@@ -28,7 +28,7 @@ dotnet migrate [<SOLUTION_FILE|PROJECT_DIR>] [--format-report-file-json <REPORT_
 dotnet migrate -h|--help
 ```
 
-## <a name="description"></a>Popis
+## <a name="description"></a>Description
 
 Tento příkaz je zastaralý. `dotnet migrate`Příkaz již není od sady .NET Core 3,0 SDK k dispozici. Může migrovat pouze projekt verze Preview 2 .NET Core do projektu .NET Core s 1. x, který není podporován.
 

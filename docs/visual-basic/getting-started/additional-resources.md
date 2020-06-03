@@ -1,6 +1,6 @@
 ---
-title: Další zdroje informací pro programátory jazyka Visual Basic
-description: Objevte zdroje informací na webu, kde se můžete dozvědět, klást otázky a získat další informace o jazyce Visual Basic.
+title: Další zdroje informací pro programátory Visual Basic
+description: Projděte si materiály na webu, abyste se seznámili, položte otázky a zjistěte další informace o Visual Basic.
 ms.date: 02/21/2018
 helpviewer_keywords:
 - Visual Basic, additional resources
@@ -17,51 +17,51 @@ ms.locfileid: "81243203"
 ---
 # <a name="additional-resources"></a>Další zdroje
 
-Následující weby poskytují pokyny a mohou vám pomoci najít odpovědi na běžné problémy.
+Následující weby obsahují doprovodné materiály a mohou vám pomoci najít odpovědi na běžné problémy.
 
-## <a name="microsoft-resources"></a>Zdroje společnosti Microsoft
+## <a name="microsoft-resources"></a>Prostředky společnosti Microsoft
 
 ### <a name="on-the-web"></a>Na webu
 
-|zprostředkovatele identity|Popis|
+|URL|Description|
 |----------|----------------|
-|[Návrh jazyka Visual Basic .NET](https://github.com/dotnet/vblang)|Oficiální úložiště na GitHubu pro návrh jazyka Visual Basic .NET.|
-|[Blog týmu Microsoft Visual Basic](https://devblogs.microsoft.com/vbteam/)|Poskytuje přístup k blogu týmu jazyka Visual Basic.|
+|[Visual Basic návrh jazyka .NET](https://github.com/dotnet/vblang)|Oficiální úložiště na GitHubu pro Visual Basic návrh jazyka .NET.|
+|[Blog týmu Microsoft Visual Basic](https://devblogs.microsoft.com/vbteam/)|Poskytuje přístup k blogu týmu Visual Basic.|
 
 ### <a name="code-samples"></a>Ukázky kódů
 
-|zprostředkovatele identity|Popis|
+|URL|Description|
 |----------|----------------|
-|[Ukázky dokumentace jazyka Visual Basic](https://github.com/dotnet/docs/tree/master/samples/snippets/visualbasic)|Obsahuje ukázky použité v rámci dokumentace jazyka Visual Basic a .NET.|
+|[Ukázky dokumentace Visual Basic](https://github.com/dotnet/docs/tree/master/samples/snippets/visualbasic)|Obsahuje ukázky používané v dokumentaci k Visual Basic a .NET.|
 
 ### <a name="forums"></a>Fóra
 
-|zprostředkovatele identity|Popis|
+|URL|Description|
 |----------|----------------|
-|[Fóra jazyka Visual Basic](https://social.msdn.microsoft.com/Forums/vstudio/home?forum=vbgeneral)|Popisuje obecné problémy jazyka.|
+|[Visual Basic fóra](https://social.msdn.microsoft.com/Forums/vstudio/home?forum=vbgeneral)|Popisuje obecné problémy Visual Basic.|
 
 ### <a name="videos-and-webcasts"></a>Videa a webová vysílání
 
-|zprostředkovatele identity|Popis|
+|URL|Description|
 |----------|----------------|
-|[Kanál9](https://channel9.msdn.com/)|Poskytuje nepřetržitou komunitu prostřednictvím videí, wikiwebů a fór.|
+|[Channel9](https://channel9.msdn.com/)|Poskytuje nepřetržitou komunitu prostřednictvím videí, wiki a fór.|
 
 ### <a name="support"></a>Podpora
 
-|zprostředkovatele identity|Popis|
+|URL|Description|
 |----------|----------------|
-|[Podpora společnosti Microsoft](https://support.microsoft.com)|Poskytuje přístup k článkům znalostní báze Knowledge Base (KB), souborům ke stažení a aktualizacím, webovým vysíláním podpory a dalším službám.|
-|[Otázky k sadě Visual Studio](https://developercommunity.visualstudio.com)|Umožňuje soubor chyby nebo poskytovat návrhy společnosti Microsoft o rozhraní .NET a Visual Studio. Chybu můžete nahlásit také tak, že v sadě Visual Studio vyberete **možnost** > **Odeslat zpětnou vazbu** > **Nahlásit problém.**|
+|[Podpora společnosti Microsoft](https://support.microsoft.com)|Poskytuje přístup k článkům znalostní báze (KB), ke stažení a aktualizacím, webovému vysílání podpory a dalším službám.|
+|[Otázky k sadě Visual Studio](https://developercommunity.visualstudio.com)|Umožňuje zaslat do souboru chyby nebo poskytnout návrhy Microsoftu o .NET a Visual Studiu. Chybu můžete také ohlásit tak, že vyberete **help**  >  **Odeslat zpětnou vazbu**  >  **ohlásit problém** v aplikaci Visual Studio.|
 
-## <a name="third-party-resources"></a>Zdroje třetích stran
+## <a name="third-party-resources"></a>Prostředky třetích stran
 
-|zprostředkovatele identity|Popis|
+|URL|Description|
 |----------|----------------|
-|[VBFórus](http://www.vbforums.com/)|Poskytuje fórum k diskusi o jazyce Visual Basic, .NET a další.|
-|[vbMěsto](http://vbcity.com/)|Komunitní web, kde se uživatelé mohou učit a klást otázky týkající se jazyka Visual Basic a rozhraní .NET.|
-|[Stack Overflow](https://stackoverflow.com/questions/tagged/vb.net)|Přetečení zásobníku je web otázek a odpovědí pro vývojáře.|
+|[VBForums](http://www.vbforums.com/)|Poskytuje fórum pro diskuzi Visual Basic, .NET a dalších.|
+|[vbCity](http://vbcity.com/)|Komunitní web pro lidi, kteří se budou učit a klást dotazy týkající se Visual Basic a .NET.|
+|[Stack Overflow](https://stackoverflow.com/questions/tagged/vb.net)|Stack Overflow je web otázky a odpovědi pro vývojáře.|
 
 ## <a name="see-also"></a>Viz také
 
 - [Začínáme s jazykem Visual Basic](../../visual-basic/getting-started/index.md)
-- [Promluvte si s námi](/visualstudio/ide/feedback-options)
+- [Kontaktujte nás](/visualstudio/ide/feedback-options)

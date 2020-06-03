@@ -8,4 +8,4 @@ ms.locfileid: "66722084"
 ---
 
 > [!NOTE]
-> Příklady jazyka C# v tomto článku spustit v [Try.NET](https://dotnet.microsoft.com/platform/try-dotnet) inline kód runner a hřiště. Výběrem tlačítka **Spustit** spustíte příklad v interaktivním okně. Jakmile spustíte kód, můžete jej upravit a spustit upravený kód výběrem **spustit** znovu. Změněný kód se spustí v interaktivním okně nebo, pokud kompilace selže, interaktivní okno zobrazí všechny chybové zprávy kompilátoru Jazyka C#.  
+> Příklady C# v tomto článku se spouštějí v [Try.NET](https://dotnet.microsoft.com/platform/try-dotnet) inline Code Runner a playground. Kliknutím na tlačítko **Spustit** spustíte příklad v interaktivním okně. Po spuštění kódu ho můžete upravit a spustit upravený kód tak, že znovu vyberete **Spustit** . Upravený kód buď běží v interaktivním okně, nebo, pokud kompilace není úspěšná, interaktivní okno zobrazí všechny chybové zprávy kompilátoru C#.  

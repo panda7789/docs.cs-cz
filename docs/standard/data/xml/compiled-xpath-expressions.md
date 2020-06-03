@@ -35,7 +35,7 @@ ms.locfileid: "84291523"
   
  V následující tabulce jsou popsány všechny návratové typy XPath W3C, jejich Microsoft .NET Framework equivalencies a jaké metody lze <xref:System.Xml.XPath.XPathExpression> použít pro objekt na základě jeho návratového typu.  
   
-|Návratový typ XPath W3C|.NET Framework ekvivalentní typ|Popis|Metody|  
+|Návratový typ XPath W3C|.NET Framework ekvivalentní typ|Description|Metody|  
 |---------------------------|------------------------------------|-----------------|-------------|  
 |`Node set`|<xref:System.Xml.XPath.XPathNodeIterator>|Neuspořádaná kolekce uzlů bez duplicit vytvořených v pořadí dokumentů.|<xref:System.Xml.XPath.XPathNavigator.Select%2A> nebo <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A>|  
 |`Boolean`|<xref:System.Boolean>|Hodnota `true` nebo `false`|<xref:System.Xml.XPath.XPathNavigator.Evaluate%2A> nebo<br /><br /> <xref:System.Xml.XPath.XPathNavigator.Matches%2A>|  

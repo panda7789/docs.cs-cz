@@ -2,23 +2,23 @@
 title: Implementace doménového modelu mikroslužby pomocí .NET Core
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Získejte informace o implementaci doménového modelu orientovaného na DDD.
 ms.date: 10/08/2018
-ms.openlocfilehash: 8aff06a2e37dc87e5ba4f556e9b808598ff3653a
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 0b42ecc2440faf5870b2d99e31d03cda00b21ce0
+ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144575"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84306903"
 ---
 # <a name="implement-a-microservice-domain-model-with-net-core"></a>Implementace modelu domény mikroslužeb pomocí .NET Core
 
-V předchozí části byly vysvětleny základní principy návrhu a vzory pro návrh doménového modelu. Nyní je čas prozkoumat možné způsoby implementace doménového modelu pomocí .NET Core (prostý \# kód C) a EF Core. Všimněte si, že váš doménový model se skládá jednoduše z vašeho kódu. Bude mít pouze požadavky na model EF Core, ale ne skutečné závislosti na EF. Neměli byste mít pevné závislosti nebo odkazy na EF Core nebo jiné ORM ve vašem doménovém modelu.
+V předchozí části byly vysvětleny základní principy návrhu a vzory pro návrh doménového modelu. Nyní je čas prozkoumat možné způsoby implementace doménového modelu pomocí .NET Core (prostý \# kód C) a EF Core. Váš doménový model se bude skládat jednoduše z vašeho kódu. Bude mít pouze požadavky na model EF Core, ale ne skutečné závislosti na EF. Neměli byste mít pevné závislosti nebo odkazy na EF Core nebo jiné ORM ve vašem doménovém modelu.
 
 ## <a name="domain-model-structure-in-a-custom-net-standard-library"></a>Struktura doménového modelu ve vlastní knihovně .NET Standard
 
 Organizace, která se používá pro referenční aplikaci eShopOnContainers, ukazuje model DDD pro aplikaci. Může se stát, že jiná organizace bude jasně informovat o tom, jaké možnosti návrhu aplikace udělaly. Jak vidíte na obrázku 7-10, v modelu domény řazení existují dvě agregace, pořadí agregace a agregace nákupčího. Každá agregace je skupina doménových entit a hodnotových objektů, i když můžete mít agregaci tvořenou jedinou doménovou entitou (agregovanou kořenovou nebo kořenovou entitou).
 
 :::image type="complex" source="./media/net-core-microservice-domain-model/ordering-microservice-container.png" alt-text="Snímek projektu objednávky. Domain v Průzkumník řešení.":::
-Průzkumník řešení zobrazení pro projekt objednávání. Domain, ve kterém je zobrazená složka AggregatesModel obsahující složky BuyerAggregate a OrderAggregate, každou z nich obsahující třídy entit, hodnotové soubory a tak dále.
+Průzkumník řešení zobrazení pro projekt objednávání. Domain, ve kterém je zobrazená složka AggregatesModel obsahující složky BuyerAggregate a OrderAggregate, každou z nich obsahující své třídy entit, soubory objektů hodnot a tak dále.
 :::image-end:::
 
 **Obrázek 7-10**. Struktura doménového modelu pro řazení mikroslužby v eShopOnContainers
@@ -95,7 +95,7 @@ public class Order : Entity, IAggregateRoot
 }
 ```
 
-Je důležité si uvědomit, že se jedná o entitu domény implementovanou jako třídu POCO. Nemá žádnou přímou závislost na Entity Framework Core ani žádné jiné architektury infrastruktury. Tato implementace je tak, jak by měla být umístěná v DDD, jenom v \# kódu C implementace doménového modelu.
+Je důležité si uvědomit, že se jedná o entitu domény implementovanou jako třídu POCO. Nemá žádnou přímou závislost na Entity Framework Core ani žádné jiné architektury infrastruktury. Tato implementace je tak, jak by měla být v DDD, jenom C# kód implementující doménový model.
 
 Kromě toho třída je upravena s rozhraním s názvem IAggregateRoot. Toto rozhraní je prázdné rozhraní, někdy označované jako *rozhraní značky*, které se používá pouze k označení toho, že tato třída entity je také agregovaným kořenem.
 

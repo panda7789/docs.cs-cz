@@ -2,12 +2,12 @@
 title: Použití přístupů CQRS a CQS v mikroslužbě DDD v aplikaci eShopOnContainers
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Pochopení způsobu implementace CQRS při řazení mikroslužeb v eShopOnContainers.
 ms.date: 03/03/2020
-ms.openlocfilehash: 0fd38a93a1056cda4abd2f9f89ee9efc626985c8
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 2916df596a6d0f887411f3ef0074aed395ef58ba
+ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144276"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84306939"
 ---
 # <a name="apply-cqrs-and-cqs-approaches-in-a-ddd-microservice-in-eshoponcontainers"></a>Použití CQRS a CQS přístupů v mikroslužbě DDD v eShopOnContainers
 
@@ -27,9 +27,9 @@ Jak je znázorněno na obrázku 7-2 v předchozí části, tato příručka navr
 
 Pro implementaci "na straně" dotazů si můžete vybrat z mnoha přístupů, od celého plnohodnotnou ORM, jako je EF Core, projekce s automapper, uložené procedury, zobrazení, materializovaná zobrazení nebo mikroorm.
 
-V této příručce a v eShopOnContainers (konkrétně pro objednávání mikroslužeb) jsme zvolili implementaci přímých dotazů pomocí mikroorm, jako je [dapperem](https://github.com/StackExchange/dapper-dot-net). To vám umožní implementovat jakýkoli dotaz založený na příkazech SQL a získat tak nejlepší výkon díky světlému rozhraní s velmi nízkou režií.
+V této příručce a v eShopOnContainers (konkrétně pro objednávání mikroslužeb) jsme zvolili implementaci přímých dotazů pomocí mikroorm, jako je [dapperem](https://github.com/StackExchange/dapper-dot-net). To vám umožní implementovat jakýkoli dotaz založený na příkazech SQL a získat tak nejlepší výkon díky světlému rozhraní s nízkou režií.
 
-Všimněte si, že když použijete tento přístup, všechny aktualizace modelu, které mají vliv na způsob, jakým jsou entity trvale uložené v databázi SQL Database, potřebují také samostatné aktualizace pro dotazy SQL, které používá Dapperem nebo jakékoli jiné samostatné metody (jiné než EF) k dotazování.
+Když použijete tento přístup, všechny aktualizace modelu, které mají vliv na způsob, jakým jsou entity trvale uložené v databázi SQL Database, potřebují také samostatné aktualizace pro dotazy SQL, které používá Dapperem nebo jakékoli jiné samostatné (Neef) přístupy k dotazování.
 
 ## <a name="cqrs-and-ddd-patterns-are-not-top-level-architectures"></a>Vzory CQRS a DDD nejsou architektury nejvyšší úrovně.
 

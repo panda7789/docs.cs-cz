@@ -4,12 +4,12 @@ description: Architekt moderních webových aplikací pomocí ASP.NET Core a Azu
 author: ardalis
 ms.author: wiwagn
 ms.date: 12/04/2019
-ms.openlocfilehash: 955d4ec4a0bd0ddf2d022d4154fc6528b2abf3d0
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: be674f3292238b1983064408184777d379cf52a7
+ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144549"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84307004"
 ---
 # <a name="develop-aspnet-core-mvc-apps"></a>Vývoj aplikací ASP.NET Core MVC
 
@@ -88,7 +88,7 @@ V předchozím příkladu by se stránka měla shodovat s `id` parametrem typu I
 "/Products/123"
 ```
 
-Po porovnání dané žádosti s trasou, ale před zavoláním metody Action, ASP.NET Core MVC provede [vazbu modelu](/aspnet/core/mvc/models/model-binding) a [ověření modelu](/aspnet/core/mvc/models/validation) na žádosti. Vazba modelu zodpovídá za převod příchozích dat HTTP do typů .NET určených jako parametrů metody akce, která má být volána. Například pokud metoda Action očekává parametr ID int, vazba modelu se pokusí tento parametr poskytnout z hodnoty zadané v rámci žádosti. V takovém případě vazba modelu vyhledá hodnoty v zaúčtovaném formuláři, hodnotách v samotné trase a hodnotách řetězce dotazu. Za předpokladu, že je hodnota ID nalezena, bude převedena na celé číslo před předáním do metody Action.
+Po porovnání dané žádosti s trasou, ale před zavoláním metody Action, ASP.NET Core MVC provede [vazbu modelu](/aspnet/core/mvc/models/model-binding) a [ověření modelu](/aspnet/core/mvc/models/validation) na žádosti. Vazba modelu zodpovídá za převod příchozích dat HTTP do typů .NET určených jako parametrů metody akce, která má být volána. Například pokud metoda Action očekává `int id` parametr, vazba modelu se pokusí poskytnout tento parametr z hodnoty zadané v rámci žádosti. V takovém případě vazba modelu vyhledá hodnoty v zaúčtovaném formuláři, hodnotách v samotné trase a hodnotách řetězce dotazu. Za předpokladu, že je hodnota ID nalezena, bude převedena na celé číslo před předáním do metody Action.
 
 Po vytvoření vazby modelu, ale před voláním metody Action, dojde k ověření modelu. Ověřování modelu používá volitelné atributy pro typ modelu a může zajistit, aby zadaný objekt modelu splňoval určité požadavky na data. Některé hodnoty mohou být zadány jako povinné nebo omezené na určitou délku nebo číselný rozsah atd. Pokud jsou zadány atributy ověřování, ale model nevyhovuje jejich požadavkům, vlastnost ModelState. IsValid bude false a sada neúspěšných ověřovacích pravidel bude k dispozici pro odeslání klientovi, který vytváří požadavek.
 
@@ -158,7 +158,7 @@ Spouštěcí třída je modelem, jak byste měli strukturovat ostatní části a
 
 ## <a name="structuring-the-application"></a>Strukturování aplikace
 
-Monolitické aplikace mají typicky jeden vstupní bod. V případě ASP.NET Core webové aplikace bude vstupním bodem ASP.NET Core webový projekt. To však neznamená, že by se mělo řešení sestávat pouze z jednoho projektu. Je vhodné rozdělit aplikaci do různých vrstev, aby bylo možné postupovat podle oddělení obav. Po rozčlenění do vrstev je vhodné přecházet mimo složky pro samostatné projekty, což může pomoct dosáhnout lepšího zapouzdření. Nejlepším způsobem, jak dosáhnout těchto cílů pomocí ASP.NET Core aplikace, je variace čisté architektury popsané v kapitole 5. Po tomto přístupu se řešení aplikace skládá z samostatných knihoven pro uživatelské rozhraní, infrastrukturu a ApplicationCore.
+Monolitické aplikace mají typicky jeden vstupní bod. V případě ASP.NET Core webové aplikace bude vstupním bodem ASP.NET Core webový projekt. To však neznamená, že by se mělo řešení sestávat pouze z jednoho projektu. Je vhodné rozdělit aplikaci do různých vrstev, aby bylo možné postupovat podle oddělení obav. Po rozčlenění do vrstev je vhodné přecházet mimo složky pro samostatné projekty, což může pomoct dosáhnout lepšího zapouzdření. Nejlepším způsobem, jak dosáhnout těchto cílů pomocí ASP.NET Core aplikace, je variace čisté architektury popsané v kapitole 5. Po tomto přístupu bude řešení aplikace zahrnovat samostatné knihovny pro uživatelské rozhraní, infrastrukturu a ApplicationCore.
 
 Kromě těchto projektů jsou zahrnuty také samostatné testovací projekty (testování je popsáno v kapitole 9).
 
@@ -501,7 +501,7 @@ Návrh založený na doméně (DDD) je agilní přístup k vytváření softwaru
 
 Při sestavování softwaru po přístupu DDD by váš tým (včetně neodborných smluvních stran a přispěvatelů) měl vyvinout _všudypřítomný jazyk_ pro místo problému. To znamená, že by se stejná terminologie měla použít pro pojem model reálného světa, ekvivalent softwaru a všechny struktury, které mohou existovat pro zachování konceptu (například databázové tabulky). Proto by pojmy popsané v jazyce všudypřítomný měly tvořit základ pro váš _doménový model_.
 
-Model domény se skládá z objektů, které vzájemně spolupracují, aby představovaly chování systému. Tyto objekty mohou patřit do následujících kategorií:
+Váš doménový model zahrnuje objekty, které vzájemně spolupracují, aby představovaly chování systému. Tyto objekty mohou patřit do následujících kategorií:
 
 - [Entity](https://deviq.com/entity/), které reprezentují objekty s vláknem identity. Entity jsou obvykle uloženy v persistenci s klíčem, pomocí kterého je možné je později načíst.
 
@@ -537,7 +537,7 @@ DDD je vhodný pro velké aplikace s významnou firmou (ne jenom technickou) slo
 
 DDD zahrnuje investice do modelování, architektury a komunikace, které nemusí být oprávněné pro menší aplikace nebo aplikace, které jsou v podstatě pouze CRUD (vytváření, čtení, aktualizace a odstranění). Pokud se rozhodnete získat přístup k aplikaci po DDD, ale zjistíte, že vaše doména má model anemic bez chování, možná budete muset vzít v úvahu svůj přístup. Buď vaše aplikace nemusí potřebovat DDD, nebo můžete potřebovat pomoc při refaktoringu vaší aplikace k zapouzdření obchodní logiky v doménovém modelu, nikoli v databázi nebo uživatelském rozhraní.
 
-Hybridní přístup by byl pro transakční nebo složitější oblasti aplikace použit pouze DDD, ale ne pro jednodušší části CRUD nebo jen pro čtení. Nemusí podepisovat například omezení agregace, pokud se dotazuje na data pro zobrazení sestavy nebo vizualizaci dat pro řídicí panel. Je naprosto přijatelné, abyste měli samostatný, jednodušší model pro čtení těchto požadavků.
+Hybridní přístup by byl pro transakční nebo složitější oblasti aplikace použit pouze DDD, ale ne pro jednodušší části CRUD nebo jen pro čtení. Například nemusíte mít omezení agregace, pokud se dotazuje na data, abyste zobrazili sestavu nebo aby bylo možné vizualizovat data pro řídicí panel. Je naprosto přijatelné, abyste měli samostatný, jednodušší model pro čtení těchto požadavků.
 
 > ### <a name="references--domain-driven-design"></a>Odkazy – návrh založený na doméně
 >

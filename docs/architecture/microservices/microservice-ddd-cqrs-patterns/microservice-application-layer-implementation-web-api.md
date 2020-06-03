@@ -2,12 +2,12 @@
 title: Implementace aplikační vrstvy mikroslužby pomocí webového rozhraní API
 description: Seznamte se s vkládáním závislostí a vzorci a jejich podrobnostmi o implementaci v aplikační vrstvě webového rozhraní API.
 ms.date: 01/30/2020
-ms.openlocfilehash: 3efa4939bb8762534af398d4e92361e81e668b85
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: c6e82b610a528b688cb4334bdec01700abbd2a62
+ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144601"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84306926"
 ---
 # <a name="implement-the-microservice-application-layer-using-the-web-api"></a>Implementace aplikační vrstvy mikroslužeb pomocí webového rozhraní API
 
@@ -25,7 +25,7 @@ Průzkumník řešení zobrazení pořadí. rozhraní API mikroslužby, které z
 
 ASP.NET Core obsahuje jednoduchý [integrovaný kontejner IOC](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection) (reprezentovaný rozhraním IServiceProvider), který podporuje vkládání konstruktoru ve výchozím nastavení a ASP.NET zpřístupňuje určité služby prostřednictvím di. ASP.NET Core používá termín *služby* pro jakýkoli typ, který zaregistrujete, který bude VLOŽEN přes di. Předdefinované služby kontejneru v metodě ConfigureServices ve třídě Startup vaší aplikace nakonfigurujete. Vaše závislosti jsou implementované v rámci služeb, které typ vyžaduje a které zaregistrujete do kontejneru IoC.
 
-Obvykle chcete vložit závislosti, které implementují objekty infrastruktury. Velmi typickou závislostí pro vkládání je úložiště. Mohli byste ale vložit jakoukoli další závislost infrastruktury, kterou můžete mít. Pro jednodušší implementace můžete přímo vložit objekt vzorce pracovní jednotky (objekt EF DbContext), protože DBContext je také implementace objektů trvalé infrastruktury.
+Obvykle chcete vložit závislosti, které implementují objekty infrastruktury. Typickou závislostí pro vkládání je úložiště. Mohli byste ale vložit jakoukoli další závislost infrastruktury, kterou můžete mít. Pro jednodušší implementace můžete přímo vložit objekt vzorce pracovní jednotky (objekt EF DbContext), protože DBContext je také implementace objektů trvalé infrastruktury.
 
 V následujícím příkladu uvidíte, jak .NET Core vkládá požadované objekty úložiště prostřednictvím konstruktoru. Třída je obslužná rutina příkazu, kterou si pokryjeme v další části.
 
@@ -433,7 +433,7 @@ Výše uvedený diagram znázorňuje přiblížení z image 7-24: řadič ASP.NE
 
 Důvodem použití vzorového principu je to, že v podnikových aplikacích můžou požadavky na zpracování dosáhnout složitosti. Chcete být schopni přidat otevřený počet vzájemně se podobných otázek, jako je protokolování, ověření, audit a zabezpečení. V těchto případech můžete spoléhat na kanál prostředníka (viz [vzor zprostředkovatelů](https://en.wikipedia.org/wiki/Mediator_pattern)) a poskytnout tak prostředky pro tato dodatečná chování nebo problémy při průřezu.
 
-Zprostředkovatel je objekt, který zapouzdřuje "How" tohoto procesu: koordinuje spouštění na základě stavu, způsob vyvolání obslužné rutiny příkazu nebo datovou část, kterou poskytnete obslužné rutině. Společně s komponentou pro spoluprůřezy můžete v centralizovaném a transparentním způsobu použít otázky pro průřez, a to použitím dekoratéry (nebo [chování kanálu](https://github.com/jbogard/MediatR/wiki/Behaviors) od [MediatR 3](https://www.nuget.org/packages/MediatR/3.0.0)). Další informace najdete v tématu [dekoratér vzor](https://en.wikipedia.org/wiki/Decorator_pattern).
+Zprostředkovatel je objekt, který zapouzdřuje "How" tohoto procesu: koordinuje spouštění na základě stavu, způsob vyvolání obslužné rutiny příkazu nebo datovou část, kterou poskytnete obslužné rutině. Pomocí komponenty prostředníku můžete v centralizovaném a transparentním způsobu použít možnosti pro průřez, a to použitím dekoratéry (nebo [chování kanálu](https://github.com/jbogard/MediatR/wiki/Behaviors) od [MediatR 3](https://www.nuget.org/packages/MediatR/3.0.0)). Další informace najdete v tématu [dekoratér vzor](https://en.wikipedia.org/wiki/Decorator_pattern).
 
 Dekoratéry a chování jsou podobné [programování orientovanému na orientaci (AOP)](https://en.wikipedia.org/wiki/Aspect-oriented_programming), které se používá jenom pro konkrétní kanál procesu spravovaný komponentou prostředníka. Aspekty v AOP, které implementují obavy mezi průřezy, se uplatňují na základě *aspektů Weavers* vložených v době kompilace nebo na základě zachycení volání objektů. Typické přístupy k AOP jsou někdy označovány jako "jako Magic", protože není snadné zjistit, jak AOP funguje. Při řešení vážných problémů nebo chyb může být AOP obtížné ho ladit. Na druhé straně jsou tyto dekoratéry/chování explicitní a použité pouze v kontextu prostředníka, takže ladění je mnohem více předvídatelné a snadné.
 
@@ -477,7 +477,7 @@ Dalším dobrým důvodem pro použití vzoru prostředníka bylo při prohlíž
 
 > Domnívám se, že se tady může poznamenat testování – nabízí skvělé konzistentní okno s chováním systému. Požadavky, reakce. Zjistili jsme, že tento aspekt je poměrně užitečný při sestavování konzistentně se chovajících testů.
 
-Nejprve se podíváme na vzorový kontroler WebAPI, kde byste ve skutečnosti použili objekt prostředníka. Pokud jste nepoužívali objekt prostředníka, je nutné vložit všechny závislosti pro tento kontroler, například objekt protokolovacího nástroje a další. Konstruktor by proto byl poměrně složitý. Na druhou stranu platí, že pokud použijete objekt prostředníkem, může být konstruktor vašeho kontroleru mnohem jednodušší, ale pouze pár závislostí místo mnoha závislostí, pokud jste měli jeden za operaci křížového vyjmutí, jak je uvedeno v následujícím příkladu:
+Nejprve se podíváme na vzorový kontroler WebAPI, kde byste ve skutečnosti použili objekt prostředníka. Pokud jste nepoužívali objekt prostředníka, je nutné vložit všechny závislosti pro tento kontroler, například objekt protokolovacího nástroje a další. Proto by konstruktor byl složitý. Na druhou stranu platí, že pokud použijete objekt prostředníkem, může být konstruktor vašeho kontroleru mnohem jednodušší, ale pouze pár závislostí místo mnoha závislostí, pokud jste měli jeden za operaci křížového vyjmutí, jak je uvedeno v následujícím příkladu:
 
 ```csharp
 public class MyMicroserviceController : Controller
@@ -526,9 +526,9 @@ var requestCreateOrder = new IdentifiedCommand<CreateOrderCommand,bool>(createOr
 result = await _mediator.Send(requestCreateOrder);
 ```
 
-Tento případ je ale také trochu pokročilejší, protože implementujeme také idempotentní příkazy. Proces CreateOrderCommand by měl být idempotentní, takže pokud se stejná zpráva bude duplikována prostřednictvím sítě z jakéhokoli důvodu, jako je třeba opakování, stejné obchodní objednávky se zpracují jenom jednou.
+V tomto případě je však také poněkud pokročilejší, protože implementujeme také příkazy idempotentní. Proces CreateOrderCommand by měl být idempotentní, takže pokud se stejná zpráva bude duplikována prostřednictvím sítě z jakéhokoli důvodu, jako je třeba opakování, stejné obchodní objednávky se zpracují jenom jednou.
 
-To je implementováno zabalením obchodního příkazu (v tomto případě CreateOrderCommand) a jeho vložením do obecného IdentifiedCommandu, které je sledováno ID každé zprávy přicházející přes síť, která musí být idempotentní.
+To je implementováno zabalením příkazu Business (v tomto případě CreateOrderCommand) a vložením do obecného IdentifiedCommand, které je sledováno IDENTIFIKÁTORem každé zprávy přicházející přes síť, která musí být idempotentní.
 
 V následujícím kódu vidíte, že IdentifiedCommand není nic více než DTO s a ID plus zabalený objekt Business Command.
 
@@ -590,9 +590,9 @@ public class IdentifiedCommandHandler<T, R> :
 }
 ```
 
-Vzhledem k tomu, že IdentifiedCommand funguje jako obálka obchodního příkazu, když je potřeba zpracovat obchodní příkaz, protože se nejedná o opakované ID, pak převezme příkaz interní firmy a znovu ho odešle zprostředkovateli, jako v poslední části kódu uvedeného výše, pokud je spuštěný `_mediator.Send(message.Command)` , z [IdentifiedCommandHandler.cs](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/Commands/IdentifiedCommandHandler.cs).
+Vzhledem k tomu, že IdentifiedCommand funguje jako obálka obchodního příkazu, když je potřeba zpracovat obchodní příkaz, protože se nejedná o opakované ID, pak převezme příkaz interní firmy a znovu ho odešle na poskytovatele, jako v poslední části kódu uvedeného výše, pokud je spuštěný `_mediator.Send(message.Command)` , z [IdentifiedCommandHandler.cs](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/Commands/IdentifiedCommandHandler.cs).
 
-Při tomto postupu bude probíhat odkazování a spuštění obslužné rutiny obchodního příkazu, v tomto případě [CreateOrderCommandHandler](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/Commands/CreateOrderCommandHandler.cs) , který spouští transakce proti objednávce databáze, jak je znázorněno v následujícím kódu.
+Při tomto postupu bude probíhat odkazování a spuštění obslužné rutiny obchodního příkazu, v tomto případě [CreateOrderCommandHandler](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/Commands/CreateOrderCommandHandler.cs), který spouští transakce proti objednávce databáze, jak je znázorněno v následujícím kódu.
 
 ```csharp
 // CreateOrderCommandHandler.cs

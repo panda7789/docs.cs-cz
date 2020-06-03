@@ -5,12 +5,12 @@ ms.date: 04/21/2020
 helpviewer_keywords:
 - garbage collection, background
 - background garbage collection
-ms.openlocfilehash: e2e25dcfff759d68087006b63544bf688798c029
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 8134c0af55d74e57dcfce8c7174265b8c9902feb
+ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286077"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84307069"
 ---
 # <a name="background-garbage-collection"></a>Uvolňování paměti na pozadí
 
@@ -39,11 +39,11 @@ Uvolňování paměti serveru na pozadí funguje podobně jako uvolnění pamět
 
 Následující obrázek znázorňuje uvolnění paměti *pracovní stanice* na pozadí v samostatném vyhrazeném vlákně:
 
-![Uvolňování paměti pracovní stanice na pozadí](./media/fundamentals/background-workstation-garbage-collection.png)
+![Uvolňování paměti pracovní stanice na pozadí](media/fundamentals/background-workstation-garbage-collection.png)
 
 Na následujícím obrázku je znázorněno uvolňování paměti *serveru* na pozadí provedené na samostatných vyhrazených vláknech:
 
-![Uvolňování paměti serveru na pozadí](./media/fundamentals/background-server-garbage-collection.png)
+![Uvolňování paměti serveru na pozadí](media/fundamentals/background-server-garbage-collection.png)
 
 ## <a name="concurrent-garbage-collection"></a>Souběžné uvolňování paměti
 
@@ -63,7 +63,7 @@ Souběžné uvolňování paměti se provádí ve vyhrazeném vlákně. Ve vých
 
 Následující ilustrace znázorňuje souběžné uvolňování paměti prováděné na samostatném vyhrazeném vlákně.
 
-![Souběžná vlákna uvolňování paměti](./media/gc-concurrent.png)
+![Souběžná vlákna uvolňování paměti](media/gc-concurrent.png)
 
 ## <a name="see-also"></a>Viz také
 

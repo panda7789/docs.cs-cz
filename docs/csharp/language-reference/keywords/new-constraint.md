@@ -13,7 +13,7 @@ ms.locfileid: "82795336"
 ---
 # <a name="new-constraint-c-reference"></a>New – omezení (Referenční dokumentace jazyka C#)
 
-`new` Omezení určuje, že argument typu v deklaraci obecné třídy musí mít veřejný konstruktor bez parametrů. Chcete-li `new` použít omezení, typ nemůže být abstraktní.
+`new`Omezení určuje, že argument typu v deklaraci obecné třídy musí mít veřejný konstruktor bez parametrů. Chcete-li použít `new` omezení, typ nemůže být abstraktní.
 
 Použijte `new` omezení na parametr typu, když obecná třída vytvoří nové instance typu, jak je znázorněno v následujícím příkladu:
 
@@ -25,7 +25,7 @@ Použijete-li `new()` omezení s jinými omezeními, musí být zadána jako pos
 
 Další informace najdete v tématu [omezení parametrů typu](../../programming-guide/generics/constraints-on-type-parameters.md).
 
-`new` Klíčové slovo lze použít také k [vytvoření instance typu](../operators/new-operator.md) nebo jako [Modifikátor deklarace člena](new-modifier.md).
+Klíčové slovo lze použít také `new` k [vytvoření instance typu](../operators/new-operator.md) nebo jako [Modifikátor deklarace člena](new-modifier.md).
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 

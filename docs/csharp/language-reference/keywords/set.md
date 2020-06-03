@@ -16,17 +16,17 @@ ms.locfileid: "82795063"
 ---
 # <a name="set-c-reference"></a>set (Referenční dokumentace jazyka C#)
 
-`set` Klíčové slovo definuje metodu *přistupujícího objektu* ve vlastnosti nebo indexeru, která přiřadí hodnotu vlastnosti nebo prvku indexeru. Další informace a příklady najdete v tématech [vlastnosti](../../programming-guide/classes-and-structs/properties.md), [automaticky implementované vlastnosti](../../programming-guide/classes-and-structs/auto-implemented-properties.md)a [indexery](../../programming-guide/indexers/index.md).
+`set`Klíčové slovo definuje metodu *přistupujícího objektu* ve vlastnosti nebo indexeru, která přiřadí hodnotu vlastnosti nebo prvku indexeru. Další informace a příklady najdete v tématech [vlastnosti](../../programming-guide/classes-and-structs/properties.md), [automaticky implementované vlastnosti](../../programming-guide/classes-and-structs/auto-implemented-properties.md)a [indexery](../../programming-guide/indexers/index.md).
 
-Následující příklad definuje jak `get` a `set` přístup k vlastnosti s názvem. `Seconds` K zálohování hodnoty vlastnosti používá soukromé `_seconds` pole s názvem.
+Následující příklad definuje jak `get` a `set` přístup k vlastnosti s názvem `Seconds` . K zálohování hodnoty vlastnosti používá soukromé pole s názvem `_seconds` .
 
 [!code-csharp[set#1](~/samples/snippets/csharp/language-reference/keywords/get/get-1.cs)]
 
-`set` Přistupující objekt se často skládá z jediného příkazu, který přiřadí hodnotu, stejně jako v předchozím příkladu. Počínaje jazykem C# 7,0 můžete implementovat `set` přistupující objekt jako člena Expression-těle. Následující příklad implementuje jak `get` a `set` přistupující objekty jako členy Expression-těle.
+`set`Přistupující objekt se často skládá z jediného příkazu, který přiřadí hodnotu, stejně jako v předchozím příkladu. Počínaje jazykem C# 7,0 můžete implementovat `set` přistupující objekt jako člena Expression-těle. Následující příklad implementuje jak `get` a `set` přistupující objekty jako členy Expression-těle.
 
 [!code-csharp[set#3](~/samples/snippets/csharp/language-reference/keywords/get/get-3.cs)]
   
-Pro jednoduché případy, kdy přístup k `get` vlastnostem `set` a přistupující objekty neprovádí žádnou jinou operaci než nastavení nebo načtení hodnoty v soukromém poli pro zálohování, můžete využít podporu kompilátoru C# pro automaticky implementované vlastnosti. Následující příklad implementuje `Hours` jako automaticky implementovanou vlastnost.
+Pro jednoduché případy, kdy přístup k vlastnostem `get` a `set` přistupující objekty neprovádí žádnou jinou operaci než nastavení nebo načtení hodnoty v soukromém poli pro zálohování, můžete využít podporu kompilátoru C# pro automaticky implementované vlastnosti. Následující příklad implementuje `Hours` jako automaticky implementovanou vlastnost.
 
 [!code-csharp[set#2](~/samples/snippets/csharp/language-reference/keywords/get/get-2.cs)]
   

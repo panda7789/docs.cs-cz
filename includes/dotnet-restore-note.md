@@ -6,8 +6,8 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/23/2020
 ms.locfileid: "82102736"
 ---
-Není [`dotnet restore`](~/docs/core/tools/dotnet-restore.md) nutné spustit, protože je spuštěn implicitně všechny příkazy, které vyžadují obnovení `dotnet new` `dotnet build`dojít, například , `dotnet run`, `dotnet test`, `dotnet publish`a `dotnet pack`. Chcete-li zakázat `--no-restore` implicitní obnovení, použijte možnost.
+Nemusíte spouštět [`dotnet restore`](~/docs/core/tools/dotnet-restore.md) , protože se spouští implicitně všemi příkazy, které vyžadují obnovení, například `dotnet new` , `dotnet build` , `dotnet run` , `dotnet test` , `dotnet publish` a `dotnet pack` . Pokud chcete zakázat implicitní obnovení, použijte `--no-restore` možnost.
 
-`dotnet restore` Příkaz je stále užitečné v určitých scénářích, kde explicitní obnovení dává smysl, jako je [například průběžné integrace sestavení ve službě Azure DevOps](https://docs.microsoft.com/azure/devops/build-release/apps/aspnet/build-aspnet-core) nebo v systémech sestavení, které je třeba explicitně řídit, když dojde k obnovení.
+`dotnet restore`Příkaz je stále užitečný v některých scénářích, kde explicitní obnovení dává smysl, jako je například [průběžná integrace sestavení v Azure DevOps Services](https://docs.microsoft.com/azure/devops/build-release/apps/aspnet/build-aspnet-core) nebo v systémech sestavení, které potřebují explicitně řídit, kdy dojde k obnovení.
 
-Informace o tom, jak spravovat informační kanály NuGet, naleznete v [ `dotnet restore` dokumentaci](../docs/core/tools/dotnet-restore.md).
+Informace o tom, jak spravovat kanály NuGet, najdete v [ `dotnet restore` dokumentaci](../docs/core/tools/dotnet-restore.md).

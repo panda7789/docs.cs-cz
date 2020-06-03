@@ -2,18 +2,18 @@
 title: Obecné pokyny
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Obecné pokyny
 ms.date: 09/11/2018
-ms.openlocfilehash: e3bb4b8cf3e371c31d783fe4cfafeac282fb72b8
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 6e63d7804abc1703f17378584d58d66a933022c7
+ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144562"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84306874"
 ---
 # <a name="general-guidance"></a>Obecné pokyny
 
 V této části najdete přehled, kdy zvolit rozhraní .NET Core nebo .NET Framework. Další podrobnosti o těchto volbách poskytujeme v níže uvedených částech.
 
-Pro svou kontejnerovou aplikaci Docker můžete použít .NET Core s kontejnery Linux nebo Windows v těchto případech:
+Použijte .NET Core s kontejnery Linux nebo Windows pro vaši kontejnerovou aplikaci Docker, která je v těchto případech:
 
 - Máte různé požadavky na více platforem. Například chcete použít kontejnery Linux i Windows.
 
@@ -25,7 +25,7 @@ V krátké době, kdy vytváříte nové kontejnery aplikací .NET, byste měli 
 
 Další výhodou používání .NET Core je, že pro aplikace ve stejném počítači můžete spouštět souběžné verze .NET. Tato výhoda je důležitější pro servery nebo virtuální počítače, které nepoužívají kontejnery, protože kontejnery izolují verze rozhraní .NET, které aplikace potřebuje. (Pokud jsou kompatibilní s podkladovým operačním systémem.)
 
-Pro svou kontejnerovou aplikaci Docker Server byste měli použít .NET Framework v těchto případech:
+Použijte .NET Framework pro svou kontejnerovou aplikaci Docker Server, když:
 
 - Vaše aplikace aktuálně používá .NET Framework a má silné závislosti v systému Windows.
 

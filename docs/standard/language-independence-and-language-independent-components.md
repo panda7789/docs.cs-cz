@@ -172,7 +172,7 @@ Všechny typy, které se zobrazují v podpisech členů, včetně návratového 
 
 .NET Framework [běžný typ systému](base-types/common-type-system.md) obsahuje řadu předdefinovaných typů, které jsou podporovány přímo modulem CLR (Common Language Runtime) a jsou speciálně kódovány v metadatech sestavení. Z těchto vnitřních typů jsou typy uvedené v následující tabulce kompatibilní se specifikací CLS.
 
-|Typ kompatibilní se specifikací CLS|Popis|
+|Typ kompatibilní se specifikací CLS|Description|
 |-------------------------|-----------------|
 |<xref:System.Byte>|8 bitů unsigned integer|
 |<xref:System.Int16>|16bitové celé číslo se znaménkem|
@@ -188,7 +188,7 @@ Všechny typy, které se zobrazují v podpisech členů, včetně návratového 
 
 Vnitřní typy uvedené v následující tabulce nejsou kompatibilní se specifikací CLS.
 
-|Neodpovídající typ|Popis|Alternativa odpovídající specifikaci CLS|
+|Neodpovídající typ|Description|Alternativa odpovídající specifikaci CLS|
 |-------------------------|-----------------|--------------------------------|
 |<xref:System.SByte>|8bitový datový typ se znaménkem na 8bitové číslo|<xref:System.Int16>|
 |<xref:System.TypedReference>|Ukazatel na objekt a jeho typ modulu runtime|Žádné|

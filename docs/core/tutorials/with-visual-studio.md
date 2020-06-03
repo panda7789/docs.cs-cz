@@ -8,12 +8,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: 9c3456cd8c940e53e8a70c1d3a7c3b09de77c21d
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: 144d7bb087034839ad2cde2fa28a4961cff4321f
+ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84201589"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84306991"
 ---
 # <a name="tutorial-create-a-net-core-console-application-in-visual-studio-2019"></a>Kurz: Vytvoření konzolové aplikace .NET Core v aplikaci Visual Studio 2019
 
@@ -97,9 +97,8 @@ Vylepšete aplikaci, aby se uživateli zobrazila výzva k zadání názvu a zobr
 
 1. Nahraďte obsah `Main` metody, která je aktuálně pouze řádek, který volá `Console.WriteLine` , s následujícím kódem:
 
-   :::code language="csharp" source="./snippets/with-visual-studio/csharp/Program.cs" id="Snippet1":::
-
-   :::code language="vb" source="./snippets/with-visual-studio/vb/Program.vb" id="Snippet1":::
+   [!code-csharp[GettingStarted#1](./snippets/with-visual-studio/csharp/Program.cs#1)]
+   [!code-vb[GettingStarted#1](./snippets/with-visual-studio/vb/Program.vb#1)]
 
    Tento kód zobrazí "" Jaké je vaše jméno? " v okně konzoly a počkejte, dokud uživatel nezadá řetězec následovaný klávesou ENTER. Tento řetězec je uložen v proměnné s názvem `name` . Načte také hodnotu <xref:System.DateTime.Now?displayProperty=nameWithType> vlastnosti, která obsahuje aktuální místní čas a přiřadí ji k proměnné s názvem `date` ( `currentDate` v Visual Basic). Nakonec tyto hodnoty zobrazí v okně konzoly.
 

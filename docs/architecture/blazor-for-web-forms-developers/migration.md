@@ -4,12 +4,12 @@ description: Naučte se, jak získat přístup k migraci existující aplikace w
 author: twsouthwick
 ms.author: tasou
 ms.date: 09/19/2019
-ms.openlocfilehash: b614572bd04d9ec694b0feb95173373591d5e117
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: c70e4a4f57ddac97db4d58d9f876f7edc6aa6ce9
+ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144406"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84306978"
 ---
 # <a name="migrate-from-aspnet-web-forms-to-blazor"></a>Migrace z webových formulářů ASP.NET na Blazor
 
@@ -285,7 +285,7 @@ Další informace o sdružování a minifikace najdete v tématu [statické pros
 
 Stránka v aplikaci webových formulářů je soubor s příponou *. aspx* . Stránku webových formulářů je často možné namapovat na komponentu v Blazor. Komponenta Blazor je vytvořená v souboru s příponou *. Razor* . Pro projekt eShop se pět stránek převede na stránku Razor.
 
-Například zobrazení podrobností se skládá ze tří souborů v projektu webových formulářů: *Details. aspx*, *Details.aspx.cs*a *Details.aspx.Designer.cs*. Při převodu na Blazor jsou kód na pozadí a značky zkombinovány do *Details. Razor*. Kompilace Razor (ekvivalentní k těm, co je v souborech *. Designer.cs* ), je uložena v adresáři *obj* a ve výchozím nastavení není viditelná v **Průzkumník řešení**. Stránka webových formulářů se skládá z následujících značek:
+Například zobrazení podrobností obsahuje tři soubory v projektu webových formulářů: *Details. aspx*, *Details.aspx.cs*a *Details.aspx.Designer.cs*. Při převodu na Blazor jsou kód na pozadí a značky zkombinovány do *Details. Razor*. Kompilace Razor (ekvivalentní k těm, co je v souborech *. Designer.cs* ), je uložena v adresáři *obj* a ve výchozím nastavení není viditelná v **Průzkumník řešení**. Stránka webových formulářů se skládá z následujících značek:
 
 ```aspx-csharp
 <%@ Page Title="Details" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Details.aspx.cs" Inherits="eShopLegacyWebForms.Catalog.Details" %>

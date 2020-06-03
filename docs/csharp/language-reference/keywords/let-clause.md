@@ -25,7 +25,7 @@ V následujícím příkladu `let` se používá dvěma způsoby:
 
 1. Pro vytvoření vyčíslitelného typu, který se může dotazovat sám na sebe.
 
-2. Aby dotaz mohl volat `ToLower` pouze jednou pro proměnnou `word`rozsahu. Bez použití `let`by bylo nutné zavolat `ToLower` do každého predikátu v `where` klauzuli.
+2. Aby dotaz mohl volat `ToLower` pouze jednou pro proměnnou rozsahu `word` . Bez použití by bylo `let` nutné zavolat `ToLower` do každého predikátu v `where` klauzuli.
 
 [!code-csharp[cscsrefQueryKeywords#28](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsCsrefQueryKeywords/CS/Let.cs#28)]
 

@@ -2,12 +2,12 @@
 title: Asynchronní komunikace založená na zprávách
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Asynchronní komunikace založená na zprávách je zásadní pojem architektury mikroslužeb, protože je to nejlepší způsob, jak uchovávat mikroslužby nezávisle na sobě a zároveň je synchronizovat.
 ms.date: 09/20/2018
-ms.openlocfilehash: 476e42ccb39374c2bb50f22e41f60c10c563dc66
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: a8af94540a7906c474b9b784c28aa60ebae0a6e3
+ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144341"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84306965"
 ---
 # <a name="asynchronous-message-based-communication"></a>Asynchronní komunikace založená na zprávách
 
@@ -35,7 +35,7 @@ Jakmile začnete odesílat komunikaci na základě zpráv (s příkazy nebo udá
 
 **Obrázek 4-18**. Jedna mikroslužba přijímající asynchronní zprávu
 
-Všimněte si, že když se příkazy dostanou z klientských aplikací, dají se implementovat jako synchronní příkazy HTTP. Příkazy založené na zprávách byste měli použít, když potřebujete vyšší škálovatelnost nebo když už jste v podnikovém procesu založeném na zprávách.
+Když se příkazy dostanou z klientských aplikací, dají se implementovat jako synchronní příkazy HTTP. Příkazy založené na zprávách použijte v případě, že potřebujete vyšší škálovatelnost nebo pokud jste již v podnikovém procesu založeném na zprávách.
 
 ## <a name="multiple-receivers-message-based-communication"></a>Komunikace na základě zpráv s více přijímači
 
@@ -57,7 +57,7 @@ Důležité je, že budete chtít komunikovat s více mikroslužbami, které se 
 
 **Obrázek 4-19**. Komunikace zpráv řízených asynchronními událostmi
 
-V asynchronní komunikaci založené na událostech jedna mikroslužba publikuje události do sběrnice událostí a spousta mikroslužeb se může přihlásit k odběru, aby se k ní mohl dostat oznámení a reagovat na ně. Vaše implementace určí, který protokol bude použit pro komunikaci založenou na událostech. [AMQP](https://en.wikipedia.org/wiki/Advanced_Message_Queuing_Protocol) může pomáhat dosáhnout spolehlivé komunikace ve frontě.
+V asynchronní komunikaci založené na událostech publikuje jedna mikroslužba události do sběrnice událostí a spousta mikroslužeb se může přihlásit k odběru, aby se k ní mohl dostat oznámení a reagovat na ně. Vaše implementace určí, který protokol bude použit pro komunikaci založenou na událostech. [AMQP](https://en.wikipedia.org/wiki/Advanced_Message_Queuing_Protocol) může pomáhat dosáhnout spolehlivé komunikace ve frontě.
 
 Při použití sběrnice událostí můžete chtít použít úroveň abstrakce (například rozhraní sběrnice událostí) založenou na související implementaci ve třídách s kódem pomocí rozhraní API od zprostředkovatele zpráv, jako je [RabbitMQ](https://www.rabbitmq.com/) nebo Service Bus, jako je [Azure Service Bus s tématy](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-dotnet-how-to-use-topics-subscriptions). Alternativně můžete chtít použít vyšší úroveň služby Service Bus, jako je NServiceBus, MassTransit nebo jasnější, aby vyjadřují Vaši sběrnici událostí a systém pro publikování a odběr.
 

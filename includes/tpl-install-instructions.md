@@ -7,4 +7,4 @@ ms.lasthandoff: 03/15/2020
 ms.locfileid: "64761366"
 ---
 > [!NOTE]
-> Knihovna toku dat <xref:System.Threading.Tasks.Dataflow> TPL (obor názvů) není distribuována s rozhraním .NET. Pokud chcete <xref:System.Threading.Tasks.Dataflow> nainstalovat obor názvů v sadě Visual Studio, otevřete projekt, znabídky `System.Threading.Tasks.Dataflow` **Project** zvolte Spravovat **balíčky NuGet** a vyhledejte balíček online. Případně jej nainstalovat pomocí [rozhraní CLI jádra .NET](~/docs/core/tools/index.md), spusťte `dotnet add package System.Threading.Tasks.Dataflow`.
+> Knihovna TPL Dataflow ( <xref:System.Threading.Tasks.Dataflow> obor názvů) není distribuována s rozhraním .NET. Chcete-li <xref:System.Threading.Tasks.Dataflow> v aplikaci Visual Studio nainstalovat obor názvů, otevřete projekt, v nabídce **projekt** vyberte možnost **Spravovat balíčky NuGet** a vyhledejte balíček online `System.Threading.Tasks.Dataflow` . Případně ho můžete nainstalovat pomocí [.NET Core CLI](~/docs/core/tools/index.md)spuštěním `dotnet add package System.Threading.Tasks.Dataflow` .

@@ -81,6 +81,6 @@ Jazyk C# je navržen tak, aby bylo možné vyvíjet a udržovat zpětnou kompati
 ## <a name="see-also"></a>Viz také
 
 - [Průvodce programováním v C#](../index.md)
-- [Třídy a struktury](./index.md)
+- [Třídy a struktury](./index.md)
 - [Metody](./methods.md)
 - [Dědičnost](./inheritance.md)

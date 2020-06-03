@@ -36,7 +36,7 @@ Tři atributy spolu se silným názvem (Pokud je k dispozici) určují identitu 
 
 Následující tabulka popisuje atributy Version a culture.
 
-|Atribut identity sestavení|Popis|
+|Atribut identity sestavení|Description|
 |---------------------------------|-----------------|
 |<xref:System.Reflection.AssemblyCultureAttribute>|Výčtové pole označující jazykovou verzi, kterou sestavení podporuje. Sestavení může také určovat nezávislost jazykové verze, což značí, že obsahuje prostředky pro výchozí jazykovou verzi. **Poznámka:**  Modul runtime zpracovává všechna sestavení, která nemají atribut Culture nastaven na hodnotu null jako satelitní sestavení. Taková sestavení se vztahují na pravidla vazeb satelitního sestavení. Další informace najdete v tématu [jak modul runtime vyhledává sestavení](../../framework/deployment/how-the-runtime-locates-assemblies.md).|
 |<xref:System.Reflection.AssemblyFlagsAttribute>|Hodnota, která nastavuje atributy sestavení, například zda lze sestavení spustit vedle sebe.|
@@ -69,7 +69,7 @@ Následující příklad kódu ukazuje, jak použít atributy Version a Culture 
 
 Pomocí informativních atributů lze poskytnout další informace o společnosti nebo produktu pro sestavení. Následující tabulka popisuje informační atributy, které lze použít pro sestavení.
 
-|Informační atribut|Popis|
+|Informační atribut|Description|
 |-----------------------------|-----------------|
 |<xref:System.Reflection.AssemblyCompanyAttribute>|Řetězcová hodnota, která určuje název společnosti.|
 |<xref:System.Reflection.AssemblyCopyrightAttribute>|Hodnota řetězce, která určuje informace o autorských právech.|
@@ -84,7 +84,7 @@ Tyto atributy se mohou zobrazit na stránce vlastností systému Windows v sesta
 
 Atributy manifestu sestavení lze použít k poskytnutí informací v manifestu sestavení, včetně názvu, popisu, výchozího aliasu a konfigurace. Následující tabulka popisuje atributy manifestu sestavení.
 
-|Atribut manifestu sestavení|Popis|
+|Atribut manifestu sestavení|Description|
 |---------------------------------|-----------------|
 |<xref:System.Reflection.AssemblyConfigurationAttribute>|Řetězcová hodnota označující konfiguraci sestavení, jako je například maloobchod nebo ladění. Modul runtime tuto hodnotu nepoužívá.|
 |<xref:System.Reflection.AssemblyDefaultAliasAttribute>|Řetězcová hodnota určující výchozí alias, který má být použit odkazem na sestavení. Tato hodnota poskytuje popisný název, pokud samotný název sestavení není popisný (například hodnota GUID). Tuto hodnotu lze také použít jako krátký tvar úplného názvu sestavení.|
@@ -95,7 +95,7 @@ Atributy manifestu sestavení lze použít k poskytnutí informací v manifestu 
 
 Atributy silného názvu lze použít k nastavení silného názvu pro sestavení. Následující tabulka popisuje atributy silného názvu.
 
-|Atribut silného názvu|Popis|
+|Atribut silného názvu|Description|
 |----------------------------|-----------------|
 |<xref:System.Reflection.AssemblyDelaySignAttribute>|Logická hodnota označující, že se používá zpožděné podepisování.|
 |<xref:System.Reflection.AssemblyKeyFileAttribute>|Řetězcová hodnota označující název souboru, který obsahuje buď veřejný klíč (Pokud používáte zpožděné podepisování), nebo veřejný i privátní klíč předaný jako parametr konstruktoru tohoto atributu. Všimněte si, že název souboru je relativní vzhledem k cestě výstupního souboru ( *. exe* nebo *. dll*), nikoli ke zdrojové cestě k souboru.|

@@ -30,7 +30,7 @@ Nový formát, \* . csproj, je formát založený na jazyce XML. Následující 
 
 ## <a name="common-top-level-properties"></a>Společné vlastnosti nejvyšší úrovně
 
-### <a name="name"></a>jméno
+### <a name="name"></a>name
 
 ```json
 {
@@ -339,7 +339,7 @@ V nástroji MSBuild jsou všechny projekty *přenosné* během sestavení, ale m
 
 Další informace najdete v tématu [samostatná nasazení (SCD)](../deploying/index.md#publish-self-contained).
 
-## <a name="tools"></a>nástroje
+## <a name="tools"></a>tools
 
 ```json
 {

@@ -1,15 +1,15 @@
 ---
 title: using – reference jazyka C#
-ms.date: 04/07/2020
+ms.date: 05/29/2020
 helpviewer_keywords:
 - using statement [C#]
 ms.assetid: afc355e6-f0b9-4240-94dd-0d93f17d9fc3
-ms.openlocfilehash: 3c479faeeb66865b8c368edba881429a7cb956ec
-ms.sourcegitcommit: 5988e9a29cedb8757320817deda3c08c6f44a6aa
+ms.openlocfilehash: b889d2fcbdf854dbe8948744810f9b74e9f0dac2
+ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82199674"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84307043"
 ---
 # <a name="using-statement-c-reference"></a>using – příkaz (Referenční dokumentace jazyka C#)
 
@@ -29,17 +29,17 @@ Počínaje jazykem C# 8,0 můžete použít následující alternativní syntaxi
 
 <xref:System.IO.File>a <xref:System.Drawing.Font> jsou příklady spravovaných typů, které přistupují k nespravovaným prostředkům (v tomto případě popisovače souborů a kontexty zařízení). Existuje mnoho dalších druhů nespravovaných prostředků a typů knihoven tříd, které je zapouzdřují. Všechny tyto typy musí implementovat <xref:System.IDisposable> rozhraní nebo <xref:System.IAsyncDisposable> rozhraní.
 
-Pokud je životnost `IDisposable` objektu omezena na jedinou metodu, měli byste deklarovat a vytvořit jeho instanci v `using` příkazu. `using` Příkaz volá <xref:System.IDisposable.Dispose%2A> metodu na objekt správným způsobem a (při použití, jak je uvedeno výše), také způsobí, že se objekt sám vrátí do rozsahu, jakmile <xref:System.IDisposable.Dispose%2A> je volán. V rámci `using` bloku je objekt jen pro čtení a nedá se změnit ani znovu přiřadit. Pokud objekt implementuje `IAsyncDisposable` místo `IDisposable`, `using` příkaz zavolá <xref:System.IAsyncDisposable.DisposeAsync%2A> a `awaits` vrátí. <xref:System.Threading.Tasks.Task>
+Pokud `IDisposable` je životnost objektu omezena na jedinou metodu, měli byste deklarovat a vytvořit jeho instanci v `using` příkazu. `using`Příkaz volá <xref:System.IDisposable.Dispose%2A> metodu na objekt správným způsobem a (při použití, jak je uvedeno výše), také způsobí, že se objekt sám vrátí do rozsahu, jakmile <xref:System.IDisposable.Dispose%2A> je volán. V rámci `using` bloku je objekt jen pro čtení a nedá se změnit ani znovu přiřadit. Pokud objekt implementuje `IAsyncDisposable` místo `IDisposable` , `using` příkaz zavolá <xref:System.IAsyncDisposable.DisposeAsync%2A> a `awaits` vrátí <xref:System.Threading.Tasks.ValueTask> . Další informace o naleznete v <xref:System.IAsyncDisposable> tématu [Implementing a DisposeAsync Method](../../../standard/garbage-collection/implementing-disposeasync.md).
 
-`using` Příkaz zajistí, že <xref:System.IDisposable.Dispose%2A> (nebo <xref:System.IAsyncDisposable.DisposeAsync%2A>) je volána i v případě, že v rámci `using` bloku dojde k výjimce. Stejný výsledek můžete dosáhnout vložením objektu `try` dovnitř bloku a následným voláním <xref:System.IDisposable.Dispose%2A> (nebo <xref:System.IAsyncDisposable.DisposeAsync%2A>) v `finally` bloku. ve skutečnosti se jedná o způsob překladu `using` příkazu kompilátorem. Výše uvedený příklad kódu se v době kompilace rozšíří na následující kód (Poznamenejte si nadbytečné složené závorky pro vytvoření omezeného oboru pro objekt):
+`using`Příkaz zajistí, že <xref:System.IDisposable.Dispose%2A> (nebo <xref:System.IAsyncDisposable.DisposeAsync%2A> ) je volána i v případě, že v rámci bloku dojde k výjimce `using` . Stejný výsledek lze dosáhnout vložením objektu do `try` bloku a následným voláním <xref:System.IDisposable.Dispose%2A> (nebo <xref:System.IAsyncDisposable.DisposeAsync%2A> ) v `finally` bloku. to je způsob, jakým `using` je příkaz přeložen kompilátorem. Výše uvedený příklad kódu se v době kompilace rozšíří na následující kód (Poznamenejte si nadbytečné složené závorky pro vytvoření omezeného oboru pro objekt):
 
 :::code language="csharp" source="snippets/usings.cs" id="SnippetTryFinallyExample":::
 
-Novější `using` syntaxe příkazu se překládá na podobný kód. `try` Blok se otevře, kde je proměnná deklarována. `finally` Blok se přidá na konec ohraničujícího bloku, obvykle na konci metody.
+Novější `using` syntaxe příkazu se překládá na podobný kód. `try`Blok se otevře, kde je proměnná deklarována. `finally`Blok se přidá na konec ohraničujícího bloku, obvykle na konci metody.
 
-Další `try` - `finally` informace o příkazu naleznete v článku [try-finally](try-finally.md) .
+Další informace o `try` - `finally` příkazu naleznete v článku [try-finally](try-finally.md) .
 
-V jednom `using` příkazu lze deklarovat více instancí typu, jak je znázorněno v následujícím příkladu. Všimněte si, že nemůžete použít implicitní typové`var`proměnné (), pokud deklarujete více proměnných v jednom příkazu:
+V jednom příkazu lze deklarovat více instancí typu `using` , jak je znázorněno v následujícím příkladu. Všimněte si, že nemůžete použít implicitní typové proměnné ( `var` ), pokud deklarujete více proměnných v jednom příkazu:
 
 :::code language="csharp" source="snippets/usings.cs" id="SnippetDeclareMultipleVariables":::
 
@@ -47,7 +47,7 @@ Můžete zkombinovat více deklarací stejného typu pomocí nové syntaxe před
 
 :::code language="csharp" source="snippets/usings.cs" id="SnippetModernMultipleVariables":::
 
-Můžete vytvořit instanci objektu prostředku a pak předat proměnnou `using` příkazu, ale to není doporučený postup. V takovém případě, když ovládací prvek `using` opustí blok, objekt zůstane v oboru, ale pravděpodobně nemá přístup k nespravovaným prostředkům. Jinými slovy, již není zcela inicializován. Pokud se pokusíte použít objekt mimo `using` blok, riskujete, že bude vyvolána výjimka. Z tohoto důvodu je lepší vytvořit instanci objektu v `using` příkazu a omezit svůj rozsah na `using` blok.
+Můžete vytvořit instanci objektu prostředku a pak předat proměnnou `using` příkazu, ale to není doporučený postup. V takovém případě, když ovládací prvek opustí `using` blok, objekt zůstane v oboru, ale pravděpodobně nemá přístup k nespravovaným prostředkům. Jinými slovy, již není zcela inicializován. Pokud se pokusíte použít objekt mimo `using` blok, riskujete, že bude vyvolána výjimka. Z tohoto důvodu je lepší vytvořit instanci objektu v `using` příkazu a omezit svůj rozsah na `using` blok.
 
 :::code language="csharp" source="snippets/usings.cs" id="SnippetDeclareBeforeUsing":::
 

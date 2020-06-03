@@ -12,10 +12,10 @@ ms.locfileid: "82796064"
 
 Můžete použít serializaci k uchování dat objektu mezi instancemi, což umožňuje ukládat hodnoty a načíst je při příštím vytvoření instance objektu.
 
-V tomto návodu vytvoříte základní `Loan` objekt a zachová jeho data do souboru. Po opětovném vytvoření objektu načtěte data ze souboru.
+V tomto návodu vytvoříte základní objekt a zachová `Loan` jeho data do souboru. Po opětovném vytvoření objektu načtěte data ze souboru.
 
 > [!IMPORTANT]
-> Tento příklad vytvoří nový soubor, pokud soubor ještě neexistuje. Pokud aplikace musí vytvořit soubor, musí mít `Create` Tato aplikace oprávnění pro tuto složku. Oprávnění se nastavují pomocí seznamů řízení přístupu. Pokud soubor již existuje, aplikace potřebuje pouze `Write` oprávnění a menší oprávnění. Pokud je to možné, je bezpečnější vytvořit soubor během nasazení a udělit `Read` oprávnění pouze k jednomu souboru (místo oprávnění k vytvoření složky). Je také bezpečnější zapsat data do složek uživatele než do kořenové složky nebo do složky Program Files.
+> Tento příklad vytvoří nový soubor, pokud soubor ještě neexistuje. Pokud aplikace musí vytvořit soubor, musí mít tato aplikace `Create` oprávnění pro tuto složku. Oprávnění se nastavují pomocí seznamů řízení přístupu. Pokud soubor již existuje, aplikace potřebuje pouze `Write` oprávnění a menší oprávnění. Pokud je to možné, je bezpečnější vytvořit soubor během nasazení a udělit `Read` oprávnění pouze k jednomu souboru (místo oprávnění k vytvoření složky). Je také bezpečnější zapsat data do složek uživatele než do kořenové složky nebo do složky Program Files.
 
 > [!IMPORTANT]
 > Tento příklad ukládá data v binárním souboru formátu. Tyto formáty by se neměly používat pro citlivá data, jako jsou hesla nebo informace o kreditních kartách.
@@ -37,9 +37,9 @@ Ukázkový kód si můžete prohlédnout online [v úložišti GitHub Samples .N
 
 Prvním krokem je vytvoření `Loan` třídy a konzolové aplikace, která používá třídu:
 
-1. Vytvořte novou aplikaci. Zadejte `dotnet new console -o serialization` , chcete-li vytvořit novou konzolovou aplikaci v podadresáři s názvem `serialization`.
-1. Otevřete aplikaci v editoru a přidejte novou třídu s názvem `Loan.cs`.
-1. Do `Loan` třídy přidejte následující kód:
+1. Vytvořte novou aplikaci. Zadejte `dotnet new console -o serialization` , chcete-li vytvořit novou konzolovou aplikaci v podadresáři s názvem `serialization` .
+1. Otevřete aplikaci v editoru a přidejte novou třídu s názvem `Loan.cs` .
+1. Do třídy přidejte následující kód `Loan` :
 
 [!code-csharp[Loan class definition](../../../../../samples/snippets/csharp/serialization/Loan.cs#1)]
 
@@ -71,7 +71,7 @@ Aby bylo možné zachovat hodnoty pro třídu výpůjčky, musíte nejprve ozna�
 
 [!code-csharp[Loan class definition](../../../../../samples/snippets/csharp/serialization/Loan.cs#2)]
 
-Rozhraní <xref:System.SerializableAttribute> instruuje kompilátor, že všechno ve třídě lze trvale uložit do souboru. Vzhledem k `PropertyChanged` tomu, že událost nepředstavuje součást grafu objektů, která by měla být uložena, neměla by být serializována. Tím by došlo k serializaci všech objektů, které jsou k této události připojeny. Můžete přidat <xref:System.NonSerializedAttribute> do deklarace pole pro obslužnou rutinu `PropertyChanged` události.
+Rozhraní <xref:System.SerializableAttribute> instruuje kompilátor, že všechno ve třídě lze trvale uložit do souboru. Vzhledem k tomu, že `PropertyChanged` událost nepředstavuje součást grafu objektů, která by měla být uložena, neměla by být serializována. Tím by došlo k serializaci všech objektů, které jsou k této události připojeny. Můžete přidat <xref:System.NonSerializedAttribute> do deklarace pole pro `PropertyChanged` obslužnou rutinu události.
 
 [!code-csharp[Disable serialization for the event handler](../../../../../samples/snippets/csharp/serialization/Loan.cs#3)]
 
@@ -79,7 +79,7 @@ Počínaje jazykem C# 7,3 můžete přiřadit atributy k poli pro zálohování 
 
 [!code-csharp[Disable serialization for an auto-implemented property](../../../../../samples/snippets/csharp/serialization/Loan.cs#4)]
 
-Dalším krokem je přidání kódu serializace do aplikace LoanApp. Aby bylo možné serializovat třídu a zapsat ji do souboru, použijte obory názvů <xref:System.IO> a. <xref:System.Runtime.Serialization.Formatters.Binary> Chcete-li se vyhnout psaní plně kvalifikovaných názvů, můžete přidat odkazy na nezbytné obory názvů, jak je znázorněno v následujícím kódu:
+Dalším krokem je přidání kódu serializace do aplikace LoanApp. Aby bylo možné serializovat třídu a zapsat ji do souboru, použijte <xref:System.IO> <xref:System.Runtime.Serialization.Formatters.Binary> obory názvů a. Chcete-li se vyhnout psaní plně kvalifikovaných názvů, můžete přidat odkazy na nezbytné obory názvů, jak je znázorněno v následujícím kódu:
 
 [!code-csharp[Adding namespaces for serialization](../../../../../samples/snippets/csharp/serialization/Program.cs#3)]
 
@@ -93,7 +93,7 @@ Dále přidejte následující kód za řádek, který vytvoří `TestLoan` obje
 
 Nejdřív musíte ověřit, že soubor existuje. Pokud existuje, vytvořte <xref:System.IO.Stream> třídu pro čtení binárního souboru a <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> třídu pro překlad souboru. Také je nutné převést typ datového proudu na typ objektu výpůjčky.
 
-Dále je nutné přidat kód k serializaci třídy do souboru. Za existující kód v `Main` metodě přidejte následující kód:
+Dále je nutné přidat kód k serializaci třídy do souboru. Za existující kód v metodě přidejte následující kód `Main` :
 
 [!code-csharp[Save the existing Loan object](../../../../../samples/snippets/csharp/serialization/Program.cs#6)]
 

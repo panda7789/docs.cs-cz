@@ -2,12 +2,12 @@
 title: Vzor brány rozhraní API oproti přímé komunikaci mezi klientem a mikroslužbou
 description: Seznamte se s rozdíly a využitím vzoru brány API a přímé komunikace mezi klientem a mikroslužbou.
 ms.date: 01/07/2019
-ms.openlocfilehash: 5c2f3bd32396b45a6209550f5b7a07c88795ccc0
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 089b6302132437e4bb733653b3edb401ff81a164
+ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144328"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84306952"
 ---
 # <a name="the-api-gateway-pattern-versus-the-direct-client-to-microservice-communication"></a>Vzor brány rozhraní API oproti přímé komunikaci mezi klientem a mikroslužbou
 
@@ -53,13 +53,13 @@ V architektuře mikroslužeb klientské aplikace obvykle potřebují využívat 
 
 Proto je pro aplikace založené na mikroslužbách velmi výhodné mít úroveň dereference (brána). Pokud nemáte brány rozhraní API, klientské aplikace musí posílat požadavky přímo na mikroslužby a, které vyvolává problémy, například následující problémy:
 
-- **Spoj**: bez vzoru brány API jsou klientské aplikace propojeny s interními mikroslužbami. Klientské aplikace potřebují informace o tom, jak se více oblastí aplikace rozloží v mikroslužbách. Při vývoji a refaktoringu vnitřních mikroslužeb tyto akce ovlivnily nechybnou údržbu, protože způsobují přerušující změny klientských aplikací kvůli přímému odkazu na interní mikroslužby z klientských aplikací. Klientské aplikace je třeba často aktualizovat, takže se řešení bude obtížnější vyvíjet.
+- **Spoj**: bez vzoru brány API jsou klientské aplikace propojeny s interními mikroslužbami. Klientské aplikace potřebují informace o tom, jak se více oblastí aplikace rozloží v mikroslužbách. Při vývoji a refaktoringu vnitřních mikroslužeb tyto akce ovlivňují údržbu, protože způsobují zásadní změny klientských aplikací kvůli přímému odkazu na interní mikroslužby z klientských aplikací. Klientské aplikace je třeba často aktualizovat, takže se řešení bude obtížnější vyvíjet.
 
 - **Příliš mnoho zpátečních cest**: jedna stránka nebo obrazovka v klientské aplikaci může vyžadovat několik volání na více služeb. To může vést k tomu, že mezi klientem a serverem dojde k většímu počtu síťových přenosů a přidáním významné latence. Agregace zpracovávaná na mezilehlé úrovni by mohla zlepšit výkon a uživatelské prostředí pro klientskou aplikaci.
 
 - **Problémy se zabezpečením**: bez brány musí být všechny mikroslužby vystavené externímu světu, takže je velikost prostoru pro útoky větší, než když skryjete interní mikroslužby, které nejsou přímo používané klientskými aplikacemi. Menší plocha pro útok je, tím bezpečnější může být aplikace.
 
-- **Problémy mezi průřezy**: každá veřejně publikovaná mikroslužba musí mít obavy, jako je například autorizace, SSL atd. V mnoha situacích by tyto otázky mohly být zpracovány v rámci jedné úrovně, aby byly interní mikroslužby zjednodušeny.
+- **Problémy mezi průřezy**: každá veřejně publikovaná mikroslužba musí mít obavy, jako je například autorizace a SSL. V mnoha situacích by tyto otázky mohly být zpracovány v rámci jedné úrovně, aby byly interní mikroslužby zjednodušeny.
 
 ## <a name="what-is-the-api-gateway-pattern"></a>Co je to vzor brány rozhraní API?
 
@@ -75,7 +75,7 @@ Obrázek 4-13 ukazuje, jak se dá vlastní brána API vejít do zjednodušené a
 
 Aplikace se připojují k jednomu koncovému bodu, bráně API, která je nakonfigurovaná tak, aby přesměrovala požadavky na jednotlivé mikroslužby. V tomto příkladu by se brána API implementovala jako vlastní ASP.NET Core služba webhosta spuštěná jako kontejner.
 
-Je důležité zdůraznit, že v tomto diagramu byste použili jednu vlastní službu API Gateway, která se týká více a různých klientských aplikací. Tato skutečnost může představovat důležité riziko, protože vaše služba API Gateway se bude zvětšovat a rozvíjet na základě mnoha různých požadavků z klientských aplikací. Nakonec bude bloated z důvodu těchto různých potřeb a efektivně může být poměrně podobný aplikaci monolitické nebo službě monolitické. To je důvod, proč je velmi vhodné rozdělit bránu API ve více službách nebo více menších bran rozhraní API, jeden pro každý klient aplikace typ formuláře-faktor.
+Je důležité zdůraznit, že v tomto diagramu byste použili jednu vlastní službu API Gateway, která se týká více a různých klientských aplikací. Tato skutečnost může představovat důležité riziko, protože vaše služba API Gateway se bude zvětšovat a rozvíjet na základě mnoha různých požadavků z klientských aplikací. Nakonec bude bloated z důvodu těchto různých potřeb a efektivně by mohla být podobná aplikaci monolitické nebo službě monolitické. To je důvod, proč je velmi vhodné rozdělit bránu API ve více službách nebo více menších bran rozhraní API, jeden pro každý klient aplikace typ formuláře-faktor.
 
 Při implementaci vzoru brány rozhraní API musíte být opatrní. Obvykle není vhodné mít jedinou bránu rozhraní API, která agreguje všechny interní mikroslužby vaší aplikace. V takovém případě funguje jako agregátor monolitické nebo Orchestrator a je porušená autonomii mikroslužeb tím, že se připojí ke všem mikroslužbám.
 
@@ -93,7 +93,7 @@ Obrázek 4 – 13.1 zobrazuje brány rozhraní API, které jsou oddělené typem
 
 Brána rozhraní API může nabízet víc funkcí. V závislosti na tom, jaký produkt může nabízet bohatší nebo jednodušší funkce, jsou ale nejdůležitější a základní funkce pro libovolnou bránu rozhraní API tyto vzory návrhu:
 
-**Směrování reverzního proxy serveru nebo brány.** Rozhraní API Gateway nabízí reverzní proxy server pro přesměrování nebo směrování požadavků (směrování vrstvy 7, obvykle požadavky HTTP) do koncových bodů interních mikroslužeb. Brána poskytuje jeden koncový bod nebo adresu URL pro klientské aplikace a pak interně mapuje požadavky na skupinu interních mikroslužeb. Tato funkce směrování pomáhá oddělit klientské aplikace od mikroslužeb, ale je také poměrně výhodné při modernizacií rozhraní API monolitické prostřednictvím brány API v mezi rozhraními API monolitické a klientskými aplikacemi. potom můžete přidat nová rozhraní API jako nové mikroslužby, dokud nebude v budoucnu rozdělená na mnoho mikroslužeb. Z důvodu brány rozhraní API nebudou klientské aplikace obsahovat informace o tom, jestli se použitá rozhraní API implementují jako interní mikroslužby nebo rozhraní monolitické API. při vývoji a refaktoringu rozhraní monolitické API na mikroslužby se díky směrování brány API nebudou ovlivněny žádné změny identifikátoru URI.
+**Směrování reverzního proxy serveru nebo brány.** Rozhraní API Gateway nabízí reverzní proxy server pro přesměrování nebo směrování požadavků (směrování vrstvy 7, obvykle požadavky HTTP) do koncových bodů interních mikroslužeb. Brána poskytuje jeden koncový bod nebo adresu URL pro klientské aplikace a pak interně mapuje požadavky na skupinu interních mikroslužeb. Tato funkce směrování pomáhá oddělit klientské aplikace od mikroslužeb, ale je to také užitečné, když modernizaci rozhraní API monolitické prostřednictvím brány API v mezi rozhraními monolitické API a klientskými aplikacemi. potom můžete přidat nová rozhraní API jako nové mikroslužby, dokud nebude v budoucnu rozdělená na mnoho mikroslužeb. Z důvodu brány rozhraní API nebudou klientské aplikace obsahovat informace o tom, jestli se použitá rozhraní API implementují jako interní mikroslužby nebo rozhraní monolitické API. při vývoji a refaktoringu rozhraní monolitické API na mikroslužby se díky směrování brány API nebudou ovlivněny žádné změny identifikátoru URI.
 
 Další informace najdete v tématu [vzor směrování brány](https://docs.microsoft.com/azure/architecture/patterns/gateway-routing).
 
@@ -144,7 +144,7 @@ V této příručce a v referenční aplikaci eShopOnContainers (Reference Sampl
 
 ### <a name="ocelot"></a>Ocelot
 
-[Ocelot](https://github.com/ThreeMammals/Ocelot) je zjednodušená brána API, která se doporučuje pro jednodušší přístupy. Ocelot je open source brána API založená na rozhraní .NET Core, která se skládá hlavně pro architekturu mikroslužeb, která vyžaduje sjednocení vstupních bodů do jejich systému. Je odlehčená, rychlá a škálovatelná a poskytuje směrování a ověřování mezi mnoha dalšími funkcemi.
+[Ocelot](https://github.com/ThreeMammals/Ocelot) je zjednodušená brána API, která se doporučuje pro jednodušší přístupy. Ocelot je open source brána API založená na rozhraní .NET Core, která se hodí hlavně pro architektury mikroslužeb, které potřebují v jejich systémech sjednocení vstupních bodů. Je odlehčená, rychlá a škálovatelná a poskytuje směrování a ověřování mezi mnoha dalšími funkcemi.
 
 Hlavním důvodem pro výběr Ocelot pro [referenční aplikaci eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers) je, že Ocelot je odlehčená brána rozhraní API .NET Core, kterou můžete nasadit do stejného prostředí nasazení aplikace, kde nasazujete mikroslužby nebo kontejnery, jako je například hostitel Docker, Kubernetes atd. A vzhledem k tomu, že je založená na .NET Core, je to pro různé platformy, které vám umožní nasadit na Linux nebo Windows.
 
@@ -188,7 +188,7 @@ V dalších oddílech se po úvodní části architektury a vzorů vysvětlují,
 - **Clemense obrovské. Zasílání zpráv a mikroslužeb na adrese GOTO 2016 (video)** \
   <https://www.youtube.com/watch?v=rXi5CLjIQ9k>
 
-- **Brána API v kostce** (série kurzů ASP.NET Core API Gateway) \
+- **Brána API v kostce** (řada kurzů ASP.NET Core API Gateway) \
   <https://www.pogsdotnet.com/2018/08/api-gateway-in-nutshell.html>
 
 >[!div class="step-by-step"]
