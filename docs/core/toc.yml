@@ -115,9 +115,12 @@
         - name: Publikování aplikace
           href: tutorials/publishing-with-visual-studio-code.md
           displayName: 'tutorials, visual studio, vs'
-        - name: Vytvoření knihovny s následným testem jednotek – macOS
-          href: tutorials/using-on-macos.md
-          displayName: 'tutorials, visual studio code, vs code, cli'
+        - name: Vytvoření knihovny
+          href: tutorials/library-with-visual-studio-code.md
+          displayName: 'tutorials, visual studio, vs'
+        - name: Test jednotek u knihovny
+          href: tutorials/testing-library-with-visual-studio-code.md
+          displayName: 'tutorials, visual studio, vs'
         - name: Instalace a použití balíčku
           href: /nuget/quickstart/install-and-use-a-package-using-the-dotnet-cli
           displayName: 'tutorials, cli'
