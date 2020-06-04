@@ -3044,35 +3044,35 @@ f1_keywords:
 - bc30233
 - bc30829
 ms.assetid: 0938efc2-e205-450b-9314-99951fcbd702
-ms.openlocfilehash: 87d7ce07523af87ae4d2746201ed7af576b3e3a8
-ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
+ms.openlocfilehash: 12af447d053e84347ddc3a2c1ecad1cde4ff3428
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66053319"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84357801"
 ---
-# <a name="sorry-we-dont-have-specifics-on-this-visual-basic-error"></a><span data-ttu-id="554b4-102">Omlouváme se, ale k téhle chybě Visual Basicu nemáme podrobnosti.</span><span class="sxs-lookup"><span data-stu-id="554b4-102">Sorry, we don't have specifics on this Visual Basic error</span></span>
-<span data-ttu-id="554b4-103">Je nám líto, ale nemáme žádné konkrétní informace o této chybě.</span><span class="sxs-lookup"><span data-stu-id="554b4-103">We’re sorry, but we don’t have any specific information about this error.</span></span> <span data-ttu-id="554b4-104">Můžete vyhledat text chyby číslo a zprávou k nalezení informací o na webu.</span><span class="sxs-lookup"><span data-stu-id="554b4-104">You can search for the error number and message text to find information on the web.</span></span> <span data-ttu-id="554b4-105">Nebo můžete požádat o další vývojáři pomocí jedné z těchto fór:</span><span class="sxs-lookup"><span data-stu-id="554b4-105">Or, you can ask other developers using one of these forums:</span></span>  
+# <a name="sorry-we-dont-have-specifics-on-this-visual-basic-error"></a><span data-ttu-id="c2c07-102">Omlouváme se, ale k téhle chybě Visual Basicu nemáme podrobnosti.</span><span class="sxs-lookup"><span data-stu-id="c2c07-102">Sorry, we don't have specifics on this Visual Basic error</span></span>
+<span data-ttu-id="c2c07-103">Je nám líto, ale nemáme žádné konkrétní informace o této chybě.</span><span class="sxs-lookup"><span data-stu-id="c2c07-103">We’re sorry, but we don’t have any specific information about this error.</span></span> <span data-ttu-id="c2c07-104">Můžete vyhledat číslo chyby a text zprávy, abyste našli informace na webu.</span><span class="sxs-lookup"><span data-stu-id="c2c07-104">You can search for the error number and message text to find information on the web.</span></span> <span data-ttu-id="c2c07-105">Nebo můžete požádat ostatní vývojáře, aby používali jedno z těchto fór:</span><span class="sxs-lookup"><span data-stu-id="c2c07-105">Or, you can ask other developers using one of these forums:</span></span>  
   
- [<span data-ttu-id="554b4-106">Jazyk Visual Basic</span><span class="sxs-lookup"><span data-stu-id="554b4-106">Visual Basic Language</span></span>](https://social.msdn.microsoft.com/Forums/home?forum=vblanguage)  
- <span data-ttu-id="554b4-107">Poskytuje fórum pro dotazy a obecnou diskusi týkající syntaxe jazyka Visual Basic a kompilátoru.</span><span class="sxs-lookup"><span data-stu-id="554b4-107">Provides a forum for questions about and general discussions of the Visual Basic language syntax and compiler.</span></span>  
+ [<span data-ttu-id="c2c07-106">Visual Basic jazyk</span><span class="sxs-lookup"><span data-stu-id="c2c07-106">Visual Basic Language</span></span>](https://social.msdn.microsoft.com/Forums/home?forum=vblanguage)  
+ <span data-ttu-id="c2c07-107">Poskytuje fórum pro otázky týkající se obecné diskuse o syntaxi a kompilátoru Visual Basic jazyka.</span><span class="sxs-lookup"><span data-stu-id="c2c07-107">Provides a forum for questions about and general discussions of the Visual Basic language syntax and compiler.</span></span>  
   
- [<span data-ttu-id="554b4-108">Vylepšení jazyka Visual Basic</span><span class="sxs-lookup"><span data-stu-id="554b4-108">Visual Basic Interop and Upgrade</span></span>](https://social.msdn.microsoft.com/Forums/home?forum=vbinterop)  
- <span data-ttu-id="554b4-109">Poskytuje diskusní fórum pro otázky o a problémy s upgradem do jazyka Visual Basic a práci s funkcemi, vzájemná funkční spolupráce.</span><span class="sxs-lookup"><span data-stu-id="554b4-109">Provides a forum for questions about and issues with upgrading to Visual Basic and working with interoperability features.</span></span>  
+ [<span data-ttu-id="c2c07-108">Visual Basic spolupráce a upgrade</span><span class="sxs-lookup"><span data-stu-id="c2c07-108">Visual Basic Interop and Upgrade</span></span>](https://social.msdn.microsoft.com/Forums/home?forum=vbinterop)  
+ <span data-ttu-id="c2c07-109">Poskytuje fórum pro otázky týkající se problémů s upgradem na Visual Basic a práci s funkcemi interoperability.</span><span class="sxs-lookup"><span data-stu-id="c2c07-109">Provides a forum for questions about and issues with upgrading to Visual Basic and working with interoperability features.</span></span>  
   
- [<span data-ttu-id="554b4-110">Integrované vývojové prostředí jazyka Visual Basic</span><span class="sxs-lookup"><span data-stu-id="554b4-110">Visual Basic IDE</span></span>](https://social.msdn.microsoft.com/Forums/home?forum=vbide)  
- <span data-ttu-id="554b4-111">Poskytuje diskusní fórum pro otázky týkající se postupu při práci v prostředí sady Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="554b4-111">Provides a forum for questions about how to work in the Visual Studio environment.</span></span>  
+ [<span data-ttu-id="c2c07-110">Visual Basic IDE</span><span class="sxs-lookup"><span data-stu-id="c2c07-110">Visual Basic IDE</span></span>](https://social.msdn.microsoft.com/Forums/home?forum=vbide)  
+ <span data-ttu-id="c2c07-111">Poskytuje fórum pro otázky týkající se práce v prostředí sady Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="c2c07-111">Provides a forum for questions about how to work in the Visual Studio environment.</span></span>  
   
- [<span data-ttu-id="554b4-112">Obecné jazyka Visual Basic</span><span class="sxs-lookup"><span data-stu-id="554b4-112">Visual Basic General</span></span>](https://social.msdn.microsoft.com/Forums/vstudio/home?forum=vbgeneral)  
- <span data-ttu-id="554b4-113">Poskytuje diskusní fórum pro otázky o a problémy s jazykem Visual Basic, které nejsou popsány na jiných fórech.</span><span class="sxs-lookup"><span data-stu-id="554b4-113">Provides a forum for questions about and issues with Visual Basic that are not discussed in other forums.</span></span>  
+ [<span data-ttu-id="c2c07-112">Visual Basic obecné</span><span class="sxs-lookup"><span data-stu-id="c2c07-112">Visual Basic General</span></span>](https://social.msdn.microsoft.com/Forums/vstudio/home?forum=vbgeneral)  
+ <span data-ttu-id="c2c07-113">Poskytuje fórum pro otázky týkající se problémů s Visual Basic, které nejsou popsány v jiných fórech.</span><span class="sxs-lookup"><span data-stu-id="c2c07-113">Provides a forum for questions about and issues with Visual Basic that are not discussed in other forums.</span></span>  
   
- [<span data-ttu-id="554b4-114">StackOverflow</span><span class="sxs-lookup"><span data-stu-id="554b4-114">StackOverflow</span></span>](https://stackoverflow.com/questions/tagged/vb.net)  
- <span data-ttu-id="554b4-115">Poskytuje diskusní fórum pro otázky o a problémy s jazykem Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="554b4-115">Provides a forum for questions about and issues with Visual Basic.</span></span>  
+ [<span data-ttu-id="c2c07-114">StackOverflow</span><span class="sxs-lookup"><span data-stu-id="c2c07-114">StackOverflow</span></span>](https://stackoverflow.com/questions/tagged/vb.net)  
+ <span data-ttu-id="c2c07-115">Poskytuje fórum pro otázky a problémy s Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="c2c07-115">Provides a forum for questions about and issues with Visual Basic.</span></span>  
   
- <span data-ttu-id="554b4-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="554b4-116">Also see:</span></span>  
- [<span data-ttu-id="554b4-117">Další zdroje informací pro programátory, kteří používají Visual Basic</span><span class="sxs-lookup"><span data-stu-id="554b4-117">Additional Resources for Visual Basic Programmers</span></span>](../../visual-basic/getting-started/additional-resources.md)  
+ <span data-ttu-id="c2c07-116">Další zdroje informací:</span><span class="sxs-lookup"><span data-stu-id="c2c07-116">Also see:</span></span>  
+ [<span data-ttu-id="c2c07-117">Další zdroje informací pro programátory, kteří používají Visual Basic</span><span class="sxs-lookup"><span data-stu-id="c2c07-117">Additional Resources for Visual Basic Programmers</span></span>](../getting-started/additional-resources.md)  
   
-## <a name="see-also"></a><span data-ttu-id="554b4-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="554b4-118">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c2c07-118">Viz také</span><span class="sxs-lookup"><span data-stu-id="c2c07-118">See also</span></span>
 
-- [<span data-ttu-id="554b4-119">Průvodce programováním v jazyce Visual Basic</span><span class="sxs-lookup"><span data-stu-id="554b4-119">Visual Basic Programming Guide</span></span>](../../visual-basic/programming-guide/index.md)
-- [<span data-ttu-id="554b4-120">Referenční dokumentace jazyka Visual Basic</span><span class="sxs-lookup"><span data-stu-id="554b4-120">Visual Basic Reference</span></span>](../../visual-basic/reference/index.md)
+- [<span data-ttu-id="c2c07-119">Příručka k programování v jazyce Visual Basic</span><span class="sxs-lookup"><span data-stu-id="c2c07-119">Visual Basic Programming Guide</span></span>](../programming-guide/index.md)
+- [<span data-ttu-id="c2c07-120">Odkaz v jazyce Visual Basic</span><span class="sxs-lookup"><span data-stu-id="c2c07-120">Visual Basic Reference</span></span>](../reference/index.md)
