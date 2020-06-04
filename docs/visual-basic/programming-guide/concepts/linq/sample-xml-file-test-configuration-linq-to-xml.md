@@ -2,17 +2,17 @@
 title: 'Ukázkový soubor XML: Testovací konfigurace (LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: 2e0e19f2-83e4-42ad-958a-6b3e34c9bf17
-ms.openlocfilehash: ef0df3ba2aa6d7628902cf59ff5fad4d29b017f1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b971044ad28763858f40d36e454c08762598a435
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61786929"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84360849"
 ---
-# <a name="sample-xml-file-test-configuration-linq-to-xml"></a><span data-ttu-id="491ed-102">Ukázkový soubor XML: Testovací konfigurace (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="491ed-102">Sample XML File: Test Configuration (LINQ to XML)</span></span>
-<span data-ttu-id="491ed-103">Následující soubor XML se používá v různých příkladů v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci.</span><span class="sxs-lookup"><span data-stu-id="491ed-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="491ed-104">Toto je soubor konfigurace testu.</span><span class="sxs-lookup"><span data-stu-id="491ed-104">This is a test configuration file.</span></span>  
+# <a name="sample-xml-file-test-configuration-linq-to-xml"></a><span data-ttu-id="bad98-102">Ukázkový soubor XML: Testovací konfigurace (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="bad98-102">Sample XML File: Test Configuration (LINQ to XML)</span></span>
+<span data-ttu-id="bad98-103">Následující soubor XML se v dokumentaci používá v různých příkladech [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="bad98-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="bad98-104">Toto je konfigurační soubor testu.</span><span class="sxs-lookup"><span data-stu-id="bad98-104">This is a test configuration file.</span></span>  
   
-## <a name="testconfigxml"></a><span data-ttu-id="491ed-105">TestConfig.xml</span><span class="sxs-lookup"><span data-stu-id="491ed-105">TestConfig.xml</span></span>  
+## <a name="testconfigxml"></a><span data-ttu-id="bad98-105">TestConfig. XML</span><span class="sxs-lookup"><span data-stu-id="bad98-105">TestConfig.xml</span></span>  
   
 ```xml  
 <?xml version="1.0"?>  
@@ -56,6 +56,6 @@ ms.locfileid: "61786929"
 </Tests>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="491ed-106">Viz také:</span><span class="sxs-lookup"><span data-stu-id="491ed-106">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="bad98-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="bad98-106">See also</span></span>
 
-- [<span data-ttu-id="491ed-107">Ukázkové dokumenty XML (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="491ed-107">Sample XML Documents (LINQ to XML)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+- [<span data-ttu-id="bad98-107">Ukázkové dokumenty XML (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="bad98-107">Sample XML Documents (LINQ to XML)</span></span>](sample-xml-documents-linq-to-xml.md)
