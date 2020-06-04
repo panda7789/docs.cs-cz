@@ -7,22 +7,22 @@ f1_keywords:
 helpviewer_keywords:
 - BC30033
 ms.assetid: 3d07f6d0-9a2f-49ca-94e8-1e354932e855
-ms.openlocfilehash: 91a5cc5c822b837657502aa82d2dd9b48b237b9b
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 52d69bc1681c387fc686f2b4b223336286e82259
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64661993"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84402872"
 ---
 # <a name="identifier-is-too-long"></a>Identifikátor je příliš dlouhý.
-Název nebo identifikátor každý programovací element je omezená na 1023 znaků. Kromě toho plně kvalifikovaného názvu nesmí překročit 1023 znaků. To znamená, že celý identifikátor řetězce (`<namespace>.<...>.<namespace>.<class>.<element>`) nemůže být větší než 1023 znaků, včetně operátor přístupu členů (`.`) znaků.  
+Název nebo identifikátor každého programovacího prvku je omezen na 1023 znaků. Kromě toho plně kvalifikovaný název nesmí být delší než 1023 znaků. To znamená, že celý řetězec identifikátoru ( `<namespace>.<...>.<namespace>.<class>.<element>` ) nemůže být delší než 1023 znaků, včetně znaků operátoru přístupu členů ( `.` ).  
   
  **ID chyby:** BC30033  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-- Zkraťte identifikátoru.  
+- Zkraťte délku identifikátoru.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)
+- [Deklarované názvy elementů](../../programming-guide/language-features/declared-elements/declared-element-names.md)

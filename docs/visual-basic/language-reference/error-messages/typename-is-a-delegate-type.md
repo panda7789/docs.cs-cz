@@ -7,31 +7,31 @@ f1_keywords:
 helpviewer_keywords:
 - BC32008
 ms.assetid: dc6abba0-a9ad-450f-8899-87265bc84abc
-ms.openlocfilehash: 45dc0403468fa40888a6c5e6bdfe6ca782e98325
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 7056bbf2b4de26feba3bfbe0e02b3239311271c9
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64664171"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84382169"
 ---
-# <a name="typename-is-a-delegate-type"></a>"\<typename >' je typ delegátu
-"\<typename >' je typ delegátu. Konstrukce delegáta povoluje pouze jeden výraz AddressOf jako seznam argumentů. Výraz AddressOf často lze použít místo vytváření delegátů.  
+# <a name="typename-is-a-delegate-type"></a>'\<typename>' je typ delegátu.
+\<typename>je typ delegáta. Konstrukce delegáta povoluje jako seznam argumentů pouze jeden výraz AddressOf. Výraz AddressOf se často dá použít místo konstrukce delegáta.  
   
- A `New` klauzule vytvoření instance třídy delegáta poskytuje seznam neplatný argumentů pro konstruktor delegate.  
+ `New`Klauzule vytvářející instanci třídy delegáta poskytuje neplatný seznam argumentů konstruktoru delegáta.  
   
- Můžete zadat pouze jeden `AddressOf` výraz při vytváření nové instance delegáta.  
+ `AddressOf`Při vytváření nové instance delegáta můžete zadávat jenom jeden výraz.  
   
- K této chybě může dojít, pokud nepředáte žádné argumenty konstruktoru delegáta, Pokud předáváte více než jeden argument, nebo Pokud předáte jeden argument, který není platným `AddressOf` výrazu.  
+ Tato chyba může být způsobena tím, že nepředáte žádné argumenty konstruktoru delegáta, Pokud předáte více než jeden argument, nebo Pokud předáte jeden argument, který není platným `AddressOf` výrazem.  
   
  **ID chyby:** BC32008  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-- Pomocí jediné `AddressOf` výraz v seznamu argumentů pro třídu delegáta v `New` klauzuli.  
+- `AddressOf`V seznamu argumentů pro třídu Delegate v klauzuli použijte jeden výraz `New` .  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Operátor New](../../../visual-basic/language-reference/operators/new-operator.md)
-- [Operátor AddressOf](../../../visual-basic/language-reference/operators/addressof-operator.md)
-- [Delegáti](../../../visual-basic/programming-guide/language-features/delegates/index.md)
-- [Postupy: Volání metody delegáta](../../../visual-basic/programming-guide/language-features/delegates/how-to-invoke-a-delegate-method.md)
+- [New – operátor](../operators/new-operator.md)
+- [AddressOf – operátor](../operators/addressof-operator.md)
+- [Delegáti](../../programming-guide/language-features/delegates/index.md)
+- [Postupy: Volání metody delegáta](../../programming-guide/language-features/delegates/how-to-invoke-a-delegate-method.md)

@@ -1,28 +1,28 @@
 ---
-title: Řádek <number> nelze analyzovat pomocí aktuální hodnoty parametru FieldWidths.
+title: Řádek <number> nejde analyzovat pomocí aktuálního hodnoty parametru FieldWidths.
 ms.date: 07/20/2015
 f1_keywords:
 - vbrTextFieldParser_MalFormedFixedWidthLine
 ms.assetid: 84e14245-dfdf-4b62-8b84-e83a31608899
-ms.openlocfilehash: dc6253dc925ed004fbbeb64547054461c39adffc
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: bd6fc431a4a943a3a0022e8e75c834a49b952a66
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64604150"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84402132"
 ---
-# <a name="line-number-cannot-be-parsed-using-the-current-fieldwidths"></a>Řádek \<číslo > nelze analyzovat pomocí aktuální hodnoty parametru FieldWidths.
-Zadaný řádek nelze analyzovat, protože jeho pole mají šířky, než je zadaný.  
+# <a name="line-number-cannot-be-parsed-using-the-current-fieldwidths"></a>Řádek \<number> nejde analyzovat pomocí aktuálního hodnoty parametru FieldWidths.
+Zadaný řádek nelze analyzovat, protože jeho pole mají šířku jinou než zadaná.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-- Upravit `FieldWidths` tak řádku správně parsovat nebo vložit kód pro zpracování výjimek zvládnout řádku.  
+- Upravit, `FieldWidths` aby řádek bylo možné správně analyzovat, nebo vložit kód pro zpracování výjimek, aby se řádek zpracoval.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Postupy: Čtení z textových souborů ve více formátech](../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-text-files-with-multiple-formats.md)
-- [My.Computer.FileSystem.OpenTextFieldParser](xref:Microsoft.VisualBasic.FileIO.FileSystem.OpenTextFieldParser%2A)
-- [Analýza textových souborů pomocí objektu TextFieldParser](../../visual-basic/developing-apps/programming/drives-directories-files/parsing-text-files-with-the-textfieldparser-object.md)
-- [Objekt TextFieldParser](../../visual-basic/language-reference/objects/textfieldparser-object.md)
-- [TextFieldParser.FieldWidths Property](xref:Microsoft.VisualBasic.FileIO.TextFieldParser.FieldWidths%2A)
-- [TextFieldParser.SetFieldWidths – metoda](xref:Microsoft.VisualBasic.FileIO.TextFieldParser.SetFieldWidths%2A)
+- [Postupy: Čtení z textových souborů ve více formátech](../developing-apps/programming/drives-directories-files/how-to-read-from-text-files-with-multiple-formats.md)
+- [My. Computer. FileSystem. OpenTextFieldParser](xref:Microsoft.VisualBasic.FileIO.FileSystem.OpenTextFieldParser%2A)
+- [Analýza textových souborů pomocí objektu TextFieldParser](../developing-apps/programming/drives-directories-files/parsing-text-files-with-the-textfieldparser-object.md)
+- [TextFieldParser – objekt](../language-reference/objects/textfieldparser-object.md)
+- [TextFieldParser. hodnoty parametru FieldWidths – vlastnost](xref:Microsoft.VisualBasic.FileIO.TextFieldParser.FieldWidths%2A)
+- [TextFieldParser. SetFieldWidths – Metoda](xref:Microsoft.VisualBasic.FileIO.TextFieldParser.SetFieldWidths%2A)

@@ -9,67 +9,67 @@ helpviewer_keywords:
 - expressions [Visual Basic], lambda
 - inline functions [Visual Basic]
 ms.assetid: 137064b0-3928-4bfa-ba71-c3f9cbd951e2
-ms.openlocfilehash: 1827eb5630ed217527de25fc9d9c2bb8994b9aff
-ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
+ms.openlocfilehash: 54a9c0cf275a67c77748c32771c3c5dcbdb916d7
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80249666"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84406700"
 ---
 # <a name="lambda-expressions-visual-basic"></a>Lambda – výrazy (Visual Basic)
 
-Výraz *lambda* je funkce nebo podprogram bez názvu, který lze použít všude tam, kde je platný delegát. Lambda výrazy mohou být funkce nebo podprogramy a může být jednořádkové nebo víceřádkové. Hodnoty z aktuálního oboru můžete předat výrazu lambda.
+*Výraz lambda* je funkce nebo podrutina bez názvu, který lze použít všude, kde je delegát platný. Výrazy lambda mohou být funkce nebo podprocesy a mohou být jednořádkové nebo víceřádkové. Můžete předat hodnoty z aktuálního oboru do výrazu lambda.
 
 > [!NOTE]
-> Příkaz `RemoveHandler` je výjimkou. Výraz lambda nelze předat pro parametr `RemoveHandler`delegáta aplikace .
+> `RemoveHandler`Příkaz je výjimka. Do parametru Delegate v nelze předat výraz lambda `RemoveHandler` .
 
-Výrazy lambda vytvoříte `Function` pomocí `Sub` klíčového slova nebo, stejně jako vytvoříte standardní funkci nebo podprogram. Však lambda výrazy jsou zahrnuty v příkazu.
+Výrazy lambda lze vytvořit pomocí `Function` `Sub` klíčového slova or, stejně jako při vytváření standardní funkce nebo podprocesu. Výrazy lambda jsou však zahrnuty v příkazu.
 
-Následující příklad je lambda výraz, který zintenzivňuje jeho argument a vrátí hodnotu. Příklad ukazuje jednořádkovou i víceřádkovou syntaxi výrazu lambda pro funkci.
+Následující příklad je výraz lambda, který zvyšuje svůj argument a vrací hodnotu. V příkladu se zobrazí jak jednoduchá čára, tak víceřádková syntaxe výrazu lambda pro funkci.
 
 [!code-vb[VbVbalrLambdas#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrLambdas/VB/Class1.vb#14)]
 
-Následující příklad je lambda výraz, který zapisuje hodnotu do konzoly. Příklad ukazuje jednořádkovou i víceřádkovou syntaxi výrazu lambda pro podprogram.
+Následující příklad je výraz lambda, který zapisuje hodnotu do konzoly. V příkladu se zobrazuje jak jednoduchá, tak víceřádková syntaxe výrazu lambda pro podprogram.
 
 [!code-vb[VbVbalrLambdas#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrLambdas/VB/Class1.vb#15)]
 
-Všimněte si, že v předchozích příkladech lambda výrazy jsou přiřazeny k názvu proměnné. Vždy, když odkazujete na proměnnou, vyvoláte výraz lambda. Můžete také deklarovat a vyvolat výraz lambda současně, jak je znázorněno v následujícím příkladu.
+Všimněte si, že v předchozích příkladech jsou výrazy lambda přiřazeny názvu proměnné. Vždy, když odkazujete na proměnnou, vyvoláte výraz lambda. Můžete také deklarovat a vyvolat výraz lambda ve stejnou dobu, jak je znázorněno v následujícím příkladu.
 
 [!code-vb[VbVbalrLambdas#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrLambdas/VB/Class1.vb#3)]
 
-Výraz lambda může být vrácen jako hodnota volání funkce (jak je znázorněno v příkladu v části [Kontext](#context) dále v tomto tématu) nebo předán jako argument parametru, který přebírá typ delegáta, jak je znázorněno v následujícím příkladu.
+Výraz lambda lze vrátit jako hodnotu volání funkce (jak je uvedeno v příkladu v [kontextu](#context) dále v tomto tématu), nebo předaný jako argument parametru, který přebírá typ delegáta, jak je znázorněno v následujícím příkladu.
 
 [!code-vb[VbVbalrLambdas#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrLambdas/VB/Class2.vb#8)]
 
 ## <a name="lambda-expression-syntax"></a>Syntaxe výrazu lambda
 
-Syntaxe výrazu lambda se podobá standardní funkci nebo podprogramu. Rozdíly jsou následující:
+Syntaxe výrazu lambda se podobá funkci standardní funkce nebo dílčí rutiny. Rozdíly jsou následující:
 
 - Výraz lambda nemá název.
 
-- Lambda výrazy nemohou mít modifikátory, například `Overloads` nebo `Overrides`.
+- Výrazy lambda nemůžou mít modifikátory, například `Overloads` nebo `Overrides` .
 
-- Jednořádkové funkce lambda nepoužívají `As` klauzuli k označení návratového typu. Místo toho je typ odvozen z hodnoty, kterou tělo výrazu lambda vyhodnotí. Například pokud je `cust.City = "London"`tělo výrazu lambda , `Boolean`jeho návratový typ je .
+- Jednořádkové funkce lambda nepoužívají `As` klauzuli k určení návratového typu. Místo toho je typ odvozen z hodnoty, na kterou je text výrazu lambda vyhodnocen. Například, pokud je tělo výrazu lambda `cust.City = "London"` , je jeho návratový typ `Boolean` .
 
-- Ve víceřádkové funkce lambda můžete buď určit návratový typ pomocí `As` klauzule, nebo vynechat `As` klauzuli tak, aby byl odvozen návratový typ. Pokud `As` je klauzule vynechána pro víceřádkovou funkci lambda, návratový typ je `Return` odvozen jako dominantní typ ze všech příkazů ve funkci lambda více řádků. *Dominantní typ* je jedinečný typ, který všechny ostatní typy lze rozšířit. Pokud tento jedinečný typ nelze určit, dominantní typ je jedinečný typ, který všechny ostatní typy v poli lze zúžit. Pokud nelze určit ani jeden z těchto jedinečných typů, dominantní typ je `Object`. V tomto případě, `Option Strict` pokud `On`je nastavena na , dojde k chybě kompilátoru.
+- Ve víceřádkových lambda funkcích můžete buď zadat návratový typ pomocí `As` klauzule, nebo vynechat `As` klauzuli tak, aby byl návratový typ odvozený. Je-li `As` pro víceřádkovou funkci lambda vynechána klauzule, návratový typ je odvozen jako dominantní typ ze všech `Return` příkazů ve víceřádkové funkci lambda. *Dominantní typ* je jedinečný typ, na který se mohou rozšířit všechny ostatní typy. Pokud tento jedinečný typ nelze určit, dominantní typ je jedinečný typ, který mohou být pro všechny ostatní typy v poli zúženy. Pokud ani jeden z těchto jedinečných typů nelze určit, dominantní typ je `Object` . V takovém případě, pokud `Option Strict` je nastaveno na `On` , dojde k chybě kompilátoru.
 
-     Pokud například výrazy zadané `Return` do příkazu `Integer`obsahují `Long`hodnoty `Double`typu , a , `Double`výsledné pole je typu . Oba `Integer` `Long` a `Double` rozšířit `Double`na a pouze . Proto `Double` je dominantní typ. Další informace naleznete v [tématu Rozšíření a zúžení převody](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md).
+     Například pokud výrazy dodané do `Return` příkazu obsahují hodnoty typu `Integer` , `Long` , a `Double` výsledné pole je typu `Double` . `Integer`A `Long` Rozšiřte je i na `Double` `Double` . Proto `Double` je dominantní typ. Další informace najdete v tématu [rozšiřování a zúžení převodů](../data-types/widening-and-narrowing-conversions.md).
 
-- Tělo jednořádkové funkce musí být výraz, který vrací hodnotu, nikoli příkaz. Neexistuje žádný `Return` příkaz pro jednořádkové funkce. Hodnota vrácená jednořádkovou funkcí je hodnota výrazu v těle funkce.
+- Tělo funkce s jednou řádkou musí být výraz, který vrací hodnotu, nikoli příkaz. `Return`Pro vložené funkce neexistuje žádný příkaz. Hodnota vrácená funkcí single-line je hodnota výrazu v těle funkce.
 
-- Tělo jednořádkové podprogramu musí být jednořádkové prohlášení.
+- Tělo jednořádkového podprocesu musí být jednořádkový příkaz.
 
-- Jednořádkové funkce a podprogramy `End Function` neobsahují `End Sub` příkaz nebo.
+- Jednořádkové funkce a podrutiny nezahrnují `End Function` `End Sub` příkaz or.
 
-- Můžete určit datový typ parametru výrazu lambda pomocí klíčového `As` slova nebo lze odvodit datový typ parametru. Všechny parametry musí mít zadané datové typy nebo všechny musí být odvozeny.
+- Můžete zadat datový typ parametru výrazu lambda pomocí `As` klíčového slova, nebo datový typ parametru lze odvodit. Buď musí mít všechny parametry zadané datové typy, nebo musí být všechny odvoditelné.
 
-- `Optional`a `Paramarray` parametry nejsou povoleny.
+- `Optional``Paramarray`parametry a nejsou povolené.
 
-- Obecné parametry nejsou povoleny.
+- Obecné parametry nejsou povolené.
 
 ## <a name="async-lambdas"></a>Asynchronní lambdy
 
-Můžete snadno vytvořit lambda výrazy a příkazy, které zahrnují asynchronní zpracování pomocí klíčová slova [Async](../../../../visual-basic/language-reference/modifiers/async.md) a [Await Operator.](../../../../visual-basic/language-reference/operators/await-operator.md) Například následující příklad windows forms obsahuje obslužnou rutinu události, `ExampleMethodAsync`která volá a čeká na asynchronní metodu .
+Můžete snadno vytvořit výrazy lambda a příkazy, které zahrnují asynchronní zpracování pomocí klíčových slov [Async](../../../language-reference/modifiers/async.md) a [await](../../../language-reference/operators/await-operator.md) . Například následující příklad model Windows Forms obsahuje obslužnou rutinu události, která volá a očekává asynchronní metodu, `ExampleMethodAsync` .
 
 ```vb
 Public Class Form1
@@ -88,7 +88,7 @@ Public Class Form1
 End Class
 ```
 
-Můžete přidat stejnou obslužnou rutinu události pomocí asynchronní lambda v [AddHandler prohlášení](../../../../visual-basic/language-reference/statements/addhandler-statement.md). Chcete-li přidat tuto `Async` obslužnou rutinu, přidejte modifikátor před seznam parametrů lambda, jak ukazuje následující příklad.
+Můžete přidat stejnou obslužnou rutinu události pomocí asynchronní lambda v [příkazu AddHandler](../../../language-reference/statements/addhandler-statement.md). Chcete-li přidat tuto obslužnou rutinu, přidejte `Async` Modifikátor před seznam parametrů lambda, jak ukazuje následující příklad.
 
 ```vb
 Public Class Form1
@@ -110,60 +110,60 @@ Public Class Form1
 End Class
 ```
 
-Další informace o vytváření a používání asynchronních metod naleznete [v tématu Asynchronní programování s async a Await](../../../../visual-basic/programming-guide/concepts/async/index.md).
+Další informace o tom, jak vytvořit a používat asynchronní metody, naleznete v tématu [asynchronní programování s modifikátorem Async a await](../../concepts/async/index.md).
 
 ## <a name="context"></a>Kontext
 
-Výraz lambda sdílí svůj kontext s oborem, ve kterém je definován. Má stejná přístupová práva jako jakýkoli kód napsaný v obsahujícím oboru. To zahrnuje přístup k členským proměnným, `Me`funkcím a subs , a parametrům a místním proměnným v obsahujícím oboru.
+Výraz lambda sdílí svůj kontext s oborem, ve kterém je definován. Má stejná přístupová práva jako jakýkoli kód napsaný v nadřazeném oboru. To zahrnuje přístup k proměnným členů, funkcím, `Me` parametrům a parametrům a místním proměnným v nadřazeném oboru.
 
-Přístup k místním proměnným a parametrům v obsahujícím oboru může přesáhnout dobu životnosti tohoto oboru. Tak dlouho, dokud delegát odkazující na výraz lambda není k dispozici pro uvolňování paměti, přístup k proměnným v původním prostředí je zachována. V následujícím příkladu `target` je `makeTheGame`proměnná local to , metoda, ve které je definován výraz `playTheGame` lambda. Všimněte si, že vrácený `takeAGuess` výraz `Main`lambda přiřazený `target`v , má stále přístup k místní proměnné .
+Přístup k lokálním proměnným a parametrům v rámci nadřazeného oboru může přesáhnout dobu života tohoto oboru. Dokud nebude delegát odkazující na výraz lambda dostupný pro uvolňování paměti, bude zachován přístup k proměnným v původním prostředí. V následujícím příkladu `target` je proměnná lokální pro `makeTheGame` , metodu, ve které `playTheGame` je definován výraz lambda. Všimněte si, že vrácený výraz lambda přiřazený `takeAGuess` v v `Main` má stále přístup k místní proměnné `target` .
 
 [!code-vb[VbVbalrLambdas#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrLambdas/VB/Class6.vb#12)]
 
-Následující příklad ukazuje širokou škálu přístupových práv vnořeného výrazu lambda. Při vrácené lambda výraz `Main` je `aDel`spuštěn z as , přistupuje k těmto prvkům:
+Následující příklad ukazuje široké spektrum přístupových práv vnořeného výrazu lambda. Když je vrácený výraz lambda proveden z `Main` as `aDel` , přistupuje k těmto prvkům:
 
 - Pole třídy, ve které je definováno:`aField`
 
 - Vlastnost třídy, ve které je definována:`aProp`
 
-- Parametr metody `functionWithNestedLambda`, ve kterém je definován:`level1`
+- Parametr metody `functionWithNestedLambda` , ve které je definována:`level1`
 
-- Místní proměnná `functionWithNestedLambda`:`localVar`
+- Místní proměnná `functionWithNestedLambda` :`localVar`
 
-- Parametr výrazu lambda, ve kterém je vnořen:`level2`
+- Parametr výrazu lambda, ve kterém je vnořený:`level2`
 
  [!code-vb[VbVbalrLambdas#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrLambdas/VB/Class3.vb#9)]
 
 ## <a name="converting-to-a-delegate-type"></a>Převod na typ delegáta
 
-Výraz lambda lze implicitně převést na kompatibilní typ delegáta. Informace o obecných požadavcích na kompatibilitu naleznete v [tématu Uvolněný převod delegátů](../../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md). Například následující příklad kódu ukazuje výraz lambda, který `Func(Of Integer, Boolean)` implicitně převádí nebo odpovídající podpis delegáta.
+Výraz lambda lze implicitně převést na kompatibilní typ delegáta. Informace o obecných požadavcích na kompatibilitu naleznete v tématu [odlehčený převod delegáta](../delegates/relaxed-delegate-conversion.md). Například následující příklad kódu ukazuje výraz lambda, který implicitně převede na `Func(Of Integer, Boolean)` nebo odpovídající signaturu delegáta.
 
 [!code-vb[VbVbalrLambdas#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrLambdas/VB/Class1.vb#16)]
 
-Následující příklad kódu ukazuje výraz lambda, který `Sub(Of Double, String, Double)` implicitně převádí nebo odpovídající podpis delegáta.
+Následující příklad kódu ukazuje výraz lambda, který implicitně převede na `Sub(Of Double, String, Double)` nebo odpovídající signaturu delegáta.
 
 [!code-vb[VbVbalrLambdas#23](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrLambdas/VB/class7.vb#23)]
 
-Při přiřazení lambda výrazy delegátům nebo předat jako argumenty procedur, můžete zadat názvy parametrů, ale vynechat jejich datové typy, nechat typy převzaty z delegáta.
+Pokud přiřadíte výrazy lambda delegátům nebo je předáte jako argumenty procedurám, můžete zadat názvy parametrů, ale vynechat jejich datové typy, aby bylo možné typy přenášet z delegáta.
 
 ## <a name="examples"></a>Příklady
 
-- Následující příklad definuje výraz lambda, `True` který vrátí, pokud argument typu hodnoty `False` s možnou hodnotou s možnou hodnotou má přiřazenou hodnotu a pokud je `Nothing`jeho hodnota .
+- Následující příklad definuje výraz lambda, který se vrátí, `True` Pokud argument typu hodnoty Nullable má přiřazenou hodnotu, a `False` Pokud je jeho hodnota `Nothing` .
 
      [!code-vb[VbVbalrLambdas#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrLambdas/VB/Class1.vb#4)]
 
-- Následující příklad definuje výraz lambda, který vrací index posledního prvku v poli.
+- Následující příklad definuje výraz lambda, který vrátí index posledního prvku v poli.
 
      [!code-vb[VbVbalrLambdas#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrLambdas/VB/Class1.vb#5)]
 
 ## <a name="see-also"></a>Viz také
 
 - [Procedury](./index.md)
-- [Představení technologie LINQ v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
-- [Delegáty](../../../../visual-basic/programming-guide/language-features/delegates/index.md)
-- [Příkaz Function](../../../../visual-basic/language-reference/statements/function-statement.md)
-- [Sub – příkaz](../../../../visual-basic/language-reference/statements/sub-statement.md)
-- [Typy hodnot s povolenou hodnotou Null](../../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md)
-- [Postupy: Předání procedur jiné proceduře v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/delegates/how-to-pass-procedures-to-another-procedure.md)
+- [Představení technologie LINQ v jazyce Visual Basic](../linq/introduction-to-linq.md)
+- [Delegáti](../delegates/index.md)
+- [Function – příkaz](../../../language-reference/statements/function-statement.md)
+- [Sub – příkaz](../../../language-reference/statements/sub-statement.md)
+- [Typy hodnot s možnou hodnotou null](../data-types/nullable-value-types.md)
+- [Postupy: Předání procedur jiné proceduře v jazyce Visual Basic](../delegates/how-to-pass-procedures-to-another-procedure.md)
 - [Postupy: Vytvoření výrazu lambda](./how-to-create-a-lambda-expression.md)
-- [Volný převod delegáta](../../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md)
+- [Volný převod delegáta](../delegates/relaxed-delegate-conversion.md)

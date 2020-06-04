@@ -11,12 +11,12 @@ helpviewer_keywords:
 - Visual Basic code, expressions
 - numeric expressions
 ms.assetid: ba6bf43d-bd96-49b8-b1de-4a7797551372
-ms.openlocfilehash: d213f6b5a4abf8c52d8872ae36e89796183ff27c
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 94b02693f308dcfcfa6983f2750a26d9d419f7be
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74348971"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84403456"
 ---
 # <a name="how-to-calculate-numeric-values-visual-basic"></a>Postupy: Výpočet numerických hodnot (Visual Basic)
 Číselné hodnoty můžete vypočítat pomocí numerických výrazů. *Číselný výraz* je výraz, který obsahuje literály, konstanty a proměnné představující číselné hodnoty a operátory, které na těchto hodnotách působí.  
@@ -45,9 +45,9 @@ ms.locfileid: "74348971"
   
      [!code-vb[VbVbalrOperators#82](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#82)]  
   
-     V předchozím příkladu je hodnota výrazu na pravé straně operátoru rovnosti (`=`) přiřazena proměnné `j` na levé straně operátoru, takže se `j` vyhodnotí jako 276.  
+     V předchozím příkladu je hodnota výrazu na pravé straně operátoru rovnosti ( `=` ) přiřazena proměnné `j` na levé straně operátoru, takže se `j` vyhodnotí jako 276.  
   
-     Další informace najdete v tématu [příkazy](../../../../visual-basic/language-reference/statements/index.md).  
+     Další informace najdete v tématu [příkazy](../../../language-reference/statements/index.md).  
   
 ## <a name="multiple-operators"></a>Více operátorů  
  Pokud číselný výraz obsahuje více než jeden operátor, pořadí, ve kterém jsou vyhodnocovány, je určeno pravidly priority operátoru. Chcete-li přepsat pravidla přednosti operátorů, můžete uzavřít výrazy v závorkách, jako v předchozím příkladu. vložené výrazy jsou vyhodnoceny jako první.  
@@ -58,15 +58,15 @@ ms.locfileid: "74348971"
   
      [!code-vb[VbVbalrOperators#83](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#83)]  
   
-     V předchozím příkladu výpočet pro `j` provádí nejprve operátor sčítání (`+`), protože závorky kolem `(67 + i)` normální přednost a hodnota přiřazená `j` je 276 (4 časy 69). Výpočet pro `k` provádí operátory v normální přednosti (`*` před `+`) a hodnota přiřazená `k` je 270 (268 plus 2).  
+     V předchozím příkladu výpočet pro `j` provede operátor sčítání ( `+` ) nejprve, protože kulaté závorky kolem `(67 + i)` normální priority přepisují a hodnota přiřazená `j` je 276 (4 časy 69). Výpočet pro `k` provede operátory v normální přednosti ( `*` před `+` ) a hodnota přiřazená `k` je 270 (268 plus 2).  
   
-     Další informace najdete v tématu [Priorita operátorů v Visual Basic](../../../../visual-basic/language-reference/operators/operator-precedence.md).  
+     Další informace najdete v tématu [Priorita operátorů v Visual Basic](../../../language-reference/operators/operator-precedence.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Operátory a výrazy](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)
-- [Porovnání hodnot](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/value-comparisons.md)
-- [Příkazy](../../../../visual-basic/language-reference/statements/index.md)
-- [Priorita operátorů v Visual Basic](../../../../visual-basic/language-reference/operators/operator-precedence.md)
-- [Aritmetické operátory](../../../../visual-basic/language-reference/operators/arithmetic-operators.md)
-- [Účinná kombinace operátorů](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/efficient-combination-of-operators.md)
+- [Operátory a výrazy](index.md)
+- [Porovnání hodnot](value-comparisons.md)
+- [Příkazy](../../../language-reference/statements/index.md)
+- [Priorita operátorů v jazyce Visual Basic](../../../language-reference/operators/operator-precedence.md)
+- [Aritmetické operátory](../../../language-reference/operators/arithmetic-operators.md)
+- [Účinná kombinace operátorů](efficient-combination-of-operators.md)

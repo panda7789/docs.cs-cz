@@ -8,20 +8,20 @@ helpviewer_keywords:
 - registry keys [Visual Basic], reading from
 - registry [Visual Basic], reading
 ms.assetid: 775d0a57-68c9-464e-8949-9a39bd29cc64
-ms.openlocfilehash: 73c32aefe06a68bb42fcb5f4615da0927e57e892
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 74069b111f4316eb81c74f5e62c1fbff6ab8f4b8
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74345605"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84401846"
 ---
 # <a name="how-to-read-a-value-from-a-registry-key-in-visual-basic"></a>Postupy: Načtení hodnoty z klíče registru v jazyce Visual Basic
 
-`GetValue` Metodu `My.Computer.Registry` objektu lze použít ke čtení hodnot v registru systému Windows.  
+`GetValue`Metodu `My.Computer.Registry` objektu lze použít ke čtení hodnot v registru systému Windows.  
   
- Pokud klíč "Software\MyApp" v následujícím příkladu neexistuje, je vyvolána výjimka. Pokud není `ValueName`, "Name" v následujícím příkladu neexistuje, `Nothing` je vrácena.  
+ Pokud klíč "Software\MyApp" v následujícím příkladu neexistuje, je vyvolána výjimka. Pokud není `ValueName` , "Name" v následujícím příkladu neexistuje, `Nothing` je vrácena.  
   
- `GetValue` Metodu lze také použít k určení, zda daná hodnota existuje v určitém klíči registru.  
+ `GetValue`Metodu lze také použít k určení, zda daná hodnota existuje v určitém klíči registru.  
   
  Když kód přečte registr z webové aplikace, je aktuální uživatel určen ověřováním a zosobněním, které je implementováno ve webové aplikaci.  
   
@@ -45,11 +45,11 @@ ms.locfileid: "74345605"
   
  Následující podmínky mohou způsobit výjimku:  
   
-- Název klíče je `Nothing` (<xref:System.ArgumentNullException>).  
+- Název klíče je `Nothing` ( <xref:System.ArgumentNullException> ).  
   
-- Uživatel nemá oprávnění ke čtení z klíčů registru (<xref:System.Security.SecurityException>).  
+- Uživatel nemá oprávnění ke čtení z klíčů registru ( <xref:System.Security.SecurityException> ).  
   
-- Název klíče překračuje limit 255 znaků (<xref:System.ArgumentException>).  
+- Název klíče překračuje limit 255 znaků ( <xref:System.ArgumentException> ).  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
 
@@ -59,4 +59,4 @@ ms.locfileid: "74345605"
 
 - <xref:Microsoft.VisualBasic.MyServices.RegistryProxy>
 - <xref:Microsoft.Win32.RegistryHive>
-- [Čtení z registru a zápis do něj](../../../../visual-basic/developing-apps/programming/computer-resources/reading-from-and-writing-to-the-registry.md)
+- [Čtení z registru a zápis do něj](reading-from-and-writing-to-the-registry.md)

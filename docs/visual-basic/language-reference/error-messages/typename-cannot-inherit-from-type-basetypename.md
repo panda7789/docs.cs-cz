@@ -7,31 +7,31 @@ f1_keywords:
 helpviewer_keywords:
 - BC30910
 ms.assetid: 68fc05c5-5d55-4742-9a3b-ea04312594f4
-ms.openlocfilehash: e21eea20d953e64e91522074c25f037451145bf8
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: aa04c558abbcc4259c2821cdcbdc1669b91ffee0
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64664212"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84402769"
 ---
-# <a name="typename-cannot-inherit-from-type-basetypename-because-it-expands-the-access-of-the-base-type-outside-the-assembly"></a>"\<typename >' nemůže dědit od třídy \<typu >"\<basetypename >' protože rozšiřuje přístup základní třídy \<typ > mimo sestavení
-Třídy nebo rozhraní dědí ze základní třídy nebo rozhraní, ale má míň omezující úroveň přístupu.  
+# <a name="typename-cannot-inherit-from-type-basetypename-because-it-expands-the-access-of-the-base-type-outside-the-assembly"></a>'\<typename>' nemůže dědit ze třídy \<type> '\<basetypename>', protože rozšiřuje přístup třídy Base \<type> mimo sestavení.
+Třída nebo rozhraní dědí ze základní třídy nebo rozhraní, ale má méně omezující úroveň přístupu.  
   
- Například `Public` rozhraní zdědí `Friend` rozhraní, nebo `Protected` třída dědí z `Private` třídy. Tato třída zveřejňuje základní třídu nebo rozhraní pro přístup k mimo určené úroveň.  
+ Například `Public` rozhraní dědí z `Friend` rozhraní nebo `Protected` Třída dědí z `Private` třídy. Tím se zpřístupňuje základní třída nebo rozhraní pro přístup mimo zamýšlenou úroveň.  
   
  **ID chyby:** BC30910  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-- Změníte úroveň přístupu odvozené třídy nebo rozhraní, které má být omezující jako základní třídu nebo rozhraní.  
+- Změňte úroveň přístupu odvozené třídy nebo rozhraní tak, aby byla alespoň stejná jako omezení základní třídy nebo rozhraní.  
   
      -nebo-  
   
-- Pokud požadujete méně omezující úroveň přístupu, odeberte `Inherits` příkazu. Nemůže dědit z více omezený základní třídu nebo rozhraní.  
+- Pokud požadujete úroveň přístupu méně omezující, odeberte `Inherits` příkaz. Nemůžete dědit z více než omezené základní třídy nebo rozhraní.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Příkaz Class](../../../visual-basic/language-reference/statements/class-statement.md)
-- [Příkaz Interface](../../../visual-basic/language-reference/statements/interface-statement.md)
-- [Příkaz Inherits](../../../visual-basic/language-reference/statements/inherits-statement.md)
-- [Úrovně přístupu v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
+- [Class – příkaz](../statements/class-statement.md)
+- [Interface – příkaz](../statements/interface-statement.md)
+- [Inherits – příkaz](../statements/inherits-statement.md)
+- [Úrovně přístupu v Visual Basic](../../programming-guide/language-features/declared-elements/access-levels.md)

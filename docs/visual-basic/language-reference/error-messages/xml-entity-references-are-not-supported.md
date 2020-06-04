@@ -7,24 +7,24 @@ f1_keywords:
 helpviewer_keywords:
 - BC31180
 ms.assetid: 2a393327-d8e2-4187-85b1-642b4f53b4ae
-ms.openlocfilehash: 02620b5b4a33fcfcdecd8c9152106262df252c85
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ae997d853a93999a3b29215ea1257da7a1d48c84
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64662572"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84406453"
 ---
 # <a name="xml-entity-references-are-not-supported"></a>Odkazy na entity XML nejsou podporovány.
-Odkaz na entitu (například `©`), která není definována v XML 1.0 specifikace je zahrnutý jako hodnota pro literál XML. Pouze `&`, `"`, `<`, `>`, a `'` odkazy na entity XML jsou podporovány v literálech XML.  
+Odkaz na entitu (například `©` ), který není definován ve specifikaci XML 1,0, je obsažen jako hodnota pro LITERÁL XML. `&` `"` `<` `>` `'` V literálech XML jsou podporovány pouze odkazy na entity XML,,, a.  
   
  **ID chyby:** BC31180  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-- Odeberte odkaz na nepodporované entity.  
+- Odeberte odkaz na nepodporovanou entitu.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Literály XML a specifikace XML 1.0](../../../visual-basic/programming-guide/language-features/xml/xml-literals-and-the-xml-1-0-specification.md)
-- [Literály XML](../../../visual-basic/language-reference/xml-literals/index.md)
-- [XML](../../../visual-basic/programming-guide/language-features/xml/index.md)
+- [Literály XML a specifikace XML 1.0](../../programming-guide/language-features/xml/xml-literals-and-the-xml-1-0-specification.md)
+- [Literály XML](../xml-literals/index.md)
+- [XML](../../programming-guide/language-features/xml/index.md)

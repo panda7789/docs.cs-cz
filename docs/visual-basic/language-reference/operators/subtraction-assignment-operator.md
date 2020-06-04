@@ -10,12 +10,12 @@ helpviewer_keywords:
 - operator -=
 - compound assignment statements [Visual Basic]
 ms.assetid: 5ead0c37-ae50-48f7-8435-8e341d81cae1
-ms.openlocfilehash: 44cb226d64e9f0b86c6566eb25fbafd6323a6d4c
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 4f403cd8a28f8d9d0ba1d24b0792a352a9c961db
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74347802"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84406402"
 ---
 # <a name="--operator-visual-basic"></a>-= – operátor (Visual Basic)
 Odečte hodnotu výrazu z hodnoty proměnné nebo vlastnosti a přiřadí výsledek proměnné nebo vlastnosti.  
@@ -28,29 +28,29 @@ variableorproperty -= expression
   
 ## <a name="parts"></a>Součásti  
  `variableorproperty`  
- Požadováno. Jakákoli číselná proměnná nebo vlastnost.  
+ Povinná hodnota. Jakákoli číselná proměnná nebo vlastnost.  
   
  `expression`  
- Požadováno. Libovolný číselný výraz.  
+ Povinná hodnota. Libovolný číselný výraz.  
   
 ## <a name="remarks"></a>Poznámky  
- Element na levé straně operátoru `-=` může být jednoduchá skalární proměnná, vlastnost nebo prvek pole. Proměnná nebo vlastnost nemůže být [jen pro čtení](../../../visual-basic/language-reference/modifiers/readonly.md).  
+ Element na levé straně `-=` operátoru může být jednoduchá skalární proměnná, vlastnost nebo prvek pole. Proměnná nebo vlastnost nemůže být [jen pro čtení](../modifiers/readonly.md).  
   
- Operátor `-=` nejprve odečte hodnotu výrazu (na pravé straně operátoru) z hodnoty proměnné nebo vlastnosti (na levé straně operátoru). Operátor potom přiřadí výsledek této operace proměnné nebo vlastnosti.  
+ `-=`Operátor nejprve ododečte hodnotu výrazu (na pravé straně operátoru) z hodnoty proměnné nebo vlastnosti (na levé straně operátoru). Operátor potom přiřadí výsledek této operace proměnné nebo vlastnosti.  
   
 ## <a name="overloading"></a>Přetížení  
- [Operátor-operátor (Visual Basic)](../../../visual-basic/language-reference/operators/subtraction-operator.md) může být *přetížený*, což znamená, že třída nebo struktura může předefinovat své chování, pokud má operand typ této třídy nebo struktury. Přetížení operátoru `-` má vliv na chování operátoru `-=`. Pokud váš kód používá `-=` ve třídě nebo struktuře, která přetěžuje `-`, ujistěte se, že rozumíte jeho předefinovanému chování. Další informace naleznete v tématu [procedury operátorů](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
+ [Operátor-operátor (Visual Basic)](subtraction-operator.md) může být *přetížený*, což znamená, že třída nebo struktura může předefinovat své chování, pokud má operand typ této třídy nebo struktury. Přetížení `-` operátoru ovlivňuje chování `-=` operátoru. Pokud váš kód používá `-=` pro třídu nebo strukturu, která je přetížena `-` , ujistěte se, že rozumíte jeho předefinovanému chování. Další informace naleznete v tématu [procedury operátorů](../../programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá operátor `-=` pro odečtení jedné `Integer` proměnné od druhé a přiřazení výsledku k druhé proměnné.  
+ Následující příklad používá `-=` operátor k odečtení jedné `Integer` proměnné od druhé a přiřazení výsledku k druhé proměnné.  
   
  [!code-vb[VbVbalrOperators#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#11)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [-– Operátor (Visual Basic)](../../../visual-basic/language-reference/operators/subtraction-operator.md)
-- [Operátory přiřazení](../../../visual-basic/language-reference/operators/assignment-operators.md)
-- [Aritmetické operátory](../../../visual-basic/language-reference/operators/arithmetic-operators.md)
-- [Priorita operátorů v Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
-- [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
-- [Příkazy](../../../visual-basic/programming-guide/language-features/statements.md)
+- [- – operátor (Visual Basic)](subtraction-operator.md)
+- [Operátory přiřazení](assignment-operators.md)
+- [Aritmetické operátory](arithmetic-operators.md)
+- [Priorita operátorů v jazyce Visual Basic](operator-precedence.md)
+- [Operátory uvedené podle funkce](operators-listed-by-functionality.md)
+- [Příkazy](../../programming-guide/language-features/statements.md)

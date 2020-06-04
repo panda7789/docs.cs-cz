@@ -1,5 +1,5 @@
 ---
-title: "'<interfacename>. <membername>'je již implementováno prostřednictvím základní třídy'<baseclassname>'. Opětovná implementace <type> předpokládá, že"
+title: "'<interfacename>.<membername>' je už implementované základní třídou '<baseclassname>'. Předpokládá se opětovná implementace <type>."
 ms.date: 07/20/2015
 f1_keywords:
 - vbc42015
@@ -7,28 +7,28 @@ f1_keywords:
 helpviewer_keywords:
 - BC42015
 ms.assetid: 658c070a-113e-4bd8-b294-12c243191160
-ms.openlocfilehash: 5943eff5fa7e68da9905e3e589eea264c06943c1
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 6525ae08b90cc530a8f6a469d35d9ab8c27fb5e3
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64593320"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84402821"
 ---
-# <a name="interfacenamemembername-is-already-implemented-by-the-base-class-baseclassname-re-implementation-of-type-assumed"></a>'\<interfacename >. \<membername >' je již implementováno prostřednictvím základní třídy\<baseclassname >'. Opětovná implementace \<typ > předpokládá, že
-Vlastnost, procedura nebo události v odvozené třídě používá `Implements` klauzule určující člena rozhraní, která je již implementováno základní třídy.  
+# <a name="interfacenamemembername-is-already-implemented-by-the-base-class-baseclassname-re-implementation-of-type-assumed"></a>'\<interfacename>.\<membername>' je už implementované základní třídou '\<baseclassname>'. Předpokládá se opětovná implementace \<type>.
+Vlastnost, procedura nebo událost v odvozené třídě používá `Implements` klauzuli určující člena rozhraní, který je již implementován v základní třídě.  
   
- Odvozená třída může znovu implementovat člen rozhraní, která je implementována ve své základní třídy. Nejedná se stejně jako přepsání implementaci základní třídy. Další informace najdete v tématu [implementuje](../../../visual-basic/language-reference/statements/implements-clause.md).  
+ Odvozená třída může znovu implementovat člen rozhraní, který je implementován svou základní třídou. To není stejné jako přepsání implementace základní třídy. Další informace naleznete v tématu [Implements](../statements/implements-clause.md).  
   
- Ve výchozím nastavení tato zpráva je upozornění. Informace o zobrazení nebo skrytí upozornění zpracování upozornění jako chyby, najdete v části [Konfigurace upozornění v jazyce Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic).  
+ Ve výchozím nastavení je tato zpráva upozornění. Informace o skrývání upozornění nebo zpracování upozornění jako chyb najdete v tématu [Konfigurace upozornění v Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic).  
   
  **ID chyby:** BC42015  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-- Pokud máte v úmyslu znovu implementovat člen rozhraní, není potřeba provádět žádnou akci. Kód v odvozené třídě přistupuje ke reimplemented člen, pokud použijete `MyBase` – klíčové slovo pro přístup k implementaci základní třídy.  
+- Pokud máte v úmyslu znovu implementovat člena rozhraní, nemusíte provádět žádnou akci. Kód v odvozené třídě přistupuje k znovu implementovanému členu, pokud nepoužijete `MyBase` klíčové slovo pro přístup k implementaci základní třídy.  
   
-- Pokud je nemáte v úmyslu znovu implementovat člen rozhraní, odeberte `Implements` klauzule v deklaraci vlastnosti, procedury nebo události.  
+- Pokud nechcete znovu implementovat člena rozhraní, odeberte `Implements` klauzuli z deklarace vlastnosti, procedury nebo události.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Rozhraní](../../../visual-basic/programming-guide/language-features/interfaces/index.md)
+- [Rozhraní](../../programming-guide/language-features/interfaces/index.md)

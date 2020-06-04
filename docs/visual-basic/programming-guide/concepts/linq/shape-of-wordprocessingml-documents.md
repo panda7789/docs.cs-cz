@@ -2,12 +2,12 @@
 title: Tvar dokumentů WordprocessingML
 ms.date: 07/20/2015
 ms.assetid: 2dfb446b-5a07-4c00-9ab3-a74ba734ff3a
-ms.openlocfilehash: 9dd858e28c010d901c2c5fdfb477fe2c6975dbd4
-ms.sourcegitcommit: 09b4090b78f52fd09b0e430cd4b26576f1fdf96e
+ms.openlocfilehash: eb4acef2caa731d17e8daf1955d50f0d2585c175
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76315847"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84406804"
 ---
 # <a name="shape-of-wordprocessingml-documents-visual-basic"></a>Tvar dokumentů WordprocessingML (Visual Basic)
 Toto téma představuje tvar XML dokumentu WordprocessingML.  
@@ -18,7 +18,7 @@ Toto téma představuje tvar XML dokumentu WordprocessingML.
  Pokud používáte systém Microsoft Office 2003, můžete dokumenty ukládat ve formátu Office Open XML, pokud jste nainstalovali sadu systém Microsoft Office Compatibility Pack pro formáty souborů Word, Excel a PowerPoint 2007.  
   
 ## <a name="the-shape-of-wordprocessingml-documents"></a>Tvar dokumentů WordprocessingML  
- První věc, kterou je třeba pochopit, je tvar dokumentů WordprocessingML. WordprocessingML dokument obsahuje element tělo (nazvaný `w:body`), který obsahuje odstavce v dokumentu. Každý odstavec obsahuje jedno nebo více textových běhů (s názvem `w:r`). Každý běh textu obsahuje jednu nebo více textových částí (s názvem `w:t`).  
+ První věc, kterou je třeba pochopit, je tvar dokumentů WordprocessingML. WordprocessingML dokument obsahuje element tělo (pojmenovaný `w:body` ), který obsahuje odstavce v dokumentu. Každý odstavec obsahuje jedno nebo více textových běhů (s názvem `w:r` ). Každý běh textu obsahuje jednu nebo více textových částí (s názvem `w:t` ).  
   
  Následuje velmi jednoduchý dokument WordprocessingML:  
   
@@ -55,7 +55,7 @@ xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml">
   
  Nejjednodušší způsob, jak zobrazit obsah dokumentu WordprocessingML ve formátu XML, je vytvořit ho pomocí Microsoft Wordu, uložit ho a pak spustit následující program, který vytiskne XML do konzoly.  
   
- Tento příklad používá třídy nalezené v sestavení WindowsBase. Používá typy v oboru názvů <xref:System.IO.Packaging?displayProperty=nameWithType>.  
+ Tento příklad používá třídy nalezené v sestavení WindowsBase. Používá typy v <xref:System.IO.Packaging?displayProperty=nameWithType> oboru názvů.  
   
 ```vb  
 Imports <xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">  
@@ -92,6 +92,6 @@ End Module
 - [Představení formátů souborů XML sady Office (2007)](https://docs.microsoft.com/previous-versions/office/developer/office-2007/aa338205(v=office.12))
 - [Přehled WordprocessingML](https://docs.microsoft.com/previous-versions/office/developer/office-2003/aa212812(v=office.11))
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Kurz: manipulace s obsahem v dokumentu WordprocessingML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
+- [Kurz: manipulace s obsahem v dokumentu WordprocessingML (Visual Basic)](tutorial-manipulating-content-in-a-wordprocessingml-document.md)

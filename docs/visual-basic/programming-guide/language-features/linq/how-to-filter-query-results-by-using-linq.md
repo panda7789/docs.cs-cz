@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: filtrování výsledků dotazu pomocí LINQ'
+title: 'Postupy: Filtrování výsledků dotazu pomocí LINQ'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - filtering [Visual Basic]
@@ -11,18 +11,18 @@ helpviewer_keywords:
 - query samples [Visual Basic]
 - filtering data [Visual Basic]
 ms.assetid: ef103092-9bed-4134-97f4-2db696e83c12
-ms.openlocfilehash: 2ea8a852a2f012ddb25ec1198c66e09df880ff47
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 4d91783429f24abfe4149217542f8f7a6073bfef
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74344992"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84404988"
 ---
 # <a name="how-to-filter-query-results-by-using-linq-visual-basic"></a>Postupy: Filtrování výsledků dotazu pomocí LINQ (Visual Basic)
 
 LINQ (Language-Integrated Query) usnadňuje přístup k informacím o databázi a provádění dotazů.
 
-Následující příklad ukazuje, jak vytvořit novou aplikaci, která provádí dotazy na databázi SQL Server a filtruje výsledky podle konkrétní hodnoty pomocí klauzule `Where`. Další informace naleznete v tématu [Where klauzule](../../../../visual-basic/language-reference/queries/where-clause.md).
+Následující příklad ukazuje, jak vytvořit novou aplikaci, která provádí dotazy na databázi SQL Server a filtruje výsledky podle konkrétní hodnoty pomocí `Where` klauzule. Další informace naleznete v tématu [Where klauzule](../../../language-reference/queries/where-clause.md).
 
 V příkladech v tomto tématu se používá ukázková databáze Northwind. Pokud tuto databázi ve vývojovém počítači nemáte, můžete si ji stáhnout z webu Microsoft Download Center. Pokyny najdete v tématu [stažení ukázkových databází](../../../../framework/data/adonet/sql/linq/downloading-sample-databases.md).
 
@@ -30,9 +30,9 @@ V příkladech v tomto tématu se používá ukázková databáze Northwind. Pok
 
 ## <a name="to-create-a-connection-to-a-database"></a>Vytvoření připojení k databázi
 
-1. V aplikaci Visual Studio otevřete **Průzkumník serveru**/**Database explorer** kliknutím na **Průzkumník serveru**/**Průzkumník databáze** v nabídce **zobrazení** .
+1. V aplikaci Visual Studio otevřete **Průzkumník serveru** / **Průzkumník databáze** kliknutím na **Průzkumník serveru** / **Průzkumník databáze** v nabídce **zobrazení** .
 
-2. Klikněte pravým tlačítkem na **datová připojení** v **Průzkumník serveru**/**Průzkumníku databáze** a pak klikněte na **Přidat připojení**.
+2. Klikněte pravým tlačítkem na **datová připojení** v **Průzkumník serveru** / **Průzkumníku databáze** a pak klikněte na **Přidat připojení**.
 
 3. Zadejte platné připojení k ukázkové databázi Northwind.
 
@@ -42,17 +42,17 @@ V příkladech v tomto tématu se používá ukázková databáze Northwind. Pok
 
 2. V nabídce **projekt** klikněte na příkaz **Přidat novou položku**. Vyberte šablonu položky **LINQ to SQL třídy** .
 
-3. Pojmenujte soubor `northwind.dbml`. Klikněte na tlačítko **Přidat**. Otevře se Návrhář relací objektů (O/R Designer) pro soubor Northwind. dbml.
+3. Pojmenujte soubor `northwind.dbml`. Klikněte na tlačítko **Add** (Přidat). Otevře se Návrhář relací objektů (O/R Designer) pro soubor Northwind. dbml.
 
 ## <a name="to-add-tables-to-query-to-the-or-designer"></a>Přidání tabulek pro dotaz do návrháře O/R
 
-1. V **Průzkumník serveru**/**Průzkumníku databáze**rozbalte připojení k databázi Northwind. Rozbalte složku **tabulky** .
+1. V **Server Explorer** / **Průzkumníku Průzkumník serveru Database**rozbalte připojení k databázi Northwind. Rozbalte složku **tabulky** .
 
      Pokud jste návrháře pro/R zavřeli, můžete ho znovu otevřít dvojitým kliknutím na soubor Northwind. dbml, který jste přidali dříve.
 
 2. Klikněte na tabulku Customers (zákazníci) a přetáhněte ji do levého podokna návrháře. Klikněte na tabulku Orders (objednávky) a přetáhněte ji do levého podokna návrháře.
 
-     Návrhář vytvoří nový objekt `Customer` a objekty `Order` pro váš projekt. Všimněte si, že návrhář automaticky detekuje relace mezi tabulkami a vytváří podřízené vlastnosti pro související objekty. IntelliSense například zobrazí, že objekt `Customer` má vlastnost `Orders` pro všechny objednávky související s tímto zákazníkem.
+     Návrhář vytvoří nové `Customer` objekty a `Order` pro váš projekt. Všimněte si, že návrhář automaticky detekuje relace mezi tabulkami a vytváří podřízené vlastnosti pro související objekty. IntelliSense například zobrazí, že `Customer` objekt má `Orders` vlastnost pro všechny objednávky související s tímto zákazníkem.
 
 3. Uložte změny a zavřete návrháře.
 
@@ -60,15 +60,15 @@ V příkladech v tomto tématu se používá ukázková databáze Northwind. Pok
 
 ## <a name="to-add-code-to-query-the-database-and-display-the-results"></a>Přidání kódu pro dotazování databáze a zobrazení výsledků
 
-1. Z **panelu nástrojů**přetáhněte ovládací prvek <xref:System.Windows.Forms.DataGridView> do výchozího formuláře Windows pro váš projekt, Form1.
+1. Z **panelu nástrojů**přetáhněte <xref:System.Windows.Forms.DataGridView> ovládací prvek do výchozího formuláře Windows pro váš projekt, Form1.
 
-2. Poklikejte na Form1 a přidejte kód do události `Load` formuláře.
+2. Poklikejte na Form1 a přidejte kód do `Load` události formuláře.
 
-3. Když jste přidali tabulky do návrháře pro/R, Návrhář přidal objekt <xref:System.Data.Linq.DataContext> pro váš projekt. Tento objekt obsahuje kód, který potřebujete pro přístup k těmto tabulkám, kromě jednotlivých objektů a kolekcí pro každou tabulku. Objekt <xref:System.Data.Linq.DataContext> pro projekt je pojmenován na základě názvu souboru. dbml. Pro tento projekt má objekt <xref:System.Data.Linq.DataContext> název `northwindDataContext`.
+3. Když jste přidali tabulky do návrháře O/R, Návrhář přidal <xref:System.Data.Linq.DataContext> objekt pro váš projekt. Tento objekt obsahuje kód, který potřebujete pro přístup k těmto tabulkám, kromě jednotlivých objektů a kolekcí pro každou tabulku. <xref:System.Data.Linq.DataContext>Objekt pro projekt je pojmenován na základě názvu souboru. dbml. Pro tento projekt <xref:System.Data.Linq.DataContext> je objekt pojmenován `northwindDataContext` .
 
-    Můžete vytvořit instanci <xref:System.Data.Linq.DataContext> ve vašem kódu a dotazovat tabulky určené návrhářem O/R.
+    Můžete vytvořit instanci <xref:System.Data.Linq.DataContext> v kódu a dotazovat se na tabulky určené návrhářem o/R.
 
-    Přidejte následující kód do události `Load` pro dotazování tabulek, které jsou zpřístupněny jako vlastnosti vašeho kontextu dat. Dotaz vyfiltruje výsledky a vrátí pouze zákazníky nacházející se v `London`.
+    Do události přidejte následující kód `Load` pro dotazování tabulek, které jsou zpřístupněny jako vlastnosti vašeho kontextu dat. Dotaz vyfiltruje výsledky a vrátí pouze zákazníky nacházející se v `London` .
 
     [!code-vb[VbLINQToSQLHowTos#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQtoSQLHowTos/VB/Form5.vb#11)]
 
@@ -78,9 +78,9 @@ V příkladech v tomto tématu se používá ukázková databáze Northwind. Pok
 
     [!code-vb[VbLINQToSQLHowTos#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQtoSQLHowTos/VB/Form5.vb#12)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)
-- [Dotazy](../../../../visual-basic/language-reference/queries/index.md)
-- [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)
+- [LINQ](index.md)
+- [Dotazy](../../../language-reference/queries/index.md)
+- [Technologie LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)
 - [Metody DataContext (Návrhář relací objektů)](/visualstudio/data-tools/datacontext-methods-o-r-designer)

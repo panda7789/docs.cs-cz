@@ -1,27 +1,27 @@
 ---
-title: Neplatný řetězec vzoru.
+title: Neplatný řetězec vzoru
 ms.date: 07/20/2015
 ms.assetid: ec1aecdb-5339-4a93-be71-eec56b1d7438
-ms.openlocfilehash: 7390b9b32eea248969813b52f8d9799798718de0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: aa408f4cecc2a2774cb98cba96cd04a67afcc546
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61790595"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84402210"
 ---
-# <a name="invalid-pattern-string"></a>Neplatný řetězec vzoru.
-Vzor řetězec zadaný v poli `Like` operace hledání je neplatná.  
+# <a name="invalid-pattern-string"></a>Neplatný řetězec vzoru
+Řetězec vzorku zadaný v `Like` operaci hledání je neplatný.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1. Projděte si platné znaky pro seznam výrazů.  
+1. Zkontrolujte platné znaky pro seznam výrazů.  
   
-2. V rozsahu vzor, ujistěte se, že znak počáteční rozsah menší než koncový rozsah znaků, stejně jako v `[a-z]`.  
+2. V rozsahu vzorku zajistěte, aby byl znak začátku rozsahu menší než znak koncového rozsahu, jako v `[a-z]` .  
   
-3. V rozsahu vzor, zajistěte, aby nebyl více pomlčky vedle sebe, stejně jako v `[a--z]`.  
+3. V rozsahu vzorů zajistěte, aby vedle sebe nebyla více spojovníků, jako v `[a--z]` .  
   
-4. Koncový rozsahů vzor s pravou hranatou závorku.  
+4. Ukončit rozsahy vzorů s pravou závorkou  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Operátor Like](../../visual-basic/language-reference/operators/like-operator.md)
+- [Like – operátor](../language-reference/operators/like-operator.md)

@@ -1,13 +1,13 @@
 ---
-title: 'Postupy: vyhledání všech uzlů v oboru názvů'
+title: 'Postupy: Vyhledání všech uzlů v názvovém prostoru'
 ms.date: 07/20/2015
 ms.assetid: b735d7da-5727-48a3-ab57-a16378adc32e
-ms.openlocfilehash: f6bc38140bc2ea43393133d78c798469d26671c5
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: f1660020db59b63dea86ed8953faef743c0f40d4
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74352972"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84405310"
 ---
 # <a name="how-to-find-all-nodes-in-a-namespace-visual-basic"></a>Postupy: vyhledání všech uzlů v oboru názvů (Visual Basic)
 Můžete filtrovat podle oboru názvů každého elementu nebo atributu, aby bylo možné najít všechny uzly v daném oboru názvů.  
@@ -43,7 +43,7 @@ Module Module1
 End Module  
 ```  
   
- Tento kód generuje následující výstup:  
+ Výsledkem tohoto kódu je následující výstup:  
   
 ```console  
 Nodes in the http://www.adventure-works.com namespace  
@@ -54,7 +54,7 @@ Nodes in the http://www.adventure-works.com namespace
 ## <a name="example"></a>Příklad  
  Soubor XML, ke kterému má přistup následující dotaz, obsahuje objednávky nákupu ve dvou různých oborech názvů. Dotaz vytvoří nový strom s pouze prvky v jednom z oborů názvů.  
   
- Tento příklad používá následující dokument XML: [vzorový soubor XML: konsolidované nákupní objednávky](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-consolidated-purchase-orders.md).  
+ Tento příklad používá následující dokument XML: [vzorový soubor XML: konsolidované nákupní objednávky](sample-xml-file-consolidated-purchase-orders.md).  
   
 ```vb  
 Imports <xmlns:aw="http://www.adventure-works.com">  
@@ -73,7 +73,7 @@ Module Module1
 End Module  
 ```  
   
- Tento kód generuje následující výstup:  
+ Výsledkem tohoto kódu je následující výstup:  
   
 ```xml  
 <Root>  
@@ -109,6 +109,6 @@ End Module
 </Root>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Základní dotazy (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
+- [Základní dotazy (LINQ to XML) (Visual Basic)](basic-queries-linq-to-xml.md)

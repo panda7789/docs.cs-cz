@@ -12,12 +12,12 @@ helpviewer_keywords:
 - deferred execution
 - iteration variables [Visual Basic]
 ms.assetid: 3047d86e-0d49-40e2-928b-dc02e46c7984
-ms.openlocfilehash: 740d8010908d658deb40591d4a9c3182c46ffc84
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: 273c688d7e9d3fb86d4baece75193ce6d112b62f
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84201712"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84404911"
 ---
 # <a name="introduction-to-linq-in-visual-basic"></a>Představení technologie LINQ v jazyce Visual Basic
 LINQ (Language-Integrated Query) přidává funkce pro dotazy do Visual Basic a poskytuje jednoduché a výkonné funkce, když pracujete se všemi druhy dat. Místo odeslání dotazu do databáze, která se má zpracovat, nebo práce s jinou syntaxí dotazu pro každý typ vyhledávaných dat, LINQ zavádí dotazy jako součást Visual Basicho jazyka. Používá sjednocenou syntaxi bez ohledu na typ dat.  
@@ -38,11 +38,11 @@ LINQ (Language-Integrated Query) přidává funkce pro dotazy do Visual Basic a 
   
  Visual Basic obsahuje následující poskytovatele LINQ.  
   
-|Poskytovatel|Popis|  
+|Poskytovatel|Description|  
 |---|---|  
 |LINQ na objekty|Poskytovatel LINQ to Objects umožňuje zadat dotaz na kolekce a pole v paměti. Pokud objekt podporuje <xref:System.Collections.IEnumerable> <xref:System.Collections.Generic.IEnumerable%601> rozhraní nebo, poskytovatel LINQ to Objects vám umožní dotazovat se na něj.<br /><br /> Poskytovatele LINQ to Objects můžete povolit importováním <xref:System.Linq> oboru názvů, který je importován ve výchozím nastavení pro všechny projekty Visual Basic.<br /><br /> Další informace o poskytovateli LINQ to Objects najdete v tématu [LINQ to Objects](../../concepts/linq/linq-to-objects.md).|  
 |Technologie LINQ to SQL|Poskytovatel LINQ to SQL umožňuje zadávat dotazy a upravovat data v databázi SQL Server. To usnadňuje mapování objektového modelu pro aplikaci na tabulky a objekty v databázi.<br /><br /> Visual Basic usnadňuje práci s LINQ to SQL včetně Návrhář relací objektů (O/R Designer). Tento Návrhář slouží k vytvoření objektového modelu v aplikaci, která je mapována na objekty v databázi. Návrhář O/R také poskytuje funkce pro mapování uložených procedur a funkcí na <xref:System.Data.Linq.DataContext> objekt, který spravuje komunikaci s databází a ukládá stav pro optimistické kontroly souběžnosti.<br /><br /> Další informace o poskytovateli LINQ to SQL najdete v tématu [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md). Další informace o Návrhář relací objektů naleznete v tématu [LINQ to SQL Tools v aplikaci Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).|  
-|Technologie LINQ to XML|Poskytovatel LINQ to XML umožňuje zadávat dotazy a upravovat XML. Můžete upravit XML v paměti nebo můžete načíst XML z a uložit XML do souboru.<br /><br /> Kromě toho poskytovatel LINQ to XML povoluje literály XML a vlastnosti OS XML, které umožňují psát XML přímo v kódu Visual Basic. Další informace najdete v tématu [XML](../../../../visual-basic/programming-guide/language-features/xml/index.md).|  
+|Technologie LINQ to XML|Poskytovatel LINQ to XML umožňuje zadávat dotazy a upravovat XML. Můžete upravit XML v paměti nebo můžete načíst XML z a uložit XML do souboru.<br /><br /> Kromě toho poskytovatel LINQ to XML povoluje literály XML a vlastnosti OS XML, které umožňují psát XML přímo v kódu Visual Basic. Další informace najdete v tématu [XML](../xml/index.md).|  
 |LINQ na DataSet|Poskytovatel LINQ to DataSet umožňuje dotazování a aktualizaci dat v datové sadě ADO.NET. Můžete přidat sílu technologie LINQ do aplikací, které používají datové sady, aby bylo možné zjednodušit a roztáhnout funkce pro dotazování, agregaci a aktualizaci dat v datové sadě.<br /><br /> Další informace najdete v tématu [LINQ to DataSet](../../../../framework/data/adonet/linq-to-dataset.md).|  
   
 ## <a name="structure-of-a-linq-query"></a>Struktura dotazu LINQ  
@@ -68,7 +68,7 @@ LINQ (Language-Integrated Query) přidává funkce pro dotazy do Visual Basic a 
   
  [!code-vb[VbVbalrIntroToLINQ#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/class2.vb#6)]  
   
- Existuje několik dalších operátorů dotazů LINQ, pomocí kterých můžete vytvářet výkonné výrazy dotazů. Další část tohoto tématu popisuje různé klauzule dotazu, které můžete zahrnout do výrazu dotazu. Podrobnosti o Visual Basic klauzulích dotazů najdete v tématu [dotazy](../../../../visual-basic/language-reference/queries/index.md).  
+ Existuje několik dalších operátorů dotazů LINQ, pomocí kterých můžete vytvářet výkonné výrazy dotazů. Další část tohoto tématu popisuje různé klauzule dotazu, které můžete zahrnout do výrazu dotazu. Podrobnosti o Visual Basic klauzulích dotazů najdete v tématu [dotazy](../../../language-reference/queries/index.md).  
   
 ## <a name="visual-basic-linq-query-operators"></a>Visual Basic operátory dotazů LINQ  
 
@@ -76,13 +76,13 @@ Třídy v <xref:System.Linq> oboru názvů a další obory názvů, které podpo
 
 ### <a name="from-clause"></a>Klauzule From
 
-[ `From` ](../../../../visual-basic/language-reference/queries/from-clause.md) `Aggregate` Pro zahájení dotazu je vyžadována klauzule nebo klauzule. `From`Klauzule Určuje zdrojovou kolekci a proměnnou iterace pro dotaz. Příklad:
+[ `From` ](../../../language-reference/queries/from-clause.md) `Aggregate` Pro zahájení dotazu je vyžadována klauzule nebo klauzule. `From`Klauzule Určuje zdrojovou kolekci a proměnnou iterace pro dotaz. Příklad:
 
  [!code-vb[VbVbalrIntroToLINQ#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#7)]
 
 ### <a name="select-clause"></a>Select – klauzule
 
-Nepovinný parametr. [ `Select` Klauzule](../../../../visual-basic/language-reference/queries/select-clause.md) deklaruje sadu proměnných iterace pro dotaz. Příklad:
+Nepovinný parametr. [ `Select` Klauzule](../../../language-reference/queries/select-clause.md) deklaruje sadu proměnných iterace pro dotaz. Příklad:
 
  [!code-vb[VbVbalrIntroToLINQ#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#8)]
 
@@ -90,37 +90,37 @@ Není-li `Select` zadána klauzule, proměnné iterace pro dotaz se skládají z
 
 ### <a name="where-clause"></a>Klauzule Where
 
-Nepovinný parametr. [ `Where` Klauzule](../../../../visual-basic/language-reference/queries/where-clause.md) Určuje podmínku filtrování pro dotaz. Příklad:
+Nepovinný parametr. [ `Where` Klauzule](../../../language-reference/queries/where-clause.md) Určuje podmínku filtrování pro dotaz. Příklad:
 
  [!code-vb[VbVbalrIntroToLINQ#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#9)]
 
 ### <a name="order-by-clause"></a>Klauzule ORDER by
 
-Nepovinný parametr. [ `Order By` Klauzule](../../../../visual-basic/language-reference/queries/order-by-clause.md) určuje pořadí řazení pro sloupce v dotazu. Příklad:
+Nepovinný parametr. [ `Order By` Klauzule](../../../language-reference/queries/order-by-clause.md) určuje pořadí řazení pro sloupce v dotazu. Příklad:
 
  [!code-vb[VbVbalrIntroToLINQ#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#10)]
 
 ### <a name="join-clause"></a>Join – klauzule
 
-Nepovinný parametr. [ `Join` Klauzule](../../../../visual-basic/language-reference/queries/join-clause.md) kombinuje dvě kolekce do jedné kolekce. Příklad:
+Nepovinný parametr. [ `Join` Klauzule](../../../language-reference/queries/join-clause.md) kombinuje dvě kolekce do jedné kolekce. Příklad:
 
  [!code-vb[VbVbalrIntroToLINQ#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#11)]
 
 ### <a name="group-by-clause"></a>Group By – klauzule
 
-Nepovinný parametr. [ `Group By` Klauzule](../../../../visual-basic/language-reference/queries/group-by-clause.md) seskupí prvky výsledku dotazu. Dá se použít k aplikování agregačních funkcí na každou skupinu. Příklad:
+Nepovinný parametr. [ `Group By` Klauzule](../../../language-reference/queries/group-by-clause.md) seskupí prvky výsledku dotazu. Dá se použít k aplikování agregačních funkcí na každou skupinu. Příklad:
 
  [!code-vb[VbVbalrIntroToLINQ#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#12)]
 
 ### <a name="group-join-clause"></a>Group Join – klauzule
 
-Nepovinný parametr. [ `Group Join` Klauzule](../../../../visual-basic/language-reference/queries/group-join-clause.md) kombinuje dvě kolekce do jedné hierarchické kolekce. Příklad:
+Nepovinný parametr. [ `Group Join` Klauzule](../../../language-reference/queries/group-join-clause.md) kombinuje dvě kolekce do jedné hierarchické kolekce. Příklad:
 
  [!code-vb[VbVbalrIntroToLINQ#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#13)]
 
 ### <a name="aggregate-clause"></a>Aggregate – klauzule
 
-[ `Aggregate` ](../../../../visual-basic/language-reference/queries/aggregate-clause.md) `From` Pro zahájení dotazu je vyžadována klauzule nebo klauzule. `Aggregate`Klauzule aplikuje jednu nebo více agregačních funkcí na kolekci. Například můžete použít `Aggregate` klauzuli pro výpočet součtu všech prvků vrácených dotazem, jak je uvedeno v následujícím příkladu.
+[ `Aggregate` ](../../../language-reference/queries/aggregate-clause.md) `From` Pro zahájení dotazu je vyžadována klauzule nebo klauzule. `Aggregate`Klauzule aplikuje jednu nebo více agregačních funkcí na kolekci. Například můžete použít `Aggregate` klauzuli pro výpočet součtu všech prvků vrácených dotazem, jak je uvedeno v následujícím příkladu.
 
  [!code-vb[VbVbalrIntroToLINQ#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#14)]
 
@@ -130,7 +130,7 @@ Můžete také použít `Aggregate` klauzuli pro úpravu dotazu. Například mů
 
 ### <a name="let-clause"></a>Let – klauzule
 
-Nepovinný parametr. [ `Let` Klauzule](../../../../visual-basic/language-reference/queries/let-clause.md) vypočítá hodnotu a přiřadí ji k nové proměnné v dotazu. Příklad:
+Nepovinný parametr. [ `Let` Klauzule](../../../language-reference/queries/let-clause.md) vypočítá hodnotu a přiřadí ji k nové proměnné v dotazu. Příklad:
 
  [!code-vb[VbVbalrIntroToLINQ#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#16)]
 
@@ -142,25 +142,25 @@ Nepovinný parametr. `Distinct`Klauzule omezuje hodnoty aktuální proměnné it
 
 ### <a name="skip-clause"></a>Skip – klauzule
 
-Nepovinný parametr. [ `Skip` Klauzule](../../../../visual-basic/language-reference/queries/skip-clause.md) obchází zadaný počet prvků v kolekci a vrátí zbývající prvky. Příklad:
+Nepovinný parametr. [ `Skip` Klauzule](../../../language-reference/queries/skip-clause.md) obchází zadaný počet prvků v kolekci a vrátí zbývající prvky. Příklad:
 
  [!code-vb[VbVbalrIntroToLINQ#18](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#18)]
 
 ### <a name="skip-while-clause"></a>Skip While – klauzule
 
-Nepovinný parametr. [ `Skip While` Klauzule](../../../../visual-basic/language-reference/queries/skip-while-clause.md) obchází prvky v kolekci, pokud je zadaná podmínka `true` a vrátí zbývající prvky. Příklad:
+Nepovinný parametr. [ `Skip While` Klauzule](../../../language-reference/queries/skip-while-clause.md) obchází prvky v kolekci, pokud je zadaná podmínka `true` a vrátí zbývající prvky. Příklad:
 
  [!code-vb[VbVbalrIntroToLINQ#19](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#19)]
 
 ### <a name="take-clause"></a>Take – klauzule
 
-Nepovinný parametr. [ `Take` Klauzule](../../../../visual-basic/language-reference/queries/take-clause.md) vrátí zadaný počet souvislých prvků od začátku kolekce. Příklad:
+Nepovinný parametr. [ `Take` Klauzule](../../../language-reference/queries/take-clause.md) vrátí zadaný počet souvislých prvků od začátku kolekce. Příklad:
 
  [!code-vb[VbVbalrIntroToLINQ#20](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#20)]
 
 ### <a name="take-while-clause"></a>Take While – klauzule
 
-Nepovinný parametr. [ `Take While` Klauzule](../../../../visual-basic/language-reference/queries/take-while-clause.md) obsahuje prvky v kolekci, pokud je zadaná podmínka `true` a jsou vynechány zbývající prvky. Příklad:
+Nepovinný parametr. [ `Take While` Klauzule](../../../language-reference/queries/take-while-clause.md) obsahuje prvky v kolekci, pokud je zadaná podmínka `true` a jsou vynechány zbývající prvky. Příklad:
 
  [!code-vb[VbVbalrIntroToLINQ#21](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#21)]
   
@@ -213,9 +213,9 @@ Můžete použít další funkce dotazů LINQ voláním členů výčtových a Q
   
 ## <a name="related-resources"></a>Související prostředky  
   
-|Téma|Popis|  
+|Téma|Description|  
 |---|---|  
-|[XML](../../language-features/xml/index.md)|Popisuje funkce XML v Visual Basic, které lze dotazovat a které umožňují zahrnout XML jako datové objekty první třídy v kódu Visual Basic.|  
+|[XML](../xml/index.md)|Popisuje funkce XML v Visual Basic, které lze dotazovat a které umožňují zahrnout XML jako datové objekty první třídy v kódu Visual Basic.|  
 |[Dotazy](../../../language-reference/queries/index.md)|Poskytuje referenční informace o klauzulích dotazu, které jsou k dispozici v Visual Basic.|  
 |[LINQ (jazykově integrovaný dotaz)](../../concepts/linq/index.md)|Obsahuje obecné informace, pokyny pro programování a ukázky pro LINQ.|  
 |[Technologie LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)|Obsahuje obecné informace, pokyny pro programování a ukázky pro LINQ to SQL.|  
@@ -248,7 +248,7 @@ Můžete použít další funkce dotazů LINQ voláním členů výčtových a Q
 ## <a name="see-also"></a>Viz také
 
 - [LINQ (jazykově integrovaný dotaz)](../../concepts/linq/index.md)
-- [Přehled technologie LINQ to XML v jazyce Visual Basic](../../language-features/xml/overview-of-linq-to-xml.md)
+- [Přehled technologie LINQ to XML v jazyce Visual Basic](../xml/overview-of-linq-to-xml.md)
 - [Přehled LINQ to DataSet](../../../../framework/data/adonet/linq-to-dataset-overview.md)
 - [Technologie LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)
 - [Nástroje LINQ to SQL v sadě Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2)
