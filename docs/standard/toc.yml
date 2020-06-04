@@ -223,6 +223,10 @@
           displayName: 'unmanaged resources, memory management'
         - name: Implementace metody Dispose
           href: garbage-collection/implementing-dispose.md
+          displayName: 'using, Dispose, dispose pattern, IDisposable'
+        - name: Implementace metody DisposeAsync
+          href: garbage-collection/implementing-disposeasync.md
+          displayName: 'await using, DisposeAsync, async dispose pattern, IAsyncDisposable'
         - name: Použití objektů implementujících rozhraní IDisposable
           href: garbage-collection/using-objects.md
     - name: Uvolnění paměti
