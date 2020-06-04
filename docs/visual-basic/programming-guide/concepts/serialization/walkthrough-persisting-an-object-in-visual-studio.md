@@ -2,23 +2,23 @@
 title: Uchování objektu v sadě Visual Studio
 ms.date: 07/20/2015
 ms.assetid: f1d0b562-e349-4dce-ab5f-c05108467030
-ms.openlocfilehash: fbd342c929e8519571c0f6bb76d4091efcfe4476
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: e4eaf87c99ea1577d7f3ca40e628c00cc2700511
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74350400"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84413126"
 ---
 # <a name="walkthrough-persisting-an-object-in-visual-studio-visual-basic"></a>Návod: uchování objektu v aplikaci Visual Studio (Visual Basic)
 I když můžete nastavit vlastnosti objektu na výchozí hodnoty v době návrhu, budou při zničení objektu ztraceny všechny hodnoty zadané v době běhu. Můžete použít serializaci k uchování dat objektu mezi instancemi, což umožňuje ukládat hodnoty a načíst je při příštím vytvoření instance objektu.  
   
 > [!NOTE]
-> V Visual Basic můžete k ukládání jednoduchých dat, jako je název nebo číslo, použít objekt `My.Settings`. Další informace najdete v tématu [objekt My. Settings](../../../../visual-basic/language-reference/objects/my-settings-object.md).  
+> V Visual Basic pro ukládání jednoduchých dat, jako je název nebo číslo, můžete použít `My.Settings` objekt. Další informace najdete v tématu [objekt My. Settings](../../../language-reference/objects/my-settings-object.md).  
   
- V tomto návodu vytvoříte jednoduchý objekt `Loan` a zachová jeho data do souboru. Po opětovném vytvoření objektu načtěte data ze souboru.  
+ V tomto návodu vytvoříte jednoduchý objekt a zachová `Loan` jeho data do souboru. Po opětovném vytvoření objektu načtěte data ze souboru.  
   
 > [!IMPORTANT]
-> Tento příklad vytvoří nový soubor, pokud soubor ještě neexistuje. Pokud aplikace musí vytvořit soubor, musí tato aplikace `Create` oprávnění pro tuto složku. Oprávnění se nastavují pomocí seznamů řízení přístupu. Pokud soubor již existuje, aplikace potřebuje pouze `Write` oprávnění, menší oprávnění. Pokud je to možné, je bezpečnější vytvořit soubor během nasazení a udělit pouze `Read` oprávnění k jednomu souboru (místo oprávnění k vytváření složky). Je také bezpečnější zapsat data do složek uživatele než do kořenové složky nebo do složky Program Files.  
+> Tento příklad vytvoří nový soubor, pokud soubor ještě neexistuje. Pokud aplikace musí vytvořit soubor, musí mít tato aplikace `Create` oprávnění pro tuto složku. Oprávnění se nastavují pomocí seznamů řízení přístupu. Pokud soubor již existuje, aplikace potřebuje pouze `Write` oprávnění a menší oprávnění. Pokud je to možné, je bezpečnější vytvořit soubor během nasazení a udělit `Read` oprávnění pouze k jednomu souboru (místo oprávnění k vytvoření složky). Je také bezpečnější zapsat data do složek uživatele než do kořenové složky nebo do složky Program Files.  
   
 > [!IMPORTANT]
 > Tento příklad ukládá data v binárním souboru. Tyto formáty by se neměly používat pro citlivá data, jako jsou hesla nebo informace o kreditních kartách.  
@@ -27,13 +27,13 @@ I když můžete nastavit vlastnosti objektu na výchozí hodnoty v době návrh
 > Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, klikněte na položku **Nastavení importu a exportu** v nabídce **nástroje** . Další informace najdete v tématu [Přizpůsobení integrovaného vývojového prostředí (IDE) sady Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  
   
 ## <a name="creating-the-loan-object"></a>Vytvoření objektu výpůjčky  
- Prvním krokem je vytvoření třídy `Loan` a testovací aplikace, která používá třídu.  
+ Prvním krokem je vytvoření `Loan` třídy a testovací aplikace, která používá třídu.  
   
 ### <a name="to-create-the-loan-class"></a>Vytvoření třídy výpůjčky  
   
 1. Vytvořte nový projekt knihovny tříd a pojmenujte ho "LoanClass". Další informace najdete v tématu [vytváření řešení a projektů](https://docs.microsoft.com/visualstudio/ide/creating-solutions-and-projects).  
   
-2. V **Průzkumník řešení**otevřete místní nabídku pro soubor Class1 a vyberte možnost **Přejmenovat**. Přejmenujte soubor na `Loan` a stiskněte klávesu ENTER. Přejmenováním souboru dojde také k přejmenování třídy na `Loan`.  
+2. V **Průzkumník řešení**otevřete místní nabídku pro soubor Class1 a vyberte možnost **Přejmenovat**. Přejmenujte soubor na `Loan` a stiskněte klávesu ENTER. Přejmenováním souboru dojde také k přejmenování třídy na `Loan` .  
   
 3. Do třídy přidejte následující veřejné členy:  
   
@@ -73,13 +73,13 @@ I když můžete nastavit vlastnosti objektu na výchozí hodnoty v době návrh
     End Class  
     ```  
   
- Také budete muset vytvořit jednoduchou aplikaci, která používá třídu `Loan`.  
+ Také budete muset vytvořit jednoduchou aplikaci, která používá `Loan` třídu.  
   
 ### <a name="to-create-a-test-application"></a>Vytvoření testovací aplikace  
   
 1. Chcete-li do řešení přidat projekt aplikace model Windows Forms, vyberte v nabídce **soubor** možnost **Přidat**,**Nový projekt**.  
   
-2. V dialogovém okně **Přidat nový projekt** zvolte možnost **model Windows Forms aplikace**a jako název projektu zadejte `LoanApp` a potom kliknutím na tlačítko **OK** dialogové okno zavřete.  
+2. V dialogovém okně **Přidat nový projekt** zvolte možnost **model Windows Forms aplikace**a zadejte `LoanApp` název projektu a potom kliknutím na tlačítko **OK** zavřete dialogové okno.  
   
 3. V **Průzkumník řešení**vyberte projekt LoanApp.  
   
@@ -89,9 +89,9 @@ I když můžete nastavit vlastnosti objektu na výchozí hodnoty v době návrh
   
 6. V dialogovém okně **Přidat odkaz** zvolte kartu **projekty** a pak zvolte projekt LoanClass.  
   
-7. Kliknutím na tlačítko **OK** zavřete dialogové okno.  
+7. Kliknutím na **OK** zavřete dialogové okno.  
   
-8. V Návrháři přidejte do formuláře čtyři ovládací prvky <xref:System.Windows.Forms.TextBox>.  
+8. V Návrháři přidejte <xref:System.Windows.Forms.TextBox> do formuláře čtyři ovládací prvky.  
   
 9. V Editoru kódu přidejte následující kód:  
   
@@ -106,7 +106,7 @@ I když můžete nastavit vlastnosti objektu na výchozí hodnoty v době návrh
     End Sub  
     ```  
   
-10. Přidejte obslužnou rutinu události pro událost `PropertyChanged` do formuláře pomocí následujícího kódu:  
+10. Přidejte obslužnou rutinu události pro `PropertyChanged` událost do formuláře pomocí následujícího kódu:  
   
     ```vb  
     Public Sub CustomerPropertyChanged(  
@@ -118,12 +118,12 @@ I když můžete nastavit vlastnosti objektu na výchozí hodnoty v době návrh
     End Sub  
     ```  
   
- V tomto okamžiku můžete sestavit a spustit aplikaci. Všimněte si, že výchozí hodnoty z třídy `Loan` se zobrazí v textových polích. Zkuste změnit hodnotu úrokového tarifu z 7,5 na 7,1 a pak aplikaci zavřít a znovu spustit – hodnota se vrátí k výchozí hodnotě 7,5.  
+ V tomto okamžiku můžete sestavit a spustit aplikaci. Všimněte si, že výchozí hodnoty z `Loan` třídy se zobrazí v textových polích. Zkuste změnit hodnotu úrokového tarifu z 7,5 na 7,1 a pak aplikaci zavřít a znovu spustit – hodnota se vrátí k výchozí hodnotě 7,5.  
   
  V reálném světě se úrokové sazby pravidelně mění, ale nemusí nutně pokaždé, když je aplikace spuštěná. Místo toho, aby uživatel aktualizoval úrokovou sazbu při každém spuštění aplikace, je lepší zachovat nejnovější úrokovou sazbu mezi instancemi aplikace. V dalším kroku provedete to tak, že do třídy výpůjčky přidáte serializaci.  
   
 ## <a name="using-serialization-to-persist-the-object"></a>Zachování objektu pomocí serializace  
- Aby bylo možné zachovat hodnoty pro třídu výpůjčky, musíte nejprve označit třídu atributem `Serializable`.  
+ Aby bylo možné zachovat hodnoty pro třídu výpůjčky, musíte nejprve označit třídu `Serializable` atributem.  
   
 ### <a name="to-mark-a-class-as-serializable"></a>Označení třídy jako serializovatelný  
   
@@ -134,11 +134,11 @@ I když můžete nastavit vlastnosti objektu na výchozí hodnoty v době návrh
     Public Class Loan  
     ```  
   
- Atribut `Serializable` instruuje kompilátor, že všechno ve třídě lze trvale uložit do souboru. Vzhledem k tomu, že událost `PropertyChanged` je zpracována objektem formuláře Windows, nemůže být serializována. Atribut `NonSerialized` lze použít k označení členů třídy, které by neměly být trvalé.  
+ `Serializable`Atribut instruuje kompilátor, že všechno ve třídě lze trvale uložit do souboru. Vzhledem k tomu, že `PropertyChanged` událost je zpracována objektem formuláře Windows, nemůže být serializována. `NonSerialized`Atribut lze použít k označení členů třídy, které by neměly být trvalé.  
   
 ### <a name="to-prevent-a-member-from-being-serialized"></a>Zamezení serializaci člena  
   
-- Změňte deklaraci události `PropertyChanged` následujícím způsobem:  
+- Změňte deklaraci pro `PropertyChanged` událost následujícím způsobem:  
   
     ```vb  
     <NonSerialized()>  
@@ -146,11 +146,11 @@ I když můžete nastavit vlastnosti objektu na výchozí hodnoty v době návrh
       Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged  
     ```  
   
- Dalším krokem je přidání kódu serializace do aplikace LoanApp. Aby bylo možné serializovat třídu a zapsat ji do souboru, budete používat obory názvů <xref:System.IO> a <xref:System.Xml.Serialization>. Chcete-li se vyhnout psaní plně kvalifikovaných názvů, můžete přidat odkazy na potřebné knihovny tříd.  
+ Dalším krokem je přidání kódu serializace do aplikace LoanApp. Aby bylo možné serializovat třídu a zapsat ji do souboru, budete používat <xref:System.IO> <xref:System.Xml.Serialization> obory názvů a. Chcete-li se vyhnout psaní plně kvalifikovaných názvů, můžete přidat odkazy na potřebné knihovny tříd.  
   
 ### <a name="to-add-references-to-namespaces"></a>Přidání odkazů na obory názvů  
   
-- Do horní části `Form1` třídy přidejte následující příkazy:  
+- Do horní části třídy přidejte následující příkazy `Form1` :  
   
     ```vb  
     Imports System.IO  
@@ -169,7 +169,7 @@ I když můžete nastavit vlastnosti objektu na výchozí hodnoty v době návrh
     Const FileName As String = "..\..\SavedLoan.bin"  
     ```  
   
-2. Upravte kód v proceduře `Form1_Load` události následujícím způsobem:  
+2. Upravte kód v `Form1_Load` proceduře události následujícím způsobem:  
   
     ```vb  
     Private WithEvents TestLoan As New LoanClass.Loan(10000.0, 0.075, 36, "Neil Black")  
@@ -191,13 +191,13 @@ I když můžete nastavit vlastnosti objektu na výchozí hodnoty v době návrh
     End Sub  
     ```  
   
-     Všimněte si, že nejdřív musíte ověřit, že soubor existuje. Pokud existuje, vytvořte třídu <xref:System.IO.Stream> pro čtení binárního souboru a <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> třídy k překladu souboru. Také je nutné převést typ datového proudu na typ objektu výpůjčky.  
+     Všimněte si, že nejdřív musíte ověřit, že soubor existuje. Pokud existuje, vytvořte <xref:System.IO.Stream> třídu pro čtení binárního souboru a <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> třídu pro překlad souboru. Také je nutné převést typ datového proudu na typ objektu výpůjčky.  
   
- Dále je nutné přidat kód pro uložení dat zadaných do textových polí do třídy `Loan` a poté je nutné třídu serializovat do souboru.  
+ Dále je nutné přidat kód pro uložení dat zadaných do textových polí do `Loan` třídy a poté je nutné třídu serializovat do souboru.  
   
 ### <a name="to-save-the-data-and-serialize-the-class"></a>Uložení dat a serializace třídy  
   
-- Do procedury `Form1_FormClosing` události přidejte následující kód:  
+- Do procedury události přidejte následující kód `Form1_FormClosing` :  
   
     ```vb  
     Private Sub Form1_FormClosing() Handles MyBase.FormClosing  
@@ -215,7 +215,7 @@ I když můžete nastavit vlastnosti objektu na výchozí hodnoty v době návrh
   
  V tuto chvíli můžete znovu sestavit a spustit aplikaci. Zpočátku se výchozí hodnoty zobrazí v textových polích. Zkuste změnit hodnoty a do čtvrtého textového pole zadejte název. Ukončete aplikaci a pak ji znovu spusťte. Všimněte si, že nové hodnoty se nyní zobrazí v textových polích.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Serializace (Visual Basic)](../../../../visual-basic/programming-guide/concepts/serialization/index.md)
-- [Průvodce programováním Visual Basic](../../../../visual-basic/programming-guide/index.md)
+- [Serializace (Visual Basic)](index.md)
+- [Příručka k programování v jazyce Visual Basic](../../index.md)

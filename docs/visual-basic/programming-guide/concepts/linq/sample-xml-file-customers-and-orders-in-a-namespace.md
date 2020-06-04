@@ -2,15 +2,15 @@
 title: 'Ukázkový soubor XML: Zákazníci a objednávky v názvovém prostoru'
 ms.date: 07/20/2015
 ms.assetid: 9fe81dbb-e51f-4e80-a49b-e34ac0b1f980
-ms.openlocfilehash: 63bb6cf5065e2189380bbcd67812c5ae8d6dd372
-ms.sourcegitcommit: 9ee6cd851b6e176a5811ea28ed0d5935c71950f9
+ms.openlocfilehash: c10c321d96306d45dc8634d1b62771bce65b973c
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68869105"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84413333"
 ---
 # <a name="sample-xml-file-customers-and-orders-in-a-namespace"></a>Ukázkový soubor XML: Zákazníci a objednávky v názvovém prostoru
-Následující soubor XML se v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci používá v různých příkladech. Tento soubor obsahuje zákazníky a objednávky. KÓD XML je v oboru názvů.  
+Následující soubor XML se v dokumentaci používá v různých příkladech [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] . Tento soubor obsahuje zákazníky a objednávky. KÓD XML je v oboru názvů.  
   
 ## <a name="customersordersinnamespacexml"></a>CustomersOrdersInNamespace. XML  
   
@@ -430,6 +430,6 @@ Následující soubor XML se v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.
 </Root>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Ukázkové dokumenty XML (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+- [Ukázkové dokumenty XML (LINQ to XML)](sample-xml-documents-linq-to-xml.md)

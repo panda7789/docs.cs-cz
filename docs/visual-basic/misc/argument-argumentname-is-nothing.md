@@ -1,25 +1,25 @@
 ---
-title: Argument '<argumentname>"není nic
+title: Argument <argumentname> ' ' je Nothing
 ms.date: 07/20/2015
 f1_keywords:
 - vbrArgument_InvalidNullValue1
 ms.assetid: abbde904-c191-4911-8822-c9dd2f81d616
-ms.openlocfilehash: 2a0be0a10bc8b2a19c1c4b7ab3517ac6a32401e4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: fe06605c25b9bb281ad9818708375a2f8f5c9480
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61666050"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84412868"
 ---
-# <a name="argument-argumentname-is-nothing"></a>Argument '\<název argumentu argumentname >' není nic
+# <a name="argument-argumentname-is-nothing"></a>Argument \<argumentname> ' ' je Nothing
 Výraz obsahuje argument s hodnotou null.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1. Zkontrolujte, zda argumenty ve výrazu. Chybně napsaná název proměnné implicitně vytvářet číselné proměnné, která je inicializována na nulovou hodnotu.  
+1. Kontrola pravopisu argumentů ve výrazu. Nesprávně napsaný název proměnné může implicitně vytvořit číselnou proměnnou, která je inicializovaná na nulu.  
   
-2. Zkontrolujte předchozí operací pro proměnné ve výrazu, zejména těch, které jsou předány do procedury jako argumenty z jiných postupů.  
+2. Zkontroluje předchozí operace s proměnnými ve výrazu, zejména ty, které byly předány do procedury jako argumenty z jiných postupů.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Předávání argumentů podle hodnoty a reference](../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)
+- [Předávání argumentů podle hodnoty a reference](../programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)

@@ -12,29 +12,29 @@ helpviewer_keywords:
 - declared elements [Visual Basic], visibility
 - visibility [Visual Basic], variables
 ms.assetid: 44b7f62a-cb5c-4d50-bce9-60ae68f87072
-ms.openlocfilehash: 0ee6ce183310aa836ecdbbc0bc819e0e83d1872d
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 8b21f22edea84448e3f2969c3e4b07c08a17a338
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74345380"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84357345"
 ---
 # <a name="how-to-control-the-scope-of-a-variable-visual-basic"></a>Postupy: Řízení rozsahu proměnné (Visual Basic)
 V normálním případě je proměnná v *oboru*, nebo viditelná pro referenci, v celé oblasti, ve které ji deklarujete. V některých případech může mít *úroveň přístupu* proměnné vliv na svůj rozsah.  
   
- Další informace najdete v tématu věnovaném [oboru v Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md).  
+ Další informace najdete v tématu věnovaném [oboru v Visual Basic](scope.md).  
   
 ## <a name="scope-at-block-or-procedure-level"></a>Rozsah na úrovni bloku nebo procedury  
   
 #### <a name="to-make-a-variable-visible-only-within-a-block"></a>Chcete-li proměnnou zobrazit pouze v rámci bloku  
   
-- Umístěte [příkaz Dim](../../../../visual-basic/language-reference/statements/dim-statement.md) pro proměnnou mezi příkazy inicializace a ukončující deklarace tohoto bloku, například mezi příkazy `For` a `Next` `For` smyčky.  
+- Umístěte [příkaz Dim](../../../language-reference/statements/dim-statement.md) pro proměnnou mezi příkazy inicializace a ukončující deklarace tohoto bloku, například mezi `For` `Next` příkazy a `For` smyčky.  
   
      Na proměnnou můžete odkazovat pouze v rámci bloku.  
   
 #### <a name="to-make-a-variable-visible-only-within-a-procedure"></a>Chcete-li proměnnou zobrazit pouze v rámci procedury  
   
-- Umístěte příkaz `Dim` pro proměnnou uvnitř procedury, ale mimo libovolný blok (například `With`...`End With` blok).  
+- Do `Dim` procedury umístěte příkaz pro proměnnou, ale mimo libovolný blok (například `With` ... `End With` Block).  
   
      Na proměnnou můžete odkazovat pouze v rámci procedury, včetně uvnitř libovolného bloku, který je obsažen v proceduře.  
   
@@ -43,17 +43,17 @@ V normálním případě je proměnná v *oboru*, nebo viditelná pro referenci,
   
 #### <a name="to-make-a-variable-visible-throughout-a-module-class-or-structure"></a>Chcete-li zviditelnit proměnnou v rámci modulu, třídy nebo struktury  
   
-1. Umístěte příkaz `Dim` pro proměnnou uvnitř modulu, třídy nebo struktury, ale vně jakékoli procedury.  
+1. Umístěte `Dim` příkaz pro proměnnou uvnitř modulu, třídy nebo struktury, ale vně jakékoli procedury.  
   
-2. Do příkazu `Dim` zahrňte klíčové slovo [Private](../../../../visual-basic/language-reference/modifiers/private.md) .  
+2. Do příkazu zahrňte klíčové slovo [Private](../../../language-reference/modifiers/private.md) `Dim` .  
   
 3. Na proměnnou můžete odkazovat odkudkoli v rámci modulu, třídy nebo struktury, ale ne z vnějšku.  
   
 #### <a name="to-make-a-variable-visible-throughout-a-namespace"></a>Chcete-li nastavit proměnnou v rámci oboru názvů jako viditelné  
   
-1. Umístěte příkaz `Dim` pro proměnnou uvnitř modulu, třídy nebo struktury, ale vně jakékoli procedury.  
+1. Umístěte `Dim` příkaz pro proměnnou uvnitř modulu, třídy nebo struktury, ale vně jakékoli procedury.  
   
-2. Do příkazu `Dim` zahrňte klíčové slovo [Friend](../../../../visual-basic/language-reference/modifiers/friend.md) nebo [Public](../../../../visual-basic/language-reference/modifiers/public.md) .  
+2. Do příkazu zahrňte klíčové slovo [Friend](../../../language-reference/modifiers/friend.md) nebo [Public](../../../language-reference/modifiers/public.md) `Dim` .  
   
 3. Na proměnnou můžete odkazovat odkudkoli v rámci oboru názvů obsahujícího modul, třídu nebo strukturu.  
   
@@ -72,9 +72,9 @@ Module demonstrateScope
 End Module  
 ```  
   
- V předchozím příkladu můžou všechny procedury definované v modulu `demonstrateScope` odkazovat na `String` proměnnou `strMsg`. Když je volána procedura `usePrivateVariable`, zobrazí obsah řetězcové proměnné `strMsg` v dialogovém okně.  
+ V předchozím příkladu všechny procedury definované v modulu `demonstrateScope` mohou odkazovat na `String` proměnnou `strMsg` . Při `usePrivateVariable` volání procedury se zobrazí obsah proměnné řetězce `strMsg` v dialogovém okně.  
   
- S následující změnou v předchozím příkladu lze řetězcové proměnné `strMsg` odkazovat pomocí kódu kdekoli v oboru názvů své deklarace.  
+ S následující změnou v předchozím příkladu může být řetězcová proměnná `strMsg` odkazována pomocí kódu kdekoli v oboru názvů své deklarace.  
   
 ```vb  
 Public strMsg As String  
@@ -86,11 +86,11 @@ Public strMsg As String
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
  Zúžení rozsahu proměnné, menší pravděpodobnost, že škodlivý kód může nevhodným způsobem používat.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Obor v Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)
-- [Doba života v Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)
-- [Úrovně přístupu v Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
-- [Proměnné](../../../../visual-basic/programming-guide/language-features/variables/index.md)
-- [Deklarace proměnné](../../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)
-- [Příkaz Dim](../../../../visual-basic/language-reference/statements/dim-statement.md)
+- [Rozsah v jazyce Visual Basic](scope.md)
+- [Doba platnosti v jazyce Visual Basic](lifetime.md)
+- [Úrovně přístupu v Visual Basic](access-levels.md)
+- [Proměnné](../variables/index.md)
+- [Deklarace proměnné](../variables/variable-declaration.md)
+- [Dim – příkaz](../../../language-reference/statements/dim-statement.md)

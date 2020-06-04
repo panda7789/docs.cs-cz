@@ -9,12 +9,12 @@ helpviewer_keywords:
 - /baseaddress compiler option [Visual Basic]
 - baseaddress compiler option [Visual Basic]
 ms.assetid: c982bcf2-46e5-47a2-bc8f-a5cc32b7dc47
-ms.openlocfilehash: 6ee842dbe65cbd9d147e77ec523a2b031d303738
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: d241584195da7d6f74b45b191c4f63204c200d45
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72002386"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84357177"
 ---
 # <a name="-baseaddress"></a>-baseaddress
 Určuje výchozí základní adresu při vytváření knihovny DLL.  
@@ -27,7 +27,7 @@ Určuje výchozí základní adresu při vytváření knihovny DLL.
   
 ## <a name="arguments"></a>Argumenty  
   
-|Označení|Definice|  
+|Pojem|Definice|  
 |---|---|  
 |`address`|Povinná hodnota. Základní adresa knihovny DLL. Tato adresa musí být zadána jako šestnáctkové číslo.|  
   
@@ -46,7 +46,7 @@ Určuje výchozí základní adresu při vytváření knihovny DLL.
   
 ## <a name="see-also"></a>Viz také
 
-- [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
-- [-Target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md)
-- [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
+- [Visual Basic Kompilátor příkazového řádku](index.md)
+- [-Target (Visual Basic)](target.md)
+- [Příkazové řádky ukázkové kompilace](sample-compilation-command-lines.md)
 - [Sn. exe (Nástroj pro silný název)](../../../framework/tools/sn-exe-strong-name-tool.md))

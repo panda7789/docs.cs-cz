@@ -6,20 +6,20 @@ helpviewer_keywords:
 - application event logs, Visual Basic
 - application event logs
 ms.assetid: 2581afd1-5791-4bc4-86b2-46244e9fe468
-ms.openlocfilehash: 617b940d2cf15779ae3c10e4663b63c9771d44b6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e33efac8f65832c87d5c9271eba25c2ca1d1803b
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74345902"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84387592"
 ---
 # <a name="working-with-application-logs-in-visual-basic"></a>Práce s protokoly aplikací v jazyce Visual Basic
 
-Objekty `My.Application.Log` a `My.Log` usnadňují zápis informací o protokolování a trasování do protokolů.
+`My.Application.Log`Objekty a usnadňují `My.Log` zápis informací o protokolování a trasování do protokolů.
 
 ## <a name="how-messages-are-logged"></a>Způsob protokolování zpráv
 
-Nejdřív se závažnost zprávy kontroluje pomocí <xref:System.Diagnostics.TraceSource.Switch%2A> vlastnosti <xref:Microsoft.VisualBasic.Logging.Log.TraceSource%2A> vlastnosti protokolu. Ve výchozím nastavení jsou posluchačům trasování, které jsou zadány v `TraceListener` kolekci protokolů, předány pouze zprávy o závažnosti "informace" a vyšší. Potom každé naslouchací proces porovná závažnost zprávy s <xref:System.Diagnostics.TraceSource.Switch%2A> vlastností naslouchacího procesu. Pokud je závažnost zprávy dostatečně vysoká, posluchač zapíše zprávu.
+Nejdřív se závažnost zprávy kontroluje pomocí <xref:System.Diagnostics.TraceSource.Switch%2A> vlastnosti <xref:Microsoft.VisualBasic.Logging.Log.TraceSource%2A> Vlastnosti protokolu. Ve výchozím nastavení jsou posluchačům trasování, které jsou zadány v kolekci protokolů, předány pouze zprávy o závažnosti "informace" a vyšší `TraceListener` . Potom každé naslouchací proces porovná závažnost zprávy s vlastností naslouchacího procesu <xref:System.Diagnostics.TraceSource.Switch%2A> . Pokud je závažnost zprávy dostatečně vysoká, posluchač zapíše zprávu.
 
 Následující diagram znázorňuje, jak se zpráva zapsaná do `WriteEntry` metody předává do `WriteLine` metod posluchačů trasování protokolu:
 
@@ -31,7 +31,7 @@ Můžete změnit chování protokolu a posluchačů trasování změnou konfigur
 
 ## <a name="where-messages-are-logged"></a>Kam se zaznamenávají zprávy
 
-Pokud sestavení nemá žádný konfigurační soubor, objekty `My.Application.Log` a `My.Log` zapisují do výstupu ladění aplikace (prostřednictvím <xref:System.Diagnostics.DefaultTraceListener> třídy). Kromě toho `My.Application.Log` objekt zapisuje do souboru protokolu sestavení (prostřednictvím <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener> třídy), zatímco se `My.Log` objekt zapisuje do výstupu webové stránky ASP.NET (prostřednictvím <xref:System.Web.WebPageTraceListener> třídy).
+Pokud sestavení nemá žádný konfigurační soubor, `My.Application.Log` `My.Log` objekty a zapisují do výstupu ladění aplikace (prostřednictvím <xref:System.Diagnostics.DefaultTraceListener> třídy). Kromě toho `My.Application.Log` objekt zapisuje do souboru protokolu sestavení (prostřednictvím <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener> třídy), zatímco se `My.Log` objekt zapisuje do výstupu webové stránky ASP.NET (prostřednictvím <xref:System.Web.WebPageTraceListener> třídy).
 
 Výstup ladění lze zobrazit v okně **výstupu** sady Visual Studio při spuštění aplikace v režimu ladění. Chcete-li otevřít okno **výstup** , klikněte na položku nabídky **ladění** , přejděte na příkaz **Windows**a potom klikněte na možnost **výstup**. V okně **výstup** vyberte **ladit** v poli **Zobrazit výstup z** .
 
@@ -41,15 +41,15 @@ Ve výchozím nastavení `My.Application.Log` zapisuje soubor protokolu do cesty
 
 Typická hodnota pro `BasePath` je následující.
 
-C:\Documents and Settings\\`username`-\Application data
+C:\Documents and Settings- \\ `username` \Application data
 
-Hodnoty `CompanyName`, `ProductName`a `ProductVersion` pocházejí z informací o sestavení aplikace. Forma názvu souboru protokolu je *AssemblyName*. log, kde *AssemblyName* je název souboru sestavení bez přípony. Pokud je potřeba více než jeden soubor protokolu, například když je původní protokol nedostupný, když se aplikace pokusí o zápis do protokolu, je formulář pro název souboru protokolu typu *AssemblyName*-*iterace*. log, kde `iteration` je kladné. `Integer`
+Hodnoty `CompanyName` , `ProductName` a `ProductVersion` pocházejí z informací o sestavení aplikace. Forma názvu souboru protokolu je *AssemblyName*. log, kde *AssemblyName* je název souboru sestavení bez přípony. Pokud je potřeba více než jeden soubor protokolu, například když je původní protokol nedostupný, když se aplikace pokusí o zápis do protokolu, je formulář pro název souboru protokolu typu *AssemblyName* - *iterace*. log, kde `iteration` je kladné `Integer` .
 
-Výchozí chování můžete přepsat přidáním nebo změnou konfiguračních souborů aplikace a počítače. Další informace naleznete v tématu [Návod: Změna místa, kam aplikace My. Application. Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md).
+Výchozí chování můžete přepsat přidáním nebo změnou konfiguračních souborů aplikace a počítače. Další informace naleznete v tématu [Návod: Změna místa, kam aplikace My. Application. Log zapisuje informace](walkthrough-changing-where-my-application-log-writes-information.md).
 
 ## <a name="configuring-log-settings"></a>Konfigurace nastavení protokolu
 
-`Log` Objekt má výchozí implementaci, která funguje bez konfiguračního souboru aplikace App. config. Chcete-li změnit výchozí nastavení, je nutné přidat konfigurační soubor s novým nastavením. Další informace najdete v tématu [Návod: filtrování výstupu my. Application. log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-filtering-my-application-log-output.md).
+`Log`Objekt má výchozí implementaci, která funguje bez konfiguračního souboru aplikace App. config. Chcete-li změnit výchozí nastavení, je nutné přidat konfigurační soubor s novým nastavením. Další informace najdete v tématu [Návod: filtrování výstupu my. Application. log](walkthrough-filtering-my-application-log-output.md).
 
 Konfigurační oddíly protokolu jsou umístěné v `<system.diagnostics>` uzlu v hlavním `<configuration>` uzlu souboru App. config. Informace protokolu jsou definované v několika uzlech:
 
@@ -59,7 +59,7 @@ Konfigurační oddíly protokolu jsou umístěné v `<system.diagnostics>` uzlu 
 
 - Naslouchací procesy protokolu jsou definovány v `<sharedListeners>` uzlu.
 
- Příklady uzlů `<sources>`, `<switches>`a `<sharedListeners>` jsou uvedeny v následujícím kódu:
+ Příklady `<sources>` uzlů, `<switches>` a `<sharedListeners>` jsou uvedeny v následujícím kódu:
 
 ```xml
 <configuration>
@@ -90,7 +90,7 @@ Konfigurační oddíly protokolu jsou umístěné v `<system.diagnostics>` uzlu 
 
 Při vývoji aplikace se její nastavení konfigurace ukládají do souboru App. config, jak je znázorněno v předchozích příkladech. Po nasazení aplikace můžete protokol i nadále konfigurovat úpravou konfiguračního souboru. V aplikaci pro systém Windows je název tohoto souboru *ApplicationName*. exe. config a musí být umístěn ve stejné složce jako spustitelný soubor. Pro webovou aplikaci je to soubor Web. config přidružený k projektu.
 
-Když vaše aplikace spustí kód, který vytvoří instanci třídy poprvé, zkontroluje konfigurační soubor o informace o objektu. Pro `Log` objekt k tomu dojde při prvním otevření `Log` objektu. Systém prověřuje konfigurační soubor pouze jednou pro konkrétní objekt – při prvním vytvoření objektu aplikace. Proto může být nutné aplikaci restartovat, aby se změny projevily.
+Když vaše aplikace spustí kód, který vytvoří instanci třídy poprvé, zkontroluje konfigurační soubor o informace o objektu. Pro `Log` objekt k tomu dojde při prvním `Log` otevření objektu. Systém prověřuje konfigurační soubor pouze jednou pro konkrétní objekt – při prvním vytvoření objektu aplikace. Proto může být nutné aplikaci restartovat, aby se změny projevily.
 
 V nasazené aplikaci povolíte trasovací kód tím, že znovu nakonfigurujete objekty přepínače před spuštěním aplikace. Obvykle to zahrnuje zapnutí a vypnutí objektů přepínače nebo změnu úrovní trasování a následné restartování aplikace.
 
@@ -109,4 +109,4 @@ Při zápisu dat do protokolu Vezměte v úvahu následující skutečnosti:
 ## <a name="see-also"></a>Viz také
 
 - <xref:Microsoft.VisualBasic.Logging.Log?displayProperty=nameWithType>
-- [Protokolování informací z aplikace](../../../../visual-basic/developing-apps/programming/log-info/index.md)
+- [Protokolování informací z aplikace](index.md)

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - /warnaserror compiler option [Visual Basic]
 - -warnaserror compiler option [Visual Basic]
 ms.assetid: 49819f1d-a1bd-4201-affe-5afe6d9712e1
-ms.openlocfilehash: f9ca5575e2a042d68fc490494f2e86991d58b80c
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 94a8b43a891df9837925869e17fac4536a995264
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74351712"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84414269"
 ---
 # <a name="-warnaserror-visual-basic"></a>-warnaserror – (Visual Basic)
 Způsobí, že kompilátor bude zacházet s prvním výskytem upozornění jako s chybou.  
@@ -24,20 +24,20 @@ Způsobí, že kompilátor bude zacházet s prvním výskytem upozornění jako 
   
 ## <a name="arguments"></a>Argumenty  
   
-|Označení|Definice|  
+|Pojem|Definice|  
 |---|---|  
-|+ &#124; –|Nepovinný parametr. Ve výchozím nastavení `-warnaserror-` je to v platnosti. Upozornění nebrání kompilátoru v vytváření výstupního souboru. `-warnaserror` Možnost, která je stejná jako `-warnaserror+`, způsobí, že upozornění budou považována za chyby.|  
+|+ &#124; –|Nepovinný parametr. Ve výchozím nastavení `-warnaserror-` platí; upozornění nebrání kompilátoru v vytváření výstupního souboru. `-warnaserror`Možnost, která je stejná jako `-warnaserror+` , způsobí, že upozornění budou považována za chyby.|  
 |`numberList`|Nepovinný parametr. Seznam čísel ID upozornění oddělených čárkami, na které se `-warnaserror` možnost vztahuje. Pokud není zadané žádné ID upozornění, bude `-warnaserror` možnost platit pro všechna upozornění.|  
   
 ## <a name="remarks"></a>Poznámky  
- `-warnaserror` Možnost zpracovává všechna upozornění jako chyby. Všechny zprávy, které by byly obvykle hlášeny jako upozornění, jsou místo toho hlášeny jako chyby. Kompilátor ohlásí následné výskyty stejného upozornění jako upozornění.  
+ `-warnaserror`Možnost zpracovává všechna upozornění jako chyby. Všechny zprávy, které by byly obvykle hlášeny jako upozornění, jsou místo toho hlášeny jako chyby. Kompilátor ohlásí následné výskyty stejného upozornění jako upozornění.  
   
- Ve výchozím nastavení `-warnaserror-` je to v platnosti, což způsobí, že upozornění budou pouze informativní. `-warnaserror` Možnost, která je stejná jako `-warnaserror+`, způsobí, že upozornění budou považována za chyby.  
+ Ve výchozím nastavení `-warnaserror-` je to v platnosti, což způsobí, že upozornění budou pouze informativní. `-warnaserror`Možnost, která je stejná jako `-warnaserror+` , způsobí, že upozornění budou považována za chyby.  
   
  Pokud chcete, aby se jako chyby považovala jenom některá konkrétní upozornění, můžete zadat čárkami oddělený seznam čísel upozornění, která se budou považovat za chyby.  
   
 > [!NOTE]
-> `-warnaserror` Možnost neurčuje, jak se zobrazují upozornění. Pro vypnutí upozornění použijte možnost [-](../../../visual-basic/reference/command-line-compiler/nowarn.md) upozornění.  
+> `-warnaserror`Možnost neurčuje, jak se zobrazují upozornění. Pro vypnutí upozornění použijte možnost [-](nowarn.md) upozornění.  
   
 |Nastavení-warnaserror –, aby považovala všechna upozornění jako chyby v integrovaném vývojovém prostředí sady Visual Studio|  
 |---|  
@@ -63,6 +63,6 @@ vbc -warnaserror:42024 t2.vb
   
 ## <a name="see-also"></a>Viz také
 
-- [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
-- [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
+- [Visual Basic Kompilátor příkazového řádku](index.md)
+- [Příkazové řádky ukázkové kompilace](sample-compilation-command-lines.md)
 - [Konfigurace upozornění v jazyce Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic)

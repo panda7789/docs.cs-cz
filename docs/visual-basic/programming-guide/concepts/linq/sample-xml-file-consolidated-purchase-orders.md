@@ -1,18 +1,18 @@
 ---
-title: 'Ukázkový soubor XML: Konsolidované nákupní Orders3'
+title: 'Ukázkový soubor XML: konsolidovaná nákupní Orders3'
 ms.date: 07/20/2015
 ms.assetid: 7203da90-a514-415a-b978-6980e89f3e9c
-ms.openlocfilehash: edeb1381b674ee9f6fba45f14c7b6f12b363a37a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: de5acdd92b9d6dd300eb7bc7471db845cc00d44a
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61787056"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84413346"
 ---
 # <a name="sample-xml-file-consolidated-purchase-orders"></a>Ukázkový soubor XML: Konsolidované nákupní objednávky
-Následující soubor XML se používá v různých příkladů v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci. Tento soubor je sada nákupních objednávek různých tvarů z více společností. Nákupní objednávky z obou společností jsou v samostatných oborech názvů.  
+Následující soubor XML se v dokumentaci používá v různých příkladech [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] . Tento soubor je sadou nákupních objednávek s různými tvary od více společností. Nákupní objednávky od každé společnosti jsou v samostatných oborech názvů.  
   
-## <a name="consolidatedpurchaseordersxml"></a>ConsolidatedPurchaseOrders.xml  
+## <a name="consolidatedpurchaseordersxml"></a>ConsolidatedPurchaseOrders. XML  
   
 ```xml  
 <?xml version="1.0"?>  
@@ -144,6 +144,6 @@ Následující soubor XML se používá v různých příkladů v [!INCLUDE[sqlt
 </PurchaseOrders>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Ukázkové dokumenty XML (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+- [Ukázkové dokumenty XML (LINQ to XML)](sample-xml-documents-linq-to-xml.md)

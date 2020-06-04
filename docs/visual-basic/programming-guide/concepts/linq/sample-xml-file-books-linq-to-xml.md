@@ -1,17 +1,17 @@
 ---
-title: 'Ukázkový soubor XML: knihy (LINQ to XML)'
+title: 'Ukázkový soubor XML: Knihy (LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: 27ca5847-2289-40c0-8331-ede67ec59d1c
-ms.openlocfilehash: 2e6ef32e9f7e45b45b22390c1ce669638d0be9a1
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 4bdf36aef90f56bfe3f2387c18bce69d5015cbb4
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72524081"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84413359"
 ---
-# <a name="sample-xml-file-books-linq-to-xml"></a>Ukázkový soubor XML: knihy (LINQ to XML)
+# <a name="sample-xml-file-books-linq-to-xml"></a>Ukázkový soubor XML: Knihy (LINQ to XML)
 
-Následující soubor XML se používá v různých příkladech v dokumentaci k [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]. Soubor obsahuje informace o knihách.
+Následující soubor XML se v dokumentaci používá v různých příkladech [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] . Soubor obsahuje informace o knihách.
 
 ## <a name="booksxml"></a>Books. XML
 
@@ -40,6 +40,6 @@ Následující soubor XML se používá v různých příkladech v dokumentaci k
 </Catalog>
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Ukázkové dokumenty XML (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+- [Ukázkové dokumenty XML (LINQ to XML)](sample-xml-documents-linq-to-xml.md)

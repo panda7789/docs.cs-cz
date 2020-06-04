@@ -24,12 +24,12 @@ helpviewer_keywords:
 - type parameters
 - constraints, Class keyword
 ms.assetid: 56db947a-2ae8-40f2-a70a-960764e9d0db
-ms.openlocfilehash: 3f2aaa65293ed2bcc6c8eeb4bd77e49907d93425
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 7e22ad6e32ec13f081391e1d47a80df8b1e65063
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74352778"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84412985"
 ---
 # <a name="type-list-visual-basic"></a>Seznam typů (Visual Basic)
 
@@ -43,21 +43,21 @@ Určuje *parametry typu* pro *obecný* programovací prvek. Více parametrů je 
 
 ## <a name="parts"></a>Součásti
 
-|Termín|Definice|
+|Pojem|Definice|
 |---|---|
-|`genericmodifier`|Volitelná. Dá se použít jenom v obecných rozhraních a delegátech. Kovariantu typu lze deklarovat pomocí klíčového slova [out](../../../visual-basic/language-reference/modifiers/out-generic-modifier.md) nebo kontravariantní pomocí klíčového slova [in](../../../visual-basic/language-reference/modifiers/in-generic-modifier.md) . Viz [kovariance a kontravariance](../../programming-guide/concepts/covariance-contravariance/index.md).|
-|`typename`|Požadováno. Název parametru typu Toto je zástupný symbol, který bude nahrazen definovaným typem poskytnutým odpovídajícím argumentem typu.|
-|`constraintlist`|Volitelná. Seznam požadavků, které omezí datový typ, který lze zadat pro `typename`. Pokud máte více omezení, vložte je do složených závorek (`{ }`) a oddělte je čárkami. Seznam omezení je nutné zavést pomocí klíčového slova [as](../../../visual-basic/language-reference/statements/as-clause.md) . Na začátku seznamu se používá `As` jenom jednou.|
+|`genericmodifier`|Nepovinný parametr. Dá se použít jenom v obecných rozhraních a delegátech. Kovariantu typu lze deklarovat pomocí klíčového slova [out](../modifiers/out-generic-modifier.md) nebo kontravariantní pomocí klíčového slova [in](../modifiers/in-generic-modifier.md) . Viz [kovariance a kontravariance](../../programming-guide/concepts/covariance-contravariance/index.md).|
+|`typename`|Povinná hodnota. Název parametru typu Toto je zástupný symbol, který bude nahrazen definovaným typem poskytnutým odpovídajícím argumentem typu.|
+|`constraintlist`|Nepovinný parametr. Seznam požadavků, které omezí datový typ, který je možné zadat pro `typename` . Pokud máte více omezení, vložte je do složených závorek ( `{ }` ) a oddělte je čárkami. Seznam omezení je nutné zavést pomocí klíčového slova [as](as-clause.md) . Použijete ji `As` jenom jednou na začátku seznamu.|
 
 ## <a name="remarks"></a>Poznámky
 
 Každý obecný programovací prvek musí mít alespoň jeden parametr typu. Parametr typu je zástupný symbol pro konkrétní typ ( *konstruovaný element*), který určuje kód klienta při vytváření instance obecného typu. Můžete definovat obecnou třídu, strukturu, rozhraní, proceduru nebo delegáta.
 
-Další informace o tom, kdy definovat obecný typ, naleznete [v tématu Obecné typy v Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md). Další informace o názvech parametrů typů naleznete v tématu [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).
+Další informace o tom, kdy definovat obecný typ, naleznete [v tématu Obecné typy v Visual Basic](../../programming-guide/language-features/data-types/generic-types.md). Další informace o názvech parametrů typů naleznete v tématu [deklarované názvy elementů](../../programming-guide/language-features/declared-elements/declared-element-names.md).
 
 ## <a name="rules"></a>Pravidla
 
-- **Závorky.** Pokud zadáte seznam parametrů typu, je nutné jej uzavřít do závorek a je třeba uvést seznam [s klíčovým](../../../visual-basic/language-reference/statements/of-clause.md) slovem. Na začátku seznamu se používá `Of` jenom jednou.
+- **Závorky.** Pokud zadáte seznam parametrů typu, je nutné jej uzavřít do závorek a je třeba uvést seznam [s klíčovým](of-clause.md) slovem. Použijete ji `Of` jenom jednou na začátku seznamu.
 
 - **Jednotlivým.** Seznam *omezení* pro parametr typu může zahrnovat následující položky v libovolné kombinaci:
 
@@ -65,19 +65,19 @@ Další informace o tom, kdy definovat obecný typ, naleznete [v tématu Obecné
 
   - Nejvýše jedna třída. Poskytnutý typ musí dědit z této třídy.
 
-  - Klíčové slovo `New`. Zadaný typ musí vystavit konstruktor bez parametrů, ke kterému má přístup váš obecný typ. To je užitečné, pokud omezíte parametr typu jedním nebo více rozhraními. Typ, který implementuje rozhraní, nutně nezveřejňuje konstruktor a v závislosti na úrovni přístupu konstruktoru, kód v obecném typu nemusí mít přístup k němu.
+  - `New`Klíčové slovo. Zadaný typ musí vystavit konstruktor bez parametrů, ke kterému má přístup váš obecný typ. To je užitečné, pokud omezíte parametr typu jedním nebo více rozhraními. Typ, který implementuje rozhraní, nutně nezveřejňuje konstruktor a v závislosti na úrovni přístupu konstruktoru, kód v obecném typu nemusí mít přístup k němu.
 
-  - Buď klíčové slovo `Class`, nebo klíčové slovo `Structure`. Klíčové slovo `Class` omezuje parametr obecného typu tak, aby vyžadovalo, aby jakýkoliv argument typu, který je předaný, byl odkazovým typem, například řetězcem, polem nebo delegátem nebo objektem vytvořeným z třídy. Klíčové slovo `Structure` omezuje parametr obecného typu tak, aby vyžadovalo, aby jakýkoli argument typu, který je předaný, byl typ hodnoty, například struktura, výčet nebo základní datový typ. Do stejného `constraintlist`nemůžete zahrnout `Class` i `Structure`.
+  - Buď `Class` klíčové slovo, nebo `Structure` klíčové slovo. `Class`Klíčové slovo omezuje parametr obecného typu tak, aby vyžadovalo, aby jakýkoliv argument typu, který je předaný, byl odkazovým typem, například řetězcem, polem nebo delegátem, nebo objektem vytvořeným z třídy. `Structure`Klíčové slovo omezuje parametr obecného typu tak, aby vyžadovalo, aby jakýkoli argument typu, který je předaný, byl typ hodnoty, například struktura, výčet nebo základní datový typ. Nemůžete zahrnout `Class` i `Structure` do stejného `constraintlist` .
 
-  Zadaný typ musí splňovat všechny požadavky, které zahrnete do `constraintlist`.
+  Zadaný typ musí splňovat všechny požadavky, které zahrnete do `constraintlist` .
 
   Omezení pro jednotlivé parametry typu jsou nezávislá na omezeních u jiných parametrů typu.
 
 ## <a name="behavior"></a>Chování
 
-- **Nahrazování v době kompilace.** Když vytvoříte konstruovaný typ z obecného programovacího prvku, zadáte definovaný typ pro každý parametr typu. Kompilátor Visual Basic nahradí zadaný typ pro všechny výskyty `typename` v rámci obecného prvku.
+- **Nahrazování v době kompilace.** Když vytvoříte konstruovaný typ z obecného programovacího prvku, zadáte definovaný typ pro každý parametr typu. Kompilátor Visual Basic nahradí daný typ pro všechny výskyty `typename` v rámci obecného prvku.
 
-- **Neexistence omezení** Pokud nezadáte žádná omezení parametru typu, je váš kód omezen na operace a členy podporované [datovým typem objektu](../../../visual-basic/language-reference/data-types/object-data-type.md) pro tento parametr typu.
+- **Neexistence omezení** Pokud nezadáte žádná omezení parametru typu, je váš kód omezen na operace a členy podporované [datovým typem objektu](../data-types/object-data-type.md) pro tento parametr typu.
 
 ## <a name="example"></a>Příklad
 
@@ -87,7 +87,7 @@ Následující příklad znázorňuje kostru definice třídy obecného slovník
 
 ## <a name="example"></a>Příklad
 
-Vzhledem k tomu, že `dictionary` je obecný, kód, který ho používá, může z něj vytvořit nejrůznější objekty, každý má stejné funkce, ale funguje na jiném datovém typu. Následující příklad ukazuje řádek kódu, který vytvoří objekt `dictionary` s `String`mi položkami a `Integer`mi klíči.
+Vzhledem k tomu `dictionary` , že je obecný, kód, který ho používá, může z něj vytvořit nejrůznější objekty, každá má stejné funkce, ale funguje na jiném datovém typu. Následující příklad ukazuje řádek kódu, který vytvoří `dictionary` objekt s `String` položkami a `Integer` klíči.
 
 [!code-vb[VbVbalrStatements#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#4)]
 
@@ -97,16 +97,16 @@ Následující příklad ukazuje ekvivalentní kostru definice vygenerovanou př
 
 [!code-vb[VbVbalrStatements#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#5)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Tohoto](../../../visual-basic/language-reference/statements/of-clause.md)
-- [Operátor New](../../../visual-basic/language-reference/operators/new-operator.md)
-- [Úrovně přístupu v Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
-- [Datový typ Object](../../../visual-basic/language-reference/data-types/object-data-type.md)
-- [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)
-- [Příkaz Structure](../../../visual-basic/language-reference/statements/structure-statement.md)
-- [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)
-- [Postupy: Použití obecné třídy](../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md)
+- [Tohoto](of-clause.md)
+- [New – operátor](../operators/new-operator.md)
+- [Úrovně přístupu v Visual Basic](../../programming-guide/language-features/declared-elements/access-levels.md)
+- [Datový typ objektu](../data-types/object-data-type.md)
+- [Function – příkaz](function-statement.md)
+- [Structure – příkaz](structure-statement.md)
+- [Sub – příkaz](sub-statement.md)
+- [Postupy: Použití obecné třídy](../../programming-guide/language-features/data-types/how-to-use-a-generic-class.md)
 - [Kovariance a kontravariance](../../programming-guide/concepts/covariance-contravariance/index.md)
-- [Pro](../../../visual-basic/language-reference/modifiers/in-generic-modifier.md)
-- [Mimo](../../../visual-basic/language-reference/modifiers/out-generic-modifier.md)
+- [V](../modifiers/in-generic-modifier.md)
+- [Mimo](../modifiers/out-generic-modifier.md)

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - addmodule compiler option [Visual Basic]
 - -addmodule compiler option [Visual Basic]
 ms.assetid: fb4b89d4-4926-4f20-868d-427fa28497b2
-ms.openlocfilehash: dd98b45d75ff421dc81666ed47695132a49bfa3a
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 9e8146497d63d949f138d6cd08c9ea8c7b03c651
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72524477"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84414308"
 ---
 # <a name="-addmodule"></a>-addmodule
 Způsobí, že kompilátor zpřístupní všechny informace o typech ze zadaných souborů pro projekt, který právě kompilujete.  
@@ -27,16 +27,16 @@ Způsobí, že kompilátor zpřístupní všechny informace o typech ze zadanýc
  Povinná hodnota. Čárkami oddělený seznam souborů, které obsahují metadata, ale neobsahují manifesty sestavení. Názvy souborů, které obsahují mezery, by měly být obklopené uvozovkami ("").  
   
 ## <a name="remarks"></a>Poznámky  
- Soubory uvedené `fileList` parametrem musí být vytvořeny s `-target:module` možností nebo s jiným kompilátorem ekvivalentním. `-target:module`  
+ Soubory uvedené `fileList` parametrem musí být vytvořeny s `-target:module` možností nebo s jiným kompilátorem ekvivalentním `-target:module` .  
   
- Všechny moduly přidané pomocí `-addmodule` musí být ve stejném adresáři jako výstupní soubor v době běhu. To znamená, že můžete určit modul v jakémkoli adresáři v době kompilace, ale modul musí být v adresáři aplikace v době běhu. Pokud to tak není, zobrazí se <xref:System.TypeLoadException> chyba.  
+ Všechny moduly přidané pomocí `-addmodule` musí být ve stejném adresáři jako výstupní soubor v době běhu. To znamená, že můžete určit modul v jakémkoli adresáři v době kompilace, ale modul musí být v adresáři aplikace v době běhu. Pokud to tak není, zobrazí se <xref:System.TypeLoadException> Chyba.  
   
- Pokud zadáte (implicitně nebo explicitně) možnost libovolný[cíl (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md) jiné než `-target:module` s `-addmodule`, soubory, které předáte, `-addmodule` se stanou součástí sestavení projektu. Pro spuštění výstupního souboru, který obsahuje jeden nebo více souborů přidaných pomocí `-addmodule`, je vyžadováno sestavení.  
+ Pokud zadáte (implicitně nebo explicitně) možnost libovolný[cíl (Visual Basic)](target.md) jiné než `-target:module` s `-addmodule` , soubory, které předáte, se `-addmodule` stanou součástí sestavení projektu. Pro spuštění výstupního souboru, který obsahuje jeden nebo více souborů přidaných pomocí, je vyžadováno sestavení `-addmodule` .  
   
- Pomocí [-Reference (Visual Basic)](../../../visual-basic/reference/command-line-compiler/reference.md) můžete importovat metadata ze souboru, který obsahuje sestavení.  
+ Pomocí [-Reference (Visual Basic)](reference.md) můžete importovat metadata ze souboru, který obsahuje sestavení.  
   
 > [!NOTE]
-> Tato `-addmodule` možnost není k dispozici ve vývojovém prostředí sady Visual Studio; je k dispozici pouze při kompilaci z příkazového řádku.  
+> Tato `-addmodule` možnost není k dispozici ve vývojovém prostředí sady Visual Studio. je k dispozici pouze při kompilaci z příkazového řádku.  
   
 ## <a name="example"></a>Příklad  
  Následující kód vytvoří modul.  
@@ -47,11 +47,11 @@ Způsobí, že kompilátor zpřístupní všechny informace o typech ze zadanýc
   
  [!code-vb[VbVbalrCompiler#48](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCompiler/VB/OptionStrictOff.vb#48)]  
   
- Když spustíte `t1`, výstup `802`IT.  
+ Když spustíte `t1` , výstup IT `802` .  
   
 ## <a name="see-also"></a>Viz také
 
-- [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
-- [-Target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md)
-- [-Reference (Visual Basic)](../../../visual-basic/reference/command-line-compiler/reference.md)
-- [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
+- [Visual Basic Kompilátor příkazového řádku](index.md)
+- [-Target (Visual Basic)](target.md)
+- [-Reference (Visual Basic)](reference.md)
+- [Příkazové řádky ukázkové kompilace](sample-compilation-command-lines.md)

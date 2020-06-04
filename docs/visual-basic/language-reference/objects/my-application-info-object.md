@@ -5,29 +5,29 @@ helpviewer_keywords:
 - My.Application.Info object
 - My.Application.AssemblyInfo object
 ms.assetid: 2f4782ed-3da2-4d88-b341-0c6f480fb7bb
-ms.openlocfilehash: c5ccbe0932f31353bd075d57a648775e02313a30
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: b8853ba3939d5b19b6e09c0c027309f12e3b1f21
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74344146"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84414204"
 ---
 # <a name="myapplicationinfo-object"></a>My.Application.Info – objekt
 Poskytuje vlastnosti pro získání informací o aplikaci, jako je číslo verze, popis, načtená sestavení a tak dále.  
   
 ## <a name="remarks"></a>Poznámky  
- Informace o metodách a vlastnostech objektu `My.Application.Info` naleznete v tématu <xref:Microsoft.VisualBasic.ApplicationServices.AssemblyInfo>.  
+ Informace o metodách a vlastnostech `My.Application.Info` objektu naleznete v tématu <xref:Microsoft.VisualBasic.ApplicationServices.AssemblyInfo> .  
   
 > [!NOTE]
-> Pomocí vlastností třídy <xref:System.Diagnostics.FileVersionInfo?displayProperty=nameWithType> lze získat informace o souboru na disku.  
+> Pomocí vlastností <xref:System.Diagnostics.FileVersionInfo?displayProperty=nameWithType> třídy lze získat informace o souboru na disku.  
   
 ## <a name="requirements"></a>Požadavky  
- **Obor názvů:** <xref:Microsoft.VisualBasic.ApplicationServices>  
+ **Obor názvů:**<xref:Microsoft.VisualBasic.ApplicationServices>  
   
- **Třída:** <xref:Microsoft.VisualBasic.ApplicationServices.AssemblyInfo>  
+ **Třída:**<xref:Microsoft.VisualBasic.ApplicationServices.AssemblyInfo>  
   
  **Sestavení:** Knihovna Visual Basic runtime (v souboru Microsoft. VisualBasic. dll)  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Objekt My.Application](../../../visual-basic/language-reference/objects/my-application-object.md)
+- [My.Application – objekt](my-application-object.md)

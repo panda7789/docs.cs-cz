@@ -6,12 +6,12 @@ helpviewer_keywords:
 - arrays [Visual Basic], assigning
 - arrays [Visual Basic], covariance
 ms.assetid: 1ae89ea5-f292-4282-bcfc-e9b06b37fbd5
-ms.openlocfilehash: be5337e36c2cc7ad9f9b32182b8575ac66bb4a50
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: c38def1ba9f3720bc760d6f6e4264510c884c930
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74351894"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84413076"
 ---
 # <a name="how-to-assign-one-array-to-another-array-visual-basic"></a>Postupy: Přiřazení jednoho pole ke druhému (Visual Basic)
 
@@ -35,17 +35,17 @@ Když přiřadíte jedno pole k druhému, platí následující pravidla:
 
   Za předpokladu, že je pořadí dvou polí stejné, dimenze nemusí být stejné. Počet prvků v dané dimenzi se může během přiřazení změnit.
 
-- **Typy prvků.** Obě pole musí mít elementy *typu odkazu* , nebo obě pole musí mít elementy *typu hodnoty* . Další informace naleznete v tématu [typy hodnot a typy odkazů](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md).
+- **Typy prvků.** Obě pole musí mít elementy *typu odkazu* , nebo obě pole musí mít elementy *typu hodnoty* . Další informace naleznete v tématu [typy hodnot a typy odkazů](../data-types/value-types-and-reference-types.md).
 
-  - Pokud mají obě pole elementy typu hodnoty, musí být datové typy elementu přesně stejné. Jedinou výjimkou je, že můžete přiřadit pole `Enum` prvků k poli základního typu, který `Enum`.
+  - Pokud mají obě pole elementy typu hodnoty, musí být datové typy elementu přesně stejné. Jedinou výjimkou je, že můžete přiřadit pole `Enum` prvků k poli základního typu, který `Enum` .
 
   - Pokud mají obě pole elementy typu odkazu, typ zdrojového elementu musí být odvozen od typu cílového elementu. V takovém případě mají dvě pole stejný vztah dědičnosti jako jejich prvky. Tato metoda se nazývá *kovariance pole*.
 
-Kompilátor ohlásí chybu, pokud jsou uvedená pravidla porušena, například pokud nejsou datové typy kompatibilní nebo pořadí nerovnosti. Do kódu můžete přidat zpracování chyb, abyste se ujistili, že jsou pole kompatibilní před pokusem o přiřazení. Klíčové slovo [operátoru TryCast](../../../../visual-basic/language-reference/operators/trycast-operator.md) můžete použít také v případě, že chcete zabránit vyvolání výjimky.
+Kompilátor ohlásí chybu, pokud jsou uvedená pravidla porušena, například pokud nejsou datové typy kompatibilní nebo pořadí nerovnosti. Do kódu můžete přidat zpracování chyb, abyste se ujistili, že jsou pole kompatibilní před pokusem o přiřazení. Klíčové slovo [operátoru TryCast](../../../language-reference/operators/trycast-operator.md) můžete použít také v případě, že chcete zabránit vyvolání výjimky.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Pole](../../../../visual-basic/programming-guide/language-features/arrays/index.md)
-- [Řešení potíží s poli](../../../../visual-basic/programming-guide/language-features/arrays/troubleshooting-arrays.md)
-- [Příkaz Enum](../../../../visual-basic/language-reference/statements/enum-statement.md)
-- [Převody polí](../../../../visual-basic/programming-guide/language-features/data-types/array-conversions.md)
+- [Pole](index.md)
+- [Řešení potíží s poli](troubleshooting-arrays.md)
+- [Enum – příkaz](../../../language-reference/statements/enum-statement.md)
+- [Převody polí](../data-types/array-conversions.md)
