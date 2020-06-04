@@ -2,12 +2,12 @@
 title: Filtrování dat
 ms.date: 07/20/2015
 ms.assetid: 7749519a-7edc-49fe-aef9-6a353864af6c
-ms.openlocfilehash: 81e207e451055fb2952e4bf393db067f0851afb4
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: f7a1aa76dc93cc03952e55f5f8fc3f75176a3f9f
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353483"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84383414"
 ---
 # <a name="filtering-data-visual-basic"></a>Filtrování dat (Visual Basic)
 
@@ -21,14 +21,14 @@ Standardní metody operátoru dotazu, které provádějí výběr, jsou uvedeny 
 
 ## <a name="methods"></a>Metody
 
-|Název metody|Popis|Visual Basic syntaxe výrazu dotazu|Další informace|
+|Název metody|Description|Visual Basic syntaxe výrazu dotazu|Další informace|
 |-----------------|-----------------|------------------------------------------|----------------------|
-|Only|Vybere hodnoty v závislosti na jejich schopnosti je přetypovat na zadaný typ.|Není k dispozici.|<xref:System.Linq.Enumerable.OfType%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.OfType%2A?displayProperty=nameWithType>|
-|Where|Vybere hodnoty, které jsou založeny na funkci predikátu.|`Where`|<xref:System.Linq.Enumerable.Where%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Where%2A?displayProperty=nameWithType>|
+|Only|Vybere hodnoty v závislosti na jejich schopnosti je přetypovat na zadaný typ.|Neužívá se.|<xref:System.Linq.Enumerable.OfType%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.OfType%2A?displayProperty=nameWithType>|
+|Kde|Vybere hodnoty, které jsou založeny na funkci predikátu.|`Where`|<xref:System.Linq.Enumerable.Where%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Where%2A?displayProperty=nameWithType>|
 
 ## <a name="query-expression-syntax-example"></a>Příklad syntaxe výrazu dotazu
 
-Následující příklad používá `Where` k filtrování z pole, která mají určitou délku.
+Následující příklad používá `Where` k filtrování z pole tyto řetězce, které mají určitou délku.
 
 ```vb
 Dim words() As String = {"the", "quick", "brown", "fox", "jumps"}
@@ -51,12 +51,12 @@ MsgBox(sb.ToString())
 ' fox
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Linq>
-- [Přehled standardních operátorů dotazů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
-- [Klauzule Where](../../../../visual-basic/language-reference/queries/where-clause.md)
-- [Postupy: filtrování výsledků dotazu](../../../../visual-basic/programming-guide/language-features/linq/how-to-filter-query-results-by-using-linq.md)
-- [Postupy: vytvoření dotazu na metadata sestavení s reflexí (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-query-an-assembly-s-metadata-with-reflection-linq.md)
-- [Postupy: dotazování na soubory se zadaným atributem nebo názvem (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-query-for-files-with-a-specified-attribute-or-name.md)
-- [Postupy: řazení nebo filtrování textových dat podle libovolného slova nebo pole (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-sort-or-filter-text-data-by-any-word-or-field-linq.md)
+- [Přehled standardních operátorů dotazů (Visual Basic)](standard-query-operators-overview.md)
+- [Klauzule WHERE](../../../language-reference/queries/where-clause.md)
+- [Postupy: filtrování výsledků dotazu](../../language-features/linq/how-to-filter-query-results-by-using-linq.md)
+- [Postupy: vytvoření dotazu na metadata sestavení s reflexí (LINQ) (Visual Basic)](how-to-query-an-assembly-s-metadata-with-reflection-linq.md)
+- [Postupy: dotazování na soubory se zadaným atributem nebo názvem (Visual Basic)](how-to-query-for-files-with-a-specified-attribute-or-name.md)
+- [Postupy: řazení nebo filtrování textových dat podle libovolného slova nebo pole (LINQ) (Visual Basic)](how-to-sort-or-filter-text-data-by-any-word-or-field-linq.md)
