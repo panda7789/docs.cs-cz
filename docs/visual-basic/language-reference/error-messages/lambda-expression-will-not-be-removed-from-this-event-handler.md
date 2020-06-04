@@ -7,18 +7,18 @@ f1_keywords:
 helpviewer_keywords:
 - BC42326
 ms.assetid: 63214dc6-0112-4245-8ebf-7c9e8f5a5782
-ms.openlocfilehash: 52107589c6bbebbd34ecbb090845f4031612c276
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 07ace3f1b9c5e512227dc1f718ef768b631c8303
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72578926"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397373"
 ---
 # <a name="lambda-expression-will-not-be-removed-from-this-event-handler"></a>Výraz lambda nebude z této obslužné rutiny události odebrán.
 
 Výraz lambda se z této obslužné rutiny události neodebere. Přiřaďte výraz lambda proměnné a použijte proměnnou k přidání a odebrání události.
 
-Pokud jsou výrazy lambda použity s obslužnými rutinami událostí, nebudete se moci podívat na chování, které očekáváte. Kompilátor generuje novou metodu pro každou definici výrazu lambda, a to i v případě, že jsou identické. Proto následující kód zobrazí `False`.
+Pokud jsou výrazy lambda použity s obslužnými rutinami událostí, nebudete se moci podívat na chování, které očekáváte. Kompilátor generuje novou metodu pro každou definici výrazu lambda, a to i v případě, že jsou identické. Proto se zobrazí následující kód `False` .
 
 ```vb
 Module Module1
@@ -34,7 +34,7 @@ Module Module1
 End Module
 ```
 
-Pokud jsou výrazy lambda použity s obslužnými rutinami událostí, může to vést k neočekávaným výsledkům. V následujícím příkladu není výraz lambda přidaný pomocí `AddHandler` odstraněn pomocí příkazu `RemoveHandler`.
+Pokud jsou výrazy lambda použity s obslužnými rutinami událostí, může to vést k neočekávaným výsledkům. V následujícím příkladu výraz lambda přidaný pomocí `AddHandler` není `RemoveHandler` příkazem odstraněn.
 
 ```vb
 Module Module1
@@ -61,7 +61,7 @@ Ve výchozím nastavení je tato zpráva upozornění. Další informace o tom, 
 
 ## <a name="to-correct-this-error"></a>Oprava této chyby
 
-Chcete-li se vyhnout upozornění a odebrat výraz lambda, přiřaďte výraz lambda proměnné a použijte proměnnou v příkazech `AddHandler` a `RemoveHandler`, jak je znázorněno v následujícím příkladu.
+Chcete-li se vyhnout upozornění a odebrat výraz lambda, přiřaďte výraz lambda proměnné a použijte proměnnou v `AddHandler` `RemoveHandler` příkazech a, jak je znázorněno v následujícím příkladu.
 
 ```vb
 Module Module1
@@ -85,8 +85,8 @@ Module Module1
 End Module
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Výrazy lambda](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)
-- [Volný převod delegáta](../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md)
-- [Události](../../../visual-basic/programming-guide/language-features/events/index.md)
+- [Výrazy lambda](../../programming-guide/language-features/procedures/lambda-expressions.md)
+- [Volný převod delegáta](../../programming-guide/language-features/delegates/relaxed-delegate-conversion.md)
+- [Události](../../programming-guide/language-features/events/index.md)

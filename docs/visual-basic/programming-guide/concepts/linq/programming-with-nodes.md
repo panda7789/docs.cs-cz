@@ -2,12 +2,12 @@
 title: Programování s uzly
 ms.date: 07/20/2015
 ms.assetid: d8422a9b-dd37-44a3-8aac-2237ed9561e0
-ms.openlocfilehash: 9c64c348f5d26172f26593b927e6bc24baf365bf
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: 4cae85d99e7e28506faad8ca39347cf8f271718e
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82794400"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84396373"
 ---
 # <a name="programming-with-nodes-visual-basic"></a>Programování s uzly (Visual Basic)
 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]Vývojáři, kteří potřebují psát programy, jako je editor XML, transformační systém nebo zapisovač sestav, často potřebují psát programy, které fungují na jemnější úrovni členitosti než prvky a atributy. Často potřebují pracovat na úrovni uzlu, manipulaci s textovými uzly, pokyny pro zpracování a komentáře. Toto téma poskytuje některé podrobnosti o programování na úrovni uzlu.  
@@ -16,7 +16,7 @@ ms.locfileid: "82794400"
  Existuje řada podrobných informací o programování, které by programátor pracující na úrovni uzlu měl znát.  
   
 ### <a name="parent-property-of-children-nodes-of-xdocument-is-set-to-null"></a>Vlastnost Parent podřízených uzlů XDocument je nastavena na hodnotu null.  
- <xref:System.Xml.Linq.XObject.Parent%2A> Vlastnost obsahuje nadřazenou položku <xref:System.Xml.Linq.XElement>, ne nadřazený uzel. Podřízené uzly <xref:System.Xml.Linq.XDocument> nemají žádnou nadřazenou <xref:System.Xml.Linq.XElement>položku. Jejich nadřazeným prvkem je dokument, takže <xref:System.Xml.Linq.XObject.Parent%2A> vlastnost pro tyto uzly je nastavena na hodnotu null.  
+ <xref:System.Xml.Linq.XObject.Parent%2A>Vlastnost obsahuje nadřazenou položku <xref:System.Xml.Linq.XElement> , ne nadřazený uzel. Podřízené uzly <xref:System.Xml.Linq.XDocument> nemají žádnou nadřazenou položku <xref:System.Xml.Linq.XElement> . Jejich nadřazeným prvkem je dokument, takže <xref:System.Xml.Linq.XObject.Parent%2A> vlastnost pro tyto uzly je nastavena na hodnotu null.  
   
  Následující příklad ukazuje toto:  
   
@@ -80,7 +80,7 @@ Console.WriteLine(">>{0}<<", textNode2)
 ```  
   
 ### <a name="an-empty-text-node-impacts-serialization"></a>Prázdný textový uzel ovlivňuje serializaci.  
- Pokud element obsahuje pouze podřízený textový uzel, který je prázdný, je serializován pomocí syntaxe dlouhých značek: `<Child></Child>`. Pokud element neobsahuje žádné podřízené uzly, je serializován s syntaxí krátké značky: `<Child />`.  
+ Pokud element obsahuje pouze podřízený textový uzel, který je prázdný, je serializován pomocí syntaxe dlouhých značek: `<Child></Child>` . Pokud element neobsahuje žádné podřízené uzly, je serializován s syntaxí krátké značky: `<Child />` .  
   
 ```vb  
 Dim child1 As XElement = New XElement("Child1", _  
@@ -99,9 +99,9 @@ Console.WriteLine(child2)
 ```  
   
 ### <a name="namespaces-are-attributes-in-the-linq-to-xml-tree"></a>Obory názvů jsou atributy ve stromu LINQ to XML.  
- I když deklarace oboru názvů mají identickou syntaxi atributů, v některých programovacích rozhraních, jako jsou XSLT a XPath, deklarace oborů názvů nejsou považovány za atributy. V [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]rozhraní se však obory názvů ukládají <xref:System.Xml.Linq.XAttribute> jako objekty ve stromu XML. Pokud iterete pomocí atributů pro prvek, který obsahuje deklaraci oboru názvů, uvidíte deklaraci oboru názvů jako jednu z položek ve vrácené kolekci.  
+ I když deklarace oboru názvů mají identickou syntaxi atributů, v některých programovacích rozhraních, jako jsou XSLT a XPath, deklarace oborů názvů nejsou považovány za atributy. V rozhraní se však [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] obory názvů ukládají jako <xref:System.Xml.Linq.XAttribute> objekty ve stromu XML. Pokud iterete pomocí atributů pro prvek, který obsahuje deklaraci oboru názvů, uvidíte deklaraci oboru názvů jako jednu z položek ve vrácené kolekci.  
   
- <xref:System.Xml.Linq.XAttribute.IsNamespaceDeclaration%2A> Vlastnost označuje, zda je atribut deklarací oboru názvů.  
+ <xref:System.Xml.Linq.XAttribute.IsNamespaceDeclaration%2A>Vlastnost označuje, zda je atribut deklarací oboru názvů.  
   
 ```vb  
 Dim root As XElement = _
@@ -124,7 +124,7 @@ AnAttribute="abc"  IsNamespaceDeclaration:False
 ```  
   
 ### <a name="xpath-axis-methods-do-not-return-child-white-space-of-xdocument"></a>Metody osy XPath nevracejí podřízené prázdné znaky XDocument  
- [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]umožňuje podřízených textových uzlů v <xref:System.Xml.Linq.XDocument>, pokud textové uzly obsahují pouze prázdné znaky. Model objektu XPath ale neobsahuje prázdné znaky jako podřízené uzly dokumentu, takže při iteraci mezi podřízenými prvky <xref:System.Xml.Linq.XDocument> pomocí <xref:System.Xml.Linq.XContainer.Nodes%2A> osy se vrátí textové uzly s prázdným znakem. Při iteraci po podřízených objektech <xref:System.Xml.Linq.XDocument> pomocí metod osy XPath však nebudou textové uzly prázdné místo vráceny.  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]umožňuje podřízených textových uzlů v <xref:System.Xml.Linq.XDocument> , pokud textové uzly obsahují pouze prázdné znaky. Model objektu XPath ale neobsahuje prázdné znaky jako podřízené uzly dokumentu, takže při iteraci mezi podřízenými prvky <xref:System.Xml.Linq.XDocument> pomocí <xref:System.Xml.Linq.XContainer.Nodes%2A> osy se vrátí textové uzly s prázdným znakem. Při iteraci po podřízených objektech <xref:System.Xml.Linq.XDocument> pomocí metod osy XPath však nebudou textové uzly prázdné místo vráceny.  
   
 ```vb  
 ' Create a document with some white space child nodes of the document.  
@@ -149,7 +149,7 @@ Console.WriteLine(nodes.OfType(Of XText)().Count())
 ```  
   
 ### <a name="xdeclaration-objects-are-not-nodes"></a>Objekty XDeclaration nejsou uzly.  
- Při iteraci mezi podřízenými uzly objektu <xref:System.Xml.Linq.XDocument>, se nezobrazí objekt deklarace XML. Jedná se o vlastnost dokumentu, nikoli o podřízený uzel.  
+ Při iteraci mezi podřízenými uzly objektu <xref:System.Xml.Linq.XDocument> , se nezobrazí objekt deklarace XML. Jedná se o vlastnost dokumentu, nikoli o podřízený uzel.  
   
 ```vb  
 Dim doc As XDocument = _  
@@ -173,4 +173,4 @@ Console.WriteLine(doc.Nodes().Count())
   
 ## <a name="see-also"></a>Viz také
 
-- [Rozšířené programování LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
+- [Rozšířené programování LINQ to XML (Visual Basic)](advanced-linq-to-xml-programming.md)

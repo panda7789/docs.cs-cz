@@ -7,23 +7,23 @@ f1_keywords:
 helpviewer_keywords:
 - BC30560
 ms.assetid: 7f032293-054b-4eae-8d97-3db8e7ddde3b
-ms.openlocfilehash: 6171572176d53562a1baeb8d8602113f6abf9c43
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 0fd07e4b777bdf48fa07eac7ef49dfb92aae522f
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64665717"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397191"
 ---
-# <a name="name-is-ambiguous-in-the-namespace-namespacename"></a>"\<name >' je nejednoznačný v oboru názvů '\<namespacename >"
-Zadali jste název, který je nejednoznačný a proto je v konfliktu s jiným názvem. Kompilátor jazyka Visual Basic nemá žádná pravidla řešení konfliktů; rozlišení názvů musí být sami.  
+# <a name="name-is-ambiguous-in-the-namespace-namespacename"></a>Název '\<name>' je v oboru názvů '\<namespacename>' nejednoznačný.
+Zadali jste název, který je nejednoznačný, a proto je v konfliktu s jiným názvem. Kompilátor Visual Basic nemá žádná pravidla řešení konfliktů; názvy je nutné jednoznačně odlišit.  
   
  **ID chyby:** BC30560  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-- Plně kvalifikujte název.  
+- Plně kvalifikované jméno.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Obory názvů v jazyce Visual Basic](../../../visual-basic/programming-guide/program-structure/namespaces.md)
-- [Příkaz Namespace](../../../visual-basic/language-reference/statements/namespace-statement.md)
+- [Obory názvů v jazyce Visual Basic](../../programming-guide/program-structure/namespaces.md)
+- [Namespace – příkaz](../statements/namespace-statement.md)

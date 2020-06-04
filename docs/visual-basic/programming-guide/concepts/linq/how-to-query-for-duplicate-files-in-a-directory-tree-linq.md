@@ -2,12 +2,12 @@
 title: 'Postupy: Vytvoření dotazu na duplicitní soubory v adresářovém stromu (LINQ)'
 ms.date: 07/20/2015
 ms.assetid: 387d7c97-95dd-4a50-9761-7e9cf8ae9e6a
-ms.openlocfilehash: 9870ccae327bccb0f6f93d49e3b2fc77d72f95cd
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: b37da0a26c8bb4abc885faa7bb0c467e2d7d2347
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75342175"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84396425"
 ---
 # <a name="how-to-query-for-duplicate-files-in-a-directory-tree-linq-visual-basic"></a>Postupy: dotaz na duplicitní soubory v adresářovém stromu (LINQ) (Visual Basic)
 Někdy se soubory, které mají stejný název, mohou nacházet ve více než jedné složce. Například v instalační složce sady Visual Studio má několik složek soubor Readme. htm. Tento příklad ukazuje, jak zadat dotaz na tyto duplicitní názvy souborů v zadané kořenové složce. Druhý příklad ukazuje, jak se dotázat na soubory, jejichž velikost a časy vytvoření se také shodují.  
@@ -98,12 +98,12 @@ Module QueryDuplicateFileNames
 End Module  
 ```  
   
- První dotaz k určení shody používá jednoduchý klíč. Vyhledá soubory, které mají stejný název, ale jejichž obsah se může lišit. Druhý dotaz používá složený klíč pro porovnání se třemi vlastnostmi objektu <xref:System.IO.FileInfo>. Tento dotaz je mnohem pravděpodobnější najít soubory se stejným názvem a podobným nebo shodným obsahem.  
+ První dotaz k určení shody používá jednoduchý klíč. Vyhledá soubory, které mají stejný název, ale jejichž obsah se může lišit. Druhý dotaz používá složený klíč pro porovnání se třemi vlastnostmi <xref:System.IO.FileInfo> objektu. Tento dotaz je mnohem pravděpodobnější najít soubory se stejným názvem a podobným nebo shodným obsahem.  
   
-## <a name="compile-the-code"></a>Kompilace kódu  
-Vytvořte projekt konzolové aplikace Visual Basic s příkazem `Imports` pro obor názvů System. Linq.
+## <a name="compile-the-code"></a>Kompilovat kód  
+Vytvořte projekt konzolové aplikace Visual Basic s `Imports` příkazem pro obor názvů System. Linq.
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)
-- [LINQ a souborové adresáře (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)
+- [LINQ to Objects (Visual Basic)](linq-to-objects.md)
+- [LINQ a souborové adresáře (Visual Basic)](linq-and-file-directories.md)

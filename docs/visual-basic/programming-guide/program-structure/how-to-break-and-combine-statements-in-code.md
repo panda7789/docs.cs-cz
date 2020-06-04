@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Přerušení a kombinace příkazů v kódu'
+title: 'Postupy: Přerušení a kombinování příkazů v kódu'
 ms.date: 07/20/2015
 f1_keywords:
 - vb._
@@ -21,12 +21,12 @@ helpviewer_keywords:
 - Visual Basic code, line continuation in
 - statements [Visual Basic], line breaks in
 ms.assetid: dea01dad-a8ac-484a-bb3a-8c45a1b1eccc
-ms.openlocfilehash: f1a24c001cd20acc7663fb4cbe60e7e35a9c8fc3
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: c78cbeaa5c2df2d4f2e3cce2b5b3fb8048ff3388
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74347425"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84403249"
 ---
 # <a name="how-to-break-and-combine-statements-in-code-visual-basic"></a>Postupy: Přerušení a kombinace příkazů v kódu (Visual Basic)
 
@@ -34,10 +34,10 @@ Při psaní kódu můžete občas vytvořit zdlouhavé příkazy, které vyžadu
 
 ## <a name="to-break-a-single-statement-into-multiple-lines"></a>Přerušení jednoho příkazu na více řádků
 
-Použijte znak pro pokračování řádku, který je podtržítkem (`_`), v místě, kde má být řádek přerušen. Podtržítko musí bezprostředně předcházet mezerou a ihned po něm následovat ukončovací znak (návrat vozíku) nebo (počínaje verzí 16,0) komentář následovaný návratem na začátek řádku.
+Použijte znak pro pokračování řádku, což je podtržítko ( `_` ), v místě, kde má být řádek přerušen. Podtržítko musí bezprostředně předcházet mezerou a ihned po něm následovat ukončovací znak (návrat vozíku) nebo (počínaje verzí 16,0) komentář následovaný návratem na začátek řádku.
 
   > [!NOTE]
-  > V některých případech, Pokud vynecháte znak pro pokračování řádku, kompilátor Visual Basic implicitně pokračuje v příkazu na dalším řádku kódu. Seznam elementů syntaxe, pro které můžete vynechat znak pro pokračování řádku, naleznete v tématu "implicitní pokračování řádku" v [prohlášeních](../../../visual-basic/programming-guide/language-features/statements.md).
+  > V některých případech, Pokud vynecháte znak pro pokračování řádku, kompilátor Visual Basic implicitně pokračuje v příkazu na dalším řádku kódu. Seznam elementů syntaxe, pro které můžete vynechat znak pro pokračování řádku, naleznete v tématu "implicitní pokračování řádku" v [prohlášeních](../language-features/statements.md).
 
   V následujícím příkladu je příkaz rozdělen na čtyři řádky se znaky pro pokračování řádku, které končí všechny kromě posledního řádku.
 
@@ -49,17 +49,17 @@ Použijte znak pro pokračování řádku, který je podtržítkem (`_`), v mís
 
   Některá omezení existují, jako na to, kde můžete použít znak pro pokračování řádku; Nemůžete ho například použít uprostřed názvu argumentu. Seznam argumentů lze přerušit pomocí znaku pro pokračování řádku, ale jednotlivé názvy argumentů musí zůstat beze změny.
 
-  Komentář nelze pokračovat pomocí znaku pro pokračování řádku. Kompilátor neověřuje znaky v komentáři pro zvláštní význam. U víceřádkového komentáře opakujte symbol komentáře (`'`) na každém řádku.
+  Komentář nelze pokračovat pomocí znaku pro pokračování řádku. Kompilátor neověřuje znaky v komentáři pro zvláštní význam. V případě víceřádkového komentáře opakujte symbol komentáře ( `'` ) na každém řádku.
 
  I když je umístění každého příkazu na samostatném řádku doporučený způsob, Visual Basic také umožňuje umístit více příkazů na stejný řádek.
 
 ## <a name="to-place-multiple-statements-on-the-same-line"></a>Postup umístění více příkazů na stejný řádek
 
-Příkazy oddělte dvojtečkou (`:`), jako v následujícím příkladu:
+Příkazy oddělte dvojtečkou ( `:` ), jako v následujícím příkladu:
 
   [!code-vb[VbVbcnConventions#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnConventions/VB/Class1.vb#10)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Struktura programu a zásady týkající se kódu](../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)
-- [Příkazy](../../../visual-basic/programming-guide/language-features/statements.md)
+- [Struktura programu a konvence kódu](program-structure-and-code-conventions.md)
+- [Příkazy](../language-features/statements.md)

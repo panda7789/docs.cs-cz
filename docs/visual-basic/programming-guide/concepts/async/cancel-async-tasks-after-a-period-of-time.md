@@ -1,19 +1,19 @@
 ---
-title: Zrušení asynchronních úloh po uplynutí časového intervalu
+title: Zrušení úloh s modifikátorem Async po uplynutí časového intervalu
 ms.date: 07/20/2015
 ms.assetid: a48045a3-6a99-42af-b824-af340f0b9a5d
-ms.openlocfilehash: 4b1cfe03e0bbcc0e601a1ec641c95bd68266b7c8
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 048d4c19d459905ea579ede96c69230e718d55aa
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74347951"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84396685"
 ---
 # <a name="cancel-async-tasks-after-a-period-of-time-visual-basic"></a>Zrušení asynchronních úloh po určitém časovém intervalu (Visual Basic)
 
-Asynchronní operaci můžete zrušit po časovém intervalu pomocí metody <xref:System.Threading.CancellationTokenSource.CancelAfter%2A?displayProperty=nameWithType>, pokud nechcete čekat na dokončení operace. Tato metoda naplánuje zrušení všech přidružených úloh, které nejsou dokončeny v časovém období určeném výrazem `CancelAfter`.
+Asynchronní operaci můžete zrušit po časovém intervalu pomocí <xref:System.Threading.CancellationTokenSource.CancelAfter%2A?displayProperty=nameWithType> metody, pokud nechcete čekat na dokončení operace. Tato metoda naplánuje zrušení všech přidružených úloh, které nejsou dokončeny v časovém období určeném `CancelAfter` výrazem.
 
-Tento příklad přidá do kódu, který je vyvíjen v rámci [zrušení asynchronní úlohy nebo seznamu úkolů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/cancel-an-async-task-or-a-list-of-tasks.md) pro stažení seznamu webů a zobrazení délky obsahu každého z nich.
+Tento příklad přidá do kódu, který je vyvíjen v rámci [zrušení asynchronní úlohy nebo seznamu úkolů (Visual Basic)](cancel-an-async-task-or-a-list-of-tasks.md) pro stažení seznamu webů a zobrazení délky obsahu každého z nich.
 
 > [!NOTE]
 > Chcete-li spustit příklady, je nutné mít v počítači nainstalován systém Visual Studio 2012 nebo novější a .NET Framework 4,5 nebo novější.
@@ -40,11 +40,11 @@ Z Async Sample si můžete stáhnout dokončený projekt Windows Presentation Fo
 
 ## <a name="building-the-example"></a>Vytvoření příkladu
 
-Příklad v tomto tématu se přidá do projektu, který je vyvíjen v části [zrušení asynchronní úlohy nebo seznamu úkolů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/cancel-an-async-task-or-a-list-of-tasks.md) pro zrušení seznamu úkolů. V příkladu se používá stejné uživatelské rozhraní, i když se tlačítko **Storno** nepoužívá explicitně.
+Příklad v tomto tématu se přidá do projektu, který je vyvíjen v části [zrušení asynchronní úlohy nebo seznamu úkolů (Visual Basic)](cancel-an-async-task-or-a-list-of-tasks.md) pro zrušení seznamu úkolů. V příkladu se používá stejné uživatelské rozhraní, i když se tlačítko **Storno** nepoužívá explicitně.
 
 Chcete-li sestavit příklad sami, postupujte podle pokynů v části "stažení příkladu", ale jako **spouštěný projekt**vyberte **CancelAListOfTasks** . Přidejte změny v tomto tématu do projektu.
 
-Chcete-li zadat maximální dobu před tím, než jsou úkoly označeny jako zrušené, přidejte volání `CancelAfter` pro `startButton_Click`, jak ukazuje následující příklad. Sčítání jsou označeny hvězdičkami.
+Chcete-li zadat maximální dobu před tím, než jsou úkoly označeny jako zrušené, přidejte volání do `CancelAfter` do `startButton_Click` , jak ukazuje následující příklad. Sčítání jsou označeny hvězdičkami.
 
 ```vb
 Private Async Sub startButton_Click(sender As Object, e As RoutedEventArgs)
@@ -90,7 +90,7 @@ Downloads canceled.
 
 Následující kód je úplný text souboru MainWindow. XAML. vb pro příklad. Hvězdičky označují prvky, které byly přidány pro tento příklad.
 
-Všimněte si, že je nutné přidat odkaz na <xref:System.Net.Http>.
+Všimněte si, že je nutné přidat odkaz pro <xref:System.Net.Http> .
 
 Projekt si můžete stáhnout z části [Async Sample: jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea).
 
@@ -193,10 +193,10 @@ End Class
 ' Downloads canceled.
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Asynchronní programování s modifikátorem Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)
-- [Návod: přístup k webu pomocí modifikátoru Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)
-- [Zrušení asynchronní úlohy nebo seznamu úloh (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/cancel-an-async-task-or-a-list-of-tasks.md)
-- [Vyladění aplikace v asynchronním prostředí (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md)
+- [Asynchronní programování s modifikátorem Async a operátoru Await (Visual Basic)](index.md)
+- [Návod: přístup k webu pomocí modifikátoru Async a operátoru Await (Visual Basic)](walkthrough-accessing-the-web-by-using-async-and-await.md)
+- [Zrušení asynchronní úlohy nebo seznamu úloh (Visual Basic)](cancel-an-async-task-or-a-list-of-tasks.md)
+- [Vyladění aplikace v asynchronním prostředí (Visual Basic)](fine-tuning-your-async-application.md)
 - [Asynchronní vzorek: jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)

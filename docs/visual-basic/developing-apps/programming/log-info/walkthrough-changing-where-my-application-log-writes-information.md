@@ -5,22 +5,22 @@ helpviewer_keywords:
 - My.Application.Log object, walkthroughs
 - event logs, changing output location
 ms.assetid: ecc74f95-743c-450d-93f6-09a30db0fe4a
-ms.openlocfilehash: bdee0a91360580b156c1734ef4c82139b18ce2b5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f9e45cdf4507840f62e32678f4c0a7be2c0be054
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74336734"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84398289"
 ---
 # <a name="walkthrough-changing-where-myapplicationlog-writes-information-visual-basic"></a>Návod: Změna místa, kam objekt My.Application.Log zapisuje informace (Visual Basic)
 
-Pomocí objektů `My.Application.Log` a `My.Log` můžete protokolovat informace o událostech, ke kterým dochází ve vaší aplikaci. Tento návod ukazuje, jak přepsat výchozí nastavení a způsobit, že `Log` objekt zapisuje do jiných posluchačů protokolů.
+Pomocí `My.Application.Log` objektů a můžete `My.Log` protokolovat informace o událostech, ke kterým dochází ve vaší aplikaci. Tento návod ukazuje, jak přepsat výchozí nastavení a způsobit, že `Log` objekt zapisuje do jiných posluchačů protokolů.
 
 ## <a name="prerequisites"></a>Požadavky
 
-`Log` Objekt může zapisovat informace do několika posluchačů protokolů. Před změnou konfigurace je třeba určit aktuální konfiguraci naslouchacího procesu protokolu. Další informace naleznete v tématu [Návod: zjištění, kam aplikace My. Application. Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md).
+`Log`Objekt může zapisovat informace do několika posluchačů protokolů. Před změnou konfigurace je třeba určit aktuální konfiguraci naslouchacího procesu protokolu. Další informace naleznete v tématu [Návod: zjištění, kam aplikace My. Application. Log zapisuje informace](walkthrough-determining-where-my-application-log-writes-information.md).
 
-Můžete si přečíst [Postupy: zápis informací o události do textového souboru](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-event-information-to-a-text-file.md) nebo [Postupy: zápis do protokolu událostí aplikace](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-to-an-application-event-log.md).
+Můžete si přečíst [Postupy: zápis informací o události do textového souboru](how-to-write-event-information-to-a-text-file.md) nebo [Postupy: zápis do protokolu událostí aplikace](how-to-write-to-an-application-event-log.md).
 
 ### <a name="to-add-listeners"></a>Přidání posluchačů
 
@@ -36,7 +36,7 @@ Můžete si přečíst [Postupy: zápis informací o události do textového sou
 
     3. Klikněte na tlačítko **Add** (Přidat).
 
-2. Vyhledejte `<listeners>` část `<source>` v části s `name` atributem "DefaultSource" v `<sources>` části. `<sources>` Oddíl je v `<system.diagnostics>` části v části nejvyšší úrovně `<configuration>` .
+2. Vyhledejte část v části `<listeners>` `<source>` s `name` atributem "DefaultSource" v `<sources>` části. `<sources>`Oddíl je v části v `<system.diagnostics>` části nejvyšší úrovně `<configuration>` .
 
 3. Přidejte tyto prvky do této `<listeners>` části.
 
@@ -55,7 +55,7 @@ Můžete si přečíst [Postupy: zápis informací o události do textového sou
 
 4. Odkomentujte naslouchací procesy protokolů, které chcete přijímat `Log` zprávy.
 
-5. Vyhledejte `<sharedListeners>` část `<system.diagnostics>` v části v sekci nejvyšší úrovně `<configuration>` .
+5. Vyhledejte část v části v `<sharedListeners>` `<system.diagnostics>` sekci nejvyšší úrovně `<configuration>` .
 
 6. Přidejte tyto prvky do této `<sharedListeners>` části.
 
@@ -149,19 +149,19 @@ Můžete si přečíst [Postupy: zápis informací o události do textového sou
 
 ### <a name="to-reconfigure-a-listener"></a>Postup překonfigurování naslouchacího procesu
 
-1. Vyhledejte `<add>` element naslouchacího procesu z `<sharedListeners>` oddílu.
+1. Vyhledejte element naslouchacího procesu `<add>` z `<sharedListeners>` oddílu.
 
-2. `type` Atribut poskytuje název typu naslouchacího procesu. Tento typ musí dědit od <xref:System.Diagnostics.TraceListener> třídy. Použijte název silně pojmenovaného typu k zajištění toho, aby byl použit správný typ. Další informace naleznete níže v části "odkazování na silně pojmenovaný typ".
+2. `type`Atribut poskytuje název typu naslouchacího procesu. Tento typ musí dědit od <xref:System.Diagnostics.TraceListener> třídy. Použijte název silně pojmenovaného typu k zajištění toho, aby byl použit správný typ. Další informace naleznete níže v části "odkazování na silně pojmenovaný typ".
 
      Mezi typy, které můžete použít, patří:
 
-    - <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener?displayProperty=nameWithType> Naslouchací proces, který zapisuje do protokolu souborů.
+    - <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener?displayProperty=nameWithType>Naslouchací proces, který zapisuje do protokolu souborů.
 
-    - <xref:System.Diagnostics.EventLogTraceListener?displayProperty=nameWithType> Naslouchací proces, který zapisuje informace do protokolu událostí počítače určeného `initializeData` parametrem.
+    - <xref:System.Diagnostics.EventLogTraceListener?displayProperty=nameWithType>Naslouchací proces, který zapisuje informace do protokolu událostí počítače určeného `initializeData` parametrem.
 
-    - Naslouchací <xref:System.Diagnostics.DelimitedListTraceListener?displayProperty=nameWithType> procesy <xref:System.Diagnostics.XmlWriterTraceListener?displayProperty=nameWithType> a, které zapisují do souboru zadaného v `initializeData` parametru.
+    - <xref:System.Diagnostics.DelimitedListTraceListener?displayProperty=nameWithType> <xref:System.Diagnostics.XmlWriterTraceListener?displayProperty=nameWithType> Naslouchací procesy a, které zapisují do souboru zadaného v `initializeData` parametru.
 
-    - <xref:System.Diagnostics.ConsoleTraceListener?displayProperty=nameWithType> Naslouchací proces, který zapisuje do konzoly příkazového řádku.
+    - <xref:System.Diagnostics.ConsoleTraceListener?displayProperty=nameWithType>Naslouchací proces, který zapisuje do konzoly příkazového řádku.
 
      Informace o tom, kde jiné typy protokolových posluchačů zapisují informace, najdete v dokumentaci k tomuto typu.
 
@@ -173,7 +173,7 @@ Můžete si přečíst [Postupy: zápis informací o události do textového sou
 
 1. Chcete-li zajistit, aby byl pro naslouchací proces protokolu použit správný typ, nezapomeňte použít plně kvalifikovaný název typu a silně pojmenovaný název sestavení. Syntaxe silně pojmenovaného typu je následující:
 
-     \<*název typu*>, \< *název sestavení*>, \< *číslo verze*>, \< *jazyková verze*> \<, *silný název*>
+     \<*type name*>, \<*assembly name*>, \<*version number*>, \<*culture*>, \<*strong name*>
 
 2. Tento příklad kódu ukazuje, jak určit název silně pojmenovaného typu pro plně kvalifikovaný typ – "System. Diagnostics. FileLogTraceListener" v tomto případě.
 
@@ -189,5 +189,5 @@ Můžete si přečíst [Postupy: zápis informací o události do textového sou
 - <xref:System.Diagnostics.TraceListener>
 - <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener?displayProperty=nameWithType>
 - <xref:System.Diagnostics.EventLogTraceListener?displayProperty=nameWithType>
-- [Postupy: Zápis informací o události do textového souboru](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-event-information-to-a-text-file.md)
-- [Postupy: Zápis do protokolu událostí aplikace](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-to-an-application-event-log.md)
+- [Postupy: Zápis informací o události do textového souboru](how-to-write-event-information-to-a-text-file.md)
+- [Postupy: Zápis do protokolu událostí aplikace](how-to-write-to-an-application-event-log.md)

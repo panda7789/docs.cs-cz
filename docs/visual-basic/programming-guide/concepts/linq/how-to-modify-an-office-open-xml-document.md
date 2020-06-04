@@ -2,12 +2,12 @@
 title: 'Postupy: Změna dokumentu Office Open XML'
 ms.date: 07/20/2015
 ms.assetid: 1cefd7f5-8e39-44c4-869c-f8021538a777
-ms.openlocfilehash: a6d546b064afe7020e5d3287351e946e182f03e6
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 9fb046f43686405a3d84cb68b49cd6dcd34e0839
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75337893"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84398022"
 ---
 # <a name="how-to-modify-an-office-open-xml-document-visual-basic"></a>Postupy: Úprava dokumentu Office Open XML (Visual Basic)
 Toto téma představuje příklad, který otevře dokument Office Open XML, upraví ho a uloží ho.  
@@ -17,7 +17,7 @@ Toto téma představuje příklad, který otevře dokument Office Open XML, upra
 ## <a name="example"></a>Příklad  
  Tento příklad vyhledá první element odstavce v dokumentu. Načte text z odstavce a pak odstraní veškerý text, který je v odstavci spuštěn. Vytvoří nový běh textu, který se skládá z textu prvního odstavce, který byl převeden na velká písmena. Poté rozbalí změněné XML do otevřeného balíčku XML a zavře ho.  
   
- Tento příklad používá třídy nalezené v sestavení WindowsBase. Používá typy v oboru názvů <xref:System.IO.Packaging?displayProperty=nameWithType>.  
+ Tento příklad používá třídy nalezené v sestavení WindowsBase. Používá typy v <xref:System.IO.Packaging?displayProperty=nameWithType> oboru názvů.  
   
 ```vb  
 Imports <xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">  
@@ -135,14 +135,14 @@ Module Module1
 End Module  
 ```  
   
- Pokud po spuštění tohoto programu otevřete `SampleDoc.docx`, vidíte, že tento program převedl první odstavec v dokumentu na velká písmena.  
+ Pokud `SampleDoc.docx` po spuštění tohoto programu otevřete aplikaci, vidíte, že tento program převedl první odstavec v dokumentu na velká písmena.  
   
- Když spustíte s ukázkovým dokumentem Open XML popsaným v [tématu vytvoření zdrojového dokumentu XML pro Office (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md), tento příklad vytvoří následující výstup:  
+ Když spustíte s ukázkovým dokumentem Open XML popsaným v [tématu vytvoření zdrojového dokumentu XML pro Office (Visual Basic)](creating-the-source-office-open-xml-document.md), tento příklad vytvoří následující výstup:  
   
 ```console  
 New first paragraph: >PARSING WORDPROCESSINGML WITH LINQ TO XML<  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Pokročilé techniky dotazů (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)
+- [Pokročilé techniky dotazů (LINQ to XML) (Visual Basic)](advanced-query-techniques-linq-to-xml.md)

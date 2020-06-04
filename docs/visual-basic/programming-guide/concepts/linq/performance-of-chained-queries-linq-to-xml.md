@@ -2,12 +2,12 @@
 title: Výkon zřetězených dotazů (LINQ to XML)
 ms.date: 07/20/2015
 ms.assetid: 589f2adc-69f9-404d-b9d6-4c28dabea7f7
-ms.openlocfilehash: 15cb9f94a49600c221b0cbb246743a79e9a5297b
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 6b87f2744f663ebd45dceb036dcaac71b80765fc
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353124"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84396386"
 ---
 # <a name="performance-of-chained-queries-linq-to-xml-visual-basic"></a>Výkon zřetězených dotazů (LINQ to XML) (Visual Basic)
 
@@ -35,16 +35,16 @@ Tento příklad vytvoří následující výstup:
 
 Tento řetězový dotaz poskytuje stejný profil výkonu jako iterace prostřednictvím propojeného seznamu.
 
-- <xref:System.Xml.Linq.XContainer.Elements%2A> osa má v podstatě stejný výkon jako iterace prostřednictvím propojeného seznamu. <xref:System.Xml.Linq.XContainer.Elements%2A> je implementován jako iterátor s odloženým vykonání. To znamená, že kromě iterace v propojeném seznamu funguje i několik práce, jako je například přidělení objektu iterátoru a udržování přehledu o stavu provádění. Tato práce může být rozdělena do dvou kategorií: práce, která se provádí v okamžiku nastavení iterátoru, a práce, která se provádí během každé iterace. Nastavení práce je malé, pevné množství práce a práce prováděná během každé iterace je úměrná počtu položek ve zdrojové kolekci.
+- <xref:System.Xml.Linq.XContainer.Elements%2A>Osa má v podstatě stejný výkon jako iterace prostřednictvím propojeného seznamu. <xref:System.Xml.Linq.XContainer.Elements%2A>je implementován jako iterátor s odloženým vykonání. To znamená, že kromě iterace v propojeném seznamu funguje i několik práce, jako je například přidělení objektu iterátoru a udržování přehledu o stavu provádění. Tato práce může být rozdělena do dvou kategorií: práce, která se provádí v okamžiku nastavení iterátoru, a práce, která se provádí během každé iterace. Nastavení práce je malé, pevné množství práce a práce prováděná během každé iterace je úměrná počtu položek ve zdrojové kolekci.
 
-- V `query1`klauzule `Where` způsobí, že dotaz volá metodu <xref:System.Linq.Enumerable.Where%2A>. Tato metoda je také implementována jako iterátor. Nastavení práce se skládá z vytváření instancí delegáta, který bude odkazovat na výraz lambda, a také na normální nastavení iterátoru. Při každé iteraci se volá delegát, který spustí predikát. Nastavení práce a práce provedené během každé iterace jsou podobné práci, kterou jste provedli při iteraci přes osu.
+- V `query1` `Where` klauzuli klauzule způsobí, že dotaz volá <xref:System.Linq.Enumerable.Where%2A> metodu. Tato metoda je také implementována jako iterátor. Nastavení práce se skládá z vytváření instancí delegáta, který bude odkazovat na výraz lambda, a také na normální nastavení iterátoru. Při každé iteraci se volá delegát, který spustí predikát. Nastavení práce a práce provedené během každé iterace jsou podobné práci, kterou jste provedli při iteraci přes osu.
 
-- V `query1`klauzule SELECT způsobí, že dotaz volá metodu <xref:System.Linq.Enumerable.Select%2A>. Tato metoda má stejný profil výkonu jako metoda <xref:System.Linq.Enumerable.Where%2A>.
+- V `query1` klauzuli select způsobí, že dotaz vyvolá <xref:System.Linq.Enumerable.Select%2A> metodu. Tato metoda má stejný profil výkonu jako <xref:System.Linq.Enumerable.Where%2A> metoda.
 
-- V `query2`má klauzule `Where` a klauzule `Select` stejný profil výkonu jako v `query1`.
+- V systému `query2` `Where` má klauzule i `Select` klauzule stejný profil výkonu jako v `query1` .
 
  Iterace prostřednictvím `query2` je proto přímo úměrná počtu položek ve zdroji prvního dotazu, jinými slovy, lineárním časem.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Výkon (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/performance-linq-to-xml.md)
+- [Výkon (LINQ to XML) (Visual Basic)](performance-linq-to-xml.md)

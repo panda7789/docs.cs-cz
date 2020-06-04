@@ -5,14 +5,14 @@ helpviewer_keywords:
 - c XML tag
 - <c> XML tag
 ms.assetid: 36ad5d1b-11f7-4012-8932-41962ac327d1
-ms.openlocfilehash: 857ea1ccca4d74daf65bba03845004561afefd55
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: c8ba03d9cc01c4751d15c01530c6cbf7d499dc3b
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74348514"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84400160"
 ---
-# <a name="c-visual-basic"></a>\<c > (Visual Basic)
+# <a name="c-visual-basic"></a>\<c> (Visual Basic)
 Označuje, že text v rámci popisu je kód.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -28,15 +28,15 @@ Označuje, že text v rámci popisu je kód.
 |`text`|Text, který chcete označit jako kód.|  
   
 ## <a name="remarks"></a>Poznámky  
- Značka `<c>` poskytuje způsob, jak označit, že text v rámci popisu by měl být označen jako kód. Použijte [\<> kódu](../../../visual-basic/language-reference/xmldoc/code.md) k označení více řádků jako kódu.  
+ `<c>`Značka poskytuje způsob, jak označit, že text v rámci popisu by měl být označen jako kód. Slouží [\<code>](code.md) k označení více řádků jako kódu.  
   
- Zkompilujte s [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) a zpracujte komentáře k dokumentaci do souboru.  
+ Zkompilujte s [-doc](../../reference/command-line-compiler/doc.md) a zpracujte komentáře k dokumentaci do souboru.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad používá značku `<c>` v části Summary k označení toho, že `Counter` je kód.  
+ Tento příklad používá `<c>` značku v části Summary k označení, že `Counter` se jedná o kód.  
   
  [!code-vb[VbVbcnXmlDocComments#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#1)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Značky pro komentáře XML](../../../visual-basic/language-reference/xmldoc/index.md)
+- [Značky pro komentáře XML](index.md)

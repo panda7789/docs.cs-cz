@@ -2,22 +2,22 @@
 title: Zdrojová složka neexistuje.
 ms.date: 07/20/2015
 ms.assetid: c891d006-b721-4d93-b57d-ce51d91fca00
-ms.openlocfilehash: 17d4575a59e795a901732efb8970ac8b2e902f2a
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: fe3fd285f617678fea903e7e1da74a043ee9e441
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64620343"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84398562"
 ---
 # <a name="the-source-folder-does-not-exist"></a>Zdrojová složka neexistuje.
-K pokusu o operaci, která odkazuje na zdrojové složky, která neexistuje. To může být výsledkem poskytnutí cestu k souboru.  
+Pokusili jste se provést operaci, která odkazuje na zdrojovou složku, která neexistuje. To může být výsledkem poskytnutí nesprávné cesty k souboru.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-- Zkontrolujte, že používáte správnou cestu, zejména v případě, že používáte relativní cesty.  
+- Ověřte, že používáte správnou cestu, zejména pokud používáte relativní cesty.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Postupy: Analýza cest k souborům](../../visual-basic/developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md)
-- [Čtení ze souborů](../../visual-basic/developing-apps/programming/drives-directories-files/reading-from-files.md)
-- [Vytváření, odstraňování a přesouvání souborů a adresářů](../../visual-basic/developing-apps/programming/drives-directories-files/creating-deleting-and-moving-files-and-directories.md)
+- [Postupy: Analýza cest k souborům](../developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md)
+- [Čtení ze souborů](../developing-apps/programming/drives-directories-files/reading-from-files.md)
+- [Vytváření, odstraňování a přesouvání souborů a adresářů](../developing-apps/programming/drives-directories-files/creating-deleting-and-moving-files-and-directories.md)

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - -recurse compiler option [Visual Basic]
 - recurse compiler option [Visual Basic]
 ms.assetid: 84a0b670-33ae-44c4-a46a-b90388809317
-ms.openlocfilehash: 71613af0f1c319801296180d49dbacfedf0ceca4
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: fc8dfe41ea56531ff34cd5e551ef24d636227e47
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72005262"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84400497"
 ---
 # <a name="-recurse"></a>-recurse
 Zkompiluje soubory zdrojového kódu ve všech podřízených adresářích buď určeného adresáře, nebo adresáře projektu.  
@@ -30,10 +30,10 @@ Zkompiluje soubory zdrojového kódu ve všech podřízených adresářích buď
  Povinná hodnota. Soubory, které chcete vyhledat. Zástupné znaky jsou povoleny.  
   
 ## <a name="remarks"></a>Poznámky  
- Můžete použít zástupné znaky v názvu souboru k zkompilování všech vyhovujících souborů v adresáři projektu bez `-recurse`použití. Pokud není zadán žádný název výstupního souboru, kompilátor vyloží název výstupního souboru v prvním zpracovávaném vstupním souboru. Většinou se jedná o první soubor v seznamu souborů kompilovaných při abecedním zobrazení. Z tohoto důvodu je nejlepší zadat výstupní soubor pomocí `-out` možnosti.  
+ Můžete použít zástupné znaky v názvu souboru k zkompilování všech vyhovujících souborů v adresáři projektu bez použití `-recurse` . Pokud není zadán žádný název výstupního souboru, kompilátor vyloží název výstupního souboru v prvním zpracovávaném vstupním souboru. Většinou se jedná o první soubor v seznamu souborů kompilovaných při abecedním zobrazení. Z tohoto důvodu je nejlepší zadat výstupní soubor pomocí `-out` Možnosti.  
   
 > [!NOTE]
-> Tato `-recurse` možnost není k dispozici ve vývojovém prostředí sady Visual Studio; je k dispozici pouze při kompilaci z příkazového řádku.  
+> Tato `-recurse` možnost není k dispozici ve vývojovém prostředí sady Visual Studio. je k dispozici pouze při kompilaci z příkazového řádku.  
   
 ## <a name="example"></a>Příklad  
  Následující příkaz zkompiluje všechny Visual Basic soubory v aktuálním adresáři.  
@@ -42,7 +42,7 @@ Zkompiluje soubory zdrojového kódu ve všech podřízených adresářích buď
 vbc *.vb  
 ```  
   
- Následující příkaz zkompiluje všechny Visual Basic soubory v `Test\ABC` adresáři a všech adresářích pod ním a pak vygeneruje. `Test.ABC.dll`  
+ Následující příkaz zkompiluje všechny Visual Basic soubory v `Test\ABC` adresáři a všech adresářích pod ním a pak vygeneruje `Test.ABC.dll` .  
   
 ```console
 vbc -target:library -out:Test.ABC.dll -recurse:Test\ABC\*.vb  
@@ -50,6 +50,6 @@ vbc -target:library -out:Test.ABC.dll -recurse:Test\ABC\*.vb
   
 ## <a name="see-also"></a>Viz také
 
-- [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
-- [-out (Visual Basic)](../../../visual-basic/reference/command-line-compiler/out.md)
-- [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
+- [Visual Basic Kompilátor příkazového řádku](index.md)
+- [-out (Visual Basic)](out.md)
+- [Příkazové řádky ukázkové kompilace](sample-compilation-command-lines.md)

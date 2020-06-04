@@ -1,16 +1,16 @@
 ---
-title: 'Postupy: generování XML ze souborů CSV'
+title: 'Postupy: Generování XML ze souborů CSV'
 ms.date: 07/20/2015
 ms.assetid: fe4dbc87-7b0d-40bf-88c3-5d706ee89a4d
-ms.openlocfilehash: 79b609c3a706db4c8b4c082fbeaf143632a75033
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: 647cab02c730f18629c669c3526520b2a98a86d8
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75636819"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84396607"
 ---
 # <a name="how-to-generate-xml-from-csv-files-visual-basic"></a>Postupy: generování XML ze souborů CSV (Visual Basic)
-Tento příklad ukazuje, jak použít LINQ (Language-Integrated Query) a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] k vygenerování souboru XML ze souboru hodnot oddělených čárkami (CSV).  
+Tento příklad ukazuje, jak použít LINQ (Language-Integrated Query) a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] Generovat soubor XML ze souboru hodnot oddělených čárkami (CSV).  
   
 ## <a name="example"></a>Příklad  
  Následující kód provede dotaz LINQ na poli řetězců.  
@@ -107,6 +107,6 @@ Console.WriteLine(cust)
 </Root>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Projekce a transformace (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)
+- [Projekce a transformace (LINQ to XML) (Visual Basic)](projections-and-transformations-linq-to-xml.md)

@@ -15,17 +15,17 @@ helpviewer_keywords:
 - execution
 - Resume statement [Visual Basic]
 ms.assetid: e24d058b-1a5c-4274-acb9-7d295d3ea537
-ms.openlocfilehash: 95137a9f6a4a4a18655b51b95300bfaf93cca193
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 3f49f05f1deb2027b03bbf3443ca44f30c44344e
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74333033"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84404210"
 ---
 # <a name="resume-statement"></a>Resume – příkaz
 Po dokončení rutiny zpracování chyb pokračuje v provádění.  
   
- Doporučujeme, abyste ve svém kódu používali strukturované zpracování výjimek, kdykoli je to možné, místo použití nestrukturovaného zpracování výjimek a příkazů `On Error` a `Resume`. Další informace najdete v tématu [Try... Zachytit... Finally – příkaz](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md).  
+ Doporučujeme, abyste ve svém kódu používali strukturované zpracování výjimek, kdykoli je to možné, místo použití nestrukturovaných zpracování výjimek `On Error` a `Resume` příkazů a. Další informace najdete v tématu [Try... Zachytit... Finally – příkaz](try-catch-finally-statement.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,35 +35,35 @@ Resume [ Next | line ]
   
 ## <a name="parts"></a>Součásti  
  `Resume`  
- Požadováno. Pokud k chybě došlo ve stejné proceduře jako obslužná rutina chyby, spuštění pokračuje s příkazem, který způsobil chybu. Pokud k chybě došlo v volané proceduře, spuštění pokračuje na příkazu, který naposledy volal proceduru, která obsahuje rutinu zpracování chyb.  
+ Povinná hodnota. Pokud k chybě došlo ve stejné proceduře jako obslužná rutina chyby, spuštění pokračuje s příkazem, který způsobil chybu. Pokud k chybě došlo v volané proceduře, spuštění pokračuje na příkazu, který naposledy volal proceduru, která obsahuje rutinu zpracování chyb.  
   
  `Next`  
- Volitelná. Pokud k chybě došlo ve stejné proceduře jako obslužná rutina chyby, provádění pokračuje příkazem hned po příkazu, který způsobil chybu. Pokud k chybě došlo v volané proceduře, spuštění pokračuje pomocí příkazu ihned po příkazu, který naposledy vyvolal proceduru, která obsahuje rutinu zpracování chyb (nebo příkaz `On Error Resume Next`).  
+ Nepovinný parametr. Pokud k chybě došlo ve stejné proceduře jako obslužná rutina chyby, provádění pokračuje příkazem hned po příkazu, který způsobil chybu. Pokud k chybě došlo v volané proceduře, provádění pokračuje příkazem ihned po příkazu, který byl naposledy volán z procedury obsahující rutinu zpracování chyb (nebo `On Error Resume Next` příkazu).  
   
  `line`  
- Volitelná. Provádění pokračuje na řádku zadaném v argumentu Required `line`. Argument `line` je popisek řádku nebo číslo řádku a musí být ve stejném postupu jako obslužná rutina chyby.  
+ Nepovinný parametr. Spuštění pokračuje na řádku zadaném v požadovaném `line` argumentu. `line`Argument je popisek řádku nebo číslo řádku a musí být ve stejném postupu jako obslužná rutina chyby.  
   
 ## <a name="remarks"></a>Poznámky  
   
 > [!NOTE]
-> Doporučujeme používat strukturované zpracování výjimek v kódu, kdykoli je to možné, místo použití nestrukturovaného zpracování výjimek a příkazů `On Error` a `Resume`. Další informace najdete v tématu [Try... Zachytit... Finally – příkaz](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md).  
+> Doporučujeme používat strukturované zpracování výjimek v kódu, kdykoli je to možné, místo použití nestrukturovaného zpracování výjimek a `On Error` `Resume` příkazů a. Další informace najdete v tématu [Try... Zachytit... Finally – příkaz](try-catch-finally-statement.md).  
   
- Použijete-li příkaz `Resume` kdekoli jinde než v rutině zpracování chyb, dojde k chybě.  
+ Použijete-li `Resume` příkaz kdekoli jinde než v rutině zpracování chyb, dojde k chybě.  
   
- Příkaz `Resume` nelze použít v jakékoli proceduře, která obsahuje příkaz `Try...Catch...Finally`.  
+ `Resume`Příkaz nelze použít v žádné proceduře, která obsahuje `Try...Catch...Finally` příkaz.  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu se pomocí příkazu `Resume` ukončí zpracování chyb v proceduře a pak pokračuje v provádění s příkazem, který chybu způsobil. K ilustraci použití příkazu `Resume` je vygenerována chyba č. 55.  
+ V tomto příkladu se používá `Resume` příkaz k ukončení zpracování chyb v proceduře a následné pokračování v provádění s příkazem, který způsobil chybu. K ilustraci použití příkazu se generuje číslo chyby 55 `Resume` .  
   
  [!code-vb[VbVbalrErrorHandling#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrErrorHandling/VB/Class1.vb#16)]  
   
 ## <a name="requirements"></a>Požadavky  
- **Obor názvů:** [Microsoft. VisualBasic](../../../visual-basic/language-reference/runtime-library-members.md)  
+ **Obor názvů:** [Microsoft. VisualBasic](../runtime-library-members.md)  
   
  **Sestavení:** Knihovna Visual Basic runtime (v souboru Microsoft. VisualBasic. dll)  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Příkaz Try...Catch...Finally](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)
-- [Příkaz Error](../../../visual-basic/language-reference/statements/error-statement.md)
-- [Příkaz On Error](../../../visual-basic/language-reference/statements/on-error-statement.md)
+- [Try...Catch....Finally – příkaz](try-catch-finally-statement.md)
+- [Error – příkaz](error-statement.md)
+- [On Error – příkaz](on-error-statement.md)

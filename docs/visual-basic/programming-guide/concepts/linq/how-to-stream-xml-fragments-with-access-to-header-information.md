@@ -1,22 +1,22 @@
 ---
-title: 'Postupy: streamování fragmentů XML s přístupem k informacím záhlaví'
+title: 'Postupy: Streamování fragmentů XML pomocí přístupu k informacím hlavičky'
 ms.date: 07/20/2015
 ms.assetid: effd10df-87c4-4d7a-8a9a-1434d829dca5
-ms.openlocfilehash: 325609b9f8cf1feebcb4be1fcfd0122e12100156
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: 8d0543ff5a772768292c0e3117f41bea9367d23a
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75636689"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397684"
 ---
 # <a name="how-to-stream-xml-fragments-with-access-to-header-information-visual-basic"></a>Postupy: streamování fragmentů XML s přístupem k informacím hlavičky (Visual Basic)
 Někdy je nutné číst libovolně velké soubory XML a napsat aplikaci tak, aby paměti aplikace byly předvídatelné. Pokud se pokusíte naplnit strom XML velkým souborem XML, využití paměti bude úměrné velikosti souboru, tedy nadměrné. Proto byste měli místo toho použít metodu streamování.  
   
- Jednou z možností je napsat aplikaci pomocí <xref:System.Xml.XmlReader>. Můžete však chtít použít LINQ k dotazování stromu XML. Pokud se jedná o tento případ, můžete napsat vlastní metodu osy. Další informace naleznete v tématu [How to: Write a LINQ to XML Axis Method (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-write-a-linq-to-xml-axis-method.md).  
+ Jednou z možností je napsat aplikaci pomocí <xref:System.Xml.XmlReader> . Můžete však chtít použít LINQ k dotazování stromu XML. Pokud se jedná o tento případ, můžete napsat vlastní metodu osy. Další informace naleznete v tématu [How to: Write a LINQ to XML Axis Method (Visual Basic)](how-to-write-a-linq-to-xml-axis-method.md).  
   
- Chcete-li napsat vlastní metodu osy, napíšete malou metodu, která používá <xref:System.Xml.XmlReader> ke čtení uzlů, dokud nedosáhne jednoho z uzlů, které vás zajímají. Metoda pak zavolá <xref:System.Xml.Linq.XNode.ReadFrom%2A>, které čtou z <xref:System.Xml.XmlReader> a vytvoří instanci fragmentu XML. Pak můžete napsat dotazy LINQ na vlastní metodu osy.  
+ Chcete-li napsat vlastní metodu osy, napíšete malou metodu, která používá <xref:System.Xml.XmlReader> ke čtení uzlů, dokud nedosáhne jednoho z uzlů, které vás zajímají. Metoda pak volá <xref:System.Xml.Linq.XNode.ReadFrom%2A> , který čte z <xref:System.Xml.XmlReader> a vytvoří instanci XML fragmentu. Pak můžete napsat dotazy LINQ na vlastní metodu osy.  
   
- Techniky streamování se nejlépe aplikují v situacích, kdy potřebujete zpracovat zdrojový dokument jenom jednou, a můžete zpracovat elementy v pořadí dokumentů. Některé standardní operátory pro dotazování, jako je například <xref:System.Linq.Enumerable.OrderBy%2A>, iterují jejich zdroj, shromažďují všechna data, řadí je a nakonec vydávají první položku v sekvenci. Všimněte si, že pokud použijete operátor dotazu, který materializuje svůj zdroj před tím, než zadáte první položku, nebudete si uchovávat malý objem paměti.  
+ Techniky streamování se nejlépe aplikují v situacích, kdy potřebujete zpracovat zdrojový dokument jenom jednou, a můžete zpracovat elementy v pořadí dokumentů. Některé standardní operátory pro dotazování, jako <xref:System.Linq.Enumerable.OrderBy%2A> je například iterace zdroje, shromáždění všech dat, jejich řazení a nakonec vydávají první položku v sekvenci. Všimněte si, že pokud použijete operátor dotazu, který materializuje svůj zdroj před tím, než zadáte první položku, nebudete si uchovávat malý objem paměti.  
   
 ## <a name="example"></a>Příklad  
  Někdy je problém jenom trochu zajímavější. V následujícím dokumentu XML musí příjemce vlastní metody osy také znát název zákazníka, ke kterému každá položka patří.  
@@ -70,7 +70,7 @@ Někdy je nutné číst libovolně velké soubory XML a napsat aplikaci tak, aby
   
  Tento přístup má malé nároky na paměť. Vzhledem k tomu, že se přestanou fragmenty XML, nezachovají se žádné odkazy na předchozí fragment a je k dispozici pro uvolňování paměti. Všimněte si, že tato technika vytváří mnoho krátkodobých objektů v haldě.  
   
- Následující příklad ukazuje, jak implementovat a použít vlastní metodu osy, která streamuje fragmenty XML ze souboru určeného identifikátorem URI. Tato vlastní osa je určena konkrétně tak, že očekává dokument, který má `Customer`, `Name`a `Item` prvky a že tyto prvky budou uspořádány jako v předchozím `Source.xml` dokumentu. Jedná se o zjednodušený implementaci. Robustnější implementace by se připravila k analýze neplatného dokumentu.  
+ Následující příklad ukazuje, jak implementovat a použít vlastní metodu osy, která streamuje fragmenty XML ze souboru určeného identifikátorem URI. Tato vlastní osa je určena konkrétně tak, že očekává dokument, který obsahuje `Customer` `Name` prvky, a a `Item` že tyto prvky budou uspořádány jako v `Source.xml` dokumentu výše. Jedná se o zjednodušený implementaci. Robustnější implementace by se připravila k analýze neplatného dokumentu.  
   
 ```vb  
 Module Module1  
@@ -230,6 +230,6 @@ End Class
 </Root>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Rozšířené programování LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
+- [Rozšířené programování LINQ to XML (Visual Basic)](advanced-linq-to-xml-programming.md)

@@ -7,23 +7,23 @@ f1_keywords:
 helpviewer_keywords:
 - BC32126
 ms.assetid: 2325668b-e2ad-40ee-a1ec-30450236c20d
-ms.openlocfilehash: e55e561fa20a3740d352537958681b0a66fc381e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 61c6fe7c33b3292066e653304ded43a863413723
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64592046"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397217"
 ---
 # <a name="methods-of-systemnullableof-t-cannot-be-used-as-operands-of-the-addressof-operator"></a>Metody System.Nullable(Of T) nelze používat jako operandy operátoru 'AddressOf'.
-Příkaz používá `AddressOf` operátor s operandem, který představuje postup <xref:System.Nullable%601> struktury.  
+Příkaz používá `AddressOf` operátor s operandem, který představuje proceduru <xref:System.Nullable%601> struktury.  
   
  **ID chyby:** BC32126  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-- Nahraďte název procedury v `AddressOf` klauzule s operandem, který není členem <xref:System.Nullable%601>.  
+- Nahraďte název procedury v `AddressOf` klauzuli operandem, který není členem <xref:System.Nullable%601> .  
   
-- Zápis třídu, která zabalí metodu <xref:System.Nullable%601> , kterou chcete použít. V následujícím příkladu `NullableWrapper` třída definuje novou metodu s názvem `GetValueOrDefault`. Protože tato nová metoda není členem <xref:System.Nullable%601>, lze použít u `nullInstance`, instanci typu s možnou hodnotou Null a vytvoří argument `AddressOf`.  
+- Napište třídu, která zabalí metodu, kterou chcete <xref:System.Nullable%601> použít. V následujícím příkladu `NullableWrapper` Třída definuje novou metodu s názvem `GetValueOrDefault` . Vzhledem k tomu, že tato nová metoda není členem <xref:System.Nullable%601> , lze ji použít pro `nullInstance` instanci typu s možnou hodnotou null a vytvořit argument pro `AddressOf` .  
   
 ```vb  
 Module Module1  
@@ -61,9 +61,9 @@ Module Module1
 End Module  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Nullable%601>
-- [Operátor AddressOf](../../../visual-basic/language-reference/operators/addressof-operator.md)
-- [Typy hodnot s povolenou hodnotou Null](../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md)
-- [Obecné typy v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
+- [AddressOf – operátor](../operators/addressof-operator.md)
+- [Typy hodnot s možnou hodnotou null](../../programming-guide/language-features/data-types/nullable-value-types.md)
+- [Obecné typy v Visual Basic](../../programming-guide/language-features/data-types/generic-types.md)

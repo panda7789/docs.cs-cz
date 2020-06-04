@@ -2,18 +2,18 @@
 title: 'Postupy: Seskupování souborů podle přípony (LINQ)'
 ms.date: 07/20/2015
 ms.assetid: 904dc6d7-7162-4655-a7f4-5785d669bc5a
-ms.openlocfilehash: 4d2c51fa62b3ec144bc5ad51b4a9f8305476645e
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.openlocfilehash: 67c48cd735b51009835cbc8df3101ea3cb212a87
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78267025"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84396542"
 ---
-# <a name="how-to-group-files-by-extension-linq-visual-basic"></a>Postup: Seskupení souborů podle rozšíření (LINQ) (Visual Basic)
-Tento příklad ukazuje, jak linq lze použít k provádění rozšířené seskupení a řazení operace v seznamech souborů nebo složek. Také ukazuje, jak stránkovat výstup v <xref:System.Linq.Enumerable.Skip%2A> okně <xref:System.Linq.Enumerable.Take%2A> konzoly pomocí a metody.  
+# <a name="how-to-group-files-by-extension-linq-visual-basic"></a>Postupy: seskupování souborů podle přípony (LINQ) (Visual Basic)
+Tento příklad ukazuje, jak lze LINQ použít k provádění pokročilých operací seskupení a řazení v seznamech souborů nebo složek. Ukazuje také výstup stránky v okně konzoly pomocí <xref:System.Linq.Enumerable.Skip%2A> <xref:System.Linq.Enumerable.Take%2A> metod a.  
   
 ## <a name="example"></a>Příklad  
- Následující dotaz ukazuje, jak seskupit obsah zadaného adresářového stromu podle přípony názvu souboru.  
+ Následující dotaz ukazuje, jak seskupit obsah zadaného stromu adresářů podle přípony názvu souboru.  
   
 ```vb  
 Module GroupByExtension  
@@ -91,12 +91,12 @@ Module GroupByExtension
 End Module  
 ```  
   
- Výstup z tohoto programu může být dlouhý, v závislosti na `startFolder` podrobnostech místního systému souborů a na tom, na co je nastaven. Chcete-li povolit zobrazení všech výsledků, tento příklad ukazuje, jak stránkovat výsledky. Stejné techniky lze použít pro systém Windows a webové aplikace. Všimněte si, že vzhledem k tomu, `For Each` že kód stránky položky ve skupině, vnořené smyčky je vyžadována. K dispozici je také některé další logiku vypočítat aktuální pozici v seznamu a umožnit uživateli zastavit stránkování a ukončovat program. V tomto konkrétním případě je stránkovací dotaz spuštěn proti výsledky uložené v mezipaměti z původního dotazu. V jiných kontextech, jako je například LINQ na SQL, takové ukládání do mezipaměti není vyžadováno.  
+ Výstup z tohoto programu může být dlouhý v závislosti na podrobnostech místního systému souborů a `startFolder` k čemu je nastaven na. Pokud chcete povolit zobrazení všech výsledků, tento příklad ukazuje, jak stránky procházet výsledky. Stejné postupy můžete použít pro Windows a webové aplikace. Všimněte si, že vzhledem k tomu, že kód stránky položky ve skupině, `For Each` je nutná vnořená smyčka. K dispozici je také některá další logika, která umožňuje vypočítat aktuální pozici v seznamu a umožnit uživateli zastavit stránkování a ukončit program. V tomto konkrétním případě se stránkovací dotaz spustí proti výsledkům uloženým v mezipaměti z původního dotazu. V jiných kontextech, jako je například LINQ to SQL, taková mezipaměť není nutná.  
   
-## <a name="compile-the-code"></a>Kompilace kódu  
-Vytvořte projekt aplikace konzoly `Imports` jazyka s příkazem pro obor názvů System.Linq.
+## <a name="compile-the-code"></a>Kompilovat kód  
+Vytvořte projekt konzolové aplikace Visual Basic s `Imports` příkazem pro obor názvů System. Linq.
   
 ## <a name="see-also"></a>Viz také
 
-- [LINQ na objekty (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)
-- [Linq a adresáře souborů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)
+- [LINQ to Objects (Visual Basic)](linq-to-objects.md)
+- [LINQ a souborové adresáře (Visual Basic)](linq-and-file-directories.md)

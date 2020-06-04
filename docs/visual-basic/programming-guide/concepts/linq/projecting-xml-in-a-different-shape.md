@@ -2,12 +2,12 @@
 title: Projektování XML v odlišném tvaru
 ms.date: 07/20/2015
 ms.assetid: 2da7ec97-34f7-443d-9a48-b162ac58236b
-ms.openlocfilehash: 400ceafe8ca219efbbb921d573126e0ca80bbb5e
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 1424b88b478896854b0f094ca4ec8eba82b816b4
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75344499"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84396360"
 ---
 # <a name="projecting-xml-in-a-different-shape-visual-basic"></a>Projektování XML v jiném obrazci (Visual Basic)
 Toto téma ukazuje příklad projektu XML, který je v jiném tvaru než zdrojový kód XML.  
@@ -17,9 +17,9 @@ Toto téma ukazuje příklad projektu XML, který je v jiném tvaru než zdrojov
 ## <a name="example"></a>Příklad  
  Tento příklad zpracovává dokument WordprocessingML a načítá uzly odstavců z dokumentu WordprocessingML. Také identifikuje styl a text každého odstavce. Nakonec ukázkový projekt XML s jiným tvarem. Tento příklad sestaví na předchozích příkladech v tomto kurzu. Nový příkaz, který je projekcí vyvolán v komentářích v následujícím kódu.  
   
- Pokyny k vytvoření zdrojového dokumentu pro tento příklad najdete v tématu [vytvoření zdrojového dokumentu XML pro Office Open (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).  
+ Pokyny k vytvoření zdrojového dokumentu pro tento příklad najdete v tématu [vytvoření zdrojového dokumentu XML pro Office Open (Visual Basic)](creating-the-source-office-open-xml-document.md).  
   
- Tento příklad používá třídy ze sestavení WindowsBase. Používá typy v oboru názvů <xref:System.IO.Packaging?displayProperty=nameWithType>.  
+ Tento příklad používá třídy ze sestavení WindowsBase. Používá typy v <xref:System.IO.Packaging?displayProperty=nameWithType> oboru názvů.  
   
 ```vb  
 Imports <xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">  
@@ -230,8 +230,8 @@ End Module
 ## <a name="next-steps"></a>Další kroky  
  V dalším příkladu se dotazuje na vyhledání veškerého textu v dokumentu aplikace Word:  
   
-- [Hledání textu v dokumentech aplikace Word (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/finding-text-in-word-documents.md)  
+- [Hledání textu v dokumentech aplikace Word (Visual Basic)](finding-text-in-word-documents.md)  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Kurz: manipulace s obsahem v dokumentu WordprocessingML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
+- [Kurz: manipulace s obsahem v dokumentu WordprocessingML (Visual Basic)](tutorial-manipulating-content-in-a-wordprocessingml-document.md)

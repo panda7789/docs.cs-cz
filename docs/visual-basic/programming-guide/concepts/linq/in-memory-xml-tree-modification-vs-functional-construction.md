@@ -1,18 +1,18 @@
 ---
-title: Úprava struktury XML v paměti vs. konstrukce funkčnosti (LINQ to XML)
+title: Změna stromu XML v paměti vs. funkční konstrukce (LINQ to XML)
 ms.date: 07/20/2015
 ms.assetid: d91c4ebf-6549-43cc-9961-26d4a82f722b
-ms.openlocfilehash: 15c38cdf7ce860b34d8d3e9d59b8f06d80f6edd8
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: efdbf51efa0f502ac9991d520defe45bb95678b7
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74344441"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397606"
 ---
 # <a name="in-memory-xml-tree-modification-vs-functional-construction-linq-to-xml-visual-basic"></a>Úprava struktury XML v paměti vs. konstrukce funkčnosti (LINQ to XML) (Visual Basic)
-Úprava stromu XML na místě je tradiční přístup ke změně tvaru dokumentu XML. Typická aplikace načte dokument do úložiště dat, jako je DOM nebo [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]; používá programovací rozhraní pro vkládání uzlů, odstraňování uzlů nebo změnu obsahu uzlů. a pak soubor XML uloží do souboru nebo ho přenáší přes síť.  
+Úprava stromu XML na místě je tradiční přístup ke změně tvaru dokumentu XML. Typická aplikace načte dokument do úložiště dat, jako je DOM nebo [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] ; používá programovací rozhraní pro vkládání uzlů, odstraňování uzlů nebo změnu obsahu uzlů a pak ukládá XML do souboru nebo ho přenáší přes síť.  
   
- [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] umožňuje další přístup, který je užitečný v mnoha scénářích *: konstrukce funkcí*. Funkční konstrukce zpracovává změny dat jako problém transformace, nikoli jako podrobnou manipulaci s úložištěm dat. Pokud můžete podniknout data a efektivně je transformovat z jednoho formuláře na jiný, výsledek je stejný jako v případě, že jste si pořídili jedno úložiště dat a manipulujete ho nějakým způsobem, aby byl jiný tvar. Klíč k přístupu k funkcím konstrukce je předat výsledky dotazů do <xref:System.Xml.Linq.XDocument> a <xref:System.Xml.Linq.XElement> konstruktory.  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]umožňuje další přístup, který je užitečný v mnoha scénářích *: konstrukce funkcí*. Funkční konstrukce zpracovává změny dat jako problém transformace, nikoli jako podrobnou manipulaci s úložištěm dat. Pokud můžete podniknout data a efektivně je transformovat z jednoho formuláře na jiný, výsledek je stejný jako v případě, že jste si pořídili jedno úložiště dat a manipulujete ho nějakým způsobem, aby byl jiný tvar. Klíč k přístupu k funkcím konstrukce je předání výsledků dotazů do <xref:System.Xml.Linq.XDocument> <xref:System.Xml.Linq.XElement> konstruktorů a.  
   
  V mnoha případech můžete napsat transformační kód za zlomek času, který by trval při manipulaci s úložištěm dat, a tento kód je robustnější a snazší ho udržovat. V těchto případech i v případě, že transformační přístup může trvat více výpočetní výkon, je efektivnější způsob, jak data upravovat. Pokud je vývojář obeznámen s funkcí přístupu, výsledný kód v mnoha případech je snazší pochopit. Je snadné najít kód, který upraví jednotlivé části stromu.  
   
@@ -42,7 +42,7 @@ root.Attributes().Remove()
 Console.WriteLine(root)  
 ```  
   
- Tento kód generuje následující výstup:  
+ Výsledkem tohoto kódu je následující výstup:  
   
 ```xml  
 <Root>  
@@ -66,7 +66,7 @@ Dim newTree As XElement = _
 Console.WriteLine(newTree)  
 ```  
   
- Tento příklad vytvoří výstup stejného XML jako první příklad. Všimněte si však, že ve skutečnosti vidíte výslednou strukturu nového XML v rámci funkčního přístupu. Můžete zobrazit vytvoření prvku `Root`, kód, který přebírá `Child1` prvek ze zdrojového stromu a kód, který transformuje atributy ze zdrojového stromu na prvky v novém stromu.  
+ Tento příklad vytvoří výstup stejného XML jako první příklad. Všimněte si však, že ve skutečnosti vidíte výslednou strukturu nového XML v rámci funkčního přístupu. Můžete zobrazit vytvoření `Root` elementu, kód, který přebírá `Child1` element ze zdrojového stromu, a kód, který transformuje atributy ze zdrojového stromu na prvky v novém stromu.  
   
  Funkční příklad v tomto případě není kratší než první příklad a není skutečně jednodušší. Nicméně pokud máte mnoho změn ve stromu XML, nefunkční přístup se stane poměrně složitým a trochu obtuse. Naopak pokud používáte funkční přístup, stále stačí vytvořit požadovaný kód XML, vložit dotazy a výrazy podle potřeby a vyžádat si požadovaný obsah. Funkční přístup poskytuje kód, který je snazší udržovat.  
   
@@ -74,6 +74,6 @@ Console.WriteLine(newTree)
   
  Toto je velmi jednoduchý příklad, ale slouží k zobrazení rozdílu v filozofie mezi dvěma přístupy. Funkční přístup poskytuje větší produktivitu při transformaci větších dokumentů XML.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Úprava stromů XML (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)
+- [Úprava stromů XML (LINQ to XML) (Visual Basic)](modifying-xml-trees-linq-to-xml.md)

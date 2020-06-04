@@ -5,12 +5,12 @@ helpviewer_keywords:
 - interop assemblies
 - COM interop [Visual Basic], about COM interop
 ms.assetid: 8bd62e68-383d-407f-998b-29aa0ce0fd67
-ms.openlocfilehash: c7909b3b6a2c9f0b397b9621b7e5125c232be313
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 6c7caf266514c43e40135b33d848a688546acf1c
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353204"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84396776"
 ---
 # <a name="introduction-to-com-interop-visual-basic"></a>Představení zprostředkovatele komunikace s objekty COM (Visual Basic)
 Model objektu komponenty (COM) umožňuje objektu vystavit svou funkčnost jiným komponentám a hostovat aplikace. I když byly objekty COM zásadní pro programování v systému Windows po celou řadu let, aplikace navržené pro modul CLR (Common Language Runtime) nabízejí mnoho výhod.  
@@ -51,14 +51,14 @@ Model objektu komponenty (COM) umožňuje objektu vystavit svou funkčnost jiný
 ## <a name="interoperability-marshaling"></a>Zařazování interoperability  
  Všechny aplikace .NET Framework sdílejí sadu běžných typů, které umožňují vzájemnou funkční spolupráci objektů bez ohledu na použitý programovací jazyk. Parametry a návratové hodnoty objektů COM někdy používají datové typy, které se liší od těch, které jsou používány ve spravovaném kódu. *Zařazování interoperability* je proces sbalení parametrů a návratové hodnoty do ekvivalentních datových typů při jejich přesunu do objektů COM a z nich. Další informace najdete v tématu [zařazování Interop](../../../framework/interop/interop-marshaling.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Zprostředkovatel komunikace s objekty COM](../../../visual-basic/programming-guide/com-interop/index.md)
-- [Návod: Implementace dědičnosti pomocí objektů COM](../../../visual-basic/programming-guide/com-interop/walkthrough-implementing-inheritance-with-com-objects.md)
+- [Zprostředkovatel komunikace s objekty COM](index.md)
+- [Návod: Implementace dědičnosti pomocí objektů COM](walkthrough-implementing-inheritance-with-com-objects.md)
 - [Spolupráce s nespravovaným kódem](../../../framework/interop/index.md)
-- [Řešení potíží s interoperabilitou](../../../visual-basic/programming-guide/com-interop/troubleshooting-interoperability.md)
+- [Řešení potíží s interoperabilitou](troubleshooting-interoperability.md)
 - [Sestavení v .NET](../../../standard/assembly/index.md)
-- [Tlbimp.exe (importér knihovny typů)](../../../framework/tools/tlbimp-exe-type-library-importer.md)
-- [Tlbexp.exe (exportér knihovny typů)](../../../framework/tools/tlbexp-exe-type-library-exporter.md)
+- [Tlbimp. exe (importér knihovny typů)](../../../framework/tools/tlbimp-exe-type-library-importer.md)
+- [Tlbexp. exe (Exportér knihovny typů)](../../../framework/tools/tlbexp-exe-type-library-exporter.md)
 - [Zařazování spolupráce](../../../framework/interop/interop-marshaling.md)
-- [Bezregistrační zprostředkovatel komunikace s objekty COM](../../../framework/interop/registration-free-com-interop.md)
+- [Zprostředkovatel komunikace s objekty COM bez registrace](../../../framework/interop/registration-free-com-interop.md)

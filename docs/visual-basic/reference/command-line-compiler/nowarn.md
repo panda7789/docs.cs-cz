@@ -6,12 +6,12 @@ helpviewer_keywords:
 - /nowarn compiler option [Visual Basic]
 - -nowarn compiler option [Visual Basic]
 ms.assetid: 7ebf2106-0652-4fdc-bf60-70fc86465d83
-ms.openlocfilehash: 880fdf4931dadea547d64d0506bd3e978956468e
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: 37851f99eb88543e939ce48995ded41958e57cc3
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72005395"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397485"
 ---
 # <a name="-nowarn"></a>-nowarn
 Potlačí schopnost kompilátoru generovat upozornění.  
@@ -24,14 +24,14 @@ Potlačí schopnost kompilátoru generovat upozornění.
   
 ## <a name="arguments"></a>Argumenty  
   
-|Označení|Definice|  
+|Pojem|Definice|  
 |---|---|  
 |`numberList`|Nepovinný parametr. Čárkami oddělený seznam čísel ID upozornění, které by měl kompilátor potlačit. Nejsou-li ID upozornění zadána, budou potlačena všechna upozornění.|  
   
 ## <a name="remarks"></a>Poznámky  
- `-nowarn` Možnost způsobí, že kompilátor negeneruje upozornění. Chcete-li potlačit jednotlivá upozornění, zadejte ID upozornění pro `-nowarn` parametr za dvojtečkou. Více čísel upozornění oddělte čárkami.  
+ `-nowarn`Možnost způsobí, že kompilátor negeneruje upozornění. Chcete-li potlačit jednotlivá upozornění, zadejte ID upozornění pro `-nowarn` parametr za dvojtečkou. Více čísel upozornění oddělte čárkami.  
   
- Je nutné zadat pouze číselnou část identifikátoru upozornění. Například pokud chcete potlačit BC42024, upozornění pro nepoužívané místní proměnné, zadejte `-nowarn:42024`.  
+ Je nutné zadat pouze číselnou část identifikátoru upozornění. Například pokud chcete potlačit BC42024, upozornění pro nepoužívané místní proměnné, zadejte `-nowarn:42024` .  
   
  Další informace o číslech ID upozornění najdete v tématu [Konfigurace upozornění v Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic).  
   
@@ -55,6 +55,6 @@ vbc -nowarn:42024 t2.vb
   
 ## <a name="see-also"></a>Viz také
 
-- [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
-- [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
+- [Visual Basic Kompilátor příkazového řádku](index.md)
+- [Příkazové řádky ukázkové kompilace](sample-compilation-command-lines.md)
 - [Konfigurace upozornění v jazyce Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic)

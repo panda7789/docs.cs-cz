@@ -2,27 +2,27 @@
 title: 'Postupy: Vyplňování kolekcí objektů z více zdrojů (LINQ)'
 ms.date: 06/22/2018
 ms.assetid: 63062a22-e6a9-42c0-b357-c7c965f58f33
-ms.openlocfilehash: 74a2a0f71e575136f1758f72f9a8db72549a9489
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 9c6d8ff5165bf886d8aad87b64305819e65361ab
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74346982"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84396516"
 ---
 # <a name="how-to-populate-object-collections-from-multiple-sources-linq-visual-basic"></a>Postupy: naplnění kolekcí objektů z více zdrojů (LINQ) (Visual Basic)
 
 Tento příklad ukazuje, jak sloučit data z různých zdrojů do sekvence nových typů.
 
 > [!NOTE]
-> Nepokoušejte se připojit data v paměti nebo data v systému souborů s daty, která jsou stále v databázi. Takové spojení mezi doménami může vracet nedefinované výsledky z důvodu různých způsobů, kterými je možné definovat operace join pro databázové dotazy a jiné typy zdrojů. Kromě toho existuje riziko, že taková operace by mohla způsobit výjimku z důvodu nedostatku paměti, pokud je objem dat v databázi dostatečně velký. Chcete-li spojit data z databáze s daty v paměti, nejdříve zavolejte `ToList` nebo `ToArray` na dotaz databáze a pak proveďte spojení se vrácenou kolekcí.
+> Nepokoušejte se připojit data v paměti nebo data v systému souborů s daty, která jsou stále v databázi. Takové spojení mezi doménami může vracet nedefinované výsledky z důvodu různých způsobů, kterými je možné definovat operace join pro databázové dotazy a jiné typy zdrojů. Kromě toho existuje riziko, že taková operace by mohla způsobit výjimku z důvodu nedostatku paměti, pokud je objem dat v databázi dostatečně velký. Chcete-li spojit data z databáze s daty v paměti, nejprve zavolejte `ToList` nebo `ToArray` v databázovém dotazu a potom proveďte spojení se vrácenou kolekcí.
 
 ## <a name="to-create-the-data-file"></a>Vytvoření datového souboru
 
-- Zkopírujte soubory Names. csv a výsledků. CSV do složky projektu, jak je popsáno v tématu [Postupy: spojení obsahu z nepodobných souborů (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-join-content-from-dissimilar-files-linq.md).
+- Zkopírujte soubory Names. csv a výsledků. CSV do složky projektu, jak je popsáno v tématu [Postupy: spojení obsahu z nepodobných souborů (LINQ) (Visual Basic)](how-to-join-content-from-dissimilar-files-linq.md).
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje způsob použití pojmenovaného typu `Student` k uložení sloučených dat ze dvou kolekcí v paměti řetězců, které simulují data tabulky ve formátu CSV. První kolekce řetězců představuje jména a ID studentů a druhá kolekce představuje ID studenta (v prvním sloupci) a čtyři skóre zkoušek. ID se používá jako cizí klíč.
+Následující příklad ukazuje, jak použít pojmenovaný typ `Student` k ukládání sloučených dat ze dvou kolekcí v paměti řetězců, které simulují data tabulky ve formátu CSV. První kolekce řetězců představuje jména a ID studentů a druhá kolekce představuje ID studenta (v prvním sloupci) a čtyři skóre zkoušek. ID se používá jako cizí klíč.
 
 ```vb
 Imports System.Collections.Generic
@@ -100,7 +100,7 @@ End Class
 ' The average score of Michael Tucker is 92
 ```
 
-V klauzuli [Select klauzule](../../../../visual-basic/language-reference/queries/select-clause.md) se inicializátor objektu používá k vytvoření instance každého nového objektu `Student` pomocí dat z těchto dvou zdrojů.
+V klauzuli [Select klauzule](../../../language-reference/queries/select-clause.md) se inicializátor objektu používá k vytvoření instance každého nového `Student` objektu pomocí dat z těchto dvou zdrojů.
 
 Pokud nepotřebujete ukládat výsledky dotazu, anonymní typy můžou být vhodnější než pojmenované typy. Pojmenované typy jsou požadovány, Pokud předáte výsledky dotazu mimo metodu, ve které je dotaz proveden. Následující příklad provádí stejný úkol jako předchozí příklad, ale používá anonymní typy namísto pojmenovaných typů:
 
@@ -128,6 +128,6 @@ For Each s In queryNamesScores2
 Next
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [LINQ a řetězce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
+- [LINQ a řetězce (Visual Basic)](linq-and-strings.md)

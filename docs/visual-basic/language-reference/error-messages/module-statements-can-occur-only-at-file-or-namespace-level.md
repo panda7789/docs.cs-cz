@@ -7,22 +7,22 @@ f1_keywords:
 helpviewer_keywords:
 - BC30617
 ms.assetid: 5e9de8e5-d26b-4fb2-9e28-814413fe9cef
-ms.openlocfilehash: fc3c102dbfe7c55e66093421bc11379d48ba000d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: d01c30571fc34e142300ac8706c56d5e99175fcf
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64592087"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397204"
 ---
 # <a name="module-statements-can-occur-only-at-file-or-namespace-level"></a>Příkazy 'Module' lze používat pouze na úrovni souboru nebo oboru názvů.
-`Module` příkazy musí být uvedena v horní části zdrojového souboru ihned po `Option` a `Imports` příkazy, globální atributy a deklarace oboru názvů, ale před ostatními deklaracemi.  
+`Module`příkazy se musí nacházet v horní části zdrojového souboru hned po `Option` a `Imports` příkazy, globální atributy a deklarace oboru názvů, ale před všemi ostatními deklaracemi.  
   
  **ID chyby:** BC30617  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-- Přesunout `Module` příkaz do horní části obor názvů deklarace nebo zdrojový soubor.  
+- Přesuňte `Module` příkaz na začátek deklarace oboru názvů nebo zdrojového souboru.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Příkaz Module](../../../visual-basic/language-reference/statements/module-statement.md)
+- [Module – příkaz](../statements/module-statement.md)

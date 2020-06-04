@@ -1,27 +1,27 @@
 ---
-title: Metoda '<methodname>' nelze volat pomocí <number> argumenty
+title: Metodu <methodname> nelze volat pomocí <number> argumentů.
 ms.date: 07/20/2015
 f1_keywords:
 - vbrNoMethodTakingXArguments2
 ms.assetid: 23260199-b6a4-469f-b75f-4a3d8d25e2cc
-ms.openlocfilehash: e168d59da6c0c293d2429f90b858baf3547c22b2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1f8dedf6797f16e61eb44875f28f4ed9ea787540
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61922314"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84402106"
 ---
-# <a name="method-methodname-cannot-be-called-with-number-arguments"></a>Metoda '\<methodname >' nelze volat pomocí \<číslo > argumenty
+# <a name="method-methodname-cannot-be-called-with-number-arguments"></a>Metodu \<methodname> nelze volat pomocí \<number> argumentů.
 Volání metody obsahuje nesprávný počet argumentů.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1. Počet argumentů, které jste zadali.  
+1. Spočítejte argumenty, které jste zadali.  
   
-2. Shodovat s číslem proti počtu parametrů v metodě, kterou chcete volat.  
+2. Odpovídá počtu parametrů v metodě, kterou chcete volat.  
   
-3. Počet argumentů, které v případě potřeby upravte daných dvou čísel vzájemně nesouhlasí.  
+3. Upravte počet argumentů, pokud tyto dvě čísla nesouhlasí.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Předávání argumentů podle hodnoty a reference](../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)
+- [Předávání argumentů podle hodnoty a reference](../programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)

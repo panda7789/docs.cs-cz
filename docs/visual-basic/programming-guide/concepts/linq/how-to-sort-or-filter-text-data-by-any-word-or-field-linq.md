@@ -2,12 +2,12 @@
 title: 'Postupy: Řazení nebo filtrování textových dat podle libovolného slova či pole (LINQ)'
 ms.date: 07/20/2015
 ms.assetid: 9df137fe-335b-46e0-aecf-ea8a9eddd4e3
-ms.openlocfilehash: f0eeda77a721d482ec7a2b8562c0a71f34c5a3ae
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 798f30d39b4f805001c8c28b9ad6212061550775
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75348049"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397723"
 ---
 # <a name="how-to-sort-or-filter-text-data-by-any-word-or-field-linq-visual-basic"></a>Postupy: řazení nebo filtrování textových dat podle libovolného slova nebo pole (LINQ) (Visual Basic)
 
@@ -15,7 +15,7 @@ Následující příklad ukazuje, jak řadit řádky strukturovaného textu, nap
 
 ### <a name="to-create-a-file-that-contains-data"></a>Vytvoření souboru, který obsahuje data
 
-Zkopírujte data výsledků. CSV z tématu [Postupy: spojení obsahu z nepodobných souborů (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-join-content-from-dissimilar-files-linq.md) a jeho uložení do složky řešení.
+Zkopírujte data výsledků. CSV z tématu [Postupy: spojení obsahu z nepodobných souborů (LINQ) (Visual Basic)](how-to-join-content-from-dissimilar-files-linq.md) a jeho uložení do složky řešení.
 
 ## <a name="example"></a>Příklad
 
@@ -72,10 +72,10 @@ End Class
 
 Tento příklad také ukazuje, jak vrátit proměnnou dotazu z funkce.
 
-## <a name="compile-the-code"></a>Kompilace kódu
+## <a name="compile-the-code"></a>Kompilovat kód
 
-Vytvořte projekt konzolové aplikace Visual Basic s příkazem `Imports` pro obor názvů System. Linq.
+Vytvořte projekt konzolové aplikace Visual Basic s `Imports` příkazem pro obor názvů System. Linq.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [LINQ a řetězce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
+- [LINQ a řetězce (Visual Basic)](linq-and-strings.md)

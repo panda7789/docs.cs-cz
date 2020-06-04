@@ -1,18 +1,18 @@
 ---
-title: 'Postupy: projektování anonymního typu'
+title: 'Postupy: Projektování anonymního typu'
 ms.date: 07/20/2015
 ms.assetid: 30b42987-0e0e-4b2b-adb1-5255ddfbcd7b
-ms.openlocfilehash: f60c55b9bc25e4691edd275c6e7417fccf5798ab
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 459602eb7ede0bd055e00d3c7620cb95ec5408ff
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74347743"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84396477"
 ---
 # <a name="how-to-project-an-anonymous-type-visual-basic"></a>Postupy: projektování anonymního typu (Visual Basic)
 V některých případech můžete chtít vytvořit dotaz na nový typ, i když víte, že tento typ budete používat jenom krátce. Je to mnoho dalších práce pro vytvoření nového typu pouze k použití v projekci. Efektivnější přístup v tomto případě je projekt na anonymní typ. Anonymní typy umožňují definovat třídu a pak deklarovat a inicializovat objekt této třídy, aniž by bylo nutné zadat název třídy.  
   
- Anonymní typy jsou C# implementace matematického konceptu *řazené kolekce členů*. Matematická pojem řazené kolekce členů pochází z sekvence Single, Double, Triple, čtyřnásobná, quintuple, n-Tuple. Odkazuje na konečnou sekvenci objektů, každého konkrétního typu. Někdy se označuje jako seznam párů název/hodnota. Například obsah adresy v [ukázkovém souboru XML: typický dokument XML s nákupní objednávkou (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml.md) může být vyjádřen následujícím způsobem:  
+ Anonymní typy jsou implementace matematického konceptu *řazené kolekce členů*v jazyce C#. Matematická pojem řazené kolekce členů pochází z sekvence Single, Double, Triple, čtyřnásobná, quintuple, n-Tuple. Odkazuje na konečnou sekvenci objektů, každého konkrétního typu. Někdy se označuje jako seznam párů název/hodnota. Například obsah adresy v [ukázkovém souboru XML: typický dokument XML s nákupní objednávkou (LINQ to XML)](sample-xml-file-typical-purchase-order-linq-to-xml.md) může být vyjádřen následujícím způsobem:  
   
 ```  
 Name: Ellen Adams  
@@ -23,12 +23,12 @@ Zip: 90952
 Country: USA  
 ```  
   
- Když vytváříte instanci anonymního typu, je vhodné ji považovat za vytváření řazené kolekce členů objednávky n. Pokud napíšete dotaz, který vytvoří řazenou kolekci členů v klauzuli `Select`, dotaz vrátí `IEnumerable` řazené kolekce členů.  
+ Když vytváříte instanci anonymního typu, je vhodné ji považovat za vytváření řazené kolekce členů objednávky n. Pokud napíšete dotaz, který v klauzuli vytvoří řazenou kolekci členů `Select` , dotaz vrátí `IEnumerable` kolekci řazené kolekce členů.  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu je klauzule `Select`a projekt anonymního typu. Příklad poté používá `Dim` k vytvoření objektu `IEnumerable`. V rámci smyčky `For Each` se proměnná iterace stala instancí anonymního typu vytvořeného ve výrazu dotazu.  
+ V tomto příkladu je `Select` klauzule projekt anonymního typu. Příklad následně používá `Dim` k vytvoření `IEnumerable` objektu. V rámci `For Each` smyčky se proměnná iterace stala instancí anonymního typu vytvořeného ve výrazu dotazu.  
   
- Tento příklad používá následující dokument XML: [ukázkový soubor XML: zákazníci a objednávky (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).  
+ Tento příklad používá následující dokument XML: [ukázkový soubor XML: zákazníci a objednávky (LINQ to XML)](sample-xml-file-customers-and-orders-linq-to-xml.md).  
   
 ```vb  
 Dim custOrd As XElement = XElement.Load("CustomersOrders.xml")  
@@ -44,7 +44,7 @@ For Each cust In custList
 Next  
 ```  
   
- Tento kód generuje následující výstup:  
+ Výsledkem tohoto kódu je následující výstup:  
   
 ```console  
 GREAL:Great Lakes Food Market:Howard Snyder  
@@ -53,6 +53,6 @@ LAZYK:Lazy K Kountry Store:John Steel
 LETSS:Let's Stop N Shop:Jaime Yorres  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Projekce a transformace (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)
+- [Projekce a transformace (LINQ to XML) (Visual Basic)](projections-and-transformations-linq-to-xml.md)

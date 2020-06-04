@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: projektování grafu objektů'
+title: 'Postupy: Projektování grafu objektu'
 ms.date: 07/20/2015
 ms.assetid: 9451eb47-6a31-49d7-84df-73368c618422
-ms.openlocfilehash: 71d41b515983e19f90e163f76ca400248d3cc848
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: 2900a31a469266d392f1b07b4714a08e253d2abd
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75636676"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84396490"
 ---
 # <a name="how-to-project-an-object-graph-visual-basic"></a>Postupy: projektování grafu objektů (Visual Basic)
 Toto téma ukazuje, jak projektovat nebo naplnit objekt grafu z XML.  
   
 ## <a name="example"></a>Příklad  
- Následující kód naplní graf objektů pomocí tříd `Address`, `PurchaseOrder`a `PurchaseOrderItem` z [ukázkového souboru XML: typický dokument XML s nákupní objednávkou (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml.md) .  
+ Následující kód naplní graf objektů pomocí `Address` `PurchaseOrder` tříd, a `PurchaseOrderItem` z [ukázkového souboru XML: typický dokument XML s nákupní objednávkou (LINQ to XML)](sample-xml-file-typical-purchase-order-linq-to-xml.md) .  
   
 ```vb  
 Class Address  
@@ -296,7 +296,7 @@ Sub Main()
 End Sub  
 ```  
   
- V tomto příkladu je výsledek dotazu LINQ vrácen jako <xref:System.Collections.Generic.IEnumerable%601> `PurchaseOrderItem`. Položky ve třídě `PurchaseOrder` jsou typu <xref:System.Collections.Generic.IEnumerable%601> `PurchaseOrderItem`. Kód používá metodu rozšíření <xref:System.Linq.Enumerable.ToList%2A> k vytvoření kolekce <xref:System.Collections.Generic.List%601> z výsledků dotazu.  
+ V tomto příkladu je výsledek dotazu LINQ vrácen jako <xref:System.Collections.Generic.IEnumerable%601> `PurchaseOrderItem` . Položky ve `PurchaseOrder` třídě jsou typu <xref:System.Collections.Generic.IEnumerable%601> `PurchaseOrderItem` . Kód používá <xref:System.Linq.Enumerable.ToList%2A> metodu rozšíření k vytvoření <xref:System.Collections.Generic.List%601> kolekce z výsledků dotazu.  
   
  Tento příklad vytvoří následující výstup:  
   
@@ -337,8 +337,8 @@ USPrice: 39.98
 ShipDate: 5/21/1999  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Linq.Enumerable.Select%2A>
 - <xref:System.Linq.Enumerable.ToList%2A>
-- [Projekce a transformace (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)
+- [Projekce a transformace (LINQ to XML) (Visual Basic)](projections-and-transformations-linq-to-xml.md)

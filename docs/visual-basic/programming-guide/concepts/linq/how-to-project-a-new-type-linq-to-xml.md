@@ -1,21 +1,21 @@
 ---
-title: 'Postupy: projektování nového typu (LINQ to XML)'
+title: 'Postupy: Projektování nového typu (LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: 8cfb24f5-89b2-4cfb-b85d-e7963f8f1845
-ms.openlocfilehash: a2486d88af537fb4aa8f34243a5a739d25ee5be1
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 48fb82e870a4fc4fa16cfb48a127f364e6d81f13
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353338"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84396503"
 ---
 # <a name="how-to-project-a-new-type-linq-to-xml-visual-basic"></a>Postupy: projektování nového typu (LINQ to XML) (Visual Basic)
-Další příklady v této části obsahují dotazy, které vracejí výsledky jako <xref:System.Collections.Generic.IEnumerable%601> <xref:System.Xml.Linq.XElement>, <xref:System.Collections.Generic.IEnumerable%601> `string`a <xref:System.Collections.Generic.IEnumerable%601> `int`. Jedná se o běžné typy výsledků, ale nejsou vhodné pro všechny scénáře. V mnoha případech budete chtít, aby dotazy vracely <xref:System.Collections.Generic.IEnumerable%601> nějakého jiného typu.  
+Další příklady v této části obsahují dotazy, které vracejí výsledky od <xref:System.Collections.Generic.IEnumerable%601> , <xref:System.Xml.Linq.XElement> <xref:System.Collections.Generic.IEnumerable%601> z `string` a do <xref:System.Collections.Generic.IEnumerable%601> `int` . Jedná se o běžné typy výsledků, ale nejsou vhodné pro všechny scénáře. V mnoha případech budete chtít, aby dotazy vracely <xref:System.Collections.Generic.IEnumerable%601> nějaký jiný typ.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad ukazuje, jak vytvořit instanci objektů v klauzuli `Select`. Kód nejprve definuje novou třídu s konstruktorem a poté upraví příkaz `Select` tak, aby výraz byl novou instancí nové třídy.  
+ Tento příklad ukazuje, jak vytvořit instanci objektů v `Select` klauzuli. Kód nejprve definuje novou třídu s konstruktorem a poté upraví `Select` příkaz tak, aby výraz byl novou instancí nové třídy.  
   
- Tento příklad používá následující dokument XML: [vzorový soubor XML: typická nákupní objednávka (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml.md).  
+ Tento příklad používá následující dokument XML: [vzorový soubor XML: typická nákupní objednávka (LINQ to XML)](sample-xml-file-typical-purchase-order-linq-to-xml.md).  
   
 ```vb  
 Public Class NameQty  
@@ -43,7 +43,7 @@ Public Class Program
 End Class  
 ```  
   
- Tento příklad používá metodu `M:System.Xml.Linq.XElement.Element`, která byla představena v tématu [Postupy: načtení jednoho podřízeného prvku (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-retrieve-a-single-child-element-linq-to-xml.md). Používá také přetypování k načtení hodnot prvků, které jsou vráceny metodou `M:System.Xml.Linq.XElement.Element`.  
+ Tento příklad používá `M:System.Xml.Linq.XElement.Element` metodu, která byla představena v tématu [Postupy: načtení jednoho podřízeného prvku (LINQ to XML) (Visual Basic)](how-to-retrieve-a-single-child-element-linq-to-xml.md). Používá také přetypování k načtení hodnot prvků, které jsou vráceny `M:System.Xml.Linq.XElement.Element` metodou.  
   
  Tento příklad vytvoří následující výstup:  
   
@@ -52,6 +52,6 @@ Lawnmower:1
 Baby Monitor:2  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Projekce a transformace (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)
+- [Projekce a transformace (LINQ to XML) (Visual Basic)](projections-and-transformations-linq-to-xml.md)

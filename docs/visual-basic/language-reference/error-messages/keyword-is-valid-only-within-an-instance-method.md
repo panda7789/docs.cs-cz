@@ -7,24 +7,24 @@ f1_keywords:
 helpviewer_keywords:
 - BC30043
 ms.assetid: 7973aa82-a681-440c-9bca-242627d7ba86
-ms.openlocfilehash: 8ec1e704815ee10cb98d8cc20fb5982ee4b92832
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 537689405ea30bdd7c075320eba58a8723a93cdb
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64662016"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397399"
 ---
-# <a name="keyword-is-valid-only-within-an-instance-method"></a>"\<– klíčové slovo >' je platný pouze v rámci metody instance
-`Me`, `MyClass`, A `MyBase` klíčová slova označování instancí určité třídy. Nelze je použít uvnitř sdílené `Function` nebo `Sub` postup.  
+# <a name="keyword-is-valid-only-within-an-instance-method"></a>Klíčové slovo '\<keyword>' je platné pouze v rámci metody instance.
+`Me` `MyClass` `MyBase` Klíčová slova, a odkazují na konkrétní instance třídy. Nemůžete je použít uvnitř sdíleného `Function` nebo `Sub` procedury.  
   
  **ID chyby:** BC30043  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-- Odebrat klíčové slovo z procedury nebo odebrat `Shared` – klíčové slovo z deklarace procedury.  
+- Odeberte klíčové slovo z procedury nebo odeberte `Shared` klíčové slovo z deklarace procedury.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Přiřazení objektové proměnné](../../../visual-basic/programming-guide/language-features/variables/object-variable-assignment.md)
-- [Me, My, MyBase a MyClass](../../../visual-basic/programming-guide/program-structure/me-my-mybase-and-myclass.md)
-- [Základní informace o dědičnosti](../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)
+- [Přiřazení proměnné objektu](../../programming-guide/language-features/variables/object-variable-assignment.md)
+- [Me, My, MyBase a MyClass](../../programming-guide/program-structure/me-my-mybase-and-myclass.md)
+- [Základní informace o dědičnosti](../../programming-guide/language-features/objects-and-classes/inheritance-basics.md)

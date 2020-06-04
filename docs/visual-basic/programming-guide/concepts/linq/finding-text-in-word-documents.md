@@ -2,12 +2,12 @@
 title: Vyhledání textu v dokumentech Wordu
 ms.date: 07/20/2015
 ms.assetid: eea9819b-a78a-4552-bf13-8837fc0e7a37
-ms.openlocfilehash: 83941de815968fce471b7366ed7c5114dae0d63c
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 546703e3dbead64fd10c04fe52cb1dd98ba53049
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75347528"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84398087"
 ---
 # <a name="finding-text-in-word-documents-visual-basic"></a>Hledání textu v dokumentech aplikace Word (Visual Basic)
 
@@ -17,9 +17,9 @@ Toto téma rozšiřuje předchozí dotazy, aby bylo možné něco využít: vyhl
 
 Tento příklad zpracovává dokument WordprocessingML, aby bylo možné najít všechny výskyty určitého textu v dokumentu. K tomu použijeme dotaz, který najde řetězec "Hello". Tento příklad sestaví na předchozích příkladech v tomto kurzu. Nový dotaz se zavolá v komentářích v následujícím kódu.
 
-Pokyny k vytvoření zdrojového dokumentu pro tento příklad najdete v tématu [vytvoření zdrojového dokumentu XML pro Office Open (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).
+Pokyny k vytvoření zdrojového dokumentu pro tento příklad najdete v tématu [vytvoření zdrojového dokumentu XML pro Office Open (Visual Basic)](creating-the-source-office-open-xml-document.md).
 
-Tento příklad používá třídy nalezené v sestavení WindowsBase. Používá typy v oboru názvů <xref:System.IO.Packaging?displayProperty=nameWithType>.
+Tento příklad používá třídy nalezené v sestavení WindowsBase. Používá typy v <xref:System.IO.Packaging?displayProperty=nameWithType> oboru názvů.
 
 ```vb
 Imports <xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
@@ -302,16 +302,16 @@ StyleName:Code ><
 
 Tento příklad je samozřejmě možné rozšířit různými způsoby. Například můžeme použít regulární výrazy pro hledání textu, můžeme iterovat všemi soubory aplikace Word v konkrétním adresáři a tak dále.
 
-Všimněte si, že v tomto příkladu se provádí přibližně i když byl zapsaný jako jeden dotaz. Vzhledem k tomu, že každý dotaz je implementován v opožděném, odvoditelné podobě, každý dotaz nepřinese výsledky, dokud se dotaz neopakuje. Další informace o provádění a opožděném vyhodnocení naleznete [v tématu Odložené provádění a opožděné hodnocení v LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md).
+Všimněte si, že v tomto příkladu se provádí přibližně i když byl zapsaný jako jeden dotaz. Vzhledem k tomu, že každý dotaz je implementován v opožděném, odvoditelné podobě, každý dotaz nepřinese výsledky, dokud se dotaz neopakuje. Další informace o provádění a opožděném vyhodnocení naleznete [v tématu Odložené provádění a opožděné hodnocení v LINQ to XML (Visual Basic)](deferred-execution-and-lazy-evaluation-in-linq-to-xml.md).
 
 ## <a name="next-steps"></a>Další kroky
 
 V další části najdete další informace o WordprocessingML dokumentech:
 
-- [Podrobnosti dokumentů Office Open XML WordprocessingML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md)
+- [Podrobnosti dokumentů Office Open XML WordprocessingML (Visual Basic)](details-of-office-open-xml-wordprocessingml-documents.md)
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Kurz: manipulace s obsahem v dokumentu WordprocessingML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
-- [Refaktoring pomocí funkce Pure (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-a-pure-function.md)
-- [Odložené provádění a opožděné vyhodnocení v LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)
+- [Kurz: manipulace s obsahem v dokumentu WordprocessingML (Visual Basic)](tutorial-manipulating-content-in-a-wordprocessingml-document.md)
+- [Refaktoring pomocí funkce Pure (Visual Basic)](refactoring-using-a-pure-function.md)
+- [Odložené provádění a opožděné vyhodnocení v LINQ to XML (Visual Basic)](deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)
