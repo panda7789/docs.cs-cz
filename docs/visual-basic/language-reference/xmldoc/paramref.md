@@ -5,14 +5,14 @@ helpviewer_keywords:
 - paramref XML tag
 - <paramref> XML tag
 ms.assetid: 8979d53b-beb1-41b7-b41e-6bbea1c17a03
-ms.openlocfilehash: 78227a17584271f91283198e95f5aa389b3ef14b
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 3ca08016d3cef0c44e4f3c0bd0d017628eda606d
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74352284"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84400044"
 ---
-# <a name="paramref-visual-basic"></a>\<paramref > (Visual Basic)
+# <a name="paramref-visual-basic"></a>\<paramref> (Visual Basic)
 Zformátuje slovo jako parametr.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -26,15 +26,15 @@ Zformátuje slovo jako parametr.
  Název parametru, na který se má odkazovat Název uzavřete do uvozovek ("").  
   
 ## <a name="remarks"></a>Poznámky  
- Značka `<paramref>` poskytuje způsob, jak označit, že slovo je parametrem. Soubor XML může být zpracován pro naformátování tohoto parametru nějakým odlišným způsobem.  
+ `<paramref>`Značka poskytuje způsob, jak označit, že je slovo parametr. Soubor XML může být zpracován pro naformátování tohoto parametru nějakým odlišným způsobem.  
   
- Zkompilujte s [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) a zpracujte komentáře k dokumentaci do souboru.  
+ Zkompilujte s [-doc](../../reference/command-line-compiler/doc.md) a zpracujte komentáře k dokumentaci do souboru.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad používá značku `<paramref>` pro odkazování na parametr `id`.  
+ V tomto příkladu se používá `<paramref>` značka pro odkaz na `id` parametr.  
   
  [!code-vb[VbVbcnXmlDocComments#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#6)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Značky pro komentáře XML](../../../visual-basic/language-reference/xmldoc/index.md)
+- [Značky pro komentáře XML](index.md)

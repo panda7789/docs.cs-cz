@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Visual Basic code, procedures
 - arguments [Visual Basic], modifiable
 ms.assetid: 87b2df69-e1f7-4657-9caf-b3f48d693428
-ms.openlocfilehash: 989795ee2cdd3a78b71bad4d95cf9b384c2719bd
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 733f92cc2cdaa6e923c57649774ceb64de172c18
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74341380"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84403340"
 ---
 # <a name="differences-between-modifiable-and-nonmodifiable-arguments-visual-basic"></a>Rozdíly mezi upravitelnými a neupravitelnými argumenty (Visual Basic)
 Při volání procedury obvykle předáte jeden nebo více argumentů. Každý argument odpovídá základnímu programovacímu prvku. Základní prvky i samotné argumenty mohou být buď upravitelné, nebo neupravitelné.  
@@ -31,13 +31,13 @@ Při volání procedury obvykle předáte jeden nebo více argumentů. Každý a
 |Prvky pole|Výrazy (i když jejich prvky lze upravovat)|  
   
 ## <a name="modifiable-and-nonmodifiable-arguments"></a>Upravitelné a neupravitelné argumenty  
- *Upravitelný argument* je jeden s upravitelným podkladovým elementem. Volající kód může uložit novou hodnotu kdykoli, a Pokud předáte argument [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md), kód v proceduře může také upravit podkladový prvek v kódu volajícího.  
+ *Upravitelný argument* je jeden s upravitelným podkladovým elementem. Volající kód může uložit novou hodnotu kdykoli, a Pokud předáte argument [ByRef](../../../language-reference/modifiers/byref.md), kód v proceduře může také upravit podkladový prvek v kódu volajícího.  
   
- *Neupravitelný argument* má buď neupravitelný základní prvek, nebo je předán jako [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md). Procedura nemůže změnit podkladový prvek v kódu volání, i když se jedná o upravitelný prvek. Pokud se jedná o neupravitelný prvek, samotný volající kód ho nemůže změnit.  
+ *Neupravitelný argument* má buď neupravitelný základní prvek, nebo je předán jako [ByVal](../../../language-reference/modifiers/byval.md). Procedura nemůže změnit podkladový prvek v kódu volání, i když se jedná o upravitelný prvek. Pokud se jedná o neupravitelný prvek, samotný volající kód ho nemůže změnit.  
   
  Volaná procedura může změnit svou místní kopii neupravitelného argumentu, ale tato změna nemá vliv na základní prvek v kódu volajícího.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Procedury](./index.md)
 - [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)
@@ -48,4 +48,4 @@ Při volání procedury obvykle předáte jeden nebo více argumentů. Každý a
 - [Postupy: Ochrana argumentu procedury před změnami hodnoty](./how-to-protect-a-procedure-argument-against-value-changes.md)
 - [Postupy: Vynucení předání argumentu podle hodnoty](./how-to-force-an-argument-to-be-passed-by-value.md)
 - [Předávání argumentů podle pozice a názvu](./passing-arguments-by-position-and-by-name.md)
-- [Typy hodnot a odkazové typy](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)
+- [Typy hodnot a typy odkazu](../data-types/value-types-and-reference-types.md)

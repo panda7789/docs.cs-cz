@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: práce se slovníky pomocí LINQ to XML'
+title: 'Postupy: Práce se slovníky pomocí LINQ to XML'
 ms.date: 07/20/2015
 ms.assetid: 6cb3f969-1986-414a-b850-87418712edea
-ms.openlocfilehash: 12327be3c9d32d34866691b156f58fd1e8e40240
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 14c9c35693f323292849f01af79ae81f92921611
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74332366"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397671"
 ---
 # <a name="how-to-work-with-dictionaries-using-linq-to-xml-visual-basic"></a>Postupy: práce se slovníky pomocí LINQ to XML (Visual Basic)
 Je často vhodné převést odrůdy datových struktur do XML a vrátit se do jiných datových struktur. Toto téma ukazuje konkrétní implementaci tohoto obecného přístupu převodem <xref:System.Collections.Generic.Dictionary%602> na XML a zpět.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad používá literály XML a dotaz ve vloženém výrazu. Dotaz projektuje nové objekty <xref:System.Xml.Linq.XElement>, které se pak stanou novým obsahem pro objekt `Root` <xref:System.Xml.Linq.XElement>.  
+ Tento příklad používá literály XML a dotaz ve vloženém výrazu. Dotaz projekty nové <xref:System.Xml.Linq.XElement> objekty, které se následně stanou novým obsahem `Root` <xref:System.Xml.Linq.XElement> objektu.  
   
 ```vb  
 Dim dict As Dictionary(Of String, String) = New Dictionary(Of String, String)()  
@@ -29,7 +29,7 @@ Dim root As XElement = _
 Console.WriteLine(root)  
 ```  
   
- Tento kód generuje následující výstup:  
+ Výsledkem tohoto kódu je následující výstup:  
   
 ```xml  
           <Root>  
@@ -61,7 +61,7 @@ For Each str As String In dict.Keys
 Next  
 ```  
   
- Tento kód generuje následující výstup:  
+ Výsledkem tohoto kódu je následující výstup:  
   
 ```console  
 Child1:Value1  
@@ -70,6 +70,6 @@ Child3:Value3
 Child4:Value4  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Projekce a transformace (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)
+- [Projekce a transformace (LINQ to XML) (Visual Basic)](projections-and-transformations-linq-to-xml.md)
