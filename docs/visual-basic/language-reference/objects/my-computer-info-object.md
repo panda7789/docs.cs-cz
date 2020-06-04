@@ -4,26 +4,26 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - My.Computer.Info object
 ms.assetid: 2eb2aa5f-303d-426c-918d-989c8b7b08d0
-ms.openlocfilehash: 0763a97927718eff6fcc79439597f2d4e6f07808
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 9a71cc59697e85fb70b89a53072f8e3820463018
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74347214"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84415294"
 ---
 # <a name="mycomputerinfo-object"></a>My.Computer.Info – objekt
 Poskytuje vlastnosti pro získání informací o paměti počítače, načtených sestavení, názvu a operačním systému.  
   
 ## <a name="remarks"></a>Poznámky  
- Informace o vlastnostech objektu `My.Computer.Info` naleznete v tématu <xref:Microsoft.VisualBasic.Devices.ComputerInfo>.  
+ Informace o vlastnostech `My.Computer.Info` objektu naleznete v tématu <xref:Microsoft.VisualBasic.Devices.ComputerInfo> .  
   
 ## <a name="requirements"></a>Požadavky  
- **Obor názvů:** <xref:Microsoft.VisualBasic.Devices>  
+ **Obor názvů:**<xref:Microsoft.VisualBasic.Devices>  
   
- **Třída:** <xref:Microsoft.VisualBasic.Devices.ComputerInfo>  
+ **Třída:**<xref:Microsoft.VisualBasic.Devices.ComputerInfo>  
   
  **Sestavení:** Knihovna Visual Basic runtime (v souboru Microsoft. VisualBasic. dll)  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Objekt My.Computer](../../../visual-basic/language-reference/objects/my-computer-object.md)
+- [My.Computer – objekt](my-computer-object.md)

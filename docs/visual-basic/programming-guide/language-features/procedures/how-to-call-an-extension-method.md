@@ -5,18 +5,18 @@ helpviewer_keywords:
 - calling extension methods [Visual Basic]
 - extension methods [Visual Basic]
 ms.assetid: df07750f-40f4-4c07-a79e-1113a27cfbea
-ms.openlocfilehash: a19705a8f90833d48869df26a18d19b0ad1488e0
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 54419c99ae08c9ca2e3cfa86993dc99bc02bbb64
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74340395"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84388657"
 ---
 # <a name="how-to-call-an-extension-method-visual-basic"></a>Postupy: Volání metody rozšíření (Visual Basic)
 
 Metody rozšíření umožňují přidat metody do existující třídy. Poté, co je metoda rozšíření deklarována a uvedena do rozsahu, lze ji volat jako metodu instance typu, který rozšiřuje. Další informace o tom, jak napsat rozšiřující metodu, naleznete v tématu [How to: Write a Extension](./how-to-write-an-extension-method.md).
 
- Následující pokyny odkazují na metodu rozšíření `PrintAndPunctuate`, která zobrazí instanci řetězce, která ji vyvolá, a za druhým parametrem je odeslána jakákoli hodnota, `punc`.
+ Následující pokyny odkazují na metodu rozšíření `PrintAndPunctuate` , která zobrazí instanci řetězce, která ji vyvolá, a za druhým parametrem je odeslána jakákoli hodnota `punc` .
 
 ```vb
 Imports System.Runtime.CompilerServices
@@ -35,19 +35,19 @@ Metoda musí být v oboru, pokud je volána.
 
 ### <a name="to-call-an-extension-method"></a>Volání metody rozšíření
 
-1. Deklarujte proměnnou, která má datový typ prvního parametru metody rozšíření. Pro `PrintAndPunctuate`potřebujete <xref:System.String> proměnnou:
+1. Deklarujte proměnnou, která má datový typ prvního parametru metody rozšíření. Pro `PrintAndPunctuate` potřebujete <xref:System.String> proměnnou:
 
     ```vb
     Dim example = "Ready"
     ```
 
-2. Tato proměnná vyvolá metodu rozšíření a její hodnota je svázána s prvním parametrem `aString`. Následující volání příkazu zobrazí `Ready?`.
+2. Tato proměnná vyvolá metodu rozšíření a její hodnota je svázána s prvním parametrem `aString` . Zobrazí se následující volání příkazu `Ready?` .
 
     ```vb
     example.PrintAndPunctuate("?")
     ```
 
-     Všimněte si, že volání této metody rozšíření vypadá stejně jako volání libovolné metody instance <xref:System.String>, která vyžaduje jeden parametr:
+     Všimněte si, že volání této metody rozšíření vypadá stejně jako volání jakékoli <xref:System.String> metody instance, která vyžaduje jeden parametr:
 
     ```vb
     example.EndsWith("dy")
@@ -61,7 +61,7 @@ Metoda musí být v oboru, pokud je volána.
     example2.PrintAndPunctuate("!!!")
     ```
 
-     Výsledek tohoto času: `or not!!!`.
+     Výsledek tohoto času je: `or not!!!` .
 
 ## <a name="example"></a>Příklad
  Následující kód je kompletní příklad vytváření a použití jednoduché metody rozšíření.
@@ -95,8 +95,8 @@ End Module
 ' Goodbye?
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Postupy: Zápis rozšiřující metody](./how-to-write-an-extension-method.md)
-- [Rozšiřující metody](./extension-methods.md)
-- [Obor v Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)
+- [Postupy: Zápis metody rozšíření](./how-to-write-an-extension-method.md)
+- [Metody rozšíření](./extension-methods.md)
+- [Rozsah v jazyce Visual Basic](../declared-elements/scope.md)

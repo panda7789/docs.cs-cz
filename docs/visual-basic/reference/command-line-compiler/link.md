@@ -11,12 +11,12 @@ helpviewer_keywords:
 - -l compiler option [Visual Basic]
 - /l compiler option [Visual Basic]
 ms.assetid: 1885f24a-86f5-486c-a064-9fb7e455ccec
-ms.openlocfilehash: c15f55f3a3c2b4e404767ddf96e258bc1e9771d7
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 6082806591d398aa8b16b44e769a3f8078ce62d9
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75716758"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84387735"
 ---
 # <a name="-link-visual-basic"></a>-Link (Visual Basic)
 Způsobí, že kompilátor zpřístupní informace o typu COM v zadaných sestaveních pro projekt, který právě kompilujete.  
@@ -27,7 +27,7 @@ Způsobí, že kompilátor zpřístupní informace o typu COM v zadaných sestav
 -link:fileList  
 ```
 
-– nebo –  
+nebo  
 
 ```console
 -l:fileList  
@@ -35,21 +35,21 @@ Způsobí, že kompilátor zpřístupní informace o typu COM v zadaných sestav
   
 ## <a name="arguments"></a>Argumenty  
   
-|Označení|Definice|  
+|Pojem|Definice|  
 |---|---|  
 |`fileList`|Povinná hodnota. Seznam názvů souborů sestavení oddělených čárkami. Pokud název souboru obsahuje mezeru, uzavřete název do uvozovek.|  
   
 ## <a name="remarks"></a>Poznámky  
- `-link` Možnost umožňuje nasadit aplikaci, která obsahuje informace o vloženém typu. Aplikace pak může použít typy v sestavení modulu runtime, které implementuje vložené informace o typu bez nutnosti odkazování na sestavení modulu runtime. Pokud jsou publikovány různé verze sestavení modulu runtime, aplikace, která obsahuje informace o vloženém typu, může pracovat s různými verzemi, aniž by bylo nutné je znovu zkompilovat. Příklad naleznete v tématu [Návod: Vložení typů ze spravovaných sestavení](../../../standard/assembly/embed-types-visual-studio.md).  
+ `-link`Možnost umožňuje nasadit aplikaci, která obsahuje informace o vloženém typu. Aplikace pak může použít typy v sestavení modulu runtime, které implementuje vložené informace o typu bez nutnosti odkazování na sestavení modulu runtime. Pokud jsou publikovány různé verze sestavení modulu runtime, aplikace, která obsahuje informace o vloženém typu, může pracovat s různými verzemi, aniž by bylo nutné je znovu zkompilovat. Příklad naleznete v tématu [Návod: Vložení typů ze spravovaných sestavení](../../../standard/assembly/embed-types-visual-studio.md).  
   
- Použití `-link` možnosti je zvlášť užitečné, když pracujete se zprostředkovatelem komunikace s objekty com. Můžete vložit typy modelu COM, aby již aplikace nevyžadovala primární definiční sestavení (PIA) v cílovém počítači. `-link` Možnost instruuje kompilátor, aby vložil informace o typu modelu COM z odkazovaného definičního sestavení do výsledného zkompilovaného kódu. Typ COM je identifikovaný hodnotou CLSID (GUID). V důsledku toho může být aplikace spuštěna na cílovém počítači, který má nainstalované stejné typy COM se stejnými hodnotami CLSID. Dobrým příkladem jsou aplikace, které automatizují systém Microsoft Office. Vzhledem k tomu, že aplikace, jako je například Office, obvykle udržují stejnou hodnotu CLSID napříč různými verzemi, může vaše aplikace používat odkazované typy COM, pokud je v cílovém počítači nainstalováno .NET Framework 4 nebo novější a vaše aplikace používá metody, vlastnosti nebo události, které jsou zahrnuty v odkazovaných typech COM.  
+ Použití `-link` Možnosti je zvlášť užitečné, když pracujete se zprostředkovatelem komunikace s objekty com. Můžete vložit typy modelu COM, aby již aplikace nevyžadovala primární definiční sestavení (PIA) v cílovém počítači. `-link`Možnost instruuje kompilátor, aby vložil informace o typu modelu COM z odkazovaného definičního sestavení do výsledného zkompilovaného kódu. Typ COM je identifikovaný hodnotou CLSID (GUID). V důsledku toho může být aplikace spuštěna na cílovém počítači, který má nainstalované stejné typy COM se stejnými hodnotami CLSID. Dobrým příkladem jsou aplikace, které automatizují systém Microsoft Office. Vzhledem k tomu, že aplikace, jako je například Office, obvykle udržují stejnou hodnotu CLSID napříč různými verzemi, může vaše aplikace používat odkazované typy COM, pokud je v cílovém počítači nainstalováno .NET Framework 4 nebo novější a vaše aplikace používá metody, vlastnosti nebo události, které jsou zahrnuty v odkazovaných typech COM.  
   
- `-link` Možnost vloží pouze rozhraní, struktury a delegáty. Vkládání tříd modelu COM není podporováno.  
+ `-link`Možnost vloží pouze rozhraní, struktury a delegáty. Vkládání tříd modelu COM není podporováno.  
   
 > [!NOTE]
 > Při vytváření instance vloženého typu modelu COM v kódu, je nutné vytvořit instanci pomocí příslušného rozhraní. Při pokusu o vytvoření instance vloženého typu modelu COM pomocí třídy coclass dojde k chybě.  
   
- Chcete-li `-link` nastavit možnost v aplikaci Visual Studio, přidejte odkaz na sestavení a `Embed Interop Types` nastavte vlastnost na **hodnotu true**. Výchozí hodnota `Embed Interop Types` vlastnosti je **false**.  
+ Chcete-li nastavit `-link` možnost v aplikaci Visual Studio, přidejte odkaz na sestavení a nastavte `Embed Interop Types` vlastnost na **hodnotu true**. Výchozí hodnota `Embed Interop Types` vlastnosti je **false**.  
   
  Pokud propojíte se sestavením COM (sestavení A), které odkazuje na jiné sestavení COM (sestavení B), musíte také propojit se sestavením B, pokud je splněna jedna z následujících podmínek:  
   
@@ -59,9 +59,9 @@ Způsobí, že kompilátor zpřístupní informace o typu COM v zadaných sestav
   
  Pomocí [-LIBPATH](libpath.md) Určete adresář, ve kterém je umístěn jeden nebo více odkazů na sestavení.  
   
- Podobně jako u možnosti kompilátoru [-reference](reference.md) používá `-link` možnost kompilátoru soubor odpovědí Vbc. rsp, který odkazuje na často používané .NET Framework sestavení. Pokud nechcete, aby kompilátor používal soubor Vbc. rsp, použijte možnost kompilátoru [--config](noconfig.md) .  
+ Podobně jako u možnosti kompilátoru [-reference](reference.md) `-link` používá možnost kompilátoru soubor odpovědí Vbc. rsp, který odkazuje na často používané .NET Framework sestavení. Pokud nechcete, aby kompilátor používal soubor Vbc. rsp, použijte možnost kompilátoru [--config](noconfig.md) .  
   
- Krátká forma `-link` je `-l`.  
+ Krátká forma `-link` je `-l` .  
   
 ## <a name="generics-and-embedded-types"></a>Obecné typy a vložené typy  
  V následujících částech jsou popsána omezení používání obecných typů v aplikacích, které vkládají typy spolupráce.  
@@ -78,12 +78,12 @@ Způsobí, že kompilátor zpřístupní informace o typu COM v zadaných sestav
 [!code-vb[VbLinkCompiler#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vblinkcompiler/vb/utility.vb#3)]  
 [!code-vb[VbLinkCompiler#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vblinkcompiler/vb/utility.vb#4)]  
   
- V následujícím příkladu kód klienta může zavolat metodu, která vrátí <xref:System.Collections.IList> obecné rozhraní bez chyby.  
+ V následujícím příkladu kód klienta může zavolat metodu, která vrátí <xref:System.Collections.IList> Obecné rozhraní bez chyby.  
   
  [!code-vb[VbLinkCompiler#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vblinkcompiler/vb/module1.vb#5)]  
   
 ## <a name="example"></a>Příklad  
- Následující příkazový řádek zkompiluje zdrojový `OfficeApp.vb` soubor a referenční sestavení z `COMData1.dll` a `COMData2.dll` do. `OfficeApp.exe`  
+ Následující příkazový řádek zkompiluje zdrojový soubor `OfficeApp.vb` a referenční sestavení z `COMData1.dll` a `COMData2.dll` do `OfficeApp.exe` .  
   
 ```console  
 vbc -link:COMData1.dll,COMData2.dll -out:OfficeApp.exe OfficeApp.vb  
@@ -95,6 +95,6 @@ vbc -link:COMData1.dll,COMData2.dll -out:OfficeApp.exe OfficeApp.vb
 - [Návod: Vložení typů ze spravovaných sestavení](../../../standard/assembly/embed-types-visual-studio.md)
 - [-Reference (Visual Basic)](reference.md)
 - [-noconfig](noconfig.md)
-- [– LIBPATH](libpath.md)
+- [-libpath](libpath.md)
 - [Příkazové řádky ukázkové kompilace](sample-compilation-command-lines.md)
-- [Představení zprostředkovatele komunikace s objekty COM](../../../visual-basic/programming-guide/com-interop/introduction-to-com-interop.md)
+- [Představení zprostředkovatele komunikace s objekty COM](../../programming-guide/com-interop/introduction-to-com-interop.md)

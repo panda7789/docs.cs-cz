@@ -4,20 +4,20 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - constants [Visual Basic]
 ms.assetid: 29016fe8-78b3-4dc8-90b8-1cfec2fa8ac9
-ms.openlocfilehash: 9ccddfe44757c76992d641094e21ec8c2110ef83
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: f45cb12c6ef0f90b9c90190f30ce8600fec80947
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74338345"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84414515"
 ---
 # <a name="constants-overview-visual-basic"></a>Přehled konstant (Visual Basic)
 Konstanta je smysluplný název, který přebírá místo čísla nebo řetězce, který se nemění. Konstanty ukládají hodnoty, které jako název implikují, zůstávají stejné během provádění aplikace. Můžete významně zlepšit čitelnost kódu a usnadnit jeho údržbu pomocí konstant. Používejte je v kódu, který obsahuje hodnoty, které se znovu objeví, nebo které závisí na určitých číslech, která se obtížně pamatují nebo nemají žádný zjevné význam.  
   
 ## <a name="how-to-create-and-use-constants"></a>Jak vytvořit a použít konstanty  
- Visual Basic obsahuje řadu předdefinovaných konstant, hlavně pomocí tisku a zobrazení. Můžete také vytvořit vlastní konstanty pomocí příkazu `Const` a použít stejné pokyny jako pro vytvoření názvu proměnné. Pokud je `Option Strict` `On`, musíte explicitně deklarovat typ konstanty.  
+ Visual Basic obsahuje řadu předdefinovaných konstant, hlavně pomocí tisku a zobrazení. Můžete také vytvořit vlastní konstanty pomocí `Const` příkazu, přičemž použijte stejné pokyny jako pro vytvoření názvu proměnné. Pokud `Option Strict` je `On` , musíte explicitně deklarovat typ konstanty.  
   
- Rozsah konstanty, což je sada veškerého kódu, který se na něj může odkazovat bez kvalifikovaného názvu, je stejný jako Proměnná deklarovaná ve stejném umístění. Chcete-li vytvořit konstantu, která existuje v rámci rozsahu konkrétní procedury, deklarujte ji uvnitř tohoto postupu. Chcete-li vytvořit konstantu, která je k dispozici v celé aplikaci, deklarujte ji pomocí klíčového slova `Public` v oddílu deklarace třídy.  
+ Rozsah konstanty, což je sada veškerého kódu, který se na něj může odkazovat bez kvalifikovaného názvu, je stejný jako Proměnná deklarovaná ve stejném umístění. Chcete-li vytvořit konstantu, která existuje v rámci rozsahu konkrétní procedury, deklarujte ji uvnitř tohoto postupu. Chcete-li vytvořit konstantu, která je k dispozici v celé aplikaci, deklarujte ji pomocí `Public` klíčového slova v oddílu deklarace třídy.  
   
 > [!NOTE]
 > I když konstanty trochu připomínají proměnné, nemůžete je upravit ani přiřadit k nim nové hodnoty, jako můžete proměnné.  
@@ -29,22 +29,22 @@ Konstanta je smysluplný název, který přebírá místo čísla nebo řetězce
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   
-|Definice|Termín|  
+|Definice|Pojem|  
 |---|---|  
-|[Postupy: Deklarace konstanty](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-a-constant.md)|Vysvětluje, jak použít příkaz `Const` k deklaraci konstanty a nastavení její hodnoty; deklarováním konstanty přiřadíte k hodnotě smysluplný název.|  
-|[Uživatelem definované konstanty](../../../../visual-basic/programming-guide/language-features/constants-enums/user-defined-constants.md)|Popisuje, jak vytvořit vlastní konstanty, včetně informací o určení rozsahu a způsobu zamezení cyklického odkazu.|  
-|[Datové typy konstanty a literálu](../../../../visual-basic/programming-guide/language-features/constants-enums/constant-and-literal-data-types.md)|Poskytuje informace o způsobu, jakým kompilátor Visual Basic inicializuje konstanty, když je `Option Explicit` vypnuto.|  
-|[Postupy: Seskupení souvisejících hodnot konstant](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-group-related-constant-values-together.md)|Ukazuje, jak seskupit konstantní hodnoty, které jsou v relaci.|  
+|[Postupy: Deklarace konstanty](how-to-declare-a-constant.md)|Vysvětluje, jak použít `Const` příkaz k deklaraci konstanty a nastavení její hodnoty; deklarováním konstanty přiřadíte smysluplný název k hodnotě.|  
+|[Uživatelem definované konstanty](user-defined-constants.md)|Popisuje, jak vytvořit vlastní konstanty, včetně informací o určení rozsahu a způsobu zamezení cyklického odkazu.|  
+|[Datové typy konstanty a literálu](constant-and-literal-data-types.md)|Poskytuje informace o tom, jak kompilátor Visual Basic inicializuje konstanty, když je vypnutý `Option Explicit` .|  
+|[Postupy: Seskupení souvisejících hodnot konstant](how-to-group-related-constant-values-together.md)|Ukazuje, jak seskupit konstantní hodnoty, které jsou v relaci.|  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
   
-|Definice|Termín|  
+|Definice|Pojem|  
 |---|---|  
-|[Konstanty a výčty](../../../../visual-basic/language-reference/constants-and-enumerations.md)|Zobrazí konstanty předdefinované Visual Basic.|  
-|[Příkaz Const](../../../../visual-basic/language-reference/statements/const-statement.md)|Popisuje příkaz `Const` a jeho použití.|  
-|[Příkaz Option Strict](../../../../visual-basic/language-reference/statements/option-strict-statement.md)|Popisuje příkaz `Option Strict` a jeho použití.|  
+|[Konstanty a výčty](../../../language-reference/constants-and-enumerations.md)|Zobrazí konstanty předdefinované Visual Basic.|  
+|[Const – příkaz](../../../language-reference/statements/const-statement.md)|Popisuje `Const` příkaz a jeho použití.|  
+|[Option Strict – příkaz](../../../language-reference/statements/option-strict-statement.md)|Popisuje `Option Strict` příkaz a jeho použití.|  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Přehled výčtů](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-overview.md)
-- [Postupy: Inicializace proměnné pole v Visual Basic](../../../../visual-basic/programming-guide/language-features/arrays/how-to-initialize-an-array-variable.md)
+- [Přehled výčtů](enumerations-overview.md)
+- [Postupy: Inicializace proměnné pole v jazyce Visual Basic](../arrays/how-to-initialize-an-array-variable.md)

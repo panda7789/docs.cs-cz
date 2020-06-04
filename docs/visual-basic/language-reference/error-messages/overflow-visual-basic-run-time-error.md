@@ -4,27 +4,27 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrERRID_Overflow
 ms.assetid: c6a23279-3086-412a-bcff-ff8ed2cb8c6f
-ms.openlocfilehash: 63223a815e1c4ff8d4e0afbb6c732fff90aad465
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5606ae8188c12142800adef46819791b732ff73c
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61946546"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84387267"
 ---
 # <a name="overflow-visual-basic-run-time-error"></a>Přetečení (chyba za běhu jazyka Visual Basic)
-Přetečení výsledky při pokusu o přiřazení, která překračuje omezení cíle tohoto přiřazení.  
+Při pokusu o přiřazení, které překračuje limity cíle přiřazení, dojde k přetečení.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1. Ujistěte se, že výsledky typu přiřazení, výpočty a data převody nejsou příliš velké a nelze je reprezentovat v rozsahu povolená pro daný typ hodnoty proměnných a přiřaďte hodnotu k proměnné typu, který může obsahovat větší rozsah hodnot , pokud je to nutné.  
+1. Ujistěte se, že výsledky přiřazení, výpočtů a převodů datových typů nejsou příliš velké, aby je bylo možné znázornit v rámci rozsahu proměnných povolených pro daný typ hodnoty, a hodnotu přiřaďte proměnné typu, který může v případě potřeby obsahovat větší rozsah hodnot.  
   
-2. Zajistěte, aby přiřazení k vlastnosti podle rozsahu vlastnost, ke které se provedou.  
+2. Zajistěte, aby přiřazení vlastností odpovídaly rozsahu vlastnosti, na kterou jsou vytvořeny.  
   
-3. Ujistěte se, že používá ve výpočtech, které jsou přiřazeny do celých čísel čísla nemají výsledky větší než celých čísel.  
+3. Ujistěte se, že čísla použitá ve výpočtech, která jsou převedena do celých čísel, nemají výsledky větší než celá čísla.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Int32.MaxValue?displayProperty=nameWithType>
 - <xref:System.Double.MaxValue?displayProperty=nameWithType>
-- [Datové typy](../../../visual-basic/language-reference/data-types/index.md)
-- [Typy chyb](../../../visual-basic/programming-guide/language-features/error-types.md)
+- [Datové typy](../data-types/index.md)
+- [Typy chyb](../../programming-guide/language-features/error-types.md)

@@ -81,12 +81,12 @@ helpviewer_keywords:
 - rounding numbers [Visual Basic], banker's rounding
 - type conversion [Visual Basic], Visual Basic vs. .NET Framework
 ms.assetid: d9d8d165-f967-44ff-a6cd-598e4740a99e
-ms.openlocfilehash: 3924da6ccbfea00668370f2fbcf4baf289be80db
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 5c0cfae01da02222d0827e81ec1ed35ce353ead1
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74349960"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84415372"
 ---
 # <a name="type-conversion-functions-visual-basic"></a>Funkce pro převod typů (Visual Basic)
 
@@ -113,41 +113,41 @@ CULng(expression)
 CUShort(expression)
 ```
 
-## <a name="part"></a>Částí
+## <a name="part"></a>Část
 
 `expression`  
-Požadováno. Libovolný výraz zdrojového datového typu.
+Povinná hodnota. Libovolný výraz zdrojového datového typu.
 
 ## <a name="return-value-data-type"></a>Datový typ vrácené hodnoty
 
 Název funkce určuje datový typ hodnoty, kterou vrátí, jak je znázorněno v následující tabulce.
 
-|Název funkce|Návratový typ dat|Rozsah pro argument `expression`|
+|Název funkce|Návratový typ dat|Rozsah `expression` argumentu|
 |-------------------|----------------------|-------------------------------------|
-|`CBool`|[Datový typ Boolean](../../../visual-basic/language-reference/data-types/boolean-data-type.md)|Libovolný platný `Char` nebo `String` nebo číselný výraz.|
-|`CByte`|[Datový typ Byte](../../../visual-basic/language-reference/data-types/byte-data-type.md)|<xref:System.Byte.MinValue?displayProperty=nameWithType> (0) až <xref:System.Byte.MaxValue?displayProperty=nameWithType> (255) (bez znaménka); zlomkové části jsou zaokrouhleny. <sup>1</sup><br/><br/>Počínaje Visual Basic 15,8 Visual Basic optimalizuje výkon plovoucího bodu na převod bajtů pomocí funkce `CByte`; Další informace najdete v části [poznámky](#remarks) . Příklad najdete v části s [Příklady CInt](#cint-example) .|
-|`CChar`|[Datový typ Char](../../../visual-basic/language-reference/data-types/char-data-type.md)|Libovolný platný `Char` nebo výraz `String`; je převeden pouze první znak `String`; hodnota může být 0 až 65535 (bez znaménka).|
-|`CDate`|[Datový typ Date](../../../visual-basic/language-reference/data-types/date-data-type.md)|Jakákoli platná reprezentace data a času.|
-|`CDbl`|[Datový typ Double](../../../visual-basic/language-reference/data-types/double-data-type.md)|-1.79769313486231570 e + 308 do-4.94065645841246544 E-324 pro záporné hodnoty; 4.94065645841246544 e-324 až 1.79769313486231570 E + 308 pro kladné hodnoty.|
-|`CDec`|[Datový typ Decimal](../../../visual-basic/language-reference/data-types/decimal-data-type.md)|+/-79,228,162,514,264,337,593,543,950,335 pro čísla s nulovou škálou, tj. čísla bez desetinných míst. Pro čísla s 28 desetinnými místy je rozsah +/-7.9228162514264337593543950335. Nejmenší možné nenulové číslo je 0,0000000000000000000000000001 (+/-1E-28).|
-|`CInt`|[Datový typ Integer](../../../visual-basic/language-reference/data-types/integer-data-type.md)|<xref:System.Int32.MinValue?displayProperty=nameWithType> (-2 147 483 648) až <xref:System.Int32.MaxValue?displayProperty=nameWithType> (2 147 483 647); zlomkové části jsou zaokrouhleny. <sup>1</sup> <br/><br/>Počínaje Visual Basic 15,8 Visual Basic optimalizuje výkon plovoucí desetinné čárky na převod celého čísla pomocí funkce `CInt`; Další informace najdete v části [poznámky](#remarks) . Příklad najdete v části s [Příklady CInt](#cint-example) . |
-|`CLng`|[Datový typ Long](../../../visual-basic/language-reference/data-types/long-data-type.md)|<xref:System.Int64.MinValue?displayProperty=nameWithType> (-9223372036854775808) až <xref:System.Int64.MaxValue?displayProperty=nameWithType> (9 223 372 036 854 775 807); zlomkové části jsou zaokrouhleny. <sup>1</sup><br/><br/>Počínaje Visual Basic 15,8 Visual Basic optimalizuje výkon konverze s plovoucí desetinnou čárkou na 64 celočíselnou hodnotu pomocí funkce `CLng`; Další informace najdete v části [poznámky](#remarks) . Příklad najdete v části s [Příklady CInt](#cint-example) .|
-|`CObj`|[Datový typ Object](../../../visual-basic/language-reference/data-types/object-data-type.md)|Libovolný platný výraz.|
-|`CSByte`|[Datový typ SByte](../../../visual-basic/language-reference/data-types/sbyte-data-type.md)|<xref:System.SByte.MinValue?displayProperty=nameWithType> (-128) až <xref:System.SByte.MaxValue?displayProperty=nameWithType> (127); zlomkové části jsou zaokrouhleny. <sup>1</sup><br/><br/>Počínaje Visual Basic 15,8 Visual Basic optimalizuje výkon plovoucí desetinné čárky na podepsaný bajtový převod pomocí funkce `CSByte`; Další informace najdete v části [poznámky](#remarks) . Příklad najdete v části s [Příklady CInt](#cint-example) .|
-|`CShort`|[Datový typ Short](../../../visual-basic/language-reference/data-types/short-data-type.md)|<xref:System.Int16.MinValue?displayProperty=nameWithType> (-32 768) až <xref:System.Int16.MaxValue?displayProperty=nameWithType> (32 767); zlomkové části jsou zaokrouhleny. <sup>1</sup><br/><br/>Počínaje Visual Basic 15,8 Visual Basic optimalizuje výkon plovoucí desetinné čárky na 16bitový celočíselný převod pomocí funkce `CShort`; Další informace najdete v části [poznámky](#remarks) . Příklad najdete v části s [Příklady CInt](#cint-example) .|
-|`CSng`|[Datový typ Single](../../../visual-basic/language-reference/data-types/single-data-type.md)|-3.402823 e + + 38 do-1.401298 E-45 pro záporné hodnoty; 1.401298 e-45 až 3.402823 E + 38 pro kladné hodnoty.|
-|`CStr`|[Datový typ String](../../../visual-basic/language-reference/data-types/string-data-type.md)|Funkce vrátí pro `CStr` závisí na argumentu `expression`. Viz [návratové hodnoty pro funkci CStr](../../../visual-basic/language-reference/functions/return-values-for-the-cstr-function.md).|
-|`CUInt`|[Datový typ UInteger](../../../visual-basic/language-reference/data-types/uinteger-data-type.md)|<xref:System.UInt32.MinValue?displayProperty=nameWithType> (0) až <xref:System.UInt32.MaxValue?displayProperty=nameWithType> (4 294 967 295) (bez znaménka); zlomkové části jsou zaokrouhleny. <sup>1</sup><br/><br/>Počínaje Visual Basic 15,8 Visual Basic optimalizuje výkon plovoucí desetinné čárky na unsigned integer konverzi pomocí funkce `CUInt`; Další informace najdete v části [poznámky](#remarks) . Příklad najdete v části s [Příklady CInt](#cint-example) .|
-|`CULng`|[Datový typ ULong](../../../visual-basic/language-reference/data-types/ulong-data-type.md)|<xref:System.UInt64.MinValue?displayProperty=nameWithType> (0) až <xref:System.UInt64.MaxValue?displayProperty=nameWithType> (18446744073709551615) (bez znaménka); zlomkové části jsou zaokrouhleny. <sup>1</sup><br/><br/>Počínaje Visual Basic 15,8 Visual Basic optimalizuje výkon plovoucí desetinné čárky na nepodepsaný dlouhý celočíselný převod pomocí funkce `CULng`; Další informace najdete v části [poznámky](#remarks) . Příklad najdete v části s [Příklady CInt](#cint-example) .|
-|`CUShort`|[Datový typ UShort](../../../visual-basic/language-reference/data-types/ushort-data-type.md)|<xref:System.UInt16.MinValue?displayProperty=nameWithType> (0) až <xref:System.UInt16.MaxValue?displayProperty=nameWithType> (65 535) (bez znaménka); zlomkové části jsou zaokrouhleny. <sup>1</sup><br/><br/>Počínaje Visual Basic 15,8 Visual Basic optimalizuje výkon plovoucí desetinné čárky na 16bitový celočíselný převod s funkcí `CUShort`; Další informace najdete v části [poznámky](#remarks) . Příklad najdete v části s [Příklady CInt](#cint-example) .|
+|`CBool`|[Boolean – datový typ](../data-types/boolean-data-type.md)|Libovolný platný `Char` nebo `String` číselný výraz.|
+|`CByte`|[Byte – datový typ](../data-types/byte-data-type.md)|<xref:System.Byte.MinValue?displayProperty=nameWithType>(0) až <xref:System.Byte.MaxValue?displayProperty=nameWithType> (255) (bez znaménka); zlomkové části jsou zaokrouhleny.<sup> 1</sup><br/><br/>Počínaje Visual Basic 15,8 Visual Basic optimalizuje výkon plovoucí desetinné čárky na převod pomocí `CByte` funkce. Další informace naleznete v části [poznámky](#remarks) . Příklad najdete v části s [Příklady CInt](#cint-example) .|
+|`CChar`|[Char – datový typ](../data-types/char-data-type.md)|Libovolný platný `Char` `String` výraz nebo; pouze první znak `String` je převeden; hodnota může být 0 až 65535 (bez znaménka).|
+|`CDate`|[Date – datový typ](../data-types/date-data-type.md)|Jakákoli platná reprezentace data a času.|
+|`CDbl`|[Double – datový typ](../data-types/double-data-type.md)|-1.79769313486231570 e + 308 do-4.94065645841246544 E-324 pro záporné hodnoty; 4.94065645841246544 e-324 až 1.79769313486231570 E + 308 pro kladné hodnoty.|
+|`CDec`|[Decimal – datový typ](../data-types/decimal-data-type.md)|+/-79,228,162,514,264,337,593,543,950,335 pro čísla s nulovou škálou, tj. čísla bez desetinných míst. Pro čísla s 28 desetinnými místy je rozsah +/-7.9228162514264337593543950335. Nejmenší možné nenulové číslo je 0,0000000000000000000000000001 (+/-1E-28).|
+|`CInt`|[Integer – datový typ](../data-types/integer-data-type.md)|<xref:System.Int32.MinValue?displayProperty=nameWithType>(-2 147 483 648) až <xref:System.Int32.MaxValue?displayProperty=nameWithType> (2 147 483 647); zlomkové části se zaokrouhlují.<sup> 1</sup> <br/><br/>Počínaje Visual Basic 15,8 Visual Basic optimalizuje výkon konverze s plovoucí desetinnou čárkou pomocí `CInt` funkce. Další informace naleznete v části [poznámky](#remarks) . Příklad najdete v části s [Příklady CInt](#cint-example) . |
+|`CLng`|[Long – datový typ](../data-types/long-data-type.md)|<xref:System.Int64.MinValue?displayProperty=nameWithType>(-9223372036854775808) až <xref:System.Int64.MaxValue?displayProperty=nameWithType> (9 223 372 036 854 775 807); zlomkové části jsou zaokrouhleny.<sup> 1</sup><br/><br/>Počínaje Visual Basic 15,8 Visual Basic optimalizuje výkon konverze s plovoucí desetinnou čárkou na 64 pomocí `CLng` funkce. Další informace naleznete v části [poznámky](#remarks) . Příklad najdete v části s [Příklady CInt](#cint-example) .|
+|`CObj`|[Datový typ objektu](../data-types/object-data-type.md)|Libovolný platný výraz|
+|`CSByte`|[SByte – datový typ](../data-types/sbyte-data-type.md)|<xref:System.SByte.MinValue?displayProperty=nameWithType>(-128) až <xref:System.SByte.MaxValue?displayProperty=nameWithType> (127); zlomkové části se zaokrouhlují.<sup> 1</sup><br/><br/>Počínaje Visual Basic 15,8 Visual Basic optimalizuje výkon plovoucí desetinné čárky na předepsanou bajtů s `CSByte` funkcí; další informace naleznete v části [poznámky](#remarks) . Příklad najdete v části s [Příklady CInt](#cint-example) .|
+|`CShort`|[Short – datový typ](../data-types/short-data-type.md)|<xref:System.Int16.MinValue?displayProperty=nameWithType>(-32 768) až <xref:System.Int16.MaxValue?displayProperty=nameWithType> (32 767); zlomkové části se zaokrouhlují.<sup> 1</sup><br/><br/>Počínaje Visual Basic 15,8 Visual Basic optimalizuje výkon plovoucí desetinné čárky na 16bitový celočíselný převod pomocí `CShort` funkce; Další informace naleznete v části [poznámky](#remarks) . Příklad najdete v části s [Příklady CInt](#cint-example) .|
+|`CSng`|[Single – datový typ](../data-types/single-data-type.md)|-3.402823 e + + 38 do-1.401298 E-45 pro záporné hodnoty; 1.401298 e-45 až 3.402823 E + 38 pro kladné hodnoty.|
+|`CStr`|[Datový typ String](../data-types/string-data-type.md)|Vrátí pro `CStr` záviset na `expression` argumentu. Viz [návratové hodnoty pro funkci CStr](return-values-for-the-cstr-function.md).|
+|`CUInt`|[UInteger – datový typ](../data-types/uinteger-data-type.md)|<xref:System.UInt32.MinValue?displayProperty=nameWithType>(0) až <xref:System.UInt32.MaxValue?displayProperty=nameWithType> (4 294 967 295) (bez znaménka); zlomkové části jsou zaokrouhleny.<sup> 1</sup><br/><br/>Počínaje Visual Basic 15,8 Visual Basic optimalizuje výkon plovoucí desetinné čárky na unsigned integer konverzi s `CUInt` funkcí; další informace naleznete v části [poznámky](#remarks) . Příklad najdete v části s [Příklady CInt](#cint-example) .|
+|`CULng`|[ULong – datový typ](../data-types/ulong-data-type.md)|<xref:System.UInt64.MinValue?displayProperty=nameWithType>(0) až <xref:System.UInt64.MaxValue?displayProperty=nameWithType> (18446744073709551615) (bez znaménka); zlomkové části jsou zaokrouhleny.<sup> 1</sup><br/><br/>Počínaje Visual Basic 15,8 Visual Basic optimalizuje výkon plovoucí desetinné čárky na nepodepsaný dlouhý převod celého čísla s `CULng` funkcí; další informace naleznete v části [poznámky](#remarks) . Příklad najdete v části s [Příklady CInt](#cint-example) .|
+|`CUShort`|[UShort – datový typ](../data-types/ushort-data-type.md)|<xref:System.UInt16.MinValue?displayProperty=nameWithType>(0) až <xref:System.UInt16.MaxValue?displayProperty=nameWithType> (65 535) (bez znaménka); zlomkové části jsou zaokrouhleny.<sup> 1</sup><br/><br/>Počínaje Visual Basic 15,8 Visual Basic optimalizuje výkon plovoucí desetinné čárky na nepodepsaný 16bitový celočíselný převod s `CUShort` funkcí; další informace naleznete v části [poznámky](#remarks) . Příklad najdete v části s [Příklady CInt](#cint-example) .|
 
 <sup>1</sup> zlomkové části mohou být předmětem zvláštního typu zaokrouhlení s názvem *zaokrouhlování bank*. Další informace najdete v části "poznámky".
 
 ## <a name="remarks"></a>Poznámky
 
-Jako pravidlo byste měli použít funkce Visual Basic pro převod typu v předvolbách pro metody .NET Framework, jako je `ToString()`, buď na <xref:System.Convert> třídu, nebo na samostatné struktuře typu nebo třídě. Funkce Visual Basic jsou navržené pro optimální interakci s kódem Visual Basic a zároveň usnadňují čtení zdrojového kódu. Kromě toho metody převodu .NET Framework nevytváří vždy stejné výsledky jako funkce Visual Basic, například při převodu `Boolean` na `Integer`. Další informace najdete v tématu [řešení potíží s datovými typy](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md).
+Jako pravidlo byste měli použít funkce pro převod typu Visual Basic v předvolbách pro metody .NET Framework, jako je například `ToString()` , buď na <xref:System.Convert> třídu, nebo na samostatné struktuře typu nebo třídě. Funkce Visual Basic jsou navržené pro optimální interakci s kódem Visual Basic a zároveň usnadňují čtení zdrojového kódu. Kromě toho metody převodu .NET Framework nevytváří vždy stejné výsledky jako funkce Visual Basic, například při převodu `Boolean` na `Integer` . Další informace najdete v tématu [řešení potíží s datovými typy](../../programming-guide/language-features/data-types/troubleshooting-data-types.md).
 
-Počínaje Visual Basic 15,8 je výkon konverze s plovoucí desetinnou čárkou na celé číslo optimalizovaný, Pokud předáte <xref:System.Single> nebo <xref:System.Double> hodnotu vrácenou následujícími metodami do jedné z funkcí konverze celého čísla (`CByte`, `CShort`, `CInt`, `CLng`, `CSByte`, `CUShort`, `CUInt`, `CULng`):
+Počínaje Visual Basic 15,8 se výkon konverze s plovoucí desetinnou čárkou na celé číslo optimalizuje, když předáte <xref:System.Single> hodnotu nebo <xref:System.Double> vrácenou následujícími metodami do jedné z funkcí konverze celého čísla ( `CByte` , `CShort` , `CInt` , `CLng` , `CSByte` , `CUShort` , `CUInt` , `CULng` ):
 
 - <xref:Microsoft.VisualBasic.Conversion.Fix(System.Double)?displayProperty=nameWithType>
 - <xref:Microsoft.VisualBasic.Conversion.Fix(System.Object)?displayProperty=nameWithType>
@@ -175,55 +175,55 @@ Dim i3 As Integer = CInt(Math.Round(s))        ' Result: 174
 
 ## <a name="behavior"></a>Chování
 
-- **Konverze za.** Obecně můžete použít funkce pro převod datového typu k převedení výsledku operace na určitý datový typ, nikoli na výchozí datový typ. Například můžete použít `CDec` k vynucení desítkové aritmetické operace v případech, kdy by normálně probíhat jednoduché přepřesnost, dvojitá přesnost nebo aritmetické operace.
+- **Konverze za.** Obecně můžete použít funkce pro převod datového typu k převedení výsledku operace na určitý datový typ, nikoli na výchozí datový typ. Například použijte `CDec` k vynucení desítkové aritmetické operace v případech, kde by normálně probíhat jednoduchá přesnost, dvojitá přesnost nebo aritmetická celočíselná hodnota.
 
-- **Převody se nezdařily.** Pokud `expression` předané funkci spadá mimo rozsah datového typu, na který má být převeden, dojde k <xref:System.OverflowException>.
+- **Převody se nezdařily.** Pokud `expression` je předaná funkce mimo rozsah datového typu, na který má být převeden, <xref:System.OverflowException> dojde k chybě.
 
-- **Zlomkové části.** Když převedete neceločíselnou hodnotu na celočíselný typ, funkce převodu celého čísla (`CByte`, `CInt`, `CLng`, `CSByte`, `CShort`, `CUInt`, `CULng`a `CUShort`) odstraní zlomkovou část a zaokrouhlí hodnotu na nejbližší celé číslo.
+- **Zlomkové části.** Když převedete neceločíselnou hodnotu na celočíselný typ, funkce převodu celého čísla ( `CByte` , `CInt` , `CLng` , `CSByte` , `CShort` , `CUInt` , `CULng` , a `CUShort` ) odstraní zlomkovou část a zaokrouhlí hodnotu na nejbližší celé číslo.
 
      Pokud je Zlomková část přesně 0,5, funkce pro převod celého čísla zaokrouhlí na nejbližší sudé celé číslo. Například 0,5 se zaokrouhlí na 0 a 1,5 a 2,5 se zaokrouhlí na 2. Tento postup se někdy označuje jako *zaokrouhlování bank*a jeho účelem je kompenzovat posun, který by se mohl nashromáždit při přidávání mnoha takových čísel dohromady.
 
-     `CInt` a `CLng` se liší od <xref:Microsoft.VisualBasic.Conversion.Int%2A> a <xref:Microsoft.VisualBasic.Conversion.Fix%2A>ch funkcí, které se zkrátí, spíše než zaokrouhlí na zlomkovou část čísla. Také `Fix` a `Int` vždycky vracet hodnotu stejného datového typu jako při předání.
+     `CInt`a `CLng` liší se od <xref:Microsoft.VisualBasic.Conversion.Int%2A> <xref:Microsoft.VisualBasic.Conversion.Fix%2A> funkcí a, které se zkrátí, spíše než zaokrouhlit, zlomkovou část čísla. Také `Fix` a `Int` vždy vracet hodnotu stejného datového typu jako při předání.
 
-- **Převody data a času.** Pomocí funkce <xref:Microsoft.VisualBasic.Information.IsDate%2A> určíte, zda je možné hodnotu převést na datum a čas. `CDate` rozpoznává literály kalendářních dat a časové literály, ale ne číselné hodnoty. Chcete-li převést hodnotu `Date` Visual Basic 6,0 na hodnotu `Date` v Visual Basic 2005 nebo novějších verzích, můžete použít metodu <xref:System.DateTime.FromOADate%2A?displayProperty=nameWithType>.
+- **Převody data a času.** <xref:Microsoft.VisualBasic.Information.IsDate%2A>Funkci lze použít k určení, zda je možné hodnotu převést na datum a čas. `CDate`rozpoznává literály data a časové literály, ale ne číselné hodnoty. Chcete-li převést hodnotu Visual Basic 6,0 `Date` na `Date` hodnotu v Visual Basic 2005 nebo novějších verzích, lze použít <xref:System.DateTime.FromOADate%2A?displayProperty=nameWithType> metodu.
 
-- **Neutrální hodnoty data a času.** [Datový typ datum](../../../visual-basic/language-reference/data-types/date-data-type.md) vždy obsahuje informace o datu a čase. Pro účely konverze typu Visual Basic považuje 1/1/0001 (1. ledna of year) za *neutrální hodnotu* pro datum a 00:00:00 (půlnoc) jako neutrální hodnotu pro čas. Převedete-li `Date` hodnotu na řetězec, `CStr` nezahrnuje neutrální hodnoty ve výsledném řetězci. Pokud například převedete `#January 1, 0001 9:30:00#` na řetězec, výsledek je "9:30:00 dop."; informace o datu jsou potlačeny. Informace o datu jsou však stále přítomny v původní hodnotě `Date` a lze je obnovit pomocí funkcí, jako je například funkce <xref:Microsoft.VisualBasic.DateAndTime.DatePart%2A>.
+- **Neutrální hodnoty data a času.** [Datový typ datum](../data-types/date-data-type.md) vždy obsahuje informace o datu a čase. Pro účely konverze typu Visual Basic považuje 1/1/0001 (1. ledna of year) za *neutrální hodnotu* pro datum a 00:00:00 (půlnoc) jako neutrální hodnotu pro čas. Převedete-li `Date` hodnotu na řetězec, `CStr` nezahrnuje neutrální hodnoty ve výsledném řetězci. Například Pokud převedete `#January 1, 0001 9:30:00#` na řetězec, výsledkem je "9:30:00 dop.", informace o datu jsou potlačeny. Informace o datu jsou však stále přítomny v původní `Date` hodnotě a lze je obnovit pomocí funkcí, jako je <xref:Microsoft.VisualBasic.DateAndTime.DatePart%2A> funkce.
 
-- **Citlivostní jazyková verze.** Funkce pro převod typů zahrnující řetězce provádějí převody na základě aktuálního nastavení jazykové verze aplikace. `CDate` například rozpoznává formáty data podle nastavení národního prostředí systému. Je nutné zadat den, měsíc a rok ve správném pořadí pro vaše národní prostředí nebo datum nemusí být interpretováno správně. Formát dlouhého data není rozpoznán, pokud obsahuje řetězec dne v týdnu, například "Středa".
+- **Citlivostní jazyková verze.** Funkce pro převod typů zahrnující řetězce provádějí převody na základě aktuálního nastavení jazykové verze aplikace. Například `CDate` rozpoznává formáty data podle nastavení národního prostředí systému. Je nutné zadat den, měsíc a rok ve správném pořadí pro vaše národní prostředí nebo datum nemusí být interpretováno správně. Formát dlouhého data není rozpoznán, pokud obsahuje řetězec dne v týdnu, například "Středa".
 
-     Pokud potřebujete převést na nebo z řetězcové reprezentace hodnoty v jiném formátu, než který je určen národním prostředím, nemůžete použít funkce pro převod typu Visual Basic. Chcete-li to provést, použijte metody `ToString(IFormatProvider)` a `Parse(String, IFormatProvider)` daného typu hodnoty. Například použijte <xref:System.Double.Parse%2A?displayProperty=nameWithType> při převodu řetězce na `Double`a použijte <xref:System.Double.ToString%2A?displayProperty=nameWithType> při převodu hodnoty typu `Double` na řetězec.
+     Pokud potřebujete převést na nebo z řetězcové reprezentace hodnoty v jiném formátu, než který je určen národním prostředím, nemůžete použít funkce pro převod typu Visual Basic. K tomu použijte `ToString(IFormatProvider)` metody a tohoto `Parse(String, IFormatProvider)` typu hodnoty. Například použijte <xref:System.Double.Parse%2A?displayProperty=nameWithType> při převodu řetězce na a `Double` použít <xref:System.Double.ToString%2A?displayProperty=nameWithType> při převodu hodnoty typu `Double` na řetězec.
 
 ## <a name="ctype-function"></a>CType – funkce
 
-[Funkce CType](../../../visual-basic/language-reference/functions/ctype-function.md) přebírá druhý argument, `typename`a převede `expression` na `typename`, kde `typename` může být libovolný datový typ, struktura, třída nebo rozhraní, na které existuje platný převod.
+[Funkce CType](ctype-function.md) přebírá druhý argument, `typename` a převede `expression` na `typename` , kde `typename` může být libovolný datový typ, struktura, třída nebo rozhraní, na které existuje platný převod.
 
-Porovnání `CType` s jinými klíčovými slovy převodu typů naleznete v tématu [operátor DirectCast](../../../visual-basic/language-reference/operators/directcast-operator.md) a [operátor TryCast](../../../visual-basic/language-reference/operators/trycast-operator.md).
+Porovnání `CType` s jinými klíčovými slovy pro převod typů naleznete v tématu [operátor DirectCast](../operators/directcast-operator.md) a [operátor TryCast](../operators/trycast-operator.md).
 
 ## <a name="cbool-example"></a>Příklad CBool
 
-V následujícím příkladu je použita funkce `CBool` pro převod výrazů na hodnoty `Boolean`. Pokud je výraz vyhodnocen jako nenulová hodnota, `CBool` vrátí `True`; v opačném případě vrátí `False`.
+Následující příklad používá `CBool` funkci k převodu výrazů na `Boolean` hodnoty. Pokud je výraz vyhodnocen jako nenulová hodnota, `CBool` vrátí `True` , jinak vrátí `False` .
 
 [!code-vb[VbVbalrFunctions#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#1)]
 
 ## <a name="cbyte-example"></a>Příklad CByte
 
-V následujícím příkladu je použita funkce `CByte` pro převod výrazu na `Byte`.
+Následující příklad používá `CByte` funkci pro převod výrazu na `Byte` .
 
 [!code-vb[VbVbalrFunctions#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#2)]
 
 ## <a name="cchar-example"></a>Příklad CChar
 
-V následujícím příkladu je použita funkce `CChar` pro převedení prvního znaku `String` výrazu na typ `Char`.
+Následující příklad používá `CChar` funkci k převodu prvního znaku `String` výrazu na `Char` typ.
 
 [!code-vb[VbVbalrFunctions#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#3)]
 
-Vstupní argument pro `CChar` musí být datového typu `Char` nebo `String`. Pomocí `CChar` nelze převést číslo na znak, protože `CChar` nemůže přijmout číselný datový typ. Následující příklad získá číslo představující bod kódu (kód znaku) a převede ho na odpovídající znak. Používá funkci <xref:Microsoft.VisualBasic.Interaction.InputBox%2A> pro získání řetězce číslic, `CInt` pro převod řetězce na typ `Integer`a `ChrW` k převedení čísla na typ `Char`.
+Vstupní argument pro `CChar` musí být datového typu `Char` nebo `String` . Nelze použít `CChar` k převedení čísla na znak, protože `CChar` nemůže přijmout číselný datový typ. Následující příklad získá číslo představující bod kódu (kód znaku) a převede ho na odpovídající znak. Pomocí <xref:Microsoft.VisualBasic.Interaction.InputBox%2A> funkce získá řetězec číslic, `CInt` převede řetězec na typ `Integer` a `ChrW` převede číslo na typ `Char` .
 
 [!code-vb[VbVbalrFunctions#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#4)]
 
 ## <a name="cdate-example"></a>Příklad CDate
 
-V následujícím příkladu je použita funkce `CDate` pro převod řetězců na hodnoty `Date`. Obecně se nedoporučuje používat data a časy pevně zakódování jako řetězce (jak je znázorněno v tomto příkladu). Použijte literály data a časová literály, například #Feb 12, 1969 # a #4:45:23 PM #, místo toho.
+V následujícím příkladu je použita `CDate` funkce pro převod řetězců na `Date` hodnoty. Obecně se nedoporučuje používat data a časy pevně zakódování jako řetězce (jak je znázorněno v tomto příkladu). Použijte literály data a časová literály, například #Feb 12, 1969 # a #4:45:23 PM #, místo toho.
 
 [!code-vb[VbVbalrFunctions#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#5)]
 
@@ -233,79 +233,79 @@ V následujícím příkladu je použita funkce `CDate` pro převod řetězců n
 
 ## <a name="cdec-example"></a>Příklad CDec
 
-Následující příklad používá funkci `CDec` k převodu číselné hodnoty na `Decimal`.
+Následující příklad používá `CDec` funkci k převodu číselné hodnoty na `Decimal` .
 
 [!code-vb[VbVbalrFunctions#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#7)]
 
 ## <a name="cint-example"></a>Příklad CInt
 
-Následující příklad používá funkci `CInt` k převedení hodnoty na `Integer`.
+Následující příklad používá `CInt` funkci pro převod hodnoty na `Integer` .
 
 [!code-vb[VbVbalrFunctions#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#8)]
 
 ## <a name="clng-example"></a>Příklad CLng
 
-V následujícím příkladu je použita funkce `CLng` pro převod hodnot na `Long`.
+V následujícím příkladu je použita `CLng` funkce pro převod hodnot na `Long` .
 
 [!code-vb[VbVbalrFunctions#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#9)]
 
 ## <a name="cobj-example"></a>Příklad CObj
 
-Následující příklad používá funkci `CObj` k převodu číselné hodnoty na `Object`. Proměnná `Object` sama obsahuje pouze ukazatel se čtyřmi bajty, který odkazuje na `Double` přiřazenou hodnotu.
+Následující příklad používá `CObj` funkci k převodu číselné hodnoty na `Object` . `Object`Proměnná sama obsahuje pouze ukazatel se čtyřmi bajty, který odkazuje na hodnotu, která `Double` je k ní přiřazena.
 
 [!code-vb[VbVbalrFunctions#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#10)]
 
 ## <a name="csbyte-example"></a>Příklad CSByte
 
-Následující příklad používá funkci `CSByte` k převodu číselné hodnoty na `SByte`.
+Následující příklad používá `CSByte` funkci k převodu číselné hodnoty na `SByte` .
 
 [!code-vb[VbVbalrFunctions#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#11)]
 
 ## <a name="cshort-example"></a>Příklad CShort
 
-Následující příklad používá funkci `CShort` k převodu číselné hodnoty na `Short`.
+Následující příklad používá `CShort` funkci k převodu číselné hodnoty na `Short` .
 
 [!code-vb[VbVbalrFunctions#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#12)]
 
 ## <a name="csng-example"></a>Příklad CSng
 
-V následujícím příkladu je použita funkce `CSng` pro převod hodnot na `Single`.
+V následujícím příkladu je použita `CSng` funkce pro převod hodnot na `Single` .
 
 [!code-vb[VbVbalrFunctions#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#13)]
 
 ## <a name="cstr-example"></a>Příklad CStr
 
-Následující příklad používá funkci `CStr` k převodu číselné hodnoty na `String`.
+Následující příklad používá `CStr` funkci k převodu číselné hodnoty na `String` .
 
 [!code-vb[VbVbalrFunctions#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#14)]
 
-Následující příklad používá funkci `CStr` k převodu hodnot `Date` na hodnoty `String`.
+Následující příklad používá `CStr` funkci pro převod `Date` hodnot na `String` hodnoty.
 
 [!code-vb[VbVbalrFunctions#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#15)]
 
-`CStr` vždy vykreslí `Date` hodnotu ve standardním krátkém formátu pro aktuální národní prostředí, například "6/15/2003 4:35:47 PM". `CStr` však potlačí *neutrální hodnoty* 1/1/0001 pro datum a 00:00:00 pro čas.
+`CStr`vždy vykreslí `Date` hodnotu ve standardním krátkém formátu pro aktuální národní prostředí, například "6/15/2003 4:35:47 PM". Potlačí ale `CStr` *neutrální hodnoty* 1/1/0001 pro datum a 00:00:00 pro čas.
 
-Další informace o hodnotách vrácených funkcí `CStr`naleznete v tématu [návratové hodnoty pro funkci CStr](../../../visual-basic/language-reference/functions/return-values-for-the-cstr-function.md).
+Další informace o hodnotách vrácených v naleznete `CStr` v tématu [návratové hodnoty pro funkci CStr](return-values-for-the-cstr-function.md).
 
 ## <a name="cuint-example"></a>Příklad CUInt
 
-Následující příklad používá funkci `CUInt` k převodu číselné hodnoty na `UInteger`.
+Následující příklad používá `CUInt` funkci k převodu číselné hodnoty na `UInteger` .
 
 [!code-vb[VbVbalrFunctions#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#16)]
 
 ## <a name="culng-example"></a>Příklad CULng
 
-Následující příklad používá funkci `CULng` k převodu číselné hodnoty na `ULong`.
+Následující příklad používá `CULng` funkci k převodu číselné hodnoty na `ULong` .
 
 [!code-vb[VbVbalrFunctions#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#17)]
 
 ## <a name="cushort-example"></a>Příklad CUShort
 
-Následující příklad používá funkci `CUShort` k převodu číselné hodnoty na `UShort`.
+Následující příklad používá `CUShort` funkci k převodu číselné hodnoty na `UShort` .
 
 [!code-vb[VbVbalrFunctions#18](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#18)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:Microsoft.VisualBasic.Strings.Asc%2A>
 - <xref:Microsoft.VisualBasic.Strings.AscW%2A>
@@ -318,5 +318,5 @@ Následující příklad používá funkci `CUShort` k převodu číselné hodno
 - <xref:Microsoft.VisualBasic.Conversion.Oct%2A>
 - <xref:Microsoft.VisualBasic.Conversion.Str%2A>
 - <xref:Microsoft.VisualBasic.Conversion.Val%2A>
-- [Převodní funkce](../../../visual-basic/language-reference/functions/conversion-functions.md)
-- [Převody typu v Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
+- [Převodní funkce](conversion-functions.md)
+- [Převody typů v jazyce Visual Basic](../../programming-guide/language-features/data-types/type-conversions.md)

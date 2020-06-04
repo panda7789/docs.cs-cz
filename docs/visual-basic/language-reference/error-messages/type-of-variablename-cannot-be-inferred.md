@@ -7,16 +7,16 @@ f1_keywords:
 helpviewer_keywords:
 - BC30982
 ms.assetid: 741e85d9-a747-42ad-a1e1-a3f1928aaff5
-ms.openlocfilehash: c3086f79fb71693810bc8f14e8c0f493aa1e6515
-ms.sourcegitcommit: 463f3f050cecc0b6403e67f19a61f870fb8e7b7d
+ms.openlocfilehash: 74b690ce3dee87e481c629a254e629be4b40f8cd
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68512711"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84387007"
 ---
-# <a name="type-of-variablename-cannot-be-inferred-because-the-loop-bounds-and-the-step-variable-do-not-widen-to-the-same-type"></a>Typ '\<Variable > ' nelze odvodit, protože meze smyčky a proměnnou kroku nelze rozšířit na stejný typ
+# <a name="type-of-variablename-cannot-be-inferred-because-the-loop-bounds-and-the-step-variable-do-not-widen-to-the-same-type"></a>Typ '\<variablename>' nelze odvodit, protože omezení cyklu a proměnnou kroku nelze rozšířit na stejný typ.
 
-Napsali `For...Next` jste smyčku, ve které kompilátor nemůže odvodit datový typ pro řídicí proměnnou smyčky, protože jsou splněné následující podmínky:
+Napsali jste `For...Next` smyčku, ve které kompilátor nemůže odvodit datový typ pro řídicí proměnnou smyčky, protože jsou splněné následující podmínky:
 
 - Datový typ řídicí proměnné smyčky není specifikován s `As` klauzulí.
 
@@ -43,7 +43,7 @@ Dim n = 20
 
 ## <a name="to-correct-this-error"></a>Oprava této chyby
 
-- V případě potřeby změňte typy hranic smyčky a proměnnou kroku tak, aby alespoň jedna z nich byla typu, ke kterému se ostatní rozšíří. V předchozím příkladu změňte typ `stepVar` na. `Integer`
+- V případě potřeby změňte typy hranic smyčky a proměnnou kroku tak, aby alespoň jedna z nich byla typu, ke kterému se ostatní rozšíří. V předchozím příkladu změňte typ `stepVar` na `Integer` .
 
   ```vb
   Dim stepVar = 1
@@ -55,7 +55,7 @@ Dim n = 20
   Dim stepVar As Integer = 1
   ```
 
-- Pomocí explicitních funkcí pro převod můžete převést hranice smyčky a proměnnou kroku na příslušné typy. V předchozím příkladu použijte `Val` funkci na. `stepVar`
+- Pomocí explicitních funkcí pro převod můžete převést hranice smyčky a proměnnou kroku na příslušné typy. V předchozím příkladu použijte `Val` funkci na `stepVar` .
 
   ```vb
   For i = 1 To 10 Step Val(stepVar)
@@ -63,12 +63,12 @@ Dim n = 20
   Next
   ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:Microsoft.VisualBasic.Conversion.Val%2A>
-- [Příkaz For...Next](../../../visual-basic/language-reference/statements/for-next-statement.md)
-- [Implicitní a explicitní převody](../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)
-- [Odvození místního typu](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)
-- [Příkaz Option Infer](../../../visual-basic/language-reference/statements/option-infer-statement.md)
-- [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)
-- [Rozšíření a zúžení převodů](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)
+- [For...Next – příkaz](../statements/for-next-statement.md)
+- [Implicitní a explicitní převody](../../programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)
+- [Odvození místního typu](../../programming-guide/language-features/variables/local-type-inference.md)
+- [Option Infer – příkaz](../statements/option-infer-statement.md)
+- [Funkce pro převod typů](../functions/type-conversion-functions.md)
+- [Rozšíření a zúžení převodů](../../programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)

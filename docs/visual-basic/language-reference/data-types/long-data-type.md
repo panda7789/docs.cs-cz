@@ -20,39 +20,39 @@ helpviewer_keywords:
 - data types [Visual Basic], assigning
 - Long data type
 ms.assetid: b4770c34-1804-4f8c-b512-c10b0893e516
-ms.openlocfilehash: 16d7409c802e97b1f33474d810134db4d9f0ad6c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7c076cd2198c85560f7c63c69e051697966c9524
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79400811"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84415593"
 ---
-# <a name="long-data-type-visual-basic"></a>Dlouhý datový typ (Visual Basic)
+# <a name="long-data-type-visual-basic"></a>Long – datový typ (Visual Basic)
 
-Pojmy podepsané 64bitová (8bajtová) celá čísla v hodnotě od -9,223,372,036,854,775,808 až 9,223,372,036,854,775,807 (9.2...E+18).
+Obsahuje podepsaná 64 (8bitové) celá čísla v rozmezí hodnot od-9223372036854775808 do 9 223 372 036 854 775 807 (9.2... E + 18).
 
 ## <a name="remarks"></a>Poznámky
 
-Pomocí `Long` datového typu můžete obsahovat celá čísla, která `Integer` jsou příliš velká a nevejdou se do datového typu.
+Použijte `Long` datový typ obsahující celá čísla, která jsou příliš velká, aby se vešla do `Integer` datového typu.
 
 Výchozí hodnota `Long` je 0.
 
-## <a name="literal-assignments"></a>Doslovná přiřazení
+## <a name="literal-assignments"></a>Přiřazení literálů
 
-Proměnnou `Long` můžete deklarovat a inicializovat přiřazením desetinného literálu, šestnáctkového literálu, osmičkového literálu nebo (počínaje jazykem Visual Basic 2017) binárníliterál. Pokud celé číslo literál je `Long` mimo rozsah (to znamená, <xref:System.Int64.MinValue?displayProperty=nameWithType> pokud <xref:System.Int64.MaxValue?displayProperty=nameWithType>je menší než nebo větší než , dojde k chybě kompilace.
+Můžete deklarovat a inicializovat `Long` proměnnou přiřazením desítkového literálu, šestnáctkového literálu, osmičkového literálu nebo (začínajícího Visual Basic 2017) binárního literálu. Pokud je celočíselný literál mimo rozsah `Long` (tj. Pokud je menší <xref:System.Int64.MinValue?displayProperty=nameWithType> nebo větší než <xref:System.Int64.MaxValue?displayProperty=nameWithType> , dojde k chybě kompilace.
 
-V následujícím příkladu jsou `Long` hodnoty přiřazeny celá čísla rovnající se 4 294 967 296, která jsou reprezentována jako desetinné, šestnáctkové a binární literály.
+V následujícím příkladu jsou celá čísla rovna 4 294 967 296, která jsou reprezentována jako Desítková, šestnáctková a binární literála přiřazena `Long` hodnotám.
 
 [!code-vb[long](../../../../samples/snippets/visualbasic/language-reference/data-types/numeric-literals.vb#Long)]
 
 > [!NOTE]
-> Předponu nebo `&h` `&H` k označení šestnáctkového `&b` literálu, předpony nebo `&B` k označení binárního literálu `&o` a `&O` předpony nebo k označení osmičkového literálu. Desetinné literály nemají předponu.
+> Použijte předponu `&h` nebo `&H` k označení šestnáctkového literálu, předpony `&b` nebo `&B` označení binárního literálu a předpony `&o` nebo `&O` k označení osmičkového literálu. Desítkové literály nemají žádnou předponu.
 
-Počínaje visual basicem 2017, můžete také `_`použít znak podtržítko , jako oddělovač číslic pro zvýšení čitelnosti, jak ukazuje následující příklad.
+Počínaje Visual Basic 2017 můžete také použít znak podtržítka, `_` jako oddělovač číslic pro zlepšení čitelnosti, jak ukazuje následující příklad.
 
 [!code-vb[long](../../../../samples/snippets/visualbasic/language-reference/data-types/numeric-literals.vb#LongS)]
 
-Počínaje jazykem Visual Basic 15.5 můžete také`_`použít znak podtržítka ( ) jako úvodní oddělovač mezi předponou a šestnáctkovými, binárními nebo osmičkovými číslicemi. Například:
+Počínaje Visual Basic 15,5 můžete také použít znak podtržítka ( `_` ) jako úvodní oddělovač mezi předponou a šestnáctkovou, binární nebo osmičkovou číslicí. Příklad:
 
 ```vb
 Dim number As Long = &H_0FAC_0326_1489_D68C
@@ -60,7 +60,7 @@ Dim number As Long = &H_0FAC_0326_1489_D68C
 
 [!INCLUDE [supporting-underscores](../../../../includes/vb-separator-langversion.md)]
 
-Číselné literály mohou `L` také obsahovat `Long` znak [typu](../../programming-guide/language-features/data-types/type-characters.md) pro označení datového typu, jak ukazuje následující příklad.
+Číselné literály mohou také obsahovat `L` [znak typu](../../programming-guide/language-features/data-types/type-characters.md) , který označuje `Long` datový typ, jak ukazuje následující příklad.
 
 ```vb
 Dim number = &H_0FAC_0326_1489_D68CL
@@ -68,20 +68,20 @@ Dim number = &H_0FAC_0326_1489_D68CL
 
 ## <a name="programming-tips"></a>Tipy k programování
 
-- **Interop úvahy.** Pokud se propojíte s součástmi, které nejsou napsány pro rozhraní `Long` .NET Framework, například Automation nebo COM objekty, nezapomeňte, že má jinou šířku dat (32 bitů) v jiných prostředích. Pokud předáváte 32bitový argument takové součásti, `Integer` deklarujte jej jako místo `Long` v novém kódu jazyka Visual Basic.
+- **Problematika spolupráce.** Pokud procházejíte s komponentami, které nejsou napsané pro .NET Framework, například automatizace nebo objekty COM, pamatujte, že `Long` má v jiných prostředích jinou šířku dat (32 bitů). Pokud předáte 32 argument pro takovou komponentu, deklarujte ji jako `Integer` místo `Long` v novém Visual Basic kódu.
 
-- **Rozšíření.** Datový `Long` typ se `Decimal`rozšiřuje `Single`na `Double`, , nebo . To znamená, `Long` že můžete převést na některý <xref:System.OverflowException?displayProperty=nameWithType> z těchto typů bez výskytu chyby.
+- **Rozšiřující.** `Long`Datový typ se rozšíří na `Decimal` , `Single` nebo `Double` . To znamená, že můžete převést `Long` na některý z těchto typů bez výskytu <xref:System.OverflowException?displayProperty=nameWithType> chyby.
 
-- **Zadejte znaky.** Připojení znaku `L` typu literálu k literálu jej vynutí na `Long` datový typ. Připojení znaku `&` typu identifikátoru k `Long`libovolnému identifikátoru jej vynutí .
+- **Znaky typu.** Připojení znaku literálového typu `L` k literálu vynutí tento `Long` datový typ. Připojení znaku typu identifikátoru `&` k jakémukoli identifikátoru vynutí `Long` .
 
-- **Typ rámce.** Odpovídající typ v rozhraní .NET <xref:System.Int64?displayProperty=nameWithType> Framework je struktura.
+- **Typ rozhraní.** Odpovídající typ v .NET Framework je <xref:System.Int64?displayProperty=nameWithType> Struktura.
 
 ## <a name="see-also"></a>Viz také
 
 - <xref:System.Int64>
-- [Datové typy](../../../visual-basic/language-reference/data-types/index.md)
-- [Integer – datový typ](../../../visual-basic/language-reference/data-types/integer-data-type.md)
-- [Datový typ Short](../../../visual-basic/language-reference/data-types/short-data-type.md)
-- [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)
-- [Souhrn převodu](../../../visual-basic/language-reference/keywords/conversion-summary.md)
-- [Účinné používání datových typů](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)
+- [Datové typy](index.md)
+- [Integer – datový typ](integer-data-type.md)
+- [Short – datový typ](short-data-type.md)
+- [Funkce pro převod typů](../functions/type-conversion-functions.md)
+- [Souhrn převodu](../keywords/conversion-summary.md)
+- [Účinné používání datových typů](../../programming-guide/language-features/data-types/efficient-use-of-data-types.md)

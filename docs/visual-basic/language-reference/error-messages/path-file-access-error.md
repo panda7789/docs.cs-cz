@@ -1,29 +1,29 @@
 ---
-title: Chyba přístupu k souboru v cestě
+title: Chyba přístupu k cestě nebo k souboru
 ms.date: 07/20/2015
 f1_keywords:
 - vbrID75
 ms.assetid: 6ce3a161-7316-46bd-a785-0d50e5414020
-ms.openlocfilehash: 4f18c9216aa24840bc205534a97124d12698cb98
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: dfe96cd6eaa673438849fe8f799d46fa2617bfdd
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61799174"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84387254"
 ---
 # <a name="pathfile-access-error"></a>Chyba přístupu k cestě nebo k souboru
-Během operace přístupu k souborům nebo přístup k disku operačního systému nelze provést připojení mezi cestu a název souboru.  
+Během operace přístupu k souboru nebo přístupu k disku nemohl operační systém vytvořit spojení mezi cestou a názvem souboru.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1. Ujistěte se, že je správně naformátován specifikace souboru. Název souboru může obsahovat plně kvalifikovanou (absolutní) nebo relativní cestu. Plně kvalifikovaná cesta začíná název jednotky (Pokud se cesta na jiné jednotce) a seznamy explicitních cestu z kořene do souboru. Jakoukoli cestu, která není plně kvalifikovaný je relativní vzhledem k aktuální jednotky a adresáře.  
+1. Ujistěte se, že specifikace souboru je správně naformátovaná. Název souboru může obsahovat plně kvalifikovanou (absolutní) nebo relativní cestu. Plně kvalifikovaná cesta začíná názvem jednotky (Pokud je cesta na jiné jednotce) a je v ní uvedena explicitní cesta z kořene souboru. Libovolná cesta, která není plně kvalifikovaná, je relativní vzhledem k aktuální jednotce a adresáři.  
   
-2. Ujistěte se, že jste se nepokusil uložit soubor, který by nahradit stávající soubor jen pro čtení. Pokud je to tento případ, změnit atribut jen pro čtení cílový soubor nebo uložte soubor s jiným názvem souboru.  
+2. Ujistěte se, že jste se nepokoušeli uložit soubor, který by nahradil existující soubor určený jen pro čtení. Pokud se jedná o tento případ, změňte atribut jen pro čtení cílového souboru nebo uložte soubor s jiným názvem souboru.  
   
-3. Ujistěte se, že nepokusil otevřít soubor jen pro čtení v sekvenčních `Output` nebo `Append` režimu. Pokud je to tento případ, otevřete ho v `Input` režimu nebo změnit atribut jen pro čtení souboru.  
+3. Ujistěte se, že jste se nepokoušeli otevřít soubor jen pro čtení v sekvenčním `Output` nebo `Append` režimu. Pokud se jedná o tento případ, otevřete soubor v `Input` režimu nebo změňte atribut souboru jen pro čtení.  
   
-4. Ujistěte se, že se že nepokusil změnit projekt jazyka Visual Basic v databázi nebo dokumentu.  
+4. Ujistěte se, že jste se nepokoušeli změnit Visual Basic projekt v rámci databáze nebo dokumentu.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Typy chyb](../../../visual-basic/programming-guide/language-features/error-types.md)
+- [Typy chyb](../../programming-guide/language-features/error-types.md)
