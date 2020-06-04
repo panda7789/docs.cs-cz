@@ -37,12 +37,12 @@ helpviewer_keywords:
 - storage order, controlling in Visual Basic
 - data types [Visual Basic], memory requirements
 ms.assetid: e975cdb6-64d8-4a4a-ae27-f3b3ed198ae0
-ms.openlocfilehash: 72bd8158880c602fb2cde92a3851c4e8a702c70b
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 5eb52ef937a677c0b7498d058b5a39a375351ddc
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74344002"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84415619"
 ---
 # <a name="data-type-summary-visual-basic"></a>Souhrn datových typů (Visual Basic)
 
@@ -50,32 +50,32 @@ V následující tabulce jsou uvedeny Visual Basic datových typů, jejich podpo
   
 |Typ Visual Basic|Struktura typů společného jazykového modulu runtime|Přidělení nominálního úložiště|Rozsah hodnot|  
 |-----------------------|--------------------------------------------|--------------------------------|-----------------|  
-|[Datového](../../../visual-basic/language-reference/data-types/boolean-data-type.md)|<xref:System.Boolean>|Závisí na implementaci platformy|`True` nebo `False`|  
-|[Bytové](../../../visual-basic/language-reference/data-types/byte-data-type.md)|<xref:System.Byte>|1 bajt|0 až 255 (bez znaménka)|  
-|[Char](../../../visual-basic/language-reference/data-types/char-data-type.md) (jeden znak)|<xref:System.Char>|2 bajty|0 až 65535 (bez znaménka)|  
-|[Datum](../../../visual-basic/language-reference/data-types/date-data-type.md)|<xref:System.DateTime>|8 bajtů|0:00:00 (půlnoc) 1. ledna 0001 až 11:59:59 odp. prosince 9999|  
-|[Notaci](../../../visual-basic/language-reference/data-types/decimal-data-type.md)|<xref:System.Decimal>|16 bajtů|od 0 do +/-79,228,162,514,264,337,593,543,950,335 (+/-7.9...E + 28) <sup>†</sup> bez desetinné čárky; 0 až +/-7.9228162514264337593543950335 s 28 místy napravo od desetinné čárky;<br /><br /> nejmenší nenulové číslo je +/-0,0000000000000000000000000001 (+/-1E-28) <sup>†</sup> .|  
-|[Double](../../../visual-basic/language-reference/data-types/double-data-type.md) (plovoucí desetinná čárka s dvojitou přesností)|<xref:System.Double>|8 bajtů|-1.79769313486231570 e + 308 do-4.94065645841246544 E-324 <sup>†</sup> pro záporné hodnoty;<br /><br /> 4.94065645841246544 e-324 až 1.79769313486231570 E + 308 <sup>†</sup> pro kladné hodnoty|  
-|[Čísla](../../../visual-basic/language-reference/data-types/integer-data-type.md)|<xref:System.Int32>|4 bajty|-2 147 483 648 až 2 147 483 647 (podepsáno)|  
-|[Long](../../../visual-basic/language-reference/data-types/long-data-type.md) (dlouhé celé číslo)|<xref:System.Int64>|8 bajtů|-9223372036854775808 až 9 223 372 036 854 775 807 (9.2... E + 18 <sup>†</sup>) (podepsáno)|  
-|[Předmětů](../../../visual-basic/language-reference/data-types/object-data-type.md)|<xref:System.Object> (třída)|4 bajty na 32 bitové platformě<br /><br /> 8 bajtů na 64. bitová platforma|Libovolný typ může být uložen v proměnné typu `Object`|  
-|[SByte](../../../visual-basic/language-reference/data-types/sbyte-data-type.md)|<xref:System.SByte>|1 bajt|-128 až 127 (podepsáno)|  
-|[Short](../../../visual-basic/language-reference/data-types/short-data-type.md) (krátké celé číslo)|<xref:System.Int16>|2 bajty|-32 768 až 32 767 (podepsáno)|  
-|[Jedna](../../../visual-basic/language-reference/data-types/single-data-type.md) (plovoucí desetinná čárka s jednoduchou přesností)|<xref:System.Single>|4 bajty|-3.4028235 e + + 38 do-1.401298 E-45 <sup>†</sup> pro záporné hodnoty;<br /><br /> 1.401298 e-45 až 3.4028235 E + 38 <sup>†</sup> pro kladné hodnoty|  
-|[Řetězec](../../../visual-basic/language-reference/data-types/string-data-type.md) (s proměnlivou délkou)|<xref:System.String> (třída)|Závisí na implementaci platformy|0 až přibližně 2 000 000 000 znaků Unicode|  
-|[UInteger –](../../../visual-basic/language-reference/data-types/uinteger-data-type.md)|<xref:System.UInt32>|4 bajty|0 až 4 294 967 295 (bez znaménka)|  
-|[ULong](../../../visual-basic/language-reference/data-types/ulong-data-type.md)|<xref:System.UInt64>|8 bajtů|0 až 18446744073709551615 (1.8... E + 19 <sup>†</sup>) (bez znaménka)|  
-|[Uživatelsky definované](../../../visual-basic/language-reference/data-types/user-defined-data-type.md) (struktura)|(dědí z <xref:System.ValueType>)|Závisí na implementaci platformy|Každý člen struktury má rozsah určený jeho datovým typem a nezávisle na rozsahu ostatních členů.|  
-|[UShort](../../../visual-basic/language-reference/data-types/ushort-data-type.md)|<xref:System.UInt16>|2 bajty|0 až 65 535 (bez znaménka)|  
+|[Logická hodnota](boolean-data-type.md)|<xref:System.Boolean>|Závisí na implementaci platformy|`True` nebo `False`|  
+|[Bytové](byte-data-type.md)|<xref:System.Byte>|1 bajt|0 až 255 (bez znaménka)|  
+|[Char](char-data-type.md) (jeden znak)|<xref:System.Char>|2 bajty|0 až 65535 (bez znaménka)|  
+|[Date](date-data-type.md)|<xref:System.DateTime>|8 bajtů|0:00:00 (půlnoc) 1. ledna 0001 až 11:59:59 odp. prosince 9999|  
+|[Notaci](decimal-data-type.md)|<xref:System.Decimal>|16 bajtů|od 0 do +/-79,228,162,514,264,337,593,543,950,335 (+/-7.9...E + 28) <sup>†</sup> bez desetinné čárky; 0 až +/-7.9228162514264337593543950335 s 28 místy napravo od desetinné čárky;<br /><br /> nejmenší nenulové číslo je +/-0,0000000000000000000000000001 (+/-1E-28) <sup>†</sup> .|  
+|[Double](double-data-type.md) (plovoucí desetinná čárka s dvojitou přesností)|<xref:System.Double>|8 bajtů|-1.79769313486231570 e + 308 do-4.94065645841246544 E-324 <sup>†</sup> pro záporné hodnoty;<br /><br /> 4.94065645841246544 e-324 až 1.79769313486231570 E + 308 <sup>†</sup> pro kladné hodnoty|  
+|[Integer](integer-data-type.md)|<xref:System.Int32>|4 bajty|-2 147 483 648 až 2 147 483 647 (podepsáno)|  
+|[Long](long-data-type.md) (dlouhé celé číslo)|<xref:System.Int64>|8 bajtů|-9223372036854775808 až 9 223 372 036 854 775 807 (9.2... E + 18 <sup>†</sup>) (podepsáno)|  
+|[Předmětů](object-data-type.md)|<xref:System.Object>Deník|4 bajty na 32 bitové platformě<br /><br /> 8 bajtů na 64. bitová platforma|Libovolný typ může být uložený v proměnné typu.`Object`|  
+|[SByte](sbyte-data-type.md)|<xref:System.SByte>|1 bajt|-128 až 127 (podepsáno)|  
+|[Short](short-data-type.md) (krátké celé číslo)|<xref:System.Int16>|2 bajty|-32 768 až 32 767 (podepsáno)|  
+|[Jedna](single-data-type.md) (plovoucí desetinná čárka s jednoduchou přesností)|<xref:System.Single>|4 bajty|-3.4028235 e + + 38 do-1.401298 E-45 <sup>†</sup> pro záporné hodnoty;<br /><br /> 1.401298 e-45 až 3.4028235 E + 38 <sup>†</sup> pro kladné hodnoty|  
+|[Řetězec](string-data-type.md) (s proměnlivou délkou)|<xref:System.String>Deník|Závisí na implementaci platformy|0 až přibližně 2 000 000 000 znaků Unicode|  
+|[UInteger –](uinteger-data-type.md)|<xref:System.UInt32>|4 bajty|0 až 4 294 967 295 (bez znaménka)|  
+|[ULong](ulong-data-type.md)|<xref:System.UInt64>|8 bajtů|0 až 18446744073709551615 (1.8... E + 19 <sup>†</sup>) (bez znaménka)|  
+|[Uživatelsky definované](user-defined-data-type.md) (struktura)|(dědí z <xref:System.ValueType> )|Závisí na implementaci platformy|Každý člen struktury má rozsah určený jeho datovým typem a nezávisle na rozsahu ostatních členů.|  
+|[UShort](ushort-data-type.md)|<xref:System.UInt16>|2 bajty|0 až 65 535 (bez znaménka)|  
   
  <sup>†</sup> V *matematickém zápisu*"E" odkazuje na sílu 10. Takže 3.56 E + 2 znamená 3,56 x 10<sup>2</sup> nebo 356 a 3.56 e-2 znamená 3,56/10<sup>2</sup> nebo 0,0356.  
   
 > [!NOTE]
-> Pro řetězce obsahující text použijte funkci <xref:Microsoft.VisualBasic.Strings.StrConv%2A> pro převod z jednoho textového formátu do jiného.  
+> Pro řetězce obsahující text použijte <xref:Microsoft.VisualBasic.Strings.StrConv%2A> funkci pro převod z jednoho textového formátu do jiného.  
   
- Kromě určení datového typu v příkazu deklarace můžete vynutit datový typ některých programovacích prvků pomocí znaku typu. Viz [znaky typu](../../../visual-basic/programming-guide/language-features/data-types/type-characters.md).  
+ Kromě určení datového typu v příkazu deklarace můžete vynutit datový typ některých programovacích prvků pomocí znaku typu. Viz [znaky typu](../../programming-guide/language-features/data-types/type-characters.md).  
   
-## <a name="memory-consumption"></a>Spotřeba paměti  
+## <a name="memory-consumption"></a>Memory Consumption  
 
  Pokud deklarujete základní datový typ, není bezpečné předpokládat, že jeho využití paměti je stejné jako jeho jmenovité přidělení úložiště. To je způsobeno následujícími požadavky:  
   
@@ -89,17 +89,17 @@ V následující tabulce jsou uvedeny Visual Basic datových typů, jejich podpo
   
 - **Zvyšoval.** Některé složené typy mají další požadavky na paměť. Například pole používá dodatečnou paměť pro samotné pole a také pro každou dimenzi. Na 32 platformě je tato režie aktuálně 12 bajtů plus 8 bajtů pro každou dimenzi. Na 64 platformě se tento požadavek zdvojnásobuje.  
   
-- **Rozložení úložiště** Nemůžete bezpečně předpokládat, že pořadí úložiště v paměti je stejné jako vaše pořadí deklarace. Nemůžete ani dělat předpoklady o zarovnání bajtů, jako je například hranice 2 nebo 4 bajty. Pokud definujete třídu nebo strukturu a potřebujete řídit rozložení úložiště členů, můžete použít atribut <xref:System.Runtime.InteropServices.StructLayoutAttribute> pro třídu nebo strukturu.  
+- **Rozložení úložiště** Nemůžete bezpečně předpokládat, že pořadí úložiště v paměti je stejné jako vaše pořadí deklarace. Nemůžete ani dělat předpoklady o zarovnání bajtů, jako je například hranice 2 nebo 4 bajty. Pokud definujete třídu nebo strukturu a potřebujete řídit rozložení úložiště členů, můžete použít <xref:System.Runtime.InteropServices.StructLayoutAttribute> atribut pro třídu nebo strukturu.  
   
 ### <a name="object-overhead"></a>Režie objektu  
 
- `Object` odkazující na jakýkoli základní nebo složený datový typ používá kromě dat obsažených v datovém typu 4 bajty.  
+ `Object`Odkaz na jakýkoli základní nebo složený datový typ používá kromě dat obsažených v datovém typu 4 bajty.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:Microsoft.VisualBasic.Strings.StrConv%2A>
 - <xref:System.Runtime.InteropServices.StructLayoutAttribute>
-- [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)
-- [Souhrn převodu](../../../visual-basic/language-reference/keywords/conversion-summary.md)
-- [Znaky typu](../../../visual-basic/programming-guide/language-features/data-types/type-characters.md)
-- [Účinné používání datových typů](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)
+- [Funkce pro převod typů](../functions/type-conversion-functions.md)
+- [Souhrn převodu](../keywords/conversion-summary.md)
+- [Znaky typu](../../programming-guide/language-features/data-types/type-characters.md)
+- [Účinné používání datových typů](../../programming-guide/language-features/data-types/efficient-use-of-data-types.md)

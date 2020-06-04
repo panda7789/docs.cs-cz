@@ -2,20 +2,20 @@
 title: 'Postupy: Vyhledání elementu s konkrétním atributem'
 ms.date: 07/20/2015
 ms.assetid: 59fb7c19-d42f-40eb-8cf8-f1d5b9658eb7
-ms.openlocfilehash: c27905f286d6b346e7615baeda15e156afb366f2
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: ec5d3bf46d517e2cfb27c228674d9b86fefffa14
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74352941"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84405245"
 ---
 # <a name="how-to-find-an-element-with-a-specific-attribute-visual-basic"></a>Postupy: Vyhledání elementu s konkrétním atributem (Visual Basic)
 Toto téma ukazuje, jak najít element, který má atribut, který má konkrétní hodnotu.  
   
 ## <a name="example"></a>Příklad  
- Příklad ukazuje, jak najít `Address` element, který má atribut `Type` s hodnotou "vyúčtování".  
+ Příklad ukazuje, jak najít `Address` prvek, který má `Type` atribut s hodnotou "vyúčtování".  
   
- Tento příklad používá následující dokument XML: [vzorový soubor XML: typická nákupní objednávka (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml.md).  
+ Tento příklad používá následující dokument XML: [vzorový soubor XML: typická nákupní objednávka (LINQ to XML)](sample-xml-file-typical-purchase-order-linq-to-xml.md).  
   
 ```vb  
 Dim root As XElement = XElement.Load("PurchaseOrder.xml")  
@@ -28,7 +28,7 @@ For Each el As XElement In address
 Next  
 ```  
   
- Tento kód generuje následující výstup:  
+ Výsledkem tohoto kódu je následující výstup:  
   
 ```xml  
           <Address Type="Billing">  
@@ -41,12 +41,12 @@ Next
 </Address>  
 ```  
   
- Všimněte si, že v tomto příkladu je použita [vlastnost podřízená osa XML](../../../../visual-basic/language-reference/xml-axis/xml-child-axis-property.md), [vlastnost osy atributu XML](../../../../visual-basic/language-reference/xml-axis/xml-attribute-axis-property.md)a [vlastnost hodnoty XML](../../../../visual-basic/language-reference/xml-axis/xml-value-property.md).  
+ Všimněte si, že v tomto příkladu je použita [vlastnost podřízená osa XML](../../../language-reference/xml-axis/xml-child-axis-property.md), [vlastnost osy atributu XML](../../../language-reference/xml-axis/xml-attribute-axis-property.md)a [vlastnost hodnoty XML](../../../language-reference/xml-axis/xml-value-property.md).  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje stejný dotaz pro XML, který je v oboru názvů. Další informace najdete v tématu [obory názvů Overview (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md).  
   
- Tento příklad používá následující dokument XML: [ukázkový soubor XML: typická nákupní objednávka v oboru názvů](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-in-a-namespace.md).  
+ Tento příklad používá následující dokument XML: [ukázkový soubor XML: typická nákupní objednávka v oboru názvů](sample-xml-file-typical-purchase-order-in-a-namespace.md).  
   
 ```vb  
 Imports <xmlns:aw='http://www.adventure-works.com'>  
@@ -65,7 +65,7 @@ Module Module1
 End Module  
 ```  
   
- Tento kód generuje následující výstup:  
+ Výsledkem tohoto kódu je následující výstup:  
   
 ```xml  
 <aw:Address aw:Type="Billing" xmlns:aw="http://www.adventure-works.com">  
@@ -78,10 +78,10 @@ End Module
 </aw:Address>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Xml.Linq.XElement.Attribute%2A>
 - <xref:System.Xml.Linq.XContainer.Elements%2A>
-- [Základní dotazy (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
-- [Přehled standardních operátorů dotazů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
-- [Operace projekce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projection-operations.md)
+- [Základní dotazy (LINQ to XML) (Visual Basic)](basic-queries-linq-to-xml.md)
+- [Přehled standardních operátorů dotazů (Visual Basic)](standard-query-operators-overview.md)
+- [Operace projekce (Visual Basic)](projection-operations.md)

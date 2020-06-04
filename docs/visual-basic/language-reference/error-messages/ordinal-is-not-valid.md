@@ -4,30 +4,30 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID452
 ms.assetid: 7459562b-cd4f-4590-95e0-6126ae3589a5
-ms.openlocfilehash: 740243c744a7ba5391659894812a00d80555fd80
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 7b9bd8435b56dd5e33d14eb35d76aacc7d60c8b5
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64665668"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84413050"
 ---
 # <a name="ordinal-is-not-valid"></a>Ordinální číslo není platné.
-Volání dynamická knihovna (DLL) uvedené číslo nahrazujícím název procedury pomocí `#num` syntaxe. Tato chyba má následující možné příčiny:  
+Vaše volání dynamické knihovny (DLL) označené k použití čísla namísto názvu procedury, pomocí `#num` syntaxe. Tato chyba má následující možné příčiny:  
   
-- Pokus o převod `#num` výraz, který se ordinální číslo se nezdařil.  
+- Pokus o převod `#num` výrazu na pořadové číslo se nezdařil.  
   
-- `#num` Zadané neurčuje žádné funkce v knihovně DLL.  
+- `#num`Zadaný parametr neurčuje žádné funkce v knihovně DLL.  
   
-- Knihovna typů má neplatnou deklarací výsledkem interní použití neplatné ordinální číslo.  
+- Knihovna typů má neplatnou deklaraci, která má za následek interní použití neplatného pořadového čísla.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1. Ujistěte se, že výraz představuje platné číslo nebo voláním procedury podle názvu.  
+1. Ujistěte se, že výraz představuje platné číslo, nebo zavolejte proceduru podle názvu.  
   
-2. Ujistěte se, že `#num` identifikuje platná funkce v knihovně DLL.  
+2. Ujistěte se, že `#num` je v knihovně DLL identifikována platná funkce.  
   
-3. Vzájemnou izolací volání procedury, které jsou příčinou problému, tak kód. Zápis `Declare` příkaz pro postup a sestavy problém, který chcete dodavatele knihovny typů.  
+3. Izolujte volání procedury způsobující problém pomocí komentáře kódu. Zápis `Declare` příkazu pro proceduru a nahlášení problému na dodavatele knihovny typů.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Příkaz Declare](../../../visual-basic/language-reference/statements/declare-statement.md)
+- [Declare – příkaz](../statements/declare-statement.md)

@@ -5,14 +5,14 @@ helpviewer_keywords:
 - <remarks> XML tag
 - remarks XML tag
 ms.assetid: c6241773-a7ed-41c9-9a8b-9722a0c606a9
-ms.openlocfilehash: b327e548bcdce1522a888855bd88e3150695147b
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: c57ddb870192bd94301f99eb71ad29526e8efc28
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74352248"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84400018"
 ---
-# <a name="remarks-visual-basic"></a>\<poznámky > (Visual Basic)
+# <a name="remarks-visual-basic"></a>\<remarks> (Visual Basic)
 Určuje oddíl poznámky pro člena.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -26,17 +26,17 @@ Určuje oddíl poznámky pro člena.
  Popis člena  
   
 ## <a name="remarks"></a>Poznámky  
- Pomocí značky `<remarks>` přidáte informace o typu a doplníte informace zadané pomocí [\<summary >](../../../visual-basic/language-reference/xmldoc/summary.md).  
+ Pomocí `<remarks>` značky můžete přidat informace o typu a doplnit informace zadané pomocí [\<summary>](summary.md) .  
   
  Tyto informace se zobrazí v Prohlížeč objektů. Informace o Prohlížeč objektů naleznete v tématu [zobrazení struktury kódu](/visualstudio/ide/viewing-the-structure-of-code).  
   
- Zkompilujte s [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) a zpracujte komentáře k dokumentaci do souboru.  
+ Zkompilujte s [-doc](../../reference/command-line-compiler/doc.md) a zpracujte komentáře k dokumentaci do souboru.  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu se používá značka `<remarks>` k vysvětlení toho, co metoda `UpdateRecord` dělá.  
+ Tento příklad používá `<remarks>` značku k vysvětlení, co `UpdateRecord` metoda dělá.  
   
  [!code-vb[VbVbcnXmlDocComments#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#6)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Značky pro komentáře XML](../../../visual-basic/language-reference/xmldoc/index.md)
+- [Značky pro komentáře XML](index.md)

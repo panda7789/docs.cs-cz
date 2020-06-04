@@ -1,26 +1,26 @@
 ---
-title: Byl zadán neplatný název protokolu událostí
+title: Pro protokol událostí byl zadán neplatný název.
 ms.date: 07/20/2015
 ms.assetid: b1b158bd-f13f-4371-a8af-31c0e86ae6be
-ms.openlocfilehash: 05f37239510482de218847f069dc74cbef91f398
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 70b1de2a3776a9c68260cc431b65e754d7247a0c
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64609166"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84412920"
 ---
-# <a name="an-invalid-name-was-specified-for-the-event-log"></a>Byl zadán neplatný název protokolu událostí
-Pro protokol událostí byl zadán neplatný název. Obvykle to je výsledkem neplatných znaků v názvu, prázdný soubor název nebo název souboru, který je příliš dlouhý.  
+# <a name="an-invalid-name-was-specified-for-the-event-log"></a>Pro protokol událostí byl zadán neplatný název.
+Pro protokol událostí byl zadán neplatný název. Obvykle se jedná o výsledek neplatných znaků v názvu, prázdný název souboru nebo název souboru, který je příliš dlouhý.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-- Pokud se zadaným názvem více než osm znaků, ujistěte se, že nedojde ke konfliktu s názvy jiných protokolů událostí. Pouze prvních osm znaků se vyhodnocují při určování, jestli je název jedinečný.  
+- Pokud je zadaný název delší než osm znaků, ujistěte se, že nedochází ke konfliktu s názvy jiných protokolů událostí. Při určování, jestli je název jedinečný, se vyhodnotí jenom prvních osm znaků.  
   
-- Pokud se zadáním cesty, ujistěte se, že je správně parsovat.  
+- Pokud zadáváte cestu, ujistěte se, že je správně analyzovaná.  
   
-- Zkontrolujte, že neexistují žádné neplatné znaky v názvu. Znaky, které nelze použít v názvu souboru patří `<`, `>`, `:`, `"`, `/`, `\`, a `|`.  
+- Ověřte, zda název neobsahuje neplatné znaky. Mezi znaky, které nelze použít v názvu souboru `<` , patří, `>` , `:` , `"` ,, a `/` `\` `|` .  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Postupy: Analýza cest k souborům](../../visual-basic/developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md)
-- [Postupy: Přejmenovat soubor](../../visual-basic/developing-apps/programming/drives-directories-files/how-to-rename-a-file.md)
+- [Postupy: Analýza cest k souborům](../developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md)
+- [Postupy: Přejmenování souboru](../developing-apps/programming/drives-directories-files/how-to-rename-a-file.md)

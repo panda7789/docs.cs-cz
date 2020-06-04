@@ -9,32 +9,32 @@ helpviewer_keywords:
 - Unicode keyword [Visual Basic]
 - Unicode, marshaling strings
 ms.assetid: 0021d5ff-3209-444e-8497-420f3e6ee075
-ms.openlocfilehash: c4286ed9e9d5fd768ae29b7050b3d1505ccca9dd
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 9b1bc40bb52244deefc0486d3a40c4b961ad1ee5
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74344225"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84402678"
 ---
 # <a name="unicode-visual-basic"></a>Unicode (Visual Basic)
 Určuje, že Visual Basic by měly zařazovat všechny řetězce do hodnot Unicode bez ohledu na název externí procedury, která je deklarována.  
   
- Při volání procedury definované mimo projekt, kompilátor Visual Basic nemá přístup k informacím, které musí mít, aby mohl správně zavolat proceduru. Tyto informace zahrnují, kde se nachází postup, jak se identifikuje, jeho volající sekvence a návratový typ a znaková sada, kterou používá. [Příkaz Declare](../../../visual-basic/language-reference/statements/declare-statement.md) vytvoří odkaz na externí proceduru a poskytne tyto nezbytné informace.  
+ Při volání procedury definované mimo projekt, kompilátor Visual Basic nemá přístup k informacím, které musí mít, aby mohl správně zavolat proceduru. Tyto informace zahrnují, kde se nachází postup, jak se identifikuje, jeho volající sekvence a návratový typ a znaková sada, kterou používá. [Příkaz Declare](../statements/declare-statement.md) vytvoří odkaz na externí proceduru a poskytne tyto nezbytné informace.  
   
- Část `charsetmodifier` v příkazu `Declare` poskytuje znakovou sadu informace pro zařazování řetězců během volání do externí procedury. Ovlivňuje také způsob, jakým Visual Basic hledá Externí soubor pro název externí procedury. Modifikátor `Unicode` určuje, že Visual Basic by měly zařazovat všechny řetězce do hodnot Unicode a měly by Hledat postup beze změny jeho názvu během hledání.  
+ `charsetmodifier`Část v `Declare` příkazu poskytuje znakovou sadu informace pro zařazování řetězců během volání externí procedury. Ovlivňuje také způsob, jakým Visual Basic hledá Externí soubor pro název externí procedury. `Unicode`Modifikátor určuje, že Visual Basic by měl zařazovat všechny řetězce do hodnot Unicode a by měl vyhledat proceduru bez úpravy jejího názvu během hledání.  
   
- Pokud není zadán žádný modifikátor znakové sady, je `Ansi` výchozí hodnota.  
+ Pokud není zadán modifikátor znakové sady, `Ansi` je výchozí hodnota.  
   
 ## <a name="remarks"></a>Poznámky  
- V tomto kontextu lze použít modifikátor `Unicode`:  
+ `Unicode`V tomto kontextu lze použít modifikátor:  
   
- [Příkaz Declare](../../../visual-basic/language-reference/statements/declare-statement.md)  
+ [Declare – příkaz](../statements/declare-statement.md)  
   
 ## <a name="smart-device-developer-notes"></a>Poznámky pro vývojáře inteligentního zařízení  
  Toto klíčové slovo není podporováno.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ANSI](../../../visual-basic/language-reference/modifiers/ansi.md)
-- [Auto](../../../visual-basic/language-reference/modifiers/auto.md)
-- [Klíčová slova](../../../visual-basic/language-reference/keywords/index.md)
+- [Ansi](ansi.md)
+- [Automaticky](auto.md)
+- [Klíčová slova](../keywords/index.md)

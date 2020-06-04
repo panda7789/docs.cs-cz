@@ -8,15 +8,15 @@ helpviewer_keywords:
 - XML CDATA literal [Visual Basic]
 - XML literals [Visual Basic], CDATA
 ms.assetid: 9eafb6a4-dd9d-4866-85e8-0654c65abc44
-ms.openlocfilehash: 72e899e7bd30f2edf0e88207bb3b75bdf36fa11c
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: b9cc830d27625f192d8f5e059bd3783d05d8ba3b
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74349437"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84400225"
 ---
 # <a name="xml-cdata-literal-visual-basic"></a>Literál XML CDATA (Visual Basic)
-Literál představující objekt <xref:System.Xml.Linq.XCData>.  
+Literál představující <xref:System.Xml.Linq.XCData> objekt.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -26,13 +26,13 @@ Literál představující objekt <xref:System.Xml.Linq.XCData>.
   
 ## <a name="parts"></a>Součásti  
  `<![CDATA[`  
- Požadováno. Označuje začátek oddílu CDATA XML.  
+ Povinná hodnota. Označuje začátek oddílu CDATA XML.  
   
  `content`  
- Požadováno. Textový obsah, který se má zobrazit v oddílu CDATA XML  
+ Povinná hodnota. Textový obsah, který se má zobrazit v oddílu CDATA XML  
   
  `]]>`  
- Požadováno. Označuje konec oddílu.  
+ Povinná hodnota. Označuje konec oddílu.  
   
 ## <a name="return-value"></a>Návratová hodnota  
  Objekt <xref:System.Xml.Linq.XCData>.  
@@ -42,23 +42,23 @@ Literál představující objekt <xref:System.Xml.Linq.XCData>.
   
 - V literálu CDATA XML nelze použít vložený výraz, protože oddělovače vložených výrazů jsou platným obsahem CDATA XML.  
   
-- Oddíly XML CDATA nemohou být vnořené, protože `content` nesmí obsahovat hodnotu "]] >".  
+- Oddíly XML CDATA nemůžou být vnořené, protože `content` nesmí obsahovat hodnotu "]] >".  
   
  Můžete přiřadit literál CDATA XML proměnné nebo jej zahrnout do literálu elementu XML.  
   
 > [!NOTE]
 > Literál XML může zahrnovat více řádků, ale nepoužívá znaky pro pokračování řádku. To vám umožní zkopírovat obsah z dokumentu XML a vložit ho přímo do Visual Basic programu.  
   
- Kompilátor Visual Basic převádí literál XML CDATA na volání konstruktoru <xref:System.Xml.Linq.XCData.%23ctor%2A>.  
+ Kompilátor Visual Basic převádí literál XML CDATA na volání <xref:System.Xml.Linq.XCData.%23ctor%2A> konstruktoru.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří oddíl CDATA, který obsahuje text "může obsahovat literál \<> značky XML.  
+ Následující příklad vytvoří oddíl CDATA obsahující text "může obsahovat literální \<XML> značky".  
   
  [!code-vb[VbXMLSamples#23](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples11.vb#23)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Xml.Linq.XCData>
-- [Literál XML elementu](../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)
-- [Literály XML](../../../visual-basic/language-reference/xml-literals/index.md)
-- [Vytváření XML v Visual Basic](../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
+- [Literál XML elementu](xml-element-literal.md)
+- [Literály XML](index.md)
+- [Vytvoření XML v jazyce Visual Basic](../../programming-guide/language-features/xml/creating-xml.md)

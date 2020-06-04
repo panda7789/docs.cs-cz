@@ -9,25 +9,25 @@ helpviewer_keywords:
 - rectangular arrays
 - ranking, arrays
 ms.assetid: 385e911b-18c1-4e98-9924-c6d279101dd9
-ms.openlocfilehash: 12e983ae62fa9f9ea762d434ffe5b73873a4a2e8
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: f971f0c3693177adbcb8869d487e3ad41d49ddc2
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74351898"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84413101"
 ---
 # <a name="array-dimensions-in-visual-basic"></a>Rozměry pole v jazyce Visual Basic
 
 *Dimenze* je směr, ve kterém můžete měnit specifikaci prvků pole. Pole, které obsahuje celkový prodej za každý den v měsíci, má jednu dimenzi (den v měsíci). Pole, které obsahuje celkové tržby podle oddělení za každý den v měsíci, má dvě dimenze (číslo oddělení a den v měsíci). Počet rozměrů, které pole je označováno jako *pořadí*.
 
 > [!NOTE]
-> Vlastnost <xref:System.Array.Rank%2A> lze použít k určení, kolik rozměrů pole má.
+> Vlastnost můžete použít <xref:System.Array.Rank%2A> k určení, kolik rozměrů pole má.
 
 ## <a name="working-with-dimensions"></a>Práce s rozměry
 
 Prvek pole určíte tak, že pro každou z jeho rozměrů zadáte *index* nebo *dolní index* . Prvky jsou souvislé podél každé dimenze z indexu 0 až po nejvyšší index pro tuto dimenzi.
 
-Následující ilustrace znázorňují koncepční strukturu polí s odlišným pořadím. Každý prvek na ilustraci zobrazuje indexové hodnoty, které k němu přistupují. Můžete například získat přístup k prvnímu prvku druhého řádku dvojrozměrného pole zadáním indexů `(1, 0)`.
+Následující ilustrace znázorňují koncepční strukturu polí s odlišným pořadím. Každý prvek na ilustraci zobrazuje indexové hodnoty, které k němu přistupují. Můžete například získat přístup k prvnímu prvku druhého řádku dvojrozměrného pole zadáním indexů `(1, 0)` .
 
 ![Diagram, který zobrazuje jednorozměrné pole.](./media/array-dimensions/one-dimensional-array.gif)
 
@@ -88,12 +88,12 @@ Nyní se můžete rozhodnout, že budete mít informace o poznámkovém poli po 
 Dim salesAmounts(4, 11, 30) As Double
 ```
 
-Všimněte si, že vzhledem k tomu, že se každý index mění z 0 na jeho maximum, každá dimenze `salesAmounts` je deklarována jako méně než požadovaná délka pro tuto dimenzi. Všimněte si také, že velikost pole se zvyšuje s každou novou dimenzí. Tři velikosti v předchozích příkladech jsou 31, 372 a 1 860 prvky.
+Všimněte si, že vzhledem k tomu, že se každý index mění z 0 na jeho maximum, každá dimenze `salesAmounts` je deklarována jako jedna menší než požadovaná délka této dimenze. Všimněte si také, že velikost pole se zvyšuje s každou novou dimenzí. Tři velikosti v předchozích příkladech jsou 31, 372 a 1 860 prvky.
 
 > [!NOTE]
-> Pole lze vytvořit bez použití příkazu `Dim` nebo klauzule `New`. Například můžete zavolat metodu <xref:System.Array.CreateInstance%2A>, nebo jiná komponenta může předat vašemu kódu pole vytvořené tímto způsobem. Takové pole může mít dolní mez, která je jiná než 0. Můžete vždy testovat spodní mez dimenze pomocí metody <xref:System.Array.GetLowerBound%2A> nebo funkce `LBound`.
+> Pole lze vytvořit bez použití `Dim` příkazu nebo `New` klauzule. Například můžete zavolat <xref:System.Array.CreateInstance%2A> metodu nebo jiná komponenta může předat vašemu kódu pole vytvořené tímto způsobem. Takové pole může mít dolní mez, která je jiná než 0. Můžete vždy testovat spodní mez dimenze pomocí <xref:System.Array.GetLowerBound%2A> metody nebo `LBound` funkce.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Pole](../../../../visual-basic/programming-guide/language-features/arrays/index.md)
-- [Řešení potíží s poli](../../../../visual-basic/programming-guide/language-features/arrays/troubleshooting-arrays.md)
+- [Pole](index.md)
+- [Řešení potíží s poli](troubleshooting-arrays.md)

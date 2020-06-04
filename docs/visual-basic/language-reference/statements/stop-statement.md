@@ -12,12 +12,12 @@ helpviewer_keywords:
 - processes, interrupting
 - execution [Visual Basic], stopping
 ms.assetid: c9a9fde0-d649-4662-9bef-bd0146ebc2a7
-ms.openlocfilehash: 497c5f207b2228412411cc3eb01976564f82bd6c
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 2ef1e2f9045e5509e11557c9fdaf3edd2786b72c
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74346469"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84404223"
 ---
 # <a name="stop-statement-visual-basic"></a>Stop – příkaz (Visual Basic)
 Pozastaví provádění.  
@@ -29,18 +29,18 @@ Stop
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Můžete umístit `Stop` příkazy kdekoli v postupech pro pozastavení provádění. Použití příkazu `Stop` je podobné jako nastavení zarážky v kódu.  
+ Příkazy lze umístit `Stop` kdekoli v postupech pro pozastavení provádění. Použití `Stop` příkazu je podobné jako nastavení zarážky v kódu.  
   
- Příkaz `Stop` pozastaví provádění, ale na rozdíl od `End`nezavře žádné soubory ani nevymaže žádné proměnné, pokud se nevyskytly v kompilovaném spustitelném souboru (. exe).  
+ `Stop`Příkaz pozastaví provádění, ale na rozdíl od `End` , neuzavře žádné soubory ani nevymaže žádné proměnné, pokud se nevyskytly v kompilovaném spustitelném souboru (. exe).  
   
 > [!NOTE]
-> Pokud je v kódu, který běží mimo integrované vývojové prostředí (IDE), nalezen příkaz `Stop`, je vyvolán ladicí program. To platí bez ohledu na to, zda byl kód zkompilován v režimu ladění nebo maloobchodu.  
+> Je `Stop` -li příkaz nalezen v kódu, který je spuštěn mimo integrované vývojové prostředí (IDE), je vyvolán ladicí program. To platí bez ohledu na to, zda byl kód zkompilován v režimu ladění nebo maloobchodu.  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu se používá příkaz `Stop` k pozastavení provádění každé iterace prostřednictvím smyčky `For...Next`.  
+ V tomto příkladu se používá `Stop` příkaz pro pozastavení provádění každé iterace prostřednictvím `For...Next` smyčky.  
   
  [!code-vb[VbVbalrStatements#56](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#56)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Příkaz End](../../../visual-basic/language-reference/statements/end-statement.md)
+- [Příkaz end](end-statement.md)

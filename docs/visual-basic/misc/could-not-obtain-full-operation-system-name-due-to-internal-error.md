@@ -1,29 +1,29 @@
 ---
-title: Nepovedlo se získat úplný název operačního systému z důvodu vnitřní chyby
+title: Kvůli vnitřní chybě se nepovedlo získat úplný název operačního systému.
 ms.date: 07/20/2015
 f1_keywords:
 - vbrDiagnosticInfo_FullOSName
 ms.assetid: f69da02b-eb9a-4284-bb9e-3025517ae6c1
-ms.openlocfilehash: ecbed5b59d36b1984c0b0ae161821ea99d28e090
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 67e8fb5e906800d28bf15714463b7ff6ae585693
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61970583"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84402275"
 ---
-# <a name="could-not-obtain-full-operation-system-name-due-to-internal-error"></a>Nepovedlo se získat úplný název operačního systému z důvodu vnitřní chyby
-Nepovedlo se získat úplný název operačního systému z důvodu vnitřní chyby. To může být způsobeno WMI neexistují na aktuálním počítači.  
+# <a name="could-not-obtain-full-operation-system-name-due-to-internal-error"></a>Kvůli vnitřní chybě se nepovedlo získat úplný název operačního systému.
+Kvůli vnitřní chybě se nepovedlo získat úplný název operačního systému. To může být způsobeno tím, že rozhraní WMI není v aktuálním počítači existující.  
   
- Volání `My.Computer.Info.OSFullName` vlastnost se nezdařilo. Možnou příčinou této chyby je, pokud není v aktuálním počítači nainstalován Windows Management Instrumentation (WMI).  
+ Volání `My.Computer.Info.OSFullName` vlastnosti se nezdařilo. Možnou příčinou této chyby je, pokud v aktuálním počítači není nainstalovaná rozhraní WMI (Windows Management Instrumentation) (WMI).  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1. Přidat `Try...Catch` blok po volání `My.Computer.Info.OSFullName` vlastnost.  
+1. Přidejte `Try...Catch` blok kolem volání do `My.Computer.Info.OSFullName` Vlastnosti.  
   
-2. Další informace o rozhraní WMI a jak ji nainstalovat, přejděte na, vyhledejte "Windows Management Instrumentation základní".  
+2. Další informace o rozhraní WMI a o tom, jak ho nainstalovat, najdete v tématu a vyhledejte "rozhraní WMI (Windows Management Instrumentation) Core".  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [My.Computer.Info.OSFullName](xref:Microsoft.VisualBasic.Devices.ComputerInfo.OSFullName)
-- [Zpracování a vyvolání výjimek v rozhraní .NET](../../standard/exceptions/index.md)
-- [Příkaz Try...Catch...Finally](../../visual-basic/language-reference/statements/try-catch-finally-statement.md)
+- [My. Computer. info. OSFullName](xref:Microsoft.VisualBasic.Devices.ComputerInfo.OSFullName)
+- [Zpracování a vyvolávání výjimek v rozhraní .NET](../../standard/exceptions/index.md)
+- [Try...Catch....Finally – příkaz](../language-reference/statements/try-catch-finally-statement.md)

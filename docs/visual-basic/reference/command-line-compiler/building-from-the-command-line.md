@@ -13,12 +13,12 @@ helpviewer_keywords:
 - command-line compilers [Visual Basic], Visual Basic
 - command line [Visual Basic], Visual Basic
 ms.assetid: e61947e9-a42e-4717-a699-5f70a98cdd03
-ms.openlocfilehash: c7219c0497bb87f0cc44f27229eaf25f9b3eebce
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: ec6ae3328c2042af950d1ee78a33d3de97219f10
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74344796"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84414295"
 ---
 # <a name="building-from-the-command-line-visual-basic"></a>Sestavení z příkazového řádku (Visual Basic)
 
@@ -35,18 +35,18 @@ Soubory projektu (. vbproj) můžete kompilovat na příkazovém řádku pomocí
 
 ## <a name="in-this-section"></a>V tomto oddílu
 
-[Postupy: volání kompilátoru příkazového řádku](../../../visual-basic/reference/command-line-compiler/how-to-invoke-the-command-line-compiler.md) \
+[Postupy: volání kompilátoru příkazového řádku](how-to-invoke-the-command-line-compiler.md) \
 Popisuje, jak vyvolat kompilátor příkazového řádku v příkazovém řádku systému MS-DOS nebo z konkrétního podadresáře.
 
-[Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md) \
+[Příkazové řádky ukázkové kompilace](sample-compilation-command-lines.md) \
 Poskytuje seznam ukázkových příkazových řádků, které můžete upravit pro vlastní použití.
 
 ## <a name="related-sections"></a>Související oddíly
 
-[Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md) \
+[Visual Basic Kompilátor příkazového řádku](index.md) \
 Obsahuje seznam možností kompilátoru uspořádaných podle abecedy nebo podle účelu.
 
-[Podmíněná kompilace](../../../visual-basic/programming-guide/program-structure/conditional-compilation.md) \
+[Podmíněná kompilace](../../programming-guide/program-structure/conditional-compilation.md) \
 Popisuje, jak zkompilovat konkrétní oddíly kódu.
 
 [Sestavování a čištění projektů a řešení v aplikaci Visual Studio](/visualstudio/ide/building-and-cleaning-projects-and-solutions-in-visual-studio) \

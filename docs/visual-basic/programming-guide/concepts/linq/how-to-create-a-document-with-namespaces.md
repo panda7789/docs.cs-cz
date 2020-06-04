@@ -1,13 +1,13 @@
 ---
-title: 'Postupy: vytvoření dokumentu s oborem názvů (LINQ to XML)'
+title: 'Postupy: Vytvoření dokumentu pomocí názvových prostorů (LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: cc5b0d4d-360c-4ada-94fa-2d2916e989be
-ms.openlocfilehash: bbd23840b0356cf14d2c7d6cb71591fe6461a8bd
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: a440c9d810798eb5ebd025a336cbb17fface23b4
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74332589"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84414631"
 ---
 # <a name="how-to-create-a-document-with-namespaces-linq-to-xml-visual-basic"></a>Postupy: vytvoření dokumentu s oborem názvů (LINQ to XML) (Visual Basic)
 V tomto tématu se dozvíte, jak vytvořit dokument s obory názvů v Visual Basic.  
@@ -16,9 +16,9 @@ V tomto tématu se dozvíte, jak vytvořit dokument s obory názvů v Visual Bas
   
  Můžete také definovat jiné obory názvů a zadat předpony oboru názvů pro tyto obory názvů.  
   
- Pomocí klíčového slova `Imports` definujete výchozí obory názvů a obory názvů s předponou.  
+ Můžete definovat výchozí obory názvů a obory názvů s předponou pomocí `Imports` klíčového slova.  
   
- Další informace naleznete v tématu [Úvod do literálů XML v Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/introduction-to-xml-literals.md).  
+ Další informace naleznete v tématu [Úvod do literálů XML v Visual Basic](introduction-to-xml-literals.md).  
   
  Všimněte si, že výchozí obor názvů XML se vztahuje pouze na elementy a nikoli na atributy. Atributy jsou ve výchozím nastavení vždy v žádném oboru názvů. Můžete však použít předponu oboru názvů pro vložení atributu do oboru názvů.  
   
@@ -79,7 +79,7 @@ End Module
 ## <a name="example"></a>Příklad  
  Následující příklad vytvoří dokument, který obsahuje více oborů názvů, s předponami oboru názvů.  
   
- Při serializaci stromu XML [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] emituje deklarace oboru názvů podle potřeby, aby byl každý element v jeho určeném oboru názvů.  
+ Při serializaci stromu XML [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] vygeneruje deklarace oboru názvů podle potřeby, aby byl každý element v jeho určeném oboru názvů.  
   
 ```vb  
 Imports <xmlns:aw="http://www.adventure-works.com">  
@@ -114,6 +114,6 @@ End Module
 </aw:Root>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přehled oborů názvů (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md)

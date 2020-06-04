@@ -7,26 +7,26 @@ f1_keywords:
 helpviewer_keywords:
 - BC30561
 ms.assetid: 761091f7-1018-4299-b481-3966a4a2c126
-ms.openlocfilehash: ed988547e0be3ef934c46d725c41646c3a75e626
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 63e61d412e4d1238b08ccae94f11adb0c3d1b54d
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61918343"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84401573"
 ---
-# <a name="name1-is-ambiguous-imported-from-the-namespaces-or-types-name2"></a>"\<name1 >' je nejednoznačný a importuje z oboru názvů nebo typů\<name2 >"
-Zadali jste název, který je nejednoznačný a proto je v konfliktu s jiným názvem. Kompilátor jazyka Visual Basic nemá žádná pravidla řešení konfliktů; rozlišení názvů musí být sami.  
+# <a name="name1-is-ambiguous-imported-from-the-namespaces-or-types-name2"></a>Název '\<name1>' je nejednoznačný a je importován z oboru názvů nebo typů '\<name2>'.
+Zadali jste název, který je nejednoznačný, a proto je v konfliktu s jiným názvem. Kompilátor Visual Basic nemá žádná pravidla řešení konfliktů; názvy je nutné jednoznačně odlišit.  
   
  **ID chyby:** BC30561  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1. Rozlišení názvu tak, že odeberete importů oboru názvu.  
+1. Nejednoznačnost názvu odstraněním importu oboru názvů.  
   
-2. Plně kvalifikujte název.  
+2. Plně kvalifikované jméno.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Příkaz Imports (obor názvů a typ .NET)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)
-- [Obory názvů v jazyce Visual Basic](../../../visual-basic/programming-guide/program-structure/namespaces.md)
-- [Příkaz Namespace](../../../visual-basic/language-reference/statements/namespace-statement.md)
+- [Imports – příkaz (obor názvů a typ rozhraní .NET)](../statements/imports-statement-net-namespace-and-type.md)
+- [Obory názvů v jazyce Visual Basic](../../programming-guide/program-structure/namespaces.md)
+- [Namespace – příkaz](../statements/namespace-statement.md)
