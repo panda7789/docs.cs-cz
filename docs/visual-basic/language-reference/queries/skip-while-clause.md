@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Skip While clause [Visual Basic]
 - queries [Visual Basic], Skip While
 ms.assetid: 5dee8350-7520-4f1a-b00d-590cacd572d6
-ms.openlocfilehash: 47703e445865435f5bf5312c3fe41833ac21aa3f
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: b357320a92ace1b7a261991737ed653d54d0eeab
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74333142"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84359642"
 ---
 # <a name="skip-while-clause-visual-basic"></a>Skip While – klauzule (Visual Basic)
 Vynechá prvky v kolekci, pokud je zadaná podmínka `true` a vrátí zbývající prvky.  
@@ -26,28 +26,28 @@ Skip While expression
   
 ## <a name="parts"></a>Součásti  
   
-|Termín|Definice|  
+|Pojem|Definice|  
 |---|---|  
-|`expression`|Požadováno. Výraz, který představuje podmínku pro testování prvků pro. Výraz musí vracet `Boolean` hodnotu nebo funkční ekvivalent, jako je například `Integer` pro vyhodnocení jako `Boolean`.|  
+|`expression`|Povinná hodnota. Výraz, který představuje podmínku pro testování prvků pro. Výraz musí vracet `Boolean` hodnotu nebo funkční ekvivalent, jako je například, aby se `Integer` vyhodnotil jako `Boolean` .|  
   
 ## <a name="remarks"></a>Poznámky  
- Klauzule `Skip While` obchází prvky od začátku výsledku dotazu, dokud zadaný `expression` nevrátí `false`. Po `expression` vrátí `false`, dotaz vrátí všechny zbývající prvky. `expression` se u zbývajících výsledků ignoruje.  
+ `Skip While`Klauzule vynechává prvky od začátku výsledku dotazu, dokud se nevrátí zadané výsledky `expression` `false` . Po `expression` návratu `false` dotaz vrátí všechny zbývající prvky. U `expression` zbývajících výsledků se ignoruje.  
   
- Klauzule `Skip While` se liší od klauzule `Where` v tom, že klauzuli `Where` lze použít k vyloučení všech prvků z dotazu, který nesplňuje určitou podmínku. Klauzule `Skip While` vyloučí prvky pouze do doby, než první podmínka není splněna. Klauzule `Skip While` je nejužitečnější, když pracujete s výsledkem seřazeného dotazu.  
+ `Skip While`Klauzule se liší od `Where` klauzule v tom, že `Where` klauzuli lze použít k vyloučení všech prvků z dotazu, který nesplňuje určitou podmínku. `Skip While`Klauzule vyloučí prvky pouze do prvního okamžiku, kdy podmínka není splněna. `Skip While`Klauzule je nejužitečnější, když pracujete s výsledkem seřazeného dotazu.  
   
- Můžete obejít určitý počet výsledků od začátku výsledku dotazu pomocí klauzule `Skip`.  
+ Můžete obejít určitý počet výsledků od začátku výsledku dotazu pomocí `Skip` klauzule.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu používá klauzuli `Skip While` pro obejití výsledků, dokud se nenajde první zákazník z USA.  
+ Následující příklad kódu používá `Skip While` klauzuli pro obejití výsledků, dokud se nenajde první zákazník z USA.  
   
  [!code-vb[VbSimpleQuerySamples#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#3)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Úvod do jazyka LINQ v Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
-- [Dotazy](../../../visual-basic/language-reference/queries/index.md)
-- [Klauzule Select](../../../visual-basic/language-reference/queries/select-clause.md)
-- [Klauzule From](../../../visual-basic/language-reference/queries/from-clause.md)
-- [Klauzule Skip](../../../visual-basic/language-reference/queries/skip-clause.md)
-- [Klauzule Take While](../../../visual-basic/language-reference/queries/take-while-clause.md)
-- [Klauzule Where](../../../visual-basic/language-reference/queries/where-clause.md)
+- [Představení technologie LINQ v jazyce Visual Basic](../../programming-guide/language-features/linq/introduction-to-linq.md)
+- [Dotazy](index.md)
+- [Klauzule SELECT](select-clause.md)
+- [Klauzule FROM](from-clause.md)
+- [Skip – klauzule](skip-clause.md)
+- [Take While – klauzule](take-while-clause.md)
+- [Klauzule WHERE](where-clause.md)

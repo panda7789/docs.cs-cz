@@ -2,25 +2,25 @@
 title: Serializace grafů objektů, které obsahují objekty XElement
 ms.date: 07/20/2015
 ms.assetid: c0cc5c92-5ca3-44b1-98dd-371601df721b
-ms.openlocfilehash: caf594fc23eee15cc79cfad47e62a057518f62dd
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 5390cfaa77229b60af6388fc643544c539c15fe9
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74349374"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84360680"
 ---
 # <a name="serializing-object-graphs-that-contain-xelement-objects-visual-basic"></a>Serializace grafů objektů, které obsahují objekty XElement (Visual Basic)
-Toto téma představuje schopnost serializace grafů objektů, které obsahují odkazy na objekty typu <xref:System.Xml.Linq.XElement>. Pro zařízení tento typ serializace <xref:System.Xml.Linq.XElement> implementuje rozhraní <xref:System.Xml.Serialization.IXmlSerializable>.  
+Toto téma představuje schopnost serializace grafů objektů, které obsahují odkazy na objekty typu <xref:System.Xml.Linq.XElement> . Pro zařízení tento typ serializace <xref:System.Xml.Linq.XElement> implementuje <xref:System.Xml.Serialization.IXmlSerializable> rozhraní.  
   
- Všimněte si, že serializace implementuje pouze třída <xref:System.Xml.Linq.XElement>.  
+ Všimněte si, že <xref:System.Xml.Linq.XElement> serializace implementuje pouze třída.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   
-|Téma|Popis|  
+|Téma|Description|  
 |-----------|-----------------|  
-|[Postupy: serializace pomocí XmlSerializer (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-serialize-using-xmlserializer.md)|Ukazuje, jak serializovat pomocí <xref:System.Xml.Serialization.XmlSerializer>.|  
-|[Postupy: serializace pomocí třídy DataContractSerializer (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-serialize-using-datacontractserializer.md)|Ukazuje, jak serializovat pomocí <xref:System.Runtime.Serialization.DataContractSerializer>.|  
+|[Postupy: serializace pomocí XmlSerializer (Visual Basic)](how-to-serialize-using-xmlserializer.md)|Ukazuje, jak serializovat pomocí <xref:System.Xml.Serialization.XmlSerializer> .|  
+|[Postupy: serializace pomocí třídy DataContractSerializer (Visual Basic)](how-to-serialize-using-datacontractserializer.md)|Ukazuje, jak serializovat pomocí <xref:System.Runtime.Serialization.DataContractSerializer> .|  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Rozšířené programování LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
+- [Rozšířené programování LINQ to XML (Visual Basic)](advanced-linq-to-xml-programming.md)

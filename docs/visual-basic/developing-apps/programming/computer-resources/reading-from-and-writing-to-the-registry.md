@@ -6,12 +6,12 @@ helpviewer_keywords:
 - registry [Visual Basic], writing to
 - registry [Visual Basic], reading
 ms.assetid: a13da106-185b-41d7-b23c-416da65e21e4
-ms.openlocfilehash: 89db9ef9db4235c069d6239d32e4f8679fbabf0b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bb400ef89edaa4eb743aee3a7f2cc5b9dfec4534
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74349752"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84360056"
 ---
 # <a name="reading-from-and-writing-to-the-registry-visual-basic"></a>Čtení z registru a zápis do něj pomocí oboru názvů My (Visual Basic)
 
@@ -21,19 +21,19 @@ Toto téma popisuje úlohu a koncepční témata, která jsou přidružená k re
   
 ## <a name="in-this-section"></a>V tomto oddílu  
 
- [Postupy: Vytvoření klíče registru a nastavení jeho hodnoty](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-create-a-registry-key-and-set-its-value.md)  
- Popisuje způsob použití metod `CreateSubKey` a `SetValue` `My.Computer.Registry` objektu k vytvoření klíče registru a nastavení jeho hodnoty.  
+ [Postupy: Vytvoření klíče registru a nastavení jeho hodnoty](how-to-create-a-registry-key-and-set-its-value.md)  
+ Popisuje způsob použití `CreateSubKey` `SetValue` metod a `My.Computer.Registry` objektu k vytvoření klíče registru a nastavení jeho hodnoty.  
   
- [Postupy: Načtení hodnoty z klíče registru](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-read-a-value-from-a-registry-key.md)  
+ [Postupy: Načtení hodnoty z klíče registru](how-to-read-a-value-from-a-registry-key.md)  
  Popisuje způsob použití `GetValue` metody `My.Computer.Registry` objektu ke čtení hodnoty z klíče registru.  
   
- [Postupy: Odstranění klíče z registru](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-delete-a-registry-key.md)  
- Popisuje, jak použít `DeleteSubKey` metodu `My.Computer.Registry.CurrentUser` vlastnosti k odstranění klíče registru.  
+ [Postupy: Odstranění klíče z registru](how-to-delete-a-registry-key.md)  
+ Popisuje, jak použít `DeleteSubKey` metodu `My.Computer.Registry.CurrentUser` Vlastnosti k odstranění klíče registru.  
   
- [Čtení z registru a zápis do něj s použitím oboru názvů Microsoft.Win32](../../../../visual-basic/developing-apps/programming/computer-resources/reading-from-and-writing-to-the-registry-using-the-microsoft-win32-namespace.md)  
- Popisuje, jak použít třídy `Registry` a `RegistryKey` .NET Framework pro přístup k registru.  
+ [Čtení z registru a zápis do něj s použitím oboru názvů Microsoft.Win32](reading-from-and-writing-to-the-registry-using-the-microsoft-win32-namespace.md)  
+ Popisuje, jak použít `Registry` třídy a `RegistryKey` .NET Framework pro přístup k registru.  
   
- [Zabezpečení a registr](../../../../visual-basic/developing-apps/programming/computer-resources/security-and-the-registry.md)  
+ [Zabezpečení a registr](security-and-the-registry.md)  
  Popisuje problémy zabezpečení související s registrem.  
   
 ## <a name="related-sections"></a>Související oddíly  

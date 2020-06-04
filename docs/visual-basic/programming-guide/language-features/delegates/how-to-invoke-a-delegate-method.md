@@ -2,12 +2,12 @@
 title: 'Postupy: Volání metody delegáta'
 ms.date: 07/20/2015
 ms.assetid: b56866ae-abf9-4a5a-a855-486359455e9c
-ms.openlocfilehash: 520bacfbe6103490e0459cd5af149c1d55a8fce4
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: f319727c007b93c7b334af0598f1b9f7c034144d
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74345254"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84410718"
 ---
 # <a name="how-to-invoke-a-delegate-method-visual-basic"></a>Postupy: Volání metody delegáta (Visual Basic)
 
@@ -15,7 +15,7 @@ Tento příklad ukazuje, jak přidružit metodu k delegátovi a následně tuto 
 
 ### <a name="create-the-delegate-and-matching-procedures"></a>Vytvořit delegáta a postupy pro porovnání
 
-1. Vytvořte delegáta s názvem `MySubDelegate`.
+1. Vytvořte delegáta s názvem `MySubDelegate` .
 
     ```vb
     Delegate Sub MySubDelegate(ByVal x As Integer)
@@ -43,9 +43,9 @@ Tento příklad ukazuje, jak přidružit metodu k delegátovi a následně tuto 
     End Sub
     ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Příkaz Delegate](../../../../visual-basic/language-reference/statements/delegate-statement.md)
-- [Delegáti](../../../../visual-basic/programming-guide/language-features/delegates/index.md)
-- [Události](../../../../visual-basic/programming-guide/language-features/events/index.md)
+- [Delegate – příkaz](../../../language-reference/statements/delegate-statement.md)
+- [Delegáti](index.md)
+- [Události](../events/index.md)
 - [Vícevláknové aplikace](../../../../standard/threading/using-threads-and-threading.md)

@@ -1,30 +1,30 @@
 ---
-title: 'Postupy: Vytvoření dotazu na ArrayList pomocí LINQ'
+title: 'Postupy: Vytvoření dotazu na ArrayList pomocí jazyka LINQ'
 ms.date: 07/20/2015
 ms.assetid: 176358a9-d765-4b57-9557-7feb4428138d
-ms.openlocfilehash: 94a3c6d4c381f41f9ba87bf3af93261712ad1136
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: b7b75e017fb314b5e5998b743dbf922f34fd9b7c
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74347760"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84396464"
 ---
 # <a name="how-to-query-an-arraylist-with-linq-visual-basic"></a>Postupy: dotazování objektu ArrayList pomocí LINQ (Visual Basic)
 
-Při použití LINQ k dotazování na neobecné <xref:System.Collections.IEnumerable> kolekce, jako je například <xref:System.Collections.ArrayList>, je nutné explicitně deklarovat typ proměnné rozsahu, aby odrážel konkrétní typ objektů v kolekci. Například pokud máte <xref:System.Collections.ArrayList> objektů `Student`, [klauzule FROM](../../../../visual-basic/language-reference/queries/from-clause.md) by měla vypadat takto:
+Při použití LINQ k dotazování na neobecné kolekce, jako je například <xref:System.Collections.IEnumerable> <xref:System.Collections.ArrayList> , je nutné explicitně deklarovat typ proměnné rozsahu, aby odrážel konkrétní typ objektů v kolekci. Například pokud máte <xref:System.Collections.ArrayList> `Student` objekt, vaše [klauzule FROM](../../../language-reference/queries/from-clause.md) by měla vypadat takto:
 
 ```vb
 Dim query = From student As Student In arrList
 '...
 ```
 
-Zadáním typu proměnné rozsahu přetypování každou položku v <xref:System.Collections.ArrayList> do `Student`.
+Zadáním typu proměnné rozsahu budete přetypování do každé položky v poli <xref:System.Collections.ArrayList> do `Student` .
 
-Použití explicitně typované proměnné rozsahu ve výrazu dotazu je ekvivalentní volání metody <xref:System.Linq.Enumerable.Cast%2A>. <xref:System.Linq.Enumerable.Cast%2A> vyvolá výjimku, pokud nelze provést zadané přetypování. <xref:System.Linq.Enumerable.Cast%2A> a <xref:System.Linq.Enumerable.OfType%2A> jsou dvě standardní metody operátoru dotazu, které pracují s neobecnými typy <xref:System.Collections.IEnumerable>. V Visual Basic musíte explicitně volat metodu <xref:System.Linq.Enumerable.Cast%2A> na zdroji dat, aby se zajistil konkrétní typ proměnné rozsahu. Další informace najdete v tématu [vztahy typů v operacích dotazu (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/type-relationships-in-query-operations.md).
+Použití explicitně typované proměnné rozsahu ve výrazu dotazu je ekvivalentní volání <xref:System.Linq.Enumerable.Cast%2A> metody. <xref:System.Linq.Enumerable.Cast%2A>vyvolá výjimku, pokud nelze provést zadané přetypování. <xref:System.Linq.Enumerable.Cast%2A>a <xref:System.Linq.Enumerable.OfType%2A> jsou dvě standardní metody operátoru dotazu, které pracují s neobecnými <xref:System.Collections.IEnumerable> typy. V Visual Basic musíte explicitně zavolat <xref:System.Linq.Enumerable.Cast%2A> metodu ve zdroji dat, aby se zajistil konkrétní typ proměnné rozsahu. Další informace najdete v tématu [vztahy typů v operacích dotazu (Visual Basic)](type-relationships-in-query-operations.md).
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje jednoduchý dotaz nad <xref:System.Collections.ArrayList>. Všimněte si, že tento příklad používá Inicializátory objektů, když kód volá metodu <xref:System.Collections.ArrayList.Add%2A>, ale to není požadavek.
+Následující příklad ukazuje jednoduchý dotaz nad <xref:System.Collections.ArrayList> . Všimněte si, že tento příklad používá Inicializátory objektů, když kód volá <xref:System.Collections.ArrayList.Add%2A> metodu, ale to není požadavek.
 
 ```vb
 Imports System.Collections
@@ -78,6 +78,6 @@ End Module
 '   Garcia: 97
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)
+- [LINQ to Objects (Visual Basic)](linq-to-objects.md)

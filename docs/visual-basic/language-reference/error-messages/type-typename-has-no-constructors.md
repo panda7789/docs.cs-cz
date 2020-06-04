@@ -7,15 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC30251
 ms.assetid: aff3e1df-abe6-4bc0-9abc-a1e70514c561
-ms.openlocfilehash: 506b69f1db12a51217d10ad261b1f1a44bfb2008
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: de0d825c7eec603f3ad1e43b1e4aaa0cc78fd1db
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73198154"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84408505"
 ---
-# <a name="type-typename-has-no-constructors"></a>Typ\<TypeName > nemá žádné konstruktory.
-Typ nepodporuje volání `Sub New()`. Jednou z možných příčin je poškozený kompilátor nebo binární soubor.  
+# <a name="type-typename-has-no-constructors"></a>Typ '\<typename>' nemá žádné konstruktory.
+Typ nepodporuje volání `Sub New()` . Jednou z možných příčin je poškozený kompilátor nebo binární soubor.  
   
  **ID chyby:** BC30251  
   
@@ -29,7 +29,7 @@ Typ nepodporuje volání `Sub New()`. Jednou z možných příčin je poškozen�
   
 4. Pokud chyba přetrvává, shromážděte informace o okolnostech a upozorněte služby podpory společnosti Microsoft.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Objekty a třídy](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)
+- [Objekty a třídy](../../programming-guide/language-features/objects-and-classes/index.md)
 - [Kontaktujte nás](/visualstudio/ide/feedback-options)

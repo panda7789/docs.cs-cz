@@ -7,80 +7,80 @@ helpviewer_keywords:
 - procedures [Visual Basic], structure
 - Visual Basic code, program structure
 ms.assetid: ad0c6531-d762-4c77-a700-de16b07b6119
-ms.openlocfilehash: 4f4136a2c8fb7ca98ff22aa6a5fc676f30cd1c5d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: dc6b38d78f02a42c8e7cc2aa964e9f3f74996f44
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64624298"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84408761"
 ---
 # <a name="structure-of-a-visual-basic-program"></a>Struktura programu jazyka Visual Basic
-V aplikaci Visual Basic je vytvářeny z standardních stavebních bloků. A *řešení* se skládá z jednoho nebo více projektů. A *projektu* zase může obsahovat jedno nebo více sestavení. Každý *sestavení* je zkompilován z jednoho nebo více zdrojových souborů. A *zdrojový soubor* obsahuje definice a implementaci tříd, struktur, moduly a rozhraní, takže v konečném důsledku obsahující váš kód.  
+Visual Basic program je sestaven ze standardních stavebních bloků. *Řešení* se skládá z jednoho nebo více projektů. *Projekt* zase může obsahovat jedno nebo více sestavení. Každé *sestavení* je kompilováno z jednoho nebo více zdrojových souborů. *Zdrojový soubor* poskytuje definici a implementaci tříd, struktur, modulů a rozhraní, které nakonec obsahují veškerý kód.  
   
- Další informace o těchto stavebních bloků programu v jazyce Visual Basic najdete v tématu [řešení a projekty](/visualstudio/ide/solutions-and-projects-in-visual-studio) a [sestavení v rozhraní .NET](../../../standard/assembly/index.md).  
+ Další informace o těchto stavebních blocích Visual Basic programu naleznete v tématu [řešení a projekty](/visualstudio/ide/solutions-and-projects-in-visual-studio) a [sestavení v rozhraní .NET](../../../standard/assembly/index.md).  
   
-## <a name="file-level-programming-elements"></a>Elementy programování na úrovni souboru  
- Při spuštění projektu nebo souboru a otevřete editor kódu, se zobrazí kód již na místě a ve správném pořadí. Veškerý kód, který napíšete postupujte podle následujících pořadí:  
+## <a name="file-level-programming-elements"></a>Programovací prvky na úrovni souborů  
+ Když spustíte projekt nebo soubor a otevřete Editor kódu, vidíte nějaký kód, který je již na místě a ve správném pořadí. Jakýkoli kód, který napíšete, by měl splňovat následující pořadí:  
   
-1. `Option` Příkazy  
+1. `Option`učiněn  
   
-2. `Imports` Příkazy  
+2. `Imports`učiněn  
   
-3. `Namespace` Příkazy a elementů na úrovni oboru názvů  
+3. `Namespace`příkazy a elementy na úrovni oboru názvů  
   
  Pokud zadáte příkazy v jiném pořadí, může dojít k chybám kompilace.  
   
- Program může také obsahovat příkazy podmíněné kompilace. Můžete intersperse tyto ve zdrojovém souboru mezi příkazy předchozí pořadí.  
+ Program může také obsahovat příkazy podmíněné kompilace. Můžete je proložit ve zdrojovém souboru mezi příkazy předchozí sekvence.  
   
-### <a name="option-statements"></a>Možnost příkazy  
- `Option` příkazy stanovit pravidla základu pro následující kód, pomáhá zabránit chyby syntaxe a logiku. [Option Explicit – příkaz](../../../visual-basic/language-reference/statements/option-explicit-statement.md) zajistí, že všechny proměnné jsou deklarovány a neobsahuje překlepy, což zkracuje dobu ladění. [Option Strict – příkaz](../../../visual-basic/language-reference/statements/option-strict-statement.md) pomáhá minimalizovat logiky chyby a ztráty dat, ke kterému může dojít při práci mezi proměnné různé datové typy. [Možnost porovnat příkaz](../../../visual-basic/language-reference/statements/option-compare-statement.md) určuje řetězce způsob, jak jsou porovnány k sobě navzájem, na základě jejich `Binary` nebo `Text` hodnoty.  
+### <a name="option-statements"></a>Příkazy možností  
+ `Option`příkazy zřídí základní pravidla pro následný kód, což pomáhá zabránit chybám syntaxe a logiky. [Příkaz Option Explicit](../../language-reference/statements/option-explicit-statement.md) zajišťuje, aby všechny proměnné byly deklarované a napsané správně, což zkracuje dobu ladění. [Příkaz Option Strict](../../language-reference/statements/option-strict-statement.md) pomáhá minimalizovat logické chyby a ztrátu dat, ke kterým může dojít při práci mezi proměnnými různých datových typů. [Příkaz Option Compare](../../language-reference/statements/option-compare-statement.md) určuje způsob vzájemného porovnání řetězců na základě jejich `Binary` `Text` hodnot nebo.  
   
 ### <a name="imports-statements"></a>Příkazy Imports  
- Můžete zahrnout [příkaz Imports (Namespace .NET a typ)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md) k importu názvů definován vně vašeho projektu. `Imports` Příkaz umožňuje kódu odkazovat na třídami a ostatními typy definované v rámci importované oboru názvů, aniž byste museli kvalifikovat je. Můžete použít tolik `Imports` příkazy podle potřeby. Další informace najdete v tématu [odkazy a příkaz Imports](../../../visual-basic/programming-guide/program-structure/references-and-the-imports-statement.md).  
+ Můžete zahrnout [příkaz Imports (obor názvů a typ .NET)](../../language-reference/statements/imports-statement-net-namespace-and-type.md) pro import názvů definovaných mimo váš projekt. `Imports`Příkaz umožňuje kódu odkazovat na třídy a jiné typy definované v importovaném oboru názvů, aniž by bylo nutné je kvalifikovat. V případě potřeby můžete použít tolik `Imports` příkazů. Další informace naleznete v tématu [odkazy a příkaz Imports](references-and-the-imports-statement.md).  
   
-### <a name="namespace-statements"></a>Příkazy Namespace  
- Obory názvů vám pomohou organizovat a klasifikovat vaše programovací prvky z důvodu snadnějšího seskupování a přístup k. Můžete použít [příkaz Namespace](../../../visual-basic/language-reference/statements/namespace-statement.md) ke klasifikaci následující příkazy v rámci určitého oboru názvů. Další informace najdete v tématu [obory názvů v jazyce Visual Basic](../../../visual-basic/programming-guide/program-structure/namespaces.md).  
+### <a name="namespace-statements"></a>Příkazy oboru názvů  
+ Obory názvů pomáhají organizovat a klasifikovat své programovací prvky pro snadné seskupování a přístup. Použijete [příkaz Namespace](../../language-reference/statements/namespace-statement.md) k klasifikaci následujících příkazů v rámci konkrétního oboru názvů. Další informace najdete v tématu [obory názvů v Visual Basic](namespaces.md).  
   
 ### <a name="conditional-compilation-statements"></a>Příkazy podmíněné kompilace  
- Příkazy podmíněné kompilace může vyskytovat téměř kdekoli ve zdrojovém souboru. Způsobí částí kódu zahrnuty nebo vyloučeny v době kompilace v závislosti na určitých podmínek. Můžete také je pro ladění vaší aplikace, protože podmíněné kód se spustí pouze v režimu ladění. Další informace najdete v tématu [podmíněné kompilace](../../../visual-basic/programming-guide/program-structure/conditional-compilation.md).  
+ Příkazy podmíněné kompilace se můžou vyskytovat skoro kdekoli ve zdrojovém souboru. Způsobují, že části kódu budou zahrnuty nebo vyloučeny v době kompilace v závislosti na určitých podmínkách. Můžete je také použít pro ladění aplikace, protože podmíněný kód je spouštěn pouze v režimu ladění. Další informace naleznete v tématu [Podmíněná kompilace](conditional-compilation.md).  
   
-## <a name="namespace-level-programming-elements"></a>Namespace – úroveň programovací elementy  
- Třídy, struktury a moduly obsahovat veškerý kód ve zdrojovém souboru. Jsou *úrovni oboru názvů* prvky, které se mohou objevit v oboru názvů nebo na úrovni zdroje souboru. Drží deklarace dalších programovacích prvků. Rozhraní, které definují element podpisy, ale poskytnout implementaci, zobrazit i na úrovni modulu. Další informace na úrovni modulu prvky naleznete v následujících tématech:  
+## <a name="namespace-level-programming-elements"></a>Programovací prvky na úrovni oboru názvů  
+ Třídy, struktury a moduly obsahují veškerý kód ve zdrojovém souboru. Jsou to prvky na *úrovni oboru názvů* , které se mohou objevit v rámci oboru názvů nebo na úrovni zdrojového souboru. Obsahují deklarace všech ostatních programovacích prvků. Rozhraní, která definují signatury elementů, ale neposkytují žádnou implementaci, se také zobrazí na úrovni modulu. Další informace o prvcích na úrovni modulu najdete v následujících tématech:  
   
-- [Příkaz Class](../../../visual-basic/language-reference/statements/class-statement.md)  
+- [Class – příkaz](../../language-reference/statements/class-statement.md)  
   
-- [Příkaz Structure](../../../visual-basic/language-reference/statements/structure-statement.md)  
+- [Structure – příkaz](../../language-reference/statements/structure-statement.md)  
   
-- [Příkaz Module](../../../visual-basic/language-reference/statements/module-statement.md)  
+- [Module – příkaz](../../language-reference/statements/module-statement.md)  
   
-- [Příkaz Interface](../../../visual-basic/language-reference/statements/interface-statement.md)  
+- [Interface – příkaz](../../language-reference/statements/interface-statement.md)  
   
- Výčty a Delegáti jsou prvky dat na úrovni oboru názvů.  
+ Datové prvky na úrovni oboru názvů jsou výčty a Delegáti.  
   
-## <a name="module-level-programming-elements"></a>Úroveň modulu programovací elementy  
- Postupy, operátory, vlastnosti a události jsou jediným programovací prvky, které mohou obsahovat spustitelného kódu (příkazy, které provádějí akce za běhu). Jsou *úrovni modulu* prvky programu. Další informace o postupu úrovně prvky naleznete v následujících tématech:  
+## <a name="module-level-programming-elements"></a>Programovací prvky na úrovni modulu  
+ Procedury, operátory, vlastnosti a události jsou jediné programovací prvky, které mohou uchovávat spustitelný kód (příkazy, které provádějí akce za běhu). Jsou to prvky na *úrovni modulu* v programu. Další informace o prvcích na úrovni procedury najdete v následujících tématech:  
   
-- [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)  
+- [Function – příkaz](../../language-reference/statements/function-statement.md)  
   
-- [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)  
+- [Sub – příkaz](../../language-reference/statements/sub-statement.md)  
   
-- [Příkaz Declare](../../../visual-basic/language-reference/statements/declare-statement.md)  
+- [Declare – příkaz](../../language-reference/statements/declare-statement.md)  
   
-- [Příkaz Operator](../../../visual-basic/language-reference/statements/operator-statement.md)  
+- [Operator – příkaz](../../language-reference/statements/operator-statement.md)  
   
-- [Příkaz Property](../../../visual-basic/language-reference/statements/property-statement.md)  
+- [Property – příkaz](../../language-reference/statements/property-statement.md)  
   
-- [Příkaz Event](../../../visual-basic/language-reference/statements/event-statement.md)  
+- [Event – příkaz](../../language-reference/statements/event-statement.md)  
   
- Údaje na úrovni modulu jsou proměnné, konstanty, výčty a delegáti.  
+ Prvky dat na úrovni modulu jsou proměnné, konstanty, výčty a Delegáti.  
   
-## <a name="procedure-level-programming-elements"></a>Úroveň procedury programovací elementy  
- Většina obsahu *úroveň procedury* prvky jsou spustitelné příkazy, které tvoří kód za běhu programu. Všechny spustitelný kód musí být v některých postupu (`Function`, `Sub`, `Operator`, `Get`, `Set`, `AddHandler`, `RemoveHandler`, `RaiseEvent`). Další informace najdete v tématu [příkazy](../../../visual-basic/programming-guide/language-features/statements.md).  
+## <a name="procedure-level-programming-elements"></a>Programovací prvky na úrovni procedury  
+ Většina obsahu prvků na *úrovni procedury* je spustitelnými příkazy, které tvoří běhový kód programu. Veškerý spustitelný kód musí být v nějaké proceduře ( `Function` , `Sub` , `Operator` , `Get` , `Set` , `AddHandler` , `RemoveHandler` , `RaiseEvent` ). Další informace najdete v tématu [příkazy](../language-features/statements.md).  
   
- Prvky dat na úrovni řízení jsou omezené na místní proměnné a konstanty.  
+ Datové prvky na úrovni procedury jsou omezeny na lokální proměnné a konstanty.  
   
-## <a name="the-main-procedure"></a>Hlavní procedura  
- `Main` Postup je první kód spustit, když vaše aplikace se načetl. `Main` slouží jako počáteční bod a celkové ovládání aplikace. Existují čtyři typy prvků `Main`:  
+## <a name="the-main-procedure"></a>Hlavní postup  
+ `Main`Procedura je první kód, který se spustí při načtení vaší aplikace. `Main`slouží jako výchozí bod a celkový ovládací prvek pro vaši aplikaci. Existují čtyři varianty `Main` :  
   
 - `Sub Main()`  
   
@@ -90,10 +90,10 @@ V aplikaci Visual Basic je vytvářeny z standardních stavebních bloků. A *ř
   
 - `Function Main(ByVal cmdArgs() As String) As Integer`  
   
- Nejběžnější řadu tento postup je `Sub Main()`. Další informace najdete v tématu [hlavní procedura v jazyce Visual Basic](../../../visual-basic/programming-guide/program-structure/main-procedure.md).  
+ Nejběžnějším spektrem tohoto postupu je `Sub Main()` . Další informace najdete v tématu [hlavní postup v Visual Basic](main-procedure.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Hlavní procedura v jazyce Visual Basic](../../../visual-basic/programming-guide/program-structure/main-procedure.md)
-- [Zásady vytváření názvů jazyka Visual Basic](../../../visual-basic/programming-guide/program-structure/naming-conventions.md)
-- [Visual Basic Limitations](../../../visual-basic/programming-guide/program-structure/limitations.md)
+- [Hlavní procedura v jazyce Visual Basic](main-procedure.md)
+- [Zásady vytváření názvů jazyka Visual Basic](naming-conventions.md)
+- [Omezení jazyka Visual Basic](limitations.md)

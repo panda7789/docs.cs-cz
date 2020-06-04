@@ -9,12 +9,12 @@ helpviewer_keywords:
 - /define compiler option [Visual Basic]
 - define compiler option [Visual Basic]
 ms.assetid: f735c57d-1cf9-4f2f-a26f-0de630fd4077
-ms.openlocfilehash: 5035466de4aa17c374824e1b0f02ed594731a9d3
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: d0d1b03d9ab98f28a0112198f1ecc1e928d6d4a7
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75716802"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84408709"
 ---
 # <a name="-define-visual-basic"></a>-define (Visual Basic)
 Definuje podmíněné konstanty kompilátoru.  
@@ -25,7 +25,7 @@ Definuje podmíněné konstanty kompilátoru.
 -define:["]symbol[=value][,symbol[=value]]["]  
 ```
 
-– nebo –
+nebo
 
 ```console  
 -d:["]symbol[=value][,symbol[=value]]["]  
@@ -33,19 +33,19 @@ Definuje podmíněné konstanty kompilátoru.
   
 ## <a name="arguments"></a>Argumenty  
   
-|Označení|Definice|  
+|Pojem|Definice|  
 |---|---|  
 |`symbol`|Povinná hodnota. Symbol, který má být definován.|  
-|`value`|Nepovinný parametr. Hodnota, která má `symbol`být přiřazena. Pokud `value` je řetězec, musí být ohraničen znakem zpětného lomítka nebo posloupnosti uvozovek (\\") místo uvozovek. Pokud není zadána žádná hodnota, bude provedena hodnota true.|  
+|`value`|Nepovinný parametr. Hodnota, která má být přiřazena `symbol` . Pokud `value` je řetězec, musí být ohraničen znakem zpětného lomítka nebo posloupnosti uvozovek ( \\ ") místo uvozovek. Pokud není zadána žádná hodnota, bude provedena hodnota true.|  
   
 ## <a name="remarks"></a>Poznámky  
- `-define` Možnost má podobný efekt jako použití `#Const` direktivy preprocesoru ve zdrojovém souboru s tím rozdílem, že konstanty definované `-define` s jsou veřejné a platí pro všechny soubory v projektu.  
+ `-define`Možnost má podobný efekt jako použití `#Const` direktivy preprocesoru ve zdrojovém souboru s tím rozdílem, že konstanty definované s `-define` jsou veřejné a platí pro všechny soubory v projektu.  
   
- Můžete použít symboly vytvořené pomocí této možnosti s `#If`... `Then`... `#Else` direktiva podmíněného kompilování zdrojových souborů.  
+ Můžete použít symboly vytvořené pomocí této možnosti s `#If` ... `Then` ...`#Else` Direktiva podmíněného kompilování zdrojových souborů.  
   
- `-d`je krátký tvar `-define`.  
+ `-d`je krátký tvar `-define` .  
   
- Můžete definovat více symbolů `-define` pomocí čárky pro oddělení definic symbolů.  
+ Můžete definovat více symbolů pomocí `-define` čárky pro oddělení definic symbolů.  
   
 |Nastavení – definice v integrovaném vývojovém prostředí sady Visual Studio|  
 |---|  
@@ -58,7 +58,7 @@ Definuje podmíněné konstanty kompilátoru.
   
 ## <a name="see-also"></a>Viz také
 
-- [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
-- [Direktivy #If...Then...#Else](../../../visual-basic/language-reference/directives/if-then-else-directives.md)
-- [Direktiva #Const](../../../visual-basic/language-reference/directives/const-directive.md)
-- [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
+- [Visual Basic Kompilátor příkazového řádku](index.md)
+- [#If... Then... #Else – direktivy](../../language-reference/directives/if-then-else-directives.md)
+- [#Const direktiva](../../language-reference/directives/const-directive.md)
+- [Příkazové řádky ukázkové kompilace](sample-compilation-command-lines.md)

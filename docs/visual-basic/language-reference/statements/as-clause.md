@@ -8,62 +8,62 @@ helpviewer_keywords:
 - As keyword [Visual Basic], statement syntax
 - As keyword [Visual Basic]
 ms.assetid: b4281ec8-2be5-49f7-aae8-ae0a96265b0d
-ms.openlocfilehash: cf1acbfeee150f1ea353ce134a4e94dab9928e8a
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 4afc2800a98ceeda8eeb3a1fada0b82c2e8bcedb
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74350172"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84408455"
 ---
 # <a name="as-clause-visual-basic"></a>As – klauzule (Visual Basic)
-Zavádí klauzuli `As`, která identifikuje datový typ v příkazu deklarace nebo seznamu omezení v parametru obecného typu.  
+Zavádí `As` klauzuli, která identifikuje datový typ v příkazu deklarace nebo seznamu omezení v parametru obecného typu.  
   
 ## <a name="remarks"></a>Poznámky  
- Klíčové slovo `As` lze použít v těchto kontextech:  
+ `As`Klíčové slovo lze použít v těchto kontextech:  
   
- [Klauzule Aggregate](../../../visual-basic/language-reference/queries/aggregate-clause.md)  
+ [Aggregate – klauzule](../queries/aggregate-clause.md)  
   
- [Příkaz Class](../../../visual-basic/language-reference/statements/class-statement.md)  
+ [Class – příkaz](class-statement.md)  
   
- [Příkaz Const](../../../visual-basic/language-reference/statements/const-statement.md)  
+ [Const – příkaz](const-statement.md)  
   
- [Příkaz Declare](../../../visual-basic/language-reference/statements/declare-statement.md)  
+ [Declare – příkaz](declare-statement.md)  
   
- [Příkaz Delegate](../../../visual-basic/language-reference/statements/delegate-statement.md)  
+ [Delegate – příkaz](delegate-statement.md)  
   
- [Příkaz Dim](../../../visual-basic/language-reference/statements/dim-statement.md)  
+ [Dim – příkaz](dim-statement.md)  
   
- [Příkaz Enum](../../../visual-basic/language-reference/statements/enum-statement.md)  
+ [Enum – příkaz](enum-statement.md)  
   
- [Příkaz Event](../../../visual-basic/language-reference/statements/event-statement.md)  
+ [Event – příkaz](event-statement.md)  
   
- [Pro... Další příkazy](../../../visual-basic/language-reference/statements/for-next-statement.md)  
+ [Pro... Další příkazy](for-next-statement.md)  
   
- [For each... Další příkazy](../../../visual-basic/language-reference/statements/for-each-next-statement.md)  
+ [For each... Další příkazy](for-each-next-statement.md)  
   
- [Klauzule From](../../../visual-basic/language-reference/queries/from-clause.md)  
+ [Klauzule FROM](../queries/from-clause.md)  
   
- [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)  
+ [Function – příkaz](function-statement.md)  
   
- [Klauzule Group Join](../../../visual-basic/language-reference/queries/group-join-clause.md)  
+ [Group Join – klauzule](../queries/group-join-clause.md)  
   
- [Příkaz Interface](../../../visual-basic/language-reference/statements/interface-statement.md)  
+ [Interface – příkaz](interface-statement.md)  
   
- [Příkaz Operator](../../../visual-basic/language-reference/statements/operator-statement.md)  
+ [Operator – příkaz](operator-statement.md)  
   
- [Příkaz Property](../../../visual-basic/language-reference/statements/property-statement.md)  
+ [Property – příkaz](property-statement.md)  
   
- [Příkaz Structure](../../../visual-basic/language-reference/statements/structure-statement.md)  
+ [Structure – příkaz](structure-statement.md)  
   
- [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)  
+ [Sub – příkaz](sub-statement.md)  
   
- [Zkusit... Zachytit... Finally – příkazy](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)  
+ [Zkusit... Zachytit... Finally – příkazy](try-catch-finally-statement.md)  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Postupy: Vytvoření nové proměnné](../../../visual-basic/programming-guide/language-features/variables/how-to-create-a-new-variable.md)
-- [Datové typy](../../../visual-basic/programming-guide/language-features/data-types/index.md)
-- [Deklarace proměnné](../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)
-- [Seznam typů](../../../visual-basic/language-reference/statements/type-list.md)
-- [Obecné typy v Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
-- [Klíčová slova](../../../visual-basic/language-reference/keywords/index.md)
+- [Postupy: Vytvoření nové proměnné](../../programming-guide/language-features/variables/how-to-create-a-new-variable.md)
+- [Datové typy](../../programming-guide/language-features/data-types/index.md)
+- [Deklarace proměnné](../../programming-guide/language-features/variables/variable-declaration.md)
+- [Seznam typů](type-list.md)
+- [Obecné typy v Visual Basic](../../programming-guide/language-features/data-types/generic-types.md)
+- [Klíčová slova](../keywords/index.md)

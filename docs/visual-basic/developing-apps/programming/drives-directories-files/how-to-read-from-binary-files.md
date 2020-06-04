@@ -7,20 +7,20 @@ helpviewer_keywords:
 - ReadAllBytes method [Visual Basic], reading from binary files
 - My.Computer.FileSystem object, reading from binary files
 ms.assetid: d2b1269e-24b6-42e0-9414-ae708db282d8
-ms.openlocfilehash: c33bc72a5c79901e3715ed6a587ffdb8e3565e48
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3b4108034b86d99143fff6943e68ca0077ebd21b
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74335298"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84359926"
 ---
 # <a name="how-to-read-from-binary-files-in-visual-basic"></a>Postupy: Čtení z binárních souborů v jazyce Visual Basic
 
-`My.Computer.FileSystem` Objekt poskytuje `ReadAllBytes` metodu pro čtení z binárních souborů.  
+`My.Computer.FileSystem`Objekt poskytuje `ReadAllBytes` metodu pro čtení z binárních souborů.  
   
 ### <a name="to-read-from-a-binary-file"></a>Čtení z binárního souboru  
   
-- Použijte `ReadAllBytes` metodu, která vrátí obsah souboru jako bajtové pole. Tento příklad čte ze souboru `C:/Documents and Settings/selfportrait.jpg`.  
+- Použijte `ReadAllBytes` metodu, která vrátí obsah souboru jako bajtové pole. Tento příklad čte ze souboru `C:/Documents and Settings/selfportrait.jpg` .  
   
      [!code-vb[VbVbcnMyFileSystem#78](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#78)]  
   
@@ -32,21 +32,21 @@ ms.locfileid: "74335298"
 
  Následující podmínky mohou způsobit vyvolání výjimky:  
   
-- Cesta není platná z některého z následujících důvodů: Jedná se o řetězec o nulové délce, obsahuje pouze prázdné znaky, obsahuje neplatné znaky nebo se jedná o cestu k zařízení (<xref:System.ArgumentException>).  
+- Cesta není platná z některého z následujících důvodů: Jedná se o řetězec o nulové délce, obsahuje pouze prázdné znaky, obsahuje neplatné znaky nebo se jedná o cestu k zařízení ( <xref:System.ArgumentException> ).  
   
-- Cesta není platná, protože je `Nothing` (<xref:System.ArgumentNullException>).  
+- Cesta není platná, protože je `Nothing` ( <xref:System.ArgumentNullException> ).  
   
-- Soubor neexistuje (<xref:System.IO.FileNotFoundException>).  
+- Soubor neexistuje ( <xref:System.IO.FileNotFoundException> ).  
   
-- Soubor je používán jiným procesem nebo dojde k vstupně-výstupní chybě (<xref:System.IO.IOException>).  
+- Soubor je používán jiným procesem nebo dojde k vstupně-výstupní chybě ( <xref:System.IO.IOException> ).  
   
-- Cesta přesahuje maximální povolenou délku (<xref:System.IO.PathTooLongException>) definovanou systémem.  
+- Cesta přesahuje maximální povolenou délku () definovanou systémem <xref:System.IO.PathTooLongException> .  
   
-- Název souboru nebo adresáře v cestě obsahuje dvojtečku (:) nebo má neplatnou hodnotu format<xref:System.NotSupportedException>().  
+- Název souboru nebo adresáře v cestě obsahuje dvojtečku (:) nebo má neplatnou hodnotu Format ( <xref:System.NotSupportedException> ).  
   
-- K zápisu řetězce do vyrovnávací paměti (<xref:System.OutOfMemoryException>) není dostatek paměti.  
+- K zápisu řetězce do vyrovnávací paměti () není dostatek paměti <xref:System.OutOfMemoryException> .  
   
-- Uživatel nemá potřebná oprávnění k zobrazení cesty (<xref:System.Security.SecurityException>).  
+- Uživatel nemá potřebná oprávnění k zobrazení cesty ( <xref:System.Security.SecurityException> ).  
   
  Nečiňte rozhodnutí o obsahu souboru na základě jeho názvu. Například soubor Form1. vb nemusí být Visual Basic zdrojový soubor.  
   
@@ -56,6 +56,6 @@ ms.locfileid: "74335298"
 
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem.ReadAllBytes%2A>
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllBytes%2A>
-- [Čtení ze souborů](../../../../visual-basic/developing-apps/programming/drives-directories-files/reading-from-files.md)
-- [Postupy: Čtení z textových souborů ve více formátech](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-text-files-with-multiple-formats.md)
-- [Ukládání dat do schránky a čtení ze schránky](../../../../visual-basic/developing-apps/programming/computer-resources/storing-data-to-and-reading-from-the-clipboard.md)
+- [Čtení ze souborů](reading-from-files.md)
+- [Postupy: Čtení z textových souborů ve více formátech](how-to-read-from-text-files-with-multiple-formats.md)
+- [Ukládání dat do schránky a čtení ze schránky](../computer-resources/storing-data-to-and-reading-from-the-clipboard.md)

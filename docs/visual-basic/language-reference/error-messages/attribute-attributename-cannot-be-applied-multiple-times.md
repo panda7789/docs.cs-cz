@@ -7,16 +7,16 @@ f1_keywords:
 helpviewer_keywords:
 - BC30663
 ms.assetid: 3760e7ff-7238-40a1-8676-77d858a64fc0
-ms.openlocfilehash: f2f4dc428a247275f9919c4a8b6e6944a558eef0
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 14145f165adf5ccd20298a70ca5596488b488b0c
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73968230"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84409956"
 ---
-# <a name="attribute-attributename-cannot-be-applied-multiple-times"></a>Atribut\<attributeName > se nedá použít víckrát.
+# <a name="attribute-attributename-cannot-be-applied-multiple-times"></a>Atribut '\<attributename>' nelze použít několikrát.
 
-Atribut lze použít pouze jednou. Atribut `AttributeUsage` určuje, zda lze atribut použít více než jednou.  
+Atribut lze použít pouze jednou. `AttributeUsage`Atribut určuje, zda lze atribut použít více než jednou.  
   
  **ID chyby:** BC30663  
   
@@ -30,8 +30,8 @@ Atribut lze použít pouze jednou. Atribut `AttributeUsage` určuje, zda lze atr
 <AttributeUsage(AllowMultiple := True)>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.AttributeUsageAttribute>
-- [Vytváření vlastních atributů](../../../visual-basic/programming-guide/concepts/attributes/creating-custom-attributes.md)
-- [AttributeUsage](../../../visual-basic/programming-guide/concepts/attributes/attributeusage.md)
+- [Vytváření vlastních atributů](../../programming-guide/concepts/attributes/creating-custom-attributes.md)
+- [AttributeUsage](../../programming-guide/concepts/attributes/attributeusage.md)

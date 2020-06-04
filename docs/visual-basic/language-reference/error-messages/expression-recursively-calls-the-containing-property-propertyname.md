@@ -7,21 +7,21 @@ f1_keywords:
 helpviewer_keywords:
 - BC42026
 ms.assetid: 4fde9db6-3bf3-48dc-8e05-981bf08969da
-ms.openlocfilehash: 42177f22e632e4a05b1f0b4d934f3e56ab9ff0f2
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: e3a9f4cf2f4105d2c449813bf0c593860df7d1f0
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71698571"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84409527"
 ---
-# <a name="expression-recursively-calls-the-containing-property-propertyname"></a>Výraz rekurzivně volá nadřazenou vlastnost\<PropertyName >.
+# <a name="expression-recursively-calls-the-containing-property-propertyname"></a>Výraz rekurzivně volá nadřazenou vlastnost '\<propertyname>'.
 Příkaz v `Set` proceduře definice vlastnosti ukládá hodnotu do názvu vlastnosti.  
   
- Doporučený postup pro uchovávání hodnoty vlastnosti je definovat `Private` proměnnou v kontejneru vlastností a použít ji v postupech `Get` a `Set`. Procedura `Set` by pak měla uložit příchozí hodnotu v této `Private` proměnné.  
+ Doporučený postup pro uchovávání hodnoty vlastnosti je definovat `Private` proměnnou v kontejneru vlastností a použít ji v `Get` `Set` postupech a. `Set`Procedura by pak měla uložit příchozí hodnotu v této `Private` proměnné.  
   
- Postup `Get` se chová jako `Function` postup, takže může přiřadit hodnotu názvu vlastnosti a vrátit řízení návratovým prvkem, který nalezne příkaz `End Get`. Doporučený postup je však zahrnout proměnnou `Private` jako hodnotu v [příkazu return](../../../visual-basic/language-reference/statements/return-statement.md).  
+ `Get`Procedura se chová jako `Function` procedura, takže může přiřadit hodnotu k názvu vlastnosti a vracet řízení, když se setkáte s `End Get` příkazem. Doporučený postup je však zahrnout `Private` proměnnou jako hodnotu v [příkazu return](../statements/return-statement.md).  
   
- Procedura `Set` se chová jako `Sub` procedura, která nevrací hodnotu. Název procedury nebo vlastnosti proto v rámci `Set` procedury nemá žádný zvláštní význam a do ní nelze uložit hodnotu.  
+ `Set`Procedura se chová jako `Sub` procedura, která nevrací hodnotu. Proto procedura nebo název vlastnosti nemá v rámci procedury žádný zvláštní význam `Set` a do ní nelze uložit hodnotu.  
   
  Následující příklad ilustruje přístup, který může způsobit tuto chybu, následovanou doporučeným přístupem.  
   
@@ -63,8 +63,8 @@ End Class
   
 - Přepište definici vlastnosti tak, aby používala doporučený přístup, jak je znázorněno v předchozím příkladu.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Procedury vlastnosti](../../../visual-basic/programming-guide/language-features/procedures/property-procedures.md)
-- [Příkaz Property](../../../visual-basic/language-reference/statements/property-statement.md)
-- [Příkaz Set](../../../visual-basic/language-reference/statements/set-statement.md)
+- [Procedury vlastnosti](../../programming-guide/language-features/procedures/property-procedures.md)
+- [Property – příkaz](../statements/property-statement.md)
+- [Set – příkaz](../statements/set-statement.md)

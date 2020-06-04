@@ -1,21 +1,21 @@
 ---
-title: Podmíněné operátory s hodnotou null
+title: Podmíněné operátory s null
 ms.date: 10/19/2018
 helpviewer_keywords:
 - null-conditional operators [Visual Basic]
 - ?. operator [Visual Basic]
 - ?[] operator [C#]
 - ?[] operator [Visual Basic]
-ms.openlocfilehash: 003f579a7128bbe2462b7fbe7057de03e61bfbe6
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: bffbba859968e0a050397cd9e685c142f801798a
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74348290"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84401469"
 ---
 # <a name="-and--null-conditional-operators-visual-basic"></a>?. ani? () podmíněné operátory s hodnotou null (Visual Basic)
 
-Před provedením operace pro přístup členů (`?.`) nebo indexu (`?()`) testuje hodnotu operandu levého horního operandu pro hodnotu null (`Nothing`); Vrátí `Nothing`, je-li operand na levé straně vyhodnocen jako `Nothing`. Všimněte si, že ve výrazech, které obvykle vracejí typy hodnot, vrátí operátor null-Condition <xref:System.Nullable%601>.
+`Nothing`Před provedením operace Member Access () nebo index () otestuje hodnotu operandu levého () `?.` `?()` . vrátí, `Nothing` zda je operand na levé straně vyhodnocen `Nothing` . Všimněte si, že ve výrazech, které obvykle vracejí typy hodnot, vrátí operátor null-Condition <xref:System.Nullable%601> .
 
 Tyto operátory vám pomůžou napsat méně kódu pro zpracování kontrol s hodnotou null, zejména při seřazení do datových struktur. Příklad:
 
@@ -57,13 +57,13 @@ Dim customer = FindCustomerByID(123) 'customer will be Nothing if not found.
 If customer?.IsAllowedFreeShipping Then ApplyFreeShippingToOrders(customer)
 ```
 
-Operátory podmíněné hodnotou null jsou krátkodobé okruhy.  Pokud se jedna operace v řetězci přístupu podmíněného člena a operace indexu vrátí `Nothing`, zbývající část spuštění řetězce se zastaví.  V následujícím příkladu není `C(E)` vyhodnocována, pokud `A`, `B`nebo `C` vyhodnocuje jako `Nothing`.
+Operátory podmíněné hodnotou null jsou krátkodobé okruhy.  Pokud se jedna operace v řetězci přístupu podmíněného člena a operace indexu vrátí `Nothing` , zbývající část spuštění řetězce se zastaví.  V následujícím příkladu `C(E)` není vyhodnocena `A` , pokud, `B` nebo `C` vyhodnocena jako `Nothing` .
 
 ```vb
 A?.B?.C?(E)
 ```
 
-Další možností použití pro přístup s podmíněnými členy s hodnotou null je vyvolat delegáty v bezpečném vlákně s mnohem menším kódem.  Následující příklad definuje dva typy, `NewsBroadcaster` a `NewsReceiver`. Položky zpráv jsou odesílány příjemci delegáta `NewsBroadcaster.SendNews`.
+Další možností použití pro přístup s podmíněnými členy s hodnotou null je vyvolat delegáty v bezpečném vlákně s mnohem menším kódem.  Následující příklad definuje dva typy, `NewsBroadcaster` a `NewsReceiver` . Delegáti odesílají zprávy do příjemce `NewsBroadcaster.SendNews` .
 
 ```vb
 Public Module NewsBroadcaster
@@ -91,7 +91,7 @@ Public Class NewsReceiver
 End Class
 ```
 
-Pokud v seznamu `SendNews` vyvolání nejsou žádné prvky, delegát `SendNews` vyvolá <xref:System.NullReferenceException>. Před nulovými podmíněnými operátory by kód podobný následujícímu byly zajištěny, že seznam volání delegáta nebyl `Nothing`:
+Pokud v seznamu vyvolání nejsou žádné prvky `SendNews` , `SendNews` delegát vyvolá <xref:System.NullReferenceException> . Před nulovými podmíněnými operátory by kód podobný následujícímu byly zajištěny, že seznam volání delegáta nebyl `Nothing` :
 
 ```vb
 SendNews = SendNews.Combine({SendNews, client})
@@ -107,10 +107,10 @@ SendNews = SendNews.Combine({SendNews, client})
 SendNews?.Invoke("Just in...")
 ```
 
-Nový způsob je bezpečný pro přístup z více vláken, protože kompilátor generuje kód pro vyhodnocení `SendNews` pouze jednou a udržování výsledku v dočasné proměnné. Je nutné explicitně volat metodu `Invoke`, protože neexistuje žádná `SendNews?(String)`syntaxe vyvolání podmíněného delegáta s hodnotou null.
+Nový způsob je bezpečný pro přístup z více vláken, protože kompilátor generuje kód pro vyhodnocení `SendNews` pouze jednou a udržuje výsledek v dočasné proměnné. Je nutné explicitně zavolat metodu, `Invoke` protože neexistuje žádná syntaxe vyvolání podmíněného delegáta s hodnotou null `SendNews?(String)` .
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Operátory (Visual Basic)](index.md)
-- [Průvodce programováním Visual Basic](../../../visual-basic/programming-guide/index.md)
-- [Referenční příručka jazyka Visual Basic](../../../visual-basic/language-reference/index.md)
+- [Příručka k programování v jazyce Visual Basic](../../programming-guide/index.md)
+- [Reference jazyka Visual Basic](../index.md)

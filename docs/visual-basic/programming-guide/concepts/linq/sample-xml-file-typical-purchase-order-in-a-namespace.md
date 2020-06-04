@@ -1,18 +1,18 @@
 ---
-title: 'Ukázkový soubor XML: Typická nákupní objednávka v Namespace3'
+title: 'Ukázkový soubor XML: typická nákupní objednávka v Namespace3'
 ms.date: 07/20/2015
 ms.assetid: 38260901-c9f9-4240-9cbf-652c8b05021d
-ms.openlocfilehash: de0ac574b0f7b086592bc2d6afa3db3fdcebda78
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e753d0a4d6bea3e4a01221258e1f5de3862c4ecb
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61786916"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84360836"
 ---
 # <a name="sample-xml-file-typical-purchase-order-in-a-namespace"></a>Ukázkový soubor XML: Typická nákupní objednávka v názvovém prostoru
-Následující soubor XML se používá v různých příkladů v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci. Tento soubor je typická nákupní objednávka. XML je v oboru názvů.  
+Následující soubor XML se v dokumentaci používá v různých příkladech [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] . Tento soubor je typickou nákupní objednávkou. KÓD XML je v oboru názvů.  
   
-## <a name="purchaseorderinnamespacexml"></a>PurchaseOrderInNamespace.xml  
+## <a name="purchaseorderinnamespacexml"></a>PurchaseOrderInNamespace. XML  
   
 ```xml  
 <?xml version="1.0"?>  
@@ -54,6 +54,6 @@ Následující soubor XML se používá v různých příkladů v [!INCLUDE[sqlt
 </aw:PurchaseOrder>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Ukázkové dokumenty XML (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+- [Ukázkové dokumenty XML (LINQ to XML)](sample-xml-documents-linq-to-xml.md)

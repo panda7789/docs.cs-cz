@@ -2,12 +2,12 @@
 title: Příklad odloženého provedení
 ms.date: 07/20/2015
 ms.assetid: 9a22bea1-c755-4aac-800a-fcd9e5107ace
-ms.openlocfilehash: 6ab8f6434bb24b7a66ca4afd1d082911481671f6
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 863b018b6047d61f6fb4a5c1ac68151ed69d24a1
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74354230"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84410796"
 ---
 # <a name="deferred-execution-example-visual-basic"></a>Příklad odloženého provedení (Visual Basic)
 
@@ -15,7 +15,7 @@ Toto téma ukazuje, jak odložené provádění a opožděné vyhodnocení ovliv
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje pořadí spouštění při použití metody rozšíření, která používá odložené provádění. Příklad deklaruje pole tří řetězců. Poté provede iteraci kolekcí vrácenou `ConvertCollectionToUpperCase`.
+Následující příklad ukazuje pořadí spouštění při použití metody rozšíření, která používá odložené provádění. Příklad deklaruje pole tří řetězců. Poté provede iteraci kolekcí vrácenou `ConvertCollectionToUpperCase` .
 
 ```vb
 Imports System.Runtime.CompilerServices
@@ -57,10 +57,10 @@ ToUpper: source ghi
 Main: str GHI
 ```
 
-Všimněte si, že při iteraci v kolekci vrácené `ConvertCollectionToUpperCase`je každá položka načtena ze zdrojového pole řetězce a převedena na velká písmena před načtením další položky ze zdrojového pole řetězce.
+Všimněte si, že při iteraci v kolekci `ConvertCollectionToUpperCase` , kterou vrátí, každá položka je načtena ze zdrojového pole řetězce a převedena na velká písmena před načtením další položky ze zdrojového pole řetězce.
 
-Můžete vidět, že celé pole řetězců není převedeno na velká písmena před tím, než se každá položka v vrácené kolekci zpracuje v `foreach` smyčce v `Main`.
+Můžete vidět, že celé pole řetězců není převedeno na velká písmena před tím, než se každá položka v vrácené kolekci zpracuje ve `foreach` smyčce v `Main` .
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Kurz: odložené provádění (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-deferred-execution.md)
+- [Kurz: odložené provádění (Visual Basic)](tutorial-deferred-execution.md)

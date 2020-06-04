@@ -5,20 +5,20 @@ helpviewer_keywords:
 - I/O [Visual Basic], renaming files
 - files [Visual Basic], renaming
 ms.assetid: 0ea7e0c8-2cb2-4bf5-a00d-7b6e3c08a3bc
-ms.openlocfilehash: e69dad9ad7f59002ad62b7a06299ff012488e534
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3de41ee6627315f0e26964b75f564ff98fe472ec
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74334542"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84411587"
 ---
 # <a name="how-to-rename-a-file-in-visual-basic"></a>Postupy: Přejmenování souboru v jazyce Visual Basic
 
-Použijte `RenameFile` metodu `My.Computer.FileSystem` objektu k přejmenování souboru zadáním aktuálního umístění, názvu souboru a nového názvu souboru. Tuto metodu nelze použít k přesunutí souboru. k přesunutí `MoveFile` a přejmenování souboru použijte metodu.  
+Použijte `RenameFile` metodu `My.Computer.FileSystem` objektu k přejmenování souboru zadáním aktuálního umístění, názvu souboru a nového názvu souboru. Tuto metodu nelze použít k přesunutí souboru. `MoveFile`k přesunutí a přejmenování souboru použijte metodu.  
   
 ### <a name="to-rename-a-file"></a>Přejmenování souboru  
   
-- K přejmenování `My.Computer.FileSystem.RenameFile` souboru použijte metodu. Tento příklad přejmenuje soubor s názvem `Test.txt` na `SecondTest.txt`.  
+- `My.Computer.FileSystem.RenameFile`K přejmenování souboru použijte metodu. Tento příklad přejmenuje soubor s názvem `Test.txt` na `SecondTest.txt` .  
   
      [!code-vb[VbVbcnMyFileSystem#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#9)]  
   
@@ -28,30 +28,30 @@ Použijte `RenameFile` metodu `My.Computer.FileSystem` objektu k přejmenování
 
  Následující podmínky mohou způsobit výjimku:  
   
-- Cesta není platná z některého z následujících důvodů: Jedná se o řetězec o nulové délce, obsahuje pouze prázdné znaky, obsahuje neplatné znaky nebo se jedná o cestu k zařízení (začíná \\ \\na.\\) (<xref:System.ArgumentException>).  
+- Cesta není platná z některého z následujících důvodů: Jedná se o řetězec o nulové délce, obsahuje pouze prázdné znaky, obsahuje neplatné znaky nebo se jedná o cestu k zařízení (začíná na \\ \\ . \\ ) (<xref:System.ArgumentException>).  
   
-- `newName`obsahuje informace o cestě<xref:System.ArgumentException>().  
+- `newName`obsahuje informace o cestě ( <xref:System.ArgumentException> ).  
   
-- Cesta není platná, protože je `Nothing` (<xref:System.ArgumentNullException>).  
+- Cesta není platná, protože je `Nothing` ( <xref:System.ArgumentNullException> ).  
   
-- `newName`je `Nothing` nebo prázdný řetězec (<xref:System.ArgumentNullException>).  
+- `newName`je `Nothing` nebo prázdný řetězec ( <xref:System.ArgumentNullException> ).  
   
-- Zdrojový soubor není platný nebo neexistuje (<xref:System.IO.FileNotFoundException>).  
+- Zdrojový soubor není platný nebo neexistuje ( <xref:System.IO.FileNotFoundException> ).  
   
-- Existuje existující soubor nebo adresář s názvem zadaným v `newName` (<xref:System.IO.IOException>).  
+- Existuje existující soubor nebo adresář s názvem zadaným v `newName` ( <xref:System.IO.IOException> ).  
   
-- Cesta přesahuje maximální povolenou délku (<xref:System.IO.PathTooLongException>) definovanou systémem.  
+- Cesta přesahuje maximální povolenou délku () definovanou systémem <xref:System.IO.PathTooLongException> .  
   
-- Název souboru nebo adresáře v cestě obsahuje dvojtečku (:) nebo má neplatnou hodnotu format<xref:System.NotSupportedException>().  
+- Název souboru nebo adresáře v cestě obsahuje dvojtečku (:) nebo má neplatnou hodnotu Format ( <xref:System.NotSupportedException> ).  
   
-- Uživatel nemá potřebná oprávnění k zobrazení cesty (<xref:System.Security.SecurityException>).  
+- Uživatel nemá potřebná oprávnění k zobrazení cesty ( <xref:System.Security.SecurityException> ).  
   
-- Uživatel nemá požadovaná oprávnění (<xref:System.UnauthorizedAccessException>).  
+- Uživatel nemá požadovaná oprávnění ( <xref:System.UnauthorizedAccessException> ).  
   
 ## <a name="see-also"></a>Viz také
 
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem.RenameFile%2A>
-- [Postupy: Přesunutí souboru](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-move-a-file.md)
-- [Vytváření, odstraňování a přesouvání souborů a adresářů](../../../../visual-basic/developing-apps/programming/drives-directories-files/creating-deleting-and-moving-files-and-directories.md)
-- [Postupy: Vytvoření kopie souboru ve stejném adresáři](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-copy-of-a-file-in-the-same-directory.md)
-- [Postupy: Vytvoření kopie souboru v jiném adresáři](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-copy-of-a-file-in-a-different-directory.md)
+- [Postupy: Přesunutí souboru](how-to-move-a-file.md)
+- [Vytváření, odstraňování a přesouvání souborů a adresářů](creating-deleting-and-moving-files-and-directories.md)
+- [Postupy: Vytvoření kopie souboru ve stejném adresáři](how-to-create-a-copy-of-a-file-in-the-same-directory.md)
+- [Postupy: Vytvoření kopie souboru v jiném adresáři](how-to-create-a-copy-of-a-file-in-a-different-directory.md)

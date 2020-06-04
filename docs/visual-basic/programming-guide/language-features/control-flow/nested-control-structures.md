@@ -10,20 +10,20 @@ helpviewer_keywords:
 - structures [Visual Basic], nested control
 - nested control statements [Visual Basic]
 ms.assetid: cf60b061-65d9-44a8-81f2-b0bdccd23a05
-ms.openlocfilehash: b696c79cd3cada4416b3f4b6cdf96f00b89a5a0a
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.openlocfilehash: 539ad639320615c1e53176fe47e5468864aa21d8
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78266921"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84414386"
 ---
 # <a name="nested-control-structures-visual-basic"></a>Vnořené řídicí struktury (Visual Basic)
-Příkazy ovládacího prvku můžete umístit do `If...Then...Else` jiných `For...Next` příkazů ovládacího prvku, například bloku ve smyčce. Příkaz ovládacího prvku umístěný uvnitř jiného příkazu ovládacího prvku se nazývá *vnořené*.  
+Řídicí příkazy lze umístit do jiných řídicích příkazů, například `If...Then...Else` bloku v rámci `For...Next` smyčky. Řídicí příkaz umístěný uvnitř jiného kontrolního příkazu je označován jako *vnořený*.  
   
-## <a name="nesting-levels"></a>Úrovně vnoření  
- Struktury ovládacího prvku v jazyce Visual Basic lze vnořit do tolika úrovní, kolik chcete. Je běžnou praxí, aby byly vnořené struktury čitelnější odsazením těla každého z nich. Editor integrovaného vývojového prostředí (IDE) to automaticky provádí.  
+## <a name="nesting-levels"></a>Vnořování úrovní  
+ Řídicí struktury v Visual Basic můžou být vnořené do tolika úrovní, kolik chcete. Je běžné, že vnořené struktury budou čitelnější, když odsadíte tělo každé z nich. To dělá Editor integrovaného vývojového prostředí (IDE) automaticky.  
   
- V následujícím příkladu `sumRows` postup sečte kladné prvky každého řádku matice.  
+ V následujícím příkladu postup `sumRows` přidá do sebe kladné prvky každého řádku matice.  
   
 ```vb
 Public Sub sumRows(ByVal a(,) As Double, ByRef r() As Double)  
@@ -39,15 +39,15 @@ Public Sub sumRows(ByVal a(,) As Double, ByRef r() As Double)
 End Sub  
 ```  
   
- V předchozím příkladu první `Next` příkaz zavře `For` vnitřní smyčky `Next` a poslední příkaz `For` zavře vnější smyčky.  
+ V předchozím příkladu první `Next` příkaz zavře vnitřní `For` smyčku a poslední `Next` příkaz zavře vnější `For` smyčku.  
   
- Podobně v vnořených `If` `End If` příkazech příkazy automaticky platí `If` pro nejbližší předchozí příkaz. Vnořené `Do` smyčky pracovat podobným způsobem, `Loop` s nejvnitřnější `Do` příkaz odpovídající nejvnitřnější příkaz.  
+ Stejně tak ve vnořených `If` příkazech se `End If` příkazy automaticky použijí na nejbližší předchozí `If` příkaz. Vnořené `Do` smyčky fungují podobným způsobem, přičemž vnitřní `Loop` příkaz odpovídá nejvnitřnějšímu `Do` příkazu.  
   
 > [!NOTE]
-> U mnoha řídicích struktur jsou po klepnutí na klíčové slovo zvýrazněna všechna klíčová slova ve struktuře. `If` Pokud například klepnete `If...Then...Else` na stavbou, `If` `Then`zvýrazní se všechny instance aplikace , `ElseIf`, `Else`, a `End If` v konstrukci. Pokud chcete přejít na další nebo předchozí zvýrazněné klíčové slovo, stiskněte kombinaci kláves CTRL+SHIFT+ŠIPKA DOLŮ nebo CTRL+SHIFT+ŠIPKA NAHORU.  
+> U mnoha řídicích struktur se při kliknutí na klíčové slovo zvýrazní všechna klíčová slova ve struktuře. Například při kliknutí na `If` `If...Then...Else` konstrukci `If` `Then` jsou zvýrazněny všechny instance,,, `ElseIf` `Else` a `End If` v konstrukci. Chcete-li přejít na další nebo předchozí zvýrazněné klíčové slovo, stiskněte klávesy CTRL + SHIFT + šipka dolů nebo CTRL + SHIFT + šipka nahoru.  
   
-## <a name="nesting-different-kinds-of-control-structures"></a>Vnoření různých druhů řídicích struktur  
- Můžete vnořit jeden druh řídicí struktury do jiného druhu. Následující příklad používá `With` blok `For Each` uvnitř smyčky `If` a vnořené bloky uvnitř `With` bloku.  
+## <a name="nesting-different-kinds-of-control-structures"></a>Vnořování různých druhů řídicích struktur  
+ Jeden druh struktury ovládacího prvku můžete vnořit do jiného typu. Následující příklad používá `With` blok uvnitř `For Each` smyčky a vnořené `If` bloky uvnitř `With` bloku.  
   
 ```vb
 For Each ctl As System.Windows.Forms.Control In Me.Controls  
@@ -65,15 +65,15 @@ Next ctl
 ```  
   
 ## <a name="overlapping-control-structures"></a>Překrývající se řídicí struktury  
- Nelze překrývat řídicí struktury. To znamená, že všechny vnořené struktury musí být zcela obsaženy v rámci další nejvnitřnější struktury. Například následující uspořádání je neplatné, protože `For` smyčka `With` končí před ukončením vnitřního bloku.  
+ Nemůžete překrývat řídicí struktury. To znamená, že všechny vnořené struktury musí být zcela obsaženy v další nejvnitřnější struktuře. Například následující uspořádání je neplatné, protože `For` smyčka končí před `With` ukončením vnitřního bloku.  
   
- ![Diagram, který ukazuje příklad neplatného vnoření.](./media/nested-control-structures/example-invalid-nesting.gif)
+ ![Diagram, který zobrazuje příklad neplatného vnoření.](./media/nested-control-structures/example-invalid-nesting.gif)
   
- Kompilátor jazyka rozpozná tyto překrývající se řídicí struktury a signalizuje chybu v době kompilace.  
+ Kompilátor Visual Basic detekuje takové překrývající se řídicí struktury a signalizuje chybu při kompilaci.  
   
 ## <a name="see-also"></a>Viz také
 
-- [Tok řízení](../../../../visual-basic/programming-guide/language-features/control-flow/index.md)
-- [Struktury rozhodování](../../../../visual-basic/programming-guide/language-features/control-flow/decision-structures.md)
-- [Struktury smyčky](../../../../visual-basic/programming-guide/language-features/control-flow/loop-structures.md)
-- [Ostatní řídicí struktury](../../../../visual-basic/programming-guide/language-features/control-flow/other-control-structures.md)
+- [Tok řízení](index.md)
+- [Struktury rozhodování](decision-structures.md)
+- [Struktury smyčky](loop-structures.md)
+- [Ostatní řídicí struktury](other-control-structures.md)

@@ -1,65 +1,58 @@
 ---
-title: Jednorozměrná pole – programovací průvodce C#
-ms.date: 07/20/2015
+title: Jednorozměrná pole – Průvodce programováním v C#
+ms.date: 06/03/2020
 helpviewer_keywords:
 - single-dimensional arrays [C#]
 - arrays [C#], single-dimensional
 ms.assetid: 2cec1196-1de0-49d2-baf2-c607c33310e8
-ms.openlocfilehash: bd4ab53a9cb53e5cf636601bff5ac64a10a310a6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e189253eedc21fa2d51e16407f04b034610bb57b
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79170348"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84410241"
 ---
 # <a name="single-dimensional-arrays-c-programming-guide"></a>Jednorozměrná pole (Průvodce programováním v C#)
 
-Můžete deklarovat jednorozměrné pole pěti celočísel, jak je znázorněno v následujícím příkladu:  
-  
- [!code-csharp[csProgGuideArrays#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#4)]  
-  
- Toto pole obsahuje `array[0]` `array[4]`prvky z do . [Nový](../../language-reference/operators/new-operator.md) operátor se používá k vytvoření pole a inicializaci prvků pole na jejich výchozí hodnoty. V tomto příkladu jsou všechny prvky pole inicializovány na nulu.  
-  
- Pole, které ukládá řetězcové prvky, může být deklarováno stejným způsobem. Například:  
-  
- [!code-csharp[csProgGuideArrays#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#5)]  
-  
+Vytvoříte jednorozměrné pole pomocí operátoru [New](../../language-reference/operators/new-operator.md) , který určuje typ prvku pole a počet prvků. Následující příklad deklaruje pole pěti celých čísel:
+
+:::code language="csharp" source="snippets/SingleDimensionArrays.cs" id="IntDeclaration":::
+
+Toto pole obsahuje prvky z `array[0]` do `array[4]` . Prvky pole jsou inicializovány na výchozí hodnotu typu prvku `0` pro celá čísla.
+
+Pole mohou ukládat jakýkoli typ prvku, který zadáte, například následující příklad, který deklaruje pole řetězců:
+
+:::code language="csharp" source="snippets/SingleDimensionArrays.cs" id="StringDeclaration":::
+
 ## <a name="array-initialization"></a>Inicializace pole
 
- Je možné inicializovat pole při deklaraci, v takovém případě není specifikátor délky nutný, protože je již zadán počtem prvků v inicializačním seznamu. Například:  
-  
- [!code-csharp[csProgGuideArrays#6](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#6)]  
-  
- Pole řetězce lze inicializovat stejným způsobem. Následuje deklarace pole řetězců, kde je každý prvek pole inicializován názvem dne:  
+Při deklaraci pole můžete inicializovat prvky pole. Specifikátor délky není potřebný, protože je odvozený podle počtu prvků v inicializačním seznamu. Příklad:
 
- ```csharp
- string[] weekDays = new string[] { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" };
- ```
-  
- Při inicializaci pole při deklaraci můžete použít následující zkratky:  
-  
- [!code-csharp[csProgGuideArrays#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#8)]  
-  
- Je možné deklarovat proměnnou pole bez inicializace, ale je nutné použít `new` operátor při přiřazení pole k této proměnné. Například:  
-  
- [!code-csharp[csProgGuideArrays#9](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#9)]  
-  
- C# 3.0 zavádí implicitně zadaných polí. Další informace naleznete [v tématu Implicitně zadali pole](./implicitly-typed-arrays.md).  
-  
-## <a name="value-type-and-reference-type-arrays"></a>Pole typu a referenčního typu
+:::code language="csharp" source="snippets/SingleDimensionArrays.cs" id="IntInitialization":::
 
- Zvažte následující deklaraci pole:  
+Následující kód ukazuje deklaraci pole řetězců, kde je každý element pole inicializován pomocí názvu dne:
+
+:::code language="csharp" source="snippets/SingleDimensionArrays.cs" id="StringInitialization":::
   
- [!code-csharp[csProgGuideArrays#10](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#10)]  
-  
- Výsledek tohoto příkazu závisí `SomeType` na tom, zda je typ hodnoty nebo typ odkazu. Pokud se jedná o typ hodnoty, příkaz vytvoří pole 10 prvků, z nichž každý má typ `SomeType`. Pokud `SomeType` je typ odkazu, příkaz vytvoří pole 10 prvků, z nichž každý je inicializován na odkaz null.  
-  
-Další informace o typech hodnot a typech odkazů naleznete v [tématu Typy hodnot](../../language-reference/builtin-types/value-types.md) a [Reference .](../../language-reference/keywords/reference-types.md)
+Můžete se vyhnout `new` výrazu a typu pole při inicializaci pole při deklaraci, jak je znázorněno v následujícím kódu. Toto se nazývá [implicitně typované pole](implicitly-typed-arrays.md):
+
+:::code language="csharp" source="snippets/SingleDimensionArrays.cs" id="ShorthandInitialization":::
+
+Můžete deklarovat proměnnou pole bez jejího vytvoření, ale je nutné použít `new` operátor, pokud k této proměnné přiřadíte nové pole. Příklad:
+
+:::code language="csharp" source="snippets/SingleDimensionArrays.cs" id="DeclareAllocate":::
+
+## <a name="value-type-and-reference-type-arrays"></a>Pole Typ hodnoty a odkazové typy
+
+Zvažte následující deklaraci pole:  
+
+:::code language="csharp" source="snippets/SingleDimensionArrays.cs" id="FinalInstantiation":::
+
+Výsledek tohoto příkazu závisí na tom, zda `SomeType` je typ hodnoty nebo typ odkazu. Pokud se jedná o typ hodnoty, příkaz vytvoří pole 10 prvků, z nichž každý má typ `SomeType` . Pokud `SomeType` je odkazový typ, příkaz vytvoří pole 10 prvků, z nichž každá je inicializována na odkaz s hodnotou null. V obou instancích jsou prvky inicializovány na výchozí hodnotu pro typ prvku. Další informace o typech hodnot a odkazových typech naleznete v tématu [typy hodnot](../../language-reference/builtin-types/value-types.md) a [odkazové typy](../../language-reference/keywords/reference-types.md).
   
 ## <a name="see-also"></a>Viz také
 
 - <xref:System.Array>
-- [Programovací příručka jazyka C#](../index.md)
 - [Pole](./index.md)
 - [Vícerozměrná pole](./multidimensional-arrays.md)
 - [Vícenásobná pole](./jagged-arrays.md)

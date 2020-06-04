@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Visual Basic compiler, starting
 - command line [Visual Basic], arguments
 ms.assetid: 0fd9a8f6-f34e-4c35-a49d-9b9bbd8da4a9
-ms.openlocfilehash: 3b34ebba68c9c9b2a8335822d0ffaef2a9b06d7c
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 6def53d4a2d15dda3e3ac43abe35b3100f456fe9
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74344263"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84408605"
 ---
 # <a name="how-to-invoke-the-command-line-compiler-visual-basic"></a>Postupy: Volání kompilátoru příkazového řádku (Visual Basic)
 
@@ -30,7 +30,7 @@ Kompilátor příkazového řádku můžete vyvolat zadáním názvu spustiteln�
 
 4. Do příkazového řádku zadejte `vbc.exe` *sourceFileName* a stiskněte klávesu ENTER.
 
-    Pokud jste například uložili zdrojový kód do adresáře s názvem `SourceFiles`, otevřete příkazový řádek a zadejte `cd SourceFiles` příkaz pro změnu do tohoto adresáře. Pokud adresář obsahoval zdrojový soubor s názvem `Source.vb`, můžete ho zkompilovat zadáním. `vbc.exe Source.vb`
+    Pokud jste například uložili zdrojový kód do adresáře s názvem `SourceFiles` , otevřete příkazový řádek a zadejte příkaz `cd SourceFiles` pro změnu do tohoto adresáře. Pokud adresář obsahoval zdrojový soubor s názvem `Source.vb` , můžete ho zkompilovat zadáním `vbc.exe Source.vb` .
 
 ## <a name="to-set-the-path-environment-variable-to-the-compiler-for-the-windows-command-prompt"></a>Nastavení proměnné prostředí PATH na kompilátor příkazového řádku systému Windows
 
@@ -56,9 +56,9 @@ Kompilátor příkazového řádku můžete vyvolat zadáním názvu spustiteln�
 
 2. Do příkazového řádku zadejte `vbc.exe` *sourceFileName* a stiskněte klávesu ENTER.
 
-     Pokud jste například uložili zdrojový kód do adresáře s názvem `SourceFiles`, otevřete příkazový řádek a zadejte `cd SourceFiles` příkaz pro změnu do tohoto adresáře. Pokud adresář obsahoval zdrojový soubor s názvem `Source.vb`, můžete ho zkompilovat zadáním. `vbc.exe Source.vb`
+     Pokud jste například uložili zdrojový kód do adresáře s názvem `SourceFiles` , otevřete příkazový řádek a zadejte příkaz `cd SourceFiles` pro změnu do tohoto adresáře. Pokud adresář obsahoval zdrojový soubor s názvem `Source.vb` , můžete ho zkompilovat zadáním `vbc.exe Source.vb` .
 
 ## <a name="see-also"></a>Viz také
 
-- [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
-- [Podmíněná kompilace](../../../visual-basic/programming-guide/program-structure/conditional-compilation.md)
+- [Visual Basic Kompilátor příkazového řádku](index.md)
+- [Podmíněná kompilace](../../programming-guide/program-structure/conditional-compilation.md)

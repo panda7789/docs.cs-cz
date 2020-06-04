@@ -10,12 +10,12 @@ helpviewer_keywords:
 - BC36644
 - BC36647
 ms.assetid: 0e0050f2-2039-4311-b260-f0ebfde84189
-ms.openlocfilehash: 97b03874489473482554078958c7bfd29d87c095
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: b278dcc10a8a4e9e67aacdb16dca2588d2ebd0f1
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72523992"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84409778"
 ---
 # <a name="data-types-of-the-type-parameters-cannot-be-inferred-from-these-arguments"></a>Z těchto argumentů nelze odvodit datové typy parametrů typu.
 
@@ -58,8 +58,8 @@ End Interface
 
 Možná budete moct zadat datový typ pro parametr typu nebo parametry a nemusíte se spoléhat na odvození typu.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Volný převod delegáta](../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md)
-- [Obecné procedury v Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-procedures.md)
-- [Převody typu v Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
+- [Volný převod delegáta](../../programming-guide/language-features/delegates/relaxed-delegate-conversion.md)
+- [Obecné procedury v jazyce Visual Basic](../../programming-guide/language-features/data-types/generic-procedures.md)
+- [Převody typů v jazyce Visual Basic](../../programming-guide/language-features/data-types/type-conversions.md)

@@ -7,31 +7,31 @@ f1_keywords:
 helpviewer_keywords:
 - BC36810
 ms.assetid: 9323b5d2-ba14-4e49-91f1-9ad647162144
-ms.openlocfilehash: 7c05c712bcbb0a61bb3121bb71a7823a1c29afb5
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 919c6873ba63addb776d756a58c44a3fe3f0ec3d
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64625576"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84409622"
 ---
 # <a name="errors-occurred-while-compiling-the-xml-schemas-in-the-project"></a>Při kompilování schémat XML v projektu došlo k chybám.
-Při kompilování schémat XML v projektu došlo k chybám. Z tohoto důvodu není k dispozici technologie IntelliSense jazyka XML.  
+Při kompilování schémat XML v projektu došlo k chybám. Z tohoto důvodu není k dispozici XML IntelliSense.  
   
- Dojde k chybě ve schématu definice schématu XML (XSD), který je zahrnutý v projektu. K této chybě dochází, když přidáte souboru XSD schématu (XSD), který je v konfliktu s existující schéma XSD nastaven pro projekt.  
+ V rámci schématu definice schématu XML (XSD), který je součástí projektu, je chyba. K této chybě dochází, když přidáte soubor schématu XSD (. XSD), který je v konfliktu s existující sadou schémat XSD pro projekt.  
   
  **ID chyby:** BC36810  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-- Poklikejte na ikonu upozornění v **seznamu chyb** okna. Visual Basic přejdete do umístění v souboru XSD, které je zdrojem upozornění. Oprava chyby ve schématu XSD.  
+- Dvakrát klikněte na upozornění v okně **Seznam chyb** . Visual Basic přejdete do umístění v souboru XSD, který je zdrojem upozornění. Opravte chybu ve schématu XSD.  
   
-- Ujistěte se, že všechny požadované soubory XSD (XSD) schématu jsou součástí projektu. Budete muset kliknout na **zobrazit všechny soubory** na **projektu** nabídku zobrazte vaše XSD souborů **Průzkumníka řešení**. Klikněte pravým tlačítkem na soubor XSD a potom klikněte na tlačítko **zahrnout do projektu** k zahrnutí souboru do projektu.  
+- Ujistěte se, že v projektu jsou zahrnuté všechny požadované soubory XSD schématu (. XSD). Možná budete muset kliknout na **Zobrazit všechny soubory** v nabídce **projekt** a zobrazit soubory. xsd v **Průzkumník řešení**. Klikněte pravým tlačítkem na soubor. xsd a potom kliknutím na možnost **zahrnout do projektu** zahrňte soubor do projektu.  
   
-- Pokud používáte Průvodce XML na schéma, této chybě může dojít, pokud jste schémata odvodit více než jednou ze stejného zdroje. V takovém případě existující soubory schématu XSD můžete odebrat z projektu, přidejte nový kód jazyka XML na schéma šablony položky a potom poskytnout XML na schéma průvodce všechny příslušné zdroje XML pro váš projekt.  
+- Pokud používáte Průvodce XML na schéma, k této chybě může dojít, pokud ze stejného zdroje odvozujete schémata více než jednou. V takovém případě můžete odebrat existující soubory schématu XSD z projektu, přidat novou šablonu XML do šablony položky schématu a potom poskytnout Průvodce schématu XML pro všechny příslušné zdroje XML pro váš projekt.  
   
-- Pokud se najde žádná chyba ve schématu XSD, kompilátor XML nemusí mít dostatek informací, které poskytují Podrobná chybová zpráva. Je možné získat podrobnější informace o chybě, pokud je zajistit, že obory názvů XML pro soubory XSD součástí vašeho projektu zápasu obory názvů XML pro schéma XML, nastavte v sadě Visual Studio.  
+- Pokud ve schématu XSD není identifikována žádná chyba, kompilátor XML nemusí mít dostatek informací, aby mohl poskytovat podrobnou chybovou zprávu. Je možné získat podrobnější informace o chybách, pokud zajistíte, že obory názvů XML pro soubory. xsd zahrnuté ve vašem projektu odpovídají oborům názvů XML identifikovaným pro sadu schémat XML v sadě Visual Studio.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Okno Seznam chyb](/visualstudio/ide/reference/error-list-window)
-- [XML](../../../visual-basic/programming-guide/language-features/xml/index.md)
+- [Seznam chyb okno](/visualstudio/ide/reference/error-list-window)
+- [XML](../../programming-guide/language-features/xml/index.md)

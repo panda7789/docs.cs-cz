@@ -5,14 +5,14 @@ helpviewer_keywords:
 - example XML tag
 - <example> XML tag
 ms.assetid: 90eeda1c-3fc4-427c-879c-5046d265a97c
-ms.openlocfilehash: 8f36ac1337dd0d1400180fbd3deae2bb24ad9c58
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 42f40581d252956433165789d6674234a295867c
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74348484"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84400137"
 ---
-# <a name="example-visual-basic"></a>\<příklad > (Visual Basic)
+# <a name="example-visual-basic"></a>\<example> (Visual Basic)
 Určuje příklad člena.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -26,15 +26,15 @@ Určuje příklad člena.
  Popis ukázky kódu.  
   
 ## <a name="remarks"></a>Poznámky  
- Značka `<example>` umožňuje zadat příklad použití metody nebo jiného člena knihovny. To běžně zahrnuje použití značky [> kódu\<](../../../visual-basic/language-reference/xmldoc/code.md) .  
+ `<example>`Značka umožňuje zadat příklad použití metody nebo jiného člena knihovny. To běžně zahrnuje použití [\<code>](code.md) značky.  
   
- Zkompilujte s [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) a zpracujte komentáře k dokumentaci do souboru.  
+ Zkompilujte s [-doc](../../reference/command-line-compiler/doc.md) a zpracujte komentáře k dokumentaci do souboru.  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu se používá značka `<example>` k zahrnutí příkladu pro použití pole `ID`.  
+ Tento příklad používá `<example>` značku k zahrnutí příkladu pro použití `ID` pole.  
   
  [!code-vb[VbVbcnXmlDocComments#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#2)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Značky pro komentáře XML](../../../visual-basic/language-reference/xmldoc/index.md)
+- [Značky pro komentáře XML](index.md)

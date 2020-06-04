@@ -7,21 +7,21 @@ f1_keywords:
 helpviewer_keywords:
 - BC30106
 ms.assetid: 2c5363e1-62c2-4f5a-b675-c7337aeb363d
-ms.openlocfilehash: 76cf0a997e9ad36ab4b5dfdc7c4bc29c57d309eb
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 4d8ffd2c4ad0a386053ced0f98503969723c7168
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64665694"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84409371"
 ---
 # <a name="number-of-indices-exceeds-the-number-of-dimensions-of-the-indexed-array"></a>Počet indexů překračuje počet rozměrů indexovaného pole.
-Počet indexů pro přístup k elementu pole musí být přesně stejné jako řád objektu array, to znamená, počet rozměrů deklarované pro něj.  
+Počet indexů použitých pro přístup k prvku pole musí být přesně stejný jako rozměr pole, tj. počet dimenzí, které jsou pro něj deklarovány.  
   
  **ID chyby:** BC30106  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-- Dokud celkový počet dolních indexů rovná řád objektu array, odeberte z odkazu na pole dolních indexů. Příklad:  
+- Odeberte dolní indexy z odkazu na pole, dokud celkový počet dolních indexů nerovná rozměru pole. Příklad:  
   
     ```vb  
     Dim gameBoard(3, 3) As String  
@@ -35,6 +35,6 @@ Počet indexů pro přístup k elementu pole musí být přesně stejné jako ř
     gameBoard(1, 0) = "O"  
     ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Pole](../../../visual-basic/programming-guide/language-features/arrays/index.md)
+- [Pole](../../programming-guide/language-features/arrays/index.md)

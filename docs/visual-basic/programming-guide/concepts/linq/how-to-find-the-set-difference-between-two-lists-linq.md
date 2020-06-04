@@ -2,19 +2,19 @@
 title: 'Postupy: Hledání množinových rozdílů mezi dvěma seznamy (LINQ)'
 ms.date: 07/20/2015
 ms.assetid: b5b25474-10a8-4df6-aab5-75621bb6b68e
-ms.openlocfilehash: 42c5b5ee8a6af1323cb5eee12694fb94063eb877
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: f533b63b40325b34c5881c1e2f14aa4e576191c7
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75347515"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84396594"
 ---
 # <a name="how-to-find-the-set-difference-between-two-lists-linq-visual-basic"></a>Postupy: Vyhledání nastaveného rozdílu mezi dvěma seznamy (LINQ) (Visual Basic)
 Tento příklad ukazuje, jak použít LINQ k porovnání dvou seznamů řetězců a výstupu těchto řádků, které jsou v names1. txt, ale ne v names2. txt.  
   
 ### <a name="to-create-the-data-files"></a>Vytvoření datových souborů  
   
-1. Zkopírujte names1. txt a names2. txt do složky řešení, jak je znázorněno v tématu [How to: kombinovat and Compare String Collections (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-combine-and-compare-string-collections-linq.md).  
+1. Zkopírujte names1. txt a names2. txt do složky řešení, jak je znázorněno v tématu [How to: kombinovat and Compare String Collections (LINQ) (Visual Basic)](how-to-combine-and-compare-string-collections-linq.md).  
   
 ## <a name="example"></a>Příklad  
   
@@ -51,11 +51,11 @@ End Class
 ' Garcia, Debra  
 ```  
   
- Některé typy operací dotazů v Visual Basic, například <xref:System.Linq.Enumerable.Except%2A>, <xref:System.Linq.Enumerable.Distinct%2A>, <xref:System.Linq.Enumerable.Union%2A>a <xref:System.Linq.Enumerable.Concat%2A>, lze vyjádřit pouze v syntaxi založené na metodě.  
+ Některé typy operací dotazů v Visual Basic, například, <xref:System.Linq.Enumerable.Except%2A> <xref:System.Linq.Enumerable.Distinct%2A> , <xref:System.Linq.Enumerable.Union%2A> a <xref:System.Linq.Enumerable.Concat%2A> , lze vyjádřit pouze v syntaxi založené na metodě.  
   
-## <a name="compile-the-code"></a>Kompilace kódu  
-Vytvořte projekt konzolové aplikace Visual Basic s příkazem `Imports` pro obor názvů System. Linq.
+## <a name="compile-the-code"></a>Kompilovat kód  
+Vytvořte projekt konzolové aplikace Visual Basic s `Imports` příkazem pro obor názvů System. Linq.
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [LINQ a řetězce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
+- [LINQ a řetězce (Visual Basic)](linq-and-strings.md)

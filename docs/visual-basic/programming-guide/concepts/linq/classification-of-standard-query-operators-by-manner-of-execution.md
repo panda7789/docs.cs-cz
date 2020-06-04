@@ -2,23 +2,23 @@
 title: Klasifikace standardních operátorů dotazu podle metody provedení
 ms.date: 07/20/2015
 ms.assetid: 7f55b0be-9f6e-44f8-865c-6afbea50cc54
-ms.openlocfilehash: edace870ea684c70bbf2768c44388f2236622c2c
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: e1ba5d8bdc2b7a521a11ca5c055323fde4bcb9d9
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74345719"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84410900"
 ---
 # <a name="classification-of-standard-query-operators-by-manner-of-execution-visual-basic"></a>Klasifikace standardních operátorů dotazu podle způsobu provedení (Visual Basic)
 LINQ to Objects implementace standardních metod operátoru dotazu se spouštějí jedním ze dvou hlavních způsobů: Immediate nebo odloženo. Operátory dotazů, které používají odložené provádění, lze dále rozdělit do dvou kategorií: streaming a non-stream. Pokud víte, jak se spouštějí různé operátory dotazu, může vám porozumět výsledkům, které získáte z daného dotazu. To platí zejména v případě, že se změnil zdroj dat nebo pokud vytváříte dotaz nad jiným dotazem. Toto téma klasifikuje standardní operátory dotazu podle jejich způsobu provádění.  
   
 ## <a name="manners-of-execution"></a>Způsoby spuštění  
   
-### <a name="immediate"></a>Okamžitá  
+### <a name="immediate"></a>Projev  
  Okamžité provedení znamená, že zdroj dat je čten a operace je provedena v místě v kódu, kde je dotaz deklarován. Všechny standardní operátory dotazu, které vracejí jeden nevyčíslitelné výsledek, se spustí okamžitě.  
   
 ### <a name="deferred"></a>Odložené  
- Odložené spuštění znamená, že operace není provedena v místě v kódu, kde je dotaz deklarován. Operace se provádí pouze v případě, že je proměnná dotazu vyhodnocena, například pomocí příkazu `For Each`. To znamená, že výsledky spuštění dotazu závisí na obsahu zdroje dat při spuštění dotazu, nikoli při definování dotazu. Pokud je proměnná dotazu vyčíslovaná víckrát, výsledky se můžou pokaždé lišit. Skoro všechny standardní operátory dotazu, jejichž návratový typ je <xref:System.Collections.Generic.IEnumerable%601> nebo <xref:System.Linq.IOrderedEnumerable%601> provést odvoditelné způsobem.  
+ Odložené spuštění znamená, že operace není provedena v místě v kódu, kde je dotaz deklarován. Operace se provádí pouze v případě, že je proměnná dotazu vyhodnocena, například pomocí `For Each` příkazu. To znamená, že výsledky spuštění dotazu závisí na obsahu zdroje dat při spuštění dotazu, nikoli při definování dotazu. Pokud je proměnná dotazu vyčíslovaná víckrát, výsledky se můžou pokaždé lišit. Skoro všechny standardní operátory dotazu, jejichž návratový typ je <xref:System.Collections.Generic.IEnumerable%601> nebo se má <xref:System.Linq.IOrderedEnumerable%601> provést odvoditelné způsobem.  
   
  Operátory dotazů, které používají odložené provádění, se dají klasifikovat taky jako streamování nebo nestreamování.  
   
@@ -87,9 +87,9 @@ LINQ to Objects implementace standardních metod operátoru dotazu se spouštěj
 |<xref:System.Linq.Enumerable.Union%2A>|<xref:System.Collections.Generic.IEnumerable%601>||X||  
 |<xref:System.Linq.Enumerable.Where%2A>|<xref:System.Collections.Generic.IEnumerable%601>||X||  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Linq.Enumerable>
-- [Přehled standardních operátorů dotazů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
-- [Syntaxe výrazu dotazu pro standardní operátory dotazu (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/query-expression-syntax-for-standard-query-operators.md)
-- [LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)
+- [Přehled standardních operátorů dotazů (Visual Basic)](standard-query-operators-overview.md)
+- [Syntaxe výrazu dotazu pro standardní operátory dotazu (Visual Basic)](query-expression-syntax-for-standard-query-operators.md)
+- [LINQ to Objects (Visual Basic)](linq-to-objects.md)

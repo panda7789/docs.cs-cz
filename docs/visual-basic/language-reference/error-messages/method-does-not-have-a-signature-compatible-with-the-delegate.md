@@ -7,21 +7,21 @@ f1_keywords:
 helpviewer_keywords:
 - BC36563
 ms.assetid: 3ca8b873-e98d-419b-95f2-d75bd2a9eb6c
-ms.openlocfilehash: 925a17bef5147a5679a076af1801bdd305dd5bad
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8e5e94bbde016ec7342a9933905977dac85fb035
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61921027"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397243"
 ---
 # <a name="method-does-not-have-a-signature-compatible-with-the-delegate"></a>Podpis metody není kompatibilní s delegátem.
-Existuje určitá nekompatibilita mezi signatury metody a delegáta, který se pokoušíte použít. `Delegate` Prohlášení definuje typy parametrů a návratové typy třídy delegáta. Všechny procedury, která má odpovídající kompatibilní typy parametrů a návratové typy lze použít k vytvoření instance tohoto typu delegáta.  
+Mezi signaturami metody a delegátem, kterého se pokoušíte použít, dochází k nekompatibilitě. `Delegate`Příkaz definuje typy parametrů a návratové typy třídy delegáta. K vytvoření instance tohoto typu delegáta lze použít jakýkoli postup, který má odpovídající parametry kompatibilních typů a návratových typů.  
   
  **ID chyby**: BC36563  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Operátor AddressOf](../../../visual-basic/language-reference/operators/addressof-operator.md)
-- [Příkaz Delegate](../../../visual-basic/language-reference/statements/delegate-statement.md)
-- [Řešení přetížení](../../../visual-basic/programming-guide/language-features/procedures/overload-resolution.md)
-- [Obecné typy v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
+- [AddressOf – operátor](../operators/addressof-operator.md)
+- [Delegate – příkaz](../statements/delegate-statement.md)
+- [Rozlišení přetěžování](../../programming-guide/language-features/procedures/overload-resolution.md)
+- [Obecné typy v Visual Basic](../../programming-guide/language-features/data-types/generic-types.md)

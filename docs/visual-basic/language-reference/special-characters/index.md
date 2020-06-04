@@ -1,12 +1,12 @@
 ---
 title: Speciální znaky
 ms.date: 10/31/2017
-ms.openlocfilehash: 07522ae43c40af5be844d873159a4f54a15f90e8
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: afe514eaa3e6b1837711ef4620ce8e36aa403d1e
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74349607"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84359513"
 ---
 # <a name="special-characters-visual-basic-reference"></a>Speciální znaky (Visual Basic Reference)
 
@@ -14,6 +14,6 @@ Speciální znaky jsou předdefinované, kontextové znaky, které upravují prv
 
 - [$](interpolated.md), interpolovaná řetězcová znak.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Odkaz na Visual Basic](../../../visual-basic/language-reference/index.md)
+- [Odkaz v jazyce Visual Basic](../index.md)

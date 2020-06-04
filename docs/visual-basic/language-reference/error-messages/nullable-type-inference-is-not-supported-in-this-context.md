@@ -7,22 +7,22 @@ f1_keywords:
 helpviewer_keywords:
 - BC36629
 ms.assetid: 0a1e2dbc-d9a4-433d-9306-c5540782b81d
-ms.openlocfilehash: 42bde0b1843e52bbc16118bb056ade791591904e
-ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
+ms.openlocfilehash: 52e5391fbcf30a4dada4d64a0e810c900ea85806
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80249497"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84409384"
 ---
 # <a name="nullable-type-inference-is-not-supported-in-this-context"></a>V tomto kontextu není podporováno odvození typu s povolenou hodnotu Null.
-Typy hodnot a struktury lze deklarovat s platností.  
+Typy hodnot a struktury lze deklarovat s možnou hodnotou null.  
   
 ```vb  
 Dim a? As Integer  
 Dim b As Integer?  
 ```  
   
- Však nelze použít deklaraci s možnou hodnotou null v kombinaci s odvozením typu. Následující příklady způsobit tuto chybu.  
+ Nemůžete však použít deklaraci Nullable v kombinaci s odvozením typu. Následující příklady způsobují tuto chybu.  
   
 ```vb  
 ' Not valid.  
@@ -34,9 +34,9 @@ Dim b As Integer?
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-- Pomocí `As` klauzule deklarujte proměnnou jako typ hodnoty s možnou hodnotou s hodnotou, kterou lze použít.  
+- Použijte `As` klauzuli pro deklaraci proměnné jako typ hodnoty s možnou hodnotou null.  
   
 ## <a name="see-also"></a>Viz také
 
-- [Typy hodnot s povolenou hodnotou Null](../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md)
-- [Odvození místního typu](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)
+- [Typy hodnot s možnou hodnotou null](../../programming-guide/language-features/data-types/nullable-value-types.md)
+- [Odvození místního typu](../../programming-guide/language-features/variables/local-type-inference.md)

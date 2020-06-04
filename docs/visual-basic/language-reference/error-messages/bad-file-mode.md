@@ -4,37 +4,37 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID54
 ms.assetid: 74891e96-884b-4c8d-872d-cd11ae272372
-ms.openlocfilehash: 9a59faf1b6f845858e36efcabdf0758e41ad75dc
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 534ea2d8316dc29cace798c5ad9b7697a290026f
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64619735"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84409866"
 ---
 # <a name="bad-file-mode"></a>Chybný režim souboru
-Příkazy používané práce s obsahem souboru musí být příslušný režim, ve kterém soubor byl otevřen. Mezi možné příčiny patří:  
+Příkazy používané při manipulaci s obsahem souboru musí být vhodné pro režim, ve kterém byl soubor otevřen. Mezi možné příčiny patří:  
   
-- A `FilePutObject` nebo `FileGetObject` příkaz určuje sekvenčního souboru.  
+- `FilePutObject`Příkaz nebo `FileGetObject` určuje sekvenční soubor.  
   
-- A `Print` příkaz určuje soubor otevřen pro přístupový režim jiné než `Output` nebo `Append`.  
+- `Print`Příkaz určuje soubor otevřený pro jiný režim přístupu než `Output` nebo `Append` .  
   
-- `Input` Příkaz určuje soubor otevřen pro přístupový režim jiné než `Input`  
+- `Input`Příkaz určuje soubor otevřený pro jiný režim přístupu, než`Input`  
   
-- Pokus o zápis do souboru jen pro čtení.  
+- Pokus o zápis do souboru určeného jen pro čtení.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-- Ujistěte se, že `FilePutObject` a `FileGetObject` pouze odkazují na soubory otevřené pro `Random` nebo `Binary` přístup.  
+- Ujistěte se `FilePutObject` , že a že `FileGetObject` odkazují jenom na soubory otevřené pro `Random` nebo `Binary` Access.  
   
-- Ujistěte se, že `Print` Určuje soubor otevřen pro buď `Output` nebo `Append` přístupovém režimu. V opačném případě použijte jiný příkaz umístit data v souboru nebo znovu otevřete soubor v odpovídající režim.  
+- Zajistěte, aby byl `Print` soubor otevřen `Output` pro `Append` přístup nebo režim přístupu. V takovém případě použijte jiný příkaz k umístění dat do souboru nebo soubor znovu otevřete v příslušném režimu.  
   
-- Ujistěte se, že `Input` Určuje soubor otevřen pro `Input`. Pokud ne, použijte jiný příkaz umístit data souboru nebo znovu otevřete soubor v odpovídající režim.  
+- Ujistěte se, že `Input` Určuje soubor, který je otevřen pro `Input` . V takovém případě použijte jiný příkaz k umístění dat do souboru nebo znovu otevřete soubor v odpovídajícím režimu.  
   
-- Při psaní do souboru jen pro čtení, změňte stav čtení a zápis souboru nebo Nepokoušejte se do ní zapisovat.  
+- Pokud zapisujete do souboru určeného jen pro čtení, změňte stav čtení/zápisu souboru nebo se do něj nepokoušíte zapisovat.  
   
-- Použití funkce, která je dostupná v `My.Computer.FileSystem` objektu.  
+- Použijte funkce, které jsou k dispozici v `My.Computer.FileSystem` objektu.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:Microsoft.VisualBasic.FileSystem>
-- [Odstraňování potíží: Čtení a zápis do textových souborů](../../../visual-basic/developing-apps/programming/drives-directories-files/troubleshooting-reading-from-and-writing-to-text-files.md)
+- [Řešení potíží: Čtení z textových souborů a zápis do nich](../../developing-apps/programming/drives-directories-files/troubleshooting-reading-from-and-writing-to-text-files.md)

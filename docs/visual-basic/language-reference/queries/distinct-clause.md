@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Distinct statement [Visual Basic]
 - queries [Visual Basic], Distinct
 ms.assetid: 86f42614-0d8f-4ffc-b888-ce8a37a8d36a
-ms.openlocfilehash: 94471898807ef4552564c3e01465f2b2f6211d0c
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 5aecffbce036500d294d03a925798d51f1269af6
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74335376"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84401391"
 ---
 # <a name="distinct-clause-visual-basic"></a>Distinct – klauzule (Visual Basic)
 Omezuje hodnoty aktuální proměnné rozsahu tak, aby v následných klauzulích dotazu vyloučily duplicitní hodnoty.  
@@ -25,17 +25,17 @@ Distinct
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Klauzuli `Distinct` můžete použít k vrácení seznamu jedinečných položek. Klauzule `Distinct` způsobí, že dotaz ignoruje výsledky duplicitních dotazů. Klauzule `Distinct` se vztahuje na duplicitní hodnoty všech vrácených polí určených klauzulí `Select`. Není-li zadána žádná klauzule `Select`, je použita klauzule `Distinct` na proměnnou rozsahu pro dotaz identifikovaný v klauzuli `From`. Pokud proměnná rozsahu není neměnný typ, dotaz bude ignorovat výsledek dotazu pouze v případě, že všichni členové typu odpovídají existujícímu výsledku dotazu.  
+ Pomocí `Distinct` klauzule můžete vracet seznam jedinečných položek. `Distinct`Klauzule způsobí, že dotaz ignoruje výsledky duplicitních dotazů. `Distinct`Klauzule se vztahuje na duplicitní hodnoty všech vrácených polí určených `Select` klauzulí. Pokud `Select` není zadána žádná klauzule, `Distinct` klauzule je použita na proměnnou rozsahu pro dotaz identifikovaný v `From` klauzuli. Pokud proměnná rozsahu není neměnný typ, dotaz bude ignorovat výsledek dotazu pouze v případě, že všichni členové typu odpovídají existujícímu výsledku dotazu.  
   
 ## <a name="example"></a>Příklad  
- Následující výraz dotazu spojuje seznam zákazníků a seznam objednávek zákazníků. K dispozici je klauzule `Distinct`, která vrátí seznam jedinečných názvů zákazníků a data objednávky.  
+ Následující výraz dotazu spojuje seznam zákazníků a seznam objednávek zákazníků. `Distinct`K dispozici je klauzule, která vrátí seznam jedinečných názvů zákazníků a data objednávky.  
   
  [!code-vb[VbSimpleQuerySamples#20](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#20)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Úvod do jazyka LINQ v Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
-- [Dotazy](../../../visual-basic/language-reference/queries/index.md)
-- [Klauzule From](../../../visual-basic/language-reference/queries/from-clause.md)
-- [Klauzule Select](../../../visual-basic/language-reference/queries/select-clause.md)
-- [Klauzule Where](../../../visual-basic/language-reference/queries/where-clause.md)
+- [Představení technologie LINQ v jazyce Visual Basic](../../programming-guide/language-features/linq/introduction-to-linq.md)
+- [Dotazy](index.md)
+- [Klauzule FROM](from-clause.md)
+- [Klauzule SELECT](select-clause.md)
+- [Klauzule WHERE](where-clause.md)

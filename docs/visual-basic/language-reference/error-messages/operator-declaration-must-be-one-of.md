@@ -1,5 +1,5 @@
 ---
-title: 'Operátor musí být jeden z: +,-, *,-, -, ^, &amp;, Like, Mod a, Or, Xor, Not, <<>>,, =, <>, <, < =, >, > =, CType, IsTrue nebo IsFalse'
+title: 'Deklarace operátoru musí být jedna z těchto: +,-, *,-,-, ^, &amp; , like, mod, and, or, XOR, not,  <<,  >>, =,  <>, <, <=, >, >=, CType, true, false.'
 ms.date: 07/20/2015
 f1_keywords:
 - bc33000
@@ -7,36 +7,36 @@ f1_keywords:
 helpviewer_keywords:
 - BC33000
 ms.assetid: 15c5d8eb-3a8c-4141-8f41-33151afabf97
-ms.openlocfilehash: 4283547109ec312cc4fe07a054bbb8db3bff660f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3fb2cf392611e5ca83818e3bf173513be031085d
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61946598"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84409330"
 ---
-# <a name="operator-declaration-must-be-one-of----amp-like-mod-and-or-xor-not--"></a>Operátor musí být jeden z: +,-, *,\,/, ^, &amp;, Like, Mod a, Or, Xor, Not, \< \<, >>...
-Je možné deklarovat pouze operátor, který opravňuje k přetížení. V následující tabulce jsou uvedeny operátory, které je možné deklarovat.  
+# <a name="operator-declaration-must-be-one-of----amp-like-mod-and-or-xor-not--"></a>Deklarace operátoru musí být jedna z těchto: +,-, *, \, /, ^, &amp; , like, mod, and, or, XOR, not, \<\<, >>...
+Můžete deklarovat pouze operátor, který má nárok na přetížení. V následující tabulce jsou uvedeny operátory, které můžete deklarovat.  
   
-|Type|Operátory|  
+|Typ|Operátory|  
 |----------|---------------|  
 |Unární|`+`, `-`, `IsFalse`, `IsTrue`, `Not`|  
-|binární|`+`, `-`, `*`, `/`, `\`, `&`, `^`, `>>`, `<<`, `=`, `<>`, `>`, `>=`, `<`, `<=`, `And`, `Like`, `Mod`, `Or`, `Xor`|  
-|Převod (unární)|`CType`|  
+|Binární|`+`, `-`, `*`, `/`, `\`, `&`, `^`, `>>`, `<<`, `=`, `<>`, `>`, `>=`, `<`, `<=`, `And`, `Like`, `Mod`, `Or`, `Xor`|  
+|Převod (Unární)|`CType`|  
   
- Všimněte si, že `=` operátor v binárním seznamu je relační operátor, operátor přiřazení.  
+ Všimněte si, že `=` operátor v binárním seznamu je operátor porovnání, nikoli operátor přiřazení.  
   
  **ID chyby:** BC33000  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1. Vyberte operátor ze sady přetížitelné operátory.  
+1. Vyberte operátor ze sady přetížených operátorů.  
   
-2. Pokud potřebujete funkce přetížení operátor nelze přetížit přímo, vytvořte `Function` proceduru, která mají příslušné parametry a vrátí odpovídající hodnotu.  
+2. Pokud potřebujete funkcionalitu přetížení operátoru, který nelze přímo přetížit, vytvořte `Function` proceduru, která přijímá příslušné parametry a vrátí příslušnou hodnotu.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Příkaz Operator](../../../visual-basic/language-reference/statements/operator-statement.md)
-- [Procedury operátoru](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)
-- [Postupy: Definovat operátor](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-an-operator.md)
-- [Postupy: Definice operátora převodu](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md)
-- [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)
+- [Operator – příkaz](../statements/operator-statement.md)
+- [Procedury operátoru](../../programming-guide/language-features/procedures/operator-procedures.md)
+- [Postupy: Definice operátoru](../../programming-guide/language-features/procedures/how-to-define-an-operator.md)
+- [Postupy: Definice operátoru převodu](../../programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md)
+- [Function – příkaz](../statements/function-statement.md)

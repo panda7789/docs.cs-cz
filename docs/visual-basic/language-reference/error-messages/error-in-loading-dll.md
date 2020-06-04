@@ -4,15 +4,15 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID48
 ms.assetid: 4226cd1f-028c-477d-88a5-cb57f7e0cdc8
-ms.openlocfilehash: 36452cc6ff03042939cd4066aef76129b5bb8f0a
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: fd2e425f2dd3f4127cd777d4a1f7ab9809de9d45
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74329556"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84409621"
 ---
 # <a name="error-in-loading-dll-visual-basic"></a>Chyba při načítání knihovny DLL (Visual Basic)
-Knihovna DLL (Dynamic-Link Library) je knihovna určená v klauzuli `Lib` příkazu `Declare`. Mezi možné příčiny této chyby patří:  
+Knihovna DLL (Dynamic-Link Library) je knihovna zadaná v `Lib` klauzuli `Declare` příkazu. Mezi možné příčiny této chyby patří:  
   
 - Soubor není spustitelný soubor DLL.  
   
@@ -32,6 +32,6 @@ Knihovna DLL (Dynamic-Link Library) je knihovna určená v klauzuli `Lib` přík
   
 - Pokud knihovna DLL nebo odkazovaná knihovna DLL není v adresáři určeném cestou, přesuňte knihovnu DLL do odkazovaného adresáře.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Příkaz Declare](../../../visual-basic/language-reference/statements/declare-statement.md)
+- [Declare – příkaz](../statements/declare-statement.md)

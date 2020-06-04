@@ -7,26 +7,26 @@ f1_keywords:
 helpviewer_keywords:
 - BC40056
 ms.assetid: b59f5754-444f-4378-9272-9678b437e84a
-ms.openlocfilehash: 1873c0af7a251afd7754557f5dcb6aed13eb9f11
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8675d9c3b202200c89e12e7a5f51a19d9e3e0e64
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61918317"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84409462"
 ---
-# <a name="namespace-or-type-specified-in-the-imports-qualifiedelementname-doesnt-contain-any-public-member-or-cannot-be-found"></a>Namespace nebo typ zadaný v příkazu Imports'\<qualifiedelementname >' neobsahuje žádný veřejný člen nebo nebyl nalezen
+# <a name="namespace-or-type-specified-in-the-imports-qualifiedelementname-doesnt-contain-any-public-member-or-cannot-be-found"></a>Obor názvů nebo typ zadaný v příkazu Imports '\<qualifiedelementname>' neobsahuje žádný veřejný člen nebo nebyl nalezen.
 
-Namespace nebo typ zadaný v příkazu Imports'\<qualifiedelementname >' neobsahuje žádný veřejný člen nebo nebyl nalezen. Ujistěte se, že obor názvů nebo typ definován a obsahuje nejméně jeden veřejný člen. Ujistěte se, že název aliasu neobsahuje další aliasy.
+Obor názvů nebo typ zadaný v importech neobsahuje \<qualifiedelementname> žádné veřejné členy nebo se nedá najít. Ujistěte se, že je obor názvů nebo typ definován a obsahuje nejméně jeden veřejný člen. Ujistěte se, že název aliasu neobsahuje další aliasy.
 
-`Imports` Příkaz určuje nadřazeného elementu, který nemůže být nalezen nebo nedefinuje žádné `Public` členy.
+`Imports`Příkaz určuje obsahující prvek, který buď nebyl nalezen, nebo nedefinuje žádné `Public` členy.
 
-A *obsahující element* může být obor názvů, třída, struktura, modul, rozhraní nebo výčet. Obsahující element obsahuje členy, jako jsou proměnné, postupy a další obsahující prvky.
+*Obsahující element* může být obor názvů, třída, struktura, modul, rozhraní nebo výčet. Obsahující element obsahuje členy, jako jsou proměnné, procedury nebo jiné obsahující prvky.
 
-Účelem importu je umožnit váš kód získat přístup ke členům obor názvů nebo typ bez nutnosti je vyfiltrovat. Váš projekt může být také nutné přidat odkaz na obor názvů nebo typ. Další informace najdete v tématu "Import obsahující prvky" [odkazy na deklarované elementy](../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md).
+Účelem importu je dovolit vašemu kódu přístup k oboru názvů nebo členům typu bez nutnosti jejich zařazení. Projekt může také potřebovat přidat odkaz na obor názvů nebo typ. Další informace naleznete v tématu "Import obsahující prvky" v [odkazech na deklarované elementy](../../programming-guide/language-features/declared-elements/references-to-declared-elements.md).
 
-Pokud kompilátor nemůže najít zadaný nadřazený prvek, nelze ho přeložit odkazy, které ji používají. Vyhledá prvek ale elementu nevystavuje žádné `Public` členové, pak žádný odkaz může být úspěšné. V obou případech je importovat element nemá význam.
+Pokud kompilátor nemůže najít zadaný element, který obsahuje, nemůže vyřešit odkazy, které ho používají. Pokud prvek najde, ale nezveřejňuje žádné `Public` členy, nemůže být žádný odkaz úspěšný. V obou případech je to pro import elementu nevýznamný.
 
-Uvědomte si, že pokud provedete import nadřazeného elementu a přiřadit alias importu, nemůžete použít tento alias importu k importu jiný element. Následující kód vygeneruje chybu kompilátoru.
+Mějte na paměti, že Pokud importujete element, který obsahuje, a přiřadíte mu alias pro import, nemůžete použít tento alias importu k importu jiného elementu. Následující kód vygeneruje chybu kompilátoru.
 
 ```vb
 Imports winfrm = System.Windows.Forms
@@ -40,16 +40,16 @@ Imports behave = winfrm.Design.Behavior`
 
 ## <a name="to-correct-this-error"></a>Oprava této chyby
 
-1. Ověřte, že nadřazeného elementu je dostupná z projektu.
+1. Ověřte, zda je obsažený element přístupný z vašeho projektu.
 
-2. Ověřte, že specifikace nadřazeného elementu nezahrnuje jakýkoli alias import z jiného importu.
+2. Ověřte, že specifikace obsahujícího elementu neobsahuje žádný alias importu z jiného importu.
 
-3. Ověřte, že nadřazeného elementu zpřístupňuje alespoň jeden `Public` člena.
+3. Ověřte, zda nadřazený element zveřejňuje alespoň jeden `Public` člen.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Příkaz Imports (obor názvů a typ .NET)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)
-- [Příkaz Namespace](../../../visual-basic/language-reference/statements/namespace-statement.md)
-- [Public](../../../visual-basic/language-reference/modifiers/public.md)
-- [Obory názvů v jazyce Visual Basic](../../../visual-basic/programming-guide/program-structure/namespaces.md)
-- [Odkazy na deklarované elementy](../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)
+- [Imports – příkaz (obor názvů a typ rozhraní .NET)](../statements/imports-statement-net-namespace-and-type.md)
+- [Namespace – příkaz](../statements/namespace-statement.md)
+- [Republik](../modifiers/public.md)
+- [Obory názvů v jazyce Visual Basic](../../programming-guide/program-structure/namespaces.md)
+- [Odkazy na deklarované elementy](../../programming-guide/language-features/declared-elements/references-to-declared-elements.md)

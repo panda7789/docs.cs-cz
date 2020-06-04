@@ -7,23 +7,23 @@ f1_keywords:
 helpviewer_keywords:
 - BC30594
 ms.assetid: 5b9fceb4-ab11-41bb-ad3b-6f1a9da8ae7e
-ms.openlocfilehash: d6067c75835ecd14f1dd796c20ae3f29f456e541
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: fc163c1069aa6f41766664e0fa5f5a9c34a1f73d
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64642947"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84409566"
 ---
 # <a name="events-of-shared-withevents-variables-cannot-be-handled-by-non-shared-methods"></a>Události sdílené proměnné WithEvents nelze zpracovat nesdílenými metodami.
-Proměnná deklarovaná pomocí `Shared` jsou sdílené proměnné. Sdílené proměnné identifikuje přesně jednoho umístění úložiště. Proměnná deklarovaná pomocí `WithEvents` modifikátor vyhodnotí, že typ, ke kterému patří proměnné zpracovává sadu událostí, které vyvolává proměnné. Pokud je hodnota přiřazena k proměnné, vlastnost vytvořené `WithEvents` deklarace unhooks všechny existující obslužné rutiny události a připojí si novou obslužnou rutinu události prostřednictvím `Add` metody.  
+Proměnná deklarovaná s `Shared` modifikátorem je sdílená proměnná. Sdílená proměnná identifikuje přesně jedno umístění úložiště. Proměnná deklarovaná pomocí modifikátoru vyhodnotí `WithEvents` , že typ, ke kterému proměnná patří, zpracovává sadu událostí, které proměnná vyvolává. Když je přiřazena hodnota proměnné, vlastnost vytvořená deklarací odřadí `WithEvents` všechny existující obslužné rutiny události a připojí novou obslužnou rutinu události prostřednictvím `Add` metody.  
   
  **ID chyby:** BC30594  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-- Deklarovat obslužnou rutinu události `Shared`.  
+- Deklarujte obslužnou rutinu události `Shared` .  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Shared](../../../visual-basic/language-reference/modifiers/shared.md)
-- [WithEvents](../../../visual-basic/language-reference/modifiers/withevents.md)
+- [Shared](../modifiers/shared.md)
+- [WithEvents](../modifiers/withevents.md)
