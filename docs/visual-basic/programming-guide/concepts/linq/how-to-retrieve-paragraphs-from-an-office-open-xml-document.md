@@ -1,13 +1,13 @@
 ---
-title: 'Postupy: načtení odstavců z dokumentu Office Open XML'
+title: 'Postupy: Načtení odstavců z dokumentu Office Open XML'
 ms.date: 07/20/2015
 ms.assetid: 66053f21-9217-473c-a6f3-a0897be07756
-ms.openlocfilehash: 8755dc40fe64d4ff37ed66006f757ec1b32334a1
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 49441da3b9a0bc43c3528a14d03aa44d8173be42
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75347060"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397827"
 ---
 # <a name="how-to-retrieve-paragraphs-from-an-office-open-xml-document-visual-basic"></a>Postupy: načtení odstavců z dokumentu Office Open XML (Visual Basic)
 Toto téma představuje příklad, který otevře dokument Office Open XML a načte kolekci všech odstavců v dokumentu.  
@@ -15,13 +15,13 @@ Toto téma představuje příklad, který otevře dokument Office Open XML a na�
  Další informace o Office Open XML najdete v tématu [Eric White blog](http://www.ericwhite.com).  
   
 ## <a name="example"></a>Příklad  
- Tento příklad otevře balíček Office Open XML, používá relace v rámci Open XML balíčku k vyhledání dokumentu a částí stylu. Následně se dotazuje na dokument a projedná kolekci anonymního typu, který obsahuje odstavec <xref:System.Xml.Linq.XElement> uzel, název stylu každého odstavce a text každého odstavce.  
+ Tento příklad otevře balíček Office Open XML, používá relace v rámci Open XML balíčku k vyhledání dokumentu a částí stylu. Následně se dotazuje na dokument a projedná kolekci anonymního typu, který obsahuje uzel odstavce <xref:System.Xml.Linq.XElement> , název stylu každého odstavce a text každého odstavce.  
   
- V příkladu se používá rozšiřující metoda s názvem `StringConcatenate`, která je také zadána v příkladu.  
+ V příkladu se používá rozšiřující metoda s názvem `StringConcatenate` , která je také zadána v příkladu.  
   
- Podrobný kurz, který vysvětluje, jak tento příklad funguje, najdete v tématu [čistě funkční transformace XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/pure-functional-transformations-of-xml.md).  
+ Podrobný kurz, který vysvětluje, jak tento příklad funguje, najdete v tématu [čistě funkční transformace XML (Visual Basic)](pure-functional-transformations-of-xml.md).  
   
- Tento příklad používá třídy nalezené v sestavení WindowsBase. Používá typy v oboru názvů <xref:System.IO.Packaging?displayProperty=nameWithType>.  
+ Tento příklad používá třídy nalezené v sestavení WindowsBase. Používá typy v <xref:System.IO.Packaging?displayProperty=nameWithType> oboru názvů.  
   
 ```vb  
 Imports <xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">  
@@ -152,7 +152,7 @@ Module Module1
 End Module  
 ```  
   
- Když spustíte s ukázkovým dokumentem Open XML popsaným v [tématu vytvoření zdrojového dokumentu XML pro Office (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md), tento příklad vytvoří následující výstup:  
+ Když spustíte s ukázkovým dokumentem Open XML popsaným v [tématu vytvoření zdrojového dokumentu XML pro Office (Visual Basic)](creating-the-source-office-open-xml-document.md), tento příklad vytvoří následující výstup:  
   
 ```console  
 StyleName:Heading1 >Parsing WordprocessingML with LINQ to XML<  
@@ -172,6 +172,6 @@ StyleName:Normal ><
 StyleName:Code >Hello World<  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Pokročilé techniky dotazů (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)
+- [Pokročilé techniky dotazů (LINQ to XML) (Visual Basic)](advanced-query-techniques-linq-to-xml.md)

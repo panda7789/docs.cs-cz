@@ -4,20 +4,20 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID455
 ms.assetid: 67a269bf-f436-4913-bc3c-af7f68116b7d
-ms.openlocfilehash: fb416e5bf88642ab08e6f7ccdf2b915045528910
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ecc1b744545858c3672bb21dc66f8283ea94a10e
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64614948"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84376778"
 ---
 # <a name="code-resource-lock-error"></a>Chyba uzamčení prostředku kódu
-Došlo k volání do procedury v kódu prostředků. Nebyl nalezen prostředek kódu, ale došlo k chybě, když došlo pokusu o uzamčení prostředku, třeba protože se používá.  
+Bylo provedeno volání procedury v prostředku kódu. Byl nalezen prostředek kódu, ale došlo k chybě při pokusu o uzamčení prostředku, pravděpodobně protože je používán.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-- Zkontrolujte prostředek, který chcete zjistit, proč došlo k chybě.  
+- Zkontrolujte prostředek, abyste zjistili, proč k chybě došlo.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Typy chyb](../../visual-basic/programming-guide/language-features/error-types.md)
+- [Typy chyb](../programming-guide/language-features/error-types.md)

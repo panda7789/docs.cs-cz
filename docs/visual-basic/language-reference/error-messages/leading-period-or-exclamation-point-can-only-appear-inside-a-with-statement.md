@@ -7,25 +7,25 @@ f1_keywords:
 helpviewer_keywords:
 - BC30157
 ms.assetid: 70daaee1-14f9-45b7-9f30-53794310b95e
-ms.openlocfilehash: 15390fb506fe9bca10f6917f5b26451a5569bece
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 149acc2baac0f45fa971a11f254d694526d140d7
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61921118"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397321"
 ---
 # <a name="leading--or--can-only-appear-inside-a-with-statement"></a>Úvodní operátor '.' nebo '!' může být použit pouze uvnitř příkazu 'With'.
-Tečka (.) nebo vykřičník (!), který není uvnitř `With` bloku probíhá, aniž by výraz na levé straně. Přístup ke členu (`.`) a přístup ke členu slovník (`!`) vyžadují výraz určující prvek, který obsahuje člena. Toto musí být uvedena ihned na levé straně přístupového objektu nebo jako cíl `With` bloku, který obsahuje přístup ke členu.  
+Tečka (.) nebo vykřičník (!), který není uvnitř `With` bloku, nastávají bez výrazu na levé straně. Přístup ke členu ( `.` ) a přístup ke členu slovníku ( `!` ) vyžadují výraz určující prvek, který obsahuje člena. Ta se musí objevit hned nalevo od přístupového objektu nebo jako cíl `With` bloku obsahujícího přístup ke členu.  
   
  **ID chyby:** BC30157  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1. Ujistěte se, `With` blok je správně formátovaný.  
+1. Zajistěte, aby byl `With` blok správně naformátován.  
   
-2. Pokud není žádný `With` blokovat, zadejte nějaký výraz nalevo od přístupový objekt, který se vyhodnotí na definovaný element obsahující tento člen.  
+2. Pokud není žádný `With` blok, přidejte výraz nalevo od přístupového objektu, který se vyhodnotí na definovaný element obsahující člena.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Speciální znaky v kódu](../../../visual-basic/programming-guide/program-structure/special-characters-in-code.md)
-- [Příkaz With...End With](../../../visual-basic/language-reference/statements/with-end-with-statement.md)
+- [Speciální znaky v kódu](../../programming-guide/program-structure/special-characters-in-code.md)
+- [With...End With – příkaz](../statements/with-end-with-statement.md)

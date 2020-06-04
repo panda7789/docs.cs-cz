@@ -6,12 +6,12 @@ helpviewer_keywords:
 - nowin32manifest compiler option [Visual Basic]
 - -nowin32manifest compiler option [Visual Basic]
 ms.assetid: c0528aae-83b3-4425-99f0-19448e9843e3
-ms.openlocfilehash: 9e5ad874431028faf17333a9bbd7e9356ef22d55
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: d9323cd541eaf611551de90e58a181f6915fad89
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74347880"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397451"
 ---
 # <a name="-nowin32manifest-visual-basic"></a>-nowin32manifest (Visual Basic)
 Instruuje kompilátor, aby nevložil žádný manifest aplikace do spustitelného souboru.  
@@ -25,9 +25,9 @@ Instruuje kompilátor, aby nevložil žádný manifest aplikace do spustitelnéh
 ## <a name="remarks"></a>Poznámky  
  Pokud použijete tuto možnost, bude se aplikace vztahovat k virtualizaci v systému Windows Vista, pokud neposkytnete manifest aplikace v souboru prostředků Win32 nebo během pozdějšího kroku sestavení. Další informace o virtualizaci najdete v tématu [nasazení ClickOnce v systému Windows Vista](/visualstudio/deployment/clickonce-deployment-on-windows-vista).  
   
- Další informace o vytváření manifestu naleznete v tématu [-win32manifest (Visual Basic)](../../../visual-basic/reference/command-line-compiler/win32manifest.md).  
+ Další informace o vytváření manifestu naleznete v tématu [-win32manifest (Visual Basic)](win32manifest.md).  
   
 ## <a name="see-also"></a>Viz také
 
-- [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
+- [Visual Basic Kompilátor příkazového řádku](index.md)
 - [Stránka Aplikace, návrhář projektu (Visual Basic)](/visualstudio/ide/reference/application-page-project-designer-visual-basic)

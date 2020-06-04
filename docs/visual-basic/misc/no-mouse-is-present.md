@@ -1,29 +1,29 @@
 ---
-title: Není připojena myš
+title: Není k dispozici myš.
 ms.date: 07/20/2015
 f1_keywords:
 - vbrMouse_NoMouseIsPresent
 ms.assetid: 4472fd57-4217-4463-9d3c-dc4a8fe88f1b
-ms.openlocfilehash: 5493cea8c87a40b0c9663aaa7f36ce6cb423d346
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 748661cae35292968aae989789a96d1df855b6ce
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64624862"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84376116"
 ---
-# <a name="no-mouse-is-present"></a>Není připojena myš
-Jedna z vlastností objektu `My.Computer.Mouse` byla volána objektu, ale počítač nemá žádné myši a portem myši nainstalované.  
+# <a name="no-mouse-is-present"></a>Není k dispozici myš.
+Byla volána jedna z vlastností `My.Computer.Mouse` objektu, ale v počítači není nainstalován port myši nebo myš.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-- Přidat `Try...Catch` blok po volání na vlastnost `My.Computer.Mouse` objektu.  
+- Přidejte `Try...Catch` blok kolem volání do vlastnosti `My.Computer.Mouse` objektu.  
   
-     – nebo –  
+     ani  
   
-- Nainstalujte do počítače myši.  
+- Nainstalujte na počítač myš.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [My.Computer.Mouse](xref:Microsoft.VisualBasic.Devices.Mouse)
-- [Zpracování a vyvolání výjimek v rozhraní .NET](../../standard/exceptions/index.md)
-- [Příkaz Try...Catch...Finally](../../visual-basic/language-reference/statements/try-catch-finally-statement.md)
+- [My. Computer. Mouse](xref:Microsoft.VisualBasic.Devices.Mouse)
+- [Zpracování a vyvolávání výjimek v rozhraní .NET](../../standard/exceptions/index.md)
+- [Try...Catch....Finally – příkaz](../language-reference/statements/try-catch-finally-statement.md)
