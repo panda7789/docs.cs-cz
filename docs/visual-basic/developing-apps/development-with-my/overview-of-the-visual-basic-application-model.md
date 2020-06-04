@@ -5,12 +5,12 @@ helpviewer_keywords:
 - My.Application object [Visual Basic], Visual Basic application model
 - Visual Basic application model
 ms.assetid: 17538984-84fe-43c9-82c8-724c9529fe8b
-ms.openlocfilehash: aa47304cf2bded93bdb95ffe7dfa35bb37d9a643
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 46177d0af7e5df767eb8421caf424880baac615e
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73976464"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84411724"
 ---
 # <a name="overview-of-the-visual-basic-application-model"></a>Přehled aplikačního modelu jazyka Visual Basic
 
@@ -38,25 +38,25 @@ Visual Basic poskytuje dobře definovaný model pro řízení chování aplikac�
 
  V aplikačním modelu jsou nalezeny následující události:  
   
-- **Spuštění aplikace** Aplikace vyvolá <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Startup> událost při spuštění. Zpracováním této události můžete přidat kód, který inicializuje aplikaci před načtením hlavního formuláře. `Startup` Událost také umožňuje zrušit provádění aplikace v této fázi procesu spuštění, pokud je to žádoucí.  
+- **Spuštění aplikace** Aplikace vyvolá <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Startup> událost při spuštění. Zpracováním této události můžete přidat kód, který inicializuje aplikaci před načtením hlavního formuláře. `Startup`Událost také umožňuje zrušit provádění aplikace v této fázi procesu spuštění, pokud je to žádoucí.  
   
-     Aplikaci můžete nakonfigurovat tak, aby při spuštění spouštěcího kódu aplikace zobrazila úvodní obrazovku. Ve výchozím nastavení model aplikace potlačí úvodní obrazovku při použití argumentu `/nosplash` nebo `-nosplash` příkazového řádku.  
+     Aplikaci můžete nakonfigurovat tak, aby při spuštění spouštěcího kódu aplikace zobrazila úvodní obrazovku. Ve výchozím nastavení model aplikace potlačí úvodní obrazovku při `/nosplash` `-nosplash` použití argumentu nebo příkazového řádku.  
   
-- **Aplikace s jednou instancí**. Událost <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.StartupNextInstance> se vyvolá, když se spustí další instance aplikace s jednou instancí. Událost předá argumenty příkazového řádku následující instance.  
+- **Aplikace s jednou instancí**. <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.StartupNextInstance>Událost se vyvolá, když se spustí další instance aplikace s jednou instancí. Událost předá argumenty příkazového řádku následující instance.  
   
 - **Neošetřené výjimky**. Pokud aplikace narazí na neošetřenou výjimku, vyvolá <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UnhandledException> událost. Vaše obslužná rutina pro danou událost může prošetřit výjimku a určit, zda pokračovat v provádění.  
   
-     `UnhandledException` Událost se v některých případech nevyvolává. Další informace naleznete v tématu <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UnhandledException>.  
+     `UnhandledException`Událost se v některých případech nevyvolává. Další informace naleznete v tématu <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UnhandledException>.  
   
 - **Změny připojení k síti**. Pokud se změní dostupnost sítě v počítači, aplikace událost vyvolá <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.NetworkAvailabilityChanged> .  
   
-     `NetworkAvailabilityChanged` Událost se v některých případech nevyvolává. Další informace naleznete v tématu <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.NetworkAvailabilityChanged>.  
+     `NetworkAvailabilityChanged`Událost se v některých případech nevyvolává. Další informace naleznete v tématu <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.NetworkAvailabilityChanged>.  
   
 - **Aplikace byla ukončena**. Aplikace poskytuje <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Shutdown> událost k signalizaci, kdy se má vypínat. V této obslužné rutině události se můžete ujistit, že operace, které vaše aplikace potřebuje, jsou dokončeny a uloženy například. Aplikaci můžete nakonfigurovat tak, aby byla vypnuta, když se zavře hlavní formulář, nebo vypnout pouze v případě, že dojde k zavření všech formulářů.  
   
 ## <a name="availability"></a>Dostupnost  
 
- Ve výchozím nastavení je model aplikace Visual Basic k dispozici pro model Windows Forms projekty. Pokud nakonfigurujete aplikaci tak, aby používala jiný spouštěcí objekt, nebo spusťte kód aplikace s vlastním `Sub Main`, pak tento objekt nebo třída může potřebovat implementaci <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase> třídy pro použití aplikačního modelu. Informace o změně spouštěcího objektu naleznete v tématu [Stránka aplikace, Návrhář projektu (Visual Basic)](/visualstudio/ide/reference/application-page-project-designer-visual-basic).  
+ Ve výchozím nastavení je model aplikace Visual Basic k dispozici pro model Windows Forms projekty. Pokud nakonfigurujete aplikaci tak, aby používala jiný spouštěcí objekt, nebo spusťte kód aplikace s vlastním `Sub Main` , pak tento objekt nebo třída může potřebovat implementaci <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase> třídy pro použití aplikačního modelu. Informace o změně spouštěcího objektu naleznete v tématu [Stránka aplikace, Návrhář projektu (Visual Basic)](/visualstudio/ide/reference/application-page-project-designer-visual-basic).  
   
 ## <a name="see-also"></a>Viz také
 
@@ -67,4 +67,4 @@ Visual Basic poskytuje dobře definovaný model pro řízení chování aplikac�
 - <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Shutdown>
 - <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.NetworkAvailabilityChanged>
 - <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase>
-- [Rozšíření aplikačního modelu jazyka Visual Basic](../../../visual-basic/developing-apps/customizing-extending-my/extending-the-visual-basic-application-model.md)
+- [Rozšíření aplikačního modelu jazyka Visual Basic](../customizing-extending-my/extending-the-visual-basic-application-model.md)

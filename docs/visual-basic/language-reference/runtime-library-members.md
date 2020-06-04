@@ -9,16 +9,16 @@ helpviewer_keywords:
 - Microsoft.VisualBasic namespace
 - members [Visual Basic], Visual Basic run-time library
 ms.assetid: f5e82c6e-3500-452b-bdb8-78f0d5477604
-ms.openlocfilehash: a73589c4b0d0faeac321090e6030f1f8392a5342
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: f7c7d818e6439f732031e23f297661bb960effb7
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74349621"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84359487"
 ---
 # <a name="visual-basic-runtime-library-members"></a>Členové knihovny prostředí Runtime jazyka Visual Basic
 
-Obor názvů `Microsoft.VisualBasic` obsahuje třídy, moduly, konstanty a výčty, které tvoří knihovnu modulu runtime Visual Basic. Tyto členy knihovny poskytují procedury, vlastnosti a konstantní hodnoty, které můžete použít ve svém kódu. Každý modul a třída představuje konkrétní kategorii funkcí.  
+`Microsoft.VisualBasic`Obor názvů obsahuje třídy, moduly, konstanty a výčty, které tvoří knihovnu modulu runtime Visual Basic. Tyto členy knihovny poskytují procedury, vlastnosti a konstantní hodnoty, které můžete použít ve svém kódu. Každý modul a třída představuje konkrétní kategorii funkcí.  
   
 ## <a name="microsoftvisualbasiccollection-class"></a>Microsoft. VisualBasic. Collection – Třída  
   
@@ -33,7 +33,7 @@ Obor názvů `Microsoft.VisualBasic` obsahuje třídy, moduly, konstanty a výč
 |---|---|---|---|  
 |<xref:Microsoft.VisualBasic.ComClassAttribute.ClassID%2A>|<xref:Microsoft.VisualBasic.ComClassAttribute.EventID%2A>|<xref:Microsoft.VisualBasic.ComClassAttribute.InterfaceID%2A>|<xref:Microsoft.VisualBasic.ComClassAttribute.InterfaceShadows%2A>|  
   
-## <a name="microsoftvisualbasiccontrolchars-class"></a>Microsoft.VisualBasic.ControlChars Class  
+## <a name="microsoftvisualbasiccontrolchars-class"></a>Microsoft. VisualBasic. ControlChars – třída  
   
 |||||  
 |---|---|---|---|  
@@ -79,7 +79,7 @@ Obor názvů `Microsoft.VisualBasic` obsahuje třídy, moduly, konstanty a výč
 |<xref:Microsoft.VisualBasic.Conversion.ErrorToString%2A>|<xref:Microsoft.VisualBasic.Conversion.Fix%2A>|<xref:Microsoft.VisualBasic.Conversion.Hex%2A>|<xref:Microsoft.VisualBasic.Conversion.Int%2A>|  
 |<xref:Microsoft.VisualBasic.Conversion.Oct%2A>|<xref:Microsoft.VisualBasic.Conversion.Str%2A>|<xref:Microsoft.VisualBasic.Conversion.Val%2A>||  
   
-## <a name="microsoftvisualbasicdateandtime-module"></a>Microsoft.VisualBasic.DateAndTime Module  
+## <a name="microsoftvisualbasicdateandtime-module"></a>Microsoft. VisualBasic. DateAndTime – modul  
   
 |||||  
 |---|---|---|---|  
@@ -90,7 +90,7 @@ Obor názvů `Microsoft.VisualBasic` obsahuje třídy, moduly, konstanty a výč
 |<xref:Microsoft.VisualBasic.DateAndTime.TimeString%2A>|<xref:Microsoft.VisualBasic.DateAndTime.TimeValue%2A>|<xref:Microsoft.VisualBasic.DateAndTime.Today%2A>|<xref:Microsoft.VisualBasic.DateAndTime.Weekday%2A>|  
 |<xref:Microsoft.VisualBasic.DateAndTime.WeekdayName%2A>|<xref:Microsoft.VisualBasic.DateAndTime.Year%2A>|||  
   
-## <a name="microsoftvisualbasicerrobject-class"></a>Microsoft.VisualBasic.ErrObject Class  
+## <a name="microsoftvisualbasicerrobject-class"></a>Microsoft. VisualBasic. ErrObject – třída  
   
 |||||  
 |---|---|---|---|  
@@ -122,13 +122,13 @@ Obor názvů `Microsoft.VisualBasic` obsahuje třídy, moduly, konstanty a výč
 |<xref:Microsoft.VisualBasic.Financial.PPmt%2A>|<xref:Microsoft.VisualBasic.Financial.PV%2A>|<xref:Microsoft.VisualBasic.Financial.Rate%2A>|<xref:Microsoft.VisualBasic.Financial.SLN%2A>|  
 |<xref:Microsoft.VisualBasic.Financial.SYD%2A>||||  
   
-## <a name="microsoftvisualbasicglobals-module"></a>Microsoft.VisualBasic.Globals Module  
+## <a name="microsoftvisualbasicglobals-module"></a>Microsoft. VisualBasic. Globals – modul  
   
 |||||  
 |---|---|---|---|  
 |<xref:Microsoft.VisualBasic.Globals.ScriptEngine%2A>|<xref:Microsoft.VisualBasic.Globals.ScriptEngineBuildVersion%2A>|<xref:Microsoft.VisualBasic.Globals.ScriptEngineMajorVersion%2A>|<xref:Microsoft.VisualBasic.Globals.ScriptEngineMinorVersion%2A>|  
   
-## <a name="microsoftvisualbasichidemodulenameattribute-class"></a>Microsoft.VisualBasic.HideModuleNameAttribute Class  
+## <a name="microsoftvisualbasichidemodulenameattribute-class"></a>Microsoft. VisualBasic. HideModuleNameAttribute – třída  
   
 |||||  
 |---|---|---|---|  
@@ -154,7 +154,7 @@ Obor názvů `Microsoft.VisualBasic` obsahuje třídy, moduly, konstanty a výč
 |<xref:Microsoft.VisualBasic.Interaction.InputBox%2A>|<xref:Microsoft.VisualBasic.Interaction.MsgBox%2A>|<xref:Microsoft.VisualBasic.Interaction.Partition%2A>|<xref:Microsoft.VisualBasic.Interaction.SaveSetting%2A>|  
 |<xref:Microsoft.VisualBasic.Interaction.Shell%2A>|<xref:Microsoft.VisualBasic.Interaction.Switch%2A>|||  
   
-## <a name="microsoftvisualbasicmygroupcollectionattribute-class"></a>Microsoft.VisualBasic.MyGroupCollectionAttribute Class  
+## <a name="microsoftvisualbasicmygroupcollectionattribute-class"></a>Microsoft. VisualBasic. MyGroupCollectionAttribute nedá – třída  
   
 |||||  
 |---|---|---|---|  
@@ -193,9 +193,9 @@ Obor názvů `Microsoft.VisualBasic` obsahuje třídy, moduly, konstanty a výč
   
 ## <a name="microsoftvisualbasic-constants-and-enumerations"></a>Konstanty a výčty Microsoft. VisualBasic  
 
- Obor názvů `Microsoft.VisualBasic` poskytuje konstanty a výčty jako součást knihovny run-time Visual Basic. Tyto konstantní hodnoty můžete použít ve svém kódu. Každý výčet představuje konkrétní kategorii funkcí. Další informace naleznete v tématu [konstanty a výčty](../../visual-basic/language-reference/constants-and-enumerations.md).  
+ `Microsoft.VisualBasic`Obor názvů poskytuje konstanty a výčty jako součást Visual Basic knihovny runtime. Tyto konstantní hodnoty můžete použít ve svém kódu. Každý výčet představuje konkrétní kategorii funkcí. Další informace naleznete v tématu [konstanty a výčty](constants-and-enumerations.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Konstanty a výčty](../../visual-basic/language-reference/constants-and-enumerations.md)
-- [Klíčová slova](../../visual-basic/language-reference/keywords/index.md)
+- [Konstanty a výčty](constants-and-enumerations.md)
+- [Klíčová slova](keywords/index.md)

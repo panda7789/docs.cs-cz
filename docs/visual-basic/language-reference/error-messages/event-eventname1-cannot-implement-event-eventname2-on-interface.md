@@ -7,28 +7,28 @@ f1_keywords:
 helpviewer_keywords:
 - BC31423
 ms.assetid: 2e754b66-5836-48ff-9697-b9c0d7085f18
-ms.openlocfilehash: d6b85124b4408df532623f7c14a76e936ea28572
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 32d6733580de8798a66c30d486b8439befd2af19
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64625547"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84409605"
 ---
-# <a name="event-eventname1-cannot-implement-event-eventname2-on-interface-interface-because-their-delegate-types-delegate1-and-delegate2-do-not-match"></a>Události "\<eventname1 >' nemůže implementovat událost '\<eventname2 >" na rozhraní "\<rozhraní >" vzhledem k tomu, jejich typy delegátů\<delegate1 > "a"\<delegate2 >' se neshodují s
-Visual Basic nemůže implementovat událost, protože typ delegáta události neodpovídá typu delegáta události v rozhraní. Této chybě může dojít při definování více událostí v rozhraní a pak pokus o jejich implementaci společně se stejnou událost. Událost můžete implementovat dvě nebo více událostí pouze v případě, že vše je implementováno události jsou deklarovány pomocí `As` syntaxe a zadejte stejný typ delegáta.  
+# <a name="event-eventname1-cannot-implement-event-eventname2-on-interface-interface-because-their-delegate-types-delegate1-and-delegate2-do-not-match"></a>Událost '\<eventname1>' nemůže implementovat událost '\<eventname2>' v rozhraní '\<interface>' , protože se neshodují jejich typy delegátů '\<delegate1>' a '\<delegate2>'.
+Visual Basic nemůže implementovat událost, protože typ delegáta události neodpovídá typu delegáta události v rozhraní. K této chybě může dojít, pokud v rozhraní definujete více událostí a pak se pokusíte o jejich implementaci společně se stejnou událostí. Událost může implementovat dvě nebo více událostí pouze v případě, že všechny implementované události jsou deklarovány pomocí `As` syntaxe a určí stejný typ delegáta.  
   
  **ID chyby:** BC31423  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-- Implementace události samostatně.  
+- Implementujte události samostatně.  
   
      —nebo—  
   
-- Definování události pomocí rozhraní `As` syntaxe a zadejte stejný typ delegáta.  
+- Definujte události v rozhraní pomocí `As` syntaxe a zadejte stejný typ delegáta.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Příkaz Event](../../../visual-basic/language-reference/statements/event-statement.md)
-- [Příkaz Delegate](../../../visual-basic/language-reference/statements/delegate-statement.md)
-- [Události](../../../visual-basic/programming-guide/language-features/events/index.md)
+- [Event – příkaz](../statements/event-statement.md)
+- [Delegate – příkaz](../statements/delegate-statement.md)
+- [Události](../../programming-guide/language-features/events/index.md)

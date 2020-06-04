@@ -6,27 +6,27 @@ helpviewer_keywords:
 - variables [Visual Basic], object
 - object variables [Visual Basic], determining type
 ms.assetid: 6f6a138d-58a4-40d1-9f4e-0a3c598eaf81
-ms.openlocfilehash: b3778a170759f685db78e7dcde219138196f9eca
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: d3224000f5958a8619e38c4d2f6dc5dbb275ad45
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75344190"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84410487"
 ---
 # <a name="how-to-determine-what-type-an-object-variable-refers-to-visual-basic"></a>Postupy: Určení, na jaký typ proměnná objektu odkazuje (Visual Basic)
 
-Proměnná objektu obsahuje ukazatel na data, která jsou uložená jinde. Typ těchto dat se může během běhu změnit. V každém okamžiku můžete použít metodu <xref:System.Type.GetTypeCode%2A> k určení aktuálního typu běhu nebo [operátor typeof](../../../../visual-basic/language-reference/operators/typeof-operator.md) k zjištění, zda je aktuální typ běhu kompatibilní se zadaným typem.
+Proměnná objektu obsahuje ukazatel na data, která jsou uložená jinde. Typ těchto dat se může během běhu změnit. V každém okamžiku můžete použít <xref:System.Type.GetTypeCode%2A> metodu k určení aktuálního typu za běhu nebo [operátora typeof](../../../language-reference/operators/typeof-operator.md) k zjištění, zda je aktuální typ běhu kompatibilní se zadaným typem.
 
 ### <a name="to-determine-the-exact-type-an-object-variable-currently-refers-to"></a>Určení přesného typu, na který aktuálně odkazuje proměnná objektu
 
-1. Na objektovou proměnnou volejte metodu <xref:System.Object.GetType%2A> pro načtení objektu <xref:System.Type?displayProperty=nameWithType>.
+1. Na objektovou proměnnou volejte <xref:System.Object.GetType%2A> metodu pro načtení <xref:System.Type?displayProperty=nameWithType> objektu.
 
     ```vb
     Dim myObject As Object
     myObject.GetType()
     ```
 
-2. Na <xref:System.Type?displayProperty=nameWithType> třídy zavolejte <xref:System.Type.GetTypeCode%2A> sdílené metody, aby se načetla hodnota výčtu <xref:System.TypeCode> pro typ objektu.
+2. U <xref:System.Type?displayProperty=nameWithType> třídy zavolejte sdílenou metodu <xref:System.Type.GetTypeCode%2A> pro načtení <xref:System.TypeCode> hodnoty výčtu pro typ objektu.
 
     ```vb
     Dim myObject As Object
@@ -34,11 +34,11 @@ Proměnná objektu obsahuje ukazatel na data, která jsou uložená jinde. Typ t
     MsgBox("myObject currently has type code " & CStr(datTyp))
     ```
 
-    Můžete otestovat <xref:System.TypeCode> hodnotu výčtu na základě toho, co členové výčtu mají zájem, jako je například `Double`.
+    Můžete otestovat <xref:System.TypeCode> hodnotu výčtu na základě toho, co členové výčtu mají zájem, například `Double` .
 
 ### <a name="to-determine-whether-an-object-variables-type-is-compatible-with-a-specified-type"></a>Určení, zda je typ objektové proměnné kompatibilní se zadaným typem
 
-- Použijte operátor `TypeOf` v kombinaci s [operátorem is](../../../../visual-basic/language-reference/operators/is-operator.md) k otestování objektu pomocí výrazu `TypeOf`...`Is`.
+- Použijte `TypeOf` operátor v kombinaci s [operátorem is](../../../language-reference/operators/is-operator.md) k otestování objektu pomocí `TypeOf` výrazu.... `Is`
 
     ```vb
     If TypeOf objA Is System.Windows.Forms.Control Then
@@ -46,20 +46,20 @@ Proměnná objektu obsahuje ukazatel na data, která jsou uložená jinde. Typ t
     End If
     ```
 
-    Výraz `TypeOf`...`Is` vrací `True`, pokud je typ modulu runtime objektu kompatibilní se zadaným typem.
+    `TypeOf`Výraz... `Is` vrátí, `True` Pokud je typ modulu runtime objektu kompatibilní se zadaným typem.
 
-    Kritérium kompatibility závisí na tom, zda je zadaný typ třída, struktura nebo rozhraní. Obecně jsou typy kompatibilní, pokud je objekt stejného typu jako, dědí z nebo implementuje zadaný typ. Další informace naleznete v tématu [operátor typeof](../../../../visual-basic/language-reference/operators/typeof-operator.md).
+    Kritérium kompatibility závisí na tom, zda je zadaný typ třída, struktura nebo rozhraní. Obecně jsou typy kompatibilní, pokud je objekt stejného typu jako, dědí z nebo implementuje zadaný typ. Další informace naleznete v tématu [operátor typeof](../../../language-reference/operators/typeof-operator.md).
 
-## <a name="compile-the-code"></a>Kompilace kódu
+## <a name="compile-the-code"></a>Kompilovat kód
 
-Všimněte si, že zadaný typ nemůže být proměnná nebo výraz. Musí se jednat o název definovaného typu, jako je například třída, struktura nebo rozhraní. To zahrnuje vnitřní typy, jako `Integer` a `String`.
+Všimněte si, že zadaný typ nemůže být proměnná nebo výraz. Musí se jednat o název definovaného typu, jako je například třída, struktura nebo rozhraní. To zahrnuje vnitřní typy, jako jsou `Integer` a `String` .
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Object.GetType%2A>
 - <xref:System.Type?displayProperty=nameWithType>
 - <xref:System.Type.GetTypeCode%2A>
 - <xref:System.TypeCode>
-- [Objektové proměnné](../../../../visual-basic/programming-guide/language-features/variables/object-variables.md)
-- [Hodnoty objektové proměnné](../../../../visual-basic/programming-guide/language-features/variables/object-variable-values.md)
-- [Datový typ Object](../../../../visual-basic/language-reference/data-types/object-data-type.md)
+- [Proměnné objektu](object-variables.md)
+- [Hodnoty proměnné objektu](object-variable-values.md)
+- [Datový typ objektu](../../../language-reference/data-types/object-data-type.md)

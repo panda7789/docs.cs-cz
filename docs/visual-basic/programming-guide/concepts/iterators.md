@@ -2,22 +2,22 @@
 title: Iterátory
 ms.date: 07/20/2015
 ms.assetid: f26b5c1e-fe9d-4004-b287-da7919d717ae
-ms.openlocfilehash: 2789ac66690ebfd472b9bae5ccf08b1bdfaa0922
-ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
+ms.openlocfilehash: e638d35aeb86837d91fb14681d300772e3c2375a
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77628732"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84410926"
 ---
 # <a name="iterators-visual-basic"></a>Iterátory (Visual Basic)
 
 *Iterátor* se dá použít ke krokování kolekcí, jako jsou seznamy a pole.
 
-Metoda iterátoru nebo přistupující objekt `get` provádí vlastní iteraci v kolekci. Metoda iterátoru používá příkaz [yield](../../../visual-basic/language-reference/statements/yield-statement.md) k vrácení každého prvku v jednom okamžiku. Když je dosaženo příkazu `Yield`, aktuální umístění v kódu je zapamatovatelné. Spuštění je restartováno z tohoto umístění při příštím volání funkce iterátoru.
+Metoda iterátoru nebo `get` přistupující objekt provádí vlastní iteraci v kolekci. Metoda iterátoru používá příkaz [yield](../../language-reference/statements/yield-statement.md) k vrácení každého prvku v jednom okamžiku. Při `Yield` dosažení příkazu je aktuální umístění v kódu zapamatovatelné. Spuštění je restartováno z tohoto umístění při příštím volání funkce iterátoru.
 
-Využijete iterátor z klientského kódu pomocí [pro každý... Další](../../../visual-basic/language-reference/statements/for-each-next-statement.md) příkaz nebo pomocí dotazu LINQ.
+Využijete iterátor z klientského kódu pomocí [pro každý... Další](../../language-reference/statements/for-each-next-statement.md) příkaz nebo pomocí dotazu LINQ.
 
-V následujícím příkladu první iterace smyčky `For Each` způsobí, že spuštění pokračuje v metodě `SomeNumbers` iterátoru, dokud se nedosáhne prvního příkazu `Yield`. Tato iterace vrátí hodnotu 3 a aktuální umístění v metodě iterátoru se zachová. Při další iteraci smyčky pokračuje spuštění v metodě iterátoru tam, kde skončila, a znovu se zastaví, jakmile dosáhne `Yield`ho příkazu. Tato iterace vrátí hodnotu 5 a aktuální umístění v metodě iterátoru se znovu zachová. Smyčka skončí po dosažení konce metody iterátoru.
+V následujícím příkladu první iterace smyčky způsobí, že `For Each` provádění pokračuje v `SomeNumbers` metodě iterátoru, dokud `Yield` není dosaženo prvního příkazu. Tato iterace vrátí hodnotu 3 a aktuální umístění v metodě iterátoru se zachová. Při další iteraci smyčky pokračuje spuštění v metodě iterátoru z místa, kde skončilo, a opětovné zastavení při dosažení `Yield` příkazu. Tato iterace vrátí hodnotu 5 a aktuální umístění v metodě iterátoru se znovu zachová. Smyčka skončí po dosažení konce metody iterátoru.
 
 ```vb
 Sub Main()
@@ -35,11 +35,11 @@ Private Iterator Function SomeNumbers() As System.Collections.IEnumerable
 End Function
 ```
 
-Návratový typ metody iterátoru nebo přístupového objektu `get` může být <xref:System.Collections.IEnumerable>, <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.IEnumerator>nebo <xref:System.Collections.Generic.IEnumerator%601>.
+Návratový typ metody iterátoru nebo `get` přístupového objektu může být <xref:System.Collections.IEnumerable> , <xref:System.Collections.Generic.IEnumerable%601> , <xref:System.Collections.IEnumerator> nebo <xref:System.Collections.Generic.IEnumerator%601> .
 
-Chcete-li ukončit iteraci, můžete použít příkaz `Exit Function` nebo `Return`.
+`Exit Function` `Return` K ukončení iterace můžete použít příkaz or.
 
-Funkce iterátoru Visual Basic nebo deklarace přístupového objektu `get` obsahuje modifikátor [iterátoru](../../../visual-basic/language-reference/modifiers/iterator.md) .
+Funkce iterátoru Visual Basic nebo `get` deklarace přístupového objektu obsahuje modifikátor [iterátoru](../../language-reference/modifiers/iterator.md) .
 
 Iterátory byly představeny v Visual Basic v aplikaci Visual Studio 2012.
 
@@ -53,7 +53,7 @@ Iterátory byly představeny v Visual Basic v aplikaci Visual Studio 2012.
 
 - [Anonymní metody](#BKMK_AnonymousMethods)
 
-- [Používání iterátorů s obecným seznamem](#BKMK_GenericList)
+- [Používání iterátorů v obecných seznamech](#BKMK_GenericList)
 
 - [Informace o syntaxi](#BKMK_SyntaxInformation)
 
@@ -62,11 +62,11 @@ Iterátory byly představeny v Visual Basic v aplikaci Visual Studio 2012.
 - [Používání iterátorů](#BKMK_UseOfIterators)
 
 > [!NOTE]
-> Pro všechny příklady v tématu s výjimkou příkladu jednoduchého iterátoru uveďte příkazy [Imports](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md) pro obory názvů `System.Collections` a `System.Collections.Generic`.
+> Pro všechny příklady v tématu s výjimkou příkladu jednoduchého iterátoru uveďte příkazy [Imports](../../language-reference/statements/imports-statement-net-namespace-and-type.md) pro `System.Collections` `System.Collections.Generic` obory názvů a.
 
-## <a name="BKMK_SimpleIterator"></a>Jednoduchý iterátor
+## <a name="simple-iterator"></a><a name="BKMK_SimpleIterator"></a>Jednoduchý iterátor
 
-V následujícím příkladu je jeden příkaz `Yield`, který je uvnitř [... Další](../../../visual-basic/language-reference/statements/for-next-statement.md) smyčka V `Main`Každá iterace těla příkazu `For Each` vytvoří volání funkce iterátoru, které pokračuje k dalšímu příkazu `Yield`.
+V následujícím příkladu je jeden `Yield` příkaz, který je uvnitř [... Další](../../language-reference/statements/for-next-statement.md) smyčka V `Main` , Každá iterace `For Each` těla příkazu vytvoří volání funkce iterátoru, která pokračuje k dalšímu `Yield` příkazu.
 
 ```vb
 Sub Main()
@@ -90,11 +90,11 @@ As System.Collections.Generic.IEnumerable(Of Integer)
 End Function
 ```
 
-## <a name="BKMK_CollectionClass"></a>Vytvoření třídy kolekce
+## <a name="creating-a-collection-class"></a><a name="BKMK_CollectionClass"></a>Vytvoření třídy kolekce
 
-V následujícím příkladu třída `DaysOfTheWeek` implementuje rozhraní <xref:System.Collections.IEnumerable>, které vyžaduje metodu <xref:System.Collections.IEnumerable.GetEnumerator%2A>. Kompilátor implicitně volá metodu `GetEnumerator`, která vrací <xref:System.Collections.IEnumerator>.
+V následujícím příkladu `DaysOfTheWeek` Třída implementuje <xref:System.Collections.IEnumerable> rozhraní, které vyžaduje <xref:System.Collections.IEnumerable.GetEnumerator%2A> metodu. Kompilátor implicitně volá `GetEnumerator` metodu, která vrací <xref:System.Collections.IEnumerator> .
 
-Metoda `GetEnumerator` vrátí každý řetězec po jednom pomocí příkazu `Yield` a modifikátor `Iterator` je v deklaraci funkce.
+`GetEnumerator`Metoda vrátí každý řetězec po jednom pomocí `Yield` příkazu a `Iterator` Modifikátor je v deklaraci funkce.
 
 ```vb
 Sub Main()
@@ -123,9 +123,9 @@ Private Class DaysOfTheWeek
 End Class
 ```
 
-Následující příklad vytvoří třídu `Zoo`, která obsahuje kolekci zvířat.
+Následující příklad vytvoří `Zoo` třídu, která obsahuje kolekci zvířat.
 
-Příkaz `For Each`, který odkazuje na instanci třídy (`theZoo`), implicitně volá metodu `GetEnumerator`. Příkazy `For Each`, které odkazují na vlastnosti `Birds` a `Mammals`, používají `AnimalsForType` s názvem iterátor.
+`For Each`Příkaz, který odkazuje na instanci třídy ( `theZoo` ) implicitně volá `GetEnumerator` metodu. `For Each`Příkazy, které odkazují na `Birds` vlastnosti a `Mammals` používají `AnimalsForType` metodu s názvem iterátor.
 
 ```vb
 Sub Main()
@@ -216,11 +216,11 @@ Public Class Zoo
 End Class
 ```
 
-## <a name="BKMK_TryBlocks"></a>Bloky try
+## <a name="try-blocks"></a><a name="BKMK_TryBlocks"></a>Bloky try
 
-Visual Basic povoluje příkaz `Yield` v bloku `Try` [Try... Zachytit... Finally – příkaz](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md). Blok `Try`, který má příkaz `Yield`, může mít `Catch` bloky a může mít `Finally` blok.
+Visual Basic povoluje `Yield` příkaz v `Try` bloku [Try... Zachytit... Finally – příkaz](../../language-reference/statements/try-catch-finally-statement.md). `Try`Blok, který má `Yield` příkaz, může mít `Catch` bloky a může mít `Finally` blok.
 
-Následující příklad obsahuje `Try`, `Catch`a `Finally` bloky ve funkci iterátoru. Blok `Finally` ve funkci iterátoru se spustí před dokončením `For Each` iterace.
+Následující příklad obsahuje `Try` bloky, `Catch` a `Finally` ve funkci iterátoru. `Finally`Blok ve funkci iterátoru se provede před `For Each` dokončením iterace.
 
 ```vb
 Sub Main()
@@ -253,11 +253,11 @@ Private Iterator Function Test() As IEnumerable(Of Integer)
 End Function
 ```
 
-Příkaz `Yield` nemůže být uvnitř bloku `Catch` nebo bloku `Finally`.
+`Yield`Příkaz nemůže být uvnitř `Catch` bloku nebo `Finally` bloku.
 
-Pokud `For Each` tělo (místo iterátoru) vyvolá výjimku, není proveden blok `Catch` ve funkci iterátoru, ale je spuštěn blok `Finally` ve funkci iterátoru. `Catch` blok uvnitř funkce iterátoru zachytává pouze výjimky, ke kterým dojde uvnitř funkce iterátoru.
+Pokud `For Each` tělo (místo metody iterátoru) vyvolá výjimku, není `Catch` proveden blok ve funkci iterátoru, ale `Finally` je proveden blok ve funkci iterátoru. `Catch`Blok uvnitř funkce iterátoru zachytává pouze výjimky, ke kterým dojde uvnitř funkce iterátoru.
 
-## <a name="BKMK_AnonymousMethods"></a>Anonymní metody
+## <a name="anonymous-methods"></a><a name="BKMK_AnonymousMethods"></a>Anonymní metody
 
 V Visual Basic může být anonymní funkcí funkce iterátoru. Toto dokládá následující příklad.
 
@@ -306,17 +306,17 @@ As IEnumerable
 End Function
 ```
 
-Pokud je ověřování místo v rámci funkce iterátoru, nelze provést ověření až do začátku první iterace těla `For Each`.
+Pokud je ověřování místo v rámci funkce iterátoru, nelze provést ověření až do začátku první iterace `For Each` těla.
 
-## <a name="BKMK_GenericList"></a>Používání iterátorů s obecným seznamem
+## <a name="using-iterators-with-a-generic-list"></a><a name="BKMK_GenericList"></a>Používání iterátorů s obecným seznamem
 
-V následujícím příkladu `Stack(Of T)` obecná třída implementuje obecné rozhraní <xref:System.Collections.Generic.IEnumerable%601>. Metoda `Push` přiřadí hodnoty k poli typu `T`. Metoda <xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A> vrací hodnoty pole pomocí příkazu `Yield`.
+V následujícím příkladu `Stack(Of T)` Obecná třída implementuje <xref:System.Collections.Generic.IEnumerable%601> Obecné rozhraní. `Push`Metoda přiřadí hodnoty k poli typu `T` . <xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A>Metoda vrací hodnoty pole pomocí `Yield` příkazu.
 
-Kromě obecných <xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A> metoda musí být také implementována neobecná <xref:System.Collections.IEnumerable.GetEnumerator%2A> metoda. Důvodem je to, že <xref:System.Collections.Generic.IEnumerable%601> dědí z <xref:System.Collections.IEnumerable>. Neobecná implementace se odloží k obecné implementaci.
+Kromě obecné <xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A> metody <xref:System.Collections.IEnumerable.GetEnumerator%2A> musí být také implementována neobecná metoda. Důvodem je <xref:System.Collections.Generic.IEnumerable%601> , že dědí z <xref:System.Collections.IEnumerable> . Neobecná implementace se odloží k obecné implementaci.
 
-Tento příklad používá pojmenované iterátory k podpoře různých způsobů iterace v rámci stejné kolekce dat. Tyto pojmenované iterátory jsou vlastnosti `TopToBottom` a `BottomToTop` a metoda `TopN`.
+Tento příklad používá pojmenované iterátory k podpoře různých způsobů iterace v rámci stejné kolekce dat. Tyto pojmenované iterátory jsou `TopToBottom` vlastnosti a `BottomToTop` a `TopN` metoda.
 
-Deklarace vlastnosti `BottomToTop` zahrnuje klíčové slovo `Iterator`.
+`BottomToTop`Deklarace vlastnosti zahrnuje `Iterator` klíčové slovo.
 
 ```vb
 Sub Main()
@@ -419,35 +419,35 @@ Public Class Stack(Of T)
 End Class
 ```
 
-## <a name="BKMK_SyntaxInformation"></a>Informace o syntaxi
+## <a name="syntax-information"></a><a name="BKMK_SyntaxInformation"></a>Informace o syntaxi
 
-Iterátor se může vyskytnout jako metoda nebo přistupující objekt `get`. Iterátor nemůže být v události, konstruktoru instance, statickém konstruktoru nebo statickém destruktoru.
+Iterátor se může vyskytnout jako metoda nebo `get` přistupující objekt. Iterátor nemůže být v události, konstruktoru instance, statickém konstruktoru nebo statickém destruktoru.
 
-Implicitní převod musí existovat v typu výrazu v příkazu `Yield` do návratového typu iterátoru.
+Implicitní převod musí existovat v typu výrazu v `Yield` příkazu na návratový typ iterátoru.
 
-V Visual Basic metoda iterátoru nemůže mít žádné parametry `ByRef`.
+V Visual Basic metoda iterátoru nemůže mít žádné `ByRef` parametry.
 
-V Visual Basic "yield" není rezervované slovo a má zvláštní význam pouze v případě, že se používá v metodě `Iterator` nebo přístupovém objektu `get`.
+V Visual Basic "yield" není rezervované slovo a má zvláštní význam pouze v případě, že je použit v `Iterator` metodě nebo `get` přístupovém objektu.
 
-## <a name="BKMK_Technical"></a>Technická implementace
+## <a name="technical-implementation"></a><a name="BKMK_Technical"></a>Technická implementace
 
-I když zapisujete iterátor jako metodu, kompilátor je převede na vnořenou třídu, která je v podstatě Stavový počítač. Tato třída uchovává informace o poloze iterátoru, pokud bude `For Each...Next` smyčka v kódu klienta pokračovat.
+I když zapisujete iterátor jako metodu, kompilátor je převede na vnořenou třídu, která je v podstatě Stavový počítač. Tato třída uchovává informace o poloze iterátoru, dokud `For Each...Next` smyčka v kódu klienta pokračuje.
 
 Chcete-li zjistit, co kompilátor dělá, můžete použít nástroj Ildasm. exe k zobrazení kódu zprostředkujícího jazyka společnosti Microsoft, který je generován pro metodu iterátoru.
 
-Při vytváření iterátoru pro [třídu](../../language-reference/statements/class-statement.md) nebo [strukturu](../../language-reference/statements/structure-statement.md)není nutné implementovat celé <xref:System.Collections.IEnumerator> rozhraní. Když kompilátor detekuje iterátor, automaticky generuje `Current`, `MoveNext`a `Dispose` metody rozhraní <xref:System.Collections.IEnumerator> nebo <xref:System.Collections.Generic.IEnumerator%601>.
+Při vytváření iterátoru pro [třídu](../../language-reference/statements/class-statement.md) nebo [strukturu](../../language-reference/statements/structure-statement.md)není nutné implementovat celé <xref:System.Collections.IEnumerator> rozhraní. Když kompilátor detekuje iterátor, automaticky generuje `Current` `MoveNext` metody, a `Dispose` <xref:System.Collections.IEnumerator> <xref:System.Collections.Generic.IEnumerator%601> rozhraní nebo.
 
-U každého následného opakování smyčky `For Each…Next` (nebo přímého volání `IEnumerator.MoveNext`) pokračuje další tělo kódu iterátoru po předchozím příkazu `Yield`. Pak pokračuje dalším příkazem `Yield` až do chvíle, kdy se dosáhne konce textu iterátoru, nebo dokud se nezjistí `Exit Function` nebo `Return` příkaz.
+U každé následné iterace `For Each…Next` smyčky (nebo přímého volání `IEnumerator.MoveNext` ) pokračuje další tělo kódu iterátoru za předchozím `Yield` příkazem. Pak pokračuje k dalšímu `Yield` příkazu, dokud není dosaženo konce textu iterátoru nebo dokud se nezjistí `Exit Function` `Return` příkaz or.
 
-Iterátory nepodporují metodu <xref:System.Collections.IEnumerator.Reset%2A?displayProperty=nameWithType>. Pokud chcete opakovat iteraci od začátku, musíte získat nový iterátor.
+Iterátory nepodporují <xref:System.Collections.IEnumerator.Reset%2A?displayProperty=nameWithType> metodu. Pokud chcete opakovat iteraci od začátku, musíte získat nový iterátor.
 
-Další informace najdete v tématu [specifikace jazyka Visual Basic](../../../visual-basic/reference/language-specification/index.md).
+Další informace najdete v tématu [specifikace jazyka Visual Basic](../../reference/language-specification/index.md).
 
-## <a name="BKMK_UseOfIterators"></a>Používání iterátorů
+## <a name="use-of-iterators"></a><a name="BKMK_UseOfIterators"></a>Používání iterátorů
 
-Iterátory umožňují udržovat jednoduchost smyčky `For Each`, když potřebujete použít složitý kód k naplnění pořadí seznamu. To může být užitečné v případě, že chcete provést následující akce:
+Iterátory umožňují udržovat jednoduchost `For Each` smyčky, pokud potřebujete použít složitý kód k naplnění pořadí seznamu. To může být užitečné v případě, že chcete provést následující akce:
 
-- Upravte pořadí seznamu po první iteraci `For Each` smyčky.
+- Změňte pořadí seznamu po `For Each` iteraci první smyčky.
 
 - Vyhněte se úplnému načítání velkého seznamu před první iterací `For Each` smyčky. Příkladem stránkovaného načtení je načtení dávky řádků tabulky. Dalším příkladem je <xref:System.IO.DirectoryInfo.EnumerateFiles%2A> metoda, která implementuje iterátory v rámci .NET Framework.
 
@@ -457,6 +457,6 @@ Iterátory umožňují udržovat jednoduchost smyčky `For Each`, když potřebu
 
 - <xref:System.Collections.Generic>
 - <xref:System.Collections.Generic.IEnumerable%601>
-- [Příkaz For Each...Next](../../../visual-basic/language-reference/statements/for-each-next-statement.md)
-- [Příkaz Yield](../../../visual-basic/language-reference/statements/yield-statement.md)
-- [Iterator](../../../visual-basic/language-reference/modifiers/iterator.md)
+- [For Each...Next – příkaz](../../language-reference/statements/for-each-next-statement.md)
+- [Yield – příkaz](../../language-reference/statements/yield-statement.md)
+- [Iterátor](../../language-reference/modifiers/iterator.md)

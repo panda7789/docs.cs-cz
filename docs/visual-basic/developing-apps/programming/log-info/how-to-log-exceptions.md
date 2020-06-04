@@ -5,16 +5,16 @@ helpviewer_keywords:
 - exceptions, logging
 - exceptions, tracking
 ms.assetid: a26c60e2-ae39-444a-aebb-33eccadc0eeb
-ms.openlocfilehash: fe6949d727fae0c230ce7421b32fdaf2a498edbc
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 59ed7b836126a38f32b7c6f479570a566d236e6c
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74352091"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84410111"
 ---
 # <a name="how-to-log-exceptions-in-visual-basic"></a>Postupy: Protokolování výjimek v jazyce Visual Basic
 
-Pomocí objektů `My.Application.Log` a `My.Log` můžete protokolovat informace o výjimkách, ke kterým dochází ve vaší aplikaci. Tyto příklady ukazují, jak použít `My.Application.Log.WriteException` metodu k protokolování výjimek, které jsou zachyceny explicitně a výjimek, které jsou neošetřené.  
+Pomocí `My.Application.Log` objektů a můžete `My.Log` protokolovat informace o výjimkách, ke kterým dochází ve vaší aplikaci. Tyto příklady ukazují, jak použít `My.Application.Log.WriteException` metodu k protokolování výjimek, které jsou zachyceny explicitně a výjimek, které jsou neošetřené.  
   
  Pro informace o trasování protokolu použijte `My.Application.Log.WriteEntry` metodu. Další informace najdete v tématu <xref:Microsoft.VisualBasic.Logging.Log.WriteEntry%2A>.  
   
@@ -24,13 +24,13 @@ Pomocí objektů `My.Application.Log` a `My.Log` můžete protokolovat informace
   
      [!code-vb[VbVbalrMyApplicationLog#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplicationLog/VB/Form1.vb#9)]  
   
-2. K zachycení `Try...Catch` výjimky použijte blok.  
+2. `Try...Catch`K zachycení výjimky použijte blok.  
   
      [!code-vb[VbVbalrMyApplicationLog#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplicationLog/VB/Form1.vb#6)]  
   
 3. Vložte kód, který by mohl vytvořit výjimku v `Try` bloku.  
   
-     Odkomentujte `Dim` řádky `MsgBox` a, abyste způsobili <xref:System.NullReferenceException> výjimku.  
+     Odkomentujte `Dim` řádky a, `MsgBox` abyste způsobili <xref:System.NullReferenceException> výjimku.  
   
      [!code-vb[VbVbalrMyApplicationLog#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplicationLog/VB/Form1.vb#7)]  
   
@@ -58,7 +58,7 @@ Pomocí objektů `My.Application.Log` a `My.Log` můžete protokolovat informace
   
      Aplikace vyvolá <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UnhandledException> událost před spuštěním hlavní aplikace.  
   
-6. Přidejte `My.Application.Log.WriteException` metodu do obslužné rutiny `UnhandledException` události.  
+6. Přidejte `My.Application.Log.WriteException` metodu do `UnhandledException` obslužné rutiny události.  
   
      [!code-vb[VbVbalrMyApplicationLog#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplicationLog/VB/MyEventsFake.vb#4)]  
   
@@ -71,7 +71,7 @@ Pomocí objektů `My.Application.Log` a `My.Log` můžete protokolovat informace
 - <xref:Microsoft.VisualBasic.Logging.Log?displayProperty=nameWithType>
 - <xref:Microsoft.VisualBasic.Logging.Log.WriteEntry%2A>
 - <xref:Microsoft.VisualBasic.Logging.Log.WriteException%2A>
-- [Práce s protokoly aplikací](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)
-- [Postupy: Zápis zpráv protokolu](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md)
-- [Návod: Zjištění, kam objekt My.Application.Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)
-- [Návod: Změna místa, kam objekt My.Application.Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)
+- [Práce s protokoly aplikací](working-with-application-logs.md)
+- [Postupy: Zápis zpráv protokolu](how-to-write-log-messages.md)
+- [Návod: Zjištění, kam objekt My.Application.Log zapisuje informace](walkthrough-determining-where-my-application-log-writes-information.md)
+- [Návod: Změna místa, kam objekt My.Application.Log zapisuje informace](walkthrough-changing-where-my-application-log-writes-information.md)

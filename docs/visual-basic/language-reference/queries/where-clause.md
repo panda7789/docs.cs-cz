@@ -8,12 +8,12 @@ helpviewer_keywords:
 - queries [Visual Basic], Where
 - Where clause [Visual Basic]
 ms.assetid: 48b5c2c5-3181-429c-8545-894296798c89
-ms.openlocfilehash: 60b7ebe96ce0c4580c36675b2e4aa5f9888732c3
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: b80bb047551dee8ab23cfac06b961996992d69b5
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74349632"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84359538"
 ---
 # <a name="where-clause-visual-basic"></a>Where – klauzule (Visual Basic)
 Určuje podmínku filtrování pro dotaz.  
@@ -26,29 +26,29 @@ Where condition
   
 ## <a name="parts"></a>Součásti  
  `condition`  
- Požadováno. Výraz, který určuje, zda jsou hodnoty pro aktuální položku v kolekci zahrnuty do výstupní kolekce. Výraz se musí vyhodnotit na `Boolean` hodnotu nebo ekvivalent `Boolean` hodnoty. Pokud je podmínka vyhodnocena jako `True`, je element zahrnut do výsledku dotazu; v opačném případě je prvek vyloučen z výsledku dotazu.  
+ Povinná hodnota. Výraz, který určuje, zda jsou hodnoty pro aktuální položku v kolekci zahrnuty do výstupní kolekce. Výraz se musí vyhodnotit na `Boolean` hodnotu nebo ekvivalent `Boolean` hodnoty. Pokud je podmínka vyhodnocena jako `True` , je prvek zahrnut do výsledku dotazu; v opačném případě je prvek vyloučen z výsledku dotazu.  
   
 ## <a name="remarks"></a>Poznámky  
- Klauzule `Where` umožňuje filtrovat data dotazu výběrem pouze prvků, které splňují určitá kritéria. Elementy, jejichž hodnoty způsobí, že klauzule `Where` má být vyhodnocena jako `True` je obsažena ve výsledku dotazu; ostatní prvky jsou vyloučeny. Výraz použitý v klauzuli `Where` se musí vyhodnotit na `Boolean` nebo ekvivalent `Boolean`, jako je například celé číslo, které se vyhodnotí jako `False`, pokud je jeho hodnota nulová. Můžete zkombinovat více výrazů v klauzuli `Where` pomocí logických operátorů, jako jsou `And`, `Or`, `AndAlso`, `OrElse`, `Is`a `IsNot`.  
+ `Where`Klauzule umožňuje filtrovat data dotazu výběrem pouze prvků, které splňují určitá kritéria. Prvky, jejichž hodnoty způsobí, že klauzule, která `Where` má být vyhodnocena, `True` je zahrnuta do výsledku dotazu; ostatní prvky jsou vyloučeny. Výraz použitý v `Where` klauzuli musí vyhodnotit na `Boolean` nebo ekvivalent `Boolean` , jako je například celé číslo, které se vyhodnotí, `False` Pokud je jeho hodnota nulová. Můžete zkombinovat více výrazů v `Where` klauzuli pomocí logických operátorů `And` , jako jsou, `Or` , `AndAlso` , `OrElse` , a `Is` `IsNot` .  
   
- Ve výchozím nastavení nejsou výrazy dotazů vyhodnoceny, dokud nejsou k dispozici, například pokud jsou vázány na data nebo iterované prostřednictvím ve `For` smyčce. V důsledku toho není klauzule `Where` vyhodnocena, dokud není k dotazu k dispozici. Pokud máte externí hodnoty pro dotaz, které jsou použity v klauzuli `Where`, zajistěte, aby se příslušná hodnota používala v klauzuli `Where` v době spuštění dotazu. Další informace o provádění dotazů naleznete v tématu [zápis prvního dotazu LINQ](../../../visual-basic/programming-guide/concepts/linq/writing-your-first-linq-query.md).  
+ Ve výchozím nastavení nejsou výrazy dotazů vyhodnoceny, dokud nejsou k dispozici, například pokud jsou vázány na data nebo iterované prostřednictvím `For` smyčky. V důsledku toho není `Where` klauzule vyhodnocena, dokud není k dotazu k dispozici. Pokud máte externí hodnoty pro dotaz, které jsou použity v `Where` klauzuli, zajistěte, aby byla v `Where` klauzuli v okamžiku provedení dotazu použita příslušná hodnota. Další informace o provádění dotazů naleznete v tématu [zápis prvního dotazu LINQ](../../programming-guide/concepts/linq/writing-your-first-linq-query.md).  
   
- Můžete volat funkce v rámci klauzule `Where` k provedení výpočtu nebo operace s hodnotou z aktuálního prvku v kolekci. Volání funkce v klauzuli `Where` může způsobit, že dotaz bude proveden ihned při jeho definování namísto při jeho použití. Další informace o provádění dotazů naleznete v tématu [zápis prvního dotazu LINQ](../../../visual-basic/programming-guide/concepts/linq/writing-your-first-linq-query.md).  
+ Můžete volat funkce v rámci `Where` klauzule k provedení výpočtu nebo operace s hodnotou z aktuálního prvku v kolekci. Volání funkce v `Where` klauzuli může způsobit, že dotaz bude proveden ihned při jeho definování namísto při jeho použití. Další informace o provádění dotazů naleznete v tématu [zápis prvního dotazu LINQ](../../programming-guide/concepts/linq/writing-your-first-linq-query.md).  
   
 ## <a name="example"></a>Příklad  
- Následující výraz dotazu používá klauzuli `From` k deklaraci proměnné rozsahu `cust` pro každý objekt `Customer` v kolekci `customers`. Klauzule `Where` používá proměnnou rozsahu k omezení výstupu na zákazníky ze zadané oblasti. Smyčka `For Each` zobrazuje název společnosti pro každého zákazníka ve výsledku dotazu.  
+ Následující výraz dotazu používá `From` klauzuli pro deklaraci proměnné rozsahu `cust` pro každý `Customer` objekt v `customers` kolekci. `Where`Klauzule používá proměnnou rozsahu k omezení výstupu na zákazníky ze zadané oblasti. `For Each`Smyčka zobrazí název společnosti pro každého zákazníka ve výsledku dotazu.  
   
  [!code-vb[VbSimpleQuerySamples#23](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#23)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá `And` a `Or` logické operátory v klauzuli `Where`.  
+ Následující příklad používá `And` a `Or` logické operátory v `Where` klauzuli.  
   
  [!code-vb[VbSimpleQuerySamples#31](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#31)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Úvod do jazyka LINQ v Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
-- [Dotazy](../../../visual-basic/language-reference/queries/index.md)
-- [Klauzule From](../../../visual-basic/language-reference/queries/from-clause.md)
-- [Klauzule Select](../../../visual-basic/language-reference/queries/select-clause.md)
-- [Příkaz For Each...Next](../../../visual-basic/language-reference/statements/for-each-next-statement.md)
+- [Představení technologie LINQ v jazyce Visual Basic](../../programming-guide/language-features/linq/introduction-to-linq.md)
+- [Dotazy](index.md)
+- [Klauzule FROM](from-clause.md)
+- [Klauzule SELECT](select-clause.md)
+- [For Each...Next – příkaz](../statements/for-each-next-statement.md)

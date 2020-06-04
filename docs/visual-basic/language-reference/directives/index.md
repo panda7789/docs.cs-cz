@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Visual Basic code, directives
 - directives
 ms.assetid: 20d5fe65-490a-4c23-88c2-ee4f490ed762
-ms.openlocfilehash: b5e857198351b30c0d7a38dce1a9e6d1209b5258
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: b5fcf3cb8801bc99dd2096c28cc41ebefeb34592
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74838140"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84409995"
 ---
 # <a name="directives-visual-basic"></a>Direktivy (Visual Basic)
 
@@ -19,13 +19,13 @@ Témata v tomto oddílu dokumentují direktivy kompilátoru Visual Basic zdrojov
   
 ## <a name="in-this-section"></a>V tomto oddílu  
 
- [#Const direktiva](../../../visual-basic/language-reference/directives/const-directive.md) – definice konstanty kompilátoru  
+ [#Const direktiva](const-directive.md) – definice konstanty kompilátoru  
   
- [#ExternalSource direktiva](../../../visual-basic/language-reference/directives/externalsource-directive.md) – označuje mapování mezi zdrojovými řádky a textem externím ke zdroji.  
+ [#ExternalSource direktiva](externalsource-directive.md) – označuje mapování mezi zdrojovými řádky a textem externím ke zdroji.  
   
- [#If... Then... #Else – direktivy](../../../visual-basic/language-reference/directives/if-then-else-directives.md) – zkompiluje vybrané bloky kódu  
+ [#If... Then... #Else – direktivy](if-then-else-directives.md) – zkompiluje vybrané bloky kódu  
   
- [#Region direktiva](../../../visual-basic/language-reference/directives/region-directive.md) – sbalení a skrytí oddílů kódu v editoru sady Visual Studio  
+ [#Region direktiva](region-directive.md) – sbalení a skrytí oddílů kódu v editoru sady Visual Studio  
   
  **#Disable, #Enable** --zakázat a povolit specifická upozornění pro oblasti kódu.  
   
@@ -41,5 +41,5 @@ Témata v tomto oddílu dokumentují direktivy kompilátoru Visual Basic zdrojov
   
 ## <a name="related-sections"></a>Související oddíly  
 
- [Referenční příručka jazyka Visual Basic](../../../visual-basic/language-reference/index.md)  
+ [Reference jazyka Visual Basic](../index.md)  
   

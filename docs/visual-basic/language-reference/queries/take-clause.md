@@ -8,12 +8,12 @@ helpviewer_keywords:
 - queries [Visual Basic], Take
 - Take clause [Visual Basic]
 ms.assetid: 77bf87b2-1476-4456-957f-fee922fbad8c
-ms.openlocfilehash: 3082954ef84560ccb70f7a47cd3532f622829392
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 25dd06905525a96bc1504f033eb4f19af6d454a2
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74349636"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84359629"
 ---
 # <a name="take-clause-visual-basic"></a>Take – klauzule (Visual Basic)
 Vrátí zadaný počet souvislých prvků od začátku kolekce.  
@@ -26,28 +26,28 @@ Take count
   
 ## <a name="parts"></a>Součásti  
  `count`  
- Požadováno. Hodnota nebo výraz, který se vyhodnotí na počet prvků sekvence, která se má vrátit.  
+ Povinná hodnota. Hodnota nebo výraz, který se vyhodnotí na počet prvků sekvence, která se má vrátit.  
   
 ## <a name="remarks"></a>Poznámky  
- Klauzule `Take` způsobí, že dotaz zahrne zadaný počet souvislých prvků od začátku seznamu výsledků. Počet prvků, které mají být zahrnuty, je určen parametrem `count`.  
+ `Take`Klauzule způsobí, že dotaz zahrne zadaný počet souvislých prvků od začátku seznamu výsledků. Počet prvků, které mají být zahrnuty, je určen `count` parametrem.  
   
- Klauzuli `Take` s klauzulí `Skip` můžete použít k vrácení rozsahu dat z libovolného segmentu dotazu. Provedete to tak, že předáte index prvního prvku rozsahu na klauzuli `Skip` a velikost rozsahu na klauzuli `Take`. V tomto případě je nutné zadat klauzuli `Take` za klauzulí `Skip`.  
+ `Take`Klauzuli s klauzulí můžete použít `Skip` k vrácení rozsahu dat z libovolného segmentu dotazu. Provedete to tak, že předáte index prvního prvku rozsahu k `Skip` klauzuli a velikost rozsahu na `Take` klauzuli. V takovém případě `Take` musí být klauzule uvedena za `Skip` klauzulí.  
   
- Použijete-li v dotazu klauzuli `Take`, může být také nutné zajistit, aby výsledky byly vráceny v pořadí, ve kterém bude povolena klauzule `Take`, aby zahrnovala zamýšlené výsledky. Další informace o řazení výsledků dotazu naleznete v tématu [ORDER by klauzule](../../../visual-basic/language-reference/queries/order-by-clause.md).  
+ Použijete-li `Take` klauzuli v dotazu, může být také nutné zajistit, aby výsledky byly vráceny v pořadí, které umožní `Take` klauzuli zahrnout zamýšlené výsledky. Další informace o řazení výsledků dotazu naleznete v tématu [ORDER by klauzule](order-by-clause.md).  
   
- Pomocí klauzule `TakeWhile` můžete určit, že se v závislosti na zadané podmínce mají vracet jenom určité prvky.  
+ Pomocí `TakeWhile` klauzule můžete určit, že se v závislosti na zadané podmínce mají vracet jenom určité prvky.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu používá klauzuli `Take` spolu s klauzulí `Skip`, která vrací data z dotazu na stránkách. Funkce GetCustomers používá klauzuli `Skip` pro obejít zákazníky v seznamu až do zadané hodnoty počátečního indexu a pomocí klauzule `Take` vracet stránku zákazníků počínaje touto hodnotou indexu.  
+ Následující příklad kódu používá `Take` klauzuli spolu s `Skip` klauzulí k vrácení dat z dotazu na stránkách. Funkce GetCustomers používá `Skip` klauzuli pro obejít zákazníky v seznamu až do zadané hodnoty počátečního indexu a pomocí `Take` klauzule vrátí stránku zákazníků počínaje touto hodnotou indexu.  
   
  [!code-vb[VbSimpleQuerySamples#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#1)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Úvod do jazyka LINQ v Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
-- [Dotazy](../../../visual-basic/language-reference/queries/index.md)
-- [Klauzule Select](../../../visual-basic/language-reference/queries/select-clause.md)
-- [Klauzule From](../../../visual-basic/language-reference/queries/from-clause.md)
-- [Klauzule Order By](../../../visual-basic/language-reference/queries/order-by-clause.md)
-- [Klauzule Take While](../../../visual-basic/language-reference/queries/take-while-clause.md)
-- [Klauzule Skip](../../../visual-basic/language-reference/queries/skip-clause.md)
+- [Představení technologie LINQ v jazyce Visual Basic](../../programming-guide/language-features/linq/introduction-to-linq.md)
+- [Dotazy](index.md)
+- [Klauzule SELECT](select-clause.md)
+- [Klauzule FROM](from-clause.md)
+- [Order By – klauzule](order-by-clause.md)
+- [Take While – klauzule](take-while-clause.md)
+- [Skip – klauzule](skip-clause.md)
