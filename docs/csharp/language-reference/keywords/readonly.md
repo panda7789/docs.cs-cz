@@ -1,5 +1,5 @@
 ---
-title: klíčové slovo jen pro čtení – odkaz jazyka C#
+title: ReadOnly – klíčové slovo – Reference jazyka C#
 ms.date: 04/14/2020
 f1_keywords:
 - readonly_CSharpKeyword
@@ -7,40 +7,40 @@ f1_keywords:
 helpviewer_keywords:
 - readonly keyword [C#]
 ms.assetid: 2f8081f6-0de2-4903-898d-99696c48d2f4
-ms.openlocfilehash: 03b0aa63eda3e7a9d8745baaa33479fd5e85b01b
-ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
+ms.openlocfilehash: 66a096e8831f72a2216e8ba5dd9866046504624f
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "81389061"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84368618"
 ---
 # <a name="readonly-c-reference"></a>readonly – modifikátor (Referenční dokumentace jazyka C#)
 
-Klíčové `readonly` slovo je modifikátor, který lze použít ve čtyřech kontextech:
+`readonly`Klíčové slovo je modifikátor, který lze použít ve čtyřech kontextech:
 
-- V [deklaraci](#readonly-field-example) `readonly` pole označuje, že přiřazení k poli může nastat pouze jako součást deklarace nebo v konstruktoru ve stejné třídě. Pole jen pro čtení lze přiřadit a znovu přiřadit vícekrát v rámci deklarace pole a konstruktoru.
+- V [deklaraci pole](#readonly-field-example) `readonly` označuje, že přiřazení k poli může být provedeno pouze v rámci deklarace nebo v konstruktoru ve stejné třídě. Pole jen pro čtení se dá přiřadit a přiřadit vícekrát v rámci deklarace a konstruktoru pole.
   
-  Pole `readonly` nelze přiřadit po ukončení konstruktoru. Toto pravidlo má různé důsledky pro typy hodnot a typy odkazů:
+  `readonly`Po ukončení konstruktoru nelze pole přiřadit. Toto pravidlo má různé dopady na typy hodnot a typy odkazů:
   
-  - Vzhledem k tomu, že typy hodnot `readonly` přímo obsahují jejich data, je pole, které je typem hodnoty, neměnné.
-  - Vzhledem k tomu, že typy odkazů obsahují `readonly` odkaz na jejich data, pole, které je typem odkazu, musí vždy odkazovat na stejný objekt. Ten objekt není neměnný. Modifikátor `readonly` zabraňuje nahrazení pole jinou instancí typu odkazu. Modifikátor však nezabrání změně dat instance pole prostřednictvím pole jen pro čtení.
+  - Vzhledem k tomu, že typy hodnot přímo obsahují svá data, pole, které je `readonly` hodnotový typ, je neměnné.
+  - Vzhledem k tomu, že typy odkazů obsahují odkaz na jejich data, pole, které je `readonly` odkazový typ, musí vždy odkazovat na stejný objekt. Tento objekt není neměnný. `readonly`Modifikátor zabraňuje tomu, aby bylo pole nahrazeno jinou instancí typu odkazu. Modifikátor však nebrání v úpravě dat instance pole v rámci pole jen pro čtení.
 
   > [!WARNING]
-  > Externě viditelný typ, který obsahuje externě viditelné pole jen pro čtení, které je proměnlivým typem odkazu, může být chybou zabezpečení a může vyvolat upozornění [CA2104](/visualstudio/code-quality/ca2104) : "Nedeklarujte proměnlivé typy odkazů pouze pro čtení."
+  > Externě viditelný typ, který obsahuje externě viditelné pole jen pro čtení, které je proměnlivým odkazovým typem, může představovat chybu zabezpečení a může aktivovat upozornění [CA2104](/visualstudio/code-quality/ca2104) : "Nedeklarujte pouze proměnlivé odkazy typu jen pro čtení."
 
-- V `readonly struct` definici `readonly` typu označuje, že typ struktury je neměnný. Další informace naleznete [ `readonly` v](../builtin-types/struct.md#readonly-struct) části struktura [typy struktury](../builtin-types/struct.md) článku.
-- V deklaraci instance člen v `readonly` rámci typu struktury označuje, že člen instance nemění stav struktury. Další informace naleznete [ `readonly` ](../builtin-types/struct.md#readonly-instance-members) v části členové instance v článku [Typy struktury.](../builtin-types/struct.md)
-- V [ `ref readonly` metodě](#ref-readonly-return-example)return `readonly` modifikátor označuje, že metoda vrátí odkaz a zápisy nejsou povoleny pro tento odkaz.
+- V `readonly struct` definici typu `readonly` označuje, že typ struktury je neměnný. Další informace naleznete [ `readonly` v části struktura v článku](../builtin-types/struct.md#readonly-struct) [typy struktury](../builtin-types/struct.md) .
+- V deklaraci člena instance v rámci typu struktury `readonly` označuje, že člen instance neupravuje stav struktury. Další informace naleznete v oddílu [ `readonly` instance členů](../builtin-types/struct.md#readonly-instance-members) článku [typy struktury](../builtin-types/struct.md) .
+- V [ `ref readonly` metodě se vrátí](#ref-readonly-return-example) `readonly` modifikátor, že metoda vrátí odkaz a zápisy nejsou pro tento odkaz povoleny.
 
-A `readonly struct` `ref readonly` kontexty byly přidány v C# 7.2. `readonly`členové struktury byli přidáni do jazyka C# 8.0
+`readonly struct` `ref readonly` Kontexty a byly přidány v C# 7,2. `readonly`Členy struktury se přidaly v C# 8,0.
 
 ## <a name="readonly-field-example"></a>Příklad pole jen pro čtení
 
-V tomto příkladu nelze `year` hodnotu pole změnit v `ChangeYear`metodě , i když je přiřazena hodnota v konstruktoru třídy:
+V tomto příkladu `year` nemůže být hodnota pole v metodě změněna `ChangeYear` , i když je přiřazena hodnota v konstruktoru třídy:
 
-[!code-csharp[Readonly Field example](~/samples/snippets/csharp/keywords/ReadonlyKeywordExamples.cs#ReadonlyField)]
+[!code-csharp[Readonly Field example](snippets/ReadonlyKeywordExamples.cs#ReadonlyField)]
 
-Hodnotu `readonly` poli můžete přiřadit pouze v následujících kontextech:
+K poli můžete přiřadit hodnotu `readonly` pouze v následujících kontextech:
 
 - Když je proměnná inicializována v deklaraci, například:
 
@@ -48,21 +48,21 @@ Hodnotu `readonly` poli můžete přiřadit pouze v následujících kontextech:
   public readonly int y = 5;
   ```
 
-- V instanci konstruktor třídy, která obsahuje deklaraci pole instance.
+- V konstruktoru instance třídy, která obsahuje deklaraci pole instance.
 - Ve statickém konstruktoru třídy, která obsahuje deklaraci statického pole.
 
-Tyto kontexty konstruktoru jsou také pouze kontexty, ve `readonly` kterých je platný předat pole jako [out](out-parameter-modifier.md) nebo [ref](ref.md) parametr.
+Tyto kontexty konstruktoru jsou také pouze kontexty, ve kterých je platný pro předání `readonly` pole jako [výstupní](out-parameter-modifier.md) parametr nebo parametr [ref](ref.md) .
 
 > [!NOTE]
-> Klíčové `readonly` slovo se liší od klíčového slova [const.](const.md) Pole `const` lze inicializovat pouze při deklaraci tohoto pole. Pole `readonly` lze přiřadit vícekrát v deklaraci pole a v libovolném konstruktoru. `readonly` Pole proto mohou mít různé hodnoty v závislosti na použitém konstruktoru. Také zatímco `const` pole je konstanta v `readonly` době kompilace, pole lze použít pro konstanty za běhu jako v následujícím příkladu:
+> `readonly`Klíčové slovo se liší od klíčového slova [const](const.md) . `const`Pole lze inicializovat pouze v deklaraci pole. `readonly`Pole lze přiřadit vícekrát v deklaraci pole a v jakémkoli konstruktoru. Proto `readonly` pole mohou mít různé hodnoty v závislosti na použitém konstruktoru. I když `const` je pole konstanta při kompilaci, `readonly` pole lze použít pro konstanty run-time, jako v následujícím příkladu:
 >
 > ```csharp
 > public static readonly uint timeStamp = (uint)DateTime.Now.Ticks;
 > ```
 
-[!code-csharp[Initialize readonly Field example](~/samples/snippets/csharp/keywords/ReadonlyKeywordExamples.cs#InitReadonlyField)]
+[!code-csharp[Initialize readonly Field example](snippets/ReadonlyKeywordExamples.cs#InitReadonlyField)]
 
-V předchozím příkladu, pokud použijete příkaz, jako je následující příklad:
+V předchozím příkladu, pokud použijete příkaz jako v následujícím příkladu:
 
 ```csharp
 p2.y = 66;        // Error
@@ -70,30 +70,30 @@ p2.y = 66;        // Error
 
 zobrazí se chybová zpráva kompilátoru:
 
-**Pole jen pro čtení nelze přiřadit (s výjimkou konstruktoru nebo proměnné inicializátoru)**
+**K poli jen pro čtení se nedá přiřadit (kromě případu, kdy se nachází v konstruktoru nebo inicializátoru proměnné).**
 
-## <a name="ref-readonly-return-example"></a>Příklad vrácení pouze pro čtení od odkazu
+## <a name="ref-readonly-return-example"></a>Návratový příklad pro odkaz ReadOnly
 
-Modifikátor `readonly` `ref return` na označuje, že vrácený odkaz nelze změnit. Následující příklad vrátí odkaz na původ. Používá `readonly` modifikátor k označení, že volající nelze změnit původ:
+`readonly`Modifikátor na pozici `ref return` označuje, že vrácený odkaz nelze upravit. Následující příklad vrátí odkaz na počátek. Používá `readonly` Modifikátor k označení, že volající nemohou změnit původní:
 
-[!code-csharp[readonly return example](~/samples/snippets/csharp/keywords/ReadonlyKeywordExamples.cs#ReadonlyReturn)]
+[!code-csharp[readonly return example](snippets/ReadonlyKeywordExamples.cs#ReadonlyReturn)]
 
-Vrácený typ nemusí být `readonly struct`. Libovolný typ, který `ref` může být `ref readonly`vrácena může být vrácena .
+Vrácený typ nemusí být `readonly struct` . Libovolný typ, který může být vrácen pomocí, `ref` může být vrácen `ref readonly` .
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-Můžete také zobrazit návrhy specifikace jazyka:
+Můžete si také prohlédnout návrhy specifikace jazyka:
 
-- [pouze pro čtení ref a jen pro čtení struct](~/_csharplang/proposals/csharp-7.2/readonly-ref.md)
-- [jedině pro čtení členové struktury](~/_csharplang/proposals/csharp-8.0/readonly-instance-members.md)
+- [struktura ReadOnly a ReadOnly](~/_csharplang/proposals/csharp-7.2/readonly-ref.md)
+- [Členové struktury jen pro čtení](~/_csharplang/proposals/csharp-8.0/readonly-instance-members.md)
 
 ## <a name="see-also"></a>Viz také
 
-- [Odkaz jazyka C#](../index.md)
-- [Programovací příručka jazyka C#](../../programming-guide/index.md)
-- [C# Klíčová slova](index.md)
+- [Reference jazyka C#](../index.md)
+- [Průvodce programováním v C#](../../programming-guide/index.md)
+- [Klíčová slova jazyka C#](index.md)
 - [Modifikátory](index.md)
 - [const](const.md)
 - [Pole](../../programming-guide/classes-and-structs/fields.md)

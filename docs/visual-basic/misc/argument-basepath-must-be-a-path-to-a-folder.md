@@ -1,24 +1,24 @@
 ---
-title: Argument BasePath musí být cesta ke složce
+title: Argument BasePath musí být cesta ke složce.
 ms.date: 07/20/2015
 ms.assetid: b180ce60-ad57-41a6-a313-491d86d84cc7
-ms.openlocfilehash: 9c15e2a7135ef3453e514735f7091097eeaa96c6
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 5b55c1510e7a9607e71c2afb4771eb23ace2faad
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64659116"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84368085"
 ---
-# <a name="argument-basepath-must-be-a-path-to-a-folder"></a>Argument BasePath musí být cesta ke složce
-Argument `BasePath` musí obsahovat cestu ke složce. Vám může nesprávně Analýza řetězce a dodává hodnotu, která není rozpoznán jako platná cesta.  
+# <a name="argument-basepath-must-be-a-path-to-a-folder"></a>Argument BasePath musí být cesta ke složce.
+Argument `BasePath` musí být tvořen cestou ke složce. Je možné, že nesprávně analyzujete řetězec a zadáte hodnotu, která není rozpoznána jako platná cesta.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-- Zkontrolujte hodnotu zadáváte pro `BasePath` k Ujistěte se, že je platnou cestu ke složce.  
+- Zkontrolujte hodnotu, kterou zadáváte `BasePath` , abyste se ujistili, že se jedná o platnou cestu ke složce.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.CodeDom.Compiler.TempFileCollection.BasePath%2A>
 - <xref:System.Resources.ResXResourceWriter.BasePath%2A>
 - <xref:System.Resources.ResXResourceReader.BasePath%2A>
-- [Postupy: Analýza cest k souborům](../../visual-basic/developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md)
+- [Postupy: Analýza cest k souborům](../developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md)
