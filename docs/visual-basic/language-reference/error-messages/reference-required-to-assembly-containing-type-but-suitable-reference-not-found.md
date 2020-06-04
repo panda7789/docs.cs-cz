@@ -7,32 +7,32 @@ f1_keywords:
 helpviewer_keywords:
 - BC30969
 ms.assetid: 1b29dbc5-8268-45fe-bfc2-b2070a5c845c
-ms.openlocfilehash: 9868598b32ae17ef5bfb5dd738f8a7541515f5ec
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4b9f74f0627268752b0ba3c3816fe9d4cc8a231b
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62013743"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84404820"
 ---
-# <a name="reference-required-to-assembly-assemblyidentity-containing-type-typename-but-a-suitable-reference-could-not-be-found-due-to-ambiguity-between-projects-projectname1-and-projectname2"></a>Odkaz vyžadoval sestavení '\<assemblyidentity >' obsahující typ "\<typename >", ale nebylo možné najít vhodný odkaz z důvodu nejednoznačnosti mezi projekty\<projectname1 > "a"\< projectname2 > "
-Výraz používá typ, jako jsou třídy, struktury, rozhraní, výčet nebo delegáta, který je definován vně vašeho projektu. Máte ale odkazy na více než jedno sestavení, definice typu.  
+# <a name="reference-required-to-assembly-assemblyidentity-containing-type-typename-but-a-suitable-reference-could-not-be-found-due-to-ambiguity-between-projects-projectname1-and-projectname2"></a>Odkaz vyžadoval sestavení '\<assemblyidentity>' obsahující typ '\<typename>'. Nebylo však možné najít vhodný odkaz z důvodu nejednoznačnosti mezi projekty '\<projectname1>' a '\<projectname2>'.
+Výraz používá typ, jako je třída, struktura, rozhraní, výčet nebo delegát, které jsou definovány mimo váš projekt. Nicméně máte odkazy na projekt na více než jedno sestavení, které definuje tento typ.  
   
- Citovaný projekty vytváří sestavení se stejným názvem. Proto kompilátor nemůže určit sestavení, které použije pro typ přistupují.  
+ Citované projekty vytváří sestavení se stejným názvem. Proto kompilátor nemůže určit, které sestavení se má použít pro typ, ke kterému přistupujete.  
   
- Pro přístup k typ definovaný v jiném sestavení, musí mít kompilátoru jazyka Visual Basic odkazu na toto sestavení. Musí se jednat jednoznačnou, kompletní jeden odkaz, který nezpůsobí cyklické odkazy mezi projekty.  
+ Pro přístup k typu definovanému v jiném sestavení musí mít kompilátor Visual Basic odkaz na toto sestavení. Musí se jednat o jediný nejednoznačný odkaz, který nezpůsobuje cyklické odkazy mezi projekty.  
   
  **ID chyby:** BC30969  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1. Určete, který projekt vytvoří nejlepší sestavení pro projekt tak, aby odkazovaly. Pro toto rozhodnutí můžete použít kritéria, jako je například usnadnění přístupu k souborům a četnosti aktualizací.  
+1. Určete, který projekt vytváří nejlepší sestavení pro váš projekt k referenci. Pro toto rozhodnutí můžete použít kritéria, jako je například snadné přístupu k souborům a četnost aktualizací.  
   
-2. Ve vlastnostech vašeho projektu přidejte odkaz na soubor, který obsahuje sestavení, které definuje typ, který používáte.  
+2. Ve vlastnostech projektu přidejte odkaz na soubor, který obsahuje sestavení definující typ, který používáte.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Správa odkazů v projektu](/visualstudio/ide/managing-references-in-a-project)
-- [Odkazy na deklarované elementy](../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)
+- [Odkazy na deklarované elementy](../../programming-guide/language-features/declared-elements/references-to-declared-elements.md)
 
 - [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)
 - [Řešení potíží s poškozenými odkazy](/visualstudio/ide/troubleshooting-broken-references)

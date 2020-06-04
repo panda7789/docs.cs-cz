@@ -13,16 +13,16 @@ helpviewer_keywords:
 - assignment statements [Visual Basic], object variable assignment
 - Me keyword [Visual Basic], as object variable
 ms.assetid: 3706811d-fd40-44fe-8727-d692e8e55d6d
-ms.openlocfilehash: 93de17490935d6d5cad01000e9ee3e2fe55bd16c
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 9ae1a307e8c886166d516140b7f100a411cedcfa
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74351821"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84410371"
 ---
 # <a name="object-variable-assignment-visual-basic"></a>Přiřazení proměnné objektu (Visual Basic)
 
-Použijete normální příkaz přiřazení k přiřazení objektu proměnné objektu. Můžete přiřadit výraz objektu nebo klíčové slovo [Nothing](../../../../visual-basic/language-reference/nothing.md) , jak ukazuje následující příklad.
+Použijete normální příkaz přiřazení k přiřazení objektu proměnné objektu. Můžete přiřadit výraz objektu nebo klíčové slovo [Nothing](../../../language-reference/nothing.md) , jak ukazuje následující příklad.
 
 ```vb
 Dim thisObject As Object
@@ -32,13 +32,13 @@ thisObject = Form1
 thisObject = Nothing
 ```
 
-`Nothing` znamená, že k proměnné není aktuálně přiřazen žádný objekt.
+`Nothing`znamená, že k proměnné není aktuálně přiřazen žádný objekt.
 
 ## <a name="initialization"></a>Inicializace
 
-Když váš kód začíná běžet, vaše proměnné objektu jsou inicializovány na `Nothing`. Ty, jejichž deklarace zahrnují inicializaci, jsou znovu inicializovány na hodnoty, které zadáte při spuštění příkazů deklarace.
+Když váš kód začíná běžet, vaše proměnné objektu jsou inicializovány na `Nothing` . Ty, jejichž deklarace zahrnují inicializaci, jsou znovu inicializovány na hodnoty, které zadáte při spuštění příkazů deklarace.
 
-Do své deklarace můžete přidat inicializaci pomocí klíčového slova [New](../../../../visual-basic/language-reference/operators/new-operator.md) . Následující příkazy deklarace deklaruje proměnné objektu `testUri` a `ver` a přiřadí jim konkrétní objekty. Každý používá jeden z přetížených konstruktorů příslušné třídy pro inicializaci objektu.
+Do své deklarace můžete přidat inicializaci pomocí klíčového slova [New](../../../language-reference/operators/new-operator.md) . Následující příkazy deklarace deklaruje objektové proměnné `testUri` a `ver` přiřadí jim konkrétní objekty. Každý používá jeden z přetížených konstruktorů příslušné třídy pro inicializaci objektu.
 
 ```vb
 Dim testUri As New System.Uri("https://www.microsoft.com")
@@ -47,7 +47,7 @@ Dim ver As New System.Version(6, 1, 0)
 
 ## <a name="disassociation"></a>Zrušení přidružení
 
-Nastavení proměnné objektu pro `Nothing` přestane přidružení proměnné k jakémukoli konkrétnímu objektu. Tím zabráníte nechtěné změně objektu změnou proměnné. Také umožňuje otestovat, zda proměnná objektu odkazuje na platný objekt, jak ukazuje následující příklad.
+Nastavení proměnné objektu pro `Nothing` přerušit přidružení proměnné k jakémukoli konkrétnímu objektu. Tím zabráníte nechtěné změně objektu změnou proměnné. Také umožňuje otestovat, zda proměnná objektu odkazuje na platný objekt, jak ukazuje následující příklad.
 
 ```vb
 If otherObject IsNot Nothing Then
@@ -57,13 +57,13 @@ End If
 
 Pokud objekt, na který proměnná odkazuje, je v jiné aplikaci, nemůže tento test určit, zda byla daná aplikace ukončena nebo zda právě neověřovala objekt.
 
-Proměnná objektu s hodnotou `Nothing` se také označuje jako *odkaz s hodnotou null*.
+Objektová proměnná s hodnotou `Nothing` je také označována jako *odkaz s hodnotou null*.
 
 ## <a name="current-instance"></a>Aktuální instance
 
 *Aktuální instance* objektu je ten, ve kterém je aktuálně spuštěn kód. Vzhledem k tomu, že veškerý kód provede v rámci procedury, aktuální instance je ta, ve které byl procedura vyvolána.
 
-Klíčové slovo `Me` funguje jako proměnná objektu odkazující na aktuální instanci. Pokud procedura není [sdílená](../../../../visual-basic/language-reference/modifiers/shared.md), může pomocí klíčového slova `Me` získat ukazatel na aktuální instanci. Sdílené procedury nelze přidružit ke konkrétní instanci třídy.
+`Me`Klíčové slovo funguje jako proměnná objektu odkazující na aktuální instanci. Pokud procedura není [sdílená](../../../language-reference/modifiers/shared.md), může pomocí `Me` klíčového slova získat ukazatel na aktuální instanci. Sdílené procedury nelze přidružit ke konkrétní instanci třídy.
 
 Použití `Me` je zvláště užitečné pro předání aktuální instance do procedury v jiném modulu. Předpokládejme například, že máte několik dokumentů XML a chcete do nich přidat nějaký standardní text. Následující příklad definuje proceduru, která to provede.
 
@@ -79,11 +79,11 @@ Každý objekt dokumentu XML pak může zavolat proceduru a předat aktuální i
 addStandardText(Me)
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Objektové proměnné](../../../../visual-basic/programming-guide/language-features/variables/object-variables.md)
-- [Deklarace objektové proměnné](../../../../visual-basic/programming-guide/language-features/variables/object-variable-declaration.md)
-- [Hodnoty objektové proměnné](../../../../visual-basic/programming-guide/language-features/variables/object-variable-values.md)
-- [Postupy: deklarace objektové proměnné a přiřazení objektu k němu v Visual Basic](../../../../visual-basic/programming-guide/language-features/variables/how-to-declare-an-object-variable-and-assign-an-object-to-it.md)
-- [Postupy: Nastavení objektové proměnné tak, aby neodkazovala na žádnou instanci](../../../../visual-basic/programming-guide/language-features/variables/how-to-make-an-object-variable-not-refer-to-any-instance.md)
-- [Me, My, MyBase a MyClass](../../../../visual-basic/programming-guide/program-structure/me-my-mybase-and-myclass.md)
+- [Proměnné objektu](object-variables.md)
+- [Deklarace proměnné objektu](object-variable-declaration.md)
+- [Hodnoty proměnné objektu](object-variable-values.md)
+- [Postupy: Deklarace objektové proměnné a přiřazení objektu k proměnné v jazyce Visual Basic](how-to-declare-an-object-variable-and-assign-an-object-to-it.md)
+- [Postupy: Nastavení proměnné objektu tak, aby neodkazovala na žádnou instanci.](how-to-make-an-object-variable-not-refer-to-any-instance.md)
+- [Me, My, MyBase a MyClass](../../program-structure/me-my-mybase-and-myclass.md)

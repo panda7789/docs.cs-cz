@@ -7,34 +7,34 @@ f1_keywords:
 helpviewer_keywords:
 - BC40033
 ms.assetid: 060c4b08-798e-40f1-94cf-c05c524f1b8a
-ms.openlocfilehash: 68e1fb4f55d9f9b140f1b54cfde2bc5f60952dd2
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: e572189b958612bf9527c82ce702df3ab929a23f
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64592126"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84409397"
 ---
-# <a name="non-cls-compliant-membername-is-not-allowed-in-a-cls-compliant-interface"></a>Non-kompatibilní se Specifikací CLS \<membername > není povolené v rozhraní kompatibilním se Specifikací CLS
-Vlastnost, procedura nebo událost v rozhraní je označen jako `<CLSCompliant(True)>` samotným rozhraním, když je označena jako `<CLSCompliant(False)>` nebo není označen.  
+# <a name="non-cls-compliant-membername-is-not-allowed-in-a-cls-compliant-interface"></a>Člen \<membername> nekompatibilní se specifikací CLS není povolen v rozhraní kompatibilním se specifikací CLS.
+Vlastnost, procedura nebo událost v rozhraní je označena jako, `<CLSCompliant(True)>` když je samotné rozhraní označeno jako `<CLSCompliant(False)>` nebo není označeno.  
   
- V rámci rozhraní má být zajištěn soulad [jazyková nezávislost a jazykově nezávislé komponenty](../../../standard/language-independence-and-language-independent-components.md) (CLS), všechny její členy musí být kompatibilní.  
+ Aby rozhraní splňovalo [jazykovou nezávislost a součásti nezávislé na jazyce](../../../standard/language-independence-and-language-independent-components.md) (CLS), musí být všechny jeho členy kompatibilní.  
   
- Pokud použijete <xref:System.CLSCompliantAttribute> na programovací prvek, nastavíte atributu `isCompliant` buď parametr `True` nebo `False` k označení dodržování předpisů nebo při nedodržení předpisů. Neexistuje žádný výchozí hodnotou tohoto parametru, a je nutné zadat hodnotu.  
+ Použijete-li na <xref:System.CLSCompliantAttribute> programovací prvek, nastavíte `isCompliant` parametr atributu na hodnotu `True` nebo `False` k označení dodržování předpisů nebo nedodržení předpisů. Pro tento parametr neexistuje výchozí hodnota a je třeba uvést hodnotu.  
   
- Pokud se nevztahují <xref:System.CLSCompliantAttribute> na element, se považuje za jako nevyhovující.  
+ Pokud na prvek nepoužijete <xref:System.CLSCompliantAttribute> , bude považován za nekompatibilní.  
   
- Ve výchozím nastavení tato zpráva je upozornění. Informace o zobrazení nebo skrytí upozornění zpracování upozornění jako chyby, najdete v části [Konfigurace upozornění v jazyce Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic).  
+ Ve výchozím nastavení je tato zpráva upozornění. Informace o skrývání upozornění nebo zpracování upozornění jako chyb najdete v tématu [Konfigurace upozornění v Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic).  
   
  **ID chyby:** BC40033  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-- Pokud se vyžadovat dodržování specifikace CLS a máte kontrolu nad rozhraní zdrojového kódu, označte rozhraní jako `<CLSCompliant(True)>` Pokud všechny její členy jsou kompatibilní.  
+- Pokud požadujete kompatibilitu se specifikací CLS a máte kontrolu nad zdrojovým kódem rozhraní, označte rozhraní jako, `<CLSCompliant(True)>` Pokud jsou všechny jeho členy kompatibilní.  
   
-- Pokud vyžadovat dodržování specifikace CLS a nemáte kontrolu nad rozhraní zdrojového kódu, nebo pokud nesplňuje, aby vyhovovala, definujte tohoto člena v rámci jiné rozhraní.  
+- Pokud požadujete kompatibilitu se specifikací CLS a nemáte kontrolu nad zdrojovým kódem rozhraní nebo pokud nesplňuje předpisy, definujte tohoto člena v jiném rozhraní.  
   
-- Pokud budete vyžadovat, že tento člen zůstat v rámci svého aktuálního rozhraní, odeberte <xref:System.CLSCompliantAttribute> z jeho definice nebo označte ji jako `<CLSCompliant(False)>`.  
+- Pokud vyžadujete, aby tento člen zůstal v rámci aktuálního rozhraní, odeberte <xref:System.CLSCompliantAttribute> z jeho definice nebo ho označte jako `<CLSCompliant(False)>` .  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Příkaz Interface](../../../visual-basic/language-reference/statements/interface-statement.md)
+- [Interface – příkaz](../statements/interface-statement.md)

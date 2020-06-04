@@ -6,29 +6,29 @@ f1_keywords:
 helpviewer_keywords:
 - Option keyword [Visual Basic]
 ms.assetid: 6b2f41c4-2403-43b6-8a14-94a3775e5b47
-ms.openlocfilehash: 6ac0116b56fac7a5bfdc6545c8570317376791a1
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: f843955cc637ccdae091e207ed5d0aad24867e61
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353778"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84404327"
 ---
-# <a name="option-keyword-statement"></a>Option \<– klíčové slovo > příkaz
+# <a name="option-keyword-statement"></a>Option \<keyword> – příkaz
 Zavádí příkaz, který určuje možnost kompilátoru, která se vztahuje k celému zdrojovému souboru.  
   
 ## <a name="remarks"></a>Poznámky  
  Možnosti kompilátoru mohou určovat, zda všechny proměnné musí být explicitně deklarovány, zda mají být převody zúžení typu explicitní, nebo zda mají být řetězce porovnány jako text nebo jako binární množství.  
   
- Klíčové slovo `Option` lze použít v těchto kontextech:  
+ `Option`Klíčové slovo lze použít v těchto kontextech:  
   
- [Příkaz Option Compare](../../../visual-basic/language-reference/statements/option-compare-statement.md)  
+ [Option Compare – příkaz](option-compare-statement.md)  
   
- [Příkaz Option Explicit](../../../visual-basic/language-reference/statements/option-explicit-statement.md)  
+ [Option Explicit – příkaz](option-explicit-statement.md)  
   
- [Příkaz Option Infer](../../../visual-basic/language-reference/statements/option-infer-statement.md)  
+ [Option Infer – příkaz](option-infer-statement.md)  
   
- [Příkaz Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md)  
+ [Option Strict – příkaz](option-strict-statement.md)  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Klíčová slova](../../../visual-basic/language-reference/keywords/index.md)
+- [Klíčová slova](../keywords/index.md)

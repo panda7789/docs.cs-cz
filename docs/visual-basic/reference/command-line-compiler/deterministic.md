@@ -5,12 +5,12 @@ helpviewer_keywords:
 - deterministic compiler option [Visual Basic]
 - -deterministic compiler option [Visual Basic]
 - -deterministic compiler option [Visual Basic]
-ms.openlocfilehash: 9b611a72656bdd570eccec8a0585bf5ce6fa55f6
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 0cf9aceef54998f269e9e377fe5d0a48492969c0
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75716793"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84408683"
 ---
 # <a name="-deterministic"></a>-deterministic
 
@@ -44,13 +44,13 @@ Kompilátor považuje za účel determinismem následující vstupy:
   - Další soubory, které mohou používat analyzátory
 - Aktuální jazyková verze (pro jazyk, ve kterém se vytvářejí zprávy o diagnostice a výjimkách).
 - Výchozí kódování (nebo aktuální znaková stránka), pokud kódování není zadáno.
-- Existence, neexistence a obsah souborů v cestách pro hledání kompilátoru (určené například pomocí `-lib` nebo `-recurse`).
+- Existence, neexistence a obsah souborů v cestách pro hledání kompilátoru (určené například pomocí `-lib` nebo `-recurse` ).
 - Platforma CLR, na které je kompilátor spuštěn.
-- Hodnota `%LIBPATH%`, která může ovlivnit načítání závislostí analyzátoru.
+- Hodnota `%LIBPATH%` , která může ovlivnit načítání závislostí analyzátoru.
 
 Pokud jsou zdroje veřejně dostupné, lze použít deterministické kompilace k určení, zda binární soubor je zkompilován z důvěryhodného zdroje. Může být také užitečné v souvislém systému sestavení pro určení, zda jsou kroky sestavení závislé na změnách binárních souborů nutné provést.
 
 ## <a name="see-also"></a>Viz také
 
-- [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
-- [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
+- [Visual Basic Kompilátor příkazového řádku](index.md)
+- [Příkazové řádky ukázkové kompilace](sample-compilation-command-lines.md)

@@ -7,17 +7,17 @@ f1_keywords:
 helpviewer_keywords:
 - BC31122
 ms.assetid: 6911f0d1-641a-473b-906d-8ee5681194be
-ms.openlocfilehash: 169cb49cc5abc76b7c52785392d0083b81a99450
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0c5a4188fedf9685afdd1cde4c1de93a0b43b919
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61803880"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84409777"
 ---
 # <a name="custom-modifier-is-not-valid-on-events-declared-without-explicit-delegate-types"></a>Modifikátor 'Custom' není platný pro události deklarované bez explicitních typů delegátů.
-Na rozdíl od jiných vlastních událostí `Custom Event` deklarace vyžaduje `As` klauzule podle název události, které explicitně určuje typ delegáta pro událost.  
+Na rozdíl od nevlastní události `Custom Event` deklarace vyžaduje `As` klauzuli za názvem události, která explicitně určuje typ delegáta pro událost.  
   
- Non vlastní události může být definována buď pomocí `As` klauzule a explicitní typ delegáta nebo s parametrem seznamu bezprostředně za název události.  
+ Nevlastní události lze definovat buď pomocí `As` klauzule, explicitního typu delegáta, nebo se seznamem parametrů hned za názvem události.  
   
  **ID chyby:** BC31122  
   
@@ -25,23 +25,23 @@ Na rozdíl od jiných vlastních událostí `Custom Event` deklarace vyžaduje `
   
 1. Definujte delegáta se stejným seznamem parametrů jako vlastní událost.  
   
-     Například pokud `Custom Event` byl definovaný souborem `Custom Event Test(ByVal sender As Object, ByVal i As Integer)`, pak odpovídající delegáta by byl následující.  
+     Například, pokud `Custom Event` byla definována uživatelem `Custom Event Test(ByVal sender As Object, ByVal i As Integer)` , pak odpovídající delegát bude následující.  
   
      [!code-vb[VbVbalrEventError#18](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEventError/VB/VbVbalrEventError.vb#18)]  
   
-2. Nahraďte parametr seznam vlastních událostí pomocí `As` klauzule určující typ delegáta.  
+2. Nahraďte seznam parametrů vlastní události `As` klauzulí určující typ delegáta.  
   
-     Pokračujte v tomto příkladu `Custom Event` deklarace by být přepsán následujícím způsobem.  
+     Pokračování v příkladu `Custom Event` deklarace by se přepsala takto.  
   
      [!code-vb[VbVbalrEventError#19](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEventError/VB/VbVbalrEventError.vb#19)]  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu deklaruje `Custom Event` a určuje požadované `As` klauzule s typem delegáta.  
+ Tento příklad deklaruje `Custom Event` a Určuje požadovanou `As` klauzuli s typem delegáta.  
   
  [!code-vb[VbVbalrEventError#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEventError/VB/VbVbalrEventError.vb#2)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Příkaz Event](../../../visual-basic/language-reference/statements/event-statement.md)
-- [Příkaz Delegate](../../../visual-basic/language-reference/statements/delegate-statement.md)
-- [Události](../../../visual-basic/programming-guide/language-features/events/index.md)
+- [Event – příkaz](../statements/event-statement.md)
+- [Delegate – příkaz](../statements/delegate-statement.md)
+- [Události](../../programming-guide/language-features/events/index.md)

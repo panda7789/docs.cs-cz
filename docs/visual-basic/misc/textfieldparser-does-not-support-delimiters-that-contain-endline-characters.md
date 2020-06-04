@@ -1,26 +1,26 @@
 ---
-title: TextFieldParser nepodporuje oddělovače obsahující znaky ukončovacího
+title: TextFieldParser nepodporuje oddělovače obsahující EndLine objektu SourceLocation znaky.
 ms.date: 07/20/2015
 f1_keywords:
 - vbrTextFieldParser_EndCharsInDelimiter
 ms.assetid: 0701f3b6-635b-468e-b908-867df00dd5db
-ms.openlocfilehash: 1667310a7ad9790aed100dcbcbcb3a3fcef6389e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f2c88b656f6a2443f28da4b18465b08e39020e6c
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64620249"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84411880"
 ---
-# <a name="textfieldparser-does-not-support-delimiters-that-contain-endline-characters"></a>TextFieldParser nepodporuje oddělovače obsahující znaky ukončovacího
-Oddělovač, který obsahuje ukončovacího znaku není zadaný, ale `TextFieldParser` nepodporuje oddělovače obsahující znaky ukončovacího.  
+# <a name="textfieldparser-does-not-support-delimiters-that-contain-endline-characters"></a>TextFieldParser nepodporuje oddělovače obsahující EndLine objektu SourceLocation znaky.
+Byl zadán oddělovač, který obsahuje znak EndLine objektu SourceLocation, ale `TextFieldParser` nepodporuje oddělovače, které obsahují EndLine objektu SourceLocation znaky.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
 - Zadejte správný oddělovač.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [TextFieldParser.Delimiters Property](xref:Microsoft.VisualBasic.FileIO.TextFieldParser.Delimiters%2A)
-- [TextFieldParser.SetDelimiters Method](xref:Microsoft.VisualBasic.FileIO.TextFieldParser.SetDelimiters%2A)
-- [Analýza textových souborů pomocí objektu TextFieldParser](../../visual-basic/developing-apps/programming/drives-directories-files/parsing-text-files-with-the-textfieldparser-object.md)
-- [Objekt TextFieldParser](../../visual-basic/language-reference/objects/textfieldparser-object.md)
+- [TextFieldParser. oddělovače – vlastnost](xref:Microsoft.VisualBasic.FileIO.TextFieldParser.Delimiters%2A)
+- [TextFieldParser. SetDelimiters – metoda](xref:Microsoft.VisualBasic.FileIO.TextFieldParser.SetDelimiters%2A)
+- [Analýza textových souborů pomocí objektu TextFieldParser](../developing-apps/programming/drives-directories-files/parsing-text-files-with-the-textfieldparser-object.md)
+- [TextFieldParser – objekt](../language-reference/objects/textfieldparser-object.md)

@@ -1,23 +1,23 @@
 ---
-title: Argument '<argumentname>'nelze převést na typ'<typename>.
+title: Argument ' <argumentname> ' nelze převést na typ ' <typename> '.
 ms.date: 07/20/2015
 f1_keywords:
 - vbrArgument_InvalidValueType2
 ms.assetid: 5b83a9cf-296b-479f-aa17-df655b8f51a0
-ms.openlocfilehash: 3000633f838be18d3d243c91fa9256f70ec4b65f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 841aca9d57afaff423a7065e9c6d9fc64f14ea2a
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64659945"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84411353"
 ---
-# <a name="argument-argumentname-cannot-be-converted-to-type-typename"></a>Argument '\<název argumentu argumentname >' nelze převést na typ '\<typename > "
-Převod se pokusí změnit na typ, který není platný argument.  
+# <a name="argument-argumentname-cannot-be-converted-to-type-typename"></a>Argument ' \<argumentname> ' nelze převést na typ ' \<typename> '.
+Převod se pokusí změnit argument na neplatnou hodnotu typu.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-- Změňte typ, který je platný.  
+- Změňte typ na platný.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Převodní funkce](../../visual-basic/language-reference/functions/conversion-functions.md)
+- [Převodní funkce](../language-reference/functions/conversion-functions.md)

@@ -10,23 +10,23 @@ helpviewer_keywords:
 - Using statement [Visual Basic], Using...End Using
 - Using block
 ms.assetid: 8be2b239-8090-419b-8e7e-bcaa75b0ecc8
-ms.openlocfilehash: c493051050442597196ba484fb9ce8e99249dbb7
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: dd15c6746628f45b072d46eea40051ed9afb7921
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353948"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84403495"
 ---
 # <a name="how-to-dispose-of-a-system-resource-visual-basic"></a>Postupy: Odstranění systémového prostředku (Visual Basic)
-Můžete použít `Using` blok k zajištění toho, aby systém odstranil prostředek, když váš kód ukončuje blok. To je užitečné v případě, že používáte systémový prostředek, který spotřebovává velké množství paměti, nebo že jiné komponenty mají být také používány.  
+Blok můžete použít `Using` k zajištění, že systém uvolní prostředek, když váš kód ukončuje blok. To je užitečné v případě, že používáte systémový prostředek, který spotřebovává velké množství paměti, nebo že jiné komponenty mají být také používány.  
   
 ### <a name="to-dispose-of-a-database-connection-when-your-code-is-finished-with-it"></a>Vyřazení databázového připojení, když je kód dokončen  
   
-1. Ujistěte se, že jste zahrnuli příslušný [příkaz Imports (obor názvů a typ .NET)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md) pro připojení k databázi na začátku zdrojového souboru (v tomto případě <xref:System.Data.SqlClient>).  
+1. Ujistěte se, že jste zahrnuli příslušný [příkaz Imports (obor názvů a typ .NET)](../../../language-reference/statements/imports-statement-net-namespace-and-type.md) pro připojení k databázi na začátku zdrojového souboru (v tomto případě <xref:System.Data.SqlClient> ).  
   
-2. Vytvořte `Using` blok s příkazy `Using` a `End Using`. Uvnitř bloku vložte kód, který se zabývá připojením k databázi.  
+2. Vytvořte `Using` blok s `Using` `End Using` příkazy a. Uvnitř bloku vložte kód, který se zabývá připojením k databázi.  
   
-3. Deklarujte připojení a vytvořte jeho instanci jako součást příkazu `Using`.  
+3. Deklarujte připojení a vytvořte jeho instanci jako součást `Using` příkazu.  
   
     ```vb  
     ' Insert the following line at the beginning of your source file.  
@@ -40,16 +40,16 @@ Můžete použít `Using` blok k zajištění toho, aby systém odstranil prost�
   
      Systém uvolní prostředek bez ohledu na to, jakým způsobem ukončujete blok, včetně případu neošetřené výjimky.  
   
-     Všimněte si, že nemůžete získat přístup k `sqc` mimo blok `Using`, protože jeho rozsah je omezen na blok.  
+     Všimněte si, že nemůžete získat přístup `sqc` z vnějšího `Using` bloku, protože jeho rozsah je omezen na blok.  
   
-     Stejnou techniku můžete použít pro systémový prostředek, jako je například popisovač souboru nebo Obálka COM. `Using` blok použijete, pokud chcete mít jistotu, že je prostředek k dispozici pro jiné součásti po ukončení bloku `Using`.  
+     Stejnou techniku můžete použít pro systémový prostředek, jako je například popisovač souboru nebo Obálka COM. Blok můžete použít, `Using` Pokud chcete mít jistotu, že je prostředek k dispozici pro jiné součásti po ukončení `Using` bloku.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Data.SqlClient.SqlConnection>
-- [Tok řízení](../../../../visual-basic/programming-guide/language-features/control-flow/index.md)
-- [Rozhodovací struktury](../../../../visual-basic/programming-guide/language-features/control-flow/decision-structures.md)
-- [Struktury smyčky](../../../../visual-basic/programming-guide/language-features/control-flow/loop-structures.md)
-- [Ostatní řídicí struktury](../../../../visual-basic/programming-guide/language-features/control-flow/other-control-structures.md)
-- [Vnořené řídicí struktury](../../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md)
-- [Příkaz Using](../../../../visual-basic/language-reference/statements/using-statement.md)
+- [Tok řízení](index.md)
+- [Struktury rozhodování](decision-structures.md)
+- [Struktury smyčky](loop-structures.md)
+- [Ostatní řídicí struktury](other-control-structures.md)
+- [Vnořené řídicí struktury](nested-control-structures.md)
+- [Using – příkaz](../../../language-reference/statements/using-statement.md)

@@ -7,27 +7,27 @@ f1_keywords:
 helpviewer_keywords:
 - BC30220
 ms.assetid: 6be0d61c-f2f9-4f9b-ab90-8871a0d7206d
-ms.openlocfilehash: 3fe164d868ee7bde0e687e1d592f4d5a17565aea
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 27be97ba2930791bcb9012c824bc418a0089b037
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61803633"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84409709"
 ---
-# <a name="delegate-class-classname-has-no-invoke-method-so-an-expression-of-this-type-cannot-be-the-target-of-a-method-call"></a>Třída delegáta\<classname >' neobsahuje metodu Invoke, a proto výraz tohoto typu nemůže být cílem volání metody
-Volání `Invoke` prostřednictvím delegáta se nezdařila, protože `Invoke` není implementované u třídy delegáta.  
+# <a name="delegate-class-classname-has-no-invoke-method-so-an-expression-of-this-type-cannot-be-the-target-of-a-method-call"></a>Třída delegáta '\<classname>' neobsahuje metodu Invoke, a proto výraz tohoto typu nemůže být cílem volání metody.
+Volání `Invoke` prostřednictvím delegáta se nezdařilo, protože není `Invoke` implementováno ve třídě Delegate.  
   
  **ID chyby:** BC30220  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1. Ujistěte se, že byla vytvořena instance třídy delegáta s `Dim` příkazu a, postup byl přiřazen k instanci delegáta s `AddressOf` operátor.  
+1. Zajistěte, aby byla instance třídy Delegate vytvořená `Dim` příkazem a aby byla procedura přiřazena k instanci delegáta s `AddressOf` operátorem.  
   
-2. Vyhledejte kód, který implementuje třídu delegáta a ujistěte se, že implementuje `Invoke` postup.  
+2. Vyhledejte kód, který implementuje třídu delegáta, a ujistěte se, že implementuje `Invoke` proceduru.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Delegáti](../../../visual-basic/programming-guide/language-features/delegates/index.md)
-- [Příkaz Delegate](../../../visual-basic/language-reference/statements/delegate-statement.md)
-- [Operátor AddressOf](../../../visual-basic/language-reference/operators/addressof-operator.md)
-- [Příkaz Dim](../../../visual-basic/language-reference/statements/dim-statement.md)
+- [Delegáti](../../programming-guide/language-features/delegates/index.md)
+- [Delegate – příkaz](../statements/delegate-statement.md)
+- [AddressOf – operátor](../operators/addressof-operator.md)
+- [Dim – příkaz](../statements/dim-statement.md)

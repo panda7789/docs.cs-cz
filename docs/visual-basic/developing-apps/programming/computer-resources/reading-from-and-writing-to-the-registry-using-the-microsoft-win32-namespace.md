@@ -4,22 +4,22 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - registry [Visual Basic]
 ms.assetid: 4a0dcce0-c27b-4199-baa8-ee4528da6a56
-ms.openlocfilehash: 841344186b8e56717b81e90397aabc608bdc6dab
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 10431b1ad40ed320541a22fb46cc8db6dbb775b0
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74345488"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84360069"
 ---
 # <a name="reading-from-and-writing-to-the-registry-using-the-microsoftwin32-namespace-visual-basic"></a>Čtení z registru a zápis do něj s použitím oboru názvů Microsoft.Win32 (Visual Basic)
 
-I `My.Computer.Registry` když by měl pokrývat vaše základní potřeby při programování v registru, můžete také použít <xref:Microsoft.Win32.Registry> třídy <xref:Microsoft.Win32.RegistryKey> a v <xref:Microsoft.Win32> oboru názvů .NET Framework.  
+I když `My.Computer.Registry` by měl pokrývat vaše základní potřeby při programování v registru, můžete také použít <xref:Microsoft.Win32.Registry> <xref:Microsoft.Win32.RegistryKey> třídy a v <xref:Microsoft.Win32> oboru názvů .NET Framework.  
   
 ## <a name="keys-in-the-registry-class"></a>Klíče v třídě registru  
 
- <xref:Microsoft.Win32.Registry> Třída poskytuje základní klíče registru, které lze použít pro přístup k podklíčům a jejich hodnotám. Základní klíče jsou jen pro čtení. Následující tabulka uvádí a popisuje sedm klíčů vystavených <xref:Microsoft.Win32.Registry> třídou.  
+ <xref:Microsoft.Win32.Registry>Třída poskytuje základní klíče registru, které lze použít pro přístup k podklíčům a jejich hodnotám. Základní klíče jsou jen pro čtení. Následující tabulka uvádí a popisuje sedm klíčů vystavených <xref:Microsoft.Win32.Registry> třídou.  
   
-|**Zkrat**|**Popis**|  
+|**Klíč**|**Popis**|  
 |-------------|---------------------|  
 |<xref:Microsoft.Win32.Registry.ClassesRoot>|Definuje typy dokumentů a vlastnosti, které jsou k těmto typům přidruženy.|  
 |<xref:Microsoft.Win32.Registry.CurrentConfig>|Obsahuje informace o konfiguraci hardwaru, které nejsou specifické pro uživatele.|  
@@ -30,7 +30,7 @@ I `My.Computer.Registry` když by měl pokrývat vaše základní potřeby při 
 |<xref:Microsoft.Win32.Registry.Users>|Obsahuje informace o výchozích uživatelských preferencích.|  
   
 > [!IMPORTANT]
-> Je bezpečnější zapsat data do aktuálního uživatele (<xref:Microsoft.Win32.Registry.CurrentUser>) než do místního počítače (<xref:Microsoft.Win32.Registry.LocalMachine>). Podmínka, která se obvykle označuje jako "squatting", nastane, když se vytvářený klíč dřív vytvořil jiným, možná škodlivým procesem. Aby k tomu nedošlo, použijte metodu, například <xref:Microsoft.Win32.RegistryKey.GetValue%2A>, která vrátí `Nothing` , pokud klíč ještě neexistuje.  
+> Je bezpečnější zapsat data do aktuálního uživatele ( <xref:Microsoft.Win32.Registry.CurrentUser> ) než do místního počítače ( <xref:Microsoft.Win32.Registry.LocalMachine> ). Podmínka, která se obvykle označuje jako "squatting", nastane, když se vytvářený klíč dřív vytvořil jiným, možná škodlivým procesem. Aby k tomu nedošlo, použijte metodu, například <xref:Microsoft.Win32.RegistryKey.GetValue%2A> , která vrátí, `Nothing` Pokud klíč ještě neexistuje.  
   
 ## <a name="reading-a-value-from-the-registry"></a>Čtení hodnoty z registru  
 
@@ -47,6 +47,6 @@ I `My.Computer.Registry` když by měl pokrývat vaše základní potřeby při 
 - <xref:System.SystemException>
 - <xref:System.ApplicationException>
 - <xref:Microsoft.VisualBasic.MyServices.RegistryProxy>
-- [Příkaz Try...Catch...Finally](../../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)
-- [Čtení z registru a zápis do něj](../../../../visual-basic/developing-apps/programming/computer-resources/reading-from-and-writing-to-the-registry.md)
-- [Zabezpečení a registr](../../../../visual-basic/developing-apps/programming/computer-resources/security-and-the-registry.md)
+- [Try...Catch....Finally – příkaz](../../../language-reference/statements/try-catch-finally-statement.md)
+- [Čtení z registru a zápis do něj](reading-from-and-writing-to-the-registry.md)
+- [Zabezpečení a registr](security-and-the-registry.md)

@@ -14,12 +14,12 @@ helpviewer_keywords:
 - math operators [Visual Basic]
 - order of precedence
 ms.assetid: cbbdb282-f572-458e-a520-008a675f8063
-ms.openlocfilehash: 318fcc3f35276ba0b2061ba9677c5fde29429f6f
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: eef6314f5fc1f5a7fffa7997559f697130f6f755
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74348280"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84401443"
 ---
 # <a name="operator-precedence-in-visual-basic"></a>Priorita operátorů v jazyce Visual Basic
 Když ve výrazu dojde k několika operacím, každá část je vyhodnocena a vyřešena v předem určeném pořadí s názvem *Priorita operátora*.
@@ -42,40 +42,40 @@ Když ve výrazu dojde k několika operacím, každá část je vyhodnocena a vy
  Await
 
 ### <a name="arithmetic-and-concatenation-operators"></a>Operátory aritmetického operátoru and zřetězení
- Umocnění (`^`)
+ Umocnění ( `^` )
 
- Unární identita a negace (`+`, `–`)
+ Unární identita a negace ( `+` , `–` )
 
- Násobení a dělení s plovoucí desetinnou čárkou (`*`, `/`)
+ Násobení a dělení plovoucí desetinné čárky ( `*` , `/` )
 
- Dělení na celé číslo (`\`)
+ Celočíselné dělení ( `\` )
 
- Modulární aritmetická operace (`Mod`)
+ Modulární aritmetická operace ( `Mod` )
 
- Sčítání a odčítání (`+`, `–`)
+ Sčítání a odčítání ( `+` , `–` )
 
- Zřetězení řetězců (`&`)
+ Zřetězení řetězců ( `&` )
 
- Aritmetický posun (`<<`, `>>`)
+ Aritmetický přenosový posun ( `<<` , `>>` )
 
 ### <a name="comparison-operators"></a>Operátory porovnání
- Všechny operátory porovnání (`=`, `<>`, `<`, `<=`, `>`, `>=`, `Is`, `IsNot`, `Like`, `TypeOf`...`Is`)
+ Všechny operátory porovnání ( `=` , `<>` , `<` , `<=` , `>` , `>=` , `Is` , `IsNot` , `Like` , `TypeOf` ... `Is` )
 
 ### <a name="logical-and-bitwise-operators"></a>Logické a bitové operátory
- Negace (`Not`)
+ Negace ( `Not` )
 
- Spojení (`And``AndAlso`)
+ Spojení ( `And` , `AndAlso` )
 
- Celková disjunkace (`Or`, `OrElse`)
+ Celková odvýšení ( `Or` , `OrElse` )
 
- Exkluzivní disjunkování (`Xor`)
+ Exkluzivní disjunkení ( `Xor` )
 
 ### <a name="comments"></a>Komentáře
- Operátor `=` je pouze operátor porovnání rovnosti, nikoli operátor přiřazení.
+ `=`Operátor je pouze operátor porovnání rovnosti, nikoli operátor přiřazení.
 
- Operátor zřetězení řetězce (`&`) není aritmetickým operátorem, ale v prioritě je seskupen s aritmetickými operátory.
+ Operátor zřetězení řetězce ( `&` ) není aritmetickým operátorem, ale v prioritě je seskupen s aritmetickými operátory.
 
- Operátory `Is` a `IsNot` jsou operátory porovnání odkazů na objekty. Nerovnávají hodnoty dvou objektů; kontrolují pouze k určení, zda dvě proměnné objektu odkazují na stejnou instanci objektu.
+ `Is`Operátory a `IsNot` jsou operátory porovnání odkazů na objekty. Nerovnávají hodnoty dvou objektů; kontrolují pouze k určení, zda dvě proměnné objektu odkazují na stejnou instanci objektu.
 
 ## <a name="associativity"></a>Asociativita
  Pokud se operátory stejné priority zobrazí společně ve výrazu, například násobení a dělení, kompilátor vyhodnotí každou operaci jako v případě, že ji narazí zleva doprava. Toto dokládá následující příklad.
@@ -86,7 +86,7 @@ Dim n2 As Integer = (96 / 8) / 4
 Dim n3 As Integer = 96 / (8 / 4)
 ```
 
- První výraz vyhodnotí divizi 96/8 (což má za následek 12) a potom rozdělením 12/4, které má za následek tři. Vzhledem k tomu, že kompilátor vyhodnocuje operace pro `n1` zleva doprava, je hodnocení stejné, pokud je tato objednávka explicitně určena pro `n2`. `n1` i `n2` mají výsledek tři. Naproti tomu `n3` má výsledek 48, protože kulaté závorky vynutí, aby kompilátor vyhodnotil 8/4 jako první.
+ První výraz vyhodnotí divizi 96/8 (což má za následek 12) a potom rozdělením 12/4, které má za následek tři. Vzhledem k tomu, že kompilátor vyhodnocuje operace `n1` od zleva doprava, je vyhodnocení stejné, pokud je pořadí explicitně určeno pro `n2` . `n1`A `n2` mají výsledek tři. Naproti tomu `n3` má výsledek 48, protože kulaté závorky vynutí, aby kompilátor vyhodnotil 8/4 jako první.
 
  Z důvodu tohoto chování jsou operátory označeny jako *asociativní* v Visual Basic.
 
@@ -111,13 +111,13 @@ g = (a - (b + c)) / (d * e)
 ' The preceding line sets g to 0.5.
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [= – operátor](../../../visual-basic/language-reference/operators/assignment-operator.md)
-- [Operátor Is](../../../visual-basic/language-reference/operators/is-operator.md)
-- [Operátor IsNot](../../../visual-basic/language-reference/operators/isnot-operator.md)
-- [Operátor Like](../../../visual-basic/language-reference/operators/like-operator.md)
-- [Operátor Typeof](../../../visual-basic/language-reference/operators/typeof-operator.md)
-- [Operátor Await](../../../visual-basic/language-reference/operators/await-operator.md)
-- [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
-- [Operátory a výrazy](../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)
+- [= – Operátor](assignment-operator.md)
+- [Is – operátor](is-operator.md)
+- [IsNot – operátor](isnot-operator.md)
+- [Like – operátor](like-operator.md)
+- [TypeOf – operátor](typeof-operator.md)
+- [Await – operátor](await-operator.md)
+- [Operátory uvedené podle funkce](operators-listed-by-functionality.md)
+- [Operátory a výrazy](../../programming-guide/language-features/operators-and-expressions/index.md)

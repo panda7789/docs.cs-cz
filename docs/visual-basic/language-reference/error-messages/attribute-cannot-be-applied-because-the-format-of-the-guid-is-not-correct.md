@@ -7,16 +7,16 @@ f1_keywords:
 helpviewer_keywords:
 - BC32500
 ms.assetid: 6fa34c55-368e-4d7d-b488-07a3fffe045f
-ms.openlocfilehash: f7b6e42480075666ce9f7e8fc6966bd4bb6b888a
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 554c38c8f44999feba4cfa04d58ce2f07e955eb1
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73977319"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84409917"
 ---
-# <a name="attribute-cannot-be-applied-because-the-format-of-the-guid-number-is-not-correct"></a>atribut\<atributu > nelze použít, protože formát identifikátoru GUID\<číslo > není správný.
+# <a name="attribute-cannot-be-applied-because-the-format-of-the-guid-number-is-not-correct"></a>Atribut '\<attribute>' nelze použít, protože formát čísla GUID '\<number>' není správný.
 
-`COMClassAttribute` blok atributu Určuje globálně jedinečný identifikátor (GUID), který nevyhovuje správnému formátu identifikátoru GUID. `COMClassAttribute` používá identifikátory GUID k jednoznačné identifikaci třídy, rozhraní a události vytvoření.  
+`COMClassAttribute`Blok atributu Určuje globálně jedinečný identifikátor (GUID), který nevyhovuje správnému formátu identifikátoru GUID. `COMClassAttribute`používá identifikátory GUID k jednoznačné identifikaci třídy, rozhraní a události vytvoření.  
   
  Identifikátor GUID se skládá z 16 bajtů, z nichž první osm jsou číslice a poslední osm jsou binární. Vygeneruje se pomocí nástrojů Microsoftu, jako je Uuidgen. exe, a zaručuje, že budou jedinečné v prostoru a v čase.  
   
@@ -26,9 +26,9 @@ ms.locfileid: "73977319"
   
 1. Určete správný identifikátor GUID nebo identifikátory GUID, které jsou nezbytné k identifikaci objektu COM.  
   
-2. Zajistěte, aby byly správně zkopírovány řetězce GUID prezentované do bloku atributu `COMClassAttribute`.  
+2. Zajistěte, aby byly řetězce GUID prezentované `COMClassAttribute` bloku atributu správně zkopírovány.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Guid>
-- [Přehled atributů](../../../visual-basic/programming-guide/concepts/attributes/index.md)
+- [Přehled atributů](../../programming-guide/concepts/attributes/index.md)

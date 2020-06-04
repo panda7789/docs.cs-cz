@@ -5,22 +5,22 @@ helpviewer_keywords:
 - delegates [Visual Basic]
 - Visual Basic code, delegates
 ms.assetid: 410b60dc-5e60-4ec0-bfae-426755a2ee28
-ms.openlocfilehash: 15b4cb0a038429c5fe67d3e013818a7a2170abcc
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 1f161248fa04f8fab0e5335413e69ca565732f71
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74345237"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84410680"
 ---
 # <a name="delegates-visual-basic"></a>Delegáti (Visual Basic)
 
-Delegáti jsou objekty, které odkazují na metody. Jsou někdy popsány jako *ukazatele funkce bezpečného typu* , protože jsou podobné ukazatelům funkcí použitým v jiných programovacích jazycích. Ale na rozdíl od ukazatelů na funkce Visual Basic Delegáti jsou odkazový typ založený na třídě <xref:System.Delegate?displayProperty=nameWithType>. Delegáti mohou odkazovat jak na sdílené metody – metody, které lze volat bez konkrétní instance třídy – a metody instance.
+Delegáti jsou objekty, které odkazují na metody. Jsou někdy popsány jako *ukazatele funkce bezpečného typu* , protože jsou podobné ukazatelům funkcí použitým v jiných programovacích jazycích. Ale na rozdíl od ukazatelů na funkce Visual Basic Delegáti jsou odkazový typ založený na třídě <xref:System.Delegate?displayProperty=nameWithType> . Delegáti mohou odkazovat jak na sdílené metody – metody, které lze volat bez konkrétní instance třídy – a metody instance.
 
 ## <a name="delegates-and-events"></a>Delegáti a události
 
-Delegáti jsou užitečné v situacích, kdy potřebujete prostředník mezi volající procedurou a procedurou, která je volána. Například může být vhodné, aby objekt, který vyvolává události, mohl volat různé obslužné rutiny událostí za různých okolností. Objekt, který vyvolává události, bohužel nemůže znát před časem, který obslužná rutina události zpracovává konkrétní událost. Visual Basic umožňuje dynamicky přidružit obslužné rutiny událostí k událostem vytvořením delegáta za vás při použití příkazu `AddHandler`. V době běhu delegát přesměruje volání příslušné obslužné rutiny události.
+Delegáti jsou užitečné v situacích, kdy potřebujete prostředník mezi volající procedurou a procedurou, která je volána. Například může být vhodné, aby objekt, který vyvolává události, mohl volat různé obslužné rutiny událostí za různých okolností. Objekt, který vyvolává události, bohužel nemůže znát před časem, který obslužná rutina události zpracovává konkrétní událost. Visual Basic umožňuje dynamicky přidružit obslužné rutiny událostí s událostmi tím, že při použití příkazu vytvoří delegáta pro vás `AddHandler` . V době běhu delegát přesměruje volání příslušné obslužné rutiny události.
 
-I když můžete vytvořit vlastní delegáty, ve většině případů Visual Basic vytvoří delegáta a postará o podrobnosti. Například příkaz `Event` implicitně definuje třídu delegáta s názvem `<EventName>EventHandler` jako vnořenou třídu třídy obsahující příkaz `Event` a se stejnou signaturou jako událost. Příkaz `AddressOf` implicitně vytvoří instanci delegáta, která odkazuje na konkrétní proceduru. Následující dva řádky kódu jsou ekvivalentní. V prvním řádku se zobrazí explicitní vytvoření instance `EventHandler`s odkazem na metodu `Button1_Click` jako argumentu. Druhým řádkem je pohodlnější způsob, jak to provést.
+I když můžete vytvořit vlastní delegáty, ve většině případů Visual Basic vytvoří delegáta a postará o podrobnosti. Například `Event` příkaz implicitně definuje třídu delegáta s názvem `<EventName>EventHandler` jako vnořenou třídu třídy obsahující `Event` příkaz a se stejnou signaturou jako událost. `AddressOf`Příkaz implicitně vytvoří instanci delegáta, která odkazuje na konkrétní proceduru. Následující dva řádky kódu jsou ekvivalentní. Na prvním řádku se zobrazí explicitní vytvoření instance `EventHandler` s odkazem na metodu `Button1_Click` odeslanou jako argument. Druhým řádkem je pohodlnější způsob, jak to provést.
 
 [!code-vb[VbVbalrDelegates#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDelegates/VB/Class1.vb#6)]
 
@@ -50,23 +50,23 @@ Chcete-li zadat odkaz na metodu, použijte následující syntaxi:
 
 `AddressOf` [`expression`.]`methodName`
 
-Typ doby kompilace `expression` musí být název třídy nebo rozhraní, které obsahuje metodu zadaného názvu, jejíž signatura odpovídá signatuře třídy Delegate. `methodName` může být buď sdílená metoda, nebo metoda instance. `methodName` není volitelná, i když vytvoříte delegáta pro výchozí metodu třídy.
+Typ doby kompilace `expression` musí být název třídy nebo rozhraní, které obsahuje metodu zadaného názvu, jejíž signatura odpovídá signatuře třídy delegáta. `methodName`Může se jednat o sdílenou metodu nebo metodu instance. `methodName`Není volitelná, i když vytvoříte delegáta pro výchozí metodu třídy.
 
 Chcete-li zadat výraz lambda, použijte následující syntaxi:
 
-`Function` ([`parm` as `type``parm2` jako `type2`,...]) `expression`
+`Function`([ `parm` As `type` , `parm2` as `type2` ,...])`expression`
 
-Následující příklad ukazuje `AddressOf` i lambda výrazy, které slouží k určení odkazu pro delegáta.
+Následující příklad ukazuje jak `AddressOf` a lambda výrazy, které slouží k určení odkazu pro delegáta.
 
 [!code-vb[VbVbalrDelegates#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDelegates/VB/Class2.vb#15)]
 
-Signatura funkce musí odpovídat typu delegáta. Další informace o výrazech lambda naleznete v tématu [lambda Expressions](../../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md). Další příklady výrazů lambda a `AddressOf` přiřazení delegátům naleznete v tématu [odlehčený převod delegáta](../../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md).
+Signatura funkce musí odpovídat typu delegáta. Další informace o výrazech lambda naleznete v tématu [lambda Expressions](../procedures/lambda-expressions.md). Další příklady výrazů lambda a `AddressOf` přiřazení delegátům naleznete v tématu [odlehčený převod delegáta](relaxed-delegate-conversion.md).
 
 ## <a name="related-topics"></a>Související témata
 
-|Název|Popis|
+|Nadpis|Popis|
 |-----------|-----------------|
-|[Postupy: Volání metody delegáta](../../../../visual-basic/programming-guide/language-features/delegates/how-to-invoke-a-delegate-method.md)|Poskytuje příklad, který ukazuje, jak přidružit metodu k delegátovi a následně tuto metodu vyvolat prostřednictvím delegáta.|
-|[Postupy: Předání procedur jinému postupu v Visual Basic](../../../../visual-basic/programming-guide/language-features/delegates/how-to-pass-procedures-to-another-procedure.md)|Ukazuje, jak použít delegáty k předání jednoho postupu jinému postupu.|
-|[Volný převod delegáta](../../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md)|Popisuje, jak můžete přiřadit vlastníky a funkce delegátům nebo obslužným rutinám, i když jejich signatury nejsou stejné.|
-|[Události](../../../../visual-basic/programming-guide/language-features/events/index.md)|Poskytuje přehled událostí v Visual Basic.|
+|[Postupy: Volání metody delegáta](how-to-invoke-a-delegate-method.md)|Poskytuje příklad, který ukazuje, jak přidružit metodu k delegátovi a následně tuto metodu vyvolat prostřednictvím delegáta.|
+|[Postupy: Předání procedur jiné proceduře v jazyce Visual Basic](how-to-pass-procedures-to-another-procedure.md)|Ukazuje, jak použít delegáty k předání jednoho postupu jinému postupu.|
+|[Volný převod delegáta](relaxed-delegate-conversion.md)|Popisuje, jak můžete přiřadit vlastníky a funkce delegátům nebo obslužným rutinám, i když jejich signatury nejsou stejné.|
+|[Události](../events/index.md)|Poskytuje přehled událostí v Visual Basic.|
