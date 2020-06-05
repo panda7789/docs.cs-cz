@@ -2,12 +2,12 @@
 title: Kovariance a kontravariance
 ms.date: 07/20/2015
 ms.assetid: 59224c46-9931-466b-8c6e-3648c3e609c6
-ms.openlocfilehash: a75970d98890cb1fb363d4672bd90d376bccf89c
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 11dd71a8cfde12b7af1de79e3f5a095f79d8aa6e
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74352150"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84400627"
 ---
 # <a name="covariance-and-contravariance-visual-basic"></a>Kovariance a kontravariance (Visual Basic)
 
@@ -48,7 +48,7 @@ Dim array() As Object = New String(10) {}
 ' array(0) = 10
 ```
 
-Kovariance a podpora kontravariance pro skupiny metod umožňuje porovnávací signatury metod s typy delegátů. To vám umožňuje přiřadit delegáty nejen metody, které mají odpovídající signatury, ale také metody, které vracejí více odvozené typy (kovariance), nebo které přijímají parametry, které mají méně odvozené typy (kontravariance), než je určeno typem delegáta. Další informace naleznete v tématu [Variance v delegátech (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md) a [použití variance v delegátech (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-in-delegates.md).
+Kovariance a podpora kontravariance pro skupiny metod umožňuje porovnávací signatury metod s typy delegátů. To vám umožňuje přiřadit delegáty nejen metody, které mají odpovídající signatury, ale také metody, které vracejí více odvozené typy (kovariance), nebo které přijímají parametry, které mají méně odvozené typy (kontravariance), než je určeno typem delegáta. Další informace naleznete v tématu [Variance v delegátech (Visual Basic)](variance-in-delegates.md) a [použití variance v delegátech (Visual Basic)](using-variance-in-delegates.md).
 
 Následující příklad kódu ukazuje kovariance a podporu kontravariance pro skupiny metod.
 
@@ -79,7 +79,7 @@ Shared Sub Test()
 End Sub
 ```
 
-V .NET Framework 4 nebo novější Visual Basic podporuje kovarianci a kontravariance v obecných rozhraních a delegátech a povoluje implicitní převod parametrů obecného typu. Další informace najdete v tématu [Variance v obecných rozhraních (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md) a [Variance v delegátech (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md).
+V .NET Framework 4 nebo novější Visual Basic podporuje kovarianci a kontravariance v obecných rozhraních a delegátech a povoluje implicitní převod parametrů obecného typu. Další informace najdete v tématu [Variance v obecných rozhraních (Visual Basic)](variance-in-generic-interfaces.md) a [Variance v delegátech (Visual Basic)](variance-in-delegates.md).
 
 Následující příklad kódu ukazuje implicitní převod odkazu pro Obecná rozhraní.
 
@@ -88,15 +88,15 @@ Dim strings As IEnumerable(Of String) = New List(Of String)
 Dim objects As IEnumerable(Of Object) = strings
 ```
 
-Obecné rozhraní nebo delegát se nazývá *typ variant* , pokud jsou jeho obecné parametry deklarovány kovariantní nebo kontravariantní. Visual Basic umožňuje vytvořit vlastní variantní rozhraní a delegáty. Další informace najdete v tématu [vytváření variantních obecných rozhraní (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/creating-variant-generic-interfaces.md) a [Variance v delegátech (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md).
+Obecné rozhraní nebo delegát se nazývá *typ variant* , pokud jsou jeho obecné parametry deklarovány kovariantní nebo kontravariantní. Visual Basic umožňuje vytvořit vlastní variantní rozhraní a delegáty. Další informace najdete v tématu [vytváření variantních obecných rozhraní (Visual Basic)](creating-variant-generic-interfaces.md) a [Variance v delegátech (Visual Basic)](variance-in-delegates.md).
 
 ## <a name="related-topics"></a>Související témata
 
-|Název|Popis|
+|Nadpis|Popis|
 |-----------|-----------------|
-|[Variance v obecných rozhraních (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md)|Popisuje kovarianci a kontravariance v obecných rozhraních a poskytuje seznam variantních obecných rozhraní v .NET Framework.|
-|[Vytváření variantních obecných rozhraní (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/creating-variant-generic-interfaces.md)|Ukazuje, jak vytvořit vlastní variantní rozhraní.|
-|[Použití variance v rozhraních pro obecné kolekce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-in-interfaces-for-generic-collections.md)|Ukazuje, jak by podpora kovariance a kontravariance v rozhraních <xref:System.Collections.Generic.IEnumerable%601> a <xref:System.IComparable%601> mohla pomoci znovu použít kód.|
-|[Variance v delegátech (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md)|Popisuje kovarianci a kontravariance v obecných a neobecných delegátech a poskytuje seznam variant obecných delegátů v .NET Framework.|
-|[Použití variance v delegátech (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-in-delegates.md)|Ukazuje, jak použít kovarianci a podporu kontravariance v neobecných delegátech pro porovnávání signatur metod s typy delegátů.|
-|[Použití odchylky pro obecné delegáty Func a Action (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md)|Ukazuje, jak je podpora kovariance a kontravariance v `Func` a `Action` Delegáti vám pomohou znovu použít kód.|
+|[Variance v obecných rozhraních (Visual Basic)](variance-in-generic-interfaces.md)|Popisuje kovarianci a kontravariance v obecných rozhraních a poskytuje seznam variantních obecných rozhraní v .NET Framework.|
+|[Vytváření variantních obecných rozhraní (Visual Basic)](creating-variant-generic-interfaces.md)|Ukazuje, jak vytvořit vlastní variantní rozhraní.|
+|[Použití variance v rozhraních pro obecné kolekce (Visual Basic)](using-variance-in-interfaces-for-generic-collections.md)|Ukazuje, jak se podpora kovariance a kontravariance <xref:System.Collections.Generic.IEnumerable%601> v <xref:System.IComparable%601> rozhraních a může pomoci znovu použít kód.|
+|[Variance v delegátech (Visual Basic)](variance-in-delegates.md)|Popisuje kovarianci a kontravariance v obecných a neobecných delegátech a poskytuje seznam variant obecných delegátů v .NET Framework.|
+|[Použití variance v delegátech (Visual Basic)](using-variance-in-delegates.md)|Ukazuje, jak použít kovarianci a podporu kontravariance v neobecných delegátech pro porovnávání signatur metod s typy delegátů.|
+|[Použití odchylky pro obecné delegáty Func a Action (Visual Basic)](using-variance-for-func-and-action-generic-delegates.md)|Ukazuje, jak se podpora kovariance a kontravariance `Func` v `Action` delegátech a může pomoci znovu použít kód.|

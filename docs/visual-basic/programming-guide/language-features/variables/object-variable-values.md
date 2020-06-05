@@ -7,35 +7,35 @@ helpviewer_keywords:
 - data types [Visual Basic], object variable
 - variables [Visual Basic], object
 ms.assetid: 31555704-58a3-49f1-9a0a-6421f605664f
-ms.openlocfilehash: 8b93063d2d97802b1a7fdbc93e01040ff3337753
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 1dd3e8cd68086fe116daf0678a1a19881f1ae9c3
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74351803"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84410345"
 ---
 # <a name="object-variable-values-visual-basic"></a>Hodnoty proměnné objektu (Visual Basic)
-Proměnná [datového typu objektu](../../../../visual-basic/language-reference/data-types/object-data-type.md) může odkazovat na data libovolného typu. Hodnota, kterou uložíte v proměnné `Object`, je ponechána jinde v paměti, zatímco proměnná samotné obsahuje ukazatel na data.  
+Proměnná [datového typu objektu](../../../language-reference/data-types/object-data-type.md) může odkazovat na data libovolného typu. Hodnota, kterou uložíte v `Object` proměnné, je ponechána jinde v paměti, zatímco proměnná sama obsahuje ukazatel na data.  
   
 ## <a name="object-classifier-functions"></a>Funkce třídění objektů  
- Visual Basic poskytuje funkce, které vracejí informace o tom, co proměnná `Object` odkazuje na, jak je znázorněno v následující tabulce.  
+ Visual Basic poskytuje funkce, které vracejí informace o tom `Object` , co proměnná odkazuje na, jak je znázorněno v následující tabulce.  
   
 |Funkce|Vrátí hodnotu true, pokud proměnná objektu odkazuje na|  
 |--------------|---------------------------------------------------|  
 |<xref:Microsoft.VisualBasic.Information.IsArray%2A>|Pole hodnot, nikoli jediná hodnota|  
-|<xref:Microsoft.VisualBasic.Information.IsDate%2A>|Hodnota [datového typu](../../../../visual-basic/language-reference/data-types/date-data-type.md) data nebo řetězec, který může být interpretován jako hodnota data a času.|  
-|<xref:Microsoft.VisualBasic.Information.IsDBNull%2A>|Objekt typu <xref:System.DBNull>, který představuje chybějící nebo neexistující data|  
-|<xref:Microsoft.VisualBasic.Information.IsError%2A>|Objekt výjimky, který je odvozen z <xref:System.Exception>|  
-|<xref:Microsoft.VisualBasic.Information.IsNothing%2A>|[Nothing](../../../../visual-basic/language-reference/nothing.md), to znamená, že žádný objekt není aktuálně přiřazen k proměnné|  
+|<xref:Microsoft.VisualBasic.Information.IsDate%2A>|Hodnota [datového typu](../../../language-reference/data-types/date-data-type.md) data nebo řetězec, který může být interpretován jako hodnota data a času.|  
+|<xref:Microsoft.VisualBasic.Information.IsDBNull%2A>|Objekt typu <xref:System.DBNull> , který představuje chybějící nebo neexistující data|  
+|<xref:Microsoft.VisualBasic.Information.IsError%2A>|Objekt výjimky, který je odvozen z<xref:System.Exception>|  
+|<xref:Microsoft.VisualBasic.Information.IsNothing%2A>|[Nothing](../../../language-reference/nothing.md), to znamená, že žádný objekt není aktuálně přiřazen k proměnné|  
 |<xref:Microsoft.VisualBasic.Information.IsNumeric%2A>|Číslo nebo řetězec, který může být interpretován jako číslo|  
 |<xref:Microsoft.VisualBasic.Information.IsReference%2A>|Typ odkazu (například řetězec, pole, delegát nebo typ třídy)|  
   
  Tyto funkce můžete použít, chcete-li se vyhnout odeslání neplatné hodnoty do operace nebo procedury.  
   
 ## <a name="typeof-operator"></a>TypeOf – operátor  
- Můžete také použít [operátor typeof](../../../../visual-basic/language-reference/operators/typeof-operator.md) k určení, zda objektová proměnná aktuálně odkazuje na konkrétní datový typ. Výraz `TypeOf`...`Is` vyhodnocuje jako `True`, je-li typ běhu operand odvozen od nebo implementuje zadaný typ.  
+ Můžete také použít [operátor typeof](../../../language-reference/operators/typeof-operator.md) k určení, zda objektová proměnná aktuálně odkazuje na konkrétní datový typ. `TypeOf`Výraz... `Is` je vyhodnocen jako, `True` Pokud je typ běhu operand odvozen z nebo implementuje zadaný typ.  
   
- Následující příklad používá `TypeOf` u proměnných objektu odkazujících na typy hodnot a odkazů.  
+ Následující příklad používá `TypeOf` proměnné objektu, které odkazují na typy hodnot a odkazů.  
   
 ```vb  
 ' The following statement puts a value type (Integer) in an Object variable.  
@@ -61,18 +61,18 @@ If TypeOf frm Is Object Then Debug.WriteLine("frm is Object")
   
  `frm is Object`  
   
- Objektová proměnná `num` odkazuje na data typu `Integer`a `frm` odkazuje na objekt třídy <xref:System.Windows.Forms.Form>.  
+ Objektová proměnná `num` odkazuje na data typu `Integer` a `frm` odkazuje na objekt třídy <xref:System.Windows.Forms.Form> .  
   
 ## <a name="object-arrays"></a>Pole objektů  
- Můžete deklarovat a použít pole proměnných `Object`. To je užitečné v případě, že potřebujete zpracovat nejrůznější datové typy a třídy objektů. Všechny elementy v poli musí mít stejný deklarovaný datový typ. Deklarování tohoto datového typu jako `Object` umožňuje ukládat objekty a instance třídy společně s jinými datovými typy v poli.  
+ Můžete deklarovat a použít pole `Object` proměnných. To je užitečné v případě, že potřebujete zpracovat nejrůznější datové typy a třídy objektů. Všechny elementy v poli musí mít stejný deklarovaný datový typ. Deklarování tohoto datového typu `Object` umožňuje ukládat objekty a instance třídy společně s jinými datovými typy v poli.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Objektové proměnné](../../../../visual-basic/programming-guide/language-features/variables/object-variables.md)
-- [Deklarace objektové proměnné](../../../../visual-basic/programming-guide/language-features/variables/object-variable-declaration.md)
-- [Přiřazení objektové proměnné](../../../../visual-basic/programming-guide/language-features/variables/object-variable-assignment.md)
-- [Postupy: Odkazování na aktuální instanci objektu](../../../../visual-basic/programming-guide/language-features/variables/how-to-refer-to-the-current-instance-of-an-object.md)
-- [Postupy: Určení, na jaký typ objektová proměnná odkazuje](../../../../visual-basic/programming-guide/language-features/variables/how-to-determine-what-type-an-object-variable-refers-to.md)
-- [Postupy: Určení, zda dva objekty spolu souvisí](../../../../visual-basic/programming-guide/language-features/variables/how-to-determine-whether-two-objects-are-related.md)
-- [Postupy: Určení, zda dva objekty jsou identické](../../../../visual-basic/programming-guide/language-features/variables/how-to-determine-whether-two-objects-are-identical.md)
-- [Datové typy](../../../../visual-basic/programming-guide/language-features/data-types/index.md)
+- [Proměnné objektu](object-variables.md)
+- [Deklarace proměnné objektu](object-variable-declaration.md)
+- [Přiřazení proměnné objektu](object-variable-assignment.md)
+- [Postupy: Odkazování na aktuální instanci objektu](how-to-refer-to-the-current-instance-of-an-object.md)
+- [Postupy: Určení, na jaký typ objektová proměnná odkazuje](how-to-determine-what-type-an-object-variable-refers-to.md)
+- [Postupy: Určení, zda dva objekty souvisejí.](how-to-determine-whether-two-objects-are-related.md)
+- [Postupy: Určení, zda dva objekty jsou identické](how-to-determine-whether-two-objects-are-identical.md)
+- [Datové typy](../data-types/index.md)

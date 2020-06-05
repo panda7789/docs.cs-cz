@@ -1,25 +1,25 @@
 ---
-title: Nelze vypočítat sazbu na základě zadaných argumentů
+title: Pomocí zadaných argumentů nelze vypočítat sazbu.
 ms.date: 07/20/2015
 f1_keywords:
 - vbrFinancial_CannotCalculateRate
 ms.assetid: 17d5c8eb-4716-4b72-977f-a640c02e630d
-ms.openlocfilehash: 86f32251bdbd782e348bbfeb7f0429905b230153
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b9ad34342464dc2fe0157513bb4998d519f3462c
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61904238"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84400871"
 ---
-# <a name="cannot-calculate-rate-using-the-arguments-provided"></a>Nelze vypočítat sazbu na základě zadaných argumentů
-Výpočet kurzu neobsahuje povinné argumenty.  
+# <a name="cannot-calculate-rate-using-the-arguments-provided"></a>Pomocí zadaných argumentů nelze vypočítat sazbu.
+Výpočet míry neobsahuje požadované argumenty.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1. Zkontrolujte, zda argumenty ve výrazu. Chybně napsaná název proměnné implicitně vytvářet číselné proměnné, která je inicializována na nulovou hodnotu.  
+1. Kontrola pravopisu argumentů ve výrazu. Nesprávně napsaný název proměnné může implicitně vytvořit číselnou proměnnou, která je inicializovaná na nulu.  
   
-2. Zkontrolujte předchozí operací pro proměnné ve výrazu, zejména těch, které jsou předány do procedury jako argumenty z jiných postupů.  
+2. Zkontroluje předchozí operace s proměnnými ve výrazu, zejména ty, které byly předány do procedury jako argumenty z jiných postupů.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Finanční souhrn](../../visual-basic/language-reference/keywords/financial-summary.md)
+- [Finanční souhrn](../language-reference/keywords/financial-summary.md)

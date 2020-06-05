@@ -2,16 +2,16 @@
 title: Přístup k atributům pomocí reflexe
 ms.date: 07/20/2015
 ms.assetid: c56e41da-5433-464f-a7bf-2a722e78bc9f
-ms.openlocfilehash: 94352f07cf1f7e4a35f023503f138596ae5ac227
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: c0da5c4ae00eb2bc80b10f63f4bfd39763445e55
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353560"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84400755"
 ---
 # <a name="accessing-attributes-by-using-reflection-visual-basic"></a>Přístup k atributům pomocí reflexe (Visual Basic)
 
-Fakt, že můžete definovat vlastní atributy a umístit je do zdrojového kódu, by měl být malými hodnotami bez jakéhokoli způsobu, jak tyto informace načítat a na ni bude působit. Pomocí reflexe můžete načíst informace, které byly definovány s vlastními atributy. Klíčovou metodou je `GetCustomAttributes`, která vrací pole objektů, které jsou ekvivalenty v době běhu atributů zdrojového kódu. Tato metoda má několik přetížených verzí. Další informace najdete v tématu <xref:System.Attribute>.
+Fakt, že můžete definovat vlastní atributy a umístit je do zdrojového kódu, by měl být malými hodnotami bez jakéhokoli způsobu, jak tyto informace načítat a na ni bude působit. Pomocí reflexe můžete načíst informace, které byly definovány s vlastními atributy. Klíčovou metodou je `GetCustomAttributes` , která vrací pole objektů, které jsou ekvivalenty zdrojového kódu v době běhu. Tato metoda má několik přetížených verzí. Další informace naleznete v tématu <xref:System.Attribute>.
 
 Specifikace atributu jako:
 
@@ -29,7 +29,7 @@ Dim anonymousAuthorObject As Author = New Author("P. Ackerman")
 anonymousAuthorObject.version = 1.1
 ```
 
-Kód však není proveden, dokud není `SampleClass` dotazování pro atributy. Volání `GetCustomAttributes` v `SampleClass` způsobí, že se objekt `Author` vytvoří a inicializuje jako výše. Pokud má třída jiné atributy, další objekty atributů jsou konstruovány podobně. `GetCustomAttributes` pak vrátí objekt `Author` a všechny objekty atributů v poli. Pak můžete iterovat přes toto pole, určit, jaké atributy byly aplikovány na základě typu každého prvku pole a extrahovat informace z objektů atributů.
+Kód však není proveden, dokud `SampleClass` není dotazován na atributy. Volání `GetCustomAttributes` na způsobí, že se objekt sestrojí `SampleClass` `Author` a inicializuje podle výše uvedeného. Pokud má třída jiné atributy, další objekty atributů jsou konstruovány podobně. `GetCustomAttributes`pak vrátí `Author` objekt a všechny objekty atributů v poli. Pak můžete iterovat přes toto pole, určit, jaké atributy byly aplikovány na základě typu každého prvku pole a extrahovat informace z objektů atributů.
 
 ## <a name="example"></a>Příklad
 
@@ -101,12 +101,12 @@ Class TestAuthorAttribute
 End Class
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Reflection>
 - <xref:System.Attribute>
-- [Průvodce programováním Visual Basic](../../../../visual-basic/programming-guide/index.md)
+- [Příručka k programování v jazyce Visual Basic](../../index.md)
 - [Načítání informací uložených v atributech](../../../../standard/attributes/retrieving-information-stored-in-attributes.md)
-- [Reflexe (Visual Basic)](../../../../visual-basic/programming-guide/concepts/reflection.md)
-- [Atributy (Visual Basic)](../../../../visual-basic/language-reference/attributes.md)
-- [Vytváření vlastních atributů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/creating-custom-attributes.md)
+- [Reflexe (Visual Basic)](../reflection.md)
+- [Atributy (Visual Basic)](../../../language-reference/attributes.md)
+- [Vytváření vlastních atributů (Visual Basic)](creating-custom-attributes.md)

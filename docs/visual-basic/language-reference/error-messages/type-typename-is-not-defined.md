@@ -7,35 +7,35 @@ f1_keywords:
 helpviewer_keywords:
 - BC30002
 ms.assetid: b0faf204-57fd-44de-8c05-9db027eea663
-ms.openlocfilehash: 1f66b86a61fb0344a449bf0aa46b7655813c7c30
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 89e2d1d18b456c96f62d6b9ee1dd8dc9d41bf665
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64664246"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84386929"
 ---
-# <a name="type-typename-is-not-defined"></a>Typ '\<typename >' není definován
-Příkaz provedl odkaz na typ, který nebyl definován. Typ v příkazu deklarace můžete definovat jako `Enum`, `Structure`, `Class`, nebo `Interface`.  
+# <a name="type-typename-is-not-defined"></a>Typ '\<typename>' není definován.
+Příkaz provedl odkaz na typ, který nebyl definován. Můžete definovat typ v příkazu deklarace `Enum` , jako je,, `Structure` `Class` nebo `Interface` .  
   
  **ID chyby:** BC30002  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-- Zajistěte, že definice typu a jeho odkaz obou použít stejné kontroly pravopisu.  
+- Zajistěte, aby definice typu a jejich odkazy používaly stejný pravopis.  
   
-- Ujistěte se, že definice typu je přístupné pro odkaz. Například, pokud je typ v jiném modulu a byla deklarována `Private`, přesunutí definice typu pro odkazující modul nebo ji deklarovat `Public`.  
+- Ujistěte se, že je pro odkaz k dispozici definice typu. Například pokud je typ v jiném modulu a byl deklarován `Private` , přesuňte definici typu na odkazující modul nebo deklaraci `Public` .  
   
-- Ujistěte se, že obor názvů tohoto typu není předefinovat v rámci svého projektu. Pokud se jedná, použijte `Global` – klíčové slovo plně kvalifikovaný název typu. Například, pokud projekt definuje obor názvů s názvem `System`, <xref:System.Object?displayProperty=nameWithType> typ nelze přistupovat, pokud to není plně nekvalifikuje pomocí `Global` – klíčové slovo: `Global.System.Object`.  
+- Ujistěte se, že obor názvů tohoto typu není předefinován v rámci projektu. Pokud je, použijte `Global` klíčové slovo k úplnému zařazení názvu typu. Například pokud projekt definuje obor názvů s názvem `System` , <xref:System.Object?displayProperty=nameWithType> typ není k dispozici, pokud není plně kvalifikován pomocí `Global` klíčového slova: `Global.System.Object` .  
   
-- Pokud je typ definován, ale není registrován objekt knihovny nebo knihovny typů, ve kterém je definována v aplikaci Visual Basic, klikněte na **přidat odkaz** na **projektu** nabídky a pak vyberte příslušný objekt Knihovna nebo knihovna typů.  
+- Pokud je definován typ, ale knihovna objektů nebo knihovna typů, ve které je definována, není registrována v Visual Basic, klikněte na tlačítko **Přidat odkaz** v nabídce **projekt** a vyberte příslušnou knihovnu objektů nebo knihovnu typů.  
   
-- Zajistěte, aby byl typ v sestavení, která je součástí cíleném profilu rozhraní .NET. Další informace najdete v tématu [řešení chyb cílí na .NET Framework](/visualstudio/msbuild/troubleshooting-dotnet-framework-targeting-errors).  
+- Zajistěte, aby byl typ v sestavení, které je součástí cílového .NET Framework profilu. Další informace najdete v tématu [řešení potíží s chybami cílení .NET Framework](/visualstudio/msbuild/troubleshooting-dotnet-framework-targeting-errors).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Obory názvů v jazyce Visual Basic](../../../visual-basic/programming-guide/program-structure/namespaces.md)
-- [Příkaz Enum](../../../visual-basic/language-reference/statements/enum-statement.md)
-- [Příkaz Structure](../../../visual-basic/language-reference/statements/structure-statement.md)
-- [Příkaz Class](../../../visual-basic/language-reference/statements/class-statement.md)
-- [Příkaz Interface](../../../visual-basic/language-reference/statements/interface-statement.md)
+- [Obory názvů v jazyce Visual Basic](../../programming-guide/program-structure/namespaces.md)
+- [Enum – příkaz](../statements/enum-statement.md)
+- [Structure – příkaz](../statements/structure-statement.md)
+- [Class – příkaz](../statements/class-statement.md)
+- [Interface – příkaz](../statements/interface-statement.md)
 - [Správa odkazů v projektu](/visualstudio/ide/managing-references-in-a-project)

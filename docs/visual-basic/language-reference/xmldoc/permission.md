@@ -5,14 +5,14 @@ helpviewer_keywords:
 - <permission> XML tag
 - permission XML tag
 ms.assetid: 0edf0500-5cd7-49c0-9255-64c48f972b77
-ms.openlocfilehash: 71b00b669804e644d1171480192b9d55455bdf53
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: b3acec04060367a0b9e54b19c0106644d028357b
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74352267"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84400031"
 ---
-# <a name="permission-visual-basic"></a>> oprávnění \<(Visual Basic)
+# <a name="permission-visual-basic"></a>\<permission> (Visual Basic)
 Určuje požadované oprávnění pro člena.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -23,21 +23,21 @@ Určuje požadované oprávnění pro člena.
   
 ## <a name="parameters"></a>Parametry  
  `member`  
- Odkaz na člena nebo na pole, které lze volat z prostředí aktuální kompilace. Kompilátor kontroluje, zda daný prvek kódu existuje, a překládá `member` na název kanonického prvku ve výstupním souboru XML. Uzavřete `member` do uvozovek ("").  
+ Odkaz na člena nebo na pole, které lze volat z prostředí aktuální kompilace. Kompilátor kontroluje, zda daný prvek kódu existuje, a překládá se na `member` název kanonického prvku ve výstupním souboru XML. Uzavřete `member` do uvozovek ("").  
   
  `description`  
  Popis přístupu ke členovi.  
   
 ## <a name="remarks"></a>Poznámky  
- Pomocí značky `<permission>` můžete zdokumentovat přístup člena. K určení přístupu ke členu použijte třídu <xref:System.Security.PermissionSet>.  
+ Pomocí `<permission>` značky můžete zdokumentovat přístup člena. Použijte <xref:System.Security.PermissionSet> třídu k určení přístupu ke členu.  
   
- Zkompilujte s [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) a zpracujte komentáře k dokumentaci do souboru.  
+ Zkompilujte s [-doc](../../reference/command-line-compiler/doc.md) a zpracujte komentáře k dokumentaci do souboru.  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu se používá značka `<permission>` k označení toho, že metoda `ReadFile` vyžaduje <xref:System.Security.Permissions.FileIOPermission>.  
+ Tento příklad používá `<permission>` značku k označení toho, že <xref:System.Security.Permissions.FileIOPermission> Metoda je vyžadována `ReadFile` metodou.  
   
  [!code-vb[VbVbcnXmlDocComments#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#7)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Značky pro komentáře XML](../../../visual-basic/language-reference/xmldoc/index.md)
+- [Značky pro komentáře XML](index.md)

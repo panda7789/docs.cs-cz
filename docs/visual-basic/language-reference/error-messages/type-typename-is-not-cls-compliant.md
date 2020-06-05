@@ -7,32 +7,32 @@ f1_keywords:
 helpviewer_keywords:
 - BC40041
 ms.assetid: 634132c2-5646-44aa-98c6-f773e2e63882
-ms.openlocfilehash: 2805cac71cb36d21f5ab21a5875183803d07a4b4
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: eacf5036ebc6fc31dfa0e8de39c4fb574c9072b3
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65642371"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84386955"
 ---
-# <a name="type-typename-is-not-cls-compliant"></a>Typ \<typename > není kompatibilní se Specifikací CLS
-Proměnná, vlastnost nebo návratová hodnota funkce je deklarována s datovým typem, který není kompatibilní se Specifikací CLS.  
+# <a name="type-typename-is-not-cls-compliant"></a>Typ \<typename> není kompatibilní se specifikací CLS.
+Proměnná, vlastnost nebo návrat funkce jsou deklarovány s datovým typem, který není kompatibilní se specifikací CLS.  
   
- Aplikace má být zajištěn soulad [jazyková nezávislost a jazykově nezávislé komponenty](../../../standard/language-independence-and-language-independent-components.md) (CLS), musí používat jenom typy kompatibilní se Specifikací CLS.  
+ Aby aplikace splňovala [jazykovou nezávislost a součásti nezávislé na jazyce](../../../standard/language-independence-and-language-independent-components.md) (CLS), musí používat pouze typy kompatibilní se specifikací CLS.  
   
- Následující datové typy jazyka Visual Basic nejsou kompatibilní se Specifikací CLS:  
+ Následující Visual Basic datové typy nejsou kompatibilní se specifikací CLS:  
   
-- [Datový typ SByte](../../../visual-basic/language-reference/data-types/sbyte-data-type.md)  
+- [SByte – datový typ](../data-types/sbyte-data-type.md)  
   
-- [Datový typ UInteger](../../../visual-basic/language-reference/data-types/uinteger-data-type.md)  
+- [UInteger – datový typ](../data-types/uinteger-data-type.md)  
   
-- [Datový typ ULong](../../../visual-basic/language-reference/data-types/ulong-data-type.md)  
+- [ULong – datový typ](../data-types/ulong-data-type.md)  
   
-- [Datový typ UShort](../../../visual-basic/language-reference/data-types/ushort-data-type.md)  
+- [UShort – datový typ](../data-types/ushort-data-type.md)  
   
  **ID chyby:** BC40041  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-- Pokud vaše aplikace musí být kompatibilní se Specifikací CLS, změňte datový typ tohoto elementu na nejbližší typ. kompatibilní se Specifikací CLS. Například místo hodnoty `UInteger` je možné použít `Integer` Pokud nepotřebujete rozsah hodnot nad 2 147 483 647. Pokud budete potřebovat delší rozsah, můžete nahradit `UInteger` s `Long`.  
+- Pokud vaše aplikace musí být kompatibilní se specifikací CLS, změňte datový typ tohoto prvku na nejbližší typ kompatibilní se specifikací CLS. Například, `UInteger` `Integer` Pokud nepotřebujete rozsah hodnoty nad 2 147 483 647, můžete použít třeba místo. Pokud budete potřebovat Rozšířený rozsah, můžete nahradit `UInteger` `Long` .  
   
-- Pokud vaše aplikace nemusí být kompatibilní se Specifikací CLS, není potřeba nic měnit. Měli byste vědět, jeho nedodržování předpisů, ale.
+- Pokud vaše aplikace nemusí být kompatibilní se specifikací CLS, nemusíte měnit žádné změny. Měli byste si uvědomit, že nedodržující předpisy byste ale.

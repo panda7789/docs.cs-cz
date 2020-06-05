@@ -5,33 +5,33 @@ helpviewer_keywords:
 - operators [Visual Basic], logical
 - logical operators [Visual Basic], Visual Basic
 ms.assetid: 55de4889-7679-4859-8063-bee15abca53f
-ms.openlocfilehash: 7f957a6e4f2dfea3f744365d2d065442d3b85183
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 281004809c7f5000f1c68ecb0db759aa30c78e39
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74350932"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84401551"
 ---
 # <a name="logicalbitwise-operators-visual-basic"></a>Logické/bitové operátory (Visual Basic)
 Níže jsou logické/bitové operátory definované v Visual Basic.  
   
- [Operátor And](../../../visual-basic/language-reference/operators/and-operator.md)  
+ [And – operátor](and-operator.md)  
   
- [Operátor Not](../../../visual-basic/language-reference/operators/not-operator.md)  
+ [Not – operátor](not-operator.md)  
   
- [Operátor Or](../../../visual-basic/language-reference/operators/or-operator.md)  
+ [Or – operátor](or-operator.md)  
   
- [Operátor Xor](../../../visual-basic/language-reference/operators/xor-operator.md)  
+ [Xor – operátor](xor-operator.md)  
   
- [Operátor AndAlso](../../../visual-basic/language-reference/operators/andalso-operator.md)  
+ [AndAlso – operátor](andalso-operator.md)  
   
- [Operátor OrElse](../../../visual-basic/language-reference/operators/orelse-operator.md)  
+ [OrElse – operátor](orelse-operator.md)  
   
- [Operátor IsFalse](../../../visual-basic/language-reference/operators/isfalse-operator.md)  
+ [IsFalse – operátor](isfalse-operator.md)  
   
- [Operátor IsTrue](../../../visual-basic/language-reference/operators/istrue-operator.md)  
+ [IsTrue – operátor](istrue-operator.md)  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Priorita operátorů v Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
-- [Logické a bitové operátory v Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)
+- [Priorita operátorů v jazyce Visual Basic](operator-precedence.md)
+- [Logické a bitové operátory v jazyce Visual Basic](../../programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)
