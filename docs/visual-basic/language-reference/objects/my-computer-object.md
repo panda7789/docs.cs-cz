@@ -4,36 +4,36 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - My.Computer object
 ms.assetid: cc814d79-6f7f-4e54-8b9d-5ecfdd77a0b8
-ms.openlocfilehash: c1d6113872f2196f2db4ac1849222cd69f95ffd7
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 25fd9d2fc52b27f34164b7ed95ed1ebce9919a33
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74332117"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84372658"
 ---
-# <a name="mycomputer-object"></a><span data-ttu-id="c4781-102">My.Computer – objekt</span><span class="sxs-lookup"><span data-stu-id="c4781-102">My.Computer Object</span></span>
-<span data-ttu-id="c4781-103">Poskytuje vlastnosti pro manipulaci s součástmi počítače, jako jsou zvuk, hodiny, klávesnice, systém souborů a tak dále.</span><span class="sxs-lookup"><span data-stu-id="c4781-103">Provides properties for manipulating computer components such as audio, the clock, the keyboard, the file system, and so on.</span></span>  
+# <a name="mycomputer-object"></a><span data-ttu-id="c1c1a-102">My.Computer – objekt</span><span class="sxs-lookup"><span data-stu-id="c1c1a-102">My.Computer Object</span></span>
+<span data-ttu-id="c1c1a-103">Poskytuje vlastnosti pro manipulaci s součástmi počítače, jako jsou zvuk, hodiny, klávesnice, systém souborů a tak dále.</span><span class="sxs-lookup"><span data-stu-id="c1c1a-103">Provides properties for manipulating computer components such as audio, the clock, the keyboard, the file system, and so on.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="c4781-104">Poznámky</span><span class="sxs-lookup"><span data-stu-id="c4781-104">Remarks</span></span>  
- <span data-ttu-id="c4781-105">Informace o metodách a vlastnostech objektu `My.Computer` naleznete v tématu <xref:Microsoft.VisualBasic.Devices.Computer>.</span><span class="sxs-lookup"><span data-stu-id="c4781-105">For information about the methods and properties of the `My.Computer` object, see <xref:Microsoft.VisualBasic.Devices.Computer>.</span></span> <span data-ttu-id="c4781-106">Základní třída <xref:Microsoft.VisualBasic.Devices.ServerComputer> poskytuje členy, kteří jsou k dispozici ve všech projektech.</span><span class="sxs-lookup"><span data-stu-id="c4781-106">The base class <xref:Microsoft.VisualBasic.Devices.ServerComputer> provides the members that are available in all projects.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="c1c1a-104">Poznámky</span><span class="sxs-lookup"><span data-stu-id="c1c1a-104">Remarks</span></span>  
+ <span data-ttu-id="c1c1a-105">Informace o metodách a vlastnostech `My.Computer` objektu naleznete v tématu <xref:Microsoft.VisualBasic.Devices.Computer> .</span><span class="sxs-lookup"><span data-stu-id="c1c1a-105">For information about the methods and properties of the `My.Computer` object, see <xref:Microsoft.VisualBasic.Devices.Computer>.</span></span> <span data-ttu-id="c1c1a-106">Základní třída <xref:Microsoft.VisualBasic.Devices.ServerComputer> poskytuje členy, kteří jsou k dispozici ve všech projektech.</span><span class="sxs-lookup"><span data-stu-id="c1c1a-106">The base class <xref:Microsoft.VisualBasic.Devices.ServerComputer> provides the members that are available in all projects.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="c4781-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="c4781-107">Requirements</span></span>  
- <span data-ttu-id="c4781-108">**Obor názvů:** <xref:Microsoft.VisualBasic.Devices></span><span class="sxs-lookup"><span data-stu-id="c4781-108">**Namespace:** <xref:Microsoft.VisualBasic.Devices></span></span>  
+## <a name="requirements"></a><span data-ttu-id="c1c1a-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="c1c1a-107">Requirements</span></span>  
+ <span data-ttu-id="c1c1a-108">**Obor názvů:**<xref:Microsoft.VisualBasic.Devices></span><span class="sxs-lookup"><span data-stu-id="c1c1a-108">**Namespace:** <xref:Microsoft.VisualBasic.Devices></span></span>  
   
- <span data-ttu-id="c4781-109">**Třída:** <xref:Microsoft.VisualBasic.Devices.Computer> (základní třída <xref:Microsoft.VisualBasic.Devices.ServerComputer> poskytuje členy, kteří jsou k dispozici ve všech projektech).</span><span class="sxs-lookup"><span data-stu-id="c4781-109">**Class:** <xref:Microsoft.VisualBasic.Devices.Computer> (the base class <xref:Microsoft.VisualBasic.Devices.ServerComputer> provides the members that are available in all projects).</span></span>  
+ <span data-ttu-id="c1c1a-109">**Třída:** <xref:Microsoft.VisualBasic.Devices.Computer> (základní třída <xref:Microsoft.VisualBasic.Devices.ServerComputer> poskytuje členy, kteří jsou k dispozici ve všech projektech).</span><span class="sxs-lookup"><span data-stu-id="c1c1a-109">**Class:** <xref:Microsoft.VisualBasic.Devices.Computer> (the base class <xref:Microsoft.VisualBasic.Devices.ServerComputer> provides the members that are available in all projects).</span></span>  
   
- <span data-ttu-id="c4781-110">**Sestavení:** Knihovna Visual Basic runtime (v souboru Microsoft. VisualBasic. dll)</span><span class="sxs-lookup"><span data-stu-id="c4781-110">**Assembly:** Visual Basic Runtime Library (in Microsoft.VisualBasic.dll)</span></span>  
+ <span data-ttu-id="c1c1a-110">**Sestavení:** Knihovna Visual Basic runtime (v souboru Microsoft. VisualBasic. dll)</span><span class="sxs-lookup"><span data-stu-id="c1c1a-110">**Assembly:** Visual Basic Runtime Library (in Microsoft.VisualBasic.dll)</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="c4781-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c4781-111">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c1c1a-111">Viz také</span><span class="sxs-lookup"><span data-stu-id="c1c1a-111">See also</span></span>
 
-- [<span data-ttu-id="c4781-112">Objekt My.Computer.Audio</span><span class="sxs-lookup"><span data-stu-id="c4781-112">My.Computer.Audio Object</span></span>](../../../visual-basic/language-reference/objects/my-computer-audio-object.md)
-- [<span data-ttu-id="c4781-113">Objekt My.Computer.Clipboard</span><span class="sxs-lookup"><span data-stu-id="c4781-113">My.Computer.Clipboard Object</span></span>](../../../visual-basic/language-reference/objects/my-computer-clipboard-object.md)
-- [<span data-ttu-id="c4781-114">Objekt My.Computer.Clock</span><span class="sxs-lookup"><span data-stu-id="c4781-114">My.Computer.Clock Object</span></span>](../../../visual-basic/language-reference/objects/my-computer-clock-object.md)
-- [<span data-ttu-id="c4781-115">Objekt My.Computer.FileSystem</span><span class="sxs-lookup"><span data-stu-id="c4781-115">My.Computer.FileSystem Object</span></span>](../../../visual-basic/language-reference/objects/my-computer-filesystem-object.md)
-- [<span data-ttu-id="c4781-116">Objekt My.Computer.FileSystem.SpecialDirectories</span><span class="sxs-lookup"><span data-stu-id="c4781-116">My.Computer.FileSystem.SpecialDirectories Object</span></span>](../../../visual-basic/language-reference/objects/my-computer-filesystem-specialdirectories-object.md)
-- [<span data-ttu-id="c4781-117">Objekt My.Computer.Info</span><span class="sxs-lookup"><span data-stu-id="c4781-117">My.Computer.Info Object</span></span>](../../../visual-basic/language-reference/objects/my-computer-info-object.md)
-- [<span data-ttu-id="c4781-118">Objekt My.Computer.Keyboard</span><span class="sxs-lookup"><span data-stu-id="c4781-118">My.Computer.Keyboard Object</span></span>](../../../visual-basic/language-reference/objects/my-computer-keyboard-object.md)
-- [<span data-ttu-id="c4781-119">Objekt My.Computer.Mouse</span><span class="sxs-lookup"><span data-stu-id="c4781-119">My.Computer.Mouse Object</span></span>](../../../visual-basic/language-reference/objects/my-computer-mouse-object.md)
-- [<span data-ttu-id="c4781-120">Objekt My.Computer.Network</span><span class="sxs-lookup"><span data-stu-id="c4781-120">My.Computer.Network Object</span></span>](../../../visual-basic/language-reference/objects/my-computer-network-object.md)
-- [<span data-ttu-id="c4781-121">Objekt My.Computer.Ports</span><span class="sxs-lookup"><span data-stu-id="c4781-121">My.Computer.Ports Object</span></span>](../../../visual-basic/language-reference/objects/my-computer-ports-object.md)
-- [<span data-ttu-id="c4781-122">Objekt My.Computer.Registry</span><span class="sxs-lookup"><span data-stu-id="c4781-122">My.Computer.Registry Object</span></span>](../../../visual-basic/language-reference/objects/my-computer-registry-object.md)
+- [<span data-ttu-id="c1c1a-112">My.Computer.Audio – objekt</span><span class="sxs-lookup"><span data-stu-id="c1c1a-112">My.Computer.Audio Object</span></span>](my-computer-audio-object.md)
+- [<span data-ttu-id="c1c1a-113">My.Computer.Clipboard – objekt</span><span class="sxs-lookup"><span data-stu-id="c1c1a-113">My.Computer.Clipboard Object</span></span>](my-computer-clipboard-object.md)
+- [<span data-ttu-id="c1c1a-114">My.Computer.Clock – objekt</span><span class="sxs-lookup"><span data-stu-id="c1c1a-114">My.Computer.Clock Object</span></span>](my-computer-clock-object.md)
+- [<span data-ttu-id="c1c1a-115">My.Computer.FileSystem – objekt</span><span class="sxs-lookup"><span data-stu-id="c1c1a-115">My.Computer.FileSystem Object</span></span>](my-computer-filesystem-object.md)
+- [<span data-ttu-id="c1c1a-116">My.Computer.FileSystem.SpecialDirectories – objekt</span><span class="sxs-lookup"><span data-stu-id="c1c1a-116">My.Computer.FileSystem.SpecialDirectories Object</span></span>](my-computer-filesystem-specialdirectories-object.md)
+- [<span data-ttu-id="c1c1a-117">My.Computer.Info – objekt</span><span class="sxs-lookup"><span data-stu-id="c1c1a-117">My.Computer.Info Object</span></span>](my-computer-info-object.md)
+- [<span data-ttu-id="c1c1a-118">My.Computer.Keyboard – objekt</span><span class="sxs-lookup"><span data-stu-id="c1c1a-118">My.Computer.Keyboard Object</span></span>](my-computer-keyboard-object.md)
+- [<span data-ttu-id="c1c1a-119">My.Computer.Mouse – objekt</span><span class="sxs-lookup"><span data-stu-id="c1c1a-119">My.Computer.Mouse Object</span></span>](my-computer-mouse-object.md)
+- [<span data-ttu-id="c1c1a-120">My.Computer.Network – objekt</span><span class="sxs-lookup"><span data-stu-id="c1c1a-120">My.Computer.Network Object</span></span>](my-computer-network-object.md)
+- [<span data-ttu-id="c1c1a-121">My.Computer.Ports – objekt</span><span class="sxs-lookup"><span data-stu-id="c1c1a-121">My.Computer.Ports Object</span></span>](my-computer-ports-object.md)
+- [<span data-ttu-id="c1c1a-122">My.Computer.Registry – objekt</span><span class="sxs-lookup"><span data-stu-id="c1c1a-122">My.Computer.Registry Object</span></span>](my-computer-registry-object.md)
