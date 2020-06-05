@@ -1,25 +1,25 @@
 ---
-title: Argument "Životnost" nemůže být nulový
+title: Argument Life nemůže mít hodnotu nula.
 ms.date: 07/20/2015
 f1_keywords:
 - vbrFinancial_LifeNEZero
 ms.assetid: c402da97-a2b2-4219-a83a-0cebbfdffef2
-ms.openlocfilehash: e1a739d08b89c07c33302eb3bfcdc4b1e8c6e80e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: a737afb8901382d75c3858f84be1b2359338b057
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64659143"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84368163"
 ---
-# <a name="argument-life-cannot-be-zero"></a><span data-ttu-id="a2b5d-102">Argument "Životnost" nemůže být nulový</span><span class="sxs-lookup"><span data-stu-id="a2b5d-102">Argument 'Life' cannot be zero</span></span>
-<span data-ttu-id="a2b5d-103">Argument `Life`, která musí být `Double` , který určuje dobu životnosti majetku, není platný.</span><span class="sxs-lookup"><span data-stu-id="a2b5d-103">An argument for `Life`, which must be a `Double` that specifies the length of useful life of the asset, is not valid.</span></span>  
+# <a name="argument-life-cannot-be-zero"></a><span data-ttu-id="f37f6-102">Argument Life nemůže mít hodnotu nula.</span><span class="sxs-lookup"><span data-stu-id="f37f6-102">Argument 'Life' cannot be zero</span></span>
+<span data-ttu-id="f37f6-103">Argument pro `Life` , který musí být, `Double` který určuje délku životnosti assetu, není platná.</span><span class="sxs-lookup"><span data-stu-id="f37f6-103">An argument for `Life`, which must be a `Double` that specifies the length of useful life of the asset, is not valid.</span></span>  
   
-## <a name="to-correct-this-error"></a><span data-ttu-id="a2b5d-104">Oprava této chyby</span><span class="sxs-lookup"><span data-stu-id="a2b5d-104">To correct this error</span></span>  
+## <a name="to-correct-this-error"></a><span data-ttu-id="f37f6-104">Oprava této chyby</span><span class="sxs-lookup"><span data-stu-id="f37f6-104">To correct this error</span></span>  
   
-- <span data-ttu-id="a2b5d-105">Zkontrolujte, zda argumenty ve výrazu.</span><span class="sxs-lookup"><span data-stu-id="a2b5d-105">Check the spelling of arguments in the expression.</span></span> <span data-ttu-id="a2b5d-106">Chybně napsaná název proměnné implicitně vytvářet číselné proměnné, která je inicializována na nulovou hodnotu.</span><span class="sxs-lookup"><span data-stu-id="a2b5d-106">A misspelled variable name can implicitly create a numeric variable that is initialized to zero.</span></span>  
+- <span data-ttu-id="f37f6-105">Kontrola pravopisu argumentů ve výrazu.</span><span class="sxs-lookup"><span data-stu-id="f37f6-105">Check the spelling of arguments in the expression.</span></span> <span data-ttu-id="f37f6-106">Nesprávně napsaný název proměnné může implicitně vytvořit číselnou proměnnou, která je inicializovaná na nulu.</span><span class="sxs-lookup"><span data-stu-id="f37f6-106">A misspelled variable name can implicitly create a numeric variable that is initialized to zero.</span></span>  
   
-- <span data-ttu-id="a2b5d-107">Zkontrolujte předchozí operací pro proměnné ve výrazu, zejména těch, které jsou předány do procedury jako argumenty z jiných postupů.</span><span class="sxs-lookup"><span data-stu-id="a2b5d-107">Check previous operations on variables in the expression, especially those passed into the procedure as arguments from other procedures.</span></span>  
+- <span data-ttu-id="f37f6-107">Zkontroluje předchozí operace s proměnnými ve výrazu, zejména ty, které byly předány do procedury jako argumenty z jiných postupů.</span><span class="sxs-lookup"><span data-stu-id="f37f6-107">Check previous operations on variables in the expression, especially those passed into the procedure as arguments from other procedures.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="a2b5d-108">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a2b5d-108">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f37f6-108">Viz také</span><span class="sxs-lookup"><span data-stu-id="f37f6-108">See also</span></span>
 
-- [<span data-ttu-id="a2b5d-109">Předávání argumentů podle hodnoty a reference</span><span class="sxs-lookup"><span data-stu-id="a2b5d-109">Passing Arguments by Value and by Reference</span></span>](../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)
+- [<span data-ttu-id="f37f6-109">Předávání argumentů podle hodnoty a reference</span><span class="sxs-lookup"><span data-stu-id="f37f6-109">Passing Arguments by Value and by Reference</span></span>](../programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)
