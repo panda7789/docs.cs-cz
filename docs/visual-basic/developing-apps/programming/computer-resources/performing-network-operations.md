@@ -5,12 +5,12 @@ helpviewer_keywords:
 - network operations, performing
 - My.Computer.Network object, tasks
 ms.assetid: 8ecc47ce-7730-49cd-b21d-3a13477eec6b
-ms.openlocfilehash: cb39f45ec9382e39569a08e5ba400d43cbc6bbd2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 67cfc1363c840c98f1df6529498fce1a82a0a5bf
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74345543"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84360147"
 ---
 # <a name="performing-network-operations-visual-basic"></a>Provádění síťových operací (Visual Basic)
 
@@ -18,13 +18,13 @@ V následujících tabulkách jsou uvedeny úkoly spojené s `My.Computer.Networ
   
 ## <a name="in-this-section"></a>V tomto oddílu  
 
- [Postupy: Nahrání souboru](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-upload-a-file.md)  
- Ukazuje, jak nahrát soubor a uložit ho do vzdáleného umístění pomocí `My.Computer.Network`.  
+ [Postupy: Nahrání souboru](how-to-upload-a-file.md)  
+ Ukazuje, jak nahrát soubor a uložit ho do vzdáleného umístění pomocí `My.Computer.Network` .  
   
- [Postupy: Stažení souboru](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-download-a-file.md)  
- Ukazuje, jak stáhnout soubor ze vzdáleného umístění pomocí `My.Computer.Network`.  
+ [Postupy: Stažení souboru](how-to-download-a-file.md)  
+ Ukazuje, jak stáhnout soubor ze vzdáleného umístění pomocí `My.Computer.Network` .  
   
- [Postupy: Kontrola stavu připojení](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-check-connection-status.md)  
+ [Postupy: Kontrola stavu připojení](how-to-check-connection-status.md)  
  Ukazuje, jak zjistit, jestli má počítač fungující síťové připojení.  
   
 ## <a name="reference"></a>Referenční informace  

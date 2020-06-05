@@ -7,28 +7,28 @@ helpviewer_keywords:
 - XML child axis property [Visual Basic]
 - XML [Visual Basic], accessing
 ms.assetid: 6689eb36-c471-469f-a82d-099ab8197b25
-ms.openlocfilehash: 32bdb1ba476a954bdad1f23c3ecc6129c90ccaac
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 994249801eecc2984947efac9712df0047f076a4
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75347179"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84392815"
 ---
 # <a name="how-to-access-xml-child-elements-visual-basic"></a>Postupy: Přístup k podřízeným elementům XML (Visual Basic)
-Tento příklad ukazuje, jak použít vlastnost podřízené osy pro přístup ke všem podřízeným elementům XML, které mají zadaný název v elementu XML. Konkrétně používá vlastnost <xref:System.Xml.Linq.XElement.Value%2A> k získání hodnoty prvního prvku v kolekci, kterou vrací vlastnost `name` podřízená osa. Vlastnost `name` podřízená osa získá všechny podřízené elementy s názvem `phone` v objektu `contact`. Tento příklad také používá vlastnost `phone` podřízená osa pro přístup ke všem podřízeným prvkům s názvem `phone`, které jsou obsaženy v objektu `contact`.  
+Tento příklad ukazuje, jak použít vlastnost podřízené osy pro přístup ke všem podřízeným elementům XML, které mají zadaný název v elementu XML. Konkrétně používá <xref:System.Xml.Linq.XElement.Value%2A> vlastnost k získání hodnoty prvního prvku v kolekci, kterou `name` vrací vlastnost podřízené osy. `name`Vlastnost podřízené osy získá všechny podřízené elementy s názvem `phone` v `contact` objektu. Tento příklad také používá `phone` vlastnost podřízené osy pro přístup ke všem podřízeným prvkům s názvem `phone` , které jsou obsaženy v `contact` objektu.  
   
 ## <a name="example"></a>Příklad  
  [!code-vb[VbXMLSamples#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples4.vb#10)]  
   
-## <a name="compile-the-code"></a>Kompilace kódu  
+## <a name="compile-the-code"></a>Kompilovat kód  
  Tento příklad vyžaduje:  
   
-- Odkaz na obor názvů <xref:System.Xml.Linq>.  
+- Odkaz na <xref:System.Xml.Linq> obor názvů.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType>
-- [Vlastnost osy podřízeného XML](../../../../visual-basic/language-reference/xml-axis/xml-child-axis-property.md)
-- [Vlastnost hodnoty XML](../../../../visual-basic/language-reference/xml-axis/xml-value-property.md)
-- [Přístup k XML v Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/accessing-xml.md)
-- [XML](../../../../visual-basic/programming-guide/language-features/xml/index.md)
+- [Vlastnost osy podřízeného XML](../../../language-reference/xml-axis/xml-child-axis-property.md)
+- [Vlastnost hodnoty XML](../../../language-reference/xml-axis/xml-value-property.md)
+- [Přístup ke XML v jazyce Visual Basic](accessing-xml.md)
+- [XML](index.md)

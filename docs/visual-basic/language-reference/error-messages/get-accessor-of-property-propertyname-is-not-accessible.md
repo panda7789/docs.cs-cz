@@ -7,33 +7,33 @@ f1_keywords:
 helpviewer_keywords:
 - BC31103
 ms.assetid: 3c346c32-7669-4b04-841d-7a9df9cb703e
-ms.openlocfilehash: 92cc6d732b59617a6043bd71a9549649ff1ad356
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: cb953671e624d5b9170aa0b3a9dd80c7ba8337e3
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64662047"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84402911"
 ---
-# <a name="get-accessor-of-property-propertyname-is-not-accessible"></a>Získat přistupující objekt vlastnosti '\<propertyname >' není dostupný
-Příkaz se pokusí načíst hodnotu vlastnosti, pokud nemá přístup k vlastnosti `Get` postup.  
+# <a name="get-accessor-of-property-propertyname-is-not-accessible"></a>Přístupový objekt 'Get' vlastnosti '\<propertyname>' není dostupný.
+Příkaz se pokusí načíst hodnotu vlastnosti, pokud nemá přístup k `Get` proceduře vlastnosti.  
   
- Pokud [získat příkaz](../../../visual-basic/language-reference/statements/get-statement.md) je označená pomocí více omezující přístup k úrovni než jeho [Property – příkaz](../../../visual-basic/language-reference/statements/property-statement.md), pokus o čtení hodnoty vlastnosti by mohlo selhat v následujících případech:  
+ Pokud je [příkaz Get](../statements/get-statement.md) označen s více omezující úrovní přístupu, než je jeho [příkaz Property](../statements/property-statement.md), pokus o čtení hodnoty vlastnosti může selhat v následujících případech:  
   
-- `Get` Označený příkaz [privátní](../../../visual-basic/language-reference/modifiers/private.md) a volající kód je mimo třídy nebo struktury, ve kterém je definována vlastnost.  
+- `Get`Příkaz je označen jako [Private](../modifiers/private.md) a volající kód je mimo třídu nebo strukturu, ve které je vlastnost definována.  
   
-- `Get` Označený příkaz [chráněné](../../../visual-basic/language-reference/modifiers/protected.md) a volající kód je v odvozené třídě, ani není v dané třídy nebo struktury, ve kterém je definována vlastnost.  
+- `Get`Příkaz je označen jako [Protected](../modifiers/protected.md) a volající kód není ve třídě nebo struktuře, ve které je vlastnost definována, ani v odvozené třídě.  
   
-- `Get` Označený příkaz [Friend](../../../visual-basic/language-reference/modifiers/friend.md) a volající kód není ve stejném sestavení, ve kterém je definována vlastnost.  
+- `Get`Příkaz je označen jako [Friend](../modifiers/friend.md) a volající kód není ve stejném sestavení, ve kterém je vlastnost definovaná.  
   
  **ID chyby:** BC31103  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-- Pokud máte kontrolu nad zdrojový kód, který definuje vlastnost, vezměte v úvahu deklaraci `Get` postup se stejnou úrovní přístupu jako samotné vlastnosti.  
+- Pokud máte kontrolu nad zdrojovým kódem, který definuje vlastnost, zvažte deklaraci `Get` procedury se stejnou úrovní přístupu jako vlastnost samotnou.  
   
-- Pokud máte kontrolu nad zdrojový kód, který definuje vlastnost, nebo musíte omezit `Get` postup úroveň přístupu více, než se pokusí přesunout příkaz, který čte hodnoty vlastnosti do oblasti kódu, který má lepší přístup k samotné, vlastnosti Vlastnost.  
+- Pokud nemáte kontrolu nad zdrojovým kódem, který definuje vlastnost, nebo je nutné omezit `Get` úroveň přístupu k proceduře více než samotnou vlastnost, zkuste přesunout příkaz, který přečte hodnotu vlastnosti, do oblasti kódu, která má lepší přístup k vlastnosti.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Procedury vlastnosti](../../../visual-basic/programming-guide/language-features/procedures/property-procedures.md)
-- [Postupy: Deklarace vlastnosti se smíšenými úrovněmi přístupu](../../../visual-basic/programming-guide/language-features/procedures/how-to-declare-a-property-with-mixed-access-levels.md)
+- [Procedury vlastnosti](../../programming-guide/language-features/procedures/property-procedures.md)
+- [Postupy: Deklarace vlastnosti se smíšenými úrovněmi přístupu](../../programming-guide/language-features/procedures/how-to-declare-a-property-with-mixed-access-levels.md)

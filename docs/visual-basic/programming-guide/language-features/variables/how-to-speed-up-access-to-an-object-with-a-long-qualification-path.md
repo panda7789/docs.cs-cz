@@ -8,18 +8,18 @@ helpviewer_keywords:
 - With block
 - object variables [Visual Basic], accessing
 ms.assetid: 3eb7657f-c9fe-4e05-8bc3-4bb14d5ae585
-ms.openlocfilehash: 83670ae6af0904156b08398024658cf504b7663f
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: fe93e7bac2a21f1060d1f93765eb35e1ad0c7eb0
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74346820"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84410409"
 ---
 # <a name="how-to-speed-up-access-to-an-object-with-a-long-qualification-path-visual-basic"></a>Postupy: Urychlení přístupu k objektu pomocí cesty s dlouhou kvalifikací (Visual Basic)
 
 Pokud často přistupujete k objektu, který vyžaduje cestu kvalifikace několika metod a vlastností, můžete kód urychlit tak, že neopakujete cestu kvalifikace.
 
-Existují dva způsoby, jak se vyhnout opakování cesty kvalifikace. Objekt můžete přiřadit proměnné nebo ho můžete použít v bloku `With`...`End With`.
+Existují dva způsoby, jak se vyhnout opakování cesty kvalifikace. Objekt můžete přiřadit proměnné nebo ho můžete použít v `With` bloku.... `End With`
 
 ### <a name="to-speed-up-access-to-a-heavily-qualified-object-by-assigning-it-to-a-variable"></a>Urychlení přístupu k silně kvalifikovanému objektu přiřazením k proměnné
 
@@ -39,13 +39,13 @@ Existují dva způsoby, jak se vyhnout opakování cesty kvalifikace. Objekt mů
 
 ### <a name="to-speed-up-access-to-a-heavily-qualified-object-by-using-a-withend-with-block"></a>Chcete-li zrychlit přístup k silně kvalifikovanému objektu pomocí s... Ukončit s blokem
 
-1. Cestu kvalifikace vložte do příkazu `With`.
+1. Zadejte cestu kvalifikace do `With` příkazu.
 
     ```vb
     With someForm.ActiveForm.ActiveControl
     ```
 
-2. Před příkazem `End With` přejděte do členů objektu v rámci bloku `With`.
+2. Před příkazem přistoupit k členům objektu uvnitř `With` bloku `End With` .
 
     ```vb
         .Text = "Test"
@@ -54,7 +54,7 @@ Existují dva způsoby, jak se vyhnout opakování cesty kvalifikace. Objekt mů
     End With
     ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Objektové proměnné](../../../../visual-basic/programming-guide/language-features/variables/object-variables.md)
-- [Příkaz With...End With](../../../../visual-basic/language-reference/statements/with-end-with-statement.md)
+- [Proměnné objektu](object-variables.md)
+- [With...End With – příkaz](../../../language-reference/statements/with-end-with-statement.md)

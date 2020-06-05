@@ -6,12 +6,12 @@ helpviewer_keywords:
 - XML literals [Visual Basic]
 - XML literals [Visual Basic], modifying
 ms.assetid: 4e864522-a37a-43a2-8236-af80277c5482
-ms.openlocfilehash: 99ec35addcb9fc8d886c9151cde87227b5113eb9
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: a2ac2e9802d4c8ab522bb430d15cce5616430437
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74330858"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84374872"
 ---
 # <a name="how-to-modify-xml-literals-visual-basic"></a>Postupy: Změna literálů XML (Visual Basic)
 
@@ -19,9 +19,9 @@ Visual Basic poskytuje pohodlný způsob, jak upravit literály XML. Můžete p�
 
 ### <a name="to-modify-the-value-of-an-xml-literal"></a>Úprava hodnoty literálu XML
 
-1. Chcete-li změnit hodnotu literálu XML, získejte odkaz na literál XML a nastavte vlastnost `Value` na požadovanou hodnotu.
+1. Chcete-li změnit hodnotu literálu XML, získejte odkaz na literál XML a nastavte `Value` vlastnost na požadovanou hodnotu.
 
-    Následující příklad kódu aktualizuje hodnotu všech > prvků \<Price v dokumentu XML.
+    Následující příklad kódu aktualizuje hodnotu všech \<Price> prvků v dokumentu XML.
 
     [!code-vb[VbXmlSamples2#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXmlSamples2/VB/Module2.vb#4)]
 
@@ -64,11 +64,11 @@ Visual Basic poskytuje pohodlný způsob, jak upravit literály XML. Můžete p�
     ```
 
     > [!NOTE]
-    > Vlastnost `Value` odkazuje na první prvek XML v kolekci. Pokud je v kolekci více než jeden prvek, který má stejný název, nastavení vlastnosti `Value` ovlivní pouze první prvek v kolekci.
+    > `Value`Vlastnost odkazuje na první prvek XML v kolekci. Pokud je v kolekci více než jeden prvek, který má stejný název, nastavení `Value` vlastnosti ovlivní pouze první prvek v kolekci.
 
 ### <a name="to-add-an-attribute-to-an-xml-literal"></a>Přidání atributu do literálu XML
 
-1. Chcete-li přidat atribut do literálu XML, nejprve získejte odkaz na literál XML. Pak můžete přidat atribut přidáním nové vlastnosti osa atributu XML. Do literálu XML můžete také přidat nový objekt <xref:System.Xml.Linq.XAttribute> pomocí metody <xref:System.Xml.Linq.XContainer.Add%2A>. Následující příklad ukazuje obě možnosti.
+1. Chcete-li přidat atribut do literálu XML, nejprve získejte odkaz na literál XML. Pak můžete přidat atribut přidáním nové vlastnosti osa atributu XML. <xref:System.Xml.Linq.XAttribute>Do literálu XML můžete také přidat nový objekt pomocí <xref:System.Xml.Linq.XContainer.Add%2A> metody. Následující příklad ukazuje obě možnosti.
 
     [!code-vb[VbXmlSamples2#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXmlSamples2/VB/Module2.vb#5)]
 
@@ -110,13 +110,13 @@ Visual Basic poskytuje pohodlný způsob, jak upravit literály XML. Můžete p�
     </Catalog>
     ```
 
-    Další informace o vlastnostech osy atributu XML naleznete v tématu [Vlastnosti osy atributu XML](../../../../visual-basic/language-reference/xml-axis/xml-attribute-axis-property.md).
+    Další informace o vlastnostech osy atributu XML naleznete v tématu [Vlastnosti osy atributu XML](../../../language-reference/xml-axis/xml-attribute-axis-property.md).
 
 ### <a name="to-add-an-element-to-an-xml-literal"></a>Přidání elementu do literálu XML
 
-1. Chcete-li přidat prvek do literálu XML, nejprve získejte odkaz na literál XML. Pak můžete přidat nový objekt <xref:System.Xml.Linq.XElement> jako poslední dílčí prvek elementu pomocí metody <xref:System.Xml.Linq.XContainer.Add%2A>. Nový objekt <xref:System.Xml.Linq.XElement> můžete přidat jako první dílčí prvek pomocí metody <xref:System.Xml.Linq.XContainer.AddFirst%2A>.
+1. Chcete-li přidat prvek do literálu XML, nejprve získejte odkaz na literál XML. Pak můžete přidat nový <xref:System.Xml.Linq.XElement> objekt jako poslední dílčí prvek elementu pomocí <xref:System.Xml.Linq.XContainer.Add%2A> metody. Můžete přidat nový <xref:System.Xml.Linq.XElement> objekt jako první dílčí prvek pomocí <xref:System.Xml.Linq.XContainer.AddFirst%2A> metody.
 
-    Chcete-li přidat nový prvek v určitém umístění relativně k jiným dílčím prvkům, nejprve získejte odkaz na sousední dílčí prvek. Pak můžete přidat nový objekt <xref:System.Xml.Linq.XElement> před sousední dílčí prvek pomocí metody <xref:System.Xml.Linq.XNode.AddBeforeSelf%2A>. Nový objekt <xref:System.Xml.Linq.XElement> lze také přidat za sousední dílčí prvek pomocí metody <xref:System.Xml.Linq.XNode.AddAfterSelf%2A>.
+    Chcete-li přidat nový prvek v určitém umístění relativně k jiným dílčím prvkům, nejprve získejte odkaz na sousední dílčí prvek. Pak můžete přidat nový <xref:System.Xml.Linq.XElement> objekt před sousední dílčí element pomocí <xref:System.Xml.Linq.XNode.AddBeforeSelf%2A> metody. Můžete také přidat nový <xref:System.Xml.Linq.XElement> objekt za sousední dílčí prvek pomocí <xref:System.Xml.Linq.XNode.AddAfterSelf%2A> metody.
 
     Následující příklad ukazuje příklady každé z těchto technik.
 
@@ -166,7 +166,7 @@ Visual Basic poskytuje pohodlný způsob, jak upravit literály XML. Můžete p�
 
 ### <a name="to-remove-an-element-or-attribute-from-an-xml-literal"></a>Odebrání elementu nebo atributu z literálu XML
 
-1. Chcete-li odebrat element nebo atribut z literálu XML, získejte odkaz na element nebo atribut a zavolejte metodu `Remove`, jak je znázorněno v následujícím příkladu.
+1. Chcete-li odebrat element nebo atribut z literálu XML, získejte odkaz na element nebo atribut a zavolejte `Remove` metodu, jak je znázorněno v následujícím příkladu.
 
     [!code-vb[VbXmlSamples2#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXmlSamples2/VB/Module2.vb#7)]
 
@@ -210,15 +210,15 @@ Visual Basic poskytuje pohodlný způsob, jak upravit literály XML. Můžete p�
       </Book></Catalog>
     ```
 
-    Chcete-li odebrat všechny prvky nebo atributy z literálu XML, získejte odkaz na literál XML a zavolejte metodu <xref:System.Xml.Linq.XElement.RemoveAll%2A>.
+    Chcete-li odebrat všechny prvky nebo atributy z literálu XML, získejte odkaz na literál XML a zavolejte <xref:System.Xml.Linq.XElement.RemoveAll%2A> metodu.
 
 ### <a name="to-modify-an-xml-literal"></a>Úprava literálu XML
 
-1. Chcete-li změnit název elementu XML, nejprve získejte odkaz na prvek. Pak můžete vytvořit nový objekt <xref:System.Xml.Linq.XElement>, který má nový název a předat nový objekt <xref:System.Xml.Linq.XElement> metodě <xref:System.Xml.Linq.XNode.ReplaceWith%2A> stávajícího objektu <xref:System.Xml.Linq.XElement>.
+1. Chcete-li změnit název elementu XML, nejprve získejte odkaz na prvek. Pak můžete vytvořit nový <xref:System.Xml.Linq.XElement> objekt, který má nový název a předat novému <xref:System.Xml.Linq.XElement> objektu <xref:System.Xml.Linq.XNode.ReplaceWith%2A> metodě stávajícího <xref:System.Xml.Linq.XElement> objektu.
 
-    Pokud element, který chcete nahradit, má dílčí prvky, které musí být zachovány, nastavte hodnotu nového objektu <xref:System.Xml.Linq.XElement> na vlastnost <xref:System.Xml.Linq.XContainer.Nodes%2A> existujícího prvku. Tím se nastaví hodnota nového prvku na vnitřní XML existujícího elementu. V opačném případě můžete nastavit hodnotu nového prvku na vlastnost `Value` existujícího prvku.
+    Pokud element, který chcete nahradit, má dílčí prvky, které musí být zachovány, nastavte hodnotu nového <xref:System.Xml.Linq.XElement> objektu na <xref:System.Xml.Linq.XContainer.Nodes%2A> vlastnost existujícího elementu. Tím se nastaví hodnota nového prvku na vnitřní XML existujícího elementu. V opačném případě můžete nastavit hodnotu nového prvku na `Value` vlastnost existujícího elementu.
 
-    Následující příklad kódu nahrazuje všechny prvky \<Description > pomocí \<abstraktního > elementu. Obsah elementu \<Description > je zachován v novém \<abstraktního > elementu pomocí vlastnosti <xref:System.Xml.Linq.XContainer.Nodes%2A> popisu \<> objektu.<xref:System.Xml.Linq.XElement>
+    Následující příklad kódu nahradí všechny \<Description> prvky \<Abstract> elementem. Obsah \<Description> elementu se zachová v novém \<Abstract> elementu pomocí <xref:System.Xml.Linq.XContainer.Nodes%2A> vlastnosti \<Description> <xref:System.Xml.Linq.XElement> objektu.
 
     [!code-vb[VbXmlSamples2#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXmlSamples2/VB/Module2.vb#8)]
 
@@ -286,10 +286,10 @@ Visual Basic poskytuje pohodlný způsob, jak upravit literály XML. Můžete p�
     </Catalog>
     ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Manipulace s XML v Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/manipulating-xml.md)
-- [XML](../../../../visual-basic/programming-guide/language-features/xml/index.md)
-- [Postupy: Načtení XML ze souboru, řetězce nebo streamu](../../../../visual-basic/programming-guide/language-features/xml/how-to-load-xml-from-a-file-string-or-stream.md)
-- [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)
-- [Úvod do jazyka LINQ v Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [Zacházení s XML v jazyce Visual Basic](manipulating-xml.md)
+- [XML](index.md)
+- [Postupy: Načtení XML ze souboru, řetězce nebo proudu](how-to-load-xml-from-a-file-string-or-stream.md)
+- [LINQ](../linq/index.md)
+- [Představení technologie LINQ v jazyce Visual Basic](../linq/introduction-to-linq.md)

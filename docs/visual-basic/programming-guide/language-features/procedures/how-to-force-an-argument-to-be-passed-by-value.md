@@ -14,45 +14,45 @@ helpviewer_keywords:
 - procedure arguments [Visual Basic], in parentheses
 - arguments [Visual Basic], changing value
 ms.assetid: 77b4f2d2-1055-4c2f-a521-874d1db86946
-ms.openlocfilehash: 047738a2cbadc6b7d72f41aade22bbeff16d1bac
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 48f7d7afebd76916cba11459532d89d71871c79b
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75347597"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84387961"
 ---
 # <a name="how-to-force-an-argument-to-be-passed-by-value-visual-basic"></a>Postupy: Vynucení předání argumentu podle hodnoty (Visual Basic)
-Deklarace procedury určuje mechanismus předávání. Pokud je parametr deklarovaný jako [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md), Visual Basic očekává předání odpovídajícího argumentu odkazem. To umožňuje proceduře změnit hodnotu programovacího prvku podkladu argumentu v volajícím kódu. Pokud chcete chránit základní prvek proti takové změně, můžete přepsat `ByRef` mechanismu předání procedury v volání procedury uzavřením názvu argumentu do závorek. Tyto kulaté závorky jsou kromě závorek ohraničujících seznam argumentů ve volání.  
+Deklarace procedury určuje mechanismus předávání. Pokud je parametr deklarovaný jako [ByRef](../../../language-reference/modifiers/byref.md), Visual Basic očekává předání odpovídajícího argumentu odkazem. To umožňuje proceduře změnit hodnotu programovacího prvku podkladu argumentu v volajícím kódu. Pokud chcete chránit základní prvek proti takové změně, můžete přepsat `ByRef` mechanismus předávání v volání procedury uzavřením názvu argumentu do závorek. Tyto kulaté závorky jsou kromě závorek ohraničujících seznam argumentů ve volání.  
   
- Volající kód nemůže přepsat mechanismus [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) .  
+ Volající kód nemůže přepsat mechanismus [ByVal](../../../language-reference/modifiers/byval.md) .  
   
 ### <a name="to-force-an-argument-to-be-passed-by-value"></a>Vynutit předání argumentu hodnotou  
   
-- Pokud je odpovídající parametr deklarován `ByVal` v proceduře, není nutné provádět žádné další kroky. Visual Basic již očekává předání argumentu hodnotou.  
+- Pokud je příslušný parametr deklarován `ByVal` v proceduře, není nutné provádět žádné další kroky. Visual Basic již očekává předání argumentu hodnotou.  
   
-- Pokud je odpovídající parametr deklarován `ByRef` v proceduře, uveďte argument do závorek ve volání procedury.  
+- Pokud je odpovídající parametr deklarován `ByRef` v proceduře, uveďte argument do závorek v proceduře volání procedury.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad přepisuje deklaraci parametru `ByRef`. V volání, které vynucuje `ByVal`, si poznamenejte dvě úrovně závorek.  
+ Následující příklad přepisuje `ByRef` deklaraci parametru. V volání, které vynucuje `ByVal` , si všimněte dvou úrovní závorek.  
   
  [!code-vb[VbVbcnProcedures#39](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#39)]  
   
  [!code-vb[VbVbcnProcedures#40](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#40)]  
   
- Pokud je `str` uzavřen v závorkách v seznamu argumentů, procedura `setNewString` nemůže změnit její hodnotu v kódu volajícího a `MsgBox` zobrazí "nelze je nahradit, pokud je to předáno". Když `str` není uzavřen v závorkách navíc, procedura ho může změnit a `MsgBox` zobrazí "Toto je nová hodnota pro argument inString."  
+ Když `str` je uzavřen v závorkách v seznamu argumentů, `setNewString` procedura nemůže změnit jeho hodnotu v kódu volajícího a `MsgBox` zobrazení "nemůže být nahrazeno, pokud bylo předáno" ByVal ". Když není `str` uzavřen v závorkách navíc, procedura ho může změnit a `MsgBox` zobrazí "Toto je nová hodnota pro argument inString."  
   
-## <a name="compile-the-code"></a>Kompilace kódu  
- Pokud předáte proměnnou odkazem, je nutné použít klíčové slovo `ByRef` k určení tohoto mechanismu.  
+## <a name="compile-the-code"></a>Kompilovat kód  
+ Pokud předáte proměnnou odkazem, je nutné použít `ByRef` klíčové slovo k určení tohoto mechanismu.  
   
- Výchozí hodnotou v Visual Basic je předání argumentů podle hodnoty. Nicméně je dobrým programovacím postupem, jak zahrnout klíčové slovo [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) nebo [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) s každým deklarovaným parametrem. To usnadňuje čtení kódu.  
+ Výchozí hodnotou v Visual Basic je předání argumentů podle hodnoty. Nicméně je dobrým programovacím postupem, jak zahrnout klíčové slovo [ByVal](../../../language-reference/modifiers/byval.md) nebo [ByRef](../../../language-reference/modifiers/byref.md) s každým deklarovaným parametrem. To usnadňuje čtení kódu.  
   
 ## <a name="robust-programming"></a>Robustní programování  
- Pokud procedura deklaruje parametr [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md), správné spuštění kódu může záviset na tom, zda je možné změnit podkladový prvek v kódu volajícího. Pokud volající kód přepíše tento volající mechanismus uzavřením argumentu do závorek nebo pokud předává argument, který není upraviteln, procedura nemůže změnit základní prvek. To může vést k neočekávaným výsledkům při volání kódu.  
+ Pokud procedura deklaruje parametr [ByRef](../../../language-reference/modifiers/byref.md), správné spuštění kódu může záviset na tom, zda je možné změnit podkladový prvek v kódu volajícího. Pokud volající kód přepíše tento volající mechanismus uzavřením argumentu do závorek nebo pokud předává argument, který není upraviteln, procedura nemůže změnit základní prvek. To může vést k neočekávaným výsledkům při volání kódu.  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
  V případě, že je možné změnit hodnotu podkladového typu argumentu v volajícím kódu, je vždy potenciálním rizikem. Ujistěte se, že jste očekávali, že tato hodnota se má změnit, a je připravená ji před použitím ověřit.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Procedury](./index.md)
 - [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)
@@ -63,4 +63,4 @@ Deklarace procedury určuje mechanismus předávání. Pokud je parametr deklaro
 - [Postupy: Změna hodnoty argumentu procedury](./how-to-change-the-value-of-a-procedure-argument.md)
 - [Postupy: Ochrana argumentu procedury před změnami hodnoty](./how-to-protect-a-procedure-argument-against-value-changes.md)
 - [Předávání argumentů podle pozice a názvu](./passing-arguments-by-position-and-by-name.md)
-- [Typy hodnot a odkazové typy](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)
+- [Typy hodnot a typy odkazu](../data-types/value-types-and-reference-types.md)
