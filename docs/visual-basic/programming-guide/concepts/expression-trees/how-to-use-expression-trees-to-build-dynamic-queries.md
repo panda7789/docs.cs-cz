@@ -2,28 +2,28 @@
 title: 'Postupy: Použití stromů výrazů k sestavování dynamických dotazů'
 ms.date: 07/20/2015
 ms.assetid: 16278787-7532-4b65-98b2-7a412406c4ee
-ms.openlocfilehash: 616aa3eba1e07a92983bb5d2048a9dbae936e77c
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 1f686c37b5d04263ac5ae0dd6883aa8a519ed19e
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75346056"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84410976"
 ---
 # <a name="how-to-use-expression-trees-to-build-dynamic-queries-visual-basic"></a>Postupy: použití stromů výrazů k sestavování dynamických dotazů (Visual Basic)
 
-V technologii LINQ se stromy výrazů používají k reprezentování strukturovaných dotazů, které cílí na zdroje dat, které implementují <xref:System.Linq.IQueryable%601>. Zprostředkovatel LINQ například implementuje rozhraní <xref:System.Linq.IQueryable%601> pro dotazování na relačních úložištích dat. Kompilátor Visual Basic zkompiluje dotazy, které cílí na takové zdroje dat, do kódu, který vytvoří strom výrazu za běhu. Poskytovatel dotazu pak může procházet strukturu dat stromu výrazů a překládat ji do dotazovacího jazyka vhodného pro zdroj dat.
+V technologii LINQ se stromy výrazů používají k reprezentování strukturovaných dotazů, které cílí na zdroje dat, která implementují <xref:System.Linq.IQueryable%601> . Například poskytovatel LINQ implementuje <xref:System.Linq.IQueryable%601> rozhraní pro dotazování relačních úložišť dat. Kompilátor Visual Basic zkompiluje dotazy, které cílí na takové zdroje dat, do kódu, který vytvoří strom výrazu za běhu. Poskytovatel dotazu pak může procházet strukturu dat stromu výrazů a překládat ji do dotazovacího jazyka vhodného pro zdroj dat.
 
-Stromy výrazů jsou také používány v LINQ k reprezentování výrazů lambda, které jsou přiřazeny proměnným typu <xref:System.Linq.Expressions.Expression%601>.
+Stromy výrazů jsou také používány v LINQ k reprezentování výrazů lambda, které jsou přiřazeny proměnným typu <xref:System.Linq.Expressions.Expression%601> .
 
 Toto téma popisuje použití stromů výrazů k vytváření dynamických dotazů LINQ. Dynamické dotazy jsou užitečné v případě, že specifické výrazy dotazu nejsou známy v době kompilace. Například aplikace může poskytovat uživatelské rozhraní, které umožňuje koncovému uživateli určit jeden nebo více predikátů pro filtrování dat. Aby bylo možné používat LINQ pro dotazování, tento druh aplikace musí pomocí stromů výrazů vytvořit dotaz LINQ za běhu.
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje, jak pomocí stromů výrazů sestavit dotaz na zdroj dat `IQueryable` a pak ho spustit. Kód vytvoří strom výrazu pro reprezentaci následujícího dotazu:
+Následující příklad ukazuje, jak použít stromy výrazů k vytvoření dotazu na `IQueryable` zdroj dat a jeho následné spuštění. Kód vytvoří strom výrazu pro reprezentaci následujícího dotazu:
 
 `companies.Where(Function(company) company.ToLower() = "coho winery" OrElse company.Length > 16).OrderBy(Function(company) company)`
 
-Metody továrny v oboru názvů <xref:System.Linq.Expressions> slouží k vytváření stromů výrazů, které představují výrazy, které tvoří celkový dotaz. Výrazy, které reprezentují volání standardních metod operátoru dotazu, odkazují na <xref:System.Linq.Queryable> implementace těchto metod. Konečný strom výrazu je předán <xref:System.Linq.IQueryProvider.CreateQuery%60%601%28System.Linq.Expressions.Expression%29> implementaci zprostředkovatele `IQueryable` zdroje dat, aby bylo možné vytvořit spustitelný dotaz typu `IQueryable`. Výsledky jsou získány vytvořením výčtu proměnné dotazu.
+Metody továrny v <xref:System.Linq.Expressions> oboru názvů slouží k vytváření stromů výrazů, které představují výrazy, které tvoří celkový dotaz. Výrazy, které reprezentují volání standardních metod operátoru dotazu, odkazují na <xref:System.Linq.Queryable> implementace těchto metod. Konečný strom výrazu je předán <xref:System.Linq.IQueryProvider.CreateQuery%60%601%28System.Linq.Expressions.Expression%29> implementaci poskytovatele `IQueryable` zdroje dat pro vytvoření spustitelného dotazu typu `IQueryable` . Výsledky jsou získány vytvořením výčtu proměnné dotazu.
 
 ```vb
 ' Add an Imports statement for System.Linq.Expressions.
@@ -99,17 +99,17 @@ Next
 ' Wide World Importers
 ```
 
-Tento kód používá pevný počet výrazů v predikátu, který je předán metodě `Queryable.Where`. Můžete však napsat aplikaci, která kombinuje proměnlivý počet výrazů predikátů, který závisí na vstupu uživatele. V závislosti na vstupu od uživatele můžete také měnit standardní operátory dotazů, které jsou v dotazu volány.
+Tento kód používá pevný počet výrazů v predikátu, který je předán `Queryable.Where` metodě. Můžete však napsat aplikaci, která kombinuje proměnlivý počet výrazů predikátů, který závisí na vstupu uživatele. V závislosti na vstupu od uživatele můžete také měnit standardní operátory dotazů, které jsou v dotazu volány.
 
-## <a name="compile-the-code"></a>Kompilace kódu
+## <a name="compile-the-code"></a>Kompilovat kód
 
 - Vytvořte nový projekt **konzolové aplikace** .
 
 - Zahrňte obor názvů System. Linq. Expressions.
 
-- Zkopírujte kód z příkladu a vložte ho do `Main` `Sub` postupu.
+- Zkopírujte kód z příkladu a vložte ho do `Main` `Sub` procedury.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Stromy výrazů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/index.md)
-- [Postupy: spouštění stromů výrazů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/how-to-execute-expression-trees.md)
+- [Stromy výrazů (Visual Basic)](index.md)
+- [Postupy: spouštění stromů výrazů (Visual Basic)](how-to-execute-expression-trees.md)

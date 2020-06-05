@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Do proměnné umístit více než jednu hodnotu'
+title: 'Postupy: Uchování více než jedné hodnoty v proměnné'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - classes [Visual Basic], composite data types
@@ -11,18 +11,18 @@ helpviewer_keywords:
 - arrays [Visual Basic], compilation errors
 - types [Visual Basic], composite
 ms.assetid: 5fe0e558-aac2-4a40-b7f2-7cfea7336917
-ms.openlocfilehash: d452fbf35f9d200348234b38c40f8636f0ec4b4e
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 399c5909ee6988f96bcc85260b0401f3bd18a0f2
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74350019"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84393893"
 ---
 # <a name="how-to-hold-more-than-one-value-in-a-variable-visual-basic"></a>Postupy: Do proměnné umístit více než jednu hodnotu (Visual Basic)
 
 Proměnná obsahuje více než jednu hodnotu, pokud deklarujete jako *složený datový typ*.
 
-[Složené datové typy](../../../../visual-basic/programming-guide/language-features/data-types/composite-data-types.md) zahrnují struktury, pole a třídy. Proměnná složeného datového typu může obsahovat kombinaci základních datových typů a dalších složených typů. Struktury a třídy mohou uchovávat kód i data.
+[Složené datové typy](composite-data-types.md) zahrnují struktury, pole a třídy. Proměnná složeného datového typu může obsahovat kombinaci základních datových typů a dalších složených typů. Struktury a třídy mohou uchovávat kód i data.
 
 ## <a name="to-hold-more-than-one-value-in-a-variable"></a>Uložení více než jedné hodnoty v proměnné
 
@@ -30,24 +30,24 @@ Proměnná obsahuje více než jednu hodnotu, pokud deklarujete jako *složený 
 
 2. Pokud se složený datový typ ještě nedefinuje, definujte ho, aby ho vaše proměnná mohla použít.
 
-    - Definujte strukturu pomocí [příkazu struktury](../../../../visual-basic/language-reference/statements/structure-statement.md).
+    - Definujte strukturu pomocí [příkazu struktury](../../../language-reference/statements/structure-statement.md).
 
-    - Definujte pole pomocí [příkazu Dim](../../../../visual-basic/language-reference/statements/dim-statement.md).
+    - Definujte pole pomocí [příkazu Dim](../../../language-reference/statements/dim-statement.md).
 
-    - Definujte třídu pomocí [příkazu třídy](../../../../visual-basic/language-reference/statements/class-statement.md).
+    - Definujte třídu pomocí [příkazu třídy](../../../language-reference/statements/class-statement.md).
 
-3. Deklarujte proměnnou pomocí příkazu `Dim`.
+3. Deklarujte proměnnou pomocí `Dim` příkazu.
 
-4. Použijte název proměnné s klauzulí `As`.
+4. Použijte název proměnné s `As` klauzulí.
 
-5. Použijte klíčové slovo `As` s názvem vhodného složeného datového typu.
+5. Použijte `As` klíčové slovo s názvem vhodného složeného datového typu.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Datové typy](../../../../visual-basic/language-reference/data-types/index.md)
-- [Znaky typu](../../../../visual-basic/programming-guide/language-features/data-types/type-characters.md)
-- [Složené datové typy](../../../../visual-basic/programming-guide/language-features/data-types/composite-data-types.md)
-- [Struktury](../../../../visual-basic/programming-guide/language-features/data-types/structures.md)
-- [Pole](../../../../visual-basic/programming-guide/language-features/arrays/index.md)
-- [Objekty a třídy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)
-- [Typy hodnot a odkazové typy](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)
+- [Datové typy](../../../language-reference/data-types/index.md)
+- [Znaky typu](type-characters.md)
+- [Složené datové typy](composite-data-types.md)
+- [Struktury](structures.md)
+- [Pole](../arrays/index.md)
+- [Objekty a třídy](../objects-and-classes/index.md)
+- [Typy hodnot a typy odkazu](value-types-and-reference-types.md)
