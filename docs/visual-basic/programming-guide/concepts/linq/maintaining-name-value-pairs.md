@@ -2,12 +2,12 @@
 title: Zachování dvojic název a hodnota
 ms.date: 07/20/2015
 ms.assetid: 57ac2072-d9f5-432b-84f0-a889c62fd813
-ms.openlocfilehash: b8c9487330239e7e6365055d5f08a02f2dbb0e37
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: 1e30f010311dda393f65b1424e56f5b5ad014963
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82796142"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84389214"
 ---
 # <a name="maintaining-namevalue-pairs-visual-basic"></a>Udržování párů název/hodnota (Visual Basic)
 Mnoho aplikací musí uchovávat informace, které jsou nejvhodnější pro páry název/hodnota. Tyto informace můžou být konfigurační informace nebo globální nastavení. [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]obsahuje některé metody, které usnadňují zachování sady párů název/hodnota. Tyto informace můžete zachovat jako atributy nebo jako sadu podřízených prvků.  
@@ -15,7 +15,7 @@ Mnoho aplikací musí uchovávat informace, které jsou nejvhodnější pro pár
  Jeden rozdíl mezi uchováváním informací jako atributů nebo jako podřízených elementů je, že atributy mají omezení, že může existovat pouze jeden atribut s určitým názvem pro element. Toto omezení se nevztahuje na podřízené prvky.  
   
 ## <a name="setattributevalue-and-setelementvalue"></a>SetAttributeValue a SetElementValue  
- Existují dvě metody, které pomáhají zachovat páry název/hodnota <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> jsou <xref:System.Xml.Linq.XElement.SetElementValue%2A>a. Tyto dvě metody mají podobnou sémantiku.  
+ Existují dvě metody, které pomáhají zachovat páry název/hodnota jsou <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> a <xref:System.Xml.Linq.XElement.SetElementValue%2A> . Tyto dvě metody mají podobnou sémantiku.  
   
  <xref:System.Xml.Linq.XElement.SetAttributeValue%2A>může přidat, upravit nebo odebrat atributy prvku.  
   
@@ -122,4 +122,4 @@ Console.WriteLine(root)
 
 - <xref:System.Xml.Linq.XElement.SetAttributeValue%2A>
 - <xref:System.Xml.Linq.XElement.SetElementValue%2A>
-- [Úprava stromů XML (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)
+- [Úprava stromů XML (LINQ to XML) (Visual Basic)](modifying-xml-trees-linq-to-xml.md)

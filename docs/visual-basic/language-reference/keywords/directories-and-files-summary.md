@@ -6,19 +6,19 @@ helpviewer_keywords:
 - directories [Visual Basic], Visual Basic
 - files [Visual Basic], summary
 ms.assetid: 588b75fd-a09b-4381-822d-19868990c170
-ms.openlocfilehash: 6c7e1ef37b8abffee89c207ac1dcfb5cbef25c29
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: c4429d58d2f089b86f5c32c1f3ce8353b02880c4
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74349840"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84373878"
 ---
 # <a name="directories-and-files-summary-visual-basic"></a>Souhrn adresářů a souborů (Visual Basic)
 Visual Basic klíčová slova jazyka a členy běhové knihovny jsou uspořádány podle účelu a použití.  
   
- Použití funkce `My` poskytuje vyšší produktivitu a výkon v vstupně-výstupních operacích se soubory než jejich použití. Další informace najdete v tématu <xref:Microsoft.VisualBasic.FileIO.FileSystem>.  
+ Díky této `My` funkci získáte větší produktivitu a výkon v rámci vstupně-výstupních operací se soubory než pomocí těchto členů. Další informace naleznete v tématu <xref:Microsoft.VisualBasic.FileIO.FileSystem>.  
   
-|**Kroky**|**Element Language**|  
+|**Akce**|**Prvek jazyka**|  
 |----------------|--------------------------|  
 |Změna adresáře nebo složky|<xref:Microsoft.VisualBasic.FileSystem.ChDir%2A>|  
 |Změňte jednotku.|<xref:Microsoft.VisualBasic.FileSystem.ChDrive%2A>|  
@@ -33,11 +33,11 @@ Visual Basic klíčová slova jazyka a členy běhové knihovny jsou uspořádá
 |Vrátí název souboru nebo popisek svazku.|<xref:Microsoft.VisualBasic.FileSystem.Dir%2A>|  
 |Nastavte informace o atributu souboru.|<xref:Microsoft.VisualBasic.FileSystem.SetAttr%2A>|  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Klíčová slova](../../../visual-basic/language-reference/keywords/index.md)
-- [Členové knihovny modulu runtime jazyka Visual Basic](../../../visual-basic/language-reference/runtime-library-members.md)
-- [Čtení ze souborů](../../../visual-basic/developing-apps/programming/drives-directories-files/reading-from-files.md)
-- [Zápis do souborů](../../../visual-basic/developing-apps/programming/drives-directories-files/writing-to-files.md)
-- [Vytváření, odstraňování a přesouvání souborů a adresářů](../../../visual-basic/developing-apps/programming/drives-directories-files/creating-deleting-and-moving-files-and-directories.md)
-- [Analýza textových souborů pomocí objektu TextFieldParser](../../../visual-basic/developing-apps/programming/drives-directories-files/parsing-text-files-with-the-textfieldparser-object.md)
+- [Klíčová slova](index.md)
+- [Členové knihovny prostředí Runtime jazyka Visual Basic](../runtime-library-members.md)
+- [Čtení ze souborů](../../developing-apps/programming/drives-directories-files/reading-from-files.md)
+- [Zápis do souborů](../../developing-apps/programming/drives-directories-files/writing-to-files.md)
+- [Vytváření, odstraňování a přesouvání souborů a adresářů](../../developing-apps/programming/drives-directories-files/creating-deleting-and-moving-files-and-directories.md)
+- [Analýza textových souborů pomocí objektu TextFieldParser](../../developing-apps/programming/drives-directories-files/parsing-text-files-with-the-textfieldparser-object.md)
