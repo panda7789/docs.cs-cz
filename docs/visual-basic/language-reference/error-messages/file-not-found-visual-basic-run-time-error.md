@@ -4,26 +4,26 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID53
 ms.assetid: 57addb16-6f9a-444d-8af8-dda52431daca
-ms.openlocfilehash: 90dbac88854e1fb156b387eaa6df564269d84d29
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 0583fc465e81a7076624f4f90297ab3e002c6611
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64629053"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84363070"
 ---
 # <a name="file-not-found-visual-basic-run-time-error"></a>Soubor nebyl nalezen (chyba za běhu jazyka Visual Basic).
-Soubor nebyl nalezen, je-li zadána. Chyba má následující možné příčiny:  
+Soubor se nenašel tam, kde je zadaný. Tato chyba má následující možné příčiny:  
   
-- Příkaz odkazuje na soubor, který neexistuje.  
+- Příkaz odkazuje na neexistující soubor.  
   
-- Byl proveden pokus o volání procedury v dynamická knihovna (DLL), ale v zadané knihovně `Lib` klauzuli `Declare` příkaz nebyl nalezen.  
+- Došlo k pokusu o volání procedury v knihovně DLL (Dynamic-Link Library), knihovna zadaná v klauzuli příkazu však nebyla `Lib` `Declare` nalezena.  
   
-- Jste se pokusili otevřít projekt nebo načíst textový soubor, který neexistuje.  
+- Pokusili jste se otevřít projekt nebo načíst textový soubor, který neexistuje.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1. Zkontrolujte, zda název souboru a specifikaci cesty.  
+1. Zkontrolujte pravopis názvu souboru a specifikace cesty.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Příkaz Declare](../../../visual-basic/language-reference/statements/declare-statement.md)
+- [Declare – příkaz](../statements/declare-statement.md)

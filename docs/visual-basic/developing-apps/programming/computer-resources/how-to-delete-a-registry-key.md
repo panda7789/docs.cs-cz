@@ -11,16 +11,16 @@ helpviewer_keywords:
 - registry [Visual Basic], deleting keys
 - examples [Visual Basic], registry
 ms.assetid: ab9aca0e-42b0-4ff7-8ff9-845a4bfdf9f2
-ms.openlocfilehash: f38301a3a717a35b98e55804d6435d046bbbbab4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ea537d302f64933176f1a44fec2e27b804ff5809
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74345644"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84363316"
 ---
 # <a name="how-to-delete-a-registry-key-in-visual-basic"></a>Postupy: Odstranění klíče z registru v jazyce Visual Basic
 
-Metody <xref:Microsoft.Win32.RegistryKey.DeleteSubKey%28System.String%29> a <xref:Microsoft.Win32.RegistryKey.DeleteSubKey%28System.String%2CSystem.Boolean%29> lze použít k odstranění klíčů registru.  
+<xref:Microsoft.Win32.RegistryKey.DeleteSubKey%28System.String%29>Metody a <xref:Microsoft.Win32.RegistryKey.DeleteSubKey%28System.String%2CSystem.Boolean%29> lze použít k odstranění klíčů registru.  
   
 ## <a name="procedure"></a>Postup  
   
@@ -32,25 +32,25 @@ Metody <xref:Microsoft.Win32.RegistryKey.DeleteSubKey%28System.String%29> a <xre
   
 ## <a name="robust-programming"></a>Robustní programování  
 
- `DeleteSubKey` Metoda vrátí prázdný řetězec, pokud dvojice klíč/hodnota neexistuje.  
+ `DeleteSubKey`Metoda vrátí prázdný řetězec, pokud dvojice klíč/hodnota neexistuje.  
   
  Následující podmínky mohou způsobit výjimku:  
   
-- Název klíče je `Nothing` (<xref:System.ArgumentNullException>).  
+- Název klíče je `Nothing` ( <xref:System.ArgumentNullException> ).  
   
-- Uživatel nemá oprávnění k odstranění klíčů registru (<xref:System.Security.SecurityException>).  
+- Uživatel nemá oprávnění k odstranění klíčů registru ( <xref:System.Security.SecurityException> ).  
   
-- Název klíče překračuje limit 255 znaků (<xref:System.ArgumentException>).  
+- Název klíče překračuje limit 255 znaků ( <xref:System.ArgumentException> ).  
   
-- Klíč registru je jen pro čtení (<xref:System.UnauthorizedAccessException>).  
+- Klíč registru je jen pro čtení ( <xref:System.UnauthorizedAccessException> ).  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
 
- Volání registru selže, pokud buď nejsou udělena dostatečná oprávnění za běhu (<xref:System.Security.Permissions.RegistryPermission>), nebo pokud uživatel nemá správný přístup (podle určení seznamů ACL) pro vytvoření nebo zápis do nastavení. Například místní aplikace, která má oprávnění zabezpečení přístupu kódu, nemusí mít oprávnění operačního systému.  
+ Volání registru selže, pokud buď nejsou udělena dostatečná oprávnění za běhu ( <xref:System.Security.Permissions.RegistryPermission> ), nebo pokud uživatel nemá správný přístup (podle určení seznamů ACL) pro vytvoření nebo zápis do nastavení. Například místní aplikace, která má oprávnění zabezpečení přístupu kódu, nemusí mít oprávnění operačního systému.  
   
 ## <a name="see-also"></a>Viz také
 
 - <xref:Microsoft.Win32.RegistryKey.DeleteSubKey%2A>
 - <xref:Microsoft.Win32.RegistryKey>
-- [Zabezpečení a registr](../../../../visual-basic/developing-apps/programming/computer-resources/security-and-the-registry.md)
-- [Čtení z registru a zápis do něj](../../../../visual-basic/developing-apps/programming/computer-resources/reading-from-and-writing-to-the-registry.md)
+- [Zabezpečení a registr](security-and-the-registry.md)
+- [Čtení z registru a zápis do něj](reading-from-and-writing-to-the-registry.md)

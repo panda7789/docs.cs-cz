@@ -1,25 +1,25 @@
 ---
-title: Argument "Životnost" nemůže být nulový
+title: Argument Life nemůže mít hodnotu nula.
 ms.date: 07/20/2015
 f1_keywords:
 - vbrFinancial_LifeNEZero
 ms.assetid: c402da97-a2b2-4219-a83a-0cebbfdffef2
-ms.openlocfilehash: e1a739d08b89c07c33302eb3bfcdc4b1e8c6e80e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: a737afb8901382d75c3858f84be1b2359338b057
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64659143"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84368163"
 ---
-# <a name="argument-life-cannot-be-zero"></a>Argument "Životnost" nemůže být nulový
-Argument `Life`, která musí být `Double` , který určuje dobu životnosti majetku, není platný.  
+# <a name="argument-life-cannot-be-zero"></a>Argument Life nemůže mít hodnotu nula.
+Argument pro `Life` , který musí být, `Double` který určuje délku životnosti assetu, není platná.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-- Zkontrolujte, zda argumenty ve výrazu. Chybně napsaná název proměnné implicitně vytvářet číselné proměnné, která je inicializována na nulovou hodnotu.  
+- Kontrola pravopisu argumentů ve výrazu. Nesprávně napsaný název proměnné může implicitně vytvořit číselnou proměnnou, která je inicializovaná na nulu.  
   
-- Zkontrolujte předchozí operací pro proměnné ve výrazu, zejména těch, které jsou předány do procedury jako argumenty z jiných postupů.  
+- Zkontroluje předchozí operace s proměnnými ve výrazu, zejména ty, které byly předány do procedury jako argumenty z jiných postupů.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Předávání argumentů podle hodnoty a reference](../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)
+- [Předávání argumentů podle hodnoty a reference](../programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)

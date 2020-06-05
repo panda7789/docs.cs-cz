@@ -7,20 +7,20 @@ f1_keywords:
 helpviewer_keywords:
 - BC42110
 ms.assetid: ef4442eb-08d1-434f-a03b-4aa2ed4e4414
-ms.openlocfilehash: e56529919945558df178e18a83a895a79bfe4919
-ms.sourcegitcommit: 463f3f050cecc0b6403e67f19a61f870fb8e7b7d
+ms.openlocfilehash: 98aeb5699fdd5e5e538a205acd37436019c3fc03
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68512726"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84363043"
 ---
-# <a name="the-type-for-variable-variablename-will-not-be-inferred-because-it-is-bound-to-a-field-in-an-enclosing-scope"></a>Typ proměnné '\<Variable > ' nebude odvozen, protože je svázán s polem v ohraničujícím oboru
+# <a name="the-type-for-variable-variablename-will-not-be-inferred-because-it-is-bound-to-a-field-in-an-enclosing-scope"></a>Typ pro proměnnou '\<variablename>' nebude odvozen, protože je připojen k poli v ohraničujícím oboru.
 
-Typ proměnné '\<Variable > ' nebude odvozen, protože je svázán s polem v ohraničujícím oboru. Buď změňte název "\<Variable název >", nebo použijte plně kvalifikovaný název (například "já. Variable" nebo "MyBase. Variable").
+Typ proměnné ' \<variablename> ' nebude odvozen, protože je svázán s polem v ohraničujícím oboru. Buď změňte název \<variablename> , nebo použijte plně kvalifikovaný název (například "já. Variable" nebo "MyBase. Variable").
 
-Řídicí proměnná smyčky v kódu má stejný název jako pole třídy nebo jiný ohraničující obor. Vzhledem k tomu, že proměnná ovládacího prvku `As` se používá bez klauzule, je svázána s polem v ohraničujícím oboru a kompilátor pro něj nevytvoří novou proměnnou nebo odvodí její typ.
+Řídicí proměnná smyčky v kódu má stejný název jako pole třídy nebo jiný ohraničující obor. Vzhledem k tomu, že proměnná ovládacího prvku se používá bez `As` klauzule, je svázána s polem v ohraničujícím oboru a kompilátor pro něj nevytvoří novou proměnnou nebo odvodí její typ.
 
-V následujícím příkladu `Index`je proměnná ovládacího prvku `For` v příkazu svázána `Customer` s `Index` polem ve třídě. Kompilátor nevytvoří novou proměnnou pro proměnnou `Index` ovládacího prvku nebo odvodí její typ.
+V následujícím příkladu `Index` je proměnná ovládacího prvku v `For` příkazu svázána s `Index` polem ve `Customer` třídě. Kompilátor nevytvoří novou proměnnou pro proměnnou ovládacího prvku `Index` nebo odvodí její typ.
 
 ```vb
 Class Customer
@@ -82,11 +82,11 @@ Class Customer
 End Class
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Příkaz Option Infer](../../../visual-basic/language-reference/statements/option-infer-statement.md)
-- [Příkaz For Each...Next](../../../visual-basic/language-reference/statements/for-each-next-statement.md)
-- [Příkaz For...Next](../../../visual-basic/language-reference/statements/for-next-statement.md)
-- [Postupy: Odkaz na aktuální instanci objektu](../../../visual-basic/programming-guide/language-features/variables/how-to-refer-to-the-current-instance-of-an-object.md)
-- [Odvození místního typu](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)
-- [Me, My, MyBase a MyClass](../../../visual-basic/programming-guide/program-structure/me-my-mybase-and-myclass.md)
+- [Option Infer – příkaz](../statements/option-infer-statement.md)
+- [For Each...Next – příkaz](../statements/for-each-next-statement.md)
+- [For...Next – příkaz](../statements/for-next-statement.md)
+- [Postupy: Odkazování na aktuální instanci objektu](../../programming-guide/language-features/variables/how-to-refer-to-the-current-instance-of-an-object.md)
+- [Odvození místního typu](../../programming-guide/language-features/variables/local-type-inference.md)
+- [Me, My, MyBase a MyClass](../../programming-guide/program-structure/me-my-mybase-and-myclass.md)

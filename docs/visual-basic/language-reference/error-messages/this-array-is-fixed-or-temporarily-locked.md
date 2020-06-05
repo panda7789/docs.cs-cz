@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID10
 ms.assetid: de6713a6-51d7-4edb-8515-d5fb544e2091
-ms.openlocfilehash: 8d5e4add2d92a575126fb934ac3874a2e37685f5
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 4a86460104b6c4d9d6791e60f6f377cec0030425
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74350786"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84363030"
 ---
 # <a name="this-array-is-fixed-or-temporarily-locked-visual-basic"></a>Toto pole nelze upravovat nebo je dočasně uzamčeno (Visual Basic).
 Tato chyba má následující možné příčiny:  
@@ -18,16 +18,16 @@ Tato chyba má následující možné příčiny:
   
 - Předimenzování dynamického pole na úrovni modulu, ve kterém jeden prvek byl předán jako argument procedury. Pokud je předán element, je pole uzamčeno, aby nedošlo k zrušení přidělení paměti pro parametr reference v rámci procedury.  
   
-- Došlo k pokusu o přiřazení hodnoty k proměnné `Variant` obsahující pole, ale `Variant` je aktuálně uzamčena.  
+- Pokus o přiřazení hodnoty k `Variant` proměnné obsahující pole, ale `Variant` je aktuálně uzamčena.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1. Zajistěte, aby původní pole bylo dynamické a nikoli pevně deklarováno pomocí `ReDim` (Pokud je pole deklarováno v rámci procedury) nebo prohlášením bez určení počtu prvků (Pokud je pole deklarováno na úrovni modulu.  
+1. Zajistěte, aby původní pole bylo dynamické a nikoli pevně `ReDim` deklarované deklarací (Pokud je pole deklarováno v rámci procedury), nebo deklarací, aniž by bylo nutné určit počet prvků (Pokud je pole deklarováno na úrovni modulu.  
   
 2. Určete, zda opravdu potřebujete předat element, protože je viditelný v rámci všech procedur v modulu.  
   
-3. Určete, co zamkne `Variant` a opravte ho.  
+3. Určete, co zamkne `Variant` a opraví ho.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Pole](../../../visual-basic/programming-guide/language-features/arrays/index.md)
+- [Pole](../../programming-guide/language-features/arrays/index.md)

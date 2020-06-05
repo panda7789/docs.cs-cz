@@ -2,12 +2,12 @@
 title: Přehled standardních operátorů dotazu
 ms.date: 07/20/2015
 ms.assetid: 302bd39e-2ec1-495b-94bf-37d370d6f05f
-ms.openlocfilehash: 0f68d175b526a9da86853272c47b5e7d7b4a5992
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: 7c229a576f6695282473352d6253d2c699c76604
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84201086"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84406778"
 ---
 # <a name="standard-query-operators-overview-visual-basic"></a>Přehled standardních operátorů dotazů (Visual Basic)
 
@@ -66,7 +66,7 @@ MsgBox(output.ToString())
 
 ## <a name="query-expression-syntax"></a>Syntaxe výrazu dotazu
 
-Některé z často používaných standardních operátorů dotazů mají vyhrazená syntaxe klíčového slova jazyka C# a Visual Basic, která umožňuje jejich volání jako součást výrazu *dotazu* *expression*. Další informace o standardních operátorech dotazu, které mají vyhrazená klíčová slova a jejich odpovídajících syntaxech, naleznete v tématu [syntaxe výrazu dotazu pro standardní operátory dotazu (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/query-expression-syntax-for-standard-query-operators.md).
+Některé z často používaných standardních operátorů dotazů mají vyhrazená syntaxe klíčového slova jazyka C# a Visual Basic, která umožňuje jejich volání jako součást výrazu *dotazu* *expression*. Další informace o standardních operátorech dotazu, které mají vyhrazená klíčová slova a jejich odpovídajících syntaxech, naleznete v tématu [syntaxe výrazu dotazu pro standardní operátory dotazu (Visual Basic)](query-expression-syntax-for-standard-query-operators.md).
 
 ## <a name="extending-the-standard-query-operators"></a>Rozšíření standardních operátorů dotazu
 
@@ -76,39 +76,39 @@ Můžete rozšířit sadu standardních operátorů dotazů vytvořením metod s
 
 Následující odkazy odkazují na témata, která poskytují další informace o různých standardních dotazovacích operátorech na základě funkcí.
 
-- [Řazení dat](../../../../visual-basic/programming-guide/concepts/linq/sorting-data.md)
+- [Řazení dat](sorting-data.md)
 
-- [Operace set (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/set-operations.md)
+- [Operace set (Visual Basic)](set-operations.md)
 
-- [Filtrování dat (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/filtering-data.md)
+- [Filtrování dat (Visual Basic)](filtering-data.md)
 
-- [Operace kvantifikátoru (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/quantifier-operations.md)
+- [Operace kvantifikátoru (Visual Basic)](quantifier-operations.md)
 
-- [Operace projekce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projection-operations.md)
+- [Operace projekce (Visual Basic)](projection-operations.md)
 
-- [Dělení dat (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/partitioning-data.md)
+- [Dělení dat (Visual Basic)](partitioning-data.md)
 
-- [Operace join (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/join-operations.md)
+- [Operace join (Visual Basic)](join-operations.md)
 
-- [Seskupování dat (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/grouping-data.md)
+- [Seskupování dat (Visual Basic)](grouping-data.md)
 
-- [Operace generování (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/generation-operations.md)
+- [Operace generování (Visual Basic)](generation-operations.md)
 
-- [Operace rovnosti (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/equality-operations.md)
+- [Operace rovnosti (Visual Basic)](equality-operations.md)
 
-- [Operace elementu (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/element-operations.md)
+- [Operace elementu (Visual Basic)](element-operations.md)
 
-- [Převádění datových typů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/converting-data-types.md)
+- [Převádění datových typů (Visual Basic)](converting-data-types.md)
 
-- [Operace zřetězení (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/concatenation-operations.md)
+- [Operace zřetězení (Visual Basic)](concatenation-operations.md)
 
-- [Agregační operace (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/aggregation-operations.md)
+- [Agregační operace (Visual Basic)](aggregation-operations.md)
 
 ## <a name="see-also"></a>Viz také
 
 - <xref:System.Linq.Enumerable>
 - <xref:System.Linq.Queryable>
-- [Úvod do LINQ (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/introduction-to-linq.md)
-- [Syntaxe výrazu dotazu pro standardní operátory dotazu (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/query-expression-syntax-for-standard-query-operators.md)
-- [Klasifikace standardních operátorů dotazu podle způsobu provedení (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/classification-of-standard-query-operators-by-manner-of-execution.md)
-- [Metody rozšíření](../../../../visual-basic/programming-guide/language-features/procedures/extension-methods.md)
+- [Úvod do LINQ (Visual Basic)](introduction-to-linq.md)
+- [Syntaxe výrazu dotazu pro standardní operátory dotazu (Visual Basic)](query-expression-syntax-for-standard-query-operators.md)
+- [Klasifikace standardních operátorů dotazu podle způsobu provedení (Visual Basic)](classification-of-standard-query-operators-by-manner-of-execution.md)
+- [Metody rozšíření](../../language-features/procedures/extension-methods.md)

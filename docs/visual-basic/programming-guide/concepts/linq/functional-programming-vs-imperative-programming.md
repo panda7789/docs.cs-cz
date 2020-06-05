@@ -2,22 +2,22 @@
 title: Funkční programování vs. imperativní programování
 ms.date: 07/20/2015
 ms.assetid: 6a1f3b57-00e6-447d-9906-74c7c4d5d85c
-ms.openlocfilehash: 704beadc29af0de606b8f246360dc6fffca8cfcc
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 0090761dc07218673e1e0299951530d5a4763ffe
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353431"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84364796"
 ---
 # <a name="functional-programming-vs-imperative-programming-visual-basic"></a>Funkční programování vs. imperativní programování (Visual Basic)
 Toto téma porovnává a kontrastuje funkční programování s více tradičními imperativních (procedurální) programování.  
   
 ## <a name="functional-programming-vs-imperative-programming"></a>Funkční programování vs. imperativní programování  
- *Funkce programovacího programování* byla explicitně vytvořena pro podporu čistě funkčního přístupu k řešení problémů. Funkční programování je forma *deklarativního programování*. Naopak většina běžných jazyků, včetně objektově orientovaného programování (OOP), jako C#jsou například Visual Basic, C++a Java, byla navržena tak, aby primárně podporovala *imperativní* (procedurální) programování.  
+ *Funkce programovacího programování* byla explicitně vytvořena pro podporu čistě funkčního přístupu k řešení problémů. Funkční programování je forma *deklarativního programování*. Naopak většina běžných jazyků, včetně objektově orientovaného programování (OOP), jako je C#, Visual Basic, C++ a Java, byla navržena tak, aby primárně podporovala *imperativní* (procedurální) programování.  
   
  V případě imperativního přístupu Vývojář zapíše kód, který popisuje přesný popis kroků, které musí počítač provést k dosažení cíle. Tento postup se někdy označuje jako *algoritmy* programování. Kromě toho funkční přístup zahrnuje vytvoření problému jako sady funkcí, které mají být provedeny. Nadefinujete pečlivě vstup na jednotlivé funkce a funkci, kterou vrátí každá funkce. Následující tabulka popisuje některé z obecných rozdílů mezi těmito dvěma přístupy.  
   
-|Charakteristiku|Imperativní přístup|Funkční přístup|  
+|Charakteristika|Imperativní přístup|Funkční přístup|  
 |--------------------|-------------------------|-------------------------|  
 |Programátorské zaměření|Jak provádět úlohy (algoritmy) a jak sledovat změny ve stavu.|Jaké informace jsou požadovány a jaké transformace jsou vyžadovány.|  
 |Změny stavu|Významná.|Neexistující.|  
@@ -50,8 +50,8 @@ Toto téma porovnává a kontrastuje funkční programování s více tradiční
   
  Naštěstí Visual Basic nevyžaduje úplný přesun do funkčního programování, protože podporuje jak imperativní, tak funkční programovací postupy. Vývojář si může vybrat, který přístup je nejvhodnější pro konkrétní scénář. V některých případech programy často kombinují obě přístupy.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Úvod do čistě funkční transformace (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/introduction-to-pure-functional-transformations.md)
+- [Úvod do čistě funkční transformace (Visual Basic)](introduction-to-pure-functional-transformations.md)
 - [Transformace XSLT](../../../../standard/data/xml/xslt-transformations.md)
-- [Refaktoring na čistě funkce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-into-pure-functions.md)
+- [Refaktoring na čistě funkce (Visual Basic)](refactoring-into-pure-functions.md)
