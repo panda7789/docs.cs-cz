@@ -7,29 +7,29 @@ f1_keywords:
 helpviewer_keywords:
 - BC30188
 ms.assetid: da6b1df3-fe6b-4415-88e6-0977e5189e0b
-ms.openlocfilehash: e6f8bf2b4ce9789a1715971b8262bdd162ba8035
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 237622d0dc6c57f66d402f491a6191a5911574e2
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64619533"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84409735"
 ---
 # <a name="declaration-expected"></a>Byla očekávána deklarace.
-Nondeclarative příkazu, jako je například přiřazení nebo příkazu smyčky, proběhne mimo všechny procedury. Pouze deklarace jsou povolené mimo postupy.  
+Nedeklarativní příkaz, jako je například přiřazení nebo příkaz LOOP, se vyskytuje mimo jakoukoli proceduru. Mimo procedury jsou povoleny pouze deklarace.  
   
- Alternativně programovací element je deklarovaná bez deklarace klíčové slovo jako například `Dim` nebo `Const`.  
+ Alternativně je programovací prvek deklarován bez klíčového slova deklarace, jako je například `Dim` nebo `Const` .  
   
  **ID chyby:** BC30188  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-- Přesuňte nondeclarative příkaz do těla procedury.  
+- Přesuňte nedeklarativní příkaz do těla procedury.  
   
-- Zahájit deklarace s odpovídající deklarace slovem.  
+- Spusťte deklaraci s příslušným klíčovým slovem deklarace.  
   
-- Ujistěte se, že deklarace klíčové slovo není překlep.  
+- Zajistěte, aby klíčové slovo deklarace nebylo špatně napsané.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Procedury](../../../visual-basic/programming-guide/language-features/procedures/index.md)
-- [Příkaz Dim](../../../visual-basic/language-reference/statements/dim-statement.md)
+- [Procedury](../../programming-guide/language-features/procedures/index.md)
+- [Dim – příkaz](../statements/dim-statement.md)

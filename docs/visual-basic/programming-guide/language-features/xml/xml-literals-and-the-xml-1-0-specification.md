@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - XML literals [Visual Basic], XML 1.0 specification
 ms.assetid: 46f046e5-293c-41a3-b893-4e5f6e32e78a
-ms.openlocfilehash: d5dd90899c8a3c4fb4670258e7ff636822c479da
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 1200e9ada45adce267c61f821bc7e2bde211cdc3
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74346186"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84403275"
 ---
 # <a name="xml-literals-and-the-xml-10-specification-visual-basic"></a>Literály XML a specifikace XML 1.0 (Visual Basic)
 Syntaxe literálu XML v Visual Basic podporuje většinu specifikace jazyk XML (eXtensible Markup Language) (XML) 1,0. Podrobnosti o specifikaci XML 1,0 naleznete v tématu [jazyk XML (Extensible Markup Language) (XML) 1,0](https://www.w3.org/TR/xml) na webu W3C.  
@@ -28,8 +28,8 @@ Syntaxe literálu XML v Visual Basic podporuje většinu specifikace jazyk XML (
   
 - Syntaxe vloženého výrazu povolená v dokumentu a literálech elementu není platný kód XML.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Vytváření XML v Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
-- [Literál dokumentu XML](../../../../visual-basic/language-reference/xml-literals/xml-document-literal.md)
-- [Literál XML elementu](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)
+- [Vytvoření XML v jazyce Visual Basic](creating-xml.md)
+- [Literál dokumentu XML](../../../language-reference/xml-literals/xml-document-literal.md)
+- [Literál XML elementu](../../../language-reference/xml-literals/xml-element-literal.md)

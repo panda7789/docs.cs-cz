@@ -1,25 +1,25 @@
 ---
-title: Argument '<argumentname>"musí spadat do rozsahu 0 až 99
+title: Argument <argumentname> musí být v rozsahu 0 až 99.
 ms.date: 07/20/2015
 f1_keywords:
 - vbrArgument_Range0to99_1
 ms.assetid: d9d9a15e-c5ee-4104-9504-b48a4a191415
-ms.openlocfilehash: a582559c4914e6c05f1aef2a78a49adbb244aa59
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b5713ab586aa0fc69a520ab75ff285886f9a24e8
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62024538"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84412790"
 ---
-# <a name="argument-argumentname-must-be-within-the-range-0-to-99"></a>Argument '\<název argumentu argumentname >' musí být v rozsahu 0 až 99
+# <a name="argument-argumentname-must-be-within-the-range-0-to-99"></a>Argument \<argumentname> musí být v rozsahu 0 až 99.
 Argument není platný, protože spadá mimo rozsah 0 až 99.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1. Zkontrolujte, zda argumenty ve výrazu. Chybně napsaná název proměnné implicitně vytvářet číselné proměnné, která je inicializována na nulovou hodnotu.  
+1. Kontrola pravopisu argumentů ve výrazu. Nesprávně napsaný název proměnné může implicitně vytvořit číselnou proměnnou, která je inicializovaná na nulu.  
   
-2. Zkontrolujte předchozí operací pro proměnné ve výrazu, zejména těch, které jsou předány do procedury jako argumenty z jiných postupů.  
+2. Zkontroluje předchozí operace s proměnnými ve výrazu, zejména ty, které byly předány do procedury jako argumenty z jiných postupů.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Předávání argumentů podle hodnoty a reference](../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)
+- [Předávání argumentů podle hodnoty a reference](../programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)

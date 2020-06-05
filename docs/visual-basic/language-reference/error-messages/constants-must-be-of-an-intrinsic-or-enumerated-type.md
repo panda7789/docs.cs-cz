@@ -7,28 +7,28 @@ f1_keywords:
 helpviewer_keywords:
 - BC30424
 ms.assetid: 2d402c2f-27ad-428b-b699-d45cd62f7196
-ms.openlocfilehash: 88bbab2005b464ee97d647f2b4b9be6ff81e2d82
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9e36b84252c3d8762308e95323b8e284977df8c0
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61649839"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84409761"
 ---
 # <a name="constants-must-be-of-an-intrinsic-or-enumerated-type-not-a-class-structure-type-parameter-or-array-type"></a>Konstanty musí být vnitřního nebo výčtového typu, nikoli třída, struktura, parametr typu nebo typ pole.
-Pokusili jste se deklarace konstanty jako třídy, struktury nebo typ pole nebo jako parametr typu určené nadřazeného obecného typu.  
+Došlo k pokusu o deklaraci konstanty jako třídy, struktury nebo typu pole nebo jako parametru typu definovaného pomocí obsahujícího obecného typu.  
   
- Konstanty musí být vnitřního typu (`Boolean`, `Byte`, `Date`, `Decimal`, `Double`, `Integer`, `Long`, `Object`, `SByte`, `Short`, `Single`, `String`, `UInteger`, `ULong`, nebo `UShort`), nebo `Enum` typ na základě jedné z celočíselných typů.  
+ Konstanty musí být vnitřní typ ( `Boolean` , `Byte` , `Date` , `Decimal` , `Double` , `Integer` , `Long` , `Object` , `SByte` , `Short` , `Single` , `String` , `UInteger` , `ULong` , nebo `UShort` ), nebo `Enum` typ založený na jednom z celočíselných typů.  
   
  **ID chyby:** BC30424  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1. Deklarace konstanty jako vnitřní nebo `Enum` typu.  
+1. Deklarujte konstantu jako vnitřní `Enum` typ nebo.  
   
-2. Konstanta může být také zvláštní hodnota jako například `True`, `False`, nebo `Nothing`. Kompilátor považuje za tyto předdefinované hodnoty bude vhodné vnitřního typu.  
+2. Konstanta může být také zvláštní hodnota `True` , například, `False` nebo `Nothing` . Kompilátor považuje tyto předdefinované hodnoty za odpovídající vnitřní typ.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Konstanty a výčty](../../../visual-basic/language-reference/constants-and-enumerations.md)
-- [Datové typy](../../../visual-basic/programming-guide/language-features/data-types/index.md)
-- [Datové typy](../../../visual-basic/language-reference/data-types/index.md)
+- [Konstanty a výčty](../constants-and-enumerations.md)
+- [Datové typy](../../programming-guide/language-features/data-types/index.md)
+- [Datové typy](../data-types/index.md)

@@ -9,21 +9,21 @@ helpviewer_keywords:
 - streams
 - streams, definition
 ms.assetid: 49d837c0-cf28-416f-8606-4d83d7b479ef
-ms.openlocfilehash: 5d60d0089d042c0be343c741c26de0b4b7778d6d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 187a20617ec901e722a30ebfa571e4a55ed0b5c3
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74348933"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84401794"
 ---
 # <a name="basics-of-net-framework-file-io-and-the-file-system-visual-basic"></a>Základy vstupně-výstupních operací se soubory a systému souborů v rozhraní .NET Framework (Visual Basic)
 
 Třídy v <xref:System.IO> oboru názvů slouží k práci s jednotkami, soubory a adresáři.
 
-<xref:System.IO> Obor názvů obsahuje třídy <xref:System.IO.File> a <xref:System.IO.Directory> , které poskytují .NET Framework funkce, které pracují se soubory a adresáři. Vzhledem k tomu, že metody těchto objektů jsou statické nebo sdílené členy, můžete je použít přímo bez vytvoření instance třídy jako první. Asociováno s těmito třídami <xref:System.IO.FileInfo> jsou <xref:System.IO.DirectoryInfo> třídy a, které budou znát uživatele `My` funkce. Chcete-li použít tyto třídy, je nutné plně kvalifikovat názvy nebo importovat příslušné obory názvů zahrnutím `Imports` příkazů na začátek ovlivněného kódu. Další informace naleznete v tématu [příkaz Imports (obor názvů a typ rozhraní .NET)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md).
+<xref:System.IO>Obor názvů obsahuje <xref:System.IO.File> třídy a <xref:System.IO.Directory> , které poskytují .NET Framework funkce, které pracují se soubory a adresáři. Vzhledem k tomu, že metody těchto objektů jsou statické nebo sdílené členy, můžete je použít přímo bez vytvoření instance třídy jako první. Asociováno s těmito třídami <xref:System.IO.FileInfo> jsou <xref:System.IO.DirectoryInfo> třídy a, které budou znát uživatele `My` funkce. Chcete-li použít tyto třídy, je nutné plně kvalifikovat názvy nebo importovat příslušné obory názvů zahrnutím `Imports` příkazů na začátek ovlivněného kódu. Další informace naleznete v tématu [příkaz Imports (obor názvů a typ rozhraní .NET)](../../../language-reference/statements/imports-statement-net-namespace-and-type.md).
 
 > [!NOTE]
-> Další témata v této části používají `My.Computer.FileSystem` objekt namísto `System.IO` tříd pro práci s jednotkami, soubory a adresáři. `My.Computer.FileSystem` Objekt je určený hlavně pro použití v Visual Basicch programech. `System.IO`třídy jsou určené pro použití v jakémkoli jazyce, který podporuje .NET Framework, včetně Visual Basic.
+> Další témata v této části používají `My.Computer.FileSystem` objekt namísto `System.IO` tříd pro práci s jednotkami, soubory a adresáři. `My.Computer.FileSystem`Objekt je určený hlavně pro použití v Visual Basicch programech. `System.IO`třídy jsou určené pro použití v jakémkoli jazyce, který podporuje .NET Framework, včetně Visual Basic.
 
 ## <a name="definition-of-a-stream"></a>Definice streamu
 
@@ -47,7 +47,7 @@ Další informace najdete v tématu [vytváření datových proudů](../../../..
 
 V .NET Framework je datový proud reprezentován <xref:System.IO.Stream> třídou, která tvoří abstraktní třídu pro všechny ostatní datové proudy. Nelze vytvořit instanci <xref:System.IO.Stream> třídy přímo, ale je nutné použít jednu z tříd, kterou implementuje.
 
-Existuje mnoho typů datových proudů, ale pro účely práce s vstupně-výstupními soubory (I/O) jsou nejdůležitější typy <xref:System.IO.FileStream> třídy, což poskytuje způsob, jak číst soubory a zapisovat do nich a <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream> třídu, která poskytuje způsob, jak vytvořit soubory a adresáře v izolovaném úložišti. K dalším datovým proudům, které se dají použít při práci se vstupně-výstupními soubory, patří:
+Existuje mnoho typů datových proudů, ale pro účely práce s vstupně-výstupními soubory (I/O) jsou nejdůležitější typy <xref:System.IO.FileStream> třídy, což poskytuje způsob, jak číst soubory a zapisovat do <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream> nich a třídu, která poskytuje způsob, jak vytvořit soubory a adresáře v izolovaném úložišti. K dalším datovým proudům, které se dají použít při práci se vstupně-výstupními soubory, patří:
 
 - <xref:System.IO.BufferedStream>
 
@@ -71,9 +71,9 @@ V následující tabulce jsou uvedeny úlohy, které se běžně doplňují s da
 
 ## <a name="file-access-and-attributes"></a>Přístup k souborům a atributy
 
-Můžete ovládat způsob vytváření, otevírání a sdílení souborů s <xref:System.IO.FileAccess>výčty, <xref:System.IO.FileMode>a <xref:System.IO.FileShare> , které obsahují příznaky používané konstruktory <xref:System.IO.FileStream> třídy. Když například otevřete nebo vytvoříte nový <xref:System.IO.FileStream>, vytvoří <xref:System.IO.FileMode> výčet možnost zadat, zda je soubor otevřen pro připojení, zda je vytvořen nový soubor, pokud zadaný soubor neexistuje, zda je soubor přepsán a tak dále.
+Můžete ovládat způsob vytváření, otevírání a sdílení souborů s <xref:System.IO.FileAccess> <xref:System.IO.FileMode> výčty, a, <xref:System.IO.FileShare> které obsahují příznaky používané konstruktory <xref:System.IO.FileStream> třídy. Když například otevřete nebo vytvoříte nový <xref:System.IO.FileStream> , vytvoří <xref:System.IO.FileMode> výčet možnost zadat, zda je soubor otevřen pro připojení, zda je vytvořen nový soubor, pokud zadaný soubor neexistuje, zda je soubor přepsán a tak dále.
 
-<xref:System.IO.FileAttributes> Výčet umožňuje shromažďování informací specifických pro soubor. <xref:System.IO.FileAttributes> Výčet vrátí uložené atributy souboru, například zda je komprimovaný, zašifrovaný, skrytý, jen pro čtení, archiv, adresář, systémový soubor nebo dočasný soubor.
+<xref:System.IO.FileAttributes>Výčet umožňuje shromažďování informací specifických pro soubor. <xref:System.IO.FileAttributes>Výčet vrátí uložené atributy souboru, například zda je komprimovaný, zašifrovaný, skrytý, jen pro čtení, archiv, adresář, systémový soubor nebo dočasný soubor.
 
 V následující tabulce jsou uvedeny úkoly zahrnující přístup k souborům a atributy souborů:
 
@@ -111,4 +111,4 @@ Tato <xref:System.IO.FileSystemWatcher> součást umožňuje sledovat změny v s
 - [Skládání streamů](../../../../standard/io/composing-streams.md)
 - [Vstupně-výstupní operace se soubory a datovým proudem](../../../../standard/io/index.md)
 - [I/O asynchronní soubory](../../../../standard/io/asynchronous-file-i-o.md)
-- [Třídy používané ve vstupně-výstupních operacích se soubory a v systému souborů v rozhraní .NET Framework (Visual Basic)](../../../../visual-basic/developing-apps/programming/drives-directories-files/classes-used-in-net-framework-file-io-and-the-file-system.md)
+- [Třídy používané ve vstupně-výstupních operacích se soubory a v systému souborů v rozhraní .NET Framework (Visual Basic)](classes-used-in-net-framework-file-io-and-the-file-system.md)

@@ -1,5 +1,5 @@
 ---
-title: Datový typ Boolean
+title: Boolean – datový typ
 ms.date: 07/20/2015
 f1_keywords:
 - vb.FALSE
@@ -12,42 +12,42 @@ helpviewer_keywords:
 - True keyword [Visual Basic]
 - Boolean values [Visual Basic], True keyword
 ms.assetid: 4858e630-4813-4216-a55e-f4d0feb884e4
-ms.openlocfilehash: 5d05514207c5d07e81aab897f40f728570f6bd87
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 851c524a83c5f24b77a151634a96798249c5905e
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74347851"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84374418"
 ---
 # <a name="boolean-data-type-visual-basic"></a>Boolean – datový typ (Visual Basic)
 
-Obsahuje hodnoty, které mohou být pouze `True` nebo `False`. Klíčová slova `True` a `False` odpovídají dvěma stavům `Boolean` proměnných.  
+Obsahuje hodnoty, které mohou být pouze `True` nebo `False` . Klíčová slova `True` a `False` odpovídají dvěma stavům `Boolean` proměnných.  
   
 ## <a name="remarks"></a>Poznámky  
 
- Použijte [datový typ Boolean (Visual Basic)](../../../visual-basic/language-reference/data-types/boolean-data-type.md) k tomu, aby obsahovala hodnoty se dvěma stavy, jako je true/false, ano/ne nebo zapnuto/vypnuto.  
+ Použijte [datový typ Boolean (Visual Basic)](boolean-data-type.md) k tomu, aby obsahovala hodnoty se dvěma stavy, jako je true/false, ano/ne nebo zapnuto/vypnuto.  
   
- Výchozí hodnota `Boolean` je `False`.  
+ Výchozí hodnota `Boolean` je `False` .  
   
- hodnoty `Boolean` nejsou uloženy jako čísla a uložené hodnoty nejsou určeny pro ekvivalent čísel. Nikdy byste neměli psát kód, který spoléhá na ekvivalentní číselné hodnoty pro `True` a `False`. Kdykoli je to možné, měli byste omezit využití `Boolean` proměnných na logické hodnoty, pro které jsou navrženy.  
+ `Boolean`hodnoty nejsou uloženy jako čísla a uložené hodnoty nejsou určeny pro ekvivalent čísel. Nikdy byste neměli psát kód, který spoléhá na ekvivalentní číselné hodnoty pro `True` a `False` . Kdykoli je to možné, měli byste omezit použití `Boolean` proměnných na logické hodnoty, pro které jsou navrženy.  
   
 ## <a name="type-conversions"></a>Převody typu  
 
- Když Visual Basic převede hodnoty číselného datového typu na `Boolean`, 0 se změní na `False` a všechny ostatní hodnoty se budou `True`. Když Visual Basic převede `Boolean` hodnoty na číselné typy, `False` bude 0 a `True` se změní na hodnotu-1.  
+ Když Visual Basic převede hodnoty číselného datového typu na, vrátí se `Boolean` 0 a zobrazí se `False` všechny ostatní hodnoty `True` . Když Visual Basic převede `Boolean` hodnoty na číselné typy, `False` změní se na 0 a `True` změní se na 1.  
   
- Pokud převedete mezi `Boolean` hodnoty a číselné datové typy, pamatujte, že metody převodu .NET Framework nikdy nepřinesou stejné výsledky jako klíčová slova převodu Visual Basic. Důvodem je to, že převod Visual Basic zachovává chování kompatibilní s předchozími verzemi. Další informace naleznete v tématu "logický typ nepřeváděný na číselný typ přesně" v článku [řešení potíží s datovými typy](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md).  
+ Pokud převedete mezi `Boolean` hodnotami a číselnými datovými typy, pamatujte, že metody převodu .NET Framework nevytváří vždy stejné výsledky jako klíčová slova převodu Visual Basic. Důvodem je to, že převod Visual Basic zachovává chování kompatibilní s předchozími verzemi. Další informace naleznete v tématu "logický typ nepřeváděný na číselný typ přesně" v článku [řešení potíží s datovými typy](../../programming-guide/language-features/data-types/troubleshooting-data-types.md).  
   
 ## <a name="programming-tips"></a>Tipy k programování  
   
-- **Záporná čísla.** `Boolean` není numerický typ a nemůže představovat zápornou hodnotu. V žádném případě byste neměli používat `Boolean` k ukládání číselných hodnot.  
+- **Záporná čísla.** `Boolean`není numerický typ a nemůže představovat zápornou hodnotu. V žádném případě byste neměli používat `Boolean` k ukládání číselných hodnot.  
   
-- **Znaky typu.** `Boolean` nemá žádný znak typu literálu ani znak typu identifikátoru.  
+- **Znaky typu.** `Boolean`nemá žádný znak typu literálu nebo znak typu identifikátoru.  
   
-- **Typ rozhraní.** Odpovídající typ v .NET Framework je struktura <xref:System.Boolean?displayProperty=nameWithType>.  
+- **Typ rozhraní.** Odpovídající typ v .NET Framework je <xref:System.Boolean?displayProperty=nameWithType> Struktura.  
   
 ## <a name="example"></a>Příklad  
 
- V následujícím příkladu je `runningVB` proměnná `Boolean`, která ukládá jednoduché nastavení ano/ne.  
+ V následujícím příkladu `runningVB` je `Boolean` Proměnná, která ukládá jednoduché nastavení ano/ne.  
   
 ```vb  
 Dim runningVB As Boolean  
@@ -57,12 +57,12 @@ If scriptEngine = "VB" Then
 End If  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Boolean?displayProperty=nameWithType>
-- [Datové typy](../../../visual-basic/language-reference/data-types/index.md)
-- [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)
-- [Souhrn převodu](../../../visual-basic/language-reference/keywords/conversion-summary.md)
-- [Účinné používání datových typů](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)
-- [Řešení potíží s datovými typy](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)
-- [Funkce CType](../../../visual-basic/language-reference/functions/ctype-function.md)
+- [Datové typy](index.md)
+- [Funkce pro převod typů](../functions/type-conversion-functions.md)
+- [Souhrn převodu](../keywords/conversion-summary.md)
+- [Účinné používání datových typů](../../programming-guide/language-features/data-types/efficient-use-of-data-types.md)
+- [Řešení potíží s datovými typy](../../programming-guide/language-features/data-types/troubleshooting-data-types.md)
+- [CType – funkce](../functions/ctype-function.md)
