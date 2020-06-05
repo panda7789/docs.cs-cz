@@ -2,16 +2,16 @@
 title: Transformace stromu XML pomocí XSLT
 ms.date: 07/20/2015
 ms.assetid: 3390ca68-c270-4e1d-b64b-6a063a77017c
-ms.openlocfilehash: f8d7de508fb954148b8b16ddf24966289f191bbb
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 5332eb0a4fa8a2bd855421d674fe9f0de2ccb5f3
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74350519"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84364432"
 ---
 # <a name="using-xslt-to-transform-an-xml-tree-visual-basic"></a>Transformace stromu XML pomocí XSLT (Visual Basic)
 
-Můžete vytvořit strom XML, vytvořit <xref:System.Xml.XmlReader> ze stromu XML, vytvořit nový dokument a vytvořit <xref:System.Xml.XmlWriter>, který bude zapisovat do nového dokumentu. Pak můžete vyvolat transformaci XSLT, předání <xref:System.Xml.XmlReader> a <xref:System.Xml.XmlWriter> transformaci. Po úspěšném dokončení transformace se nový strom XML naplní výsledky transformace.
+Můžete vytvořit strom XML, vytvořit <xref:System.Xml.XmlReader> z stromu XML, vytvořit nový dokument a vytvořit <xref:System.Xml.XmlWriter> , který bude zapisovat do nového dokumentu. Pak můžete vyvolat transformaci XSLT, předáním <xref:System.Xml.XmlReader> a <xref:System.Xml.XmlWriter> k transformaci. Po úspěšném dokončení transformace se nový strom XML naplní výsledky transformace.
 
 ## <a name="example"></a>Příklad
 
@@ -61,8 +61,8 @@ Tento příklad vytvoří následující výstup:
 </Root>
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Xml.Linq.XContainer.CreateWriter%2A?displayProperty=nameWithType>
 - <xref:System.Xml.Linq.XNode.CreateReader%2A?displayProperty=nameWithType>
-- [Rozšířené programování LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
+- [Rozšířené programování LINQ to XML (Visual Basic)](advanced-linq-to-xml-programming.md)
