@@ -1,25 +1,25 @@
 ---
-title: Dělení nulou (Visual Basic Run-Time)
+title: Dělení nulou (Visual Basic Běhová chyba)
 ms.date: 07/20/2015
 f1_keywords:
 - vbrID11
 ms.assetid: 5b9bc5d6-792e-48bc-a974-012e07ad95f3
-ms.openlocfilehash: 194dcebe40b7f14ba4bf4ebce6f2b1294d3e6791
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 31efe395e17dfc7382abf2478139e1a2d36cc31d
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61970336"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84394645"
 ---
-# <a name="division-by-zero-visual-basic-run-time-error"></a>Dělení nulou (Visual Basic Run-Time)
-Výraz, který používáte jako dělitel má nulovou hodnotu.  
+# <a name="division-by-zero-visual-basic-run-time-error"></a>Dělení nulou (Visual Basic Běhová chyba)
+Výraz použitý jako dělitel má hodnotu nula.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1. Zkontrolujte, zda proměnné ve výrazu. Chybně napsaná název proměnné implicitně vytvářet číselné proměnné, která je inicializována na nulovou hodnotu.  
+1. Zkontrolujte pravopis proměnných ve výrazu. Nesprávně napsaný název proměnné může implicitně vytvořit číselnou proměnnou, která je inicializovaná na nulu.  
   
-2. Zkontrolujte předchozí operací pro proměnné ve výrazu, zejména těch, které jsou předány do procedury jako argumenty z jiných postupů.  
+2. Zkontroluje předchozí operace s proměnnými ve výrazu, zejména ty, které byly předány do procedury jako argumenty z jiných postupů.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Předávání argumentů podle hodnoty a reference](../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)
+- [Předávání argumentů podle hodnoty a reference](../programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)

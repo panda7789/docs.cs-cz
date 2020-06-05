@@ -1,35 +1,35 @@
 ---
-title: 'Postupy: spojení dvou kolekcí (LINQ to XML)'
+title: 'Postupy: Spojení dvou kolekcí (LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: 5a5758d4-906b-4285-908d-5b930db192e6
-ms.openlocfilehash: 404a43f52fce141b515da389090c81c57186f2e2
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: dc3cfd19d990fa81e00f4781cb15bf07eb9a80ea
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74344536"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84398048"
 ---
 # <a name="how-to-join-two-collections-linq-to-xml-visual-basic"></a>Postupy: spojení dvou kolekcí (LINQ to XML) (Visual Basic)
-Element nebo atribut v dokumentu XML může někdy odkazovat na jiný element nebo atribut. Například [ukázkový soubor XML: zákazníci a objednávky (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md) dokument XML obsahuje seznam zákazníků a seznam objednávek. Každý prvek `Customer` obsahuje atribut `CustomerID`. Každý prvek `Order` obsahuje prvek `CustomerID`. Prvek `CustomerID` v každé objednávce odkazuje na atribut `CustomerID` zákazníka.  
+Element nebo atribut v dokumentu XML může někdy odkazovat na jiný element nebo atribut. Například [ukázkový soubor XML: zákazníci a objednávky (LINQ to XML)](sample-xml-file-customers-and-orders-linq-to-xml.md) dokument XML obsahuje seznam zákazníků a seznam objednávek. Každý `Customer` prvek obsahuje `CustomerID` atribut. Každý `Order` prvek obsahuje `CustomerID` element. `CustomerID`Element v každé objednávce odkazuje na `CustomerID` atribut v zákazníkovi.  
   
- [Ukázkový soubor XSD: zákazníci a objednávky](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md) obsahují XSD, které lze použít k ověření tohoto dokumentu. Používá funkce `xs:key` a `xs:keyref` XSD k určení toho, že atribut `CustomerID` elementu `Customer` je klíč a k navázání vztahu mezi `CustomerID` prvkem v každém `Order` elementu a atributem `CustomerID` v každém prvku `Customer`.  
+ [Ukázkový soubor XSD: zákazníci a objednávky](sample-xsd-file-customers-and-orders.md) obsahují XSD, které lze použít k ověření tohoto dokumentu. Používá `xs:key` `xs:keyref` funkce a XSD k určení toho, že `CustomerID` atribut `Customer` prvku je klíč, a k navázání vztahu mezi `CustomerID` prvkem v jednotlivých `Order` prvcích a `CustomerID` atributem v každém `Customer` elementu.  
   
- Pomocí [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]můžete využít výhod tohoto vztahu pomocí klauzule `Join`.  
+ Pomocí [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] můžete tuto relaci využít pomocí `Join` klauzule.  
   
  Všimněte si, že protože není k dispozici žádný index, takové spojení bude mít špatný běhový výkon.  
   
- Podrobnější informace o `Join`najdete v tématu [operace join (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/join-operations.md).  
+ Podrobnější informace o `Join` najdete v tématu [operace Join (Visual Basic)](join-operations.md).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad spojuje prvky `Customer` do `Order` prvků a generuje nový dokument XML, který obsahuje prvek `CompanyName` v objednávkách.  
+ Následující příklad spojuje `Customer` prvky s `Order` prvky a generuje nový dokument XML, který obsahuje `CompanyName` prvek v objednávkách.  
   
- Před provedením dotazu v příkladu se ověří, že dokument vyhovuje schématu v [ukázkovém souboru XSD: zákazníci a objednávky](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md). Tím se zajistí, že klauzule JOIN bude vždycky fungovat.  
+ Před provedením dotazu v příkladu se ověří, že dokument vyhovuje schématu v [ukázkovém souboru XSD: zákazníci a objednávky](sample-xsd-file-customers-and-orders.md). Tím se zajistí, že klauzule JOIN bude vždycky fungovat.  
   
- Tento dotaz nejprve načte všechny prvky `Customer` a pak je připojí k prvkům `Order`. Vybere pouze objednávky zákazníků s `CustomerID` větší než K. Potom projekty vytvoří nový prvek `Order`, který obsahuje informace o zákaznících v rámci jednotlivých objednávek.  
+ Tento dotaz nejprve načte všechny `Customer` prvky a pak je spojí s `Order` prvky. Vybere pouze objednávky pro zákazníky s `CustomerID` větší než "K". Potom projekty vytvoří nový `Order` prvek, který obsahuje informace o zákaznících v rámci jednotlivých objednávek.  
   
- Tento příklad používá následující dokument XML: [ukázkový soubor XML: zákazníci a objednávky (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).  
+ Tento příklad používá následující dokument XML: [ukázkový soubor XML: zákazníci a objednávky (LINQ to XML)](sample-xml-file-customers-and-orders-linq-to-xml.md).  
   
- V tomto příkladu se používá následující schéma XSD: [ukázkový soubor XSD: zákazníci a objednávky](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md).  
+ V tomto příkladu se používá následující schéma XSD: [ukázkový soubor XSD: zákazníci a objednávky](sample-xsd-file-customers-and-orders.md).  
   
  Všimněte si, že připojení tímto způsobem nebude fungovat velmi dobře. Spojení se provádí pomocí lineárního hledání. Neexistují žádné zatřiďovací tabulky ani indexy, které by měly pomáhat s výkonem.  
   
@@ -85,7 +85,7 @@ Public Class Program
 End Class  
 ```  
   
- Tento kód generuje následující výstup:  
+ Výsledkem tohoto kódu je následující výstup:  
   
 ```console
 Attempting to validate, custOrdDoc validated  
@@ -135,6 +135,6 @@ Attempting to validate, custOrdDoc validated
 </Root>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Pokročilé techniky dotazů (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)
+- [Pokročilé techniky dotazů (LINQ to XML) (Visual Basic)](advanced-query-techniques-linq-to-xml.md)

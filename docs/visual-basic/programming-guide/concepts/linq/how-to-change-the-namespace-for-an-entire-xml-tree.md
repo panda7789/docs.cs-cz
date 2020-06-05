@@ -1,16 +1,16 @@
 ---
-title: 'Postupy: Změna oboru názvů pro celý strom XML'
+title: 'Postupy: Změna názvového prostoru pro celý strom XML'
 ms.date: 07/20/2015
 ms.assetid: 1837324b-5cb5-4fa8-95b9-3071efa0f913
-ms.openlocfilehash: 37edb426b106d3fbf90ea06118526abab0a78bf8
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 11938b575ed5133d930e585dbe4d744e3168cced
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74346928"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84374976"
 ---
 # <a name="how-to-change-the-namespace-for-an-entire-xml-tree-visual-basic"></a>Postupy: Změna oboru názvů pro celý strom XML (Visual Basic)
-Někdy je nutné programově změnit obor názvů pro element nebo atribut. LINQ to XML to usnadňuje. Vlastnost <xref:System.Xml.Linq.XElement.Name%2A?displayProperty=nameWithType> lze nastavit. Vlastnost <xref:System.Xml.Linq.XAttribute.Name%2A?displayProperty=nameWithType> nelze nastavit, můžete však snadno zkopírovat atributy do <xref:System.Collections.Generic.List%601?displayProperty=nameWithType>, odebrat existující atributy a pak přidat nové atributy, které jsou v novém požadovaném oboru názvů.  
+Někdy je nutné programově změnit obor názvů pro element nebo atribut. LINQ to XML to usnadňuje. <xref:System.Xml.Linq.XElement.Name%2A?displayProperty=nameWithType>Vlastnost lze nastavit. <xref:System.Xml.Linq.XAttribute.Name%2A?displayProperty=nameWithType>Vlastnost nelze nastavit, ale lze snadno zkopírovat atributy do <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> , odebrat existující atributy a pak přidat nové atributy, které jsou v novém požadovaném oboru názvů.  
   
  Další informace najdete v tématu [obory názvů Overview (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md).  
   
@@ -76,6 +76,6 @@ Console.WriteLine(root)
 </Root>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Úprava stromů XML (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)
+- [Úprava stromů XML (LINQ to XML) (Visual Basic)](modifying-xml-trees-linq-to-xml.md)

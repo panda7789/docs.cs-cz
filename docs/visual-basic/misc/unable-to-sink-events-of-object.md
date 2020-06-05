@@ -1,24 +1,24 @@
 ---
-title: Nelze ukládat do jímky událostí objektu, protože objekt již vyvolává události pro maximální počet přijímačů událostí podporuje
+title: Události objektu nelze zajímky, protože objekt již vyvolává události pro maximální podporovaný počet přijímačů událostí.
 ms.date: 07/20/2015
 f1_keywords:
 - vbrID96
 ms.assetid: e40b19a2-8100-43ff-a1a4-0ddee3cc7f9a
-ms.openlocfilehash: 122431a0de462e36b11a1ba6fe3b742b69695d05
-ms.sourcegitcommit: e08b319358a8025cc6aa38737854f7bdb87183d6
+ms.openlocfilehash: adc859fbe3e33524a6bdb26c5b38cd7f9b8b91fc
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64913277"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84398458"
 ---
-# <a name="unable-to-sink-events-of-object-because-the-object-is-already-firing-events-to-the-maximum-number-of-event-receivers-it-supports"></a>Nelze ukládat do jímky událostí objektu, protože objekt již vyvolává události pro maximální počet přijímačů událostí podporuje
-Byl překročen maximální počet přijímačů událostí podporována objektem.  
+# <a name="unable-to-sink-events-of-object-because-the-object-is-already-firing-events-to-the-maximum-number-of-event-receivers-it-supports"></a>Události objektu nelze zajímky, protože objekt již vyvolává události pro maximální podporovaný počet přijímačů událostí.
+Překročil se maximální počet přijímačů událostí podporovaných objektem.  
   
-### <a name="to-correct-the-error"></a>Chcete-li opravit chyby  
+### <a name="to-correct-the-error"></a>Oprava chyby  
   
 - Snižte počet přijímačů událostí.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Postupy: Generování událostí zpracovávaných jímkou COM](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dd8bf0x3(v=vs.100))
-- [Návod: Zpracování událostí](../../visual-basic/programming-guide/language-features/events/walkthrough-handling-events.md)
+- [Postupy: vyvolávání událostí zpracovávaných jímkou COM](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dd8bf0x3(v=vs.100))
+- [Návod: Zpracování událostí](../programming-guide/language-features/events/walkthrough-handling-events.md)

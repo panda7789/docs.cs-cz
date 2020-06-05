@@ -6,25 +6,25 @@ f1_keywords:
 helpviewer_keywords:
 - Else keyword [Visual Basic]
 ms.assetid: 154dd3d3-137b-4de6-a5aa-699b18dfb639
-ms.openlocfilehash: c3b10420bd45c4a35c0a5de66b751149c4e41464
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 493158c192e3aebee2465d7787887323e103c077
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74343758"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84404690"
 ---
 # <a name="else-statement-visual-basic"></a>Else – příkaz (Visual Basic)
 Zavádí skupinu příkazů, které mají být spuštěny nebo zkompilovány, pokud nebyla žádná jiná podmíněná skupina příkazů spuštěna nebo zkompilována.  
   
 ## <a name="remarks"></a>Poznámky  
- Klíčové slovo `Else` lze použít v těchto kontextech:  
+ `Else`Klíčové slovo lze použít v těchto kontextech:  
   
- [Příkaz If...Then...Else](../../../visual-basic/language-reference/statements/if-then-else-statement.md)  
+ [If...Then...Else – příkaz](if-then-else-statement.md)  
   
- [Příkaz Select...Case](../../../visual-basic/language-reference/statements/select-case-statement.md)  
+ [Select...Case – příkaz](select-case-statement.md)  
   
- [#If... Then... #Else – direktiva](../../../visual-basic/language-reference/directives/if-then-else-directives.md)  
+ [#If... Then... #Else – direktiva](../directives/if-then-else-directives.md)  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Klíčová slova](../../../visual-basic/language-reference/keywords/index.md)
+- [Klíčová slova](../keywords/index.md)

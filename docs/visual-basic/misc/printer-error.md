@@ -4,20 +4,20 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID482
 ms.assetid: 0ce0c4b3-3604-4638-9363-6c9333d0cc9d
-ms.openlocfilehash: fd5792928e65d82e0bb00dd6165f3e42c9214e9e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: a5192c79de7548397e31edf1f06ca7c108133f68
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64591771"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84375833"
 ---
 # <a name="printer-error"></a>Chyba tiskárny
-Došlo k chybě v tiskárně, ale žádné jiné informace byl vrácen do počítače, který odeslal souboru.  
+Na tiskárně došlo k chybě, ale nebyly vráceny žádné další informace do počítače, který soubor odeslal.  
   
-### <a name="to-correct-the-error"></a>Chcete-li opravit chyby  
+### <a name="to-correct-the-error"></a>Oprava chyby  
   
-- Fyzicky zkontrolujte tiskárny. Ujistěte se, že jsou plné všechna připojení mezi počítačem a tiskárny. Většina tiskáren zadejte zobrazovaný pro informace o chybě, jako je například "Offline" nebo "mimo papír."  
+- Fyzicky prověřte tiskárnu. Ujistěte se, že všechna připojení mezi počítačem a tiskárnou jsou plná. Většina tiskáren nabízí zobrazení chybových informací, například "offline" nebo "mimo papír".  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Typy chyb](../../visual-basic/programming-guide/language-features/error-types.md)
+- [Typy chyb](../programming-guide/language-features/error-types.md)

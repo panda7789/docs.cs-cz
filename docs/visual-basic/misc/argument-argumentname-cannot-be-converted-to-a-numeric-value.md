@@ -1,23 +1,23 @@
 ---
-title: Argument '<argumentname>' nelze převést na číselnou hodnotu
+title: Argument se <argumentname> nedá převést na číselnou hodnotu.
 ms.date: 07/20/2015
 f1_keywords:
 - vbrArgumentNotNumeric1
 ms.assetid: 1901c4d4-abbe-462f-a450-5d907d485e94
-ms.openlocfilehash: f405bb7c207c3f98218d8d6ab896a3c7f1a91a99
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 60f8766b240de7dd3ba73cfe73f9718bf0cfae4c
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61666219"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84411379"
 ---
-# <a name="argument-argumentname-cannot-be-converted-to-a-numeric-value"></a>Argument '\<název argumentu argumentname >' nelze převést na číselnou hodnotu
-Převod se pokusil převést proměnnou, jako je řetězec, číselnou hodnotu.  
+# <a name="argument-argumentname-cannot-be-converted-to-a-numeric-value"></a>Argument se \<argumentname> nedá převést na číselnou hodnotu.
+Převod se pokusil převést proměnnou, jako je například řetězec, na číselnou hodnotu.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1. Najdete převod, který má smysl.  
+1. Najděte smysluplný převod.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Převody typů v jazyce Visual Basic](../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
+- [Převody typů v jazyce Visual Basic](../programming-guide/language-features/data-types/type-conversions.md)

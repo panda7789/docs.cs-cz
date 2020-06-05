@@ -7,20 +7,20 @@ helpviewer_keywords:
 - reading text from files [Visual Basic]
 - files [Visual Basic], reading
 ms.assetid: 384033c6-18f9-4d59-9610-36371226558f
-ms.openlocfilehash: 572463d1f03d768fb133f2dac59b012051f053bb
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 6d05dac9b612659a74e25c0ce87c7524316d31a5
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74334565"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84411600"
 ---
 # <a name="how-to-read-text-from-files-with-a-streamreader-visual-basic"></a>Postupy: Čtení textu ze souborů pomocí třídy StreamReader (Visual Basic)
 
-`My.Computer.FileSystem` Objekt poskytuje metody pro otevření <xref:System.IO.TextReader> a <xref:System.IO.TextWriter>. Tyto metody `OpenTextFileWriter` a `OpenTextFileReader`, jsou pokročilé metody, které se nezobrazí v technologii IntelliSense, pokud nevyberete kartu **vše** .  
+`My.Computer.FileSystem`Objekt poskytuje metody pro otevření <xref:System.IO.TextReader> a <xref:System.IO.TextWriter> . Tyto metody `OpenTextFileWriter` a `OpenTextFileReader` , jsou pokročilé metody, které se nezobrazí v technologii IntelliSense, pokud nevyberete kartu **vše** .  
   
 ### <a name="to-read-a-line-from-a-file-with-a-text-reader"></a>Načtení řádku ze souboru pomocí čtecího modulu textu  
   
-- Použijte `OpenTextFileReader` metodu k otevření <xref:System.IO.TextReader>a určení souboru. Tento příklad otevře soubor s názvem `testfile.txt`, přečte z něj čáru a zobrazí řádek v okně se zprávou.  
+- Použijte `OpenTextFileReader` metodu k otevření a <xref:System.IO.TextReader> určení souboru. Tento příklad otevře soubor s názvem `testfile.txt` , přečte z něj čáru a zobrazí řádek v okně se zprávou.  
   
      [!code-vb[VbFileIORead#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIORead/VB/Class1.vb#1)]  
   
@@ -43,4 +43,4 @@ ms.locfileid: "74334565"
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem.OpenTextFileWriter%2A>
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem.OpenTextFileReader%2A>
 - [Komponenta SaveFileDialog](../../../../framework/winforms/controls/savefiledialog-component-windows-forms.md)
-- [Čtení ze souborů](../../../../visual-basic/developing-apps/programming/drives-directories-files/reading-from-files.md)
+- [Čtení ze souborů](reading-from-files.md)

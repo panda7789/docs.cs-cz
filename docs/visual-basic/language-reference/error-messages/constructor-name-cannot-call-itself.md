@@ -7,26 +7,26 @@ f1_keywords:
 helpviewer_keywords:
 - BC30298
 ms.assetid: 2d77b7f4-0640-4f89-9c65-f101fd2847c0
-ms.openlocfilehash: 8459ee7fec6d761161a721c88ccdc88e513fc95f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6abb6dde624e129b52fefecf8c51e6cde2567ae1
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61936692"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84409800"
 ---
-# <a name="constructor-name-cannot-call-itself"></a>Konstruktor '\<name >' nemůže volat sám sebe
-A `Sub New` postupu ve třídě nebo struktuře zavolá sama sebe.  
+# <a name="constructor-name-cannot-call-itself"></a>Konstruktor '\<name>' nemůže volat sám sebe.
+`Sub New`Procedura ve třídě nebo struktuře volá sama sebe.  
   
- Konstruktor slouží k inicializaci instance třídy nebo struktury při prvním vytvoření. Třídy nebo struktury může mít několik konstruktorů, pokud mají všechny seznamy různých parametrů. Konstruktor je povolený pro volání jiného konstruktoru k provádění svých funkcí, kromě svou vlastní. Ale je pro konstruktor k volat sám sebe a ve skutečnosti by způsobil nekonečnou rekurzi Pokud povolena.  
+ Účelem konstruktoru je inicializace instance třídy nebo struktury při jejím prvním vytvoření. Třída nebo struktura může mít několik konstruktorů za předpokladu, že všechny mají jiný seznam parametrů. Konstruktor je povolen pro volání jiného konstruktoru, aby se jeho funkce mohla provádět navíc. Nejedná se ale o stejný konstruktor, který by sám volal, a ve skutečnosti by to vedlo k nekonečné rekurzi, pokud je to povoleno.  
   
  **ID chyby:** BC30298  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1. Zkontrolujte seznam parametrů volání konstruktoru. Musí být odlišný od u konstruktoru uskutečněním hovoru.  
+1. Ověřte seznam parametrů volaného konstruktoru. Měl by být jiný než konstruktor, který provádí volání.  
   
-2. Pokud je nemáte v úmyslu volání jiný konstruktor, odeberte `Sub New` zcela volání.  
+2. Pokud nechcete volat jiný konstruktor, odeberte `Sub New` volání zcela.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Doba života objektu: Způsob vytváření a zničení objektů](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)
+- [Doba života objektu: Vytváření a zničení objektů](../../programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)
