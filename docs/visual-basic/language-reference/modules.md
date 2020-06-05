@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - modules, Visual Basic
 ms.assetid: 370bfc90-e8f2-4942-bdec-9897ce605d31
-ms.openlocfilehash: 6869d981cdca20b915a588969134fc50e8d1ff47
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: df7e32a81746a97a78a4a2a28e57032affa73cc0
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74838244"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84386592"
 ---
 # <a name="modules-visual-basic"></a>Moduly (Visual Basic)
 
@@ -30,6 +30,6 @@ Visual Basic poskytuje několik modulů, které vám umožňují zjednodušit b�
 |<xref:Microsoft.VisualBasic.Strings>|Obsahuje členy, které provádějí operace s řetězci, jako je přeformátování řetězců, hledání řetězce, získání délky řetězce a tak dále.|  
 |<xref:Microsoft.VisualBasic.VBMath>|Obsahuje členy, kteří provádějí matematické operace.|  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Referenční příručka jazyka Visual Basic](../../visual-basic/language-reference/index.md)
+- [Reference jazyka Visual Basic](index.md)
