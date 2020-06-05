@@ -2,20 +2,20 @@
 title: 'Postupy: Kombinace a porovnávání kolekcí řetězců (LINQ)'
 ms.date: 07/20/2015
 ms.assetid: 243cfafc-9eaa-4354-a9df-d329f1d39913
-ms.openlocfilehash: 2df5db16e51e8f9de8a8e3506eb1f7b737065a14
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 271ef7805cd2285fa2d8796a31257c0f31bb9a76
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75337561"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84374859"
 ---
-# <a name="how-to-combine-and-compare-string-collections-linq-visual-basic"></a><span data-ttu-id="d34e8-102">Postupy: kombinování a porovnávání kolekcí řetězců (LINQ) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="d34e8-102">How to: Combine and Compare String Collections (LINQ) (Visual Basic)</span></span>
+# <a name="how-to-combine-and-compare-string-collections-linq-visual-basic"></a><span data-ttu-id="391ea-102">Postupy: kombinování a porovnávání kolekcí řetězců (LINQ) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="391ea-102">How to: Combine and Compare String Collections (LINQ) (Visual Basic)</span></span>
 
-<span data-ttu-id="d34e8-103">Tento příklad ukazuje, jak sloučit soubory, které obsahují řádky textu a následně seřadit výsledky.</span><span class="sxs-lookup"><span data-stu-id="d34e8-103">This example shows how to merge files that contain lines of text and then sort the results.</span></span> <span data-ttu-id="d34e8-104">Konkrétně ukazuje, jak provést jednoduché zřetězení, sjednocení a průnik dvou sad textových řádků.</span><span class="sxs-lookup"><span data-stu-id="d34e8-104">Specifically, it shows how to perform a simple concatenation, a union, and an intersection on the two sets of text lines.</span></span>
+<span data-ttu-id="391ea-103">Tento příklad ukazuje, jak sloučit soubory, které obsahují řádky textu a následně seřadit výsledky.</span><span class="sxs-lookup"><span data-stu-id="391ea-103">This example shows how to merge files that contain lines of text and then sort the results.</span></span> <span data-ttu-id="391ea-104">Konkrétně ukazuje, jak provést jednoduché zřetězení, sjednocení a průnik dvou sad textových řádků.</span><span class="sxs-lookup"><span data-stu-id="391ea-104">Specifically, it shows how to perform a simple concatenation, a union, and an intersection on the two sets of text lines.</span></span>
 
-## <a name="set-up-the-project-and-the-text-files"></a><span data-ttu-id="d34e8-105">Nastavení projektu a textových souborů</span><span class="sxs-lookup"><span data-stu-id="d34e8-105">Set up the project and the text files</span></span>
+## <a name="set-up-the-project-and-the-text-files"></a><span data-ttu-id="391ea-105">Nastavení projektu a textových souborů</span><span class="sxs-lookup"><span data-stu-id="391ea-105">Set up the project and the text files</span></span>
 
-1. <span data-ttu-id="d34e8-106">Zkopírujte tyto názvy do textového souboru s názvem names1. txt a uložte je do složky projektu:</span><span class="sxs-lookup"><span data-stu-id="d34e8-106">Copy these names into a text file that is named names1.txt and save it in your project folder:</span></span>
+1. <span data-ttu-id="391ea-106">Zkopírujte tyto názvy do textového souboru s názvem names1. txt a uložte je do složky projektu:</span><span class="sxs-lookup"><span data-stu-id="391ea-106">Copy these names into a text file that is named names1.txt and save it in your project folder:</span></span>
 
     ```text
     Bankov, Peter
@@ -30,7 +30,7 @@ ms.locfileid: "75337561"
     Garcia, Debra
     ```
 
-2. <span data-ttu-id="d34e8-107">Zkopírujte tyto názvy do textového souboru s názvem names2. txt a uložte je do složky projektu.</span><span class="sxs-lookup"><span data-stu-id="d34e8-107">Copy these names into a text file that is named names2.txt and save it in your project folder.</span></span> <span data-ttu-id="d34e8-108">Všimněte si, že dva soubory mají některé běžné názvy.</span><span class="sxs-lookup"><span data-stu-id="d34e8-108">Note that the two files have some names in common.</span></span>
+2. <span data-ttu-id="391ea-107">Zkopírujte tyto názvy do textového souboru s názvem names2. txt a uložte je do složky projektu.</span><span class="sxs-lookup"><span data-stu-id="391ea-107">Copy these names into a text file that is named names2.txt and save it in your project folder.</span></span> <span data-ttu-id="391ea-108">Všimněte si, že dva soubory mají některé běžné názvy.</span><span class="sxs-lookup"><span data-stu-id="391ea-108">Note that the two files have some names in common.</span></span>
 
     ```text
     Liu, Jinghao
@@ -45,7 +45,7 @@ ms.locfileid: "75337561"
     El Yassir, Mehdi
     ```
 
-## <a name="example"></a><span data-ttu-id="d34e8-109">Příklad</span><span class="sxs-lookup"><span data-stu-id="d34e8-109">Example</span></span>
+## <a name="example"></a><span data-ttu-id="391ea-109">Příklad</span><span class="sxs-lookup"><span data-stu-id="391ea-109">Example</span></span>
 
 ```vb
 Class ConcatenateStrings
@@ -163,11 +163,11 @@ End Class
 ' 2 total names in list
 ```
 
-## <a name="compile-the-code"></a><span data-ttu-id="d34e8-110">Kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="d34e8-110">Compile the code</span></span>
+## <a name="compile-the-code"></a><span data-ttu-id="391ea-110">Kompilovat kód</span><span class="sxs-lookup"><span data-stu-id="391ea-110">Compile the code</span></span>
 
-<span data-ttu-id="d34e8-111">Vytvořte projekt konzolové aplikace Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="d34e8-111">Create a Visual Basic console application project.</span></span> <span data-ttu-id="d34e8-112">Přidejte příkaz `Imports` pro obor názvů System. Linq.</span><span class="sxs-lookup"><span data-stu-id="d34e8-112">Add an `Imports` statement for the System.Linq namespace.</span></span>
+<span data-ttu-id="391ea-111">Vytvořte projekt konzolové aplikace Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="391ea-111">Create a Visual Basic console application project.</span></span> <span data-ttu-id="391ea-112">Přidejte `Imports` příkaz pro obor názvů System. Linq.</span><span class="sxs-lookup"><span data-stu-id="391ea-112">Add an `Imports` statement for the System.Linq namespace.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="d34e8-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="d34e8-113">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="391ea-113">Viz také</span><span class="sxs-lookup"><span data-stu-id="391ea-113">See also</span></span>
 
-- [<span data-ttu-id="d34e8-114">LINQ a řetězce (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="d34e8-114">LINQ and Strings (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
-- [<span data-ttu-id="d34e8-115">LINQ a souborové adresáře (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="d34e8-115">LINQ and File Directories (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)
+- [<span data-ttu-id="391ea-114">LINQ a řetězce (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="391ea-114">LINQ and Strings (Visual Basic)</span></span>](linq-and-strings.md)
+- [<span data-ttu-id="391ea-115">LINQ a souborové adresáře (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="391ea-115">LINQ and File Directories (Visual Basic)</span></span>](linq-and-file-directories.md)
