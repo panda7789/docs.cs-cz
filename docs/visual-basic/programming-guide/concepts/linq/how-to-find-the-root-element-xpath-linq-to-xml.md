@@ -1,16 +1,16 @@
 ---
-title: 'Postupy: Vyhledání kořenového elementu (XPath-LINQ to XML)'
+title: 'Postupy: Vyhledání kořenového elementu (XPath – LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: 72c3aed5-9522-4454-a876-2070aad13f2e
-ms.openlocfilehash: 0e381c074a935a0cda5bd74bc456b8d7d9a495a8
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: d1a507f97954c62672689bae719f251fed9a298b
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74344611"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84364510"
 ---
 # <a name="how-to-find-the-root-element-xpath-linq-to-xml-visual-basic"></a>Postupy: Vyhledání kořenového elementu (XPath-LINQ to XML) (Visual Basic)
-Toto téma ukazuje, jak získat kořenový prvek pomocí XPath a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].  
+Toto téma ukazuje, jak získat kořenový prvek pomocí XPath a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] .  
   
  Výraz XPath je:  
   
@@ -19,7 +19,7 @@ Toto téma ukazuje, jak získat kořenový prvek pomocí XPath a [!INCLUDE[sqlte
 ## <a name="example"></a>Příklad  
  Tento příklad najde kořenový element.  
   
- Tento příklad používá následující dokument XML: [ukázkový soubor XML: více nákupních objednávek (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
+ Tento příklad používá následující dokument XML: [ukázkový soubor XML: více nákupních objednávek (LINQ to XML)](sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
   
 ```vb  
 Dim po As XDocument = XDocument.Load("PurchaseOrders.xml")  
@@ -45,6 +45,6 @@ Results are identical
 PurchaseOrders  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [LINQ to XML pro uživatele XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+- [LINQ to XML pro uživatele XPath (Visual Basic)](linq-to-xml-for-xpath-users.md)
