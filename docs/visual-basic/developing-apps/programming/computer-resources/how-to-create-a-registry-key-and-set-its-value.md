@@ -11,28 +11,28 @@ helpviewer_keywords:
 - registry keys [Visual Basic], setting values
 - examples [Visual Basic], registry
 ms.assetid: d3e40f74-c283-480c-ab18-e5e9052cd814
-ms.openlocfilehash: 459c4b3f971009ee4b6b669c55bc058db0826595
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b51a14e5e9c69078330f5b2161f74cff8e4da332
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74349203"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84363445"
 ---
 # <a name="how-to-create-a-registry-key-and-set-its-value-in-visual-basic"></a>Postupy: Vytvoření klíče registru a nastavení jeho hodnoty v jazyce Visual Basic
 
-`CreateSubKey` Metodu `My.Computer.Registry` objektu lze použít k vytvoření klíče registru.
+`CreateSubKey`Metodu `My.Computer.Registry` objektu lze použít k vytvoření klíče registru.
 
 ## <a name="procedure"></a>Postup
 
 ### <a name="to-create-a-registry-key"></a>Vytvoření klíče registru
 
-- Použijte `CreateSubKey` metodu, která určuje, který podregistr umístit klíč, a také název klíče. V parametru `Subkey` se nerozlišují malá a velká písmena. Tento příklad vytvoří klíč `MyTestKey` registru v rámci HKEY_CURRENT_USER.
+- Použijte `CreateSubKey` metodu, která určuje, který podregistr umístit klíč, a také název klíče. V parametru `Subkey` se nerozlišují malá a velká písmena. Tento příklad vytvoří klíč registru `MyTestKey` v rámci HKEY_CURRENT_USER.
 
     [!code-vb[VbResourceTasks#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbResourceTasks/VB/Class1.vb#17)]
 
 ### <a name="to-create-a-registry-key-and-set-a-value-in-it"></a>Vytvoření klíče registru a nastavení jeho hodnoty
 
-1. Použijte `CreateSubkey` metodu, která určuje, který podregistr umístit klíč, a také název klíče. Tento příklad vytvoří klíč `MyTestKey` registru v rámci HKEY_CURRENT_USER.
+1. Použijte `CreateSubkey` metodu, která určuje, který podregistr umístit klíč, a také název klíče. Tento příklad vytvoří klíč registru `MyTestKey` v rámci HKEY_CURRENT_USER.
 
     [!code-vb[VbResourceTasks#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbResourceTasks/VB/Class1.vb#17)]
 
@@ -42,7 +42,7 @@ ms.locfileid: "74349203"
 
 ## <a name="example"></a>Příklad
 
-Tento příklad vytvoří klíč `MyTestKey` registru v rámci HKEY_CURRENT_USER a poté nastaví hodnotu `MyTestKeyValue` řetězce na. `This is a test value`
+Tento příklad vytvoří klíč registru `MyTestKey` v rámci HKEY_CURRENT_USER a poté nastaví hodnotu řetězce `MyTestKeyValue` na `This is a test value` .
 
 [!code-vb[VbResourceTasks#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbResourceTasks/VB/Class1.vb#15)]
 
@@ -52,23 +52,23 @@ Projděte si strukturu registru, kde najdete vhodné umístění pro váš klí�
 
 Při čtení registru z webové aplikace závisí aktuální uživatel na ověřování a zosobnění implementované ve webové aplikaci.
 
-Je bezpečnější zapsat data do složky uživatele (<xref:Microsoft.Win32.Registry.CurrentUser>) místo do místního počítače (<xref:Microsoft.Win32.Registry.LocalMachine>).
+Je bezpečnější zapsat data do složky uživatele ( <xref:Microsoft.Win32.Registry.CurrentUser> ) místo do místního počítače ( <xref:Microsoft.Win32.Registry.LocalMachine> ).
 
-Když vytváříte hodnotu registru, musíte se rozhodnout, co dělat, pokud tato hodnota již existuje. Jiný proces, pravděpodobně škodlivý, již mohl vytvořit hodnotu a mít k ní přístup. Při vložení dat do hodnoty registru jsou data k dispozici pro druhý proces. Chcete-li tomu zabránit, <xref:Microsoft.Win32.RegistryKey.GetValue%2A> použijte metodu. Vrátí `Nothing` , pokud klíč ještě neexistuje.
+Když vytváříte hodnotu registru, musíte se rozhodnout, co dělat, pokud tato hodnota již existuje. Jiný proces, pravděpodobně škodlivý, již mohl vytvořit hodnotu a mít k ní přístup. Při vložení dat do hodnoty registru jsou data k dispozici pro druhý proces. Chcete-li tomu zabránit, použijte <xref:Microsoft.Win32.RegistryKey.GetValue%2A> metodu. Vrátí, `Nothing` Pokud klíč ještě neexistuje.
 
 Není bezpečné ukládat tajné klíče, jako jsou hesla, v registru jako prostý text, a to i v případě, že je klíč registru chráněný pomocí seznamů ACL (seznamy Access Control).
 
 Následující podmínky mohou způsobit výjimku:
 
-- Název klíče je `Nothing` (<xref:System.ArgumentNullException>).
+- Název klíče je `Nothing` ( <xref:System.ArgumentNullException> ).
 
-- Uživatel nemá oprávnění k vytváření klíčů registru (<xref:System.Security.SecurityException>).
+- Uživatel nemá oprávnění k vytváření klíčů registru ( <xref:System.Security.SecurityException> ).
 
-- Název klíče překračuje limit 255 znaků (<xref:System.ArgumentException>).
+- Název klíče překračuje limit 255 znaků ( <xref:System.ArgumentException> ).
 
-- Klíč je uzavřený (<xref:System.IO.IOException>).
+- Klíč je uzavřený ( <xref:System.IO.IOException> ).
 
-- Klíč registru je jen pro čtení (<xref:System.UnauthorizedAccessException>).
+- Klíč registru je jen pro čtení ( <xref:System.UnauthorizedAccessException> ).
 
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework
 
@@ -79,5 +79,5 @@ Pro spuštění tohoto procesu vaše sestavení vyžaduje úroveň oprávnění 
 - <xref:Microsoft.VisualBasic.MyServices.RegistryProxy>
 - <xref:Microsoft.VisualBasic.MyServices.RegistryProxy.CurrentUser%2A>
 - <xref:Microsoft.Win32.RegistryKey.CreateSubKey%2A>
-- [Čtení z registru a zápis do něj](../../../../visual-basic/developing-apps/programming/computer-resources/reading-from-and-writing-to-the-registry.md)
+- [Čtení z registru a zápis do něj](reading-from-and-writing-to-the-registry.md)
 - [Základy zabezpečení přístupu kódu](../../../../framework/misc/code-access-security-basics.md)

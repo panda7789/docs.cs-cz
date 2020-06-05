@@ -2,26 +2,26 @@
 title: Informace o volajícím
 ms.date: 07/20/2015
 ms.assetid: 15d556eb-4d0c-4497-98a3-7f60abb7d6a1
-ms.openlocfilehash: 7c87b540a68f4d0219918fed66de6c1b635104a9
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 93fb1e327d65ac19f293a2f77b7d5712fc5e8d2f
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74349478"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84400665"
 ---
 # <a name="caller-information-visual-basic"></a>Informace o volajícím (Visual Basic)
 Pomocí atributů Informace o volajícím můžete získat informace o volajícím metody. Můžete získat cestu k souboru zdrojového kódu, číslo řádku ve zdrojovém kódu a název členu volajícího. Tyto informace jsou užitečné pro trasování, ladění a vytváření diagnostických nástrojů.  
   
- Pro získání těchto informací můžete použít atributy, které jsou použity na volitelné parametry, z nichž každý má výchozí hodnotu. V následující tabulce jsou uvedeny atributy informací o volajícím, které jsou definovány v oboru názvů <xref:System.Runtime.CompilerServices?displayProperty=nameWithType>:  
+ Pro získání těchto informací můžete použít atributy, které jsou použity na volitelné parametry, z nichž každý má výchozí hodnotu. V následující tabulce jsou uvedeny atributy informací o volajícím, které jsou definovány v <xref:System.Runtime.CompilerServices?displayProperty=nameWithType> oboru názvů:  
   
-|Atribut|Popis|Typ|  
+|Atribut|Description|Typ|  
 |---|---|---|  
 |<xref:System.Runtime.CompilerServices.CallerFilePathAttribute>|Úplná cesta zdrojového souboru, který obsahuje volajícího. Toto je cesta k souboru v době kompilace.|`String`|  
 |<xref:System.Runtime.CompilerServices.CallerLineNumberAttribute>|Číslo řádku ve zdrojovém souboru, ve kterém je volána metoda.|`Integer`|  
 |<xref:System.Runtime.CompilerServices.CallerMemberNameAttribute>|Název metody nebo vlastnosti volajícího. Viz [názvy členů](#MEMBERNAMES) dále v tomto tématu.|`String`|  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje způsob použití atributů Informace o volajícím. Při každém volání metody `TraceMessage` jsou informace o volajícím nahrazeny jako argumenty nepovinných parametrů.  
+ Následující příklad ukazuje způsob použití atributů Informace o volajícím. Při každém volání `TraceMessage` metody jsou informace o volajícím nahrazeny jako argumenty nepovinných parametrů.  
   
 ```vb  
 Private Sub DoProcessing()  
@@ -51,18 +51,18 @@ End Sub
   
  Atributy Informace o volajícím neučiní parametr volitelným. Místo toho mají vliv na výchozí hodnotu, která je předána, pokud je argument vynechán.  
   
- Hodnoty atributů Informace o volajícím jsou emitovány jako literály do jazyka Intermediate Language (IL) v době kompilace. Na rozdíl od výsledků vlastnosti <xref:System.Exception.StackTrace%2A> pro výjimky nejsou výsledky ovlivněny zmatením.  
+ Hodnoty atributů Informace o volajícím jsou emitovány jako literály do jazyka Intermediate Language (IL) v době kompilace. Na rozdíl od výsledků <xref:System.Exception.StackTrace%2A> vlastnosti pro výjimky nejsou výsledky ovlivněny zmatením.  
   
  Volitelné argumenty můžete explicitně zadat, chcete-li řídit nebo skrýt informace o volajícím.  
   
-### <a name="MEMBERNAMES"></a>Názvy členů  
- Atribut `CallerMemberName` lze použít k zamezení zadání názvu člena jako `String` argumentu volané metody. Pomocí této techniky se vyhnete problému s tím, že **Refaktoring přejmenování** nemění hodnoty `String`. Tato výhoda se hodí zvláště v těchto úlohách:  
+### <a name="member-names"></a><a name="MEMBERNAMES"></a>Názvy členů  
+ Atribut lze použít `CallerMemberName` k zamezení zadání názvu člena jako `String` argumentu volané metody. Pomocí této techniky se vyhnete problému s tím, že **Refaktoring přejmenování** hodnoty nemění `String` . Tato výhoda se hodí zvláště v těchto úlohách:  
   
 - Použití trasování a diagnostických rutin.  
   
-- Implementace rozhraní <xref:System.ComponentModel.INotifyPropertyChanged> při vázání dat Toto rozhraní umožňuje vlastnosti objektu oznámit vázanému ovládacímu prvku, že došlo ke změně vlastnosti, aby ovládací prvek mohl zobrazit aktualizované informace. Bez atributu `CallerMemberName` musíte zadat název vlastnosti jako literál.  
+- Implementace <xref:System.ComponentModel.INotifyPropertyChanged> rozhraní při vázání dat. Toto rozhraní umožňuje vlastnosti objektu oznámit vázanému ovládacímu prvku, že došlo ke změně vlastnosti, aby ovládací prvek mohl zobrazit aktualizované informace. Bez `CallerMemberName` atributu je nutné zadat název vlastnosti jako literál.  
   
- Následující graf znázorňuje názvy členů, které jsou vráceny při použití atributu `CallerMemberName`.  
+ Následující graf znázorňuje názvy členů, které jsou vráceny při použití `CallerMemberName` atributu.  
   
 |K volání dochází v rámci|Výsledek názvu členu|  
 |-------------------------|------------------------|  
@@ -74,9 +74,9 @@ End Sub
 |Konstruktor atributu|Název členu, na který se atribut používá. Pokud je atribut libovolný prvek v členu (například parametr, návratová hodnota nebo parametr obecného typu), je tento výsledek názvem členu, který je přidružen k tomuto prvku.|  
 |Žádný obsahující člen (například úroveň sestavení nebo atributy, které jsou použity na typy)|Výchozí hodnota volitelného parametru.|  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Atributy (Visual Basic)](../../../visual-basic/language-reference/attributes.md)
-- [Společné atributy (Visual Basic)](../../../visual-basic/programming-guide/concepts/attributes/common-attributes.md)
-- [Nepovinné parametry](../../../visual-basic/programming-guide/language-features/procedures/optional-parameters.md)
-- [Koncepty programování (Visual Basic)](../../../visual-basic/programming-guide/concepts/index.md)
+- [Atributy (Visual Basic)](../../language-reference/attributes.md)
+- [Společné atributy (Visual Basic)](attributes/common-attributes.md)
+- [Volitelné parametry](../language-features/procedures/optional-parameters.md)
+- [Koncepty programování (Visual Basic)](index.md)
