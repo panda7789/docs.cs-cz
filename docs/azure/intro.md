@@ -2,12 +2,12 @@
 title: Začínáme s Azure a .NET
 description: Seznamte se se základy, které potřebujete vědět o Azure a .NET.
 ms.date: 03/15/2020
-ms.openlocfilehash: 64defed4433647c2a0dcce91493d9ec77d21b541
-ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
+ms.openlocfilehash: d57d1d50852c9d7fff099554bd64c48c15129bb4
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "82072142"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84446389"
 ---
 # <a name="introduction-to-azure-and-net"></a>Seznámení s Azure a .NET
 
@@ -77,5 +77,5 @@ Jakmile nasadíte aplikaci do Azure, můžete se setkat s případy, kdy pracova
 
 * [Nasazení první ASP.NET Core webové aplikace do Azure](https://docs.microsoft.com/azure/app-service/app-service-web-get-started-dotnet)
 * [Další informace o ověřování v sadě Azure SDK pro .NET](./sdk/authentication.md)
-* [Diagnostika chyb v cloudových aplikacích](https://blogs.msdn.microsoft.com/webdev/2018/02/07/diagnosing-errors-on-your-cloud-apps)
+* [Diagnostika chyb v cloudových aplikacích](https://devblogs.microsoft.com/aspnet/diagnosing-errors-on-your-cloud-apps/)
 * Stažení bezplatné elektronické knihy [Azure úvodní příručka pro vývojáře na platformě .NET](https://www.microsoft.com/net/download/thank-you/azure-quick-start-ebook)

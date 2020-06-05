@@ -1,5 +1,6 @@
 ---
 title: Pokyny k pojmenování
+description: V tomto přehledu si přečtěte informace o konvencích vytváření názvů pro použití při vývoji rozhraní. Projděte si články, které se týkají velkých a malých jmen a dalších pokynů.
 ms.date: 10/22/2008
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -11,12 +12,12 @@ helpviewer_keywords:
 - names [.NET Framework]
 - format naming guidelines [.NET Framework]
 ms.assetid: fc076d66-9b5f-42d3-aa65-61d970c794a3
-ms.openlocfilehash: 1b137be60f4c8c1c7cf1fa1f807841d4bc209089
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: fbcf5ef5eb02a5e45b5c981b4247ffe1c9c2631b
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290172"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84447144"
 ---
 # <a name="naming-guidelines"></a>Pokyny k pojmenování
 Po konzistentní sadě konvencí pojmenování v rámci vývoje architektury může být hlavním příspěvkem k použitelnosti rozhraní. Umožňuje, aby rozhraní používalo mnoho vývojářů v široce oddělených projektech. Nad rámec konzistence formuláře musí být názvy elementů architektury snadno pochopitelné a musí vyjádřit funkci každého prvku.  

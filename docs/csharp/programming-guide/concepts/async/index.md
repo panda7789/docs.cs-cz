@@ -1,13 +1,13 @@
 ---
 title: 'Asynchronní programování v jazyce C #'
 description: Přehled podpory jazyka C# pro asynchronní programování pomocí asynchronního, operátoru await, úlohy a úlohy<T>
-ms.date: 05/26/2020
-ms.openlocfilehash: 703392ca6ba4e6fb08dd8a88817babc167394788
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.date: 06/04/2020
+ms.openlocfilehash: fbbd08f8c0e650c366ca1d283825e629fcb952d7
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84007959"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84446427"
 ---
 # <a name="asynchronous-programming-with-async-and-await"></a>Asynchronní programování pomocí modifikátoru Async a operátoru Await
 
@@ -32,6 +32,10 @@ Nyní zvažte stejné pokyny, které jsou zapsány jako příkazy jazyka C#:
 
 :::code language="csharp" source="snippets/index/AsyncBreakfast-starter/Program.cs" highlight="8-27":::
 
+:::image type="content" source="media/synchronous-breakfast.png" alt-text="synchronní snídaně":::
+
+Synchronně připravený úkol snídaně trval přibližně 30 minut, protože celková hodnota je součet každé jednotlivé úlohy.
+
 > [!NOTE]
 > `Coffee`Třídy, `Egg` ,, a `Bacon` `Toast` `Juice` jsou prázdné. Jsou pouze třídy značek pro účely ukázky, neobsahují žádné vlastnosti a neposkytují žádné jiné účely.
 
@@ -50,6 +54,9 @@ Předchozí kód demonstruje špatný postup: sestavení synchronního kódu pro
 Pojďme začít aktualizací tohoto kódu, aby vlákno neblokovalo úlohy spuštěné. `await`Klíčové slovo poskytuje neblokující způsob spuštění úlohy a pak pokračuje v provádění po dokončení této úlohy. Jednoduchá asynchronní verze kódu pro vytvoření snídani by vypadala jako následující fragment kódu:
 
 :::code language="csharp" source="snippets/index/AsyncBreakfast-V2/Program.cs" id="SnippetMain":::
+
+> [!IMPORTANT]
+> Celkový uplynulý čas je zhruba stejný jako počáteční verze synchonous. Kód ještě může využít výhod některých klíčových funkcí asynchronního programování.
 
 > [!TIP]
 > Tělo metody `FryEggsAsync` , `FryBaconAsync` a `ToastBreadAsync` byly aktualizovány, aby vracely hodnoty, `Task<Egg>` `Task<Bacon>` a `Task<Toast>` v uvedeném pořadí. Metody se přejmenují z původní verze tak, aby zahrnovaly příponu "Async". Jejich implementace se zobrazují jako součást [finální verze](#final-version) dále v tomto článku.
@@ -116,6 +123,10 @@ Console.WriteLine("bacon is ready");
 Console.WriteLine("Breakfast is ready!");
 ```
 
+:::image type="content" source="media/asynchronous-breakfast.png" alt-text="asynchronní snídaně":::
+
+Asynchronně připravená snídaně trvala přibližně 20 minut, protože některé úlohy byly schopné spustit souběžně.
+
 Předchozí kód funguje lépe. Současně spustíte všechny asynchronní úlohy. Každou úlohu můžete očekávat pouze v případě, že potřebujete výsledky. Předchozí kód může být podobný kódu ve webové aplikaci, který vytváří požadavky na různé mikroslužby, a pak kombinuje výsledky do jediné stránky. Všechny požadavky okamžitě provedete `await` a pak všechny tyto úlohy a vytvoříte webovou stránku.
 
 ## <a name="composition-with-tasks"></a>Složení s úkoly
@@ -172,6 +183,10 @@ while (breakfastTasks.Count > 0)
 
 Po všech změnách bude finální verze kódu vypadat takto:<a id="final-version"></a>
 :::code language="csharp" source="snippets/index/AsyncBreakfast-final/Program.cs" highlight="9-40":::
+
+:::image type="content" source="media/whenany-async-breakfast.png" alt-text="Když jakákoli asynchronní snídaně":::
+
+Konečná verze asynchronní přípravy snídaně trvala zhruba 15 minut, protože některé úlohy byly schopné spustit souběžně a kód byl schopný monitorovat více úloh najednou a v případě potřeby provést akci.
 
 Tento konečný kód je asynchronní. Přesněji odráží, jak by osoba navařené snídani. Porovnejte předchozí kód s první ukázkou kódu v tomto článku. Základní akce jsou stále jasné z čtení kódu. Tento kód si můžete přečíst stejným způsobem, jakým jste si přečetli tyto pokyny pro vytvoření snídaně na začátku tohoto článku. Jazykové funkce pro `async` a `await` poskytují překlad pro všechny uživatele, kteří se dodávají podle těchto písemných pokynů: spustit úlohy jako vy a neblokovat čekání na dokončení úkolů.
 

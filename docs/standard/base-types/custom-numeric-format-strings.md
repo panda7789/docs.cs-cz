@@ -1,5 +1,6 @@
 ---
 title: Vlastní řetězce číselného formátu
+description: Naučte se vytvořit vlastní řetězec číselného formátu pro formátování číselných dat v .NET. Vlastní řetězec číselného formátu má jeden nebo více vlastních číselných specifikátorů.
 ms.date: 06/25/2018
 ms.technology: dotnet-standard
 dev_langs:
@@ -16,12 +17,12 @@ helpviewer_keywords:
 - formatting numbers [.NET Framework]
 - format specifiers, custom numeric format strings
 ms.assetid: 6f74fd32-6c6b-48ed-8241-3c2b86dea5f4
-ms.openlocfilehash: bc2ace5a068a49f19db55c6fcc3cfc7287b6f618
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: bd96766c7483a3de1a3c70d1efbe1aa91ea45fbc
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84278957"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84447235"
 ---
 # <a name="custom-numeric-format-strings"></a>Vlastní řetězce číselného formátu
 
@@ -34,7 +35,7 @@ Vlastní řetězce číselného formátu jsou podporovány některými přetíž
 
 <a name="table"></a>Následující tabulka popisuje vlastní specifikátory číselného formátu a zobrazuje ukázkový výstup vyprodukovaný každým specifikátorem formátu. Další informace o použití vlastních číselných formátovacích řetězců naleznete v části [poznámky](#NotesCustomFormatting) a v části [příklad](#example) pro komplexní ilustraci jejich použití.
 
-|Specifikátor formátu|Name|Popis|Příklady|
+|Specifikátor formátu|Name|Description|Příklady|
 |----------------------|----------|-----------------|--------------|
 |"0"|Zástupný symbol nula|Nahradí nulu odpovídající číslicí, pokud je dostupná. V opačném případě se nula zobrazí ve výsledném řetězci.<br /><br /> Další informace: [vlastní specifikátor "0"](#Specifier0).|1234,5678 ("00000")-> 01235<br /><br /> 0,45678 ("0,00", en-US) – > 0,46<br /><br /> 0,45678 ("0,00", fr-FR)-> 0, 46|
 |"#"|Zástupný symbol číslice|Nahradí znak "#" odpovídající číslicí, pokud je k dispozici. V opačném případě se ve výsledném řetězci nezobrazí žádná číslice.<br /><br /> Všimněte si, že ve výsledném řetězci se nezobrazí žádná číslice, pokud je odpovídající číslice ve vstupním řetězci nevýznamná 0. Například 0003 ("# # # #")-> 3.<br /><br /> Další informace: [vlastní specifikátor "#"](#SpecifierD).|1234,5678 ("# # # # #")-> 1235<br /><br /> 0,45678 (#. # # ", en-US)->.46<br /><br /> 0,45678 (#. # # ", fr-FR)->, 46|
@@ -46,7 +47,7 @@ Vlastní řetězce číselného formátu jsou podporovány některými přetíž
 |"\\"|Řídicí znak|Způsobí, že následující znak je interpretován jako literál, nikoli jako specifikátor vlastního formátu.<br /><br /> Další informace: [ \\ řídicí znak ""](#SpecifierEscape).|987654 (" \\ # # #00 \\ #")-> #987654 #|
 |*řetězec "String*"<br /><br /> *řetězec "String*"|Oddělovač řetězcového literálu|Označuje, že uzavřené znaky by měly být zkopírovány do výsledného řetězce beze změny.<br/><br/>Další informace: [znakové literály](#character-literals).|68 ("# ' stupňů '") – > 68 stupňů<br /><br /> 68 ("# ' stupňů '") – > 68 stupňů|
 |;|Oddělovač oddílů|Definuje oddíly se zvláštními formátovacími řetězci pro kladná, záporná a nulová čísla.<br /><br /> Další informace: [";" Oddělovač oddílu](#SectionSeparator)|12,345 ("#0 0 #;(#0.0 #);-\ 0-") – > 12,35<br /><br /> 0 ("#0 0 #;(#0.0 #);-\ 0-")->-0-<br /><br /> -12,345 ("#0 0 #;(#0.0 #);-\ 0-")-> (12,35)<br /><br /> 12,345 ("#0 0 #;(#0.0 #)") – > 12,35<br /><br /> 0 ("#0 0 #;(#0.0 #)") – > 0,0<br /><br /> -12,345 ("#0 0 #;(#0.0 #)")-> (12,35)|
-|Ostatní|Všechny ostatní znaky|Znak je zkopírován do výsledného řetězce beze změny.<br/><br/>Další informace: [znakové literály](#character-literals).|68 ("# °")-> 68 °|
+|Jiné|Všechny ostatní znaky|Znak je zkopírován do výsledného řetězce beze změny.<br/><br/>Další informace: [znakové literály](#character-literals).|68 ("# °")-> 68 °|
 
 V následujících částech jsou uvedeny podrobné informace o jednotlivých vlastních specifikátorech číselného formátu.
 
@@ -205,7 +206,7 @@ Následující příklad používá řídicí znak, aby zabránil tomu, aby oper
 
 Středník (;) je podmíněný specifikátor formátu, který aplikuje odlišné formátování pro číslo v závislosti na tom, zda je jeho hodnota kladná, záporná nebo nulová. Pro vytvoření takového typu formátování může vlastní formátovací řetězec obsahovat až tři oddíly oddělené středníky. Tyto oddíly jsou popsány v následující tabulce.
 
-|Počet oddílů|Popis|
+|Počet oddílů|Description|
 |------------------------|-----------------|
 |Jeden oddíl|Formátovací řetězec se vztahuje na všechny hodnoty.|
 |Dva oddíly|První oddíl je aplikován na kladné a nulové hodnoty a druhý oddíl je aplikován na záporné hodnoty.<br /><br /> Pokud číslo, které má být formátováno, je záporné, ale bude po zaokrouhlení podle formátu ve druhém oddílu rovno nule, bude výsledná nula formátována podle prvního oddílu.|

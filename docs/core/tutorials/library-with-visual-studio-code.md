@@ -2,12 +2,12 @@
 title: Vytvoření knihovny tříd .NET Standard v Visual Studio Code
 description: Naučte se vytvářet .NET Standard knihovny tříd pomocí Visual Studio Code.
 ms.date: 05/29/2020
-ms.openlocfilehash: 10c832f5817292b366dc816aebada2dfdab11396
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 5720ac374d50ef27a07d463e57af1bd95a352d83
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84292201"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84446949"
 ---
 # <a name="tutorial-create-a-net-standard-library-in-visual-studio-code"></a>Kurz: Vytvoření knihovny .NET Standard v Visual Studio Code
 
@@ -127,7 +127,7 @@ Přidejte do řešení nový projekt knihovny tříd .NET Standard s názvem "St
 
 Přidejte konzolovou aplikaci, která používá knihovnu tříd. Aplikace vyzve uživatele, aby zadal řetězec a nahlásil, jestli řetězec začíná velkým znakem.
 
-1. V terminálu spusťte následující příkaz, který vytvoří projekt knihovny:
+1. V terminálu spusťte následující příkaz, který vytvoří projekt konzolové aplikace:
 
    ```dotnetcli
    dotnet new console -o ShowCase

@@ -1,5 +1,6 @@
 ---
 title: Vlastní řetězce formátu data a času
+description: Naučte se používat vlastní řetězce formátu data a času k převodu hodnot DateTime a DateTimeOffset na text reprezentace nebo k analýze řetězců pro data & časů.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -14,12 +15,12 @@ helpviewer_keywords:
 - formatting [.NET Framework], time
 - date and time strings
 ms.assetid: 98b374e3-0cc2-4c78-ab44-efb671d71984
-ms.openlocfilehash: 9aea3e9b52613add1ebc4cf7d9c0087088008d6e
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 89601d0628e4f5f00ec02d5cdd6fb79216b1469d
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84278996"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84447248"
 ---
 # <a name="custom-date-and-time-format-strings"></a>Vlastní řetězce formátu data a času
 
@@ -44,7 +45,7 @@ Při analýze operací lze použít vlastní formátovací řetězce data a čas
 
 Následující tabulka popisuje specifikátory vlastního formátu data a času a zobrazuje výsledný řetězec, který je vytvořen jednotlivými specifikátory formátu. Ve výchozím nastavení odráží výsledný řetězec konvence formátování jazykové verze en-US. Pokud konkrétní specifikátor formátu vytváří lokalizovaný výsledný řetězec, je v příkladu rovněž uvedena jazyková verze, na kterou se výsledný řetězec vztahuje. Další informace o použití vlastních formátovacích řetězců data a času naleznete v části [poznámky](#notes) .
 
-| Specifikátor formátu | Popis | Příklady |
+| Specifikátor formátu | Description | Příklady |
 | ---------------------- | ----------------- | -------------- |
 |"d"|Den měsíce, od 1 do 31.<br /><br /> Další informace: [Specifikátor vlastního formátu "d"](#dSpecifier).|2009-06-01T13:45:30-> 1<br /><br /> 2009-06-15T13:45:30 – > 15|
 |"dd"|Den měsíce, od 01 do 31.<br /><br /> Další informace: [Specifikátor vlastního formátu "dd"](#ddSpecifier).|2009-06-01T13:45:30 – > 01<br /><br /> 2009-06-15T13:45:30 – > 15|

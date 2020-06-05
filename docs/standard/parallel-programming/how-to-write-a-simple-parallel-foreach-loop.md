@@ -1,5 +1,6 @@
 ---
 title: Zápis jednoduchého paralelního programu pomocí Parallel. ForEach
+description: V tomto článku se dozvíte, jak povolit datovou paralelismuy v .NET. Napište smyčku Parallel. ForEach přes libovolný zdroj dat IEnumerable nebo IEnumerable <T> .
 ms.date: 02/14/2019
 ms.technology: dotnet-standard
 dev_langs:
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - foreach, parallel version
 - parallel programming, foreach
 ms.assetid: cb5fab92-1c19-499e-ae91-8b7525dd875f
-ms.openlocfilehash: 717a04790de27c5ae2aade44d29e4e9ff3fd93cc
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 59c8710a8e3fc878b2ceded8595f7f3319d4c953
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290717"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84447196"
 ---
 # <a name="how-to-write-a-simple-parallelforeach-loop"></a>Postupy: zápis jednoduché smyčky Parallel. ForEach
 

@@ -3,12 +3,12 @@ title: Odinstalační nástroj
 description: Přehled nástroje pro odinstalaci rozhraní .NET Core, což je průvodce nástrojem, který umožňuje řízené vyčištění sad .NET Core SDK a modulů runtime.
 author: sfoslund
 ms.date: 05/27/2020
-ms.openlocfilehash: 1ad31cd42d8f8f87e3501b422fc4298c643e2067
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 4e70fd3438b582bd5a0d6a52d7e58ed5e07f8811
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144510"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84446903"
 ---
 # <a name="net-core-uninstall-tool"></a>Nástroj pro odinstalaci .NET Core
 
@@ -138,7 +138,7 @@ dotnet-core-uninstall dry-run [options] [<VERSION>...]
 dotnet-core-uninstall whatif [options] [<VERSION>...]
 ```
 
-#### <a name="arguments"></a>Argumenty
+#### <a name="arguments"></a>Arguments
 
 * **`VERSION`**
 
@@ -157,11 +157,11 @@ dotnet-core-uninstall whatif [options] [<VERSION>...]
 
   Odebere všechny sady SDK a moduly runtime .NET Core.
 
-* **`--all-below <VERSION>`**
+* **`--all-below <VERSION>[ <VERSION>...]`**
 
   Odebere jenom sady SDK a modul runtime .NET Core s verzí nižší, než je zadaná verze. Zadaná verze zůstane nainstalovaná.
 
-* **`--all-but <VERSIONS>`**
+* **`--all-but <VERSIONS>[ <VERSION>...]`**
 
   Odebere všechny sady SDK a moduly runtime .NET Core s výjimkou uvedených verzí.
 
@@ -227,11 +227,11 @@ Poznámky:
 
   Odebere všechny sady SDK a moduly runtime .NET Core.
 
-* **`--all-below <VERSION>`**
+* **`--all-below <VERSION>[ <VERSION>...]`**
 
   Odebere sady SDK a moduly runtime .NET Core pod zadanou verzí. Zadaná verze zůstane.
 
-* **`--all-but <VERSIONS>`**
+* **`--all-but <VERSIONS>[ <VERSION>...]`**
 
   Odebere sady SDK a moduly runtime .NET Core s výjimkou uvedených verzí.
 
@@ -318,7 +318,7 @@ Tento nástroj vyžaduje zvýšení oprávnění k odinstalování sad SDK a mod
 dotnet-core-uninstall remove [options] [<VERSION>...]
 ```
 
-#### <a name="arguments"></a>Argumenty
+#### <a name="arguments"></a>Arguments
 
 * **`VERSION`**
 
@@ -337,11 +337,11 @@ dotnet-core-uninstall remove [options] [<VERSION>...]
 
   Odebere všechny sady SDK a moduly runtime .NET Core.
 
-* **`--all-below <VERSION>`**
+* **`--all-below <VERSION>[ <VERSION>...]`**
 
   Odebere jenom sady SDK a modul runtime .NET Core s verzí nižší, než je zadaná verze. Zadaná verze zůstane nainstalovaná.
 
-* **`--all-but <VERSIONS>`**
+* **`--all-but <VERSIONS>[ <VERSION>...]`**
 
   Odebere všechny sady SDK a moduly runtime .NET Core s výjimkou uvedených verzí.
 
@@ -367,7 +367,7 @@ dotnet-core-uninstall remove [options] [<VERSION>...]
 
 * **`--hosting-bundle`**
 
-  Odebere jenom modul runtime .NET Core a hostitelské sady.
+  Odebere jenom hostitelské sady .NET Core.
 
 * **`--major-minor <MAJOR_MINOR>`**
 
@@ -409,11 +409,11 @@ Poznámky:
 
   Odebere všechny sady SDK a moduly runtime .NET Core.
 
-* **`--all-below <VERSION>`**
+* **`--all-below <VERSION>[ <VERSION>...]`**
 
   Odebere sady SDK a moduly runtime .NET Core pod zadanou verzí. Zadaná verze zůstane.
 
-* **`--all-but <VERSIONS>`**
+* **`--all-but <VERSIONS>[ <VERSION>...]`**
 
   Odebere sady SDK a moduly runtime .NET Core s výjimkou uvedených verzí.
 

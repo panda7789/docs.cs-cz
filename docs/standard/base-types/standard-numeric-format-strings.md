@@ -1,5 +1,6 @@
 ---
 title: Standardní řetězce formátu čísla
+description: V tomto článku se naučíte, jak pomocí standardních číselných formátovacích řetězců formátovat běžné číselné typy na text reprezentace v .NET.
 ms.date: 06/10/2018
 ms.technology: dotnet-standard
 dev_langs:
@@ -16,12 +17,12 @@ helpviewer_keywords:
 - standard numeric format strings
 - formatting numbers [.NET Framework]
 - format specifiers, standard numeric format strings
-ms.openlocfilehash: 6b84fc752a7bb37ff64bf6cfa08879aed3f20010
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 605438a5f0e4b5bd9ade96c9db0416ee8611f311
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288313"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84447118"
 ---
 # <a name="standard-numeric-format-strings"></a>Standardní řetězce formátu čísla
 
@@ -51,7 +52,7 @@ Standardní řetězce číselného formátu jsou podporovány v:
 
 <a name="table"></a>Následující tabulka popisuje standardní specifikátory číselného formátu a zobrazuje vzorový výstup vyprodukovaný každým specifikátorem formátu. Další informace o použití standardních číselných formátovacích řetězců naleznete v části [poznámky](#NotesStandardFormatting) a v části [příklad](#example) pro komplexní ilustraci jejich použití.
 
-|Specifikátor formátu|Name|Popis|Příklady|
+|Specifikátor formátu|Name|Description|Příklady|
 |----------------------|----------|-----------------|--------------|
 |"C" nebo "c"|Měna|Výsledek: hodnota měny.<br /><br /> Podporováno: všemi číselnými typy.<br /><br /> Specifikátor přesnosti: počet desetinných míst.<br /><br /> Výchozí specifikátor přesnosti: definuje <xref:System.Globalization.NumberFormatInfo.CurrencyDecimalDigits%2A?displayProperty=nameWithType> .<br /><br /> Další informace: [specifikátor formátu měny ("C")](#CFormatString).|123,456 ("C", en-US)-> \\ $123,46<br /><br /> 123,456 ("C", fr-FR)-> 123, 46 €<br /><br /> 123,456 ("C", ja-JP)-> ¥123<br /><br /> -123,456 ("C3", en-US)-> ( \\ $123,456)<br /><br /> -123,456 ("C3", fr-FR)->-€123 456<br /><br /> -123,456 ("C3", ja-JP)->-¥123,456|
 |"D" nebo "d"|Desetinné číslo|Výsledek: celá čísla s volitelným záporným znaménkem.<br /><br /> Podporováno: pouze integrálovými typy.<br /><br /> Specifikátor přesnosti: minimální počet číslic.<br /><br /> Výchozí specifikátor přesnosti: minimální požadovaný počet číslic.<br /><br /> Další informace: [specifikátor desítkového formátu ("D")](#DFormatString).|1234 ("D")-> 1234<br /><br /> -1234 ("D6")->-001234|
@@ -104,7 +105,7 @@ Pokud má formátovaná hodnota větší než zadaný nebo výchozí počet dese
 
 Na výsledný řetězec má vliv informace o formátování aktuálního <xref:System.Globalization.NumberFormatInfo> objektu. V následující tabulce jsou uvedeny <xref:System.Globalization.NumberFormatInfo> vlastnosti, které řídí formátování vráceného řetězce.
 
-|Vlastnost NumberFormatInfo|Popis|
+|Vlastnost NumberFormatInfo|Description|
 |-------------------------------|-----------------|
 |<xref:System.Globalization.NumberFormatInfo.CurrencyPositivePattern%2A>|Definuje umístění symbolu měny pro kladné hodnoty.|
 |<xref:System.Globalization.NumberFormatInfo.CurrencyNegativePattern%2A>|Definuje umístění symbolu měny pro záporné hodnoty a určuje, zda je záporné znaménko představováno závorkami nebo <xref:System.Globalization.NumberFormatInfo.NegativeSign%2A> vlastností.|
@@ -133,7 +134,7 @@ Specifikátor přesnosti označuje minimální počet číslic požadovaných ve
 
 Na výsledný řetězec má vliv informace o formátování aktuálního <xref:System.Globalization.NumberFormatInfo> objektu. Jak znázorňuje následující tabulka, jediná vlastnost ovlivňuje formátování výsledného řetězce.
 
-|Vlastnost NumberFormatInfo|Popis|
+|Vlastnost NumberFormatInfo|Description|
 |-------------------------------|-----------------|
 |<xref:System.Globalization.NumberFormatInfo.NegativeSign%2A>|Definuje řetězec, který označuje, že číslo je záporné.|
 
@@ -157,7 +158,7 @@ Velikost specifikátoru formátu označuje, zda má být před exponentem použi
 
 Na výsledný řetězec má vliv informace o formátování aktuálního <xref:System.Globalization.NumberFormatInfo> objektu. V následující tabulce jsou uvedeny <xref:System.Globalization.NumberFormatInfo> vlastnosti, které řídí formátování vráceného řetězce.
 
-|Vlastnost NumberFormatInfo|Popis|
+|Vlastnost NumberFormatInfo|Description|
 |-------------------------------|-----------------|
 |<xref:System.Globalization.NumberFormatInfo.NegativeSign%2A>|Definuje řetězec, který označuje, že číslo je záporné pro koeficient i pro exponent.|
 |<xref:System.Globalization.NumberFormatInfo.NumberDecimalSeparator%2A>|Definuje řetězec, který odděluje integrální číslice od desítkových číslic v koeficientu.|
@@ -181,7 +182,7 @@ Specifikátor přesnosti označuje požadovaný počet desetinných míst. Pokud
 
 Na výsledný řetězec má vliv informace o formátování aktuálního <xref:System.Globalization.NumberFormatInfo> objektu. V následující tabulce jsou uvedeny vlastnosti <xref:System.Globalization.NumberFormatInfo> objektu, které řídí formátování výsledného řetězce.
 
-|Vlastnost NumberFormatInfo|Popis|
+|Vlastnost NumberFormatInfo|Description|
 |-------------------------------|-----------------|
 |<xref:System.Globalization.NumberFormatInfo.NegativeSign%2A>|Definuje řetězec, který označuje, že číslo je záporné.|
 |<xref:System.Globalization.NumberFormatInfo.NumberDecimalSeparator%2A>|Definuje řetězec, který odděluje integrální číslice od desítkových číslic.|
@@ -228,7 +229,7 @@ Při použití s <xref:System.Single> hodnotou specifikátor formátu "G9" zaji�
 
 Na výsledný řetězec má vliv informace o formátování aktuálního <xref:System.Globalization.NumberFormatInfo> objektu. V následující tabulce jsou uvedeny <xref:System.Globalization.NumberFormatInfo> vlastnosti, které řídí formátování výsledného řetězce.
 
-|Vlastnost NumberFormatInfo|Popis|
+|Vlastnost NumberFormatInfo|Description|
 |-------------------------------|-----------------|
 |<xref:System.Globalization.NumberFormatInfo.NegativeSign%2A>|Definuje řetězec, který označuje, že číslo je záporné.|
 |<xref:System.Globalization.NumberFormatInfo.NumberDecimalSeparator%2A>|Definuje řetězec, který odděluje integrální číslice od desítkových číslic.|
@@ -250,7 +251,7 @@ Specifikátor číselného formátu ("N") převede číslo na řetězec ve form�
 
 Na výsledný řetězec má vliv informace o formátování aktuálního <xref:System.Globalization.NumberFormatInfo> objektu. V následující tabulce jsou uvedeny <xref:System.Globalization.NumberFormatInfo> vlastnosti, které řídí formátování výsledného řetězce.
 
-|Vlastnost NumberFormatInfo|Popis|
+|Vlastnost NumberFormatInfo|Description|
 |-------------------------------|-----------------|
 |<xref:System.Globalization.NumberFormatInfo.NegativeSign%2A>|Definuje řetězec, který označuje, že číslo je záporné.|
 |<xref:System.Globalization.NumberFormatInfo.NumberNegativePattern%2A>|Definuje formát záporných hodnot a určuje, zda je záporné znaménko představováno závorkami nebo <xref:System.Globalization.NumberFormatInfo.NegativeSign%2A> vlastností.|
@@ -275,7 +276,7 @@ Specifikátor procentuálního formátu ("P") vynásobí číslo 100 a převede
 
 V následující tabulce jsou uvedeny <xref:System.Globalization.NumberFormatInfo> vlastnosti, které řídí formátování vráceného řetězce.
 
-|Vlastnost NumberFormatInfo|Popis|
+|Vlastnost NumberFormatInfo|Description|
 |-------------------------------|-----------------|
 |<xref:System.Globalization.NumberFormatInfo.PercentPositivePattern%2A>|Definuje umístění symbolu procenta pro kladné hodnoty.|
 |<xref:System.Globalization.NumberFormatInfo.PercentNegativePattern%2A>|Definuje umístění symbolu procenta a záporného symbolu pro záporné hodnoty.|
@@ -307,7 +308,7 @@ Pokud <xref:System.Numerics.BigInteger> je hodnota formátována pomocí tohoto 
 Ačkoli můžete použít také specifikátor přesnosti, bude ignorován. Pokud použijete tento specifikátor, má zpáteční převod přednost nad přesností.
 Na výsledný řetězec má vliv informace o formátování aktuálního <xref:System.Globalization.NumberFormatInfo> objektu. V následující tabulce jsou uvedeny <xref:System.Globalization.NumberFormatInfo> vlastnosti, které řídí formátování výsledného řetězce.
 
-|Vlastnost NumberFormatInfo|Popis|
+|Vlastnost NumberFormatInfo|Description|
 |-------------------------------|-----------------|
 |<xref:System.Globalization.NumberFormatInfo.NegativeSign%2A>|Definuje řetězec, který označuje, že číslo je záporné.|
 |<xref:System.Globalization.NumberFormatInfo.NumberDecimalSeparator%2A>|Definuje řetězec, který odděluje integrální číslice od desítkových číslic.|

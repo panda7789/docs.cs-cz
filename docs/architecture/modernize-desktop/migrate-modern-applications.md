@@ -2,12 +2,12 @@
 title: Migrace moderních aplikací klasické pracovní plochy
 description: Vše, co potřebujete znát o procesu migrace pro moderní desktopové aplikace.
 ms.date: 05/12/2020
-ms.openlocfilehash: 2108aa0b99cabfbb0f3263f094ba8277f953ed6a
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: a015b266dc5c36fcef38dad04b9f4f048ee5906a
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83423297"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84446915"
 ---
 # <a name="migrating-modern-desktop-applications"></a>Migrace moderních aplikací klasické pracovní plochy
 
@@ -108,7 +108,7 @@ V rozhraní .NET Core můžete i nadále používat rozhraní ODBC, protože spo
 
 ### <a name="ole-db"></a>OLE DB
 
-[OLE DB](https://msdn.microsoft.com/library/ms722784(v=vs.85).aspx)   byl skvělý způsob, jak přistupovat k různým datovým zdrojům jednotným způsobem. Ale byl založen na modelu COM, což je technologie jenom pro Windows, a to tak, jak nejlíp vyhovuje technologii pro různé platformy, jako je .NET Core. V SQL Server verzích 2014 a novějších je také Nepodporovaná. Z těchto důvodů OLE DB nepodporují rozhraní .NET Core.
+[OLE DB](https://docs.microsoft.com/previous-versions/windows/desktop/ms722784(v=vs.85))   byl skvělý způsob, jak přistupovat k různým datovým zdrojům jednotným způsobem. Ale byl založen na modelu COM, což je technologie jenom pro Windows, a to tak, jak nejlíp vyhovuje technologii pro různé platformy, jako je .NET Core. V SQL Server verzích 2014 a novějších je také Nepodporovaná. Z těchto důvodů OLE DB nepodporují rozhraní .NET Core.
 
 ### <a name="adonet"></a>ADO.NET
 

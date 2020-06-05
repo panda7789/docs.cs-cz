@@ -1,5 +1,6 @@
 ---
 title: Standardní řetězce formátu data a času
+description: V tomto článku se naučíte, jak pomocí standardního formátovacího řetězce data a času definovat textovou reprezentaci hodnoty data a času v .NET.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -14,12 +15,12 @@ helpviewer_keywords:
 - formatting [.NET Framework], time
 - date and time strings
 ms.assetid: bb79761a-ca08-44ee-b142-b06b3e2fc22b
-ms.openlocfilehash: 0ff187251831130c846a20473237b13268c768be
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 5db9088a6b0d75ae5293b9be35346c4c2ddf81c6
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289301"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84447222"
 ---
 # <a name="standard-date-and-time-format-strings"></a>Standardní řetězce formátu data a času
 
@@ -38,7 +39,7 @@ ms.locfileid: "84289301"
 
 <a name="table"></a>Následující tabulka popisuje standardní specifikátory formátu data a času. Není-li uvedeno jinak, konkrétní specifikátor standardního formátu data a času vytváří identickou řetězcovou reprezentaci bez ohledu na to, zda je použit s <xref:System.DateTime> <xref:System.DateTimeOffset> hodnotou nebo. Další informace o použití řetězců standardního formátu data a času naleznete v části [poznámky](#Notes) .
 
-|Specifikátor formátu|Popis|Příklady|
+|Specifikátor formátu|Description|Příklady|
 |----------------------|-----------------|--------------|
 |"d"|Vzor krátkého formátu data.<br /><br /> Další informace:[specifikátor krátkého formátu data ("d")](#ShortDate).|2009-06-15T13:45:30 > 6/15/2009 (EN-US)<br /><br /> 2009-06-15T13:45:30. > 15/06/2009 (fr-FR)<br /><br /> 2009-06-15T13:45:30. > 2009/06/15 (ja-JP)|
 |"D"|Vzor dlouhého formátu data.<br /><br /> Další informace:[specifikátor dlouhého formátu data ("D")](#LongDate).|2009-06-15T13:45:30 > pondělí, 15. června 2009 (EN-US)<br /><br /> 2009-06-15T13:45:30-> 15 июня 2009 г. (ru-RU)<br /><br /> 2009-06-15T13:45:30-> Montag, 15. Juni 2009 (de-DE)|

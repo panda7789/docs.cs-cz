@@ -1,5 +1,6 @@
 ---
 title: Asynchronní programování založené na úlohách – .NET
+description: V tomto článku se dozvíte o asynchronním programování založeném na úlohách prostřednictvím TAsk Parallel Library (TPL) v rozhraní .NET.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,12 +9,12 @@ dev_langs:
 helpviewer_keywords:
 - parallelism, task
 ms.assetid: 458b5e69-5210-45e5-bc44-3888f86abd6f
-ms.openlocfilehash: 188a80459fec021dc934597ea2f77ac7b4471b2d
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: f7cb42c8982cb6a704b39730a4f7aa0ce781d506
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84285284"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84446376"
 ---
 # <a name="task-based-asynchronous-programming"></a>Asynchronní programování založené na úlohách
 
@@ -95,7 +96,7 @@ Každý úkol obdrží celočíselný identifikátor ID, který ji jednoznačně
 
 Většina rozhraní API, které vytváří úlohy, poskytuje přetížení, která přijímají <xref:System.Threading.Tasks.TaskCreationOptions> parametr. Zadáním jedné z těchto možností lze dát pokyn plánovači úloh, jak naplánovat úlohy ve fondu vláken. V následující tabulce jsou uvedeny různé možnosti pro vytváření úloh.
 
-|<xref:System.Threading.Tasks.TaskCreationOptions>hodnota parametru|Popis|
+|<xref:System.Threading.Tasks.TaskCreationOptions>hodnota parametru|Description|
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------|
 |<xref:System.Threading.Tasks.TaskCreationOptions.None>|Výchozí hodnota, pokud není zadána jiná. Plánovač používá k plánování úlohy své výchozí heuristické metody.|
 |<xref:System.Threading.Tasks.TaskCreationOptions.PreferFairness>|Určuje, že úlohy by měly být naplánovány tak, aby se úlohy vytvořené dříve pravděpodobně prováděly dříve a později vytvořené úlohy aby se s větší pravděpodobností prováděly později.|
@@ -278,7 +279,7 @@ Pokud je nutné dědit z <xref:System.Threading.Tasks.Task> nebo <xref:System.Th
 |[Připojené a odpojené podřízené úlohy](attached-and-detached-child-tasks.md)|Popisuje rozdíl mezi připojenými a odpojenými podřízenými úlohami.|
 |[Zrušení úlohy](task-cancellation.md)|Popisuje podporu zrušení, která je integrována do <xref:System.Threading.Tasks.Task> objektu.|
 |[Zpracování výjimek](exception-handling-task-parallel-library.md)|Popisuje způsob zpracování výjimek v souběžných vláknech.|
-|[Postupy: spuštění paralelních operací pomocí paralelního volání metody. Invoke](how-to-use-parallel-invoke-to-execute-parallel-operations.md)|Popisuje, jak používat <xref:System.Threading.Tasks.Parallel.Invoke%2A> .|
+|[Postupy: Použití algoritmu Parallel.Invoke k provádění paralelních operací](how-to-use-parallel-invoke-to-execute-parallel-operations.md)|Popisuje, jak používat <xref:System.Threading.Tasks.Parallel.Invoke%2A> .|
 |[Postupy: Vrácení hodnoty z úlohy](how-to-return-a-value-from-a-task.md)|Popisuje, jak z úloh vracet hodnoty.|
 |[Postupy: Zrušení úlohy a podřízených elementů](how-to-cancel-a-task-and-its-children.md)|Popisuje, jak zrušit úlohy.|
 |[Postupy: Vytváření předvypočítaných úloh](how-to-create-pre-computed-tasks.md)|Popisuje způsob použití <xref:System.Threading.Tasks.Task.FromResult%2A?displayProperty=nameWithType> metody k načtení výsledků asynchronních operací stažení, které jsou uloženy v mezipaměti.|

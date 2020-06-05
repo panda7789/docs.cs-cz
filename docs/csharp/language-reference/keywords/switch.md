@@ -1,5 +1,5 @@
 ---
-title: Příkaz c# switch
+title: Příkaz přepínače jazyka C#
 ms.date: 04/09/2019
 f1_keywords:
 - switch_CSharpKeyword
@@ -12,56 +12,56 @@ helpviewer_keywords:
 - case statement [C#]
 - default keyword [C#]
 ms.assetid: 44bae8b8-8841-4d85-826b-8a94277daecb
-ms.openlocfilehash: 49b3836f17e91ae8de10d68e97fd662aae80d1ff
-ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
+ms.openlocfilehash: a4e6f8e43c2ec8c867af9f78bd83b435b78c73d5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80249315"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84446760"
 ---
-# <a name="switch-c-reference"></a>přepínač (odkaz C#)
+# <a name="switch-c-reference"></a>Switch (Referenční dokumentace jazyka C#)
 
-Tento článek `switch` se vztahuje na prohlášení. Informace o `switch` výrazu (zavedeném v c# 8.0) naleznete v článku o [ `switch` výrazech](../operators/switch-expression.md) v části [výrazy a operátory.](../operators/index.md)
+Tento článek se zabývá `switch` příkazem. Informace o `switch` výrazu (představené v C# 8,0) najdete v článku [ `switch` výrazy](../operators/switch-expression.md) v části [výrazy a operátory](../operators/index.md) .
 
-`switch`je příkaz výběru, který vybere *jeden oddíl přepínače,* který se provede ze seznamu kandidátů na základě shody vzoru s *výrazem shody*.
+`switch`je příkaz výběru, který zvolí oddíl s jedním *přepínačem* , který se má provést ze seznamu kandidátů na základě porovnávání vzorů s *výrazem shody*.
 
 [!code-csharp[switch#1](~/samples/snippets/csharp/language-reference/keywords/switch/switch1.cs#1)]
 
-Příkaz `switch` se často používá jako alternativa k [if-else](if-else.md) konstrukce, pokud jeden výraz je testován proti tři nebo více podmínek. Například následující `switch` příkaz určuje, zda proměnná typu `Color` má jednu ze tří hodnot:
+`switch`Příkaz se často používá jako alternativa k konstruktoru [if-else](if-else.md) , pokud je jeden výraz testován proti třem nebo více podmínkám. Například následující `switch` příkaz určuje, zda proměnná typu `Color` má jednu ze tří hodnot:
 
 [!code-csharp[switch#3](~/samples/snippets/csharp/language-reference/keywords/switch/switch3.cs#1)]
 
-Je ekvivalentní následující příklad, který `if` - `else` používá konstrukci.
+Je ekvivalentní s následujícím příkladem, který používá `if` - `else` konstrukci.
 
 [!code-csharp[switch#3a](~/samples/snippets/csharp/language-reference/keywords/switch/switch3a.cs#1)]
 
 ## <a name="the-match-expression"></a>Výraz shody
 
-Výraz shody poskytuje hodnotu, která `case` se má shodovat se vzorky v popiscích. Jeho syntaxe je:
+Výraz Match poskytuje hodnotu odpovídající vzorům v `case` popiscích. Jeho syntaxe je:
 
 ```csharp
    switch (expr)
 ```
 
-V c# 6 a starší výraz shody musí být výraz, který vrací hodnotu následujících typů:
+V jazyce C# 6 a dřívější výraz porovnávání musí být výraz, který vrací hodnotu následujících typů:
 
 - [znak](../builtin-types/char.md).
 - [řetězec](../builtin-types/reference-types.md).
-- [bool](../builtin-types/bool.md).
-- [integrální](../builtin-types/integral-numeric-types.md) hodnotu, `int` `long`například a nebo .
-- hodnotu [výčtu.](../builtin-types/enum.md)
+- [logická](../builtin-types/bool.md)hodnota.
+- [celočíselná](../builtin-types/integral-numeric-types.md) hodnota, například `int` nebo `long` .
+- hodnota [výčtu](../builtin-types/enum.md) .
 
-Počínaje C# 7.0, výraz shody může být libovolný výraz bez null.
+Počínaje jazykem C# 7,0 může výraz porovnávání být libovolný výraz, který není null.
 
-## <a name="the-switch-section"></a>Sekce přepínače
+## <a name="the-switch-section"></a>Oddíl Switch
 
-Příkaz `switch` obsahuje jeden nebo více oddílů přepínače. Každý oddíl přepínače obsahuje jeden nebo více *popisků případu* (případ nebo výchozí popisek) následovaný jedním nebo více příkazy. Příkaz `switch` může obsahovat maximálně jeden výchozí popisek umístěný v libovolné mašice přepínače. Následující příklad ukazuje `switch` jednoduchý příkaz, který má tři oddíly přepínače, z nichž každý obsahuje dva příkazy. Druhý přepínač sekce `case 2:` obsahuje `case 3:` a popisky.
+`switch`Příkaz obsahuje jeden nebo více oddílů přepínače. Každý oddíl přepínače obsahuje jeden nebo více *popisků Case* (buď označení Case nebo Default) následovaný jedním nebo více příkazy. `switch`Příkaz může obsahovat maximálně jeden výchozí popisek umístěný v libovolném oddílu Switch. Následující příklad ukazuje jednoduchý `switch` příkaz, který má tři oddíly přepínače, z nichž každý obsahuje dva příkazy. Oddíl druhého přepínače obsahuje `case 2:` `case 3:` popisky a.
 
-Příkaz `switch` může obsahovat libovolný počet oddílů přepínače a každý oddíl může mít jeden nebo více popisků případu, jak je znázorněno v následujícím příkladu. Žádné dva popisky případu však nesmí obsahovat stejný výraz.
+`switch`Příkaz může obsahovat libovolný počet oddílů přepínače a každý oddíl může obsahovat jeden nebo více popisků případu, jak je znázorněno v následujícím příkladu. Nicméně žádné dva popisky case nemůžou obsahovat stejný výraz.
 
 [!code-csharp[switch#2](~/samples/snippets/csharp/language-reference/keywords/switch/switch2.cs#1)]
 
-Spustí se pouze jeden oddíl přepínače v příkazu switch. C# neumožňuje spuštění pokračovat z jednoho oddílu přepínače do další. Z tohoto důvodu následující kód generuje chybu kompilátoru CS0163: "Ovládací prvek\<nemůže propadnout z jednoho popisku případu (popisek případu>) do jiného."
+Provede se pouze jeden oddíl Switch v příkazu switch. C# neumožní pokračování v provádění jednoho oddílu přepínače na další. Z tohoto důvodu následující kód vygeneruje chybu kompilátoru, CS0163: "řízení nemůže být z jednoho popisku Case ( \<case label> ) do jiného."
 
 ```csharp
 switch (caseSwitch)
@@ -76,133 +76,133 @@ switch (caseSwitch)
 }
 ```
 
-Tento požadavek je obvykle splněn explicitním ukončením oddílu přepínače pomocí příkazu [break](break.md), [goto](goto.md)nebo [return.](return.md) Následující kód je však také platný, protože zajišťuje, že ovládací `default` prvek programu nemůže propadnout do části přepínače.
+Tento požadavek se obvykle splní explicitním ukončením oddílu přepínače pomocí příkazu [Break](break.md), [goto](goto.md)nebo [return](return.md) . Následující kód je však také platný, protože zajišťuje, že řízení programu nemůže `default` Přejít do oddílu Switch.
 
 [!code-csharp[switch#4](~/samples/snippets/csharp/language-reference/keywords/switch/switch4.cs#1)]
 
-Spuštění seznamu příkazů v části switch s popiskem případu, který odpovídá výrazu shody, začíná prvním příkazem a `break`pokračuje `goto case` `goto label`v `return`seznamu příkazů, obvykle dokud není dosaženo příkazu skoku, například , , , nebo `throw`, . V tomto okamžiku je ovládací `switch` prvek převeden mimo příkaz nebo na jiný popisek případu. Příkaz, `goto` pokud se používá, musí přenést řízení na konstantní popisek. Toto omezení je nezbytné, protože pokus o přenos řízení na nekonstantní popisek může mít nežádoucí vedlejší účinky, jako přenos řízení do nezamýšleného umístění v kódu nebo vytvoření nekonečné smyčky.
+Spuštění seznamu příkazů v oddílu switch s popiskem Case, který odpovídá výrazu Match začíná prvním příkazem a pokračuje přes seznam příkazů, obvykle dokud není dosaženo příkazu skok, jako je,,, `break` `goto case` `goto label` `return` nebo `throw` . V tomto okamžiku je ovládací prvek převeden mimo `switch` příkaz nebo na jiný popisek případu. `goto`Příkaz, pokud se používá, musí přenést řízení na konstantní popisek. Toto omezení je nezbytné, protože při pokusu o přenos řízení na nekonstantní popisek může mít nežádoucí vedlejší účinky, například přenáší řízení na nezamýšlené umístění v kódu nebo vytvoření nekonečné smyčky.
 
 ## <a name="case-labels"></a>Popisky případů
 
-Každý popisek případu určuje vzorek, který má `caseSwitch` být porovnán s výrazem shody (proměnná v předchozích příkladech). Pokud se shodují, ovládací prvek je převeden do oddílu přepínače, který obsahuje **první** odpovídající popisek případu. Pokud žádný vzor popisku případu neodpovídá výrazu shody, ovládací prvek se přenese do oddílu s popiskem `default` případu, pokud existuje. Pokud neexistuje žádný `default` případ, žádné příkazy v žádné části přepínače jsou `switch` provedeny a řízení je převedena mimo příkaz.
+Každý popisek případu určuje vzor, který se má porovnat s výrazem shody ( `caseSwitch` Proměnná v předchozích příkladech). Pokud se shodují, ovládací prvek se přenese do oddílu Switch, který obsahuje **první** odpovídající popisek případu. Pokud žádný vzor popisku případu neodpovídá výrazu Match, je ovládací prvek převeden do oddílu s `default` popiskem Case, pokud existuje. Pokud není žádný `default` případ, nejsou spuštěny žádné příkazy v žádném oddílu přepínače a ovládací prvek se přenese mimo `switch` příkaz.
 
-Informace o `switch` příkazu a porovnávání vzorů naleznete v [části Pattern odpovídající oddílu. `switch` ](#pattern)
+Informace o `switch` příkazu a porovnávání vzorů naleznete v tématu porovnávání [vzorů s oddílem `switch` Statement](#pattern) .
 
-Vzhledem k tomu, že C# 6 podporuje pouze konstantní vzor a neumožňuje opakování konstantní hodnoty, popisky případu definovat vzájemně se vylučující hodnoty a pouze jeden vzorek může odpovídat výrazu shody. V důsledku toho pořadí, `case` ve kterém příkazy se zobrazí, není důležité.
+Vzhledem k tomu, že C# 6 podporuje pouze konstantní vzor a neumožňuje opakování konstantních hodnot, popisky case definují vzájemně se vylučující hodnoty a pouze jeden vzor může odpovídat výrazu shody. V důsledku toho pořadí, ve kterém `case` se zobrazují příkazy, je neimportované.
 
-V c# 7.0 však protože ostatní vzorky jsou podporovány, popisky případu nemusí definovat vzájemně se vylučující hodnoty a více vzorů může odpovídat výrazu shody. Vzhledem k tomu, že jsou provedeny pouze příkazy v první `case` části přepínače, která obsahuje odpovídající vzorek, pořadí, ve kterém příkazy se zobrazí, je nyní důležité. Pokud C# zjistí oddíl přepínače, jehož case prohlášení nebo příkazy jsou rovnocenné nebo jsou podmnožiny předchozí příkazy, generuje chybu kompilátoru, CS8120, "případ přepínače již byla zpracována předchozí případ."
+V jazyce C# 7,0 však, protože jsou podporovány jiné modely, popisky case nemusí definovat vzájemně se vylučující hodnoty a více vzorů může odpovídat výrazu shody. Vzhledem k tomu, že jsou spuštěny pouze příkazy v první části přepínače obsahující odpovídající vzor, je nyní důležité pořadí, ve kterém jsou `case` příkazy zobrazeny. Pokud C# detekuje oddíl Switch, jehož příkaz Case nebo příkazy jsou ekvivalentní nebo jsou podmnožinou předchozích příkazů, vygeneruje chybu kompilátoru, CS8120, "případ přepínače již byl zpracován předchozím případem".
 
-Následující příklad ilustruje `switch` příkaz, který používá různé vzory, které se nevylučují. Pokud přesunete `case 0:` oddíl přepínačtak, že již není první `switch` část v příkazu, C# generuje chybu kompilátoru, protože celé číslo, jehož hodnota je nula je podmnožinou všech celých čísel, což je vzor definovaný příkazem. `case int val`
+Následující příklad znázorňuje `switch` příkaz, který používá celou řadu nevzájemně se vylučujících vzorů. Pokud přesunete `case 0:` oddíl Switch tak, že již není prvním oddílem v `switch` příkazu, C# vygeneruje chybu kompilátoru, protože celé číslo, jehož hodnota je nula, je podmnožina všech celých čísel, což je vzor definovaný `case int val` příkazem.
 
 [!code-csharp[switch#5](~/samples/snippets/csharp/language-reference/keywords/switch/switch5.cs#1)]
 
-Tento problém můžete opravit a odstranit upozornění kompilátoru jedním ze dvou způsobů:
+Tento problém můžete vyřešit a odstranit upozornění kompilátoru jedním ze dvou způsobů:
 
-- Změnou pořadí sekcí přepínače.
+- Změnou pořadí oddílů přepínače.
 
-- Pomocí [when klauzule](#when) `case` v popisku.
+- Použitím [klauzule when](#when) v `case` popisku.
 
-## <a name="the-default-case"></a>Případ `default`
+## <a name="the-default-case"></a>`default`Případ
 
-Případ `default` určuje oddíl přepínače, který má být proveden, `case` pokud výraz shody neodpovídá žádnému jinému popisku. Pokud `default` případ není k dispozici a výraz shody `case` neodpovídá žádnému `switch` jinému popisku, tok programu spadá do příkazu.
+`default`Parametr Case určuje oddíl přepínače, který se má provést, pokud výraz shody neodpovídá žádnému jinému `case` popisku. Pokud není k `default` dispozici případ a výraz shody neodpovídá žádnému jinému `case` popisku, tok programu přepadne do `switch` příkazu.
 
-Případ `default` se může objevit v `switch` libovolném pořadí v příkazu. Bez ohledu na jeho pořadí ve zdrojovém kódu je `case` vždy vyhodnocena jako poslední, poté, co byly vyhodnoceny všechny popisky.
+`default`Případ se může objevit v libovolném pořadí `switch` příkazu. Bez ohledu na pořadí ve zdrojovém kódu je vždy vyhodnoceno jako poslední, po `case` vyhodnocení všech popisků.
 
-## <a name="pattern-matching-with-the-switch-statement"></a><a name="pattern" />Porovnávání vzorů `switch` s příkazem
+## <a name="pattern-matching-with-the-switch-statement"></a><a name="pattern"></a>Porovnávání vzorů s `switch` příkazem
 
-Každý `case` příkaz definuje vzor, který, pokud odpovídá výrazu shody, způsobí, že jeho část obsahující přepínač bude spuštěna. Všechny verze jazyka C# podporují konstantní vzor. Zbývající vzorky jsou podporovány počínaje C# 7.0.
+Každý `case` příkaz definuje vzor, který, pokud se shoduje s výrazem shody, způsobí, že obsahuje oddíl obsahujícího přepínače, který má být spuštěn. Všechny verze jazyka C# podporují konstantní vzorek. Zbývající vzorce jsou podporovány počínaje jazykem C# 7,0.
 
-### <a name="constant-pattern"></a>Konstantní vzor
+### <a name="constant-pattern"></a>Konstantní vzorek
 
-Konstantní vzorek testuje, zda se výraz shody rovná zadané konstantě. Jeho syntaxe je:
+Konstantní vzor testuje, zda se výraz shody rovná zadané konstantě. Jeho syntaxe je:
 
 ```csharp
    case constant:
 ```
 
-*kde konstanta* je hodnota, pro kterou se má testovat. *konstanta* může být některý z následujících konstantních výrazů:
+kde *konstanta* je hodnota, která má být testována. *konstanta* může být libovolný z následujících konstantních výrazů:
 
-- [Bool](../builtin-types/bool.md) literál: `true` `false`buď nebo .
-- Jakákoli [integrální](../builtin-types/integral-numeric-types.md) `int`konstanta, například , a `long`nebo . `byte`
+- Literál [bool](../builtin-types/bool.md) : `true` nebo `false` .
+- Jakékoli [integrální](../builtin-types/integral-numeric-types.md) konstanty, například `int` , a `long` , nebo `byte` .
 - Název deklarované `const` proměnné.
 - Konstanta výčtu.
-- [Char](../builtin-types/char.md) doslovný.
+- Literál [znaků](../builtin-types/char.md) .
 - [Řetězcový](../builtin-types/reference-types.md) literál.
 
-Konstantní výraz je vyhodnocen takto:
+Konstantní výraz je vyhodnocen následujícím způsobem:
 
-- Pokud *expr* a *konstanta* jsou integrální typy, c# operátor rovnosti určuje, zda výraz vrátí `true` (to znamená, zda `expr == constant`).
+- Pokud je *výraz* a *konstanta* integrální typy, operátor rovnosti jazyka C# určuje, zda výraz vrátí hodnotu `true` (tj `expr == constant` . zda).
 
-- Jinak je hodnota výrazu určena voláním statické [metody Object.Equals(expr, constant).](xref:System.Object.Equals(System.Object,System.Object))
+- V opačném případě je hodnota výrazu určena voláním statické metody [Object. Equals (Expr, konstanta)](xref:System.Object.Equals(System.Object,System.Object)) .
 
-Následující příklad používá konstantní vzor k určení, zda je určité datum víkend, první den pracovního týdne, poslední den pracovního týdne nebo uprostřed pracovního týdne. Vyhodnotí <xref:System.DateTime.DayOfWeek?displayProperty=nameWithType> vlastnost aktuální ho dne proti <xref:System.DayOfWeek> členům výčtu.
+V následujícím příkladu je použit model konstanty k určení, zda je konkrétní datum víkend, první den pracovního týdne, poslední den pracovního týdne nebo uprostřed pracovního týdne. Vyhodnocuje <xref:System.DateTime.DayOfWeek?displayProperty=nameWithType> vlastnost aktuálního dne proti členům <xref:System.DayOfWeek> výčtu.
 
 [!code-csharp[switch#7](~/samples/snippets/csharp/language-reference/keywords/switch/const-pattern.cs#1)]
 
-Následující příklad používá konstantní vzor pro zpracování vstupu uživatele v konzolové aplikaci, která simuluje automatický kávovar.
+Následující příklad používá konstantní vzorek pro zpracování vstupu uživatele v konzolové aplikaci, která simuluje automatický kavárnový počítač.
 
 [!code-csharp[switch#6](~/samples/snippets/csharp/language-reference/keywords/switch/switch6.cs)]
 
 ### <a name="type-pattern"></a>Vzor typu
 
-Vzorek typu umožňuje stručné hodnocení typu a převod. Při použití `switch` s příkazem provádět porovnávání vzorů, testuje, zda výraz lze převést na zadaný typ, a pokud může být, přetypování do proměnné tohoto typu. Jeho syntaxe je:
+Vzor typu umožňuje napsat a převést stručný typ hodnocení. Při použití s `switch` příkazem k provedení porovnávání vzorů testuje, zda lze výraz převést na zadaný typ a, pokud může být, přetypování na proměnnou daného typu. Jeho syntaxe je:
 
 ```csharp
    case type varname
 ```
 
-kde *type* je název typu, na který má být převeden výsledek *expr,* a *varname* je objekt, na který je výsledek *expr* převeden, pokud je shoda úspěšná. Typ *expr* v době kompilace může být parametr obecného typu, počínaje C# 7.1.
+kde *Type* je název typu, na který má být výsledek *výrazu* převeden, a *název_proměnné* je objekt, na který je výsledek *výrazu* převeden, pokud je shoda úspěšná. Typ *výrazu* v čase kompilace může být parametr obecného typu, počínaje jazykem C# 7,1.
 
-Výraz `case` je, `true` pokud je splněna některá z následujících hodnot:
+`case`Výraz je v `true` případě, že platí některá z následujících podmínek:
 
-- *expr* je instancí stejného typu jako *typ*.
+- *výraz* je instancí stejného typu jako *typ*.
 
-- *expr* je instancí typu, který je odvozen od *typu*. Jinými slovy, výsledek *expr* může být upcast na instanci *typu*.
+- *expr* je instance typu, která je odvozena z *typu*. Jinými slovy výsledek *výrazu* lze přetypování na instanci *typu*.
 
-- *expr* má typ kompilace, který je základní třídou *typu*, a *expr* má typ runtime, který je *typu* nebo je odvozen od *typu*. Typ proměnné v *době kompilace* je typ proměnné, jak je definován v deklaraci typu. *Typ runtime* proměnné je typ instance, která je přiřazena k této proměnné.
+- *výraz* má typ při kompilaci, který je základní třídou *typu*, a *výraz* má typ modulu runtime, který je *typu* nebo je odvozen z *typu*. *Typ proměnné doby kompilace* proměnné je typ proměnné definovaný v deklaraci typu. *Typ modulu runtime* proměnné je typ instance, která je přiřazena této proměnné.
 
-- *expr* je instancí třídy typu, který implementuje *rozhraní typu.*
+- *expr* je instance typu, který implementuje rozhraní *typu* .
 
-Pokud je výraz případu true, *varname* je jednoznačně přiřazena a má místní obor v rámci oddílu switch.
+Pokud *je výraz Case pravdivý, má* jednoznačně přiřazený a má místní rozsah jenom v rámci oddílu Switch.
 
-Všimněte `null` si, že neodpovídá typu. Chcete-li `null`odpovídat , `case` použijte následující popisek:
+Všimněte si, že `null` se neshoduje s typem. K vyhledání shody `null` použijte následující `case` popisek:
 
 ```csharp
 case null:
 ```
 
-Následující příklad používá vzor typu k poskytnutí informací o různých typech typů kolekcí.
+V následujícím příkladu je použit vzor typu k poskytnutí informací o různých typech kolekcí.
 
 [!code-csharp[type-pattern#1](~/samples/snippets/csharp/language-reference/keywords/switch/type-pattern.cs#1)]
 
-Místo `object`, můžete provést obecnou metodu pomocí typu kolekce jako parametr typu, jak je znázorněno v následujícím kódu:
+Namísto `object` byste mohli vytvořit obecnou metodu pomocí typu kolekce jako parametru typu, jak je znázorněno v následujícím kódu:
 
 [!code-csharp[type-pattern#3](~/samples/snippets/csharp/language-reference/keywords/switch/type-pattern3.cs#1)]
 
-Obecná verze se liší od první ukázky dvěma způsoby. Za prvé, nemůžete použít `null` případ. Nelze použít žádný konstantní případ, protože kompilátor nelze převést libovolný `T` typ `object`na jiný typ než . Co bylo `default` v případě nyní testuje `object`pro non-null . To znamená, `default` že `null`případ testy pouze pro .
+Obecná verze se liší od první ukázky dvěma způsoby. Nejdříve nemůžete použít `null` případ. Nemůžete použít žádný konstantní případ, protože kompilátor nemůže převést libovolný typ `T` na jiný typ než `object` . Jaký byl `default` případ nyní testů pro jinou hodnotu než null `object` . To znamená, že `default` testy případu jsou pouze pro `null` .
 
-Bez porovnávání vzorů může být tento kód zapsán následujícím způsobem. Použití odpovídající typ vzorku vytváří kompaktnější, čitelný kód tím, že eliminuje potřebu `null` otestovat, zda je výsledkem převodu nebo provádět opakované přetypování.
+Bez porovnávání vzorů může být tento kód napsán následujícím způsobem. Použití porovnávání vzorů typů vytváří více kompaktních čitelných kódů tím, že eliminuje nutnost testovat, zda je výsledek převodu `null` nebo aby prováděl opakované přetypování.
 
 [!code-csharp[type-pattern2#1](~/samples/snippets/csharp/language-reference/keywords/switch/type-pattern2.cs#1)]
 
-## <a name="the-case-statement-and-the-when-clause"></a><a name="when" />Prohlášení `case` a `when` doložka
+## <a name="the-case-statement-and-the-when-clause"></a><a name="when" />`case`Příkaz a `when` klauzule
 
-Počínaje C# 7.0, protože case příkazy nemusí být vzájemně `when` vylučovat, můžete přidat klauzule určit další podmínku, která musí být splněna pro případ prohlášení vyhodnotit na true. Klauzule `when` může být libovolný výraz, který vrací logickou hodnotu.
+Počínaje jazykem C# 7,0, protože příkazy Case nemusejí být vzájemně exkluzivní, můžete přidat `when` klauzuli pro určení další podmínky, která musí být splněna, aby příkaz Case vyhodnotil hodnotu true. `when`Klauzule může být libovolný výraz, který vrací logickou hodnotu.
 
-Následující příklad definuje základní `Shape` třídu, `Rectangle` třídu, `Shape`která `Square` je odvozena `Rectangle`od , a třídu, která je odvozena z . `when` Používá klauzuli k zajištění, že `ShowShapeInfo` zachází `Rectangle` objekt, který byl přiřazen stejné `Square` délky a šířky jako i `Square` v případě, že nebyl anas unátřizován jako objekt. Metoda se nepokouší zobrazit informace o objektu, který je, `null` nebo obrazec, jehož plocha je nula.
+Následující příklad definuje základní `Shape` třídu, `Rectangle` třídu, která je odvozena z třídy `Shape` , a `Square` třídu, která je odvozena z `Rectangle` . Používá `when` klauzuli k zajištění toho, aby `ShowShapeInfo` považovala `Rectangle` objekt, kterému byla přiřazena shodná délka a šířka, a `Square` to i v případě, že nebyla vytvořena instance `Square` objektu. Metoda se nepokusí zobrazit informace buď s objektem, který je `null` nebo tvarem, jehož oblast je nula.
 
 [!code-csharp[when-clause#1](~/samples/snippets/csharp/language-reference/keywords/switch/when-clause.cs#1)]
 
-Všimněte `when` si, že klauzule v příkladu, který se pokusí otestovat, zda `Shape` je `null` objekt neprovede. Správný vzorek typu pro `null` testování `case null:`je .
+Všimněte si, že `when` klauzule v příkladu, která se pokouší otestovat, zda `Shape` objekt není `null` spuštěn. Správný vzor typu, který se má testovat, `null` je `case null:` .
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
-Další informace naleznete [v příkazu switch](~/_csharplang/spec/statements.md#the-switch-statement) ve [specifikaci jazyka C#](/dotnet/csharp/language-reference/language-specification/introduction). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
+Další informace naleznete v [příkazu switch](~/_csharplang/spec/statements.md#the-switch-statement) v tématu [specifikace jazyka C#](/dotnet/csharp/language-reference/language-specification/introduction). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
 
 ## <a name="see-also"></a>Viz také
 
-- [Odkaz jazyka C#](../index.md)
-- [Programovací příručka jazyka C#](../../programming-guide/index.md)
-- [C# Klíčová slova](index.md)
+- [Reference jazyka C#](../index.md)
+- [Průvodce programováním v C#](../../programming-guide/index.md)
+- [Klíčová slova jazyka C#](index.md)
 - [if-else](if-else.md)
-- [Porovnávání](../../pattern-matching.md)
+- [Porovnávání vzorů](../../pattern-matching.md)

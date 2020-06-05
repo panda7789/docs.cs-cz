@@ -1,27 +1,26 @@
 ---
 title: Základní poznatky
-description: Projděte si klíčové stánek s jídlem pro průvodce.
-ms.date: 02/15/2019
-ms.openlocfilehash: d28739a87e5c7c7e6c9304c36e1ec2a73cf0d0db
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+description: Přečtěte si příručku ke službě Key poznatky.
+ms.date: 04/20/2020
+ms.openlocfilehash: 2aa0b3a9ca59a55a7493b86647f334f4438eaa3e
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "70295647"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84447014"
 ---
 # <a name="key-takeaways"></a>Základní poznatky
 
-- Řešení založená na kontejnerech poskytují důležité výhody úspory nákladů, protože kontejnery řeší problémy s nasazením způsobené selháním závislostí v produkčním prostředí, čímž výrazně zlepšují devops a produkční operace.
+- Řešení založená na kontejnerech poskytují důležité úspory nákladů, protože kontejnery řeší problémy s nasazením způsobené selháním závislostí v produkčních prostředích, což významně zlepšuje DevOps a provozní operace.
 
-- Docker se stává de facto standardem v kontejnerovém průmyslu a je podporován nejvýznamnějšími dodavateli v ekosystémech Linuxu a Windows, včetně společnosti Microsoft. V budoucnu bude Docker všudypřítomný v libovolném datovém centru v cloudu nebo v místním prostředí.
+- Docker se stal de facto standardem v oboru kontejneru a je podporován nejvýznamnějšími dodavateli v ekosystémech systémů Linux a Windows, včetně společnosti Microsoft. V budoucnu se Docker všudypřítomný v jakémkoli datacentru v cloudu i v místním prostředí.
 
-- Kontejner Dockeru se stává standardní jednotkou nasazení pro všechny serverové aplikace nebo služby.
+- Kontejner Docker se stává standardní jednotkou nasazení pro jakoukoli serverovou aplikaci nebo službu.
 
-- Orchestrátory Dockeru, jako jsou ty, které jsou k dispozici ve službě Azure Kubernetes Service (AKS) a Azure Service Fabric jsou zásadní a nepostradatelné pro všechny mikroslužby nebo více kontejnerových aplikací, které mají značné složitosti a škálovatelnosti potřeb.
+- Orchestrace Docker, jako jsou ty poskytované ve službě Azure Kubernetes Service (AKS) a Azure Service Fabric, jsou zásadní a nepostradatelné pro jakékoli aplikace založené na mikroslužbách nebo více kontejnerech, které mají významné požadavky na složitost a škálovatelnost.
 
-- Komplexní prostředí DevOps, které podporuje průběžné integrace/průběžné nasazování a připojuje se k produkčním prostředím Dockeru, může poskytnout flexibilitu a nakonec zlepšit dobu uvedení vašich aplikací na trh.
+- Komplexní prostředí DevOps, které podporuje průběžnou integraci/průběžné nasazování (CI/CD) a připojení k produkčním prostředím Docker, může poskytovat flexibilitu a nakonec zlepšit dobu uvedení na trh svých aplikací.
 
-- Azure DevOps Services výrazně zjednodušuje prostředí DevOps nasazením do prostředí Dockeru z vašich kanálů CI/CD. Tento příkaz platí pro jednoduchá prostředí Dockeru, stejně jako pro pokročilé mikroslužby a kontejnerorchestrátory založené na Azure.
+- Azure DevOps Services významně zjednodušuje vaše prostředí DevOps nasazením do prostředí Docker z vašich kanálů CI/CD. Tento příkaz se vztahuje na jednoduchá prostředí Docker i na pokročilé orchestraci mikroslužeb a kontejnerů založené na Azure.
 
->[!div class="step-by-step"]
->[Předchozí](../run-manage-monitor-docker-environments/monitor-containerized-application-services.md)
+> [!div class="step-by-step"][previous](.. /run-manage-monitor-docker-environments/monitor-containerized-application-services.md)

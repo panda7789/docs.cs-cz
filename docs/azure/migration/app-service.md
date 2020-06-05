@@ -3,12 +3,12 @@ title: Migrace webové aplikace nebo služby .NET do Azure App Service
 description: Přečtěte si o migraci webové aplikace nebo služby .NET z místního prostředí do Azure App Service.
 ms.topic: conceptual
 ms.date: 08/11/2018
-ms.openlocfilehash: 57f3b981a1d94c2193160f55f9c8242da694c169
-ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
+ms.openlocfilehash: 8761642469b6f3d3c93d2e2e0fa7e02dbf3de6d7
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "82072135"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84447001"
 ---
 # <a name="migrate-your-net-web-app-or-service-to-azure-app-service"></a>Migrace webové aplikace nebo služby .NET do Azure App Service
 
@@ -16,7 +16,7 @@ ms.locfileid: "82072135"
 
 Chcete začít? [Publikujte aplikaci ASP.NET + SQL pro Azure App Service](https://tutorials.visualstudio.com/azure-webapp-migrate/intro).
 
-## <a name="considerations"></a>Požadavky
+## <a name="considerations"></a>Důležité informace
 
 ### <a name="on-premises-resources-including-sql-server"></a>Místní prostředky (včetně SQL Server)
 
@@ -53,55 +53,71 @@ Azure App Service podporuje anonymní ověřování ve výchozím nastavení a o
 Toto není podporováno. Zvažte možnost zkopírovat požadovaná sestavení do složky *\Bin* aplikace. Vlastní soubory *. msi* nainstalované na serveru (například generátory PDF) nelze použít.
 
 ### <a name="iis-settings"></a>Nastavení služby IIS
+
 Vše, co je tradičně nakonfigurované prostřednictvím souboru applicationHost. config ve vaší aplikaci, se teď dá nakonfigurovat prostřednictvím Azure Portal. To platí pro fond bitová verze, povolení nebo zakázání WebSockets, spravované verze kanálu, verze .NET Framework (2.0/4.0) atd. Pokud chcete změnit [nastavení aplikace](https://docs.microsoft.com/azure/app-service/web-sites-configure), přejděte do [Azure Portal](https://portal.azure.com), otevřete okno pro vaši webovou aplikaci a pak vyberte kartu **nastavení aplikace** .
 
 #### <a name="iis5-compatibility-mode"></a>Režim kompatibility IIS5
-Režim kompatibility IIS5 není podporován. V Azure App Service Každá webová aplikace a všechny její aplikace běží ve stejném pracovním procesu s konkrétní sadou [fondů aplikací](https://technet.microsoft.com/library/cc735247(v=WS.10).aspx).
 
-#### <a name="iis7-schema-compliance"></a>IIS7 + dodržování předpisů schématu  
+Režim kompatibility IIS5 není podporován. V Azure App Service Každá webová aplikace a všechny její aplikace běží ve stejném pracovním procesu s konkrétní sadou [fondů aplikací](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc735247(v=ws.10)).
+
+#### <a name="iis7-schema-compliance"></a>IIS7 + dodržování předpisů schématu
+
 Některé elementy a atributy nejsou definované ve Azure App Servicem schématu IIS. Pokud narazíte na problémy, zvažte použití [transformací XDT](https://azure.microsoft.com/documentation/articles/web-sites-transform-extend/).
 
-#### <a name="single-application-pool-per-site"></a>Jeden fond aplikací na jeden web  
+#### <a name="single-application-pool-per-site"></a>Jeden fond aplikací na jeden web
+
 V Azure App Service Každá webová aplikace a všechny aplikace, které jsou v ní spuštěné, běží ve stejném fondu aplikací. Zvažte vytvoření jednoho fondu aplikací se společným nastavením nebo vytvoření samostatné webové aplikace pro každou aplikaci.
 
-### <a name="com-and-com-components"></a>Komponenty COM a COM+  
+### <a name="com-and-com-components"></a>Komponenty COM a COM+
+
 Azure App Service nepovoluje registraci komponent modelu COM na platformě. Pokud vaše aplikace využívá jakékoli komponenty modelu COM, musí být přepsány ve spravovaném kódu a nasazeny s webem nebo aplikací.
 
 ### <a name="physical-directories"></a>Fyzické adresáře
+
 Azure App Service nepovoluje přístup k fyzickým diskům. Pro přístup k souborům přes SMB možná budete muset použít [soubory Azure](https://docs.microsoft.com/azure/storage/files/storage-files-introduction) . [Azure Blob Storage](https://docs.microsoft.com/azure/storage/blobs/storage-blobs-introduction) může ukládat soubory pro přístup prostřednictvím protokolu HTTPS.
 
-### <a name="isapi-filters"></a>Filtry ISAPI  
+### <a name="isapi-filters"></a>Filtry ISAPI
+
 Azure App Service může podporovat použití filtrů ISAPI, ale knihovna DLL ISAPI musí být nasazena s vaší lokalitou a zaregistrována prostřednictvím souboru Web. config.
 
 ### <a name="https-bindings-and-ssl"></a>Vazby HTTPS a SSL
+
 Vazby protokolu HTTPS nejsou migrovány, ani certifikáty SSL přidružené k vašim webům. [Certifikáty SSL je možné](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-custom-ssl) po dokončení migrace lokality ručně odeslat.
 
 ### <a name="sharepoint-and-frontpage"></a>SharePoint a FrontPage
+
 SharePoint a rozšíření FrontPage Server Extensions (FPSE) nejsou podporovány.
 
-### <a name="web-site-size"></a>Velikost webu  
+### <a name="web-site-size"></a>Velikost webu
+
 Bezplatné weby mají omezení velikosti 1 GB obsahu. Pokud je váš web větší než 1 GB, musíte upgradovat na placené SKU. Viz [ceny App Service](https://azure.microsoft.com/pricing/details/app-service/windows/).
 
-### <a name="database-size"></a>Velikost databáze  
+### <a name="database-size"></a>Velikost databáze
+
 U SQL Server databází Zkontrolujte prosím aktuální [SQL Database ceny](https://azure.microsoft.com/pricing/details/sql-database).
 
-### <a name="azure-active-directory-aad-integration"></a>Azure Active Directory (AAD) – integrace  
+### <a name="azure-active-directory-aad-integration"></a>Azure Active Directory (AAD) – integrace
+
 AAD nefunguje s bezplatnými aplikacemi. Pokud chcete používat AAD, musíte upgradovat SKU aplikace. Viz [ceny App Service](https://azure.microsoft.com/pricing/details/app-service/windows/).
 
 ### <a name="monitoring-and-diagnostics"></a>Monitorování a diagnostika
+
 Vaše aktuální místní řešení pro monitorování a diagnostiku nejsou pravděpodobně v cloudu fungovat. Azure ale poskytuje nástroje pro protokolování, monitorování a diagnostiku, abyste mohli identifikovat a ladit problémy s webovými aplikacemi. V konfiguraci můžete snadno povolit diagnostiku pro svou webovou aplikaci a můžete si zobrazit protokoly zaznamenané v Azure Application Insights. [Přečtěte si další informace o povolení protokolování diagnostiky pro webové aplikace](https://docs.microsoft.com/azure/app-service/web-sites-enable-diagnostic-log).
 
 ### <a name="connection-strings-and-application-settings"></a>Připojovací řetězce a nastavení aplikace
+
 Zvažte použití služby [Azure webtrezor](https://docs.microsoft.com/azure/key-vault/), která bezpečně ukládá citlivé informace používané ve vaší aplikaci. Tato data můžete také uložit jako nastavení App Service.
 
 ### <a name="dns"></a>DNS
+
 V závislosti na požadavcích vaší aplikace možná budete muset aktualizovat konfigurace služby DNS. Tato nastavení DNS se dají nakonfigurovat v nastavení App Service [vlastní domény](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-custom-domain).
 
 ## <a name="azure-app-service-with-windows-containers"></a>Azure App Service s kontejnery Windows
+
 Pokud vaše aplikace nemůže být migrována přímo na App Service, zvažte App Service použití kontejnerů Windows, což umožňuje použití globální mezipaměti sestavení (GAC), komponent modelu COM, MSIs, úplného přístupu k rozhraním API .NET FX, rozhraní DirectX a dalším možnostem.
 
 ## <a name="see-also"></a>Viz také
 
 * [Jak zjistit, jestli má aplikace nárok na App Service](https://appmigration.microsoft.com/)
-* [Přesun databáze do cloudu](https://go.microsoft.com/fwlink/?linkid=863217)
+* [Přesun databáze do cloudu](sql.md)
 * [Podrobnosti a omezení izolovaného prostoru webové aplikace Azure](https://github.com/projectkudu/kudu/wiki/Azure-Web-App-sandbox)
