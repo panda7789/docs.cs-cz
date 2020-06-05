@@ -7,12 +7,12 @@ helpviewer_keywords:
 - variables [Visual Basic], structure variables
 - structure variables [Visual Basic]
 ms.assetid: 156872f8-aabc-4454-8e2d-f2253c3c13c9
-ms.openlocfilehash: 16b6cdc5a849b50f6caa8b7963dac5c12d63cf3e
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 270e8ca26185e4a68def3b95f4ce6ab4c57a629c
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74346297"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84393582"
 ---
 # <a name="structure-variables-visual-basic"></a>Proměnné struktury (Visual Basic)
 
@@ -33,11 +33,11 @@ Dim mySystem, yourSystem As systemInfo
 ```
 
 > [!NOTE]
-> Ve třídách a modulech jsou struktury deklarované pomocí [příkazu Dim](../../../../visual-basic/language-reference/statements/dim-statement.md) výchozí pro veřejný přístup. Pokud máte v úmyslu strukturu jako soukromou, ujistěte se, že ji deklarujete pomocí klíčového slova [Private](../../../../visual-basic/language-reference/modifiers/private.md) .
+> Ve třídách a modulech jsou struktury deklarované pomocí [příkazu Dim](../../../language-reference/statements/dim-statement.md) výchozí pro veřejný přístup. Pokud máte v úmyslu strukturu jako soukromou, ujistěte se, že ji deklarujete pomocí klíčového slova [Private](../../../language-reference/modifiers/private.md) .
 
 ## <a name="access-to-structure-values"></a>Přístup k hodnotám struktury
 
-Chcete-li přiřadit a načíst hodnoty z prvků proměnné struktury, použijte stejnou syntaxi, jako je použit k nastavení a získání vlastností objektu. Můžete umístit operátor přístupu členů (`.`) mezi název proměnné struktury a název elementu. Následující příklad přistupuje k prvkům proměnných dříve deklarovaným jako typ `systemInfo`.
+Chcete-li přiřadit a načíst hodnoty z prvků proměnné struktury, použijte stejnou syntaxi, jako je použit k nastavení a získání vlastností objektu. Umístěte operátor přístupu členů ( `.` ) mezi název proměnné struktury a název elementu. Následující příklad přistupuje k prvkům proměnných dříve deklarovaných jako typ `systemInfo` .
 
 ```vb
 mySystem.cPU = "486"
@@ -53,17 +53,17 @@ Můžete také přiřadit jednu proměnnou k druhé, pokud jsou obě stejné typ
 yourSystem = mySystem
 ```
 
-Pokud prvek struktury je odkazový typ, například `String`, `Object`nebo pole, je zkopírován ukazatel na data. V předchozím příkladu, pokud `systemInfo` obsahovalo proměnnou objektu, pak předchozí příklad zkopíroval ukazatel z `mySystem` na `yourSystem`a změna dat objektu prostřednictvím jedné struktury bude platit při otevření prostřednictvím jiné struktury.
+Pokud prvek struktury je odkazový typ, jako je například `String` , `Object` nebo pole, je zkopírován ukazatel na data. V předchozím příkladu, pokud `systemInfo` obsahoval proměnnou objektu, pak předchozí příklad zkopíroval ukazatel z `mySystem` na a `yourSystem` a změna dat objektu prostřednictvím jedné struktury bude platit při otevření prostřednictvím jiné struktury.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Datové typy](../../../../visual-basic/programming-guide/language-features/data-types/index.md)
-- [Základní datové typy](../../../../visual-basic/programming-guide/language-features/data-types/elementary-data-types.md)
-- [Složené datové typy](../../../../visual-basic/programming-guide/language-features/data-types/composite-data-types.md)
-- [Typy hodnot a odkazové typy](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)
-- [Struktury](../../../../visual-basic/programming-guide/language-features/data-types/structures.md)
-- [Řešení potíží s datovými typy](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)
-- [Postupy: Definice struktury](../../../../visual-basic/programming-guide/language-features/data-types/how-to-declare-a-structure.md)
-- [Struktury a ostatní programovací elementy](../../../../visual-basic/programming-guide/language-features/data-types/structures-and-other-programming-elements.md)
-- [Struktury a třídy](../../../../visual-basic/programming-guide/language-features/data-types/structures-and-classes.md)
-- [Příkaz Structure](../../../../visual-basic/language-reference/statements/structure-statement.md)
+- [Datové typy](index.md)
+- [Základní datové typy](elementary-data-types.md)
+- [Složené datové typy](composite-data-types.md)
+- [Typy hodnot a typy odkazu](value-types-and-reference-types.md)
+- [Struktury](structures.md)
+- [Řešení potíží s datovými typy](troubleshooting-data-types.md)
+- [Postupy: Deklarace struktury](how-to-declare-a-structure.md)
+- [Struktury a ostatní programovací elementy](structures-and-other-programming-elements.md)
+- [Struktury a třídy](structures-and-classes.md)
+- [Structure – příkaz](../../../language-reference/statements/structure-statement.md)

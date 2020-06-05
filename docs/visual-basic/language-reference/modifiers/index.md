@@ -2,90 +2,90 @@
 title: Modifikátory
 ms.date: 07/20/2015
 ms.assetid: a49a0e51-d700-4705-9196-3e0eb582dda6
-ms.openlocfilehash: 2056cdc69c7d89b78e9b269fc919a0e0f6b76bf4
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: 80adc4521dcb1bb0c65981dae6f842168194eae7
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74838283"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84372892"
 ---
 # <a name="modifiers-visual-basic"></a>Modifikátory (Visual Basic)
 Témata v tomto oddílu dokumentu Visual Basic modifikátory modulu runtime.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [ANSI](../../../visual-basic/language-reference/modifiers/ansi.md)  
+ [Ansi](ansi.md)  
   
- [Assembly](../../../visual-basic/language-reference/modifiers/assembly.md)  
+ [Sestavení](assembly.md)  
   
- [Async](../../../visual-basic/language-reference/modifiers/async.md)  
+ [Async](async.md)  
   
- [Auto](../../../visual-basic/language-reference/modifiers/auto.md)  
+ [Automaticky](auto.md)  
   
- [ByRef](../../../visual-basic/language-reference/modifiers/byref.md)  
+ [ByRef](byref.md)  
   
- [ByVal](../../../visual-basic/language-reference/modifiers/byval.md)  
+ [ByVal](byval.md)  
   
- [Default](../../../visual-basic/language-reference/modifiers/default.md)  
+ [Výchozí](default.md)  
   
- [Friend](../../../visual-basic/language-reference/modifiers/friend.md)  
+ [Friend](friend.md)  
   
- [Pro](../../../visual-basic/language-reference/modifiers/in-generic-modifier.md)  
+ [V](in-generic-modifier.md)  
   
- [Iterator](../../../visual-basic/language-reference/modifiers/iterator.md)  
+ [Iterátor](iterator.md)  
   
- [Key](../../../visual-basic/language-reference/modifiers/key.md)  
+ [Klíč](key.md)  
   
- [Klíčové slovo \<modulu >](../../../visual-basic/language-reference/modifiers/module-keyword.md)  
+ [Čipu\<keyword>](module-keyword.md)  
   
- [MustInherit](../../../visual-basic/language-reference/modifiers/mustinherit.md)  
+ [MustInherit](mustinherit.md)  
   
- [MustOverride](../../../visual-basic/language-reference/modifiers/mustoverride.md)  
+ [MustOverride](mustoverride.md)  
   
- [Narrowing](../../../visual-basic/language-reference/modifiers/narrowing.md)  
+ [Narrowing](narrowing.md)  
   
- [NotInheritable](../../../visual-basic/language-reference/modifiers/notinheritable.md)  
+ [NotInheritable](notinheritable.md)  
   
- [NotOverridable](../../../visual-basic/language-reference/modifiers/notoverridable.md)  
+ [NotOverridable](notoverridable.md)  
   
- [Optional](../../../visual-basic/language-reference/modifiers/optional.md)  
+ [Volitelné](optional.md)  
   
- [Mimo](../../../visual-basic/language-reference/modifiers/out-generic-modifier.md)  
+ [Mimo](out-generic-modifier.md)  
   
- [Overloads](../../../visual-basic/language-reference/modifiers/overloads.md)  
+ [Přetížení](overloads.md)  
   
- [Overridable](../../../visual-basic/language-reference/modifiers/overridable.md)  
+ [Overridable](overridable.md)  
   
- [Overrides](../../../visual-basic/language-reference/modifiers/overrides.md)  
+ [Přepsání](overrides.md)  
   
- [ParamArray](../../../visual-basic/language-reference/modifiers/paramarray.md)  
+ [ParamArray](paramarray.md)  
   
- [Partial](../../../visual-basic/language-reference/modifiers/partial.md)  
+ [Částečné](partial.md)  
   
- [Private](../../../visual-basic/language-reference/modifiers/private.md)  
+ [Hlášen](private.md)  
   
- [Private Protected](../../../visual-basic/language-reference/modifiers/private-protected.md)  
+ [Soukromé chráněné](private-protected.md)  
   
- [Protected](../../../visual-basic/language-reference/modifiers/protected.md)  
+ [Proti](protected.md)  
 
- [Protected Friend](../../../visual-basic/language-reference/modifiers/protected-friend.md)  
+ [Protected Friend](protected-friend.md)  
   
- [Public](../../../visual-basic/language-reference/modifiers/public.md)  
+ [Republik](public.md)  
   
- [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md)  
+ [ReadOnly](readonly.md)  
   
- [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)  
+ [Shadows](shadows.md)  
   
- [Shared](../../../visual-basic/language-reference/modifiers/shared.md)  
+ [Shared](shared.md)  
   
- [Static](../../../visual-basic/language-reference/modifiers/static.md)  
+ [Tras](static.md)  
   
- [Unicode](../../../visual-basic/language-reference/modifiers/unicode.md)  
+ [Kódování Unicode](unicode.md)  
   
- [Widening](../../../visual-basic/language-reference/modifiers/widening.md)  
+ [Rozšíření](widening.md)  
   
- [WithEvents](../../../visual-basic/language-reference/modifiers/withevents.md)  
+ [WithEvents](withevents.md)  
   
- [WriteOnly](../../../visual-basic/language-reference/modifiers/writeonly.md)  
+ [WriteOnly](writeonly.md)  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Referenční příručka jazyka Visual Basic](../../../visual-basic/language-reference/index.md)  
+ [Reference jazyka Visual Basic](../index.md)  
