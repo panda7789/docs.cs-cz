@@ -2,18 +2,18 @@
 title: 'Postupy: Analýza řetězce'
 ms.date: 07/20/2015
 ms.assetid: 896e1b4b-f9bd-4975-8bc1-55b6badce1ac
-ms.openlocfilehash: 31bae00eb3ebf0d8e64fc657693e8c0767c4f5d4
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 0a9076fc516bb8e6bc74732ca252fabfeda43d53
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74344487"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84398009"
 ---
 # <a name="how-to-parse-a-string-visual-basic"></a>Postupy: Analýza řetězce (Visual Basic)
-Toto téma ukazuje, jak vytvořit strom XML v C#.  
+Toto téma ukazuje, jak vytvořit strom XML v jazyce C#.  
   
 ## <a name="example"></a>Příklad  
- Můžete analyzovat řetězec v Visual Basic pomocí metody `XElement.Parse`. Je však efektivnější používat literály XML, jak je znázorněno v následujícím kódu, protože literály XML netrpí stejnými pokutami výkonu při analýze XML z řetězce.  
+ Můžete analyzovat řetězec v Visual Basic pomocí `XElement.Parse` metody. Je však efektivnější používat literály XML, jak je znázorněno v následujícím kódu, protože literály XML netrpí stejnými pokutami výkonu při analýze XML z řetězce.  
   
  Pomocí literálů XML můžete zkopírovat a vložit XML do programu Visual Basic.  
   
@@ -49,6 +49,6 @@ Dim contacts as XElement = _
     </Contacts>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Analýza kódu XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md)
+- [Analýza kódu XML (Visual Basic)](parsing-xml.md)

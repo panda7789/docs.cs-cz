@@ -2,17 +2,17 @@
 title: 'Ukázkový soubor XML: Více nákupních objednávek (LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: 08e148ff-4070-4bb4-b089-306f4a9a7641
-ms.openlocfilehash: 0a3edba9d071b04e67d5350c9833fc515a08f218
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e1e7fc5efa6246a4706ca475db4330e12ad090ac
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61786981"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84413294"
 ---
 # <a name="sample-xml-file-multiple-purchase-orders-linq-to-xml"></a>Ukázkový soubor XML: Více nákupních objednávek (LINQ to XML)
-Následující soubor XML se používá v různých příkladů v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci. Tento soubor obsahuje několik nákupních objednávek.  
+Následující soubor XML se v dokumentaci používá v různých příkladech [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] . Tento soubor obsahuje několik nákupních objednávek.  
   
-## <a name="purchaseordersxml"></a>PurchaseOrders.xml  
+## <a name="purchaseordersxml"></a>PurchaseOrders. XML  
   
 ```xml  
 <?xml version="1.0"?>  
@@ -109,6 +109,6 @@ Následující soubor XML se používá v různých příkladů v [!INCLUDE[sqlt
 </PurchaseOrders>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Ukázkové dokumenty XML (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+- [Ukázkové dokumenty XML (LINQ to XML)](sample-xml-documents-linq-to-xml.md)

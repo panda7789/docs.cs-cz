@@ -1,15 +1,15 @@
 ---
-title: Typy ukazatelů – průvodce programováním jazyka C#
+title: Typy ukazatelů – Průvodce programováním v C#
 ms.date: 04/20/2018
 helpviewer_keywords:
 - unsafe code [C#], pointers
 - pointers [C#]
-ms.openlocfilehash: 7bbfa6b2238458d3248da830cf9d6ac36551b431
-ms.sourcegitcommit: 2514f4e3655081dcfe1b22470c0c28500f952c42
+ms.openlocfilehash: 492b37460c05ffbc82e020facb354be22706f8d3
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/18/2020
-ms.locfileid: "79507032"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84396256"
 ---
 # <a name="pointer-types-c-programming-guide"></a>Typy ukazatelů (Průvodce programováním v C#)
 
@@ -20,22 +20,22 @@ type* identifier;
 void* identifier; //allowed but not recommended
 ```
 
-Typ zadaný `*` před typem ukazatele v typu se nazývá **referenční typ**. Pouze [nespravovaný typ](../../language-reference/builtin-types/unmanaged-types.md) může být referenční typ.
+Typ zadaný před `*` v typu ukazatele se nazývá **typ referenční**. Typ referenční může být pouze [nespravovaný typ](../../language-reference/builtin-types/unmanaged-types.md) .
 
-Typy ukazatelů nedědí z [objektu](../../language-reference/builtin-types/reference-types.md) a neexistují `object`žádné převody mezi typy ukazatelů a . Dále není pro ukazatele k dispozici podpora zabalení a rozbalení. Můžete však převádět mezi různými typy ukazatele, nebo mezi různými typy ukazatele a integrálními typy.
+Typy ukazatelů nedědí z [objektu](../../language-reference/builtin-types/reference-types.md) a neexistují žádné převody mezi typy ukazatelů a `object` . Dále není pro ukazatele k dispozici podpora zabalení a rozbalení. Můžete však převádět mezi různými typy ukazatele, nebo mezi různými typy ukazatele a integrálními typy.
 
-Při deklaraci většího počtu ukazatelů ve stejné deklaraci je spolu se základním typem zapsán pouze symbol hvězdičky (*). Nepoužívá se jako předpona u názvů jednotlivých ukazatelů. Například:
+Při deklaraci většího počtu ukazatelů ve stejné deklaraci je spolu se základním typem zapsán pouze symbol hvězdičky (*). Nepoužívá se jako předpona u názvů jednotlivých ukazatelů. Příklad:
 
 ```csharp
 int* p1, p2, p3;   // Ok
 int *p1, *p2, *p3;   // Invalid in C#
 ```
 
-Ukazatel nemůže odkazovat na odkaz nebo [strukturu,](../../language-reference/builtin-types/struct.md) která obsahuje odkazy, protože odkaz na objekt může být uvolněno i v případě, že na něj ukazuje ukazatel. Systém uvolňování paměti neukládá přehled o tom, zda na konkrétní objekt neodkazují některé typy ukazatele.
+Ukazatel nemůže odkazovat na odkaz nebo na [strukturu](../../language-reference/builtin-types/struct.md) , která obsahuje odkazy, protože odkaz na objekt může být uvolněn z paměti i v případě, že na něj odkazuje ukazatel. Systém uvolňování paměti neukládá přehled o tom, zda na konkrétní objekt neodkazují některé typy ukazatele.
 
-Hodnota proměnné ukazatele typu `myType*` je adresa proměnné typu `myType`. Následují příklady deklarace typu ukazatele:
+Hodnota proměnné ukazatele typu `myType*` je adresa proměnné typu `myType` . Následují příklady deklarace typu ukazatele:
 
-|Příklad|Popis|
+|Příklad|Description|
 |-------------|-----------------|
 |`int* p`|`p`je ukazatel na celé číslo.|
 |`int** p`|`p`je ukazatel na ukazatel na celé číslo.|
@@ -49,17 +49,17 @@ Operátor dereference ukazatele * lze použít pro přístup k obsahu v umíst
 int* myVariable;
 ```
 
-Výraz `*myVariable` označuje proměnnou `int` nalezenou na adrese `myVariable`obsažené v aplikaci .
+Výraz `*myVariable` označuje `int` proměnnou nalezenou na adrese obsažené v `myVariable` .
 
-Existuje několik příkladů ukazatelů v tématech [pevné prohlášení](../../language-reference/keywords/fixed-statement.md) a [ukazatel převody](./pointer-conversions.md). Následující příklad používá `unsafe` klíčové `fixed` slovo a příkaz a ukazuje, jak se zpřímí vnitřní ukazatel.  Tento kód spustíte vložením do funkce Main konzolové aplikace. Tyto příklady musí být zkompilovány s [-unsafe](../../language-reference/compiler-options/unsafe-compiler-option.md) compiler sada možností.
+Existuje několik příkladů ukazatelů v tématech s [příkazy fixed](../../language-reference/keywords/fixed-statement.md) a [převody ukazatelů](./pointer-conversions.md). Následující příklad používá `unsafe` klíčové slovo a `fixed` příkaz a ukazuje, jak zvýšit vnitřní ukazatel.  Tento kód spustíte vložením do funkce Main konzolové aplikace. Tyto příklady musí být kompilovány pomocí sady možností kompilátoru [-unsafe](../../language-reference/compiler-options/unsafe-compiler-option.md) .
 
-[!code-csharp[Using pointer types](../../../../samples/snippets/csharp/keywords/FixedKeywordExamples.cs#5)]
+[!code-csharp[Using pointer types](snippets/FixedKeywordExamples.cs#5)]
 
-Operátor dereference nelze použít na ukazatel `void*`typu . Můžete však použít přetypování neplatného ukazatele a převést jej na jiný typ ukazatele, a naopak.
+Nemůžete použít operátor dereference na ukazatel typu `void*` . Můžete však použít přetypování neplatného ukazatele a převést jej na jiný typ ukazatele, a naopak.
 
-Ukazatel může `null`být . Použití operátoru dereference na ukazatele null způsobí chování definované implementací.
+Může to být ukazatel `null` . Použití operátoru dereference na ukazatele null způsobí chování definované implementací.
 
-Předávání ukazatelů mezi metodami může způsobit nedefinované chování. Zvažte metodu, která vrací ukazatel `in`na `out`místní `ref` proměnnou prostřednictvím , nebo parametr nebo jako výsledek funkce. Pokud byl ukazatel nastaven v pevném bloku, pak proměnná, na kterou odkazuje, již nemusí být pevně stanovená.
+Předávání ukazatelů mezi metodami může způsobit nedefinované chování. Zvažte metodu, která vrací ukazatel na místní proměnnou prostřednictvím `in` `out` parametru, nebo `ref` jako výsledek funkce. Pokud byl ukazatel nastaven v pevném bloku, pak proměnná, na kterou odkazuje, již nemusí být pevně stanovená.
 
 V následující tabulce je uveden seznam operátorů a příkazů, které mohou fungovat u ukazatelů v nezabezpečeném kontextu:
 
@@ -71,21 +71,21 @@ V následující tabulce je uveden seznam operátorů a příkazů, které moh
 |`&`|Získá adresu proměnné.|
 |`++` a `--`|Zvýší a sníží ukazatele.|
 |`+` a `-`|Provádí aritmetické operace ukazatele.|
-|`==`, `!=` `<`, `>` `<=`, , a`>=`|Porovnává ukazatele.|
+|`==`, `!=` , `<` , `>` , `<=` a`>=`|Porovnává ukazatele.|
 |[`stackalloc`](../../language-reference/operators/stackalloc.md)|Přidělí paměť v zásobníku.|
-|[`fixed`Prohlášení](../../language-reference/keywords/fixed-statement.md)|Dočasně pevně stanoví proměnnou tak, aby bylo možné vyhledat její adresu.|
+|[`fixed`vydá](../../language-reference/keywords/fixed-statement.md)|Dočasně pevně stanoví proměnnou tak, aby bylo možné vyhledat její adresu.|
 
-Další informace o operátorech souvisejících s ukazatelem naleznete v [tématu Ukazatele související operátory](../../language-reference/operators/pointer-related-operators.md).
+Další informace o operátorech souvisejících s ukazateli naleznete v tématu [operátory související s ukazatelem](../../language-reference/operators/pointer-related-operators.md).
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
-Další informace naleznete v části [Typy ukazatelů](~/_csharplang/spec/unsafe-code.md#pointer-types) [ve specifikaci jazyka C#](~/_csharplang/spec/introduction.md).
+Další informace naleznete v části [typy ukazatelů](~/_csharplang/spec/unsafe-code.md#pointer-types) v tématu [specifikace jazyka C#](~/_csharplang/spec/introduction.md).
 
 ## <a name="see-also"></a>Viz také
 
-- [Programovací příručka jazyka C#](../index.md)
-- [Nebezpečný kód a ukazatele](index.md)
+- [Průvodce programováním v C#](../index.md)
+- [Nezabezpečený kód a ukazatele](index.md)
 - [Převody ukazatele](pointer-conversions.md)
-- [Referenční typy](../../language-reference/keywords/reference-types.md)
+- [Odkazové typy](../../language-reference/keywords/reference-types.md)
 - [Typy hodnot](../../language-reference/builtin-types/value-types.md)
-- [unsafe](../../language-reference/keywords/unsafe.md)
+- [UNSAFE](../../language-reference/keywords/unsafe.md)

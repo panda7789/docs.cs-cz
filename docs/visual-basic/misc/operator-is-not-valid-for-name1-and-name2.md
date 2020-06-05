@@ -1,23 +1,23 @@
 ---
-title: Operátor není platný pro '<name1>' a '<name2>.
+title: Operátor není platný pro ' <name1> ' a ' <name2> '.
 ms.date: 07/20/2015
 f1_keywords:
 - vbrNoValidOperator_TwoOperands
 ms.assetid: b2b1e6ce-d262-4644-8085-e48a2e2f06a6
-ms.openlocfilehash: c13638d7be3081ceaddd6ff7096ba670b39d173a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 037cb035c98c70dd39a7056fed8f42b9c508a780
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61944791"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84375910"
 ---
-# <a name="operator-is-not-valid-for-name1-and-name2"></a>Operátor není platný pro '\<name1 >' a '\<name2 >'
-Operátor není vhodná pro typy, se kterou se pracuje na.  
+# <a name="operator-is-not-valid-for-name1-and-name2"></a>Operátor není platný pro ' \<name1> ' a ' \<name2> '.
+Operátor není vhodný pro typy, na kterých je prováděno.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1. Ujistěte se, že operátor, který je vhodný pro typy, se kterou se pracuje na.  
+1. Zajistěte, aby byl operátor vhodný pro typy, na kterých je prováděno.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Operátory](../../visual-basic/language-reference/operators/index.md)
+- [Operátory](../language-reference/operators/index.md)

@@ -7,40 +7,40 @@ f1_keywords:
 helpviewer_keywords:
 - BC40057
 ms.assetid: 4ae3506e-2ebe-4ff3-995d-14ac60db5e9f
-ms.openlocfilehash: 105fa8da838938d13022c210c1f65cdafd251003
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0ee235252d69e6f77ce53b048f45e73d0969e864
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61918304"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84409449"
 ---
-# <a name="namespace-or-type-specified-in-the-project-level-imports-qualifiedelementname-doesnt-contain-any-public-member-or-cannot-be-found"></a>Namespace nebo typ zadaný v příkazu Imports na úrovni projektu'\<qualifiedelementname >' neobsahuje žádný veřejný člen nebo nebyl nalezen
-Namespace nebo typ zadaný v příkazu Imports na úrovni projektu'\<qualifiedelementname >' neobsahuje žádný veřejný člen nebo nebyl nalezen. Ujistěte se, že obor názvů nebo typ definován a obsahuje nejméně jeden veřejný člen. Ujistěte se, že název aliasu neobsahuje další aliasy.  
+# <a name="namespace-or-type-specified-in-the-project-level-imports-qualifiedelementname-doesnt-contain-any-public-member-or-cannot-be-found"></a>Obor názvů nebo typ zadaný v příkazu Imports '\<qualifiedelementname>' na úrovni projektu neobsahuje žádného veřejného člena nebo nebyl nalezen.
+Obor názvů nebo typ zadaný v importech na úrovni projektu neobsahuje \<qualifiedelementname> žádné veřejné členy nebo se nedá najít. Ujistěte se, že je obor názvů nebo typ definován a obsahuje nejméně jeden veřejný člen. Ujistěte se, že název aliasu neobsahuje další aliasy.  
   
- Vlastnost importu projektu určuje nadřazeného elementu, který nemůže být nalezen nebo nedefinuje žádné `Public` členy.  
+ Vlastnost Import projektu určuje obsahující prvek, který buď nebyl nalezen, nebo nedefinuje žádné `Public` členy.  
   
- A *obsahující element* může být obor názvů, třída, struktura, modul, rozhraní nebo výčet. Obsahující element obsahuje členy, jako jsou proměnné, postupy a další obsahující prvky.  
+ *Obsahující element* může být obor názvů, třída, struktura, modul, rozhraní nebo výčet. Obsahující element obsahuje členy, jako jsou proměnné, procedury nebo jiné obsahující prvky.  
   
- Účelem importu je umožnit váš kód získat přístup ke členům obor názvů nebo typ bez nutnosti je vyfiltrovat. Váš projekt může být také nutné přidat odkaz na obor názvů nebo typ. Další informace najdete v tématu "Import obsahující prvky" [odkazy na deklarované elementy](../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md).  
+ Účelem importu je dovolit vašemu kódu přístup k oboru názvů nebo členům typu bez nutnosti jejich zařazení. Projekt může také potřebovat přidat odkaz na obor názvů nebo typ. Další informace naleznete v tématu "Import obsahující prvky" v [odkazech na deklarované elementy](../../programming-guide/language-features/declared-elements/references-to-declared-elements.md).  
   
- Pokud kompilátor nemůže najít zadaný nadřazený prvek, nelze ho přeložit odkazy, které ji používají. Vyhledá prvek ale elementu nevystavuje žádné `Public` členové, pak žádný odkaz může být úspěšné. V obou případech je importovat element nemá význam.  
+ Pokud kompilátor nemůže najít zadaný element, který obsahuje, nemůže vyřešit odkazy, které ho používají. Pokud prvek najde, ale nezveřejňuje žádné `Public` členy, nemůže být žádný odkaz úspěšný. V obou případech je to pro import elementu nevýznamný.  
   
- Můžete použít **Návrháře projektu** k určení prvků k importu. Použití **importovat obory názvů** část **odkazy** stránky. Můžete získat **Návrháře projektu** dvojitým kliknutím **Můj projekt** ikonu **Průzkumníku řešení**.  
+ K určení prvků pro import lze použít **Návrhář projektu** . Použijte část **importované obory názvů** na stránce **odkazy** . Můžete získat přístup k **Návrháři projektu** dvojitým kliknutím na ikonu **můj projekt** v **Průzkumník řešení**.  
   
  **ID chyby:** BC40057  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1. Otevřít **Návrháře projektu** a přepněte se na **odkaz** stránky.  
+1. Otevřete **Návrháře projektu** a přepněte na **referenční** stránku.  
   
-2. V **importovat obory názvů** části, ověřte, zda je přístupný z projektu nadřazeného elementu.  
+2. V části **importované obory názvů** ověřte, zda je obsažený element přístupný z vašeho projektu.  
   
-3. Ověřte, že nadřazeného elementu zpřístupňuje alespoň jeden `Public` člena.  
+3. Ověřte, zda nadřazený element zveřejňuje alespoň jeden `Public` člen.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Stránka Odkazy, Návrhář projektu (Visual Basic)](/visualstudio/ide/reference/references-page-project-designer-visual-basic)
+- [Stránka Odkazy, návrhář projektu (Visual Basic)](/visualstudio/ide/reference/references-page-project-designer-visual-basic)
 - [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)
-- [Public](../../../visual-basic/language-reference/modifiers/public.md)
-- [Obory názvů v jazyce Visual Basic](../../../visual-basic/programming-guide/program-structure/namespaces.md)
-- [Odkazy na deklarované elementy](../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)
+- [Republik](../modifiers/public.md)
+- [Obory názvů v jazyce Visual Basic](../../programming-guide/program-structure/namespaces.md)
+- [Odkazy na deklarované elementy](../../programming-guide/language-features/declared-elements/references-to-declared-elements.md)

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - procedure parameters
 - parameters [Visual Basic], definition
 ms.assetid: c237c056-74f4-4749-9f2c-15864f139a31
-ms.openlocfilehash: c4249dbf86bd1bfa7ef08e94059d2880333e9a92
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: dd0a62b6567f3e74763b7f2e9b96803c193c7976
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74341378"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84403353"
 ---
 # <a name="differences-between-parameters-and-arguments-visual-basic"></a>Rozdíly mezi parametry a argumenty (Visual Basic)
 Ve většině případů musí mít procedura nějaké informace o okolnostech, ve kterých byla volána. Postup, který provádí opakované nebo sdílené úkoly, používá pro každé volání jiné informace. Tyto informace se skládají z proměnných, konstant a výrazů, které procedury předáte při volání.  
@@ -26,22 +26,22 @@ Ve většině případů musí mít procedura nějaké informace o okolnostech, 
 ## <a name="parameters"></a>Parametry  
  *Parametr* představuje hodnotu, kterou procedura očekává, že bude při volání předána. Deklarace procedury definuje její parametry.  
   
- Při definování `Function` nebo `Sub` postupu zadáte *seznam parametrů* v závorkách hned za názvem procedury. Pro každý parametr určíte název, datový typ a mechanismus předávání ([ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) nebo [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md)). Můžete také indikovat, že parametr je nepovinný. To znamená, že volající kód nemusí pro něj předat hodnotu.  
+ Při definování `Function` `Sub` procedury nebo zadejte *seznam parametrů* v závorkách hned za názvem procedury. Pro každý parametr určíte název, datový typ a mechanismus předávání ([ByVal](../../../language-reference/modifiers/byval.md) nebo [ByRef](../../../language-reference/modifiers/byref.md)). Můžete také indikovat, že parametr je nepovinný. To znamená, že volající kód nemusí pro něj předat hodnotu.  
   
  Název každého parametru slouží jako *místní proměnná* v proceduře. Název parametru použijete stejným způsobem jako jakoukoli jinou proměnnou.  
   
-## <a name="arguments"></a>Argumenty  
+## <a name="arguments"></a>Arguments  
  *Argument* představuje hodnotu, která je předána parametru procedury při volání procedury. Volající kód dodává argumenty při volání procedury.  
   
- Když zavoláte `Function` nebo `Sub` proceduru, zahrnete do závorek *seznam argumentů* hned za názvem procedury. Každý argument odpovídá parametru ve stejné pozici v seznamu.  
+ Při volání `Function` `Sub` procedury nebo můžete do závorek zahrnout *seznam argumentů* hned za názvem procedury. Každý argument odpovídá parametru ve stejné pozici v seznamu.  
   
  Na rozdíl od definice parametru argumenty nemají názvy. Každý argument je výraz, který může obsahovat nula nebo více proměnných, konstant a literálů. Datový typ vyhodnoceného výrazu by měl obvykle odpovídat datovému typu definovanému pro příslušný parametr a v každém případě musí být převoditelné na typ parametru.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Procedury](./index.md)
 - [Procedury Sub](./sub-procedures.md)
-- [Procedury funkce](./function-procedures.md)
+- [Procedury funkcí](./function-procedures.md)
 - [Procedury vlastnosti](./property-procedures.md)
 - [Procedury operátoru](./operator-procedures.md)
 - [Postupy: Definování parametru pro proceduru](./how-to-define-a-parameter-for-a-procedure.md)

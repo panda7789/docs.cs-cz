@@ -9,16 +9,16 @@ helpviewer_keywords:
 - My feature
 - Visual Basic, programming in
 ms.assetid: f1d04509-5e46-4551-9f9f-94334a121fca
-ms.openlocfilehash: 2ee9373098d4355628a43ec46302c97c26de5bf9
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 3befac591de8fbc7250777a8b87247ee395abf25
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74330287"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84411703"
 ---
 # <a name="development-with-my-visual-basic"></a>Vývoj s použitím oboru názvů My (Visual Basic)
 
-Visual Basic poskytuje nové funkce pro rychlý vývoj aplikací, které zvyšují produktivitu a usnadňují používání a zároveň dodávají sílu. Jedna z těchto funkcí, která `My`je volána, poskytuje přístup k informacím a výchozím instancím objektů, které se vztahují k aplikaci a jejímu prostředí za běhu. Tyto informace jsou uspořádány ve formátu, který je zjistitelný prostřednictvím technologie IntelliSense a logicky vymezený podle použití.  
+Visual Basic poskytuje nové funkce pro rychlý vývoj aplikací, které zvyšují produktivitu a usnadňují používání a zároveň dodávají sílu. Jedna z těchto funkcí, která je volána `My` , poskytuje přístup k informacím a výchozím instancím objektů, které se vztahují k aplikaci a jejímu prostředí za běhu. Tyto informace jsou uspořádány ve formátu, který je zjistitelný prostřednictvím technologie IntelliSense a logicky vymezený podle použití.  
   
  Členové nejvyšší úrovně `My` jsou vystaveni jako objekty. Každý objekt se chová podobně jako obor názvů nebo třída se `Shared` členy a zpřístupňuje sadu souvisejících členů.  
   
@@ -28,26 +28,26 @@ Visual Basic poskytuje nové funkce pro rychlý vývoj aplikací, které zvyšuj
   
 ## <a name="in-this-section"></a>V tomto oddílu  
 
- [Provádění úloh s objekty My.Application, My.Computer a My.User](../../../visual-basic/developing-apps/development-with-my/performing-tasks-with-my-application-my-computer-and-my-user.md)  
- `My` Popisuje tři centrální objekty `My.Application`, `My.Computer`, a `My.User`, které poskytují přístup k informacím a funkcím.  
+ [Provádění úloh s objekty My.Application, My.Computer a My.User](performing-tasks-with-my-application-my-computer-and-my-user.md)  
+ Popisuje tři centrální `My` objekty,, `My.Application` `My.Computer` a `My.User` , které poskytují přístup k informacím a funkcím.  
   
- [Výchozí instance objektů poskytované třídami My.Forms a My.WebServices](../../../visual-basic/developing-apps/development-with-my/default-object-instances-provided-by-my-forms-and-my-webservices.md)  
- Popisuje objekty `My.Forms` a `My.WebServices` , které poskytují přístup k formulářům, zdrojům dat a webovým službám XML, které vaše aplikace používá.  
+ [Výchozí instance objektů poskytované třídami My.Forms a My.WebServices](default-object-instances-provided-by-my-forms-and-my-webservices.md)  
+ Popisuje `My.Forms` objekty a `My.WebServices` , které poskytují přístup k formulářům, zdrojům dat a webovým službám XML, které vaše aplikace používá.  
   
- [Rychlý vývoj aplikací s použitím objektů My.Resources a My.Settings](../../../visual-basic/developing-apps/development-with-my/rapid-application-development-with-my-resources-and-my-settings.md)  
- Popisuje objekty `My.Resources` a `My.Settings` , které poskytují přístup k prostředkům a nastavením aplikace.  
+ [Rychlý vývoj aplikací s použitím objektů My.Resources a My.Settings](rapid-application-development-with-my-resources-and-my-settings.md)  
+ Popisuje `My.Resources` objekty a `My.Settings` , které poskytují přístup k prostředkům a nastavením aplikace.  
   
- [Přehled aplikačního modelu jazyka Visual Basic](../../../visual-basic/developing-apps/development-with-my/overview-of-the-visual-basic-application-model.md)  
+ [Přehled aplikačního modelu jazyka Visual Basic](overview-of-the-visual-basic-application-model.md)  
  Popisuje model spuštění nebo vypnutí aplikace Visual Basic.  
   
- [Závislost oboru názvů My na typu projektu](../../../visual-basic/developing-apps/development-with-my/how-my-depends-on-project-type.md)  
- Poskytuje podrobnosti o tom `My` , které funkce jsou k dispozici v různých typech projektů.  
+ [Závislost oboru názvů My na typu projektu](how-my-depends-on-project-type.md)  
+ Poskytuje podrobnosti o tom, které `My` funkce jsou k dispozici v různých typech projektů.  
   
 ## <a name="see-also"></a>Viz také
 
 - <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase>
 - <xref:Microsoft.VisualBasic.Devices.Computer>
 - <xref:Microsoft.VisualBasic.ApplicationServices.User>
-- [My.Forms – objekt](../../../visual-basic/language-reference/objects/my-forms-object.md)
-- [Objekt My.WebServices](../../../visual-basic/language-reference/objects/my-webservices-object.md)
-- [Závislost oboru názvů My na typu projektu](../../../visual-basic/developing-apps/development-with-my/how-my-depends-on-project-type.md)
+- [My.Forms – objekt](../../language-reference/objects/my-forms-object.md)
+- [My.WebServices – objekt](../../language-reference/objects/my-webservices-object.md)
+- [Závislost oboru názvů My na typu projektu](how-my-depends-on-project-type.md)
