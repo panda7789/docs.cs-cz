@@ -7,40 +7,40 @@ f1_keywords:
 helpviewer_keywords:
 - BC42107
 ms.assetid: 06800966-9c3b-4844-9f13-83ac95607d32
-ms.openlocfilehash: a5cb28a024274e58da1755b437d6ba4ca6712610
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 21a1c4dbab6e26cd1cb848e270bbda9a544c2a67
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64661715"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84400419"
 ---
-# <a name="property-propertyname-doesnt-return-a-value-on-all-code-paths"></a>Vlastnost "\<propertyname >' nevrací hodnotu ve všech cestách kódu.
-Vlastnost "\<propertyname >' nevrací hodnotu ve všech cestách kódu. V době běhu při použití vráceného výsledku může dojít k výjimce odkazem s hodnotou null.  
+# <a name="property-propertyname-doesnt-return-a-value-on-all-code-paths"></a>Ve vlastnosti '\<propertyname>' existují cesty kódu, které nevrací žádnou hodnotu.
+Vlastnost \<propertyname> nevrací hodnotu ve všech cestách kódu. Při použití výsledku může při spuštění dojít k výjimce odkazu s hodnotou null.  
   
- Vlastnost `Get` postup obsahuje alespoň jeden možných cest pomocí jejího kódu, která nevrací hodnotu.  
+ Procedura vlastnosti `Get` má alespoň jednu možnou cestu prostřednictvím kódu, který nevrací hodnotu.  
   
- Může vrátit hodnotu z vlastnosti `Get` postup v některém z následujících způsobů:  
+ Můžete vrátit hodnotu z `Get` procedury vlastnosti některým z následujících způsobů:  
   
-- Přiřaďte hodnotu k názvu vlastnosti a pak proveďte `Exit Property` příkazu.  
+- Přiřaďte hodnotu k názvu vlastnosti a pak proveďte `Exit Property` příkaz.  
   
-- Přiřaďte hodnotu k názvu vlastnosti a pak proveďte `End Get` příkazu.  
+- Přiřaďte hodnotu k názvu vlastnosti a pak `End Get` příkaz proveďte.  
   
-- Hodnota v [příkaz Return](../../../visual-basic/language-reference/statements/return-statement.md).  
+- Zahrňte hodnotu do [příkazu return](../statements/return-statement.md).  
   
- Pokud řízení se předá `Exit Property` nebo `End Get` a jste ještě nepřiřadili žádné hodnoty názvu vlastnosti `Get` postup vrátí výchozí hodnotu vlastnosti datového typu. Další informace najdete v tématu "Chování" [Function – příkaz](../../../visual-basic/language-reference/statements/function-statement.md).  
+ Pokud řízení projde `Exit Property` nebo `End Get` a Vy jste k názvu vlastnosti nepřiřadili žádnou hodnotu, `Get` procedura vrátí výchozí hodnotu datového typu vlastnosti. Další informace naleznete v tématu "Behavior" v [příkazu Function](../statements/function-statement.md).  
   
- Ve výchozím nastavení tato zpráva je upozornění. Další informace o zobrazení nebo skrytí upozornění zpracování upozornění jako chyby, najdete v části [Konfigurace upozornění v jazyce Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic).  
+ Ve výchozím nastavení je tato zpráva upozornění. Další informace o skrývání upozornění nebo zpracování upozornění jako chyb najdete v tématu [Konfigurace upozornění v Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic).  
   
  **ID chyby:** BC42107  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-- Zkontrolujte logiku toku řízení a ujistěte se, že přidělíte hodnotu před každý příkaz, který způsobí, že vrácení.  
+- Zkontrolujte logiku toku ovládacích prvků a ujistěte se, že přiřadíte hodnotu před všemi příkazy, které způsobují návrat.  
   
-     Je snazší zajistit, že každý návrat z procedury vrací hodnotu, pokud vždy používáte `Return` příkazu. Pokud to provedete, poslední příkaz před `End Get` by měl být `Return` příkazu.  
+     Je snazší zaručit, že při každém návratu z této procedury vrátí hodnotu, pokud vždy použijete `Return` příkaz. Pokud to uděláte, poslední příkaz před `End Get` by měl být `Return` příkaz.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Procedury vlastnosti](../../../visual-basic/programming-guide/language-features/procedures/property-procedures.md)
-- [Příkaz Property](../../../visual-basic/language-reference/statements/property-statement.md)
-- [Příkaz Get](../../../visual-basic/language-reference/statements/get-statement.md)
+- [Procedury vlastnosti](../../programming-guide/language-features/procedures/property-procedures.md)
+- [Property – příkaz](../statements/property-statement.md)
+- [Get – příkaz](../statements/get-statement.md)

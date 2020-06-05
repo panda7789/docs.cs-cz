@@ -8,12 +8,12 @@ helpviewer_keywords:
 - writing to files [Visual Basic]
 - Visual Basic, writing to files
 ms.assetid: ac6fb453-0d6c-4ce4-93b4-1bbcd06de83e
-ms.openlocfilehash: 8511a96c7abcc28997c293a09ef10bad543dc261
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 06809ce8a846ea06ff2decdd87f304d1b26a7750
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74352139"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84406609"
 ---
 # <a name="writing-to-files-in-visual-basic"></a>Zápis do souborů v jazyce Visual Basic
 
@@ -21,19 +21,19 @@ V této části se dozvíte, jak provádět úlohy, které zahrnují zápis do s
   
 ## <a name="in-this-section"></a>V tomto oddílu  
 
- [Postupy: Zápis textu do souborů](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-write-text-to-files.md)  
+ [Postupy: Zápis textu do souborů](how-to-write-text-to-files.md)  
  Ukazuje, jak zapisovat do textových souborů.  
   
- [Postupy: Připojování k textovým souborům](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-append-to-text-files.md)  
+ [Postupy: Připojování k textovým souborům](how-to-append-to-text-files.md)  
  Ukazuje, jak připojit text k textovému souboru.  
   
- [Postupy: Zápis do binárních souborů](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-write-to-binary-files.md)  
+ [Postupy: Zápis do binárních souborů](how-to-write-to-binary-files.md)  
  Ukazuje, jak zapisovat do binárního souboru.  
   
- [Postupy: Zápis textu do souborů v adresáři MyDocuments](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-write-text-to-files-in-the-my-documents-directory.md)  
+ [Postupy: Zápis textu do souborů v adresáři Moje dokumenty](how-to-write-text-to-files-in-the-my-documents-directory.md)  
  Ukazuje, jak vytvořit a zapsat do nového textového souboru v adresáři **My Documents** .  
   
- [Postupy: Zápis textu do souborů pomocí třídy StreamWriter](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-write-text-to-files-with-a-streamwriter.md)  
+ [Postupy: Zápis textu do souborů pomocí třídy StreamWriter](how-to-write-text-to-files-with-a-streamwriter.md)  
  Ukazuje, jak zapisovat do souboru s <xref:System.IO.StreamWriter?displayProperty=nameWithType> objektem.  
   
 ## <a name="reference"></a>Referenční informace  
@@ -52,14 +52,14 @@ V této části se dozvíte, jak provádět úlohy, které zahrnují zápis do s
   
 ## <a name="related-sections"></a>Související oddíly  
 
- [Čtení ze souborů](../../../../visual-basic/developing-apps/programming/drives-directories-files/reading-from-files.md)  
+ [Čtení ze souborů](reading-from-files.md)  
  Vysvětluje, jak provádět úlohy, které zahrnují čtení ze souborů.  
   
- [Vytváření, odstraňování a přesouvání souborů a adresářů](../../../../visual-basic/developing-apps/programming/drives-directories-files/creating-deleting-and-moving-files-and-directories.md)  
+ [Vytváření, odstraňování a přesouvání souborů a adresářů](creating-deleting-and-moving-files-and-directories.md)  
  Vysvětluje, jak provádět úlohy, které zahrnují vytváření, odstraňování, přesouvání a přejmenování souborů a adresářů.  
   
- [Ukládání dat do schránky a čtení ze schránky](../../../../visual-basic/developing-apps/programming/computer-resources/storing-data-to-and-reading-from-the-clipboard.md)  
- Vysvětluje, jak provádět úkoly, které jsou spojeny s `My.Computer.Clipboard`, například čtení dat z nebo zápis dat do schránky.  
+ [Ukládání dat do schránky a čtení ze schránky](../computer-resources/storing-data-to-and-reading-from-the-clipboard.md)  
+ Vysvětluje, jak provádět úkoly, které jsou spojeny s `My.Computer.Clipboard` , například čtení dat z nebo zápis dat do schránky.  
   
- [Kódování souborů](../../../../visual-basic/developing-apps/programming/drives-directories-files/file-encodings.md)  
+ [Kódování souborů](file-encodings.md)  
  Poskytuje přehled o kódováních souborů.

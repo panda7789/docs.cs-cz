@@ -2,12 +2,12 @@
 title: Segmentace dat
 ms.date: 07/20/2015
 ms.assetid: 69c59379-b66e-422c-b324-5b5c07760ef7
-ms.openlocfilehash: 2ab4e27ef6d825b9100fc3c15b7a9554ae49e516
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 34749f9d7b137bade66b6103650871246c3cc532
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353156"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84406843"
 ---
 # <a name="partitioning-data-visual-basic"></a>Dělení dat (Visual Basic)
 Dělení v jazyce LINQ odkazuje na operaci rozdělení vstupní sekvence do dvou oddílů bez přeuspořádání prvků a vrácení jedné z sekcí.  
@@ -20,7 +20,7 @@ Dělení v jazyce LINQ odkazuje na operaci rozdělení vstupní sekvence do dvou
   
 ## <a name="operators"></a>Operátory  
   
-|Název operátoru|Popis|Visual Basic syntaxe výrazu dotazu|Další informace|  
+|Název operátoru|Description|Visual Basic syntaxe výrazu dotazu|Další informace|  
 |-------------------|-----------------|------------------------------------------|----------------------|  
 |Přeskočit|Přeskočí prvky až do zadané pozice v sekvenci.|`Skip`|<xref:System.Linq.Enumerable.Skip%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Skip%2A?displayProperty=nameWithType>|  
 |SkipWhile –|Přeskočí prvky založené na funkci predikátu, dokud element nesplní podmínku.|`Skip While`|<xref:System.Linq.Enumerable.SkipWhile%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.SkipWhile%2A?displayProperty=nameWithType>|  
@@ -30,30 +30,30 @@ Dělení v jazyce LINQ odkazuje na operaci rozdělení vstupní sekvence do dvou
 ## <a name="query-expression-syntax-examples"></a>Příklady syntaxe výrazů dotazů  
   
 ### <a name="skip"></a>Přeskočit  
- Následující příklad kódu používá klauzuli `Skip` v Visual Basic k přeskočení prvních čtyř řetězců v poli řetězců před vrácením zbývajících řetězců v poli.  
+ Následující příklad kódu používá `Skip` klauzuli v Visual Basic pro přeskočení prvních čtyř řetězců v poli řetězců před vrácením zbývajících řetězců v poli.  
   
  [!code-vb[CsLINQPartitioning#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/CsLINQPartitioning/VB/Partitioning.vb#1)]  
   
 ### <a name="skipwhile"></a>SkipWhile –  
- Následující příklad kódu používá klauzuli `Skip While` v Visual Basic k přeskočení řetězce v poli, zatímco první písmeno řetězce je "a". Zbývající řetězce v poli jsou vráceny.  
+ Následující příklad kódu používá `Skip While` klauzuli v Visual Basic pro přeskočení řetězců v poli, zatímco první písmeno řetězce je "a". Zbývající řetězce v poli jsou vráceny.  
   
  [!code-vb[CsLINQPartitioning#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/CsLINQPartitioning/VB/Partitioning.vb#2)]  
   
 ### <a name="take"></a>Take  
- Následující příklad kódu používá klauzuli `Take` v Visual Basic k vrácení prvních dvou řetězců v poli řetězců.  
+ Následující příklad kódu používá `Take` klauzuli v Visual Basic k vrácení prvních dvou řetězců v poli řetězců.  
   
  [!code-vb[CsLINQPartitioning#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/CsLINQPartitioning/VB/Partitioning.vb#3)]  
   
 ### <a name="takewhile"></a>TakeWhile –  
- Následující příklad kódu používá klauzuli `Take While` v Visual Basic k vrácení řetězců z pole, zatímco délka řetězce je pět nebo méně.  
+ Následující příklad kódu používá `Take While` klauzuli v Visual Basic k vrácení řetězců z pole, zatímco délka řetězce je pět nebo méně.  
   
  [!code-vb[CsLINQPartitioning#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/CsLINQPartitioning/VB/Partitioning.vb#4)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Linq>
-- [Přehled standardních operátorů dotazů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
-- [Klauzule Skip](../../../../visual-basic/language-reference/queries/skip-clause.md)
-- [Klauzule Skip While](../../../../visual-basic/language-reference/queries/skip-while-clause.md)
-- [Klauzule Take](../../../../visual-basic/language-reference/queries/take-clause.md)
-- [Klauzule Take While](../../../../visual-basic/language-reference/queries/take-while-clause.md)
+- [Přehled standardních operátorů dotazů (Visual Basic)](standard-query-operators-overview.md)
+- [Skip – klauzule](../../../language-reference/queries/skip-clause.md)
+- [Skip While – klauzule](../../../language-reference/queries/skip-while-clause.md)
+- [Take – klauzule](../../../language-reference/queries/take-clause.md)
+- [Take While – klauzule](../../../language-reference/queries/take-while-clause.md)

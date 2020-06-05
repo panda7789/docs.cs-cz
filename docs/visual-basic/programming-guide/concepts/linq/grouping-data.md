@@ -2,17 +2,17 @@
 title: Seskupování dat
 ms.date: 07/20/2015
 ms.assetid: 8f3a0871-6958-4aef-8f6f-493e189fd57d
-ms.openlocfilehash: 9a4011b77f91ff241d23f7aeca95925a1e170483
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.openlocfilehash: 8996eee748489c596bc5adc32f53b6b39dbfc6ac
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78266817"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84398380"
 ---
-# <a name="grouping-data-visual-basic"></a>Seskupení dat (Visual Basic)
-Seskupení odkazuje na operaci vkládání dat do skupin tak, aby prvky v každé skupině sdílejí společný atribut.  
+# <a name="grouping-data-visual-basic"></a>Seskupování dat (Visual Basic)
+Seskupení odkazuje na operaci vložení dat do skupin, aby elementy v každé skupině sdílely společný atribut.  
   
- Následující obrázek znázorňuje výsledky seskupování posloupnosti znaků. Klíčem pro každou skupinu je znak.  
+ Následující ilustrace znázorňuje výsledky seskupení sekvencí znaků. Klíč pro každou skupinu je znak.  
   
  ![Diagram, který znázorňuje operaci seskupení LINQ.](./media/grouping-data/linq-group-operation.png)  
   
@@ -20,13 +20,13 @@ Seskupení odkazuje na operaci vkládání dat do skupin tak, aby prvky v každ�
   
 ## <a name="methods"></a>Metody  
   
-|Název metody|Popis|Syntaxe výrazu dotazu jazyka Visual Basic|Další informace|  
+|Název metody|Description|Visual Basic syntaxe výrazu dotazu|Další informace|  
 |-----------------|-----------------|------------------------------------------|----------------------|  
-|GroupBy|Seskupí prvky, které sdílejí společný atribut. Každá skupina je <xref:System.Linq.IGrouping%602> reprezentována objektem.|`Group … By … Into …`|<xref:System.Linq.Enumerable.GroupBy%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.GroupBy%2A?displayProperty=nameWithType>|  
-|Vyhledávání|Vloží prvky <xref:System.Linq.Lookup%602> do (slovníku 1:N) na základě funkce voliče klíčů.|Neužívá se.|<xref:System.Linq.Enumerable.ToLookup%2A?displayProperty=nameWithType>|  
+|GroupBy|Seskupí prvky, které sdílejí společný atribut. Jednotlivé skupiny jsou reprezentovány <xref:System.Linq.IGrouping%602> objektem.|`Group … By … Into …`|<xref:System.Linq.Enumerable.GroupBy%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.GroupBy%2A?displayProperty=nameWithType>|  
+|ToLookup|Vloží prvky do <xref:System.Linq.Lookup%602> slovníku (do slovníku 1: n) na základě funkce selektoru klíče.|Neužívá se.|<xref:System.Linq.Enumerable.ToLookup%2A?displayProperty=nameWithType>|  
   
 ## <a name="query-expression-syntax-example"></a>Příklad syntaxe výrazu dotazu  
- Následující příklad kódu `Group By` používá klauzuli k seskupení celá čísla v seznamu podle toho, zda jsou sudé nebo liché.  
+ Následující příklad kódu používá `Group By` klauzuli pro seskupení celých čísel v seznamu podle toho, zda jsou sudé nebo liché.  
   
 ```vb  
 Dim numbers As New System.Collections.Generic.List(Of Integer)(  
@@ -66,7 +66,7 @@ MsgBox(sb.ToString())
 ## <a name="see-also"></a>Viz také
 
 - <xref:System.Linq>
-- [Standardní operátory dotazů – přehled (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
-- [Klauzule Group By](../../../../visual-basic/language-reference/queries/group-by-clause.md)
-- [Postup: Seskupení souborů podle rozšíření (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-group-files-by-extension-linq.md)
-- [Postup: Rozdělení souboru do mnoha souborů pomocí skupin (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-split-a-file-into-many-files-by-using-groups-linq.md)
+- [Přehled standardních operátorů dotazů (Visual Basic)](standard-query-operators-overview.md)
+- [Group By – klauzule](../../../language-reference/queries/group-by-clause.md)
+- [Postupy: seskupování souborů podle přípony (LINQ) (Visual Basic)](how-to-group-files-by-extension-linq.md)
+- [Postupy: rozdělení souboru na více souborů pomocí skupin (LINQ) (Visual Basic)](how-to-split-a-file-into-many-files-by-using-groups-linq.md)

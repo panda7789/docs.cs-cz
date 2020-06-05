@@ -7,17 +7,17 @@ f1_keywords:
 helpviewer_keywords:
 - BC33107
 ms.assetid: 493c8899-3f6b-4471-8eb6-9284e8492768
-ms.openlocfilehash: 4b520949cb59b63ea39441632dc5e2c6d000d711
-ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
+ms.openlocfilehash: ca16c6604ee071668a5c65d7e9052b233e2313c7
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80249523"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84403015"
 ---
 # <a name="first-operand-in-a-binary-if-expression-must-be-nullable-or-a-reference-type"></a>První operand v binárním výrazu 'If' musí být typu, který povoluje hodnotu Null, nebo typu odkazu.
-Výraz `If` může trvat dva nebo tři argumenty. Při odeslání pouze dva argumenty, první argument musí být typ odkazu nebo typ hodnoty s hodnotou s hodnotou, kterou lze hodnotit. Pokud první argument vyhodnotí `Nothing`na něco jiného než , jeho hodnota je vrácena. Pokud první argument vyhodnotí `Nothing`na , druhý argument je vyhodnocena a vrácena.  
+`If`Výraz může přijmout buď dva, nebo tři argumenty. Když odesíláte pouze dva argumenty, první argument musí být odkazový typ nebo typ hodnoty s možnou hodnotou null. Pokud je první argument vyhodnocen jako cokoli jiného než `Nothing` , je vrácena jeho hodnota. Pokud je první argument vyhodnocen jako `Nothing` , je vyhodnocen a vrácen druhý argument.  
   
- Například následující kód obsahuje `If` dva výrazy, jeden se třemi argumenty a jeden se dvěma argumenty. Výrazy vypočítat a vrátit stejnou hodnotu.  
+ Například následující kód obsahuje dva `If` výrazy, jeden se třemi argumenty a jeden se dvěma argumenty. Výrazy vypočítávají a vracejí stejnou hodnotu.  
   
 ```vb  
 ' firstChoice is a nullable value type.  
@@ -29,7 +29,7 @@ Console.WriteLine(If(firstChoice IsNot Nothing, firstChoice, secondChoice))
 Console.WriteLine(If(firstChoice, secondChoice))  
 ```  
   
- Následující výrazy způsobit tuto chybu:  
+ Tato chyba způsobí tyto výrazy:  
   
 ```vb  
 Dim choice1 = 4  
@@ -46,7 +46,7 @@ Dim booleanVar = True
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-- Pokud nemůžete změnit kód tak, aby první argument byl typ hodnoty s hodnotou s `If` hodnotou s `If...Then...Else` hodnotou s hodnotou nebo typ odkazu, zvažte převod na výraz se třemi argumenty nebo na příkaz.  
+- Pokud nemůžete změnit kód tak, aby první argument byl typ hodnoty s možnou hodnotou null nebo odkazový typ, zvažte převod na výraz se třemi argumenty `If` nebo na `If...Then...Else` příkaz.  
   
 ```vb  
 Console.WriteLine(If(choice1 < choice2, 1, 2))  
@@ -55,6 +55,6 @@ Console.WriteLine(If(booleanVar, "Test returns True.", "Test returns False."))
   
 ## <a name="see-also"></a>Viz také
 
-- [Operátor If](../../../visual-basic/language-reference/operators/if-operator.md)
-- [Příkaz If...Then...Else](../../../visual-basic/language-reference/statements/if-then-else-statement.md)
-- [Typy hodnot s povolenou hodnotou Null](../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md)
+- [If – operátor](../operators/if-operator.md)
+- [If...Then...Else – příkaz](../statements/if-then-else-statement.md)
+- [Typy hodnot s možnou hodnotou null](../../programming-guide/language-features/data-types/nullable-value-types.md)

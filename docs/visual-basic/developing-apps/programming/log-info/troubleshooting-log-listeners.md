@@ -6,26 +6,26 @@ helpviewer_keywords:
 - troubleshooting Visual Basic, event logs
 - troubleshooting event logs
 ms.assetid: ac6eb760-3d5d-461e-aedd-40599ee22e49
-ms.openlocfilehash: dd139935dae7fe4d1334b861e6590df29bab7202
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8d2d8294d9e9bb42d72fe4f6c37bf846bd644907
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74346859"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84398315"
 ---
 # <a name="troubleshooting-log-listeners-visual-basic"></a>Řešení potíží: Součásti naslouchající protokolům (Visual Basic)
 
-Pomocí objektů `My.Application.Log` a `My.Log` můžete protokolovat informace o událostech, ke kterým dochází ve vaší aplikaci.  
+Pomocí `My.Application.Log` objektů a můžete `My.Log` protokolovat informace o událostech, ke kterým dochází ve vaší aplikaci.  
   
- Chcete-li zjistit, které naslouchací procesy protokolu obdrží tyto zprávy, přečtěte si [Návod: určení, kde my. Application. Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md).  
+ Chcete-li zjistit, které naslouchací procesy protokolu obdrží tyto zprávy, přečtěte si [Návod: určení, kde my. Application. Log zapisuje informace](walkthrough-determining-where-my-application-log-writes-information.md).  
   
- `Log` Objekt může použít filtrování protokolu k omezení množství informací, které protokoluje. Pokud jsou filtry nesprávně nakonfigurované, můžou protokoly obsahovat nesprávné informace. Další informace o filtrování najdete v tématu [Návod: filtrování výstupu my. Application. log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-filtering-my-application-log-output.md).  
+ `Log`Objekt může použít filtrování protokolu k omezení množství informací, které protokoluje. Pokud jsou filtry nesprávně nakonfigurované, můžou protokoly obsahovat nesprávné informace. Další informace o filtrování najdete v tématu [Návod: filtrování výstupu my. Application. log](walkthrough-filtering-my-application-log-output.md).  
   
- Pokud je ale protokol nesprávně nakonfigurovaný, možná budete potřebovat další informace o jeho aktuální konfiguraci. K těmto informacím se můžete dostat prostřednictvím vlastnosti Upřesnit `TraceSource` v protokolu.  
+ Pokud je ale protokol nesprávně nakonfigurovaný, možná budete potřebovat další informace o jeho aktuální konfiguraci. K těmto informacím se můžete dostat prostřednictvím vlastnosti Upřesnit v protokolu `TraceSource` .  
   
 ### <a name="to-determine-the-log-listeners-for-the-log-object-in-code"></a>Určení naslouchacího procesu protokolu pro objekt log v kódu  
   
-1. Importujte <xref:System.Diagnostics> obor názvů na začátek souboru kódu. Další informace naleznete v tématu [příkaz Imports (obor názvů a typ rozhraní .NET)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md).  
+1. Importujte <xref:System.Diagnostics> obor názvů na začátek souboru kódu. Další informace naleznete v tématu [příkaz Imports (obor názvů a typ rozhraní .NET)](../../../language-reference/statements/imports-statement-net-namespace-and-type.md).  
   
      [!code-vb[VbVbalrMyApplicationLog#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplicationLog/VB/Form1.vb#13)]  
   
@@ -42,5 +42,5 @@ Pomocí objektů `My.Application.Log` a `My.Log` můžete protokolovat informace
 ## <a name="see-also"></a>Viz také
 
 - <xref:Microsoft.VisualBasic.Logging.Log?displayProperty=nameWithType>
-- [Práce s protokoly aplikací](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)
-- [Návod: Zjištění, kam objekt My.Application.Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)
+- [Práce s protokoly aplikací](working-with-application-logs.md)
+- [Návod: Zjištění, kam objekt My.Application.Log zapisuje informace](walkthrough-determining-where-my-application-log-writes-information.md)

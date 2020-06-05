@@ -7,26 +7,26 @@ f1_keywords:
 helpviewer_keywords:
 - BC30830
 ms.assetid: 4734bc1d-882e-4555-b498-1f1ec0399d16
-ms.openlocfilehash: c7a3e6bcd0db268a0e0acfc74c570e26f89cff6a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a3d243f39f3fc45ca6b1ba0d26892d4c3db56f59
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61921066"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397295"
 ---
 # <a name="line-statements-are-no-longer-supported-visual-basic-compiler-error"></a>Příkazy 'Line' již nejsou podporovány (chyba kompilátoru jazyka Visual Basic).
-Příkazy řádek již nejsou podporovány. I/O soubor funkce je dostupná jako `Microsoft.VisualBasic.FileSystem.LineInput` a grafické funkce jsou k dispozici jako `System.Drawing.Graphics.DrawLine`.  
+Příkazy řádku již nejsou podporovány. Funkce pro vstupně-výstupní operace se soubory jsou k dispozici, protože `Microsoft.VisualBasic.FileSystem.LineInput` funkce grafiky jsou k dispozici jako `System.Drawing.Graphics.DrawLine` .  
   
  **ID chyby:** BC30830  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1. Pokud provádíte přístup k souborům, použijte `Microsoft.VisualBasic.FileSystem.LineInput`.  
+1. Při provádění přístupu k souboru použijte `Microsoft.VisualBasic.FileSystem.LineInput` .  
   
-2. Pokud provádíte grafiky, použijte `System.Drawing.Graphics.Drawline`.  
+2. Při provádění grafiky použijte `System.Drawing.Graphics.Drawline` .  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.IO>
 - <xref:System.Drawing>
-- [Přístup k souborům v jazyce Visual Basic](../../../visual-basic/developing-apps/programming/drives-directories-files/file-access.md)
+- [Přístup k souborům v jazyce Visual Basic](../../developing-apps/programming/drives-directories-files/file-access.md)

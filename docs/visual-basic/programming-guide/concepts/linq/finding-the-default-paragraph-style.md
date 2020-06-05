@@ -2,24 +2,24 @@
 title: Vyhledání výchozího stylu odstavce
 ms.date: 07/20/2015
 ms.assetid: 9d094a4a-ec8c-41b0-b7ab-a3deb2a01d45
-ms.openlocfilehash: c3c92c7ae6f80082265d8516e62118595a341790
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: b70ae72c293d00c4f7b7a2601bfd20b85702b6d5
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353454"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84398074"
 ---
 # <a name="finding-the-default-paragraph-style-visual-basic"></a>Hledání výchozího stylu odstavce (Visual Basic)
 Prvním úkolem při manipulaci s informacemi v WordprocessingML dokumentu je najít výchozí styl odstavců v dokumentu.  
   
 ## <a name="example"></a>Příklad  
   
-### <a name="description"></a>Popis  
- Následující příklad otevře dokument Office Open XML WordprocessingML, vyhledá části dokumentu a stylu a potom spustí dotaz, který najde výchozí název stylu. Informace o balíčcích dokumentů Office Open XML a částech, ze kterých se skládají, najdete v tématu [Podrobnosti o dokumentech Office Open XML WordprocessingML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md).  
+### <a name="description"></a>Description  
+ Následující příklad otevře dokument Office Open XML WordprocessingML, vyhledá části dokumentu a stylu a potom spustí dotaz, který najde výchozí název stylu. Informace o balíčcích dokumentů Office Open XML a částech, ze kterých se skládají, najdete v tématu [Podrobnosti o dokumentech Office Open XML WordprocessingML (Visual Basic)](details-of-office-open-xml-wordprocessingml-documents.md).  
   
- Dotaz vyhledá uzel s názvem `w:style`, který má atribut s názvem `w:type` s hodnotou "Paragraph", a má také atribut s názvem `w:default` s hodnotou "1". Vzhledem k tomu, že bude existovat pouze jeden uzel XML s těmito atributy, dotaz použije operátor <xref:System.Linq.Enumerable.First%2A?displayProperty=nameWithType> k převodu kolekce na typ singleton. Pak získá hodnotu atributu s názvem `w:styleId`.  
+ Dotaz najde uzel s názvem `w:style` , který má atribut s názvem `w:type` s hodnotou "Paragraph", a má také atribut s názvem `w:default` "1". Vzhledem k tomu, že bude existovat pouze jeden uzel XML s těmito atributy, dotaz použije <xref:System.Linq.Enumerable.First%2A?displayProperty=nameWithType> operátor pro převod kolekce na typ singleton. Pak získá hodnotu atributu s názvem `w:styleId` .  
   
- Tento příklad používá třídy ze sestavení WindowsBase. Používá typy v oboru názvů <xref:System.IO.Packaging?displayProperty=nameWithType>.  
+ Tento příklad používá třídy ze sestavení WindowsBase. Používá typy v <xref:System.IO.Packaging?displayProperty=nameWithType> oboru názvů.  
   
 ### <a name="code"></a>Kód  
   
@@ -89,8 +89,8 @@ The default style is: Normal
 ## <a name="next-steps"></a>Další kroky  
  V dalším příkladu vytvoříte podobný dotaz, který najde všechny odstavce v dokumentu a jejich styly:  
   
-- [Načítání odstavců a jejich stylů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/retrieving-the-paragraphs-and-their-styles.md)  
+- [Načítání odstavců a jejich stylů (Visual Basic)](retrieving-the-paragraphs-and-their-styles.md)  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Kurz: manipulace s obsahem v dokumentu WordprocessingML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
+- [Kurz: manipulace s obsahem v dokumentu WordprocessingML (Visual Basic)](tutorial-manipulating-content-in-a-wordprocessingml-document.md)
