@@ -1,18 +1,18 @@
 ---
-title: 'Postupy: zachycení chyb při analýze'
+title: 'Postupy: Zachycení chyb při analýze'
 ms.date: 07/20/2015
 ms.assetid: 22e9068e-ea58-447b-816e-cd1852c11787
-ms.openlocfilehash: 14c4f76c5f10616f9346084cda276e2862b2b41d
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: c0b46d7df270dd6f081a0c736b6978088cfbd9c0
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353347"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84375145"
 ---
 # <a name="how-to-catch-parsing-errors-visual-basic"></a>Postupy: zachycení chyb při analýze (Visual Basic)
 V tomto tématu se dozvíte, jak zjistit chybně vytvořený nebo neplatný kód XML.  
   
- [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] se implementuje pomocí <xref:System.Xml.XmlReader>. Pokud je do [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]předán chybně vytvořený nebo neplatný kód XML, podkladová třída <xref:System.Xml.XmlReader> vyvolá výjimku. Různé metody, které analyzují kód XML, jako je například <xref:System.Xml.Linq.XElement.Parse%2A?displayProperty=nameWithType>, nezachycují výjimku. výjimku lze následně zachytit ve vaší aplikaci.  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]je implementován pomocí <xref:System.Xml.XmlReader> . Pokud je předaný chybně vytvořen nebo je neplatný kód XML [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] , bude podkladová <xref:System.Xml.XmlReader> Třída generovat výjimku. Různé metody, které analyzují kód XML, například <xref:System.Xml.Linq.XElement.Parse%2A?displayProperty=nameWithType> , nezachycují výjimku; výjimku lze následně zachytit v aplikaci.  
   
  Všimněte si, že pokud používáte literály XML, nemůžete získat chyby analýzy. Kompilátor Visual Basic zachytí chyby nesprávně vytvořeného nebo neplatného kódu XML.  
   
@@ -39,8 +39,8 @@ End Try
 The 'Contacts' start tag on line 1 does not match the end tag of 'Contcts'. Line 5, position 13.  
 ```  
   
- Informace o výjimkách, které lze očekávat <xref:System.Xml.Linq.XElement.Parse%2A?displayProperty=nameWithType>, <xref:System.Xml.Linq.XDocument.Parse%2A?displayProperty=nameWithType>, <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=nameWithType>a <xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=nameWithType> metody, naleznete v dokumentaci <xref:System.Xml.XmlReader>.  
+ Informace o výjimkách, které lze očekávat, že <xref:System.Xml.Linq.XElement.Parse%2A?displayProperty=nameWithType> metody,, a mohou <xref:System.Xml.Linq.XDocument.Parse%2A?displayProperty=nameWithType> <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=nameWithType> <xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=nameWithType> být vyvolávat, naleznete v <xref:System.Xml.XmlReader> dokumentaci.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Analýza kódu XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md)
+- [Analýza kódu XML (Visual Basic)](parsing-xml.md)

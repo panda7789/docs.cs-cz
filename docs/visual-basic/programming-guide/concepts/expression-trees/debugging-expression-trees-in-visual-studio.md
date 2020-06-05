@@ -2,12 +2,12 @@
 title: Ladění stromů výrazů v sadě Visual Studio
 ms.date: 07/20/2015
 ms.assetid: 492cc28f-b7a2-4c47-b582-b3c437b8a5d5
-ms.openlocfilehash: 287f3096a1af8b9fa42d252c5240d7caefa6bac8
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 3811958353d1d55ce74da41c6a45dbe730cc9790
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616892"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84375431"
 ---
 # <a name="debugging-expression-trees-in-visual-studio-visual-basic"></a>Ladění stromů výrazů v aplikaci Visual Studio (Visual Basic)
 Při ladění aplikací můžete analyzovat strukturu a obsah stromů výrazů. Chcete-li získat rychlý přehled stromové struktury výrazu, můžete použít `DebugView` vlastnost, která představuje stromy výrazů [pomocí speciální syntaxe](debugview-syntax.md). (Všimněte si, že `DebugView` je k dispozici pouze v režimu ladění.)  
@@ -40,7 +40,7 @@ Alternativně můžete nainstalovat a používat [vlastní Vizualizér](https://
 
 ## <a name="see-also"></a>Viz také
 
-- [Stromy výrazů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/index.md)
+- [Stromy výrazů (Visual Basic)](index.md)
 - [Ladění v sadě Visual Studio](/visualstudio/debugger/debugger-feature-tour)
 - [Vytváření vlastních vizualizérů](/visualstudio/debugger/create-custom-visualizers-of-data)
 - [`DebugView`syntaktick](debugview-syntax.md)

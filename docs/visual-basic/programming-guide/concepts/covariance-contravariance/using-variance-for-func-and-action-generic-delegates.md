@@ -2,22 +2,22 @@
 title: Použití odchylek pro obecné delegáty Func a Action
 ms.date: 07/20/2015
 ms.assetid: 36c3012f-b39c-493b-b90f-079b5912ac1b
-ms.openlocfilehash: 2678abd03f55224720d00509dc44f2db16551193
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: f824d2422d67f1395d21a0863ca8c95d9f108989
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74349037"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84375755"
 ---
 # <a name="using-variance-for-func-and-action-generic-delegates-visual-basic"></a>Použití odchylky pro obecné delegáty Func a Action (Visual Basic)
 
-Tyto příklady ukazují, jak použít kovarianci a kontravariance v `Func` a `Action` generických delegátů pro povolení opakovaného použití metod a zajištění větší flexibility v kódu.
+Tyto příklady ukazují, jak použít kovarianci a kontravariance v `Func` `Action` obecných delegátech a umožnit opakované použití metod a zajištění větší flexibility v kódu.
 
-Další informace o kovarianci a kontravariance naleznete v tématu [Variance v delegátech (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md).
+Další informace o kovarianci a kontravariance naleznete v tématu [Variance v delegátech (Visual Basic)](variance-in-delegates.md).
 
 ## <a name="using-delegates-with-covariant-type-parameters"></a>Použití delegátů s parametry kovariantního typu
 
-Následující příklad ukazuje výhody kovariance v obecných `Func` delegáty. Metoda `FindByTitle` přebírá parametr typu `String` a vrátí objekt typu `Employee`. Tuto metodu však můžete přiřadit delegátovi `Func(Of String, Person)`, protože `Employee` dědí `Person`.
+Následující příklad znázorňuje výhody kovariance v obecných `Func` delegátech. `FindByTitle`Metoda přebírá parametr `String` typu a vrací objekt `Employee` typu. Tuto metodu však můžete přiřadit `Func(Of String, Person)` delegátovi, protože `Employee` dědí `Person` .
 
 ```vb
 ' Simple hierarchy of classes.
@@ -56,7 +56,7 @@ End Class
 
 ## <a name="using-delegates-with-contravariant-type-parameters"></a>Použití delegátů s kontravariantními parametry typu
 
-Následující příklad znázorňuje výhody podpory aplikace kontravariance v obecných `Action` delegáty. Metoda `AddToContacts` přebírá parametr typu `Person`. Tuto metodu však můžete přiřadit delegátovi `Action(Of Employee)`, protože `Employee` dědí `Person`.
+Následující příklad znázorňuje výhody podpory aplikace kontravariance v obecných `Action` delegátech. `AddToContacts`Metoda přebírá parametr `Person` typu. Tuto metodu však můžete přiřadit `Action(Of Employee)` delegátovi, protože `Employee` dědí `Person` .
 
 ```vb
 Public Class Person
@@ -92,7 +92,7 @@ Class AddressBook
 End Class
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Kovariance a kontravariance (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/index.md)
+- [Kovariance a kontravariance (Visual Basic)](index.md)
 - [Obecné typy](../../../../standard/generics/index.md)

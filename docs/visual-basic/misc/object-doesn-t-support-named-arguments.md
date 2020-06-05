@@ -1,23 +1,23 @@
 ---
-title: Objekt nepodporuje pojmenované argumenty
+title: Objekt nepodporuje pojmenované argumenty.
 ms.date: 07/20/2015
 f1_keywords:
 - vbrID446
 ms.assetid: f4812db8-e85d-4d5b-b7c9-d54a1f850034
-ms.openlocfilehash: 39940e23f210ecf96f96ae69adea22a57ac11268
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 79ebc638912b218881fd653c5c30b370d3b1b829
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64591817"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84376131"
 ---
-# <a name="object-doesnt-support-named-arguments"></a>Objekt nepodporuje pojmenované argumenty
-Pokusili jste se přístup k objektu, jejíž metody nepodporují pojmenované argumenty.  
+# <a name="object-doesnt-support-named-arguments"></a>Objekt nepodporuje pojmenované argumenty.
+Pokusili jste se získat přístup k objektu, jehož metody nepodporují pojmenované argumenty.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-- Zadejte argumenty polohách při přístupu k metody pro tento objekt. Dokumentaci k objektu pro další informace na argument pozice a typy.  
+- Určete argumenty při přístupu k metodám tohoto objektu. Další informace o pozicích a typech argumentů naleznete v dokumentaci objektu.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Typy chyb](../../visual-basic/programming-guide/language-features/error-types.md)
+- [Typy chyb](../programming-guide/language-features/error-types.md)
