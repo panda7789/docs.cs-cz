@@ -8,12 +8,12 @@ helpviewer_keywords:
 - AddressOf operator [Visual Basic]
 - addresses, passing to API procedures
 ms.assetid: 8105a59d-60d8-4ab5-b221-5899cdfacbf4
-ms.openlocfilehash: e88520bd7e731a35b98c1d40c5210dc5d1314911
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 3e7db8e7329ce8d21b6e07863e6f1673a6389608
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74350273"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84372061"
 ---
 # <a name="addressof-operator-visual-basic"></a>AddressOf – operátor (Visual Basic)
 Vytvoří instanci delegáta, která odkazuje na konkrétní proceduru.  
@@ -26,26 +26,26 @@ AddressOf procedurename
   
 ## <a name="parts"></a>Součásti  
  `procedurename`  
- Požadováno. Určuje proceduru, na kterou má nově vytvořený delegát odkazovat.  
+ Povinná hodnota. Určuje proceduru, na kterou má nově vytvořený delegát odkazovat.  
   
 ## <a name="remarks"></a>Poznámky  
- Operátor `AddressOf` vytvoří delegáta, který odkazuje na sub nebo funkci určenou parametrem `procedurename`. Pokud je zadaná procedura metodou instance, pak delegát odkazuje na instanci i na metodu. Poté, když je vyvolán delegát, je volána zadaná metoda zadané instance.  
+ `AddressOf`Operátor vytvoří delegáta, který odkazuje na proceduru nebo funkci určenou parametrem `procedurename` . Pokud je zadaná procedura metodou instance, pak delegát odkazuje na instanci i na metodu. Poté, když je vyvolán delegát, je volána zadaná metoda zadané instance.  
   
- Operátor `AddressOf` lze použít jako operand konstruktoru delegáta nebo jej lze použít v kontextu, ve kterém lze určit typ delegáta kompilátorem.  
+ `AddressOf`Operátor lze použít jako operand konstruktoru delegáta nebo jej lze použít v kontextu, ve kterém lze určit typ delegáta kompilátorem.  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu se používá operátor `AddressOf` k určení delegáta pro zpracování události `Click` tlačítka.  
+ Tento příklad používá `AddressOf` operátor k určení delegáta pro zpracování `Click` události tlačítka.  
   
  [!code-vb[VbVbalrDelegates#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDelegates/VB/Class1.vb#8)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá operátor `AddressOf` k určení spouštěcí funkce pro vlákno.  
+ Následující příklad používá `AddressOf` operátor k určení spouštěcí funkce pro vlákno.  
   
  [!code-vb[VbVbalrDelegates#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDelegates/VB/Class1.vb#9)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Příkaz Declare](../../../visual-basic/language-reference/statements/declare-statement.md)
-- [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)
-- [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)
-- [Delegáti](../../../visual-basic/programming-guide/language-features/delegates/index.md)
+- [Declare – příkaz](../statements/declare-statement.md)
+- [Function – příkaz](../statements/function-statement.md)
+- [Sub – příkaz](../statements/sub-statement.md)
+- [Delegáti](../../programming-guide/language-features/delegates/index.md)

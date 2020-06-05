@@ -7,26 +7,26 @@ f1_keywords:
 helpviewer_keywords:
 - BC30941
 ms.assetid: 7054cc1e-bac3-4c3d-82f3-35772bd8dd3b
-ms.openlocfilehash: 4ce24073896326bb5a68e563e2d34aafa09ef1c1
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 7b5bda7b1a2ae37eb509c736deae1652dc5e6ab0
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64593208"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84374015"
 ---
-# <a name="structure-structurename-must-contain-at-least-one-instance-member-variable-or-at-least-one-instance-event-declaration-not-marked-custom"></a>Struktura '\<%{structurename/ >' musí obsahovat alespoň jednu členskou proměnnou instance nebo alespoň jednu deklaraci události instance není označena jako 'Custom'
-Definice struktury neobsahuje žádné nesdílených proměnných nebo nesdílené nevlastních událostí.  
+# <a name="structure-structurename-must-contain-at-least-one-instance-member-variable-or-at-least-one-instance-event-declaration-not-marked-custom"></a>Struktura '\<structurename>' musí obsahovat alespoň jednu členskou proměnnou instance nebo alespoň jednu deklaraci události instance, která není označena jako 'Custom'.
+Definice struktury neobsahuje žádné nesdílené proměnné ani nesdílené nesdílené události.  
   
- Každý struktura musí mít proměnná nebo událost, která se vztahuje na každý konkrétní instanci místo (nesdílené) do všech instancí souhrnně ([Shared](../../../visual-basic/language-reference/modifiers/shared.md)). Tento požadavek nesplňují nesdílené konstanty, vlastnosti a postupy. Kromě toho, pokud neexistují žádné nesdílených proměnných a jenom jedna událost nesdílené, tuto událost nemůže být `Custom` událostí.  
+ Každá struktura musí mít buď proměnnou, nebo událost, která se vztahuje na jednotlivé konkrétní instance (nesdílené) místo na všechny instance souhrnně ([sdílené](../modifiers/shared.md)). Nesdílené konstanty, vlastnosti a procedury nesplňují tento požadavek. Kromě toho, pokud nejsou žádné nesdílené proměnné a jenom jedna nesdílená událost, tato událost nemůže být `Custom` událost.  
   
  **ID chyby:** BC30941  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-- Definujte alespoň jednu proměnnou nebo událostí, které nejsou `Shared`. Pokud definujete jen jednu událost, musí být nevlastní, jakož i nesdílené.  
+- Definujte alespoň jednu proměnnou nebo událost, která není `Shared` . Pokud definujete jenom jednu událost, musí být nevlastní i nesdílená.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Struktury](../../../visual-basic/programming-guide/language-features/data-types/structures.md)
-- [Postupy: Deklarace struktury](../../../visual-basic/programming-guide/language-features/data-types/how-to-declare-a-structure.md)
-- [Příkaz Structure](../../../visual-basic/language-reference/statements/structure-statement.md)
+- [Struktury](../../programming-guide/language-features/data-types/structures.md)
+- [Postupy: Deklarace struktury](../../programming-guide/language-features/data-types/how-to-declare-a-structure.md)
+- [Structure – příkaz](../statements/structure-statement.md)
