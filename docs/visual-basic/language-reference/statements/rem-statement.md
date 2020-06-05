@@ -13,12 +13,12 @@ helpviewer_keywords:
 - Visual Basic code, comments
 - "' comment marker character [Visual Basic]"
 ms.assetid: 34126d7f-e0f9-476d-91e6-b31b398615dc
-ms.openlocfilehash: bdde4beae242c3175b02cd2af252babb850416f6
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 68c898145bd8845c657b6ebb8776a3a9027c359c
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74346733"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84404262"
 ---
 # <a name="rem-statement-visual-basic"></a>REM – příkaz (Visual Basic)
 Slouží k zahrnutí vysvětlujících poznámek do zdrojového kódu programu.  
@@ -32,22 +32,22 @@ REM comment
   
 ## <a name="parts"></a>Součásti  
  `comment`  
- Volitelná. Text libovolného komentáře, který chcete zahrnout. Mezi klíčovým slovem `REM` a `comment`se vyžaduje mezera.  
+ Nepovinný parametr. Text libovolného komentáře, který chcete zahrnout. Mezi `REM` klíčovým slovem and se vyžaduje mezera `comment` .  
   
 ## <a name="remarks"></a>Poznámky  
- Příkaz `REM` můžete umístit na řádek, nebo ho můžete umístit na řádek za jiným příkazem. Příkaz `REM` musí být poslední příkaz na řádku. Pokud se tento příkaz řídí jiným příkazem, `REM` musí být od tohoto příkazu oddělen mezerou.  
+ Příkaz můžete umístit `REM` samostatně na řádek nebo ho můžete umístit na řádek za jiným příkazem. `REM`Příkaz musí být poslední příkaz na řádku. Pokud má jiný příkaz, `REM` musí být oddělen od tohoto příkazu mezerou.  
   
- Místo `REM`můžete použít jednoduchou uvozovku (`'`). To platí bez ohledu na to, jestli váš komentář následuje za jiným příkazem na stejném řádku, nebo se nachází na řádku samostatně.  
+ Místo příkazu můžete použít jednoduchou uvozovku ( `'` ) `REM` . To platí bez ohledu na to, jestli váš komentář následuje za jiným příkazem na stejném řádku, nebo se nachází na řádku samostatně.  
   
 > [!NOTE]
-> Příkaz `REM` nelze pokračovat pomocí posloupnosti pokračování řádku (`_`). Po zahájení komentáře kompilátor neověřuje znaky pro zvláštní význam. Pro Víceřádkový komentář použijte jiný příkaz `REM` nebo symbol komentáře (`'`) na každém řádku.  
+> Nelze pokračovat `REM` příkazem pomocí sekvence řádků pokračování řádku ( `_` ). Po zahájení komentáře kompilátor neověřuje znaky pro zvláštní význam. Pro Víceřádkový komentář použijte jiný `REM` příkaz nebo symbol komentáře ( `'` ) na každém řádku.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad znázorňuje příkaz `REM`, který se používá k zahrnutí vysvětlujících poznámek do programu. Také ukazuje alternativu použití jednoduchého znaku pro uvozovky (`'`) místo `REM`.  
+ Následující příklad ukazuje `REM` příkaz, který se používá k zahrnutí vysvětlujících poznámek do programu. Také ukazuje alternativu použití jednoduchého znaku uvozovek ( `'` ) místo `REM` .  
   
  [!code-vb[VbVbalrStatements#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#6)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Komentáře v kódu](../../../visual-basic/programming-guide/program-structure/comments-in-code.md)
-- [Postupy: Přerušení a kombinace příkazů v kódu](../../../visual-basic/programming-guide/program-structure/how-to-break-and-combine-statements-in-code.md)
+- [Komentáře v kódu](../../programming-guide/program-structure/comments-in-code.md)
+- [Postupy: Přerušení a kombinování příkazů v kódu](../../programming-guide/program-structure/how-to-break-and-combine-statements-in-code.md)
