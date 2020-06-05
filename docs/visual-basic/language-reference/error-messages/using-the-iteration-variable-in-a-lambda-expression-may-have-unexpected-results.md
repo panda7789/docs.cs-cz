@@ -7,17 +7,17 @@ f1_keywords:
 helpviewer_keywords:
 - BC42324
 ms.assetid: b5c2c4bd-3b2a-4a73-aaeb-55728eb03b68
-ms.openlocfilehash: 3335da503b6fb9c33e44266997cc945214a3a365
-ms.sourcegitcommit: e08b319358a8025cc6aa38737854f7bdb87183d6
+ms.openlocfilehash: aa3e1d6281af22b301a4697b265ed3fbf23e3de4
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64913090"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84373911"
 ---
 # <a name="using-the-iteration-variable-in-a-lambda-expression-may-have-unexpected-results"></a>Použití proměnné iterace ve výrazu lambda může mít neočekávané důsledky.
-Použití proměnné iterace ve výrazu lambda může mít neočekávané výsledky. Místo toho vytvořte v cyklu lokální proměnnou a přiřaďte jí hodnotu proměnné iterace.  
+Použití proměnné iterace ve výrazu lambda může mít neočekávané výsledky. Místo toho vytvořte v rámci smyčky místní proměnnou a přiřaďte jí hodnotu proměnné iterace.  
   
- Toto upozornění se zobrazí při použití proměnné iterace smyčky ve výrazu lambda, který je deklarován uvnitř smyčky. Například následující příklad způsobí upozornění se zobrazí.  
+ Toto upozornění se zobrazí, pokud použijete proměnnou iterace smyčky ve výrazu lambda, který je deklarován uvnitř smyčky. Například následující příklad způsobí, že se zobrazí upozornění.  
   
 ```vb  
 For i As Integer = 1 To 10  
@@ -45,7 +45,7 @@ Module Module1
 End Module  
 ```  
   
- `For` Smyčky je vytvořeno pole výrazů lambda, z nichž každý vrátí hodnotu proměnné iterace smyčky `i`. Když jsou lambda výrazy vyhodnocovány v `For Each` smyčky, můžete očekávat, že naleznete v tématu 0, 1, 2, 3 a 4 zobrazí po sobě jdoucích hodnot `i` v `For` smyčky. Místo toho uvidíte konečná hodnota `i` zobrazí pětkrát:  
+ `For`Smyčka vytvoří pole výrazů lambda, z nichž každá vrátí hodnotu proměnné iterace smyčky `i` . Pokud jsou výrazy lambda vyhodnocovány ve `For Each` smyčce, možná očekáváte, že se zobrazí 0, 1, 2, 3 a 4, po sobě jdoucí hodnoty `i` ve `For` smyčce. Místo toho se zobrazí poslední `i` zobrazená hodnota pětkrát:  
   
  `5`  
   
@@ -57,13 +57,13 @@ End Module
   
  `5`  
   
- Ve výchozím nastavení tato zpráva je upozornění. Další informace o zobrazení nebo skrytí upozornění zpracování upozornění jako chyby, najdete v části [Konfigurace upozornění v jazyce Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic).  
+ Ve výchozím nastavení je tato zpráva upozornění. Další informace o skrývání upozornění nebo zpracování upozornění jako chyb najdete v tématu [Konfigurace upozornění v Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic).  
   
  **ID chyby:** BC42324  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-- Přiřadit hodnotu proměnné iterace na místní proměnnou a použijte místní proměnnou ve výrazu lambda.  
+- Přiřaďte hodnotu proměnné iterace místní proměnné a použijte místní proměnnou ve výrazu lambda.  
   
 ```vb  
 Module Module1  
@@ -83,6 +83,6 @@ Module Module1
 End Module  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Výrazy lambda](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)
+- [Výrazy lambda](../../programming-guide/language-features/procedures/lambda-expressions.md)

@@ -1,25 +1,25 @@
 ---
-title: Zařízení není k dispozici
+title: Nedostupné zařízení
 ms.date: 07/20/2015
 f1_keywords:
 - vbrID68
 ms.assetid: 9a89beda-140e-4b32-8d0a-2dc598ef279a
-ms.openlocfilehash: 2738ce692f5eb2df433cd5cb1a5e1ae4a5968cab
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d1c31af1df65855d3632e64983314767f76c9375
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61970076"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84394788"
 ---
-# <a name="device-unavailable"></a>Zařízení není k dispozici
-Ztratili jste připojení k síti, nebo, který se pokoušíte získat přístup k zařízení je offline nebo neexistuje.  
+# <a name="device-unavailable"></a>Nedostupné zařízení
+Buď jste ztratili připojení k síti, nebo zařízení, ke kterému se pokoušíte získat přístup, je offline nebo neexistuje.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1. Zkontrolujte zařízení a kabely připojení počítače k zařízení. Pokud se pokoušíte získat přístup k tiskárně přes síť, ujistěte se, že je logické propojení mezi vaším počítačem a tiskárny, třeba připojení LPT1 přidružení ID síťové tiskárny.  
+1. Ověřte napájení zařízení a všech kabelů připojujících počítač k zařízení. Pokud se pokoušíte o přístup k tiskárně přes síť, ujistěte se, že mezi počítačem a tiskárnou existuje logické připojení, například připojení k portu LPT1 s ID síťové tiskárny.  
   
-2. Připojení k síti a zkuste to znovu.  
+2. Znovu se připojte k síti a zkuste to znovu.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Typy chyb](../../visual-basic/programming-guide/language-features/error-types.md)
+- [Typy chyb](../programming-guide/language-features/error-types.md)
