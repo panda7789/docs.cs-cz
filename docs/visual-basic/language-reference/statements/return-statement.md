@@ -9,15 +9,15 @@ helpviewer_keywords:
 - Return statement [Visual Basic]
 - expressions [Visual Basic], returning control to
 ms.assetid: ac86e7f0-5a67-42c3-9834-0e0381efa3ec
-ms.openlocfilehash: efc85a3a844898345aa2d16926ba0e35d7346d1b
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: cdb58e32c30c8e6c1662fb698ac5576c3f71258c
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74333018"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84404197"
 ---
 # <a name="return-statement-visual-basic"></a>Return – příkaz (Visual Basic)
-Vrátí řízení kódu, který se nazývá `Function`, `Sub`, `Get`, `Set`nebo `Operator` procedury.  
+Vrátí řízení kódu, který se nazývá `Function` procedura,,, `Sub` `Get` `Set` nebo `Operator` .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -27,32 +27,32 @@ Return
 Return expression  
 ```  
   
-## <a name="part"></a>Částí  
+## <a name="part"></a>Část  
  `expression`  
- Vyžaduje se v `Function`, `Get`nebo `Operator` postupu. Výraz, který představuje hodnotu, která má být vrácena volajícímu kódu.  
+ Vyžadováno v `Function` proceduře, `Get` nebo `Operator` . Výraz, který představuje hodnotu, která má být vrácena volajícímu kódu.  
   
 ## <a name="remarks"></a>Poznámky  
- V proceduře `Sub` nebo `Set` je příkaz `Return` ekvivalentem `Exit Sub` nebo příkazu `Exit Property` a `expression` nesmí být dodán.  
+ V `Sub` proceduře nebo `Set` `Return` je příkaz ekvivalentní `Exit Sub` `Exit Property` příkazu nebo a `expression` nesmí být dodán.  
   
- V `Function`, `Get`nebo `Operator`, musí příkaz `Return` zahrnovat `expression`a `expression` musí vyhodnotit na datový typ, který lze převést na návratový typ procedury. V proceduře `Function` nebo `Get` máte také alternativu k názvu procedury, která bude sloužit jako návratová hodnota, a následným spuštěním příkazu `Exit Function` nebo `Exit Property`. V `Operator` proceduře je nutné použít `Return expression`.  
+ V `Function` proceduře, `Get` nebo `Operator` `Return` musí příkaz obsahovat `expression` a `expression` musí vyhodnotit na datový typ, který lze převést na návratový typ procedury. V `Function` proceduře nebo máte `Get` také alternativu k názvu procedury, která má sloužit jako návratová hodnota, a poté provedení `Exit Function` `Exit Property` příkazu nebo. V `Operator` proceduře je nutné použít `Return expression` .  
   
- Stejným postupem můžete zahrnout tolik `Return` příkazů.  
+ Stejný postup můžete použít jako `Return` vhodný počet příkazů.  
   
 > [!NOTE]
-> Kód v `Finally`ovém bloku se spustí po zjištění `Return` v `Try` nebo `Catch` bloku, ale před tím, než se spustí příkaz `Return`. Příkaz `Return` nelze zahrnout do bloku `Finally`.  
+> Kód v bloku se `Finally` spustí po `Return` zjištění příkazu v `Try` `Catch` bloku nebo, ale před spuštěním tohoto `Return` příkazu. `Return`Příkaz nelze zahrnout do `Finally` bloku.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá příkaz `Return` několikrát pro návrat k volajícímu kódu, když procedura nemusí dělat něco jiného.  
+ Následující příklad používá `Return` příkaz několikrát pro návrat na volající kód v případě, že procedura nemusí dělat cokoli jiného.  
   
  [!code-vb[VbVbalrStatements#53](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#53)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)
-- [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)
-- [Příkaz Get](../../../visual-basic/language-reference/statements/get-statement.md)
-- [Příkaz Set](../../../visual-basic/language-reference/statements/set-statement.md)
-- [Příkaz Operator](../../../visual-basic/language-reference/statements/operator-statement.md)
-- [Příkaz Property](../../../visual-basic/language-reference/statements/property-statement.md)
-- [Příkaz Exit](../../../visual-basic/language-reference/statements/exit-statement.md)
-- [Příkaz Try...Catch...Finally](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)
+- [Function – příkaz](function-statement.md)
+- [Sub – příkaz](sub-statement.md)
+- [Get – příkaz](get-statement.md)
+- [Set – příkaz](set-statement.md)
+- [Operator – příkaz](operator-statement.md)
+- [Property – příkaz](property-statement.md)
+- [Exit – příkaz](exit-statement.md)
+- [Try...Catch....Finally – příkaz](try-catch-finally-statement.md)

@@ -9,20 +9,20 @@ helpviewer_keywords:
 - <specifiedPickupDirectory> element
 ms.assetid: 0121f49d-bff2-4bc6-af06-f1628dcd61f1
 ms.openlocfilehash: 4b0cbaf9a7bfe2a9b1610811f4201253d219a6b2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: 0a798a7e9680e2d0a5a81a3eaa203870ea782883
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/03/2020
 ms.locfileid: "79154605"
 ---
-# <a name="specifiedpickupdirectory-element-network-settings"></a>\<specifiedPickupDirectory> Element (Nastavení sítě)
-Konfiguruje místní adresář serveru SMTP (SMTP) protokolu SMTP (SMTP).  
+# <a name="specifiedpickupdirectory-element-network-settings"></a>\<specifiedPickupDirectory> – element (nastavení sítě)
+Nakonfiguruje místní adresář pro server SMTP (Simple Mail Transport Protocol).  
   
-[**\<>konfigurace**](../configuration-element.md)\
+[**\<configuration>**](../configuration-element.md)\
 &nbsp;&nbsp;[**\<system.net>**](system-net-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[**\<mailNastavení>**](mailsettings-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<mailSettings>**](mailsettings-element-network-settings.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<smtp>**](smtp-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<specifikovaný>služby PickupDirectory**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<specifiedPickupDirectory>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,24 +37,24 @@ Konfiguruje místní adresář serveru SMTP (SMTP) protokolu SMTP (SMTP).
   
 ### <a name="attributes"></a>Atributy  
   
-|Atribut|Popis|  
+|Atribut|Description|  
 |---------------|-----------------|  
-|`pickupDirectoryLocation`|Adresář, do kterého aplikace ukládají e-maily pro pozdější zpracování serverem SMTP.|  
+|`pickupDirectoryLocation`|Adresář, ve kterém aplikace ukládají e-mail pro pozdější zpracování serverem SMTP.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádné.  
+ Žádné  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Element|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
-|[\<smtp> Element (Nastavení sítě)](smtp-element-network-settings.md)|Konfiguruje možnosti odesílání pošty protokolu SMTP (SMTP) protokolu SMTP.|  
+|[\<smtp>– Element (nastavení sítě)](smtp-element-network-settings.md)|Konfiguruje možnosti odesílání pošty SMTP (Simple Mail Transport Protocol).|  
   
 ## <a name="remarks"></a>Poznámky  
- Atribut `specifiedPickupDirectory` nastaví adresář, do kterého aplikace ukládají poštovní zprávy, které mají být zpracovány serverem SMTP.  
+ `specifiedPickupDirectory`Atribut nastavuje adresář, ve kterém aplikace ukládají e-mailové zprávy, které server SMTP zpracuje.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad určuje c:\maildrop jako adresář vyzvednutí pošty.  
+ Následující příklad určuje c:\maildrop jako předávací adresář pošty.  
   
 ```xml  
 <configuration>  

@@ -7,39 +7,39 @@ helpviewer_keywords:
 - Byte data type
 - data types [Visual Basic], assigning
 ms.assetid: eed44dff-eaee-4937-a89f-444e418e74f6
-ms.openlocfilehash: 347d7e7d0f09e089886bc81bd0be659deaca9b46
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 97acd1bc2ff29bac6588216b9ee4a4f187078815
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79400741"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84374314"
 ---
-# <a name="byte-data-type-visual-basic"></a>Datový typ bajtů (Visual Basic)
+# <a name="byte-data-type-visual-basic"></a>Byte – datový typ (Visual Basic)
 
-Obsahuje nepodepsaná 8bitová (1bajtová) celá čísla, která se pohybují v hodnotě od 0 do 255.
+Obsahuje nepodepsaná 8bitové (1 bajt) celá čísla, která mají rozsah hodnot od 0 do 255.
 
 ## <a name="remarks"></a>Poznámky
 
-Pomocí `Byte` datového typu můžete obsahovat binární data.  
+`Byte`Datový typ použijte k zahrnutí binárních dat.  
   
 Výchozí hodnota `Byte` je 0.
 
-## <a name="literal-assignments"></a>Doslovná přiřazení
+## <a name="literal-assignments"></a>Přiřazení literálů
 
-Proměnnou `Byte` můžete deklarovat a inicializovat přiřazením desetinného literálu, šestnáctkového literálu, osmičkového literálu nebo (počínaje jazykem Visual Basic 2017) binárníliterál. Pokud integrální literál `Byte` je mimo rozsah (to <xref:System.Byte.MinValue?displayProperty=nameWithType> znamená, <xref:System.Byte.MaxValue?displayProperty=nameWithType>pokud je menší nebo větší než ) dojde k chybě kompilace.
+Můžete deklarovat a inicializovat `Byte` proměnnou přiřazením desítkového literálu, šestnáctkového literálu, osmičkového literálu nebo (začínajícího Visual Basic 2017) binárního literálu. Pokud je celočíselný literál mimo rozsah a `Byte` (tj. Pokud je menší <xref:System.Byte.MinValue?displayProperty=nameWithType> nebo větší než <xref:System.Byte.MaxValue?displayProperty=nameWithType> ), dojde k chybě kompilace.
 
-V následujícím příkladu jsou celá čísla rovna 201, která jsou reprezentována jako desetinné, šestnáctkové a binární literály, implicitně převedeny z [Integer](integer-data-type.md) na `byte` hodnoty.
+V následujícím příkladu jsou celá čísla rovnající se 201, která jsou reprezentována jako Desítková, šestnáctková a binární literála, implicitně převedena z [celého čísla](integer-data-type.md) na `byte` hodnoty.
 
 [!code-vb[Byte](../../../../samples/snippets/visualbasic/language-reference/data-types/numeric-literals.vb#Byte)]
 
 > [!NOTE]
-> Předponu nebo `&h` `&H` k označení šestnáctkového `&b` literálu, předpony nebo `&B` k označení binárního literálu `&o` a `&O` předpony nebo k označení osmičkového literálu. Desetinné literály nemají předponu.
+> Použijte předponu `&h` nebo `&H` k označení šestnáctkového literálu, předpony `&b` nebo `&B` označení binárního literálu a předpony `&o` nebo `&O` k označení osmičkového literálu. Desítkové literály nemají žádnou předponu.
 
-Počínaje visual basicem 2017, můžete také `_`použít znak podtržítko , jako oddělovač číslic pro zvýšení čitelnosti, jak ukazuje následující příklad.
+Počínaje Visual Basic 2017 můžete také použít znak podtržítka, `_` jako oddělovač číslic pro zlepšení čitelnosti, jak ukazuje následující příklad.
 
 [!code-vb[Byte](../../../../samples/snippets/visualbasic/language-reference/data-types/numeric-literals.vb#ByteS)]  
 
-Počínaje jazykem Visual Basic 15.5 můžete také`_`použít znak podtržítka ( ) jako úvodní oddělovač mezi předponou a šestnáctkovými, binárními nebo osmičkovými číslicemi. Například:
+Počínaje Visual Basic 15,5 můžete také použít znak podtržítka ( `_` ) jako úvodní oddělovač mezi předponou a šestnáctkovou, binární nebo osmičkovou číslicí. Příklad:
 
 ```vb
 Dim number As Byte = &H_6A
@@ -49,26 +49,26 @@ Dim number As Byte = &H_6A
 
 ## <a name="programming-tips"></a>Tipy k programování
 
-- **Záporná čísla.** Protože `Byte` je nepodepsaný typ, nemůže představovat záporné číslo. Pokud použijete unární`-`minus ( ) operátor pro `Byte`výraz, který je vyhodnocen na typ , Visual Basic převede výraz na `Short` první.
+- **Záporná čísla.** Protože `Byte` je typ bez znaménka, nemůže představovat záporné číslo. Použijete-li unární operátor mínus ( `-` ) u výrazu, který je vyhodnocen jako typ `Byte` , Visual Basic výraz převede na `Short` první.
   
-- **Převody formátu.** Při čtení nebo zápisu souborů v jazyce Visual Basic nebo při volání knihoven DLL, metod a vlastností může automaticky převést mezi formáty dat. Binární data `Byte` uložená v proměnných a polích jsou zachována během těchto převodů formátu. Pro binární data `String` byste neměli používat proměnnou, protože její obsah může být poškozen během převodu mezi formáty ANSI a Unicode.
+- **Převody formátu.** Když Visual Basic čte nebo zapisuje soubory nebo když volá knihovny DLL, metody a vlastnosti, může automaticky převádět mezi formáty dat. Binární data uložená v `Byte` proměnných a polích jsou během těchto převodů formátu zachovaná. `String`Pro binární data byste neměli používat proměnnou, protože její obsah může být během konverze mezi formáty ANSI a Unicode poškozen.
 
-- **Rozšíření.** Datový `Byte` typ se `Short`rozšiřuje `UShort` `Integer`na `UInteger` `Long`, `ULong` `Decimal`, `Single`, `Double`, , , , , , nebo . To znamená, `Byte` že můžete převést na <xref:System.OverflowException?displayProperty=nameWithType> některý z těchto typů bez výskytu chyby.
+- **Rozšiřující.** `Byte`Datový typ se rozšíří na `Short` ,, `UShort` , `Integer` `UInteger` , `Long` , `ULong` , `Decimal` , `Single` nebo `Double` . To znamená, že můžete převést `Byte` na některý z těchto typů bez výskytu <xref:System.OverflowException?displayProperty=nameWithType> chyby.
   
-- **Zadejte znaky.** `Byte`nemá žádný znak literálu typu nebo znak typu identifikátoru.
+- **Znaky typu.** `Byte`nemá žádný znak typu literálu nebo znak typu identifikátoru.
 
-- **Typ rámce.** Odpovídající typ v rozhraní .NET <xref:System.Byte?displayProperty=nameWithType> Framework je struktura.
+- **Typ rozhraní.** Odpovídající typ v .NET Framework je <xref:System.Byte?displayProperty=nameWithType> Struktura.
 
 ## <a name="example"></a>Příklad
 
- V následujícím příkladu `b` `Byte` je proměnná. Příkazy ukazují rozsah proměnné a použití operátorů bitového posunu na něj.
+ V následujícím příkladu `b` je `Byte` Proměnná. Příkazy ukazují rozsah proměnné a aplikaci operátorů bitových posunutí na ni.
 
  [!code-vb[VbVbalrDataTypes#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDataTypes/VB/Class1.vb#16)]  
 
 ## <a name="see-also"></a>Viz také
 
 - <xref:System.Byte?displayProperty=nameWithType>
-- [Datové typy](../../../visual-basic/language-reference/data-types/index.md)
-- [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)
-- [Souhrn převodu](../../../visual-basic/language-reference/keywords/conversion-summary.md)
-- [Účinné používání datových typů](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)
+- [Datové typy](index.md)
+- [Funkce pro převod typů](../functions/type-conversion-functions.md)
+- [Souhrn převodu](../keywords/conversion-summary.md)
+- [Účinné používání datových typů](../../programming-guide/language-features/data-types/efficient-use-of-data-types.md)
