@@ -1,24 +1,24 @@
 ---
-title: Pro typ se nenašly žádné výchozí člen '<typename>'.
+title: Pro typ nebyl nalezen žádný výchozí člen <typename> .
 ms.date: 07/20/2015
 f1_keywords:
 - vbrMissingMember_NoDefaultMemberFound1
 ms.assetid: 1869ecb8-7c6a-422f-86ac-5da96c6adc66
-ms.openlocfilehash: 8f98ccca39fb3489094a9f3c7d219d7a4887f0c0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 41e1ee1c9607fc6bde5cf5981c4b8c776888e018
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61944947"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84376560"
 ---
-# <a name="no-default-member-found-for-type-typename"></a><span data-ttu-id="e2423-102">Pro typ se nenašly žádné výchozí člen '\<typename >'</span><span class="sxs-lookup"><span data-stu-id="e2423-102">No default member found for type '\<typename>'</span></span>
-<span data-ttu-id="e2423-103">Index s pozdní vazbou `Get` nebo `Set` pokusil volání.</span><span class="sxs-lookup"><span data-stu-id="e2423-103">A late-bound index `Get` or `Set` call has been attempted.</span></span>  
+# <a name="no-default-member-found-for-type-typename"></a><span data-ttu-id="9a34d-102">Pro typ nebyl nalezen žádný výchozí člen \<typename> .</span><span class="sxs-lookup"><span data-stu-id="9a34d-102">No default member found for type '\<typename>'</span></span>
+<span data-ttu-id="9a34d-103">Došlo k pokusu o vytvoření indexu s pozdní vazbou `Get` nebo `Set` volání.</span><span class="sxs-lookup"><span data-stu-id="9a34d-103">A late-bound index `Get` or `Set` call has been attempted.</span></span>  
   
-## <a name="to-correct-this-error"></a><span data-ttu-id="e2423-104">Oprava této chyby</span><span class="sxs-lookup"><span data-stu-id="e2423-104">To correct this error</span></span>  
+## <a name="to-correct-this-error"></a><span data-ttu-id="9a34d-104">Oprava této chyby</span><span class="sxs-lookup"><span data-stu-id="9a34d-104">To correct this error</span></span>  
   
-1. <span data-ttu-id="e2423-105">Zkontrolujte, zda má objekt vlastnost výchozí `Get` nebo `Set`, v závislosti na tom, které se pokoušíte vytvořit.</span><span class="sxs-lookup"><span data-stu-id="e2423-105">Ensure that the object has a default property with a `Get` or `Set`, depending on which you are trying to make.</span></span>  
+1. <span data-ttu-id="9a34d-105">Ujistěte se, že objekt má výchozí vlastnost s `Get` nebo `Set` , v závislosti na tom, který se pokoušíte vytvořit.</span><span class="sxs-lookup"><span data-stu-id="9a34d-105">Ensure that the object has a default property with a `Get` or `Set`, depending on which you are trying to make.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="e2423-106">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e2423-106">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="9a34d-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="9a34d-106">See also</span></span>
 
-- [<span data-ttu-id="e2423-107">Příkaz Get</span><span class="sxs-lookup"><span data-stu-id="e2423-107">Get Statement</span></span>](../../visual-basic/language-reference/statements/get-statement.md)
-- [<span data-ttu-id="e2423-108">Příkaz Set</span><span class="sxs-lookup"><span data-stu-id="e2423-108">Set Statement</span></span>](../../visual-basic/language-reference/statements/set-statement.md)
+- [<span data-ttu-id="9a34d-107">Get – příkaz</span><span class="sxs-lookup"><span data-stu-id="9a34d-107">Get Statement</span></span>](../language-reference/statements/get-statement.md)
+- [<span data-ttu-id="9a34d-108">Set – příkaz</span><span class="sxs-lookup"><span data-stu-id="9a34d-108">Set Statement</span></span>](../language-reference/statements/set-statement.md)
