@@ -6,12 +6,12 @@ helpviewer_keywords:
 - -nostdlib compiler option [Visual Basic]
 - /nostdlib compiler option [Visual Basic]
 ms.assetid: 140381b8-dc96-4ad5-ae11-792c9ed0be4d
-ms.openlocfilehash: db6b047f521d8ef44d2bd1b70b654a4233ebb1a7
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 0934799853323110e73087ba6d8975c30f84d8f7
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74347915"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84387709"
 ---
 # <a name="-nostdlib-visual-basic"></a>-nostdlib (Visual Basic)
 Způsobí, že kompilátor nebude automaticky odkazovat na standardní knihovny.  
@@ -23,16 +23,16 @@ Způsobí, že kompilátor nebude automaticky odkazovat na standardní knihovny.
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- `-nostdlib` Možnost odebere automatický odkaz na sestavení System. dll a zabrání kompilátoru v čtení souboru Vbc. rsp. Soubor Vbc. rsp, který je umístěn ve stejném adresáři jako soubor Vbc. exe, odkazuje na běžně používané .NET Framework sestavení a importuje obory názvů `System` a. `Microsoft.VisualBasic`  
+ `-nostdlib`Možnost odebere automatický odkaz na sestavení System. dll a zabrání kompilátoru v čtení souboru Vbc. rsp. Soubor Vbc. rsp, který je umístěn ve stejném adresáři jako soubor Vbc. exe, odkazuje na běžně používané .NET Framework sestavení a importuje `System` `Microsoft.VisualBasic` obory názvů a.  
   
 > [!NOTE]
 > Na sestavení knihovny mscorlib. dll a Microsoft. VisualBasic. dll jsou odkazy vždy odkazovány.  
   
 > [!NOTE]
-> Tato `-nostdlib` možnost není k dispozici ve vývojovém prostředí sady Visual Studio; je k dispozici pouze při kompilaci z příkazového řádku.  
+> Tato `-nostdlib` možnost není k dispozici ve vývojovém prostředí sady Visual Studio. je k dispozici pouze při kompilaci z příkazového řádku.  
   
 ## <a name="example"></a>Příklad  
- Následující kód zkompiluje `T2.vb` bez odkazování na standardní knihovny. Chcete-li odebrat `_MYTYPE` `My` objekt, je nutné nastavit konstantu podmíněné kompilace na řetězec "Empty".  
+ Následující kód zkompiluje `T2.vb` bez odkazování na standardní knihovny. Chcete-li odebrat objekt, je nutné nastavit `_MYTYPE` konstantu podmíněné kompilace na řetězec "Empty" `My` .  
   
 ```console
 vbc -nostdlib -define:_MYTYPE=\"Empty\" T2.vb  
@@ -40,7 +40,7 @@ vbc -nostdlib -define:_MYTYPE=\"Empty\" T2.vb
   
 ## <a name="see-also"></a>Viz také
 
-- [-noconfig](../../../visual-basic/reference/command-line-compiler/noconfig.md)
-- [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
-- [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
-- [Přizpůsobení výběru objektů dostupných v oboru názvů My](../../../visual-basic/developing-apps/customizing-extending-my/customizing-which-objects-are-available-in-my.md)
+- [-noconfig](noconfig.md)
+- [Visual Basic Kompilátor příkazového řádku](index.md)
+- [Příkazové řádky ukázkové kompilace](sample-compilation-command-lines.md)
+- [Přizpůsobení výběru objektů dostupných v oboru názvů My](../../developing-apps/customizing-extending-my/customizing-which-objects-are-available-in-my.md)

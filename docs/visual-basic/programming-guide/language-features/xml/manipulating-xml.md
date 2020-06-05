@@ -6,44 +6,44 @@ helpviewer_keywords:
 - Visual Basic code, XML
 - XML [Visual Basic], manipulating
 ms.assetid: da32cffb-198d-41b1-9af3-260fe32e3b7d
-ms.openlocfilehash: bb5aed5099d81f8c8898cd61523b90a43f27db78
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: fca6c05b4baae4689e9d5e5698cee75f0c5470ec
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75636156"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84374743"
 ---
 # <a name="manipulating-xml-in-visual-basic"></a>Zacházení s XML v jazyce Visual Basic
 Můžete použít *literály XML* k načtení XML z externího zdroje, jako je například řetězec, soubor nebo datový proud. Pak můžete použít [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] k manipulaci s XML a k dotazování XML použít LINQ (Language-Integrated Query).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Postupy: Načtení XML ze souboru, řetězce nebo streamu](../../../../visual-basic/programming-guide/language-features/xml/how-to-load-xml-from-a-file-string-or-stream.md)  
- Ukazuje, jak načíst XML do objektu <xref:System.Xml.Linq.XDocument> nebo <xref:System.Xml.Linq.XElement> z textového souboru, řetězce nebo datového proudu.  
+ [Postupy: Načtení XML ze souboru, řetězce nebo proudu](how-to-load-xml-from-a-file-string-or-stream.md)  
+ Ukazuje, jak načíst XML do <xref:System.Xml.Linq.XDocument> objektu nebo <xref:System.Xml.Linq.XElement> z textového souboru, řetězce nebo datového proudu.  
   
- [Postupy: Transformace XML pomocí jazyka LINQ](../../../../visual-basic/programming-guide/language-features/xml/how-to-transform-xml-by-using-linq.md)  
- Ukazuje, jak transformovat obsah objektu <xref:System.Xml.Linq.XDocument> do nového dokumentu XML.  
+ [Postupy: Transformace XML pomocí jazyka LINQ](how-to-transform-xml-by-using-linq.md)  
+ Ukazuje, jak transformovat obsah <xref:System.Xml.Linq.XDocument> objektu do nového dokumentu XML.  
   
- [Postupy: Změna literálů XML](../../../../visual-basic/programming-guide/language-features/xml/how-to-modify-xml-literals.md)  
+ [Postupy: Změna literálů XML](how-to-modify-xml-literals.md)  
  Ukazuje, jak upravit prvky, atributy a hodnoty v literálu XML.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Vlastnosti osy XML](../../../../visual-basic/language-reference/xml-axis/index.md)  
+ [Vlastnosti osy XML](../../../language-reference/xml-axis/index.md)  
  Obsahuje odkazy na oddíly, které popisují různé vlastnosti přístupu XML.  
   
- [Přehled LINQ to XML v Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/overview-of-linq-to-xml.md)  
- Představuje úvod k použití [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] v Visual Basic.  
+ [Přehled technologie LINQ to XML v jazyce Visual Basic](overview-of-linq-to-xml.md)  
+ Poskytuje Úvod k použití [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] v Visual Basic.  
   
- [Vytváření XML v Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)  
+ [Vytvoření XML v jazyce Visual Basic](creating-xml.md)  
  Poskytuje Úvod k použití literálů XML v Visual Basic.  
   
- [Přístup k XML v Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/accessing-xml.md)  
+ [Přístup ke XML v jazyce Visual Basic](accessing-xml.md)  
  Ukazuje, jak přistupovat k částem elementu XML nebo dokumentu v Visual Basic.  
   
- [XML](../../../../visual-basic/programming-guide/language-features/xml/index.md)  
+ [XML](index.md)  
  Obsahuje odkazy na oddíly, které popisují použití [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] v Visual Basic.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [XML](../../../../visual-basic/programming-guide/language-features/xml/index.md)
-- [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)
-- [Úvod do jazyka LINQ v Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [XML](index.md)
+- [LINQ](../linq/index.md)
+- [Představení technologie LINQ v jazyce Visual Basic](../linq/introduction-to-linq.md)

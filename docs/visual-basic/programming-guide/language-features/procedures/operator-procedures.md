@@ -11,16 +11,16 @@ helpviewer_keywords:
 - operator overloading
 - operator procedures
 ms.assetid: 8c513d38-246b-4fb7-8b75-29e1364e555b
-ms.openlocfilehash: b395f5fcf1b89bb49e55e207c4910e95f2aae69d
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: a1dd183570c8aa50efff85bdaebef90bd3b0120f
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74346000"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84364315"
 ---
 # <a name="operator-procedures-visual-basic"></a>Procedury operátoru (Visual Basic)
 
-Procedura operátora je série Visual Basic příkazů, které definují chování standardního operátoru (například `*`, `<>`nebo `And`) na třídě nebo struktuře, kterou jste definovali. Tato metoda se označuje také jako *přetížení operátoru*.
+Procedura operátora je série Visual Basic příkazů, které definují chování standardního operátoru (například `*` , `<>` nebo `And` ) na třídě nebo struktuře, kterou jste definovali. Tato metoda se označuje také jako *přetížení operátoru*.
 
 ## <a name="when-to-define-operator-procedures"></a>Kdy definovat procedury operátorů
 
@@ -28,7 +28,7 @@ Pokud jste definovali třídu nebo strukturu, můžete deklarovat proměnné, kt
 
 Visual Basic definuje operátory pouze na svých základních datových typech. Můžete definovat chování operátoru v případě, že jeden nebo oba operandy jsou typu vaší třídy nebo struktury.
 
-Další informace naleznete v tématu [operátor příkazu](../../../../visual-basic/language-reference/statements/operator-statement.md).
+Další informace naleznete v tématu [operátor příkazu](../../../language-reference/statements/operator-statement.md).
 
 ## <a name="types-of-operator-procedure"></a>Typy procedury operátoru
 
@@ -42,7 +42,7 @@ Procedura operátora může být jedním z následujících typů:
 
 - Definice operátora převodu, který vrací typ vaší třídy nebo struktury.
 
- Operátory převodu jsou vždycky unární a při definování operátoru se vždycky používají `CType`.
+ Operátory převodu jsou vždycky unární a vždycky se používají `CType` jako operátor, který definujete.
 
 ## <a name="declaration-syntax"></a>Syntaxe deklarace
 
@@ -56,9 +56,9 @@ Public Shared [Widening | Narrowing] Operator operatorsymbol ( operand1 [,  oper
 End Operator
 ```
 
-Klíčové slovo `Widening` nebo `Narrowing` můžete použít pouze v operátoru převodu typu. Symbol operátoru je vždy [CType funkce](../../../../visual-basic/language-reference/functions/ctype-function.md) pro operátor převodu typu.
+`Widening`Klíčové slovo nebo použijte `Narrowing` pouze v operátoru konverze typu. Symbol operátoru je vždy [CType funkce](../../../language-reference/functions/ctype-function.md) pro operátor převodu typu.
 
-Deklarujete dva operandy pro definování binárního operátoru a deklarujete jeden operand pro definování unárního operátoru, včetně operátoru převodu typu. Všechny operandy musí být deklarovány `ByVal`.
+Deklarujete dva operandy pro definování binárního operátoru a deklarujete jeden operand pro definování unárního operátoru, včetně operátoru převodu typu. Všechny operandy musí být deklarovány `ByVal` .
 
 Každým operandem deklarujete stejný způsob, jakým deklarujete parametry pro [procedury Sub](./sub-procedures.md).
 
@@ -66,7 +66,7 @@ Každým operandem deklarujete stejný způsob, jakým deklarujete parametry pro
 
 Vzhledem k tomu, že definujete operátora pro třídu nebo strukturu, kterou jste definovali, alespoň jeden z operandů musí být datového typu této třídy nebo struktury. Pro operátor konverze typu musí být operand nebo návratový typ buď datového typu třídy nebo struktury.
 
-Další podrobnosti naleznete v tématu [operátor příkazu](../../../../visual-basic/language-reference/statements/operator-statement.md).
+Další podrobnosti naleznete v tématu [operátor příkazu](../../../language-reference/statements/operator-statement.md).
 
 ## <a name="calling-syntax"></a>Syntaxe volání
 
@@ -74,28 +74,28 @@ Proceduru operátoru můžete implicitně vyvolat pomocí symbolu operátoru ve 
 
 Syntaxe pro implicitní volání procedury operátoru je následující:
 
-`Dim testStruct As`*Struktura*
+`Dim testStruct As`  *StructureName*
 
-`Dim testNewStruct As`*structure*`= testStruct`*operatorsymbol*`10`
+`Dim testNewStruct As`  *Struktura* `= testStruct` *operatorsymbol*      `10`
 
 ### <a name="illustration-of-declaration-and-call"></a>Ilustrace deklarace a volání
 
-Následující struktura ukládá znaménko celé číslo se znaménkem 128 jako části s horním a dolním pořadím. Definuje operátor `+` pro přidání dvou hodnot `veryLong` a vygenerování výsledné `veryLong` hodnoty.
+Následující struktura ukládá znaménko celé číslo se znaménkem 128 jako části s horním a dolním pořadím. Definuje `+` operátor pro přidání dvou `veryLong` hodnot a vygenerování výsledné `veryLong` hodnoty.
 
 [!code-vb[VbVbcnProcedures#23](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#23)]
 
-Následující příklad ukazuje typické volání operátoru `+` definovaného v `veryLong`.
+Následující příklad ukazuje typické volání `+` operátoru definovaného na `veryLong` .
 
 [!code-vb[VbVbcnProcedures#24](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#24)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Procedury](./index.md)
 - [Procedury Sub](./sub-procedures.md)
-- [Procedury funkce](./function-procedures.md)
+- [Procedury funkcí](./function-procedures.md)
 - [Procedury vlastnosti](./property-procedures.md)
 - [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)
-- [Příkaz Operator](../../../../visual-basic/language-reference/statements/operator-statement.md)
+- [Operator – příkaz](../../../language-reference/statements/operator-statement.md)
 - [Postupy: Definice operátoru](./how-to-define-an-operator.md)
 - [Postupy: Definice operátoru převodu](./how-to-define-a-conversion-operator.md)
 - [Postupy: Volání procedury operátoru](./how-to-call-an-operator-procedure.md)
