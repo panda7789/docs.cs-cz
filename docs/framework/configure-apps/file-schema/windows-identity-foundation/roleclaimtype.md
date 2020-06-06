@@ -4,24 +4,24 @@ ms.date: 03/30/2017
 ms.assetid: 69a49deb-6369-41ba-806b-ae8d21fac64b
 author: BrucePerlerMS
 ms.openlocfilehash: 0f651377346b1f14a4226128cd5cf7059543adca
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70251914"
 ---
-# <a name="roleclaimtype"></a><span data-ttu-id="a850b-101">\<roleClaimType></span><span class="sxs-lookup"><span data-stu-id="a850b-101">\<roleClaimType></span></span>
-<span data-ttu-id="a850b-102">Určuje typ deklarace identity, který definuje deklarace typu role v kolekci <xref:System.Security.Claims.ClaimsIdentity> objektů vrácených <xref:System.IdentityModel.Tokens.SecurityTokenHandler.ValidateToken%2A> metodou obslužné rutiny tokenu.</span><span class="sxs-lookup"><span data-stu-id="a850b-102">Specifies the claim type that defines the role type claims in the collection of <xref:System.Security.Claims.ClaimsIdentity> objects returned by the <xref:System.IdentityModel.Tokens.SecurityTokenHandler.ValidateToken%2A> method of the token handler.</span></span>  
+# \<roleClaimType>
+<span data-ttu-id="0f6de-101">Určuje typ deklarace identity, který definuje deklarace typu role v kolekci <xref:System.Security.Claims.ClaimsIdentity> objektů vrácených <xref:System.IdentityModel.Tokens.SecurityTokenHandler.ValidateToken%2A> metodou obslužné rutiny tokenu.</span><span class="sxs-lookup"><span data-stu-id="0f6de-101">Specifies the claim type that defines the role type claims in the collection of <xref:System.Security.Claims.ClaimsIdentity> objects returned by the <xref:System.IdentityModel.Tokens.SecurityTokenHandler.ValidateToken%2A> method of the token handler.</span></span>  
   
-<span data-ttu-id="a850b-103">[ **\<> Konfigurace**](../configuration-element.md)</span><span class="sxs-lookup"><span data-stu-id="a850b-103">[**\<configuration>**](../configuration-element.md)</span></span>\
-<span data-ttu-id="a850b-104">&nbsp;&nbsp;[ **\<System. identityModel >** ](system-identitymodel.md)</span><span class="sxs-lookup"><span data-stu-id="a850b-104">&nbsp;&nbsp;[**\<system.identityModel>**](system-identitymodel.md)</span></span>\
-<span data-ttu-id="a850b-105">&nbsp;&nbsp;&nbsp;&nbsp;[ **\<identityConfiguration >** ](identityconfiguration.md)</span><span class="sxs-lookup"><span data-stu-id="a850b-105">&nbsp;&nbsp;&nbsp;&nbsp;[**\<identityConfiguration>**](identityconfiguration.md)</span></span>\
-<span data-ttu-id="a850b-106">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<securityTokenHandlers >** ](securitytokenhandlers.md)</span><span class="sxs-lookup"><span data-stu-id="a850b-106">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<securityTokenHandlers>**](securitytokenhandlers.md)</span></span>\
-<span data-ttu-id="a850b-107">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<Přidat >** ](add.md)</span><span class="sxs-lookup"><span data-stu-id="a850b-107">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<add>**](add.md)</span></span>\
-<span data-ttu-id="a850b-108">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<samlSecurityTokenRequirement >** ](samlsecuritytokenrequirement.md)</span><span class="sxs-lookup"><span data-stu-id="a850b-108">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<samlSecurityTokenRequirement>**](samlsecuritytokenrequirement.md)</span></span>\
-<span data-ttu-id="a850b-109">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<roleClaimType >**</span><span class="sxs-lookup"><span data-stu-id="a850b-109">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<roleClaimType>**</span></span>  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.identityModel>**](system-identitymodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<identityConfiguration>**](identityconfiguration.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<securityTokenHandlers>**](securitytokenhandlers.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<add>**](add.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<samlSecurityTokenRequirement>**](samlsecuritytokenrequirement.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<roleClaimType>**  
   
-## <a name="syntax"></a><span data-ttu-id="a850b-110">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a850b-110">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="0f6de-102">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="0f6de-102">Syntax</span></span>  
   
 ```xml  
 <system.identityModel>  
@@ -38,28 +38,28 @@ ms.locfileid: "70251914"
 </system.identityModel>  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="a850b-111">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="a850b-111">Attributes and Elements</span></span>  
- <span data-ttu-id="a850b-112">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="a850b-112">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="0f6de-103">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="0f6de-103">Attributes and Elements</span></span>  
+ <span data-ttu-id="0f6de-104">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="0f6de-104">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="a850b-113">Atributy</span><span class="sxs-lookup"><span data-stu-id="a850b-113">Attributes</span></span>  
+### <a name="attributes"></a><span data-ttu-id="0f6de-105">Atributy</span><span class="sxs-lookup"><span data-stu-id="0f6de-105">Attributes</span></span>  
   
-|<span data-ttu-id="a850b-114">Atribut</span><span class="sxs-lookup"><span data-stu-id="a850b-114">Attribute</span></span>|<span data-ttu-id="a850b-115">Popis</span><span class="sxs-lookup"><span data-stu-id="a850b-115">Description</span></span>|  
+|<span data-ttu-id="0f6de-106">Atribut</span><span class="sxs-lookup"><span data-stu-id="0f6de-106">Attribute</span></span>|<span data-ttu-id="0f6de-107">Popis</span><span class="sxs-lookup"><span data-stu-id="0f6de-107">Description</span></span>|  
 |---------------|-----------------|  
-|<span data-ttu-id="a850b-116">value</span><span class="sxs-lookup"><span data-stu-id="a850b-116">value</span></span>|<span data-ttu-id="a850b-117">Řetězec určující identifikátor URI, který představuje typ deklarace identity, který se má použít pro typ deklarace role.</span><span class="sxs-lookup"><span data-stu-id="a850b-117">A string that specifies the URI that represents the claim type of the claim to use for the role claim type.</span></span>|  
+|<span data-ttu-id="0f6de-108">hodnota</span><span class="sxs-lookup"><span data-stu-id="0f6de-108">value</span></span>|<span data-ttu-id="0f6de-109">Řetězec určující identifikátor URI, který představuje typ deklarace identity, který se má použít pro typ deklarace role.</span><span class="sxs-lookup"><span data-stu-id="0f6de-109">A string that specifies the URI that represents the claim type of the claim to use for the role claim type.</span></span>|  
   
-### <a name="child-elements"></a><span data-ttu-id="a850b-118">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="a850b-118">Child Elements</span></span>  
- <span data-ttu-id="a850b-119">Žádné</span><span class="sxs-lookup"><span data-stu-id="a850b-119">None</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="0f6de-110">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="0f6de-110">Child Elements</span></span>  
+ <span data-ttu-id="0f6de-111">Žádné</span><span class="sxs-lookup"><span data-stu-id="0f6de-111">None</span></span>  
   
-### <a name="parent-elements"></a><span data-ttu-id="a850b-120">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="a850b-120">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="0f6de-112">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="0f6de-112">Parent Elements</span></span>  
   
-|<span data-ttu-id="a850b-121">Prvek</span><span class="sxs-lookup"><span data-stu-id="a850b-121">Element</span></span>|<span data-ttu-id="a850b-122">Popis</span><span class="sxs-lookup"><span data-stu-id="a850b-122">Description</span></span>|  
+|<span data-ttu-id="0f6de-113">Prvek</span><span class="sxs-lookup"><span data-stu-id="0f6de-113">Element</span></span>|<span data-ttu-id="0f6de-114">Description</span><span class="sxs-lookup"><span data-stu-id="0f6de-114">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="a850b-123">\<samlSecurityTokenRequirement></span><span class="sxs-lookup"><span data-stu-id="a850b-123">\<samlSecurityTokenRequirement></span></span>](samlsecuritytokenrequirement.md)|<span data-ttu-id="a850b-124">Poskytuje konfiguraci pro <xref:System.IdentityModel.Tokens.SamlSecurityTokenHandler> třídu <xref:System.IdentityModel.Tokens.Saml2SecurityTokenHandler> , třídu nebo odvozenou třídu některé z těchto tříd.</span><span class="sxs-lookup"><span data-stu-id="a850b-124">Provides configuration for the <xref:System.IdentityModel.Tokens.SamlSecurityTokenHandler> class, the <xref:System.IdentityModel.Tokens.Saml2SecurityTokenHandler> class, or a derived class of either of these classes.</span></span>|  
+|[\<samlSecurityTokenRequirement>](samlsecuritytokenrequirement.md)|<span data-ttu-id="0f6de-115">Poskytuje konfiguraci pro <xref:System.IdentityModel.Tokens.SamlSecurityTokenHandler> třídu, <xref:System.IdentityModel.Tokens.Saml2SecurityTokenHandler> třídu nebo odvozenou třídu některé z těchto tříd.</span><span class="sxs-lookup"><span data-stu-id="0f6de-115">Provides configuration for the <xref:System.IdentityModel.Tokens.SamlSecurityTokenHandler> class, the <xref:System.IdentityModel.Tokens.Saml2SecurityTokenHandler> class, or a derived class of either of these classes.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="a850b-125">Poznámky</span><span class="sxs-lookup"><span data-stu-id="a850b-125">Remarks</span></span>  
- <span data-ttu-id="a850b-126">Element nastaví vlastnost, <xref:System.IdentityModel.Tokens.SamlSecurityTokenRequirement.RoleClaimType%2A> když <xref:System.IdentityModel.Tokens.SamlSecurityTokenRequirement> je objekt inicializován z konfigurace. `<roleClaimType>`</span><span class="sxs-lookup"><span data-stu-id="a850b-126">The `<roleClaimType>` element sets the <xref:System.IdentityModel.Tokens.SamlSecurityTokenRequirement.RoleClaimType%2A> property when a <xref:System.IdentityModel.Tokens.SamlSecurityTokenRequirement> object is initialized from configuration.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="0f6de-116">Poznámky</span><span class="sxs-lookup"><span data-stu-id="0f6de-116">Remarks</span></span>  
+ <span data-ttu-id="0f6de-117">`<roleClaimType>`Element nastaví vlastnost, <xref:System.IdentityModel.Tokens.SamlSecurityTokenRequirement.RoleClaimType%2A> Když <xref:System.IdentityModel.Tokens.SamlSecurityTokenRequirement> je objekt inicializován z konfigurace.</span><span class="sxs-lookup"><span data-stu-id="0f6de-117">The `<roleClaimType>` element sets the <xref:System.IdentityModel.Tokens.SamlSecurityTokenRequirement.RoleClaimType%2A> property when a <xref:System.IdentityModel.Tokens.SamlSecurityTokenRequirement> object is initialized from configuration.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="a850b-127">Příklad</span><span class="sxs-lookup"><span data-stu-id="a850b-127">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="0f6de-118">Příklad</span><span class="sxs-lookup"><span data-stu-id="0f6de-118">Example</span></span>  
   
 ```xml  
 <add type="System.IdentityModel.Tokens.SamlSecurityTokenHandler, System.IdentityModel">  
@@ -69,6 +69,6 @@ ms.locfileid: "70251914"
 </add>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="a850b-128">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a850b-128">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="0f6de-119">Viz také</span><span class="sxs-lookup"><span data-stu-id="0f6de-119">See also</span></span>
 
 - <xref:System.IdentityModel.Tokens.SamlSecurityTokenRequirement.RoleClaimType%2A>

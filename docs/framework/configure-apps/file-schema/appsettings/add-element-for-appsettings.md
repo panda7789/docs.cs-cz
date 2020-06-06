@@ -8,21 +8,21 @@ helpviewer_keywords:
 - <add> Element
 ms.assetid: 8734efdc-00f6-4a65-bba6-084c5bc65246
 ms.openlocfilehash: 5c7de79ec626966e71d461dd3865b294a8979db2
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/14/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "77214815"
 ---
-# <a name="add-element-for-appsettings"></a><span data-ttu-id="0ac4c-102">\<přidat > element pro \<appSettings ></span><span class="sxs-lookup"><span data-stu-id="0ac4c-102">\<add> element for \<appSettings></span></span>
+# <a name="add-element-for-appsettings"></a><span data-ttu-id="f277a-102">\<add> – element pro \<appSettings></span><span class="sxs-lookup"><span data-stu-id="f277a-102">\<add> element for \<appSettings></span></span>
 
-<span data-ttu-id="0ac4c-103">Přidá vlastní nastavení aplikace.</span><span class="sxs-lookup"><span data-stu-id="0ac4c-103">Adds a custom application setting.</span></span>
+<span data-ttu-id="f277a-103">Přidá vlastní nastavení aplikace.</span><span class="sxs-lookup"><span data-stu-id="f277a-103">Adds a custom application setting.</span></span>
 
-<span data-ttu-id="0ac4c-104">[**konfigurační >\<** ](../configuration-element.md)</span><span class="sxs-lookup"><span data-stu-id="0ac4c-104">[**\<configuration>**](../configuration-element.md)</span></span>\
-<span data-ttu-id="0ac4c-105">&nbsp;&nbsp;[ **\<appSettings >** ](appsettings-element-for-configuration.md)</span><span class="sxs-lookup"><span data-stu-id="0ac4c-105">&nbsp;&nbsp;[**\<appSettings>**](appsettings-element-for-configuration.md)</span></span>\
-<span data-ttu-id="0ac4c-106">&nbsp;&nbsp;&nbsp;&nbsp; **\<přidat >**</span><span class="sxs-lookup"><span data-stu-id="0ac4c-106">&nbsp;&nbsp;&nbsp;&nbsp;**\<add>**</span></span>
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<appSettings>**](appsettings-element-for-configuration.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<add>**
 
-## <a name="syntax"></a><span data-ttu-id="0ac4c-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="0ac4c-107">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="f277a-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f277a-104">Syntax</span></span>
 
 ```xml
 <appSettings>
@@ -30,26 +30,26 @@ ms.locfileid: "77214815"
 </appSettings>
 ```
 
-## <a name="attributes"></a><span data-ttu-id="0ac4c-108">Atributy</span><span class="sxs-lookup"><span data-stu-id="0ac4c-108">Attributes</span></span>
+## <a name="attributes"></a><span data-ttu-id="f277a-105">Atributy</span><span class="sxs-lookup"><span data-stu-id="f277a-105">Attributes</span></span>
 
-|           | <span data-ttu-id="0ac4c-109">Popis</span><span class="sxs-lookup"><span data-stu-id="0ac4c-109">Description</span></span> |
+|           | <span data-ttu-id="f277a-106">Description</span><span class="sxs-lookup"><span data-stu-id="f277a-106">Description</span></span> |
 | --------- | ----------- |
-| <span data-ttu-id="0ac4c-110">**key**</span><span class="sxs-lookup"><span data-stu-id="0ac4c-110">**key**</span></span>   | <span data-ttu-id="0ac4c-111">Požadovaný atribut.</span><span class="sxs-lookup"><span data-stu-id="0ac4c-111">Required attribute.</span></span><br><br><span data-ttu-id="0ac4c-112">Určuje název klíče, který chcete přidat.</span><span class="sxs-lookup"><span data-stu-id="0ac4c-112">Specifies the name of the key to add.</span></span> |
-| <span data-ttu-id="0ac4c-113">**value**</span><span class="sxs-lookup"><span data-stu-id="0ac4c-113">**value**</span></span> | <span data-ttu-id="0ac4c-114">Požadovaný atribut.</span><span class="sxs-lookup"><span data-stu-id="0ac4c-114">Required attribute.</span></span><br><br><span data-ttu-id="0ac4c-115">Určuje hodnotu klíče, který se má přidat.</span><span class="sxs-lookup"><span data-stu-id="0ac4c-115">Specifies the value of the key to add.</span></span> |
+| <span data-ttu-id="f277a-107">**zkrat**</span><span class="sxs-lookup"><span data-stu-id="f277a-107">**key**</span></span>   | <span data-ttu-id="f277a-108">Požadovaný atribut.</span><span class="sxs-lookup"><span data-stu-id="f277a-108">Required attribute.</span></span><br><br><span data-ttu-id="f277a-109">Určuje název klíče, který chcete přidat.</span><span class="sxs-lookup"><span data-stu-id="f277a-109">Specifies the name of the key to add.</span></span> |
+| <span data-ttu-id="f277a-110">**osa**</span><span class="sxs-lookup"><span data-stu-id="f277a-110">**value**</span></span> | <span data-ttu-id="f277a-111">Požadovaný atribut.</span><span class="sxs-lookup"><span data-stu-id="f277a-111">Required attribute.</span></span><br><br><span data-ttu-id="f277a-112">Určuje hodnotu klíče, který se má přidat.</span><span class="sxs-lookup"><span data-stu-id="f277a-112">Specifies the value of the key to add.</span></span> |
 
-## <a name="parent-element"></a><span data-ttu-id="0ac4c-116">Nadřazený element</span><span class="sxs-lookup"><span data-stu-id="0ac4c-116">Parent element</span></span>
+## <a name="parent-element"></a><span data-ttu-id="f277a-113">Nadřazený element</span><span class="sxs-lookup"><span data-stu-id="f277a-113">Parent element</span></span>
 
-|     | <span data-ttu-id="0ac4c-117">Popis</span><span class="sxs-lookup"><span data-stu-id="0ac4c-117">Description</span></span> |
+|     | <span data-ttu-id="f277a-114">Description</span><span class="sxs-lookup"><span data-stu-id="f277a-114">Description</span></span> |
 | --- | ----------- |
-| [<span data-ttu-id="0ac4c-118"> **\<appSettings >** </span><span class="sxs-lookup"><span data-stu-id="0ac4c-118">**\<appSettings>**</span></span>](appsettings-element-for-configuration.md) | <span data-ttu-id="0ac4c-119">Obsahuje vlastní nastavení aplikace, například cesty k souborům, adresy URL webových služeb XML nebo jakékoli další vlastní informace o konfiguraci pro aplikaci.</span><span class="sxs-lookup"><span data-stu-id="0ac4c-119">Contains custom application settings, such as file paths, XML Web service URLs, or any other custom configuration information for an application.</span></span> |
+| [**\<appSettings>**](appsettings-element-for-configuration.md) | <span data-ttu-id="f277a-115">Obsahuje vlastní nastavení aplikace, například cesty k souborům, adresy URL webových služeb XML nebo jakékoli další vlastní informace o konfiguraci pro aplikaci.</span><span class="sxs-lookup"><span data-stu-id="f277a-115">Contains custom application settings, such as file paths, XML Web service URLs, or any other custom configuration information for an application.</span></span> |
 
-## <a name="child-elements"></a><span data-ttu-id="0ac4c-120">Podřízené prvky</span><span class="sxs-lookup"><span data-stu-id="0ac4c-120">Child elements</span></span>
+## <a name="child-elements"></a><span data-ttu-id="f277a-116">Podřízené prvky</span><span class="sxs-lookup"><span data-stu-id="f277a-116">Child elements</span></span>
 
-<span data-ttu-id="0ac4c-121">Žádná</span><span class="sxs-lookup"><span data-stu-id="0ac4c-121">None</span></span>
+<span data-ttu-id="f277a-117">Žádné</span><span class="sxs-lookup"><span data-stu-id="f277a-117">None</span></span>
 
-## <a name="example"></a><span data-ttu-id="0ac4c-122">Příklad</span><span class="sxs-lookup"><span data-stu-id="0ac4c-122">Example</span></span>
+## <a name="example"></a><span data-ttu-id="f277a-118">Příklad</span><span class="sxs-lookup"><span data-stu-id="f277a-118">Example</span></span>
 
-<span data-ttu-id="0ac4c-123">Následující příklad ukazuje, jak přidat vlastní nastavení konfigurace pro název aplikace:</span><span class="sxs-lookup"><span data-stu-id="0ac4c-123">The following example shows how to add a custom configuration setting for the application's name:</span></span>
+<span data-ttu-id="f277a-119">Následující příklad ukazuje, jak přidat vlastní nastavení konfigurace pro název aplikace:</span><span class="sxs-lookup"><span data-stu-id="f277a-119">The following example shows how to add a custom configuration setting for the application's name:</span></span>
 
 ```xml
 <appSettings>
@@ -57,7 +57,7 @@ ms.locfileid: "77214815"
 </appSettings>
 ```
 
-<span data-ttu-id="0ac4c-124">Následující příklad používá element `<add>` k definování dvou nastavení kompatibility v aplikaci ASP.NET:</span><span class="sxs-lookup"><span data-stu-id="0ac4c-124">The following example uses the `<add>` element to define two compatibility settings in an ASP.NET application:</span></span>
+<span data-ttu-id="f277a-120">Následující příklad používá `<add>` element k definování dvou nastavení kompatibility v aplikaci ASP.NET:</span><span class="sxs-lookup"><span data-stu-id="f277a-120">The following example uses the `<add>` element to define two compatibility settings in an ASP.NET application:</span></span>
 
 ```xml
 <appSettings>
@@ -66,6 +66,6 @@ ms.locfileid: "77214815"
 </appSettings>
 ```
 
-## <a name="see-also"></a><span data-ttu-id="0ac4c-125">Viz také</span><span class="sxs-lookup"><span data-stu-id="0ac4c-125">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f277a-121">Viz také</span><span class="sxs-lookup"><span data-stu-id="f277a-121">See also</span></span>
 
-- [<span data-ttu-id="0ac4c-126">Schéma konfiguračního souboru pro .NET Framework</span><span class="sxs-lookup"><span data-stu-id="0ac4c-126">Configuration file schema for the .NET Framework</span></span>](../index.md)
+- [<span data-ttu-id="f277a-122">Schéma konfiguračního souboru pro .NET Framework</span><span class="sxs-lookup"><span data-stu-id="f277a-122">Configuration file schema for the .NET Framework</span></span>](../index.md)

@@ -11,25 +11,25 @@ helpviewer_keywords:
 - serialization, SOAP
 ms.assetid: af406e0a-fa3a-46dd-a7ba-c80731eba3a0
 ms.openlocfilehash: 1d38c4e334439ef41b4d4429e52cff04c6463573
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "84291562"
 ---
-# <a name="how-to-serialize-an-object-as-a-soap-encoded-xml-stream"></a><span data-ttu-id="c899e-104">Postupy: Serializace objektu jako XML streamu zakódovaného v protokolu SOAP</span><span class="sxs-lookup"><span data-stu-id="c899e-104">How to: Serialize an Object as a SOAP-Encoded XML Stream</span></span>
+# <a name="how-to-serialize-an-object-as-a-soap-encoded-xml-stream"></a><span data-ttu-id="45ddc-104">Postupy: Serializace objektu jako XML streamu zakódovaného v protokolu SOAP</span><span class="sxs-lookup"><span data-stu-id="45ddc-104">How to: Serialize an Object as a SOAP-Encoded XML Stream</span></span>
   
- <span data-ttu-id="c899e-105">Vzhledem k tomu, že zpráva SOAP je sestavena pomocí jazyka XML, <xref:System.Xml.Serialization.XmlSerializer> lze třídu použít k serializaci tříd a generování kódovaných zpráv protokolu SOAP.</span><span class="sxs-lookup"><span data-stu-id="c899e-105">Because a SOAP message is built using XML, the <xref:System.Xml.Serialization.XmlSerializer> class can be used to serialize classes and generate encoded SOAP messages.</span></span> <span data-ttu-id="c899e-106">Výsledný kód XML odpovídá [části 5 dokumentu konsorcium World Wide Web "Simple Object Access Protocol (SOAP) 1,1"](https://www.w3.org/TR/2000/NOTE-SOAP-20000508/#_Toc478383512).</span><span class="sxs-lookup"><span data-stu-id="c899e-106">The resulting XML conforms to [section 5 of the World Wide Web Consortium document "Simple Object Access Protocol (SOAP) 1.1"](https://www.w3.org/TR/2000/NOTE-SOAP-20000508/#_Toc478383512).</span></span> <span data-ttu-id="c899e-107">Při vytváření XML webové služby, které komunikují prostřednictvím zpráv protokolu SOAP, můžete upravit datový proud XML použitím sadu atributů protokolu SOAP speciální třídy a členy třídy.</span><span class="sxs-lookup"><span data-stu-id="c899e-107">When you are creating an XML Web service that communicates through SOAP messages, you can customize the XML stream by applying a set of special SOAP attributes to classes and members of classes.</span></span> <span data-ttu-id="c899e-108">Seznam atributů naleznete v tématu [atributy, které řídí serializaci kódovaných SOAP](attributes-that-control-encoded-soap-serialization.md).</span><span class="sxs-lookup"><span data-stu-id="c899e-108">For a list of attributes, see [Attributes That Control Encoded SOAP Serialization](attributes-that-control-encoded-soap-serialization.md).</span></span>  
+ <span data-ttu-id="45ddc-105">Vzhledem k tomu, že zpráva SOAP je sestavena pomocí jazyka XML, <xref:System.Xml.Serialization.XmlSerializer> lze třídu použít k serializaci tříd a generování kódovaných zpráv protokolu SOAP.</span><span class="sxs-lookup"><span data-stu-id="45ddc-105">Because a SOAP message is built using XML, the <xref:System.Xml.Serialization.XmlSerializer> class can be used to serialize classes and generate encoded SOAP messages.</span></span> <span data-ttu-id="45ddc-106">Výsledný kód XML odpovídá [části 5 dokumentu konsorcium World Wide Web "Simple Object Access Protocol (SOAP) 1,1"](https://www.w3.org/TR/2000/NOTE-SOAP-20000508/#_Toc478383512).</span><span class="sxs-lookup"><span data-stu-id="45ddc-106">The resulting XML conforms to [section 5 of the World Wide Web Consortium document "Simple Object Access Protocol (SOAP) 1.1"](https://www.w3.org/TR/2000/NOTE-SOAP-20000508/#_Toc478383512).</span></span> <span data-ttu-id="45ddc-107">Při vytváření XML webové služby, které komunikují prostřednictvím zpráv protokolu SOAP, můžete upravit datový proud XML použitím sadu atributů protokolu SOAP speciální třídy a členy třídy.</span><span class="sxs-lookup"><span data-stu-id="45ddc-107">When you are creating an XML Web service that communicates through SOAP messages, you can customize the XML stream by applying a set of special SOAP attributes to classes and members of classes.</span></span> <span data-ttu-id="45ddc-108">Seznam atributů naleznete v tématu [atributy, které řídí serializaci kódovaných SOAP](attributes-that-control-encoded-soap-serialization.md).</span><span class="sxs-lookup"><span data-stu-id="45ddc-108">For a list of attributes, see [Attributes That Control Encoded SOAP Serialization](attributes-that-control-encoded-soap-serialization.md).</span></span>  
   
-### <a name="to-serialize-an-object-as-a-soap-encoded-xml-stream"></a><span data-ttu-id="c899e-109">K serializaci objektu jako datový proud XML kódováním protokolu SOAP</span><span class="sxs-lookup"><span data-stu-id="c899e-109">To serialize an object as a SOAP-encoded XML stream</span></span>  
+### <a name="to-serialize-an-object-as-a-soap-encoded-xml-stream"></a><span data-ttu-id="45ddc-109">K serializaci objektu jako datový proud XML kódováním protokolu SOAP</span><span class="sxs-lookup"><span data-stu-id="45ddc-109">To serialize an object as a SOAP-encoded XML stream</span></span>  
   
-1. <span data-ttu-id="c899e-110">Vytvořte třídu pomocí [nástroje definice schématu XML (XSD. exe)](xml-schema-definition-tool-xsd-exe.md).</span><span class="sxs-lookup"><span data-stu-id="c899e-110">Create the class using the [XML Schema Definition Tool (Xsd.exe)](xml-schema-definition-tool-xsd-exe.md).</span></span>  
+1. <span data-ttu-id="45ddc-110">Vytvořte třídu pomocí [nástroje definice schématu XML (XSD. exe)](xml-schema-definition-tool-xsd-exe.md).</span><span class="sxs-lookup"><span data-stu-id="45ddc-110">Create the class using the [XML Schema Definition Tool (Xsd.exe)](xml-schema-definition-tool-xsd-exe.md).</span></span>  
   
-2. <span data-ttu-id="c899e-111">Použije jeden nebo více atributů speciální nalezen v `System.Xml.Serialization`.</span><span class="sxs-lookup"><span data-stu-id="c899e-111">Apply one or more of the special attributes found in `System.Xml.Serialization`.</span></span> <span data-ttu-id="c899e-112">Naleznete v seznamu v "Atributy serializace SOAP kódovaného tohoto ovládacího prvku."</span><span class="sxs-lookup"><span data-stu-id="c899e-112">See the list in "Attributes That Control Encoded SOAP Serialization."</span></span>  
+2. <span data-ttu-id="45ddc-111">Použije jeden nebo více atributů speciální nalezen v `System.Xml.Serialization`.</span><span class="sxs-lookup"><span data-stu-id="45ddc-111">Apply one or more of the special attributes found in `System.Xml.Serialization`.</span></span> <span data-ttu-id="45ddc-112">Naleznete v seznamu v "Atributy serializace SOAP kódovaného tohoto ovládacího prvku."</span><span class="sxs-lookup"><span data-stu-id="45ddc-112">See the list in "Attributes That Control Encoded SOAP Serialization."</span></span>  
   
-3. <span data-ttu-id="c899e-113">Vytvořit `XmlTypeMapping` vytvořením nového `SoapReflectionImporter`a volání `ImportTypeMapping` metoda s typem serializovaná třídy.</span><span class="sxs-lookup"><span data-stu-id="c899e-113">Create an `XmlTypeMapping` by creating a new `SoapReflectionImporter`, and invoking the `ImportTypeMapping` method with the type of the serialized class.</span></span>  
+3. <span data-ttu-id="45ddc-113">Vytvořit `XmlTypeMapping` vytvořením nového `SoapReflectionImporter`a volání `ImportTypeMapping` metoda s typem serializovaná třídy.</span><span class="sxs-lookup"><span data-stu-id="45ddc-113">Create an `XmlTypeMapping` by creating a new `SoapReflectionImporter`, and invoking the `ImportTypeMapping` method with the type of the serialized class.</span></span>  
   
-     <span data-ttu-id="c899e-114">Následující příklad kódu volá `ImportTypeMapping` metodu `SoapReflectionImporter` třídy pro vytvoření `XmlTypeMapping` .</span><span class="sxs-lookup"><span data-stu-id="c899e-114">The following code example calls the `ImportTypeMapping` method of the `SoapReflectionImporter` class to create an `XmlTypeMapping`.</span></span>  
+     <span data-ttu-id="45ddc-114">Následující příklad kódu volá `ImportTypeMapping` metodu `SoapReflectionImporter` třídy pro vytvoření `XmlTypeMapping` .</span><span class="sxs-lookup"><span data-stu-id="45ddc-114">The following code example calls the `ImportTypeMapping` method of the `SoapReflectionImporter` class to create an `XmlTypeMapping`.</span></span>  
   
     ```vb  
     ' Serializes a class named Group as a SOAP message.  
@@ -43,7 +43,7 @@ ms.locfileid: "84291562"
         new SoapReflectionImporter().ImportTypeMapping(typeof(Group));
     ```  
   
-4. <span data-ttu-id="c899e-115">Vytvořit instanci `XmlSerializer` třídy předáním `XmlTypeMapping` k <xref:System.Xml.Serialization.XmlSerializer.%23ctor%28System.Xml.Serialization.XmlTypeMapping%29> konstruktor.</span><span class="sxs-lookup"><span data-stu-id="c899e-115">Create an instance of the `XmlSerializer` class by passing the `XmlTypeMapping` to the <xref:System.Xml.Serialization.XmlSerializer.%23ctor%28System.Xml.Serialization.XmlTypeMapping%29> constructor.</span></span>  
+4. <span data-ttu-id="45ddc-115">Vytvořit instanci `XmlSerializer` třídy předáním `XmlTypeMapping` k <xref:System.Xml.Serialization.XmlSerializer.%23ctor%28System.Xml.Serialization.XmlTypeMapping%29> konstruktor.</span><span class="sxs-lookup"><span data-stu-id="45ddc-115">Create an instance of the `XmlSerializer` class by passing the `XmlTypeMapping` to the <xref:System.Xml.Serialization.XmlSerializer.%23ctor%28System.Xml.Serialization.XmlTypeMapping%29> constructor.</span></span>  
   
     ```vb  
     Dim mySerializer As XmlSerializer = New XmlSerializer(myTypeMapping)  
@@ -53,9 +53,9 @@ ms.locfileid: "84291562"
     XmlSerializer mySerializer = new XmlSerializer(myTypeMapping);  
     ```  
   
-5. <span data-ttu-id="c899e-116">Volání `Serialize` nebo `Deserialize` metody.</span><span class="sxs-lookup"><span data-stu-id="c899e-116">Call the `Serialize` or `Deserialize` method.</span></span>  
+5. <span data-ttu-id="45ddc-116">Volání `Serialize` nebo `Deserialize` metody.</span><span class="sxs-lookup"><span data-stu-id="45ddc-116">Call the `Serialize` or `Deserialize` method.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="c899e-117">Příklad</span><span class="sxs-lookup"><span data-stu-id="c899e-117">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="45ddc-117">Příklad</span><span class="sxs-lookup"><span data-stu-id="45ddc-117">Example</span></span>  
   
 ```vb  
 ' Serializes a class named Group as a SOAP message.  
@@ -71,11 +71,11 @@ XmlTypeMapping myTypeMapping =
 XmlSerializer mySerializer = new XmlSerializer(myTypeMapping);  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="c899e-118">Viz také</span><span class="sxs-lookup"><span data-stu-id="c899e-118">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="45ddc-118">Viz také</span><span class="sxs-lookup"><span data-stu-id="45ddc-118">See also</span></span>
 
-- [<span data-ttu-id="c899e-119">Serializace XML a SOAP</span><span class="sxs-lookup"><span data-stu-id="c899e-119">XML and SOAP Serialization</span></span>](xml-and-soap-serialization.md)
-- [<span data-ttu-id="c899e-120">Atributy, které řídí kódovanou serializaci SOAP</span><span class="sxs-lookup"><span data-stu-id="c899e-120">Attributes That Control Encoded SOAP Serialization</span></span>](attributes-that-control-encoded-soap-serialization.md)
-- [<span data-ttu-id="c899e-121">Serializace XML s webovými službami XML</span><span class="sxs-lookup"><span data-stu-id="c899e-121">XML Serialization with XML Web Services</span></span>](xml-serialization-with-xml-web-services.md)
-- [<span data-ttu-id="c899e-122">Postupy: Serializace objektu</span><span class="sxs-lookup"><span data-stu-id="c899e-122">How to: Serialize an Object</span></span>](how-to-serialize-an-object.md)
-- [<span data-ttu-id="c899e-123">Postupy: Deserializace objektu</span><span class="sxs-lookup"><span data-stu-id="c899e-123">How to: Deserialize an Object</span></span>](how-to-deserialize-an-object.md)
-- [<span data-ttu-id="c899e-124">Postupy: Přepsání serializace XML zakódované v protokolu SOAP</span><span class="sxs-lookup"><span data-stu-id="c899e-124">How to: Override Encoded SOAP XML Serialization</span></span>](how-to-override-encoded-soap-xml-serialization.md)
+- [<span data-ttu-id="45ddc-119">Serializace XML a SOAP</span><span class="sxs-lookup"><span data-stu-id="45ddc-119">XML and SOAP Serialization</span></span>](xml-and-soap-serialization.md)
+- [<span data-ttu-id="45ddc-120">Atributy, které řídí kódovanou serializaci SOAP</span><span class="sxs-lookup"><span data-stu-id="45ddc-120">Attributes That Control Encoded SOAP Serialization</span></span>](attributes-that-control-encoded-soap-serialization.md)
+- [<span data-ttu-id="45ddc-121">Serializace XML s webovými službami XML</span><span class="sxs-lookup"><span data-stu-id="45ddc-121">XML Serialization with XML Web Services</span></span>](xml-serialization-with-xml-web-services.md)
+- [<span data-ttu-id="45ddc-122">Postupy: Serializace objektu</span><span class="sxs-lookup"><span data-stu-id="45ddc-122">How to: Serialize an Object</span></span>](how-to-serialize-an-object.md)
+- [<span data-ttu-id="45ddc-123">Postupy: Deserializace objektu</span><span class="sxs-lookup"><span data-stu-id="45ddc-123">How to: Deserialize an Object</span></span>](how-to-deserialize-an-object.md)
+- [<span data-ttu-id="45ddc-124">Postupy: Přepsání serializace XML zakódované v protokolu SOAP</span><span class="sxs-lookup"><span data-stu-id="45ddc-124">How to: Override Encoded SOAP XML Serialization</span></span>](how-to-override-encoded-soap-xml-serialization.md)
