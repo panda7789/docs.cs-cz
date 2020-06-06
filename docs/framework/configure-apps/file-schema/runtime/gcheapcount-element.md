@@ -5,19 +5,19 @@ helpviewer_keywords:
 - gcHeapCount element
 - <gcHeapCount> element
 ms.openlocfilehash: 3d6cac4185af182758cb82e6bfd9d96ed24869b4
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "74283075"
 ---
-# <a name="gcheapcount-element"></a>\<element > GCHeapCount
+# <a name="gcheapcount-element"></a>\<GCHeapCount> – element
 
 Určuje počet hald/vláken, které se mají použít pro uvolňování paměti serveru.
 
-Konfigurace \<> \
-&nbsp;&nbsp;\<runtime > \
-&nbsp;&nbsp;&nbsp;&nbsp;\<GCHeapCount >
+\<configuration>\
+&nbsp;&nbsp;\<runtime>\
+&nbsp;&nbsp;&nbsp;&nbsp;\<GCHeapCount>
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -38,17 +38,17 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 #### <a name="enabled-attribute"></a>povolený atribut
 
-|Hodnota|Popis|
+|Hodnota|Description|
 |-----------|-----------------|
 |`nn`|Počet hald pro použití pro GC serveru.|
 
 ### <a name="child-elements"></a>Podřízené prvky
 
-Žádné.
+Žádné
 
 ### <a name="parent-elements"></a>Nadřazené prvky
 
-|Prvek|Popis|
+|Prvek|Description|
 |-------------|-----------------|
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|
 |`runtime`|Obsahuje informace o vazbách sestavení a uvolnění paměti.|
@@ -93,11 +93,11 @@ Následující příklad nespřaženíuje vlákna uvolňování paměti serveru 
 </configuration>
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Runtime.GCSettings.IsServerGC%2A?displayProperty=nameWithType>
 - [Element GCNoAffinitize](gcnoaffinitize-element.md)
 - [Element GCHeapAffinitizeMask](gcheapaffinitizemask-element.md)
 - [Základní informace o uvolňování paměti](../../../../standard/garbage-collection/fundamentals.md)
-- [Schéma nastavení běhového prostředí](index.md)
+- [Schéma nastavení modulu runtime](index.md)
 - [Schéma konfiguračního souboru](../index.md)

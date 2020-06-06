@@ -9,18 +9,18 @@ helpviewer_keywords:
 - <settings> element
 ms.assetid: 189ce989-c39b-427d-b004-6b82a668b931
 ms.openlocfilehash: d510c445c585a36005ed415b14188efc4be03984
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "74089107"
 ---
-# <a name="settings-element-network-settings"></a>\<nastavení > elementu (nastavení sítě)
-Konfiguruje základní možnosti sítě pro obor názvů <xref:System.Net?displayProperty=nameWithType>.  
+# <a name="settings-element-network-settings"></a>\<settings> – element (nastavení sítě)
+Nakonfiguruje základní možnosti sítě pro <xref:System.Net?displayProperty=nameWithType> obor názvů.  
 
-[ **\<configuration >** ](../configuration-element.md) \
-&nbsp;&nbsp;[ **\<System. net >** ](system-net-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;**nastavení\<**
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.net>**](system-net-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<settings>**
 
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,19 +44,19 @@ Konfiguruje základní možnosti sítě pro obor názvů <xref:System.Net?displa
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
-|[httpListener](httplistener-element-network-settings.md)|Přizpůsobuje parametry používané třídou <xref:System.Net.HttpListener>.|  
+|[httpListener](httplistener-element-network-settings.md)|Přizpůsobuje parametry používané <xref:System.Net.HttpListener> třídou.|  
 |[httpWebRequest](httpwebrequest-element-network-settings.md)|Přizpůsobuje parametry webového požadavku.|  
 |[protokolů](ipv6-element-network-settings.md)|Povolí podporu Internet Protocol verze 6 (IPv6).|  
-|[\<element > performanceCounter (nastavení sítě)](performancecounter-element-network-settings.md)|Povolí čítače výkonu sítě.|  
+|[\<performanceCounter>– Element (nastavení sítě)](performancecounter-element-network-settings.md)|Povolí čítače výkonu sítě.|  
 |[Třída ServicePointManager](servicepointmanager-element-network-settings.md)|Nakonfiguruje připojení k síťovým prostředkům.|  
 |[zásuvky](socket-element-network-settings.md)|Určuje, jestli operace soketu používají porty dokončení.|  
-|[\<element > webProxyScript (nastavení sítě)](webproxyscript-element-network-settings.md)|Konfiguruje charakteristiky skriptu používaného pro zjišťování webových proxy serverů.|  
+|[\<webProxyScript>– Element (nastavení sítě)](webproxyscript-element-network-settings.md)|Konfiguruje charakteristiky skriptu používaného pro zjišťování webových proxy serverů.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
 |[system.net](system-net-element-network-settings.md)|Obsahuje nastavení, která určují, jak se .NET Framework připojí k síti.|  
   
@@ -65,7 +65,7 @@ Konfiguruje základní možnosti sítě pro obor názvů <xref:System.Net?displa
 ## <a name="configuration-files"></a>Konfigurační soubory  
  Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine. config).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Net?displayProperty=nameWithType>
 - [Schéma nastavení sítě](index.md)

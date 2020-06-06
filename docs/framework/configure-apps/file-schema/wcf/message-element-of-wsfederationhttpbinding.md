@@ -1,24 +1,24 @@
 ---
-title: <message> element <wsFederationHttpBinding>
+title: <message>prvek elementu<wsFederationHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 9d710389-d9d8-4454-9bf2-da4ccda31cec
 ms.openlocfilehash: 8e0903dd1313e68e2de65730e129079199ebe2f2
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73738984"
 ---
-# <a name="message-element-of-wsfederationhttpbinding"></a>\<> elementu \<wsFederationHttpBinding >
-Definuje nastavení pro zabezpečení na úrovni zpráv [\<WSFederationHttpBinding](wsfederationhttpbinding.md).  
+# <a name="message-element-of-wsfederationhttpbinding"></a>\<message>prvek elementu\<wsFederationHttpBinding>
+Definuje nastavení pro zabezpečení na úrovni zprávy pro [\<wsFederationHttpBinding>](wsfederationhttpbinding.md) .  
   
-[ **\<configuration >** ](../configuration-element.md) \
-&nbsp; &nbsp;[ **\<system. serviceModel >** ](system-servicemodel.md) \
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<vazeb >** ](bindings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<wsFederationHttpBinding >** ](wsfederationhttpbinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<vazeb >** \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<zabezpečení >** ](security-of-wsfederationhttpbinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<zpráva >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<bindings>**](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<wsFederationHttpBinding>**](wsfederationhttpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<binding>**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<security>**](security-of-wsfederationhttpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<message>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -87,14 +87,14 @@ Definuje nastavení pro zabezpečení na úrovni zpráv [\<WSFederationHttpBindi
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|algorithmSuite|Nastaví šifrování zpráv a algoritmy pro zabalení klíčů. Platné hodnoty tohoto atributu najdete v tabulce atributu algorithmSuite. Výchozí hodnota je `Basic256`.<br /><br /> Tento atribut je typu <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>. Tyto algoritmy jsou mapovány na ty, které jsou zadány ve specifikaci jazyka zásad zabezpečení (WS-SecurityPolicy).|  
-|issuedKeyType|Určuje typ klíče, který se má vystavit. Platné hodnoty jsou následující:<br /><br /> - SymmetricKey<br />– PublicKey<br /><br /> Výchozí hodnota je `SymmetricKey`. Tento atribut je typu <xref:System.IdentityModel.Tokens.SecurityKeyType>.|  
-|issuedTokenType|Řetězec obsahující identifikátor URI, který určuje typ tokenu, který se má vystavit. Výchozí hodnota je `null`.|  
-|negotiateServiceCredential|Logická hodnota určující, zda má být pověření služby vyměněno jako součást vyjednávání nebo je k dispozici mimo IP síť. Výchozí hodnota je `true`, což znamená, že se pověření služby vyjednávat.|  
+|algorithmSuite|Nastaví šifrování zpráv a algoritmy pro zabalení klíčů. Platné hodnoty tohoto atributu najdete v tabulce atributu algorithmSuite. Výchozí hodnota je `Basic256`.<br /><br /> Tento atribut je typu <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> . Tyto algoritmy jsou mapovány na ty, které jsou zadány ve specifikaci jazyka zásad zabezpečení (WS-SecurityPolicy).|  
+|issuedKeyType|Určuje typ klíče, který se má vystavit. Platné hodnoty jsou následující:<br /><br /> - SymmetricKey<br />– PublicKey<br /><br /> Výchozí formát je `SymmetricKey`. Tento atribut je typu <xref:System.IdentityModel.Tokens.SecurityKeyType> .|  
+|issuedTokenType|Řetězec obsahující identifikátor URI, který určuje typ tokenu, který se má vystavit. Výchozí formát je `null`.|  
+|negotiateServiceCredential|Logická hodnota určující, zda má být pověření služby vyměněno jako součást vyjednávání nebo je k dispozici mimo IP síť. Výchozí hodnota je `true` , což znamená, že se pověření služby vyjednávat.|  
   
 ## <a name="algorithmsuite-attribute"></a>algorithmSuite – atribut  
   
-|Hodnota|Popis|  
+|Hodnota|Description|  
 |-----------|-----------------|  
 |Basic128|Pro zabalení klíče použijte šifrování Basic128, SHA1 pro Digest zpráv a RSA-výplně OAEP-mgf1p.|  
 |Basic192|Pro zabalení klíče použijte šifrování Basic192, SHA1 pro Digest zpráv, RSA-výplně OAEP-mgf1p.|  
@@ -115,20 +115,20 @@ Definuje nastavení pro zabezpečení na úrovni zpráv [\<WSFederationHttpBindi
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
-|[\<claimTypeRequirements >](claimtyperequirements-element.md)|Určuje kolekci typů deklarací pro tuto vazbu. Každý prvek je typu <xref:System.ServiceModel.Configuration.ClaimTypeElement>.|  
-|issuer|Určuje koncový bod, který vydá token zabezpečení. Tento prvek je typu <xref:System.ServiceModel.Configuration.IssuedTokenParametersEndpointAddressElement>.|  
+|[\<claimTypeRequirements>](claimtyperequirements-element.md)|Určuje kolekci typů deklarací pro tuto vazbu. Každý prvek je typu <xref:System.ServiceModel.Configuration.ClaimTypeElement> .|  
+|issuer|Určuje koncový bod, který vydá token zabezpečení. Tento prvek je typu <xref:System.ServiceModel.Configuration.IssuedTokenParametersEndpointAddressElement> .|  
 |issuerMetadata|Určuje adresu koncového bodu vystavitele.|  
-|[\<tokenRequestParameters >](tokenrequestparameters.md)|Kolekce parametrů požadavku tokenu Každý parametr je XML element.|  
+|[\<tokenRequestParameters>](tokenrequestparameters.md)|Kolekce parametrů požadavku tokenu Každý parametr je XML element.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
-|[> zabezpečení \<](security-of-wsfederationhttpbinding.md)|Definuje nastavení zabezpečení pro vazbu.|  
+|[\<security>](security-of-wsfederationhttpbinding.md)|Definuje nastavení zabezpečení pro vazbu.|  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.ServiceModel.FederatedMessageSecurityOverHttp>
 - <xref:System.ServiceModel.Configuration.WSFederationHttpSecurityElement.Message%2A>
@@ -138,4 +138,4 @@ Definuje nastavení pro zabezpečení na úrovni zpráv [\<WSFederationHttpBindi
 - [Vazby](../../../wcf/bindings.md)
 - [Konfigurace vazeb poskytovaných systémem](../../../wcf/feature-details/configuring-system-provided-bindings.md)
 - [Používání vazeb ke konfiguraci služeb a klientů](../../../wcf/using-bindings-to-configure-services-and-clients.md)
-- [vazba \<](bindings.md)
+- [\<binding>](bindings.md)

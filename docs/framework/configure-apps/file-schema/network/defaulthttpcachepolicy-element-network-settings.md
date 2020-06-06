@@ -9,19 +9,19 @@ helpviewer_keywords:
 - <defaultHttpCachePolicy> element
 ms.assetid: 2c1247d0-39b0-4c12-919a-a925ce075c79
 ms.openlocfilehash: c5029a7d1e53c28d0abb232efdc3e0bd2c9658d4
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "74088421"
 ---
-# <a name="defaulthttpcachepolicy-element-network-settings"></a>\<element > defaultHttpCachePolicy (nastavení sítě)
+# <a name="defaulthttpcachepolicy-element-network-settings"></a>\<defaultHttpCachePolicy> – element (nastavení sítě)
 Popisuje, zda je ukládání do mezipaměti protokolu HTTP aktivní a popisuje výchozí zásady ukládání do mezipaměti.  
 
-[ **\<configuration >** ](../configuration-element.md) \
-&nbsp;&nbsp;[ **\<System. net >** ](system-net-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<requestCaching >** ](requestcaching-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<defaultHttpCachePolicy >**
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.net>**](system-net-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<requestCaching>**](requestcaching-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<defaultHttpCachePolicy>**
 
 ## <a name="syntax"></a>Syntaxe  
   
@@ -51,14 +51,14 @@ Popisuje, zda je ukládání do mezipaměti protokolu HTTP aktivní a popisuje v
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
 |[requestCaching](requestcaching-element-network-settings.md)|Řídí mechanismus ukládání do mezipaměti pro síťové požadavky.|  
   
 ## <a name="remarks"></a>Poznámky  
- Hodnota atributu `policyLevel` je buď `BypassCache` nebo `Default`.  
+ Hodnota `policyLevel` atributu je buď `BypassCache` nebo `Default` .  
   
- Hodnoty pro prvky `maximumAge`, `maximumStale`a `minimumFresh` jsou buď explicitním časovým intervalem formátu *d*. *HH*:*mm*:*SS* (dny, hodiny, minuty a sekundy) nebo konstanty `minValue` nebo `maxValue`podle potřeby.  
+ Hodnoty pro `maximumAge` prvky, `maximumStale` a `minimumFresh` jsou buď explicitním časovým intervalem formátu *d*.* HH*:*mm*:*SS* (dny, hodiny, minuty a sekundy) nebo konstanty `minValue` nebo `maxValue` , podle potřeby.  
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
  Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine. config).  
@@ -80,7 +80,7 @@ Popisuje, zda je ukládání do mezipaměti protokolu HTTP aktivní a popisuje v
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Net.Cache>
 - <xref:System.Net.WebRequest>

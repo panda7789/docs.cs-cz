@@ -3,21 +3,21 @@ title: <pnrpPeerResolver>
 ms.date: 03/30/2017
 ms.assetid: c1b34f3b-68e5-4911-a367-de49fb61dbc6
 ms.openlocfilehash: d3e88d7f2dd991091d3d7abdc715e125ddc9ac56
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73738776"
 ---
-# <a name="pnrppeerresolver"></a>\<pnrpPeerResolver >
+# \<pnrpPeerResolver>
 Určuje, že jako překladač se použije překladač PNRP (Peer Name Resolution Protocol). Tento prvek je nepovinný, protože PNRP je výchozí překladač.  
   
-[ **\<configuration >** ](../configuration-element.md) \
-&nbsp; &nbsp;[ **\<system. serviceModel >** ](system-servicemodel.md) \
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<vazeb >** ](bindings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<customBinding >** ](custombinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<vazeb >** \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<pnrpResolver >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<bindings>**](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<customBinding>**](custombinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<binding>**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<pnrpResolver>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,9 +39,9 @@ Určuje, že jako překladač se použije překladač PNRP (Peer Name Resolution
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
-|[vazba \<](bindings.md)|Definuje všechny schopnosti vazby vlastní vazby.|  
+|[\<binding>](bindings.md)|Definuje všechny schopnosti vazby vlastní vazby.|  
   
 ## <a name="example"></a>Příklad  
   
@@ -49,7 +49,7 @@ Určuje, že jako překladač se použije překladač PNRP (Peer Name Resolution
 <pnrpResolver resolverType="String" />
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.ServiceModel.Configuration.PnrpPeerResolverElement>
 - <xref:System.ServiceModel.Channels.PnrpPeerResolverBindingElement>
@@ -57,5 +57,5 @@ Určuje, že jako překladač se použije překladač PNRP (Peer Name Resolution
 - [Vazby](../../../wcf/bindings.md)
 - [Rozšíření vazeb](../../../wcf/extending/extending-bindings.md)
 - [Vlastní vazby](../../../wcf/extending/custom-bindings.md)
-- [\<customBinding >](custombinding.md)
+- [\<customBinding>](custombinding.md)
 - [Překladače partnerských uzlů](../../../wcf/feature-details/peer-resolvers.md)

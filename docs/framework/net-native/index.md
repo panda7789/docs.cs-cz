@@ -9,21 +9,21 @@ helpviewer_keywords:
 - C# and native compilation
 ms.assetid: 47cd5648-9469-4b1d-804c-43cc04384045
 ms.openlocfilehash: 1f176e81905fe68c6d740a13240fe814659a7a59
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73128379"
 ---
 # <a name="compiling-apps-with-net-native"></a>Kompilování aplikací pomocí .NET Native
 
-.NET Native je předkompilační technologie pro sestavování a nasazování aplikací pro Windows, které jsou součástí sady Visual Studio 2015 a novějších verzí. Automaticky zkompiluje vydanou verzi aplikací, které jsou napsané ve spravovaném kódu (C# nebo Visual Basic) a cílí na .NET Framework a Windows 10 na nativní kód.
+.NET Native je předkompilační technologie pro sestavování a nasazování aplikací pro Windows, které jsou součástí sady Visual Studio 2015 a novějších verzí. Automaticky zkompiluje vydanou verzi aplikací, které jsou napsány ve spravovaném kódu (C# nebo Visual Basic) a cílí na .NET Framework a Windows 10 do nativního kódu.
 
 Aplikace, které cílí na .NET Framework, jsou obvykle kompilovány do jazyka IL (Intermediate Language). V době běhu překládá kompilátor JIT (just-in-time) IL na nativní kód. Naproti tomu .NET Native zkompiluje aplikace pro Windows přímo do nativního kódu. Pro vývojáře to znamená:
 
 - Vaše aplikace se zaměřením na výkon nativního kódu. Výkon je obvykle nadřazený kódu, který je nejprve zkompilován do IL a poté zkompilován do nativního kódu kompilátorem JIT.
 
-- Můžete pokračovat v C# programu nebo Visual Basic.
+- Můžete pokračovat v programu v jazyce C# nebo Visual Basic.
 
 - Můžete nadále využívat prostředky poskytované .NET Framework, včetně knihovny tříd, automatické správy paměti a uvolňování paměti a zpracování výjimek.
 
@@ -40,21 +40,21 @@ Pro uživatele vašich aplikací .NET Native nabízí tyto výhody:
 > [!IMPORTANT]
 > Pro většinu aplikací a scénářů nabízí .NET Native výrazně rychlejší dobu spuštění a špičkový výkon v porovnání s aplikací zkompilovanou do IL nebo do image NGEN. Výsledky se ale můžou lišit. Chcete-li zajistit, aby vaše aplikace využila vylepšení výkonu .NET Native, měli byste porovnat jeho výkon s verzí non-.NET Native vaší aplikace. Další informace najdete v tématu [Přehled relace výkonu](https://docs.microsoft.com/visualstudio/profiling/performance-session-overview).
 
-Ale .NET Native zahrnuje více než kompilaci do nativního kódu. Transformuje způsob, jakým se sestavují a spouštějí aplikace .NET Framework. Zejména:
+Ale .NET Native zahrnuje více než kompilaci do nativního kódu. Transformuje způsob, jakým se sestavují a spouštějí aplikace .NET Framework. Zejména jde o toto:
 
 - V průběhu předkompilace jsou požadované části .NET Framework staticky propojeny do vaší aplikace. To umožňuje aplikaci běžet s knihovnami místních aplikací .NET Framework a kompilátor provede globální analýzu pro doručení služby WINS výkonu. V důsledku toho aplikace spouští konzistentně rychleji, i když .NET Framework aktualizace.
 
 - Modul runtime .NET Native je optimalizován pro statickou předkompilaci a v obrovské většině případů nabízí špičkový výkon. Ve stejnou dobu zachovává základní funkce reflexe, které vývojáři hledají tak, aby byly tak produktivní.
 
-- .NET Native používá stejný back-end jako C++ kompilátor, který je optimalizován pro statické scénáře předkompilace.
+- .NET Native používá stejný back-end jako kompilátor jazyka C++, který je optimalizován pro statické scénáře předkompilace.
 
-.NET Native je možné přenést výhody z hlediska C++ výkonu na spravované vývojáře kódu, protože používá stejné nebo podobné nástroje jako C++ v digestoři, jak je znázorněno v této tabulce.
+.NET Native je možné přenést výhody z hlediska výkonu pro vývojáře spravovaného kódu, protože používá stejné nebo podobné nástroje jako C++ v digestoři, jak je znázorněno v této tabulce.
 
 ||.NET Native|C++|
 |-|----------------------------------------------------------------|-----------|
 |Knihovny|.NET Framework + prostředí Windows Runtime|Win32 + prostředí Windows Runtime|
-|Přepínač|Kompilátor pro optimalizaci UTC|Kompilátor pro optimalizaci UTC|
-|nainstalována|Soubory připravené ke spuštění|Hotové binární soubory připravené k běhu (ASM)|
+|Compiler|Kompilátor pro optimalizaci UTC|Kompilátor pro optimalizaci UTC|
+|Nainstalována|Soubory připravené ke spuštění|Hotové binární soubory připravené k běhu (ASM)|
 |Modul runtime|MRT. dll (minimální modul CLR Runtime)|CRT. dll (běhové prostředí C)|
 
 Pro aplikace pro Windows pro Windows 10 nahrajete .NET Native binárních souborů kompilace kódu v balíčcích aplikací (soubory. appx) do Windows Storu.

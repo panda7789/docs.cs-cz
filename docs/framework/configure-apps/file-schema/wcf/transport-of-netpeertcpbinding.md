@@ -3,22 +3,22 @@ title: <transport> z <netPeerTcpBinding>
 ms.date: 03/30/2017
 ms.assetid: c44d86d2-1160-44d7-9c7a-297b12eccc7f
 ms.openlocfilehash: 49b31a889d192d190125214e89ba09305114eb7f
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73735971"
 ---
-# <a name="transport-of-netpeertcpbinding"></a>> \<přenosů \<netPeerTcpBinding >
-Určuje nastavení zabezpečení na úrovni přenosu při použití [\<NetPeerTcpBinding](netpeertcpbinding.md).  
+# <a name="transport-of-netpeertcpbinding"></a>\<transport> z \<netPeerTcpBinding>
+Určuje nastavení zabezpečení na úrovni přenosu při použití [\<netPeerTcpBinding>](netpeertcpbinding.md) .  
   
-[ **\<configuration >** ](../configuration-element.md) \
-&nbsp; &nbsp;[ **\<system. serviceModel >** ](system-servicemodel.md) \
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<vazeb >** ](bindings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<netPeerTcpBinding >** ](netpeertcpbinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<vazeb >** \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<zabezpečení >** ](security-of-netpeerbinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<transport >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<bindings>**](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<netPeerTcpBinding>**](netpeertcpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<binding>**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<security>**](security-of-netpeerbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<transport>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,11 +39,11 @@ Určuje nastavení zabezpečení na úrovni přenosu při použití [\<NetPeerTc
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|credentialType|Volitelné. Určuje typ přihlašovacích údajů, které se používají k ověření zpráv odesílaných pomocí partnerského přenosu. Tento atribut je typu <xref:System.ServiceModel.PeerTransportCredentialType>.|  
+|credentialType|Nepovinný parametr. Určuje typ přihlašovacích údajů, které se používají k ověření zpráv odesílaných pomocí partnerského přenosu. Tento atribut je typu <xref:System.ServiceModel.PeerTransportCredentialType> .|  
   
 ## <a name="credentialtype-attribute"></a>credentialType – atribut  
   
-|Hodnota|Popis|  
+|Hodnota|Description|  
 |-----------|-----------------|  
 |Certifikát|Ověřování přenosu rovnocenného kanálu vyžaduje certifikát x509.|  
 |Heslo|Ověření přenosu rovnocenného kanálu vyžaduje správné heslo.|  
@@ -53,11 +53,11 @@ Určuje nastavení zabezpečení na úrovni přenosu při použití [\<NetPeerTc
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
-|[> zabezpečení \<](security-of-netpeerbinding.md)|Definuje nastavení zabezpečení pro [\<netPeerTcpBinding >](netpeertcpbinding.md).|  
+|[\<security>](security-of-netpeerbinding.md)|Definuje nastavení zabezpečení pro [\<netPeerTcpBinding>](netpeertcpbinding.md) .|  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.ServiceModel.Configuration.PeerTransportSecurityElement>
 - <xref:System.ServiceModel.PeerSecuritySettings.Transport%2A>
@@ -67,4 +67,4 @@ Určuje nastavení zabezpečení na úrovni přenosu při použití [\<NetPeerTc
 - [Vazby](../../../wcf/bindings.md)
 - [Konfigurace vazeb poskytovaných systémem](../../../wcf/feature-details/configuring-system-provided-bindings.md)
 - [Používání vazeb ke konfiguraci služeb a klientů](../../../wcf/using-bindings-to-configure-services-and-clients.md)
-- [vazba \<](bindings.md)
+- [\<binding>](bindings.md)

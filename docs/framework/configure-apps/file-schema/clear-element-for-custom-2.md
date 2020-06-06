@@ -1,5 +1,5 @@
 ---
-title: element <clear> pro NameValueSectionHandler a DictionarySectionHandler
+title: <clear>– element pro NameValueSectionHandler a DictionarySectionHandler
 ms.date: 05/01/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/sectionName/clear
@@ -8,19 +8,19 @@ helpviewer_keywords:
 - <clear> Element
 ms.assetid: ff2294ec-fb82-4b0c-933e-ae185433fc7b
 ms.openlocfilehash: f6d860f35d22002030ffa3d09dd0d8a96116bf5e
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/14/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "77214746"
 ---
-# <a name="clear-element-for-namevaluesectionhandler-and-dictionarysectionhandler"></a>\<vymazat > elementu pro NameValueSectionHandler a DictionarySectionHandler
+# <a name="clear-element-for-namevaluesectionhandler-and-dictionarysectionhandler"></a>\<clear>– element pro NameValueSectionHandler a DictionarySectionHandler
 
 Vymaže všechna dříve definovaná nastavení v oddílu.
 
-[**konfigurační >\<** ](configuration-element.md)\
-&nbsp;&nbsp;[ **\<sectiongroup >** ](custom-element-2.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<vymazat >**
+[**\<configuration>**](configuration-element.md)\
+&nbsp;&nbsp;[**\<sectionName>**](custom-element-2.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<clear>**
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -30,27 +30,27 @@ Vymaže všechna dříve definovaná nastavení v oddílu.
 
 ## <a name="attributes"></a>Atributy
 
-Žádná
+Žádné
 
 ## <a name="parent-element"></a>Nadřazený element
 
-|     | Popis |
+|     | Description |
 | --- | ------------|
-| [ **>\<sectionGroup** Objekt](custom-element-2.md) | Definuje nastavení pro vlastní konfigurační oddíly, které používají třídy <xref:System.Configuration.NameValueSectionHandler> a <xref:System.Configuration.DictionarySectionHandler>. |
+| [**\<sectionName>** Objekt](custom-element-2.md) | Definuje nastavení pro vlastní konfigurační oddíly, které používají <xref:System.Configuration.NameValueSectionHandler> <xref:System.Configuration.DictionarySectionHandler> třídy a. |
 
 ## <a name="child-elements"></a>Podřízené prvky
 
-Žádná
+Žádné
 
 ## <a name="remarks"></a>Poznámky
 
-Pomocí elementu **\<clear >** můžete odebrat všechna nastavení z aplikace, která byla definována na vyšší úrovni v hierarchii konfiguračního souboru.
+Pomocí **\<clear>** elementu můžete odebrat všechna nastavení z aplikace, která byla definována na vyšší úrovni v hierarchii konfiguračního souboru.
 
 ## <a name="example"></a>Příklad
 
-Tento příklad definuje konfigurační soubor počítače a konfigurační soubor aplikace a ukazuje, jak použít **\<clear >** elementu v konfiguračním souboru aplikace pro vymazání oddílů dříve definovaných v konfiguračním souboru počítače.
+Tento příklad definuje konfigurační soubor počítače a konfigurační soubor aplikace a ukazuje, jak použít **\<clear>** element v konfiguračním souboru aplikace pro vymazání oddílů dříve definovaných v konfiguračním souboru počítače.
 
-Následující kód konfiguračního souboru počítače deklaruje oddíl **\<mySection >** :
+Následující kód konfiguračního souboru počítače deklaruje oddíl **\<mySection>** :
 
 ```xml
 <!-- Machine.config file -->
@@ -65,7 +65,7 @@ Následující kód konfiguračního souboru počítače deklaruje oddíl **\<my
 </configuration>
 ```
 
-Následující kód konfiguračního souboru aplikace odebere všechna nastavení z **\<mySection >** . Aplikace nemůže načíst žádná nastavení, která byla deklarována v v části **>\<mySection** konfiguračního souboru počítače.
+Následující kód konfiguračního souboru aplikace odebere všechna nastavení z **\<mySection>** . Aplikace nemůže načíst žádná nastavení, která byla deklarována v v **\<mySection>** části konfiguračního souboru počítače.
 
 ```xml
 <!-- Application configuration file -->

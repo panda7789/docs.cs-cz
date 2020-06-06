@@ -8,19 +8,19 @@ helpviewer_keywords:
 - <sectionGroup> Element
 ms.assetid: 6c27f9e2-809c-4bc9-aca9-72f90360e7a3
 ms.openlocfilehash: eb221027470fe6e485f8fcc4b939b71e4f219712
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/14/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "77215263"
 ---
-# <a name="sectiongroup-element-for-configsections"></a>> element \<sectionGroup pro \<configSections >
+# <a name="sectiongroup-element-for-configsections"></a>\<sectionGroup> – element pro \<configSections>
 
 Definuje obor názvů pro konfigurační oddíly.
 
-[**konfigurační >\<** ](configuration-element.md)\
-&nbsp;&nbsp;[ **\<configSections >** ](configsections-element-for-configuration.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<oddílů** >
+[**\<configuration>**](configuration-element.md)\
+&nbsp;&nbsp;[**\<configSections>**](configsections-element-for-configuration.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<sectionGroup>**
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -38,19 +38,19 @@ Definuje obor názvů pro konfigurační oddíly.
 
 ## <a name="parent-element"></a>Nadřazený element
 
-|     | Popis |
+|     | Description |
 | --- | ----------- |
-| [ **\<configSections >** Objekt](configsections-element-for-configuration.md) | Obsahuje konfigurační oddíl a deklarace oboru názvů. |
+| [**\<configSections>** Objekt](configsections-element-for-configuration.md) | Obsahuje konfigurační oddíl a deklarace oboru názvů. |
 
 ## <a name="child-elements"></a>Podřízené prvky
 
-|     | Popis |
+|     | Description |
 | --- | ----------- |
-| [**oddíl \<>** ](section-element.md) | Obsahuje deklaraci konfiguračního oddílu. |
+| [**\<section>**](section-element.md) | Obsahuje deklaraci konfiguračního oddílu. |
 
 ## <a name="remarks"></a>Poznámky
 
-Deklarace skupiny oddílů vytvoří značku kontejneru pro konfigurační oddíly a zajistí, že nedojde ke konfliktu názvů s konfiguračními oddíly definovanými někým jiným. > Prvky můžete vnořovat do sebe **\<** .
+Deklarace skupiny oddílů vytvoří značku kontejneru pro konfigurační oddíly a zajistí, že nedojde ke konfliktu názvů s konfiguračními oddíly definovanými někým jiným. Prvky lze vnořit **\<sectionGroup>** do sebe navzájem.
 
 ## <a name="example"></a>Příklad
 
