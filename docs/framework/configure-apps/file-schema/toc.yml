@@ -9,9 +9,9 @@
       href: linkedconfiguration-element.md
     - name: Element <configSections>
       href: configsections-element-for-configuration.md
-    - name: Element <clear> pro <configSections>
+    - name: <clear> – element pro <configSections>
       href: clear-element-for-configsections.md
-    - name: Element <remove> pro <configSections>
+    - name: <remove> – element pro <configSections>
       href: remove-element-for-configsections.md
     - name: Element <sectionGroup>
       href: sectiongroup-element-for-configsections.md
