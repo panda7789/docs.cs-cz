@@ -4,22 +4,22 @@ ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: eab5af7e-76fa-434d-9d36-873e995cee05
 ms.openlocfilehash: 89297b3a7d64f4300a735d8512230d441836c634
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79152304"
 ---
-# <a name="cancelrequestedqueries"></a>\<cancelRequestedQueries>
+# \<cancelRequestedQueries>
 Představuje kolekci dotazů, které se používají ke sledování požadavků pro zrušení podřízené aktivity Nadřazená aktivita. Dotaz, je nezbytné pro sledování účastníka přihlásit k odběru zrušit požadavek záznam objekty.  
   
- Další informace o sledování profilových dotazů naleznete v [tématu Sledování profilů](../../../windows-workflow-foundation/tracking-profiles.md)  
+ Další informace o sledování dotazů profilů najdete v tématu [sledování profilů](../../../windows-workflow-foundation/tracking-profiles.md) .  
   
-[**\<>konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[**\<Systému.>ServiceModel**](system-servicemodel-of-workflow.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[**\<sledování>**](tracking.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<trackingProfil>**](trackingprofile.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<>pracovního postupu**](workflow.md)\
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.ServiceModel>**](system-servicemodel-of-workflow.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<tracking>**](tracking.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<trackingProfile>**](trackingprofile.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<workflow>**](workflow.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<cancelRequestedQueries>**  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -41,19 +41,19 @@ Představuje kolekci dotazů, které se používají ke sledování požadavků 
  Následující části popisují atributy, podřízené prvky a nadřazené prvky.  
   
 ### <a name="attributes"></a>Atributy  
- Žádné.  
+ Žádné  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
-|Element|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
 |[\<cancelRequestedQuery>](cancelrequestedquery.md)|Dotaz, který se používá ke sledování požadavků pro zrušení podřízené aktivity Nadřazená aktivita.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Element|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
-|[\<>pracovního postupu](workflow.md)|Konfigurační prvek, který obsahuje všechny dotazy pro konkrétní pracovní postup identifikovaný vlastností **activityDefinitionId.**|  
+|[\<workflow>](workflow.md)|Prvek konfigurace, který obsahuje všechny dotazy pro konkrétní pracovní postup identifikovaný vlastností **ID definice aktivity**|  
   
 ## <a name="see-also"></a>Viz také
 

@@ -9,19 +9,19 @@ helpviewer_keywords:
 - cryptoNameMapping element
 ms.assetid: c59c9494-149b-4ce6-b38d-371f896ae85c
 ms.openlocfilehash: d31c5cd52ffe0e2a6eb5784735e76436d216444b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79155216"
 ---
-# <a name="cryptonamemapping-element"></a>\<kryptonamemapping> element
+# <a name="cryptonamemapping-element"></a>Element \<cryptoNameMapping>
 Obsahuje mapování tříd na popisné názvy.  
 
-[**\<>konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[**\<>mscorlib**](mscorlib-element-for-cryptography-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[**\<kryptografieNastavení>**](cryptographysettings-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<kryptonamemapping>**
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<mscorlib>**](mscorlib-element-for-cryptography-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<cryptographySettings>**](cryptographysettings-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<cryptoNameMapping>**
 
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,26 +34,26 @@ Obsahuje mapování tříd na popisné názvy.
  Následující části popisují atributy, podřízené prvky a nadřazené prvky.  
   
 ### <a name="attributes"></a>Atributy  
- Žádné.  
+ Žádné  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
-|Element|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
-|`cryptoClasses`|Obsahuje seznam kryptografických tříd, které mají mapování na popisný název v ** \<elementu nameEntry>.**|  
-|`nameEntry`|Mapuje název třídy na popisný název algoritmu, který umožňuje jedné třídě mít mnoho popisných názvů.|  
+|`cryptoClasses`|Obsahuje seznam kryptografických tříd, které mají mapování na popisný název v **\<nameEntry>** elementu.|  
+|`nameEntry`|Mapuje název třídy na popisný název algoritmu, který umožňuje, aby jedna třída měla mnoho popisných názvů.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Element|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|  
 |`cryptographySettings`|Obsahuje nastavení kryptografie.|  
 |`cryptoNameMapping`|Obsahuje mapování tříd na popisné názvy.|  
-|`mscorlib`|Obsahuje \<kryptografiiNastavení> prvek.|  
+|`mscorlib`|Obsahuje \<cryptographySettings> element.|  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak používat element ** \<cryptoNameMapping>** k odkazování na kryptografickou třídu a ke konfiguraci runtime. Potom můžete předat řetězec "RSA" <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A?displayProperty=nameWithType> metodě <xref:System.Security.Cryptography.AsymmetricAlgorithm.Create%2A> a použít `MyCryptoRSAClass` metodu k vrácení objektu.  
+ Následující příklad ukazuje, jak použít **\<cryptoNameMapping>** element k odkazování na třídu kryptografie a ke konfiguraci modulu runtime. Pak můžete předat řetězec "RSA" <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A?displayProperty=nameWithType> metodě a použít <xref:System.Security.Cryptography.AsymmetricAlgorithm.Create%2A> metodu k vrácení `MyCryptoRSAClass` objektu.  
   
 ```xml  
 <configuration>  

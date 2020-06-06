@@ -6,18 +6,18 @@ helpviewer_keywords:
 - legacyCorruptedStateExceptionsPolicy element
 ms.assetid: e0a55ddc-bfa8-4f3e-ac14-d1fc3330e4bb
 ms.openlocfilehash: d1d29a37999a01f3e370897a1052f4f94435a218
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73116461"
 ---
-# <a name="legacycorruptedstateexceptionspolicy-element"></a>\<element > legacyCorruptedStateExceptionsPolicy
+# <a name="legacycorruptedstateexceptionspolicy-element"></a>Element \<legacyCorruptedStateExceptionsPolicy>
 Určuje, zda modul CLR (Common Language Runtime) umožňuje spravovanému kódu zachytit porušení přístupu a jiné poškozené výjimky stavu.  
   
-[ **\<configuration >** ](../configuration-element.md) \
-&nbsp;&nbsp;[ **\<runtime >** ](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<legacyCorruptedStateExceptionsPolicy >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<runtime>**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<legacyCorruptedStateExceptionsPolicy>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,7 +36,7 @@ Určuje, zda modul CLR (Common Language Runtime) umožňuje spravovanému kódu 
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
-|Hodnota|Popis|  
+|Hodnota|Description|  
 |-----------|-----------------|  
 |`false`|Aplikace nebude zachytit nepoškozená selhání výjimek stavu, jako je například porušení přístupu. Toto nastavení je výchozí.|  
 |`true`|Aplikace zachytí chyby výjimek nepoškozených stavů, jako je například porušení přístupu.|  
@@ -46,7 +46,7 @@ Určuje, zda modul CLR (Common Language Runtime) umožňuje spravovanému kódu 
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|  
 |`runtime`|Obsahuje informace o vazbách sestavení a uvolnění paměti.|  
@@ -54,13 +54,13 @@ Určuje, zda modul CLR (Common Language Runtime) umožňuje spravovanému kódu 
 ## <a name="remarks"></a>Poznámky  
  V .NET Framework verze 3,5 a starší používá modul common language runtime povolený spravovaný kód pro zachycení výjimek, které byly vyvolány poškozenými stavy procesu. Příkladem tohoto typu výjimky je porušení přístupu.  
   
- Počínaje .NET Framework 4 spravovaný kód již nezachycuje tyto typy výjimek v blocích `catch`. Tuto změnu však můžete přepsat a spravovat zpracování poškozených výjimek stavu dvěma způsoby:  
+ Počínaje .NET Framework 4 spravovaný kód již nezachycuje tyto typy výjimek v `catch` blocích. Tuto změnu však můžete přepsat a spravovat zpracování poškozených výjimek stavu dvěma způsoby:  
   
-- Nastavte atribut `enabled` elementu `<legacyCorruptedStateExceptionsPolicy>` na hodnotu `true`. Toto nastavení konfigurace se používá processwide a má vliv na všechny metody.  
+- Nastavte `<legacyCorruptedStateExceptionsPolicy>` `enabled` atribut elementu na `true` . Toto nastavení konfigurace se používá processwide a má vliv na všechny metody.  
   
  -nebo-  
   
-- Použijte atribut <xref:System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptionsAttribute?displayProperty=nameWithType> pro metodu, která obsahuje blok `catch` Exceptions.  
+- Použijte <xref:System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptionsAttribute?displayProperty=nameWithType> atribut na metodu, která obsahuje `catch` blok výjimek.  
   
  Tento prvek konfigurace je k dispozici pouze v .NET Framework 4 nebo novějším.  
   
@@ -75,8 +75,8 @@ Určuje, zda modul CLR (Common Language Runtime) umožňuje spravovanému kódu 
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptionsAttribute>
-- [Schéma nastavení běhového prostředí](index.md)
+- [Schéma nastavení modulu runtime](index.md)
 - [Schéma konfiguračního souboru](../index.md)

@@ -3,103 +3,103 @@ title: Migrace aplikace pro Windows Store do .NET Native
 ms.date: 03/30/2017
 ms.assetid: 4153aa18-6f56-4a0a-865b-d3da743a1d05
 ms.openlocfilehash: 987669fc51eeaf7e3bdef3e91a2f1ce23164a055
-ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/15/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "81389705"
 ---
-# <a name="migrate-your-windows-store-app-to-net-native"></a>Migrace aplikace pro Windows Store do nativní ho storu .NET
+# <a name="migrate-your-windows-store-app-to-net-native"></a>Migrace aplikace pro Windows Store na .NET Native
 
-.NET Native poskytuje statickou kompilaci aplikací ve Windows Storu nebo v počítači vývojáře. To se liší od dynamické kompilace prováděné pro aplikace pro Windows Store kompilátorem just-in-time (JIT) nebo [native image generator (Ngen.exe)](../tools/ngen-exe-native-image-generator.md) v zařízení. Navzdory rozdílům se nativní rozhraní .NET snaží zachovat kompatibilitu s [rozhraním .NET pro aplikace pro Windows Store](https://docs.microsoft.com/previous-versions/windows/apps/br230302%28v=vs.140%29). Z větší části věci, které fungují na .NET pro aplikace pro Windows Store také pracovat s .NET Native.  V některých případech však může dojít ke změnám chování. Tento dokument popisuje tyto rozdíly mezi standardní .NET pro aplikace pro Windows Store a .NET Native v následujících oblastech:
+.NET Native poskytuje statickou kompilaci aplikací ve Windows Storu nebo v počítači vývojáře. To se liší od dynamické kompilace provedené pro aplikace pro Windows Store pomocí kompilátoru JIT (just-in-time) nebo [generátoru nativních imagí (Ngen. exe)](../tools/ngen-exe-native-image-generator.md) na zařízení. Navzdory rozdílům se .NET Native snaží udržet kompatibilitu s [rozhraním .NET pro aplikace pro Windows Store](https://docs.microsoft.com/previous-versions/windows/apps/br230302%28v=vs.140%29). Ve většině případů fungují i v případě, že funkce pro .NET pro aplikace pro Windows Store funguje i .NET Native.  V některých případech ale může dojít ke změnám chování. Tento dokument popisuje tyto rozdíly mezi standardním rozhraním .NET pro aplikace pro Windows Store a .NET Native v následujících oblastech:
 
-- [Obecné rozdíly za běhu](#Runtime)
+- [Obecné rozdíly v modulech runtime](#Runtime)
 
-- [Rozdíly dynamického programování](#Dynamic)
+- [Rozdíly v dynamickém programování](#Dynamic)
 
-- [Další rozdíly související s reflexí](#Reflection)
+- [Další rozdíly týkající se reflexe](#Reflection)
 
-- [Nepodporované scénáře a api](#Unsupported)
+- [Nepodporované scénáře a rozhraní API](#Unsupported)
 
-- [Rozdíly v sadě Visual Studio](#VS)
+- [Rozdíly v aplikaci Visual Studio](#VS)
 
 <a name="Runtime"></a>
 
-## <a name="general-runtime-differences"></a>Obecné rozdíly za běhu
+## <a name="general-runtime-differences"></a>Obecné rozdíly v modulech runtime
 
-- Výjimky, jako <xref:System.TypeLoadException>je například , které jsou vyvolány kompilátorem JIT při spuštění aplikace na clr (COMMON Language) obecně za následek chyby v době kompilace při zpracování .NET Native.
+- Výjimky, například <xref:System.TypeLoadException> , které jsou vyvolány kompilátorem JIT v případě, že aplikace běží v modulu CLR (Common Language Runtime) obecně vede k chybám při kompilaci při zpracování pomocí .NET Native.
 
-- Nevolejte metodu <xref:System.GC.WaitForPendingFinalizers%2A?displayProperty=nameWithType> z vlákna uživatelského rozhraní aplikace. To může mít za následek zablokování na .NET Native.
+- Nevolejte <xref:System.GC.WaitForPendingFinalizers%2A?displayProperty=nameWithType> metodu z vlákna uživatelského rozhraní aplikace. To může vést k zablokování .NET Native.
 
-- Nespoléhejte na statické třídy konstruktoru vyvolání řazení. V .NET Native pořadí vyvolání se liší od pořadí na standardní runtime. (I při standardním běhu za běhu byste neměli spoléhat na pořadí provádění konstruktorů statické třídy.)
+- Nespoléhá se na řazení volání konstruktoru statické třídy. V .NET Native se pořadí vyvolání liší od pořadí na standardním modulu runtime. (I se standardním modulem runtime byste neměli spoléhat na pořadí spouštění statických konstruktorů tříd.)
 
-- Nekonečné opakování bez volání `while(true);`(například) v libovolném vlákně může zastavit aplikaci. Podobně velké nebo nekonečné čekání může zastavit aplikaci.
+- Nekonečná smyčka bez provedení volání (například `while(true);` ) v jakémkoli vlákně může aplikaci přenést do zastavení. Podobně, velké nebo nekonečné čekací prodlevy můžou aplikaci zastavit.
 
-- Některé obecné inicializační cykly nevyvolání výjimky v .NET Native. Například následující kód vyvolá <xref:System.TypeLoadException> výjimku na standardní CLR. V .NET Native, není.
+- Některé obecné inicializační cykly nevyvolají výjimky v .NET Native. Například následující kód vyvolá <xref:System.TypeLoadException> výjimku pro standardní CLR. V .NET Native ne.
 
   [!code-csharp[ProjectN#8](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn/cs/compat1.cs#8)]
 
-- V některých případech .NET Native poskytuje různé implementace knihoven tříd rozhraní .NET Framework. Objekt vrácený z metody bude vždy implementovat členy vráceného typu. Však vzhledem k tomu, že jeho zálohování implementace je jiný, nemusí být možné přetypovat do stejné sady typů, jako byste mohli na jiných platformách rozhraní .NET Framework. Například v některých případech nemusí být možné <xref:System.Collections.Generic.IEnumerable%601> přetypovat objekt <xref:System.Reflection.TypeInfo.DeclaredMembers%2A?displayProperty=nameWithType> rozhraní <xref:System.Reflection.TypeInfo.DeclaredProperties%2A?displayProperty=nameWithType> `T[]`vrácené metody, jako je například nebo na .
+- V některých případech .NET Native poskytuje různé implementace knihoven .NET Framework třídy. Objekt vrácený z metody vždy implementuje členy vráceného typu. Vzhledem k tomu, že je jeho implementace jiného typu odlišná, možná ho nebude možné přetypovat na stejnou sadu typů, jakou jste mohli na jiných .NET Framework platformách. Například v některých případech nemusí být možné přetypování <xref:System.Collections.Generic.IEnumerable%601> objektu rozhraní vráceného metodami, jako je <xref:System.Reflection.TypeInfo.DeclaredMembers%2A?displayProperty=nameWithType> nebo <xref:System.Reflection.TypeInfo.DeclaredProperties%2A?displayProperty=nameWithType> na `T[]` .
 
-- Mezipaměť WinInet není ve výchozím nastavení povolena v rozhraní .NET pro aplikace pro Windows Store, ale je na nativní .NET. To zlepšuje výkon, ale má pracovní sadu důsledky. Není nutná žádná akce vývojáře.
+- Mezipaměť WinInet není ve výchozím nastavení povolená v rozhraní .NET pro aplikace pro Windows Store, ale je na .NET Native. To zlepšuje výkon, ale má vliv na pracovní sadu. Není nutná žádná akce vývojáře.
 
 <a name="Dynamic"></a>
 
-## <a name="dynamic-programming-differences"></a>Rozdíly dynamického programování
+## <a name="dynamic-programming-differences"></a>Rozdíly v dynamickém programování
 
-.NET Native staticky odkazy v kódu z rozhraní .NET Framework, aby kód aplikace místní pro maximální výkon. Binární velikosti však musí zůstat malé, takže nelze dovést celý rozhraní .NET Framework. Nativní kompilátor .NET řeší toto omezení pomocí reduktoru závislostí, který odebere odkazy na nepoužívaný kód. Nativní .NET však nemusí udržovat nebo generovat některé informace o typu a kód, pokud tyto informace nelze odvodit staticky v době kompilace, ale místo toho je načten dynamicky za běhu.
+.NET Native staticky propojuje v kódu z .NET Framework pro zajištění maximálního výkonu pro místní aplikaci kódu. Binární velikosti ale musí zůstat malé, takže celé .NET Framework nejde do. Kompilátor .NET Native vyřeší toto omezení pomocí zmenšení závislosti, který odebírá odkazy na nepoužitý kód. .NET Native však nemusí zachovat nebo vygenerovat některé informace o typu a kód, pokud tyto informace nelze odvodit staticky v době kompilace, ale místo toho se načte dynamicky za běhu.
 
-Nativní rozhraní .NET umožňuje reflexi a dynamické programování. Však ne všechny typy mohou být označeny pro reflexi, protože by to generované velikostkódu příliš velké (zejména proto, že odráží na veřejné rozhraní API v rozhraní .NET Framework je podporována). Nativní kompilátor .NET provádí inteligentní volby o tom, které typy by měly podporovat reflexi a udržuje metadata a generuje kód pouze pro tyto typy.
+.NET Native povolí reflexi a dynamické programování. Ne všechny typy však mohou být označeny pro reflexi, protože by byla velikost generovaného kódu příliš velká (obzvláště proto, že je podporována podpora veřejných rozhraní API v .NET Framework). Kompilátor .NET Native zpřístupňuje inteligentní volby, které typy by měly podporovat reflexi, a udržuje metadata a generuje kód pouze pro tyto typy.
 
-Například datová vazba vyžaduje, aby aplikace mohla mapovat názvy vlastností na funkce. V rozhraní .NET pro aplikace pro Windows Store používá běžný jazykový běh automaticky reflexe k poskytování této funkce pro spravované typy a veřejně dostupné nativní typy. V nativním rozhraní .NET kompilátor automaticky obsahuje metadata pro typy, ke kterým vázáte data.
+Datová vazba například vyžaduje, aby aplikace mohla mapovat názvy vlastností na funkce. V rozhraní .NET pro aplikace pro Windows Store modul CLR (Common Language Runtime) automaticky používá reflexi k poskytnutí této možnosti pro spravované typy a veřejně dostupné nativní typy. V .NET Native kompilátor automaticky obsahuje metadata pro typy, na které svážete data.
 
-Kompilátor .NET Native může také zpracovávat <xref:System.Collections.Generic.List%601> běžně <xref:System.Collections.Generic.Dictionary%602>používané obecné typy, jako jsou a , které fungují bez nutnosti jakékoli rady nebo direktivy. Klíčové slovo [dynamické](../../csharp/language-reference/builtin-types/reference-types.md#the-dynamic-type) je také podporováno v určitých mezích.
-
-> [!NOTE]
-> Při přenosu aplikace do nativního rozhraní .NET byste měli důkladně otestovat všechny cesty dynamického kódu.
-
-Výchozí konfigurace pro .NET Native je dostatečná pro většinu vývojářů, ale někteří vývojáři mohou chtít doladit své konfigurace pomocí souboru direktiv runtime (.rd.xml). Kromě toho v některých případech kompilátor .NET Native není schopen určit, která metadata musí být k dispozici pro reflexi a spoléhá na rady, zejména v následujících případech:
-
-- Některé konstrukce <xref:System.Type.MakeGenericType%2A?displayProperty=nameWithType> jako <xref:System.Reflection.MethodInfo.MakeGenericMethod%2A?displayProperty=nameWithType> a nelze určit staticky.
-
-- Vzhledem k tomu, že kompilátor nemůže určit instance, obecný typ, který chcete uvažovat, musí být určen direktivy za běhu. Není to jen proto, že musí být zahrnut veškerý kód, ale protože reflexe obecných typů může tvořit nekonečný cyklus (například když je obecná metoda vyvolána u obecného typu).
+Kompilátor .NET Native může také zpracovat běžně používané obecné typy, jako jsou <xref:System.Collections.Generic.List%601> a <xref:System.Collections.Generic.Dictionary%602> , které fungují bez vyžadování jakýchkoli pomocných parametrů nebo direktiv. [Dynamické](../../csharp/language-reference/builtin-types/reference-types.md#the-dynamic-type) klíčové slovo je podporováno i v určitých omezeních.
 
 > [!NOTE]
-> Direktivy runtime jsou definovány v souboru direktiv runtime (.rd.xml). Obecné informace o použití tohoto souboru naleznete v [tématu Začínáme](getting-started-with-net-native.md). Informace o direktivách runtime naleznete v [tématu Runtime Directives (rd.xml) Configuration File Reference](runtime-directives-rd-xml-configuration-file-reference.md).
+> Všechny cesty dynamického kódu by měly být důkladně testovány při přenosu vaší aplikace do .NET Native.
 
-.NET Native také obsahuje profilovací nástroje, které pomáhají vývojáři určit, které typy mimo výchozí sadu by měly podporovat reflexi.
+Výchozí konfigurace pro .NET Native je dostačující pro většinu vývojářů, ale vývojáři můžou chtít doladit své konfigurace pomocí souboru běhových direktiv (. Rd. XML). Navíc v některých případech kompilátor .NET Native nemůže určit, která metadata musí být k dispozici pro reflexi a spoléhá na pomocná doporučení, zejména v následujících případech:
+
+- Některé konstrukce jako <xref:System.Type.MakeGenericType%2A?displayProperty=nameWithType> a <xref:System.Reflection.MethodInfo.MakeGenericMethod%2A?displayProperty=nameWithType> nelze určit staticky.
+
+- Vzhledem k tomu, že kompilátor nemůže určit vytváření instancí, musí obecný typ, na kterém chcete reflektovat, být určen direktivami modulu runtime. To není pouhá, protože musí být zahrnut všechen kód, ale vzhledem k tomu, že reflexe na obecných typech může tvořit nekonečný cyklus (například při vyvolání obecné metody na obecném typu).
+
+> [!NOTE]
+> Direktivy modulu runtime jsou definovány v souboru direktiv modulu runtime (. Rd. XML). Obecné informace o používání tohoto souboru najdete v tématu [Začínáme](getting-started-with-net-native.md). Informace o direktivách modulu runtime naleznete v tématu [reference ke konfiguračnímu souboru direktiv modulu runtime (RD. XML)](runtime-directives-rd-xml-configuration-file-reference.md).
+
+.NET Native také obsahuje nástroje pro profilaci, které vývojářům pomůžou určit, které typy mimo výchozí sadu mají podporovat reflexi.
 
 <a name="Reflection"></a>
 
-## <a name="other-reflection-related-differences"></a>Další rozdíly související s reflexí
+## <a name="other-reflection-related-differences"></a>Další rozdíly týkající se reflexe
 
-Existuje řada dalších rozdílů v chování souvisejících s odrazem mezi rozhraním .NET pro aplikace pro Windows Store a nativním rozhraním .NET.
+Mezi rozhraním .NET pro aplikace pro Windows Store a .NET Native existuje řada dalších rozdílů týkajících se reflexe.
 
-V nativním rozhraní .NET:
+V .NET Native:
 
-- Privátní reflexe nad typy a členy v knihovně tříd rozhraní .NET Framework není podporována. Můžete však uvažovat o vlastních soukromých typech a členech, stejně jako o typech a členech v knihovnách třetích stran.
+- Privátní odraz nad typy a členy v knihovně tříd .NET Framework není podporován. Můžete však reflektovat na vlastní privátní typy a členy a také typy a členy v knihovnách třetích stran.
 
-- Vlastnost <xref:System.Reflection.ParameterInfo.HasDefaultValue%2A?displayProperty=nameWithType> správně `false` vrátí <xref:System.Reflection.ParameterInfo> pro objekt, který představuje vrácenou hodnotu. V rozhraní .NET pro aplikace `true`pro Windows Store vrátí . Zprostředkující jazyk (IL) nepodporuje přímo a tlumočení je ponecháno na jazyku.
+- <xref:System.Reflection.ParameterInfo.HasDefaultValue%2A?displayProperty=nameWithType>Vlastnost správně vrátí `false` <xref:System.Reflection.ParameterInfo> objekt, který představuje vrácenou hodnotu. V rozhraní .NET pro aplikace pro Windows Store se vrátí `true` . Intermediate Language (IL) nepodporuje tento přímý odkaz a interpretace je ponechána na jazyku.
 
-- Veřejné členy <xref:System.RuntimeFieldHandle> na <xref:System.RuntimeMethodHandle> a struktury nejsou podporovány. Tyto typy jsou podporovány pouze pro LINQ, stromy výrazů a inicializaci statického pole.
+- Veřejné členy ve <xref:System.RuntimeFieldHandle> <xref:System.RuntimeMethodHandle> strukturách a nejsou podporovány. Tyto typy jsou podporovány pouze pro LINQ, stromy výrazů a inicializaci statického pole.
 
-- <xref:System.Reflection.RuntimeReflectionExtensions.GetRuntimeProperties%2A?displayProperty=nameWithType>a <xref:System.Reflection.RuntimeReflectionExtensions.GetRuntimeEvents%2A?displayProperty=nameWithType> zahrnout skryté členy do základních tříd a proto mohou být přepsány bez explicitních přepsání. To platí také pro jiné metody [RuntimeReflectionExtensions.GetRuntime*.](xref:System.Reflection.RuntimeReflectionExtensions)
+- <xref:System.Reflection.RuntimeReflectionExtensions.GetRuntimeProperties%2A?displayProperty=nameWithType>a <xref:System.Reflection.RuntimeReflectionExtensions.GetRuntimeEvents%2A?displayProperty=nameWithType> zahrnují skryté členy v základních třídách, a proto mohou být přepsány bez explicitního přepsání. To platí také pro jiné metody [RuntimeReflectionExtensions. GetRuntime *](xref:System.Reflection.RuntimeReflectionExtensions) .
 
-- <xref:System.Type.MakeArrayType%2A?displayProperty=nameWithType>a <xref:System.Type.MakeByRefType%2A?displayProperty=nameWithType> neselhat při pokusu o vytvoření určité kombinace `byref` (například pole objektů).
+- <xref:System.Type.MakeArrayType%2A?displayProperty=nameWithType>a <xref:System.Type.MakeByRefType%2A?displayProperty=nameWithType> při pokusu o vytvoření určitých kombinací (například pole objektů) neproběhne Chyba `byref` .
 
-- Reflexe nelze použít k vyvolání členů, které mají parametry ukazatele.
+- Nemůžete použít reflexi k vyvolání členů, kteří mají parametry ukazatele.
 
-- Odraz nelze použít k získání nebo nastavení pole ukazatele.
+- Nemůžete použít reflexi k získání nebo nastavení pole ukazatele.
 
-- Pokud je počet argumentů chybný a typ jednoho z argumentů je <xref:System.ArgumentException> nesprávný, nativní .NET vyvolá místo <xref:System.Reflection.TargetParameterCountException>.
+- Pokud je počet argumentů špatný a typ jednoho z argumentů je nesprávný, .NET Native vyvolá <xref:System.ArgumentException> namísto <xref:System.Reflection.TargetParameterCountException> .
 
-- Binární serializace výjimek není obecně podporována. V důsledku toho mohou být do slovníku <xref:System.Exception.Data%2A?displayProperty=nameWithType> přidány neserializovatelné objekty.
+- Binární serializace výjimek je obecně Nepodporovaná. V důsledku toho lze do slovníku přidat objekty, které nejsou serializovatelný <xref:System.Exception.Data%2A?displayProperty=nameWithType> .
 
 <a name="Unsupported"></a>
 
-## <a name="unsupported-scenarios-and-apis"></a>Nepodporované scénáře a api
+## <a name="unsupported-scenarios-and-apis"></a>Nepodporované scénáře a rozhraní API
 
-V následujících částech jsou uvedeny nepodporované scénáře a api pro obecný vývoj, interop a technologie, jako je httpclient a Windows Communication Foundation (WCF):
+V následujících částech najdete seznam nepodporovaných scénářů a rozhraní API pro obecné vývoj, interoperabilitu a technologie, jako je HTTPClient a Windows Communication Foundation (WCF):
 
 - [Obecný vývoj](#General)
 
@@ -107,113 +107,113 @@ V následujících částech jsou uvedeny nepodporované scénáře a api pro ob
 
 - [Interop](#Interop)
 
-- [Nepodporovaná api](#APIs)
+- [Nepodporovaná rozhraní API](#APIs)
 
 <a name="General"></a>
 
-### <a name="general-development-differences"></a>Obecné rozdíly ve vývoji
+### <a name="general-development-differences"></a>Obecné rozdíly v vývoji
 
 **Typy hodnot**
 
-- Pokud přepíšete <xref:System.ValueType.Equals%2A?displayProperty=nameWithType> <xref:System.ValueType.GetHashCode%2A?displayProperty=nameWithType> metody a pro typ hodnoty, nevolejte implementace základní třídy. V rozhraní .NET pro aplikace pro Windows Store tyto metody spoléhají na reflexi. V době kompilace .NET Native generuje implementaci, která nespoléhá na odraz za běhu. To znamená, že pokud tyto dvě metody nepřepíšete, budou fungovat podle očekávání, protože nativní rozhraní .NET generuje implementaci v době kompilace. Však přepsání těchto metod, ale volání implementace základní třídy výsledky výjimky.
+- Pokud přepíšete <xref:System.ValueType.Equals%2A?displayProperty=nameWithType> <xref:System.ValueType.GetHashCode%2A?displayProperty=nameWithType> metody a pro typ hodnoty, Nevolejte implementace základní třídy. V rozhraní .NET pro aplikace pro Windows Store se tyto metody spoléhají na reflexi. V době kompilace .NET Native generuje implementaci, která nespoléhá na reflexi modulu runtime. To znamená, že pokud tyto dvě metody nepřepíšete, budou fungovat podle očekávání, protože .NET Native generuje implementaci v době kompilace. Nicméně přepsání těchto metod, ale volání implementace základní třídy, způsobí výjimku.
 
-- Typy hodnot větší než 1 MB nejsou podporovány.
+- Typy hodnot větší než 1 megabajt nejsou podporovány.
 
-- Typy hodnot nemůže mít konstruktor bez parametrů v .NET Native. (C# a Visual Basic zakázat konstruktory bez parametrů na typy hodnot. Ty však mohou být vytvořeny v IL.)
+- Typy hodnot nemohou mít konstruktor bez parametrů v .NET Native. (C# a Visual Basic zakazují konstruktory bez parametrů u typů hodnot. Ty však lze vytvořit v IL.)
 
 **Pole**
 
-- Pole s nižší mezí než nula nejsou podporovány. Obvykle tato pole jsou vytvořeny voláním <xref:System.Array.CreateInstance%28System.Type%2CSystem.Int32%5B%5D%2CSystem.Int32%5B%5D%29?displayProperty=nameWithType> přetížení.
+- Pole s dolní mezí jinou než nula se nepodporují. Obvykle jsou tato pole vytvořena voláním <xref:System.Array.CreateInstance%28System.Type%2CSystem.Int32%5B%5D%2CSystem.Int32%5B%5D%29?displayProperty=nameWithType> přetížení.
 
-- Dynamické vytváření vícerozměrných polí není podporováno. Tato pole jsou obvykle vytvořeny voláním <xref:System.Array.CreateInstance%2A?displayProperty=nameWithType> přetížení metody, `lengths` která obsahuje parametr, nebo voláním <xref:System.Type.MakeArrayType%28System.Int32%29?displayProperty=nameWithType> metody.
+- Dynamické vytváření multidimenzionálních polí se nepodporuje. Taková pole jsou obvykle vytvořena voláním přetížení <xref:System.Array.CreateInstance%2A?displayProperty=nameWithType> metody, která obsahuje `lengths` parametr, nebo voláním <xref:System.Type.MakeArrayType%28System.Int32%29?displayProperty=nameWithType> metody.
 
-- Vícerozměrná pole, která mají čtyři nebo více dimenzí, nejsou podporována; to znamená, <xref:System.Array.Rank%2A?displayProperty=nameWithType> že jejich hodnota vlastnosti je čtyři nebo vyšší. Místo toho použijte [zubaté pole](../../csharp/programming-guide/arrays/jagged-arrays.md) (pole polí). Například `array[x,y,z]` je neplatný, ale `array[x][y][z]` není.
+- Multidimenzionální pole se čtyřmi nebo více dimenzemi nejsou podporována. To znamená, že jejich <xref:System.Array.Rank%2A?displayProperty=nameWithType> hodnota vlastnosti je čtyři nebo větší. Místo toho použijte [vícenásobná pole](../../csharp/programming-guide/arrays/jagged-arrays.md) (pole polí). Například `array[x,y,z]` je neplatný, ale `array[x][y][z]` není.
 
-- Odchylka pro vícerozměrná pole není podporována a způsobuje výjimku <xref:System.InvalidCastException> za běhu.
+- Variance pro multidimenzionální pole není podporována a <xref:System.InvalidCastException> v době běhu způsobuje výjimku.
 
 **Obecné typy**
 
-- Nekonečné rozšíření obecného typu má za následek chybu kompilátoru. Například tento kód se nepodaří zkompilovat:
+- Nekonečné rozšíření obecného typu má za následek chybu kompilátoru. Například tento kód nemůže kompilovat:
 
   [!code-csharp[ProjectN#9](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn/cs/compat2.cs#9)]
 
-**Ukazatele**
+**Ukazatelé**
 
-- Pole ukazatelů nejsou podporována.
+- Pole ukazatelů nejsou podporovaná.
 
-- Odraz nelze použít k získání nebo nastavení pole ukazatele.
+- Nemůžete použít reflexi k získání nebo nastavení pole ukazatele.
 
 **Serializace**
 
-Atribut <xref:System.Runtime.Serialization.KnownTypeAttribute.%23ctor%28System.String%29> není podporován. Místo <xref:System.Runtime.Serialization.KnownTypeAttribute.%23ctor%28System.Type%29> toho použijte atribut.
+<xref:System.Runtime.Serialization.KnownTypeAttribute.%23ctor%28System.String%29>Atribut není podporován. <xref:System.Runtime.Serialization.KnownTypeAttribute.%23ctor%28System.Type%29>Místo toho použijte atribut.
 
-**Materiály**
+**Zdroje informací**
 
-Použití lokalizovaných prostředků <xref:System.Diagnostics.Tracing.EventSource> s třídou není podporováno. Vlastnost <xref:System.Diagnostics.Tracing.EventSourceAttribute.LocalizationResources%2A?displayProperty=nameWithType> nedefinuje lokalizované prostředky.
+Použití lokalizovaných prostředků s <xref:System.Diagnostics.Tracing.EventSource> třídou není podporováno. <xref:System.Diagnostics.Tracing.EventSourceAttribute.LocalizationResources%2A?displayProperty=nameWithType>Vlastnost nedefinuje lokalizované prostředky.
 
-**Delegáty**
+**Delegáti**
 
 `Delegate.BeginInvoke`a `Delegate.EndInvoke` nejsou podporovány.
 
 **Ostatní rozhraní API**
 
-- Vlastnost [TypeInfo.GUID](xref:System.Type.GUID) vyvolá <xref:System.PlatformNotSupportedException> výjimku, <xref:System.Runtime.InteropServices.GuidAttribute> pokud atribut není použit pro typ. Identifikátor GUID se používá především pro podporu com.
+- Vlastnost [TypeInfo. GUID](xref:System.Type.GUID) vyvolá výjimku, <xref:System.PlatformNotSupportedException> Pokud <xref:System.Runtime.InteropServices.GuidAttribute> atribut není použit pro typ. Identifikátor GUID se používá hlavně pro podporu modelu COM.
 
-- Metoda <xref:System.DateTime.Parse%2A?displayProperty=nameWithType> správně analyzuje řetězce, které obsahují krátká data v .NET Native. Nezachovává však kompatibilitu se změnami analýzy data a času popsanými v článcích znalostní báze [KB2803771](https://support.microsoft.com/kb/2803771) a [KB2803755](https://support.microsoft.com/kb/2803755).
+- <xref:System.DateTime.Parse%2A?displayProperty=nameWithType>Metoda správně analyzuje řetězce, které obsahují krátká data v .NET Native. Neudržuje však kompatibilitu se změnami v části datum a čas analýzy popsané v článcích [KB2803771](https://support.microsoft.com/kb/2803771) a [KB2803755](https://support.microsoft.com/kb/2803755)znalostní báze Microsoft Knowledge Base.
 
-- <xref:System.Numerics.BigInteger.ToString%2A?displayProperty=nameWithType>`("E")` je správně zaokrouhlena v nativním rozhraní .NET. V některých verzích CLR je výsledný řetězec zkrácen namísto zaokrouhlení.
+- <xref:System.Numerics.BigInteger.ToString%2A?displayProperty=nameWithType>`("E")`je správně zaokrouhlena v .NET Native. V některých verzích modulu CLR je výsledný řetězec zkrácen namísto zaokrouhlení.
 
 <a name="HttpClient"></a>
 
-### <a name="httpclient-differences"></a>Rozdíly mezi klienty HttpClient
+### <a name="httpclient-differences"></a>HttpClient rozdíly
 
-V .NET Native <xref:System.Net.Http.HttpClientHandler> třída interně používá WinINet (prostřednictvím <xref:Windows.Web.Http.Filters.HttpBaseProtocolFilter> třídy) namísto <xref:System.Net.WebRequest> třídy a <xref:System.Net.WebResponse> používané ve standardním rozhraní .NET pro aplikace pro Windows Store.  WinINet nepodporuje všechny možnosti konfigurace, které <xref:System.Net.Http.HttpClientHandler> třída podporuje.  Výsledek:
+V .NET Native <xref:System.Net.Http.HttpClientHandler> třída interně používá rozhraní WinInet (přes <xref:Windows.Web.Http.Filters.HttpBaseProtocolFilter> třídu) namísto <xref:System.Net.WebRequest> <xref:System.Net.WebResponse> tříd a používaných ve standardním rozhraní .NET pro aplikace pro Windows Store.  Rozhraní WinINet nepodporuje všechny možnosti konfigurace, které <xref:System.Net.Http.HttpClientHandler> Třída podporuje.  Výsledek:
 
-- Některé vlastnosti schopností <xref:System.Net.Http.HttpClientHandler> `false` při návratu na .NET `true` Native, zatímco se vrátí ve standardní .NET pro aplikace pro Windows Store.
+- Některé vlastnosti schopností při <xref:System.Net.Http.HttpClientHandler> návratu `false` na .NET Native, zatímco se vrátí `true` do standardního rozhraní .NET pro aplikace pro Windows Store.
 
-- Některé přistupující objekty vlastností `get` konfigurace vždy vrátí pevnou hodnotu na .NET Native, která se liší od výchozí konfigurovatelné hodnoty v rozhraní .NET pro aplikace pro Windows Store.
+- Některé z přidaných `get` objektů konfiguračních vlastností vždycky vrací pevnou hodnotu pro .NET Native, která se liší od výchozí konfigurovatelné hodnoty v rozhraní .NET pro aplikace pro Windows Store.
 
-Některé další rozdíly chování jsou zahrnuty v následujících podsekcích.
+V následujících pododdílech jsou uvedeny některé další rozdíly v chování.
 
 **Proxy server**
 
-Třída <xref:Windows.Web.Http.Filters.HttpBaseProtocolFilter> nepodporuje konfiguraci nebo přepsání proxy serveru na základě požadavku.  To znamená, že všechny požadavky na .NET Native používají systémově nakonfigurovaný <xref:System.Net.Http.HttpClientHandler.UseProxy%2A?displayProperty=nameWithType> proxy server nebo žádný proxy server, v závislosti na hodnotě vlastnosti.  V rozhraní .NET pro aplikace pro Windows <xref:System.Net.Http.HttpClientHandler.Proxy%2A?displayProperty=nameWithType> Store je proxy server definován vlastností.  Na .NET Native, <xref:System.Net.Http.HttpClientHandler.Proxy%2A?displayProperty=nameWithType> nastavení na `null` hodnotu <xref:System.PlatformNotSupportedException> jinou než vyvolá výjimku.  Vlastnost <xref:System.Net.Http.HttpClientHandler.SupportsProxy%2A?displayProperty=nameWithType> vrátí `false` na .NET Native, `true` vzhledem k tomu, že se vrátí ve standardním rozhraní .NET Framework pro aplikace pro Windows Store.
+<xref:Windows.Web.Http.Filters.HttpBaseProtocolFilter>Třída nepodporuje konfiguraci ani přepsání proxy serveru na základě jednotlivých požadavků.  To znamená, že všechny požadavky na .NET Native v závislosti na hodnotě vlastnosti používají systém proxy server nebo žádné proxy server <xref:System.Net.Http.HttpClientHandler.UseProxy%2A?displayProperty=nameWithType> .  V rozhraní .NET pro aplikace pro Windows Store je proxy server definováno <xref:System.Net.Http.HttpClientHandler.Proxy%2A?displayProperty=nameWithType> vlastností.  V .NET Native nastavení <xref:System.Net.Http.HttpClientHandler.Proxy%2A?displayProperty=nameWithType> na jinou hodnotu než `null` vyvolá <xref:System.PlatformNotSupportedException> výjimku.  <xref:System.Net.Http.HttpClientHandler.SupportsProxy%2A?displayProperty=nameWithType>Vlastnost vrací `false` .NET Native, zatímco se vrátí `true` ve standardním .NET Framework aplikací pro Windows Store.
 
 **Automatické přesměrování**
 
-Třída <xref:Windows.Web.Http.Filters.HttpBaseProtocolFilter> neumožňuje konfiguraci maximálního počtu automatických přesměrování.  Hodnota vlastnosti <xref:System.Net.Http.HttpClientHandler.MaxAutomaticRedirections%2A?displayProperty=nameWithType> je ve výchozím nastavení 50 ve standardní mj. Na .NET Native hodnota této vlastnosti je 10 a pokus <xref:System.PlatformNotSupportedException> u jeho změny vyvolá výjimku.  Vlastnost <xref:System.Net.Http.HttpClientHandler.SupportsRedirectConfiguration%2A?displayProperty=nameWithType> vrátí `false` na .NET Native, `true` vzhledem k tomu, že se vrátí v .NET pro aplikace pro Windows Store.
+<xref:Windows.Web.Http.Filters.HttpBaseProtocolFilter>Třída neumožňuje nakonfigurovat maximální počet automatických přesměrování.  Hodnota <xref:System.Net.Http.HttpClientHandler.MaxAutomaticRedirections%2A?displayProperty=nameWithType> vlastnosti je ve výchozím nastavení standardu .NET pro aplikace pro Windows Store 50 a je možné ji upravit. V .NET Native je hodnota této vlastnosti 10 a pokus o její úpravu vyvolá <xref:System.PlatformNotSupportedException> výjimku.  <xref:System.Net.Http.HttpClientHandler.SupportsRedirectConfiguration%2A?displayProperty=nameWithType>Vlastnost vrátí `false` na .NET Native, zatímco vrátí `true` v rozhraní .NET pro aplikace pro Windows Store.
 
 **Automatická dekomprese**
 
-Rozhraní .NET pro aplikace pro <xref:System.Net.Http.HttpClientHandler.AutomaticDecompression%2A?displayProperty=nameWithType> Windows <xref:System.Net.DecompressionMethods.Deflate>Store <xref:System.Net.DecompressionMethods.GZip>umožňuje <xref:System.Net.DecompressionMethods.Deflate> <xref:System.Net.DecompressionMethods.GZip>nastavit <xref:System.Net.DecompressionMethods.None>vlastnost na , , jak nebo .  Nativní rozhraní <xref:System.Net.DecompressionMethods.Deflate> .NET <xref:System.Net.DecompressionMethods.GZip>podporuje <xref:System.Net.DecompressionMethods.None>pouze společně s rozhraním . nebo .  Pokuso o <xref:System.Net.Http.HttpClientHandler.AutomaticDecompression%2A> nastavení <xref:System.Net.DecompressionMethods.Deflate> vlastnosti buď nebo <xref:System.Net.DecompressionMethods.GZip> samostatně <xref:System.Net.DecompressionMethods.Deflate> <xref:System.Net.DecompressionMethods.GZip>tiše nastaví na obě a .
+Rozhraní .NET pro aplikace pro Windows Store umožňuje nastavit <xref:System.Net.Http.HttpClientHandler.AutomaticDecompression%2A?displayProperty=nameWithType> vlastnost na <xref:System.Net.DecompressionMethods.Deflate> , <xref:System.Net.DecompressionMethods.GZip> , <xref:System.Net.DecompressionMethods.Deflate> a <xref:System.Net.DecompressionMethods.GZip> , nebo <xref:System.Net.DecompressionMethods.None> .  .NET Native podporuje pouze <xref:System.Net.DecompressionMethods.Deflate> společně s <xref:System.Net.DecompressionMethods.GZip> , nebo <xref:System.Net.DecompressionMethods.None> .  Pokus o nastavení <xref:System.Net.Http.HttpClientHandler.AutomaticDecompression%2A> vlastnosti buď <xref:System.Net.DecompressionMethods.Deflate> nebo samostatně, v <xref:System.Net.DecompressionMethods.GZip> tichém režimu nastaví na hodnotu <xref:System.Net.DecompressionMethods.Deflate> a <xref:System.Net.DecompressionMethods.GZip> .
 
 **Soubory cookie**
 
-Zpracování souborů cookie se <xref:System.Net.Http.HttpClient> provádí současně a WinINet.  Cookies z <xref:System.Net.CookieContainer> těchto souborů jsou kombinovány se soubory cookie v mezipaměti souborů cookie WinINet.  Odebrání souboru <xref:System.Net.CookieContainer> cookie <xref:System.Net.Http.HttpClient> z brání odeslání souboru cookie, ale pokud soubor cookie byl již vidět WinINet, a soubory cookie nebyly odstraněny uživatelem, WinINet odešle.  Není možné programově odebrat soubor cookie z WinINet <xref:System.Net.Http.HttpClient> <xref:System.Net.Http.HttpClientHandler>pomocí <xref:System.Net.CookieContainer> rozhraní , nebo API.  Nastavení <xref:System.Net.Http.HttpClientHandler.UseCookies%2A?displayProperty=nameWithType> vlastnosti `false` způsobí <xref:System.Net.Http.HttpClient> pouze zastavit odesílání souborů cookie; WinINet může stále obsahovat své cookies v žádosti.
+Zpracování souborů cookie se provádí současně pomocí <xref:System.Net.Http.HttpClient> a WinInet.  Soubory cookie z <xref:System.Net.CookieContainer> jsou kombinovány s soubory cookie v mezipaměti WinInet cookie.  Odebrání souboru cookie z <xref:System.Net.CookieContainer> nebrání <xref:System.Net.Http.HttpClient> odeslání souboru cookie, ale pokud soubor cookie již viděla služba WinInet a soubory cookie nebyly odstraněny uživatelem, rozhraní WinInet ho pošle.  Nelze programově odebrat soubor cookie z rozhraní WinINet pomocí <xref:System.Net.Http.HttpClient> <xref:System.Net.Http.HttpClientHandler> <xref:System.Net.CookieContainer> rozhraní API, nebo.  Nastavení <xref:System.Net.Http.HttpClientHandler.UseCookies%2A?displayProperty=nameWithType> vlastnosti na `false` příčiny pouze <xref:System.Net.Http.HttpClient> pro zastavení odesílání souborů cookie; Rozhraní WinINet může stále zahrnovat své soubory cookie v žádosti.
 
 **Přihlašovací údaje**
 
-V rozhraní .NET pro <xref:System.Net.Http.HttpClientHandler.UseDefaultCredentials%2A?displayProperty=nameWithType> aplikace <xref:System.Net.Http.HttpClientHandler.Credentials%2A?displayProperty=nameWithType> pro Windows Store fungují vlastnosti a vlastnosti nezávisle.  Navíc <xref:System.Net.Http.HttpClientHandler.Credentials%2A> vlastnost přijímá libovolný objekt, který <xref:System.Net.ICredentials> implementuje rozhraní.  V nativní .NET <xref:System.Net.Http.HttpClientHandler.UseDefaultCredentials%2A> nastavení `true` vlastnosti způsobí, že <xref:System.Net.Http.HttpClientHandler.Credentials%2A> vlastnost stane `null`.  Kromě toho <xref:System.Net.Http.HttpClientHandler.Credentials%2A> lze vlastnost nastavit `null`pouze <xref:System.Net.CredentialCache.DefaultCredentials%2A>na , nebo <xref:System.Net.NetworkCredential>objekt typu .  Přiřazení jakýkoli <xref:System.Net.ICredentials> jiný objekt, nejoblíbenější z <xref:System.Net.CredentialCache>nich <xref:System.Net.Http.HttpClientHandler.Credentials%2A> je , <xref:System.PlatformNotSupportedException>vlastnost hází .
+V rozhraní .NET pro aplikace pro Windows Store <xref:System.Net.Http.HttpClientHandler.UseDefaultCredentials%2A?displayProperty=nameWithType> <xref:System.Net.Http.HttpClientHandler.Credentials%2A?displayProperty=nameWithType> fungují vlastnosti a samostatně.  Kromě toho <xref:System.Net.Http.HttpClientHandler.Credentials%2A> vlastnost přijímá libovolný objekt, který implementuje <xref:System.Net.ICredentials> rozhraní.  V .NET Native nastavením <xref:System.Net.Http.HttpClientHandler.UseDefaultCredentials%2A> vlastnosti na hodnotu `true` způsobí, že se <xref:System.Net.Http.HttpClientHandler.Credentials%2A> vlastnost stane `null` .  Kromě toho <xref:System.Net.Http.HttpClientHandler.Credentials%2A> může být vlastnost nastavena pouze na `null` , <xref:System.Net.CredentialCache.DefaultCredentials%2A> nebo objekt typu <xref:System.Net.NetworkCredential> .  Přiřazení libovolného <xref:System.Net.ICredentials> objektu, který je nejoblíbenější z, to znamená <xref:System.Net.CredentialCache> , <xref:System.Net.Http.HttpClientHandler.Credentials%2A> vlastnost vyvolá <xref:System.PlatformNotSupportedException> .
 
-**Jiné nepodporované nebo nekonfigurovatelné funkce**
+**Jiné nepodporované nebo Nekonfigurovatelné funkce**
 
-V nativním rozhraní .NET:
+V .NET Native:
 
-- Hodnota vlastnosti <xref:System.Net.Http.HttpClientHandler.ClientCertificateOptions%2A?displayProperty=nameWithType> je <xref:System.Net.Http.ClientCertificateOption.Automatic>vždy .  V rozhraní .NET pro aplikace <xref:System.Net.Http.ClientCertificateOption.Manual>pro Windows Store je výchozí hodnota .
+- Hodnota <xref:System.Net.Http.HttpClientHandler.ClientCertificateOptions%2A?displayProperty=nameWithType> vlastnosti je vždy <xref:System.Net.Http.ClientCertificateOption.Automatic> .  V rozhraní .NET pro aplikace pro Windows Store je výchozí hodnota <xref:System.Net.Http.ClientCertificateOption.Manual> .
 
-- Vlastnost <xref:System.Net.Http.HttpClientHandler.MaxRequestContentBufferSize%2A?displayProperty=nameWithType> není konfigurovatelná.
+- <xref:System.Net.Http.HttpClientHandler.MaxRequestContentBufferSize%2A?displayProperty=nameWithType>Vlastnost není konfigurovatelná.
 
-- Vlastnost <xref:System.Net.Http.HttpClientHandler.PreAuthenticate%2A?displayProperty=nameWithType> je `true`vždy .  V rozhraní .NET pro aplikace `false`pro Windows Store je výchozí hodnota .
+- <xref:System.Net.Http.HttpClientHandler.PreAuthenticate%2A?displayProperty=nameWithType>Vlastnost je vždy `true` .  V rozhraní .NET pro aplikace pro Windows Store je výchozí hodnota `false` .
 
-- Záhlaví `SetCookie2` v odpovědích je ignorováno jako zastaralé.
+- `SetCookie2`Hlavička v odpovědích je ignorována jako zastaralá.
 
 <a name="Interop"></a>
-### <a name="interop-differences"></a>Interop rozdíly
- **Zastaralá api**
+### <a name="interop-differences"></a>Rozdíly v interoperabilitách
+ **Zastaralá rozhraní API**
 
- Počet zřídka používaných api pro interoperabilitu se spravovaným kódem byly zastaralé. Při použití s .NET Native, tato <xref:System.NotImplementedException> <xref:System.PlatformNotSupportedException> rozhraní API může vyvolat nebo výjimku nebo způsobit chybu kompilátoru. V rozhraní .NET pro aplikace pro Windows Store jsou tato rozhraní API označena jako zastaralá, i když jejich volání generuje upozornění kompilátoru spíše než chybu kompilátoru.
+ Počet zřídka používaných rozhraní API pro interoperabilitu se spravovaným kódem je zastaralý. Při použití s .NET Native může tato rozhraní API vyvolat <xref:System.NotImplementedException> výjimku nebo nebo <xref:System.PlatformNotSupportedException> způsobit chybu kompilátoru. V rozhraní .NET pro aplikace pro Windows Store jsou tato rozhraní API označena jako zastaralá, ale volání generují upozornění kompilátoru, nikoli chybu kompilátoru.
 
- Zastaralá api pro `VARIANT` zařazování zahrnují:
+ Zastaralá rozhraní API pro `VARIANT` zařazování zahrnují:
 
 - <xref:System.Runtime.InteropServices.BStrWrapper?displayProperty=nameWithType>
 - <xref:System.Runtime.InteropServices.CurrencyWrapper?displayProperty=nameWithType>
@@ -225,27 +225,27 @@ V nativním rozhraní .NET:
 - <xref:System.Runtime.InteropServices.UnmanagedType.SafeArray?displayProperty=nameWithType>
 - <xref:System.Runtime.InteropServices.VarEnum?displayProperty=nameWithType>
 
- <xref:System.Runtime.InteropServices.UnmanagedType.Struct?displayProperty=nameWithType>je podporována, ale vyvolá výjimku v některých scénářích, například při použití s [IDispatch](https://docs.microsoft.com/previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch) nebo `byref` varianty.
+ <xref:System.Runtime.InteropServices.UnmanagedType.Struct?displayProperty=nameWithType>je podporováno, ale vyvolá výjimku v některých scénářích, například při použití s [IDispatch](https://docs.microsoft.com/previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch) nebo `byref` variantami.
 
- Mezi zastaralá api pro podporu [IDispatch](https://docs.microsoft.com/previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch) patří:
+ Zastaralá rozhraní API pro podporu rozhraní [IDispatch](https://docs.microsoft.com/previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch) zahrnují:
 
 - <xref:System.Runtime.InteropServices.ClassInterfaceType.AutoDispatch?displayProperty=fullName>
 - <xref:System.Runtime.InteropServices.ClassInterfaceType.AutoDual?displayProperty=fullName>
 - <xref:System.Runtime.InteropServices.ComDefaultInterfaceAttribute?displayProperty=nameWithType>
 
-Mezi zastaralá api pro klasické události COM patří:
+Zastaralá rozhraní API pro události klasických objektů COM zahrnují:
 
 - <xref:System.Runtime.InteropServices.ComEventsHelper?displayProperty=nameWithType>
 - <xref:System.Runtime.InteropServices.ComSourceInterfacesAttribute>
 
-Zastaralá rozhraní API <xref:System.Runtime.InteropServices.ICustomQueryInterface?displayProperty=nameWithType> v rozhraní, která nejsou v nativním rozhraní .NET podporována, zahrnují:
+Zastaralá rozhraní API v <xref:System.Runtime.InteropServices.ICustomQueryInterface?displayProperty=nameWithType> rozhraní, která nejsou ve .NET Native podporovaná, zahrnují:
 
 - <xref:System.Runtime.InteropServices.ICustomQueryInterface?displayProperty=nameWithType>(všichni členové)
 - <xref:System.Runtime.InteropServices.CustomQueryInterfaceMode?displayProperty=nameWithType>(všichni členové)
 - <xref:System.Runtime.InteropServices.CustomQueryInterfaceResult?displayProperty=nameWithType>(všichni členové)
 - <xref:System.Runtime.InteropServices.Marshal.GetComInterfaceForObject%28System.Object%2CSystem.Type%2CSystem.Runtime.InteropServices.CustomQueryInterfaceMode%29?displayProperty=fullName>
 
-Mezi další nepodporované funkce interop patří:
+Mezi další nepodporované funkce spolupráce patří:
 
 - <xref:System.Runtime.InteropServices.ICustomAdapter?displayProperty=nameWithType>(všichni členové)
 - <xref:System.Runtime.InteropServices.SafeBuffer?displayProperty=nameWithType>(všichni členové)
@@ -255,7 +255,7 @@ Mezi další nepodporované funkce interop patří:
 - <xref:System.Runtime.InteropServices.UnmanagedType.AsAny?displayProperty=fullName>
 - <xref:System.Runtime.InteropServices.UnmanagedType.CustomMarshaler?displayProperty=fullName>
 
- Zřídka používané zařazování API:
+ Zřídka používaná zařazování rozhraní API:
 
 - <xref:System.Runtime.InteropServices.Marshal.ReadByte%28System.Object%2CSystem.Int32%29?displayProperty=fullName>
 - <xref:System.Runtime.InteropServices.Marshal.ReadInt16%28System.Object%2CSystem.Int32%29?displayProperty=fullName>
@@ -268,27 +268,27 @@ Mezi další nepodporované funkce interop patří:
 - <xref:System.Runtime.InteropServices.Marshal.WriteInt64%28System.Object%2CSystem.Int32%2CSystem.Int64%29?displayProperty=fullName>
 - <xref:System.Runtime.InteropServices.Marshal.WriteIntPtr%28System.Object%2CSystem.Int32%2CSystem.IntPtr%29?displayProperty=fullName>
 
- **Vyvolání platformy a kompatibilita interopu COM**
+ **Volání platforem a kompatibilita zprostředkovatele komunikace s objekty COM**
 
- Většina scénářů vyvolání platformy a interop com jsou stále podporovány v .NET Native. Zejména je podporována veškerá interoperabilita s windows runtime (WinRT) API a všechny zařazování požadované pro prostředí Windows Runtime je podporována. To zahrnuje zařazování podporu pro:
+ Většina volání platforem a scénářů spolupráce s objekty COM jsou pořád podporované v .NET Native. Konkrétně se podporuje veškerá interoperabilita s rozhraními API pro prostředí Windows Runtime (WinRT) a všechna zařazování požadovaná pro prostředí Windows Runtime. Patří sem podpora zařazování pro:
 
-- Pole (včetně <xref:System.Runtime.InteropServices.UnmanagedType.ByValArray?displayProperty=nameWithType>)
+- Pole (včetně <xref:System.Runtime.InteropServices.UnmanagedType.ByValArray?displayProperty=nameWithType> )
 
 - `BStr`
 
-- Delegáty
+- Delegáti
 
-- Řetězce (Unicode, Ansi a HSTRING)
+- Řetězce (Unicode, ANSI a HSTRING)
 
-- Structs`byref` ( `byval`a )
+- Struktury ( `byref` a `byval` )
 
 - Sjednocení
 
 - Popisovače Win32
 
-- Všechny konstrukce WinRT
+- Všechny konstruktory WinRT
 
-- Částečná podpora pro zařazování typů variant. Podporované systémy:
+- Částečná podpora pro zařazování typů variant Podporované systémy:
 
   - <xref:System.Boolean>
 
@@ -318,25 +318,25 @@ Mezi další nepodporované funkce interop patří:
 
   - [IUnknown](/windows/desktop/api/unknwn/nn-unknwn-iunknown)
 
-Nativní rozhraní .NET však nepodporuje následující:
+.NET Native ale nepodporuje následující:
 
-- Použití klasických událostí com
+- Používání klasických událostí COM
 
-- Implementace rozhraní <xref:System.Runtime.InteropServices.ICustomQueryInterface?displayProperty=nameWithType> spravovaného typu
+- Implementace <xref:System.Runtime.InteropServices.ICustomQueryInterface?displayProperty=nameWithType> rozhraní na spravovaném typu
 
-- Implementace rozhraní [IDispatch](https://docs.microsoft.com/previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch) na spravovaném <xref:System.Runtime.InteropServices.ComDefaultInterfaceAttribute?displayProperty=nameWithType> typu prostřednictvím atributu. Nelze však volat objekty `IDispatch`COM prostřednictvím aplikace a `IDispatch`spravovaný objekt nelze implementovat .
+- Implementace rozhraní [IDispatch](https://docs.microsoft.com/previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch) na spravovaném typu prostřednictvím <xref:System.Runtime.InteropServices.ComDefaultInterfaceAttribute?displayProperty=nameWithType> atributu. Nemůžete však volat objekty COM prostřednictvím `IDispatch` a spravovaný objekt nelze implementovat `IDispatch` .
 
-Použití reflexe k vyvolání metody vyvolání platformy není podporováno. Toto omezení můžete obejít zabalením volání metody v jiné metodě a pomocí reflexe místo toho volat obálku.
+Použití reflexe k vyvolání metody Invoke platformy není podporováno. Toto omezení můžete obejít tak, že zabalíte volání metody do jiné metody a pomocí reflexe namísto toho zavolejte obálku.
 
 <a name="APIs"></a>
 
-### <a name="other-differences-from-net-apis-for-windows-store-apps"></a>Další rozdíly oproti rozhraním API .NET pro aplikace pro Windows Store
+### <a name="other-differences-from-net-apis-for-windows-store-apps"></a>Další rozdíly od rozhraní API .NET pro aplikace pro Windows Store
 
-V této části jsou uvedeny zbývající rozhraní API, která nejsou podporována v nativním rozhraní .NET. Největší sada nepodporovaných api je Windows Communication Foundation (WCF) API.
+Tato část obsahuje seznam zbývajících rozhraní API, která nejsou v .NET Native podporovaná. Největší sadou nepodporovaných rozhraní API jsou rozhraní API Windows Communication Foundation (WCF).
 
-**DataAnnotations (System.ComponentModel.DataAnnotations)**
+**Dataanotace (System. ComponentModel. DataAnnotations)**
 
-Typy v <xref:System.ComponentModel.DataAnnotations> oborech názvů a <xref:System.ComponentModel.DataAnnotations.Schema> nejsou v nativním rozhraní .NET podporovány. Patří mezi ně následující typy, které jsou k dispozici v rozhraní .NET pro aplikace pro Windows Store pro Windows 8:
+Typy v <xref:System.ComponentModel.DataAnnotations> <xref:System.ComponentModel.DataAnnotations.Schema> oborech názvů a nejsou podporovány v .NET Native. Mezi ně patří následující typy, které jsou k dispozici v rozhraní .NET pro aplikace pro Windows Store pro Windows 8:
 
 - <xref:System.ComponentModel.DataAnnotations.AssociationAttribute?displayProperty=nameWithType>
 - <xref:System.ComponentModel.DataAnnotations.ConcurrencyCheckAttribute?displayProperty=nameWithType>
@@ -366,7 +366,7 @@ Typy v <xref:System.ComponentModel.DataAnnotations> oborech názvů a <xref:Syst
 
  **Visual Basic**
 
-Visual Basic není aktuálně podporován v .NET Native. Následující typy v <xref:Microsoft.VisualBasic> <xref:Microsoft.VisualBasic.CompilerServices> oborech názvů a nejsou v nativním rozhraní .NET k dispozici:
+Visual Basic se v .NET Native v tuto chvíli nepodporuje. Následující typy v <xref:Microsoft.VisualBasic> <xref:Microsoft.VisualBasic.CompilerServices> oborech názvů a nejsou k dispozici v .NET Native:
 
 - <xref:Microsoft.VisualBasic.CallType?displayProperty=nameWithType>
 - <xref:Microsoft.VisualBasic.Constants?displayProperty=nameWithType>
@@ -386,17 +386,17 @@ Visual Basic není aktuálně podporován v .NET Native. Následující typy v <
 - <xref:Microsoft.VisualBasic.CompilerServices.StaticLocalInitFlag?displayProperty=nameWithType>
 - <xref:Microsoft.VisualBasic.CompilerServices.Utils?displayProperty=nameWithType>
 
-**Kontext reflexe (system.reflection.context obor názvů)**
+**Kontext reflexe (obor názvů System. Reflection. Context)**
 
-Třída <xref:System.Reflection.Context.CustomReflectionContext?displayProperty=nameWithType> není podporována v .NET Native.
+<xref:System.Reflection.Context.CustomReflectionContext?displayProperty=nameWithType>Třída není v .NET Native podporována.
 
-**RTC (System.Net.Http.Rtc)**
+**RTC (System .NET. http. RTC)**
 
-Třída `System.Net.Http.RtcRequestFactory` není podporována v .NET Native.
+`System.Net.Http.RtcRequestFactory`Třída není v .NET Native podporována.
 
-**Windows Communication Foundation (WCF) (System.ServiceModel.\*)**
+**Windows Communication Foundation (WCF) (System. ServiceModel. \* )**
 
-Typy v [oborech názvů System.ServiceModel.*](xref:System.ServiceModel) nejsou v nativním rozhraní .NET podporovány. Patří mezi ně následující typy:
+Typy v [oborech názvů System. ServiceModel. *](xref:System.ServiceModel) nejsou podporované v .NET Native. Mezi ně patří následující typy:
 
 - <xref:System.ServiceModel.ActionNotSupportedException?displayProperty=nameWithType>
 - <xref:System.ServiceModel.BasicHttpBinding?displayProperty=nameWithType>
@@ -579,23 +579,23 @@ Typy v [oborech názvů System.ServiceModel.*](xref:System.ServiceModel) nejsou 
 
 ### <a name="differences-in-serializers"></a>Rozdíly v serializátorech
 
-Následující rozdíly se týkají serializace a <xref:System.Runtime.Serialization.DataContractSerializer>deserializace pomocí , <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>a <xref:System.Xml.Serialization.XmlSerializer> tříd:
+Následující rozdíly se týkají serializace a deserializace s <xref:System.Runtime.Serialization.DataContractSerializer> <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> <xref:System.Xml.Serialization.XmlSerializer> třídami, a:
 
-- V .NET <xref:System.Runtime.Serialization.DataContractSerializer> Native <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> a nepodaří serializovat nebo rekonstruovat odvozenou třídu, která má člen základní třídy, jehož typ není typ kořenové serializace. Například v následujícím kódu, pokus o serializaci nebo `Y` deserializovat má za následek chybu:
+- V .NET Native <xref:System.Runtime.Serialization.DataContractSerializer> a <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> nepodařilo se serializovat nebo deserializovat odvozenou třídu, která má člena základní třídy, jehož typ není kořenovým typem serializace. Například v následujícím kódu, pokus o serializaci nebo deserializaci má `Y` za následek chybu:
 
   [!code-csharp[ProjectN#10](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn/cs/compat3.cs#10)]
 
-  Typ `InnerType` není znám serializátoru, protože členy základní třídy nejsou provázány během serializace.
+  Typ `InnerType` není pro serializátor znám, protože členy základní třídy nejsou během serializace procházeny.
 
-- <xref:System.Runtime.Serialization.DataContractSerializer>a <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> nepodaří serializovat třídu nebo strukturu, která implementuje <xref:System.Collections.Generic.IEnumerable%601> rozhraní. Například následující typy se nezdaří serializovat nebo rekonstruovat:
+- <xref:System.Runtime.Serialization.DataContractSerializer>a <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> serializaci třídy nebo struktury, která implementuje rozhraní, se nezdařila <xref:System.Collections.Generic.IEnumerable%601> . Například následující typy selhaly při serializaci nebo deserializaci:
 
-- <xref:System.Xml.Serialization.XmlSerializer>nepodaří serializovat následující hodnotu objektu, protože nezná přesný typ objektu, který má být serializován:
+- <xref:System.Xml.Serialization.XmlSerializer>serializace následující hodnoty objektu se nezdařila, protože neví přesný typ objektu, který má být serializován:
 
-- <xref:System.Xml.Serialization.XmlSerializer>nepodaří serializovat nebo rekonstruovat, pokud je <xref:System.Xml.XmlQualifiedName>typ serializovaného objektu .
+- <xref:System.Xml.Serialization.XmlSerializer>serializaci nebo deserializaci, pokud je typ serializovaného objektu, se nezdařila <xref:System.Xml.XmlQualifiedName> .
 
-- Všechny serializátory <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>( <xref:System.Xml.Serialization.XmlSerializer><xref:System.Runtime.Serialization.DataContractSerializer>, , a ) <xref:System.Xml.Linq.XElement?displayProperty=nameWithType> nepodaří generovat kód <xref:System.Xml.Linq.XElement>serializace pro typ nebo pro typ, který obsahuje . Místo toho zobrazují chyby v době sestavení.
+- Všechny serializátory ( <xref:System.Runtime.Serialization.DataContractSerializer> , <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> a <xref:System.Xml.Serialization.XmlSerializer> ) negenerují kód serializace pro typ <xref:System.Xml.Linq.XElement?displayProperty=nameWithType> nebo pro typ, který obsahuje <xref:System.Xml.Linq.XElement> . Místo toho zobrazují chyby při sestavování.
 
-- Následující konstruktory serializace typy nejsou zaručena pracovat podle očekávání:
+- Následující konstruktory typů serializace nemají zaručeny fungovat podle očekávání:
 
   - <xref:System.Runtime.Serialization.DataContractSerializer.%23ctor%28System.Type%2CSystem.Collections.Generic.IEnumerable%7BSystem.Type%7D%29>
 
@@ -619,7 +619,7 @@ Následující rozdíly se týkají serializace a <xref:System.Runtime.Serializa
 
   - <xref:System.Xml.Serialization.XmlSerializer.%23ctor%28System.Type%2CSystem.Xml.Serialization.XmlAttributeOverrides%2CSystem.Type%5B%5D%2CSystem.Xml.Serialization.XmlRootAttribute%2CSystem.String%29>
 
-- <xref:System.Xml.Serialization.XmlSerializer>nepodaří generovat kód pro typ, který má metody přiřazené s některou z následujících atributů:
+- <xref:System.Xml.Serialization.XmlSerializer>Nepovedlo se vygenerovat kód pro typ, který má metody s atributem s některým z následujících atributů:
 
   - <xref:System.Runtime.Serialization.OnSerializingAttribute>
 
@@ -629,37 +629,37 @@ Následující rozdíly se týkají serializace a <xref:System.Runtime.Serializa
 
   - <xref:System.Runtime.Serialization.OnDeserializedAttribute>
 
-- <xref:System.Xml.Serialization.XmlSerializer>nerespektuje <xref:System.Xml.Serialization.IXmlSerializable> vlastní serializační rozhraní. Pokud máte třídu, která implementuje toto rozhraní, <xref:System.Xml.Serialization.XmlSerializer> považuje typ prostého starého typu CLR (POCO) a serializuje pouze jeho veřejné vlastnosti.
+- <xref:System.Xml.Serialization.XmlSerializer>nedodržuje <xref:System.Xml.Serialization.IXmlSerializable> vlastní rozhraní serializace. Pokud máte třídu, která implementuje toto rozhraní, <xref:System.Xml.Serialization.XmlSerializer> bere v úvahu typ jednoduchého starého objektu CLR (POCO) a provede serializaci pouze jeho veřejných vlastností.
 
-- Serializace prostého <xref:System.Exception> objektu nefunguje <xref:System.Runtime.Serialization.DataContractSerializer> <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>dobře s a .
+- Serializace prostého <xref:System.Exception> objektu nefunguje dobře s <xref:System.Runtime.Serialization.DataContractSerializer> a <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> .
 
 <a name="VS"></a>
 
-## <a name="visual-studio-differences"></a>Rozdíly v sadě Visual Studio
+## <a name="visual-studio-differences"></a>Rozdíly v aplikaci Visual Studio
 
 **Výjimky a ladění**
 
-Při spuštění aplikací zkompilovaných pomocí .NET Native v ladicím programu jsou povoleny výjimky první šance pro následující typy výjimek:
+Pokud spouštíte aplikace zkompilované pomocí .NET Native v ladicím programu, jsou pro následující typy výjimek povoleny výjimky s první pravděpodobností:
 
 - <xref:System.MemberAccessException>
 
 - <xref:System.TypeAccessException>
 
-**Vytváření aplikací**
+**Sestavování aplikací**
 
-Použijte nástroje sestavení x86, které se používají ve výchozím nastavení visual studio. Nedoporučujeme používat nástroje AMD64 MSBuild, které se nacházejí v c:\programových souborech (x86)\MSBuild\12.0\bin\amd64; Ty mohou způsobit problémy sestavení.
+Použijte nástroje pro sestavení x86, které jsou ve výchozím nastavení používány v aplikaci Visual Studio. Nedoporučujeme používat nástroje AMD64 MSBuild, které se nacházejí v adresáři C:\Program Files (x86) \MSBuild\12.0\bin\amd64; Ty můžou vytvářet problémy s sestavením.
 
-**Profilovací programy**
+**Profilery**
 
-- Profiler procesoru Visual Studio a profiler paměti XAML nezobrazují just-my-code správně.
+- Profiler procesoru sady Visual Studio a Profiler paměti XAML nezobrazuje správně pouze můj kód.
 
-- Paměť Ový profilování XAML nezobrazuje přesně spravovaná data haldy.
+- Profiler paměti XAML přesně nezobrazuje spravovaná data haldy.
 
-- Profiler procesoru neidentifikuje správně moduly a zobrazuje předponové názvy funkcí.
+- Profiler procesoru správně neidentifikuje moduly a zobrazuje názvy předpevných funkcí.
 
-**Projekty knihovny testování částí**
+**Projekty knihovny testů jednotek**
 
-Povolení nativního rozhraní .NET v knihovně testování částí pro projekt aplikací pro Windows Store není podporováno a způsobí, že se projekt nepodaří sestavit.
+Povolení .NET Native v knihovně testů jednotek pro projekt aplikací pro Windows Store není podporované a způsobí, že se projekt nepodaří sestavit.
 
 ## <a name="see-also"></a>Viz také
 

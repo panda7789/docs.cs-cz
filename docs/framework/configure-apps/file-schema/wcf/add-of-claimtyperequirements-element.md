@@ -1,26 +1,26 @@
 ---
-title: <add><claimTypeRequirements> prvku
+title: <add><claimTypeRequirements>elementu
 ms.date: 03/30/2017
 ms.assetid: 3234cd45-1478-468e-8b19-5c50815c4786
 ms.openlocfilehash: f6948052c62684faa734b592f5bdfc2e7827a07a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79153097"
 ---
-# <a name="add-of-claimtyperequirements-element"></a>\<přidat> \<prvku claimTypeRequirements>
-Určuje typy požadovaných a volitelných deklarací, u kterých se má zobrazit ve federovaném pověření. Služby například uvádějí požadavky na příchozí pověření, která musí mít určitou sadu typů deklarací.  
+# <a name="add-of-claimtyperequirements-element"></a>\<add>\<claimTypeRequirements>elementu
+Určuje typy požadovaných a volitelných deklarací, které mají být zobrazeny ve federovaném pověření. Například služby stavují požadavky na příchozí přihlašovací údaje, které musí mít určitou sadu typů deklarací.  
   
-[**\<>konfigurace**](../configuration-element.md)\
+[**\<configuration>**](../configuration-element.md)\
 &nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[**\<vázání>**](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<bindings>**](bindings.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<wsFederationHttpBinding>**](wsfederationhttpbinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<závazné>**\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<bezpečnostní>**](security-of-custombinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<>zpráv**](message-element-of-wsfederationhttpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<binding>**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<security>**](security-of-custombinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<message>**](message-element-of-wsfederationhttpbinding.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<claimTypeRequirements>**](claimtyperequirements-for-message.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<přidat>**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<add>**
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,23 +38,23 @@ Určuje typy požadovaných a volitelných deklarací, u kterých se má zobrazi
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|claimType|Identifikátor URI, který definuje typ deklarace. Chcete-li například zakoupit produkt z webu, musí uživatel předložit platnou platební kartu s dostatečným úvěrovým limitem. Typ deklarace by byl identifikátor URI platební karty.|  
-|isOptional|Logická hodnota, která určuje, zda se jedná o volitelnou deklaraci. Nastavte tento `false` atribut, pokud se jedná o požadovanou deklaraci.<br /><br /> Tento atribut můžete použít, když služba požádá o některé informace, ale nevyžaduje je. Pokud například požadujete, aby uživatel zadá své jméno, příjmení a adresu, ale rozhodnete, že telefonní číslo je volitelné.|  
+|claimType|Identifikátor URI, který definuje typ deklarace. Pokud například chcete zakoupit produkt z webu, musí uživatel předložit platnou platební kartu s dostatečným limitem úvěru. Typ deklarace by byl identifikátor URI pro platební kartu.|  
+|Přepínač|Logická hodnota, která určuje, zda se jedná o volitelnou deklaraci identity. Nastavte tento atribut na, `false` Pokud je to požadovaná deklarace identity.<br /><br /> Tento atribut můžete použít, pokud se služba zeptá na nějaké informace, ale nevyžaduje. Pokud například požadujete, aby uživatel zadal své křestní jméno, příjmení a adresu, ale rozhodnete se, že telefonní číslo je volitelné.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádné.  
+ Žádné  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Element|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
-|[\<claimTypeRequirements>](claimtyperequirements-for-message.md)|Určuje kolekci požadovaných typů deklarací. Každý prvek je <xref:System.ServiceModel.Configuration.ClaimTypeElement>typu .<br /><br /> Ve federovaném scénáři služby uvedou požadavky na příchozí pověření. Například příchozí pověření musí mít určitou sadu typů deklarací. Každý prvek v této kolekci určuje typy povinných a volitelných deklarací, které se mají zobrazit ve federovaném pověření.|  
+|[\<claimTypeRequirements>](claimtyperequirements-for-message.md)|Určuje kolekci požadovaných typů deklarací. Každý prvek je typu <xref:System.ServiceModel.Configuration.ClaimTypeElement> .<br /><br /> Ve federovaném scénáři služby stavují požadavky na příchozí přihlašovací údaje. Například příchozí přihlašovací údaje musí mít určitou sadu typů deklarací. Každý prvek v této kolekci určuje typy požadovaných a volitelných deklarací, které mají být zobrazeny ve federovaném pověření.|  
   
 ## <a name="remarks"></a>Poznámky  
- Ve federovaném scénáři služby uvedou požadavky na příchozí pověření. Například příchozí pověření musí mít určitou sadu typů deklarací. Tento požadavek se projevuje v zásadách zabezpečení. Když klient požaduje pověření z federované služby (například CardSpace), vloží požadavky do požadavku na token (RequestSecurityToken) tak, aby federovaná služba může vydat pověření, která splňují požadavky odpovídajícím způsobem.  
+ Ve federovaném scénáři služby stavují požadavky na příchozí přihlašovací údaje. Například příchozí přihlašovací údaje musí mít určitou sadu typů deklarací. Tento požadavek se projevuje v zásadách zabezpečení. Když klient požádá o přihlašovací údaje od federované služby (například služby CardSpace), uloží požadavky do žádosti o token (RequestSecurityToken), aby mohla federační služba vystavovat přihlašovací údaje, které splňují požadavky odpovídajícím způsobem.  
   
 ## <a name="example"></a>Příklad  
- Následující konfigurace přidá dva požadavky na typ deklarace deklarace zabezpečení do vazby zabezpečení.  
+ Následující konfigurace přidá do vazby zabezpečení dva požadavky typu deklarace identity.  
   
 ```xml  
 <bindings>

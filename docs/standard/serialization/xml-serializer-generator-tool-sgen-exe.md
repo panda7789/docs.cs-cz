@@ -4,10 +4,10 @@ description: Generátor serializátor XML vytvoří sestavení serializace XML p
 ms.date: 03/30/2017
 ms.assetid: cc1d1f1c-fb26-4be9-885a-3fe84c81cec6
 ms.openlocfilehash: b6d9406ca6a69f7bdff3129b55c89dd5d1589d3f
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "84288937"
 ---
 # <a name="xml-serializer-generator-tool-sgenexe"></a>Nástroj XML Serializer Generator Tool (Sgen.exe)
@@ -27,7 +27,7 @@ sgen [options]
   
 ## <a name="parameters"></a>Parametry  
   
-|Možnost|Popis|  
+|Možnost|Description|  
 |------------|-----------------|  
 |**/a \[ sestavení \] :**_filename_|Generuje kód serializace pro všechny typy obsažené v sestavení nebo spustitelný soubor určený parametrem *filename*. Lze zadat pouze jeden název souboru. Je-li tento argument se opakuje, se používá poslední název souboru.|  
 |**/c \[ ompiler \] :**_Možnosti_|Určuje možnosti, které mají být předána do kompilátor jazyka C#. Všechny možnosti CSc. exe jsou podporovány, protože jsou předány kompilátoru. To lze použít k určení, že by měl být podepsáno sestavení a k určení souboru s klíčem.|  

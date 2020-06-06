@@ -3,16 +3,16 @@ title: <system.runtime.serialization>
 ms.date: 03/30/2017
 ms.assetid: a8cebf4c-06d2-4667-8f5b-c3e1fc90df6f
 ms.openlocfilehash: c93a1f482882cc8cd9d229d82597efa64ba209bc
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79152967"
 ---
-# <a name="systemruntimeserialization"></a>\<system.runtime.serialization>
-Představuje kořenový prvek <xref:System.Runtime.Serialization> oddílu oboru názvů a obsahuje <xref:System.Runtime.Serialization.DataContractSerializer>prvky pro nastavení možností .  
+# \<system.runtime.serialization>
+Představuje kořenový prvek <xref:System.Runtime.Serialization> oddílu oboru názvů a obsahuje prvky pro nastavení možností <xref:System.Runtime.Serialization.DataContractSerializer> .  
 
-[**\<>konfigurace**](../configuration-element.md)\
+[**\<configuration>**](../configuration-element.md)\
 &nbsp;&nbsp;**\<system.runtime.serialization>**  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -38,19 +38,19 @@ Představuje kořenový prvek <xref:System.Runtime.Serialization> oddílu oboru 
  Následující části popisují atributy, podřízené prvky a nadřazené prvky.  
   
 ### <a name="attributes"></a>Atributy  
- Žádné.  
+ Žádné  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
-|Element|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
-|[\<>dataContractSerializer](datacontractserializer-of-system-runtime-serialization.md)|Umožňuje přidání známých typů, které mají být použity při rekonstrukci.|  
+|[\<dataContractSerializer>](datacontractserializer-of-system-runtime-serialization.md)|Umožňuje přidání známých typů, které se použijí při deserializaci.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Element|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
-|[\<konfigurace> Element](../configuration-element.md)|Prvek nejvyšší úrovně pro konfiguraci.|  
+|[\<configuration>Objekt](../configuration-element.md)|Element nejvyšší úrovně pro konfiguraci.|  
   
 ## <a name="see-also"></a>Viz také
 

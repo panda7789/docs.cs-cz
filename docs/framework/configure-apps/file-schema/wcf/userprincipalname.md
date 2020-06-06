@@ -3,23 +3,23 @@ title: <userPrincipalName>
 ms.date: 03/30/2017
 ms.assetid: 68032f69-149e-4613-bae4-18314d4fd294
 ms.openlocfilehash: 299af8c4a013d17d7c5b7285f6fb89892c4164a8
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70854824"
 ---
-# <a name="userprincipalname"></a>\<userPrincipalName>
+# \<userPrincipalName>
 Určuje hlavní název uživatele (UPN) služby, který má klient ověřit.  
   
 Další informace o nastavení hlavního názvu uživatele (UPN) najdete v tématu [Identita a ověřování služby](../../../wcf/feature-details/service-identity-and-authentication.md).  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> klienta**](client.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> koncového bodu**](endpoint-of-client.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> identity**](identity.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<userPrincipalName – >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<client>**](client.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<endpoint>**](endpoint-of-client.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<identity>**](identity.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<userPrincipalName>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,14 +34,14 @@ Další informace o nastavení hlavního názvu uživatele (UPN) najdete v téma
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|value|Název uživatelského účtu (někdy označovaný jako přihlašovací jméno uživatele) a název domény identifikující doménu, ve které se uživatelský účet nachází. Toto je standardní použití pro přihlášení k doméně systému Windows. Formát je následující: someone@example.com (jako pro e-mailovou adresu).|  
+|hodnota|Název uživatelského účtu (někdy označovaný jako přihlašovací jméno uživatele) a název domény identifikující doménu, ve které se uživatelský účet nachází. Toto je standardní použití pro přihlášení k doméně systému Windows. Formát je následující: someone@example.com (jako pro e-mailovou adresu).|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
 |[\<identity>](identity.md)|Určuje identitu služby, kterou má klient ověřit.|  
   
@@ -57,7 +57,7 @@ Další informace o nastavení hlavního názvu uživatele (UPN) najdete v téma
 </identity>
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.ServiceModel.Configuration.IdentityElement>
 - <xref:System.ServiceModel.EndpointAddress>

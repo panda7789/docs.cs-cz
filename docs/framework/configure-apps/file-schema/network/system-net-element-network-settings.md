@@ -9,16 +9,16 @@ helpviewer_keywords:
 - <system.Net> element
 ms.assetid: 52de4d6c-b24d-44aa-ba7d-6b5061f1357e
 ms.openlocfilehash: 88098f2afaad9728e38c4f9935b45f45826a0ca9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79154553"
 ---
-# <a name="systemnet-element-network-settings"></a>\<system.Net> element (nastavení sítě)
-Obsahuje nastavení, která určují, jak se rozhraní .NET Framework připojuje k síti.  
+# <a name="systemnet-element-network-settings"></a>\<system.Net> – element (nastavení sítě)
+Obsahuje nastavení, která určují, jak se .NET Framework připojí k síti.  
   
-[**\<>konfigurace**](../configuration-element.md)  
+[**\<configuration>**](../configuration-element.md)  
 &nbsp;&nbsp;**\<system.net>**  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -32,31 +32,31 @@ Obsahuje nastavení, která určují, jak se rozhraní .NET Framework připojuje
  Následující části popisují atributy, podřízené prvky a nadřazené prvky.  
   
 ### <a name="attributes"></a>Atributy  
- Žádné.  
+ Žádné  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
-|**Element**|**Popis**|  
+|**Objekt**|**Popis**|  
 |-----------------|---------------------|  
-|[autentizační moduly](authenticationmodules-element-network-settings.md)|Určuje moduly používané k ověřování požadavků sítě Internet.|  
-|[connectionManagement](connectionmanagement-element-network-settings.md)|Určuje maximální počet připojení k hostiteli sítě Internet.|  
-|[výchozí proxy](defaultproxy-element-network-settings.md)|Konfiguruje proxy server HTTP (HTTP).|  
-|[mailNastavení](mailsettings-element-network-settings.md)|Konfiguruje možnosti odesílání pošty protokolu SMTP (SMTP) protokolu SMTP.|  
+|[authenticationModules](authenticationmodules-element-network-settings.md)|Určuje moduly používané pro ověřování internetových požadavků.|  
+|[connectionManagement](connectionmanagement-element-network-settings.md)|Určuje maximální počet připojení k hostiteli v Internetu.|  
+|[defaultProxy](defaultproxy-element-network-settings.md)|Nakonfiguruje proxy server protokolu HTTP (Hypertext Transfer Protocol).|  
+|[mailSettings](mailsettings-element-network-settings.md)|Konfiguruje možnosti odesílání pošty SMTP (Simple Mail Transport Protocol).|  
 |[requestCaching](requestcaching-element-network-settings.md)|Řídí mechanismus ukládání do mezipaměti pro síťové požadavky.|  
-|[zdroje dat](settings-element-network-settings.md)|Konfiguruje základní možnosti sítě pro třídy v <xref:System.Net> a souvisejícípodřízené názvobory.|  
-|[webRequestModules](webrequestmodules-element-network-settings.md)|Určuje moduly, které mají být používány k vyžádání informací od hostitelů v Síti Internet.|  
+|[zdroje dat](settings-element-network-settings.md)|Konfiguruje základní možnosti sítě pro třídy v <xref:System.Net> souvisejících podřízených oborech názvů a.|  
+|[webRequestModules](webrequestmodules-element-network-settings.md)|Určuje moduly, které se použijí k vyžádání informací od hostitelů v Internetu.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|**Element**|**Popis**|  
+|**Objekt**|**Popis**|  
 |-----------------|---------------------|  
-|[Konfigurace](../configuration-element.md)|Obsahuje nastavení pro všechny obory názvů.|  
+|[rozšířeného](../configuration-element.md)|Obsahuje nastavení pro všechny obory názvů.|  
   
 ## <a name="remarks"></a>Poznámky  
- Prvek [ \<system.net>](system-net-element-network-settings.md) obsahuje nastavení <xref:System.Net> pro třídy v a související podřízené obory názvů. Nastavení konfigurují ověřovací moduly, správu připojení, nastavení pošty, proxy server a moduly požadavků na Internet pro příjem informací z hostitelů sítě Internet.  
+ [\<system.net>](system-net-element-network-settings.md)Element obsahuje nastavení pro třídy v <xref:System.Net> souvisejících podřízených oborech názvů a. Nastavení konfigurovat ověřovací moduly, správu připojení, nastavení pošty, proxy server a moduly internetových požadavků pro příjem informací z internetových hostitelů.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje typickou <xref:System.Net> konfiguraci používanou třídami.  
+ Následující příklad ukazuje typickou konfiguraci, kterou používají <xref:System.Net> třídy.  
   
 ```xml  
 <configuration>  

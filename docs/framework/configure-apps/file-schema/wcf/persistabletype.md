@@ -3,21 +3,21 @@ title: <persistableType>
 ms.date: 03/30/2017
 ms.assetid: e5425fe6-523a-4076-aab4-2c2515b1d830
 ms.openlocfilehash: 328caaefe0cc24da45b460cab0a672dc8a6ccce1
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70855066"
 ---
-# <a name="persistabletype"></a>\<Prvků persistableType >
+# \<persistableType>
 Určuje všechny trvalé typy.  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<Konfigurační oddíl comContracts >** ](comcontracts.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<comContract >** ](comcontract.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<persistableTypes >** ](persistabletypes.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<Prvků persistableType >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<comContracts>**](comcontracts.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<comContract>**](comcontract.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<persistableTypes>**](persistabletypes.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<persistableType>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -33,7 +33,7 @@ Určuje všechny trvalé typy.
 </comContracts>
 ```  
   
-## <a name="type"></a>type  
+## <a name="type"></a>Typ  
  `Type`  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
@@ -51,11 +51,11 @@ Určuje všechny trvalé typy.
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
-|[\<persistableTypes >](persistabletypes.md)|Kolekce `persistableType` prvků.|  
+|[\<persistableTypes>](persistabletypes.md)|Kolekce `persistableType` prvků.|  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.ServiceModel.Configuration.ComPersistableTypeElementCollection>
 - <xref:System.ServiceModel.Configuration.ComPersistableTypeElement>

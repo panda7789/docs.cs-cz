@@ -1,20 +1,20 @@
 ---
-title: <system.serviceModel> pracovního postupu
+title: <System. serviceModel> pracovního postupu
 ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: 6a8eb2bf-f925-40e1-ba5c-a49b1d3a3ac6
 ms.openlocfilehash: 9aa2bf0fdfd6fe4528a3fda4d05b3ba8f23637d3
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79151946"
 ---
-# <a name="systemservicemodel-of-workflow"></a>\<system.serviceModel> pracovního postupu
+# <a name="systemservicemodel-of-workflow"></a>\<system.serviceModel>pracovního postupu
 Tento oddíl konfigurace obsahuje všechny elementy konfigurace pracovního postupu.  
 
-[**\<>konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;**\<Systému.>ServiceModel**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;**\<system.ServiceModel>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -98,17 +98,17 @@ Tento oddíl konfigurace obsahuje všechny elementy konfigurace pracovního post
  Následující části popisují atributy, podřízené prvky a nadřazené prvky.  
   
 ### <a name="attributes"></a>Atributy  
- Žádný  
+ Žádné  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
-|Element|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
-|[\<chování>](behaviors-of-workflow.md)|Tato část definuje kolekci **serviceBehaviors.**  Každý prvek v kolekci definuje chování elementů používané služby. Každý prvek chování je identifikován jeho **jedinečný** název atributu.|  
-|[\<sledování>](tracking.md)|Představuje konfiguračního oddílu pro definování nastavení sledování služby pracovního postupu.<br /><br /> Další informace o sledování pracovního postupu a jeho konfiguraci naleznete v [tématu Sledování a trasování pracovního postupu](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md) a [Konfigurace sledování pracovního postupu](../../../windows-workflow-foundation/configuring-tracking-for-a-workflow.md).|  
+|[\<behaviors>](behaviors-of-workflow.md)|Tato část definuje kolekci **serviceBehaviors** .  Každý prvek v kolekci definuje chování elementů používané služby. Každý prvek chování je identifikován podle jeho jedinečného atributu **Name** .|  
+|[\<tracking>](tracking.md)|Představuje konfiguračního oddílu pro definování nastavení sledování služby pracovního postupu.<br /><br /> Další informace o sledování pracovního postupu a jeho konfiguraci najdete v tématu [sledování pracovních postupů a trasování](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md) a [Konfigurace sledování pracovního postupu](../../../windows-workflow-foundation/configuring-tracking-for-a-workflow.md).|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Element|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
-|[\<>konfigurace](../configuration-element.md)|Kořenový element pro všechny elementy konfigurace v konfiguračním souboru .NET.|
+|[\<configuration>](../configuration-element.md)|Kořenový element pro všechny elementy konfigurace v konfiguračním souboru .NET.|

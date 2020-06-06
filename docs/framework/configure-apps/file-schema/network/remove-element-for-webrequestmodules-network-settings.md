@@ -11,19 +11,19 @@ helpviewer_keywords:
 - <webRequestModules>, remove element
 ms.assetid: dd84d2fe-2f4f-457a-9d3c-441d0d21cc10
 ms.openlocfilehash: afa1aef8ea71f43a136987ec5b6e1925c6d9fb40
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79154722"
 ---
-# <a name="remove-element-for-webrequestmodules-network-settings"></a>\<odebrat> element pro webRequestModules (Nastavení sítě)
-Odebere z aplikace vlastní modul webového požadavku.  
+# <a name="remove-element-for-webrequestmodules-network-settings"></a>\<remove> – element pro webRequestModules (nastavení sítě)
+Odebere z aplikace vlastní modul webové žádosti.  
   
-[**\<>konfigurace**](../configuration-element.md)\
+[**\<configuration>**](../configuration-element.md)\
 &nbsp;&nbsp;[**\<system.net>**](system-net-element-network-settings.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;[**\<webRequestModules>**](webrequestmodules-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<odebrat>**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<remove>**
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,25 +43,25 @@ Odebere z aplikace vlastní modul webového požadavku.
 |`prefix`|Předpona identifikátoru URI pro požadavky zpracovávané tímto modulem webového požadavku.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádné.  
+ Žádné  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|**Element**|**Popis**|  
+|**Objekt**|**Popis**|  
 |-----------------|---------------------|  
-|[webRequestModules](webrequestmodules-element-network-settings.md)|Určuje moduly, které mají být používány k vyžádání informací od síťových hostitelů.|  
+|[webRequestModules](webrequestmodules-element-network-settings.md)|Určuje moduly, které se použijí k vyžádání informací od hostitelů v síti.|  
   
 ## <a name="remarks"></a>Poznámky  
- Prvek `remove` odebere registrovaný modul webového požadavku pro zadanou předponu URI.  
+ `remove`Prvek odebere registrovaný modul webové žádosti pro zadanou předponu identifikátoru URI.  
   
- Hodnota atributu `prefix` by měla být úvodníznaky platného identifikátoru`http`URI –`http://www.contoso.com`například " ", nebo " ".  
+ Hodnota `prefix` atributu by měla být předními znaky platného identifikátoru URI – například " `http` " nebo " `http://www.contoso.com` ".  
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
- Tento prvek lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine.config).  
+ Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine. config).  
   
 ## <a name="example"></a>Příklad  
 
-Následující příklad odebere existující modul webového požadavku pro protokol HTTP a poté zaregistruje nový vlastní modul webových požadavků pro požadavky HTTP. `www.contoso.com`
+Následující příklad odebere existující modul webové žádosti pro protokol HTTP a pak zaregistruje nový vlastní modul webové žádosti pro požadavky HTTP na `www.contoso.com` .
   
 ```xml  
 <configuration>  

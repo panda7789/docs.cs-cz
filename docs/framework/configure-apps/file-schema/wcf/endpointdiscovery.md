@@ -3,21 +3,21 @@ title: <endpointDiscovery>
 ms.date: 03/30/2017
 ms.assetid: 70812717-888a-4748-9640-0df6715ff029
 ms.openlocfilehash: 98b1655f42b7b43604ed4ab9d66870ec204a9590
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70398019"
 ---
-# <a name="endpointdiscovery"></a>\<endpointDiscovery>
+# \<endpointDiscovery>
 Určuje různá nastavení zjišťování pro koncový bod, například jeho zjistitelnost, obory a jakákoli vlastní rozšíření pro jeho metadata.  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> chování**](behaviors.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<endpointBehaviors >** ](endpointbehaviors.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> chování**](behavior-of-endpointbehaviors.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<endpointDiscovery >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<behaviors>**](behaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<endpointBehaviors>**](endpointbehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<behavior>**](behavior-of-endpointbehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<endpointDiscovery>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,27 +43,27 @@ Určuje různá nastavení zjišťování pro koncový bod, například jeho zji
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|enabled|Logická hodnota, která určuje, zda je na tomto koncovém bodu povolena zjistitelnost. Výchozí hodnota je `false`.|  
+|enabled|Logická hodnota, která určuje, zda je na tomto koncovém bodu povolena zjistitelnost. Výchozí formát je `false`.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
-|[\<> oborů](scopes.md)|Kolekce identifikátorů URI oboru pro koncový bod. K jednomu koncovému bodu lze přidružit více než jeden identifikátor URI oboru.|  
-|rozšíření > [z \<> endpointDiscovery] [ \<](extensions.md)|Kolekce elementů XML, které umožňují zadat vlastní metadata, která budou publikována pro koncový bod.|  
-|\<> typů|Kolekce rozhraní, která se mají vyhledat|  
+|[\<scopes>](scopes.md)|Kolekce identifikátorů URI oboru pro koncový bod. K jednomu koncovému bodu lze přidružit více než jeden identifikátor URI oboru.|  
+|[\<extensions>](extensions.md)[z \<endpointDiscovery> ]|Kolekce elementů XML, které umožňují zadat vlastní metadata, která budou publikována pro koncový bod.|  
+|\<types>|Kolekce rozhraní, která se mají vyhledat|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
-|[\<> chování](behavior-of-endpointbehaviors.md)|Určuje chování element.|  
+|[\<behavior>](behavior-of-endpointbehaviors.md)|Určuje chování element.|  
 |||  
   
 ## <a name="remarks"></a>Poznámky  
- Po přidání do konfigurace chování koncového bodu a s `enabled` atributem nastaveným na `true`může tento prvek konfigurace povolit svou zjistitelnost. Kromě toho můžete použít [ \<rozsahy >](scopes.md)podřízených element k určení identifikátorů URI vlastního rozsahu, které lze použít k filtrování koncových bodů služby během dotazu a také [ \<rozšíření >](extensions.md) podřízený element k určení vlastního metadata, která se mají publikovat společně se standardními zjistitelnými metadaty (EPR, ContractTypeName, Binding, Scope a ListenURI).  
+ Po přidání do konfigurace chování koncového bodu a s `enabled` atributem nastaveným na `true` může tento prvek konfigurace povolit svou zjistitelnost. Kromě toho můžete použít [\<scopes>](scopes.md) podřízený element k určení identifikátorů URI vlastního rozsahu, které lze použít k filtrování koncových bodů služby během dotazu a také [\<extensions>](extensions.md) podřízeného prvku pro určení vlastních metadat, která mají být publikována společně se standardními zjistitelnými metadaty (EPR, ContractTypeName, Binding, Scope a ListenUri).  
   
- Tento prvek konfigurace je závislý na [ \<prvku serviceDiscovery >](servicediscovery.md) , který poskytuje kontrolu úrovně služeb pro zjistitelnost. To znamená, že nastavení tohoto prvku budou ignorována, pokud [ \<serviceDiscovery >](servicediscovery.md) není v konfiguraci k dispozici.  
+ Tento prvek konfigurace je závislý na [\<serviceDiscovery>](servicediscovery.md) prvku, který poskytuje kontrolu úrovně služeb pro zjistitelnost. To znamená, že nastavení tohoto elementu budou ignorována, pokud [\<serviceDiscovery>](servicediscovery.md) není v konfiguraci k dispozici.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad konfigurace určuje rozsahy filtrování a metadata rozšíření, která se mají publikovat pro koncový bod.  
@@ -105,6 +105,6 @@ Určuje různá nastavení zjišťování pro koncový bod, například jeho zji
 </behaviors>
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior>

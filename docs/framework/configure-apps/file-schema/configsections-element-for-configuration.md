@@ -8,44 +8,44 @@ helpviewer_keywords:
 - <configSections> Element
 ms.assetid: 9f963c1b-dc3f-4220-a8b6-2dd7a5a8e039
 ms.openlocfilehash: 55116f1fe6fdffffea8f26d8a4de783c7305ada3
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79155346"
 ---
-# <a name="configsections-element-for-configuration"></a>\<configSections> \<element pro konfiguraci>
+# <a name="configsections-element-for-configuration"></a>\<configSections> – element pro \<configuration>
 
 Obsahuje konfigurační oddíl a deklarace oboru názvů.
 
-konfigurace &nbsp; &nbsp;>[** \<**](configuration-element.md) **konfiguračnísekce \<>**
+[**\<configuration>**](configuration-element.md) &nbsp;&nbsp;**\<configSections>**
 
 ## <a name="attributes"></a>Atributy
 
-Žádný
+Žádné
 
-## <a name="parent-element"></a>Nadřazený prvek
+## <a name="parent-element"></a>Nadřazený element
 
-|     | Popis |
+|     | Description |
 | --- | ----------- |
-| [**\<>konfigurace**](configuration-element.md) | Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework. |
+| [**\<configuration>**](configuration-element.md) | Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework. |
 
 ## <a name="child-elements"></a>Podřízené prvky
 
-|     | Popis |
+|     | Description |
 | --- | ----------- |
-| [**\<>oddílu**](section-element.md) | Obsahuje deklaraci oddílu konfigurace. |
-| [**\<oddílSkupina>**](sectiongroup-element-for-configsections.md) | Definuje obor názvů pro oddíly konfigurace. |
-| [**\<odebrat>**](remove-element-for-configsections.md) | Odebere předdefinovaný oddíl nebo skupinu oddílů. |
-| [**\<jasné>**](clear-element-for-configsections.md) | Vymaže všechny dříve definované oddíly a skupiny oddílů. |
+| [**\<section>**](section-element.md) | Obsahuje deklaraci konfiguračního oddílu. |
+| [**\<sectionGroup>**](sectiongroup-element-for-configsections.md) | Definuje obor názvů pro konfigurační oddíly. |
+| [**\<remove>**](remove-element-for-configsections.md) | Odebere předdefinovanou sekci nebo skupinu oddílů. |
+| [**\<clear>**](clear-element-for-configsections.md) | Vymaže všechny dříve definované oddíly a skupiny oddílů. |
 
 ## <a name="remarks"></a>Poznámky
 
-Pokud je tento prvek v konfiguračním souboru, musí se jednat o první podřízený prvek ** \<prvku konfigurace>.**
+Pokud je tento prvek v konfiguračním souboru, musí být prvním podřízeným elementem **\<configuration>** elementu.
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje, jak definovat konfigurační oddíl a definovat nastavení pro tento oddíl:
+Následující příklad ukazuje, jak definovat konfigurační oddíl a definovat nastavení pro tuto část:
 
 ```xml
 <configuration>
@@ -61,8 +61,8 @@ Následující příklad ukazuje, jak definovat konfigurační oddíl a definova
 
 ## <a name="configuration-file"></a>Konfigurační soubor
 
-Tento prvek lze použít v konfiguračním souboru aplikace, konfiguračním souboru počítače *(Machine.config*) a souborech *Web.config,* které nejsou na úrovni adresáře aplikace.
+Tento element lze použít v konfiguračním souboru aplikace, konfiguračním souboru počítače (*Machine. config*) a souborech *Web. config* , které nejsou na úrovni adresáře aplikace.
 
 ## <a name="see-also"></a>Viz také
 
-- [Schéma konfiguračního souboru pro rozhraní .NET Framework](index.md)
+- [Schéma konfiguračního souboru pro .NET Framework](index.md)

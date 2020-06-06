@@ -4,16 +4,16 @@ ms.date: 03/30/2017
 ms.assetid: 2ac8bc14-e9f1-48fb-b662-f5991558fbe4
 author: BrucePerlerMS
 ms.openlocfilehash: 47d432a84d070476ddffd9b98a4ba46d8163bdc3
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79152811"
 ---
-# <a name="certificatereference"></a>\<certifikátReference>
-Určuje nastavení, která se používají k vyhledání a ověření certifikátu X.509 v úložišti certifikátů.  
+# \<certificateReference>
+Určuje nastavení, která se používají k vyhledání a ověření certifikátu X. 509 v úložišti certifikátů.  
   
-[**\<>konfigurace**](../configuration-element.md)\
+[**\<configuration>**](../configuration-element.md)\
 &nbsp;&nbsp;[**\<system.identityModel.services>**](system-identitymodel-services.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;[**\<federationConfiguration>**](federationconfiguration.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<serviceCertificate>**](servicecertificate.md)\
@@ -44,20 +44,20 @@ Určuje nastavení, která se používají k vyhledání a ověření certifiká
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|Storename|Název úložiště certifikátů X.509. Výchozí hodnota je "My". Nepovinný parametr.|  
-|Storelocation|Hodnota, <xref:System.Security.Cryptography.X509Certificates.StoreLocation> která určuje umístění úložiště certifikátů X.509. Výchozí hodnota je "LocalMachine". Nepovinný parametr.|  
-|x509FindType|Hodnota, <xref:System.Security.Cryptography.X509Certificates.X509FindType> která určuje typ hledání, které má být provedeno. Výchozí hodnota je "FindBySubjectDistinguishedName". Nepovinný parametr.|  
-|Findvalue|Hodnota, kterou chcete vyhledat v úložišti certifikátů X.509. Nepovinný parametr.|  
-|isChainIncluded|Určuje, zda má být ověření provedeno pomocí řetězu certifikátů. Výchozí hodnota je "true"; ověření se provádí pomocí řetězu certifikátů. Nepovinný parametr.|  
+|storeName|Název úložiště certifikátů X. 509. Výchozí hodnota je my. Nepovinný parametr.|  
+|storeLocation|<xref:System.Security.Cryptography.X509Certificates.StoreLocation>Hodnota, která určuje umístění úložiště certifikátů X. 509. Výchozí hodnota je "LocalMachine". Nepovinný parametr.|  
+|x509FindType|<xref:System.Security.Cryptography.X509Certificates.X509FindType>Hodnota, která určuje typ hledání, které má být provedeno. Výchozí hodnota je "FindBySubjectDistinguishedName". Nepovinný parametr.|  
+|findValue|Hodnota, která se má vyhledat v úložišti certifikátů X. 509 Nepovinný parametr.|  
+|isChainIncluded|Určuje, zda má být ověřování provedeno pomocí řetězu certifikátů. Výchozí hodnota je "true"; ověřování se provádí pomocí řetězu certifikátů. Nepovinný parametr.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádný  
+ Žádné  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Element|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
-|[\<serviceCertificate>](servicecertificate.md)|Konfiguruje certifikát, který se používá k šifrování a dešifrování tokenů.|  
+|[\<serviceCertificate>](servicecertificate.md)|Nakonfiguruje certifikát, který se používá k šifrování a dešifrování tokenů.|  
   
 ## <a name="remarks"></a>Poznámky  
- Prvek `<certificateReference>` určuje nastavení, které se používá k vyhledání a ověření certifikátu X.509 v úložišti certifikátů. Pokud je zadán jako podřízený `<serviceCertificate>` prvek prvku, určuje umístění a nastavení ověření certifikátu X.509, který se používá k šifrování a dešifrování tokenů. Prvek `<certificateReference>` je reprezentován <xref:System.ServiceModel.Configuration.CertificateReferenceElement> třídou.
+ `<certificateReference>`Element určuje nastavení, která se používají k vyhledání a ověření certifikátu X. 509 v úložišti certifikátů. Pokud je zadána jako podřízený element `<serviceCertificate>` elementu, určuje umístění a nastavení ověřování certifikátu X. 509, který se používá k šifrování a dešifrování tokenů. `<certificateReference>`Element je reprezentován <xref:System.ServiceModel.Configuration.CertificateReferenceElement> třídou.

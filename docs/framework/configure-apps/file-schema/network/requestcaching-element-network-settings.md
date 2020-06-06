@@ -9,18 +9,18 @@ helpviewer_keywords:
 - <requestCaching> element
 ms.assetid: 9962a2fe-cbda-41a6-9377-571811eaea84
 ms.openlocfilehash: afee69eb894518b1c88483e34a1d64d452019244
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/04/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "74802125"
 ---
-# <a name="requestcaching-element-network-settings"></a>\<element > requestCaching (nastavení sítě)
+# <a name="requestcaching-element-network-settings"></a>\<requestCaching> – element (nastavení sítě)
 Řídí mechanismus ukládání do mezipaměti pro síťové požadavky.  
   
-[**Konfigurace \<** ](../configuration-element.md)  
-&nbsp;&nbsp;[ **\<System. NET >** ](system-net-element-network-settings.md)  
-&nbsp;&nbsp;&nbsp;&nbsp; **\<requestCaching >**  
+[**\<configuration>**](../configuration-element.md)  
+&nbsp;&nbsp;[**\<system.net>**](system-net-element-network-settings.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;**\<requestCaching>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,12 +44,12 @@ ms.locfileid: "74802125"
 |---------------|-----------------|  
 |`isPrivateCache`|Určuje, jestli mezipaměť poskytuje izolaci mezi informacemi různých uživatelů. Výchozí hodnota je `true`. Tato hodnota by měla být `false` pro aplikace střední vrstvy.|  
 |`disableAllCaching`|Určuje, že ukládání do mezipaměti je pro všechny webové odpovědi zakázané, a nedá se přepsat programově.|  
-|`defaultPolicyLevel`|Jedna z hodnot ve výčtu <xref:System.Net.Cache.RequestCacheLevel>. Výchozí hodnota je `BypassCache`.|  
+|`defaultPolicyLevel`|Jedna z hodnot ve <xref:System.Net.Cache.RequestCacheLevel> výčtu. Výchozí hodnota je `BypassCache`.|  
 |`unspecifiedMaximumAge`|Určuje výchozí čas, po kterém je obsah označen jako konec platnosti.|  
   
 ## <a name="policylevel-attribute"></a>policyLevel – atribut  
   
-|Hodnota|Popis|  
+|Hodnota|Description|  
 |-----------|-----------------|  
 |`Default`|Vrátí prostředek uložený v mezipaměti, pokud je prostředek v čerstvém stavu, že velikost obsahu je přesná a že jsou k dispozici atributy vypršení platnosti, změna a délka obsahu.|  
 |`BypassCache`|Vrátí prostředek ze serveru.|  
@@ -62,14 +62,14 @@ ms.locfileid: "74802125"
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
 |[defaultHttpCachePolicy](defaulthttpcachepolicy-element-network-settings.md)|Volitelný element.<br /><br /> Popisuje, zda je ukládání do mezipaměti protokolu HTTP aktivní a popisuje výchozí zásady ukládání do mezipaměti.|  
-|[\<element > defaultFtpCachePolicy (nastavení sítě)](defaultftpcachepolicy-element-network-settings.md)|Volitelný element.<br /><br /> Popisuje, zda je ukládání do mezipaměti FTP aktivní a popisuje výchozí zásady ukládání do mezipaměti.|  
+|[\<defaultFtpCachePolicy>– Element (nastavení sítě)](defaultftpcachepolicy-element-network-settings.md)|Volitelný element.<br /><br /> Popisuje, zda je ukládání do mezipaměti FTP aktivní a popisuje výchozí zásady ukládání do mezipaměti.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
 |[system.net](system-net-element-network-settings.md)|Obsahuje nastavení, která určují, jak se .NET Framework připojí k síti.|  
   
@@ -86,7 +86,7 @@ ms.locfileid: "74802125"
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Net.Cache?displayProperty=nameWithType>
 - [Schéma nastavení sítě](index.md)

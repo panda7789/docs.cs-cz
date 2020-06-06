@@ -4,22 +4,22 @@ ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: 3c730850-6f8e-4102-acb8-8effb4e09463
 ms.openlocfilehash: 61832edbf7d206d6a5f7a85619eb17ebc010c193
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79152356"
 ---
-# <a name="add-of-participants"></a>\<přidat> \<účastníků>
+# <a name="add-of-participants"></a>\<add> z \<participants>
 Nakonfigurujte účastníkem sledování, která naslouchá na sledování záznamy probíhá emitovány přímo z modulu runtime a jejich zpracování libovolné způsobem, který byl nakonfigurován. Jedná se o zápis do konkrétní výstupu (např. soubor, konzoly, ETW), zpracování/agregaci záznamů nebo libovolnou kombinaci, který může být vyžadováno.  
   
- Další informace o účastnících sledování a sledování pracovního postupu naleznete v [tématu Sledování pracovního postupu a sledování](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md) a [sledování účastníků](../../../windows-workflow-foundation/tracking-participants.md).  
+ Další informace o sledování pracovních postupů a sledování účastníků najdete v tématu [sledování pracovních postupů a trasování](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md) a [Sledování účastníků](../../../windows-workflow-foundation/tracking-participants.md).  
   
-[**\<>konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[**\<Systému.>ServiceModel**](system-servicemodel-of-workflow.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[**\<sledování>**](tracking.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<účastníci>**](participants.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<přidat>**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.ServiceModel>**](system-servicemodel-of-workflow.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<tracking>**](tracking.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<participants>**](participants.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<add>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,20 +36,20 @@ Nakonfigurujte účastníkem sledování, která naslouchá na sledování zázn
   
 ### <a name="attributes"></a>Atributy  
   
-|Element|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
-|jméno|Řetězec, který určuje název člena sledování.|  
+|name|Řetězec, který určuje název člena sledování.|  
 |Název_profilu|Řetězec, který určuje název profilu sledování, která definuje sledování záznamů účastník sledování přihlásí k odběru.|  
-|type|Řetězec, který určuje typ sledování člena.|  
+|typ|Řetězec, který určuje typ sledování člena.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádné.  
+ Žádné  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Element|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
-|[\<účastníci>](participants.md)|Seznam sledování účastníků|  
+|[\<participants>](participants.md)|Seznam sledování účastníků|  
   
 ## <a name="remarks"></a>Poznámky  
  Sledování účastníci se používají pro získání data sledování vyzařovaného z pracovního postupu a uložit je do různá média. Stejně tak jakýkoli příspěvek zpracování na sledování, které záznamy lze provést také v rámci tohoto sledování.  
@@ -61,7 +61,7 @@ Nakonfigurujte účastníkem sledování, která naslouchá na sledování zázn
 ## <a name="example"></a>Příklad  
  Následující příklad konfigurace ukazuje standardní účastník sledování ETW konfigurován v souboru Web.config.  
   
- Id zprostředkovatele, který účastník sledování ETW používá pro zápis záznamů sledování do ETW je definován v části ** \<diagnostics>.** Účastník sledování má vlastní profil přidružen k určení záznamy sledování, které se přihlásí k odběru. To je definováno **profileName** atributem ** \<elementu add>.** Jakmile jsou definovány, sledování účastník je přidán do ** \<etwTracking>** chování služby. Vybrané sledování účastníci bude přidán do instance pracovního postupu rozšíření, tak, aby začnou záznamy sledování.  
+ ID zprostředkovatele, které používá účastník sledování ETW k zápisu záznamů sledování do ETW, je definováno v **\<diagnostics>** oddílu. Účastník sledování má vlastní profil přidružen k určení záznamy sledování, které se přihlásí k odběru. Toto je definováno atributem **prosouboru** **\<add>** elementu. Po definování je účastník sledování přidán do **\<etwTracking>** chování služby. Vybrané sledování účastníci bude přidán do instance pracovního postupu rozšíření, tak, aby začnou záznamy sledování.  
   
 ```xml  
 <configuration>

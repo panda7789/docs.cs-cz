@@ -12,24 +12,24 @@ no-loc:
 - <issuerChannelBehaviors>
 - <dataContractSerializer>
 ms.openlocfilehash: cbbfb9d3b5af47a360aa82cf837cd6749f61b641
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70893154"
 ---
-# <a name="issuerchannelbehaviors-element"></a>\<issuerChannelBehaviors – element >
+# <a name="issuerchannelbehaviors-element"></a>Element \<issuerChannelBehaviors>
 
-Obsahuje kolekci chování koncového bodu klienta služby Windows Communication Foundation (WCF) (definované v konfiguraci), která se má použít při komunikaci se zadanými službami tokenů služeb. Definované chování nesmí obsahovat žádné [ \<prvky > ClientCredentials](clientcredentials.md) .
+Obsahuje kolekci chování koncového bodu klienta služby Windows Communication Foundation (WCF) (definované v konfiguraci), která se má použít při komunikaci se zadanými službami tokenů služeb. Definované chování nemůže obsahovat žádné [\<clientCredentials>](clientcredentials.md) prvky.
 
-[\<> Konfigurace](../configuration-element.md)\
-&nbsp;&nbsp;[\<System. serviceModel >](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[\<> chování](behaviors.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[\<endpointBehaviors >](endpointbehaviors.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[\<> chování](behavior-of-endpointbehaviors.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[\<> clientCredentials](clientcredentials.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[\<Třídy IssuedToken >](issuedtoken.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<issuerChannelBehaviors >
+[\<configuration>](../configuration-element.md)\
+&nbsp;&nbsp;[\<system.serviceModel>](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[\<behaviors>](behaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[\<endpointBehaviors>](endpointbehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[\<behavior>](behavior-of-endpointbehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[\<clientCredentials>](clientcredentials.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[\<issuedToken>](issuedtoken.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<issuerChannelBehaviors>
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -50,21 +50,21 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 ### <a name="child-elements"></a>Podřízené prvky
 
-|Prvek|Popis|
+|Prvek|Description|
 |-------------|-----------------|
 |[\<add>](add-of-issuerchannelbehaviors.md)|Přidá chování do kolekce.|
 
 ### <a name="parent-elements"></a>Nadřazené prvky
 
-|Prvek|Popis|
+|Prvek|Description|
 |-------------|-----------------|
 |[\<issuedToken>](issuedtoken.md)|Určuje vlastní token, který slouží k ověření klienta ke službě.|
 
 ## <a name="remarks"></a>Poznámky
 
-Tento prvek použijte v případě, že ke komunikaci se službou je `<clientCredentials>` nutné použít jakékoli chování (jiné než chování, které zahrnuje prvky). Například, pokud [ \<](datacontractserializer-element.md) je třeba zahrnout prvek chování > DataContractSerializer.
+Tento prvek použijte v případě, že `<clientCredentials>` ke komunikaci se službou je nutné použít jakékoli chování (jiné než chování, které zahrnuje prvky). Například, pokud [\<dataContractSerializer>](datacontractserializer-element.md) musí být zahrnut prvek chování.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.ServiceModel.Configuration.IssuedTokenClientElement.IssuerChannelBehaviors%2A>
 - <xref:System.ServiceModel.Configuration.IssuedTokenClientBehaviorsElement>

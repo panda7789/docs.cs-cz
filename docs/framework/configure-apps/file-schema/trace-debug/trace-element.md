@@ -11,18 +11,18 @@ helpviewer_keywords:
 - trace listener, <trace> element
 ms.assetid: 7931c942-63c1-47c3-a045-9d9de3cacdbf
 ms.openlocfilehash: 7d8a989219d84e8604e767456c84c0092bc73b22
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79153163"
 ---
-# <a name="trace-element"></a>\<trasování> Element
-Obsahuje naslouchací procesy, které shromažďují, ukládají a směrují trasování zpráv.  
+# <a name="trace-element"></a>Element \<trace>
+Obsahuje naslouchací procesy, které shromažďují, ukládají a směrují trasovací zprávy.  
   
-[**\<>konfigurace**](../configuration-element.md)  
-&nbsp;&nbsp;[**\<system.diagnostická>**](system-diagnostics-element.md)  
-&nbsp;&nbsp;&nbsp;&nbsp;**\<trasovací>**  
+[**\<configuration>**](../configuration-element.md)  
+&nbsp;&nbsp;[**\<system.diagnostics>**](system-diagnostics-element.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;**\<trace>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,39 +39,39 @@ Obsahuje naslouchací procesy, které shromažďují, ukládají a směrují tra
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`autoflush`|Nepovinný atribut.<br /><br /> Určuje, zda posluchači trasování automaticky vyprázdní výstupní vyrovnávací paměť po každé operaci zápisu.|  
-|`indentsize`|Nepovinný atribut.<br /><br /> Určuje počet mezer, které se mají odsazet.|  
-|`useGlobalLock`|Nepovinný atribut.<br /><br /> Označuje, zda má být globální zámek použit.|  
+|`autoflush`|Nepovinný atribut.<br /><br /> Určuje, zda naslouchací proces trasování po každé operaci zápisu automaticky vyprázdní výstupní vyrovnávací paměť.|  
+|`indentsize`|Nepovinný atribut.<br /><br /> Určuje počet mezer, které mají být odsazeny.|  
+|`useGlobalLock`|Nepovinný atribut.<br /><br /> Určuje, zda má být použit globální zámek.|  
   
-## <a name="autoflush-attribute"></a>atribut automatického vyprázdnění  
+## <a name="autoflush-attribute"></a>AutoFlush – atribut  
   
-|Hodnota|Popis|  
+|Hodnota|Description|  
 |-----------|-----------------|  
-|`false`|Není automaticky vyprázdnění výstupní vyrovnávací paměti. Toto nastavení je výchozí.|  
+|`false`|Nevyprázdní výstupní vyrovnávací paměť automaticky. Toto nastavení je výchozí.|  
 |`true`|Automaticky vyprázdní výstupní vyrovnávací paměť.|  
   
-## <a name="usegloballock-attribute"></a>atribut useGlobalLock  
+## <a name="usegloballock-attribute"></a>useGlobalLock – atribut  
   
-|Hodnota|Popis|  
+|Hodnota|Description|  
 |-----------|-----------------|  
-|`false`|Nepoužívá globální zámek, pokud je naslouchací proces bezpečný pro přístup z více vláken; v opačném případě používá globální zámek.|  
+|`false`|Nepoužívá globální zámek, pokud naslouchací proces je bezpečný pro přístup z více vláken; v opačném případě používá globální zámek.|  
 |`true`|Používá globální zámek bez ohledu na to, zda je naslouchací proces bezpečný pro přístup z více vláken. Toto nastavení je výchozí.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
-|Element|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
-|[\<posluchači>](listeners-element-for-trace.md)|Určuje naslouchací proces, který shromažďuje, ukládá a směruje zprávy.|  
+|[\<listeners>](listeners-element-for-trace.md)|Určuje naslouchací proces, který shromažďuje, ukládá a směruje zprávy.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Element|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|  
-|`system.diagnostics`|Určuje posluchače trasování, které shromažďují, ukládají a směrují zprávy, a úroveň, na které je nastaven přepínač trasování.|  
+|`system.diagnostics`|Určuje naslouchací procesy trasování, které shromažďují, ukládají a směrují zprávy a úroveň, kde je nastaven přepínač trasování.|  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak `<trace>` použít prvek `MyListener` k `Listeners` přidání naslouchací proces do kolekce. `MyListener`vytvoří soubor s `MyListener.log` názvem a zapíše výstup do souboru. Atribut `useGlobalLock` je nastaven `false`na , což způsobí, že globální zámek nelze použít, pokud je naslouchací proces trasování bezpečný pro přístup z více vláken. Atribut `autoflush` je nastaven `true`na , což způsobí, že posluchač trasování <xref:System.Diagnostics.Trace.Flush%2A?displayProperty=nameWithType> zapisovat do souboru bez ohledu na to, zda je volána metoda. Atribut `indentsize` je nastaven na 0 (nula), což způsobí, <xref:System.Diagnostics.Trace.Indent%2A?displayProperty=nameWithType> že posluchač odsadit nulové mezery při volání metody.  
+ Následující příklad ukazuje, jak použít `<trace>` element k přidání naslouchacího procesu `MyListener` do `Listeners` kolekce. `MyListener`Vytvoří soubor s názvem `MyListener.log` a zapíše výstup do souboru. `useGlobalLock`Atribut je nastaven na `false` , což způsobí, že globální zámek nebude použit, pokud je naslouchací proces trasování bezpečný pro přístup z více vláken. `autoflush`Atribut je nastaven na `true` , což způsobí, že naslouchací proces trasování zapisuje do souboru bez ohledu na to, zda <xref:System.Diagnostics.Trace.Flush%2A?displayProperty=nameWithType> je metoda volána. `indentsize`Atribut je nastaven na hodnotu 0 (nula), což způsobí, že naslouchací proces při volání metody odsadí nula mezer <xref:System.Diagnostics.Trace.Indent%2A?displayProperty=nameWithType> .  
   
 ```xml  
 <configuration>  

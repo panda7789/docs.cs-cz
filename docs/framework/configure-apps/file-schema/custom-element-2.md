@@ -7,40 +7,40 @@ helpviewer_keywords:
 - custom element
 ms.assetid: 2303031f-4c1d-4df4-bca1-e9bd96ca40dc
 ms.openlocfilehash: e5c5c6cf5744aa385e6f6700cad623751a4d7427
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/14/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "77215481"
 ---
 # <a name="custom-element-for-namevaluesectionhandler-and-dictionarysectionhandler"></a>Vlastní element pro NameValueSectionHandler a DictionarySectionHandler
 
-Definuje nastavení pro vlastní konfigurační oddíly, které používají třídy <xref:System.Configuration.NameValueSectionHandler> a <xref:System.Configuration.DictionarySectionHandler>.
+Definuje nastavení pro vlastní konfigurační oddíly, které používají <xref:System.Configuration.NameValueSectionHandler> <xref:System.Configuration.DictionarySectionHandler> třídy a.
 
-[**konfigurační >\<** ](configuration-element.md)\
-&nbsp;&nbsp; **\<sectiongroup >**
+[**\<configuration>**](configuration-element.md)\
+&nbsp;&nbsp;**\<sectionName>**
 
 ## <a name="attributes"></a>Atributy
 
-Žádná
+Žádné
 
 ## <a name="parent-element"></a>Nadřazený element
 
-|     | Popis |
+|     | Description |
 | --- | ----------- |
-| [**Konfigurace \<>** ](configuration-element.md) | Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework. |
+| [**\<configuration>**](configuration-element.md) | Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework. |
 
 ## <a name="child-elements"></a>Podřízené prvky
 
-|     | Popis |
+|     | Description |
 | --- | ----------- |
-| [ **\<přidat >** ](add-element-for-custom-2.md) pro <xref:System.Configuration.NameValueSectionHandler> a <xref:System.Configuration.DictionarySectionHandler>  | Přidá vlastní nastavení aplikace. |
-| [ **\<odebrat >** ](remove-element-for-custom-2.md) pro <xref:System.Configuration.NameValueSectionHandler> a <xref:System.Configuration.DictionarySectionHandler> | Odebere dříve definované nastavení. |
-| [ **\<vymazat >** ](clear-element-for-custom-2.md) pro <xref:System.Configuration.NameValueSectionHandler> a <xref:System.Configuration.DictionarySectionHandler> | Vymaže všechna dříve definovaná nastavení v oddílu. |
+| [**\<add>**](add-element-for-custom-2.md)pro <xref:System.Configuration.NameValueSectionHandler> a<xref:System.Configuration.DictionarySectionHandler>  | Přidá vlastní nastavení aplikace. |
+| [**\<remove>**](remove-element-for-custom-2.md)pro <xref:System.Configuration.NameValueSectionHandler> a<xref:System.Configuration.DictionarySectionHandler> | Odebere dříve definované nastavení. |
+| [**\<clear>**](clear-element-for-custom-2.md)pro <xref:System.Configuration.NameValueSectionHandler> a<xref:System.Configuration.DictionarySectionHandler> | Vymaže všechna dříve definovaná nastavení v oddílu. |
 
 ## <a name="remarks"></a>Poznámky
 
-Element **\<>** je vlastní element definovaný **\<oddílem >** značky v\<m prvku **> configSections** .
+**\<sectionName>** Element je vlastní element definovaný **\<section>** tagem v **\<configSections>** elementu.
 
 V následující tabulce je uveden typ objektu, který metoda ConfigurationSettings. GetConfig vrátí pro každou obslužnou rutinu konfiguračního oddílu:
 
@@ -51,9 +51,9 @@ V následující tabulce je uveden typ objektu, který metoda ConfigurationSetti
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje, jak deklarovat oddíly, které používají <xref:System.Configuration.DictionarySectionHandler> a <xref:System.Configuration.NameValueSectionHandler> třídy.
+Následující příklad ukazuje, jak deklarovat oddíly, které používají <xref:System.Configuration.DictionarySectionHandler> třídy a <xref:System.Configuration.NameValueSectionHandler> .
 
-Prvním vlastním prvkem je **\<dictionarySample >** , který obsahuje nastavení čtená třídou <xref:System.Configuration.DictionarySectionHandler> v sestavení `System.dll`. Druhý vlastní prvek je **\<mySection >** , který obsahuje nastavení čtená třídou <xref:System.Configuration.NameValueSectionHandler> v sestavení `System.dll`.
+První vlastní prvek je **\<dictionarySample>** , který obsahuje nastavení čtená <xref:System.Configuration.DictionarySectionHandler> třídou v `System.dll` sestavení. Druhý vlastní prvek je **\<mySection>** , který obsahuje nastavení čtená <xref:System.Configuration.NameValueSectionHandler> třídou v `System.dll` sestavení.
 
 ```xml
 <configuration>

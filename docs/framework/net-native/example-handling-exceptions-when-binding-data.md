@@ -3,24 +3,24 @@ title: 'Příklad: Zpracování výjimek při vázání dat'
 ms.date: 03/30/2017
 ms.assetid: bd63ed96-9853-46dc-ade5-7bd1b0f39110
 ms.openlocfilehash: b774d1bce4f4d1c03258ed44b27d3871e7c5275f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79181025"
 ---
 # <a name="example-handling-exceptions-when-binding-data"></a>Příklad: Zpracování výjimek při vázání dat
 > [!NOTE]
-> Toto téma odkazuje na nativní verzi preview pro vývojáře .NET, což je předběžný software. Náhled si můžete stáhnout z [webu Microsoft Connect](https://go.microsoft.com/fwlink/?LinkId=394611) (vyžaduje registraci).  
+> Toto téma se týká .NET Native Developer Preview, což je předběžná verze softwaru. Verzi Preview si můžete stáhnout z [webu Microsoft Connect](https://go.microsoft.com/fwlink/?LinkId=394611) (vyžaduje registraci).  
   
- Následující příklad ukazuje, jak vyřešit [výjimku MissingMetadataException,](missingmetadataexception-class-net-native.md) která je vyvolána, když se aplikace zkompilovaná s řetězcem nástrojů .NET Native pokusí svázat data. Zde jsou informace o výjimce:  
+ Následující příklad ukazuje, jak vyřešit výjimku [MissingMetadataException](missingmetadataexception-class-net-native.md) , která je vyvolána, když se aplikace zkompiluje s řetězem nástrojů .NET Native pokusí vytvořit vazby dat. Zde jsou informace o výjimce:  
   
 ```output
 This operation cannot be carried out as metadata for the following type was removed for performance reasons:
 App.ViewModels.MainPageVM  
 ```  
   
- Tady je přidružený zásobník hovorů:  
+ Tady je přidružený zásobník volání:  
   
 ```output
 Reflection::Execution::ReflectionDomainSetupImplementation.CreateNonInvokabilityException+0x238  
@@ -37,25 +37,25 @@ Windows_UI_Xaml!DirectUI::PropertyPathListener::ConnectPathStep+0x113
 ```  
   
 ## <a name="what-was-the-app-doing"></a>Co aplikace právě dělala?  
- Na základně zásobníku rámce z <xref:Windows.UI.Xaml?displayProperty=nameWithType> oboru názvů označují, že byl spuštěn vykreslovací modul XAML.   Použití <xref:System.Reflection.PropertyInfo.GetValue%2A?displayProperty=nameWithType> metody označuje vyhledávání na základě reflexe hodnoty vlastnosti na typu, jehož metadata byla odebrána.  
+ Na bázi zásobníku, snímky z <xref:Windows.UI.Xaml?displayProperty=nameWithType> oboru názvů označují, že modul vykreslování XAML byl spuštěn.   Použití <xref:System.Reflection.PropertyInfo.GetValue%2A?displayProperty=nameWithType> metody označuje vyhledávání na základě reflexe hodnoty vlastnosti u typu, jehož metadata byla odebrána.  
   
- Prvním krokem při poskytování směrnice metadat by `serialize` bylo přidat metadata pro typ tak, aby jeho vlastnosti jsou přístupné:  
+ Prvním krokem při poskytování direktivy metadata by bylo přidat `serialize` metadata pro typ tak, aby byly všechny vlastnosti dostupné:  
   
 ```xml  
 <Type Name="App.ViewModels.MainPageVM" Serialize="Required Public" />  
 ```  
   
-## <a name="is-this-an-isolated-case"></a>Je to ojedinělý případ?  
- V tomto scénáři pokud vazby dat `ViewModel`má neúplná metadata pro jeden , může pro ostatní, příliš.  Pokud je kód strukturován tak, aby všechny modely zobrazení `App.ViewModels` aplikace byly v oboru názvů, můžete použít obecnější direktivu runtime:  
+## <a name="is-this-an-isolated-case"></a>Jedná se o izolovaný případ?  
+ V tomto scénáři, pokud datová vazba má neúplná metadata pro jednu `ViewModel` , může to být také pro ostatní.  Pokud je kód strukturovaný způsobem, že jsou všechny modely zobrazení aplikace v `App.ViewModels` oboru názvů, můžete použít obecnější direktivu modulu runtime:  
   
 ```xml  
 <Namespace Name="App.ViewModels " Serialize="Required Public" />  
 ```  
   
-## <a name="could-the-code-be-rewritten-to-not-use-reflection"></a>Mohl by být kód přepsán tak, aby nepoužíval reflexi?  
- Vzhledem k tomu, že vazby dat je reflexe náročné, změna kódu, aby se zabránilo reflexe není možné.  
+## <a name="could-the-code-be-rewritten-to-not-use-reflection"></a>Je možné přepsat kód, aby nepoužíval reflexi?  
+ Vzhledem k tomu, že vázání dat je náročné na reflexi, změna kódu tak, aby nedocházelo k neproveditelnému  
   
- Existují však způsoby, `ViewModel` jak určit stránku XAML tak, aby řetězec nástrojů může přidružit vazby vlastností ke správnému typu v době kompilace a zachovat metadata bez použití direktivy runtime.  Můžete například použít <xref:Windows.UI.Xaml.Data.BindableAttribute?displayProperty=nameWithType> atribut na vlastnosti. To způsobí, že kompilátor XAML vygeneruje požadované vyhledávací informace a vyhne se nutnosti direktivy runtime v souboru Default.rd.xml.  
+ Existují však způsoby, jak zadat na `ViewModel` stránku XAML, aby řetěz nástrojů mohl přidružit vazby vlastností ke správnému typu v době kompilace a zachovat metadata bez použití direktivy runtime.  Můžete například použít <xref:Windows.UI.Xaml.Data.BindableAttribute?displayProperty=nameWithType> atribut u vlastností. To způsobí, že kompilátor XAML vygeneruje požadované vyhledávací informace a vyhne se vyžadování direktivy modulu runtime ve výchozím souboru. Rd. XML.  
   
 ## <a name="see-also"></a>Viz také
 

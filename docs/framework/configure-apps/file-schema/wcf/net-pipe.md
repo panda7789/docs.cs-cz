@@ -3,18 +3,18 @@ title: <net.pipe>
 ms.date: 03/30/2017
 ms.assetid: 6a0f0318-f8f6-466c-9fae-199d7274a82e
 ms.openlocfilehash: dd984b2ab89060451b1b2d02c324e803766908ce
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70397716"
 ---
-# <a name="netpipe"></a>\<> NET. pipe
+# \<net.pipe>
 Určuje nastavení konfigurace pro aktivační službu pojmenovaného kanálu, která spravuje životnost připojení pojmenovaného kanálu a zpracovává požadavky na aktivaci přicházející přes pojmenované kanály.  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel. Activation >** ](system-servicemodel-activation.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<> NET. pipe**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel.activation>**](system-servicemodel-activation.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<net.pipe>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,7 +41,7 @@ Určuje nastavení konfigurace pro aktivační službu pojmenovaného kanálu, k
 </configuration>
 ```  
   
-## <a name="type"></a>type  
+## <a name="type"></a>Typ  
  `Type`  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
@@ -53,20 +53,20 @@ Určuje nastavení konfigurace pro aktivační službu pojmenovaného kanálu, k
 |---------------|-----------------|  
 |`maxPendingAccepts`|Celé číslo, které určuje maximální počet nedokončených souběžných přijímajících vláken na koncovém bodu naslouchání pro službu sdílení. Výchozí hodnota je 2.|  
 |`maxPendingConnections`|Celé číslo, které určuje maximální počet připojení, které mohou čekat na odeslání. Výchozí hodnota je 100.|  
-|`receiveTimeout`|A <xref:System.TimeSpan> určuje časový limit pro čtení dat rámců a provádění odesílání připojení z připojení s podtržením. Výchozí hodnota je "00:00:10".|  
+|`receiveTimeout`|A <xref:System.TimeSpan> Určuje časový limit pro čtení dat rámců a provádění odesílání připojení z připojení s podtržením. Výchozí hodnota je "00:00:10".|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
 |[\<allowAccounts>](allowaccounts.md)|Kolekce elementů konfigurace, které obsahují `securityIdentifier` atribut pro určení uživatelských účtů pro procesy, které hostují služby WCF, a kterým je udělen přístup k připojení ke službě sdílení.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
 |[\<system.serviceModel.activation>](system-servicemodel-activation.md)|Obsahuje nastavení konfigurace procesu naslouchacího procesu SMSvcHost. exe.|  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.ServiceModel.Activation.Configuration.NetPipeSection>

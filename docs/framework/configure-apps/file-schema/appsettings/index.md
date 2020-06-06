@@ -8,42 +8,42 @@ helpviewer_keywords:
 - configuration schema [.NET Framework], app settings
 ms.assetid: 99347d62-3ea5-40b6-bfec-c31431011422
 ms.openlocfilehash: 0a3363b35a6fc8bd27753eb034f8a1e95feb5292
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/14/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "77215432"
 ---
 # <a name="app-settings-schema"></a>Schéma nastavení aplikace
 
 Obsahuje vlastní nastavení aplikace, například cesty k souborům, adresy URL webových služeb XML nebo jakékoli další vlastní informace o konfiguraci pro aplikaci.
 
-[**konfigurační >\<** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<appSettings >** ](appsettings-element-for-configuration.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<přidat >** ](add-element-for-appsettings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<clear >** ](clear-element-for-appsettings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<odebrat >** ](remove-element-for-appsettings.md)
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<appSettings>**](appsettings-element-for-configuration.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<add>**](add-element-for-appsettings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<clear>**](clear-element-for-appsettings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<remove>**](remove-element-for-appsettings.md)
 
-| Prvek | Popis |
+| Prvek | Description |
 | ------- | ----------- |
-| [ **\<appSettings >** ](appsettings-element-for-configuration.md) | Obsahuje **\<přidat >** , **\<vymazat >** a **\<odebrat značky >** pro řízení nastavení aplikace. Má volitelný atribut **souboru** . |
-| [ **\<přidat >** ](add-element-for-appsettings.md) | Definuje nastavení. Podřízená položka **>\<appSettings** Vyžaduje atributy **klíče** a **hodnoty** . |
-| [ **\<vymazat >** ](clear-element-for-appsettings.md) | Vymaže všechna nastavení. Podřízená položka **>\<appSettings** Nemá žádné atributy. |
-| [ **\<odebrat >** ](remove-element-for-appsettings.md) | Odebere nastavení. Podřízená položka **>\<appSettings** Vyžaduje atribut **Key** . |
+| [**\<appSettings>**](appsettings-element-for-configuration.md) | Obsahuje **\<add>** **\<clear>** značky, a **\<remove>** pro řízení nastavení aplikace. Má volitelný atribut **souboru** . |
+| [**\<add>**](add-element-for-appsettings.md) | Definuje nastavení. Podřízená položka **\<appSettings>** . Vyžaduje atributy **klíče** a **hodnoty** . |
+| [**\<clear>**](clear-element-for-appsettings.md) | Vymaže všechna nastavení. Podřízená položka **\<appSettings>** . Nemá žádné atributy. |
+| [**\<remove>**](remove-element-for-appsettings.md) | Odebere nastavení. Podřízená položka **\<appSettings>** . Vyžaduje atribut **Key** . |
 
-## <a name="appsettings-element"></a>element \<appSettings >
+## <a name="appsettings-element"></a>\<appSettings> – element
 
-Tento prvek obsahuje **\<přidat >** , **\<vymazat >** a **\<odebrat značky >** pro řízení nastavení aplikace. Definuje volitelný atribut pro **soubor**.
+Tento element obsahuje **\<add>** **\<clear>** značky, a **\<remove>** pro řízení nastavení aplikace. Definuje volitelný atribut pro **soubor**.
 
-## <a name="add-element"></a>\<přidat > element
+## <a name="add-element"></a>\<add> – element
 
 Přidá vlastní nastavení aplikace jako dvojici název-hodnota do kolekce nastavení aplikace. Definuje atributy pro **klíč** a **hodnotu**.
 
-## <a name="clear-element"></a>\<vymazat > element
+## <a name="clear-element"></a>\<clear> – element
 
-Odebere všechny odkazy na zděděná vlastní nastavení aplikace a povoluje pouze odkazy, které jsou přidány pomocí **\<přidat >** prvky za **\<jasný >** element. Nedefinuje žádné atributy.
+Odebere všechny odkazy na zděděná nastavení vlastní aplikace a povoluje pouze odkazy, které jsou přidány **\<add>** prvky, které následují za **\<clear>** elementem. Nedefinuje žádné atributy.
 
-## <a name="remove-element"></a>\<odebrat element >
+## <a name="remove-element"></a>\<remove> – element
 
 Odebere odkaz na zděděné nastavení vlastní aplikace z kolekce nastavení aplikace. Definuje atribut pro **klíč**.
 

@@ -3,20 +3,20 @@ title: <commonParameters>
 ms.date: 03/30/2017
 ms.assetid: ffc20832-34d6-4622-8174-81924fd53514
 ms.openlocfilehash: 73d8549f68e8ca77115619431c857c4a2aac3fdf
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79153019"
 ---
-# <a name="commonparameters"></a>\<commonParameters>
-Představuje kolekci parametrů, které se používají globálně napříč více službami. Tato kolekce bude obvykle obsahovat připojovací řetězec databáze, které mohou být sdíleny trvalé služby.  
+# \<commonParameters>
+Představuje kolekci parametrů, které jsou používány globálně v rámci více služeb. Tato kolekce obvykle zahrnuje připojovací řetězec databáze, který může sdílet trvalé služby.  
   
-[**\<>konfigurace**](../configuration-element.md)\
+[**\<configuration>**](../configuration-element.md)\
 &nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[**\<chování>**](behaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<behaviors>**](behaviors.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<serviceBehaviors>**](servicebehaviors.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<chování>**](behavior-of-servicebehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<behavior>**](behavior-of-servicebehaviors.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<workflowRuntime>**](workflowruntime.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<commonParameters>**  
   
@@ -35,25 +35,25 @@ Představuje kolekci parametrů, které se používají globálně napříč ví
  Následující části popisují atributy, podřízené prvky a nadřazené prvky.  
   
 ### <a name="attributes"></a>Atributy  
- Žádné.  
+ Žádné  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
-|Element|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
-|[\<přidat>](add-of-commonparameters.md)|Přidá dvojici název-hodnota společné parametry používané služby do kolekce.|  
+|[\<add>](add-of-commonparameters.md)|Přidá dvojici název-hodnota společných parametrů používaných službami do kolekce.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Element|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
-|[\<workflowRuntime>](workflowruntime.md)|Určuje nastavení instance <xref:System.Workflow.Runtime.WorkflowRuntime> pro hostování služeb WCF (Windows Communication Foundation) založených na pracovním postupu.|  
+|[\<workflowRuntime>](workflowruntime.md)|Určuje nastavení pro instanci <xref:System.Workflow.Runtime.WorkflowRuntime> pro hostování služeb Windows Communication Foundation založených na pracovních postupech (WCF).|  
   
 ## <a name="remarks"></a>Poznámky  
- Prvek `<commonParameters>` definuje všechny parametry, které se používají globálně `ConnectionString` napříč <xref:System.Workflow.Runtime.Hosting.SharedConnectionWorkflowCommitWorkBatchService>více službami, například při použití rozhraní .  
+ `<commonParameters>`Element definuje všechny parametry, které jsou používány globálně v rámci více služeb, například `ConnectionString` při použití <xref:System.Workflow.Runtime.Hosting.SharedConnectionWorkflowCommitWorkBatchService> .  
   
 > [!NOTE]
-> Služba sledování SQL nepoužívá `ConnectionString` konzistentně `<commonParameters>` hodnotu, pokud je zadána v části. Některé z jeho operací, `StateMachineWorkflowInstance.StateHistory` jako je například načítání vlastnosti může selhat. Chcete-li to toto řešení vyřešit, zadejte `ConnectionString` atribut v části konfigurace pro sledování zprostředkovatele, jak je uvedeno v následujícím příkladu.  
+> Služba sledování SQL tuto hodnotu konzistentně nepoužívá, `ConnectionString` Pokud je uvedena v `<commonParameters>` části. Některé jeho operace, jako je například načtení `StateMachineWorkflowInstance.StateHistory` vlastnosti, mohou selhat. Chcete-li tento problém vyřešit, zadejte `ConnectionString` atribut v oddílu konfigurace pro zprostředkovatele sledování, jak je uvedeno v následujícím příkladu.  
 
 ```xml  
 <add
@@ -61,7 +61,7 @@ type="System.Workflow.Runtime.Tracking.SqlTrackingService, System.Workflow.Runti
 ConnectionString="Data Source=localhost;Initial Catalog=Partner20WFTP;Integrated Security=True;" />
 ```  
   
- Pro služby, které potvrdí pracovní dávky do úložišť trvalosti, například <xref:System.Workflow.Runtime.Hosting.DefaultWorkflowCommitWorkBatchService> a <xref:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService>, můžete jim povolit opakování jejich transakce pomocí parametru, `EnableRetries` jak je znázorněno v následujícím příkladu:  
+ Pro služby, které potvrzují pracovní dávky do úložišť pro uchovávání dat, například <xref:System.Workflow.Runtime.Hosting.DefaultWorkflowCommitWorkBatchService> a <xref:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService> , je můžete povolit, aby znovu opakovaly svou transakci pomocí `EnableRetries` parametru, jak je znázorněno v následujícím příkladu:  
   
 ```xml  
 <workflowRuntime name="SampleApplication"
@@ -80,9 +80,9 @@ ConnectionString="Data Source=localhost;Initial Catalog=Partner20WFTP;Integrated
 </workflowRuntime>
 ```  
   
- Všimněte `EnableRetries` si, že parametr lze nastavit buď na globální úrovni (jak je znázorněno v *commonparameters* části) nebo pro jednotlivé služby, které podporují `EnableRetries` (jak je znázorněno v části *Služby).*  
+ Všimněte si, že `EnableRetries` parametr lze nastavit buď na globální úrovni (jak je uvedeno v části *CommonParameters* ), nebo pro jednotlivé služby, které podporují `EnableRetries` (jak je uvedeno v části *služby* ).  
   
- Následující ukázkový kód ukazuje, jak programově změnit běžné parametry:
+ Následující vzorový kód ukazuje, jak změnit společné parametry programově:
   
 ```csharp  
 Configuration config = WebConfigurationManager.OpenWebConfiguration("/Workflow", "Default Web Site", null, "localhost");
@@ -92,7 +92,7 @@ commonParameters["ConnectionString"].Value="another connection string";
 config.Save();  
 ```  
   
- Další informace o použití konfiguračního <xref:System.Workflow.Runtime.WorkflowRuntime> souboru k řízení chování objektu hostitelské aplikace služby Windows Workflow Foundation naleznete v [tématu Workflow Configuration Files](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms732240(v=vs.90)).  
+ Další informace o tom, jak pomocí konfiguračního souboru řídit chování <xref:System.Workflow.Runtime.WorkflowRuntime> objektu programovací model Windows Workflow Foundation hostitelské aplikace, najdete v tématu [konfigurační soubory pracovního postupu](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms732240(v=vs.90)).  
   
 ## <a name="example"></a>Příklad  
   
@@ -113,4 +113,4 @@ config.Save();
 - <xref:System.Workflow.Runtime.Hosting.DefaultWorkflowCommitWorkBatchService>
 - <xref:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService>
 - [Konfigurační soubory pracovního postupu](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms732240(v=vs.90))
-- [\<přidat>](add-of-commonparameters.md)
+- [\<add>](add-of-commonparameters.md)

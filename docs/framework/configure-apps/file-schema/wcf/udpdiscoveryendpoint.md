@@ -3,19 +3,19 @@ title: <udpDiscoveryEndpoint>
 ms.date: 03/30/2017
 ms.assetid: 1f485329-2771-43bc-88de-df8f2faa3bb7
 ms.openlocfilehash: 1729255c68c75f824b8cd8c87f106a4a9b3550f6
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70854890"
 ---
-# <a name="udpdiscoveryendpoint"></a>\<udpDiscoveryEndpoint>
+# \<udpDiscoveryEndpoint>
 Tento prvek konfigurace definuje standardní koncový bod, který je předem nakonfigurovaný pro operace zjišťování prostřednictvím vazby vícesměrového vysílání UDP. Tento koncový bod má pevný kontrakt a podporuje dvě verze protokolu WS-Discovery. Kromě toho má pevnou vazbu UDP a výchozí adresu uvedenou ve specifikacích WS-Discovery (WS-Discovery duben 2005 nebo WS-Discovery V 1.1).  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<Oddílu StandardEndpoints >** ](standardendpoints.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<udpDiscoveryEndpoint >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<standardEndpoints>**](standardendpoints.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<udpDiscoveryEndpoint>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -48,13 +48,13 @@ Tento prvek konfigurace definuje standardní koncový bod, který je předem nak
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
 |[\<udpTransportSettings>](udptransportsettings.md)|Kolekce nastavení, která umožňují nakonfigurovat přenos UDP pro koncový bod UDP.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
 |[\<standardEndpoints>](standardendpoints.md)|Kolekce standardních koncových bodů, které jsou předem definovanými koncovými body s jednou nebo více vlastnostmi (adresa, vazba, smlouva) opraveny.|  
   
@@ -80,6 +80,6 @@ Tento prvek konfigurace definuje standardní koncový bod, který je předem nak
 </services>
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.ServiceModel.Discovery.DiscoveryEndpoint>

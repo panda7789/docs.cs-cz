@@ -9,16 +9,16 @@ helpviewer_keywords:
 - connectionManagement element
 ms.assetid: bedccaab-12a2-4511-8f67-e961f249aec6
 ms.openlocfilehash: 9f1e382bbbaad2cb95e2c33bbbdfb4c505378c9e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79154891"
 ---
-# <a name="connectionmanagement-element-network-settings"></a>\<connectionManagement> Element (Nastavení sítě)
+# <a name="connectionmanagement-element-network-settings"></a>\<connectionManagement> – element (nastavení sítě)
 Určuje maximální počet připojení k síťovému hostiteli.  
 
-[**\<>konfigurace**](../configuration-element.md)\
+[**\<configuration>**](../configuration-element.md)\
 &nbsp;&nbsp;[**\<system.net>**](system-net-element-network-settings.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;**\<connectionManagement>**
 
@@ -33,30 +33,30 @@ Určuje maximální počet připojení k síťovému hostiteli.
  Následující části popisují atributy, podřízené prvky a nadřazené prvky.  
   
 ### <a name="attributes"></a>Atributy  
- Žádné.  
+ Žádné  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
-|**Element**|**Popis**|  
+|**Objekt**|**Popis**|  
 |-----------------|---------------------|  
-|[Přidat](add-element-for-connectionmanagement-network-settings.md)|Přidá adresu IP nebo název DNS do seznamu správy připojení.|  
-|[Jasné](clear-element-for-connectionmanagement-network-settings.md)|Vymaže seznam správy připojení.|  
-|[Odebrat](remove-element-for-connectionmanagement-network-settings.md)|Odebere adresu IP nebo název DNS ze seznamu správy připojení.|  
+|[add](add-element-for-connectionmanagement-network-settings.md)|Přidá IP adresu nebo název DNS do seznamu správy připojení.|  
+|[jejich](clear-element-for-connectionmanagement-network-settings.md)|Vymaže seznam správy připojení.|  
+|[odebrány](remove-element-for-connectionmanagement-network-settings.md)|Odebere IP adresu nebo název DNS ze seznamu správy připojení.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|**Element**|**Popis**|  
+|**Objekt**|**Popis**|  
 |-----------------|---------------------|  
-|[system.net](system-net-element-network-settings.md)|Obsahuje nastavení, která určují, jak se rozhraní .NET Framework připojuje k síti.|  
+|[system.net](system-net-element-network-settings.md)|Obsahuje nastavení, která určují, jak se .NET Framework připojí k síti.|  
   
 ## <a name="remarks"></a>Poznámky  
- Prvek `connectionManagement` definuje maximální počet připojení k serveru nebo skupině serverů.  
+ `connectionManagement`Element definuje maximální počet připojení k serveru nebo skupině serverů.  
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
- Tento prvek lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine.config).  
+ Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine. config).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad konfiguruje aplikaci tak, aby používala čtyři připojení k serveru `www.contoso.com` a dvě připojení ke všem ostatním serverům.  
+ Následující příklad nakonfiguruje aplikaci tak, aby používala čtyři připojení k serveru `www.contoso.com` a dvě připojení ke všem ostatním serverům.  
   
 ```xml  
 <configuration>  

@@ -4,24 +4,24 @@ ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: 4e108e89-1132-46b7-868a-c7f5c69dc89f
 ms.openlocfilehash: a02d71811709b2c285ab7081b89ee3082ec5b43d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79152206"
 ---
-# <a name="customtrackingquery"></a>\<customTrackingQuery>
+# \<customTrackingQuery>
 Představuje kolekci dotazů, které se používají ke sledování událostí, které definujete své kód aktivity. Dotaz, je nezbytné pro sledování účastníka přihlásit k odběru vlastní sledování záznamů.  
   
- Další informace o sledování profilových dotazů naleznete v [tématu Sledování profilů](../../../windows-workflow-foundation/tracking-profiles.md)  
+ Další informace o sledování dotazů profilů najdete v tématu [sledování profilů](../../../windows-workflow-foundation/tracking-profiles.md) .  
   
-[**\<>konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[**\<Systému.>ServiceModel**](system-servicemodel-of-workflow.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[**\<sledování>**](tracking.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<trackingProfil>**](trackingprofile.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<>pracovního postupu**](workflow.md)\
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.ServiceModel>**](system-servicemodel-of-workflow.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<tracking>**](tracking.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<trackingProfile>**](trackingprofile.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<workflow>**](workflow.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<customTrackingQueries>**](customtrackingqueries.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<vlastní>trackingquery**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<customTrackingQuery>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -46,16 +46,16 @@ Představuje kolekci dotazů, které se používají ke sledování událostí, 
 |Atribut|Popis|  
 |---------------|-----------------|  
 |Název aktivity activityName|Řetězec, který určuje název aktivity, která generovala záznamem sledování.|  
-|jméno|Řetězec, který určuje název záznamu vlastní sledování, které jsou vydávány.|  
+|name|Řetězec, který určuje název záznamu vlastní sledování, které jsou vydávány.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádné.  
+ Žádné  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Element|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
-|[\<vlastní>trackingquery](customtrackingquery.md)|Dotaz, který se používá ke sledování událostí, které definujete své kód aktivity.|  
+|[\<customTrackingQuery>](customtrackingquery.md)|Dotaz, který se používá ke sledování událostí, které definujete své kód aktivity.|  
   
 ## <a name="see-also"></a>Viz také
 

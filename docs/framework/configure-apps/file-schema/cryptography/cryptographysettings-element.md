@@ -9,18 +9,18 @@ helpviewer_keywords:
 - <cryptographySettings> element
 ms.assetid: 6201b7da-bcb7-49f7-b9f5-ba1fe05573b9
 ms.openlocfilehash: fe6de09213c6f980e8eb205a318aae50033b2a84
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79155229"
 ---
-# <a name="cryptographysettings-element"></a>\<kryptografieNastavení> element
+# <a name="cryptographysettings-element"></a>Element \<cryptographySettings>
 Obsahuje nastavení kryptografie.  
 
-[**\<>konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[**\<>mscorlib**](mscorlib-element-for-cryptography-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;**\<kryptografieNastavení>**
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<mscorlib>**](mscorlib-element-for-cryptography-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<cryptographySettings>**
 
 ## <a name="syntax"></a>Syntaxe  
   
@@ -33,24 +33,24 @@ Obsahuje nastavení kryptografie.
  Následující části popisují atributy, podřízené prvky a nadřazené prvky.  
   
 ### <a name="attributes"></a>Atributy  
- Žádné.  
+ Žádné  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
-|Element|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
-|[\<kryptonamemapping>](cryptonamemapping-element.md)|Obsahuje mapování tříd na popisné názvy.|  
-|[\<oidMap>](oidmap-element.md)|Obsahuje mapování identifikátorů objektu ASN.1 (OID) na třídy.|  
+|[\<cryptoNameMapping>](cryptonamemapping-element.md)|Obsahuje mapování tříd na popisné názvy.|  
+|[\<oidMap>](oidmap-element.md)|Obsahuje mapování identifikátoru objektu ASN. 1 na třídy.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Element|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|  
-|`mscorlib`|Obsahuje `cryptographySettings` prvek.|  
+|`mscorlib`|Obsahuje `cryptographySettings` element.|  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak použít ** \<kryptografiiNastavení>** prvek k zobrazení mapování názvů kryptografie a mapování OID. Tento příklad konfiguruje <xref:System.Security.Cryptography.HashAlgorithm.Create%2A?displayProperty=nameWithType> runtime tak, aby vrátí `MyHashClass` objekt a `MyCryptoClass` třída mapuje na identifikátor objektu 1.3.36.2.1.  
+ Následující příklad ukazuje, jak použít **\<cryptographySettings>** element k zahrnutí mapování názvů kryptografie a mapování OID. Tento příklad nakonfiguruje modul runtime tak, že <xref:System.Security.Cryptography.HashAlgorithm.Create%2A?displayProperty=nameWithType> vrátí `MyHashClass` objekt a `MyCryptoClass` Třída se mapuje na identifikátor objektu 1.3.36.2.1.  
   
 ```xml  
 <configuration>  

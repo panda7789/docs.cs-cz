@@ -11,19 +11,19 @@ helpviewer_keywords:
 - authenticationModules, remove element
 ms.assetid: abf79949-b05c-465a-b51c-bbeda9a74173
 ms.openlocfilehash: d171fea193bbae068e69b8976abb8e56a5623f02
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79154774"
 ---
-# <a name="remove-element-for-authenticationmodules-network-settings"></a>\<odebrat prvek> pro autentizační moduly (nastavení sítě)
+# <a name="remove-element-for-authenticationmodules-network-settings"></a>\<remove> – element pro authenticationModules (nastavení sítě)
 Odebere ověřovací modul z aplikace.  
 
-[**\<>konfigurace**](../configuration-element.md)\
+[**\<configuration>**](../configuration-element.md)\
 &nbsp;&nbsp;[**\<system.net>**](system-net-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[**\<autentizační moduly>**](authenticationmodules-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<odebrat>**
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<authenticationModules>**](authenticationmodules-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<remove>**
 
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,24 +40,24 @@ Odebere ověřovací modul z aplikace.
   
 |**Atribut**|**Popis**|  
 |-------------------|---------------------|  
-|**Typ**|Název ověřovacího modulu, který chcete odebrat.|  
+|**textový**|Název modulu ověřování, který se má odebrat|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádné.  
+ Žádné  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|**Element**|**Popis**|  
+|**Objekt**|**Popis**|  
 |-----------------|---------------------|  
-|[autentizační moduly](authenticationmodules-element-network-settings.md)|Určuje moduly používané k ověřování síťových požadavků.|  
+|[authenticationModules](authenticationmodules-element-network-settings.md)|Určuje moduly používané pro ověřování síťových požadavků.|  
   
 ## <a name="remarks"></a>Poznámky  
- Prvek `remove` odebere ověřovací moduly, které byly definovány dříve v konfiguračním souboru nebo na vyšší úrovni v konfigurační hierarchii.  
+ `remove`Element odebere moduly ověřování definované dříve v konfiguračním souboru nebo na vyšší úrovni v konfigurační hierarchii.  
   
- Hodnota atributu `type` by měla být platný název třídy.  
+ Hodnota `type` atributu by měla být platný název třídy.  
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
- Tento prvek lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine.config).  
+ Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine. config).  
   
 ## <a name="example"></a>Příklad  
  Následující příklad odebere ověřovací modul.  

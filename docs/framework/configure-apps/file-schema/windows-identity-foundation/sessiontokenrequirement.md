@@ -4,21 +4,21 @@ ms.date: 03/30/2017
 ms.assetid: 496a1735-cbb7-49d5-a6aa-dd5550462073
 author: BrucePerlerMS
 ms.openlocfilehash: ade55a5b26826633faf2e7ef7598a4071d613bbc
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79152538"
 ---
-# <a name="sessiontokenrequirement"></a>\<> sessionTokenRequirement
-Poskytuje konfiguraci <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler> pro třídu nebo odvozené třídy.  
+# \<sessionTokenRequirement>
+Poskytuje konfiguraci pro <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler> třídu nebo odvozené třídy.  
   
-[**\<>konfigurace**](../configuration-element.md)\
+[**\<configuration>**](../configuration-element.md)\
 &nbsp;&nbsp;[**\<system.identityModel>**](system-identitymodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[**\<identityKonfigurace>**](identityconfiguration.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<identityConfiguration>**](identityconfiguration.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<securityTokenHandlers>**](securitytokenhandlers.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<přidat>**](add.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<>sessionTokenRequirement**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<add>**](add.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<sessionTokenRequirement>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,16 +42,16 @@ Poskytuje konfiguraci <xref:System.IdentityModel.Tokens.SessionSecurityTokenHand
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|doba platnosti|Určuje životnost tokenů relace.|  
+|doba platnosti|Určuje dobu života tokenů relací.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádný  
+ Žádné  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Element|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
-|[\<přidat>](add.md)|Přidá zadanou obslužnou rutinu tokenu do kolekce obslužné rutiny tokenu.|  
+|[\<add>](add.md)|Přidá do kolekce obslužných rutin tokenu zadanou obslužnou rutinu tokenu zabezpečení.|  
   
 ## <a name="example"></a>Příklad  
   

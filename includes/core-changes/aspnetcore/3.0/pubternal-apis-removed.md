@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 52b9caf2d5b3d44c0c6349501dafc371541fdd70
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: b1fb9647091cecb80b9c2f04ec9b6bb156eb39ba
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396364"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84466808"
 ---
 ### <a name="pubternal-apis-removed"></a>Odebrána rozhraní API "Pubternal"
 
@@ -22,7 +22,7 @@ Ovlivněná rozhraní API jsou označená `public` modifikátorem přístupu a e
 
 #### <a name="new-behavior"></a>Nové chování
 
-Ovlivněná rozhraní API jsou označena modifikátorem přístupu [Internal (~/docs/CSharp/Language-Reference/Keywords/Internal.MD) a nemohou být nadále používána kódem mimo toto sestavení.
+Ovlivněná rozhraní API jsou označená modifikátorem [interního](/dotnet/csharp/language-reference/keywords/internal) přístupu a již nemohou být používána kódem mimo toto sestavení.
 
 #### <a name="reason-for-change"></a>Důvod změny
 

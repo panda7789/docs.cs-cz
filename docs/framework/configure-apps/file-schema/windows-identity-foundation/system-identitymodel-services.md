@@ -4,16 +4,16 @@ ms.date: 03/30/2017
 ms.assetid: fa1624dd-2d74-4ae3-942e-498cee261ac5
 author: BrucePerlerMS
 ms.openlocfilehash: 57757aaec39bc5c552e7ba12c9779cb3a92a9025
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79152501"
 ---
-# <a name="systemidentitymodelservices"></a>\<system.identityModel.services>
-Konfigurační část pro ověřování pomocí protokolu WS-Federation.  
+# \<system.identityModel.services>
+Konfigurační oddíl pro ověřování pomocí protokolu WS-Federation.  
   
-[**\<>konfigurace**](../configuration-element.md)\
+[**\<configuration>**](../configuration-element.md)\
 &nbsp;&nbsp;**\<system.identityModel.services>**  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -29,27 +29,27 @@ Konfigurační část pro ověřování pomocí protokolu WS-Federation.
  Následující části popisují atributy, podřízené prvky a nadřazené prvky.  
   
 ### <a name="attributes"></a>Atributy  
- Žádný  
+ Žádné  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
-|Element|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
-|[\<federationConfiguration>](federationconfiguration.md)|Obsahuje nastavení, která <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> konfigurují moduly HTTP (WSFAM) a <xref:System.IdentityModel.Services.SessionAuthenticationModule> (SAM).|  
+|[\<federationConfiguration>](federationconfiguration.md)|Obsahuje nastavení, která konfigurují <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> moduly protokolu HTTP (WSFAM) a <xref:System.IdentityModel.Services.SessionAuthenticationModule> (SAM).|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
- Žádný  
+ Žádné  
   
 ## <a name="remarks"></a>Poznámky  
- Přidejte `<system.identityModel.services>` oddíl do konfiguračního souboru aplikace a zadejte nastavení pro sam a wsfam.  
+ Přidejte `<system.identityModel.services>` oddíl do konfiguračního souboru aplikace a poskytněte tak nastavení pro Sam a WSFAM.  
   
 > [!IMPORTANT]
-> Při použití <xref:System.IdentityModel.Services.ClaimsPrincipalPermission> nebo <xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute> třídy k poskytování řízení přístupu na základě<xref:System.Security.Claims.ClaimsAuthorizationManager>deklarací identity ve vašem kódu, správce `<identityConfiguration>` autorizace deklarací ( ) a `<federationConfiguration>` zásady, které se používají k rozhodování o autorizaci jsou konfigurovány prostřednictvím prvku, který je implicitně nebo explicitně odkazován z prvku v této části. Další informace naleznete v **části Poznámky** v části [ \<federationConfiguration>](federationconfiguration.md) element.  
+> Při použití <xref:System.IdentityModel.Services.ClaimsPrincipalPermission> <xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute> třídy nebo k poskytnutí řízení přístupu založeného na deklaracích v kódu jsou deklarace identity Manageru ( <xref:System.Security.Claims.ClaimsAuthorizationManager> ) a zásady, které se používají k rozhodování o autorizaci, konfigurovány prostřednictvím `<identityConfiguration>` elementu, který je implicitně nebo explicitně odkazován z `<federationConfiguration>` prvku v této části. Další informace naleznete v **poznámkách** pod [\<federationConfiguration>](federationconfiguration.md) prvkem.  
   
- Oddíl `<system.identityModel.services>` je reprezentován <xref:System.IdentityModel.Services.Configuration.SystemIdentityModelServicesSection> třídou. Kolekce podřízených `<federationConfiguration>` prvků nakonfigurovaných <xref:System.IdentityModel.Services.Configuration.FederationConfigurationElementCollection> v části je reprezentována třídou.  
+ `<system.identityModel.services>`Oddíl je reprezentován <xref:System.IdentityModel.Services.Configuration.SystemIdentityModelServicesSection> třídou. Kolekce podřízených `<federationConfiguration>` prvků nakonfigurovaných v oddílu je reprezentována <xref:System.IdentityModel.Services.Configuration.FederationConfigurationElementCollection> třídou.  
   
 ## <a name="example"></a>Příklad  
- Následující jazyk XML ukazuje, `<system.identityModel.services>` jak přidat oddíl do konfiguračního souboru. Nejprve je nutné přidat deklarace oddílů `<system.identityModel.services>` pro oddíl i oddíly. `<system.identityModel>` (Když přidáte `<system.identityModel.services>` oddíl, měli byste také přidat `<system.identityModel>` deklaraci pro `<identityConfiguration>` oddíl, abyste zajistili, že v případě potřeby může být výchozí oddíl vytvořen za běhu.) Po přidání deklarací oddílu můžete nakonfigurovat federovaná `<system.identityModel.services>` nastavení ověřování pod elementem.  
+ Následující kód XML ukazuje, jak přidat `<system.identityModel.services>` oddíl do konfiguračního souboru. Nejdřív musíte přidat deklarace oddílů pro `<system.identityModel.services>` oddíl i `<system.identityModel>` oddíly. (Když přidáte `<system.identityModel.services>` oddíl, měli byste také přidat deklaraci pro `<system.identityModel>` oddíl, abyste měli jistotu, že `<identityConfiguration>` v případě potřeby může modul runtime vytvořit výchozí oddíl.) Po přidání oddílu deklarace můžete nakonfigurovat nastavení federovaného ověřování pod `<system.identityModel.services>` prvkem.  
   
 ```xml  
 <configuration>  

@@ -3,22 +3,22 @@ title: <add>služby WCF
 ms.date: 03/30/2017
 ms.assetid: c196f6d7-77f6-4266-973c-305b2b4dd8a2
 ms.openlocfilehash: 0b21bdabc76ec4853a0f2664cdd3cead149417a1
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70850298"
 ---
-# <a name="add-of-wcf"></a>\<Přidání > WCF
+# <a name="add-of-wcf"></a>\<add>služby WCF
 Nakonfigurujte účastníkem sledování, která naslouchá na sledování záznamy probíhá emitovány přímo z modulu runtime a jejich zpracování libovolné způsobem, který byl nakonfigurován. Jedná se o zápis do konkrétní výstupu (např. soubor, konzoly, ETW), zpracování/agregaci záznamů nebo libovolnou kombinaci, který může být vyžadováno.  
   
  Další informace o sledování pracovních postupů a sledování účastníků najdete v tématu [sledování pracovních postupů a trasování](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md) a [Sledování účastníků](../../../windows-workflow-foundation/tracking-participants.md).  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<sledování >** ](tracking-of-wcf.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<Účastníci >** ](participants-of-wcf.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<Přidat >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<tracking>**](tracking-of-wcf.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<participants>**](participants-of-wcf.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<add>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,20 +37,20 @@ Nakonfigurujte účastníkem sledování, která naslouchá na sledování zázn
   
 ### <a name="attributes"></a>Atributy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
 |name|Řetězec, který určuje název člena sledování.|  
 |Název_profilu|Řetězec, který určuje název profilu sledování, která definuje sledování záznamů účastník sledování přihlásí k odběru.|  
-|– typ|Řetězec, který určuje typ sledování člena.|  
+|typ|Řetězec, který určuje typ sledování člena.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
-|[\<Účastníci >](../windows-workflow-foundation/participants.md)|Seznam sledování účastníků|  
+|[\<participants>](../windows-workflow-foundation/participants.md)|Seznam sledování účastníků|  
   
 ## <a name="remarks"></a>Poznámky  
  Sledování účastníci se používají pro získání data sledování vyzařovaného z pracovního postupu a uložit je do různá média. Stejně tak jakýkoli příspěvek zpracování na sledování, které záznamy lze provést také v rámci tohoto sledování.  
@@ -89,7 +89,7 @@ Nakonfigurujte účastníkem sledování, která naslouchá na sledování zázn
 </configuration>
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.ServiceModel.Activities.Tracking.Configuration.TrackingSection>
 - <xref:System.ServiceModel.Activities.Description.EtwTrackingBehavior>

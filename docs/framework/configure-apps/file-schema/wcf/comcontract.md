@@ -3,19 +3,19 @@ title: <comContract>
 ms.date: 03/30/2017
 ms.assetid: 3f8e1c0c-cfdf-4c79-ac65-c64e9323a51c
 ms.openlocfilehash: b499294af71ba230dcf985d4af1d013b1ca260cf
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70850025"
 ---
-# <a name="comcontract"></a>\<comContract>
+# \<comContract>
 Určuje kontrakt služby integrace modelu COM+.  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<Konfigurační oddíl comContracts >** ](comcontracts.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<comContract >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<comContracts>**](comcontracts.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<comContract>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -51,14 +51,14 @@ Určuje kontrakt služby integrace modelu COM+.
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|Dodavatele|Řetězec, který obsahuje typ kontraktu.|  
+|dodavatele|Řetězec, který obsahuje typ kontraktu.|  
 |name|Řetězec, který obsahuje název kontraktu.|  
-|– obor názvů|Řetězec, který obsahuje obor názvů kontraktu.|  
-|requiresSession|Logická hodnota určující, zda lze kontrakt použít pouze pro vazby s relacemi. Po inicializaci služby Integration runtime zajistí, že toto nastavení je konzistentní s typem vazby, která se má použít. Výjimka je vygenerována v případě, že jedna nebo více vazeb pro kontrakt jsou v konfliktu. Pokud je `false`Tato vlastnost a používá se jednosměrný kanál a existují parametry [out], vygeneruje se taky výjimka.|  
+|namespace|Řetězec, který obsahuje obor názvů kontraktu.|  
+|requiresSession|Logická hodnota určující, zda lze kontrakt použít pouze pro vazby s relacemi. Po inicializaci služby Integration runtime zajistí, že toto nastavení je konzistentní s typem vazby, která se má použít. Výjimka je vygenerována v případě, že jedna nebo více vazeb pro kontrakt jsou v konfliktu. Pokud je tato vlastnost `false` a používá se jednosměrný kanál a existují parametry [out], vygeneruje se taky výjimka.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
 |persistableTypes|Všechny typy, které jsou trvalé.|  
 |userDefinedTypes|Kolekce uživatelsky definovaných typů (UDT), které mají být zahrnuty do kontraktu služby.|  
@@ -66,12 +66,12 @@ Určuje kontrakt služby integrace modelu COM+.
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
 |comContracts|Obsahuje kolekci `comContract` prvků.|  
   
 ## <a name="remarks"></a>Poznámky  
- Kontrakty integrační služby com+ jsou aktuálně omezeny `http://tempuri.org` na obor názvů a název kontraktu je odvozen z doprovodného rozhraní modelu COM. Můžete však zadat alternativy pomocí `comContracts` oddílu a také `comContract` elementu v konfiguračním souboru. Pomocí následující konfigurace můžete například zadat obor názvů, název kontraktu a uživatelsky definované typy, které se mají zahrnout, a další nastavení pro kontrakt služby.  
+ Kontrakty integrační služby COM+ jsou aktuálně omezeny na `http://tempuri.org` obor názvů a název kontraktu je odvozen z doprovodného rozhraní modelu COM. Můžete však zadat alternativy pomocí `comContracts` oddílu a také `comContract` elementu v konfiguračním souboru. Pomocí následující konfigurace můžete například zadat obor názvů, název kontraktu a uživatelsky definované typy, které se mají zahrnout, a další nastavení pro kontrakt služby.  
   
 ```xml  
 <comContracts>
@@ -90,7 +90,7 @@ Určuje kontrakt služby integrace modelu COM+.
   
  Po inicializaci služby se zadané obory názvů a názvy kontraktů aplikují na vygenerované popisy služby.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.ServiceModel.Configuration.ComContractElementCollection>
 - <xref:System.ServiceModel.Configuration.ComContractElement>

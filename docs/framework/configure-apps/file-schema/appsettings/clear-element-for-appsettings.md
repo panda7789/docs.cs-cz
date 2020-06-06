@@ -8,19 +8,19 @@ helpviewer_keywords:
 - <clear> Element
 ms.assetid: 6d18c7be-27db-438b-8fb5-765d396b0b7b
 ms.openlocfilehash: 266d32ccb8b322f0472e0f552f9c0fc877c9a78e
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/14/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "77214817"
 ---
-# <a name="clear-element-for-appsettings"></a>\<Clear > elementu pro \<appSettings >
+# <a name="clear-element-for-appsettings"></a>\<clear> – element pro \<appSettings>
 
 Vymaže vlastní nastavení aplikace.
 
-[**konfigurační >\<** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<appSettings >** ](appsettings-element-for-configuration.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<vymazat >**
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<appSettings>**](appsettings-element-for-configuration.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<clear>**
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -32,17 +32,17 @@ Vymaže vlastní nastavení aplikace.
 
 ## <a name="attributes"></a>Atributy
 
-Žádná
+Žádné
 
 ## <a name="parent-element"></a>Nadřazený element
 
-|     | Popis |
+|     | Description |
 | --- | ----------- |
-| [ **\<appSettings >** ](appsettings-element-for-configuration.md) | Obsahuje vlastní nastavení aplikace, například cesty k souborům, adresy URL webových služeb XML nebo jakékoli další vlastní informace o konfiguraci aplikace. |
+| [**\<appSettings>**](appsettings-element-for-configuration.md) | Obsahuje vlastní nastavení aplikace, například cesty k souborům, adresy URL webových služeb XML nebo jakékoli další vlastní informace o konfiguraci aplikace. |
 
 ## <a name="child-elements"></a>Podřízené prvky
 
-Žádná
+Žádné
 
 ## <a name="example"></a>Příklad
 

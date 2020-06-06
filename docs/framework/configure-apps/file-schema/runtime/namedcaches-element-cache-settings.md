@@ -7,19 +7,19 @@ helpviewer_keywords:
 - <namedCaches> element
 ms.assetid: 6bd4fbc5-55a6-4dc4-998b-cdcc7e023330
 ms.openlocfilehash: e0640ca18d386141f3c03135019eb4fe959b5bf8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79153955"
 ---
-# <a name="namedcaches-element-cache-settings"></a>\<namedCaches> Element (Nastavení mezipaměti)
-Určuje kolekci nastavení konfigurace pro <xref:System.Runtime.Caching.MemoryCache> pojmenované instance. Vlastnost <xref:System.Runtime.Caching.Configuration.MemoryCacheSection.NamedCaches%2A> odkazuje na kolekci nastavení konfigurace `namedCaches` z jednoho nebo více prvků konfiguračního souboru.  
+# <a name="namedcaches-element-cache-settings"></a>\<namedCaches> – element (nastavení mezipaměti)
+Určuje kolekci konfiguračních nastavení pro pojmenované <xref:System.Runtime.Caching.MemoryCache> instance. <xref:System.Runtime.Caching.Configuration.MemoryCacheSection.NamedCaches%2A>Vlastnost odkazuje na kolekci konfiguračních nastavení z jednoho nebo více `namedCaches` prvků konfiguračního souboru.  
   
-[**\<>konfigurace**](../configuration-element.md)\
+[**\<configuration>**](../configuration-element.md)\
 &nbsp;&nbsp;[**\<system.runtime.caching>**](system-runtime-caching-element-cache-settings.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;[**\<memoryCache>**](memorycache-element-cache-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<pojmenováno Caches>**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<namedCaches>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,38 +39,38 @@ Určuje kolekci nastavení konfigurace pro <xref:System.Runtime.Caching.MemoryCa
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`cacheMemoryLimitMegabytes`|Celá hodnota, která určuje maximální přípustnou velikost v megabajtech, na <xref:System.Runtime.Caching.MemoryCache> kterou může instanci instanci zvětšit. Výchozí hodnota je 0, což znamená, že autosizing <xref:System.Runtime.Caching.MemoryCache> heuristiky třídy se používají ve výchozím nastavení.|  
+|`cacheMemoryLimitMegabytes`|Celočíselná hodnota, která určuje maximální povolenou velikost v megabajtech, kterou může instance a <xref:System.Runtime.Caching.MemoryCache> růst. Výchozí hodnota je 0, což znamená, že <xref:System.Runtime.Caching.MemoryCache> ve výchozím nastavení jsou používány heuristiky autovelikosti třídy.|  
 |`name`|Název mezipaměti.|  
-|`physicalMemoryLimitPercentage`|Celá hodnota mezi 0 a 100, která určuje maximální procento fyzicky nainstalované paměti počítače, které mohou být spotřebovány mezipamětí. Výchozí hodnota je 0, což znamená, že autosizing <xref:System.Runtime.Caching.MemoryCache> heuristiky třídy se používají ve výchozím nastavení.|  
-|`pollingInterval`|Hodnota, která označuje časový interval, po kterém implementace mezipaměti porovnává aktuální zatížení paměti s absolutní a procentuální limity paměti, které jsou nastaveny pro instanci mezipaměti. Tato hodnota je zadána ve formátu HH:MM:SS.|  
+|`physicalMemoryLimitPercentage`|Celočíselná hodnota mezi 0 a 100, která určuje maximální procento fyzicky instalované paměti počítače, kterou může mezipaměť spotřebovat. Výchozí hodnota je 0, což znamená, že <xref:System.Runtime.Caching.MemoryCache> ve výchozím nastavení jsou používány heuristiky autovelikosti třídy.|  
+|`pollingInterval`|Hodnota, která označuje časový interval, po kterém implementace mezipaměti porovnává aktuální zatížení paměti s omezeními na základě absolutního a procenta velikosti paměti, které jsou nastaveny pro instanci mezipaměti. Tato hodnota je zadaná ve formátu "HH: MM: SS".|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
-|Element|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
-|[\<přidat>](add-element-for-namedcaches.md)|Přidá pojmenovanou `namedCaches` mezipaměť do kolekce mezipaměti.|  
-|[\<jasné>](clear-element-for-namedcaches.md)|Vymaže kolekci `namedCaches` mezipaměti mezipaměti.|  
-|[\<odebrat>](remove-element-for-namedcaches.md)|Odebere pojmenovanou položku mezipaměti `namedCaches` z kolekce mezipaměti.|  
+|[\<add>](add-element-for-namedcaches.md)|Přidá pojmenovanou mezipaměť do `namedCaches` kolekce mezipaměti paměti.|  
+|[\<clear>](clear-element-for-namedcaches.md)|Vymaže `namedCaches` kolekci mezipaměti paměti.|  
+|[\<remove>](remove-element-for-namedcaches.md)|Odebere pojmenovanou položku mezipaměti z `namedCaches` kolekce pro mezipaměť paměti.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Element|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
-|[\<>konfigurace](../configuration-element.md)|Určuje kořenový prvek v každém konfiguračním souboru, který používá aplikace COMMON Language runtime a .NET Framework.|  
-|[\<memoryCache>](memorycache-element-cache-settings.md)|Definuje prvek, který se používá ke konfiguraci <xref:System.Runtime.Caching.MemoryCache> mezipaměti, která je založena na třídě.|  
-|[\<system.runtime.caching>](system-runtime-caching-element-cache-settings.md)|Obsahuje typy, které umožňují implementovat ukládání výstupu do mezipaměti v aplikacích, které jsou integrovány do rozhraní .NET Framework.|  
+|[\<configuration>](../configuration-element.md)|Určuje kořenový element v každém konfiguračním souboru, který je používán modulem CLR (Common Language Runtime) a .NET Framework aplikacemi.|  
+|[\<memoryCache>](memorycache-element-cache-settings.md)|Definuje prvek, který se používá ke konfiguraci mezipaměti založené na <xref:System.Runtime.Caching.MemoryCache> třídě.|  
+|[\<system.runtime.caching>](system-runtime-caching-element-cache-settings.md)|Obsahuje typy, které umožňují implementovat ukládání výstupu do mezipaměti v aplikacích, které jsou integrovány do .NET Framework.|  
   
 ## <a name="remarks"></a>Poznámky  
- Oddíl konfigurace mezipaměti souboru Web.config `add` `remove`může `clear` obsahovat , `namedCaches` a atributy kolekce. Každá `namedCaches` položka je jednoznačně `name` identifikována atributem.  
+ Oddíl konfigurace mezipaměti paměti v souboru Web. config může obsahovat `add` `remove` atributy, a `clear` pro `namedCaches` kolekci. Každá `namedCaches` položka je jednoznačně identifikována `name` atributem.  
   
- Instance položek mezipaměti mezipaměti můžete načíst odkazováním na informace v konfiguračních souborech aplikace. Ve výchozím nastavení má v konfiguračním souboru položku pouze výchozí instance mezipaměti. Výchozí instance mezipaměti je instance, <xref:System.Runtime.Caching.MemoryCache.Default%2A> která je vrácena z vlastnosti.  
+ Můžete načíst instance položek mezipaměti paměti odkazem na informace v konfiguračních souborech aplikace. Ve výchozím nastavení obsahuje pouze výchozí instance mezipaměti záznam v konfiguračním souboru. Výchozí instance mezipaměti je instance, která je vrácena z <xref:System.Runtime.Caching.MemoryCache.Default%2A> Vlastnosti.  
   
- Pokud nastavíte atribut name na "default", prvek použije výchozí instanci mezipaměti paměti.  
+ Pokud nastavíte atribut Name na výchozí, bude element používat výchozí instanci mezipaměti paměti.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak nastavit název mezipaměti na výchozí název `name` položky mezipaměti nastavením atributu na "výchozí".  
+ Následující příklad ukazuje, jak nastavit název mezipaměti na výchozí název položky mezipaměti nastavením `name` atributu na "default".  
   
- Atribut `cacheMemoryLimitMegabytes` a `physicalMemoryPercentage` atribut jsou nastaveny na nulu. Nastavení těchto atributů na nulu znamená, že se <xref:System.Runtime.Caching.MemoryCache> používají autosizing heuristiky třídy. Implementace mezipaměti porovnává aktuální zatížení paměti s absolutní a procentuální limity paměti každé dvě minuty.  
+ `cacheMemoryLimitMegabytes`Atribut a `physicalMemoryPercentage` atribut jsou nastaveny na hodnotu nula. Nastavení těchto atributů na hodnotu nula znamená, že se používají heuristické automatické změny velikosti <xref:System.Runtime.Caching.MemoryCache> třídy. Implementace mezipaměti porovnává aktuální zatížení paměti s použitím absolutních a procentuálních limitů paměti založených na procentech každé dvě minuty.  
   
 ```xml  
 <configuration>  
@@ -91,4 +91,4 @@ Určuje kolekci nastavení konfigurace pro <xref:System.Runtime.Caching.MemoryCa
   
 ## <a name="see-also"></a>Viz také
 
-- [\<memoryCache> Element (Nastavení mezipaměti)](memorycache-element-cache-settings.md)
+- [\<memoryCache>– Element (nastavení mezipaměti)](memorycache-element-cache-settings.md)

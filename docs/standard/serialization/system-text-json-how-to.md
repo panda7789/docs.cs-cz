@@ -11,10 +11,10 @@ helpviewer_keywords:
 - serialization
 - objects, serializing
 ms.openlocfilehash: 7ad2721f12c5d14b61b35ecf7696ff0d6a6f27da
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "84289509"
 ---
 # <a name="how-to-serialize-and-deserialize-marshal-and-unmarshal-json-in-net"></a>Jak serializovat a deserializovat (zařazování a zrušit zařazení) JSON v .NET

@@ -4,20 +4,20 @@ ms.date: 03/30/2017
 ms.assetid: 86161897-c20f-4ad8-9d7f-050c247251bf
 author: BrucePerlerMS
 ms.openlocfilehash: 3f3d79d3567c1714a79423b7767ce3f454b9d52d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79152785"
 ---
-# <a name="certificatevalidator"></a>\<certifikátValidator>
-Určuje vlastní typ pro ověření certifikátu. Tento typ se používá `certificateValidationMode` pouze v případě, že atribut [ \<certifikátuValidation>](certificatevalidation.md) element je nastaven na "Vlastní".  
+# \<certificateValidator>
+Určuje vlastní typ pro ověření certifikátu. Tento typ se používá jenom v případě, že `certificateValidationMode` [\<certificateValidation>](certificatevalidation.md) je atribut elementu nastavený na Custom (vlastní).  
   
-[**\<>konfigurace**](../configuration-element.md)\
+[**\<configuration>**](../configuration-element.md)\
 &nbsp;&nbsp;[**\<system.identityModel>**](system-identitymodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[**\<identityKonfigurace>**](identityconfiguration.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<>ověření certifikátu**](certificatevalidation.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<certifikátValidator>**  
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<identityConfiguration>**](identityconfiguration.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<certificateValidation>**](certificatevalidation.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<certificateValidator>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,16 +39,16 @@ Určuje vlastní typ pro ověření certifikátu. Tento typ se používá `certi
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|type|Určuje vlastní typ, který je <xref:System.IdentityModel.Selectors.X509CertificateValidator> odvozen od třídy. Nastavte `certificateValidationMode` atribut [ \<certifikátuValidation>](certificatevalidation.md) elementu na "Vlastní" pro použití tohoto typu. Další informace o tom, `type` jak zadat atribut, naleznete v [tématu Vlastní odkazy na typ](../windows-workflow-foundation/index.md). Nepovinný parametr.|  
+|typ|Určuje vlastní typ, který je odvozen od <xref:System.IdentityModel.Selectors.X509CertificateValidator> třídy. `certificateValidationMode` [\<certificateValidation>](certificatevalidation.md) Pro použití tohoto typu nastavte atribut elementu na "Custom". Další informace o tom, jak zadat `type` atribut, naleznete v tématu [odkazy na vlastní typ](../windows-workflow-foundation/index.md). Nepovinný parametr.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádný  
+ Žádné  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Element|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
-|[\<>ověření certifikátu](certificatevalidation.md)|Řídí nastavení, která obslužné rutiny tokenů používají k ověření certifikátů.|  
+|[\<certificateValidation>](certificatevalidation.md)|Určuje nastavení, které obslužné rutiny tokenů používají k ověření certifikátů.|  
   
 ## <a name="example"></a>Příklad  
   

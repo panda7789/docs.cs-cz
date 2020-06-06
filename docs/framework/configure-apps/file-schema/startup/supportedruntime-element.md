@@ -10,18 +10,18 @@ helpviewer_keywords:
 - <supportedRuntime> element
 ms.assetid: 1ae16e23-afbe-4de4-b413-bc457f37b69f
 ms.openlocfilehash: ecbe73593e5b8b87909499f6fff7e865e29b1ec8
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/05/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "82796038"
 ---
-# <a name="supportedruntime-element"></a>\<supportedRuntime – element>
+# <a name="supportedruntime-element"></a>\<supportedRuntime> – element
 
 Určuje, která verze modulu Common Language Runtime a volitelně .NET Framework verzi, kterou aplikace podporuje.  
 
-[\<>konfigurace](../configuration-element.md)  
-&nbsp;&nbsp;[\<spouštěcí>](startup-element.md)  
+[\<configuration>](../configuration-element.md)  
+&nbsp;&nbsp;[\<startup>](startup-element.md)  
 &nbsp;&nbsp;&nbsp;&nbsp;**\<supportedRuntime>**  
 
 ## <a name="syntax"></a>Syntaxe
@@ -35,29 +35,29 @@ Určuje, která verze modulu Common Language Runtime a volitelně .NET Framework
 |Atribut|Popis|
 |---------------|-----------------|
 |**znění**|Nepovinný atribut.<br /><br /> Hodnota řetězce, která určuje verzi modulu Common Language Runtime (CLR), který aplikace podporuje. Platné hodnoty `version` atributu naleznete v části ["běhové hodnoty" verze](#version) . **Poznámka:**  V rámci .NET Framework 3,5 má hodnota "*běhová verze*" formu *hlavní*. *vedlejší*. *sestavení*. Počínaje .NET Framework 4 jsou vyžadována pouze čísla hlavní verze a podverze (tj. "v 4.0" místo "v 4.0.30319"). Je doporučen kratší řetězec.|
-|**skladové**|Nepovinný atribut.<br /><br /> Hodnota řetězce, která určuje skladovou jednotku (SKU), která zase určuje, který .NET Framework vydání této aplikace podporuje.<br /><br /> Počínaje .NET Framework 4,0 se doporučuje použít `sku` atribut.  Pokud je k dispozici, označuje verzi .NET Framework, na kterou aplikace cílí.<br /><br /> Platné hodnoty atributu SKU najdete v části [hodnoty ID SKU](#sku) .|
+|**skladové**|Nepovinný atribut.<br /><br /> Hodnota řetězce, která určuje skladovou jednotku (SKU), která zase určuje, který .NET Framework vydání této aplikace podporuje.<br /><br /> Počínaje .NET Framework 4,0 se `sku` doporučuje použít atribut.  Pokud je k dispozici, označuje verzi .NET Framework, na kterou aplikace cílí.<br /><br /> Platné hodnoty atributu SKU najdete v části [hodnoty ID SKU](#sku) .|
 
 ## <a name="remarks"></a>Poznámky
 
-Pokud ** \<supportedRuntime>** element není přítomen v konfiguračním souboru aplikace, je použita verze modulu runtime použitého k sestavení aplikace.
+Pokud **\<supportedRuntime>** element není přítomen v konfiguračním souboru aplikace, je použita verze modulu runtime použitého k sestavení aplikace.
 
-Element ** \<supportedRuntime>** by měl být používán všemi aplikacemi sestavenými pomocí verze 1,1 nebo novějšího modulu runtime. Aplikace sestavené pro podporu pouze verze 1,0 modulu runtime musí používat element [ \<requiredRuntime>](requiredruntime-element.md) .
+**\<supportedRuntime>** Element by měl být použit všemi aplikacemi sestavenými pomocí verze 1,1 nebo novější. Aplikace sestavené pro podporu pouze verze 1,0 modulu runtime musí používat [\<requiredRuntime>](requiredruntime-element.md) element.
 
 > [!NOTE]
-> Použijete-li funkci [CorBindToRuntimeByCfg –](../../../unmanaged-api/hosting/corbindtoruntimebycfg-function.md) k určení konfiguračního souboru, je nutné použít `<requiredRuntime>` element pro všechny verze modulu runtime. `<supportedRuntime>` Element je ignorován při použití [CorBindToRuntimeByCfg –](../../../unmanaged-api/hosting/corbindtoruntimebycfg-function.md).  
+> Použijete-li funkci [CorBindToRuntimeByCfg –](../../../unmanaged-api/hosting/corbindtoruntimebycfg-function.md) k určení konfiguračního souboru, je nutné použít `<requiredRuntime>` element pro všechny verze modulu runtime. `<supportedRuntime>`Element je ignorován při použití [CorBindToRuntimeByCfg –](../../../unmanaged-api/hosting/corbindtoruntimebycfg-function.md).  
   
-Pro aplikace, které podporují verze modulu runtime od .NET Framework 1,1 do 3,5, je-li podporováno více verzí modulu runtime, první prvek by měl určit nejvíce upřednostňovanou verzi modulu runtime a poslední prvek by měl určovat nejnižší upřednostňovanou verzi. Pro aplikace, které podporují .NET Framework 4,0 nebo novější verze, označuje `version` atribut verzi CLR, která je společná pro .NET Framework 4 a novější verze, a `sku` atribut označuje jednu .NET Framework verzi, na kterou aplikace cílí.
+Pro aplikace, které podporují verze modulu runtime od .NET Framework 1,1 do 3,5, je-li podporováno více verzí modulu runtime, první prvek by měl určit nejvíce upřednostňovanou verzi modulu runtime a poslední prvek by měl určovat nejnižší upřednostňovanou verzi. Pro aplikace, které podporují .NET Framework 4,0 nebo novější verze, `version` označuje atribut verzi CLR, která je společná pro .NET Framework 4 a novější verze, a `sku` atribut označuje jednu .NET Framework verzi, na kterou aplikace cílí.
 
-Pokud je v konfiguračním souboru přítomen prvek `sku` ** \<supportedRuntime>** s atributem a nainstalovaná verze .NET Framework je nižší než zadaná podporovaná verze, aplikace se nespustí a místo toho se zobrazí zpráva s výzvou k instalaci podporované verze. V opačném případě se aplikace pokusí běžet na jakékoli nainstalované verzi, ale může se neočekávaně chovat, pokud není plně kompatibilní s touto verzí. (Kvůli rozdílům kompatibility mezi verzemi .NET Framework, přečtěte si téma [Kompatibilita aplikací v .NET Framework](https://docs.microsoft.com/dotnet/framework/migration-guide/application-compatibility).) Proto doporučujeme, abyste tento prvek zahrnuli do konfiguračního souboru aplikace pro snazší diagnostiku chyb. (Konfigurační soubor, který se automaticky vygeneroval v rámci sady Visual Studio při vytváření nového projektu, ho už obsahuje.)
+Pokud je **\<supportedRuntime>** `sku` v konfiguračním souboru přítomen element s atributem a nainstalovaná verze .NET Framework nižší než uvedená podporovaná verze, aplikace se nespustí a místo toho zobrazí zprávu s výzvou k instalaci podporované verze. V opačném případě se aplikace pokusí běžet na jakékoli nainstalované verzi, ale může se neočekávaně chovat, pokud není plně kompatibilní s touto verzí. (Kvůli rozdílům kompatibility mezi verzemi .NET Framework, přečtěte si téma [Kompatibilita aplikací v .NET Framework](https://docs.microsoft.com/dotnet/framework/migration-guide/application-compatibility).) Proto doporučujeme, abyste tento prvek zahrnuli do konfiguračního souboru aplikace pro snazší diagnostiku chyb. (Konfigurační soubor, který se automaticky vygeneroval v rámci sady Visual Studio při vytváření nového projektu, ho už obsahuje.)
   
 > [!NOTE]
-> Pokud vaše aplikace používá starší aktivační cesty, jako je [funkce CorBindToRuntimeEx –](../../../unmanaged-api/hosting/corbindtoruntimeex-function.md), a chcete, aby tyto cesty aktivovaly verzi 4 CLR namísto dřívější verze, nebo pokud je vaše aplikace sestavená s .NET Framework 4, ale má závislost na sestavení se smíšeným režimem vytvořeným pomocí dřívější verze .NET Framework, není dostačující zadat .NET Framework 4 v seznamu podporovaných modulů runtime. Kromě toho je třeba v [ \<prvku Startup>](startup-element.md) v konfiguračním souboru nastavit `useLegacyV2RuntimeActivationPolicy` atribut na `true`. Nicméně nastavením tohoto atributu `true` znamená, že všechny komponenty sestavené s dřívějšími verzemi .NET Framework jsou spouštěny pomocí .NET Framework 4 namísto modulu runtime, pomocí kterých byly vytvořeny.
+> Pokud vaše aplikace používá starší aktivační cesty, jako je [funkce CorBindToRuntimeEx –](../../../unmanaged-api/hosting/corbindtoruntimeex-function.md), a chcete, aby tyto cesty aktivovaly verzi 4 CLR namísto dřívější verze, nebo pokud je vaše aplikace sestavená s .NET Framework 4, ale má závislost na sestavení se smíšeným režimem vytvořeným pomocí dřívější verze .NET Framework, není dostačující zadat .NET Framework 4 v seznamu podporovaných modulů runtime. Kromě toho je nutné v [ \<startup> elementu](startup-element.md) v konfiguračním souboru nastavit `useLegacyV2RuntimeActivationPolicy` atribut na `true` . Nicméně nastavením tohoto atributu `true` znamená, že všechny komponenty sestavené s dřívějšími verzemi .NET Framework jsou spouštěny pomocí .NET Framework 4 namísto modulu runtime, pomocí kterých byly vytvořeny.
 
 Doporučujeme aplikaci otestovat se všemi verzemi .NET Framework, na kterých by měla být spuštěna.
 
 <a name="version"></a>
 ## <a name="runtime-version-values"></a>hodnoty "verze modulu runtime"
-`runtime` Atribut určuje verzi modulu CLR (Common Language Runtime), která je požadována pro danou aplikaci. Všimněte si, že všechny verze .NET Framework v4. x `v4.0` určují CLR. V následující tabulce jsou uvedeny platné hodnoty pro hodnotu *běhové verze* `version` atributu.
+`runtime`Atribut určuje verzi modulu CLR (Common Language Runtime), která je požadována pro danou aplikaci. Všimněte si, že všechny verze .NET Framework v4. x určují `v4.0` CLR. V následující tabulce jsou uvedeny platné hodnoty pro hodnotu *běhové verze* `version` atributu.
 
 |Verze rozhraní .NET Framework|Atribut `version`|
 |----------------------------|-------------------------|
@@ -70,7 +70,7 @@ Doporučujeme aplikaci otestovat se všemi verzemi .NET Framework, na kterých b
 
 ## <a name="sku-id-values"></a><a name="sku"></a>hodnoty "ID SKU"
 
-`sku` Atribut používá moniker cílového rozhraní (TFM) k označení verze .NET Framework, na kterou aplikace cílí a kterou vyžaduje spuštění. V následující tabulce jsou uvedeny platné hodnoty, které `sku` atribut podporuje, počínaje .NET Framework 4.
+`sku`Atribut používá moniker cílového rozhraní (TFM) k označení verze .NET Framework, na kterou aplikace cílí a kterou vyžaduje spuštění. V následující tabulce jsou uvedeny platné hodnoty, které atribut podporuje `sku` , počínaje .NET Framework 4.
 
 |Verze rozhraní .NET Framework|Atribut `sku`|
 |----------------------------|---------------------|

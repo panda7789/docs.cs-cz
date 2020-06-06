@@ -11,20 +11,20 @@ helpviewer_keywords:
 - add element, bypasslist
 ms.assetid: a0b86e28-86b4-4497-abe8-d5fd614c7926
 ms.openlocfilehash: 652b8738a201aaa98fa2c5c435fee1a6da91673b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79155074"
 ---
-# <a name="add-element-for-bypasslist-network-settings"></a>\<přidat> element pro bypasslist (Nastavení sítě)
-Přidá adresu IP nebo název DNS do seznamu obejití serveru proxy.  
+# <a name="add-element-for-bypasslist-network-settings"></a>\<add> – element pro bypasslist (nastavení sítě)
+Přidá IP adresu nebo název DNS do seznamu obcházení proxy serverů.  
   
-[**\<>konfigurace**](../configuration-element.md)  
+[**\<configuration>**](../configuration-element.md)  
 &nbsp;&nbsp;[**\<system.net>**](system-net-element-network-settings.md)  
 &nbsp;&nbsp;&nbsp;&nbsp;[**\<defaultProxy>**](defaultproxy-element-network-settings.md)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<bypasslist>**](bypasslist-element-network-settings.md)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<přidat>**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<add>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,31 +41,31 @@ Přidá adresu IP nebo název DNS do seznamu obejití serveru proxy.
   
 |**Atribut**|**Popis**|  
 |-------------------|---------------------|  
-|**Adresu**|Regulární výraz popisující adresu IP nebo název DNS.|  
+|**adresáře**|Regulární výraz popisující IP adresu nebo název DNS.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádné.  
+ Žádné  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|**Element**|**Popis**|  
+|**Objekt**|**Popis**|  
 |-----------------|---------------------|  
-|[Bypasslist](bypasslist-element-network-settings.md)|Obsahuje sadu regulárních výrazů, které popisují adresy, které nepoužívají proxy server.|  
+|[bypasslist](bypasslist-element-network-settings.md)|Poskytuje sadu regulárních výrazů, které popisují adresy, které nepoužívají proxy server.|  
   
 ## <a name="remarks"></a>Poznámky  
- Prvek `add` vloží regulární výrazy popisující adresy IP nebo názvy serverů DNS do seznamu adres, které obcházejí proxy server.  
+ `add`Element vloží regulární výrazy POPISUJÍCÍ IP adresy nebo názvy serverů DNS na seznam adres, které obcházejí proxy server.  
   
- Hodnota atributu `address` by měla být regulární výraz, který popisuje sadu ADRES IP nebo názvů hostitelů.  
+ Hodnota `address` atributu by měla být regulární výraz, který popisuje sadu IP adres nebo názvů hostitelů.  
   
- Při zadávání regulárního výrazu pro tento prvek byste měli být opatrní. Regulární výraz "[a-z]+\\\\.contoso .com" odpovídá libovolnému hostiteli v contoso.com doméně, ale také odpovídá libovolnému hostiteli v contoso.com.cpandl.com doméně. Chcete-li porovnat pouze hostitele v doméně contoso.com, použijte kotvu ("$"): "[a-z]+\\.contoso\\.com$".  
+ Při zadávání regulárního výrazu pro tento prvek byste měli použít upozornění. Regulární výraz "[a-z] + \\ . contoso \\ . com" odpovídá jakémukoli hostiteli v doméně contoso.com, ale také odpovídá jakémukoli hostiteli v doméně contoso.com.cpandl.com. Chcete-li spárovat pouze hostitele v doméně contoso.com, použijte kotvu ("$"): "[a-z] + \\ . contoso \\ . com $".  
   
- Další informace o regulárních výrazech naleznete v tématu . [Regulární výrazy rozhraní .NET Framework](../../../../standard/base-types/regular-expressions.md).  
+ Další informace o regulárních výrazech naleznete v tématu. [.NET Framework regulární výrazy](../../../../standard/base-types/regular-expressions.md).  
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
- Tento prvek lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine.config).  
+ Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine. config).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad přidá dvě adresy do seznamu bypass. První obchází proxy servery pro všechny servery v doméně contoso.com; druhý obchází proxy server pro všechny servery, jejichž IP adresa začíná 192.168.  
+ Následující příklad přidá dvě adresy do seznamu pro obejití. První obchází proxy server pro všechny servery v doméně contoso.com; Druhá obchází proxy server pro všechny servery, jejichž IP adresa začíná 192,168.  
   
 ```xml  
 <configuration>  

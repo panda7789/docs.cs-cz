@@ -3,14 +3,14 @@ title: <extensions>
 ms.date: 03/30/2017
 ms.assetid: bcfe5c44-04ef-4a20-96a5-90bfadf39623
 ms.openlocfilehash: bb0df4535560a509d6e3511815196c126a95d0c7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "61700771"
 ---
-# <a name="extensions"></a>\<Rozšíření >
-Tento prvek konfigurace obsahuje kolekci elementů XML, které obsahují vlastní metadata, aby byly publikované a společně s standardní zjistitelné metadata (EPR, ContractTypeName, BindingName, oboru a ListenURI). Následuje příklad použití tohoto konfiguračního prvku.  
+# \<extensions>
+Tento prvek konfigurace obsahuje kolekci prvků XML, které obsahují vlastní metadata k publikování společně se standardními zjistitelnými metadaty (EPR, ContractTypeName, Binding, Scope a ListenURI). Následuje příklad použití tohoto konfiguračního prvku.  
   
 ```xml  
 <services>
@@ -45,6 +45,6 @@ Tento prvek konfigurace obsahuje kolekci elementů XML, které obsahují vlastn�
 </behaviors>
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior>

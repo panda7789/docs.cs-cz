@@ -4,21 +4,21 @@ ms.date: 03/30/2017
 ms.assetid: 09202d12-88d3-49cc-953b-703bcc1690eb
 author: BrucePerlerMS
 ms.openlocfilehash: b27f337189a7d0b66ffd38e032b5eb864e5094a1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79152629"
 ---
-# <a name="samlsecuritytokenrequirement"></a>\<> samlSecurityTokenRequirement
-Poskytuje konfiguraci <xref:System.IdentityModel.Tokens.SamlSecurityTokenHandler> pro <xref:System.IdentityModel.Tokens.Saml2SecurityTokenHandler> třídu, třídu nebo odvozenou třídu jedné z těchto tříd. Reprezentované třídou. <xref:System.IdentityModel.Tokens.SamlSecurityTokenRequirement>  
+# \<samlSecurityTokenRequirement>
+Poskytuje konfiguraci pro <xref:System.IdentityModel.Tokens.SamlSecurityTokenHandler> třídu, <xref:System.IdentityModel.Tokens.Saml2SecurityTokenHandler> třídu nebo odvozenou třídu některé z těchto tříd. Reprezentované <xref:System.IdentityModel.Tokens.SamlSecurityTokenRequirement> třídou.  
   
-[**\<>konfigurace**](../configuration-element.md)\
+[**\<configuration>**](../configuration-element.md)\
 &nbsp;&nbsp;[**\<system.identityModel>**](system-identitymodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[**\<identityKonfigurace>**](identityconfiguration.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<identityConfiguration>**](identityconfiguration.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<securityTokenHandlers>**](securitytokenhandlers.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<přidat>**](add.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<>samlSecurityTokenRequirement**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<add>**](add.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<samlSecurityTokenRequirement>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -49,27 +49,27 @@ Poskytuje konfiguraci <xref:System.IdentityModel.Tokens.SamlSecurityTokenHandler
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|mapToWindows|Určuje, zda má obslužná rutina tokenu mapovat ověřovací token na účet systému Windows pomocí příchozí deklarace hlavního název uživatele. Výchozí hodnota je "false".|  
-|issuerCertificateRevocationMode|Hodnota, <xref:System.Security.Cryptography.X509Certificates.X509RevocationMode> která určuje režim odvolání, který má být pro certifikát X.509 používán. Výchozí hodnota je "Online".|  
-|issuerCertificateValidationMode|Hodnota, <xref:System.ServiceModel.Security.X509CertificateValidationMode> která určuje režim ověření pro certifikát X.509. Výchozí hodnota je "PeerOrChainTrust".|  
-|issuerCertificateTrustedStoreLocation|Hodnota, <xref:System.Security.Cryptography.X509Certificates.StoreLocation> která určuje úložiště certifikátů X.509. Výchozí hodnota je "LocalMachine".|  
-|emitentCertifikátValidator|Vlastní typ, který <xref:System.IdentityModel.Selectors.X509CertificateValidator>je odvozen od . Pokud `issuerCertificateValidationMode` je atribut "Vlastní", instance tohoto typu se používá pro ověření certifikátu vystavitho.|  
+|mapToWindows|Určuje, zda má obslužná rutina tokenu mapovat ověřovací token na účet systému Windows pomocí příchozí deklarace hlavního názvu uživatele (UPN). Výchozí hodnota je false (NEPRAVDA).|  
+|issuerCertificateRevocationMode|<xref:System.Security.Cryptography.X509Certificates.X509RevocationMode>Hodnota, která určuje režim odvolání, který se má použít pro certifikát X. 509. Výchozí hodnota je "online".|  
+|issuerCertificateValidationMode|<xref:System.ServiceModel.Security.X509CertificateValidationMode>Hodnota, která určuje režim ověřování, který má být použit pro certifikát X. 509. Výchozí hodnota je "PeerOrChainTrust".|  
+|issuerCertificateTrustedStoreLocation|<xref:System.Security.Cryptography.X509Certificates.StoreLocation>Hodnota, která určuje úložiště certifikátů X. 509. Výchozí hodnota je "LocalMachine".|  
+|issuerCertificateValidator|Vlastní typ, který je odvozen z <xref:System.IdentityModel.Selectors.X509CertificateValidator> . Pokud `issuerCertificateValidationMode` je atribut "Custom", instance tohoto typu se používá pro ověření certifikátu vystavitele.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
-|Element|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
-|[\<názevClaimType>](nameclaimtype.md)|Nastaví typ deklarace, <xref:System.Security.Principal.IIdentity.Name%2A> která určuje vlastnost.|  
-|[\<roleClaimType>](roleclaimtype.md)|Určuje typ deklarace identity, který definuje deklarace typu role v kolekci objektů vrácených <xref:System.Security.Claims.ClaimsIdentity> <xref:System.IdentityModel.Tokens.SecurityTokenHandler.ValidateToken%2A> metodou obslužné rutiny tokenu.|  
+|[\<nameClaimType>](nameclaimtype.md)|Nastaví typ deklarace identity, který určuje <xref:System.Security.Principal.IIdentity.Name%2A> vlastnost.|  
+|[\<roleClaimType>](roleclaimtype.md)|Určuje typ deklarace identity, který definuje deklarace typu role v kolekci <xref:System.Security.Claims.ClaimsIdentity> objektů vrácených <xref:System.IdentityModel.Tokens.SecurityTokenHandler.ValidateToken%2A> metodou obslužné rutiny tokenu.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Element|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
-|[\<přidat>](add.md)|Přidá zadanou obslužnou rutinu tokenu do kolekce obslužné rutiny tokenu.|  
+|[\<add>](add.md)|Přidá do kolekce obslužných rutin tokenu zadanou obslužnou rutinu tokenu zabezpečení.|  
   
 ## <a name="remarks"></a>Poznámky  
- Prvek `<samlSecurityTokenRequirement>` je reprezentován <xref:System.IdentityModel.Tokens.SamlSecurityTokenRequirement> třídou v objektovém modelu `SamlSecurityTokenRequirement` a <xref:System.IdentityModel.Tokens.SamlSecurityTokenHandler> slouží <xref:System.IdentityModel.Tokens.Saml2SecurityTokenHandler>ke konfiguraci vlastnosti na nebo .  
+ `<samlSecurityTokenRequirement>`Element je reprezentován <xref:System.IdentityModel.Tokens.SamlSecurityTokenRequirement> třídou v objektovém modelu a slouží ke konfiguraci `SamlSecurityTokenRequirement` vlastnosti v <xref:System.IdentityModel.Tokens.SamlSecurityTokenHandler> nebo <xref:System.IdentityModel.Tokens.Saml2SecurityTokenHandler> .  
   
 ## <a name="example"></a>Příklad  
   

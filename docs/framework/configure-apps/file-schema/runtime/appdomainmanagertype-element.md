@@ -6,18 +6,18 @@ helpviewer_keywords:
 - <appDomainManagerType> element
 ms.assetid: ae8d5a7e-e7f7-47f7-98d9-455cc243a322
 ms.openlocfilehash: 8eb6129b3fafaeb81a94d5a4078e41a16583a226
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79154421"
 ---
-# <a name="appdomainmanagertype-element"></a>\<appDomainManagerType> element
-Určuje typ, který slouží jako správce domény aplikace pro výchozí doménu aplikace.  
+# <a name="appdomainmanagertype-element"></a>Element \<appDomainManagerType>
+Určuje typ, který slouží jako správce aplikační domény pro výchozí doménu aplikace.  
   
-[**\<>konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[**\<>za běhu**](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;**\<>appDomainManagerType**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<runtime>**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<appDomainManagerType>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -33,33 +33,33 @@ Určuje typ, který slouží jako správce domény aplikace pro výchozí domén
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`value`|Požadovaný atribut. Určuje název typu, včetně oboru názvů, který slouží jako správce domény aplikace pro výchozí doménu aplikace v procesu.|  
+|`value`|Požadovaný atribut. Určuje název typu, včetně oboru názvů, který slouží jako správce aplikační domény pro výchozí doménu aplikace v procesu.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádné.  
+ Žádné  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Element|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|  
 |`runtime`|Obsahuje informace o vazbách sestavení a uvolnění paměti.|  
   
 ## <a name="remarks"></a>Poznámky  
- Chcete-li určit typ správce domény aplikace, musíte zadat tento prvek i [ \<element>appDomainManagerAssembly.](appdomainmanagerassembly-element.md) Pokud některý z těchto prvků není zadán, druhý je ignorován.  
+ Chcete-li zadat typ Správce aplikační domény, je nutné zadat jak tento prvek, tak i [\<appDomainManagerAssembly>](appdomainmanagerassembly-element.md) element. Pokud některý z těchto prvků není zadán, druhá je ignorována.  
   
- Při načtení výchozí domény <xref:System.TypeLoadException> aplikace je vyvolána, pokud zadaný typ neexistuje v sestavení, které je určeno [ \<prvkem appDomainManagerAssembly>;](appdomainmanagerassembly-element.md) a proces se nespustí.  
+ V případě, že je načtena výchozí doména aplikace, <xref:System.TypeLoadException> je vyvolána, pokud zadaný typ neexistuje v sestavení určeném [\<appDomainManagerAssembly>](appdomainmanagerassembly-element.md) elementem a proces se nepodařilo spustit.  
   
- Pokud zadáte typ správce domény aplikace pro výchozí doménu aplikace, ostatní domény aplikace vytvořené z výchozí aplikační domény zdědí typ správce domény aplikace. Pomocí <xref:System.AppDomainSetup.AppDomainManagerType%2A?displayProperty=nameWithType> vlastností a <xref:System.AppDomainSetup.AppDomainManagerAssembly%2A?displayProperty=nameWithType> určete jiný typ správce domény aplikace pro novou doménu aplikace.  
+ Když zadáte typ Správce aplikační domény pro výchozí doménu aplikace, ostatní domény aplikace vytvořené z výchozí domény aplikace zdědí typ Správce aplikační domény. Pomocí <xref:System.AppDomainSetup.AppDomainManagerType%2A?displayProperty=nameWithType> vlastností a <xref:System.AppDomainSetup.AppDomainManagerAssembly%2A?displayProperty=nameWithType> určete jiný typ Správce aplikační domény pro novou doménu aplikace.  
   
- Určení typu správce domény aplikace vyžaduje, aby aplikace měla úplný vztah důvěryhodnosti. (Například aplikace spuštěná na ploše má plnou důvěryhodnost.) Pokud aplikace nemá úplný vztah <xref:System.TypeLoadException> důvěryhodnosti, je vyvolána.  
+ Zadání typu správce aplikační domény vyžaduje, aby aplikace měla úplný vztah důvěryhodnosti. (Například aplikace spuštěná na ploše má úplný vztah důvěryhodnosti.) Pokud aplikace nemá úplný vztah důvěryhodnosti, <xref:System.TypeLoadException> je vyvolána výjimka.  
   
- Formát typu a oboru názvů je stejný formát, <xref:System.Type.FullName%2A?displayProperty=nameWithType> který se používá pro vlastnost.  
+ Formát typu a oboru názvů je stejný formát, který se používá pro <xref:System.Type.FullName%2A?displayProperty=nameWithType> vlastnost.  
   
- Tento konfigurační prvek je k dispozici pouze v rozhraní .NET Framework 4 a novější.  
+ Tento prvek konfigurace je k dispozici pouze v .NET Framework 4 nebo novějším.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak určit, že správce domény aplikace pro `MyMgr` výchozí aplikační `AdMgrExample` doménu procesu je typ v sestavení.  
+ Následující příklad ukazuje, jak určit, že správce aplikační domény pro výchozí doménu aplikace v procesu je `MyMgr` typ v `AdMgrExample` sestavení.  
   
 ```xml  
 <configuration>  
@@ -75,7 +75,7 @@ Určuje typ, který slouží jako správce domény aplikace pro výchozí domén
 
 - <xref:System.AppDomainSetup.AppDomainManagerType%2A?displayProperty=nameWithType>
 - <xref:System.AppDomainSetup.AppDomainManagerAssembly%2A?displayProperty=nameWithType>
-- [\<appDomainManagerAssembly> Element](appdomainmanagerassembly-element.md)
-- [Schéma nastavení běhového prostředí](index.md)
+- [\<appDomainManagerAssembly>Objekt](appdomainmanagerassembly-element.md)
+- [Schéma nastavení modulu runtime](index.md)
 - [Schéma konfiguračního souboru](../index.md)
 - [SetAppDomainManagerType – metoda](../../../unmanaged-api/hosting/iclrcontrol-setappdomainmanagertype-method.md)

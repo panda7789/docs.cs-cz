@@ -10,18 +10,18 @@ helpviewer_keywords:
 - <sources> element
 ms.assetid: c727b2e2-423a-4463-a223-013f40ff16a3
 ms.openlocfilehash: 2a76816ee73f516b3c7544877a77531acaa8e09c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79153266"
 ---
-# <a name="sources-element"></a>\<zdroje> Element
-Určuje zdroje trasování, které iniciují zprávy trasování.  
+# <a name="sources-element"></a>Element \<sources>
+Určuje zdroje trasování, které spouštějí trasovací zprávy.  
 
-[**\<>konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[**\<system.diagnostická>**](system-diagnostics-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;**\<zdroje>**
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.diagnostics>**](system-diagnostics-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<sources>**
 
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,26 +35,26 @@ Určuje zdroje trasování, které iniciují zprávy trasování.
  Následující části popisují atributy, podřízené prvky a nadřazené prvky.  
   
 ### <a name="attributes"></a>Atributy  
- Žádné.  
+ Žádné  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
-|Element|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
-|[\<zdrojové>](source-element.md)|Požadovaný element.<br /><br /> Určuje zdroj trasování, který iniciuje trasování zpráv.|  
+|[\<source>](source-element.md)|Požadovaný element.<br /><br /> Určuje zdroj trasování, který inicializuje trasovací zprávy.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Element|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|  
-|`system.diagnostics`|Určuje posluchače trasování, které shromažďují, ukládají a směrují zprávy, a úroveň, na které je nastaven přepínač trasování.|  
+|`system.diagnostics`|Určuje naslouchací procesy trasování, které shromažďují, ukládají a směrují zprávy a úroveň, kde je nastaven přepínač trasování.|  
   
 ## <a name="remarks"></a>Poznámky  
- Tento prvek lze použít v konfiguračním souboru počítače (Machine.config) a v konfiguračním souboru aplikace.  
+ Tento element lze použít v konfiguračním souboru počítače (Machine. config) a v konfiguračním souboru aplikace.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak `<sources>` pomocí prvku přidat `mySource` zdroj trasování a nastavit `sourceSwitch`úroveň pro zdrojový přepínač s názvem . Je přidán naslouchací proces trasování konzoly, který zapisuje informace o trasování do konzoly.  
+ Následující příklad ukazuje, jak použít `<sources>` element k přidání zdroje trasování `mySource` a k nastavení úrovně pro zdrojový přepínač s názvem `sourceSwitch` . Je přidán naslouchací proces trasování konzoly, který zapisuje trasovací informace do konzoly.  
   
 ```xml  
 <configuration>  
@@ -88,4 +88,4 @@ Určuje zdroje trasování, které iniciují zprávy trasování.
 - <xref:System.Diagnostics.EventLogTraceListener>
 - <xref:System.Diagnostics.XmlWriterTraceListener>
 - [Trasování a ladění schématu nastavení](index.md)
-- [\<zdrojové>](source-element.md)
+- [\<source>](source-element.md)

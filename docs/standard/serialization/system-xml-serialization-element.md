@@ -8,10 +8,10 @@ helpviewer_keywords:
 - <system.xml.serialization> element
 ms.assetid: 3ce45919-388a-418c-8968-6df0372c73ec
 ms.openlocfilehash: f69e80592e9321de64421b977a63b83d8be2ad9e
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "84289483"
 ---
 # <a name="systemxmlserialization-element"></a>Element \<system.xml.serialization>
@@ -38,14 +38,14 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 ### <a name="child-elements"></a>Podřízené elementy
 
-|Prvek|Popis|
+|Prvek|Description|
 |-------------|-----------------|
 |[\<dateTimeSerialization>Objekt](datetimeserialization-element.md)|Určuje režim serializace <xref:System.DateTime> objekty.|
 |[\<schemaImporterExtensions>Objekt](schemaimporterextensions-element.md)|Obsahuje typy, které jsou používány <xref:System.Xml.Serialization.XmlSchemaImporter> pro mapování typů XSD na typy rozhraní .NET Framework.|
 
 ### <a name="parent-elements"></a>Nadřazené elementy
 
-|Prvek|Popis|
+|Prvek|Description|
 |-------------|-----------------|
 |[\<configuration>Objekt](../../framework/configure-apps/file-schema/configuration-element.md)|Kořenový element v každém konfiguračním souboru, který je používán common language runtime a aplikacemi rozhraní .NET Framework.|
 

@@ -6,10 +6,10 @@ helpviewer_keywords:
 - assemblies [.NET Framework], binding redirection
 ms.assetid: 5fca42f3-bdce-4b81-a704-61e42c89d3ba
 ms.openlocfilehash: 178d5070dd7018bbc0fce474cdd0b31ba3d17f77
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "69913037"
 ---
 # <a name="how-to-enable-and-disable-automatic-binding-redirection"></a>Postupy: Povolení a zákaz automatického přesměrování vazby
@@ -24,18 +24,18 @@ Automatické přesměrování vazby jsou ve výchozím nastavení povolena pro a
 
 Pokud máte Visual Studio 2017 verze 15,7 nebo novější, můžete snadno zakázat automaticky generované přesměrování vazby na stránkách vlastností projektu.
 
-1. Klikněte pravým tlačítkem na projekt v **Průzkumníka řešení** a vyberte **vlastnosti**.
+1. Klikněte pravým tlačítkem na projekt v **Průzkumník řešení** a vyberte **vlastnosti**.
 
 2. Na stránce **aplikace** zrušte možnost **automatického generování přesměrování vazby** .
 
-3. Změny uložíte stisknutím kombinace**kláves** **CTRL +** +.
+3. Změny uložíte stisknutím **kombinace kláves CTRL +** + **S** .
 
 ### <a name="disable-manually-in-the-project-file"></a>Zakázat ručně v souboru projektu
 
 1. Otevřete soubor projektu pro úpravy pomocí jedné z následujících metod:
 
    - V aplikaci Visual Studio vyberte projekt v **Průzkumník řešení**a pak v místní nabídce zvolte možnost **Otevřít složku v Průzkumníku souborů** . V Průzkumníku souborů vyhledejte soubor projektu (. csproj nebo. vbproj) a otevřete jej v programu Poznámkový blok.
-   - V aplikaci Visual Studio v **Průzkumník řešení**klikněte pravým tlačítkem myši na projekt a vyberte **Uvolnit projekt**. Znovu klikněte pravým tlačítkem na znovu načtený projekt a pak zvolte **Upravit [ProjectName. csproj]** .
+   - V aplikaci Visual Studio v **Průzkumník řešení**klikněte pravým tlačítkem myši na projekt a vyberte **Uvolnit projekt**. Znovu klikněte pravým tlačítkem na znovu načtený projekt a pak zvolte **Upravit [ProjectName. csproj]**.
 
 2. V souboru projektu vyhledejte položku následující vlastnosti:
 
@@ -43,7 +43,7 @@ Pokud máte Visual Studio 2017 verze 15,7 nebo novější, můžete snadno zaká
    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
    ```
 
-3. Změnit `true` na `false`:
+3. Změnit `true` na `false` :
 
    ```xml
    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
@@ -56,9 +56,9 @@ Můžete povolit automatické přesměrování vazby v existujících aplikacíc
 1. Otevřete soubor projektu pro úpravy pomocí jedné z následujících metod:
 
    - V aplikaci Visual Studio vyberte projekt v **Průzkumník řešení**a pak v místní nabídce zvolte možnost **Otevřít složku v Průzkumníku souborů** . V Průzkumníku souborů vyhledejte soubor projektu (. csproj nebo. vbproj) a otevřete jej v programu Poznámkový blok.
-   - V aplikaci Visual Studio v **Průzkumník řešení**klikněte pravým tlačítkem myši na projekt a vyberte **Uvolnit projekt**. Znovu klikněte pravým tlačítkem na znovu načtený projekt a pak zvolte **Upravit [ProjectName. csproj]** .
+   - V aplikaci Visual Studio v **Průzkumník řešení**klikněte pravým tlačítkem myši na projekt a vyberte **Uvolnit projekt**. Znovu klikněte pravým tlačítkem na znovu načtený projekt a pak zvolte **Upravit [ProjectName. csproj]**.
 
-2. Přidejte následující element do první skupiny vlastností konfigurace (pod \<značku > Vlastnosti):
+2. Přidejte následující element do první skupiny vlastností konfigurace (pod \<PropertyGroup> značkou):
 
    ```xml
    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -99,7 +99,7 @@ Přidání přesměrování vazby do souboru **Web. config** :
 
    ![Dialogové okno oprávnění přesměrování vazby](./media/clr-addbindingredirect.png "CLR_AddBindingRedirect")
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [\<bindingRedirect> Element](./file-schema/runtime/bindingredirect-element.md)
+- [\<bindingRedirect>Objekt](./file-schema/runtime/bindingredirect-element.md)
 - [Přesměrování verzí sestavení](redirect-assembly-versions.md)

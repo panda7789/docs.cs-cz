@@ -11,19 +11,19 @@ helpviewer_keywords:
 - connectionManagement, add element
 ms.assetid: 856bf57d-1c63-46c7-a178-03d97b0a4149
 ms.openlocfilehash: 093b68d31e03094bedefa96a2f2d53eb3d84edf0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79155008"
 ---
-# <a name="add-element-for-connectionmanagement-network-settings"></a>\<přidat> Element pro connectionManagement (Nastavení sítě)
-Přidá adresu IP nebo název DNS do seznamu správy připojení.  
+# <a name="add-element-for-connectionmanagement-network-settings"></a>\<add> – element pro connectionManagement (nastavení sítě)
+Přidá IP adresu nebo název DNS do seznamu správy připojení.  
 
-[**\<>konfigurace**](../configuration-element.md)\
+[**\<configuration>**](../configuration-element.md)\
 &nbsp;&nbsp;[**\<system.net>**](system-net-element-network-settings.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;[**\<connectionManagement>**](connectionmanagement-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<přidat>**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<add>**
 
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,28 +41,28 @@ Přidá adresu IP nebo název DNS do seznamu správy připojení.
   
 |**Atribut**|**Popis**|  
 |-------------------|---------------------|  
-|`address`|Řetězec popisující adresu IP nebo název DNS.|  
-|`maxconnection`|Maximální počet připojení povolených na server. Pokud není zadán, výchozí hodnota je 2.|  
+|`address`|Řetězec popisující IP adresu nebo název DNS.|  
+|`maxconnection`|Maximální počet připojení povolených pro server. Pokud není zadaný, použije se výchozí hodnota 2.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádné.  
+ Žádné  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|**Element**|**Popis**|  
+|**Objekt**|**Popis**|  
 |-----------------|---------------------|  
 |[connectionManagement](connectionmanagement-element-network-settings.md)|Určuje maximální počet připojení k síťovému hostiteli.|  
   
 ## <a name="remarks"></a>Poznámky  
- Hodnota atributu `address` by měla být hvězdičkou označující všechna připojení nebo `<schema>://<idn_hostname>[:<port>]`řetězcem formuláře .  
+ Hodnota `address` atributu musí být buď hvězdička, která označuje všechna připojení, nebo řetězec formuláře `<schema>://<idn_hostname>[:<port>]` .  
   
- Pokud identifikátor URI předaný libovolným chybám HTTP obsahuje kódování Unicode, bude název převeden interně pomocí <xref:System.Uri.DnsSafeHost%2A> který může vrátit řetězec punicode (chování závislé na aktuální konfiguraci IDN).  
+ Pokud identifikátor URI předaný do libovolného rozhraní API HTTP obsahuje Unicode, název se převede interně pomocí <xref:System.Uri.DnsSafeHost%2A> toho, který může vracet punicode řetězec (chování závisí na aktuální konfiguraci IDN).  
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
- Tento prvek lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine.config).  
+ Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine. config).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad konfiguruje aplikaci tak, aby používala čtyři připojení k serveru `www.contoso.com` a dvě připojení ke všem ostatním serverům.  
+ Následující příklad nakonfiguruje aplikaci tak, aby používala čtyři připojení k serveru `www.contoso.com` a dvě připojení ke všem ostatním serverům.  
   
 ```xml  
 <configuration>  

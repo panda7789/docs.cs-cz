@@ -3,20 +3,20 @@ title: <tracking>služby WCF
 ms.date: 03/30/2017
 ms.assetid: 70cfaf24-a91c-4e56-ac47-d2ed87a963b3
 ms.openlocfilehash: e8f74d635299a965b754536234e6be28e4e7a104
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70399421"
 ---
-# <a name="tracking-of-wcf"></a>\<sledování > WCF
+# <a name="tracking-of-wcf"></a>\<tracking>služby WCF
 Představuje konfiguračního oddílu pro definování nastavení sledování služby pracovního postupu.  
   
  Další informace o sledování pracovního postupu a jeho konfiguraci najdete v tématu [sledování pracovních postupů a trasování](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md) a [Konfigurace sledování pracovního postupu](../../../windows-workflow-foundation/configuring-tracking-for-a-workflow.md).  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<sledování >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<tracking>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -84,21 +84,21 @@ Představuje konfiguračního oddílu pro definování nastavení sledování sl
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
-|[\<Účastníci >](../windows-workflow-foundation/participants.md)|Kolekce elementů konfigurace definujících účastníky, kteří se přihlásili k odběru sledování záznamů. Sledování účastníci obsahují logiku ke zpracování datové části ze záznamů sledování (například jejich může rozhodnout pro zápis do souboru).|  
+|[\<participants>](../windows-workflow-foundation/participants.md)|Kolekce elementů konfigurace definujících účastníky, kteří se přihlásili k odběru sledování záznamů. Sledování účastníci obsahují logiku ke zpracování datové části ze záznamů sledování (například jejich může rozhodnout pro zápis do souboru).|  
 |[\<trackingProfile>](../windows-workflow-foundation/trackingprofile.md)|Sledování profil filtrování záznamů sledování vyzařováno instance pracovního postupu.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
 |systém.ServiceModel|Kořenový element všechny elementy konfigurace pracovního postupu.|  
   
 ## <a name="remarks"></a>Poznámky  
  Sledování vám poskytuje možnost prozkoumat provádění pracovního postupu. Pracovní postup sledování infrastruktury nástroje pracovního postupu pro vydávání záznamy, které odráží klíče události během provádění. Například při spuštění instance pracovního postupu, nebo dokončí jsou vydávány sledování záznamů. Sledování lze rovněž extrahovat obchodní relevantní data přidružená k proměnné pracovního postupu. Můžete například pracovní postup představuje pořadí zpracování systému může být id objednávky extrahována spolu se záznamem sledování. Obecně platí, že povolení sledování WF usnadňuje diagnostiku nebo obchodní analýzu v průběhu provádění pracovního postupu.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.ServiceModel.Activities.Tracking.Configuration.TrackingSection?displayProperty=nameWithType>
 - [Sledování a trasování pracovních postupů](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md)

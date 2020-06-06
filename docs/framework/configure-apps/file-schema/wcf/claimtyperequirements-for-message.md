@@ -1,22 +1,22 @@
 ---
-title: <claimTypeRequirements> pro <message>
+title: <claimTypeRequirements>for<message>
 ms.date: 03/30/2017
 ms.assetid: f95c5ecd-abb6-4b77-a6d7-a38727f4a142
 ms.openlocfilehash: db6717022bf3af0c4922818668595dd3937e9c71
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "61704404"
 ---
-# <a name="claimtyperequirements-for-message"></a>\<claimTypeRequirements > pro \<zpráva >
+# <a name="claimtyperequirements-for-message"></a>\<claimTypeRequirements>for\<message>
 Určuje kolekci požadovaných typů deklarací.  
   
- Kolekce slouží ve službě k určení požadovaných a volitelných deklarací, které musí být v vydaný token, který klient používá pro přístup ke službě. Služba zveřejňuje typy požadovaná deklarace identity v metadatech, pokud je povoleno publikování WSDL, ale WCF nevyžaduje, aby vydaný token obsahují typy, které žádost. Služby, které chtějí vynutit požadovaná deklarace identity, že typy jsou k dispozici by měl provést pomocí zásad autorizace.  
+ Služba tuto kolekci používá k určení požadovaných a volitelných deklarací identity, které musí být v vystaveném tokenu, který klient používá pro přístup ke službě. Služba zveřejňuje požadované typy deklarací identity v metadatech, pokud je povoleno publikování WSDL, ale WCF nevyžaduje, aby vydaný token obsahoval zadané typy deklarací identity. K dispozici jsou služby, které chtějí vymáhat požadované typy deklarací identity, a to pomocí zásad autorizace.  
   
- U federovaných klientů Tato kolekce obsahuje seznam povinných a volitelných deklarací identity, která se posílají ve službě security token v požadavku klienta pro vydaný token.  
+ V federovaných klientech obsahuje tato kolekce seznam požadovaných a volitelných deklarací identity, které se odesílají do služby tokenu zabezpečení v žádosti klienta o vydaný token.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.ClaimTypeRequirements%2A>
 - <xref:System.ServiceModel.Security.Tokens.ClaimTypeRequirement>

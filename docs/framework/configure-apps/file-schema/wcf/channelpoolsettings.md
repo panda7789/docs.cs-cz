@@ -3,22 +3,22 @@ title: <channelPoolSettings>
 ms.date: 03/30/2017
 ms.assetid: 4755f3d3-4213-4c68-ae7f-45b67d744459
 ms.openlocfilehash: 26537980a6be5c0fe12661d93a6ba5fe862ceb4e
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70398162"
 ---
-# <a name="channelpoolsettings"></a>\<channelPoolSettings>
+# \<channelPoolSettings>
 Určuje nastavení fondu kanálu pro vlastní vazbu.  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> vazeb**](bindings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<customBinding >** ](custombinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> vazby**\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> oneWay**](oneway.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<channelPoolSettings >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<bindings>**](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<customBinding>**](custombinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<binding>**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<oneWay>**](oneway.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<channelPoolSettings>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,8 +35,8 @@ Určuje nastavení fondu kanálu pro vlastní vazbu.
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`idleTimeout`|Kladná <xref:System.TimeSpan> hodnota, která určuje maximální dobu, po kterou můžou být kanály ve fondu nečinné, než se odpojí. Výchozí hodnota je 00:02:00.|  
-|`leaseTimeout`|A <xref:System.TimeSpan> určuje časový interval, po jehož uplynutí je kanál, který byl vrácen do fondu, uzavřen. Výchozí hodnota je 00:10:00.|  
+|`idleTimeout`|Kladná hodnota <xref:System.TimeSpan> , která určuje maximální dobu, po kterou můžou být kanály ve fondu nečinné, než se odpojí. Výchozí hodnota je 00:02:00.|  
+|`leaseTimeout`|A <xref:System.TimeSpan> Určuje časový interval, po jehož uplynutí je kanál, který byl vrácen do fondu, uzavřen. Výchozí hodnota je 00:10:00.|  
 |`maxOutboundChannelsPerEndpoint`|Celé kladné číslo určující maximální počet kanálů, které mohou být uloženy ve fondu pro každý vzdálený koncový bod. Výchozí hodnota je 10.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
@@ -44,7 +44,7 @@ Určuje nastavení fondu kanálu pro vlastní vazbu.
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
 |[\<oneWay>](oneway.md)|Povolí směrování paketů pro vlastní vazbu.|  
   
@@ -53,13 +53,13 @@ Určuje nastavení fondu kanálu pro vlastní vazbu.
   
  `ChannelPoolSettings`Určuje tři kvóty:  
   
-- `idleTimeout` Kvóta se používá ke zmírnění útoků DOS (Denial of Service) na serveru, které se spoléhají na provázání prostředků po delší dobu. Nastavení správné hodnoty na klientovi může zvýšit spolehlivost připojení ke službě. Výchozí hodnota vychází z konzervativního mírného přidělení prostředků. Je vhodný pro vývojové prostředí a malé scénáře instalace. Správci služeb by měli tuto hodnotu zkontrolovat, pokud dojde k nějakému nedostatku prostředků nebo pokud je připojení omezené bez ohledu na dostupnost dalších prostředků.  
+- `idleTimeout`Kvóta se používá ke zmírnění útoků DOS (Denial of Service) na serveru, které se spoléhají na provázání prostředků po delší dobu. Nastavení správné hodnoty na klientovi může zvýšit spolehlivost připojení ke službě. Výchozí hodnota vychází z konzervativního mírného přidělení prostředků. Je vhodný pro vývojové prostředí a malé scénáře instalace. Správci služeb by měli tuto hodnotu zkontrolovat, pokud dojde k nějakému nedostatku prostředků nebo pokud je připojení omezené bez ohledu na dostupnost dalších prostředků.  
   
-- `leaseTimeout` Kvóta se používá pro integraci s nástroji pro vyrovnávání zatížení a za účelem zlepšení spolehlivosti. Výchozí hodnota je založena na konzervativním přidělení prostředků. Je vhodný pro vývojové prostředí a malé scénáře instalace. Správci služeb by měli tuto hodnotu zkontrolovat, pokud dojde k nějakému nedostatku prostředků nebo pokud je připojení omezené bez ohledu na dostupnost dalších prostředků.  
+- `leaseTimeout`Kvóta se používá pro integraci s nástroji pro vyrovnávání zatížení a za účelem zlepšení spolehlivosti. Výchozí hodnota je založena na konzervativním přidělení prostředků. Je vhodný pro vývojové prostředí a malé scénáře instalace. Správci služeb by měli tuto hodnotu zkontrolovat, pokud dojde k nějakému nedostatku prostředků nebo pokud je připojení omezené bez ohledu na dostupnost dalších prostředků.  
   
-- Omezení mezipaměti sad kvót nastavuje na serveru i v klientovi a slouží ke zvýšení spolehlivosti. `maxOutboundChannelsPerEndpoint` Výchozí hodnota vychází z konzervativního mírného přidělení prostředků, které jsou vhodné pro vývojové prostředí a malé instalace. Správci služeb by měli tuto hodnotu zkontrolovat, pokud dojde k nějakému nedostatku prostředků nebo pokud je připojení omezené bez ohledu na dostupnost dalších prostředků.  
+- `maxOutboundChannelsPerEndpoint`Omezení mezipaměti sad kvót nastavuje na serveru i v klientovi a slouží ke zvýšení spolehlivosti. Výchozí hodnota vychází z konzervativního mírného přidělení prostředků, které jsou vhodné pro vývojové prostředí a malé instalace. Správci služeb by měli tuto hodnotu zkontrolovat, pokud dojde k nějakému nedostatku prostředků nebo pokud je připojení omezené bez ohledu na dostupnost dalších prostředků.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.ServiceModel.Channels.OneWayBindingElement.ChannelPoolSettings%2A>
 - <xref:System.ServiceModel.Channels.ChannelPoolSettings>

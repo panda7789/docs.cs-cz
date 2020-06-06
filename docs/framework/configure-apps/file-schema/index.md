@@ -22,10 +22,10 @@ helpviewer_keywords:
 - configuration file reference [.NET Framework]
 ms.assetid: 69003d39-dc8a-460c-a6be-e6d93e690b38
 ms.openlocfilehash: 35ed53fc480e218df595794f80af2458f3ecec38
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73039163"
 ---
 # <a name="configuration-file-schema-for-the-net-framework"></a>Schéma konfiguračního souboru pro .NET Framework
@@ -37,68 +37,68 @@ Informace o typech, formátech a umístění konfiguračních souborů najdete v
 > [!IMPORTANT]
 > Značky a atributy XML v konfiguračních souborech rozlišují velká a malá písmena.
 
-## <a name="in-this-section"></a>V tomto oddílu
+## <a name="in-this-section"></a>V této části
 
-[ **\<> elementu konfigurace** ](configuration-element.md)\
+[**\<configuration>** Objekt](configuration-element.md)\
 Element nejvyšší úrovně pro všechny konfigurační soubory.
 
-[ **\<element > assemblyBinding** ](assemblybinding-element-for-configuration.md)\
+[**\<assemblyBinding>** Objekt](assemblybinding-element-for-configuration.md)\
 Určuje zásadu vazby sestavení na úrovni konfigurace.
 
-[ **\<element > linkedConfiguration** ](linkedconfiguration-element.md)\
+[**\<linkedConfiguration>** Objekt](linkedconfiguration-element.md)\
 Určuje konfigurační soubor, který se má zahrnout.
 
-\ [schématu nastavení spuštění](./startup/index.md)
+[Schéma nastavení spouštění](./startup/index.md)\
 Prvky, které určují, která verze modulu CLR (Common Language Runtime) se má použít.
 
-\ [schématu nastavení modulu runtime](./runtime/index.md)
+[Schéma nastavení modulu runtime](./runtime/index.md)\
 Prvky, které konfigurují vazby sestavení a běhové chování.
 
-\ [schématu nastavení sítě](./network/index.md)
+[Schéma nastavení sítě](./network/index.md)\
 Prvky, které určují, jak se .NET Framework připojí k Internetu.
 
-[Nastavení kryptografie\ schématu](./cryptography/index.md)
+[Schéma nastavení kryptografie](./cryptography/index.md)\
 Prvky, které mapují popisné názvy algoritmů na třídy, které implementují kryptografické algoritmy.
 
-\ [schématu konfiguračních oddílů](configuration-sections-schema.md)
+[Schéma konfiguračních oddílů](configuration-sections-schema.md)\
 Prvky, které slouží k vytváření a používání konfiguračních oddílů pro vlastní nastavení.
 
-\ [schématu nastavení trasování a ladění](./trace-debug/index.md)
+[Nastavení trasování a ladění – schéma](./trace-debug/index.md)\
 Prvky, které určují přepínače trasování a naslouchací procesy.
 
-\ [schématu nastavení kompilátoru a poskytovatele jazyka](./compiler/index.md)
+[Schéma nastavení kompilátoru a poskytovatele jazyka](./compiler/index.md)\
 Prvky, které určují konfiguraci kompilátoru pro poskytovatele dostupných jazyků.
 
-\ [schématu nastavení aplikace](application-settings-schema.md)
+[Schéma nastavení aplikace](application-settings-schema.md)\
 Prvky, které umožňují model Windows Forms nebo ASP.NET aplikaci ukládat a načítat nastavení s rozsahem aplikace a uživatelem.
 
-\ [schématu nastavení aplikace](./appsettings/index.md)
+[Schéma nastavení aplikace](./appsettings/index.md)\
 Obsahuje vlastní nastavení aplikace, například cesty k souborům, adresy URL webových služeb XML nebo jakékoli další vlastní informace o konfiguraci pro aplikaci.
 
-\ [schématu webového nastavení](./web/index.md)
+[Schéma nastavení webu](./web/index.md)\
 Prvky pro konfiguraci způsobu, jakým ASP.NET pracuje s hostitelskou aplikací, jako je IIS. Používá se v souborech *ASPNET. config* .
 
-\ [schématu konfigurace model Windows Forms](winforms/index.md)
+[Schéma konfigurace model Windows Forms](winforms/index.md)\
 Všechny prvky v části Konfigurace aplikace model Windows Forms, které zahrnují přizpůsobení, jako je například podpora více monitorů a vysokého rozlišení DPI.
 
-\ [schématu konfigurace WCF](./wcf/index.md)
+[Schéma konfigurace WCF](./wcf/index.md)\
 Všechny prvky, které umožňují konfigurovat službu WCF a klientské aplikace.
 
-\ [syntaxe direktiv WCF](./wcf-directive/index.md)
-Popisuje direktivu `@ServiceHost`, která definuje atributy specifické pro stránku používané kompilátorem. svc.
+[Syntaxe direktivy WCF](./wcf-directive/index.md)\
+Popisuje `@ServiceHost` direktivu, která definuje atributy specifické pro stránku používané kompilátorem. svc.
 
-\ [schématu konfigurace WIF](windows-identity-foundation/index.md)
+[Schéma konfigurace WIF](windows-identity-foundation/index.md)\
 Všechny prvky schématu konfigurace Windows Identity Foundation (WIF).
 
 ## <a name="related-sections"></a>Související oddíly
 
-[Nastavení vzdálené komunikace\ schématu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/z415cf9a(v=vs.100))
+[Schéma nastavení vzdálené komunikace](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/z415cf9a(v=vs.100))\
 Popisuje prvky, které konfigurují klientské a serverové aplikace, které implementují vzdálenou komunikaci.
 
-\ [schématu nastavení ASP.NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/b5ysx397(v=vs.100))
+[Schéma nastavení ASP.NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/b5ysx397(v=vs.100))\
 Popisuje prvky, které řídí chování webových aplikací ASP.NET.
 
-\ [schématu nastavení webových služeb](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cctwteet(v=vs.100))
+[Schéma nastavení webových služeb](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cctwteet(v=vs.100))\
 Popisuje prvky, které řídí chování webových služeb ASP.NET a jejich klientů.
 
 [Konfigurace aplikací .NET Framework](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/kza1yk3a(v=vs.100))\

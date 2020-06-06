@@ -3,22 +3,22 @@ title: Element <httpDigest>
 ms.date: 03/30/2017
 ms.assetid: 3da4f276-dfd9-4247-8c07-01d83618727c
 ms.openlocfilehash: 328411a429cd42927a190c6805a1f5e2b3555ea1
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "77448449"
 ---
-# <a name="httpdigest-element"></a>\<element > httpDigest
+# <a name="httpdigest-element"></a>Element \<httpDigest>
 Určuje typ Digest, který se použije při ověřování klienta ke službě.  
   
-[**konfigurační >\<** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[**chování**](behaviors.md)\<>\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<endpointBehaviors >** ](endpointbehaviors.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<chování**](behavior-of-endpointbehaviors.md) >\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<clientCredentials >** ](clientcredentials.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<httpDigest >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<behaviors>**](behaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<endpointBehaviors>**](endpointbehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<behavior>**](behavior-of-endpointbehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<clientCredentials>**](clientcredentials.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<httpDigest>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -33,16 +33,16 @@ Určuje typ Digest, který se použije při ověřování klienta ke službě.
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`impersonationLevel`|Nastaví předvolbu zosobnění, kterou klient komunikuje se serverem. Režim zosobnění, který klient vybere, není na serveru vynutil. Platné hodnoty jsou následující:<br /><br /> -Identifikace: Server může získat identitu a oprávnění klienta, ale nemůže zosobnit klienta.<br />-Zosobnění: Server může zosobnit kontext zabezpečení klienta v místním systému.<br />-Delegování: Server může zosobnit kontext zabezpečení klienta ve vzdálených systémech.<br />-Anonymní: Server nemůže zosobnit nebo identifikovat klienta.<br />-None: úroveň zosobnění není přiřazena.<br /><br /> Výchozí hodnota je identifikace. Tento atribut je typu <xref:System.Security.Principal.TokenImpersonationLevel>.|  
+|`impersonationLevel`|Nastaví předvolbu zosobnění, kterou klient komunikuje se serverem. Režim zosobnění, který klient vybere, není na serveru vynutil. Platné hodnoty jsou následující:<br /><br /> -Identifikace: Server může získat identitu a oprávnění klienta, ale nemůže zosobnit klienta.<br />-Zosobnění: Server může zosobnit kontext zabezpečení klienta v místním systému.<br />-Delegování: Server může zosobnit kontext zabezpečení klienta ve vzdálených systémech.<br />-Anonymní: Server nemůže zosobnit nebo identifikovat klienta.<br />-None: úroveň zosobnění není přiřazena.<br /><br /> Výchozí hodnota je identifikace. Tento atribut je typu <xref:System.Security.Principal.TokenImpersonationLevel> .|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádná  
+ Žádné  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
-|[\<clientCredentials >](clientcredentials.md)|Určuje přihlašovací údaje, které se používají k ověření klienta ke službě.|  
+|[\<clientCredentials>](clientcredentials.md)|Určuje přihlašovací údaje, které se používají k ověření klienta ke službě.|  
   
 ## <a name="remarks"></a>Poznámky  
  Výtah je hodnota hash určená pomocí algoritmu a sady vstupů. Ověřovatel a ověřené souhlas s algoritmem a vyměňují data použitá jako vstupy. Klient může vypočítat hodnotu hash a odeslat ji do služby. Služba také vypočítá hodnotu hash a porovná hodnoty. Shoda ověří klienta.  
