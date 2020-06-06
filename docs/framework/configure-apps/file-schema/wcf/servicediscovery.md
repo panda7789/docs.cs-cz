@@ -3,21 +3,21 @@ title: <serviceDiscovery>
 ms.date: 03/30/2017
 ms.assetid: a3c68a4a-fc95-43c5-aacb-785936c0cf39
 ms.openlocfilehash: 7ac067e84f2a4d2724e3d8f2d0af9b220fd15538
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70399659"
 ---
-# <a name="servicediscovery"></a>\<serviceDiscovery>
+# \<serviceDiscovery>
 Určuje zjistitelnost koncových bodů služby.  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> chování**](behaviors.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<serviceBehaviors >** ](servicebehaviors.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> chování**](behavior-of-servicebehaviors.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<serviceDiscovery >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<behaviors>**](behaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<serviceBehaviors>**](servicebehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<behavior>**](behavior-of-servicebehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<serviceDiscovery>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -48,19 +48,19 @@ Určuje zjistitelnost koncových bodů služby.
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
-|[\<announcementEndpoint >](announcementendpoint.md)|Kolekce koncových bodů oznámení V této části můžete zadat koncové body, které se mají použít pro posílání zpráv s oznámením.|  
+|[\<announcementEndpoint>](announcementendpoint.md)|Kolekce koncových bodů oznámení V této části můžete zadat koncové body, které se mají použít pro posílání zpráv s oznámením.|  
 |[\<discoveryEndpoint>](discoveryendpoint.md)|Kolekce koncových bodů zjišťování. V této části můžete zadat koncové body, na kterých se mají zprávy zjišťování naslouchat.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
-|[\<> chování](behavior-of-endpointbehaviors.md)|Určuje chování element.|  
+|[\<behavior>](behavior-of-endpointbehaviors.md)|Určuje chování element.|  
   
 ## <a name="remarks"></a>Poznámky  
- Po přidání do konfigurace chování služby tento prvek konfigurace zpřístupňuje všechny koncové body této služby. Funkce zjišťování těchto koncových bodů můžete dále konfigurovat pomocí [ \<](discoveryendpoint.md) podřízených elementů DiscoveryEndpoint > nebo [ \<announcementEndpoint >](announcementendpoint.md) . Pomocí části [> announcementEndpointmůžetenakonfigurovatoznámenízadánímkonfiguracekoncovéhobodu,kterásemápoužítkodesíláníoznámeníslužby(online/Helloaoffline/bye).\<](announcementendpoint.md) Pomocí části [> DiscoveryEndpointmůžeteručnězadatkoncovýbod,nakterémsemajízprávyzjišťovánínaslouchat.\<](discoveryendpoint.md)  
+ Po přidání do konfigurace chování služby tento prvek konfigurace zpřístupňuje všechny koncové body této služby. Funkce zjišťování těchto koncových bodů můžete dále konfigurovat pomocí [\<discoveryEndpoint>](discoveryendpoint.md) [\<announcementEndpoint>](announcementendpoint.md) podřízených elementů nebo. Pomocí [\<announcementEndpoint>](announcementendpoint.md) části můžete nakonfigurovat oznámení zadáním konfigurace koncového bodu, která se bude používat k odesílání oznámení služby (online/Hello a offline/bye). Pomocí [\<discoveryEndpoint>](discoveryendpoint.md) oddílu můžete ručně zadat koncový bod, na kterém se mají zprávy zjišťování naslouchat.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad konfigurace určuje, že CalculatorService bude zjistitelný a volitelně Určuje koncový bod oznámení, který se má použít.  
@@ -86,6 +86,6 @@ Určuje zjistitelnost koncových bodů služby.
 </behaviors>
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior>

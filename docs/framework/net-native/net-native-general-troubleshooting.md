@@ -3,10 +3,10 @@ title: Obecné řešení potíží s .NET Native
 ms.date: 03/30/2017
 ms.assetid: ee8c5e17-35ea-48a1-8767-83298caac1e8
 ms.openlocfilehash: 2bea81e380fed6c456898e9883658ef874c8dd97
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73128229"
 ---
 # <a name="net-native-general-troubleshooting"></a>Obecné řešení potíží s .NET Native
@@ -29,7 +29,7 @@ Toto téma popisuje, jak řešit potenciální problémy, se kterými se můžet
 
   **Řešení:** Pokud je vyvolán kompilátor .NET Native, všimnete si delší doby sestavení a Správce úloh bude zobrazovat různé procesy .NET Native komponent, jako je ILC. exe a nutc_driver. exe.
 
-  Po úspěšném sestavení projektu pomocí .NET Native najdete výstup v části obj\\*config*\ *arch*\\*ProjectName*. ilc\out.  Konečný obsah nativního balíčku najdete v části bin\\*arch*\\*config*\AppX. Konečný obsah nativního balíčku najdete v části \Bin *\\* \\*config*\AppX, pokud jste nasadili aplikaci.
+  Po úspěšném sestavení projektu s .NET Native najdete výstup v části obj \\ *Konfigurace souboru* \  *arch* \\ *ProjectName*. ilc\out.  Konečný obsah nativního balíčku najdete v části bin \\ *arch* \\ *config*\AppX. Konečný obsah nativního balíčku najdete v části \\ *\Bin* \\ \AppX*config*, pokud jste nasadili aplikaci.
 
 - **Problém:** Vaše .NET Native kompilovaná aplikace vyvolává výjimky za běhu (obvykle [MissingMetadataException](missingmetadataexception-class-net-native.md) nebo [MissingRuntimeArtifactException](missingruntimeartifactexception-class-net-native.md) ), které nebyly vyvolávat při kompilaci bez .NET Native.
 
@@ -41,6 +41,6 @@ Toto téma popisuje, jak řešit potenciální problémy, se kterými se můžet
 
   Další informace naleznete v tématu [reflexe and .NET Native](reflection-and-net-native.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Migrace aplikace pro Windows Store do .NET Native](migrating-your-windows-store-app-to-net-native.md)

@@ -3,16 +3,16 @@ title: Konfigurační oddíl pro model Windows Forms
 ms.date: 04/07/2017
 ms.assetid: 6eb142d5-fc98-40e2-9d90-84733f2a27ba
 ms.openlocfilehash: 4de61ae3cb5eb8a3fc226881e2b7f842030dfddf
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79151829"
 ---
 # <a name="windows-forms-configuration-section"></a>Konfigurační oddíl pro model Windows Forms
-Nastavení konfigurace windows forms umožňují aplikaci Windows Forms ukládat a načítat informace o přizpůsobených nastaveních aplikací, jako je podpora více monitorů, vysoká podpora DPI a další předdefinovaná nastavení konfigurace.
+Nastavení konfigurace model Windows Forms umožňuje aplikaci model Windows Forms ukládat a načítat informace o přizpůsobených nastaveních aplikace, jako je podpora více monitorů, podpora vysokého rozlišení DPI a další předdefinovaná nastavení konfigurace.
 
-Nastavení konfigurace aplikace windows forms jsou uložena `System.Windows.Forms.ApplicationConfigurationSection` v prvku konfiguračního souboru aplikace.
+Model Windows Forms nastavení konfigurace aplikace jsou uložena v elementu konfiguračního souboru aplikace `System.Windows.Forms.ApplicationConfigurationSection` .
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -24,33 +24,33 @@ Nastavení konfigurace aplikace windows forms jsou uložena `System.Windows.Form
 </configuration>
 ```
 
-## <a name="attributes-and-elements"></a>Atributy a prvky
+## <a name="attributes-and-elements"></a>Atributy a elementy
 
 Následující části popisují atributy, podřízené prvky a nadřazené prvky.
 
 ### <a name="attributes"></a>Atributy
 
-Žádné.
+Žádné
 
 ### <a name="child-elements"></a>Podřízené prvky
 
-Element  |Popis |
+Prvek  |Description |
 ---------|---------|
 [`<add>`](windows-forms-add-configuration-element.md) | Přidá klíč nastavení konfigurace se zadanou hodnotou. |
 
 ### <a name="parent-elements"></a>Nadřazené prvky
 
-Element  |Popis |
+Prvek  |Description |
 ---------|---------|
-[\<>konfigurace](../configuration-element.md) | Kořenový prvek v každém konfiguračním souboru používaném běžným jazykem runtime a aplikacemi Windows Forms |
+[\<configuration>](../configuration-element.md) | Kořenový element v každém konfiguračním souboru, který je používán modulem CLR (Common Language Runtime) a model Windows Forms aplikacemi |
 
 ## <a name="remarks"></a>Poznámky
 
-Počínaje rozhraním .NET Framework 4.7 umožňuje `<System.Windows.Forms.ApplicationConfigurationSection>` tento prvek konfigurovat aplikace windows forms tak, aby využívaly funkce přidané v posledních verzích rozhraní .NET Framework.
+Počínaje .NET Framework 4,7 `<System.Windows.Forms.ApplicationConfigurationSection>` element umožňuje nakonfigurovat model Windows Forms aplikace, aby využívaly výhody funkcí přidaných v posledních verzích .NET Framework.
 
-Prvek `<System.Windows.Forms.ApplicationConfigurationSection>` může obsahovat jeden [`<add>`](windows-forms-add-configuration-element.md) nebo více podřízených prvků, z nichž každý definuje konkrétní nastavení konfigurace.
+`<System.Windows.Forms.ApplicationConfigurationSection>`Element může obsahovat jeden nebo více podřízených [`<add>`](windows-forms-add-configuration-element.md) elementů, z nichž každý definuje konkrétní nastavení konfigurace.
 
 ## <a name="see-also"></a>Viz také
 
 - [Schéma konfiguračního souboru](../index.md)
-- [Vysoká podpora DPI ve formulářích systému Windows](../../../winforms/high-dpi-support-in-windows-forms.md)
+- [Podpora vysokého rozlišení DPI v model Windows Forms](../../../winforms/high-dpi-support-in-windows-forms.md)

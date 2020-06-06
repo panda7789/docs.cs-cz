@@ -6,20 +6,20 @@ helpviewer_keywords:
 - <loadFromRemoteSources> element
 ms.assetid: 006d1280-2ac3-4db6-a984-a3d4e275046a
 ms.openlocfilehash: a0dcffe378cdd09de0fbd8f0a6ef0635c033fd9c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79154059"
 ---
-# <a name="loadfromremotesources-element"></a>\<loadFromRemoteSources> element
-Určuje, zda mají být sestavením načteným ze vzdálených zdrojů udělena úplná důvěryhodnost v rozhraní .NET Framework 4 a novějších.
+# <a name="loadfromremotesources-element"></a>\<loadFromRemoteSources> – element
+Určuje, zda mají být sestavení načtena ze vzdálených zdrojů udělena plná důvěryhodnost v .NET Framework 4 a novějších.
   
 > [!NOTE]
-> Pokud jste byli přesměrováni na tento článek z důvodu chybové zprávy v seznamu chyb projektu sady Visual Studio nebo chyby sestavení, [přečtěte si téma Postup: Použití sestavení z webu v sadě Visual Studio](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ee890038(v=vs.100)).  
+> Pokud jste byli přesměrováni na tento článek z důvodu chybové zprávy v seznamu chyb projektu sady Visual Studio nebo chyba sestavení, přečtěte si téma [How to: Use a Assembly from web in Visual Studio](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ee890038(v=vs.100)).  
   
-[**\<>konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[**\<>za běhu**](runtime-element.md)\
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<runtime>**](runtime-element.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;**\<loadFromRemoteSources>**  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -29,37 +29,37 @@ Určuje, zda mají být sestavením načteným ze vzdálených zdrojů udělena 
    enabled="true|false"/>  
 ```  
   
-## <a name="attributes-and-elements"></a>Atributy a prvky
+## <a name="attributes-and-elements"></a>Atributy a elementy
  Následující části popisují atributy, podřízené prvky a nadřazené prvky.  
   
 ### <a name="attributes"></a>Atributy  
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`enabled`|Požadovaný atribut.<br /><br /> Určuje, zda má být sestavení načtené ze vzdáleného zdroje udělenúplný vztah důvěryhodnosti.|  
+|`enabled`|Požadovaný atribut.<br /><br /> Určuje, jestli má být sestavení, které je načtené ze vzdáleného zdroje, udělené plné důvěryhodnosti.|  
   
 ## <a name="enabled-attribute"></a>povolený atribut  
   
-|Hodnota|Popis|  
+|Hodnota|Description|  
 |-----------|-----------------|  
-|`false`|Neudělujte úplný vztah důvěryhodnosti aplikacím ze vzdálených zdrojů. Toto nastavení je výchozí.|  
-|`true`|Udělte plnou důvěryhodnost aplikacím ze vzdálených zdrojů.|  
+|`false`|Neudělujete úplný vztah důvěryhodnosti aplikacím ze vzdálených zdrojů. Toto nastavení je výchozí.|  
+|`true`|Udělte úplný vztah důvěryhodnosti aplikacím ze vzdálených zdrojů.|  
   
 ### <a name="child-elements"></a>Podřízené prvky  
- Žádné.  
+ Žádné  
   
 ### <a name="parent-elements"></a>Nadřazené prvky  
   
-|Element|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|  
 |`runtime`|Obsahuje informace o možnostech inicializace modulu runtime.|  
   
 ## <a name="remarks"></a>Poznámky
 
-V rozhraní .NET Framework 3.5 a starších verzích pokud načtete sestavení ze vzdáleného umístění, kód v sestavení běží v částečném vztahu důvěryhodnosti s grantovou sadou, která závisí na zóně, ze které je načteno. Pokud například načtete sestavení z webu, načte se do zóny Internet a bude mu udělena sada oprávnění k Internetu. Jinými slovy, provádí se v internetové izolované masivu.
+Pokud se v .NET Framework 3,5 a starších verzích načte sestavení ze vzdáleného umístění, kód v sestavení běží v částečném vztahu důvěryhodnosti se sadou udělení, která závisí na zóně, ze které je načtena. Například pokud načtete sestavení z webu, je načteno do zóny Internet a udělena sada oprávnění Internet. Jinými slovy se spustí v internetovém prostoru.
 
-Počínaje rozhraním .NET Framework 4 je zakázána zásada zabezpečení přístupu kódu (CAS) a sestavení jsou načtena v plném vztahu důvěryhodnosti. Obvykle by to udělit úplný vztah důvěryhodnosti sestavení naložené <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType> s metodou, která byla dříve v izolovaném prostoru. Chcete-li tomu zabránit, je ve výchozím nastavení zakázána možnost spouštět kód v sestaveních načtených ze vzdáleného zdroje. Ve výchozím nastavení, pokud se pokusíte <xref:System.IO.FileLoadException> načíst vzdálené sestavení, a s výjimkou zprávy, jako je následující je vyvolána:
+Počínaje .NET Framework 4 jsou zásady zabezpečení přístupu kódu (CAS) zakázané a sestavení se načítají v úplném vztahu důvěryhodnosti. Obvykle to udělí úplný vztah důvěryhodnosti k sestavením načteným pomocí <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType> metody, která dříve byla izolovaného prostoru (sandbox). Aby se zabránilo tomu, možnost spouštění kódu v sestaveních načtených ze vzdáleného zdroje je ve výchozím nastavení zakázána. Ve výchozím nastavení platí, že pokud se pokusíte načíst vzdálené sestavení, bude <xref:System.IO.FileLoadException> vyvolána zpráva s výjimkou, například následující:
 
 ```text
 System.IO.FileNotFoundException: Could not load file or assembly 'file:assem.dll' or one of its dependencies. Operation is not supported.
@@ -70,40 +70,40 @@ to be sandboxed in previous versions of the .NET Framework. This release of the 
 so this load may be dangerous. If this load is not intended to sandbox the assembly, please enable the loadFromRemoteSources switch.
 ```
 
-Chcete-li načíst sestavení a spustit jeho kód, musíte buď:
+Chcete-li načíst sestavení a spustit jeho kód, je nutné buď:
 
-- Explicitně vytvořte izolovaného prostoru pro sestavení (viz [Postup: Spustit částečně důvěryhodný kód v izolovaném prostoru).](../../../misc/how-to-run-partially-trusted-code-in-a-sandbox.md)
+- Explicitní vytvoření izolovaného prostoru pro sestavení (viz [How to: Run částečně důvěryhodný kód v izolovaném prostoru](../../../misc/how-to-run-partially-trusted-code-in-a-sandbox.md)).
 
-- Spusťte kód sestavení v plném vztahu důvěryhodnosti. To provést konfigurací `<loadFromRemoteSources>` prvku. Umožňuje určit, že sestavení, která jsou spuštěna v částečném vztahu důvěryhodnosti v dřívějších verzích rozhraní .NET Framework, jsou nyní spuštěna v plně důvěře v rozhraní .NET Framework 4 a novějších verzích.
+- Spusťte kód sestavení v úplném vztahu důvěryhodnosti. To provedete tak, že nakonfigurujete `<loadFromRemoteSources>` prvek. Umožňuje určit, že sestavení, která běží v částečném vztahu důvěryhodnosti v dřívějších verzích .NET Framework nyní běží v úplném vztahu důvěryhodnosti v .NET Framework 4 a novějších verzích.
 
 > [!IMPORTANT]
-> Pokud by sestavení nemělo být spuštěno v plném vztahu důvěryhodnosti, nenastavujte tento konfigurační prvek. Místo toho vytvořte sandbox, <xref:System.AppDomain> ve kterém chcete načíst sestavu.
+> Pokud by sestavení nemělo běžet v úplném vztahu důvěryhodnosti, nenastavte tento prvek konfigurace. Místo toho vytvořte izolovaný prostor, <xref:System.AppDomain> ve kterém chcete sestavení načíst.
 
-Atribut `enabled` pro `<loadFromRemoteSources>` prvek je účinný pouze v případě, že je zakázáno zabezpečení přístupu kódu (CAS). Ve výchozím nastavení je zásada CAS zakázána v rozhraní .NET Framework 4 a novějších verzích. Pokud nastavíte na `enabled` `true`, vzdálená sestavení jsou udělena plná důvěryhodnost.
+`enabled`Atribut pro `<loadFromRemoteSources>` element je platný pouze v případě, že je zakázáno zabezpečení přístupu kódu (CAS). Ve výchozím nastavení jsou zásady CAS zakázané v .NET Framework 4 a novějších verzích. Pokud nastavíte `enabled` na `true` , jsou vzdálená sestavení udělena plná důvěryhodnost.
 
-Není-li `enabled` nastavena na `true`, <xref:System.IO.FileLoadException> je a vyvolána za jedné z následujících podmínek:
+Pokud není `enabled` nastaven na `true` , <xref:System.IO.FileLoadException> je vyvolána jedna z následujících podmínek:
 
-- Chování sandboxing aktuální domény se liší od jeho chování v rozhraní .NET Framework 3.5. To vyžaduje, aby byly zásady CAS zakázány a aktuální doména nebyla v izolovaném prostoru.
+- Chování izolovaného prostoru aktuální domény se liší od chování v .NET Framework 3,5. To vyžaduje, aby byly zásady CAS zakázané a aby aktuální doména nebyla v izolovaném prostoru.
 
-- Načtená sestava není ze `MyComputer` zóny.
+- Načtené sestavení není ze `MyComputer` zóny.
 
-Nastavení `<loadFromRemoteSources>` prvku `true` zabránit této výjimce vyvolána. Umožňuje určit, že nespoléháte na běžný jazyk runtime do izolovaného prostoru načtená sestavení pro zabezpečení a že mohou být povoleny pro spuštění v plném vztahu důvěryhodnosti.
+Nastavení `<loadFromRemoteSources>` elementu pro `true` zabránění vyvolání této výjimky. Umožňuje určit, že se nespoléháte na modul CLR (Common Language Runtime) k izolovanému prostoru pro načtená sestavení pro zabezpečení a že může být povoleno provádět v úplném vztahu důvěryhodnosti.
 
 ## <a name="notes"></a>Poznámky
 
-- V rozhraní .NET Framework 4.5 a novějších verzích jsou sestavení sdílených složek místní sítě ve výchozím nastavení plně důvěryhodná. není třeba povolit `<loadFromRemoteSources>` prvek.
+- V .NET Framework 4,5 a novějších verzích jsou sestavení v místních síťových sdílených složkách ve výchozím nastavení spouštěna v úplném vztahu důvěryhodnosti. není nutné povolit `<loadFromRemoteSources>` element.
 
-- Pokud byla aplikace zkopírována z webu, je systémem Windows označena jako webová aplikace, i když je umístěna v místním počítači. Toto označení můžete změnit změnou jeho vlastností `<loadFromRemoteSources>` souboru nebo můžete prvek použít k udělení úplnédůvěryhodnosti sestavení. Alternativně můžete použít metodu <xref:System.Reflection.Assembly.UnsafeLoadFrom%2A> k načtení místního sestavení, které operační systém označil jako načtené z webu.
+- Pokud byla aplikace zkopírována z webu, je označena systémem Windows jako webová aplikace, a to i v případě, že se nachází v místním počítači. Toto označení můžete změnit změnou jeho vlastností souboru, nebo můžete použít `<loadFromRemoteSources>` element pro udělení úplného vztahu důvěryhodnosti sestavení. Alternativně můžete použít <xref:System.Reflection.Assembly.UnsafeLoadFrom%2A> metodu pro načtení místního sestavení, které má operační systém označen jako načtený z webu.
 
-- Můžete získat <xref:System.IO.FileLoadException> v aplikaci, která je spuštěna v aplikaci Virtuální počítač se systémem Windows. K tomu může dojít při pokusu o načtení souboru z propojených složek v hostitelském počítači. Může k tomu dojít také při pokusu o načtení souboru ze složky propojené [prostředpou Vzdálená plocha](/windows/win32/termserv/terminal-services-portal) (Terminálová služba). Chcete-li se `enabled` vyhnout `true`výjimce, nastavte na .
+- Můžete se dostat <xref:System.IO.FileLoadException> do aplikace, která běží v aplikaci Virtual PC v systému Windows. K tomu může dojít při pokusu o načtení souboru z propojených složek v hostitelském počítači. Může k tomu dojít i v případě, že se pokusíte načíst soubor ze složky propojené přes [službu Vzdálená plocha](/windows/win32/termserv/terminal-services-portal) (Terminálová služba). Chcete-li výjimku zabránit, nastavte `enabled` na `true` .
 
 ## <a name="configuration-file"></a>Konfigurační soubor
 
-Tento prvek se obvykle používá v konfiguračním souboru aplikace, ale lze jej použít v jiných konfiguračních souborech v závislosti na kontextu. Další informace naleznete v článku [Další implicitní použití zásad CAS: loadFromRemoteSources](https://docs.microsoft.com/archive/blogs/shawnfa/more-implicit-uses-of-cas-policy-loadfromremotesources) v blogu .NET Security.  
+Tento element se obvykle používá v konfiguračním souboru aplikace, ale lze jej použít v jiných konfiguračních souborech v závislosti na kontextu. Další informace najdete v článku [více implicitních použití zásad CAS: loadFromRemoteSources](https://docs.microsoft.com/archive/blogs/shawnfa/more-implicit-uses-of-cas-policy-loadfromremotesources) na blogu zabezpečení .NET.  
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje, jak udělit úplný vztah důvěryhodnosti sestavením načteným ze vzdálených zdrojů.
+Následující příklad ukazuje, jak udělit úplný vztah důvěryhodnosti k sestavením načteným ze vzdálených zdrojů.
 
 ```xml
 <configuration>  
@@ -115,8 +115,8 @@ Následující příklad ukazuje, jak udělit úplný vztah důvěryhodnosti ses
 
 ## <a name="see-also"></a>Viz také
 
-- [Další implicitní použití zásad CAS: loadFromRemoteSources](https://docs.microsoft.com/archive/blogs/shawnfa/more-implicit-uses-of-cas-policy-loadfromremotesources)
+- [Více implicitních použití zásad CAS: loadFromRemoteSources](https://docs.microsoft.com/archive/blogs/shawnfa/more-implicit-uses-of-cas-policy-loadfromremotesources)
 - [Postupy: Spuštění částečně důvěryhodného kódu v izolovaném prostoru](../../../misc/how-to-run-partially-trusted-code-in-a-sandbox.md)
-- [Schéma nastavení běhového prostředí](index.md)
+- [Schéma nastavení modulu runtime](index.md)
 - [Schéma konfiguračního souboru](../index.md)
 - <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType>

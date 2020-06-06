@@ -6,17 +6,17 @@ helpviewer_keywords:
 - <appDomainResourceMonitoring> element
 ms.assetid: 02119ab6-1e91-448e-97ad-e7b2e5c4bbbd
 ms.openlocfilehash: 3c6092b6c34bb13c0ad0e66df2d3b7e65ac3de7e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79154373"
 ---
-# <a name="appdomainresourcemonitoring-element"></a>\<appDomainResourceMonitoring> element
-Dává pokyn běhu shromažďovat statistiky o všech aplikačních doménv procesu po dobu životnosti procesu.  
+# <a name="appdomainresourcemonitoring-element"></a>Element \<appDomainResourceMonitoring>
+Instruuje modul runtime za účelem shromažďování statistik o všech doménách aplikace v procesu po dobu životního cyklu procesu.  
   
-[**\<>konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[**\<>za běhu**](runtime-element.md)\
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<runtime>**](runtime-element.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;**\<appDomainResourceMonitoring>**  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -33,31 +33,31 @@ Dává pokyn běhu shromažďovat statistiky o všech aplikačních doménv proc
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`enabled`|Požadovaný atribut.<br /><br /> Určuje, zda program runtime shromažďuje statistiky pro monitorování prostředků domény aplikace.|  
+|`enabled`|Požadovaný atribut.<br /><br /> Určuje, zda modul runtime shromažďuje statistiku pro monitorování prostředků domény aplikace.|  
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
-|Hodnota|Popis|  
+|Hodnota|Description|  
 |-----------|-----------------|  
-|`true`|Jsou shromažďovány statistiky pro monitorování prostředků domény aplikace.|  
-|`false`|Statistiky pro monitorování prostředků domény aplikace nejsou shromažďovány.|  
+|`true`|Shromažďují se statistiky pro monitorování prostředků domény aplikace.|  
+|`false`|Statistika pro monitorování prostředků domény aplikace se neshromažďují.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádné.  
+ Žádné  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Element|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|  
 |`runtime`|Obsahuje informace o vazbách sestavení a uvolnění paměti.|  
   
 ## <a name="remarks"></a>Poznámky  
- Monitorování prostředků domény aplikace je k dispozici prostřednictvím třídy domény spravované aplikace, hostitelského rozhraní [ICLRAppDomainResourceMonitor](../../../unmanaged-api/hosting/iclrappdomainresourcemonitor-interface.md) a trasování událostí pro Windows (ETW). Pokud je povoleno monitorování, statistiky jsou shromažďovány pro všechny aplikační domény v procesu po dobu životnosti procesu.  
+ Monitorování prostředků domény aplikace je dostupné prostřednictvím třídy domény spravované aplikace, hostitelského rozhraní [ICLRAppDomainResourceMonitor](../../../unmanaged-api/hosting/iclrappdomainresourcemonitor-interface.md) a trasování událostí pro Windows (ETW). Pokud je monitorování povoleno, Statistika se shromáždí pro všechny domény aplikace v procesu po dobu životního cyklu procesu.  
   
- Chcete-li povolit monitorování <xref:System.AppDomain.MonitoringIsEnabled%2A> ze spravovaného kódu, použijte vlastnost.  
+ Chcete-li povolit monitorování ze spravovaného kódu, použijte <xref:System.AppDomain.MonitoringIsEnabled%2A> vlastnost.  
   
- Tento konfigurační prvek je k dispozici pouze v rozhraní .NET Framework 4 a novější.  
+ Tento prvek konfigurace je k dispozici pouze v .NET Framework 4 nebo novějším.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje, jak povolit monitorování prostředků domény aplikace.  
@@ -73,5 +73,5 @@ Dává pokyn běhu shromažďovat statistiky o všech aplikačních doménv proc
 ## <a name="see-also"></a>Viz také
 
 - <xref:System.AppDomain.MonitoringIsEnabled%2A?displayProperty=nameWithType>
-- [Schéma nastavení běhového prostředí](index.md)
+- [Schéma nastavení modulu runtime](index.md)
 - [Schéma konfiguračního souboru](../index.md)

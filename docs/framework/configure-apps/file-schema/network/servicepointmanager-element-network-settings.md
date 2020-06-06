@@ -9,19 +9,19 @@ helpviewer_keywords:
 - <servicePointManager> element
 ms.assetid: 6e5def51-3646-4ef6-a7bd-c69151321bec
 ms.openlocfilehash: b7333016fea2d46285d3c98181c0ca4904c376f8
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "74089131"
 ---
-# <a name="servicepointmanager-element-network-settings"></a>\<element > Třída ServicePointManager (nastavení sítě)
+# <a name="servicepointmanager-element-network-settings"></a>\<servicePointManager> – element (nastavení sítě)
 Nakonfiguruje připojení k síťovým prostředkům.  
 
-[ **\<configuration >** ](../configuration-element.md) \
-&nbsp;&nbsp;[ **\<System. net >** ](system-net-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<nastavení >** ](settings-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<třída servicepointmanager >**
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.net>**](system-net-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<settings>**](settings-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<servicePointManager>**
 
 ## <a name="syntax"></a>Syntaxe  
   
@@ -48,8 +48,8 @@ Nakonfiguruje připojení k síťovým prostředkům.
 |`checkCertificateRevocationList`|Určuje, zda má systém před použitím certifikátu ověřit, zda byl certifikát odvolán. Výchozí hodnota je `false`.|  
 |`dnsRefreshTimeout`|Určuje, jak dlouho se překlad služby DNS (Domain Name Service) ukládá do mezipaměti v kombinaci s možností kruhové dotazování DNS (v milisekundách). Výchozí hodnota je 120 000 milisekund (dvě minuty).|  
 |`enableDnsRoundRobin`|Určuje, jestli překlad DNS názvů hostitelů s více adresami Internet Protocol (IP) vrací všechny adresy, nebo jenom první z nich. Výchozí hodnota je `false`.|  
-|`encryptionPolicy`|Určuje zásady šifrování použité pro relaci SSL/TLS na instanci <xref:System.Net.ServicePointManager>. Možné hodnoty jsou ekvivalentní hodnotám pro výčet <xref:System.Net.Security.EncryptionPolicy>. Je-li zásada šifrování nastavena na hodnotu `NoEncryption`, je použití <xref:System.Security.Authentication.CipherAlgorithmType.Null> vyžadováno. Výchozí hodnota je `RequireEncryption`.|  
-|`expect100Continue`|Určuje, zda by metody POST měly očekávat odpověď `100-continue` ze serveru. Výchozí hodnota je `true`.|  
+|`encryptionPolicy`|Určuje zásady šifrování použité pro relaci SSL/TLS na <xref:System.Net.ServicePointManager> instanci. Možné hodnoty jsou ekvivalentní hodnotám pro <xref:System.Net.Security.EncryptionPolicy> výčet. <xref:System.Security.Authentication.CipherAlgorithmType.Null>Pokud je zásada šifrování nastavena na hodnotu, použití je povinné `NoEncryption` . Výchozí hodnota je `RequireEncryption`.|  
+|`expect100Continue`|Určuje, zda by metody POST měly očekávat `100-continue` odpověď ze serveru. Výchozí hodnota je `true`.|  
 |`useNagleAlgorithm`|Určuje, jestli připojení řízená správcem servisního bodu používají algoritmus Nagle. Výchozí hodnota je `true`.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
@@ -57,16 +57,16 @@ Nakonfiguruje připojení k síťovým prostředkům.
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|**Element**|**Popis**|  
+|**Objekt**|**Popis**|  
 |-----------------|---------------------|  
-|[Nastavení](settings-element-network-settings.md)|Konfiguruje základní možnosti sítě pro obor názvů <xref:System.Net>.|  
+|[Nastavení](settings-element-network-settings.md)|Nakonfiguruje základní možnosti sítě pro <xref:System.Net> obor názvů.|  
   
 ## <a name="remarks"></a>Poznámky  
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
  Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine. config).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Net.ServicePointManager>
 - <xref:System.Net.Security.EncryptionPolicy>

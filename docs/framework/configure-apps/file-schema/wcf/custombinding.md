@@ -3,20 +3,20 @@ title: <customBinding>
 ms.date: 03/30/2017
 ms.assetid: 9da4f960-f64e-4d8a-894d-2b09eba5ce4b
 ms.openlocfilehash: cdaaacf0dfa75209d001f6e8d6ac7175816048aa
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/16/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "74140795"
 ---
-# <a name="custombinding"></a>\<customBinding >
+# \<customBinding>
 
 Poskytuje plnou kontrolu nad zásobníkem zpráv pro uživatele.
 
-[ **\<configuration >** ](../configuration-element.md) \
-&nbsp; &nbsp;[ **\<system. serviceModel >** ](system-servicemodel.md) \
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<vazeb >** ](bindings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<customBinding >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<bindings>**](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<customBinding>**  
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -181,33 +181,33 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 |Atribut|Popis|
 |---------------|-----------------|
-|closeTimeout|Hodnota <xref:System.TimeSpan>, která určuje časový interval poskytnutý pro dokončení operace ukončení. Tato hodnota by měla být větší nebo rovna <xref:System.TimeSpan.Zero>. Výchozí hodnota je 00:01:00.|
+|closeTimeout|<xref:System.TimeSpan>Hodnota, která určuje časový interval poskytnutý pro dokončení operace uzavření. Tato hodnota by měla být větší nebo rovna <xref:System.TimeSpan.Zero> . Výchozí hodnota je 00:01:00.|
 |name|Řetězec, který obsahuje název konfigurace vazby. Tato hodnota je uživatelem definovaný řetězec, který slouží jako identifikační řetězec pro vlastní vazbu. Počínaje .NET Framework 4 nejsou vazby a chování nutné mít název. Další informace o výchozích konfiguracích a Nameless vazbách a chování najdete v tématu [zjednodušená konfigurace](../../../wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../wcf/samples/simplified-configuration-for-wcf-services.md).|
-|openTimeout|Hodnota <xref:System.TimeSpan>, která určuje časový interval poskytnutý pro dokončení operace otevření. Tato hodnota by měla být větší nebo rovna <xref:System.TimeSpan.Zero>. Výchozí hodnota je 00:01:00.|
-|receiveTimeout|Hodnota <xref:System.TimeSpan>, která určuje časový interval poskytnutý pro dokončení operace Receive. Tato hodnota by měla být větší nebo rovna <xref:System.TimeSpan.Zero>. Výchozí hodnota je 00:01:00.|
-|sendTimeout|Hodnota <xref:System.TimeSpan>, která určuje časový interval poskytnutý pro dokončení operace odeslání. Tato hodnota by měla být větší nebo rovna <xref:System.TimeSpan.Zero>. Výchozí hodnota je 00:01:00.|
+|openTimeout|<xref:System.TimeSpan>Hodnota, která určuje časový interval poskytnutý pro dokončení operace otevření. Tato hodnota by měla být větší nebo rovna <xref:System.TimeSpan.Zero> . Výchozí hodnota je 00:01:00.|
+|receiveTimeout|<xref:System.TimeSpan>Hodnota, která určuje časový interval poskytnutý pro dokončení operace Receive. Tato hodnota by měla být větší nebo rovna <xref:System.TimeSpan.Zero> . Výchozí hodnota je 00:01:00.|
+|sendTimeout|<xref:System.TimeSpan>Hodnota, která určuje časový interval poskytnutý pro dokončení operace odeslání. Tato hodnota by měla být větší nebo rovna <xref:System.TimeSpan.Zero> . Výchozí hodnota je 00:01:00.|
 
 ### <a name="child-elements"></a>Podřízené elementy
 
-|Prvek|Popis|
+|Prvek|Description|
 |-------------|-----------------|
-|[\<compositeDuplex >](compositeduplex.md)|Určuje obousměrný způsob zasílání zpráv do vlastní vazby. Používá se s přenosy, které nativně neumožňují duplexní komunikaci, například HTTP. Protokol TCP naopak umožňuje nativně duplexní komunikaci nativně a nevyžaduje použití tohoto elementu vazby, aby služba odesílala zprávy zpátky klientovi.<br /><br /> Klient musí vystavit adresu, aby mohla služba vytvořit kontakt a navázat připojení. Tato adresa klienta je poskytována atributem `ClientBaseAddress`.<br /><br /> Tento prvek je typu <xref:System.ServiceModel.Configuration.CompositeDuplexElement>.|
-|[\<pnrpPeerResolver >](pnrppeerresolver.md)|Určuje překladač názvů partnerských uzlů PNRP (Peer Name Resolution Protocol). Tento prvek je typu <xref:System.ServiceModel.Configuration.PnrpPeerResolverElement>.|
-|[\<reliableSession >](reliablesession.md)|Určuje nastavení pro zasílání zpráv WS-Reliable. Když se tento prvek přidá do vlastní vazby, může výsledný kanál podporovat pouze zajištění doručení právě jednou. Tento prvek je typu <xref:System.ServiceModel.Configuration.ReliableSessionElement>.|
-|[> zabezpečení \<](security-of-custombinding.md)|Určuje možnosti pro zabezpečení vlastní vazby. Tento prvek je typu <xref:System.ServiceModel.Configuration.SecurityElement>.|
-|[\<sslStreamSecurity >](sslstreamsecurity.md)|Určuje nastavení zabezpečení pro vazbu streamu SSL. Tento prvek je typu <xref:System.ServiceModel.Configuration.SslStreamSecurityElement>.|
-|[\<transactionFlow >](transactionflow.md)|Určuje, že vazba podporuje tok transakce a protokol, který má atribut `transactionProtocol` použít. Tento prvek je typu <xref:System.ServiceModel.Configuration.TransactionFlowElement>.|
-|[\<zabezpečení windowsstreamsecurity >](windowsstreamsecurity.md)|Určuje možnosti pro zabezpečení streamování vlastní vazby. Tento prvek je typu <xref:System.ServiceModel.Configuration.WindowsStreamSecurityElement>.|
+|[\<compositeDuplex>](compositeduplex.md)|Určuje obousměrný způsob zasílání zpráv do vlastní vazby. Používá se s přenosy, které nativně neumožňují duplexní komunikaci, například HTTP. Protokol TCP naopak umožňuje nativně duplexní komunikaci nativně a nevyžaduje použití tohoto elementu vazby, aby služba odesílala zprávy zpátky klientovi.<br /><br /> Klient musí vystavit adresu, aby mohla služba vytvořit kontakt a navázat připojení. Tato adresa klienta je poskytována `ClientBaseAddress` atributem.<br /><br /> Tento prvek je typu <xref:System.ServiceModel.Configuration.CompositeDuplexElement> .|
+|[\<pnrpPeerResolver>](pnrppeerresolver.md)|Určuje překladač názvů partnerských uzlů PNRP (Peer Name Resolution Protocol). Tento prvek je typu <xref:System.ServiceModel.Configuration.PnrpPeerResolverElement> .|
+|[\<reliableSession>](reliablesession.md)|Určuje nastavení pro zasílání zpráv WS-Reliable. Když se tento prvek přidá do vlastní vazby, může výsledný kanál podporovat pouze zajištění doručení právě jednou. Tento prvek je typu <xref:System.ServiceModel.Configuration.ReliableSessionElement> .|
+|[\<security>](security-of-custombinding.md)|Určuje možnosti pro zabezpečení vlastní vazby. Tento prvek je typu <xref:System.ServiceModel.Configuration.SecurityElement> .|
+|[\<sslStreamSecurity>](sslstreamsecurity.md)|Určuje nastavení zabezpečení pro vazbu streamu SSL. Tento prvek je typu <xref:System.ServiceModel.Configuration.SslStreamSecurityElement> .|
+|[\<transactionFlow>](transactionflow.md)|Určuje, že vazba podporuje tok transakce a protokol, který má `transactionProtocol` atribut použít. Tento prvek je typu <xref:System.ServiceModel.Configuration.TransactionFlowElement> .|
+|[\<windowsStreamSecurity>](windowsstreamsecurity.md)|Určuje možnosti pro zabezpečení streamování vlastní vazby. Tento prvek je typu <xref:System.ServiceModel.Configuration.WindowsStreamSecurityElement> .|
 
 ### <a name="parent-elements"></a>Nadřazené elementy
 
-|Prvek|Popis|
+|Prvek|Description|
 |-------------|-----------------|
 |vazby|Obsahuje všechny vazby pro aplikace Windows Communication Foundation.|
 
 ## <a name="remarks"></a>Poznámky
 
-Vlastní vazby poskytují plnou kontrolu nad zásobníkem zpráv WCF. Speciální vazby, které lze přizpůsobit, lze vytvořit přidáním elementů konfigurace pro konkrétní entity. Uživatel může například kombinovat oddíl `httpsTransport`, `reliableSession` oddíl a `security` oddíl a vytvořit tak spolehlivou a zabezpečenou vazbu založenou na protokolu HTTPS.
+Vlastní vazby poskytují plnou kontrolu nad zásobníkem zpráv WCF. Speciální vazby, které lze přizpůsobit, lze vytvořit přidáním elementů konfigurace pro konkrétní entity. Uživatel může například zkombinovat `httpsTransport` oddíl, `reliableSession` oddíl a `security` oddíl a vytvořit tak spolehlivou a zabezpečenou vazbu založenou na protokolu HTTPS.
 
 Jednotlivá vazba definuje zásobník zpráv zadáním elementů konfigurace pro prvky zásobníku v pořadí, v jakém se zobrazují v zásobníku. Každý prvek definuje a nakonfiguruje jeden prvek zásobníku. V každé vlastní vazbě musí být jeden a jenom jeden transportní element. Bez tohoto elementu je zásobník pro zasílání zpráv neúplný.
 
@@ -219,17 +219,17 @@ Pořadí, ve kterém se prvky zobrazí v zásobníku, protože se jedná o pořa
 
 3. Zabezpečení (volitelné)
 
-4. Přepravu
+4. Přenos
 
 5. Kodér (volitelné)
 
 Vlastní vazbu použijte v případě, že jedna z vazeb poskytovaných systémem nesplňuje požadavky vaší služby. Vlastní vazbu můžete použít například k povolení použití nového přenosu nebo nového kodéru na koncovém bodu služby.
 
-Vlastní vazba je vytvořena pomocí jedné z <xref:System.ServiceModel.Channels.CustomBinding.%23ctor%2A> z kolekce prvků vazby, které jsou "skládané" v určitém pořadí:
+Vlastní vazba je vytvořena pomocí jedné z <xref:System.ServiceModel.Channels.CustomBinding.%23ctor%2A> kolekce prvků vazby, které jsou "skládané" v určitém pořadí:
 
-- V horní části je volitelná <xref:System.ServiceModel.Channels.TransactionFlowBindingElement>, která umožňuje přesměrovat transakce.
+- V horní části je volitelná možnost <xref:System.ServiceModel.Channels.TransactionFlowBindingElement> , která umožňuje přesměrovat transakce.
 
-- Dále je volitelná <xref:System.ServiceModel.Channels.ReliableSessionBindingElement>, která poskytuje mechanismus pro relaci a řazení, jak je definováno ve specifikaci WS-ReliableMessaging. Tento pojem relace může přenášet propojení mezi zprostředkovateli SOAP a přenosu.
+- Další je volitelná <xref:System.ServiceModel.Channels.ReliableSessionBindingElement> , která poskytuje mechanismus pro relaci a řazení, jak je definováno ve specifikaci WS-ReliableMessaging. Tento pojem relace může přenášet propojení mezi zprostředkovateli SOAP a přenosu.
 
 - Další je volitelný prvek vazby zabezpečení, který poskytuje funkce zabezpečení jako autorizaci, ověřování, ochranu a důvěrnost. Pomocí Windows Communication Foundation (WCF) jsou k dispozici následující prvky vazby zabezpečení:
 
@@ -279,27 +279,27 @@ Vlastní vazba je vytvořena pomocí jedné z <xref:System.ServiceModel.Channels
 
 Následující tabulka shrnuje možnosti pro každou vrstvu.
 
-|Vrstvení|Možnosti|Požadováno|
+|Vrstva|Možnosti|Vyžadováno|
 |-----------|-------------|--------------|
-|Tok transakce|<xref:System.ServiceModel.Channels.TransactionFlowBindingElement>|Ne|
-|Spolehlivost|<xref:System.ServiceModel.Channels.ReliableSessionBindingElement>|Ne|
-|Zabezpečení|Symetrický, asymetrický, transportní úroveň|Ne|
-|Změna tvaru|<xref:System.ServiceModel.Channels.CompositeDuplexBindingElement>|Ne|
-|Upgrady přenosu|Datový proud SSL, Windows Stream, peer resolver|Ne|
-|Kódování|Text, binární, MTOM, vlastní|Ano|
-|Přepravu|TCP, pojmenované kanály, HTTP, HTTPS, charakter služby MSMQ, vlastní|Ano|
+|Tok transakce|<xref:System.ServiceModel.Channels.TransactionFlowBindingElement>|No|
+|Spolehlivost|<xref:System.ServiceModel.Channels.ReliableSessionBindingElement>|No|
+|Zabezpečení|Symetrický, asymetrický, transportní úroveň|No|
+|Změna tvaru|<xref:System.ServiceModel.Channels.CompositeDuplexBindingElement>|No|
+|Upgrady přenosu|Datový proud SSL, Windows Stream, peer resolver|No|
+|Kódování|Text, binární, MTOM, vlastní|Yes|
+|Přenos|TCP, pojmenované kanály, HTTP, HTTPS, charakter služby MSMQ, vlastní|Yes|
 
 Kromě toho můžete definovat vlastní prvky vazby a vkládat je mezi kteroukoli z předchozích definovaných vrstev.
 
 Diskuzi o tom, jak používat vlastní vazbu k úpravě vazby zadané systémem, najdete v tématu [How to: Customizing a bindingd a System-dodaná](../../../wcf/extending/how-to-customize-a-system-provided-binding.md)vazba.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.ServiceModel.Channels.Binding>
 - <xref:System.ServiceModel.Channels.BindingElement>
 - <xref:System.ServiceModel.Configuration.BindingsSection>
 - <xref:System.ServiceModel.Channels.CustomBinding>
-- [vazba \<](bindings.md)
+- [\<binding>](bindings.md)
 - [Vazby](../../../wcf/bindings.md)
 - [Rozšíření vazeb](../../../wcf/extending/extending-bindings.md)
 - [Vlastní vazby](../../../wcf/extending/custom-bindings.md)

@@ -3,19 +3,19 @@ title: Element <useLegacyJit>
 ms.date: 04/26/2017
 ms.assetid: c2cf97f0-9262-4f1f-a754-5568b51110ad
 ms.openlocfilehash: a126b8c0050a8d1fd96a3d090f9b018a9faa07a7
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73968859"
 ---
-# <a name="uselegacyjit-element"></a>\<element > useLegacyJit
+# <a name="uselegacyjit-element"></a>Element \<useLegacyJit>
 
 Určuje, zda modul CLR (Common Language Runtime) používá starší 64 kompilátor JIT pro kompilaci za běhu.  
   
-[ **\<configuration >** ](../configuration-element.md) \
-&nbsp;&nbsp;[ **\<runtime >** ](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<useLegacyJit >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<runtime>**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<useLegacyJit>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -23,7 +23,7 @@ Určuje, zda modul CLR (Common Language Runtime) používá starší 64 kompilá
 <useLegacyJit enabled=0|1 />
 ```
 
-Název elementu `useLegacyJit` rozlišuje velká a malá písmena.
+V názvu elementu `useLegacyJit` se rozlišují velká a malá písmena.
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy
 
@@ -37,10 +37,10 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
   
 ### <a name="enabled-attribute"></a>povolený atribut  
   
-| Hodnota | Popis                                                                                                         |  
+| Hodnota | Description                                                                                                         |  
 | ----- | ------------------------------------------------------------------------------------------------------------------- |  
-| 0,8     | Modul CLR (Common Language Runtime) používá nový 64 kompilátor JIT zahrnutý v .NET Framework 4,6 a novějších verzích. |  
-| první     | Modul common language runtime používá starší 64 kompilátor JIT.                                                     |  
+| 0     | Modul CLR (Common Language Runtime) používá nový 64 kompilátor JIT zahrnutý v .NET Framework 4,6 a novějších verzích. |  
+| 1     | Modul common language runtime používá starší 64 kompilátor JIT.                                                     |  
   
 ### <a name="child-elements"></a>Podřízené prvky
 
@@ -48,23 +48,23 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
   
 ### <a name="parent-elements"></a>Nadřazené prvky  
   
-| Prvek         | Popis                                                                                                       |  
+| Prvek         | Description                                                                                                       |  
 | --------------- | ----------------------------------------------------------------------------------------------------------------- |  
 | `configuration` | Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework. |  
 | `runtime`       | Obsahuje informace o možnostech inicializace modulu runtime.                                                        |  
   
 ## <a name="remarks"></a>Poznámky  
 
-Počínaje .NET Framework 4,6 používá modul CLR (Common Language Runtime) nový 64 kompilátor pro kompilaci JIT (just-in-time) ve výchozím nastavení. V některých případech to může vést k rozdílu v chování z kódu aplikace, který byl zkompilován JIT pomocí předchozí verze 64 kompilátoru JIT. Nastavením atributu `enabled` elementu `<useLegacyJit>` na `1`můžete zakázat nový 64 kompilátor JIT a místo toho zkompilovat aplikaci pomocí staršího 64 kompilátoru JIT.  
+Počínaje .NET Framework 4,6 používá modul CLR (Common Language Runtime) nový 64 kompilátor pro kompilaci JIT (just-in-time) ve výchozím nastavení. V některých případech to může vést k rozdílu v chování z kódu aplikace, který byl zkompilován JIT pomocí předchozí verze 64 kompilátoru JIT. Nastavením `enabled` atributu `<useLegacyJit>` elementu na `1` můžete zakázat nový 64 kompilátor JIT a místo toho zkompilovat aplikaci pomocí starší verze 64 kompilátoru JIT.  
   
 > [!NOTE]
-> Element `<useLegacyJit>` ovlivňuje pouze 64 kompilaci JIT. Kompilace s 32 kompilátorem JIT není nijak ovlivněna.  
+> `<useLegacyJit>`Element ovlivňuje pouze 64 KOMPILACI JIT. Kompilace s 32 kompilátorem JIT není nijak ovlivněna.  
   
 Namísto použití nastavení konfiguračního souboru můžete povolit starší 64 kompilátor JIT dvěma způsoby:  
   
 - Nastavení proměnné prostředí
 
-  Nastavte proměnnou prostředí `COMPLUS_useLegacyJit` buď na `0` (použijte nový 64 kompilátor JIT), nebo `1` (použijte starší 64 kompilátor JIT):
+  Nastavte `COMPLUS_useLegacyJit` proměnnou prostředí na buď `0` (použijte nový 64 kompilátor JIT), nebo `1` (použijte starší 64 kompilátor JIT):
   
   ```env  
   COMPLUS_useLegacyJit=0|1  
@@ -74,9 +74,9 @@ Namísto použití nastavení konfiguračního souboru můžete povolit starší
   
 - Přidání klíče registru
 
-  Můžete povolit starší 64 kompilátor JIT přidáním `REG_DWORD` hodnoty do `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework` nebo `HKEY_CURRENT_USER\SOFTWARE\Microsoft\.NETFramework` klíče v registru. Hodnota je pojmenována `useLegacyJit`. Je-li hodnota 0, je použit nový kompilátor. Pokud je hodnota 1, je povolen starší 64 kompilátor JIT. V názvu hodnoty registru se nerozlišují malá a velká písmena.
+  Můžete povolit starší 64 kompilátor JIT přidáním `REG_DWORD` hodnoty do `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework` `HKEY_CURRENT_USER\SOFTWARE\Microsoft\.NETFramework` klíče nebo v registru. Hodnota je pojmenována `useLegacyJit` . Je-li hodnota 0, je použit nový kompilátor. Pokud je hodnota 1, je povolen starší 64 kompilátor JIT. V názvu hodnoty registru se nerozlišují malá a velká písmena.
   
-  Přidání hodnoty do klíče `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework` má vliv na všechny aplikace spuštěné v počítači. Přidání hodnoty do klíče `HKEY_CURRENT_USER\SOFTWARE\Microsoft\.NETFramework` má vliv na všechny aplikace spuštěné aktuálním uživatelem. Pokud je počítač nakonfigurovaný s několika uživatelskými účty, ovlivní se jenom aplikace spuštěné aktuálním uživatelem, pokud se hodnota nepřidá do klíčů registru pro ostatní uživatele. Přidání prvku `<useLegacyJit>` do konfiguračního souboru přepíše nastavení registru, pokud jsou k dispozici.  
+  Přidání hodnoty do `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework` klíče má vliv na všechny aplikace spuštěné v počítači. Přidání hodnoty do `HKEY_CURRENT_USER\SOFTWARE\Microsoft\.NETFramework` klíče má vliv na všechny aplikace spuštěné aktuálním uživatelem. Pokud je počítač nakonfigurovaný s několika uživatelskými účty, ovlivní se jenom aplikace spuštěné aktuálním uživatelem, pokud se hodnota nepřidá do klíčů registru pro ostatní uživatele. Přidání `<useLegacyJit>` elementu do konfiguračního souboru přepíše nastavení registru, pokud jsou k dispozici.  
   
 ## <a name="example"></a>Příklad  
 
@@ -91,8 +91,8 @@ Následující konfigurační soubor zakáže kompilaci s novým 64 kompilátore
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [\<element > runtime](runtime-element.md)
-- [> element konfigurace \<](../configuration-element.md)
+- [\<runtime>Objekt](runtime-element.md)
+- [\<configuration>Objekt](../configuration-element.md)
 - [Zmírnění: nový 64 kompilátor JIT](../../../migration-guide/mitigation-new-64-bit-jit-compiler.md)

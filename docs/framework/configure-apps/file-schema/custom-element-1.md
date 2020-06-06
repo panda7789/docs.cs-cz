@@ -1,5 +1,5 @@
 ---
-title: Vlastní prvek pro SingleTagSectionHandler
+title: Vlastní element pro SingleTagSectionHandler
 ms.date: 05/01/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/sectionName
@@ -7,17 +7,17 @@ helpviewer_keywords:
 - custom element
 ms.assetid: e62056c6-b351-40eb-afc0-cc13fc44e45e
 ms.openlocfilehash: a40f35838655f6021af0b2e966335803ec8c16b4
-ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/03/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "80635403"
 ---
-# <a name="custom-element-for-singletagsectionhandler"></a>Vlastní prvek pro SingleTagSectionHandler
+# <a name="custom-element-for-singletagsectionhandler"></a>Vlastní element pro SingleTagSectionHandler
 
-Definuje nastavení ve vlastním konfiguračním \<oddílu, který <xref:System.Configuration.SingleTagSectionHandler> je definován oddílem> elementa a používá třídu.
+Definuje nastavení ve vlastní konfigurační sekci, která je definována \<section> elementem a používá <xref:System.Configuration.SingleTagSectionHandler> třídu.
 
-konfigurace &nbsp; &nbsp;>[** \<**](configuration-element.md) * \<sekceNázev>*
+[**\<configuration>**](configuration-element.md) &nbsp;&nbsp;*\<sectionName>*
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -27,25 +27,25 @@ konfigurace &nbsp; &nbsp;>[** \<**](configuration-element.md) * \<sekceNázev>*
 
 ## <a name="attributes"></a>Atributy
 
-Atributy a hodnoty atributů jsou definovány uživatelem.
+Atributy a hodnoty atributů jsou definované uživatelem.
 
-## <a name="parent-element"></a>Nadřazený prvek
+## <a name="parent-element"></a>Nadřazený element
 
-|     | Popis |
+|     | Description |
 | --- | ----------- |
-| [**\<>konfigurace**](configuration-element.md) | Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework. |
+| [**\<configuration>**](configuration-element.md) | Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework. |
 
 ## <a name="child-elements"></a>Podřízené prvky
 
-Žádný
+Žádné
 
 ## <a name="remarks"></a>Poznámky
 
-Element ** \<sectionName>** je vlastní prvek definovaný značkou [** \<section>**](section-element.md) v [** \<elementu configSections>.**](configsections-element-for-configuration.md) Konfigurační <xref:System.Collections.IDictionary> systém vrátí <xref:System.Configuration.Configuration.GetSection(System.String)?displayProperty=nameWithType>objekt při volání .
+**\<sectionName>** Element je vlastní element definovaný [**\<section>**](section-element.md) tagem v [**\<configSections>**](configsections-element-for-configuration.md) elementu. Konfigurační systém vrátí <xref:System.Collections.IDictionary> objekt při volání <xref:System.Configuration.Configuration.GetSection(System.String)?displayProperty=nameWithType> .
 
 ## <a name="example"></a>Příklad
 
-Následující příklad deklaruje vlastní prvek s názvem <xref:System.Configuration.SingleTagSectionHandler> ** \<sampleSection>,** který obsahuje nastavení přečtené třídou:
+Následující příklad deklaruje vlastní element **\<sampleSection>** s názvem, který obsahuje nastavení přečtená <xref:System.Configuration.SingleTagSectionHandler> třídou:
 
 ```xml
 <configuration>
@@ -61,8 +61,8 @@ Následující příklad deklaruje vlastní prvek s názvem <xref:System.Configu
 
 ## <a name="configuration-file"></a>Konfigurační soubor
 
-Tento prvek lze použít v konfiguračním souboru aplikace, konfiguračním souboru počítače *(Machine.config)* a souborech *Web.config,* které nejsou na úrovni adresáře aplikace.
+Tento element lze použít v konfiguračním souboru aplikace, v konfiguračním souboru počítače (*Machine. config*) a v souborech *Web. config* , které nejsou na úrovni adresáře aplikace.
 
 ## <a name="see-also"></a>Viz také
 
-- [Schéma konfiguračního souboru pro rozhraní .NET Framework](index.md)
+- [Schéma konfiguračního souboru pro .NET Framework](index.md)

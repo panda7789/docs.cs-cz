@@ -8,19 +8,19 @@ helpviewer_keywords:
 - <source> element
 - source element
 ms.openlocfilehash: 417722ce2f3865350158413307495e3ab435d386
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79153292"
 ---
-# <a name="source-element"></a>\<zdroj> Element
-Určuje zdroj trasování, který iniciuje trasování zpráv.  
+# <a name="source-element"></a>Element \<source>
+Určuje zdroj trasování, který inicializuje trasovací zprávy.  
 
-[**\<>konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[**\<system.diagnostická>**](system-diagnostics-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[**\<zdroje>**](sources-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<zdrojové>**
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.diagnostics>**](system-diagnostics-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<sources>**](sources-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<source>**
 
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,29 +38,29 @@ Určuje zdroj trasování, který iniciuje trasování zpráv.
 |Atribut|Popis|  
 |---------------|-----------------|  
 |`name`|Nepovinný atribut.<br /><br /> Určuje název zdroje trasování.|  
-|`switchName`|Nepovinný atribut.<br /><br /> Určuje název instance přepínače trasování v aplikaci. Pokud přepínač není v `<switches>` prvku identifikován, hodnota určuje úroveň přepínače.|  
-|`switchType`|Nepovinný atribut.<br /><br /> Určuje typ přepínače trasování. Pokud je k dispozici, musí být typ platný název třídy a nemůže být prázdný řetězec.|  
-|`extraAttribute`|Nepovinný atribut.<br /><br /> Určuje hodnotu atributu specifického pro zdroj <xref:System.Diagnostics.TraceSource.GetSupportedAttributes%2A> trasování identifikovaného metodou pro daný zdroj trasování.|  
+|`switchName`|Nepovinný atribut.<br /><br /> Určuje název instance přepínače trasování v aplikaci. Pokud není přepínač identifikován v `<switches>` prvku, hodnota určuje úroveň přepínače.|  
+|`switchType`|Nepovinný atribut.<br /><br /> Určuje typ přepínače trasování. Je-li k dispozici typ, musí být platný název třídy a nemůže být prázdným řetězcem.|  
+|`extraAttribute`|Nepovinný atribut.<br /><br /> Určuje hodnotu pro atribut specifický pro zdroj trasování identifikovaný <xref:System.Diagnostics.TraceSource.GetSupportedAttributes%2A> metodou pro daný zdroj trasování.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
-|Element|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
-|[\<posluchači>](listeners-element-for-source.md)|Obsahuje naslouchací procesy, které shromažďují, ukládají a směrují zprávy.|  
+|[\<listeners>](listeners-element-for-source.md)|Obsahuje naslouchací procesy, které shromažďují, ukládají a směrují zprávy.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Element|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|  
-|`system.diagnostics`|Určuje posluchače trasování, které shromažďují, ukládají a směrují zprávy, a úroveň, na které je nastaven přepínač trasování.|  
-|`sources`|Obsahuje zdroje trasování, které iniciují tracing zprávy.|  
+|`system.diagnostics`|Určuje naslouchací procesy trasování, které shromažďují, ukládají a směrují zprávy a úroveň, kde je nastaven přepínač trasování.|  
+|`sources`|Obsahuje zdroje trasování, které spouštějí trasovací zprávy.|  
   
 ## <a name="remarks"></a>Poznámky  
- Tento prvek lze použít v konfiguračním souboru počítače (Machine.config) a v konfiguračním souboru aplikace.  
+ Tento element lze použít v konfiguračním souboru počítače (Machine. config) a v konfiguračním souboru aplikace.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak `<source>` pomocí prvku přidat `mySource` zdroj trasování a nastavit `sourceSwitch`úroveň pro zdrojový přepínač s názvem . Je přidán naslouchací proces trasování konzoly, který zapisuje informace o trasování do konzoly.  
+ Následující příklad ukazuje, jak použít `<source>` element k přidání zdroje trasování `mySource` a k nastavení úrovně pro zdrojový přepínač s názvem `sourceSwitch` . Je přidán naslouchací proces trasování konzoly, který zapisuje trasovací informace do konzoly.  
   
 ```xml  
 <configuration>  

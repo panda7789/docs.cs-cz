@@ -3,23 +3,23 @@ title: Element <defaultCertificate>
 ms.date: 03/30/2017
 ms.assetid: f1ddf364-9a00-45d3-b989-ff381c154ce6
 ms.openlocfilehash: cce236bf80fa00f01a3b5f4680d975f83fde0c16
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70400418"
 ---
-# <a name="defaultcertificate-element"></a>\<defaultCertificate – element >
+# <a name="defaultcertificate-element"></a>Element \<defaultCertificate>
 Určuje certifikát X. 509, který se použije, když služba nebo STS neposkytne protokol pro vyjednávání.  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> chování**](behaviors.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<endpointBehaviors >** ](endpointbehaviors.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> chování**](behavior-of-endpointbehaviors.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> clientCredentials**](clientcredentials.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<serviceCertificate >** ](servicecertificate-of-clientcredentials-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<defaultCertificate >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<behaviors>**](behaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<endpointBehaviors>**](endpointbehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<behavior>**](behavior-of-endpointbehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<clientCredentials>**](clientcredentials.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<serviceCertificate>**](servicecertificate-of-clientcredentials-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<defaultCertificate>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,32 +37,32 @@ Určuje certifikát X. 509, který se použije, když služba nebo STS neposkytn
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|findValue|Řetezce. Hodnota, kterou chcete vyhledat.|  
+|findValue|Řetězec. Hodnota, kterou chcete vyhledat.|  
 |x509FindType|Enumeration. Jedno z polí certifikátu, které chcete vyhledat.|  
 |storeLocation|Enumeration. Jedno ze dvou umístění úložiště systému, které chcete vyhledat.|  
 |storeName|Enumeration. Jedno ze systémových úložišť, které chcete vyhledat.|  
   
 ## <a name="findvalue-attribute"></a>findValue – atribut  
   
-|Value|Popis|  
+|Hodnota|Description|  
 |-----------|-----------------|  
-|String|Hodnota závisí na poli (určené atributem X509FindType), který je prohledáván. Například pokud hledáte kryptografický otisk, hodnota musí být řetězec hexadecimálních čísel.|  
+|Řetězec|Hodnota závisí na poli (určené atributem X509FindType), který je prohledáván. Například pokud hledáte kryptografický otisk, hodnota musí být řetězec hexadecimálních čísel.|  
   
 ## <a name="x509findtype-attribute"></a>x509FindType – atribut  
   
-|Value|Popis|  
+|Hodnota|Description|  
 |-----------|-----------------|  
-|Výčet|Mezi hodnoty patří: FindByThumbprint, FindBySubjectName, FindBySubjectDistinguishedName, FindByIssuerName, FindByIssuerDistinguishedName, FindBySerialNumber, FindByTimeValid, FindByTimeNotYetValid, FindBySerialNumber, FindByTimeExpired, FindByTemplateName , FindByApplicationPolicy, FindByCertificatePolicy, FindByExtension, FindByKeyUsage, FindBySubjectKeyIdentifier.|  
+|Výčet|Mezi hodnoty patří: FindByThumbprint, FindBySubjectName, FindBySubjectDistinguishedName, FindByIssuerName, FindByIssuerDistinguishedName, FindBySerialNumber, FindByTimeValid, FindByTimeNotYetValid, FindBySerialNumber, FindByTimeExpired, FindByTemplateName, FindByApplicationPolicy, FindByCertificatePolicy, FindByExtension, FindByKeyUsage, FindBySubjectKeyIdentifier.|  
   
 ## <a name="storelocation-attribute"></a>storeLocation – atribut  
   
-|Value|Popis|  
+|Hodnota|Description|  
 |-----------|-----------------|  
 |Výčet|CurrentUser nebo LocalMachine.|  
   
 ## <a name="storename-attribute"></a>storeName – atribut  
   
-|Value|Popis|  
+|Hodnota|Description|  
 |-----------|-----------------|  
 |Výčet|Mezi hodnoty patří: AddressBook, AuthRoot, CertificateAuthority, Nepovoleno, my, root, TrustedPeople a TrustedPublisher.|  
   
@@ -71,7 +71,7 @@ Určuje certifikát X. 509, který se použije, když služba nebo STS neposkytn
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
 |[\<serviceCertificate>](servicecertificate-of-clientcredentials-element.md)|Určuje certifikát, který se má použít při ověřování služby pro klienta.|  
   
@@ -79,7 +79,7 @@ Určuje certifikát X. 509, který se použije, když služba nebo STS neposkytn
  Pro vazby, které používají zabezpečení zpráv založené na certifikátech, se certifikát zadaný pomocí tohoto elementu konfigurace používá k šifrování zpráv do služby a očekává se, že služba bude službu používat k podepisování odpovědí klientovi. Ukládá se jeden certifikát, který se použije, když služba nezadá žádný certifikát.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad určuje certifikát, který má být použit pro koncové body, jejichž `http://www.contoso.com` identifikátor URI začíná a certifikát, který má být použit pro všechny ostatní koncové body, které neprovádějí vyjednávání certifikátů.  
+ Následující příklad určuje certifikát, který má být použit pro koncové body, jejichž identifikátor URI začíná `http://www.contoso.com` a certifikát, který má být použit pro všechny ostatní koncové body, které neprovádějí vyjednávání certifikátů.  
   
 ```xml  
 <serviceCertificate>
@@ -99,12 +99,12 @@ Určuje certifikát X. 509, který se použije, když služba nebo STS neposkytn
 </serviceCertificate>
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.ServiceModel.Configuration.X509DefaultServiceCertificateElement>
 - <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential>
 - <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential.DefaultCertificate%2A>
 - [Práce s certifikáty](../../../wcf/feature-details/working-with-certificates.md)
-- [\<> ověřování](authentication-of-clientcertificate-element.md)
+- [\<authentication>](authentication-of-clientcertificate-element.md)
 - [Zabezpečení klientů](../../../wcf/securing-clients.md)
 - [Zabezpečení služeb a klientů](../../../wcf/feature-details/securing-services-and-clients.md)

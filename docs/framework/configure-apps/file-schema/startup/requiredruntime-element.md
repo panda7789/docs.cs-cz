@@ -10,19 +10,19 @@ helpviewer_keywords:
 - container tags, <requiredRuntime> element
 ms.assetid: 9fa1639e-beb8-43be-b7a4-12f7b229c34b
 ms.openlocfilehash: fe96673b95f48cb75d36662a680bf56a59363f9f
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "71697489"
 ---
-# <a name="requiredruntime-element"></a>\<element > requiredRuntime
+# <a name="requiredruntime-element"></a>\<requiredRuntime> – element
 
-Určuje, že aplikace podporuje pouze verzi 1,0 modulu CLR (Common Language Runtime). Tento prvek je zastaralý a neměl by se už používat. Místo toho by se měl použít element [`supportedRuntime`](supportedruntime-element.md) .
+Určuje, že aplikace podporuje pouze verzi 1,0 modulu CLR (Common Language Runtime). Tento prvek je zastaralý a neměl by se už používat. [`supportedRuntime`](supportedruntime-element.md)Místo toho by se měl použít element.
 
-[**Konfigurace \<>** ](../configuration-element.md)  
-&nbsp;&nbsp;[ **\<po spuštění >** ](startup-element.md)  
-&nbsp;&nbsp;&nbsp;&nbsp; **\<requiredRuntime >**  
+[**\<configuration>**](../configuration-element.md)  
+&nbsp;&nbsp;[**\<startup>**](startup-element.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;**\<requiredRuntime>**  
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -45,32 +45,32 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 ## <a name="safemode-attribute"></a>safemode – atribut
 
-|Hodnota|Popis|
+|Hodnota|Description|
 |-----------|-----------------|
-|`false`|Spouštěcí kód modulu runtime vyhledá v registru. Jedná se o výchozí hodnotu.|
+|`false`|Spouštěcí kód modulu runtime vyhledá v registru. Toto je výchozí hodnota.|
 |`true`|Spouštěcí kód modulu runtime nevypadá v registru.|
 
 ### <a name="child-elements"></a>Podřízené prvky
 
-Žádné.
+Žádné
 
 ### <a name="parent-elements"></a>Nadřazené prvky
 
-|Prvek|Popis|
+|Prvek|Description|
 |-------------|-----------------|
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|
-|`startup`|Obsahuje element `<requiredRuntime>`.|
+|`startup`|Obsahuje `<requiredRuntime>` element.|
 
 ## <a name="remarks"></a>Poznámky
- Aplikace sestavené pro podporu pouze verze 1,0 modulu runtime musí používat prvek `<requiredRuntime>`. Aplikace sestavené pomocí verze 1,1 nebo vyšší v modulu runtime musí používat element `<supportedRuntime>`.
+ Aplikace sestavené pro podporu pouze verze 1,0 modulu runtime musí používat `<requiredRuntime>` element. Aplikace sestavené pomocí verze 1,1 nebo novější v modulu runtime musí používat `<supportedRuntime>` element.
 
 > [!NOTE]
-> Použijete-li funkci [CorBindToRuntimeByCfg –](../../../unmanaged-api/hosting/corbindtoruntimebycfg-function.md) k určení konfiguračního souboru, je nutné použít element `<requiredRuntime>` pro všechny verze modulu runtime. Element `<supportedRuntime>` se při použití [CorBindToRuntimeByCfg –](../../../unmanaged-api/hosting/corbindtoruntimebycfg-function.md)ignoruje.
+> Použijete-li funkci [CorBindToRuntimeByCfg –](../../../unmanaged-api/hosting/corbindtoruntimebycfg-function.md) k určení konfiguračního souboru, je nutné použít `<requiredRuntime>` element pro všechny verze modulu runtime. `<supportedRuntime>`Element je ignorován při použití [CorBindToRuntimeByCfg –](../../../unmanaged-api/hosting/corbindtoruntimebycfg-function.md).
 
- Řetězec atributu `version` musí odpovídat názvu instalační složky pro zadanou verzi .NET Framework. Tento řetězec není interpretován. Pokud spouštěcí kód modulu runtime nenajde shodnou složku, modul runtime není načten. spouštěcí kód ukazuje chybovou zprávu a ukončí se.
+ `version`Řetězec atributu musí odpovídat názvu instalační složky pro zadanou verzi .NET Framework. Tento řetězec není interpretován. Pokud spouštěcí kód modulu runtime nenajde shodnou složku, modul runtime není načten. spouštěcí kód ukazuje chybovou zprávu a ukončí se.
 
 > [!NOTE]
-> Spouštěcí kód pro aplikaci, která je hostována v aplikaci Microsoft Internet Explorer, ignoruje prvek `<requiredRuntime>`.
+> Spouštěcí kód pro aplikaci, která je hostována v aplikaci Microsoft Internet Explorer, ignoruje `<requiredRuntime>` prvek.
 
 ## <a name="example"></a>Příklad
 
@@ -84,7 +84,7 @@ Následující příklad ukazuje, jak určit verzi modulu runtime v konfiguračn
 </configuration>
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Schéma nastavení spouštění](index.md)
 - [Schéma konfiguračního souboru](../index.md)

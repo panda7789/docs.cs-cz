@@ -1,5 +1,5 @@
 ---
-title: Element <add> pro <schemaImporterExtensions>
+title: <add> – element pro <schemaImporterExtensions>
 description: <add>Element přidá typy používané třídou XmlSchemaImporter pro mapování typů XSD na .NET Framework typy.
 ms.date: 03/30/2017
 helpviewer_keywords:
@@ -7,13 +7,13 @@ helpviewer_keywords:
 - <add> element for <schemaImporterExtensions> element
 ms.assetid: c828a558-094b-441e-9065-790b87315fa0
 ms.openlocfilehash: 6fd8113ad39a22c927035fca574151ae8f002685
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "84288326"
 ---
-# <a name="add-element-for-schemaimporterextensions"></a>Element \<add> pro \<schemaImporterExtensions>
+# <a name="add-element-for-schemaimporterextensions"></a>\<add> – element pro \<schemaImporterExtensions>
 Přidá typy používané <xref:System.Xml.Serialization.XmlSchemaImporter> pro mapování typů XSD na typy rozhraní .NET Framework. Další informace o konfiguračních souborech najdete v tématu [Schéma konfiguračního souboru](../../framework/configure-apps/file-schema/index.md).  
   
  \<configuration>  
@@ -42,7 +42,7 @@ Přidá typy používané <xref:System.Xml.Serialization.XmlSchemaImporter> pro 
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
 |\<schemaImporterExtensions>|Obsahuje typy, které jsou používány <xref:System.Xml.Serialization.XmlSchemaImporter>.|  
   

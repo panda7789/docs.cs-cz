@@ -8,10 +8,10 @@ helpviewer_keywords:
 - <dateTimeSerialization> element
 ms.assetid: 90fda55c-7730-41e9-bc4b-6423a4b920af
 ms.openlocfilehash: a2684ab72c1fb109d711e333e01836d3399caf86
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "84289639"
 ---
 # <a name="datetimeserialization-element"></a>Element \<dateTimeSerialization>
@@ -33,7 +33,7 @@ Určuje režim serializace <xref:System.DateTime> objekty.
   
 ### <a name="attributes"></a>Atributy  
   
-|Atributy|Popis|  
+|Atributy|Description|  
 |----------------|-----------------|  
 |`mode`|Nepovinný parametr. Určuje režim serializace. Nastavte na jednu z <xref:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode> hodnoty. Výchozí hodnota je **zpáteční**.|  
   
@@ -42,7 +42,7 @@ Určuje režim serializace <xref:System.DateTime> objekty.
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
 |System.XML.Serialization|Element nejvyšší úrovně pro řízení serializace XML.|  
   

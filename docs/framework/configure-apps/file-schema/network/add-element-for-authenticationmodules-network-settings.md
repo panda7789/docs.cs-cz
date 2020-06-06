@@ -11,19 +11,19 @@ helpviewer_keywords:
 - <add> element, authenticationModules
 ms.assetid: 333c5fb0-a2ab-4db8-8531-a7fe37bb9b5b
 ms.openlocfilehash: 4181a045079bdb455a63ebda722dd6b0daf33c4d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79155112"
 ---
-# <a name="add-element-for-authenticationmodules-network-settings"></a>\<přidat prvek> pro autentizační moduly (nastavení sítě)
-Přidá do aplikace ověřovací modul.  
+# <a name="add-element-for-authenticationmodules-network-settings"></a>\<add> – element pro authenticationModules (nastavení sítě)
+Přidá do aplikace modul ověřování.  
 
-[**\<>konfigurace**](../configuration-element.md)\
+[**\<configuration>**](../configuration-element.md)\
 &nbsp;&nbsp;[**\<system.net>**](system-net-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[**\<autentizační moduly>**](authenticationmodules-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<přidat>**
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<authenticationModules>**](authenticationmodules-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<add>**
 
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,27 +40,27 @@ Přidá do aplikace ověřovací modul.
   
 |**Atribut**|**Popis**|  
 |-------------------|---------------------|  
-|`type`|Plně kvalifikovaný název typu (označený <xref:System.Type.FullName%2A> vlastností) a název sestavení <xref:System.Reflection.Assembly.FullName%2A> (označený vlastností), oddělený čárkou.|  
+|`type`|Plně kvalifikovaný název typu (uvedený <xref:System.Type.FullName%2A> vlastností) a název sestavení (označeno <xref:System.Reflection.Assembly.FullName%2A> vlastností), oddělené čárkou.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádné.  
+ Žádné  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|**Element**|**Popis**|  
+|**Objekt**|**Popis**|  
 |-----------------|---------------------|  
-|[autentizační moduly](authenticationmodules-element-network-settings.md)|Určuje moduly používané k ověřování síťových požadavků.|  
+|[authenticationModules](authenticationmodules-element-network-settings.md)|Určuje moduly používané pro ověřování síťových požadavků.|  
   
 ## <a name="remarks"></a>Poznámky  
- Prvek `add` přidá ověřovací modul na konec seznamu registrovaných ověřovacích modulů. Ověřovací moduly jsou volány v pořadí, ve kterém byly přidány do seznamu.  
+ `add`Element přidá ověřovací modul na konec seznamu registrovaných ověřovacích modulů. Moduly ověřování jsou volány v pořadí, ve kterém byly přidány do seznamu.  
   
- Hodnota atributu `type` by měla být platný název typu a odpovídající název sestavení oddělený čárkou.  
+ Hodnota `type` atributu by měla být platný název typu a odpovídající název sestavení oddělený čárkou.  
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
- Tento prvek lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine.config).  
+ Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine. config).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad umožňuje výchozí ověřovací moduly. Hodnoty Version a PublicKeyToken byste měli nahradit správnými hodnotami pro zadaný modul.  
+ Následující příklad povoluje výchozí moduly ověřování. Hodnoty pro Version a PublicKeyToken byste měli nahradit správnými hodnotami pro zadaný modul.  
   
 ```xml  
 <configuration>  

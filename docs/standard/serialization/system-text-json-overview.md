@@ -11,10 +11,10 @@ helpviewer_keywords:
 - serialization
 - objects, serializing
 ms.openlocfilehash: 909d979d46b30939e304af071de65d230febd92d
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/13/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "83380129"
 ---
 # <a name="json-serialization-and-deserialization-marshalling-and-unmarshalling-in-net---overview"></a>Serializace a deserializace JSON (zařazení a zrušení zařazení) v .NET – přehled
@@ -33,7 +33,7 @@ Knihovna také poskytuje třídy pro práci s modelem objektů dokumentů v pam�
   * .NET Framework 4.7.2 a novější verze
   * .NET Core 2,0, 2,1 a 2,2
 
-## <a name="additional-resources"></a>Další materiály a zdroje informací
+## <a name="additional-resources"></a>Další zdroje
 
 * [Jak používat knihovnu](system-text-json-how-to.md)
 * [Postup migrace zNewtonsoft.Json](system-text-json-migrate-from-newtonsoft-how-to.md)

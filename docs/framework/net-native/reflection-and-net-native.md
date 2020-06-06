@@ -3,10 +3,10 @@ title: Reflexe a .NET Native
 ms.date: 03/30/2017
 ms.assetid: 91c9eae4-c641-476c-a06e-d7ce39709763
 ms.openlocfilehash: 65921377be9b8bf1c2d147b384c85cbd037d15f2
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73128189"
 ---
 # <a name="reflection-and-net-native"></a>Reflexe a .NET Native
@@ -21,7 +21,7 @@ V .NET Framework podporuje spravovaný vývoj metaprogramování šablonou prost
 > [!NOTE]
 > Přehled procesu kompilace .NET Native, který poskytuje základní informace o tom, proč je soubor direktiv modulu runtime potřebný, naleznete v tématu [.NET Native a kompilace](net-native-and-compilation.md).  
   
- Kromě toho .NET Native neumožňuje odrážet soukromé členy knihovny tříd .NET Framework. Například volání vlastnosti <xref:System.Reflection.TypeInfo.DeclaredFields%2A?displayProperty=nameWithType> pro načtení polí .NET Framework typu knihovny tříd vrátí pouze veřejná nebo chráněná pole.  
+ Kromě toho .NET Native neumožňuje odrážet soukromé členy knihovny tříd .NET Framework. Například volání <xref:System.Reflection.TypeInfo.DeclaredFields%2A?displayProperty=nameWithType> vlastnosti pro načtení polí typu knihovny třídy .NET Framework vrátí pouze veřejná nebo chráněná pole.  
   
  Následující témata popisují koncepční a referenční dokumentaci, kterou potřebujete pro podporu reflexe a serializace v aplikacích:  
   
@@ -31,7 +31,7 @@ V .NET Framework podporuje spravovaný vývoj metaprogramování šablonou prost
   
 - [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Kompilování aplikací pomocí .NET Native](index.md)
 - [.NET Native a kompilace](net-native-and-compilation.md)

@@ -3,22 +3,22 @@ title: <security> z <peerTransport>
 ms.date: 03/30/2017
 ms.assetid: f73634ed-f896-4968-bf74-5e5ac52d3b6b
 ms.openlocfilehash: 270ca844f586be256b6483653c868d1cc4396657
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70399767"
 ---
-# <a name="security-of-peertransport"></a>\<> zabezpečení > \<peerTransport
+# <a name="security-of-peertransport"></a>\<security> z \<peerTransport>
 Obsahuje nastavení zabezpečení související s rovnocenným kanálem, včetně typu použitého ověřování a zabezpečení používaného pro přenos zpráv.  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> vazeb**](bindings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<customBinding >** ](custombinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> vazby**\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<peerTransport >** ](peertransport.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> zabezpečení**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<bindings>**](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<customBinding>**](custombinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<binding>**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<peerTransport>**](peertransport.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<security>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,11 +35,11 @@ Obsahuje nastavení zabezpečení související s rovnocenným kanálem, včetn�
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`mode`|Určuje typ zabezpečení, který má být použit. Výchozí hodnota je zpráva. Tento atribut je typu <xref:System.ServiceModel.SecurityMode>.|  
+|`mode`|Určuje typ zabezpečení, který má být použit. Výchozí hodnota je zpráva. Tento atribut je typu <xref:System.ServiceModel.SecurityMode> .|  
   
 ## <a name="mode-attribute"></a>mode – atribut  
   
-|Value|Popis|  
+|Hodnota|Description|  
 |-----------|-----------------|  
 |`None`|Zabezpečení je zakázané.|  
 |`Transport`|Zabezpečení je k dispozici pomocí protokolu HTTPS.|  
@@ -48,17 +48,17 @@ Obsahuje nastavení zabezpečení související s rovnocenným kanálem, včetn�
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
-|[\<> přenosu](transport-of-peertransport.md)|Definuje partnerský přenos pro vlastní vazbu. Tento prvek má `clientCredentialType` atribut, který určuje pověření, která mají být použita při interakci se službou. Tento atribut je typu <xref:System.ServiceModel.PeerTransportCredentialType>.<br /><br /> Tento prvek je typu <xref:System.ServiceModel.Configuration.PeerTransportSecurityElement>.|  
+|[\<transport>](transport-of-peertransport.md)|Definuje partnerský přenos pro vlastní vazbu. Tento prvek má `clientCredentialType` atribut, který určuje pověření, která mají být použita při interakci se službou. Tento atribut je typu <xref:System.ServiceModel.PeerTransportCredentialType> .<br /><br /> Tento prvek je typu <xref:System.ServiceModel.Configuration.PeerTransportSecurityElement> .|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
-|[\<peerTransport >](peertransport.md)|Definuje partnerský přenos pro vlastní vazbu.|  
+|[\<peerTransport>](peertransport.md)|Definuje partnerský přenos pro vlastní vazbu.|  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.ServiceModel.Configuration.PeerSecurityElement>
 - <xref:System.ServiceModel.PeerSecuritySettings>

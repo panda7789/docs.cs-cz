@@ -10,18 +10,18 @@ helpviewer_keywords:
 - startup element
 ms.assetid: 536acfd8-f827-452f-838a-e14fa3b87621
 ms.openlocfilehash: e936c069275bfa9f7ac81ef1c6fc6228828182a8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79153725"
 ---
-# <a name="startup-element"></a>\<spouštěcí> prvek
+# <a name="startup-element"></a>\<startup> – element
 
-Určuje informace o spuštění běžného jazyka.
+Určuje informace o spuštění společného jazykového modulu runtime.
 
-[**\<>konfigurace**](../configuration-element.md)  
-&nbsp;&nbsp;**\<>pro spuštění**  
+[**\<configuration>**](../configuration-element.md)  
+&nbsp;&nbsp;**\<startup>**  
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -30,7 +30,7 @@ Určuje informace o spuštění běžného jazyka.
 </startup>
 ```
 
-## <a name="attributes-and-elements"></a>Atributy a prvky
+## <a name="attributes-and-elements"></a>Atributy a elementy
 
  Následující části popisují atributy, podřízené prvky a nadřazené prvky.
 
@@ -38,44 +38,44 @@ Určuje informace o spuštění běžného jazyka.
 
 |Atribut|Popis|
 |---------------|-----------------|
-|`useLegacyV2RuntimeActivationPolicy`|Nepovinný atribut.<br /><br /> Určuje, zda má být povolena zásada aktivace za běhu rozhraní .NET Framework 2.0 nebo zda se mají použít zásady aktivace rozhraní .NET Framework 4.|
+|`useLegacyV2RuntimeActivationPolicy`|Nepovinný atribut.<br /><br /> Určuje, jestli se má povolit zásada aktivace modulu runtime .NET Framework 2,0 nebo jestli se mají používat zásady aktivace .NET Framework 4.|
 
-## <a name="uselegacyv2runtimeactivationpolicy-attribute"></a>useLegacyV2RuntimeActivationPolicy, atribut
+## <a name="uselegacyv2runtimeactivationpolicy-attribute"></a>useLegacyV2RuntimeActivationPolicy – atribut
 
-|Hodnota|Popis|
+|Hodnota|Description|
 |-----------|-----------------|
-|`true`|Povolte zásady aktivace runtime rozhraní .NET Framework 2.0 pro zvolený běhový čas, kterým je svázání starších technik aktivace runtime (například [funkce CorBindToRuntimeEx)](../../../unmanaged-api/hosting/corbindtoruntimeex-function.md)s runtime vybraným z konfiguračního souboru namísto jejich omezení pomocí clr verze 2.0. Pokud je tedy z konfiguračního souboru vybrána verze CLR verze 4 nebo novější, jsou sestavení v kombinovaném režimu vytvořená s dřívějšími verzemi rozhraní .NET Framework načtena s vybranou verzí CLR. Nastavení této hodnoty zabrání clr verze 1.1 nebo CLR verze 2.0 z načtení do stejného procesu, účinně zakázání funkce v procesu side-by-side.|
-|`false`|Použijte výchozí zásady aktivace pro rozhraní .NET Framework 4 a novější, což je umožnit starší mandatorní aktivační techniky pro načtení CLR verze 1.1 nebo 2.0 do procesu. Nastavení této hodnoty zabrání načtení sestavení v smíšeném režimu do rozhraní .NET Framework 4 nebo novější, pokud nebyly vytvořeny s rozhraním .NET Framework 4 nebo novějším. Tato hodnota je výchozí.|
+|`true`|Povolte Zásady aktivace modulu runtime .NET Framework 2,0 pro zvolený modul runtime, který je vázán na modul runtime, který se vybere z konfiguračního souboru, namísto [capping na CLR](../../../unmanaged-api/hosting/corbindtoruntimeex-function.md)verze 2,0. Proto pokud je CLR verze 4 nebo novější zvolen z konfiguračního souboru, jsou sestavení se smíšeným režimem vytvořená se staršími verzemi .NET Framework načtena se zvolenou verzí modulu CLR. Nastavením této hodnoty zabráníte načtení CLR verze 1,1 nebo CLR verze 2,0 do stejného procesu a efektivně tak zakážete souběžnou funkci v rámci procesu.|
+|`false`|Použijte výchozí zásady aktivace pro .NET Framework 4 a novější, což znamená, že je možné do procesu načíst modul CLR verze 1,1 nebo 2,0. Nastavení této hodnoty zabrání načtení sestavení se smíšeným režimem do .NET Framework 4 nebo novějším, pokud se nevytvořila s .NET Framework 4 nebo novějším. Tato hodnota je výchozí.|
 
 ### <a name="child-elements"></a>Podřízené prvky
 
-|Element|Popis|
+|Prvek|Description|
 |-------------|-----------------|
-|[\<požadovaná>běhu](requiredruntime-element.md)|Určuje, že aplikace podporuje pouze verzi 1.0 běžného jazykového běhu. Aplikace vytvořené s runtime verze 1.1 nebo novější by měl y použít ** \<supportedRuntime>** element.|
-|[\<podporované>modulu Runtime](supportedruntime-element.md)|Určuje, kterou verzi modulu Common Language Runtime (CLR) aplikace podporuje.|
+|[\<requiredRuntime>](requiredruntime-element.md)|Určuje, že aplikace podporuje pouze verzi 1,0 modulu CLR (Common Language Runtime). Aplikace sestavené s modulem runtime verze 1,1 nebo novější by měly používat **\<supportedRuntime>** element.|
+|[\<supportedRuntime>](supportedruntime-element.md)|Určuje, kterou verzi modulu Common Language Runtime (CLR) aplikace podporuje.|
 
 ### <a name="parent-elements"></a>Nadřazené prvky
 
-|Element|Popis|
+|Prvek|Description|
 |-------------|-----------------|
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|
 
 ## <a name="remarks"></a>Poznámky
 
- Prvek ** \<supportedRuntime>** by měl být používán všemi aplikacemi vytvořenými pomocí verze 1.1 nebo novější modulu runtime. Aplikace vytvořené pro podporu pouze verze 1.0 runtime musí používat ** \<prvek requiredRuntime>.**
+ **\<supportedRuntime>** Element by měl být použit všemi aplikacemi sestavenými pomocí verze 1,1 nebo novější. Aplikace sestavené pro podporu pouze verze 1,0 modulu runtime musí používat **\<requiredRuntime>** element.
 
- Spouštěcí kód aplikace hostované v aplikaci Microsoft Internet Explorer ignoruje ** \<spouštěcí>** prvek a jeho podřízené prvky.
+ Spouštěcí kód pro aplikaci hostovanou v aplikaci Microsoft Internet Explorer ignoruje **\<startup>** prvek a jeho podřízené prvky.
 
 ## <a name="the-uselegacyv2runtimeactivationpolicy-attribute"></a>Atribut useLegacyV2RuntimeActivationPolicy
 
- Tento atribut je užitečný, pokud vaše aplikace používá starší aktivační cesty, jako je například [funkce CorBindToRuntimeEx](../../../unmanaged-api/hosting/corbindtoruntimeex-function.md), a chcete, aby tyto cesty aktivovaly verzi 4 CLR namísto starší verze, nebo pokud je aplikace vytvořena s rozhraním .NET Framework 4, ale má závislost na sestavení ve smíšeném režimu vytvořeném se starší verzí rozhraní .NET Framework. V těchto scénářích nastavte `true`atribut .
+ Tento atribut je užitečný, pokud vaše aplikace používá starší aktivační cesty, jako je [funkce CorBindToRuntimeEx –](../../../unmanaged-api/hosting/corbindtoruntimeex-function.md), a chcete, aby tyto cesty aktivovaly verzi 4 CLR namísto dřívější verze, nebo pokud je vaše aplikace sestavená s .NET Framework 4, ale má závislost na sestavení se smíšeným režimem sestaveným pomocí dřívější verze .NET Framework. V těchto scénářích nastavte atribut na `true` .
 
 > [!NOTE]
-> Nastavení atributu `true` zabránit CLR verze 1.1 nebo CLR verze 2.0 z načtení do stejného procesu, účinně zakázání v procesu side-by-side funkce (viz [Side-by-Side provedení pro COM Interop).](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/8t8td04t(v=vs.100))
+> Nastavením atributu `true` zabráníte, aby CLR verze 1,1 nebo CLR verze 2,0 z načtení do stejného procesu, čímž efektivně zakážete souběžnou funkci v rámci procesu (viz [Souběžné spouštění pro zprostředkovatele komunikace s objekty COM](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/8t8td04t(v=vs.100))).
 
 ## <a name="example"></a>Příklad
 
- Následující příklad ukazuje, jak zadat verzi runtime v konfiguračním souboru.
+ Následující příklad ukazuje, jak určit verzi modulu runtime v konfiguračním souboru.
 
 ```xml
 <!-- When used with version 1.0 of the .NET Framework runtime -->
@@ -97,6 +97,6 @@ Určuje informace o spuštění běžného jazyka.
 
 - [Schéma nastavení spouštění](index.md)
 - [Schéma konfiguračního souboru](../index.md)
-- [Postup: Konfigurace aplikace pro podporu rozhraní .NET Framework 4 nebo novějších verzí](../../../migration-guide/how-to-configure-an-app-to-support-net-framework-4-or-4-5.md)
-- [Souběžné provádění pro kominterop](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/8t8td04t(v=vs.100))
+- [Postupy: Konfigurace aplikace pro podporu .NET Framework 4 nebo novějších verzí](../../../migration-guide/how-to-configure-an-app-to-support-net-framework-4-or-4-5.md)
+- [Souběžné spouštění pro zprostředkovatele komunikace s objekty COM](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/8t8td04t(v=vs.100))
 - [Vnitroprocesové souběžné provádění](../../../deployment/in-process-side-by-side-execution.md)

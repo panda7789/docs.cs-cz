@@ -3,19 +3,19 @@ title: <idn> – element (nastavení URI)
 ms.date: 03/30/2017
 ms.assetid: 16c8e869-1791-4cf5-9244-3d3c738f60ec
 ms.openlocfilehash: 533b2562f6e5c8d6c2bf452e56dff9a8bf8ab376
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "71698161"
 ---
-# <a name="idn-element-uri-settings"></a>\<element IDN > (nastavení URI)
+# <a name="idn-element-uri-settings"></a>\<idn> – element (nastavení URI)
 
 Určuje, jestli se má pro název domény použít analýza v mezinárodním názvu domény (IDN).
   
-[**Konfigurace \<>** ](../configuration-element.md)  
-&nbsp;&nbsp;[ **\<URI >** ](uri-element-uri-settings.md)  
-&nbsp;&nbsp;&nbsp;&nbsp; **\<idn >**  
+[**\<configuration>**](../configuration-element.md)  
+&nbsp;&nbsp;[**\<uri>**](uri-element-uri-settings.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;**\<idn>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -30,7 +30,7 @@ Určuje, jestli se má pro název domény použít analýza v mezinárodním ná
   
 ### <a name="attributes"></a>Atributy  
 
-|**Element**|**Popis**|  
+|**Objekt**|**Popis**|  
 |-----------------|---------------------|  
 |`enabled`|Určuje, jestli se pro název domény použije analýza v mezinárodní doméně (IDN). výchozí hodnota je None.|  
 
@@ -40,13 +40,13 @@ Určuje, jestli se má pro název domény použít analýza v mezinárodním ná
   
 ### <a name="parent-elements"></a>Nadřazené prvky
 
-|**Element**|**Popis**|  
+|**Objekt**|**Popis**|  
 |-----------------|---------------------|  
 |[identifikátor URI](uri-element-uri-settings.md)|Obsahuje nastavení, která určují, jak .NET Framework zpracovává webové adresy vyjádřené pomocí identifikátorů URI (Uniform Resource Identifier).|  
 
 ## <a name="remarks"></a>Poznámky
 
-Existující třída <xref:System.Uri> byla rozšířena v .NET Framework 3,5. 3,0 SP1 a 2,0 SP1 s podporou pro mezinárodní identifikátory prostředků (IRI) a mezinárodní názvy domén (IDN). Stávajícím uživatelům se nezobrazí žádná změna v .NET Framework 2,0, pokud výslovně nepovolí podporu IRI a IDN. Tím zajistíte kompatibilitu aplikace s předchozími verzemi .NET Framework.
+Existující <xref:System.Uri> Třída se rozšířila v .NET Framework 3,5. 3,0 SP1 a 2,0 SP1 s podporou pro mezinárodní identifikátory prostředků (IRI) a mezinárodní názvy domén (IDN). Stávajícím uživatelům se nezobrazí žádná změna v .NET Framework 2,0, pokud výslovně nepovolí podporu IRI a IDN. Tím zajistíte kompatibilitu aplikace s předchozími verzemi .NET Framework.
 
 Pokud chcete povolit podporu pro IRI, vyžadují se tyto dvě změny:
 
@@ -80,7 +80,7 @@ Tento element lze použít v konfiguračním souboru aplikace nebo v konfigurač
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje konfiguraci, kterou používá třída <xref:System.Uri> pro podporu analýzy IRI a názvů IDN:
+Následující příklad ukazuje konfiguraci, kterou <xref:System.Uri> Třída používá pro podporu IRIch analýz a názvů IDN:
 
 ```xml
 <configuration>
@@ -91,7 +91,7 @@ Následující příklad ukazuje konfiguraci, kterou používá třída <xref:Sy
 </configuration>
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Configuration.IdnElement?displayProperty=nameWithType>
 - <xref:System.Configuration.UriSection?displayProperty=nameWithType>

@@ -3,18 +3,18 @@ title: <diagnostics>
 ms.date: 03/30/2017
 ms.assetid: 0c2f95c4-cc12-4fb5-a70c-7fc6fa95db58
 ms.openlocfilehash: 2749bc6c66d491a8a160d98b508fb43aa027b806
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70398042"
 ---
-# <a name="diagnostics"></a>\<> diagnostiky
-`diagnostics` Prvek definuje nastavení, které může být použito správcem pro kontrolu a kontrolu v době běhu.  
+# \<diagnostics>
+`diagnostics`Prvek definuje nastavení, které může být použito správcem pro kontrolu a kontrolu v době běhu.  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<> diagnostiky**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<diagnostics>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -48,24 +48,24 @@ ms.locfileid: "70398042"
 |Atribut|Popis|  
 |---------------|-----------------|  
 |etwProviderId|Řetězec určující identifikátor poskytovatele trasování událostí, který zapisuje události do relací ETW.|  
-|Čítače výkonu|Určuje, zda jsou povoleny čítače výkonu pro sestavení. Platné hodnoty jsou<br /><br /> Zaokrouhl Čítače výkonu jsou zakázané.<br />- ServiceOnly: Jsou povoleny pouze čítače výkonu relevantní pro tuto službu.<br />Všem Čítače výkonu lze zobrazit za běhu.<br />Výchozí Vytvoří se jedna instance čítače výkonu _WCF_Admin. Tato instance slouží k povolení shromažďování dat technologie SQM pro použití v infrastruktuře. Žádná z hodnot čítače této instance není aktualizována, a proto zůstane nula. Toto je výchozí hodnota, pokud není pro WCF k dispozici žádná konfigurace.|  
-|wmiProviderEnabled|Logická hodnota určující, zda je povolen zprostředkovatel rozhraní WMI pro sestavení. Zprostředkovatel rozhraní WMI je nutný pro uživatele, aby získal přístup k kontrolním a kontrolním funkcím Windows Communication Foundation (WCF) za běhu. Výchozí hodnota je `false`.|  
+|Čítače výkonu|Určuje, zda jsou povoleny čítače výkonu pro sestavení. Platné hodnoty jsou<br /><br /> -Off: čítače výkonu jsou zakázané.<br />-ServiceOnly: jsou povoleny pouze čítače výkonu relevantní pro tuto službu.<br />-All: čítače výkonu lze zobrazit za běhu.<br />-Default: je vytvořená jediná instance čítače výkonu _WCF_Admin. Tato instance slouží k povolení shromažďování dat technologie SQM pro použití v infrastruktuře. Žádná z hodnot čítače této instance není aktualizována, a proto zůstane nula. Toto je výchozí hodnota, pokud není pro WCF k dispozici žádná konfigurace.|  
+|wmiProviderEnabled|Logická hodnota určující, zda je povolen zprostředkovatel rozhraní WMI pro sestavení. Zprostředkovatel rozhraní WMI je nutný pro uživatele, aby získal přístup k kontrolním a kontrolním funkcím Windows Communication Foundation (WCF) za běhu. Výchozí formát je `false`.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
-|[\<endToEndTracing >](endtoendtracing.md)|Prvek konfigurace, který umožňuje povolit nebo zakázat různé aspekty komplexního trasování během běžící aplikace služby.|  
-|[\<messageLogging >](messagelogging.md)|Popisuje nastavení pro protokolování zpráv WCF.|  
+|[\<endToEndTracing>](endtoendtracing.md)|Prvek konfigurace, který umožňuje povolit nebo zakázat různé aspekty komplexního trasování během běžící aplikace služby.|  
+|[\<messageLogging>](messagelogging.md)|Popisuje nastavení pro protokolování zpráv WCF.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
 |serviceModel|Kořenový element všech elementů konfigurace služby WCF.|  
   
 ## <a name="remarks"></a>Poznámky  
- `diagnostics` Oddíl definuje nastavení diagnostiky pro všechny služby, které jsou umístěny v sestavení. Není možné definovat samostatné nastavení diagnostiky na úrovni služby, pokud v sestavení není pouze jedna služba. Atributy jsou nastaveny podle požadavků oddílu.  
+ `diagnostics`Oddíl definuje nastavení diagnostiky pro všechny služby, které jsou umístěny v sestavení. Není možné definovat samostatné nastavení diagnostiky na úrovni služby, pokud v sestavení není pouze jedna služba. Atributy jsou nastaveny podle požadavků oddílu.  
   
 ## <a name="example"></a>Příklad  
   
@@ -85,7 +85,7 @@ ms.locfileid: "70398042"
 </diagnostics>
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.ServiceModel.Configuration.DiagnosticSection>
 - <xref:System.ServiceModel.Diagnostics>
