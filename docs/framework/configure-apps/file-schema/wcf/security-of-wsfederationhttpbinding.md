@@ -3,23 +3,23 @@ title: <security> z <wsFederationHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: a8e5e854-b8dc-4921-843d-34b6a4a6a8ba
 ms.openlocfilehash: ea029444cee331a235c7a2fc140b4321d7530063
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73736325"
 ---
-# <a name="security-of-wsfederationhttpbinding"></a><span data-ttu-id="5b7e6-102">> \<zabezpečení \<wsFederationHttpBinding ></span><span class="sxs-lookup"><span data-stu-id="5b7e6-102">\<security> of \<wsFederationHttpBinding></span></span>
-<span data-ttu-id="5b7e6-103">Definuje nastavení zabezpečení [\<wsFederationHttpBinding >](wsfederationhttpbinding.md).</span><span class="sxs-lookup"><span data-stu-id="5b7e6-103">Defines the security settings of the [\<wsFederationHttpBinding>](wsfederationhttpbinding.md).</span></span>  
+# <a name="security-of-wsfederationhttpbinding"></a><span data-ttu-id="b6301-102">\<security> z \<wsFederationHttpBinding></span><span class="sxs-lookup"><span data-stu-id="b6301-102">\<security> of \<wsFederationHttpBinding></span></span>
+<span data-ttu-id="b6301-103">Definuje nastavení zabezpečení [\<wsFederationHttpBinding>](wsfederationhttpbinding.md) .</span><span class="sxs-lookup"><span data-stu-id="b6301-103">Defines the security settings of the [\<wsFederationHttpBinding>](wsfederationhttpbinding.md).</span></span>  
   
-<span data-ttu-id="5b7e6-104">[ **\<configuration >** ](../configuration-element.md) </span><span class="sxs-lookup"><span data-stu-id="5b7e6-104">[**\<configuration>**](../configuration-element.md)</span></span>\
-<span data-ttu-id="5b7e6-105">&nbsp; &nbsp;[ **\<system. serviceModel >** ](system-servicemodel.md) </span><span class="sxs-lookup"><span data-stu-id="5b7e6-105">&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)</span></span>\
-<span data-ttu-id="5b7e6-106">&nbsp;&nbsp;&nbsp;&nbsp;[ **\<vazeb >** ](bindings.md)</span><span class="sxs-lookup"><span data-stu-id="5b7e6-106">&nbsp;&nbsp;&nbsp;&nbsp;[**\<bindings>**](bindings.md)</span></span>\
-<span data-ttu-id="5b7e6-107">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<wsFederationHttpBinding >** ](wsfederationhttpbinding.md)</span><span class="sxs-lookup"><span data-stu-id="5b7e6-107">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<wsFederationHttpBinding>**](wsfederationhttpbinding.md)</span></span>\
-<span data-ttu-id="5b7e6-108">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<vazeb >** </span><span class="sxs-lookup"><span data-stu-id="5b7e6-108">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<binding>**</span></span>\
-<span data-ttu-id="5b7e6-109">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<zabezpečení >**</span><span class="sxs-lookup"><span data-stu-id="5b7e6-109">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<security>**</span></span>  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<bindings>**](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<wsFederationHttpBinding>**](wsfederationhttpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<binding>**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<security>**  
   
-## <a name="syntax"></a><span data-ttu-id="5b7e6-110">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="5b7e6-110">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="b6301-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b6301-104">Syntax</span></span>  
   
 ```xml  
 <wsFederationBinding>
@@ -79,45 +79,45 @@ ms.locfileid: "73736325"
 </wsFederationBinding>
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="5b7e6-111">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="5b7e6-111">Attributes and Elements</span></span>  
- <span data-ttu-id="5b7e6-112">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="5b7e6-112">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="b6301-105">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="b6301-105">Attributes and Elements</span></span>  
+ <span data-ttu-id="b6301-106">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="b6301-106">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="5b7e6-113">Atributy</span><span class="sxs-lookup"><span data-stu-id="5b7e6-113">Attributes</span></span>  
+### <a name="attributes"></a><span data-ttu-id="b6301-107">Atributy</span><span class="sxs-lookup"><span data-stu-id="b6301-107">Attributes</span></span>  
   
-|<span data-ttu-id="5b7e6-114">Atribut</span><span class="sxs-lookup"><span data-stu-id="5b7e6-114">Attribute</span></span>|<span data-ttu-id="5b7e6-115">Popis</span><span class="sxs-lookup"><span data-stu-id="5b7e6-115">Description</span></span>|  
+|<span data-ttu-id="b6301-108">Atribut</span><span class="sxs-lookup"><span data-stu-id="b6301-108">Attribute</span></span>|<span data-ttu-id="b6301-109">Popis</span><span class="sxs-lookup"><span data-stu-id="b6301-109">Description</span></span>|  
 |---------------|-----------------|  
-|<span data-ttu-id="5b7e6-116">Režim</span><span class="sxs-lookup"><span data-stu-id="5b7e6-116">Mode</span></span>|<span data-ttu-id="5b7e6-117">Volitelné.</span><span class="sxs-lookup"><span data-stu-id="5b7e6-117">Optional.</span></span> <span data-ttu-id="5b7e6-118">Určuje typ zabezpečení, který se použije.</span><span class="sxs-lookup"><span data-stu-id="5b7e6-118">Specifies the type of security that is applied.</span></span> <span data-ttu-id="5b7e6-119">Výchozí hodnota je `Message`.</span><span class="sxs-lookup"><span data-stu-id="5b7e6-119">The default value is `Message`.</span></span> <span data-ttu-id="5b7e6-120">Tento atribut je typu <xref:System.ServiceModel.WSFederationHttpSecurityMode>.</span><span class="sxs-lookup"><span data-stu-id="5b7e6-120">This attribute is of type <xref:System.ServiceModel.WSFederationHttpSecurityMode>.</span></span>|  
+|<span data-ttu-id="b6301-110">Mode</span><span class="sxs-lookup"><span data-stu-id="b6301-110">Mode</span></span>|<span data-ttu-id="b6301-111">Nepovinný parametr.</span><span class="sxs-lookup"><span data-stu-id="b6301-111">Optional.</span></span> <span data-ttu-id="b6301-112">Určuje typ zabezpečení, který se použije.</span><span class="sxs-lookup"><span data-stu-id="b6301-112">Specifies the type of security that is applied.</span></span> <span data-ttu-id="b6301-113">Výchozí hodnota je `Message`.</span><span class="sxs-lookup"><span data-stu-id="b6301-113">The default value is `Message`.</span></span> <span data-ttu-id="b6301-114">Tento atribut je typu <xref:System.ServiceModel.WSFederationHttpSecurityMode> .</span><span class="sxs-lookup"><span data-stu-id="b6301-114">This attribute is of type <xref:System.ServiceModel.WSFederationHttpSecurityMode>.</span></span>|  
   
-## <a name="mode-attribute"></a><span data-ttu-id="5b7e6-121">mode – atribut</span><span class="sxs-lookup"><span data-stu-id="5b7e6-121">Mode Attribute</span></span>  
+## <a name="mode-attribute"></a><span data-ttu-id="b6301-115">Mode – atribut</span><span class="sxs-lookup"><span data-stu-id="b6301-115">Mode Attribute</span></span>  
   
-|<span data-ttu-id="5b7e6-122">Hodnota</span><span class="sxs-lookup"><span data-stu-id="5b7e6-122">Value</span></span>|<span data-ttu-id="5b7e6-123">Popis</span><span class="sxs-lookup"><span data-stu-id="5b7e6-123">Description</span></span>|  
+|<span data-ttu-id="b6301-116">Hodnota</span><span class="sxs-lookup"><span data-stu-id="b6301-116">Value</span></span>|<span data-ttu-id="b6301-117">Description</span><span class="sxs-lookup"><span data-stu-id="b6301-117">Description</span></span>|  
 |-----------|-----------------|  
-|<span data-ttu-id="5b7e6-124">Žádné</span><span class="sxs-lookup"><span data-stu-id="5b7e6-124">None</span></span>|<span data-ttu-id="5b7e6-125">Zpráva SOAP není během přenosu zabezpečená.</span><span class="sxs-lookup"><span data-stu-id="5b7e6-125">The SOAP message is not secure during transfer.</span></span>|  
-|<span data-ttu-id="5b7e6-126">Zpráva</span><span class="sxs-lookup"><span data-stu-id="5b7e6-126">Message</span></span>|<span data-ttu-id="5b7e6-127">Integrita, důvěrnost, ověřování serveru a ověřování klientů jsou k dispozici pomocí protokolu SOAP Message Security.</span><span class="sxs-lookup"><span data-stu-id="5b7e6-127">Integrity, confidentiality, server authentication and client authentication are provided using SOAP message security.</span></span> <span data-ttu-id="5b7e6-128">Ve výchozím nastavení je text zašifrovaný a podepsaný.</span><span class="sxs-lookup"><span data-stu-id="5b7e6-128">By default, the body is encrypted and signed.</span></span> <span data-ttu-id="5b7e6-129">Služba musí být nakonfigurovaná s certifikátem.</span><span class="sxs-lookup"><span data-stu-id="5b7e6-129">The service needs to be configured with a certificate.</span></span> <span data-ttu-id="5b7e6-130">Ověřování klientů vychází z tokenu vystaveného klientovi tokenem zabezpečení.</span><span class="sxs-lookup"><span data-stu-id="5b7e6-130">Client authentication is based on the token issued to the client by a security token service</span></span>|  
-|<span data-ttu-id="5b7e6-131">TransportWithMessageCredential</span><span class="sxs-lookup"><span data-stu-id="5b7e6-131">TransportWithMessageCredential</span></span>|<span data-ttu-id="5b7e6-132">Integrita, důvěrnost a ověřování serveru poskytuje protokol HTTPS.</span><span class="sxs-lookup"><span data-stu-id="5b7e6-132">Integrity, confidentiality and server authentication are provided by HTTPS.</span></span> <span data-ttu-id="5b7e6-133">Služba musí být nakonfigurovaná s certifikátem.</span><span class="sxs-lookup"><span data-stu-id="5b7e6-133">The service needs to be configured with a certificate.</span></span> <span data-ttu-id="5b7e6-134">Ověřování klientů je zajištěno prostřednictvím zabezpečení zpráv SOAP a je založeno na tokenu vydanému klientovi pomocí služby tokenů zabezpečení.</span><span class="sxs-lookup"><span data-stu-id="5b7e6-134">Client authentication is provided by means of SOAP message security and is based on the token issued to the client by a security token service.</span></span>|  
+|<span data-ttu-id="b6301-118">Žádné</span><span class="sxs-lookup"><span data-stu-id="b6301-118">None</span></span>|<span data-ttu-id="b6301-119">Zpráva SOAP není během přenosu zabezpečená.</span><span class="sxs-lookup"><span data-stu-id="b6301-119">The SOAP message is not secure during transfer.</span></span>|  
+|<span data-ttu-id="b6301-120">Zpráva</span><span class="sxs-lookup"><span data-stu-id="b6301-120">Message</span></span>|<span data-ttu-id="b6301-121">Integrita, důvěrnost, ověřování serveru a ověřování klientů jsou k dispozici pomocí protokolu SOAP Message Security.</span><span class="sxs-lookup"><span data-stu-id="b6301-121">Integrity, confidentiality, server authentication and client authentication are provided using SOAP message security.</span></span> <span data-ttu-id="b6301-122">Ve výchozím nastavení je text zašifrovaný a podepsaný.</span><span class="sxs-lookup"><span data-stu-id="b6301-122">By default, the body is encrypted and signed.</span></span> <span data-ttu-id="b6301-123">Služba musí být nakonfigurovaná s certifikátem.</span><span class="sxs-lookup"><span data-stu-id="b6301-123">The service needs to be configured with a certificate.</span></span> <span data-ttu-id="b6301-124">Ověřování klientů vychází z tokenu vystaveného klientovi tokenem zabezpečení.</span><span class="sxs-lookup"><span data-stu-id="b6301-124">Client authentication is based on the token issued to the client by a security token service</span></span>|  
+|<span data-ttu-id="b6301-125">TransportWithMessageCredential</span><span class="sxs-lookup"><span data-stu-id="b6301-125">TransportWithMessageCredential</span></span>|<span data-ttu-id="b6301-126">Integrita, důvěrnost a ověřování serveru poskytuje protokol HTTPS.</span><span class="sxs-lookup"><span data-stu-id="b6301-126">Integrity, confidentiality and server authentication are provided by HTTPS.</span></span> <span data-ttu-id="b6301-127">Služba musí být nakonfigurovaná s certifikátem.</span><span class="sxs-lookup"><span data-stu-id="b6301-127">The service needs to be configured with a certificate.</span></span> <span data-ttu-id="b6301-128">Ověřování klientů je zajištěno prostřednictvím zabezpečení zpráv SOAP a je založeno na tokenu vydanému klientovi pomocí služby tokenů zabezpečení.</span><span class="sxs-lookup"><span data-stu-id="b6301-128">Client authentication is provided by means of SOAP message security and is based on the token issued to the client by a security token service.</span></span>|  
   
-### <a name="child-elements"></a><span data-ttu-id="5b7e6-135">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="5b7e6-135">Child Elements</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="b6301-129">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="b6301-129">Child Elements</span></span>  
   
-|<span data-ttu-id="5b7e6-136">Prvek</span><span class="sxs-lookup"><span data-stu-id="5b7e6-136">Element</span></span>|<span data-ttu-id="5b7e6-137">Popis</span><span class="sxs-lookup"><span data-stu-id="5b7e6-137">Description</span></span>|  
+|<span data-ttu-id="b6301-130">Prvek</span><span class="sxs-lookup"><span data-stu-id="b6301-130">Element</span></span>|<span data-ttu-id="b6301-131">Description</span><span class="sxs-lookup"><span data-stu-id="b6301-131">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="5b7e6-138">> \<zprávy</span><span class="sxs-lookup"><span data-stu-id="5b7e6-138">\<message></span></span>](message-element-of-wsfederationhttpbinding.md)|<span data-ttu-id="5b7e6-139">Definuje nastavení pro zabezpečení na úrovni zprávy.</span><span class="sxs-lookup"><span data-stu-id="5b7e6-139">Defines the settings for the message-level security.</span></span> <span data-ttu-id="5b7e6-140">Tento prvek je typu <xref:System.ServiceModel.Configuration.FederatedMessageSecurityOverHttpElement>.</span><span class="sxs-lookup"><span data-stu-id="5b7e6-140">This element is of type <xref:System.ServiceModel.Configuration.FederatedMessageSecurityOverHttpElement>.</span></span>|  
+|[\<message>](message-element-of-wsfederationhttpbinding.md)|<span data-ttu-id="b6301-132">Definuje nastavení pro zabezpečení na úrovni zprávy.</span><span class="sxs-lookup"><span data-stu-id="b6301-132">Defines the settings for the message-level security.</span></span> <span data-ttu-id="b6301-133">Tento prvek je typu <xref:System.ServiceModel.Configuration.FederatedMessageSecurityOverHttpElement> .</span><span class="sxs-lookup"><span data-stu-id="b6301-133">This element is of type <xref:System.ServiceModel.Configuration.FederatedMessageSecurityOverHttpElement>.</span></span>|  
   
-### <a name="parent-elements"></a><span data-ttu-id="5b7e6-141">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="5b7e6-141">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="b6301-134">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="b6301-134">Parent Elements</span></span>  
   
-|<span data-ttu-id="5b7e6-142">Prvek</span><span class="sxs-lookup"><span data-stu-id="5b7e6-142">Element</span></span>|<span data-ttu-id="5b7e6-143">Popis</span><span class="sxs-lookup"><span data-stu-id="5b7e6-143">Description</span></span>|  
+|<span data-ttu-id="b6301-135">Prvek</span><span class="sxs-lookup"><span data-stu-id="b6301-135">Element</span></span>|<span data-ttu-id="b6301-136">Description</span><span class="sxs-lookup"><span data-stu-id="b6301-136">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="5b7e6-144">vazba \<</span><span class="sxs-lookup"><span data-stu-id="5b7e6-144">\<binding></span></span>](bindings.md)|<span data-ttu-id="5b7e6-145">Definuje všechny schopnosti vazby [\<wsDualHttpBinding >](wsdualhttpbinding.md).</span><span class="sxs-lookup"><span data-stu-id="5b7e6-145">Defines all binding capabilities of the [\<wsDualHttpBinding>](wsdualhttpbinding.md).</span></span>|  
+|[\<binding>](bindings.md)|<span data-ttu-id="b6301-137">Definuje všechny schopnosti vazby pro [\<wsDualHttpBinding>](wsdualhttpbinding.md) .</span><span class="sxs-lookup"><span data-stu-id="b6301-137">Defines all binding capabilities of the [\<wsDualHttpBinding>](wsdualhttpbinding.md).</span></span>|  
   
-## <a name="see-also"></a><span data-ttu-id="5b7e6-146">Viz také:</span><span class="sxs-lookup"><span data-stu-id="5b7e6-146">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b6301-138">Viz také</span><span class="sxs-lookup"><span data-stu-id="b6301-138">See also</span></span>
 
 - <xref:System.ServiceModel.WSFederationHttpSecurity>
 - <xref:System.ServiceModel.WSFederationHttpBinding.Security%2A>
 - <xref:System.ServiceModel.Configuration.WSFederationHttpBindingElement.Security%2A>
 - <xref:System.ServiceModel.Configuration.WSFederationHttpSecurityElement>
-- [<span data-ttu-id="5b7e6-147">Postupy: Vytvoření WSFederationHttpBinding</span><span class="sxs-lookup"><span data-stu-id="5b7e6-147">How to: Create a WSFederationHttpBinding</span></span>](../../../wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md)
-- [<span data-ttu-id="5b7e6-148">Zabezpečení služeb a klientů</span><span class="sxs-lookup"><span data-stu-id="5b7e6-148">Securing Services and Clients</span></span>](../../../wcf/feature-details/securing-services-and-clients.md)
-- [<span data-ttu-id="5b7e6-149">Výběr typu přihlašovacích údajů</span><span class="sxs-lookup"><span data-stu-id="5b7e6-149">Selecting a Credential Type</span></span>](../../../wcf/feature-details/selecting-a-credential-type.md)
-- [<span data-ttu-id="5b7e6-150">Vazby</span><span class="sxs-lookup"><span data-stu-id="5b7e6-150">Bindings</span></span>](../../../wcf/bindings.md)
-- [<span data-ttu-id="5b7e6-151">Konfigurace vazeb poskytovaných systémem</span><span class="sxs-lookup"><span data-stu-id="5b7e6-151">Configuring System-Provided Bindings</span></span>](../../../wcf/feature-details/configuring-system-provided-bindings.md)
-- [<span data-ttu-id="5b7e6-152">Používání vazeb ke konfiguraci služeb a klientů</span><span class="sxs-lookup"><span data-stu-id="5b7e6-152">Using Bindings to Configure Services and Clients</span></span>](../../../wcf/using-bindings-to-configure-services-and-clients.md)
-- [<span data-ttu-id="5b7e6-153">vazba \<</span><span class="sxs-lookup"><span data-stu-id="5b7e6-153">\<binding></span></span>](bindings.md)
+- [<span data-ttu-id="b6301-139">Postupy: Vytvoření WSFederationHttpBinding</span><span class="sxs-lookup"><span data-stu-id="b6301-139">How to: Create a WSFederationHttpBinding</span></span>](../../../wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md)
+- [<span data-ttu-id="b6301-140">Zabezpečení služeb a klientů</span><span class="sxs-lookup"><span data-stu-id="b6301-140">Securing Services and Clients</span></span>](../../../wcf/feature-details/securing-services-and-clients.md)
+- [<span data-ttu-id="b6301-141">Výběr typu přihlašovacích údajů</span><span class="sxs-lookup"><span data-stu-id="b6301-141">Selecting a Credential Type</span></span>](../../../wcf/feature-details/selecting-a-credential-type.md)
+- [<span data-ttu-id="b6301-142">Vazby</span><span class="sxs-lookup"><span data-stu-id="b6301-142">Bindings</span></span>](../../../wcf/bindings.md)
+- [<span data-ttu-id="b6301-143">Konfigurace vazeb poskytovaných systémem</span><span class="sxs-lookup"><span data-stu-id="b6301-143">Configuring System-Provided Bindings</span></span>](../../../wcf/feature-details/configuring-system-provided-bindings.md)
+- [<span data-ttu-id="b6301-144">Používání vazeb ke konfiguraci služeb a klientů</span><span class="sxs-lookup"><span data-stu-id="b6301-144">Using Bindings to Configure Services and Clients</span></span>](../../../wcf/using-bindings-to-configure-services-and-clients.md)
+- [\<binding>](bindings.md)
