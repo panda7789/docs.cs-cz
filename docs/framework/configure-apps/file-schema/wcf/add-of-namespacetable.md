@@ -3,22 +3,22 @@ title: <add> z <namespaceTable>
 ms.date: 03/30/2017
 ms.assetid: cf7b5b75-63bd-49a6-abac-4bfdab377e36
 ms.openlocfilehash: 3b3b4a1584b37601269368ee0e4e973626ddf9cf
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70850392"
 ---
-# <a name="add-of-namespacetable"></a><span data-ttu-id="680b5-102">\<Přidání > \<> oboru názvů</span><span class="sxs-lookup"><span data-stu-id="680b5-102">\<add> of \<namespaceTable></span></span>
-<span data-ttu-id="680b5-103">Představuje prvek konfigurace, který obsahuje obor názvů pro mapování předpon, které lze následně použít ve filtrech XPath pro směrování.</span><span class="sxs-lookup"><span data-stu-id="680b5-103">Represents a configuration element that contains a namespace to prefix mapping that can then be used in XPath filters for routing.</span></span>  
+# <a name="add-of-namespacetable"></a><span data-ttu-id="ca536-102">\<add> z \<namespaceTable></span><span class="sxs-lookup"><span data-stu-id="ca536-102">\<add> of \<namespaceTable></span></span>
+<span data-ttu-id="ca536-103">Představuje prvek konfigurace, který obsahuje obor názvů pro mapování předpon, které lze následně použít ve filtrech XPath pro směrování.</span><span class="sxs-lookup"><span data-stu-id="ca536-103">Represents a configuration element that contains a namespace to prefix mapping that can then be used in XPath filters for routing.</span></span>  
   
-<span data-ttu-id="680b5-104">[ **\<> Konfigurace**](../configuration-element.md)</span><span class="sxs-lookup"><span data-stu-id="680b5-104">[**\<configuration>**](../configuration-element.md)</span></span>\
-<span data-ttu-id="680b5-105">&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)</span><span class="sxs-lookup"><span data-stu-id="680b5-105">&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)</span></span>\
-<span data-ttu-id="680b5-106">&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> směrování**](routing.md)</span><span class="sxs-lookup"><span data-stu-id="680b5-106">&nbsp;&nbsp;&nbsp;&nbsp;[**\<routing>**](routing.md)</span></span>\
-<span data-ttu-id="680b5-107">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> oboru názvů**](namespacetable.md)</span><span class="sxs-lookup"><span data-stu-id="680b5-107">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<namespaceTable>**](namespacetable.md)</span></span>\
-<span data-ttu-id="680b5-108">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<Přidat >**</span><span class="sxs-lookup"><span data-stu-id="680b5-108">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<add>**</span></span>  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<routing>**](routing.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<namespaceTable>**](namespacetable.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<add>**  
   
-## <a name="syntax"></a><span data-ttu-id="680b5-109">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="680b5-109">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="ca536-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="ca536-104">Syntax</span></span>  
   
 ```xml  
 <routing>
@@ -29,25 +29,25 @@ ms.locfileid: "70850392"
 </routing>
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="680b5-110">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="680b5-110">Attributes and Elements</span></span>  
- <span data-ttu-id="680b5-111">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="680b5-111">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="ca536-105">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="ca536-105">Attributes and Elements</span></span>  
+ <span data-ttu-id="ca536-106">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="ca536-106">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="680b5-112">Atributy</span><span class="sxs-lookup"><span data-stu-id="680b5-112">Attributes</span></span>  
+### <a name="attributes"></a><span data-ttu-id="ca536-107">Atributy</span><span class="sxs-lookup"><span data-stu-id="ca536-107">Attributes</span></span>  
   
-|<span data-ttu-id="680b5-113">Atribut</span><span class="sxs-lookup"><span data-stu-id="680b5-113">Attribute</span></span>|<span data-ttu-id="680b5-114">Popis</span><span class="sxs-lookup"><span data-stu-id="680b5-114">Description</span></span>|  
+|<span data-ttu-id="ca536-108">Atribut</span><span class="sxs-lookup"><span data-stu-id="ca536-108">Attribute</span></span>|<span data-ttu-id="ca536-109">Popis</span><span class="sxs-lookup"><span data-stu-id="ca536-109">Description</span></span>|  
 |---------------|-----------------|  
-|<span data-ttu-id="680b5-115">– obor názvů</span><span class="sxs-lookup"><span data-stu-id="680b5-115">namespace</span></span>|<span data-ttu-id="680b5-116">Řetězec obsahující obor názvů.</span><span class="sxs-lookup"><span data-stu-id="680b5-116">A string containing the namespace.</span></span>|  
-|<span data-ttu-id="680b5-117">prefix</span><span class="sxs-lookup"><span data-stu-id="680b5-117">prefix</span></span>|<span data-ttu-id="680b5-118">Řetězec obsahující předponu pro tento obor názvů.</span><span class="sxs-lookup"><span data-stu-id="680b5-118">A string containing the prefix for this namespace.</span></span>|  
+|<span data-ttu-id="ca536-110">namespace</span><span class="sxs-lookup"><span data-stu-id="ca536-110">namespace</span></span>|<span data-ttu-id="ca536-111">Řetězec obsahující obor názvů.</span><span class="sxs-lookup"><span data-stu-id="ca536-111">A string containing the namespace.</span></span>|  
+|<span data-ttu-id="ca536-112">směr</span><span class="sxs-lookup"><span data-stu-id="ca536-112">prefix</span></span>|<span data-ttu-id="ca536-113">Řetězec obsahující předponu pro tento obor názvů.</span><span class="sxs-lookup"><span data-stu-id="ca536-113">A string containing the prefix for this namespace.</span></span>|  
   
-### <a name="child-elements"></a><span data-ttu-id="680b5-119">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="680b5-119">Child Elements</span></span>  
- <span data-ttu-id="680b5-120">Žádné</span><span class="sxs-lookup"><span data-stu-id="680b5-120">None.</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="ca536-114">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="ca536-114">Child Elements</span></span>  
+ <span data-ttu-id="ca536-115">Žádné</span><span class="sxs-lookup"><span data-stu-id="ca536-115">None.</span></span>  
   
-### <a name="parent-elements"></a><span data-ttu-id="680b5-121">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="680b5-121">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="ca536-116">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="ca536-116">Parent Elements</span></span>  
   
-|<span data-ttu-id="680b5-122">Prvek</span><span class="sxs-lookup"><span data-stu-id="680b5-122">Element</span></span>|<span data-ttu-id="680b5-123">Popis</span><span class="sxs-lookup"><span data-stu-id="680b5-123">Description</span></span>|  
+|<span data-ttu-id="ca536-117">Prvek</span><span class="sxs-lookup"><span data-stu-id="ca536-117">Element</span></span>|<span data-ttu-id="ca536-118">Description</span><span class="sxs-lookup"><span data-stu-id="ca536-118">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="680b5-124">\<namespaceTable></span><span class="sxs-lookup"><span data-stu-id="680b5-124">\<namespaceTable></span></span>](namespacetable.md)|<span data-ttu-id="680b5-125">Představuje konfigurační oddíl pro definování sady prvků, které obsahují obor názvů k mapování předpon, které lze následně použít ve filtrech XPath pro směrování.</span><span class="sxs-lookup"><span data-stu-id="680b5-125">Represents a configuration section for defining a set of elements that contain namespace to prefix mappings that can then be used in XPath filters for routing.</span></span>|  
+|[\<namespaceTable>](namespacetable.md)|<span data-ttu-id="ca536-119">Představuje konfigurační oddíl pro definování sady prvků, které obsahují obor názvů k mapování předpon, které lze následně použít ve filtrech XPath pro směrování.</span><span class="sxs-lookup"><span data-stu-id="ca536-119">Represents a configuration section for defining a set of elements that contain namespace to prefix mappings that can then be used in XPath filters for routing.</span></span>|  
   
-## <a name="see-also"></a><span data-ttu-id="680b5-126">Viz také:</span><span class="sxs-lookup"><span data-stu-id="680b5-126">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ca536-120">Viz také</span><span class="sxs-lookup"><span data-stu-id="ca536-120">See also</span></span>
 
 - <xref:System.ServiceModel.Routing.Configuration.NamespaceElement?displayProperty=nameWithType>
