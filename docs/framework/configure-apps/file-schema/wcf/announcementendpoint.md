@@ -3,19 +3,19 @@ title: <announcementEndpoint>
 ms.date: 03/30/2017
 ms.assetid: 034b7c69-a770-4502-8cef-38007bbcd025
 ms.openlocfilehash: decaaa1cea5345ff971b16cbb20a85dd803a52d5
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70850294"
 ---
-# <a name="announcementendpoint"></a>\<announcementEndpoint >
-Tento prvek konfigurace definuje standardní koncový bod s pevným kontraktem oznámení. Služba může volitelně oznámit svou dostupnost odesláním online nebo offline zprávy s oznámením, když je otevřený nebo uzavřený v uvedeném pořadí. Služba Windows Communication Foundation (WCF) určuje koncové body oznámení v [ \<prvku > serviceDiscovery](servicediscovery.md) a k provádění oznámení používá AnnouncementClient. Klient, který chce naslouchat oznámením z jiné služby, ve skutečnosti funguje jako služba WCF; Proto je nutné nakonfigurovat koncové body oznámení pro tohoto klienta v [ \<části služby >](services.md) .  
+# \<announcementEndpoint>
+Tento prvek konfigurace definuje standardní koncový bod s pevným kontraktem oznámení. Služba může volitelně oznámit svou dostupnost odesláním online nebo offline zprávy s oznámením, když je otevřený nebo uzavřený v uvedeném pořadí. Služba Windows Communication Foundation (WCF) určuje koncové body oznámení v [\<serviceDiscovery>](servicediscovery.md) elementu a k provádění oznámení používá AnnouncementClient. Klient, který chce naslouchat oznámením z jiné služby, ve skutečnosti funguje jako služba WCF; Proto musíte nakonfigurovat koncové body oznámení pro tohoto klienta v [\<services>](services.md) části.  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<Oddílu StandardEndpoints >** ](standardendpoints.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<announcementEndpoint >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<standardEndpoints>**](standardendpoints.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<announcementEndpoint>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -47,7 +47,7 @@ Tento prvek konfigurace definuje standardní koncový bod s pevným kontraktem o
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
 |[\<standardEndpoints>](standardendpoints.md)|Kolekce standardních koncových bodů, které jsou předem definovanými koncovými body s jednou nebo více vlastnostmi (adresa, vazba, smlouva) opraveny.|  
   
@@ -80,6 +80,6 @@ Tento prvek konfigurace definuje standardní koncový bod s pevným kontraktem o
 </standardEndpoints>
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.ServiceModel.Discovery.AnnouncementEndpoint>

@@ -4,19 +4,19 @@ ms.date: 03/30/2017
 ms.assetid: 4651091b-3a20-40d8-b293-4408c0710143
 author: BrucePerlerMS
 ms.openlocfilehash: 80f435b52fd7657c5cd44538028d6080beffe0b5
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70252165"
 ---
-# <a name="caches"></a>\<caches>
+# \<caches>
 Registruje mezipaměti používané pro tokeny relací a detekci opětovného přehrání tokenu.  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. identityModel >** ](system-identitymodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<identityConfiguration >** ](identityconfiguration.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<ukládá do mezipaměti >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.identityModel>**](system-identitymodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<identityConfiguration>**](identityconfiguration.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<caches>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,25 +37,25 @@ Registruje mezipaměti používané pro tokeny relací a detekci opětovného p�
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
 |[\<sessionSecurityTokenCache>](sessionsecuritytokencache.md)|Registruje mezipaměť pro tokeny relace se službou nebo kolekcí obslužné rutiny tokenu zabezpečení.|  
 |[\<tokenReplayCache>](tokenreplaycache.md)|Zaregistruje mezipaměť opětovného přehrání tokenu pomocí kolekce obslužné rutiny tokenu zabezpečení nebo služby.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
 |[\<identityConfiguration>](identityconfiguration.md)|Určuje nastavení identity na úrovni služby.|  
 |[\<securityTokenHandlerConfiguration>](securitytokenhandlerconfiguration.md)|Poskytuje konfiguraci pro kolekci obslužných rutin tokenů zabezpečení.|  
   
 ## <a name="remarks"></a>Poznámky  
- Element lze zadat na úrovni služby `<identityConfiguration>` pod prvkem nebo na úrovni kolekce `<securityTokenHandlerConfiguration>` obslužné rutiny tokenu zabezpečení pod prvkem. `<caches>` Nastavení v kolekci obslužných rutin tokenu přepíší hodnoty zadané ve službě.  
+ `<caches>`Element lze zadat na úrovni služby pod `<identityConfiguration>` prvkem nebo na úrovni kolekce obslužné rutiny tokenu zabezpečení pod `<securityTokenHandlerConfiguration>` prvkem. Nastavení v kolekci obslužných rutin tokenu přepíší hodnoty zadané ve službě.  
   
- Element je reprezentován <xref:System.IdentityModel.Configuration.IdentityModelCachesElement>třídou. `<caches>` Nakonfigurované mezipaměti jsou reprezentovány <xref:System.IdentityModel.Configuration.IdentityModelCaches> třídou.  
+ `<caches>`Element je reprezentován <xref:System.IdentityModel.Configuration.IdentityModelCachesElement> třídou. Nakonfigurované mezipaměti jsou reprezentovány <xref:System.IdentityModel.Configuration.IdentityModelCaches> třídou.  
   
 ## <a name="example"></a>Příklad  
- Následující kód XML ukazuje konfiguraci vlastní mezipaměti pro tokeny zabezpečení relace (<xref:System.IdentityModel.Tokens.SessionSecurityToken>). Konfigurace je pořízena z `ClaimsAwareWebFarm` ukázky.  
+ Následující kód XML ukazuje konfiguraci vlastní mezipaměti pro tokeny zabezpečení relace ( <xref:System.IdentityModel.Tokens.SessionSecurityToken> ). Konfigurace je pořízena z `ClaimsAwareWebFarm` ukázky.  
   
 ```xml  
 <caches>  

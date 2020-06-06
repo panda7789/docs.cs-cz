@@ -3,21 +3,21 @@ title: <webSocketSettings>
 ms.date: 03/30/2017
 ms.assetid: bbf97e02-8dd1-4922-acac-3cd33397b249
 ms.openlocfilehash: fa87a1b0961425d6a9bc84769bef6e87cbc2ce96
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73732551"
 ---
-# <a name="websocketsettings"></a>\<webSocketSettings >
+# \<webSocketSettings>
 Prvek konfigurace, který slouží k zadání nastavení webového soketu.  
   
-[ **\<configuration >** ](../configuration-element.md) \
-&nbsp; &nbsp;[ **\<system. serviceModel >** ](system-servicemodel.md) \
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<vazeb >** ](bindings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<netHttpBinding >** ](nethttpbinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<vazeb >** \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<webSocketSettings >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<bindings>**](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<netHttpBinding>**](nethttpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<binding>**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<webSocketSettings>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -54,23 +54,23 @@ Prvek konfigurace, který slouží k zadání nastavení webového soketu.
   
 ## <a name="transportusage-attribute"></a>transportUsage – atribut  
   
-|Hodnota|Popis|  
+|Hodnota|Description|  
 |-----------|-----------------|  
 |WhenDuplex|Protokol webového soketu použijte v případě, že je kontrakt duplexní.|  
-|stál|Vždy používejte protokol webového soketu bez ohledu na kontrakt.|  
-|Už|Nikdy nepoužívejte protokol webového soketu.|  
+|Vždy|Vždy používejte protokol webového soketu bez ohledu na kontrakt.|  
+|Nikdy|Nikdy nepoužívejte protokol webového soketu.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
-|\<netHttpBinding >|Určuje NetHttpBinding|  
+|\<netHttpBinding>|Určuje NetHttpBinding|  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje použití prvku \<webSocketSettings >.  
+ Následující příklad ukazuje, jak použít \<webSocketSettings> element.  
   
 ```xml  
 <netHttpBinding>
@@ -87,7 +87,7 @@ Prvek konfigurace, který slouží k zadání nastavení webového soketu.
 </netHttpBinding>
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.ServiceModel.Channels.Binding>
 - <xref:System.ServiceModel.Channels.BindingElement>
@@ -96,4 +96,4 @@ Prvek konfigurace, který slouží k zadání nastavení webového soketu.
 - [Vazby](../../../wcf/bindings.md)
 - [Konfigurace vazeb poskytovaných systémem](../../../wcf/feature-details/configuring-system-provided-bindings.md)
 - [Používání vazeb ke konfiguraci služeb a klientů](../../../wcf/using-bindings-to-configure-services-and-clients.md)
-- [vazba \<](bindings.md)
+- [\<binding>](bindings.md)

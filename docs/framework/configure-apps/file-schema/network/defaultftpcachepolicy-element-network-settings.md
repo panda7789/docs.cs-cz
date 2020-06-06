@@ -9,19 +9,19 @@ helpviewer_keywords:
 - defaultFtpCachePolicy element
 ms.assetid: 0eb0c5cb-dd97-484d-8614-785e88877abb
 ms.openlocfilehash: 9261a430642cb4d5ac4507835bd0fd3561bd8c02
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "74088431"
 ---
-# <a name="defaultftpcachepolicy-element-network-settings"></a>\<element > defaultFtpCachePolicy (nastavení sítě)
+# <a name="defaultftpcachepolicy-element-network-settings"></a>\<defaultFtpCachePolicy> – element (nastavení sítě)
 Popisuje, zda je ukládání do mezipaměti FTP aktivní a popisuje výchozí zásady ukládání do mezipaměti.  
 
-[ **\<configuration >** ](../configuration-element.md) \
-&nbsp;&nbsp;[ **\<System. net >** ](system-net-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<requestCaching >** ](requestcaching-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<defaultFtpCachePolicy >**
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.net>**](system-net-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<requestCaching>**](requestcaching-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<defaultFtpCachePolicy>**
 
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,7 +42,7 @@ Popisuje, zda je ukládání do mezipaměti FTP aktivní a popisuje výchozí z�
   
 ## <a name="policylevel-attribute"></a>policyLevel – atribut  
   
-|Hodnota|Popis|  
+|Hodnota|Description|  
 |-----------|-----------------|  
 |`Default`|Vrátí prostředek uložený v mezipaměti, pokud je prostředek v čerstvém stavu, že velikost obsahu je přesná a že jsou k dispozici atributy vypršení platnosti, změna a délka obsahu.|  
 |`BypassCache`|Vrátí prostředek ze serveru.|  
@@ -58,14 +58,14 @@ Popisuje, zda je ukládání do mezipaměti FTP aktivní a popisuje výchozí z�
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
 |[requestCaching](requestcaching-element-network-settings.md)|Řídí mechanismus ukládání do mezipaměti pro síťové požadavky.|  
   
 ## <a name="remarks"></a>Poznámky  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak určit zásady ukládání do mezipaměti FTP `NoCacheNoStore`.  
+ Následující příklad ukazuje, jak určit zásady ukládání do mezipaměti FTP pro `NoCacheNoStore` .  
   
 ```xml  
 <configuration>  
@@ -79,7 +79,7 @@ Popisuje, zda je ukládání do mezipaměti FTP aktivní a popisuje výchozí z�
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Net.Cache>
 - <xref:System.Net.WebRequest>

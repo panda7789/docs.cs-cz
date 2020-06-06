@@ -8,51 +8,51 @@ helpviewer_keywords:
 - configuration schema [.NET Framework], application settings
 ms.assetid: 5797fcff-6081-4e8c-bebf-63d9c70cf14b
 ms.openlocfilehash: 90d471888950347c041b4824b659ce33fda512d7
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/13/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "81242826"
 ---
 # <a name="application-settings-schema"></a>Schéma nastavení aplikace
 
-Nastavení aplikace umožňují formulářům systému Windows nebo ASP.NET aplikaci ukládat a načítat nastavení s rozsahem aplikace a s rozsahem uživatele. V tomto kontextu *nastavení* je libovolná část informace, která může být specifická pro aplikaci nebo specifické pro aktuálního uživatele – cokoli od připojovacího řetězce databáze až po upřednostňovanou výchozí velikost okna uživatele.
+Nastavení aplikace umožňuje aplikaci model Windows Forms nebo ASP.NET ukládat a načítat nastavení s rozsahem aplikace a uživatelem. V tomto kontextu je *nastavením* jakékoli informace, které mohou být specifické pro aplikaci nebo specifické pro aktuálního uživatele – cokoli z databázového připojovacího řetězce až po upřednostňovanou výchozí velikost okna uživatele.
 
-Ve výchozím nastavení používá nastavení aplikace <xref:System.Configuration.LocalFileSettingsProvider> v aplikaci Windows Forms třídu, která používá konfigurační systém .NET k ukládání nastavení do konfiguračního souboru XML. Další informace o souborech používaných v nastavení aplikace naleznete v [tématu Architektura nastavení aplikace](../../winforms/advanced/application-settings-architecture.md).
+Ve výchozím nastavení používá nastavení aplikace v model Windows Forms aplikace <xref:System.Configuration.LocalFileSettingsProvider> třídu, která používá konfigurační systém .NET k ukládání nastavení v konfiguračním souboru XML. Další informace o souborech používaných nastavením aplikace najdete v tématu [Architektura nastavení aplikace](../../winforms/advanced/application-settings-architecture.md).
 
 Nastavení aplikace definuje následující prvky jako součást konfiguračních souborů, které používá.
 
-| Prvek                    | Popis                                                                           |
+| Prvek                    | Description                                                                           |
 | -------------------------- | ------------------------------------------------------------------------------------- |
-| **\<aplikaceNastavení>** | Obsahuje ** \<** všechna nastavení>značky specifické pro aplikaci.                         |
-| **\<uživatelNastavení>**        | Obsahuje ** \<** všechna nastavení>značky specifické pro aktuálního uživatele.                        |
-| **\<nastavení>**             | Definuje nastavení. Podřízená ** \<aplikaceNastavení>** nebo ** \<userSettings>**. |
-| **\<hodnota>**               | Definuje hodnotu nastavení. Dítě ** \<nastavení>**.                                   |
+| **\<applicationSettings>** | Obsahuje všechny **\<setting>** značky, které jsou specifické pro aplikaci.                         |
+| **\<userSettings>**        | Obsahuje všechny **\<setting>** značky, které jsou specifické pro aktuálního uživatele.                        |
+| **\<setting>**             | Definuje nastavení. Podřízená položka **\<applicationSettings>** nebo **\<userSettings>** . |
+| **\<value>**               | Definuje hodnotu nastavení. Podřízená položka **\<setting>** .                                   |
 
-## <a name="applicationsettings-element"></a>\<applicationNastavení> elementu
+## <a name="applicationsettings-element"></a>\<applicationSettings> – element
 
-Tento prvek ** \<** obsahuje všechna nastavení>značky, které jsou specifické pro instanci aplikace v klientském počítači. Definuje žádné atributy.
+Tento element obsahuje všechny **\<setting>** značky, které jsou specifické pro instanci aplikace v klientském počítači. Nedefinuje žádné atributy.
 
-## <a name="usersettings-element"></a>\<userSettings> element
+## <a name="usersettings-element"></a>\<userSettings> – element
 
-Tento prvek ** \<** obsahuje všechna nastavení>značky, které jsou specifické pro uživatele, který aktuálně používá aplikaci. Definuje žádné atributy.
+Tento prvek obsahuje všechny **\<setting>** značky, které jsou specifické pro uživatele, který aktuálně používá aplikaci. Nedefinuje žádné atributy.
 
-## <a name="setting-element"></a>\<nastavení> prvku
+## <a name="setting-element"></a>\<setting> – element
 
 Tento prvek definuje nastavení. Má následující atributy.
 
 | Atribut        | Popis |
 | ---------------- | ----------- |
-| **Jméno**         | Povinná hodnota. Jedinečné ID nastavení. Nastavení vytvořená prostřednictvím sady `ProjectName.Properties.Settings`Visual Studio jsou uložena s názvem . |
-| **serializeAs** | Povinná hodnota. Formát, který se má použít pro serializaci hodnoty na text. Platné hodnoty jsou:<br><br>- `string`. Hodnota je serializována jako <xref:System.ComponentModel.TypeConverter>řetězec pomocí .<br>- `xml`. Hodnota je serializována pomocí serializace XML.<br>- `binary`. Hodnota je serializována jako binární kódovaný text pomocí binární serializace.<br />- `custom`. Poskytovatel nastavení má vlastní znalosti o tomto nastavení a serializuje a deserializuje jej. |
+| **Jméno**         | Povinná hodnota. Jedinečné ID nastavení Nastavení vytvořená pomocí sady Visual Studio se ukládají s názvem `ProjectName.Properties.Settings` . |
+| **serializeAs** | Povinná hodnota. Formát, který má být použit pro serializaci hodnoty na text. Platné hodnoty jsou:<br><br>- `string`. Hodnota je serializována jako řetězec pomocí <xref:System.ComponentModel.TypeConverter> .<br>- `xml`. Hodnota je serializovaná pomocí serializace XML.<br>- `binary`. Hodnota je serializována jako textový soubor s kódováním pomocí binární serializace.<br />- `custom`. Poskytovatel nastavení má znalosti tohoto nastavení a serializace a deserializace. |
 
-## <a name="value-element"></a>\<prvek> hodnoty
+## <a name="value-element"></a>\<value> – element
 
 Tento prvek obsahuje hodnotu nastavení.
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje soubor nastavení aplikace, který definuje dvě nastavení s rozsahem aplikace a dvě nastavení s rozsahem uživatele:
+Následující příklad ukazuje soubor nastavení aplikace, který definuje dvě nastavení rozsahu aplikace a dvě nastavení v uživatelském rozsahu:
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>

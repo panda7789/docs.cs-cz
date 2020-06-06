@@ -9,18 +9,18 @@ helpviewer_keywords:
 - <defaultProxy> element
 ms.assetid: 9d663c4b-07b4-4f6f-9b12-efbd3630354f
 ms.openlocfilehash: 0945629c1395917bc1cf825f2ba84d20afa99957
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "71698211"
 ---
-# <a name="defaultproxy-element-network-settings"></a>\<element > defaultProxy (nastavení sítě)
+# <a name="defaultproxy-element-network-settings"></a>\<defaultProxy> – element (nastavení sítě)
 Nakonfiguruje proxy server protokolu HTTP (Hypertext Transfer Protocol).  
   
-[**Konfigurace \<>** ](../configuration-element.md)  
-&nbsp;&nbsp;[ **\<System. NET >** ](system-net-element-network-settings.md)  
-&nbsp;&nbsp;&nbsp;&nbsp; **\<defaultProxy >**  
+[**\<configuration>**](../configuration-element.md)  
+&nbsp;&nbsp;[**\<system.net>**](system-net-element-network-settings.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;**\<defaultProxy>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,29 +39,29 @@ Nakonfiguruje proxy server protokolu HTTP (Hypertext Transfer Protocol).
   
 ### <a name="attributes"></a>Atributy  
   
-|**Element**|**Popis**|  
+|**Objekt**|**Popis**|  
 |-----------------|---------------------|  
 |`enabled`|Určuje, zda je použit webový proxy server. Výchozí hodnota je `true`.|  
 |`useDefaultCredentials`|Určuje, jestli se pro přístup k webovému proxy serveru používají výchozí přihlašovací údaje pro tohoto hostitele. Výchozí hodnota je `false`.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
-|**Element**|**Popis**|  
+|**Objekt**|**Popis**|  
 |-----------------|---------------------|  
 |[bypasslist](bypasslist-element-network-settings.md)|Poskytuje sadu regulárních výrazů, které popisují adresy, které nepoužívají proxy server.|  
-|[module](module-element-network-settings.md)|Přidá do aplikace nový modul proxy.|  
+|[čipu](module-element-network-settings.md)|Přidá do aplikace nový modul proxy.|  
 |[proxy](proxy-element-network-settings.md)|Definuje proxy server.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|**Element**|**Popis**|  
+|**Objekt**|**Popis**|  
 |-----------------|---------------------|  
 |[system.net](system-net-element-network-settings.md)|Obsahuje nastavení, která určují, jak se .NET Framework připojí k síti.|  
   
 ## <a name="remarks"></a>Poznámky  
  Pokud je Element defaultProxy prázdný, použije se nastavení proxy z Internet Exploreru. Toto chování se liší od verze 1,1 .NET Framework.  
   
- Výjimka je vyvolána, pokud prvek [modulu](module-element-network-settings.md) určuje typ, který není veřejný, typ není odvozen od třídy <xref:System.Net.IWebProxy>, došlo k výjimce z konstruktoru bez parametrů, nebo při načítání výchozího serveru proxy zadaného systémem došlo k výjimce. Vlastnost <xref:System.Exception.InnerException%2A> výjimky by měla obsahovat další informace o hlavní příčině chyby.  
+ Výjimka je vyvolána, pokud prvek [modulu](module-element-network-settings.md) určuje typ, který není veřejný, typ není odvozen od <xref:System.Net.IWebProxy> třídy, došlo k výjimce z konstruktoru bez parametrů, nebo při načítání výchozího serveru proxy zadaného systémem došlo k výjimce. <xref:System.Exception.InnerException%2A>Vlastnost výjimky by měla obsahovat další informace o hlavní příčině chyby.  
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
  Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine. config).  
@@ -86,7 +86,7 @@ Nakonfiguruje proxy server protokolu HTTP (Hypertext Transfer Protocol).
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Net.WebProxy?displayProperty=nameWithType>
 - [Schéma nastavení sítě](index.md)

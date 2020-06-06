@@ -3,19 +3,19 @@ title: <webScriptEndpoint>
 ms.date: 03/30/2017
 ms.assetid: 85cb5ecf-351b-45f3-aa29-aa2e4b64bcdd
 ms.openlocfilehash: b4bc33cf8ff4e703973efe7df49e9f1d2189302e
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70854811"
 ---
-# <a name="webscriptendpoint"></a>\<webScriptEndpoint>
-Tento prvek konfigurace definuje standardní koncový bod s pevnou [ \<vazbou WebHttpBinding >](webhttpbinding.md) [ \<](enablewebscript.md) , která automaticky přidá chování enableWebScript >. Tento koncový bod použijte při psaní služby, která se volá z aplikace ASP.NET AJAX.  
+# \<webScriptEndpoint>
+Tento prvek konfigurace definuje standardní koncový bod s pevnou [\<webHttpBinding>](webhttpbinding.md) vazbou, která automaticky přidá [\<enableWebScript>](enablewebscript.md) chování. Tento koncový bod použijte při psaní služby, která se volá z aplikace ASP.NET AJAX.  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<Oddílu StandardEndpoints >** ](standardendpoints.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<webScriptEndpoint >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<standardEndpoints>**](standardendpoints.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<webScriptEndpoint>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,11 +43,11 @@ Tento prvek konfigurace definuje standardní koncový bod s pevnou [ \<vazbou We
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
 |[\<standardEndpoints>](standardendpoints.md)|Kolekce standardních koncových bodů, které jsou předem definovanými koncovými body s jednou nebo více vlastnostmi (adresa, vazba, smlouva) opraveny.|  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.ServiceModel.Description.WebScriptEndpoint>
 - <xref:System.ServiceModel.Configuration.WebScriptEndpointElement>

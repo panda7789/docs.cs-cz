@@ -9,19 +9,19 @@ helpviewer_keywords:
 - smtp element
 ms.assetid: 220b0329-e384-4e0c-86b4-0945ad17efd9
 ms.openlocfilehash: 625c3cb82a8659c742b540724e5cf31be65a705e
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "74089104"
 ---
-# <a name="smtp-element-network-settings"></a>\<element > SMTP (nastavení sítě)
+# <a name="smtp-element-network-settings"></a>\<smtp> – element (nastavení sítě)
 Konfiguruje formát doručení, způsob doručení a adresu odesílatele pro odesílání e-mailů.  
   
-[ **\<configuration >** ](../configuration-element.md) \
-&nbsp;&nbsp;[ **\<System. net >** ](system-net-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<mailSettings >** ](mailsettings-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<smtp >**
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.net>**](system-net-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<mailSettings>**](mailsettings-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<smtp>**
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -55,9 +55,9 @@ Konfiguruje formát doručení, způsob doručení a adresu odesílatele pro ode
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|**Element**|**Popis**|  
+|**Objekt**|**Popis**|  
 |-----------------|---------------------|  
-|[\<element > mailSettings (nastavení sítě)](mailsettings-element-network-settings.md)|Nakonfiguruje možnosti odesílání pošty.|  
+|[\<mailSettings>– Element (nastavení sítě)](mailsettings-element-network-settings.md)|Nakonfiguruje možnosti odesílání pošty.|  
   
 ## <a name="example"></a>Příklad  
  Následující příklad určuje vhodné parametry protokolu SMTP pro odesílání e-mailů s použitím výchozích síťových přihlašovacích údajů.  
@@ -78,7 +78,7 @@ Konfiguruje formát doručení, způsob doručení a adresu odesílatele pro ode
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Net.Configuration.SmtpSection?displayProperty=nameWithType>
 - <xref:System.Net.Mail.SmtpClient?displayProperty=nameWithType>

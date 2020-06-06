@@ -3,21 +3,21 @@ title: dataContractSerializer
 ms.date: 03/30/2017
 ms.assetid: a47513a4-a96c-4350-8586-daacb05dee71
 ms.openlocfilehash: e6524c18780c062c3b5b7dfc2509449cb208e270
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70400434"
 ---
 # <a name="datacontractserializer"></a>dataContractSerializer
-Obsahuje konfigurační data pro <xref:System.Runtime.Serialization.DataContractSerializer>.  
+Obsahuje konfigurační data pro <xref:System.Runtime.Serialization.DataContractSerializer> .  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> chování**](behaviors.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<endpointBehaviors >** ](endpointbehaviors.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> chování**](behavior-of-endpointbehaviors.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> dataContractSerializer**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<behaviors>**](behaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<endpointBehaviors>**](endpointbehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<behavior>**](behavior-of-endpointbehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<dataContractSerializer>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -31,7 +31,7 @@ Obsahuje konfigurační data pro <xref:System.Runtime.Serialization.DataContract
   
 ### <a name="attributes"></a>Atributy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
 |ignoreExtensionDataObject|Logická hodnota, která určuje, zda se mají ignorovat data poskytnutá koncovým bodem při jeho serializaci nebo deserializaci.|  
 |maxItemsInObjectGraph|Celé číslo, které určuje maximální počet položek k serializaci nebo deserializaci.|  
@@ -41,17 +41,17 @@ Obsahuje konfigurační data pro <xref:System.Runtime.Serialization.DataContract
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
-|[\<> chování](behavior-of-endpointbehaviors.md)|Určuje chování koncového bodu.|  
+|[\<behavior>](behavior-of-endpointbehaviors.md)|Určuje chování koncového bodu.|  
   
 ## <a name="remarks"></a>Poznámky  
- Další informace <xref:System.Runtime.Serialization.DataContractSerializer> o známých typech naleznete v dokumentaci.  
+ <xref:System.Runtime.Serialization.DataContractSerializer>Další informace o známých typech naleznete v dokumentaci.  
   
 > [!CAUTION]
-> Prvek chování (je-li k dispozici) by se `<enableWebScript>` měl vždy zobrazit před prvkem chování v konfiguračním souboru. `<dataContractSerializer>` V opačném případě není výsledné chování definováno.  
+> `<dataContractSerializer>`Prvek chování (je-li k dispozici) by se měl vždy zobrazit před `<enableWebScript>` prvkem chování v konfiguračním souboru. V opačném případě není výsledné chování definováno.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Runtime.Serialization.DataContractSerializer>
 - <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior>

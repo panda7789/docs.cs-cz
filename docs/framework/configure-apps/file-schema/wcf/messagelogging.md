@@ -3,19 +3,19 @@ title: <messageLogging>
 ms.date: 03/30/2017
 ms.assetid: 1d06a7e6-9633-4a12-8c5d-123adbbc19c5
 ms.openlocfilehash: 9291c38af28c18d20e23e34e8316b4a9fe523123
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70855118"
 ---
-# <a name="messagelogging"></a>\<messageLogging >
+# \<messageLogging>
 Tento prvek definuje nastavení možností protokolování zpráv Windows Communication Foundation (WCF).  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> diagnostiky**](diagnostics.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<messageLogging >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<diagnostics>**](diagnostics.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<messageLogging>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,24 +43,24 @@ Tento prvek definuje nastavení možností protokolování zpráv Windows Commun
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`logEntireMessage`|Logická hodnota, která určuje, zda má být zaznamenána celá zpráva (hlavička a tělo zprávy). Výchozí hodnota je `false`, což znamená, že je protokolována pouze Hlavička zprávy. Toto nastavení má vliv na všechny úrovně protokolování zpráv (služba, přenos a nesprávně vytvořená).|  
-|`logMalformedMessages`|Logická hodnota, která určuje, zda jsou špatně vytvořené zprávy zaznamenány. Poškozené zprávy se nepočítají směrem k `maxMessagesToLog`. Výchozí hodnota je `false`.|  
-|`logMessagesAtServiceLevel`|Logická hodnota, která určuje, zda jsou zprávy trasovány na úrovni služby (před transformací související s šifrováním a přenosem). Výchozí hodnota je `false`.|  
-|`logMessagesAtTransportLevel`|Logická hodnota, která určuje, zda jsou zprávy trasovány na úrovni přenosu. Všechny filtry zadané v konfiguračním souboru jsou aplikovány a budou trasovány pouze zprávy, které odpovídají filtrům. Výchozí hodnota je `false`.|  
-|`maxMessagesToLog`|Celé kladné číslo určující maximální počet zpráv, které mají být protokolovány. Výchozí hodnota je 1000.|  
+|`logEntireMessage`|Logická hodnota, která určuje, zda má být zaznamenána celá zpráva (hlavička a tělo zprávy). Výchozí hodnota je `false` , což znamená, že je protokolována pouze Hlavička zprávy. Toto nastavení má vliv na všechny úrovně protokolování zpráv (služba, přenos a nesprávně vytvořená).|  
+|`logMalformedMessages`|Logická hodnota, která určuje, zda jsou špatně vytvořené zprávy zaznamenány. Poškozené zprávy se nepočítají směrem k `maxMessagesToLog` . Výchozí formát je `false`.|  
+|`logMessagesAtServiceLevel`|Logická hodnota, která určuje, zda jsou zprávy trasovány na úrovni služby (před transformací související s šifrováním a přenosem). Výchozí formát je `false`.|  
+|`logMessagesAtTransportLevel`|Logická hodnota, která určuje, zda jsou zprávy trasovány na úrovni přenosu. Všechny filtry zadané v konfiguračním souboru jsou aplikovány a budou trasovány pouze zprávy, které odpovídají filtrům. Výchozí formát je `false`.|  
+|`maxMessagesToLog`|Celé kladné číslo určující maximální počet zpráv, které mají být protokolovány. Výchozí hodnota je 1 000.|  
 |`maxSizeOfMessageToLog`|Celé kladné číslo určující maximální velikost zprávy, která se má protokolovat (v bajtech). Zprávy větší, než je limit, nebudou protokolovány. Toto nastavení má vliv na všechny úrovně trasování. Výchozí hodnota je 262144 (0x4000).|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
-|filtry|`filters` Element obsahuje kolekci filtrů XPath. Pokud je povoleno protokolování přenosové zprávy`logMessagesAtTransportLevel` ( `true`je), budou protokolovány pouze zprávy, které odpovídají filtrům.<br /><br /> Filtry se aplikují jenom na transportní vrstvě. Filtry neovlivní úroveň služeb a nesprávně přihlašování zpráv.<br /><br /> Jediný atribut pro tento prvek `filter`, je Třída XPathFilter.<br /><br /> `<filters>     <add xmlns:soap="http://www.w3.org/2003/05/soap-envelope">/soap:Envelope</add> </filters>`|  
+|filtry|`filters`Element obsahuje kolekci filtrů XPath. Pokud je povoleno protokolování přenosové zprávy ( `logMessagesAtTransportLevel` je `true` ), budou protokolovány pouze zprávy, které odpovídají filtrům.<br /><br /> Filtry se aplikují jenom na transportní vrstvě. Filtry neovlivní úroveň služeb a nesprávně přihlašování zpráv.<br /><br /> Jediný atribut pro tento prvek, `filter` je Třída XPathFilter.<br /><br /> `<filters>     <add xmlns:soap="http://www.w3.org/2003/05/soap-envelope">/soap:Envelope</add> </filters>`|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
-|diagnostika|Definuje nastavení WCF pro kontrolu a kontrolu za běhu pro správce.|  
+|Diagnostika|Definuje nastavení WCF pro kontrolu a kontrolu za běhu pro správce.|  
   
 ## <a name="remarks"></a>Poznámky  
  Zprávy jsou protokolovány na třech různých úrovních zásobníku: služba, Transport a poškozená. Jednotlivé úrovně lze aktivovat samostatně.  
@@ -122,7 +122,7 @@ Tento prvek definuje nastavení možností protokolování zpráv Windows Commun
 </messageLogging>
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.ServiceModel.Configuration.DiagnosticSection>
 - <xref:System.ServiceModel.Diagnostics>

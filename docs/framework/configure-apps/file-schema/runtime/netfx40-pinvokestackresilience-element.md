@@ -6,19 +6,19 @@ helpviewer_keywords:
 - NetFx40_PInvokeStackResilience element
 ms.assetid: 39fb1588-72a4-4479-af74-0605233b68bd
 ms.openlocfilehash: 86f50aafe0b21d5080288e09ac7118ca1e4c939a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73116164"
 ---
-# <a name="netfx40_pinvokestackresilience-element"></a>\<element > NetFx40_PInvokeStackResilience
+# <a name="netfx40_pinvokestackresilience-element"></a>Element \<NetFx40_PInvokeStackResilience>
 
 Určuje, zda modul runtime automaticky opravuje nesprávné deklarace volání platformy za běhu, a to za cenu pomalejších přechodů mezi spravovaným a nespravovaným kódem.
 
-[ **\<configuration >** ](../configuration-element.md) \
-&nbsp;&nbsp;[ **\<runtime >** ](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<NetFx40_PInvokeStackResilience >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<runtime>**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<NetFx40_PInvokeStackResilience>**  
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -38,7 +38,7 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 ## <a name="enabled-attribute"></a>Atribut enabled
 
-|Hodnota|Popis|
+|Hodnota|Description|
 |-----------|-----------------|
 |`0`|Modul runtime používá rychlejší interop marshaling architekturu představenou v .NET Framework 4, která nedetekuje a neopravují nesprávné deklarace vyvolání platformy. Toto nastavení je výchozí.|
 |`1`|Běhový modul používá pomalejší přechody, které zjišťují a opravují nesprávné deklarace vyvolání platformy.|
@@ -49,7 +49,7 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 ### <a name="parent-elements"></a>Nadřazené elementy
 
-|Prvek|Popis|
+|Prvek|Description|
 |-------------|-----------------|
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|
 |`runtime`|Obsahuje informace o možnostech inicializace modulu runtime.|
@@ -62,7 +62,7 @@ Počínaje .NET Framework 4 nabízí zjednodušená interop marshaling architekt
 
 Aby bylo možné během vývoje snadno detekovat nesprávné deklarace, Vylepšili jsme prostředí pro ladění sady Visual Studio. Pomocník pro [pInvokeStackImbalance –](../../../debug-trace-profile/pinvokestackimbalance-mda.md) spravované ladění (MDA) vás upozorní na nesprávné deklarace vyvolání platformy, pokud je vaše aplikace spuštěná s připojeným ladicím programem.
 
-Pro řešení scénářů, kde vaše aplikace používá komponenty, které nemůžete znovu kompilovat a které mají nesprávné deklarace vyvolání platformy, lze použít prvek `NetFx40_PInvokeStackResilience`. Přidání tohoto elementu do konfiguračního souboru aplikace pomocí `enabled="1"` výslovný do režimu kompatibility s chováním dřívějších verzí .NET Framework, za cenu pomalejších přechodů. Sestavení, která byla zkompilována v předchozích verzích .NET Framework, jsou automaticky přizpůsobena do tohoto režimu kompatibility a nepotřebují tento prvek.
+Pro řešení scénářů, kde vaše aplikace používá komponenty, které nemůžete znovu kompilovat a které mají nesprávné deklarace vyvolání platformy, lze použít `NetFx40_PInvokeStackResilience` prvek. Přidání tohoto elementu do konfiguračního souboru aplikace pomocí `enabled="1"` výslovný do režimu kompatibility s chováním dřívějších verzí .NET Framework, za cenu pomalejších přechodů. Sestavení, která byla zkompilována v předchozích verzích .NET Framework, jsou automaticky přizpůsobena do tohoto režimu kompatibility a nepotřebují tento prvek.
 
 ## <a name="configuration-file"></a>Konfigurační soubor
 
@@ -80,8 +80,8 @@ Následující příklad ukazuje, jak se vyjádřit ke zvýšené odolnosti prot
 </configuration>
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Schéma nastavení běhového prostředí](index.md)
+- [Schéma nastavení modulu runtime](index.md)
 - [Schéma konfiguračního souboru](../index.md)
 - [pInvokeStackImbalance](../../../debug-trace-profile/pinvokestackimbalance-mda.md)

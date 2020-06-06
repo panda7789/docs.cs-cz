@@ -3,21 +3,21 @@ title: <security> z <netNamedPipeBinding>
 ms.date: 03/30/2017
 ms.assetid: bb3cb022-637e-49fd-92e8-6766038affa7
 ms.openlocfilehash: 31ea31ce6880a770c966350cd931e487396c4d63
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73736435"
 ---
-# <a name="security-of-netnamedpipebinding"></a>> \<zabezpečení \<netNamedPipeBinding >
+# <a name="security-of-netnamedpipebinding"></a>\<security> z \<netNamedPipeBinding>
 Definuje nastavení zabezpečení pro vazbu.  
   
-[ **\<configuration >** ](../configuration-element.md) \
-&nbsp; &nbsp;[ **\<system. serviceModel >** ](system-servicemodel.md) \
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<vazeb >** ](bindings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<netNamedPipeBinding >** ](netnamedpipebinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<vazeb >** \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<zabezpečení >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<bindings>**](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<netNamedPipeBinding>**](netnamedpipebinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<binding>**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<security>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,21 +38,21 @@ Definuje nastavení zabezpečení pro vazbu.
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|režim|Určuje typ zabezpečení, který se použije pro tuto vazbu. Platné hodnoty jsou následující:<br /><br /> -None: zakáže zabezpečení.<br />-Transport: zabezpečení je zajištěno pomocí základního zabezpečení založeného na přenosu. Úroveň ochrany je možné řídit pomocí tohoto režimu.<br />– Výchozí hodnota je Transport. Tento atribut je typu <xref:System.ServiceModel.NetNamedPipeSecurityMode>.|  
+|režim|Určuje typ zabezpečení, který se použije pro tuto vazbu. Platné hodnoty jsou následující:<br /><br /> -None: zakáže zabezpečení.<br />-Transport: zabezpečení je zajištěno pomocí základního zabezpečení založeného na přenosu. Úroveň ochrany je možné řídit pomocí tohoto režimu.<br />– Výchozí hodnota je Transport. Tento atribut je typu <xref:System.ServiceModel.NetNamedPipeSecurityMode> .|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
-|transport|Definuje nastavení zabezpečení pro přenos. Tento prvek je typu <xref:System.ServiceModel.Configuration.NamedPipeTransportSecurityElement>.|  
+|transport|Definuje nastavení zabezpečení pro přenos. Tento prvek je typu <xref:System.ServiceModel.Configuration.NamedPipeTransportSecurityElement> .|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
-|vazba|Prvek vazby [\<netNamedPipeBinding >](netnamedpipebinding.md).|  
+|vazba|Prvek vazby prvku [\<netNamedPipeBinding>](netnamedpipebinding.md) .|  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.ServiceModel.NetNamedPipeSecurity>
 - <xref:System.ServiceModel.NetNamedPipeBinding.Security%2A>
@@ -63,4 +63,4 @@ Definuje nastavení zabezpečení pro vazbu.
 - [Vazby](../../../wcf/bindings.md)
 - [Konfigurace vazeb poskytovaných systémem](../../../wcf/feature-details/configuring-system-provided-bindings.md)
 - [Používání vazeb ke konfiguraci služeb a klientů](../../../wcf/using-bindings-to-configure-services-and-clients.md)
-- [vazba \<](bindings.md)
+- [\<binding>](bindings.md)

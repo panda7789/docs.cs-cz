@@ -9,18 +9,18 @@ helpviewer_keywords:
 - <mailSettings> element
 ms.assetid: 54f0f153-17e5-4f49-afdc-deadb940c9c1
 ms.openlocfilehash: 4e8bf23ce39edadf80f019315c690b597b3d7361
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "74089235"
 ---
-# <a name="mailsettings-element-network-settings"></a>\<element > mailSettings (nastavení sítě)
+# <a name="mailsettings-element-network-settings"></a>\<mailSettings> – element (nastavení sítě)
 Nakonfiguruje možnosti odesílání pošty.  
 
-[ **\<configuration >** ](../configuration-element.md) \
-&nbsp;&nbsp;[ **\<System. net >** ](system-net-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<mailSettings >**
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.net>**](system-net-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<mailSettings>**
 
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,13 +40,13 @@ Nakonfiguruje možnosti odesílání pošty.
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|[\<element > SMTP (nastavení sítě)](smtp-element-network-settings.md)|Nakonfiguruje možnosti jednoduchého poštovního transportního protokolu.|  
+|[\<smtp>– Element (nastavení sítě)](smtp-element-network-settings.md)|Nakonfiguruje možnosti jednoduchého poštovního transportního protokolu.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|**Element**|**Popis**|  
+|**Objekt**|**Popis**|  
 |-----------------|---------------------|  
-|[\<– element > systému .NET (nastavení sítě)](system-net-element-network-settings.md)|Obsahuje nastavení, která určují, jak se .NET Framework připojí k síti.|  
+|[\<system.Net>– Element (nastavení sítě)](system-net-element-network-settings.md)|Obsahuje nastavení, která určují, jak se .NET Framework připojí k síti.|  
   
 ## <a name="example"></a>Příklad  
  Následující příklad určuje vhodné parametry protokolu SMTP pro odesílání e-mailů s použitím výchozích síťových přihlašovacích údajů.  
@@ -67,7 +67,7 @@ Nakonfiguruje možnosti odesílání pošty.
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Net.Mail.SmtpClient>
 - [Schéma nastavení sítě](index.md)

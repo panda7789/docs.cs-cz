@@ -5,19 +5,19 @@ helpviewer_keywords:
 - gcHeapCount element
 - <gcHeapCount> element
 ms.openlocfilehash: 09d6523fb10692dd3617a3827d5bccf112bc632b
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73978380"
 ---
-# <a name="gcheapaffinitizemask-element"></a>\<element > GCHeapAffinitizeMask
+# <a name="gcheapaffinitizemask-element"></a>\<GCHeapAffinitizeMask> – element
 
 Definuje spřažení mezi haldami GC a jednotlivými procesory.
 
-Konfigurace \<> \
-&nbsp;&nbsp;\<runtime > \
-&nbsp;&nbsp;&nbsp;&nbsp;\<GCHeapAffinitizeMask >
+\<configuration>\
+&nbsp;&nbsp;\<runtime>\
+&nbsp;&nbsp;&nbsp;&nbsp;\<GCHeapAffinitizeMask>
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -38,7 +38,7 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 #### <a name="enabled-attribute"></a>povolený atribut
 
-|Hodnota|Popis|
+|Hodnota|Description|
 |-----------|-----------------|
 |`nnnn`|Desítková hodnota, která vytvoří bitovou masku definující spřažení mezi haldami GC serveru a jednotlivými procesory. |
 
@@ -48,7 +48,7 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 ### <a name="parent-elements"></a>Nadřazené prvky
 
-|Prvek|Popis|
+|Prvek|Description|
 |-------------|-----------------|
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|
 |`runtime`|Obsahuje informace o vazbách sestavení a uvolnění paměti.|
@@ -59,7 +59,7 @@ Ve výchozím nastavení jsou vlákna uvolňování paměti serveru pevně spřa
 
 **GCHeapAffinitizeMask** se obvykle používá společně se dvěma dalšími příznaky:
 
-- [GCNoAffinitize](gcnoaffinitize-element.md), která určuje, zda jsou vlákna a haldy GC serveru spřažené s procesory. Atribut `enabled` elementu [GCNoAffinitize](gcnoaffinitize-element.md) musí být `false` (jeho výchozí hodnota) pro použití nastavení **GCHeapAffinitizeMask** .
+- [GCNoAffinitize](gcnoaffinitize-element.md), která určuje, zda jsou vlákna a haldy GC serveru spřažené s procesory. `enabled`Atribut elementu [GCNoAffinitize](gcnoaffinitize-element.md) musí být `false` (jeho výchozí hodnota), aby se použilo nastavení **GCHeapAffinitizeMask** .
 
 - [GCHeapCount](gcheapcount-element.md), která omezuje počet hald používaných procesem pro uvolňování paměti serveru. Ve výchozím nastavení je pro každý procesor k dispozici jedna halda.
 
@@ -85,11 +85,11 @@ Následující příklad označuje, že aplikace používá GC serveru s 10 hald
 </configuration>
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Runtime.GCSettings.IsServerGC%2A?displayProperty=nameWithType>
 - [Element GCNoAffinitize](gcnoaffinitize-element.md)
 - [Element GCHeapCount](gcheapcount-element.md)
 - [Základní informace o uvolňování paměti](../../../../standard/garbage-collection/fundamentals.md)
-- [Schéma nastavení běhového prostředí](index.md)
+- [Schéma nastavení modulu runtime](index.md)
 - [Schéma konfiguračního souboru](../index.md)

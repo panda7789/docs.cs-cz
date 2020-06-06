@@ -25,10 +25,10 @@ helpviewer_keywords:
 - configuration files [.NET Framework], format
 ms.assetid: 86bd26d3-737e-4484-9782-19b17f34cd1f
 ms.openlocfilehash: b2da9600e6947a1efcb13fc8b1127665cea63071
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70972191"
 ---
 # <a name="configuring-apps-by-using-configuration-files"></a>Konfigurace aplikací pomocí konfiguračních souborů
@@ -40,11 +40,11 @@ ms.locfileid: "70972191"
  Toto téma popisuje syntaxi konfiguračních souborů a obsahuje informace o třech typech konfiguračních souborů: souborů počítače, aplikací a zabezpečení.  
   
 ## <a name="configuration-file-format"></a>Formát konfiguračního souboru  
- Konfigurační soubory obsahují prvky, které představují logické datové struktury, jež nastavují informace o konfiguraci. V konfiguračním souboru je možné použít značky pro označení začátku a konce prvku. Například `<runtime>` element se skládá z `<runtime>` *podřízených elementů*`</runtime>`. Prázdný element by byl napsán jako `<runtime/>` nebo. `<runtime></runtime>`  
+ Konfigurační soubory obsahují prvky, které představují logické datové struktury, jež nastavují informace o konfiguraci. V konfiguračním souboru je možné použít značky pro označení začátku a konce prvku. Například `<runtime>` element se skládá z `<runtime>` *podřízených elementů* `</runtime>` . Prázdný element by byl napsán jako `<runtime/>` nebo `<runtime></runtime>` .  
   
  Stejně jako u všech souborů XML rozlišuje syntaxe v konfiguračních souborech velká a malá písmena.  
   
- Je možné určit nastavení konfigurace pomocí předdefinovaných atributů, kterými jsou páry název/hodnota uvnitř počáteční značky prvku. Následující příklad určuje dva atributy`version` (a `href`) pro `<codeBase>` prvek, který určuje, kde může modul runtime najít sestavení (Další informace naleznete v tématu [určení umístění sestavení](specify-assembly-location.md)).  
+ Je možné určit nastavení konfigurace pomocí předdefinovaných atributů, kterými jsou páry název/hodnota uvnitř počáteční značky prvku. Následující příklad určuje dva atributy ( `version` a `href` ) pro `<codeBase>` prvek, který určuje, kde může modul runtime najít sestavení (Další informace naleznete v tématu [určení umístění sestavení](specify-assembly-location.md)).  
   
 ```xml  
 <codeBase version="2.0.0.0"  
@@ -54,7 +54,7 @@ ms.locfileid: "70972191"
 ## <a name="machine-configuration-files"></a>Konfigurační soubory počítače  
  Konfigurační soubor počítače Machine.config obsahuje nastavení, které platí pro celý počítač. Tento soubor se nachází v adresáři%*běhové instalační cesta*% \ config. Machine. config obsahuje nastavení konfigurace vazby sestavení v úrovni počítače, integrovaných [kanálů vzdálené komunikace](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dkfd3wha(v=vs.100))a ASP.NET.  
   
- Konfigurační systém nejprve vyhledá v konfiguračním souboru pro [  **\<appSettings >** element](./file-schema/appsettings/index.md) a další konfigurační oddíly, které může vývojář definovat. Poté hledá v konfiguračním souboru aplikace. Pro zachování udržovatelnosti souboru konfigurace počítače je vhodné umístit tato nastavení do konfiguračního souboru aplikace. Avšak díky vložení nastavení do konfiguračního souboru počítače lze provádět jednodušší údržbu vašeho systému. Například při použití komponenty třetí strany, kterou používá aplikace klienta i serveru, je jednodušší umístit nastavení této komponenty do jednoho místa. V tomto případě je konfigurační soubor počítače vhodným místem pro umístění nastavení, jelikož nebudete mít stejné nastavení ve dvou různých souborech.  
+ Konfigurační systém nejprve vyhledá v konfiguračním souboru počítače pro [ **\<appSettings>** element](./file-schema/appsettings/index.md) a další konfigurační oddíly, které může vývojář definovat. Poté hledá v konfiguračním souboru aplikace. Pro zachování udržovatelnosti souboru konfigurace počítače je vhodné umístit tato nastavení do konfiguračního souboru aplikace. Avšak díky vložení nastavení do konfiguračního souboru počítače lze provádět jednodušší údržbu vašeho systému. Například při použití komponenty třetí strany, kterou používá aplikace klienta i serveru, je jednodušší umístit nastavení této komponenty do jednoho místa. V tomto případě je konfigurační soubor počítače vhodným místem pro umístění nastavení, jelikož nebudete mít stejné nastavení ve dvou různých souborech.  
   
 > [!NOTE]
 > Nasazení aplikace pomocí příkazu XCOPY nezkopíruje nastavení z konfiguračního souboru počítače.  
@@ -101,7 +101,7 @@ ms.locfileid: "70972191"
 - Konfigurační soubor zásad uživatele:%USERPROFILE%\Application data\Microsoft\CLR Security config\v*xx. xx*\Security.config  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Postupy: Hledání sestavení pomocí mechanismu DEVPATH](how-to-locate-assemblies-by-using-devpath.md)  
+ [Postupy: Vyhledání sestavení pomocí mechanismu DEVPATH](how-to-locate-assemblies-by-using-devpath.md)  
  Popisuje, jak nasměrovat modul runtime, aby při hledání sestavení používal proměnnou prostředí mechanismu DEVPATH.  
   
  [Přesměrování verzí sestavení](redirect-assembly-versions.md)  
@@ -113,18 +113,18 @@ ms.locfileid: "70972191"
  [Konfigurace šifrovacích tříd](configure-cryptography-classes.md)  
  Popisuje, jak namapovat název algoritmu na kryptografickou třídu a identifikátor objektu na kryptografický algoritmus.  
   
- [Postupy: Vytvoření zásady vydavatele](how-to-create-a-publisher-policy.md)  
+ [Postupy: Vytváření zásad vydavatele](how-to-create-a-publisher-policy.md)  
  Popisuje, kdy a jak byste měli přidat soubor zásad vydavatele pro určení přesměrování sestavení a základní nastavení kódu.  
   
  [Schéma konfiguračního souboru](./file-schema/index.md)  
  Popisuje hierarchii schématu pro spuštění, modul runtime, síť a další typy nastavení konfigurace.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Schéma konfiguračního souboru](./file-schema/index.md)
 - [Určení umístění sestavení](specify-assembly-location.md)
 - [Přesměrování verzí sestavení](redirect-assembly-versions.md)
 - [Správa webu ASP.NET](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/6hy1xzbw(v=vs.90))
 - [Správa zásad zabezpečení](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/c1k0eed6(v=vs.100))
-- [Caspol.exe (nástroj zásad zabezpečení přístupu kódu)](../tools/caspol-exe-code-access-security-policy-tool.md)
+- [Caspol. exe (Nástroj pro zásady zabezpečení přístupu kódu)](../tools/caspol-exe-code-access-security-policy-tool.md)
 - [Sestavení v .NET](../../standard/assembly/index.md)

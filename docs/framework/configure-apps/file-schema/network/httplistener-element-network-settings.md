@@ -3,19 +3,19 @@ title: <httpListener> – element (nastavení sítě)
 ms.date: 03/30/2017
 ms.assetid: 62f121fd-3f2e-4033-bb39-48ae996bfbd9
 ms.openlocfilehash: 0054be3d2002e4ea5247f25d8094386ac7242422
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "74088378"
 ---
-# <a name="httplistener-element-network-settings"></a>\<element > httpListener (nastavení sítě)
-Přizpůsobuje parametry používané třídou <xref:System.Net.HttpListener>.  
+# <a name="httplistener-element-network-settings"></a>\<httpListener> – element (nastavení sítě)
+Přizpůsobuje parametry používané <xref:System.Net.HttpListener> třídou.  
 
-[ **\<configuration >** ](../configuration-element.md) \
-&nbsp;&nbsp;[ **\<System. net >** ](system-net-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<nastavení >** ](settings-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<httpListener >**
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.net>**](system-net-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<settings>**](settings-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<httpListener>**
 
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,36 +41,36 @@ Přizpůsobuje parametry používané třídou <xref:System.Net.HttpListener>.
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|**Element**|**Popis**|  
+|**Objekt**|**Popis**|  
 |-----------------|---------------------|  
-|[možnost](settings-element-network-settings.md)|Konfiguruje základní možnosti sítě pro obor názvů <xref:System.Net>.|  
+|[zdroje dat](settings-element-network-settings.md)|Nakonfiguruje základní možnosti sítě pro <xref:System.Net> obor názvů.|  
   
 ## <a name="remarks"></a>Poznámky  
- Atribut **UnescapeRequestUrl** označuje, zda <xref:System.Net.HttpListener> používá nezpracovaný identifikátor URI bez řídicího znaku namísto PŘEVEDENého identifikátoru URI, kde jsou převáděny všechny hodnoty zakódované v procentech a jsou provedeny další kroky normalizace.  
+ Atribut **UnescapeRequestUrl** označuje, zda <xref:System.Net.HttpListener> Nástroj používá nezpracovaný identifikátor URI bez řídicího znaku namísto převedeného identifikátoru URI, ve kterém jsou převáděny všechny hodnoty zakódované v procentech a provedeny další kroky normalizace.  
   
- Když instance <xref:System.Net.HttpListener> obdrží požadavek prostřednictvím služby `http.sys`, vytvoří instanci řetězce identifikátoru URI, kterou poskytuje `http.sys`, a zpřístupní ji jako vlastnost <xref:System.Net.HttpListenerRequest.Url%2A?displayProperty=nameWithType>.  
+ Když <xref:System.Net.HttpListener> instance obdrží požadavek přes `http.sys` službu, vytvoří instanci řetězce identifikátoru URI, kterou poskytuje `http.sys` , a zpřístupní ji jako <xref:System.Net.HttpListenerRequest.Url%2A?displayProperty=nameWithType> vlastnost.  
   
- Služba `http.sys` zpřístupňuje dva řetězce identifikátoru URI žádosti:  
+ `http.sys`Služba zpřístupňuje dva řetězce identifikátoru URI žádosti:  
   
 - Nezpracovaný identifikátor URI  
   
 - Převedený identifikátor URI  
   
- Nezpracovaný identifikátor URI je <xref:System.Uri?displayProperty=nameWithType>, který je k dispozici na řádku požadavku požadavku HTTP:  
+ Nezpracovaný identifikátor URI je <xref:System.Uri?displayProperty=nameWithType> uvedený na řádku požadavku požadavku http:  
   
  `GET /path/`  
   
  `Host: www.contoso.com`  
   
- Nezpracovaný identifikátor URI poskytnutý `http.sys` pro výše uvedenou žádost je "/path/". To představuje řetězec, který následuje za příkazem HTTP, jak byl odeslán přes síť.  
+ Nezpracovaný identifikátor URI poskytnutý `http.sys` pro výše zmíněnou žádost je "/path/". To představuje řetězec, který následuje za příkazem HTTP, jak byl odeslán přes síť.  
   
- Služba `http.sys` vytvoří převedený identifikátor URI z informací uvedených v žádosti pomocí identifikátoru URI, který je k dispozici na řádku požadavku HTTP a v hlavičce hostitele k určení serveru původu, na který má být požadavek předán. To se provádí porovnáním informací z požadavku se sadou registrovaných předpon identifikátorů URI. Dokumentace k sadě SDK serveru HTTP odkazuje na tento identifikátor URI, který je převedený jako struktura HTTP_COOKED_URL.  
+ `http.sys`Služba vytvoří převedený identifikátor URI z informací uvedených v žádosti pomocí identifikátoru URI, který je k dispozici na řádku požadavku HTTP a hlavičce hostitele k určení serveru původu, na který má být požadavek předán. To se provádí porovnáním informací z požadavku se sadou registrovaných předpon identifikátorů URI. Dokumentace k sadě SDK serveru HTTP odkazuje na tento identifikátor URI, který je převedený jako struktura HTTP_COOKED_URL.  
   
  Aby bylo možné porovnat požadavek s registrovanými předponami identifikátoru URI, je nutné provést určitou normalizaci žádosti. Pro ukázku nad převedený identifikátor URI by byl následující:  
   
  `http://www.contoso.com/path/`  
   
- Služba `http.sys` kombinuje hodnotu vlastnosti <xref:System.Uri.Host%2A?displayProperty=nameWithType> a řetězec na řádku požadavku k vytvoření převedeného identifikátoru URI. Kromě toho `http.sys` a <xref:System.Uri?displayProperty=nameWithType> Třída provede také následující:  
+ `http.sys`Služba kombinuje <xref:System.Uri.Host%2A?displayProperty=nameWithType> hodnotu vlastnosti a řetězec na řádku požadavku k vytvoření PŘEVEDENého identifikátoru URI. Kromě toho `http.sys` a <xref:System.Uri?displayProperty=nameWithType> Třída provede také následující:  
   
 - Zruší řídicí znaky všech hodnot kódovaných v procentech.  
   
@@ -82,12 +82,12 @@ Přizpůsobuje parametry používané třídou <xref:System.Net.HttpListener>.
   
  Proto `http.sys` poskytuje dva klíče registru pro úpravu procesu:  
   
-|Klíč registru|Výchozí hodnota|Popis|  
+|Klíč registru|Výchozí hodnota|Description|  
 |------------------|-------------------|-----------------|  
-|EnableNonUTF8|první|Pokud je nula, `http.sys` přijímá pouze adresy URL kódované v kódování UTF-8.<br /><br /> Pokud je hodnota nenulová, `http.sys` také v žádostech přijímat adresy URL kódované v kódování ANSI nebo DBCS.|  
-|FavorUTF8|první|Pokud není nula, `http.sys` se vždy pokusí dekódovat adresu URL jako UTF-8 First; Pokud se převod nezdařil a EnableNonUTF8 je nenulová, http. sys se pak pokusí dekódovat jako ANSI nebo DBCS.<br /><br /> Pokud je nula (a EnableNonUTF8 není nula), `http.sys` se pokusí dekódovat jako ANSI nebo DBCS; Pokud se to nepodaří, pokusí se převod UTF-8.|  
+|EnableNonUTF8|1|Pokud je nula, `http.sys` akceptuje pouze adresy URL kódované v kódování UTF-8.<br /><br /> Pokud je hodnota nenulová, `http.sys` v požadavcích také přijímá adresy URL kódované v kódování ANSI nebo DBCS.|  
+|FavorUTF8|1|Pokud je hodnota nenulová, `http.sys` vždy se pokusí dekódovat adresu URL jako znakovou sadu UTF-8. Pokud se převod nezdařil a EnableNonUTF8 je nenulový, http. sys, pokusí se ho dekódovat jako ANSI nebo DBCS.<br /><br /> Pokud je nula (a EnableNonUTF8 není nula), `http.sys` pokusí se dekódovat jako ANSI nebo DBCS; Pokud to není úspěšné, pokusí se převod znakové sady UTF-8.|  
   
- Když <xref:System.Net.HttpListener> obdrží požadavek, použije převedený identifikátor URI z `http.sys` jako vstup na vlastnost <xref:System.Net.HttpListenerRequest.Url%2A>.  
+ Když aplikace <xref:System.Net.HttpListener> obdrží požadavek, použije převedený identifikátor URI z `http.sys` as Input na <xref:System.Net.HttpListenerRequest.Url%2A> vlastnost.  
   
  V identifikátorech URI je potřeba podporovat znaky kromě znaků a číslic. Příkladem je následující identifikátor URI, který se používá k načtení informací o zákaznících pro číslo zákazníka "1/3812":  
   
@@ -107,14 +107,14 @@ Přizpůsobuje parametry používané třídou <xref:System.Net.HttpListener>.
   
  Nejedná se o záměr odesilatele žádosti.  
   
- Pokud je atribut **UnescapeRequestUrl** nastaven na **hodnotu false**, pak když <xref:System.Net.HttpListener> obdrží požadavek, použije nezpracovaný identifikátor URI namísto převedeného identifikátoru URI z `http.sys` jako vstup na vlastnost <xref:System.Net.HttpListenerRequest.Url%2A>.  
+ Pokud je atribut **UnescapeRequestUrl** nastaven na **hodnotu false**, pak při <xref:System.Net.HttpListener> přijetí žádosti použije nezpracovaný identifikátor URI namísto převedeného identifikátoru URI z `http.sys` jako vstup na <xref:System.Net.HttpListenerRequest.Url%2A> vlastnost.  
   
  Výchozí hodnota pro atribut **UnescapeRequestUrl** je **true**.  
   
- Vlastnost <xref:System.Net.Configuration.HttpListenerElement.UnescapeRequestUrl%2A> lze použít k získání aktuální hodnoty atributu **UnescapeRequestUrl** z příslušných konfiguračních souborů.  
+ <xref:System.Net.Configuration.HttpListenerElement.UnescapeRequestUrl%2A>Vlastnost lze použít k získání aktuální hodnoty atributu **UnescapeRequestUrl** z příslušných konfiguračních souborů.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak nakonfigurovat třídu <xref:System.Net.HttpListener>, když obdrží požadavek na použití nezpracovaného IDENTIFIKÁTORu URI namísto převedeného identifikátoru URI z `http.sys` jako vstup na vlastnost <xref:System.Net.HttpListenerRequest.Url%2A>.  
+ Následující příklad ukazuje, jak nakonfigurovat třídu, <xref:System.Net.HttpListener> když obdrží požadavek na použití nezpracovaného identifikátoru URI namísto převedeného identifikátoru URI z `http.sys` jako vstup na <xref:System.Net.HttpListenerRequest.Url%2A> vlastnost.  
   
 ```xml  
 <configuration>  
@@ -137,7 +137,7 @@ Přizpůsobuje parametry používané třídou <xref:System.Net.HttpListener>.
 |Soubor ověření||  
 |Může být prázdné||  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Net.Configuration.HttpListenerElement>
 - <xref:System.Net.HttpListener>

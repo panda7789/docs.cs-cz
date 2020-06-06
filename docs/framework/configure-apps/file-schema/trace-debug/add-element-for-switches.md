@@ -8,19 +8,19 @@ helpviewer_keywords:
 - add element for <switches>
 ms.assetid: 712ac3a7-7abf-4a9e-8db4-acd241c2f369
 ms.openlocfilehash: db2de681227dfdb7420808963219b9f52381f8fe
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "74088959"
 ---
-# <a name="add-element-for-switches"></a>\<přidat > elementu pro \<přepínače >
+# <a name="add-element-for-switches"></a>\<add> – element pro \<switches>
 Určuje úroveň, kde je nastaven přepínač trasování.  
 
-[ **\<configuration >** ](../configuration-element.md) \
-&nbsp;&nbsp;[ **\<System. diagnostics >** ](system-diagnostics-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<přepínače >** ](switches-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<přidat >**
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.diagnostics>**](system-diagnostics-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<switches>**](switches-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<add>**
 
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,24 +37,24 @@ Určuje úroveň, kde je nastaven přepínač trasování.
 |Atribut|Popis|  
 |---------------|-----------------|  
 |**Jméno**|Požadovaný atribut.<br /><br /> Určuje název přepínače. Hodnota tohoto atributu odpovídá parametru *DisplayName* , který je předán konstruktoru Switch.|  
-|**value**|Požadovaný atribut.<br /><br /> Určuje úroveň přepínače.|  
+|**osa**|Požadovaný atribut.<br /><br /> Určuje úroveň přepínače.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|  
 |`switches`|Obsahuje přepínače trasování a úroveň, kde jsou nastaveny přepínače trasování.|  
 |`system.diagnostics`|Určuje naslouchací procesy trasování, které shromažďují, ukládají a směrují zprávy a úroveň, kde je nastaven přepínač trasování.|  
   
 ## <a name="remarks"></a>Poznámky  
- Úroveň trasovacího přepínače můžete změnit tak, že ho umístíte do konfiguračního souboru. Pokud je přepínač <xref:System.Diagnostics.BooleanSwitch>, můžete ho zapnout nebo vypnout. Pokud je přepínač <xref:System.Diagnostics.TraceSwitch>, můžete k němu přiřadit různé úrovně, aby bylo možné určit typy trasování nebo ladění zpráv pro výstup aplikace.  
+ Úroveň trasovacího přepínače můžete změnit tak, že ho umístíte do konfiguračního souboru. Pokud je přepínač <xref:System.Diagnostics.BooleanSwitch> , můžete ho zapnout nebo vypnout. Pokud je přepínač <xref:System.Diagnostics.TraceSwitch> , můžete k němu přiřadit různé úrovně, aby bylo možné určit typy trasování nebo ladění zpráv výstupem aplikace.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak pomocí **\<přidat >** prvek nastavit přepínač `General` trasování na úrovni <xref:System.Diagnostics.TraceLevel> a povolit přepínač Trace `Data` Boolean.  
+ Následující příklad ukazuje, jak použít **\<add>** prvek pro nastavení `General` přepínače trasování na <xref:System.Diagnostics.TraceLevel> úroveň a povolení `Data` logického sledovacího přepínače.  
   
 ```xml  
 <configuration>  
@@ -67,7 +67,7 @@ Určuje úroveň, kde je nastaven přepínač trasování.
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Diagnostics.Switch>
 - <xref:System.Diagnostics.TraceSwitch>

@@ -3,21 +3,21 @@ title: <byteStreamMessageEncoding>
 ms.date: 03/30/2017
 ms.assetid: bbadd8dd-60a2-4007-b959-89373a8a7d60
 ms.openlocfilehash: 1d4109bde9c1668bc0832689b05e5d1dc3b198e9
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73739060"
 ---
-# <a name="bytestreammessageencoding"></a>\<byteStreamMessageEncoding >
+# \<byteStreamMessageEncoding>
 Určuje kódování zprávy jako datový proud bajtů s možností určení kódování znaků.  
   
-[ **\<configuration >** ](../configuration-element.md) \
-&nbsp; &nbsp;[ **\<system. serviceModel >** ](system-servicemodel.md) \
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<vazeb >** ](bindings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<customBinding >** ](custombinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<vazeb >** \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<byteStreamMessageEncoding >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<bindings>**](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<customBinding>**](custombinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<binding>**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<byteStreamMessageEncoding>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -32,21 +32,21 @@ Určuje kódování zprávy jako datový proud bajtů s možností určení kód
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|messageVersion|Určuje verzi protokolu SOAP zpráv odeslaných pomocí vazby. Tato vlastnost může být nastavena pouze na hodnotu verze zprávy <xref:System.ServiceModel.Channels.MessageVersion.None%2A>. Kodér zpráv datového proudu bajtů nepodporuje žádné jiné verze zprávy.<br /><br /> Tento atribut je typu <xref:System.ServiceModel.Channels.MessageVersion>.|  
+|messageVersion|Určuje verzi protokolu SOAP zpráv odeslaných pomocí vazby. Tato vlastnost může být nastavena pouze na hodnotu verze zprávy <xref:System.ServiceModel.Channels.MessageVersion.None%2A> . Kodér zpráv datového proudu bajtů nepodporuje žádné jiné verze zprávy.<br /><br /> Tento atribut je typu <xref:System.ServiceModel.Channels.MessageVersion> .|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
-|[\<readerQuotas >](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms731325(v=vs.100))|Definuje omezení složitosti zpráv SOAP, které mohou být zpracovány koncovými body nakonfigurovanými s touto vazbou. Tento prvek je typu <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>.|  
+|[\<readerQuotas>](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms731325(v=vs.100))|Definuje omezení složitosti zpráv SOAP, které mohou být zpracovány koncovými body nakonfigurovanými s touto vazbou. Tento prvek je typu <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement> .|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
-|[vazba \<](bindings.md)|Definuje všechny schopnosti vazby vlastní vazby.|  
+|[\<binding>](bindings.md)|Definuje všechny schopnosti vazby vlastní vazby.|  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.ServiceModel.Configuration.ByteStreamMessageEncodingElement>
 - <xref:System.ServiceModel.Channels.CustomBinding>
@@ -57,4 +57,4 @@ Určuje kódování zprávy jako datový proud bajtů s možností určení kód
 - [Vazby](../../../wcf/bindings.md)
 - [Rozšíření vazeb](../../../wcf/extending/extending-bindings.md)
 - [Vlastní vazby](../../../wcf/extending/custom-bindings.md)
-- [\<customBinding >](custombinding.md)
+- [\<customBinding>](custombinding.md)

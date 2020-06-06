@@ -3,17 +3,17 @@ title: <filters>
 ms.date: 03/30/2017
 ms.assetid: 37a87222-ec78-4728-8105-9ca1bd961f0c
 ms.openlocfilehash: e4ce0452cc46a8f29334fa67f51f14b83290b1c8
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "69918877"
 ---
-# <a name="filters"></a>\<> filtrů
+# \<filters>
 
-`filters` Element obsahuje kolekci filtrů XPath používaných k řízení toho, jaký druh zprávy je protokolován.
+`filters`Element obsahuje kolekci filtrů XPath používaných k řízení toho, jaký druh zprávy je protokolován.
 
-Filtry se aplikují jenom na transportní vrstvě, kterou `logMessagesAtTransportLevel` `true`určuje. Filtry neovlivní úroveň služeb a nesprávně přihlašování zpráv.
+Filtry se aplikují jenom na transportní vrstvě, kterou Určuje `logMessagesAtTransportLevel` `true` . Filtry neovlivní úroveň služeb a nesprávně přihlašování zpráv.
 
 Chcete-li přidat filtr do kolekce, použijte `add` klíčové slovo. Při definování jednoho nebo více filtrů jsou protokolovány pouze zprávy, které odpovídají alespoň jednomu z filtrů. Pokud není definován žádný filtr, všechny zprávy procházejí.
 
@@ -35,7 +35,7 @@ Následuje příklad, jak nakonfigurovat filtr, který zaznamenává pouze zprá
 </messageLogging>
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.ServiceModel.Configuration.DiagnosticSection>
 - <xref:System.ServiceModel.Diagnostics>
@@ -46,4 +46,4 @@ Následuje příklad, jak nakonfigurovat filtr, který zaznamenává pouze zprá
 - <xref:System.ServiceModel.Configuration.XPathMessageFilterElement>
 - <xref:System.ServiceModel.Dispatcher.XPathMessageFilter>
 - [Konfigurace protokolování zpráv](../../../wcf/diagnostics/configuring-message-logging.md)
-- [\<messageLogging >](messagelogging.md)
+- [\<messageLogging>](messagelogging.md)

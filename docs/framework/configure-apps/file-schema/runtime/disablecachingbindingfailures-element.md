@@ -11,18 +11,18 @@ helpviewer_keywords:
 - disableCachingBindingFailures element
 ms.assetid: bf598873-83b7-48de-8955-00b0504fbad0
 ms.openlocfilehash: 23633cb282b8e59b4df4bcc2cd38717d805a207e
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73117501"
 ---
-# <a name="disablecachingbindingfailures-element"></a>\<element > disableCachingBindingFailures
+# <a name="disablecachingbindingfailures-element"></a>Element \<disableCachingBindingFailures>
 Určuje, jestli se má zakázat ukládání vazeb do mezipaměti, ke kterým dochází, protože sestavení nebylo nalezeno při zjišťování.  
   
-[ **\<configuration >** ](../configuration-element.md) \
-&nbsp;&nbsp;[ **\<runtime >** ](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<disableCachingBindingFailures >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<runtime>**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<disableCachingBindingFailures>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,29 +37,29 @@ Určuje, jestli se má zakázat ukládání vazeb do mezipaměti, ke kterým doc
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|umožněn|Požadovaný atribut.<br /><br /> Určuje, jestli se má zakázat ukládání vazeb do mezipaměti, ke kterým dochází, protože sestavení nebylo nalezeno při zjišťování.|  
+|enabled|Požadovaný atribut.<br /><br /> Určuje, jestli se má zakázat ukládání vazeb do mezipaměti, ke kterým dochází, protože sestavení nebylo nalezeno při zjišťování.|  
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
-|Hodnota|Popis|  
+|Hodnota|Description|  
 |-----------|-----------------|  
-|0,8|Nepovolujte ukládání vazeb do mezipaměti, ke kterým dochází, protože sestavení nebylo nalezeno při zjišťování. Toto je výchozí chování vazby počínaje .NET Framework verze 2,0.|  
-|první|Zakáže ukládání vazeb do mezipaměti, ke kterým dochází, protože sestavení nebylo nalezeno při zjišťování. Toto nastavení se vrátí k chování vazby .NET Framework verze 1,1.|  
+|0|Nepovolujte ukládání vazeb do mezipaměti, ke kterým dochází, protože sestavení nebylo nalezeno při zjišťování. Toto je výchozí chování vazby počínaje .NET Framework verze 2,0.|  
+|1|Zakáže ukládání vazeb do mezipaměti, ke kterým dochází, protože sestavení nebylo nalezeno při zjišťování. Toto nastavení se vrátí k chování vazby .NET Framework verze 1,1.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|  
 |`runtime`|Obsahuje informace o vazbách sestavení a uvolnění paměti.|  
   
 ## <a name="remarks"></a>Poznámky  
- .NET Framework počínaje verzí 2,0 je výchozím chováním při načítání sestavení ukládání do mezipaměti všech vazeb a selhání načítání. To znamená, že pokud se pokus o načtení sestavení nezdaří, následné požadavky na načtení stejného sestavení okamžitě selžou bez nutnosti najít sestavení. Tento prvek zakáže toto výchozí chování pro chyby vazby, ke kterým dojde, protože sestavení nebylo nalezeno v cestě zjišťování. Tyto chyby vyvolávají <xref:System.IO.FileNotFoundException>.  
+ .NET Framework počínaje verzí 2,0 je výchozím chováním při načítání sestavení ukládání do mezipaměti všech vazeb a selhání načítání. To znamená, že pokud se pokus o načtení sestavení nezdaří, následné požadavky na načtení stejného sestavení okamžitě selžou bez nutnosti najít sestavení. Tento prvek zakáže toto výchozí chování pro chyby vazby, ke kterým dojde, protože sestavení nebylo nalezeno v cestě zjišťování. Tyto chyby vyvolávají vyvolání <xref:System.IO.FileNotFoundException> .  
   
- Některá vazba a selhání načítání nejsou ovlivněny tímto elementem a jsou vždy ukládány do mezipaměti. K těmto selháním dochází, protože bylo nalezeno sestavení, ale nebylo možné ho načíst. Vyvolávají <xref:System.BadImageFormatException> nebo <xref:System.IO.FileLoadException>. Následující seznam obsahuje některé příklady takových selhání.  
+ Některá vazba a selhání načítání nejsou ovlivněny tímto elementem a jsou vždy ukládány do mezipaměti. K těmto selháním dochází, protože bylo nalezeno sestavení, ale nebylo možné ho načíst. Vyvolávají <xref:System.BadImageFormatException> nebo <xref:System.IO.FileLoadException> . Následující seznam obsahuje některé příklady takových selhání.  
   
 - Pokud se pokusíte načíst soubor není platným sestavením, následné pokusy o načtení sestavení selžou i v případě, že je chybný soubor nahrazen správným sestavením.  
   
@@ -78,8 +78,8 @@ Určuje, jestli se má zakázat ukládání vazeb do mezipaměti, ke kterým doc
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Schéma nastavení běhového prostředí](index.md)
+- [Schéma nastavení modulu runtime](index.md)
 - [Schéma konfiguračního souboru](../index.md)
 - [Jak běhové prostředí vyhledává sestavení](../../../deployment/how-the-runtime-locates-assemblies.md)

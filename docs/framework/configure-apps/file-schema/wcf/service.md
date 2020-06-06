@@ -3,19 +3,19 @@ title: <service>
 ms.date: 03/30/2017
 ms.assetid: 13123dd6-c4a9-4a04-a984-df184b851788
 ms.openlocfilehash: c12f57d68de870123d92c8a101e2999c24bb988f
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70855016"
 ---
-# <a name="service"></a>\<> služby
-`service` Element obsahuje nastavení pro službu Windows Communication Foundation (WCF). Obsahuje také koncové body, které zpřístupňují službu.  
+# \<service>
+`service`Element obsahuje nastavení pro službu Windows Communication Foundation (WCF). Obsahuje také koncové body, které zpřístupňují službu.  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> služeb**](services.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> služby**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<services>**](services.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<service>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,23 +37,23 @@ ms.locfileid: "70855016"
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
 |[\<endpoint>](endpoint-element.md)|Kolekce `endpoint` prvků, které zpřístupňují tuto službu.|  
-|[\<host>](host.md)|Určuje hostitele této instance služby. Tento prvek je typu <xref:System.ServiceModel.Configuration.HostElement>.|  
+|[\<host>](host.md)|Určuje hostitele této instance služby. Tento prvek je typu <xref:System.ServiceModel.Configuration.HostElement> .|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Prvek|Popis|  
+|Prvek|Description|  
 |-------------|-----------------|  
 |[\<services>](services.md)|Kořenový element všech elementů konfigurace služby WCF.|  
   
 ## <a name="remarks"></a>Poznámky  
  Služby jsou definovány v `services` části konfiguračního souboru. Sestavení může obsahovat libovolný počet služeb. Každá služba má vlastní `service` konfigurační oddíl. Tato část a její obsah definují kontrakt služby, chování a koncové body konkrétní služby.  
   
- `behaviorConfiguration` Prvek je také volitelný. Určuje chování, které služba používá. Chování zadané v tomto atributu musí být propojeno s chováním v oboru ve stejném konfiguračním souboru.  
+ `behaviorConfiguration`Prvek je také volitelný. Určuje chování, které služba používá. Chování zadané v tomto atributu musí být propojeno s chováním v oboru ve stejném konfiguračním souboru.  
   
- Každá služba zveřejňuje jeden nebo více koncových bodů, které mají svou vlastní adresu a vazbu. Všechny vazby používané v konfiguračním souboru musí být definovány v rozsahu souboru. Vazba je propojena s koncovými body prostřednictvím kombinace atributů `name` a `bindingConfiguration`. `name` Atribut popisuje oddíl, ve kterém je vazba definována. `bindingConfiguration` Atribut určuje, která konfigurace v rámci vazby je použita. Oddíl Binding může definovat několik konfigurací.  
+ Každá služba zveřejňuje jeden nebo více koncových bodů, které mají svou vlastní adresu a vazbu. Všechny vazby používané v konfiguračním souboru musí být definovány v rozsahu souboru. Vazba je propojena s koncovými body prostřednictvím kombinace atributů `name` a `bindingConfiguration` . `name`Atribut popisuje oddíl, ve kterém je vazba definována. `bindingConfiguration`Atribut určuje, která konfigurace v rámci vazby je použita. Oddíl Binding může definovat několik konfigurací.  
   
 ## <a name="example"></a>Příklad  
  Toto je příklad konfigurace služby.  
@@ -69,7 +69,7 @@ ms.locfileid: "70855016"
 </service>
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.ServiceModel.Configuration.ServiceElement>
 - [Konfigurace služeb](../../../wcf/configuring-services.md)
