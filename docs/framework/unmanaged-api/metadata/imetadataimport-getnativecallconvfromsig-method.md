@@ -15,17 +15,17 @@ helpviewer_keywords:
 ms.assetid: 50e04026-4d4a-47d9-96c1-f4677d6d938b
 topic_type:
 - apiref
-ms.openlocfilehash: 06ff6a1885a5e9bb819c2897aaf85e5c2b9b1147
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 44439eda62f85c32893b73f17bd057195cf6b2e1
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74437249"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503546"
 ---
-# <a name="imetadataimportgetnativecallconvfromsig-method"></a><span data-ttu-id="be05f-102">IMetaDataImport::GetNativeCallConvFromSig – metoda</span><span class="sxs-lookup"><span data-stu-id="be05f-102">IMetaDataImport::GetNativeCallConvFromSig Method</span></span>
-<span data-ttu-id="be05f-103">Získá nativní konvenci volání pro metodu, která je reprezentovaná zadaným ukazatelem podpisu.</span><span class="sxs-lookup"><span data-stu-id="be05f-103">Gets the native calling convention for the method that is represented by the specified signature pointer.</span></span>  
+# <a name="imetadataimportgetnativecallconvfromsig-method"></a><span data-ttu-id="7cb49-102">IMetaDataImport::GetNativeCallConvFromSig – metoda</span><span class="sxs-lookup"><span data-stu-id="7cb49-102">IMetaDataImport::GetNativeCallConvFromSig Method</span></span>
+<span data-ttu-id="7cb49-103">Získá nativní konvenci volání pro metodu, která je reprezentovaná zadaným ukazatelem podpisu.</span><span class="sxs-lookup"><span data-stu-id="7cb49-103">Gets the native calling convention for the method that is represented by the specified signature pointer.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="be05f-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="be05f-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="7cb49-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7cb49-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetNativeCallConvFromSig (  
@@ -35,27 +35,27 @@ HRESULT GetNativeCallConvFromSig (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="be05f-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="be05f-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="7cb49-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="7cb49-105">Parameters</span></span>  
  `pvSig`  
- <span data-ttu-id="be05f-106">pro Ukazatel na signaturu metadat metody, pro kterou chcete vrátit konvenci volání.</span><span class="sxs-lookup"><span data-stu-id="be05f-106">[in] A pointer to the metadata signature of the method to return the calling convention for.</span></span>  
+ <span data-ttu-id="7cb49-106">pro Ukazatel na signaturu metadat metody, pro kterou chcete vrátit konvenci volání.</span><span class="sxs-lookup"><span data-stu-id="7cb49-106">[in] A pointer to the metadata signature of the method to return the calling convention for.</span></span>  
   
  `cbSig`  
- <span data-ttu-id="be05f-107">pro Velikost v bajtech `pvSig`.</span><span class="sxs-lookup"><span data-stu-id="be05f-107">[in] The size in bytes of `pvSig`.</span></span>  
+ <span data-ttu-id="7cb49-107">pro Velikost v bajtech `pvSig` .</span><span class="sxs-lookup"><span data-stu-id="7cb49-107">[in] The size in bytes of `pvSig`.</span></span>  
   
  `pCallConv`  
- <span data-ttu-id="be05f-108">mimo Ukazatel na nativní konvenci volání.</span><span class="sxs-lookup"><span data-stu-id="be05f-108">[out] A pointer to the native calling convention.</span></span>  
+ <span data-ttu-id="7cb49-108">mimo Ukazatel na nativní konvenci volání.</span><span class="sxs-lookup"><span data-stu-id="7cb49-108">[out] A pointer to the native calling convention.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="be05f-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="be05f-109">Requirements</span></span>  
- <span data-ttu-id="be05f-110">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="be05f-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="7cb49-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="7cb49-109">Requirements</span></span>  
+ <span data-ttu-id="7cb49-110">**Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="7cb49-110">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="be05f-111">**Hlavička:** Cor. h</span><span class="sxs-lookup"><span data-stu-id="be05f-111">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="7cb49-111">**Hlavička:** Cor. h</span><span class="sxs-lookup"><span data-stu-id="7cb49-111">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="be05f-112">**Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll</span><span class="sxs-lookup"><span data-stu-id="be05f-112">**Library:** Included as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="7cb49-112">**Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll</span><span class="sxs-lookup"><span data-stu-id="7cb49-112">**Library:** Included as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="be05f-113">**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="be05f-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="7cb49-113">**Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="7cb49-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="be05f-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="be05f-114">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="7cb49-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="7cb49-114">See also</span></span>
 
 - <xref:System.Runtime.InteropServices.CallingConvention>
-- [<span data-ttu-id="be05f-115">IMetaDataImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="be05f-115">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [<span data-ttu-id="be05f-116">IMetaDataImport2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="be05f-116">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [<span data-ttu-id="7cb49-115">IMetaDataImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="7cb49-115">IMetaDataImport Interface</span></span>](imetadataimport-interface.md)
+- [<span data-ttu-id="7cb49-116">IMetaDataImport2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="7cb49-116">IMetaDataImport2 Interface</span></span>](imetadataimport2-interface.md)
