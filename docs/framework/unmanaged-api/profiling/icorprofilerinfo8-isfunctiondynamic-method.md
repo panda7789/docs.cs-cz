@@ -11,12 +11,12 @@ api_type:
 - COM
 author: davmason
 ms.author: davmason
-ms.openlocfilehash: 50b4de2de3e74a5835ee5706999892735269d4c2
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: c88279d361ea78a2e910c4621e92c500902d9124
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76861733"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84495122"
 ---
 # <a name="icorprofilerinfo8isfunctiondynamic-method"></a>ICorProfilerInfo8:: IsFunctionDynamic – metoda
 
@@ -33,11 +33,11 @@ HRESULT IsFunctionDynamic( [in]  FunctionID  functionId,
 
 - `functionId`
 
-  \[in] `FunctionID`, který identifikuje příslušnou funkci.
+  \[in] `FunctionID` , který identifikuje příslušnou funkci.
 
 - `isDynamic`
 
-  \[] ukazatel na `BOOL`, který bude obsahovat hodnotu označující, jestli nemá funkce žádná metadata.
+  \[out] ukazatel na `BOOL` , který bude obsahovat hodnotu označující, zda nemá funkce žádná metadata.
 
 ## <a name="remarks"></a>Poznámky
 
@@ -45,14 +45,14 @@ Funkce je považována za Dynamic, pokud nemá žádná metadata. Některé meto
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
+**Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).
 
 **Hlavička:** CorProf. idl, CorProf. h
 
 **Knihovna:** CorGuids. lib
 
-**Verze .NET Framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
+**Verze .NET Framework:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
 
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní ICorProfilerInfo8](icorprofilerinfo8-interface.md)
+- [ICorProfilerInfo8 – rozhraní](icorprofilerinfo8-interface.md)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 6105c13e-d9cd-44d2-a95a-924e042830c7
 topic_type:
 - apiref
-ms.openlocfilehash: 348ca9d157a668dcd180076475f1fe9861197174
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 4c015d77deb4e6ed3d43074f2903e26b687de84f
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616658"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84493562"
 ---
 # <a name="corbindtocurrentruntime-function"></a>CorBindToCurrentRuntime – funkce
 Načte modul CLR (Common Language Runtime) do procesu pomocí informací o verzi uložených v souboru XML. Formát souboru XML je modelován po standardní konfigurační soubor aplikace. Další informace o konfiguračních souborech najdete v tématu [Schéma konfiguračního souboru](../../configure-apps/file-schema/index.md).  
@@ -42,12 +42,12 @@ HRESULT CorBindToCurrentRuntime (
  `pwszFileName`  
  pro Název konfiguračního souboru aplikace, který určuje verzi modulu CLR, která má být načtena. Pokud název souboru není plně kvalifikovaný, předpokládá se, že se nachází ve stejném adresáři jako spustitelný soubor, který volání provádí.  
   
- Verze modulu runtime, která má být načtena, je popsána atributem verze v [ \< requiredRuntime>](../../configure-apps/file-schema/startup/requiredruntime-element.md) elementu konfiguračního souboru.  
+ Verze modulu runtime, která má být načtena, je popsána atributem verze v [\<requiredRuntime>](../../configure-apps/file-schema/startup/requiredruntime-element.md) elementu konfiguračního souboru.  
   
  Pokud není zadána žádná verze nebo pokud `<requiredRuntime>` prvek nelze nalézt, je načtena nejnovější verze CLR, která je nainstalována v počítači.  
   
  `rclsid`  
- pro `CLSID`Třída typu coclass, která implementuje rozhraní [ICorRuntimeHost](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md) nebo [ICLRRuntimeHost](iclrruntimehost-interface.md) . Podporované hodnoty jsou CLSID_CorRuntimeHost nebo CLSID_CLRRuntimeHost.  
+ pro `CLSID`Třída typu coclass, která implementuje rozhraní [ICorRuntimeHost](icorruntimehost-interface.md) nebo [ICLRRuntimeHost](iclrruntimehost-interface.md) . Podporované hodnoty jsou CLSID_CorRuntimeHost nebo CLSID_CLRRuntimeHost.  
   
  `riid`  
  pro `IID`Rozhraní, které požadujete. Podporované hodnoty jsou IID_ICorRuntimeHost nebo IID_ICLRRuntimeHost.  
@@ -64,7 +64,7 @@ HRESULT CorBindToCurrentRuntime (
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [CorBindToRuntime – funkce](corbindtoruntime-function.md)
 - [CorBindToRuntimeByCfg – funkce](corbindtoruntimebycfg-function.md)

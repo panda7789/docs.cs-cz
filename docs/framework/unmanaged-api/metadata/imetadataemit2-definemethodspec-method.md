@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 3c24e552-fc69-4971-b65a-a3e4b5f7f1e8
 topic_type:
 - apiref
-ms.openlocfilehash: a5d9342b8bfe650106ccf9daf2a91dfbcd575446
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8e067dc4943e6847177c13a683703e3a649a49e4
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175535"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503814"
 ---
 # <a name="imetadataemit2definemethodspec-method"></a>IMetaDataEmit2::DefineMethodSpec – metoda
-Vytvoří obecnou instanci metody a získá token k definici.  
+Vytvoří obecnou instanci metody a získá do definice token.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,27 +38,27 @@ HRESULT DefineMethodSpec (
   
 ## <a name="parameters"></a>Parametry  
  `tkParent`  
- [v] Token pro metodu, která chcete vytvořit obecnou instanci. Token musí být `mdMethodDef` typu `mdMemberRef`nebo .  
+ pro Token pro metodu, pro kterou chcete vytvořit obecnou instanci. Token musí být typu `mdMethodDef` nebo `mdMemberRef` .  
   
  `pvSigBlob`  
- [v] Ukazatel na binární podpis metody modelu COM+.  
+ pro Ukazatel na binární podpis modelu COM+ metody.  
   
  `cbSibBlob`  
- [v] Velikost v bajtů `pvSigBlob`.  
+ pro Velikost v bajtech `pvSigBlob` .  
   
  `pmi`  
- [out] Token definice podpisu metadat metody.  
+ mimo Token definice podpisu metadat metody.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Používá se jako prostředek v souboru MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
-- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
+- [IMetaDataEmit2 – rozhraní](imetadataemit2-interface.md)
+- [IMetaDataEmit – rozhraní](imetadataemit-interface.md)

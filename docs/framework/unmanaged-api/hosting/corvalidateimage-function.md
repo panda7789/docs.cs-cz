@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 0117e080-05f9-4772-885d-e1847230947c
 topic_type:
 - apiref
-ms.openlocfilehash: 8841fab0517353849ef99594bcbd03dda772c766
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 426b39aa3d1ada5ae44565a742b70681a7bcf6d3
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616499"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84493432"
 ---
 # <a name="_corvalidateimage-function"></a>_CorValidateImage – funkce
 Ověří bitové kopie spravovaného modulu a upozorní zavaděče operačního systému poté, co byly načteny.  
@@ -43,7 +43,7 @@ STDAPI _CorValidateImage (
 ## <a name="return-value"></a>Návratová hodnota  
  Tato funkce vrací standardní hodnoty `E_INVALIDARG` ,, `E_OUTOFMEMORY` `E_UNEXPECTED` a, a `E_FAIL` také následující hodnoty.  
   
-|Vrácená hodnota|Popis|  
+|Vrácená hodnota|Description|  
 |------------------|-----------------|  
 |`STATUS_INVALID_IMAGE_FORMAT`|Obrázek je neplatný. Tato hodnota má hodnotu HRESULT 0xC000007BL.|  
 |`STATUS_SUCCESS`|Bitová kopie je platná. Tato hodnota má HRESULT 0x00000000.|  
@@ -59,7 +59,7 @@ STDAPI _CorValidateImage (
   
 - Vrátí se zavaděč při načtení imagí spravovaného modulu.  
   
- U spustitelných imagí zavaděč operačního systému pak zavolá funkci [_CorExeMain](../../../../docs/framework/unmanaged-api/hosting/corexemain-function.md) bez ohledu na vstupní bod zadaný ve spustitelném souboru. Pro Image sestavení DLL volá zavaděč funkci [_CorDllMain](cordllmain-function.md) .  
+ U spustitelných imagí zavaděč operačního systému pak zavolá funkci [_CorExeMain](corexemain-function.md) bez ohledu na vstupní bod zadaný ve spustitelném souboru. Pro Image sestavení DLL volá zavaděč funkci [_CorDllMain](cordllmain-function.md) .  
   
  `_CorExeMain`nebo `_CorDllMain` provede následující akce:  
   
@@ -80,6 +80,6 @@ STDAPI _CorValidateImage (
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Globální statické funkce pro metadata](../metadata/metadata-global-static-functions.md)

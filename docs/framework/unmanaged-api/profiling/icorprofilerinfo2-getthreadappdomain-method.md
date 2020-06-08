@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 4a11b264-8540-4732-aa35-bc2d95b95b8e
 topic_type:
 - apiref
-ms.openlocfilehash: 7c1ee1c39fbf2dcc1f16df3bc94a235676a216dd
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 70535f8bcee95c2596c43617eb5893e2d92a355b
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76862565"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84496775"
 ---
 # <a name="icorprofilerinfo2getthreadappdomain-method"></a>ICorProfilerInfo2::GetThreadAppDomain – metoda
 Získá ID domény aplikace, ve které zadané vlákno aktuálně spouští kód.  
@@ -41,13 +41,13 @@ HRESULT GetThreadAppDomain(
  mimo Ukazatel na ID domény aplikace.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorProf. idl, CorProf. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

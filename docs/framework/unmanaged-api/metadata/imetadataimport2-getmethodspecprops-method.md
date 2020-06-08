@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 9544b711-e669-4eaf-8630-ee862e5e4489
 topic_type:
 - apiref
-ms.openlocfilehash: 0bfbfec930c193ea05a01bd5bd9f46d2ec6714b1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 079d9245526ff7914d1cbd6a91f0f2d96a690af5
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175288"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84490442"
 ---
 # <a name="imetadataimport2getmethodspecprops-method"></a>IMetaDataImport2::GetMethodSpecProps – metoda
-Získá podpis metadat metody odkazuje zadaný token MethodSpec.  
+Získá podpis metadat metody, na kterou odkazuje zadaný token MethodSpec.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,27 +38,27 @@ HRESULT GetMethodSpecProps (
   
 ## <a name="parameters"></a>Parametry  
  `mi`  
- [v] A MethodSpec token, který představuje instanci metody.  
+ pro Token MethodSpec, který představuje instanci metody.  
   
  `tkParent`  
- [out] Ukazatel na token MethodDef nebo MethodRef, který představuje definici metody.  
+ mimo Ukazatel na token MethodDef nebo MethodRef, který představuje definici metody.  
   
  `ppvSigBlob`  
- [out] Ukazatel na podpis binárních metadat metody.  
+ mimo Ukazatel na binární podpis metadat metody.  
   
  `pcbSigBlob`  
- [out] Velikost v bajtů `ppvSigBlob`.  
+ mimo Velikost v bajtech `ppvSigBlob` .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Používá se jako prostředek v souboru MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
-- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](imetadataimport2-interface.md)
+- [IMetaDataImport – rozhraní](imetadataimport-interface.md)

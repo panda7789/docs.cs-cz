@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 3e2102c5-48b7-4c0e-b805-7e2b5e156e3d
 topic_type:
 - apiref
-ms.openlocfilehash: 514f227e3c0c385f61090079d2f5214dac9b3924
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: fbf6ce8c8c9628b08872058a794fb0e005764ab1
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84004527"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501297"
 ---
 # <a name="imetadataemitdefinemethod-method"></a>IMetaDataEmit::DefineMethod – metoda
 Vytvoří definici metody nebo globální funkce se zadaným podpisem a vrátí do této definice metody token.  
@@ -81,7 +81,7 @@ HRESULT DefineMethod (
  Neměli byste definovat duplicitní metody. To znamená, že byste neměli volat `DefineMethod` s duplicitní sadou hodnot v `td` `wzName` `pvSig` parametrech, a. (Tyto tři parametry společně definují jedinečnou metodu.). Můžete však použít duplicitní trojnásobný předpoklad, že pro jednu z definic metod nastavíte `mdPrivateScope` bit v `dwMethodFlags` parametru. ( `mdPrivateScope` Bit znamená, že kompilátor negeneruje odkaz na tuto definici metody.)  
   
 ## <a name="method-implementation-information"></a>Informace o implementaci metody  
- Informace o implementaci metody často nejsou známy v době, kdy je metoda deklarována. Proto není nutné předávat hodnoty v `ulCodeRVA` `dwImplFlags` parametrech a při volání `DefineMethod` . Hodnoty lze zadat později prostřednictvím [IMetaDataEmit:: SetMethodImplFlags –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-setmethodimplflags-method.md) nebo [IMetaDataEmit:: setrva –](imetadataemit-setrva-method.md), podle potřeby.  
+ Informace o implementaci metody často nejsou známy v době, kdy je metoda deklarována. Proto není nutné předávat hodnoty v `ulCodeRVA` `dwImplFlags` parametrech a při volání `DefineMethod` . Hodnoty lze zadat později prostřednictvím [IMetaDataEmit:: SetMethodImplFlags –](imetadataemit-setmethodimplflags-method.md) nebo [IMetaDataEmit:: setrva –](imetadataemit-setrva-method.md), podle potřeby.  
   
  V některých situacích, například ve scénářích volání platformy (PInvoke) nebo v případě komunikace s objekty COM, nebude tělo metody dodáno a `ulCodeRVA` mělo by být nastaveno na hodnotu nula. V těchto situacích by neměla být metoda označena jako abstraktní, protože modul runtime vyhledá implementaci.  
   
@@ -110,7 +110,7 @@ HRESULT DefineMethod (
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [IMetaDataEmit – rozhraní](imetadataemit-interface.md)
 - [IMetaDataEmit2 – rozhraní](imetadataemit2-interface.md)

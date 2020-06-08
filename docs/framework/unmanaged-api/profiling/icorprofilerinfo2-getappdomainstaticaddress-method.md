@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 2a9e0ea7-a9e2-4817-b1c4-fcf15b215ea9
 topic_type:
 - apiref
-ms.openlocfilehash: 05d8c44655d8670194035c336bd62ae5d53bfec3
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 3dc5f04504cca632892c16d31c92a33935b356e0
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76862968"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84497332"
 ---
 # <a name="icorprofilerinfo2getappdomainstaticaddress-method"></a>ICorProfilerInfo2::GetAppDomainStaticAddress – metoda
 Získá adresu zadaného pole domény aplikace (static), které je v oboru zadané domény aplikace.  
@@ -49,7 +49,7 @@ RESULT GetAppDomainStaticAddress(
  mimo Ukazatel na adresu statického pole, které je v zadané doméně aplikace.  
   
 ## <a name="remarks"></a>Poznámky  
- Metoda `GetAppDomainStaticAddress` může vracet jednu z následujících možností:  
+ `GetAppDomainStaticAddress`Metoda může vracet jednu z následujících možností:  
   
 - CORPROF_E_DATAINCOMPLETE HRESULT, pokud danému statickému poli nebyla přiřazena adresa v zadaném kontextu.  
   
@@ -58,13 +58,13 @@ RESULT GetAppDomainStaticAddress(
  Před dokončením konstruktoru třídy třídy `GetAppDomainStaticAddress` vrátí CORPROF_E_DATAINCOMPLETE pro všechna jeho statická pole, i když některá z statických polí již mohou být inicializována a kořenové objekty uvolňování paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorProf. idl, CorProf. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

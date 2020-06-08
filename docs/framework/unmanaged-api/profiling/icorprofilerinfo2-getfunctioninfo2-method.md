@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 0aa60f24-8bbd-4c83-83c5-86ad191b1d82
 topic_type:
 - apiref
-ms.openlocfilehash: dcd162aec12dc75585f1828cffdd4cdbedcf9988
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: f5438ddc655f0f6a7c11d978a47b1bf9e2a13059
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76868658"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84497000"
 ---
 # <a name="icorprofilerinfo2getfunctioninfo2-method"></a>ICorProfilerInfo2::GetFunctionInfo2 – metoda
 Získá nadřazenou třídu, token metadat a `ClassID` každého argumentu typu, pokud je k dispozici funkce.  
@@ -44,7 +44,7 @@ HRESULT GetFunctionInfo2(
  pro ID funkce, pro kterou se má získat nadřazená třída a další informace  
   
  `frameInfo`  
- pro Hodnota `COR_PRF_FRAME_INFO`, která odkazuje na informace o snímku zásobníku.  
+ pro `COR_PRF_FRAME_INFO`Hodnota, která odkazuje na informace o snímku zásobníku.  
   
  `pClassId`  
  mimo Ukazatel na nadřazenou třídu funkce.  
@@ -56,37 +56,37 @@ HRESULT GetFunctionInfo2(
  mimo Ukazatel na token metadat pro funkci.  
   
  `cTypeArgs`  
- pro Velikost pole `typeArgs`.  
+ pro Velikost `typeArgs` pole.  
   
  `pcTypeArgs`  
- mimo Ukazatel na celkový počet `ClassID`ch hodnot.  
+ mimo Ukazatel na celkový počet `ClassID` hodnot.  
   
  `typeArgs`  
- mimo Pole hodnot `ClassID`, z nichž každý je ID argumentu funkce. Když se metoda vrátí, `typeArgs` bude obsahovat některé nebo všechny `ClassID` hodnoty.  
+ mimo Pole `ClassID` hodnot, z nichž každý je identifikátor argumentu typu funkce. Když se metoda vrátí, `typeArgs` bude obsahovat některé nebo všechny `ClassID` hodnoty.  
   
 ## <a name="remarks"></a>Poznámky  
- Kód profileru může zavolat [ICorProfilerInfo:: GetModuleMetaData –](icorprofilerinfo-getmodulemetadata-method.md) a získat rozhraní [metadat](../../../../docs/framework/unmanaged-api/metadata/index.md) pro daný modul. Token metadat, který je vrácen do umístění odkazovaného `pToken` lze následně použít pro přístup k metadatům funkce.  
+ Kód profileru může zavolat [ICorProfilerInfo:: GetModuleMetaData –](icorprofilerinfo-getmodulemetadata-method.md) a získat rozhraní [metadat](../metadata/index.md) pro daný modul. Token metadat, který je vrácen do umístění odkazovaného pomocí, `pToken` lze následně použít pro přístup k metadatům funkce.  
   
- IDENTIFIKÁTOR třídy a argumenty typu, které jsou vráceny pomocí `pClassId` a parametry `typeArgs` závisí na hodnotě předané v parametru `frameInfo`, jak je znázorněno v následující tabulce.  
+ ID třídy a argumenty typu, které jsou vráceny prostřednictvím `pClassId` parametrů a `typeArgs` závisí na hodnotě předané v `frameInfo` parametru, jak je uvedeno v následující tabulce.  
   
-|Hodnota parametru `frameInfo`|Výsledek|  
+|Hodnota `frameInfo` parametru|Výsledek|  
 |----------------------------------------|------------|  
-|Hodnota `COR_PRF_FRAME_INFO` získaná z zpětného volání `FunctionEnter2`|`ClassID`vrácená v umístění, na které odkazuje `pClassId`a všechny argumenty typu vrácené v poli `typeArgs`, budou přesně.|  
-|`COR_PRF_FRAME_INFO` získaný ze zdroje jiného než zpětné volání `FunctionEnter2`|Nelze určit přesný `ClassID` a argumenty typu. To znamená, že `ClassID` může mít hodnotu null a některé argumenty typu se mohou vrátit jako <xref:System.Object>.|  
-|Nula|Nelze určit přesný `ClassID` a argumenty typu. To znamená, že `ClassID` může mít hodnotu null a některé argumenty typu se mohou vrátit jako <xref:System.Object>.|  
+|`COR_PRF_FRAME_INFO`Hodnota, která byla získána z `FunctionEnter2` zpětného volání|`ClassID`, Vrácený v umístění, na který odkazuje `pClassId` , a všechny argumenty typu vrácené v poli `typeArgs` , budou přesně.|  
+|A `COR_PRF_FRAME_INFO` získaný ze zdrojového jiného než `FunctionEnter2` zpětného volání|`ClassID`Nelze určit přesný a typové argumenty. To znamená, že `ClassID` může být null a některé argumenty typu se mohou vrátit jako <xref:System.Object> .|  
+|Nula|`ClassID`Nelze určit přesný a typové argumenty. To znamená, že `ClassID` může být null a některé argumenty typu se mohou vrátit jako <xref:System.Object> .|  
   
- Jakmile `GetFunctionInfo2` vrátí, je nutné ověřit, zda byla vyrovnávací paměť `typeArgs` dostatečně velká, aby obsahovala všechny `ClassID` hodnoty. To provedete tak, že porovnáte hodnotu, na kterou `pcTypeArgs` odkazuje, hodnotou `cTypeArgs` parametru. Pokud `pcTypeArgs` odkazuje na hodnotu, která je větší než `cTypeArgs` dělená velikostí `ClassID` hodnoty, přidělte větší vyrovnávací paměť `pcTypeArgs`, aktualizujte `cTypeArgs` o novou, větší velikost a zavolejte `GetFunctionInfo2` znovu.  
+ Po `GetFunctionInfo2` návratu je nutné ověřit, zda `typeArgs` byla vyrovnávací paměť dostatečně velká, aby obsahovala všechny `ClassID` hodnoty. Provedete to tak, že porovnáte hodnotu, `pcTypeArgs` na kterou odkazuje, s hodnotou `cTypeArgs` parametru. Pokud `pcTypeArgs` odkazuje na hodnotu, která je větší než `cTypeArgs` dělené velikostí `ClassID` hodnoty, přidělte větší `pcTypeArgs` vyrovnávací paměť, aktualizujte `cTypeArgs` novou, větší velikost a zavolejte `GetFunctionInfo2` znovu.  
   
- Alternativně můžete pro získání správné velikosti vyrovnávací paměti nejprve volat `GetFunctionInfo2` s nulovou délkou `pcTypeArgs` vyrovnávací paměti. Velikost vyrovnávací paměti pak můžete nastavit na hodnotu vrácenou v `pcTypeArgs` dělenou velikostí `ClassID` a volat `GetFunctionInfo2` znovu.  
+ Případně můžete `GetFunctionInfo2` pro získání správné velikosti vyrovnávací paměti nejprve zavolat s nulovou délkou `pcTypeArgs` vyrovnávací paměti. Pak můžete nastavit velikost vyrovnávací paměti na hodnotu vrácenou v `pcTypeArgs` dělené velikostí `ClassID` hodnoty a volat `GetFunctionInfo2` znovu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorProf. idl, CorProf. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

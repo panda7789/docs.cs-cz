@@ -12,12 +12,12 @@ helpviewer_keywords:
 - case statement [C#]
 - default keyword [C#]
 ms.assetid: 44bae8b8-8841-4d85-826b-8a94277daecb
-ms.openlocfilehash: a4e6f8e43c2ec8c867af9f78bd83b435b78c73d5
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 9335399be2d4909a02fecbf2959c6f5608664732
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84446760"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84493666"
 ---
 # <a name="switch-c-reference"></a>Switch (Referenční dokumentace jazyka C#)
 
@@ -86,7 +86,7 @@ Spuštění seznamu příkazů v oddílu switch s popiskem Case, který odpovíd
 
 Každý popisek případu určuje vzor, který se má porovnat s výrazem shody ( `caseSwitch` Proměnná v předchozích příkladech). Pokud se shodují, ovládací prvek se přenese do oddílu Switch, který obsahuje **první** odpovídající popisek případu. Pokud žádný vzor popisku případu neodpovídá výrazu Match, je ovládací prvek převeden do oddílu s `default` popiskem Case, pokud existuje. Pokud není žádný `default` případ, nejsou spuštěny žádné příkazy v žádném oddílu přepínače a ovládací prvek se přenese mimo `switch` příkaz.
 
-Informace o `switch` příkazu a porovnávání vzorů naleznete v tématu porovnávání [vzorů s oddílem `switch` Statement](#pattern) .
+Informace o `switch` příkazu a porovnávání vzorů naleznete v tématu porovnávání [vzorů s oddílem `switch` Statement](#pattern-matching with-the-switch-statement) .
 
 Vzhledem k tomu, že C# 6 podporuje pouze konstantní vzor a neumožňuje opakování konstantních hodnot, popisky case definují vzájemně se vylučující hodnoty a pouze jeden vzor může odpovídat výrazu shody. V důsledku toho pořadí, ve kterém `case` se zobrazují příkazy, je neimportované.
 
@@ -100,7 +100,7 @@ Tento problém můžete vyřešit a odstranit upozornění kompilátoru jedním 
 
 - Změnou pořadí oddílů přepínače.
 
-- Použitím [klauzule when](#when) v `case` popisku.
+- Použitím [klauzule when](#the-case-statement-and-the-when-clause) v `case` popisku.
 
 ## <a name="the-default-case"></a>`default`Případ
 
@@ -108,7 +108,7 @@ Tento problém můžete vyřešit a odstranit upozornění kompilátoru jedním 
 
 `default`Případ se může objevit v libovolném pořadí `switch` příkazu. Bez ohledu na pořadí ve zdrojovém kódu je vždy vyhodnoceno jako poslední, po `case` vyhodnocení všech popisků.
 
-## <a name="pattern-matching-with-the-switch-statement"></a><a name="pattern"></a>Porovnávání vzorů s `switch` příkazem
+## <a name="pattern-matching-with-the-switch-statement"></a>Porovnávání vzorů s `switch` příkazem
 
 Každý `case` příkaz definuje vzor, který, pokud se shoduje s výrazem shody, způsobí, že obsahuje oddíl obsahujícího přepínače, který má být spuštěn. Všechny verze jazyka C# podporují konstantní vzorek. Zbývající vzorce jsou podporovány počínaje jazykem C# 7,0.
 
@@ -185,7 +185,7 @@ Bez porovnávání vzorů může být tento kód napsán následujícím způsob
 
 [!code-csharp[type-pattern2#1](~/samples/snippets/csharp/language-reference/keywords/switch/type-pattern2.cs#1)]
 
-## <a name="the-case-statement-and-the-when-clause"></a><a name="when" />`case`Příkaz a `when` klauzule
+## <a name="the-case-statement-and-the-when-clause"></a>`case`Příkaz a `when` klauzule
 
 Počínaje jazykem C# 7,0, protože příkazy Case nemusejí být vzájemně exkluzivní, můžete přidat `when` klauzuli pro určení další podmínky, která musí být splněna, aby příkaz Case vyhodnotil hodnotu true. `when`Klauzule může být libovolný výraz, který vrací logickou hodnotu.
 
@@ -199,7 +199,7 @@ Všimněte si, že `when` klauzule v příkladu, která se pokouší otestovat, 
 
 Další informace naleznete v [příkazu switch](~/_csharplang/spec/statements.md#the-switch-statement) v tématu [specifikace jazyka C#](/dotnet/csharp/language-reference/language-specification/introduction). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Reference jazyka C#](../index.md)
 - [Průvodce programováním v C#](../../programming-guide/index.md)

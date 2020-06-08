@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 44eef087-f21f-4fe2-b481-f8a0ee022e7d
 topic_type:
 - apiref
-ms.openlocfilehash: c90c790c519cc0c422657e6e2d8040a365fbf48c
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: f025f4c0bc0ec8e11decddcdf64be50f68955266
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76865776"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84499802"
 ---
 # <a name="icorprofilercallback2garbagecollectionstarted-method"></a>ICorProfilerCallback2::GarbageCollectionStarted – metoda
 Oznamuje profileru kódu, že se spustilo uvolňování paměti.  
@@ -36,10 +36,10 @@ HRESULT GarbageCollectionStarted(
   
 ## <a name="parameters"></a>Parametry  
  `cGenerations`  
- pro Celkový počet položek v poli `generationCollected`.  
+ pro Celkový počet položek v `generationCollected` poli.  
   
  `generationCollected`  
- pro Pole logických hodnot, které jsou `true`, pokud je generace, která odpovídá indexu pole, shromažďována tímto uvolňováním paměti; v opačném případě `false`.  
+ pro Pole logických hodnot, které jsou `true` v případě, že je kolekce, která odpovídá indexu pole, shromažďována tímto uvolňováním paměti; v opačném případě `false` .  
   
  Pole je indexováno hodnotou [COR_PRF_GC_GENERATION](cor-prf-gc-generation-enumeration.md) výčtu, což označuje generaci.  
   
@@ -47,18 +47,18 @@ HRESULT GarbageCollectionStarted(
  pro Hodnota výčtu [COR_PRF_GC_REASON](cor-prf-gc-reason-enumeration.md) , která označuje důvod vystavení uvolňování paměti.  
   
 ## <a name="remarks"></a>Poznámky  
- Všechna zpětná volání, která souvisí s tímto uvolňováním paměti, budou provedena mezi `GarbageCollectionStarted`ovým zpětným voláním a odpovídajícím voláním [ICorProfilerCallback2:: GarbageCollectionFinished –](icorprofilercallback2-garbagecollectionfinished-method.md) . Tato zpětná volání nemusí být ve stejném vlákně.  
+ Všechna zpětná volání, která se týkají tohoto uvolňování paměti, proběhnou mezi `GarbageCollectionStarted` zpětným voláním a odpovídajícím voláním [ICorProfilerCallback2:: GarbageCollectionFinished –](icorprofilercallback2-garbagecollectionfinished-method.md) . Tato zpětná volání nemusí být ve stejném vlákně.  
   
- Profiler je bezpečně kontrolovat objekty v původních umístěních během `GarbageCollectionStarted` zpětného volání. Systém uvolňování paměti začne přesouvat objekty po návratu z `GarbageCollectionStarted`. Až se Profiler vrátí z tohoto zpětného volání, Profiler by měl považovat všechna ID objektů za neplatnou, dokud neobdrží zpětné volání `ICorProfilerCallback2::GarbageCollectionFinished`.  
+ Profiler je bezpečně kontrolovat objekty v původních umístěních během `GarbageCollectionStarted` zpětného volání. Systém uvolňování paměti začne přesouvat objekty po návratu z `GarbageCollectionStarted` . Po návratu profileru z tohoto zpětného volání by měl Profiler považovat všechna ID objektů za neplatnou, dokud neobdrží `ICorProfilerCallback2::GarbageCollectionFinished` zpětné volání.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorProf. idl, CorProf. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

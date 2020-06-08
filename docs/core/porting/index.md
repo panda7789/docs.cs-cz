@@ -3,12 +3,12 @@ title: Přizpůsobení z .NET Framework na .NET Core
 description: Pochopení procesu přenosu a zjišťování nástrojů, které můžete najít užitečné při přenosu .NET Framework projektu do .NET Core.
 author: cartermp
 ms.date: 10/22/2019
-ms.openlocfilehash: c6797a5b3a97ddd01f86498d896e859baf8997be
-ms.sourcegitcommit: c2c1269a81ffdcfc8675bcd9a8505b1a11ffb271
+ms.openlocfilehash: 74fe4519e41a07bc78a4dc346f8d1b52b5c7d092
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/25/2020
-ms.locfileid: "82158280"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502766"
 ---
 # <a name="overview-of-porting-from-net-framework-to-net-core"></a>Přehled přenosů z .NET Framework do .NET Core
 
@@ -39,6 +39,9 @@ Chcete-li identifikovat projekty objednávek, které by měly být migrovány, m
 
 - [Diagramy závislostí v aplikaci Visual Studio](/visualstudio/modeling/create-layer-diagrams-from-your-code) mohou vytvořit orientovaný graf kódu v řešení.
 - Spusťte `msbuild _SolutionPath_ /t:GenerateRestoreGraphFile /p:RestoreGraphOutputPath=graph.dg.json` pro vygenerování dokumentu JSON, který obsahuje seznam odkazů projektu.
+- Spusťte nástroj [analyzátor přenositelnosti .NET](../../standard/analyzers/portability-analyzer.md) s `-r DGML` přepínačem pro načtení diagramu závislostí sestavení. Další informace najdete [tady](../../standard/analyzers/portability-analyzer.md#solution-wide-view).
+
+Po zobrazení informací o závislostech můžete tyto informace použít ke spuštění na listových uzlech a podle kroků v další části pracovat se stromem závislostí.
 
 ## <a name="per-project-steps"></a>Podle kroků projektu
 
@@ -66,7 +69,7 @@ Při přenosu projektu do .NET Core doporučujeme použít následující postup
 
    Při čtení sestav vygenerovaných analyzátorem jsou důležité informace skutečná rozhraní API, která se používají, a ne nutně procento podpory cílové platformy. Mnoho rozhraní API má v .NET Standard/Core stejné možnosti, a proto je potřeba pochopit, jaké scénáře vaše knihovna nebo aplikace potřebuje rozhraní API, aby bylo možné určit, že se má přenositelnost vynásobit.
 
-   Existují některé případy, kdy rozhraní API nejsou ekvivalentní a je třeba provést některé direktivy preprocesoru kompilátoru (tj. `#if NET45`) na speciální případ platforem. V tomto okamžiku bude projekt stále cílen .NET Framework. U každého z těchto cílových případů se doporučuje použít známé podmíněné výrazy, které lze chápat jako scénář.  Například podpora AppDomain v .NET Core je omezená, ale pro scénář načítání a uvolňování sestavení existuje nové rozhraní API, které není k dispozici v rozhraní .NET Core. Běžný způsob, jak to zpracovat v kódu, by byl podobný:
+   Existují některé případy, kdy rozhraní API nejsou ekvivalentní a je třeba provést některé direktivy preprocesoru kompilátoru (tj `#if NET45` .) na speciální případ platforem. V tomto okamžiku bude projekt stále cílen .NET Framework. U každého z těchto cílových případů se doporučuje použít známé podmíněné výrazy, které lze chápat jako scénář.  Například podpora AppDomain v .NET Core je omezená, ale pro scénář načítání a uvolňování sestavení existuje nové rozhraní API, které není k dispozici v rozhraní .NET Core. Běžný způsob, jak to zpracovat v kódu, by byl podobný:
 
    ```csharp
    #if FEATURE_APPDOMAIN_LOADING
@@ -78,9 +81,9 @@ Při přenosu projektu do .NET Core doporučujeme použít následující postup
    #endif
    ```
 
-1. Nainstalujte do svých projektů [analyzátor rozhraní .NET API](../../standard/analyzers/api-analyzer.md) a Identifikujte rozhraní API <xref:System.PlatformNotSupportedException> , která se vyvolávají na některých platformách a nějaké jiné potenciální problémy s kompatibilitou.
+1. Nainstalujte do svých projektů [analyzátor rozhraní .NET API](../../standard/analyzers/api-analyzer.md) a Identifikujte rozhraní API, která se vyvolávají <xref:System.PlatformNotSupportedException> na některých platformách a nějaké jiné potenciální problémy s kompatibilitou.
 
-   Tento nástroj je podobný analyzátoru přenositelnosti, ale místo analýzy, jestli se kód může sestavovat v .NET Core, analyzuje, jestli používáte rozhraní API způsobem, který zavolá <xref:System.PlatformNotSupportedException> v době běhu. I když se nejedná o běžný postup, Pokud přesouváte z .NET Framework 4.7.2 nebo vyšší, je dobré ho kontrolovat. Další informace o rozhraních API, která vyvolávají výjimky v rozhraní .NET Core, najdete v tématu [rozhraní API, která vždy vyvolají výjimky v rozhraní .NET Core](../compatibility/unsupported-apis.md).
+   Tento nástroj je podobný analyzátoru přenositelnosti, ale místo analýzy, jestli se kód může sestavovat v .NET Core, analyzuje, jestli používáte rozhraní API způsobem, který zavolá v <xref:System.PlatformNotSupportedException> době běhu. I když se nejedná o běžný postup, Pokud přesouváte z .NET Framework 4.7.2 nebo vyšší, je dobré ho kontrolovat. Další informace o rozhraních API, která vyvolávají výjimky v rozhraní .NET Core, najdete v tématu [rozhraní API, která vždy vyvolají výjimky v rozhraní .NET Core](../compatibility/unsupported-apis.md).
 
 1. V tomto okamžiku se můžete přepnout na cílení na .NET Core (obecně pro aplikace) nebo .NET Standard (pro knihovny).
 
@@ -109,6 +112,6 @@ Při přenosu projektu do .NET Core doporučujeme použít následující postup
 ## <a name="next-steps"></a>Další kroky
 
 > [!div class="nextstepaction"]
-> [Analyze dependencies](third-party-deps.md)
-> ASP.NET migrace balíčku[NuGet](../deploying/creating-nuget-packages.md)
-> balíčku závislostí[na ASP.NET Core](/aspnet/core/migration/proper-to-2x)
+> [Analyzovat závislosti](third-party-deps.md) 
+>  Balíček [NuGet balíčku](../deploying/creating-nuget-packages.md) 
+>  [ASP.NET migrace na ASP.NET Core](/aspnet/core/migration/proper-to-2x)

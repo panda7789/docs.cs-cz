@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 920b6483-7064-4d64-8613-fcc38ccf9b1e
 topic_type:
 - apiref
-ms.openlocfilehash: 27b3037459ac4f995e37515f6e96c28449c80a4f
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 1fe44f8f84c079e920c8c82fb9d52d1980d3b852
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76862942"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84497202"
 ---
 # <a name="icorprofilerinfo2enummodulefrozenobjects-method"></a>ICorProfilerInfo2::EnumModuleFrozenObjects – metoda
 Získá enumerátor, který umožňuje iteraci přes zmrazené objekty v zadaném modulu. Tato metoda je zastaralá.  
@@ -41,7 +41,7 @@ HRESULT EnumModuleFrozenObjects(
  mimo Ukazatel na adresu rozhraní [ICorProfilerObjectEnum](icorprofilerobjectenum-interface.md) , které vyčísluje zmrazené objekty.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorProf. idl, CorProf. h  
   

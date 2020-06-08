@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: ce7a21f9-0ca3-4b92-bc4b-bb803cae3f51
 topic_type:
 - apiref
-ms.openlocfilehash: 9aeb7a294beb10f9c2968e6161c72fdc362c4991
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8c88e97f8187ac347f4ff39890c8d87ee80c8f9e
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177056"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84500712"
 ---
 # <a name="functionenter2-function"></a>FunctionEnter2 – funkce
-Upozorní profiler, že ovládací prvek je předáván funkci a poskytuje informace o argumentech rámce zásobníku a funkce. Tato funkce nahrazuje funkci [FunctionEnter.](functionenter-function.md)  
+Upozorňuje profileru, že řízení je předáno funkci a poskytuje informace o bloku zásobníku a argumentech funkce. Tato funkce nahrazuje funkci [FunctionEnter –](functionenter-function.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,49 +39,49 @@ void __stdcall FunctionEnter2 (
 
 - `funcId`
 
-  \[in] Identifikátor funkce, které je ovládací prvek předán.
+  \[in] identifikátor funkce, do které byl ovládací prvek předán.
 
 - `clientData`
 
-  \[in] Přemapovaný identifikátor funkce, který profiler dříve zadal pomocí funkce [FunctionIDMapper.](functionidmapper-function.md)
+  \[in] identifikátor přemapované funkce, který Profiler předtím určil pomocí funkce [FunctionIDMapper –](functionidmapper-function.md) .
   
 - `func`
 
-  \[in] `COR_PRF_FRAME_INFO` Hodnota, která odkazuje na informace o rámci zásobníku.
+  \[in] `COR_PRF_FRAME_INFO` hodnota, která odkazuje na informace o snímku zásobníku.
   
-  Profiler by měl považovat za neprůhledný popisovač, který může být předán zpět do modulu provádění v [Metodě ICorProfilerInfo2::GetFunctionInfo2.](icorprofilerinfo2-getfunctioninfo2-method.md)  
+  Profiler by měl považovat za neprůhledný popisovač, který lze předat zpět spouštěcímu modulu v metodě [ICorProfilerInfo2:: GetFunctionInfo2 –](icorprofilerinfo2-getfunctioninfo2-method.md) .  
   
 - `argumentInfo`
 
-  \[in] Ukazatel na [strukturu COR_PRF_FUNCTION_ARGUMENT_INFO,](cor-prf-function-argument-info-structure.md) která určuje umístění v paměti argumentů funkce.
+  \[in] ukazatel na strukturu [COR_PRF_FUNCTION_ARGUMENT_INFO](cor-prf-function-argument-info-structure.md) , která určuje umístění v paměti argumentů funkce.
 
-  Chcete-li získat přístup `COR_PRF_ENABLE_FUNCTION_ARGS` k informacím o argumentech, musí být příznak nastaven. Profiler můžete použít [ICorProfilerInfo::SetEventMask](icorprofilerinfo-seteventmask-method.md) metoda nastavit příznaky události.
+  Aby bylo možné získat přístup k informacím o argumentech, `COR_PRF_ENABLE_FUNCTION_ARGS` musí být nastaven příznak. Profiler může použít metodu [ICorProfilerInfo:: SetEventMask](icorprofilerinfo-seteventmask-method.md) k nastavení příznaků událostí.
 
 ## <a name="remarks"></a>Poznámky  
- Hodnoty `func` a `argumentInfo` parametry nejsou platné po `FunctionEnter2` vrátí funkce, protože hodnoty mohou změnit nebo být zničeny.  
+ Hodnoty `func` `argumentInfo` parametrů a nejsou platné poté, co `FunctionEnter2` funkce vrátí, protože hodnoty se mohou změnit nebo zničit.  
   
- Funkce `FunctionEnter2` je zpětné volání; musíte jej implementovat. Implementace musí používat `__declspec``naked`atribut ( ) třídy úložiště.  
+ `FunctionEnter2`Funkce je zpětné volání. je nutné ji implementovat. Implementace musí používat `__declspec` `naked` atribut třídy úložiště ().  
   
- Spuštění motoru neukládá žádné registry před voláním této funkce.  
+ Spouštěcí modul neuloží žádné Registry před voláním této funkce.  
   
-- Při vstupu je nutné uložit všechny registry, které používáte, včetně registrů v jednotce s plovoucí desetinnou tálicí (FPU).  
+- Při zadání je nutné uložit všechny používané Registry, včetně těch, které jsou v jednotce s plovoucí desetinnou čárkou (FPU).  
   
-- Při ukončení je nutné obnovit zásobník odprýskávání mačkání všechny parametry, které byly posunuty jeho volajícího.  
+- Při ukončení je nutné obnovit zásobník odebráním všech parametrů, které byly vloženy volajícím.  
   
- Implementace `FunctionEnter2` by nemělblokovat, protože zpozdí uvolňování paměti. Implementace by se neměla pokoušet o uvolnění paměti, protože zásobník nemusí být ve stavu vhodném pro uvolnění paměti. Pokud dojde k pokusu o uvolnění paměti, zaběhu se zablokuje, dokud `FunctionEnter2` se vrátí.  
+ Implementace `FunctionEnter2` by neměla blokovat, protože by se zpozdilo uvolňování paměti. Implementace by se neměla pokoušet o uvolnění paměti, protože zásobník nemůže být ve stavu, který je k pro uvolňování paměti. Při pokusu o uvolnění paměti modul runtime zablokuje, dokud se `FunctionEnter2` nevrátí.  
   
- `FunctionEnter2` Funkce také nesmí volat do spravovaného kódu nebo žádným způsobem způsobit přidělení spravované paměti.  
+ `FunctionEnter2`Funkce také nesmí volat do spravovaného kódu nebo jakýmkoli způsobem způsobit přidělení spravované paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** CorProf.idl  
+ **Hlavička:** CorProf. idl  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [FunctionLeave2 – funkce](functionleave2-function.md)
 - [FunctionTailcall2 – funkce](functiontailcall2-function.md)

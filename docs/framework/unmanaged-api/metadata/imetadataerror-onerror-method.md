@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: c1e744b8-a6fb-4d9c-a971-8babc875d8f0
 topic_type:
 - apiref
-ms.openlocfilehash: 489fa217744e41ccb5d27d088790131c15e1ee52
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d2252f58af1a319d953fb320a99fad1cfec3dca0
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177402"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84492705"
 ---
 # <a name="imetadataerroronerror-method"></a>IMetaDataError::OnError – metoda
-Poskytuje oznámení o chybách, ke kterým dochází během sloučení metadat.  
+Poskytuje oznámení o chybách, ke kterým došlo během sloučení metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,20 +36,20 @@ HRESULT OnError (
   
 ## <a name="parameters"></a>Parametry  
  `hrError`  
- [v] Hodnota chyby HRESULT vrácená volající metodě.  
+ pro Hodnota chyby HRESULT vrácená metodě volání.  
   
  `token`  
- [v] Token metadat objektu kódu, který byl sloučen, když došlo k chybě.  
+ pro Token metadat objektu kódu, který byl sloučen v okamžiku, kdy došlo k chybě.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Používá se jako prostředek v souboru MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [IMetaDataError – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataerror-interface.md)
+- [IMetaDataError – rozhraní](imetadataerror-interface.md)

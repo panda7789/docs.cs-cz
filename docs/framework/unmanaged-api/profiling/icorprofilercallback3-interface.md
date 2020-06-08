@@ -14,19 +14,19 @@ helpviewer_keywords:
 ms.assetid: be83af41-3dec-4c77-8529-9dd6b8042af6
 topic_type:
 - apiref
-ms.openlocfilehash: ad9c5445cbef0be7919570db64b027556d923752
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: db07e2afa64ea2bf80416e6ab8cba5a4dcdc8dcf
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76865568"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84499672"
 ---
 # <a name="icorprofilercallback3-interface"></a>ICorProfilerCallback3 – rozhraní
 Poskytuje metody zpětného volání, které modul CLR (Common Language Runtime) používá ke komunikaci informací o stavu připojení a odpojení profileru.  
   
 ## <a name="methods"></a>Metody  
   
-|Metoda|Popis|  
+|Metoda|Description|  
 |------------|-----------------|  
 |[InitializeForAttach – metoda](icorprofilercallback3-initializeforattach-method.md)|Volá se modulem CLR, aby Profiler mohl po operaci připojení inicializovat svůj stav.|  
 |[ProfilerAttachComplete – metoda](icorprofilercallback3-profilerattachcomplete-method.md)|Volá se modulem CLR k označení toho, že Profiler teď může volat metody catch.|  
@@ -35,13 +35,13 @@ Poskytuje metody zpětného volání, které modul CLR (Common Language Runtime)
 ## <a name="remarks"></a>Poznámky  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorProf. idl, CorProf. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

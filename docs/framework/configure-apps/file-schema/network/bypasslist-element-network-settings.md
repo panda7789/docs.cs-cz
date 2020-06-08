@@ -1,5 +1,6 @@
 ---
 title: <bypasslist> – element (nastavení sítě)
+description: <bypasslist>Prvek nastavení sítě poskytuje sadu regulárních výrazů, které popisují adresy, které nepoužívají proxy server v .NET Framework.
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#bypasslist
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - bypasslist element
 - <bypasslist> element
 ms.assetid: 124446b7-abb1-4e5e-a492-b64398f268f1
-ms.openlocfilehash: 97e69a4978aa4700d13a994619a65312cf70aeaa
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 42b6ddf4c3d09bcf8ef0ada105cefedccc63b505
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79154943"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504625"
 ---
 # <a name="bypasslist-element-network-settings"></a>\<bypasslist> – element (nastavení sítě)
 Poskytuje sadu regulárních výrazů, které popisují adresy, které nepoužívají proxy server.  
@@ -42,7 +43,7 @@ Poskytuje sadu regulárních výrazů, které popisují adresy, které nepouží
 |-----------------|---------------------|  
 |[add](add-element-for-bypasslist-network-settings.md)|Přidá IP adresu nebo název DNS do seznamu obcházení proxy serverů.|  
 |[jejich](clear-element-for-bypasslist-network-settings.md)|Vymaže seznam obcházení.|  
-|[odebrány](remove-element-for-bypasslist-network-settings.md)|Odebere IP adresu nebo název DNS ze seznamu obcházení proxy serveru.|  
+|[remove](remove-element-for-bypasslist-network-settings.md)|Odebere IP adresu nebo název DNS ze seznamu obcházení proxy serveru.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -76,7 +77,7 @@ Poskytuje sadu regulárních výrazů, které popisují adresy, které nepouží
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.Net.WebProxy?displayProperty=nameWithType>
 - [Schéma nastavení sítě](index.md)

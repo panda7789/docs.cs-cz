@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 756c1c25-08a7-4060-9798-dbeaa2f3bee5
 topic_type:
 - apiref
-ms.openlocfilehash: 4fccee3b94efd65312206afb22c87f30609f9e6b
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 9a6ee58cda5e0b673b3ff1378240f89323e30194
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76868457"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84496033"
 ---
 # <a name="icorprofilerinfo4getiltonativemapping2-method"></a>ICorProfilerInfo4::GetILToNativeMapping2 – metoda
 Získá mapu z posunu od jazyka MSIL (Microsoft Intermediate Language) k nativním posunům pro kód obsažený v překompilované verzi zadané funkce JIT.  
@@ -45,34 +45,34 @@ HRESULT GetILToNativeMapping(
  pro Identita funkce Rekompilované JIT. V .NET Framework 4,5 musí být identita nula.  
   
  `cMap`  
- pro Maximální velikost `map` pole  
+ pro Maximální velikost `map` pole.  
   
  `pcMap`  
  mimo Celkový počet dostupných COR_DEBUG_IL_TO_NATIVE_MAP struktur.  
   
  `map`  
- mimo Pole struktur `COR_DEBUG_IL_TO_NATIVE_MAP`, z nichž každý Určuje posun. Po návratu metody `GetILToNativeMapping2` bude `map` obsahovat některé nebo všechny `COR_DEBUG_IL_TO_NATIVE_MAP` struktury.  
+ mimo Pole `COR_DEBUG_IL_TO_NATIVE_MAP` struktur, z nichž každý Určuje posun. Poté `GetILToNativeMapping2` , co metoda vrátí, `map` bude obsahovat některé nebo všechny `COR_DEBUG_IL_TO_NATIVE_MAP` struktury.  
   
 ## <a name="remarks"></a>Poznámky  
- `GetILToNativeMapping2` je podobná metodě [ICorProfilerInfo:: GetILToNativeMapping –](icorprofilerinfo-getiltonativemapping-method.md) s tím rozdílem, že umožňuje profileru v budoucích verzích určit ID Rekompilované funkce.  
+ `GetILToNativeMapping2`je podobný metodě [ICorProfilerInfo:: GetILToNativeMapping –](icorprofilerinfo-getiltonativemapping-method.md) , s tím rozdílem, že umožňuje profileru v budoucích verzích určit ID Rekompilované funkce.  
   
 > [!NOTE]
-> Metoda [ICorProfilerFunctionControl:: SetILInstrumentedCodeMap –](icorprofilerfunctioncontrol-setilinstrumentedcodemap-method.md) není implementována v .NET Framework 4,5, takže funkce, které byly rekompilovány JIT, nemohou mít mapování Il-to-Native, které se liší od původně kompilované funkce. V takovém případě nelze `GetILToNativeMapping2` volat pomocí nenulového rekompilovaného ID JIT v .NET Framework 4,5.  
+> Metoda [ICorProfilerFunctionControl:: SetILInstrumentedCodeMap –](icorprofilerfunctioncontrol-setilinstrumentedcodemap-method.md) není implementována v .NET Framework 4,5, takže funkce, které byly rekompilovány JIT, nemohou mít mapování Il-to-Native, které se liší od původně kompilované funkce. V takovém případě `GetILToNativeMapping2` jej nelze volat s nenulovým rekompilovaným ID JIT v .NET Framework 4,5.  
   
- Metoda `GetILToNativeMapping2` vrací pole `COR_DEBUG_IL_TO_NATIVE_MAP` struktury. Aby bylo možné určit, že některé rozsahy nativních instrukcí odpovídají zvláštním oblastem kódu (například Prolog), může být položka pole `ilOffset` nastavena na hodnotu výčtu [CorDebugIlToNativeMappingTypes –](../../../../docs/framework/unmanaged-api/debugging/cordebugiltonativemappingtypes-enumeration.md) .  
+ `GetILToNativeMapping2`Metoda vrací pole `COR_DEBUG_IL_TO_NATIVE_MAP` struktur. Aby bylo možné určit, že některé rozsahy nativních instrukcí odpovídají zvláštním oblastem kódu (například Prolog), položka v poli může mít své `ilOffset` pole nastaveno na hodnotu výčtu [CorDebugIlToNativeMappingTypes –](../debugging/cordebugiltonativemappingtypes-enumeration.md) .  
   
- Po `GetILToNativeMapping2` vrátí, je nutné ověřit, zda byla vyrovnávací paměť `map` dostatečně velká, aby obsahovala všechny `COR_DEBUG_IL_TO_NATIVE_MAP` struktury. To provedete tak, že porovnáte hodnotu `cMap` s hodnotou parametru `pcMap`. Pokud je hodnota `pcMap`, když se vynásobí velikostí `COR_DEBUG_IL_TO_NATIVE_MAP` struktury, je větší než `cMap`, přidělte větší `map` vyrovnávací paměť, aktualizujte `cMap` o novou, větší velikost a zavolejte `GetILToNativeMapping2` znovu.  
+ Po `GetILToNativeMapping2` návratu je nutné ověřit, zda `map` byla vyrovnávací paměť dostatečně velká, aby obsahovala všechny `COR_DEBUG_IL_TO_NATIVE_MAP` struktury. Chcete-li to provést, porovnejte hodnotu `cMap` s hodnotou `pcMap` parametru. Pokud je `pcMap` hodnota, když je vynásobena velikostí `COR_DEBUG_IL_TO_NATIVE_MAP` struktury, větší než `cMap` , přidělte větší `map` vyrovnávací paměť, aktualizujte `cMap` novou, větší velikost a zavolejte `GetILToNativeMapping2` znovu.  
   
- Alternativně můžete pro získání správné velikosti vyrovnávací paměti nejprve volat `GetILToNativeMapping2` s nulovou délkou `map` vyrovnávací paměti. Pak můžete nastavit velikost vyrovnávací paměti na hodnotu vrácenou v `pcMap` a volat `GetILToNativeMapping2` znovu.  
+ Případně můžete `GetILToNativeMapping2` pro získání správné velikosti vyrovnávací paměti nejprve zavolat s nulovou délkou `map` vyrovnávací paměti. Pak můžete nastavit velikost vyrovnávací paměti na hodnotu vrácenou v `pcMap` a volat `GetILToNativeMapping2` znovu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorProf. idl, CorProf. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

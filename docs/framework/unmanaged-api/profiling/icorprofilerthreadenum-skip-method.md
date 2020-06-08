@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: acb8b029-4a96-4ed7-ae3c-310204e5ceea
 topic_type:
 - apiref
-ms.openlocfilehash: b08a501f7d55fbb193afd8c297ca7725348dac76
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 4218faf1c324175424ab20305224f7f2fa51bb7a
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76860921"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84494212"
 ---
 # <a name="icorprofilerthreadenumskip-method"></a>ICorProfilerThreadEnum::Skip – metoda
 Posune kurzor čítače výčtu z aktuální pozice pro přeskočení zadaného počtu prvků.  
@@ -39,22 +39,22 @@ HRESULT Skip (    [in] ULONG celt
 ## <a name="return-value"></a>Návratová hodnota  
  Tato metoda vrací následující konkrétní hodnoty HRESULT a také chyby HRESULT, které naznačují selhání metody.  
   
-|HRESULT|Popis|  
+|HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|prvky `celt` byly přeskočeny.|  
-|S_FALSE|Méně než `celt` prvky byly přeskočeny, což znamená, že žádné další prvky nejsou k dispozici.|  
+|S_OK|`celt`prvky se přeskočily.|  
+|S_FALSE|Méně než `celt` prvků bylo vynecháno, což znamená, že žádné další prvky nejsou k dispozici.|  
   
 ## <a name="remarks"></a>Poznámky  
- Nová pozice kurzoru tohoto enumerátoru je (aktuální pozice) + `celt`.  
+ Nová pozice kurzoru tohoto enumerátoru je (aktuální pozice) + `celt` .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorProf. idl, CorProf. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

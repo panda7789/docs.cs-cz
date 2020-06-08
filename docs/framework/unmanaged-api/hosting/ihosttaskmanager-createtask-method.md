@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: a6f8ad36-61e1-42b0-9db2-add575646d18
 topic_type:
 - apiref
-ms.openlocfilehash: 7079a915c0402df62afa5648317619af82c943b0
-ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
+ms.openlocfilehash: 4037ffe63d8ebfca67cbd0b3293d36be7481b1bd
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83841977"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501414"
 ---
 # <a name="ihosttaskmanagercreatetask-method"></a>IHostTaskManager::CreateTask – metoda
 Požaduje, aby hostitel vytvořil novou úlohu.  
@@ -47,11 +47,11 @@ HRESULT CreateTask (
  pro Ukazatel na uživatelská data, která mají být předána funkci, nebo hodnotu null, pokud funkce nepřijímá žádné parametry.  
   
  `ppTask`  
- mimo Ukazatel na adresu instance [IHostTask](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md) vytvořeného hostitelem nebo hodnotu null, pokud úlohu nelze vytvořit. Úloha zůstane v pozastaveném stavu, dokud není explicitně spuštěna voláním metody [IHostTask:: Start](ihosttask-start-method.md).  
+ mimo Ukazatel na adresu instance [IHostTask](ihosttask-interface.md) vytvořeného hostitelem nebo hodnotu null, pokud úlohu nelze vytvořit. Úloha zůstane v pozastaveném stavu, dokud není explicitně spuštěna voláním metody [IHostTask:: Start](ihosttask-start-method.md).  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
-|HRESULT|Popis|  
+|HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`CreateTask`úspěšně vráceno.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR (Common Language Runtime) nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
@@ -73,7 +73,7 @@ HRESULT CreateTask (
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [ICLRTask – rozhraní](iclrtask-interface.md)
 - [ICLRTaskManager – rozhraní](iclrtaskmanager-interface.md)
