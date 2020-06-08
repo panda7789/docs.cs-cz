@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: cc7b0e5b-48c3-4509-8ebb-611ddb1f7ec2
 topic_type:
 - apiref
-ms.openlocfilehash: c8ac959c192814562488ab916c8462b0baa0d8e6
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: 9cf9d48bf50ffc1fc56270c13215acfef6d9c3af
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83703645"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504053"
 ---
 # <a name="iclrruntimeinfogetinterface-method"></a>ICLRRuntimeInfo::GetInterface – metoda
-Načte CLR do aktuálního procesu a vrátí ukazatele rozhraní Runtime, jako jsou [ICLRRuntimeHost](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-interface.md), [ICLRStrongName](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)a [IMetaDataDispenserEx](../metadata/imetadatadispenser-interface.md).  
+Načte CLR do aktuálního procesu a vrátí ukazatele rozhraní Runtime, jako jsou [ICLRRuntimeHost](iclrruntimehost-interface.md), [ICLRStrongName](iclrstrongname-interface.md)a [IMetaDataDispenserEx](../metadata/imetadatadispenser-interface.md).  
   
  Tato metoda nahrazuje všechny `CorBindTo` funkce * v sekci [zastaralých hostujících funkcí CLR](deprecated-clr-hosting-functions.md) .  
   
@@ -49,7 +49,7 @@ HRESULT GetInterface(
 ## <a name="return-value"></a>Návratová hodnota  
  Tato metoda vrací následující konkrétní hodnoty HRESULT a také chyby HRESULT, které naznačují selhání metody.  
   
-|HRESULT|Popis|  
+|HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|Metoda byla úspěšně dokončena.|  
 |E_POINTER|`ppUnk`má hodnotu null.|  
@@ -81,8 +81,8 @@ HRESULT GetInterface(
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [ICLRRuntimeInfo – rozhraní](iclrruntimeinfo-interface.md)
 - [Rozhraní pro hostování](hosting-interfaces.md)
-- [Hostování](index.md)
+- [Hosting](index.md)

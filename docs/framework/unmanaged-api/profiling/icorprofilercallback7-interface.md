@@ -9,12 +9,12 @@ api_location:
 api_type:
 - COM
 ms.assetid: a0be019e-aaa1-4036-990f-565f114d4b5c
-ms.openlocfilehash: e61f6a104b8b9613db32ed6912395fd07c18dcff
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 9a49d8e1ff31942c6564ab560d6726b9ede26466
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76864814"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84499139"
 ---
 # <a name="icorprofilercallback7-interface"></a>ICorProfilerCallback7 – rozhraní
 [Podporováno v .NET Framework 4.6.1 a novějších verzích]  
@@ -23,16 +23,16 @@ ms.locfileid: "76864814"
   
 ## <a name="methods"></a>Metody  
   
-|Metoda|Popis|  
+|Metoda|Description|  
 |------------|-----------------|  
 |[ModuleInMemorySymbolsUpdated – metoda](icorprofilercallback7-moduleinmemorysymbolsupdated-method.md)|Upozorní profileru, že je aktualizován datový proud symbolů přidružený k modulu v paměti.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorProf. idl, CorProf. h  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v461plus](../../../../includes/net-current-v461plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v461plus](../../../../includes/net-current-v461plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

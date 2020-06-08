@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: b38bbc9a-872c-41a9-b8c3-ca011d25456a
 topic_type:
 - apiref
-ms.openlocfilehash: 81b6f009ea61294f398a21c4def927ef2609f32b
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: f63b761497b3e9a19a9b939b45acf60d5a7d37b0
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83615739"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504235"
 ---
 # <a name="iclrdebugmanagersetconnectiontasks-method"></a>ICLRDebugManager::SetConnectionTasks – metoda
 Přidruží seznam instancí [ICLRTask](iclrtask-interface.md) s identifikátorem a popisným názvem.  
@@ -47,7 +47,7 @@ HRESULT SetConnectionTasks (
   
 ## <a name="return-value"></a>Návratová hodnota  
   
-|HRESULT|Popis|  
+|HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`SetConnectionTasks`úspěšně vráceno.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR (Common Language Runtime) nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
@@ -58,7 +58,7 @@ HRESULT SetConnectionTasks (
 |E_INVALIDARG|[BeginConnection –](iclrdebugmanager-beginconnection-method.md) se nevolala s použitím této hodnoty nebo `id` `dwCount` nebo `id` je nula nebo jeden z elementů má `ppCLRTask` hodnotu null.|  
   
 ## <a name="remarks"></a>Poznámky  
- [ICLRDebugManager](../../../../docs/framework/unmanaged-api/hosting/iclrdebugmanager-interface.md) poskytuje tři metody, `BeginConnection` , `SetConnectionTasks` a [EndConnection –](iclrdebugmanager-endconnection-method.md), pro přiřazování seznamů úkolů s identifikátory a popisnými názvy.  
+ [ICLRDebugManager](iclrdebugmanager-interface.md) poskytuje tři metody, `BeginConnection` , `SetConnectionTasks` a [EndConnection –](iclrdebugmanager-endconnection-method.md), pro přiřazování seznamů úkolů s identifikátory a popisnými názvy.  
   
 > [!IMPORTANT]
 > Tyto tři metody musí být volány v určitém pořadí pro každou sadu úkolů. `BeginConnection`se označuje jako první, aby se navázalo nové připojení. `SetConnectionTasks`se volá vedle a poskytne sadu úloh, které se mají přidružit k tomuto připojení. `EndConnection`je volána jako poslední k odebrání přidružení mezi seznamem úkolů a identifikátorem a popisným názvem. Volání různých připojení však mohou být vnořena.  
@@ -72,7 +72,7 @@ HRESULT SetConnectionTasks (
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [ICLRControl – rozhraní](iclrcontrol-interface.md)
 - [ICLRDebugManager – rozhraní](iclrdebugmanager-interface.md)

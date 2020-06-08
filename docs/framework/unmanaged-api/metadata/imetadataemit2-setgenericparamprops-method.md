@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: cd93a48d-1fed-4706-bec6-a05dc3b64fbd
 topic_type:
 - apiref
-ms.openlocfilehash: fd7f149e806727d849cdceb3ffbc5dc7392fcf1d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8feba8e67f3a90dd48fd957065a9c166c204b87c
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177413"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84492730"
 ---
 # <a name="imetadataemit2setgenericparamprops-method"></a>IMetaDataEmit2::SetGenericParamProps – metoda
 Nastaví hodnoty vlastností pro definici obecného parametru, na kterou odkazuje zadaný token.  
@@ -39,30 +39,30 @@ HRESULT SetGenericParamProps (
   
 ## <a name="parameters"></a>Parametry  
  `gp`  
- [v] Token pro definici obecného parametru, pro který chcete nastavit hodnoty.  
+ pro Token pro definici obecného parametru, pro který chcete nastavit hodnoty.  
   
  `dwParamFlags`  
- [v] Hodnota [CorGenericParamAttr](../../../../docs/framework/unmanaged-api/metadata/corgenericparamattr-enumeration.md) výčtu, který popisuje typ pro obecný parametr.  
+ pro Hodnota výčtu [CorGenericParamAttr –](corgenericparamattr-enumeration.md) , která popisuje typ obecného parametru.  
   
  `szName`  
- [v] Volitelné. Název parametru, pro který chcete nastavit hodnoty.  
+ pro Volitelné. Název parametru, pro který chcete nastavit hodnoty.  
   
  `reserved`  
- [v] Vyhrazeno pro budoucí rozšiřitelnost.  
+ pro Vyhrazeno pro budoucí rozšíření.  
   
  `rtkConstraints`  
- [v] Volitelné. Pole typu s nulovým ukončem. Členové pole musí `mdTypeDef` `mdTypeRef`být `mdTypeSpec` token , nebo metadat.  
+ pro Volitelné. Pole s nulovým zakončením v poli omezení typu. Členy pole musí být `mdTypeDef` `mdTypeRef` token metadat, nebo `mdTypeSpec` .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Používá se jako prostředek v souboru MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
-- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
+- [IMetaDataEmit2 – rozhraní](imetadataemit2-interface.md)
+- [IMetaDataEmit – rozhraní](imetadataemit-interface.md)

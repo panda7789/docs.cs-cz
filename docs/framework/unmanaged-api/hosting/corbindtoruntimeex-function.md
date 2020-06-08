@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: aae9fb17-5d01-41da-9773-1b5b5b642d81
 topic_type:
 - apiref
-ms.openlocfilehash: dcf2ce8bdb7cec1f567e548ff3314e160fffe9fd
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: e66b63ffa4ed25e861cff6bd9eb6065f57ff807f
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616629"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84493497"
 ---
 # <a name="corbindtoruntimeex-function"></a>CorBindToRuntimeEx – funkce
 Umožňuje nespravovaným hostitelům načíst modul CLR (Common Language Runtime) do procesu. [CorBindToRuntime](corbindtoruntime-function.md) a `CorBindToRuntimeEx` funkce provádějí stejnou operaci, ale `CorBindToRuntimeEx` funkce vám umožní nastavit příznaky pro určení chování CLR.  
@@ -102,7 +102,7 @@ HRESULT CorBindToRuntimeEx (
  Popisy těchto příznaků naleznete v [STARTUP_FLAGS](startup-flags-enumeration.md) výčtu.  
   
  `rclsid`  
- pro `CLSID`Třída typu coclass, která implementuje rozhraní [ICorRuntimeHost](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md) nebo [ICLRRuntimeHost](iclrruntimehost-interface.md) . Podporované hodnoty jsou CLSID_CorRuntimeHost nebo CLSID_CLRRuntimeHost.  
+ pro `CLSID`Třída typu coclass, která implementuje rozhraní [ICorRuntimeHost](icorruntimehost-interface.md) nebo [ICLRRuntimeHost](iclrruntimehost-interface.md) . Podporované hodnoty jsou CLSID_CorRuntimeHost nebo CLSID_CLRRuntimeHost.  
   
  `riid`  
  pro Z `IID` vyžádaného rozhraní z `rclsid` . Podporované hodnoty jsou IID_ICorRuntimeHost nebo IID_ICLRRuntimeHost.  
@@ -122,7 +122,7 @@ HRESULT CorBindToRuntimeEx (
   
 2. Změnou výchozího režimu procesu na režim kompatibility verze 1, kde objekt neprovádí <xref:System.Security.Principal.WindowsIdentity> tok napříč žádným asynchronním bodem bez ohledu na <xref:System.Threading.ExecutionContext> nastavení v aktuálním vlákně. Způsob změny výchozího režimu závisí na tom, zda používáte spravovaný spustitelný soubor nebo nespravované rozhraní hostování pro načtení modulu CLR:  
   
-    1. U spravovaných spustitelných souborů je nutné nastavit `enabled` atribut prvku [ \< legacyImpersonationPolicy>](../../configure-apps/file-schema/runtime/legacyimpersonationpolicy-element.md) na `true` .  
+    1. U spravovaných spustitelných souborů je nutné nastavit `enabled` atribut [\<legacyImpersonationPolicy>](../../configure-apps/file-schema/runtime/legacyimpersonationpolicy-element.md) elementu na `true` .  
   
     2. U nespravovaných hostitelských rozhraní nastavte `STARTUP_LEGACY_IMPERSONATION` příznak `startupFlags` při volání funkce na parametr `CorBindToRuntimeEx` .  
   
@@ -137,7 +137,7 @@ HRESULT CorBindToRuntimeEx (
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [CorBindToCurrentRuntime – funkce](corbindtocurrentruntime-function.md)
 - [CorBindToRuntime – funkce](corbindtoruntime-function.md)

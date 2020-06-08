@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 1ccda329-d752-4d89-abe8-511af3c3f4c9
 topic_type:
 - apiref
-ms.openlocfilehash: d8b8bfd0e70e75c702f32555c10f433a1ff4ae10
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 068014732cee91147edaec29fa0f954a741d8b5c
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175418"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84491651"
 ---
 # <a name="imetadataimportfindmemberref-method"></a>IMetaDataImport::FindMemberRef – metoda
-Získá ukazatel na memberref token pro odkaz člena, který <xref:System.Type> je uzavřen zadaný a který má zadaný název a metadata podpisu.  
+Získá ukazatel na token MemberRef pro odkaz na člena, který je uzavřený zadaným <xref:System.Type> a má zadaný název a signaturu metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,37 +39,37 @@ HRESULT FindMemberRef (
   
 ## <a name="parameters"></a>Parametry  
  `td`  
- [v] TypeRef token pro třídu nebo rozhraní, které obklopuje odkaz na člena hledat. Pokud je `mdTokenNil`tato hodnota , vyhledávání se provádí pro globální proměnnou nebo odkaz na globální funkci.  
+ pro Token TypeRef pro třídu nebo rozhraní, které obklopují odkaz na člena pro hledání. Pokud je tato hodnota `mdTokenNil` , vyhledávání je provedeno pro globální proměnnou nebo odkaz globální funkce.  
   
  `szName`  
- [v] Název členského odkazu pro hledání.  
+ pro Název odkazu na člena, který se má vyhledat  
   
  `pvSigBlob`  
- [v] Ukazatel na podpis binárních metadat členského odkazu.  
+ pro Ukazatel na binární podpis metadat odkazu na člena.  
   
  `cbSigBlob`  
- [v] Velikost v bajtů `pvSigBlob`.  
+ pro Velikost v bajtech `pvSigBlob` .  
   
  `pmr`  
- [out] Ukazatel na odpovídající MemberRef token.  
+ mimo Ukazatel na shodný token MemberRef.  
   
 ## <a name="remarks"></a>Poznámky  
- Člen zadejte pomocí jeho ohraničující třídy nebo rozhraní (`td`), jeho názvu (`szName`) a volitelně jeho podpisu (`pvSigBlob`).  
+ Určíte člena pomocí své nadřazené třídy nebo rozhraní ( `td` ), jeho název ( `szName` ) a volitelně jeho signatura ( `pvSigBlob` ).  
   
- Předaný `FindMemberRef` podpis musí být vygenerován v aktuálním oboru, protože podpisy jsou vázány na určitý obor. Podpis může vložit token, který identifikuje ohraničující třídu nebo typ hodnoty. Token je index do místní tabulky TypeDef. Nelze vytvořit podpis za běhu mimo kontext aktuálního oboru a použít `FindMemberRef`tento podpis jako vstup do aplikace .  
+ Signatura předaná do `FindMemberRef` musí být vygenerována v aktuálním oboru, protože signatury jsou vázány na konkrétní obor. Podpis může vložit token, který identifikuje ohraničující třídu nebo typ hodnoty. Token je index do místní tabulky TypeDef. Nemůžete sestavit signaturu za běhu mimo kontext aktuálního oboru a použít tento podpis jako vstup do `FindMemberRef` .  
   
- `FindMemberRef`vyhledá pouze členské odkazy, které byly definovány přímo ve třídě nebo rozhraní; nenalezne zděděné členské odkazy.  
+ `FindMemberRef`Vyhledá pouze odkazy na členy, které byly definovány přímo ve třídě nebo rozhraní; nenalezne zděděné odkazy členů.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Zahrnuto jako prostředek v souboru MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport – rozhraní](imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](imetadataimport2-interface.md)

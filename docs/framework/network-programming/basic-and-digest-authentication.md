@@ -1,5 +1,6 @@
 ---
 title: Základní ověřování a ověřování hodnotou hash
+description: Naučte se používat základní ověřování a ověřování algoritmem Digest, kde aplikace poskytuje uživatelské jméno a heslo v objektu WebRequest, který používá k vyžádání dat.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -19,17 +20,17 @@ helpviewer_keywords:
 - network resources, authentication
 - user authentication, digest
 ms.assetid: 8cce2742-8d52-4643-9dd2-64ddf38aa878
-ms.openlocfilehash: 9a1ad701e1e8f4ee9966ebd56922c29e2bae7a03
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7772430b508b52a63d716550b69018385418c132
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "71048904"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502692"
 ---
 # <a name="basic-and-digest-authentication"></a>Základní ověřování a ověřování hodnotou hash
-Implementace <xref:System.Net> základního ověřování a ověřování algoritmem Digest je v souladu s protokolem RFC2617 – Ověřování HTTP: Základní a ověřování algoritmem Digest (k dispozici na webu [konsorcia World Wide Web Consortium).](https://www.w3.org)  
+<xref:System.Net>Implementace základního ověřování a ověřování algoritmem Digest vyhovuje RFC2617 – ověřování http: základní a ověřování hodnotou hash (k dispozici na webu [konsorcium World Wide Web](https://www.w3.org) ).  
   
- Chcete-li použít základní a digest ověřování, aplikace musí <xref:System.Net.WebRequest.Credentials%2A> poskytnout <xref:System.Net.WebRequest> uživatelské jméno a heslo ve vlastnosti objektu, který používá k vyžádání dat z Internetu, jak je znázorněno v následujícím příkladu.  
+ Chcete-li použít základní ověřování a ověřování algoritmem Digest, aplikace musí zadat uživatelské jméno a heslo ve <xref:System.Net.WebRequest.Credentials%2A> vlastnosti <xref:System.Net.WebRequest> objektu, který používá k vyžádání dat z Internetu, jak je znázorněno v následujícím příkladu.  
   
 ```vb  
 Dim MyURI As String = "http://www.contoso.com/"  
@@ -44,9 +45,9 @@ WReq.Credentials = new NetworkCredential(UserName, SecurelyStoredPassword);
 ```  
   
 > [!CAUTION]
-> Data odeslaná pomocí základního ověřování a ověřování algoritmem Digest nejsou šifrována, takže je může vidět protivník. Kromě toho základní ověřování pověření (uživatelské jméno a heslo) jsou odesílány v vymazat a mohou být zachyceny.  
+> Data odesílaná pomocí základního ověřování a ověřování algoritmem Digest nejsou šifrována, takže je lze zobrazit pomocí nežádoucí osoba. Navíc se přihlašovací údaje základního ověřování (uživatelské jméno a heslo) odesílají jasně a je možné je zachytit.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Ověřování NTLM a Kerberos](ntlm-and-kerberos-authentication.md)
 - [Ověřování v internetu](internet-authentication.md)

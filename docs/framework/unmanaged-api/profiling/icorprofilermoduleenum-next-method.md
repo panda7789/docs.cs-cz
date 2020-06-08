@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: a3cea59d-7622-4323-897a-0a464c40f77f
 topic_type:
 - apiref
-ms.openlocfilehash: 695a4386d9399a079df41f11f52a3185083784ed
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 7a3ad94a4149d6ebb70e077926771e28d7f82779
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76861382"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84494810"
 ---
 # <a name="icorprofilermoduleenumnext-method"></a>ICorProfilerModuleEnum::Next – metoda
 Získá zadaný počet souvislých modulů ze sekvenční kolekce modulů počínaje aktuální pozicí čítače výčtu v sekvenci.  
@@ -39,27 +39,27 @@ HRESULT Next([in]  ULONG      celt,
  pro Počet modulů, které se mají načíst.  
   
  `ids`  
- mimo Pole hodnot `ModuleID`, z nichž každý představuje načtený modul.  
+ mimo Pole `ModuleID` hodnot, z nichž každý představuje načtený modul.  
   
  `pceltFetched`  
- mimo Ukazatel na počet prvků, které jsou ve skutečnosti vráceny v poli `ids`.  
+ mimo Ukazatel na počet prvků skutečně vrácených v `ids` poli.  
   
 ## <a name="return-value"></a>Návratová hodnota  
  Tato metoda vrací následující konkrétní hodnoty HRESULT a také chyby HRESULT, které naznačují selhání metody.  
   
-|HRESULT|Popis|  
+|HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|byly vráceny `celt` prvky.|  
-|S_FALSE|Bylo vráceno méně než `celt` prvků, což naznačuje, že byl výčet dokončen.|  
+|S_OK|`celt`prvky byly vráceny.|  
+|S_FALSE|`celt`Bylo vráceno méně než prvků, což indikuje, že byl výčet dokončen.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorProf. idl, CorProf. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: ad32fb84-c2b6-41cd-888d-787ff3a90449
 topic_type:
 - apiref
-ms.openlocfilehash: dab155b82d87609b3d3f390133e6490502a43518
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: fce4f3875fbdb110134d6b7f684eff40821f6bdd
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177286"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503676"
 ---
 # <a name="imetadataimportfindmember-method"></a>IMetaDataImport::FindMember – metoda
-Získá ukazatel na MemberDef token pro pole nebo metodu, která je uzavřena zadané <xref:System.Type> a který má zadaný název a metadata podpis.  
+Získá ukazatel na token memberDef či pole nebo metody, které jsou uzavřeny zadaným <xref:System.Type> a mají zadaný název a signaturu metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,40 +39,40 @@ HRESULT FindMember (
   
 ## <a name="parameters"></a>Parametry  
  `td`  
- [v] TypeDef token pro třídu nebo rozhraní, které obklopuje člen hledat. Pokud je `mdTokenNil`tato hodnota , vyhledávání se provádí pro globální proměnné nebo globální funkce.  
+ pro Token TypeDef pro třídu nebo rozhraní, který obklopuje člena, který se má vyhledat. Pokud je tato hodnota `mdTokenNil` , vyhledávání je provedeno pro globální proměnnou nebo globální funkci.  
   
  `szName`  
- [v] Jméno člena, který má být hledán.  
+ pro Název hledaného člena.  
   
  `pvSigBlob`  
- [v] Ukazatel na podpis binárních metadat člena.  
+ pro Ukazatel na binární podpis metadat člena.  
   
  `cbSigBlob`  
- [v] Velikost v bajtů `pvSigBlob`.  
+ pro Velikost v bajtech `pvSigBlob` .  
   
  `pmb`  
- [out] Ukazatel na odpovídající token MemberDef.  
+ mimo Ukazatel na odpovídajícího tokenu memberDef či.  
   
 ## <a name="remarks"></a>Poznámky  
- Člen zadejte pomocí jeho ohraničující třídy nebo rozhraní (`td`), jeho názvu (`szName`) a volitelně jeho podpisu (`pvSigBlob`). Ve třídě nebo rozhraní může být více členů se stejným názvem. V takovém případě předavěte podpis člena a najděte jedinečnou shodu.  
+ Určíte člena pomocí své nadřazené třídy nebo rozhraní ( `td` ), jeho název ( `szName` ) a volitelně jeho signatura ( `pvSigBlob` ). Třída nebo rozhraní může obsahovat více členů se stejným názvem. V takovém případě předejte signaturu člena, aby našli jedinečnou shodu.  
   
- Předaný `FindMember` podpis musí být vygenerován v aktuálním oboru, protože podpisy jsou vázány na určitý obor. Podpis může vložit token, který identifikuje ohraničující třídu nebo typ hodnoty. Token je index do místní tabulky TypeDef. Nelze vytvořit podpis za běhu mimo kontext aktuálního oboru a použít tento `FindMember`podpis jako vstup pro vstup do aplikace .  
+ Signatura předaná do `FindMember` musí být vygenerována v aktuálním oboru, protože signatury jsou vázány na konkrétní obor. Podpis může vložit token, který identifikuje ohraničující třídu nebo typ hodnoty. Token je index do místní tabulky TypeDef. Nemůžete sestavit signaturu za běhu mimo kontext aktuálního oboru a použít ho jako vstup pro vstup do `FindMember` .  
   
- `FindMember`vyhledá pouze členy, které byly definovány přímo ve třídě nebo rozhraní; nenalezne zděděné členy.  
+ `FindMember`Vyhledá pouze členy, které byly definovány přímo ve třídě nebo rozhraní; nenalezne zděděné členy.  
   
 > [!NOTE]
-> `FindMember`je pomocná metoda. Volá [iMetaDataImport::FindMethod](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-findmethod-method.md); Pokud toto volání nenajde `FindMember` shodu, pak volá [IMetaDataImport::FindField](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-findfield-method.md).  
+> `FindMember`je pomocná metoda. Volá [IMetaDataImport:: FindMethod –](imetadataimport-findmethod-method.md);. Pokud toto volání nenajde shodu, `FindMember` pak zavolá [IMetaDataImport:: findfield –](imetadataimport-findfield-method.md).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Zahrnuto jako prostředek v souboru MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport – rozhraní](imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](imetadataimport2-interface.md)

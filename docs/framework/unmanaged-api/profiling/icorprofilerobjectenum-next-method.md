@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: b420433c-5ebe-4986-bba1-97902e6db819
 topic_type:
 - apiref
-ms.openlocfilehash: b6e26d1538cab30db66e887aee89b8fbae501bdb
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 850f05520e4146b5016bb574f02aa800dfcaaf32
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177004"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84494576"
 ---
 # <a name="icorprofilerobjectenumnext-method"></a>ICorProfilerObjectEnum::Next – metoda
-Získá zadaný počet souvislých objektů z sekvenční kolekce objektů, počínaje aktuální pozici čítače v pořadí.  
+Získá zadaný počet souvislých objektů ze sekvenční kolekce objektů počínaje aktuální pozicí čítače výčtu v sekvenci.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,23 +38,23 @@ HRESULT Next (
   
 ## <a name="parameters"></a>Parametry  
  `celt`  
- [v] Počet objektů, které mají být načteny.  
+ pro Počet objektů, které mají být načteny.  
   
  `objects`  
- [out] Pole `ObjectID` hodnot, z nichž každá představuje načtený objekt.  
+ mimo Pole `ObjectID` hodnot, z nichž každý představuje načtený objekt.  
   
  `pceltFetched`  
- [out] Ukazatel na počet prvků skutečně vrácených v `objects` poli.  
+ mimo Ukazatel na počet prvků skutečně vrácených v `objects` poli.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [ICorProfilerObjectEnum – rozhraní](icorprofilerobjectenum-interface.md)

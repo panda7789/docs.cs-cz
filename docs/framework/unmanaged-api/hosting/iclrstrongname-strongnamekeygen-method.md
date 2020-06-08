@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: ac5c1245-9acf-4271-9c08-3d9b7c670df3
 topic_type:
 - apiref
-ms.openlocfilehash: db5c0dbe57607c7a3bf8b97cee734415aa934336
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: 69ba58cc8c5235a15749281b3107481be9528f84
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83763082"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503975"
 ---
 # <a name="iclrstrongnamestrongnamekeygen-method"></a>ICLRStrongName::StrongNameKeyGen – metoda
 Vytvoří nový pár veřejného a privátního klíče pro použití se silným názvem.  
@@ -57,7 +57,7 @@ HRESULT StrongNameKeyGen (
  `S_OK`Pokud byla metoda úspěšně dokončena; v opačném případě hodnota HRESULT, která označuje selhání (viz [společné hodnoty HRESULT](/windows/win32/seccrypto/common-hresult-values) pro seznam).  
   
 ## <a name="remarks"></a>Poznámky  
- Metoda [ICLRStrongName:: StrongNameKeyGen –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamekeygen-method.md) vytvoří 1024 bitový klíč. Po načtení klíče byste měli zavolat metodu [ICLRStrongName:: StrongNameFreeBuffer –](iclrstrongname-strongnamefreebuffer-method.md) pro uvolnění přidělené paměti.  
+ Metoda [ICLRStrongName:: StrongNameKeyGen –](iclrstrongname-strongnamekeygen-method.md) vytvoří 1024 bitový klíč. Po načtení klíče byste měli zavolat metodu [ICLRStrongName:: StrongNameFreeBuffer –](iclrstrongname-strongnamefreebuffer-method.md) pro uvolnění přidělené paměti.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
@@ -68,7 +68,7 @@ HRESULT StrongNameKeyGen (
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [StrongNameKeyGenEx – metoda](iclrstrongname-strongnamekeygenex-method.md)
 - [ICLRStrongName – rozhraní](iclrstrongname-interface.md)

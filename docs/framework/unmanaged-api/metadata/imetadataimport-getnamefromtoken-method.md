@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 32114ecf-8916-4ab2-a201-179c017344f1
 topic_type:
 - apiref
-ms.openlocfilehash: 6ed30f07fcec9c730e1514350c594399f0aa16e5
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 6d62739148280c7333cf7cdb6002b59a145496e3
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74437271"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503559"
 ---
 # <a name="imetadataimportgetnamefromtoken-method"></a>IMetaDataImport::GetNameFromToken – metoda
 Získá název UTF-8 objektu, na který odkazuje zadaný token metadat. Tato metoda je zastaralá.  
@@ -42,10 +42,10 @@ HRESULT GetNameFromToken (
  mimo Ukazatel na název objektu UTF-8 v haldě.  
   
 ## <a name="remarks"></a>Poznámky  
- `GetNameFromToken` je zastaralá. Jako alternativu volejte metodu pro získání vlastností konkrétního typu tokenu, jako je například `GetFieldProps` pro pole nebo `GetMethodProps` pro metodu.  
+ `GetNameFromToken`je zastaralá. Jako alternativu volejte metodu pro získání vlastností konkrétního typu požadovaného tokenu, například `GetFieldProps` pro pole nebo `GetMethodProps` pro metodu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** Cor. h  
   
@@ -55,5 +55,5 @@ HRESULT GetNameFromToken (
   
 ## <a name="see-also"></a>Viz také:
 
-- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport – rozhraní](imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](imetadataimport2-interface.md)

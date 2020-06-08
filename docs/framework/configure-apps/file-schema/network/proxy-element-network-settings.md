@@ -1,5 +1,6 @@
 ---
 title: <proxy> – element (nastavení sítě)
+description: <proxy>Prvek nastavení sítě definuje možnosti proxy server v .NET Framework. Tento článek obsahuje příklad.
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/defaultProxy/proxy
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - <proxy> element
 - proxy element
 ms.assetid: 37a548d8-fade-4ac5-82ec-b49b6c6cb22a
-ms.openlocfilehash: 590ea747c2fa9e5e85e5e9d05f6fb80fe60251d3
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 0d462fcc92fc1be5ddbc2e76237d8436219c7295
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79154787"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504534"
 ---
 # <a name="proxy-element-network-settings"></a>\<proxy> – element (nastavení sítě)
 Definuje proxy server.  
@@ -90,7 +91,7 @@ Definuje proxy server.
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.Net.WebProxy?displayProperty=nameWithType>
 - [Schéma nastavení sítě](index.md)

@@ -11,12 +11,12 @@ api_type:
 - COM
 author: davmason
 ms.author: davmason
-ms.openlocfilehash: 6d50a5d74eccff6fe39aca111f768bac4d8f2e2e
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 6822757608429ca5f4ef9520ab7574d440b67b26
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76868327"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84495253"
 ---
 # <a name="icorprofilerinfo8getfunctionfromip3-method"></a>ICorProfilerInfo8:: GetFunctionFromIP3 – metoda
 
@@ -38,11 +38,11 @@ HRESULT GetFunctionFromIP3([in] LPCBYTE ip,
 
 - `pFunctionId`
 
-  \[] ID funkce.
+  \[out] ID funkce.
 
 - `pReJitId`
 
-  \[] identita funkce Rekompilované JIT.
+  \[out] identita pro rekompilovánou verzi funkce JIT.
 
 ## <a name="remarks"></a>Poznámky
 
@@ -50,14 +50,14 @@ Tato metoda spolupracuje s dynamickými i nedynamickými metodami. Je nadmnožin
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
+**Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).
 
 **Hlavička:** CorProf. idl, CorProf. h
 
 **Knihovna:** CorGuids. lib
 
-**Verze .NET Framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
+**Verze .NET Framework:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
 
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní ICorProfilerInfo8](icorprofilerinfo8-interface.md)
+- [ICorProfilerInfo8 – rozhraní](icorprofilerinfo8-interface.md)

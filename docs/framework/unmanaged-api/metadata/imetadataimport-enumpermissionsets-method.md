@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 347d7e5c-c90f-45ad-bd1e-2c7912b0b19c
 topic_type:
 - apiref
-ms.openlocfilehash: e628cf5dab8006b0df0ab6c60dc995cd0c6bb29d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 79b1493d262288c1d85a56538810e35a73441595
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175444"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84491752"
 ---
 # <a name="imetadataimportenumpermissionsets-method"></a>IMetaDataImport::EnumPermissionSets – metoda
-Vyjmenovává oprávnění pro objekty v zadaném oboru metadat.  
+Vytvoří výčet oprávnění pro objekty v zadaném oboru metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,40 +40,40 @@ HRESULT EnumPermissionSets
   
 ## <a name="parameters"></a>Parametry  
  `phEnum`  
- [dovnitř, ven] Ukazatel na čítač výčtu. To musí být NULL pro první volání této metody.  
+ [in, out] Ukazatel na enumerátor. Pro první volání této metody musí mít hodnotu NULL.  
   
  `tk`  
- [v] Token metadat, který omezuje rozsah hledání nebo NULL prohledat co nejširší obor.  
+ pro Token metadat, který omezuje rozsah hledání, nebo hodnota NULL pro hledání co nejširšího rozsahu.  
   
  `dwActions`  
- [v] Příznaky představující <xref:System.Security.Permissions.SecurityAction> hodnoty, které `rPermission`mají být zahrnuty do , nebo nula vrátit všechny akce.  
+ pro Příznaky představující <xref:System.Security.Permissions.SecurityAction> hodnoty, které mají být zahrnuty do `rPermission` , nebo nula pro vrácení všech akcí.  
   
  `rPermission`  
- [out] Pole používané k ukládání tokenů oprávnění.  
+ mimo Pole použité pro ukládání tokenů oprávnění  
   
  `cMax`  
- [v] Maximální velikost `rPermission` pole.  
+ pro Maximální velikost `rPermission` pole.  
   
  `pcTokens`  
- [out] Počet tokenů oprávnění vrácených v `rPermission`.  
+ mimo Počet tokenů oprávnění vrácených v `rPermission` .  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
-|HRESULT|Popis|  
+|HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumPermissionSets`úspěšně vrácena.|  
-|`S_FALSE`|Neexistují žádné tokeny výčet. V tom `pcTokens` případě je nula.|  
+|`S_OK`|`EnumPermissionSets`úspěšně vráceno.|  
+|`S_FALSE`|Neexistují žádné tokeny k vytvoření výčtu. V takovém případě `pcTokens` je nula.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Zahrnuto jako prostředek v souboru MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport – rozhraní](imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](imetadataimport2-interface.md)

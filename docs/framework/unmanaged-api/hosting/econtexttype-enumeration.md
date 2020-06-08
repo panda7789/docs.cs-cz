@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 92b926a9-b87e-408a-9036-df7b752c9492
 topic_type:
 - apiref
-ms.openlocfilehash: ceb68410e808bf7843149e3f05a39c7a98d0c000
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: b93b27957cc715a5b4718dd9ef61cd11f4a39914
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616291"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84493384"
 ---
 # <a name="econtexttype-enumeration"></a>EContextType – výčet
 Popisuje kontext zabezpečení aktuálně zpracovávaného vlákna.  
@@ -35,9 +35,9 @@ typedef enum {
   
 ## <a name="members"></a>Členové  
   
-|Člen|Popis|  
+|Člen|Description|  
 |------------|-----------------|  
-|`eCurrentContext`|Určuje kontext v aktuálním vlákně v době, kdy modul CLR (Common Language Runtime) volá metodu [IHostSecurityManager:: GetSecurityContext –](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritymanager-getsecuritycontext-method.md) , nebo kontext požadovaný modulem CLR ve volání metody [IHostSecurityManager:: SetSecurityContext –](ihostsecuritymanager-setsecuritycontext-method.md) .|  
+|`eCurrentContext`|Určuje kontext v aktuálním vlákně v době, kdy modul CLR (Common Language Runtime) volá metodu [IHostSecurityManager:: GetSecurityContext –](ihostsecuritymanager-getsecuritycontext-method.md) , nebo kontext požadovaný modulem CLR ve volání metody [IHostSecurityManager:: SetSecurityContext –](ihostsecuritymanager-setsecuritycontext-method.md) .|  
 |`eRestrictedContext`|Označuje kontext, přes který má hostitel nižší oprávnění, jako je uvolňování paměti nebo konstruktory třídy nebo modulu.|  
   
 ## <a name="remarks"></a>Poznámky  
@@ -52,7 +52,7 @@ typedef enum {
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [IHostSecurityContext – rozhraní](ihostsecuritycontext-interface.md)
 - [IHostSecurityManager – rozhraní](ihostsecuritymanager-interface.md)

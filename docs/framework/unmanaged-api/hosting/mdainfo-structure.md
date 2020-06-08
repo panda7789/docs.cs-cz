@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: fb8c14f7-d461-43d1-8b47-adb6723b9b93
 topic_type:
 - apiref
-ms.openlocfilehash: 33b3044c7b5237e586fdb993a16b6144c271782c
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 517e0ae7fb5d5151f94f82d9146ebbf40bad2ef9
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84007712"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503858"
 ---
 # <a name="mdainfo-structure"></a>MDAInfo – struktura
 Poskytuje podrobnosti o `Event_MDAFired` události, které aktivují vytváření pomocníka spravovaného ladění (MDA).  
@@ -45,7 +45,7 @@ typedef struct _MDAInfo {
   
  Modul runtime provede následující kroky, pokud je vyvolána událost, která spustí vytvoření objektu MDA:  
   
-- Pokud hostitel nezaregistroval instanci [IActionOnCLREvent –](../../../../docs/framework/unmanaged-api/hosting/iactiononclrevent-interface.md) voláním [ICLROnEventManager:: RegisterActionOnEvent –](iclroneventmanager-registeractiononevent-method.md) , aby mohl být upozorněn na `Event_MDAFired` událost, modul runtime pokračuje s výchozím chováním, které nehostuje.  
+- Pokud hostitel nezaregistroval instanci [IActionOnCLREvent –](iactiononclrevent-interface.md) voláním [ICLROnEventManager:: RegisterActionOnEvent –](iclroneventmanager-registeractiononevent-method.md) , aby mohl být upozorněn na `Event_MDAFired` událost, modul runtime pokračuje s výchozím chováním, které nehostuje.  
   
 - Pokud hostitel zaregistroval obslužnou rutinu pro tuto událost, modul runtime zkontroluje, zda je k procesu připojen ladicí program. V takovém případě je modul runtime rozdělen do ladicího programu. V případě, že ladicí program pokračuje, volá do hostitele. Pokud není připojen ladicí program, modul runtime zavolá `IActionOnCLREvent::OnEvent` a předá ukazatel na `MDAInfo` instanci jako `data` parametr.  
   
@@ -60,7 +60,7 @@ typedef struct _MDAInfo {
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Struktury pro hostování](hosting-structures.md)
 - [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
