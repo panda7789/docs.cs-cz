@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: c2f45801-dd38-4b78-b6b7-64397dc73f83
 topic_type:
 - apiref
-ms.openlocfilehash: 3e13b17fb03530730a78f6889309f1993419574b
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 13ce44c9c7a04b870278bc8926dd9fe5daf10bc3
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76866208"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84500010"
 ---
 # <a name="icorprofilercallbackjitinlining-method"></a>ICorProfilerCallback::JITInlining – metoda
 Upozorní profileru, že kompilátor JIT (just-in-time) se chystá Vložit funkci do řádku s jinou funkcí.  
@@ -36,27 +36,27 @@ HRESULT JITInlining(
   
 ## <a name="parameters"></a>Parametry  
  `callerId`  
- pro ID funkce, do které bude vložena funkce `calleeId`.  
+ pro ID funkce, do které `calleeId` bude vložena funkce  
   
  `calleeId`  
  pro ID funkce, která má být vložena.  
   
  `pfShouldInline`  
- [out] `true`, pokud chcete, aby bylo vkládání provedeno; v opačném případě `false`.  
+ [out] `true` aby bylo možné vložení provést; v opačném případě `false` .  
   
 ## <a name="remarks"></a>Poznámky  
- Profiler může nastavit `pfShouldInline` `false`, aby se zabránilo vložení funkce `calleeId` do `callerId` funkce. Profiler může také globálně zakázat vložené vložení pomocí COR_PRF_DISABLE_INLINING hodnoty výčtu [COR_PRF_MONITOR](cor-prf-monitor-enumeration.md) .  
+ Profiler může nastavit, `pfShouldInline` aby `false` zabránil `calleeId` Vložení funkce do `callerId` funkce. Profiler může také globálně zakázat vložené vložení pomocí COR_PRF_DISABLE_INLINING hodnoty výčtu [COR_PRF_MONITOR](cor-prf-monitor-enumeration.md) .  
   
- Funkce vložené vložením nevyvolávají události pro vložení nebo ukončení. Proto musí Profiler nastavit `pfShouldInline`, aby `false`, aby vytvořil přesný graf volání. Nastavení `pfShouldInline` `false` bude mít vliv na výkon, protože vložené vložení obvykle zvyšuje rychlost a snižuje počet samostatných událostí kompilace JIT pro vloženou metodu.  
+ Funkce vložené vložením nevyvolávají události pro vložení nebo ukončení. Proto musí Profiler nastavit na, `pfShouldInline` aby `false` vytvořil přesný graf volání. Nastavení `pfShouldInline` na `false` bude mít vliv na výkon, protože vložené vložení obvykle zvyšuje rychlost a snižuje počet samostatných událostí kompilace JIT pro vloženou metodu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorProf. idl, CorProf. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

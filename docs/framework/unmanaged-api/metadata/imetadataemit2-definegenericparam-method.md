@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 47b2a3b6-907d-43dc-858d-1ae7dca1316a
 topic_type:
 - apiref
-ms.openlocfilehash: 1868d13a9dbb73dbdf64e49c395bdbff02ce89d4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e4401ea8a70e7ace8d8efc5e0a6d29f6db51b3df
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177443"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503806"
 ---
 # <a name="imetadataemit2definegenericparam-method"></a>IMetaDataEmit2::DefineGenericParam – metoda
-Vytvoří definici parametru obecného typu a získá token pro tento parametr obecného typu.  
+Vytvoří definici pro parametr obecného typu a získá token k tomuto parametru obecného typu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,36 +41,36 @@ HRESULT DefineGenericParam (
   
 ## <a name="parameters"></a>Parametry  
  `tk`  
- [v] Nebo `mdTypeDef` `mdMethodDef` token, který představuje metodu nebo konstruktor, pro který chcete definovat obecný parametr.  
+ pro `mdTypeDef`Token nebo `mdMethodDef` , který představuje metodu nebo konstruktor, pro který chcete definovat obecný parametr.  
   
  `ulParamSeq`  
- [v] Index obecného parametru.  
+ pro Index obecného parametru  
   
  `dwParamFlags`  
- [v] Hodnota [CorGenericParamAttr](../../../../docs/framework/unmanaged-api/metadata/corgenericparamattr-enumeration.md) výčtu, který popisuje typ pro obecný parametr.  
+ pro Hodnota výčtu [CorGenericParamAttr –](corgenericparamattr-enumeration.md) , která popisuje typ obecného parametru.  
   
  `szname`  
- [v] Název parametru.  
+ pro Název parametru  
   
  `reserved`  
- [v] Tento parametr je vyhrazen pro budoucí rozšiřitelnost.  
+ pro Tento parametr je vyhrazen pro budoucí rozšíření.  
   
  `rtkConstraints`  
- [v] Pole typu s nulovým ukončem. Členové pole musí `mdTypeDef` `mdTypeRef`být `mdTypeSpec` token , nebo metadat.  
+ pro Pole s nulovým zakončením v poli omezení typu. Členy pole musí být `mdTypeDef` `mdTypeRef` token metadat, nebo `mdTypeSpec` .  
   
  `pgp`  
- [out] Token, který představuje obecný parametr.  
+ mimo Token, který představuje obecný parametr.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Používá se jako prostředek v souboru MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
-- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
+- [IMetaDataEmit2 – rozhraní](imetadataemit2-interface.md)
+- [IMetaDataEmit – rozhraní](imetadataemit-interface.md)

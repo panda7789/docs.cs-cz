@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 962fc293-8ded-4b3b-90ce-2c21a4f1b244
 topic_type:
 - apiref
-ms.openlocfilehash: 4c57a3fde3565a21800c60794b6c2d1c7616ddd8
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 2f83bc5b114b746958f936c311efa823d88441d1
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84007998"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503884"
 ---
 # <a name="wait_option-enumeration"></a>WAIT_OPTION – výčet
 Obsahuje hodnoty, které určují akci, kterou by měl hostitel provést, pokud je operace požadována v rámci bloků modulu CLR (Common Language Runtime).  
@@ -43,7 +43,7 @@ typedef enum {
 |`WAIT_NOTINDEADLOCK`|Upozorní hostitele, že zadaný požadavek na synchronizaci nemůže být hostitelem. To znamená, že hostitel nemůže vracet `HOST_E_DEADLOCK` .|  
   
 ## <a name="remarks"></a>Poznámky  
- Metody [IHostTaskManager:: Sleep](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-sleep-method.md) a [IHostTaskManager:: SwitchToTask –](ihosttaskmanager-switchtotask-method.md) obě přebírají parametr tohoto typu.  
+ Metody [IHostTaskManager:: Sleep](ihosttaskmanager-sleep-method.md) a [IHostTaskManager:: SwitchToTask –](ihosttaskmanager-switchtotask-method.md) obě přebírají parametr tohoto typu.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
@@ -54,6 +54,6 @@ typedef enum {
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Výčty hostování](hosting-enumerations.md)

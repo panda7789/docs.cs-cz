@@ -7,61 +7,23 @@ dev_langs:
 - vb
 ms.technology: dotnet-standard
 ms.assetid: 2dbed1bc-86f5-43cd-9a57-adbb1c5efba4
-ms.openlocfilehash: f04ff902743c91147a6f056bca3292ee47952bbd
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: 813558299b40e0b90e8047f22b788c8f1419eb5e
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83420549"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504651"
 ---
 # <a name="language-independence-and-language-independent-components"></a>Jazyková nezávislost a jazykově nezávislé komponenty
 
-Rozhraní .NET je nezávislé na jazyce. To znamená, že jako vývojář můžete vyvíjet v jednom z mnoha jazyků, které cílí na implementace technologie .NET, jako je C#, F # a Visual Basic. Můžete přistupovat k typům a členům knihoven tříd vyvinutým pro implementace v rozhraní .NET bez nutnosti znát jazyk, ve kterém byly původně zapsány, a aniž byste museli sledovat některé z původních konvencí jazyka. Pokud jste vývojář komponent, k vaší komponentě se dá dostat z aplikace .NET bez ohledu na její jazyk.
+Rozhraní .NET je nezávislé na jazyce. To znamená, že jako vývojář můžete vyvíjet v jednom z mnoha jazyků, které cílí na implementace technologie .NET, jako je C#, F # a Visual Basic. Můžete přistupovat k typům a členům knihoven tříd vyvinutým pro implementace v rozhraní .NET bez nutnosti znát jazyk, ve kterém byly původně zapsány, a aniž byste museli sledovat některé z původních konvencí jazyka. Pokud jste vývojář komponent, k vaší komponentě má přistup jakákoli aplikace .NET bez ohledu na jeho jazyk.
 
 > [!NOTE]
-> Tato první část tohoto článku popisuje vytváření komponent nezávislých na jazyce – to znamená komponenty, které mohou být spotřebovány aplikacemi, které jsou napsané v libovolném jazyce. Můžete také vytvořit jednu komponentu nebo aplikaci ze zdrojového kódu napsaného v několika jazycích. viz [interoperabilita mezi jazyky](#cross-language-interoperability) v druhé části tohoto článku.
+> Tato první část tohoto článku popisuje vytváření komponent nezávislých na jazyce, tedy komponent, které mohou být spotřebovány aplikacemi napsanými v libovolném jazyce. Můžete také vytvořit jednu komponentu nebo aplikaci ze zdrojového kódu napsaného v několika jazycích. viz [interoperabilita mezi jazyky](#cross-language-interoperability) v druhé části tohoto článku.
 
 Aby bylo možné plně spolupracovat s jinými objekty napsanými v libovolném jazyce, musí tyto objekty zveřejnit volajícím pouze ty funkce, které jsou společné pro všechny jazyky. Tato společná sada funkcí je definována specifikací CLS (Common Language Specification), což je sada pravidel, která se vztahují na generovaná sestavení. Specifikace CLS (Common Language Specification) je definována v oddílu I klauzule 7 až 11 ze [standardu ECMA-335: Common Language Infrastructure](https://www.ecma-international.org/publications/standards/Ecma-335.htm).
 
 Pokud vaše komponenta odpovídá specifikaci CLS (Common Language Specification), je zaručena, že je kompatibilní se specifikací CLS a je možné k nim přicházet z kódu v sestaveních napsaných v jakémkoli programovacím jazyce, který podporuje specifikaci CLS. Můžete určit, zda vaše komponenta odpovídá specifikaci CLS (Common Language Specification) v době kompilace, a to použitím atributu [CLSCompliantAttribute](xref:System.CLSCompliantAttribute) pro váš zdrojový kód. Další informace najdete v [atributu CLSCompliantAttribute](#the-clscompliantattribute-attribute).
-
-V tomto článku:
-
-* [Pravidla dodržování předpisů CLS](#cls-compliance-rules)
-
-  * [Typy a signatury členů typu](#types-and-type-member-signatures)
-
-  * [Zásady vytváření názvů](#naming-conventions)
-
-  * [Převod typů](#type-conversion)
-
-  * [Pole](#arrays)
-
-  * [Rozhraní](#interfaces)
-
-  * [Výčty](#enumerations)
-
-  * [Obecné typy členů](#type-members-in-general)
-
-  * [Přístupnost člena](#member-accessibility)
-
-  * [Obecné typy a členy](#generic-types-and-members)
-
-  * [Konstruktory](#constructors)
-
-  * [Vlastnosti](#properties)
-
-  * [Události](#events)
-
-  * [Přetížení](#overloads)
-
-  * [Výjimky](#exceptions)
-
-  * [Atributy](#attributes)
-
-* [CLSCompliantAttribute – atribut](#the-clscompliantattribute-attribute)
-
-* [Vzájemná funkční spolupráce mezi jazyky](#cross-language-interoperability)
 
 ## <a name="cls-compliance-rules"></a>Pravidla dodržování předpisů CLS
 
@@ -154,9 +116,9 @@ Pravidla pro dodržování specifikace CLS jsou uvedená v následující tabulc
 
 Kategorie | Seznamte se s  | Pravidlo | Číslo pravidla
 -------- | --- | ---- | -----------
-Přístupnost | [Přístupnost člena](#member-accessibility) | Při přepisu zděděných metod se přístupnost nemění, s výjimkou přepsání metody zděděné z jiného sestavení s přístupností `family-or-assembly` . V takovém případě má přepsání přístup `family` . | 10
-Přístupnost | [Přístupnost člena](#member-accessibility) | Viditelnost a přístupnost typů a členů musí být takové, aby typy v signatuře kteréhokoli člena byly viditelné a přístupné, kdykoli je samotný člen viditelný a přístupný. Například veřejná metoda, která je viditelná vně sestavení, nesmí obsahovat argument, jehož typ je viditelný pouze v rámci sestavení. Viditelnost a přístupnost typů tvořících instanci obecného typu používaného v podpisu každého člena musí být viditelná a přístupná, kdykoli je samotný člen viditelný a přístupný. Například instance obecného typu přítomná v signatuře člena, který je viditelný mimo jeho sestavení, nesmí mít obecný argument, jehož typ je viditelný pouze v rámci sestavení. | 12
-Pole | [Pole](#arrays) | Pole musí mít prvky s typem odpovídajícím specifikaci CLS a všechny dimenze pole musí mít nižší meze nula. Pouze skutečnost, že položka je pole a typ elementu pole musí být požadován pro rozlišení mezi přetíženími. Pokud je přetížení založeno na dvou nebo více typech pole, musí být typy prvků pojmenované typy. | 16
+Usnadnění | [Přístupnost člena](#member-accessibility) | Při přepisu zděděných metod se přístupnost nemění, s výjimkou přepsání metody zděděné z jiného sestavení s přístupností `family-or-assembly` . V takovém případě má přepsání přístup `family` . | 10
+Usnadnění | [Přístupnost člena](#member-accessibility) | Viditelnost a přístupnost typů a členů musí být takové, aby typy v signatuře kteréhokoli člena byly viditelné a přístupné, kdykoli je samotný člen viditelný a přístupný. Například veřejná metoda, která je viditelná vně sestavení, nesmí obsahovat argument, jehož typ je viditelný pouze v rámci sestavení. Viditelnost a přístupnost typů tvořících instanci obecného typu používaného v podpisu každého člena musí být viditelná a přístupná, kdykoli je samotný člen viditelný a přístupný. Například instance obecného typu přítomná v signatuře člena, který je viditelný mimo jeho sestavení, nesmí mít obecný argument, jehož typ je viditelný pouze v rámci sestavení. | 12
+Pole | [Pole](#arrays) | Pole musí mít prvky s typem odpovídajícím specifikaci CLS a všechny dimenze pole musí mít nižší meze nula. Pouze skutečnost, že položka je pole a typ elementu pole musí být požadován pro rozlišení mezi přetíženími. Pokud je přetížení založeno na dvou nebo více typech pole, typy prvků musí být pojmenované typy. | 16
 Atributy | [Atributy](#attributes) | Atributy musí být typu [System. Attribute](xref:System.Attribute)nebo typu, který z něj dědí. | 41
 Atributy | [Atributy](#attributes) | Specifikace CLS umožňuje pouze podmnožinu kódování pro vlastní atributy. Jediné typy, které se zobrazí v těchto kódováních, jsou (viz oddíl IV) [: System. Type](xref:System.Type), [System. String](xref:System.String), [System. Char](xref:System.Char), [System. Boolean](xref:System.Boolean), System. [Byte](xref:System.Byte), System. [Int16](xref:System.Int16), System [. Int32](xref:System.Int32), System [. Int64](xref:System.Int64), System. [Single](xref:System.Single), [System. Double](xref:System.Double)a jakýkoli typ výčtu založený na typu základního typu Integer kompatibilní se specifikací CLS. | 34
 Atributy | [Atributy](#attributes) | Specifikace CLS neumožňuje veřejně viditelné požadované modifikátory ( `modreq` , viz oddíl II), ale umožňuje volitelné modifikátory ( `modopt` , viz oddíl II), které nerozumí. | 35
@@ -184,7 +146,7 @@ Rozhraní | [Rozhraní](#interfaces) | Rozhraní kompatibilní se specifikací C
 Členové | [Obecné typy členů](#type-members-in-general) | Globální statická pole a metody nejsou kompatibilní se specifikací CLS. | 36
 Členové | -- | Hodnota statického literálu je určena pomocí inicializačních metadat pole. Literál kompatibilní se specifikací CLS musí mít hodnotu zadanou v metadatech inicializace pole, která jsou přesně stejného typu jako literál (nebo základního typu, pokud je tento literál typu `enum` ). | 13
 Členové | [Obecné typy členů](#type-members-in-general) | Omezení vararg není součástí specifikace CLS a jediná konvence volání podporovaná specifikací CLS je standardní spravovaná konvence volání. | 15
-Zásady vytváření názvů | [Zásady vytváření názvů](#naming-conventions) | Sestavení se řídí podle přílohy 7 technické sestavy 15 sady Unicode Standard 3.0, která se řídí sadou znaků povolených ke spuštění a jsou součástí identifikátorů, které jsou k dispozici online ve [formulářích normalizace Unicode](https://www.unicode.org/unicode/reports/tr15/tr15-18.html). Identifikátory musí být v kanonickém formátu definovaném formulářem normalizace Unicode C. Pro účely specifikace CLS jsou dva identifikátory stejné, pokud mapování malých písmen (podle specifikace národního prostředí Unicode rozlišuje malá a velká písmena), jsou stejná. To znamená, že u dvou identifikátorů, které se považují za odlišné v rámci specifikace CLS, se liší ve více než pouhém případě. Chcete-li však přepsat zděděnou definici, rozhraní příkazového řádku vyžaduje použití přesného kódování původní deklarace. | 4
+Zásady vytváření názvů | [Zásady vytváření názvů](#naming-conventions) | Sestavení se řídí podle přílohy 7 technické sestavy 15 sady Unicode Standard 3.0, která se řídí sadou znaků povolených ke spuštění a jsou součástí identifikátorů, které jsou k dispozici online ve [formulářích normalizace Unicode](https://unicode.org/reports/tr15/). Identifikátory musí být v kanonickém formátu definovaném formulářem normalizace Unicode C. Pro účely specifikace CLS jsou dva identifikátory stejné, pokud mapování malých písmen (podle specifikace národního prostředí Unicode rozlišuje malá a velká písmena), jsou stejná. To znamená, že u dvou identifikátorů, které se považují za odlišné v rámci specifikace CLS, se liší ve více než pouhém případě. Chcete-li však přepsat zděděnou definici, rozhraní příkazového řádku vyžaduje použití přesného kódování původní deklarace. | 4
 Přetížení | [Zásady vytváření názvů](#naming-conventions) | Všechny názvy zavedené v oboru kompatibilním se specifikací CLS musí být nezávislé na druhu, s výjimkou případů, kdy jsou názvy identické a vyřešeny pomocí přetížení. To znamená, že když CTS umožňuje, aby jeden typ používal stejný název pro metodu a pole, specifikace CLS ne. | 5
 Přetížení | [Zásady vytváření názvů](#naming-conventions) | Pole a vnořené typy se liší podle porovnání identifikátorů, i když CTS umožňuje odlišit jedinečné podpisy. Metody, vlastnosti a události, které mají stejný název (podle porovnání identifikátorů), se liší o více než jenom návratovým typem, s výjimkou zadání v pravidle CLS 39. | 6
 Přetížení | [Přetížení](#overloads) | Pouze vlastnosti a metody mohou být přetíženy. | 37
@@ -201,6 +163,24 @@ Typy | [Typy a signatury členů typu](#types-and-type-member-signatures) | Typo
 Typy | [Typy a signatury členů typu](#types-and-type-member-signatures) | Nespravované typy ukazatelů nejsou kompatibilní se specifikací CLS. | 17
 Typy | [Typy a signatury členů typu](#types-and-type-member-signatures) | Třídy kompatibilní se specifikací CLS, typy hodnot a rozhraní nevyžadují implementaci členů nekompatibilních se specifikací CLS. | 20
 Typy | [Typy a signatury členů typu](#types-and-type-member-signatures) | [System. Object](xref:System.Object) je kompatibilní se specifikací CLS. Všechny ostatní třídy odpovídající specifikaci CLS dědí z třídy kompatibilní se specifikací CLS. | 23
+
+Index k pododdílům:
+
+* [Typy a signatury členů typu](#types-and-type-member-signatures)
+* [Zásady vytváření názvů](#naming-conventions)
+* [Převod typů](#type-conversion)
+* [Pole](#arrays)
+* [Rozhraní](#interfaces)
+* [Výčty](#enumerations)
+* [Obecné typy členů](#type-members-in-general)
+* [Přístupnost člena](#member-accessibility)
+* [Obecné typy a členy](#generic-types-and-members)
+* [Konstruktory](#constructors)
+* [Vlastnosti](#properties)
+* [Události](#events)
+* [Přetížení](#overloads)
+* [Výjimky](#exceptions)
+* [Atributy](#attributes)
 
 ### <a name="types-and-type-member-signatures"></a>Typy a signatury členů typu
 
@@ -315,7 +295,7 @@ Všechny typy, které se zobrazují v podpisech členů, včetně návratového 
 
 .NET [Common Type System](common-type-system.md) zahrnuje řadu předdefinovaných typů, které jsou podporovány přímo modulem CLR (Common Language Runtime) a jsou speciálně kódovány v metadatech sestavení. Z těchto vnitřních typů jsou typy uvedené v následující tabulce kompatibilní se specifikací CLS.
 
-Typ kompatibilní se specifikací CLS | Popis
+Typ kompatibilní se specifikací CLS | Description
 ------------------ | -----------
 [Bytové](xref:System.Byte) | 8 bitů unsigned integer
 [Int16](xref:System.Int16) | 16bitové celé číslo se znaménkem
@@ -331,7 +311,7 @@ Typ kompatibilní se specifikací CLS | Popis
 
 Vnitřní typy uvedené v následující tabulce nejsou kompatibilní se specifikací CLS.
 
-Neodpovídající typ | Popis | Alternativa odpovídající specifikaci CLS
+Neodpovídající typ | Description | Alternativa odpovídající specifikaci CLS
 ------------------ | ----------- | -------------------------
 [SByte](xref:System.SByte) | 8bitový datový typ se znaménkem na 8bitové číslo | [Int16](xref:System.Int16)
 [UInt16](xref:System.UInt16) | 16bitové unsigned integer | [Int32](xref:System.Int32)
@@ -607,13 +587,13 @@ public class person
 //    Naming1.cs(6,14): (Location of symbol related to previous warning)
 ```
 
-Identifikátory programovacích jazyků, jako jsou názvy oborů názvů, typů a členů, musí být v souladu se [standardem Unicode 3,0, technickým hlášením 15, přílohou 7](https://www.unicode.org/reports/tr15/tr15-18.html). To znamená, že:
+Identifikátory programovacích jazyků, jako jsou názvy oborů názvů, typů a členů, musí splňovat [Standard Unicode](https://unicode.org/reports/tr15/). To znamená, že:
 
 * Prvním znakem identifikátoru může být jakékoli velké písmeno Unicode, malé písmeno, název písmene, písmeno, písmeno, jiné písmeno nebo číslo písmen. Informace o kategoriích znaků Unicode naleznete v tématu výčet [System. Globalization. UnicodeCategory](xref:System.Globalization.UnicodeCategory) .
 
-* Další znaky mohou být z libovolné kategorie jako první znak a mohou také obsahovat značky bez mezer mezi mezerami, kombinováním značek mezer, desetinnými čísly, interpunkční znaménky konektoru a formátovacími kódy.
+* Další znaky mohou být z libovolné kategorie jako první znak a mohou také obsahovat značky bez mezer mezi mezerami, kombinováním značek mezer, desetinnými čísly, interpunkcí konektoru a formátovacími kódy.
 
-Před porovnáním identifikátorů byste měli odfiltrovat Formátovací kódy a převést identifikátory na normalizační formu Unicode C, protože jeden znak může být reprezentován více jednotkami kódu zakódovanými v kódování UTF-16. Sekvence znaků, které vytvářejí stejné jednotky kódu ve formě normalizace Unicode C, nejsou kompatibilní se specifikací CLS. Následující příklad definuje vlastnost s názvem `Å` , která se skládá z znaku ANGSTROM Sign (U + 212B), a druhá vlastnost s názvem, `Å` která se skládá z znaku velké písmeno latinky a s výše UVEDENým prstenci (U + 00C5). Kompilátor jazyka C# označí zdrojový kód jako nekompatibilní se specifikací CLS.
+Před porovnáním identifikátorů byste měli odfiltrovat Formátovací kódy a převést identifikátory na normalizační formu Unicode C, protože jeden znak může být reprezentován více jednotkami kódu zakódovanými v kódování UTF-16. Sekvence znaků, které vytvářejí stejné jednotky kódu ve formě normalizace Unicode C, nejsou kompatibilní se specifikací CLS. Následující příklad definuje vlastnost s názvem `Å` , která se skládá z znaku ANGSTROM Sign (U + 212B), a druhá vlastnost s názvem `Å` , která se skládá z znaku velké písmeno latinky a s výše UVEDENým prstenci (U + 00C5). Kompilátor jazyka C# označí zdrojový kód jako nekompatibilní se specifikací CLS.
 
 ```csharp
 public class Size
@@ -949,7 +929,7 @@ End Structure
 
 Pole kompatibilní se specifikací CLS odpovídají následujícím pravidlům:
 
-* Všechny dimenze pole musí mít dolní mez nula. Následující příklad vytvoří pole, které není kompatibilní se specifikací CLS, s dolní mezí jedna. Všimněte si, že navzdory přítomnosti atributu [CLSCompliantAttribute](xref:System.CLSCompliantAttribute) kompilátor nezjistí, že pole vrácené `Numbers.GetTenPrimes` metodou není kompatibilní se specifikací CLS.
+* Všechny dimenze pole musí mít dolní mez nula. Následující příklad vytvoří pole, které není kompatibilní se specifikací CLS, s dolní mezí jedna. Navzdory přítomnosti atributu [CLSCompliantAttribute](xref:System.CLSCompliantAttribute) kompilátor nezjistí, že pole vrácené `Numbers.GetTenPrimes` metodou není kompatibilní se specifikací CLS.
 
   ```csharp
   [assembly: CLSCompliant(true)]
@@ -1849,7 +1829,7 @@ End Class
 
 Specifikace CLS (Common Language Specification) ukládá konzervativní model pro vytváření instancí pro vnořené typy a chráněné členy. Otevřené obecné typy nemohou vystavovat pole nebo členy s podpisy, které obsahují konkrétní instanci vnořeného, chráněného obecného typu. Neobecné typy, které rozšíří specifické instance obecné základní třídy nebo rozhraní, nemůžou vystavovat pole nebo členy s podpisy, které obsahují různé instance vnořeného, chráněného obecného typu.
 
-Následující příklad definuje obecný typ, `C1<T>` a chráněnou třídu `C1<T>.N` . `C1<T>`má dvě metody `M1` a `M2` . Není však `M1` kompatibilní se specifikací CLS, protože se pokusí vrátit `C1<int>.N` objekt z `C1<T>` . Druhá třída `C2` je odvozena z `C1<long>` . Má dvě metody, `M3` a `M4` . `M3`není kompatibilní se specifikací CLS, protože se pokusí vrátit `C1<int>.N` objekt z podtřídy `C1<long>` . Všimněte si, že kompilátory jazyka mohou být ještě více omezující. V tomto příkladu Visual Basic při pokusu o zkompilování zobrazit chybu `M4` .
+Následující příklad definuje obecný typ, `C1<T>` a chráněnou třídu `C1<T>.N` . `C1<T>`má dvě metody `M1` a `M2` . Není však `M1` kompatibilní se specifikací CLS, protože se pokusí vrátit `C1<int>.N` objekt z `C1<T>` . Druhá třída `C2` je odvozena z `C1<long>` . Má dvě metody, `M3` a `M4` . `M3`není kompatibilní se specifikací CLS, protože se pokusí vrátit `C1<int>.N` objekt z podtřídy `C1<long>` . Kompilátory jazyka mohou být ještě více omezující. V tomto příkladu Visual Basic při pokusu o zkompilování zobrazit chybu `M4` .
 
 ```csharp
 using System;
@@ -2501,7 +2481,7 @@ End Module
 
 Sestavení rozhraní In.NET, vlastní atributy poskytují rozšiřitelný mechanismus pro ukládání vlastních atributů a načítání metadat o programovacích objektech, jako jsou sestavení, typy, členy a parametry metody. Vlastní atributy musí být odvozeny od typu [System. Attribute](xref:System.Attribute) nebo z typu odvozeného z `System.Attribute` .
 
-V následujícím příkladu je toto pravidlo porušeno. Definuje `NumericAttribute` třídu, která není odvozena z `System.Attribute` . Všimněte si, že chyba kompilátoru je výsledkem pouze v případě, že je použit atribut, který není kompatibilní se specifikací CLS, nikoli při definování třídy.
+V následujícím příkladu je toto pravidlo porušeno. Definuje `NumericAttribute` třídu, která není odvozena z `System.Attribute` . Chyba kompilátoru je výsledkem pouze v případě, že je použit atribut, který není kompatibilní se specifikací CLS, nikoli při definování třídy.
 
 ```csharp
 using System;
@@ -2586,7 +2566,7 @@ Konstruktor nebo vlastnosti atributu kompatibilního se specifikací CLS mohou v
 
 * Jakýkoli typ výčtu, jehož základní typ je `Byte` , `Int16` , `Int32` nebo `Int64` .
 
-Následující příklad definuje `DescriptionAttribute` třídu, která je odvozena z [atributu](xref:System.Attribute). Konstruktor třídy má parametr typu `Descriptor` , takže třída není kompatibilní se specifikací CLS. Všimněte si, že kompilátor jazyka C# generuje upozornění, ale úspěšně zkompiluje.
+Následující příklad definuje `DescriptionAttribute` třídu, která je odvozena z [atributu](xref:System.Attribute). Konstruktor třídy má parametr typu `Descriptor` , takže třída není kompatibilní se specifikací CLS. Kompilátor jazyka C# generuje upozornění, ale úspěšně zkompiluje kompilace.
 
 ```csharp
 using System;
@@ -2895,7 +2875,7 @@ Pak použijete nástroj Link (Link. exe) ke kompilaci dvou modulů do sestavení
 link numberutil.netmodule stringutil.netmodule /out:UtilityLib.dll /dll
 ```
 
-Následující příklad následně volá metody `NumericLib.NearZero` a `StringLib.ToTitleCase`. Kód jazyka Visual Basic i kód jazyka C# může přistupovat k metodám v obou třídách.
+Následující příklad následně volá metody `NumericLib.NearZero` a `StringLib.ToTitleCase`. Kód Visual Basic i kód jazyka C# mohou přistupovat k metodám v obou třídách.
 
 ```csharp
 using System;

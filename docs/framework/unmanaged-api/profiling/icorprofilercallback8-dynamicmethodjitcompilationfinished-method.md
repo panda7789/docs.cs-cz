@@ -1,5 +1,5 @@
 ---
-title: ICorProfilerCallback8::DynamicMethodJITCompilationFinished Method
+title: ICorProfilerCallback8::D ynamicMethodJITCompilationFinished – metoda
 ms.date: 04/10/2018
 api_name:
 - ICorProfilerCallback8.DynamicMethodJITCompilationFinished
@@ -8,17 +8,17 @@ api_location:
 - corprof.idl
 api_type:
 - COM
-ms.openlocfilehash: c2e9489654a0fe5fa65ec638ed0f991a6c01415a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 554cc93de934061e87322c7557e05545e5e7bc62
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175106"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84499074"
 ---
-# <a name="icorprofilercallback8dynamicmethodjitcompilationfinished-method"></a>ICorProfilerCallback8::DynamicMethodJITCompilationFinished Method
-[Podporováno v rozhraní .NET Framework 4.7 a novějších verzích]  
+# <a name="icorprofilercallback8dynamicmethodjitcompilationfinished-method"></a>ICorProfilerCallback8::D ynamicMethodJITCompilationFinished – metoda
+[Podporováno v .NET Framework 4,7 a novějších verzích]  
   
-Upozorní profiler vždy, když je dokončena kompilace JIT dynamické metody.  
+Upozorní profiler vždy, když se dokončí kompilace JIT dynamické metody.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -31,31 +31,31 @@ HRESULT DynamicMethodJITCompilationFinished(
 ```  
   
 ## <a name="parameters"></a>Parametry  
-[v]`functionId`  
-Identifikátor funkce v paměti, pro kterou je spuštěna kompilace JIT.
+pro`functionId`  
+Identifikátor funkce v paměti, pro kterou je spuštěná kompilace JIT.
 
-[v] `hrStatus` Hodnota, která označuje, zda byla kompilace JIT úspěšná.
+[in] `hrStatus` Hodnota, která označuje, zda byla kompilace JIT úspěšná.
 
-[v] `fIsSafeToBlock` označuje, že blokování může způsobit, že runtime čekat na volání vlákno vrátit z tohoto zpětného 
- `true` volání; `false` znamená, že blokování nebude mít vliv na provoz za běhu.  
+[in] `fIsSafeToBlock` 
+ `true` pro indikaci, že blokování může způsobit, že modul runtime počká, než se volající vlákno vrátí z tohoto zpětného volání; `false`pro indikaci, že blokování nebude mít vliv na operaci modulu runtime.  
 
 ## <a name="remarks"></a>Poznámky  
 
-Toto zpětné volání se aktivuje vždy, když jit kompilace dynamické metody byla dokončena. To zahrnuje různé IL útržky a LCG metody. Jeho cílem je poskytnout autoři profiler s dostatek informací k identifikaci kompilované metody pro uživatele.
+Toto zpětné volání je aktivováno při dokončení kompilace JIT dynamické metody. To zahrnuje různé zástupné procedury IL a LCG metody. Jeho cílem je poskytnout zapisovačům profileru dostatek informací pro identifikaci zkompilované metody uživatelům.
 
 > [!NOTE]
-> `functionId`hodnoty nelze použít k překladu na jejich tokeny metadat, protože dynamické metody nemají žádná metadata.
+> `functionId`hodnoty nelze použít k přeložení tokenů metadat, protože dynamické metody nemají žádná metadata.
 
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [DynamicMethodJITCompilationStarted – metoda](icorprofilercallback8-dynamicmethodjitcompilationstarted-method.md)
 - [ICorProfilerCallback8 – rozhraní](icorprofilercallback8-interface.md)

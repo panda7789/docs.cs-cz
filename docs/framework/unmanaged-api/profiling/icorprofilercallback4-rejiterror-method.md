@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: d7888aa9-dfaa-420f-9f99-e06ab35ca482
 topic_type:
 - apiref
-ms.openlocfilehash: 66195ea9df4c8e9ce847b38f7d020a3bebffcd37
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 488069f3ea16352cb7bb5e81b9a726637a7a65f8
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76865178"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84499360"
 ---
 # <a name="icorprofilercallback4rejiterror-method"></a>ICorProfilerCallback4::ReJITError – metoda
 Upozorní profileru, že kompilátor JIT (just-in-time) zjistil chybu v procesu opětovné kompilace.  
@@ -37,13 +37,13 @@ HRESULT ReJITError(
   
 ## <a name="parameters"></a>Parametry  
  `moduleID`  
- pro `ModuleID`, ve kterém byl proveden pokus o opětovnou kompilaci.  
+ pro `ModuleID`V němž byl proveden pokus o opětovnou kompilaci.  
   
  `methodId`  
- pro `MethodDef` metody, na které se provedl pokus o opětovnou kompilaci.  
+ pro `MethodDef`Metoda, na které se provedl pokus o opětovnou kompilaci.  
   
  `functionId`  
- pro Instance funkce, která je rekompilována nebo označena pro rekompilaci. Tato hodnota může být `NULL`, pokud k selhání došlo na základě jednotlivých metod (například v případě, že Profiler zadal neplatný token metadat pro metodu, která má být zkompilován).  
+ pro Instance funkce, která je rekompilována nebo označena pro rekompilaci. Tato hodnota může být `NULL` v případě, že k selhání došlo na základě jednotlivých metod (například v případě, že Profiler zadal neplatný token metadat pro metodu, která má být zkompilován).  
   
  `hrStatus`  
  pro HRESULT, který označuje povahu selhání. Seznam hodnot naleznete v části stav HRESULTs.  
@@ -53,23 +53,23 @@ HRESULT ReJITError(
   
 ## <a name="status-hresults"></a>Stav HRESULTs  
   
-|Stavové pole HRESULT|Popis|  
+|Stavové pole HRESULT|Description|  
 |--------------------------|-----------------|  
-|E_INVALIDARG|Token `moduleID` nebo `methodDef` je `NULL`.|  
+|E_INVALIDARG|`moduleID`Token nebo `methodDef` je `NULL` .|  
 |CORPROF_E_DATAINCOMPLETE|Modul ještě není úplně načtený, nebo se jedná o proces, který se právě načítá.|  
-|CORPROF_E_MODULE_IS_DYNAMIC|Zadaný modul byl dynamicky generován (například `Reflection.Emit`), a proto není touto metodou podporován.|  
-|CORPROF_E_FUNCTION_IS_COLLECTIBLE|Metoda je vytvořena do kolekční sestavení, a proto nemůže být znovu zkompilována. Všimněte si, že typy a funkce definované v kontextu bez reflexe (například `List<MyCollectibleStruct>`) mohou být vytvořeny do sestavení kolekční.|  
+|CORPROF_E_MODULE_IS_DYNAMIC|Zadaný modul byl dynamicky generován (například podle `Reflection.Emit` ), a proto není touto metodou podporován.|  
+|CORPROF_E_FUNCTION_IS_COLLECTIBLE|Metoda je vytvořena do kolekční sestavení, a proto nemůže být znovu zkompilována. Všimněte si, že typy a funkce definované v kontextu bez reflexe (například `List<MyCollectibleStruct>` ) mohou být vytvořeny do sestavení kolekční.|  
 |E_OUTOFMEMORY|Při pokusu o označení zadané metody pro rekompilaci JIT došlo k nedostatku paměti CLR.|  
-|Další|Operační systém vrátil selhání mimo ovládací prvek CLR. Například pokud systémové volání změny ochrany přístupu stránky paměti dojde k chybě, zobrazí se Chyba operačního systému.|  
+|Ostatní|Operační systém vrátil selhání mimo ovládací prvek CLR. Například pokud systémové volání změny ochrany přístupu stránky paměti dojde k chybě, zobrazí se Chyba operačního systému.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorProf. idl, CorProf. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

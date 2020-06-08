@@ -1,5 +1,6 @@
 ---
 title: <smtp> – element (nastavení sítě)
+description: <smtp>Prvek nastavení sítě konfiguruje formát doručení, způsob doručení a adresu odesílatele pro odeslání možností e-mailu v .NET Framework.
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/mailSettings/smtp
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - <smtp> element
 - smtp element
 ms.assetid: 220b0329-e384-4e0c-86b4-0945ad17efd9
-ms.openlocfilehash: 625c3cb82a8659c742b540724e5cf31be65a705e
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: b30b82922a69ea660f4c4abfd808e89fa9945183
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "74089104"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504508"
 ---
 # <a name="smtp-element-network-settings"></a>\<smtp> – element (nastavení sítě)
 Konfiguruje formát doručení, způsob doručení a adresu odesílatele pro odesílání e-mailů.  
@@ -78,7 +79,7 @@ Konfiguruje formát doručení, způsob doručení a adresu odesílatele pro ode
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.Net.Configuration.SmtpSection?displayProperty=nameWithType>
 - <xref:System.Net.Mail.SmtpClient?displayProperty=nameWithType>

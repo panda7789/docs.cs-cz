@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 39bbdb30-6a7a-4202-8da3-67ae9a0ab3a8
 topic_type:
 - apiref
-ms.openlocfilehash: e70d8ee40e16e37a12f8ed4033d2aa7489f0f25e
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: fa0fe827300a86a906a254292434e2a56ebb4a47
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76863943"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84498398"
 ---
 # <a name="icorprofilerinfogetcurrentthreadid-method"></a>ICorProfilerInfo::GetCurrentThreadID – metoda
 Získá ID aktuálního vlákna, pokud se jedná o spravované vlákno.  
@@ -37,16 +37,16 @@ HRESULT GetCurrentThreadID(
  mimo Ukazatel na vrácené ID spravovaného vlákna.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud je aktuální vlákno interní běhové vlákno nebo jiné nespravované vlákno, `GetCurrentThreadID` vrátí CORPROF_E_NOT_MANAGED_THREAD jako HRESULT a vrácená hodnota parametru `pThreadId` bude null.  
+ Pokud je aktuální vlákno interní běhové vlákno nebo jiné nespravované vlákno, `GetCurrentThreadID` vrátí CORPROF_E_NOT_MANAGED_THREAD jako HRESULT a vrácená hodnota `pThreadId` parametru bude null.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorProf. idl, CorProf. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

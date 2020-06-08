@@ -1,5 +1,6 @@
 ---
 title: <defaultProxy> – element (nastavení sítě)
+description: <defaultProxy>Prvek nastavení sítě konfiguruje proxy server protokolu HTTP (Hypertext Transfer Protocol) v .NET Framework.
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#defaultProxy
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - defaultProxy element
 - <defaultProxy> element
 ms.assetid: 9d663c4b-07b4-4f6f-9b12-efbd3630354f
-ms.openlocfilehash: 0945629c1395917bc1cf825f2ba84d20afa99957
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 915fdc96dbd4d417f9c9e6aa3ff96de3026491ef
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "71698211"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504599"
 ---
 # <a name="defaultproxy-element-network-settings"></a>\<defaultProxy> – element (nastavení sítě)
 Nakonfiguruje proxy server protokolu HTTP (Hypertext Transfer Protocol).  
@@ -86,7 +87,7 @@ Nakonfiguruje proxy server protokolu HTTP (Hypertext Transfer Protocol).
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.Net.WebProxy?displayProperty=nameWithType>
 - [Schéma nastavení sítě](index.md)

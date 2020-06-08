@@ -1,29 +1,30 @@
 ---
-title: FTP - .NET
+title: FTP – .NET
+description: Přečtěte si o komplexní podpoře protokolu FTP, který .NET Framework poskytuje pomocí tříd FtpWebRequest a FtpWebResponse.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - FTP
 ms.assetid: 9b43f8b4-89d7-46a7-89fc-71aca916dd32
-ms.openlocfilehash: d945f03077a863d9e1baa6b59fe8a908566aba5a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d21ca43cd1041df358dc5e2add9560fb33e85d83
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "61642877"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502584"
 ---
 # <a name="ftp"></a>FTP
 
-Rozhraní .NET Framework poskytuje komplexní podporu protokolu <xref:System.Net.FtpWebRequest> <xref:System.Net.FtpWebResponse> FTP s třídami a. Tyto třídy jsou <xref:System.Net.WebRequest> <xref:System.Net.WebResponse>odvozeny od a . Ve většině případů <xref:System.Net.WebRequest> <xref:System.Net.WebResponse> a třídy poskytují vše, co je nezbytné k požadavku, ale pokud potřebujete přístup k funkce specifické <xref:System.Net.FtpWebRequest> <xref:System.Net.FtpWebResponse>pro FTP vystaveny jako vlastnosti, můžete typecast tyto třídy nebo .
+.NET Framework poskytuje komplexní podporu protokolu FTP s <xref:System.Net.FtpWebRequest> <xref:System.Net.FtpWebResponse> třídami a. Tyto třídy jsou odvozeny z <xref:System.Net.WebRequest> a <xref:System.Net.WebResponse> . Ve většině případů <xref:System.Net.WebRequest> <xref:System.Net.WebResponse> třídy a poskytují vše potřebné k provedení požadavku, ale pokud potřebujete přístup k funkcím specifickým pro FTP, které jsou vystaveny jako vlastnosti, můžete tyto třídy přetypovat do <xref:System.Net.FtpWebRequest> nebo <xref:System.Net.FtpWebResponse> .
 
 ## <a name="examples"></a>Příklady
 
-Další informace naleznete v následujících [tématech: Postup: Stažení souborů pomocí protokolu FTP](how-to-download-files-with-ftp.md), [Postup: Nahrání souborů pomocí protokolu FTP](how-to-upload-files-with-ftp.md)a [Seznam obsahu adresáře pomocí protokolu FTP](how-to-list-directory-contents-with-ftp.md).
+Další informace najdete v následujících tématech: [Postupy: stahování souborů pomocí FTP](how-to-download-files-with-ftp.md), [Postupy: nahrání souborů s protokolem FTP](how-to-upload-files-with-ftp.md)a [Postupy: výpis obsahu adresáře pomocí protokolu FTP](how-to-list-directory-contents-with-ftp.md).
 
-## <a name="ftp-and-proxies"></a>FTP a proxy servery
+## <a name="ftp-and-proxies"></a>FTP a proxy
 
-Pokud je proxy server <xref:System.Net.FtpWebRequest.Proxy%2A> (určený vlastností) proxy <xref:System.Net.WebRequestMethods.Ftp.DownloadFile>http, jsou podporovány pouze příkazy , <xref:System.Net.WebRequestMethods.Ftp.ListDirectory>a <xref:System.Net.WebRequestMethods.Ftp.ListDirectoryDetails> příkazy.
+Je-li proxy server (určený <xref:System.Net.FtpWebRequest.Proxy%2A> vlastností) proxy serveru http, <xref:System.Net.WebRequestMethods.Ftp.DownloadFile> <xref:System.Net.WebRequestMethods.Ftp.ListDirectory> <xref:System.Net.WebRequestMethods.Ftp.ListDirectoryDetails> jsou podporovány pouze příkazy, a.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Přístup k internetu přes proxy server](accessing-the-internet-through-a-proxy.md)
 - [Ukázky programování sítě](network-programming-samples.md)

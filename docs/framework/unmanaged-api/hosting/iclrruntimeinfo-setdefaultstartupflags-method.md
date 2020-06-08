@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 98ae174f-bff0-48f1-9e05-6cb63b451824
 topic_type:
 - apiref
-ms.openlocfilehash: 7d201962976d198372226eb686696fcdccf3eb69
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: aa02d42511a863434fef236f90afae2c5417a78d
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83762159"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504014"
 ---
 # <a name="iclrruntimeinfosetdefaultstartupflags-method"></a>ICLRRuntimeInfo::SetDefaultStartupFlags – metoda
-Nastaví spouštěcí příznaky a konfigurační soubor hostitele, který se použije ke spuštění modulu runtime. Tato metoda nahrazuje použití `startupFlags` parametru ve funkcích [CorBindToRuntimeEx –](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) a [CorBindToRuntimeHost –](corbindtoruntimehost-function.md) .  
+Nastaví spouštěcí příznaky a konfigurační soubor hostitele, který se použije ke spuštění modulu runtime. Tato metoda nahrazuje použití `startupFlags` parametru ve funkcích [CorBindToRuntimeEx –](corbindtoruntimeex-function.md) a [CorBindToRuntimeHost –](corbindtoruntimehost-function.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,7 +35,7 @@ HRESULT SetDefaultStartupFlags(
   
 ## <a name="parameters"></a>Parametry  
  `dwStartupFlags`  
- pro Příznaky spuštění hostitele, které mají být nastaveny. Používejte stejné příznaky jako s funkcemi [CorBindToRuntimeEx –](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) a [CorBindToRuntimeHost –](corbindtoruntimehost-function.md) .  
+ pro Příznaky spuštění hostitele, které mají být nastaveny. Používejte stejné příznaky jako s funkcemi [CorBindToRuntimeEx –](corbindtoruntimeex-function.md) a [CorBindToRuntimeHost –](corbindtoruntimehost-function.md) .  
   
  `pwzHostConfigFile`  
  pro Cesta k adresáři konfiguračního souboru hostitele, který se má nastavit.  
@@ -43,7 +43,7 @@ HRESULT SetDefaultStartupFlags(
 ## <a name="return-value"></a>Návratová hodnota  
  Tato metoda vrací následující konkrétní hodnoty HRESULT a také chyby HRESULT, které naznačují selhání metody.  
   
-|HRESULT|Popis|  
+|HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|Metoda byla úspěšně dokončena.|  
   
@@ -59,8 +59,8 @@ HRESULT SetDefaultStartupFlags(
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [ICLRRuntimeInfo – rozhraní](iclrruntimeinfo-interface.md)
 - [Rozhraní pro hostování](hosting-interfaces.md)
-- [Hostování](index.md)
+- [Hosting](index.md)

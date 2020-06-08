@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 0eed759f-cce8-405d-88dc-9ee293a38928
 topic_type:
 - apiref
-ms.openlocfilehash: 2b2d619c5940376806e9873a528b4f08886593e9
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 18c3b6e840ec1f6cb1481c8d752e6399dcdae077
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76863553"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84498138"
 ---
 # <a name="icorprofilerinfogetfunctionfromtoken-method"></a>ICorProfilerInfo::GetFunctionFromToken – metoda
 Získá ID funkce. Tato metoda je zastaralá ve verzi .NET Framework 2,0. Místo toho použijte metodu [ICorProfilerInfo2:: GetFunctionFromTokenAndTypeArgs –](icorprofilerinfo2-getfunctionfromtokenandtypeargs-method.md) .  
@@ -35,10 +35,10 @@ HRESULT GetFunctionFromToken(
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Metoda `GetFunctionFromToken` nebude fungovat pro obecné funkce nebo funkce v obecných typech. je teď zastaralá. Pro všechny funkce použijte `ICorProfilerInfo2::GetFunctionFromTokenAndTypeArgs`.  
+ `GetFunctionFromToken`Metoda nebude fungovat pro obecné funkce nebo funkce v obecných typech; je nyní zastaralá. Použijte `ICorProfilerInfo2::GetFunctionFromTokenAndTypeArgs` pro všechny funkce.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorProf. idl, CorProf. h  
   

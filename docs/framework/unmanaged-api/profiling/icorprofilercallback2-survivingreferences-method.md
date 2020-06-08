@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: f165200e-3a91-47f7-88fc-13ff10c8babc
 topic_type:
 - apiref
-ms.openlocfilehash: 798815c1122129395e57ff1274c23292696504f0
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 3681106bca94f1fefb2f24a1aa4254eb2b1b0531
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76865711"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84499737"
 ---
 # <a name="icorprofilercallback2survivingreferences-method"></a>ICorProfilerCallback2::SurvivingReferences – metoda
 Oznamuje rozložení objektů v haldě v důsledku nekomprimace uvolňování paměti.  
@@ -38,45 +38,45 @@ HRESULT SurvivingReferences(
   
 ## <a name="parameters"></a>Parametry  
  `cSurvivingObjectIDRanges`  
- pro Počet bloků souvislých objektů, které byly zachovány v důsledku nekomprimace uvolňování paměti. To znamená, že hodnota `cSurvivingObjectIDRanges` je velikost polí `objectIDRangeStart` a `cObjectIDRangeLength`, které ukládají `ObjectID` a délku, v uvedeném pořadí pro každý blok objektů.  
+ pro Počet bloků souvislých objektů, které byly zachovány v důsledku nekomprimace uvolňování paměti. To znamená, že hodnota `cSurvivingObjectIDRanges` je velikost pole `objectIDRangeStart` a `cObjectIDRangeLength` , který ukládá `ObjectID` a délku, v uvedeném pořadí pro každý blok objektů.  
   
- Další dva argumenty `SurvivingReferences` jsou paralelní pole. Jinými slovy `objectIDRangeStart` a `cObjectIDRangeLength` se týkají stejného bloku souvislých objektů.  
+ Další dva argumenty `SurvivingReferences` jsou paralelní pole. Jinými slovy `objectIDRangeStart` a `cObjectIDRangeLength` týká se stejného bloku souvislých objektů.  
   
  `objectIDRangeStart`  
- pro Pole hodnot `ObjectID`, z nichž každá je počáteční adresou bloku souvislých objektů, živé objekty v paměti.  
+ pro Pole `ObjectID` hodnot, z nichž každá je počáteční adresou bloku souvislých objektů, živé objekty v paměti.  
   
  `cObjectIDRangeLength`  
  pro Pole celých čísel, z nichž každá je velikost zbývajícího bloku souvislých objektů v paměti.  
   
- Velikost je určena pro každý blok, na který je odkazováno v poli `objectIDRangeStart`.  
+ Velikost je určena pro každý blok, na který je odkazováno v `objectIDRangeStart` poli.  
   
 ## <a name="remarks"></a>Poznámky  
   
 > [!IMPORTANT]
-> Tato metoda oznamuje velikosti objektů `MAX_ULONG` pro objekty, které jsou větší než 4 GB na 64-bitových platformách. Pro objekty, které jsou větší než 4 GB, použijte místo toho metodu [ICorProfilerCallback4:: SurvivingReferences2 –](icorprofilercallback4-survivingreferences2-method.md) .  
+> Tato metoda oznamuje velikost `MAX_ULONG` pro objekty, které jsou větší než 4 GB na 64 bitů. Pro objekty, které jsou větší než 4 GB, použijte místo toho metodu [ICorProfilerCallback4:: SurvivingReferences2 –](icorprofilercallback4-survivingreferences2-method.md) .  
   
- Prvky polí `objectIDRangeStart` a `cObjectIDRangeLength` by měly být interpretovány následujícím způsobem, aby bylo možné určit, zda objekt držel uvolňování paměti. Předpokládejme, že hodnota `ObjectID` (`ObjectID`) leží v následujícím rozsahu:  
+ Prvky `objectIDRangeStart` `cObjectIDRangeLength` polí a by měly být interpretovány následujícím způsobem, aby bylo možné určit, zda objekt držel uvolňování paměti. Předpokládejme, že `ObjectID` hodnota ( `ObjectID` ) leží v následujícím rozsahu:  
   
  `ObjectIDRangeStart[i]` <= `ObjectID` < `ObjectIDRangeStart[i]` + `cObjectIDRangeLength[i]`  
   
- Pro libovolnou hodnotu `i`, která je v následujícím rozsahu, objekt předržel uvolňování paměti:  
+ Pro všechny hodnoty `i` , které jsou v následujícím rozsahu, objekt předržel uvolňování paměti:  
   
- 0 <= `i` < `cSurvivingObjectIDRanges`  
+ 0 <=`i` < `cSurvivingObjectIDRanges`  
   
  Nekomprimace uvolňování paměti znovu uvolňuje paměť obsazenou "nemrtvými" objekty, ale nekomprimuje volné místo. V důsledku toho se do haldy vrátí paměť, ale nebudou přesunuty žádné "živé" objekty.  
   
- Modul common language runtime (CLR) volá `SurvivingReferences` pro nekomprimaci uvolňování paměti. Pro komprimaci uvolňování paměti je místo toho volána metoda [ICorProfilerCallback:: MovedReferences –](icorprofilercallback-movedreferences-method.md) . Jedno uvolnění paměti může být zkomprimováno pro jednu generaci a nekomprimaci pro jiné. Pro uvolňování paměti v jakékoli konkrétní generaci se Profiler dostane buď zpětné volání `SurvivingReferences`, nebo `MovedReferences` zpětné volání, ale ne obojí.  
+ Modul CLR (Common Language Runtime) volá `SurvivingReferences` pro nekomprimaci uvolňování paměti. Pro komprimaci uvolňování paměti je místo toho volána metoda [ICorProfilerCallback:: MovedReferences –](icorprofilercallback-movedreferences-method.md) . Jedno uvolnění paměti může být zkomprimováno pro jednu generaci a nekomprimaci pro jiné. Pro uvolňování paměti v jakékoli konkrétní generaci získá Profiler buď `SurvivingReferences` zpětné volání `MovedReferences` , nebo zpětné volání, ale ne obojí.  
   
- V průběhu konkrétního uvolňování paměti může být přijato více `SurvivingReferences`ch zpětného volání, z důvodu omezeného interního ukládání do vyrovnávací paměti, více vláken hlásí v případě uvolňování paměti serveru a z jiných důvodů. V případě více zpětných volání během uvolňování paměti jsou informace kumulativní – všechny odkazy, které jsou hlášeny v jakémkoli `SurvivingReferences` zpětné volání do uvolňování paměti.  
+ `SurvivingReferences`V průběhu konkrétního uvolňování paměti může být přijato více zpětných volání, z důvodu omezené vnitřní vyrovnávací paměti, více vláken hlásí v případě uvolňování paměti serveru a z jiných důvodů. V případě více zpětných volání během uvolňování paměti jsou informace kumulativní – všechny odkazy, které jsou hlášeny v jakémkoli `SurvivingReferences` zpětném volání, se zachová do uvolňování paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorProf. idl, CorProf. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

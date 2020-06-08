@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 0afc1197-2a5b-424f-8b82-9cb59a7e00db
 topic_type:
 - apiref
-ms.openlocfilehash: 841953625235406f013e9f140ad91c7b65680e47
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 12b4b897f9dc51175037d39c0368b6ce59fefefb
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76863950"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84498476"
 ---
 # <a name="icorprofilerinfogetclassfromtoken-method"></a>ICorProfilerInfo::GetClassFromToken – metoda
 Získá ID třídy s ohledem na token metadat. Tato metoda je zastaralá ve verzi .NET Framework 2,0. Místo toho použijte [ICorProfilerInfo2:: GetClassFromTokenAndTypeArgs –](icorprofilerinfo2-getclassfromtokenandtypeargs-method.md) .  
@@ -39,7 +39,7 @@ HRESULT GetClassFromToken(
  pro ID modulu, který obsahuje třídu.  
   
  `typeDef`  
- pro Token metadat `mdTypeDef`, který odkazuje na třídu.  
+ pro `mdTypeDef`Token metadat, který odkazuje na třídu.  
   
  `cTypeArgs`  
  mimo Ukazatel na ID třídy.  
@@ -48,7 +48,7 @@ HRESULT GetClassFromToken(
  Tato metoda je zastaralá; místo toho použijte `ICorProfilerInfo2::GetClassFromTokenAndTypeArgs` pro všechny typy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorProf. idl, CorProf. h  
   

@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: b97493fb-713e-49d5-a73e-5688b2ad0700
 topic_type:
 - apiref
-ms.openlocfilehash: a5573765486112a83f5ea7cc9258447692f72166
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 613267549329d2f48dcd18ae341e47538e414ac0
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76864063"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84498528"
 ---
 # <a name="icorprofilerinfogetclassfromobject-method"></a>ICorProfilerInfo::GetClassFromObject – metoda
-Získá `ClassID` objektu s ohledem na jeho `ObjectID`.  
+Získá `ClassID` objekt, který je dán jeho `ObjectID` .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,22 +35,22 @@ HRESULT GetClassFromObject(
   
 ## <a name="parameters"></a>Parametry  
  `objectId`  
- pro ID objektu, pro který se má získat `ClassID`  
+ pro ID objektu, pro který se má získat `ClassID` .  
   
  `pClassId`  
- mimo Ukazatel na vrácenou `ClassID`.  
+ mimo Ukazatel na vrácenou hodnotu `ClassID` .  
   
 ## <a name="remarks"></a>Poznámky  
- `pClassId` null značí, že `objectId` má typ, který se uvolňuje.  
+ Hodnota null `pClassId` značí, že `objectId` má typ, který se vykládá.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorProf. idl, CorProf. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

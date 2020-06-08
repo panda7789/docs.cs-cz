@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 4664033f-db97-4388-b988-2ec470796e58
 topic_type:
 - apiref
-ms.openlocfilehash: fb2ecc80f272a3fc9b63b20c5956e7a28f117784
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: 727cd82226b9a59c4879ffea5e87f93dd5fe38c9
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83703471"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504105"
 ---
 # <a name="iclrpolicymanagersetactiononfailure-method"></a>ICLRPolicyManager::SetActionOnFailure – metoda
 Určuje akci zásad, kterou by modul CLR (Common Language Runtime) měl provést při výskytu zadaného selhání.  
@@ -43,7 +43,7 @@ HRESULT SetActionOnFailure (
   
 ## <a name="return-value"></a>Návratová hodnota  
   
-|HRESULT|Popis|  
+|HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`SetActionOnFailure`úspěšně vráceno.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
@@ -54,20 +54,20 @@ HRESULT SetActionOnFailure (
 |E_INVALIDARG|Pro zadanou operaci nelze nastavit akci zásad, nebo byla pro tuto operaci zadána neplatná akce zásad.|  
   
 ## <a name="remarks"></a>Poznámky  
- Ve výchozím nastavení vyvolá CLR výjimku, když se nepovede přidělit prostředek, jako je například paměť. `SetActionOnFailure`umožňuje hostiteli přepsat toto chování zadáním akce zásady, která se má provést při selhání. V následující tabulce jsou uvedeny kombinace hodnot [EClrFailure –](eclrfailure-enumeration.md) a [EPolicyAction –](../../../../docs/framework/unmanaged-api/hosting/epolicyaction-enumeration.md) , které jsou podporovány. (Předpona FAIL_ je vynechána z hodnot [EClrFailure –](eclrfailure-enumeration.md) .)  
+ Ve výchozím nastavení vyvolá CLR výjimku, když se nepovede přidělit prostředek, jako je například paměť. `SetActionOnFailure`umožňuje hostiteli přepsat toto chování zadáním akce zásady, která se má provést při selhání. V následující tabulce jsou uvedeny kombinace hodnot [EClrFailure –](eclrfailure-enumeration.md) a [EPolicyAction –](epolicyaction-enumeration.md) , které jsou podporovány. (Předpona FAIL_ je vynechána z hodnot [EClrFailure –](eclrfailure-enumeration.md) .)  
   
 ||NonCriticalResource|CriticalResource|FatalRuntime|OrphanedLock|StackOverflow|AccessViolation|CodeContract|  
 |-|-------------------------|----------------------|------------------|------------------|-------------------|---------------------|------------------|  
-|`eNoAction`|×|×||||–||  
-|eThrowException|×|×||||–||  
-|`eAbortThread`|×|×||||–|×|  
-|`eRudeAbortThread`|×|×||||–|×|  
-|`eUnloadAppDomain`|×|×||×||–|×|  
-|`eRudeUnloadAppDomain`|×|×||×|×|–|×|  
-|`eExitProcess`|×|×||×|×|–|×|  
-|eFastExitProcess|×|×||×|×|–||  
-|`eRudeExitProcess`|×|×|×|×|×|–||  
-|`eDisableRuntime`|×|×|×|×|×|–||  
+|`eNoAction`|X|X||||–||  
+|eThrowException|X|X||||–||  
+|`eAbortThread`|X|X||||–|X|  
+|`eRudeAbortThread`|X|X||||–|X|  
+|`eUnloadAppDomain`|X|X||X||–|X|  
+|`eRudeUnloadAppDomain`|X|X||X|X|–|X|  
+|`eExitProcess`|X|X||X|X|–|×|  
+|eFastExitProcess|X|X||X|X|–||  
+|`eRudeExitProcess`|X|X|X|X|X|–||  
+|`eDisableRuntime`|X|X|X|X|X|–||  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
@@ -78,7 +78,7 @@ HRESULT SetActionOnFailure (
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [EClrFailure – výčet](eclrfailure-enumeration.md)
 - [EPolicyAction – výčet](epolicyaction-enumeration.md)

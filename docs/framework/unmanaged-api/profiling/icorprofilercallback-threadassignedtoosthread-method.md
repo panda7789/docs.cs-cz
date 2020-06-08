@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: f9671e5a-7b14-4f5b-8404-58136422c8b2
 topic_type:
 - apiref
-ms.openlocfilehash: 0e8c91f65d4ebec07689a42d4517fc100fce136d
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 182a82300183046ccb4a93a79af0dd8f23848c20
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76865841"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503169"
 ---
 # <a name="icorprofilercallbackthreadassignedtoosthread-method"></a>ICorProfilerCallback::ThreadAssignedToOSThread – metoda
 Upozorní profileru, že spravované vlákno je implementováno pomocí konkrétního vlákna operačního systému.  
@@ -41,16 +41,16 @@ HRESULT ThreadAssignedToOSThread(
  pro Identifikátor vlákna operačního systému.  
   
 ## <a name="remarks"></a>Poznámky  
- `ThreadAssignedToOSThread` zpětné volání existuje, aby Profiler mohl udržovat přesné mapování mezi vlákny operačních systémů na spravovaná vlákna.  
+ `ThreadAssignedToOSThread`Zpětné volání existuje, aby Profiler mohl udržovat přesné mapování mezi vlákny operačních systémů na spravovaná vlákna.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorProf. idl, CorProf. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 15cfc300-8231-4ecb-9a04-19851c3eb484
 topic_type:
 - apiref
-ms.openlocfilehash: f7a943627e2087e6b8c78ced9fc32824843d44fc
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0a21924008bcbfa0894218f57aee559a564f8003
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175132"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84499971"
 ---
 # <a name="icorprofilercallbackremotingclientreceivingreply-method"></a>ICorProfilerCallback::RemotingClientReceivingReply – metoda
-Upozorní profiler, že část vzdáleného volání na straně serveru byla dokončena a klient nyní přijímá a chystá se zpracovat odpověď.  
+Upozorní profileru, že je dokončena serverová část volání vzdálené komunikace a klient nyní přijímá a chystá zpracovat odpověď.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,28 +35,28 @@ HRESULT RemotingClientReceivingReply(
   
 ## <a name="parameters"></a>Parametry  
  `pCookie`  
- [v] Hodnota, která bude odpovídat hodnotě uvedené v [ICorProfilerCallback::RemotingServerSendingReply](icorprofilercallback-remotingserversendingreply-method.md) za těchto podmínek:  
+ pro Hodnota, která bude odpovídat hodnotě zadané v [ICorProfilerCallback:: remotingserversendingreply –](icorprofilercallback-remotingserversendingreply-method.md) za těchto podmínek:  
   
-- Vzdálené soubory cookie GUID jsou aktivní.  
+- Soubory cookie vzdálené komunikace jsou aktivní.  
   
-- Kanál úspěšně vysílá zprávu.  
+- Kanál se úspěšně přenáší do zprávy.  
   
-- GuiD cookies jsou aktivní v procesu na straně serveru.  
+- Soubory cookie GUID jsou v procesu na straně serveru aktivní.  
   
  To umožňuje snadné párování volání vzdálené komunikace.  
   
  `fIsAsync`  
- [v] Hodnota, která `true` je, pokud je volání asynchronní; v `false`opačném případě .  
+ pro Hodnota, která je v `true` případě, že volání je asynchronní, v opačném případě `false` .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [ICorProfilerCallback – rozhraní](icorprofilercallback-interface.md)

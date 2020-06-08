@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 79446216-4b8b-484c-8fe3-e87dbf9df2fd
 topic_type:
 - apiref
-ms.openlocfilehash: f8eff85392d355ea54980ac6b29e3c4cebb1b240
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 45ae164e79f077549a1d685aa060484240546a10
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76869592"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84497943"
 ---
 # <a name="icorprofilerinfogetthreadcontext-method"></a>ICorProfilerInfo::GetThreadContext – metoda
 Získá identitu kontextu aktuálně přidruženou k zadanému vláknu.  
@@ -41,13 +41,13 @@ HRESULT GetThreadContext(
  mimo Ukazatel na ID kontextu aktuálně přidružené k zadanému vláknu. Pokud k vláknu není momentálně přidružen žádný kontext, vrátí tato funkce CORPROF_E_DATAINCOMPLETE.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorProf. idl, CorProf. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
