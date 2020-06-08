@@ -14,17 +14,17 @@ helpviewer_keywords:
 ms.assetid: aa527b31-89d4-41f2-ad6f-63b76950b7df
 topic_type:
 - apiref
-ms.openlocfilehash: 435d23d4a56d6ea98e3d368f0a5aa37c73e31d96
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 0fa72568df77c4916a3c6676e1dcca7c0c616c4a
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616161"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84493315"
 ---
-# <a name="etasktype-enumeration"></a><span data-ttu-id="1ae8a-102">ETaskType – výčet</span><span class="sxs-lookup"><span data-stu-id="1ae8a-102">ETaskType Enumeration</span></span>
-<span data-ttu-id="1ae8a-103">Obsahuje hodnoty, které určují typ úlohy, který je reprezentován buď [ICLRTask](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) nebo rozhraním [IHostTask](ihosttask-interface.md) .</span><span class="sxs-lookup"><span data-stu-id="1ae8a-103">Contains values that indicate the type of task that is represented by either an [ICLRTask](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) or an [IHostTask](ihosttask-interface.md) interface.</span></span>  
+# <a name="etasktype-enumeration"></a><span data-ttu-id="10157-102">ETaskType – výčet</span><span class="sxs-lookup"><span data-stu-id="10157-102">ETaskType Enumeration</span></span>
+<span data-ttu-id="10157-103">Obsahuje hodnoty, které určují typ úlohy, který je reprezentován buď [ICLRTask](iclrtask-interface.md) nebo rozhraním [IHostTask](ihosttask-interface.md) .</span><span class="sxs-lookup"><span data-stu-id="10157-103">Contains values that indicate the type of task that is represented by either an [ICLRTask](iclrtask-interface.md) or an [IHostTask](ihosttask-interface.md) interface.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="1ae8a-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="1ae8a-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="10157-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="10157-104">Syntax</span></span>  
   
 ```cpp  
 typedef enum ETaskType {  
@@ -42,31 +42,31 @@ typedef enum ETaskType {
 } ETaskType;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="1ae8a-105">Členové</span><span class="sxs-lookup"><span data-stu-id="1ae8a-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="10157-105">Členové</span><span class="sxs-lookup"><span data-stu-id="10157-105">Members</span></span>  
   
-|<span data-ttu-id="1ae8a-106">Člen</span><span class="sxs-lookup"><span data-stu-id="1ae8a-106">Member</span></span>|<span data-ttu-id="1ae8a-107">Popis</span><span class="sxs-lookup"><span data-stu-id="1ae8a-107">Description</span></span>|  
+|<span data-ttu-id="10157-106">Člen</span><span class="sxs-lookup"><span data-stu-id="10157-106">Member</span></span>|<span data-ttu-id="10157-107">Description</span><span class="sxs-lookup"><span data-stu-id="10157-107">Description</span></span>|  
 |------------|-----------------|  
-|`TT_ADUNLOAD`|<span data-ttu-id="1ae8a-108">Rozhraní představuje úlohu uvolnění domény aplikace.</span><span class="sxs-lookup"><span data-stu-id="1ae8a-108">The interface represents an application domain unloading task.</span></span>|  
-|`TT_DEBUGGERHELPER`|<span data-ttu-id="1ae8a-109">Rozhraní představuje úlohu pomocníka ladicího programu.</span><span class="sxs-lookup"><span data-stu-id="1ae8a-109">The interface represents a debugger helper task.</span></span>|  
-|`TT_FINALIZER`|<span data-ttu-id="1ae8a-110">Rozhraní představuje úlohu finalizační metody.</span><span class="sxs-lookup"><span data-stu-id="1ae8a-110">The interface represents a finalizer task.</span></span>|  
-|`TT_GC`|<span data-ttu-id="1ae8a-111">Rozhraní představuje úlohu uvolňování paměti.</span><span class="sxs-lookup"><span data-stu-id="1ae8a-111">The interface represents a garbage collection task.</span></span>|  
-|`TT_THREADPOOL_GATE`|<span data-ttu-id="1ae8a-112">Rozhraní představuje úlohu vlákna brány.</span><span class="sxs-lookup"><span data-stu-id="1ae8a-112">The interface represents a gate thread task.</span></span>|  
-|`TT_THREADPOOL_IOCOMPLETION`|<span data-ttu-id="1ae8a-113">Rozhraní představuje úlohu vstupně-výstupního vlákna nebo úlohu vlákna portu pro dokončení.</span><span class="sxs-lookup"><span data-stu-id="1ae8a-113">The interface represents an I/O thread task or a completion port thread task.</span></span>|  
-|`TT_THREADPOOL_TIMER`|<span data-ttu-id="1ae8a-114">Rozhraní představuje úlohu vlákna časovače.</span><span class="sxs-lookup"><span data-stu-id="1ae8a-114">The interface represents a timer thread task.</span></span>|  
-|`TT_THREADPOOL_WAIT`|<span data-ttu-id="1ae8a-115">Rozhraní představuje úlohu vlákna čekání.</span><span class="sxs-lookup"><span data-stu-id="1ae8a-115">The interface represents a wait thread task.</span></span>|  
-|`TT_THREADPOOL_WORKER`|<span data-ttu-id="1ae8a-116">Rozhraní představuje úlohu pracovního vlákna.</span><span class="sxs-lookup"><span data-stu-id="1ae8a-116">The interface represents a worker thread task.</span></span>|  
-|`TT_UNKNOWN`|<span data-ttu-id="1ae8a-117">Úloha je neznámá.</span><span class="sxs-lookup"><span data-stu-id="1ae8a-117">The task is unknown.</span></span>|  
-|`TT_USER`|<span data-ttu-id="1ae8a-118">Rozhraní představuje úkol uživatele.</span><span class="sxs-lookup"><span data-stu-id="1ae8a-118">The interface represents a user task.</span></span>|  
+|`TT_ADUNLOAD`|<span data-ttu-id="10157-108">Rozhraní představuje úlohu uvolnění domény aplikace.</span><span class="sxs-lookup"><span data-stu-id="10157-108">The interface represents an application domain unloading task.</span></span>|  
+|`TT_DEBUGGERHELPER`|<span data-ttu-id="10157-109">Rozhraní představuje úlohu pomocníka ladicího programu.</span><span class="sxs-lookup"><span data-stu-id="10157-109">The interface represents a debugger helper task.</span></span>|  
+|`TT_FINALIZER`|<span data-ttu-id="10157-110">Rozhraní představuje úlohu finalizační metody.</span><span class="sxs-lookup"><span data-stu-id="10157-110">The interface represents a finalizer task.</span></span>|  
+|`TT_GC`|<span data-ttu-id="10157-111">Rozhraní představuje úlohu uvolňování paměti.</span><span class="sxs-lookup"><span data-stu-id="10157-111">The interface represents a garbage collection task.</span></span>|  
+|`TT_THREADPOOL_GATE`|<span data-ttu-id="10157-112">Rozhraní představuje úlohu vlákna brány.</span><span class="sxs-lookup"><span data-stu-id="10157-112">The interface represents a gate thread task.</span></span>|  
+|`TT_THREADPOOL_IOCOMPLETION`|<span data-ttu-id="10157-113">Rozhraní představuje úlohu vstupně-výstupního vlákna nebo úlohu vlákna portu pro dokončení.</span><span class="sxs-lookup"><span data-stu-id="10157-113">The interface represents an I/O thread task or a completion port thread task.</span></span>|  
+|`TT_THREADPOOL_TIMER`|<span data-ttu-id="10157-114">Rozhraní představuje úlohu vlákna časovače.</span><span class="sxs-lookup"><span data-stu-id="10157-114">The interface represents a timer thread task.</span></span>|  
+|`TT_THREADPOOL_WAIT`|<span data-ttu-id="10157-115">Rozhraní představuje úlohu vlákna čekání.</span><span class="sxs-lookup"><span data-stu-id="10157-115">The interface represents a wait thread task.</span></span>|  
+|`TT_THREADPOOL_WORKER`|<span data-ttu-id="10157-116">Rozhraní představuje úlohu pracovního vlákna.</span><span class="sxs-lookup"><span data-stu-id="10157-116">The interface represents a worker thread task.</span></span>|  
+|`TT_UNKNOWN`|<span data-ttu-id="10157-117">Úloha je neznámá.</span><span class="sxs-lookup"><span data-stu-id="10157-117">The task is unknown.</span></span>|  
+|`TT_USER`|<span data-ttu-id="10157-118">Rozhraní představuje úkol uživatele.</span><span class="sxs-lookup"><span data-stu-id="10157-118">The interface represents a user task.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="1ae8a-119">Požadavky</span><span class="sxs-lookup"><span data-stu-id="1ae8a-119">Requirements</span></span>  
- <span data-ttu-id="1ae8a-120">**Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="1ae8a-120">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="10157-119">Požadavky</span><span class="sxs-lookup"><span data-stu-id="10157-119">Requirements</span></span>  
+ <span data-ttu-id="10157-120">**Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="10157-120">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="1ae8a-121">**Hlavička:** MSCorEE. h</span><span class="sxs-lookup"><span data-stu-id="1ae8a-121">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="10157-121">**Hlavička:** MSCorEE. h</span><span class="sxs-lookup"><span data-stu-id="10157-121">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="1ae8a-122">**Knihovna:** MSCorEE. dll</span><span class="sxs-lookup"><span data-stu-id="1ae8a-122">**Library:** MSCorEE.dll</span></span>  
+ <span data-ttu-id="10157-122">**Knihovna:** MSCorEE. dll</span><span class="sxs-lookup"><span data-stu-id="10157-122">**Library:** MSCorEE.dll</span></span>  
   
- <span data-ttu-id="1ae8a-123">**Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="1ae8a-123">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="10157-123">**Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="10157-123">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="1ae8a-124">Viz také</span><span class="sxs-lookup"><span data-stu-id="1ae8a-124">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="10157-124">Viz také:</span><span class="sxs-lookup"><span data-stu-id="10157-124">See also</span></span>
 
-- [<span data-ttu-id="1ae8a-125">Výčty hostování</span><span class="sxs-lookup"><span data-stu-id="1ae8a-125">Hosting Enumerations</span></span>](hosting-enumerations.md)
+- [<span data-ttu-id="10157-125">Výčty hostování</span><span class="sxs-lookup"><span data-stu-id="10157-125">Hosting Enumerations</span></span>](hosting-enumerations.md)

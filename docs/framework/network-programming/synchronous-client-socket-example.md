@@ -1,5 +1,6 @@
 ---
 title: Příklad synchronního klientského soketu
+description: Tento ukázkový .NET Framework program vytvoří klienta, který se připojí k serveru pomocí synchronního soketu. Pošle řetězec a zobrazí odpověď.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,15 +10,15 @@ helpviewer_keywords:
 - synchronous client sockets
 - sockets, synchronous client sockets
 ms.assetid: 2c7d5be7-2221-467c-a839-5744ec4d576d
-ms.openlocfilehash: d55d875546ff34bc38b13f792668cd00309c6e34
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7455307441045360bc62cee50f13d106df4d005e
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79180674"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502116"
 ---
-# <a name="synchronous-client-socket-example"></a><span data-ttu-id="f867a-102">Příklad synchronního klientského soketu</span><span class="sxs-lookup"><span data-stu-id="f867a-102">Synchronous Client Socket Example</span></span>
-<span data-ttu-id="f867a-103">Následující ukázkový program vytvoří klienta, který se připojí k serveru.</span><span class="sxs-lookup"><span data-stu-id="f867a-103">The following example program creates a client that connects to a server.</span></span> <span data-ttu-id="f867a-104">Klient je sestaven se synchronním soketem, takže spuštění klientské aplikace je pozastaveno, dokud server nevrátí odpověď.</span><span class="sxs-lookup"><span data-stu-id="f867a-104">The client is built with a synchronous socket, so execution of the client application is suspended until the server returns a response.</span></span> <span data-ttu-id="f867a-105">Aplikace odešle řetězec na server a potom zobrazí řetězec vrácený serverem v konzole.</span><span class="sxs-lookup"><span data-stu-id="f867a-105">The application sends a string to the server and then displays the string returned by the server on the console.</span></span>  
+# <a name="synchronous-client-socket-example"></a><span data-ttu-id="f657c-104">Příklad synchronního klientského soketu</span><span class="sxs-lookup"><span data-stu-id="f657c-104">Synchronous Client Socket Example</span></span>
+<span data-ttu-id="f657c-105">Následující vzorový program vytvoří klienta, který se připojí k serveru.</span><span class="sxs-lookup"><span data-stu-id="f657c-105">The following example program creates a client that connects to a server.</span></span> <span data-ttu-id="f657c-106">Klient je vytvořen pomocí synchronního soketu, takže spuštění klientské aplikace je pozastaveno, dokud server nevrátí odpověď.</span><span class="sxs-lookup"><span data-stu-id="f657c-106">The client is built with a synchronous socket, so execution of the client application is suspended until the server returns a response.</span></span> <span data-ttu-id="f657c-107">Aplikace pošle řetězec na server a pak zobrazí řetězec vrácený serverem v konzole nástroje.</span><span class="sxs-lookup"><span data-stu-id="f657c-107">The application sends a string to the server and then displays the string returned by the server on the console.</span></span>  
   
 ```vb  
 Imports System  
@@ -135,8 +136,8 @@ public class SynchronousSocketClient {
 }  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="f867a-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="f867a-106">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f657c-108">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f657c-108">See also</span></span>
 
-- [<span data-ttu-id="f867a-107">Příklad synchronního serverového soketu</span><span class="sxs-lookup"><span data-stu-id="f867a-107">Synchronous Server Socket Example</span></span>](synchronous-server-socket-example.md)
-- [<span data-ttu-id="f867a-108">Použití synchronního klientského soketu</span><span class="sxs-lookup"><span data-stu-id="f867a-108">Using a Synchronous Client Socket</span></span>](using-a-synchronous-client-socket.md)
-- [<span data-ttu-id="f867a-109">Příklady kódu soketu</span><span class="sxs-lookup"><span data-stu-id="f867a-109">Socket Code Examples</span></span>](socket-code-examples.md)
+- [<span data-ttu-id="f657c-109">Příklad synchronního serverového soketu</span><span class="sxs-lookup"><span data-stu-id="f657c-109">Synchronous Server Socket Example</span></span>](synchronous-server-socket-example.md)
+- [<span data-ttu-id="f657c-110">Použití synchronního klientského soketu</span><span class="sxs-lookup"><span data-stu-id="f657c-110">Using a Synchronous Client Socket</span></span>](using-a-synchronous-client-socket.md)
+- [<span data-ttu-id="f657c-111">Příklady kódu soketu</span><span class="sxs-lookup"><span data-stu-id="f657c-111">Socket Code Examples</span></span>](socket-code-examples.md)

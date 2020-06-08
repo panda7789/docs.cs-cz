@@ -15,17 +15,17 @@ helpviewer_keywords:
 ms.assetid: 0f9bde1d-e306-438d-941b-d0925b322304
 topic_type:
 - apiref
-ms.openlocfilehash: 53b3d94e8b1e273fcbc041d25a5bf586a12735c0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c2ec907759a25048444ebcc81bf5bb0fd23ced58
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177254"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503650"
 ---
-# <a name="imetadataimportfindmethod-method"></a><span data-ttu-id="29f08-102">IMetaDataImport::FindMethod – metoda</span><span class="sxs-lookup"><span data-stu-id="29f08-102">IMetaDataImport::FindMethod Method</span></span>
-<span data-ttu-id="29f08-103">Získá ukazatel na MethodDef token pro metodu, která <xref:System.Type> je uzavřena zadaný a který má zadaný název a metadata podpisu.</span><span class="sxs-lookup"><span data-stu-id="29f08-103">Gets a pointer to the MethodDef token for the method that is enclosed by the specified <xref:System.Type> and that has the specified name and metadata signature.</span></span>  
+# <a name="imetadataimportfindmethod-method"></a><span data-ttu-id="aad78-102">IMetaDataImport::FindMethod – metoda</span><span class="sxs-lookup"><span data-stu-id="aad78-102">IMetaDataImport::FindMethod Method</span></span>
+<span data-ttu-id="aad78-103">Získá ukazatel na token MethodDef pro metodu, která je ohraničena specifikovanou <xref:System.Type> a, která má zadaný název a signaturu metadat.</span><span class="sxs-lookup"><span data-stu-id="aad78-103">Gets a pointer to the MethodDef token for the method that is enclosed by the specified <xref:System.Type> and that has the specified name and metadata signature.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="29f08-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="29f08-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="aad78-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="aad78-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT FindMethod (  
@@ -37,40 +37,40 @@ HRESULT FindMethod (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="29f08-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="29f08-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="aad78-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="aad78-105">Parameters</span></span>  
  `td`  
- <span data-ttu-id="29f08-106">[v] Token `mdTypeDef` pro typ (třída nebo rozhraní), který obklopuje člena hledat.</span><span class="sxs-lookup"><span data-stu-id="29f08-106">[in] The `mdTypeDef` token for the type (a class or interface) that encloses the member to search for.</span></span> <span data-ttu-id="29f08-107">Pokud je `mdTokenNil`tato hodnota , pak vyhledávání se provádí pro globální funkce.</span><span class="sxs-lookup"><span data-stu-id="29f08-107">If this value is `mdTokenNil`, then the lookup is done for a global function.</span></span>  
+ <span data-ttu-id="aad78-106">pro `mdTypeDef`Token pro typ (třída nebo rozhraní), který obklopuje člena k hledání.</span><span class="sxs-lookup"><span data-stu-id="aad78-106">[in] The `mdTypeDef` token for the type (a class or interface) that encloses the member to search for.</span></span> <span data-ttu-id="aad78-107">Pokud je tato hodnota `mdTokenNil` , pak se pro globální funkci provede vyhledávání.</span><span class="sxs-lookup"><span data-stu-id="aad78-107">If this value is `mdTokenNil`, then the lookup is done for a global function.</span></span>  
   
  `szName`  
- <span data-ttu-id="29f08-108">[v] Název metody, kterou chcete vyhledat.</span><span class="sxs-lookup"><span data-stu-id="29f08-108">[in] The name of the method to search for.</span></span>  
+ <span data-ttu-id="aad78-108">pro Název metody, která se má vyhledat.</span><span class="sxs-lookup"><span data-stu-id="aad78-108">[in] The name of the method to search for.</span></span>  
   
  `pvSigBlob`  
- <span data-ttu-id="29f08-109">[v] Ukazatel na podpis binárních metadat metody.</span><span class="sxs-lookup"><span data-stu-id="29f08-109">[in] A pointer to the binary metadata signature of the method.</span></span>  
+ <span data-ttu-id="aad78-109">pro Ukazatel na binární podpis metadat metody.</span><span class="sxs-lookup"><span data-stu-id="aad78-109">[in] A pointer to the binary metadata signature of the method.</span></span>  
   
  `cbSigBlob`  
- <span data-ttu-id="29f08-110">[v] Velikost v bajtů `pvSigBlob`.</span><span class="sxs-lookup"><span data-stu-id="29f08-110">[in] The size in bytes of `pvSigBlob`.</span></span>  
+ <span data-ttu-id="aad78-110">pro Velikost v bajtech `pvSigBlob` .</span><span class="sxs-lookup"><span data-stu-id="aad78-110">[in] The size in bytes of `pvSigBlob`.</span></span>  
   
  `pmb`  
- <span data-ttu-id="29f08-111">[out] Ukazatel na odpovídající token MethodDef.</span><span class="sxs-lookup"><span data-stu-id="29f08-111">[out] A pointer to the matching MethodDef token.</span></span>  
+ <span data-ttu-id="aad78-111">mimo Ukazatel na shodný token MethodDef.</span><span class="sxs-lookup"><span data-stu-id="aad78-111">[out] A pointer to the matching MethodDef token.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="29f08-112">Poznámky</span><span class="sxs-lookup"><span data-stu-id="29f08-112">Remarks</span></span>  
- <span data-ttu-id="29f08-113">Metodu určíte pomocí její ohraničující třídy nebo rozhraní (`td`), její název (`szName`) a volitelně její podpis (`pvSigBlob`).</span><span class="sxs-lookup"><span data-stu-id="29f08-113">You specify the method using its enclosing class or interface (`td`), its name (`szName`), and optionally its signature (`pvSigBlob`).</span></span> <span data-ttu-id="29f08-114">Ve třídě nebo rozhraní může existovat více metod se stejným názvem.</span><span class="sxs-lookup"><span data-stu-id="29f08-114">There might be multiple methods with the same name in a class or interface.</span></span> <span data-ttu-id="29f08-115">V takovém případě předavěte podpis metody a najděte jedinečnou shodu.</span><span class="sxs-lookup"><span data-stu-id="29f08-115">In that case, pass the method's signature to find the unique match.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="aad78-112">Poznámky</span><span class="sxs-lookup"><span data-stu-id="aad78-112">Remarks</span></span>  
+ <span data-ttu-id="aad78-113">Zadejte metodu pomocí své nadřazené třídy nebo rozhraní () `td` , jejího názvu ( `szName` ) a volitelně její signatura ( `pvSigBlob` ).</span><span class="sxs-lookup"><span data-stu-id="aad78-113">You specify the method using its enclosing class or interface (`td`), its name (`szName`), and optionally its signature (`pvSigBlob`).</span></span> <span data-ttu-id="aad78-114">V rámci třídy nebo rozhraní může existovat více metod se stejným názvem.</span><span class="sxs-lookup"><span data-stu-id="aad78-114">There might be multiple methods with the same name in a class or interface.</span></span> <span data-ttu-id="aad78-115">V takovém případě předejte signaturu metody, abyste našli jedinečnou shodu.</span><span class="sxs-lookup"><span data-stu-id="aad78-115">In that case, pass the method's signature to find the unique match.</span></span>  
   
- <span data-ttu-id="29f08-116">Předaný `FindMethod` podpis musí být vygenerován v aktuálním oboru, protože podpisy jsou vázány na určitý obor.</span><span class="sxs-lookup"><span data-stu-id="29f08-116">The signature passed to `FindMethod` must have been generated in the current scope, because signatures are bound to a particular scope.</span></span> <span data-ttu-id="29f08-117">Podpis může vložit token, který identifikuje ohraničující třídu nebo typ hodnoty.</span><span class="sxs-lookup"><span data-stu-id="29f08-117">A signature can embed a token that identifies the enclosing class or value type.</span></span> <span data-ttu-id="29f08-118">Token je index do místní tabulky TypeDef.</span><span class="sxs-lookup"><span data-stu-id="29f08-118">The token is an index into the local TypeDef table.</span></span> <span data-ttu-id="29f08-119">Nelze vytvořit podpis za běhu mimo kontext aktuálního oboru a použít tento `FindMethod`podpis jako vstup pro vstup do aplikace .</span><span class="sxs-lookup"><span data-stu-id="29f08-119">You cannot build a run-time signature outside the context of the current scope and use that signature as input to input to `FindMethod`.</span></span>  
+ <span data-ttu-id="aad78-116">Signatura předaná do `FindMethod` musí být vygenerována v aktuálním oboru, protože signatury jsou vázány na konkrétní obor.</span><span class="sxs-lookup"><span data-stu-id="aad78-116">The signature passed to `FindMethod` must have been generated in the current scope, because signatures are bound to a particular scope.</span></span> <span data-ttu-id="aad78-117">Podpis může vložit token, který identifikuje ohraničující třídu nebo typ hodnoty.</span><span class="sxs-lookup"><span data-stu-id="aad78-117">A signature can embed a token that identifies the enclosing class or value type.</span></span> <span data-ttu-id="aad78-118">Token je index do místní tabulky TypeDef.</span><span class="sxs-lookup"><span data-stu-id="aad78-118">The token is an index into the local TypeDef table.</span></span> <span data-ttu-id="aad78-119">Nemůžete sestavit signaturu za běhu mimo kontext aktuálního oboru a použít ho jako vstup pro vstup do `FindMethod` .</span><span class="sxs-lookup"><span data-stu-id="aad78-119">You cannot build a run-time signature outside the context of the current scope and use that signature as input to input to `FindMethod`.</span></span>  
   
- <span data-ttu-id="29f08-120">`FindMethod`vyhledá pouze metody, které byly definovány přímo ve třídě nebo rozhraní; nenalezne zděděné metody.</span><span class="sxs-lookup"><span data-stu-id="29f08-120">`FindMethod` finds only methods that were defined directly in the class or interface; it does not find inherited methods.</span></span>  
+ <span data-ttu-id="aad78-120">`FindMethod`najde pouze metody, které byly definovány přímo ve třídě nebo rozhraní; nenalezne zděděné metody.</span><span class="sxs-lookup"><span data-stu-id="aad78-120">`FindMethod` finds only methods that were defined directly in the class or interface; it does not find inherited methods.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="29f08-121">Požadavky</span><span class="sxs-lookup"><span data-stu-id="29f08-121">Requirements</span></span>  
- <span data-ttu-id="29f08-122">**Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="29f08-122">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="aad78-121">Požadavky</span><span class="sxs-lookup"><span data-stu-id="aad78-121">Requirements</span></span>  
+ <span data-ttu-id="aad78-122">**Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="aad78-122">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="29f08-123">**Záhlaví:** Kor.h.</span><span class="sxs-lookup"><span data-stu-id="29f08-123">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="aad78-123">**Hlavička:** Cor. h</span><span class="sxs-lookup"><span data-stu-id="aad78-123">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="29f08-124">**Knihovna:** Zahrnuto jako prostředek v souboru MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="29f08-124">**Library:** Included as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="aad78-124">**Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll</span><span class="sxs-lookup"><span data-stu-id="aad78-124">**Library:** Included as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="29f08-125">**Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="29f08-125">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="aad78-125">**Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="aad78-125">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="29f08-126">Viz také</span><span class="sxs-lookup"><span data-stu-id="29f08-126">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="aad78-126">Viz také:</span><span class="sxs-lookup"><span data-stu-id="aad78-126">See also</span></span>
 
 - <xref:System.Reflection.MethodInfo>
-- [<span data-ttu-id="29f08-127">IMetaDataImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="29f08-127">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [<span data-ttu-id="29f08-128">IMetaDataImport2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="29f08-128">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [<span data-ttu-id="aad78-127">IMetaDataImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="aad78-127">IMetaDataImport Interface</span></span>](imetadataimport-interface.md)
+- [<span data-ttu-id="aad78-128">IMetaDataImport2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="aad78-128">IMetaDataImport2 Interface</span></span>](imetadataimport2-interface.md)
