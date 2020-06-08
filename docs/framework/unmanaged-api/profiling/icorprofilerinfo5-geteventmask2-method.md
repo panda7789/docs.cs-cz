@@ -12,12 +12,12 @@ api_type:
 ms.assetid: f854b68f-009c-4ffb-89cd-ca874d1c0fb7
 topic_type:
 - apiref
-ms.openlocfilehash: f3943eef969f777b40dc51c4900b190561f14887
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 758e5b71443b127c80c820eb8531056530e81b13
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76868392"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84495694"
 ---
 # <a name="icorprofilerinfo5geteventmask2-method"></a>ICorProfilerInfo5::GetEventMask2 – metoda
 [Podporované v .NET Framework 4.5.2 a novějších verzích]  
@@ -41,20 +41,20 @@ HRESULT GetEventMask2(
  mimo Ukazatel na hodnotu 4 bajty, která určuje kategorie událostí.  Každý bit ovládá jinou schopnost, chování nebo typ události. Bity jsou popsány v [COR_PRF_HIGH_MONITOR](cor-prf-high-monitor-enumeration.md) výčtu.  
   
 ## <a name="remarks"></a>Poznámky  
- Metoda `GetEventMask2` slouží k určení, která zpětná volání profileru se přihlásí k odběru. Obvykle provedete logickou hodnotu nebo `pdwEventsLow` a `pdwEventsHigh` hodnoty a jakékoli nové bity, které chcete nastavit, a potom zavoláte metodu [SetEventMask2 –](icorprofilerinfo5-seteventmask2-method.md) .  
+ `GetEventMask2`Metoda se používá k určení, která zpětná volání profileru se přihlásí k odběru. Obvykle provedete logické `pdwEventsLow` `pdwEventsHigh` hodnoty, hodnoty a a jakékoli nové bity, které chcete nastavit, a potom zavoláte metodu [SetEventMask2 –](icorprofilerinfo5-seteventmask2-method.md) .  
   
  Tato metoda je doporučená alternativou k metodě [GetEventMask –](icorprofilerinfo-geteventmask-method.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorProf. idl, CorProf. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
 - [ICorProfilerInfo5 – rozhraní](icorprofilerinfo5-interface.md)
-- [SetEventMask2 – metoda](icorprofilerinfo5-seteventmask2-method.md)
+- [Metoda SetEventMask2](icorprofilerinfo5-seteventmask2-method.md)

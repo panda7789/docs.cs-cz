@@ -12,16 +12,16 @@ helpviewer_keywords:
 - profiling managed code
 - profiling managed code [Windows Store Apps]
 ms.assetid: 1c8eb2e7-f20a-42f9-a795-71503486a0f5
-ms.openlocfilehash: 1a839c4cd99e21bc2a3ebd90cf3302a475c02e17
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.openlocfilehash: 6330a4c2733729da264065d1eec8c3c9eaf9f05c
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75938127"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501024"
 ---
 # <a name="clr-profilers-and-windows-store-apps"></a>Profilery CLR a aplikace pro Windows Store
 
-Toto téma popisuje, co je potřeba vzít v úvahu při psaní diagnostických nástrojů, které analyzují spravovaný kód spuštěný v aplikaci pro Windows Store. Poskytuje také pokyny pro úpravu stávajících nástrojů pro vývoj, aby byly i nadále funkční, když je spustíte v aplikacích pro Windows Store. Aby bylo možné tyto informace pochopit, je nejlepší, pokud jste obeznámeni s rozhraním API profilace modulu CLR (Common Language Runtime), už jste toto rozhraní API použili v diagnostickém nástroji, který funguje správně s aplikacemi pro stolní počítače s Windows, a teď se zajímáte o úpravu tohoto nástroje. pro správné spuštění proti aplikacím pro Windows Store.
+Toto téma popisuje, co je potřeba vzít v úvahu při psaní diagnostických nástrojů, které analyzují spravovaný kód spuštěný v aplikaci pro Windows Store. Poskytuje také pokyny pro úpravu stávajících nástrojů pro vývoj, aby byly i nadále funkční, když je spustíte v aplikacích pro Windows Store. Aby bylo možné tyto informace pochopit, je nejlepší, pokud jste obeznámeni s rozhraním API profilace modulu CLR (Common Language Runtime), už jste toto rozhraní API používali v diagnostickém nástroji, který správně funguje s aplikacemi pro stolní počítače s Windows, a teď se zajímáte o úpravu nástroje pro správné spouštění proti aplikacím Windows Store.
 
 ## <a name="introduction"></a>Úvod
 
@@ -64,9 +64,9 @@ Jedná se o desktopovou aplikaci, se kterou uživatel profileru komunikuje. Zodp
 
 V tomto dokumentu ukázkový kód předpokládá, že:
 
-- Vaše knihovna DLL profileru je C++zapsána v, protože musí být nativní DLL knihovnou podle požadavků rozhraní API profilování CLR.
+- Vaše knihovna DLL profileru je zapsána v jazyce C++, protože musí být nativní knihovny DLL, podle požadavků rozhraní API profilování CLR.
 
-- Vaše uživatelské rozhraní profileru je C#napsané v. To není nutné, ale vzhledem k tomu, že neexistují žádné požadavky na jazyk pro proces uživatelského rozhraní profileru, proč nemusíte vybírat jazyk, který je výstižný a jednoduchý?
+- Vaše uživatelské rozhraní profileru je napsané v jazyce C#. To není nutné, ale vzhledem k tomu, že neexistují žádné požadavky na jazyk pro proces uživatelského rozhraní profileru, proč nemusíte vybírat jazyk, který je výstižný a jednoduchý?
 
 ### <a name="windows-rt-devices"></a>Zařízení s Windows RT
 
@@ -102,7 +102,7 @@ Když se systém Windows pokusí načíst knihovnu DLL profileru, ověří, že 
 
 **Oprávnění systému souborů**
 
-Aplikace pro Windows Store musí mít oprávnění načíst a spustit knihovnu DLL profileru z umístění v systému souborů, ve kterém se residesBy výchozí, aplikace pro Windows Store nemá takové oprávnění ve většině adresářů a pokus o načtení knihovny DLL profileru se nezdařil. vytvoří záznam v protokolu událostí aplikace systému Windows, který vypadá přibližně takto:
+Aplikace pro Windows Store musí mít oprávnění načíst a spustit knihovnu DLL profileru z umístění v systému souborů, ve kterém je residesBy výchozí, aplikace pro Windows Store nemá takové oprávnění ve většině adresářů a všechny neúspěšné pokus o načtení knihovny DLL profileru vytvoří záznam v protokolu událostí aplikace systému Windows, který vypadá nějak takto. :
 
 ```output
 NET Runtime version 4.0.30319.17929 - Loading profiler failed during CoCreateInstance.  Profiler CLSID: '{xxxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}'.  HRESULT: 0x80070005.  Process ID (decimal): 4688.  Message ID: [0x2504].
@@ -112,7 +112,7 @@ Obecně platí, že aplikace pro Windows Store mají povolený přístup jenom k
 
 ### <a name="startup-load"></a>Spouštěcí zatížení
 
-V desktopové aplikaci se obvykle uživatelské rozhraní profileru zeptá na spouštěcí načtení knihovny DLL profileru inicializací bloku prostředí, který obsahuje požadované proměnné prostředí API profilace modulu CLR (tj. `COR_PROFILER`, `COR_ENABLE_PROFILING`a `COR_PROFILER_PATH`), a pak vytvoří nový proces s tímto blokem prostředí. Totéž platí pro aplikace pro Windows Store, ale mechanismy se liší.
+V desktopové aplikaci se obvykle uživatelské rozhraní profileru zeptá na spouštěcí načtení knihovny DLL profileru inicializací bloku prostředí, který obsahuje požadované proměnné prostředí API profilace modulu CLR (tj., `COR_PROFILER` , `COR_ENABLE_PROFILING` a `COR_PROFILER_PATH` ), a pak vytvoří nový proces s tímto blokem prostředí. Totéž platí pro aplikace pro Windows Store, ale mechanismy se liší.
 
 **Nespouštět se zvýšenými oprávněními**
 
@@ -122,9 +122,9 @@ Pokud se pokusíte zpracovat proces aplikace pro Windows Store B, proces A by m�
 
 Nejdřív budete chtít požádat uživatele profileru, kterou aplikaci pro Windows Store spustit. U desktopových aplikací možná budete chtít zobrazit dialog procházení souborů a uživatel najde a vybere soubor. exe. Aplikace pro Windows Store se ale liší a použití dialogového okna pro procházení neposkytuje smysl. Místo toho je lepší zobrazit uživatele seznam aplikací pro Windows Store nainstalovaných pro daného uživatele, ze kterého chcete vybrat.
 
-K vygenerování tohoto seznamu můžete použít třídu <xref:Windows.Management.Deployment.PackageManager>. `PackageManager` je prostředí Windows Runtime třída, která je dostupná pro desktopové aplikace, a ve skutečnosti je dostupná *jenom* pro desktopové aplikace.
+<xref:Windows.Management.Deployment.PackageManager>K vygenerování tohoto seznamu můžete použít třídu. `PackageManager`je prostředí Windows Runtime třída, která je dostupná pro desktopové aplikace, a ve skutečnosti je dostupná *jenom* pro desktopové aplikace.
 
-Následující příklad kódu z hypotetického uživatelského rozhraní profileru zapsaného jako desktopová aplikace v C# nástroji používá `PackageManager` k vygenerování seznamu aplikací pro Windows:
+Následující příklad kódu z hypotetického uživatelského rozhraní profileru zapsaného jako desktopová aplikace v jazyce C# používá `PackageManager` ke generování seznamu aplikací pro Windows:
 
 ```csharp
 string currentUserSID = WindowsIdentity.GetCurrent().User.ToString();
@@ -135,7 +135,7 @@ IEnumerable<Package> packages = packageManager.FindPackagesForUser(currentUserSI
 
 **Určení vlastního bloku prostředí**
 
-Nové rozhraní modelu COM, [IPackageDebugSettings](/windows/desktop/api/shobjidl_core/nn-shobjidl_core-ipackagedebugsettings), umožňuje přizpůsobit chování při spouštění aplikace pro Windows Store a usnadnit tak určité formy diagnostiky. Jedna z jejích metod, [EnableDebugging](/windows/desktop/api/shobjidl_core/nf-shobjidl_core-ipackagedebugsettings-enabledebugging), umožňuje předat bloku prostředí do aplikace pro Windows Store, když se spustí, spolu s dalšími užitečnými účinky, jako je zakázání automatického pozastavení procesu. Blok prostředí je důležitý, protože je nutné zadat proměnné prostředí (`COR_PROFILER`, `COR_ENABLE_PROFILING`a `COR_PROFILER_PATH)`) používané modulem CLR k načtení knihovny DLL profileru.
+Nové rozhraní modelu COM, [IPackageDebugSettings](/windows/desktop/api/shobjidl_core/nn-shobjidl_core-ipackagedebugsettings), umožňuje přizpůsobit chování při spouštění aplikace pro Windows Store a usnadnit tak určité formy diagnostiky. Jedna z jejích metod, [EnableDebugging](/windows/desktop/api/shobjidl_core/nf-shobjidl_core-ipackagedebugsettings-enabledebugging), umožňuje předat bloku prostředí do aplikace pro Windows Store, když se spustí, spolu s dalšími užitečnými účinky, jako je zakázání automatického pozastavení procesu. Blok prostředí je důležitý, protože je nutné zadat proměnné prostředí ( `COR_PROFILER` , `COR_ENABLE_PROFILING` , a `COR_PROFILER_PATH)` ) používané modulem CLR k načtení knihovny DLL profileru.
 
 Vezměte v úvahu následující fragment kódu:
 
@@ -147,17 +147,17 @@ pkgDebugSettings.EnableDebugging(packageFullName, debuggerCommandLine,
 
 K dispozici je několik položek, které je potřeba získat hned:
 
-- `packageFullName` lze určit při iteraci na balíčcích a převzetí `package.Id.FullName`.
+- `packageFullName`dá se určit při iteracích balíčků a převzetí `package.Id.FullName` .
 
-- `debuggerCommandLine` je trochu zajímavější. Aby bylo možné předat vlastní blok prostředí do aplikace pro Windows Store, musíte napsat vlastní zjednodušený fiktivní ladicí program. Windows vytvoří pozastavenou aplikaci pro Windows Store a pak připojí ladicí program spuštěním ladicího programu s příkazovým řádkem, jako v tomto příkladu:
+- `debuggerCommandLine`je trochu zajímavější. Aby bylo možné předat vlastní blok prostředí do aplikace pro Windows Store, musíte napsat vlastní zjednodušený fiktivní ladicí program. Windows vytvoří pozastavenou aplikaci pro Windows Store a pak připojí ladicí program spuštěním ladicího programu s příkazovým řádkem, jako v tomto příkladu:
 
     ```console
     MyDummyDebugger.exe -p 1336 -tid 1424
     ```
 
-     kde `-p 1336` znamená, že aplikace pro Windows Store má ID procesu 1336 a `-tid 1424` znamená, že vlákno s ID 1424 je pozastavené. Váš fiktivní ladicí program by analyzoval IDvlákna z příkazového řádku, pokračuje v tomto vláknu a potom ukončí.
+     kde `-p 1336` to znamená, že aplikace pro Windows Store má ID procesu 1336, a `-tid 1424` znamená, že vlákno s ID 1424 je pozastavené. Váš fiktivní ladicí program by analyzoval IDvlákna z příkazového řádku, pokračuje v tomto vláknu a potom ukončí.
 
-     Zde je nějaký ukázkový C++ kód k tomu, abyste to mohli udělat (nezapomeňte přidat kontrolu chyb!):
+     Zde je příklad kódu jazyka C++ k tomu, aby to bylo možné (nezapomeňte přidat kontrolu chyb!):
 
     ```cpp
     int wmain(int argc, wchar_t* argv[])
@@ -174,7 +174,7 @@ K dispozici je několik položek, které je potřeba získat hned:
     }
     ```
 
-     Tento fiktivní ladicí program bude nutné nasadit jako součást instalace diagnostického nástroje a poté zadat cestu k tomuto ladicímu programu v parametru `debuggerCommandLine`.
+     Tento fiktivní ladicí program bude nutné nasadit jako součást instalace nástroje pro diagnostiku a poté zadat cestu k tomuto ladicímu programu v `debuggerCommandLine` parametru.
 
 **Spouští se aplikace pro Windows Store.**
 
@@ -251,7 +251,7 @@ Takže aplikace pro Windows Store nakonec načetla knihovnu DLL profileru. Vaše
 
 Když procházíte rozhraní API systému Windows, všimnete si, že všechna rozhraní API jsou zdokumentována jako platná pro aplikace klasické pracovní plochy, aplikace pro Windows Store nebo obojí. Například část **požadavky** v dokumentaci pro funkci [InitializeCriticalSectionAndSpinCount](/windows/desktop/api/synchapi/nf-synchapi-initializecriticalsectionandspincount) označuje, že se funkce vztahuje pouze na desktopové aplikace. Naproti tomu funkce [InitializeCriticalSectionEx](/windows/desktop/api/synchapi/nf-synchapi-initializecriticalsectionex) je k dispozici pro aplikace klasické pracovní plochy i pro aplikace pro Windows Store.
 
-Při vývoji knihovny DLL profileru ji považujte za, jako by byla aplikace pro Windows Store, a používejte pouze rozhraní API, která jsou zdokumentována jako dostupná pro aplikace pro Windows Store. Analyzujte závislosti (například můžete spustit `link /dump /imports` proti knihovně DLL profileru pro audit) a pak vyhledat v dokumentech, které z vašich závislostí jsou v pořádku a které nejsou. Ve většině případů je možné opravit porušení pouhým nahrazením novějším formulářem rozhraní API, které je dokumentováno jako bezpečné (například nahrazením [InitializeCriticalSectionAndSpinCount](/windows/desktop/api/synchapi/nf-synchapi-initializecriticalsectionandspincount) pomocí [InitializeCriticalSectionEx](/windows/desktop/api/synchapi/nf-synchapi-initializecriticalsectionex)).
+Při vývoji knihovny DLL profileru ji považujte za, jako by byla aplikace pro Windows Store, a používejte pouze rozhraní API, která jsou zdokumentována jako dostupná pro aplikace pro Windows Store. Analyzujte závislosti (například můžete spustit `link /dump /imports` s knihovnou DLL profileru pro audit) a potom hledat v dokumentaci, abyste viděli, které z vašich závislostí jsou OK a které nejsou. Ve většině případů je možné opravit porušení pouhým nahrazením novějším formulářem rozhraní API, které je dokumentováno jako bezpečné (například nahrazením [InitializeCriticalSectionAndSpinCount](/windows/desktop/api/synchapi/nf-synchapi-initializecriticalsectionandspincount) pomocí [InitializeCriticalSectionEx](/windows/desktop/api/synchapi/nf-synchapi-initializecriticalsectionex)).
 
 Můžete si všimnout, že vaše knihovna DLL profileru volá některá rozhraní API, která se vztahují jenom na desktopové aplikace, a přesto se zdají fungovat i v případě, že je vaše knihovna DLL profileru načtená v aplikaci pro Windows Store Počítejte s tím, že při načítání do procesu aplikace pro Windows Store je riskantní používat rozhraní API, které není dokumentováno pro použití s aplikacemi pro Windows Store v knihovně DLL profileru:
 
@@ -275,7 +275,7 @@ Je mimo rámec tohoto tématu, kde jsou uvedeny všechny způsoby, kterými se o
 
 ### <a name="inter-process-communication"></a>Komunikace mezi procesy
 
-Jak je znázorněno na obrázku na začátku tohoto dokumentu, vaše knihovna DLL profileru (načtená do prostoru procesu aplikace pro Windows Store) bude pravděpodobně potřebovat komunikovat s vaším uživatelským rozhraním profileru (spuštěným v samostatném prostoru procesu aplikace klasické pracovní plochy) prostřednictvím vlastního procesu. komunikační kanál (IPC). Uživatelské rozhraní profileru odesílá signály do knihovny DLL profileru pro úpravu jejího chování a knihovna DLL profileru odesílá data z analyzované aplikace pro Windows Store zpátky do uživatelského rozhraní profileru pro následné zpracování a zobrazení uživateli profileru.
+Jak je znázorněno v diagramu na začátku tohoto dokumentu, vaše knihovna DLL profileru (načtená do prostoru procesu aplikace pro Windows Store) bude pravděpodobně potřebovat komunikovat s vaším uživatelským rozhraním profileru (spuštěným v samostatném prostoru procesu aplikace klasické pracovní plochy) prostřednictvím vlastního kanálu IPC (Inter-Process Communication). Uživatelské rozhraní profileru odesílá signály do knihovny DLL profileru pro úpravu jejího chování a knihovna DLL profileru odesílá data z analyzované aplikace pro Windows Store zpátky do uživatelského rozhraní profileru pro následné zpracování a zobrazení uživateli profileru.
 
 Většina profilovacích modulů potřebuje tento způsob pracovat, ale pokud je vaše knihovna DLL profileru načtená do aplikace pro Windows Store, jsou možnosti pro mechanismy IPC omezené. Například pojmenované kanály nejsou součástí sady Windows Store app SDK, takže je nemůžete použít.
 
@@ -285,7 +285,7 @@ Ale samozřejmě jsou soubory stále v, i když jsou omezené. K dispozici jsou 
 
 Většina vašich dat bude pravděpodobně předána mezi knihovnou DLL profileru a uživatelským rozhraním profileru prostřednictvím souborů. Klíčem je vybrat umístění souboru, ke kterému má vaše knihovna DLL profileru (v kontextu aplikace pro Windows Store) a uživatelského rozhraní profileru přístup pro čtení a zápis. Například cesta k dočasné složce je umístění, ke kterému má přístup vaše knihovna DLL profileru i uživatelské rozhraní profileru, ale přístup k němu nemá žádný jiný balíček aplikace pro Windows Store (proto se chrání všechny informace, které protokolují z jiných balíčků aplikací pro Windows Store).
 
-Tuto cestu můžete určit nezávisle na uživatelském rozhraní profileru i v knihovně DLL profileru. Vaše uživatelské rozhraní profileru při iteraci všemi balíčky nainstalovanými pro aktuálního uživatele (viz ukázkový kód dříve), získá přístup k třídě `PackageId`, ze které může být cesta k dočasné složce odvozená s kódem podobným tomuto fragmentu. (Jako vždy je kontrola chyb pro zkrácení vynechána.)
+Tuto cestu můžete určit nezávisle na uživatelském rozhraní profileru i v knihovně DLL profileru. Vaše uživatelské rozhraní profileru při iteraci všemi balíčky nainstalovanými pro aktuálního uživatele (viz ukázkový kód dříve), získá přístup ke `PackageId` třídě, ze které může být cesta k dočasné složce odvozena podobným kódem jako tento fragment. (Jako vždy je kontrola chyb pro zkrácení vynechána.)
 
 ```csharp
 // C# code for the Profiler UI.
@@ -296,7 +296,7 @@ ApplicationData appData =
 tempDir = appData.TemporaryFolder.Path;
 ```
 
-V současném případě může vaše knihovna DLL profileru provádět stejné věci, i když je možné snadněji získat <xref:Windows.Storage.ApplicationData> třídy pomocí vlastnosti [ApplicationData. Current](xref:Windows.Storage.ApplicationData.Current%2A) .
+Mezitím může vaše knihovna DLL profileru provádět stejné věci, i když ji lze snadno získat <xref:Windows.Storage.ApplicationData> pomocí vlastnosti [ApplicationData. Current](xref:Windows.Storage.ApplicationData.Current%2A) .
 
 **Komunikace prostřednictvím událostí**
 
@@ -317,7 +317,7 @@ Vaše uživatelské rozhraní profileru pak musí najít tuto pojmenovanou udál
 
 `AppContainerNamedObjects\<acSid>\MyNamedEvent`
 
-`<acSid>` je identifikátor SID kontejneru AppContainer aplikace pro Windows Store. Předchozí část tohoto tématu ukázala, jak iterovat balíčky nainstalované pro aktuálního uživatele. Z tohoto ukázkového kódu můžete získat packageId. A z packageId můžete získat `<acSid>` s kódem podobným následujícímu:
+`<acSid>`je kontejneru AppContainer SID aplikace pro Windows Store. Předchozí část tohoto tématu ukázala, jak iterovat balíčky nainstalované pro aktuálního uživatele. Z tohoto ukázkového kódu můžete získat packageId. A z packageId můžete získat `<acSid>` kód podobný následujícímu:
 
 ```csharp
 IntPtr acPSID;
@@ -332,7 +332,7 @@ GetAppContainerFolderPath(acSid, out acDir);
 
 ### <a name="no-shutdown-notifications"></a>Žádná oznámení o vypnutí
 
-Při spuštění v aplikaci pro Windows Store by vaše knihovna DLL profileru neměla spoléhat buď na [ICorProfilerCallback:: Shutdown](icorprofilercallback-shutdown-method.md) , nebo dokonce na [nedllmain](/windows/desktop/Dlls/dllmain) (s `DLL_PROCESS_DETACH`), která oznamuje vaší knihovně DLL profileru, že se aplikace pro Windows Store ukončuje. Ve skutečnosti byste měli očekávat, že nebudou nikdy volány. Historicky mnoho knihoven DLL profileru používalo tato oznámení jako vhodná místa pro vyprázdnění mezipamětí na disk, zavírání souborů, odesílání oznámení zpět do uživatelského rozhraní profileru atd. Teď ale vaše knihovna DLL profileru musí být uspořádaná trochu odlišně.
+Při spuštění v aplikaci pro Windows Store by vaše knihovna DLL profileru neměla spoléhat buď na [ICorProfilerCallback:: Shutdown](icorprofilercallback-shutdown-method.md) , nebo dokonce na [DllMain](/windows/desktop/Dlls/dllmain) (with), která `DLL_PROCESS_DETACH` oznamuje vaší knihovně DLL profileru, že se aplikace pro Windows Store ukončuje. Ve skutečnosti byste měli očekávat, že nebudou nikdy volány. Historicky mnoho knihoven DLL profileru používalo tato oznámení jako vhodná místa pro vyprázdnění mezipamětí na disk, zavírání souborů, odesílání oznámení zpět do uživatelského rozhraní profileru atd. Teď ale vaše knihovna DLL profileru musí být uspořádaná trochu odlišně.
 
 Vaše knihovna DLL profileru by měla zaprotokolovat informace v průběhu jejího přechodu. Z důvodů výkonu můžete chtít dávkovat informace v paměti a vyprázdnit je na disk, protože dávka roste velikost po určité prahové hodnotě. Ale předpokládejte, že všechny informace, které ještě nejsou vyčištěné na disk, se můžou ztratit. To znamená, že budete chtít, aby se prahová hodnota vybrala i v případě, že vaše uživatelské rozhraní profileru musí být posílené, aby se zapsaly neúplné informace napsané knihovnou DLL profileru
 
@@ -342,9 +342,9 @@ Je mimo rozsah tohoto dokumentu, aby se mohl detailně přejít na to, co jsou s
 
 ### <a name="managed-and-non-managed-winmds"></a>Spravované a nespravované soubory WinMD
 
-Pokud vývojář používá sadu Visual Studio k vytvoření nového projektu komponenty prostředí Windows Runtime, sestavení tohoto projektu vytvoří soubor WinMD, který popisuje metadata (popisy typů tříd, rozhraní atd.) vytvořené vývojářem. Pokud je tento projekt projekt spravovaného jazyka napsaný C# v nebo Visual Basic, stejný soubor winmd také obsahuje implementaci těchto typů (to znamená, že obsahuje všechny Il zkompilované ze zdrojového kódu vývojáře). Takové soubory se nazývají spravované soubory WinMD. Jsou zajímavé v tom, že obsahují jak metadata prostředí Windows Runtime, tak i základní implementaci.
+Pokud vývojář používá sadu Visual Studio k vytvoření nového projektu komponenty prostředí Windows Runtime, sestavení tohoto projektu vytvoří soubor WinMD, který popisuje metadata (popisy typů tříd, rozhraní atd.) vytvořené vývojářem. Pokud je tento projekt projekt spravovaného jazyka napsaný v jazyce C# nebo Visual Basic, stejný soubor WinMD také obsahuje implementaci těchto typů (to znamená, že obsahuje všechny IL zkompilované ze zdrojového kódu vývojáře). Takové soubory se nazývají spravované soubory WinMD. Jsou zajímavé v tom, že obsahují jak metadata prostředí Windows Runtime, tak i základní implementaci.
 
-Naopak pokud vývojář vytvoří projekt komponenty prostředí Windows Runtime pro C++, sestavení tohoto projektu vytvoří soubor WinMD, který obsahuje pouze metadata a implementace je zkompilována do samostatné nativní knihovny DLL. Podobně soubory WinMD dodávané v Windows SDK obsahují pouze metadata a implementace je zkompilována do samostatných nativních knihoven DLL, které jsou dodávány jako součást systému Windows.
+Naopak pokud vývojář vytvoří projekt komponenty prostředí Windows Runtime pro jazyk C++, sestavení tohoto projektu vytvoří soubor WinMD, který obsahuje pouze metadata a implementace je zkompilována do samostatné nativní knihovny DLL. Podobně soubory WinMD dodávané v Windows SDK obsahují pouze metadata a implementace je zkompilována do samostatných nativních knihoven DLL, které jsou dodávány jako součást systému Windows.
 
 Níže uvedené informace se vztahují na spravované soubory WinMD, které obsahují metadata a implementace, a na nespravované soubory WinMD, které obsahují jenom metadata.
 
@@ -352,19 +352,19 @@ Níže uvedené informace se vztahují na spravované soubory WinMD, které obsa
 
 V případě, že je dotyčný modul CLR, jsou všechny soubory WinMD moduly. Rozhraní API profilování CLR proto říká vaší knihovně DLL profileru, když soubory WinMD načtou a co jejich ModuleIDs jsou, stejně jako pro jiné spravované moduly.
 
-Vaše knihovna DLL profileru může odlišit soubory WinMD z jiných modulů voláním metody [ICorProfilerInfo3:: GetModuleInfo2 –](icorprofilerinfo3-getmoduleinfo2-method.md) a kontrolou výstupního parametru `pdwModuleFlags` pro příznak [COR_PRF_MODULE_WINDOWS_RUNTIME](cor-prf-module-flags-enumeration.md) . (To je nastaveno pouze v případě, že ModuleID představuje WinMD.)
+Vaše knihovna DLL profileru může odlišit soubory WinMD z jiných modulů voláním metody [ICorProfilerInfo3:: GetModuleInfo2 –](icorprofilerinfo3-getmoduleinfo2-method.md) a kontrolou `pdwModuleFlags` výstupního parametru pro příznak [COR_PRF_MODULE_WINDOWS_RUNTIME](cor-prf-module-flags-enumeration.md) . (To je nastaveno pouze v případě, že ModuleID představuje WinMD.)
 
 ### <a name="reading-metadata-from-winmds"></a>Čtení metadat z soubory WinMD
 
-Soubory WinMD, jako jsou běžné moduly, obsahují metadata, která lze číst prostřednictvím [rozhraní API metadat](../../../../docs/framework/unmanaged-api/metadata/index.md). Modul CLR však mapuje prostředí Windows Runtime typy pro .NET Framework typů při čtení souborů WinMD, takže vývojáři, kteří programují spravovaný kód a využívají soubor WinMD, mohou mít přirozenější programovací prostředí. Některé příklady těchto mapování najdete v tématu [.NET Framework podpoře aplikací pro Windows Store a prostředí Windows Runtime](../../../standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md).
+Soubory WinMD, jako jsou běžné moduly, obsahují metadata, která lze číst prostřednictvím [rozhraní API metadat](../metadata/index.md). Modul CLR však mapuje prostředí Windows Runtime typy pro .NET Framework typů při čtení souborů WinMD, takže vývojáři, kteří programují spravovaný kód a využívají soubor WinMD, mohou mít přirozenější programovací prostředí. Některé příklady těchto mapování najdete v tématu [.NET Framework podpoře aplikací pro Windows Store a prostředí Windows Runtime](../../../standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md).
 
 Takže zobrazení, které váš Profiler získá, když používá rozhraní API metadat: zobrazení nezpracovaná prostředí Windows Runtime nebo namapované .NET Framework zobrazení?  Odpověď: je to na vás.
 
-Při volání metody [ICorProfilerInfo:: GetModuleMetaData –](icorprofilerinfo-getmodulemetadata-method.md) na winmd pro získání rozhraní metadat, jako je například [IMetaDataImport](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md), můžete zvolit nastavení [ofNoTransform](../../../../docs/framework/unmanaged-api/metadata/coropenflags-enumeration.md) v parametru `dwOpenFlags` pro vypnutí tohoto mapování. V opačném případě se ve výchozím nastavení povolí mapování. Profiler obvykle zachová povolené mapování, aby řetězce, které knihovna DLL profileru získá z metadat WinMD (například názvy typů), vypadaly i pro uživatele profileru jako známé a přirozené.
+Při volání metody [ICorProfilerInfo:: GetModuleMetaData –](icorprofilerinfo-getmodulemetadata-method.md) na winmd pro získání rozhraní metadat, jako je například [IMetaDataImport](../metadata/imetadataimport-interface.md), se můžete rozhodnout pro nastavení [ofNoTransform](../metadata/coropenflags-enumeration.md) v `dwOpenFlags` parametru pro vypnutí tohoto mapování. V opačném případě se ve výchozím nastavení povolí mapování. Profiler obvykle zachová povolené mapování, aby řetězce, které knihovna DLL profileru získá z metadat WinMD (například názvy typů), vypadaly i pro uživatele profileru jako známé a přirozené.
 
 ### <a name="modifying-metadata-from-winmds"></a>Úprava metadat z soubory WinMD
 
-Úprava metadat v soubory WinMD se nepodporuje. Pokud zavoláte metodu [ICorProfilerInfo:: GetModuleMetaData –](icorprofilerinfo-getmodulemetadata-method.md) pro soubor winmd a zadáte [ofWrite](../../../../docs/framework/unmanaged-api/metadata/coropenflags-enumeration.md) v parametru `dwOpenFlags` nebo požádáte o rozhraní zapisovatelného metadat, jako je [IMetaDataEmit](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md), [GetModuleMetaData –](icorprofilerinfo-getmodulemetadata-method.md) se nezdaří. To je obzvláště důležité pro přepisování profilerů, které potřebují měnit metadata pro podporu jejich instrumentace (například pro přidání AssemblyRefs nebo nových metod). Proto byste měli nejdříve vyhledat [COR_PRF_MODULE_WINDOWS_RUNTIME](cor-prf-module-flags-enumeration.md) (jak je popsáno v předchozí části) a upustit od vyžádání rozhraní metadat s možností zápisu v těchto modulech.
+Úprava metadat v soubory WinMD se nepodporuje. Pokud zavoláte metodu [ICorProfilerInfo:: GetModuleMetaData –](icorprofilerinfo-getmodulemetadata-method.md) pro soubor winmd a v parametru [ofWrite](../metadata/coropenflags-enumeration.md) určíte ofWrite `dwOpenFlags` nebo požádáte o rozhraní zapisovatelného metadat, jako je například [IMetaDataEmit](../metadata/imetadataemit-interface.md), [GetModuleMetaData –](icorprofilerinfo-getmodulemetadata-method.md) se nezdaří. To je obzvláště důležité pro přepisování profilerů, které potřebují měnit metadata pro podporu jejich instrumentace (například pro přidání AssemblyRefs nebo nových metod). Proto byste měli nejdříve vyhledat [COR_PRF_MODULE_WINDOWS_RUNTIME](cor-prf-module-flags-enumeration.md) (jak je popsáno v předchozí části) a upustit od vyžádání rozhraní metadat s možností zápisu v těchto modulech.
 
 ### <a name="resolving-assembly-references-with-winmds"></a>Překládání odkazů na sestavení pomocí soubory WinMD
 
@@ -388,7 +388,7 @@ Proto doporučujeme, aby v každém vlákně, které vaše knihovna DLL profiler
 
 ### <a name="conditionalweaktablereferences"></a>ConditionalWeakTableReferences
 
-Počínaje .NET Framework 4,5 se nachází nové zpětné volání GC [ConditionalWeakTableElementReferences –](icorprofilercallback5-conditionalweaktableelementreferences-method.md), které poskytuje profileru úplnější informace o *závislých popisovačích*. Tyto popisovače efektivně přidávají odkaz ze zdrojového objektu do cílového objektu pro účely správy životnosti GC. Závislé obslužné rutiny nejsou novinkou a vývojáři, kteří program ve spravovaném kódu, mohou vytvořit vlastní závislé obslužné rutiny pomocí třídy <xref:System.Runtime.CompilerServices.ConditionalWeakTable%602?displayProperty=nameWithType>, a to i před systémy Windows 8 a .NET Framework 4,5.
+Počínaje .NET Framework 4,5 se nachází nové zpětné volání GC [ConditionalWeakTableElementReferences –](icorprofilercallback5-conditionalweaktableelementreferences-method.md), které poskytuje profileru úplnější informace o *závislých popisovačích*. Tyto popisovače efektivně přidávají odkaz ze zdrojového objektu do cílového objektu pro účely správy životnosti GC. Závislé obslužné rutiny nejsou žádné nové a vývojáři, kteří program ve spravovaném kódu, mohou vytvořit vlastní závislé obslužné rutiny pomocí <xref:System.Runtime.CompilerServices.ConditionalWeakTable%602?displayProperty=nameWithType> třídy, a to i před Windows 8 a .NET Framework 4,5.
 
 Spravované aplikace pro Windows Store v jazyce XAML teď ale výrazně využívají závislé obslužné rutiny. Konkrétně je modul CLR používá pro pomoc se správou referenčních cyklů mezi spravovanými objekty a nespravovanými prostředí Windows Runtime objekty. To znamená, že je nyní důležitější než dřív, aby byly profily paměti informované o těchto závislých popisovačích, aby je bylo možné vizuálně rozlišit s ostatními okraji v grafu haldy. Vaše knihovna DLL profileru by měla používat [RootReferences2 –](icorprofilercallback2-rootreferences2-method.md), [objectReferences –](icorprofilercallback-objectreferences-method.md)a [ConditionalWeakTableElementReferences –](icorprofilercallback5-conditionalweaktableelementreferences-method.md) společně pro vytvoření kompletního zobrazení grafu haldy.
 
@@ -396,7 +396,7 @@ Spravované aplikace pro Windows Store v jazyce XAML teď ale výrazně využív
 
 Je možné použít rozhraní API profilování CLR k analýze spravovaného kódu spuštěného v aplikacích pro Windows Store. Ve skutečnosti můžete převzít existující Profiler, který vyvíjíte, a udělat určité konkrétní změny, aby bylo možné cílit na aplikace pro Windows Store. Vaše uživatelské rozhraní profileru by mělo používat nová rozhraní API pro aktivaci aplikace pro Windows Store v režimu ladění. Ujistěte se, že vaše knihovna DLL profileru spotřebovává jenom rozhraní API platná pro aplikace pro Windows Store. Mechanismus komunikace mezi knihovnou DLL profileru a uživatelským rozhraním profileru by se měl zapsat pomocí omezení rozhraní API pro aplikace pro Windows Store a s vědomím omezených oprávnění, která jsou na místě pro aplikace pro Windows Store. Vaše knihovna DLL profileru by měla vědět, jak CLR zpracovává soubory WinMD a jak se chování systému uvolňování paměti liší v závislosti na spravovaných vláknech.
 
-## <a name="resources"></a>Prostředky
+## <a name="resources"></a>Zdroje a prostředky
 
 **Modul CLR (Common Language Runtime)**
 

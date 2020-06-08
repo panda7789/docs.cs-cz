@@ -11,12 +11,12 @@ api_type:
 - COM
 author: davmason
 ms.author: davmason
-ms.openlocfilehash: 9b5059d9e4bf9b79dc67664c7a7971041d1cf35b
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: eaf33f3b0de7a18e400cd16d29c046784e2e190f
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76861681"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84495317"
 ---
 # <a name="icorprofilerinfo8getdynamicfunctioninfo-method"></a>ICorProfilerInfo8:: GetDynamicFunctionInfo – metoda
 
@@ -38,31 +38,31 @@ HRESULT GetDynamicFunctionInfo( [in]  FunctionID              functionId,
 
 - `functionId`
 
-  \[v] ID funkce, pro kterou mají být načteny informace.
+  \[in] ID funkce, pro kterou mají být načteny informace.
 
 - `moduleId`
 
-  \[in] ukazatel na modul, ve kterém je definovaná nadřazená třída funkce.
+  \[in] ukazatel na modul, ve kterém je definována nadřazená třída funkce.
 
 - `ppvSig`
 
-  \[] ukazatel na signaturu funkce.
+  \[out] ukazatel na signaturu funkce.
 
 - `pbSig`
 
-  \[] ukazatel na počet bajtů pro podpis funkce.
+  \[out] ukazatel na počet bajtů pro podpis funkce.
 
 - `cchName`
 
-  \[v] maximální velikost pole `wszName`.
+  \[v] maximální velikost `wszName` pole.
 
 - `pcchName`
 
-  \[] počet znaků v poli `wszName`.
+  \[out] počet znaků v `wszName` poli.
 
 - `wszName`
 
-  \[out] pole `WCHAR`, což je název funkce, pokud jedna existuje.
+  \[out] pole `WCHAR` , které je názvem funkce, pokud existuje.
 
 ## <a name="remarks"></a>Poznámky
 
@@ -72,14 +72,14 @@ Toto rozhraní API je možné použít k načtení informací o dynamických met
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
+**Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).
 
 **Hlavička:** CorProf. idl, CorProf. h
 
 **Knihovna:** CorGuids. lib
 
-**Verze .NET Framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
+**Verze .NET Framework:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
 
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní ICorProfilerInfo8](icorprofilerinfo8-interface.md)
+- [ICorProfilerInfo8 – rozhraní](icorprofilerinfo8-interface.md)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: d0d65060-6f90-42a2-95cf-6ffb04352996
 topic_type:
 - apiref
-ms.openlocfilehash: 9dbbdcc9d0fb9f0a8d2a64edfa4a0ad92570933c
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 652ebf1be6a58e08da27aaed5b2e84a8f2aee98a
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74450003"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503767"
 ---
 # <a name="imetadataimportenumsignatures-method"></a>IMetaDataImport::EnumSignatures – metoda
 Vytvoří výčet tokenů podpisu představujících samostatné podpisy v aktuálním oboru.  
@@ -44,31 +44,31 @@ HRESULT EnumSignatures (
  mimo Pole, které se používá k uložení tokenů podpisu.  
   
  `cMax`  
- pro Maximální velikost `rSignatures` pole  
+ pro Maximální velikost `rSignatures` pole.  
   
  `pcSignatures`  
- mimo Počet tokenů podpisu vrácených v `rSignatures`.  
+ mimo Počet tokenů podpisu vrácených v `rSignatures` .  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
-|HRESULT|Popis|  
+|HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumSignatures` byla úspěšně vrácena.|  
-|`S_FALSE`|Neexistují žádné tokeny k vytvoření výčtu. V takovém případě je `pcSignatures` nula.|  
+|`S_OK`|`EnumSignatures`úspěšně vráceno.|  
+|`S_FALSE`|Neexistují žádné tokeny k vytvoření výčtu. V takovém případě `pcSignatures` je nula.|  
   
 ## <a name="remarks"></a>Poznámky  
- Tokeny podpisu jsou vytvořeny metodou [IMetaDataEmit:: GetTokenFromSig –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-gettokenfromsig-method.md) .  
+ Tokeny podpisu jsou vytvořeny metodou [IMetaDataEmit:: GetTokenFromSig –](imetadataemit-gettokenfromsig-method.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** Cor. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport – rozhraní](imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](imetadataimport2-interface.md)

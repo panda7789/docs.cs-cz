@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 66eeca30-adb4-45f4-aff5-347564c95724
 topic_type:
 - apiref
-ms.openlocfilehash: 57f771d933e896677dfc0bd5d9dac58da2af22c8
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 8b1e918edf641d38dd6b91d790bcaff8020293a0
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83617253"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84493263"
 ---
 # <a name="getclridentitymanager-function"></a>GetCLRIdentityManager – funkce
 Získá ukazatel na rozhraní, které umožňuje modulu CLR (Common Language Runtime) spravovat identity.  
@@ -40,7 +40,7 @@ STDAPI GetCLRIdentityManager(
  pro A `REFIID` (identifikátor rozhraní), který určuje rozhraní, které se má získat. Tato hodnota musí být buď IID_ICLRAssemblyIdentityManager, nebo IID_ICLRHostBindingPolicyManager.  
   
  `ppManager`  
- mimo Ukazatel na adresu buď [ICLRAssemblyIdentityManager](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyidentitymanager-interface.md) , nebo objektu [ICLRHostBindingPolicyManager](iclrhostbindingpolicymanager-interface.md) .  
+ mimo Ukazatel na adresu buď [ICLRAssemblyIdentityManager](iclrassemblyidentitymanager-interface.md) , nebo objektu [ICLRHostBindingPolicyManager](iclrhostbindingpolicymanager-interface.md) .  
   
 ## <a name="remarks"></a>Poznámky  
  Chcete-li získat ukazatel na funkci, zavolejte funkci [GetRealProcAddress –](getrealprocaddress-function.md) `GetCLRIdentityManager` .  
@@ -54,6 +54,6 @@ STDAPI GetCLRIdentityManager(
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Zastaralé funkce hostování CLR](deprecated-clr-hosting-functions.md)

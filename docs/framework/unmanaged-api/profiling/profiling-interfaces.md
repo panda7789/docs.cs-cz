@@ -6,12 +6,12 @@ helpviewer_keywords:
 - profiling interfaces [.NET Framework]
 - interfaces [.NET Framework profiling]
 ms.assetid: d9303db8-e881-4217-91b7-8c7573c8ef9e
-ms.openlocfilehash: 8b6b9acff2945e2d8fd684bfa31e4af086ea5ab9
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: f073794b4fdf89f289b70fed9967ee37b5f4e133
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76868145"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84494030"
 ---
 # <a name="profiling-interfaces"></a>Rozhraní pro profilaci
 Tato část popisuje nespravovaná rozhraní, která umožňují profilovat program, který je spuštěn modulem CLR (Common Language Runtime).  
@@ -20,14 +20,14 @@ Tato část popisuje nespravovaná rozhraní, která umožňují profilovat prog
  [ICLRProfiling – rozhraní](iclrprofiling-interface.md)  
  Poskytuje metodu [AttachProfiler –](iclrprofiling-attachprofiler-method.md) , která umožňuje profileru připojit se k běžícímu procesu.  
   
- [ICorProfilerAssemblyReferenceProvider – rozhraní](icorprofilerassemblyreferenceprovider-interface.md)  
+ [Rozhraní ICorProfilerAssemblyReferenceProvider](icorprofilerassemblyreferenceprovider-interface.md)  
  Umožňuje profileru informovat modul CLR o odkazech na sestavení, které bude Profiler přidávat do zpětného volání [ICorProfilerCallback:: ModuleLoadFinished –](icorprofilercallback-moduleloadfinished-method.md) .  
   
  [ICorProfilerCallback – rozhraní](icorprofilercallback-interface.md)  
  Poskytuje metody, které používá modul CLR k oznamování profileru kódu, když dojde k událostem, ke kterým má Profiler odběr.  
   
  [ICorProfilerCallback2 – rozhraní](icorprofilercallback2-interface.md)  
- Rozšiřuje rozhraní `ICorProfilerCallback` pomocí zpětných volání podporovaných v .NET Framework 2,0 a novějších verzích.  
+ Rozšiřuje `ICorProfilerCallback` rozhraní o zpětná volání podporovaná v .NET Framework 2,0 a novějších verzích.  
   
  [ICorProfilerCallback3 – rozhraní](icorprofilercallback3-interface.md)  
  Poskytuje metody zpětného volání, které modul CLR používá ke komunikaci informací o stavu připojení a odpojení profileru.  
@@ -60,10 +60,10 @@ Poskytuje metodu zpětného volání, kterou modul CLR (Common Language Runtime)
  Poskytuje metody pro použití v profilech kódu ke komunikaci s modulem CLR pro řízení událostí a informace o požadavcích.  
   
  [ICorProfilerInfo2 – rozhraní](icorprofilerinfo2-interface.md)  
- Rozšiřuje rozhraní `ICorProfilerInfo` s metodami podporovanými v .NET Framework 2,0 a novějších verzích.  
+ Rozšiřuje `ICorProfilerInfo` rozhraní o metody podporované v .NET Framework 2,0 a novějších verzích.  
   
  [ICorProfilerInfo3 – rozhraní](icorprofilerinfo3-interface.md)  
- Rozšiřuje rozhraní `ICorProfilerInfo2` o metody podporované .NET Framework 4 a novějšími verzemi.  
+ Rozšiřuje `ICorProfilerInfo2` rozhraní o metody podporované .NET Framework 4 a novějšími verzemi.  
   
  [ICorProfilerInfo4 – rozhraní](icorprofilerinfo4-interface.md)  
  Poskytuje metody, které profilery kódu používají ke komunikaci s modulem CLR k řízení sledování událostí a k vyžádání informací.  
@@ -81,7 +81,7 @@ Poskytuje metodu zpětného volání, kterou modul CLR (Common Language Runtime)
  Poskytuje metody pro sekvenční iteraci kolekcí modulů načtených aplikací nebo profilerem.  
   
  [ICorProfilerObjectEnum – rozhraní](icorprofilerobjectenum-interface.md)  
- Poskytuje metody pro sekvenční iteraci kolekcí zmrazených objektů, které jsou generovány pomocí nástroje [Ngen. exe (generátor nativních imagí)](../../../../docs/framework/tools/ngen-exe-native-image-generator.md).  
+ Poskytuje metody pro sekvenční iteraci kolekcí zmrazených objektů, které jsou generovány pomocí nástroje [Ngen. exe (generátor nativních imagí)](../../tools/ngen-exe-native-image-generator.md).  
   
  [ICorProfilerThreadEnum – rozhraní](icorprofilerthreadenum-interface.md)  
  Poskytuje metody pro sekvenční iteraci v kolekci vláken v modulu CLR.  
@@ -92,7 +92,7 @@ Poskytuje metodu zpětného volání, kterou modul CLR (Common Language Runtime)
 ## <a name="related-sections"></a>Související oddíly  
  [Přehled profilace](profiling-overview.md)  
   
- [Globální statické funkce pro profilaci](profiling-global-static-functions.md)  
+ [Profilace globálních statických funkcí](profiling-global-static-functions.md)  
   
  [Výčty pro profilaci](profiling-enumerations.md)  
   

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 8dc29c6a-e2ba-41d8-a1e0-0fdd21421e0b
 topic_type:
 - apiref
-ms.openlocfilehash: fb7a2a6d8bac7e9a67a5275694fc07e0f1d469e1
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: b48b782b7c8be35bfb815d72758f0bc316fb2114
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76861330"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84494719"
 ---
 # <a name="icorprofilermoduleenumskip-method"></a>ICorProfilerModuleEnum::Skip – metoda
 Posune kurzor čítače výčtu z aktuální pozice tak, aby byl zadaný počet prvků vynechán.  
@@ -38,22 +38,22 @@ HRESULT Skip([in] ULONG celt);
 ## <a name="return-value"></a>Návratová hodnota  
  Tato metoda vrací následující konkrétní hodnoty HRESULT a také chyby HRESULT, které naznačují selhání metody.  
   
-|HRESULT|Popis|  
+|HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|prvky `celt` byly přeskočeny.|  
-|S_FALSE|Méně než `celt` prvky byly přeskočeny, což znamená, že žádné další prvky nejsou k dispozici.|  
+|S_OK|`celt`prvky se přeskočily.|  
+|S_FALSE|Méně než `celt` prvků bylo vynecháno, což znamená, že žádné další prvky nejsou k dispozici.|  
   
 ## <a name="remarks"></a>Poznámky  
- Nová pozice kurzoru tohoto enumerátoru je (aktuální pozice) + `celt`.  
+ Nová pozice kurzoru tohoto enumerátoru je (aktuální pozice) + `celt` .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorProf. idl, CorProf. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

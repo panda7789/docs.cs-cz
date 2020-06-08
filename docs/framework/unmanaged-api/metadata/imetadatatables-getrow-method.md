@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: a7408d51-0bce-45a2-b58f-da4660bbc039
 topic_type:
 - apiref
-ms.openlocfilehash: 71f6c496816fec1a7537f5ccdfdc1b47d17da871
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 13d514157382c75a2eb9799837f9355d0e469c99
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177108"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84489896"
 ---
 # <a name="imetadatatablesgetrow-method"></a>IMetaDataTables::GetRow – metoda
-Získá řádek na zadaný řádek indexu, v tabulce v zadaném indexu tabulky.  
+Získá řádek v zadaném indexu řádku v tabulce se zadaným indexem tabulky.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,28 +37,28 @@ HRESULT GetRow (
   
 ## <a name="parameters"></a>Parametry  
  `ixTbl`  
- [v] Index tabulky, ze kterého bude řádek načten.  
+ pro Index tabulky, ze které se má řádek načíst  
   
  `rid`  
- [v] Index řádku získat.  
+ pro Index řádku, který se má načíst  
   
  `ppRow`  
- [out] Ukazatel na ukazatel na řádek.  
+ mimo Ukazatel na ukazatel na řádek.  
   
 ## <a name="remarks"></a>Poznámky  
 
-  Nedoporučujeme použití této metody, protože nevrací konzistentní výsledky. Informace o tabulce GUID naleznete v dokumentaci cli (Common Language Infrastructure), zejména "Oddíl II: Definice metadat a sémantika". Dokumentace je k dispozici online; viz [ecma c# a obecné standardy jazykové infrastruktury](../../../standard/components.md#applicable-standards) a [standardní ECMA-335 – common language infrastructure (CLI).](http://www.ecma-international.org/publications/standards/Ecma-335.htm)  
+  Nedoporučujeme používat tuto metodu, protože nevrací konzistentní výsledky. Informace o tabulce identifikátorů GUID najdete v dokumentaci k Common Language Infrastructure (CLI), zejména v oddílu oddíl II: definice metadat a sémantika. Dokumentace je k dispozici online; viz [ECMA C# a Common Language Infrastructure standardy](../../../standard/components.md#applicable-standards) a [standardní ECMA-335-Common Language Infrastructure (CLI)](http://www.ecma-international.org/publications/standards/Ecma-335.htm).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Používá se jako prostředek v souboru MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **Verze rozhraní .NET Framework**  [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework**  [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [IMetaDataTables – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md)
-- [IMetaDataTables2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatatables2-interface.md)
+- [IMetaDataTables – rozhraní](imetadatatables-interface.md)
+- [IMetaDataTables2 – rozhraní](imetadatatables2-interface.md)

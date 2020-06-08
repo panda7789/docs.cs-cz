@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: ea102e62-0454-4477-bcf3-126773acd184
 topic_type:
 - apiref
-ms.openlocfilehash: dbcf9230a953069d311c3908aa3ed21fcfd5075c
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: 627df3600b920e2fe2250f2fc3da51c852edc774
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83420263"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84496214"
 ---
 # <a name="icorprofilerinfo3requestprofilerdetach-method"></a>ICorProfilerInfo3::RequestProfilerDetach – metoda
 Instruuje modul runtime o odpojení profileru.  
@@ -39,7 +39,7 @@ HRESULT RequestProfilerDetach(
 ## <a name="return-value"></a>Návratová hodnota  
  Tato metoda vrací následující konkrétní hodnoty HRESULT a také chyby HRESULT, které naznačují selhání metody.  
   
-|HRESULT|Popis|  
+|HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|Požadavek na odpojení je platný a Postup odpojení nyní pokračuje v jiném vlákně. Po úplném dokončení odpojení dojde k `ProfilerDetachSucceeded` vygenerování události.|  
 |E_CORPROF_E_CALLBACK3_REQUIRED|Profiler selhal při pokusu [IUnknown:: QueryInterface](/windows/win32/api/unknwn/nf-unknwn-iunknown-queryinterface(q)) pro rozhraní [ICorProfilerCallback3](icorprofilercallback3-interface.md) , které musí implementovat pro podporu operace odpojení. Nedošlo k pokusu o odpojení.|  
@@ -56,7 +56,7 @@ HRESULT RequestProfilerDetach(
  Pokud profiler Určuje hodnotu `dwExpectedCompletionMilliseconds` 0 (nula), CLR použije výchozí hodnotu 5000, což znamená, že provede kontrolu za 5 sekund, znovu po 10 sekundách a pak každých 10 minut.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorProf. idl, CorProf. h  
   
@@ -64,7 +64,7 @@ HRESULT RequestProfilerDetach(
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [ICorProfilerInfo3 – rozhraní](icorprofilerinfo3-interface.md)
 - [Rozhraní pro profilaci](profiling-interfaces.md)

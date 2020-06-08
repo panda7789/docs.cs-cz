@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: ba6e178f-128b-4e47-a13c-b4be73eb106c
 topic_type:
 - apiref
-ms.openlocfilehash: b535fdd5027a26cc4dd0eafec9883f0186773dd1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 910c40413075131765a37e00703ac892e3f39641
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175496"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84492184"
 ---
 # <a name="imetadataimportenuminterfaceimpls-method"></a>IMetaDataImport::EnumInterfaceImpls – metoda
-Vyjmenovává všechna rozhraní implementovaná zadaným `TypeDef`rozhraním .
+Vytvoří výčet všech rozhraní implementovaných zadaným `TypeDef` .
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,41 +39,41 @@ HRESULT EnumInterfaceImpls (
   
 ## <a name="parameters"></a>Parametry  
  `phEnum`  
- [dovnitř, ven] Ukazatel na čítač výčtu.  
+ [in, out] Ukazatel na enumerátor.  
   
  `td`  
- [v] Token TypeDef, jehož Tokeny MethodDef představující implementace rozhraní mají být uvedeny ve výčtu.  
+ pro Token TypeDef, jehož tokeny MethodDef představují implementaci rozhraní, mají být vyčísleny.  
   
  `rImpls`  
- [out] Pole používané k ukládání tokenů MethodDef.  
+ mimo Pole použité k uložení tokenů MethodDef  
   
  `cMax`  
- [v] Maximální délka `rImpls` pole.  
+ pro Maximální délka `rImpls` pole.  
   
  `pcImpls`  
- [out] Skutečný počet tokenů vrácených v `rImpls`.  
+ mimo Skutečný počet tokenů vrácených v `rImpls` .  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
-|HRESULT|Popis|  
+|HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumInterfaceImpls`úspěšně vrácena.|  
-|`S_FALSE`|Neexistují žádné tokeny MethodDef k výčetu. V takovém `pcImpls` případě je nastavena na nulu.|  
+|`S_OK`|`EnumInterfaceImpls`úspěšně vráceno.|  
+|`S_FALSE`|Nejsou k dispozici žádné tokeny MethodDef pro zobrazení výčtu. V takovém případě `pcImpls` je nastavena na hodnotu nula.|  
 
 ## <a name="remarks"></a>Poznámky
 
-Výčet vrátí kolekci `mdInterfaceImpl` tokenů pro každé rozhraní `TypeDef`implementované zadaným . Tokeny rozhraní jsou vráceny v pořadí, `DefineTypeDef` v `SetTypeDefProps`jakém byla rozhraní zadána (prostřednictvím nebo ). Vlastnosti vrácených `mdInterfaceImpl` tokenů lze dotazovat pomocí [GetInterfaceImplProps](imetadataimport-getinterfaceimplprops-method.md).
+Výčet vrátí kolekci `mdInterfaceImpl` tokenů pro každé rozhraní implementované zadaným `TypeDef` . Tokeny rozhraní jsou vraceny v pořadí, ve kterém byla rozhraní zadána (prostřednictvím `DefineTypeDef` nebo `SetTypeDefProps` ). Dotazy na vlastnosti vrácených `mdInterfaceImpl` tokenů mohou být dotazovány pomocí [getinterfaceimplprops –](imetadataimport-getinterfaceimplprops-method.md).
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Zahrnuto jako prostředek v souboru MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport – rozhraní](imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](imetadataimport2-interface.md)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 6dade525-7770-4cb4-bafd-4bb995ad0d87
 topic_type:
 - apiref
-ms.openlocfilehash: 4d8790dc68bc063deed4c58ba0df8e9ea258b9d7
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: e2e911fb1d737ebb6b2106c89ac11335788ace4f
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83610077"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501726"
 ---
 # <a name="isymunmanagedwriterclosescope-method"></a>ISymUnmanagedWriter::CloseScope – metoda
 Zavře aktuální lexikální obor.  
@@ -42,11 +42,11 @@ HRESULT CloseScope(
 ## <a name="remarks"></a>Poznámky  
  Jakmile je obor uzavřen, nelze v něm definovat žádné další proměnné.  
   
- [ISymUnmanagedWriter:: OpenScope –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-openscope-method.md) vrátí neprůhledný identifikátor oboru, který lze použít s [ISymUnmanagedWriter:: SetScopeRange –](isymunmanagedwriter-setscoperange-method.md) pro pozdější definování počátečního a koncového posunu oboru. V tomto případě jsou posunutí předaná do `ISymUnmanagedWriter::OpenScope` a `ISymUnmanagedWriter::CloseScope` ignorována. Identifikátory oboru jsou platné pouze v aktuální metodě.  
+ [ISymUnmanagedWriter:: OpenScope –](isymunmanagedwriter-openscope-method.md) vrátí neprůhledný identifikátor oboru, který lze použít s [ISymUnmanagedWriter:: SetScopeRange –](isymunmanagedwriter-setscoperange-method.md) pro pozdější definování počátečního a koncového posunu oboru. V tomto případě jsou posunutí předaná do `ISymUnmanagedWriter::OpenScope` a `ISymUnmanagedWriter::CloseScope` ignorována. Identifikátory oboru jsou platné pouze v aktuální metodě.  
   
 ## <a name="requirements"></a>Požadavky  
  **Hlavička:** CorSym. idl, CorSym. h  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [ISymUnmanagedWriter – rozhraní](isymunmanagedwriter-interface.md)

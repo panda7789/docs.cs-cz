@@ -1,5 +1,5 @@
 ---
-title: ICorProfilerInfo7::ApplyMetaData Method
+title: 'ICorProfilerInfo7:: ApplyMetaData – metoda'
 ms.date: 02/15/2019
 dev_langs:
 - cpp
@@ -10,17 +10,17 @@ api_location:
 api_type:
 - COM
 ms.assetid: a1bfb649-4584-4d35-b3e6-8fe59b53992a
-ms.openlocfilehash: b9e488a512ad506a8975bfff44ae02cd84c29f74
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: c30206145d08a22af49c4a6a0dc83fd7382bcc06
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76861694"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84495503"
 ---
-# <a name="icorprofilerinfo7applymetadata-method"></a>ICorProfilerInfo7::ApplyMetaData Method
+# <a name="icorprofilerinfo7applymetadata-method"></a>ICorProfilerInfo7:: ApplyMetaData – metoda
 [Podporováno v .NET Framework 4.6.1 a novějších verzích]  
   
- Aplikuje metadata nově definovaná metodami `IMetadataEmit::Define*` do zadaného modulu.  
+ Aplikuje metadata nově definovaná `IMetadataEmit::Define*` metodami na zadaný modul.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,34 +37,34 @@ HRESULT ApplyMetaData(
 ## <a name="remarks"></a>Poznámky  
  Pokud jsou změny metadat provedeny po zpětném volání [ModuleLoadFinished –](icorprofilercallback-moduleloadfinished-method.md) , je nutné před použitím nových metadat zavolat tuto metodu.  
   
- `ApplyMetaData` podporuje pouze přidávání následujících typů metadat:  
+ `ApplyMetaData`podporuje přidávání následujících typů metadat:  
   
-- `AssemblyRef` záznamy, které vytvoříte voláním metody [IMetaDataAssemblyEmit::D efineassemblyref](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-defineassemblyref-method.md). Metoda.  
+- `AssemblyRef`záznamy, které vytvoříte voláním [IMetaDataAssemblyEmit::D efineassemblyref](../metadata/imetadataassemblyemit-defineassemblyref-method.md). Metoda.  
   
-- `TypeRef` záznamy, které vytvoříte voláním metody [IMetaDataEmit::D efinetyperefbyname](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definetyperefbyname-method.md) .  
+- `TypeRef`záznamy, které vytvoříte voláním metody [IMetaDataEmit::D efinetyperefbyname](../metadata/imetadataemit-definetyperefbyname-method.md) .  
   
-- `TypeSpec` záznamy, které vytvoříte voláním metody [IMetaDataEmit:: gettokenfromtypespec –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-gettokenfromtypespec-method.md) .  
+- `TypeSpec`záznamy, které vytvoříte voláním metody [IMetaDataEmit:: gettokenfromtypespec –](../metadata/imetadataemit-gettokenfromtypespec-method.md) .  
   
-- `MemberRef` záznamy, které vytvoříte voláním metody [IMetaDataEmit::D efinememberref](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definememberref-method.md) .  
+- `MemberRef`záznamy, které vytvoříte voláním metody [IMetaDataEmit::D efinememberref](../metadata/imetadataemit-definememberref-method.md) .  
   
-- `MemberSpec` záznamy, které vytvoříte voláním metody [IMetaDataEmit2::D efinemethodspec](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-definemethodspec-method.md) .  
+- `MemberSpec`záznamy, které vytvoříte voláním metody [IMetaDataEmit2::D efinemethodspec](../metadata/imetadataemit2-definemethodspec-method.md) .  
   
-- `UserString` záznamy, které vytvoříte voláním metody [IMetaDataEmit::D efineuserstring](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineuserstring-method.md) .  
+- `UserString`záznamy, které vytvoříte voláním metody [IMetaDataEmit::D efineuserstring](../metadata/imetadataemit-defineuserstring-method.md) .  
 
-Počínaje rozhraním .NET Core 3,0 `ApplyMetaData` také podporuje následující typy:
+Počínaje platformou .NET Core 3,0 `ApplyMetaData` podporuje také následující typy:
 
-- `TypeDef` záznamy, které vytvoříte voláním metody [IMetaDataEmit::D efinetypedef](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definetypedef-method.md) .
+- `TypeDef`záznamy, které vytvoříte voláním metody [IMetaDataEmit::D efinetypedef](../metadata/imetadataemit-definetypedef-method.md) .
 
-- `MethodDef` záznamy, které vytvoříte voláním metody [IMetaDataEmit::D efinemethod](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definemethod-method.md) . Přidání virtuálních metod do existujícího typu však není podporováno. Před zpětným voláním [ModuleLoadFinished –](icorprofilercallback-moduleloadfinished-method.md) musí být virtuální metody přidané.
+- `MethodDef`záznamy, které vytvoříte voláním metody [IMetaDataEmit::D efinemethod](../metadata/imetadataemit-definemethod-method.md) . Přidání virtuálních metod do existujícího typu však není podporováno. Před zpětným voláním [ModuleLoadFinished –](icorprofilercallback-moduleloadfinished-method.md) musí být virtuální metody přidané.
 
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorProf. idl, CorProf. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v461plus](../../../../includes/net-current-v461plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v461plus](../../../../includes/net-current-v461plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

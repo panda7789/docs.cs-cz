@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 634ac28c-a5b7-4fc3-af84-256c24ca8177
 topic_type:
 - apiref
-ms.openlocfilehash: 9069498a4f62f4d9dbb50a7075323b14c3cc5ab9
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: ba15440df79dded95a8afa9438657d064e167f36
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76868444"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84495967"
 ---
 # <a name="icorprofilerinfo4getrejitids-method"></a>ICorProfilerInfo4::GetReJITIDs – metoda
 Vrátí pole ID, které identifikují všechny verze rekompilovaných kompilátorů JIT zadané funkce, které jsou stále přiděleny. To zahrnuje verze rekompilovaných funkcí JIT, které byly následně obnoveny, ale nebyly dosud uvolněny (například pokud je stále používána doména aplikace obsahující vrácená funkce).  
@@ -37,10 +37,10 @@ HRESULT GetReJITIDs (
   
 ## <a name="parameters"></a>Parametry  
  `functionId`  
- pro `FunctionID` instance funkce, pro kterou chcete vytvořit výčet verzí.  
+ pro `FunctionID`Instance funkce, pro kterou chcete vytvořit výčet verzí.  
   
  `cReJitIds`  
- pro Počet ID rekompilovaných rekompilovaných JIT přidělených v poli `reJitIds`.  
+ pro Počet ID rekompilovaných rekompilovaných JIT přidělených `reJitIds` v poli  
   
  `pcReJitIds`  
  mimo Skutečný počet rekompilovaných ID JIT.  
@@ -49,16 +49,16 @@ HRESULT GetReJITIDs (
  mimo Pole přidělené volajícím, které bude obsahovat ID rekompilovaných JIT pro danou funkci.  
   
 ## <a name="remarks"></a>Poznámky  
- `GetReJITIDs` vytvoří výčet aktivních rekompilovaných ID JIT pro danou instanci funkce. Řídí se stejným vzorem použití jako s jinými `ICorProfilerInfo` funkcemi, které přijímají vyrovnávací paměti přidělené volajícím.  
+ `GetReJITIDs`Vytvoří výčet aktivních rekompilovaných ID JIT pro danou instanci funkce. Řídí se stejným vzorem použití jako jiné `ICorProfilerInfo` funkce, které přijímají vyrovnávací paměti přidělené volajícím.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorProf. idl, CorProf. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
