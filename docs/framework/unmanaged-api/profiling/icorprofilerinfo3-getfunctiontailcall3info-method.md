@@ -15,17 +15,17 @@ helpviewer_keywords:
 ms.assetid: afdb5ac9-5bf5-4b91-b7cb-f81db23d7da3
 topic_type:
 - apiref
-ms.openlocfilehash: 5346792cb2a1309268cb4ba48625aa559777fbaf
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e4d0d9ed07c707e51e5833483b71079f2c330505
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176991"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84496526"
 ---
-# <a name="icorprofilerinfo3getfunctiontailcall3info-method"></a><span data-ttu-id="1cf63-102">ICorProfilerInfo3::GetFunctionTailcall3Info – metoda</span><span class="sxs-lookup"><span data-stu-id="1cf63-102">ICorProfilerInfo3::GetFunctionTailcall3Info Method</span></span>
-<span data-ttu-id="1cf63-103">Poskytuje rámec zásobníku funkce, která je hlášena profiler funkcí [FunctionTailcall3WithInfo.](functiontailcall3withinfo-function.md)</span><span class="sxs-lookup"><span data-stu-id="1cf63-103">Provides the stack frame of the function that is being reported to the profiler by the [FunctionTailcall3WithInfo](functiontailcall3withinfo-function.md) function.</span></span> <span data-ttu-id="1cf63-104">Tuto metodu lze volat `FunctionTailcall3WithInfo` pouze během zpětného volání.</span><span class="sxs-lookup"><span data-stu-id="1cf63-104">This method can be called only during the `FunctionTailcall3WithInfo` callback.</span></span>  
+# <a name="icorprofilerinfo3getfunctiontailcall3info-method"></a><span data-ttu-id="cb07c-102">ICorProfilerInfo3::GetFunctionTailcall3Info – metoda</span><span class="sxs-lookup"><span data-stu-id="cb07c-102">ICorProfilerInfo3::GetFunctionTailcall3Info Method</span></span>
+<span data-ttu-id="cb07c-103">Poskytuje rámec zásobníku funkce, která je hlášena profileru funkcí [FunctionTailcall3WithInfo –](functiontailcall3withinfo-function.md) .</span><span class="sxs-lookup"><span data-stu-id="cb07c-103">Provides the stack frame of the function that is being reported to the profiler by the [FunctionTailcall3WithInfo](functiontailcall3withinfo-function.md) function.</span></span> <span data-ttu-id="cb07c-104">Tuto metodu lze volat pouze během `FunctionTailcall3WithInfo` zpětného volání.</span><span class="sxs-lookup"><span data-stu-id="cb07c-104">This method can be called only during the `FunctionTailcall3WithInfo` callback.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="1cf63-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="1cf63-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="cb07c-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="cb07c-105">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetFunctionTailcall3Info(
@@ -34,32 +34,32 @@ HRESULT GetFunctionTailcall3Info(
             [out] COR_PRF_FRAME_INFO *pFrameInfo);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="1cf63-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="1cf63-106">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="cb07c-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="cb07c-106">Parameters</span></span>  
  `functionId`  
- <span data-ttu-id="1cf63-107">[v] Funkce, `FunctionID` která se vrací.</span><span class="sxs-lookup"><span data-stu-id="1cf63-107">[in] The `FunctionID` of the function that is returning.</span></span>  
+ <span data-ttu-id="cb07c-107">pro `FunctionID`Funkce, která vrací.</span><span class="sxs-lookup"><span data-stu-id="cb07c-107">[in] The `FunctionID` of the function that is returning.</span></span>  
   
  `eltInfo`  
- <span data-ttu-id="1cf63-108">[v] Neprůhledný popisovač, který představuje informace o daném rámci zásobníku.</span><span class="sxs-lookup"><span data-stu-id="1cf63-108">[in] An opaque handle that represents information about a given stack frame.</span></span> <span data-ttu-id="1cf63-109">Profiler by měl `eltInfo` poskytnout stejné, které bylo `FunctionTailcall3WithInfo` dáno profiler funkce.</span><span class="sxs-lookup"><span data-stu-id="1cf63-109">The profiler should provide the same `eltInfo` that was given to the profiler by the `FunctionTailcall3WithInfo` function.</span></span>  
+ <span data-ttu-id="cb07c-108">pro Neprůhledný popisovač, který představuje informace o daném snímku zásobníku.</span><span class="sxs-lookup"><span data-stu-id="cb07c-108">[in] An opaque handle that represents information about a given stack frame.</span></span> <span data-ttu-id="cb07c-109">Profiler by měl poskytnout stejnou `eltInfo` funkci, která byla přidělena profileru `FunctionTailcall3WithInfo` funkcí.</span><span class="sxs-lookup"><span data-stu-id="cb07c-109">The profiler should provide the same `eltInfo` that was given to the profiler by the `FunctionTailcall3WithInfo` function.</span></span>  
   
  `pFrameInfo`  
- <span data-ttu-id="1cf63-110">[out] Neprůhledný popisovač, který představuje obecné informace o daném rámci zásobníku.</span><span class="sxs-lookup"><span data-stu-id="1cf63-110">[out] An opaque handle that represents generics information about a given stack frame.</span></span> <span data-ttu-id="1cf63-111">Tento popisovač je `FunctionTailcall3WithInfo` platný pouze během zpětného `GetFunctionTailcall3Info` volání, ve kterém profiler volal metodu.</span><span class="sxs-lookup"><span data-stu-id="1cf63-111">This handle is valid only during the `FunctionTailcall3WithInfo` callback in which the profiler called the `GetFunctionTailcall3Info` method.</span></span>  
+ <span data-ttu-id="cb07c-110">mimo Neprůhledný popisovač, který představuje obecné informace o daném snímku zásobníku.</span><span class="sxs-lookup"><span data-stu-id="cb07c-110">[out] An opaque handle that represents generics information about a given stack frame.</span></span> <span data-ttu-id="cb07c-111">Tento popisovač je platný pouze během `FunctionTailcall3WithInfo` zpětného volání, ve kterém Profiler volal `GetFunctionTailcall3Info` metodu.</span><span class="sxs-lookup"><span data-stu-id="cb07c-111">This handle is valid only during the `FunctionTailcall3WithInfo` callback in which the profiler called the `GetFunctionTailcall3Info` method.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="1cf63-112">Poznámky</span><span class="sxs-lookup"><span data-stu-id="1cf63-112">Remarks</span></span>  
+## <a name="remarks"></a><span data-ttu-id="cb07c-112">Poznámky</span><span class="sxs-lookup"><span data-stu-id="cb07c-112">Remarks</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="1cf63-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="1cf63-113">Requirements</span></span>  
- <span data-ttu-id="1cf63-114">**Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="1cf63-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="cb07c-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="cb07c-113">Requirements</span></span>  
+ <span data-ttu-id="cb07c-114">**Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="cb07c-114">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="1cf63-115">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="1cf63-115">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="cb07c-115">**Hlavička:** CorProf. idl, CorProf. h</span><span class="sxs-lookup"><span data-stu-id="cb07c-115">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="1cf63-116">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="1cf63-116">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="cb07c-116">**Knihovna:** CorGuids. lib</span><span class="sxs-lookup"><span data-stu-id="cb07c-116">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="1cf63-117">**Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="1cf63-117">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
+ <span data-ttu-id="cb07c-117">**Verze .NET Framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="cb07c-117">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="1cf63-118">Viz také</span><span class="sxs-lookup"><span data-stu-id="1cf63-118">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="cb07c-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="cb07c-118">See also</span></span>
 
-- [<span data-ttu-id="1cf63-119">FunkceEnter3WithInfo</span><span class="sxs-lookup"><span data-stu-id="1cf63-119">FunctionEnter3WithInfo</span></span>](functionenter3withinfo-function.md)
-- [<span data-ttu-id="1cf63-120">FunkceLeave3WithInfo</span><span class="sxs-lookup"><span data-stu-id="1cf63-120">FunctionLeave3WithInfo</span></span>](functionleave3withinfo-function.md)
-- [<span data-ttu-id="1cf63-121">FunkceTailcall3WithInfo</span><span class="sxs-lookup"><span data-stu-id="1cf63-121">FunctionTailcall3WithInfo</span></span>](functiontailcall3withinfo-function.md)
-- [<span data-ttu-id="1cf63-122">ICorProfilerInfo3 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="1cf63-122">ICorProfilerInfo3 Interface</span></span>](icorprofilerinfo3-interface.md)
-- [<span data-ttu-id="1cf63-123">Rozhraní pro profilaci</span><span class="sxs-lookup"><span data-stu-id="1cf63-123">Profiling Interfaces</span></span>](profiling-interfaces.md)
-- [<span data-ttu-id="1cf63-124">Profilování</span><span class="sxs-lookup"><span data-stu-id="1cf63-124">Profiling</span></span>](index.md)
+- [<span data-ttu-id="cb07c-119">Functionenter3withinfo –</span><span class="sxs-lookup"><span data-stu-id="cb07c-119">FunctionEnter3WithInfo</span></span>](functionenter3withinfo-function.md)
+- [<span data-ttu-id="cb07c-120">Functionleave3withinfo –</span><span class="sxs-lookup"><span data-stu-id="cb07c-120">FunctionLeave3WithInfo</span></span>](functionleave3withinfo-function.md)
+- [<span data-ttu-id="cb07c-121">Functiontailcall3withinfo –</span><span class="sxs-lookup"><span data-stu-id="cb07c-121">FunctionTailcall3WithInfo</span></span>](functiontailcall3withinfo-function.md)
+- [<span data-ttu-id="cb07c-122">ICorProfilerInfo3 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="cb07c-122">ICorProfilerInfo3 Interface</span></span>](icorprofilerinfo3-interface.md)
+- [<span data-ttu-id="cb07c-123">Rozhraní pro profilaci</span><span class="sxs-lookup"><span data-stu-id="cb07c-123">Profiling Interfaces</span></span>](profiling-interfaces.md)
+- [<span data-ttu-id="cb07c-124">Profilace</span><span class="sxs-lookup"><span data-stu-id="cb07c-124">Profiling</span></span>](index.md)
