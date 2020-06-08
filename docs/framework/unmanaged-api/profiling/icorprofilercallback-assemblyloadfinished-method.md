@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 86d98f39-52e6-4c61-a625-9760f695ff12
 topic_type:
 - apiref
-ms.openlocfilehash: 15ce195af0c0e8f8777f6e5d02043e17e32308da
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: ce4a842bc71ff144e46efb0d6f7068dfca9d207d
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76866644"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84500439"
 ---
 # <a name="icorprofilercallbackassemblyloadfinished-method"></a>ICorProfilerCallback::AssemblyLoadFinished – metoda
 Upozorní profileru, že bylo dokončeno načítání sestavení.  
@@ -37,25 +37,25 @@ HRESULT AssemblyLoadFinished(
 
 - `assemblyId`
 
-  \[v] identifikuje načtené sestavení.
+  \[v] identifikuje sestavení, které bylo načteno.
 
 - `hrStatus`
 
-  \[in] hodnota HRESULT, která označuje, zda bylo sestavení úspěšně načteno.
+  \[in] HRESULT, který označuje, zda bylo sestavení úspěšně načteno.
 
 ## <a name="remarks"></a>Poznámky  
- Hodnota `assemblyId` není platná pro požadavek na informace, dokud není volána metoda `AssemblyLoadFinished`.  
+ Hodnota `assemblyId` není platná pro požadavek na informace, dokud `AssemblyLoadFinished` není volána metoda.  
   
- Některé části načtení sestavení mohou pokračovat po `AssemblyLoadFinished` zpětného volání. Selhání HRESULT v `hrStatus` označuje selhání. Úspěšnost HRESULT v `hrStatus` však znamená, že první část načítání sestavení byla úspěšná.  
+ Některé části načtení sestavení mohou pokračovat po `AssemblyLoadFinished` zpětném volání. Neúspěšná hodnota HRESULT v `hrStatus` znamená selhání. Úspěch HRESULT v v `hrStatus` znamená pouze to, že první část načítání sestavení byla úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorProf. idl, CorProf. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
