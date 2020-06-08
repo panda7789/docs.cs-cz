@@ -15,17 +15,17 @@ helpviewer_keywords:
 ms.assetid: 44eef087-f21f-4fe2-b481-f8a0ee022e7d
 topic_type:
 - apiref
-ms.openlocfilehash: c90c790c519cc0c422657e6e2d8040a365fbf48c
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: f025f4c0bc0ec8e11decddcdf64be50f68955266
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76865776"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84499802"
 ---
-# <a name="icorprofilercallback2garbagecollectionstarted-method"></a><span data-ttu-id="7c12f-102">ICorProfilerCallback2::GarbageCollectionStarted – metoda</span><span class="sxs-lookup"><span data-stu-id="7c12f-102">ICorProfilerCallback2::GarbageCollectionStarted Method</span></span>
-<span data-ttu-id="7c12f-103">Oznamuje profileru kódu, že se spustilo uvolňování paměti.</span><span class="sxs-lookup"><span data-stu-id="7c12f-103">Notifies the code profiler that garbage collection has started.</span></span>  
+# <a name="icorprofilercallback2garbagecollectionstarted-method"></a><span data-ttu-id="1ef4e-102">ICorProfilerCallback2::GarbageCollectionStarted – metoda</span><span class="sxs-lookup"><span data-stu-id="1ef4e-102">ICorProfilerCallback2::GarbageCollectionStarted Method</span></span>
+<span data-ttu-id="1ef4e-103">Oznamuje profileru kódu, že se spustilo uvolňování paměti.</span><span class="sxs-lookup"><span data-stu-id="1ef4e-103">Notifies the code profiler that garbage collection has started.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="7c12f-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7c12f-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="1ef4e-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="1ef4e-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GarbageCollectionStarted(  
@@ -34,33 +34,33 @@ HRESULT GarbageCollectionStarted(
     [in] COR_PRF_GC_REASON reason);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="7c12f-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="7c12f-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="1ef4e-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="1ef4e-105">Parameters</span></span>  
  `cGenerations`  
- <span data-ttu-id="7c12f-106">pro Celkový počet položek v poli `generationCollected`.</span><span class="sxs-lookup"><span data-stu-id="7c12f-106">[in] The total number of entries in the `generationCollected` array.</span></span>  
+ <span data-ttu-id="1ef4e-106">pro Celkový počet položek v `generationCollected` poli.</span><span class="sxs-lookup"><span data-stu-id="1ef4e-106">[in] The total number of entries in the `generationCollected` array.</span></span>  
   
  `generationCollected`  
- <span data-ttu-id="7c12f-107">pro Pole logických hodnot, které jsou `true`, pokud je generace, která odpovídá indexu pole, shromažďována tímto uvolňováním paměti; v opačném případě `false`.</span><span class="sxs-lookup"><span data-stu-id="7c12f-107">[in] An array of Boolean values, which are `true` if the generation that corresponds to the array index is being collected by this garbage collection; otherwise, `false`.</span></span>  
+ <span data-ttu-id="1ef4e-107">pro Pole logických hodnot, které jsou `true` v případě, že je kolekce, která odpovídá indexu pole, shromažďována tímto uvolňováním paměti; v opačném případě `false` .</span><span class="sxs-lookup"><span data-stu-id="1ef4e-107">[in] An array of Boolean values, which are `true` if the generation that corresponds to the array index is being collected by this garbage collection; otherwise, `false`.</span></span>  
   
- <span data-ttu-id="7c12f-108">Pole je indexováno hodnotou [COR_PRF_GC_GENERATION](cor-prf-gc-generation-enumeration.md) výčtu, což označuje generaci.</span><span class="sxs-lookup"><span data-stu-id="7c12f-108">The array is indexed by a value of the [COR_PRF_GC_GENERATION](cor-prf-gc-generation-enumeration.md) enumeration, which indicates the generation.</span></span>  
+ <span data-ttu-id="1ef4e-108">Pole je indexováno hodnotou [COR_PRF_GC_GENERATION](cor-prf-gc-generation-enumeration.md) výčtu, což označuje generaci.</span><span class="sxs-lookup"><span data-stu-id="1ef4e-108">The array is indexed by a value of the [COR_PRF_GC_GENERATION](cor-prf-gc-generation-enumeration.md) enumeration, which indicates the generation.</span></span>  
   
  `reason`  
- <span data-ttu-id="7c12f-109">pro Hodnota výčtu [COR_PRF_GC_REASON](cor-prf-gc-reason-enumeration.md) , která označuje důvod vystavení uvolňování paměti.</span><span class="sxs-lookup"><span data-stu-id="7c12f-109">[in] A value of the [COR_PRF_GC_REASON](cor-prf-gc-reason-enumeration.md) enumeration that indicates the reason the garbage collection was induced.</span></span>  
+ <span data-ttu-id="1ef4e-109">pro Hodnota výčtu [COR_PRF_GC_REASON](cor-prf-gc-reason-enumeration.md) , která označuje důvod vystavení uvolňování paměti.</span><span class="sxs-lookup"><span data-stu-id="1ef4e-109">[in] A value of the [COR_PRF_GC_REASON](cor-prf-gc-reason-enumeration.md) enumeration that indicates the reason the garbage collection was induced.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="7c12f-110">Poznámky</span><span class="sxs-lookup"><span data-stu-id="7c12f-110">Remarks</span></span>  
- <span data-ttu-id="7c12f-111">Všechna zpětná volání, která souvisí s tímto uvolňováním paměti, budou provedena mezi `GarbageCollectionStarted`ovým zpětným voláním a odpovídajícím voláním [ICorProfilerCallback2:: GarbageCollectionFinished –](icorprofilercallback2-garbagecollectionfinished-method.md) .</span><span class="sxs-lookup"><span data-stu-id="7c12f-111">All callbacks that pertain to this garbage collection will occur between the `GarbageCollectionStarted` callback and the corresponding [ICorProfilerCallback2::GarbageCollectionFinished](icorprofilercallback2-garbagecollectionfinished-method.md) callback.</span></span> <span data-ttu-id="7c12f-112">Tato zpětná volání nemusí být ve stejném vlákně.</span><span class="sxs-lookup"><span data-stu-id="7c12f-112">These callbacks need not occur on the same thread.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="1ef4e-110">Poznámky</span><span class="sxs-lookup"><span data-stu-id="1ef4e-110">Remarks</span></span>  
+ <span data-ttu-id="1ef4e-111">Všechna zpětná volání, která se týkají tohoto uvolňování paměti, proběhnou mezi `GarbageCollectionStarted` zpětným voláním a odpovídajícím voláním [ICorProfilerCallback2:: GarbageCollectionFinished –](icorprofilercallback2-garbagecollectionfinished-method.md) .</span><span class="sxs-lookup"><span data-stu-id="1ef4e-111">All callbacks that pertain to this garbage collection will occur between the `GarbageCollectionStarted` callback and the corresponding [ICorProfilerCallback2::GarbageCollectionFinished](icorprofilercallback2-garbagecollectionfinished-method.md) callback.</span></span> <span data-ttu-id="1ef4e-112">Tato zpětná volání nemusí být ve stejném vlákně.</span><span class="sxs-lookup"><span data-stu-id="1ef4e-112">These callbacks need not occur on the same thread.</span></span>  
   
- <span data-ttu-id="7c12f-113">Profiler je bezpečně kontrolovat objekty v původních umístěních během `GarbageCollectionStarted` zpětného volání.</span><span class="sxs-lookup"><span data-stu-id="7c12f-113">It is safe for the profiler to inspect objects in their original locations during the `GarbageCollectionStarted` callback.</span></span> <span data-ttu-id="7c12f-114">Systém uvolňování paměti začne přesouvat objekty po návratu z `GarbageCollectionStarted`.</span><span class="sxs-lookup"><span data-stu-id="7c12f-114">The garbage collector will begin moving objects after the return from `GarbageCollectionStarted`.</span></span> <span data-ttu-id="7c12f-115">Až se Profiler vrátí z tohoto zpětného volání, Profiler by měl považovat všechna ID objektů za neplatnou, dokud neobdrží zpětné volání `ICorProfilerCallback2::GarbageCollectionFinished`.</span><span class="sxs-lookup"><span data-stu-id="7c12f-115">After the profiler has returned from this callback, the profiler should consider all object IDs to be invalid until it receives a `ICorProfilerCallback2::GarbageCollectionFinished` callback.</span></span>  
+ <span data-ttu-id="1ef4e-113">Profiler je bezpečně kontrolovat objekty v původních umístěních během `GarbageCollectionStarted` zpětného volání.</span><span class="sxs-lookup"><span data-stu-id="1ef4e-113">It is safe for the profiler to inspect objects in their original locations during the `GarbageCollectionStarted` callback.</span></span> <span data-ttu-id="1ef4e-114">Systém uvolňování paměti začne přesouvat objekty po návratu z `GarbageCollectionStarted` .</span><span class="sxs-lookup"><span data-stu-id="1ef4e-114">The garbage collector will begin moving objects after the return from `GarbageCollectionStarted`.</span></span> <span data-ttu-id="1ef4e-115">Po návratu profileru z tohoto zpětného volání by měl Profiler považovat všechna ID objektů za neplatnou, dokud neobdrží `ICorProfilerCallback2::GarbageCollectionFinished` zpětné volání.</span><span class="sxs-lookup"><span data-stu-id="1ef4e-115">After the profiler has returned from this callback, the profiler should consider all object IDs to be invalid until it receives a `ICorProfilerCallback2::GarbageCollectionFinished` callback.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="7c12f-116">Požadavky</span><span class="sxs-lookup"><span data-stu-id="7c12f-116">Requirements</span></span>  
- <span data-ttu-id="7c12f-117">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="7c12f-117">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="1ef4e-116">Požadavky</span><span class="sxs-lookup"><span data-stu-id="1ef4e-116">Requirements</span></span>  
+ <span data-ttu-id="1ef4e-117">**Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="1ef4e-117">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="7c12f-118">**Hlavička:** CorProf. idl, CorProf. h</span><span class="sxs-lookup"><span data-stu-id="7c12f-118">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="1ef4e-118">**Hlavička:** CorProf. idl, CorProf. h</span><span class="sxs-lookup"><span data-stu-id="1ef4e-118">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="7c12f-119">**Knihovna:** CorGuids. lib</span><span class="sxs-lookup"><span data-stu-id="7c12f-119">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="1ef4e-119">**Knihovna:** CorGuids. lib</span><span class="sxs-lookup"><span data-stu-id="1ef4e-119">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="7c12f-120">**Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="7c12f-120">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="1ef4e-120">**Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="1ef4e-120">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="7c12f-121">Viz také:</span><span class="sxs-lookup"><span data-stu-id="7c12f-121">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="1ef4e-121">Viz také:</span><span class="sxs-lookup"><span data-stu-id="1ef4e-121">See also</span></span>
 
-- [<span data-ttu-id="7c12f-122">ICorProfilerCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="7c12f-122">ICorProfilerCallback Interface</span></span>](icorprofilercallback-interface.md)
-- [<span data-ttu-id="7c12f-123">ICorProfilerCallback2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="7c12f-123">ICorProfilerCallback2 Interface</span></span>](icorprofilercallback2-interface.md)
+- [<span data-ttu-id="1ef4e-122">ICorProfilerCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="1ef4e-122">ICorProfilerCallback Interface</span></span>](icorprofilercallback-interface.md)
+- [<span data-ttu-id="1ef4e-123">ICorProfilerCallback2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="1ef4e-123">ICorProfilerCallback2 Interface</span></span>](icorprofilercallback2-interface.md)
