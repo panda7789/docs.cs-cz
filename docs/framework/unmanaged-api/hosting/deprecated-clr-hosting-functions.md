@@ -7,12 +7,12 @@ helpviewer_keywords:
 - .NET Framework 2.0, hosting global static functions
 - hosting global static functions [.NET Framework], version 2.0
 ms.assetid: 91fbbb35-e543-4814-b806-371cebae8c5a
-ms.openlocfilehash: 8925278bdf4d48efc9e589ffc4e181d904444e6b
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 083d0ff285abb4a99ad05c791bc504ff7f282c6a
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616421"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504365"
 ---
 # <a name="deprecated-clr-hosting-functions"></a>Zastaralé funkce hostování CLR
 Tato část popisuje nespravované globální statické funkce, které používají starší verze rozhraní API pro hostování.  
@@ -24,7 +24,7 @@ Tato část popisuje nespravované globální statické funkce, které používa
  Zastaralé Vytvoří instanci zadaného spravovaného typu.  
   
  [CoInitializeCor – funkce](coinitializecor-function.md)  
- Zastaralé. Chcete-li inicializovat modul CLR (Common Language Runtime), použijte buď [CorBindToRuntimeEx –](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) nebo [CorBindToCurrentRuntime –](corbindtocurrentruntime-function.md).  
+ Zastaralé. Chcete-li inicializovat modul CLR (Common Language Runtime), použijte buď [CorBindToRuntimeEx –](corbindtoruntimeex-function.md) nebo [CorBindToCurrentRuntime –](corbindtocurrentruntime-function.md).  
   
  [CoInitializeEE – funkce](coinitializeee-function.md)  
  Zastaralé Zajišťuje, aby byl spouštěcí modul modulu CLR načten do procesu. Místo toho použijte metodu [ICLRRuntimeHost:: Start](iclrruntimehost-start-method.md) .  
@@ -156,6 +156,6 @@ Tato část popisuje nespravované globální statické funkce, které používa
  [_CorValidateImage – funkce](corvalidateimage-function.md)  
  Ověří bitové kopie spravovaného modulu a upozorní zavaděče operačního systému poté, co byly načteny.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Globální statické funkce .NET Framework 4 pro hostování](net-framework-4-hosting-global-static-functions.md)

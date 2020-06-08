@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0f9bde1d-e306-438d-941b-d0925b322304
 topic_type:
 - apiref
-ms.openlocfilehash: 53b3d94e8b1e273fcbc041d25a5bf586a12735c0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c2ec907759a25048444ebcc81bf5bb0fd23ced58
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177254"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503650"
 ---
 # <a name="imetadataimportfindmethod-method"></a>IMetaDataImport::FindMethod – metoda
-Získá ukazatel na MethodDef token pro metodu, která <xref:System.Type> je uzavřena zadaný a který má zadaný název a metadata podpisu.  
+Získá ukazatel na token MethodDef pro metodu, která je ohraničena specifikovanou <xref:System.Type> a, která má zadaný název a signaturu metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,38 +39,38 @@ HRESULT FindMethod (
   
 ## <a name="parameters"></a>Parametry  
  `td`  
- [v] Token `mdTypeDef` pro typ (třída nebo rozhraní), který obklopuje člena hledat. Pokud je `mdTokenNil`tato hodnota , pak vyhledávání se provádí pro globální funkce.  
+ pro `mdTypeDef`Token pro typ (třída nebo rozhraní), který obklopuje člena k hledání. Pokud je tato hodnota `mdTokenNil` , pak se pro globální funkci provede vyhledávání.  
   
  `szName`  
- [v] Název metody, kterou chcete vyhledat.  
+ pro Název metody, která se má vyhledat.  
   
  `pvSigBlob`  
- [v] Ukazatel na podpis binárních metadat metody.  
+ pro Ukazatel na binární podpis metadat metody.  
   
  `cbSigBlob`  
- [v] Velikost v bajtů `pvSigBlob`.  
+ pro Velikost v bajtech `pvSigBlob` .  
   
  `pmb`  
- [out] Ukazatel na odpovídající token MethodDef.  
+ mimo Ukazatel na shodný token MethodDef.  
   
 ## <a name="remarks"></a>Poznámky  
- Metodu určíte pomocí její ohraničující třídy nebo rozhraní (`td`), její název (`szName`) a volitelně její podpis (`pvSigBlob`). Ve třídě nebo rozhraní může existovat více metod se stejným názvem. V takovém případě předavěte podpis metody a najděte jedinečnou shodu.  
+ Zadejte metodu pomocí své nadřazené třídy nebo rozhraní () `td` , jejího názvu ( `szName` ) a volitelně její signatura ( `pvSigBlob` ). V rámci třídy nebo rozhraní může existovat více metod se stejným názvem. V takovém případě předejte signaturu metody, abyste našli jedinečnou shodu.  
   
- Předaný `FindMethod` podpis musí být vygenerován v aktuálním oboru, protože podpisy jsou vázány na určitý obor. Podpis může vložit token, který identifikuje ohraničující třídu nebo typ hodnoty. Token je index do místní tabulky TypeDef. Nelze vytvořit podpis za běhu mimo kontext aktuálního oboru a použít tento `FindMethod`podpis jako vstup pro vstup do aplikace .  
+ Signatura předaná do `FindMethod` musí být vygenerována v aktuálním oboru, protože signatury jsou vázány na konkrétní obor. Podpis může vložit token, který identifikuje ohraničující třídu nebo typ hodnoty. Token je index do místní tabulky TypeDef. Nemůžete sestavit signaturu za běhu mimo kontext aktuálního oboru a použít ho jako vstup pro vstup do `FindMethod` .  
   
- `FindMethod`vyhledá pouze metody, které byly definovány přímo ve třídě nebo rozhraní; nenalezne zděděné metody.  
+ `FindMethod`najde pouze metody, které byly definovány přímo ve třídě nebo rozhraní; nenalezne zděděné metody.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Zahrnuto jako prostředek v souboru MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.Reflection.MethodInfo>
-- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport – rozhraní](imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](imetadataimport2-interface.md)

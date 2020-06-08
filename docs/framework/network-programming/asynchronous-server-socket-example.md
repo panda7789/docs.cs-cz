@@ -1,5 +1,6 @@
 ---
 title: Příklad asynchronního serverového soketu
+description: V tomto příkladu .NET Framework program vytvoří server, který přijímá připojení od klientů pomocí asynchronního soketu. Přijímá a vrací řetězec.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,15 +10,15 @@ helpviewer_keywords:
 - sockets, code examples
 - asynchronous server sockets
 ms.assetid: 13624cd3-f5c5-4950-8cda-31273b1fa6d1
-ms.openlocfilehash: 8a9a3cb26968c548aa971bac548313a459c2fdf6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 089de8ce9629e30cb6e4458c0f9a4613c9674a21
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79180901"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502714"
 ---
 # <a name="asynchronous-server-socket-example"></a>Příklad asynchronního serverového soketu
-Následující ukázkový program vytvoří server, který přijímá požadavky na připojení od klientů. Server je sestaven s asynchronním soketem, takže spuštění serverové aplikace není pozastaveno, zatímco čeká na připojení z klienta. Aplikace obdrží řetězec od klienta, zobrazí řetězec na konzole a pak vrátí řetězec zpět klientovi. Řetězec od klienta musí obsahovat řetězec "EOF\<>" signalizovat konec zprávy.  
+Následující ukázkový program vytvoří server, který přijímá žádosti o připojení od klientů. Server je sestaven pomocí asynchronního soketu, takže spuštění serverové aplikace není pozastavené, když čeká na připojení z klienta. Aplikace přijme řetězec z klienta, zobrazí řetězec v konzole nástroje a potom vrátí řetězec zpátky klientovi. Řetězec z klienta musí obsahovat řetězec " \<EOF> " k signalizaci konce zprávy.  
   
 ```vb  
 Imports System  
@@ -289,7 +290,7 @@ public class AsynchronousSocketListener {
 }  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Příklad asynchronního klientského soketu](asynchronous-client-socket-example.md)
 - [Použití asynchronního serverového soketu](using-an-asynchronous-server-socket.md)

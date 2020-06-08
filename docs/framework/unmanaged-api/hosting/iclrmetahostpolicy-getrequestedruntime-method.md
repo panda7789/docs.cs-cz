@@ -15,16 +15,16 @@ helpviewer_keywords:
 ms.assetid: 59ec1832-9cc1-4b5c-983d-03407e51de56
 topic_type:
 - apiref
-ms.openlocfilehash: 52da5ec7ccd6ce48871e13a94f5957fa00d2a613
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: 37167b7a9aefa6cd9d5e4df043e8bbc1b0514261
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83703546"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504118"
 ---
 # <a name="iclrmetahostpolicygetrequestedruntime-method"></a>ICLRMetaHostPolicy::GetRequestedRuntime – metoda
 
-Poskytuje rozhraní pro upřednostňovanou verzi modulu CLR (Common Language Runtime) na základě zásad hostování, spravovaného sestavení, řetězce verze a konfiguračního streamu. Tato metoda ve skutečnosti nenačítá ani neaktivuje CLR, ale jednoduše vrátí rozhraní [ICLRRuntimeInfo](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md) , které představuje výsledek zásady. Tato metoda nahrazuje metody [GetRequestedRuntimeInfo –](../../../../docs/framework/unmanaged-api/hosting/getrequestedruntimeinfo-function.md), [GetRequestedRuntimeVersion –](../../../../docs/framework/unmanaged-api/hosting/getrequestedruntimeversion-function.md), [CorBindToRuntimeHost –](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimehost-function.md), [CorBindToRuntimeByCfg –](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimebycfg-function.md)a [GetCORRequiredVersion –](getcorrequiredversion-function.md) .
+Poskytuje rozhraní pro upřednostňovanou verzi modulu CLR (Common Language Runtime) na základě zásad hostování, spravovaného sestavení, řetězce verze a konfiguračního streamu. Tato metoda ve skutečnosti nenačítá ani neaktivuje CLR, ale jednoduše vrátí rozhraní [ICLRRuntimeInfo](iclrruntimeinfo-interface.md) , které představuje výsledek zásady. Tato metoda nahrazuje metody [GetRequestedRuntimeInfo –](getrequestedruntimeinfo-function.md), [GetRequestedRuntimeVersion –](getrequestedruntimeversion-function.md), [CorBindToRuntimeHost –](corbindtoruntimehost-function.md), [CorBindToRuntimeByCfg –](corbindtoruntimebycfg-function.md)a [GetCORRequiredVersion –](getcorrequiredversion-function.md) .
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -44,7 +44,7 @@ HRESULT GetRequestedRuntime(
 
 ## <a name="parameters"></a>Parametry
 
-|Name|Popis|
+|Name|Description|
 |----------|-----------------|
 |`dwPolicyFlags`|pro Požadovanou. Určuje člen výčtu [METAHOST_POLICY_FLAGS](metahost-policy-flags-enumeration.md) , který představuje zásadu vazby a libovolný počet modifikátorů. Jediná zásada, která je aktuálně dostupná, je [METAHOST_POLICY_HIGHCOMPAT](metahost-policy-flags-enumeration.md).<br /><br /> Mezi modifikátory patří [METAHOST_POLICY_EMULATE_EXE_LAUNCH](metahost-policy-flags-enumeration.md), [METAHOST_POLICY_APPLY_UPGRADE_POLICY](metahost-policy-flags-enumeration.md), [METAHOST_POLICY_SHOW_ERROR_DIALOG](metahost-policy-flags-enumeration.md), [METAHOST_POLICY_USE_PROCESS_IMAGE_PATH](metahost-policy-flags-enumeration.md)a [METAHOST_POLICY_ENSURE_SKU_SUPPORTED](metahost-policy-flags-enumeration.md).|
 |`pwzBinary`|pro Volitelné. Určuje cestu k souboru sestavení.|
@@ -53,7 +53,7 @@ HRESULT GetRequestedRuntime(
 |`pcchVersion`|[in, out] Požadovanou. Určuje očekávanou velikost `pwzVersion` jako vstup, aby nedošlo k přetečení vyrovnávací paměti. Pokud `pwzVersion` je null, `pcchVersion` obsahuje očekávanou velikost `pwzVersion` při `GetRequestedRuntime` návratu, aby bylo možné předběžné přidělení; v opačném případě `pcchVersion` obsahuje počet znaků zapsaných do `pwzVersion` .|
 |`pwzImageVersion`|mimo Volitelné. Při `GetRequestedRuntime` návratu obsahuje verzi CLR odpovídající rozhraní [ICLRRuntimeInfo](iclrruntimeinfo-interface.md) , které je vráceno.|
 |`pcchImageVersion`|[in, out] Volitelné. Určuje velikost `pwzImageVersion` jako vstup, aby se předešlo přetečení vyrovnávací paměti. Pokud `pwzImageVersion` je null, `pcchImageVersion` obsahuje požadovanou velikost `pwzImageVersion` při `GetRequestedRuntime` návratu, aby bylo možné předběžné přidělení.|
-|`pdwConfigFlags`|mimo Volitelné. Pokud nástroj `GetRequestedRuntime` používá konfigurační soubor během procesu vytváření vazby, `pdwConfigFlags` obsahuje hodnotu [METAHOST_CONFIG_FLAGS](metahost-config-flags-enumeration.md) , která označuje, zda má element [ \< Startup>](../../../../docs/framework/configure-apps/file-schema/startup/startup-element.md) `useLegacyV2RuntimeActivationPolicy` nastaven atribut a hodnotu atributu. Použijte [METAHOST_CONFIG_FLAGS_LEGACY_V2_ACTIVATION_POLICY_MASK](metahost-config-flags-enumeration.md) masku pro `pdwConfigFlags` k získání hodnot relevantních pro `useLegacyV2RuntimeActivationPolicy` .|
+|`pdwConfigFlags`|mimo Volitelné. Pokud `GetRequestedRuntime` Nástroj používá konfigurační soubor během procesu vytváření vazby, `pdwConfigFlags` obsahuje hodnotu [METAHOST_CONFIG_FLAGS](metahost-config-flags-enumeration.md) , která označuje, zda má [\<startup>](../../configure-apps/file-schema/startup/startup-element.md) prvek `useLegacyV2RuntimeActivationPolicy` nastaven atribut a hodnotu atributu. Použijte [METAHOST_CONFIG_FLAGS_LEGACY_V2_ACTIVATION_POLICY_MASK](metahost-config-flags-enumeration.md) masku pro `pdwConfigFlags` k získání hodnot relevantních pro `useLegacyV2RuntimeActivationPolicy` .|
 |`riid`|pro Určuje identifikátor rozhraní IID_ICLRRuntimeInfo pro požadované rozhraní [ICLRRuntimeInfo](iclrruntimeinfo-interface.md) .|
 |`ppRuntime`|mimo Při `GetRequestedRuntime` návratu obsahuje ukazatel na odpovídající rozhraní [ICLRRuntimeInfo](iclrruntimeinfo-interface.md) .|
 
@@ -73,7 +73,7 @@ Výsledná výchozí `STARTUP_FLAGS` hodnota je bitová nebo kombinace hodnot, k
 
 Tato metoda vrací následující konkrétní hodnoty HRESULT a také chyby HRESULT, které naznačují selhání metody.
 
-|HRESULT|Popis|
+|HRESULT|Description|
 |-------------|-----------------|
 |S_OK|Metoda byla úspěšně dokončena.|
 |E_POINTER|`pwzVersion`nemá hodnotu null a `pcchVersion` má hodnotu null.<br /><br /> -nebo-<br /><br /> `pwzImageVersion`nemá hodnotu null a `pcchImageVersion` má hodnotu null.|
@@ -91,9 +91,9 @@ Tato metoda vrací následující konkrétní hodnoty HRESULT a také chyby HRES
 
 **Verze .NET Framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [ICLRMetaHostPolicy – rozhraní](iclrmetahostpolicy-interface.md)
 - [Rozhraní pro hostování CLR přidaná do .NET Framework 4 a 4.5](clr-hosting-interfaces-added-in-the-net-framework-4-and-4-5.md)
 - [Rozhraní pro hostování](hosting-interfaces.md)
-- [Hostování](index.md)
+- [Hosting](index.md)

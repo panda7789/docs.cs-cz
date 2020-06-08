@@ -6,12 +6,12 @@ helpviewer_keywords:
 - enumerations [.NET Framework hosting]
 - hosting enumerations [.NET Framework]
 ms.assetid: e09131eb-1f7d-4f52-ae42-7393e9b62ef6
-ms.openlocfilehash: e6fb22f91d57a356a9a7c3749e44a9fb3c36b699
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 8edace3191ee4477b19f199d5db6c891c993dcd5
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616109"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504300"
 ---
 # <a name="hosting-enumerations"></a>Výčty hostování
 Tato část popisuje nespravované výčty, které používá rozhraní API pro hostování.  
@@ -72,13 +72,13 @@ Tato část popisuje nespravované výčty, které používá rozhraní API pro 
  Obsahuje hodnoty, které indikují dopad selhání při požadavku na přidělení konkrétní paměti, ale nelze je splnit.  
   
  [EPolicyAction – výčet](epolicyaction-enumeration.md)  
- Popisuje akce zásad, které může hostitel nastavit pro operace popsané ve [výčtu EClrOperation –](../../../../docs/framework/unmanaged-api/hosting/eclroperation-enumeration.md) a chyby popsané ve [výčtu EClrFailure –](eclrfailure-enumeration.md).  
+ Popisuje akce zásad, které může hostitel nastavit pro operace popsané ve [výčtu EClrOperation –](eclroperation-enumeration.md) a chyby popsané ve [výčtu EClrFailure –](eclrfailure-enumeration.md).  
   
  [ESymbolReadingPolicy – výčet](esymbolreadingpolicy-enumeration.md)  
  Obsahuje hodnoty, které nastavují zásady pro soubory programu pro čtení databáze programu (PDB).  
   
  [ETaskType – výčet](etasktype-enumeration.md)  
- Obsahuje hodnoty, které označují druh úlohy reprezentované [rozhraním ICLRTask](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) nebo rozhraním [rozhraní IHostTask](ihosttask-interface.md) .  
+ Obsahuje hodnoty, které označují druh úlohy reprezentované [rozhraním ICLRTask](iclrtask-interface.md) nebo rozhraním [rozhraní IHostTask](ihosttask-interface.md) .  
   
  [HOST_TYPE – výčet](host-type-enumeration.md)  
  Obsahuje hodnoty, které určují typ hostitele, který spouští aplikaci.  

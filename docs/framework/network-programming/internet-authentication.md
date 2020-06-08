@@ -1,5 +1,6 @@
 ---
 title: Ověřování v internetu
+description: Přečtěte si o nejrůznějších mechanismech ověřování klientů, které System.Net třídy podporují pro vaše aplikace v .NET Framework.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - authentication [.NET Framework], classes
@@ -15,32 +16,32 @@ helpviewer_keywords:
 - NetworkCredential class, about NetworkCredential class
 - client authentication, classes for authentication
 ms.assetid: d342e87c-f672-4660-a513-41a2f2b80c4a
-ms.openlocfilehash: 3e0b5cd58270cec758db5d4dad6f3ad48962921a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a1f0829aa0e9e4bcc68168b73443578c3a34310b
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "71047910"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502376"
 ---
 # <a name="internet-authentication"></a>Ověřování v internetu
-Třídy <xref:System.Net> podporují různé mechanismy ověřování klientů, včetně standardních metod ověřování v Internetu základní, digest, vyjednávat, NTLM a Kerberos ověřování, stejně jako vlastní metody, které můžete vytvořit.  
+<xref:System.Net>Třídy podporují různé mechanismy ověřování klientů, včetně standardních metod ověřování v Internetu Basic, Digest, Negotiate, NTLM a Kerberos a také vlastních metod, které můžete vytvořit.  
   
- Ověřovací pověření jsou <xref:System.Net.NetworkCredential> uloženy <xref:System.Net.CredentialCache> v a <xref:System.Net.ICredentials> třídy, které implementují rozhraní. Pokud je jedna z těchto tříd dotazována na pověření, vrátí instanci třídy **NetworkCredential.** Proces ověřování je spravován <xref:System.Net.AuthenticationManager> třídou a skutečný proces ověřování je prováděn třídou <xref:System.Net.IAuthenticationModule> ověřovacího modulu, která implementuje rozhraní. Před použitím nástroje AuthenticationManager je nutné zaregistrovat vlastní ověřovací modul u **nástroje AuthenticationManager.** moduly pro základní, digest, vyjednávat, NTLM a Kerberos metody ověřování jsou registrovány ve výchozím nastavení.  
+ Přihlašovací údaje pro ověřování jsou uloženy <xref:System.Net.NetworkCredential> v <xref:System.Net.CredentialCache> třídách a, které implementují <xref:System.Net.ICredentials> rozhraní. Pokud je jedna z těchto tříd dotazována pro přihlašovací údaje, vrátí instanci třídy **NetworkCredential** . Proces ověřování je spravován <xref:System.Net.AuthenticationManager> třídou a skutečný proces ověřování provádí třída ověřovacího modulu, která implementuje <xref:System.Net.IAuthenticationModule> rozhraní. Před použitím **správce AuthenticationManager** musíte zaregistrovat vlastní ověřovací modul. ve výchozím nastavení jsou zaregistrované moduly pro metody ověřování Basic, Digest, Negotiate, NTLM a Kerberos.  
   
- **NetworkCredential** ukládá sadu pověření přidružených k jednomu prostředku Sítě Internet identifikovaným identifikátorem <xref:System.Net.NetworkCredential.GetCredential%2A> URI a vrátí je jako odpověď na jakékoli volání metody. Třída **NetworkCredential** je obvykle používána aplikacemi, které přistupují k omezenému počtu internetových prostředků, nebo aplikacemi, které ve všech případech používají stejnou sadu pověření.  
+ **NetworkCredential** ukládá sadu přihlašovacích údajů přidružených k jednomu internetovému prostředku IDENTIFIKOVANÉmu identifikátorem URI a vrátí je jako odpověď na jakékoli volání <xref:System.Net.NetworkCredential.GetCredential%2A> metody. Třída **NetworkCredential** se obvykle používá aplikacemi, které přistupují k omezenému počtu internetových prostředků nebo aplikací, které používají stejnou sadu přihlašovacích údajů ve všech případech.  
   
- Třída **CredentialCache** ukládá kolekci pověření pro různé webové prostředky. Při <xref:System.Net.CredentialCache.GetCredential%2A> volání metody **vrátí credentialcache** správnou sadu pověření, jak je určeno identifikátorem URI webového prostředku a požadované schéma ověřování. Aplikace, které používají různé internetové prostředky s různými schématy ověřování, mají prospěch z použití třídy **CredentialCache,** protože ukládá všechna pověření a poskytuje je podle požadavků.  
+ Třída **CredentialCache** ukládá kolekci přihlašovacích údajů pro různé webové prostředky. Když <xref:System.Net.CredentialCache.GetCredential%2A> je metoda volána, **CredentialCache** vrátí správnou sadu přihlašovacích údajů, jak je určeno identifikátorem URI webového prostředku a požadované schéma ověřování. Aplikace, které používají nejrůznější internetové prostředky s různými schématy ověřování, využívají používání třídy **CredentialCache** , protože ukládají všechny přihlašovací údaje a poskytují je podle požadavků.  
   
- Když internetový prostředek požaduje ověření, <xref:System.Net.WebRequest.GetResponse%2A?displayProperty=nameWithType> metoda <xref:System.Net.WebRequest> odešle správce **ověřování** spolu s požadavkem na pověření. Požadavek je pak ověřen následujícím postupem:  
+ Když prostředek v Internetu požaduje ověřování, <xref:System.Net.WebRequest.GetResponse%2A?displayProperty=nameWithType> Metoda pošle <xref:System.Net.WebRequest> do **správce AuthenticationManager** spolu s požadavkem na přihlašovací údaje. Požadavek se pak ověří podle následujícího postupu:  
   
-1. **Správce ověřování** volá <xref:System.Net.IAuthenticationModule.Authenticate%2A> metodu pro každý z registrovaných ověřovacích modulů v pořadí, v jakém byly zaregistrovány. **Správce ověřování** používá první modul, který nevrací **hodnotu null** k provedení procesu ověřování. Podrobnosti procesu se liší v závislosti na typu autentizačního modulu.  
+1. **Správce AuthenticationManager** volá <xref:System.Net.IAuthenticationModule.Authenticate%2A> metodu na všech registrovaných ověřovacích modulech v pořadí, v jakém byly registrovány. **Správce AuthenticationManager** používá první modul, který nevrací **hodnotu null** k provedení procesu ověřování. Podrobnosti o procesu se liší v závislosti na typu zapojeného modulu ověřování.  
   
-2. Po dokončení procesu ověřování vrátí ověřovací <xref:System.Net.Authorization> modul **a webRequest,** který obsahuje informace potřebné pro přístup k prostředku Sítě Internet.  
+2. Po dokončení procesu ověřování vrátí modul ověřování objekt <xref:System.Net.Authorization> **WebRequest** , který obsahuje informace potřebné pro přístup k internetovému prostředku.  
   
- Některá schémata ověřování můžete ověřit uživatele bez předchozího podání požadavku na prostředek. Aplikace může ušetřit čas tím, že předem osunutí uživatele s prostředek, čímž se eliminuje alespoň jeden zpáteční cestu na server. Nebo může provádět ověřování během spuštění programu, aby byl později lépe reagující na uživatele. Schémata ověřování, která mohou <xref:System.Net.IAuthenticationModule.PreAuthenticate%2A> používat předběžné ověřování, nastavují vlastnost na **hodnotu true**.  
+ Některá schémata ověřování mohou ověřit uživatele bez prvotního vytvoření žádosti o prostředek. Aplikace může ušetřit čas tím, že předověřuje uživatele s prostředkem, čímž eliminuje alespoň jednu zpáteční cestu k serveru. Nebo může provádět ověřování během spouštění programu, aby bylo možné později reagovat na uživatele. Schémata ověřování, která můžou použít předběžné ověřování, nastaví <xref:System.Net.IAuthenticationModule.PreAuthenticate%2A> vlastnost na **hodnotu true**.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Základní a digest ověřování](basic-and-digest-authentication.md)
+- [Základní ověřování a ověřování algoritmem Digest](basic-and-digest-authentication.md)
 - [Ověřování NTLM a Kerberos](ntlm-and-kerberos-authentication.md)
 - [Zabezpečení v síťovém programování](security-in-network-programming.md)

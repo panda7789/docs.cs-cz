@@ -14,19 +14,19 @@ helpviewer_keywords:
 ms.assetid: 4a0b05b9-3ef1-4607-b7c8-bd4dd43647a0
 topic_type:
 - apiref
-ms.openlocfilehash: b742f717f4caa0ba23d5a4c1438ed3ce4dcc60d7
-ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
+ms.openlocfilehash: 190908c675b96b8ea2d81fb0203aa16a80d6a8b4
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83842254"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501394"
 ---
 # <a name="ihosttaskmanager-interface"></a>IHostTaskManager – rozhraní
 Poskytuje metody, které umožňují modulu CLR (Common Language Runtime) pracovat s úlohami přes hostitele namísto použití standardních vláken operačního systému nebo funkcí vlákna.  
   
 ## <a name="methods"></a>Metody  
   
-|Metoda|Popis|  
+|Metoda|Description|  
 |------------|-----------------|  
 |[BeginDelayAbort – metoda](ihosttaskmanager-begindelayabort-method.md)|Upozorňuje hostitele, že spravovaný kód vstupuje do období, ve kterém musí být aktuální úloha přerušena.|  
 |[BeginThreadAffinity – metoda](ihosttaskmanager-beginthreadaffinity-method.md)|Upozorňuje hostitele, že spravovaný kód vstupuje do období, ve kterém se aktuální úloha nesmí přesunout do jiného vlákna operačního systému.|  
@@ -40,7 +40,7 @@ Poskytuje metody, které umožňují modulu CLR (Common Language Runtime) pracov
 |[LeaveRuntime – metoda](ihosttaskmanager-leaveruntime-method.md)|Upozorňuje hostitele, že spravovaný kód se chystá uskutečnit volání nespravované funkce.|  
 |[ReverseEnterRuntime – metoda](ihosttaskmanager-reverseenterruntime-method.md)|Upozorňuje hostitele, že je provedeno volání modulu CLR (Common Language Runtime) z nespravovaného kódu.|  
 |[ReverseLeaveRuntime – metoda](ihosttaskmanager-reverseleaveruntime-method.md)|Upozorňuje hostitele, že řízení opouští modul CLR a zadává nespravovanou funkci, která byla zase volána ze spravovaného kódu.|  
-|[SetCLRTaskManager – metoda](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-setclrtaskmanager-method.md)|Poskytuje hostitele s ukazatelem rozhraní na instanci [ICLRTaskManager](iclrtaskmanager-interface.md) implementované modulem CLR.|  
+|[SetCLRTaskManager – metoda](ihosttaskmanager-setclrtaskmanager-method.md)|Poskytuje hostitele s ukazatelem rozhraní na instanci [ICLRTaskManager](iclrtaskmanager-interface.md) implementované modulem CLR.|  
 |[SetLocale – metoda](ihosttaskmanager-setlocale-method.md)|Upozorňuje hostitele, že modul CLR změnil národní prostředí aktuální úlohy.|  
 |[SetStackGuarantee – metoda](ihosttaskmanager-setstackguarantee-method.md)|Vyhrazeno pouze pro interní použití.|  
 |[SetUILocale – metoda](ihosttaskmanager-setuilocale-method.md)|Upozorňuje hostitele, že národní prostředí uživatelského rozhraní bylo u aktuální úlohy změněno.|  
@@ -59,7 +59,7 @@ Poskytuje metody, které umožňují modulu CLR (Common Language Runtime) pracov
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [ICLRTask – rozhraní](iclrtask-interface.md)
 - [ICLRTaskManager – rozhraní](iclrtaskmanager-interface.md)

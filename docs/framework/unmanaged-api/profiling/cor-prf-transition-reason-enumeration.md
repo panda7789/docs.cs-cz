@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: da941118-01b7-4197-ae5b-9f2f8adcd623
 topic_type:
 - apiref
-ms.openlocfilehash: 1c3c311fd431b6c0b18af3d6516973b2471cfabd
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: e890c62a54654e86bb4a825613807efe142c8d5a
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76867043"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84500738"
 ---
 # <a name="cor_prf_transition_reason-enumeration"></a>COR_PRF_TRANSITION_REASON – výčet
 Označuje důvod přechodu ze spravovaného do nespravovaného kódu nebo naopak.  
@@ -35,19 +35,19 @@ typedef enum {
   
 ## <a name="members"></a>Členové  
   
-|Člen|Popis|  
+|Člen|Description|  
 |------------|-----------------|  
 |`COR_PRF_TRANSITION_CALL`|Přechod je způsoben voláním funkce.|  
 |`COR_PRF_TRANSITION_RETURN`|Přechod je způsoben návratem z funkce.|  
   
 ## <a name="remarks"></a>Poznámky  
- Když dojde k přechodu, Profiler obdrží zpětné volání [ICorProfilerCallback:: ManagedToUnmanagedTransition –](icorprofilercallback-managedtounmanagedtransition-method.md) nebo [ICorProfilerCallback:: UnmanagedToManagedTransition –](icorprofilercallback-unmanagedtomanagedtransition-method.md) , které poskytuje hodnotu výčtu `COR_PRF_TRANSITION_REASON` k označení důvodu přechodu.  
+ Když dojde k přechodu, Profiler obdrží zpětné volání [ICorProfilerCallback:: ManagedToUnmanagedTransition –](icorprofilercallback-managedtounmanagedtransition-method.md) nebo [ICorProfilerCallback:: UnmanagedToManagedTransition –](icorprofilercallback-unmanagedtomanagedtransition-method.md) , z nichž každá poskytuje hodnotu `COR_PRF_TRANSITION_REASON` výčtu k označení důvodu přechodu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorProf. idl, CorProf. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

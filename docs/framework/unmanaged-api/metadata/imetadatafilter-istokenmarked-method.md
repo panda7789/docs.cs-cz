@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 7d90dcee-0206-4540-807b-06982fe65f1a
 topic_type:
 - apiref
-ms.openlocfilehash: 47377e892aaf2bdd96a297630c47fe52215b0564
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: eb0ebab0f4e05d81730d5beb2b5345e319e8e274
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177385"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84492535"
 ---
 # <a name="imetadatafilteristokenmarked-method"></a>IMetaDataFilter::IsTokenMarked – metoda
-Získá hodnotu označující, zda byl zadaný token metadat označen jako zpracovaný.  
+Načte hodnotu, která označuje, jestli je zadaný token metadat označený jako zpracovaný.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,20 +36,20 @@ HRESULT IsTokenMarked (
   
 ## <a name="parameters"></a>Parametry  
  `tk`  
- [v] Token zkoumat pro značku zpracování.  
+ pro Token, který má být prověřen pro značku zpracování.  
   
  `pIsMarked`  
- [out] Hodnota, která `true` `tk` je- li byla zpracována; v `false`opačném případě .  
+ mimo Hodnota, která je `true` v případě, že byla `tk` zpracována. v opačném případě `false` .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Používá se jako prostředek v souboru MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [IMetaDataFilter – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatafilter-interface.md)
+- [IMetaDataFilter – rozhraní](imetadatafilter-interface.md)

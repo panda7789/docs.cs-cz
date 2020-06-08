@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 2868dfec-c992-4606-88bb-a8e0b6b18271
 topic_type:
 - apiref
-ms.openlocfilehash: 0f5bdf97132c05e765cd6fa423a19bb996105d28
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5ef5d9ae3da4dff13a461162f0ba3466d3d8192c
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175262"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501258"
 ---
 # <a name="imetadatainfogetfilemapping-method"></a>IMetaDataInfo::GetFileMapping – metoda
 Získá oblast paměti mapovaného souboru a typ mapování.  
@@ -37,41 +37,41 @@ HRESULT GetFileMapping (
   
 ## <a name="parameters"></a>Parametry  
  `ppvData`  
- [out] Ukazatel na začátek mapovaného souboru.  
+ mimo Ukazatel na začátek mapovaného souboru.  
   
  `pcbData`  
- [out] Velikost mapované oblasti. Pokud `pdwMappingType` `fmFlat`je , jedná se o velikost souboru.  
+ mimo Velikost mapované oblasti Pokud `pdwMappingType` je `fmFlat` , jedná se o velikost souboru.  
   
  `pdwMappingType`  
- [out] Hodnota [CorFileMapping,](../../../../docs/framework/unmanaged-api/metadata/corfilemapping-enumeration.md) která označuje typ mapování. Aktuální implementace cltime společného jazyka (CLR) vždy vrátí `fmFlat`. Ostatní hodnoty jsou vyhrazeny pro budoucí použití. Však měli byste vždy ověřit vrácenou hodnotu, protože jiné hodnoty mohou být povoleny v budoucích verzích nebo vydání služby.  
+ mimo Hodnota [CorFileMapping –](corfilemapping-enumeration.md) , která určuje typ mapování. Aktuální implementace modulu CLR (Common Language Runtime) se vždycky vrátí `fmFlat` . Jiné hodnoty jsou vyhrazeny pro budoucí použití. Měli byste však vždy ověřit vrácenou hodnotu, protože jiné hodnoty mohou být povoleny v budoucích verzích nebo verzích služeb.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
-|HRESULT|Popis|  
+|HRESULT|Description|  
 |-------------|-----------------|  
 |`S_OK`|Všechny výstupy jsou vyplněny.|  
-|`E_INVALIDARG`|Hodnota NULL byla předána jako hodnota argumentu.|  
-|`COR_E_NOTSUPPORTED`|Implementace CLR nemůže poskytnout informace o oblasti paměti. K tomu může dojít z následujících důvodů:<br /><br /> - Obor metadat byl otevřen `ofWrite` `ofCopyMemory` s příznakem nebo.<br />- Obor metadat byl otevřen `ofReadOnly` bez vlajky.<br />- Metoda [IMetaDataDispenser::OpenScopeOnMemory](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-openscopeonmemory-method.md) byla použita k otevření pouze části souboru metadat.<br />- Soubor není přenosný spustitelný soubor (PE). **Poznámka:**  Tyto podmínky závisí na implementaci CLR a pravděpodobně budou oslabeny v budoucích verzích CLR.|  
+|`E_INVALIDARG`|Jako hodnota argumentu byla předána hodnota NULL.|  
+|`COR_E_NOTSUPPORTED`|Implementace CLR nemůže poskytovat informace o oblasti paměti. K tomu může dojít z následujících důvodů:<br /><br /> – Obor metadat byl otevřen pomocí `ofWrite` `ofCopyMemory` příznaku nebo.<br />– Obor metadat byl otevřen bez `ofReadOnly` příznaku.<br />– Metoda [IMetaDataDispenser:: OpenScopeOnMemory –](imetadatadispenser-openscopeonmemory-method.md) byla použita k otevření pouze části metadat v souboru.<br />– Soubor není soubor přenositelného spustitelného souboru (PE). **Poznámka:**  Tyto podmínky závisí na implementaci CLR a jsou pravděpodobně oslabeny v budoucích verzích CLR.|  
   
 ## <a name="remarks"></a>Poznámky  
- Paměť, `ppvData` která odkazuje na je platný pouze tak dlouho, dokud je otevřen základní obor metadat.  
+ Paměť, která `ppvData` ukazuje na, je platná pouze tak dlouho, dokud je otevřen obor metadat.  
   
- Aby tato metoda fungovala, při mapování metadat souboru na disku do paměti voláním [metody IMetaDataDispenser::OpenScope](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-openscope-method.md) je nutné zadat `ofReadOnly` příznak a nesmíte zadat `ofWrite` příznak nebo. `ofCopyMemory`  
+ Aby tato metoda fungovala, Pokud namapujete metadata souboru na disku do paměti voláním metody [IMetaDataDispenser:: OpenScope –](imetadatadispenser-openscope-method.md) , je nutné zadat `ofReadOnly` příznak a není nutné zadat `ofWrite` `ofCopyMemory` příznak or.  
   
- Volba typu mapování souborů pro každý obor je specifická pro danou implementaci CLR. Nemůže být nastavena uživatelem. Aktuální implementace CLR vždy `fmFlat` vrátí `pdwMappingType`v , ale to může změnit v budoucích verzích CLR nebo v budoucích verzích služby dané verze. Vrácenou hodnotu byste `pdwMappingType`měli vždy zkontrolovat v souboru , protože různé typy budou mít různá rozložení a posuny.  
+ Volba typu mapování souborů pro každý obor je specifická pro danou implementaci CLR. Tuto hodnotu nemůže nastavit uživatel. Aktuální implementace CLR vždy vrátí `fmFlat` v `pdwMappingType` , ale to se může v budoucích verzích CLR nebo v budoucích vydáních této verze změnit. Vždy byste měli kontrolovat vrácenou hodnotu v `pdwMappingType` , protože různé typy budou mít různá rozložení a posuny.  
   
- Předávání hodnoty NULL pro některý ze tří parametrů není podporováno. Metoda vrátí `E_INVALIDARG`a žádný z výstupů jsou vyplněny. Ignorování typu mapování nebo velikosti oblasti může mít za následek abnormální ukončení programu.  
+ Předání hodnoty NULL pro některý ze tří parametrů není podporováno. Metoda vrátí hodnotu `E_INVALIDARG` a žádný z výstupů není vyplněn. Ignorování typu mapování nebo velikost oblasti může způsobit neobvyklé ukončení programu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Používá se jako prostředek v souboru MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [IMetaDataInfo – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatainfo-interface.md)
-- [CorFileMapping – výčet](../../../../docs/framework/unmanaged-api/metadata/corfilemapping-enumeration.md)
+- [IMetaDataInfo – rozhraní](imetadatainfo-interface.md)
+- [CorFileMapping – výčet](corfilemapping-enumeration.md)

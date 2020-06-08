@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: ab894dc4-f7b6-4afc-bfcb-582a4b7e53a2
 topic_type:
 - apiref
-ms.openlocfilehash: 5af59e158a34b06d304a98db1dfaa46585b22eb6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d795f90c458b7fcf1a191b2763ac5f5bb55fb438
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177197"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84490884"
 ---
 # <a name="imetadataimportgetsigfromtoken-method"></a>IMetaDataImport::GetSigFromToken – metoda
-Získá podpis binární metadata přidružené k zadanému tokenu.  
+Získá binární podpis metadat přidružených k zadanému tokenu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,24 +37,24 @@ HRESULT GetSigFromToken (
   
 ## <a name="parameters"></a>Parametry  
  `mdSig`  
- [v] Token pro vrácení podpisu binární metadata.  
+ pro Token, pro který se má vrátit binární podpis metadat.  
   
  `ppvSig`  
- [out] Ukazatel na vrácený podpis metadat.  
+ mimo Ukazatel na vrácenou signaturu metadat.  
   
  `pcbSig`  
- [out] Velikost binárního podpisu metadat v bajtech.  
+ mimo Velikost v bajtech binárního podpisu metadat.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Zahrnuto jako prostředek v souboru MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport – rozhraní](imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](imetadataimport2-interface.md)

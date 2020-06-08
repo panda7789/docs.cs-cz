@@ -1,5 +1,6 @@
 ---
 title: Naslouchání pomocí soketů
+description: Naučte se, jak vytvořit vzdálenou službu, kde soket serveru otevírá port v síti a čeká, až se klient připojí k tomuto portu.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -15,19 +16,19 @@ helpviewer_keywords:
 - listening with sockets
 - Internet, sockets
 ms.assetid: 40e426cc-13db-4371-95eb-f7388bd23ebf
-ms.openlocfilehash: cf8316ede6888b99a8b0c87cfa3426b33be18b7f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0b6de67772bae397373e307ec02ce69a71b0542e
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79180744"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502311"
 ---
 # <a name="listening-with-sockets"></a>Naslouchání pomocí soketů
-Naslouchací proces nebo sokety serveru otevřou port v síti a počkejte, až se klient k tomuto portu připojí. Přestože existují jiné rodiny síťových adres a protokoly, tento příklad ukazuje, jak vytvořit vzdálenou službu pro síť TCP/IP.  
+Naslouchací proces nebo serverové sokety otevřou port v síti a pak čekají na připojení klienta k tomuto portu. I když existují další řady síťových adres a protokoly, tento příklad ukazuje, jak vytvořit vzdálenou službu pro síť TCP/IP.  
   
- Jedinečná adresa služby TCP/IP je definována kombinací IP adresy hostitele s číslem portu služby a vytvořením koncového bodu pro službu. Třída <xref:System.Net.Dns> poskytuje metody, které vracejí informace o síťových adresách podporovaných místním síťovým zařízením. Pokud má místní síťové zařízení více než jednu síťovou adresu nebo pokud místní systém podporuje více než jedno síťové zařízení, vrátí třída **DNS** informace o všech síťových adresách a aplikace musí zvolit správnou adresu služby. Internetová autorita pro přiřazená čísla (Iana) definuje čísla portů pro běžné služby; Další informace naleznete v [tématu Service Name and Transport Protocol Port Number Registry](https://www.iana.org/assignments/port-numbers). Ostatní služby mohou mít registrovaná čísla portů v rozsahu 1 024 až 65 535.  
+ Jedinečná adresa služby TCP/IP je definovaná kombinací IP adresy hostitele s číslem portu služby, aby se vytvořil koncový bod pro službu. <xref:System.Net.Dns>Třída poskytuje metody, které vracejí informace o síťových adresách podporovaných místním síťovým zařízením. Pokud má místní síťové zařízení více než jednu síťovou adresu nebo pokud místní systém podporuje více než jedno síťové zařízení, vrátí třída **DNS** informace o všech síťových adresách a aplikace musí zvolit správnou adresu služby. Autorita pro Internet Assigned Numbers Authority (IANA) definuje čísla portů pro běžné služby. Další informace najdete v části [Service Name and Transport Protocol Number Registry](https://www.iana.org/assignments/port-numbers). Jiné služby můžou mít registrovaná čísla portů v rozsahu 1 024 až 65 535.  
   
- Následující příklad vytvoří <xref:System.Net.IPEndPoint> pro server kombinací první IP adresy vrácené **službou DNS** pro hostitelský počítač s číslem portu vybraným z rozsahu registrovaných čísel portů.  
+ Následující příklad vytvoří <xref:System.Net.IPEndPoint> pro server kombinaci první IP adresy vrácené službou **DNS** pro hostitelský počítač s číslem portu vybraným z rozsahu registrovaných čísel portů.  
   
 ```vb  
 Dim ipHostInfo As IPHostEntry = Dns.GetHostEntry(Dns.GetHostName())  
@@ -41,7 +42,7 @@ IPAddress ipAddress = ipHostInfo.AddressList[0];
 IPEndPoint localEndPoint = new IPEndPoint(ipAddress, 11000);  
 ```  
   
- Po určení místního koncového <xref:System.Net.Sockets.Socket> bodu musí být přidružený <xref:System.Net.Sockets.Socket.Bind%2A> k tomuto koncovému bodu pomocí <xref:System.Net.Sockets.Socket.Listen%2A> metody a nastavit naslouchání na koncovém bodu pomocí metody. **Vazba** vyvolá výjimku, pokud je konkrétní kombinace adresy a portu již používána. Následující příklad ukazuje spojení **Socket** s **IPEndPoint**.  
+ Po určení místního koncového bodu <xref:System.Net.Sockets.Socket> musí být přidružený k tomuto koncovému bodu pomocí <xref:System.Net.Sockets.Socket.Bind%2A> metody a nastaven na naslouchání na koncovém bodu pomocí <xref:System.Net.Sockets.Socket.Listen%2A> metody. **Vazba** vyvolá výjimku, pokud se již používá specifická adresa a kombinace portů. Následující příklad ukazuje přidružení **soketu** k **IPEndPoint**.  
   
 ```vb  
 Dim listener As New Socket(ipAddress.AddressFamily, _  
@@ -57,9 +58,9 @@ listener.Bind(localEndPoint);
 listener.Listen(100);  
 ```  
   
- Metoda **Listen** přebírá jeden parametr, který určuje, kolik čekajících připojení k **Socket** uvolňuje před vrácením chyby zaneprázdněnserveru připojujícímu se klientovi. V tomto případě je do fronty připojení umístěno až 100 klientů před vrácením odpovědi serveru zaneprázdněn na číslo klienta 101.  
+ Metoda **Listen** přijímá jeden parametr, který určuje, kolik nedokončených připojení k **soketu** je povoleno před tím, než dojde k chybě zaneprázdnění serveru v připojujícím se klientovi. V takovém případě se až 100 klientů umístí do fronty připojení před tím, než se vrátí odpověď zaneprázdněného serveru na číslo klienta 101.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Použití synchronního serverového soketu](using-a-synchronous-server-socket.md)
 - [Použití asynchronního serverového soketu](using-an-asynchronous-server-socket.md)

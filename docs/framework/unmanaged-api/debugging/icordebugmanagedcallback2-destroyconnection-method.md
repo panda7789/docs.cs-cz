@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: cf7940e9-4558-4319-925c-09f6c98c8fcd
 topic_type:
 - apiref
-ms.openlocfilehash: c5527f3bd0b04857a1ebc520016b81ddbe3c23f8
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: a3093f33f2220b22b7b4b373f6d79a341abf8c9c
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83208847"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501934"
 ---
 # <a name="icordebugmanagedcallback2destroyconnection-method"></a>ICorDebugManagedCallback2::DestroyConnection – metoda
 Oznamuje ladicímu programu, že zadané připojení bylo ukončeno.  
@@ -42,7 +42,7 @@ HRESULT DestroyConnection (
  pro ID připojení, které bylo zničeno.  
   
 ## <a name="remarks"></a>Poznámky  
- `DestroyConnection`Zpětné volání bude vyvoláno, když hostitel zavolá [ICLRDebugManager:: EndConnection –](../../../../docs/framework/unmanaged-api/hosting/iclrdebugmanager-endconnection-method.md) v [rozhraní API hostování](../hosting/index.md).  
+ `DestroyConnection`Zpětné volání bude vyvoláno, když hostitel zavolá [ICLRDebugManager:: EndConnection –](../hosting/iclrdebugmanager-endconnection-method.md) v [rozhraní API hostování](../hosting/index.md).  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
@@ -53,7 +53,7 @@ HRESULT DestroyConnection (
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [ICorDebugManagedCallback2 – rozhraní](icordebugmanagedcallback2-interface.md)
 - [ICorDebugManagedCallback – rozhraní](icordebugmanagedcallback-interface.md)

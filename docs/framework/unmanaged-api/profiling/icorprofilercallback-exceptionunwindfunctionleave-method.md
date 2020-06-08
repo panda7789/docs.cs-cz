@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: ebaad1d5-ee0a-4cb0-96bc-8ba5d371b747
 topic_type:
 - apiref
-ms.openlocfilehash: 9d3e39cd910240b965896f1b866b0c21de616a57
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 8694a2d19c3b98487b86da4273eb0c68fb9d9ace
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76866335"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84500114"
 ---
 # <a name="icorprofilercallbackexceptionunwindfunctionleave-method"></a>ICorProfilerCallback::ExceptionUnwindFunctionLeave – metoda
 Upozorní profileru, že zpětná fáze zpracování výjimek dokončila odvinutí funkce.  
@@ -32,20 +32,20 @@ HRESULT ExceptionUnwindFunctionLeave();
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Když se zavolá metoda `ExceptionUnwindFunctionLeave`, instance funkce a její data zásobníku se ze zásobníku odeberou.  
+ Při `ExceptionUnwindFunctionLeave` volání metody je instance funkce a její data zásobníku z zásobníku odebrána.  
   
  Profiler by neměl během tohoto volání blokovat, protože zásobník pravděpodobně není ve stavu, který umožňuje uvolňování paměti, a proto nelze povolit bezkontaktní uvolňování paměti. Pokud profiler zablokuje a dojde k pokusu o uvolnění paměti, modul runtime zablokuje dokud toto zpětné volání nevrátí.  
   
  Během tohoto volání nesmí Profiler volat do spravovaného kódu nebo jakýmkoli způsobem způsobit přidělení spravované paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorProf. idl, CorProf. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

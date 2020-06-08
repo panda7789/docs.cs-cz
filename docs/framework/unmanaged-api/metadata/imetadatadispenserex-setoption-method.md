@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 9f1c7ccd-7fb2-41d8-aa00-24b823376527
 topic_type:
 - apiref
-ms.openlocfilehash: 0cb0dee7db7faa4c1324d705218934489ec6a4b6
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 28aea8534eed3bcd1f645844e28849be89e130d0
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84005853"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501323"
 ---
 # <a name="imetadatadispenserexsetoption-method"></a>IMetaDataDispenserEx::SetOption – metoda
 Nastaví zadanou možnost na danou hodnotu pro aktuální obor metadat. Možnost určuje, jak jsou zpracovávány volání do aktuálního oboru metadat.  
@@ -46,11 +46,11 @@ HRESULT SetOption (
   
 |Identifikátor GUID|Description|`pValue`Ukazatele|  
 |----------|-----------------|------------------------|  
-|MetaDataCheckDuplicatesFor|Určuje, které položky jsou kontrolovány duplicity. Pokaždé, když zavoláte metodu [IMetaDataEmit](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md) , která vytvoří novou položku, můžete požádat o metodu, aby zkontrolovala, jestli už položka v aktuálním oboru existuje. Můžete například kontrolovat existenci `mdMethodDef` položek; v tomto případě, když zavoláte [IMetaDataEmit::D efinemethod](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definemethod-method.md), zkontroluje, že metoda ještě v aktuálním oboru neexistuje. Tato kontrolu používá klíč, který jednoznačně identifikuje danou metodu: nadřazený typ, název a podpis.|Musí se jednat o variantu typu UI4 a musí obsahovat kombinaci hodnot výčtu [CorCheckDuplicatesFor –](corcheckduplicatesfor-enumeration.md) .|  
+|MetaDataCheckDuplicatesFor|Určuje, které položky jsou kontrolovány duplicity. Pokaždé, když zavoláte metodu [IMetaDataEmit](imetadataemit-interface.md) , která vytvoří novou položku, můžete požádat o metodu, aby zkontrolovala, jestli už položka v aktuálním oboru existuje. Můžete například kontrolovat existenci `mdMethodDef` položek; v tomto případě, když zavoláte [IMetaDataEmit::D efinemethod](imetadataemit-definemethod-method.md), zkontroluje, že metoda ještě v aktuálním oboru neexistuje. Tato kontrolu používá klíč, který jednoznačně identifikuje danou metodu: nadřazený typ, název a podpis.|Musí se jednat o variantu typu UI4 a musí obsahovat kombinaci hodnot výčtu [CorCheckDuplicatesFor –](corcheckduplicatesfor-enumeration.md) .|  
 |MetaDataRefToDefCheck|Ovládací prvky, které odkazované položky jsou převedeny na definice. Ve výchozím nastavení modul metadat optimalizuje kód tím, že převede odkazovanou položku na její definici, pokud je odkazovaná položka ve skutečnosti definována v aktuálním oboru.|Musí se jednat o variantu typu UI4 a musí obsahovat kombinaci hodnot výčtu [CorRefToDefCheck –](correftodefcheck-enumeration.md) .|  
-|MetaDataNotificationForTokenMovement|Určuje, které nové mapy tokenů dochází během sloučení metadat při vytváření zpětných volání. Pro vytvoření rozhraní [IMapToken –](../../../../docs/framework/unmanaged-api/metadata/imaptoken-interface.md) použijte metodu [IMetaDataEmit:: SetHandler –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-sethandler-method.md) .|Musí se jednat o variantu typu UI4 a musí obsahovat kombinaci hodnot výčtu [CorNotificationForTokenMovement –](cornotificationfortokenmovement-enumeration.md) .|  
+|MetaDataNotificationForTokenMovement|Určuje, které nové mapy tokenů dochází během sloučení metadat při vytváření zpětných volání. Pro vytvoření rozhraní [IMapToken –](imaptoken-interface.md) použijte metodu [IMetaDataEmit:: SetHandler –](imetadataemit-sethandler-method.md) .|Musí se jednat o variantu typu UI4 a musí obsahovat kombinaci hodnot výčtu [CorNotificationForTokenMovement –](cornotificationfortokenmovement-enumeration.md) .|  
 |MetaDataSetENC|Řídí chování funkce Edit-and-Continue (ENC). V jednom okamžiku lze nastavit pouze jeden režim chování.|Musí se jednat o variantu typu UI4 a musí obsahovat hodnotu výčtu [CorSetENC –](corsetenc-enumeration.md) . Hodnota není Bitová maska.|  
-|MetaDataErrorIfEmitOutOfOrder|Ovládací prvky, které emitují chyby mimo pořadí generují zpětná volání. Vygenerování metadat mimo pořadí není závažné; Pokud však vygenerujete metadata v pořadí, které je na něj přizpůsobeno modulem metadat, metadata jsou kompaktnější a je proto možné je prohledávat efektivněji. Použijte `IMetaDataEmit::SetHandler` metodu pro vytvoření rozhraní [IMetaDataError –](../../../../docs/framework/unmanaged-api/metadata/imetadataerror-interface.md) .|Musí se jednat o variantu typu UI4 a musí obsahovat kombinaci hodnot výčtu [CorErrorIfEmitOutOfOrder –](corerrorifemitoutoforder-enumeration.md) .|  
+|MetaDataErrorIfEmitOutOfOrder|Ovládací prvky, které emitují chyby mimo pořadí generují zpětná volání. Vygenerování metadat mimo pořadí není závažné; Pokud však vygenerujete metadata v pořadí, které je na něj přizpůsobeno modulem metadat, metadata jsou kompaktnější a je proto možné je prohledávat efektivněji. Použijte `IMetaDataEmit::SetHandler` metodu pro vytvoření rozhraní [IMetaDataError –](imetadataerror-interface.md) .|Musí se jednat o variantu typu UI4 a musí obsahovat kombinaci hodnot výčtu [CorErrorIfEmitOutOfOrder –](corerrorifemitoutoforder-enumeration.md) .|  
 |MetaDataImportOption|Určuje, které typy položek, které byly odstraněny během objektu ENC, jsou načteny enumerátorem.|Musí se jednat o variantu typu UI4 a musí obsahovat kombinaci hodnot výčtu [výčtu CorImportOptions –](corimportoptions-enumeration.md) .|  
 |MetaDataThreadSafetyOptions|Určuje, zda modul metadat získá zámky pro čtení a zápis, což zajišťuje bezpečnost vlákna. Ve výchozím nastavení modul předpokládá, že je přístup jediným vláknem volajícího, takže se nezískají žádné zámky. Za údržbu správné synchronizace vláken při použití rozhraní API metadat zodpovídá klienti.|Musí se jednat o variantu typu UI4 a musí obsahovat hodnotu výčtu [CorThreadSafetyOptions –](corthreadsafetyoptions-enumeration.md) . Hodnota není Bitová maska.|  
 |MetaDataGenerateTCEAdapters|Určuje, zda má nástroj pro import knihovny typů generovat pevně spárované adaptéry událostí (TCE) pro kontejnery přípojných bodů COM.|Musí se jednat o variantu typu BOOL. Pokud `pValue` je nastaveno na `true` , modul pro import knihovny typů vygeneruje adaptéry TCE.|  
@@ -69,7 +69,7 @@ HRESULT SetOption (
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [IMetaDataDispenserEx – rozhraní](imetadatadispenserex-interface.md)
 - [IMetaDataDispenser – rozhraní](imetadatadispenser-interface.md)

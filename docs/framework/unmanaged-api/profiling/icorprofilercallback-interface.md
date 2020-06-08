@@ -14,19 +14,19 @@ helpviewer_keywords:
 ms.assetid: 4bae06f7-94d7-4ba8-b250-648b2da78674
 topic_type:
 - apiref
-ms.openlocfilehash: 891cca8ac47a3f8391bd7ab7b27b35d6318bbe0a
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 6a53b9b1b061c2ca07a469abc78c07ed9e710069
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76866283"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84500088"
 ---
 # <a name="icorprofilercallback-interface"></a>ICorProfilerCallback – rozhraní
 Poskytuje metody, které jsou používány modulem CLR (Common Language Runtime) k oznamování profileru kódu, když dojde k odběru událostí, ke kterým má Profiler odběr.  
   
 ## <a name="methods"></a>Metody  
   
-|Metoda|Popis|  
+|Metoda|Description|  
 |------------|-----------------|  
 |[AppDomainCreationFinished – metoda](icorprofilercallback-appdomaincreationfinished-method.md)|Oznamuje profileru, že byla vytvořena doména aplikace.|  
 |[AppDomainCreationStarted – metoda](icorprofilercallback-appdomaincreationstarted-method.md)|Oznamuje profileru, že se vytváří doména aplikace.|  
@@ -42,8 +42,8 @@ Poskytuje metody, které jsou používány modulem CLR (Common Language Runtime)
 |[ClassUnloadStarted – metoda](icorprofilercallback-classunloadstarted-method.md)|Upozorní profileru, že je uvolněna třída.|  
 |[COMClassicVTableCreated – metoda](icorprofilercallback-comclassicvtablecreated-method.md)|Upozorní profileru, že se vytvořila obálka pro vyvolané za běhu (RCW) pro zadané IID a třídu.|  
 |[COMClassicVTableDestroyed – metoda](icorprofilercallback-comclassicvtabledestroyed-method.md)|Upozorní profileru, že je zničena aplikace RCW.|  
-|[ExceptionCatcherEnter – metoda](icorprofilercallback-exceptioncatcherenter-method.md)|Upozorní profiler, že řízení probíhá předává příslušnému `catch`mu bloku.|  
-|[ExceptionCatcherLeave – metoda](icorprofilercallback-exceptioncatcherleave-method.md)|Upozorňuje profileru, že řízení se předává z příslušného `catch`ho bloku.|  
+|[ExceptionCatcherEnter – metoda](icorprofilercallback-exceptioncatcherenter-method.md)|Upozorňuje profileru, že řízení se předává příslušnému `catch` bloku.|  
+|[ExceptionCatcherLeave – metoda](icorprofilercallback-exceptioncatcherleave-method.md)|Upozorňuje profileru, že řízení se předává z příslušného `catch` bloku.|  
 |[ExceptionCLRCatcherExecute – metoda](icorprofilercallback-exceptionclrcatcherexecute-method.md)|Zastaralé v .NET Framework verze 2,0.|  
 |[ExceptionCLRCatcherFound – metoda](icorprofilercallback-exceptionclrcatcherfound-method.md)|Zastaralé v .NET Framework 2,0.|  
 |[ExceptionOSHandlerEnter – metoda](icorprofilercallback-exceptionoshandlerenter-method.md)|Není implementováno. Profiler, který potřebuje informace o nespravovaných výjimkách, musí tyto informace získat jiným způsobem.|  
@@ -54,8 +54,8 @@ Poskytuje metody, které jsou používány modulem CLR (Common Language Runtime)
 |[ExceptionSearchFunctionEnter – metoda](icorprofilercallback-exceptionsearchfunctionenter-method.md)|Upozorní profileru, že byla zadána funkce vyhledávací fáze zpracování výjimek.|  
 |[ExceptionSearchFunctionLeave – metoda](icorprofilercallback-exceptionsearchfunctionleave-method.md)|Upozorní profileru, že prohledávání fáze zpracování výjimek dokončila hledání funkce.|  
 |[ExceptionThrown – metoda](icorprofilercallback-exceptionthrown-method.md)|Upozorní profileru, že byla vyvolána výjimka.|  
-|[ExceptionUnwindFinallyEnter – metoda](icorprofilercallback-exceptionunwindfinallyenter-method.md)|Upozorní profileru, že zpětná fáze zpracování výjimek zadává klauzuli `finally` obsaženou v zadané funkci.|  
-|[ExceptionUnwindFinallyLeave – metoda](icorprofilercallback-exceptionunwindfinallyleave-method.md)|Upozorní profileru, že zpětná fáze zpracování výjimek opustila klauzuli `finally`.|  
+|[ExceptionUnwindFinallyEnter – metoda](icorprofilercallback-exceptionunwindfinallyenter-method.md)|Upozorní profileru, že unwind fáze zpracování výjimek zadává `finally` klauzuli obsaženou v zadané funkci.|  
+|[ExceptionUnwindFinallyLeave – metoda](icorprofilercallback-exceptionunwindfinallyleave-method.md)|Upozorní profileru, že zpětná fáze zpracování výjimek opustila `finally` klauzuli.|  
 |[ExceptionUnwindFunctionEnter – metoda](icorprofilercallback-exceptionunwindfunctionenter-method.md)|Upozorní profileru, že zpětná fáze zpracování výjimek zavolala funkci.|  
 |[ExceptionUnwindFunctionLeave – metoda](icorprofilercallback-exceptionunwindfunctionleave-method.md)|Upozorní profileru, že zpětná fáze zpracování výjimek dokončila odvinutí funkce.|  
 |[FunctionUnloadStarted – metoda](icorprofilercallback-functionunloadstarted-method.md)|Upozorní profileru, že modul runtime zahájil uvolnění funkce.|  
@@ -99,23 +99,23 @@ Poskytuje metody, které jsou používány modulem CLR (Common Language Runtime)
 |[UnmanagedToManagedTransition – metoda](icorprofilercallback-unmanagedtomanagedtransition-method.md)|Upozorní profileru, že došlo k přechodu z nespravovaného kódu do spravovaného kódu.|  
   
 ## <a name="remarks"></a>Poznámky  
- CLR volá metodu v rozhraní `ICorProfilerCallback` (nebo [ICorProfilerCallback2](icorprofilercallback2-interface.md)), která upozorní Profiler v případě, že dojde k odběru události, ke které se Profiler přihlašuje. Toto je primární rozhraní zpětného volání, přes které CLR komunikuje s profilerem kódu.  
+ CLR volá metodu v `ICorProfilerCallback` rozhraní (nebo [ICorProfilerCallback2](icorprofilercallback2-interface.md)) pro oznámení profileru, když dojde k odběru události, ke které má Profiler odběr. Toto je primární rozhraní zpětného volání, přes které CLR komunikuje s profilerem kódu.  
   
- Profiler kódu musí implementovat metody rozhraní `ICorProfilerCallback`. Pro .NET Framework verze 2,0 nebo novější musí Profiler také implementovat metody `ICorProfilerCallback2`. Každá implementace metody musí vracet hodnotu HRESULT, která má hodnotu S_OK při úspěchu nebo E_FAIL při selhání. V současné době CLR ignoruje hodnotu HRESULT, kterou vrátí každé zpětné volání s výjimkou [ICorProfilerCallback:: objectReferences –](icorprofilercallback-objectreferences-method.md).  
+ Profiler kódu musí implementovat metody `ICorProfilerCallback` rozhraní. Pro .NET Framework verze 2,0 nebo novější musí Profiler také implementovat `ICorProfilerCallback2` metody. Každá implementace metody musí vracet hodnotu HRESULT, která má hodnotu S_OK při úspěchu nebo E_FAIL při selhání. V současné době CLR ignoruje hodnotu HRESULT, kterou vrátí každé zpětné volání s výjimkou [ICorProfilerCallback:: objectReferences –](icorprofilercallback-objectreferences-method.md).  
   
- V registru systému Microsoft Windows musí Profiler kódu zaregistrovat svůj objekt modelu COM (Component Object Model), který implementuje rozhraní `ICorProfilerCallback` a `ICorProfilerCallback2`. Profiler kódu se přihlašuje k odběru událostí, ke kterým chce dostávat oznámení voláním [ICorProfilerInfo:: SetEventMask](icorprofilerinfo-seteventmask-method.md). To se obvykle provádí v implementaci [ICorProfilerCallback:: Initialize](icorprofilercallback-initialize-method.md)v profileru. Profiler je pak schopný přijímat oznámení z modulu runtime, když dojde k události, která se chystá, nebo k ní došlo pouze v průběhu provádění procesu modulu runtime.  
+ V registru systému Microsoft Windows musí Profiler kódu zaregistrovat svůj objekt modelu COM (Component Object Model), který implementuje `ICorProfilerCallback` rozhraní a `ICorProfilerCallback2` . Profiler kódu se přihlašuje k odběru událostí, ke kterým chce dostávat oznámení voláním [ICorProfilerInfo:: SetEventMask](icorprofilerinfo-seteventmask-method.md). To se obvykle provádí v implementaci [ICorProfilerCallback:: Initialize](icorprofilercallback-initialize-method.md)v profileru. Profiler je pak schopný přijímat oznámení z modulu runtime, když dojde k události, která se chystá, nebo k ní došlo pouze v průběhu provádění procesu modulu runtime.  
   
 > [!NOTE]
-> Profiler registruje jeden objekt COM. Pokud je profiler cílen na .NET Framework verze 1,0 nebo 1,1, musí objekt COM implementovat pouze metody `ICorProfilerCallback`. Pokud cílí na .NET Framework verze 2,0 nebo novější, musí objekt COM také implementovat metody `ICorProfilerCallback2`.  
+> Profiler registruje jeden objekt COM. Pokud je profiler cílen na .NET Framework verze 1,0 nebo 1,1, musí tento objekt COM implementovat pouze metody `ICorProfilerCallback` . Pokud cílí na .NET Framework verze 2,0 nebo novější, musí objekt COM také implementovat metody `ICorProfilerCallback2` .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorProf. idl, CorProf. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

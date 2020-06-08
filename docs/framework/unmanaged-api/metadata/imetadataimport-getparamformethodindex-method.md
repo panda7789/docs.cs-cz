@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: ec3bfa95-1920-4511-932e-3ff23d76fcb8
 topic_type:
 - apiref
-ms.openlocfilehash: a70691b9c519bc59ae7df7a86d5d6697db565575
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 21a83e404405ca9cfe301b76cb1e1591d69e747c
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74437161"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84491118"
 ---
 # <a name="imetadataimportgetparamformethodindex-method"></a>IMetaDataImport::GetParamForMethodIndex – metoda
 Získá token, který představuje zadaný parametr metody reprezentované zadaným tokenem MethodDef.  
@@ -46,15 +46,15 @@ HRESULT GetParamForMethodIndex (
  mimo Ukazatel na token ParamDef, který představuje požadovaný parametr.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** Cor. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport – rozhraní](imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](imetadataimport2-interface.md)

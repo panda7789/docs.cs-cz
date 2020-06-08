@@ -4,12 +4,12 @@ description: Naučte se používat nástroj Analyzátor přenositelnosti .NET k 
 ms.date: 09/13/2019
 ms.technology: dotnet-standard
 ms.assetid: 0375250f-5704-4993-a6d5-e21c499cea1e
-ms.openlocfilehash: 815ac8e0f0c4392a3d89530947b0739d06a0b95d
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 7fe5aafe1ad8bf87883ebe27f2aa4fb102a01e45
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84278360"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501794"
 ---
 # <a name="the-net-portability-analyzer"></a>Analyzátor přenositelnosti .NET
 
@@ -32,6 +32,23 @@ Pokud chcete začít používat analyzátor přenositelnosti .NET v aplikaci Vis
 ![Snímek obrazovky s analyzátorem přenositelnosti](./media/portability-analyzer/portability-screenshot.png)
 
 Můžete také použít konzolovou aplikaci ApiPort, kterou si můžete stáhnout z [úložiště ApiPort](https://aka.ms/apiportdownload). Pomocí `listTargets` Možnosti příkaz můžete zobrazit dostupný cílový seznam a pak vybrat cílové platformy zadáním `-t` Možnosti nebo pomocí `--target` příkazu.
+
+> [!IMPORTANT]
+> Pokud při spuštění tohoto nástroje neexistují žádné výsledky, nemusí být výchozí cíle k dispozici. Pokud k tomu dojde, dbejte na to, abyste přidali explicitní cíle.
+
+### <a name="solution-wide-view"></a>Zobrazení v celé řešení
+
+Užitečným krokem při analýze řešení s mnoha projekty by bylo vizualizovat závislosti, abyste pochopili, která podmnožina sestavení závisí na tom, co. Obecně se doporučuje použít výsledky analýzy v rámci nejnižšího přístupu počínaje koncovými uzly v grafu závislostí.
+
+K načtení můžete použít následující příkaz:
+
+```
+ApiPort.exe analyze -r DGML -f [directory or file]
+```
+
+Výsledek by měl vypadat takto jako při otevření v sadě Visual Studio:
+
+![Snímek obrazovky s analýzou DGML](./media/portability-analyzer/dgml-example.png)
 
 ### <a name="analyze-portability"></a>Analýza přenositelnosti
 Chcete-li analyzovat celý projekt v aplikaci Visual Studio, klikněte pravým tlačítkem myši na projekt v **Průzkumník řešení** a vyberte možnost **analyzovat přenositelnost sestavení**. V opačném případě přejděte do nabídky **analyzovat** a vyberte možnost **analyzovat přenositelnost sestavení**. Odtud vyberte spustitelný soubor nebo knihovnu DLL vašeho projektu.

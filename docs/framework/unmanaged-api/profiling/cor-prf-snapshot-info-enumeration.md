@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: a5906b2a-ad4a-4cc6-a421-2d7d8adf7468
 topic_type:
 - apiref
-ms.openlocfilehash: 97bf3e69a8ea155d53479ba6f61988e56e3bd396
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 6168c5b27868a261871b292e17ca02b04ae89917
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76867019"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84500777"
 ---
 # <a name="cor_prf_snapshot_info-enumeration"></a>COR_PRF_SNAPSHOT_INFO – výčet
 Určuje, kolik dat se má zpětně předat snímku zásobníku v každém volání funkce [StackSnapshotCallback –](stacksnapshotcallback-function.md) profileru.  
@@ -36,23 +36,23 @@ typedef enum _COR_PRF_SNAPSHOT_INFO {
   
 ## <a name="members"></a>Členové  
   
-|Členové|Popis|  
+|Členové|Description|  
 |-------------|-----------------|  
-|`COR_PRF_SNAPSHOT_DEFAULT`|Určuje, že hodnoty musí být předány pro všechny parametry `StackSnapshotCallback` s výjimkou parametru `context`.|  
-|`COR_PRF_SNAPSHOT_REGISTER_CONTEXT`|Určuje, že hodnoty musí být předány pro všechny parametry `StackSnapshotCallback`, včetně parametru `context`.|  
+|`COR_PRF_SNAPSHOT_DEFAULT`|Určuje, že hodnoty musí být předány pro všechny `StackSnapshotCallback` parametry s výjimkou `context` parametru.|  
+|`COR_PRF_SNAPSHOT_REGISTER_CONTEXT`|Určuje, že hodnoty musí být předány pro všechny `StackSnapshotCallback` parametry, včetně `context` parametru.|  
 |`COR_PRF_SNAPSHOT_X86_OPTIMIZED`|Indikuje, že se použije jednodušší algoritmus procházení zásobníku.|  
   
 ## <a name="remarks"></a>Poznámky  
- Hodnoty, které jsou poskytovány výčtem `COR_PRF_SNAPSHOT_INFO`, jsou předány jako parametry do metody [DoStackSnapshot –](icorprofilerinfo2-dostacksnapshot-method.md) .  
+ Hodnoty, které jsou poskytovány `COR_PRF_SNAPSHOT_INFO` výčtem, jsou předány jako parametry do metody [DoStackSnapshot –](icorprofilerinfo2-dostacksnapshot-method.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorProf. idl, CorProf. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

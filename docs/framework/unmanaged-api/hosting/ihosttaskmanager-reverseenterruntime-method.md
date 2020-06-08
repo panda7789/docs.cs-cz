@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: b1e26bff-d3ea-436e-9867-29720df999f4
 topic_type:
 - apiref
-ms.openlocfilehash: 41955bd2f64d53e3620dede6b6da4cef2aab45f4
-ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
+ms.openlocfilehash: 1981fdf25440a296801bdbd06c41ebcb4b87e870
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83842293"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501386"
 ---
 # <a name="ihosttaskmanagerreverseenterruntime-method"></a>IHostTaskManager::ReverseEnterRuntime – metoda
 Upozorňuje hostitele, že je provedeno volání modulu CLR (Common Language Runtime) z nespravovaného kódu.  
@@ -33,7 +33,7 @@ HRESULT ReverseEnterRuntime ();
   
 ## <a name="return-value"></a>Návratová hodnota  
   
-|HRESULT|Popis|  
+|HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`ReverseEnterRuntime`úspěšně vráceno.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
@@ -47,7 +47,7 @@ HRESULT ReverseEnterRuntime ();
  Pokud je volání do CLR provedeno z sekvence, která byla vytvořena ve spravovaném kódu, každé volání `ReverseEnterRuntime` odpovídá volání [ReverseLeaveRuntime –](ihosttaskmanager-reverseleaveruntime-method.md).  
   
 > [!NOTE]
-> Volání můžou pocházet z nespravovaného kódu bez vnoření. V tomto případě neexistuje žádné volání [EnterRuntime –](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-enterruntime-method.md), [LeaveRuntime –](ihosttaskmanager-leaveruntime-method.md)nebo `ReverseLeaveRuntime` a počet volání, která se `ReverseEnterRuntime` nerovná počtu volání `ReverseLeaveRuntime` .  
+> Volání můžou pocházet z nespravovaného kódu bez vnoření. V tomto případě neexistuje žádné volání [EnterRuntime –](ihosttaskmanager-enterruntime-method.md), [LeaveRuntime –](ihosttaskmanager-leaveruntime-method.md)nebo `ReverseLeaveRuntime` a počet volání, která se `ReverseEnterRuntime` nerovná počtu volání `ReverseLeaveRuntime` .  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
@@ -58,7 +58,7 @@ HRESULT ReverseEnterRuntime ();
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [ICLRTask – rozhraní](iclrtask-interface.md)
 - [ICLRTaskManager – rozhraní](iclrtaskmanager-interface.md)

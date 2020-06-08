@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: c5fee4a0-b132-4e5e-8730-e586ce314b9a
 topic_type:
 - apiref
-ms.openlocfilehash: 6d7884e896d6a0463639e7ef08b47dced10a27f4
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 8a1cdff313dae73e3f5e8918ff2ef395c80b115d
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74431383"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84490624"
 ---
 # <a name="imetadataimport2getgenericparamconstraintprops-method"></a>IMetaDataImport2::GetGenericParamConstraintProps – metoda
 Získá metadata přidružená k omezení obecného parametru reprezentované zadaným tokenem omezení.  
@@ -43,18 +43,18 @@ HRESULT GetGenericParamConstraintProps (
  mimo Ukazatel na token, který představuje obecný parametr, který je omezen.  
   
  `ptkConstraintType`  
- mimo Ukazatel na token TypeDef, TypeRef nebo token TypeSpec, který představuje omezení na `ptGenericParam`.  
+ mimo Ukazatel na token TypeDef, TypeRef nebo token TypeSpec, který představuje omezení `ptGenericParam` .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** Cor. h  
   
  **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
-- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](imetadataimport2-interface.md)
+- [IMetaDataImport – rozhraní](imetadataimport-interface.md)

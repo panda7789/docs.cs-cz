@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: 03abde84-930a-49d3-bac3-23abb34a0184
 topic_type:
 - apiref
-ms.openlocfilehash: 0cd451854d4dbb3b243339efdc33d7dcd7860eb7
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: 8af71314cf8a24c710d3b8980c082daaf9186715
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83420601"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501869"
 ---
 # <a name="corsymsearchpolicyattributes-enumeration"></a>CorSymSearchPolicyAttributes – výčet
-Určuje zásadu, která se má použít při hledání čtečky symbolů. Tyto konstanty jsou používány metodami [ISymUnmanagedBinder2 –:: GetReaderForFile2 –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder2-getreaderforfile2-method.md) a [Isymunmanagedbinder3 –:: GetReaderFromCallback –](isymunmanagedbinder3-getreaderfromcallback-method.md) .  
+Určuje zásadu, která se má použít při hledání čtečky symbolů. Tyto konstanty jsou používány metodami [ISymUnmanagedBinder2 –:: GetReaderForFile2 –](isymunmanagedbinder2-getreaderforfile2-method.md) a [Isymunmanagedbinder3 –:: GetReaderFromCallback –](isymunmanagedbinder3-getreaderfromcallback-method.md) .  
   
 > [!IMPORTANT]
 > Je bezpečnostním rizikem k otevření souboru programu databáze (PDB) z nedůvěryhodného zdroje.  
@@ -41,7 +41,7 @@ typedef enum CorSymSearchPolicyAttributes
   
 ## <a name="members"></a>Členové  
   
-|Člen|Popis|  
+|Člen|Description|  
 |------------|-----------------|  
 |`AllowRegistryAccess`|Vyhledá v registru cesty pro hledání symbolů.|  
 |`AllowSymbolServerAccess`|Přistupuje k serveru symbolů.|  
@@ -51,6 +51,6 @@ typedef enum CorSymSearchPolicyAttributes
 ## <a name="requirements"></a>Požadavky  
  **Hlavička:** CorSym. idl, CorSym. h  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Výčty úložiště symbolů diagnostiky](diagnostics-symbol-store-enumerations.md)

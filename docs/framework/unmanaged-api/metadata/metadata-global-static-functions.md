@@ -6,21 +6,21 @@ helpviewer_keywords:
 - unmanaged global static functions [.NET Framework], metadata
 - metadata global static functions [.NET Framework]
 ms.assetid: d3bbc8a7-b1c7-494f-b1cc-d71cf2ecb1bc
-ms.openlocfilehash: a76d57bb45e53e461a43f3a9fb3be707782faccc
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 861f283d350310ab159b2d6f15339292e0d42b94
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74447819"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84489583"
 ---
 # <a name="metadata-global-static-functions"></a>Globální statické funkce metadat
-Počínaje .NET Framework 4 je v dokumentaci k funkcím `_Cor*`, `CoInitialize*`, `CoUninitialize*`a `CoEEShutDownCOM`, která se vztahuje k hostování, umístěná v [zastaralých hostujících funkcích CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md). Neexistují žádné globální statické funkce, které se týkají metadat.  
+Počínaje .NET Framework 4 se dokumentace k `_Cor*` `CoInitialize*` `CoUninitialize*` funkcím,, a `CoEEShutDownCOM` , které se týkají hostování, nachází v [zastaralých hostujících funkcích CLR](../hosting/deprecated-clr-hosting-functions.md). Neexistují žádné globální statické funkce, které se týkají metadat.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Rozhraní pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)  
+ [Rozhraní pro metadata](metadata-interfaces.md)  
   
- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)  
+ [Výčty pro metadata](metadata-enumerations.md)  
   
- [Struktury pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-structures.md)  
+ [Struktury pro metadata](metadata-structures.md)  
   
- [Sjednocení pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-unions.md)
+ [Sjednocení pro metadata](metadata-unions.md)

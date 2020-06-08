@@ -1,5 +1,6 @@
 ---
 title: 'Postupy: Nastavení zásad mezipaměti pro žádost'
+description: Přečtěte si, jak nastavit zásady mezipaměti pro požadavek v .NET Framework. Tyto zásady mezipaměti umožňují použít prostředek z mezipaměti až do dne.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,18 +8,18 @@ dev_langs:
 helpviewer_keywords:
 - request cache policies
 ms.assetid: 39c15e40-586b-4ac9-9cce-146f74b7e545
-ms.openlocfilehash: 4ad74d69391da0e815faf9c278f2d9bea03937d4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 248cbdd0921564898c5d3459cffa304793e85584
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79180768"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502428"
 ---
 # <a name="how-to-set-cache-policy-for-a-request"></a>Postupy: Nastavení zásad mezipaměti pro žádost
-Následující příklad ukazuje nastavení zásad mezipaměti pro požadavek. Ukázkový vstup je identifikátor `http://www.contoso.com/`URI, například .  
+Následující příklad ukazuje nastavení zásad mezipaměti pro požadavek. Vzorový vstup je identifikátor URI, jako je například `http://www.contoso.com/` .  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu vytvoří zásadu mezipaměti, která umožňuje použití požadovaného prostředku z mezipaměti, pokud nebyl v mezipaměti déle než jeden den. V příkladu se zobrazí zpráva, která označuje, `"The response was retrieved from the cache : False."`zda byl prostředek použit z mezipaměti – například – a potom zobrazí prostředek. Požadavek může splnit libovolná mezipaměť mezi klientem a serverem.  
+ Následující příklad kódu vytvoří zásadu mezipaměti, která umožňuje, aby byl požadovaný prostředek použit z mezipaměti, pokud nebyl v mezipaměti déle než jeden den. V příkladu se zobrazí zpráva, která označuje, zda byl prostředek použit z mezipaměti, například `"The response was retrieved from the cache : False."` – a poté zobrazí prostředek. Požadavek může být vyplněn libovolnou mezipamětí mezi klientem a serverem.  
   
 ```csharp  
 using System;  
@@ -105,10 +106,10 @@ Namespace Examples.System.Net.Cache
 End Namespace  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Správa mezipaměti pro síťové aplikace](cache-management-for-network-applications.md)
 - [Zásady mezipaměti](cache-policy.md)
 - [Zásady mezipaměti na základě místa](location-based-cache-policies.md)
 - [Zásady mezipaměti na základě času](time-based-cache-policies.md)
-- [\<requestCaching> Element (Nastavení sítě)](../configure-apps/file-schema/network/requestcaching-element-network-settings.md)
+- [\<requestCaching>– Element (nastavení sítě)](../configure-apps/file-schema/network/requestcaching-element-network-settings.md)

@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: dc0ff3e6-7e7d-4f6c-948d-52b28f5cb78c
 topic_type:
 - apiref
-ms.openlocfilehash: 5fc71bf240b89afadbf8f2ba10906322921bdda2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: cac5aaa7ed13b6a48b36ad550da8b73d0deb2ee7
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175327"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84491040"
 ---
 # <a name="imetadataimportgetpropertyprops-method"></a>IMetaDataImport::GetPropertyProps – metoda
-Získá metadata pro vlastnost reprezentované zadaný token.  
+Získá metadata pro vlastnost představovanou zadaným tokenem.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -50,63 +50,63 @@ HRESULT GetPropertyProps (
   
 ## <a name="parameters"></a>Parametry  
  `prop`  
- [v] Token, který představuje vlastnost vrátit metadata.  
+ pro Token, který představuje vlastnost, pro kterou se mají vracet metadata  
   
  `pClass`  
- [out] Ukazatel na TypeDef token, který představuje typ, který implementuje vlastnost.  
+ mimo Ukazatel na token TypeDef, který představuje typ, který implementuje vlastnost.  
   
  `szProperty`  
- [out] Vyrovnávací paměť pro uložení názvu vlastnosti.  
+ mimo Vyrovnávací paměť pro uložení názvu vlastnosti.  
   
  `cchProperty`  
- [v] Velikost v široké `szProperty`znaky .  
+ pro Velikost v různých znacích `szProperty` .  
   
  `pchProperty`  
- [out] Počet širokých znaků `szProperty`vrácených v .  
+ mimo Počet znaků vrácených v rámci `szProperty` .  
   
  `pdwPropFlags`  
- [out] Ukazatel na všechny příznaky atributů aplikované na vlastnost. Tato hodnota je bitová maska z [corpropertyattr](../../../../docs/framework/unmanaged-api/metadata/corpropertyattr-enumeration.md) výčtu.  
+ mimo Ukazatel na libovolný příznak atributu aplikovaný na vlastnost. Tato hodnota je Bitová maska z výčtu [CorPropertyAttr –](corpropertyattr-enumeration.md) .  
   
  `ppvSig`  
- [out] Ukazatel na podpis metadat vlastnosti.  
+ mimo Ukazatel na podpis metadat vlastnosti.  
   
  `pbSig`  
- [out] Počet vrácených bajtů `ppvSig`v .  
+ mimo Počet vrácených bajtů `ppvSig` .  
   
  `pdwCPlusTypeFlag`  
- [out] Příznak určující typ konstanty, která je výchozí hodnotou vlastnosti. Tato hodnota je z CorElementType výčtu.  
+ mimo Příznak určující typ konstanty, která je výchozí hodnotou vlastnosti. Tato hodnota pochází z výčtu CorElementType –.  
   
  `ppDefaultValue`  
- [out] Ukazatel na bajty, které ukládají výchozí hodnotu pro tuto vlastnost.  
+ mimo Ukazatel na bajty, které ukládají výchozí hodnotu pro tuto vlastnost.  
   
  `pcchDefaultValue`  
- [out] Velikost v širokých `ppDefaultValue`znaků `pdwCPlusTypeFlag` , pokud je ELEMENT_TYPE_STRING; v opačném případě tato hodnota není relevantní. V takovém případě `ppDefaultValue` je délka odvodit z typu, který je určen `pdwCPlusTypeFlag`.  
+ mimo Velikost v různých znacích `ppDefaultValue` , pokud `pdwCPlusTypeFlag` je ELEMENT_TYPE_STRING; jinak tato hodnota není relevantní. V takovém případě `ppDefaultValue` je délka odvozena od typu, který je určen pomocí `pdwCPlusTypeFlag` .  
   
  `pmdSetter`  
- [out] Ukazatel na token MethodDef, který představuje metodu přístupového objektu set pro vlastnost.  
+ mimo Ukazatel na token MethodDef, který představuje metodu set přístupového objektu pro vlastnost.  
   
  `pmdGetter`  
- [out] Ukazatel na Token MethodDef, který představuje metodu get accessor pro vlastnost.  
+ mimo Ukazatel na token MethodDef, který představuje metodu Get přístup k vlastnosti.  
   
  `rmdOtherMethod`  
- [out] Pole Tokeny MethodDef, které představují jiné metody přidružené k vlastnosti.  
+ mimo Pole tokenů MethodDef, které představuje jiné metody přidružené k vlastnosti.  
   
  `cMax`  
- [v] Maximální velikost `rmdOtherMethod` pole. Pokud neposkytnete pole dostatečně velké pro všechny metody, jsou přeskočeny bez upozornění.  
+ pro Maximální velikost `rmdOtherMethod` pole. Pokud nezadáte pole dostatečně velké pro uložení všech metod, budou vynechána bez upozornění.  
   
  `pcOtherMethod`  
- [out] Počet tokenů MethodDef vrácených v `rmdOtherMethod`.  
+ mimo Počet tokenů MethodDef vrácených v `rmdOtherMethod` .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Zahrnuto jako prostředek v souboru MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport – rozhraní](imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](imetadataimport2-interface.md)

@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: cca0f799-09b8-4689-a33c-6d6537943a9b
 topic_type:
 - apiref
-ms.openlocfilehash: 7fb58c0eb2446253bd658434fc9d68bb857fe0e6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 25a4b101388bfc0151ba7c9c52da6561d48f806b
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175119"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503156"
 ---
 # <a name="icorprofilercallbackthreadcreated-method"></a>ICorProfilerCallback::ThreadCreated – metoda
-Upozorní profiler, že vlákno bylo vytvořeno.  
+Upozorní profileru, že bylo vytvořeno vlákno.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,21 +34,21 @@ HRESULT ThreadCreated(
   
 ## <a name="parameters"></a>Parametry  
  `threadId`  
- [v] ID vlákno, které bylo vytvořeno.  
+ pro ID vlákna, které bylo vytvořeno.  
   
 ## <a name="remarks"></a>Poznámky  
- Hodnota `threadId` je okamžitě platná.  
+ `threadId`Hodnota je okamžitě platná.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [ICorProfilerCallback – rozhraní](icorprofilercallback-interface.md)
 - [ThreadDestroyed – metoda](icorprofilercallback-threaddestroyed-method.md)

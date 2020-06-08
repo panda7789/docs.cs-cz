@@ -14,21 +14,21 @@ helpviewer_keywords:
 ms.assetid: c3be2cbd-2d93-438b-9888-9a0251b63c03
 topic_type:
 - apiref
-ms.openlocfilehash: b2c334c7a757c2f4044d08787bdae93ffc2804e4
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: 237fe23493460df77a79ba3aed9f0a809cd8aa23
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83803887"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501466"
 ---
 # <a name="ihostsecuritymanager-interface"></a>IHostSecurityManager – rozhraní
 Poskytuje metody, které umožňují přístup a řízení kontextu zabezpečení aktuálně prováděného vlákna.  
   
 ## <a name="methods"></a>Metody  
   
-|Metoda|Popis|  
+|Metoda|Description|  
 |------------|-----------------|  
-|[GetSecurityContext – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritymanager-getsecuritycontext-method.md)|Získá požadovaná [IHostSecurityContext –](ihostsecuritycontext-interface.md) z hostitele.|  
+|[GetSecurityContext – metoda](ihostsecuritymanager-getsecuritycontext-method.md)|Získá požadovaná [IHostSecurityContext –](ihostsecuritycontext-interface.md) z hostitele.|  
 |[ImpersonateLoggedOnUser – metoda](ihostsecuritymanager-impersonateloggedonuser-method.md)|Požaduje, aby se kód spustil s použitím přihlašovacích údajů aktuální identity uživatele.|  
 |[OpenThreadToken – metoda](ihostsecuritymanager-openthreadtoken-method.md)|Otevře volitelný přístupový token přidružený k aktuálnímu vláknu.|  
 |[RevertToSelf – metoda](ihostsecuritymanager-reverttoself-method.md)|Ukončí zosobnění identity aktuálního uživatele a vrátí původní token vlákna.|  
@@ -57,7 +57,7 @@ Poskytuje metody, které umožňují přístup a řízení kontextu zabezpečen�
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [IHostSecurityContext – rozhraní](ihostsecuritycontext-interface.md)
 - [Rozhraní pro hostování](hosting-interfaces.md)

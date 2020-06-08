@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 6eefb243-a281-41c1-bcdc-7e17513bc446
 topic_type:
 - apiref
-ms.openlocfilehash: 9a80336db4a5a8d7cfdebb7eb8d25bcb8f96e87c
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 320cfae93f8aae94f9315e8e20ed6cf7f9cced7c
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74437645"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84491313"
 ---
 # <a name="imetadataimportgetcustomattributeprops-method"></a>IMetaDataImport::GetCustomAttributeProps – metoda
 Získá hodnotu vlastního atributu s ohledem na jeho token metadat.  
@@ -42,30 +42,30 @@ HRESULT GetCustomAttributeProps (
  pro Token metadat, který představuje vlastní atribut, který má být načten.  
   
  `ptkObj`  
- [out, volitelné] Token metadat představující objekt, který upravuje vlastní atribut. Tato hodnota může být jakýkoli typ tokenu metadat s výjimkou `mdCustomAttribute`.  
+ [out, volitelné] Token metadat představující objekt, který upravuje vlastní atribut. Tato hodnota může být jakýkoli typ tokenu metadat s výjimkou `mdCustomAttribute` .  
   
  `ptkType`  
- [out, volitelné] Token metadat `mdMethodDef` nebo `mdMemberRef` reprezentující <xref:System.Type> vráceného vlastního atributu.  
+ [out, volitelné] `mdMethodDef` `mdMemberRef` Token metadat nebo představující <xref:System.Type> vrácený vlastní atribut  
   
  `ppBlob`  
  [out, volitelné] Ukazatel na pole dat, které je hodnotou vlastního atributu.  
   
  `pcbSize`  
- [out, volitelné] Velikost v bajtech dat vrácených ve formátu *`ppBlob`.  
+ [out, volitelné] Velikost v bajtech dat vrácených v * `ppBlob` .  
   
 ## <a name="remarks"></a>Poznámky  
  Vlastní atribut je uložen jako pole dat, formátu srozumitelného modulem metadat.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** Cor. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport – rozhraní](imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](imetadataimport2-interface.md)

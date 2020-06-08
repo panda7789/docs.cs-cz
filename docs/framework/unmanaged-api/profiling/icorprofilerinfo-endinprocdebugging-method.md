@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 35bc1188-9767-4141-8038-60ea015b99ac
 topic_type:
 - apiref
-ms.openlocfilehash: 8a15843e9169442d89996375ee85f62b38f92e30
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: afbb007b6293e6e9cff92281a6f5e93b1e7924ec
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76864255"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502974"
 ---
 # <a name="icorprofilerinfoendinprocdebugging-method"></a>ICorProfilerInfo::EndInprocDebugging – metoda
 Ukončí relaci ladění v procesu. Tato metoda je zastaralá ve verzi .NET Framework 2,0.  
@@ -42,7 +42,7 @@ HRESULT EndInprocDebugging(
  Služba ladění CLR podporuje omezené vnitroprocesové ladění v .NET Framework verzích 1,0 a 1,1. Ladění v rámci procesu povolilo profiler pro použití kontrolních částí rozhraní API pro ladění. Z důvodu zpětné vazby od zákazníků jsme ale vnitroprocesové ladění odebrali z .NET Framework ve verzi 2,0 a nahradili sadu funkcí, která je v souladu s rozhraním API profilování.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorProf. idl, CorProf. h  
   

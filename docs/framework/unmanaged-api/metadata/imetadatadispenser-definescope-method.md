@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: af28db02-29af-45ac-aec6-8d6c6123c2ff
 topic_type:
 - apiref
-ms.openlocfilehash: 021ef8de602d6dd928f49e69e36f8d4a61425745
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 12a32b5d2f0647ea2d9b696d08d6644e30be0c65
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84008362"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501349"
 ---
 # <a name="imetadatadispenserdefinescope-method"></a>IMetaDataDispenser::DefineScope – metoda
 Vytvoří novou oblast v paměti, ve které můžete vytvořit nová metadata.  
@@ -54,7 +54,7 @@ HRESULT DefineScope (
 ## <a name="remarks"></a>Poznámky  
  `DefineScope`Vytvoří sadu tabulek metadat v paměti, vygeneruje jedinečný identifikátor GUID (identifikátor verze modulu nebo identifikátor MVID) pro metadata a vytvoří položku v tabulce modulů pro vygenerování kompilační jednotky.  
   
- Atributy můžete k oboru metadat připojit jako celek pomocí metody [IMetaDataEmit:: SetModuleProps –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-setmoduleprops-method.md) nebo [IMetaDataEmit::D efinecustomattribute](imetadataemit-definecustomattribute-method.md) , podle potřeby.  
+ Atributy můžete k oboru metadat připojit jako celek pomocí metody [IMetaDataEmit:: SetModuleProps –](imetadataemit-setmoduleprops-method.md) nebo [IMetaDataEmit::D efinecustomattribute](imetadataemit-definecustomattribute-method.md) , podle potřeby.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platforma:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
@@ -65,7 +65,7 @@ HRESULT DefineScope (
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [IMetaDataDispenser – rozhraní](imetadatadispenser-interface.md)
 - [IMetaDataDispenserEx – rozhraní](imetadatadispenserex-interface.md)

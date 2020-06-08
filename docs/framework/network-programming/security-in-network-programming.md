@@ -1,5 +1,6 @@
 ---
-title: Zabezpečení v programování v síti - .NET Framework
+title: Zabezpečení při programování sítě – .NET Framework
+description: Přečtěte si o oblíbených mechanismech ověřování aplikací a oprávněních pro přístup k kódu, které podporují třídy oboru názvů .NET Framework System.Net.
 ms.date: 03/14/2018
 helpviewer_keywords:
 - sending data, Internet security
@@ -12,27 +13,27 @@ helpviewer_keywords:
 - security [.NET Framework], Internet
 - permissions [.NET Framework], Internet
 ms.assetid: afb07899-2707-49ab-a57f-e0caf20d0171
-ms.openlocfilehash: bbe30292e474c9cb5956d96fbbae4d78d464d603
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+ms.openlocfilehash: 546e7223ba4af3029a798fb3edfb503c07e1ab4a
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80989230"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502168"
 ---
-# <a name="security-in-network-programming"></a>Bezpečnost v programování v síti
+# <a name="security-in-network-programming"></a>Zabezpečení při programování sítě
 
-Třídy oboru <xref:System.Net> názvů rozhraní .NET Framework poskytují integrovanou podporu pro populární mechanismy ověřování internetových aplikací a pro přístupová oprávnění kódu rozhraní .NET Framework.  
+<xref:System.Net>Třídy oboru názvů .NET Framework poskytují integrovanou podporu pro oblíbené mechanismy ověřování internetových aplikací a pro .NET Framework oprávnění k přístupu kódu.  
   
-## <a name="in-this-section"></a>V tomto oddílu
+## <a name="in-this-section"></a>V této části
 
-[Osvědčené postupy zabezpečení transportní vrstvy (TLS) pomocí rozhraní .NET Framework](tls.md)  
-Popisuje osvědčené postupy TLS s rozhraním .NET Framework.
+[Osvědčené postupy TLS (Transport Layer Security) s .NET Framework](tls.md)  
+Popisuje osvědčené postupy TLS s .NET Framework.
 
 [Použití protokolu SSL (Secure Sockets Layer)](using-secure-sockets-layer.md)  
-Popisuje způsob použití připojení SSL (Secure Sockets L).  
+Popisuje, jak používat připojení SSL (Secure Sockets Layer) (SSL).  
   
 [Ověřování v internetu](internet-authentication.md)  
-Popisuje způsob použití metod ověřování PROTOKOLU HTTP k navázání ověřených připojení k serverům HTTP.  
+Popisuje způsob použití metod ověřování protokolu HTTP k navázání ověřených připojení k serverům HTTP.  
   
 [Oprávnění pro web a sokety](web-and-socket-permissions.md)  
 Popisuje, jak nastavit zabezpečení přístupu kódu pro aplikace, které používají připojení k Internetu.  

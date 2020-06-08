@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 68c160ea-ae7d-4750-985d-a038b2c8e7d9
 topic_type:
 - apiref
-ms.openlocfilehash: cc8aac32149fed952737d928e16a8f6efc448c79
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a044924810016eea60682b8765aeee448b552f0d
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177125"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501193"
 ---
 # <a name="imetadatatablesgetcolumninfo-method"></a>IMetaDataTables::GetColumnInfo – metoda
-Získá data o zadaném sloupci v zadané tabulce.  
+Načte data o zadaném sloupci v zadané tabulce.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,31 +42,31 @@ HRESULT GetColumnInfo (
 =======
 
  `ixTbl`  
- [v] Index požadované tabulky.  
+ pro Index požadované tabulky  
   
  `ixCol`  
- [v] Index požadovaného sloupce.  
+ pro Index požadovaného sloupce  
   
  `poCol`  
- [out] Ukazatel na posun sloupce v řádku.  
+ mimo Ukazatel na posun sloupce v řádku.  
   
  `pcbCol`  
- [out] Ukazatel na velikost sloupce v bajtech.  
+ mimo Ukazatel na velikost sloupce v bajtech.  
   
  `pType`  
- [out] Ukazatel na typ hodnot ve sloupci.  
+ mimo Ukazatel na typ hodnot ve sloupci.  
   
  `ppName`  
- [out] Ukazatel na ukazatel na název sloupce.  
+ mimo Ukazatel na ukazatel na název sloupce.  
 
 ## <a name="remarks"></a>Poznámky
 
-Typ vráceného sloupce spadá do rozsahu hodnot:
+Vrácený typ sloupce spadá do rozsahu hodnot:
 
-| pTyp                    | Popis   | Pomocná funkce                   |
+| pType                    | Description   | Pomocná funkce                   |
 |--------------------------|---------------|-----------------------------------|
-| `0`..`iRidMax`<br>(0..63)   | Zbavit           | **ISRIDTyp**<br>**Isridortoken** |
-| `iCodedToken`..`iCodedTokenMax`<br>(64..95) | Kódovaný token | **IsCodedTokenType** <br>**Isridortoken** |
+| `0`..`iRidMax`<br>(0.. 63)   | Mezinárodní           | **IsRidType**<br>**IsRidOrToken** |
+| `iCodedToken`..`iCodedTokenMax`<br>(64.. 95) | Kódovaný token | **IsCodedTokenType** <br>**IsRidOrToken** |
 | `iSHORT`(96)            | Int16         | **IsFixedType**                   |
 | `iUSHORT`(97)           | UInt16        | **IsFixedType**                   |
 | `iLONG`(98)             | Int32         | **IsFixedType**                   |
@@ -76,25 +76,25 @@ Typ vráceného sloupce spadá do rozsahu hodnot:
 | `iGUID`(102)            | Identifikátor GUID          | **IsHeapType**                    |
 | `iBLOB`(103)            | Objekt blob          | **IsHeapType**                    |
 
-Hodnoty, které jsou uloženy v `IsHeapType == true` *haldě* (to znamená) lze číst pomocí:
+Hodnoty, které jsou uloženy v *haldě* (tj `IsHeapType == true` .), lze číst pomocí:
 
-- `iSTRING`: **IMetadataTables.GetString**
-- `iGUID`: **IMetadataTables.GetGUID**
-- `iBLOB`: **IMetadataTables.GetBlob**
+- `iSTRING`: **IMetadataTables. GetString**
+- `iGUID`: **IMetadataTables. GETguid**
+- `iBLOB`: **IMetadataTables. Getblob**
 
 > [!IMPORTANT]
-> Chcete-li použít konstanty definované v tabulce `#define _DEFINE_META_DATA_META_CONSTANTS` výše, zadejte direktivu poskytnutou souborem záhlaví *cor.h.*
+> Chcete-li použít konstanty definované v tabulce výše, zahrňte direktivu, kterou `#define _DEFINE_META_DATA_META_CONSTANTS` poskytuje hlavičkový soubor *cor. h* .
 
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Používá se jako prostředek v souboru MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [IMetaDataTables – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md)
-- [IMetaDataTables2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatatables2-interface.md)
+- [IMetaDataTables – rozhraní](imetadatatables-interface.md)
+- [IMetaDataTables2 – rozhraní](imetadatatables2-interface.md)

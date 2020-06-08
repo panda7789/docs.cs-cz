@@ -14,22 +14,22 @@ helpviewer_keywords:
 ms.assetid: a945d439-3b34-4aa4-b575-8413dd7806ce
 topic_type:
 - apiref
-ms.openlocfilehash: 4e7e76a4a3ab291ee97ad0912e3d6224cdf96fba
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: 09b4a06892cdc450eed9dead503a990b6f19804e
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83804489"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501505"
 ---
 # <a name="ihostmemorymanager-interface"></a>IHostMemoryManager – rozhraní
 Poskytuje metody, které umožňují modulu CLR (Common Language Runtime) provádět požadavky na virtuální paměť prostřednictvím hostitele namísto použití standardních funkcí virtuální paměti Win32.  
   
 ## <a name="methods"></a>Metody  
   
-|Metoda|Popis|  
+|Metoda|Description|  
 |------------|-----------------|  
 |[AcquiredVirtualAddressSpace – metoda](ihostmemorymanager-acquiredvirtualaddressspace-method.md)|Upozorňuje hostitele, že modul CLR (Common Language Runtime) získal zadanou paměť z operačního systému.|  
-|[CreateMAlloc – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-createmalloc-method.md)|Získá ukazatel rozhraní na instanci [IHostMalloc](ihostmalloc-interface.md) , která se používá k vyžádání přidělení paměti z haldy vytvořené hostitelem.|  
+|[CreateMAlloc – metoda](ihostmemorymanager-createmalloc-method.md)|Získá ukazatel rozhraní na instanci [IHostMalloc](ihostmalloc-interface.md) , která se používá k vyžádání přidělení paměti z haldy vytvořené hostitelem.|  
 |[GetMemoryLoad – metoda](ihostmemorymanager-getmemoryload-method.md)|Načte velikost fyzické paměti, která je aktuálně používána, jak je uvedeno v hostiteli.|  
 |[NeedsVirtualAddressSpace – metoda](ihostmemorymanager-needsvirtualaddressspace-method.md)|Upozorní hostitele, že se bude modul CLR pokoušet použít zadanou paměť.|  
 |[RegisterMemoryNotificationCallback – metoda](ihostmemorymanager-registermemorynotificationcallback-method.md)|Registruje ukazatel na funkci zpětného volání, kterou hostitel vyvolá, aby upozornil CLR na aktuální zatížení paměti v počítači.|  
@@ -51,7 +51,7 @@ Poskytuje metody, které umožňují modulu CLR (Common Language Runtime) prová
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [IHostMalloc – rozhraní](ihostmalloc-interface.md)
 - [Rozhraní pro hostování](hosting-interfaces.md)

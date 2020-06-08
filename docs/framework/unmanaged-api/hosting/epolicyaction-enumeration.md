@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: 72dd76ba-239e-45ac-9ded-318fb07d6c6d
 topic_type:
 - apiref
-ms.openlocfilehash: 8788d6e2220778a3f0926d5ed3dd59142487bcca
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 901c62e6f2519fc4f9251f348c77b11bbe0992be
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616187"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504342"
 ---
 # <a name="epolicyaction-enumeration"></a>EPolicyAction – výčet
-Popisuje akce zásad, které může hostitel nastavit pro operace popsané v [EClrOperation –](../../../../docs/framework/unmanaged-api/hosting/eclroperation-enumeration.md) a chyby popsané v [EClrFailure –](eclrfailure-enumeration.md).  
+Popisuje akce zásad, které může hostitel nastavit pro operace popsané v [EClrOperation –](eclroperation-enumeration.md) a chyby popsané v [EClrFailure –](eclrfailure-enumeration.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,7 +43,7 @@ typedef enum {
   
 ## <a name="members"></a>Členové  
   
-|Člen|Popis|  
+|Člen|Description|  
 |------------|-----------------|  
 |`eAbortThread`|Určuje, že modul CLR (Common Language Runtime) by měl plynule přerušit vlákno. Bezproblémové přerušení zahrnuje pokusy o spuštění všech `finally` bloků, všechny `catch` bloky související s přerušením vlákna a finalizační metody.|  
 |`eDisableRuntime`|Určuje, že CLR by měl vstoupit do zakázaného stavu. V ovlivněném procesu nelze provádět žádné další spravované kódy a vlákna jsou blokována při zadávání CLR.|  
@@ -57,7 +57,7 @@ typedef enum {
 |`eUnloadAppDomain`|Určuje, že <xref:System.AppDomain> by mělo být uvolněno. Modul CLR se pokusí spustit finalizační metody.|  
   
 ## <a name="remarks"></a>Poznámky  
- Hostitel nastavuje akce zásad voláním metod rozhraní [ICLRPolicyManager](../../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-interface.md) . Informace o hrubé a bezproblémovém přerušení najdete v tématu výčet [EClrOperation –](eclroperation-enumeration.md) .  
+ Hostitel nastavuje akce zásad voláním metod rozhraní [ICLRPolicyManager](iclrpolicymanager-interface.md) . Informace o hrubé a bezproblémovém přerušení najdete v tématu výčet [EClrOperation –](eclroperation-enumeration.md) .  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
@@ -68,7 +68,7 @@ typedef enum {
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [EClrFailure – výčet](eclrfailure-enumeration.md)
 - [ICLRPolicyManager – rozhraní](iclrpolicymanager-interface.md)

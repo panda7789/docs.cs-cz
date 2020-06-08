@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: aa527b31-89d4-41f2-ad6f-63b76950b7df
 topic_type:
 - apiref
-ms.openlocfilehash: 435d23d4a56d6ea98e3d368f0a5aa37c73e31d96
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 0fa72568df77c4916a3c6676e1dcca7c0c616c4a
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616161"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84493315"
 ---
 # <a name="etasktype-enumeration"></a>ETaskType – výčet
-Obsahuje hodnoty, které určují typ úlohy, který je reprezentován buď [ICLRTask](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) nebo rozhraním [IHostTask](ihosttask-interface.md) .  
+Obsahuje hodnoty, které určují typ úlohy, který je reprezentován buď [ICLRTask](iclrtask-interface.md) nebo rozhraním [IHostTask](ihosttask-interface.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,7 +44,7 @@ typedef enum ETaskType {
   
 ## <a name="members"></a>Členové  
   
-|Člen|Popis|  
+|Člen|Description|  
 |------------|-----------------|  
 |`TT_ADUNLOAD`|Rozhraní představuje úlohu uvolnění domény aplikace.|  
 |`TT_DEBUGGERHELPER`|Rozhraní představuje úlohu pomocníka ladicího programu.|  
@@ -67,6 +67,6 @@ typedef enum ETaskType {
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Výčty hostování](hosting-enumerations.md)

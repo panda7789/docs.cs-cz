@@ -1,5 +1,6 @@
 ---
 title: Použití synchronního serverového soketu
+description: Tento příklad ukazuje synchronní server soketu v .NET Framework, který pozastaví aplikaci, dokud nebude přijata žádost o připojení na soketu.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -17,19 +18,19 @@ helpviewer_keywords:
 - sockets, synchronous server sockets
 - Internet, sockets
 ms.assetid: d1ce882e-653e-41f5-9289-844ec855b804
-ms.openlocfilehash: cbc02c755ceefa8f31439f121a98978b82f33fa2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9e7d32595f554b32ecc72bbb1f1a469ad5935467
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "71047037"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502051"
 ---
 # <a name="using-a-synchronous-server-socket"></a>Použití synchronního serverového soketu
-Synchronní sokety serveru pozastaví provádění aplikace, dokud není přijat požadavek na připojení v soketu. Synchronní serverové sokety nejsou vhodné pro aplikace, které při svém provozu velmi využívají síť, ale mohou být vhodné pro jednoduché síťové aplikace.  
+Synchronní sokety serveru pozastaví provádění aplikace, dokud se na soketu nepřijme požadavek na připojení. Synchronní sokety serveru nejsou vhodné pro aplikace, které při jejich provozu využívají těžké sítě, ale můžou být vhodné pro jednoduché síťové aplikace.  
   
- Po <xref:System.Net.Sockets.Socket> a je nastavena na naslouchání na koncovém bodu pomocí metody <xref:System.Net.Sockets.Socket.Bind%2A> a, <xref:System.Net.Sockets.Socket.Listen%2A> je připraven přijmout příchozí požadavky na připojení pomocí <xref:System.Net.Sockets.Socket.Accept%2A> metody. Aplikace je pozastavena, dokud není přijat požadavek na připojení při volání metody **Accept.**  
+ Jakmile <xref:System.Net.Sockets.Socket> je nastaveno naslouchání na koncovém bodu pomocí <xref:System.Net.Sockets.Socket.Bind%2A> metod a <xref:System.Net.Sockets.Socket.Listen%2A> , je připraven přijímat příchozí požadavky na připojení pomocí <xref:System.Net.Sockets.Socket.Accept%2A> metody. Aplikace je pozastavena, dokud nebude přijata žádost o připojení při volání metody **Accept** .  
   
- Při přijetí požadavku na připojení **Accept** vrátí novou instanci **Socket,** která je přidružena k připojujícímu se klientovi. Následující příklad čte data z klienta, zobrazí je v konzole a ozvěny data zpět klientovi. **Socket** neurčuje žádný protokol zasílání zpráv,\<takže řetězec "EOF>" označuje konec dat zprávy. Předpokládá, že **Socket** `listener` s názvem byla inicializována a vázána na koncový bod.  
+ Po přijetí žádosti o připojení vrátí funkce **Accept** novou instanci **soketu** , která je přidružená k připojujícímu se klientovi. Následující příklad čte data z klienta, zobrazuje je v konzole nástroje a vrací data zpět klientovi. **Soket** neurčuje žádný protokol zasílání zpráv, takže řetězec " \<EOF> " označuje konec dat zprávy. Předpokládá, že **soket** s názvem `listener` byl inicializován a svázán s koncovým bodem.  
   
 ```vb  
 Console.WriteLine("Waiting for a connection...")  
@@ -75,7 +76,7 @@ handler.Shutdown(SocketShutdown.Both);
 handler.Close();  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Použití asynchronního serverového soketu](using-an-asynchronous-server-socket.md)
 - [Příklad synchronního serverového soketu](synchronous-server-socket-example.md)

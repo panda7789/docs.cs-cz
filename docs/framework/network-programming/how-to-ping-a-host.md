@@ -1,18 +1,19 @@
 ---
 title: 'Postupy: Příkaz Ping na hostitele'
+description: Pomocí tohoto ukázkového kódu se dozvíte, jak pomocí příkazů testovat vzdálený hostitel v .NET Framework. Tento příklad vyžaduje odkazy na obor názvů System.Net.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Ping
 ms.assetid: bbf20f5b-eca1-4661-af04-cb8837f9af05
-ms.openlocfilehash: 09ae830bbef078b94bd28e654d93c10cde6108fd
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ac62f58eea41419de2d5651269154d9abb757aba
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79180791"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502493"
 ---
 # <a name="how-to-ping-a-host"></a>Postupy: Příkaz Ping na hostitele
-Tato ukázka ukazuje, jak příkaz ping vzdáleného hostitele.  
+V této ukázce se dozvíte, jak testovat vzdálený hostitel pomocí testu.  
   
 ## <a name="example"></a>Příklad  
   
@@ -123,4 +124,4 @@ namespace Examples.System.Net.NetworkInformation.PingTest
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
-- Odkazy na **System.Net** oboru názvů.
+- Odkazuje na obor názvů **System.NET** .

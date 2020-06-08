@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: b8685c1e-b80c-4198-8eb3-748d6f48a99e
 topic_type:
 - apiref
-ms.openlocfilehash: c458fef77b49f522ca21dd5487731f4d43588cea
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 8409e56b5ec4dbe47035a0555b6b7ce175b517ee
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74437096"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84490975"
 ---
 # <a name="imetadataimportgetpinvokemap-method"></a>IMetaDataImport::GetPinvokeMap – metoda
 Získá token Odkaz ModuleRef představující cílové sestavení volání PInvoke.  
@@ -43,30 +43,30 @@ HRESULT GetPinvokeMap (
  pro FieldDef nebo MethodDef token pro získání metadat mapování PInvoke pro.  
   
  `pdwMappingFlags`  
- mimo Ukazatel na příznaky použité pro mapování. Tato hodnota je Bitová maska z výčtu [CorPinvokeMap –](../../../../docs/framework/unmanaged-api/metadata/corpinvokemap-enumeration.md) .  
+ mimo Ukazatel na příznaky použité pro mapování. Tato hodnota je Bitová maska z výčtu [CorPinvokeMap –](corpinvokemap-enumeration.md) .  
   
  `szImportName`  
  mimo Název nespravované cílové knihovny DLL.  
   
  `cchImportName`  
- pro Velikost v různých znacích `szImportName`.  
+ pro Velikost v různých znacích `szImportName` .  
   
  `pchImportName`  
- mimo Počet velkých znaků vrácených v `szImportName`.  
+ mimo Počet znaků vrácených v rámci `szImportName` .  
   
  `pmrImportDLL`  
  mimo Ukazatel na token Odkaz ModuleRef, který představuje knihovnu nespravovaného cílového objektu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** Cor. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport – rozhraní](imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](imetadataimport2-interface.md)

@@ -1,5 +1,6 @@
 ---
 title: Příklad synchronního klientského soketu
+description: Tento ukázkový .NET Framework program vytvoří klienta, který se připojí k serveru pomocí synchronního soketu. Pošle řetězec a zobrazí odpověď.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,15 +10,15 @@ helpviewer_keywords:
 - synchronous client sockets
 - sockets, synchronous client sockets
 ms.assetid: 2c7d5be7-2221-467c-a839-5744ec4d576d
-ms.openlocfilehash: d55d875546ff34bc38b13f792668cd00309c6e34
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7455307441045360bc62cee50f13d106df4d005e
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79180674"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502116"
 ---
 # <a name="synchronous-client-socket-example"></a>Příklad synchronního klientského soketu
-Následující ukázkový program vytvoří klienta, který se připojí k serveru. Klient je sestaven se synchronním soketem, takže spuštění klientské aplikace je pozastaveno, dokud server nevrátí odpověď. Aplikace odešle řetězec na server a potom zobrazí řetězec vrácený serverem v konzole.  
+Následující vzorový program vytvoří klienta, který se připojí k serveru. Klient je vytvořen pomocí synchronního soketu, takže spuštění klientské aplikace je pozastaveno, dokud server nevrátí odpověď. Aplikace pošle řetězec na server a pak zobrazí řetězec vrácený serverem v konzole nástroje.  
   
 ```vb  
 Imports System  
@@ -135,7 +136,7 @@ public class SynchronousSocketClient {
 }  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Příklad synchronního serverového soketu](synchronous-server-socket-example.md)
 - [Použití synchronního klientského soketu](using-a-synchronous-client-socket.md)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 8aea2e2c-23a3-4cda-9a06-e19f97383830
 topic_type:
 - apiref
-ms.openlocfilehash: 22c0a317777a12294ba7a90f7af1ceeca3ad0a47
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 0a283c837e23ab1aafd3545df1dfe8a267de0557
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84009259"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501284"
 ---
 # <a name="imetadataemitgetsavesize-method"></a>IMetaDataEmit::GetSaveSize – metoda
 Získá odhadovanou binární velikost sestavení a jeho metadat v aktuálním oboru.  
@@ -50,7 +50,7 @@ HRESULT GetSaveSize (
 ## <a name="remarks"></a>Poznámky  
  `GetSaveSize`vypočítá požadované místo v bajtech pro uložení sestavení a všech jeho metadat v aktuálním oboru. (Volání metody [IMetaDataEmit:: SaveToStream –](imetadataemit-savetostream-method.md) vygenerovalo tento počet bajtů.)  
   
- Pokud volající implementuje rozhraní [IMapToken –](../../../../docs/framework/unmanaged-api/metadata/imaptoken-interface.md) (prostřednictvím [IMetaDataEmit:: SetHandler –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-sethandler-method.md) nebo [IMetaDataEmit:: Merge](imetadataemit-merge-method.md)), provede `GetSaveSize` dva průchody metadaty za účelem optimalizace a komprimace. V opačném případě se neprovede žádné optimalizace.  
+ Pokud volající implementuje rozhraní [IMapToken –](imaptoken-interface.md) (prostřednictvím [IMetaDataEmit:: SetHandler –](imetadataemit-sethandler-method.md) nebo [IMetaDataEmit:: Merge](imetadataemit-merge-method.md)), provede `GetSaveSize` dva průchody metadaty za účelem optimalizace a komprimace. V opačném případě se neprovede žádné optimalizace.  
   
  Pokud je provedena optimalizace, první průchod jednoduše seřadí struktury metadat a optimalizuje výkon při importu. Tento krok obvykle má za následek přesun záznamů s vedlejším účinkem, kdy jsou tokeny uchovávané nástrojem pro budoucí odkazy neověřené. Metadata neoznamují volajícím těchto změn tokenů do té doby, než je však druhý úspěch. Ve druhém průchodu jsou provedeny různé optimalizace, které mají omezit celkovou velikost metadat, jako je například optimalizace nepřítomnosti (předčasné vázání) `mdTypeRef` a `mdMemberRef` tokeny, pokud je odkaz na typ nebo člen deklarovaný v aktuálním oboru metadat. V tomto průchodu dojde k dalšímu zaokrouhlení mapování tokenů. Po tomto průchodu modul metadata Engine upozorní volajícího prostřednictvím jeho `IMapToken` rozhraní o jakékoli změněné hodnoty tokenu.  
   
@@ -63,7 +63,7 @@ HRESULT GetSaveSize (
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [IMetaDataEmit – rozhraní](imetadataemit-interface.md)
 - [IMetaDataEmit2 – rozhraní](imetadataemit2-interface.md)

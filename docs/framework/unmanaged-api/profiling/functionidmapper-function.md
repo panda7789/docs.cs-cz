@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: b8205b60-1893-4303-8cff-7ac5a00892aa
 topic_type:
 - apiref
-ms.openlocfilehash: 0cf2014d7007593c51868eff0b488fdab136e362
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: afc818dfe625bfc329ceb1660539eb119702a90d
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175171"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84500673"
 ---
 # <a name="functionidmapper-function"></a>FunctionIDMapper – funkce
-Upozorní profiler, že daný identifikátor funkce může být přemapován na alternativní ID, které má být použito v [funkcích FunctionEnter2](functionenter2-function.md), [FunctionLeave2](functionleave2-function.md)a [FunctionTailcall2](functiontailcall2-function.md) pro tuto funkci. `FunctionIDMapper`také umožňuje profiler k označení, zda chce přijímat zpětná volání pro tuto funkci.  
+Upozorní profileru, že daný identifikátor funkce může být přemapován na alternativní ID, které má být použito v zpětných voláních [FunctionEnter2](functionenter2-function.md), [FunctionLeave2 –](functionleave2-function.md)a [FunctionTailcall2 –](functiontailcall2-function.md) pro danou funkci. `FunctionIDMapper`také umožňuje profileru označit, zda chce přijímat zpětná volání této funkce.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,34 +37,34 @@ UINT_PTR __stdcall FunctionIDMapper (
 
 - `funcId`
 
-  \[in] Identifikátor funkce, který má být přemapován.
+  \[v] identifikátor funkce, která má být přemapována.
 
 - `pbHookFunction`
 
-  \[out] Ukazatel na hodnotu, kterou `true` nastaví profiler, `FunctionLeave2`pokud `FunctionTailcall2` chce přijímat `FunctionEnter2`, a zpětná volání; v opačném případě nastaví tuto hodnotu na `false`.
+  \[out] ukazatel na hodnotu, na kterou Profiler nastavuje `true` , pokud chce přijímat `FunctionEnter2` , `FunctionLeave2` a `FunctionTailcall2` zpětná volání; v opačném případě nastaví tuto hodnotu na `false` .
 
 ## <a name="return-value"></a>Návratová hodnota  
- Profiler vrátí hodnotu, která používá modul provádění jako alternativní identifikátor funkce. Vrácená hodnota nemůže `false` být null, pokud není vrácena v `pbHookFunction`. V opačném případě null vrácená hodnota bude mít nepředvídatelné výsledky, včetně případné zastavení procesu.  
+ Profiler vrátí hodnotu, kterou spouštěcí modul používá jako alternativní identifikátor funkce. Návratová hodnota nemůže být null, pokud `false` není vrácena v `pbHookFunction` . V opačném případě návratová hodnota null vytvoří nepředvídatelné výsledky, včetně možného zastavení procesu.  
   
 ## <a name="remarks"></a>Poznámky  
- Funkce `FunctionIDMapper` je zpětné volání. Je implementován profiler přemapovat ID funkce na jiný identifikátor, který je užitečnější pro profiler. Vrátí `FunctionIDMapper` alternativní ID, které má být použito pro danou funkci. Modul provádění pak respektuje profiler požadavek předáním tohoto alternativního ID, kromě tradiční id funkce, `clientData` zpět `FunctionEnter2`do `FunctionLeave2`profileru v parametru , a `FunctionTailcall2` háčky, k identifikaci funkce, pro které je volán hák.  
+ `FunctionIDMapper`Funkce je zpětné volání. Je implementován profilerem k přemapování ID funkce na jiný identifikátor, který je užitečnější pro Profiler. `FunctionIDMapper`Vrátí alternativní ID, které se má použít pro libovolnou danou funkci. Spouštěcí modul pak dodrží požadavek profileru tím, že předá toto alternativní ID k tradičnímu ID funkce zpátky do profileru v `clientData` parametru `FunctionEnter2` , `FunctionLeave2` a a `FunctionTailcall2` zavěsí, aby identifikoval funkci, pro kterou je zavěšeno volání.  
   
- Metodu [ICorProfilerInfo::SetFunctionIDMapper](icorprofilerinfo-setfunctionidmapper-method.md) můžete použít k určení `FunctionIDMapper` implementace funkce. Můžete volat `ICorProfilerInfo::SetFunctionIDMapper` metodu pouze jednou a doporučujeme tak učinit v [ICorProfilerCallback::Initialize](icorprofilercallback-initialize-method.md) zpětné volání.  
+ K určení implementace funkce lze použít metodu [ICorProfilerInfo:: SetFunctionIDMapper –](icorprofilerinfo-setfunctionidmapper-method.md) `FunctionIDMapper` . Metodu lze volat `ICorProfilerInfo::SetFunctionIDMapper` pouze jednou a doporučujeme, abyste tak učinili v rámci zpětného volání [ICorProfilerCallback:: Initialize](icorprofilercallback-initialize-method.md) .  
   
- Ve výchozím nastavení se předpokládá, že profiler, který nastaví příznak COR_PRF_MONITOR_ENTERLEAVE pomocí [ICorProfilerInfo::SetEventMask](icorprofilerinfo-seteventmask-method.md), a který nastaví háčky přes [ICorProfilerInfo::SetEnterLeaveFunctionHooks](icorprofilerinfo-setenterleavefunctionhooks-method.md) `FunctionEnter2`nebo `FunctionLeave2` [ICorProfilerInfo2::SetEnterLeaveFunctionHooks2](icorprofilerinfo2-setenterleavefunctionhooks2-method.md), by měl přijímat , a `FunctionTailcall2` zpětná volání pro každou funkci. Profilovací programy však mohou implementovat `FunctionIDMapper` selektivně vyhnout přijímání `pbHookFunction` `false`těchto zpětná volání pro určité funkce nastavením na .  
+ Ve výchozím nastavení se předpokládá, že Profiler, který nastavuje příznak COR_PRF_MONITOR_ENTERLEAVE pomocí [ICorProfilerInfo:: SetEventMask](icorprofilerinfo-seteventmask-method.md)a který nastavuje háky prostřednictvím [ICorProfilerInfo:: SetEnterLeaveFunctionHooks –](icorprofilerinfo-setenterleavefunctionhooks-method.md) nebo [ICorProfilerInfo2:: SetEnterLeaveFunctionHooks2 –](icorprofilerinfo2-setenterleavefunctionhooks2-method.md), by měl přijímat `FunctionEnter2` `FunctionLeave2` `FunctionTailcall2` zpětná volání pro každou funkci. Profilery ale mohou implementovat `FunctionIDMapper` pro selektivní zamezení příjmu těchto zpětných volání pro určité funkce nastavením `pbHookFunction` na `false` .  
   
- Profilovací programy by měly být tolerantní k případům, kdy více vláken profilované aplikace volá stejnou metodu/funkci současně. V takových případech profiler může `FunctionIDMapper` přijímat více zpětná volání pro stejné `FunctionID`. Profiler by měl být jistý vrátit stejné hodnoty z tohoto zpětného `FunctionID`volání, pokud je volána vícekrát se stejným .  
+ Profilery by měly být odolné vůči případům, kdy více vláken profilované aplikace volá stejnou metodu/funkci současně. V takových případech může Profiler získat více `FunctionIDMapper` zpětných volání pro stejné `FunctionID` . Profiler by měl být jistý, aby vracel stejné hodnoty z tohoto zpětného volání, pokud je volán vícekrát stejným `FunctionID` .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** CorProf.idl  
+ **Hlavička:** CorProf. idl  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [SetFunctionIDMapper – metoda](icorprofilerinfo-setfunctionidmapper-method.md)
 - [FunctionIDMapper2 – funkce](functionidmapper2-function.md)

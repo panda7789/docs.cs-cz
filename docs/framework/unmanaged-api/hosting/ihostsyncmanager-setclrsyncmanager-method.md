@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 2b8bbe76-a45d-4989-bacb-11df42f8798c
 topic_type:
 - apiref
-ms.openlocfilehash: bbeae2561d2d340c1a7dfed38e740dcc6838e4da
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: 7f1832b22a1b80855f48eba6d39bff64da6fa5f9
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83803098"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501440"
 ---
 # <a name="ihostsyncmanagersetclrsyncmanager-method"></a>IHostSyncManager::SetCLRSyncManager – metoda
-Nastaví instanci [ICLRSyncManager](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-interface.md) k přidružení k aktuální instanci [IHostSyncManager](ihostsyncmanager-interface.md) .  
+Nastaví instanci [ICLRSyncManager](iclrsyncmanager-interface.md) k přidružení k aktuální instanci [IHostSyncManager](ihostsyncmanager-interface.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,7 +39,7 @@ HRESULT SetCLRSyncManager (
   
 ## <a name="return-value"></a>Návratová hodnota  
   
-|HRESULT|Popis|  
+|HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`SetCLRSyncManager`úspěšně vráceno.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
@@ -60,7 +60,7 @@ HRESULT SetCLRSyncManager (
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [ICLRSyncManager – rozhraní](iclrsyncmanager-interface.md)
 - [IHostSyncManager – rozhraní](ihostsyncmanager-interface.md)

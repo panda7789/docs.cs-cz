@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 5245d4b5-b6c3-48df-9cb9-8caf059f43fb
 topic_type:
 - apiref
-ms.openlocfilehash: 7271fe8e28da0bb5fd878aae5d36ab703e64ebf0
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: c95b787101d4d0302ce4d2a5cd3bdc7e11f9cd63
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83803024"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501427"
 ---
 # <a name="ihosttaskalert-method"></a>IHostTask::Alert – metoda
 Vyžádá, aby hostitel probudil úlohu reprezentovanou aktuální instancí [IHostTask](ihosttask-interface.md) , takže úlohu můžete zrušit.  
@@ -33,7 +33,7 @@ HRESULT Alert ();
   
 ## <a name="return-value"></a>Návratová hodnota  
   
-|HRESULT|Popis|  
+|HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|Metoda byla úspěšně vrácena.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR (Common Language Runtime) nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
@@ -46,7 +46,7 @@ HRESULT Alert ();
  CLR volá `Alert` metodu <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> , pokud je volána z uživatelského kódu nebo když je <xref:System.AppDomain> přidružena k aktuálnímu <xref:System.Threading.Thread> vypnutí. Hostitel musí vracet okamžitě, protože volání je provedeno asynchronně. Pokud hostitel nemůže úlohu okamžitě upozornit, musí se vystavit při příštím vstupu do stavu, ve kterém může být upozorněn.  
   
 > [!NOTE]
-> `Alert`má vliv jenom na úlohy, na které modul runtime předal [WAIT_OPTION](../../../../docs/framework/unmanaged-api/hosting/wait-option-enumeration.md) hodnotu WAIT_ALERTABLE do metod, jako je [Join](ihosttask-join-method.md).  
+> `Alert`má vliv jenom na úlohy, na které modul runtime předal [WAIT_OPTION](wait-option-enumeration.md) hodnotu WAIT_ALERTABLE do metod, jako je [Join](ihosttask-join-method.md).  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
@@ -57,7 +57,7 @@ HRESULT Alert ();
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [ICLRTask – rozhraní](iclrtask-interface.md)
 - [ICLRTaskManager – rozhraní](iclrtaskmanager-interface.md)

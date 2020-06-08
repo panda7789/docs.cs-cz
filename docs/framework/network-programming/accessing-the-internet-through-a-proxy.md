@@ -1,5 +1,6 @@
 ---
 title: Přístup k internetu přes proxy server
+description: Naučte se, jak nakonfigurovat instanci proxy, aby mohla vaše aplikace .NET Framework komunikovat s webovým proxy serverem.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Networking
@@ -12,15 +13,15 @@ helpviewer_keywords:
 - Internet, proxy instances
 - Network Resources
 ms.assetid: cbf46f63-ce28-486d-b827-ec0f1a9d8319
-ms.openlocfilehash: 76566d06cac81d8ba4138369c6ee3ef807a99634
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 77f46cdcedbeb9b1809621d64f239a6681e82590
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "71049051"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502740"
 ---
 # <a name="accessing-the-internet-through-a-proxy"></a>Přístup k internetu přes proxy server
-Pokud váš web používá proxy server k poskytování přístupu k Internetu, je nutné nakonfigurovat instanci proxy serveru, aby aplikace mohla komunikovat s webovým proxy serverem.  
+Pokud vaše lokalita používá proxy server k poskytnutí přístupu k Internetu, je nutné nakonfigurovat instanci proxy, aby aplikace mohla komunikovat s webovým proxy serverem.  
   
  Tento oddíl obsahuje následující témata:  
   
@@ -32,7 +33,7 @@ Pokud váš web používá proxy server k poskytování přístupu k Internetu, 
   
 - [Postupy: Přepsání globálního výběru proxy serveru](how-to-override-a-global-proxy-selection.md)  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Použití aplikačních protokolů](using-application-protocols.md)
 - [Síťové programování v rozhraní .NET Framework](index.md)

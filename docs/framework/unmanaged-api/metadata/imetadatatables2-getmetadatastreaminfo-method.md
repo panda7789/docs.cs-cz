@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 8b280627-cc74-4789-95da-1fefc966de05
 topic_type:
 - apiref
-ms.openlocfilehash: 279e34689169d31ad89772e90155e7f50bdbac08
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 7d39d089c348b7320651ed21ea14ba07d7877fd4
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74426214"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501092"
 ---
 # <a name="imetadatatables2getmetadatastreaminfo-method"></a>IMetaDataTables2::GetMetaDataStreamInfo – metoda
 Získá název, velikost a obsah datového proudu metadat v zadaném indexu.  
@@ -47,18 +47,18 @@ HRESULT GetMetaDataStreamInfo (
  mimo Ukazatel na datový proud metadat.  
   
  `pcb`  
- mimo Velikost `ppv`v bajtech.  
+ mimo Velikost v bajtech `ppv` .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** Cor. h  
   
  **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [IMetaDataTables2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatatables2-interface.md)
-- [IMetaDataTables – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md)
+- [IMetaDataTables2 – rozhraní](imetadatatables2-interface.md)
+- [IMetaDataTables – rozhraní](imetadatatables-interface.md)

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 8d4ff73e-739b-40f6-9349-359fbc99c2f9
 topic_type:
 - apiref
-ms.openlocfilehash: 8446960d0746a864c44febbbe4a4d0313d6dcd4d
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 7a6553de31d4f9627809af7691218c39dc734c6f
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616707"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501661"
 ---
 # <a name="cor_gc_stats-structure"></a>COR_GC_STATS – struktura
 Poskytuje statistiku o mechanizmu uvolňování paměti modulu CLR (Common Language Runtime).  
@@ -44,7 +44,7 @@ typedef struct _COR_GC_STATS {
   
 ## <a name="members"></a>Členové  
   
-|Člen|Popis|  
+|Člen|Description|  
 |------------|-----------------|  
 |`Flags`|Určuje, které hodnoty pole se mají vypočítat a vrátit.|  
 |`ExplicitGCCount`|Označuje počet uvolňování paměti, které byly vynuceny externím požadavkem.|  
@@ -59,7 +59,7 @@ typedef struct _COR_GC_STATS {
 |`KBytesPromotedFromGen1`|Velikost objektů povýšených od generace od generace do 2. generace v kilobajtech.|  
   
 ## <a name="remarks"></a>Poznámky  
- Metoda [ICLRGCManager:: GetStats](../../../../docs/framework/unmanaged-api/hosting/iclrgcmanager-getstats-method.md) vyžaduje, aby se `Flags` pole `COR_GC_STATS` struktury nastavilo na jednu nebo více hodnot výčtu [COR_GC_STAT_TYPES](cor-gc-stat-types-enumeration.md) , aby se určilo, která Statistika se má nastavit.  
+ Metoda [ICLRGCManager:: GetStats](iclrgcmanager-getstats-method.md) vyžaduje, aby se `Flags` pole `COR_GC_STATS` struktury nastavilo na jednu nebo více hodnot výčtu [COR_GC_STAT_TYPES](cor-gc-stat-types-enumeration.md) , aby se určilo, která Statistika se má nastavit.  
   
  Následující tabulka mapuje statistiky poskytované touto strukturou na dvě [COR_GC_STAT_TYPES](cor-gc-stat-types-enumeration.md) výčtové hodnoty `COR_GC_COUNTS` a `COR_GC_MEMORYUSAGE` .  
   
@@ -84,7 +84,7 @@ pCLRGCManager->GetStats(&GCStats);
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Struktury pro hostování](hosting-structures.md)
 - [Automatická správa paměti](../../../standard/automatic-memory-management.md)

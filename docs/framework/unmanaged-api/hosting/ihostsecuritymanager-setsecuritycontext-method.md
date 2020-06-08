@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: e4372384-ee69-48d7-97e0-8fab7866597a
 topic_type:
 - apiref
-ms.openlocfilehash: 79ef08ef70ad1132ceacc3e2b997651e57032b9a
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: 6a6b4d0351e22026dc873aad8281d0259d871a14
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83803813"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501479"
 ---
 # <a name="ihostsecuritymanagersetsecuritycontext-method"></a>IHostSecurityManager::SetSecurityContext – metoda
 Nastaví kontext zabezpečení aktuálně zpracovávaného vlákna.  
@@ -43,7 +43,7 @@ HRESULT SetSecurityContext (
   
 ## <a name="return-value"></a>Návratová hodnota  
   
-|HRESULT|Popis|  
+|HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`SetSecurityContext`úspěšně vráceno.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
@@ -53,7 +53,7 @@ HRESULT SetSecurityContext (
 |E_FAIL|Došlo k neznámé chybě závažnosti. Když metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Poznámky  
- CLR volá `SetSecurityContext` v několika scénářích. Před tím, než se spustí třídy a konstruktory modulu a finalizační metody, vyvolá volání CLR `SetSecurityContext` k ochraně hostitele před selháním spuštění. Poté obnoví kontext zabezpečení do původního stavu po provedení konstruktoru nebo finalizační metody pomocí jiného volání metody `SetSecurityContext` . Podobný vzor se děje I v/v dokončování. Pokud hostitel implementuje [IHostIoCompletionManager](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-interface.md), VYVOLÁ volání CLR `SetSecurityContext` po volání [ICLRIoCompletionManager –::-Complete](iclriocompletionmanager-oncomplete-method.md).  
+ CLR volá `SetSecurityContext` v několika scénářích. Před tím, než se spustí třídy a konstruktory modulu a finalizační metody, vyvolá volání CLR `SetSecurityContext` k ochraně hostitele před selháním spuštění. Poté obnoví kontext zabezpečení do původního stavu po provedení konstruktoru nebo finalizační metody pomocí jiného volání metody `SetSecurityContext` . Podobný vzor se děje I v/v dokončování. Pokud hostitel implementuje [IHostIoCompletionManager](ihostiocompletionmanager-interface.md), VYVOLÁ volání CLR `SetSecurityContext` po volání [ICLRIoCompletionManager –::-Complete](iclriocompletionmanager-oncomplete-method.md).  
   
  V asynchronních bodech v pracovních vláknech volání CLR v rámci `SetSecurityContext` <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A?displayProperty=nameWithType> [IHostThreadPoolManager:: QueueUserWorkItem](ihostthreadpoolmanager-queueuserworkitem-method.md), v závislosti na tom, zda hostitel nebo modul CLR implementuje fond vláken.  
   
@@ -66,7 +66,7 @@ HRESULT SetSecurityContext (
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.Threading.ThreadPool?displayProperty=nameWithType>
 - [EContextType – výčet](econtexttype-enumeration.md)

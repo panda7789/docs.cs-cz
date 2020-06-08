@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: dbb21e67-712b-49e7-a27c-a1e73ffd46c5
 topic_type:
 - apiref
-ms.openlocfilehash: a8c5dd263401002deaee3d21f1e41b41a29faec2
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 7e97b2d4ad1fec4675d1484959b115a4d4b87e90
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74427293"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84490611"
 ---
 # <a name="imetadataimport2getgenericparamprops-method"></a>IMetaDataImport2::GetGenericParamProps – metoda
 Získá metadata přidružená k obecnému parametru reprezentovanému zadaným tokenem.  
@@ -45,10 +45,10 @@ HRESULT GetGenericParamProps (
  pro Token, který představuje obecný parametr, pro který se mají vracet metadata  
   
  `pulParamSeq`  
- mimo Pořadové místo parametru `Type` v nadřazeném konstruktoru nebo metodě.  
+ mimo Pořadové místo `Type` parametru v nadřazeném konstruktoru nebo metodě.  
   
  `pdwParamFlags`  
- mimo Hodnota výčtu [CorGenericParamAttr –](../../../../docs/framework/unmanaged-api/metadata/corgenericparamattr-enumeration.md) , která popisuje `Type` pro obecný parametr.  
+ mimo Hodnota výčtu [CorGenericParamAttr –](corgenericparamattr-enumeration.md) , která popisuje `Type` pro obecný parametr.  
   
  `ptOwner`  
  mimo Token TypeDef nebo MethodDef, který představuje vlastníka parametru.  
@@ -60,21 +60,21 @@ HRESULT GetGenericParamProps (
  mimo Název obecného parametru.  
   
  `cchName`  
- pro Velikost vyrovnávací paměti `wzName`.  
+ pro Velikost `wzName` vyrovnávací paměti.  
   
  `pchName`  
  mimo Vrácená velikost názvu, v rámci velkých znaků.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** Cor. h  
   
  **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
-- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](imetadataimport2-interface.md)
+- [IMetaDataImport – rozhraní](imetadataimport-interface.md)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 52794819-0a59-4bb1-a265-0f158cd5cd65
 topic_type:
 - apiref
-ms.openlocfilehash: 0851ac33a2bac4fcf727cf09e5225f6b83481b50
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 722a1e0adea41a13ca25829c53372c29187b80bd
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76866673"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84500465"
 ---
 # <a name="icorprofilercallbackappdomainshutdownfinished-method"></a>ICorProfilerCallback::AppDomainShutdownFinished – metoda
 Upozorní profileru, že doména aplikace byla uvolněna z procesu.  
@@ -41,21 +41,21 @@ HRESULT AppDomainShutdownFinished(
 
 - `hrStatus`
 
-  \[in] hodnota HRESULT, která označuje, zda byla doména aplikace úspěšně uvolněna.
+  \[in] HRESULT, který označuje, zda byla doména aplikace úspěšně uvolněna.
 
 ## <a name="remarks"></a>Poznámky  
  Hodnota `appDomainId` není platná pro požadavek na informace po návratu metody [ICorProfilerCallback:: appdomainshutdownstarted –](icorprofilercallback-appdomainshutdownstarted-method.md) .  
   
- Některé části odinstalování domény aplikace můžou pokračovat i po `AppDomainCreationFinished` zpětném volání. Selhání HRESULT v `hrStatus` označuje selhání. Úspěšnost HRESULT v `hrStatus` však znamená, že první část uvolňování domény aplikace byla úspěšně dokončena.  
+ Některé části odložení aplikační domény můžou pokračovat i po `AppDomainCreationFinished` zpětném volání. Neúspěšná hodnota HRESULT v `hrStatus` znamená selhání. Úspěch HRESULT v v `hrStatus` znamená pouze to, že první část uvolňování domény aplikace byla úspěšně dokončena.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorProf. idl, CorProf. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

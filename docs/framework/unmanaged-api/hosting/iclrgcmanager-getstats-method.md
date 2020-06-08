@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: ce259d1d-cd81-4490-a7a1-0d0ea0804872
 topic_type:
 - apiref
-ms.openlocfilehash: 1e881b4a55a99bac3f9ca0e8db1556807b888f13
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 8622920a81f4b469361ffa879f7a4eeda697cab9
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616959"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504222"
 ---
 # <a name="iclrgcmanagergetstats-method"></a>ICLRGCManager::GetStats – metoda
 Získá sadu aktuálních statistik o systému uvolňování paměti modulu CLR (Common Language Runtime).  
@@ -39,7 +39,7 @@ HRESULT GetStats (
   
 ## <a name="return-value"></a>Návratová hodnota  
   
-|HRESULT|Popis|  
+|HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`GetStats`úspěšně vráceno.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR (Common Language Runtime) nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
@@ -51,7 +51,7 @@ HRESULT GetStats (
 ## <a name="remarks"></a>Poznámky  
  CLR vypočítá a vrátí pouze ty statistiky, které jsou určeny `Flags` polem `pStats` .  
   
- Nastavte `Flags` pole na jednu nebo více hodnot výčtu [COR_GC_STAT_TYPES](../../../../docs/framework/unmanaged-api/hosting/cor-gc-stat-types-enumeration.md) , aby se určilo, které statistiky ve [COR_GC_STATS](cor-gc-stats-structure.md) struktuře mají být nastavené.  
+ Nastavte `Flags` pole na jednu nebo více hodnot výčtu [COR_GC_STAT_TYPES](cor-gc-stat-types-enumeration.md) , aby se určilo, které statistiky ve [COR_GC_STATS](cor-gc-stats-structure.md) struktuře mají být nastavené.  
   
  Příklad použití je následující:  
   
@@ -70,7 +70,7 @@ pCLRGCManager->GetStats(&GCStats);
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Automatická správa paměti](../../../standard/automatic-memory-management.md)
 - [COR_GC_STATS – struktura](cor-gc-stats-structure.md)
@@ -80,4 +80,4 @@ pCLRGCManager->GetStats(&GCStats);
 - [ICLRGCManager – rozhraní](iclrgcmanager-interface.md)
 - [Rozhraní hostování CLR](clr-hosting-interfaces.md)
 - [Rozhraní pro hostování](hosting-interfaces.md)
-- [Hostování](index.md)
+- [Hosting](index.md)

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 4611ee6f-0f05-4d84-91e1-e83d5e7dd7e4
 topic_type:
 - apiref
-ms.openlocfilehash: 0210aca5698cd9c86979c13afd1e622b50d194df
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: bbc163c71b47e6fee0db89284d6e3fd27e882768
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76867178"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84500882"
 ---
 # <a name="cor_prf_gc_root_flags-enumeration"></a>COR_PRF_GC_ROOT_FLAGS – výčet
 Označuje vlastnost kořenu uvolňování paměti.  
@@ -37,7 +37,7 @@ typedef enum {
   
 ## <a name="members"></a>Členové  
   
-|Člen|Popis|  
+|Člen|Description|  
 |------------|-----------------|  
 |`COR_PRF_GC_ROOT_PINNING`|Kořen zabraňuje uvolňování paměti v přesunutí objektu.|  
 |`COR_PRF_GC_ROOT_WEAKREF`|Kořen nebrání v uvolňování paměti.|  
@@ -45,16 +45,16 @@ typedef enum {
 |`COR_PRF_GC_ROOT_REFCOUNTED`|Kořen zabraňuje uvolňování paměti, pokud je počet odkazů objektu určitou hodnotou.|  
   
 ## <a name="remarks"></a>Poznámky  
- `COR_PRF_GC_ROOT_FLAGS` je Bitová maska, která poskytuje další informace o speciálních kořenech. Ale ne všechny kořeny jsou speciální. Například některé kořeny neobsahují slabé odkazy, vnitřní ukazatele, připnuté nebo odpočítané odkazy. Pro tyto kořeny neexistují žádné příznaky k vyjádření. Proto metody, které používají tento výčet, jako je například metoda [ICorProfilerCallback2:: RootReferences2 –](icorprofilercallback2-rootreferences2-method.md) , odesílají 0 pro bitovou masku příznaků, což značí, že jsou všechny příznaky vypnuty.  
+ `COR_PRF_GC_ROOT_FLAGS`je Bitová maska, která poskytuje další informace o speciálních kořenech. Ale ne všechny kořeny jsou speciální. Například některé kořeny neobsahují slabé odkazy, vnitřní ukazatele, připnuté nebo odpočítané odkazy. Pro tyto kořeny neexistují žádné příznaky k vyjádření. Proto metody, které používají tento výčet, jako je například metoda [ICorProfilerCallback2:: RootReferences2 –](icorprofilercallback2-rootreferences2-method.md) , odesílají 0 pro bitovou masku příznaků, což značí, že jsou všechny příznaky vypnuty.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorProf. idl, CorProf. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

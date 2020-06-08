@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: c8ba42d2-d9fa-43cb-bbc0-f33e1e592cb6
 topic_type:
 - apiref
-ms.openlocfilehash: af1c3d599c5280e584ffb842c96c70a7c3d4ed08
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 0916b6382bb9352616d85e21f423301dc6aa9fa9
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74436873"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84490845"
 ---
 # <a name="imetadataimportgetscopeprops-method"></a>IMetaDataImport::GetScopeProps – metoda
 Získá název a volitelně identifikátor verze sestavení nebo modulu v aktuálním oboru metadat.  
@@ -41,27 +41,27 @@ HRESULT GetScopeProps (
  mimo Vyrovnávací paměť pro název sestavení nebo modulu.  
   
  `cchName`  
- pro Velikost v různých znacích `szName`.  
+ pro Velikost v různých znacích `szName` .  
   
  `pchName`  
- mimo Počet velkých znaků vrácených v `szName`.  
+ mimo Počet znaků vrácených v rámci `szName` .  
   
  `pmvid`  
  [out, volitelné] Ukazatel na identifikátor GUID, který jedinečně identifikuje verzi sestavení nebo modulu.  
   
 ## <a name="remarks"></a>Poznámky  
- Metoda [IMetaDataEmit:: SetModuleProps –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-setmoduleprops-method.md) slouží k nastavení těchto vlastností.  
+ Metoda [IMetaDataEmit:: SetModuleProps –](imetadataemit-setmoduleprops-method.md) slouží k nastavení těchto vlastností.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** Cor. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport – rozhraní](imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](imetadataimport2-interface.md)

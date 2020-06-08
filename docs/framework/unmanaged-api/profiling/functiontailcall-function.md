@@ -14,18 +14,18 @@ helpviewer_keywords:
 ms.assetid: 66347e03-9a97-41e8-8f9d-89b80803f7b5
 topic_type:
 - apiref
-ms.openlocfilehash: bd03eccc923049c4a49062d18bd11659f3316e8a
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 42ea497bdcab71518bec08514b827d76f0317d57
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76866820"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84500595"
 ---
 # <a name="functiontailcall-function"></a>FunctionTailcall – funkce
 Upozorní profileru, že aktuálně vykonávaná funkce se chystá provést volání funkce tail do jiné funkce.  
   
 > [!NOTE]
-> Funkce `FunctionTailcall` je v .NET Framework verze 2,0 zastaralá. Bude i nadále fungovat, ale dojde k snížení výkonu. Místo toho použijte funkci [FunctionTailcall2 –](functiontailcall2-function.md) .  
+> `FunctionTailcall`Funkce je zastaralá ve verzi .NET Framework 2,0. Bude i nadále fungovat, ale dojde k snížení výkonu. Místo toho použijte funkci [FunctionTailcall2 –](functiontailcall2-function.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,7 +44,7 @@ void __stdcall FunctionTailcall (
 ## <a name="remarks"></a>Poznámky  
  Cílová funkce volání Tail bude používat aktuální rámec zásobníku a vrátí se přímo volajícímu funkce, která provedla volání funkce tail. To znamená, že zpětné volání [FunctionLeave –](functionleave-function.md) nebude vystaveno pro funkci, která je cílem volání funkce tail.  
   
- Funkce `FunctionTailcall` je zpětné volání; je nutné jej implementovat. Implementace musí používat atribut třídy úložiště `__declspec`(`naked`).  
+ `FunctionTailcall`Funkce je zpětné volání. je nutné ji implementovat. Implementace musí používat `__declspec` `naked` atribut třídy úložiště ().  
   
  Spouštěcí modul neuloží žádné Registry před voláním této funkce.  
   
@@ -52,12 +52,12 @@ void __stdcall FunctionTailcall (
   
 - Při ukončení je nutné obnovit zásobník odebráním všech parametrů, které byly vloženy volajícím.  
   
- Implementace `FunctionTailcall` by neměla zablokovat, protože bude odloženo uvolňování paměti. Implementace by se neměla pokoušet o uvolnění paměti, protože zásobník nemůže být ve stavu, který je k pro uvolňování paměti. V případě, že dojde k pokusu o uvolnění paměti, modul runtime zablokuje, dokud se `FunctionTailcall` nevrátí.  
+ Implementace `FunctionTailcall` by neměla blokovat, protože by se zpozdilo uvolňování paměti. Implementace by se neměla pokoušet o uvolnění paměti, protože zásobník nemůže být ve stavu, který je k pro uvolňování paměti. Při pokusu o uvolnění paměti modul runtime zablokuje, dokud se `FunctionTailcall` nevrátí.  
   
- Také funkce `FunctionTailcall` nesmí volat do spravovaného kódu nebo jakýmkoli způsobem způsobovat přidělení spravované paměti.  
+ `FunctionTailcall`Funkce také nesmí volat do spravovaného kódu nebo jakýmkoli způsobem způsobit přidělení spravované paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorProf. idl  
   
@@ -70,4 +70,4 @@ void __stdcall FunctionTailcall (
 - [FunctionEnter2 – funkce](functionenter2-function.md)
 - [FunctionLeave2 – funkce](functionleave2-function.md)
 - [SetEnterLeaveFunctionHooks2 – metoda](icorprofilerinfo2-setenterleavefunctionhooks2-method.md)
-- [Globální statické funkce pro profilaci](profiling-global-static-functions.md)
+- [Profilace globálních statických funkcí](profiling-global-static-functions.md)

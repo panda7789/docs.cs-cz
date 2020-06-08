@@ -1,5 +1,6 @@
 ---
 title: Použití asynchronního serverového soketu
+description: Tento příklad ukazuje soket asynchronního serveru. Třída Socket používá .NET Framework asynchronní programování ke zpracování požadavků síťových služeb.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -17,19 +18,19 @@ helpviewer_keywords:
 - protocols, sockets
 - Internet, sockets
 ms.assetid: 813489a9-3efd-41b6-a33f-371d55397676
-ms.openlocfilehash: 467804e685d800643c421ed1aad040a842b42886
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8b85afb3ffdf69973eff37ccbb067b470ed44e3a
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79180637"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502025"
 ---
 # <a name="using-an-asynchronous-server-socket"></a>Použití asynchronního serverového soketu
-Sokety asynchronních serverů používají ke zpracování požadavků na síťové služby asynchronní programovací model rozhraní .NET Framework. Třída <xref:System.Net.Sockets.Socket> se řídí standardním vzorem asynchronního pojmenování rozhraní .NET Framework. například synchronní <xref:System.Net.Sockets.Socket.Accept%2A> metoda odpovídá asynchronní <xref:System.Net.Sockets.Socket.BeginAccept%2A> a <xref:System.Net.Sockets.Socket.EndAccept%2A> metody.  
+Asynchronní serverové sokety používají .NET Framework asynchronní programovací model ke zpracování požadavků síťových služeb. <xref:System.Net.Sockets.Socket>Třída následuje za standardním .NET Framework vzor asynchronního pojmenovávání; například synchronní <xref:System.Net.Sockets.Socket.Accept%2A> Metoda odpovídá asynchronním <xref:System.Net.Sockets.Socket.BeginAccept%2A> a <xref:System.Net.Sockets.Socket.EndAccept%2A> metodám.  
   
- Soket asynchronního serveru vyžaduje metodu pro zahájení přijímání požadavků na připojení ze sítě, metodu zpětného volání pro zpracování požadavků na připojení a zahájení příjmu dat ze sítě a metodu zpětného volání pro ukončení příjmu dat. Všechny tyto metody jsou podrobně popsány v této části.  
+ Asynchronní serverový soket vyžaduje metodu pro zahájení přijímání požadavků na připojení ze sítě, metody zpětného volání pro zpracování žádostí o připojení a zahájení přijímání dat ze sítě a metody zpětného volání pro ukončení přijímání dat. Všechny tyto metody jsou popsány dále v této části.  
   
- V následujícím příkladu, chcete-li začít přijímat požadavky `StartListening` na připojení ze sítě, metoda inicializuje **Socket** a pak používá **BeginAccept** metoda začít přijímat nová připojení. Metoda zpětného volání přijetí je volána při přijetí nového požadavku na připojení na soketu. Je zodpovědný za získání **Socket** instance, která bude zpracovávat připojení a **předání,** které Socket off do vlákna, které bude zpracovávat požadavek. Metoda přijetí zpětného volání <xref:System.AsyncCallback> implementuje delegáta; vrátí void a vezme jeden parametr <xref:System.IAsyncResult>typu . Následující příklad je prostředí metody přijetí zpětného volání.  
+ V následujícím příkladu, aby bylo možné začít přijímat žádosti o připojení ze sítě, `StartListening` inicializuje metoda **soket** a poté pomocí metody **BeginAccept** spustí přijímání nových připojení. Metoda přijetí zpětného volání se volá, když se na soketu přijme nový požadavek na připojení. Zodpovídá za získání instance **soketu** , která bude zpracovávat připojení a vydává tento **soket** do vlákna, které požadavek zpracuje. Metoda Accept zpětného volání implementuje <xref:System.AsyncCallback> delegáta, vrátí void a přijímá jeden parametr typu <xref:System.IAsyncResult> . V následujícím příkladu je prostředí metody přijetí zpětného volání.  
   
 ```vb  
 Sub AcceptCallback(ar As IAsyncResult)  
@@ -44,7 +45,7 @@ void AcceptCallback(IAsyncResult ar)
 }  
 ```  
   
- Metoda **BeginAccept** přebírá dva parametry, **delegáta AsyncCallback,** který odkazuje na metodu zpětného volání přijmout a objekt, který se používá k předání informací o stavu metodě zpětného volání. V následujícím příkladu **naslouchání Socket** je předán metodu zpětného volání prostřednictvím parametru *state.* Tento příklad vytvoří **delegáta AsyncCallback** a začne přijímat připojení ze sítě.  
+ Metoda **BeginAccept** přijímá dva parametry, delegáta **AsyncCallback** , který odkazuje na metodu přijetí zpětného volání, a objekt, který slouží k předávání informací o stavu metodě zpětného volání. V následujícím příkladu je naslouchající **soket** předán metodě zpětného volání prostřednictvím parametru *State* . Tento příklad vytvoří delegáta **AsyncCallback** a začne přijímat připojení ze sítě.  
   
 ```vb  
 listener.BeginAccept( _  
@@ -56,9 +57,9 @@ listener.BeginAccept( _
 listener.BeginAccept(new AsyncCallback(SocketListener.AcceptCallback), listener);  
 ```  
   
- Asynchronní sokety používají vlákna z fondu systémových vláken ke zpracování příchozích připojení. Jedno vlákno je zodpovědné za přijímání připojení, jiné vlákno se používá ke zpracování každého příchozího připojení a jiné vlákno je zodpovědné za příjem dat z připojení. Může se jedná o stejné vlákno v závislosti na tom, které vlákno je přiřazeno fondu vláken. V následujícím příkladu <xref:System.Threading.ManualResetEvent?displayProperty=nameWithType> třída pozastaví provádění hlavního vlákna a signály při provádění může pokračovat.  
+ Asynchronní sokety používají vlákna z fondu vláken systému ke zpracování příchozích připojení. Jedno vlákno zodpovídá za příjem připojení, používá se jiné vlákno pro zpracování každého příchozího připojení a další vlákno zodpovídá za příjem dat z připojení. Může se jednat o stejné vlákno v závislosti na tom, které vlákno je přiřazeno fondem vláken. V následujícím příkladu <xref:System.Threading.ManualResetEvent?displayProperty=nameWithType> Třída pozastaví provádění hlavního vlákna a signalizuje, když provádění může pokračovat.  
   
- Následující příklad ukazuje asynchronní metodu, která vytvoří asynchronní soket TCP/IP v místním počítači a začne přijímat připojení. Předpokládá, že je globální **ManualResetEvent** s názvem `allDone`, že metoda `SocketListener`je členem třídy s `AcceptCallback` názvem , a že je definována metoda zpětného volání s názvem.  
+ Následující příklad ukazuje asynchronní metodu, která vytváří asynchronní soket TCP/IP v místním počítači a zahajuje přijímání připojení. Předpokládá, že existuje globální **ManualResetEvent** s názvem `allDone` , že metoda je členem třídy s názvem `SocketListener` a že je definována metoda zpětného volání s názvem `AcceptCallback` .  
   
 ```vb  
 Public Sub StartListening()  
@@ -125,7 +126,7 @@ public void StartListening()
 }  
 ```  
   
- Metoda zpětného volání`AcceptCallback` přijmout ( v předchozím příkladu) je zodpovědná za signalizaci hlavního vlákna aplikace pro pokračování ve zpracování, navázání připojení s klientem a spuštění asynchronního čtení dat z klienta. Následující příklad je první část implementace `AcceptCallback` metody. Tato část metody signalizuje hlavní vlákno aplikace pokračovat ve zpracování a naváže připojení ke klientovi. Předpokládá globální **ManualResetEvent** s `allDone`názvem .  
+ Metoda přijetí zpětného volání ( `AcceptCallback` v předchozím příkladu) zodpovídá za signalizaci, že podproces hlavní aplikace pokračuje ve zpracování, navázání připojení k klientovi a spuštění asynchronního čtení dat z klienta. Následující příklad je první část implementace `AcceptCallback` metody. Tato část metody signalizuje, že hlavní vlákno aplikace pokračuje ve zpracování a naváže připojení ke klientovi. Předpokládá globální **ManualResetEvent** s názvem `allDone` .  
   
 ```vb  
 Public Sub AcceptCallback(ar As IAsyncResult)  
@@ -150,7 +151,7 @@ public void AcceptCallback(IAsyncResult ar)
 }  
 ```  
   
- Čtení dat ze soketu klienta vyžaduje objekt stavu, který předává hodnoty mezi asynchronními voláními. Následující příklad implementuje objekt stavu pro příjem řetězce ze vzdáleného klienta. Obsahuje pole pro klientský soket, vyrovnávací paměť <xref:System.Text.StringBuilder> dat pro příjem dat a pro vytvoření datového řetězce odeslaného klientem. Umístění těchto polí do objektu stavu umožňuje jejich hodnoty zachovat přes více volání číst data ze soketu klienta.  
+ Čtení dat z klientského soketu vyžaduje objekt stavu, který předává hodnoty mezi asynchronními voláními. Následující příklad implementuje objekt state pro příjem řetězce ze vzdáleného klienta. Obsahuje pole pro soket klienta, vyrovnávací paměť dat pro příjem dat a <xref:System.Text.StringBuilder> pro vytvoření datového řetězce odesílaného klientem. Umístění těchto polí do objektu State umožňuje zachovat jejich hodnoty napříč více voláními pro čtení dat z soketu klienta.  
   
 ```vb  
 Public Class StateObject  
@@ -171,9 +172,9 @@ public class StateObject
 }  
 ```  
   
- Část `AcceptCallback` metody, která spustí příjem dat ze soketu klienta nejprve inicializuje instanci `StateObject` třídy a pak volá metodu <xref:System.Net.Sockets.Socket.BeginReceive%2A> začít číst data ze soketu klienta asynchronně.  
+ Část `AcceptCallback` metody, která zahajuje příjem dat z soketu klienta, nejprve Inicializuje instanci `StateObject` třídy a pak zavolá <xref:System.Net.Sockets.Socket.BeginReceive%2A> metodu pro zahájení načítání dat z soketu klienta asynchronně.  
   
- Následující příklad ukazuje `AcceptCallback` úplnou metodu. Předpokládá, že je globální **ManualResetEvent** s `StateObject` názvem, `allDone,` že třída `ReadCallback` je definována a `SocketListener`že metoda je definována ve třídě s názvem .  
+ Následující příklad ukazuje `AcceptCallback` metodu Complete. Předpokládá, že existuje globální **ManualResetEvent** s názvem `allDone,` , že `StateObject` Třída je definována a že `ReadCallback` Metoda je definována ve třídě s názvem `SocketListener` .  
   
 ```vb  
 Public Shared Sub AcceptCallback(ar As IAsyncResult)  
@@ -210,9 +211,9 @@ public static void AcceptCallback(IAsyncResult ar)
 }  
 ```  
   
- Konečná metoda, která musí být implementována pro asynchronní soketový server je metoda zpětného volání pro čtení, která vrací data odeslaná klientem. Stejně jako metoda přijetí zpětného volání je metoda zpětného volání pro čtení delegátem **AsyncCallback.** Tato metoda přečte jeden nebo více bajtů ze soketu klienta do vyrovnávací paměti dat a pak znovu zavolá metodu **BeginReceive,** dokud nebudou data odeslaná klientem dokončena. Po přečtení celé zprávy z klienta se řetězec zobrazí v konzole a soket serveru, který zpracovává připojení ke klientovi, je uzavřen.  
+ Poslední metodou, která se musí implementovat pro server asynchronního soketu, je metoda zpětného volání pro čtení, která vrací data odesílaná klientem. Podobně jako metoda Accept zpětného volání je metoda zpětného volání pro čtení delegátem **AsyncCallback** . Tato metoda přečte jeden nebo více bajtů z soketu klienta do vyrovnávací paměti dat a pak znovu zavolá metodu **BeginReceive** , dokud nebudou data odesílaná klientem dokončena. Po načtení celé zprávy z klienta se řetězec zobrazí v konzole nástroje a soket serveru, který zpracovává připojení ke klientovi, je uzavřený.  
   
- Následující ukázka implementuje metodu. `ReadCallback` Předpokládá, že `StateObject` třída je definována.  
+ Následující ukázka implementuje `ReadCallback` metodu. Předpokládá, že `StateObject` je třída definovaná.  
   
 ```vb  
 Public Shared Sub ReadCallback(ar As IAsyncResult)  
@@ -268,9 +269,9 @@ public static void ReadCallback(IAsyncResult ar)
 }  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Použití synchronního serverového soketu](using-a-synchronous-server-socket.md)
 - [Příklad asynchronního serverového soketu](asynchronous-server-socket-example.md)
-- [Threading](../../standard/threading/index.md)
+- [Dělení na vlákna](../../standard/threading/index.md)
 - [Naslouchání pomocí soketů](listening-with-sockets.md)

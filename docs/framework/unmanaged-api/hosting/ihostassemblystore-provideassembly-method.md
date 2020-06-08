@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 625c3dd5-a3f0-442c-adde-310dadbb5054
 topic_type:
 - apiref
-ms.openlocfilehash: f97490e89e835716911072dbad5f70d8e55e76e6
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: 162def0d703ea81efc3df3ea5ee08b58e34822e6
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83805020"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501570"
 ---
 # <a name="ihostassemblystoreprovideassembly-method"></a>IHostAssemblyStore::ProvideAssembly – metoda
-Získá odkaz na sestavení, na které se neodkazuje [ICLRAssemblyReferenceList](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md) , který se vrací z [IHostAssemblyManager:: GetNonHostStoreAssemblies –](ihostassemblymanager-getnonhoststoreassemblies-method.md). Modul CLR (Common Language Runtime) volá `ProvideAssembly` pro každé sestavení, které se v seznamu nezobrazí.  
+Získá odkaz na sestavení, na které se neodkazuje [ICLRAssemblyReferenceList](iclrassemblyreferencelist-interface.md) , který se vrací z [IHostAssemblyManager:: GetNonHostStoreAssemblies –](ihostassemblymanager-getnonhoststoreassemblies-method.md). Modul CLR (Common Language Runtime) volá `ProvideAssembly` pro každé sestavení, které se v seznamu nezobrazí.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -55,7 +55,7 @@ HRESULT ProvideAssembly (
   
 ## <a name="return-value"></a>Návratová hodnota  
   
-|HRESULT|Popis|  
+|HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`ProvideAssembly`úspěšně vráceno.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
@@ -78,7 +78,7 @@ HRESULT ProvideAssembly (
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [ICLRAssemblyReferenceList – rozhraní](iclrassemblyreferencelist-interface.md)
 - [IHostAssemblyManager – rozhraní](ihostassemblymanager-interface.md)

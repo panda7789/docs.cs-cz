@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 4c02ec37-cdf0-46b2-890e-235092741236
 topic_type:
 - apiref
-ms.openlocfilehash: 8a9fdcd650e18bb91e2a4e30e5a22fb2a991d25c
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: a3018d8477d5abd7d03ad8675503624d2e44e8f4
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83703492"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504131"
 ---
 # <a name="iclroneventmanagerunregisteractiononevent-method"></a>ICLROnEventManager::UnregisterActionOnEvent – metoda
 Zruší registraci dříve registrovaného ukazatele zpětného volání pro zadanou událost.  
@@ -39,11 +39,11 @@ HRESULT UnregisterActionOnEvent (
  pro Jedna z hodnot [EClrEvent –](eclrevent-enumeration.md) , která označuje událost, pro kterou má být odregistrován ukazatel zpětného volání popsaný v `pAction` .  
   
  `pAction`  
- pro Ukazatel na objekt [IActionOnCLREvent –](../../../../docs/framework/unmanaged-api/hosting/iactiononclrevent-interface.md) , který byl předán jako parametr metodě [RegisterActionOnEvent –](iclroneventmanager-registeractiononevent-method.md) .  
+ pro Ukazatel na objekt [IActionOnCLREvent –](iactiononclrevent-interface.md) , který byl předán jako parametr metodě [RegisterActionOnEvent –](iclroneventmanager-registeractiononevent-method.md) .  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
-|HRESULT|Popis|  
+|HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`UnregisterActionOnEvent`úspěšně vráceno.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR (Common Language Runtime) nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
@@ -61,7 +61,7 @@ HRESULT UnregisterActionOnEvent (
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [EClrEvent – výčet](eclrevent-enumeration.md)
 - [IActionOnCLREvent – rozhraní](iactiononclrevent-interface.md)

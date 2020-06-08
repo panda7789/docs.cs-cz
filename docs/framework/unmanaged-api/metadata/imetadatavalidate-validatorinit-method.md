@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 6bafd75a-e2d0-4aea-aed1-074374d5dff6
 topic_type:
 - apiref
-ms.openlocfilehash: 165a57d8029fe03b9de3754fcf7c4db757292cec
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 687f33c364f9730a554a41ade1ca2b78e33ffdc5
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74443600"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84489675"
 ---
 # <a name="imetadatavalidatevalidatorinit-method"></a>IMetaDataValidate::ValidatorInit – metoda
 Nastaví příznak, který určuje typ modulu v aktuálním oboru metadat a registruje zadanou metodu zpětného volání pro chyby ověření.  
@@ -36,20 +36,20 @@ HRESULT ValidatorInit (
   
 ## <a name="parameters"></a>Parametry  
  `dwModule`  
- pro Hodnota výčtu [CorValidatorModuleType –](../../../../docs/framework/unmanaged-api/metadata/corvalidatormoduletype-enumeration.md) , která určuje typ modulu v aktuálním oboru metadat.  
+ pro Hodnota výčtu [CorValidatorModuleType –](corvalidatormoduletype-enumeration.md) , která určuje typ modulu v aktuálním oboru metadat.  
   
  `pUnk`  
  pro Ukazatel na instanci [IUnknown](/cpp/atl/iunknown) , který slouží jako zpětné volání funkce pro chyby ověřování.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** Cor. h  
   
  **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [IMetaDataValidate – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatavalidate-interface.md)
+- [IMetaDataValidate – rozhraní](imetadatavalidate-interface.md)

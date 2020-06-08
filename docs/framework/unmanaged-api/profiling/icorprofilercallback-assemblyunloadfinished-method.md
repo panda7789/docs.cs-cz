@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 53fca564-84b1-44d4-9e21-17a492d2aae7
 topic_type:
 - apiref
-ms.openlocfilehash: 734ae1d14d02d47c7d3126f1b4cf55dcb4ad151b
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: d00e67d29921edc6b7487ceeb12aaa9e9f9bd0ac
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76866621"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84500413"
 ---
 # <a name="icorprofilercallbackassemblyunloadfinished-method"></a>ICorProfilerCallback::AssemblyUnloadFinished – metoda
 Upozorní profileru, že bylo sestavení uvolněno.  
@@ -37,25 +37,25 @@ HRESULT AssemblyUnloadFinished(
 
 - `assemblyId`
 
-  \[v] identifikuje sestavení, které se uvolní.
+  \[v] identifikuje sestavení, které je uvolněno.
 
 - `hrStatus`
 
-  \[in] hodnota HRESULT, která označuje, zda bylo sestavení uvolněno úspěšně.
+  \[in] HRESULT, který označuje, zda bylo sestavení uvolněno úspěšně.
 
 ## <a name="remarks"></a>Poznámky  
  Hodnota `assemblyId` není platná pro požadavek na informace po návratu metody [ICorProfilerCallback:: assemblyunloadstarted –](icorprofilercallback-assemblyunloadstarted-method.md) .  
   
- Některé části uvolňování sestavení mohou pokračovat po `AssemblyUnloadFinished` zpětného volání. Selhání HRESULT v `hrStatus` označuje selhání. Úspěšnost HRESULT v `hrStatus` však znamená, že první část uvolňování sestavení byla úspěšná.  
+ Některé části uvolňování sestavení mohou pokračovat po `AssemblyUnloadFinished` zpětném volání. Neúspěšná hodnota HRESULT v `hrStatus` znamená selhání. Úspěch HRESULT v v `hrStatus` znamená pouze to, že první část uvolňování sestavení byla úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorProf. idl, CorProf. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

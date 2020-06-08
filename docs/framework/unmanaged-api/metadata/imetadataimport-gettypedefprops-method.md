@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 00061a25-ba05-47a7-b984-fd916b06b149
 topic_type:
 - apiref
-ms.openlocfilehash: c9ac624e17223def206e86fd92ee4fd2de7f6082
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 6346b1e34e508e5c173bfd0119ac7451d7eef40e
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74436745"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84490793"
 ---
 # <a name="imetadataimportgettypedefprops-method"></a>IMetaDataImport::GetTypeDefProps – metoda
-Vrátí informace o metadatech pro <xref:System.Type> reprezentované zadaným tokenem TypeDef.  
+Vrátí informace o metadatech <xref:System.Type> reprezentovaných zadaným tokenem typedef.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -46,27 +46,27 @@ HRESULT GetTypeDefProps (
  mimo Vyrovnávací paměť obsahující název typu.  
   
  `cchTypeDef`  
- pro Velikost v různých znacích `szTypeDef`.  
+ pro Velikost v různých znacích `szTypeDef` .  
   
  `pchTypeDef`  
- mimo Počet velkých znaků vrácených v `szTypeDef`.  
+ mimo Počet znaků vrácených v rámci `szTypeDef` .  
   
  `pdwTypeDefFlags`  
- mimo Ukazatel na libovolný příznak, který upraví definici typu. Tato hodnota je Bitová maska z výčtu [CorTypeAttr –](../../../../docs/framework/unmanaged-api/metadata/cortypeattr-enumeration.md) .  
+ mimo Ukazatel na libovolný příznak, který upraví definici typu. Tato hodnota je Bitová maska z výčtu [CorTypeAttr –](cortypeattr-enumeration.md) .  
   
  `ptkExtends`  
  mimo Token metadat TypeDef nebo TypeRef, který představuje základní typ požadovaného typu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** Cor. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport – rozhraní](imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](imetadataimport2-interface.md)

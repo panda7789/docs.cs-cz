@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 09238b9b-9359-4780-89dc-2f5e4f57920e
 topic_type:
 - apiref
-ms.openlocfilehash: e27fd3147182e8c820fb1d30f172e0517ca4e77e
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: c2c9ed848984d36ddf10d32d120deda76a4d47cc
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76866469"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84500283"
 ---
 # <a name="icorprofilercallbackexceptionoshandlerenter-method"></a>ICorProfilerCallback::ExceptionOSHandlerEnter – metoda
 Není implementováno. Profiler, který potřebuje informace o nespravovaných výjimkách, musí tyto informace získat jiným způsobem.  
@@ -33,13 +33,13 @@ HRESULT ExceptionOSHandlerEnter(
 ```  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorProf. idl, CorProf. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

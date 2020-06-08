@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: c7fab986-b69f-4ec8-b7b7-91dcfc239cd0
 topic_type:
 - apiref
-ms.openlocfilehash: ab7c8cbc41967af04c4c9a8813f32b9b1f01c6a1
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: f5e4939c814239c297fc0aa88644dc0472b0c419
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76866348"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84500153"
 ---
 # <a name="icorprofilercallbackexceptionunwindfinallyenter-method"></a>ICorProfilerCallback::ExceptionUnwindFinallyEnter – metoda
-Upozorní profileru, že zpětná fáze zpracování výjimek zadává klauzuli `finally` obsaženou v zadané funkci.  
+Upozorní profileru, že unwind fáze zpracování výjimek zadává `finally` klauzuli obsaženou v zadané funkci.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,7 +36,7 @@ HRESULT ExceptionUnwindFinallyEnter(
 
 - `functionId`
 
-  \[in] ID funkce obsahující klauzuli `finally`.
+  \[in] ID funkce obsahující `finally` klauzuli.
 
 ## <a name="remarks"></a>Poznámky  
  Profiler by neměl při implementaci této metody blokovat, protože zásobník pravděpodobně není ve stavu, který umožňuje uvolňování paměti, a proto nelze povolit bezstavové uvolňování paměti. Pokud se tady zablokuje Profiler a dojde k pokusu o uvolnění paměti, modul runtime se zablokuje, dokud toto zpětné volání nevrátí.  
@@ -44,13 +44,13 @@ HRESULT ExceptionUnwindFinallyEnter(
  Implementace této metody v profileru by se neměla volat do spravovaného kódu nebo jakýmkoli způsobem způsobovat alokaci spravované paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorProf. idl, CorProf. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

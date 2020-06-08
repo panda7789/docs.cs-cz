@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 277c3344-d0cb-431e-beae-eb1eeeba8eea
 topic_type:
 - apiref
-ms.openlocfilehash: 75a9a7174f105d99e9d1c9b220cfc5bf928d46ec
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: ff4b32185e604611eaaead2847c11bc139d405a6
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76866967"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84500686"
 ---
 # <a name="functionenter3withinfo-function"></a>FunctionEnter3WithInfo – funkce
 Upozorňuje profileru, že řízení je předáno funkci, a poskytuje popisovač, který lze předat [metodě ICorProfilerInfo3:: GetFunctionEnter3Info –](icorprofilerinfo3-getfunctionenter3info-method.md) pro načtení rámce zásobníku a argumentů funkce.  
@@ -36,16 +36,16 @@ void __stdcall FunctionEnter3WithInfo(
 
 - `functionIDOrClientID`
 
-  \[in] je identifikátor funkce, do které byl ovládací prvek předán.
+  \[in] identifikátor funkce, do které byl ovládací prvek předán.
 
 - `eltInfo`
 
   \[in] neprůhledný popisovač, který představuje informace o daném snímku zásobníku. Tento popisovač je platný pouze během zpětného volání, na které je předáno.
 
 ## <a name="remarks"></a>Poznámky  
- Metoda `FunctionEnter3WithInfo` zpětného volání oznámí profileru jako volání funkcí a umožňuje profileru použít [metodu ICorProfilerInfo3:: GetFunctionEnter3Info –](icorprofilerinfo3-getfunctionenter3info-method.md) ke kontrole hodnot argumentů. Chcete-li získat přístup k informacím o argumentech, musí být nastaven příznak `COR_PRF_ENABLE_FUNCTION_ARGS`. Profiler může použít [metodu ICorProfilerInfo:: SetEventMask](icorprofilerinfo-seteventmask-method.md) pro nastavení příznaků událostí a pak použít [metodu ICorProfilerInfo3:: SetEnterLeaveFunctionHooks3WithInfo –](icorprofilerinfo3-setenterleavefunctionhooks3withinfo-method.md) k registraci implementace této funkce.  
+ `FunctionEnter3WithInfo`Metoda zpětného volání oznámí Profiler jako volání funkcí a umožňuje profileru použít [metodu ICorProfilerInfo3:: GetFunctionEnter3Info –](icorprofilerinfo3-getfunctionenter3info-method.md) ke kontrole hodnot argumentů. Chcete-li získat přístup k informacím o argumentech, je `COR_PRF_ENABLE_FUNCTION_ARGS` nutné nastavit příznak. Profiler může použít [metodu ICorProfilerInfo:: SetEventMask](icorprofilerinfo-seteventmask-method.md) pro nastavení příznaků událostí a pak použít [metodu ICorProfilerInfo3:: SetEnterLeaveFunctionHooks3WithInfo –](icorprofilerinfo3-setenterleavefunctionhooks3withinfo-method.md) k registraci implementace této funkce.  
   
- Funkce `FunctionEnter3WithInfo` je zpětné volání; je nutné jej implementovat. Implementace musí používat atribut třídy úložiště `__declspec(naked)`.  
+ `FunctionEnter3WithInfo`Funkce je zpětné volání. je nutné ji implementovat. Implementace musí používat `__declspec(naked)` atribut třídy úložiště.  
   
  Spouštěcí modul neuloží žádné Registry před voláním této funkce.  
   
@@ -53,22 +53,22 @@ void __stdcall FunctionEnter3WithInfo(
   
 - Při ukončení je nutné obnovit zásobník odebráním všech parametrů, které byly vloženy volajícím.  
   
- Implementace `FunctionEnter3WithInfo` by neměla blokovat, protože by se zpozdilo uvolňování paměti. Implementace by se neměla pokoušet o uvolnění paměti, protože zásobník nemusí být ve stavu, který je k pro uvolňování paměti. V případě, že dojde k pokusu o uvolnění paměti, modul runtime zablokuje, dokud se `FunctionEnter3WithInfo` nevrátí.  
+ Implementace `FunctionEnter3WithInfo` by neměla blokovat, protože by se zpozdilo uvolňování paměti. Implementace by se neměla pokoušet o uvolnění paměti, protože zásobník nemusí být ve stavu, který je k pro uvolňování paměti. Při pokusu o uvolnění paměti modul runtime zablokuje, dokud se `FunctionEnter3WithInfo` nevrátí.  
   
- Funkce `FunctionEnter3WithInfo` nesmí volat spravovanému kódu nebo způsobit přidělení spravované paměti jakýmkoli způsobem.  
+ `FunctionEnter3WithInfo`Funkce nesmí volat spravovanému kódu nebo způsobit přidělení spravované paměti jakýmkoli způsobem.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorProf. idl  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [GetFunctionEnter3Info](icorprofilerinfo3-getfunctionenter3info-method.md)
-- [FunctionEnter3](functionenter3-function.md)
+- [Getfunctionenter3info –](icorprofilerinfo3-getfunctionenter3info-method.md)
+- [Functionenter3 –](functionenter3-function.md)
 - [Functionleave3 –](functionleave3-function.md)
-- [Globální statické funkce pro profilaci](profiling-global-static-functions.md)
+- [Profilace globálních statických funkcí](profiling-global-static-functions.md)

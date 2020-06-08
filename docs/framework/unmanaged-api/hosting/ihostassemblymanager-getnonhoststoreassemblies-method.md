@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: d2250b38-c76a-40ce-80c8-ba45149886e8
 topic_type:
 - apiref
-ms.openlocfilehash: 0dc2f625da7f4e37583f198c8d6dba86f6dcdb10
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: 9a1440be7011130b16d7112ae15026eb74856190
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83805057"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501587"
 ---
 # <a name="ihostassemblymanagergetnonhoststoreassemblies-method"></a>IHostAssemblyManager::GetNonHostStoreAssemblies – metoda
 Získá ukazatel rozhraní na [ICLRAssemblyReferenceList](iclrassemblyreferencelist-interface.md) , který představuje seznam sestavení, která hostitel očekává načtení modulu CLR (Common Language Runtime).  
@@ -39,7 +39,7 @@ HRESULT GetNonHostStoreAssemblies (
   
 ## <a name="return-value"></a>Návratová hodnota  
   
-|HRESULT|Popis|  
+|HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`GetNonHostStoreAssemblies`úspěšně vráceno.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
@@ -56,7 +56,7 @@ HRESULT GetNonHostStoreAssemblies (
   
 - Pokud se v seznamu objeví sestavení, CLR se k němu váže normálně.  
   
-- Pokud se sestavení v seznamu nezobrazí a hostitel zavedl implementaci [IHostAssemblyStore](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-interface.md), CLR volá [IHostAssemblyStore::P rovideassembly](ihostassemblystore-provideassembly-method.md) , aby hostitel mohl poskytnout sestavení pro svázání.  
+- Pokud se sestavení v seznamu nezobrazí a hostitel zavedl implementaci [IHostAssemblyStore](ihostassemblystore-interface.md), CLR volá [IHostAssemblyStore::P rovideassembly](ihostassemblystore-provideassembly-method.md) , aby hostitel mohl poskytnout sestavení pro svázání.  
   
 - V opačném případě se modul CLR nemůže připojit k sestavení.  
   
@@ -74,7 +74,7 @@ HRESULT GetNonHostStoreAssemblies (
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [ICLRAssemblyReferenceList – rozhraní](iclrassemblyreferencelist-interface.md)
 - [IHostAssemblyManager – rozhraní](ihostassemblymanager-interface.md)

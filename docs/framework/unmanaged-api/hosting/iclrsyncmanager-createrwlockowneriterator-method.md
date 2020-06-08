@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: b5535b87-9439-424e-b9b3-7d6fafb9819e
 topic_type:
 - apiref
-ms.openlocfilehash: 9eace3e7330d3f8c0c9762e0b1b456ad1bf8a3ac
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: f8fde4905c41dffde90c6361b5a8cdffa15deb4a
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83763186"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503962"
 ---
 # <a name="iclrsyncmanagercreaterwlockowneriterator-method"></a>ICLRSyncManager::CreateRWLockOwnerIterator – metoda
 Požadavky, které modul CLR (Common Language Runtime) vytvoří iterátor, který může hostitel použít k určení sady úloh čekajících na zámek pro zápis čtenářů.  
@@ -39,11 +39,11 @@ HRESULT CreateRWLockOwnerIterator (
  pro Soubor cookie přidružený k požadovanému zámku zapisovače čtenářů  
   
  `pIterator`  
- mimo Ukazatel na iterátor, který může být předán metodám [GetRWLockOwnerNext –](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-getrwlockownernext-method.md) a [DeleteRWLockOwnerIterator –](iclrsyncmanager-deleterwlockowneriterator-method.md) .  
+ mimo Ukazatel na iterátor, který může být předán metodám [GetRWLockOwnerNext –](iclrsyncmanager-getrwlockownernext-method.md) a [DeleteRWLockOwnerIterator –](iclrsyncmanager-deleterwlockowneriterator-method.md) .  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
-|HRESULT|Popis|  
+|HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`CreateRWLockOwnerIterator`úspěšně vráceno.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
@@ -72,7 +72,7 @@ HRESULT CreateRWLockOwnerIterator (
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [ICLRSyncManager – rozhraní](iclrsyncmanager-interface.md)
 - [IHostSyncManager – rozhraní](ihostsyncmanager-interface.md)

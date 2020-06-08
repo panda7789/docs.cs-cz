@@ -1,5 +1,6 @@
 ---
 title: Programování připojitelných protokolů
+description: Přečtěte si, jak třídy abstract WebRequest a WebResponse podporují připojitelné protokoly, které aplikacím umožňují získat data bez zadání protokolu.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - downloading Internet resources, pluggable protocols
@@ -15,23 +16,23 @@ helpviewer_keywords:
 - receiving data, pluggable protocols
 - protocols, pluggable
 ms.assetid: 66ef8456-7576-4e97-8956-959b216373db
-ms.openlocfilehash: 94dfedd317782b9e518df02c84d9af55b1ef2b69
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 510f616295abc13d93e0e0af5a37aca097d343e3
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "71047390"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502194"
 ---
 # <a name="programming-pluggable-protocols"></a>Programování připojitelných protokolů
-Abstraktní <xref:System.Net.WebRequest> a <xref:System.Net.WebResponse> třídy poskytují základnu pro připojitelné protokoly. Odvozením tříd specifických pro <xref:System.Net.WebRequest> <xref:System.Net.WebResponse>protokol z aplikace a , aplikace může požadovat data z internetového prostředku a číst odpověď bez určení použitého protokolu.  
+Abstraktní <xref:System.Net.WebRequest> a <xref:System.Net.WebResponse> třídy poskytují základ pro připojené protokoly. Odvozením tříd specifických pro protokol od <xref:System.Net.WebRequest> a <xref:System.Net.WebResponse> může aplikace požadovat data z internetového prostředku a číst odpověď bez určení používaného protokolu.  
   
- Před vytvořením protokolu specifické <xref:System.Net.WebRequest>, je nutné zaregistrovat jeho Create metoda. Statickou <xref:System.Net.WebRequest.RegisterPrefix%28System.String%2CSystem.Net.IWebRequestCreate%29> <xref:System.Net.WebRequest> metodou registrace potomka <xref:System.Net.WebRequest> zpracování množiny požadavků na určité schéma Internetu, schématu a serveru nebo schématu, serveru a cesty.  
+ Než budete moct vytvořit konkrétní protokol <xref:System.Net.WebRequest> , musíte zaregistrovat jeho metodu create. Použijte statickou <xref:System.Net.WebRequest.RegisterPrefix%28System.String%2CSystem.Net.IWebRequestCreate%29> metodu <xref:System.Net.WebRequest> pro registraci <xref:System.Net.WebRequest> následníka pro zpracování sady požadavků na konkrétní internetové schéma, na schéma a Server nebo na schéma, server a cestu.  
   
- Ve většině případů budete moci odesílat a přijímat data <xref:System.Net.WebRequest> pomocí metod a vlastností třídy. Pokud však potřebujete získat přístup k vlastnostem specifickým pro protokol, můžete typcast a <xref:System.Net.WebRequest> pro konkrétní instanci odvozené třídy.  
+ Ve většině případů budete moci odesílat a přijímat data pomocí metod a vlastností <xref:System.Net.WebRequest> třídy. Pokud však potřebujete získat přístup k vlastnostem specifickým pro protokol, můžete přetypovat <xref:System.Net.WebRequest> na konkrétní instanci odvozené třídy.  
   
- Chcete-li využít připojitelné protokoly, potomci <xref:System.Net.WebRequest> musí poskytnout výchozí transakce požadavku a odpovědi, která nevyžaduje nastavení vlastností specifických pro protokol. Například <xref:System.Net.HttpWebRequest> třída, která implementuje třídu <xref:System.Net.WebRequest> pro `GET` PROTOKOL HTTP, <xref:System.Net.HttpWebResponse> poskytuje ve výchozím nastavení požadavek a vrací datový proud vrácený z webového serveru.  
+ Chcete-li využít výhod protokolů pro připojení, <xref:System.Net.WebRequest> musí vaši následovníci poskytnout výchozí transakci požadavku a odpovědi, která nevyžaduje nastavení vlastností specifických pro protokol. Například <xref:System.Net.HttpWebRequest> třída, která implementuje <xref:System.Net.WebRequest> třídu pro http, poskytuje `GET` ve výchozím nastavení požadavek a vrátí objekt <xref:System.Net.HttpWebResponse> , který obsahuje datový proud vrácený z webového serveru.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Odvození ze žádosti WebRequest](deriving-from-webrequest.md)
 - [Odvození z odpovědi WebResponse](deriving-from-webresponse.md)

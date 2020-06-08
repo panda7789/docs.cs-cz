@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: dda867b5-1050-49ba-b01c-fcc83b7a5617
 topic_type:
 - apiref
-ms.openlocfilehash: 3dd82588cf2dbf92fdda66fd7674c17ddc8b7306
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bc7f1740d666211b63cd93e6f1c0e6955f61ec5d
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177193"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503455"
 ---
 # <a name="imetadataimportresetenum-method"></a>IMetaDataImport::ResetEnum – metoda
-Obnoví zadaný čítač výčtu na zadanou pozici.  
+Obnoví zadaný enumerátor na určenou pozici.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,21 +36,21 @@ HRESULT ResetEnum (
   
 ## <a name="parameters"></a>Parametry  
  `hEnum`  
- [v] Čítač výčtu resetovat.  
+ pro Enumerátor, který má být resetován.  
   
  `ulPos`  
- [v] Nové pozice, na které chcete umístit čítač výčtu.  
+ pro Nová pozice, na kterou chcete umístit enumerátor.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Zahrnuto jako prostředek v souboru MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport – rozhraní](imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](imetadataimport2-interface.md)

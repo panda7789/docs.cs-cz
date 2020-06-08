@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: e29b46bc-5fdc-4894-b0c2-619df4b65ded
 topic_type:
 - apiref
-ms.openlocfilehash: 8160bb5b9ca5e0a4e22a1a831e978eaf125e7605
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 5984c63f0e1a1859dd5cc2550d6dc37c963affb3
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76870489"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503000"
 ---
 # <a name="icorprofilerinfogetilfunctionbody-method"></a>ICorProfilerInfo::GetILFunctionBody – metoda
 Získá ukazatel na tělo metody v kódu jazyka MSIL (Microsoft Intermediate Language) od jejího záhlaví.  
@@ -49,18 +49,18 @@ HRESULT GetILFunctionBody(
  mimo Celé číslo, které určuje velikost metody.  
   
 ## <a name="remarks"></a>Poznámky  
- Metoda je vymezena modulem, ve kterém žije. Vzhledem k tomu, že metoda `GetILFunctionBody` je navržena tak, aby před tím, než je načtena modulem CLR (Common Language Runtime), dala nástroji přístup k kódu jazyka MSIL, používá k nalezení požadované instance token metadat metody.  
+ Metoda je vymezena modulem, ve kterém žije. Vzhledem k tomu, že `GetILFunctionBody` Metoda je navržena tak, aby před tím, než je načtena modulem CLR (Common Language Runtime), dala nástroji přístup k kódu jazyka MSIL, používá k nalezení požadované instance token metadat metody.  
   
- `GetILFunctionBody` může vracet CORPROF_E_FUNCTION_NOT_IL HRESULT, pokud `methodId` odkazuje na metodu bez jakéhokoli kódu jazyka MSIL (jako je abstraktní metoda nebo metoda Invoke platformy (PInvoke)).  
+ `GetILFunctionBody`může vrátit CORPROF_E_FUNCTION_NOT_IL HRESULT `methodId` , pokud odkazuje na metodu bez jakéhokoli kódu jazyka MSIL (jako je abstraktní metoda nebo metoda Invoke platformy (PInvoke)).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorProf. idl, CorProf. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

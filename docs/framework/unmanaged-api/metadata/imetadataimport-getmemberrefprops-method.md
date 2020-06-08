@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0ea73055-ece0-4151-a094-414c88ef8941
 topic_type:
 - apiref
-ms.openlocfilehash: a61254ba751e47b0089a3f7528aca337a32e2db3
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 00693f1a87334620442e8865e76183b2dab68878
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175366"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503611"
 ---
 # <a name="imetadataimportgetmemberrefprops-method"></a>IMetaDataImport::GetMemberRefProps – metoda
-Získá metadata spojená s členem odkazuje zadaný token.  
+Načte metadata přidružená k členu, na který odkazuje zadaný token.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,36 +41,36 @@ HRESULT GetMemberRefProps (
   
 ## <a name="parameters"></a>Parametry  
  `mr`  
- [v] Token MemberRef pro vrácení přidružených metadat.  
+ pro Token MemberRef, pro který mají být vrácena přidružená metadata  
   
  `ptk`  
- [out] A TypeDef nebo TypeRef nebo TypeSpec token, který představuje třídu, která deklaruje člen nebo Token ModuleRef, který představuje třídu modulu, která deklaruje člen nebo MethodDef, který představuje člen.  
+ mimo Token TypeDef nebo TypeRef nebo token token TypeSpec, který představuje třídu, která deklaruje člen, nebo token Odkaz ModuleRef, který reprezentuje třídu modulu, který deklaruje člen nebo prvek MethodDef, který představuje člena.  
   
  `szMember`  
- [out] Vyrovnávací paměť řetězce pro název člena.  
+ mimo Vyrovnávací paměť řetězce pro název člena.  
   
  `cchMember`  
- [v] Požadovaná velikost v `szMember`široké znaky .  
+ pro Požadovaná velikost v různých znacích `szMember` .  
   
  `pchMember`  
- [out] Vrácená velikost v `szMember`široké znaky .  
+ mimo Vrácená velikost v různých znacích `szMember` .  
   
  `ppvSibBlob`  
- [out] Ukazatel na podpis binárních metadat pro člena.  
+ mimo Ukazatel na binární podpis metadat pro člena.  
   
  `pbSig`  
- [out] Velikost v bajtů `ppvSigBlob`.  
+ mimo Velikost v bajtech `ppvSigBlob` .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Zahrnuto jako prostředek v souboru MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport – rozhraní](imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](imetadataimport2-interface.md)

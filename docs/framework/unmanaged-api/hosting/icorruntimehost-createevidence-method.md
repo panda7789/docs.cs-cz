@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: e235ea80-b84c-4442-a4c3-fc96c25a8eb9
 topic_type:
 - apiref
-ms.openlocfilehash: 4a91f57126c0cf2074bd086ddb2fb4cd9e0716d4
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: 264f16fc9e767584229376e67f5aee6db1069025
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83762315"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501609"
 ---
 # <a name="icorruntimehostcreateevidence-method"></a>ICorRuntimeHost::CreateEvidence – metoda
-Načte ukazatel rozhraní typu <xref:System.Security.Principal.IIdentity?displayProperty=nameWithType> , který umožňuje hostiteli vytvořit legitimaci zabezpečení, která bude předána metodě [CreateDomain –](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-createdomain-method.md) nebo [CreateDomainEx –](icorruntimehost-createdomainex-method.md) .  
+Načte ukazatel rozhraní typu <xref:System.Security.Principal.IIdentity?displayProperty=nameWithType> , který umožňuje hostiteli vytvořit legitimaci zabezpečení, která bude předána metodě [CreateDomain –](icorruntimehost-createdomain-method.md) nebo [CreateDomainEx –](icorruntimehost-createdomainex-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,7 +39,7 @@ HRESULT CreateEvidence (
   
 ## <a name="return-value"></a>Návratová hodnota  
   
-|HRESULT|Popis|  
+|HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|Operace byla úspěšná.|  
 |S_FALSE|Operaci se nepodařilo dokončit.|  
@@ -58,7 +58,7 @@ HRESULT CreateEvidence (
   
  **Verze .NET Framework:** 1,0, 1,1  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - <xref:System._AppDomain>
 - <xref:System.AppDomain>

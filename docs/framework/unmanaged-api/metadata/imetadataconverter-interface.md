@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 9caea662-0167-4267-b14a-2fa42c3be4ea
 topic_type:
 - apiref
-ms.openlocfilehash: b6ca7c619d32e69ffac20b80561171d0320db2d4
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 7a2a5080872f49a84e36c53ac337d91738c15e45
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84008375"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501336"
 ---
 # <a name="imetadataconverter-interface"></a>IMetaDataConverter – rozhraní
 Poskytuje metody pro mapování knihoven typů na signatury jejich metadat a jejich převod z jednoho na druhý.  
@@ -28,7 +28,7 @@ Poskytuje metody pro mapování knihoven typů na signatury jejich metadat a jej
   
 |Metoda|Description|  
 |------------|-----------------|  
-|[GetMetaDataFromTypeInfo – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataconverter-getmetadatafromtypeinfo-method.md)|Získá ukazatel na instanci [IMetaDataImport](imetadataimport-interface.md) , která představuje signaturu metadat pro knihovnu typů, na kterou odkazuje zadaná `ITypeInfo` instance.|  
+|[GetMetaDataFromTypeInfo – metoda](imetadataconverter-getmetadatafromtypeinfo-method.md)|Získá ukazatel na instanci [IMetaDataImport](imetadataimport-interface.md) , která představuje signaturu metadat pro knihovnu typů, na kterou odkazuje zadaná `ITypeInfo` instance.|  
 |[GetMetaDataFromTypeLib – metoda](imetadataconverter-getmetadatafromtypelib-method.md)|Získá ukazatel na `IMetaDataImport` instanci, která představuje signaturu metadat pro knihovnu typů reprezentované zadanou `ITypeLib` instancí.|  
 |[GetTypeLibFromMetaData – metoda](imetadataconverter-gettypelibfrommetadata-method.md)|Získá ukazatel na `ITypeLib` instanci, která představuje knihovnu typů, která má zadaný název modulu a knihovny.|  
   
@@ -41,7 +41,7 @@ Poskytuje metody pro mapování knihoven typů na signatury jejich metadat a jej
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Rozhraní pro metadata](metadata-interfaces.md)
 - [IMetaDataImport – rozhraní](imetadataimport-interface.md)

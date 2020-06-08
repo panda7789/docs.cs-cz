@@ -14,24 +14,24 @@ helpviewer_keywords:
 ms.assetid: a71dbbd5-64b8-47eb-9f03-8e8c85fbe2bc
 topic_type:
 - apiref
-ms.openlocfilehash: f8f476f681764a46700dd5ec83c8f9b2739f18f6
-ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
+ms.openlocfilehash: 1b7209a36f8e9d6f02bd4cc1882adeef8af30c3d
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83842488"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503917"
 ---
 # <a name="ihosttask-interface"></a>IHostTask – rozhraní
 Poskytuje metody, které umožňují, aby modul CLR (Common Language Runtime) komunikoval s hostitelem a spravoval úlohy.  
   
 ## <a name="methods"></a>Metody  
   
-|Metoda|Popis|  
+|Metoda|Description|  
 |------------|-----------------|  
 |[Alert – metoda](ihosttask-alert-method.md)|Požaduje, aby hostitel probudil úlohu reprezentovanou aktuální `IHostTask` instancí, aby bylo možné úlohu přerušit.|  
 |[GetPriority – metoda](ihosttask-getpriority-method.md)|Získá úroveň priority vlákna úkolu reprezentované aktuální `IHostTask` instancí.|  
-|[Join – metoda](../../../../docs/framework/unmanaged-api/hosting/ihosttask-join-method.md)|Zablokuje volající úlohu, dokud není dokončena úloha reprezentovaná aktuální `IHostTask` instancí, zadaný časový interval vypršel nebo je volána metoda [IHostTask:: Alert](ihosttask-alert-method.md) .|  
-|[SetCLRTask – metoda](../../../../docs/framework/unmanaged-api/hosting/ihosttask-setclrtask-method.md)|Přidruží instanci [rozhraní ICLRTask](iclrtask-interface.md) k aktuální `IHostTask` instanci.|  
+|[Join – metoda](ihosttask-join-method.md)|Zablokuje volající úlohu, dokud není dokončena úloha reprezentovaná aktuální `IHostTask` instancí, zadaný časový interval vypršel nebo je volána metoda [IHostTask:: Alert](ihosttask-alert-method.md) .|  
+|[SetCLRTask – metoda](ihosttask-setclrtask-method.md)|Přidruží instanci [rozhraní ICLRTask](iclrtask-interface.md) k aktuální `IHostTask` instanci.|  
 |[SetPriority – metoda](ihosttask-setpriority-method.md)|Požaduje, aby hostitel upravil úroveň priority vlákna pro úlohu reprezentovanou aktuální `IHostTask` instancí.|  
 |[Start – metoda](ihosttask-start-method.md)|Požaduje, aby hostitel přesunul úlohu představovanou aktuální `IHostTask` instancí z pozastaveného stavu do aktivního stavu, ve kterém lze spustit kód.|  
   
@@ -47,7 +47,7 @@ Poskytuje metody, které umožňují, aby modul CLR (Common Language Runtime) ko
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [ICLRTask – rozhraní](iclrtask-interface.md)
 - [ICLRTaskManager – rozhraní](iclrtaskmanager-interface.md)

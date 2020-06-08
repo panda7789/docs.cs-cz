@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 43689cc4-e48e-46e5-a22d-bafd768b8759
 topic_type:
 - apiref
-ms.openlocfilehash: 2939f13933c4681e7e2220e5290e019e10c2844e
-ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
+ms.openlocfilehash: deaebbce3b9b8a26bf9668b826a6818dba94dcc3
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83841916"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501375"
 ---
 # <a name="ihosttaskmanagerleaveruntime-method"></a>IHostTaskManager::LeaveRuntime – metoda
 Upozorňuje hostitele, že aktuálně vykonávaný úkol se chystá opustit modul CLR (Common Language Runtime) a zadat nespravovaný kód.  
@@ -42,7 +42,7 @@ HRESULT LeaveRuntime (
   
 ## <a name="return-value"></a>Návratová hodnota  
   
-|HRESULT|Popis|  
+|HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`LeaveRuntime`úspěšně vráceno.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
@@ -53,7 +53,7 @@ HRESULT LeaveRuntime (
 |E_OUTOFMEMORY|K dokončení požadovaného přidělení není k dispozici dostatek paměti.|  
   
 ## <a name="remarks"></a>Poznámky  
- Sekvence volání do a z nespravovaného kódu mohou být vnořeny. Například následující seznam popisuje hypotetickou situaci, ve které sekvence volání `LeaveRuntime` , [IHostTaskManager:: ReverseEnterRuntime –](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-reverseenterruntime-method.md), [IHostTaskManager:: ReverseLeaveRuntime –](ihosttaskmanager-reverseleaveruntime-method.md)a `IHostTaskManager::EnterRuntime` umožňuje hostiteli identifikovat vnořené vrstvy.  
+ Sekvence volání do a z nespravovaného kódu mohou být vnořeny. Například následující seznam popisuje hypotetickou situaci, ve které sekvence volání `LeaveRuntime` , [IHostTaskManager:: ReverseEnterRuntime –](ihosttaskmanager-reverseenterruntime-method.md), [IHostTaskManager:: ReverseLeaveRuntime –](ihosttaskmanager-reverseleaveruntime-method.md)a `IHostTaskManager::EnterRuntime` umožňuje hostiteli identifikovat vnořené vrstvy.  
   
 |Akce|Odpovídající volání metody|  
 |------------|-------------------------------|  
@@ -73,7 +73,7 @@ HRESULT LeaveRuntime (
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [ICLRTask – rozhraní](iclrtask-interface.md)
 - [ICLRTaskManager – rozhraní](iclrtaskmanager-interface.md)

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: ef782c53-dae7-4990-b4ad-fddb1e690d4e
 topic_type:
 - apiref
-ms.openlocfilehash: 3ba014cbae4a71713f29968f0137ac053033c661
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: b435e1a3504dd623421f977ffc48264f8b0dcb5a
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76866954"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84500699"
 ---
 # <a name="functionenter3-function"></a>FunctionEnter3 – funkce
 Upozorňuje profileru, že řízení je předáno funkci.  
@@ -34,12 +34,12 @@ void __stdcall FunctionEnter3(FunctionOrRemappedID functionOrRemappedID);
 
 - `functionOrRemappedID`
 
-  \[in] je identifikátor funkce, do které byl ovládací prvek předán.
+  \[in] identifikátor funkce, do které byl ovládací prvek předán.
 
 ## <a name="remarks"></a>Poznámky  
- Funkce zpětného volání `FunctionEnter3` upozorní profileru na volání funkcí, ale nepodporuje kontrolu argumentů. K registraci implementace této funkce použijte [metodu ICorProfilerInfo3:: SetEnterLeaveFunctionHooks3 –](icorprofilerinfo3-setenterleavefunctionhooks3-method.md) .  
+ `FunctionEnter3`Funkce zpětného volání upozorní Profiler jako volání funkcí, ale nepodporuje kontrolu argumentů. K registraci implementace této funkce použijte [metodu ICorProfilerInfo3:: SetEnterLeaveFunctionHooks3 –](icorprofilerinfo3-setenterleavefunctionhooks3-method.md) .  
   
- Funkce `FunctionEnter3` je zpětné volání; je nutné jej implementovat. Implementace musí používat atribut třídy úložiště `__declspec(naked)`.  
+ `FunctionEnter3`Funkce je zpětné volání. je nutné ji implementovat. Implementace musí používat `__declspec(naked)` atribut třídy úložiště.  
   
  Spouštěcí modul neuloží žádné Registry před voláním této funkce.  
   
@@ -48,23 +48,23 @@ void __stdcall FunctionEnter3(FunctionOrRemappedID functionOrRemappedID);
 - Při ukončení je nutné obnovit zásobník odebráním všech parametrů, které byly vloženy volajícím.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorProf. idl  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Functionleave3 –](functionleave3-function.md)
 - [Functiontailcall3 –](functiontailcall3-function.md)
-- [FunctionEnter3WithInfo](functionenter3withinfo-function.md)
-- [FunctionLeave3WithInfo](functionleave3withinfo-function.md)
-- [FunctionTailcall3WithInfo](functiontailcall3withinfo-function.md)
-- [SetEnterLeaveFunctionHooks3](icorprofilerinfo3-setenterleavefunctionhooks3-method.md)
-- [SetEnterLeaveFunctionHooks3WithInfo](icorprofilerinfo3-setenterleavefunctionhooks3withinfo-method.md)
-- [SetFunctionIDMapper](icorprofilerinfo-setfunctionidmapper-method.md)
-- [SetFunctionIDMapper2](icorprofilerinfo3-setfunctionidmapper2-method.md)
-- [Globální statické funkce pro profilaci](profiling-global-static-functions.md)
+- [Functionenter3withinfo –](functionenter3withinfo-function.md)
+- [Functionleave3withinfo –](functionleave3withinfo-function.md)
+- [Functiontailcall3withinfo –](functiontailcall3withinfo-function.md)
+- [Setenterleavefunctionhooks3 –](icorprofilerinfo3-setenterleavefunctionhooks3-method.md)
+- [Setenterleavefunctionhooks3withinfo –](icorprofilerinfo3-setenterleavefunctionhooks3withinfo-method.md)
+- [SetFunctionIDMapper –](icorprofilerinfo-setfunctionidmapper-method.md)
+- [Setfunctionidmapper2 –](icorprofilerinfo3-setfunctionidmapper2-method.md)
+- [Profilace globálních statických funkcí](profiling-global-static-functions.md)

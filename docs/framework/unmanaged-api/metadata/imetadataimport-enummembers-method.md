@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 3fb8e178-342b-4c89-9bcf-f7f834e6cb77
 topic_type:
 - apiref
-ms.openlocfilehash: 20c7a90f27defa18a5ef311d1f3a549b81fc5c40
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: cc3bc5140da0634b5172f6253de3de37bff487f1
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175483"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84492031"
 ---
 # <a name="imetadataimportenummembers-method"></a>IMetaDataImport::EnumMembers – metoda
-Vyjmenovává tokeny MemberDef představující členy zadaného typu.  
+Vytvoří výčet tokenů memberDef či představujících členy zadaného typu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,42 +39,42 @@ HRESULT EnumMembers (
   
 ## <a name="parameters"></a>Parametry  
  `phEnum`  
- [dovnitř, ven] Ukazatel na čítač výčtu.  
+ [in, out] Ukazatel na enumerátor.  
   
  `cl`  
- [v] A TypeDef token představující typ, jehož členy mají být uvedeny.  
+ pro Token TypeDef představující typ, jehož členy mají být vyčísleny.  
   
  `rMembers`  
- [out] Pole používané k uložení tokenů MemberDef.  
+ mimo Pole použité pro ukládání tokenů memberDef či.  
   
  `cMax`  
- [v] Maximální velikost `rMembers` pole.  
+ pro Maximální velikost `rMembers` pole.  
   
  `pcTokens`  
- [out] Skutečný počet tokenů MemberDef `rMembers`vrácených v .  
+ mimo Skutečný počet memberDef či tokenů vrácených v `rMembers` .  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
-|HRESULT|Popis|  
+|HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumMembers`úspěšně vrácena.|  
-|`S_FALSE`|Neexistují žádné tokeny MemberDef pro výčet. V tom `pcTokens` případě je nula.|  
+|`S_OK`|`EnumMembers`úspěšně vráceno.|  
+|`S_FALSE`|Nejsou k dispozici žádné tokeny memberDef či pro zobrazení výčtu. V takovém případě `pcTokens` je nula.|  
   
 ## <a name="remarks"></a>Poznámky  
- Při výčtu kolekce členů pro třídu vrátí `EnumMembers` pouze členy (pole a metody, ale **ne** vlastnosti nebo události) definované přímo na třídu. Nevrátí žádné členy, které zdědí třídy, i v případě, že třída poskytuje implementaci pro tyto zděděné členy. Chcete-li vytvořit výčet zděděných členů, volající musí explicitně chodit řetězce dědičnosti. Všimněte si, že pravidla pro řetězec dědičnosti se může lišit v závislosti na jazyku nebo kompilátoru, který vyzařoval původní metadata.
+ Při vytváření výčtu kolekcí členů pro třídu `EnumMembers` vrátí pouze členy (pole a metody, ale **ne** vlastnosti nebo události) definované přímo na třídu. Nevrací žádné členy, které třída dědí, a to i v případě, že třída poskytuje implementaci pro tyto zděděné členy. Chcete-li vytvořit výčet zděděných členů, volající musí explicitně procházet řetěz dědičnosti. Všimněte si, že pravidla pro řetěz dědičnosti se mohou lišit v závislosti na jazyku nebo kompilátoru, který vyvolal původní metadata.
 
- Vlastnosti a události nejsou výčty . `EnumMembers` Chcete-li vytvořit výčet těchto, použijte [EnumProperties](imetadataimport-enumproperties-method.md) nebo [EnumEvents](imetadataimport-enumevents-method.md).
+ Vlastnosti a události nejsou vyčísleny pomocí `EnumMembers` . K zobrazení výčtu použijte [enumproperties –](imetadataimport-enumproperties-method.md) nebo [enumevents –](imetadataimport-enumevents-method.md).
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Zahrnuto jako prostředek v souboru MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport – rozhraní](imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](imetadataimport2-interface.md)

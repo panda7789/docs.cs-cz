@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 0bfbc527-bea2-43ce-b041-69186f4440dd
 topic_type:
 - apiref
-ms.openlocfilehash: 8475362ede5ea28009d5abc54c286d6f2a6fed0f
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: 3f85e7c7fd54079ddce37f739a3a7bc0fa830d31
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83804626"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84493289"
 ---
 # <a name="ihostmallocdebugalloc-method"></a>IHostMAlloc::DebugAlloc – metoda
 Požaduje, aby hostitel přidělil určenou velikost paměti z haldy a dále sledoval, kde byla paměť přidělena.  
@@ -55,7 +55,7 @@ HRESULT DebugAlloc (
   
 ## <a name="return-value"></a>Návratová hodnota  
   
-|HRESULT|Popis|  
+|HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`DebugAlloc`úspěšně vráceno.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
@@ -66,7 +66,7 @@ HRESULT DebugAlloc (
 |E_OUTOFMEMORY|K dokončení žádosti o přidělení není k dispozici dostatek paměti.|  
   
 ## <a name="remarks"></a>Poznámky  
- CLR získá ukazatel rozhraní na instanci [IHostMalloc](../../../../docs/framework/unmanaged-api/hosting/ihostmalloc-interface.md) voláním metody [IHostMemoryManager:: CreateMalloc –](ihostmemorymanager-createmalloc-method.md) . `DebugAlloc`umožňuje modulu runtime získat informace o souboru kódu pro použití během ladění.  
+ CLR získá ukazatel rozhraní na instanci [IHostMalloc](ihostmalloc-interface.md) voláním metody [IHostMemoryManager:: CreateMalloc –](ihostmemorymanager-createmalloc-method.md) . `DebugAlloc`umožňuje modulu runtime získat informace o souboru kódu pro použití během ladění.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
@@ -77,7 +77,7 @@ HRESULT DebugAlloc (
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [IHostMemoryManager – rozhraní](ihostmemorymanager-interface.md)
 - [IHostMalloc – rozhraní](ihostmalloc-interface.md)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 6e47b7e5-0335-4dd3-8c42-d3c07d62b102
 topic_type:
 - apiref
-ms.openlocfilehash: 0a677e33950f178b916a5e9e9cbb7bd918c1349b
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 80054a8292c69b957664cb3573b0a8694c7f9fd2
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76866608"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84500400"
 ---
 # <a name="icorprofilercallbackassemblyunloadstarted-method"></a>ICorProfilerCallback::AssemblyUnloadStarted – metoda
 Upozorní profileru, že probíhá uvolňování sestavení.  
@@ -36,19 +36,19 @@ HRESULT AssemblyUnloadStarted(
 
 - `assemblyId`
 
-  \[v] identifikuje sestavení, které se uvolní.
+  \[v] identifikuje sestavení, které je uvolněno.
 
 ## <a name="remarks"></a>Poznámky  
- Hodnota `assemblyId` není platná pro požadavek na informace po návratu metody `AssemblyUnloadStarted` – jedná se o poslední možnost profileru k získání informací o tomto sestavení.  
+ Hodnota `assemblyId` není platná pro žádost o informace po `AssemblyUnloadStarted` návratu metody – jedná se o poslední možnost profileru k získání informací o tomto sestavení.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorProf. idl, CorProf. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

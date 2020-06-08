@@ -14,19 +14,19 @@ helpviewer_keywords:
 ms.assetid: 2fac66fd-6b3b-4dbd-8baf-86038bd85526
 topic_type:
 - apiref
-ms.openlocfilehash: 04260429dd69f5ba1d6a94b6628979341d12b9e8
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: 0b6efcbe4458977e8e938afabd7ae59171bc065a
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83762073"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501648"
 ---
 # <a name="iclrstrongname-interface"></a>ICLRStrongName – rozhraní
 Poskytuje základní globální statické funkce pro podepisování sestavení se silnými názvy. Všechny `ICLRStrongName` metody vrací standardní model COM HRESULTs.  
   
 ## <a name="methods"></a>Metody  
   
-|Metoda|Popis|  
+|Metoda|Description|  
 |------------|-----------------|  
 |[GetHashFromAssemblyFile – metoda](iclrstrongname-gethashfromassemblyfile-method.md)|Načte hodnotu hash zadaného souboru sestavení pomocí zadaného algoritmu hash.|  
 |[GetHashFromAssemblyFileW – metoda](iclrstrongname-gethashfromassemblyfilew-method.md)|Načte hodnotu hash souboru sestavení zadaného jako řetězec Unicode pomocí zadaného algoritmu hash.|  
@@ -35,7 +35,7 @@ Poskytuje základní globální statické funkce pro podepisování sestavení s
 |[GetHashFromFileW – metoda](iclrstrongname-gethashfromfilew-method.md)|Vygeneruje hodnotu hash přes obsah souboru určeného řetězcem Unicode.|  
 |[GetHashFromHandle – metoda](iclrstrongname-gethashfromhandle-method.md)|Vygeneruje hodnotu hash přes obsah souboru se zadaným popisovačem souboru pomocí zadaného algoritmu hash.|  
 |[StrongNameCompareAssemblies – metoda](iclrstrongname-strongnamecompareassemblies-method.md)|Určuje, zda se dvě sestavení liší pouze signaturami silného názvu.|  
-|[StrongNameFreeBuffer – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamefreebuffer-method.md)|Uvolní paměť, která byla přidělena předchozímu volání metody silného názvu, jako je například [StrongNameGetPublicKey –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamegetpublickey-method.md), [StrongNameTokenFromPublicKey –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnametokenfrompublickey-method.md)nebo [StrongNameSignatureGeneration –](iclrstrongname-strongnamesignaturegeneration-method.md).|  
+|[StrongNameFreeBuffer – metoda](iclrstrongname-strongnamefreebuffer-method.md)|Uvolní paměť, která byla přidělena předchozímu volání metody silného názvu, jako je například [StrongNameGetPublicKey –](iclrstrongname-strongnamegetpublickey-method.md), [StrongNameTokenFromPublicKey –](iclrstrongname-strongnametokenfrompublickey-method.md)nebo [StrongNameSignatureGeneration –](iclrstrongname-strongnamesignaturegeneration-method.md).|  
 |[StrongNameGetBlob – metoda](iclrstrongname-strongnamegetblob-method.md)|Vyplní zadanou vyrovnávací paměť binární reprezentací spustitelného souboru na zadané adrese.|  
 |[StrongNameGetBlobFromImage – metoda](iclrstrongname-strongnamegetblobfromimage-method.md)|Načte binární reprezentaci image sestavení v zadané adrese paměti.|  
 |[StrongNameGetPublicKey – metoda](iclrstrongname-strongnamegetpublickey-method.md)|Získá veřejný klíč z páru privátních a veřejných klíčů.|  
@@ -66,7 +66,7 @@ Poskytuje základní globální statické funkce pro podepisování sestavení s
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Rozhraní pro hostování](hosting-interfaces.md)
-- [Hostování](index.md)
+- [Hosting](index.md)

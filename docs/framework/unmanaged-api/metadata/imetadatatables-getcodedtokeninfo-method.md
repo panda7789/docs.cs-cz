@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 31214d3a-715e-49af-92b3-0fd11e4f218a
 topic_type:
 - apiref
-ms.openlocfilehash: 64c70fe0b657047ae35dccb763fa57120403deef
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8ab16ad5b2b2838125e07511ef47be737f40671c
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177156"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501206"
 ---
 # <a name="imetadatatablesgetcodedtokeninfo-method"></a>IMetaDataTables::GetCodedTokenInfo – metoda
-Získá ukazatel na pole tokenů přidružených k indexu zadaného řádku.  
+Získá ukazatel na pole tokenů přidružené k zadanému indexu řádků.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,27 +38,27 @@ HRESULT GetCodedTokenInfo (
   
 ## <a name="parameters"></a>Parametry  
  `ixCdTkn`  
- [v] Druh kódovaného tokenu, který chcete vrátit.  
+ pro Druh kódovaného tokenu, který se má vrátit  
   
  `pcTokens`  
- [out] Ukazatel na délku `ppTokens`.  
+ mimo Ukazatel na délku `ppTokens` .  
   
  `ppTokens`  
- [out] Ukazatel na ukazatel na pole, které obsahuje seznam vrácených tokenů.  
+ mimo Ukazatel na ukazatel na pole, které obsahuje seznam vrácených tokenů.  
   
  `ppName`  
- [out] Ukazatel na ukazatel na název tokenu `ixCdTkn`na .  
+ mimo Ukazatel na ukazatel na název tokenu na adrese `ixCdTkn` .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Používá se jako prostředek v souboru MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [IMetaDataTables – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md)
-- [IMetaDataTables2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatatables2-interface.md)
+- [IMetaDataTables – rozhraní](imetadatatables-interface.md)
+- [IMetaDataTables2 – rozhraní](imetadatatables2-interface.md)

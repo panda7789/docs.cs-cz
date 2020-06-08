@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: ea422217-988b-4acd-b2db-c55357938275
 topic_type:
 - apiref
-ms.openlocfilehash: 190bcacc84646cfd9294cf2b6b53b0474f38758f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 58ab9ee9381fce4d7af1910df6c8d3bb813bcf13
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177216"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84490888"
 ---
 # <a name="imetadataimportgetrva-method"></a>IMetaDataImport::GetRVA – metoda
 Získá relativní virtuální adresu (RVA) a příznaky implementace metody nebo pole reprezentované zadaným tokenem.  
@@ -37,24 +37,24 @@ HRESULT GetRVA (
   
 ## <a name="parameters"></a>Parametry  
  `tk`  
- [v] A MethodDef nebo FieldDef token metadat, který představuje objekt kódu vrátit RVA pro. Pokud je token FieldDef, pole musí být globální proměnná.  
+ pro Token metadat MethodDef nebo FieldDef, který představuje objekt kódu, pro který má být vrácena adresa RVA. Pokud je tokenem FieldDef, musí být pole globální proměnná.  
   
  `pulCodeRVA`  
- [out] Ukazatel na relativní virtuální adresu objektu kódu reprezentovaného tokenem.  
+ mimo Ukazatel na relativní virtuální adresu objektu kódu reprezentovaného tokenem.  
   
  `pdwImplFlags`  
- [out] Ukazatel na příznaky implementace pro metodu. Tato hodnota je bitová maska z [cormethodimpl](../../../../docs/framework/unmanaged-api/metadata/cormethodimpl-enumeration.md) výčtu. Hodnota je `pdwImplFlags` platná pouze `tk` v případě, že je token MethodDef.  
+ mimo Ukazatel na příznaky implementace pro metodu. Tato hodnota je Bitová maska z výčtu [CorMethodImpl –](cormethodimpl-enumeration.md) . Hodnota `pdwImplFlags` je platná pouze v případě `tk` , že je to token MethodDef.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Zahrnuto jako prostředek v souboru MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport – rozhraní](imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](imetadataimport2-interface.md)

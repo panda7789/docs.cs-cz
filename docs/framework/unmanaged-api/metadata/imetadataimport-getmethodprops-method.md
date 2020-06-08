@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: e0667ef7-1d31-4c89-a2d3-d426f023f8d2
 topic_type:
 - apiref
-ms.openlocfilehash: 4a258ce9121a287929ca5bc39c480f1ca2596e78
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 3c7c3525f2f8753241c9a206e4cf5e552bf06efe
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74437459"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503621"
 ---
 # <a name="imetadataimportgetmethodprops-method"></a>IMetaDataImport::GetMethodProps – metoda
 Získá metadata přidružená k metodě, na kterou odkazuje zadaný token MethodDef.  
@@ -53,10 +53,10 @@ HRESULT GetMethodProps (
  mimo Ukazatel na vyrovnávací paměť, která má název metody.  
   
  `cchMethod`  
- pro Požadovaná velikost `szMethod`.  
+ pro Požadovaná velikost `szMethod` .  
   
  `pchMethod`  
- mimo Ukazatel na velikost v různých znacích `szMethod`, nebo v případě zkrácení, skutečný počet znaků v názvu metody.  
+ mimo Ukazatel na velikost v rámci velkých písmen `szMethod` nebo v případě zkrácení, skutečný počet znaků v názvu metody.  
   
  `pdwAttr`  
  mimo Ukazatel na libovolný příznak spojený s metodou.  
@@ -65,7 +65,7 @@ HRESULT GetMethodProps (
  mimo Ukazatel na binární podpis metadat metody.  
   
  `pcbSigBlob`  
- mimo Ukazatel na velikost v bajtech `ppvSigBlob`.  
+ mimo Ukazatel na velikost v bajtech `ppvSigBlob` .  
   
  `pulCodeRVA`  
  mimo Ukazatel na relativní virtuální adresu metody.  
@@ -74,15 +74,15 @@ HRESULT GetMethodProps (
  mimo Ukazatel na libovolný příznak implementace pro metodu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** Cor. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport – rozhraní](imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](imetadataimport2-interface.md)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 017c8ab4-4c09-4754-9935-5b0b49cabecb
 topic_type:
 - apiref
-ms.openlocfilehash: 145fdde302e7e942ea77049b3faeabf60894dd94
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 086448248364403b718408ad8bd32e48447742d0
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74448406"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84490378"
 ---
 # <a name="imetadatatablesgetnextblob-method"></a>IMetaDataTables::GetNextBlob – metoda
 Získá index dalšího binárního rozsáhlého objektu (BLOB) v tabulce.  
@@ -42,15 +42,15 @@ HRESULT GetNextBlob (
  mimo Ukazatel na index dalšího objektu BLOB.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** Cor. h  
   
  **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [IMetaDataTables – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md)
-- [IMetaDataTables2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatatables2-interface.md)
+- [IMetaDataTables – rozhraní](imetadatatables-interface.md)
+- [IMetaDataTables2 – rozhraní](imetadatatables2-interface.md)
