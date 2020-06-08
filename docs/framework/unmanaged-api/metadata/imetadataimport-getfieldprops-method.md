@@ -15,17 +15,17 @@ helpviewer_keywords:
 ms.assetid: 7b0e9b10-8cef-4ba6-8432-40bf63e65ab1
 topic_type:
 - apiref
-ms.openlocfilehash: 8c3f98a124dbbcae3b0500932a2357ed1757951f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2bd05b49c3d51ac13865997910c99cc0cd5ca2d9
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177235"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84491241"
 ---
-# <a name="imetadataimportgetfieldprops-method"></a><span data-ttu-id="258e6-102">IMetaDataImport::GetFieldProps – metoda</span><span class="sxs-lookup"><span data-stu-id="258e6-102">IMetaDataImport::GetFieldProps Method</span></span>
-<span data-ttu-id="258e6-103">Získá metadata přidružená k poli, na které odkazuje zadaný token FieldDef.</span><span class="sxs-lookup"><span data-stu-id="258e6-103">Gets metadata associated with the field referenced by the specified FieldDef token.</span></span>  
+# <a name="imetadataimportgetfieldprops-method"></a><span data-ttu-id="19340-102">IMetaDataImport::GetFieldProps – metoda</span><span class="sxs-lookup"><span data-stu-id="19340-102">IMetaDataImport::GetFieldProps Method</span></span>
+<span data-ttu-id="19340-103">Načte metadata přidružená k poli, na které odkazuje zadaný FieldDef token.</span><span class="sxs-lookup"><span data-stu-id="19340-103">Gets metadata associated with the field referenced by the specified FieldDef token.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="258e6-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="258e6-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="19340-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="19340-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetFieldProps (  
@@ -43,50 +43,50 @@ HRESULT GetFieldProps (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="258e6-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="258e6-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="19340-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="19340-105">Parameters</span></span>  
  `mb`  
- <span data-ttu-id="258e6-106">[v] Token FieldDef, který představuje pole získat přidružená metadata.</span><span class="sxs-lookup"><span data-stu-id="258e6-106">[in] A FieldDef token that represents the field to get associated metadata for.</span></span>  
+ <span data-ttu-id="19340-106">pro Token FieldDef, který představuje pole, pro které se mají získat přidružená metadata</span><span class="sxs-lookup"><span data-stu-id="19340-106">[in] A FieldDef token that represents the field to get associated metadata for.</span></span>  
   
  `pClass`  
- <span data-ttu-id="258e6-107">[out] Ukazatel na token TypeDef, který představuje typ třídy, ke které pole patří.</span><span class="sxs-lookup"><span data-stu-id="258e6-107">[out] A pointer to a TypeDef token that represents the type of the class that the field belongs to.</span></span>  
+ <span data-ttu-id="19340-107">mimo Ukazatel na token TypeDef, který představuje typ třídy, do které pole patří.</span><span class="sxs-lookup"><span data-stu-id="19340-107">[out] A pointer to a TypeDef token that represents the type of the class that the field belongs to.</span></span>  
   
  `szField`  
- <span data-ttu-id="258e6-108">[out] Název pole.</span><span class="sxs-lookup"><span data-stu-id="258e6-108">[out] The name of the field.</span></span>  
+ <span data-ttu-id="19340-108">mimo Název pole</span><span class="sxs-lookup"><span data-stu-id="19340-108">[out] The name of the field.</span></span>  
   
  `cchField`  
- <span data-ttu-id="258e6-109">[v] Velikost v široké znaky vyrovnávací paměti pro *szField*.</span><span class="sxs-lookup"><span data-stu-id="258e6-109">[in] The size in wide characters of the buffer for *szField*.</span></span>  
+ <span data-ttu-id="19340-109">pro Velikost vyrovnávací paměti v různých znacích pro *szField*.</span><span class="sxs-lookup"><span data-stu-id="19340-109">[in] The size in wide characters of the buffer for *szField*.</span></span>  
   
  `pchField`  
- <span data-ttu-id="258e6-110">[out] Skutečná velikost vrácené vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="258e6-110">[out] The actual size of the returned buffer.</span></span>  
+ <span data-ttu-id="19340-110">mimo Skutečná velikost vrácené vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="19340-110">[out] The actual size of the returned buffer.</span></span>  
   
  `pdwAttr`  
- <span data-ttu-id="258e6-111">[out] Příznaky přidružené k metadatům pole.</span><span class="sxs-lookup"><span data-stu-id="258e6-111">[out] Flags associated with the field's metadata.</span></span>  
+ <span data-ttu-id="19340-111">mimo Příznaky přidružené k metadatům v poli</span><span class="sxs-lookup"><span data-stu-id="19340-111">[out] Flags associated with the field's metadata.</span></span>  
   
  `ppvSigBlob`  
- <span data-ttu-id="258e6-112">[v] Ukazatel na binární hodnotu metadat, která popisuje pole.</span><span class="sxs-lookup"><span data-stu-id="258e6-112">[in] A pointer to the binary metadata value that describes the field.</span></span>  
+ <span data-ttu-id="19340-112">pro Ukazatel na hodnotu binárních metadat, která popisuje pole.</span><span class="sxs-lookup"><span data-stu-id="19340-112">[in] A pointer to the binary metadata value that describes the field.</span></span>  
   
  `pcbSigBlob`  
- <span data-ttu-id="258e6-113">[out] Velikost v bajtů `ppvSigBlob`.</span><span class="sxs-lookup"><span data-stu-id="258e6-113">[out] The size in bytes of `ppvSigBlob`.</span></span>  
+ <span data-ttu-id="19340-113">mimo Velikost v bajtech `ppvSigBlob` .</span><span class="sxs-lookup"><span data-stu-id="19340-113">[out] The size in bytes of `ppvSigBlob`.</span></span>  
   
  `pdwCPlusTypeFlag`  
- <span data-ttu-id="258e6-114">[out] Příznak, který určuje typ hodnoty pole.</span><span class="sxs-lookup"><span data-stu-id="258e6-114">[out] A flag that specifies the value type of the field.</span></span>  
+ <span data-ttu-id="19340-114">mimo Příznak, který určuje typ hodnoty pole.</span><span class="sxs-lookup"><span data-stu-id="19340-114">[out] A flag that specifies the value type of the field.</span></span>  
   
  `ppValue`  
- <span data-ttu-id="258e6-115">[out] Konstantní hodnota pole.</span><span class="sxs-lookup"><span data-stu-id="258e6-115">[out] A constant value for the field.</span></span>  
+ <span data-ttu-id="19340-115">mimo Konstantní hodnota pro pole.</span><span class="sxs-lookup"><span data-stu-id="19340-115">[out] A constant value for the field.</span></span>  
   
  `pcchValue`  
- <span data-ttu-id="258e6-116">[out] Velikost v znaku `ppValue`, nebo nula, pokud neexistuje žádný řetězec.</span><span class="sxs-lookup"><span data-stu-id="258e6-116">[out] The size in chars of `ppValue`, or zero if no string exists.</span></span>  
+ <span data-ttu-id="19340-116">mimo Velikost ve znakech `ppValue` nebo nula, pokud žádný řetězec neexistuje.</span><span class="sxs-lookup"><span data-stu-id="19340-116">[out] The size in chars of `ppValue`, or zero if no string exists.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="258e6-117">Požadavky</span><span class="sxs-lookup"><span data-stu-id="258e6-117">Requirements</span></span>  
- <span data-ttu-id="258e6-118">**Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="258e6-118">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="19340-117">Požadavky</span><span class="sxs-lookup"><span data-stu-id="19340-117">Requirements</span></span>  
+ <span data-ttu-id="19340-118">**Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="19340-118">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="258e6-119">**Záhlaví:** Kor.h.</span><span class="sxs-lookup"><span data-stu-id="258e6-119">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="19340-119">**Hlavička:** Cor. h</span><span class="sxs-lookup"><span data-stu-id="19340-119">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="258e6-120">**Knihovna:** Zahrnuto jako prostředek v souboru MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="258e6-120">**Library:** Included as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="19340-120">**Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll</span><span class="sxs-lookup"><span data-stu-id="19340-120">**Library:** Included as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="258e6-121">**Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="258e6-121">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="19340-121">**Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="19340-121">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="258e6-122">Viz také</span><span class="sxs-lookup"><span data-stu-id="258e6-122">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="19340-122">Viz také:</span><span class="sxs-lookup"><span data-stu-id="19340-122">See also</span></span>
 
-- [<span data-ttu-id="258e6-123">IMetaDataImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="258e6-123">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [<span data-ttu-id="258e6-124">IMetaDataImport2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="258e6-124">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [<span data-ttu-id="19340-123">IMetaDataImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="19340-123">IMetaDataImport Interface</span></span>](imetadataimport-interface.md)
+- [<span data-ttu-id="19340-124">IMetaDataImport2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="19340-124">IMetaDataImport2 Interface</span></span>](imetadataimport2-interface.md)
