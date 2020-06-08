@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 5a8a4277-345b-448b-a028-fc8cff9998aa
 topic_type:
 - apiref
-ms.openlocfilehash: 285bdd3f2a96d3c6cb0039382d9944e48c49971a
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: a3fb5c398b8ccd7caba0b005bcf03e64ecef4ba5
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76865906"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503247"
 ---
 # <a name="icorprofilercallbackruntimesuspendaborted-method"></a>ICorProfilerCallback::RuntimeSuspendAborted – metoda
 Upozorní profileru, že modul runtime přerušil přerušení běhu, ke kterému došlo.  
@@ -34,18 +34,18 @@ HRESULT RuntimeSuspendAborted();
 ## <a name="remarks"></a>Poznámky  
  Pozastavení běhu může být přerušeno, pokud se dvě vlákna současně pokusí pozastavit modul runtime.  
   
- Zpětné volání [ICorProfilerCallback:: RuntimeSuspendFinished –](icorprofilercallback-runtimesuspendfinished-method.md) nebo zpětné volání `RuntimeSuspendAborted` dojde v jednom vlákně po zpětném volání [ICorProfilerCallback:: runtimesuspendstarted –](icorprofilercallback-runtimesuspendstarted-method.md) .  
+ Zpětné volání [ICorProfilerCallback:: RuntimeSuspendFinished –](icorprofilercallback-runtimesuspendfinished-method.md) nebo `RuntimeSuspendAborted` zpětné volání bude provedeno v jednom vlákně po zpětném volání [ICorProfilerCallback:: runtimesuspendstarted –](icorprofilercallback-runtimesuspendstarted-method.md) .  
   
- `RuntimeSuspendAborted` zpětné volání je zaručeno, že dojde ve stejném vlákně jako `RuntimeSuspendStarted` zpětného volání.  
+ `RuntimeSuspendAborted`Ke zpětnému volání je zaručeno, že dojde ve stejném vlákně jako `RuntimeSuspendStarted` zpětné volání.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorProf. idl, CorProf. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -14,19 +14,19 @@ helpviewer_keywords:
 ms.assetid: 2e081a37-6a28-4c93-b7ab-1c96a464637c
 topic_type:
 - apiref
-ms.openlocfilehash: e96492270c403f93687245cee8b680dc16b3c787
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: fd3c941d89fbd93f30fc1af235f6310b23758973
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83803127"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501453"
 ---
 # <a name="ihostsyncmanager-interface"></a>IHostSyncManager – rozhraní
 Poskytuje metody, které umožňují modulu CLR (Common Language Runtime) vytvářet primitivy synchronizace voláním hostitele namísto použití synchronizačních funkcí Win32.  
   
 ## <a name="methods"></a>Metody  
   
-|Metoda|Popis|  
+|Metoda|Description|  
 |------------|-----------------|  
 |[CreateAutoEvent – metoda](ihostsyncmanager-createautoevent-method.md)|Vytvoří objekt události automatického resetování.|  
 |[CreateCrst – metoda](ihostsyncmanager-createcrst-method.md)|Vytvoří objekt kritického oddílu pro synchronizaci.|  
@@ -35,8 +35,8 @@ Poskytuje metody, které umožňují modulu CLR (Common Language Runtime) vytvá
 |[CreateMonitorEvent – metoda](ihostsyncmanager-createmonitorevent-method.md)|Vytvoří monitorovaný objekt události automatického resetování.|  
 |[CreateRWLockReaderEvent – metoda](ihostsyncmanager-createrwlockreaderevent-method.md)|Vytvoří objekt události ručního resetování pro implementaci zámku čtecího modulu.|  
 |[CreateRWLockWriterEvent – metoda](ihostsyncmanager-createrwlockwriterevent-method.md)|Vytvoří objekt události automatického resetování pro implementaci zámku zapisovače.|  
-|[CreateSemaphore – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-createsemaphore-method.md)|Vytvoří objekt [IHostSemaphore](ihostsemaphore-interface.md) pro CLR, který se použije jako semafor pro události čekání.|  
-|[SetCLRSyncManager – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-setclrsyncmanager-method.md)|Nastaví instanci [ICLRSyncManager](iclrsyncmanager-interface.md) k přidružení k aktuální `IHostSyncManager` instanci.|  
+|[CreateSemaphore – metoda](ihostsyncmanager-createsemaphore-method.md)|Vytvoří objekt [IHostSemaphore](ihostsemaphore-interface.md) pro CLR, který se použije jako semafor pro události čekání.|  
+|[SetCLRSyncManager – metoda](ihostsyncmanager-setclrsyncmanager-method.md)|Nastaví instanci [ICLRSyncManager](iclrsyncmanager-interface.md) k přidružení k aktuální `IHostSyncManager` instanci.|  
   
 ## <a name="remarks"></a>Poznámky  
  CLR zjistí implementaci hostitele `IHostSyncManager` voláním metody [IHostControl:: gethostmanager –](ihostcontrol-gethostmanager-method.md) s `IID` IID_IHostSyncManager.  
@@ -50,7 +50,7 @@ Poskytuje metody, které umožňují modulu CLR (Common Language Runtime) vytvá
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [ICLRSyncManager – rozhraní](iclrsyncmanager-interface.md)
 - [Rozhraní pro hostování](hosting-interfaces.md)

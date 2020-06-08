@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 4369533d-7834-4497-bc37-bfea0ad737b1
 topic_type:
 - apiref
-ms.openlocfilehash: ac4787379436faa568727329e7b012f83d0a53d5
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: 4b8018bb84dea08987d91f351b1ab0d9f3b48c56
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83760729"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503897"
 ---
 # <a name="icorruntimehost-interface"></a>ICorRuntimeHost – rozhraní
 Poskytuje metody, které umožňují hostiteli explicitně spustit a zastavit modul CLR (Common Language Runtime), vytvořit a nakonfigurovat domény aplikace, získat přístup k výchozí doméně a vytvořit výčet všech domén spuštěných v procesu.  
@@ -28,13 +28,13 @@ Poskytuje metody, které umožňují hostiteli explicitně spustit a zastavit mo
   
 ## <a name="methods"></a>Metody  
   
-|Metoda|Popis|  
+|Metoda|Description|  
 |------------|-----------------|  
 |[CloseEnum – metoda](icorruntimehost-closeenum-method.md)|Obnoví enumerátor domény zpátky na začátek seznamu domén.|  
 |[CreateDomain – metoda](icorruntimehost-createdomain-method.md)|Vytvoří doménu aplikace. Volající obdrží ukazatel rozhraní typu <xref:System._AppDomain> na instanci typu <xref:System.AppDomain?displayProperty=nameWithType> .|  
 |[CreateDomainEx – metoda](icorruntimehost-createdomainex-method.md)|Vytvoří doménu aplikace. Tato metoda umožňuje volajícímu předat instanci IAppDomainSetup – ke konfiguraci dalších funkcí vrácené <xref:System._AppDomain> instance.|  
 |[CreateDomainSetup – metoda](icorruntimehost-createdomainsetup-method.md)|Načte ukazatel rozhraní typu `IAppDomainSetup` na <xref:System.AppDomainSetup> instanci. `IAppDomainSetup`poskytuje metody pro konfiguraci aspektů aplikační domény před jejich vytvořením.|  
-|[CreateEvidence – metoda](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-createevidence-method.md)|Načte ukazatel rozhraní typu <xref:System.Security.Principal.IIdentity> , který umožňuje hostiteli vytvořit legitimaci zabezpečení, která bude předána [CreateDomain –](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-createdomain-method.md) nebo [CreateDomainEx –](icorruntimehost-createdomainex-method.md).|  
+|[CreateEvidence – metoda](icorruntimehost-createevidence-method.md)|Načte ukazatel rozhraní typu <xref:System.Security.Principal.IIdentity> , který umožňuje hostiteli vytvořit legitimaci zabezpečení, která bude předána [CreateDomain –](icorruntimehost-createdomain-method.md) nebo [CreateDomainEx –](icorruntimehost-createdomainex-method.md).|  
 |[CreateLogicalThreadState – metoda](icorruntimehost-createlogicalthreadstate-method.md)|Nepoužívat.|  
 |[CurrentDomain – metoda](icorruntimehost-currentdomain-method.md)|Načte ukazatel rozhraní typu <xref:System._AppDomain> , který představuje doménu načtenou v aktuálním vlákně.|  
 |[DeleteLogicalThreadState – metoda](icorruntimehost-deletelogicalthreadstate-method.md)|Nepoužívat.|  
@@ -59,10 +59,10 @@ Poskytuje metody, které umožňují hostiteli explicitně spustit a zastavit mo
   
  **Verze .NET Framework:** 1,0, 1,1  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.AppDomain>
-- [Hostování](index.md)
+- [Hosting](index.md)
 - [ICLRRuntimeHost – rozhraní](iclrruntimehost-interface.md)
 - [Hostitelé modulu runtime](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/a51xd4ze(v=vs.100))
 - [Rozhraní pro hostování](hosting-interfaces.md)

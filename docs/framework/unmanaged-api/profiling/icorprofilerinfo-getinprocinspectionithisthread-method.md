@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: badddccd-f85c-416e-9f0f-419eab2c9d42
 topic_type:
 - apiref
-ms.openlocfilehash: 0ab383f0968061667b3580a2058687eecda99dde
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 0a4cb365ca8f7d52be505368a3d769a9728983bf
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76869995"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502961"
 ---
 # <a name="icorprofilerinfogetinprocinspectionithisthread-method"></a>ICorProfilerInfo::GetInprocInspectionIThisThread – metoda
 Získá objekt, který lze dotazovat pro rozhraní ICorDebugThread. Tato metoda je zastaralá ve verzi .NET Framework 2,0.  
@@ -34,13 +34,13 @@ HRESULT GetInprocInspectionIThisThread(
   
 ## <a name="parameters"></a>Parametry  
  `ppicd`  
- objekt [out](/cpp/atl/iunknown) , na který lze zadat dotaz na rozhraní `ICorDebugThread`.  
+ objekt [out](/cpp/atl/iunknown) , na který lze zadat dotaz na `ICorDebugThread` rozhraní.  
   
 ## <a name="remarks"></a>Poznámky  
  Služby ladění modulu CLR (Common Language Runtime) podporují omezené ladění v procesu .NET Framework verze 1,0. Ladění v rámci procesu povolilo profiler pro použití kontrolních částí rozhraní API pro ladění. V důsledku zpětné vazby od zákazníků se vnitroprocesové ladění odebralo z .NET Framework ve verzi 2,0 a nahrazuje se sadou funkcí, které jsou v souladu s rozhraním API profilování.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorProf. idl, CorProf. h  
   

@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 5de13327-96c6-4697-a89e-b8bf40717855
 topic_type:
 - apiref
-ms.openlocfilehash: c3011149b9b23e776ad3baac9e41f3c42213654d
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 4aeacc718632c133550ed8de6649716c5d8b7423
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616824"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504440"
 ---
 # <a name="clrcreateinstance-function"></a>CLRCreateInstance – funkce
-Poskytuje jedno ze tří rozhraní: [ICLRMetaHost](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-interface.md), [ICLRMetaHostPolicy –](../../../../docs/framework/unmanaged-api/hosting/iclrmetahostpolicy-interface.md)nebo [ICLRDebugging](../debugging/iclrdebugging-interface.md).  
+Poskytuje jedno ze tří rozhraní: [ICLRMetaHost](iclrmetahost-interface.md), [ICLRMetaHostPolicy –](iclrmetahostpolicy-interface.md)nebo [ICLRDebugging](../debugging/iclrdebugging-interface.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,12 +43,12 @@ HRESULT CLRCreateInstance(
  pro Jeden ze tří identifikátorů rozhraní (IID): IID_ICLRMetaHost, IID_ICLRMetaHostPolicy nebo IID_ICLRDebugging.  
   
  `ppInterface`  
- mimo Jedno ze tří rozhraní: [ICLRMetaHost](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-interface.md), [ICLRMetaHostPolicy –](../../../../docs/framework/unmanaged-api/hosting/iclrmetahostpolicy-interface.md)nebo [ICLRDebugging](../debugging/iclrdebugging-interface.md).  
+ mimo Jedno ze tří rozhraní: [ICLRMetaHost](iclrmetahost-interface.md), [ICLRMetaHostPolicy –](iclrmetahostpolicy-interface.md)nebo [ICLRDebugging](../debugging/iclrdebugging-interface.md).  
   
 ## <a name="return-value"></a>Návratová hodnota  
  Tato metoda vrací následující konkrétní hodnoty HRESULT a také chyby HRESULT, které naznačují selhání metody.  
   
-|HRESULT|Popis|  
+|HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|Metoda byla úspěšně dokončena.|  
 |E_POINTER|`ppInterface`má hodnotu null.|  
@@ -89,6 +89,6 @@ hr = CLRCreateInstance (CLSID_CLRDebugging, IID_ICLRDebugging,
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Hostování](index.md)
+- [Hosting](index.md)

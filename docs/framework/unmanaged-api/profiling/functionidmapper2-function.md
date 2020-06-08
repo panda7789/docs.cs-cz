@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: 466ad51b-8f0c-41d9-81f7-371aac3374cb
 topic_type:
 - apiref
-ms.openlocfilehash: af0ef412395394bb660ae6ed64fb154caef41655
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 65c5d2d4f288d927d79c233374edfec54c0b77ae
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76866915"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84500647"
 ---
 # <a name="functionidmapper2-function"></a>FunctionIDMapper2 – funkce
-Upozorní profileru, že daný identifikátor funkce může být přemapován na alternativní ID, které se má použít v [FunctionEnter3 –](functionenter3-function.md), [FunctionLeave3 –](functionleave3-function.md)a [FunctionTailcall3 –](functiontailcall3-function.md), nebo[Functionenter3withinfo –](functionenter3withinfo-function.md), [FunctionLeave3WithInfo –](functionleave3withinfo-function.md)a zpětná volání [FunctionTailcall3WithInfo –](functiontailcall3withinfo-function.md) pro danou funkci. `FunctionIDMapper2` také umožňuje profileru označit, zda chce přijímat zpětná volání této funkce.  
+Upozorní profileru, že daný identifikátor funkce může být přemapován na alternativní ID, které se má použít v [FunctionEnter3 –](functionenter3-function.md), [FunctionLeave3 –](functionleave3-function.md)a [FunctionTailcall3 –](functiontailcall3-function.md), nebo[Functionenter3withinfo –](functionenter3withinfo-function.md), [FunctionLeave3WithInfo –](functionleave3withinfo-function.md)a zpětná volání [FunctionTailcall3WithInfo –](functiontailcall3withinfo-function.md) pro danou funkci. `FunctionIDMapper2`také umožňuje profileru označit, zda chce přijímat zpětná volání této funkce.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,7 +38,7 @@ UINT_PTR __stdcall FunctionIDMapper2 (
 
 - `funcId`
 
-  \[v] identifikátor funkce, který se má přemapovat.
+  \[v] identifikátor funkce, která má být přemapována.
 
 - `clientData`
 
@@ -46,31 +46,31 @@ UINT_PTR __stdcall FunctionIDMapper2 (
 
 - `pbHookFunction`
 
-  \[] ukazatel na hodnotu, kterou Profiler nastaví na `true`, pokud chce přijmout `FunctionEnter3`, `FunctionLeave3`a `FunctionTailcall3`nebo `FunctionEnter3WithInfo`, `FunctionLeave3WithInfo`a `FunctionTailcall3WithInfo` zpětná volání. v opačném případě nastaví tuto hodnotu na `false`.
+  \[out] ukazatel na hodnotu, na kterou Profiler nastavuje `true` , pokud chce přijímat `FunctionEnter3` , `FunctionLeave3` , a `FunctionTailcall3` , nebo `FunctionEnter3WithInfo` , `FunctionLeave3WithInfo` a `FunctionTailcall3WithInfo` zpětná volání; v opačném případě nastaví tuto hodnotu na `false` .
 
 ## <a name="return-value"></a>Návratová hodnota  
- Profiler vrátí hodnotu, kterou spouštěcí modul používá jako alternativní identifikátor funkce. Návratová hodnota nemůže být null, pokud není vráceno `false` v `pbHookFunction`. V opačném případě návratová hodnota null vytvoří nepředvídatelné výsledky, včetně možného zastavení procesu.  
+ Profiler vrátí hodnotu, kterou spouštěcí modul používá jako alternativní identifikátor funkce. Návratová hodnota nemůže být null, pokud `false` není vrácena v `pbHookFunction` . V opačném případě návratová hodnota null vytvoří nepředvídatelné výsledky, včetně možného zastavení procesu.  
   
 ## <a name="remarks"></a>Poznámky  
  Tato metoda rozšiřuje funkci [FunctionIDMapper –](functionidmapper-function.md) o další parametr, který se používá k předání dat klienta. Data klienta slouží k jednoznačnému rozlišení mezi moduly runtime.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorProf. idl  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorProfilerInfo::SetFunctionIDMapper](icorprofilerinfo-setfunctionidmapper-method.md)
-- [ICorProfilerInfo3::SetFunctionIDMapper2](icorprofilerinfo3-setfunctionidmapper2-method.md)
-- [FunctionEnter3](functionenter3-function.md)
+- [ICorProfilerInfo:: SetFunctionIDMapper –](icorprofilerinfo-setfunctionidmapper-method.md)
+- [ICorProfilerInfo3:: Setfunctionidmapper2 –](icorprofilerinfo3-setfunctionidmapper2-method.md)
+- [Functionenter3 –](functionenter3-function.md)
 - [Functionleave3 –](functionleave3-function.md)
 - [Functiontailcall3 –](functiontailcall3-function.md)
-- [FunctionEnter3WithInfo](functionenter3withinfo-function.md)
-- [FunctionLeave3WithInfo](functionleave3withinfo-function.md)
-- [FunctionTailcall3WithInfo](functiontailcall3withinfo-function.md)
-- [Globální statické funkce pro profilaci](profiling-global-static-functions.md)
+- [Functionenter3withinfo –](functionenter3withinfo-function.md)
+- [Functionleave3withinfo –](functionleave3withinfo-function.md)
+- [Functiontailcall3withinfo –](functiontailcall3withinfo-function.md)
+- [Profilace globálních statických funkcí](profiling-global-static-functions.md)

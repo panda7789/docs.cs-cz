@@ -15,19 +15,19 @@ helpviewer_keywords:
 ms.assetid: bce1dcf8-b4ec-4e73-a917-f2df1ad49c8a
 topic_type:
 - apiref
-ms.openlocfilehash: 99e473268fd0d5bb8ce120b97576277949b86508
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: cac8e9570dab55af6b6e1fcf6f53b6a697727972
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76868994"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502909"
 ---
 # <a name="icorprofilerinfosetilinstrumentedcodemap-method"></a>ICorProfilerInfo::SetILInstrumentedCodeMap – metoda
 
 Nastaví mapu kódu pro určenou funkci pomocí zadaných položek mapování jazyka MSIL (Microsoft Intermediate Language).
 
 > [!NOTE]
-> V .NET Framework verze 2,0, volání `SetILInstrumentedCodeMap` na `FunctionID`, která představuje obecnou funkci v konkrétní doméně aplikace, bude mít vliv na všechny instance této funkce v doméně aplikace.
+> V .NET Framework verze 2,0 `SetILInstrumentedCodeMap` bude volání na `FunctionID` , které představuje obecnou funkci v konkrétní doméně aplikace, ovlivnit všechny instance této funkce v doméně aplikace.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -45,17 +45,17 @@ HRESULT SetILInstrumentedCodeMap(
 pro ID funkce, pro kterou chcete nastavit mapu kódu.
 
 `fStartJit`\
-pro Logická hodnota, která označuje, zda je volání metody `SetILInstrumentedCodeMap` prvním pro konkrétní `FunctionID`. Nastavte `fStartJit` na `true` při prvním volání `SetILInstrumentedCodeMap` pro daný `FunctionID`a na `false` potom.
+pro Logická hodnota, která označuje, zda `SetILInstrumentedCodeMap` je volání metody prvním pro konkrétní `FunctionID` . Nastavte `fStartJit` na `true` při prvním volání na `SetILInstrumentedCodeMap` pro daný `FunctionID` a `false` potom na.
 
 `cILMapEntries`\
-pro Počet prvků v poli `cILMapEntries`.
+pro Počet prvků v `cILMapEntries` poli.
 
 `rgILMapEntries`\
 pro Pole struktur COR_IL_MAP, z nichž každý Určuje posun MSIL.
 
 ## <a name="remarks"></a>Poznámky
 
-Profiler často vkládá příkazy v rámci zdrojového kódu metody pro instrumentaci této metody (například pro oznámení, když je dosaženo daného řádku zdroje). `SetILInstrumentedCodeMap` umožňuje profileru mapovat původní instrukce MSIL na jejich nová umístění. Profiler může pomocí metody [ICorProfilerInfo:: GetILToNativeMapping –](icorprofilerinfo-getiltonativemapping-method.md) získat původní posun MSIL pro daný nativní posun.
+Profiler často vkládá příkazy v rámci zdrojového kódu metody pro instrumentaci této metody (například pro oznámení, když je dosaženo daného řádku zdroje). `SetILInstrumentedCodeMap`umožňuje profileru mapovat původní instrukce jazyka MSIL na jejich nová umístění. Profiler může pomocí metody [ICorProfilerInfo:: GetILToNativeMapping –](icorprofilerinfo-getiltonativemapping-method.md) získat původní posun MSIL pro daný nativní posun.
 
 Ladicí program předpokládá, že každý starý posun odkazuje na posun MSIL v rámci původního, neupraveného kódu MSIL a že každý nový posun odkazuje na posun MSIL v rámci nového, instrumentované kódu. Mapa by se měla seřadit ve vzestupném pořadí. Chcete-li, aby krokování fungovalo správně, postupujte podle těchto pokynů:
 
@@ -87,13 +87,13 @@ V .NET Framework 3,5 a předchozích verzích přidělíte `rgILMapEntries` pole
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
+**Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).
 
 **Hlavička:** CorProf. idl, CorProf. h
 
 **Knihovna:** CorGuids. lib
 
-**Verze .NET Framework:** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]
+**Verze .NET Framework:**[!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]
 
 ## <a name="see-also"></a>Viz také:
 

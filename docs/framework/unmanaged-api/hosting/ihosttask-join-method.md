@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 2cffcc52-19e0-4ced-a440-fc7375078ac9
 topic_type:
 - apiref
-ms.openlocfilehash: 8fa59e065042565b4a543106fff714558cef42ec
-ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
+ms.openlocfilehash: 20919bd9889408821cf57817082e3c7d5cebc240
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83842241"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503911"
 ---
 # <a name="ihosttaskjoin-method"></a>IHostTask::Join – metoda
-Blokuje volající úlohu, dokud se nedokončí úkol, který je reprezentován aktuální instancí [IHostTask](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md) , zadaný časový interval uplyne nebo [IHostTask:: Alert](ihosttask-alert-method.md) je volána.  
+Blokuje volající úlohu, dokud se nedokončí úkol, který je reprezentován aktuální instancí [IHostTask](ihosttask-interface.md) , zadaný časový interval uplyne nebo [IHostTask:: Alert](ihosttask-alert-method.md) je volána.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,7 +43,7 @@ HRESULT Join (
   
 ## <a name="return-value"></a>Návratová hodnota  
   
-|HRESULT|Popis|  
+|HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`Join`úspěšně vráceno.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR (Common Language Runtime) nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
@@ -61,7 +61,7 @@ HRESULT Join (
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [ICLRTask – rozhraní](iclrtask-interface.md)
 - [ICLRTaskManager – rozhraní](iclrtaskmanager-interface.md)

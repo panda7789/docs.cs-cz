@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 8cc3b0c3-d97d-4f71-9e7d-ef2a92b4959a
 topic_type:
 - apiref
-ms.openlocfilehash: 218b65b5899692774c434ae136a3976ecb97ea2f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 91ae326a89e463d26b39c1659d872130042557bf
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177311"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84492007"
 ---
 # <a name="imetadataimportenummethods-method"></a>IMetaDataImport::EnumMethods – metoda
-Výčet tokenů MethodDef představujících metody zadaného typu.  
+Vytvoří výčet tokenů MethodDef představujících metody zadaného typu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,37 +39,37 @@ HRESULT EnumMethods (
   
 ## <a name="parameters"></a>Parametry  
  `phEnum`  
- [dovnitř, ven] Ukazatel na čítač výčtu. To musí být NULL pro první volání této metody.  
+ [in, out] Ukazatel na enumerátor. Pro první volání této metody musí mít hodnotu NULL.  
   
  `cl`  
- [v] A TypeDef token představující typ s metodami pro výčet.  
+ pro Token TypeDef představující typ s metodami k vytvoření výčtu.  
   
  `rMethods`  
- [out] Pole pro uložení tokenů MethodDef.  
+ mimo Pole, do kterého se mají ukládat tokeny MethodDef  
   
  `cMax`  
- [v] Maximální velikost pole MethodDef. `rMethods`  
+ pro Maximální velikost `rMethods` pole MethodDef.  
   
  `pcTokens`  
- [out] Počet tokenů MethodDef vrácených v `rMethods`.  
+ mimo Počet tokenů MethodDef vrácených v `rMethods` .  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
-|HRESULT|Popis|  
+|HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumMethods`úspěšně vrácena.|  
-|`S_FALSE`|Neexistují žádné tokeny MethodDef k výčetu. V tom `pcTokens` případě je nula.|  
+|`S_OK`|`EnumMethods`úspěšně vráceno.|  
+|`S_FALSE`|Nejsou k dispozici žádné tokeny MethodDef pro zobrazení výčtu. V takovém případě `pcTokens` je nula.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Zahrnuto jako prostředek v souboru MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport – rozhraní](imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](imetadataimport2-interface.md)

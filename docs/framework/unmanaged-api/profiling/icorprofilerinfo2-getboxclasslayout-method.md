@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 624672b5-1189-488a-85d2-3e12b49617c1
 topic_type:
 - apiref
-ms.openlocfilehash: 500cf74c320438fc1b78f0aac737b418716e1a11
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 630b67a64716f26577bbc376970e4f76216f4da5
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76862825"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84497348"
 ---
 # <a name="icorprofilerinfo2getboxclasslayout-method"></a>ICorProfilerInfo2::GetBoxClassLayout – metoda
 Získá informace o tom, kde je zadaný typ hodnoty umístěný, když je zabalený.  
@@ -41,16 +41,16 @@ HRESULT GetBoxClassLayout(
  mimo Celé číslo, které je posunutí vzhledem k zabalenému ukazateli ID objektu typu hodnoty.  
   
 ## <a name="remarks"></a>Poznámky  
- Hodnota `pBufferOffset` je umístění typu hodnoty v rámci pole. Po použití `pBufferOffset` pro zabalený objekt lze použít rozložení třídy typu hodnoty pro interpretaci hodnoty objektu.  
+ `pBufferOffset`Hodnota je umístění typu hodnoty v rámci pole. Po `pBufferOffset` použití na zabalený objekt lze použít rozložení třídy typu hodnoty pro interpretaci hodnoty objektu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorProf. idl, CorProf. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -1,5 +1,6 @@
 ---
 title: TCP-UDP
+description: Přečtěte si, jak třídy TcpClient, třída TcpListener nesmí a UdpClient zpracovávají služby TCP a UDP, které pobírají podrobnosti přenosu dat v .NET Framework.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - protocols, TCP/UDP
@@ -16,23 +17,23 @@ helpviewer_keywords:
 - requesting data from Internet, TCP/UDP
 - Internet, TCP/UDP
 ms.assetid: df29b4b0-49e8-4923-82b9-13150dfc40f5
-ms.openlocfilehash: d35278ab7feb42453b5a0adbc86c47b7ac3ff5ca
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ae6d2f9ced2235aa1b9b8fada8064d7e4be970a0
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "71047115"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502090"
 ---
 # <a name="tcp-udp"></a>TCP-UDP
-Aplikace mohou používat služby TCP (Transmission Control Protocol) a User <xref:System.Net.Sockets.TcpClient> <xref:System.Net.Sockets.TcpListener>Datagram <xref:System.Net.Sockets.UdpClient> Protocol (UDP) s třídami , a tříd. Tyto třídy protokolu jsou <xref:System.Net.Sockets.Socket?displayProperty=nameWithType> postaveny na vrcholu třídy a starat se o podrobnosti přenosu dat.  
+Aplikace mohou používat služby protokolu TCP (Transmission Control Protocol) a UDP (User Datagram Protocol) s <xref:System.Net.Sockets.TcpClient> <xref:System.Net.Sockets.TcpListener> <xref:System.Net.Sockets.UdpClient> třídami, a. Tyto třídy protokolu jsou postaveny nad <xref:System.Net.Sockets.Socket?displayProperty=nameWithType> třídou a postarou se o podrobnosti přenosu dat.  
   
- Třídy protokolů používají synchronní metody třídy **Socket** k poskytování jednoduchého a jednoduchého přístupu k síťovým službám bez režie na údržbu informací o stavu nebo znalosti podrobností o nastavení soketů specifických pro protokol. Chcete-li použít asynchronní **Socket** metody, můžete použít asynchronní metody poskytované třídy. <xref:System.Net.Sockets.NetworkStream> Chcete-li získat přístup k funkcím **třídy Socket,** které nejsou vystaveny třídám protokolu, musíte použít třídu **Socket.**  
+ Třídy protokolu používají synchronní metody třídy **Socket** k poskytování jednoduchého a jednoduššího přístupu k síťovým službám bez režie údržby stavových informací nebo zjištění podrobností o nastavení soketů specifických pro protokol. Chcete-li použít metody asynchronního **soketu** , můžete použít asynchronní metody poskytované <xref:System.Net.Sockets.NetworkStream> třídou. Chcete-li získat přístup k funkcím třídy **Socket** , která není vystavena třídami protokolu, je nutné použít třídu **Socket** .  
   
- **TcpClient** a **TcpListener** představují síť pomocí třídy **NetworkStream.** <xref:System.Net.Sockets.TcpClient.GetStream%2A> Pomocí metody vrátíte síťový proud a potom zavoláte <xref:System.Net.Sockets.NetworkStream.Read%2A> <xref:System.Net.Sockets.NetworkStream.Write%2A> datového proudu a metody. **NetworkStream** nevlastní základní soket třídprotokolu, takže jeho zavření nemá vliv na soket.  
+ **TcpClient** a **Třída TcpListener nesmí** reprezentují síť pomocí třídy **NetworkStream** . Použijte <xref:System.Net.Sockets.TcpClient.GetStream%2A> metodu k vrácení síťového datového proudu a pak zavolejte <xref:System.Net.Sockets.NetworkStream.Read%2A> <xref:System.Net.Sockets.NetworkStream.Write%2A> metody a. **NetworkStream** nevlastní základní soket tříd protokolů, takže jeho zavření nemá vliv na soket.  
   
- Třída **UdpClient** používá pole bajtů pro uložení datagramu UDP. Tuto metodu <xref:System.Net.Sockets.UdpClient.Send%2A> použijete k odeslání dat <xref:System.Net.Sockets.UdpClient.Receive%2A> do sítě a metodu pro příjem příchozího datagramu.  
+ Třída **UdpClient** používá pole bajtů k uložení datagramu UDP. Použijte <xref:System.Net.Sockets.UdpClient.Send%2A> metodu k odeslání dat do sítě a <xref:System.Net.Sockets.UdpClient.Receive%2A> metody pro příjem příchozího datagramu.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Použití služeb TCP](using-tcp-services.md)
 - [Použití služeb UDP](using-udp-services.md)

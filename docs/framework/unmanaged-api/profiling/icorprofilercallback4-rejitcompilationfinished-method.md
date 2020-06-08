@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 3b5cff02-2005-44eb-a2bc-50214c4b0e1d
 topic_type:
 - apiref
-ms.openlocfilehash: e010a49dabd3b44602136e70b4c5524a68bdd9e2
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: ff06c285bf5306977b520ed9ff845e70fb25989a
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76865204"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84499373"
 ---
 # <a name="icorprofilercallback4rejitcompilationfinished-method"></a>ICorProfilerCallback4::ReJITCompilationFinished – metoda
 Upozorní profileru, že kompilátor JIT (just-in-time) dokončil opětovné kompilování funkce.  
@@ -45,18 +45,18 @@ HRESULT ReJITCompilationFinished(
  pro Hodnota, která označuje, zda byla opětovná kompilace JIT úspěšná.  
   
  `fIsSafeToBlock`  
- [in] `true` označuje, že blokování může způsobit, že modul runtime počká, než se volající vlákno vrátí z tohoto zpětného volání. `false` k označení, že blokování nebude mít vliv na operaci modulu runtime.  
+ [in] `true` pro indikaci, že blokování může způsobit, že modul runtime počká, než se volající vlákno vrátí z tohoto zpětného volání; `false`pro indikaci, že blokování nebude mít vliv na operaci modulu runtime.  
   
  Hodnota `true` nepoškozuje modul runtime, ale může ovlivnit výsledky profilace.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorProf. idl, CorProf. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

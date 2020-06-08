@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: a9608861-ae64-4467-8a73-be05ad34beac
 topic_type:
 - apiref
-ms.openlocfilehash: 5ebd1f2780ab25e01bcb384b38220f414d90292e
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: a27e7ca156ca138078215a65486ac4b965c6a93d
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76868535"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84496331"
 ---
 # <a name="icorprofilerinfo3getthreadstaticaddress2-method"></a>ICorProfilerInfo3::GetThreadStaticAddress2 – metoda
 Získá adresu zadaného pole statického vlákna, které je v oboru zadaného vlákna a domény aplikace.  
@@ -53,7 +53,7 @@ HRESULT GetThreadStaticAddress2(
  mimo Ukazatel na adresu statického pole, které je v zadaném vlákně.  
   
 ## <a name="remarks"></a>Poznámky  
- Metoda `GetThreadStaticAddress2` může vracet jednu z následujících možností:  
+ `GetThreadStaticAddress2`Metoda může vracet jednu z následujících možností:  
   
 - CORPROF_E_DATAINCOMPLETE HRESULT, pokud danému statickému poli nebyla přiřazena adresa v zadaném kontextu.  
   
@@ -61,16 +61,16 @@ HRESULT GetThreadStaticAddress2(
   
  Před dokončením konstruktoru třídy třídy `GetThreadStaticAddress2` vrátí CORPROF_E_DATAINCOMPLETE pro všechna jeho statická pole, i když některá z statických polí již mohou být inicializována a kořenové objekty uvolňování paměti.  
   
- Metoda [ICorProfilerInfo2:: GetThreadStaticAddress –](icorprofilerinfo2-getthreadstaticaddress-method.md) je podobná metodě `GetThreadStaticAddress2`, ale nepřijímá argument domény aplikace.  
+ Metoda [ICorProfilerInfo2:: GetThreadStaticAddress –](icorprofilerinfo2-getthreadstaticaddress-method.md) je podobná `GetThreadStaticAddress2` metodě, ale nepřijímá argument domény aplikace.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorProf. idl, CorProf. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

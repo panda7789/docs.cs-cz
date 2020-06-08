@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 7b0e9b10-8cef-4ba6-8432-40bf63e65ab1
 topic_type:
 - apiref
-ms.openlocfilehash: 8c3f98a124dbbcae3b0500932a2357ed1757951f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2bd05b49c3d51ac13865997910c99cc0cd5ca2d9
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177235"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84491241"
 ---
 # <a name="imetadataimportgetfieldprops-method"></a>IMetaDataImport::GetFieldProps – metoda
-Získá metadata přidružená k poli, na které odkazuje zadaný token FieldDef.  
+Načte metadata přidružená k poli, na které odkazuje zadaný FieldDef token.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,48 +45,48 @@ HRESULT GetFieldProps (
   
 ## <a name="parameters"></a>Parametry  
  `mb`  
- [v] Token FieldDef, který představuje pole získat přidružená metadata.  
+ pro Token FieldDef, který představuje pole, pro které se mají získat přidružená metadata  
   
  `pClass`  
- [out] Ukazatel na token TypeDef, který představuje typ třídy, ke které pole patří.  
+ mimo Ukazatel na token TypeDef, který představuje typ třídy, do které pole patří.  
   
  `szField`  
- [out] Název pole.  
+ mimo Název pole  
   
  `cchField`  
- [v] Velikost v široké znaky vyrovnávací paměti pro *szField*.  
+ pro Velikost vyrovnávací paměti v různých znacích pro *szField*.  
   
  `pchField`  
- [out] Skutečná velikost vrácené vyrovnávací paměti.  
+ mimo Skutečná velikost vrácené vyrovnávací paměti.  
   
  `pdwAttr`  
- [out] Příznaky přidružené k metadatům pole.  
+ mimo Příznaky přidružené k metadatům v poli  
   
  `ppvSigBlob`  
- [v] Ukazatel na binární hodnotu metadat, která popisuje pole.  
+ pro Ukazatel na hodnotu binárních metadat, která popisuje pole.  
   
  `pcbSigBlob`  
- [out] Velikost v bajtů `ppvSigBlob`.  
+ mimo Velikost v bajtech `ppvSigBlob` .  
   
  `pdwCPlusTypeFlag`  
- [out] Příznak, který určuje typ hodnoty pole.  
+ mimo Příznak, který určuje typ hodnoty pole.  
   
  `ppValue`  
- [out] Konstantní hodnota pole.  
+ mimo Konstantní hodnota pro pole.  
   
  `pcchValue`  
- [out] Velikost v znaku `ppValue`, nebo nula, pokud neexistuje žádný řetězec.  
+ mimo Velikost ve znakech `ppValue` nebo nula, pokud žádný řetězec neexistuje.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Zahrnuto jako prostředek v souboru MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport – rozhraní](imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](imetadataimport2-interface.md)
