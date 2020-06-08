@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: f759f87a-18ae-4c1a-8300-29b803432d0a
 topic_type:
 - apiref
-ms.openlocfilehash: a6aff37a480460bfed7064d59b4c5276daf3207c
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 1cf4d82200709971201da60d06d0cb929641a104
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83212498"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501882"
 ---
 # <a name="icordebugmodulegettoken-method"></a>ICorDebugModule::GetToken – metoda
 Získá token pro položku tabulky pro tento modul.  
@@ -38,7 +38,7 @@ HRESULT GetToken(
  mimo Ukazatel na `mdModule` token, který odkazuje na metadata modulu.  
   
 ## <a name="remarks"></a>Poznámky  
- Token se dá předat rozhraním pro import metadat [IMetaDataImport](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md), [IMetaDataImport2](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)a [IMetaDataAssemblyImport](../metadata/imetadataassemblyimport-interface.md) .  
+ Token se dá předat rozhraním pro import metadat [IMetaDataImport](../metadata/imetadataimport-interface.md), [IMetaDataImport2](../metadata/imetadataimport2-interface.md)a [IMetaDataAssemblyImport](../metadata/imetadataassemblyimport-interface.md) .  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
@@ -49,6 +49,6 @@ HRESULT GetToken(
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Metadata](../metadata/index.md)

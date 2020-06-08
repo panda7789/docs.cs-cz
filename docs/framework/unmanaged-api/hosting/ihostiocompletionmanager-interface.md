@@ -14,19 +14,19 @@ helpviewer_keywords:
 ms.assetid: c28d1983-83f7-46e2-990f-dbb9dc07c818
 topic_type:
 - apiref
-ms.openlocfilehash: 90675d9be71342efa903767abbf63102b40a2c35
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: 095872f8d4bd4f7d3351b8b3e3f8f8445b615cd8
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83804680"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501532"
 ---
 # <a name="ihostiocompletionmanager-interface"></a>IHostIoCompletionManager – rozhraní
 Poskytuje metody, které umožňují modulu CLR (Common Language Runtime) pracovat s porty dokončovacího vstupu a výstupu poskytovanými hostitelem.  
   
 ## <a name="methods"></a>Metody  
   
-|Metoda|Popis|  
+|Metoda|Description|  
 |------------|-----------------|  
 |[Bind – metoda](ihostiocompletionmanager-bind-method.md)|Váže popisovač k portu pro dokončení I/O.|  
 |[CloseIoCompletionPort – metoda](ihostiocompletionmanager-closeiocompletionport-method.md)|Uzavře port, který byl vytvořen pomocí dřívějšího volání `CreateIoCompletionPort` .|  
@@ -36,7 +36,7 @@ Poskytuje metody, které umožňují modulu CLR (Common Language Runtime) pracov
 |[GetMaxThreads – metoda](ihostiocompletionmanager-getmaxthreads-method.md)|Získá maximální počet vláken, která může hostitel Allot na požadavky na vstupně-výstupní operace služby.|  
 |[GetMinThreads – metoda](ihostiocompletionmanager-getminthreads-method.md)|Získá minimální počet vláken, která hostitel poskytuje pro vstupně-výstupní požadavky služby.|  
 |[InitializeHostOverlapped – metoda](ihostiocompletionmanager-initializehostoverlapped-method.md)|Poskytuje hostiteli možnost inicializovat jakákoli vlastní data týkající se vstupně-výstupních požadavků.|  
-|[SetCLRIoCompletionManager – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-setclriocompletionmanager-method.md)|Poskytuje hostitele s ukazatelem rozhraní na instanci [ICLRIoCompletionManager –](iclriocompletionmanager-interface.md) implementované modulem CLR.|  
+|[SetCLRIoCompletionManager – metoda](ihostiocompletionmanager-setclriocompletionmanager-method.md)|Poskytuje hostitele s ukazatelem rozhraní na instanci [ICLRIoCompletionManager –](iclriocompletionmanager-interface.md) implementované modulem CLR.|  
 |[SetMaxThreads – metoda](ihostiocompletionmanager-setmaxthreads-method.md)|Nastaví maximální počet vláken, která hostitel allots na požadavky na vstupně-výstupní operace služby.|  
 |[SetMinThreads – metoda](ihostiocompletionmanager-setminthreads-method.md)|Nastaví minimální počet vláken, které by měl hostitel Allot na dokončení vstupu a výstupu.|  
   
@@ -52,6 +52,6 @@ Poskytuje metody, které umožňují modulu CLR (Common Language Runtime) pracov
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Rozhraní pro hostování](hosting-interfaces.md)

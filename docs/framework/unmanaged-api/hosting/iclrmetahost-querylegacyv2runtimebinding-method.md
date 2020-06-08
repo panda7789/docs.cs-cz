@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 9929817e-acc9-40b7-960c-598664e04b60
 topic_type:
 - apiref
-ms.openlocfilehash: b9a51a85bd17e527d4c04b69ca65100a7069607f
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: b270a6691d4e4ee4a5d0b42f424694eb7993e4e7
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83703711"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504144"
 ---
 # <a name="iclrmetahostquerylegacyv2runtimebinding-method"></a>ICLRMetaHost::QueryLegacyV2RuntimeBinding – metoda
-Vrátí rozhraní, které představuje modul runtime, ke kterému byly navázány starší verze zásad aktivace, například pomocí `useLegacyV2RuntimeActivationPolicy` atributu v položce konfiguračního souboru [ \<> po spuštění](../../../../docs/framework/configure-apps/file-schema/startup/startup-element.md) , přímým použitím starší verze aktivačních rozhraní API nebo voláním metody [ICLRRuntimeInfo:: bindaslegacyv2runtime –](iclrruntimeinfo-bindaslegacyv2runtime-method.md) .  
+Vrátí rozhraní, které představuje modul runtime, ke kterému byly navázány starší verze zásad aktivace, například pomocí `useLegacyV2RuntimeActivationPolicy` atributu u položky konfiguračního souboru [ \<startup> elementu](../../configure-apps/file-schema/startup/startup-element.md) , přímým použitím starší verze aktivačních rozhraní API nebo voláním metody [ICLRRuntimeInfo:: bindaslegacyv2runtime –](iclrruntimeinfo-bindaslegacyv2runtime-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,7 +43,7 @@ HRESULT QueryLegacyV2RuntimeBinding (
 ## <a name="return-value"></a>Návratová hodnota  
  Tato metoda vrací následující konkrétní hodnoty HRESULT a také chyby HRESULT, které naznačují selhání metody.  
   
-|HRESULT|Popis|  
+|HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|Metoda se úspěšně dokončila a vrátila modul runtime, který se váže k zásadám aktivace starší verze.|  
 |S_FALSE|Metoda se úspěšně dokončila, ale starší verze modulu runtime ještě není vázaná.|  
@@ -60,7 +60,7 @@ HRESULT QueryLegacyV2RuntimeBinding (
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [ICLRMetaHost – rozhraní](iclrmetahost-interface.md)
-- [Hostování](index.md)
+- [Hosting](index.md)

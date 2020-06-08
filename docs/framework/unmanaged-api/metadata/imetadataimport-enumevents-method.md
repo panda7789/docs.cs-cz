@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: e1efedcb-3dd7-42ae-a399-21c24728aec5
 topic_type:
 - apiref
-ms.openlocfilehash: bd50d63b1f7080f510c29f90979b7b36242af1c0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 53b1234a176cade5876d70da0cb4eadc18802c69
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177375"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84492301"
 ---
 # <a name="imetadataimportenumevents-method"></a>IMetaDataImport::EnumEvents – metoda
-Vyjmenovává tokeny definice události pro zadaný token TypeDef.  
+Vytvoří výčet tokenů definice události pro zadaný token TypeDef.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,37 +39,37 @@ HRESULT EnumEvents (
   
 ## <a name="parameters"></a>Parametry  
  `phEnum`  
- [dovnitř, ven] Ukazatel na čítač výčtu.  
+ [in, out] Ukazatel na enumerátor.  
   
  `td`  
- [v] TypeDef token, jehož definice událostí mají být uvedeny.  
+ pro Token TypeDef, jehož definice událostí mají být vyčísleny.  
   
  `rEvents`  
- [out] Pole vrácené události.  
+ mimo Pole vrácených událostí  
   
  `cMax`  
- [v] Maximální velikost `rEvents` pole.  
+ pro Maximální velikost `rEvents` pole.  
   
  `pcEvents`  
- [out] Skutečný počet vrácených `rEvents`událostí v .  
+ mimo Skutečný počet událostí vrácených v `rEvents` .  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
-|HRESULT|Popis|  
+|HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumEvents`úspěšně vrácena.|  
-|`S_FALSE`|Neexistují žádné události výčet. V tom `pcEvents` případě je nula.|  
+|`S_OK`|`EnumEvents`úspěšně vráceno.|  
+|`S_FALSE`|Nejsou k dispozici žádné události k zobrazení výčtu. V takovém případě `pcEvents` je nula.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Zahrnuto jako prostředek v souboru MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport – rozhraní](imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](imetadataimport2-interface.md)

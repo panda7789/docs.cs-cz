@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 603b3881-ea94-4dca-95cd-91eebac873a0
 topic_type:
 - apiref
-ms.openlocfilehash: 56221c6b3ac40595e999f2a2a3739f023441c46d
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 8615deb2e42b039120d97b3eb5af23beb31b0808
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76862407"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502844"
 ---
 # <a name="icorprofilerinfo3getappdomainscontainingmodule-method"></a>ICorProfilerInfo3::GetAppDomainsContainingModule – metoda
 Získá identifikátory domén aplikace, ve kterých byl daný modul načten.  
@@ -41,7 +41,7 @@ HRESULT GetAppDomainsContainingModule(
  pro ID načteného modulu.  
   
  `cAppDomainIds`  
- pro Velikost pole `appDomainIds`.  
+ pro Velikost `appDomainIds` pole.  
   
  `pcAppDomainIds`  
  mimo Ukazatel na celkový počet vrácených elementů.  
@@ -53,13 +53,13 @@ HRESULT GetAppDomainsContainingModule(
  Metoda používá vyrovnávací paměti přidělené volajícímu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorProf. idl, CorProf. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

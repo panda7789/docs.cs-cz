@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: c7dd94c6-335b-46ff-9dfe-505056db5673
 topic_type:
 - apiref
-ms.openlocfilehash: ec8a24251ac4f0701b1adab19829078270229ced
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 2facc63023a20dd6aaac64d7d036324c31658bc8
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84004592"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501310"
 ---
 # <a name="imetadataemitdefineimportmember-method"></a>IMetaDataEmit::DefineImportMember – metoda
 Vytvoří odkaz na zadaného člena typu nebo modulu, který je definován mimo aktuální obor, a definuje token pro tento odkaz.  
@@ -70,7 +70,7 @@ HRESULT DefineImportMember (
   
  Obecně platí, že před použitím `DefineImportMember` metody musíte vytvořit v aktuálním oboru odkaz na typ nebo odkaz na modul pro nadřazenou třídu cílového člena, rozhraní nebo modul. Token metadat pro tento odkaz je pak předán v `tkParent` argumentu. Není nutné vytvářet odkaz na nadřazený člen cílového člena, pokud bude vyřešen později kompilátorem nebo linkerem. Shrnutí:  
   
-- Pokud je cílový člen pole nebo metoda, použijte buď metodu [IMetaDataEmit::D efinetyperefbyname](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definetyperefbyname-method.md) , nebo [IMetaDataEmit::D efineimporttype](imetadataemit-defineimporttype-method.md) pro vytvoření odkazu na typ v aktuálním oboru pro nadřazenou třídu člena nebo nadřazené rozhraní.  
+- Pokud je cílový člen pole nebo metoda, použijte buď metodu [IMetaDataEmit::D efinetyperefbyname](imetadataemit-definetyperefbyname-method.md) , nebo [IMetaDataEmit::D efineimporttype](imetadataemit-defineimporttype-method.md) pro vytvoření odkazu na typ v aktuálním oboru pro nadřazenou třídu člena nebo nadřazené rozhraní.  
   
 - Pokud je cílový člen globální proměnnou nebo globální funkcí (tj. není členem třídy nebo rozhraní), použijte metodu [IMetaDataEmit::D efinemoduleref](imetadataemit-definemoduleref-method.md) pro vytvoření odkazu na modul v aktuálním oboru pro nadřazený modul člena.  
   
@@ -85,7 +85,7 @@ HRESULT DefineImportMember (
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [IMetaDataEmit – rozhraní](imetadataemit-interface.md)
 - [IMetaDataEmit2 – rozhraní](imetadataemit2-interface.md)

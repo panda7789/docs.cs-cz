@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: b4896b8f-8e97-469c-8089-e72a025661b5
 topic_type:
 - apiref
-ms.openlocfilehash: e5d4ddd43b27d733a63c2e0dc5e92ffd2ba94a7f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0c7e96c50e59902cde4686f908047a86dd2b6a47
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175431"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503741"
 ---
 # <a name="imetadataimportenumtyperefs-method"></a>IMetaDataImport::EnumTypeRefs – metoda
-Zápory TypeRef tokeny definované v aktuálním oboru metadat.  
+Vytvoří výčet tokenů TypeRef definovaných v aktuálním oboru metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,37 +38,37 @@ HRESULT EnumTypeRefs (
   
 ## <a name="parameters"></a>Parametry  
  `phEnum`  
- [dovnitř, ven] Ukazatel na čítač výčtu. To musí být NULL pro první volání této metody.  
+ [in, out] Ukazatel na enumerátor. Pro první volání této metody musí mít hodnotu NULL.  
   
  `rTypeRefs`  
- [out] Pole používané k uložení tokenů TypeRef.  
+ mimo Pole použité pro uložení tokenů TypeRef  
   
  `cMax`  
- [v] Maximální velikost `rTypeRefs` pole.  
+ pro Maximální velikost `rTypeRefs` pole.  
   
  `pcTypeRefs`  
- [out] Ukazatel na počet tokenů TypeRef `rTypeRefs`vrácených v .  
+ mimo Ukazatel na počet vrácených tokenů TypeRef `rTypeRefs` .  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
-|HRESULT|Popis|  
+|HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumTypeRefs`úspěšně vrácena.|  
-|`S_FALSE`|Neexistují žádné tokeny výčet. V tom `pcTypeRefs` případě je nula.|  
+|`S_OK`|`EnumTypeRefs`úspěšně vráceno.|  
+|`S_FALSE`|Neexistují žádné tokeny k vytvoření výčtu. V takovém případě `pcTypeRefs` je nula.|  
   
 ## <a name="remarks"></a>Poznámky  
- A TypeRef token představuje odkaz na typ.  
+ Token TypeRef představuje odkaz na typ.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Zahrnuto jako prostředek v souboru MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport – rozhraní](imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](imetadataimport2-interface.md)

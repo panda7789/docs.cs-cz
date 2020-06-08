@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 37b95cce-9bfb-4ecf-a00b-33dcba782c67
 topic_type:
 - apiref
-ms.openlocfilehash: e07210203d8a8010890eeb511ff1c08821bfc4a7
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: fa2b5052a1d569487f0c6c72699ff9ab571beefc
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616330"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504391"
 ---
 # <a name="eclrfailure-enumeration"></a>EClrFailure – výčet
 V této části najdete popis sady selhání, pro které může hostitel nastavit akce zásad.  
@@ -40,7 +40,7 @@ typedef enum {
   
 ## <a name="members"></a>Členové  
   
-|Člen|Popis|  
+|Člen|Description|  
 |------------|-----------------|  
 |`FAIL_NonCriticalResource`|Došlo k chybě při pokusu o přidělení prostředku (například vlákna, bloku paměti nebo zámku) v nekritické oblasti kódu.|  
 |`FAIL_CriticalResource`|Došlo k chybě při pokusu o přidělení prostředku (například vlákna, bloku paměti nebo zámku) v kritické oblasti kódu.|  
@@ -51,7 +51,7 @@ typedef enum {
 |`FAIL_CodeContract`|Došlo k chybě kontraktu kódu. Viz [kontrakty kódu](../../debug-trace-profile/code-contracts.md).|  
   
 ## <a name="remarks"></a>Poznámky  
- V tématu metoda [ICLRPolicyManager:: SetActionOnFailure –](../../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-setactiononfailure-method.md) najdete seznam hodnot [EPolicyAction –](../../../../docs/framework/unmanaged-api/hosting/epolicyaction-enumeration.md) , které může hostitel použít k určení akcí zásad pro podmínky selhání. Další informace o kritických a nekritických oblastech kódu naleznete v tématu [EClrOperation –](eclroperation-enumeration.md).  
+ V tématu metoda [ICLRPolicyManager:: SetActionOnFailure –](iclrpolicymanager-setactiononfailure-method.md) najdete seznam hodnot [EPolicyAction –](epolicyaction-enumeration.md) , které může hostitel použít k určení akcí zásad pro podmínky selhání. Další informace o kritických a nekritických oblastech kódu naleznete v tématu [EClrOperation –](eclroperation-enumeration.md).  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
@@ -62,7 +62,7 @@ typedef enum {
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [ICLRPolicyManager – rozhraní](iclrpolicymanager-interface.md)
 - [SetActionOnFailure – metoda](iclrpolicymanager-setactiononfailure-method.md)

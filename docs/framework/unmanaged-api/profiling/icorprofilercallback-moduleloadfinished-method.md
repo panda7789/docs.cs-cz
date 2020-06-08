@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 050649e5-ffc0-4458-a0a4-d9ee128a219e
 topic_type:
 - apiref
-ms.openlocfilehash: 661229e5fbd5d106662f0e823a1753bd76c33311
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 481fc2c40331e31f6a018d012fb2b2543d4fd9b5
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76866166"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503364"
 ---
 # <a name="icorprofilercallbackmoduleloadfinished-method"></a>ICorProfilerCallback::ModuleLoadFinished – metoda
 Upozorní profileru, že se dokončilo načítání modulu.  
@@ -41,18 +41,18 @@ HRESULT ModuleLoadFinished(
  pro Hodnota HRESULT, která označuje, zda byl modul úspěšně načten.  
   
 ## <a name="remarks"></a>Poznámky  
- Hodnota `moduleId` není platná pro požadavek na informace, dokud není volána metoda `ModuleLoadFinished`.  
+ Hodnota `moduleId` není platná pro požadavek na informace, dokud `ModuleLoadFinished` není volána metoda.  
   
- Některé části načtení modulu můžou pokračovat i po `ModuleLoadFinished` zpětném volání. Selhání HRESULT v `hrStatus` označuje selhání. Úspěšnost HRESULT v `hrStatus` však znamená, že první část načtení modulu byla úspěšná.  
+ Některé části načtení modulu můžou pokračovat i po `ModuleLoadFinished` zpětném volání. Neúspěšná hodnota HRESULT v `hrStatus` znamená selhání. Úspěch HRESULT v v `hrStatus` znamená pouze to, že první část načtení modulu byla úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorProf. idl, CorProf. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

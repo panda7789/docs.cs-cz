@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 46ff70f4-13e9-40a0-802a-0a40abcfc6a0
 topic_type:
 - apiref
-ms.openlocfilehash: 8ad04a7a6705b961686317c9473b885fb90676ce
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: ea66474e809b3813faceef79a69dd8a639a72a3b
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76861915"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502792"
 ---
 # <a name="icorprofilerinfo4getfunctionfromip2-method"></a>ICorProfilerInfo4::GetFunctionFromIP2 – metoda
 Mapuje ukazatel na instrukci spravovaného kódu pro Rekompilované verze funkce JIT.  
@@ -45,19 +45,19 @@ HRESULT GetFunctionFromIP2(
  mimo Identita funkce Rekompilované verze JIT.  
   
 ## <a name="remarks"></a>Poznámky  
- `GetFunctionFromIP2` je podobná `GetFunctionFromIP`, s tím rozdílem, že získá znovu zkompilované ID JIT namísto ID funkce funkce, která obsahuje zadanou IP adresu.  
+ `GetFunctionFromIP2`je podobná `GetFunctionFromIP` , s tím rozdílem, že získá znovu ZKOMPILOVANÉ ID JIT namísto ID funkce funkce, která obsahuje ZADANOU IP adresu.  
   
 > [!NOTE]
-> `GetFunctionFromIP2` může aktivovat uvolňování paměti, zatímco `GetFunctionFromIP` nebude.  Další informace najdete v tématu [CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT](corprof-e-unsupported-call-sequence-hresult.md).  
+> `GetFunctionFromIP2`může aktivovat uvolňování paměti, zatímco to nebude `GetFunctionFromIP` .  Další informace najdete v tématu [CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT](corprof-e-unsupported-call-sequence-hresult.md).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorProf. idl, CorProf. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

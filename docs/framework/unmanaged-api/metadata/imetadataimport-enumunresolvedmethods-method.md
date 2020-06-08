@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: eb3187d7-74cf-44b1-aeeb-7a8d2b60e3b7
 topic_type:
 - apiref
-ms.openlocfilehash: ff9827174e43fd62f3a995e9f477c6fff66b227a
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: c991c0af845bc6825db6b3bf258fe0809d5db804
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74449951"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503690"
 ---
 # <a name="imetadataimportenumunresolvedmethods-method"></a>IMetaDataImport::EnumUnresolvedMethods – metoda
 Vytvoří výčet tokenů memberDef či představujících nerozpoznané metody v aktuálním oboru metadat.  
@@ -44,33 +44,33 @@ HRESULT EnumUnresolvedMethods (
  mimo Pole, které se používá k uložení tokenů memberDef či.  
   
  `cMax`  
- pro Maximální velikost `rMethods` pole  
+ pro Maximální velikost `rMethods` pole.  
   
  `pcTokens`  
- mimo Počet tokenů memberDef či vrácených v `rMethods`.  
+ mimo Počet vrácených tokenů memberDef či `rMethods` .  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
-|HRESULT|Popis|  
+|HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumUnresolvedMethods` byla úspěšně vrácena.|  
-|`S_FALSE`|Neexistují žádné tokeny k vytvoření výčtu. V takovém případě je `pcTokens` nula.|  
+|`S_OK`|`EnumUnresolvedMethods`úspěšně vráceno.|  
+|`S_FALSE`|Neexistují žádné tokeny k vytvoření výčtu. V takovém případě `pcTokens` je nula.|  
   
 ## <a name="remarks"></a>Poznámky  
- Nerozpoznaná metoda je taková, která je deklarovaná, ale není implementovaná. Metoda je obsažena ve výčtu, pokud je metoda označena `miForwardRef` a buď `mdPinvokeImpl` nebo `miRuntime` je nastavena na hodnotu nula. Jinými slovy, nerozpoznaná metoda je metoda třídy, která je označena `miForwardRef`, ale která není implementována v nespravovaném kódu (prostřednictvím PInvoke), ani implementována interně samotným modulem runtime.  
+ Nerozpoznaná metoda je taková, která je deklarovaná, ale není implementovaná. Metoda je obsažena ve výčtu, pokud je metoda označena `miForwardRef` a buď `mdPinvokeImpl` nebo `miRuntime` je nastavena na hodnotu nula. Jinými slovy, nerozpoznaná metoda je metoda třídy, která je označena, `miForwardRef` ale která není implementována v nespravovaném kódu (prostřednictvím PInvoke), ani implementována interně samotným modulem runtime.  
   
  Výčet vylučuje všechny metody, které jsou definovány buď v oboru modulu (Globals), nebo v rozhraních nebo abstraktních třídách.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** Cor. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport – rozhraní](imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](imetadataimport2-interface.md)

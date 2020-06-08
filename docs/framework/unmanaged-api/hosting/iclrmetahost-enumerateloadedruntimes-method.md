@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 22fc0a3f-dce4-4766-9a3c-9fab15f4b4ca
 topic_type:
 - apiref
-ms.openlocfilehash: 2e22b8a2d0213b3bd766d80218d6f396721a90e1
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: 7b09bb9c3abcb23997bfd412c3ea939404e583c1
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83703765"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504170"
 ---
 # <a name="iclrmetahostenumerateloadedruntimes-method"></a>ICLRMetaHost::EnumerateLoadedRuntimes – metoda
-Vrátí výčet, který obsahuje platný ukazatel rozhraní [ICLRRuntimeInfo](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md) pro každou verzi modulu CLR (Common Language Runtime), který je načten v daném procesu. Tato metoda nahrazuje funkci [GetVersionFromProcess –](getversionfromprocess-function.md) .  
+Vrátí výčet, který obsahuje platný ukazatel rozhraní [ICLRRuntimeInfo](iclrruntimeinfo-interface.md) pro každou verzi modulu CLR (Common Language Runtime), který je načten v daném procesu. Tato metoda nahrazuje funkci [GetVersionFromProcess –](getversionfromprocess-function.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,7 +44,7 @@ HRESULT EnumerateLoadedRuntimes (
 ## <a name="return-value"></a>Návratová hodnota  
  Tato metoda vrací následující konkrétní hodnoty HRESULT a také chyby HRESULT, které naznačují selhání metody.  
   
-|HRESULT|Popis|  
+|HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|Metoda byla úspěšně dokončena.|  
 |E_POINTER|`ppEnumerator`má hodnotu null.|  
@@ -61,7 +61,7 @@ HRESULT EnumerateLoadedRuntimes (
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [ICLRMetaHost – rozhraní](iclrmetahost-interface.md)
-- [Hostování](index.md)
+- [Hosting](index.md)

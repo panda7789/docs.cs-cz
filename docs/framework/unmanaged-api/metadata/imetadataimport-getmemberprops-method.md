@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 42790918-4142-4938-b8f4-a56979a55846
 topic_type:
 - apiref
-ms.openlocfilehash: 72e14ea0414ebdeb8f54a4bdef8ce5208fc8ef72
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0357444aa8fa38bce5a7175cf6aacfe1a2b2b16e
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177233"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503637"
 ---
 # <a name="imetadataimportgetmemberprops-method"></a>IMetaDataImport::GetMemberProps – metoda
-Získá informace uložené v metadatech pro definici zadaného člena, včetně názvu, <xref:System.Type> binárního podpisu a relativní virtuální adresy člena, na který odkazuje zadaný token metadat. Toto je jednoduchá pomocná metoda: pokud *mb* je MethodDef, pak **GetMethodProps** je volána; Pokud *mb* je FieldDef, pak **GetFieldProps** je volána. Podrobnosti naleznete v následujících dalších metodách.
+Načte informace uložené v metadatech pro zadanou definici člena, včetně názvu, binárního podpisu a relativní virtuální adresy, člena, na <xref:System.Type> který odkazuje zadaný token metadat. Toto je jednoduchá pomocná metoda: Pokud je v *MB* , je zavolána metoda **getmethodprops –** ; Pokud je *MB* FieldDef, pak se zavolá **getfieldprops –** . Podrobnosti najdete v těchto dalších metodách.
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -47,54 +47,54 @@ HRESULT GetMemberProps (
   
 ## <a name="parameters"></a>Parametry  
  `mb`  
- [v] Token, který odkazuje na člena získat přidružená metadata.  
+ pro Token, který odkazuje na člena, aby získal přidružená metadata pro.  
   
  `pClass`  
- [out] Ukazatel na token metadat, který představuje třídu člena.  
+ mimo Ukazatel na token metadat, který představuje třídu člena.  
   
  `szMember`  
- [out] Jméno člena.  
+ mimo Název člena.  
   
  `cchMember`  
- [v] Velikost v široké znaky `szMember` vyrovnávací paměti.  
+ pro Velikost vyrovnávací paměti v různých znacích `szMember` .  
   
  `pchMember`  
- [out] Velikost širokých znaků vráceného názvu.  
+ mimo Velikost vráceného názvu v rámci velkých znaků.  
   
  `pdwAttr`  
- [out] Všechny hodnoty příznaku použité na člena.  
+ mimo Všechny hodnoty příznaků použité u člena.  
   
  `ppvSigBlob`  
- [out] Ukazatel na podpis binárních metadat člena.  
+ mimo Ukazatel na binární podpis metadat člena.  
   
  `pcbSigBlob`  
- [out] Velikost v bajtů `ppvSigBlob`.  
+ mimo Velikost v bajtech `ppvSigBlob` .  
   
  `pulCodeRVA`  
- [out] Ukazatel na relativní virtuální adresu člena.  
+ mimo Ukazatel na relativní virtuální adresu člena.  
   
  `pdwImplFlags`  
- [out] Všechny příznaky implementace metody přidružené k členu.  
+ mimo Jakékoli příznaky implementace metody přidružené ke členu.  
   
  `pdwCPlusTypeFlag`  
- [out] Příznak, který <xref:System.ValueType>označuje . Je to jedna `ELEMENT_TYPE_*` z hodnot.
+ mimo Příznak označující <xref:System.ValueType> . Je to jedna z `ELEMENT_TYPE_*` hodnot.
   
  `ppValue`  
- [out] Konstantní hodnota řetězce vrácená tímto členem.  
+ mimo Hodnota konstanty řetězce vrácená tímto členem.  
   
  `pcchValue`  
- [out] Velikost ve znacích `ppValue`, `ppValue` nebo nula, pokud není obsahovat řetězec.  
+ mimo Velikost ve znacích `ppValue` nebo nula, pokud `ppValue` řetězec nedrží.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Zahrnuto jako prostředek v souboru MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport – rozhraní](imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](imetadataimport2-interface.md)

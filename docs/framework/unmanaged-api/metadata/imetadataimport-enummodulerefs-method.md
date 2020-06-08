@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 53441f3a-68d2-477c-906e-37c55dfcfb4d
 topic_type:
 - apiref
-ms.openlocfilehash: 66186d25e8fee0d6b25c0a2069d46ff9a104c625
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: fe7350e6d8e400ae37b5b8b7854a56f3c5c53ea7
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74450029"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84491742"
 ---
 # <a name="imetadataimportenummodulerefs-method"></a>IMetaDataImport::EnumModuleRefs – metoda
 Vytvoří výčet tokenů Odkaz ModuleRef, které reprezentují importované moduly.  
@@ -44,28 +44,28 @@ HRESULT EnumModuleRefs (
  mimo Pole, které se používá k uložení tokenů Odkaz ModuleRef.  
   
  `cMax`  
- pro Maximální velikost `rModuleRefs` pole  
+ pro Maximální velikost `rModuleRefs` pole.  
   
  `pcModuleRefs`  
- mimo Počet tokenů Odkaz ModuleRef vrácených v `rModuleRefs`.  
+ mimo Počet vrácených tokenů Odkaz ModuleRef `rModuleRefs` .  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
-|HRESULT|Popis|  
+|HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumModuleRefs` byla úspěšně vrácena.|  
-|`S_FALSE`|Neexistují žádné tokeny k vytvoření výčtu. V takovém případě je `pcModuleRefs` nula.|  
+|`S_OK`|`EnumModuleRefs`úspěšně vráceno.|  
+|`S_FALSE`|Neexistují žádné tokeny k vytvoření výčtu. V takovém případě `pcModuleRefs` je nula.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** Cor. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport – rozhraní](imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](imetadataimport2-interface.md)

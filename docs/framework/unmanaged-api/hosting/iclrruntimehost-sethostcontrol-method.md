@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 6136be87-e631-4756-81ed-74b66581bad4
 topic_type:
 - apiref
-ms.openlocfilehash: 8d6a4e1ca934c748352b0c4f5120536a4dd24e0b
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: 644b31ae8e8f0c51c08bcad57220a028406cfd3a
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83703954"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504070"
 ---
 # <a name="iclrruntimehostsethostcontrol-method"></a>ICLRRuntimeHost::SetHostControl – metoda
 Nastaví ukazatel rozhraní, který modul CLR (Common Language Runtime) může použít k získání implementace [rozhraní IHostControl](ihostcontrol-interface.md)hostitele.  
@@ -39,7 +39,7 @@ HRESULT SetHostControl(
   
 ## <a name="return-value"></a>Návratová hodnota  
   
-|HRESULT|Popis|  
+|HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`SetHostControl`úspěšně vráceno.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
@@ -50,7 +50,7 @@ HRESULT SetHostControl(
 |E_CLR_ALREADY_STARTED|Modul CLR již byl inicializován.|  
   
 ## <a name="remarks"></a>Poznámky  
- Je nutné volat `SetHostControl` před inicializací modulu CLR, tedy před voláním [metody Start](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-start-method.md) nebo použitím libovolného [rozhraní metadat](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md). Doporučuje se volat `SetHostControl` hned po volání [funkce CorBindToCurrentRuntime –](../../../../docs/framework/unmanaged-api/hosting/corbindtocurrentruntime-function.md) nebo [funkce CorBindToRuntimeEx –](corbindtoruntimeex-function.md).  
+ Je nutné volat `SetHostControl` před inicializací modulu CLR, tedy před voláním [metody Start](iclrruntimehost-start-method.md) nebo použitím libovolného [rozhraní metadat](../metadata/metadata-interfaces.md). Doporučuje se volat `SetHostControl` hned po volání [funkce CorBindToCurrentRuntime –](corbindtocurrentruntime-function.md) nebo [funkce CorBindToRuntimeEx –](corbindtoruntimeex-function.md).  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
@@ -61,7 +61,7 @@ HRESULT SetHostControl(
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [ICLRRuntimeHost – rozhraní](iclrruntimehost-interface.md)
 - [IHostControl – rozhraní](ihostcontrol-interface.md)

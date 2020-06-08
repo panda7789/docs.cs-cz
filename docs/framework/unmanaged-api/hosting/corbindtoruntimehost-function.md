@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 5c826ba3-8258-49bc-a417-78807915fcaf
 topic_type:
 - apiref
-ms.openlocfilehash: afb25ad9e1760f390aa8dfb3e1de39ea60f185c2
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 9d1c7f4f5b881f7f55539602c152b557a7950472
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616616"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504404"
 ---
 # <a name="corbindtoruntimehost-function"></a>CorBindToRuntimeHost – funkce
 Umožňuje hostitelům načíst zadanou verzi modulu CLR (Common Language Runtime) do procesu.  
@@ -69,7 +69,7 @@ HRESULT CorBindToRuntimeHost (
  pro Sada příznaků, která řídí souběžné uvolňování paměti, doménový kód neutrální a chování `pwszVersion` parametru. Výchozí hodnota je jedna doména, pokud není nastaven žádný příznak. Seznam podporovaných hodnot naleznete v tématu [STARTUP_FLAGS Enumeration](startup-flags-enumeration.md).  
   
  `rclsid`  
- pro `CLSID`Třída typu coclass, která implementuje rozhraní [ICorRuntimeHost](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md) nebo [ICLRRuntimeHost](iclrruntimehost-interface.md) . Podporované hodnoty jsou CLSID_CorRuntimeHost nebo CLSID_CLRRuntimeHost.  
+ pro `CLSID`Třída typu coclass, která implementuje rozhraní [ICorRuntimeHost](icorruntimehost-interface.md) nebo [ICLRRuntimeHost](iclrruntimehost-interface.md) . Podporované hodnoty jsou CLSID_CorRuntimeHost nebo CLSID_CLRRuntimeHost.  
   
  `riid`  
  pro `IID`Rozhraní, které požadujete. Podporované hodnoty jsou IID_ICorRuntimeHost nebo IID_ICLRRuntimeHost.  
@@ -86,7 +86,7 @@ HRESULT CorBindToRuntimeHost (
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [CorBindToCurrentRuntime – funkce](corbindtocurrentruntime-function.md)
 - [CorBindToRuntime – funkce](corbindtoruntime-function.md)

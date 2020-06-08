@@ -1,5 +1,6 @@
 ---
 title: Sokety
+description: Přečtěte si o třídách soketu .NET Framework, což je verze služby soketu spravovaného kódu, kterou poskytuje rozhraní API pro WinSock32.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - application protocols, sockets
@@ -15,21 +16,21 @@ helpviewer_keywords:
 - protocols, sockets
 - Internet, sockets
 ms.assetid: 10d22735-bd37-42c1-a2be-c1932f979a7d
-ms.openlocfilehash: cffad6b4677a880bd63f5ae0232c639f7a262c59
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b44409a0fafc770625be55881ccef3b57045acef
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "71047260"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502129"
 ---
 # <a name="sockets"></a>Sokety
-Obor <xref:System.Net.Sockets> názvů obsahuje spravovanou implementaci rozhraní Windows Sockets. Všechny ostatní třídy přístupu k síti v oboru <xref:System.Net> názvů jsou postaveny na této implementaci soketů.  
+<xref:System.Net.Sockets>Obor názvů obsahuje spravovanou implementaci rozhraní Windows Sockets. Všechny ostatní třídy přístupu k síti v <xref:System.Net> oboru názvů jsou postaveny nad touto implementací soketů.  
   
- Třída .NET <xref:System.Net.Sockets.Socket> Framework je verze spravovaného kódu soketových služeb poskytovaných rozhraním WINSOCK32 API. Ve většině případů **Socket** metody třídy jednoduše zařazují data do jejich nativní protějšky Win32 a zpracování všech nezbytných kontrol zabezpečení.  
+ Třída .NET Framework <xref:System.Net.Sockets.Socket> je verze služby soketu spravovaného kódu, kterou poskytuje rozhraní WinSock32 API. Ve většině případů metody třídy **Socket** jednoduše zařazovat data do svých nativních protějšků Win32 a zpracovávají všechny nezbytné kontroly zabezpečení.  
   
- Socket **Socket** Třída podporuje dva základní režimy, synchronní a asynchronní. V synchronním režimu volání funkcí, které provádějí <xref:System.Net.Sockets.Socket.Send%2A> <xref:System.Net.Sockets.Socket.Receive%2A>síťové operace (například a ) počkejte, dokud se operace nedokončí, než vrátíte ovládací prvek volajícímu programu. V asynchronním režimu tato volání okamžitě vrátit.  
+ Třída **Socket** podporuje dva základní režimy, synchronní a asynchronní. V synchronním režimu volání funkcí, které provádějí síťové operace (například <xref:System.Net.Sockets.Socket.Send%2A> a <xref:System.Net.Sockets.Socket.Receive%2A> ), počkejte na dokončení operace před vrácením řízení volajícímu programu. V asynchronním režimu vrátí tato volání okamžitě.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Postupy: Vytvoření soketu](how-to-create-a-socket.md)
 

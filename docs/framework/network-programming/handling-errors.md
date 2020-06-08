@@ -1,5 +1,6 @@
 ---
 title: Zpracování chyb
+description: Seznamte se se systémovými a webovými výjimkami, které vyvolají WebRequest a WebResponse. K pochopení a vyřešení problému použijte vlastnost status.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -31,43 +32,43 @@ helpviewer_keywords:
 - ConnectionClosed enumeration member
 - SecureChannelFailure enumeration member
 ms.assetid: 657141cd-5cf5-4fdb-a4b2-4c040eba84b5
-ms.openlocfilehash: f5be5d8e14d7aa2d98009fc10c9cce314e745ed1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 786b2bd8bc4d1b394bcfe920053b2f4f55d1cdea
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79180872"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502571"
 ---
 # <a name="handling-errors"></a>Zpracování chyb
 
-A <xref:System.Net.WebRequest> <xref:System.Net.WebResponse> třídy vyvolat obě systémové <xref:System.ArgumentException>výjimky (například) a <xref:System.Net.WebException> výjimky specifické <xref:System.Net.WebRequest.GetResponse%2A> pro web (které jsou vyvolány metodou).  
+<xref:System.Net.WebRequest>Třídy a <xref:System.Net.WebResponse> vyvolají výjimky systému (například <xref:System.ArgumentException> ) a výjimky specifické pro web (které jsou <xref:System.Net.WebException> vyvolány <xref:System.Net.WebRequest.GetResponse%2A> metodou).  
   
-Každý **WebException** <xref:System.Net.WebException.Status%2A> obsahuje vlastnost, která <xref:System.Net.WebExceptionStatus> obsahuje hodnotu z výčtu. Můžete zkontrolovat **Stav** vlastnost určit chybu, ke které došlo a provést příslušné kroky k vyřešení chyby.  
+Každý **WebException** obsahuje <xref:System.Net.WebException.Status%2A> vlastnost, která obsahuje hodnotu z <xref:System.Net.WebExceptionStatus> výčtu. Můžete prostudovat vlastnost **stav** a zjistit tak chybu, ke které došlo, a provést správné kroky k vyřešení chyby.  
   
-Následující tabulka popisuje možné hodnoty vlastnosti **Stav.**  
+Následující tabulka popisuje možné hodnoty vlastnosti **status** .  
   
 |Status|Popis|  
 |------------|-----------------|  
 |ConnectFailure|Vzdálenou službu nelze kontaktovat na úrovni přenosu.|  
-|Připojení uzavřeno|Připojení bylo předčasně ukončeno.|  
-|KeepAliveSelhání|Server uzavřel připojení nastojen se sadou hlaviček Keep-alive.|  
-|NázevResolutionFailure|Název služby nelze přeložit název hostitele.|  
-|Chyba protokolu|Odpověď přijatá ze serveru byla dokončena, ale na úrovni protokolu byla uvedena chyba.|  
+|ConnectionClosed|Připojení bylo předčasně ukončeno.|  
+|KeepAliveFailure|Server uzavřel připojení vytvořené pomocí sady hlaviček Keep-Alive.|  
+|NameResolutionFailure|Názvová služba nemohla přeložit název hostitele.|  
+|ProtocolError|Odpověď přijatá ze serveru byla dokončena, ale na úrovni protokolu byla označena chyba.|  
 |ReceiveFailure|Ze vzdáleného serveru nebyla přijata úplná odpověď.|  
-|Požadavek byl zrušen.|Požadavek byl zrušen.|  
-|SecureChannelSelhání|V zabezpečeném propojení kanálu došlo k chybě.|  
-|SendFailure|Úplný požadavek nelze odeslat na vzdálený server.|  
+|RequestCanceled|Žádost se zrušila.|  
+|SecureChannelFailure|V odkazu na zabezpečený kanál došlo k chybě.|  
+|SendFailure|Do vzdáleného serveru nelze odeslat úplnou žádost.|  
 |ServerProtocolViolation|Odpověď serveru nebyla platnou odpovědí HTTP.|  
-|Úspěch|Nebyla zjištěna žádná chyba.|  
-|Časový limit|V době stanovené pro požadavek nebyla přijata žádná odpověď.|  
-|Selhání důvěryhodnosti|Certifikát serveru nelze ověřit.|  
-|MessageLengthLimitExceeded|Byla přijata zpráva, která překročila zadaný limit při odesílání požadavku nebo přijímání odpovědi ze serveru.|  
+|Úspěch|Nedošlo k žádné chybě.|  
+|Časový limit|V rámci nastaveného časového limitu pro požadavek nebyla přijata žádná odpověď.|  
+|TrustFailure|Certifikát serveru nelze ověřit.|  
+|MessageLengthLimitExceeded|Byla přijata zpráva, která překročila zadaný limit při odesílání žádosti nebo přijetí odpovědi ze serveru.|  
 |Čekající na vyřízení|Interní asynchronní požadavek čeká na vyřízení.|  
-|Selhání kanálu|Tato hodnota podporuje infrastrukturu rozhraní .NET Framework a není určena k použití přímo ve vašem kódu.|  
-|Selhání rezoluce__sychu|Služba překladače názvů nemohla přeložit název hostitele proxy serveru.|  
-|Neznámýchyba|Došlo k výjimce neznámého typu.|  
+|PipelineFailure|Tato hodnota podporuje infrastrukturu .NET Framework a není určena pro použití přímo v kódu.|  
+|ProxyNameResolutionFailure|Služba překladač názvů nemohla přeložit název hostitele proxy.|  
+|UnknownError|Došlo k výjimce neznámého typu.|  
   
-Pokud je vlastnost **Stav** **WebExceptionStatus.ProtocolError**, je k dispozici **webová odpověď** obsahující odpověď ze serveru. Tuto odpověď můžete zkontrolovat a určit skutečný zdroj chyby protokolu.  
+Je- **Status** li vlastnost status **WebExceptionStatus rovným. ProtocolError**, je k dispozici odpověď na **WebResponse** obsahující odpověď ze serveru. Tuto odpověď můžete prostudovat a určit skutečný zdroj chyby protokolu.  
   
 Následující příklad ukazuje, jak zachytit **WebException**.  
   
@@ -164,11 +165,11 @@ Catch e As Exception
 End Try  
 ```  
   
-Aplikace, které <xref:System.Net.Sockets.Socket> používají <xref:System.Net.Sockets.SocketException> class throw při výskytu chyb v soketu systému Windows. , <xref:System.Net.Sockets.TcpClient> <xref:System.Net.Sockets.TcpListener>a <xref:System.Net.Sockets.UdpClient> třídy jsou postaveny na vrcholu **Socket** třídy a vyvolat **SocketExceptions** také.  
+Aplikace, které používají <xref:System.Net.Sockets.Socket> třídu, jsou vyhozeny, <xref:System.Net.Sockets.SocketException> Pokud dojde k chybám na soketu Windows. <xref:System.Net.Sockets.TcpClient>Třídy, <xref:System.Net.Sockets.TcpListener> a <xref:System.Net.Sockets.UdpClient> jsou postaveny na vrcholu třídy **soketu** a také vyvolávají výjimku **SocketExceptions** .  
   
-Při vyvolání **SocketException,** **SocketException** třída <xref:System.Net.Sockets.SocketException.ErrorCode%2A> nastaví vlastnost na poslední chybu soketu operačního systému, ke které došlo. Další informace o kódech chyb soketu naleznete v dokumentaci k kódu chybrozhraní WINSOCK 2.0 API v msdn.  
+Když je vyvolána výjimka **SocketException** , třída **SocketException** nastaví <xref:System.Net.Sockets.SocketException.ErrorCode%2A> vlastnost na poslední chybu soketu operačního systému, ke které došlo. Další informace o kódech chyb soketu najdete v dokumentaci k kódu chyby rozhraní API Winsock 2,0 na webu MSDN.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Zpracování a vyvolání výjimek v rozhraní .NET](../../standard/exceptions/index.md)
+- [Zpracování a vyvolávání výjimek v rozhraní .NET](../../standard/exceptions/index.md)
 - [Žádosti o data](requesting-data.md)

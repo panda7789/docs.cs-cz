@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 02a02ff7-ae0e-4692-a20e-372405f23052
 topic_type:
 - apiref
-ms.openlocfilehash: da82950ea1a0da81c77d173be9ab45dcb3001bfe
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: d821413e67b36392d936499cd22f2e065f1556ec
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84007829"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503845"
 ---
 # <a name="imetadataemitsetparent-method"></a>IMetaDataEmit::SetParent – metoda
-Stanoví, že zadaný člen, jak je definován předchozím voláním [IMetaDataEmit::D efinememberref](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definememberref-method.md), je členem zadaného typu, jak je definováno předchozím voláním [IMetaDataEmit::D efinetypedef](imetadataemit-definetypedef-method.md).  
+Stanoví, že zadaný člen, jak je definován předchozím voláním [IMetaDataEmit::D efinememberref](imetadataemit-definememberref-method.md), je členem zadaného typu, jak je definováno předchozím voláním [IMetaDataEmit::D efinetypedef](imetadataemit-definetypedef-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -50,7 +50,7 @@ HRESULT SetParent (
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [IMetaDataEmit – rozhraní](imetadataemit-interface.md)
 - [IMetaDataEmit2 – rozhraní](imetadataemit2-interface.md)

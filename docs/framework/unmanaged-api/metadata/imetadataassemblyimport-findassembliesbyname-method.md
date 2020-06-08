@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 4db97cf9-e4c1-4233-8efa-cbdc0e14a8e4
 topic_type:
 - apiref
-ms.openlocfilehash: 05902436c09d082f90af01f48c7e918650317ce7
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: d2693a94f02214df6d7265b26e3d70d91adcf8a7
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84009415"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503832"
 ---
 # <a name="imetadataassemblyimportfindassembliesbyname-method"></a>IMetaDataAssemblyImport::FindAssembliesByName – metoda
 Získá pole sestavení se zadaným `szAssemblyName` parametrem pomocí standardních pravidel používaných modulem CLR (Common Language Runtime) pro překlad odkazů.  
@@ -67,7 +67,7 @@ HRESULT FindAssembliesByName (
 ## <a name="remarks"></a>Poznámky  
  V případě názvu sestavení `FindAssembliesByName` vyhledá metoda sestavení pomocí standardních pravidel pro překlad odkazů na sestavení. (Další informace naleznete v tématu [jak modul runtime vyhledává sestavení](../../deployment/how-the-runtime-locates-assemblies.md).) `FindAssembliesByName`umožňuje volající konfiguraci různých aspektů kontextu překladače sestavení, jako je například základ aplikace a cesta k privátnímu vyhledávání.  
   
- `FindAssembliesByName`Metoda vyžaduje, aby byl modul CLR inicializován v procesu, aby bylo možné vyvolat logiku rozlišení sestavení. Proto je nutné před voláním volat [CoInitializeEE –](../../../../docs/framework/unmanaged-api/hosting/coinitializeee-function.md) (předání COINITEE_DEFAULT) `FindAssembliesByName` a pak sledovat volání [CoUninitializeCor –](../hosting/couninitializecor-function.md).  
+ `FindAssembliesByName`Metoda vyžaduje, aby byl modul CLR inicializován v procesu, aby bylo možné vyvolat logiku rozlišení sestavení. Proto je nutné před voláním volat [CoInitializeEE –](../hosting/coinitializeee-function.md) (předání COINITEE_DEFAULT) `FindAssembliesByName` a pak sledovat volání [CoUninitializeCor –](../hosting/couninitializecor-function.md).  
   
  `FindAssembliesByName`vrátí ukazatel [IMetaDataImport](imetadataimport-interface.md) na soubor obsahující manifest sestavení pro název sestavení, který je předaný. Pokud zadaný název sestavení není plně zadán (například pokud nezahrnuje verzi), může být vráceno více sestavení.  
   
@@ -82,7 +82,7 @@ HRESULT FindAssembliesByName (
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Jak běhové prostředí vyhledává sestavení](../../deployment/how-the-runtime-locates-assemblies.md)
 - [IMetaDataAssemblyImport – rozhraní](imetadataassemblyimport-interface.md)

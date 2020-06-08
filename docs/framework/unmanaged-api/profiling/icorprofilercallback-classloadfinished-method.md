@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 3dd80fbe-d62d-4d4d-acf8-5b7d0efe607e
 topic_type:
 - apiref
-ms.openlocfilehash: e0ff90f99c1127b5a4626f47514ba7099b5d48af
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 4be2a50664b001e865b5ecdd9aabe8ba727b8c26
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76866595"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84500387"
 ---
 # <a name="icorprofilercallbackclassloadfinished-method"></a>ICorProfilerCallback::ClassLoadFinished – metoda
 Upozorní profileru, že se dokončilo načítání třídy.  
@@ -41,21 +41,21 @@ HRESULT ClassLoadFinished(
 
 - `hrStatus`
 
-  \[in] hodnota HRESULT, která označuje, jestli se třída úspěšně načetla.
+  \[in] HRESULT, který označuje, zda byla třída úspěšně načtena.
 
 ## <a name="remarks"></a>Poznámky  
- Hodnota `classId` není platná pro požadavek na informace, dokud není volána metoda `ClassLoadFinished`.  
+ Hodnota `classId` není platná pro požadavek na informace, dokud `ClassLoadFinished` není volána metoda.  
   
- Některé části načtení třídy mohou pokračovat po `ClassLoadFinished` zpětného volání. Selhání HRESULT v `hrStatus` označuje selhání. Úspěšnost HRESULT v `hrStatus` však znamená, že první část načtení třídy byla úspěšná.  
+ Některé části načtení třídy mohou pokračovat po `ClassLoadFinished` zpětném volání. Neúspěšná hodnota HRESULT v `hrStatus` znamená selhání. Úspěch HRESULT v v `hrStatus` znamená pouze to, že první část načtení třídy byla úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorProf. idl, CorProf. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

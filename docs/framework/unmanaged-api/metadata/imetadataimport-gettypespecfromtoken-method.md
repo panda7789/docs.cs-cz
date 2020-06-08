@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: ee518bda-3296-482e-a7b7-e9d51dd1a181
 topic_type:
 - apiref
-ms.openlocfilehash: 34b7cebfa063a3ad077b74a753fd37ba67ff53a5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 43e9671afa92d36966e51bbdc630db4a9d9083b7
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175314"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503498"
 ---
 # <a name="imetadataimportgettypespecfromtoken-method"></a>IMetaDataImport::GetTypeSpecFromToken – metoda
-Získá podpis binární metadata specifikace typu reprezentované zadaný token.  
+Získá binární podpis metadat specifikace typu reprezentované zadaným tokenem.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,27 +37,27 @@ HRESULT GetTypeSpecFromToken (
   
 ## <a name="parameters"></a>Parametry  
  `typespec`  
- [v] Token TypeSpec přidružený k požadovanému podpisu metadat.  
+ pro Token token TypeSpec přidružený k požadované signatuře metadat  
   
  `ppvSig`  
- [out] Ukazatel na podpis binárních metadat.  
+ mimo Ukazatel na binární podpis metadat.  
   
  `pcbSig`  
- [out] Velikost podpisu metadat v bajtech.  
+ mimo Velikost podpisu metadat v bajtech.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- HRESULT, který označuje úspěch nebo neúspěch. Chyby lze testovat s makro FAILED.  
+ HRESULT, který indikuje úspěch nebo neúspěch. Selhání lze otestovat pomocí makra, které SELHALo.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Zahrnuto jako prostředek v souboru MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport – rozhraní](imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](imetadataimport2-interface.md)

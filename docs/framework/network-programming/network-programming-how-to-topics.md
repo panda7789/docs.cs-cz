@@ -1,5 +1,6 @@
 ---
 title: 'Témata s postupy: Programování vizuální vrstvy'
+description: Pomocí těchto článků s postupy se dozvíte o různých aspektech síťového programování v .NET Framework.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - network resources
@@ -7,17 +8,17 @@ helpviewer_keywords:
 - networking how-tos [.NET Framework]
 - network
 ms.assetid: 8fd6c675-9ea6-4fad-a412-e2c2c1f233d8
-ms.openlocfilehash: 5f8f1a3ca9aaf4bea56f342857d2df0bb18a9ba8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f091f0f675fcf22cb7c6be83a5766fcc8d279be7
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "71047635"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502272"
 ---
 # <a name="network-programming-how-to-topics"></a>Témata s postupy: Programování vizuální vrstvy
-Následující seznam obsahuje odkazy na témata s postupy, která naleznete v koncepční dokumentaci pro programování v síti.  
+Následující seznam obsahuje odkazy na témata s postupy, která najdete v Koncepční dokumentaci pro síťové programování.  
   
- **Vyžádání údajů:**  
+ **Požadavky na data:**  
   
 - [Postupy: Vyžádání webové stránky a načtení výsledků jako streamu](how-to-request-a-web-page-and-retrieve-the-results-as-a-stream.md)  
   
@@ -27,7 +28,7 @@ Následující seznam obsahuje odkazy na témata s postupy, která naleznete v k
   
 - [Postupy: Načtení položky WebResponse specifické pro protokol, která odpovídá položce WebRequest](how-to-retrieve-a-protocol-specific-webresponse-that-matches-a-webrequest.md)  
   
- **Připojitelné a aplikační protokoly:**  
+ **Připojené a aplikační protokoly:**  
   
 - [Postupy: Registrace vlastního protokolu pomocí žádosti WebRequest](how-to-register-a-custom-protocol-using-webrequest.md)  
   
@@ -45,7 +46,7 @@ Následující seznam obsahuje odkazy na témata s postupy, která naleznete v k
   
 - [Postupy: Výpisy obsahu adresářů přes FTP](how-to-list-directory-contents-with-ftp.md)  
   
- **Protokol IP verze 6:**  
+ **Internet Protocol verze 6:**  
   
 - [Postupy: Úpravy konfiguračního souboru počítače na povolení podpory IPv6](how-to-modify-the-computer-configuration-file-to-enable-ipv6-support.md)  
   
@@ -63,7 +64,7 @@ Následující seznam obsahuje odkazy na témata s postupy, která naleznete v k
   
 - [Postupy: Nastavení zásad mezipaměti pro žádost](how-to-set-cache-policy-for-a-request.md)  
   
- **Použití proxy serverů:**  
+ **Používání proxy serverů:**  
   
 - [Postupy: Povolení žádosti WebRequest, aby používal proxy server pro komunikaci s internetem](how-to-enable-a-webrequest-to-use-a-proxy-to-communicate-with-the-internet.md)  
   
@@ -77,8 +78,8 @@ Následující seznam obsahuje odkazy na témata s postupy, která naleznete v k
   
 - [Postupy: Příkaz Ping na hostitele](how-to-ping-a-host.md)  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Síťové programování v rozhraní .NET Framework](index.md)
 - [Ukázky programování sítě](network-programming-samples.md)
-- [Ukázky sítě pro rozhraní .NET v galerii kódu MSDN](https://code.msdn.microsoft.com/Wiki/View.aspx?ProjectName=nclsamples)
+- [Ukázky sítí pro .NET v galerii kódu MSDN](https://code.msdn.microsoft.com/Wiki/View.aspx?ProjectName=nclsamples)

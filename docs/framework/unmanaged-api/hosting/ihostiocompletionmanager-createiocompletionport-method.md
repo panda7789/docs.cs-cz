@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 907a2b43-68db-44a7-acac-89e792e7bb3c
 topic_type:
 - apiref
-ms.openlocfilehash: 2b679a9ea427d53d67474a196b5b3ae2c698ea5e
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: 240712296254e02f4d268a00e1c15ef34f4519f1
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83804794"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501538"
 ---
 # <a name="ihostiocompletionmanagercreateiocompletionport-method"></a>IHostIoCompletionManager::CreateIoCompletionPort – metoda
 Požaduje, aby hostitel vytvořil nový port pro dokončení vstupu/výstupu.  
@@ -39,7 +39,7 @@ HRESULT CreateIoCompletionPort (
   
 ## <a name="return-value"></a>Návratová hodnota  
   
-|HRESULT|Popis|  
+|HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`CreateIoCompletionPort`úspěšně vráceno.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR (Common Language Runtime) nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
@@ -50,7 +50,7 @@ HRESULT CreateIoCompletionPort (
 |E_OUTOFMEMORY|K přidělení požadovaného prostředku není k dispozici dostatek paměti.|  
   
 ## <a name="remarks"></a>Poznámky  
- CLR volá `CreateIoCompletionPort` metodu, aby požádala o to, aby hostitel vytvořil nový port pro dokončení vstupně-výstupních operací. Váže vstupně-výstupní operace k tomuto portu prostřednictvím volání metody [IHostIoCompletionManager:: bind](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-bind-method.md) . Hostitel hlásí stav zpět do CLR voláním [ICLRIoCompletionManager –:: doplňování](iclriocompletionmanager-oncomplete-method.md).  
+ CLR volá `CreateIoCompletionPort` metodu, aby požádala o to, aby hostitel vytvořil nový port pro dokončení vstupně-výstupních operací. Váže vstupně-výstupní operace k tomuto portu prostřednictvím volání metody [IHostIoCompletionManager:: bind](ihostiocompletionmanager-bind-method.md) . Hostitel hlásí stav zpět do CLR voláním [ICLRIoCompletionManager –:: doplňování](iclriocompletionmanager-oncomplete-method.md).  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
@@ -61,7 +61,7 @@ HRESULT CreateIoCompletionPort (
   
  **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [ICLRIoCompletionManager – rozhraní](iclriocompletionmanager-interface.md)
 - [IHostIoCompletionManager – rozhraní](ihostiocompletionmanager-interface.md)
