@@ -15,31 +15,31 @@ helpviewer_keywords:
 ms.assetid: 86051a11-ad8e-4ace-9a11-ff0f982a5e11
 topic_type:
 - apiref
-ms.openlocfilehash: 3571b429c3733a07a74d50f69ecf8987d75b034f
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 3725b73ab55f6e4dc789a1fde8d1224695a174d7
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76865984"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84499932"
 ---
-# <a name="icorprofilercallbackremotingserverinvocationstarted-method"></a><span data-ttu-id="65137-102">ICorProfilerCallback::RemotingServerInvocationStarted – metoda</span><span class="sxs-lookup"><span data-stu-id="65137-102">ICorProfilerCallback::RemotingServerInvocationStarted Method</span></span>
-<span data-ttu-id="65137-103">Upozorní profileru, že proces vyvolává volání metody v reakci na požadavek na vyvolání vzdálené metody.</span><span class="sxs-lookup"><span data-stu-id="65137-103">Notifies the profiler that the process is invoking a method in response to a remote method invocation request.</span></span>  
+# <a name="icorprofilercallbackremotingserverinvocationstarted-method"></a><span data-ttu-id="bc16c-102">ICorProfilerCallback::RemotingServerInvocationStarted – metoda</span><span class="sxs-lookup"><span data-stu-id="bc16c-102">ICorProfilerCallback::RemotingServerInvocationStarted Method</span></span>
+<span data-ttu-id="bc16c-103">Upozorní profileru, že proces vyvolává volání metody v reakci na požadavek na vyvolání vzdálené metody.</span><span class="sxs-lookup"><span data-stu-id="bc16c-103">Notifies the profiler that the process is invoking a method in response to a remote method invocation request.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="65137-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="65137-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="bc16c-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="bc16c-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT RemotingServerInvocationStarted();  
 ```  
   
-## <a name="requirements"></a><span data-ttu-id="65137-105">Požadavky</span><span class="sxs-lookup"><span data-stu-id="65137-105">Requirements</span></span>  
- <span data-ttu-id="65137-106">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="65137-106">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="bc16c-105">Požadavky</span><span class="sxs-lookup"><span data-stu-id="bc16c-105">Requirements</span></span>  
+ <span data-ttu-id="bc16c-106">**Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="bc16c-106">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="65137-107">**Hlavička:** CorProf. idl, CorProf. h</span><span class="sxs-lookup"><span data-stu-id="65137-107">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="bc16c-107">**Hlavička:** CorProf. idl, CorProf. h</span><span class="sxs-lookup"><span data-stu-id="bc16c-107">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="65137-108">**Knihovna:** CorGuids. lib</span><span class="sxs-lookup"><span data-stu-id="65137-108">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="bc16c-108">**Knihovna:** CorGuids. lib</span><span class="sxs-lookup"><span data-stu-id="bc16c-108">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="65137-109">**Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="65137-109">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="bc16c-109">**Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="bc16c-109">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="65137-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="65137-110">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="bc16c-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="bc16c-110">See also</span></span>
 
-- [<span data-ttu-id="65137-111">ICorProfilerCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="65137-111">ICorProfilerCallback Interface</span></span>](icorprofilercallback-interface.md)
+- [<span data-ttu-id="bc16c-111">ICorProfilerCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="bc16c-111">ICorProfilerCallback Interface</span></span>](icorprofilercallback-interface.md)

@@ -15,17 +15,17 @@ helpviewer_keywords:
 ms.assetid: 4e508711-da92-4381-aaf8-6803075cdaa2
 topic_type:
 - apiref
-ms.openlocfilehash: 2d6e86a7f5a93b900e79907f8ee0762869d7f737
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: cdfd4e10236d546af2555b125d44233172849a21
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177287"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503728"
 ---
-# <a name="imetadataimportenumtypedefs-method"></a><span data-ttu-id="90ea9-102">IMetaDataImport::EnumTypeDefs – metoda</span><span class="sxs-lookup"><span data-stu-id="90ea9-102">IMetaDataImport::EnumTypeDefs Method</span></span>
-<span data-ttu-id="90ea9-103">Výčet TypeDef tokeny představující všechny typy v rámci aktuálního oboru.</span><span class="sxs-lookup"><span data-stu-id="90ea9-103">Enumerates TypeDef tokens representing all types within the current scope.</span></span>  
+# <a name="imetadataimportenumtypedefs-method"></a><span data-ttu-id="1379e-102">IMetaDataImport::EnumTypeDefs – metoda</span><span class="sxs-lookup"><span data-stu-id="1379e-102">IMetaDataImport::EnumTypeDefs Method</span></span>
+<span data-ttu-id="1379e-103">Vytvoří výčet tokenů TypeDef reprezentujících všechny typy v rámci aktuálního oboru.</span><span class="sxs-lookup"><span data-stu-id="1379e-103">Enumerates TypeDef tokens representing all types within the current scope.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="90ea9-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="90ea9-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="1379e-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="1379e-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT EnumTypeDefs (  
@@ -36,39 +36,39 @@ HRESULT EnumTypeDefs (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="90ea9-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="90ea9-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="1379e-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="1379e-105">Parameters</span></span>  
  `phEnum`  
- <span data-ttu-id="90ea9-106">[out] Ukazatel na nový čítač výčtu.</span><span class="sxs-lookup"><span data-stu-id="90ea9-106">[out] A pointer to the new enumerator.</span></span> <span data-ttu-id="90ea9-107">To musí být NULL pro první volání této metody.</span><span class="sxs-lookup"><span data-stu-id="90ea9-107">This must be NULL for the first call of this method.</span></span>  
+ <span data-ttu-id="1379e-106">mimo Ukazatel na nový enumerátor.</span><span class="sxs-lookup"><span data-stu-id="1379e-106">[out] A pointer to the new enumerator.</span></span> <span data-ttu-id="1379e-107">Pro první volání této metody musí mít hodnotu NULL.</span><span class="sxs-lookup"><span data-stu-id="1379e-107">This must be NULL for the first call of this method.</span></span>  
   
  `rTypeDefs`  
- <span data-ttu-id="90ea9-108">[v] Pole používané k ukládání tokenů TypeDef.</span><span class="sxs-lookup"><span data-stu-id="90ea9-108">[in] The array used to store the TypeDef tokens.</span></span>  
+ <span data-ttu-id="1379e-108">pro Pole použité pro ukládání tokenů TypeDef.</span><span class="sxs-lookup"><span data-stu-id="1379e-108">[in] The array used to store the TypeDef tokens.</span></span>  
   
  `cMax`  
- <span data-ttu-id="90ea9-109">[v] Maximální velikost `rTypeDefs` pole.</span><span class="sxs-lookup"><span data-stu-id="90ea9-109">[in] The maximum size of the `rTypeDefs` array.</span></span>  
+ <span data-ttu-id="1379e-109">pro Maximální velikost `rTypeDefs` pole.</span><span class="sxs-lookup"><span data-stu-id="1379e-109">[in] The maximum size of the `rTypeDefs` array.</span></span>  
   
  `pcTypeDefs`  
- <span data-ttu-id="90ea9-110">[out] Počet tokenů TypeDef vrácených v `rTypeDefs`.</span><span class="sxs-lookup"><span data-stu-id="90ea9-110">[out] The number of TypeDef tokens returned in `rTypeDefs`.</span></span>  
+ <span data-ttu-id="1379e-110">mimo Počet vrácených tokenů TypeDef v `rTypeDefs` .</span><span class="sxs-lookup"><span data-stu-id="1379e-110">[out] The number of TypeDef tokens returned in `rTypeDefs`.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="90ea9-111">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="90ea9-111">Return Value</span></span>  
+## <a name="return-value"></a><span data-ttu-id="1379e-111">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="1379e-111">Return Value</span></span>  
   
-|<span data-ttu-id="90ea9-112">HRESULT</span><span class="sxs-lookup"><span data-stu-id="90ea9-112">HRESULT</span></span>|<span data-ttu-id="90ea9-113">Popis</span><span class="sxs-lookup"><span data-stu-id="90ea9-113">Description</span></span>|  
+|<span data-ttu-id="1379e-112">HRESULT</span><span class="sxs-lookup"><span data-stu-id="1379e-112">HRESULT</span></span>|<span data-ttu-id="1379e-113">Description</span><span class="sxs-lookup"><span data-stu-id="1379e-113">Description</span></span>|  
 |-------------|-----------------|  
-|`S_OK`|<span data-ttu-id="90ea9-114">`EnumTypeDefs`úspěšně vrácena.</span><span class="sxs-lookup"><span data-stu-id="90ea9-114">`EnumTypeDefs` returned successfully.</span></span>|  
-|`S_FALSE`|<span data-ttu-id="90ea9-115">Neexistují žádné tokeny výčet.</span><span class="sxs-lookup"><span data-stu-id="90ea9-115">There are no tokens to enumerate.</span></span> <span data-ttu-id="90ea9-116">V tom `pcTypeDefs` případě je nula.</span><span class="sxs-lookup"><span data-stu-id="90ea9-116">In that case, `pcTypeDefs` is zero.</span></span>|  
+|`S_OK`|<span data-ttu-id="1379e-114">`EnumTypeDefs`úspěšně vráceno.</span><span class="sxs-lookup"><span data-stu-id="1379e-114">`EnumTypeDefs` returned successfully.</span></span>|  
+|`S_FALSE`|<span data-ttu-id="1379e-115">Neexistují žádné tokeny k vytvoření výčtu.</span><span class="sxs-lookup"><span data-stu-id="1379e-115">There are no tokens to enumerate.</span></span> <span data-ttu-id="1379e-116">V takovém případě `pcTypeDefs` je nula.</span><span class="sxs-lookup"><span data-stu-id="1379e-116">In that case, `pcTypeDefs` is zero.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="90ea9-117">Poznámky</span><span class="sxs-lookup"><span data-stu-id="90ea9-117">Remarks</span></span>  
- <span data-ttu-id="90ea9-118">TypeDef token představuje typ, jako je například třída nebo rozhraní, stejně jako jakýkoli typ přidán prostřednictvím mechanismu rozšiřitelnosti.</span><span class="sxs-lookup"><span data-stu-id="90ea9-118">The TypeDef token represents a type such as a class or an interface, as well as any type added via an extensibility mechanism.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="1379e-117">Poznámky</span><span class="sxs-lookup"><span data-stu-id="1379e-117">Remarks</span></span>  
+ <span data-ttu-id="1379e-118">Token TypeDef představuje typ, jako je třída nebo rozhraní, a také libovolný typ přidaný prostřednictvím mechanismu rozšiřitelnosti.</span><span class="sxs-lookup"><span data-stu-id="1379e-118">The TypeDef token represents a type such as a class or an interface, as well as any type added via an extensibility mechanism.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="90ea9-119">Požadavky</span><span class="sxs-lookup"><span data-stu-id="90ea9-119">Requirements</span></span>  
- <span data-ttu-id="90ea9-120">**Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="90ea9-120">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="1379e-119">Požadavky</span><span class="sxs-lookup"><span data-stu-id="1379e-119">Requirements</span></span>  
+ <span data-ttu-id="1379e-120">**Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="1379e-120">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="90ea9-121">**Záhlaví:** Kor.h.</span><span class="sxs-lookup"><span data-stu-id="90ea9-121">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="1379e-121">**Hlavička:** Cor. h</span><span class="sxs-lookup"><span data-stu-id="1379e-121">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="90ea9-122">**Knihovna:** Zahrnuto jako prostředek v souboru MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="90ea9-122">**Library:** Included as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="1379e-122">**Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll</span><span class="sxs-lookup"><span data-stu-id="1379e-122">**Library:** Included as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="90ea9-123">**Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="90ea9-123">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="1379e-123">**Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="1379e-123">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="90ea9-124">Viz také</span><span class="sxs-lookup"><span data-stu-id="90ea9-124">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="1379e-124">Viz také:</span><span class="sxs-lookup"><span data-stu-id="1379e-124">See also</span></span>
 
-- [<span data-ttu-id="90ea9-125">IMetaDataImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="90ea9-125">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [<span data-ttu-id="90ea9-126">IMetaDataImport2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="90ea9-126">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [<span data-ttu-id="1379e-125">IMetaDataImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="1379e-125">IMetaDataImport Interface</span></span>](imetadataimport-interface.md)
+- [<span data-ttu-id="1379e-126">IMetaDataImport2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="1379e-126">IMetaDataImport2 Interface</span></span>](imetadataimport2-interface.md)
