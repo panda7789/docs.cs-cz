@@ -2,24 +2,24 @@
 title: Používání JSONP
 ms.date: 03/30/2017
 ms.assetid: f386718c-b4ba-4931-a610-40c27a46672a
-ms.openlocfilehash: 622fbdbf2674aea552cfd57f528d7cc5168cfda8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 82290319b5d8b58708f0b2ebf40522ee76127b84
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61932831"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84594956"
 ---
 # <a name="using-jsonp"></a>Používání JSONP
 
-JSON odsazení (JSONP) je mechanismus, který umožňuje podporu skriptování napříč weby ve webových prohlížečích. Navržené s ohledem na schopnost webových prohlížečů načítat skripty ze serveru jinak než aktuální načtený dokument byla načtena z JSONP. Mechanismus funguje odsazením datovou část JSON s názvem funkce zpětného volání definované uživatelem, jak je znázorněno v následujícím příkladu.
+Odsazení JSON (JSONP) je mechanismus, který umožňuje podporu skriptování mezi weby ve webových prohlížečích. JSONP je navrženo kolem schopnosti webových prohlížečů načíst skripty z lokality odlišnou od právě načteného načteného dokumentu. Mechanismus funguje tak, že naplní datovou část JSON pomocí uživatelsky definovaného názvu funkce zpětného volání, jak je znázorněno v následujícím příkladu.
 
 ```javascript
 callback({"a" = \\"b\\"});
 ```
 
-V předchozím příkladu datové části JSON `{"a" = \\"b\\"}`, je zabalený ve volání funkce `callback`. Funkce zpětného volání musí již být definován v aktuální webové stránky. Typ obsahu odpovědi JSONP `application/javascript`.
+V předchozím příkladu datová část JSON `{"a" = \\"b\\"}` je zabalena ve volání funkce, `callback` . Funkce zpětného volání musí být na aktuální webové stránce již definována. Typ obsahu odpovědi JSONP je `application/javascript` .
 
-JSONP není povolené automaticky. Chcete-li ji povolit, nastavte `javascriptCallbackEnabled` atribut `true` na jednom ze standardních koncových bodů HTTP (<xref:System.ServiceModel.Description.WebHttpEndpoint> nebo <xref:System.ServiceModel.Description.WebScriptEndpoint>), jak je znázorněno v následujícím příkladu.
+JSONP není automaticky povoleno. Pokud ho chcete povolit, nastavte `javascriptCallbackEnabled` atribut na `true` jeden ze standardních koncových bodů http ( <xref:System.ServiceModel.Description.WebHttpEndpoint> nebo <xref:System.ServiceModel.Description.WebScriptEndpoint> ), jak je znázorněno v následujícím příkladu.
 
 ```xml
 <system.serviceModel>
@@ -31,17 +31,17 @@ JSONP není povolené automaticky. Chcete-li ji povolit, nastavte `javascriptCal
 </system.serviceModel>
 ```
 
-Název funkce zpětného volání lze v dotazu proměnnou s názvem zpětné volání, jak je znázorněno na následující adrese URL.
+Název funkce zpětného volání lze zadat v proměnné dotazu nazvané zpětné volání, jak je znázorněno na následující adrese URL.
 
 `http://baseaddress/Service/RestService?callback=functionName`
 
-Při vyvolání, služba odešle odpověď vypadat asi takto.
+Při vyvolání služba odešle odpověď podobnou následující.
 
 ```javascript
 functionName({"root":"Something"});
 ```  
 
-Můžete také zadat název funkce zpětného volání s použitím <xref:System.ServiceModel.Web.JavascriptCallbackBehaviorAttribute> na třídu služby, jak je znázorněno v následujícím příkladu.
+Můžete také zadat název funkce zpětného volání, a to tak, že použijete na <xref:System.ServiceModel.Web.JavascriptCallbackBehaviorAttribute> třídu služby, jak je znázorněno v následujícím příkladu.
 
 ```csharp
 [ServiceContract]
@@ -56,11 +56,11 @@ public class Service1
 }
 ```
 
-Pro službu uvedenému výše žádost o vypadá takto.
+U výše uvedené služby je požadavek podobný následujícímu.
 
 `http://baseaddress/Service/RestService?$callback=anotherFunction`
 
-Při vyvolání služby odpovídá následujícím kódem.
+Při vyvolání služba odpoví následujícím.
 
 ```javascript
 anotherFunction ({"root":"Something"});
@@ -68,22 +68,22 @@ anotherFunction ({"root":"Something"});
 
 ## <a name="http-status-codes"></a>Stavové kódy HTTP
 
-Odpovědi JSONP s stavové kódy HTTP než 200 obsahují druhý parametr s číselné vyjádření stavový kód HTTP, jak je znázorněno v následujícím příkladu.
+Odpovědi JSONP se stavovým kódem HTTP jiným než 200 zahrnují druhý parametr s číselnou reprezentací stavového kódu HTTP, jak je znázorněno v následujícím příkladu.
 
 ```javascript
 anotherFunction ({"root":"Something"}, 201);
 ```
 
-## <a name="validations"></a>Ověření
+## <a name="validations"></a>Ověřování
 
-Následující ověření jsou prováděny, když je povolen formát JSONP:
+Následující ověření jsou provedena, pokud je povoleno JSONP:
 
-- Infrastruktura WCF vyvolá výjimku, pokud `javascriptCallback` je povoleno, parametru řetězce dotazu zpětného volání je k dispozici v požadavku a formátu odpovědi je nastavená na JSON.
+- Infrastruktura WCF vyvolá výjimku `javascriptCallback` , pokud je povolena, v žádosti se nachází parametr řetězce dotazu zpětného volání a formát odpovědi je nastaven na JSON.
 
-- Pokud požadavek obsahuje parametr řetězce dotazu zpětné volání, ale není operaci HTTP GET, parametru zpětného volání se ignoruje.
+- Pokud požadavek obsahuje parametr řetězce dotazu zpětného volání, ale operace není HTTP GET, parametr zpětného volání se ignoruje.
 
-- Pokud je název zpětného volání `null` nebo prázdný řetězec odpovědi není formátu JSONP.
+- Pokud je název zpětného volání `null` nebo prázdný řetězec, odpověď není formátována jako JSONP.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Přehled programovacího modelu webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model-overview.md)
+- [Přehled programovacího modelu webových služeb HTTP WCF](wcf-web-http-programming-model-overview.md)

@@ -7,45 +7,45 @@ dev_langs:
 helpviewer_keywords:
 - duplex contracts [WCF]
 ms.assetid: 500a75b6-998a-47d5-8e3b-24e3aba2a434
-ms.openlocfilehash: c603694bca82cfc5852c875946f18f9782209e48
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: e5b6c7eecce08a23490b6ab1991e4561d9462469
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64638769"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84598980"
 ---
 # <a name="how-to-create-a-duplex-contract"></a>Postupy: Vytvoření duplexního kontraktu
-Toto téma popisuje základní kroky k vytvoření metody, které používají duplexního kontraktu (obousměrné). Duplexní kontrakt umožňuje klientům a serverům komunikovat mezi sebou nezávisle tak, aby buď inicializaci volání do jiné. Duplexní kontrakt je jedním ze tří vzorů zprávy k dispozici pro služby Windows Communication Foundation (WCF). Další dvě zprávy vzory jsou jednosměrná a požadavek odpověď. Duplexní kontrakt se skládá ze dvou jednosměrné kontrakty mezi klientem a serverem a nevyžaduje korelaci volání metody. Tento typ kontraktu použijte, pokud vaše služba musí dotazování klienta pro další informace nebo explicitně vyvolat události na straně klienta. Další informace o vytváření klientské aplikace pro duplexní kontrakt, naleznete v tématu [jak: Přístup ke službám pomocí duplexního kontraktu](../../../../docs/framework/wcf/feature-details/how-to-access-services-with-a-duplex-contract.md). Pracovní ukázku najdete v tématu [duplexní](../../../../docs/framework/wcf/samples/duplex.md) vzorku.  
+V tomto tématu se dozvíte o základních krocích pro vytváření metod, které používají oboustranný (obousměrný) kontrakt. Oboustranný kontrakt umožňuje klientům a serverům vzájemně komunikovat nezávisle na sobě, takže může iniciovat volání do druhé. Duplexní smlouva je jedním ze tří vzorů zpráv, které jsou k dispozici pro Windows Communication Foundation služby (WCF). Další dva vzory zpráv jsou jednosměrné a vyžadují odpověď. Duplexní kontrakt se skládá z 2 1 kontraktů mezi klientem a serverem a nevyžaduje, aby byla volání metod korelace. Tento druh smlouvy použijte v případě, že se vaše služba musí dotazovat klienta na Další informace nebo explicitně vyvolat události na straně klienta. Další informace o vytváření klientských aplikací pro duplexní smlouvu najdete v tématu [Postup: přístup ke službám pomocí duplexního kontraktu](how-to-access-services-with-a-duplex-contract.md). Pracovní ukázku najdete v ukázce [duplexní](../samples/duplex.md) ukázka.  
   
-### <a name="to-create-a-duplex-contract"></a>K vytvoření duplexního kontraktu  
+### <a name="to-create-a-duplex-contract"></a>Postup vytvoření duplexního kontraktu  
   
-1. Vytvoření rozhraní, které tvoří duplexního kontraktu na straně serveru.  
+1. Vytvořte rozhraní, které vytvoří na straně serveru oboustranně duplexní smlouvu.  
   
-2. Použít <xref:System.ServiceModel.ServiceContractAttribute> třídy rozhraní.  
+2. Použijte <xref:System.ServiceModel.ServiceContractAttribute> třídu na rozhraní.  
   
      [!code-csharp[S_WS_DualHttp#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_ws_dualhttp/cs/service.cs#3)]
      [!code-vb[S_WS_DualHttp#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_ws_dualhttp/vb/service.vb#3)]  
   
-3. Deklarujte podpisy metod v rozhraní.  
+3. Deklaruje signatury metody v rozhraní.  
   
-4. Použít <xref:System.ServiceModel.OperationContractAttribute> třídy pro každý podpis metody, které musí být součástí veřejného kontraktu.  
+4. Použijte <xref:System.ServiceModel.OperationContractAttribute> třídu pro každý podpis metody, který musí být součástí veřejné smlouvy.  
   
-5. Vytvoření rozhraní zpětného volání, která definuje sadu operací, které můžete vyvolat službu na straně klienta.  
+5. Vytvořte rozhraní zpětného volání, které definuje sadu operací, které může služba vyvolat na klientovi.  
   
      [!code-csharp[S_WS_DualHttp#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_ws_dualhttp/cs/service.cs#4)]
      [!code-vb[S_WS_DualHttp#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_ws_dualhttp/vb/service.vb#4)]  
   
-6. Deklarujte podpisy metod rozhraní zpětného volání.  
+6. Deklarujete signatury metod v rozhraní zpětného volání.  
   
-7. Použít <xref:System.ServiceModel.OperationContractAttribute> třídy pro každý podpis metody, které musí být součástí veřejného kontraktu.  
+7. Použijte <xref:System.ServiceModel.OperationContractAttribute> třídu pro každý podpis metody, který musí být součástí veřejné smlouvy.  
   
-8. Propojit dvě rozhraní do duplexního kontraktu tak, že nastavíte <xref:System.ServiceModel.ServiceContractAttribute.CallbackContract%2A> vlastnost v primární rozhraní pro typ rozhraní zpětného volání.  
+8. Propojte dvě rozhraní s meziduplexní smlouvou nastavením <xref:System.ServiceModel.ServiceContractAttribute.CallbackContract%2A> vlastnosti v primárním rozhraní na typ rozhraní zpětného volání.  
   
-### <a name="to-call-methods-on-the-client"></a>Volání metody na straně klienta  
+### <a name="to-call-methods-on-the-client"></a>Volání metod na klienta  
   
-1. V implementaci služby z primární smlouvy deklarujte proměnnou pro rozhraní zpětného volání.  
+1. V implementaci primární smlouvy v rámci služby deklarujte proměnnou pro rozhraní zpětného volání.  
   
-2. Nastavte proměnnou na odkaz na objekt, který je vrácený <xref:System.ServiceModel.OperationContext.GetCallbackChannel%2A> metodu <xref:System.ServiceModel.OperationContext> třídy.  
+2. Nastavte proměnnou na odkaz na objekt vrácený <xref:System.ServiceModel.OperationContext.GetCallbackChannel%2A> metodou <xref:System.ServiceModel.OperationContext> třídy.  
   
      [!code-csharp[S_WS_DualHttp#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_ws_dualhttp/cs/service.cs#1)]
      [!code-vb[S_WS_DualHttp#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_ws_dualhttp/vb/service.vb#1)]  
@@ -53,26 +53,26 @@ Toto téma popisuje základní kroky k vytvoření metody, které používají d
      [!code-csharp[S_WS_DualHttp#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_ws_dualhttp/cs/service.cs#2)]
      [!code-vb[S_WS_DualHttp#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_ws_dualhttp/vb/service.vb#2)]  
   
-3. Volání metody definované rozhraní zpětného volání.  
+3. Volejte metody definované rozhraním zpětného volání.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu ukazuje duplexní komunikaci. Kontrakt služby obsahuje operace služby pro přesun vpřed a zpět. Kontrakt klienta obsahuje operace služby pro vytváření sestav jeho pozice.  
+ Následující příklad kódu ukazuje duplexní komunikaci. Kontrakt služby obsahuje operace služby pro přesun dopředu a zpět. Smlouva klienta obsahuje operaci služby pro vytváření sestav své pozice.  
   
  [!code-csharp[S_WS_DualHttp#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_ws_dualhttp/cs/service.cs#5)]
  [!code-vb[S_WS_DualHttp#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_ws_dualhttp/vb/service.vb#5)]  
   
-- Použití <xref:System.ServiceModel.ServiceContractAttribute> a <xref:System.ServiceModel.OperationContractAttribute> atributy umožňuje automatické generování definice kontraktu služby ve na webové služby WSDL (Description Language).  
+- Použití <xref:System.ServiceModel.ServiceContractAttribute> atributů a <xref:System.ServiceModel.OperationContractAttribute> umožňuje automatické generování definic servisních smluv v jazyce WSDL (Web Services Description Language).  
   
-- Použití [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) k načtení dokumentu WSDL a (volitelně) kódu a konfigurace pro klienta.  
+- K načtení dokumentu WSDL a (volitelného) kódu a konfiguraci pro klienta použijte nástroj pro dodané [metadata (Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) .  
   
-- Koncové body vystavení duplexní služby musí být zabezpečená. Služba přijme zprávu duplexní, dohlíží na ReplyTo v této příchozí zprávy k určení, kam chcete odeslat odpověď. Pokud není zabezpečený kanál, může nedůvěryhodného klienta odeslat škodlivý zprávu s ReplyTo cílový počítač, což vede k odepření služby cílového počítače. Zprávy regulární požadavek odpověď to není problém, protože ReplyTo je ignorována a odpověď je odeslána na kanál, který byl původní zprávu v na.  
+- Koncové body, které zveřejňují duplexní služby, musí být zabezpečené. Když služba obdrží duplexní zprávu, při zjištění, kam se má odpověď odeslat, vyhledá na pozici v této příchozí zprávě ReplyTo. Pokud kanál není zabezpečený, může nedůvěryhodný klient odeslat škodlivou zprávu s parametrem ReplyTo cílového počítače, což vede k odepření služby cílového počítače. S běžnými zprávami pro odpověď na požadavek se nejedná o problém, protože parametr ReplyTo je ignorován a odpověď je odeslána na kanál, na kterém byla odeslána původní zpráva.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.ServiceModel.ServiceContractAttribute>
 - <xref:System.ServiceModel.OperationContractAttribute>
-- [Postupy: Přístup ke službám pomocí duplexního kontraktu](../../../../docs/framework/wcf/feature-details/how-to-access-services-with-a-duplex-contract.md)
-- [Duplex](../../../../docs/framework/wcf/samples/duplex.md)
-- [Navrhování a implementace služeb](../../../../docs/framework/wcf/designing-and-implementing-services.md)
-- [Postupy: Definování kontraktu služby](../../../../docs/framework/wcf/how-to-define-a-wcf-service-contract.md)
-- [Relace](../../../../docs/framework/wcf/samples/session.md)
+- [Postupy: Přístup ke službám pomocí duplexního kontraktu](how-to-access-services-with-a-duplex-contract.md)
+- [Duplex](../samples/duplex.md)
+- [Navrhování a implementace služeb](../designing-and-implementing-services.md)
+- [Postupy: Definování kontraktu služby](../how-to-define-a-wcf-service-contract.md)
+- [Relace](../samples/session.md)
