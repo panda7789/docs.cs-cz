@@ -2,35 +2,35 @@
 title: Aktivace UDP
 ms.date: 03/30/2017
 ms.assetid: 4b0ccd10-0dfb-4603-93f9-f0857c581cb7
-ms.openlocfilehash: c0b351adb0b45f42404e94c74bdcff7785c2d0ca
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 13d20524693b234a14b2b31061c6259f75b1c0b8
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79143717"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84591105"
 ---
 # <a name="udp-activation"></a>Aktivace UDP
-Tato ukázka je založena na [transportu: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) vzorku. Rozšiřuje [transport: Ukázka UDP](../../../../docs/framework/wcf/samples/transport-udp.md) pro podporu aktivace procesu pomocí služby aktivace procesů systému Windows (WAS).  
+Tato ukázka je založena na ukázce [Transport: UDP](transport-udp.md) . Rozšiřuje ukázku [Transport: UDP](transport-udp.md) , aby podporovala aktivaci procesu pomocí aktivační služby procesů systému Windows (WAS).  
   
- Vzorek se skládá ze tří hlavních kusů:  
+ Ukázka se skládá ze tří hlavních částí:  
   
 - Aktivátor protokolu UDP, samostatný proces, který přijímá zprávy UDP jménem aplikací, které mají být aktivovány.  
   
-- Klient, který používá vlastní přenos UDP k odesílání zpráv.  
+- Klient, který pro posílání zpráv používá vlastní přenos UDP  
   
-- Služba (hostovaná v pracovním procesu aktivovaném službou WAS), která přijímá zprávy prostřednictvím vlastního přenosu UDP.  
+- Služba (hostovaná v pracovním procesu byla aktivována), která přijímá zprávy přes vlastní přenos UDP.  
   
-## <a name="udp-protocol-activator"></a>Aktivátor protokolu UDP  
+## <a name="udp-protocol-activator"></a>Aktivační procedury protokolu UDP  
  Aktivátor protokolu UDP je most mezi klientem WCF a službou WCF. Poskytuje datovou komunikaci prostřednictvím protokolu UDP na transportní vrstvě. Má dvě hlavní funkce:  
   
-- WAS Listener Adapter (LA), který spolupracuje s WAS na aktivaci procesů v reakci na příchozí zprávy.  
+- WAS adaptér naslouchacího procesu (LA), který spolupracuje s nástrojem při aktivaci procesů v reakci na příchozí zprávy.  
   
 - Naslouchací proces protokolu UDP, který přijímá zprávy UDP jménem aplikací, které mají být aktivovány.  
   
- Aktivátor musí být spuštěn jako samostatný program v počítači serveru. Za normálních okolností was naslouchací proces adaptéry (například NetTcpActivator a NetPipeActivator) jsou implementovány v dlouhotrvající služby systému Windows. Pro jednoduchost a srozumitelnost však tato ukázka implementuje aktivátor protokolu jako samostatnou aplikaci.  
+ Aktivátor musí být spuštěn jako samostatný program na serverovém počítači. Obvykle se adaptéry naslouchacího procesu (například službu NetTcpActivator a NetPipeActivator) implementují v dlouhotrvajících službách systému Windows. Pro zjednodušení a přehlednost však tato ukázka implementuje jako samostatnou aplikaci Aktivátor protokolu.  
   
-### <a name="was-listener-adapter"></a>Adaptér naslouchacího procesu SLUŽBY  
- Adaptér naslouchacího procesu `UdpListenerAdapter` WAS pro UDP je implementován ve třídě. Jedná se o modul, který spolupracuje s WAS k provedení aktivace aplikace pro protokol UDP. Toho je dosaženo voláním následujícíwebhost API:  
+### <a name="was-listener-adapter"></a>Adaptér naslouchacího procesu  
+ Adaptér naslouchání pro protokol UDP je implementován ve `UdpListenerAdapter` třídě. Je to modul, který spolupracuje s nástrojem k provedení aktivace aplikace pro protokol UDP. Toho dosáhnete voláním následujících rozhraní API webhosta:  
   
 - `WebhostRegisterProtocol`  
   
@@ -40,29 +40,29 @@ Tato ukázka je založena na [transportu: UDP](../../../../docs/framework/wcf/sa
   
 - `WebhostCloseAllListenerChannelInstances`  
   
- Po počátečním volání `WebhostRegisterProtocol`adaptér posluchače `ApplicationCreated` přijme zpětné volání od služby WAS pro všechny aplikace registrované v souboru applicationHost.config (umístěnév %windir%\system32\inetsrv). V této ukázce zpracováváme pouze aplikace s protokolem UDP (s id protokolu jako "net.udp") povoleno. Jiné implementace to mohou zpracovat jinak, pokud tyto implementace reagují na změny dynamické konfigurace aplikace (například přechod aplikace ze zakázané na povolenou).  
+ Po počátečním volání `WebhostRegisterProtocol` přijme adaptér naslouchacího procesu zpětné volání `ApplicationCreated` pro všechny aplikace zaregistrované v souboru ApplicationHost. config (nacházející se v%windir%\system32\inetsrv). V této ukázce zpracujeme jenom aplikace s protokolem UDP (s ID protokolu, který je povolený jako NET. UDP). Jiné implementace mohou nakládat jinak, pokud takové implementace reagují na změny dynamické konfigurace v aplikaci (například přechod aplikace z zakázáno na povoleno).  
   
- Po přijetí `ConfigManagerInitializationCompleted` zpětného volání označuje, že služba WAS dokončila všechna oznámení pro inicializaci protokolu. V tomto okamžiku je adaptér naslouchací proces připraven ke zpracování požadavků na aktivaci.  
+ Po přijetí zpětného volání `ConfigManagerInitializationCompleted` indikuje, že bylo dokončeno všech oznámení pro inicializaci protokolu. V tuto chvíli je adaptér naslouchacího procesu připravený zpracovat žádosti o aktivaci.  
   
- Při prvním požadavku na aplikaci přijde nový požadavek, adaptér naslouchacího procesu volá do služby `WebhostOpenListenerChannelInstance` WAS, která spustí pracovní proces, pokud ještě není spuštěna. Poté jsou načteny obslužné rutiny protokolu a komunikace mezi adaptérem naslouchacího procesu a virtuální aplikací může být zahájena.  
+ Při prvním přihlášení nové žádosti pro aplikaci zavolá adaptér naslouchacího `WebhostOpenListenerChannelInstance` procesu do was, který spustí pracovní proces, pokud ještě není spuštěný. Pak se načtou obslužné rutiny protokolu a komunikace mezi adaptérem naslouchacího procesu a virtuální aplikací může začít.  
   
- Adaptér naslouchacího procesu je registrován v části %SystemRoot%\System32\inetsrv\ApplicationHost.config v části <`listenerAdapters`> následujícím způsobem:  
+ Adaptér naslouchacího procesu je zaregistrován v%SystemRoot%\System32\inetsrv\ApplicationHost.config `listenerAdapters` > oddílu < následujícím způsobem:  
   
 ```xml  
 <add name="net.udp" identity="S-1-5-21-2127521184-1604012920-1887927527-387045" />  
 ```  
   
 ### <a name="protocol-listener"></a>Naslouchací proces protokolu  
- Naslouchací proces protokolu UDP je modul uvnitř aktivátoru protokolu, který naslouchá koncovému bodu UDP jménem virtuální aplikace. Je implementována `UdpSocketListener`ve třídě . Koncový bod je `IPEndpoint` reprezentován jako pro které je číslo portu extrahovánzující z vazby protokolu pro lokalitu.  
+ Naslouchací proces protokolu UDP je modul uvnitř aktivační procedury protokolu, která naslouchá za koncovým bodem UDP jménem virtuální aplikace. Je implementován ve třídě `UdpSocketListener` . Koncový bod je reprezentován, `IPEndpoint` pro které se číslo portu extrahuje z vazby protokolu pro lokalitu.  
   
-### <a name="control-service"></a>Kontrolní služba  
- V této ukázce používáme WCF ke komunikaci mezi aktivátorem a pracovníproces WAS. Služba, která je umístěna v aktivátoru se nazývá řídicí služba.  
+### <a name="control-service"></a>Řídicí služba  
+ V této ukázce používáme WCF ke komunikaci mezi aktivátorem a pracovním procesem WAS. Služba, která se nachází v Activator, se nazývá řídicí služba.  
   
 ## <a name="protocol-handlers"></a>Obslužné rutiny protokolu  
- Po volání `WebhostOpenListenerChannelInstance`adaptéru naslouchací proces , správce procesu WAS spustí pracovní proces, pokud není spuštěn. Správce aplikací uvnitř pracovního procesu pak načte obslužnou rutinu `ListenerChannelId`protokolu procesu UDP (PPH) s požadavkem na tento . PPH v zase `IAdphManager`volání .`StartAppDomainProtocolListenerChannel` spuštění obslužné rutiny protokolu UDP AppDomain Protocol (ADPH).  
+ Po volání adaptéru naslouchacího procesu spustil `WebhostOpenListenerChannelInstance` správce procesů pracovní proces, pokud není spuštěn. Správce aplikací v rámci pracovního procesu potom načte obslužnou rutinu procesu protokolu UDP (PPH) s požadavkem na to `ListenerChannelId` . PPH v zapíná volání `IAdphManager` .`StartAppDomainProtocolListenerChannel` pro spuštění obslužné rutiny protokolu UDP AppDomain (ADPH).  
   
-## <a name="hostedudptransportconfiguration"></a>HostedUDPTransportKonfigurace  
- Informace jsou registrovány v souboru Web.config následujícím způsobem:  
+## <a name="hostedudptransportconfiguration"></a>HostedUDPTransportConfiguration  
+ Informace jsou registrovány v souboru Web. config následujícím způsobem:  
   
 ```xml  
 <serviceHostingEnvironment>  
@@ -71,57 +71,57 @@ Tato ukázka je založena na [transportu: UDP](../../../../docs/framework/wcf/sa
 ```  
   
 ## <a name="special-setup-for-this-sample"></a>Speciální nastavení pro tuto ukázku  
- Tuto ukázku lze sestavit a spustit pouze v systémech Windows Vista, Windows Server 2008 nebo Windows 7. Chcete-li spustit ukázku, musíte nejprve získat všechny součásti správně nastavit. K instalaci ukázky použijte následující kroky.  
+ Tato ukázka se dá sestavit a spustit jenom v systémech Windows Vista, Windows Server 2008 nebo Windows 7. Chcete-li spustit ukázku, je nutné nejprve načíst všechny součásti nastavené správně. Ukázku nainstalujete pomocí následujícího postupu.  
   
-#### <a name="to-set-up-this-sample"></a>Chcete-li nastavit tuto ukázku  
+#### <a name="to-set-up-this-sample"></a>Nastavení této ukázky  
   
-1. Nainstalujte ASP.NET 4.0 pomocí následujícího příkazu.  
+1. Pomocí následujícího příkazu nainstalujte ASP.NET 4,0.  
   
     ```console  
     %windir%\Microsoft.NET\Framework\v4.0.XXXXX\aspnet_regiis.exe /i /enable  
     ```  
   
-2. Vytvořte projekt v systému Windows Vista. Po kompilaci také provádí následující operace ve fázi po sestavení:  
+2. Sestavte projekt v systému Windows Vista. Po kompilaci provede také následující operace ve fázi po sestavení:  
   
-    - Nainstaluje vazbu UDP na web "Výchozí web".  
+    - Nainstaluje vazbu UDP na web s názvem Default Web site.  
   
-    - Vytvoří virtuální aplikaci ServiceModelSamples tak, aby ukazovala na fyzickou cestu: %SystemDrive%\inetpub\wwwroot\servicemodelsamples.Creates the virtual application "ServiceModelSamples" to point to the physical path: "%SystemDrive%\inetpub\wwwroot\servicemodelsamples".  
+    - Vytvoří virtuální aplikaci "ServiceModelSamples", která bude ukazovat na fyzickou cestu: "%SystemDrive%\inetpub\wwwroot\servicemodelsamples".  
   
-    - Umožňuje také protokol net.udp pro tuto virtuální aplikaci.  
+    - Pro tuto virtuální aplikaci taky povoluje protokol "NET. UDP".  
   
-3. Spusťte aplikaci uživatelského rozhraní "WasNetActivator.exe". Klikněte na kartu **Instalace,** zaškrtněte následující políčka a potom je nainstalujte kliknutím na **Instalovat:**  
+3. Spusťte aplikaci uživatelského rozhraní "WasNetActivator. exe". Klikněte na kartu **Nastavení** , zaškrtněte následující políčka a kliknutím na tlačítko **nainstalovat** je nainstalujte:  
   
     - Adaptér naslouchacího procesu UDP  
   
     - Obslužné rutiny protokolu UDP  
   
-4. Klikněte na kartu **Aktivace** aplikace uživatelského rozhraní "WasNetActivator.exe". Klepnutím na tlačítko **Start** spusťte adaptér naslouchacího procesu. Nyní jste připraveni spustit program.  
+4. Klikněte na kartu **Aktivace** aplikace uživatelského rozhraní "WasNetActivator. exe". Kliknutím na tlačítko **Spustit** spusťte adaptér naslouchacího procesu. Nyní jste připraveni spustit program.  
   
     > [!NOTE]
-    > Po dokončení této ukázky je nutné spustit soubor Cleanup.bat a odebrat vazbu net.udp z "Výchozího webu".  
+    > Až budete s touto ukázkou hotovi, je nutné spustit nástroj CleanUp. bat a odebrat vazbu NET. UDP z webu s názvem Default Web site.  
   
 ## <a name="sample-usage"></a>Ukázka použití  
- Po kompilaci jsou generovány čtyři různé binární soubory:  
+ Po kompilaci jsou vygenerovány čtyři různé binární soubory:  
   
-- Client.exe: Kód klienta. Nástroj App.config je zkompilován do konfiguračního souboru klienta Client.exe.config.  
+- Client. exe: klientský kód. Soubor App. config je zkompilován do konfiguračního souboru Client. exe. config.  
   
-- UDPActivation.dll: knihovna, která obsahuje všechny hlavní implementace UDP.  
+- UDPActivation. dll: knihovna, která obsahuje všechny hlavní implementace protokolu UDP.  
   
-- Service.dll: Kód služby. Tato možnost je zkopírována do adresáře \bin virtuální aplikace ServiceModelSamples. Soubor služby je Service.svc a konfigurační soubor je Web.config. Po kompilaci jsou zkopírovány do následujícího umístění: %SystemDrive%\Inetpub\wwwroot\ServiceModelSamples.  
+- Service. dll: kód služby. Tato kopie se zkopíruje do adresáře \Bin virtuální aplikace ServiceModelSamples. Soubor služby je Service. svc a konfigurační soubor je web. config. Po kompilaci jsou zkopírovány do následujícího umístění:%SystemDrive%\Inetpub\wwwroot\ServiceModelSamples.  
   
-- WasNetActivator: Aktivátor UDP program.  
+- WasNetActivator: program UDP Activator.  
   
-- Ujistěte se, že jsou všechny požadované kusy nainstalovány správně. Následující kroky ukazují, jak spustit ukázku:  
+- Ujistěte se, že jsou správně nainstalovány všechny požadované součásti. Následující kroky ukazují, jak spustit ukázku:  
   
-1. Ujistěte se, že byly spuštěny následující služby systému Windows:  
+1. Zajistěte, aby byly spuštěny následující služby systému Windows:  
   
-    - Služba aktivace procesů systému Windows (WAS).  
+    - Aktivační služba procesů systému Windows (WAS).  
   
-    - Internetové informační služby (IIS): W3SVC.  
+    - Internetová informační služba (IIS): W3SVC.  
   
-2. Potom spusťte aktivátor WasNetActivator.exe. Na kartě **Aktivace** je v rozevíracím seznamu vybrán pouze protokol **UDP**. Kliknutím na tlačítko **Start** spusťte aktivátor.  
+2. Poté spusťte Activator, WasNetActivator. exe. Na kartě **Aktivace** je v rozevíracím seznamu vybrán jediný protokol, **UDP**. Kliknutím na tlačítko **Spustit** spusťte aktivátor.  
   
-3. Po spuštění aktivátoru můžete spustit kód klienta spuštěním Client.exe z příkazového okna. Ukázkový výstup je následující:  
+3. Po spuštění aktivátoru můžete spustit kód klienta spuštěním souboru Client. exe z příkazového okna. Následuje ukázkový výstup:  
   
     ```console  
     Testing Udp Activation.  
@@ -154,10 +154,10 @@ Tato ukázka je založena na [transportu: UDP](../../../../docs/framework/wcf/sa
     ```  
   
 > [!IMPORTANT]
-> Ukázky mohou být již nainstalovány v počítači. Před pokračováním zkontrolujte následující (výchozí) adresář.  
+> Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >
 > `<InstallDrive>:\WF_WCF_Samples`  
 >
-> Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a Windows Workflow Foundation (WF) Ukázky pro rozhraní .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka je umístěna v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Transport\UdpActivation`  

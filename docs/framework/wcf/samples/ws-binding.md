@@ -2,40 +2,40 @@
 title: Vazby WS
 ms.date: 03/30/2017
 ms.assetid: 629945b2-d771-46d7-a87b-5df3b2e460da
-ms.openlocfilehash: 11480b91c6ac6a5501029dfdf10cd81d3fa18820
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b17391a882e4a85b717376f644fb3b6195073a70
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61949900"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84589757"
 ---
 # <a name="ws-binding"></a>Vazby WS
-Tato část obsahuje ukázky, které předvádějí vazby Windows služby Windows Communication Foundation (WCF).  
+Tato část obsahuje ukázky, které ukazují vázání služby Windows v Windows Communication Foundation (WCF).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Tok transakcí WS](../../../../docs/framework/wcf/samples/ws-transaction-flow.md)  
- Ukazuje použití transakce koordinovaný klienta a nastavení klienta a serveru pro toku transakce pomocí protokolu WS-Atomic Transactions nebo OleTransactions.  
+ [Tok transakcí webové služby](ws-transaction-flow.md)  
+ Ukazuje použití transakce s koordinovaným klientem a možností klienta a serveru pro tok transakce pomocí protokolu WS-Atomic nebo protokolu OleTransactions.  
   
- [Vazba protokolu HTTP při federaci WS 2007](../../../../docs/framework/wcf/samples/ws-2007-federation-http-binding.md)  
- Ukazuje použití <xref:System.ServiceModel.WS2007FederationHttpBinding>.  
+ [Prvek ws2007FederationHttpBinding](ws-2007-federation-http-binding.md)  
+ Demonstruje použití <xref:System.ServiceModel.WS2007FederationHttpBinding> .  
   
- [WS Dual Http](../../../../docs/framework/wcf/samples/ws-dual-http.md)  
- Ukazuje, jak nakonfigurovat `WSDualHttpBinding` vazby.  
+ [WS Dual Http](ws-dual-http.md)  
+ Ukazuje, jak nakonfigurovat `WSDualHttpBinding` vazbu.  
   
- [Kódování MTOM](../../../../docs/framework/wcf/samples/mtom-encoding.md)  
- Ukazuje použití kódování s WSHttpBinding zprávy zpráv přenosu optimalizace mechanismus (MTOM).  
+ [Kódování MTOM](mtom-encoding.md)  
+ Demonstruje použití kódování zprávy MTOM (Message Transmission Optimization Mechanism) pomocí WSHttpBinding.  
   
- [WSHttpBinding](../../../../docs/framework/wcf/samples/wshttpbinding.md)  
- Ukazuje, jak implementovat typické služby a typické klienta pomocí WCF.  
+ [WSHttpBinding](wshttpbinding.md)  
+ Ukazuje, jak implementovat typickou službu a typický klient pomocí WCF.  
   
- [Spolehlivá relace WS](../../../../docs/framework/wcf/samples/ws-reliable-session.md)  
- Ukazuje použití spolehlivé relace.  
+ [Spolehlivá relace WS](ws-reliable-session.md)  
+ Ukazuje použití spolehlivých relací.  
   
- [Zabezpečení přenosu WS](../../../../docs/framework/wcf/samples/ws-transport-security.md)  
- Ukazuje použití zabezpečení přenosu SSL pomocí <xref:System.ServiceModel.WSHttpBinding> vazby.  
+ [Zabezpečení přenosu WS](ws-transport-security.md)  
+ Ukazuje použití zabezpečení přenosu SSL s <xref:System.ServiceModel.WSHttpBinding> vazbou.  
   
- [Vazby zabezpečení zpráv](../../../../docs/framework/wcf/samples/message-security-binding.md)  
+ [Vazby zabezpečení zpráv](message-security-binding.md)  
  Ukazuje použití zabezpečení zpráv ve službě WCF.  
   
- [Přenos WS s přihlašovacími údaji zprávy](../../../../docs/framework/wcf/samples/ws-transport-with-message-credential.md)  
- Tento příklad znázorňuje použití zabezpečení přenosu SSL v kombinaci s přihlašovací údaje klienta, které provádí ve zprávě.
+ [Přenos WS s pověřením zpráv](ws-transport-with-message-credential.md)  
+ Tato ukázka demonstruje použití zabezpečení přenosu SSL v kombinaci s přihlašovacími údaji klienta, které jsou přenášeny ve zprávě.

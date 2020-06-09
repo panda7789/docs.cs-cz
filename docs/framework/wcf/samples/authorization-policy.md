@@ -2,35 +2,35 @@
 title: Zásada autorizace
 ms.date: 03/30/2017
 ms.assetid: 1db325ec-85be-47d0-8b6e-3ba2fdf3dda0
-ms.openlocfilehash: 36ec1029c8fed57957eb463808de442e74abdf9c
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: 5b93f7e05261d9770650335160ddb56404aed94d
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463952"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84585503"
 ---
 # <a name="authorization-policy"></a>Zásada autorizace
 
-Tato ukázka ukazuje, jak implementovat vlastní zásady autorizace deklarací a přidruženého správce autorizací vlastních služeb. To je užitečné, když služba provádí kontroly přístupu na základě deklarací nároku k operacím služby a před kontrolami přístupu uděluje volajícímu určitá práva. Tato ukázka ukazuje proces přidávání deklarací identity i proces pro provedení kontroly přístupu proti dokončené sadě deklarací. Všechny zprávy aplikace mezi klientem a serverem jsou podepsány a šifrovány. Ve výchozím `wsHttpBinding` nastavení s vazbou se uživatelské jméno a heslo zadané klientem používají k přihlášení k platnému účtu systému Windows NT. Tato ukázka ukazuje, jak <xref:System.IdentityModel.Selectors.UserNamePasswordValidator> využít vlastní k ověření klienta. Kromě toho tato ukázka ukazuje ověření klienta pro službu pomocí certifikátu X.509. Tento příklad ukazuje <xref:System.IdentityModel.Policy.IAuthorizationPolicy> implementaci <xref:System.ServiceModel.ServiceAuthorizationManager>a , která mezi nimi udělují přístup ke konkrétním metodám služby pro konkrétní uživatele. Tato ukázka je založena na [uživatelské jméno zabezpečení zprávy](../../../../docs/framework/wcf/samples/message-security-user-name.md), ale <xref:System.ServiceModel.ServiceAuthorizationManager> ukazuje, jak provést transformaci deklarace před voláním.
+Tato ukázka předvádí, jak implementovat vlastní zásady autorizace deklarací identity a přidruženého vlastního Správce autorizací služby. To je užitečné, když služba provádí kontroly přístupu na základě deklarací identity na operace služeb a před kontrolou přístupu uděluje volajícím určitá práva. V této ukázce se zobrazuje jak proces přidávání deklarací identity, tak i proces pro kontrolu přístupu na finalizaci sady deklarací. Všechny zprávy aplikací mezi klientem a serverem jsou podepsané a šifrované. Ve výchozím nastavení s `wsHttpBinding` vazbou se k přihlášení k platnému účtu systému Windows NT používá uživatelské jméno a heslo dodávané klientem. Tato ukázka předvádí, jak použít vlastní <xref:System.IdentityModel.Selectors.UserNamePasswordValidator> pro ověření klienta. Kromě této ukázky se zobrazuje klient ověřující službu pomocí certifikátu X. 509. Tato ukázka předvádí implementaci <xref:System.IdentityModel.Policy.IAuthorizationPolicy> a <xref:System.ServiceModel.ServiceAuthorizationManager> , která mezi nimi uděluje přístup ke konkrétním metodám služby pro konkrétní uživatele. Tato ukázka je založena na [uživatelském jménu zabezpečení zprávy](message-security-user-name.md), ale ukazuje, jak provést transformaci deklarace před <xref:System.ServiceModel.ServiceAuthorizationManager> voláním.
 
 > [!NOTE]
-> Postup instalace a pokyny k sestavení pro tuto ukázku jsou umístěny na konci tohoto tématu.
+> Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.
 
- V souhrnu tento vzorek ukazuje, jak:
+ V souhrnu Tato ukázka předvádí, jak:
 
-- Klient může být ověřen pomocí uživatelského jména-hesla.
+- Klienta lze ověřit pomocí uživatelského jména a hesla.
 
-- Klienta lze ověřit pomocí certifikátu X.509.
+- Klienta lze ověřit pomocí certifikátu X. 509.
 
-- Server ověří pověření klienta proti `UsernamePassword` vlastní validátor.
+- Server ověří pověření klienta proti vlastnímu `UsernamePassword` validátoru.
 
-- Server je ověřen pomocí certifikátu X.509 serveru.
+- Server je ověřený pomocí certifikátu X. 509 serveru.
 
-- Server může <xref:System.ServiceModel.ServiceAuthorizationManager> řídit přístup k určitým metodám ve službě.
+- Server může používat <xref:System.ServiceModel.ServiceAuthorizationManager> k řízení přístupu k určitým metodám ve službě.
 
-- Jak implementovat <xref:System.IdentityModel.Policy.IAuthorizationPolicy>.
+- Jak implementovat <xref:System.IdentityModel.Policy.IAuthorizationPolicy> .
 
-Služba zpřístupňuje dva koncové body pro komunikaci se službou, definované pomocí konfiguračního souboru App.config. Každý koncový bod se skládá z adresy, vazby a smlouvy. Jedna vazba je `wsHttpBinding` konfigurována se standardní vazbou, která používá ověřování ws-security a uživatelského jména klienta. Druhá vazba je konfigurována se standardní `wsHttpBinding` vazbou, která používá ověřování WS-Security a client certificate. Chování [ \<>](../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md) určuje, že pověření uživatele mají být použita pro ověřování služby. Certifikát serveru musí obsahovat stejnou `SubjectName` hodnotu `findValue` vlastnosti jako atribut v [ \<>serviceCertificate ](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md).
+Služba zpřístupňuje dva koncové body pro komunikaci se službou, které jsou definovány pomocí konfiguračního souboru App. config. Každý koncový bod se skládá z adresy, vazby a kontraktu. Jedna vazba je nakonfigurovaná se standardní `wsHttpBinding` vazbou, která používá ověřování WS-Security a uživatelské jméno klienta. Druhá vazba je nakonfigurovaná se standardní `wsHttpBinding` vazbou, která používá ověřování WS-Security a klientský certifikát. [\<behavior>](../../configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)Určuje, že pověření uživatele má být použito pro ověřování služby. Certifikát serveru musí obsahovat stejnou hodnotu `SubjectName` vlastnosti jako `findValue` atribut v [\<serviceCertificate>](../../configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) .
 
 ```xml
 <system.serviceModel>
@@ -117,7 +117,7 @@ Služba zpřístupňuje dva koncové body pro komunikaci se službou, definovan�
 </system.serviceModel>
 ```
 
-Každá konfigurace koncového bodu klienta se skládá z názvu konfigurace, absolutní adresy pro koncový bod služby, vazby a smlouvy. Vazby klienta jsou konfigurovány s příslušným režimem zabezpečení, `clientCredentialType` jak je v tomto případě specifikováno v [ \<>zabezpečení](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-wshttpbinding.md) a jak je uvedeno ve [ \<zprávě>](../../../../docs/framework/configure-apps/file-schema/wcf/message-of-wshttpbinding.md).
+Každá konfigurace koncového bodu klienta se skládá z názvu konfigurace, absolutní adresy koncového bodu služby, vazby a kontraktu. Vazba klienta je nakonfigurována s odpovídajícím režimem zabezpečení, jak je uvedeno v tomto případě v [\<security>](../../configure-apps/file-schema/wcf/security-of-wshttpbinding.md) a, `clientCredentialType` jak je uvedeno v části [\<message>](../../configure-apps/file-schema/wcf/message-of-wshttpbinding.md) .
 
 ```xml
 <system.serviceModel>
@@ -185,7 +185,7 @@ Každá konfigurace koncového bodu klienta se skládá z názvu konfigurace, ab
   </system.serviceModel>
 ```
 
-Pro koncový bod založený na uživatelském jménu implementací klienta nastaví uživatelské jméno a heslo.
+Pro koncový bod uživatelského jména nastaví implementace klienta uživatelské jméno a heslo, které se má použít.
 
 ```csharp
 // Create a client with Username endpoint configuration
@@ -211,7 +211,7 @@ catch (Exception e)
 client1.Close();
 ```
 
-Pro koncový bod založený na certifikátu implementace klienta nastaví klientský certifikát, který se má použít.
+Pro koncový bod založený na certifikátu nastaví implementace klienta klientský certifikát, který se má použít.
 
 ```csharp
 // Create a client with Certificate endpoint configuration
@@ -236,7 +236,7 @@ catch (Exception e)
 client2.Close();
 ```
 
-Tato ukázka <xref:System.IdentityModel.Selectors.UserNamePasswordValidator> používá vlastní ověření uživatelských jmen a hesel. Ukázka implementuje `MyCustomUserNamePasswordValidator`, <xref:System.IdentityModel.Selectors.UserNamePasswordValidator>odvozené z . Další informace <xref:System.IdentityModel.Selectors.UserNamePasswordValidator> naleznete v dokumentaci. Pro účely prokázání integrace <xref:System.IdentityModel.Selectors.UserNamePasswordValidator>s , tento vlastní validátor <xref:System.IdentityModel.Selectors.UserNamePasswordValidator.Validate%2A> ukázka implementuje metodu přijmout uživatelské jméno a heslo dvojice, kde uživatelské jméno odpovídá heslo, jak je znázorněno v následujícím kódu.
+Tato ukázka používá vlastní <xref:System.IdentityModel.Selectors.UserNamePasswordValidator> ověření uživatelských jmen a hesel. Ukázka implementuje `MyCustomUserNamePasswordValidator` odvozené z <xref:System.IdentityModel.Selectors.UserNamePasswordValidator> . Další informace najdete v dokumentaci <xref:System.IdentityModel.Selectors.UserNamePasswordValidator> . Pro účely demonstrování integrace s nástrojem <xref:System.IdentityModel.Selectors.UserNamePasswordValidator> Tato ukázka vlastního validátoru implementuje <xref:System.IdentityModel.Selectors.UserNamePasswordValidator.Validate%2A> metodu pro příjem párů uživatelského jména a hesla, kde uživatelské jméno odpovídá heslu, jak je znázorněno v následujícím kódu.
 
 ```csharp
 public class MyCustomUserNamePasswordValidator : UserNamePasswordValidator
@@ -261,14 +261,14 @@ public class MyCustomUserNamePasswordValidator : UserNamePasswordValidator
 }
 ```
 
-Jakmile je validátor implementován v kódu služby, musí být hostitel služby informován o instanci validátoru, která má být používána. To se provádí pomocí následujícího kódu:
+Po implementaci ověřovacího modulu v kódu služby musí být hostitel služby informován o instanci validátoru, která se má použít. To se provádí pomocí následujícího kódu:
 
 ```csharp
 Servicehost.Credentials.UserNameAuthentication.UserNamePasswordValidationMode = UserNamePasswordValidationMode.Custom;
 serviceHost.Credentials.UserNameAuthentication.CustomUserNamePasswordValidator = new MyCustomUserNamePasswordValidatorProvider();
 ```
 
-Nebo můžete udělat totéž v konfiguraci:
+Nebo můžete stejnou věc provést v konfiguraci:
 
 ```xml
 <behavior>
@@ -282,9 +282,9 @@ Nebo můžete udělat totéž v konfiguraci:
 </behavior>
 ```
 
-Windows Communication Foundation (WCF) poskytuje bohatý model založený na deklaracích identity pro provádění kontrol přístupu. Objekt <xref:System.ServiceModel.ServiceAuthorizationManager> se používá k provedení kontroly přístupu a určení, zda deklarace přidružené ke klientovi splňují požadavky nezbytné pro přístup k metodě služby.
+Windows Communication Foundation (WCF) poskytuje bohatý model založený na deklaracích pro provádění kontrol přístupu. <xref:System.ServiceModel.ServiceAuthorizationManager>Objekt se používá k provedení kontroly přístupu a určení, zda deklarace přidružené k klientovi splňují požadavky nezbytné pro přístup k metodě služby.
 
-Pro účely demonstrace tato ukázka ukazuje <xref:System.ServiceModel.ServiceAuthorizationManager> implementaci, <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%2A> která implementuje metodu, která umožňuje uživateli přístup k metodám založeným na deklaracích typu, `http://example.com/claims/allowedoperation` jehož hodnota je identifikátor URI akce operace, která může být volána.
+Pro účely ukázky ukazuje Tato ukázka implementaci <xref:System.ServiceModel.ServiceAuthorizationManager> , která implementuje metodu, která <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%2A> umožňuje uživateli přístup k metodám na základě deklarací typu, `http://example.com/claims/allowedoperation` jejichž hodnota je identifikátor URI akce operace, která může být volána.
 
 ```csharp
 public class MyServiceAuthorizationManager : ServiceAuthorizationManager
@@ -310,7 +310,7 @@ public class MyServiceAuthorizationManager : ServiceAuthorizationManager
 }
 ```
 
-Jakmile je <xref:System.ServiceModel.ServiceAuthorizationManager> vlastní implementována, hostitel služby musí být informován o <xref:System.ServiceModel.ServiceAuthorizationManager> použití. To se provádí tak, jak je znázorněno v následujícím kódu.
+Po implementaci vlastního uživatelského <xref:System.ServiceModel.ServiceAuthorizationManager> rozhraní musí být hostitel služby informován o tom, jak se <xref:System.ServiceModel.ServiceAuthorizationManager> má použít. To se provádí, jak je znázorněno v následujícím kódu.
 
 ```xml
 <behavior>
@@ -321,7 +321,7 @@ Jakmile je <xref:System.ServiceModel.ServiceAuthorizationManager> vlastní imple
 </behavior>
 ```
 
-Primární <xref:System.IdentityModel.Policy.IAuthorizationPolicy> metodou k implementaci <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%28System.IdentityModel.Policy.EvaluationContext%2CSystem.Object%40%29> je metoda.
+Primární <xref:System.IdentityModel.Policy.IAuthorizationPolicy> metoda, která má být implementována, je <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%28System.IdentityModel.Policy.EvaluationContext%2CSystem.Object%40%29> metoda.
 
 ```csharp
 public class MyAuthorizationPolicy : IAuthorizationPolicy
@@ -377,9 +377,9 @@ public class MyAuthorizationPolicy : IAuthorizationPolicy
 }
 ```
 
-Předchozí kód ukazuje, <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%28System.IdentityModel.Policy.EvaluationContext%2CSystem.Object%40%29> jak metoda kontroluje, že nebyly přidány žádné nové deklarace identity, které ovlivňují zpracování a přidá konkrétní deklarace identity. Deklarace, které jsou povoleny jsou získány z `GetAllowedOpList` metody, která je implementována vrátit konkrétní seznam operací, které uživatel může provádět. Zásady autorizace přidá deklarace identity pro přístup k určité operaci. To se později <xref:System.ServiceModel.ServiceAuthorizationManager> používá k provedení rozhodnutí o kontrole přístupu.
+Předchozí kód ukazuje <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%28System.IdentityModel.Policy.EvaluationContext%2CSystem.Object%40%29> , jak metoda kontroluje, zda nebyly přidány žádné nové deklarace identity, které mají vliv na zpracování a přidávají konkrétní deklarace identity. Deklarace, které jsou povoleny, jsou získány z `GetAllowedOpList` metody, která je implementována k vrácení konkrétního seznamu operací, které může uživatel provést. Zásady autorizace přidávají deklarace identity pro přístup k určité operaci. Tato služba je později používána <xref:System.ServiceModel.ServiceAuthorizationManager> k rozhodování o kontrole přístupu.
 
-Jakmile je <xref:System.IdentityModel.Policy.IAuthorizationPolicy> vlastní implementována, hostitel služby musí být informován o zásadách autorizace použít.
+Po implementaci vlastního uživatelského <xref:System.IdentityModel.Policy.IAuthorizationPolicy> rozhraní musí být hostitel služby informován o zásadách autorizace, které se mají použít.
 
 ```xml
 <serviceAuthorization>
@@ -389,17 +389,17 @@ Jakmile je <xref:System.IdentityModel.Policy.IAuthorizationPolicy> vlastní impl
 </serviceAuthorization>
 ```
 
-Při spuštění ukázky jsou v okně klientské konzole zobrazeny požadavky na operaci a odpovědi. Klient úspěšně volá Add, Odečíst a Více metod a získá zprávu "Přístup je odepřen" při pokusu o volání Divide metoda. Stisknutím klávesy ENTER v okně klienta vypněte klienta.
+Při spuštění ukázky se v okně konzoly klienta zobrazí požadavky na operace a odpovědi. Klient úspěšně volá metodu Add, odečíst a více metod a při pokusu o volání metody dělení Získá zprávu "přístup byl odepřen". V okně klienta stiskněte klávesu ENTER pro vypnutí klienta.
 
-## <a name="setup-batch-file"></a>Instalační dávkový soubor
+## <a name="setup-batch-file"></a>Nastavení dávkového souboru
 
-Dávkový soubor Setup.bat, který je součástí této ukázky, umožňuje nakonfigurovat server s příslušnými certifikáty tak, aby spouštěl samoobslužnou aplikaci, která vyžaduje zabezpečení založené na certifikátech serveru.
+Dávkový soubor Setup. bat, který je součástí této ukázky, vám umožní nakonfigurovat server s příslušnými certifikáty pro spuštění samoobslužné aplikace, která vyžaduje zabezpečení na základě certifikátů serveru.
 
-Následující text poskytuje stručný přehled různých částí dávkových souborů, aby je bylo možné upravit tak, aby byly spuštěny v příslušné konfiguraci:
+Níže najdete stručný přehled různých částí dávkových souborů, aby je bylo možné upravit tak, aby se spouštěla v příslušné konfiguraci:
 
-- Vytvoření certifikátu serveru.
+- Vytváří se certifikát serveru.
 
-    Následující řádky z dávkového souboru Setup.bat vytvoří certifikát serveru, který má být použit. Proměnná %SERVER_NAME% určuje název serveru. Změňte tuto proměnnou a zadejte vlastní název serveru. Výchozí hodnota je localhost.
+    Následující řádky z dávkového souboru Setup. bat vytvoří certifikát serveru, který se má použít. Proměnná% SERVER_NAME% Určuje název serveru. Změňte tuto proměnnou tak, aby určovala vlastní název serveru. Výchozí hodnota je localhost.
 
     ```bat
     echo ************
@@ -413,17 +413,17 @@ Následující text poskytuje stručný přehled různých částí dávkových 
 
 - Instalace certifikátu serveru do důvěryhodného úložiště certifikátů klienta.
 
-    Následující řádky v dávkovém souboru Setup.bat zkopírují certifikát serveru do úložiště důvěryhodných osob klienta. Tento krok je vyžadován, protože certifikáty, které jsou generovány programem Makecert.exe, nejsou klientským systémem implicitně důvěryhodné. Pokud již máte certifikát, který je zakořeněný v důvěryhodném kořenovém certifikátu klienta – například certifikát emitovaný společností Microsoft – tento krok naplnění úložiště klientských certifikátů certifikátem pomocí certifikátu serveru není vyžadován.
+    Následující řádky v dávkovém souboru Setup. bat kopírují certifikát serveru do úložiště Důvěryhodné osoby z klienta. Tento krok je povinný, protože certifikáty generované pomocí nástroje MakeCert. exe pro klientský systém implicitně nedůvěřují. Pokud už máte certifikát, který je rootem klienta důvěryhodných kořenových certifikátů, například certifikát vydaný společností Microsoft – tento krok naplnění klientského úložiště certifikátů pomocí certifikátu serveru není vyžadován.
 
     ```console
     certmgr.exe -add -r LocalMachine -s My -c -n %SERVER_NAME% -r CurrentUser -s TrustedPeople
     ```
 
-- Vytvoření klientského certifikátu.
+- Vytváří se klientský certifikát.
 
-    Následující řádky z dávkového souboru Setup.bat vytvoří klientský certifikát, který má být použit. Proměnná %USER_NAME% určuje název serveru. Tato hodnota je nastavena na "test1", protože toto je název `IAuthorizationPolicy` hledá. Pokud změníte hodnotu %USER_NAME%, musíte změnit `IAuthorizationPolicy.Evaluate` odpovídající hodnotu metody.
+    Následující řádky z dávkového souboru Setup. bat vytvoří klientský certifikát, který se má použít. Proměnná% USER_NAME% Určuje název serveru. Tato hodnota je nastavená na "test1", protože se jedná o název, který `IAuthorizationPolicy` hledá. Pokud změníte hodnotu% USER_NAME%, je nutné změnit odpovídající hodnotu v `IAuthorizationPolicy.Evaluate` metodě.
 
-    Certifikát je uložen v úložišti Moje (osobní) pod umístěním úložiště CurrentUser.
+    Certifikát je uložený v osobním úložišti (osobní) v umístění úložiště CurrentUser.
 
     ```bat
     echo ************
@@ -432,9 +432,9 @@ Následující text poskytuje stručný přehled různých částí dávkových 
     makecert.exe -sr CurrentUser -ss MY -a sha1 -n CN=%CLIENT_NAME% -sky exchange -pe
     ```
 
-- Instalace klientského certifikátu do důvěryhodného úložiště certifikátů serveru.
+- Probíhá instalace klientského certifikátu do důvěryhodného úložiště certifikátů serveru.
 
-    Následující řádky v dávkovém souboru Setup.bat zkopírují klientský certifikát do úložiště důvěryhodných osob. Tento krok je vyžadován, protože certifikáty, které jsou generovány programem Makecert.exe, nejsou serverovým systémem implicitně důvěryhodné. Pokud již máte certifikát, který je zakořeněný v důvěryhodném kořenovém certifikátu – například certifikát emitovaný společností Microsoft – není tento krok naplnění úložiště certifikátů serveru klientským certifikátem vyžadován.
+    Následující řádky v dávkovém souboru Setup. bat kopírují klientský certifikát do úložiště důvěryhodných osob. Tento krok je povinný, protože serverové systémy, které jsou vygenerované pomocí nástroje MakeCert. exe, nejsou implicitně důvěryhodné. Pokud již máte certifikát, který je rootem v důvěryhodném kořenovém certifikátu, například certifikát vydaný společností Microsoft – tento krok naplnění úložiště certifikátů serveru pomocí klientského certifikátu není vyžadováno.
 
     ```console
     certmgr.exe -add -r CurrentUser -s My -c -n %CLIENT_NAME% -r LocalMachine -s TrustedPeople
@@ -442,69 +442,69 @@ Následující text poskytuje stručný přehled různých částí dávkových 
 
 ### <a name="to-set-up-and-build-the-sample"></a>Nastavení a sestavení ukázky
 
-1. Chcete-li vytvořit řešení, postupujte podle pokynů v [sestavení windows communication foundation ukázky](../../../../docs/framework/wcf/samples/building-the-samples.md).
+1. Při sestavování řešení postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](building-the-samples.md).
 
-2. Chcete-li vzorek spustit v konfiguraci jednoho nebo mezi počítači, postupujte podle následujících pokynů.
+2. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle následujících pokynů.
 
 > [!NOTE]
-> Pokud používáte Svcutil.exe k obnovení konfigurace pro tuto ukázku, nezapomeňte upravit název koncového bodu v konfiguraci klienta tak, aby odpovídalkódu klienta.
+> Pokud pro obnovení konfigurace této ukázky používáte Svcutil. exe, nezapomeňte změnit název koncového bodu v konfiguraci klienta tak, aby odpovídal kódu klienta.
 
-### <a name="to-run-the-sample-on-the-same-computer"></a>Spuštění ukázky ve stejném počítači
+### <a name="to-run-the-sample-on-the-same-computer"></a>Spuštění ukázky na stejném počítači
 
-1. Otevřete příkazový řádek pro vývojáře pro Visual Studio s oprávněními správce a spusťte *soubor Setup.bat* z ukázkové instalační složky. Tím nainstalujete všechny certifikáty potřebné pro spuštění ukázky.
+1. Otevřete Developer Command Prompt pro Visual Studio s oprávněními správce a spusťte *Setup. bat* z ukázkové instalační složky. Tím se nainstalují všechny certifikáty, které jsou potřebné ke spuštění ukázky.
 
     > [!NOTE]
-    > Dávkový soubor Setup.bat je navržen tak, aby byl spuštěn z příkazového řádku pro vývojáře pro sady Visual Studio. Proměnná prostředí PATH nastavená v příkazovém řádku vývojáře pro sadu Visual Studio odkazuje na adresář, který obsahuje spustitelné soubory vyžadované skriptem *Setup.bat.*
+    > Dávkový soubor Setup. bat je navržený tak, aby se spouštěl z Developer Command Prompt pro Visual Studio. Proměnná prostředí PATH nastavená v rámci Developer Command Prompt pro Visual Studio odkazuje na adresář, který obsahuje spustitelné soubory, které vyžaduje skript *Setup. bat* .
 
-1. Spusťte soubor Service.exe ze *služby\bin*.
+1. Spusťte Service. exe z *service\bin*.
 
-1. Spusťte soubor Client.exe z *\client\bin*. Aktivita klienta je zobrazena v aplikaci klientské konzole.
+1. Spusťte soubor Client. exe z *\client\bin*. Aktivita klienta se zobrazí v klientské aplikaci konzoly.
 
-Pokud klient a služba nejsou schopni komunikovat, naleznete [v tématu Tipy pro řešení potíží pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).
+Pokud klient a služba nejsou schopné komunikovat, přečtěte si [tipy pro řešení potíží s ukázkami služby WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).
 
-### <a name="to-run-the-sample-across-computers"></a>Spuštění ukázky v počítačích
+### <a name="to-run-the-sample-across-computers"></a>Spuštění ukázky mezi počítači
 
-1. Vytvořte adresář v počítači služby.
+1. Vytvořte adresář na počítači služby.
 
-2. Zkopírujte soubory servisních programů z *\service\bin* do adresáře v počítači služby. Do servisního počítače zkopírujte také soubory Setup.bat, Cleanup.bat, GetComputerName.vbs a ImportClientCert.bat.
+2. Zkopírujte programové soubory služby z *\service\bin* do adresáře na počítači služby. Zkopírujte také soubory Setup. bat, Cleanup. bat, GetComputerName. vbs a ImportClientCert. bat do počítače služby.
 
 3. Vytvořte v klientském počítači adresář pro binární soubory klienta.
 
-4. Zkopírujte soubory klientských programů do klientského adresáře v klientském počítači. Zkopírujte také soubory Setup.bat, Cleanup.bat a ImportServiceCert.bat klientovi.
+4. Zkopírujte soubory klientských programů do adresáře klienta v klientském počítači. Zkopírujte také do klienta soubory Setup. bat, Cleanup. bat a ImportServiceCert. bat.
 
-5. Na serveru spusťte `setup.bat service` v příkazovém řádku pro vývojáře pro Visual Studio otevřené s oprávněními správce.
+5. Na serveru spusťte `setup.bat service` v Developer Command Prompt pro Visual Studio otevřené s oprávněními správce.
 
-    Spuštění `setup.bat` s `service` argumentem vytvoří certifikát služby s plně kvalifikovaným názvem domény počítače a exportuje certifikát služby do souboru s názvem *Service.cer*.
+    Při spuštění `setup.bat` s `service` argumentem se vytvoří certifikát služby s plně kvalifikovaným názvem domény počítače a vyexportuje certifikát služby do souboru s názvem *Service. cer*.
 
-6. Upravte *service.exe.config* tak, aby odrážel `findValue` nový název certifikátu (v atributu [ \<v>serviceCertificate), ](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md)který je stejný jako plně kvalifikovaný název domény počítače. Změňte také **název** \<počítače ve\<službě>/ baseAddresses> element z localhost na plně kvalifikovaný název počítače služby.
+6. Upravte soubor *Service. exe. config* tak, aby odrážel nový název certifikátu (v `findValue` atributu), [\<serviceCertificate>](../../configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) který je stejný jako plně kvalifikovaný název počítače. Také změňte název **počítače** v \<service> / \<baseAddresses> elementu z localhost na plně kvalifikovaný název počítače služby.
 
-7. Zkopírujte soubor *Service.cer* z adresáře služby do klientského adresáře v klientském počítači.
+7. Zkopírujte soubor *Service. cer* z adresáře služby do adresáře klienta v klientském počítači.
 
-8. Na straně klienta spusťte `setup.bat client` v příkazovém řádku pro vývojáře pro Visual Studio otevřené s oprávněními správce.
+8. V klientovi spusťte `setup.bat client` v Developer Command Prompt pro Visual Studio otevřené s oprávněními správce.
 
-    Spuštění `setup.bat` s `client` argumentem vytvoří klientský certifikát s názvem **test1** a exportuje klientský certifikát do souboru s názvem *Client.cer*.
+    Při spuštění `setup.bat` s `client` argumentem se vytvoří klientský certifikát s názvem **test1** a exportuje se klientský certifikát do souboru s názvem *Client. cer*.
 
-9. V souboru *Client.exe.config* v klientském počítači změňte hodnotu adresy koncového bodu tak, aby odpovídala nové adrese vaší služby. To provést nahrazením **localhost** plně kvalifikovaný název domény serveru.
+9. V souboru *Client. exe. config* v klientském počítači změňte hodnotu adresy koncového bodu tak, aby odpovídala nové adrese vaší služby. Provedete to tak, že nahradíte **localhost** názvem domény, který má plně kvalifikovaný název domény serveru.
 
-10. Zkopírujte soubor Client.cer z adresáře klienta do adresáře služby na serveru.
+10. Zkopírujte soubor Client. cer z adresáře klienta do adresáře služby na serveru.
 
-11. Na straně klienta spusťte *soubor ImportServiceCert.bat* v příkazovém řádku pro vývojáře pro aplikaci Visual Studio otevřenou s oprávněními správce.
+11. Na straně klienta spusťte *ImportServiceCert. bat* v Developer Command Prompt pro Visual Studio otevřené s oprávněními správce.
 
-    Tím se importuje certifikát služby ze souboru Service.cer do úložiště **CurrentUser - TrustedPeople.**
+    Tím se certifikát služby importuje ze souboru Service. cer do úložiště **CurrentUser-TrustedPeople** .
 
-12. Na serveru spusťte *soubor ImportClientCert.bat* v příkazovém řádku pro vývojáře pro aplikaci Visual Studio otevřenou s oprávněními správce.
+12. Na serveru spusťte *ImportClientCert. bat* v Developer Command Prompt pro Visual Studio otevřené s oprávněními správce.
 
-    Tím se klientský certifikát importuje ze souboru Client.cer do úložiště **LocalMachine - TrustedPeople.**
+    Tím se certifikát klienta importuje ze souboru Client. cer do úložiště **LocalMachine-TrustedPeople** .
 
-13. V počítači serveru spusťte service.exe z okna příkazového řádku.
+13. V počítači serveru spusťte z okna příkazového řádku Service. exe.
 
-14. V klientském počítači spusťte soubor Client.exe z okna příkazového řádku.
+14. V klientském počítači spusťte soubor Client. exe z okna příkazového řádku.
 
-    Pokud klient a služba nejsou schopni komunikovat, naleznete [v tématu Tipy pro řešení potíží pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).
+    Pokud klient a služba nejsou schopné komunikovat, přečtěte si [tipy pro řešení potíží s ukázkami služby WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).
 
-### <a name="clean-up-after-the-sample"></a>Vyčistěte po vzorku
+### <a name="clean-up-after-the-sample"></a>Vyčištění po ukázce
 
-Chcete-li vyčistit po vzorku, spusťte *Cleanup.bat* ve složce ukázky po dokončení spuštění ukázky. Tím odeberete certifikáty serveru a klienta z úložiště certifikátů.
+Po dokončení ukázky spusťte *Cleanup. bat* ve složce Samples, až skončíte s jeho spuštěním. Tím dojde k odebrání certifikátů serveru a klienta z úložiště certifikátů.
 
 > [!NOTE]
-> Tento skript neodebere certifikáty služeb v klientovi při spuštění této ukázky v počítačích. Pokud jste schovali ukázky WCF, které používají certifikáty v počítačích, nezapomeňte vymazat certifikáty služby, které byly nainstalovány v úložišti CurrentUser - TrustedPeople. Chcete-li to provést, `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` použijte následující `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`příkaz: Například: .
+> Tento skript při spuštění této ukázky mezi počítači neodebere certifikáty služby na klientovi. Pokud jste spustili ukázky WCF, které používají certifikáty napříč počítači, ujistěte se, že jste vymazali certifikáty služby nainstalované v úložišti CurrentUser-TrustedPeople. Použijte následující příkaz: `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` například: `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com` .

@@ -2,21 +2,21 @@
 title: Microsoft.Transactions.TransactionBridge.RegistrationCoordinatorResponseInvalidMetadata
 ms.date: 03/30/2017
 ms.assetid: a174bbf5-0ffe-4fda-969d-e7fbd1996123
-ms.openlocfilehash: 664fbad52cdb66d3bf7b58ff639c62c8c18b1e56
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: faa9fc98d5ba029fff5c221e870dd48712e152a3
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61666856"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84594280"
 ---
 # <a name="microsofttransactionstransactionbridgeregistrationcoordinatorresponseinvalidmetadata"></a>Microsoft.Transactions.TransactionBridge.RegistrationCoordinatorResponseInvalidMetadata
-Služba protokolu WS-Atomic Transactions obdržela zprávu RegisterResponse od svého koordinátora obsahující referenci koncového bodu se neplatná nebo neslučitelná data.  
+Služba protokolu WS-Atomic Transaction Protocol přijala od svého koordinátora zprávu RegisterResponse, která obsahuje odkaz na koncový bod s neplatnými nebo nekompatibilními metadaty.  
   
 ## <a name="description"></a>Popis  
- Trasovaná při místní správce transakcí se pokusí zaregistrovat s jeho nadřízeného správce transakcí a kvalitní vrátí neplatnou adresu v rámci zprávu RegisterResponse.  
+ Sledováno, když se správce místního transakce pokusí zaregistrovat u správce nadřazené transakce a nadřízený vrátí neplatnou adresu v rámci zprávy RegisterResponse.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Trasování](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [Řešení problémů s aplikací pomocí trasování](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
-- [Správa a diagnostika](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [Trasování](index.md)
+- [Řešení potíží s aplikací pomocí trasování](using-tracing-to-troubleshoot-your-application.md)
+- [Správa a diagnostika](../index.md)
