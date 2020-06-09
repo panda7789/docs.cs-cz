@@ -7,43 +7,43 @@ dev_langs:
 helpviewer_keywords:
 - data contracts [WCF], forward compatibility
 ms.assetid: 413c9044-26f8-4ecb-968c-18495ea52cd9
-ms.openlocfilehash: 90d9409d7e41ddda99caf24ebe0e249ee04723d6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 34bde56b78ec0148cf6b924f8edd29343b97faa4
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61855904"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597381"
 ---
 # <a name="forward-compatible-data-contracts"></a>Kontrakty dat s dopřednou kompatibilitou
-Funkce z Windows Communication Foundation (WCF) je systém kontraktu dat, která smluv týkajících se může časem vyvíjet pevná způsoby. To znamená klient starší verze kontraktu dat může komunikovat se službou novější verzi stejné kontraktu dat nebo klient novější verze kontraktu dat může komunikovat s starší verzi stejný kontrakt dat. Další informace najdete v tématu [osvědčených postupů: Správa verzí kontraktů dat](../../../../docs/framework/wcf/best-practices-data-contract-versioning.md).  
+Pro systém kontraktů dat Windows Communication Foundation (WCF) se kontrakty můžou v průběhu času vyvíjet v nerozdělování. To znamená, že klient starší verze kontraktu dat může komunikovat se službou s novější verzí stejné kontraktu dat nebo klient s novější verzí kontraktu dat může komunikovat se starší verzí stejného kontraktu dat. Další informace najdete v tématu [osvědčené postupy: Správa verzí kontraktů dat](../best-practices-data-contract-versioning.md).  
   
- Při vytváření nových verzí existujících kontraktu dat, můžete použít většinu funkcí správy verzí podle potřeby. Ale pro jednu funkci správy verzí, *verzemi*, musí být sestaveny na typ z první verze, aby vše správně fungovalo.  
+ V případě, že jsou vytvořeny nové verze existující kontraktu dat, můžete použít většinu funkcí pro správu verzí podle potřeby. Nicméně jedna funkce správy verzí, *Round-Trip*, musí být integrována do typu z první verze, aby fungovala správně.  
   
-## <a name="round-tripping"></a>Verzemi  
- Když data úspěšně projdou z novou verzi do starší verze a zpět na novou verzi kontraktu dat dojde k verzemi. Verzemi zaručuje, že se neztratila žádná data. Povolení verzemi díky typ dopřednou obsahující všechny budoucí změny nepodporuje datový model správy verzí kontraktu.  
+## <a name="round-tripping"></a>Round-Trip  
+ K kulatému Trip dojde, když data přecházejí z nové verze do staré verze a zpátky do nové verze kontraktu dat. Kulaté Trip zaručuje, že nedojde ke ztrátě dat. Povolení možnosti Round-Trip zajistí, že se typ dopředně dokončí s případnými budoucími změnami, které podporuje model verze kontraktu dat.  
   
- Pokud chcete povolit verzemi pro určitý typ, musí implementovat typ <xref:System.Runtime.Serialization.IExtensibleDataObject> rozhraní. Rozhraní obsahuje jednu vlastnost <xref:System.Runtime.Serialization.IExtensibleDataObject.ExtensionData%2A> (vrácení <xref:System.Runtime.Serialization.ExtensionDataObject> typu). Vlastnost uloží všechna data z budoucí verze kontraktu dat, který neznámý pro aktuální verzi.  
+ Chcete-li povolit příkaz round-trip pro konkrétní typ, musí tento typ implementovat <xref:System.Runtime.Serialization.IExtensibleDataObject> rozhraní. Rozhraní obsahuje jednu vlastnost <xref:System.Runtime.Serialization.IExtensibleDataObject.ExtensionData%2A> (návrat <xref:System.Runtime.Serialization.ExtensionDataObject> typu). Vlastnost ukládá jakákoli data z budoucích verzí kontraktu dat, která jsou pro aktuální verzi neznámá.  
   
 ### <a name="example"></a>Příklad  
- Následující kontraktu dat. není dopřednou budoucí změny.  
+ Následující kontrakt dat není při budoucích změnách kompatibilní s dopředně.  
   
  [!code-csharp[C_DataContract#7](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_datacontract/cs/source.cs#7)]
  [!code-vb[C_DataContract#7](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_datacontract/vb/source.vb#7)]  
   
- Chcete-li typ kompatibilní s budoucí změny (např. přidejte nový datový člen s názvem "telefonní číslo"), implementovat <xref:System.Runtime.Serialization.IExtensibleDataObject> rozhraní.  
+ Chcete-li nastavit typ kompatibilní s budoucími změnami (například přidáním nového datového člena s názvem "phoneNumber"), implementujte <xref:System.Runtime.Serialization.IExtensibleDataObject> rozhraní.  
   
  [!code-csharp[C_DataContract#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_datacontract/cs/source.cs#8)]
  [!code-vb[C_DataContract#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_datacontract/vb/source.vb#8)]  
   
- Když infrastruktura WCF narazí na data, která není součástí původní kontraktu dat, data jsou uložená ve vlastnosti a zachovají. Není zpracována jiným způsobem s výjimkou dočasné úložiště. Pokud je objekt vrácen zpět na jejím původu, vrátí se také původní data (neznámá). Proto se provedl data z původní koncový bod beze ztrát a latence. Všimněte si však, že v případě potřeby data ke zpracování výchozí koncový bod tohoto očekává se dosud nevyřešených a koncového bodu musí nějakým způsobem detekovat a vyhovují novince.  
+ Když infrastruktura WCF narazí na data, která nejsou součástí původní kontraktu dat, uloží se data do vlastnosti a zachovají se. Nezpracovává se žádným jiným způsobem s výjimkou dočasného úložiště. Pokud se objekt vrátí zpět na místo, kde pochází, vrátí se také původní (neznámá) data. Proto data provedla operaci round trip do a z původního koncového bodu bez ztráty. Upozorňujeme však, že pokud koncový bod vyžaduje zpracování dat, očekává se, že je nesplnění, a koncový bod musí nějakým způsobem zjistit a přizpůsobit změnu.  
   
- <xref:System.Runtime.Serialization.ExtensionDataObject> Typ neobsahuje žádné veřejné metody nebo vlastnosti. Proto není možné získat přímý přístup k datům uloženým v <xref:System.Runtime.Serialization.IExtensibleDataObject.ExtensionData%2A> vlastnost.  
+ <xref:System.Runtime.Serialization.ExtensionDataObject>Typ neobsahuje žádné veřejné metody nebo vlastnosti. Proto není možné získat přímý přístup k datům uloženým uvnitř <xref:System.Runtime.Serialization.IExtensibleDataObject.ExtensionData%2A> Vlastnosti.  
   
- Funkce verzemi může být vypnutý, buď nastavením `ignoreExtensionDataObject` k `true` v <xref:System.Runtime.Serialization.DataContractSerializer> konstruktoru nebo nastavením <xref:System.ServiceModel.ServiceBehaviorAttribute.IgnoreExtensionDataObject%2A> vlastnost `true` na <xref:System.ServiceModel.ServiceBehaviorAttribute>. Když tato funkce je vypnuta, nebude naplnit deserializátor <xref:System.Runtime.Serialization.IExtensibleDataObject.ExtensionData%2A> vlastnost a serializátor nebude generovat obsah vlastnosti.  
+ Funkce Round-Trip může být vypnuta buď nastavením `ignoreExtensionDataObject` na `true` v <xref:System.Runtime.Serialization.DataContractSerializer> konstruktoru, nebo nastavením vlastnosti na hodnotu <xref:System.ServiceModel.ServiceBehaviorAttribute.IgnoreExtensionDataObject%2A> `true` v <xref:System.ServiceModel.ServiceBehaviorAttribute> . Když je tato funkce vypnutá, odsadí Nástroj pro deserializaci <xref:System.Runtime.Serialization.IExtensibleDataObject.ExtensionData%2A> vlastnost a serializátor negeneruje obsah vlastnosti.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Runtime.Serialization.IExtensibleDataObject>
 - <xref:System.Runtime.Serialization.ExtensionDataObject>
-- [Správa verzí kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-versioning.md)
-- [Osvědčené postupy: Správa verzí kontraktů dat](../../../../docs/framework/wcf/best-practices-data-contract-versioning.md)
+- [Správa verzí kontraktů dat](data-contract-versioning.md)
+- [Osvědčené postupy: Správa verzí kontraktů dat](../best-practices-data-contract-versioning.md)

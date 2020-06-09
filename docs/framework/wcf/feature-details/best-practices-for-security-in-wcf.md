@@ -7,57 +7,57 @@ dev_langs:
 helpviewer_keywords:
 - best practices [WCF], security
 ms.assetid: 3639de41-1fa7-4875-a1d7-f393e4c8bd69
-ms.openlocfilehash: c8c0c084ac3b1cf06fc5f2b3df85fa979744e17b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c99ab5e1e72aefc688df1692091e60caf930d5e4
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79185423"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597615"
 ---
 # <a name="best-practices-for-security-in-wcf"></a>Doporučené postupy pro zabezpečení ve WCF
-V následujících částech jsou uvedeny osvědčené postupy, které je třeba vzít v úvahu při vytváření zabezpečených aplikací pomocí služby Windows Communication Foundation (WCF). Další informace o zabezpečení naleznete v [tématech Důležité informace o zabezpečení](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md), Důležité informace o zabezpečení [dat](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md)a [Aspekty zabezpečení s metadaty](../../../../docs/framework/wcf/feature-details/security-considerations-with-metadata.md).  
+V následujících částech jsou uvedeny osvědčené postupy při vytváření zabezpečených aplikací pomocí Windows Communication Foundation (WCF). Další informace o zabezpečení najdete v tématu [požadavky](security-considerations-in-wcf.md)na zabezpečení, [požadavky na zabezpečení pro data](security-considerations-for-data.md)a [bezpečnostní hlediska s metadaty](security-considerations-with-metadata.md).  
   
-## <a name="identify-services-performing-windows-authentication-with-spns"></a>Identifikace služeb provádějících ověřování systému Windows pomocí přemrštitelné sítě  
- Služby lze identifikovat buď s hlavními názvy uživatelů (UPN) nebo hlavní názvy služeb (SPN). Služby spuštěné pod účty počítače, jako je například síťová služba, mají identitu hlavního síťového připojení odpovídající počítači, který jsou spuštěny. Služby spuštěné pod uživatelskými účty mají identitu hlavního uživatele `setspn` odpovídající uživateli, jako je uživatel, i když nástroj lze použít k přiřazení hlavního název služby k uživatelskému účtu. Konfigurace služby tak, aby ji bylo možné identifikovat prostřednictvím hlavního serveru služeb pro připojení k síti A konfigurace klientů, kteří se připojují ke službě tak, aby tuto službu SPN mohla ztížit určité útoky. Tento návod se vztahuje na vazby pomocí Kerberos nebo SSPI vyjednávání.  Klienti by měli stále zadat hlavní výdělečnou hodnotu v případě, že sspi spadá zpět do NTLM.  
+## <a name="identify-services-performing-windows-authentication-with-spns"></a>Identifikace služeb, které provádějí ověřování systému Windows pomocí hlavních názvů služby  
+ Služby je možné identifikovat buď pomocí hlavního názvu uživatele (UPN) nebo hlavních názvů služby (SPN). Služby spuštěné v rámci účtů počítačů, jako je třeba síťová služba, mají identitu hlavního názvu služby odpovídající počítači, na kterém běží. Služby spuštěné v rámci uživatelských účtů mají identitu hlavního názvu uživatele (UPN) odpovídající uživateli, pod kterým běží, i když `setspn` Nástroj lze použít k přiřazení hlavního názvu služby (SPN) k uživatelskému účtu. Konfigurace služby, aby se mohla identifikovat přes hlavní název služby (SPN) a konfigurace klientů připojujících se ke službě k používání tohoto hlavního názvu služby (SPN) může ztížit určité útoky. Tento návod se vztahuje na vazby pomocí protokolu Kerberos nebo vyjednávání SSPI.  Klienti musí pořád určovat hlavní název služby (SPN) v případě, že se rozhraní SSPI vrátí do protokolu NTLM.  
   
-## <a name="verify-service-identities-in-wsdl"></a>Ověření identit služby v wsdl  
- WS-SecurityPolicy umožňuje službám publikovat informace o svých vlastních identitách v metadatech. Při načítání `svcutil` prostřednictvím nebo <xref:System.ServiceModel.Description.WsdlImporter>jiné metody, jako je například , tyto informace o identitě je přeložen do vlastností identity adresy koncového bodu služby WCF. Klienti, kteří neověřují, že tyto identity služby jsou správné a platné, účinně obejít ověřování služby. Škodlivá služba může tyto klienty zneužít ke spuštění předávání přihlašovacích údajů a dalších útoků "man in the middle" změnou identity nárokované v jeho WSDL.  
+## <a name="verify-service-identities-in-wsdl"></a>Ověření identit služby v jazyce WSDL  
+ WS-SecurityPolicy umožňuje službám publikovat informace o vlastních identitách v metadatech. Při načítání prostřednictvím `svcutil` nebo jiných metod, jako jsou <xref:System.ServiceModel.Description.WsdlImporter> tyto informace o identitě přeloženy na vlastnosti identity adres koncového bodu služby WCF. Klienti, kteří neověřují, zda jsou tyto identity služby správné a účinně obcházejí ověřování služby. Škodlivá Služba může tyto klienty zneužít ke spouštění předávání přihlašovacích údajů a dalších "muž v prostředních" útokech změnou identity deklarované v jejím WSDL.  
   
-## <a name="use-x509-certificates-instead-of-ntlm"></a>Místo NTLM použijte certifikáty X509  
- WCF nabízí dva mechanismy pro ověřování mezi dvěma účastníky: certifikáty X509 (používané rovnocenným kanálem) a ověřování systému Windows, kde se vyjednávání SSPI snižuje z protokolu Kerberos na NTLM.  Ověřování pomocí klíčů o velikosti 1024 bitů nebo více je upřednostňováno před protokolem NTLM z několika důvodů:  
+## <a name="use-x509-certificates-instead-of-ntlm"></a>Použít certifikáty x509 místo protokolu NTLM  
+ WCF nabízí dva mechanismy pro ověřování peer-to-peer: certifikáty x509 (používané rovnocenným kanálem) a ověřování systému Windows, kde se vyjednávání SSPI odchází z protokolu Kerberos na NTLM.  Ověřování založené na certifikátech s použitím velikostí klíčů 1024 bitů nebo více se upřednostňuje na NTLM z několika důvodů:  
   
-- dostupnost vzájemného ověřování pravosti,  
+- dostupnost vzájemného ověřování,  
   
-- používání silnějších kryptografických algoritmů a  
+- použití silnějších kryptografických algoritmů a  
   
-- větší obtížnost využití předávaných pověření X509.  
+- větší obtížnost použití předávaných přihlašovacích údajů x509.  
 
 ## <a name="always-revert-after-impersonation"></a>Vždy vrátit po zosobnění  
- Při použití api, které umožňují zosobnění klienta, nezapomeňte se vrátit k původní identity. Například při použití <xref:System.Security.Principal.WindowsIdentity> <xref:System.Security.Principal.WindowsImpersonationContext>a , použijte `using` c# příkaz`Using` nebo příkaz jazyka Visual Basic, jak je znázorněno v následujícím kódu. Třída <xref:System.Security.Principal.WindowsImpersonationContext> implementuje <xref:System.IDisposable> rozhraní a proto modul CLR (COMMON Language runtime) se automaticky vrátí `using` k původní identitě, jakmile kód opustí blok.  
+ Pokud používáte rozhraní API, která umožňují zosobnění klienta, nezapomeňte se vrátit k původní identitě. Například při použití <xref:System.Security.Principal.WindowsIdentity> a <xref:System.Security.Principal.WindowsImpersonationContext> použijte příkaz jazyka C# `using` nebo `Using` příkaz Visual Basic, jak je znázorněno v následujícím kódu. <xref:System.Security.Principal.WindowsImpersonationContext>Třída implementuje <xref:System.IDisposable> rozhraní, a proto modul CLR (Common Language Runtime) automaticky vrátí původní identitu, jakmile kód opustí `using` blok.  
   
  [!code-csharp[c_SecurityBestPractices#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securitybestpractices/cs/source.cs#1)]
  [!code-vb[c_SecurityBestPractices#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securitybestpractices/vb/source.vb#1)]  
   
 ## <a name="impersonate-only-as-needed"></a>Zosobnit pouze podle potřeby  
- Pomocí <xref:System.Security.Principal.WindowsIdentity.Impersonate%2A> metody třídy <xref:System.Security.Principal.WindowsIdentity> je možné použít zosobnění ve velmi řízeném oboru. To je na rozdíl <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A> od <xref:System.ServiceModel.OperationBehaviorAttribute>použití vlastnosti , která umožňuje zosobnění pro rozsah celé operace. Kdykoli je to možné, řídit rozsah zosobnění pomocí přesnější <xref:System.Security.Principal.WindowsIdentity.Impersonate%2A> metody.  
+ Pomocí <xref:System.Security.Principal.WindowsIdentity.Impersonate%2A> metody <xref:System.Security.Principal.WindowsIdentity> třídy je možné použít zosobnění v velmi kontrolovaném oboru. To je na rozdíl od použití <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A> vlastnosti <xref:System.ServiceModel.OperationBehaviorAttribute> , která umožňuje zosobnění pro rozsah celé operace. Kdykoli je to možné, řízení rozsahu zosobnění pomocí přesnější <xref:System.Security.Principal.WindowsIdentity.Impersonate%2A> metody.  
   
 ## <a name="obtain-metadata-from-trusted-sources"></a>Získání metadat z důvěryhodných zdrojů  
- Ujistěte se, že důvěřujete zdroji metadat a ujistěte se, že s nimi nikdo nemanipuloval. Metadata načtená pomocí protokolu HTTP jsou odesílána ve prostém textu a lze s nimi manipulovat. Pokud služba používá <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetEnabled%2A> <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetUrl%2A> vlastnosti a, použijte adresu URL dodanou tvůrcem služby ke stažení dat pomocí protokolu HTTPS.  
+ Ujistěte se, že důvěřujete zdroji metadat a zajistěte, aby žádná z nich nebyla úmyslně poškozená s metadaty. Metadata získaná pomocí protokolu HTTP se odesílají ve formátu prostého textu a můžou být poškozená. Pokud služba používá <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetEnabled%2A> <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetUrl%2A> vlastnosti a, použijte adresu URL poskytnutou funkcí Tvůrce služby ke stažení dat pomocí protokolu HTTPS.  
   
-## <a name="publish-metadata-using-security"></a>Publikovat metadata pomocí zabezpečení  
- Chcete-li zabránit manipulaci s publikovanými metadaty služby, zabezpečte koncový bod výměny metadat pomocí zabezpečení přenosu nebo na úrovni zprávy. Další informace naleznete v [tématu Publikování koncových bodů metadat](../../../../docs/framework/wcf/publishing-metadata-endpoints.md) a [postup: Publikování metadat pro službu pomocí kódu](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-code.md).  
+## <a name="publish-metadata-using-security"></a>Publikování metadat pomocí zabezpečení  
+ Aby nedocházelo k manipulaci s publikovanými metadaty služby, zabezpečte koncový bod výměny metadat pomocí přenosu nebo zabezpečení na úrovni zprávy. Další informace najdete v tématech [publikování koncových bodů metadat](../publishing-metadata-endpoints.md) a [Postupy: publikování metadat pro službu pomocí kódu](how-to-publish-metadata-for-a-service-using-code.md).  
   
-## <a name="ensure-use-of-local-issuer"></a>Zajistit použití místního vystavitra  
- Pokud je pro danou vazbu zadána adresa vystavitvystavitea a vazba, místní vystavitel se nepoužívá pro koncové body, které tuto vazbu používají. Klienti, kteří očekávají, že budou vždy používat místního vystavittele, by měli zajistit, aby takovou vazbu nepoužívali nebo aby vazbu upravili tak, aby adresa vystavittele byla null.  
+## <a name="ensure-use-of-local-issuer"></a>Zajistěte použití místního vystavitele.  
+ Pokud je pro danou vazbu zadána adresa vystavitele a vazba, místní vystavitel není použit pro koncové body, které používají tuto vazbu. Klienti, kteří očekávají, že by vždy používali místního vystavitele, by měli zajistit, aby nepoužívali takovou vazbu ani nezměnili vazbu tak, že adresa vystavitele je null.  
   
-## <a name="saml-token-size-quotas"></a>Kvóty velikosti tokenu SAML  
- Pokud jsou tokeny jazyka tokenů s výrazy zabezpečení značkovací jazyk (SAML) serializovány ve zprávách, buď při jejich vydání službou TOKEN služby zabezpečení (STS), nebo když je klienti prezentují službám jako součást ověřování, musí být kvóta maximální velikosti zprávy dostatečně velké pro token SAML a další části zprávy. V normálních případech jsou dostatečné výchozí kvóty velikosti zprávy. Však v případech, kdy token SAML je velký, protože obsahuje stovky deklarací identity, kvóty by měly být zvýšeny tak, aby vyhovovaly serializovaný token. Další informace o kvótách naleznete v [tématu Důležité informace o zabezpečení dat](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md).  
+## <a name="saml-token-size-quotas"></a>Kvóty pro velikost tokenu SAML  
+ Pokud jsou ve zprávách serializovány tokeny jazyka SAML (Security Assert Markup Language), buď když jsou vydávány službou tokenů zabezpečení (STS), nebo když je klienti prezentují službám v rámci ověřování, maximální kvóta velikosti zprávy musí být dostatečně velká, aby se vešlo na token SAML a ostatní části zprávy. V normálních případech jsou dostatečné výchozí kvóty velikosti zprávy. V případech, kdy je token SAML velký, protože obsahuje stovky deklarací, se kvóty musí zvýšit tak, aby vyhovovaly serializovanému tokenu. Další informace o kvótách najdete v tématu věnovaném [bezpečnostním hlediskům pro data](security-considerations-for-data.md).  
   
-## <a name="set-securitybindingelementincludetimestamp-to-true-on-custom-bindings"></a>Nastavit SecurityBindingElement.IncludeTimestamp na True na vlastní vazby  
- Při vytváření vlastní vazby je <xref:System.ServiceModel.Channels.SecurityBindingElement.IncludeTimestamp%2A> `true`nutné nastavit na . V opačném <xref:System.ServiceModel.Channels.SecurityBindingElement.IncludeTimestamp%2A> případě, `false`pokud je nastavena na , a klient používá asymetrický token založený na klíči, jako je například certifikát X509, zpráva nebude podepsána.  
+## <a name="set-securitybindingelementincludetimestamp-to-true-on-custom-bindings"></a>Pro vlastní vazby nastavte SecurityBindingElement. IncludeTimestamp na true.  
+ Při vytváření vlastní vazby je nutné nastavit <xref:System.ServiceModel.Channels.SecurityBindingElement.IncludeTimestamp%2A> na `true` . V opačném případě, pokud <xref:System.ServiceModel.Channels.SecurityBindingElement.IncludeTimestamp%2A> je nastaven na `false` a klient používá asymetrický klíč založený na klíči, jako je například certifikát x509, zpráva nebude podepsána.  
   
 ## <a name="see-also"></a>Viz také
 
-- [Důležité informace o zabezpečení](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)
-- [Důležité informace o zabezpečení pro data](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md)
-- [Informace o zabezpečení metadat](../../../../docs/framework/wcf/feature-details/security-considerations-with-metadata.md)
+- [Otázky zabezpečení](security-considerations-in-wcf.md)
+- [Důležité informace o zabezpečení pro data](security-considerations-for-data.md)
+- [Informace o zabezpečení metadat](security-considerations-with-metadata.md)

@@ -2,32 +2,32 @@
 title: Komplexní trasování
 ms.date: 03/30/2017
 ms.assetid: f5ac7fc7-f97c-4313-b068-54e0c471b2aa
-ms.openlocfilehash: fd2964b39c758e41620fb453ddd8f61a1aa550aa
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: fc8fc448bdcf94ab25349f6b34961a34e5ed2a5a
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61912532"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84598577"
 ---
 # <a name="end-to-end-tracing"></a>Komplexní trasování
-Kompletní (e2e) trasování umožňuje vývojářům sledovat spuštění kódu v prozkoumat, proč se nezdařilo kódové cestě, nebo poskytnout podrobné trasování pro analýzu výkon a plánování kapacity pro infrastrukturu Windows Communication Foundation (WCF). Windows Communication Foundation (WCF) poskytuje tři mechanismy korelace pro usnadnění diagnostiky příčiny chyby: aktivit, přenosy a šíření.  
+Koncové trasování (e2e) umožňuje vývojářům sledovat spuštění kódu v infrastruktuře Windows Communication Foundation (WCF) a prozkoumat, proč se cesta k kódu nezdařila, nebo poskytnout podrobné trasování pro plánování kapacity a analýzu výkonu. Windows Communication Foundation (WCF) poskytuje tři mechanismy korelace, které vám pomůžou diagnostikovat příčinu chyby: aktivity, přenosy a šíření.  
   
- Zobrazit [scénáře trasování začátku do konce](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing-scenarios.md) seznam scénáře trasování začátku do konce a jejich odpovídajících aktivit a trasování návrhu.  
+ V tématu [ucelené scénáře trasování](end-to-end-tracing-scenarios.md) najdete seznam kompletních scénářů trasování a jejich činnost a návrh trasování.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Aktivita](../../../../../docs/framework/wcf/diagnostics/tracing/activity.md):  Popisuje aktivity trasování v modelu trasování Windows Communication Foundation (WCF).  
+ [Activity](activity.md): popisuje trasování aktivit v modelu trasování Windows Communication Foundation (WCF).  
   
- [Přenos](../../../../../docs/framework/wcf/diagnostics/tracing/transfer.md):  Popisuje přenosu v modelu trasování Windows Communication Foundation (WCF) a pomocí přenosu v korelovat aktivity v rámci koncových bodů.  
+ [Transfer](transfer.md): popisuje přenos v modelu trasování Windows Communication Foundation (WCF) a použití přenosu ke korelaci aktivit v rámci koncových bodů.  
   
- [Šíření](../../../../../docs/framework/wcf/diagnostics/tracing/propagation.md):  Popisuje rozšíření aktivity v Windows Communication Foundation (WCF) trasování modelu a pomocí šíření korelovat aktivity napříč koncovými body.  
+ [Šíření](propagation.md): popisuje šíření aktivity v modelu trasování Windows Communication Foundation (WCF) a použití šíření ke korelaci aktivit mezi koncovými body.  
   
- [Souhrn typů trasování](../../../../../docs/framework/wcf/diagnostics/tracing/trace-type-summary.md)  
+ [Souhrn typů trasování](trace-type-summary.md)  
   
- Poskytuje přehled všech aktivit typů trasování  
+ Poskytuje souhrn všech typů trasování aktivit.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Konfigurace trasování](../../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)
-- [Použití prohlížeče trasování služeb k zobrazení korelovaných tras a řešení problémů](../../../../../docs/framework/wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md)
-- [Scénáře komplexního trasování](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing-scenarios.md)
-- [Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md)
+- [Konfigurace trasování](configuring-tracing.md)
+- [Použití prohlížeče trasování služeb k zobrazení korelovaných tras a řešení problémů](using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md)
+- [Scénáře komplexního trasování](end-to-end-tracing-scenarios.md)
+- [Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../service-trace-viewer-tool-svctraceviewer-exe.md)

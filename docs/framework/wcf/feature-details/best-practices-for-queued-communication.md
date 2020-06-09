@@ -5,92 +5,92 @@ helpviewer_keywords:
 - queues [WCF], best practices
 - best practices [WCF], queued communication
 ms.assetid: 446a6383-cae3-4338-b193-a33c14a49948
-ms.openlocfilehash: b2f64faab6df678182fb39174c8a558b298a8748
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: af9ed7d64a60042297e071262be7610c4d791a51
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64584967"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84601345"
 ---
 # <a name="best-practices-for-queued-communication"></a>Doporučené postupy pro komunikaci ve frontě
-Toto téma obsahuje doporučené postupy pro komunikaci ve frontě ve Windows Communication Foundation (WCF). Následující části popisují doporučené postupy z hlediska scénář.  
+Toto téma popisuje doporučené postupy pro komunikaci ve frontě v Windows Communication Foundation (WCF). Následující části popisují doporučené postupy z perspektivy scénáře.  
   
-## <a name="fast-best-effort-queued-messaging"></a>Rychlé a Best Effort zařazených do fronty zasílání zpráv  
- Pro scénáře, které vyžadují poskytuje oddělení, který zařazených do fronty zasílání zpráv a rychlé, vysoce výkonné zasílání zpráv s záruky best effort, použijte netransakční fronta a nastavte <xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A> vlastnost `false`.  
+## <a name="fast-best-effort-queued-messaging"></a>Rychlé a nejlepší úsilí pro zasílání zpráv ve frontě  
+ Pro scénáře, které vyžadují oddělení zasílání zpráv ve frontě, poskytuje kvalitní a vysoce výkonné zasílání zpráv s osvědčenými zárukami, použijte netransakční frontu a nastavte <xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A> vlastnost na `false` .  
   
- Kromě toho můžete rozhodnete vám být naúčtovány náklady zápisu disku tak, že nastavíte <xref:System.ServiceModel.MsmqBindingBase.Durable%2A> vlastnost `false`.  
+ Kromě toho se můžete rozhodnout neúčtovat náklady na zápisy na disk nastavením <xref:System.ServiceModel.MsmqBindingBase.Durable%2A> vlastnosti na `false` .  
   
- Zabezpečení má vliv na výkon. Další informace najdete v tématu [faktory ovlivňující výkon](../../../../docs/framework/wcf/feature-details/performance-considerations.md).  
+ Zabezpečení má vliv na výkon. Další informace najdete v tématu věnovaném [důležitým informacím o výkonu](performance-considerations.md).  
   
-## <a name="reliable-end-to-end-queued-messaging"></a>Spolehlivé začátku do konce zasílání zpráv zařazených do fronty.  
- Následující části popisují doporučené postupy pro scénáře, které vyžadují začátku do konce spolehlivé zasílání zpráv.  
+## <a name="reliable-end-to-end-queued-messaging"></a>Spolehlivě kompletní zasílání zpráv ve frontě  
+ Následující části popisují doporučené postupy pro scénáře, které vyžadují komplexní spolehlivé zasílání zpráv.  
   
-### <a name="basic-reliable-transfer"></a>Základní spolehlivé přenosu  
- Spolehlivost začátku do konce, nastavte <xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A> vlastnost `true` k zajištění přenosu. <xref:System.ServiceModel.MsmqBindingBase.Durable%2A> Nastavenou na `true` nebo `false` v závislosti na vašich požadavcích (výchozí hodnota je `true`). Obecně platí <xref:System.ServiceModel.MsmqBindingBase.Durable%2A> je nastavena na `true` jako součást spolehlivost začátku do konce. Ohrožení snížení výkonu, ale umožňuje trvalý zprávu tak, aby zpráva nedojde ke ztrátě, pokud dojde k chybě správce fronty.  
+### <a name="basic-reliable-transfer"></a>Základní spolehlivý přenos  
+ Pro komplexní spolehlivost nastavte <xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A> vlastnost na, aby `true` se zajistil přenos. <xref:System.ServiceModel.MsmqBindingBase.Durable%2A>Vlastnost může být nastavena na `true` nebo `false` v závislosti na vašich požadavcích (výchozí nastavení je `true` ). Obecně se tato <xref:System.ServiceModel.MsmqBindingBase.Durable%2A> vlastnost nastavuje `true` jako součást komplexní spolehlivosti. Ohrožení zabezpečení je náklady na výkon, ale zpráva je odolná, takže pokud správce fronty selže, zpráva nebude ztracena.  
   
 ### <a name="use-of-transactions"></a>Použití transakcí  
- Transakce je nutné použít k zajištění spolehlivosti začátku do konce. `ExactlyOnce` záruky pouze ujistěte se, že se zprávy doručovaly do cílové fronty. Aby bylo zajištěno, že doručení zprávy, použijte transakce. Bez transakcí Pokud dojde k chybě služby, ztratíte zprávu, která je distribuována, ale ve skutečnosti se doručí do aplikace.  
+ Aby byla zajištěna komplexní spolehlivost, je nutné použít transakce. `ExactlyOnce`záruky zajišťují, že se zprávy doručí do cílové fronty. Chcete-li zajistit, aby byla zpráva přijata, použijte transakce. Bez transakcí, pokud dojde k chybě služby, ztratíte zprávu, která se doručuje, ale ve skutečnosti se doručí do aplikace.  
   
-### <a name="use-of-dead-letter-queues"></a>Použití fronty nedoručených zpráv  
- Fronty nedoručených zpráv – Ujistěte se, že budete upozorněni, pokud se nepodaří doručit do cílové fronty zprávu. Můžete použít fronty nedoručených zpráv poskytované systémem nebo vlastní frontu nedoručených zpráv. Obecně platí používat vlastní frontu nedoručených zpráv je nejvhodnější vzhledem k tomu, že se vám umožní odesílat nedoručené zprávy z jedné aplikace do jediné fronty nedoručených zpráv. V opačném případě jsou všechny nedoručených zpráv, ke kterým dochází pro všechny aplikace spuštěné v systému poskytována do jediné fronty. Každá aplikace musí vyhledejte ale fronty nedoručených zpráv nedoručených zpráv, které jsou relevantní pro danou aplikaci najít. V některých případech použití vlastní frontu nedoručených zpráv není vhodná, například při použití služby MSMQ 3.0.  
+### <a name="use-of-dead-letter-queues"></a>Použití front nedoručených zpráv  
+ Fronty nedoručených zpráv zajišťují, že budete upozorněni na to, jestli se zpráva nepovede doručit do cílové fronty. Můžete použít frontu nedoručených zpráv poskytnutou systémem nebo vlastní frontu nedoručených zpráv. Obecně platí, že použití vlastní fronty nedoručených zpráv je nejlepší, protože umožňuje posílání nedoručených zpráv z jedné aplikace do jediné fronty nedoručených zpráv. Jinak budou všechny nedoručené zprávy, ke kterým dochází pro všechny aplikace běžící v systému, doručovány do jediné fronty. Každá aplikace musí potom vyhledat zprávy nedoručených zpráv, které jsou relevantní pro danou aplikaci, ve frontě nedoručených zpráv. V některých případech není možné používat vlastní frontu nedoručených zpráv, například při použití služby MSMQ 3,0.  
   
- Vypnutí fronty nedoručených zpráv pro komunikaci spolehlivé začátku do konce se nedoporučuje.  
+ Vypnutí front nedoručených zpráv pro ucelenou spolehlivou komunikaci se nedoporučuje.  
   
- Další informace najdete v tématu [pomocí fronty nedoručených zpráv pro zpracování selhání přenosu zpráv](../../../../docs/framework/wcf/feature-details/using-dead-letter-queues-to-handle-message-transfer-failures.md).  
+ Další informace najdete v tématu [použití front nedoručených zpráv pro zpracování selhání přenosu zpráv](using-dead-letter-queues-to-handle-message-transfer-failures.md).  
   
-### <a name="use-of-poison-message-handling"></a>Používání zpracování Poison – zpráva  
- Zpracování zpráv Poison poskytuje možnost obnovení po selhání zpracování zpráv.  
+### <a name="use-of-poison-message-handling"></a>Použití zpracování nepoškozených zpráv  
+ Manipulace s neoprávněnými zprávami poskytuje možnost zotavení po selhání zpracování zpráv.  
   
- Pokud používáte funkci zpracování zpráv poison, ujistěte se, že <xref:System.ServiceModel.MsmqBindingBase.ReceiveErrorHandling%2A> je nastavena na odpovídající hodnotu. Nastavení na <xref:System.ServiceModel.ReceiveErrorHandling.Drop> znamená, že data budou ztracena. Na druhé straně ji nastavíte na <xref:System.ServiceModel.ReceiveErrorHandling.Fault> chyb stránkování hostitele služby, když zjistí počet nezpracovatelných zpráv. Použití služby MSMQ 3.0 <xref:System.ServiceModel.ReceiveErrorHandling.Fault> je nejlepší možnost nedošlo ke ztrátě dat a eliminuje přesunout nezpracovatelných zpráv. Pomocí služby MSMQ 4.0 <xref:System.ServiceModel.ReceiveErrorHandling.Move> je doporučený postup. <xref:System.ServiceModel.ReceiveErrorHandling.Move> Přesune poškozená po zprávy z fronty tak, aby služba můžou dál zpracovávat nové zprávy. Služba poison zpráv můžete následně zpracovat nezpracovatelná zpráva samostatně.  
+ Při použití funkce pro zpracování nezpracovatelných zpráv se ujistěte, že <xref:System.ServiceModel.MsmqBindingBase.ReceiveErrorHandling%2A> je vlastnost nastavena na odpovídající hodnotu. Nastavením této možnosti <xref:System.ServiceModel.ReceiveErrorHandling.Drop> znamená, že dojde ke ztrátě dat. Na druhé straně nastavíte tak, aby <xref:System.ServiceModel.ReceiveErrorHandling.Fault> při zjištění poškozené zprávy nedošlo k chybě hostitele služby. Při použití služby MSMQ 3,0 <xref:System.ServiceModel.ReceiveErrorHandling.Fault> je nejlepší volbou, jak zabránit ztrátě dat a přesunout neškodnou zprávu ze způsobů. <xref:System.ServiceModel.ReceiveErrorHandling.Move>Doporučený postup je použití služby MSMQ 4,0. <xref:System.ServiceModel.ReceiveErrorHandling.Move>Přesune nepoškozenou zprávu z fronty, aby mohla služba nadále zpracovávat nové zprávy. Služba nezpracovatelná zpráva pak může zpracovat nezpracovatelovou zprávu samostatně.  
   
- Další informace najdete v tématu [zpracování škodlivých zpráv](../../../../docs/framework/wcf/feature-details/poison-message-handling.md).  
+ Další informace naleznete v tématu [manipulace s Nezpracovatelovou zprávou](poison-message-handling.md).  
   
-## <a name="achieving-high-throughput"></a>Dosahuje vysoké propustnosti  
- K dosažení vysoké propustnosti na jeden koncový bod, použijte následující:  
+## <a name="achieving-high-throughput"></a>Dosažení vysoké propustnosti  
+ K dosažení vysoké propustnosti jednoho koncového bodu použijte následující:  
   
-- Transakční dávkování. Provedené dávkování zajistí, že počet zpráv najdete v rámci jedné transakce. Tím se optimalizují potvrzení transakcí, zvýšit celkový výkon. Náklady na dávkování je, že pokud dojde k selhání jedné zprávy v rámci služby batch, pak celý batch se vrátí zpět a zprávy musí být zpracované jeden po druhém, dokud je bezpečné batch znovu. Ve většině případů jsou vzácné, počet nezpracovatelných zpráv, takže dávkování je preferovaný způsob, jak zvýšit výkon systému, zejména v případě, že máte ostatní správci prostředků, které jsou součástí transakce. Další informace najdete v tématu [dávkování zpráv v transakci](../../../../docs/framework/wcf/feature-details/batching-messages-in-a-transaction.md).  
+- Vytransakční dávkování. Transakční dávkování zajišťuje, aby bylo možné číst mnoho zpráv v rámci jedné transakce. Tato operace optimalizuje potvrzení transakcí a zvyšuje celkový výkon. Náklady na dávkování znamená, že pokud dojde k selhání v jedné zprávě v rámci dávky, pak se celá dávka vrátí zpátky a zprávy se musí zpracovat po jednom, dokud nebude možné znovu spustit dávku. Ve většině případů jsou nefunkční zprávy zřídka, takže dávkování je preferovaným způsobem, jak zvýšit výkon systému, zejména v případě, že máte jiné správce prostředků, kteří se účastní transakce. Další informace najdete v tématu [dávkové zpracování zpráv v transakci](batching-messages-in-a-transaction.md).  
   
-- Souběžnost. Souběžnost zvyšuje propustnost, ale souběžnost ovlivňuje také kolize ke sdíleným prostředkům. Další informace najdete v tématu [souběžnosti](../../../../docs/framework/wcf/samples/concurrency.md).  
+- Concurrency. Souběžnost zvyšuje propustnost, ale souběžnost ovlivňuje také obsah sdílených prostředků. Další informace najdete v tématu [souběžnost](../samples/concurrency.md).  
   
-- Omezení šířky pásma. Pro zajištění optimálního výkonu omezte počet zpráv v dispečeru kanálu. Příklad toho, jak to provést, najdete v části [omezování](../../../../docs/framework/wcf/samples/throttling.md).  
+- Omezování. Pro zajištění optimálního výkonu omezte počet zpráv v kanálu dispečera. Příklad toho, jak to udělat, najdete v tématu [omezování](../samples/throttling.md).  
   
- Při použití dávkování, mějte na paměti, že omezování a souběžnosti přeložit do souběžných listů.  
+ Při použití dávkového zpracování Pamatujte na to, že převod souběžnosti a omezování omezuje na souběžné dávky.  
   
- K dosažení vyšší propustnost a dostupnost, použijte farmu služby WCF, které načítají z fronty. To vyžaduje, aby všechny tyto služby vystavit stejný kontrakt na stejný koncový bod. Farma přístup je nejvhodnější pro aplikace, které mají vysokou produkční sazby zpráv, protože umožňuje použít řadu služeb pro všechny číst ze stejné fronty.  
+ Abyste dosáhli vyšší propustnosti a dostupnosti, použijte farmu služeb WCF, které se čtou z fronty. To vyžaduje, aby všechny tyto služby zveřejnily stejný kontrakt na stejném koncovém bodu. Přístup k farmě funguje nejlépe pro aplikace s vysokými provozními sazbami zpráv, protože umožňuje několika službám čtení ze stejné fronty.  
   
- Při použití farmy, mějte na paměti, že služba MSMQ 3.0 nepodporuje vzdálené transakční operace čtení. MSMQ 4.0 podporuje vzdálené transakční operace čtení.  
+ Při použití farmy mějte na paměti, že MSMQ 3,0 nepodporuje vzdálené čtení v transakčním režimu. Služba MSMQ 4,0 podporuje vzdálené čtení v transakčním režimu.  
   
- Další informace najdete v tématu [dávkování zpráv v transakci](../../../../docs/framework/wcf/feature-details/batching-messages-in-a-transaction.md) a [rozdíly ve funkcích služby Řízení front ve Windows Vista, Windows Server 2003 a Windows XP](../../../../docs/framework/wcf/feature-details/diff-in-queue-in-vista-server-2003-windows-xp.md).  
+ Další informace najdete v tématu [dávkové zpracování zpráv v transakcích](batching-messages-in-a-transaction.md) a [rozdílech ve funkcích služby Řízení front v systému Windows Vista, Windows Server 2003 a Windows XP](diff-in-queue-in-vista-server-2003-windows-xp.md).  
   
-## <a name="queuing-with-unit-of-work-semantics"></a>S jednotkou práce sémantiku řízení front  
- V některých scénářích může souviset skupinu zpráv do fronty, a proto je důležité pořadí těchto zpráv. V takových scénářích zpracovat skupinu související zprávy společně jako jednu jednotku: všechny zprávy úspěšně zpracovat nebo žádný není. K implementaci takové chování, použijte relace s frontami.  
+## <a name="queuing-with-unit-of-work-semantics"></a>Zařazení do fronty s sémantikou pracovní jednotky  
+ V některých scénářích může být skupina zpráv ve frontě spojená a proto je pořadí těchto zpráv významné. V takových scénářích zpracujte skupinu souvisejících zpráv jako jednu jednotku: obě zprávy se úspěšně zpracovávají nebo žádné nejsou. K implementaci takového chování použijte relace s frontami.  
   
- Další informace najdete v tématu [seskupování zpráv zařazených do fronty v relaci](../../../../docs/framework/wcf/feature-details/grouping-queued-messages-in-a-session.md).  
+ Další informace najdete v tématu [seskupování zpráv zařazených do fronty v relaci](grouping-queued-messages-in-a-session.md).  
   
-## <a name="correlating-request-reply-messages"></a>Korelace zprávy požadavek odpověď  
- I když fronty jsou obvykle jednosměrné, v některých scénářích možná budete chtít korelaci odpovědi přijaté žádosti zaslané dříve. Pokud budete potřebovat tato korelace, doporučuje se, že použijete vlastní záhlaví zprávy protokolu SOAP, která obsahuje informace pro korelaci s touto zprávou. Obvykle odesílatel připojí tato hlavička se zprávou a příjemce při zpracování zprávy a odpověď zpět s novou zprávu do fronty odpovědí připojí odesílatele hlavičky, který obsahuje informace pro korelaci, mohli odesílatele Identifikujte zprávy s odpovědí se zprávy s požadavkem.  
+## <a name="correlating-request-reply-messages"></a>Korelace zpráv požadavku a odpovědi  
+ I když jsou fronty obvykle jednosměrné, v některých případech můžete chtít korelovat odpověď přijatou k žádosti odeslané dříve. Pokud požadujete takovou korelaci, doporučujeme, abyste použili vlastní hlavičku zprávy SOAP, která obsahuje informace o korelaci se zprávou. Odesílatel obvykle připojí tuto hlavičku k této zprávě a příjemcem při zpracování zprávy a odpovědi zpět na novou zprávu ve frontě odpovědí připojí hlavičku zprávy odesílatele, která obsahuje informace o korelaci, aby odesilatel mohl identifikovat zprávu odpovědi s požadavkem na zprávu.  
   
-## <a name="integrating-with-non-wcf-applications"></a>Integrace s aplikacemi bez WCF  
- Použití `MsmqIntegrationBinding` při integraci služby WCF nebo klienty pomocí jiných WCF služby nebo klientů. Aplikace bez WCF může být MSMQ aplikace napsané s využitím System.Messaging, modelu COM +, Visual Basic nebo C++.  
+## <a name="integrating-with-non-wcf-applications"></a>Integrace s aplikacemi nepodporujícími technologii WCF  
+ Použijte `MsmqIntegrationBinding` při integraci služeb WCF nebo klientů se službami nebo klienty, kteří nejsou WCF. Aplikace jiného typu než WCF může být aplikace služby MSMQ napsaná pomocí System. Messaging, COM+, Visual Basic nebo C++.  
   
- Při použití `MsmqIntegrationBinding`, mějte na paměti z následujících akcí:  
+ Při použití nástroje `MsmqIntegrationBinding` mějte na paměti následující skutečnosti:  
   
-- Tělo zprávy WCF není stejný jako text zprávy služby MSMQ. Při odesílání zprávy WCF pomocí vazbu s frontou, text zprávy WCF je umístěn uvnitř zprávy služby MSMQ. Infrastruktura služby MSMQ je oblivious tyto dodatečné informace, ji uvidí jen zprávy služby MSMQ.  
+- Tělo zprávy WCF není stejné jako tělo zprávy služby MSMQ. Při odesílání zprávy WCF pomocí vazby zařazené do fronty je text zprávy WCF umístěný uvnitř zprávy služby MSMQ. Infrastruktura služby MSMQ se oblivious na tyto dodatečné informace; uvidí jenom zprávu služby MSMQ.  
   
-- `MsmqIntegrationBinding` podporuje typy oblíbených serializace. Na základě serializace typu, typ těla obecná zpráva <xref:System.ServiceModel.MsmqIntegration.MsmqMessage%601>, parametry jiného typu. Například <xref:System.ServiceModel.MsmqIntegration.MsmqMessageSerializationFormat.ByteArray> vyžaduje `MsmqMessage\<byte[]>` a <xref:System.ServiceModel.MsmqIntegration.MsmqMessageSerializationFormat.Stream> vyžaduje `MsmqMessage<Stream>`.  
+- `MsmqIntegrationBinding`podporuje oblíbené typy serializace. Na základě typu serializace typ textu obecné zprávy, <xref:System.ServiceModel.MsmqIntegration.MsmqMessage%601> , používá jiné parametry typu. Například <xref:System.ServiceModel.MsmqIntegration.MsmqMessageSerializationFormat.ByteArray> vyžaduje `MsmqMessage\<byte[]>` a <xref:System.ServiceModel.MsmqIntegration.MsmqMessageSerializationFormat.Stream> vyžaduje `MsmqMessage<Stream>` .  
   
-- K serializaci kódu XML, můžete zadat pomocí známého typu `KnownTypes` atribut na [ \<chování >](../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-servicebehaviors.md) element, který se pak použije k určení, jak zrušit serializaci zpráv XML.  
+- Pomocí serializace XML lze určit známý typ pomocí `KnownTypes` atributu u [\<behavior>](../../configure-apps/file-schema/wcf/behavior-of-servicebehaviors.md) prvku, který je poté použit k určení, jak se má zpráva XML deserializovat.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Zařazování do front ve WCF](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)
-- [Postupy: Výměna zpráv zařazených do fronty pomocí koncových bodů WCF](../../../../docs/framework/wcf/feature-details/how-to-exchange-queued-messages-with-wcf-endpoints.md)
-- [Postupy: Výměna zpráv pomocí koncových bodů WCF a aplikací služby Řízení front zpráv](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)
-- [Seskupování zpráv zařazených do fronty v relaci](../../../../docs/framework/wcf/feature-details/grouping-queued-messages-in-a-session.md)
-- [Dávkování zpráv v transakci](../../../../docs/framework/wcf/feature-details/batching-messages-in-a-transaction.md)
-- [Zpracování chyb přenosu zpráv pomocí front nedoručených zpráv](../../../../docs/framework/wcf/feature-details/using-dead-letter-queues-to-handle-message-transfer-failures.md)
-- [Zpracování škodlivých zpráv](../../../../docs/framework/wcf/feature-details/poison-message-handling.md)
-- [Rozdíly ve funkcích zařazování do front ve Windows Vista, Windows Serveru 2003 a Windows XP](../../../../docs/framework/wcf/feature-details/diff-in-queue-in-vista-server-2003-windows-xp.md)
-- [Zabezpečení zpráv pomocí zabezpečení přenosu](../../../../docs/framework/wcf/feature-details/securing-messages-using-transport-security.md)
-- [Zabezpečení zpráv](../../../../docs/framework/wcf/feature-details/securing-messages-using-message-security.md)
-- [Řešení problémů se zasíláním zpráv zařazovaných do front](../../../../docs/framework/wcf/feature-details/troubleshooting-queued-messaging.md)
+- [Fronty ve WCF](queuing-in-wcf.md)
+- [Postupy: Výměna zpráv zařazených do fronty s koncovými body WCF](how-to-exchange-queued-messages-with-wcf-endpoints.md)
+- [Postupy: Výměna zpráv s koncovými body WCF a aplikací pro řazení zpráv do front](how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)
+- [Seskupování zpráv zařazených do fronty v relaci](grouping-queued-messages-in-a-session.md)
+- [Dávkování zpráv v transakci](batching-messages-in-a-transaction.md)
+- [Zpracování chyb přenosu zpráv pomocí front nedoručených zpráv](using-dead-letter-queues-to-handle-message-transfer-failures.md)
+- [Zpracování škodlivých zpráv](poison-message-handling.md)
+- [Rozdíly ve funkcích zařazování do front ve Windows Vista, Windows Serveru 2003 a Windows XP](diff-in-queue-in-vista-server-2003-windows-xp.md)
+- [Zabezpečení zpráv pomocí zabezpečení přenosu](securing-messages-using-transport-security.md)
+- [Zabezpečení zpráv](securing-messages-using-message-security.md)
+- [Řešení potíží se zasíláním zpráv zařazovaných do front](troubleshooting-queued-messaging.md)

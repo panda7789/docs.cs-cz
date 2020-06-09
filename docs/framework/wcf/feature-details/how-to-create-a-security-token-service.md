@@ -8,122 +8,122 @@ helpviewer_keywords:
 - WCF, federation
 - federation
 ms.assetid: 98e82101-4cff-4bb8-a220-f7abed3556e5
-ms.openlocfilehash: 39c54c5d91c38e43fd7d0b1205537948e84a0782
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 1cfcca524e5dd2b0c1560eb7600795766e2db1d6
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64587533"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84598954"
 ---
 # <a name="how-to-create-a-security-token-service"></a>Postupy: Vytvoření služby tokenů zabezpečení
-Služba tokenů zabezpečení implementuje protokol definovaných ve specifikaci WS-Trust. Tento protokol definuje formáty zpráv a zpráv exchange vzory pro vystavování, obnovení, zrušení a ověřování tokenů zabezpečení. Služba tokenů zabezpečení obsahuje nejméně jeden z těchto možností. Toto téma vypadá nanejvýš běžný scénář: implementace vystavování tokenů.  
+Služba tokenů zabezpečení implementuje protokol definovaný ve specifikaci WS-Trust. Tento protokol definuje formáty zpráv a vzory výměny zpráv pro vydávání, obnovování, rušení a ověřování tokenů zabezpečení. Daná služba tokenů zabezpečení poskytuje jednu nebo více těchto možností. Toto téma se zabývá nejběžnějším scénářem: implementace vystavování tokenu.  
   
-## <a name="issuing-tokens"></a>Vystavování tokenů  
- WS-Trust definuje formáty zpráv, na základě `RequestSecurityToken` element schématu XML definice jazyk (XSD) schématu, a `RequestSecurityTokenResponse` element schématu XSD pro provádění vystavování tokenů. Kromě toho definuje přidružené identifikátory Uniform Resource (identifikátory URI) akce. Akci přidruženou k identifikátoru URI `RequestSecurityToken` zpráva `http://schemas.xmlsoap.org/ws/2005/02/trust/RST/Issue`. Akci přidruženou k identifikátoru URI `RequestSecurityTokenResponse` zpráva `http://schemas.xmlsoap.org/ws/2005/02/trust/RSTR/Issue`.  
+## <a name="issuing-tokens"></a>Vydávání tokenů  
+ WS-Trust definuje formáty zpráv založené na `RequestSecurityToken` elementu schématu XML Schema Definition Language (XSD) a `RequestSecurityTokenResponse` elementu schématu XSD pro vystavení tokenu. Kromě toho definuje přidružené akce identifikátory URI (Uniform Resource Identifier). Identifikátor URI akce přidružený ke `RequestSecurityToken` zprávě je `http://schemas.xmlsoap.org/ws/2005/02/trust/RST/Issue` . Identifikátor URI akce přidružený ke `RequestSecurityTokenResponse` zprávě je `http://schemas.xmlsoap.org/ws/2005/02/trust/RSTR/Issue` .  
   
-### <a name="request-message-structure"></a>Struktura zprávy požadavku  
- Struktura zprávy požadavku problém se obvykle skládá z následujících položek:  
+### <a name="request-message-structure"></a>Požadovat strukturu zpráv  
+ Struktura zprávy požadavku na problém se obvykle skládá z následujících položek:  
   
-- Žádost o zadejte identifikátor URI s hodnotou `http://schemas.xmlsoap.org/ws/2005/02/trust/Issue`.
+- Identifikátor URI typu požadavku s hodnotou `http://schemas.xmlsoap.org/ws/2005/02/trust/Issue` .
   
-- Token typu identifikátoru URI. Pro tokeny zabezpečení kontrolní výrazy SAML (Markup Language) 1.1, hodnota tohoto identifikátoru URI je `http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV1.1`.  
+- Identifikátor URI typu tokenu. Pro tokeny SAML (Security Assert Markup Language) 1,1 je hodnota tohoto identifikátoru URI `http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV1.1` .  
   
-- Velikost klíče hodnota, která určuje počet bitů v klíči, který se má přidružit vydaný token.  
+- Hodnota velikosti klíče určující počet bitů v klíči, které mají být přidruženy k vydanému tokenu.  
   
-- Klíče typu identifikátoru URI. Pro symetrické klíče, hodnota tohoto identifikátoru URI je `http://schemas.xmlsoap.org/ws/2005/02/trust/SymmetricKey`.  
+- Identifikátor URI typu klíče. U symetrických klíčů je hodnota tohoto identifikátoru URI `http://schemas.xmlsoap.org/ws/2005/02/trust/SymmetricKey` .  
   
- Kromě toho několik dalších položek, může být k dispozici:  
+ Kromě toho může být k dispozici několik dalších položek:  
   
-- Materiál klíče, který klient poskytl.  
+- Klíčový materiál poskytovaný klientem  
   
-- Informace o oboru, která určuje, který se použije vydaný token s cílovou službu.  
+- Informace o oboru, které označují cílovou službu, se kterou vydaný token bude použit.  
   
- Služba tokenů zabezpečení používá informace ve zprávě požadavku problém při vytvoří zprávu odpovědi problém.  
+ Služba tokenů zabezpečení používá informace ve zprávě s požadavkem na vydání zprávy při sestavování zprávy s odpovědí na problém.  
   
-## <a name="response-message-structure"></a>Struktura zpráva odpovědi  
- Struktura zprávu odpovědi problém se obvykle skládá z následujících položek;  
+## <a name="response-message-structure"></a>Struktura zprávy odpovědi  
+ Struktura zprávy odpovědi na problém se obvykle skládá z následujících položek:  
   
-- Token vydaný zabezpečení, třeba kontrolní výraz SAML 1.1.  
+- Vydaný token zabezpečení, například kontrolní výraz SAML 1,1.  
   
-- Token důkazu přidružené k tokenu zabezpečení. Pro symetrické klíče je to často zašifrované materiál klíče.  
+- Token důkazu přidružený k tokenu zabezpečení. U symetrických klíčů je to často šifrovaný tvar materiálu klíče.  
   
-- Odkazy na token vydaný zabezpečení. Služba tokenů zabezpečení obvykle vrací odkaz, který se dá použít při vydaný token se zobrazí následující zprávy odeslané klienta a další, který se dá použít při token není k dispozici v dalších zpráv.  
+- Odkazy na vydaný token zabezpečení Služba tokenů zabezpečení obvykle vrací odkaz, který může být použit v případě, že se vydaný token zobrazuje v následné zprávě odeslané klientem a další, které lze použít, když se token nenachází v následných zprávách.  
   
- Kromě toho několik dalších položek, může být k dispozici:  
+ Kromě toho může být k dispozici několik dalších položek:  
   
-- Materiál klíče poskytovaných službou tokenu zabezpečení.  
+- Klíčový materiál poskytovaný službou tokenů zabezpečení.  
   
-- Algoritmus potřebných pro výpočet sdílený klíč.  
+- Algoritmus potřebný k výpočtu sdíleného klíče.  
   
-- Informace o životnosti pro vydaný token.  
+- Informace o životnosti vydaného tokenu.  
   
-## <a name="processing-request-messages"></a>Zpracování zpráv požadavků  
- Služba tokenů zabezpečení zpracuje žádost o problém zkoumání různých součástí zprávy s požadavkem a zajistit, aby mohla vystavovat token, který splňuje požadavek. Služba tokenů zabezpečení musí určit následující předtím, než vytvoří token, který má být vydaný:  
+## <a name="processing-request-messages"></a>Zpracování zpráv s požadavky  
+ Služba tokenů zabezpečení zpracovává žádost o vydání vyzkoumáním různých částí zprávy požadavku a zajištěním, že může vydat token, který požadavek splní. Služba tokenů zabezpečení musí před vytvořením tokenu, který se má vydat, určit následující:  
   
-- Požadavek ve skutečnosti je žádost o token vystavování.  
+- Požadavek je skutečně požadavkem na vydání tokenu.  
   
 - Služba tokenů zabezpečení podporuje požadovaný typ tokenu.  
   
-- Žadatel je autorizovaný k odeslání požadavku.  
+- Žadatel má oprávnění k vytvoření žádosti.  
   
-- Služba tokenů zabezpečení můžete očekávání žadatele s ohledem na materiál klíče.  
+- Služba tokenů zabezpečení může splňovat očekávání žadatele s ohledem na klíčový materiál.  
   
- Dvě důležité části vytváření token určování jaké klíč k podepsání token s a jaké klíč k šifrování pomocí sdíleného klíče. Token musí být podepsané tak, že když klient poskytne token, který má cílová služba service můžete určit, který byl token vydán službou tokenu zabezpečení, který důvěřuje. Materiál klíče je potřeba šifrovat tak, že cílová služba mohly dešifrovat tohoto klíče.  
+ Dvě důležité části konstrukce tokenu určují, který klíč k podepsání tokenu má a jaký klíč k šifrování sdíleného klíče má. Token musí být podepsán, aby když klient prezentuje token cílové službě, může zjistit, že token byl vydán službou tokenu zabezpečení, kterou důvěřuje. Klíčový materiál musí být zašifrovaný takovým způsobem, že cílová služba může tento klíčový materiál dešifrovat.  
   
- Podepisování kontrolní výraz SAML zahrnuje vytvoření <xref:System.IdentityModel.Tokens.SigningCredentials> instance. Konstruktor pro tuto třídu používá následující:  
+ Podepisování kontrolního výrazu SAML zahrnuje vytvoření <xref:System.IdentityModel.Tokens.SigningCredentials> instance. Konstruktor pro tuto třídu používá následující:  
   
-- A <xref:System.IdentityModel.Tokens.SecurityKey> pro klíč k podepsání kontrolního výrazu SAML.  
+- Klíč, který se <xref:System.IdentityModel.Tokens.SecurityKey> má použít k podepsání kontrolního výrazu SAML.  
   
-- Řetězec, který určuje použití algoritmu podpisu.  
+- Řetězec identifikující algoritmus podpisu, který se má použít.  
   
-- Řetězec, který určuje použití algoritmu digest.  
+- Řetězec identifikující algoritmus Digest, který má být použit.  
   
-- Volitelně můžete <xref:System.IdentityModel.Tokens.SecurityKeyIdentifier> , který určuje klíč k podepsání kontrolního výrazu.  
+- Volitelně, <xref:System.IdentityModel.Tokens.SecurityKeyIdentifier> který identifikuje klíč, který se má použít k podepsání kontrolního výrazu.  
   
  [!code-csharp[c_CreateSTS#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_creatests/cs/source.cs#1)]
  [!code-vb[c_CreateSTS#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_creatests/vb/source.vb#1)]  
   
- Sdílený klíč šifrování zahrnuje pořizování materiál klíče a šifrování pomocí klíče k dešifrování sdílený klíč můžete použít cílovou službu. Obvykle se používá veřejný klíč cílovou službu.  
+ Šifrování sdíleného klíče zahrnuje pořízení materiálu klíče a jeho šifrování pomocí klíče, který může cílová služba použít k dešifrování sdíleného klíče. Obvykle se používá veřejný klíč cílové služby.  
   
  [!code-csharp[c_CreateSTS#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_creatests/cs/source.cs#2)]
  [!code-vb[c_CreateSTS#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_creatests/vb/source.vb#2)]  
   
- Kromě toho <xref:System.IdentityModel.Tokens.SecurityKeyIdentifier> pro šifrovaný klíč je potřeba.  
+ <xref:System.IdentityModel.Tokens.SecurityKeyIdentifier>Pro šifrovaný klíč je navíc potřeba.  
   
  [!code-csharp[c_CreateSTS#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_creatests/cs/source.cs#3)]
  [!code-vb[c_CreateSTS#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_creatests/vb/source.vb#3)]  
   
- To <xref:System.IdentityModel.Tokens.SecurityKeyIdentifier> se pak použije k vytvoření `SamlSubject` jako součást `SamlToken`.  
+ <xref:System.IdentityModel.Tokens.SecurityKeyIdentifier>Pak se použije k vytvoření `SamlSubject` jako součást `SamlToken` .  
   
  [!code-csharp[c_CreateSTS#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_creatests/cs/source.cs#4)]
  [!code-vb[c_CreateSTS#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_creatests/vb/source.vb#4)]  
   
- Další informace najdete v tématu [ukázka federace](../../../../docs/framework/wcf/samples/federation-sample.md).  
+ Další informace najdete v tématu [federace – ukázka](../samples/federation-sample.md).  
   
-## <a name="creating-response-messages"></a>Vytváření zprávy odpovědi  
- Po služby tokenů zabezpečení zpracuje žádost o problému a vytvoří token, který má být vydána spolu s klíč důkazu, zprávy s odpovědí musí být vytvořen, včetně alespoň nedokáže token důkazu a vystavený token odkazy. Vydaný token je obvykle <xref:System.IdentityModel.Tokens.SamlSecurityToken> vytvořené z <xref:System.IdentityModel.Tokens.SamlAssertion>, jak je znázorněno v následujícím příkladu.  
+## <a name="creating-response-messages"></a>Vytváření zpráv odpovědí  
+ Jakmile služba tokenů zabezpečení zpracuje požadavek na problém a sestaví token, který se má vystavit spolu s klíčem ověření, musí být vytvořena zpráva odpovědi, včetně alespoň požadovaného tokenu, tokenu důkazu a odkazů na vydané tokeny. Vydaný token je obvykle <xref:System.IdentityModel.Tokens.SamlSecurityToken> vytvořen z rozhraní <xref:System.IdentityModel.Tokens.SamlAssertion> , jak je znázorněno v následujícím příkladu.  
   
  [!code-csharp[c_CreateSTS#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_creatests/cs/source.cs#5)]
  [!code-vb[c_CreateSTS#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_creatests/vb/source.vb#5)]  
   
- V případě, kdy služba tokenů zabezpečení poskytuje materiál sdíleného klíče, je token důkazu vytvořená tak, že vytvoříte <xref:System.ServiceModel.Security.Tokens.BinarySecretSecurityToken>.  
+ V případě, že služba tokenů zabezpečení poskytuje materiál sdíleného klíče, je token důkazu vytvořen vytvořením <xref:System.ServiceModel.Security.Tokens.BinarySecretSecurityToken> .  
   
  [!code-csharp[c_CreateSTS#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_creatests/cs/source.cs#6)]
  [!code-vb[c_CreateSTS#6](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_creatests/vb/source.vb#6)]  
   
- Další informace o tom, jak vytvořit token důkazu, když klient a služba tokenů zabezpečení poskytují materiál klíče pro sdílený klíč najdete v tématu [ukázka federace](../../../../docs/framework/wcf/samples/federation-sample.md).  
+ Další informace o tom, jak vytvořit token důkazu v případě, že klient a služba tokenů zabezpečení poskytují materiál klíče pro sdílený klíč, najdete v tématu [federace – ukázka](../samples/federation-sample.md).  
   
- Vydaný token odkazy jsou vytvořeny ve vytváření instancí <xref:System.IdentityModel.Tokens.SecurityKeyIdentifierClause> třídy.  
+ Odkazy na vydané tokeny jsou vytvořené vytvořením instancí <xref:System.IdentityModel.Tokens.SecurityKeyIdentifierClause> třídy.  
   
  [!code-csharp[c_CreateSTS#7](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_creatests/cs/source.cs#7)]
  [!code-vb[c_CreateSTS#7](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_creatests/vb/source.vb#7)]  
   
- Tyto různé hodnoty jsou pak serializován do zprávy s odpovědí vrácen do klienta.  
+ Tyto různé hodnoty jsou poté serializovány do zprávy odpovědi vrácené klientovi.  
   
 ## <a name="example"></a>Příklad  
- Úplný kód pro službu tokenů zabezpečení, najdete v části [ukázka federace](../../../../docs/framework/wcf/samples/federation-sample.md).  
+ Úplný kód pro službu tokenu zabezpečení najdete v tématu [federace – ukázka](../samples/federation-sample.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.IdentityModel.Tokens.SigningCredentials>
 - <xref:System.IdentityModel.Tokens.SecurityKey>
@@ -132,4 +132,4 @@ Služba tokenů zabezpečení implementuje protokol definovaných ve specifikaci
 - <xref:System.IdentityModel.Tokens.SamlAssertion>
 - <xref:System.ServiceModel.Security.Tokens.BinarySecretSecurityToken>
 - <xref:System.IdentityModel.Tokens.SecurityKeyIdentifierClause>
-- [Ukázka federace](../../../../docs/framework/wcf/samples/federation-sample.md)
+- [Ukázka federace](../samples/federation-sample.md)

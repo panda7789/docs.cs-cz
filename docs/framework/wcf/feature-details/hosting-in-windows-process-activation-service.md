@@ -4,17 +4,17 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - hosting services [WCF], WAS
 ms.assetid: d2b9d226-15b7-41fc-8c9a-cb651ac20ecd
-ms.openlocfilehash: 1882feee4e8071f1d32fb59ab02519c6e6fe2684
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: d0253202b0fad9a452507ed4296bc4a09b78e569
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84143560"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597303"
 ---
 # <a name="hosting-in-windows-process-activation-service"></a>Hostování v Aktivační službě procesů systému Windows
 Aktivační služba procesů systému Windows (WAS) spravuje aktivaci a životnost pracovních procesů, které obsahují aplikace, které hostují služby Windows Communication Foundation (WCF). Model procesu WAS generalizuje model procesu IIS 6,0 pro server HTTP tím, že odebere závislost na HTTP. To umožňuje službám WCF používat protokoly HTTP i non-HTTP, jako je NET. TCP, v hostitelském prostředí, které podporuje aktivaci prostřednictvím zpráv, a nabízí možnost hostovat v daném počítači velký počet aplikací.  
   
- Další informace o vytváření služby WCF, která běží v prostředí hostování, najdete v tématu [How to: Host a WCF Service in was](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md).  
+ Další informace o vytváření služby WCF, která běží v prostředí hostování, najdete v tématu [How to: Host a WCF Service in was](how-to-host-a-wcf-service-in-was.md).  
   
  Model procesu WAS obsahuje několik funkcí, které umožní hostování aplikací způsobem, který je robustnější, více spravovatelnější a používá prostředky efektivně:  
   
@@ -34,7 +34,7 @@ Aktivační služba procesů systému Windows (WAS) spravuje aktivaci a životno
   
  Následující tabulka ilustruje několik možných scénářů adresování pro weby s vazbami lokalit HTTP i bez HTTP.  
   
-|Scenario|Vazby webu|Cesta k aplikaci|Identifikátory URI základních aplikací|  
+|Scénář|Vazby webu|Cesta k aplikaci|Identifikátory URI základních aplikací|  
 |--------------|-------------------|----------------------|---------------------------|  
 |Jenom HTTP|http: 80:\*|/appTwo|`http://localhost/appTwo/`|  
 |HTTP i non-HTTP|http: 80:\*<br /><br /> NET. TCP: 808:\*|/appTwo|`http://localhost/appTwo/`<br />`net.tcp://localhost/appTwo/`|  
@@ -50,8 +50,8 @@ Aktivační služba procesů systému Windows (WAS) spravuje aktivaci a životno
   
 ## <a name="see-also"></a>Viz také
 
-- [Architektura aktivace WAS](../../../../docs/framework/wcf/feature-details/was-activation-architecture.md)
-- [Konfigurace WAS pro použití s WCF](../../../../docs/framework/wcf/feature-details/configuring-the-wpa--service-for-use-with-wcf.md)
-- [Postupy: Instalace a konfigurace aktivačních komponent WCF](../../../../docs/framework/wcf/feature-details/how-to-install-and-configure-wcf-activation-components.md)
-- [Postupy: Hostování služby WCF ve WAS](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md)
+- [Architektura aktivace WAS](was-activation-architecture.md)
+- [Konfigurace WAS pro použití s WCF](configuring-the-wpa--service-for-use-with-wcf.md)
+- [Postupy: Instalace a konfigurace aktivačních komponent WCF](how-to-install-and-configure-wcf-activation-components.md)
+- [Postupy: Hostování služby WCF ve WAS](how-to-host-a-wcf-service-in-was.md)
 - [Funkce hostování technologie Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677189(v=azure.10))

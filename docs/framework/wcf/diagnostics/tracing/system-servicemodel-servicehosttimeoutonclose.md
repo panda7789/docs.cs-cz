@@ -2,21 +2,21 @@
 title: System.ServiceModel.ServiceHostTimeoutOnClose
 ms.date: 03/30/2017
 ms.assetid: 89f360d2-5bed-4677-ab55-26d9bd12695a
-ms.openlocfilehash: 3e3553ac1c2abd3d5dabc55a4e458babc1cc87bc
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b51fdd919e28a0a8bfc5ca39df27d6d0ed96ffcd
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62039803"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597771"
 ---
 # <a name="systemservicemodelservicehosttimeoutonclose"></a>System.ServiceModel.ServiceHostTimeoutOnClose
 System.ServiceModel.ServiceHostTimeoutOnClose  
   
 ## <a name="description"></a>Popis  
- Operaci zavření ServiceHost vypršení časového limitu. To znamená, že některé duplexních kanálů s relacemi nebyly správně vypnutí klient a může byla pravděpodobně přerušena. Upravte výchozí dobu upravte časový limit pro uzavření.  
+ Vypršel časový limit operace ukončení třídy ServiceHost. To znamená, že klient správně neukončil některé kanály relací a mohl by být přerušen. Úpravou výchozího času nastavte časový limit ukončení.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Trasování](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [Řešení problémů s aplikací pomocí trasování](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
-- [Správa a diagnostika](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [Trasování](index.md)
+- [Řešení potíží s aplikací pomocí trasování](using-tracing-to-troubleshoot-your-application.md)
+- [Správa a diagnostika](../index.md)

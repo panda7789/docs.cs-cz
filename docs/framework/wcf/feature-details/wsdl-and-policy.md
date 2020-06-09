@@ -2,12 +2,12 @@
 title: WSDL a zásady
 ms.date: 03/30/2017
 ms.assetid: cea87440-3519-4640-8494-b8a2b0e88c84
-ms.openlocfilehash: b032f91999695d848f20fac5009047dcc2e20451
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 201920a8ebf639c74acfb20b2e990c8bbc0c5b55
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144679"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600098"
 ---
 # <a name="wsdl-and-policy"></a>WSDL a zásady
 Toto téma se věnuje Windows Communication Foundation (WCF) WSDL 1,1, WS-Policy a WS-PolicyAttachment Details a také další kontrolní výrazy WS-Policy a rozšíření WSDL 1,1 zavedené službou WCF.  
@@ -74,6 +74,6 @@ Toto téma se věnuje Windows Communication Foundation (WCF) WSDL 1,1, WS-Policy
   
 ## <a name="see-also"></a>Viz také
 
-- [Vlastní publikování WSDL](../../../../docs/framework/wcf/samples/custom-wsdl-publication.md)
-- [Postupy: Export vlastního WSDL](../../../../docs/framework/wcf/extending/how-to-export-custom-wsdl.md)
-- [Postupy: Import vlastního WSDL](../../../../docs/framework/wcf/extending/how-to-import-custom-wsdl.md)
+- [Vlastní publikování WSDL](../samples/custom-wsdl-publication.md)
+- [Postupy: Export vlastního WSDL](../extending/how-to-export-custom-wsdl.md)
+- [Postupy: Import vlastního WSDL](../extending/how-to-import-custom-wsdl.md)

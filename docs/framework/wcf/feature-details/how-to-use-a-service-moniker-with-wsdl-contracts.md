@@ -2,12 +2,12 @@
 title: 'Postupy: Použití monikeru služby u kontraktů WSDL'
 ms.date: 03/30/2017
 ms.assetid: a88d9650-bb50-4f48-8c85-12f5ce98a83a
-ms.openlocfilehash: 7bc628952d4a7198f0b5545014ae931bbf73dab3
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 70d7e9ff45616f832597ebc48db00198967935c6
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70969005"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84601137"
 ---
 # <a name="how-to-use-a-service-moniker-with-wsdl-contracts"></a>Postupy: Použití monikeru služby u kontraktů WSDL
 Existují situace, kdy možná budete chtít mít zcela samostatný klient zprostředkovatele komunikace s objekty COM. Služba, kterou chcete volat, nesmí vystavit koncový bod MEX a Klientská knihovna WCF nemusí být registrována pro zprostředkovatele komunikace s objekty COM. V těchto případech můžete vytvořit soubor WSDL, který popisuje službu a předává ji do monikeru služby WCF. Toto téma popisuje, jak volat ukázku Začínáme WCF pomocí monikeru WCF WSDL.  
@@ -16,7 +16,7 @@ Existují situace, kdy možná budete chtít mít zcela samostatný klient zpros
   
 1. Otevřete a sestavte ukázkové řešení soubor GettingStarted.  
   
-2. Spusťte Internet Explorer a přejděte na `http://localhost/ServiceModelSamples/Service.svc` adresu a ujistěte se, že služba funguje.  
+2. Spusťte Internet Explorer a přejděte na adresu a ujistěte se `http://localhost/ServiceModelSamples/Service.svc` , že služba funguje.  
   
 3. V souboru Service.cs přidejte následující atribut pro třídu CalculatorService:  
   
@@ -24,7 +24,7 @@ Existují situace, kdy možná budete chtít mít zcela samostatný klient zpros
   
 4. Přidejte obor názvů vazby do App Service. config:  
 
-5. Vytvořte soubor WSDL, který má aplikace číst. Vzhledem k tomu, že obory názvů byly přidány v krocích 3 a 4, můžete použít aplikaci IE k dotazování na celý popis služby WSDL `http://localhost/ServiceModelSamples/Service.svc?wsdl`, a to tak, že přejdete na. Pak můžete soubor uložit z aplikace Internet Explorer jako serviceWSDL. XML. Pokud neurčíte obory názvů v krocích 3 a 4, dokument WSDL vrácený z dotazu na výše uvedenou adresu URL nebude kompletní WSDL. Vrácený dokument WSDL bude obsahovat několik příkazů importu, které importují jiné dokumenty WSDL. Budete muset projít každým příkazem importu a sestavit kompletní dokument WSDL a kombinaci prvku WSDL vráceného z této služby s importovaným jazykem WSDL.  
+5. Vytvořte soubor WSDL, který má aplikace číst. Vzhledem k tomu, že obory názvů byly přidány v krocích 3 a 4, můžete použít aplikaci IE k dotazování na celý popis služby WSDL, a to tak, že přejdete na `http://localhost/ServiceModelSamples/Service.svc?wsdl` . Pak můžete soubor uložit z aplikace Internet Explorer jako serviceWSDL. XML. Pokud neurčíte obory názvů v krocích 3 a 4, dokument WSDL vrácený z dotazu na výše uvedenou adresu URL nebude kompletní WSDL. Vrácený dokument WSDL bude obsahovat několik příkazů importu, které importují jiné dokumenty WSDL. Budete muset projít každým příkazem importu a sestavit kompletní dokument WSDL a kombinaci prvku WSDL vráceného z této služby s importovaným jazykem WSDL.  
   
 6. Otevřete Visual Basic 6,0 a vytvořte nový standardní soubor. exe. Přidejte do formuláře tlačítko a dvakrát klikněte na tlačítko a přidejte následující kód do obslužné rutiny Click:  
   
@@ -54,7 +54,7 @@ Existují situace, kdy možná budete chtít mít zcela samostatný klient zpros
   
 7. Spusťte aplikaci Visual Basic. Zobrazí se okno se zprávou s výsledky volání odečíst (145, 76,54).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md)
-- [Přehled integrace s aplikacemi modelu COM](../../../../docs/framework/wcf/feature-details/integrating-with-com-applications-overview.md)
+- [Začínáme](../samples/getting-started-sample.md)
+- [Přehled integrace s aplikacemi modelu COM](integrating-with-com-applications-overview.md)

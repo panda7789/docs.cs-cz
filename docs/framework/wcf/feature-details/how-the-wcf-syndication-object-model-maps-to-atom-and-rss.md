@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 0365eb37-98cc-4b13-80fb-f1e78847a748
-ms.openlocfilehash: 1a2723a445c71dd883492907587f8cbe7b89666a
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 67fbbb035a3a6683cefbf24e299f32579b674bbd
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64613219"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597251"
 ---
 # <a name="how-the-wcf-syndication-object-model-maps-to-atom-and-rss"></a>Mapování modelu objektu syndikace WCF na Atom a RSS
-Při vývoji syndikace služby Windows Communication Foundation (WCF), můžete vytvořit kanály a položky pomocí následující třídy:  
+Při vývoji služby syndikace Windows Communication Foundation (WCF) vytvoříte kanály a položky pomocí následujících tříd:  
   
 - <xref:System.ServiceModel.Syndication.SyndicationFeed>  
   
@@ -31,29 +31,29 @@ Při vývoji syndikace služby Windows Communication Foundation (WCF), můžete 
   
 - <xref:System.ServiceModel.Syndication.XmlSyndicationContent>  
   
- A <xref:System.ServiceModel.Syndication.SyndicationFeed> lze serializovat do jakékoli souhrnný formát, pro který je definován formátovacím modulem. WCF se dodává se dvěma formátovací moduly: <xref:System.ServiceModel.Syndication.Atom10FeedFormatter> a <xref:System.ServiceModel.Syndication.Rss20FeedFormatter>.  
+ <xref:System.ServiceModel.Syndication.SyndicationFeed>Může být serializován do libovolného formátu syndikace, pro který je definován formátovací modul. WCF se dodává se dvěma formátovacími moduly: <xref:System.ServiceModel.Syndication.Atom10FeedFormatter> a <xref:System.ServiceModel.Syndication.Rss20FeedFormatter> .  
   
- Objektový model kolem <xref:System.ServiceModel.Syndication.SyndicationFeed> a <xref:System.ServiceModel.Syndication.SyndicationItem> zarovnán lépe než RSS 2.0 specifikace specifikaci Atom 1.0. Je to proto Atom 1.0 je mnohem vyšší specifikace, která určuje prvky, které jsou nejednoznačný nebo není uveden ze specifikace RSS 2.0. Z tohoto důvodu mnoho položek v modelu objektu syndikace WCF nemají žádnou přímou reprezentaci ve specifikaci RSS 2.0. Při serializaci <xref:System.ServiceModel.Syndication.SyndicationFeed> a <xref:System.ServiceModel.Syndication.SyndicationItem> objektů do RSS 2.0 WCF umožňuje serializovat specifické pro formát Atom datové prvky jako rozšíření kvalifikovaný v oboru názvů elementy, které odpovídají specifikaci Atom. Můžete to ovládacím prvkem parametr předán <xref:System.ServiceModel.Syndication.Rss20FeedFormatter> konstruktoru.  
+ Objektový model kolem <xref:System.ServiceModel.Syndication.SyndicationFeed> a <xref:System.ServiceModel.Syndication.SyndicationItem> je úzce zarovnán se specifikací Atom 1,0, než specifikace RSS 2,0. Důvodem je, že Atom 1,0 je důležitější specifikace, která definuje prvky, které jsou nejednoznačné nebo jsou vynechány specifikací RSS 2,0. Z tohoto důvodu mnoho položek v modelu objektu Syndikace WCF nemá přímo reprezentaci ve specifikaci RSS 2,0. Při serializaci <xref:System.ServiceModel.Syndication.SyndicationFeed> a <xref:System.ServiceModel.Syndication.SyndicationItem> objektů do kanálu RSS 2,0 umožňuje WCF serializovat datové prvky specifické pro Atom jako prvky rozšíření kvalifikované na obor názvů, které odpovídají specifikaci Atom. Můžete to řídit pomocí parametru předaného <xref:System.ServiceModel.Syndication.Rss20FeedFormatter> konstruktoru.  
   
- Ukázky kódu v tomto tématu využívají jednu ze dvou metod lze tam definovat provedete skutečné serializace.  
+ Ukázky kódu v tomto tématu používají jednu ze dvou metod, které jsou zde definovány k provedení samotné serializace.  
   
- `SerializeFeed` serializuje informačního kanálu syndikace.  
+ `SerializeFeed`serializace informačního kanálu syndikace.  
   
  [!code-csharp[SyndicationMapping#10](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#10)]
  [!code-vb[SyndicationMapping#10](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/syndicationmapping/vb/snippets.vb#10)]  
   
- `SerializeItem` serializuje položky syndikace.  
+ `SerializeItem`zaserializace syndikační položky.  
   
  [!code-csharp[SyndicationMapping#11](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#11)]
  [!code-vb[SyndicationMapping#11](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/syndicationmapping/vb/snippets.vb#11)]  
   
 ## <a name="syndicationfeed"></a>SyndicationFeed  
- Následující příklad kódu ukazuje, jak k serializaci <xref:System.ServiceModel.Syndication.SyndicationFeed> třídy Atom 1.0 a RSS 2.0.  
+ Následující příklad kódu ukazuje, jak serializovat <xref:System.ServiceModel.Syndication.SyndicationFeed> třídu na Atom 1,0 a RSS 2,0.  
   
  [!code-csharp[SyndicationMapping#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#0)]
  [!code-vb[SyndicationMapping#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/syndicationmapping/vb/snippets.vb#0)]  
   
- Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.SyndicationFeed> serializován Atom 1.0.  
+ Následující kód XML ukazuje, jak <xref:System.ServiceModel.Syndication.SyndicationFeed> je serializován do Atom 1,0.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -102,7 +102,7 @@ Při vývoji syndikace služby Windows Communication Foundation (WCF), můžete 
 </feed>  
 ```  
   
- Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.SyndicationFeed> serializovat do RSS 2.0.  
+ Následující kód XML ukazuje, jak <xref:System.ServiceModel.Syndication.SyndicationFeed> je serializován do kanálu RSS 2,0.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -145,12 +145,12 @@ Při vývoji syndikace služby Windows Communication Foundation (WCF), můžete 
 ```  
   
 ## <a name="syndicationitem"></a>SyndicationItem  
- Následující příklad kódu ukazuje, jak k serializaci <xref:System.ServiceModel.Syndication.SyndicationItem> třídy Atom 1.0 a RSS 2.0.  
+ Následující příklad kódu ukazuje, jak serializovat <xref:System.ServiceModel.Syndication.SyndicationItem> třídu na Atom 1,0 a RSS 2,0.  
   
  [!code-csharp[SyndicationMapping#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#1)]
  [!code-vb[SyndicationMapping#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/syndicationmapping/vb/snippets.vb#1)]  
   
- Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.SyndicationItem> serializován Atom 1.0.  
+ Následující kód XML ukazuje, jak <xref:System.ServiceModel.Syndication.SyndicationItem> je serializován do Atom 1,0.  
   
 ```xml  
 <entry xmlns="http://www.w3.org/2005/Atom">  
@@ -192,7 +192,7 @@ Při vývoji syndikace služby Windows Communication Foundation (WCF), můžete 
 </entry>  
 ```  
   
- Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.SyndicationItem> serializovat do RSS 2.0.  
+ Následující kód XML ukazuje, jak <xref:System.ServiceModel.Syndication.SyndicationItem> je serializován do kanálu RSS 2,0.  
   
 ```xml  
 <item>  
@@ -231,12 +231,12 @@ Při vývoji syndikace služby Windows Communication Foundation (WCF), můžete 
 ```  
   
 ## <a name="syndicationperson"></a>SyndicationPerson  
- Následující příklad kódu ukazuje, jak k serializaci <xref:System.ServiceModel.Syndication.SyndicationPerson> třídy Atom 1.0 a RSS 2.0.  
+ Následující příklad kódu ukazuje, jak serializovat <xref:System.ServiceModel.Syndication.SyndicationPerson> třídu na Atom 1,0 a RSS 2,0.  
   
  [!code-csharp[SyndicationMapping#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#2)]
  [!code-vb[SyndicationMapping#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/syndicationmapping/vb/snippets.vb#2)]  
   
- Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.SyndicationPerson> serializován Atom 1.0.  
+ Následující kód XML ukazuje, jak <xref:System.ServiceModel.Syndication.SyndicationPerson> je serializován do Atom 1,0.  
   
 ```xml  
   <author>  
@@ -251,7 +251,7 @@ Při vývoji syndikace služby Windows Communication Foundation (WCF), můžete 
   </contributor>  
 ```  
   
- Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.SyndicationPerson> RSS 2.0 je serializována třídu, pokud pouze jeden <xref:System.ServiceModel.Syndication.SyndicationPerson> existuje v `Authors` nebo `Contributors` kolekcí, v uvedeném pořadí.  
+ Následující kód XML ukazuje, jak <xref:System.ServiceModel.Syndication.SyndicationPerson> je třída serializována do kanálu RSS 2,0, pokud pouze jeden <xref:System.ServiceModel.Syndication.SyndicationPerson> existuje v `Authors` kolekci nebo v `Contributors` uvedeném pořadí.  
   
 ```xml  
 <author>Jesper.Aaberg@contoso.com</author>  
@@ -262,7 +262,7 @@ Při vývoji syndikace služby Windows Communication Foundation (WCF), můžete 
 </a10:contributor>  
 ```  
   
- Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.SyndicationPerson> RSS 2.0 je serializována třídu, pokud více než jeden <xref:System.ServiceModel.Syndication.SyndicationPerson> existuje v `Authors` nebo `Contributors` kolekcí, v uvedeném pořadí.  
+ Následující kód XML ukazuje, jak <xref:System.ServiceModel.Syndication.SyndicationPerson> je třída serializována do kanálu RSS 2,0, pokud více než jeden <xref:System.ServiceModel.Syndication.SyndicationPerson> existuje v `Authors` kolekci nebo v `Contributors` uvedeném pořadí.  
   
 ```xml  
 <a10:author>  
@@ -288,66 +288,66 @@ Při vývoji syndikace služby Windows Communication Foundation (WCF), můžete 
 ```  
   
 ## <a name="syndicationlink"></a>SyndicationLink  
- Následující příklad kódu ukazuje, jak k serializaci <xref:System.ServiceModel.Syndication.SyndicationLink> třídy Atom 1.0 a RSS 2.0.  
+ Následující příklad kódu ukazuje, jak serializovat <xref:System.ServiceModel.Syndication.SyndicationLink> třídu na Atom 1,0 a RSS 2,0.  
   
  [!code-csharp[SyndicationMapping#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#3)]
  [!code-vb[SyndicationMapping#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/syndicationmapping/vb/snippets.vb#3)]  
   
- Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.SyndicationLink> serializován Atom 1.0.  
+ Následující kód XML ukazuje, jak <xref:System.ServiceModel.Syndication.SyndicationLink> je serializován do Atom 1,0.  
   
  `<link rel="alternate" type="text/html" title="My Link Title" length="2048" href="http://contoso/MyLink" />`  
   
- Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.SyndicationLink> serializovat do RSS 2.0.  
+ Následující kód XML ukazuje, jak <xref:System.ServiceModel.Syndication.SyndicationLink> je serializován do kanálu RSS 2,0.  
   
  `<a10:link rel="alternate" type="text/html" title="My Link Title" length="2048" href="http://contoso/MyLink" />`  
   
 ## <a name="syndicationcategory"></a>SyndicationCategory  
- Následující příklad kódu ukazuje, jak k serializaci <xref:System.ServiceModel.Syndication.SyndicationCategory> třídy Atom 1.0 a RSS 2.0.  
+ Následující příklad kódu ukazuje, jak serializovat <xref:System.ServiceModel.Syndication.SyndicationCategory> třídu na Atom 1,0 a RSS 2,0.  
   
  [!code-csharp[SyndicationMapping#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#4)]
  [!code-vb[SyndicationMapping#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/syndicationmapping/vb/snippets.vb#4)]  
   
- Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.SyndicationCategory> serializován Atom 1.0.  
+ Následující kód XML ukazuje, jak <xref:System.ServiceModel.Syndication.SyndicationCategory> je serializován do Atom 1,0.  
   
  `<category term="categoryName" label="categoryLabel" scheme="categoryScheme" />`  
   
- Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.SyndicationCategory> serializovat do RSS 2.0.  
+ Následující kód XML ukazuje, jak <xref:System.ServiceModel.Syndication.SyndicationCategory> je serializován do kanálu RSS 2,0.  
   
  `<category domain="categoryScheme">categoryName</category>`  
   
 ## <a name="textsyndicationcontent"></a>TextSyndicationContent  
- Následující příklad kódu ukazuje, jak k serializaci <xref:System.ServiceModel.Syndication.TextSyndicationContent> třídy Atom 1.0 a RSS 2.0 při <xref:System.ServiceModel.Syndication.TextSyndicationContent> se vytvoří s obsah ve formátu HTML.  
+ Následující příklad kódu ukazuje, jak serializovat <xref:System.ServiceModel.Syndication.TextSyndicationContent> třídu do Atom 1,0 a RSS 2,0, když <xref:System.ServiceModel.Syndication.TextSyndicationContent> je vytvořen s obsahem HTML.  
   
  [!code-csharp[SyndicationMapping#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#5)]
  [!code-vb[SyndicationMapping#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/syndicationmapping/vb/snippets.vb#5)]  
   
- Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.TextSyndicationContent> Atom 1.0 je serializována třídu obsah ve formátu HTML.  
+ Následující kód XML ukazuje, jak <xref:System.ServiceModel.Syndication.TextSyndicationContent> je třída s obsahem HTML serializována do Atom 1,0.  
   
  `<content type="html"><html> some html </html></content>`  
   
- Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.TextSyndicationContent> RSS 2.0 je serializována třídu obsah ve formátu HTML.  
+ Následující kód XML ukazuje, jak <xref:System.ServiceModel.Syndication.TextSyndicationContent> je třída s obsahem HTML serializována do kanálu RSS 2,0.  
   
  `<description><html> some html </html></description>`  
   
- Následující příklad kódu ukazuje, jak k serializaci <xref:System.ServiceModel.Syndication.TextSyndicationContent> třídy Atom 1.0 a RSS 2.0 při <xref:System.ServiceModel.Syndication.TextSyndicationContent> se vytvoří s obsahem prostého textu.  
+ Následující příklad kódu ukazuje, jak serializovat <xref:System.ServiceModel.Syndication.TextSyndicationContent> třídu do Atom 1,0 a RSS 2,0, když <xref:System.ServiceModel.Syndication.TextSyndicationContent> je vytvořen obsah s prostým textem.  
   
  [!code-csharp[SyndicationMapping#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#6)]
  [!code-vb[SyndicationMapping#6](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/syndicationmapping/vb/snippets.vb#6)]  
   
- Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.TextSyndicationContent> Atom 1.0 je serializována třídu s obsahem prostého textu.  
+ Následující kód XML ukazuje, jakým způsobem <xref:System.ServiceModel.Syndication.TextSyndicationContent> je třída s obsahem prostého textu serializována do Atom 1,0.  
   
  `<content type="text">Some Plain Text</content>`  
   
- Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.TextSyndicationContent> RSS 2.0 je serializována třídu s obsahem prostého textu.  
+ Následující kód XML ukazuje, jakým způsobem <xref:System.ServiceModel.Syndication.TextSyndicationContent> je třída s obsahem prostého textu serializována do kanálu RSS 2,0.  
   
  `<description>Some Plain Text</description>`  
   
- Následující příklad kódu ukazuje, jak k serializaci <xref:System.ServiceModel.Syndication.TextSyndicationContent> třídy Atom 1.0 a RSS 2.0 při <xref:System.ServiceModel.Syndication.TextSyndicationContent> se vytvoří s obsahem XHTML.  
+ Následující příklad kódu ukazuje, jak serializovat <xref:System.ServiceModel.Syndication.TextSyndicationContent> třídu do Atom 1,0 a RSS 2,0 při <xref:System.ServiceModel.Syndication.TextSyndicationContent> vytvoření pomocí obsahu XHTML.  
   
  [!code-csharp[SyndicationMapping#7](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#7)]
  [!code-vb[SyndicationMapping#7](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/syndicationmapping/vb/snippets.vb#7)]  
   
- Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.TextSyndicationContent> je serializována třídu s obsahem XHTML Atom 1.0.  
+ Následující kód XML ukazuje, jak <xref:System.ServiceModel.Syndication.TextSyndicationContent> Třída s obsahem XHTML je serializována do Atom 1,0.  
   
  `<content type="xhtml">`  
   
@@ -355,33 +355,33 @@ Při vývoji syndikace služby Windows Communication Foundation (WCF), můžete 
   
  `</content>`  
   
- Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.TextSyndicationContent> RSS 2.0 je serializována třídu s obsahem XHTML.  
+ Následující kód XML ukazuje, jak <xref:System.ServiceModel.Syndication.TextSyndicationContent> je třída s obsahem XHTML serializována do kanálu RSS 2,0.  
   
  `<description><html> some xhtml </html></description>`  
   
 ## <a name="urlsyndicationcontent"></a>UrlSyndicationContent  
- Následující příklad kódu ukazuje, jak k serializaci <xref:System.ServiceModel.Syndication.UrlSyndicationContent> třídy Atom 1.0 a RSS 2.0.  
+ Následující příklad kódu ukazuje, jak serializovat <xref:System.ServiceModel.Syndication.UrlSyndicationContent> třídu na Atom 1,0 a RSS 2,0.  
   
  [!code-csharp[SyndicationMapping#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#8)]
  [!code-vb[SyndicationMapping#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/syndicationmapping/vb/snippets.vb#8)]  
   
- Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.UrlSyndicationContent> je třída serializované Atom 1.0.  
+ Následující kód XML ukazuje, jak <xref:System.ServiceModel.Syndication.UrlSyndicationContent> je třída serializována do Atom 1,0.  
   
  `<content type="audio" src="http://someurl/" />`  
   
- Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.UrlSyndicationContent> RSS 2.0 je serializována třídu s obsahem XHTML.  
+ Následující kód XML ukazuje, jak <xref:System.ServiceModel.Syndication.UrlSyndicationContent> je třída s obsahem XHTML serializována do kanálu RSS 2,0.  
   
  `<description />`  
   
  `<content type="audio" src="http://Contoso/someurl/" xmlns="http://www.w3.org/2005/Atom" />`  
   
 ## <a name="xmlsyndicationcontent"></a>XmlSyndicationContent  
- Následující příklad kódu ukazuje, jak k serializaci <xref:System.ServiceModel.Syndication.XmlSyndicationContent> třídy Atom 1.0 a RSS 2.0.  
+ Následující příklad kódu ukazuje, jak serializovat <xref:System.ServiceModel.Syndication.XmlSyndicationContent> třídu na Atom 1,0 a RSS 2,0.  
   
  [!code-csharp[SyndicationMapping#9](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#9)]
  [!code-vb[SyndicationMapping#9](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/syndicationmapping/vb/snippets.vb#9)]  
   
- Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.XmlSyndicationContent> je třída serializované Atom 1.0.  
+ Následující kód XML ukazuje, jak <xref:System.ServiceModel.Syndication.XmlSyndicationContent> je třída serializována do Atom 1,0.  
   
  `<content type="mytype">`  
   
@@ -389,7 +389,7 @@ Při vývoji syndikace služby Windows Communication Foundation (WCF), můžete 
   
  `</content>`  
   
- Následující XML ukazuje jak <xref:System.ServiceModel.Syndication.XmlSyndicationContent> RSS 2.0 je serializována třídu s obsahem XHTML.  
+ Následující kód XML ukazuje, jak <xref:System.ServiceModel.Syndication.XmlSyndicationContent> je třída s obsahem XHTML serializována do kanálu RSS 2,0.  
   
  `<content type="mytype" xmlns="http://www.w3.org/2005/Atom">`  
   
@@ -397,10 +397,10 @@ Při vývoji syndikace služby Windows Communication Foundation (WCF), můžete 
   
  `</content>`  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Přehled syndikace WCF](../../../../docs/framework/wcf/feature-details/wcf-syndication-overview.md)
-- [Architektura syndikace](../../../../docs/framework/wcf/feature-details/architecture-of-syndication.md)
-- [Postupy: Vytvoření základního kanálu RSS](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-rss-feed.md)
-- [Postupy: Vytvoření základního informačního kanálu Atom](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-atom-feed.md)
-- [Postupy: Zveřejnění informačního kanálu ve formátu Atom i RSS](../../../../docs/framework/wcf/feature-details/how-to-expose-a-feed-as-both-atom-and-rss.md)
+- [Syndikace WCF – přehled](wcf-syndication-overview.md)
+- [Architektura syndikace](architecture-of-syndication.md)
+- [Postupy: Vytvoření základního kanálu RSS](how-to-create-a-basic-rss-feed.md)
+- [Postupy: Vytvoření základního informačního kanálu Atom](how-to-create-a-basic-atom-feed.md)
+- [Postupy: Zveřejnění informačního kanálu ve formátu Atom i RSS](how-to-expose-a-feed-as-both-atom-and-rss.md)

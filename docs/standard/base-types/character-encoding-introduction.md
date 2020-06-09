@@ -10,12 +10,12 @@ dev_langs:
 - csharp
 helpviewer_keywords:
 - encoding, understanding
-ms.openlocfilehash: 1b6ec6a7275408d4a8061c0de92cdf6e82dd533a
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 85349e1e1c4eca4dd3ef7980f48350a4145fca24
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288040"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84599864"
 ---
 # <a name="character-encoding-in-net"></a>Kódování znaků v rozhraní .NET
 
@@ -109,7 +109,7 @@ Zde jsou některé příklady přiřazení bodů kódu s odkazy na grafy sady Un
 
 |Desetinné číslo|Soustavy       |Příklad|Popis|
 |------:|----------|-------|-----------|
-|10     | `U+000A` |–| [ČÁROVÝ KANÁL](https://www.unicode.org/charts/PDF/U0000.pdf) |
+|10     | `U+000A` |Není k dispozici| [ČÁROVÝ KANÁL](https://www.unicode.org/charts/PDF/U0000.pdf) |
 |65     | `U+0061` | a | [MALÉ PÍSMENO LATINKY A](https://www.unicode.org/charts/PDF/U0000.pdf) |
 |562    | `U+0232` | Ȳ | [VELKÉ PÍSMENO LATINKY Y S POMLČKOU](https://www.unicode.org/charts/PDF/U0180.pdf) |
 |68 675 | `U+10C43`| 𐱃 | [STARÉ ORKHONOVÉ DOPISY V](https://www.unicode.org/charts/PDF/U10C00.pdf) |
@@ -250,7 +250,7 @@ Vezměte v úvahu `string` instance "a", "á". "á" a " `👩🏽‍🚒` ". Pok
 
 * string"Á" vypadá stejně jako "á", ale je reprezentován dvěma skalárními hodnotami a obsahuje dvě `char` instance.
 
-  * `U+0065 LATIN SMALL LETTER A`
+  * `U+0061 LATIN SMALL LETTER A`
   * `U+0301 COMBINING ACUTE ACCENT`
 
 * Nakonec string "" představují `👩🏽‍🚒` čtyři skalární hodnoty a obsahují sedm `char` instancí.

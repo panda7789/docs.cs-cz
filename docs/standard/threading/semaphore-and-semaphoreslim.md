@@ -1,5 +1,6 @@
 ---
 title: Semafor a SemaphoreSlim
+description: Přečtěte si o semaforu & SemaphoreSlim. Semafor třídy je tenká Obálka kolem objektu semaforu Win32. Třída SemaphoreSlim je rychlý odlehčený semafor.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - SemaphoreSlim class, about SemaphoreSlim class
 - threading [.NET Framework], Semaphore class
 ms.assetid: 7722a333-b974-47a2-a7c0-f09097fb644e
-ms.openlocfilehash: 9a18a6517548bb402e1e3b9ac02e95aae32a8f4a
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 21f0d7e3fb446a7b750c45cfe8ef3f087a77888a
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291133"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600448"
 ---
 # <a name="semaphore-and-semaphoreslim"></a>Semafor a SemaphoreSlim
 <xref:System.Threading.Semaphore?displayProperty=nameWithType>Třída představuje pojmenovaný (systémové) nebo místní semafor. Je to tenké Obálka kolem objektu semaforu Win32. Semafory Win32 počítají semafory, které je možné použít k řízení přístupu k fondu prostředků.  

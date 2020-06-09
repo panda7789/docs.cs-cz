@@ -2,12 +2,12 @@
 title: Zprostředkovatel tokenů zabezpečení SAML
 ms.date: 03/30/2017
 ms.assetid: eb16e5e2-4c8d-4f61-a479-9c965fcec80c
-ms.openlocfilehash: d599992949b87f0ac3f178d8f79f244781eda6fa
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: db1307b0f440f8bd55f1728b6645aec706dfe442
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73976714"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84602411"
 ---
 # <a name="saml-token-provider"></a>Zprostředkovatel tokenů zabezpečení SAML
 Tato ukázka předvádí, jak implementovat vlastního poskytovatele tokenu SAML klienta. Poskytovatel tokenu v Windows Communication Foundation (WCF) se používá k poskytnutí přihlašovacích údajů infrastruktuře zabezpečení. Poskytovatel tokenů v nástroji General prověřuje cíl a vydá odpovídající přihlašovací údaje, aby mohla infrastruktura zabezpečení zabezpečit zprávu. WCF se dodává s výchozím poskytovatelem tokenu správce přihlašovacích údajů. WCF se dodává i s poskytovatelem tokenů služby CardSpace. Vlastní zprostředkovatelé tokeny jsou užitečné v následujících případech:
@@ -30,7 +30,7 @@ Tato ukázka předvádí, jak implementovat vlastního poskytovatele tokenu SAML
 
 - Způsob ověřování serveru klientem pomocí certifikátu X. 509 serveru.
 
- Služba zpřístupňuje dva koncové body pro komunikaci se službou, které jsou definovány pomocí konfiguračního souboru App. config. Každý koncový bod se skládá z adresy, vazby a kontraktu. Vazba je nakonfigurovaná se standardním `wsFederationHttpBinding`, která používá zabezpečení zpráv. Jeden koncový bod očekává, že klient provede ověřování pomocí tokenu SAML, který používá symetrický klíč ověření, zatímco druhý očekává ověřování klienta s tokenem SAML, který používá asymetrický klíč ověření. Služba také nakonfiguruje certifikát služby pomocí chování `serviceCredentials`. Chování `serviceCredentials` umožňuje nakonfigurovat certifikát služby. Certifikát služby používá klient k ověření služby a poskytování ochrany zpráv. Následující konfigurace odkazuje na certifikát "localhost" nainstalovaný během ukázkové instalace, jak je popsáno v pokynech k instalaci na konci tohoto tématu. Chování `serviceCredentials` také umožňuje nakonfigurovat certifikáty, které jsou důvěryhodné k podepisování tokenů SAML. Následující konfigurace odkazuje na certifikát Alice nainstalovaný během ukázky.
+ Služba zpřístupňuje dva koncové body pro komunikaci se službou, které jsou definovány pomocí konfiguračního souboru App. config. Každý koncový bod se skládá z adresy, vazby a kontraktu. Vazba je nakonfigurovaná se standardem `wsFederationHttpBinding` , který používá zabezpečení zpráv. Jeden koncový bod očekává, že klient provede ověřování pomocí tokenu SAML, který používá symetrický klíč ověření, zatímco druhý očekává ověřování klienta s tokenem SAML, který používá asymetrický klíč ověření. Služba také nakonfiguruje certifikát služby pomocí `serviceCredentials` chování. `serviceCredentials`Chování vám umožní nakonfigurovat certifikát služby. Certifikát služby používá klient k ověření služby a poskytování ochrany zpráv. Následující konfigurace odkazuje na certifikát "localhost" nainstalovaný během ukázkové instalace, jak je popsáno v pokynech k instalaci na konci tohoto tématu. `serviceCredentials`Chování také umožňuje nakonfigurovat certifikáty, které jsou důvěryhodné k podepisování tokenů SAML. Následující konfigurace odkazuje na certifikát Alice nainstalovaný během ukázky.
 
 ```xml
 <system.serviceModel>
@@ -117,7 +117,7 @@ Tato ukázka předvádí, jak implementovat vlastního poskytovatele tokenu SAML
 
      Ukázka implementuje vlastního zprostředkovatele tokenu SAML, který vrací token zabezpečení na základě kontrolního výrazu SAML, který je k dispozici v době konstrukce.
 
-     K provedení této úlohy je poskytovatel vlastního tokenu odvozen z třídy <xref:System.IdentityModel.Selectors.SecurityTokenProvider> a přepisuje metodu <xref:System.IdentityModel.Selectors.SecurityTokenProvider.GetTokenCore%2A>. Tato metoda vytvoří a vrátí nový `SecurityToken`.
+     K provedení této úlohy je poskytovatel vlastního tokenu odvozen od <xref:System.IdentityModel.Selectors.SecurityTokenProvider> třídy a Přepisuje <xref:System.IdentityModel.Selectors.SecurityTokenProvider.GetTokenCore%2A> metodu. Tato metoda vytvoří a vrátí nový `SecurityToken` .
 
     ```csharp
     protected override SecurityToken GetTokenCore(TimeSpan timeout)
@@ -158,7 +158,7 @@ Tato ukázka předvádí, jak implementovat vlastního poskytovatele tokenu SAML
 
 2. Napsat vlastního správce tokenů zabezpečení.
 
-     Třída <xref:System.IdentityModel.Selectors.SecurityTokenManager> slouží k vytvoření <xref:System.IdentityModel.Selectors.SecurityTokenProvider> pro konkrétní <xref:System.IdentityModel.Selectors.SecurityTokenRequirement>, která je předána metodě `CreateSecurityTokenProvider`. Správce tokenů zabezpečení se používá také k vytváření ověřovatelů tokenů a serializátoru tokenů, ale u těch se tato ukázka nezabývá. V této ukázce vlastní Správce tokenů zabezpečení dědí z třídy <xref:System.ServiceModel.ClientCredentialsSecurityTokenManager> a přepíše metodu `CreateSecurityTokenProvider`, která vrátí vlastního zprostředkovatele tokenu SAML, když požadavky na předané tokeny označují, že je požadován token SAML. Pokud třída pověření klienta (viz krok 3) nezadala kontrolní výraz, vytvoří Správce tokenů zabezpečení příslušnou instanci.
+     <xref:System.IdentityModel.Selectors.SecurityTokenManager>Třída se používá k vytvoření <xref:System.IdentityModel.Selectors.SecurityTokenProvider> pro konkrétní <xref:System.IdentityModel.Selectors.SecurityTokenRequirement> , která je předána do ní v `CreateSecurityTokenProvider` metodě. Správce tokenů zabezpečení se používá také k vytváření ověřovatelů tokenů a serializátoru tokenů, ale u těch se tato ukázka nezabývá. V této ukázce vlastní Správce tokenů zabezpečení dědí z <xref:System.ServiceModel.ClientCredentialsSecurityTokenManager> třídy a přepíše metodu, `CreateSecurityTokenProvider` která vrátí vlastního zprostředkovatele tokenu SAML, když požadavky na prošlý token naznačují, že je požadován token SAML. Pokud třída pověření klienta (viz krok 3) nezadala kontrolní výraz, vytvoří Správce tokenů zabezpečení příslušnou instanci.
 
     ```csharp
     public class SamlSecurityTokenManager : ClientCredentialsSecurityTokenManager
@@ -304,7 +304,7 @@ Tato ukázka předvádí, jak implementovat vlastního poskytovatele tokenu SAML
 
 - Vytváří se certifikát serveru:
 
-     Následující řádky z dávkového souboru Setup. bat vytvoří certifikát serveru, který se má použít. Proměnná `%SERVER_NAME%` Určuje název serveru. Změňte tuto proměnnou tak, aby určovala vlastní název serveru. Výchozí hodnota v tomto dávkovém souboru je localhost.
+     Následující řádky z dávkového souboru Setup. bat vytvoří certifikát serveru, který se má použít. `%SERVER_NAME%`Proměnná Určuje název serveru. Změňte tuto proměnnou tak, aby určovala vlastní název serveru. Výchozí hodnota v tomto dávkovém souboru je localhost.
 
      Certifikát je uložený v osobním úložišti (osobní) v umístění úložiště LocalMachine.
 
@@ -328,7 +328,7 @@ Tato ukázka předvádí, jak implementovat vlastního poskytovatele tokenu SAML
 
 - Vytváří se certifikát vystavitele.
 
-     Následující řádky z dávkového souboru Setup. bat vytvoří certifikát vystavitele, který se má použít. Proměnná `%USER_NAME%` Určuje název vystavitele. Změňte tuto proměnnou tak, aby určovala vlastní název vystavitele. Výchozí hodnota v tomto dávkovém souboru je Alice.
+     Následující řádky z dávkového souboru Setup. bat vytvoří certifikát vystavitele, který se má použít. `%USER_NAME%`Proměnná Určuje název vystavitele. Změňte tuto proměnnou tak, aby určovala vlastní název vystavitele. Výchozí hodnota v tomto dávkovém souboru je Alice.
 
      Certifikát je uložený v úložišti úložiště v umístění úložiště CurrentUser.
 
@@ -352,9 +352,9 @@ Tato ukázka předvádí, jak implementovat vlastního poskytovatele tokenu SAML
 
 #### <a name="to-set-up-and-build-the-sample"></a>Nastavení a sestavení ukázky
 
-1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
+1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](one-time-setup-procedure-for-the-wcf-samples.md).
 
-2. Při sestavování řešení postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
+2. Při sestavování řešení postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](building-the-samples.md).
 
 > [!NOTE]
 > Pokud pro obnovení konfigurace této ukázky používáte Svcutil. exe, nezapomeňte změnit název koncového bodu v konfiguraci klienta tak, aby odpovídal kódu klienta.
@@ -378,7 +378,7 @@ Tato ukázka předvádí, jak implementovat vlastního poskytovatele tokenu SAML
   
 2. Zkopírujte programové soubory služby do adresáře služby na počítači služby. Zkopírujte také soubory Setup. bat a Cleanup. bat do počítače služby.  
   
-3. Musíte mít certifikát serveru s názvem subjektu, který obsahuje plně kvalifikovaný název domény počítače. Soubor Service. exe. config je třeba aktualizovat, aby odrážel tento nový název certifikátu. Certifikát serveru můžete vytvořit úpravou dávkového souboru Setup. bat. Všimněte si, že soubor Setup. bat musí být spuštěn v okně Developer Command Prompt pro aplikaci Visual Studio otevřené s oprávněními správce. Musíte nastavit `%SERVER_NAME%` proměnnou na plně kvalifikovaný název hostitele počítače, který se používá k hostování služby.  
+3. Musíte mít certifikát serveru s názvem subjektu, který obsahuje plně kvalifikovaný název domény počítače. Soubor Service. exe. config je třeba aktualizovat, aby odrážel tento nový název certifikátu. Certifikát serveru můžete vytvořit úpravou dávkového souboru Setup. bat. Všimněte si, že soubor Setup. bat musí být spuštěn v okně Developer Command Prompt pro aplikaci Visual Studio otevřené s oprávněními správce. Je nutné nastavit `%SERVER_NAME%` proměnnou na plně kvalifikovaný název hostitele počítače, který se používá k hostování služby.  
   
 4. Zkopírujte certifikát serveru do úložiště CurrentUser-TrustedPeople klienta. Tento krok není nutný, pokud je certifikát serveru vydán důvěryhodným vystavitelem klienta.  
   

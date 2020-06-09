@@ -2,16 +2,16 @@
 title: Aktivace protokolem TCP
 ms.date: 03/30/2017
 ms.assetid: bf8c215c-0228-4f4f-85c2-e33794ec09a7
-ms.openlocfilehash: 3487d84a63b2838dc1b55fdf3f41b410fcfc2e63
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: 0fa737adbdc7acc51511557877799c89849149bc
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77094875"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84598655"
 ---
 # <a name="tcp-activation"></a>Aktivace protokolem TCP
 
-Tato ukázka demonstruje hostování služby, která používá aktivační služby procesů systému Windows (WAS) k aktivaci služby, která komunikuje přes protokol net. TCP. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md).
+Tato ukázka demonstruje hostování služby, která používá aktivační služby procesů systému Windows (WAS) k aktivaci služby, která komunikuje přes protokol net. TCP. Tato ukázka je založena na [Začínáme](getting-started-sample.md).
 
 > [!NOTE]
 > Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.
@@ -21,13 +21,13 @@ Tato ukázka demonstruje hostování služby, která používá aktivační slu�
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Hosting\WASHost\TCPActivation`
 
 Ukázka se skládá z programu klientské konzoly (. exe) a knihovny služeb (. dll) hostované v pracovním procesu aktivovaném nástrojem WAS. Aktivita klienta se zobrazí v okně konzoly.
 
-Služba implementuje kontrakt definující způsob komunikace požadavek-odpověď. Kontrakt je definován rozhraním `ICalculator`, které zpřístupňuje matematické operace (sčítání, odčítání, násobení a dělení), jak je znázorněno v následujícím ukázkovém kódu:
+Služba implementuje kontrakt definující způsob komunikace požadavek-odpověď. Kontrakt je definován `ICalculator` rozhraním, které zpřístupňuje matematické operace (sčítání, odčítání, násobení a dělení), jak je znázorněno v následujícím ukázkovém kódu:
 
 ```csharp
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples")]
@@ -143,7 +143,7 @@ Press <ENTER> to terminate client.
 
 1. Ujistěte se, že je nainstalovaná služba IIS 7,0. Pro aktivaci byla požadována služba IIS 7,0.
 
-2. Ujistěte se, že jste provedli [jednorázovou proceduru nastavení Windows Communication Foundation ukázek](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
+2. Ujistěte se, že jste provedli [jednorázovou proceduru nastavení Windows Communication Foundation ukázek](one-time-setup-procedure-for-the-wcf-samples.md).
 
     Kromě toho musíte nainstalovat komponenty WCF, které nejsou součástí aktivace přes protokol HTTP:
 
@@ -176,11 +176,11 @@ Press <ENTER> to terminate client.
         ```
 
         > [!NOTE]
-        > Tento příkaz je jedním řádkem textu. Tento příkaz umožňuje, aby aplikace/ServiceModelSamples byla dostupná pomocí `http://localhost/servicemodelsamples` i `net.tcp://localhost/servicemodelsamples`.
+        > Tento příkaz je jedním řádkem textu. Tento příkaz umožňuje, aby aplikace/ServiceModelSamples byla dostupná pomocí `http://localhost/servicemodelsamples` a `net.tcp://localhost/servicemodelsamples` .
 
-4. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
+4. Chcete-li sestavit edici C# nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](building-the-samples.md).
 
-5. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).
+5. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](running-the-samples.md).
 
     Odeberte vazbu na lokalitu NET. TCP, kterou jste přidali pro tuto ukázku.
 

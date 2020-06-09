@@ -1,5 +1,6 @@
 ---
 title: Rozšiřování metadat pomocí atributů
+description: Naučte se, jak roztáhnout metadata pomocí atributů v .NET. Atributy jsou popisné deklarace jako klíčové slovo, které slouží jako anotace programovacích prvků, jako jsou typy a pole.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -12,12 +13,12 @@ helpviewer_keywords:
 - runtime, attributes
 - extending metadata
 ms.assetid: 30386922-1e00-4602-9ebf-526b271a8b87
-ms.openlocfilehash: d27dc3d77a8f72123f23d9f5a893d144bacee662
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: c77de970c5550bd896e83854414592d70eb9dc48
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84276267"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84598629"
 ---
 # <a name="extending-metadata-using-attributes"></a>Rozšiřování metadat pomocí atributů
 Modul CLR (Common Language Runtime) umožňuje přidat popisné deklarace podobné klíčovým slovům označované jako atributy, aby bylo možné opatřit poznámkami programovací prvky, jako jsou typy, pole, metody a vlastnosti. Když kompilujete kód pro modul runtime, je převeden do jazyka MSIL (Microsoft Intermediate Language) a umístěn do přenositelného spustitelného souboru (PE) spolu s metadaty generovanými kompilátorem. Atributy umožňují umístit do metadat dodatečné popisné informace, které lze extrahovat pomocí služeb reflexe za běhu. Kompilátor vytvoří atributy při deklaraci instancí speciálních tříd, které jsou odvozeny z <xref:System.Attribute?displayProperty=nameWithType> .  

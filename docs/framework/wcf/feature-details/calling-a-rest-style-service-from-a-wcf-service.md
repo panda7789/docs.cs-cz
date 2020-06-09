@@ -2,20 +2,20 @@
 title: Volání služby typu REST ze služby WCF
 ms.date: 03/30/2017
 ms.assetid: 77df81d8-7f53-4daf-8d2d-bf7996e94d5a
-ms.openlocfilehash: c2a3467fb5fe28194dcb8ee7715353f4cb6a1bff
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: eaa5d08faa335740124fcf698b22d2d324cd2c54
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62048215"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84576483"
 ---
 # <a name="calling-a-rest-style-service-from-a-wcf-service"></a>Volání služby typu REST ze služby WCF
 
-Při volání služby typu REST – vizuální styl od pravidelných služby WCF (založený na protokolu SOAP), přepíše kontext operace na metodu služby (který obsahuje informace o příchozího požadavku) kontext, který by měly být používány odchozí požadavek. To způsobí, že požadavky HTTP GET, chcete-li změnit na požadavky HTTP POST. Chcete-li vynutit služby WCF ve správném kontextu použít pro volání služby REST – vizuální styl, vytvořte nový <xref:System.ServiceModel.OperationContextScope> a volání služby REST – vizuální styl od uvnitř oboru kontextu operace. Toto téma popisuje, jak vytvořit jednoduchý příklad, který znázorňuje tento postup.
+Při volání služby ve stylu REST z běžné (založené na protokolu SOAP) služby WCF kontext operace v metodě služby (která obsahuje informace o příchozím požadavku) přepíše kontext, který by měl být použit odchozím požadavkem. To způsobí, že požadavky HTTP GET změní na požadavky HTTP POST. Chcete-li vynutit, aby služba WCF používala správný kontext pro volání služby ve stylu REST, vytvořte novou <xref:System.ServiceModel.OperationContextScope> a zavolejte službu ve stylu REST v rámci oboru kontextu operace. V tomto tématu se dozvíte, jak vytvořit jednoduchou ukázku, která tento postup znázorňuje.
 
 ## <a name="define-the-rest-style-service-contract"></a>Definování kontraktu služby ve stylu REST
 
-Definování kontraktu služby jednoduchého stylu REST:
+Definice jednoduchého kontraktu služby ve stylu REST:
 
 ```csharp
 [ServiceContract]
@@ -50,7 +50,7 @@ public class RestService : IRestInterface
 
 ## <a name="define-the-wcf-service-contract"></a>Definování kontraktu služby WCF
 
-Definování kontraktu služby WCF, který se použije k vyvolání služby REST-style:
+Definujte kontrakt služby WCF, který bude použit pro volání služby ve stylu REST:
 
 ```csharp
 [ServiceContract]
@@ -84,9 +84,9 @@ public class NormalService : INormalInterface
 }
 ```
 
-## <a name="create-the-client-proxy-for-the-rest-style-service"></a>Vytvořit proxy klienta pro službu REST-style.
+## <a name="create-the-client-proxy-for-the-rest-style-service"></a>Vytvoření klientského proxy serveru pro službu ve stylu REST
 
-Pomocí <xref:System.ServiceModel.ClientBase%601> implementace proxy serveru klienta. Pro každou metodu s názvem, nová <xref:System.ServiceModel.OperationContextScope> se vytvoří a použít k volání operace.
+Použití <xref:System.ServiceModel.ClientBase%601> k implementaci klientského proxy serveru. Pro každou metodu, která je volána, <xref:System.ServiceModel.OperationContextScope> je vytvořena nová a slouží k volání operace.
 
 ```csharp
 public class MyRestClient : ClientBase<IRestInterface>, IRestInterface
@@ -117,7 +117,7 @@ public class MyRestClient : ClientBase<IRestInterface>, IRestInterface
 
 ## <a name="host-and-call-the-services"></a>Hostování a volání služeb
 
-Hostitelem obou služeb v konzolové aplikaci, přidání koncových bodů potřebné a chování. A pak vyvolejte regulární služby WCF:
+Hostování obou služeb v konzolové aplikaci přidáním potřebných koncových bodů a chování. A pak zavolejte běžnou službu WCF:
 
 ```csharp
 public static void Main()
@@ -142,7 +142,7 @@ public static void Main()
 
 ## <a name="complete-code-listing"></a>Úplný výpis kódu
 
-Následuje úplný ukázkový implementované v tomto tématu:
+Následuje úplný seznam ukázek implementovaných v tomto tématu:
 
 ```csharp
 public class CallingRESTSample
@@ -241,7 +241,7 @@ public class CallingRESTSample
 }
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Postupy: Vytvoření základní webové HTTP služby WCF](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-wcf-web-http-service.md)
-- [Programovací objektový model webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-object-model.md)
+- [Postupy: Vytvoření základní webové služby HTTP WCF](how-to-create-a-basic-wcf-web-http-service.md)
+- [Programovací objektový model WCF Web HTTP](wcf-web-http-programming-object-model.md)

@@ -1,5 +1,6 @@
 ---
 title: 'Postupy: Zápis smyčky Parallel. ForEach s proměnnými místně rozdělenými na oddíly'
+description: Podívejte se na příklad vytvoření smyčky Parallel. ForEach, která používá místní proměnné oddílu v rozhraní .NET.
 ms.date: 06/26/2018
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,12 +9,12 @@ dev_langs:
 helpviewer_keywords:
 - parallel foreach loop, how to use local state
 ms.assetid: 24b10041-b30b-45cb-aa65-66cf568ca76d
-ms.openlocfilehash: eff176f7c3ae5cae4c450047214d8e9e20a6e66d
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: f598955fb2d6800f81bce050bdf474fc63bfb554
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290743"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84599773"
 ---
 # <a name="how-to-write-a-parallelforeach-loop-with-partition-local-variables"></a>Postupy: Zápis smyčky Parallel. ForEach s proměnnými místně rozdělenými na oddíly
 

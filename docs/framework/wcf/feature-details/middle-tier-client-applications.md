@@ -2,39 +2,39 @@
 title: Klientské aplikace střední vrstvy
 ms.date: 03/30/2017
 ms.assetid: f9714a64-d0ae-4a98-bca0-5d370fdbd631
-ms.openlocfilehash: 1b1ba177c365bb6913679ed2a217e66d7a0d522b
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: c50223a55765f211dae710f96bffa7716ce36b32
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65877475"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84598811"
 ---
 # <a name="middle-tier-client-applications"></a>Klientské aplikace střední vrstvy
-Toto téma popisuje různé problémy, které jsou specifické pro střední vrstvě klientské aplikace, které používají Windows Communication Foundation (WCF).  
+Toto téma popisuje různé problémy, které jsou specifické pro klientské aplikace střední vrstvy, které používají Windows Communication Foundation (WCF).  
   
-## <a name="increasing-middle-tier-client-performance"></a>Zvýšení výkonu klienta střední vrstvy  
- Ve srovnání s předchozím komunikace technologií, jako jsou webové služby pomocí ASP.NET, může být vytváření instance klienta WCF složitější z důvodu bohatou sadu funkcí služby WCF. Například, když <xref:System.ServiceModel.ChannelFactory%601> je otevřen objekt navázat zabezpečenou relaci se službou, procedury, která zvyšuje dobu spuštění pro instanci klienta. Obvykle tyto další funkce funkce nemají vliv na klientské aplikace značně od klienta WCF provede několik volání a potom jej zavře.  
+## <a name="increasing-middle-tier-client-performance"></a>Zvýšení výkonu klientů střední vrstvy  
+ V porovnání s předchozími komunikačními technologiemi, jako jsou webové služby využívající ASP.NET, vytvoření instance klienta služby WCF může být složitější, protože sada funkcí WCF s bohatou funkcí je složitá. Například když <xref:System.ServiceModel.ChannelFactory%601> je objekt otevřen, může vytvořit zabezpečenou relaci se službou, což je postup, který zvyšuje čas spuštění instance klienta. Tyto dodatečné funkce obvykle neovlivňují klientské aplikace významně, protože klient WCF provede několik volání a pak se ukončí.  
   
- Střední vrstvě klientské aplikace, ale můžete rychle vytvořit velký počet objektů klienta WCF a, v důsledku toho prostředí zvýšenou inicializace požadavky. Existují dva hlavní přístupy ke zvýšení výkonu střední vrstvy aplikace při volání služby:  
+ Klientské aplikace střední vrstvy ale můžou rychle vytvořit mnoho objektů klienta WCF a v důsledku toho se zvýší požadavky na inicializaci. Existují dva hlavní přístupy ke zvýšení výkonu aplikací střední vrstvy při volání služeb:  
   
-- Objekt klienta WCF do mezipaměti a použít pro pozdější volání, kde je to možné.  
+- Umožňuje uložit objekt klienta WCF do mezipaměti a znovu ho použít pro následné volání.  
   
-- Vytvoření <xref:System.ServiceModel.ChannelFactory%601> objektu a pak použít tento objekt k vytvoření nového klienta WCF objekty kanálu pro každé volání.  
+- Vytvořte <xref:System.ServiceModel.ChannelFactory%601> objekt a poté pomocí tohoto objektu vytvořte nové objekty kanálu klienta WCF pro každé volání.  
   
- Problémy při použití těchto přístupů patří:  
+ Mezi problémy, které je potřeba zvážit při použití těchto přístupů, patří:  
   
-- Pokud služba je zachování stavu specifické pro klienta pomocí relace, pak nelze znovu použít klienta WCF střední vrstvy s žádosti více klientská vrstva vzhledem k tomu, že stav služby je vázán na jazyku klienta střední vrstvy.  
+- Pokud služba udržuje stav specifický pro konkrétního klienta pomocí relace, nemůžete znovu použít klienta WCF prostřední vrstvy s požadavky na vrstvu na více klientů, protože stav služby je svázán s klientem střední vrstvy.  
   
-- Pokud služba musí provést ověření na jednotlivé klienty, musíte vytvořit nového klienta pro každého příchozího požadavku ve střední vrstvě. namísto opakovaného použití klienta WCF střední vrstvy (nebo objekt kanálu klienta WCF), protože pověření klienta střední vrstvy nelze změnit po klienta WCF (nebo <xref:System.ServiceModel.ChannelFactory%601>) byla vytvořena.  
+- Pokud je nutné, aby služba prováděla ověřování pro každého klienta, je nutné vytvořit nového klienta pro každý příchozí požadavek na střední úrovni místo opětovného použití klienta WCF střední vrstvy (nebo objektu kanálu klienta WCF), protože po vytvoření klienta služby WCF (nebo) nelze změnit pověření klienta <xref:System.ServiceModel.ChannelFactory%601> .  
   
-- Kanálů a kanály vytvořené klienty jsou bezpečné pro vlákna, se nemusí podporovat zápis více zpráv souběžně do přenosu. Při odesílání velkých zpráv, zejména v případě, že datový proud, je operace odeslání může blokovat čekání na další odeslat k dokončení. To způsobí, že dva druhy problémů: Nedostatečná souběžnost a možnost zablokování Pokud tok řízení vrátí do služby opětovné použití kanálu (to znamená, sdílené klient zavolá službu cesty kódu, jejichž výsledky ve zpětném volání do sdílené klienta). To platí bez ohledu na typ klienta WCF, který je znovu použít.  
+- I když kanály a klienti vytvořené kanály jsou bezpečné pro přístup z více vláken, nemusí podporovat současně zápis více než jedné zprávy na daný přenos. Pokud posíláte velké zprávy, zejména pokud streamování, může operace odeslání blokovat čekání na dokončení jiného odeslání. To způsobuje dvě druhy problémů: nedostatek souběžnosti a možnost zablokování, pokud se tok ovládacího prvku vrátí ke službě, který kanál znovu používá (to znamená, že sdílený klient volá službu, jejíž cesta kódu má za následek zpětné volání do sdíleného klienta). To platí bez ohledu na typ klienta služby WCF, který znovu použijete.  
   
-- Je třeba ošetřit chybnou kanály bez ohledu na to, zda sdílet kanál. Když kanály jsou opakovaně používat, ale můžete neškodné kanálu více než jeden žádostí čekajících na vyřízení nebo odeslat.  
+- Je potřeba zpracovat chybové kanály bez ohledu na to, jestli kanál sdílíte. Když se kanály znovu použijí, může kanál chyb zabrat víc než jednu nevyřízenou žádost nebo odeslat.  
   
- Příklad, který ukazuje osvědčené postupy pro opětovné použití klienta více žádostí, najdete v části [datové vazby v klientovi ASP.NET](../../../../docs/framework/wcf/samples/data-binding-in-an-aspnet-client.md).  
+ Příklad, který ukazuje osvědčené postupy pro opakované použití klienta pro více požadavků, najdete v tématu [datové vazby v klientovi ASP.NET](../samples/data-binding-in-an-aspnet-client.md).  
   
- Kromě toho můžete zvýšit výkon při spouštění pro tyto klienty, kteří používají datové typy, které jsou serializovatelné pomocí <xref:System.Xml.Serialization.XmlSerializer> generování a kompilaci kódu serializace pro typy dat za běhu, což může vést k pomalé spouštění výkonu. [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) výkon lze zvýšit objem požadovaný při spuštění pro tyto aplikace generování kódu serializace nezbytné ze zkompilovaných sestavení pro aplikaci. Další informace najdete v tématu [jak: Vylepšení spuštění čas z klientských aplikací WCF pomocí třídy XmlSerializer](../../../../docs/framework/wcf/feature-details/startup-time-of-wcf-client-applications-using-the-xmlserializer.md).  
+ Kromě toho můžete zvýšit výkon při spuštění pro tyto klienty, kteří používají datové typy, které jsou serializovatelný pomocí <xref:System.Xml.Serialization.XmlSerializer> generování a kompilování serializace kódu pro tyto datové typy za běhu, což může vést k pomalému spuštění výkonu. Nástroj pro měření [metadat třídy (Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) může zlepšit výkon spuštění těchto aplikací vygenerováním potřebného kódu serializace z kompilovaných sestavení pro aplikaci. Další informace naleznete v tématu [How to: vylepšení doby spouštění klientských aplikací WCF pomocí objektu XmlSerializer](startup-time-of-wcf-client-applications-using-the-xmlserializer.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Přístup ke službám pomocí klienta WCF](../../../../docs/framework/wcf/feature-details/accessing-services-using-a-client.md)
+- [Přístup ke službám pomocí klienta WCF](accessing-services-using-a-client.md)

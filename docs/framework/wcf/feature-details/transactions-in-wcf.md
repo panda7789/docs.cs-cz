@@ -5,34 +5,34 @@ helpviewer_keywords:
 - WCF, using transactions
 - Windows Communication Foundation, using transactions
 ms.assetid: 1e8d04dd-b7cf-41e7-8560-54b4381beb0f
-ms.openlocfilehash: 367abc45b9383a77ba2917030316bda17b4be98c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0e743cd14d2a601f52baaf6769e96503dcd3701d
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61933130"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600695"
 ---
 # <a name="transactions-in-wcf"></a>Transakce ve WCF
-Transakce funkce Windows Communication Foundation (WCF) umožňuje několik komponent souběžně účastnit datové operace. Témata v této části prozkoumat funkci podrobněji.  
+Funkce transakcí Windows Communication Foundation (WCF) umožňuje, aby se v datové operaci souběžně účastnilo několik komponent. Témata v této části podrobněji kontrolují tuto funkci.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přehled transakcí ve Windows Communication Foundation](../../../../docs/framework/wcf/feature-details/transactions-overview.md)  
- Přehled transakcí funkce poskytované WCF.  
+ [Transakce ve Windows Communication Foundation – přehled](transactions-overview.md)  
+ Přehled funkce transakcí poskytovaných službou WCF.  
   
- [Modely transakcí](../../../../docs/framework/wcf/feature-details/transaction-models.md)  
- Porovnává různé transakce programovacích modelů poskytované společností Microsoft.  
+ [Modely transakcí](transaction-models.md)  
+ Porovnává různé modely programování transakcí poskytované společností Microsoft.  
   
- [Používání protokolu WS-AtomicTransaction](../../../../docs/framework/wcf/feature-details/using-ws-atomictransaction.md)  
- Popisuje WS-AtomicTransaction (WS-AT), protokol šíření interoperabilní transakce, která je implementována ve službě WCF.  
+ [Používání protokolu WS-AtomicTransaction](using-ws-atomictransaction.md)  
+ Popisuje WS-AtomicTransaction (WS-AT), protokol šíření transakce, který je implementován v technologii WCF.  
   
- [Podpora transakcí v System.ServiceModel](../../../../docs/framework/wcf/feature-details/transactional-support-in-system-servicemodel.md)  
- Popisuje transakční funkce poskytované WCF.  
+ [Podpora transakcí v System.ServiceModel](transactional-support-in-system-servicemodel.md)  
+ Popisuje transakční funkce poskytované službou WCF.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Základní programování WCF](../../../../docs/framework/wcf/basic-wcf-programming.md)  
+ [Základní programování WCF](../basic-wcf-programming.md)  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Přehled spolehlivých relací](../../../../docs/framework/wcf/feature-details/reliable-sessions-overview.md)
+- [Spolehlivé relace – přehled](reliable-sessions-overview.md)

@@ -1,21 +1,21 @@
 ---
-title: 'Postupy: Vytvoření vlastní vazby spolehlivé relace s protokolem HTTPS'
+title: 'Postupy: Vytvoření vlastní vazby pro spolehlivou relaci s HTTPS'
 ms.date: 03/30/2017
 ms.assetid: fa772232-da1f-4c66-8c94-e36c0584b549
-ms.openlocfilehash: 26466a97ae44e6852c189d0b72bdba1b93d86141
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: 70f8f4f33626ab0d1705e03750bfd9baa324e60a
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74141732"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84598993"
 ---
-# <a name="how-to-create-a-custom-reliable-session-binding-with-https"></a>Postupy: Vytvoření vlastní vazby spolehlivé relace s protokolem HTTPS
+# <a name="how-to-create-a-custom-reliable-session-binding-with-https"></a>Postupy: Vytvoření vlastní vazby pro spolehlivou relaci s HTTPS
 
-Toto téma ukazuje použití zabezpečení přenosu SSL (Secure Sockets Layer) (SSL) u spolehlivých relací. Pokud chcete používat spolehlivou relaci přes protokol HTTPS, musíte vytvořit vlastní vazbu, která používá spolehlivou relaci a přenos HTTPS. Spolehlivou relaci povolíte buď imperativně, a to pomocí kódu nebo deklarativního v konfiguračním souboru. Tento postup používá konfigurační soubory klienta a služby k povolení spolehlivé relace a [ **\<httpsTransport >** ](../../../../docs/framework/configure-apps/file-schema/wcf/httpstransport.md) elementu.
+Toto téma ukazuje použití zabezpečení přenosu SSL (Secure Sockets Layer) (SSL) u spolehlivých relací. Pokud chcete používat spolehlivou relaci přes protokol HTTPS, musíte vytvořit vlastní vazbu, která používá spolehlivou relaci a přenos HTTPS. Spolehlivou relaci povolíte buď imperativně, a to pomocí kódu nebo deklarativního v konfiguračním souboru. Tento postup používá konfigurační soubory klienta a služby k povolení spolehlivé relace a [**\<httpsTransport>**](../../configure-apps/file-schema/wcf/httpstransport.md) elementu.
 
-Klíčovou částí tohoto postupu je, že **\<koncový bod >** konfigurační element obsahuje atribut `bindingConfiguration`, který odkazuje na vlastní konfiguraci vazby s názvem `reliableSessionOverHttps`. [ **\<vazba >** ](../../configure-apps/file-schema/wcf/bindings.md) elementu konfigurace odkazuje na tento název a určí, že se bude používat Spolehlivá relace a přenos HTTPS, a to zahrnutím **\<reliableSession >** a **\<ch >ch prvků httpsTransport** .
+Klíčovou částí tohoto postupu je, že **\<endpoint>** element Configuration obsahuje `bindingConfiguration` atribut, který odkazuje na vlastní konfiguraci vazby s názvem `reliableSessionOverHttps` . [**\<binding>**](../../configure-apps/file-schema/wcf/bindings.md)Element Configuration odkazuje na tento název a určí, že se bude používat Spolehlivá relace a přenos HTTPS, a to včetně **\<reliableSession>** **\<httpsTransport>** prvků a.
 
-Pro zdrojovou kopii tohoto příkladu si přečtěte téma [vlastní vázání spolehlivé relace přes HTTPS](../../../../docs/framework/wcf/samples/custom-binding-reliable-session-over-https.md).
+Pro zdrojovou kopii tohoto příkladu si přečtěte téma [vlastní vázání spolehlivé relace přes HTTPS](../samples/custom-binding-reliable-session-over-https.md).
 
 ### <a name="configure-the-service-with-a-custombinding-to-use-a-reliable-session-with-https"></a>Konfigurace služby s CustomBinding pro použití spolehlivé relace s protokolem HTTPS
 
@@ -27,7 +27,7 @@ Pro zdrojovou kopii tohoto příkladu si přečtěte téma [vlastní vázání s
 
    [!code-csharp[c_HowTo_CreateReliableSessionHTTPS#1122](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_createreliablesessionhttps/cs/service.cs#1122)]
 
-1. Vytvořte soubor *Web. config* pro konfiguraci koncového bodu pro `CalculatorService` s vlastní vazbou s názvem `reliableSessionOverHttps`, která používá spolehlivou relaci a přenos HTTPS.
+1. Vytvořte soubor *Web. config* pro konfiguraci koncového bodu `CalculatorService` s vlastní vazbou s názvem `reliableSessionOverHttps` , který používá spolehlivou relaci a přenos HTTPS.
 
    [!code-xml[c_HowTo_CreateReliableSessionHTTPS#2111](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_createreliablesessionhttps/common/web.config#2111)]
 
@@ -39,25 +39,25 @@ Pro zdrojovou kopii tohoto příkladu si přečtěte téma [vlastní vázání s
 
 ### <a name="configure-the-client-with-a-custombinding-to-use-a-reliable-session-with-https"></a>Konfigurace klienta s CustomBinding pro použití spolehlivé relace s protokolem HTTPS
 
-1. K vygenerování kódu z metadat služby použijte [Nástroj*Svcutil. exe*(ServiceModel Metadata Utility)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) z příkazového řádku.
+1. K vygenerování kódu z metadat služby použijte [Nástroj*Svcutil. exe*(ServiceModel Metadata Utility)](../servicemodel-metadata-utility-tool-svcutil-exe.md) z příkazového řádku.
 
    ```console
    Svcutil.exe <Metadata Exchange (MEX) address or HTTP GET address>
    ```
 
-1. Vygenerovaný klient obsahuje rozhraní `ICalculator` definující kontrakt služby, který musí implementace klienta splňovat.
+1. Generovaný klient obsahuje `ICalculator` rozhraní, které definuje kontrakt služby, který musí implementace klienta splňovat.
 
    [!code-csharp[C_HowTo_CreateReliableSessionHTTPS#1221](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_createreliablesessionhttps/cs/client.cs#1221)]
 
-1. Vygenerovaná klientská aplikace obsahuje také implementaci `ClientCalculator`. Všimněte si, že informace o adrese a vazbě nejsou určeny v rámci implementace služby. Nemusíte psát kód, který načte adresu a informace o vazbě z konfiguračního souboru.
+1. Vygenerovaná klientská aplikace také obsahuje implementaci `ClientCalculator` . Všimněte si, že informace o adrese a vazbě nejsou určeny v rámci implementace služby. Nemusíte psát kód, který načte adresu a informace o vazbě z konfiguračního souboru.
 
    [!code-csharp[C_HowTo_CreateReliableSessionHTTPS#1222](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_createreliablesessionhttps/cs/client.cs#1222)]
 
-1. Nakonfigurujte vlastní vazbu s názvem `reliableSessionOverHttps`, aby používala přenos HTTPS a spolehlivé relace.
+1. Nakonfigurujte vlastní vazbu s názvem `reliableSessionOverHttps` tak, aby používala přenos HTTPS a spolehlivé relace.
 
    [!code-xml[C_HowTo_CreateReliableSessionHTTPS#2211](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_createreliablesessionhttps/common/app.config#2211)]
 
-1. Vytvořte v aplikaci instanci `ClientCalculator` a potom zavolejte operace služby.
+1. Vytvořte instanci `ClientCalculator` v aplikaci a potom zavolejte operace služby.
 
    [!code-csharp[C_HowTo_CreateReliableSessionHTTPS#1223](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_createreliablesessionhttps/cs/client.cs#1223)]
 
@@ -65,8 +65,8 @@ Pro zdrojovou kopii tohoto příkladu si přečtěte téma [vlastní vázání s
 
 ## <a name="net-framework-security"></a>zabezpečení v rozhraní .NET Framework
 
-Vzhledem k tomu, že certifikát použitý v této ukázce je testovací certifikát vytvořený pomocí nástroje *Makecert. exe*, zobrazí se výstraha zabezpečení při pokusu o přístup k adrese https, například `https://localhost/servicemodelsamples/service.svc`, z prohlížeče.
+Vzhledem k tomu, že certifikát použitý v této ukázce je testovací certifikát vytvořený pomocí nástroje *Makecert. exe*, zobrazí se výstraha zabezpečení při pokusu o přístup k adrese https, jako `https://localhost/servicemodelsamples/service.svc` je například, z prohlížeče.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Spolehlivé relace](../../../../docs/framework/wcf/feature-details/reliable-sessions.md)
+- [Spolehlivé relace](reliable-sessions.md)

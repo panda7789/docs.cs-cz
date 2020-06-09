@@ -2,12 +2,12 @@
 title: Konfigurace Internetové informační služby 7.0 pro službu Windows Communication Foundation
 ms.date: 03/30/2017
 ms.assetid: 1050d395-092e-44d3-b4ba-66be3b039ffb
-ms.openlocfilehash: 41eedcf78d8ca6f10fcd0380e43420dcc1b328f1
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: 6343049e2a21b06965a8c7851d891303a49c82b5
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75964509"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597563"
 ---
 # <a name="configuring-internet-information-services-70-for-windows-communication-foundation"></a>Konfigurace Internetové informační služby 7.0 pro službu Windows Communication Foundation
 
@@ -18,7 +18,7 @@ Internetová informační služba (IIS) 7,0 má modulární návrh, který umož
 
  V Ovládacích panelech klikněte na **programy** a potom klikněte na **zapnout nebo vypnout funkce systému Windows** , které jsou uvedené v části **programy a funkce**. v seznamu se zobrazí tato součást jako na následujícím obrázku.
 
- ![Zapnout nebo vypnout funkce dialogového okna](../../../../docs/framework/wcf/feature-details/media/wcfc-turnfeaturesonoroffs.gif "wcfc_TurnFeaturesOnOrOffs")
+ ![Zapnout nebo vypnout funkce dialogového okna](media/wcfc-turnfeaturesonoroffs.gif "wcfc_TurnFeaturesOnOrOffs")
 
  Tato funkce má následující dílčí komponenty:
 
@@ -35,26 +35,26 @@ Internetová informační služba (IIS) 7,0 má modulární návrh, který umož
 ## <a name="iis-70-default-installation"></a>IIS 7,0: výchozí instalace
  Zaškrtnutím funkce **Internetová informační služba** se některé dílčí uzly automaticky zkontrolují, jak je znázorněno na následujícím obrázku.
 
- ![Výchozí nastavení pro funkce IIS 7,0](../../../../docs/framework/wcf/feature-details/media/wcfc-turningfeaturesonoroff2.gif "wcfc_TurningFeaturesOnOrOff2")
+ ![Výchozí nastavení pro funkce IIS 7,0](media/wcfc-turningfeaturesonoroff2.gif "wcfc_TurningFeaturesOnOrOff2")
 
  Toto je výchozí instalace služby IIS 7,0. V rámci této instalace můžete použít službu IIS 7,0 pro obsluhu statického obsahu (například stránky HTML a další obsah). Nemůžete ale spouštět aplikace ASP.NET nebo CGI ani hostitelské služby WCF.
 
 ## <a name="iis-70-installation-with-aspnet-support"></a>IIS 7,0: instalace s podporou ASP.NET
  Abyste mohli ASP.NET pracovat na IIS 7,0, musíte nainstalovat ASP.NET. Po kontrole **ASP.NET**by měla obrazovka vypadat jako na následujícím obrázku.
 
- ![Asp.NET – požadovaná nastavení](../../../../docs/framework/wcf/feature-details/media/wcfc-trunfeaturesonoroff3s.gif "wcfc_TrunFeaturesOnOrOFf3s")
+ ![Asp.NET – požadovaná nastavení](media/wcfc-trunfeaturesonoroff3s.gif "wcfc_TrunFeaturesOnOrOFf3s")
 
  Toto je minimální prostředí pro aplikace WCF a ASP.NET, aby fungovalo ve službě IIS 7,0.
 
 ## <a name="iis-70-installation-with-iis-60-compatibility-components"></a>IIS 7,0: instalace se součástmi kompatibility IIS 6,0
  Při instalaci IIS 7,0 na systém se sadou Visual Studio 2005 nebo některé jiné skripty nebo nástroje pro automatizaci (například Adsutil. vbs), které konfigurují virtuální aplikace, které používají službu IIS 6,0 API, se ujistěte, že jste zkontrolovali **Nástroje pro skriptování**služby iis na 6,0. Tím se automaticky zkontroluje ostatní poduzly **kompatibility správy**služby IIS 6,0. Následující ilustrace znázorňuje obrazovku po dokončení:
 
- ![Nastavení kompatibility správy služby IIS 6,0](../../../../docs/framework/wcf/feature-details/media/scfc-turnfeaturesonoroff5s.gif "scfc_TurnFeaturesOnOrOff5s")
+ ![Nastavení kompatibility správy služby IIS 6,0](media/scfc-turnfeaturesonoroff5s.gif "scfc_TurnFeaturesOnOrOff5s")
 
  V rámci této instalace máte vše potřebné k používání funkcí IIS 7,0, ASP.NET a WCF a ukázek, které jsou k dispozici na webu.
 
-## <a name="request-limits"></a>Omezení počtu požadavků
- V systému Windows Vista se službou IIS 7 byla změněna výchozí hodnota `maxUri` a nastavení `maxQueryStringSize`. Ve výchozím nastavení umožňuje filtrování požadavků ve službě IIS 7,0 délku adresy URL 4096 znaků a délka řetězce dotazu 2048 znaků. Chcete-li změnit tyto výchozí hodnoty, přidejte do souboru App. config následující kód XML.
+## <a name="request-limits"></a>Omezení požadavků
+ V systému Windows Vista se službou IIS 7 se `maxUri` `maxQueryStringSize` změnila výchozí hodnota nastavení a. Ve výchozím nastavení umožňuje filtrování požadavků ve službě IIS 7,0 délku adresy URL 4096 znaků a délka řetězce dotazu 2048 znaků. Chcete-li změnit tyto výchozí hodnoty, přidejte do souboru App. config následující kód XML.
 
 ```xml
  <system.webServer>
@@ -66,9 +66,9 @@ Internetová informační služba (IIS) 7,0 má modulární návrh, který umož
  </system.webServer>
  ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Architektura aktivace WAS](../../../../docs/framework/wcf/feature-details/was-activation-architecture.md)
-- [Konfigurace WAS pro použití s WCF](../../../../docs/framework/wcf/feature-details/configuring-the-wpa--service-for-use-with-wcf.md)
-- [Postupy: Instalace a konfigurace aktivačních komponent WCF](../../../../docs/framework/wcf/feature-details/how-to-install-and-configure-wcf-activation-components.md)
+- [Architektura aktivace WAS](was-activation-architecture.md)
+- [Konfigurace WAS pro použití s WCF](configuring-the-wpa--service-for-use-with-wcf.md)
+- [Postupy: Instalace a konfigurace aktivačních komponent WCF](how-to-install-and-configure-wcf-activation-components.md)
 - [Funkce hostování technologie Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677189(v=azure.10))

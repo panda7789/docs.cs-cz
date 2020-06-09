@@ -1,5 +1,6 @@
 ---
 title: 'Postupy: Podepisování dokumentů XML digitálními podpisy'
+description: Naučte se podepisovat dokumenty XML digitálními podpisy. Použijte třídy v oboru názvů System. Security. Cryptography. XML v rozhraní .NET.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -14,12 +15,12 @@ helpviewer_keywords:
 - XML signing
 - signing XML
 ms.assetid: 99692ac1-d8c9-42d7-b1bf-2737b01037e4
-ms.openlocfilehash: 81fa5e4c503f26dc13758090f845fd8387287084
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 97bd23182ed54b899b76dbf43e179fe0c94b011d
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84277177"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84598564"
 ---
 # <a name="how-to-sign-xml-documents-with-digital-signatures"></a>Postupy: Podepisování dokumentů XML digitálními podpisy
 Třídy v <xref:System.Security.Cryptography.Xml> oboru názvů můžete použít k podepsání dokumentu XML nebo části dokumentu XML s digitálním podpisem.  Digitální podpisy XML (XMLDSIG) umožňují ověřit, že data nebyla po podepsání změněna.  Další informace o standardu XMLDSIG najdete v tématu [syntaxe a zpracování signatur XML](https://www.w3.org/TR/xmldsig-core/)doporučení pro konsorcium World Wide Web (W3C).  

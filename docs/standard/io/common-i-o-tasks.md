@@ -1,16 +1,17 @@
 ---
 title: Obecné vstupně-výstupní úlohy
+description: Naučte se provádět běžné úlohy se soubory & běžných úlohách adresáře pomocí tříd & metod v oboru názvů System.IO v .NET.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
 - I/O, common tasks
 ms.assetid: bf00c380-706a-4e38-b829-454a480629fc
-ms.openlocfilehash: 9474d6c0340583e285a6dc47933c602f799f121d
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 4b97b4e464622e482a9ef45e143865ee82e6b5d4
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287418"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84598603"
 ---
 # <a name="common-io-tasks"></a>Obecné vstupně-výstupní úlohy
 <xref:System.IO>Obor názvů poskytuje několik tříd, které umožňují provádět různé akce, jako je čtení a zápis, k provádění souborů, adresářů a datových proudů. Další informace najdete v tématu [vstupně-výstupní operace se soubory a datovým proudem](index.md).  

@@ -2,36 +2,36 @@
 title: Přehled hostování služeb pracovních postupů
 ms.date: 03/30/2017
 ms.assetid: 19f3704f-06bf-4eeb-8724-5224e02d7ead
-ms.openlocfilehash: dbe271e30e9c4e98a52c01ffaa21de25c127c7ff
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 10ea35fc1988e1b3e6ceb44aca098e63bfc7d7e4
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61855890"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597290"
 ---
 # <a name="hosting-workflow-services-overview"></a>Přehled hostování služeb pracovních postupů
-Ke spuštění musí být hostovaný služeb pracovních postupů. <xref:System.ServiceModel.WorkflowServiceHost> Je hostitele pracovního postupu out-of-the-box, která podporuje víc instancí, konfiguraci a zasílání zpráv WCF (i když nejsou potřeba použít zasílání aby bylo možné hostovat pracovních postupů).  Je integrován se sadou trvalost, sledování a řízení instance prostřednictvím sady chování služby.  Stejně jako jeho WCF <xref:System.ServiceModel.ServiceHost>, <xref:System.ServiceModel.WorkflowServiceHost> můžete ve všech spravovaných aplikací .NET v místním prostředí nebo web hostované (jako soubor .xamlx) ve službě IIS nebo WAS.  Témata v této části popisují, jak k hostování služby pracovního postupu.  
+Aby bylo možné spustit službu pracovního postupu, je nutné ji hostovat. Je předem připravený <xref:System.ServiceModel.WorkflowServiceHost> hostitel pracovního postupu, který podporuje více instancí, konfigurací a zasílání zpráv WCF (i když pracovní postupy nevyžadují, aby používaly zasílání zpráv, aby bylo možné je hostovat).  Integruje se taky se zachováním, sledováním a instancí prostřednictvím sady chování služby.  Stejně jako v případě WCF se může v rámci <xref:System.ServiceModel.ServiceHost> <xref:System.ServiceModel.WorkflowServiceHost> služby IIS/was hostovat v jakékoli spravované aplikaci .NET nebo v hostovaném webovém prostředí (jako soubor. xamlx).  Témata v této části popisují, jak hostovat službu pracovního postupu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Hostování služeb pracovních postupů](../../../../docs/framework/wcf/feature-details/hosting-workflow-services.md)  
- Popisuje hostování služeb pracovních postupů.  
+ [Hostování služeb pracovních postupů](hosting-workflow-services.md)  
+ Popisuje služby hostování pracovního postupu.  
   
- [Interní informace o hostiteli služby pracovního postupu](../../../../docs/framework/wcf/feature-details/workflow-service-host-internals.md)  
- Popisuje, jak <xref:System.ServiceModel.WorkflowServiceHost> zpracovává příchozí zprávy.  
+ [Interní informace o hostiteli služby pracovního postupu](workflow-service-host-internals.md)  
+ Popisuje způsob <xref:System.ServiceModel.WorkflowServiceHost> zpracování příchozích zpráv.  
   
- [Rozšiřitelnost hostitele služby pracovního postupu](../../../../docs/framework/wcf/feature-details/workflow-service-host-extensibility.md)  
- Popisuje, jak rozšířit funkce hostitele služby pracovního postupu.  
+ [Rozšiřitelnost hostitele služby pracovního postupu](workflow-service-host-extensibility.md)  
+ V této části najdete popis postupu rozšiřování funkcí hostitele služby pracovního postupu.  
   
- [Kontrolní koncový bod pracovního postupu](../../../../docs/framework/wcf/feature-details/workflow-control-endpoint.md)  
- Popisuje, jak definovat koncový bod, který vám umožní vytvořit instance pracovního postupu.
+ [Kontrolní koncový bod pracovního postupu](workflow-control-endpoint.md)  
+ Popisuje, jak definovat koncový bod, který umožňuje vytvářet instance pracovního postupu.
   
- [Postupy: Hostitel služby pracovního procesu pomocí Windows Server App Fabric](../../../../docs/framework/wcf/feature-details/how-to-host-a-workflow-service-with-windows-server-app-fabric.md)  
- Ukazuje, jak hostovat existující služby pracovního postupu v systému Windows Server App Fabric.  
+ [Postupy: Hostování služby pracovního procesu pomocí Windows Server App Fabric](how-to-host-a-workflow-service-with-windows-server-app-fabric.md)  
+ Ukazuje, jak hostovat existující službu pracovního postupu ve Windows Server App Fabric.  
   
- [Konfigurace třídy WorkflowServiceHost](../../../../docs/framework/wcf/feature-details/configuring-workflowservicehost.md)  
- Popisuje, jak řídit trvalost, sledování, nečinnosti a neošetřené výjimky chování.  
+ [Konfigurace třídy WorkflowServiceHost](configuring-workflowservicehost.md)  
+ Popisuje, jak řídit chování při persistenci, sledování, nečinnosti a neošetřené výjimce.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.ServiceModel.Activities.WorkflowServiceHost>  
   
  <xref:System.ServiceModel.Activities.WorkflowService>  
@@ -43,4 +43,4 @@ Ke spuštění musí být hostovaný služeb pracovních postupů. <xref:System.
  <xref:System.ServiceModel.Activation.WorkflowServiceHostFactory>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Služby pracovních postupů](../../../../docs/framework/wcf/feature-details/workflow-services.md)
+ [Služby pracovních postupů](workflow-services.md)

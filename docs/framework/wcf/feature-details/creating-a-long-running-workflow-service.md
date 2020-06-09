@@ -2,12 +2,12 @@
 title: Vytvoření dlouhodobé služby pracovního postupu
 ms.date: 03/30/2017
 ms.assetid: 4c39bd04-5b8a-4562-a343-2c63c2821345
-ms.openlocfilehash: 3e422c138b49fa19aa29e4fa1488d61a2c9bc2f8
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 4ae01201230bf848c045158424db60097d8dd767
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75348092"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84599344"
 ---
 # <a name="create-a-long-running-workflow-service"></a>Vytvoření dlouhodobě spuštěné služby pracovního postupu
 
@@ -21,7 +21,7 @@ Pro použití tohoto Názorného postupu musíte mít nainstalovaný následují
 
 2. Visual Studio 2012
 
-3. Microsoft  [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]
+3. Microsoft[!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]
 
 4. Jste obeznámeni s WCF a sadou Visual Studio 2012 a víte, jak vytvářet projekty a řešení.
 
@@ -31,7 +31,7 @@ Pro použití tohoto Názorného postupu musíte mít nainstalovaný následují
 
 2. Kliknutím na tlačítko **připojit** se přihlaste k instanci SQL Server.
 
-3. Ve stromovém zobrazení klikněte pravým tlačítkem na **databáze** a vyberte **Nová databáze.** pro vytvoření nové databáze s názvem `SQLPersistenceStore`.
+3. Ve stromovém zobrazení klikněte pravým tlačítkem na **databáze** a vyberte **Nová databáze.** Vytvoří se nová databáze s názvem `SQLPersistenceStore` .
 
 4. Spuštěním souboru skriptu SqlWorkflowInstanceStoreSchema. SQL umístěného v adresáři C:\Windows\Microsoft.NET\Framework\v4.0\SQL\en v databázi SQLPersistenceStore nastavte potřebná schémata databáze.
 
@@ -39,13 +39,13 @@ Pro použití tohoto Názorného postupu musíte mít nainstalovaný následují
 
 ## <a name="create-the-web-hosted-workflow-service"></a>Vytvořit službu Web Hosted Workflow Service
 
-1. Vytvořte prázdné řešení sady Visual Studio 2012 a pojmenujte ho `OrderProcessing`.
+1. Vytvořte prázdné řešení sady Visual Studio 2012 a pojmenujte ho `OrderProcessing` .
 
-2. Přidejte do řešení nový projekt aplikace služby pracovního postupu WCF s názvem `OrderService`.
+2. Přidejte do řešení nový projekt aplikace služby pracovního postupu WCF s názvem `OrderService` .
 
 3. V dialogovém okně Vlastnosti projektu vyberte kartu **Web** .
 
-    1. V části **Spustit akci** vyberte **konkrétní stránka** a zadejte `Service1.xamlx`.
+    1. V části **Spustit akci** vyberte **konkrétní stránka** a zadejte `Service1.xamlx` .
 
         ![Webové vlastnosti projektu služby pracovního postupu](./media/creating-a-long-running-workflow-service/start-action-specific-page-option.png "Vytvořit možnost stránky pro web hostovaný pracovní postup – konkrétní služba")
 
@@ -58,7 +58,7 @@ Pro použití tohoto Názorného postupu musíte mít nainstalovaný následují
 
         Tyto dva kroky nakonfigurují projekt služby pracovního postupu tak, aby byl hostovaný službou IIS.
 
-4. Otevřete `Service1.xamlx`, pokud už není otevřený, a odstraňte existující aktivity **ReceiveRequest** a **SendResponse** .
+4. Otevřete, `Service1.xamlx` Pokud už není otevřený, a odstraňte existující aktivity **ReceiveRequest** a **SendResponse** .
 
 5. Vyberte aktivitu **sekvenční služby** a klikněte na odkaz **proměnné** a přidejte proměnné zobrazené na následujícím obrázku. Tím se přidají některé proměnné, které se použijí později ve službě pracovního postupu.
 
@@ -73,7 +73,7 @@ Pro použití tohoto Názorného postupu musíte mít nainstalovaný následují
 
         ![Nastavit vlastnosti aktivity Receive](./media/creating-a-long-running-workflow-service/set-receive-activity-properties.png "Nastavte vlastnosti aktivity Receive.")
 
-        Vlastnost DisplayName nastaví název zobrazený pro aktivitu Receive v návrháři. Vlastnosti ServiceContractName a OperationName určují název kontraktu služby a operace, které jsou implementované aktivitou Receive. Další informace o tom, jak se ve službách pracovních postupů používají kontrakty, najdete v tématu [Použití kontraktů v pracovním postupu](../../../../docs/framework/wcf/feature-details/using-contracts-in-workflow.md).
+        Vlastnost DisplayName nastaví název zobrazený pro aktivitu Receive v návrháři. Vlastnosti ServiceContractName a OperationName určují název kontraktu služby a operace, které jsou implementované aktivitou Receive. Další informace o tom, jak se ve službách pracovních postupů používají kontrakty, najdete v tématu [Použití kontraktů v pracovním postupu](using-contracts-in-workflow.md).
 
     2. Klikněte na odkaz **definovat...** v aktivitě **ReceiveStartOrder** a nastavte vlastnosti zobrazené na následujícím obrázku.  Všimněte si, že přepínač **Parameters** je vybrán, parametr s názvem `p_customerName` je vázán na `customerName` proměnnou. Tím se nakonfiguruje aktivita **příjmu** pro příjem některých dat a vazba těchto dat na lokální proměnné.
 
@@ -93,7 +93,7 @@ Pro použití tohoto Názorného postupu musíte mít nainstalovaný následují
 
         Tím se vytvoří nové ID objednávky a hodnota se umístí do proměnné ČísloObjednávky.
 
-    6. Vyberte aktivitu **ReplyToStartOrder** . V okně Vlastnosti klikněte na tlačítko se třemi tečkami pro **inicializátoři CorrelationInitializers**. Vyberte odkaz **Přidat inicializátor** , do textového pole inicializátor zadejte `orderIdHandle`, pro typ korelace vyberte možnost inicializátor korelace dotazu a v rozevíracím seznamu dotazy XPATH vyberte p_orderId. Tato nastavení znázorňuje následující obrázek. Klikněte na tlačítko **OK**.  Tím se inicializuje korelace mezi klientem a touto instancí služby pracovního postupu. Když se přijme zpráva obsahující toto ID objednávky, je směrována do této instance služby pracovního postupu.
+    6. Vyberte aktivitu **ReplyToStartOrder** . V okně Vlastnosti klikněte na tlačítko se třemi tečkami pro **inicializátoři CorrelationInitializers**. Vyberte odkaz **Přidat inicializátor** , `orderIdHandle` do textového pole inicializátor zadejte, pro typ korelace vyberte inicializátor korelace a v rozevíracím seznamu dotazy XPath vyberte p_orderId. Tato nastavení znázorňuje následující obrázek. Klikněte na **OK**.  Tím se inicializuje korelace mezi klientem a touto instancí služby pracovního postupu. Když se přijme zpráva obsahující toto ID objednávky, je směrována do této instance služby pracovního postupu.
 
         ![Přidání inicializátoru korelace](./media/creating-a-long-running-workflow-service/add-correlationinitializers.png "Přidejte inicializátor korelace.")
 
@@ -103,42 +103,42 @@ Pro použití tohoto Názorného postupu musíte mít nainstalovaný následují
 
         ![Přidávání nových proměnných](./media/creating-a-long-running-workflow-service/add-the-itemid-variable.png "Přidejte proměnnou ItemId.")
 
-        Do oboru `Sequence` také přidejte `orderResult` jako **řetězec** .
+        `orderResult`Do oboru přidejte také **řetězec** as `Sequence` .
 
     2. Vyberte aktivitu **Receive** a nastavte vlastnosti zobrazené na následujícím obrázku:
 
         ![Nastavit vlastnosti aktivity Receive](./media/creating-a-long-running-workflow-service/set-receive-activities-properties.png "Nastavte vlastnosti aktivity Receive.")
 
         > [!NOTE]
-        > Nezapomeňte změnit pole **ServiceContractName** pomocí `../IAddItem`.
+        > Nezapomeňte změnit pole **ServiceContractName** pomocí `../IAddItem` .
 
     3. Klikněte na odkaz **definovat...** v aktivitě **ReceiveAddItem** a přidejte parametry zobrazené na následujícím obrázku: tím se nakonfiguruje aktivita Receive pro příjem dvou parametrů, ID objednávky a ID položky, která je seřazená.
 
         ![Určení parametrů pro druhý příjem](./media/creating-a-long-running-workflow-service/add-receive-two-parameters.png "Nakonfigurujte aktivitu Receive pro příjem dvou parametrů.")
 
-    4. Klikněte na tlačítko se třemi tečkami **CorrelateOn** a zadejte `orderIdHandle`. V části **dotazy XPath**klikněte na šipku rozevíracího seznamu a vyberte možnost `p_orderId`. Tím se nakonfiguruje korelace pro druhou aktivitu Receive. Další informace o korelaci najdete v tématu [korelace](../../../../docs/framework/wcf/feature-details/correlation.md).
+    4. Klikněte na tlačítko se třemi tečkami **CorrelateOn** a zadejte `orderIdHandle` . V části **dotazy XPath**klikněte na šipku rozevíracího seznamu a vyberte `p_orderId` . Tím se nakonfiguruje korelace pro druhou aktivitu Receive. Další informace o korelaci najdete v tématu [korelace](correlation.md).
 
         ![Nastavení vlastnosti vlastnosti CorrelatesOn](./media/creating-a-long-running-workflow-service/correlateson-setting.png "Nastavte vlastnost vlastnosti CorrelatesOn.")
 
     5. Přetáhněte aktivitu **if** hned za aktivitu **ReceiveAddItem** . Tato aktivita funguje stejně jako příkaz if.
 
-        1. Nastavte vlastnost **Condition** na `itemId=="Zune HD" (itemId="Zune HD" for Visual Basic)`
+        1. Nastavte vlastnost **Condition** na`itemId=="Zune HD" (itemId="Zune HD" for Visual Basic)`
 
         2. Přetáhněte aktivitu **přiřadit** v části do oddílu **then** a jinou do části **Else** nastavte vlastnosti aktivity **přiřazení** , jak je znázorněno na následujícím obrázku.
 
             ![Přiřazuje se výsledek volání služby.](./media/creating-a-long-running-workflow-service/assign-result-of-service-call.png "Přiřaďte výsledek volání služby.")
 
-            Pokud je podmínka `true` spustí se oddíl **then** . Pokud je podmínka `false` je proveden oddíl **Else** .
+            Pokud je podmínka `true` , bude provedena v oddílu **then** . Pokud je podmínka `false` v části **Else** , je provedena.
 
         3. Vyberte aktivitu **SendReplyToReceive** a nastavte vlastnost **DisplayName** znázorněnou na následujícím obrázku.
 
             ![Nastavení vlastností aktivity SendReply](./media/creating-a-long-running-workflow-service/send-reply-activity-property.png "Nastavte vlastnost aktivity SendReply.")
 
-        4. Klikněte na odkaz **definovat...** v aktivitě **SetReplyToAddItem** a nakonfigurujte ho tak, jak je znázorněno na následujícím obrázku. Tím se nakonfiguruje aktivita **SendReplyToAddItem** , která vrátí hodnotu v proměnné `orderResult`.
+        4. Klikněte na odkaz **definovat...** v aktivitě **SetReplyToAddItem** a nakonfigurujte ho tak, jak je znázorněno na následujícím obrázku. Tím se nakonfiguruje aktivita **SendReplyToAddItem** , která vrátí hodnotu v `orderResult` proměnné.
 
             ![Nastavení datové vazby pro aktivitu SendReply](./media/creating-a-long-running-workflow-service/set-property-for-sendreplytoadditem.gif "Nastaví vlastnost pro aktivitu SendReplyToAddItem.")
 
-8. Otevřete soubor Web. config a přidejte následující prvky v části chování \<>, čímž povolíte trvalé uložení pracovního postupu.
+8. Otevřete soubor Web. config a přidejte následující prvky do \<behavior> části pro povolení trvalosti pracovního postupu.
 
     ```xml
     <sqlWorkflowInstanceStore connectionString="Data Source=your-machine\SQLExpress;Initial Catalog=SQLPersistenceStore;Integrated Security=True;Asynchronous Processing=True" instanceEncodingOption="None" instanceCompletionAction="DeleteAll" instanceLockedExceptionAction="BasicRetry" hostLockRenewalPeriod="00:00:30" runnableInstancesDetectionPeriod="00:00:02" />
@@ -152,17 +152,17 @@ Pro použití tohoto Názorného postupu musíte mít nainstalovaný následují
 
 ## <a name="create-a-client-application-to-call-the-workflow-service"></a>Vytvoření klientské aplikace pro volání služby pracovního postupu
 
-1. Přidejte do řešení nový projekt konzolové aplikace s názvem `OrderClient`.
+1. Přidejte do řešení nový projekt konzolové aplikace s názvem `OrderClient` .
 
-2. Přidat odkazy na následující sestavení do projektu `OrderClient`
+2. Přidat do projektu odkazy na následující sestavení `OrderClient`
 
     1. System.ServiceModel.dll
 
-    2. System.ServiceModel.Activities.dll
+    2. System. ServiceModel. Activities. dll
 
-3. Přidejte do služby pracovního postupu odkaz na službu a jako obor názvů zadejte `OrderService`.
+3. Přidejte do služby pracovního postupu odkaz na službu a `OrderService` jako obor názvů zadejte.
 
-4. V metodě `Main()` klientského projektu přidejte následující kód:
+4. V `Main()` metodě klientského projektu přidejte následující kód:
 
     ```csharp
     static void Main(string[] args)
@@ -189,7 +189,7 @@ Pro použití tohoto Názorného postupu musíte mít nainstalovaný následují
     }
     ```
 
-5. Sestavte řešení a spusťte aplikaci `OrderClient`. Klient zobrazí následující text:
+5. Sestavte řešení a spusťte `OrderClient` aplikaci. Klient zobrazí následující text:
 
     ```output
     Sending start messageWorkflow service is idle...Press [ENTER] to send an add item message to reactivate the workflow service...
@@ -205,6 +205,6 @@ Pro použití tohoto Názorného postupu musíte mít nainstalovaný následují
     Sending add item messageService returned: Item added to orderPress any key to continue . . .
     ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Služby pracovních postupů](../../../../docs/framework/wcf/feature-details/workflow-services.md)
+- [Služby pracovních postupů](workflow-services.md)

@@ -2,29 +2,29 @@
 title: System.ServiceModel.MessageProcessingPaused
 ms.date: 03/30/2017
 ms.assetid: 36b5302a-93cc-478a-9bb2-8a1601fba1df
-ms.openlocfilehash: 7dcdb9fdd6a283f692897cbbb49cd1f2d1dd661e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 85bec8255e0d20d6e76ea354e5b8c42b83d7d8e6
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64586792"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84598148"
 ---
 # <a name="systemservicemodelmessageprocessingpaused"></a>System.ServiceModel.MessageProcessingPaused
 System.ServiceModel.MessageProcessingPaused  
   
 ## <a name="description"></a>Popis  
- Při zpracování zprávy byly přepnout vlákna.  
+ Při zpracování zprávy došlo k přepnutí vláken.  
   
- Pozastavit zpracování zprávy lze z následujících důvodů:  
+ Zpracování zpráv může být pozastaveno z následujících důvodů:  
   
-- Režim ConcurrencyMode je jednoduché nebo vícenásobné a služba zpracovává jinou zprávu.  
+- Režim ConcurrencyMode je jeden nebo znovu vstupující a služba zpracovává jinou zprávu.  
   
-- Transakce je povolená a služba zpracovává jinou transakcí.  
+- Transakce je povolena a služba zpracovává jinou transakci.  
   
 - Kontext synchronizace není aktuální.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Trasování](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [Řešení problémů s aplikací pomocí trasování](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
-- [Správa a diagnostika](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [Trasování](index.md)
+- [Řešení potíží s aplikací pomocí trasování](using-tracing-to-troubleshoot-your-application.md)
+- [Správa a diagnostika](../index.md)

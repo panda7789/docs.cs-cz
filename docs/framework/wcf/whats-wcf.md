@@ -6,12 +6,12 @@ helpviewer_keywords:
 - technology overview [WCF]
 - WCF [WCF], technology overview
 ms.assetid: 40e1009d-ef15-450b-9848-62eabe5e5738
-ms.openlocfilehash: 01470bd7f317acca068b3c1be1c751e3050ee7e8
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: fd78f2cd8266f94c577801623a84b56919c82973
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72320215"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600851"
 ---
 # <a name="what-is-windows-communication-foundation"></a>Co je to Windows Communication Foundation
 Windows Communication Foundation (WCF) je rozhraní pro vytváření aplikací orientovaných na služby. Pomocí WCF můžete odesílat data jako asynchronní zprávy z jednoho koncového bodu služby do jiného. Koncový bod služby může být součástí nepřetržitě dostupné služby hostované službou IIS nebo může být služba hostovaná v aplikaci. Koncovým bodem může být klient služby, která žádá o data z koncového bodu služby. Zprávy mohou být jednoduché jako jeden znak nebo Word odeslaný jako XML nebo jako datový proud binárních dat. Mezi několik ukázkových scénářů patří:
@@ -52,7 +52,7 @@ WCF zahrnuje následující sadu funkcí. Další informace najdete v tématu [P
 
 - **Kontrakty dat**
 
-     Protože je WCF sestaveno pomocí .NET Framework, zahrnuje také metody pro kód, které poskytují smlouvy, které chcete vykonat. Jedním z univerzálních typů smluv je kontrakt dat. V podstatě je při psaní služby pomocí vizuálu C# nebo Visual Basic nejjednodušší způsob, jak zpracovávat data, vytvářet třídy, které reprezentují datovou entitu s vlastnostmi, které patří k datové entitě. WCF zahrnuje komplexní systém pro práci s daty tímto snadným způsobem. Jakmile vytvoříte třídy, které reprezentují data, služba automaticky vygeneruje metadata, která klientům umožňují dodržovat typy dat, které jste navrhli. Další informace najdete v tématu [Použití kontraktů dat](../../../docs/framework/wcf/feature-details/using-data-contracts.md).
+     Protože je WCF sestaveno pomocí .NET Framework, zahrnuje také metody pro kód, které poskytují smlouvy, které chcete vykonat. Jedním z univerzálních typů smluv je kontrakt dat. V podstatě je při psaní služby pomocí jazyka Visual C# nebo Visual Basic nejjednodušší způsob, jak zpracovávat data, vytvářet třídy, které reprezentují datovou entitu s vlastnostmi, které patří k datové entitě. WCF zahrnuje komplexní systém pro práci s daty tímto snadným způsobem. Jakmile vytvoříte třídy, které reprezentují data, služba automaticky vygeneruje metadata, která klientům umožňují dodržovat typy dat, které jste navrhli. Další informace najdete v tématu [Použití kontraktů dat](feature-details/using-data-contracts.md).
 
 - **Zabezpečení**
 
@@ -72,13 +72,13 @@ WCF zahrnuje následující sadu funkcí. Další informace najdete v tématu [P
 
 - **Transakce**
 
-     WCF podporuje také transakce pomocí jednoho ze tří modelů transakce: WS-AtomicTransactions, rozhraní API v oboru názvů <xref:System.Transactions> a Microsoft DTC (Distributed Transaction Coordinator). Další informace o podpoře transakcí v WCF najdete v tématu [transakce](./feature-details/transactions-in-wcf.md).
+     WCF podporuje také transakce pomocí jednoho ze tří modelů transakce: WS-AtomicTransactions, rozhraní API v <xref:System.Transactions> oboru názvů a Microsoft DTC (Distributed Transaction Coordinator). Další informace o podpoře transakcí v WCF najdete v tématu [transakce](./feature-details/transactions-in-wcf.md).
 
 - **Podpora AJAX a REST**
 
      REST je příkladem vyvíjející se technologie Web 2,0. WCF se dá nakonfigurovat tak, aby zpracovával "jednoduchá" data XML, která nejsou zabalená v obálce SOAP. WCF lze také rozšířit tak, aby podporovalo konkrétní formáty XML, jako je například ATOM (oblíbený Standard RSS), a dokonce i jiné formáty než XML, jako je například JavaScript Object Notation (JSON).
 
-- **Rozšíření**
+- **Možností**
 
      Architektura WCF má několik bodů rozšiřitelnosti. Pokud se vyžaduje další funkce, je k dispozici několik vstupních bodů, které vám umožní přizpůsobit chování služby. Další informace o dostupných bodech rozšiřitelnosti najdete v tématu [rozšíření WCF](./extending/index.md).
 
@@ -94,7 +94,7 @@ Microsoft Silverlight je platforma pro vytváření interoperabilních a bohatý
 
 Funkce hostování aplikačního serveru Windows serveru AppFabric jsou určené konkrétně pro nasazení a správu aplikací, které používají WCF pro komunikaci. Mezi funkce hostování patří rozšířené možnosti nástrojů a konfigurace, které jsou určené konkrétně pro aplikace podporující WCF.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.ServiceModel>
 - [Základní koncepty Windows Communication Foundation](fundamental-concepts.md)
@@ -103,4 +103,4 @@ Funkce hostování aplikačního serveru Windows serveru AppFabric jsou určené
 - [Kurz Začínáme](getting-started-tutorial.md)
 - [Průvodce dokumentací](guide-to-the-documentation.md)
 - [Základní programování WCF](basic-wcf-programming.md)
-- [Ukázky Windows Communication Foundation](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751514%28v=vs.90%29)
+- [Ukázky služby Windows Communication Foundation](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751514%28v=vs.90%29)
