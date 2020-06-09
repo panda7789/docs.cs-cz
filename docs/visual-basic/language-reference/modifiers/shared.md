@@ -11,12 +11,12 @@ helpviewer_keywords:
 - shared [elements VB]
 - elements [Visual Basic], shared
 ms.assetid: 2bf7cf2c-b0dd-485e-8749-b5d674dab4cd
-ms.openlocfilehash: 000cc13bc6e80914e9a21b6ee60e91127809ee08
-ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
+ms.openlocfilehash: d8c9879ea2f62bfbeaa378d0aaee806623ea1c55
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84307082"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84579109"
 ---
 # <a name="shared-visual-basic"></a>Shared (Visual Basic)
 
@@ -26,13 +26,13 @@ Určuje, že nejmíň jeden deklarovaný programový prvek je spojen s třídou 
 
 Sdílení člena třídy nebo struktury zpřístupňuje každou instanci, nikoli *nesdílenou*, kde každá instance udržuje svou vlastní kopii. To je užitečné, například pokud se hodnota proměnné vztahuje na celou aplikaci. Pokud deklarujete tuto proměnnou `Shared` , pak všechny instance budou přistupovat ke stejnému umístění úložiště a pokud jedna instance změní hodnotu proměnné, všechny instance budou přistupovat k aktualizované hodnotě.
 
-Sdílení nemění úroveň přístupu člena. Například člen třídy může být sdílen a soukromý (přístupný pouze z třídy) nebo nesdílené a veřejné. Další informace najdete v tématu [úrovně přístupu v Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).
+Sdílení nemění úroveň přístupu člena. Například člen třídy může být sdílen a soukromý (přístupný pouze z třídy) nebo nesdílené a veřejné. Další informace najdete v tématu [úrovně přístupu v Visual Basic](../../programming-guide/language-features/declared-elements/access-levels.md).
 
 ## <a name="rules"></a>Pravidla
 
 - **Kontext deklarace** Můžete použít `Shared` pouze na úrovni modulu. To znamená, že kontext deklarace pro `Shared` prvek musí být třída nebo struktura a nemůže se jednat o zdrojový soubor, obor názvů nebo proceduru.
 
-- **Kombinované modifikátory.** `Shared`V rámci stejné deklarace nelze zadat společně s [Overrides](../../../visual-basic/language-reference/modifiers/overrides.md), [overridable](../../../visual-basic/language-reference/modifiers/overridable.md), [NotOverridable](../../../visual-basic/language-reference/modifiers/notoverridable.md), [MustOverride](../../../visual-basic/language-reference/modifiers/mustoverride.md)nebo [static](../../../visual-basic/language-reference/modifiers/static.md) .
+- **Kombinované modifikátory.** `Shared`V rámci stejné deklarace nelze zadat společně s [Overrides](overrides.md), [overridable](overridable.md), [NotOverridable](notoverridable.md), [MustOverride](mustoverride.md)nebo [static](static.md) .
 
 - **Přístup k.** Ke sdílenému elementu přistupujete tak, že ho zařadíte s názvem jeho třídy nebo struktury, nikoli s názvem proměnné konkrétní instance své třídy nebo struktury. Pro přístup ke sdíleným členům nemusíte ani vytvářet instanci třídy nebo struktury.
 
@@ -42,7 +42,7 @@ Sdílení nemění úroveň přístupu člena. Například člen třídy může 
      If Double.IsNaN(result) Then Console.WriteLine("Result is mathematically undefined.")
      ```
 
-- **Implicitní sdílení.** `Shared`V [příkazu const](../../../visual-basic/language-reference/statements/const-statement.md)nelze použít modifikátor, ale konstanty jsou implicitně sdíleny. Podobně nemůžete deklarovat člen modulu nebo rozhraní, které mají být `Shared` , ale budou implicitně sdíleny.
+- **Implicitní sdílení.** `Shared`V [příkazu const](../statements/const-statement.md)nelze použít modifikátor, ale konstanty jsou implicitně sdíleny. Podobně nemůžete deklarovat člen modulu nebo rozhraní, které mají být `Shared` , ale budou implicitně sdíleny.
 
 ## <a name="behavior"></a>Chování
 

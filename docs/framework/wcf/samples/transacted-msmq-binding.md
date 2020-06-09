@@ -2,12 +2,12 @@
 title: Zpracované vazby služby MSMQ
 ms.date: 03/30/2017
 ms.assetid: 71f5cb8d-f1df-4e1e-b8a2-98e734a75c37
-ms.openlocfilehash: a3592195f853dd97bf8e4351526bf0fff9ce78fd
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: fa53099caba144f321698f180fe18f7614a1fa64
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74715634"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84596562"
 ---
 # <a name="transacted-msmq-binding"></a>Zpracované vazby služby MSMQ
 
@@ -22,7 +22,7 @@ Pokud se pro posílání a přijímání zpráv používají transakce, jsou ve 
 
 V této ukázce klient pošle dávku zpráv službě v rámci rozsahu transakce. Zprávy odeslané do fronty jsou poté přijímány službou v rámci oboru transakce definovaném službou.
 
-Kontrakt služby je `IOrderProcessor`, jak je znázorněno v následujícím ukázkovém kódu. Rozhraní definuje jednosměrnou službu, která je vhodná pro použití s frontami.
+Kontrakt služby je `IOrderProcessor` , jak je znázorněno v následujícím ukázkovém kódu. Rozhraní definuje jednosměrnou službu, která je vhodná pro použití s frontami.
 
 ```csharp
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples")]
@@ -33,7 +33,7 @@ public interface IOrderProcessor
 }
 ```
 
-Chování služby definuje chování operace s `TransactionScopeRequired` nastavenou na `true`. Tím se zajistí, že stejný obor transakce, který se použije k načtení zprávy z fronty, je používán všemi správci prostředků, ke kterým přistupovala metoda. Zaručuje také, že pokud metoda vyvolá výjimku, zpráva se vrátí do fronty. Bez nastavení této operace vytvoří kanál zařazený do fronty transakci, která načte zprávu z fronty a potvrdí ji automaticky před odesláním tak, že pokud operace nebude úspěšná, zpráva se ztratí. Nejběžnějším scénářem je, aby se operace služby zařadí do transakce, která se používá ke čtení zprávy z fronty, jak je znázorněno v následujícím kódu.
+Chování služby definuje chování operace s `TransactionScopeRequired` nastavením na `true` . Tím se zajistí, že stejný obor transakce, který se použije k načtení zprávy z fronty, je používán všemi správci prostředků, ke kterým přistupovala metoda. Zaručuje také, že pokud metoda vyvolá výjimku, zpráva se vrátí do fronty. Bez nastavení této operace vytvoří kanál zařazený do fronty transakci, která načte zprávu z fronty a potvrdí ji automaticky před odesláním tak, že pokud operace nebude úspěšná, zpráva se ztratí. Nejběžnějším scénářem je, aby se operace služby zařadí do transakce, která se používá ke čtení zprávy z fronty, jak je znázorněno v následujícím kódu.
 
 ```csharp
  // This service class that implements the service contract.
@@ -50,7 +50,7 @@ Chování služby definuje chování operace s `TransactionScopeRequired` nastav
 }
 ```
 
-Služba je hostována svým hostitelem. Při použití přenosu služby MSMQ musí být použitá fronta předem vytvořená. To lze provést ručně nebo prostřednictvím kódu. V této ukázce služba obsahuje kód pro kontrolu existence fronty a vytvoření fronty, pokud neexistuje. Název fronty se načte z konfiguračního souboru. Základní adresa je používána [nástrojem Svcutil. exe](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) pro vygenerování proxy serveru ke službě.
+Služba je hostována svým hostitelem. Při použití přenosu služby MSMQ musí být použitá fronta předem vytvořená. To lze provést ručně nebo prostřednictvím kódu. V této ukázce služba obsahuje kód pro kontrolu existence fronty a vytvoření fronty, pokud neexistuje. Název fronty se načte z konfiguračního souboru. Základní adresa je používána [nástrojem Svcutil. exe](../servicemodel-metadata-utility-tool-svcutil-exe.md) pro vygenerování proxy serveru ke službě.
 
 ```csharp
 // Host the service within this EXE console application.
@@ -90,7 +90,7 @@ Název fronty MSMQ je zadán v oddílu appSettings konfiguračního souboru, jak
 ```
 
 > [!NOTE]
-> Název fronty používá tečku (.) pro místní počítač a oddělovače zpětného lomítka v cestě při vytváření fronty pomocí <xref:System.Messaging>. Koncový bod služby Windows Communication Foundation (WCF) používá adresu fronty se schématem NET. MSMQ, používá localhost k označení místního počítače a používá lomítka v cestě.
+> Název fronty používá tečku (.) pro místní počítač a oddělovače zpětného lomítka v cestě při vytváření fronty pomocí <xref:System.Messaging> . Koncový bod služby Windows Communication Foundation (WCF) používá adresu fronty se schématem NET. MSMQ, používá localhost k označení místního počítače a používá lomítka v cestě.
 
 Klient vytvoří obor transakce. Komunikace s frontou probíhá v rámci rozsahu transakce, což způsobuje, že se bude považovat za atomickou jednotku, do které jsou odesílány všechny zprávy do fronty, nebo žádná z zpráv není odeslána do fronty. Transakce je potvrzena voláním <xref:System.Transactions.TransactionScope.Complete%2A> v oboru transakce.
 
@@ -159,7 +159,7 @@ Processing Purchase Order: 7b31ce51-ae7c-4def-9b8b-617e4288eafd
 
 ### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky
 
-1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
+1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](one-time-setup-procedure-for-the-wcf-samples.md).
 
 2. Pokud je služba spuštěna jako první, zkontroluje, zda je fronta k dispozici. Pokud fronta není přítomna, služba ji vytvoří. Službu můžete nejdřív spustit, abyste mohli vytvořit frontu, nebo ji můžete vytvořit pomocí Správce fronty MSMQ. Pomocí těchto kroků vytvořte ve Windows 2008 frontu.
 
@@ -171,17 +171,17 @@ Processing Purchase Order: 7b31ce51-ae7c-4def-9b8b-617e4288eafd
 
     4. Zaškrtněte políčko **transakční** .
 
-    5. Jako název nové fronty zadejte `ServiceModelSamplesTransacted`.
+    5. `ServiceModelSamplesTransacted`Jako název nové fronty zadejte.
 
-3. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
+3. Chcete-li sestavit edici C# nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](building-the-samples.md).
 
-4. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).
+4. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](running-the-samples.md).
 
-Ve výchozím nastavení je u <xref:System.ServiceModel.NetMsmqBinding>povolena možnost zabezpečení přenosu. Existují dvě důležité vlastnosti pro zabezpečení přenosu služby MSMQ <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A> a <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A>. Ve výchozím nastavení je režim ověřování nastaven na `Windows` a úroveň ochrany je nastavena na `Sign`. Aby služba MSMQ poskytovala funkci ověřování a podepisování, musí být součástí domény a musí být nainstalovaná možnost integrace služby Active Directory pro službu MSMQ. Pokud tuto ukázku spustíte na počítači, který nesplňuje tato kritéria, dojde k chybě.
+Ve výchozím nastavení <xref:System.ServiceModel.NetMsmqBinding> je zapnuto zabezpečení přenosu. Existují dvě důležité vlastnosti pro zabezpečení přenosu ve službě MSMQ <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A> a <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> . Ve výchozím nastavení je režim ověřování nastaven na hodnotu `Windows` a úroveň ochrany je nastavena na hodnotu `Sign` . Aby služba MSMQ poskytovala funkci ověřování a podepisování, musí být součástí domény a musí být nainstalovaná možnost integrace služby Active Directory pro službu MSMQ. Pokud tuto ukázku spustíte na počítači, který nesplňuje tato kritéria, dojde k chybě.
 
 ### <a name="to-run-the-sample-on-a-computer-joined-to-a-workgroup-or-without-active-directory-integration"></a>Spuštění ukázky na počítači připojeném k pracovní skupině nebo bez integrace služby Active Directory
 
-1. Pokud počítač není součástí domény nebo nemáte nainstalovanou integraci služby Active Directory, vypněte zabezpečení přenosu nastavením režimu ověřování a úrovně ochrany na `None`, jak je znázorněno v následujícím ukázkovém kódu konfigurace.
+1. Pokud počítač není součástí domény nebo nemáte nainstalovanou integraci služby Active Directory, vypněte zabezpečení přenosu nastavením režimu ověřování a úrovně ochrany tak, `None` jak je znázorněno v následujícím ukázkovém kódu konfigurace.
 
     ```xml
     <system.serviceModel>
@@ -228,13 +228,13 @@ Ve výchozím nastavení je u <xref:System.ServiceModel.NetMsmqBinding>povolena 
 2. Před spuštěním ukázky se ujistěte, že jste změnili konfiguraci na serveru i v klientovi.
 
     > [!NOTE]
-    > Nastavení `security mode` na `None` je ekvivalentem nastavení <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A>, <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A>a `Message` zabezpečení na `None`.
+    > Nastavení `security mode` na `None` je ekvivalentní nastavení <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A> , <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> a `Message` zabezpečení na `None` .
 
 > [!IMPORTANT]
 > Ukázky již mohou být nainstalovány v počítači. Než budete pokračovat, vyhledejte následující (výchozí) adresář.
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Net\MSMQ\Transacted`

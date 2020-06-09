@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Přístup ke službám pomocí duplexního kontraktu'
+title: 'Postupy: přístup ke službám pomocí duplexního kontraktu'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,28 +7,28 @@ dev_langs:
 helpviewer_keywords:
 - duplex contracts [WCF]
 ms.assetid: 746a9d64-f21c-426c-b85d-972e916ec6c5
-ms.openlocfilehash: 366fd9d6aa220bcbec1ee8fb2a04d1b84755800a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bc42792b827b49265a0b1addf959de2fa1a041e3
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61855137"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597212"
 ---
-# <a name="how-to-access-services-with-a-duplex-contract"></a>Postupy: Přístup ke službám pomocí duplexního kontraktu
+# <a name="how-to-access-services-with-a-duplex-contract"></a>Postupy: přístup ke službám pomocí duplexního kontraktu
 
-Jednu funkci Windows Communication Foundation (WCF) je schopnost vytvářet služby, která používá vzor duplexní zasílání zpráv. Tento model umožňuje služba ke komunikaci s klientem prostřednictvím zpětné volání. Toto téma popisuje kroky k vytvoření klienta WCF v třídě klienta, který implementuje rozhraní zpětného volání.
+Jednou z funkcí služby Windows Communication Foundation (WCF) je schopnost vytvořit službu, která používá duplexový vzor pro přenos zpráv. Tento model umožňuje službě komunikovat s klientem prostřednictvím zpětného volání. Toto téma ukazuje postup vytvoření klienta WCF v klientské třídě, která implementuje rozhraní zpětného volání.
 
-Duální vazby poskytuje IP adresu klienta do služby. Klient musí použít zabezpečení zajistit, že se připojí jenom ke službám ji vztahy důvěryhodnosti.
+Duální vazba zpřístupňuje IP adresu klienta ke službě. Klient by měl zabezpečení používat k zajištění toho, aby se připojil pouze ke službám, kterým důvěřuje.
 
-Kurz týkající se vytvoření klienta a basic služby WCF, najdete v tématu [kurz Začínáme](../../../../docs/framework/wcf/getting-started-tutorial.md).
+Kurz týkající se vytvoření základní služby a klienta WCF najdete v tématu [Začínáme kurzu](../getting-started-tutorial.md).
 
-## <a name="to-access-a-duplex-service"></a>Pro přístup k duplexní služby
+## <a name="to-access-a-duplex-service"></a>Přístup k duplexní službě
 
-1. Vytvoření služby, která obsahuje dvě rozhraní. První rozhraní je pro službu, druhý zpětného volání. Další informace o vytvoření duplexní služby najdete v tématu [jak: Vytvoření duplexního kontraktu](../../../../docs/framework/wcf/feature-details/how-to-create-a-duplex-contract.md).
+1. Vytvořte službu, která obsahuje dvě rozhraní. První rozhraní je pro službu, druhým je pro zpětné volání. Další informace o vytváření duplexních služeb najdete v tématu [Postupy: Vytvoření duplexního kontraktu](how-to-create-a-duplex-contract.md).
 
-2. Spuštění služby.
+2. Spusťte službu.
 
-3. Použití [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) generovat kontrakty (rozhraní) pro klienta. Informace o tom, jak to provést, najdete v tématu [jak: Vytvoření klienta](../../../../docs/framework/wcf/how-to-create-a-wcf-client.md).
+3. Pro generování kontraktů (rozhraní) pro klienta použijte nástroj pro dodané [metadata (Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) . Informace o tom, jak to provést, najdete v tématu [Postup: Vytvoření klienta](../how-to-create-a-wcf-client.md).
 
 4. Implementujte rozhraní zpětného volání ve třídě klienta, jak je znázorněno v následujícím příkladu.
 
@@ -58,7 +58,7 @@ Kurz týkající se vytvoření klienta a basic služby WCF, najdete v tématu [
     End Class
     ```
 
-5. Vytvořit instanci <xref:System.ServiceModel.InstanceContext> třídy. Konstruktor vyžaduje instanci třídy klienta.
+5. Vytvořit instanci <xref:System.ServiceModel.InstanceContext> třídy. Konstruktor vyžaduje instanci klientské třídy.
 
     ```csharp
     InstanceContext site = new InstanceContext(new CallbackHandler());
@@ -68,7 +68,7 @@ Kurz týkající se vytvoření klienta a basic služby WCF, najdete v tématu [
     Dim site As InstanceContext = New InstanceContext(new CallbackHandler())
     ```
 
-6. Vytvořte instanci klienta WCF pomocí konstruktoru, který se vyžaduje <xref:System.ServiceModel.InstanceContext> objektu. Druhý parametr konstruktoru je název koncového bodu v konfiguračním souboru nalezeno.
+6. Vytvořte instanci klienta WCF pomocí konstruktoru, který vyžaduje <xref:System.ServiceModel.InstanceContext> objekt. Druhým parametrem konstruktoru je název koncového bodu, který se nachází v konfiguračním souboru.
 
     ```csharp
     CalculatorDuplexClient wcfClient = new CalculatorDuplexClient(site, "default");
@@ -78,19 +78,19 @@ Kurz týkající se vytvoření klienta a basic služby WCF, najdete v tématu [
     Dim wcfClient As New CalculatorDuplexClient(site, "default")
     ```
 
-7. Volání metody WCF klienta podle potřeby.
+7. Podle potřeby zavolejte metody klienta služby WCF.
 
 ## <a name="example"></a>Příklad
 
-Následující příklad kódu ukazuje, jak vytvořit třídu klienta, který přistupuje k duplexního kontraktu.
+Následující příklad kódu ukazuje, jak vytvořit třídu klienta, která přistupuje k oboustrannému kontraktu.
 
 [!code-csharp[S_DuplexClients#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_duplexclients/cs/client.cs#1)]
 [!code-vb[S_DuplexClients#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_duplexclients/vb/client.vb#1)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Kurz Začínáme](../../../../docs/framework/wcf/getting-started-tutorial.md)
-- [Postupy: Vytvoření duplexního kontraktu](../../../../docs/framework/wcf/feature-details/how-to-create-a-duplex-contract.md)
-- [Nástroj metadat modelu služby (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)
-- [Postupy: Vytvoření klienta](../../../../docs/framework/wcf/how-to-create-a-wcf-client.md)
-- [Postupy: Používání ChannelFactory](../../../../docs/framework/wcf/feature-details/how-to-use-the-channelfactory.md)
+- [Kurz Začínáme](../getting-started-tutorial.md)
+- [Postupy: Vytvoření duplexního kontraktu](how-to-create-a-duplex-contract.md)
+- [Nástroj ServiceModel Metadata Utility (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md)
+- [Postupy: Vytvoření klienta](../how-to-create-a-wcf-client.md)
+- [Postupy: Použití objektu pro vytváření kanálů](how-to-use-the-channelfactory.md)

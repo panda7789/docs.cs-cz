@@ -4,83 +4,83 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - queues [WCF], MSMQ integration
 ms.assetid: b8757992-ffce-40ad-9e9b-3243f6d0fce1
-ms.openlocfilehash: 78d80a88153ee15f7ab152da44801c77900f874d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3e75b6d5926b65a93204241eb7c71ca23a5694af
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184603"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84596718"
 ---
 # <a name="queues-overview"></a>Přehled front
 
-Tato část představuje obecné a základní koncepty komunikace ve frontě. Následující části naleznete podrobnosti o tom, jak se zde popsané koncepty fronty projevují v nadaci WCF (Windows Communication Foundation).  
+V této části se seznámíte s obecnými a základními koncepty za komunikaci ve frontě. Následující části obsahují podrobné informace o tom, jak tady popsané koncepty služby Řízení front jsou v Windows Communication Foundation (WCF) uvedené v manifestu.  
   
-## <a name="basic-queuing-concepts"></a>Základní koncepty řazení do fronty  
- Při návrhu distribuované aplikace je důležitá volba správného přenosu pro komunikaci mezi službami a klienty. Několik faktorů ovlivňuje druh dopravy k použití. Jeden důležitý faktor – izolace mezi službou, klientem a přenosem – určuje použití přenosu ve frontě nebo přímého přenosu, například TCP nebo HTTP. Vzhledem k povaze přímých přenosů, jako je tcp a HTTP, komunikace zastaví úplně, pokud služba nebo klient přestane fungovat nebo pokud dojde k selhání sítě. Služba, klient a síť musí být spuštěny současně, aby aplikace fungovala. Přenosy ve frontě poskytují izolaci, což znamená, že pokud služba nebo klient selže nebo pokud dojde k selhání komunikačních spojení mezi nimi, může klient a služba nadále fungovat.  
+## <a name="basic-queuing-concepts"></a>Základní koncepty řízení front  
+ Při navrhování distribuované aplikace je důležité zvolit správný přenos pro komunikaci mezi službami a klienty. Typ přenosu, který se má použít, má vliv na několik faktorů. Jeden důležitý faktor – izolace mezi službou, klientem a přenosem – Určuje použití přenosu ve frontě nebo přímé přenosu, jako je například TCP nebo HTTP. Vzhledem k povaze přímých přenosů, jako jsou TCP a HTTP, se komunikace zcela zastaví, pokud služba nebo klient přestane fungovat nebo pokud síť selže. Aby aplikace fungovala, musí být služba, klient a síť spuštěná současně. Přenosy zařazené do fronty poskytují izolaci, což znamená, že pokud dojde k selhání služby nebo klienta nebo pokud komunikační propojení mezi nimi selže, může klient a služba dál fungovat.  
   
- Fronty poskytují spolehlivou komunikaci i při selhání v komunikujících stranách nebo v síti. Fronty zachycují a doručují zprávy vyměňované mezi komunikujícími stranami. Fronty jsou obvykle zálohovány nějakým druhem úložiště, které může být nestálé nebo trvanlivé. Fronty ukládají zprávy od klienta jménem služby a později předávají tyto zprávy službě. Fronty dereference poskytují zajištění izolace selhání ze strany kterékoli strany, čímž se jedná o upřednostňovaný komunikační mechanismus pro systémy s vysokou dostupností a odpojené služby. Dereference přichází s náklady na vysokou latenci. *Latence* je časová prodleva mezi časem, kdy klient odešle zprávu, a časem, kdy ji služba obdrží. To znamená, že po odeslání zprávy nevíte, kdy může být tato zpráva zpracována. Většina aplikací ve frontě se vyrovná s vysokou latencí. Následující obrázek znázorňuje koncepční model komunikace ve frontě.  
+ Fronty poskytují spolehlivou komunikaci i s chybami v komunikujících stranách nebo v síti. Fronty zachycují a dodávají zprávy vyměňované mezi komunikujícími stranami. Fronty jsou obvykle zálohované nějakým druhem úložiště, která můžou být nestálá nebo trvalá. Fronty ukládají zprávy od klienta jménem služby a později tyto zprávy předá službě. Nepřímých front zajišťuje, aby kterákoli strana zajišťovala vzájemnou izolaci selhání, takže je upřednostňovaným komunikačním mechanismem pro systémy s vysokou dostupností a odpojené služby. Nepřímý odkaz je dodáván s náklady na vysokou latenci. *Latence* je časová prodleva mezi časem, kdy klient odesílá zprávu a čas, kdy ji služba přijme. To znamená, že jakmile se pošle zpráva, nevíte, kdy se tato zpráva může zpracovat. Většina aplikací zařazených do fronty se vypořádat s vysokou latencí. Následující ilustrace znázorňuje koncepční model komunikace ve frontě.  
   
- ![Model komunikace ve frontě](../../../../docs/framework/wcf/feature-details/media/qconceptual-figure1c.gif "QKonceptuální obrázek1c")  
+ ![Model komunikace ve frontě](media/qconceptual-figure1c.gif "QConceptual-Figure1c")  
   
- Koncepční model komunikace ve frontě  
+ Konceptuální model komunikace ve frontě  
   
- Ve skutečnosti je fronta distribuovaný koncept. Jako takové mohou být místní pro jednu ze stran nebo vzdálené pro obě strany. Obvykle je fronta místní ke službě. V této konfiguraci klient nemůže záviset na připojení ke vzdálené frontě, aby byl neustále k dispozici. Podobně fronta musí být k dispozici nezávisle na dostupnosti služby čtení z fronty. Správce front spravuje kolekci front. Je zodpovědný za přijímání zpráv odeslaných do front od jiných správců front. Je také zodpovědný za správu připojení ke vzdáleným frontám a přenos zpráv do těchto vzdálených front. Chcete-li zajistit dostupnost front i přes selhání klienta nebo služby aplikace, správce front je obvykle spuštěn jako externí služba.  
+ Ve skutečnosti je fronta distribuovaným konceptem. V takovém případě mohou být obě strany buď místní, nebo vzdálené. Obvykle je fronta pro službu místní. V této konfiguraci klient nemůže být závislý na připojení ke vzdálené frontě, aby byl neustále dostupný. Podobně musí být fronta dostupná nezávisle na dostupnosti služby čtené z fronty. Správce fronty spravuje kolekci front. Zodpovídá za příjem zpráv odeslaných do front z jiných správců fronty. Zodpovídá taky za správu připojení ke vzdáleným frontám a přenos zpráv do těchto vzdálených front. Správce fronty se obvykle spouští jako externí služba, aby se zajistila dostupnost front i přes selhání aplikací klienta nebo služby.  
   
- Když klient odešle zprávu do fronty, adresuje zprávu do cílové fronty, což je fronta spravovaná správcem front služby. Správce front v klientovi odešle zprávu do fronty přenosu (nebo odchozí). Fronta přenosu je fronta ve správci front klienta, která ukládá zprávy pro přenos do cílové fronty. Správce front pak najde cestu ke správci front, který vlastní cílovou frontu a přenese do ní zprávu. Aby byla zajištěna spolehlivá komunikace, správci front implementují spolehlivý přenosový protokol, aby zabránili ztrátě dat. Správce cílové fronty přijímá zprávy adresované cílovým frontám, které vlastní, a ukládá je. Služba provádí požadavky na čtení z cílové fronty, kdy správce front pak doručí zprávu cílové aplikaci. Následující obrázek znázorňuje komunikaci mezi čtyřmi stranami.  
+ Když klient odešle zprávu do fronty, adresuje zprávu do cílové fronty, což je fronta spravovaná správcem fronty služby. Správce fronty klienta odesílá zprávu do fronty pro přenos (nebo odchozí). Fronta přenosu je frontou ve Správci front klienta, který ukládá zprávy pro přenos do cílové fronty. Správce fronty pak najde cestu ke Správci fronty, který vlastní cílovou frontu a přenáší do ní zprávu. Aby se zajistila spolehlivá komunikace, správci fronty implementují protokol spolehlivého přenosu, aby se zabránilo ztrátě dat. Cílový správce fronty přijímá zprávy adresované cílovým frontám, které vlastní, a ukládá zprávy. Služba dává žádosti o čtení z cílové fronty, kdy ji správce fronty pak doručí do cílové aplikace. Následující ilustrace znázorňuje komunikaci mezi čtyřmi stranami.  
   
- ![Diagram aplikace ve frontě](../../../../docs/framework/wcf/feature-details/media/distributed-queue-figure.jpg "Obrázek distribuované fronty")  
+ ![Diagram aplikace ve frontě](media/distributed-queue-figure.jpg "Distribuované – fronta – obrázek")  
   
  Komunikace ve frontě v typickém scénáři nasazení  
   
- Správce front tedy poskytuje požadovanou izolaci tak, aby odesílatel a příjemce může nezávisle selhat bez ovlivnění skutečné komunikace. Výhoda extra dereference, které fronty poskytují také umožňuje více instancí aplikace číst ze stejné fronty, tak, aby zemědělské práce mezi uzly dosáhne vyšší propustnost. Proto není neobvyklé zobrazit fronty, které se používají k dosažení vyšší škálování a propustnosti požadavky.  
+ Správce fronty proto poskytne požadovanou izolaci, aby odesílatel a přijímač mohli nezávisle selhat bez vlivu na skutečnou komunikaci. Výhodou dalšího dereference, kterou fronty poskytují, umožňuje také více instancí aplikace číst ze stejné fronty, aby výrobní prostředí mezi uzly dosáhlo vyšší propustnosti. Proto není běžné zobrazovat fronty používané k dosažení vyšších požadavků na škálování a propustnost.  
   
 ## <a name="queues-and-transactions"></a>Fronty a transakce  
- Transakce umožňují seskupit sadu operací dohromady, takže pokud jedna operace selže, všechny operace se nezdaří. Příkladem použití transakcí je, když osoba používá bankomat k převodu 1 000 USD ze svého spořicího účtu na běžný účet. To zahrnuje následující operace:  
+ Transakce umožňují seskupit sadu operací dohromady, takže pokud selže jedna operace, všechny operace selžou. Příkladem použití transakcí je, že uživatel používá ATM k přenosu $1 000 z účtu úspory na svůj účet pro kontrolu. To zahrnuje následující operace:  
   
-- Výběr 1.000 dolarů ze spořicího účtu.  
+- Z účtu úspory se odeberou $1 000.  
   
-- Na běžný účet jsem vložil 1000 dolarů.  
+- Do kontrolního účtu se uloží $1 000.  
   
- Pokud první operace uspěje a 1.000 dolarů je stažen ze spořicího účtu, ale druhá operace selže, 1.000 dolarů je ztracena, protože již byla stažena ze spořicího účtu. Chcete-li zachovat účty v platném stavu, pokud jedna operace selže, musí selhat obě operace.  
+ Pokud je první operace úspěšná a $1 000 z účtu úspory, ale druhá operace selže, bude $1 000 ztraceno, protože již bylo odebráno z účtu úspory. Chcete-li zachovat účty v platném stavu, v případě selhání jedné operace musí dojít k selhání obou operací.  
   
- V transakčnízasílání zpráv zprávy mohou být odeslány do fronty a přijata z fronty v rámci transakce. Proto pokud je zpráva odeslána v transakci a transakce je vrácena zpět, pak výsledek je, jako kdyby zpráva nebyla nikdy odeslána do fronty. Podobně pokud je zpráva přijata v transakci a transakce je vrácena zpět, pak výsledek je, jako by zpráva nebyla nikdy přijata. Zpráva zůstane ve frontě ke čtení.  
+ V transakčních přenosech zpráv je možné zprávy odesílat do fronty a přijímat z fronty v rámci transakce. Proto pokud je zpráva odeslána v transakci a transakce je vrácena zpět, výsledek je, jako by zpráva nebyla nikdy odeslána do fronty. Podobně pokud je v transakci přijata zpráva a transakce je vrácena zpět, výsledek je, jako kdyby nebyla zpráva nikdy přijata. Zpráva zůstane ve frontě pro čtení.  
   
- Z důvodu vysoké latence, při odeslání zprávy nemáte žádný způsob, jak zjistit, jak dlouho trvá dosažení cílové fronty, ani nevíte, jak dlouho trvá, než služba zpracovat zprávu. Z tohoto důvodu nechcete použít jednu transakci k odeslání zprávy, přijetí zprávy a následnému zpracování zprávy. Tím se vytvoří transakce, která není potvrzena na neurčitou dobu. Když klient a služba komunikují prostřednictvím fronty pomocí transakce, jsou zapojeny dvě transakce: jedna na straně klienta a jedna ve službě. Následující obrázek znázorňuje hranice transakcí v typické komunikaci ve frontě.  
+ Kvůli vysoké latenci vám při odeslání zprávy nezáleží na tom, jak dlouho trvá přístup k cílové frontě, ani nevíte, jak dlouho trvá, než služba zprávu zpracuje. Z tohoto důvodu nechcete pro odeslání zprávy použít jedinou transakci, přijmout zprávu a potom zprávu zpracovat. Tím se vytvoří transakce, která není potvrzena po neurčitou dobu. Když klient a služba komunikují prostřednictvím fronty pomocí transakce, jsou zapojeny dvě transakce: jeden na straně klienta a druhý ve službě. Následující ilustrace znázorňuje hranice transakce v typické komunikaci ve frontě.  
   
- ![Fronta s transakcemi](../../../../docs/framework/wcf/feature-details/media/qwithtransactions-figure3.gif "QWithTransactions-Obrázek3")  
+ ![Zařazení do fronty s transakcemi](media/qwithtransactions-figure3.gif "QWithTransactions-Figure3")  
   
- Komunikace ve frontě zobrazující samostatné transakce pro zachycení a doručení  
+ Komunikace ve frontě znázorňující samostatné transakce pro zachytávání a doručování  
   
- Transakce klienta zpracovává a odešle zprávu. Když je transakce potvrzena, zpráva je ve frontě přenosu. Ve službě transakce přečte zprávu z cílové fronty, zpracuje zprávu a potom potvrdí transakci. Pokud dojde k chybě během zpracování, zpráva je vrácena zpět a umístěna do cílové fronty.  
+ Transakce klienta zpracovává a odesílá zprávu. Když je transakce potvrzena, zpráva je ve frontě přenosu. Transakce ve službě načte zprávu z cílové fronty, zpracuje zprávu a pak transakci potvrdí. Pokud během zpracování dojde k chybě, zpráva se vrátí zpátky a umístí se do cílové fronty.  
   
 ## <a name="asynchronous-communication-using-queues"></a>Asynchronní komunikace pomocí front  
- Fronty poskytují asynchronní komunikační prostředky. Aplikace, které odesílají zprávy pomocí front, nemohou čekat na přijetí a zpracování zprávy příjemcem z důvodu vysoké latence zavedené správcem front. Zprávy mohou zůstat ve frontě mnohem déle, než aplikace zamýšlela. Chcete-li tomu zabránit, aplikace může zadat hodnotu Time-To-Live ve zprávě. Tato hodnota určuje, jak dlouho by měla zpráva zůstat ve frontě přenosu. Pokud je tato hodnota času překročena a zpráva stále nebyla odeslána do cílové fronty, může být zpráva přenesena do fronty nedoručených zpráv.  
+ Fronty poskytují asynchronní způsob komunikace. Aplikace odesílající zprávy pomocí front nečekají na příjem a zpracování zprávy příjemcem z důvodu vysoké latence zavedené správcem fronty. Zprávy mohou zůstat ve frontě delší dobu, než je aplikace určena. Aby k tomu nedocházelo, aplikace může pro zprávu zadat hodnotu TTL (Time to Live). Tato hodnota určuje, jak dlouho by zpráva měla zůstat ve frontě přenosu. Pokud je tato hodnota času překročena a zpráva ještě nebyla odeslána do cílové fronty, zpráva může být přenesena do fronty nedoručených zpráv.  
   
- Když odesílatel odešle zprávu, návrat z operace odeslání znamená, že zpráva pouze dělal to do fronty přenosu na odesílatele. V důsledku toho pokud dojde k chybě při získávání zprávy do cílové fronty, odesílající aplikace nemůže vědět o tom okamžitě. Chcete-li vzít na vědomí takové chyby, je zpráva se nezdařilo převedena do fronty nedoručených zpráv.  
+ Když odesílatel odešle zprávu, vrátí návrat z operace odeslání, že zpráva byla odeslána pouze do fronty přenosu v odesilateli. V takovém případě, pokud dojde k selhání při získávání zprávy do cílové fronty, nemůže odesílající aplikace o tom okamžitě získat informace. V takovém případě se zpráva o selhání přenese do fronty nedoručených zpráv.  
   
- Každá chyba, jako je například zpráva, která nedosáhla cílové fronty nebo vypršení platnosti time-to-live, musí být zpracována samostatně. Není neobvyklé, proto pro aplikace ve frontě psát dvě sady logiky:  
+ Všechny chyby, jako je například zpráva o neúspěšném dosažení cílové fronty nebo vypršení doby do provozu, musí být zpracovány samostatně. Pro aplikace zařazené do fronty není neobvyklé, takže zapisují dvě sady logiky:  
   
-- Normální logika klienta a služby odesílání a přijímání zpráv.  
+- Normální logika klienta a služby pro odesílání a příjem zpráv.  
   
-- Logika kompenzace pro zpracování zpráv z neúspěšného přenosu nebo doručení.  
+- Logika kompenzace pro zpracování zpráv z neúspěšného přenosu nebo doručování.  
   
- Následující části popisují tyto pojmy.  
+ Následující části popisují tyto koncepce.  
   
 ## <a name="dead-letter-queue-programming"></a>Programování fronty nedoručených zpráv  
- Fronty nedoručených zpráv obsahují zprávy, které se z různých důvodů nepodařilo dosáhnout cílové fronty. Důvody mohou být v rozsahu od zpráv s prošlou platností až po problémy s připojením, které brání přenosu zprávy do cílové fronty.  
+ Fronty nedoručených zpráv obsahují zprávy, které selhaly při dosažení cílové fronty z různých důvodů. Důvody mohou být v rozsahu od zpráv s vypršenou platností až po problémy s připojením zabraňující přenosu zprávy do cílové fronty.  
   
- Aplikace může obvykle číst zprávy z fronty nedoručených zpráv v celém systému, určit, co se stalo, a provést příslušnou akci, například opravit chyby a znovu odeslat zprávu nebo ji vzít na vědomí.  
+ Aplikace obvykle může číst zprávy z fronty nedoručených zpráv v rámci systému, zjistit, co se nepovedlo, a provést příslušné akce, třeba opravit chyby a znovu odeslat zprávu nebo si ji poznamenat.  
   
-## <a name="poison-message-queue-programming"></a>Programování fronty poškozená zpráva  
- Po oznámení přejde do cílové fronty, služba může opakovaně nepodaří zpracovat zprávu. Například aplikace, která čte zprávu z fronty v rámci transakce a aktualizuje databázi, může dočasně odpojit databázi. V tomto případě je transakce vrácena zpět, je vytvořena nová transakce a zpráva je znovu přečtena z fronty. Druhý pokus může být úspěšný nebo úspěšný. V některých případech v závislosti na příčině chyby může zpráva opakovaně selhání doručení do aplikace. V tomto případě je zpráva považována za "jed". Tyto zprávy jsou přesunuty do fronty poison, které lze číst pomocí aplikace zpracování poison.  
+## <a name="poison-message-queue-programming"></a>Programování ve frontě zpráv o nepoškozeném řízení  
+ Po vytvoření zprávy do cílové fronty může služba opakovaně selhat při zpracování zprávy. Například aplikace, která čte zprávu z fronty v rámci transakce a aktualizuje databázi, může databázi najít dočasně odpojenou. V tomto případě se transakce vrátí zpět, vytvoří se nová transakce a zpráva se znovu načte z fronty. Druhý pokus může být úspěšný nebo neúspěšný. V některých případech může v závislosti na příčině chyby dojít k opakovanému doručování zpráv do aplikace. V tomto případě se zpráva považuje za "jed". Tyto zprávy jsou přesunuty do fronty nepoškozeného, kterou lze číst aplikací pro zpracování poškození.  
   
 ## <a name="see-also"></a>Viz také
 
-- [Fronty ve WCF](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)
-- [Relace a fronty](../../../../docs/framework/wcf/samples/sessions-and-queues.md)
-- [Fronty nedoručených zpráv](../../../../docs/framework/wcf/samples/dead-letter-queues.md)
-- [Nestálá komunikace ve frontě](../../../../docs/framework/wcf/samples/volatile-queued-communication.md)
-- [Z Windows Communication Foundation do služby Řízení front zpráv](../../../../docs/framework/wcf/samples/wcf-to-message-queuing.md)
-- [Instalace služby Řízení front zpráv (MSMQ)](../../../../docs/framework/wcf/samples/installing-message-queuing-msmq.md)
-- [Ze služby Řízení front zpráv do Windows Communication Foundation](../../../../docs/framework/wcf/samples/message-queuing-to-wcf.md)
-- [Zabezpečení zprávy pomocí služby Řízení front zpráv](../../../../docs/framework/wcf/samples/message-security-over-message-queuing.md)
+- [Fronty ve WCF](queuing-in-wcf.md)
+- [Relace a fronty](../samples/sessions-and-queues.md)
+- [Fronty nedoručených zpráv](../samples/dead-letter-queues.md)
+- [Nestálá komunikace ve frontě](../samples/volatile-queued-communication.md)
+- [Z WCF do Řízení front zpráv](../samples/wcf-to-message-queuing.md)
+- [Instalace služby Řízení front zpráv (MSMQ)](../samples/installing-message-queuing-msmq.md)
+- [Řízení front zpráv do WCF](../samples/message-queuing-to-wcf.md)
+- [Zabezpečení zprávy pomocí služby Řízení front zpráv](../samples/message-security-over-message-queuing.md)

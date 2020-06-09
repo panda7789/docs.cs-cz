@@ -2,21 +2,21 @@
 title: System.Runtime.Serialization.ReadObjectBegin
 ms.date: 03/30/2017
 ms.assetid: 1b08ba6d-f201-4ace-9dce-aaf539e323b3
-ms.openlocfilehash: 63f8f6b5ee1dda02ed07bcc454939ce7dce2a64f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b7b2b1cb3f34d7e891bd879de16f0dacf0d12fac
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61784641"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84582826"
 ---
 # <a name="systemruntimeserializationreadobjectbegin"></a>System.Runtime.Serialization.ReadObjectBegin
 System.Runtime.Serialization.ReadObjectBegin  
   
 ## <a name="description"></a>Popis  
- Zahajuje se operace ReadObject.  
+ Spouští se ReadObject.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Trasování](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [Řešení problémů s aplikací pomocí trasování](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
-- [Správa a diagnostika](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [Trasování](index.md)
+- [Řešení potíží s aplikací pomocí trasování](using-tracing-to-troubleshoot-your-application.md)
+- [Správa a diagnostika](../index.md)

@@ -1,14 +1,14 @@
 ---
 title: Automatizace školení modelů pomocí rozhraní příkazového řádku ML.NET
 description: Zjistěte, jak pomocí nástroje CLI ML.NET automaticky proškolit nejlepší model z příkazového řádku.
-ms.date: 12/17/2019
+ms.date: 06/03/2020
 ms.custom: how-to, mlnet-tooling
-ms.openlocfilehash: 2e8bade898adfc3fc4af92c880b62c646343eb2f
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: d7c6102c2257be1daa613fde0edabce83d04b414
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83212409"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84589656"
 ---
 # <a name="automate-model-training-with-the-mlnet-cli"></a>Automatizace školení modelů pomocí rozhraní příkazového řádku ML.NET
 
@@ -33,24 +33,24 @@ Tyto prostředky můžete vygenerovat z vlastních datových sad, aniž byste je
 
 V současné době jsou úlohy ML podporované rozhraním příkazového řádku ML.NET:
 
-- `binary-classification`
-- `multiclass-classification`
-- `regression`
-- Budoucí: další úlohy strojového učení `recommendation` , jako jsou,, `ranking` `anomaly-detection` ,`clustering`
+- klasifikace (binární a více tříd)
+- nevýhody
+- základě
+- Budoucí: další úlohy strojového učení, jako je například klasifikace imagí, hodnocení, detekce anomálií, clusteringu
 
-Příklad použití:
+Příklad použití (klasifikační scénář):
 
 ```console
-mlnet auto-train --task binary-classification --dataset "customer-feedback.tsv" --label-column-name Sentiment
+mlnet classification --dataset "yelp_labelled.txt" --label-col 1 --has-header false --train-time 10
 ```
 
-![image](media/automate-training-with-cli/cli-model-generation.gif)
+![image](media/automate-training-with-cli/mlnet-classification-powershell.gif)
 
 Můžete ho spustit stejným způsobem jako v *prostředí Windows PowerShell*, *MacOS/Linux bash*nebo *Windows CMD*. Automatické dokončování v tabulkovém prostředí (návrhy parametrů) ale nebude fungovat ve *Windows CMD*.
 
 ## <a name="output-assets-generated"></a>Vygenerované výstupní prostředky
 
-Příkaz CLI `auto-train` generuje následující prostředky ve výstupní složce:
+Příkazy úkolu ML v rozhraní příkazového řádku generují následující prostředky ve výstupní složce:
 
 - Serializovaný model. zip ("nejlepší model") je připravený k použití ke spuštění předpovědi.
 - Řešení C# s:
@@ -68,23 +68,15 @@ Když vygenerujete "nejlepší model" pomocí nástroje CLI, uvidíte metriky kv
 
 Tady jsou tyto metriky shrnuté podle úkolu ML, abyste porozuměli kvalitě automaticky generovaného nejlepšího modelu.
 
-### <a name="metrics-for-binary-classification-models"></a>Metriky pro binární modely klasifikace
+### <a name="metrics-for-classification-models"></a>Metriky pro modely klasifikace
 
-V následujícím seznamu se zobrazí seznam metriky úlohy binární klasifikace v ML pro nejoblíbenější pět modelů nalezené rozhraním příkazového řádku:
-
-![image](media/automate-training-with-cli/cli-binary-classification-metrics.png)
-
-Přesnost je oblíbená metrika pro problémy s klasifikací, ale přesnost není vždy nejlepší metrikou pro výběr nejlepšího modelu, jak je vysvětleno v následujících odkazech. Existují případy, kdy potřebujete vyhodnotit kvalitu modelu s dalšími metrikami.
-
-Chcete-li prozkoumat a pochopit metriky, které jsou výstupem rozhraní příkazového řádku, přečtěte si téma [vyhodnocení metrik pro binární klasifikaci](resources/metrics.md#evaluation-metrics-for-binary-classification).
-
-### <a name="metrics-for-multi-class-classification-models"></a>Metriky pro modely klasifikace s více třídami
-
-Následující seznam zobrazuje seznam metrik úlohy klasifikace s více třídami pro nejoblíbenější pět modelů nalezené rozhraním příkazového řádku:
+V následujícím seznamu se zobrazí seznam metrik klasifikace pro nejoblíbenější pět modelů nalezené rozhraním příkazového řádku:
 
 ![image](media/automate-training-with-cli/cli-multiclass-classification-metrics.png)
 
-Chcete-li prozkoumat a pochopit metriky, které jsou výstupem rozhraní příkazového řádku, přečtěte si téma [vyhodnocení metrik pro klasifikaci s více třídami](resources/metrics.md#evaluation-metrics-for-multi-class-classification).
+ Přesnost je oblíbená metrika pro problémy s klasifikací, ale přesnost není vždy nejlepší metrikou pro výběr nejlepšího modelu, jak je vysvětleno v následujících odkazech. Existují případy, kdy potřebujete vyhodnotit kvalitu modelu s dalšími metrikami.
+
+Pro zkoumání a pochopení metrik, které jsou výstupem rozhraní příkazového řádku, si přečtěte [metriky vyhodnocení pro klasifikaci](resources/metrics.md#evaluation-metrics-for-multi-class-classification).
 
 ### <a name="metrics-for-regression-and-recommendation-models"></a>Metriky pro regrese a modely doporučení
 

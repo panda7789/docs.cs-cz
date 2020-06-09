@@ -2,42 +2,42 @@
 title: Ukázka konfigurace
 ms.date: 03/30/2017
 ms.assetid: 75515b4a-8d70-44c8-99e0-7423df41380e
-ms.openlocfilehash: 52747e6d964022d5028b0edb91dc8bc0ac0e82bc
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: 6d84085d06da117ebf13fa4bb714513aacc3abd6
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463955"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84594722"
 ---
 # <a name="configuration-sample"></a>Ukázka konfigurace
-Tato ukázka ukazuje použití konfiguračního souboru, aby služba zjistitelné.  
+Tato ukázka demonstruje použití konfiguračního souboru k tomu, aby služba byla zjistitelná.  
   
 > [!NOTE]
-> Tato ukázka implementuje zjišťování v konfiguraci. Ukázka, která implementuje zjišťování v kódu, naleznete v [tématu Basic](../../../../docs/framework/wcf/samples/basic-sample.md).  
+> Tato ukázka implementuje zjišťování v konfiguraci. Ukázku, která implementuje zjišťování v kódu, naleznete v tématu [Basic](basic-sample.md).  
   
 > [!IMPORTANT]
-> Ukázky mohou být již nainstalovány v počítači. Před pokračováním zkontrolujte následující (výchozí) adresář.  
+> Ukázky již mohou být nainstalovány v počítači. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >
 > `<InstallDrive>:\WF_WCF_Samples`  
 >
-> Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a Windows Workflow Foundation (WF) Ukázky pro rozhraní .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka je umístěna v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Discovery\Configuration`  
   
 ## <a name="service-configuration"></a>Konfigurace služby  
  Konfigurační soubor v této ukázce ukazuje dvě funkce:  
   
-- Díky službě zjistitelné přes <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint>standard .  
+- Zajištění zjistitelnosti služby na úrovni Standard <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> .  
   
-- Úprava informací souvisejících s zjišťováním pro koncový bod aplikace služby a úprava některých nastavení souvisejících s zjišťováním na standardním koncovém bodu.  
+- Úprava informací týkajících se zjišťování pro koncový bod aplikace služby a úpravu některých nastavení týkajících se zjišťování na standardním koncovém bodu.  
   
- Chcete-li povolit zjišťování, musí být provedeno několik změn v konfiguračním souboru aplikace pro službu:  
+ Chcete-li povolit zjišťování, je nutné provést několik změn v konfiguračním souboru aplikace pro tuto službu:  
   
-- Koncový bod zjišťování musí být `<service>` přidán do prvku. Toto je <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> standardní koncový bod. Toto je koncový bod systému, který modul runtime přidruží ke službě zjišťování. Služba zjišťování naslouchá zprávy v tomto koncovém bodě.  
+- Koncový bod zjišťování musí být přidán do `<service>` elementu. Toto je standardní <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> koncový bod. Toto je systémový koncový bod, který modul runtime přidruží ke službě zjišťování. Služba zjišťování naslouchá zprávám v tomto koncovém bodě.  
   
-- Chování `<serviceDiscovery>` je přidán `<serviceBehaviors>` do oddílu. To umožňuje službu zjistit za běhu a používá koncový bod zjišťování `Probe` již `Resolve` bylo zmíněno dříve naslouchat zjišťování a zprávy. S těmito dvěma dodatky služby je zjistitelné na koncovém bodu zjišťování zadané.  
+- `<serviceDiscovery>`Do části se přidá chování `<serviceBehaviors>` . To umožňuje, aby se služba zjistila za běhu a používala koncový bod zjišťování, který se dřív uvedl pro naslouchání zjišťování `Probe` a `Resolve` zpráv. S těmito dvěma dodatky je služba zjistitelná v zadaném koncovém bodu zjišťování.  
   
- Následující fragment konfigurace zobrazuje službu s koncovým bodem aplikace a definovaným koncovým bodem zjišťování:  
+ Následující fragment kódu konfigurace ukazuje službu s koncovým bodem aplikace a uživatelem definovaným koncovým bodem zjišťování:  
   
 ```xml
 <services>  
@@ -53,7 +53,7 @@ Tato ukázka ukazuje použití konfiguračního souboru, aby služba zjistiteln�
       </services>  
 ```  
   
- Chcete-li využít oznámení, budete muset přidat koncový bod oznámení. Chcete-li to provést, upravte konfigurační soubor, jak je znázorněno v následujícím kódu.  
+ Pokud chcete využít oznámení, budete muset přidat koncový bod oznámení. Uděláte to tak, že upravíte konfigurační soubor, jak je znázorněno v následujícím kódu.  
   
 ```xml  
 <serviceDiscovery>  
@@ -63,13 +63,13 @@ Tato ukázka ukazuje použití konfiguračního souboru, aby služba zjistiteln�
           </serviceDiscovery>  
 ```  
   
- Přidání koncového bodu oznámení do chování služby zjišťování vytvoří výchozí ho klienta oznámení pro službu. To zaručuje, že služba odešle online a offline oznámení při otevření a zavření služby.  
+ Přidání koncového bodu oznámení do chování služby zjišťování vytvoří pro službu výchozího klienta oznámení. To zaručuje, že služba při otevření a uzavření služby pošle online a offline oznámení.  
   
- Tento konfigurační soubor přesahuje pouze tyto jednoduché kroky úpravou dalšíchování. Je možné řídit informace související s zjišťováním pomocí konkrétních koncových bodů. To znamená, že uživatel může určit, zda lze zjistit koncový bod <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior.Scopes%2A> a uživatel může také označit tento koncový bod a vlastní metadata XML. Chcete-li to provést, `behaviorConfiguration` musí uživatel přidat vlastnost do koncového bodu aplikace. V tomto případě je do koncového bodu aplikace přidána následující vlastnost.  
+ Tento konfigurační soubor překračuje jenom tyto jednoduché kroky úpravou dalšího chování. Informace související se zjišťováním je možné řídit pomocí konkrétních koncových bodů. To znamená, že uživatel může řídit, jestli se může koncový bod zjistit, a uživatel může tento koncový bod označit pomocí <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior.Scopes%2A> a vlastní metadata XML. K tomu musí uživatel přidat `behaviorConfiguration` vlastnost do koncového bodu aplikace. V tomto případě je do koncového bodu aplikace přidána následující vlastnost.  
   
 `behaviorConfiguration="endpointBehaviorConfiguration"`  
   
- Nyní prostřednictvím prvku konfigurace chování můžete řídit atributy související s zjišťováním. V tomto případě jsou do koncového bodu aplikace přidány dva obory.  
+ Nyní lze prostřednictvím elementu konfigurace chování řídit atributy související se zjišťováním. V tomto případě se do koncového bodu aplikace přidají dva obory.  
   
 ```xml  
 <endpointBehaviors>  
@@ -85,9 +85,9 @@ Tato ukázka ukazuje použití konfiguračního souboru, aby služba zjistiteln�
         </endpointBehaviors>  
 ```  
   
- Další informace o oborech naleznete v [tématech Hledání zjišťování a Hledání kritérií](../../../../docs/framework/wcf/feature-details/discovery-find-and-findcriteria.md).  
+ Další informace o oborech najdete v tématu [vyhledání a kritéria hledání](../feature-details/discovery-find-and-findcriteria.md).  
   
- Můžete také řídit konkrétní podrobnosti koncového bodu zjišťování. To se provádí <xref:System.ServiceModel.Configuration.StandardEndpointsSection>prostřednictvím . V této ukázce je změněna verze použitého protokolu a přidání atributu, `maxResponseDelay` jak je znázorněno v následujícím příkladu kódu.  
+ Můžete také řídit konkrétní podrobnosti koncového bodu zjišťování. To se provádí prostřednictvím <xref:System.ServiceModel.Configuration.StandardEndpointsSection> . V této ukázce je upravena verze používaného protokolu a také přidání `maxResponseDelay` atributu, jak je znázorněno v následujícím příkladu kódu.  
   
 ```xml  
 <standardEndpoints>  
@@ -155,7 +155,7 @@ Tato ukázka ukazuje použití konfiguračního souboru, aby služba zjistiteln�
 ```  
   
 ## <a name="client-configuration"></a>Konfigurace klienta  
- V konfiguračním souboru `standardEndpoint` aplikace `dynamicEndpoint` pro klienta se typ používá k využití zjišťování, jak je znázorněno v následujícím fragmentu konfigurace.  
+ V konfiguračním souboru aplikace pro klienta `standardEndpoint` `dynamicEndpoint` je typ použit k využití zjišťování, jak je znázorněno v následujícím fragmentu konfigurace.  
   
 ```xml  
 <client>  
@@ -169,13 +169,13 @@ Tato ukázka ukazuje použití konfiguračního souboru, aby služba zjistiteln�
 </client>  
 ```  
   
- Pokud klient používá `dynamicEndpoint`modul , modul runtime provede zjišťování automaticky. Při zjišťování se používají různá nastavení, `discoveryClientSettings` například ta definovaná v části, která určuje typ koncového bodu zjišťování, který se má použít:  
+ Když klient používá `dynamicEndpoint` , modul runtime provádí zjišťování automaticky. Během zjišťování se používají různá nastavení, jako jsou ta definovaná v `discoveryClientSettings` části, která určuje typ koncového bodu zjišťování, který se má použít:  
   
 ```xml  
 <endpoint kind="udpDiscoveryEndpoint" endpointConfiguration="adhocDiscoveryEndpointConfiguration" />  
 ```  
   
- Kritéria hledání používaná k vyhledávání služeb:  
+ Kritéria hledání používaná k hledání služeb:  
   
 ```xml  
 <!-- Add Scopes, ScopeMatchBy, Extensions and termination criteria in FindCriteria -->  
@@ -190,7 +190,7 @@ Tato ukázka ukazuje použití konfiguračního souboru, aby služba zjistiteln�
 </findCriteria>  
 ```  
   
- Tato ukázka rozšiřuje tuto funkci a <xref:System.ServiceModel.Discovery.FindCriteria> upravuje použití klienta, stejně jako `updDiscoveryEndpoint` některé vlastnosti standardu používaného pro zjišťování. Jsou <xref:System.ServiceModel.Discovery.FindCriteria> upraveny tak, aby `scopeMatchBy` používaly obor a konkrétní algoritmus, stejně jako vlastní kritéria ukončení. Kromě toho ukázka také ukazuje, jak klient `Probe` může odesílat elementy XML pomocí zpráv. Nakonec jsou provedeny některé změny <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint>v , například verze použitého protokolu a nastavení specifická pro Protokol UDP, jak je znázorněno v následujícím konfiguračním souboru.  
+ Tato ukázka rozšiřuje tuto funkci a upraví <xref:System.ServiceModel.Discovery.FindCriteria> používaného klienta a také některé vlastnosti standardu `updDiscoveryEndpoint` používaného pro zjišťování. <xref:System.ServiceModel.Discovery.FindCriteria>Jsou upraveny tak, aby používaly obor a konkrétní `scopeMatchBy` algoritmus, a také vlastní kritéria ukončení. Kromě toho ukázka také ukazuje, jak může klient odesílat XML elementy pomocí `Probe` zpráv. Nakonec se v takovém případě udělaly nějaké změny <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> , jako je například verze použitého protokolu a nastavení protokolu UDP, jak je znázorněno v následujícím konfiguračním souboru.  
   
 ```xml  
 <udpDiscoveryEndpoint>
@@ -204,7 +204,7 @@ Tato ukázka ukazuje použití konfiguračního souboru, aby služba zjistiteln�
       </udpDiscoveryEndpoint>  
 ```  
   
- Následuje úplná konfigurace klienta použitá v ukázce.  
+ Následuje kompletní konfigurace klienta použitá v ukázce.  
   
 ```xml  
 <configuration>  
@@ -258,12 +258,12 @@ Tato ukázka ukazuje použití konfiguračního souboru, aby služba zjistiteln�
 </configuration>
 ```  
   
-#### <a name="to-use-this-sample"></a>Chcete-li použít tento vzorek  
+#### <a name="to-use-this-sample"></a>Použití této ukázky  
   
-1. Tato ukázka používá koncové body HTTP a ke spuštění této ukázky musí být přidány správné adresy ACL správné adresy URL. Další informace naleznete [v tématu Konfigurace protokolů HTTP a HTTPS](../feature-details/configuring-http-and-https.md). Provedení následujícího příkazu se zvýšeným oprávněním by mělo přidat příslušné akly. Pokud příkaz nefunguje tak, jak je, můžete nahradit doménu a uživatelské jméno následujícími argumenty. `netsh http add urlacl url=http://+:8000/ user=%DOMAIN%\%UserName%`  
+1. Tato ukázka používá koncové body HTTP a ke spuštění této ukázky musí být přidány správné seznamy ACL adres URL. Další informace najdete v tématu [Konfigurace HTTP a HTTPS](../feature-details/configuring-http-and-https.md). Spuštění následujícího příkazu u zvýšeného oprávnění by mělo přidat příslušné seznamy ACL. Pokud příkaz nefunguje tak, jak je, je vhodné nahradit doménu a uživatelské jméno pro následující argumenty. `netsh http add urlacl url=http://+:8000/ user=%DOMAIN%\%UserName%`  
   
 2. Sestavte řešení.  
   
-3. Spusťte spustitelný soubor služby z adresáře sestavení.  
+3. Spusťte spustitelný soubor služby z adresáře buildu.  
   
-4. Spusťte spustitelný soubor klienta. Všimněte si, že klient je schopen vyhledat službu.  
+4. Spusťte klientský spustitelný soubor. Upozorňujeme, že klient může službu vyhledat.  

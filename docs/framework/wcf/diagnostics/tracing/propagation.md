@@ -2,37 +2,37 @@
 title: Šíření
 ms.date: 03/30/2017
 ms.assetid: f8181e75-d693-48d1-b333-a776ad3b382a
-ms.openlocfilehash: ab8b6c003f9e483dccd7b9c7b2687a409f27fdc3
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 732ae5cb1ce311b78728f8d5de0fd9102bf32499
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64600022"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84578952"
 ---
 # <a name="propagation"></a>Šíření
-Toto téma popisuje šíření aktivity v modelu trasování Windows Communication Foundation (WCF).  
+Toto téma popisuje šíření aktivit v modelu trasování Windows Communication Foundation (WCF).  
   
-## <a name="using-propagation-to-correlate-activities-across-endpoints"></a>Pomocí šíření korelovat aktivity napříč koncovými body  
- Šíření poskytuje že uživatele s přímou spojitost s míněním chyby trasování pro stejné jednotky zpracování mezi aplikačními koncovými body, například požadavek. Generované v různých koncových bodů pro stejnou jednotkou zpracování chyby jsou seskupené do stejné aktivity i napříč doménami aplikace. To se provádí prostřednictvím šíření ID aktivity v záhlaví zpráv. Proto pokud klienta vyprší časový limit kvůli vnitřní chybě na serveru, i v se zobrazí chyby do stejné aktivity pro přímou spojitost s míněním.  
+## <a name="using-propagation-to-correlate-activities-across-endpoints"></a>Korelace aktivit mezi koncovými body pomocí šíření  
+ Šíření poskytuje uživateli přímou korelaci chybových trasování pro stejnou jednotku zpracování v koncových bodech aplikace, například požadavek. Chyby emitované v různých koncových bodech pro stejnou jednotku zpracování jsou seskupeny do stejné aktivity, dokonce i napříč doménami aplikace. To se provádí prostřednictvím šíření ID aktivity v záhlavích zpráv. Proto pokud časový limit klienta vyprší kvůli vnitřní chybě serveru, zobrazí se obě chyby ve stejné aktivitě pro přímou korelaci.  
   
- Chcete-li to provést, použijte `ActivityTracing` nastavení, jak je uvedeno v předchozím příkladu. Navíc nastavte `propagateActivity` atribut pro `System.ServiceModel` zdroj trasování na všechny koncové body.  
+ Uděláte to tak, že použijete `ActivityTracing` nastavení, jak je znázorněno v předchozím příkladu. Kromě toho nastavte `propagateActivity` atribut pro `System.ServiceModel` zdroj trasování ve všech koncových bodech.  
   
 ```xml  
 <source name="System.ServiceModel" switchValue="Verbose,ActivityTracing" propagateActivity="true" >  
 ```  
   
- Šíření aktivity je konfigurovat funkce, která způsobí, že WCF přidat hlavičku odchozí zprávy, která zahrnuje ID aktivity v protokolu TLS. Zahrnutím to na následujících trasování na straně serveru, jsme mohli porovnat činnosti klienta a serveru.  
+ Šíření aktivit je konfigurovatelná možnost, která způsobuje, že WCF přidá hlavičku do odchozích zpráv, což zahrnuje ID aktivity v TLS. Zahrnutím této akce na straně serveru můžeme korelovat aktivity klientů a serverů.  
   
-## <a name="propagation-definition"></a>Šíření definice  
- Aktivita M gAId je postoupena do aktivity N, pokud všechny následující podmínky použití.  
+## <a name="propagation-definition"></a>Definice šíření  
+ GAId aktivity M se šíří na aktivitu N, pokud platí všechny následující podmínky.  
   
-- N je vytvořen z důvodu M  
+- N se vytvoří kvůli M  
   
-- Znáte gAId M. N  
+- GAId M se říká N.  
   
-- N. gAId rovná gAId společnosti M.  
+- GAId se rovná gAId M.  
   
- GAId je předávat ActivityId záhlaví zprávy, jak je znázorněno v následujícím schématu XML.  
+ GAId je šířena prostřednictvím hlavičky zprávy ActivityId, jak je znázorněno v následujícím schématu XML.  
   
 ```xml  
 <xsd:element name="ActivityId" type="integer" minOccurs="0">  
@@ -70,15 +70,15 @@ Toto téma popisuje šíření aktivity v modelu trasování Windows Communicati
 </MessageLogTraceRecord>  
 ```  
   
-## <a name="propagation-and-activity-boundaries"></a>Šíření a hranice aktivity  
- Když aktivita ID rozšířena napříč koncovými body, příjemce zprávy vysílá spuštění a zastavení trasování pomocí tohoto ID aktivity (rozšíří). Proto je spuštění a zastavení trasování pomocí tohoto gAId z každého zdroje trasování. Pokud koncové body jsou v rámci stejného procesu a použijte stejný název zdroje trasování, jsou vytvořeny více spouštění a zastavování se stejným rozložením (stejné gAId, stejný zdroj trasování, stejný proces).  
+## <a name="propagation-and-activity-boundaries"></a>Hranice šíření a aktivity  
+ Pokud je ID aktivity šířeno napříč koncovými body, příjemce zprávy vyšle trasování spuštění a zastavení s tímto (šířeným) ID aktivity. Z každého zdroje trasování proto existuje spuštění a zastavení trasování s tímto gAId. Pokud jsou koncové body ve stejném procesu a používají stejný název zdroje trasování, vytvoří se několik spuštění a zastavení se stejným systémem (stejné gAId, stejný zdroj trasování, stejný proces).  
   
 ## <a name="synchronization"></a>Synchronizace  
- Aby synchronizovaly události ve více koncových bodů, které běží na různých počítačích, je ID korelace přidat do záhlaví ID aktivity, který se šíří do zpráv. Toto ID můžete použít nástroje pro synchronizaci události v počítačích se hodiny nesrovnalosti. Konkrétně nástroj prohlížeče trasování služeb používá toto ID pro zobrazení zprávy toky mezi koncovými body.  
+ K synchronizaci událostí mezi koncovými body, které běží na různých počítačích, se do hlavičky ActivityId, která se šíří ve zprávách, přidá ID korelace. Pomocí tohoto ID můžou nástroje synchronizovat události napříč počítači s nesouladem hodin. Konkrétně nástroj pro prohlížeč trasování služby používá toto ID pro zobrazení toků zpráv mezi koncovými body.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Konfigurace trasování](../../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)
-- [Použití prohlížeče trasování služeb k zobrazení korelovaných tras a řešení problémů](../../../../../docs/framework/wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md)
-- [Scénáře komplexního trasování](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing-scenarios.md)
-- [Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md)
+- [Konfigurace trasování](configuring-tracing.md)
+- [Použití prohlížeče trasování služeb k zobrazení korelovaných tras a řešení problémů](using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md)
+- [Scénáře komplexního trasování](end-to-end-tracing-scenarios.md)
+- [Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../service-trace-viewer-tool-svctraceviewer-exe.md)

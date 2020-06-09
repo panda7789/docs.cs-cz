@@ -9,38 +9,38 @@ helpviewer_keywords:
 - instances [WCF]
 - sessions [WCF]
 ms.assetid: 143951b3-3aa0-4540-b4b7-d33e77e874a1
-ms.openlocfilehash: 9a2cd06c4c5a73d9fb5c4c7f09632e10c3eb0d87
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 910ad952192243c6aa8a79417ad711d8c2a4ba2e
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61991156"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84590537"
 ---
 # <a name="reliable-sessions"></a>Spolehlivé relace
 
-Tato část popisuje, co Windows Communication Foundation (WCF) stabilní relace se nachází, co se používá pro, jak a kdy Pokud chcete použít jeden, jaký konfigurace vazby na ně a ukazatelů na osvědčené postupy. Následující tabulka shrnuje informace o základní body a související témata v této části.
+Tato část popisuje, co je spolehlivá relace Windows Communication Foundation (WCF), co se používá pro, jak a kdy se má použít, co konfigurace vazby podporuje a odkazuje na osvědčené postupy. Následující tabulka shrnuje podrobnosti o základních bodech a souvisejících tématech v této části.
 
-Spolehlivá relace WCF poskytuje funkce zajistit, aby se přenesou pomocí zprostředkovatelů SOAP nebo přenos zprávy odesílané mezi koncovými body a jsou poskytována pouze jednou a volitelně také ve stejném pořadí, ve kterém byly odeslány.
+Technologie WCF spolehlivé relace poskytuje funkce, které zajišťují, aby se zprávy odesílané mezi koncovými body přenesly prostřednictvím zprostředkovatele SOAP nebo přenosu, a jsou dodávány pouze jednou a případně ve stejném pořadí, v jakém byly odeslány.
 
-Pro použití s WCF aplikace stabilní relace, použijte jednu z vazeb poskytovaných systémem ve službě WCF, které podporují stabilní relace, ve výchozím nastavení nebo jako možnost, nebo vytvořte vlastní vlastní vazby, který podporuje relace.
+Chcete-li použít spolehlivé relace s aplikací WCF, buď použijte jednu ze systémem poskytnutých vazeb ve službě WCF, která podporuje spolehlivé relace ve výchozím nastavení, nebo jako možnost nebo vytvořte vlastní vazbu, která podporuje relaci.
 
 ## <a name="in-this-section"></a>V tomto oddílu
 
-[Spolehlivé relace – přehled](../../../../docs/framework/wcf/feature-details/reliable-sessions-overview.md) popisuje spolehlivé relace, kdy je jiný vazby, které podporují spolehlivé relace, můžete použít a jak pracují.
+[Přehled spolehlivých relací](reliable-sessions-overview.md) Popisuje spolehlivé relace, kdy je budete používat, různé vazby, které podporují spolehlivé relace a jak fungují.
 
-[Postupy: Exchange zprávy v rámci stabilní relace](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-within-a-reliable-session.md) popisuje, jak na vytvoření stabilní relace přes protokol HTTP pomocí zadaného v konfiguraci vlastní vazby.
+[Postupy: Výměna zpráv v rámci spolehlivé relace](how-to-exchange-messages-within-a-reliable-session.md) Popisuje, jak vytvořit spolehlivou relaci přes protokol HTTP pomocí vlastní vazby zadané v konfiguraci.
 
-[Postupy: Zabezpečené zprávy ve spolehlivých relacích](../../../../docs/framework/wcf/feature-details/how-to-secure-messages-within-reliable-sessions.md) popisuje, jak zabezpečit stabilní relace.
+[Postupy: zabezpečení zpráv v rámci spolehlivých relací](how-to-secure-messages-within-reliable-sessions.md) Popisuje, jak zabezpečit spolehlivou relaci.
 
-[Postupy: Vytvoření vazba vlastní spolehlivé relaci s HTTPS](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-reliable-session-binding-with-https.md) popisuje, jak na vytvoření stabilní relace přes protokol HTTPS.
+[Postupy: Vytvoření vlastní vazby spolehlivé relace s protokolem HTTPS](how-to-create-a-custom-reliable-session-binding-with-https.md) Popisuje, jak vytvořit spolehlivou relaci přes protokol HTTPS.
 
-[Osvědčené postupy pro spolehlivé relace](../../../../docs/framework/wcf/feature-details/best-practices-for-reliable-sessions.md) obsahuje také popis některých doporučených postupů spojených s použitím stabilní relace.
+[Osvědčené postupy pro spolehlivé relace](best-practices-for-reliable-sessions.md) Popisuje některé z osvědčených postupů spojených s používáním spolehlivé relace.
 
-## <a name="reference"></a>Odkaz
+## <a name="reference"></a>Referenční informace
 
 <xref:System.ServiceModel.ReliableSession>
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Fronty a spolehlivé relace](../../../../docs/framework/wcf/feature-details/queues-and-reliable-sessions.md)
-- [Relace, vytváření instancí a souběžnost](../../../../docs/framework/wcf/feature-details/sessions-instancing-and-concurrency.md)
+- [Fronty a spolehlivé relace](queues-and-reliable-sessions.md)
+- [Relace, vytváření instancí a souběžnost](sessions-instancing-and-concurrency.md)

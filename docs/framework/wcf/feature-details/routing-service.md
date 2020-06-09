@@ -2,122 +2,122 @@
 title: Směrovací služba
 ms.date: 03/30/2017
 ms.assetid: ca7c216a-5141-4132-8193-102c181d2eba
-ms.openlocfilehash: 3119f32d57cff01b81e4a8f4a3f3a571013300ea
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 833c824e17d70a982a2f7bb13fe388b9b2b0dec1
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67662789"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84590446"
 ---
 # <a name="routing-service"></a>Směrovací služba
 
-Směrovací služba je obecný zprostředkovatele protokolu SOAP, která funguje jako směrovač zprávy. Základní funkce služby směrování je schopnost trasy zpráv na základě obsahu zprávy, což umožní zprávy mají být předány koncový bod klienta na základě hodnoty v rámci samotné, zprávy v záhlaví nebo textu zprávy.
+Směrovací služba je obecný prostředník SOAP, který funguje jako směrovač zpráv. Základní funkcí směrovací služby je schopnost směrovat zprávy na základě obsahu zpráv, což umožňuje přesměrovat zprávu na koncový bod klienta na základě hodnoty v samotné zprávě, a to buď v záhlaví, nebo v těle zprávy.
 
-<xref:System.ServiceModel.Routing.RoutingService> Je implementovaný jako služba Windows Communication Foundation (WCF) v <xref:System.ServiceModel.Routing> oboru názvů. Směrovací služba zpřístupňuje jeden nebo více koncových bodů služby, které přijímají zprávy a poté trasy každou zprávu na jeden nebo více koncových bodů klienta na základě obsahu zprávy. Služba poskytuje následující funkce:
+Rozhraní <xref:System.ServiceModel.Routing.RoutingService> je implementováno jako služba Windows Communication Foundation (WCF) v <xref:System.ServiceModel.Routing> oboru názvů. Směrovací služba zveřejňuje jeden nebo více koncových bodů služby, které obdrží zprávy, a pak každou zprávu přesměruje do jednoho nebo více koncových bodů klienta na základě obsahu zprávy. Služba poskytuje následující funkce:
 
 - Směrování na základě obsahu
 
-  - Služby agregace
+  - Agregace služeb
 
-  - Správa verzí služby
+  - Správa verzí služeb
 
-  - Priorita směrování
+  - Směrování podle priority
 
-  - Dynamickou konfiguraci
+  - Dynamická konfigurace
 
-- Protokol přemostění
+- Přemostění protokolů
 
 - Zpracování SOAP
 
 - Pokročilé zpracování chyb
 
-- Zálohování koncových bodů
+- Koncové body zálohování
 
-I když je možné vytvořit zprostředkující služba, která provádí jeden nebo více těchto cílů, často takové implementace se váže na konkrétní scénář nebo řešení a nedá se použít snadno do nových aplikací.
+I když je možné vytvořit zprostředkující službu, která dosahuje jednoho nebo více těchto cílů, často taková implementace je svázána s konkrétním scénářem nebo řešením a nelze ji snadno použít pro nové aplikace.
 
-Směrovací služba poskytuje obecné, dynamicky konfigurovat, modulární zprostředkovatel SOAP, který je kompatibilní s modely kanálu a služby WCF a je možné provádět, směrování na základě obsahu zpráv založený na protokolu SOAP.
+Směrovací služba poskytuje obecnou, dynamicky konfigurovatelnou a připojitelná zprostředkující modul SOAP, který je kompatibilní se službou WCF a modely kanálů, a umožňuje provádět směrování zpráv založené na obsahu protokolu SOAP.
 
 > [!NOTE]
-> Směrovací služba nepodporuje aktuálně směrování služeb WCF REST.  Směrování volání REST, zvažte použití <xref:System.Web.Routing> nebo [směrování žádostí na aplikace](https://go.microsoft.com/fwlink/?LinkId=164589).
+> Směrovací služba v současné době nepodporuje směrování služeb WCF REST.  Pokud chcete směrovat volání REST, zvažte použití <xref:System.Web.Routing> nebo [Směrování žádostí o aplikace](https://go.microsoft.com/fwlink/?LinkId=164589).
 
 ## <a name="content-based-routing"></a>Směrování na základě obsahu
 
-Umožňuje směrovat zprávy na základě hodnot jednoho nebo více součástí zprávy směrování na základě obsahu je. Směrovací služba zkontroluje každou zprávu a přesměruje ho do cílového koncového bodu podle obsah zpráv a směrování logika, kterou vytvoříte. Směrování na základě obsahu poskytuje základ pro služby agregace, Správa verzí služby a Priorita směrování.
+Směrování na základě obsahu je schopnost směrovat zprávu na základě jedné nebo více hodnot obsažených ve zprávě. Směrovací služba zkontroluje každou zprávu a směruje ji do cílového koncového bodu na základě obsahu zprávy a logiky směrování, kterou vytvoříte. Směrování na základě obsahu poskytuje základ pro agregaci služeb, správu verzí služeb a prioritní směrování.
 
-Pokud chcete implementovat, směrování na základě obsahu, směrovací služba závisí na <xref:System.ServiceModel.Dispatcher.MessageFilter> implementace, které se používají tak, aby odpovídaly konkrétní hodnoty v rámci zpráv bude směrovat. Pokud **MessageFilter** shody zprávu, zpráva se směruje na cílový koncový bod přidružený k **MessageFilter**.  Filtry zpráv jsou seskupeny do filtru tabulky (<xref:System.ServiceModel.Routing.Configuration.FilterTableCollection>) k vytvoření komplexní logiku směrování. Například filtr tabulky mohou obsahovat pět filtry vzájemně se vylučující zpráv, které způsobují zprávy má být směrována na pouze jeden z pěti cílové koncové body.
+K implementaci směrování založeného na obsahu se služba Směrování spoléhá na <xref:System.ServiceModel.Dispatcher.MessageFilter> implementace, které se používají k vyhledání konkrétních hodnot v rámci zpráv určených ke směrování. Pokud **MessageFilter** odpovídá zprávě, je zpráva směrována do cílového koncového bodu přidruženého k **MessageFilter**.  Filtry zpráv se seskupují do tabulek Filter ( <xref:System.ServiceModel.Routing.Configuration.FilterTableCollection> ), aby se napracovala složitá logika směrování. Tabulka filtru může například obsahovat pět vzájemně vylučujících filtrů zpráv, které způsobují směrování zpráv pouze do jednoho z pěti cílových koncových bodů.
 
-Směrovací služby umožňuje konfigurovat logiku, která se používá k provedení směrování na základě obsahu, stejně jako v době běhu dynamicky aktualizovat logiku směrování.
+Směrovací služba umožňuje nakonfigurovat logiku, která se používá k provádění směrování založeného na obsahu, a také dynamicky aktualizovat logiku směrování za běhu.
 
-Prostřednictvím seskupování filtry zpráv do filtru tabulky směrování logiky lze sestavit, který umožňuje zpracovávat více scénáře, jako:
+Pomocí seskupení filtrů zpráv do tabulek filtrů můžete vytvořit logiku směrování, která umožňuje zpracovávat více scénářů směrování, například:
 
-- Služby agregace
+- Agregace služeb
 
-- Správa verzí služby
+- Správa verzí služeb
 
-- Priorita směrování
+- Směrování podle priority
 
-- Dynamickou konfiguraci
+- Dynamická konfigurace
 
-Další informace o filtrech zpráv a filtr tabulky najdete v tématu [směrování ÚVOD](../../../../docs/framework/wcf/feature-details/routing-introduction.md) a [filtry zpráv](../../../../docs/framework/wcf/feature-details/message-filters.md).
+Další informace o filtrech zpráv a tabulkách filtru najdete v tématu [Úvod do směrování](routing-introduction.md) a [filtry zpráv](message-filters.md).
 
-### <a name="service-aggregation"></a>Služby agregace
+### <a name="service-aggregation"></a>Agregace služeb
 
-Pomocí směrování na základě obsahu, můžete zveřejnit jeden koncový bod, který přijímá zprávy z externích klientských aplikací a potom na příslušný interní koncový bod na základě hodnoty v něm přesměruje každou zprávu. To je užitečné nabízet jeden konkrétní koncový bod pro různé back endové aplikace a také k dispozici jeden koncový bod aplikace pro zákazníky, při které budou zohledňovat aplikace do celé řady služeb.
+Pomocí směrování založeného na obsahu můžete vystavit jeden koncový bod, který přijímá zprávy z externích klientských aplikací, a pak každou zprávu směrovat do příslušného interního koncového bodu na základě hodnoty ve zprávě. To je užitečné, pokud chcete nabízet jeden konkrétní koncový bod pro celou řadu back-endové aplikace a také k tomu, aby zákazníkům poskytovali jeden koncový bod aplikace a současně přidělil aplikaci do různých služeb.
 
 ### <a name="service-versioning"></a>Verze služby
 
-Při migraci na novou verzi vašeho řešení, bude pravděpodobně nutné udržovat stará verze souběžně s existující zákazníků. Často vyžaduje, aby klienti připojení k novější verzi, musíte použít jinou adresu při komunikaci s řešením. Směrovací služba umožňuje vystavit jeden koncový bod služby, který slouží obě verze vašeho řešení pomocí směrování zpráv do příslušné řešení založené na konkrétní verzi informace obsažené ve zprávě. Příklad takové implementace naleznete v tématu [How To: Správa verzí služby](../../../../docs/framework/wcf/feature-details/how-to-service-versioning.md).
+Při migraci na novou verzi řešení je možné, že budete muset udržet starou verzi paralelně, aby sloužila stávajícím zákazníkům. To často vyžaduje, aby klienti připojující se k novější verzi používali při komunikaci s řešením jinou adresu. Směrovací služba umožňuje vystavit jeden koncový bod služby, který bude obsluhovat obě verze vašeho řešení, směrováním zpráv do příslušného řešení na základě informací, které jsou obsaženy ve zprávě. Příklad takové implementace naleznete v tématu [How to: Service Versioning](how-to-service-versioning.md).
 
-### <a name="priority-routing"></a>Priorita směrování
+### <a name="priority-routing"></a>Prioritní směrování
 
-Při poskytování služeb pro víc klientů, které máte uzavřeny smlouvy o úrovni služeb (SLA) s někteří partneři, které vyžaduje všechna data od těchto partnerů se zpracovávají odděleně od jiných klientů. Když použijete filtr, který hledá zákaznické informace obsažené ve zprávě, snadno zprávy budete směrovat od partnerů pro konkrétní do koncového bodu, která byla vytvořená za účelem vyhovuje jejich požadavkům na smlouvu SLA.
+Když poskytujete službu pro více klientů, můžete mít smlouvu o úrovni služeb (SLA) s některými partnery, které vyžadují, aby se všechna data od těchto partnerů zpracovala odděleně od ostatních klientů. Pomocí filtru, který vyhledává informace specifické pro zákazníka obsažené ve zprávě, můžete snadno směrovat zprávy od konkrétních partnerů do koncového bodu, který byl vytvořen tak, aby splňoval požadavky smlouvy SLA.
 
-## <a name="dynamic-configuration"></a>Dynamickou konfiguraci
+## <a name="dynamic-configuration"></a>Dynamická konfigurace
 
-Pro podporu zásadně důležitých systémů, kde je potřeba zpracovat zprávy bez případná přerušení služeb, je důležité, že budete moci změnit konfiguraci komponenty v rámci systému v době běhu. Tyto potřeby, směrovací služba podporuje <xref:System.ServiceModel.IExtension%601> implementace, <xref:System.ServiceModel.Routing.RoutingExtension>, který umožňuje dynamické aktualizaci konfigurace služby směrování v době běhu.
+Aby bylo možné podporovat klíčové systémy, ve kterých je nutné zpracovat zprávy bez přerušení služeb, je důležité, abyste v systému mohli v době běhu upravit konfiguraci součástí. Pro podporu této potřeby služba Směrování poskytuje <xref:System.ServiceModel.IExtension%601> implementaci, <xref:System.ServiceModel.Routing.RoutingExtension> která umožňuje dynamickou aktualizaci konfigurace směrovací služby v době běhu.
 
-Další informace o dynamické konfigurace služby směrování najdete v tématu [směrování ÚVOD](../../../../docs/framework/wcf/feature-details/routing-introduction.md).
+Další informace o dynamické konfiguraci směrovací služby najdete v tématu popisujícím [Úvod do směrování](routing-introduction.md).
 
-## <a name="protocol-bridging"></a>Protokol přemostění
+## <a name="protocol-bridging"></a>Přemostění protokolů
 
-Jedním z problémů v zprostředkující scénáře je, že koncovým bodům s interním může mít různé přenosové nebo požadavky na verzi protokolu SOAP než koncového bodu, který jsou zprávy přijímány. Pro podporu tohoto scénáře, směrovací služba dokáže Přemostit protokolů, jako jsou třeba zpracování zprávy protokolu SOAP <xref:System.ServiceModel.Channels.MessageVersion> vyžaduje určení koncových bodů. Tímto způsobem jeden protokol. slouží pro interní komunikaci, zatímco jiné lze použít pro externí komunikaci.
+Jedním z výzev v případě zprostředkovatelských scénářů je, že interní koncové body mohou mít různé požadavky na přenos nebo verzi SOAP než koncový bod, na kterém jsou zprávy přijímány. Pro podporu tohoto scénáře může směrovací služba Přemostění protokolů, včetně zpracování zprávy protokolu SOAP na <xref:System.ServiceModel.Channels.MessageVersion> požadované cílovým koncovým bodem (y). Tímto způsobem lze použít jeden protokol pro interní komunikaci, zatímco další lze použít pro externí komunikaci.
 
-Pro podporu směrování zpráv mezi koncovými body s jinou přenosy, používá služba Směrování vazeb poskytovaných systémem, které umožňují službě přemostění rozdílných protokolů. Automaticky dojde při používá jiný protokol než koncových bodů klienta, které zprávy jsou směrovány na koncový bod služby, vystavený službou směrování.
+Pro podporu směrování zpráv mezi koncovými body pomocí různých přenosů služba Směrování používá vazby poskytované systémem, které službě umožňují přemostění podobných protokolů. K tomu dojde automaticky v případě, že koncový bod služby vystavený směrovací službou používá jiný protokol než koncové body klienta, na které jsou zprávy směrovány.
 
 ## <a name="soap-processing"></a>Zpracování SOAP
 
-Běžné požadavky směrování je schopnost směrování zpráv mezi koncovými body s různými požadavky na SOAP. Splnění tohoto požadavku, poskytuje službu Směrování <xref:System.ServiceModel.Routing.SoapProcessingBehavior> , který automaticky vytvoří nový **MessageVersion** , který splňuje požadavky na cílového koncového bodu předtím, než se zpráva směruje do něj. Toto chování také vytvoří nový **MessageVersion** pro všechny zprávy s odpovědí před jeho vrácením žádající klientské aplikaci, ujistěte se, že **MessageVersion** odpovědi odpovídá původní požadavek.
+Běžným požadavkem na směrování je schopnost směrovat zprávy mezi koncovými body s odlišnými požadavky SOAP. Pro podporu tohoto požadavku služba Směrování poskytuje <xref:System.ServiceModel.Routing.SoapProcessingBehavior> , aby automaticky vytvořila novou **třídu MessageVersion** , která splňuje požadavky cílového koncového bodu před tím, než se do ní směruje zpráva. Toto chování také vytvoří novou **třídu MessageVersion** pro jakoukoli zprávu odpovědi, než ji vrátíte do žádající klientské aplikace, aby se zajistilo, že třída **MessageVersion** odpovědi odpovídá původní žádosti.
 
-Další informace o zpracování SOAP, naleznete v tématu [směrování ÚVOD](../../../../docs/framework/wcf/feature-details/routing-introduction.md).
+Další informace o zpracování protokolu SOAP najdete v tématu popisujícím [Úvod do směrování](routing-introduction.md).
 
 ## <a name="error-handling"></a>Zpracování chyb
 
-V systému tvořený distribuované služby, které spoléhají na síťovou komunikaci je důležité zajistit této komunikaci v rámci vašeho systému, které jsou odolné vůči selhání přechodné sítě.  Směrovací služba implementuje zpracování chyb, který umožňuje zpracovávat mnoho scénáře selhání komunikace, které jinak může vést k výpadku služeb.
+V systému složeném z distribuovaných služeb, které využívají síťovou komunikaci, je důležité zajistit, aby komunikace v rámci systému byla odolná vůči přechodným chybám sítě.  Směrovací služba implementuje zpracování chyb, které vám umožní zvládnout mnoho scénářů selhání komunikace, které by jinak mohly způsobit výpadek služby.
 
-Pokud zjistí služba Směrování <xref:System.ServiceModel.CommunicationException> při pokusu o odeslání zprávy, bude zpracování chyb proběhnout.  Tyto výjimky obvykle signalizují, že došlo k potížím při pokusu o komunikaci s koncovým bodem definované klienta, například <xref:System.ServiceModel.EndpointNotFoundException>, <xref:System.ServiceModel.ServerTooBusyException>, nebo <xref:System.ServiceModel.CommunicationObjectFaultedException>.  Kód pro zpracování chyb také zachytit a pokus opakujte při odesílání **TimeoutException** dojde, což je další běžné výjimku, která není odvozena od **communicationexception –** .
+Pokud směrovací služba <xref:System.ServiceModel.CommunicationException> při pokusu o odeslání zprávy narazí na chybu, bude provedeno zpracování chyb.  Tyto výjimky obvykle označují, že došlo k potížím při pokusu o komunikaci s definovaným koncovým bodem klienta, jako je například <xref:System.ServiceModel.EndpointNotFoundException> , <xref:System.ServiceModel.ServerTooBusyException> nebo <xref:System.ServiceModel.CommunicationObjectFaultedException> .  Kód pro zpracování chyb bude také zachytit a pokusí se o opakované odeslání, když dojde k **TimeoutException** , což je další běžná výjimka, která není odvozena od **CommunicationException**.
 
-Další informace o zpracování chyb, naleznete v tématu [směrování ÚVOD](../../../../docs/framework/wcf/feature-details/routing-introduction.md).
+Další informace o zpracování chyb najdete v tématu popisujícím [Úvod do směrování](routing-introduction.md).
 
-## <a name="backup-endpoints"></a>Zálohování koncových bodů
+## <a name="backup-endpoints"></a>Koncové body zálohování
 
-Kromě cílové koncové body klientů spojené s každou definici filtru v tabulce filtrů můžete také vytvořit seznam zálohování koncových bodů, které zprávy se budou směrovat na selhání přenosu. Pokud dojde k chybě a zálohování seznamu je definován pro položku filtr, směrovací služba se pokusí odeslat zprávu do první koncový bod definovaný v seznamu. Pokud tento přenos pokus selže, služba se pokusí další koncový bod a tomto procesu pokračovat, dokud nebude úspěšný pokus o přenos, vrátí že chybu související bez přenosu a všechny koncové body v seznamu záloh mají Vrácená chyba přenosu.
+Kromě cílových koncových bodů klienta přidružených ke každé definici filtru v tabulce filtru můžete také vytvořit seznam koncových bodů zálohy, na které bude zpráva směrována v případě selhání přenosu. Pokud dojde k chybě a je definován seznam zálohování pro položku filtru, směrovací služba se pokusí odeslat zprávu do prvního koncového bodu definovaného v seznamu. Pokud tento pokus o přenos selže, služba zkusí další koncový bod a pokračuje v tomto procesu až do chvíle, kdy pokus o přenos proběhne úspěšně, vrátí chybu nesouvisející s přenosem nebo všechny koncové body v seznamu zálohování vrátily chybu přenosu.
 
-Další informace o zálohování koncových bodech, najdete v části [směrování ÚVOD](../../../../docs/framework/wcf/feature-details/routing-introduction.md) a [filtry zpráv](../../../../docs/framework/wcf/feature-details/message-filters.md).
+Další informace o koncových bodech zálohování najdete v tématu [Úvod do směrování](routing-introduction.md) a [filtry zpráv](message-filters.md).
 
 ## <a name="streaming"></a>Streamování
 
-Služba Směrování úspěšně proudy zprávy Pokud nastavíte vazby podporovat datový proud.  Existují však některé podmínky, za kterých možná muset ukládány do vyrovnávací paměti zpráv:
+Směrovací služba může úspěšně streamovat zprávy, pokud nastavíte vazbu na podporu streamování.  Existují však podmínky, za kterých mohou být zprávy nutné ukládat do vyrovnávací paměti:
 
-- Vícesměrové vysílání (vyrovnávací paměti k vytvoření kopie další zpráva)
+- Vícesměrové vysílání (vyrovnávací paměť pro vytvoření dalších kopií zpráv)
 
-- Převzetí služeb při selhání (v takovém případě je zprávu zapotřebí k odeslání do zálohy vyrovnávací paměti)
+- Převzetí služeb při selhání (vyrovnávací paměť pro případ, že je nutné odeslat zprávu do zálohy)
 
-- System.ServiceModel.Routing.RoutingConfiguration.RouteOnHeadersOnly má hodnotu false (předložit MessageFilterTable se namísto něho třídu MessageBuffer tak, aby filtry můžete kontrolovat obsah vyrovnávací paměti)
+- System. ServiceModel. Routing. konfigurace RoutingConfiguration. hodnotami RouteOnHeadersOnly je false (vyrovnávací paměť pro zobrazení MessageFilterTable s třída MessageBuffer, aby filtry mohli kontrolovat tělo).
 
-- Dynamickou konfiguraci
+- Dynamická konfigurace
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Úvod do směrování](../../../../docs/framework/wcf/feature-details/routing-introduction.md)
-- [Kontrakty pro směrování](../../../../docs/framework/wcf/feature-details/routing-contracts.md)
-- [Filtry zpráv](../../../../docs/framework/wcf/feature-details/message-filters.md)
+- [Směrování – úvod](routing-introduction.md)
+- [Kontrakty pro směrování](routing-contracts.md)
+- [Filtry zpráv](message-filters.md)

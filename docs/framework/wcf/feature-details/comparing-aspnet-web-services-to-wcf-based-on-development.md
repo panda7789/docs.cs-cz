@@ -2,12 +2,12 @@
 title: Porovnání webových služeb ASP.NET Web Services s technologií WCF z hlediska vývojových požadavků
 ms.date: 03/30/2017
 ms.assetid: f362d00e-ce82-484f-9d4f-27e579d5c320
-ms.openlocfilehash: c5a2145a6d7b631a666df94eb0c1fc53cbc3c55f
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: c6e83bb234751dc477776f0fa540ffa8688dc667
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202266"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597589"
 ---
 # <a name="comparing-aspnet-web-services-to-wcf-based-on-development"></a>Porovnání webových služeb ASP.NET Web Services s technologií WCF z hlediska vývojových požadavků
 
@@ -201,7 +201,7 @@ public class LineItem
 }
 ```
 
-Sada Windows Software Development Kit (SDK) obsahuje nástroj příkazového řádku, který se nazývá nástroj pro tvorbu [metadat ServiceModel (Svcutil. exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md). Podobně jako nástroj XSD. exe, který se používá pro webové služby ASP.NET, může Svcutil. exe generovat definice datových typů .NET ze schématu XML. Typy jsou kontrakty dat, pokud <xref:System.Runtime.Serialization.DataContractSerializer> může generovat XML ve formátu definovaném schématem XML; v opačném případě jsou určeny pro serializaci pomocí <xref:System.Xml.Serialization.XmlSerializer> . Svcutil. exe může také vygenerovat schéma XML z kontraktů dat pomocí jeho `dataContractOnly` přepínače.
+Sada Windows Software Development Kit (SDK) obsahuje nástroj příkazového řádku, který se nazývá nástroj pro tvorbu [metadat ServiceModel (Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md). Podobně jako nástroj XSD. exe, který se používá pro webové služby ASP.NET, může Svcutil. exe generovat definice datových typů .NET ze schématu XML. Typy jsou kontrakty dat, pokud <xref:System.Runtime.Serialization.DataContractSerializer> může generovat XML ve formátu definovaném schématem XML; v opačném případě jsou určeny pro serializaci pomocí <xref:System.Xml.Serialization.XmlSerializer> . Svcutil. exe může také vygenerovat schéma XML z kontraktů dat pomocí jeho `dataContractOnly` přepínače.
 
 > [!NOTE]
 > I když webové služby ASP.NET používají <xref:System.Xml.Serialization.XmlSerializer> , a režim kompatibility ASP.NET WCF způsobuje, že služby WCF napodobují chování webových služeb ASP.NET, možnost kompatibility ASP.NET neomezuje jednu na použití <xref:System.Xml.Serialization.XmlSerializer> . Ten může stále používat <xref:System.Runtime.Serialization.DataContractSerializer> se službami běžícími v režimu kompatibility ASP.NET.
@@ -293,7 +293,7 @@ Dalším krokem je přidružení adresy a vazby k typu služby. To se obvykle pr
 
 Vazba určuje sadu protokolů pro komunikaci s aplikací. V následující tabulce jsou uvedené systémové vazby, které reprezentují běžné možnosti.
 
-|Název|Účel|
+|Name|Účel|
 |----------|-------------|
 |BasicHttpBinding|Interoperabilita s webovými službami a klienty, které podporují profil zabezpečení WS-BasicProfile 1,1 a Basic 1,0.|
 |WSHttpBinding|Interoperabilita s webovými službami a klienty, které podporují protokoly WS-* přes protokol HTTP.|
@@ -320,7 +320,7 @@ Některá chování, například <xref:System.ServiceModel.ServiceBehaviorAttrib
 
 V typech programovacích služeb je časté použití <xref:System.ServiceModel.OperationContext> třídy vytvořeno. Jeho statická <xref:System.ServiceModel.OperationContext.Current%2A> vlastnost poskytuje přístup k informacím o kontextu, ve kterém je operace spuštěná. <xref:System.ServiceModel.OperationContext>je podobná <xref:System.Web.HttpContext> <xref:System.EnterpriseServices.ContextUtil> třídám a.
 
-## <a name="hosting"></a>Hostování
+## <a name="hosting"></a>Hosting
 
 Webové služby ASP.NET jsou kompilovány do sestavení knihovny tříd. K dispozici je soubor s názvem soubor služby s příponou. asmx a obsahuje `@ WebService` direktivu, která identifikuje třídu, která obsahuje kód pro službu a sestavení, ve kterém se nachází.
 
@@ -418,9 +418,9 @@ Pro použití možnosti režimu kompatibility WCF ASP.NET je možné použít je
 
 ## <a name="client-development"></a>Vývoj klienta
 
-Klienti pro webové služby ASP.NET se generují pomocí nástroje příkazového řádku WSDL. exe, který jako vstup poskytuje adresu URL souboru. asmx. Odpovídající nástroj poskytovaný službou WCF je [Nástroj pro nástroj pro metadata ServiceModel (Svcutil. exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md). Generuje modul kódu s definicí kontraktu služby a definicí třídy klienta WCF. Také generuje konfigurační soubor s adresou a vazbou služby.
+Klienti pro webové služby ASP.NET se generují pomocí nástroje příkazového řádku WSDL. exe, který jako vstup poskytuje adresu URL souboru. asmx. Odpovídající nástroj poskytovaný službou WCF je [Nástroj pro nástroj pro metadata ServiceModel (Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md). Generuje modul kódu s definicí kontraktu služby a definicí třídy klienta WCF. Také generuje konfigurační soubor s adresou a vazbou služby.
 
-Při programování klienta vzdálené služby je obecně vhodné programovat podle asynchronního vzoru. Kód vygenerovaný nástrojem WSDL. exe vždy poskytuje synchronní i asynchronní vzor ve výchozím nastavení. Kód vygenerovaný nástrojem pro dodávání [metadat ServiceModel (Svcutil. exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) může poskytovat buď vzorek. Ve výchozím nastavení poskytuje synchronní vzor. Pokud je nástroj spuštěn s `/async` přepínačem, pak generovaný kód poskytne asynchronní vzorek.
+Při programování klienta vzdálené služby je obecně vhodné programovat podle asynchronního vzoru. Kód vygenerovaný nástrojem WSDL. exe vždy poskytuje synchronní i asynchronní vzor ve výchozím nastavení. Kód vygenerovaný nástrojem pro dodávání [metadat ServiceModel (Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) může poskytovat buď vzorek. Ve výchozím nastavení poskytuje synchronní vzor. Pokud je nástroj spuštěn s `/async` přepínačem, pak generovaný kód poskytne asynchronní vzorek.
 
 Není zaručeno, že názvy v třídách klienta WCF vygenerovaných ASP. Nástroj WSDL. exe nástroje NET standardně odpovídá názvům ve třídách klienta WCF vygenerovaných nástrojem Svcutil. exe. Konkrétně názvy vlastností tříd, které musí být serializovány pomocí <xref:System.Xml.Serialization.XmlSerializer> , jsou ve výchozím nastavení uděleny vlastnosti přípona v kódu generovaném nástrojem Svcutil. exe, který není v případě nástroje WSDL. exe.
 
@@ -765,4 +765,4 @@ Jazyk konfigurace ASP.NET umožňuje zadat jazykovou verzi pro jednotlivé služ
 
 ## <a name="see-also"></a>Viz také
 
-- [Porovnání webových služeb ASP.NET se službou WCF na základě účelu a používaných standardů](../../../../docs/framework/wcf/feature-details/comparing-aspnet-web-services-to-wcf-based-on-purpose-and-standards-used.md)
+- [Porovnání webových služeb ASP.NET se službou WCF na základě účelu a používaných standardů](comparing-aspnet-web-services-to-wcf-based-on-purpose-and-standards-used.md)

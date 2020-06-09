@@ -5,20 +5,20 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 51407e6d-4d87-42d5-be7c-9887b8652006
-ms.openlocfilehash: db6bca8728789879f9bfea40904bfc80352d1dbe
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 9239e8bd9b85986d41006c4b2a21b6f2304e8275
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144913"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84601228"
 ---
 # <a name="how-to-publish-metadata-for-a-service-using-code"></a>Postupy: Publikování metadat služby promocí kódu
 Jedná se o jedno ze dvou témat s postupy, které popisují publikování metadat pro službu Windows Communication Foundation (WCF). Existují dva způsoby, jak zadat, jak má služba publikovat metadata, pomocí konfiguračního souboru a pomocí kódu. V tomto tématu se dozvíte, jak publikovat metadata pro službu pomocí kódu.  
   
 > [!CAUTION]
-> V tomto tématu se dozvíte, jak publikovat metadata nezabezpečeným způsobem. Každý klient může získat metadata ze služby. Pokud vyžadujete, aby služba publikovala metadata zabezpečeným způsobem. viz [Vlastní zabezpečený koncový bod metadat](../../../../docs/framework/wcf/samples/custom-secure-metadata-endpoint.md).  
+> V tomto tématu se dozvíte, jak publikovat metadata nezabezpečeným způsobem. Každý klient může získat metadata ze služby. Pokud vyžadujete, aby služba publikovala metadata zabezpečeným způsobem. viz [Vlastní zabezpečený koncový bod metadat](../samples/custom-secure-metadata-endpoint.md).  
   
- Další informace o publikování metadat v konfiguračním souboru naleznete v tématu [How to: Publish metadata for a Service using a Configuration File](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-a-configuration-file.md). Publikování metadat umožňuje klientům načíst metadata pomocí žádosti o WS-Transfer GET nebo požadavku HTTP/GET pomocí `?wsdl` řetězce dotazu. Abyste měli jistotu, že kód pracuje, musíte vytvořit základní službu WCF. Základní Samoobslužná služba je k dispozici v následujícím kódu.  
+ Další informace o publikování metadat v konfiguračním souboru naleznete v tématu [How to: Publish metadata for a Service using a Configuration File](how-to-publish-metadata-for-a-service-using-a-configuration-file.md). Publikování metadat umožňuje klientům načíst metadata pomocí žádosti o WS-Transfer GET nebo požadavku HTTP/GET pomocí `?wsdl` řetězce dotazu. Abyste měli jistotu, že kód pracuje, musíte vytvořit základní službu WCF. Základní Samoobslužná služba je k dispozici v následujícím kódu.  
   
  [!code-csharp[htPublishMetadataCode#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/htpublishmetadatacode/cs/program.cs#0)]
  [!code-vb[htPublishMetadataCode#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htpublishmetadatacode/vb/program.vb#0)]  
@@ -69,7 +69,7 @@ Jedná se o jedno ze dvou témat s postupy, které popisují publikování metad
      [!code-vb[htPublishMetadataCode#9](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htpublishmetadatacode/vb/program.vb#9)]  
   
     > [!NOTE]
-    > Pokud do služby nepřidáte žádné koncové body, modul runtime přidá pro vás výchozí koncové body. V tomto příkladu, protože je služba <xref:System.ServiceModel.Description.ServiceMetadataBehavior> nastavená na `true` , služba má povolená metadata publikování. Další informace o výchozích koncových bodech najdete v tématu [zjednodušená konfigurace](../../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
+    > Pokud do služby nepřidáte žádné koncové body, modul runtime přidá pro vás výchozí koncové body. V tomto příkladu, protože je služba <xref:System.ServiceModel.Description.ServiceMetadataBehavior> nastavená na `true` , služba má povolená metadata publikování. Další informace o výchozích koncových bodech najdete v tématu [zjednodušená konfigurace](../simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../samples/simplified-configuration-for-wcf-services.md).  
   
 9. Otevřete hostitele služby a počkejte na příchozí volání. Když uživatel stiskne klávesu ENTER, uzavřete hostitele služby.  
   
@@ -88,8 +88,8 @@ Jedná se o jedno ze dvou témat s postupy, které popisují publikování metad
   
 ## <a name="see-also"></a>Viz také
 
-- [Postupy: Hostování služby WCF ve spravované aplikaci](../../../../docs/framework/wcf/how-to-host-a-wcf-service-in-a-managed-application.md)
-- [Vlastní hostování](../../../../docs/framework/wcf/samples/self-host.md)
-- [Přehled architektury metadat](../../../../docs/framework/wcf/feature-details/metadata-architecture-overview.md)
-- [Používání metadat](../../../../docs/framework/wcf/feature-details/using-metadata.md)
-- [Postupy: Publikování metadat služby promocí konfiguračního souboru](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-a-configuration-file.md)
+- [Postupy: Hostování služby WCF ve spravované aplikaci](../how-to-host-a-wcf-service-in-a-managed-application.md)
+- [Vlastní hostování](../samples/self-host.md)
+- [Přehled architektury metadat](metadata-architecture-overview.md)
+- [Používání metadat](using-metadata.md)
+- [Postupy: Publikování metadat služby promocí konfiguračního souboru](how-to-publish-metadata-for-a-service-using-a-configuration-file.md)

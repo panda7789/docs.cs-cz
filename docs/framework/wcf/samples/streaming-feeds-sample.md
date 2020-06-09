@@ -2,24 +2,24 @@
 title: Ukázka informačních kanálů streamování
 ms.date: 03/30/2017
 ms.assetid: 1f1228c0-daaa-45f0-b93e-c4a158113744
-ms.openlocfilehash: 7a887fa1eceac4d8ee323f03fd5bc536bb1dc579
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 551a97f3cc54915a831fc28eca6ae0ff23101e0b
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79143964"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84589783"
 ---
 # <a name="streaming-feeds-sample"></a>Ukázka informačních kanálů streamování
-Tato ukázka ukazuje, jak spravovat syndikační kanály, které obsahují velký počet položek. Na serveru ukázka ukazuje, jak odložit vytvoření <xref:System.ServiceModel.Syndication.SyndicationItem> jednotlivých objektů v rámci informačního kanálu, dokud bezprostředně před položkou zapsána do síťového proudu.  
+Tato ukázka předvádí, jak spravovat informační kanály syndikace, které obsahují velký počet položek. Na serveru Ukázka ukazuje, jak zpozdit vytváření jednotlivých <xref:System.ServiceModel.Syndication.SyndicationItem> objektů v rámci kanálu, dokud není bezprostředně předtím, než je položka zapsána do síťového datového proudu.  
   
- Na straně klienta ukázka ukazuje, jak vlastní syndikace krmivo formodul lze použít ke čtení jednotlivých položek ze síťového proudu tak, aby zdroj čtení není nikdy plně do vyrovnávací paměti do paměti.  
+ V tomto klientovi Ukázka ukazuje, jak lze použít vlastní formátovací modul informačního kanálu syndikace ke čtení jednotlivých položek ze síťového datového proudu, aby čtení informačního kanálu nikdy nebylo plně uloženo do vyrovnávací paměti.  
   
- Chcete-li nejlépe demonstrovat schopnost streamování syndikace rozhraní API, tato ukázka používá poněkud nepravděpodobný scénář, ve kterém server zveřejňuje informační kanál, který obsahuje nekonečný počet položek. V tomto případě server pokračuje ve generování nových položek do informačního kanálu, dokud nezjistí, že klient přečetl zadaný počet položek z informačního kanálu (ve výchozím nastavení 10). Pro jednoduchost klient a server jsou implementovány ve stejném procesu `ItemCounter` a použít sdílený objekt sledovat, kolik položek klient vytvořil. Typ `ItemCounter` existuje pouze za účelem povolení ukázkový scénář ukončit čistě a není základní prvek vzoru je prokázáno.  
+ Aby bylo možné nejlépe předvést možnosti streamování rozhraní API syndikace, používá tato ukázka poněkud nepravděpodobný scénář, ve kterém server zveřejňuje informační kanál, který obsahuje nekonečný počet položek. V takovém případě server pokračuje v generování nových položek do informačního kanálu, dokud nezjistí, že klient přečetl zadaný počet položek z informačního kanálu (ve výchozím nastavení je to 10). Pro jednoduchost je implementace klienta i serveru implementována ve stejném procesu a pomocí sdíleného `ItemCounter` objektu uchovává přehled o počtu položek, které klient vytvořil. `ItemCounter`Typ existuje pouze pro účel, který umožňuje čistě ukončit ukázkový scénář, a není základním prvkem prokazatelně prováděného vzoru.  
   
- Demonstrace využívá visual c# iterátory (pomocí `yield return` klíčové ho konstruktu). Další informace o iterátorech naleznete v tématu "Using Iterators" na msdn.  
+ Tato ukázka využívá iterátory jazyka Visual C# (pomocí `yield return` konstruktoru klíčového slova). Další informace o iterátorech najdete v tématu používání iterátorů na webu MSDN.  
   
 ## <a name="service"></a>Služba  
- Služba implementuje <xref:System.ServiceModel.Web.WebGetAttribute> základní smlouvu, která se skládá z jedné operace, jak je znázorněno v následujícím kódu.  
+ Služba implementuje základní <xref:System.ServiceModel.Web.WebGetAttribute> kontrakt, který se skládá z jedné operace, jak je znázorněno v následujícím kódu.  
   
 ```csharp  
 [ServiceContract]  
@@ -31,7 +31,7 @@ interface IStreamingFeedService
 }  
 ```  
   
- Služba implementuje tuto smlouvu `ItemGenerator` pomocí třídy k <xref:System.ServiceModel.Syndication.SyndicationItem> vytvoření potenciálně nekonečného proudu instancí pomocí iterátoru, jak je znázorněno v následujícím kódu.  
+ Služba implementuje tuto smlouvu pomocí `ItemGenerator` třídy pro vytvoření potenciálně nekonečného datového proudu <xref:System.ServiceModel.Syndication.SyndicationItem> instancí pomocí iterátoru, jak je znázorněno v následujícím kódu.  
   
 ```csharp
 class ItemGenerator  
@@ -49,7 +49,7 @@ class ItemGenerator
 }  
 ```  
   
- Když implementace služby vytvoří informační `ItemGenerator.GenerateItems()` kanál, výstup se používá namísto vyrovnávací kolekce položek.  
+ Když implementace služby vytvoří informační kanál, `ItemGenerator.GenerateItems()` použije se místo kolekce položek s vyrovnávací pamětí výstup.  
   
 ```csharp
 public Atom10FeedFormatter StreamedFeed()  
@@ -65,10 +65,10 @@ public Atom10FeedFormatter StreamedFeed()
 }  
 ```  
   
- V důsledku toho datový proud položky není nikdy plně do vyrovnávací paměti do paměti. Toto chování můžete sledovat nastavením `yield return` zarážky na `ItemGenerator.GenerateItems()` příkaz uvnitř metody a s tím, že tato zarážka `StreamedFeed()` je zjištěna poprvé poté, co služba vrátila výsledek metody.  
+ V důsledku toho není datový proud položky nikdy plně ukládán do vyrovnávací paměti. Toto chování lze sledovat nastavením zarážky v `yield return` příkazu uvnitř metody a zaznamenání `ItemGenerator.GenerateItems()` , že tato zarážka je zjištěna poprvé poté, co služba vrátí výsledek `StreamedFeed()` metody.  
   
 ## <a name="client"></a>Klient  
- Klient v této ukázce používá vlastní <xref:System.ServiceModel.Syndication.SyndicationFeedFormatter> implementaci, která zpožďuje materializaci jednotlivých položek v informačním kanálu namísto ukládání do vyrovnávací paměti do paměti. Vlastní `StreamedAtom10FeedFormatter` instance se používá následujícím způsobem.  
+ Klient v této ukázce používá vlastní <xref:System.ServiceModel.Syndication.SyndicationFeedFormatter> implementaci, která zpozdí materializace jednotlivých položek v informačním kanálu namísto jejich ukládání do vyrovnávací paměti. Vlastní `StreamedAtom10FeedFormatter` instance se používá následujícím způsobem.  
   
 ```csharp  
 XmlReader reader = XmlReader.Create("http://localhost:8000/Service/Feeds/StreamedFeed");  
@@ -77,7 +77,7 @@ StreamedAtom10FeedFormatter formatter = new StreamedAtom10FeedFormatter(counter)
 SyndicationFeed feed = formatter.ReadFrom(reader);  
 ```  
   
- Volání se <xref:System.ServiceModel.Syndication.SyndicationFeedFormatter.ReadFrom%28System.Xml.XmlReader%29> obvykle nevrátí, dokud celý obsah informačního kanálu byly přečteny ze sítě a do vyrovnávací paměti. Objekt však `StreamedAtom10FeedFormatter` přepíše <xref:System.ServiceModel.Syndication.Atom10FeedFormatter.ReadItems%28System.Xml.XmlReader%2CSystem.ServiceModel.Syndication.SyndicationFeed%2CSystem.Boolean%40%29> vrátit iterátor namísto vyrovnávací paměti kolekce, jak je znázorněno v následujícím kódu.  
+ V normálním případě volání <xref:System.ServiceModel.Syndication.SyndicationFeedFormatter.ReadFrom%28System.Xml.XmlReader%29> nevrátí, dokud nebude celý obsah informačního kanálu načten ze sítě a ukládán do vyrovnávací paměti. Objekt se však `StreamedAtom10FeedFormatter` přepíše <xref:System.ServiceModel.Syndication.Atom10FeedFormatter.ReadItems%28System.Xml.XmlReader%2CSystem.ServiceModel.Syndication.SyndicationFeed%2CSystem.Boolean%40%29> a vrátí iterátor místo kolekce s vyrovnávací pamětí, jak je znázorněno v následujícím kódu.  
   
 ```csharp  
 protected override IEnumerable<SyndicationItem> ReadItems(XmlReader reader, SyndicationFeed feed, out bool areAllItemsRead)  
@@ -97,27 +97,27 @@ private IEnumerable<SyndicationItem> DelayReadItems(XmlReader reader, Syndicatio
 }  
 ```  
   
- V důsledku toho každá položka není číst ze sítě, dokud `ReadItems()` klientská aplikace procházet výsledky je připraven k použití. Toto chování můžete sledovat nastavením `yield return` zarážky `StreamedAtom10FeedFormatter.DelayReadItems()` na příkaz uvnitř a všimněte si, že tato zarážka je zjištěna poprvé po `ReadFrom()` dokončení volání.  
+ V důsledku toho se žádná položka nenačte ze sítě, dokud klientská aplikace, která projde výsledky, nebude `ReadItems()` připravena k jejímu použití. Toto chování lze sledovat nastavením zarážky v `yield return` příkazu uvnitř `StreamedAtom10FeedFormatter.DelayReadItems()` a všímáte, že tato zarážka je zjištěna poprvé po volání metody `ReadFrom()` dokončí.  
   
- Následující pokyny ukazují, jak vytvořit a spustit ukázku. Všimněte si, že i když server přestane generovat položky poté, co klient přečetl 10 položek, výstup ukazuje, že klient čte výrazně více než 10 položek. Důvodem je, že síťová vazba používaná ukázkou přenáší data v segmentech kb čtyř kilobajtů. Jako takový klient obdrží 4 KB dat položky před tím, než má možnost číst i jednu položku. Toto je normální chování (odesílání dat protokolu HTTP datových proudů v přiměřeně velkých segmentech zvyšuje výkon).  
+ Následující pokyny ukazují, jak sestavit a spustit ukázku. Všimněte si, že i když server přestane generovat položky poté, co klient přečte 10 položek, výstup ukazuje, že klient čte podstatně více než 10 položek. Důvodem je to, že síťová vazba, kterou ukázka používá, přenáší data v segmentech o čtyřech kilobajtech (KB). Klient tak obdrží 4KB dat položek předtím, než má příležitost číst i jednu položku. Jedná se o normální chování (při posílání streamovaná data HTTP v dostatečně velkých segmentech zvyšuje výkon).  
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Ujistěte se, že jste provedli [jednorázový postup instalace pro ukázky windows communication foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. Chcete-li vytvořit c# nebo Visual Basic .NET vydání řešení, postupujte podle pokynů v [sestavení windows communication foundation ukázky](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Chcete-li sestavit edici C# nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](building-the-samples.md).  
   
-3. Chcete-li spustit ukázku v konfiguraci jednoho nebo více počítačů, postupujte podle pokynů v [části Spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](running-the-samples.md).  
   
 > [!IMPORTANT]
-> Ukázky mohou být již nainstalovány v počítači. Před pokračováním zkontrolujte následující (výchozí) adresář.  
+> Ukázky již mohou být nainstalovány v počítači. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >
 > `<InstallDrive>:\WF_WCF_Samples`  
 >
-> Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a Windows Workflow Foundation (WF) Ukázky pro rozhraní .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka je umístěna v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Syndication\StreamingFeeds`  
   
 ## <a name="see-also"></a>Viz také
 
-- [Samostatný diagnostický informační kanál](../../../../docs/framework/wcf/samples/stand-alone-diagnostics-feed-sample.md)
+- [Samostatný diagnostický informační kanál](stand-alone-diagnostics-feed-sample.md)
