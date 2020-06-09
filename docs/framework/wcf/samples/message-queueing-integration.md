@@ -2,22 +2,22 @@
 title: Integrace služby Řízení front zpráv
 ms.date: 03/30/2017
 ms.assetid: 8d2b47a0-5d51-45b5-9633-b62e064e8ea4
-ms.openlocfilehash: 63c40f2ae3bb3fef9127add033df0cf23649f797
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 54858a4a2693336b2effca9fc304279ed3fd2a71
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62006587"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84584975"
 ---
 # <a name="message-queueing-integration"></a>Integrace služby Řízení front zpráv
-Tato část obsahuje ukázky, které předvádějí integraci služby Řízení front zpráv a Windows Communication Foundation (WCF).  
+Tato část obsahuje ukázky, které ukazují integraci mezi službou Řízení front zpráv a Windows Communication Foundation (WCF).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Ze služby Řízení front zpráv do Windows Communication Foundation](../../../../docs/framework/wcf/samples/message-queuing-to-wcf.md)  
- Ukazuje, jak služby Řízení front zpráv (MSMQ) aplikace odesílat zprávy MSMQ na službu WCF.
+ [Řízení front zpráv do WCF](message-queuing-to-wcf.md)  
+ Ukazuje, jak aplikace řízení front zpráv (MSMQ) může odesílat zprávy MSMQ službě WCF.
   
- [Z Windows Communication Foundation do služby Řízení front zpráv](../../../../docs/framework/wcf/samples/wcf-to-message-queuing.md)  
- Ukazuje, jak aplikace WCF odeslání zprávy do služby Řízení front zpráv (MSMQ) aplikace.  
+ [Z WCF do Řízení front zpráv](wcf-to-message-queuing.md)  
+ Ukazuje, jak může aplikace WCF odeslat zprávu do aplikace řízení front zpráv (MSMQ).  
   
- [Korelace zprávy](../../../../docs/framework/wcf/samples/message-correlation.md)  
- Ukazuje, jak služby Řízení front zpráv (MSMQ) aplikace může odesílat zprávy MSMQ na službu WCF a korelace zpráv mezi aplikacemi odesílatele a příjemce v případě požadavku nebo odpovědi.
+ [Korelace zprávy](message-correlation.md)  
+ Ukazuje, jak aplikace řízení front zpráv (MSMQ) může odesílat zprávy služby MSMQ službě WCF a jak je možné mezi aplikacemi odesílatele a přijímače korelovat zprávy ve scénáři požadavků a odpovědí.

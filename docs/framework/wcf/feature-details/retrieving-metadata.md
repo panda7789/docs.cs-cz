@@ -4,34 +4,34 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - metadata [WCF], retrieving
 ms.assetid: 18d8ba4c-af0f-4827-a50b-4202d767bacc
-ms.openlocfilehash: bb415d88c2bae75cb16aa137bdf867eb463afa63
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5488e2b0778738927922edab0f948645b816a1f6
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61748301"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84586218"
 ---
 # <a name="retrieving-metadata"></a>Načítání metadat
-Načtení metadat je proces vyžádání a načítání metadat z koncových bodů metadat, jako je například metadata koncový bod WS-MetadataExchange (MEX) nebo koncový bod metadat HTTP/GET.  
+Načtení metadat je proces vyžádání a načtení metadat z koncového bodu metadat, jako je například koncový bod metadat WS-MetadataExchange (MEX) nebo koncový bod metadat HTTP/GET.  
   
-## <a name="retrieving-metadata-from-the-command-line-using-svcutilexe"></a>Načítání metadat z příkazového řádku pomocí Svcutil.exe  
- Můžete načíst metadata služby WS-MetadataExchange nebo HTTP/GET požadavků pomocí [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) nástroj a předávání `/target:metadata` přepínače a adresu. Svcutil.exe metadat na zadané adrese stáhne a uloží soubor na disk. Pomocí svcutil.exe <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> instance interně a načte z konfigurace <xref:System.ServiceModel.Description.IMetadataExchange> konfigurace koncového bodu, jejichž název odpovídá schématu adresy předán Svcutil.exe jako vstup.  
+## <a name="retrieving-metadata-from-the-command-line-using-svcutilexe"></a>Načítání metadat z příkazového řádku pomocí Svcutil. exe  
+ Metadata služby můžete načíst pomocí požadavků WS-MetadataExchange nebo HTTP/GET pomocí nástroje Nástroj pro dodávání [metadat (Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) a předáním `/target:metadata` přepínače a adresy. Svcutil. exe stáhne metadata na zadané adrese a uloží soubor na disk. Svcutil. exe <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> interně používá instanci a načítá z konfigurace <xref:System.ServiceModel.Description.IMetadataExchange> konfiguraci koncového bodu, jejíž název odpovídá schématu adresy předané do Svcutil. exe jako vstup.  
   
-## <a name="retrieving-metadata-programmatically-using-the-metadataexchangeclient"></a>Načítání metadat prostřednictvím kódu programu pomocí Třída MetadataExchangeClient  
- Windows Communication Foundation (WCF) můžete načíst metadata služby pomocí standardizovaných protokolů, jako je WS-MetadataExchange a požadavky HTTP/GET. Obě tyto protokoly jsou podporovány <xref:System.ServiceModel.Description.MetadataExchangeClient> typu. Načtení služby metadata pomocí <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> typu poskytnutím adresu pro koncový bod metadat a volitelné vazby. Vazba používá <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> instance může být jedna z výchozích vazeb z <xref:System.ServiceModel.Description.MetadataExchangeBindings> statické třídy, vazbu uživatelem zadané nebo vazbu načíst z konfigurace koncového bodu pro `IMetadataExchange` kontraktu. <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> Můžete také vyřešit odkazy URL protokolu HTTP pomocí metadat <xref:System.Net.HttpWebRequest> typu.  
+## <a name="retrieving-metadata-programmatically-using-the-metadataexchangeclient"></a>Načítají se metadata programově pomocí MetadataExchangeClient.  
+ Windows Communication Foundation (WCF) může načítat metadata služby pomocí standardizovaných protokolů, jako jsou WS-MetadataExchange a požadavky HTTP/GET. Oba tyto protokoly jsou podporovány <xref:System.ServiceModel.Description.MetadataExchangeClient> typem. Metadata služby můžete načíst pomocí <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> typu poskytnutím adresy pro koncový bod metadat a volitelné vazby. Vazba, kterou používá <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> instance, může být jedna z výchozích vazeb ze <xref:System.ServiceModel.Description.MetadataExchangeBindings> statické třídy, uživatelsky zadané vazby nebo vazby načtené z konfigurace koncového bodu pro `IMetadataExchange` kontrakt. <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType>Může také vyřešit odkazy adresy URL http na metadata pomocí <xref:System.Net.HttpWebRequest> typu.  
   
- Ve výchozím nastavení <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> instance je vázán na jediné <xref:System.ServiceModel.ChannelFactory> instance. Můžete změnit nebo nahradit <xref:System.ServiceModel.ChannelFactory?displayProperty=nameWithType> instanci použitou <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> tak, že přepíšete <xref:System.ServiceModel.Description.MetadataExchangeClient.GetChannelFactory%2A> virtuální metody. Podobně můžete změnit nebo nahradit <xref:System.Net.HttpWebRequest> instanci použitou <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> provádět požadavky HTTP/GET tak, že přepíšete <xref:System.ServiceModel.Description.MetadataExchangeClient.GetWebRequest%2A?displayProperty=nameWithType> virtuální metody.  
+ Ve výchozím nastavení <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> je instance svázána s jednou <xref:System.ServiceModel.ChannelFactory> instancí. Můžete změnit nebo nahradit instanci, kterou <xref:System.ServiceModel.ChannelFactory?displayProperty=nameWithType> používá, <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> přepsáním <xref:System.ServiceModel.Description.MetadataExchangeClient.GetChannelFactory%2A> virtuální metody. Podobně můžete změnit nebo nahradit instanci, kterou <xref:System.Net.HttpWebRequest> používá, <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> k provádění požadavků HTTP/GET přepsáním <xref:System.ServiceModel.Description.MetadataExchangeClient.GetWebRequest%2A?displayProperty=nameWithType> virtuální metody.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Postupy: Stažení dokumentů metadat pomocí Svcutil.exe](../../../../docs/framework/wcf/feature-details/how-to-use-svcutil-exe-to-download-metadata-documents.md)  
- Popisuje způsob použití Svcutil.exe stažení dokumentů metadat.  
+ [Postupy: Stažení dokumentů metadat pomocí nástroje Svcutil.exe](how-to-use-svcutil-exe-to-download-metadata-documents.md)  
+ Ukazuje, jak používat Svcutil. exe ke stažení dokumentů metadat.  
   
- [Postupy: Použití třídy MetadataResolver k dynamickému získání metadat vazby](../../../../docs/framework/wcf/feature-details/how-to-use-metadataresolver-to-obtain-binding-metadata-dynamically.md)  
- Popisuje způsob použití <xref:System.ServiceModel.Description.MetadataResolver?displayProperty=nameWithType> získání metadat vazby dynamicky za běhu.  
+ [Postupy: Použití třídy MetadataResolver k dynamickému získání metadat vazby](how-to-use-metadataresolver-to-obtain-binding-metadata-dynamically.md)  
+ Ukazuje, jak použít, <xref:System.ServiceModel.Description.MetadataResolver?displayProperty=nameWithType> Chcete-li dynamicky získat metadata vazby za běhu.  
   
- [Postupy: Načítání metadat pomocí vlastnosti MetadataExchangeClient](../../../../docs/framework/wcf/feature-details/how-to-use-metadataexchangeclient-to-retrieve-metadata.md)  
- Popisuje způsob použití <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> třídy ke stahování souborů metadat do <xref:System.ServiceModel.Description.MetadataSet?displayProperty=nameWithType> objekt, který obsahuje <xref:System.ServiceModel.Description.MetadataSection?displayProperty=nameWithType> objekty pro zápis do souborů nebo pro jiné účely.  
+ [Postupy: Načítání metadat pomocí vlastnosti MetadataExchangeClient](how-to-use-metadataexchangeclient-to-retrieve-metadata.md)  
+ Ukazuje, jak použít <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> třídu ke stažení souborů metadat do <xref:System.ServiceModel.Description.MetadataSet?displayProperty=nameWithType> objektu, který obsahuje <xref:System.ServiceModel.Description.MetadataSection?displayProperty=nameWithType> objekty pro zápis do souborů nebo pro jiné účely.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.ServiceModel.Description.MetadataExchangeClient>

@@ -2,12 +2,12 @@
 title: Spolehlivá relace vlastních vazeb přes HTTPS
 ms.date: 03/30/2017
 ms.assetid: 16aaa80d-3ffe-47c4-8b16-ec65c4d25f8d
-ms.openlocfilehash: c31f8a5b4e3771f6c6e8de41e6b098474c34cf77
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: ab2dd4725879ba969afdae8a6423a920a9786125
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144861"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84585295"
 ---
 # <a name="custom-binding-reliable-session-over-https"></a>Spolehlivá relace vlastních vazeb přes HTTPS
 Tato ukázka demonstruje použití zabezpečení přenosu SSL u spolehlivých relací. Spolehlivé relace implementují protokol zasílání zpráv WS-Reliable. Zabezpečenou spolehlivou relaci můžete zajistit vytvořením protokolu WS-Security přes spolehlivé relace. V některých případech ale můžete zvolit, abyste místo toho používali zabezpečení přenosu HTTP s protokolem SSL.  
@@ -24,7 +24,7 @@ Tato ukázka demonstruje použití zabezpečení přenosu SSL u spolehlivých re
 ## <a name="sample-details"></a>Podrobnosti ukázky  
  Protokol SSL zajišťuje zabezpečení paketů samotných. Je důležité si uvědomit, že se liší od zabezpečení spolehlivé relace pomocí konverzace WS-Secure.  
   
- Chcete-li používat spolehlivou relaci přes protokol HTTPS, je nutné vytvořit vlastní vazbu. Tato ukázka je založená na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) , která implementuje službu kalkulačky. Vlastní vazba je vytvořena pomocí elementu vazby spolehlivé relace a [\<httpsTransport>](../../../../docs/framework/configure-apps/file-schema/wcf/httpstransport.md) . Následující konfigurace je vlastní vazbou.  
+ Chcete-li používat spolehlivou relaci přes protokol HTTPS, je nutné vytvořit vlastní vazbu. Tato ukázka je založená na [Začínáme](getting-started-sample.md) , která implementuje službu kalkulačky. Vlastní vazba je vytvořena pomocí elementu vazby spolehlivé relace a [\<httpsTransport>](../../configure-apps/file-schema/wcf/httpstransport.md) . Následující konfigurace je vlastní vazbou.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
@@ -70,7 +70,7 @@ Tato ukázka demonstruje použití zabezpečení přenosu SSL u spolehlivých re
 </configuration>  
 ```  
   
- Kód programu v ukázce je stejný jako u služby [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) . Před vytvořením a spuštěním ukázky musíte vytvořit certifikát a přiřadit ho pomocí Průvodce certifikátem webového serveru. Definice koncového bodu a definice vazby v nastavení konfiguračního souboru umožňují použití vlastní vazby, jak je znázorněno v následující ukázkové konfiguraci klienta.  
+ Kód programu v ukázce je stejný jako u služby [Začínáme](getting-started-sample.md) . Před vytvořením a spuštěním ukázky musíte vytvořit certifikát a přiřadit ho pomocí Průvodce certifikátem webového serveru. Definice koncového bodu a definice vazby v nastavení konfiguračního souboru umožňují použití vlastní vazby, jak je znázorněno v následující ukázkové konfiguraci klienta.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
@@ -128,10 +128,10 @@ Press <ENTER> to terminate client.
     %windir%\Microsoft.NET\Framework\v4.0.XXXXX\aspnet_regiis.exe /i /enable  
     ```  
   
-2. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+2. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](one-time-setup-procedure-for-the-wcf-samples.md).  
   
-3. Ujistěte se, že jste provedli [pokyny k instalaci certifikátu serveru Internetová informační služba (IIS)](../../../../docs/framework/wcf/samples/iis-server-certificate-installation-instructions.md).  
+3. Ujistěte se, že jste provedli [pokyny k instalaci certifikátu serveru Internetová informační služba (IIS)](iis-server-certificate-installation-instructions.md).  
   
-4. Chcete-li sestavit edici C# nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+4. Chcete-li sestavit edici C# nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](building-the-samples.md).  
   
-5. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+5. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](running-the-samples.md).  

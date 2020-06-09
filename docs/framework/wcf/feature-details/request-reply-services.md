@@ -7,15 +7,15 @@ helpviewer_keywords:
 - WCF [WCF], request-reply services
 - request-reply contracts [WCF]
 ms.assetid: 2fa710f1-47f4-4598-b063-3ab3bd22ebba
-ms.openlocfilehash: f58da6f1cdaad1b976659ee2e9febe12cc07726f
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: df42f3fa8f5a15572987b0d4859856c7f838e632
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70991145"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84586231"
 ---
 # <a name="request-reply-services"></a>Služby požadavku a odpovědi
-Služby požadavku a odpovědi jsou výchozím typem kontraktu operace v Windows Communication Foundation (WCF). Klienti volají operace se službami a čekají na odpověď od služby. Můžete provést volání do operace služby buď synchronně, kde klient blokuje odpověď, dokud neobdrží odpověď ze služby nebo času volání, nebo asynchronně, kde klient provádí volání operace služby, pokračuje v práci a přijímá odpověď ze služby v jiném vlákně.  
+Služby požadavku a odpovědi jsou výchozím typem kontraktu operace v Windows Communication Foundation (WCF). Klienti volají operace se službami a čekají na odpověď od služby. Můžete provést volání do operace služby buď synchronně, kde klient blokuje odpověď, dokud neobdrží odpověď ze služby nebo času volání, nebo asynchronně, kde klient provede volání operace služby, pokračuje v práci a přijme odpověď ze služby v jiném vlákně.  
   
  Chcete-li vytvořit kontrakt služby požadavek-odpověď, definujte kontrakt služby a použijte <xref:System.ServiceModel.OperationContractAttribute> pro každou operaci třídu, jak je znázorněno v následujícím ukázkovém kódu.  
   
@@ -28,9 +28,9 @@ public interface IRequestReplyCalculator
 }  
 ```  
   
- <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> Vlastnost není nutné nastavovat, `false` protože se jedná o výchozí chování.  
+ Vlastnost není nutné nastavovat <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> , `false` protože se jedná o výchozí chování.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Jednosměrné služby](../../../../docs/framework/wcf/feature-details/one-way-services.md)
-- [Duplexní služby](../../../../docs/framework/wcf/feature-details/duplex-services.md)
+- [Jednosměrné služby](one-way-services.md)
+- [Duplexní služby](duplex-services.md)

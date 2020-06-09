@@ -2,45 +2,45 @@
 title: Útoky opakováním
 ms.date: 03/30/2017
 ms.assetid: 7a17e040-93cd-4432-81b9-9f62fec78c8f
-ms.openlocfilehash: 6874e87ba2a50bb496c5d7bf091fd670510ab840
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 47a4726859605415b4e3e1b4d523f2f8059a3989
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64626865"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84586296"
 ---
 # <a name="replay-attacks"></a>Útoky opakováním
-A *přehrát útoku* nastane, pokud útočník zkopíruje datový proud zpráv mezi dvěma stranami a přehrává datový proud na jeden nebo více stran. Není-li minimalizovat, počítače v souladu s útoku zpracování datového proudu jako legitimní zprávy, což vede k celou řadu chybný důsledky, jako je například redundantní objednávky položku.  
+K *útoku opakovaného přehrání* dojde, když útočník zkopíruje datový proud zpráv mezi dvěma stranami a přehraje datový proud na jednu nebo více stran. Pokud to snižuje riziko, počítače, na které se útok vztahuje, zpracovávají datový proud jako legitimní zprávy, což vede k celé řadě špatných důsledků, jako je například redundantní objednávka položky.  
   
-## <a name="bindings-may-be-subject-to-reflection-attacks"></a>Vazby se můžou stát terčem útoků reflexe  
- *Reflexe útoky* jsou riziko zprávy zpět do odesílatele, jako kdyby pocházejí přijímač jako odpověď. Standardní *přehrání* ve Windows Communication Foundation (WCF) mechanismus nezpracovává automaticky to.  
+## <a name="bindings-may-be-subject-to-reflection-attacks"></a>Vazby můžou být vystavené útokům reflexe.  
+ *Útoky na reflexi* přehrávají zprávy zpátky odesílateli, jako by byly získány z přijímače jako odpověď. Standardní zjišťování opětovného *přehrání* v mechanismu Windows Communication Foundation (WCF) ho automaticky nezpracovává.  
   
- Reflexe útoky jsou ve výchozím nastavení zmírnit, protože model služby WCF přidá podepsanou zprávu ID zpráv požadavků a očekává, že podepsané `relates-to` záhlaví zprávy odpovědi. V důsledku toho nelze přehrály zprávy s požadavkem jako odpověď. Ve scénářích zabezpečené spolehlivé zprávy (SV) jsou útoky reflexe zmírnit, protože:  
+ Útoky na reflexi jsou ve výchozím nastavení omezeny, protože model služby WCF přidá ID podepsané zprávy pro vyžádání zprávy a očekává u `relates-to` zpráv s odpovědí podepsané záhlaví. V důsledku toho nelze zprávu požadavku přehrát jako odpověď. V zabezpečených scénářích spolehlivé zprávy (RM) jsou útoky na reflexi zmírňované z těchto důvodů:  
   
-- Vytvoření pořadí a schémata zpráv odpověď vytvoření sekvence se liší.  
+- Schémata zpráv odpovědi vytvořit sekvenci a vytvořit sekvenci se liší.  
   
-- Vzhledem k tomu, že klient nemůže rozumět takové zprávy, nelze pro nezpracovávají pořadí přehrály zprávy sekvence, které klient odešle zpět do.  
+- V případě simplexních sekvencí se zprávy sekvence, na které se klient pošle, nedá znovu přehrát, protože klient tyto zprávy nedokáže pochopit.  
   
-- Pro duplexní pořadí dvě pořadí identifikátory musí být jedinečný. Odchozí zpráva sekvence nemůže proto znovu přehrát zpět jako příchozí zprávy sekvence (všechny hlavičky pořadí a úřadů, které jsou podepsané, příliš).  
+- Pro duplexní sekvence musí být ID těchto dvou sekvencí jedinečné. Proto se zpráva o odchozí sekvenci nedá znovu přehrát jako příchozí zpráva sekvence (jsou také podepsané všechny hlavičky a texty sekvence).  
   
- Pouze vazby, které jsou náchylné k útokům reflexe jsou bez WS-Addressing: vlastní vazby, které mají WS-Addressing zakázána a použít symetrický klíč zabezpečení. <xref:System.ServiceModel.BasicHttpBinding> Nepoužívá WS-Addressing ve výchozím nastavení, ale nepoužívá symetrický klíč zabezpečení tak, aby díky tomu bude zranitelný vůči útoku.  
+ Jediné vazby, které jsou náchylné k útokům na reflexi, jsou ty bez WS-Addressing: vlastní vazby, které mají zakázané WS-Addressing a používají zabezpečení založené na symetrických klíčích. <xref:System.ServiceModel.BasicHttpBinding>Nepoužívá výchozí adresování WS-Addressing, ale nepoužívá symetrické zabezpečení založené na klíčích tak, aby bylo možné ho pro tento útok zneužít.  
   
- Zmírnění dopadů pro vlastní vazby není vytvoření kontextu zabezpečení nebo tak, aby vyžadovala záhlaví WS-Addressing.  
+ Zmírnění pro vlastní vazby není vytvoření kontextu zabezpečení nebo vyžadování hlaviček WS-Addressing.  
   
-## <a name="web-farm-attacker-replays-request-to-multiple-nodes"></a>Webové farmy: Útočník riziko požadavek na víc uzlů  
- Klient používá službu, která je implementována do webové farmy. Útočník přehrává žádost byla odeslána na jeden uzel ve farmě do jiného uzlu ve farmě. Kromě toho pokud restartování služby mezipaměti opětovného přehrání vyprazdňuje, což útočníkovi umožňuje přehrát požadavku. (Mezipaměť obsahuje podpis hodnoty používané, dříve zobrazenou zprávy a brání riziko, takže tyto podpisy lze použít pouze jednou. Přehrání mezipaměti nejsou sdíleny napříč webovou farmu.)  
+## <a name="web-farm-attacker-replays-request-to-multiple-nodes"></a>Webová farma: útočník přehrává požadavek na více uzlů.  
+ Klient používá službu, která je implementována ve webové farmě. Útočník znovu nahraje požadavek, který byl odeslán do jednoho uzlu ve farmě do jiného uzlu ve farmě. Navíc platí, že pokud se služba restartuje, mezipaměť pro přehrání se vyprázdní a umožní útočníkovi přehrání žádosti. (Mezipaměť obsahuje použité, dříve zobrazené hodnoty podpisu zprávy a brání opakovanému přehrání, aby se tyto podpisy mohly použít jenom jednou. Opakované přehrávání mezipamětí není v rámci webové farmy sdíleno.)  
   
- Zmírnění rizik patří:  
+ Zmírnění rizik zahrnuje:  
   
-- Režim zabezpečení zpráv pomocí tokenů kontextu zabezpečení stavové (s nebo bez zabezpečené konverzace povolené). Další informace najdete v tématu [jak: Vytvoření kontextu zabezpečení pro zabezpečenou relaci Token](../../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md).  
+- Použijte zabezpečení režimu zpráv s tokeny kontextového kontextu zabezpečení (s povolenou nebo bez zabezpečené konverzace). Další informace najdete v tématu [Postup: vytvoření tokenu kontextu zabezpečení pro zabezpečenou relaci](how-to-create-a-security-context-token-for-a-secure-session.md).  
   
-- Konfigurace služby pro použití zabezpečení na úrovni přenosu.  
+- Nakonfigurujte službu tak, aby používala zabezpečení na úrovni přenosu.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Důležité informace o zabezpečení](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)
-- [Zpřístupnění informací](../../../../docs/framework/wcf/feature-details/information-disclosure.md)
-- [Zvýšení oprávnění](../../../../docs/framework/wcf/feature-details/elevation-of-privilege.md)
-- [Útok DoS](../../../../docs/framework/wcf/feature-details/denial-of-service.md)
-- [Falšování](../../../../docs/framework/wcf/feature-details/tampering.md)
-- [Nepodporované scénáře](../../../../docs/framework/wcf/feature-details/unsupported-scenarios.md)
+- [Otázky zabezpečení](security-considerations-in-wcf.md)
+- [Zpřístupnění informací](information-disclosure.md)
+- [Zvýšení oprávnění](elevation-of-privilege.md)
+- [Útok DoS](denial-of-service.md)
+- [Falšování](tampering.md)
+- [Nepodporované scénáře](unsupported-scenarios.md)

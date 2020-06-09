@@ -4,19 +4,19 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - claims [WCF], denying access to resources
 ms.assetid: 145ebb41-680e-4256-b14c-1efb4af1e982
-ms.openlocfilehash: 4f48c59090579f4b451f615bb792a4dcb73f6df5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e5ecb71b7e0596b1732207b50e1b6087528bba3f
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61857588"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84587037"
 ---
 # <a name="claims-and-denying-access-to-resources"></a>Deklarace a odepření přístupu k prostředkům
-Windows Communication Foundation (WCF) podporuje mechanismus ověřování na základě deklarací identity. A také povolení přístupu k prostředkům na základě přítomnosti deklarace identity, systémy často zamítnutí přístupu k prostředkům na základě přítomnosti deklarací identity. Tyto systémy by měl prozkoumat <xref:System.IdentityModel.Policy.AuthorizationContext> pro deklarace identity, jejichž výsledkem je před hledáním deklarací, jejichž výsledkem je povolený přístup odepřen přístup.  
+Windows Communication Foundation (WCF) podporuje mechanismus ověřování založený na deklaracích. I přístup k prostředkům na základě přítomnosti deklarací identity systémy často odmítají přístup k prostředkům na základě přítomnosti deklarací identity. Tyto systémy by měly <xref:System.IdentityModel.Policy.AuthorizationContext> u deklarací identity, které mají za následek odepření přístupu, prozkoumávat před vyhledáním deklarací identity, jejichž výsledkem je povolený přístup.  
   
- Například může systém odepřít přístup k prostředku každému, kdo má deklaraci identity s typem z `Age`, napravo od <xref:System.IdentityModel.Claims.Rights.PossessProperty%2A>a hodnotu prostředků `Under 21` pouze pokud tuto identitu také má deklaraci typu `Name`, napravo od <xref:System.IdentityModel.Claims.Rights.Identity%2A>, a hodnota prostředků `Mallory`. Jinými slovy, systém odepře přístup všem uživatelům, kteří se do 21 let a udělí přístup, pokud je název Mallory. Pro správnou implementaci to sémantické, je důležité k vyhledání `Age` první deklarace identity a zjistit, jestli je stáří do 21 let. Jinak, pokud je v části 21 Mallory, pak prostředek udělit přístup pouze na základě těchto `Name` deklarací identity.  
+ Systém může například odepřít přístup k prostředku všem, kdo má deklaraci identity s typem `Age` , napravo od <xref:System.IdentityModel.Claims.Rights.PossessProperty%2A> a hodnotou prostředku `Under 21` pouze v případě, že tato identita má také deklaraci identity typu `Name` , napravo od <xref:System.IdentityModel.Claims.Rights.Identity%2A> a s hodnotou prostředku `Mallory` . Jinak systém zamítne přístup všem, kteří jsou mladší 21 let, a udělí přístup, pokud je název Mallory. Aby bylo možné tuto sémantickou implementaci správně implementovat, je důležité `Age` nejdřív vyhledat deklaraci identity a zjistit, jestli je stáří mladší 21 let. V opačném případě, pokud má Mallory pod 21, může být prostředku udělen přístup výhradně na základě `Name` deklarace identity.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Správa deklarací identity a autorizace pomocí modelu identit](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md)
-- [Deklarace identity a tokeny](../../../../docs/framework/wcf/feature-details/claims-and-tokens.md)
+- [Správa deklarací a autorizace s modelem identity](managing-claims-and-authorization-with-the-identity-model.md)
+- [Deklarace a tokeny](claims-and-tokens.md)

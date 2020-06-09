@@ -2,12 +2,12 @@
 title: Relace a fronty
 ms.date: 03/30/2017
 ms.assetid: 47d7c5c2-1e6f-4619-8003-a0ff67dcfbd6
-ms.openlocfilehash: ce8cdd08f9bc34d03a014b253024a2b756d4c82a
-ms.sourcegitcommit: 7370aa8203b6036cea1520021b5511d0fd994574
+ms.openlocfilehash: 425135b533b898cbc75464f50ce8a5e8f6550755
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82728458"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84584165"
 ---
 # <a name="sessions-and-queues"></a>Relace a fronty
 
@@ -31,7 +31,7 @@ Tato ukázka předvádí, jak odeslat a přijmout sadu souvisejících zpráv v 
   
  V ukázce pošle klient několik zpráv do služby jako součást relace v rámci oboru jedné transakce.  
   
- Kontrakt služby je `IOrderTaker`, který definuje jednosměrnou službu, která je vhodná pro použití s frontami. <xref:System.ServiceModel.SessionMode> Použití v kontraktu uvedené v následujícím ukázkovém kódu indikuje, že zprávy jsou součástí relace.  
+ Kontrakt služby je `IOrderTaker` , který definuje jednosměrnou službu, která je vhodná pro použití s frontami. <xref:System.ServiceModel.SessionMode>Použití v kontraktu uvedené v následujícím ukázkovém kódu indikuje, že zprávy jsou součástí relace.  
 
 ```csharp
 [ServiceContract(Namespace = "http://Microsoft.ServiceModel.Samples", SessionMode=SessionMode.Required)]  
@@ -139,7 +139,7 @@ public static void Main()
 </system.serviceModel>  
 ```  
   
- Klient vytvoří obor transakce. Všechny zprávy v relaci jsou odesílány do fronty v rámci oboru transakce, což způsobuje, že se bude považovat za atomickou jednotku, ve které všechny zprávy jsou úspěšné nebo neúspěšné. Transakce je potvrzena voláním <xref:System.Transactions.TransactionScope.Complete%2A>.  
+ Klient vytvoří obor transakce. Všechny zprávy v relaci jsou odesílány do fronty v rámci oboru transakce, což způsobuje, že se bude považovat za atomickou jednotku, ve které všechny zprávy jsou úspěšné nebo neúspěšné. Transakce je potvrzena voláním <xref:System.Transactions.TransactionScope.Complete%2A> .  
 
 ```csharp
 //Create a transaction scope.  
@@ -208,17 +208,17 @@ Purchase Order: 7c86fef0-2306-4c51-80e6-bcabcc1a6e5e
   
 ### <a name="set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. Chcete-li sestavit edici C#, C++ nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Chcete-li sestavit edici C#, C++ nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](building-the-samples.md).  
   
-3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](running-the-samples.md).  
   
- Ve výchozím nastavení <xref:System.ServiceModel.NetMsmqBinding>je zapnuto zabezpečení přenosu. Existují dvě důležité vlastnosti pro zabezpečení přenosu ve službě MSMQ, <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A> a <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> `.` to ve výchozím nastavení je režim ověřování nastaven na `Windows` hodnotu a úroveň ochrany je nastavena na `Sign`hodnotu. Aby služba MSMQ poskytovala funkci ověřování a podepisování, musí být součástí domény a musí být nainstalovaná možnost integrace služby Active Directory pro službu MSMQ. Pokud tuto ukázku spustíte na počítači, který nesplňuje tato kritéria, dojde k chybě.  
+ Ve výchozím nastavení <xref:System.ServiceModel.NetMsmqBinding> je zapnuto zabezpečení přenosu. Existují dvě důležité vlastnosti pro zabezpečení přenosu ve službě MSMQ, <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A> a to <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> `.` ve výchozím nastavení je režim ověřování nastaven na hodnotu `Windows` a úroveň ochrany je nastavena na hodnotu `Sign` . Aby služba MSMQ poskytovala funkci ověřování a podepisování, musí být součástí domény a musí být nainstalovaná možnost integrace služby Active Directory pro službu MSMQ. Pokud tuto ukázku spustíte na počítači, který nesplňuje tato kritéria, dojde k chybě.  
   
 ### <a name="run-the-sample-on-a-computer-joined-to-a-workgroup"></a>Spuštění ukázky na počítači připojeném k pracovní skupině  
   
-1. Pokud počítač není součástí domény nebo nemáte nainstalovanou integraci služby Active Directory, vypněte zabezpečení přenosu nastavením režimu ověřování a úrovně ochrany tak `None` , jak je znázorněno v následující ukázkové konfiguraci.  
+1. Pokud počítač není součástí domény nebo nemáte nainstalovanou integraci služby Active Directory, vypněte zabezpečení přenosu nastavením režimu ověřování a úrovně ochrany tak, `None` jak je znázorněno v následující ukázkové konfiguraci.  
   
     ```xml  
     <system.serviceModel>  
@@ -268,4 +268,4 @@ Purchase Order: 7c86fef0-2306-4c51-80e6-bcabcc1a6e5e
 2. Před spuštěním ukázky se ujistěte, že jste změnili konfiguraci na serveru i v klientovi.  
   
     > [!NOTE]
-    > Nastavení režimu zabezpečení na `None` <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A>je ekvivalentní nastavení <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A>, a `Message` zabezpečení na. `None`  
+    > Nastavení režimu zabezpečení na `None` je ekvivalentní nastavení <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A> , <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> a `Message` zabezpečení na `None` .  

@@ -4,22 +4,22 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Net Profile Named Pipe
 ms.assetid: e78e845f-c325-46e2-927d-81616f97f7d5
-ms.openlocfilehash: da54a835fd32efe4f53a80701465d2d7d8adba7e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b8a852345572e172d7c5400dca535bb8c098ec4f
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79183468"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84584191"
 ---
 # <a name="netnamedpipebinding"></a>NetNamedPipeBinding
-Tato ukázka `netNamedPipeBinding` ukazuje vazbu, která poskytuje komunikaci mezi procesy na stejném počítači. Pojmenované kanály nefungují napříč počítači. Tato ukázka je založena na službě [Kalkulačka Začínáme.](../../../../docs/framework/wcf/samples/getting-started-sample.md)  
+Tato ukázka demonstruje `netNamedPipeBinding` vazbu, která poskytuje komunikaci mezi procesy ve stejném počítači. Pojmenované kanály nefungují napříč počítači. Tato ukázka je založená na službě [Začínáme](getting-started-sample.md) Kalkulačka.  
   
- V této ukázce je služba hostována samostatně. Klient i služba jsou konzolové aplikace.  
+ V této ukázce je služba hostovaná v místním prostředí. Klient i služba jsou konzolové aplikace.  
   
 > [!NOTE]
-> Postup instalace a pokyny k sestavení pro tuto ukázku jsou umístěny na konci tohoto tématu.  
+> Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
   
- Vazba je určena v konfiguračních souborech pro klienta a službu. Typ vazby je `binding` určen v atributu [ \<koncového bodu>](../../configure-apps/file-schema/wcf/endpoint-element.md) nebo [ \<koncového bodu> prvku \<klienta>,](../../configure-apps/file-schema/wcf/endpoint-of-client.md) jak je znázorněno v následující konfiguraci ukázky:  
+ Vazba je určena v konfiguračních souborech pro klienta a službu. Typ vazby je určen v `binding` atributu [\<endpoint>](../../configure-apps/file-schema/wcf/endpoint-element.md) [ \<endpoint> \<client> ](../../configure-apps/file-schema/wcf/endpoint-of-client.md) prvku nebo, jak je znázorněno v následující ukázkové konfiguraci:  
   
 ```xml  
 <endpoint address="net.pipe://localhost/ServiceModelSamples/service"  
@@ -27,7 +27,7 @@ Tato ukázka `netNamedPipeBinding` ukazuje vazbu, která poskytuje komunikaci me
           contract="Microsoft.ServiceModel.Samples.ICalculator" />  
 ```  
   
- Předchozí ukázka ukazuje, jak nakonfigurovat `netNamedPipeBinding` koncový bod pro použití vazby s výchozím nastavením. Pokud chcete nakonfigurovat `netNamedPipeBinding` vazbu a změnit některá její nastavení, musíte definovat konfiguraci vazby. Koncový bod musí odkazovat na konfiguraci vazby podle názvu s atributem. `bindingConfiguration`  
+ Předchozí příklad ukazuje, jak nakonfigurovat koncový bod pro použití `netNamedPipeBinding` vazby s výchozím nastavením. Pokud chcete nakonfigurovat `netNamedPipeBinding` vazbu a změnit některá její nastavení, musíte definovat konfiguraci vazby. Koncový bod musí odkazovat na konfiguraci vazby podle názvu s `bindingConfiguration` atributem.  
   
 ```xml  
 <endpoint address="net.pipe://localhost/ServiceModelSamples/service"  
@@ -36,7 +36,7 @@ Tato ukázka `netNamedPipeBinding` ukazuje vazbu, která poskytuje komunikaci me
           contract="Microsoft.ServiceModel.Samples.ICalculator" />  
 ```  
   
- V této ukázce `Binding1` je pojmenována konfigurace vazby a má následující definici:  
+ V této ukázce má konfigurace vazby název `Binding1` a má následující definici:  
   
 ```xml  
 <bindings>  
@@ -66,7 +66,7 @@ Tato ukázka `netNamedPipeBinding` ukazuje vazbu, která poskytuje komunikaci me
 </bindings>  
 ```  
   
- Při spuštění ukázky jsou v okně klientské konzole zobrazeny požadavky na operaci a odpovědi. Stisknutím klávesy ENTER v okně klienta vypněte klienta.  
+ Při spuštění ukázky se v okně konzoly klienta zobrazí požadavky na operace a odpovědi. V okně klienta stiskněte klávesu ENTER pro vypnutí klienta.  
   
 ```console  
 Add(100,15.99) = 115.99  
@@ -79,17 +79,17 @@ Press <ENTER> to terminate client.
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Ujistěte se, že jste provedli [jednorázový postup instalace pro ukázky windows communication foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. Chcete-li vytvořit c# nebo Visual Basic .NET vydání řešení, postupujte podle pokynů v [sestavení windows communication foundation ukázky](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Chcete-li sestavit edici C# nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](building-the-samples.md).  
   
-3. Chcete-li spustit ukázku v konfiguraci jednoho počítače, postupujte podle pokynů v [části Spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Chcete-li spustit ukázku v jedné konfiguraci počítače, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](running-the-samples.md).  
   
 > [!IMPORTANT]
-> Ukázky mohou být již nainstalovány v počítači. Před pokračováním zkontrolujte následující (výchozí) adresář.  
+> Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >
 > `<InstallDrive>:\WF_WCF_Samples`  
 >
-> Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a Windows Workflow Foundation (WF) Ukázky pro rozhraní .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka je umístěna v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Net\NamedPipe`  
