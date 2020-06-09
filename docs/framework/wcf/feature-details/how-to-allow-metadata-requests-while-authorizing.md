@@ -7,27 +7,27 @@ dev_langs:
 helpviewer_keywords:
 - allowing metadata requests while authorizing [WCF]
 ms.assetid: 90cec34f-b619-452b-a056-8b1c0de49d05
-ms.openlocfilehash: bea4f7e90df29678697fe6708bdc6a73145522db
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6d172f9b659804179d23fb382376f83f4898edc5
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62047799"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84601306"
 ---
 # <a name="how-to-allow-metadata-requests-while-authorizing"></a>Postupy: Povolení požadavků na metadata při autorizaci
-Během autorizace může být potřeba povolit požadavek na metadata ke zpracování. Následující téma vás provede kroky k ověření žádosti.  
+Při vlastní autorizaci může být nutné, aby bylo možné zpracovat žádost o metadata. Následující téma vás provede jednotlivými kroky pro ověření takové žádosti.  
   
- Další informace o povolení Windows Communication Foundation (WCF), najdete v části [autorizace](../../../../docs/framework/wcf/feature-details/authorization-in-wcf.md).  
+ Další informace o autorizaci Windows Communication Foundation (WCF) najdete v tématu [authorization](authorization-in-wcf.md).  
   
-### <a name="to-allow-metadata-requests-during-authorization"></a>K povolení požadavků na metadata při autorizaci  
+### <a name="to-allow-metadata-requests-during-authorization"></a>Povolení požadavků na metadata při autorizaci  
   
-1. Vytvoření rozšíření <xref:System.ServiceModel.ServiceAuthorizationManager> třídy.  
+1. Vytvořte rozšíření <xref:System.ServiceModel.ServiceAuthorizationManager> třídy.  
   
-2. Přepsat <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%2A> metody. Metoda vrátí `true` nebo `false` v závislosti na tom, zda je povoleno ověření. Informace o aktuálním postupu najdete v <xref:System.ServiceModel.OperationContext> jako parametr předán metodě.  
+2. Přepsat <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%2A> metodu. Metoda vrátí `true` nebo `false` v závislosti na tom, jestli je povolená autorizace. Informace o aktuálním postupu najdete v části <xref:System.ServiceModel.OperationContext> předané jako parametr metodě.  
   
-3. V přepsání zkontrolujte název smlouvy, obor názvů a akce, jak je znázorněno v následujícím příkladu. Pokud podmínky jsou platné, bude vrácen `true.`  
+3. V přepsání ověřte název kontraktu, obor názvů a akci, jak je znázorněno v následujícím příkladu. Pokud jsou podmínky platné, pak se vrátí`true.`  
   
-4. Můžete použít třídu bodu rozšiřitelnosti. Další informace najdete v tématu [jak: Vytvoření vlastního Správce autorizací pro službu](../../../../docs/framework/wcf/extending/how-to-create-a-custom-authorization-manager-for-a-service.md).  
+4. Použijte bod rozšiřitelnosti k využití třídy. Další informace najdete v tématu [Postup: Vytvoření vlastního Správce autorizací pro službu](../extending/how-to-create-a-custom-authorization-manager-for-a-service.md).  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje přepsání <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%2A> metody.  
@@ -35,8 +35,8 @@ Během autorizace může být potřeba povolit požadavek na metadata ke zpracov
  [!code-csharp[C_HowtoCheckForMexRequestsInAuthorization#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howtocheckformexrequestsinauthorization/cs/source.cs#1)]
  [!code-vb[C_HowtoCheckForMexRequestsInAuthorization#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howtocheckformexrequestsinauthorization/vb/source.vb#1)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.ServiceModel.ServiceAuthorizationManager>
-- [Autorizace](../../../../docs/framework/wcf/feature-details/authorization-in-wcf.md)
-- [Správa deklarací identity a autorizace pomocí modelu identit](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md)
+- [Autorizace](authorization-in-wcf.md)
+- [Správa deklarací a autorizace s modelem identity](managing-claims-and-authorization-with-the-identity-model.md)

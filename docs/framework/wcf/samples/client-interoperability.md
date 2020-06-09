@@ -2,19 +2,19 @@
 title: Interoperabilita klientů
 ms.date: 03/30/2017
 ms.assetid: e890e40a-b76a-48c4-9e5b-a4b385fac847
-ms.openlocfilehash: 8aadd1592cdb08c9c44490ebfbaba1c9d3d9606e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d482c7331998b97c5ff535d8471cc7aece74c2d4
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61944011"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84585334"
 ---
 # <a name="client-interoperability"></a>Interoperabilita klientů
-Tato část obsahuje ukázky, které předvádějí vzájemná funkční spolupráce mezi Windows Communication Foundation (WCF) a dalších technologií.  
+Tato část obsahuje ukázky, které ukazují interoperabilitu mezi Windows Communication Foundation (WCF) a dalšími technologiemi.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Spolupráce s webovými službami ASMX](../../../../docs/framework/wcf/samples/interoperating-with-asmx-web-services.md)  
- Ukazuje, jak integrovat existující ASMX webové služby WCF klientské aplikace.  
+ [Spolupráce s webovými službami ASMX](interoperating-with-asmx-web-services.md)  
+ Ukazuje, jak integrovat klientskou aplikaci WCF pomocí existující webové služby ASMX.  
   
- [Ukázka XMLSerializer](../../../../docs/framework/wcf/samples/xmlserializer-sample.md)  
- Ukazuje, jak k serializaci a deserializaci typy, které jsou kompatibilní s <xref:System.Xml.Serialization.XmlSerializer>.
+ [Ukázka třídy XMLSerializer](xmlserializer-sample.md)  
+ Ukazuje, jak serializovat a deserializovat typy, které jsou kompatibilní s <xref:System.Xml.Serialization.XmlSerializer> .

@@ -2,15 +2,15 @@
 title: Ověřování zabezpečení
 ms.date: 03/30/2017
 ms.assetid: 48dcd496-0c4f-48ce-8b9b-0e25b77ffa58
-ms.openlocfilehash: 90d335f32c43ecf575c69cf800ab69bee05f39ee
-ms.sourcegitcommit: 7370aa8203b6036cea1520021b5511d0fd994574
+ms.openlocfilehash: 70408976469b1cbcf9c4679bd91d81872ec74ae1
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82728373"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84599968"
 ---
 # <a name="security-validation"></a>Ověření zabezpečení
-Tato ukázka předvádí, jak pomocí vlastního chování ověřit služby na počítači, abyste měli jistotu, že splňují určitá kritéria. V této ukázce se služby ověřují pomocí vlastního chování tím, že prochází každý koncový bod ve službě a kontroluje, jestli obsahují zabezpečené prvky vazby. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md).  
+Tato ukázka předvádí, jak pomocí vlastního chování ověřit služby na počítači, abyste měli jistotu, že splňují určitá kritéria. V této ukázce se služby ověřují pomocí vlastního chování tím, že prochází každý koncový bod ve službě a kontroluje, jestli obsahují zabezpečené prvky vazby. Tato ukázka je založena na [Začínáme](getting-started-sample.md).  
   
 > [!NOTE]
 > Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
@@ -47,7 +47,7 @@ public void Validate(ServiceDescription serviceDescription,
 }  
 ```  
   
- Přidáním následujícího kódu do souboru Web. config přidáte rozšíření `serviceValidate` chování služby, které chcete rozpoznat.  
+ Přidáním následujícího kódu do souboru Web. config přidáte `serviceValidate` rozšíření chování služby, které chcete rozpoznat.  
   
 ```xml  
 <system.serviceModel>  
@@ -78,7 +78,7 @@ public void Validate(ServiceDescription serviceDescription,
 > [!NOTE]
 > Při přidávání chování do všech služeb je navrženo zálohování souboru Machine. config před provedením jakékoli změny.  
   
- Nyní spusťte klienta, který je k dispozici v adresáři client\bin této ukázky. Byla vyvolána výjimka s následující zprávou: "požadovanou službuhttp://localhost/servicemodelsamples/service.svcnelze aktivovat". To se očekává, protože koncový bod se považuje za nezabezpečený pomocí chování při ověřování koncového bodu a zabrání spuštění služby. Chování také vyvolá interní výjimku, která popisuje, který koncový bod je nezabezpečený a zapisuje do systému zprávu Prohlížeč událostí pod zdrojem "System. ServiceModel 4.0.0.0" a "webhost" kategorie. V této ukázce je také možné zapnout trasování pro službu. To uživateli umožňuje zobrazit výjimky vyvolané chováním ověřování koncového bodu otevřením výsledných trasování služby pomocí nástroje Service Trace Viewer.  
+ Nyní spusťte klienta, který je k dispozici v adresáři client\bin této ukázky. Byla vyvolána výjimka s následující zprávou: "požadovanou službu http://localhost/servicemodelsamples/service.svc nelze aktivovat". To se očekává, protože koncový bod se považuje za nezabezpečený pomocí chování při ověřování koncového bodu a zabrání spuštění služby. Chování také vyvolá interní výjimku, která popisuje, který koncový bod je nezabezpečený a zapisuje do systému zprávu Prohlížeč událostí pod zdrojem "System. ServiceModel 4.0.0.0" a "webhost" kategorie. V této ukázce je také možné zapnout trasování pro službu. To uživateli umožňuje zobrazit výjimky vyvolané chováním ověřování koncového bodu otevřením výsledných trasování služby pomocí nástroje Service Trace Viewer.  
   
 ### <a name="view-failed-endpoint-validation-exception-messages-in-the-event-viewer"></a>Zobrazit zprávy výjimky ověření neúspěšných koncových bodů v Prohlížeč událostí  
   
@@ -92,11 +92,11 @@ public void Validate(ServiceDescription serviceDescription,
   
 ## <a name="set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. Chcete-li sestavit edici C# nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Chcete-li sestavit edici C# nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](building-the-samples.md).  
   
-3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](running-the-samples.md).  
   
 > [!IMPORTANT]
 > Ukázky již mohou být nainstalovány v počítači. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  

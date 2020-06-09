@@ -2,12 +2,12 @@
 title: Pokyny pro instalaci virtuálního adresáře
 ms.date: 03/30/2017
 ms.assetid: 3c62cab5-81a4-48b6-ac8c-9ce33a85a157
-ms.openlocfilehash: 6dccc5174e3fb9ab67023310d8c060d598a707c9
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 2d9443431601ffc712da40bd1c085f595471336b
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70038649"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84602359"
 ---
 # <a name="virtual-directory-setup-instructions"></a>Pokyny pro instalaci virtuálního adresáře
 Ukázky Windows Communication Foundation (WCF) mají za cíl sdílet společný virtuální adresář s názvem ServiceModelSamples, který je namapován na složku%SystemDrive%\inetpub\wwwroot\servicemodelsamples.  
@@ -15,7 +15,7 @@ Ukázky Windows Communication Foundation (WCF) mají za cíl sdílet společný 
 > [!NOTE]
 > Jednotka% SystemDrive% je obvykle C: nebo D:, v závislosti na umístění jednotky, kde je nainstalovaná Internetová informační služba (IIS).  
   
- Můžete spustit soubory Setupvroot. bat a cleanupvroot. bat z [procesu jednorázového nastavení pro Windows Communication Foundation Samples pro](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md) vytvoření virtuálního adresáře. Pokud budete chtít vytvořit virtuální adresář ručně, použijte následující postupy.  
+ Můžete spustit soubory Setupvroot. bat a cleanupvroot. bat z [procesu jednorázového nastavení pro Windows Communication Foundation Samples pro](one-time-setup-procedure-for-the-wcf-samples.md) vytvoření virtuálního adresáře. Pokud budete chtít vytvořit virtuální adresář ručně, použijte následující postupy.  
   
 ## <a name="procedures"></a>Procedury  
   
@@ -39,13 +39,13 @@ Ukázky Windows Communication Foundation (WCF) mají za cíl sdílet společný 
     > Tato úloha musí být prováděna pouze jednou, protože všechny ukázky služby WCF používají stejnou webovou aplikaci ServiceModelSamples.  
   
     > [!NOTE]
-    > Pro účely této dokumentace je termínem `virtual directory` synonymum. `Web application`  
+    > Pro účely této dokumentace je termínem `virtual directory` synonymum `Web application` .  
   
      Kromě vytváření virtuálního adresáře musíte také nastavit jeho vlastnosti, aby bylo možné spouštět služby WCF. Podrobnosti najdete níže.  
   
 #### <a name="to-create-a-virtual-directory-in-iis-51-or-60"></a>Vytvoření virtuálního adresáře ve službě IIS 5,1 nebo 6,0  
   
-1. Otevřete okno příkazového řádku a zadejte `start inetmgr` a otevřete modul snap-in konzoly MMC Internetová informační služba (IIS).  
+1. Otevřete okno příkazového řádku a zadejte a `start inetmgr` otevřete modul snap-in konzoly MMC Internetová informační služba (IIS).  
   
 2. V levém podokně rozbalte uzel s názvem počítače a potom rozbalte uzel **weby** .  
   
@@ -59,7 +59,7 @@ Ukázky Windows Communication Foundation (WCF) mají za cíl sdílet společný 
   
 7. Ve výchozím nastavení jsou zaškrtnuta následující zaškrtávací políčka:  
   
-    - **Read**  
+    - **Oprávnění**  
   
     - **Spouštění skriptů (například ASP)**  
   
@@ -84,7 +84,7 @@ Ukázky Windows Communication Foundation (WCF) mají za cíl sdílet společný 
   
 2. Ve výchozím nastavení jsou zaškrtnuta následující zaškrtávací políčka:  
   
-    - **Read**  
+    - **Oprávnění**  
   
     - **Protokolovat návštěvy**  
   
@@ -102,7 +102,7 @@ Ukázky Windows Communication Foundation (WCF) mají za cíl sdílet společný 
   
 4. Vyberte položku **Najít** . Otevře se okno **Vybrat uživatele nebo skupiny** .  
   
-5. Klikněte na tlačítko **Advanced**.  
+5. Klikněte na tlačítko **Upřesnit**.  
   
 6. Klikněte na **umístění**. Okno **umístění** je nyní otevřeno.  
   
@@ -110,13 +110,13 @@ Ukázky Windows Communication Foundation (WCF) mají za cíl sdílet společný 
   
 8. Klikněte na **Najít**. Tím se výsledky hledání naplní objekty, které jsou přidružené k místnímu počítači.  
   
-9. Najděte položku **IIS_IUSRS** ve sloupci **název (relativní rozlišující název)** . Vyberte tuto položku a kliknutím na tlačítko **OK** zavřete okno výsledků hledání.  
+9. Vyhledejte položku **IIS_IUSRS** ve sloupci **název (relativní rozlišující název)** . Vyberte tuto položku a kliknutím na tlačítko **OK** zavřete okno výsledků hledání.  
   
 10. Kliknutím na tlačítko **OK** zavřete okno **Vybrat uživatele nebo skupiny** .  
   
 11. Kliknutím na **sdílet** zachovejte změny.  
   
-12. Po dokončení změn pro povolení sdílení klikněte na Hotovo a zavřete okno **sdílení souborů** .  
+12. Po dokončení změn pro povolení sdílení klikněte na **Hotovo** a zavřete okno **sdílení souborů** .  
   
 #### <a name="to-set-security-properties-of-the-folder-in-iis-51-or-60"></a>Nastavení vlastností zabezpečení složky ve službě IIS 5,1 nebo 6,0  
   
@@ -124,7 +124,7 @@ Ukázky Windows Communication Foundation (WCF) mají za cíl sdílet společný 
   
 2. Klikněte pravým tlačítkem na složku **ServiceModelSamples** a pak klikněte na **sdílení a zabezpečení.**  
   
-3. Klikněte na kartu **zabezpečení** .  
+3. Klikněte na kartu **Zabezpečení**.  
   
 4. Pokud používáte službu IIS 6,0, v poli **název skupiny nebo jméno uživatele** ověřte, zda je uveden **účet internetového účtu Guest** .  
   
@@ -140,15 +140,15 @@ Ukázky Windows Communication Foundation (WCF) mají za cíl sdílet společný 
   
     5. V dialogovém okně **uživatelské účty** klikněte na kartu **Upřesnit** .  
   
-    6. Klikněte na tlačítko **Advanced**.  
+    6. Klikněte na tlačítko **Upřesnit**.  
   
     7. V dialogovém okně **místní uživatelé a skupiny** rozbalte složku **Uživatelé** kliknutím.  
   
     8. V pravém podokně dvakrát klikněte na možnost **účet internetového účtu Guest**.  
   
-    9. V dialogovém okně **vlastnosti** zkopírujte název používaný jako internetový účet hosta. Ve výchozím nastavení začíná název "USR_" následovaný názvem počítače.  
+    9. V dialogovém okně **vlastnosti** zkopírujte název používaný jako internetový účet hosta. Ve výchozím nastavení začíná název řetězec "USR_" následovaný názvem počítače.  
   
-    10. Zavřete dialogové okno **vlastnosti** .  
+    10. Zavřete dialogové okno **Vlastnosti** .  
   
     11. Zavřete dialogové okno **místní uživatelé a skupiny** .  
   
@@ -158,7 +158,7 @@ Ukázky Windows Communication Foundation (WCF) mají za cíl sdílet společný 
   
     14. V dialogovém okně **vlastnosti ServiceModelSamples** na kartě **zabezpečení** klikněte na **Přidat**.  
   
-    15. Zadejte název počítače následovaný zpětným lomítkem a pak vložte název internetového uživatelského účtu, například myMachineName\\% InternetGuestAccountName%.  
+    15. Zadejte název počítače následovaný zpětným lomítkem a pak vložte název internetového uživatelského účtu, například myMachineName \\ % InternetGuestAccountName%.  
   
     16. Kliknutím na **Kontrola názvů** ověřte přidání. Pokud je platný, jméno je velkými písmeny a je podtržené.  
   
@@ -166,7 +166,7 @@ Ukázky Windows Communication Foundation (WCF) mají za cíl sdílet společný 
   
      Pokud síťová služba není uvedená:  
   
-    1. Klikněte na **Přidat**.  
+    1. Klikněte na tlačítko **Add** (Přidat).  
   
     2. V dialogovém okně **Vybrat uživatele nebo skupiny** zadejte název počítače následovaný zpětným lomítkem.  
   
@@ -190,6 +190,6 @@ Ukázky Windows Communication Foundation (WCF) mají za cíl sdílet společný 
   
     3. Ve sloupci **Skupina** ověřte, že hodnota pro **ASPNET** je "Users".  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Pokyny k hostování Internetové informační služby](../../../../docs/framework/wcf/samples/internet-information-service-hosting-instructions.md)
+- [Pokyny k hostování služby IIS](internet-information-service-hosting-instructions.md)

@@ -2,27 +2,27 @@
 title: Seznam aktivit
 ms.date: 03/30/2017
 ms.assetid: 5540e185-ce8e-4db3-83b0-2b9f5bf71829
-ms.openlocfilehash: d048dc9851a3b07b6c7457de95f2c752b0ffa964
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 8d43cc878d54efbd4908f92c3405bef2c7956f94
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69933584"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84602164"
 ---
 # <a name="activity-list"></a>Seznam aktivit
 V tomto tématu jsou uvedeny všechny aktivity definované pomocí Windows Communication Foundation (WCF).  
   
 > [!NOTE]
-> Aktivity můžete také definovat programově k seskupení trasování uživatele. Další informace najdete v tématu [generování trasování uživatelského kódu](../../../../../docs/framework/wcf/diagnostics/tracing/emitting-user-code-traces.md).  
+> Aktivity můžete také definovat programově k seskupení trasování uživatele. Další informace najdete v tématu [generování trasování uživatelského kódu](emitting-user-code-traces.md).  
   
 ## <a name="servicemodel-activities"></a>Aktivity ServiceModel  
  V následující tabulce jsou uvedeny všechny aktivity pro hlavní scénáře použití.  
   
 |Popisek|Název aktivity|Typ aktivity|Popis|  
 |-----------|-------------------|-------------------|-----------------|  
-|A, M|Okolní aktivita|Není k dispozici (Tato služba není řízena ServiceModel)|Aktivita, jejíž ID je nastaveno v TLS před všemi voláními do kódu ServiceModel (strana na straně klienta nebo serveru).<br /><br /> Příklad: Aktivita, kde je volána metoda Open, je volána u klienta služby WCF nebo serviceHost. Open.|  
+|A, M|Okolní aktivita|Není k dispozici (Tato služba není řízena ServiceModel)|Aktivita, jejíž ID je nastaveno v TLS před všemi voláními do kódu ServiceModel (strana na straně klienta nebo serveru).<br /><br /> Příklad: aktivita, kde je volána metoda Open, je volána u klienta služby WCF nebo serviceHost. Open.|  
 |B|Konstrukce<br /><br /> Tříd. ContractType: ' [typ] '.|Konstrukce||  
-|C|Otevřít<br /><br /> [ClientBase&#124;ChannelFactory]. ContractType: ' [typ] '.|Otevřít||  
+|C|Otevřít<br /><br /> [ClientBase&#124;třída ChannelFactory]. ContractType: ' [typ] '.|Otevřít||  
 |I|Zavřete [ClientBase&#124;ChannelFactory]. ContractType: ' [typ] '.|Zavřít||  
 |M|Sestavte třídu ServiceHost. ServiceType: ' [typ] '.|Konstrukce||  
 |N|Otevřete třídu ServiceHost. ServiceType: ' [typ] '.|Otevřít||  
@@ -38,15 +38,15 @@ V tomto tématu jsou uvedeny všechny aktivity definované pomocí Windows Commu
   
 |Název aktivity|Typ aktivity|Popis|  
 |-------------------|-------------------|-----------------|  
-|Nastavit zabezpečenou relaci|SetupSecurity|Existuje pouze na straně klienta. Obsahuje všechny výměny RST */SCT pro ověřování a nastavení kontextu zabezpečení. Pokud `propagateActivity` =\*je tato aktivita sloučena s odpovídající akcí procesu RST/SCT aktivit služby. `true`|  
-|Zavřít zabezpečenou relaci|SetupSecurity|Existuje na straně klienta. Obsahuje výměnu zpráv zrušením pro zavření zabezpečené relace. Pokud `propagateActivity` jetatoaktivita`true`sloučena s akcí procesu "Cancel" ze služby. =|  
+|Nastavit zabezpečenou relaci|SetupSecurity|Existuje pouze na straně klienta. Obsahuje všechny výměny RST */SCT pro ověřování a nastavení kontextu zabezpečení. Pokud `propagateActivity` = `true` je tato aktivita sloučena s odpovídající akcí procesu RST \* /SCT aktivit služby.|  
+|Zavřít zabezpečenou relaci|SetupSecurity|Existuje na straně klienta. Obsahuje výměnu zpráv zrušením pro zavření zabezpečené relace. Pokud `propagateActivity` = `true` je tato aktivita sloučena s akcí procesu "Cancel" ze služby.|  
   
  V následující tabulce jsou uvedeny všechny aktivity týkající se modelu COM+.  
   
 |Název aktivity|Typ aktivity|Popis|  
 |-------------------|-------------------|-----------------|  
 |Vytvořit instanci COM+|TransferToCOMPlus|1 instance aktivity pro každé volání COM+ z kódu WCF|  
-|Spustit > \<operace com+|TransferToCOMPlus|1 instance aktivity pro každé volání COM+ z kódu WCF|  
+|Spustit COM+\<operation>|TransferToCOMPlus|1 instance aktivity pro každé volání COM+ z kódu WCF|  
   
 ## <a name="wmi-activities"></a>Aktivity rozhraní WMI  
  V následující tabulce jsou uvedeny všechny aktivity související s rozhraním WMI.  

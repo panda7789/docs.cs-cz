@@ -2,43 +2,43 @@
 title: Fronty nedoručených zpráv
 ms.date: 03/30/2017
 ms.assetid: ff664f33-ad02-422c-9041-bab6d993f9cc
-ms.openlocfilehash: eab1c52f4d0b3d0f82cf561a9478ea8233598e1c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8ea2ea530db8745c3802f9f39793ffd77ddd0008
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79144945"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84575287"
 ---
 # <a name="dead-letter-queues"></a>Fronty nedoručených zpráv
-Tato ukázka ukazuje, jak zpracovat a zpracovat zprávy, které se nezdařilo doručení. Je založen na [transacted MSMQ binding](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md) vzorku. Tato ukázka `netMsmqBinding` používá vazbu. Služba je aplikace konzoly s vlastním hostitelem, která umožňuje sledovat službu přijímající zprávy ve frontě.
+Tato ukázka předvádí, jak zpracovávat a zpracovávat zprávy, které selhaly při doručování. Vychází ze vzorových [vazeb v transakční službě MSMQ](transacted-msmq-binding.md) . Tato ukázka používá `netMsmqBinding` vazbu. Služba je samoobslužná Konzolová aplikace, která vám umožní sledovat službu přijímající zprávy zařazené do fronty.
 
 > [!NOTE]
-> Postup instalace a pokyny k sestavení pro tuto ukázku jsou umístěny na konci tohoto tématu.
+> Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.
 
 > [!NOTE]
-> Tato ukázka ukazuje každou frontu nedoručených zpráv aplikace, která je k dispozici pouze v systému Windows Vista. Ukázku lze upravit tak, aby používala výchozí systémové fronty pro službu MSMQ 3.0 v systémech Windows Server 2003 a Windows XP.
+> Tato ukázka předvádí každou frontu nedoručených zpráv aplikace, která je k dispozici pouze v systému Windows Vista. Ukázku lze upravit tak, aby v systému Windows Server 2003 a Windows XP používala výchozí systémové fronty pro službu MSMQ 3,0.
 
- Ve frontové komunikaci klient komunikuje se službou pomocí fronty. Přesněji řečeno, klient odesílá zprávy do fronty. Služba přijímá zprávy z fronty. Služba a klient proto nemusí být spuštěny současně komunikovat pomocí fronty.
+ V komunikaci ve frontě klient komunikuje se službou pomocí fronty. Klient přesněji odesílá zprávy do fronty. Služba přijímá zprávy z fronty. Službu a klient proto nemusí běžet současně, aby bylo možné komunikovat pomocí fronty.
 
- Vzhledem k tomu, že komunikace ve frontě může zahrnovat určité množství klid, můžete přidružit hodnotu time-to-live na zprávu, abyste zajistili, že zpráva nebude doručena do aplikace, pokud uplynula. Existují také případy, kdy aplikace musí být informováni, zda zpráva selhala doručení. Ve všech těchto případech, například při vypršení doby do provozu na zprávu nebo zprávy se nezdařilo doručení, je zpráva umístěna do fronty nedoručených zpráv. Odesílající aplikace pak můžete číst zprávy ve frontě nedoručených zpráv a přijmout nápravná opatření, která sahají od žádné akce k opravě důvodů pro neúspěšné doručení a opětovné odeslání zprávy.
+ Vzhledem k tomu, že komunikace zařazená do fronty může zahrnovat určité množství dormancy, možná budete chtít ke zprávě přidružit hodnotu TTL (Time to Live), aby se zajistilo, že se zpráva nebude doručena do aplikace, pokud zmizela po čase. Existují také případy, kdy musí být aplikace informována o tom, zda se nezdařila doručení zprávy. Ve všech těchto případech, například když vypršel časový limit u zprávy nebo když zpráva selhala při doručování, je zpráva vložena do fronty nedoručených zpráv. Odesílající aplikace potom může číst zprávy ve frontě nedoručených zpráv a provádět nápravné akce, které se nezdařily z důvodu opravy důvodů neúspěšného doručení a opětovného odeslání zprávy.
 
- Fronta nedoručených `NetMsmqBinding` zpráv ve vazbě je vyjádřena v následujících vlastnostech:
+ Fronta nedoručených zpráv ve `NetMsmqBinding` vazbě je vyjádřena v následujících vlastnostech:
 
-- <xref:System.ServiceModel.MsmqBindingBase.DeadLetterQueue%2A>vlastnost vyjádřit druh fronty nedoručených zpráv vyžadované klientem. Tento výčet má následující hodnoty:
+- <xref:System.ServiceModel.MsmqBindingBase.DeadLetterQueue%2A>vlastnost, která vyjadřuje druh fronty nedoručených zpráv, kterou klient vyžaduje. Tento výčet má následující hodnoty:
 
-- `None`: Klient nevyžaduje žádnou frontu nedoručených zpráv.
+- `None`: Klient nepožaduje žádnou frontu nedoručených zpráv.
 
-- `System`: Fronta nedoručených zpráv systému se používá k ukládání nedoručených zpráv. Systémová fronta nedoručených zpráv je sdílena všemi aplikacemi spuštěnými v počítači.
+- `System`: Fronta nedoručených zpráv systému se používá k ukládání nedoručených zpráv. Fronta nedoručených zpráv systému je sdílena všemi aplikacemi spuštěnými v počítači.
 
-- `Custom`: Vlastní fronta nedoručených <xref:System.ServiceModel.MsmqBindingBase.CustomDeadLetterQueue%2A> zpráv zadaná pomocí vlastnosti se používá k ukládání nedoručených zpráv. Tato funkce je k dispozici pouze v systému Windows Vista. Používá se v případě, že aplikace musí používat vlastní frontu nedoručených zpráv namísto sdílení s jinými aplikacemi spuštěnými ve stejném počítači.
+- `Custom`: Vlastní fronta nedoručených zpráv, která je určená pomocí <xref:System.ServiceModel.MsmqBindingBase.CustomDeadLetterQueue%2A> vlastnosti, se používá k ukládání nedoručených zpráv. Tato funkce je k dispozici pouze v systému Windows Vista. Tato část se používá, když aplikace musí používat vlastní frontu nedoručených zpráv místo jejího sdílení s jinými aplikacemi spuštěnými ve stejném počítači.
 
-- <xref:System.ServiceModel.MsmqBindingBase.CustomDeadLetterQueue%2A>vlastnost vyjádřit konkrétní fronty použít jako fronty nedoručených zpráv. Tato možnost je k dispozici pouze v systému Windows Vista.
+- <xref:System.ServiceModel.MsmqBindingBase.CustomDeadLetterQueue%2A>vlastnost, která vyjadřuje konkrétní frontu, která se použije jako fronta nedoručených zpráv. Tato dostupnost je k dispozici pouze v systému Windows Vista.
 
- V této ukázce klient odešle dávku zpráv do služby z rozsahu transakce a určuje libovolně nízkou hodnotu pro "time-to-live" pro tyto zprávy (asi 2 sekundy). Klient také určuje vlastní frontu nedoručených zpráv, která se má použít k zařazení zpráv, jejichž platnost vypršela.
+ V této ukázce klient pošle dávku zpráv službě v rámci rozsahu transakce a určí libovolně nízkou hodnotu "Time to Live" pro tyto zprávy (přibližně 2 sekundy). Klient také určuje vlastní frontu nedoručených zpráv, která má být použita k zařazování zpráv, jejichž platnost vypršela.
 
- Klientská aplikace může číst zprávy ve frontě nedoručených zpráv a zkuste zprávu odeslat znovu nebo opravit chybu, která způsobila umístění původní zprávy do fronty nedoručených zpráv a odeslat zprávu. V ukázce se zobrazí chybová zpráva klienta.
+ Klientská aplikace může číst zprávy ve frontě nedoručených zpráv a buď znovu odeslat zprávu, nebo opravit chybu, která způsobila, že původní zpráva bude umístěna do fronty nedoručených zpráv, a odeslat zprávu. V ukázce klient zobrazuje chybovou zprávu.
 
- Servisní smlouva `IOrderProcessor`je , jak je znázorněno v následujícím ukázkovém kódu.
+ Kontrakt služby je `IOrderProcessor` , jak je znázorněno v následujícím ukázkovém kódu.
 
 ```csharp
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples")]
@@ -49,9 +49,9 @@ public interface IOrderProcessor
 }
 ```
 
- Kód služby v ukázce je [kód transacted msmq vazby](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md).
+ Kód služby v ukázce je výsledkem [transakční vazby služby MSMQ](transacted-msmq-binding.md).
 
- Komunikace se službou probíhá v rámci transakce. Služba čte zprávy z fronty, provádí operaci a potom zobrazí výsledky operace. Aplikace také vytvoří frontu nedoručených zpráv pro nedoručené zprávy.
+ Komunikace se službou se uskutečňuje v rámci rozsahu transakce. Služba přečte zprávy z fronty, provede operaci a potom zobrazí výsledky operace. Aplikace také vytvoří frontu nedoručených zpráv pro zprávy s nedoručenými zprávami.
 
 ```csharp
 //The service contract is defined in generatedClient.cs, generated from the service by the svcutil tool.
@@ -108,12 +108,12 @@ class Client
 }
 ```
 
- Konfigurace klienta určuje krátkou dobu trvání zprávy k dosažení služby. Pokud zprávu nelze přenést v rámci zadané doby trvání, vyprší platnost zprávy a je přesunuta do fronty nedoručených zpráv.
+ Konfigurace klienta Určuje krátkou dobu trvání zprávy pro dosažení služby. Pokud zprávu nelze přenést do zadané doby trvání, vyprší platnost zprávy a bude přesunuta do fronty nedoručených zpráv.
 
 > [!NOTE]
-> Je možné, aby klient doručit zprávu do fronty služeb v zadaném čase. Chcete-li zajistit, že se služba nedoručených dat zobrazí v akci, měli byste před spuštěním služby spustit klienta. Časový nebo poslední den zprávy a je doručena do služby nedoručených zpráv.
+> Je možné, že klient doručí zprávu do fronty služby v určeném čase. Abyste měli jistotu, že se služba nedoručených zpráv zobrazuje v akci, měli byste před spuštěním služby spustit klienta. Vyprší časový limit zprávy a doručuje se do služby nedoručených zpráv.
 
- Aplikace musí definovat, které fronty se mají použít jako frontu nedoručených zpráv. Pokud není zadána žádná fronta, výchozí transakční fronta nedoručených zpráv pro celý systém se používá k zařazení nedoručených zpráv do fronty. V tomto příkladu určuje klientská aplikace vlastní frontu nedoručených zpráv vlastní aplikace.
+ Aplikace musí definovat, kterou frontu použít jako svou frontu nedoručených zpráv. Není-li zadána žádná fronta, je pro zařazení nedoručených zpráv použita výchozí fronta nedoručených transakčních zpráv v rámci systému. V tomto příkladu klientská aplikace určí svoji vlastní frontu nedoručených zpráv aplikace.
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -146,12 +146,12 @@ class Client
 </configuration>
 ```
 
- Služba nedoručených zpráv čte zprávy z fronty nedoručených zpráv. Služba nedoručených zpráv implementuje smlouvu. `IOrderProcessor` Jeho realizace však není zpracování objednávek. Služba nedoručených zpráv je klientská služba a nemá možnost zpracovávat objednávky.
+ Nedoručená služba zpráv čte zprávy z fronty nedoručených zpráv. Nedoručená služba zpráv implementuje `IOrderProcessor` kontrakt. Jeho implementace ale nezpracovává objednávky. Nedoručená služba zpráv je klientská služba a nemá k dispozici zařízení pro zpracování objednávek.
 
 > [!NOTE]
-> Fronta nedoručených zpráv je fronta klientů a je místní pro správce front klienta.
+> Fronta nedoručených zpráv je klientská fronta a je místní pro správce front klienta.
 
- Implementace služby nedoručených zpráv z kontroluje z důvodu, že zpráva selhala doručení a přijímá nápravná opatření. Důvod selhání zprávy je zachycen ve dvou <xref:System.ServiceModel.Channels.MsmqMessageProperty.DeliveryFailure%2A> výčtů <xref:System.ServiceModel.Channels.MsmqMessageProperty.DeliveryStatus%2A>a . Můžete načíst <xref:System.ServiceModel.Channels.MsmqMessageProperty> z <xref:System.ServiceModel.OperationContext> jak je znázorněno v následujícím ukázkovém kódu:
+ Nedoručená implementace služby zpráv s nedoručenými zprávami kontroluje důvod neúspěšného doručení zprávy a provádí nápravná opatření. Důvod selhání zprávy je zachycen ve dvou výčtech <xref:System.ServiceModel.Channels.MsmqMessageProperty.DeliveryFailure%2A> a <xref:System.ServiceModel.Channels.MsmqMessageProperty.DeliveryStatus%2A> . Můžete načíst <xref:System.ServiceModel.Channels.MsmqMessageProperty> z rozhraní, <xref:System.ServiceModel.OperationContext> jak je znázorněno v následujícím ukázkovém kódu:
 
 ```csharp
 public void SubmitPurchaseOrder(PurchaseOrder po)
@@ -169,9 +169,9 @@ public void SubmitPurchaseOrder(PurchaseOrder po)
 }
 ```
 
- Zprávy ve frontě nedoručených zpráv jsou zprávy adresované službě, která zprávu zpracovává. Proto při službě nedoručených zpráv čte zprávy z fronty, vrstva kanálu Windows Communication Foundation (WCF) najde neshodu v koncových bodech a neodešle zprávu. V takovém případě je zpráva určena službě zpracování objednávek, ale je přijata službou nedoručených zpráv. Chcete-li obdržet zprávu adresovanou jinému koncovému bodu, je v `ServiceBehavior`aplikaci zadán filtr adresy odpovídající libovolné adrese. To je nutné úspěšně zpracovat zprávy, které jsou čteny z fronty nedoručených zpráv.
+ Zprávy ve frontě nedoručených zpráv jsou zprávy, které jsou adresovány službě, která zpracovává zprávu. Proto když služba zpráv nedoručených zpráv přečte zprávy z fronty, vrstva kanálu Windows Communication Foundation (WCF) nalezne neshodu v koncových bodech a neodešle zprávu. V tomto případě je zpráva adresována službě zpracování objednávky, ale je přijímána službou nedoručených zpráv. Chcete-li získat zprávu adresovanou jinému koncovému bodu, je filtr adres shodný s libovolnou adresou uveden v `ServiceBehavior` . Tato operace je nutná k úspěšnému zpracování zpráv, které jsou čteny z fronty nedoručených zpráv.
 
- V této ukázce služba nedoručených zpráv znovu odešle zprávu, pokud důvodem selhání je, že časový čas zprávy. Ze všech ostatních důvodů zobrazuje selhání dodávky, jak je znázorněno v následujícím ukázkovém kódu:
+ V této ukázce služba zasílání zpráv s nedoručenými zprávami znovu odešle zprávu, pokud příčinou chyby je, že došlo k vypršení časového limitu zprávy. Pro všechny ostatní důvody se zobrazí chyba doručení, jak je znázorněno v následujícím ukázkovém kódu:
 
 ```csharp
 // Service class that implements the service contract.
@@ -228,7 +228,7 @@ public class PurchaseOrderDLQService : IOrderProcessor
 }
 ```
 
- Následující ukázka ukazuje konfiguraci nedoručené zprávy:
+ Následující příklad ukazuje konfiguraci pro zprávu s nedoručenými zprávami:
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -265,20 +265,20 @@ public class PurchaseOrderDLQService : IOrderProcessor
 </configuration>
 ```
 
- Při spuštění ukázky existují 3 spustitelné soubory ke spuštění, aby viděli, jak funguje fronta nedoručených zpráv pro každou aplikaci; klient, služba a služba nedoručených zpráv, která čte z fronty nedoručených zpráv pro každou aplikaci a znovu odešle zprávu službě. Všechny jsou konzolové aplikace s výstupem v konzolových oknech.
+ Při spuštění ukázky jsou k dispozici tři spustitelné soubory, abyste viděli, jak fronta nedoručených zpráv funguje pro každou aplikaci. klient, služba a služba nedoručených zpráv, která čte z fronty nedoručených zpráv pro každou aplikaci a odesílá zprávu službě. Všechny jsou konzolové aplikace s výstupem v oknech konzoly.
 
 > [!NOTE]
-> Vzhledem k tomu, že se používá fronty, klient a služba nemusí být současně spuštěni. Můžete spustit klienta, vypnout a potom spustit službu a stále přijímá jeho zprávy. Měli byste spustit službu a vypnout ji, aby bylo možné vytvořit frontu.
+> Protože se služba Řízení front používá, není nutné, aby klient a služba běžely ve stejnou dobu. Můžete spustit klienta, vypnout ho a pak spustit službu a nadále přijímat zprávy. Službu je třeba spustit a vypnout, aby bylo možné vytvořit frontu.
 
- Při spuštění klienta se zobrazí zpráva:
+ Při spuštění klienta se zobrazí zpráva klienta:
 
 ```console
 Press <ENTER> to terminate client.
 ```
 
- Klient se pokusil odeslat zprávu, ale s krátkým časovým limitem, zpráva vypršela a je nyní zařazena do fronty nedoručených zpráv pro každou aplikaci.
+ Klient se pokusil zprávu poslat, ale má krátký časový limit, zpráva vypršela a je nyní zařazena do fronty nedoručených zpráv pro každou aplikaci.
 
- Potom spustíte službu nedoručených zpráv, která přečte zprávu a zobrazí kód chyby a znovu odešle zprávu zpět do služby.
+ Poté spustíte službu nedoručených zpráv, která přečte zprávu, zobrazí kód chyby a znovu odešle zprávu zpět do služby.
 
 ```console
 The dead letter service is ready.
@@ -293,7 +293,7 @@ Trying to resend the message
 Purchase order resent
 ```
 
- Služba se spustí a potom přečte zprávu s opakováním a zpracuje ji.
+ Služba se spustí a pak přečte zprávu o opakovaném odeslání a zpracuje ji.
 
 ```console
 The service is ready.
@@ -310,27 +310,27 @@ Processing Purchase Order: 97897eff-f926-4057-a32b-af8fb11b9bf9
 
 ### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky
 
-1. Ujistěte se, že jste provedli [jednorázový postup instalace pro ukázky windows communication foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
+1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](one-time-setup-procedure-for-the-wcf-samples.md).
 
-2. Pokud je služba spuštěna jako první, zkontroluje, zda je fronta k dispozici. Pokud fronta není k dispozici, služba ji vytvoří. Nejprve můžete spustit službu a vytvořit frontu, nebo ji můžete vytvořit pomocí Správce front služby MSMQ. Vytvořenífronty v systému Windows 2008 postupujte takto.
+2. Pokud je služba spuštěna jako první, zkontroluje, zda je fronta k dispozici. Pokud fronta není přítomna, služba ji vytvoří. Službu můžete nejdřív spustit, abyste mohli vytvořit frontu, nebo ji můžete vytvořit pomocí Správce fronty MSMQ. Pomocí těchto kroků vytvořte ve Windows 2008 frontu.
 
-    1. Otevřete Správce serveru v sadě Visual Studio 2012.
+    1. Otevřete Správce serveru v aplikaci Visual Studio 2012.
 
-    2. Rozbalte kartu **Funkce.**
+    2. Rozbalte kartu **funkce** .
 
-    3. Klepněte pravým tlačítkem myši na **položku Fronty soukromých zpráv**a vyberte příkaz **Nová**, **Soukromá fronta**.
+    3. Klikněte pravým tlačítkem na **fronty soukromých zpráv**a vyberte **Nový**, **soukromá fronta**.
 
-    4. Zaškrtněte políčko **Transakční** transakce.
+    4. Zaškrtněte políčko **transakční** .
 
-    5. Zadejte `ServiceModelSamplesTransacted` jako název nové fronty.
+    5. `ServiceModelSamplesTransacted`Jako název nové fronty zadejte.
 
-3. Chcete-li vytvořit c# nebo Visual Basic .NET vydání řešení, postupujte podle pokynů v [sestavení windows communication foundation ukázky](../../../../docs/framework/wcf/samples/building-the-samples.md).
+3. Chcete-li sestavit edici C# nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](building-the-samples.md).
 
-4. Chcete-li spustit ukázku v konfiguraci jednoho nebo mezi počítači změnit názvy fronty odpovídajícím způsobem, nahrazení localhost s úplný název počítače a postupujte podle pokynů v [spuštění windows communication foundation ukázky](../../../../docs/framework/wcf/samples/running-the-samples.md).
+4. Chcete-li ukázku spustit v jednom nebo několika počítačích ve frontě změny konfigurace, nahraďte localhost úplným názvem počítače a postupujte podle pokynů v [části spuštění ukázek Windows Communication Foundation](running-the-samples.md).
 
-### <a name="to-run-the-sample-on-a-computer-joined-to-a-workgroup"></a>Spuštění ukázky v počítači připojovato k pracovní skupině
+### <a name="to-run-the-sample-on-a-computer-joined-to-a-workgroup"></a>Spuštění ukázky na počítači připojeném k pracovní skupině
 
-1. Pokud počítač není součástí domény, vypněte zabezpečení přenosu nastavením režimu `None` ověřování a úrovně ochrany na úroveň uvedenou v následující ukázkové konfiguraci:
+1. Pokud počítač není součástí domény, vypněte zabezpečení přenosu nastavením režimu ověřování a úrovně ochrany tak `None` , jak je znázorněno v následující ukázkové konfiguraci:
 
     ```xml
     <bindings>
@@ -342,21 +342,21 @@ Processing Purchase Order: 97897eff-f926-4057-a32b-af8fb11b9bf9
     </bindings>
     ```
 
-     Ujistěte se, že koncový bod je přidružen `bindingConfiguration` k vazbě nastavením atributu koncového bodu.
+     Nastavením atributu koncového bodu zajistěte, aby byl koncový bod přidružen k vazbě `bindingConfiguration` .
 
-2. Ujistěte se, že změníte konfiguraci na DeadLetterService, server a klient před spuštěním ukázky.
+2. Před spuštěním ukázky se ujistěte, že jste změnili konfiguraci na DeadLetterService, serveru a klientovi.
 
     > [!NOTE]
-    > Nastavení `security mode` `None` na je `MsmqAuthenticationMode`ekvivalentní `MsmqProtectionLevel` `Message` nastavení `None`a zabezpečení .
+    > Nastavení `security mode` na `None` je ekvivalent nastavení `MsmqAuthenticationMode` `MsmqProtectionLevel` a `Message` zabezpečení na `None` .
 
 ## <a name="comments"></a>Komentáře
- Ve výchozím `netMsmqBinding` nastavení s přenosem vazby je povoleno zabezpečení. Dvě `MsmqAuthenticationMode` vlastnosti `MsmqProtectionLevel`a společně určují typ zabezpečení přenosu. Ve výchozím nastavení je `Windows` režim ověřování nastaven na `Sign`hodnotu a úroveň ochrany je nastavena na hodnotu . Aby služba MSMQ poskytovala funkci ověřování a podepisování, musí být součástí domény. Pokud spustíte tuto ukázku v počítači, který není součástí domény, zobrazí se následující chyba: "Interní certifikát fronty zpráv uživatele neexistuje".
+ Ve výchozím nastavení se pro `netMsmqBinding` přenos vazeb povoluje zabezpečení. Dvě vlastnosti `MsmqAuthenticationMode` a `MsmqProtectionLevel` společně určují typ zabezpečení přenosu. Ve výchozím nastavení je režim ověřování nastaven na hodnotu `Windows` a úroveň ochrany je nastavena na hodnotu `Sign` . Aby služba MSMQ poskytovala funkci ověřování a podepisování, musí být součástí domény. Pokud tuto ukázku spustíte na počítači, který není součástí domény, zobrazí se následující chyba: "vnitřní certifikát služby Řízení front zpráv" neexistuje.
 
 > [!IMPORTANT]
-> Ukázky mohou být již nainstalovány v počítači. Před pokračováním zkontrolujte následující (výchozí) adresář.  
+> Ukázky již mohou být nainstalovány v počítači. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >
 > `<InstallDrive>:\WF_WCF_Samples`  
 >
-> Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a Windows Workflow Foundation (WF) Ukázky pro rozhraní .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka je umístěna v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Net\MSMQ\DeadLetter`  

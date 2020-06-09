@@ -2,12 +2,12 @@
 title: System.ServiceModel.Channels.MessageReceived
 ms.date: 03/30/2017
 ms.assetid: 9e6942a4-051f-416c-9674-7e729b9edd33
-ms.openlocfilehash: fc2de674bf6a112ff6800ea4a1b2d02e7ead2094
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0211244909e6302752985f3958c2d07ac30b34f8
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61792428"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84601995"
 ---
 # <a name="systemservicemodelchannelsmessagereceived"></a>System.ServiceModel.Channels.MessageReceived
 System.ServiceModel.Channels.MessageReceived  
@@ -15,10 +15,10 @@ System.ServiceModel.Channels.MessageReceived
 ## <a name="description"></a>Popis  
  Byla přijata zpráva přes kanál.  
   
- Trasování je vygenerován při doručení zprávy do WCF, pokud `System.ServiceModel` je povolený zdroj trasování na podrobné úrovni nebo informace. Trasování je nutné zobrazit šipka korelace zprávy v zobrazení grafu aktivit.  
+ Toto trasování je vygenerováno, když je přijata zpráva WCF, pokud `System.ServiceModel` je zdroj trasování povolen na úrovni informace nebo podrobného typu. Toto trasování je potřeba, aby se zobrazila šipka korelace zprávy v zobrazení grafu aktivity.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Trasování](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [Řešení problémů s aplikací pomocí trasování](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
-- [Správa a diagnostika](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [Trasování](index.md)
+- [Řešení potíží s aplikací pomocí trasování](using-tracing-to-troubleshoot-your-application.md)
+- [Správa a diagnostika](../index.md)

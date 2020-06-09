@@ -1,17 +1,18 @@
 ---
 title: Dělení na spravovaná vlákna
+description: Přečtěte si odkazy na články o spravovaném vláknování v rozhraní .NET pokrývající základy, osvědčené postupy, objekty vláken & funkce, referenční stránky, & další.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
 - threading [.NET Framework], about threading
 - managed threading
 ms.assetid: 7b46a7d9-c6f1-46d1-a947-ae97471bba87
-ms.openlocfilehash: e4c19b664e8fc040fdc4a284b30f6104d676088d
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 570db45138c85c4252967404da4404d434660d69
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84279151"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84599747"
 ---
 # <a name="managed-threading"></a>Dělení na spravovaná vlákna
 Bez ohledu na to, zda vyvíjíte pro počítače s jedním nebo několika procesory, chcete, aby vaše aplikace poskytovala co nejrychlejší interakci s uživatelem, a to i v případě, že aplikace právě provádí jinou práci. Použití několika podprocesů provádění je jedním z nejúčinnějších způsobů, jak zajistit, aby aplikace reagovala na uživatele a zároveň používala procesor v rámci událostí uživatele nebo dokonce i během nich. V této části se seznámíte se základními koncepcemi dělení na vlákna, zaměřuje se na koncepty spravovaného vlákna a pomocí spravovaného vlákna.  
@@ -32,7 +33,7 @@ Bez ohledu na to, zda vyvíjíte pro počítače s jedním nebo několika proces
  [Dělení objektů a funkcí](threading-objects-and-features.md)  
  Popisuje spravované třídy, které lze použít k synchronizaci aktivit vláken a dat objektů, ke kterým přistupovalo v různých vláknech, a poskytuje přehled vláken fondu vláken.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Threading>  
  Obsahuje třídy pro použití a synchronizaci spravovaných vláken.  
   

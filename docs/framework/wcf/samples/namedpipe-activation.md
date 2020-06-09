@@ -2,16 +2,16 @@
 title: Aktivace pojmenovaného kanálu
 ms.date: 03/30/2017
 ms.assetid: f3c0437d-006c-442e-bfb0-6b29216e4e29
-ms.openlocfilehash: a562ec51d35af08f49e89b652670e9a57b0f00c2
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: 8d9a10b94c52514db611144352653b911d109056
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74837854"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84602463"
 ---
 # <a name="namedpipe-activation"></a>Aktivace pojmenovaného kanálu
 
-Tato ukázka demonstruje hostování služby, která používá aktivační službu procesů systému Windows (WAS) k aktivaci služby, která komunikuje s kanály názvů. Tato ukázka je založená na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) a vyžaduje spuštění systému Windows Vista.
+Tato ukázka demonstruje hostování služby, která používá aktivační službu procesů systému Windows (WAS) k aktivaci služby, která komunikuje s kanály názvů. Tato ukázka je založená na [Začínáme](getting-started-sample.md) a vyžaduje spuštění systému Windows Vista.
 
 > [!NOTE]
 > Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.
@@ -21,7 +21,7 @@ Tato ukázka demonstruje hostování služby, která používá aktivační slu�
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Hosting\WASHost\NamedPipeActivation`
 
@@ -29,7 +29,7 @@ Tato ukázka demonstruje hostování služby, která používá aktivační slu�
 
 Ukázka se skládá z programu klientské konzoly (. exe) a knihovny služeb (. dll) hostované v pracovním procesu aktivovaném službami aktivace procesů systému Windows (WAS). Aktivita klienta se zobrazí v okně konzoly.
 
-Služba implementuje kontrakt definující způsob komunikace požadavek-odpověď. Kontrakt je definován rozhraním `ICalculator`, které zpřístupňuje matematické operace (sčítání, odčítání, násobení a dělení), jak je znázorněno v následujícím ukázkovém kódu.
+Služba implementuje kontrakt definující způsob komunikace požadavek-odpověď. Kontrakt je definován `ICalculator` rozhraním, které zpřístupňuje matematické operace (sčítání, odčítání, násobení a dělení), jak je znázorněno v následujícím ukázkovém kódu.
 
 ```csharp
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples")]
@@ -71,7 +71,7 @@ public class CalculatorService : ICalculator
 }
 ```
 
-Ukázka používá upravenou vazbu `netNamedPipeBinding` bez zabezpečení. Vazba je určena v konfiguračních souborech pro klienta a službu. Typ vazby pro službu je zadán v atributu `binding` elementu koncového bodu, jak je znázorněno v následující ukázkové konfiguraci.
+Ukázka používá upravenou `netNamedPipeBinding` vazbu bez zabezpečení. Vazba je určena v konfiguračních souborech pro klienta a službu. Typ vazby pro službu je zadán v atributu elementu koncového bodu `binding` , jak je znázorněno v následující ukázkové konfiguraci.
 
 Pokud chcete použít zabezpečenou vazbu pojmenovaného kanálu, změňte režim zabezpečení serveru na požadované nastavení zabezpečení a znovu spusťte Svcutil. exe v klientovi, aby se získal aktualizovaný konfigurační soubor klienta.
 
@@ -161,7 +161,7 @@ Press <ENTER> to terminate client.
 
 1. Ujistěte se, že je nainstalovaná služba IIS 7,0. Pro aktivaci byla požadována služba IIS 7,0.
 
-2. Ujistěte se, že jste v [Windows Communication Foundation Samples provedli postup jednorázového nastavení](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
+2. Ujistěte se, že jste v [Windows Communication Foundation Samples provedli postup jednorázového nastavení](one-time-setup-procedure-for-the-wcf-samples.md).
 
     Kromě toho musíte nainstalovat komponenty WCF, které nejsou součástí aktivace přes protokol HTTP:
 
@@ -198,9 +198,9 @@ Press <ENTER> to terminate client.
         > [!NOTE]
         > Tento příkaz je jedním řádkem textu.
 
-        Tento příkaz umožňuje, aby aplikace/ServiceModelSamples byla dostupná pomocí `http://localhost/servicemodelsamples` i `net.tcp://localhost/servicemodelsamples`.
+        Tento příkaz umožňuje, aby aplikace/ServiceModelSamples byla dostupná pomocí `http://localhost/servicemodelsamples` a `net.tcp://localhost/servicemodelsamples` .
 
-4. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
+4. Chcete-li sestavit edici C# nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](building-the-samples.md).
 
 5. Odeberte vazbu na lokalitu NET. pipe, kterou jste přidali pro tuto ukázku.
 
@@ -224,6 +224,6 @@ Press <ENTER> to terminate client.
         > [!NOTE]
         > Tento příkaz musí být zadán jako jeden řádek textu.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Hostování technologie AppFabric a ukázky trvalosti](https://docs.microsoft.com/previous-versions/appfabric/ff383418(v=azure.10))

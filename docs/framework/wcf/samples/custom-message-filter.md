@@ -2,26 +2,26 @@
 title: Vlastní filtr zpráv
 ms.date: 03/30/2017
 ms.assetid: 98dd0af8-fce6-4255-ac32-42eb547eea67
-ms.openlocfilehash: 896407a218073eba53676baa4bcbd125593c80ca
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0e4da0f2283fd537afe3cacdddfb36c327cfd3b4
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79183885"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600041"
 ---
 # <a name="custom-message-filter"></a>Vlastní filtr zpráv
-Tato ukázka ukazuje, jak nahradit filtry zpráv, které Windows Communication Foundation (WCF) používá k odesílání zpráv do koncových bodů.  
+Tato ukázka demonstruje, jak nahradit filtry zpráv, které Windows Communication Foundation (WCF) používá k odesílání zpráv do koncových bodů.  
   
 > [!NOTE]
-> Postup instalace a pokyny k sestavení pro tuto ukázku jsou umístěny na konci tohoto tématu.  
+> Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
   
- Když na server dorazí první zpráva na kanálu, musí server určit, které (pokud existuje) koncových bodů přidružených k tomuto identifikátoru URI by měly zprávu obdržet. Tento proces je <xref:System.ServiceModel.Dispatcher.MessageFilter> řízen objekty <xref:System.ServiceModel.Dispatcher.EndpointDispatcher>připojenými k .  
+ Když první zpráva na kanálu dorazí na server, server musí určit, který (pokud existuje) koncových bodů přidružených k tomuto identifikátoru URI by měla obdržet zprávu. Tento proces je řízen <xref:System.ServiceModel.Dispatcher.MessageFilter> objekty připojenými k <xref:System.ServiceModel.Dispatcher.EndpointDispatcher> .  
   
- Každý koncový bod služby <xref:System.ServiceModel.Dispatcher.EndpointDispatcher>má jeden . Má <xref:System.ServiceModel.Dispatcher.EndpointDispatcher> jak <xref:System.ServiceModel.Dispatcher.EndpointDispatcher.AddressFilter%2A> a <xref:System.ServiceModel.Dispatcher.EndpointDispatcher.ContractFilter%2A>a . Sjednocení těchto dvou filtrů je filtr zpráv používaný pro tento koncový bod.  
+ Každý koncový bod služby má jednu <xref:System.ServiceModel.Dispatcher.EndpointDispatcher> . <xref:System.ServiceModel.Dispatcher.EndpointDispatcher>Má <xref:System.ServiceModel.Dispatcher.EndpointDispatcher.AddressFilter%2A> a <xref:System.ServiceModel.Dispatcher.EndpointDispatcher.ContractFilter%2A> . Sjednocením těchto dvou filtrů je filtr zpráv použitý pro tento koncový bod.  
   
- Ve výchozím <xref:System.ServiceModel.Dispatcher.EndpointDispatcher.AddressFilter%2A> nastavení pro koncový bod odpovídá všechny zprávy, která je určena na <xref:System.ServiceModel.EndpointAddress>adresu, která odpovídá koncovému bodu služby . Ve výchozím <xref:System.ServiceModel.Dispatcher.EndpointDispatcher.ContractFilter%2A> nastavení pro koncový bod kontroluje akci příchozí zprávy a porovnává všechny zprávy s akcí, která odpovídá jedné z akcí `IsInitiating` = `true` operací smlouvy koncového bodu služby (jsou považovány pouze akce). V důsledku toho ve výchozím nastavení filtr pro koncový bod odpovídá pouze v <xref:System.ServiceModel.EndpointAddress> případě, že obě záhlaví zprávy Do je koncového bodu a akce zprávy odpovídá jedné z akcí operace koncového bodu.  
+ Ve výchozím nastavení <xref:System.ServiceModel.Dispatcher.EndpointDispatcher.AddressFilter%2A> odpovídá koncový bod všem zprávám, které jsou adresovány na adresu, která odpovídá koncovému bodu služby <xref:System.ServiceModel.EndpointAddress> . Ve výchozím nastavení <xref:System.ServiceModel.Dispatcher.EndpointDispatcher.ContractFilter%2A> pro koncový bod kontroluje akci příchozí zprávy a odpovídá jakékoli zprávě s akcí, která odpovídá jedné z akcí operací kontraktu koncového bodu služby ( `IsInitiating` = `true` jsou zváženy pouze akce). V důsledku toho filtr pro koncový bod ve výchozím nastavení odpovídá pouze v případě, že se v záhlaví zprávy nachází <xref:System.ServiceModel.EndpointAddress> koncový bod a akce zprávy odpovídá jedné z akcí operace koncového bodu.  
   
- Tyto filtry lze změnit pomocí chování. Ve vzorku služba <xref:System.ServiceModel.Description.IEndpointBehavior> vytvoří, který nahradí <xref:System.ServiceModel.Dispatcher.EndpointDispatcher.AddressFilter%2A> <xref:System.ServiceModel.Dispatcher.EndpointDispatcher.ContractFilter%2A> a <xref:System.ServiceModel.Dispatcher.EndpointDispatcher>na :  
+ Tyto filtry je možné změnit pomocí chování. V ukázce služba vytvoří <xref:System.ServiceModel.Description.IEndpointBehavior> , která nahrazuje <xref:System.ServiceModel.Dispatcher.EndpointDispatcher.AddressFilter%2A> a <xref:System.ServiceModel.Dispatcher.EndpointDispatcher.ContractFilter%2A> v <xref:System.ServiceModel.Dispatcher.EndpointDispatcher> :  
   
 ```csharp
 class FilteringEndpointBehavior : IEndpointBehavior
@@ -39,13 +39,13 @@ class MatchEAddressFilter : MessageFilter { }
 class MatchNoEAddressFilter : MessageFilter { }  
 ```  
   
- Je `FilteringEndpointBehavior` konfigurovatelný a umožňuje dvě různé varianty.  
+ `FilteringEndpointBehavior`Je možné provést konfiguraci a povolit dvě různé varianty.  
   
 ```csharp
 public class FilteringEndpointBehaviorExtension : BehaviorExtensionElement { }
 ```  
   
- Varianta 1 odpovídá pouze adresám, které obsahují "e" (ale které mají nějakou akci), zatímco varianta 2 odpovídá pouze adresám, které postrádají "e":  
+ Variace 1 odpovídá jenom adresám, které obsahují "e" (ale mají jakoukoliv akci), zatímco variace 2 odpovídá jenom adresám, které nemají:  
   
 ```csharp
 if (Variation == 1)  
@@ -66,7 +66,7 @@ else
 </extensions>
 ```  
   
- Pak služba `endpointBehavior` vytvoří konfigurace pro každou variantu:  
+ Služba potom vytvoří `endpointBehavior` konfigurace pro každou variaci:  
   
 ```xml  
 <endpointBehaviors>  
@@ -79,7 +79,7 @@ else
 </endpointBehaviors>  
 ```  
   
- Nakonec koncový bod služby odkazuje na `behaviorConfigurations`jednu z :  
+ Nakonec koncový bod služby odkazuje na jednu z těchto `behaviorConfigurations` :  
   
 ```xml  
 <endpoint address=""  
@@ -90,7 +90,7 @@ else
         behaviorConfiguration="endpoint2" />  
 ```  
   
- Implementace klientské aplikace je jednoduchá; vytvoří dva kanály uri služby (předáním této hodnoty`via`jako druhý <xref:System.ServiceModel.Channels.IChannelFactory%601.CreateChannel%28System.ServiceModel.EndpointAddress%29> parametr ( ) a odešle jednu zprávu na každém kanálu, ale používá různé adresy koncového bodu pro každý. V důsledku toho odchozí zprávy z klienta mají různé To označení a server odpovídá odpovídajícím způsobem, o čemž svědčí výstup klienta:  
+ Implementace klientské aplikace je jednoduchá; vytvoří dva kanály pro identifikátor URI služby (předáním této hodnoty jako druhý ( `via` ) do <xref:System.ServiceModel.Channels.IChannelFactory%601.CreateChannel%28System.ServiceModel.EndpointAddress%29> a odešle jednu zprávu na každém kanálu, ale pro každou z nich používá jiné adresy koncových bodů. Výsledkem je, že odchozí zprávy z klienta se liší od označení a server reaguje odpovídajícím způsobem, jak ukazuje výstup klienta:  
   
 ```console  
 Sending message to urn:e...  
@@ -100,7 +100,7 @@ Sending message to urn:a...
 Hello  
 ```  
   
- Přepnutí míchací v konfiguračním souboru serveru způsobí, že filtr bude `urn:e` prohozen a klient `urn:a` uvidí opačné chování (zpráva bude úspěšná, zatímco zpráva se nezdaří).  
+ Přepnutím změn v konfiguračním souboru serveru dojde k záměně filtru a klient uvidí opačné chování (zpráva bude `urn:e` úspěšná, zatímco zpráva `urn:a` selže).  
   
 ```xml  
 <endpoint address=""  
@@ -112,27 +112,27 @@ Hello
 ```  
   
 > [!IMPORTANT]
-> Ukázky mohou být již nainstalovány v počítači. Před pokračováním zkontrolujte následující (výchozí) adresář.  
+> Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >
 > `<InstallDrive>:\WF_WCF_Samples`  
 >
-> Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a Windows Workflow Foundation (WF) Ukázky pro rozhraní .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka je umístěna v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\MessageFilter`  
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Chcete-li vytvořit řešení, postupujte podle pokynů v [sestavení windows communication foundation ukázky](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+1. Při sestavování řešení postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](building-the-samples.md).  
   
-2. Chcete-li spustit ukázku v konfiguraci jednoho počítače, postupujte podle pokynů v [části Spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+2. Pokud chcete ukázku spustit v konfiguraci s jedním počítačem, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](running-the-samples.md).  
   
-3. Chcete-li spustit ukázku v konfiguraci mezi počítači, postupujte podle pokynů na [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md) a změňte následující řádek v Client.cs.  
+3. Pokud chcete ukázku spustit v konfiguraci mezi počítači, postupujte podle pokynů v článku [spuštění ukázek Windows Communication Foundation](running-the-samples.md) a v Client.cs změňte následující řádek.  
   
     ```csharp
     Uri serviceVia = new Uri("http://localhost/ServiceModelSamples/service.svc");  
     ```  
   
-     Nahraďte localhost názvem serveru.  
+     Položku localhost nahraďte názvem serveru.  
   
     ```csharp
     Uri serviceVia = new Uri("http://servermachinename/ServiceModelSamples/service.svc");  

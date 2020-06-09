@@ -2,22 +2,22 @@
 title: Aktivace procesu Windows
 ms.date: 03/30/2017
 ms.assetid: 37b79642-1e6f-44b3-9777-98af57443bfa
-ms.openlocfilehash: bcac3a9860dd03ed048bc27969fa1e1f070e788a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c24ef6098be447c957a58a4b7f8440c78dcdca73
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61949926"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84602294"
 ---
 # <a name="windows-process-activation"></a>Aktivace procesu Windows
-Tato část obsahuje ukázky, které předvádějí pro aktivaci služeb prostřednictvím síťových protokolů.  
+Tato část obsahuje ukázky, které demonstrují aktivaci služby prostřednictvím síťových protokolů.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Aktivace pojmenovaného kanálu](../../../../docs/framework/wcf/samples/namedpipe-activation.md)  
- Ukazuje, hostování služba, která se používá k aktivaci služby, která komunikuje přes názvy kanálů Windows Process Activation Service (WAS).  
+ [Aktivace pojmenovaného kanálu](namedpipe-activation.md)  
+ Demonstruje hostování služby, která používá aktivační službu procesů systému Windows (WAS) k aktivaci služby, která komunikuje s kanály názvů.  
   
- [Aktivace protokolu TCP](../../../../docs/framework/wcf/samples/tcp-activation.md)  
- Ukazuje, který je hostitelem služby, které používá služby aktivační procesů Windows (WAS) k aktivaci služby, která komunikuje přes protokol net.tcp.
+ [Aktivace protokolem TCP](tcp-activation.md)  
+ Demonstruje hostování služby, která používá aktivační služby procesů systému Windows (WAS) k aktivaci služby, která komunikuje přes protokol net. TCP.
 
- [Aktivace služby MSMQ](../../../../docs/framework/wcf/samples/msmq-activation.md)  
- Ukazuje, hostování služba, která se používá k aktivaci služby, která komunikuje přes protokol net.msmq služby aktivační procesů Windows (WAS).
+ [Aktivace MSMQ](msmq-activation.md)  
+ Demonstruje hostování služby, která používá aktivační služby procesů systému Windows (WAS) k aktivaci služby, která komunikuje přes protokol net. MSMQ.

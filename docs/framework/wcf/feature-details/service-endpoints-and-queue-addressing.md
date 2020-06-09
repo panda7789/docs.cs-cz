@@ -2,17 +2,17 @@
 title: Koncové body služby a adresování front
 ms.date: 03/30/2017
 ms.assetid: 7d2d59d7-f08b-44ed-bd31-913908b83d97
-ms.openlocfilehash: 8b323993a698dac219e0f2be43e9b508a19065dd
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: a17e680732cd257fbdfd95eb09df8c53f5894400
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202414"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600384"
 ---
 # <a name="service-endpoints-and-queue-addressing"></a>Koncové body služby a adresování front
 Toto téma popisuje, jak klienti adresují služby, které čtou z front a jak se mapují koncové body služby na fronty. Jako připomenutí znázorňuje následující ilustrace nasazení aplikace ve frontě Windows Communication Foundation (WCF).  
   
- ![Diagram aplikace ve frontě](../../../../docs/framework/wcf/feature-details/media/distributed-queue-figure.jpg "Distribuované – fronta – obrázek")  
+ ![Diagram aplikace ve frontě](media/distributed-queue-figure.jpg "Distribuované – fronta – obrázek")  
   
  Aby mohl klient odeslat zprávu do služby, klient adresuje zprávu do cílové fronty. Aby služba četla zprávy z fronty, nastaví její adresu naslouchání na cílovou frontu. Adresování ve službě WCF je založené na identifikátoru URI (Uniform Resource Identifier), zatímco názvy front služby Řízení front zpráv (MSMQ) nejsou založené na identifikátoru URI. Proto je důležité pochopit, jak se ve službě MSMQ vytvořily fronty vytvořené pomocí WCF.  
   
@@ -46,7 +46,7 @@ Toto téma popisuje, jak klienti adresují služby, které čtou z front a jak s
   
  Adresa fronty se používá jako identifikátor URI poslechu naslouchacího procesu ke čtení zpráv z. Jinými slovy, adresa fronty je ekvivalentní portu TCP soketu.  
   
- Koncový bod, který čte z fronty, musí specifikovat adresu fronty za použití stejného schématu zadaného dříve při otevírání třídy ServiceHost. Příklady najdete v tématu o [vytváření vazeb v síti MSMQ](../../../../docs/framework/wcf/samples/net-msmq-binding.md).  
+ Koncový bod, který čte z fronty, musí specifikovat adresu fronty za použití stejného schématu zadaného dříve při otevírání třídy ServiceHost. Příklady najdete v tématu o [vytváření vazeb v síti MSMQ](../samples/net-msmq-binding.md).  
   
 ### <a name="multiple-contracts-in-a-queue"></a>Několik kontraktů ve frontě  
  Zprávy ve frontě můžou implementovat různé kontrakty. V takovém případě je nutné, aby jedna z následujících podmínek byla úspěšně čtena a zpracována všechny zprávy:  
@@ -89,7 +89,7 @@ Toto téma popisuje, jak klienti adresují služby, které čtou z front a jak s
   
  NET. MSMQ://localhost/[Private/] \<*custom-dead-letter-queue-name*> .  
   
- Služba WCF ověřuje, že všechny zprávy, které obdrží, byly adresovány do konkrétní fronty, na které naslouchá. Pokud cílová fronta zprávy nesouhlasí s frontou, ve které se nachází, služba zprávu nezpracovává. Jedná se o problém, který musí splňovat služby, které naslouchá frontě nedoručených zpráv, protože jakékoli zprávy ve frontě nedoručených zpráv byly určeny k doručování jinde. Aby bylo možné číst zprávy z fronty nedoručených zpráv nebo z fronty nefunkčních, `ServiceBehavior` <xref:System.ServiceModel.AddressFilterMode.Any> musí být použit parametr s parametrem. Příklad najdete v tématu [fronty nedoručených zpráv](../../../../docs/framework/wcf/samples/dead-letter-queues.md).  
+ Služba WCF ověřuje, že všechny zprávy, které obdrží, byly adresovány do konkrétní fronty, na které naslouchá. Pokud cílová fronta zprávy nesouhlasí s frontou, ve které se nachází, služba zprávu nezpracovává. Jedná se o problém, který musí splňovat služby, které naslouchá frontě nedoručených zpráv, protože jakékoli zprávy ve frontě nedoručených zpráv byly určeny k doručování jinde. Aby bylo možné číst zprávy z fronty nedoručených zpráv nebo z fronty nefunkčních, `ServiceBehavior` <xref:System.ServiceModel.AddressFilterMode.Any> musí být použit parametr s parametrem. Příklad najdete v tématu [fronty nedoručených zpráv](../samples/dead-letter-queues.md).  
   
 ## <a name="msmqintegrationbinding-and-service-addressing"></a>MsmqIntegrationBinding a adresování služeb  
  `MsmqIntegrationBinding`Slouží ke komunikaci s tradičními aplikacemi služby MSMQ. Pro usnadnění spolupráce s existující aplikací služby MSMQ podporuje WCF pouze adresování názvů formátu. Proto zprávy odeslané pomocí této vazby musí odpovídat schématu identifikátoru URI:  
@@ -106,4 +106,4 @@ Toto téma popisuje, jak klienti adresují služby, které čtou z front a jak s
   
 ## <a name="see-also"></a>Viz také
 
-- [Webhosting frontové aplikace](../../../../docs/framework/wcf/feature-details/web-hosting-a-queued-application.md)
+- [Webhosting frontové aplikace](web-hosting-a-queued-application.md)

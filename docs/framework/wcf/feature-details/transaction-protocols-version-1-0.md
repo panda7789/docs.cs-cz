@@ -2,15 +2,15 @@
 title: Protokoly transakce verze 1.0
 ms.date: 03/30/2017
 ms.assetid: 034679af-0002-402e-98a8-ef73dcd71bb6
-ms.openlocfilehash: 6063c643be4c60e9830a020d10ac9fbcd236dac2
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: f725361b9a90c9336b763cc7f292ae043e445966
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144770"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84598707"
 ---
 # <a name="transaction-protocols-version-10"></a>Protokoly transakce verze 1.0
-Windows Communication Foundation (WCF) verze 1 implementuje rozhraní WS-Atomic Transaction a WS-koordinační protokol verze 1,0. Další informace o verzi 1,1 najdete v tématu [transakční protokoly](../../../../docs/framework/wcf/feature-details/transaction-protocols.md).  
+Windows Communication Foundation (WCF) verze 1 implementuje rozhraní WS-Atomic Transaction a WS-koordinační protokol verze 1,0. Další informace o verzi 1,1 najdete v tématu [transakční protokoly](transaction-protocols.md).  
   
 |Specifikace/dokument|Odkaz|  
 |-----------------------------|----------|  
@@ -99,7 +99,7 @@ Windows Communication Foundation (WCF) verze 1 implementuje rozhraní WS-Atomic 
 #### <a name="activation-message-binding-configuration"></a>Konfigurace vazby aktivační zprávy  
  Aktivační zprávy obvykle nejsou zapojeny do interoperability, protože se obvykle vyskytují mezi aplikací a jejím místním správcem transakcí.  
   
- B1221: WCF používá duplexní vazbu HTTPS (popsanou v [protokolech zasílání zpráv](../../../../docs/framework/wcf/feature-details/messaging-protocols.md)) pro aktivační zprávy. Zprávy žádosti a odpovědi jsou korelační pomocí WS-Addressing 2004/08.  
+ B1221: WCF používá duplexní vazbu HTTPS (popsanou v [protokolech zasílání zpráv](messaging-protocols.md)) pro aktivační zprávy. Zprávy žádosti a odpovědi jsou korelační pomocí WS-Addressing 2004/08.  
   
  Specifikace WS-Atomic transakce, oddíl 8, popisuje další podrobnosti o korelaci a vzorech výměny zpráv.  
   
@@ -110,11 +110,11 @@ Windows Communication Foundation (WCF) verze 1 implementuje rozhraní WS-Atomic 
  `t:IssuedTokens`Pro připojení k odchozí zprávě by měla být vygenerována nová hlavička `wscoor:CreateCoordinationContextResponse` .  
   
 #### <a name="registration-message-binding-configuration"></a>Konfigurace vazby registrační zprávy  
- B1231: WCF používá duplexní vazbu HTTPS (popsané v [protokolech zasílání zpráv](../../../../docs/framework/wcf/feature-details/messaging-protocols.md)). Zprávy žádosti a odpovědi jsou korelační pomocí WS-Addressing 2004/08.  
+ B1231: WCF používá duplexní vazbu HTTPS (popsané v [protokolech zasílání zpráv](messaging-protocols.md)). Zprávy žádosti a odpovědi jsou korelační pomocí WS-Addressing 2004/08.  
   
  WS-AtomicTransaction, část 8, popisuje další podrobnosti o korelaci a popisy schémat výměny zpráv.  
   
- R1232: odchozí `wscoor:Register` zprávy musí používat `IssuedTokenOverTransport` režim ověřování popsaný v [protokolech zabezpečení](../../../../docs/framework/wcf/feature-details/security-protocols.md).  
+ R1232: odchozí `wscoor:Register` zprávy musí používat `IssuedTokenOverTransport` režim ověřování popsaný v [protokolech zabezpečení](security-protocols.md).  
   
  `wsse:Timestamp`Element musí být podepsán pomocí `SecurityContextToken STx` vydané. Tento podpis je důkazem vlastnictví tokenu přidruženého k konkrétní transakci a slouží k ověření účastníka, který v transakci zařadí. Zpráva RegistrationResponse se pošle zpátky přes HTTPS.  
   

@@ -2,17 +2,17 @@
 title: Ukázka samostatného diagnostického informačního kanálu
 ms.date: 03/30/2017
 ms.assetid: d31c6c1f-292c-4d95-8e23-ed8565970ea5
-ms.openlocfilehash: e8edb6c603e21a517244901993226fce3f055bbe
-ms.sourcegitcommit: 839777281a281684a7e2906dccb3acd7f6a32023
+ms.openlocfilehash: 0402805b7eb5b0b224db32eb07780743e5f32fb3
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82141109"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600916"
 ---
 # <a name="stand-alone-diagnostics-feed-sample"></a>Ukázka samostatného diagnostického informačního kanálu
 Tato ukázka předvádí, jak vytvořit informační kanál RSS/Atom pro syndikaci pomocí Windows Communication Foundation (WCF). Jedná se o základní program "Hello World", který ukazuje základy objektového modelu a jak ho nastavit ve službě Windows Communication Foundation (WCF).  
   
- Modely WCF <xref:System.ServiceModel.Syndication.SyndicationFeedFormatter>: informační kanály syndikace jako operace služby, které vracejí speciální datový typ. Instance <xref:System.ServiceModel.Syndication.SyndicationFeedFormatter> mohou serializovat informační kanál do formátů RSS 2,0 a Atom 1,0. Následující vzorový kód ukazuje použití smlouvy.  
+ Modely WCF: informační kanály syndikace jako operace služby, které vracejí speciální datový typ <xref:System.ServiceModel.Syndication.SyndicationFeedFormatter> . Instance <xref:System.ServiceModel.Syndication.SyndicationFeedFormatter> mohou serializovat informační kanál do formátů RSS 2,0 a Atom 1,0. Následující vzorový kód ukazuje použití smlouvy.  
   
 ```csharp  
 [ServiceContract(Namespace = "")]  
@@ -34,7 +34,7 @@ Tato ukázka předvádí, jak vytvořit informační kanál RSS/Atom pro syndika
   
  Tato `GetProcesses` operace je opatřena <xref:System.ServiceModel.Web.WebGetAttribute> atributem, který umožňuje řídit, jak služba WCF odesílá požadavky HTTP GET na operace služby a určuje formát odeslaných zpráv.  
   
- Podobně jako u libovolné služby WCF se můžou informační kanály syndikace hostovat sami v jakékoli spravované aplikaci. Služba syndikace vyžaduje konkrétní vazbu (a <xref:System.ServiceModel.WebHttpBinding>) a specifické chování koncového bodu ( <xref:System.ServiceModel.Description.WebHttpBehavior>a), aby fungovalo správně. Nová <xref:System.ServiceModel.Web.WebServiceHost> Třída poskytuje pohodlný rozhraní API pro vytváření takových koncových bodů bez konkrétní konfigurace.  
+ Podobně jako u libovolné služby WCF se můžou informační kanály syndikace hostovat sami v jakékoli spravované aplikaci. Služba syndikace vyžaduje konkrétní vazbu (a <xref:System.ServiceModel.WebHttpBinding> ) a specifické chování koncového bodu (a <xref:System.ServiceModel.Description.WebHttpBehavior> ), aby fungovalo správně. Nová <xref:System.ServiceModel.Web.WebServiceHost> Třída poskytuje pohodlný rozhraní API pro vytváření takových koncových bodů bez konkrétní konfigurace.  
   
 ```csharp  
 WebServiceHost host = new WebServiceHost(typeof(ProcessService), new Uri("http://localhost:8000/diagnostics"));  
@@ -51,7 +51,7 @@ WebServiceHost host = new WebServiceHost(typeof(ProcessService), new Uri("http:/
   
  Vzhledem k tomu, že tato služba přijímá žádosti pomocí standardního HTTP GET, můžete k přístupu ke službě použít libovolného klienta využívajícího technologii RSS nebo ATOM. Výstup této služby můžete například zobrazit tak, že přejdete do `http://localhost:8000/diagnostics/feed/?format=atom` nebo `http://localhost:8000/diagnostics/feed/?format=rss` v prohlížeči podporujícím technologii RSS.
   
- Můžete také použít způsob, [jakým objektový model Syndikace WCF mapuje na Atom a RSS](../../../../docs/framework/wcf/feature-details/how-the-wcf-syndication-object-model-maps-to-atom-and-rss.md) pro čtení publikovaných dat a jejich zpracování pomocí imperativního kódu.  
+ Můžete také použít způsob, [jakým objektový model Syndikace WCF mapuje na Atom a RSS](../feature-details/how-the-wcf-syndication-object-model-maps-to-atom-and-rss.md) pro čtení publikovaných dat a jejich zpracování pomocí imperativního kódu.  
   
 ```csharp
 XmlReader reader = XmlReader.Create( "http://localhost:8000/diagnostics/feed/?format=rss",
@@ -82,7 +82,7 @@ foreach (SyndicationItem i in feed.Items)
 
 3. Spusťte konzolovou aplikaci.
 
-4. Když je spuštěná Konzolová aplikace, přejděte `http://localhost:8000/diagnostics/feed/?format=atom` do `http://localhost:8000/diagnostics/feed/?format=rss` nebo použijte prohlížeč podporující technologii RSS.
+4. Když je spuštěná Konzolová aplikace, přejděte do `http://localhost:8000/diagnostics/feed/?format=atom` nebo `http://localhost:8000/diagnostics/feed/?format=rss` použijte prohlížeč podporující technologii RSS.
 
 > [!IMPORTANT]
 > Ukázky již mohou být nainstalovány v počítači. Než budete pokračovat, vyhledejte následující (výchozí) adresář.

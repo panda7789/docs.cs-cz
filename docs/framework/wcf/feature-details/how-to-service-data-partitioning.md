@@ -2,12 +2,12 @@
 title: 'Postupy: Vytvoření oddílů dat služby'
 ms.date: 03/30/2017
 ms.assetid: 1ccff72e-d76b-4e36-93a2-e51f7b32dc83
-ms.openlocfilehash: 49aefd88d73732a139a79f8c53d5beca44d4d4ba
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 3b2f86ee6a4dea25fb5c972d4cecb1b9ed411b29
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69947876"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84601189"
 ---
 # <a name="how-to-service-data-partitioning"></a>Postupy: Vytvoření oddílů dat služby
 Toto téma popisuje základní kroky potřebné k rozdělení zpráv mezi více instancí stejné cílové služby. Vytváření oddílů dat služby se obvykle používá v případě, že potřebujete škálovat službu tak, aby poskytovala lepší kvalitu služeb, nebo když potřebujete konkrétní způsob zpracovávat žádosti od různých zákazníků. Například zprávy od vysoké hodnoty nebo "Gold" můžou být potřeba zpracovat s vyšší prioritou než zprávy ze standardního zákazníka.  
@@ -173,6 +173,6 @@ Toto téma popisuje základní kroky potřebné k rozdělení zpráv mezi více 
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Směrovací služby](../../../../docs/framework/wcf/samples/routing-services.md)
+- [Směrovací služby](../samples/routing-services.md)

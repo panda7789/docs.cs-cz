@@ -2,34 +2,34 @@
 title: Zjišťování (ukázky)
 ms.date: 03/30/2017
 ms.assetid: 522a00b4-a789-4e8c-b8d7-a4c3d863a182
-ms.openlocfilehash: bf01e3fec15ddae0d0901b3c2dc91d3d6109fc97
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bb5471db6f4feb61798926ae1466a3bebac7e959
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61772915"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600578"
 ---
 # <a name="discovery-samples"></a>Zjišťování (ukázky)
-Tato část obsahuje ukázky související s funkcí zjišťování.  
+Tato část obsahuje ukázky týkající se funkce zjišťování.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Oznámení](../../../../docs/framework/wcf/samples/announcements-sample.md)  
- Ukazuje, jak používat funkci zjišťování oznámení.  
+ [Oznámení](announcements-sample.md)  
+ Ukazuje, jak používat oznámení s funkcí zjišťování.  
   
- [Základy](../../../../docs/framework/wcf/samples/basic-sample.md)  
- Ukazuje, jak prostřednictvím kódu programu a také, že při použití služby hledání zjistitelnost služby <xref:System.ServiceModel.Discovery.DynamicEndpoint>.  
+ [Basic](basic-sample.md)  
+ Ukazuje, jak učinit službu zjistitelnou programově a jak tuto službu vyhledat pomocí <xref:System.ServiceModel.Discovery.DynamicEndpoint> .  
   
- [Konfigurace](../../../../docs/framework/wcf/samples/configuration-sample.md)  
- Ukazuje, jak použít konfigurační soubor služby zjistitelnost, jakož i jak používat <xref:System.ServiceModel.Discovery.DynamicEndpoint> prostřednictvím konfigurace vás pod rouškou za danou službu.  
+ [Konfigurace](configuration-sample.md)  
+ Ukazuje, jak použít konfigurační soubor k zajištění zjistitelnosti služby a k <xref:System.ServiceModel.Discovery.DynamicEndpoint> vyhledání této služby pomocí konfigurace.  
   
- [Zjišťování pomocí oborů](../../../../docs/framework/wcf/samples/discovery-with-scopes-sample.md)  
- Ukazuje, jak pomocí oborů zařadit zjistitelné koncových bodů i jak používat <xref:System.ServiceModel.Discovery.DiscoveryClient> provést asynchronní hledání pro koncové body.  
+ [Zjišťování pomocí oborů](discovery-with-scopes-sample.md)  
+ Ukazuje, jak použít obory k kategorizaci zjistitelných koncových bodů a také jak použít <xref:System.ServiceModel.Discovery.DiscoveryClient> k provedení asynchronního hledání koncových bodů.  
   
- [Vlastní kritéria hledání](../../../../docs/framework/wcf/samples/custom-find-criteria.md)  
- Ukazuje, jak vytvořit vlastní obor shoda pomocí logiky a jak implementovat vlastní zjišťování služby.  
+ [Vlastní kritérium hledání](custom-find-criteria.md)  
+ Ukazuje, jak vytvořit vlastní rozsah odpovídající pomocí logiky a jak implementovat vlastní službu zjišťování.  
   
- [Ukázka zjišťování pracovního postupu](../../../../docs/framework/wcf/samples/workflow-discovery-sample.md)  
- Ukazuje, jak zjistitelnost služby pracovního postupu a jak si můžete vytvořit vlastní kód aktivitou, která hledá konkrétní službu.  
+ [Ukázka zjišťování pracovního postupu](workflow-discovery-sample.md)  
+ Ukazuje, jak nastavit službu pracovního postupu jako zjistitelnou a jak vytvořit vlastní aktivitu kódu, která vyhledává konkrétní službu.  
   
- [Služba zjišťování směrovačů](../../../../docs/framework/wcf/samples/discovery-router-service.md)  
- Ukazuje, jak se předávání zpráv zjišťování do jiného koncového bodu.
+ [Služba zjišťování směrovačů](discovery-router-service.md)  
+ Ukazuje, jak předávané zprávy zjišťování do jiného koncového bodu.

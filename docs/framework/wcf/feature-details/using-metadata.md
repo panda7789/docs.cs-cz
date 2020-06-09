@@ -2,26 +2,26 @@
 title: Používání metadat
 ms.date: 03/30/2017
 ms.assetid: 05cf53a1-b92d-4d8e-a87e-79f6e51c4a8d
-ms.openlocfilehash: 78005f68512e62c667b59c3cec5841a37723b973
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ac28de954c3754fba3763e40270d6427fb31566e
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61933617"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600241"
 ---
 # <a name="using-metadata"></a>Používání metadat
-Metadata služby obsahuje Strojově čitelný popis služby. Metadata služby obsahuje popisy koncové body služby, vazby, kontrakty, operace a zprávy. Metadata služby můžete použít pro různé účely, včetně automatického generování klienta pro využívání služby, provádění popis služby a dynamicky aktualizuje vazby pro klienta.  
+Metadata služby obsahují popis služby, který je strojově čitelný. Metadata služby obsahují popisy koncových bodů, vazeb, kontraktů, operací a zpráv služby. Metadata služby můžete použít k nejrůznějším účelům, včetně automatického generování klienta pro využívání služby, implementaci popisu služby a dynamické aktualizaci vazby pro klienta.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Principy generovaného klientského kódu](../../../../docs/framework/wcf/feature-details/understanding-generated-client-code.md)  
- Popisuje různé třídy a rozhraní Svcutil.exe nástroj generuje.  
+ [Principy generovaného klientského kódu](understanding-generated-client-code.md)  
+ Popisuje různé třídy a rozhraní, které generuje nástroj Svcutil. exe.  
   
- [Postupy: Načítání metadat a implementace kompatibilní služby](../../../../docs/framework/wcf/feature-details/how-to-retrieve-metadata-and-implement-a-compliant-service.md)  
- Ukazuje, jak načíst pomocí Svcutil.exe metadat a implementace kompatibilní služby.  
+ [Postupy: Načítání metadat a implementace kompatibilní služby](how-to-retrieve-metadata-and-implement-a-compliant-service.md)  
+ Ukazuje, jak načíst metadata pomocí Svcutil. exe a implementovat kompatibilní službu.  
   
- [Generování klienta WCF z metadat služby](../../../../docs/framework/wcf/feature-details/generating-a-wcf-client-from-service-metadata.md)  
- Ukazuje, jak k načtení metadat pomocí Svcutil.exe a vygenerovat klienta Windows Communication Foundation (WCF).  
+ [Generování klienta WCF z metadat služby](generating-a-wcf-client-from-service-metadata.md)  
+ Ukazuje, jak načíst metadata pomocí Svcutil. exe a vytvořit klienta Windows Communication Foundation (WCF).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Metadata](../../../../docs/framework/wcf/feature-details/metadata.md)
+- [Metadata](metadata.md)

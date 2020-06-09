@@ -2,18 +2,18 @@
 title: Používání více schémat ověřování u WCF
 ms.date: 03/30/2017
 ms.assetid: f32a56a0-e2b2-46bf-a302-29e1275917f9
-ms.openlocfilehash: b0f5da9a4c6fdfede9a86434f49f9e9821778176
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1874963573a6ec12939bd12b79574f1e2c889bfd
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61932676"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600215"
 ---
 # <a name="using-multiple-authentication-schemes-with-wcf"></a>Používání více schémat ověřování u WCF
-WCF umožňuje zadat více schémat ověřování v jednom koncovém bodu. Kromě toho hostovaná na webu služby může dědit jejich nastavení ověřování přímo ze služby IIS. V místním prostředí služby můžete zadat ověření je možné schémata. Další informace o nastavení ověřování ve službě IIS najdete v tématu [ověřování služby IIS](https://go.microsoft.com/fwlink/?LinkId=232458)  
+WCF teď umožňuje zadat pro jeden koncový bod několik schémat ověřování. Webové hostované služby navíc můžou dědit nastavení ověřování přímo ze služby IIS. Služby v místním prostředí můžou určovat, která schémata ověřování se dají použít. Další informace o nastavení ověřování ve službě IIS najdete v tématu [ověřování služby IIS](https://go.microsoft.com/fwlink/?LinkId=232458) .  
   
-## <a name="iis-hosted-services"></a>IIS-Hosted Services  
- Služby hostované v IIS nastavte ověřovací schémata, které chcete použít ve službě IIS. V souboru web.config vaší služby v konfiguraci vazby zadejte typ clientcredential systému jako "InheritedFromHost" jak je znázorněno v následující fragment kódu XML:  
+## <a name="iis-hosted-services"></a>Služby hostované službou IIS  
+ Pro služby hostované službou IIS nastavte schémata ověřování, která chcete používat ve službě IIS. Potom v souboru Web. config vaší služby v konfiguraci vazby zadejte typ clientCredential jako "InheritedFromHost", jak je znázorněno v následujícím fragmentu kódu XML:  
   
 ```xml  
 <bindings>  
@@ -27,7 +27,7 @@ WCF umožňuje zadat více schémat ověřování v jednom koncovém bodu. Krom�
     </bindings>  
 ```  
   
- Můžete určit, že chcete pouze podmnožinu schémata ověřování, který se má použít ve vaší službě pomocí ServiceAuthenticationBehavior nebo \<serviceAuthenticationManager > element. Když tato konfigurace v kódu pomocí ServiceAuthenticationBehavior, jak je znázorněno v následujícím fragmentu kódu.  
+ Můžete určit, že chcete použít jenom podmnožinu ověřovacích schémat s vaší službou pomocí ServiceAuthenticationBehavior nebo \<serviceAuthenticationManager> elementu. Při konfiguraci tohoto v kódu použijte ServiceAuthenticationBehavior, jak je znázorněno v následujícím fragmentu kódu.  
   
 ```csharp  
 // ...  
@@ -47,7 +47,7 @@ else
 // ...  
 ```  
   
- Při konfiguraci v konfiguračním souboru, použijte \<serviceAuthenticationManager > jak ukazuje následující fragment kódu XML.  
+ Při konfiguraci v konfiguračním souboru použijte \<serviceAuthenticationManager> prvek, jak je znázorněno v následujícím fragmentu kódu XML.  
   
 ```xml  
 <behaviors>  
@@ -60,10 +60,10 @@ else
     </behaviors>  
 ```  
   
- Tím se zajistí, že pouze podmnožinu ověřovací schémata tady se budou považovat za pro použití u koncového bodu služby v závislosti na tom, co je vybrané v IIS. To znamená, že, které se můžete vyloučit vývojář Řekněme, že základní ověřování ze seznamu vynecháním v třídě serviceAuthenticationManager výpisu a i když je povolená ve službě IIS, nebude použita na koncový bod služby  
+ Tím se zajistí, že se na koncový bod služby považuje jenom podmnožina schémat ověřování, v závislosti na tom, co je ve službě IIS vybrané. To znamená, že vývojář může ze seznamu vyloučit základní ověřování vyřazením ze seznamu serviceAuthenticationManager a dokonce i v případě, že je povolený ve službě IIS, nebude ho použít na koncovém bodu služby.  
   
-## <a name="self-hosted-services"></a>V místním prostředí služby  
- V místním prostředí služby se konfigurují trochu jinak, protože neexistuje žádná služba IIS dědit nastavení z. Zde použijete \<serviceAuthenticationManager > element nebo ServiceAuthenticationBehavior k určení, které se budou dědit nastavení ověřování. V kódu vypadá takto:  
+## <a name="self-hosted-services"></a>Samoobslužné služby  
+ Samoobslužné služby jsou nakonfigurovány trochu odlišně, protože neexistují žádné služby IIS, ze kterých by bylo možné dědit nastavení. V tomto případě použijete \<serviceAuthenticationManager> prvek nebo ServiceAuthenticationBehavior k určení nastavení ověřování, které bude děděno. V kódu vypadá takto:  
   
 ```csharp  
 // ...  
@@ -96,7 +96,7 @@ else
     </behaviors>  
 ```  
   
- A můžete pak určit InheritFromHost v nastaveních vazbu, jak je znázorněno v následující fragment kódu XML.  
+ A pak můžete zadat InheritFromHost v nastaveních vazby, jak je znázorněno v následujícím fragmentu kódu XML.  
   
 ```xml  
 <bindings>  
@@ -110,7 +110,7 @@ else
     </bindings>  
 ```  
   
- Alternativně můžete zadat ověřovací schémata v vlastní vazby, nastavením schémat ověřování v HTTP přenosu element vazby, jak je znázorněno v následujícím fragmentu kódu config.  
+ Alternativně můžete určit schémata ověřování ve vlastní vazbě nastavením schémat ověřování na elementu vazby přenosu HTTP, jak je znázorněno v následujícím fragmentu konfigurace.  
   
 ```xml  
 <binding name="multipleBinding">  
@@ -119,11 +119,11 @@ else
     </binding>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Vazby a zabezpečení](../../../../docs/framework/wcf/feature-details/bindings-and-security.md)
-- [Koncové body: Adresy, vazby a kontrakty](../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)
-- [Konfigurace vazeb poskytovaných systémem](../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)
-- [Možnosti zabezpečení u vlastních vazeb](../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md)
-- [Vazby](../../../../docs/framework/wcf/feature-details/bindings.md)
-- [Vlastní vazby](../../../../docs/framework/wcf/extending/custom-bindings.md)
+- [Vazby a zabezpečení](bindings-and-security.md)
+- [Koncové body: adresy, vazby a kontrakty](endpoints-addresses-bindings-and-contracts.md)
+- [Konfigurace vazeb poskytovaných systémem](configuring-system-provided-bindings.md)
+- [Možnosti zabezpečení u vlastních vazeb](security-capabilities-with-custom-bindings.md)
+- [Vazby](bindings.md)
+- [Vlastní vazby](../extending/custom-bindings.md)

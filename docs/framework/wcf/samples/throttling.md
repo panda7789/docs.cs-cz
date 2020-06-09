@@ -5,22 +5,22 @@ helpviewer_keywords:
 - service behaviors, throttling sample
 - Throttling Sample [Windows Communication Foundation]
 ms.assetid: 40bb3582-8ae9-4410-96f0-6c515bfaf47c
-ms.openlocfilehash: 9428fe13e529c3ce8feb59c0a3c5afc5f23c0229
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f007d153a04117df872ea2fcdc68af38c57b53b3
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79143834"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600864"
 ---
 # <a name="throttling"></a>Throttling
-Škrcení ukázka ukazuje použití omezení ovládacíprvky. Omezení ovládací prvky umístit omezení na počet souběžných volání, instance nebo relace, aby se zabránilo nadměrné spotřebě prostředků. Chování omezení je určeno v nastavení konfiguračního souboru služby. Tato ukázka je založena na [Začínáme,](../../../../docs/framework/wcf/samples/getting-started-sample.md) který implementuje službu kalkulačky.  
+Ukázka omezování znázorňuje použití ovládacích prvků omezování. Omezení ovládacích prvků omezuje počet souběžných volání, instancí nebo relací, které zabrání přečerpání prostředků. V nastavení konfiguračního souboru služby je zadané chování omezování. Tato ukázka je založená na [Začínáme](getting-started-sample.md) , která implementuje službu kalkulačky.  
   
- V této ukázce je klient konzolovou aplikací (.exe) a služba je hostována internetovou informační službou (IIS).  
+ V této ukázce je klient Konzolová aplikace (. exe) a služba je hostována službou Internetová informační služba (IIS).  
   
 > [!NOTE]
-> Postup instalace a pokyny k sestavení pro tuto ukázku jsou umístěny na konci tohoto tématu.  
+> Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
   
- Konfigurační soubor služby určuje omezení ovládacích prvků v [ \<serviceTrottling>](../../../../docs/framework/configure-apps/file-schema/wcf/servicethrottling.md), jak je znázorněno v následující ukázkové konfiguraci.  
+ Konfigurační soubor služby určuje ovládací prvky omezení v [\<serviceThrottling>](../../configure-apps/file-schema/wcf/servicethrottling.md) , jak je znázorněno v následující ukázkové konfiguraci.  
   
 ```xml  
 <behaviors>  
@@ -36,9 +36,9 @@ ms.locfileid: "79143834"
 </behaviors>  
 ```  
   
- Jak je nakonfigurováno, služba omezuje maximální souběžná volání na 2 a maximální počet souběžných instancí na 10.  
+ Jak je nakonfigurováno, služba omezí maximální počet souběžných volání na 2 a maximální počet souběžných instancí na 10.  
   
- Abybylo možné prokázat omezení definujeme dobu spánku na metody služby takto:  
+ Aby bylo možné předvést omezování, je třeba pro metody služby definovat dobu spánku následujícím způsobem:  
   
 ```csharp
 public double Add(double n1, double n2)  
@@ -48,7 +48,7 @@ public double Add(double n1, double n2)
 }  
 ```  
   
- Při spuštění ukázky jsou v okně klientské konzole zobrazeny požadavky na operaci a odpovědi. Add a Subtract metody jsou prováděny souběžně a Multiply a Divide metody jsou prováděny současně prokazující, že ne více než 2 metody mohou být provedeny současně, což ukazuje omezení.  
+ Při spuštění ukázky se v okně konzoly klienta zobrazí požadavky na operace a odpovědi. Metody Add a odečíst jsou spouštěny souběžně a metody násobení a dělení jsou spouštěny souběžně s tím, že není možné spustit více než 2 metody současně a demonstrovat omezení.  
   
 ```console  
 Press <ENTER> to terminate client.  
@@ -67,17 +67,17 @@ Press any key to continue . . .
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Ujistěte se, že jste provedli [jednorázový postup instalace pro ukázky windows communication foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. Chcete-li vytvořit c# nebo Visual Basic .NET vydání řešení, postupujte podle pokynů v [sestavení windows communication foundation ukázky](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Chcete-li sestavit edici C# nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](building-the-samples.md).  
   
-3. Chcete-li spustit ukázku v konfiguraci jednoho nebo více počítačů, postupujte podle pokynů v [části Spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](running-the-samples.md).  
   
 > [!IMPORTANT]
-> Ukázky mohou být již nainstalovány v počítači. Před pokračováním zkontrolujte následující (výchozí) adresář.  
+> Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >
 > `<InstallDrive>:\WF_WCF_Samples`  
 >
-> Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a Windows Workflow Foundation (WF) Ukázky pro rozhraní .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka je umístěna v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Behaviors\Throttling`  

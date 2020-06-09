@@ -1,266 +1,234 @@
 ---
 title: Analýza mínění pomocí rozhraní příkazového řádku ML.NET
-description: Automaticky generovat model ML a související kód Jazyka C# z ukázkové datové sady
+description: Automaticky generovat model ML a související kód v jazyce C# z ukázkové datové sady
 author: cesardl
 ms.author: cesardl
-ms.date: 12/23/2019
+ms.date: 06/03/2020
 ms.custom: mvc,mlnet-tooling
 ms.topic: tutorial
-ms.openlocfilehash: 832124e6d027b240c4d06692ee87c84f57b982d3
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.openlocfilehash: 64190546157bc9386314a3080c5364fd854d7704
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81243333"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84602225"
 ---
 # <a name="analyze-sentiment-using-the-mlnet-cli"></a>Analýza mínění pomocí rozhraní příkazového řádku ML.NET
 
-Zjistěte, jak pomocí ML.NET cli automaticky generovat ML.NET modelu a základní kód C#. Poskytujete datovou sadu a úlohu strojového učení, kterou chcete implementovat, a cli používá modul Automatické ml k vytvoření generování modelu a zdrojového kódu nasazení, stejně jako binární model.
+Naučte se používat rozhraní příkazového řádku ML.NET k automatickému generování modelu ML.NET a základního kódu jazyka C#. Zadáte datovou sadu a úlohu strojového učení, kterou chcete implementovat, a rozhraní příkazového řádku používá modul AutoML k vytvoření generování modelu a zdrojového kódu nasazení a také klasifikační model.
 
 V tomto kurzu provedete následující kroky:
 > [!div class="checklist"]
 >
-> - Příprava dat na vybraný úkol strojového učení
-> - Spusťte příkaz "mlnet auto-train" z rozhraní příkazového příkazu
+> - Příprava dat pro vybraný úkol strojového učení
+> - Spuštění příkazu "mlnet Classification" z rozhraní příkazového řádku
 > - Kontrola výsledků metrik kvality
-> - Principy generované ho C# kód pro použití modelu ve vaší aplikaci
-> - Prozkoumejte vygenerovaný kód jazyka C#, který byl použit k trénování modelu
+> - Pochopení generovaného kódu jazyka C# pro použití modelu ve vaší aplikaci
+> - Prozkoumat generovaný kód C#, který se použil ke výukě modelu
 
 > [!NOTE]
-> Toto téma odkazuje na nástroj ML.NET cli, který je aktuálně ve verzi Preview, a materiál může být může být může změnit. Další informace naleznete na [stránce ML.NET.](https://dotnet.microsoft.com/apps/machinelearning-ai/ml-dotnet)
+> Toto téma odkazuje na nástroj CLI ML.NET, který je aktuálně ve verzi Preview, a materiál může být změněn. Další informace najdete na stránce [ml.NET](https://dotnet.microsoft.com/apps/machinelearning-ai/ml-dotnet) .
 
-ML.NET CLI je součástí ML.NET a jeho hlavním cílem je "demokratizovat" ML.NET pro vývojáře .NET při učení ML.NET, takže nemusíte kódovat od nuly, abyste mohli začít.
+ML.NET CLI je součástí ML.NET a jeho hlavním cílem je "Demokratizujte" ML.NET pro vývojáře na platformě .NET při učení ML.NET, takže nemusíte vytvářet kód od začátku, abyste mohli začít.
 
-PříkazclML.NET můžete spustit na libovolném příkazovém řádku (Windows, Mac nebo Linux) a generovat kvalitní ML.NET modely a zdrojový kód založený na trénovacích datových sadách, které zadáte.
+ML.NET CLI můžete spustit na jakémkoli příkazovém řádku (Windows, Mac nebo Linux) a vygenerovat dobré kvality ML.NET modely a zdrojový kód na základě školení datových sad, které poskytnete.
 
 ## <a name="pre-requisites"></a>Požadavky
 
-- [Sada .NET Core 2.2 SDK](https://dotnet.microsoft.com/download/dotnet-core/2.2) nebo novější
-- (Nepovinné) [Visual Studio 2017 nebo 2019](https://visualstudio.microsoft.com/vs/)
+- [.NET Core 3,1 SDK](https://dotnet.microsoft.com/download/dotnet-core/3.1) nebo novější
+- Volitelné [Visual Studio 2019](https://visualstudio.microsoft.com/vs/)
 - [Rozhraní příkazového řádku ML.NET](../how-to-guides/install-ml-net-cli.md)
 
-Můžete buď spustit vygenerované projekty kódu Jazyka `dotnet run` C# z Visual Studia nebo pomocí (.NET Core CLI).
+Můžete buď spustit vygenerované projekty kódu C# ze sady Visual Studio nebo pomocí `dotnet run` (.NET Core CLI).
 
 ## <a name="prepare-your-data"></a>Příprava dat
 
-Budeme používat existující datovou sadu použitou pro scénář analýzy mínění, což je úloha strojového učení s binární klasifikací. Můžete použít vlastní datovou sadu podobným způsobem a model a kód budou generovány za vás.
+Použijeme existující datovou sadu, která se používá pro scénář Analýza mínění, což je úloha strojového učení s binární klasifikací. Můžete použít vlastní datovou sadu podobným způsobem a model a kód budou vygenerovány za vás.
 
-1. Stáhněte si [soubor zip datové sady UCI Sentiment Labeled Sentences (viz citace v následující poznámce)](http://archive.ics.uci.edu/ml/machine-learning-databases/00331/sentiment%20labelled%20sentences.zip)a rozbalte jej v libovolné složce, kterou zvolíte.
+1. Stáhněte [soubor zip datové sady mínění s popiskem "UCI" (viz citace v následující poznámce)](http://archive.ics.uci.edu/ml/machine-learning-databases/00331/sentiment%20labelled%20sentences.zip)a rozbalte ho do libovolné složky, kterou zvolíte.
 
     > [!NOTE]
-    > Datové sady tohoto kurzu používá datovou sadu ze skupiny na jednotlivé popisky pomocí deep features, Kotzias et al,. KDD 2015 a hostované v Úložišti strojového učení UCI - Dua, D. a Karra Taniskidou, E. (2017). Úložiště strojového učeníhttp://archive.ics.uci.edu/mlUCI [ ]. Irvine, KALIFORNIE: Kalifornská univerzita, Škola informací a informatiky.
+    > Tento kurz používá datovou sadu ze skupiny "od" až po jednotlivé štítky pomocí hlubokých funkcí, Kotzias et al,. KONFERENCE KDD 2015 a hostuje se v úložišti UCI Machine Learning – Dua, D. a Karra Taniskidou, E. (2017). UCI Machine Learning úložiště [ http://archive.ics.uci.edu/ml ]. Irvine, CA: University of California, školní informace a počítačové vědy.
 
-2. Zkopírujte `yelp_labelled.txt` soubor do libovolné složky, `/cli-test`kterou jste dříve vytvořili (například ).
+2. Zkopírujte `yelp_labelled.txt` soubor do složky, kterou jste dříve vytvořili (například `/cli-test` ).
 
-3. Otevřete upřednostňovaný příkazový řádek a přesuňte se do složky, do které jste soubor datové sady zkopírovali. Příklad:
+3. Otevřete preferovaný příkazový řádek a přejděte do složky, do které jste zkopírovali soubor DataSet. Například:
 
     ```console
     cd /cli-test
     ```
 
-    Pomocí libovolného textového `yelp_labelled.txt` editoru, jako je například Visual Studio Code, můžete otevřít a prozkoumat soubor datové sady. Můžete vidět, že struktura je:
+    Pomocí libovolného textového editoru, jako je Visual Studio Code, můžete otevřít a prozkoumat `yelp_labelled.txt` soubor DataSet. Můžete vidět, že struktura je:
 
-    - Soubor nemá záhlaví. Budete používat index sloupce.
+    - Soubor nemá žádnou hlavičku. Budete používat index sloupce.
 
-    - Existují pouze dva sloupce:
+    - K dispozici jsou pouze dva sloupce:
 
         | Text (index sloupce 0) | Popisek (index sloupce 1)|
         |--------------------------|-------|
-        | Wow... Miloval toto místo. | 1 |
-        | Kůrka není dobrá. | 0 |
-        | Není chutné a textura byla prostě ošklivá. | 0 |
-        | ... MNOHO DALŠÍCH ŘÁDKŮ TEXTU... | ... (1 nebo 0)... |
+        | Wow... Tohle místo. | 1 |
+        | Crust není dobrá. | 0 |
+        | Není Tasty a textura byla pouze nepříjemný. | 0 |
+        | ... MNOHO DALŠÍCH TEXTOVÝCH ŘÁDKŮ... | ... (1 nebo 0)... |
 
-    Ujistěte se, že jste soubor datové sady zavřeli z editoru.
+    Ujistěte se, že jste zavřeli soubor datové sady z editoru.
 
-    Nyní jste připraveni začít používat vykreslování lisování- lis pro tento scénář analýzy mínění.
+    Nyní jste připraveni začít používat rozhraní příkazového řádku pro tento scénář Analýza mínění.
 
     > [!NOTE]
-    > Po dokončení tohoto kurzu můžete také vyzkoušet s vlastní datové sady tak dlouho, dokud jsou připraveny k použití pro některý z úkolů ML v současné době podporuje ML.NET CLI Preview, které jsou *'binární klasifikace', 'Multi-class Klasifikace' a 'Regrese'*).
+    > Po dokončení tohoto kurzu můžete také vyzkoušet vlastní datové sady, pokud jsou připravené k použití pro všechny úlohy ML aktuálně podporované ve verzi ML.NET CLI Preview, které jsou *binární klasifikace, klasifikace, regrese* a *doporučení*.
 
-## <a name="run-the-mlnet-auto-train-command"></a>Spuštění příkazu "mlnet auto-train"
+## <a name="run-the-mlnet-classification-command"></a>Spuštění příkazu "mlnet Classification"
 
-1. Spusťte následující ML.NET příkazem příkazu příkazu k příkazu příkazu:
+1. Spusťte následující příkaz ML.NET CLI:
 
     ```console
-    mlnet auto-train --task binary-classification --dataset "yelp_labelled.txt" --label-column-index 1 --has-header false --max-exploration-time 10
+    mlnet classification --dataset "yelp_labelled.txt" --label-col 1 --has-header false --train-time 10
     ```
 
-    Tento příkaz spustí ** `mlnet auto-train` příkaz**:
-    - pro **úlohu typu ML****`binary-classification`**
-    - používá **soubor `yelp_labelled.txt` datové sady** jako trénovací a testovací datovou sadu (interní zaostřovací systém buď použije křížové ověření, nebo jej rozdělí do dvou datových sad, jednu pro školení a jednu pro testování)
-    - kde **sloupec cíle/cíle,** který chcete předpovědět (běžně nazývaný **"popisek"),** je **sloupec s indexem 1** (to je druhý sloupec, protože index je založen na nule)
-    - **Nepoužívá záhlaví souboru** s názvy sloupců, protože tento konkrétní soubor datové sady nemá záhlaví
-    - **cílená doba průzkumu** experimentu je **10 sekund**
+    Tento příkaz spustí ** `mlnet classification` příkaz**:
+    - pro **úlohu klasifikace ml** *klasifikace*
+    - používá **soubor `yelp_labelled.txt` DataSet** jako školicí a testovací datovou sadu (interně rozhraní příkazového řádku použije křížové ověření nebo ho rozdělí ve dvou datových sadách, jeden pro školení a jeden pro testování).
+    - kde **sloupec cíl/cíl** , který chcete odhadnout (obvykle se nazývá **"label"**), je **sloupec s indexem 1** (to je druhý sloupec, protože index je založený na nule).
+    - **nepoužívá záhlaví souboru** s názvy sloupců, protože tento konkrétní soubor DataSet nemá hlavičku.
+    - **Cílová doba průzkumu a výuky** pro experiment je **10 sekund** .
 
-    Zobrazí se výstup z cli, podobně jako:
+    Zobrazí se výstup z rozhraní příkazového řádku, podobně jako:
 
     <!-- markdownlint-disable MD023 MD025 -->
 
-    # <a name="windows"></a>[Windows](#tab/windows)
+    ![Klasifikace rozhraní příkazového řádku ML.NET v prostředí PowerShell](./media/mlnet-cli/mlnet-classification-powershell.gif)
 
-    ![ML.NET automatického vytápětka v prostředí PowerShell](./media/mlnet-cli/mlnet-auto-train-binary-classification-powershell.gif)
+    V tomto konkrétním případě, během 10 sekund a s malou datovou sadou, mohl nástroj rozhraní příkazového řádku spustit poměrně několik iterací, což znamená, že se bude na základě různých kombinací algoritmů a konfigurací s různými interními transformacemi dat a možnostmi Hyper-v algoritmu použít více než jednou.
 
-    # <a name="macos-bash"></a>[macOS Bash](#tab/macosbash)
+    Nakonec model "nejlepší kvality" nalezený za 10 sekund představuje model používající konkrétní Trainer nebo algoritmus s jakoukoli konkrétní konfigurací. V závislosti na době průzkumu může příkaz vytvořit jiný výsledek. Výběr je založen na několika zobrazených metrikách, například `Accuracy` .
 
-    ![ML.NET automatického vytápětka v prostředí PowerShell](./media/mlnet-cli/mlnet-auto-train-binary-classification-bash.gif)
+    **Princip metrik kvality modelu**
 
-    V tomto konkrétním případě, za pouhých 10 sekund a s malou datovou sadou k dispozici, nástroj CLI byl schopen spustit poměrně málo iterací, což znamená školení vícekrát na základě různých kombinací algoritmů / konfigurace s různými interními transformacemi dat a hyperparametry algoritmu.
+    První a nejjednodušší metrika pro vyhodnocení modelu binární klasifikace je přesnost, která je snadno srozumitelná. "Přesnost je poměrem správných předpovědi se sadou testovacích dat.". Lépe až 100% (1,00), tím lépe.
 
-    Konečně, "nejlepší kvalita" model nalezený za 10 sekund je model pomocí konkrétního trenéra / algoritmu s jakoukoli konkrétní konfiguraci. V závislosti na době průzkumu příkaz může způsobit jiný výsledek. Výběr je založen na více zobrazených `Accuracy`metrikách, například .
+    Nicméně existují případy, kdy měření se metrikou přesnosti není dostatečné, zejména v případě, že je popisek (0 a 1 v tomto případě) v testovací datové sadě nevyvážený.
 
-    **Pochopení metrik kvality modelu**
-
-    První a nejjednodušší metrika pro vyhodnocení binárního klasifikačního modelu je přesnost, která je snadno pochopitelná. "Přesnost je podíl správných předpovědí se sadou testovacích dat.". Čím blíže k 100% (1,00), tím lépe.
-
-    Existují však případy, kdy stačí měření s metrikou přesnost nestačí, zejména pokud popisek (0 a 1 v tomto případě) je nevyvážený v testovací datové sadě.
-
-    Další metriky a **podrobnější informace o metrikách,** jako je přesnost, AUC, AUCPR a skóre F1 použité k vyhodnocení různých modelů, najdete v [tématu Principy ML.NET metriky](../resources/metrics.md).
+    Další metriky a **podrobnější informace o metrikách** , jako je přesnost, AUC, AUCPR a F1 – skóre, které slouží k vyhodnocení různých modelů, najdete v tématu [Principy metrik ml.NET](../resources/metrics.md).
 
     > [!NOTE]
-    > Můžete zkusit tuto velmi stejnou datovou `--max-exploration-time` sadu a zadat několik minut (například tři minuty, takže zadáte 180 sekund), který najde lepší "nejlepší model" pro vás s jinou konfiguraci trénovacího kanálu pro tuto datovou sadu (což je docela malé, 1000 řádků).
+    > Můžete vyzkoušet tuto velmi stejnou datovou sadu a zadat několik minut `--max-exploration-time` (například tři minuty, takže zadáte 180 sekund), což vám pro tuto datovou sadu vyhledá lepší "nejlepší model", a to s jinou konfigurací školicího kanálu (což je poměrně malé, 1000 řádků).
 
-    Chcete-li najít model "nejlepší/dobrá kvalita", který je "model připravený k výrobě" zaměřený na větší datové sady, měli byste provádět experimenty s příkazovým příkazem, který obvykle určuje mnohem více času průzkumu v závislosti na velikosti datové sady. Ve skutečnosti v mnoha případech můžete vyžadovat více hodin doby průzkumu, zejména pokud je datová sada velká na řádcích a sloupcích.
+    Aby bylo možné najít model "nejlepší/dobrý kvalita", který je "modelem připraveným pro produkční prostředí", který cílí na větší datové sady, měli byste experimenty s rozhraním příkazového řádku obvykle určit mnohem více času průzkumu v závislosti na velikosti datové sady. V mnoha případech se může stát, že budete potřebovat více hodin doby průzkumu, zejména pokud je datová sada velká na řádcích a sloupcích.
 
 1. Předchozí spuštění příkazu vygenerovalo následující prostředky:
 
-    - Serializovaný model .zip ("nejlepší model") připravený k použití.
-    - C# kód ke spuštění/skóre, které generované model (Chcete-li předpovědi v aplikacích koncových uživatelů s tímto modelem).
-    - C# trénovací kód používaný ke generování tohoto modelu (Učení účely).
-    - Soubor protokolu se všemi prozkoumány iterací s konkrétní podrobné informace o každém algoritmu se snažil s jeho kombinací hyper-parametry a transformace dat.
+    - Serializovaný model. zip ("nejlepší model") je připravený k použití.
+    - Kód jazyka C# ke spuštění nebo určení skóre generovaného modelu (k tomu, aby předpovědi v aplikacích pro koncové uživatele s tímto modelem).
+    - Kód školení C# používaný k vygenerování tohoto modelu (Learning).
+    - Soubor protokolu se všemi iteracemi, které se prozkoumaly s konkrétními podrobnějšími informacemi o každém algoritmu, se snaží s jeho kombinací Hyper-Parameters a transformaci dat.
 
-    První dva majetek (. ZIP model souboru a C# kód pro spuštění tohoto modelu) lze přímo použít ve vašich aplikacích pro koncové uživatele (ASP.NET základní webové aplikace, služby, desktop aplikace, atd.) k předpovědi s tímto generovaným modelem ML.
+    První dva prostředky (. Model souborů ZIP a kód C# ke spuštění tohoto modelu) je možné přímo použít v aplikacích pro koncové uživatele (ASP.NET Core webové aplikace, služby, aplikace klasické pracovní plochy atd.), aby se předpovědi s tímto generovaným modelem ML.
 
-    Třetí prostředek, trénovací kód, vám ukáže, jaký ML.NET kód rozhraní API byl použit rozhraním API k trénování generovaného modelu, takže můžete zjistit, jaké konkrétní trenér/algoritmus a hyperparametry byly vybrány rozhraní matřištěm.
+    Třetí Asset a školicí kód vám ukáže, co ML.NET kód rozhraní API používal CLI k výuce vygenerovaného modelu, takže můžete prozkoumat, jaké konkrétní Trainer/algoritmus a Hyper-Parameters byly vybrány rozhraním příkazového řádku.
 
-Tyto výčtové prostředky jsou vysvětleny v následujících krocích kurzu.
+Tyto vyčíslované prostředky jsou vysvětleny v následujících krocích kurzu.
 
-## <a name="explore-the-generated-c-code-to-use-for-running-the-model-to-make-predictions"></a>Prozkoumejte vygenerovaný kód Jazyka C#, který se má použít pro spuštění modelu, aby se předpovědi
+## <a name="explore-the-generated-c-code-to-use-for-running-the-model-to-make-predictions"></a>Prozkoumejte generovaný kód C#, který se použije ke spuštění modelu pro předpovědi.
 
-1. V sadě Visual Studio (2017 nebo 2019) otevřete řešení generované ve složce `SampleBinaryClassification` `/cli-test`pojmenované v původní cílové složce (v kurzu byl pojmenován). Měli byste vidět řešení podobné:
+1. V sadě Visual Studio (2017 nebo 2019) otevřete řešení vygenerované ve složce s názvem v `SampleClassification` původní cílové složce (v tomto kurzu se jmenovalo `/cli-test` ). Mělo by se zobrazit podobné řešení:
 
     > [!NOTE]
-    > V kurzu doporučujeme použít Visual Studio, ale můžete také prozkoumat generovaný kód Jazyka C# (dva projekty) s libovolným textovým editorem a spustit vygenerovanou konzolovou aplikaci s počítačem `dotnet CLI` s macOS, Linuxem nebo Windows.
+    > V tomto kurzu doporučujeme používat Visual Studio, ale můžete také prozkoumat generovaný kód C# (dva projekty) pomocí libovolného textového editoru a spustit aplikaci generovanou konzolou s použitím `dotnet CLI` počítače s MacOS, Linux nebo Windows.
 
-    ![Řešení VS generované cli](./media/mlnet-cli/generated-csharp-solution-detailed.png)
+    ![Řešení VS vygenerované rozhraním CLI](./media/mlnet-cli/mlnet-cli-solution-explorer.png)
 
-    - Vygenerovaná **knihovna tříd** obsahující serializovaný model ML (soubor ZIP) a datové třídy (datové modely) je něco, co můžete přímo použít v aplikaci koncového uživatele, a to i přímým odkazováním na tuto knihovnu tříd (nebo přesunutím kódu, jak dáváte přednost).
-    - Vygenerovaná **konzolová aplikace** obsahuje kód spuštění, který je nutné zkontrolovat, a pak obvykle znovu použijete "bodovací kód" (kód, který spouští model ML, aby se předpovědi) přesunutím tohoto jednoduchého kódu (jen několik řádků) do aplikace koncového uživatele, kde chcete provést předpovědi.
+    - Vygenerovaná **Knihovna tříd** obsahující serializovaný model ml (soubor. zip) a datové třídy (datové modely) je něco, co můžete přímo použít v aplikaci koncového uživatele, a to i přímo odkazování na tuto knihovnu tříd (nebo přesunutí kódu, jak dáváte přednost).
+    - Vygenerovaná **aplikace konzoly** obsahuje kód spuštění, který je nutné zkontrolovat, a pak obvykle znovu použijete "hodnoticí kód" (kód, který SPUSTÍ model ml, aby předpovědi) přesunutím tohoto jednoduchého kódu (pouze pár řádků) do aplikace koncového uživatele, kde chcete vytvořit předpovědi.
 
-1. Otevřete **soubory tříd ModelInput.cs** a **ModelOutput.cs** v rámci projektu knihovny tříd. Uvidíte, že tyto třídy jsou "třídy dat" nebo POCO třídy používané k ukládání dat. Je to 'často používaný kód', ale užitečné mít generované, pokud vaše datová sada má desítky nebo dokonce stovky sloupců.
-    - Třída `ModelInput` se používá při čtení dat z datové sady.
-    - Třída `ModelOutput` se používá k získání výsledku předpověď (data předpověď).
+1. V projektu knihovny tříd otevřete soubory třídy **ModelInput.cs** a **ModelOutput.cs** . Uvidíte, že tyto třídy jsou "datové třídy" nebo třídy POCO používané k ukládání dat. Je to "často používaný kód", ale užitečný pro jeho vygenerování, pokud má vaše datová sada desítky nebo dokonce stovky sloupců.
+    - `ModelInput`Třída se používá při čtení dat z datové sady.
+    - `ModelOutput`Třída slouží k získání výsledku předpovědi (data předpovědi).
 
-1. Otevřete soubor Program.cs a prozkoumejte kód. V několika řádcích, budete moci spustit model a provést ukázkovou předpověď.
+1. Otevřete soubor Program.cs a prozkoumejte kód. V několika řádcích je možné spustit model a vytvořit ukázku předpovědi.
 
     ```csharp
     static void Main(string[] args)
     {
-        MLContext mlContext = new MLContext();
+        // Create single instance of sample data from first line of dataset for model input
+        ModelInput sampleData = new ModelInput()
+        {
+            Col0 = @"Wow... Loved this place.",
+        };
 
-        // Training code used by ML.NET CLI and AutoML to generate the model
-        //ModelBuilder.CreateModel();
+        // Make a single prediction on the sample data and print results
+        var predictionResult = ConsumeModel.Predict(sampleData);
 
-        ITransformer mlModel = mlContext.Model.Load(MODEL_FILEPATH, out DataViewSchema inputSchema);
-        var predEngine = mlContext.Model.CreatePredictionEngine<ModelInput, ModelOutput>(mlModel);
-
-        // Create sample data to do a single prediction with it
-        ModelInput sampleData = CreateSingleDataSample(mlContext, DATA_FILEPATH);
-
-        // Try a single prediction
-        ModelOutput predictionResult = predEngine.Predict(sampleData);
-
-        Console.WriteLine($"Single Prediction --> Actual value: {sampleData.Label} | Predicted value: {predictionResult.Prediction}");
+        Console.WriteLine("Using model to make single prediction -- Comparing actual Col1 with predicted Col1 from sample data...\n\n");
+        Console.WriteLine($"Col0: {sampleData.Col0}");
+        Console.WriteLine($"\n\nPredicted Col1 value {predictionResult.Prediction} \nPredicted Col1 scores: [{String.Join(",", predictionResult.Score)}]\n\n");
+        Console.WriteLine("=============== End of process, hit any key to finish ===============");
+        Console.ReadKey();
     }
     ```
 
-    - První řádek kódu jednoduše `MLContext` vytvoří objekt potřebný při každém spuštění ML.NET kódu.
-
-    - Druhý řádek kódu je komentovaný, protože nemusíte trénovat model, protože byl již vyškolen pro vás nástrojem CLI a uložen do modelu serializované . ZIP. Ale pokud chcete vidět *"jak byl model trénovaný"* cli, můžete odkomentovat tento řádek a spustit/ladit trénovací kód používaný pro tento konkrétní model ML.
-
-    - Ve třetím řádku kódu načtete model z serializovaného modelu . ZIP s `mlContext.Model.Load()` rozhraním API poskytnutím cesty k tomuto modelu . ZIP.
-
-    - Ve čtvrtém řádku kódu načtete `PredictionEngine` vytvořit `mlContext.Model.CreatePredictionEngine<TSrc,TDst>(ITransformer mlModel)` objekt s rozhraním API. Potřebujete `PredictionEngine` objekt vždy, když chcete provést předpověď cílení na jeden vzorek dat (V tomto případě jeden kus textu předpovědět jeho mínění).
-
-    - Pátý řádek kódu je místo, kde můžete vytvořit, že *jeden ukázková data,* která mají být použita pro předpověď voláním funkce `CreateSingleDataSample()`. Vzhledem k tomu, že nástroj zaokreslování nezná, jaký druh ukázkových dat použít, v rámci této funkce načítá první řádek datové sady. V tomto případě však můžete také vytvořit vlastní "pevně zakódovaná" `CreateSingleDataSample()` data namísto aktuální implementace funkce aktualizací tohoto jednoduššího kódu implementujícího tuto funkci:
+    - První řádky kódu vytvářejí *Jednoduchá ukázková data*, v tomto případě na základě prvního řádku datové sady, která se má použít pro předpověď. Můžete také vytvořit vlastní "pevně zakódované" data aktualizací kódu:
 
         ```csharp
-        private static ModelInput CreateSingleDataSample()
+        ModelInput sampleData = new ModelInput()
         {
-            ModelInput sampleForPrediction = new ModelInput() { Col0 = "The ML.NET CLI is great for getting started. Very cool!", Label = true };
-            return sampleForPrediction;
-        }
+            Col0 = "The ML.NET CLI is great for getting started. Very cool!"
+        };
         ```
 
-1. Spusťte projekt, a to buď pomocí původní ukázková data načtená z prvního řádku datové sady nebo poskytnutím vlastních pevně zakódovaných ukázkových dat. Měli byste získat předpověď srovnatelnou s:
+    - Další řádek kódu používá `ConsumeModel.Predict()` metodu pro zadaná vstupní data k vytvoření předpovědi a vrácení výsledků (na základě schématu ModelOutput.cs).
+    - Poslední řádky kódu tisknou vlastnosti vzorových dat (v tomto případě komentář) a také předpověď mínění a odpovídající skóre pro kladné mínění (1) a záporné mínění (2).
 
-    # <a name="windows"></a>[Windows](#tab/windows)
+1. Spusťte projekt, a to buď pomocí původních ukázkových dat načtených z prvního řádku datové sady, nebo poskytnutím vlastních pevně zakódovaných ukázkových dat. Měli byste dosáhnout předpovědi srovnatelné s:
 
-    Spusťte konzolovou aplikaci z Visual Studia stisknutím tlačítka F5 (Přehrát):
+![ML.NET CLI spustí aplikaci ze sady Visual Studio.](./media/mlnet-cli/mlnet-cli-console-app.png))
 
-    ![ML.NET automatického vytápětka v prostředí PowerShell](./media/mlnet-cli/sample-cli-prediction-execution.png))
+1. Zkuste změnit pevně kódovaná ukázková data na jiné věty s různými mínění a podívejte se, jak model předpovídá kladné nebo záporné mínění.
 
-    # <a name="macos-bash"></a>[macOS Bash](#tab/macosbash)
+## <a name="infuse-your-end-user-applications-with-ml-model-predictions"></a>Inpředpovědiování aplikací pro koncové uživatele pomocí ML modelu ML
 
-    Spusťte konzolovou aplikaci z příkazového řádku zadáním následujících příkazů:
+Podobný kód pro vyhodnocování modelu ML můžete použít ke spuštění modelu v aplikaci koncového uživatele a k vytvoření předpovědi.
 
-    ```dotnetcli
-    cd SampleBinaryClassification
-    cd SampleBinaryClassification.ConsoleApp
+Tento kód můžete například přímo přesunout do libovolné aplikace klasické pracovní plochy systému Windows, jako je například **WPF** a **WinForms** , a model spustit stejným způsobem, než byl proveden v konzolové aplikaci.
 
-    dotnet run
-    ```
+Způsob, jakým implementujete tyto řádky kódu ke spuštění modelu ML, by se měl optimalizovat (to znamená ukládat do mezipaměti soubor. zip modelu a načíst ho jednou) a mít objekty singleton místo jejich vytváření na všech žádostech, zejména v případě, že vaše aplikace musí být škálovatelná, jako je webová aplikace nebo distribuovaná služba, jak je vysvětleno v následující části.
 
-    ![ML.NET automatického vytápětka v prostředí PowerShell](./media/mlnet-cli/sample-cli-prediction-execution-bash.png))
+### <a name="running-mlnet-models-in-scalable-aspnet-core-web-apps-and-services-multi-threaded-apps"></a>Spouštění modelů ML.NET v škálovatelných ASP.NET Core webových aplikacích a službách (vícevláknové aplikace)
 
-    ---
+Vytvoření objektu modelu ( `ITransformer` načteného ze souboru. zip modelu) a `PredictionEngine` objektu by mělo být optimalizované hlavně při spuštění na škálovatelných webových aplikacích a distribuovaných službách. V první případě je objekt modelu ( `ITransformer` ) optimalizace jednoduchá. Vzhledem k `ITransformer` tomu, že je objekt bezpečný pro přístup z více vláken, můžete objekt uložit do mezipaměti jako typ singleton nebo static, abyste model načetli pouze jednou.
 
-1. Zkuste změnit pevně zakódovaná ukázková data na jiné věty s jiným míněním a podívejte se, jak model předpovídá pozitivní nebo negativní mínění.
+U druhého objektu `PredictionEngine` objekt není tak snadné, protože objekt není bezpečný pro přístup z `PredictionEngine` více vláken, proto nemůžete vytvořit instanci tohoto objektu jako typ singleton nebo statický objekt v aplikaci ASP.NET Core. Tento problémový příspěvek k vláknům a škálovatelnosti je v tomto [blogovém příspěvku](https://devblogs.microsoft.com/cesardelatorre/how-to-optimize-and-run-ml-net-models-on-scalable-asp-net-core-webapis-or-web-apps/)podrobněji popsán.
 
-## <a name="infuse-your-end-user-applications-with-ml-model-predictions"></a>Naplnit aplikace koncových uživatelů předpověďmi modelu ML
+Věcí vám ale bylo mnohem jednodušší, než je vysvětleno v tomto blogovém příspěvku. Pracovali jsme na jednodušším přístupu a vytvořili jste dobrý **balíček integrace .NET Core** , který můžete snadno použít ve svých ASP.NET Corech aplikacích a službách, a to tak, že ho zaregistrujete ve službě Application di Services (služba pro vkládání závislostí) a pak ho přímo použijete z vašeho kódu. Podívejte se na následující kurz a příklad, jak to provést:
 
-Můžete použít podobný "ML model bodovací kód" ke spuštění modelu v aplikaci koncového uživatele a předpovědi.
+- [Kurz: používání modelů ML.NET na škálovatelných ASP.NET Core Web Apps a rozhraní WebApi](https://aka.ms/mlnet-tutorial-netcoreintegrationpkg)
+- [Ukázka: škálovatelný ML.NET model na ASP.NET Core WebAPI](https://aka.ms/mlnet-sample-netcoreintegrationpkg)
 
-Například můžete přímo přesunout tento kód do libovolné desktopové aplikace systému Windows, jako je **WPF** a **WinForms** a spustit model stejným způsobem, než tomu bylo v konzolové aplikaci.
+## <a name="explore-the-generated-c-code-that-was-used-to-train-the-best-quality-model"></a>Prozkoumejte vygenerovaný kód C#, který se použil ke vzdělávání modelu nejlepší kvality.
 
-Způsob implementace těchto řádků kódu pro spuštění modelu ML by však měl být optimalizován (tj. ukládat soubor modelu do mezipaměti a načíst jej jednou) a mít objekty singleton namísto jejich vytváření při každém požadavku, zejména pokud vaše aplikace musí být škálovatelná, například webová aplikace nebo distribuovaná služba, jak je vysvětleno v následující části.
+Pro pokročilejší účely učení můžete také prozkoumat generovaný kód C#, který byl použit nástrojem CLI k výuce vygenerovaného modelu.
 
-### <a name="running-mlnet-models-in-scalable-aspnet-core-web-apps-and-services-multi-threaded-apps"></a>Spuštění ML.NET modelů v škálovatelných ASP.NET webových aplikací a služeb Core (aplikace s více vlákny)
+Tento kód školicího modelu je aktuálně vygenerován ve vlastní třídě generované s názvem, `ModelBuilder` abyste mohli prozkoumat tento školicí kód.
 
-Vytvoření objektu modelu`ITransformer` (načteného ze souboru .zip `PredictionEngine` modelu) a objektu by mělo být optimalizováno zejména při spuštění v škálovatelných webových aplikacích a distribuovaných službách. Pro první případ je objekt`ITransformer`modelu ( ) optimalizace přímočará. Vzhledem `ITransformer` k tomu, že objekt je bezpečný pro přístup z více vláken, můžete objekt uložit do mezipaměti jako objekt singleton nebo statický objekt, takže model načtete jednou.
+Důležitější je, že pro tento konkrétní scénář (Analýza mínění model) můžete také porovnat vygenerovaný školicí kód s kódem, který je vysvětlen v následujícím kurzu:
 
-Pro druhý objekt, `PredictionEngine` objekt, není to tak `PredictionEngine` snadné, protože objekt není bezpečný pro přístup z více vláken, proto nelze vytvořit konkretní tento objekt jako singleton nebo statický objekt v aplikaci ASP.NET Core. Tento problém s bezpečností a škálovatelností pro vlákna je hluboce popsán v tomto [příspěvku blogu](https://devblogs.microsoft.com/cesardelatorre/how-to-optimize-and-run-ml-net-models-on-scalable-asp-net-core-webapis-or-web-apps/).
+- Porovnání: [kurz: použití ml.NET v binárním scénáři klasifikace mínění Analysis](sentiment-analysis.md).
 
-Nicméně, věci dostal mnohem jednodušší pro vás, než to, co je vysvětleno v tomto blogu. Pracovali jsme na jednodušším přístupu pro vás a vytvořili jsme pěkný **'.NET Core Integration Package',** který můžete snadno použít ve vašem ASP.NET základní aplikace a služby tím, že ji zaregistrujete v aplikaci DI služby (služby vkládání závislostí) a pak jej přímo používat z vašeho kódu. Podívejte se na následující kurz a příklad pro to, že:
-
-- [Kurz: Spuštění ML.NET modelů na škálovatelných ASP.NET webových aplikacích Core a webapii](https://aka.ms/mlnet-tutorial-netcoreintegrationpkg)
-- [Ukázka: Škálovatelný model ML.NET na rozhraní ASP.NET Core WebAPI](https://aka.ms/mlnet-sample-netcoreintegrationpkg)
-
-## <a name="explore-the-generated-c-code-that-was-used-to-train-the-best-quality-model"></a>Prozkoumejte generovaný kód Jazyka C#, který byl použit k trénování modelu "nejlepší kvality"
-
-Pro pokročilejší účely učení můžete také prozkoumat generovaný kód Jazyka C#, který byl použit nástrojem cli k trénování generovaného modelu.
-
-Tento "kód modelu školení" je aktuálně generován ve `ModelBuilder` vlastní třídě generované s názvem, takže můžete prozkoumat, že kód školení.
-
-Ještě důležitější je, pro tento konkrétní scénář (sentiment analýza modelu) můžete také porovnat, že generované trénovací kód s kódem vysvětleným v následujícím kurzu:
-
-- Porovnat: [Kurz: Použití ML.NET v binárním klasifikačním scénáři analýzy mínění](sentiment-analysis.md).
-
-Je zajímavé porovnat zvolený algoritmus a konfiguraci kanálu v kurzu s kódem generovaným nástrojem CLI. V závislosti na tom, kolik času strávíte iterace a hledání lepších modelů, může být zvolený algoritmus odlišný spolu s jeho konkrétní hyper-parametry a konfigurace kanálu.
+Je zajímavá možnost porovnat zvolený algoritmus a konfiguraci kanálu v kurzu s kódem generovaným nástrojem CLI. V závislosti na tom, kolik času strávíte iterací a hledáním lepších modelů, se zvolený algoritmus může lišit spolu s jeho konkrétními parametry Hyper-a a konfigurací kanálu.
 
 V tomto kurzu jste se naučili:
 > [!div class="checklist"]
 >
-> - Příprava dat na vybraný úkol ML (problém k vyřešení)
-> - Spuštění příkazu "mlnet auto-train" v nástroji rozhraní příkazového příkazu
+> - Příprava dat pro vybraný úkol ML (problém, který se má vyřešit)
+> - Spuštění příkazu "mlnet Classification" v nástroji CLI
 > - Kontrola výsledků metrik kvality
-> - Principy generované ho C# kód pro spuštění modelu (Kód pro použití v aplikaci koncového uživatele)
-> - Prozkoumejte generovaný kód Jazyka C#, který byl použit k trénování modelu "nejlepší kvality" (účely učení)
+> - Pochopení generovaného kódu C# ke spuštění modelu (kód pro použití v aplikaci koncového uživatele)
+> - Prozkoumejte vygenerovaný kód C#, který se použil ke vzdělávání modelu nejlepší kvality (k tomuto využití).
 
 ## <a name="see-also"></a>Viz také
 
-- [Automatizace tréninku modelu pomocí ML.NET CLI](../automate-training-with-cli.md)
-- [Kurz: Spuštění ML.NET modelů na škálovatelných ASP.NET webových aplikacích Core a webapii](https://aka.ms/mlnet-tutorial-netcoreintegrationpkg)
-- [Ukázka: Škálovatelný model ML.NET na rozhraní ASP.NET Core WebAPI](https://aka.ms/mlnet-sample-netcoreintegrationpkg)
-- [ML.NET referenční příručka příkazu automatického vlakového ústrojí ML.NET](../reference/ml-net-cli-reference.md)
+- [Automatizace školení modelů pomocí rozhraní příkazového řádku ML.NET](../automate-training-with-cli.md)
+- [Kurz: používání modelů ML.NET na škálovatelných ASP.NET Core Web Apps a rozhraní WebApi](https://aka.ms/mlnet-tutorial-netcoreintegrationpkg)
+- [Ukázka: škálovatelný ML.NET model na ASP.NET Core WebAPI](https://aka.ms/mlnet-sample-netcoreintegrationpkg)
+- [Referenční příručka k příkazu ML.NET CLI pro automatické učení](../reference/ml-net-cli-reference.md)
 - [Telemetrie v ML.NET CLI](../resources/ml-net-cli-telemetry.md)

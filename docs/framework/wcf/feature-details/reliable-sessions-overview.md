@@ -2,102 +2,102 @@
 title: Spolehlivé relace – přehled
 ms.date: 03/30/2017
 ms.assetid: a7fc4146-ee2c-444c-82d4-ef6faffccc2d
-ms.openlocfilehash: 6dd90ef800daf236d77c419d48c0857ac2d78aa2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a85a34c5e2ec7928c01586e4b01cdf5e90e896a7
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61962653"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84601085"
 ---
 # <a name="reliable-sessions-overview"></a>Spolehlivé relace – přehled
 
-Windows Communication Foundation (WCF) protokolu SOAP spolehlivé zasílání zpráv poskytuje začátku do konce zpráv přenosu spolehlivosti mezi koncových bodů protokolu SOAP. Dělá to v sítích, které nespolehlivé překonat selhání přenosu a výpadky na úrovni zprávy protokolu SOAP. Zejména poskytuje založeného na relacích, jeden a (volitelně) objednané dodání pro zprávy odeslané přes zprostředkovatelů SOAP nebo přenos. Doručování na základě relace obsahuje seskupení zprávy v relaci s volitelné řazení zpráv.
+Spolehlivé zasílání zpráv protokolu SOAP Windows Communication Foundation (WCF) poskytuje koncovou spolehlivost přenosu zpráv mezi koncovými body SOAP. Je to v sítích, které jsou nespolehlivé při překonání selhání přenosu a selhání na úrovni zpráv SOAP. Konkrétně poskytuje objednané a (volitelně) seřazené doručování zpráv odesílaných napříč zprostředkovateli SOAP nebo přenosu. Doručování na základě relací poskytuje seskupování zpráv v relaci s volitelným řazením zpráv.
 
-Toto téma popisuje spolehlivé relace, jak a kdy je můžete použít a jak je zabezpečit.
+V tomto tématu jsou popsány spolehlivé relace, jak a kdy je budete používat, a jak je zabezpečit.
 
 ## <a name="wcf-reliable-sessions"></a>Spolehlivé relace WCF
 
-Spolehlivé relace WCF je implementace spolehlivé zasílání zpráv v souladu s definicemi WS-ReliableMessaging protokolu SOAP.
+Spolehlivé relace WCF je implementace spolehlivého zasílání zpráv SOAP podle definice protokolu WS-ReliableMessaging.
 
-Spolehlivé zasílání zpráv WCF SOAP poskytuje začátku do konce stabilní relace mezi dva koncové body, bez ohledu na počet a typ zprostředkovatelů, které oddělují zasílání zpráv koncových bodů. To zahrnuje všechny přenosu zprostředkovatelů, které nepoužívají SOAP (například proxy protokolu HTTP) nebo zprostředkovatelů, které používají protokol SOAP (například založený na protokolu SOAP směrovače nebo mosty), které jsou požadovány pro zprávy, které jsou předávány mezi koncovými body. Kanál stabilní relace podporuje *interaktivní* komunikace tak, aby služby připojené taková kanálu běžet souběžně a exchange a zpracování zpráv v podmínkách s nízkou latencí, to znamená, v rámci poměrně krátké časové intervaly. Toto párování znamená, že tyto součásti pokroku společně selhání společně, tak, že neexistuje žádná izolace, kterou poskytuje mezi nimi.
+Spolehlivé zasílání zpráv SOAP WCF poskytuje ucelenou spolehlivou relaci mezi dvěma koncovými body bez ohledu na počet nebo typ zprostředkovatelů, které oddělují koncové body zasílání zpráv. Patří sem všichni zprostředkovatelé přenosu, kteří nepoužívají protokol SOAP (například proxy servery HTTP) nebo zprostředkovatelé, kteří používají protokol SOAP (například směrovače nebo mosty založené na protokolu SOAP), které jsou požadovány pro zprávy, které mají tok mezi koncovými body. Kanál spolehlivé relace podporuje *interaktivní* komunikaci, aby se služby propojené tímto kanálem spouštěly souběžně, a vyměňují a zpracovávají zprávy za podmínek nízké latence, což je v poměrně krátké době. Toto spojení znamená, že tyto komponenty probíhají společně nebo selžou společně, takže mezi nimi není žádná izolace.
 
-Spolehlivá relace zakrývá dva druhy chyb:
+Spolehlivé relace maskují dva druhy selhání:
 
-- Selhání úroveň zprávy protokolu SOAP, včetně ztráty nebo duplicitní zprávy a zprávy přicházející v jiném pořadí od pořadí, ve kterém byly odeslány.
+- Selhání na úrovni zpráv SOAP, které zahrnuje ztráty nebo duplicitní zprávy a zprávy, které dorazí v jiném pořadí, než je v pořadí, ve kterém byly odeslány.
 
-- Přenos chyb.
+- Selhání přenosu.
 
-Spolehlivé relace implementuje protokol WS-ReliableMessaging a oknem přenosu v paměti na selhání maska úrovně zprávy protokolu SOAP a znovu naváže připojení v případě selhání přenosu.
+Spolehlivá relace implementuje protokol WS-ReliableMessaging a okno přenosu v paměti, které umožňuje maskovat selhání na úrovni zpráv SOAP a znovu vytvoří připojení v případě selhání přenosu.
 
-Stabilní relace obsahuje zprávy protokolu SOAP TCP poskytuje pro pakety protokolu IP. Připojení soketu TCP poskytuje jednotném čísle, v daném pořadí přenosu paketů IP mezi uzly. Stabilního kanálu poskytuje stejný typ přenosu spolehlivé, ale liší se od spolehlivost soket TCP následujícími způsoby:
+Spolehlivá relace poskytuje zprávy protokolu SOAP, které protokol TCP poskytuje pro pakety IP. Připojení soketu TCP poskytuje jednotné převádění paketů protokolu IP mezi uzly v daném pořadí. Spolehlivý kanál poskytuje stejný typ spolehlivého přenosu, ale liší se od spolehlivosti soketu TCP následujícími způsoby:
 
-- Spolehlivost je na zprávu protokolu SOAP úroveň, není pro libovolně velikosti paket bajtů.
+- Spolehlivost je na úrovni zprávy protokolu SOAP, nikoli v případě svévolné velikosti paketu bajtů.
 
-- Spolehlivost je přenos doménově neutrální, nejen pro přenos přes protokol TCP.
+- Spolehlivost je přenosově neutrální, nikoli jenom pro přenos přes protokol TCP.
 
-- Spolehlivost není vázaný na konkrétní přenos relace (například relace, které poskytuje připojení protokolu TCP) a využívat více relací přenos současně nebo postupně během životního cyklu ve stabilní relaci.
+- Spolehlivost není vázaná na konkrétní přenosovou relaci (například relace, kterou poskytuje připojení TCP), a může současně používat víc přenosů přenosu, nebo postupně po dobu životnosti spolehlivé relace.
 
-- Stabilní relace se nachází mezi odesílatelem a příjemcem koncových bodů protokolu SOAP, bez ohledu na počet připojení přenosu potřebných pro připojení mezi nimi. Stručně řečeno TCP spolehlivost skončí, kde přenosového připojení končí, když stabilní relace obsahuje spolehlivost začátku do konce.
+- Spolehlivá relace je mezi koncovými body protokolu SOAP odesílatele a příjemce, a to bez ohledu na počet přenosů, které jsou potřeba k připojení mezi nimi. V krátké době spolehlivost protokolu TCP končí tím, že přenosová připojení skončí, zatímco stabilní relace zajišťuje komplexní spolehlivost.
 
 ## <a name="reliable-sessions-and-bindings"></a>Spolehlivé relace a vazby
 
-Jak už bylo zmíněno dříve, je spolehlivé relace přenosu neutrální. Navíc můžete vytvořit stabilní relace přes mnoho zpráv exchange vzory, třeba požadavek odpověď nebo duplexní. Spolehlivé relace WCF je vystavena jako vlastnost sady vazby.
+Jak bylo zmíněno dříve, Spolehlivá relace je nezávislá na přenosu. Můžete také vytvořit spolehlivou relaci přes mnoho vzorů výměny zpráv, jako je například požadavek-odpověď nebo duplexní přenos. Spolehlivá relace WCF je vystavena jako vlastnost sady vazeb.
 
-Použijte stabilní relace na koncové body, které používají:
+Používejte spolehlivé relace na koncových bodech, které používají:
 
-- Standardní vazby přenosu založené na protokolu HTTP:
+- Transportní standardní vazby založené na protokolu HTTP:
 
-  - `WsHttpBinding` a vystavit požadavek odpověď nebo jednosměrné kontrakty.
+  - `WsHttpBinding`a zveřejňujte požadavek-odpověď nebo jednosměrné smlouvy.
 
-  - Při použití stabilní relace přes požadavek odpověď nebo jednoduchý jednosměrné servisní smlouvy.
+  - Při použití spolehlivé relace přes odpověď na požadavek nebo jednoduchou jednosměrnou kontrakt služby.
 
-  - `WsDualHttpBinding` a vystavit duplexní, požadavek odpověď nebo jednosměrné kontrakty.
+  - `WsDualHttpBinding`a zveřejňujte duplexní, požadavek-odpověď nebo jednosměrné kontrakty.
 
-  - `WsFederationHttpBinding` a vystavit požadavek odpověď nebo jednosměrné kontrakty.
+  - `WsFederationHttpBinding`a zveřejňujte požadavek-odpověď nebo jednosměrné smlouvy.
 
-- Standardní vazby přenosu založené na TCP:
+- Transportní standardní vazby založené na protokolu TCP:
 
-  - `NetTcpBinding` a vystavit oboustranný tisk, odpověď na žádost o nebo jednosměrné kontrakty.
+  - `NetTcpBinding`a zveřejňujte duplexní, požadavek na odpověď nebo jednosměrné kontrakty.
 
-Použijte stabilní relace na žádné vazby tak, že vytvoříte vlastní vazby, jako je například HTTPS (Další informace o problémech najdete v tématu <a href="#reliable-sessions-and-security">spolehlivé relace a zabezpečení</a>) nebo vazbu pojmenovaného kanálu.
+Použití spolehlivé relace na všech dalších vazbách vytvořením vlastní vazby, jako je například HTTPS (Další informace o problémech najdete v tématu <a href="#reliable-sessions-and-security">spolehlivé relace a zabezpečení</a>) nebo vazby pojmenovaného kanálu.
 
-Může seskupit na různé základní typy kanál stabilní relace a výsledné tvar kanálu stabilní relace se liší. Na klientovi i serveru na typ kanálu stabilní relace nepodporuje závisí na typu základní kanál, který slouží. Následující tabulka uvádí typy kanálům relace, které jsou podporované na straně klienta jako funkce základní typ kanálu.
+Můžete vytvořit zásobník spolehlivé relace pro různé základní typy kanálů a výsledný tvar kanálu spolehlivé relace se liší. U klienta i serveru je typ podporovaného kanálu spolehlivé relace závislý na typu použitého kanálu. Následující tabulka uvádí typy kanálů relací podporovaných v klientovi jako funkce základního typu kanálu.
 
-| Podporované typy kanál stabilní relace&#8224; | `IRequestChannel` | `IRequestSessionChannel` | `IDuplexChannel` | `IDuplexSessionChannel` |
+| Podporované typy kanálů spolehlivé relace&#8224; | `IRequestChannel` | `IRequestSessionChannel` | `IDuplexChannel` | `IDuplexSessionChannel` |
 | ----------------------------------------------- | :---------------: | :----------------------: | :--------------: | :---------------------: |
 | `IOutputSessionChannel`                         | Ano               | Ano                      | Ano              | Ano                     |
 | `IRequestSessionChannel`                        | Ano               | Ano                      | Ne               | Ne                      |
-| `IDuplexSessionChannel`                         | Ne                | Ne                       | Ano              | Ano                     |
+| `IDuplexSessionChannel`                         | Ne                | No                       | Ano              | Ano                     |
 
-&#8224;Kanál podporované typy jsou k dispozici pro obecné hodnoty `TChannel` hodnotu parametru, která je předána do <xref:System.ServiceModel.Channels.ReliableSessionBindingElement.BuildChannelFactory%60%601%28System.ServiceModel.Channels.BindingContext%29> metody.
+&#8224;podporovaných typů kanálů jsou dostupné hodnoty pro `TChannel` hodnotu obecného parametru, která je předána <xref:System.ServiceModel.Channels.ReliableSessionBindingElement.BuildChannelFactory%60%601%28System.ServiceModel.Channels.BindingContext%29> metodě.
 
-Následující tabulka uvádí typy kanálům relace podporován na serveru, jako funkce základní typ kanálu.
+V následující tabulce jsou uvedeny typy kanálů relací, které jsou na serveru podporovány jako funkce základního typu kanálu.
 
-| Podporované typy kanál stabilní relace&#8225; | `IReplyChannel` | `IReplySessionChannel` | `IDuplexChannel` | `IDuplexSessionChannel` |
+| Podporované typy kanálů spolehlivé relace&#8225; | `IReplyChannel` | `IReplySessionChannel` | `IDuplexChannel` | `IDuplexSessionChannel` |
 | ----------------------------------------------- | :-------------: | :--------------------: | :--------------: | :---------------------: |
 | `IInputSessionChannel`                          | Ano             | Ano                    | Ano              | Ano                     |
 | `IReplySessionChannel`                          | Ano             | Ano                    | Ne               | Ne                      |
-| `IDuplexSessionChannel`                         | Ne              | Ne                     | Ano              | Ano                     |
+| `IDuplexSessionChannel`                         | Ne              | No                     | Ano              | Ano                     |
 
-&#8225;Kanál podporované typy jsou k dispozici pro obecné hodnoty `TChannel` hodnotu parametru, která je předána do <xref:System.ServiceModel.Channels.ReliableSessionBindingElement.BuildChannelListener%60%601%28System.ServiceModel.Channels.BindingContext%29> metody.
+&#8225;podporovaných typů kanálů jsou dostupné hodnoty pro `TChannel` hodnotu obecného parametru, která je předána <xref:System.ServiceModel.Channels.ReliableSessionBindingElement.BuildChannelListener%60%601%28System.ServiceModel.Channels.BindingContext%29> metodě.
 
 ## <a name="reliable-sessions-and-security"></a>Spolehlivé relace a zabezpečení
 
-Spolehlivé relace zabezpečení je důležité zajistit, že proběhne ověření komunikujících stran (klienta a služby) a že zprávy vyměňují v relaci nebylo manipulováno. Kromě toho je důležité k zajištění integrity každé jednotlivé stabilní relace. Spolehlivá relace je zabezpečená pomocí jeho vazbu na kontext zabezpečení, který je reprezentován a spravuje zabezpečený kanál relace. Poskytuje zabezpečený kanál relace zabezpečení. Tokeny zabezpečení při navazování relace, které si vyměňují se pak používají k zabezpečené zprávy ve stabilní relaci.
+Zabezpečení spolehlivé relace je důležité, aby bylo zajištěno, že jsou ověřeny komunikující strany (služby a klienti) a že zprávy vyměňované v relaci nejsou úmyslně poškozeny. Kromě toho je důležité zajistit integritu jednotlivých spolehlivých relací. Spolehlivá relace je zabezpečená vazbou na kontext zabezpečení reprezentovaný a spravovaný kanálem relace zabezpečení. Kanál zabezpečení poskytuje bezpečnostní relaci. Tokeny zabezpečení vyměňované během navazování relace se pak používají k zabezpečení zpráv ve stabilní relaci.
 
-Po stabilní relace přes TCP S TCP relace se váže na ve stabilní relaci. Zabezpečení přenosu tedy jistotu, že zabezpečení je vázány i ve stabilní relaci. V takovém případě je navázání opakovaného připojení vypnutý.
+Když je spolehlivá relace přes TCP-S, relace protokolu TCP je svázána s stabilní relací. Proto zabezpečení přenosu zajišťuje, že zabezpečení je také svázáno s spolehlivou relací. V tomto případě je opětovné vytvoření připojení vypnuté.
 
-Jedinou výjimkou je při použití protokolu HTTPS. Relace vrstvy SSL (Secure Sockets) není vázán na ve stabilní relaci. To ukládá hrozbu, protože nejsou chráněné relace, které sdílejí kontext zabezpečení (relace protokolu SSL) od sebe navzájem; To může nebo nemusí být skutečnou hrozbou, v závislosti na aplikaci.
+Jedinou výjimkou je použití protokolu HTTPS. Relace SSL (Secure Sockets Layer) (SSL) není vázaná na stabilní relaci. To představuje hrozbu, protože relace, které sdílí kontext zabezpečení (relace SSL), nejsou navzájem chráněné. To může nebo nemusí být skutečná hrozba v závislosti na aplikaci.
 
-## <a name="using-reliable-sessions"></a>Pomocí spolehlivé relace
+## <a name="using-reliable-sessions"></a>Používání spolehlivých relací
 
-Použití relací spolehlivého WCF, vytvořte koncový bod s vazbou, která podporuje stabilní relace. Použijte některou z vazeb poskytovaných systémem, které WCF poskytuje spolehlivé relace povolen nebo vytvořte vlastní vlastní vazby, který to.
+Chcete-li použít spolehlivé relace WCF, vytvořte koncový bod s vazbou, která podporuje spolehlivou relaci. Použijte jednu z uživatelsky dodaných vazeb, které poskytuje WCF se zapnutou spolehlivou relací, nebo vytvořte vlastní vazbu, která to dělá.
 
-Systémem definované vazby, které podporují a povolit stabilní relace ve výchozím nastavení zahrnují:
+Mezi systémem definované vazby, které podporují a povolují spolehlivou relaci, patří:
 
 - <xref:System.ServiceModel.WSDualHttpBinding>
 
-Vazby poskytované systémem, které podporují stabilní relace jako možnost, ale nepovolí jeden ve výchozím nastavení zahrnují:
+Uživatelsky zadané vazby, které podporují spolehlivé relace jako možnost, ale nepovolují jednu ve výchozím nastavení, zahrnují:
 
 - <xref:System.ServiceModel.WSHttpBinding>
 
@@ -105,27 +105,27 @@ Vazby poskytované systémem, které podporují stabilní relace jako možnost, 
 
 - <xref:System.ServiceModel.NetTcpBinding>
 
-Příklad toho, jak vytvořit vlastní vazby, naleznete v tématu [jak: Vytvoření vazby vlastního stabilní relaci s HTTPS](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-reliable-session-binding-with-https.md).
+Příklad, jak vytvořit vlastní vazbu, naleznete v tématu [How to: Create a Custom Reliable Session Binding with https](how-to-create-a-custom-reliable-session-binding-with-https.md).
 
-Diskuzi o vazby WCF, které podporují spolehlivé relace, naleznete v tématu [System-Provided vazby](../../../../docs/framework/wcf/system-provided-bindings.md).
+Diskuzi o vazbách WCF, které podporují spolehlivé relace, najdete v tématu [vazby poskytované systémem](../system-provided-bindings.md).
 
 ## <a name="when-to-use-reliable-sessions"></a>Kdy použít spolehlivé relace
 
-Je důležité pochopit, kdy použít spolehlivé relace ve vaší aplikaci. WCF podporuje spolehlivé relace mezi koncovými body, které jsou aktivní a aktivní ve stejnou dobu. Pokud vaše aplikace vyžaduje jednu z koncových bodů nebudou k dispozici pro dobu a pak k zajištění spolehlivosti, slouží fronty.
+Je důležité pochopit, kdy používat spolehlivé relace ve vaší aplikaci. Služba WCF podporuje spolehlivé relace mezi koncovými body, které jsou aktivní a aktivní ve stejnou dobu. Pokud vaše aplikace vyžaduje, aby jeden z koncových bodů nebyl po dobu určitou dobu dostupný, použijte fronty k zajištění spolehlivosti.
 
-Pokud tento scénář vyžaduje dva koncové body připojení přes protokol TCP, může být dostatečná pro poskytování výměny spolehlivých zpráv TCP. I když není nutné použít stabilní relace, od TCP zajišťuje, že pakety doručeny v pořadí a pouze jednou.
+Pokud scénář vyžaduje dva koncové body, které jsou připojeny přes protokol TCP, může být protokol TCP dostačující pro zajištění spolehlivých výměn zpráv. I když není nutné používat spolehlivou relaci, protože TCP zajišťuje doručení paketů v pořadí a pouze jednou.
 
-Pokud váš scénář obsahuje některý z těchto vlastností, pak musíte vážně zvážit použití stabilní relace.
+Pokud má váš scénář některé z následujících charakteristik, je nutné vážně zvážit použití spolehlivé relace.
 
-- Zprostředkovatelů SOAP, jako jsou například routery SOAP
+- Zprostředkovatelé SOAP, jako jsou směrovače protokolu SOAP
 
-- Zprostředkovatelé proxy nebo mosty přenosu
+- Zprostředkující servery proxy nebo přenosové mosty
 
-- Přerušovaným připojením
+- Přerušované připojení
 
 - Relace přes protokol HTTP
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Používání vazeb ke konfiguraci služeb a klientů](../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)
-- [Spolehlivá relace WS](../../../../docs/framework/wcf/samples/ws-reliable-session.md)
+- [Používání vazeb ke konfiguraci služeb a klientů](../using-bindings-to-configure-services-and-clients.md)
+- [Spolehlivá relace WS](../samples/ws-reliable-session.md)

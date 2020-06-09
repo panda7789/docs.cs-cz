@@ -1,5 +1,6 @@
 ---
 title: 'Postupy: Použití ochrany dat'
+description: Naučte se používat ochranu dat pomocí přístupu k rozhraní data Protection API (DPAPI) v rozhraní .NET.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -16,33 +17,33 @@ helpviewer_keywords:
 - decryption
 - data [.NET Framework], encryption
 ms.assetid: 606698b0-cb1a-42ca-beeb-0bea34205d20
-ms.openlocfilehash: 0efd677f11189b28b8efc184c04b30a047ab942b
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: c7f88105727dfd33c87a815054aa317ac2052e83
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75706029"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84598590"
 ---
 # <a name="how-to-use-data-protection"></a>Postupy: Použití ochrany dat
 .NET Framework poskytuje přístup k rozhraní data Protection API (DPAPI), které umožňuje šifrovat data pomocí informací z aktuálního uživatelského účtu nebo počítače.  Při použití rozhraní DPAPI je obtížné vyřešit obtížně generovaný a uložený kryptografický klíč.  
   
- Použijte třídu <xref:System.Security.Cryptography.ProtectedMemory> k zašifrování pole bajtů v paměti.  Tato funkce je k dispozici v systému Microsoft Windows XP a novějších operačních systémech.  Můžete určit, že paměť zašifrovaná pomocí aktuálního procesu může být dešifrována pouze aktuálním procesem, všemi procesy nebo ze stejného kontextu uživatele.  Podrobný popis možností <xref:System.Security.Cryptography.ProtectedMemory> naleznete v <xref:System.Security.Cryptography.MemoryProtectionScope> výčtu.  
+ Použijte <xref:System.Security.Cryptography.ProtectedMemory> třídu k zašifrování pole bajtů v paměti.  Tato funkce je k dispozici v systému Microsoft Windows XP a novějších operačních systémech.  Můžete určit, že paměť zašifrovaná pomocí aktuálního procesu může být dešifrována pouze aktuálním procesem, všemi procesy nebo ze stejného kontextu uživatele.  <xref:System.Security.Cryptography.MemoryProtectionScope>Podrobný popis možností najdete v části výčet <xref:System.Security.Cryptography.ProtectedMemory> .  
   
- Použijte třídu <xref:System.Security.Cryptography.ProtectedData> k zašifrování kopie pole bajtů. Tato funkce je k dispozici v systému Microsoft Windows 2000 a novějších operačních systémech.  Můžete určit, že data zašifrovaná pomocí aktuálního uživatelského účtu je možné dešifrovat jenom stejným uživatelským účtem, nebo můžete zadat, aby se data zašifrovaná aktuálním uživatelským účtem mohla dešifrovat jakýmkoli účtem v počítači.  Podrobný popis možností <xref:System.Security.Cryptography.ProtectedData> naleznete v <xref:System.Security.Cryptography.DataProtectionScope> výčtu.  
+ Použijte <xref:System.Security.Cryptography.ProtectedData> třídu k zašifrování kopie pole bajtů. Tato funkce je k dispozici v systému Microsoft Windows 2000 a novějších operačních systémech.  Můžete určit, že data zašifrovaná pomocí aktuálního uživatelského účtu je možné dešifrovat jenom stejným uživatelským účtem, nebo můžete zadat, aby se data zašifrovaná aktuálním uživatelským účtem mohla dešifrovat jakýmkoli účtem v počítači.  <xref:System.Security.Cryptography.DataProtectionScope>Podrobný popis možností najdete v části výčet <xref:System.Security.Cryptography.ProtectedData> .  
   
 ### <a name="to-encrypt-in-memory-data-using-data-protection"></a>Šifrování dat v paměti pomocí ochrany dat  
   
-1. Při předávání pole bajtů k zašifrování, entropie a rozsahu ochrany paměti volejte metodu static <xref:System.Security.Cryptography.ProtectedMemory.Protect%2A>.  
+1. Volejte statickou <xref:System.Security.Cryptography.ProtectedMemory.Protect%2A> metodu při předávání pole bajtů k zašifrování, entropii a rozsahu ochrany paměti.  
   
 ### <a name="to-decrypt-in-memory-data-using-data-protection"></a>Dešifrování dat v paměti pomocí ochrany dat  
   
-1. Při předávání pole bajtů k dešifrování a rozsahu ochrany paměti volejte metodu static <xref:System.Security.Cryptography.ProtectedMemory.Unprotect%2A>.  
+1. Volejte statickou <xref:System.Security.Cryptography.ProtectedMemory.Unprotect%2A> metodu při předávání pole bajtů k dešifrování a rozsahu ochrany paměti.  
   
 ### <a name="to-encrypt-data-to-a-file-or-stream-using-data-protection"></a>Šifrování dat do souboru nebo datového proudu pomocí ochrany dat  
   
 1. Vytvořte náhodnou entropii.  
   
-2. Při předávání pole bajtů k zašifrování, entropie a rozsahu ochrany dat volejte statickou <xref:System.Security.Cryptography.ProtectedData.Protect%2A>ovou metodu.  
+2. Volejte statickou <xref:System.Security.Cryptography.ProtectedData.Protect%2A> metodu při předávání pole bajtů k zašifrování, entropii a rozsahu ochrany dat.  
   
 3. Zapište zašifrovaná data do souboru nebo datového proudu.  
   
@@ -50,7 +51,7 @@ ms.locfileid: "75706029"
   
 1. Přečtěte si šifrovaná data ze souboru nebo datového proudu.  
   
-2. Při předávání pole bajtů k dešifrování a rozsahu ochrany dat volejte statickou <xref:System.Security.Cryptography.ProtectedData.Unprotect%2A>ovou metodu.  
+2. Volejte statickou <xref:System.Security.Cryptography.ProtectedData.Unprotect%2A> metodu při předávání pole bajtů k dešifrování a rozsahu ochrany dat.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad kódu ukazuje dvě formy šifrování a dešifrování.  Nejprve příklad kódu šifruje a pak dešifruje pole bajtů v paměti.  V dalším příkladu kód zašifruje kopii pole bajtů, uloží ho do souboru, načte data zpátky ze souboru a pak data dešifruje.  V příkladu se zobrazí původní data, šifrovaná data a dešifrovaná data.  
@@ -60,11 +61,11 @@ ms.locfileid: "75706029"
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
   
-- Zahrňte odkaz na `System.Security.dll`.  
+- Přidejte odkaz na `System.Security.dll` .  
   
-- Zadejte obor názvů <xref:System>, <xref:System.IO>, <xref:System.Security.Cryptography>a <xref:System.Text>.  
+- Přidejte <xref:System> <xref:System.IO> obor názvů,, <xref:System.Security.Cryptography> a <xref:System.Text> .  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Security.Cryptography.ProtectedMemory>
 - <xref:System.Security.Cryptography.ProtectedData>

@@ -2,31 +2,31 @@
 title: Scenario2
 ms.date: 03/30/2017
 ms.assetid: 816557e0-f676-4731-95c5-b02cbef3d8d7
-ms.openlocfilehash: d791681fab4b635c057d151d10183f583ae7ab2a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e983df89f35037732059ce284b67862da3171fd1
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61787488"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84602398"
 ---
 # <a name="scenario"></a>Scénář
 Tato část obsahuje ukázky, které ukazují scénáře Windows Communication Foundation (WCF).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Scénáře datových vazeb](../../../../docs/framework/wcf/samples/data-binding-scenarios.md)  
- Demonstruje scénáře datových vazeb WCF.  
+ [Scénáře datových vazeb](data-binding-scenarios.md)  
+ Ukazuje scénáře vázání dat WCF.  
   
- [Ukázka zabezpečení zjišťování](../../../../docs/framework/wcf/samples/discovery-security-sample.md)  
- Ukazuje, jak implementovat vlastní kanály, které compute a ověřování podpisů zprávu ve formátu compact podpis (popsaný v části 8.2 specifikace WS-Discovery).  
+ [Ukázka zabezpečení zjišťování](discovery-security-sample.md)  
+ Ukazuje, jak implementovat vlastní kanály, které počítají a ověřují signatury zpráv pomocí formátu kompaktního podpisu (popsaného v části 8,2 specifikace WS-Discovery).  
   
- [Ukázka federace](../../../../docs/framework/wcf/samples/federation-sample.md)  
- Ukazuje federovaného zabezpečení.  
+ [Ukázka federace](federation-sample.md)  
+ Ukazuje federované zabezpečení.  
   
- [Serializace JSON slabého typu (AJAX)](../../../../docs/framework/wcf/samples/weakly-typed-json-serialization-sample.md)  
- Ukazuje, jak povolit WCF vývojářům umožňuje pracovat s objekty JSON deserializovat, libovolného bez vytvoření uživatelem definovaných typů.  
+ [Serializace JSON slabého typu (AJAX)](weakly-typed-json-serialization-sample.md)  
+ Ukazuje, jak povolit vývojářům WCF pracovat s deserializovanými a libovolnými objekty JSON bez vytváření uživatelem definovaných typů.  
   
- [Důvěryhodná služba facade](../../../../docs/framework/wcf/samples/trusted-facade-service.md)  
- Ukazuje, jak tok volajícího informace o identitách z jedné služby do jiné pomocí Infrastruktura zabezpečení WCF.  
+ [Důvěryhodná služba facade](trusted-facade-service.md)  
+ Ukazuje, jak flowovat informace o identitě volajících z jedné služby do jiné pomocí infrastruktury zabezpečení WCF.  
   
- [Vzory návrhu: Na základě seznamu publikování a odběru](../../../../docs/framework/wcf/samples/design-patterns-list-based-publish-subscribe.md)  
- Ukazuje vzor založený na seznamu publikování a odběru implementovaná jako program Windows Communication Foundation (WCF).
+ [Vzory návrhu: Vzor publikování–odběr založený na seznamu](design-patterns-list-based-publish-subscribe.md)  
+ Ukazuje vzor pro publikování a odběr založený na seznamu, který je implementován jako program Windows Communication Foundation (WCF).

@@ -6,17 +6,17 @@ helpviewer_keywords:
 - security glossary [WCF]
 - security terms [WCF]
 ms.assetid: 68dde024-8e51-40ba-804f-ec52d85e9ca9
-ms.openlocfilehash: 6751513b72f732bd7392de11a203467a9ead1bce
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: a07d7c6da71f4195cb1641ae8ac7585b4158ed63
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76743355"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600968"
 ---
 # <a name="wcf-security-terminology"></a>Terminologie zabezpečení WCF
 Některá z terminologie, která se používá, když je diskuze o zabezpečení možná neznámá. Toto téma obsahuje krátká vysvětlení některých bezpečnostních podmínek, ale není určena k poskytnutí komplexní dokumentace pro každou položku.  
   
- Další informace o pojmech používaných v dokumentaci k Windows Communication Foundation (WCF) najdete v tématu [základní koncepty Windows Communication Foundation](../../../../docs/framework/wcf/fundamental-concepts.md).  
+ Další informace o pojmech používaných v dokumentaci k Windows Communication Foundation (WCF) najdete v tématu [základní koncepty Windows Communication Foundation](../fundamental-concepts.md).  
   
  seznam řízení přístupu (ACL)  
  Seznam ochrany zabezpečení, které se vztahují k objektu. (Objekt může být soubor, proces, událost nebo cokoli jiného, co má popisovač zabezpečení.) Položka v seznamu ACL je položka řízení přístupu (ACE). Existují dva typy seznamů ACL: volitelné a systémové.  
@@ -36,18 +36,18 @@ Některá z terminologie, která se používá, když je diskuze o zabezpečení
  certifikát  
  Digitálně podepsaný příkaz, který obsahuje informace o entitě a veřejném klíči entity, takže tyto dva druhy informací propojuje. Certifikát je vydán důvěryhodnou organizací (neboli entitou), která se označuje jako certifikační autorita, poté, co autorita ověří, že se jedná o subjekt, který je vyjadřuje.  
   
- Certifikáty mohou obsahovat různé typy dat. Například certifikát X. 509 zahrnuje formát certifikátu, sériové číslo certifikátu, algoritmus použitý k podepsání certifikátu, název certifikační autority, která certifikát vystavila, název a veřejný klíč entity požadující certifikát. a podpis certifikační autority.  
+ Certifikáty mohou obsahovat různé typy dat. Například certifikát X. 509 zahrnuje formát certifikátu, sériové číslo certifikátu, algoritmus použitý k podepsání certifikátu, název certifikační autority, která certifikát vydala, název a veřejný klíč entity požadující certifikát a signaturu certifikační autority.  
   
  úložiště certifikátů  
  Obvykle se jedná o trvalé úložiště, ve kterém jsou uložené certifikáty, seznamy odvolaných certifikátů (CRL) a seznamy důvěryhodných certifikátů (CTL). Je ale možné vytvořit a otevřít úložiště certifikátů výhradně v paměti při práci s certifikáty, které není nutné ukládat do trvalého úložiště.  
   
- claims  
+ podpory  
  Informace předané z jedné entity do druhé, která se používá k vytvoření identity odesilatele. Například uživatelské jméno a token hesla nebo certifikát X. 509.  
   
  certifikát klienta  
  Odkazuje na certifikát používaný pro ověřování klientů, jako je například ověřování webového prohlížeče na webovém serveru. Když se klient webového prohlížeče pokusí o přístup k zabezpečenému webovému serveru, klient odešle svůj certifikát serveru, aby mohl ověřit identitu klienta.  
   
- přihlašovací údaje  
+ Přihlašovací údaje  
  Dříve ověřená přihlašovací data, která objekt zabezpečení používá k vytvoření vlastní identity, jako je například heslo nebo lístek protokolu Kerberos. Pověření slouží k řízení přístupu k prostředkům.  
   
  data ve Digest  
@@ -74,10 +74,10 @@ Některá z terminologie, která se používá, když je diskuze o zabezpečení
  místní úřad zabezpečení (LSA)  
  Chráněný podsystém, který ověřuje a zapisuje uživatele do místního systému. LSA také uchovává informace o všech aspektech místního zabezpečení v systému, které se souhrnně označují jako místní zásady zabezpečení systému.  
   
- Mluví  
- Zprostředkovatel podpory zabezpečení (SSP), který funguje jako aplikační vrstva mezi rozhraním SSPI (Security Support Provider Interface) a jiným zprostředkovatelem sdílených služeb. Když aplikace zavolá rozhraní SSPI, aby se přihlásila k síti, může určit zprostředkovatele sdílených služeb pro zpracování žádosti. Pokud aplikace určí `Negotiate`, `Negotiate` analyzuje požadavek a vybere nejlepší SSP pro zpracování požadavku na základě zásad zabezpečení nakonfigurovaných zákazníkem.  
+ Negotiate  
+ Zprostředkovatel podpory zabezpečení (SSP), který funguje jako aplikační vrstva mezi rozhraním SSPI (Security Support Provider Interface) a jiným zprostředkovatelem sdílených služeb. Když aplikace zavolá rozhraní SSPI, aby se přihlásila k síti, může určit zprostředkovatele sdílených služeb pro zpracování žádosti. Pokud aplikace určí `Negotiate` , `Negotiate` analyzuje požadavek a vybere nejlepší SSP pro zpracování požadavku na základě zásad zabezpečení nakonfigurovaných zákazníkem.  
   
- nonce  
+ generované  
  Náhodně generovaná hodnota, která se používá k přepřipraveným útokům "opakované přehrání".  
   
  nepopiratelnosti odpovědnosti  
@@ -98,7 +98,7 @@ Některá z terminologie, která se používá, když je diskuze o zabezpečení
  privátní klíč  
  Tajná polovina páru klíčů použitého v algoritmu veřejného klíče. Privátní klíče se obvykle používají k šifrování symetrického klíče relace, k digitálnímu podepisování zprávy nebo k dešifrování zprávy, která byla zašifrována s odpovídajícím veřejným klíčem. Viz také "veřejný klíč".  
   
- process  
+ zpracování  
  Kontext zabezpečení, pod nímž je aplikace spuštěna. Kontext zabezpečení je obvykle přidružen k uživateli, takže všechny aplikace spuštěné v rámci daného procesu přebírají oprávnění a oprávnění vlastnícího uživatele.  
   
  pár veřejného a privátního klíče  
@@ -122,7 +122,7 @@ Některá z terminologie, která se používá, když je diskuze o zabezpečení
  Algoritmus SHA (Secure Hash Algorithm)  
  Algoritmus hash, který generuje výtah zprávy. SHA se používá společně s algoritmem DSA (Digital Signature) v standardu DSS (Digital Signature Standard), a to mimo jiné. Existují čtyři odrůdy algoritmu SHA: SHA-1, SHA-256, SHA-384 a SHA-512. SHA-1 generuje 160 zpráv. SHA-256, SHA-384 a SHA-512 256 generují v uvedeném pořadí 16bitové, 384 a 512 bitů zpráv. Služba SHA byla vyvinuta národním institutem standardů a technologií (NIST) a národním bezpečnostním úřadem (National Security Agency).  
   
- SSL (Secure Sockets Layer) (SSL)  
+ SSL (Secure Sockets Layer)  
  Protokol pro zabezpečenou síťovou komunikaci pomocí kombinace technologie veřejného a tajného klíče.  
   
  kontext zabezpečení  
@@ -143,7 +143,7 @@ Některá z terminologie, která se používá, když je diskuze o zabezpečení
  certifikát serveru  
  Odkazuje na certifikát používaný k ověřování serveru, jako je například ověřování webového serveru ve webovém prohlížeči. Když se klient webového prohlížeče pokusí o přístup k zabezpečenému webovému serveru, server odešle svůj certifikát do prohlížeče, aby mohl ověřit identitu serveru.  
   
- jednání  
+ relace  
  Výměna zpráv v rámci ochrany jedné části materiálu klíčů. Například relace SSL používají jeden klíč k posílání více zpráv v rámci tohoto klíče a zpátky do něj.  
   
  klíč relace  
@@ -173,16 +173,16 @@ Některá z terminologie, která se používá, když je diskuze o zabezpečení
  Software, který rozhoduje, zda je daný soubor důvěryhodný Toto rozhodnutí vychází z certifikátu přidruženého k souboru.  
   
  hlavní název uživatele (UPN)  
- Název uživatelského účtu (někdy označovaný jako *přihlašovací jméno uživatele*) a název domény identifikující doménu, ve které se uživatelský účet nachází. Toto je standardní použití pro přihlášení k doméně systému Windows. Formát je: someone@example.com (jako u e-mailové adresy).  
+ Název uživatelského účtu (někdy označovaný jako *přihlašovací jméno uživatele*) a název domény identifikující doménu, ve které se uživatelský účet nachází. Toto je standardní použití pro přihlášení k doméně systému Windows. Formát je následující: someone@example.com (jako pro e-mailovou adresu).  
   
 > [!NOTE]
-> Kromě standardního formuláře hlavního názvu uživatele (UPN) WCF přijímá hlavní názvy uživatelů (UPN) ve formě nižší úrovně, například cohowinery. com\someone.  
+> Kromě standardního formuláře hlavního názvu uživatele (UPN) WCF přijímá hlavní názvy uživatelů (UPN) ve formě nižší úrovně, například cohowinery. com\someone..  
   
  X.509  
  Mezinárodní uznávaný standard pro certifikáty, které definují jejich požadované části.  
   
 ## <a name="see-also"></a>Viz také
 
-- [Základní koncepty Windows Communication Foundation](../../../../docs/framework/wcf/fundamental-concepts.md)
-- [Koncepty zabezpečení](../../../../docs/framework/wcf/feature-details/security-concepts.md)
+- [Základní koncepty Windows Communication Foundation](../fundamental-concepts.md)
+- [Koncepce zabezpečení](security-concepts.md)
 - [Model zabezpečení pro Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

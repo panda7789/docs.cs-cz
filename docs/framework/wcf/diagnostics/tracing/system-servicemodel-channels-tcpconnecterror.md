@@ -2,21 +2,21 @@
 title: System.ServiceModel.Channels.TcpConnectError
 ms.date: 03/30/2017
 ms.assetid: 22d93797-072e-405d-a3e0-5c519ddf290b
-ms.openlocfilehash: 0bfd35e2b3ca421745701a91f2a5bfc91f3063aa
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5675547108c5d8c5bc4248a5fa98c76f7e29ce23
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61942204"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84601852"
 ---
 # <a name="systemservicemodelchannelstcpconnecterror"></a>System.ServiceModel.Channels.TcpConnectError
-Operace se nezdařila připojení TCP.  
+Operace připojení TCP se nezdařila.  
   
 ## <a name="description"></a>Popis  
- Úroveň trasování varování indikuje selhání připojení ke koncovému bodu TCP. Může k tomu dojít, pokud vzdálený koncový bod nereaguje na dané IP adresy a portu. Trasování můžete ignorovat, pokud následné pokusí připojit k jiné platnou IP adresy (například adresy IPv4 nebo IPv6, nebo jiné IP adresy představující daný název hostitele) úspěšné. Výjimky v rámci tohoto trasování můžete zobrazit další informace o této chybě.  
+ Toto trasování úrovně upozornění indikuje selhání připojení ke koncovému bodu TCP. K tomu může dojít, pokud vzdálený koncový bod neodpovídá dané IP adrese a portu. Toto trasování je možné ignorovat, pokud se další pokusy o připojení k jiným platným IP adresám (třeba k adresám IPv4 nebo IPv6 nebo jiným IP adresám, které představují daný název hostitele), zdaří. Výjimka v rámci tohoto trasování může odhalit další informace o chybě.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Trasování](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [Řešení problémů s aplikací pomocí trasování](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
-- [Správa a diagnostika](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [Trasování](index.md)
+- [Řešení potíží s aplikací pomocí trasování](using-tracing-to-troubleshoot-your-application.md)
+- [Správa a diagnostika](../index.md)

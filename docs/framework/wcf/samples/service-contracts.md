@@ -2,31 +2,31 @@
 title: Kontrakty služeb
 ms.date: 03/30/2017
 ms.assetid: 9e34b694-aa56-45b3-8dd1-2616705b4fc5
-ms.openlocfilehash: e6e4deaf3c5023f28f76983e6b7dfe2e24182c11
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f4487ac693b93a27b11fb69b1c663285ebcdc107
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61967580"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84599890"
 ---
 # <a name="service-contracts"></a>Kontrakty služeb
-Tato část obsahuje ukázky, které předvádějí kontrakty služeb Windows Communication Foundation (WCF).  
+Tato část obsahuje ukázky, které ukazují kontrakty služby ve službě Windows Communication Foundation (WCF).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Duplex](../../../../docs/framework/wcf/samples/duplex.md)  
- Ukazuje, jak definovat a implementovat duplexního kontraktu.  
+ [Duplex](duplex.md)  
+ Ukazuje, jak definovat a implementovat duplexní kontrakt.  
   
- [Kontrakt chyby](../../../../docs/framework/wcf/samples/fault-contract.md)  
- Ukazuje, jak komunikovat se informace o chybě ze služby klienta.  
+ [Chyba – kontrakt](fault-contract.md)  
+ Ukazuje, jak sdělit informace o chybě ze služby klientovi.  
   
- [Jednosměrný](../../../../docs/framework/wcf/samples/one-way.md)  
- Ukazuje služby kontaktu s operací jednosměrné služby.  
+ [Jednosměrný](one-way.md)  
+ Ukazuje kontakt služby pomocí jednosměrných operací služby.  
   
- [Relace](../../../../docs/framework/wcf/samples/session.md)  
+ [Relace](session.md)  
  Ukazuje, jak implementovat kontrakt, který vyžaduje relaci.  
   
- [Stream](../../../../docs/framework/wcf/samples/stream.md)  
- Ukazuje použití streamování komunikace režim přenosu.  
+ [Stream](stream.md)  
+ Ukazuje použití komunikace v režimu přenosu datového proudu.  
   
- [Chyby XmlSerializer](../../../../docs/framework/wcf/samples/xmlserializer-faults.md)  
- Ukazuje, jak komunikovat se informace o chybě ze služby klienta pomocí <xref:System.Xml.Serialization.XmlSerializer>.
+ [XmlSerializer – zpracování chyb](xmlserializer-faults.md)  
+ Ukazuje, jak sdělit informace o chybě ze služby klientovi pomocí <xref:System.Xml.Serialization.XmlSerializer> .

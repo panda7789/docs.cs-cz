@@ -2,48 +2,48 @@
 title: Soubor ReadMe pro ukázku rozšířené ochrany ověřování
 ms.date: 03/30/2017
 ms.assetid: 80bf2e97-398d-4db5-9040-d96478a2ccab
-ms.openlocfilehash: cc60ee32efcbe1e6ac1ce620fa1c17504db5197f
-ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
+ms.openlocfilehash: 9b0a3535282a1fcc1103651f5601459e80d3d8d4
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66690586"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84601098"
 ---
 # <a name="readme-for-extended-protection-authentication-sample"></a>Soubor ReadMe pro ukázku rozšířené ochrany ověřování
 
-Rozšířená ochrana je iniciativy zabezpečení pro ochranu před útoky (typu MITM) man-in-the-middle, při které útočník ("man-in-the-middle") zachycuje přihlašovací údaje klienta a používá pro přístup k zabezpečeným prostředkům na serveru určené pro klienta.
+Rozšířená ochrana je bezpečnostní iniciativa pro ochranu proti útokům MITM (man-in-the-middle), kdy útočník ("muž-in-the-middle") zachycuje přihlašovací údaje klienta a používá je k přístupu k zabezpečeným prostředkům na zamýšleném serveru klienta.
 
-Další informace najdete v tématu [rozšířené ochrany pro ověřování – přehled](../../../../docs/framework/wcf/feature-details/extended-protection-for-authentication-overview.md).
+Další informace najdete v tématu [Rozšířená ochrana pro ověřování – přehled](extended-protection-for-authentication-overview.md).
 
 > [!NOTE]
-> Tato ukázka funguje pouze v případě hostovaných ve službě IIS. Nepracuje na vývojový Server sady Visual Studio vzhledem k tomu, který nepodporuje protokol HTTPS.
+> Tato ukázka funguje jenom v případě, že je hostovaná ve službě IIS. Nefunguje na vývojovém serveru sady Visual Studio, protože nepodporuje protokol HTTPS.
 
-## <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku
+## <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky
 
-1. Instalace služby IIS na počítači z panelu Přidat nebo odebrat programy -> funkce Windows.
+1. Nainstalujte službu IIS na počítači pomocí ovládacího panelu Přidat nebo odebrat programy – > funkce Windows.
 
-2. Zapněte ověřování Windows a funkce Windows: Internetová informační služba -> webové služby -> zabezpečení -> ověřování Windows.
+2. Zapnout ověřování systému Windows ve funkcích Windows: Internetová informační služba-> World World World World Services-> zabezpečení – > ověřování systému Windows.
 
-3. Aktivace protokolem HTTP zapněte v části funkce Windows: Rozhraní Microsoft .NET Framework 3.5.1 -> HTTP aktivace Windows Communication Foundation.
+3. Zapnutí aktivace protokolem HTTP v součástech systému Windows: Microsoft .NET Framework 3.5.1 – > Windows Communication Foundation aktivace protokolem HTTP.
 
-4. Tato ukázka vyžaduje klienta k navázání zabezpečeného kanálu se serverem a proto vyžaduje přítomnost certifikát serveru, který si můžete nainstalovat pomocí Správce Internetové informační služby (IIS).
+4. Tato ukázka vyžaduje, aby klient navázal zabezpečený kanál se serverem, takže vyžaduje přítomnost certifikátu serveru, který se dá nainstalovat z správce Internetová informační služba (IIS).
 
-    1. Otevřete Správce služby IIS -> certifikáty serveru (na kartě zobrazení funkce).
+    1. Otevřete Správce služby IIS-> certifikáty serveru (na kartě zobrazení funkcí).
 
-    2. Pro účely testování tuto ukázku, můžete vytvořit certifikát podepsaný svým držitelem. (Pokud nechcete, aby se vás zeptá na certifikát, nebude zabezpečený v aplikaci Internet Explorer, můžete nainstalovat jej do úložiště Důvěryhodné kořenové certifikační autority).
+    2. Pro účely testování této ukázky můžete vytvořit certifikát podepsaný svým držitelem. (Pokud nechcete, aby Internet Explorer zobrazil výzvu k tomu, že certifikát není zabezpečený, můžete ho nainstalovat v úložišti Důvěryhodné kořenové certifikační autority certifikátu).
 
-5. Přejděte do podokna akcí pro výchozí web. Klikněte na Upravit lokality -> vazby. Přidáte HTTPS jako typ, pokud ještě není k dispozici s číslem portu 443 a přiřadit certifikát SSL vytvořený v předchozím kroku.
+5. Přejít do podokna akce pro výchozí web. Klikněte na Upravit vazby > webů. Přidejte HTTPS jako typ, pokud ještě neexistuje, s číslem portu 443 a přiřaďte certifikát SSL, který jste vytvořili v předchozím kroku.
 
-6. Vytvořte službu. To vytvoří virtuální adresář ve službě IIS za vás (ze zadaného ve vlastnostech projektu akci po sestavení) a zkopíruje soubory dll, svc a konfiguračním podle potřeby služby bude hostovaná na webu.
+6. Sestavte službu. Tím se vytvoří virtuální adresář ve službě IIS pro vás (od akce po sestavení určené ve vlastnostech projektu) a zkopírování souborů DLL, svc a config, jak je to nutné, aby byla služba hostitelem webu.
 
-7. Otevřete Správce služby IIS. Klikněte pravým tlačítkem na virtuální adresář (Rozšířená ochrana ExtendedProtection), který jste vytvořili v předchozím kroku a vyberte převést na aplikaci.
+7. Otevřete Správce služby IIS. Klikněte pravým tlačítkem na virtuální adresář (ExtendedProtection), který jste vytvořili v předchozím kroku, a vyberte převést na aplikaci.
 
-8. Otevřete modul ověřování ve Správci služby IIS pro tento virtuální adresář a povolení ověřování Windows.
+8. Otevřete modul ověřování ve Správci služby IIS pro tento virtuální adresář a povolte ověřování systému Windows.
 
-9. Otevřít rozšířené nastavení pro Windows ověřování pro tento virtuální adresář a nastavte ho na povinné, protože v ukázce je odpovídající ExtendedProtection nastavená na hodnotu Always.
+9. Otevřete upřesňující nastavení pro ověřování systému Windows pro tento virtuální adresář a nastavte jej na požadováno, protože v ukázce je odpovídající nastavení ExtendedProtection nastaveno na vždy.
 
-10. Službu můžete otestovat přístup k adresu URL z okna prohlížeče. Pokud chcete přístup k této adrese URL z mezi počítači, ujistěte se, že brána firewall otevřená pro všechna příchozí připojení HTTP a HTTPS.
+10. Službu můžete otestovat přístupem k adrese URL z okna prohlížeče. Pokud chcete získat přístup k této adrese URL z více počítačů, ujistěte se, že je brána firewall otevřená pro všechna příchozí připojení HTTP a HTTPS.
 
-11. Otevřete soubor konfigurace klienta a zadejte název počítače úplné \<klienta >- \<koncový bod >-atribut adresy nahrazení \<full_machine_name >.
+11. Otevřete konfigurační soubor klienta a zadejte úplný název počítače pro \<client>  -  \<endpoint> atribut-address a nahraďte ho \<full_machine_name> .
 
-12. Spustíte klienta. Klient komunikuje se služba navázáním zabezpečeného kanálu a použitím rozšířené ochrany na pozadí.
+12. Spusťte klienta. Klient komunikuje se službou vytvořením zabezpečeného kanálu a použitím rozšířené ochrany v rámci pokrývání.

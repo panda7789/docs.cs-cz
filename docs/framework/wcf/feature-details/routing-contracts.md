@@ -2,31 +2,31 @@
 title: Kontrakty pro směrování
 ms.date: 03/30/2017
 ms.assetid: 9ceea7ae-ea19-4cf9-ba4f-d071e236546d
-ms.openlocfilehash: 660652caa804b8c19f6dd18bcba51bf4abc3ba12
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 69dff2c82f67a16d51e11a92052c59672a054e04
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61991104"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84601072"
 ---
 # <a name="routing-contracts"></a>Kontrakty pro směrování
-Kontrakty pro směrování definovat vzory zprávy, které směrovací služba může zpracovat.  Každá smlouva bez psaní a umožňuje službě a zobrazí se zpráva bez znalosti schématu zprávy nebo akce. To umožňuje službě Směrování a obecně směrování zpráv bez další konfigurace pro specifikace základní zprávy směruje.  
+Kontrakty směrování definují vzory zpráv, které může služba Směrování zpracovat.  Každá kontrakta je beztypový a umožňuje službě přijímat zprávy bez znalosti schématu nebo akce zprávy. Díky tomu může směrovací služba obecně směrovat zprávy bez další konfigurace pro konkrétní směrované zdrojové zprávy.  
   
 ## <a name="routing-contracts"></a>Kontrakty pro směrování  
- Vzhledem k tomu, že směrovací služba přijímá obecný objekt zprávy WCF, je důležité zvážit při výběru kontrakt tvar kanál, který se použije při komunikaci s klienty a služby. Při zpracování zpráv, směrovací služba používá symetrické zpráva čerpadla, proto obvykle že tvar příchozích smlouvy musí odpovídat tvar odchozí kontraktu. Existují však případy, ve kterém modelu služby dispečer můžete upravit tvary, například když dispečer převede duplexní kanál do kanálu požadavek odpověď, nebo odebere podporu relace z kanálu, když není potřeba a nepoužívá se (to znamená Pokud **SessionMode.Allowed**, převod **IInputSessionChannel** do **IInputChannel**).  
+ Vzhledem k tomu, že směrovací služba akceptuje obecný objekt zprávy WCF, nejdůležitějším aspektem při výběru kontraktu je tvar kanálu, který se použije při komunikaci s klienty a službami. Služba směrování používá při zpracování zpráv symetrická čerpadla s symetrickými zprávami, takže obecně musí tvar příchozího kontraktu odpovídat tvaru odchozího kontraktu. Existují však případy, kdy může dispečer modelu služby změnit tvary, například když dispečer převede duplexní kanál do kanálu požadavku a odpovědi, nebo odebere podporu relace z kanálu, pokud není vyžadován, a není-li použit (tj. je-li **povolena vlastnost SessionMode. Allowed**převod **IInputSessionChannel** na **IInputChannel**).  
   
- Tyto zprávy čerpadla, směrovací služba podporuje prostřednictvím smluv v <xref:System.ServiceModel.Routing> obor názvů, který musí být použit při definování koncové body služby používaný službou směrování. Tyto smlouvy jsou bez psaní, která umožňuje příjem libovolný typ zprávy nebo akce a umožňuje směrovací služba zpracovává zprávy bez znalosti schématu konkrétní zprávu. Další informace o smlouvách, které používá služba Směrování najdete v tématu [směrování kontrakty](../../../../docs/framework/wcf/feature-details/routing-contracts.md).  
+ Služba směrování v rámci podpory těchto zpráv zajišťuje kontrakty v <xref:System.ServiceModel.Routing> oboru názvů, který se musí použít při definování koncových bodů služby, které služba Směrování používá. Tyto kontrakty jsou bez typu, což umožňuje příjem libovolného typu nebo akce zprávy a umožňuje směrovací službě zpracovávat zprávy bez znalosti konkrétního schématu zprávy. Další informace o smlouvách používaných směrovací službou najdete v tématu [kontrakty směrování](routing-contracts.md).  
   
- Kontrakty poskytovaný službou Směrování se nacházejí v <xref:System.ServiceModel.Routing> obor názvů a jsou popsány v následující tabulce.  
+ Kontrakty poskytované směrovací službou jsou umístěné v <xref:System.ServiceModel.Routing> oboru názvů a jsou popsány v následující tabulce.  
   
-|Kontrakt|Obrazec|Tvar kanálu|  
+|Kontrakt|Tvar|Obrazec kanálu|  
 |--------------|-----------|-------------------|  
-|<xref:System.ServiceModel.Routing.ISimplexDatagramRouter>|Režim SessionMode = SessionMode.Allowed<br /><br /> AsyncPattern = true<br /><br /> IsOneWay = true|IInputChannel -> IOutputChannel|  
-|<xref:System.ServiceModel.Routing.ISimplexSessionRouter>|Režim SessionMode = SessionMode.Required<br /><br /> AsyncPattern = true<br /><br /> IsOneWay = true|IInputSessionChannel -> IOutputSessionChannel|  
-|<xref:System.ServiceModel.Routing.IRequestReplyRouter>|Režim SessionMode = SessionMode.Allowed<br /><br /> AsyncPattern = true|Rozhraní IReplyChannel -> třídu IRequestChannel|  
-|<xref:System.ServiceModel.Routing.IDuplexSessionRouter>|SessionMode=SessionMode.Required<br /><br /> CallbackContract=typeof(ISimplexSession)<br /><br /> AsyncPattern = true<br /><br /> IsOneWay = true<br /><br /> TransactionFlow(TransactionFlowOption.Allowed)|IDuplexSessionChannel -> IDuplexSessionChannel|  
+|<xref:System.ServiceModel.Routing.ISimplexDatagramRouter>|SessionMode = SessionMode. Allowed<br /><br /> AsyncPattern = true<br /><br /> IsOneWay = true|IInputChannel-> IOutputChannel|  
+|<xref:System.ServiceModel.Routing.ISimplexSessionRouter>|SessionMode = SessionMode. Required<br /><br /> AsyncPattern = true<br /><br /> IsOneWay = true|IInputSessionChannel-> IOutputSessionChannel|  
+|<xref:System.ServiceModel.Routing.IRequestReplyRouter>|SessionMode = SessionMode. Allowed<br /><br /> AsyncPattern = true|IReplyChannel-> třídu IRequestChannel|  
+|<xref:System.ServiceModel.Routing.IDuplexSessionRouter>|SessionMode = SessionMode. Required<br /><br /> CallbackContract = typeof (ISimplexSession)<br /><br /> AsyncPattern = true<br /><br /> IsOneWay = true<br /><br /> TransactionFlow (TransactionFlowOption. Allowed)|IDuplexSessionChannel-> IDuplexSessionChannel|  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Směrovací služba](../../../../docs/framework/wcf/feature-details/routing-service.md)
-- [Úvod do směrování](../../../../docs/framework/wcf/feature-details/routing-introduction.md)
+- [Směrovací služba](routing-service.md)
+- [Směrování – úvod](routing-introduction.md)
