@@ -1,5 +1,6 @@
 ---
 title: Pokyny k návrhu člena
+description: Přečtěte si pokyny pro návrh členů v .NET. Členy zahrnují metody, vlastnosti, události, konstruktory a pole.
 ms.date: 10/22/2008
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - class library design guidelines [.NET Framework], members
 - member design guidelines [.NET Framework]
 ms.assetid: 0ce93180-1d7b-4f8c-9306-f828b2d66b8f
-ms.openlocfilehash: c323e7edd752a1f003bd3f5d81689aca0eaefd20
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: a1f0c1d74e8bffa7cfef975c7dafb9fd01479470
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288989"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84594488"
 ---
 # <a name="member-design-guidelines"></a>Pokyny k návrhu člena
 Metody, vlastnosti, události, konstruktory a pole jsou souhrnně označovány jako členy. Členy jsou nakonec prostředky, pomocí kterých jsou funkce architektury vystavena koncovým uživatelům rozhraní.  

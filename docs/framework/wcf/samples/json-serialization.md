@@ -1,24 +1,24 @@
 ---
-title: Ukázka dataContractJsonSerializer
+title: Ukázka DataContractJsonSerializer
 ms.date: 03/30/2017
 ms.assetid: 3c2c4747-7510-4bdf-b4fe-64f98428ef4a
-ms.openlocfilehash: d3456582d73640f1802c17d7f29f4931a6f920b6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4aa0ee679ae424251000b14abfbacf0590a6ccd3
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79144627"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84592018"
 ---
-# <a name="datacontractjsonserializer-sample"></a>Ukázka dataContractJsonSerializer
+# <a name="datacontractjsonserializer-sample"></a>Ukázka DataContractJsonSerializer
 
 > [!NOTE]
-> Tento vzorek <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>je pro . Pro většinu scénářů, které zahrnují serializaci a rekonstrukci json, doporučujeme api v [oboru názvů System.Text.Json](../../../standard/serialization/system-text-json-overview.md).
+> Tato ukázka je určena pro <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> . Pro většinu scénářů, které zahrnují serializaci a deserializaci JSON, doporučujeme rozhraní API v [oboru názvů System. text. JSON](../../../standard/serialization/system-text-json-overview.md).
 
-<xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>podporuje stejné typy <xref:System.Runtime.Serialization.DataContractSerializer>jako . Formát dat JSON je zvláště užitečný při psaní webových aplikací ve stylu JavaScriptu a XML (AJAX). Podpora AJAX v systému Windows Communication Foundation (WCF) je optimalizována pro použití s ASP.NET AJAX prostřednictvím ovládacího prvku ScriptManager. Příklady použití Windows Communication Foundation (WCF) s ASP.NET AJAX, naleznete [v ajax ukázky](ajax.md).  
+<xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>podporuje stejné typy jako <xref:System.Runtime.Serialization.DataContractSerializer> . Formát dat JSON je zvláště užitečný při psaní asynchronních webových aplikací ve stylu JavaScript a XML (AJAX). Podpora AJAX v Windows Communication Foundation (WCF) je optimalizována pro použití s ASP.NET AJAX prostřednictvím ovládacího prvku ScriptManager. Příklady použití Windows Communication Foundation (WCF) s ASP.NET AJAX naleznete v [ukázkách AJAX](ajax.md).  
   
-Postup nastavení a sestavení pokyny pro tuto ukázku jsou umístěny na konci tohoto tématu.  
+Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
   
-Ukázka používá `Person` kontrakt dat k předvedení serializace a deserializace.  
+Ukázka používá `Person` kontrakt dat k demonstraci serializace a deserializace.  
 
 ```csharp
 [DataContract]
@@ -32,7 +32,7 @@ class Person
 }
 ```
 
- Chcete-li serializovat instanci `Person` typu do JSON, vytvořte <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> první a použijte metodu `WriteObject` k zápisu dat JSON do datového proudu.  
+ Chcete-li serializovat instanci `Person` typu na JSON, vytvořte <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> první a použijte `WriteObject` metodu pro zápis dat JSON do datového proudu.  
 
 ```csharp
 Person p = new Person();
@@ -42,31 +42,31 @@ DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(Person));
 ser.WriteObject(stream1, p);
 ```
 
- Datový proud paměti obsahuje platná data JSON.
+ Proud paměti obsahuje platná data JSON.
   
 ```json  
 {"age":42,"name":"John"}  
 ```  
   
- Ukázka ukazuje deserializaci z dat JSON do objektu. Potom přetoč proud `ReadObject`a volání .  
+ Ukázka demonstruje deserializaci z dat JSON do objektu. Pak můžete Stream převinout zpět a zavolat `ReadObject` .  
 
 ```csharp
 Person p2 = (Person)ser.ReadObject(stream1);
 ```
 
- Zkoumání objektu `p2` ukazuje, že data JSON byla správně zserializována.  
+ Prozkoumáním `p2` objektu zjistíte, že data JSON byla deserializována správně.  
   
 > [!IMPORTANT]
-> Ukázky mohou být již nainstalovány v počítači. Před pokračováním zkontrolujte následující (výchozí) adresář.  
+> Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >
 > `<InstallDrive>:\WF_WCF_Samples`  
 >
-> Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a Windows Workflow Foundation (WF) Ukázky pro rozhraní .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka je umístěna v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Ajax\JsonSerialization`  
   
-#### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavení a spuštění ukázky  
+#### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Vytvořte řešení JsonSerialization.sln, jak je popsáno v [sestavení ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+1. Sestavte řešení JsonSerialization. sln, jak je popsáno v tématu [sestavování ukázek Windows Communication Foundation](building-the-samples.md).  
   
 2. Spusťte výslednou konzolovou aplikaci.  

@@ -2,32 +2,32 @@
 title: Řešení potíží se zasíláním zpráv zařazovaných do front
 ms.date: 03/30/2017
 ms.assetid: a5f2836f-018d-42f5-a571-1e97e64ea5b0
-ms.openlocfilehash: 7990d4b9847ee2f35b9fe6269bb211763c4c80b6
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: f695af3d2ad498e1f5975e1a396f1e7b05bf63bc
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77095005"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84595125"
 ---
 # <a name="troubleshooting-queued-messaging"></a>Řešení potíží se zasíláním zpráv zařazovaných do front
 
 Tato část obsahuje nejčastější dotazy a pomoc při odstraňování potíží s používáním front v Windows Communication Foundation (WCF).
 
-## <a name="common-questions"></a>Běžné dotazy
+## <a name="common-questions"></a>Časté dotazy
 
 **Otázka:** Použil (a) jsem WCF beta 1 a nainstaloval (a) opravu hotfix služby MSMQ. Musím tuto opravu hotfix odebrat?
 
 **Odpověď:** Ano. Tato oprava hotfix již není podporována. WCF teď funguje v MSMQ bez požadavku na opravu hotfix.
 
-**Otázka:** Existují dvě vazby pro službu MSMQ: <xref:System.ServiceModel.NetMsmqBinding> a <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>. Co mám použít a kdy?
+**Otázka:** Existují dvě vazby pro službu MSMQ: <xref:System.ServiceModel.NetMsmqBinding> a <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> . Co mám použít a kdy?
 
-**A:** Použijte <xref:System.ServiceModel.NetMsmqBinding>, pokud chcete použít službu MSMQ jako přenos pro komunikaci ve frontě mezi dvěma aplikacemi WCF. Použijte <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>, pokud chcete použít existující aplikace služby MSMQ ke komunikaci s novými aplikacemi WCF.
+**A:** Použijte v <xref:System.ServiceModel.NetMsmqBinding> případě, že chcete použít službu MSMQ jako přenos pro komunikaci ve frontě mezi dvěma aplikacemi WCF. Použijte, <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> když chcete používat existující aplikace služby MSMQ ke komunikaci s novými aplikacemi WCF.
 
-**Otázka:** Je potřeba upgradovat službu MSMQ, aby používala vazby <xref:System.ServiceModel.NetMsmqBinding> a `MsmqIntegration`?
+**Otázka:** Je nutné upgradovat službu MSMQ, aby používala <xref:System.ServiceModel.NetMsmqBinding> `MsmqIntegration` vazby a?
 
 **Odpověď:** Ne. Obě vazby fungují s MSMQ 3,0 v systémech Windows XP a Windows Server 2003. Při upgradu na službu MSMQ 4,0 v systému Windows Vista budou některé funkce vazeb dostupné.
 
-**Otázka:** Jaké funkce <xref:System.ServiceModel.NetMsmqBinding> a <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> vazby jsou k dispozici ve službě MSMQ 4,0, ale ne v MSMQ 3,0?
+**Otázka:** Jaké funkce <xref:System.ServiceModel.NetMsmqBinding> <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> vazeb a jsou k dispozici ve službě MSMQ 4,0, ale ne v MSMQ 3,0?
 
 **A:** Ve službě MSMQ 4,0 jsou k dispozici následující funkce, které nejsou ve službě MSMQ 3,0:
 
@@ -37,7 +37,7 @@ Tato část obsahuje nejčastější dotazy a pomoc při odstraňování potíž
 
 - Pouze služba MSMQ 4,0 podporuje vzdálené čtení v transakčním režimu.
 
-Další informace najdete v tématu [rozdíly ve funkcích služby Řízení front v systémech Windows Vista, Windows Server 2003 a Windows XP](../../../../docs/framework/wcf/feature-details/diff-in-queue-in-vista-server-2003-windows-xp.md).
+Další informace najdete v tématu [rozdíly ve funkcích služby Řízení front v systémech Windows Vista, Windows Server 2003 a Windows XP](diff-in-queue-in-vista-server-2003-windows-xp.md).
 
 **Otázka:** Můžu použít MSMQ 3,0 na jedné straně komunikace ve frontě a MSMQ 4,0 na druhé straně?
 
@@ -51,11 +51,11 @@ Další informace najdete v tématu [rozdíly ve funkcích služby Řízení fro
 
 Tato část obsahuje odpovědi na nejčastější problémy při odstraňování potíží. Některé problémy, které jsou známá omezením, jsou popsány také v poznámkách k verzi.
 
-**Otázka:** Snažím se použít soukromou frontu a zobrazí se tato výjimka: `System.InvalidOperationException`: adresa URL je neplatná. Adresa URL pro frontu nesmí obsahovat znak $. Použijte syntaxi na adrese NET. MSMQ://machine/private/queueName a vyřešte soukromou frontu.
+**Otázka:** Snažím se použít soukromou frontu a zobrazí se tato výjimka: `System.InvalidOperationException` : adresa URL je neplatná. Adresa URL pro frontu nesmí obsahovat znak $. Použijte syntaxi na adrese NET. MSMQ://machine/private/queueName a vyřešte soukromou frontu.
 
-**A:** Ve vaší konfiguraci a kódu ověřte, zda je identifikátor URI fronty (Uniform Resource Identifier). Nepoužívejte v identifikátoru URI znak "$". Pokud například chcete adresovat soukromou frontu s názvem OrdersQueue, zadejte identifikátor URI jako `net.msmq://localhost/private/ordersQueue`.
+**A:** Ve vaší konfiguraci a kódu ověřte, zda je identifikátor URI fronty (Uniform Resource Identifier). Nepoužívejte v identifikátoru URI znak "$". Pokud například chcete adresovat soukromou frontu s názvem OrdersQueue, zadejte identifikátor URI jako `net.msmq://localhost/private/ordersQueue` .
 
-**Otázka:** Volání `ServiceHost.Open()` v naší aplikaci ve frontě vyvolá následující výjimku: `System.ArgumentException`: základní adresa nesmí obsahovat řetězec dotazu identifikátoru URI. Proč?
+**Otázka:** Volání `ServiceHost.Open()` na mých aplikacích ve frontě vyvolá následující výjimku: `System.ArgumentException` : základní adresa nemůže obsahovat řetězec dotazu identifikátoru URI. Proč?
 
 **A:** Ověřte identifikátor URI fronty v konfiguračním souboru a ve vašem kódu. I když fronty MSMQ podporují použití znaku "?", identifikátory URI interpretují tento znak jako začátek řetězcového dotazu. Chcete-li se tomuto problému vyhnout, použijte názvy front, které neobsahují znaky?.
 
@@ -65,13 +65,13 @@ Tato část obsahuje odpovědi na nejčastější problémy při odstraňování
 
 - Ověřte, zda jsou požadavky transakční fronty kompatibilní se zadanými zárukami. Všimněte si následujících zásad:
 
-  - Můžete odesílat trvalé zprávy (datagramy a relace) s "právě jednou" ujištění (<xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A> = `true`) pouze do transakční fronty.
+  - Můžete odesílat trvalé zprávy (datagramy a relace) s "právě jednou" zárukou ( <xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A>  =  `true` ) pouze do transakční fronty.
 
   - Relace můžete odesílat pouze pomocí ujištění "právě jednou".
 
   - Aby bylo možné přijímat zprávy v relaci z transakční fronty, je nutné zadat transakci.
 
-  - Můžete odesílat nebo přijímat nestálé nebo trvalé zprávy (pouze datagramy) bez ujištění (<xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A> = `false`) pouze do netransakční fronty.
+  - Můžete odesílat nebo přijímat nestálé nebo trvalé zprávy (pouze datagramy) bez ujištění ( <xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A>  =  `false` ) pouze do netransakční fronty.
 
 - Ověřte frontu nedoručených zpráv. Pokud se zde nacházejí zprávy, určete, proč nebyly dodány.
 
@@ -83,37 +83,37 @@ Tato část obsahuje odpovědi na nejčastější problémy při odstraňování
 
 **Otázka:** Je vždycky potřeba definovat vlastní frontu nedoručených zpráv, nebo má výchozí frontu nedoručených zpráv?
 
-**A:** Pokud jsou záruky "právě jednou" (<xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A> = `true`), a pokud nezadáte vlastní frontu nedoručených zpráv, výchozí hodnota je fronta nedoručených transakčních zpráv v rámci systému.
+**A:** Pokud jsou záruky "právě jednou" ( <xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A>  =  `true` ) a pokud nezadáte vlastní frontu nedoručených zpráv, výchozí hodnota je fronta nedoručených transakčních zpráv v rámci systému.
 
-Pokud jsou záruky žádné (<xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A> = `false`), není ve výchozím nastavení žádná funkce fronty nedoručených zpráv.
+Pokud jsou záruky žádné ( <xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A>  =  `false` ), pak výchozí není funkce fronty nedoručených zpráv.
 
 **Otázka:** Moje služba vyvolá v procesu SvcHost. Open se zprávou "požadavky na EndpointListener nelze splnit rozhraním ListenerFactory". Proč?
 
-A. Podívejte se na kontrakt služby. Možná jste zapomněli do všech operací služby umístit "IsOneWay =`true`". Fronty podporují pouze jednosměrné operace služby.
+A. Podívejte se na kontrakt služby. Možná jste zapomněli do všech operací služby přidat "IsOneWay = `true` ". Fronty podporují pouze jednosměrné operace služby.
 
 **Otázka:** Ve frontě jsou zprávy, ale není vyvolána žádná operace služby. V čem je problém?
 
-**A:** Zjistěte, jestli hostitel služby selhal. Můžete se podívat na trasování nebo implementaci `IErrorHandler`. Selhání hostitele služby ve výchozím nastavení, pokud je zjištěna nezpracovatelná zpráva.
+**A:** Zjistěte, jestli hostitel služby selhal. Můžete se podívat na trasování nebo implementaci `IErrorHandler` . Selhání hostitele služby ve výchozím nastavení, pokud je zjištěna nezpracovatelná zpráva.
 
 **Otázka:** Ve frontě jsou zprávy, ale moje služba hostovaná ve frontě web není aktivovaná. Proč?
 
 **A:** Nejběžnějším důvodem jsou oprávnění.
 
-1. Zajistěte, aby byl proces `NetMsmqActivator` spuštěný, a identita `NetMsmqActivator` procesu má přidělené oprávnění ke čtení a hledání ve frontě.
+1. Zajistěte, aby byl `NetMsmqActivator` proces spuštěný, a identita `NetMsmqActivator` procesu má přiděleno oprávnění ke čtení a vyhledávání ve frontě.
 
-2. Pokud `NetMsmqActivator` sleduje fronty na vzdáleném počítači, zajistěte, aby `NetMsmqActivator` neběžely s omezeným tokenem. Spuštění `NetMsmqActivator` s neomezeným tokenem:
+2. Pokud `NetMsmqActivator` je monitoruje fronty na vzdáleném počítači, zajistěte, aby `NetMsmqActivator` neběžely pomocí omezeného tokenu. Spuštění `NetMsmqActivator` s neomezeným tokenem:
 
     ```console
     sc sidtype NetMsmqActivator unrestricted
     ```
 
-Problémy webového hostitele nesouvisející se zabezpečením odkazují na: [web hostující aplikaci ve frontě](../../../../docs/framework/wcf/feature-details/web-hosting-a-queued-application.md).
+Problémy webového hostitele nesouvisející se zabezpečením odkazují na: [web hostující aplikaci ve frontě](web-hosting-a-queued-application.md).
 
 **Otázka:** Jaký je nejjednodušší způsob, jak získat přístup k relacím?
 
-**A:** Nastavte AutoComplete =`true` u operace, která odpovídá poslední zprávě v relaci, a nastavte automatické dokončování =`false` u všech zbývajících operací služby.
+**A:** Nastavte funkci AutoComplete = `true` u operace, která odpovídá poslední zprávě v relaci, a nastavte funkci AutoComplete = `false` u všech zbývajících operací služby.
 
-**Otázka:** Proč moje služba při čtení z fronty, která obsahuje obě zprávy relace ve frontě a zprávy datagram zařazená do fronty, vyvolá `ProtocolException`?
+**Otázka:** Proč moje služba vyvolala `ProtocolException` při čtení z fronty, která obsahuje obě zprávy relace ve frontě i zprávy datagram zařazené do fronty?
 
 **A:** Způsob, jakým se skládají zprávy ve frontě a zprávy datagramů, jsou tvořené zásadním rozdílem. Proto služba, která očekává čtení zprávy ve frontě, nemůže přijmout zprávu datagramu ve frontě a služba, která očekává čtení zprávy datagramu ve frontě, nemůže získat zprávu relace. Při pokusu o čtení obou typů zpráv ze stejné fronty je vyvolána následující výjimka:
 
@@ -136,7 +136,7 @@ Fronta nedoručených zpráv systému, stejně jako jakákoli vlastní fronta ne
 
 **Otázka:** Při příjmu zprávy z aplikace služby MSMQ se zpráva nachází ve frontě a není přečtena přijímající aplikací WCF. Proč?
 
-**A:** Zkontrolujte, zda zpráva obsahuje tělo. Pokud zpráva neobsahuje žádné tělo, kanál integrace služby MSMQ zprávu ignoruje. Implementujte `IErrorHandler` pro oznamování výjimek a kontrolu trasování.
+**A:** Zkontrolujte, zda zpráva obsahuje tělo. Pokud zpráva neobsahuje žádné tělo, kanál integrace služby MSMQ zprávu ignoruje. Implementujte `IErrorHandler` Upozornění na výjimky a Projděte si trasování.
 
 ### <a name="security-related-troubleshooting"></a>Řešení potíží souvisejících se zabezpečením
 
@@ -144,9 +144,9 @@ Fronta nedoručených zpráv systému, stejně jako jakákoli vlastní fronta ne
 
 **A:** Ve výchozím nastavení se zprávy podepisují pomocí interního certifikátu služby MSMQ, který vyžaduje adresářovou službu Active Directory. V režimu pracovní skupiny, protože služba Active Directory není k dispozici, podepisování zprávy se nezdařilo. Proto je uvedena zpráva ve frontě nedoručených zpráv a příčině selhání, jako je například "chybný podpis".
 
-Alternativním řešením je vypnout zabezpečení. Můžete to udělat nastavením <xref:System.ServiceModel.NetMsmqSecurity.Mode%2A> = <xref:System.ServiceModel.NetMsmqSecurityMode.None>, aby fungovalo v režimu pracovní skupiny.
+Alternativním řešením je vypnout zabezpečení. To se provádí nastavením <xref:System.ServiceModel.NetMsmqSecurity.Mode%2A>  =  <xref:System.ServiceModel.NetMsmqSecurityMode.None> , aby fungovalo v režimu pracovní skupiny.
 
-Dalším řešením je získat <xref:System.ServiceModel.MsmqTransportSecurity> z vlastnosti <xref:System.ServiceModel.NetMsmqSecurity.Transport%2A> a nastavit ji na <xref:System.ServiceModel.MsmqAuthenticationMode.Certificate>a nastavit klientský certifikát.
+Dalším řešením je získat z této <xref:System.ServiceModel.MsmqTransportSecurity> <xref:System.ServiceModel.NetMsmqSecurity.Transport%2A> vlastnosti a nastavit ji na a <xref:System.ServiceModel.MsmqAuthenticationMode.Certificate> nastavit klientský certifikát.
 
 Ještě dalším řešením je instalace služby MSMQ s integrací služby Active Directory.
 
@@ -158,7 +158,7 @@ Ještě dalším řešením je instalace služby MSMQ s integrací služby Activ
 
 **A:** Nemůžete použít úložiště certifikátů místního počítače s režimem certifikátu. Je nutné zkopírovat certifikát z úložiště certifikátů počítače do úložiště s aktuálním uživatelem pomocí modulu snap-in Certifikáty. Získání modulu snap-in certifikáty:
 
-1. Klikněte na tlačítko **Start**, vyberte možnost **Spustit**, zadejte příkaz `mmc`a klikněte na tlačítko **OK**.
+1. Klikněte na tlačítko **Start**, vyberte **příkaz Spustit**, zadejte příkaz `mmc` a klikněte na tlačítko **OK**.
 
 2. V **konzole Microsoft Management Console**otevřete nabídku **soubor** a vyberte možnost **Přidat nebo odebrat modul snap-in**.
 
@@ -170,7 +170,7 @@ Ještě dalším řešením je instalace služby MSMQ s integrací služby Activ
 
 6. V dalším kroku přidejte další modul snap-in certifikáty pomocí předchozích kroků, ale tentokrát vyberte **účet počítače** a klikněte na **Další**.
 
-7. Vyberte **místní počítač** a klikněte na **Dokončit**. Nyní můžete přetahovat certifikáty z úložiště certifikátů počítače do aktuálního úložiště uživatele.
+7. Vyberte položku **Místní počítač** a klikněte na tlačítko **Dokončit**. Nyní můžete přetahovat certifikáty z úložiště certifikátů počítače do aktuálního úložiště uživatele.
 
 **Otázka:** Když moje služba načte z fronty v jiném počítači v režimu pracovní skupiny, zobrazí se výjimka "přístup byl odepřen".
 
@@ -182,7 +182,7 @@ Ještě dalším řešením je instalace služby MSMQ s integrací služby Activ
 
 ### <a name="remote-transacted-receives"></a>Vzdáleně transakční příjem
 
-**Otázka:** Když mám frontu na počítači a a službu WCF, která čte zprávy z fronty v počítači B (scénář vzdáleného příjmu v provozu), zprávy se z fronty nečtou. Trasovací informace indikují, že se příjem nezdařil, zpráva "transakce nemůže být importována". Co můžete dělat na tento problém vyřešit?
+**Otázka:** Když mám frontu na počítači a a službu WCF, která čte zprávy z fronty v počítači B (scénář vzdáleného příjmu v provozu), zprávy se z fronty nečtou. Trasovací informace indikují, že se příjem nezdařil, zpráva "transakce nemůže být importována". Jak to můžu vyřešit?
 
 **A:** Existují tři možné příčiny:
 
@@ -192,7 +192,7 @@ Ještě dalším řešením je instalace služby MSMQ s integrací služby Activ
 
 - Ověřte režim ověřování pro komunikaci se správcem transakcí. Pokud pracujete v režimu pracovní skupiny, je nutné vybrat možnost bez vyžadování ověřování. Pokud jste v režimu domény, musíte vybrat možnost vzájemného ověřování.
 
-  ![Povolování transakcí XA](../../../../docs/framework/wcf/feature-details/media/4f3695e0-fb0b-4c5b-afac-75f8860d2bb0.jpg "4f3695e0-fb0b-4c5b-afac-75f8860d2bb0")
+  ![Povolování transakcí XA](media/4f3695e0-fb0b-4c5b-afac-75f8860d2bb0.jpg "4f3695e0-fb0b-4c5b-afac-75f8860d2bb0")
 
 - Ujistěte se, že je MSDTC v seznamu výjimek v nastavení **brány firewall pro připojení k Internetu** .
 
@@ -208,4 +208,4 @@ Ještě dalším řešením je instalace služby MSMQ s integrací služby Activ
 
 ## <a name="using-custom-msmq-bindings-with-receivecontext-enabled"></a>Použití vlastních vazeb MSMQ s povoleným kontextem ReceiveContext
 
-Když použijete vlastní vazbu služby MSMQ s povoleným <xref:System.ServiceModel.Channels.ReceiveContext>, zpracování příchozí zprávy používá vlákno fondu vláken, protože nativní služba MSMQ nepodporuje vstupně-výstupní doplňování pro asynchronní <xref:System.ServiceModel.Channels.ReceiveContext> přijímání. Důvodem je to, že zpracování takové zprávy používá interní transakce pro <xref:System.ServiceModel.Channels.ReceiveContext> a služba MSMQ nepodporuje asynchronní zpracování. Pokud chcete tento problém obejít, můžete do koncového bodu přidat <xref:System.ServiceModel.Description.SynchronousReceiveBehavior> pro vynucení synchronního zpracování nebo nastavení <xref:System.ServiceModel.Description.DispatcherSynchronizationBehavior.MaxPendingReceives%2A> na 1.
+Při použití vlastní vazby služby MSMQ s <xref:System.ServiceModel.Channels.ReceiveContext> povoleným zpracováním příchozí zprávy se používá vlákno fondu vláken, protože nativní služba MSMQ nepodporuje vstupně-výstupní doplňování pro asynchronní <xref:System.ServiceModel.Channels.ReceiveContext> příjem. Důvodem je to, že zpracování takové zprávy používá interní transakce pro <xref:System.ServiceModel.Channels.ReceiveContext> a služba MSMQ nepodporuje asynchronní zpracování. Pokud chcete tento problém obejít, můžete k tomuto <xref:System.ServiceModel.Description.SynchronousReceiveBehavior> koncovému bodu přidat objekt, který vynutí synchronní zpracování nebo nastaví hodnotu <xref:System.ServiceModel.Description.DispatcherSynchronizationBehavior.MaxPendingReceives%2A> 1.

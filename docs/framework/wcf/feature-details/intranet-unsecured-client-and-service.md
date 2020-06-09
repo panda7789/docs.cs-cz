@@ -5,36 +5,36 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f450f5d4-3547-47ec-9320-2809e6a12634
-ms.openlocfilehash: 2fa13a12a377cc16a95318367605d8b5d92769a7
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 591f7db0f6b4e928a991961d3bc7c404f41028bf
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184687"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84579277"
 ---
 # <a name="intranet-unsecured-client-and-service"></a>Nezabezpečený intranetový klient a služba
-Následující obrázek znázorňuje jednoduchou službu WCF (Windows Communication Foundation) vyvinutou za účelem poskytování informací o zabezpečené privátní síti aplikaci WCF. Zabezpečení není vyžadováno, protože data mají nízkou důležitost, očekává se, že síť bude ze své podstaty zabezpečená nebo zabezpečení poskytuje vrstva pod infrastrukturou WCF.  
+Následující ilustrace znázorňuje jednoduchou službu Windows Communication Foundation (WCF) vyvinutou pro poskytování informací o zabezpečené privátní síti pro aplikaci WCF. Zabezpečení není vyžadováno, protože data mají nízkou důležitost, očekává se, že síť bude podstatně zabezpečená, nebo že zabezpečení je zajištěno vrstvou pod infrastrukturou WCF.  
   
- ![Intranet nezabezpečené klienta a služby scénář.](./media/intranet-unsecured-client-and-service/unsecured-web-client-service.gif)  
+ ![Intranetový nezabezpečený scénář klienta a služby.](./media/intranet-unsecured-client-and-service/unsecured-web-client-service.gif)  
   
 |Charakteristika|Popis|  
 |--------------------|-----------------|  
-|Režim zabezpečení|Žádný|  
+|Režim zabezpečení|Žádné|  
 |Přenos|TCP|  
 |Vazba|<xref:System.ServiceModel.NetTcpBinding>|  
-|Vzájemná funkční spolupráce|Pouze WCF|  
-|Authentication|Žádný|  
-|Integrita|Žádný|  
-|Důvěrnost|Žádný|  
+|Interoperabilita|Pouze WCF|  
+|Authentication|Žádné|  
+|Integrita|Žádné|  
+|Důvěrnost|Žádné|  
   
 ## <a name="service"></a>Služba  
- Následující kód a konfigurace jsou určeny ke spuštění nezávisle. Proveďte jednu z těchto akcí:  
+ Následující kód a konfigurace jsou určeny ke spuštění nezávisle. Proveďte některou z následujících akcí:  
   
 - Vytvořte samostatnou službu pomocí kódu bez konfigurace.  
   
 - Vytvořte službu pomocí zadané konfigurace, ale nedefinujte žádné koncové body.  
   
-### <a name="code"></a>kód  
+### <a name="code"></a>Kód  
  Následující kód ukazuje, jak vytvořit koncový bod bez zabezpečení:  
   
  [!code-csharp[C_UnsecuredService#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_unsecuredservice/cs/source.cs#2)]
@@ -71,23 +71,23 @@ Následující obrázek znázorňuje jednoduchou službu WCF (Windows Communicat
 ```  
   
 ## <a name="client"></a>Klient  
- Následující kód a konfigurace jsou určeny ke spuštění nezávisle. Proveďte jednu z těchto akcí:  
+ Následující kód a konfigurace jsou určeny ke spuštění nezávisle. Proveďte některou z následujících akcí:  
   
-- Vytvořte samostatného klienta pomocí kódu (a klientského kódu).  
+- Vytvořte samostatného klienta pomocí kódu (a kódu klienta).  
   
-- Vytvořte klienta, který nedefinuje žádné adresy koncového bodu. Místo toho použijte konstruktor klienta, který bere název konfigurace jako argument. Například:  
+- Vytvořte klienta, který nedefinuje žádné adresy koncových bodů. Místo toho použijte konstruktor klienta, který převezme název konfigurace jako argument. Například:  
   
      [!code-csharp[C_SecurityScenarios#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#0)]
      [!code-vb[C_SecurityScenarios#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#0)]  
   
-### <a name="code"></a>kód  
- Následující kód ukazuje základní wcf klienta, který přistupuje k nezabezpečené koncový bod pomocí protokolu TCP.  
+### <a name="code"></a>Kód  
+ Následující kód ukazuje základního klienta WCF, který přistupuje k nezabezpečenému koncovému bodu pomocí protokolu TCP.  
   
  [!code-csharp[C_UnsecuredClient#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_unsecuredclient/cs/source.cs#2)]
  [!code-vb[C_UnsecuredClient#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_unsecuredclient/vb/source.vb#2)]  
   
 ### <a name="configuration"></a>Konfigurace  
- Pro klienta platí následující konfigurační kód:  
+ Následující konfigurační kód platí pro klienta:  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -115,5 +115,5 @@ Následující obrázek znázorňuje jednoduchou službu WCF (Windows Communicat
 ## <a name="see-also"></a>Viz také
 
 - <xref:System.ServiceModel.NetTcpBinding>
-- [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)
-- [Model zabezpečení pro infrastrukturu aplikací pro Windows Server](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Přehled zabezpečení](security-overview.md)
+- [Model zabezpečení pro Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

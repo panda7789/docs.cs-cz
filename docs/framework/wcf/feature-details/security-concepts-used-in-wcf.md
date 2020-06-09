@@ -2,12 +2,12 @@
 title: Koncepty zabezpečení používané ve službě WCF
 ms.date: 03/30/2017
 ms.assetid: 3b9dfcf5-4bf1-4f35-9070-723171c823a1
-ms.openlocfilehash: faf7b44c0ff1b207a7b017163ad2b032f26199b8
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: f852ba4e1100103289bc5fd879b19ebd40443b8d
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76743876"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84595177"
 ---
 # <a name="security-concepts-used-in-wcf"></a>Koncepty zabezpečení používané ve službě WCF
 Zabezpečení Windows Communication Foundation (WCF) je postavené na základě konceptů, které se už používají a nasazují v různých bezpečnostních infrastrukturách.  
@@ -31,7 +31,7 @@ Infrastruktura veřejných klíčů (PKI) je systém digitálních certifikátů
  Certifikáty X. 509 jsou primárním formulářem přihlašovacích údajů, který se používá v aplikacích zabezpečení. Další informace o certifikátech X. 509 najdete v tématu [certifikáty s veřejným klíčem x. 509](/windows/win32/seccertenroll/about-x-509-public-key-certificates). Certifikáty X. 509 se ukládají v úložišti certifikátů. Počítač se systémem Windows má několik druhů úložišť certifikátů, z nichž každý má jiný účel. Další informace o různých úložištích najdete v tématu [úložiště certifikátů](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc757138(v=ws.10)).  
   
 ## <a name="web-services-security-specifications"></a>Specifikace specifikace Web Services Security  
- Vazby definované systémem podporují mnoho běžně používaných specifikací zabezpečení webových služeb. Úplný seznam vazeb poskytovaných systémem a specifikací pro webové služby, které podporují, najdete v tématu [protokoly webových služeb podporované vazbami interoperability poskytovanými systémem](../../../../docs/framework/wcf/feature-details/web-services-protocols-supported-by-system-provided-interoperability-bindings.md) .  
+ Vazby definované systémem podporují mnoho běžně používaných specifikací zabezpečení webových služeb. Úplný seznam vazeb poskytovaných systémem a specifikací pro webové služby, které podporují, najdete v tématu [protokoly webových služeb podporované vazbami interoperability poskytovanými systémem](web-services-protocols-supported-by-system-provided-interoperability-bindings.md) .  
   
 ## <a name="access-control-mechanisms"></a>Mechanismy řízení přístupu  
  Služba WCF nabízí několik způsobů, jak řídit přístup ke službě nebo operaci. Mezi nimi patří  
@@ -46,9 +46,9 @@ Infrastruktura veřejných klíčů (PKI) je systém digitálních certifikátů
   
 5. Model identity  
   
- Další informace o těchto tématech najdete v [Access Controlch mechanismech](../../../../docs/framework/wcf/feature-details/access-control-mechanisms.md) .  
+ Další informace o těchto tématech najdete v [Access Controlch mechanismech](access-control-mechanisms.md) .  
   
 ## <a name="see-also"></a>Viz také
 
-- [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)
+- [Přehled zabezpečení](security-overview.md)
 - [Model zabezpečení pro Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

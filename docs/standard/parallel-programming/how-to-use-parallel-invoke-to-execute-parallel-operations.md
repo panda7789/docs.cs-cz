@@ -1,5 +1,6 @@
 ---
 title: 'Postupy: Použití algoritmu Parallel.Invoke k provádění paralelních operací'
+description: Podívejte se, jak použít metodu Parallel. Invoke v Task Parallel Library (TPL), která provádí paralelní operace se sdíleným zdrojem dat v rozhraní .NET.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - task parallelism in .NET
 - parallel programming, task parallelism
 ms.assetid: 6b3ecd79-dec9-4ce1-abf4-62e5392a59c6
-ms.openlocfilehash: 2b353fb8cb5e04ee4cab6b49f55539ecb40fab4f
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 084ade48b1406d23a11eb311739525f35ac973df
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290795"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84596342"
 ---
 # <a name="how-to-use-parallelinvoke-to-execute-parallel-operations"></a>Postupy: Použití algoritmu Parallel.Invoke k provádění paralelních operací
 

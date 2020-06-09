@@ -2,12 +2,12 @@
 title: Zpřístupnění informací
 ms.date: 03/30/2017
 ms.assetid: 4064c89f-afa6-444a-aa7e-807ef072131c
-ms.openlocfilehash: 0bcf1aa04d7ba7477a6c3f1559a77bbda1f974af
-ms.sourcegitcommit: 09b4090b78f52fd09b0e430cd4b26576f1fdf96e
+ms.openlocfilehash: a58ac4dd3715052031c7fb5c1da480c0d01396ea
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76211947"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84596861"
 ---
 # <a name="information-disclosure"></a>Zpřístupnění informací
 
@@ -19,7 +19,7 @@ Pokud používáte zabezpečení na úrovni zprávy přes transportní vrstvu HT
 
 ## <a name="policy-information"></a>Informace o zásadách
 
-Zachování zabezpečení zásad je důležité, zejména ve federačních scénářích, ve kterých se v zásadách zveřejňují citlivé požadavky na vydané tokeny nebo informace vystavitele tokenů. V těchto případech doporučujeme zajistit zabezpečení koncového bodu zásad federovaného služby a zabránit tak útočníkům v získání informací o službě, jako je například typ deklarací identity, které mají být vloženy do vydaného tokenu, nebo přesměrování klientů na škodlivé vydavatele tokenů. Útočník by například mohl zjistit páry uživatelského jména a hesla tím, že znovu nakonfiguruje federovaný řetěz důvěryhodnosti tak, aby ukončil vystavitele, který provedl útok prostředníkem. Také se doporučuje, aby federované klienty, kteří získají své vazby prostřednictvím načtení zásad, ověřili, že důvěřují vystavitelům v získaném federovaném řetězu důvěryhodných certifikátů. Další informace o federačních scénářích najdete v tématu [federace](../../../../docs/framework/wcf/feature-details/federation.md).
+Zachování zabezpečení zásad je důležité, zejména ve federačních scénářích, ve kterých se v zásadách zveřejňují citlivé požadavky na vydané tokeny nebo informace vystavitele tokenů. V těchto případech doporučujeme zajistit zabezpečení koncového bodu zásad federovaného služby a zabránit tak útočníkům v získání informací o službě, jako je například typ deklarací identity, které mají být vloženy do vydaného tokenu, nebo přesměrování klientů na škodlivé vydavatele tokenů. Útočník by například mohl zjistit páry uživatelského jména a hesla tím, že znovu nakonfiguruje federovaný řetěz důvěryhodnosti tak, aby ukončil vystavitele, který provedl útok prostředníkem. Také se doporučuje, aby federované klienty, kteří získají své vazby prostřednictvím načtení zásad, ověřili, že důvěřují vystavitelům v získaném federovaném řetězu důvěryhodných certifikátů. Další informace o federačních scénářích najdete v tématu [federace](federation.md).
 
 ## <a name="memory-dumps-can-reveal-claim-information"></a>Výpisy paměti můžou odhalit informace o deklaraci identity.
 
@@ -31,7 +31,7 @@ Adresa koncového bodu obsahuje informace potřebné ke komunikaci s koncovým b
 
 ## <a name="certificates-transferred-unencrypted"></a>Přenesené certifikáty nejsou šifrované
 
-Když k ověření klienta použijete certifikát X. 509, certifikát se přenese v nešifrovaném formátu v hlavičce SOAP. Uvědomte si to jako potenciální zpřístupnění identifikovatelných osobních údajů (PII). Nejedná se o problém s režimem `TransportWithMessageCredential`, kde je celá zpráva zašifrovaná pomocí zabezpečení na úrovni přenosu.
+Když k ověření klienta použijete certifikát X. 509, certifikát se přenese v nešifrovaném formátu v hlavičce SOAP. Uvědomte si to jako potenciální zpřístupnění identifikovatelných osobních údajů (PII). Nejedná se o problém `TransportWithMessageCredential` s režimem, ve kterém je zašifrovaná celá zpráva pomocí zabezpečení na úrovni přenosu.
 
 ## <a name="service-references"></a>Odkazy na služby
 
@@ -45,17 +45,17 @@ Zmírnění rizik zahrnuje následující:
 
 ## <a name="ntlm"></a>NTLM
 
-Ve výchozím nastavení používá ověřování systému Windows v prostředí domény Windows k ověřování a autorizaci uživatelů protokol Kerberos. Pokud protokol Kerberos z nějakého důvodu nemůžete použít, použije se jako záložní program NT LAN Manager (NTLM). Toto chování můžete zakázat nastavením vlastnosti <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A> na `false`. Mezi problémy, které je potřeba vědět při povolování protokolu NTLM, patří:
+Ve výchozím nastavení používá ověřování systému Windows v prostředí domény Windows k ověřování a autorizaci uživatelů protokol Kerberos. Pokud protokol Kerberos z nějakého důvodu nemůžete použít, použije se jako záložní program NT LAN Manager (NTLM). Toto chování můžete zakázat nastavením <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A> vlastnosti na `false` . Mezi problémy, které je potřeba vědět při povolování protokolu NTLM, patří:
 
-- Protokol NTLM zveřejňuje uživatelské jméno klienta. Pokud se uživatelské jméno musí uchovávat jako důvěrné, nastavte vlastnost `AllowNTLM` vazby na `false`.
+- Protokol NTLM zveřejňuje uživatelské jméno klienta. Pokud je nutné, aby bylo uživatelské jméno uchováváno důvěrné, pak nastavte `AllowNTLM` vlastnost ve vazbě na `false` .
 
 - Protokol NTLM neposkytuje ověřování serveru. Proto klient nemůže zajistit, aby při použití protokolu NTLM jako ověřovacího protokolu komunikoval se správnou službou.
 
 ### <a name="specifying-client-credentials-or-invalid-identity-forces-ntlm-usage"></a>Zadání přihlašovacích údajů klienta nebo neplatné identity vynutí použití protokolu NTLM
 
-Při vytváření klienta, zadání přihlašovacích údajů klienta bez názvu domény nebo zadání neplatné identity serveru způsobí, že se protokol NTLM použije místo protokolu Kerberos (Pokud je vlastnost `AllowNtlm` nastavená na `true`). Vzhledem k tomu, že protokol NTLM neprovádí ověřování serveru, mohou být informace potenciálně zveřejněny.
+Při vytváření klienta, zadání přihlašovacích údajů klienta bez názvu domény nebo zadání neplatné identity serveru způsobí, že se protokol NTLM použije místo protokolu Kerberos (Pokud `AllowNtlm` je vlastnost nastavená na hodnotu `true` ). Vzhledem k tomu, že protokol NTLM neprovádí ověřování serveru, mohou být informace potenciálně zveřejněny.
 
-Například je možné zadat přihlašovací údaje klienta Windows bez názvu domény, jak je znázorněno v následujícím kódu vizuálu C# .
+Například je možné zadat přihlašovací údaje klienta Windows bez názvu domény, jak je znázorněno v následujícím kódu jazyka Visual C#.
 
 ```csharp
 MyChannelFactory.Credentials.Windows.ClientCredential = new System.Net.NetworkCredential("username", "password");
@@ -63,13 +63,13 @@ MyChannelFactory.Credentials.Windows.ClientCredential = new System.Net.NetworkCr
 
 Kód neurčuje název domény, a proto bude použit protokol NTLM.
 
-Pokud je zadaná doména, ale pomocí funkce identity koncového bodu je zadaný neplatný hlavní název služby, pak se použije NTLM. Další informace o tom, jak se určuje identita koncového bodu, najdete v tématu [Identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).
+Pokud je zadaná doména, ale pomocí funkce identity koncového bodu je zadaný neplatný hlavní název služby, pak se použije NTLM. Další informace o tom, jak se určuje identita koncového bodu, najdete v tématu [Identita a ověřování služby](service-identity-and-authentication.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Důležité informace o zabezpečení](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)
-- [Zvýšení oprávnění](../../../../docs/framework/wcf/feature-details/elevation-of-privilege.md)
-- [Útok DoS](../../../../docs/framework/wcf/feature-details/denial-of-service.md)
-- [Falšování](../../../../docs/framework/wcf/feature-details/tampering.md)
-- [Nepodporované scénáře](../../../../docs/framework/wcf/feature-details/unsupported-scenarios.md)
-- [Útoky opakováním](../../../../docs/framework/wcf/feature-details/replay-attacks.md)
+- [Otázky zabezpečení](security-considerations-in-wcf.md)
+- [Zvýšení oprávnění](elevation-of-privilege.md)
+- [Útok DoS](denial-of-service.md)
+- [Falšování](tampering.md)
+- [Nepodporované scénáře](unsupported-scenarios.md)
+- [Útoky opakováním](replay-attacks.md)

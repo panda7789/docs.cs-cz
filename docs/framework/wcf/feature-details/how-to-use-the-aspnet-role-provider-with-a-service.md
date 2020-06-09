@@ -2,30 +2,30 @@
 title: 'Postupy: Použití zprostředkovatele rolí ASP.NET se službou'
 ms.date: 03/30/2017
 ms.assetid: 88d33a81-8ac7-48de-978c-5c5b1257951e
-ms.openlocfilehash: ddfedeb2491998f64ab241ceba303d50d0714351
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 45eeda046e877b4379d7d0e5edd90fac305f5e44
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184773"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84595294"
 ---
 # <a name="how-to-use-the-aspnet-role-provider-with-a-service"></a>Postupy: Použití zprostředkovatele rolí ASP.NET se službou
 
-Poskytovatel rolí ASP.NET (ve spojení s poskytovatelem členství ASP.NET) je funkce, která umožňuje vývojářům ASP.NET vytvářet weby, které uživatelům umožňují vytvořit účet s webem a přiřadit role pro účely autorizace. Pomocí této funkce může každý uživatel vytvořit účet s webem a přihlásit se pro výhradní přístup k webu a jeho službám. To je na rozdíl od zabezpečení systému Windows, který vyžaduje, aby uživatelé měli účty v doméně systému Windows. Místo toho může web a jeho služby používat každý uživatel, který zadá svá pověření (kombinace uživatelského jména a hesla).  
+Poskytovatel rolí ASP.NET (ve spojení se zprostředkovatelem členství ASP.NET) je funkce, která umožňuje vývojářům ASP.NET vytvářet weby, které uživatelům umožňují vytvořit účet s lokalitou a přiřadit k nim role pro účely autorizace. Pomocí této funkce může každý uživatel vytvořit účet s webem a přihlásit se pro výhradní přístup k webu a jeho službám. To je na rozdíl od zabezpečení systému Windows, které vyžaduje, aby uživatelé měli účty v doméně systému Windows. Místo toho může web a jeho služby používat libovolný uživatel, který poskytuje své přihlašovací údaje (kombinace uživatelské jméno/heslo).  
   
-Ukázková aplikace naleznete v [tématu Členství a zprostředkovatel role](../../../../docs/framework/wcf/samples/membership-and-role-provider.md). Další informace o funkci ASP.NET poskytovatele členství naleznete v [tématu How to: Use the ASP.NET Membership Provider](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-membership-provider.md).  
+Ukázkovou aplikaci najdete v tématu věnovaném [členství a zprostředkovateli rolí](../samples/membership-and-role-provider.md). Další informace o funkci poskytovatele členství v ASP.NET najdete v tématu [How to: use the ASP.NET Membership Provider](how-to-use-the-aspnet-membership-provider.md).  
   
-Funkce zprostředkovatele rolí používá k ukládání informací o uživateli databázi serveru SQL Server. Vývojáři Windows Communication Foundation (WCF) mohou tyto funkce využívat z bezpečnostních důvodů. Při integraci do aplikace WCF musí uživatelé zadat kombinaci uživatelského jména a hesla do klientské aplikace WCF. Chcete-li povolit WCF používat databázi, <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior> musíte vytvořit <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior.PrincipalPermissionMode%2A> instanci třídy, nastavit její vlastnost <xref:System.ServiceModel.Description.PrincipalPermissionMode.UseAspNetRoles>a <xref:System.ServiceModel.ServiceHost> přidat instanci do kolekce chování, která je hostitelem služby.  
+Funkce poskytovatele rolí používá k ukládání informací o uživateli databázi SQL Server. Vývojáři Windows Communication Foundation (WCF) můžou využít výhod těchto funkcí z hlediska zabezpečení. Při integraci do aplikace WCF musí uživatelé do klientské aplikace WCF dodat kombinaci uživatelského jména a hesla. Chcete-li povolit, aby služba WCF používala databázi, je nutné vytvořit instanci <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior> třídy, nastavit její <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior.PrincipalPermissionMode%2A> vlastnost na a <xref:System.ServiceModel.Description.PrincipalPermissionMode.UseAspNetRoles> přidat instanci do kolekce chování <xref:System.ServiceModel.ServiceHost> , která je hostitelem služby.  
   
-## <a name="configure-the-role-provider"></a>Konfigurace zprostředkovatele rolí  
+## <a name="configure-the-role-provider"></a>Konfigurace poskytovatele rolí  
   
-1. V souboru Web.config pod `system.web` elementem <`roleManager`> přidejte `enabled` element `true`<> a nastavte jeho atribut na .  
+1. V souboru Web. config v rámci `system.web` prvku < > přidejte `roleManager` prvek < > a nastavte jeho `enabled` atribut na hodnotu `true` .  
   
-2. Nastavte `defaultProvider` atribut `SqlRoleProvider`na .  
+2. Nastavte `defaultProvider` atribut na `SqlRoleProvider` .  
   
-3. Jako podřízený prvek `roleManager` <> přidejte prvek> <. `providers`  
+3. Jako podřízený `roleManager` prvku <> přidejte `providers` prvek <>.  
   
-4. Jako podřízený prvek `providers` <> přidejte `add` prvek <> s následujícími `name` `type`atributy nastavenými na příslušné hodnoty: , , `connectionStringName`a `applicationName`, jak je znázorněno v následujícím příkladu.  
+4. Jako podřízený `providers` prvku <> přidejte `add` prvek <> s následujícími atributy nastavenými na příslušné hodnoty: `name` , `type` , `connectionStringName` a `applicationName` , jak je znázorněno v následujícím příkladu.  
   
     ```xml  
     <!-- Configure the Sql Role Provider. -->  
@@ -40,21 +40,21 @@ Funkce zprostředkovatele rolí používá k ukládání informací o uživateli
     </roleManager>  
     ```  
   
-## <a name="configure-the-service-to-use-the-role-provider"></a>Konfigurace služby tak, aby používala zprostředkovatele rolí  
+## <a name="configure-the-service-to-use-the-role-provider"></a>Nakonfigurujte službu tak, aby používala poskytovatele rolí.  
   
-1. Do souboru Web.config přidejte prvek [ \<system.serviceModel>.](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md)  
+1. V souboru Web. config přidejte [\<system.serviceModel>](../../configure-apps/file-schema/wcf/system-servicemodel.md) element.  
   
-2. Přidejte [ \<prvek chování>](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md) `system.ServiceModel` prvku <>.  
+2. Přidejte [\<behaviors>](../../configure-apps/file-schema/wcf/behaviors.md) prvek do `system.ServiceModel` prvku <>.  
   
-3. Přidejte [ \<>serviceBehaviors](../../../../docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md) `behaviors` do prvku <>.  
+3. Přidejte [\<serviceBehaviors>](../../configure-apps/file-schema/wcf/servicebehaviors.md) do `behaviors` prvku <>.  
   
-4. Přidejte [ \<prvek>](../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md) chování `name` a nastavte atribut na příslušnou hodnotu.  
+4. Přidejte [\<behavior>](../../configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md) element a nastavte `name` atribut na odpovídající hodnotu.  
   
-5. Přidejte [ \<>serviceAuthorization](../../../../docs/framework/configure-apps/file-schema/wcf/serviceauthorization-element.md) `behavior` do prvku <>.  
+5. Přidejte [\<serviceAuthorization>](../../configure-apps/file-schema/wcf/serviceauthorization-element.md) do `behavior` prvku <>.  
   
-6. Nastavte `principalPermissionMode` atribut `UseAspNetRoles`na .  
+6. Nastavte `principalPermissionMode` atribut na `UseAspNetRoles` .  
   
-7. Nastavte `roleProviderName` atribut `SqlRoleProvider`na . Následující příklad ukazuje fragment konfigurace.  
+7. Nastavte `roleProviderName` atribut na `SqlRoleProvider` . Následující příklad ukazuje fragment konfigurace.  
   
     ```xml  
     <behaviors>  
@@ -69,5 +69,5 @@ Funkce zprostředkovatele rolí používá k ukládání informací o uživateli
   
 ## <a name="see-also"></a>Viz také
 
-- [Členství a zprostředkovatel rolí](../../../../docs/framework/wcf/samples/membership-and-role-provider.md)
-- [Postupy: Používání poskytovatele členství ASP.NET](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-membership-provider.md)
+- [Členství a poskytovatel rolí](../samples/membership-and-role-provider.md)
+- [Postupy: Používání poskytovatele členství ASP.NET](how-to-use-the-aspnet-membership-provider.md)

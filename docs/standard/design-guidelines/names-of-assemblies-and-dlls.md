@@ -1,5 +1,6 @@
 ---
 title: Názvy sestavení a knihoven DLL
+description: Přečtěte si pokyny pro pojmenovávání sestavení a knihovny DLL (Dynamic-Link Library). Sestavení může zahrnovat jeden nebo více souborů, ale obvykle mapuje 1:1 pomocí knihovny DLL.
 ms.date: 10/22/2008
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - assemblies [.NET Framework], names
 - DLLs, names
 ms.assetid: e800b610-31b4-4949-9c14-cb60e9f254be
-ms.openlocfilehash: 138ae8154b0d10fb813f0c98ceb7c58a2471b780
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: de7ce3ee774d4598521d7156d0d660c3fe30154c
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291952"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84594475"
 ---
 # <a name="names-of-assemblies-and-dlls"></a>Názvy sestavení a knihoven DLL
 Sestavení je jednotka nasazení a identita pro programy spravovaného kódu. Přestože sestavení mohou zahrnovat jeden nebo více souborů, obvykle sestavení mapuje 1:1 pomocí knihovny DLL. Proto tato část popisuje pouze konvence vytváření názvů knihoven DLL, které je možné namapovat na zásady vytváření názvů sestavení.

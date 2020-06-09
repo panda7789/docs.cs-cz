@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - HTTP activation [WCF]
 ms.assetid: 33a7054a-73ec-464d-83e5-b203aeded658
-ms.openlocfilehash: e71664b4361ba28a50b29499585b20a8adbaefd2
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: f7a846b076691394cb855e4978e890cdcac76eb2
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75964457"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597030"
 ---
 # <a name="how-to-install-and-configure-wcf-activation-components"></a>Postupy: Instalace a konfigurace aktivačních komponent WCF
 
@@ -19,7 +19,7 @@ Toto téma popisuje kroky potřebné k nastavení aktivační služby procesů s
 
 - Konfigurace měla podporovat protokol jiného typu než HTTP. Následující postup nakonfiguruje Windows Vista pro aktivaci protokolem TCP.
 
-Po instalaci a konfiguraci nástroje se podívejte na téma [Postupy: hostování služby WCF ve službě was](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md) pro postupy vytvoření služby WCF, která zveřejňuje koncový bod bez http, který využívá.
+Po instalaci a konfiguraci nástroje se podívejte na téma [Postupy: hostování služby WCF ve službě was](how-to-host-a-wcf-service-in-was.md) pro postupy vytvoření služby WCF, která zveřejňuje koncový bod bez http, který využívá.
 
 ## <a name="to-install-the-wcf-non-http-activation-components"></a>Instalace součástí technologie WCF pro aktivaci bez protokolu HTTP
 
@@ -52,7 +52,7 @@ Po instalaci a konfiguraci nástroje se podívejte na téma [Postupy: hostován�
     ```
 
     > [!NOTE]
-    > Tento příkaz je jedním řádkem textu. Tento příkaz umožňuje, aby se aplikace/\<*WCF aplikace*> k dispozici pomocí `http://localhost/<WCF Application>` i `net.tcp://localhost/<WCF Application>`.
+    > Tento příkaz je jedním řádkem textu. Tento příkaz umožňuje, \<*WCF Application*> aby k aplikaci/aplikace bylo možné pracovat pomocí obou `http://localhost/<WCF Application>` i `net.tcp://localhost/<WCF Application>` .
 
      Odeberte vazbu na lokalitu NET. TCP, kterou jste přidali pro tuto ukázku.
 
@@ -101,9 +101,9 @@ Po instalaci a konfiguraci nástroje se podívejte na téma [Postupy: hostován�
     > [!NOTE]
     > Tento příkaz je jedním řádkem textu.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Aktivace protokolu TCP](../../../../docs/framework/wcf/samples/tcp-activation.md)
-- [Aktivace služby MSMQ](../../../../docs/framework/wcf/samples/msmq-activation.md)
-- [Aktivace pojmenovaného kanálu](../../../../docs/framework/wcf/samples/namedpipe-activation.md)
+- [Aktivace protokolem TCP](../samples/tcp-activation.md)
+- [Aktivace MSMQ](../samples/msmq-activation.md)
+- [Aktivace pojmenovaného kanálu](../samples/namedpipe-activation.md)
 - [Funkce hostování technologie Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677189(v=azure.10))

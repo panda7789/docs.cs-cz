@@ -5,62 +5,62 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 1f9bcd9b-8f8f-47fa-8f1e-0d47236eb800
-ms.openlocfilehash: e191bc6c75c8c04e2cdf32d80673c32499b5736d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 179591c272685771fbde12e161cb38b1bd969052
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64613127"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597199"
 ---
 # <a name="how-to-access-a-wse-30-service-with-a-wcf-client"></a>Postupy: Přístup ke službě WSE 3.0 pomocí klienta WCF
-Klienti Windows Communication Foundation (WCF) jsou přenosový kompatibilní s Web Services vylepšení (WSE) 3.0 pro služby rozhraní Microsoft .NET, když klienti WCF umožňují použít verzi ze srpna 2004 specifikace WS-Addressing. Ale WSE 3.0 services nepodporuje metadata exchange (MEX) protokol, tak při použití [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) pro vytvoření třídy klienta WCF, se nepoužijí nastavení zabezpečení pro generované Klient WCF. Proto je nutné zadat nastavení zabezpečení, že WSE 3.0 služba vyžaduje, aby po vygenerování klienta WCF.  
+Klienti Windows Communication Foundation (WCF) jsou kompatibilní s rozšířeními webových služeb (WSE) 3,0 pro služby Microsoft .NET, když jsou klienti WCF nakonfigurovaní tak, aby používali specifikaci WS-Addressing ve verzi ze srpna 2004. Služby WSE 3,0 ale nepodporují protokol MEX (Metadata Exchange), takže pokud k vytvoření třídy klienta WCF použijete nástroj pro tvorbu [metadat (Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) , nastavení zabezpečení se nepoužijí pro vygenerovaného klienta WCF. Proto je nutné zadat nastavení zabezpečení, která služba WSE 3,0 vyžaduje po vygenerování klienta služby WCF.  
   
- Vezměte v úvahu požadavky službě WSE 3.0 a interoperabilní požadavky mezi službou WSE 3.0 a klienta WCF pomocí vlastní vazby můžete použít nastavení zabezpečení. Tyto požadavky na interoperabilitu zahrnují výše uvedené použití ze srpna 2004 specifikace WS-Addressing a WSE 3.0default zprávy ochranu <xref:System.ServiceModel.Security.MessageProtectionOrder.SignBeforeEncrypt>. Je výchozí ochrana zprávy WCF <xref:System.ServiceModel.Security.MessageProtectionOrder.SignBeforeEncryptAndEncryptSignature>. Toto téma podrobně popisuje, jak vytvořit vazby WCF, která spolupracuje se službou WSE 3.0. WCF obsahuje také ukázky, která zahrnuje tuto vazbu. Další informace o této ukázce najdete v tématu [spolupráce s webovými službami ASMX](../../../../docs/framework/wcf/samples/interoperating-with-asmx-web-services.md).  
+ Tato nastavení zabezpečení můžete uplatnit pomocí vlastní vazby, která bude brát v úvahu požadavky služby WSE 3,0 a interoperabilní požadavky mezi službou WSE 3,0 a klientem WCF. Tyto požadavky na interoperabilitu zahrnují výše uvedené použití specifikace WS-Addressing ze srpna 2004 a výchozí ochranu zpráv WSE 3.0 <xref:System.ServiceModel.Security.MessageProtectionOrder.SignBeforeEncrypt> . Výchozí ochrana zpráv pro WCF je <xref:System.ServiceModel.Security.MessageProtectionOrder.SignBeforeEncryptAndEncryptSignature> . Toto téma podrobně popisuje, jak vytvořit vazbu WCF, která spolupracuje se službou WSE 3,0. WCF také poskytuje ukázku, která zahrnuje tuto vazbu. Další informace o této ukázce najdete v tématu [spolupráce s webovými službami ASMX](../samples/interoperating-with-asmx-web-services.md).  
   
-### <a name="to-access-a-wse-30-web-service-with-a-wcf-client"></a>Přístup ke službě WSE 3.0 Web pomocí klienta WCF  
+### <a name="to-access-a-wse-30-web-service-with-a-wcf-client"></a>Přístup k webové službě WSE 3,0 pomocí klienta WCF  
   
-1. Spustit [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) k vytvoření klienta WCF pro WSE 3.0 webovou službu.  
+1. Spusťte [Nástroj Svcutil. exe](../servicemodel-metadata-utility-tool-svcutil-exe.md) pro vytváření klienta WCF pro webovou službu WSE 3,0.  
   
-     WSE 3.0 webové služby vytvoří se klient WCF. Protože WSE 3.0 nepodporuje protokol MEX, nemůžete použít nástroj načíst požadavky na zabezpečení pro webovou službu. Vývojář aplikace musíte přidat nastavení zabezpečení pro klienta.  
+     Pro webovou službu WSE 3,0 se vytvoří klient WCF. Vzhledem k tomu, že WSE 3,0 nepodporuje protokol MEX, nemůžete použít nástroj k načtení požadavků zabezpečení pro webovou službu. Vývojář aplikace musí přidat nastavení zabezpečení pro klienta.  
   
-     Další informace o vytvoření klienta WCF najdete v tématu [jak: Vytvoření klienta](../../../../docs/framework/wcf/how-to-create-a-wcf-client.md).  
+     Další informace o vytváření klienta WCF naleznete v tématu [Postupy: Vytvoření klienta](../how-to-create-a-wcf-client.md).  
   
-2. Vytvořte třídu, která představuje vazbu, která může komunikovat s WSE 3.0 Web services.  
+2. Vytvořte třídu, která představuje vazbu, která může komunikovat s webovými službami WSE 3,0.  
   
-     Následující třídy je součástí [spolupráce s WSE](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms752257%28v=vs.90%29) vzorku:  
+     Následující třída je součástí [spolupracujícího s WSE](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms752257%28v=vs.90%29) Sample:  
   
     1. Vytvořte třídu, která je odvozena od třídy <xref:System.ServiceModel.Channels.Binding>.  
   
-         Následující příklad kódu vytvoří třídu s názvem `WseHttpBinding` , který je odvozen od <xref:System.ServiceModel.Channels.Binding> třídy.  
+         Následující příklad kódu vytvoří třídu s názvem `WseHttpBinding` , která je odvozena z <xref:System.ServiceModel.Channels.Binding> třídy.  
   
          [!code-csharp[c_WCFClientToWSEService#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_wcfclienttowseservice/cs/wsehttpbinding.cs#1)]
          [!code-vb[c_WCFClientToWSEService#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_wcfclienttowseservice/vb/wsehttpbinding.vb#1)]  
   
-    2. Přidání vlastnosti do třídy, zadáte na klíč kontrolní výraz WSE používané službě WSE, určuje, zda jsou požadovány odvozené klíče, určuje, zda se používají zabezpečené relace, určuje, zda jsou požadovány nacházejí potvrzení podpisů a nastavení ochrany zprávy. Ve službě WSE 3.0 na klíč tvrzení určuje požadavky na zabezpečení pro klientské nebo webové službě – podobně jako režim ověřování vazby ve službě WCF.  
+    2. Přidejte do třídy vlastnosti, které určují kontrolní výraz WSE klíč používaný službou WSE, zda jsou povinné odvozené klíče, zda jsou používány zabezpečené relace, zda jsou vyžadovány potvrzení podpisů a nastavení ochrany zpráv. V WSE 3,0 kontrolní výraz klíč určuje požadavky na zabezpečení pro klienta nebo webovou službu, podobně jako režim ověřování vazby ve službě WCF.  
   
-         Následující příklad kódu definuje `SecurityAssertion`, `RequireDerivedKeys`, `EstablishSecurityContext`, a `MessageProtectionOrder` vlastnosti, které určují kompletních kontrolního výrazu WSE, zda odvozené klíče jsou požadovány, zda se používají zabezpečené relace, ať už podpis potvrzení jsou povinné a nastavení ochrany zprávy, v uvedeném pořadí.  
+         Následující příklad kódu definuje `SecurityAssertion` `RequireDerivedKeys` vlastnosti,, `EstablishSecurityContext` a `MessageProtectionOrder` , které určují kontrolní výraz WSE klíč, zda jsou povinné odvozené klíče, zda jsou používány zabezpečené relace, zda jsou vyžadovány potvrzení podpisů a nastavení ochrany zpráv v uvedeném pořadí.  
   
          [!code-csharp[c_WCFClientToWSEService#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_wcfclienttowseservice/cs/wsehttpbinding.cs#3)]
          [!code-vb[c_WCFClientToWSEService#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_wcfclienttowseservice/vb/wsehttpbinding.vb#3)]  
   
-    3. Přepsat <xref:System.ServiceModel.Channels.Binding.CreateBindingElements%2A> metody nastavte vlastnosti vazby.  
+    3. Přepsat <xref:System.ServiceModel.Channels.Binding.CreateBindingElements%2A> metodu pro nastavení vlastností vazby.  
   
-         Následující příklad kódu určuje přenos, kódování zpráv a nastavení ochrany zpráv hodnoty s informacemi `SecurityAssertion` a `MessageProtectionOrder` vlastnosti.  
+         Následující příklad kódu určuje přenos, kódování zpráv a nastavení ochrany zpráv pomocí získání hodnot `SecurityAssertion` `MessageProtectionOrder` vlastností a.  
   
          [!code-csharp[c_WCFClientToWSEService#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_wcfclienttowseservice/cs/wsehttpbinding.cs#2)]
          [!code-vb[c_WCFClientToWSEService#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_wcfclienttowseservice/vb/wsehttpbinding.vb#2)]  
   
-3. V kódu aplikace klienta přidejte kód pro nastavení vlastnosti vazby.  
+3. V kódu klientské aplikace přidejte kód pro nastavení vlastností vazby.  
   
-     Následující příklad kódu určuje, zda klient WCF musí používat zprávy ochrany a ověřování podle definice ve WSE 3.0 `AnonymousForCertificate` kontrolního výrazu zabezpečení na klíč. Navíc se vyžaduje zabezpečených relací a odvozených klíčů.  
+     Následující příklad kódu určuje, že klient služby WCF musí používat ochranu zpráv a ověřování podle definice `AnonymousForCertificate` kontrolního výrazu zabezpečení WSE 3,0 klíč. Navíc se vyžadují zabezpečené relace a odvozené klíče.  
   
      [!code-csharp[c_WCFClientToWSEService#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_wcfclienttowseservice/cs/client.cs#4)]
      [!code-vb[c_WCFClientToWSEService#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_wcfclienttowseservice/vb/client.vb#4)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu definuje vlastní vazby, které zpřístupní vlastnosti, které odpovídají vlastnosti kontrolní výraz WSE 3.0 na klíč zabezpečení. Tento vlastní vazby, který se nazývá `WseHttpBinding`, se pak použije k určení vlastností vazby pro klienta WCF, který komunikuje s ukázkou WSSecurityAnonymous WSE 3.0 rychlý start.  
+ Následující příklad kódu definuje vlastní vazbu, která zveřejňuje vlastnosti, které odpovídají vlastnostem kontrolního výrazu zabezpečení WSE 3,0 klíč. Tato vlastní vazba, která je pojmenována `WseHttpBinding` , se pak používá k určení vlastností vazby pro klienta WCF, který komunikuje s ukázkou WSSECURITYANONYMOUS WSE 3,0 Starting.  
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.ServiceModel.Channels.Binding>
 - [Spolupráce s WSE](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms752257%28v=vs.90%29)

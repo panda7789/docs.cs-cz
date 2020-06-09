@@ -2,43 +2,43 @@
 title: Trasování
 ms.date: 03/30/2017
 ms.assetid: 2649eae2-dbf8-421c-9cfb-cfa9e01de87f
-ms.openlocfilehash: 3520d2aca07f988c45d65d5d8113d05292a37638
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 569a97dc21a434cd711ad4c735f828df588f3af7
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64664949"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84578978"
 ---
 # <a name="tracing"></a>Trasování
-Windows Communication Foundation (WCF) poskytuje instrumentace aplikací a diagnostických dat pro sledování chyb a analýzu. Trasování můžete použít namísto ladicí program pochopit, jak se aplikace chová nebo proč chyb. Můžete také porovnat chyb a zpracování mezi komponentami a poskytovalo vám začátku do konce.  
+Windows Communication Foundation (WCF) poskytuje instrumentaci aplikace a diagnostická data pro monitorování a analýzu chyb. K pochopení, jak se aplikace chová, nebo proč chyby, můžete použít trasování namísto ladicího programu. K zajištění komplexního prostředí můžete také korelovat chyby a zpracování napříč komponentami.  
   
- WCF následující výstupní data odesílá do pro diagnostické trasování:  
+ WCF vyprodukuje následující data pro diagnostické trasování:  
   
-- Trasování pro proces milníky pro všechny součásti aplikace, jako je volání operace kód výjimky, upozornění a dalších operací zpracování událostí."  
+- Trasování pro milníky procesů napříč všemi komponentami aplikací, například volání operací, výjimky kódu, upozornění a další významné události zpracování. "  
   
-- Události chyb Windows při trasování funkce nepracuje správně.  
+- Chybové události systému Windows, pokud funkce trasování nepracuje správně.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Konfigurace trasování](../../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)  
+ [Konfigurace trasování](configuring-tracing.md)  
   
- Toto téma popisuje, jak nakonfigurovat trasování na různých úrovních tak, aby odpovídala vašim potřebám.  
+ Toto téma popisuje, jak můžete nakonfigurovat trasování na různých úrovních, aby vyhovovalo vašim konkrétním potřebám.  
   
- [Komplexní trasování](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing.md)  
+ [Komplexní trasování](end-to-end-tracing.md)  
   
- Tato část popisuje, jak můžete pomocí aktivity trasování a šíření pro korelaci začátku do konce pomáhat ladění.  
+ V této části se dozvíte, jak můžete využít trasování aktivit a šíření pro ucelenou korelaci pro usnadnění ladění.  
   
- [Řešení problémů s aplikací pomocí trasování](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [Řešení potíží s aplikací pomocí trasování](using-tracing-to-troubleshoot-your-application.md)  
   
- Tato část popisuje, jak můžete pomocí trasování pro ladění vaší aplikace.  
+ Tato část popisuje, jak lze pomocí trasování ladit aplikaci.  
   
- [Otázky zabezpečení a užitečné tipy pro trasování](../../../../../docs/framework/wcf/diagnostics/tracing/security-concerns-and-useful-tips-for-tracing.md)  
+ [Otázky zabezpečení a užitečné tipy pro trasování](security-concerns-and-useful-tips-for-tracing.md)  
   
- Toto téma popisuje, jak můžete chránit citlivé informace z vystaven i užitečné tipy při použití webového hostitele.  
+ V tomto tématu se dozvíte, jak můžete při použití webhosta chránit citlivé informace, které se zveřejňují, a užitečné tipy.  
   
- [Trasování – přehled](../../../../../docs/framework/wcf/diagnostics/tracing/traces-reference.md)  
+ [Trasování – přehled](traces-reference.md)  
   
- Toto téma obsahuje seznam všech trasování vygenerovaná WCF.  
+ Toto téma obsahuje seznam všech trasování generovaných službou WCF.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md)
+- [Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../service-trace-viewer-tool-svctraceviewer-exe.md)

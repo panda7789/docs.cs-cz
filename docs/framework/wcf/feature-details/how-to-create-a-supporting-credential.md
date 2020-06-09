@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: vytvoření podpůrného pověření'
+title: 'Postupy: Vytvoření podpůrných přihlašovacích údajů'
 ms.date: 03/30/2017
 ms.assetid: d0952919-8bb4-4978-926c-9cc108f89806
-ms.openlocfilehash: 3f33bf5a78c575237ee4bc609a482a81fd30fc53
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: b8e7ddcd6118c77e14e090a0b1fa8d65aeb8e3df
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75964550"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597147"
 ---
-# <a name="how-to-create-a-supporting-credential"></a>Postupy: vytvoření podpůrného pověření
+# <a name="how-to-create-a-supporting-credential"></a>Postupy: Vytvoření podpůrných přihlašovacích údajů
 Je možné mít vlastní schéma zabezpečení, které vyžaduje více než jedno přihlašovací údaje. Například služba může vyžadovat od klienta nejen uživatelské jméno a heslo, ale také přihlašovací údaje, které klienta prokáže za stáří 18. Druhá přihlašovací údaje jsou *podpůrná pověření*. Toto téma vysvětluje, jak implementovat takové přihlašovací údaje v klientovi Windows Communication Foundation (WCF).  
   
 > [!NOTE]
@@ -31,11 +31,11 @@ Je možné mít vlastní schéma zabezpečení, které vyžaduje více než jedn
 |-------------|-----------------|  
 |Podpisy|Token podpory je obsažen v záhlaví zabezpečení a je podepsán podpisem zprávy.|  
 |Potvrzující|*Token* , který podepisuje, podepíše podpis zprávy.|  
-|Podepsaná a schválená|Podepsané, registrační tokeny podepisují celý `ds:Signature` element vytvořený z podpisu zprávy a jsou podepsané podpisem této zprávy. To znamená, že obě tokeny (tokeny použité pro podpis zprávy a podepsaný registrační token) jsou vzájemně podepsané.|  
-|Podepsané a šifrované|Podepsané a šifrované podpůrné tokeny jsou podepsané podpůrnými tokeny, které jsou také zašifrovány, když se objeví v `wsse:SecurityHeader`.|  
+|Podepsaná a schválená|Podepsané a registrační tokeny podepisují celý `ds:Signature` prvek vytvořený z podpisu zprávy a jsou podepsaný podpisem zprávy; to znamená, že obě tokeny (token použitý pro podpis zprávy a podepsaný registrační token) jsou navzájem podepsané.|  
+|Podepsané a šifrované|Podepsané, šifrované podpůrné tokeny jsou podepsané podpůrnými tokeny, které jsou také zašifrovány, když se objeví v `wsse:SecurityHeader` .|  
   
 ## <a name="programming-supporting-credentials"></a>Programování podporující přihlašovací údaje  
- Pokud chcete vytvořit službu, která používá podpůrné tokeny, musíte vytvořit [\<CustomBinding](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md). (Další informace najdete v tématu [Postup: Vytvoření vlastní vazby pomocí SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md).)  
+ Chcete-li vytvořit službu, která používá podpůrné tokeny, musíte vytvořit [\<customBinding>](../../configure-apps/file-schema/wcf/custombinding.md) . (Další informace najdete v tématu [Postup: Vytvoření vlastní vazby pomocí SecurityBindingElement](how-to-create-a-custom-binding-using-the-securitybindingelement.md).)  
   
  Prvním krokem při vytváření vlastní vazby je vytvoření elementu vazby zabezpečení, který může být jeden ze tří typů:  
   
@@ -45,7 +45,7 @@ Je možné mít vlastní schéma zabezpečení, které vyžaduje více než jedn
   
 - <xref:System.ServiceModel.Channels.TransportSecurityBindingElement>  
   
- Všechny třídy dědí z <xref:System.ServiceModel.Channels.SecurityBindingElement>, která zahrnuje čtyři relevantní vlastnosti:  
+ Všechny třídy dědí z <xref:System.ServiceModel.Channels.SecurityBindingElement> , který obsahuje čtyři relevantní vlastnosti:  
   
 - <xref:System.ServiceModel.Channels.SecurityBindingElement.EndpointSupportingTokenParameters%2A>  
   
@@ -68,18 +68,18 @@ Je možné mít vlastní schéma zabezpečení, které vyžaduje více než jedn
   
 #### <a name="to-create-a-custom-binding-that-includes-supporting-credentials"></a>Vytvoření vlastní vazby, která zahrnuje podpůrná pověření  
   
-1. Vytvořte prvek vazby zabezpečení. Následující příklad vytvoří <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> s `UserNameForCertificate` režim ověřování. Použijte metodu <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateUserNameForCertificateBindingElement%2A>.  
+1. Vytvořte prvek vazby zabezpečení. Následující příklad vytvoří <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> s `UserNameForCertificate` režimem ověřování. Použijte metodu <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateUserNameForCertificateBindingElement%2A>.  
   
-2. Přidejte podpůrný parametr do kolekce typů vrácených příslušnou vlastností (`Endorsing`, `Signed`, `SignedEncrypted`nebo `SignedEndorsed`). Typy v oboru názvů <xref:System.ServiceModel.Security.Tokens> zahrnují běžně používané typy, jako je například <xref:System.ServiceModel.Security.Tokens.X509SecurityTokenParameters>.  
+2. Přidejte podpůrný parametr do kolekce typů vrácených příslušnou vlastností ( `Endorsing` , `Signed` , `SignedEncrypted` nebo `SignedEndorsed` ). Typy v <xref:System.ServiceModel.Security.Tokens> oboru názvů obsahují běžně používané typy, jako je například <xref:System.ServiceModel.Security.Tokens.X509SecurityTokenParameters> .  
   
 ## <a name="example"></a>Příklad  
   
 ### <a name="description"></a>Popis  
- Následující příklad vytvoří instanci <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> a přidá do kolekce instanci <xref:System.ServiceModel.Security.Tokens.KerberosSecurityTokenParameters> třídy, kterou vrátila vlastnost Returning.  
+ Následující příklad vytvoří instanci <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> třídy a přidá <xref:System.ServiceModel.Security.Tokens.KerberosSecurityTokenParameters> do kolekce instanci třídy, kterou vrátila vlastnost potvrdit.  
   
 ### <a name="code"></a>Kód  
  [!code-csharp[c_SupportingCredential#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_supportingcredential/cs/source.cs#1)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Postupy: Vytvoření vlastní vazby pomocí SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)
+- [Postupy: Vytvoření vlastní vazby pomocí SecurityBindingElement](how-to-create-a-custom-binding-using-the-securitybindingelement.md)

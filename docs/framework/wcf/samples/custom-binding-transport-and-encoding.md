@@ -5,24 +5,24 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 6c0b353d-79ee-4e61-b348-be49ad0e9a16
-ms.openlocfilehash: 47841b23dc3259aeb233192f396397745864d7ba
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3b3a0f1b52afce495ca41a426ebc9e57314d8254
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79145161"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84592525"
 ---
 # <a name="custom-binding-transport-and-encoding"></a>Kódování a přenos vlastní vazby
-Vlastní vazba je definována seřazeným seznamem samostatných prvků vazby. Tato ukázka ukazuje, jak nakonfigurovat vlastní vazby s různými prvky přenosu a kódování zpráv.  
+Vlastní vazba je definována seřazeným seznamem diskrétních prvků vazby. Tato ukázka předvádí, jak nakonfigurovat vlastní vazbu s různými typy přenosů a kódování zpráv.  
   
 > [!NOTE]
-> Postup instalace a pokyny k sestavení pro tuto ukázku jsou umístěny na konci tohoto tématu.  
+> Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
   
- Tato ukázka je založena na [vlastním hostiteli](../../../../docs/framework/wcf/samples/self-host.md)a byla upravena tak, aby nakonfigurovala tři koncové body pro podporu přenosů HTTP, TCP a NamedPipe s vlastními vazbami. Konfigurace klienta byla podobně upravena a kód klienta byl změněn tak, aby komunikoval s každým ze tří koncových bodů.  
+ Tato ukázka je založená na [vlastním hostiteli](self-host.md)a byla upravena pro konfiguraci tří koncových bodů pro podporu přenosů http, TCP a pojmenovaný kanál s vlastními vazbami. Konfigurace klienta se obdobně změnila a kód klienta se změnil, aby komunikoval s každým ze tří koncových bodů.  
   
- Ukázka ukazuje, jak nakonfigurovat vlastní vazbu, která podporuje konkrétní přenos a kódování zpráv. Toho lze dosáhnout konfigurací přenosu a kódování zprávy `binding` pro prvek. Řazení elementů vazby je důležité při definování vlastní vazby, protože každý představuje vrstvu v zásobníku kanálu (viz [Vlastní vazby).](../../../../docs/framework/wcf/extending/custom-bindings.md) Tato ukázka konfiguruje tři vlastní vazby: přenos HTTP s kódováním textu, přenos TCP s kódováním textu a přenos NamedPipe s binárním kódováním.  
+ Ukázka ukazuje, jak nakonfigurovat vlastní vazbu, která podporuje konkrétní přenos a kódování zpráv. To je provedeno konfigurací přenosu a kódováním zpráv pro `binding` element. Řazení elementů vazby je důležité při definování vlastní vazby, protože každá představuje vrstvu v zásobníku kanálů (viz [vlastní vazby](../extending/custom-bindings.md)). Tato ukázka konfiguruje tři vlastní vazby: přenos HTTP s kódováním textu, přenos TCP s kódováním textu a pojmenovaný kanál přenos s binárním kódováním.  
   
- Konfigurace služby definuje vlastní vazby takto:  
+ Konfigurace služby definuje vlastní vazby následujícím způsobem:  
   
 ```xml  
 <bindings>  
@@ -44,9 +44,9 @@ Vlastní vazba je definována seřazeným seznamem samostatných prvků vazby. T
 </bindings>  
 ```  
   
- Při spuštění ukázky jsou zobrazeny požadavky na operaci a odpovědi v okně služby i klientské konzole. Klient komunikuje s každým ze tří koncových bodů, přístup první HTTP, pak TCP a nakonec NamedPipe. Stisknutím klávesy ENTER v každém okně konzoly vypněte službu a klienta.  
+ Při spuštění ukázky se požadavky na operace a odpovědi zobrazují v okně konzoly služby i klienta. Klient komunikuje s každým ze tří koncových bodů, přistupuje k prvnímu HTTP, pak TCP a finally pojmenovaný kanál. V každém okně konzoly stiskněte klávesu ENTER a ukončete službu a klienta.  
   
- Vazba `namedPipeTransport` nepodporuje operace mezi stroji. Používá se pouze pro komunikaci na stejném počítači. Proto při spuštění ukázky ve scénáři mezi počítači, komentář se následující řádky v souboru kódu klienta:  
+ `namedPipeTransport`Vazba nepodporuje operace mezi počítačem a počítačem. Používá se pouze pro komunikaci ve stejném počítači. Proto při spuštění ukázky v případě více počítačů přidejte do souboru s klientským kódem následující řádky:  
   
 ```csharp  
 CalculatorClient client = new CalculatorClient("default");  
@@ -67,21 +67,21 @@ client.Close()
 ```  
   
 > [!NOTE]
-> Pokud používáte Svcutil.exe k obnovení konfigurace pro tuto ukázku, nezapomeňte upravit název koncového bodu v konfiguraci klienta tak, aby odpovídalkódu klienta.  
+> Pokud pro obnovení konfigurace této ukázky používáte Svcutil. exe, nezapomeňte změnit název koncového bodu v konfiguraci klienta tak, aby odpovídal kódu klienta.  
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Ujistěte se, že jste provedli [jednorázový postup instalace pro ukázky windows communication foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. Chcete-li vytvořit c#, C++ nebo Visual Basic .NET vydání řešení, postupujte podle pokynů v [sestavení windows communication foundation ukázky](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Chcete-li sestavit edici C#, C++ nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](building-the-samples.md).  
   
-3. Chcete-li spustit ukázku v konfiguraci jednoho nebo více počítačů, postupujte podle pokynů v [části Spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](running-the-samples.md).  
   
 > [!IMPORTANT]
-> Ukázky mohou být již nainstalovány v počítači. Před pokračováním zkontrolujte následující (výchozí) adresář.  
+> Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >
 > `<InstallDrive>:\WF_WCF_Samples`  
 >
-> Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a Windows Workflow Foundation (WF) Ukázky pro rozhraní .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka je umístěna v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Custom\Transport`  

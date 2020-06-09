@@ -2,36 +2,36 @@
 title: Sdružování
 ms.date: 03/30/2017
 ms.assetid: 688dfb30-b79a-4cad-a687-8302f8a9ad6a
-ms.openlocfilehash: 46abc2c9c667ea7614581d7fafaa8e174db7f14f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 82b81637deb0715d19109794348d2a2bcda7f0d9
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79183409"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84594618"
 ---
 # <a name="pooling"></a>Sdružování
-Tato ukázka ukazuje, jak rozšířit Windows Communication Foundation (WCF) pro podporu sdružování objektů. Ukázka ukazuje, jak vytvořit atribut, který je syntakticky `ObjectPoolingAttribute` a sémanticky podobný atribut funkce Enterprise Services. Sdružování objektů může poskytnout dramatické zvýšení výkonu aplikace. Může však mít opačný účinek, pokud není správně používán. Sdružování objektů pomáhá snížit režii opětovného vytvoření často používaných objektů, které vyžadují rozsáhlou inicializaci. Pokud však volání metody na sdružený objekt trvá značné množství času na dokončení, sdružování objektů fronty další požadavky, jakmile je dosaženo maximální velikost i fondu. Proto může selhat sloužit některé požadavky na vytvoření objektu vyvoláním výjimku časového času.  
+Tato ukázka předvádí, jak můžete Windows Communication Foundation (WCF) pro podporu sdružování objektů. Ukázka ukazuje, jak vytvořit atribut, který je syntakticky a sémanticky podobný `ObjectPoolingAttribute` funkci atributu Enterprise Services. Sdružování objektů může poskytovat výrazné zvýšení výkonu aplikace. Může ale mít opačný efekt, pokud se nepoužívá správně. Sdružování objektů pomáhá snižovat režijní náklady na opětovné vytváření často používaných objektů, které vyžadují rozsáhlou inicializaci. Nicméně pokud volání metody u objektu ve fondu trvá značnou dobu, sdružování objektů zařadí do fronty další požadavky hned po dosažení maximální velikosti fondu. Proto může neúspěšné obsluhovat některé žádosti o vytvoření objektu vyvoláním výjimky časového limitu.  
   
 > [!NOTE]
-> Postup instalace a pokyny k sestavení pro tuto ukázku jsou umístěny na konci tohoto tématu.  
+> Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
   
- Prvním krokem při vytváření rozšíření WCF je rozhodnout bod rozšiřitelnosti použít.  
+ Prvním krokem při vytváření rozšíření WCF je určení bodu rozšiřitelnosti, který se má použít.  
   
- V WCF termín *dispečer* odkazuje na součást za běhu odpovědné za převod příchozích zpráv na vyvolání metody ve službě uživatele a pro převod vrácené hodnoty z této metody na odchozí zprávu. Služba WCF vytvoří dispečera pro každý koncový bod. Klient WCF musí použít dispečera, pokud je smlouva přidružená k tomuto klientovi duplexní smlouvou.  
+ V rámci WCF pojem *Dispatcher* označuje komponentu za běhu odpovědnou za převod příchozích zpráv do vyvolání metod v rámci služby uživatele a pro převod návratových hodnot z této metody na odchozí zprávu. Služba WCF vytvoří dispečera pro každý koncový bod. Klient WCF musí použít dispečera, pokud je kontrakt přidružený k tomuto klientovi duplexní smlouvou.  
   
- Dispečeři kanálu a koncového bodu nabízejí rozšiřitelnost celého kanálu a kontraktu tím, že vystavují různé vlastnosti, které řídí chování dispečera. Vlastnost <xref:System.ServiceModel.Dispatcher.EndpointDispatcher.DispatchRuntime%2A> také umožňuje kontrolovat, upravovat nebo přizpůsobit proces odesílání. Tato ukázka se <xref:System.ServiceModel.Dispatcher.DispatchRuntime.InstanceProvider%2A> zaměřuje na vlastnost, která odkazuje na objekt, který poskytuje instance třídy služby.  
+ Odesílatelé kanálu a koncových bodů nabízejí rozšiřitelnost kanálu a smlouvy tím, že zveřejňují různé vlastnosti, které řídí chování dispečera. <xref:System.ServiceModel.Dispatcher.EndpointDispatcher.DispatchRuntime%2A>Vlastnost také umožňuje kontrolu, úpravu nebo přizpůsobení procesu odesílání. Tato ukázka se zaměřuje na <xref:System.ServiceModel.Dispatcher.DispatchRuntime.InstanceProvider%2A> vlastnost, která odkazuje na objekt, který poskytuje instance třídy služby.  
   
-## <a name="the-iinstanceprovider"></a>Zprostředkovatel iinstance  
- V WCF dispečer vytvoří instance třídy <xref:System.ServiceModel.Dispatcher.DispatchRuntime.InstanceProvider%2A>služby pomocí <xref:System.ServiceModel.Dispatcher.IInstanceProvider> , který implementuje rozhraní. Toto rozhraní má tři metody:  
+## <a name="the-iinstanceprovider"></a>IInstanceProvider  
+ Ve službě WCF vytvoří dispečer instance třídy služby pomocí <xref:System.ServiceModel.Dispatcher.DispatchRuntime.InstanceProvider%2A> , který implementuje <xref:System.ServiceModel.Dispatcher.IInstanceProvider> rozhraní. Toto rozhraní má tři metody:  
   
-- <xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%28System.ServiceModel.InstanceContext%2CSystem.ServiceModel.Channels.Message%29>: Když přijde zpráva Dispečer volá metodu <xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%28System.ServiceModel.InstanceContext%2CSystem.ServiceModel.Channels.Message%29> k vytvoření instance třídy služby ke zpracování zprávy. Frekvence volání této metody je určena <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> vlastností. Například pokud <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> je vlastnost <xref:System.ServiceModel.InstanceContextMode.PerCall> nastavena na novou instanci třídy služby <xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%28System.ServiceModel.InstanceContext%2CSystem.ServiceModel.Channels.Message%29> je vytvořen pro zpracování každé zprávy, která dorazí, tak se nazývá vždy, když zpráva dorazí.  
+- <xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%28System.ServiceModel.InstanceContext%2CSystem.ServiceModel.Channels.Message%29>: Když zpráva dorazí dispečera, volá <xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%28System.ServiceModel.InstanceContext%2CSystem.ServiceModel.Channels.Message%29> metodu pro vytvoření instance třídy služby ke zpracování zprávy. Frekvence volání této metody je určena <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> vlastností. Například pokud je <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> vlastnost nastavena na <xref:System.ServiceModel.InstanceContextMode.PerCall> novou instanci třídy služby, je vytvořena pro zpracování každé zprávy, která dorazí, takže <xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%28System.ServiceModel.InstanceContext%2CSystem.ServiceModel.Channels.Message%29> se zavolá při každém přijetí zprávy.  
   
-- <xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%28System.ServiceModel.InstanceContext%29>: Toto je shodné s předchozí metodou, s výjimkou tohoto je vyvolána, pokud neexistuje žádný Message argument.  
+- <xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%28System.ServiceModel.InstanceContext%29>: Jedná se o shodu s předchozí metodou, s výjimkou toho, že je vyvolána, pokud neexistuje žádný argument zprávy.  
   
-- <xref:System.ServiceModel.Dispatcher.IInstanceProvider.ReleaseInstance%28System.ServiceModel.InstanceContext%2CSystem.Object%29>: Po uplynutí životnosti instance služby dispečer <xref:System.ServiceModel.Dispatcher.IInstanceProvider.ReleaseInstance%28System.ServiceModel.InstanceContext%2CSystem.Object%29> volá metodu. Stejně jako <xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%28System.ServiceModel.InstanceContext%2CSystem.ServiceModel.Channels.Message%29> pro metodu, frekvence volání této metody <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> je určena vlastnost.  
+- <xref:System.ServiceModel.Dispatcher.IInstanceProvider.ReleaseInstance%28System.ServiceModel.InstanceContext%2CSystem.Object%29>: Pokud uplynula doba života instance služby, Dispečer volá <xref:System.ServiceModel.Dispatcher.IInstanceProvider.ReleaseInstance%28System.ServiceModel.InstanceContext%2CSystem.Object%29> metodu. Stejně jako u <xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%28System.ServiceModel.InstanceContext%2CSystem.ServiceModel.Channels.Message%29> metody je frekvence volání této metody určena <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> vlastností.  
   
 ## <a name="the-object-pool"></a>Fond objektů  
- Vlastní <xref:System.ServiceModel.Dispatcher.IInstanceProvider> implementace poskytuje požadované objektsdrálky sémantiku pro službu. Proto tato ukázka `ObjectPoolingInstanceProvider` má typ, <xref:System.ServiceModel.Dispatcher.IInstanceProvider> který poskytuje vlastní implementaci pro sdružování. Při `Dispatcher` volání <xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%28System.ServiceModel.InstanceContext%2CSystem.ServiceModel.Channels.Message%29> metody, namísto vytvoření nové instance, vlastní implementace hledá existující objekt ve fondu v paměti. Pokud je k dispozici, je vrácena. V opačném případě je vytvořen nový objekt. Implementace pro `GetInstance` je uveden v následujícím ukázkovém kódu.  
+ Vlastní <xref:System.ServiceModel.Dispatcher.IInstanceProvider> implementace poskytuje pro službu nezbytnou sémantiku sdružování objektů. Proto má tato ukázka `ObjectPoolingInstanceProvider` typ, který poskytuje vlastní implementaci <xref:System.ServiceModel.Dispatcher.IInstanceProvider> pro sdružování. Při `Dispatcher` volání <xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%28System.ServiceModel.InstanceContext%2CSystem.ServiceModel.Channels.Message%29> metody místo vytvoření nové instance vyhledá vlastní implementace existující objekt ve fondu v paměti. Pokud je k dispozici, je vrácena. V opačném případě se vytvoří nový objekt. Implementace pro `GetInstance` je uvedena v následujícím ukázkovém kódu.  
   
 ```csharp  
 object IInstanceProvider.GetInstance(InstanceContext instanceContext, Message message)  
@@ -59,7 +59,7 @@ object IInstanceProvider.GetInstance(InstanceContext instanceContext, Message me
 }  
 ```  
   
- Vlastní `ReleaseInstance` implementace přidá uvolněnou instanci zpět do `ActiveObjectsCount` fondu a sníží hodnotu. Můžete `Dispatcher` volat tyto metody z různých vláken, a proto je vyžadován `ObjectPoolingInstanceProvider` synchronizovaný přístup k členům na úrovni třídy ve třídě.  
+ Vlastní `ReleaseInstance` implementace přidá uvolněnou instanci zpátky do fondu a sníží `ActiveObjectsCount` hodnotu. Rozhraní `Dispatcher` může volat tyto metody z různých vláken, a proto je vyžadován synchronizovaný přístup ke členům úrovně třídy ve `ObjectPoolingInstanceProvider` třídě.  
   
 ```csharp  
 void IInstanceProvider.ReleaseInstance(InstanceContext instanceContext, object instance)  
@@ -80,34 +80,34 @@ void IInstanceProvider.ReleaseInstance(InstanceContext instanceContext, object i
 }  
 ```  
   
- Metoda `ReleaseInstance` poskytuje funkci "vyčištění inicializace". Obvykle fond udržuje minimální počet objektů po dobu životnosti fondu. Však může být období nadměrného využití, které vyžadují vytvoření další objekty ve fondu k dosažení maximální limit zadaný v konfiguraci. Nakonec při fondu stane méně aktivní, tyto nadbytečné objekty se může stát další režii. Proto když `activeObjectsCount` dosáhne nuly, spustí se časovač nečinnosti, který aktivuje a provede cyklus čištění.  
+ `ReleaseInstance`Metoda poskytuje funkci Vyčištění inicializace. Fond běžně udržuje minimální počet objektů za dobu života fondu. Nicméně můžou existovat období nadměrného využití, které vyžaduje vytvoření dalších objektů ve fondu, aby dosáhly maximálního limitu určeného v konfiguraci. Pokud se ale fond stane méně aktivním, může se stát, že tyto nadbytečné objekty budou dodatečně režijní. Proto když se `activeObjectsCount` dosáhne nuly, spustí se časovač nečinnosti, který spustí a provede čisticí cyklus.  
   
 ## <a name="adding-the-behavior"></a>Přidání chování  
- Rozšíření vrstvy dispečera jsou zahnutý nahoru pomocí následující chod:  
+ Rozšíření dispečera vrstev jsou zapojená pomocí následujícího chování:  
   
-- Chování služby. Ty umožňují přizpůsobení celého běhu služby.  
+- Chování služby. Tyto možnosti umožňují přizpůsobení celého modulu runtime služby.  
   
-- Chování koncového bodu. Ty umožňují přizpůsobení koncových bodů služby, konkrétně dispečera kanálu a koncového bodu.  
+- Chování koncového bodu. To umožňuje přizpůsobení koncových bodů služby, konkrétně kanálu a dispečera koncového bodu.  
   
-- Chování smlouvy. Ty umožňují přizpůsobení obou <xref:System.ServiceModel.Dispatcher.ClientRuntime> <xref:System.ServiceModel.Dispatcher.DispatchRuntime> tříd a tříd na straně klienta a služby v uvedeném pořadí.  
+- Chování kontraktu. Tyto možnosti umožňují přizpůsobení obou tříd i <xref:System.ServiceModel.Dispatcher.ClientRuntime> <xref:System.ServiceModel.Dispatcher.DispatchRuntime> na straně klienta i služby.  
   
- Pro účely rozšíření sdružování objektů musí být vytvořeno chování služby. Chování služby jsou vytvořeny <xref:System.ServiceModel.Description.IServiceBehavior> implementací rozhraní. Existuje několik způsobů, jak seznámit model služby o vlastní chování:  
+ Pro účely rozšíření sdružování objektů musí být vytvořeno chování služby. Chování služby je vytvořeno implementací <xref:System.ServiceModel.Description.IServiceBehavior> rozhraní. Existuje několik způsobů, jak zajistit, aby Service Model věděli o vlastním chování:  
   
 - Použití vlastního atributu.  
   
-- Imperativně přidání do kolekce chování popis služby.  
+- Imperativně přidejte do kolekce chování popisu služby.  
   
 - Rozšíření konfiguračního souboru.  
   
- Tato ukázka používá vlastní atribut. Když <xref:System.ServiceModel.ServiceHost> je vytvořen zkoumá atributy použité v definici typu služby a přidá dostupné chování do kolekce chování popis služby.  
+ Tato ukázka používá vlastní atribut. Když <xref:System.ServiceModel.ServiceHost> je vytvořen, prochází atributy používané v definici typu služby a přidává dostupné chování do kolekce chování popisu služby.  
   
- Rozhraní <xref:System.ServiceModel.Description.IServiceBehavior> má v něm <xref:System.ServiceModel.Description.IServiceBehavior.Validate%2A>tři <xref:System.ServiceModel.Description.IServiceBehavior.AddBindingParameters%2A>metody <xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A>-- , a . Metoda <xref:System.ServiceModel.Description.IServiceBehavior.Validate%2A> se používá k zajištění, že chování lze použít na službu. V této ukázce implementace zajišťuje, že <xref:System.ServiceModel.InstanceContextMode.Single>služba není nakonfigurována s . Metoda <xref:System.ServiceModel.Description.IServiceBehavior.AddBindingParameters%2A> se používá ke konfiguraci vazby služby. Není vyžadováno v tomto scénáři. Slouží <xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A> ke konfiguraci dispečerů služby. Tato metoda je volána <xref:System.ServiceModel.ServiceHost> WCF při inicializování. Do této metody jsou předány následující parametry:  
+ Rozhraní <xref:System.ServiceModel.Description.IServiceBehavior> má v něm tři metody, <xref:System.ServiceModel.Description.IServiceBehavior.Validate%2A> <xref:System.ServiceModel.Description.IServiceBehavior.AddBindingParameters%2A> a <xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A> . <xref:System.ServiceModel.Description.IServiceBehavior.Validate%2A>Metoda se používá k zajištění toho, aby bylo možné chování použít na službu. V této ukázce implementace zajišťuje, aby služba nebyla nakonfigurovaná pomocí <xref:System.ServiceModel.InstanceContextMode.Single> . <xref:System.ServiceModel.Description.IServiceBehavior.AddBindingParameters%2A>Metoda se používá ke konfiguraci vazeb služby. V tomto scénáři to není vyžadováno. <xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A>Slouží ke konfiguraci expedičních odpravcích služby. Tato metoda je volána službou WCF při <xref:System.ServiceModel.ServiceHost> inicializaci. Do této metody jsou předány následující parametry:  
   
-- `Description`: Tento argument poskytuje popis služby pro celou službu. To lze použít ke kontrole popisdat o koncových bodech služby, smlouvy, vazby a další data.  
+- `Description`: Tento argument poskytuje popis služby pro celou službu. Tato možnost slouží k prověření popisných dat o koncových bodech, kontraktech, vazbách a dalších datech služby.  
   
-- `ServiceHostBase`: Tento argument <xref:System.ServiceModel.ServiceHostBase> poskytuje, který je právě inicializován.  
+- `ServiceHostBase`: Tento argument poskytuje <xref:System.ServiceModel.ServiceHostBase> aktuálně inicializovaný.  
   
- Ve vlastní <xref:System.ServiceModel.Description.IServiceBehavior> implementaci `ObjectPoolingInstanceProvider` je vytvořena instance a přiřazena <xref:System.ServiceModel.Dispatcher.DispatchRuntime.InstanceProvider%2A> k vlastnosti v každé <xref:System.ServiceModel.Dispatcher.DispatchRuntime> v ServiceHostBase.  
+ V vlastní <xref:System.ServiceModel.Description.IServiceBehavior> implementaci `ObjectPoolingInstanceProvider` je vytvořena instance nové instance a přiřazena k <xref:System.ServiceModel.Dispatcher.DispatchRuntime.InstanceProvider%2A> vlastnosti v každé <xref:System.ServiceModel.Dispatcher.DispatchRuntime> z objektu ServiceHostBase.  
   
 ```csharp  
 void IServiceBehavior.ApplyDispatchBehavior(ServiceDescription description, ServiceHostBase serviceHostBase)  
@@ -173,9 +173,9 @@ InvalidOperationException(ResourceHelper.GetString("ExNullThrottle"));
 }  
 ```  
   
- Kromě <xref:System.ServiceModel.Description.IServiceBehavior> implementace má <xref:System.EnterpriseServices.ObjectPoolingAttribute> třída několik členů pro přizpůsobení fondu objektů pomocí argumentů atributu. Mezi tyto <xref:System.EnterpriseServices.ObjectPoolingAttribute.MaxPoolSize%2A> <xref:System.EnterpriseServices.ObjectPoolingAttribute.MinPoolSize%2A>členy <xref:System.EnterpriseServices.ObjectPoolingAttribute.CreationTimeout%2A>patří , , a , aby odpovídaly sadě funkcí sdružování objektů poskytované službou .NET Enterprise Services.  
+ Kromě <xref:System.ServiceModel.Description.IServiceBehavior> implementace má <xref:System.EnterpriseServices.ObjectPoolingAttribute> Třída více členů k přizpůsobení fondu objektů pomocí argumentů atributu. Mezi tyto členy patří <xref:System.EnterpriseServices.ObjectPoolingAttribute.MaxPoolSize%2A> , <xref:System.EnterpriseServices.ObjectPoolingAttribute.MinPoolSize%2A> , a <xref:System.EnterpriseServices.ObjectPoolingAttribute.CreationTimeout%2A> , aby odpovídaly sadě funkcí sdružování objektů poskytované službami .NET Enterprise Services.  
   
- Chování sdružování objektů lze nyní přidat do služby WCF anotací `ObjectPooling` implementace služby s nově vytvořeným vlastním atributem.  
+ Chování sdružování objektů se teď dá přidat ke službě WCF tím, že se pokládá na implementaci služby s nově vytvořeným vlastním `ObjectPooling` atributem.  
   
 ```csharp  
 [ObjectPooling(MaxPoolSize=1024, MinPoolSize=10, CreationTimeout=30000)]
@@ -186,9 +186,9 @@ public class PoolService : IPoolService
 ```  
   
 ## <a name="running-the-sample"></a>Spuštění ukázky  
- Ukázka ukazuje výhody výkonu, které lze získat pomocí sdružování objektů v určitých scénářích.  
+ Ukázka předvádí výhody výkonu, které lze v určitých scénářích využít při vytváření fondů objektů.  
   
- Aplikace služby implementuje `WorkService` `ObjectPooledWorkService`dvě služby – a . Obě služby sdílejí stejnou implementaci – obě vyžadují `DoWork()` nákladnou inicializaci a pak zveřejňují metodu, která je relativně levná. Jediným rozdílem `ObjectPooledWorkService` je, že má sdružování objektů nakonfigurováno:  
+ Aplikace služby implementuje dvě služby – `WorkService` a `ObjectPooledWorkService` . Obě služby sdílejí stejnou implementaci – oba vyžadují nákladný inicializaci a pak zveřejňují `DoWork()` metodu, která je poměrně levné. Jediným rozdílem je, že `ObjectPooledWorkService` má nakonfigurované sdružování objektů:  
   
 ```csharp  
 [ObjectPooling(MinPoolSize = 0, MaxPoolSize = 5)]  
@@ -207,7 +207,7 @@ public class ObjectPooledWorkService : IDoWork
 }  
 ```  
   
- Při spuštění klienta, to `WorkService` krát volání 5 krát. To pak krát `ObjectPooledWorkService` volání 5 krát. Poté se zobrazí časový rozdíl:  
+ Když spustíte klienta nástroje, čas zavolá `WorkService` 5 časů. Pak časy, které volají `ObjectPooledWorkService` 5 časů. Rozdíl v čase se pak zobrazí:  
   
 ```console
 Press <ENTER> to start the client.  
@@ -230,24 +230,24 @@ Press <ENTER> to exit.
 ```  
   
 > [!NOTE]
-> Při prvním spuštění klienta se zdá, že obě služby mají přibližně stejnou dobu. Pokud znovu spustíte ukázku, uvidíte, že `ObjectPooledWorkService` vrátí mnohem rychleji, protože instance tohoto objektu již existuje ve fondu.  
+> Při prvním spuštění klienta se obě služby projeví přibližně po stejnou dobu. Pokud ukázku znovu spustíte, vidíte, že `ObjectPooledWorkService` výsledek vrátí mnohem rychlejší, protože ve fondu již existuje instance daného objektu.  
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Ujistěte se, že jste provedli [jednorázový postup instalace pro ukázky windows communication foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. Chcete-li vytvořit řešení, postupujte podle pokynů v [sestavení windows communication foundation ukázky](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Při sestavování řešení postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](building-the-samples.md).  
   
-3. Chcete-li spustit ukázku v konfiguraci jednoho nebo více počítačů, postupujte podle pokynů v [části Spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](running-the-samples.md).  
   
 > [!NOTE]
-> Pokud používáte Svcutil.exe k obnovení konfigurace pro tuto ukázku, nezapomeňte upravit název koncového bodu v konfiguraci klienta tak, aby odpovídalkódu klienta.  
+> Pokud pro obnovení konfigurace této ukázky používáte Svcutil. exe, nezapomeňte změnit název koncového bodu v konfiguraci klienta tak, aby odpovídal kódu klienta.  
   
 > [!IMPORTANT]
-> Ukázky mohou být již nainstalovány v počítači. Před pokračováním zkontrolujte následující (výchozí) adresář.  
+> Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >
 > `<InstallDrive>:\WF_WCF_Samples`  
 >
-> Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a Windows Workflow Foundation (WF) Ukázky pro rozhraní .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka je umístěna v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Instancing\Pooling`  

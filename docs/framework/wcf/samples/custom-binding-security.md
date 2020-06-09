@@ -2,18 +2,18 @@
 title: Zabezpečení vlastních vazeb
 ms.date: 03/30/2017
 ms.assetid: a6383dff-4308-46d2-bc6d-acd4e18b4b8d
-ms.openlocfilehash: b0b293c58e13f7add6f2cb49ea3c108a86292691
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: eb575594cec9ea714578bc104344acc14b00e9df
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70990012"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84592460"
 ---
 # <a name="custom-binding-security"></a>Zabezpečení vlastních vazeb
 
 Tato ukázka demonstruje, jak nakonfigurovat zabezpečení pomocí vlastní vazby. Ukazuje, jak použít vlastní vazbu k povolení zabezpečení na úrovni zprávy společně se zabezpečeným přenosem. To je užitečné, když zabezpečený přenos vyžaduje k přenosu zpráv mezi klientem a službou a současně musí být zprávy na úrovni zprávy zabezpečené. Tato konfigurace není podporována vazbami poskytovanými systémem.
 
-Tato ukázka se skládá z klientského konzolového programu (EXE) a programu Service Console (EXE). Služba implementuje oboustranný kontrakt. Kontrakt je definován `ICalculatorDuplex` rozhraním, které zpřístupňuje matematické operace (sčítání, odčítání, násobení a dělení). `ICalculatorDuplex` Rozhraní umožňuje klientovi provádět matematické operace a vypočítat běžící výsledek během relace. Nezávisle, služba může vracet výsledky na `ICalculatorDuplexCallback` rozhraní. Duplexní smlouva vyžaduje relaci, protože je nutné vytvořit kontext, který bude korelovat sadu zpráv odesílaných mezi klientem a službou. Vlastní vazba je definována, která podporuje duplexní komunikaci a je zabezpečená.
+Tato ukázka se skládá z klientského konzolového programu (EXE) a programu Service Console (EXE). Služba implementuje oboustranný kontrakt. Kontrakt je definován `ICalculatorDuplex` rozhraním, které zpřístupňuje matematické operace (sčítání, odčítání, násobení a dělení). `ICalculatorDuplex`Rozhraní umožňuje klientovi provádět matematické operace a vypočítat běžící výsledek během relace. Nezávisle, služba může vracet výsledky na `ICalculatorDuplexCallback` rozhraní. Duplexní smlouva vyžaduje relaci, protože je nutné vytvořit kontext, který bude korelovat sadu zpráv odesílaných mezi klientem a službou. Vlastní vazba je definována, která podporuje duplexní komunikaci a je zabezpečená.
 
 > [!NOTE]
 > Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.
@@ -24,7 +24,7 @@ Konfigurace služby definuje vlastní vazbu, která podporuje následující:
 
 - Zabezpečení zpráv Windows.
 
-Vlastní konfigurace vazeb umožňuje zabezpečenou přenos současně s povolením zabezpečení na úrovni zprávy. Řazení elementů vazby je důležité při definování vlastní vazby, protože každá představuje vrstvu v zásobníku kanálů (viz [vlastní vazby](../../../../docs/framework/wcf/extending/custom-bindings.md)). Vlastní vazba je definována v konfiguračních souborech služby a klienta, jak je znázorněno v následující ukázkové konfiguraci.
+Vlastní konfigurace vazeb umožňuje zabezpečenou přenos současně s povolením zabezpečení na úrovni zprávy. Řazení elementů vazby je důležité při definování vlastní vazby, protože každá představuje vrstvu v zásobníku kanálů (viz [vlastní vazby](../extending/custom-bindings.md)). Vlastní vazba je definována v konfiguračních souborech služby a klienta, jak je znázorněno v následující ukázkové konfiguraci.
 
 ```xml
 <bindings>
@@ -58,7 +58,7 @@ Vlastní vazba používá k ověření služby na úrovni přenosu certifikát s
 </behaviors>
 ```
 
-Navíc vlastní vazba používá zabezpečení zpráv s typem přihlašovacích údajů systému Windows – jedná se o výchozí typ přihlašovacích údajů. To je dosaženo `security` prvkem vazby. Klient i služba jsou ověřovány pomocí zabezpečení na úrovni zpráv, pokud je k dispozici mechanismus ověřování protokolu Kerberos. K tomu dojde, pokud je ukázka spuštěna v prostředí služby Active Directory. Pokud ověřovací mechanismus protokolu Kerberos není k dispozici, použije se ověřování NTLM. Protokol NTLM ověřuje klienta služby, ale neověřuje službu klientovi. Prvek vazby je nakonfigurován tak, aby `SecureConversation` používal `authenticationType`, což vede k vytvoření relace zabezpečení v klientovi i ve službě. `security` Tato možnost je nutná k tomu, aby fungovala činnost duplexního kontraktu služby.
+Navíc vlastní vazba používá zabezpečení zpráv s typem přihlašovacích údajů systému Windows – jedná se o výchozí typ přihlašovacích údajů. To je dosaženo `security` prvkem vazby. Klient i služba jsou ověřovány pomocí zabezpečení na úrovni zpráv, pokud je k dispozici mechanismus ověřování protokolu Kerberos. K tomu dojde, pokud je ukázka spuštěna v prostředí služby Active Directory. Pokud ověřovací mechanismus protokolu Kerberos není k dispozici, použije se ověřování NTLM. Protokol NTLM ověřuje klienta služby, ale neověřuje službu klientovi. `security`Prvek vazby je nakonfigurován tak, aby používal `SecureConversation` `authenticationType` , což vede k vytvoření relace zabezpečení v klientovi i ve službě. Tato možnost je nutná k tomu, aby fungovala činnost duplexního kontraktu služby.
 
 Při spuštění ukázky se v okně konzoly klienta zobrazí požadavky na operace a odpovědi. V okně klienta stiskněte klávesu ENTER pro vypnutí klienta.
 
@@ -79,7 +79,7 @@ Níže najdete stručný přehled různých částí dávkových souborů, kter�
 
 - Vytváří se certifikát serveru.
 
-  Následující řádky ze souboru Setup. bat vytvoří certifikát serveru, který se má použít. `%SERVER_NAME%` Proměnná Určuje název serveru. Změňte tuto proměnnou tak, aby určovala vlastní název serveru. Tento soubor dávky nastaví název serveru na localhost.
+  Následující řádky ze souboru Setup. bat vytvoří certifikát serveru, který se má použít. `%SERVER_NAME%`Proměnná Určuje název serveru. Změňte tuto proměnnou tak, aby určovala vlastní název serveru. Tento soubor dávky nastaví název serveru na localhost.
 
   Certifikát je uložený v úložišti CurrentUser pro služby hostované na webu.
 
@@ -106,11 +106,11 @@ Níže najdete stručný přehled různých částí dávkových souborů, kter�
 
 ### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky
 
-1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
+1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](one-time-setup-procedure-for-the-wcf-samples.md).
 
-2. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
+2. Chcete-li sestavit edici C# nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](building-the-samples.md).
 
-3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).
+3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](running-the-samples.md).
 
 ### <a name="to-run-the-sample-on-the-same-computer"></a>Spuštění ukázky na stejném počítači
 
@@ -135,12 +135,12 @@ Níže najdete stručný přehled různých částí dávkových souborů, kter�
 
     3. Zkopírujte soubory Setup. bat a Cleanup. bat do počítače služby.
 
-    4. Spusťte následující příkaz v Developer Command Prompt pro Visual Studio otevřené s oprávněními správce: `Setup.bat service`. Tím se vytvoří certifikát služby s názvem subjektu, který odpovídá názvu počítače, ve kterém byl dávkový soubor spuštěn.
+    4. Spusťte následující příkaz v Developer Command Prompt pro Visual Studio otevřené s oprávněními správce: `Setup.bat service` . Tím se vytvoří certifikát služby s názvem subjektu, který odpovídá názvu počítače, ve kterém byl dávkový soubor spuštěn.
 
         > [!NOTE]
         > Dávkový soubor Setup. bat je navržený tak, aby se spouštěl z příkazového řádku sady Visual Studio 2010. Vyžaduje, aby proměnná prostředí PATH odkazovala na adresář, ve kterém je nainstalována sada SDK. Tato proměnná prostředí se automaticky nastaví v rámci příkazového řádku sady Visual Studio 2010.
 
-    5. Změňte > serviceCertificate v souboru Service. exe. config tak, aby odrážela název subjektu certifikátu vygenerovaného v předchozím kroku. [ \<](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md)
+    5. Změňte [\<serviceCertificate>](../../configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) uvnitř souboru Service. exe. config tak, aby odrážel název subjektu certifikátu vygenerovaného v předchozím kroku.
 
     6. Spusťte Service. exe z příkazového řádku.
 
@@ -150,15 +150,15 @@ Níže najdete stručný přehled různých částí dávkových souborů, kter�
 
     2. Spuštěním nástroje CleanUp. bat odeberte všechny staré certifikáty z předchozích ukázek.
 
-    3. Exportujte certifikát služby otevřením Developer Command Prompt pro sadu Visual Studio s oprávněními správce a spuštěním následujícího příkazu na počítači služby (nahraďte `%SERVER_NAME%` plně kvalifikovaným názvem počítače, kde Služba je spuštěná):
+    3. Exportujte certifikát služby tak, že otevřete Developer Command Prompt pro sadu Visual Studio s oprávněními správce a na počítači služby spustíte následující příkaz (nahraďte `%SERVER_NAME%` plně kvalifikovaným názvem počítače, ve kterém je služba spuštěná):
 
         ```console
         certmgr -put -r LocalMachine -s My -c -n %SERVER_NAME% %SERVER_NAME%.cer
         ```
 
-    4. Zkopírujte% název_serveru%. cer do klientského počítače (nahraďte% název_serveru% plně kvalifikovaným názvem počítače, ve kterém je služba spuštěná).
+    4. Zkopírujte% SERVER_NAME%. cer do klientského počítače (nahraďte% SERVER_NAME% plně kvalifikovaným názvem počítače, na kterém je služba spuštěná.)
 
-    5. Importujte certifikát služby otevřením Developer Command Prompt pro sadu Visual Studio s oprávněními správce a spuštěním následujícího příkazu v klientském počítači (nahraďte% název_serveru% plně kvalifikovaným názvem počítače, kde Služba je spuštěná):
+    5. Importujte certifikát služby tak, že otevřete Developer Command Prompt pro sadu Visual Studio s oprávněními správce a spustíte na klientském počítači následující příkaz (nahraďte% SERVER_NAME% úplným názvem počítače, na kterém je služba spuštěná):
 
         ```console
         certmgr.exe -add -c %SERVER_NAME%.cer -s -r CurrentUser TrustedPeople
@@ -179,7 +179,7 @@ Níže najdete stručný přehled různých částí dávkových souborů, kter�
         </client>
         ```
 
-    7. Pokud je služba spuštěná pod jiným účtem než účtem NetworkService nebo LocalSystem v doménovém prostředí, možná budete muset změnit identitu koncového bodu pro koncový bod služby v souboru App. config klienta k nastavení příslušného hlavního názvu uživatele (UPN) nebo hlavního názvu služby (SPN). na účtu, který se používá ke spuštění služby. Další informace o identitě koncového bodu najdete v tématu [identita služby a ověřování](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md) .
+    7. Pokud je služba spuštěna pod jiným účtem než účtem NetworkService nebo LocalSystem v doménovém prostředí, může být nutné změnit identitu koncového bodu pro koncový bod služby v souboru App. config klienta k nastavení příslušného hlavního názvu uživatele (UPN) nebo hlavního názvu služby (SPN) založeného na účtu, který se používá ke spuštění služby. Další informace o identitě koncového bodu najdete v tématu [identita služby a ověřování](../feature-details/service-identity-and-authentication.md) .
 
     8. Spusťte soubor Client. exe z příkazového řádku.
 

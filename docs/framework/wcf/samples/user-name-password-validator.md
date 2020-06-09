@@ -2,12 +2,12 @@
 title: Validátor hesel pro uživatelská jména
 ms.date: 03/30/2017
 ms.assetid: 42f03841-286b-42d8-ba58-18c75422bc8e
-ms.openlocfilehash: e66188cfe1874c4d4097f3f842fd19cfdd4c79f1
-ms.sourcegitcommit: 839777281a281684a7e2906dccb3acd7f6a32023
+ms.openlocfilehash: 5fbca30ef2dff0aebc13bda12c06adfd1989ea20
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82141277"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84596510"
 ---
 # <a name="user-name-password-validator"></a>Validátor hesel pro uživatelská jména
 Tato ukázka předvádí, jak implementovat vlastní validátor UserNamePassword. To je užitečné v případech, kdy žádný z vestavěných režimů ověřování UserNamePassword není vhodný pro požadavky aplikace. například když jsou páry uživatelského jména a hesla uložené v některém externím úložišti, jako je třeba databáze. Tato ukázka obsahuje službu, která má vlastní validátor, který kontroluje dvě konkrétní páry uživatelského jména a hesla. Klient používá k ověření ve službě takové párování uživatelského jména a hesla.
@@ -32,7 +32,7 @@ Tato ukázka předvádí, jak implementovat vlastní validátor UserNamePassword
 
 - Server je ověřený pomocí certifikátu X. 509 serveru.
 
- Služba zpřístupňuje jeden koncový bod pro komunikaci se službou, definovaná pomocí konfiguračního souboru App. config. Koncový bod se skládá z adresy, vazby a kontraktu. Vazba je konfigurovaná se standardem `wsHttpBinding` , který používá výchozí ověřování pomocí protokolu WS-Security a uživatelského jména. Chování služby určuje `Custom` režim pro ověření párů uživatelského jména a hesla klienta spolu s typem třídy validátoru. Chování také Určuje certifikát serveru pomocí `serviceCertificate` elementu. Certifikát serveru musí obsahovat stejnou hodnotu pro `SubjectName` jako `findValue` v [ \<serviceCertificate>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md).
+ Služba zpřístupňuje jeden koncový bod pro komunikaci se službou, definovaná pomocí konfiguračního souboru App. config. Koncový bod se skládá z adresy, vazby a kontraktu. Vazba je konfigurovaná se standardem `wsHttpBinding` , který používá výchozí ověřování pomocí protokolu WS-Security a uživatelského jména. Chování služby určuje `Custom` režim pro ověření párů uživatelského jména a hesla klienta spolu s typem třídy validátoru. Chování také Určuje certifikát serveru pomocí `serviceCertificate` elementu. Certifikát serveru musí obsahovat stejnou hodnotu pro `SubjectName` jako `findValue` v [\<serviceCertificate>](../../configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) .
 
 ```xml
 <system.serviceModel>
@@ -88,7 +88,7 @@ Tato ukázka předvádí, jak implementovat vlastní validátor UserNamePassword
 </system.serviceModel>
 ```
 
- Konfigurace koncového bodu klienta se skládá z názvu konfigurace, absolutní adresy koncového bodu služby, vazby a kontraktu. Vazba klienta je nakonfigurovaná s odpovídajícím režimem a `clientCredentialType`zprávou.
+ Konfigurace koncového bodu klienta se skládá z názvu konfigurace, absolutní adresy koncového bodu služby, vazby a kontraktu. Vazba klienta je nakonfigurovaná s odpovídajícím režimem a zprávou `clientCredentialType` .
 
 ```xml
 <system.serviceModel>
@@ -197,7 +197,7 @@ try
 }
 ```
 
- Tato ukázka používá vlastní UserNamePasswordValidator k ověření párů uživatelského jména a hesla. Ukázka implementuje `CustomUserNamePasswordValidator`odvozené z <xref:System.IdentityModel.Selectors.UserNamePasswordValidator>. Další informace najdete v <xref:System.IdentityModel.Selectors.UserNamePasswordValidator> dokumentaci. Tato konkrétní ukázka vlastního validátoru implementuje `Validate` metodu pro přijetí dvou konkrétních párů uživatelského jména a hesla, jak je znázorněno v následujícím kódu.
+ Tato ukázka používá vlastní UserNamePasswordValidator k ověření párů uživatelského jména a hesla. Ukázka implementuje `CustomUserNamePasswordValidator` odvozené z <xref:System.IdentityModel.Selectors.UserNamePasswordValidator> . Další informace najdete v dokumentaci <xref:System.IdentityModel.Selectors.UserNamePasswordValidator> . Tato konkrétní ukázka vlastního validátoru implementuje `Validate` metodu pro přijetí dvou konkrétních párů uživatelského jména a hesla, jak je znázorněno v následujícím kódu.
 
 ```csharp
 public class CustomUserNameValidator : UserNamePasswordValidator
@@ -279,7 +279,7 @@ serviceHost.Credentials. UserNameAuthentication.CustomUserNamePasswordValidator 
 
 #### <a name="to-set-up-and-build-the-sample"></a>Nastavení a sestavení ukázky
 
-1. Při sestavování řešení postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
+1. Při sestavování řešení postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](building-the-samples.md).
 
 2. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle následujících pokynů.
 

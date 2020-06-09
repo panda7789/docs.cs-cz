@@ -2,12 +2,12 @@
 title: Přenos WS s pověřením zpráv
 ms.date: 03/30/2017
 ms.assetid: 0d092f3a-b309-439b-920b-66d8f46a0e3c
-ms.openlocfilehash: a0f604a9b97327df08443f975bcf4ad53e125878
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 0082a9df5c112b66315236aad91bc891b80d27c7
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144666"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84596381"
 ---
 # <a name="ws-transport-with-message-credential"></a>Přenos WS s pověřením zpráv
 Tato ukázka demonstruje použití zabezpečení přenosu SSL v kombinaci s přihlašovacími údaji klienta, které jsou přenášeny ve zprávě. Tato ukázka používá `wsHttpBinding` vazbu.  
@@ -16,12 +16,12 @@ Tato ukázka demonstruje použití zabezpečení přenosu SSL v kombinaci s při
   
  V této ukázce se k `UserName` ověření klienta pro službu používá typ přihlašovacích údajů.  
   
- Tato ukázka je založená na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) , která implementuje službu kalkulačky. `wsHttpBinding`Vazba je určena a nakonfigurována v konfiguračních souborech aplikace pro klienta a službu.  
+ Tato ukázka je založená na [Začínáme](getting-started-sample.md) , která implementuje službu kalkulačky. `wsHttpBinding`Vazba je určena a nakonfigurována v konfiguračních souborech aplikace pro klienta a službu.  
   
 > [!NOTE]
 > Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
   
- Kód programu v ukázce je skoro stejný jako služba [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) . Kontrakt služby poskytuje ještě jednu další operaci – `GetCallerIdentity` . Tato operace vrátí název volajícího volajícímu.  
+ Kód programu v ukázce je skoro stejný jako služba [Začínáme](getting-started-sample.md) . Kontrakt služby poskytuje ještě jednu další operaci – `GetCallerIdentity` . Tato operace vrátí název volajícího volajícímu.  
 
 ```csharp
 public string GetCallerIdentity()  
@@ -89,10 +89,10 @@ Press <ENTER> to terminate client.
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. Ujistěte se, že jste provedli [pokyny k instalaci certifikátu serveru Internetová informační služba (IIS)](../../../../docs/framework/wcf/samples/iis-server-certificate-installation-instructions.md).  
+2. Ujistěte se, že jste provedli [pokyny k instalaci certifikátu serveru Internetová informační služba (IIS)](iis-server-certificate-installation-instructions.md).  
   
-3. Chcete-li sestavit edici C# nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+3. Chcete-li sestavit edici C# nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](building-the-samples.md).  
   
-4. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+4. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](running-the-samples.md).  

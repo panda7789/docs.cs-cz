@@ -12,12 +12,12 @@ helpviewer_keywords:
 - installutil.exe tool
 ms.assetid: c89c5169-f567-4305-9d62-db31a1de5481
 author: ghogen
-ms.openlocfilehash: 8937ef8b4007253b06444e59b292395084e4df2f
-ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
+ms.openlocfilehash: 259b353edc269a77a51e790544018481a53af188
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81607916"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84596355"
 ---
 # <a name="how-to-install-and-uninstall-windows-services"></a>Postupy: instalace a odinstalace služeb systému Windows
 
@@ -26,7 +26,7 @@ Pokud vyvíjíte službu pro Windows s .NET Framework, můžete rychle nainstalo
 > [!WARNING]
 > Pokud chcete odinstalovat službu z počítače, neprovádějte postup v tomto článku. Místo toho Zjistěte, který program nebo softwarový balíček službu nainstaloval, a pak zvolte možnost **aplikace** v nastavení pro odinstalaci tohoto programu. Všimněte si, že mnoho služeb je nedílnou součástí Windows. Pokud je odstraníte, může to způsobit nestabilitu systému.
 
-Chcete-li použít kroky v tomto článku, musíte nejprve přidat do služby systému Windows Instalační program služby. Další informace najdete v tématu [Návod: Vytvoření aplikace služby systému Windows](../windows-services/walkthrough-creating-a-windows-service-application-in-the-component-designer.md).
+Chcete-li použít kroky v tomto článku, musíte nejprve přidat do služby systému Windows Instalační program služby. Další informace najdete v tématu [Návod: Vytvoření aplikace služby systému Windows](walkthrough-creating-a-windows-service-application-in-the-component-designer.md).
 
 Nemůžete spustit projekty služby Windows přímo z vývojového prostředí sady Visual Studio stisknutím klávesy F5. Předtím, než můžete spustit projekt, je nutné nainstalovat službu do projektu.
 
@@ -35,7 +35,7 @@ Nemůžete spustit projekty služby Windows přímo z vývojového prostředí s
 
 ### <a name="install-your-service-manually-using-installutilexe-utility"></a>Ruční instalace služby pomocí nástroje InstallUtil. exe
 
-1. V nabídce **Start** vyberte adresář ** \< *verze* > sady Visual Studio** a potom vyberte **Developer Command Prompt pro \< *verzi*>vs**.
+1. V nabídce **Start** vyberte adresář sady **Visual Studio \<*version*> ** a potom vyberte **Developer Command Prompt pro vs \<*version*> **.
 
      Zobrazí se Developer Command Prompt pro Visual Studio.
 
@@ -47,15 +47,15 @@ Nemůžete spustit projekty služby Windows přímo z vývojového prostředí s
     installutil <yourproject>.exe
     ```
 
-     Pokud používáte Developer Command Prompt pro Visual Studio, musí být *Installutil. exe* v systémové cestě. V opačném případě ji můžete přidat do cesty nebo použít úplnou cestu k jejímu vyvolání. Tento nástroj se instaluje s .NET Framework v *%windir%\Microsoft.NET\Framework [64]\\<framework_version\>*.
+     Pokud používáte Developer Command Prompt pro Visual Studio, musí být *Installutil. exe* v systémové cestě. V opačném případě ji můžete přidat do cesty nebo použít úplnou cestu k jejímu vyvolání. Tento nástroj se instaluje s .NET Framework v *%windir%\Microsoft.NET\Framework [64] \\<framework_version \> *.
 
-     Příklad:
+     Například:
      - Pro 32 verze .NET Framework 4 nebo 4,5 a novější, pokud je instalační adresář systému Windows *C:\Windows*, je výchozí cesta *C:\Windows\Microsoft.NET\Framework\v4.0.30319\InstallUtil.exe*.
      - Pro 64-bitovou verzi .NET Framework 4 nebo 4,5 a novější je výchozí cesta *C:\Windows\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe*.
 
 ### <a name="uninstall-your-service-manually-using-installutilexe-utility"></a>Ruční odinstalace služby pomocí nástroje InstallUtil. exe
 
-1. V nabídce **Start** vyberte adresář ** \< *verze* > sady Visual Studio** a potom vyberte **Developer Command Prompt pro \< *verzi*>vs**.
+1. V nabídce **Start** vyberte adresář sady **Visual Studio \<*version*> ** a potom vyberte **Developer Command Prompt pro vs \<*version*> **.
 
      Zobrazí se Developer Command Prompt pro Visual Studio.
 
@@ -97,7 +97,7 @@ Nemůžete spustit projekty služby Windows přímo z vývojového prostředí s
 
 ## <a name="see-also"></a>Viz také
 
-- [Úvod do aplikací služby systému Windows](../windows-services/introduction-to-windows-service-applications.md)
-- [Postupy: vytváření služeb systému Windows](../windows-services/how-to-create-windows-services.md)
-- [Postupy: Přidání instalačních programů do aplikace služby](../windows-services/how-to-add-installers-to-your-service-application.md)
+- [Úvod do aplikací služby systému Windows](introduction-to-windows-service-applications.md)
+- [Postupy: vytváření služeb systému Windows](how-to-create-windows-services.md)
+- [Postupy: Přidání instalačních programů do aplikace služby](how-to-add-installers-to-your-service-application.md)
 - [Installutil.exe (instalační nástroj)](../tools/installutil-exe-installer-tool.md)

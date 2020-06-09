@@ -2,39 +2,39 @@
 title: Zabezpečení rovnocenného kanálu
 ms.date: 03/30/2017
 ms.assetid: 2c59b164-3729-44f0-a967-f247c42de662
-ms.openlocfilehash: bc17c35bf088472cfbf36b2c6d7c868c8cc85f20
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f8015f41254d17f908f3665db65af3d82eaa2b6a
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61769392"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84576080"
 ---
 # <a name="peer-channel-security"></a>Zabezpečení rovnocenného kanálu
-Rovnocenný kanál umožňuje různé typy distribuovaných aplikací, které jsou závislé na éře zasílání zpráv. Mezi příklady patří distribuce obsahu internetovém měřítku, kde důvěryhodným zdrojem slouží k distribuci obsahu (jako jsou média nebo aktualizací softwaru), skupinou přátel vyměnit music a fotografie nebo tým vaši kolegové spolupracovat úpravy dokumentu. Každý z těchto scénářů vyžaduje jedinečnou model. Model zabezpečení rovnocenného kanálu je navržená k řešení těchto scénářů a poskytuje model zabezpečení pro příslušné potřebám různých modelů identity, ověřování a autorizace.  
+Partnerský kanál umožňuje nejrůznější typy distribuovaných aplikací, které jsou závislé na zasílání zpráv s více částmi. Mezi příklady patří distribuce obsahu v internetovém měřítku, kde důvěryhodný zdroj distribuuje obsah (například multimédia nebo aktualizace softwaru), skupinu přátel, kteří si vyměňují hudbu a fotky nebo tým spolupracujících spolupracujících s dokumentem. Každý z těchto scénářů vyžaduje jedinečný model zabezpečení. Model zabezpečení pro rovnocenné kanály je navržený tak, aby řešení těchto scénářů a poskytoval model zabezpečení pro příslušné potřeby různých modelů identity, ověřování a autorizace.  
   
 ## <a name="security-scenarios"></a>Scénáře zabezpečení  
- Scénář distribuce obsahu vyžaduje, aby každý příjemce obsahu identifikovat zdroj obsahu. Z důvodu distribuovaná povaha scénář není vždy možné znáte a kterým důvěřujete dodavatelů tohoto procesu nebo zachycení zpráv. Efektivně zmírnit hrozby, které prostředník nedůvěryhodné mohou manipulovat s zprávy, můžete aplikace zabezpečit zprávu na odesílatele tak, aby se snadno zjistí všechny zneužitím pokusy. V takovém případě v závislosti na důvěrnost obsah šifrování může být potřeba.  
+ Scénář distribuce obsahu vyžaduje, aby každý příjemce obsahu identifikoval zdroj obsahu. Z důvodu distribuované povahy scénáře není vždy možné znát a důvěřovat zprostředkovatelům, kteří zpracovávají nebo zachycují zprávy. Aby bylo možné efektivně zmírnit riziko, že nedůvěryhodný zprostředkovatel může manipulovat se zprávami, aplikace mohou zabezpečit zprávu odesílatelem, aby byly snadno zjištěny jakékoli pokusy o manipulaci. V takovém případě může být šifrování nutné v závislosti na důvěrnosti obsahu.  
   
- Scénáře využívající spolupráci, jako jsou skupiny dokumentu spolupráci často vyžaduje, aby každý člen účastní relace se jednotlivě identifikovat a ověření. To znamená, že mechanismus k definování skupin uživatelů a ověřování na základě těchto skupin je potřeba mít zabezpečenou relaci. Kromě toho aplikace mohou vyžadovat trasování každou zprávu pomocí ověřování na úrovni zprávy. V těchto typech aplikací může být výkon publikovaný silnější zabezpečení systému.  
+ Scénáře spolupráce, jako je spolupráce s dokumenty skupiny, často vyžadují, aby se každý člen účastnící se relace jednotlivě identifikoval a ověřil. To znamená, že mechanismus pro definování skupin uživatelů a ověřování u těchto skupin je nezbytný k tomu, aby měl zabezpečenou relaci. Kromě toho můžou aplikace vyžadovat trasování každé zprávy podle ověření na úrovni zprávy. V těchto typech aplikací může být výkon u silnějšího schématu zabezpečení usmrcen.  
   
- Relace komunikace mezi skupinu příležitostné uživatelů může vyžadovat modely neformální zabezpečení, jako je znalost běžné tajného klíče mezi skupině. Pro tyto typy aplikací je mnohem důležitější než s nejúčinnější způsob ověřování nebo které uvádějí neodvolatelnost míry s model zabezpečení, který je vhodné vytvořit a nakonfigurovat. Pro tyto scénáře mechanismus ověřování pomocí hesla pomáhá se zabezpečením komunikační vrstva zároveň umožní pro ověřování zpráv. Zabezpečení založené na heslech je výchozí nastavení pro rovnocenného kanálu.  
+ Komunikační relace mezi skupinou příležitostného uživatele může vyžadovat neformální modely zabezpečení, jako je například znalost společného tajného klíče mezi skupinou. U těchto typů aplikací je model zabezpečení, který je vhodný pro navázání a konfiguraci, důležitější, než má nejúčinnější formu ověřování nebo poskytnutí neneodvolatelnosti měr. V těchto scénářích pomáhá mechanismus ověřování založený na heslech zabezpečit komunikační vrstvu a zároveň umožnit ověřování zpráv. Zabezpečení založené na heslech je výchozí nastavení pro rovnocenný kanál.  
   
 ## <a name="token-types"></a>Typy tokenů  
- Rovnocenný kanál rozpozná jeden typ tokenu pro silné identifikaci certifikáty X.509, které poskytují model využívá silné identity na základě typu ověřování a autorizaci, které je možné implementovat. Důvěrnost a integrita jsou snadno k dispozici pomocí certifikátů. Certifikáty X.509 však může být obtížně používala a nasadíme.  
+ Partnerský kanál rozpoznává jeden typ tokenu pro silnou identifikaci certifikátů X. 509, které poskytují model silné identity na základě typu ověřování a autorizace, které lze implementovat. Důvěrnost a integrita se snadno poskytují pomocí certifikátů. Certifikáty X. 509 ale můžou být obtížné použít a nasadit.  
   
- Rovnocenný kanál také poskytuje podporu pro jednoduché aplikace pomocí hesla. Aplikace můžete nastavit rychlé a jednoduché rovnocennými skupinami na základě zadaného hesla. V takovém případě vlastník skupiny rozhodne a komunikuje heslo na členy. Každý člen musíte se přihlásit pomocí tohoto hesla předtím, než bylo možné připojit ke relace. Hesla je možné pouze do relace; položku Povolit nelze použít k provedení ověřování zpráv. Je to proto, že symetrický token, které sdílejí skupiny partnerských uzlů je obtížné a nevhodný pro účely ověření zdroje.  
+ Partnerský kanál také poskytuje podporu pro jednoduché aplikace pomocí hesel. Aplikace se můžou rozhodnout pro nastavení rychlých a jednoduchých partnerských skupin na základě zadaného hesla. V takovém případě se vlastník skupiny rozhodne a sdělí heslo pro členy. Každý člen se musí přihlásit pomocí tohoto hesla, aby se mohl připojit k relaci. Hesla se dají použít jenom k povolení položky pro relaci. nelze je použít k ověření zprávy. Důvodem je to, že symetrický token, který má skupinu partnerských vztahů, je obtížné a nevhodný pro použití při ověřování zdroje.  
   
 ## <a name="security-model"></a>Model zabezpečení  
- Rovnocenný kanál umožňuje zabezpečit jednotlivé odkazy mezi rovnocennými počítači. To znamená, že zpráva nikdy toky na nezabezpečenou odkaz (z hlediska aplikací). Interně každý odkaz (přenosový kanál mezi dva partnerské uzly) je zabezpečený pomocí zabezpečení TLS (Transport Layer). To znamená, že pokud odesílatel lze kombinovat a odešle zprávu, to se odesílají prostřednictvím zabezpečeného přenosu u každého okamžité partneři, kteří přístup ke zprávě a pak odeslat zprávu do jejich okamžité partnerské uzly přes zabezpečené připojení. Toto zabezpečení funguje pouze na přenos na úrovni a je nezávislý na modely zabezpečení zprávy.  
+ Partnerský kanál nabízí možnost zabezpečit jednotlivá propojení mezi partnerskými uzly. To znamená, že zpráva nikdy nepokračuje na nezabezpečeném odkazu (z perspektivy aplikace). Interně je každý odkaz (transportní kanál mezi dvěma partnerskými uzly) zabezpečený pomocí protokolu TLS (Transport Layer Security). To znamená, že když odesilatel vytvoří a pošle zprávu, pošle se přes zabezpečený přenos do každého z jeho bezprostředních partnerských uzlů, kteří budou přistupovat ke zprávě, a zase pošle zprávu svým bezprostředním partnerům přes zabezpečená připojení. Toto zabezpečení funguje pouze na úrovni přenosu a je nezávislé na modelech zabezpečení zpráv.  
   
- Rovnocenný kanál také poskytuje způsob, jak zabezpečit zprávy bez ohledu na jejich zabezpečení přenosu použít. V tomto modelu je zpráva zabezpečena na zdroj, který používá token zabezpečení zdroj, i když jsou podporovaná momentálně se podporuje jenom certifikáty X.509. Zabezpečené zprávy je pak přenést přes síť partnera. Každý přijímajícího partnera můžete ověřit pravost zdroje. Všimněte si, že je zpráva zabezpečena, takže prostředníci nelze manipulovat s ním.  
+ Partnerský kanál také poskytuje způsob, jak zabezpečit zprávy nezávisle na používaném zabezpečení přenosu. V tomto modelu je zpráva zabezpečená ve zdroji pomocí tokenu zabezpečení zdroje, i když jsou teď podporované jenom certifikáty X. 509. Zabezpečená zpráva se pak přenáší přes síť partnera. Každý přijímající partner může ověřit pravost zdroje. Všimněte si, že zpráva je zabezpečená, aby je s ní nemohly prostředníkem manipulovat.  
   
- K zajištění důvěrnosti, můžete využívat aplikace zabezpečení přenosu se schématy členství silné skupiny k zabránění neoprávněnému přístupu ke zprávě.  
+ Pro zajištění důvěrnosti můžou aplikace využívat zabezpečení přenosu se silnými systémy členství ve skupině, aby se zabránilo neoprávněnému přístupu ke zprávě.  
   
- Protokolu peer Channel nevyžaduje konkrétní identitu modelu, tak dlouho, dokud aplikace vybere jeden z podporovaných typů tokenu. Aplikace zcela vlastní životní cyklus těchto identit a ověřování rozhodnutí.  
+ Partnerský kanál nevyžaduje konkrétní model identity, pokud aplikace zvolí jeden z podporovaných typů tokenu. Aplikace zcela vlastní životní cyklus těchto identit a rozhodnutí o ověřování.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Zabezpečení aplikací protokolu Peer Channel](../../../../docs/framework/wcf/feature-details/securing-peer-channel-applications.md)
-- [Koncepce protokolu Peer Channel](../../../../docs/framework/wcf/feature-details/peer-channel-concepts.md)
-- [Vytvoření aplikace protokolu Peer Channel](../../../../docs/framework/wcf/feature-details/building-a-peer-channel-application.md)
+- [Zabezpečení aplikací rovnocenného kanálu](securing-peer-channel-applications.md)
+- [Koncepce protokolu Peer Channel](peer-channel-concepts.md)
+- [Vytvoření aplikace protokolu Peer Channel](building-a-peer-channel-application.md)

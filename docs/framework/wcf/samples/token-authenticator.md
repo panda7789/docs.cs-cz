@@ -2,12 +2,12 @@
 title: Ověřovací data tokenu
 ms.date: 03/30/2017
 ms.assetid: 84382f2c-f6b1-4c32-82fa-aebc8f6064db
-ms.openlocfilehash: 835a158ba668a3aef749602c73fd9157e8d83a40
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: f4b49edd3b5a2cecd203feed713c7694450f7497
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73425035"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84596549"
 ---
 # <a name="token-authenticator"></a>Ověřovací data tokenu
 Tato ukázka předvádí, jak implementovat vlastní ověřovací data tokenu. Ověřovací data tokenu v Windows Communication Foundation (WCF) se používají k ověření tokenu, který se používá ve zprávě, ověření, že je samostatný, a ověření identity přidružené k tokenu.
@@ -30,7 +30,7 @@ Tato ukázka předvádí, jak implementovat vlastní ověřovací data tokenu. O
 
  Tato ukázka také ukazuje, jak je identita volajícího přístupná z WCF po procesu ověřování pomocí vlastního tokenu.
 
- Služba zpřístupňuje jeden koncový bod pro komunikaci se službou, definovaná pomocí konfiguračního souboru App. config. Koncový bod se skládá z adresy, vazby a kontraktu. Vazba je nakonfigurována se standardním `wsHttpBinding`, s režimem zabezpečení nastaveným na Message – výchozí režim `wsHttpBinding`. Tato ukázka nastaví standardní `wsHttpBinding` pro použití ověřování uživatelského jména klienta. Služba také nakonfiguruje certifikát služby pomocí chování `serviceCredentials`. Chování `securityCredentials` umožňuje zadat certifikát služby. Certifikát služby používá klient k ověření služby a poskytování ochrany zpráv. Následující konfigurace odkazuje na certifikát localhost nainstalovaný během ukázkové instalace, jak je popsáno v následujících pokynech k instalaci.
+ Služba zpřístupňuje jeden koncový bod pro komunikaci se službou, definovaná pomocí konfiguračního souboru App. config. Koncový bod se skládá z adresy, vazby a kontraktu. Vazba je nakonfigurována se standardem `wsHttpBinding` s režimem zabezpečení nastaveným na Message – výchozí režim `wsHttpBinding` . Tato ukázka nastavuje standard `wsHttpBinding` pro použití ověřování uživatelského jména klienta. Služba také nakonfiguruje certifikát služby pomocí `serviceCredentials` chování. `securityCredentials`Chování umožňuje zadat certifikát služby. Certifikát služby používá klient k ověření služby a poskytování ochrany zpráv. Následující konfigurace odkazuje na certifikát localhost nainstalovaný během ukázkové instalace, jak je popsáno v následujících pokynech k instalaci.
 
 ```xml
 <system.serviceModel>
@@ -81,7 +81,7 @@ Tato ukázka předvádí, jak implementovat vlastní ověřovací data tokenu. O
   </system.serviceModel>
 ```
 
- Konfigurace koncového bodu klienta se skládá z názvu konfigurace, absolutní adresy koncového bodu služby, vazby a kontraktu. Vazba klienta je nakonfigurovaná s příslušnými `Mode` a `clientCredentialType`.
+ Konfigurace koncového bodu klienta se skládá z názvu konfigurace, absolutní adresy koncového bodu služby, vazby a kontraktu. Vazba klienta je nakonfigurovaná s odpovídajícími `Mode` a `clientCredentialType` .
 
 ```xml
 <system.serviceModel>
@@ -123,7 +123,7 @@ static void Main()
 
 1. Zapište vlastní ověřovací data tokenu.
 
-     Ukázka implementuje vlastní ověřovací data tokenu, které ověřuje, že uživatelské jméno má platný formát e-mailu. Odvozuje <xref:System.IdentityModel.Selectors.UserNameSecurityTokenAuthenticator>. Nejdůležitější metoda v této třídě je <xref:System.IdentityModel.Selectors.UserNameSecurityTokenAuthenticator.ValidateUserNamePasswordCore%28System.String%2CSystem.String%29>. V této metodě ověřovatel ověří formát uživatelského jména a také, že název hostitele není z neoprávněné domény. Pokud jsou splněny obě podmínky, vrátí kolekci <xref:System.IdentityModel.Policy.IAuthorizationPolicy> instancí jen pro čtení, která se pak použije k poskytnutí deklarací, které představují informace uložené v tokenu uživatelského jména.
+     Ukázka implementuje vlastní ověřovací data tokenu, které ověřuje, že uživatelské jméno má platný formát e-mailu. Je odvozena <xref:System.IdentityModel.Selectors.UserNameSecurityTokenAuthenticator> . Nejdůležitější metodou v této třídě je <xref:System.IdentityModel.Selectors.UserNameSecurityTokenAuthenticator.ValidateUserNamePasswordCore%28System.String%2CSystem.String%29> . V této metodě ověřovatel ověří formát uživatelského jména a také, že název hostitele není z neoprávněné domény. Pokud jsou splněny obě podmínky, vrátí kolekci instancí jen pro čtení <xref:System.IdentityModel.Policy.IAuthorizationPolicy> , která se pak použije k poskytnutí deklarací, které představují informace uložené v tokenu uživatelského jména.
 
     ```csharp
     protected override ReadOnlyCollection<IAuthorizationPolicy> ValidateUserNamePasswordCore(string userName, string password)
@@ -142,7 +142,7 @@ static void Main()
 
 2. Zadejte zásady autorizace, které vrací vlastní ověřovatel tokenu.
 
-     Tato ukázka poskytuje vlastní implementaci <xref:System.IdentityModel.Policy.IAuthorizationPolicy> s názvem `UnconditionalPolicy`, která vrací sadu deklarací identity a identit, které byly předány do svého konstruktoru.
+     Tato ukázka poskytuje vlastní implementaci <xref:System.IdentityModel.Policy.IAuthorizationPolicy> volání `UnconditionalPolicy` , která vrací sadu deklarací identity a identit, které byly předány do svého konstruktoru.
 
     ```csharp
     class UnconditionalPolicy : IAuthorizationPolicy
@@ -212,7 +212,7 @@ static void Main()
 
 3. Napište vlastního správce tokenů zabezpečení.
 
-     <xref:System.IdentityModel.Selectors.SecurityTokenManager> slouží k vytvoření <xref:System.IdentityModel.Selectors.SecurityTokenAuthenticator> pro konkrétní <xref:System.IdentityModel.Selectors.SecurityTokenRequirement> objekty, které jsou předány do této metody `CreateSecurityTokenAuthenticator`. Správce tokenů zabezpečení se používá také k vytváření zprostředkovatelů tokenů a serializátorů tokenů, ale u těch se tato ukázka nezabývá. V této ukázce správce vlastního tokenu zabezpečení dědí z <xref:System.ServiceModel.Security.ServiceCredentialsSecurityTokenManager> třídy a přepíše metodu `CreateSecurityTokenAuthenticator`, aby vracela vlastní ověřovací data tokenu uživatelského jména, když požadavky na předané tokeny označují, že se požaduje ověřovací data uživatelského jména.
+     <xref:System.IdentityModel.Selectors.SecurityTokenManager>Slouží k vytvoření <xref:System.IdentityModel.Selectors.SecurityTokenAuthenticator> pro konkrétní <xref:System.IdentityModel.Selectors.SecurityTokenRequirement> objekty, které jsou do ní předány v `CreateSecurityTokenAuthenticator` metodě. Správce tokenů zabezpečení se používá také k vytváření zprostředkovatelů tokenů a serializátorů tokenů, ale u těch se tato ukázka nezabývá. V této ukázce vlastní Správce tokenů zabezpečení dědí z <xref:System.ServiceModel.Security.ServiceCredentialsSecurityTokenManager> třídy a přepíše metodu, `CreateSecurityTokenAuthenticator` která vrátí vlastní ověřovací data tokenu uživatelského jména, když požadavky na prošlý token označují, že se požaduje ověřovací data uživatelského jména.
 
     ```csharp
     public class MySecurityTokenManager : ServiceCredentialsSecurityTokenManager
@@ -268,7 +268,7 @@ static void Main()
 
 5. Nakonfigurujte službu tak, aby používala vlastní přihlašovací údaje služby.
 
-     Aby služba používala vlastní přihlašovací údaje služby, odstraníme po zachycení certifikátu služby, který je už předem nakonfigurovaný v přihlašovacích údajích služby, výchozí třídu přihlašovacích údajů služby a nakonfigurujete nové přihlašovací údaje služby. instance pro použití předkonfigurovaných certifikátů služby a přidání této nové instance pověření služby k chování služby.
+     Aby služba používala vlastní přihlašovací údaje služby, odstraníme po zachycení certifikátu služby, který je už předem nakonfigurovaný v přihlašovacích údajích služby, výchozí třídu přihlašovacích údajů služby a nakonfigurujete novou instanci přihlašovacích údajů služby na používání předkonfigurovaných certifikátů služby a přidáte tuto novou instanci přihlašovacích údajů služby k chování služby.
 
     ```csharp
     ServiceCredentials sc = serviceHost.Credentials;
@@ -279,7 +279,7 @@ static void Main()
     serviceHost.Description.Behaviors.Add(serviceCredential);
     ```
 
- Chcete-li zobrazit informace o volajícím, můžete použít <xref:System.ServiceModel.ServiceSecurityContext.PrimaryIdentity%2A>, jak je znázorněno v následujícím kódu. <xref:System.ServiceModel.ServiceSecurityContext.Current%2A> obsahuje informace o deklaracích aktuálního volajícího.
+ Chcete-li zobrazit informace o volajícím, můžete použít, <xref:System.ServiceModel.ServiceSecurityContext.PrimaryIdentity%2A> jak je znázorněno v následujícím kódu. <xref:System.ServiceModel.ServiceSecurityContext.Current%2A>Obsahuje informace o deklaracích aktuálního volajícího.
 
 ```csharp
 static void DisplayIdentityInformation()
@@ -299,7 +299,7 @@ static void DisplayIdentityInformation()
 
 - Vytváří se certifikát serveru.
 
-     Následující řádky z dávkového souboru Setup. bat vytvoří certifikát serveru, který se má použít. Proměnná `%SERVER_NAME%` Určuje název serveru. Změňte tuto proměnnou tak, aby určovala vlastní název serveru. Výchozí hodnota v tomto dávkovém souboru je localhost.
+     Následující řádky z dávkového souboru Setup. bat vytvoří certifikát serveru, který se má použít. `%SERVER_NAME%`Proměnná Určuje název serveru. Změňte tuto proměnnou tak, aby určovala vlastní název serveru. Výchozí hodnota v tomto dávkovém souboru je localhost.
 
     ```console
     echo ************
@@ -324,9 +324,9 @@ static void DisplayIdentityInformation()
 
 #### <a name="to-set-up-and-build-the-sample"></a>Nastavení a sestavení ukázky
 
-1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
+1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](one-time-setup-procedure-for-the-wcf-samples.md).
 
-2. Při sestavování řešení postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
+2. Při sestavování řešení postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](building-the-samples.md).
 
 #### <a name="to-run-the-sample-on-the-same-computer"></a>Spuštění ukázky na stejném počítači
 

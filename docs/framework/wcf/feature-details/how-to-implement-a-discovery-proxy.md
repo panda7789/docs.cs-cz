@@ -2,22 +2,22 @@
 title: 'Postupy: Implementace zjišťování proxy'
 ms.date: 03/30/2017
 ms.assetid: 78d70e0a-f6c3-4cfb-a7ca-f66ebddadde0
-ms.openlocfilehash: dafd5e25f998f2dda3f736caeea51cd534ce8e5e
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: ca7ab2ee434aef7649d71cbfc33273f48020788f
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71351576"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597069"
 ---
 # <a name="how-to-implement-a-discovery-proxy"></a>Postupy: Implementace zjišťování proxy
 
-Toto téma vysvětluje, jak implementovat proxy zjišťování. Další informace o funkci zjišťování v Windows Communication Foundation (WCF) najdete v tématu [Přehled zjišťování WCF](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md). Proxy zjišťování lze implementovat vytvořením třídy, která rozšiřuje <xref:System.ServiceModel.Discovery.DiscoveryProxy> abstraktní třídu. V této ukázce je definován určitý počet dalších tříd podpory, které se používají. `OnResolveAsyncResult`, `OnFindAsyncResult`a `AsyncResult`. Tyto třídy implementují rozhraní <xref:System.IAsyncResult>. Další informace o <xref:System.IAsyncResult> naleznete v tématu [System. IAsyncResult Interface](xref:System.IAsyncResult).
+Toto téma vysvětluje, jak implementovat proxy zjišťování. Další informace o funkci zjišťování v Windows Communication Foundation (WCF) najdete v tématu [Přehled zjišťování WCF](wcf-discovery-overview.md). Proxy zjišťování lze implementovat vytvořením třídy, která rozšiřuje <xref:System.ServiceModel.Discovery.DiscoveryProxy> abstraktní třídu. V této ukázce je definován určitý počet dalších tříd podpory, které se používají. `OnResolveAsyncResult`, `OnFindAsyncResult` a `AsyncResult` . Tyto třídy implementují <xref:System.IAsyncResult> rozhraní. Další informace <xref:System.IAsyncResult> naleznete v tématu [System. IAsyncResult Interface](xref:System.IAsyncResult).
 
  Implementace serveru zjišťování proxy je rozdělena na tři hlavní části v tomto tématu:
 
-- Definujte třídu, která obsahuje úložiště dat a rozšiřuje abstraktní třídu <xref:System.ServiceModel.Discovery.DiscoveryProxy>.
+- Definujte třídu, která obsahuje úložiště dat a rozšiřuje abstraktní <xref:System.ServiceModel.Discovery.DiscoveryProxy> třídu.
 
-- Implementujte pomocnou třídu `AsyncResult`.
+- Implementujte pomocnou `AsyncResult` třídu.
 
 - Hostovat proxy zjišťování.
 
@@ -25,13 +25,13 @@ Toto téma vysvětluje, jak implementovat proxy zjišťování. Další informac
 
 1. Spusťte Visual Studio 2012.
 
-2. Vytvořte nový projekt konzolové aplikace. Pojmenujte projekt `DiscoveryProxy` a název `DiscoveryProxyExample`řešení.
+2. Vytvořte nový projekt konzolové aplikace. Pojmenujte projekt `DiscoveryProxy` a pojmenujte řešení `DiscoveryProxyExample` .
 
 3. Do projektu přidejte následující odkazy.
 
     1. System.ServiceModel.dll
 
-    2. System.Servicemodel.Discovery.dll
+    2. System. ServiceModel. Discovery. dll
 
     > [!CAUTION]
     > Ujistěte se, že odkazujete na verzi 4,0 nebo vyšší z těchto sestavení.
@@ -40,7 +40,7 @@ Toto téma vysvětluje, jak implementovat proxy zjišťování. Další informac
 
 1. Přidejte do projektu nový soubor kódu a pojmenujte ho DiscoveryProxy.cs.
 
-2. Do DiscoveryProxy.cs přidejte následující příkazy `using`.
+2. `using`Do DiscoveryProxy.cs přidejte následující příkazy.
 
     ```csharp
     using System;
@@ -50,7 +50,7 @@ Toto téma vysvětluje, jak implementovat proxy zjišťování. Další informac
     using System.Xml;
     ```
 
-3. Odvodit `DiscoveryProxyService` z <xref:System.ServiceModel.Discovery.DiscoveryProxy>. Použijte atribut `ServiceBehavior` pro třídu, jak je znázorněno v následujícím příkladu.
+3. Odvodit `DiscoveryProxyService` z <xref:System.ServiceModel.Discovery.DiscoveryProxy> . Použijte `ServiceBehavior` atribut na třídu, jak je znázorněno v následujícím příkladu.
 
     ```csharp
     // Implement DiscoveryProxy by extending the DiscoveryProxy class and overriding the abstract methods
@@ -60,7 +60,7 @@ Toto téma vysvětluje, jak implementovat proxy zjišťování. Další informac
     }
     ```
 
-4. Uvnitř třídy `DiscoveryProxy` definovat slovník pro uchovávání registrovaných služeb.
+4. Uvnitř `DiscoveryProxy` třídy definujte slovník pro uchovávání registrovaných služeb.
 
     ```csharp
     // Repository to store EndpointDiscoveryMetadata.
@@ -78,7 +78,7 @@ Toto téma vysvětluje, jak implementovat proxy zjišťování. Další informac
 
 ### <a name="to-define-the-methods-used-to-update-the-discovery-proxy-cache"></a>Definování metod používaných k aktualizaci mezipaměti proxy zjišťování
 
-1. Implementací metody `AddOnlineservice` přidejte do mezipaměti služby. Tato metoda se volá pokaždé, když proxy obdrží zprávu oznámení.
+1. Implementací `AddOnlineservice` metody přidejte do mezipaměti služby. Tato metoda se volá pokaždé, když proxy obdrží zprávu oznámení.
 
     ```csharp
     void AddOnlineService(EndpointDiscoveryMetadata endpointDiscoveryMetadata)
@@ -92,7 +92,7 @@ Toto téma vysvětluje, jak implementovat proxy zjišťování. Další informac
     }
     ```
 
-2. Implementujte metodu `RemoveOnlineService`, která se používá k odebrání služeb z mezipaměti.
+2. Implementujte `RemoveOnlineService` metodu, která se používá k odebrání služeb z mezipaměti.
 
     ```csharp
     void RemoveOnlineService(EndpointDiscoveryMetadata endpointDiscoveryMetadata)
@@ -109,7 +109,7 @@ Toto téma vysvětluje, jak implementovat proxy zjišťování. Další informac
     }
     ```
 
-3. Implementujte metody `MatchFromOnlineService`, které se pokouší vyhledat službu ve slovníku pomocí služby.
+3. Implementujte `MatchFromOnlineService` metody, které se pokoušejí vyhledat službu pomocí služby ve slovníku.
 
     ```csharp
     void MatchFromOnlineService(FindRequestContext findRequestContext)
@@ -145,7 +145,7 @@ Toto téma vysvětluje, jak implementovat proxy zjišťování. Další informac
     }
     ```
 
-4. Implementujte metodu `PrintDiscoveryMetadata`, která poskytuje uživateli text konzole výstup o tom, co probíhá zjišťování proxy serveru.
+4. Implementujte `PrintDiscoveryMetadata` metodu, která poskytuje uživateli text konzole výstup z toho, co dělá proxy zjišťování.
 
     ```csharp
     void PrintDiscoveryMetadata(EndpointDiscoveryMetadata endpointDiscoveryMetadata, string verb)
@@ -226,7 +226,7 @@ Toto téma vysvětluje, jak implementovat proxy zjišťování. Další informac
 
 ### <a name="to-define-the-methods-that-implement-the-discovery-proxy-functionality"></a>Definování metod, které implementují funkce proxy zjišťování
 
-1. Přepsat <xref:System.ServiceModel.Discovery.DiscoveryProxy.OnBeginOnlineAnnouncement%2A?displayProperty=nameWithType> metody. Tato metoda se volá, když proxy zjišťování obdrží zprávu online oznámení.
+1. Přepsat <xref:System.ServiceModel.Discovery.DiscoveryProxy.OnBeginOnlineAnnouncement%2A?displayProperty=nameWithType> metodu. Tato metoda se volá, když proxy zjišťování obdrží zprávu online oznámení.
 
     ```csharp
     // OnBeginOnlineAnnouncement method is called when a Hello message is received by the Proxy
@@ -237,7 +237,7 @@ Toto téma vysvětluje, jak implementovat proxy zjišťování. Další informac
     }
     ```
 
-2. Přepsat <xref:System.ServiceModel.Discovery.DiscoveryProxy.OnEndOnlineAnnouncement%2A?displayProperty=nameWithType> metody. Tato metoda se volá, když proxy zjišťování dokončí zpracování zprávy s oznámením.
+2. Přepsat <xref:System.ServiceModel.Discovery.DiscoveryProxy.OnEndOnlineAnnouncement%2A?displayProperty=nameWithType> metodu. Tato metoda se volá, když proxy zjišťování dokončí zpracování zprávy s oznámením.
 
     ```csharp
     protected override void OnEndOnlineAnnouncement(IAsyncResult result)
@@ -246,7 +246,7 @@ Toto téma vysvětluje, jak implementovat proxy zjišťování. Další informac
     }
     ```
 
-3. Přepsat <xref:System.ServiceModel.Discovery.DiscoveryProxy.OnBeginOfflineAnnouncement%2A?displayProperty=nameWithType> metody. Tato metoda je volána s proxy zjišťování obdrží zprávu s oznámením offline.
+3. Přepsat <xref:System.ServiceModel.Discovery.DiscoveryProxy.OnBeginOfflineAnnouncement%2A?displayProperty=nameWithType> metodu. Tato metoda je volána s proxy zjišťování obdrží zprávu s oznámením offline.
 
     ```csharp
     // OnBeginOfflineAnnouncement method is called when a Bye message is received by the Proxy
@@ -257,7 +257,7 @@ Toto téma vysvětluje, jak implementovat proxy zjišťování. Další informac
     }
     ```
 
-4. Přepsat <xref:System.ServiceModel.Discovery.DiscoveryProxy.OnEndOfflineAnnouncement%2A?displayProperty=nameWithType> metody. Tato metoda se volá, když proxy zjišťování dokončí zpracování zprávy s oznámením v režimu offline.
+4. Přepsat <xref:System.ServiceModel.Discovery.DiscoveryProxy.OnEndOfflineAnnouncement%2A?displayProperty=nameWithType> metodu. Tato metoda se volá, když proxy zjišťování dokončí zpracování zprávy s oznámením v režimu offline.
 
     ```csharp
     protected override void OnEndOfflineAnnouncement(IAsyncResult result)
@@ -266,7 +266,7 @@ Toto téma vysvětluje, jak implementovat proxy zjišťování. Další informac
     }
     ```
 
-5. Přepsat <xref:System.ServiceModel.Discovery.DiscoveryProxy.OnBeginFind%2A?displayProperty=nameWithType> metody. Tato metoda je volána, když server zjišťování obdrží požadavek Find.
+5. Přepsat <xref:System.ServiceModel.Discovery.DiscoveryProxy.OnBeginFind%2A?displayProperty=nameWithType> metodu. Tato metoda je volána, když server zjišťování obdrží požadavek Find.
 
     ```csharp
     // OnBeginFind method is called when a Probe request message is received by the Proxy
@@ -285,7 +285,7 @@ Toto téma vysvětluje, jak implementovat proxy zjišťování. Další informac
     }
     ```
 
-6. Přepsat <xref:System.ServiceModel.Discovery.DiscoveryProxy.OnEndFind%2A?displayProperty=nameWithType> metody. Tato metoda je volána, když server zjišťování dokončí zpracování žádosti o nalezení.
+6. Přepsat <xref:System.ServiceModel.Discovery.DiscoveryProxy.OnEndFind%2A?displayProperty=nameWithType> metodu. Tato metoda je volána, když server zjišťování dokončí zpracování žádosti o nalezení.
 
     ```csharp
     protected override void OnEndFind(IAsyncResult result)
@@ -294,7 +294,7 @@ Toto téma vysvětluje, jak implementovat proxy zjišťování. Další informac
     }
     ```
 
-7. Přepsat <xref:System.ServiceModel.Discovery.DiscoveryProxy.OnBeginResolve%2A?displayProperty=nameWithType> metody. Tato metoda se volá, když proxy zjišťování obdrží zprávu o řešení.
+7. Přepsat <xref:System.ServiceModel.Discovery.DiscoveryProxy.OnBeginResolve%2A?displayProperty=nameWithType> metodu. Tato metoda se volá, když proxy zjišťování obdrží zprávu o řešení.
 
     ```csharp
     // OnBeginFind method is called when a Resolve request message is received by the Proxy
@@ -311,7 +311,7 @@ Toto téma vysvětluje, jak implementovat proxy zjišťování. Další informac
     }
     ```
 
-8. Přepsat <xref:System.ServiceModel.Discovery.DiscoveryProxy.OnEndResolve%2A?displayProperty=nameWithType> metody. Tato metoda je volána, když server zjišťování dokončí zpracování zprávy o vyřešení.
+8. Přepsat <xref:System.ServiceModel.Discovery.DiscoveryProxy.OnEndResolve%2A?displayProperty=nameWithType> metodu. Tato metoda je volána, když server zjišťování dokončí zpracování zprávy o vyřešení.
 
     ```csharp
     protected override EndpointDiscoveryMetadata OnEndResolve(IAsyncResult result)
@@ -320,7 +320,7 @@ Toto téma vysvětluje, jak implementovat proxy zjišťování. Další informac
     }
     ```
 
-Zahájení... /OnEnd.. metody poskytují logiku pro následné operace zjišťování. Například metody <xref:System.ServiceModel.Discovery.DiscoveryProxy.OnBeginFind%2A> a <xref:System.ServiceModel.Discovery.DiscoveryProxy.OnEndFind%2A> implementují logiku Find pro zjišťování proxy serveru. Když server zjišťování obdrží zprávu sondy, spustí se tyto metody, aby se odeslala odpověď zpátky klientovi. Můžete upravit logiku hledání tak, jak chcete, například můžete do operace hledání zahrnout vlastní obory vyhovující algoritmům nebo analýze metadat XML specifické pro aplikaci.
+Zahájení... /OnEnd.. metody poskytují logiku pro následné operace zjišťování. Například <xref:System.ServiceModel.Discovery.DiscoveryProxy.OnBeginFind%2A> <xref:System.ServiceModel.Discovery.DiscoveryProxy.OnEndFind%2A> metody a implementují logiku Find pro zjišťování proxy serveru. Když server zjišťování obdrží zprávu sondy, spustí se tyto metody, aby se odeslala odpověď zpátky klientovi. Můžete upravit logiku hledání tak, jak chcete, například můžete do operace hledání zahrnout vlastní obory vyhovující algoritmům nebo analýze metadat XML specifické pro aplikaci.
 
 ### <a name="to-implement-the-asyncresult-class"></a>Implementace třídy AsyncResult
 
@@ -328,7 +328,7 @@ Zahájení... /OnEnd.. metody poskytují logiku pro následné operace zjišťov
 
 2. Vytvořte nový soubor kódu s názvem AsyncResult.cs.
 
-3. Do AsyncResult.cs přidejte následující příkazy `using`.
+3. `using`Do AsyncResult.cs přidejte následující příkazy.
 
     ```csharp
     using System;
@@ -495,7 +495,7 @@ Zahájení... /OnEnd.. metody poskytují logiku pro následné operace zjišťov
     using System.ServiceModel.Discovery;
     ```
 
-3. V rámci metody `Main()` přidejte následující kód. Tím se vytvoří instance třídy `DiscoveryProxy`.
+3. V rámci `Main()` metody přidejte následující kód. Tím se vytvoří instance `DiscoveryProxy` třídy.
 
     ```csharp
     Uri probeEndpointAddress = new Uri("net.tcp://localhost:8001/Probe");
@@ -546,7 +546,7 @@ Zahájení... /OnEnd.. metody poskytují logiku pro následné operace zjišťov
     }
     ```
 
-Dokončili jste implementaci zjišťování proxy serveru. Další informace o [postupu: implementace zjistitelné služby, která se registruje pomocí proxy zjišťování](../../../../docs/framework/wcf/feature-details/discoverable-service-that-registers-with-the-discovery-proxy.md).
+Dokončili jste implementaci zjišťování proxy serveru. Další informace o [postupu: implementace zjistitelné služby, která se registruje pomocí proxy zjišťování](discoverable-service-that-registers-with-the-discovery-proxy.md).
 
 ## <a name="example"></a>Příklad
 
@@ -973,9 +973,9 @@ namespace Microsoft.Samples.Discovery
 }
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Přehled zjišťování WCF](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md)
-- [Postupy: Implementace zjistitelné služby, která se registruje pomocí proxy zjišťování](../../../../docs/framework/wcf/feature-details/discoverable-service-that-registers-with-the-discovery-proxy.md)
-- [Postupy: Implementace klientské aplikace používající proxy zjišťování k vyhledání služby](../../../../docs/framework/wcf/feature-details/client-app-discovery-proxy-to-find-a-service.md)
-- [Postupy: Test proxy zjišťování](../../../../docs/framework/wcf/feature-details/how-to-test-the-discovery-proxy.md)
+- [Přehled zjišťování WCF](wcf-discovery-overview.md)
+- [Postupy: Implementace zjistitelné služby, která se registruje pomocí proxy zjišťování](discoverable-service-that-registers-with-the-discovery-proxy.md)
+- [Postupy: Implementace klientské aplikace používající proxy zjišťování k vyhledání služby](client-app-discovery-proxy-to-find-a-service.md)
+- [Postupy: Test proxy zjišťování](how-to-test-the-discovery-proxy.md)

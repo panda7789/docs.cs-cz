@@ -2,18 +2,18 @@
 title: 'Přenos: Ukázka vlastních transakcí přes UDP'
 ms.date: 03/30/2017
 ms.assetid: 6cebf975-41bd-443e-9540-fd2463c3eb23
-ms.openlocfilehash: ba9fb91623606d3aaba5ba56784b20bb92d343a7
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ce1e6f0aedff46aaf58e22d8c23c37b03f8789dd
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79143795"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84596536"
 ---
 # <a name="transport-custom-transactions-over-udp-sample"></a>Přenos: Ukázka vlastních transakcí přes UDP
-Tato ukázka je založena na [transportu: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) ukázka v Windows Communication Foundation (WCF)[transport rozšiřitelnost](../../../../docs/framework/wcf/samples/transport-extensibility.md). Rozšiřuje ukázku Přenosu UDP pro podporu vlastní transakce toku <xref:System.ServiceModel.Channels.TransactionMessageProperty> a ukazuje použití vlastnosti.  
+Tato ukázka je založena na ukázce [Transport: UDP](transport-udp.md) v[rozšíření přenosu](transport-extensibility.md)služby Windows Communication Foundation (WCF). Rozšiřuje ukázku přenosu UDP pro podporu toku vlastní transakce a demonstruje použití <xref:System.ServiceModel.Channels.TransactionMessageProperty> Vlastnosti.  
   
 ## <a name="code-changes-in-the-udp-transport-sample"></a>Změny kódu v ukázce přenosu UDP  
- Chcete-li prokázat tok transakce, `ICalculatorContract` ukázka změní `CalculatorService.Add()`servisní smlouvy pro vyžadovat rozsah transakce pro . Ukázka také přidá `System.Guid` další parametr smlouvy `Add` operace. Tento parametr se používá k předání identifikátoru transakce klienta službě.  
+ Pro ukázku toku transakce ukázka mění kontrakt služby, `ICalculatorContract` aby vyžadovala rozsah transakce pro `CalculatorService.Add()` . Ukázka také přidá `System.Guid` k kontraktu operace další parametr `Add` . Tento parametr slouží k předání identifikátoru transakce klienta službě.  
   
 ```csharp  
 class CalculatorService : IDatagramContract, ICalculatorContract  
@@ -38,7 +38,7 @@ class CalculatorService : IDatagramContract, ICalculatorContract
 }  
 ```  
   
- [Transport: Ukázka UDP](../../../../docs/framework/wcf/samples/transport-udp.md) používá pakety UDP k předání zpráv mezi klientem a službou. [Přenos: Vlastní transport ukázka](../../../../docs/framework/wcf/samples/transport-custom-transactions-over-udp-sample.md) používá stejný mechanismus k přenosu zpráv, ale při toku transakce, je vložen do paketu UDP spolu s kódované zprávy.  
+ Ukázka [Transport: UDP](transport-udp.md) používá k předávání zpráv mezi klientem a službou pakety UDP. [Přenos: Ukázka vlastního přenosu](transport-custom-transactions-over-udp-sample.md) používá stejný mechanismus pro přenos zpráv, ale při přetečení transakce je vložena do paketu UDP spolu s kódovanými zprávami.  
   
 ```csharp  
 byte[] txmsgBuffer = TransactionMessageBuffer.WriteTransactionMessageBuffer(txPropToken, messageBuffer);  
@@ -46,13 +46,13 @@ byte[] txmsgBuffer = TransactionMessageBuffer.WriteTransactionMessageBuffer(txPr
 int bytesSent = this.socket.SendTo(txmsgBuffer, 0, txmsgBuffer.Length, SocketFlags.None, this.remoteEndPoint);  
 ```  
   
- `TransactionMessageBuffer.WriteTransactionMessageBuffer`je pomocná metoda, která obsahuje nové funkce pro sloučení tokenu šíření pro aktuální transakci s entitou zprávy a umístěte ji do vyrovnávací paměti.  
+ `TransactionMessageBuffer.WriteTransactionMessageBuffer`je pomocná metoda, která obsahuje nové funkce pro sloučení tokenu šíření pro aktuální transakci s entitou zprávy a její umístění do vyrovnávací paměti.  
   
- Pro vlastní přenos toku transakcí implementace klienta musí vědět, jaké operace služby vyžadují tok transakcí a předat tyto informace WCF. Měl by také existovat mechanismus pro přenos transakce uživatele do transportní vrstvy. Tato ukázka používá "WCF zprávy inspektoři" získat tyto informace. Inspektor zpráv klienta implementovaný `TransactionFlowInspector`zde, který se nazývá , provádí následující úkoly:  
+ V případě přenosu vlastního toku transakce musí implementace klientů znát, jaké operace služeb vyžadují tok transakcí a předávat tyto informace do WCF. Měl by existovat i mechanismus pro přenos uživatelské transakce do transportní vrstvy. V této ukázce se k získání těchto informací používá "kontroloři zpráv WCF". Inspektor zprávy klienta, který je implementován zde, `TransactionFlowInspector` provádí následující úlohy:  
   
-- Určuje, zda transakce musí být tok pro danou akci `IsTxFlowRequiredForThisOperation()`zprávy (to probíhá v ).  
+- Určuje, zda musí být transakce předána do toku pro danou akci zprávy (k tomu dojde v rámci `IsTxFlowRequiredForThisOperation()` ).  
   
-- Připojí aktuální okolí transakce ke `TransactionFlowProperty`zprávě pomocí , pokud transakce je nutné tok (to se provádí v `BeforeSendRequest()`).  
+- Připojí aktuální ambientní transakci ke zprávě pomocí `TransactionFlowProperty` , pokud je nutné transakci přesměrovat (to je provedeno v `BeforeSendRequest()` ).  
   
 ```csharp  
 public class TransactionFlowInspector : IClientMessageInspector  
@@ -92,7 +92,7 @@ public class TransactionFlowInspector : IClientMessageInspector
 }  
 ```  
   
- Sám `TransactionFlowInspector` je předán do rámce pomocí vlastní `TransactionFlowBehavior`chování: .  
+ `TransactionFlowInspector`Samotný je předán do rozhraní pomocí vlastního chování: `TransactionFlowBehavior` .  
   
 ```csharp  
 public class TransactionFlowBehavior : IEndpointBehavior  
@@ -117,7 +117,7 @@ public class TransactionFlowBehavior : IEndpointBehavior
 }  
 ```  
   
- S předchozí mechanismus na místě, uživatelský `TransactionScope` kód vytvoří před voláním operace služby. Inspektor zprávy zajišťuje, že transakce je předána do přenosu v případě, že je nutné, aby tok do operace služby.  
+ Před tím, než se zahájí předchozí mechanismus, kód uživatele vytvoří `TransactionScope` před voláním operace služby. Kontrola zprávy zajišťuje, aby transakce byla předána do přepravy v případě, že je nutné ji přesměrovat na operaci služby.  
   
 ```csharp  
 CalculatorContractClient calculatorClient = new CalculatorContractClient("SampleProfileUdpBinding_ICalculatorContract");  
@@ -151,7 +151,7 @@ catch (Exception)
 }  
 ```  
   
- Po obdržení paketu UDP od klienta služba deserializuje extrahovat zprávu a případně transakce.  
+ Po přijetí paketu UDP od klienta služba ho deserializace extrahuje a případně transakci.  
   
 ```csharp  
 count = listenSocket.EndReceiveFrom(result, ref dummy);  
@@ -159,9 +159,9 @@ count = listenSocket.EndReceiveFrom(result, ref dummy);
 // read the transaction and message                       TransactionMessageBuffer.ReadTransactionMessageBuffer(buffer, count, out transaction, out msg);  
 ```  
   
- `TransactionMessageBuffer.ReadTransactionMessageBuffer()`je pomocná metoda, která stornuje `TransactionMessageBuffer.WriteTransactionMessageBuffer()`proces serializace prováděný společností .  
+ `TransactionMessageBuffer.ReadTransactionMessageBuffer()`je pomocná metoda, která vrátí proces serializace, kterou provádí `TransactionMessageBuffer.WriteTransactionMessageBuffer()` .  
   
- Pokud transakce byla tok v, je připojen ke `TransactionMessageProperty`zprávě v .  
+ Pokud byla transakce převedena do, připojí se ke zprávě v `TransactionMessageProperty` .  
   
 ```csharp  
 message = MessageEncoderFactory.Encoder.ReadMessage(msg, bufferManager);  
@@ -172,15 +172,15 @@ if (transaction != null)
 }  
 ```  
   
- Tím zajistíte, že dispečer vyzvedne transakci v době odeslání a použije ji při volání operace služby adresované zprávou.  
+ Tím je zajištěno, že dispečer vezme transakci v době odeslání a použije ji při volání operace služby řešené zprávou.  
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Chcete-li vytvořit řešení, postupujte podle pokynů v [sestavení windows communication foundation ukázky](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+1. Při sestavování řešení postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](building-the-samples.md).  
   
-2. Aktuální vzorek by měl být spuštěn podobně jako [transport: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) vzorku. Chcete-li spustit, spusťte službu s UdpTestService.exe. Pokud používáte systém Windows Vista, je nutné spustit službu se zvýšenými oprávněními. Chcete-li tak učinit, klepněte v Průzkumníkovi souborů pravým tlačítkem myši na soubor UdpTestService.exe a klepněte na příkaz **Spustit jako správce**.  
+2. Aktuální vzorek by měl být spuštěn podobně jako ukázka [Transport: UDP](transport-udp.md) . Pokud ho chcete spustit, spusťte službu pomocí UdpTestService. exe. Pokud používáte systém Windows Vista, musíte službu spustit se zvýšenými oprávněními. Provedete to tak, že kliknete pravým tlačítkem na UdpTestService. exe v Průzkumníkovi souborů a kliknete na **Spustit jako správce**.  
   
-3. Výsledkem je následující výstup.  
+3. Tím se vytvoří následující výstup.  
   
     ```console  
     Testing Udp From Code.  
@@ -188,7 +188,7 @@ if (transaction != null)
     Press <ENTER> to terminate the service and start service from config...  
     ```  
   
-4. V tomto okamžiku můžete spustit klienta spuštěním UdpTestClient.exe. Výstup vytvořený klientem je následující.  
+4. V tuto chvíli můžete spustit klienta spuštěním UdpTestClient. exe. Výstup vytvářený klientem je následující.  
   
     ```console
     0  
@@ -219,9 +219,9 @@ if (transaction != null)
        adding 4 + 8  
     ```  
   
-6. Aplikace služby zobrazí `The client transaction has flowed to the service` zprávu, pokud může odpovídat identifikátor u `clientTransactionId` transakce `CalculatorService.Add()` odeslaný klientem v parametru operace s identifikátorem transakce služby. Shoda je získána pouze v případě, že transakce klienta tekla do služby.  
+6. Aplikace služby zobrazí zprávu, `The client transaction has flowed to the service` Pokud se může shodovat s identifikátorem transakce odeslaným klientem v `clientTransactionId` parametru `CalculatorService.Add()` operace na identifikátor transakce služby. Shoda se získá jenom v případě, že transakce klienta přechází do služby.  
   
-7. Chcete-li spustit klientskou aplikaci proti koncovým bodům publikovaným pomocí konfigurace, stiskněte klávesu ENTER v okně aplikace služby a spusťte testovacího klienta znovu. Měli byste vidět následující výstup na službu.  
+7. Chcete-li spustit klientskou aplikaci proti koncovým bodům publikovaným pomocí konfigurace, stiskněte klávesu ENTER v okně aplikace služby a spusťte testovacího klienta znovu. Ve službě by se měl zobrazit následující výstup.  
   
     ```console  
     Testing Udp From Config.  
@@ -229,15 +229,15 @@ if (transaction != null)
     Press <ENTER> to terminate the service and exit...  
     ```  
   
-8. Spuštění klienta proti službě nyní vytváří podobný výstup jako dříve.  
+8. Spuštění klienta proti službě teď vytvoří podobný výstup jako dřív.  
   
-9. Chcete-li znovu vygenerovat klientský kód a konfiguraci pomocí programu Svcutil.exe, spusťte aplikaci služby a spusťte následující příkaz Svcutil.exe z kořenového adresáře ukázky.  
+9. Chcete-li znovu vygenerovat kód klienta a konfiguraci pomocí nástroje Svcutil. exe, spusťte aplikaci služby a spusťte následující příkaz Svcutil. exe z kořenového adresáře ukázky.  
   
     ```console  
     svcutil http://localhost:8000/udpsample/ /reference:UdpTransport\bin\UdpTransport.dll /svcutilConfig:svcutil.exe.config  
     ```  
   
-10. Všimněte si, že Svcutil.exe negeneruje `sampleProfileUdpBinding`konfiguraci rozšíření vazby pro ; je nutné jej přidat ručně.  
+10. Všimněte si, že Svcutil. exe negeneruje konfiguraci rozšíření vazby pro `sampleProfileUdpBinding` . je nutné ho přidat ručně.  
   
     ```xml  
     <configuration>  
@@ -254,14 +254,14 @@ if (transaction != null)
     ```  
   
 > [!IMPORTANT]
-> Ukázky mohou být již nainstalovány v počítači. Před pokračováním zkontrolujte následující (výchozí) adresář.  
+> Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >
 > `<InstallDrive>:\WF_WCF_Samples`  
 >
-> Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a Windows Workflow Foundation (WF) Ukázky pro rozhraní .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka je umístěna v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Transactions\TransactionMessagePropertyUDPTransport`  
   
 ## <a name="see-also"></a>Viz také
 
-- [Přenos: UDP](../../../../docs/framework/wcf/samples/transport-udp.md)
+- [Přenos: UDP](transport-udp.md)

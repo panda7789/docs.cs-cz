@@ -1,68 +1,68 @@
 ---
-title: Nasazení rozhraní .NET pro pracovníka Apache Spark a uživatelem definované binární soubory funkcí
-description: Přečtěte si, jak nasadit rozhraní .NET pro pracovníka Apache Spark a uživatelem definované binární soubory funkcí.
+title: Nasazení rozhraní .NET pro Apache Spark pro pracovní procesy a uživatelem definované binární soubory funkcí
+description: Naučte se, jak nasadit rozhraní .NET pro Apache Spark pro pracovní procesy a uživatelem definované binární soubory funkcí.
 ms.date: 01/21/2019
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: f373ccee398149adcadeac91f02d9896214706b0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 042f336431a1c8cad7d94cf10cbe64b72ddfce5b
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79187599"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84596458"
 ---
-# <a name="deploy-net-for-apache-spark-worker-and-user-defined-function-binaries"></a>Nasazení rozhraní .NET pro pracovníka Apache Spark a uživatelem definované binární soubory funkcí
+# <a name="deploy-net-for-apache-spark-worker-and-user-defined-function-binaries"></a>Nasazení rozhraní .NET pro Apache Spark pro pracovní procesy a uživatelem definované binární soubory funkcí
 
-Tento návod poskytuje obecné pokyny, jak nasadit rozhraní .NET pro pracovníka Apache Spark a uživatelem definované binární soubory funkcí. Dozvíte se, které proměnné prostředí nastavit, stejně jako některé běžně `spark-submit`používané parametry pro spouštění aplikací s .
+Tento postup poskytuje obecné pokyny k nasazení rozhraní .NET pro Apache Spark pro pracovní procesy a uživatelem definované binární soubory funkcí. Zjistíte, které proměnné prostředí se mají nastavit, a také některé běžně používané parametry pro spouštění aplikací pomocí `spark-submit` .
 
 ## <a name="configurations"></a>Konfigurace
-Konfigurace zobrazují obecné proměnné prostředí a nastavení parametrů pro nasazení rozhraní .NET pro pracovníka Apache Spark a uživatelem definované binární soubory funkcí.
+Konfigurace zobrazují obecné proměnné prostředí a nastavení parametrů, aby bylo možné nasadit rozhraní .NET pro Apache Spark pro pracovní procesy a uživatelem definované binární soubory funkcí.
 
 ### <a name="environment-variables"></a>Proměnné prostředí
-Při nasazování pracovníků a psaní udfs existuje několik běžně používaných proměnných prostředí, které budete muset nastavit:
+Při nasazování pracovních procesů a psaní UDF je k dispozici několik běžně používaných proměnných prostředí, které je třeba nastavit:
 
 | Proměnná prostředí         | Popis
 | :--------------------------- | :----------
-| DOTNET_WORKER_DIR            | Cesta, <code>Microsoft.Spark.Worker</code> kde byl vygenerován binární soubor.</br>Používá ho ovladač Spark a bude předán vykonavatelům Spark. Pokud tato proměnná není nastavena, budou vykonavatelé Spark prohledávat cestu zadanou v proměnné <code>PATH</code> prostředí.</br>_například "C:\bin\Microsoft.Spark.Worker"_
-| DOTNET_ASSEMBLY_SEARCH_PATHS | Cesty oddělené čárkami, <code>Microsoft.Spark.Worker</code> kde budou načítat sestavení.</br>Všimněte si, že pokud cesta začíná na ".", bude pracovní adresář předřazený. Pokud v **režimu příze**, "." by představovaly pracovní adresář kontejneru.</br>_například\\&lt;"C:\Uživatelské jméno&gt;\\&lt;mysparkapp&gt;\bin\Debug\\&lt;dotnet version&gt;"_
-| DOTNET_WORKER_DEBUG          | Pokud chcete <a href="https://github.com/dotnet/spark/blob/master/docs/developer-guide.md#debugging-user-defined-function-udf">ladit UDF</a>, nastavte tuto proměnnou prostředí před <code>1</code> spuštěním <code>spark-submit</code>.
+| DOTNET_WORKER_DIR            | Cesta k <code>Microsoft.Spark.Worker</code> vygenerování binárního souboru.</br>Používá ho ovladač Spark a předává se do prováděcích modulů Spark. Pokud tato proměnná není nastavená, prováděče Spark budou hledat v cestě zadané v <code>PATH</code> proměnné prostředí.</br>_například "C:\bin\Microsoft.Spark.Worker"_
+| DOTNET_ASSEMBLY_SEARCH_PATHS | Cesty oddělené čárkami, kde <code>Microsoft.Spark.Worker</code> budou načtena sestavení.</br>Všimněte si, že pokud cesta začíná znakem ".", bude pracovní adresář předcházet. Pokud v **režimu příze**, "." by představovalo pracovní adresář kontejneru.</br>_například "C:\Users \\ &lt; uživatelské jméno &gt; \\ &lt; mysparkapp &gt; \bin\debug \\ &lt; dotnet verze &gt; "_
+| DOTNET_WORKER_DEBUG          | Pokud chcete ladit systém <a href="https://github.com/dotnet/spark/blob/master/docs/developer-guide.md#debugging-user-defined-function-udf">souborů UDF</a>, nastavte před spuštěním tuto proměnnou prostředí na <code>1</code> <code>spark-submit</code> .
 
 ### <a name="parameter-options"></a>Možnosti parametrů
-Jakmile je aplikace Spark [sbalená](https://spark.apache.org/docs/latest/submitting-applications.html#bundling-your-applications-dependencies), `spark-submit`můžete ji spustit pomocí . V následující tabulce jsou uvedeny některé běžně používané možnosti:
+Jakmile je aplikace Spark připojená do [balíčku](https://spark.apache.org/docs/latest/submitting-applications.html#bundling-your-applications-dependencies), můžete ji spustit pomocí `spark-submit` . V následující tabulce jsou uvedeny některé běžně používané možnosti:
 
 | Název parametru        | Popis
 | :---------------------| :----------
-| --třída               | Vstupní bod pro vaši aplikaci.</br>_například org.apache.spark.deploy.dotnet.DotnetRunner_
-| --master              | Adresa <a href="https://spark.apache.org/docs/latest/submitting-applications.html#master-urls">URL hlavního serveru</a> pro cluster.</br>_například příze_
-| --deploy-mode         | Určuje, zda má být ovladač<code>cluster</code>nasazen v pracovních uzlech ( ) nebo místně jako externí klient (<code>client</code>).</br>Výchozí:<code>client</code>
-| --conf                | Libovolná vlastnost konfigurace <code>key=value</code> Spark ve formátu.</br>_například spark.yarn.appMasterEnv.DOTNET_WORKER_DIR=.\worker\Microsoft.Spark.Worker_
-| --soubory               | Seznam souborů oddělených čárkami, které mají být umístěny do pracovního adresáře každého vykonavatele.<br/><ul><li>Vezměte prosím na vědomí, že tato možnost je použitelná pouze pro režim příze.</li><li>Podporuje určení názvů souborů s # podobně jako Hadoop.</br></ul>_např. <code>myLocalSparkApp.dll#appSeen.dll</code> Vaše aplikace by měla <code>appSeen.dll</code> používat <code>myLocalSparkApp.dll</code> název jako odkaz při spuštění na YARN._</li>
-| --archivy          | Seznam archivů oddělených čárkami, které mají být extrahovány do pracovního adresáře každého vykonavatele.</br><ul><li>Vezměte prosím na vědomí, že tato možnost je použitelná pouze pro režim příze.</li><li>Podporuje určení názvů souborů s # podobně jako Hadoop.</br></ul>_např. <code>hdfs://&lt;path to your worker file&gt;/Microsoft.Spark.Worker.zip#worker</code> Tím zkopírujete a extrahujete soubor zip do <code>worker</code> složky._</li>
-| aplikace-jar       | Cesta k přibalené nádobě včetně vaší aplikace a všech závislostí.</br>_například&lt;hdfs:// cestu k&gt;vaší nádobě&lt;/microsoft-spark- version&gt;.jar_
-| argumenty aplikace | Argumenty předány hlavní metodě vaší hlavní třídy, pokud existuje.</br>_hdfs://&lt;cestu k&gt;/&lt;aplikaci aplikace&gt;.zip &lt;název&gt; &lt;aplikace args&gt;_
+| --Třída               | Vstupní bod pro vaši aplikaci.</br>_například org. Apache. spark. deploy. dotnet. DotnetRunner_
+| – hlavní              | <a href="https://spark.apache.org/docs/latest/submitting-applications.html#master-urls">Hlavní adresa URL</a> clusteru</br>_např. příze_
+| --Deploy-Mode         | Zda se má ovladač nasadit do pracovních uzlů ( <code>cluster</code> ) nebo místně jako externí klient ( <code>client</code> ).</br>Výchozí<code>client</code>
+| --conf                | Libovolná vlastnost konfigurace Sparku ve <code>key=value</code> formátu</br>_například Spark. příze. appMasterEnv. DOTNET_WORKER_DIR = .\worker\Microsoft.Spark.Worker_
+| --soubory               | Čárkami oddělený seznam souborů, které se umístí do pracovního adresáře každého prováděcího modulu.<br/><ul><li>Upozorňujeme, že tato možnost je platná pouze pro režim příze.</li><li>Podporuje zadání názvů souborů s # podobným Hadoop.</br></ul>_například <code>myLocalSparkApp.dll#appSeen.dll</code> . Vaše aplikace by měla používat název jako <code>appSeen.dll</code> odkaz na <code>myLocalSparkApp.dll</code> spuštění v případě příze._</li>
+| --archivy          | Čárkami oddělený seznam archivů, které se mají extrahovat do pracovního adresáře každého prováděcího modulu.</br><ul><li>Upozorňujeme, že tato možnost je platná pouze pro režim příze.</li><li>Podporuje zadání názvů souborů s # podobným Hadoop.</br></ul>_například <code>hdfs://&lt;path to your worker file&gt;/Microsoft.Spark.Worker.zip#worker</code> . Tato akce zkopíruje a extrahuje soubor zip do <code>worker</code> složky._</li>
+| aplikace – jar       | Cesta k balíčku jar včetně vaší aplikace a všech závislostí.</br>_např. hdfs:// &lt; cesta k vašemu jar &gt; /Microsoft-Spark- &lt; verze &gt; . jar_
+| argumenty aplikace | Argumenty předané metodě Main třídy Main, pokud existují.</br>_např. HDFS:// &lt; cesta k aplikaci &gt; / &lt; vaše aplikace &gt; . zip &lt; &gt; &lt; argumenty aplikace název aplikace&gt;_
 
 > [!NOTE]
-> Zadejte `--options` všechny `application-jar` před při `spark-submit`spouštění aplikací s , jinak budou ignorovány. Další informace naleznete v [ `spark-submit` tématu možnosti](https://spark.apache.org/docs/latest/submitting-applications.html) a [spuštění jiskry na podrobnosti YARN](https://spark.apache.org/docs/latest/running-on-yarn.html).
+> Zadejte všechny `--options` před spuštěním `application-jar` aplikací s `spark-submit` , jinak budou ignorovány. Další informace najdete v tématu [ `spark-submit` Možnosti](https://spark.apache.org/docs/latest/submitting-applications.html) a [spuštění Sparku v podrobnostech o přízi](https://spark.apache.org/docs/latest/running-on-yarn.html).
 
 ## <a name="frequently-asked-questions"></a>Nejčastější dotazy
-### <a name="when-i-run-a-spark-app-with-udfs-i-get-a-filenotfoundexception-error-what-should-i-do"></a>Když spustím aplikaci jiskry s UDFs, dostanu chybu 'FileNotFoundException'. Co bych měl/a dělat?
-> **Chyba:** [Error] [TaskRunner] [0] ProcessStream() se nezdařilo s výjimkou: System.IO.FileNotFoundException: Assembly 'mySparkApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' soubor nebyl nalezen: 'mySparkApp.dll'
+### <a name="when-i-run-a-spark-app-with-udfs-i-get-a-filenotfoundexception-error-what-should-i-do"></a>Při spuštění aplikace Spark s UDF se zobrazí chyba "FileNotFoundException". Co bych měl/a dělat?
+> **Chyba:** [Chyba] [TaskRunner] [0] ProcessStream () se nezdařilo. výjimka: System. IO. FileNotFoundException: sestavení ' MySparkApp, Version = 1.0.0.0, Culture = neutral, PublicKeyToken = null ' nebyl nalezen: ' mySparkApp. dll '
 
-**Odpověď:** Zkontrolujte, `DOTNET_ASSEMBLY_SEARCH_PATHS` zda je proměnná prostředí nastavena správně. Měla by to být `mySparkApp.dll`cesta, která obsahuje vaši .
+**Odpověď:** Ověřte, že `DOTNET_ASSEMBLY_SEARCH_PATHS` je správně nastavená proměnná prostředí. Měla by to být cesta, která obsahuje vaše `mySparkApp.dll` .
 
-### <a name="after-i-upgraded-my-net-for-apache-spark-version-and-reset-the-dotnet_worker_dir-environment-variable-why-do-i-still-get-the-following-ioexception-error"></a>Po upgradu rozhraní .NET pro verzi `DOTNET_WORKER_DIR` Apache Spark a obnovení proměnné `IOException` prostředí, proč se mi stále zobrazuje následující chyba?
-> **Chyba:** Ztracená úloha 0.0 ve fázi 11.0 (TID 24, localhost, ovladač vykonavatele): java.io.IOException: Nelze spustit program "Microsoft.Spark.Worker.exe": CreateProcess error=2, Systém nemůže najít zadaný soubor.
+### <a name="after-i-upgraded-my-net-for-apache-spark-version-and-reset-the-dotnet_worker_dir-environment-variable-why-do-i-still-get-the-following-ioexception-error"></a>Po upgradu rozhraní .NET pro Apache Spark verzi a resetování `DOTNET_WORKER_DIR` proměnné prostředí se mi zobrazí následující `IOException` Chyba?
+> **Chyba:** Ztráta úlohy 0,0 ve fázi 11,0 (TID 24, localhost, ovladač prováděcího modulu): Java. IO. IOException: nelze spustit program Microsoft. spark. Worker. exe: Chyba CreateProcess = 2, systém nemůže najít zadaný soubor.
 
-**Odpověď:** Nejprve zkuste restartovat okno Prostředí PowerShell (nebo jiná příkazová okna), aby mohlo trvat nejnovější hodnoty proměnných prostředí. Pak spusťte program.
+**Odpověď:** Zkuste nejdřív restartovat okno PowerShellu (nebo jiná okna příkazu), aby bylo možné převzít nejnovější hodnoty proměnných prostředí. Pak program spusťte.
 
-### <a name="after-submitting-my-spark-application-i-get-the-error-systemtypeloadexception-could-not-load-type-systemruntimeremotingcontextscontext"></a>Po odeslání aplikace Spark se zobrazí `System.TypeLoadException: Could not load type 'System.Runtime.Remoting.Contexts.Context'`chyba .
-> **Chyba:** [Error] [TaskRunner] [0] ProcessStream() se nezdařilo s výjimkou: System.TypeLoadException: Nelze načíst typ System.Runtime.Remoting.Contexts.Context' ze sestavení 'mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=...'.
+### <a name="after-submitting-my-spark-application-i-get-the-error-systemtypeloadexception-could-not-load-type-systemruntimeremotingcontextscontext"></a>Po odeslání aplikace Spark se zobrazí chyba `System.TypeLoadException: Could not load type 'System.Runtime.Remoting.Contexts.Context'` .
+> **Chyba:** [Chyba] [TaskRunner] [0] ProcessStream () se nezdařilo s výjimkou: System. TypeLoadException: nelze načíst typ ' System. Runtime. Fail. kontexts. Context ' ze sestavení ' mscorlib, Version = 4.0.0.0, Culture = neutral, PublicKeyToken =... '.
 
-**Odpověď:** Zkontrolujte `Microsoft.Spark.Worker` verzi, kterou používáte. Existují dvě verze: **.NET Framework 4.6.1** a **.NET Core 2.1.x**. V tomto `Microsoft.Spark.Worker.net461.win-x64-<version>` případě (které si můžete [stáhnout)](https://github.com/dotnet/spark/releases)by měl být použit, protože `System.Runtime.Remoting.Contexts.Context` je pouze pro rozhraní .NET Framework.
+**Odpověď:** Ověřte `Microsoft.Spark.Worker` verzi, kterou používáte. Existují dvě verze: **.NET Framework 4.6.1** a **.NET Core 2.1. x**. V takovém případě, `Microsoft.Spark.Worker.net461.win-x64-<version>` (který si můžete [Stáhnout](https://github.com/dotnet/spark/releases)), by se měla použít jenom v případě, že `System.Runtime.Remoting.Contexts.Context` je k dis.NET Framework.
 
-### <a name="how-do-i-run-my-spark-application-with-udfs-on-yarn-which-environment-variables-and-parameters-should-i-use"></a>Jak spustím svou jiskřicí aplikaci s UDF s YARN? Jaké proměnné a parametry prostředí mám použít?
+### <a name="how-do-i-run-my-spark-application-with-udfs-on-yarn-which-environment-variables-and-parameters-should-i-use"></a>Návody spustit aplikaci Spark s UDF při PŘÍZi? Které proměnné prostředí a parametry mám použít?
 
-**Odpověď:** Chcete-li spustit aplikaci jiskry na YARN, `spark.yarn.appMasterEnv.[EnvironmentVariableName]`proměnné prostředí by měly být určeny jako . Viz níže jako příklad `spark-submit`pomocí :
+**Odpověď:** Chcete-li spustit aplikaci Spark na PŘÍZi, proměnné prostředí by měly být zadány jako `spark.yarn.appMasterEnv.[EnvironmentVariableName]` . Jako příklad použijte `spark-submit` :
 
 ```powershell
 spark-submit \
@@ -78,5 +78,5 @@ hdfs://<path to your files>/mySparkApp.zip mySparkApp
 
 ## <a name="next-steps"></a>Další kroky
 
-* [Začínáme s rozhraním .NET pro Apache Spark](../tutorials/get-started.md)
-* [Ladění rozhraní .NET pro aplikaci Apache Spark v systému Windows](../how-to-guides/debug.md)
+* [Začínáme s .NET pro Apache Spark](../tutorials/get-started.md)
+* [Ladění rozhraní .NET pro Apache Spark aplikaci ve Windows](debug.md)

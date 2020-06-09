@@ -5,16 +5,16 @@ helpviewer_keywords:
 - Web hosted service
 - IIS Hosting Using Inline Code Sample [Windows Communication Foundation]
 ms.assetid: 56fe3687-a34b-4661-8e30-b33770f413fa
-ms.openlocfilehash: 304da4fa7d2bb48899cdec864fb2dc1f9fdfb9ef
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 47d056e35b92654c8e47647c7273c5d69b37bd97
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76746436"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84594644"
 ---
 # <a name="iis-hosting-using-inline-code"></a>Hostování IIS pomocí vloženého kódu
 
-Tato ukázka předvádí, jak implementovat službu hostovanou službou Internetová informační služba (IIS), kde je kód služby obsažen v souboru. svc a je kompilován na vyžádání. Kód služby se dá taky implementovat přímo ve zdrojových souborech, které se nacházejí v adresáři aplikace \ App_Code, nebo zkompilované do sestavení nasazeného v \Bin. Tato ukázka tyto techniky předvádí.
+Tato ukázka předvádí, jak implementovat službu hostovanou službou Internetová informační služba (IIS), kde je kód služby obsažen v souboru. svc a je kompilován na vyžádání. Kód služby se dá taky implementovat přímo ve zdrojových souborech, které se nacházejí v adresáři aplikace \ App_Code, nebo zkompilované do sestavení nasazeného v \Bin.. Tato ukázka tyto techniky předvádí.
 
 > [!NOTE]
 > Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.
@@ -24,11 +24,11 @@ Tato ukázka předvádí, jak implementovat službu hostovanou službou Internet
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Hosting\WebHost\InlineCode`
 
-Ukázka předvádí typickou službu, která implementuje kontrakt definující způsob komunikace požadavek-odpověď. Služba je hostována službou IIS a kód služby je zcela obsažen v souboru Service. svc. Služba je hostovaná a kompilovaná na vyžádání první zprávou odeslanou službě. Není nutná žádná předkompilace. Služba implementuje kontrakt `ICalculator`, jak je definován v následujícím kódu:
+Ukázka předvádí typickou službu, která implementuje kontrakt definující způsob komunikace požadavek-odpověď. Služba je hostována službou IIS a kód služby je zcela obsažen v souboru Service. svc. Služba je hostovaná a kompilovaná na vyžádání první zprávou odeslanou službě. Není nutná žádná předkompilace. Služba implementuje `ICalculator` kontrakt, jak je definováno v následujícím kódu:
 
 ```csharp
 // Define a service contract.
@@ -86,13 +86,13 @@ Press <ENTER> to terminate client.
 
 ### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky
 
-1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
+1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](one-time-setup-procedure-for-the-wcf-samples.md).
 
-2. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
+2. Chcete-li sestavit edici C# nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](building-the-samples.md).
 
 3. Po sestavení řešení spusťte soubor Setup. bat a nastavte aplikaci ServiceModelSamples ve službě IIS 7,0. Adresář ServiceModelSamples by se teď měl zobrazit jako aplikace IIS 7,0.
 
-4. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md). Příklad, jak vytvořit klientskou aplikaci, která může zavolat tuto službu, naleznete v tématu [How to: Create a Client](../../../../docs/framework/wcf/how-to-create-a-wcf-client.md).
+4. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](running-the-samples.md). Příklad, jak vytvořit klientskou aplikaci, která může zavolat tuto službu, naleznete v tématu [How to: Create a Client](../how-to-create-a-wcf-client.md).
 
 ## <a name="see-also"></a>Viz také
 

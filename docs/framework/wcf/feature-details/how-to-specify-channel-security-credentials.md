@@ -2,12 +2,12 @@
 title: 'Postupy: Určení přihlašovacích údajů pro zabezpečení kanálu'
 ms.date: 03/30/2017
 ms.assetid: f8e03f47-9c4f-4dd5-8f85-429e6d876119
-ms.openlocfilehash: 72fdcd18fba2eabe8255f73acd240e12e57d56ea
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 45a13460ce94cbacae0465fede4b455a2833ce81
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144705"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84596939"
 ---
 # <a name="how-to-specify-channel-security-credentials"></a>Postupy: Určení přihlašovacích údajů pro zabezpečení kanálu
 Moniker služby Windows Communication Foundation (WCF) umožňuje aplikacím COM volat služby WCF. Většina služeb WCF vyžaduje, aby klient určil přihlašovací údaje pro ověřování a autorizaci. Při volání služby WCF z klienta WCF můžete zadat tyto přihlašovací údaje ve spravovaném kódu nebo v konfiguračním souboru aplikace. Při volání služby WCF z aplikace COM můžete použít <xref:System.ServiceModel.ComIntegration.IChannelCredentials> rozhraní k zadání přihlašovacích údajů. Toto téma popisuje různé způsoby, jak zadat pověření pomocí <xref:System.ServiceModel.ComIntegration.IChannelCredentials> rozhraní.  
@@ -15,7 +15,7 @@ Moniker služby Windows Communication Foundation (WCF) umožňuje aplikacím COM
 > [!NOTE]
 > <xref:System.ServiceModel.ComIntegration.IChannelCredentials>je rozhraní založené na rozhraní IDispatch a nebude možné získat funkce technologie IntelliSense v prostředí sady Visual Studio.  
   
- Tento článek bude používat službu WCF definovanou v [ukázce zabezpečení zpráv](../../../../docs/framework/wcf/samples/message-security-sample.md).  
+ Tento článek bude používat službu WCF definovanou v [ukázce zabezpečení zpráv](../samples/message-security-sample.md).  
   
 ### <a name="to-specify-a-client-certificate"></a>Určení klientského certifikátu  
   
@@ -115,7 +115,7 @@ Moniker služby Windows Communication Foundation (WCF) umožňuje aplikacím COM
   
 ### <a name="to-specify-an-issue-token"></a>Určení tokenu problému  
   
-1. Tokeny vydávání se používají jenom pro aplikace, které používají federované zabezpečení. Další informace o federovaném zabezpečení najdete v tématu [federace a vystavené tokeny](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md) a [Ukázka federace](../../../../docs/framework/wcf/samples/federation-sample.md).  
+1. Tokeny vydávání se používají jenom pro aplikace, které používají federované zabezpečení. Další informace o federovaném zabezpečení najdete v tématu [federace a vystavené tokeny](federation-and-issued-tokens.md) a [Ukázka federace](../samples/federation-sample.md).  
   
      Následující příklad kódu Visual Basic ukazuje, jak zavolat <xref:System.ServiceModel.ComIntegration.IChannelCredentials.SetIssuedToken%28System.String%2CSystem.String%2CSystem.String%29> metodu:  
   
@@ -133,8 +133,8 @@ Moniker služby Windows Communication Foundation (WCF) umožňuje aplikacím COM
   
 ## <a name="see-also"></a>Viz také
 
-- [metadata](../../../../docs/framework/wcf/feature-details/federation.md)
-- [Postupy: Konfigurace pověření ve službě Federation Service](../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)
-- [Postupy: Vytvoření federovaného klienta](../../../../docs/framework/wcf/feature-details/how-to-create-a-federated-client.md)
-- [Zabezpečení zpráv](../../../../docs/framework/wcf/feature-details/message-security-in-wcf.md)
-- [Vazby a zabezpečení](../../../../docs/framework/wcf/feature-details/bindings-and-security.md)
+- [metadata](federation.md)
+- [Postupy: Konfigurace pověření ve službě Federation Service](how-to-configure-credentials-on-a-federation-service.md)
+- [Postupy: Vytvoření federovaného klienta](how-to-create-a-federated-client.md)
+- [Zabezpečení zpráv](message-security-in-wcf.md)
+- [Vazby a zabezpečení](bindings-and-security.md)

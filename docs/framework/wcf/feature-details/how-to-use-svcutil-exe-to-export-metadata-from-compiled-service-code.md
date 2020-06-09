@@ -2,24 +2,24 @@
 title: 'Postupy: Použití nástroje Svcutil.exe pro export metadat z kompilovaného kódu služby'
 ms.date: 03/30/2017
 ms.assetid: 95d0aed3-16a2-4398-89bb-39418eeb7355
-ms.openlocfilehash: 2d1b70931fe70dfd605e182d4b23a151bc8130a3
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 9acefdec63a6f518ead6cdbcb19ebc8c75609dd6
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70991184"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84595359"
 ---
 # <a name="how-to-use-svcutilexe-to-export-metadata-from-compiled-service-code"></a>Postupy: Použití nástroje Svcutil.exe pro export metadat z kompilovaného kódu služby
 Svcutil. exe může exportovat metadata pro služby, kontrakty a datové typy v kompilovaných sestaveních následujícím způsobem:  
   
 - Chcete-li exportovat metadata pro všechny smlouvy zkompilované služby pro sadu sestavení pomocí Svcutil. exe, zadejte sestavení jako vstupní parametry. Toto je výchozí chování.  
   
-- Chcete-li exportovat metadata pro kompilovaná službu pomocí Svcutil. exe, zadejte jako vstupní parametry sestavení služby nebo sestavení. K určení názvu konfigurace `/serviceName` služby, kterou chcete exportovat, je nutné použít možnost. Svcutil. exe automaticky načte konfigurační soubor pro zadané spustitelné sestavení.  
+- Chcete-li exportovat metadata pro kompilovaná službu pomocí Svcutil. exe, zadejte jako vstupní parametry sestavení služby nebo sestavení. `/serviceName`K určení názvu konfigurace služby, kterou chcete exportovat, je nutné použít možnost. Svcutil. exe automaticky načte konfigurační soubor pro zadané spustitelné sestavení.  
   
-- Chcete-li exportovat všechny typy kontraktů dat v rámci sady sestavení, `/dataContractOnly` použijte možnost.  
+- Chcete-li exportovat všechny typy kontraktů dat v rámci sady sestavení, použijte `/dataContractOnly` možnost.  
   
 > [!NOTE]
-> `/reference` Použijte možnost k zadání cest k souborům pro všechna závislá sestavení.  
+> Použijte `/reference` možnost k zadání cest k souborům pro všechna závislá sestavení.  
   
 ### <a name="to-export-metadata-for-compiled-service-contracts"></a>Export metadat pro zkompilované kontrakty služby  
   
@@ -96,7 +96,7 @@ svcutil.exe /dataContractOnly Contracts.dll
 svcutil.exe /serviceName:MyService Service.exe /reference:<path>/Contracts.dll  
 ```  
   
- `<path>` Je cesta ke smlouvám. dll.  
+ `<path>`Je cesta ke smlouvám. dll.  
   
 ```csharp
 // The following service contract and data contracts are compiled into
@@ -166,7 +166,7 @@ public class MyService : IPersonFinder
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Nástroj metadat modelu služby (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)
-- [Export a import metadat](../../../../docs/framework/wcf/feature-details/exporting-and-importing-metadata.md)
+- [Nástroj ServiceModel Metadata Utility (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md)
+- [Export a import metadat](exporting-and-importing-metadata.md)
