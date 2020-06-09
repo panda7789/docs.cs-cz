@@ -2,16 +2,16 @@
 title: Zabezpečení zpráv ve WCF
 ms.date: 03/30/2017
 ms.assetid: a80efb59-591a-4a37-bb3c-8fffa6ca0b7d
-ms.openlocfilehash: 32f6659f6ac744ab7af07c23e7e26ea1124d020c
-ms.sourcegitcommit: 09b4090b78f52fd09b0e430cd4b26576f1fdf96e
+ms.openlocfilehash: 6875339df327371a79bc9b9072aca2df0bc7d3f6
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76212074"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84602658"
 ---
 # <a name="message-security-in-wcf"></a>Zabezpečení zpráv ve WCF
 
-Windows Communication Foundation (WCF) má dva hlavní režimy pro poskytování zabezpečení (`Transport` a `Message`) a třetí režim (`TransportWithMessageCredential`), který kombinuje tyto dvě. Toto téma popisuje zabezpečení zpráv a důvody jejich použití.
+Windows Communication Foundation (WCF) má dva hlavní režimy pro zajištění zabezpečení ( `Transport` a `Message` ) a třetí režim ( `TransportWithMessageCredential` ), který kombinuje tyto dvě. Toto téma popisuje zabezpečení zpráv a důvody jejich použití.
 
 ## <a name="what-is-message-security"></a>Co je zabezpečení zpráv?
 
@@ -29,7 +29,7 @@ V zabezpečení na úrovni zprávy jsou všechny informace o zabezpečení zapou
 
 - Podpora pro více přenosů. Můžete odesílat zabezpečené zprávy přes mnoho různých přenosů, jako jsou pojmenované kanály a TCP, aniž byste se museli spoléhat na zabezpečení protokolu. U zabezpečení na úrovni přenosu jsou všechny informace o zabezpečení vymezeny na jedno konkrétní přenosové připojení a nejsou dostupné přímo z samotného obsahu zprávy. Zabezpečení zpráv zajišťuje zabezpečenou zprávu bez ohledu na to, jaký přenos použijete k přenosu zprávy, a kontext zabezpečení je přímo vložen do zprávy.
 
-- Podpora pro rozsáhlou sadu přihlašovacích údajů a deklarací identity. Zabezpečení zpráv je založeno na specifikaci WS-Security, která poskytuje rozšiřitelnou architekturu, která dokáže přenášet jakýkoli typ deklarace identity uvnitř zprávy protokolu SOAP. Na rozdíl od zabezpečení přenosu není sada mechanismů ověřování nebo deklarací identity, které můžete použít, omezené funkcemi přenosu. Zabezpečení zpráv WCF zahrnuje několik typů ověřování a přenos nároků a v případě potřeby je můžete rozšířit na podporu dalších typů. Z těchto důvodů je například možné, že se nejedná o scénář federovaných přihlašovacích údajů bez zabezpečení zpráv. Další informace o federačních scénářích, které podporuje WCF, najdete v tématu [federace a vystavené tokeny](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md).
+- Podpora pro rozsáhlou sadu přihlašovacích údajů a deklarací identity. Zabezpečení zpráv je založeno na specifikaci WS-Security, která poskytuje rozšiřitelnou architekturu, která dokáže přenášet jakýkoli typ deklarace identity uvnitř zprávy protokolu SOAP. Na rozdíl od zabezpečení přenosu není sada mechanismů ověřování nebo deklarací identity, které můžete použít, omezené funkcemi přenosu. Zabezpečení zpráv WCF zahrnuje několik typů ověřování a přenos nároků a v případě potřeby je můžete rozšířit na podporu dalších typů. Z těchto důvodů je například možné, že se nejedná o scénář federovaných přihlašovacích údajů bez zabezpečení zpráv. Další informace o federačních scénářích, které podporuje WCF, najdete v tématu [federace a vystavené tokeny](federation-and-issued-tokens.md).
 
 ## <a name="how-message-and-transport-security-compare"></a>Jak se porovnávají zabezpečení zpráv a přenosů
 
@@ -63,9 +63,9 @@ Zabezpečení zpráv má následující nevýhody:
 
 - Vyžaduje implementaci mechanismů zabezpečení na úrovni XML a podporu specifikace WS-Security. To může mít vliv na interoperabilitu.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Zabezpečení služeb a klientů](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
-- [Zabezpečení přenosu](../../../../docs/framework/wcf/feature-details/transport-security.md)
-- [Postupy: Použití přihlašovacích údajů k zabezpečení přenosů a zpráv](../../../../docs/framework/wcf/feature-details/how-to-use-transport-security-and-message-credentials.md)
+- [Zabezpečení služeb a klientů](securing-services-and-clients.md)
+- [Zabezpečení přenosu](transport-security.md)
+- [Postupy: Použití přihlašovacích údajů k zabezpečení přenosů a zpráv](how-to-use-transport-security-and-message-credentials.md)
 - [Vzory a postupy Microsoft, kapitola 3: implementace přenosu a zabezpečení vrstvy zpráv](https://docs.microsoft.com/previous-versions/msp-n-p/ff647370(v=pandp.10))

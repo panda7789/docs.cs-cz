@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: fc07a26c-cbee-41c5-8fb0-329085fef749
-ms.openlocfilehash: d3b05a1786131a119d516edeba0d6e8e24289f87
-ms.sourcegitcommit: 09b4090b78f52fd09b0e430cd4b26576f1fdf96e
+ms.openlocfilehash: 7845bc45d0baecb07e4c03531f21d900c4e23bf7
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76212032"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84595242"
 ---
 # <a name="message-security-with-a-windows-client-without-credential-negotiation"></a>Zabezpečení zpráv u klienta Windows bez vyjednávání pověření
 
@@ -19,9 +19,9 @@ V následujícím scénáři vidíte klienta služby a službu Windows Communica
 Služba i klient jsou ve stejné doméně nebo důvěryhodných doménách.
 
 > [!NOTE]
-> Rozdíl mezi tímto scénářem a [zabezpečením zprávy pomocí klienta Windows](../../../../docs/framework/wcf/feature-details/message-security-with-a-windows-client.md) je v tom, že tento scénář nevyjednává pověření služby se službou před odesláním zprávy aplikace. Navíc vzhledem k tomu, že tento scénář vyžaduje protokol Kerberos, vyžaduje prostředí domény systému Windows.
+> Rozdíl mezi tímto scénářem a [zabezpečením zprávy pomocí klienta Windows](message-security-with-a-windows-client.md) je v tom, že tento scénář nevyjednává pověření služby se službou před odesláním zprávy aplikace. Navíc vzhledem k tomu, že tento scénář vyžaduje protokol Kerberos, vyžaduje prostředí domény systému Windows.
 
-![Zabezpečení zpráv bez vyjednávání přihlašovacích údajů](../../../../docs/framework/wcf/feature-details/media/0c9f9baa-2439-4ef9-92f4-43c242d85d0d.gif "0c9f9baa-2439-4ef9-92f4-43c242d85d0d")
+![Zabezpečení zpráv bez vyjednávání přihlašovacích údajů](media/0c9f9baa-2439-4ef9-92f4-43c242d85d0d.gif "0c9f9baa-2439-4ef9-92f4-43c242d85d0d")
 
 |Charakteristika|Popis|
 |--------------------|-----------------|
@@ -29,14 +29,14 @@ Služba i klient jsou ve stejné doméně nebo důvěryhodných doménách.
 |Interoperabilita|Ano, WS-Security s kompatibilními klienty profilování Kerberos|
 |Ověřování (Server)|Vzájemné ověřování serveru a klienta|
 |Ověřování (klient)|Vzájemné ověřování serveru a klienta|
-|Integrita|Ano|
-|Důvěrnost|Ano|
-|Doprava|HTTP|
+|Integrita|Yes|
+|Důvěrnost|Yes|
+|Přenos|HTTP|
 |Vazba|<xref:System.ServiceModel.WSHttpBinding>|
 
-## <a name="service"></a>Service
+## <a name="service"></a>Služba
 
-Následující kód a konfigurace jsou určeny ke spuštění nezávisle. Proveďte jednu z těchto akcí:
+Následující kód a konfigurace jsou určeny ke spuštění nezávisle. Proveďte některou z následujících akcí:
 
 - Vytvořte samostatnou službu pomocí kódu bez konfigurace.
 
@@ -49,11 +49,11 @@ Následující kód vytvoří koncový bod služby, který používá zabezpeče
 > [!NOTE]
 > Chcete-li použít typ přihlašovacích údajů systému Windows bez vyjednávání, musí mít uživatelský účet služby přístup k hlavnímu názvu služby (SPN), který je zaregistrován v doméně služby Active Directory. To můžete provést dvěma způsoby:
 
-1. Ke spuštění služby použijte účet `NetworkService` nebo `LocalSystem`. Vzhledem k tomu, že tyto účty mají přístup k hlavnímu názvu služby počítače, který se vytvoří, když se počítač připojí k doméně služby Active Directory, WCF automaticky vygeneruje správný element SPN v rámci koncového bodu služby v metadatech služby (popis webových služeb Jazyk nebo WSDL).
+1. Použijte `NetworkService` účet nebo `LocalSystem` ke spuštění služby. Vzhledem k tomu, že tyto účty mají přístup k hlavnímu názvu služby počítače, který je vytvořen při připojení počítače k doméně služby Active Directory, služba WCF automaticky vygeneruje správný element SPN uvnitř koncového bodu služby v metadatech služby (Web Services Description Language nebo WSDL).
 
 2. Ke spuštění služby použijte libovolný účet domény služby Active Directory. V takovém případě musíte pro tento doménový účet vytvořit hlavní název služby (SPN). Jedním ze způsobů, jak to provést, je použít nástroj Setspn. exe Utility. Po vytvoření hlavního názvu služby (SPN) pro účet služby nakonfigurujte WCF pro publikování tohoto hlavního názvu služby do klientů služby prostřednictvím metadat (WSDL). To se provádí nastavením identity koncového bodu pro vystavený koncový bod, a to buď pomocí konfiguračního souboru aplikace, nebo kódu. Následující příklad publikuje identitu programově.
 
-Další informace o SPN, protokolu Kerberos a službě Active Directory najdete v tématu [Kerberos Technical dodatk pro Windows](https://docs.microsoft.com/previous-versions/msp-n-p/ff649429(v=pandp.10)). Další informace o identitách koncových bodů najdete v tématu [režimy ověřování SecurityBindingElement](../../../../docs/framework/wcf/feature-details/securitybindingelement-authentication-modes.md).
+Další informace o SPN, protokolu Kerberos a službě Active Directory najdete v tématu [Kerberos Technical dodatk pro Windows](https://docs.microsoft.com/previous-versions/msp-n-p/ff649429(v=pandp.10)). Další informace o identitách koncových bodů najdete v tématu [režimy ověřování SecurityBindingElement](securitybindingelement-authentication-modes.md).
 
 [!code-csharp[C_SecurityScenarios#12](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#12)]
 [!code-vb[C_SecurityScenarios#12](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#12)]
@@ -98,30 +98,30 @@ Místo kódu lze použít následující konfiguraci.
 
 ## <a name="client"></a>Klient
 
-Následující kód a konfigurace jsou určeny ke spuštění nezávisle. Proveďte jednu z těchto akcí:
+Následující kód a konfigurace jsou určeny ke spuštění nezávisle. Proveďte některou z následujících akcí:
 
 - Vytvořte samostatného klienta pomocí kódu (a kódu klienta).
 
-- Vytvořte klienta, který nedefinuje žádné adresy koncových bodů. Místo toho použijte konstruktor klienta, který převezme název konfigurace jako argument. Příklad:
+- Vytvořte klienta, který nedefinuje žádné adresy koncových bodů. Místo toho použijte konstruktor klienta, který převezme název konfigurace jako argument. Například:
 
   [!code-csharp[C_SecurityScenarios#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#0)]
   [!code-vb[C_SecurityScenarios#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#0)]
 
 ### <a name="code"></a>Kód
 
-Následující kód nakonfiguruje klienta. Režim zabezpečení je nastaven na hodnotu zpráva a typ přihlašovacích údajů klienta je nastaven na hodnotu Windows. Všimněte si, že vlastnosti <xref:System.ServiceModel.MessageSecurityOverHttp.NegotiateServiceCredential%2A> a <xref:System.ServiceModel.NonDualMessageSecurityOverHttp.EstablishSecurityContext%2A> jsou nastaveny na `false`.
+Následující kód nakonfiguruje klienta. Režim zabezpečení je nastaven na hodnotu zpráva a typ přihlašovacích údajů klienta je nastaven na hodnotu Windows. Všimněte si, <xref:System.ServiceModel.MessageSecurityOverHttp.NegotiateServiceCredential%2A> že <xref:System.ServiceModel.NonDualMessageSecurityOverHttp.EstablishSecurityContext%2A> vlastnosti a jsou nastaveny na `false` .
 
 > [!NOTE]
-> Chcete-li použít typ přihlašovacích údajů systému Windows bez vyjednávání, musí být klient nakonfigurován pomocí SPN účtu služby před zahájením komunikace se službou. Klient používá hlavní název služby (SPN) k získání tokenu protokolu Kerberos k ověření a zabezpečení komunikace se službou. Následující příklad ukazuje, jak nakonfigurovat klienta nástroje pomocí hlavního názvu služby (SPN). Pokud k vygenerování klienta používáte [Nástroj pro metadata ServiceModel (Svcutil. exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) , hlavní název služby (SPN) se automaticky rozšíří na klienta z metadat služby (WSDL), pokud metadata služby obsahují tyto informace. Další informace o tom, jak nakonfigurovat službu tak, aby obsahovala hlavní název služby (SPN) v metadatech služby, najdete v části služba dále v tomto tématu.
+> Chcete-li použít typ přihlašovacích údajů systému Windows bez vyjednávání, musí být klient nakonfigurován pomocí SPN účtu služby před zahájením komunikace se službou. Klient používá hlavní název služby (SPN) k získání tokenu protokolu Kerberos k ověření a zabezpečení komunikace se službou. Následující příklad ukazuje, jak nakonfigurovat klienta nástroje pomocí hlavního názvu služby (SPN). Pokud k vygenerování klienta používáte [Nástroj pro metadata ServiceModel (Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) , hlavní název služby (SPN) se automaticky rozšíří na klienta z metadat služby (WSDL), pokud metadata služby obsahují tyto informace. Další informace o tom, jak nakonfigurovat službu tak, aby obsahovala hlavní název služby (SPN) v metadatech služby, najdete v části služba dále v tomto tématu.
 >
-> Další informace o hlavních názvových názvech, protokolech Kerberos a službě Active Directory najdete v tématu [Kerberos Technical dodatk pro Windows](https://docs.microsoft.com/previous-versions/msp-n-p/ff649429(v=pandp.10)). Další informace o identitách koncových bodů najdete v tématu [režimy ověřování SecurityBindingElement](../../../../docs/framework/wcf/feature-details/securitybindingelement-authentication-modes.md) .
+> Další informace o hlavních názvových názvech, protokolech Kerberos a službě Active Directory najdete v tématu [Kerberos Technical dodatk pro Windows](https://docs.microsoft.com/previous-versions/msp-n-p/ff649429(v=pandp.10)). Další informace o identitách koncových bodů najdete v tématu [režimy ověřování SecurityBindingElement](securitybindingelement-authentication-modes.md) .
 
 [!code-csharp[C_SecurityScenarios#19](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#19)]
 [!code-vb[C_SecurityScenarios#19](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#19)]
 
 ### <a name="configuration"></a>Konfigurace
 
-Následující kód nakonfiguruje klienta. Všimněte si, že [\<element servicePrincipalName >](../../../../docs/framework/configure-apps/file-schema/wcf/serviceprincipalname.md) musí být nastaven tak, aby odpovídal názvu SPN služby, jak je zaregistrován pro účet služby v doméně služby Active Directory.
+Následující kód nakonfiguruje klienta. Všimněte si, že [\<servicePrincipalName>](../../configure-apps/file-schema/wcf/serviceprincipalname.md) element musí být nastaven tak, aby odpovídal názvu SPN služby, jak je zaregistrován pro účet služby v doméně služby Active Directory.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -153,8 +153,8 @@ Následující kód nakonfiguruje klienta. Všimněte si, že [\<element service
 </configuration>
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)
-- [Identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)
+- [Přehled zabezpečení](security-overview.md)
+- [Identita a ověřování služby](service-identity-and-authentication.md)
 - [Model zabezpečení pro Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

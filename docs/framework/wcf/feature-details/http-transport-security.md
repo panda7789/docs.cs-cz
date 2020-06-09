@@ -2,12 +2,12 @@
 title: Zabezpečení přenosu HTTP
 ms.date: 03/30/2017
 ms.assetid: d3439262-c58e-4d30-9f2b-a160170582bb
-ms.openlocfilehash: 4bd3fbfd39538eee4344ef0a8ca4fe61b372ab70
-ms.sourcegitcommit: 09b4090b78f52fd09b0e430cd4b26576f1fdf96e
+ms.openlocfilehash: 28d0ac164022f585f25b44b16c68994b592ef041
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76212136"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84592720"
 ---
 # <a name="http-transport-security"></a>Zabezpečení přenosu HTTP
 Při použití protokolu HTTP jako přenosu je zabezpečení zajišťováno pomocí implementace SSL (Secure Sockets Layer) (SSL). Protokol SSL se v síti Internet často používá k ověření služby klientovi a pak k zajištění důvěrnosti (šifrování) kanálu. V tomto tématu se dozvíte, jak funguje SSL a jak je implementováno v Windows Communication Foundation (WCF).  
@@ -37,7 +37,7 @@ Při použití protokolu HTTP jako přenosu je zabezpečení zajišťováno pomo
   
 ### <a name="using-iis-for-transport-security"></a>Zabezpečení přenosu pomocí služby IIS  
   
-#### <a name="iis-70"></a>Internetová informační služba 7,0  
+#### <a name="iis-70"></a>IIS 7,0  
  Pokud chcete nastavit službu IIS 7,0 jako zabezpečeného hostitele (pomocí protokolu SSL), přečtěte si téma [konfigurace SSL (Secure Sockets Layer) ve službě IIS 7,0](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771438(v=ws.10)).  
   
 Informace o konfiguraci certifikátů pro použití se službou IIS 7,0 najdete v tématu [Konfigurace certifikátů serveru ve službě iis 7,0](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732230(v=ws.10)).  
@@ -51,9 +51,9 @@ Informace o konfiguraci certifikátů pro použití se službou IIS 7,0 najdete 
 
  Pokud vytváříte aplikaci WCF s místním hostováním, použijte nástroj [Httpcfg. exe](/windows/win32/http/httpcfg-exe) .
   
- Další informace o použití nástroje HttpCfg. exe k nastavení portu s certifikátem X. 509 naleznete v tématu [How to: Configure a port with a Certificate SSL](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md).  
+ Další informace o použití nástroje HttpCfg. exe k nastavení portu s certifikátem X. 509 naleznete v tématu [How to: Configure a port with a Certificate SSL](how-to-configure-a-port-with-an-ssl-certificate.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Zabezpečení přenosu](../../../../docs/framework/wcf/feature-details/transport-security.md)
-- [Zabezpečení zpráv](../../../../docs/framework/wcf/feature-details/message-security-in-wcf.md)
+- [Zabezpečení přenosu](transport-security.md)
+- [Zabezpečení zpráv](message-security-in-wcf.md)

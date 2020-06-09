@@ -6,39 +6,39 @@ helpviewer_keywords:
 - Windows Communication Foundation, security
 - WCF, security
 ms.assetid: 42055ee0-6d0c-443d-9d89-788dfc345d6d
-ms.openlocfilehash: 16b3afe9540f3e2953311f602408fce5412be2eb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ed0f018e0151e68afeb9a4747bf8a260faa184b1
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62000763"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84601033"
 ---
 # <a name="security-considerations-in-wcf"></a>Důležité informace o zabezpečení ve službě WCF
-Témata v této části obsahují různé položky, které souvisejí se zabezpečením, vzít v úvahu při navrhování aplikace Windows Communication Foundation (WCF).  
+Témata v této části uvádějí různé položky související se zabezpečením, které je potřeba vzít v úvahu při navrhování aplikace Windows Communication Foundation (WCF).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Zpřístupnění informací](../../../../docs/framework/wcf/feature-details/information-disclosure.md)  
- Tento článek popisuje různé způsoby, můžete informace zveřejněn nebo útoku a jak tento problém zmírnit.  
+ [Zpřístupnění informací](information-disclosure.md)  
+ Tento článek popisuje různé způsoby, jak mohou být informace zveřejněné nebo napadené a jak je zmírnit.  
   
- [Zvýšení oprávnění](../../../../docs/framework/wcf/feature-details/elevation-of-privilege.md)  
- Tento článek popisuje účinky udělení oprávnění útočník autorizace nad rámec těch, nejdřív udělit a jak tento problém zmírnit.  
+ [Zvýšení oprávnění](elevation-of-privilege.md)  
+ Tento článek popisuje důsledky udělení oprávnění k autorizaci útočníka nad rámec původně udělených a jak ho zmírnit.  
   
- [Útok DoS](../../../../docs/framework/wcf/feature-details/denial-of-service.md)  
- Popisuje, co se stane, když není schopen správně zpracovávat zprávy systému a o tom, jak ji zmírnit.  
+ [Útok DoS](denial-of-service.md)  
+ Popisuje, co se stane, když systém nemůže správně zpracovat zprávy a jak ho zmírnit.  
   
- [Falšování](../../../../docs/framework/wcf/feature-details/tampering.md)  
- Tento článek popisuje změnu zpráv nebo doručení zpráv a jak ji zmírnit.  
+ [Falšování](tampering.md)  
+ Popisuje změny zpráv nebo doručování zpráv a jejich omezení.  
   
- [Útoky opakováním](../../../../docs/framework/wcf/feature-details/replay-attacks.md)  
- Tento článek popisuje, co se stane, když útočník zkopíruje datový proud zpráv mezi dvěma stranami a přehrává datový proud do jedné nebo více stran a jak tento problém zmírnit.  
+ [Útoky opakováním](replay-attacks.md)  
+ Tento článek popisuje, co se stane, když útočník zkopíruje datový proud zpráv mezi dvěma stranami a přehraje datový proud na jednu nebo více smluvních stran, a jak to zmírnit.  
   
- [Důležité informace o zabezpečení pro zabezpečené relace](../../../../docs/framework/wcf/feature-details/security-considerations-for-secure-sessions.md)  
- Tento článek popisuje následující položky, které mají vliv na zabezpečení při provádění zabezpečených relací.  
+ [Důležité informace o zabezpečení pro zabezpečené relace](security-considerations-for-secure-sessions.md)  
+ Popisuje následující položky, které mají vliv na zabezpečení při implementaci zabezpečených relací.  
   
- [Nepodporované scénáře](../../../../docs/framework/wcf/feature-details/unsupported-scenarios.md)  
- Uvádí různé scénáře, které nepodporují konkrétní aspekty zabezpečení a mají předejít nebo považovány za.  
+ [Nepodporované scénáře](unsupported-scenarios.md)  
+ Obsahuje seznam různých scénářů, které nepodporují konkrétní aspekt zabezpečení a je třeba se vyhnout nebo je zvážit.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.IdentityModel.Tokens>  
   
  <xref:System.IdentityModel.Claims>  
@@ -48,8 +48,8 @@ Témata v této části obsahují různé položky, které souvisejí se zabezpe
  <xref:System.ServiceModel>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Informace o zabezpečení a osvědčené postupy](../../../../docs/framework/wcf/feature-details/security-guidance-and-best-practices.md)  
+ [Informace o zabezpečení a doporučené postupy](security-guidance-and-best-practices.md)  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Zabezpečení](../../../../docs/framework/wcf/feature-details/security.md)
+- [Zabezpečení](security.md)

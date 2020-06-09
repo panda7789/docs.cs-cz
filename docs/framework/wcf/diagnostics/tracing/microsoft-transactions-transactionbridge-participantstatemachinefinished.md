@@ -2,21 +2,21 @@
 title: Microsoft.Transactions.TransactionBridge.ParticipantStateMachineFinished
 ms.date: 03/30/2017
 ms.assetid: 54b677f7-03ad-40f2-9c5d-297a8ad9bf90
-ms.openlocfilehash: 7f37cb5d9ee3d2d9d56519f785388f278b3333b9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0652b3b76c155431b68c5ee0dc8f83977f9845a5
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61997877"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84594358"
 ---
 # <a name="microsofttransactionstransactionbridgeparticipantstatemachinefinished"></a>Microsoft.Transactions.TransactionBridge.ParticipantStateMachineFinished
-Stavový počítač pro zapsání účastníka přešla do konečného stavu.  
+Stavový počítač pro zařazení účastníka vstoupil do stavu dokončeno.  
   
 ## <a name="description"></a>Popis  
- Trasovaná po dokončení zpracování 2pc podřízené zapsání účastníka. Výsledek pro zařazení může být potvrzeno nebo bylo přerušeno. Také se trasován, pokud každý účastník hlasů jen pro čtení během přípravy.  
+ Sledováno, když je dokončeno zpracování 2PC podřízeného účastníka. Výsledek zařazení lze potvrdit nebo zrušit. Je také sledováno, pokud některý účastník hlasy při přípravě ReadOnly.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Trasování](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [Řešení problémů s aplikací pomocí trasování](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
-- [Správa a diagnostika](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [Trasování](index.md)
+- [Řešení potíží s aplikací pomocí trasování](using-tracing-to-troubleshoot-your-application.md)
+- [Správa a diagnostika](../index.md)

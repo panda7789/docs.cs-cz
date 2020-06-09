@@ -6,24 +6,24 @@ helpviewer_keywords:
 - WCF, data
 - DataContractSerializer
 ms.assetid: 3d64837e-0a0c-4cc8-90ff-a5c6f313c63a
-ms.openlocfilehash: b1c773fbe90e7a45ea2a2718f9bde0aa9e9b67d6
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: a898419a9bb1ecbd0b156f0b749da70e1b5b903f
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65592562"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84593552"
 ---
 # <a name="data-contract-serializer"></a>Serializátor kontraktu dat
-Používá infrastrukturu Windows Communication Foundation (WCF) <xref:System.Runtime.Serialization.DataContractSerializer> třídu jako výchozí serializátor. Témata v této části poskytují další podrobnosti k jeho používání jako samostatné serializátor.  
+Infrastruktura Windows Communication Foundation (WCF) používá <xref:System.Runtime.Serialization.DataContractSerializer> třídu jako výchozí serializátor. Témata v této části poskytují další podrobnosti o použití jako samostatného serializátoru.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Serializace a deserializace](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md)  
- Podrobnosti o tom, jak používat <xref:System.Runtime.Serialization.DataContractSerializer> třídy k serializaci objektu grafy a zrušit serializaci XML dokumenty do objektů.  
+ [Serializace a deserializace](serialization-and-deserialization.md)  
+ Podrobnosti jak použít <xref:System.Runtime.Serialization.DataContractSerializer> třídu k serializaci grafů objektů a deserializaci dokumentů XML do objektů.  
   
- [Import a export schémat](../../../../docs/framework/wcf/feature-details/schema-import-and-export.md)  
- Vysvětluje, jak vygenerovat jazyk (XSD) schématu definice schématu XML ze třídy rozhraní .NET Framework nebo jak ke generování kódu ze dokument schématu XSD.  
+ [Import a export schémat](schema-import-and-export.md)  
+ Vysvětluje, jak vygenerovat schéma schématu definice jazyka XML (XSD) z .NET Framework třídy nebo jak generovat kód z dokumentu schématu XSD.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Runtime.Serialization.DataContractSerializer>  
   
  <xref:System.Runtime.Serialization.NetDataContractSerializer>  
@@ -33,11 +33,11 @@ Používá infrastrukturu Windows Communication Foundation (WCF) <xref:System.Ru
  <xref:System.Runtime.Serialization.DataMemberAttribute>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Použití kontraktů dat](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)  
+ [Použití kontraktů dat](using-data-contracts.md)  
   
- [Přenos a serializace dat](../../../../docs/framework/wcf/feature-details/data-transfer-and-serialization.md)  
+ [Přenos a serializace dat](data-transfer-and-serialization.md)  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Schéma kontraktů dat – referenční informace](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md)
-- [Určování přenosu dat v kontraktech služby](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md)
+- [Schéma kontraktů dat – referenční informace](data-contract-schema-reference.md)
+- [Určování přenosu dat v kontraktech služby](specifying-data-transfer-in-service-contracts.md)

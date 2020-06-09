@@ -2,21 +2,21 @@
 title: System.ServiceModel.TxSourceTxScopeRequiredIsTransactionFlow
 ms.date: 03/30/2017
 ms.assetid: 41a3a5d7-bb16-4d16-bb51-db7ac0cfb748
-ms.openlocfilehash: 0958744d1d3eb9a122137330da4621158a256d47
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4e24e0e15b66bcbcb1429efd7455790f28ea7001
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61723027"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84595619"
 ---
 # <a name="systemservicemodeltxsourcetxscoperequiredistransactionflow"></a>System.ServiceModel.TxSourceTxScopeRequiredIsTransactionFlow
-Zadanou transakci byla převedena do zadané operace.  
+Zadaná transakce byla převedena na zadanou operaci.  
   
 ## <a name="description"></a>Popis  
- Trasovaná Pokud transakce zpřístupněn do uživatelského kódu byla převedena do z externího zdroje.  
+ Sledováno, pokud byla transakce k dispozici pro uživatelský kód v toku z externího zdroje.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Trasování](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [Řešení problémů s aplikací pomocí trasování](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
-- [Správa a diagnostika](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [Trasování](index.md)
+- [Řešení potíží s aplikací pomocí trasování](using-tracing-to-troubleshoot-your-application.md)
+- [Správa a diagnostika](../index.md)

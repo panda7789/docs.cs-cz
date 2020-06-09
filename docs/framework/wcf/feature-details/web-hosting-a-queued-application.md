@@ -2,19 +2,19 @@
 title: Webhosting frontové aplikace
 ms.date: 03/30/2017
 ms.assetid: c7a539fa-e442-4c08-a7f1-17b7f5a03e88
-ms.openlocfilehash: 36c35fe0590ad9fc728641313d4175a432d7ccaa
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 17c3d2167d3f98017c5f366ab0d700d9fb889f82
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69951579"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600137"
 ---
 # <a name="web-hosting-a-queued-application"></a>Webhosting frontové aplikace
 Aktivační služba procesů systému Windows (WAS) spravuje aktivaci a životnost pracovních procesů, které obsahují aplikace, které hostují služby Windows Communication Foundation (WCF). Model procesu WAS generalizuje model procesu IIS 6,0 pro server HTTP tím, že odebere závislost na HTTP. To umožňuje službám WCF používat protokoly HTTP i non-HTTP, jako je NET. MSMQ a MSMQ. FormatName, v hostitelském prostředí, které podporuje aktivaci založené na zprávách, a nabízí možnost hostovat v daném počítači velký počet aplikací.  
   
  Služba WAS obsahuje aktivační službu Řízení front zpráv (MSMQ), která aktivuje aplikaci ve frontě, pokud je jedna nebo více zpráv umístěných v jedné z front používaných aplikací. Aktivační služba MSMQ je služba NT, která se ve výchozím nastavení automaticky spustí.  
   
- Další informace o a jeho výhodách najdete v tématu [hostování v aktivační službě procesů systému Windows](../../../../docs/framework/wcf/feature-details/hosting-in-windows-process-activation-service.md). Další informace o službě MSMQ najdete v tématu [Queue Overview](../../../../docs/framework/wcf/feature-details/queues-overview.md).
+ Další informace o a jeho výhodách najdete v tématu [hostování v aktivační službě procesů systému Windows](hosting-in-windows-process-activation-service.md). Další informace o službě MSMQ najdete v tématu [Queue Overview](queues-overview.md).
   
 ## <a name="queue-addressing-in-was"></a>Zařazení do fronty v nástroji bylo  
  Měly by aplikace adresy identifikátoru URI (Uniform Resource Identifier). Adresy aplikací mají dvě části: základní předponu identifikátoru URI a relativní adresu (cestu) specifickou pro aplikaci. Tyto dvě části poskytují externí adresu aplikace, když se spojí dohromady. Základní předpona identifikátoru URI je vytvořená z vazby webu a používá se pro všechny aplikace v lokalitě, například "NET. MSMQ://localhost", "MSMQ. FormatName://localhost" nebo "NET. TCP://localhost". Adresy aplikací se pak vytvoří pomocí fragmentů cesty specifické pro aplikaci (například "/applicationOne") a jejich připojením k základní předponě identifikátoru URI, aby bylo možné dorazit na úplný identifikátor URI aplikace, například "NET. MSMQ://localhost/applicationOne".  
@@ -41,7 +41,7 @@ Aktivační služba procesů systému Windows (WAS) spravuje aktivaci a životno
 ### <a name="subqueue-and-system-queue-caveat"></a>Omezení podfronty a fronty systému  
  Hostovaná aplikace se nedá aktivovat na základě zpráv ve frontě systému, jako je například fronta nedoručených zpráv v rámci systému, nebo podfronty, jako je například otravové podfronty. Toto je omezení pro tuto verzi produktu.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Zpracování škodlivých zpráv](../../../../docs/framework/wcf/feature-details/poison-message-handling.md)
-- [Koncové body služby a adresování front](../../../../docs/framework/wcf/feature-details/service-endpoints-and-queue-addressing.md)
+- [Zpracování škodlivých zpráv](poison-message-handling.md)
+- [Koncové body služby a adresování front](service-endpoints-and-queue-addressing.md)

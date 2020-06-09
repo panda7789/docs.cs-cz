@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 98ec28fc1f91512a61f64a36f7749379e864fea1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 15418d1ac3ade6a0fa35ca61a02134e20af1baea
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76920666"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84602976"
 ---
 
-Při instalaci balíčku .NET Core se může `Failed to fetch ... File has unexpected size ... Mirror sync in progress?`zobrazit chyba podobná . Obecně řečeno, tato chyba znamená, že zdroj balíčku pro .NET Core je upgradován novějšími verzemi balíčků a že byste to měli zkusit znovu později. Během upgradu by neměl být informační kanál balíčku k dispozici déle než 30 minut. Pokud se tato chyba zobrazuje nepřetržitě déle než 30 <https://github.com/dotnet/core/issues>minut, podejte problém na adrese .
+Při instalaci balíčku .NET Core se může zobrazit chyba podobná této `Failed to fetch ... File has unexpected size ... Mirror sync in progress?` . Tato chyba by mohla znamenat, že informační kanál balíčku pro .NET Core se upgraduje s novějšími verzemi balíčků a že byste se měli pokusit později. Během upgradu by kanál balíčku neměl být nedostupný po dobu delší než 30 minut. Pokud se tato chyba zobrazuje stále déle než 30 minut, uveďte problém na adrese <https://github.com/dotnet/core/issues> .

@@ -1,5 +1,6 @@
 ---
 title: 'Postupy: Odstranění neplatných znaků z řetězce'
+description: Přečtěte si příklad, který ukazuje, jak odstranit potenciálně škodlivé znaky z řetězce pomocí metody static Regex. Replace.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -16,12 +17,12 @@ helpviewer_keywords:
 - Replace method
 - validating user input
 ms.assetid: b4319c8a-9032-4129-a9d5-6f6fc28e7f32
-ms.openlocfilehash: 5f2a1e7a3202b14d32ed02c6808fe2411465d9b5
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: f9d671587d174a1eb2bb6a5dac24bdd0220be3dd
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290432"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600825"
 ---
 # <a name="how-to-strip-invalid-characters-from-a-string"></a>Postupy: Odstranění neplatných znaků z řetězce
 Následující příklad používá statickou <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> metodu k odstranění neplatných znaků z řetězce.  
