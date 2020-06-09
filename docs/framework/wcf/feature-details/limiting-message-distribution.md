@@ -2,12 +2,12 @@
 title: Omezení distribuce zpráv
 ms.date: 03/30/2017
 ms.assetid: 8b5ec4b8-1ce9-45ef-bb90-2c840456bcc1
-ms.openlocfilehash: 36d9d43760e68f6bcf0099ac17dec5a8278d0e49
-ms.sourcegitcommit: 09b4090b78f52fd09b0e430cd4b26576f1fdf96e
+ms.openlocfilehash: 188d7bd365caad7d4cd438744c78ae8e7cd95e7e
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76211895"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84586309"
 ---
 # <a name="limiting-message-distribution"></a>Omezení distribuce zpráv
 
@@ -15,17 +15,17 @@ Rovnocenným kanálem je návrh sítě pro všesměrové vysílání. Základní
 
 ## <a name="hop-counts"></a>Počty segmentů
 
-Koncept `PeerHopCount` se podobá hodnotě TTL (Time-to-Live), která se používá v protokolu IP. Hodnota `PeerHopCount` je svázána s instancí zprávy a určuje počet, kolikrát by se měla zpráva před vyřazením přesměrovat. Pokaždé, když klient partnerského kanálu obdrží zprávu, ověří klient zprávu, jestli je zadaný `PeerHopCount`. Pokud je zadaný, pak klient sníží hodnotu počet směrování o jednu před předáním zprávy do sousedních uzlů. Když klient obdrží zprávu s hodnotou čítače směrování nula, klient zprávu zpracuje, ale nepředá zprávu sousedním sousedům.
+Koncept `PeerHopCount` je podobný hodnotě TTL (Time-to-Live), která se používá v protokolu IP. Hodnota `PeerHopCount` je svázána s instancí zprávy a určuje počet, kolikrát se má zpráva před vyřazením přesměrovat. Pokaždé, když klient rovnocenného kanálu obdrží zprávu, klient zprávu ověří a zjistí, jestli `PeerHopCount` je zadaná. Pokud je zadaný, pak klient sníží hodnotu počet směrování o jednu před předáním zprávy do sousedních uzlů. Když klient obdrží zprávu s hodnotou čítače směrování nula, klient zprávu zpracuje, ale nepředá zprávu sousedním sousedům.
 
-Počet segmentů směrování lze přidat do zprávy přidáním `PeerHopCount` jako atributu do příslušné vlastnosti nebo pole v implementaci třídy Message. Před odesláním zprávy do sítě můžete nastavit konkrétní hodnotu. Tímto způsobem můžete použít počet segmentů k omezení distribuce zpráv v rámci sítě v případě potřeby, což může zabránit zbytečnému duplikaci zprávy. To je užitečné v případech, kdy síť obsahuje vysoké množství redundantních dat, nebo pro posílání zpráv bezprostředním sousedům nebo pro sousední sítě v několika segmentech směrování.
+Počet segmentů směrování lze přidat do zprávy přidáním `PeerHopCount` atributu do příslušné vlastnosti nebo pole v implementaci třídy zprávy. Před odesláním zprávy do sítě můžete nastavit konkrétní hodnotu. Tímto způsobem můžete použít počet segmentů k omezení distribuce zpráv v rámci sítě v případě potřeby, což může zabránit zbytečnému duplikaci zprávy. To je užitečné v případech, kdy síť obsahuje vysoké množství redundantních dat, nebo pro posílání zpráv bezprostředním sousedům nebo pro sousední sítě v několika segmentech směrování.
 
 - Fragmenty kódu a související informace naleznete v tématu [atribut PeerHopCount: řízení distribuce zprávy](https://docs.microsoft.com/archive/blogs/peerchan/the-peerhopcount-attribute-controlling-message-distribution) na blogu rovnocenného kanálu.
 
 ## <a name="message-propagation-filter"></a>Filtr šíření zpráv
 
-`MessagePropagationFilter` lze použít pro přizpůsobenou kontrolu zaplavování zpráv, zejména v případě, že obsah zprávy nebo jiné konkrétní scénáře určují šíření. Filtr provádí rozhodování o šíření každé zprávy, která projde uzlem. To platí pro zprávy, které pocházejí jinde v síti, kterou váš uzel přijal, i zprávy vytvořené vaší aplikací. Filtr má přístup ke zprávě i k jejímu původci, takže rozhodnutí o přeposílání nebo vyřazení zprávy můžou být založená na úplných dostupných informacích.
+`MessagePropagationFilter`lze ji použít pro přizpůsobenou kontrolu zaplavování zpráv, zejména v případě, že obsah zprávy nebo jiné konkrétní scénáře určují šíření. Filtr provádí rozhodování o šíření každé zprávy, která projde uzlem. To platí pro zprávy, které pocházejí jinde v síti, kterou váš uzel přijal, i zprávy vytvořené vaší aplikací. Filtr má přístup ke zprávě i k jejímu původci, takže rozhodnutí o přeposílání nebo vyřazení zprávy můžou být založená na úplných dostupných informacích.
 
-<xref:System.ServiceModel.PeerMessagePropagationFilter> je základní abstraktní třída s jednou funkcí, <xref:System.ServiceModel.PeerMessagePropagationFilter.ShouldMessagePropagate%2A>. První argument volání metody předává úplnou kopii zprávy. Jakékoli změny provedené ve zprávě nemají vliv na skutečnou zprávu. Poslední argument volání metody identifikuje původ zprávy (`PeerMessageOrigination.Local` nebo `PeerMessageOrigination.Remote`). Konkrétní implementace této metody musí vracet konstantu z výčtu <xref:System.ServiceModel.PeerMessagePropagation>, což značí, že se zpráva má přesměrovat do místní aplikace (`Local`), přesměrovaná na vzdálené klienty (`Remote`), (`LocalAndRemote`), nebo ani na (`None`). Tento filtr lze použít přístupem k odpovídajícímu objektu `PeerNode` a určením instance třídy odvozeného filtru šíření ve vlastnosti `PeerNode.MessagePropagationFilter`. Před otevřením rovnocenného kanálu zajistěte, aby byl filtr šíření připojen.
+<xref:System.ServiceModel.PeerMessagePropagationFilter>je základní abstraktní třída s jednou funkcí, <xref:System.ServiceModel.PeerMessagePropagationFilter.ShouldMessagePropagate%2A> . První argument volání metody předává úplnou kopii zprávy. Jakékoli změny provedené ve zprávě nemají vliv na skutečnou zprávu. Poslední argument volání metody identifikuje původ zprávy ( `PeerMessageOrigination.Local` nebo `PeerMessageOrigination.Remote` ). Konkrétní implementace této metody musí vracet konstantu z <xref:System.ServiceModel.PeerMessagePropagation> výčtu, což značí, že zpráva má být předána do místní aplikace ( `Local` ), předaná vzdáleným klientům (), `Remote` (), `LocalAndRemote` nebo ani ani ( `None` ). Tento filtr lze použít přístupem k odpovídajícímu `PeerNode` objektu a určením instance třídy odvozeného filtru šíření ve `PeerNode.MessagePropagationFilter` Vlastnosti. Před otevřením rovnocenného kanálu zajistěte, aby byl filtr šíření připojen.
 
 - Fragmenty kódu a související informace najdete na blogu s rovnocenným [kanálem a na MessagePropagationFilter](https://docs.microsoft.com/archive/blogs/peerchan/peer-channel-and-messagepropagationfilter) příspěvku na blogu s rovnocenným kanálem.
 
@@ -69,6 +69,6 @@ Odpovědi na tyto otázky vám pomůžou určit, jestli se má použít počet s
 
   - *Nízká*: jakékoli přímé připojení pravděpodobně není potřeba.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Vytvoření aplikace protokolu Peer Channel](../../../../docs/framework/wcf/feature-details/building-a-peer-channel-application.md)
+- [Vytvoření aplikace protokolu Peer Channel](building-a-peer-channel-application.md)

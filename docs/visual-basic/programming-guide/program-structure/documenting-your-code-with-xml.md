@@ -6,20 +6,20 @@ helpviewer_keywords:
 - XML comments, Visual Basic
 - Visual Basic code, documenting with XML
 ms.assetid: a0d35dc7-c5f9-4d74-92ff-a1c6f28d5235
-ms.openlocfilehash: 324519248b90d4f61e67803a10b3cd6c566a2a04
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: f391fb909cfe4de8f27afb24d6db389e2c8cdfae
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84404859"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84590926"
 ---
-# <a name="documenting-your-code-with-xml-visual-basic"></a>Dokumentace kódu s XML (Visual Basic)
+# <a name="document-your-code-with-xml-visual-basic"></a>Dokumentování kódu pomocí XML (Visual Basic)
 
-V Visual Basic můžete svůj kód zdokumentovat pomocí XML
+V Visual Basic můžete svůj kód zdokumentovat pomocí XML.
 
-## <a name="xml-documentation-comments"></a>Dokumentační komentáře XML
+## <a name="xml-documentation-comments"></a>Komentáře dokumentace XML
 
-Visual Basic poskytuje snadný způsob, jak automaticky vytvořit dokumentaci XML pro projekty. Můžete automaticky vygenerovat kostru XML pro vaše typy a členy a pak poskytnout souhrny, popisnou dokumentaci pro každý parametr a další poznámky. S příslušným nastavením se dokumentace XML automaticky generuje do souboru XML se stejným názvem, jaký má váš projekt a příponu. XML. Další informace najdete v [dokumentu-doc](../../reference/command-line-compiler/doc.md).
+Visual Basic poskytuje snadný způsob, jak automaticky vytvořit dokumentaci XML pro projekty. Můžete automaticky vygenerovat kostru XML pro vaše typy a členy a pak poskytnout souhrny, popisnou dokumentaci pro každý parametr a další poznámky. S příslušným nastavením se dokumentace XML automaticky generuje do souboru XML se stejným kořenovým názvem souboru jako váš projekt. Další informace najdete v [dokumentu-doc](../../reference/command-line-compiler/doc.md).
 
 Soubor XML lze spotřebovat nebo jinak manipulovat jako XML. Tento soubor je umístěn ve stejném adresáři jako výstupní soubor. exe nebo. dll vašeho projektu.
 
@@ -27,7 +27,7 @@ Dokumentace XML začíná na `'''` . Zpracování těchto komentářů má urči
 
 - Dokumentace musí být ve správném formátu XML. Pokud XML není ve správném formátu, je vygenerováno upozornění a soubor dokumentace obsahuje komentář, který říká, že došlo k chybě.
 
-- Vývojářům je zdarma vytvořit vlastní sadu značek. Je doporučená sada značek (viz část související části v tomto tématu). Některé z doporučených značek mají zvláštní význam:
+- Vývojářům je zdarma vytvořit vlastní sadu značek. Je doporučena sada značek (viz [značky komentářů XML](../../language-reference/xmldoc/index.md)). Některé z doporučených značek mají zvláštní význam:
 
   - Tato \<param> značka se používá k popisu parametrů. Pokud je použit, kompilátor ověří, zda existuje parametr a zda jsou všechny parametry popsány v dokumentaci. Pokud se ověření nepovede, kompilátor vydá upozornění.
 

@@ -2,63 +2,63 @@
 title: Přenos
 ms.date: 03/30/2017
 ms.assetid: dfcfa36c-d3bb-44b4-aa15-1c922c6f73e6
-ms.openlocfilehash: e0ebfff97cd33e7a588a1ab92399a97a0fbec039
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 52b0cf35a2f8bab17252d3711f3143738c2bc39c
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79185709"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84587765"
 ---
 # <a name="transfer"></a>Přenos
 Toto téma popisuje přenos v modelu trasování aktivity Windows Communication Foundation (WCF).  
   
 ## <a name="transfer-definition"></a>Definice přenosu  
- Přenosy mezi aktivitami představují příčinné vztahy mezi událostmi v souvisejících aktivitách v rámci koncových bodů. Dvě aktivity souvisejí s přenosy při řízení toků mezi těmito aktivitami, například volání metody překračování hranic aktivity. V WCF při bajtů jsou příchozí na službu, listen at aktivita je převedena na příjem bajtů aktivity, kde je vytvořen objekt zprávy. Seznam scénářů trasování od konce a jejich příslušné aktivity a návrh trasování naleznete v [tématu Scénáře trasování mezi koncovými místy](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing-scenarios.md).  
+ Přenosy mezi aktivitami reprezentují příčinné vztahy mezi událostmi v souvisejících aktivitách v rámci koncových bodů. Dvě aktivity souvisejí s přenosy při řízení toků mezi těmito aktivitami, například volání metody přechází přes hranice aktivity. Pokud jsou v rámci služby WCF Příchozí bajty na službu, je aktivita naslouchání v aktivitě přenesena do aktivity příjem bajtů, kde je objekt zprávy vytvořen. Seznam kompletních scénářů trasování a jejich činnost a návrh trasování najdete v tématu [kompletní scénáře sledování](end-to-end-tracing-scenarios.md).  
   
- Chcete-li vyzařovat trasování `ActivityTracing` přenosu, použijte nastavení na zdroji trasování, jak je znázorněno následujícím konfiguračním kódem.  
+ Chcete-li vygenerovat trasování přenosu, použijte `ActivityTracing` nastavení ve zdroji trasování, jak je znázorněno v následujícím kódu konfigurace.  
   
 ```xml  
 <source name="System.ServiceModel" switchValue="Verbose,ActivityTracing">  
 ```  
   
 ## <a name="using-transfer-to-correlate-activities-within-endpoints"></a>Použití přenosu ke korelaci aktivit v rámci koncových bodů  
- Aktivity a převody umožňují uživateli probabilistically vyhledat hlavní příčinu chyby. Například pokud přenášíme tam a zpět mezi aktivitami M a N v součástech M a N a k chybě dojde v N hned po převodu zpět na M, můžeme vyvodit závěr, že je to pravděpodobně způsobeno předáváním dat N zpět do M.  
+ Aktivity a přenosy umožňují uživateli probabilistically najít hlavní příčinu chyby. Pokud například přenášíme mezi aktivitami M a N v komponentách M a N a dojde k selhání, dojde v N pravém okamžiku po převodu zpět na M, takže můžeme vykreslit závěr, že je pravděpodobný, aby se data back-N přenesla do M.  
   
- Trasování přenosu je emitován z aktivity M do aktivity N, pokud je tok řízení mezi M a N. Například N provádí některé práce pro M z důvodu volání metody překročení hranice aktivity. N již může existovat nebo byla vytvořena. N je zplozena M, když N je nová aktivita, která provádí některé práce pro M.  
+ Trasování přenosu je vygenerováno z aktivity M k aktivitě N, pokud existuje tok řízení mezi M a N. Například N provede nějakou práci pro M, protože volání metody přebírá hranice aktivit. N možná již existuje nebo byl vytvořen. N je založen na M, pokud N je nová aktivita, která provádí určitou práci pro M.  
   
- Po převodu z M na N nesmí následovat převod zpět z N do M. Důvodem je, že M může plodit nějakou práci v N a nesledovat, když N dokončí tuto práci. Ve skutečnosti M může ukončit před N dokončí svůj úkol. K tomu dochází v aktivitě "Open ServiceHost" (M), která spouští aktivity posluchače (N) a pak se ukončí. Převod zpět z N na M znamená, že N dokončil práci související s M.  
+ Přenos z M na N se nesmí následován přenosem zpátky z N do M. Důvodem je to, že M dokáže vytvořit určitou práci v N a Nesledovat, když N dokončí tuto práci. Ve skutečnosti může M skončit, než N dokončí jeho úlohu. K tomu dojde v aktivitě "Open ServiceHost" (M), která vytvoří aktivity naslouchacího procesu (N) a pak se ukončí. Přenos zpátky z N do M znamená, že N dokončila se práce související s M.  
   
- N můžete pokračovat v provádění jiné zpracování nesouvisí s M, například existující ověřovací aktivity (N), který udržuje příjem žádostí o přihlášení (M) z různých aktivit přihlášení.  
+ N může pokračovat v provádění jiných zpracování, které nesouvisí s M, například stávající aktivita ověřovatele (N), která udržuje požadavky na přihlášení (M) z různých přihlašovacích aktivit.  
   
- Vztah vnoření nemusí nutně existovat mezi aktivitami M a N. K tomu může dojít ze dvou důvodů. Za prvé, když aktivita M nesleduje skutečné zpracování provedené v N, i když M inicioval N. Za druhé, když N již existuje.  
+ Vztah vnořování nemusí nutně existovat mezi aktivitami M a N. K tomu může dojít z důvodu dvou důvodů. První, když aktivita M nemonitoruje skutečné zpracování provedené v N, i když M iniciované N. Sekunda, pokud N již existuje.  
   
-## <a name="example-of-transfers"></a>Příklad převodů  
- V následujícím seznamu jsou uvedeny dva příklady přenosu.  
+## <a name="example-of-transfers"></a>Příklad přenosů  
+ Následující seznam obsahuje dva příklady přenosu.  
   
-- Při vytváření hostitele služby získá konstruktor ovládací prvek z volajícího kódu nebo volajícího kódu se přenese do konstruktoru. Po dokončení provádění konstruktoru vrátí ovládací prvek volajícího kódu nebo konstruktor přenese zpět do volajícího kódu. To je případ vnořeného vztahu.  
+- Při vytváření hostitele služby získá konstruktor řízení z volajícího kódu nebo volání přenese do konstruktoru. Po dokončení zpracování konstruktoru vrátí řízení volajícímu kódu nebo konstruktor převede zpět na volající kód. Toto je případ vnořené relace.  
   
-- Když naslouchací proces začne zpracovávat přenosová data, vytvoří nové vlákno a předává aktivitě Příjem bajtů vhodný kontext pro zpracování, předávání řízení a dat. Po dokončení zpracování požadavku toto vlákno, příjem bajtů aktivity předává nic zpět naslouchací proces. V tomto případě máme převod v, ale žádný převod z nové aktivity vlákna. Dvě aktivity jsou související, ale nejsou vnořené.  
+- Když naslouchací proces spustí zpracování dat přenosu, vytvoří nové vlákno a zahodí se k aktivitě přijímání bajtů vhodným kontextem pro zpracování, předání řízení a dat. Když vlákno dokončilo zpracování žádosti, aktivita přijetí bajtů předá do naslouchacího procesu nic zpátky. V tomto případě máme přenos v systému, ale nemusíte ho přenést z nové aktivity vlákna. Tyto dvě aktivity souvisejí, ale nejsou vnořené.  
   
-## <a name="activity-transfer-sequence"></a>Posloupnost přenosu aktivity  
- Dobře formátovaná sekvence přenosu aktivity zahrnuje následující kroky.  
+## <a name="activity-transfer-sequence"></a>Sekvence přenosu aktivity  
+ Sekvence přenosu aktivit ve správném formátu zahrnuje následující kroky.  
   
-1. Začněte novou aktivitu, která se skládá z výběru nového gAId.  
+1. Zahájení nové aktivity, která se skládá z výběru nové gAId.  
   
-2. Vyzařují trasu přenosu do nového gAId z aktuálního ID aktivity.  
+2. Vygeneruje ze stávajícího ID aktivity trasování přenosu pro tento nový gAId.  
   
 3. Nastavení nového ID v TLS  
   
-4. Vyzařují počáteční trasování označující začátek nové aktivity.  
+4. Vygenerujte počáteční trasování pro indikaci začátku nové aktivity.  
   
-5. Návrat k původní činnosti se skládá z následujících:  
+5. Návrat k původní aktivitě se skládá z následujících:  
   
-6. Vyzařují trasu přenosu do původního gAId  
+6. Poslat trasování přenosu do původního gAIdu  
   
-7. Vyzařovat stopování stop, které označuje konec nové aktivity.  
+7. Vygeneruje trasování stop k označení konce nové aktivity.  
   
-8. Nastavte TLS na starý gAId.  
+8. Nastavte TLS na starou gAId.  
   
- Následující příklad kódu ukazuje, jak to provést. Tato ukázka předpokládá, že blokování volání je provedeno při přenosu do nové aktivity a zahrnuje stopy pozastavit nebo obnovit.  
+ Následující příklad kódu ukazuje, jak to provést. Tato ukázka předpokládá, že při přesunu do nové aktivity je provedeno blokující volání, včetně trasování pro pozastavení/obnovení.  
   
 ```csharp
 // 0. Create a trace source  
@@ -104,7 +104,7 @@ ts.TraceEvent(TraceEventType.Resume, 667, "Resume: Activity " + i-1);
   
 ## <a name="see-also"></a>Viz také
 
-- [Konfigurace trasování](../../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)
-- [Použití prohlížeče trasování služeb k zobrazení korelovaných tras a řešení problémů](../../../../../docs/framework/wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md)
-- [Scénáře komplexního trasování](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing-scenarios.md)
-- [Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md)
+- [Konfigurace trasování](configuring-tracing.md)
+- [Použití prohlížeče trasování služeb k zobrazení korelovaných tras a řešení problémů](using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md)
+- [Scénáře komplexního trasování](end-to-end-tracing-scenarios.md)
+- [Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../service-trace-viewer-tool-svctraceviewer-exe.md)

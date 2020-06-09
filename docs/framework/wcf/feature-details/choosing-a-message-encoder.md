@@ -2,47 +2,47 @@
 title: Výběr kodéru zprávy
 ms.date: 03/30/2017
 ms.assetid: 2204d82d-d962-4922-a79e-c9a231604f19
-ms.openlocfilehash: d93d7039d034262cd47edd437d5d7d8d63890f02
-ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
+ms.openlocfilehash: dbc5981013fe5e023f1d6d9eaf64b2e1fa18e2df
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80635780"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84587336"
 ---
-# <a name="choose-a-message-encoder"></a>Volba kodéru zpráv
+# <a name="choose-a-message-encoder"></a>Výběr kodéru zprávy
 
-Tento článek popisuje kritéria pro výběr mezi kodéry zpráv, které jsou zahrnuty v Systému Windows Communication Foundation (WCF): binární, text a mechanismus optimalizace přenosu zpráv (MTOM).  
+Tento článek popisuje kritéria pro výběr mezi kodéry zpráv, které jsou součástí Windows Communication Foundation (WCF): binární, text a mechanismus optimalizace přenosu zpráv (MTOM).  
   
- V WCF určíte, jak přenášet data v síti mezi koncovými body pomocí *vazby*, která se skládá z posloupnosti *elementů vazby*. Kodér zpráv je reprezentován elementem vazby kódování zprávy v zásobníku vazby. Vazba obsahuje prvky vazby volitelného protokolu, jako je například element vazby vazby zabezpečení nebo element vazby spolehlivého zasílání zpráv, prvek vazby kódování požadované zprávy a povinný prvek vazby přenosu.  
+ V rámci služby WCF určíte, jak přenést data mezi koncovými body pomocí *vazby*, která je tvořena sekvencí *prvků vazby*. Kodér zprávy je reprezentován prvkem vazby kódování zprávy v zásobníku vazby. Vazba obsahuje volitelné prvky vazby protokolu, jako je například prvek vazby zabezpečení nebo prvek spolehlivého zasílání zpráv, požadovaný element vazby kódování a požadovaný element vazby přenosu.  
   
- Prvek vazby kódování zprávy je uveden pod prvky vazby volitelného protokolu a nad požadovaným prvkem vazby přenosu. Na odchozí straně kodér zpráv serializuje odchozí <xref:System.ServiceModel.Channels.Message> a předá jej přenosu. Na příchozí straně kodér zprávy obdrží serializovanou formu <xref:System.ServiceModel.Channels.Message> a z přenosu a předá ji vyšší vrstvě protokolu, pokud je k dispozici, nebo do aplikace, pokud ne.  
+ Element vazby kódování zprávy se nachází pod volitelnými prvky vazby protokolu a nad požadovaným prvkem vazby přenosu. Na straně odchozího přenosu kodér zprávy serializaci odchozí <xref:System.ServiceModel.Channels.Message> a předává do přenosu. Na straně příchozího přenosu kodér zprávy přijímá serializovanou formu <xref:System.ServiceModel.Channels.Message> z přenosů a předává je do vrstvy s vyšším protokolem, pokud je k dispozici, nebo do aplikace, pokud ne.  
   
- Při připojování k již existujícímu klientovi nebo serveru pravděpodobně nemáte na výběr ohledně použití určitého kódování zpráv, protože je třeba kódovat zprávy způsobem, který druhá strana očekává. Pokud však píšete službu WCF, můžete vystavit službu prostřednictvím více koncových bodů, z nichž každý používá jiné kódování zpráv. To umožňuje klientům zvolit nejlepší kódování pro mluvení se službou přes koncový bod, který je pro ně nejlepší, stejně jako poskytuje vašim klientům flexibilitu zvolit kódování, které je pro ně nejlepší. Použití více koncových bodů také umožňuje kombinovat výhody různých kódování zpráv s jinými prvky vazby.  
+ Pokud se připojujete k již existujícímu klientovi nebo serveru, možná nebudete mít možnost používat konkrétní kódování zpráv, protože je potřeba zakódovat zprávy způsobem, který očekává druhá strana. Pokud však píšete službu WCF, můžete službu zveřejnit prostřednictvím více koncových bodů, z nichž každá používá jiné kódování zpráv. To umožňuje klientům zvolit nejlepší kódování pro komunikaci s vaší službou prostřednictvím koncového bodu, který je pro ně nejvhodnější, a poskytnout tak vašim klientům flexibilitu pro výběr kódování, které je pro ně nejvhodnější. Použití více koncových bodů také umožňuje kombinovat výhody různých kódování zpráv s jinými prvky vazby.  
   
 ## <a name="system-provided-encoders"></a>Kodéry poskytované systémem  
- WCF obsahuje tři kodéry zpráv, které jsou reprezentovány následujícími třemi třídami:  
+ Služba WCF zahrnuje tři kodéry zpráv, které jsou reprezentovány následujícími třemi třídami:  
   
-- <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>, kodér textových zpráv podporuje kódování prostého xml i kódování SOAP. Režim kódování prostého XML kodére textových zpráv se nazývá "prostý starý XML" (POX), aby se odlišil od textového kódování SOAP. Chcete-li povolit <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement.MessageVersion%2A> počitadla, nastavte vlastnost na <xref:System.ServiceModel.Channels.MessageVersion.None%2A>. Kodér textových zpráv slouží ke spolupráci s koncovými body mimo WCF.  
+- <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>, kodér textové zprávy, podporuje kódování v obyčejném jazyce XML i kódování protokolu SOAP. Režim prostého kódování XML kodéru textové zprávy se nazývá "" obyčejný Star XML "(POX), který rozlišuje od textu založeného na kódování SOAP. Chcete-li povolit POX, nastavte <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement.MessageVersion%2A> vlastnost na hodnotu <xref:System.ServiceModel.Channels.MessageVersion.None%2A> . Pomocí kodéru textové zprávy můžete spolupracovat s koncovými body, které nejsou typu WCF.  
   
-- <xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement>, binární zpráva kodér, používá kompaktní binární formát a je optimalizován pro WCF na WCF komunikace, a proto není interoperabilní. Toto je také nejvýkonnější kodér všech kodéry WCF poskytuje.  
+- <xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement>, binární kodér zpráv, používá kompaktní binární formát a je optimalizován pro WCF na komunikaci WCF, a proto není interoperabilní. Toto je také nejvíce výkonné kodér všech kodérů, které WCF nabízí.  
   
-- <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement>, prvek vazby, určuje kódování znaků a správu verzí zpráv pro zprávy pomocí kódování MTOM. MTOM je efektivní technologie pro přenos binárních dat ve zprávách WCF. Kodér MTOM se pokouší vytvořit rovnováhu mezi efektivitou a interoperabilitou. Kódování MTOM přenáší většinu XML v textové podobě, ale optimalizuje velké bloky binárních dat jejich přenosem tak, jak jsou, bez převodu na text. Z hlediska efektivity, mezi kodéry WCF poskytuje, MTOM je mezi textem (nejpomalejší) a binární (nejrychlejší).  
+- <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement>, element Binding, určuje kódování znaků a správu verzí zpráv pro zprávy pomocí kódování MTOM. MTOM je efektivní technologie pro přenos binárních dat ve zprávách WCF. Kodér MTOM se pokusí vytvořit rovnováhu mezi efektivitou a interoperabilitou. Kódování MTOM přenáší většinu XML v textové podobě, ale optimalizuje velké bloky binárních dat jejich přenosem tak, jak jsou, bez konverze na text. V souvislosti s efektivitou, mezi kodéry WCF poskytuje, je MTOM mezi textem (nejpomalejší) a binární (nejrychlejší).  
   
-## <a name="how-to-choose-a-message-encoder"></a>Jak si vybrat kodér zpráv  
- Následující tabulka popisuje běžné faktory používané k výběru kodéru zpráv. Upřednostněte faktory, které jsou důležité pro vaši aplikaci, a pak zvolte kodéry zpráv, které nejlépe fungují s těmito faktory. Nezapomeňte zvážit všechny další faktory, které nejsou uvedeny v této tabulce a všechny vlastní zprávy kodéry, které mohou být požadovány ve vaší aplikaci.  
+## <a name="how-to-choose-a-message-encoder"></a>Výběr kodéru zprávy  
+ V následující tabulce jsou popsány běžné faktory, které slouží k výběru kodéru zpráv. Určete prioritu faktorů, které jsou pro vaši aplikaci důležité, a pak zvolte kodéry zpráv, které fungují nejlépe s těmito faktory. Nezapomeňte zvážit jakékoli další faktory, které nejsou uvedené v této tabulce, a žádné vlastní kodéry zpráv, které mohou být ve vaší aplikaci nutné.  
   
-|Faktor|Popis|Kodéry, které podporují tento faktor|  
+|Jednotek|Popis|Kodéry, které podporují tento faktor|  
 |------------|-----------------|---------------------------------------|  
-|Podporované znakové sady|<xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>a <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement> podporují pouze kódování UTF8 a UTF16 Unicode *(big-endian* a *little-endian).* Pokud jsou požadována jiná kódování, například UTF7 nebo ASCII, musí být použit vlastní kodér. Ukázkový vlastní kodér najdete [v tématu Vlastní kodér zpráv](https://docs.microsoft.com/dotnet/framework/wcf/samples/custom-message-encoder-custom-text-encoder).|Text|  
-|Kontrolní|Kontrola je schopnost zkoumat zprávy během přenosu. Kódování textu, s nebo bez použití SOAP, umožňují zprávy, které mají být kontrolovány a analyzovány mnoha aplikacemi bez použití specializovaných nástrojů. Použití zabezpečení přenosu na úrovni zprávy nebo přenosu ovlivňuje vaši schopnost kontrolovat zprávy. Důvěrnost chrání zprávu před kontrolou a integrita chrání zprávu před změnou.|Text|  
-|Spolehlivost|Spolehlivost je odolnost kodéru k chybám přenosu. Spolehlivost lze také poskytnout ve zprávě, přenosu nebo aplikační vrstvě. Všechny standardní kodéry WCF předpokládají, že jiná vrstva poskytuje spolehlivost. Kodér má malou schopnost zotavit se z chyby přenosu.|Žádný|  
-|Jednoduchost|Jednoduchost představuje snadnost, s jakou můžete vytvářet kodéry a dekodéry pro specifikaci kódování. Kódování textu jsou obzvláště výhodné pro jednoduchost a kódování textu POX má další výhodu, že nevyžaduje podporu pro zpracování SOAP.|Text (POX)|  
-|Velikost|Kódování určuje množství režie uložené na obsah. Velikost kódovaných zpráv přímo souvisí s maximální propustností operací služby. Binární kódování jsou obecně kompaktnější než kódování textu. Pokud je velikost zprávy na prémii, zvažte také kompresi obsahu zprávy během kódování. Komprese však zvyšuje náklady na zpracování pro odesílatele zprávy i příjemce.|binární|  
-|Streamování|Streamování umožňuje aplikacím zahájit zpracování zprávy před příchodem celé zprávy. Efektivní použití streamování vyžaduje, aby důležitá data pro zprávu být k dispozici na začátku zprávy tak, aby přijímající aplikace není nutné čekat na doručení. Kromě toho aplikace, které používají datový proud ového přenosu musí uspořádat data ve zprávě postupně tak, aby obsah nemá dopředné závislosti. V mnoha případech je nutné ohrozit mezi streamování obsahu a mají nejmenší možnou velikost přenosu pro tento obsah.|Žádný|  
-|Podpora nástrojů třetích stran|Oblasti podpory pro kódování zahrnují vývoj a diagnostiku. Vývojáři třetích stran provedli velké investice do knihoven a sad nástrojů pro zpracování zpráv kódovaných ve formátu POX.|Text (POX)|  
-|Interoperabilita|Tento faktor odkazuje na schopnost kodéru WCF spolupracovat se službami, které nejsou wcf.|Text<br /><br /> MTOM (částečné)|  
+|Podporované znakové sady|<xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>a <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement> podporují jenom kódování UTF8 a UTF16 Unicode (*big-endian* a *Little endian*). Pokud je vyžadováno jiné kódování, například UTF7 nebo ASCII, je nutné použít vlastní kodér. Ukázku vlastního kodéru najdete v tématu [vlastní kodér zpráv](https://docs.microsoft.com/dotnet/framework/wcf/samples/custom-message-encoder-custom-text-encoder).|Text|  
+|Určených|Kontrola je schopnost kontrolovat zprávy během přenosu. Kódování textu, buď s použitím protokolu SOAP nebo bez něj, umožňuje kontrolovat a analyzovat zprávy mnoha aplikacemi bez použití specializovaných nástrojů. Použití zabezpečení přenosu na úrovni zprávy nebo přenosu má vliv na vaši možnost kontrolovat zprávy. Utajení chrání zprávu před tím, než je prověřena a integrita chrání zprávu před úpravou.|Text|  
+|Spolehlivost|Spolehlivost je odolnost kodéru proti chybám přenosu. Spolehlivost lze také poskytnout na úrovni zpráv, přenosů nebo aplikací. Všechny standardní kodéry WCF předpokládají, že spolehlivost zajišťuje jiná vrstva. Kodér má malou schopnost obnovení z chyby přenosu.|Žádné|  
+|Administrativ|Jednoduchost představuje náběh, ve kterém můžete vytvořit kodéry a dekodéry pro specifikaci kódování. Kódování textu je obzvláště výhodné pro jednoduchost a kódování textu POX má další výhodu nevyžadování podpory pro zpracování protokolu SOAP.|Text (POX)|  
+|Velikost|Kódování určuje množství režie uložené na obsahu. Velikost kódovaných zpráv je přímo v souvislosti s maximální propustností operací služby. Binární kódování jsou všeobecně kompaktnější než kódování textu. Pokud je velikost zprávy na úrovni Premium, zvažte také komprimaci obsahu zprávy během kódování. Komprese však přidává náklady na zpracování pro odesílatele zprávy i příjemce.|Binární|  
+|Streamování|Streamování umožňuje aplikacím zahájit zpracování zprávy před doručením celé zprávy. Efektivní používání streamování vyžaduje, aby na začátku zprávy byla k dispozici důležitá data pro zprávu, aby přijímající aplikace nemusela čekat na doručení. Aplikace používající přenos přes datový proud musí navíc organizovat data ve zprávě přírůstkově, takže obsah nemá dopředné závislosti. V mnoha případech je nutné narušit obsah streamování a mít nejmenší možnou velikost přenosu tohoto obsahu.|Žádné|  
+|Podpora nástrojů třetích stran|Oblasti podpory pro kódování zahrnují vývoj a diagnostiku. Vývojáři třetích stran udělali velké investice do knihoven a sad nástrojů pro zpracování zpráv kódovaných ve formátu POX.|Text (POX)|  
+|Interoperabilita|Tento faktor odkazuje na schopnost kodéru WCF spolupracovat s jinými službami než WCF.|Text<br /><br /> MTOM (částečný)|  
   
-Poznámka: Při použití binárního kodéru nebude mít použití nastavení IgnoreWhitespace při vytváření xmlreaderu žádný vliv.  Pokud například v rámci operace služby uděláte následující kroky:  
+Poznámka: při použití binárního kodéru nebude použití nastavení IgnoreWhitespace při vytváření objektu XMLReader nijak ovlivněno.  Například pokud v rámci operace služby provedete následující:  
 
 ```csharp
 public void OperationContract(XElement input)
@@ -60,17 +60,17 @@ public void OperationContract(XElement input)
 }
 ```  
   
-Nastavení IgnoreWhitespace je ignorováno.  
+Nastavení IgnoreWhitespace se ignoruje.  
   
 ## <a name="compression-and-the-binary-encoder"></a>Komprese a binární kodér
 
-Počínaje WCF 4.5 wcf binární kodér přidává podporu pro kompresi. To umožňuje použít algoritmus gzip/deflate pro odesílání komprimovaných zpráv z klienta WCF a také reagovat komprimovanými zprávami ze služby WCF s vlastním hostitelem. Tato funkce umožňuje kompresi v přenosech HTTP i TCP. Službu WCF hostovojenskou službou IIS lze vždy povolit pro odesílání komprimovaných odpovědí konfigurací hostitelského serveru služby IIS. Typ komprese je konfigurován <xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement.CompressionFormat%2A?displayProperty=nameWithType> s vlastností. Tato vlastnost je nastavena <xref:System.ServiceModel.Channels.CompressionFormat?displayProperty=nameWithType> na jednu z hodnot výčtu:
+Počínaje WCF 4,5 binární kodér WCF přidá podporu pro kompresi. To umožňuje použít algoritmus gzip/deflate pro posílání komprimovaných zpráv z klienta služby WCF a také reagovat pomocí komprimovaných zpráv z místního rozhraní WCF. Tato funkce umožňuje kompresi v přenosech HTTP i TCP. Služba WCF hostovaná službou IIS může být vždy povolena pro odesílání komprimovaných odpovědí konfigurací hostitelského serveru služby IIS. Typ komprese je nakonfigurován s <xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement.CompressionFormat%2A?displayProperty=nameWithType> vlastností. Tato vlastnost je nastavena na jednu z <xref:System.ServiceModel.Channels.CompressionFormat?displayProperty=nameWithType> hodnot výčtu:
 
 - <xref:System.ServiceModel.Channels.CompressionFormat.Deflate>
 - <xref:System.ServiceModel.Channels.CompressionFormat.GZip>
 - <xref:System.ServiceModel.Channels.CompressionFormat.None>
   
-Vzhledem k tomu, že tato vlastnost je vystavena pouze na binaryMessageEncodingBindingElement, budete muset vytvořit vlastní vazbu, jako je následující, abyste použili tuto funkci:
+Vzhledem k tomu, že se tato vlastnost zveřejňuje jenom na binaryMessageEncodingBindingElement, bude potřeba vytvořit vlastní vazbu, jako je třeba následující, abyste mohli tuto funkci použít:
 
  ```xml
  <customBinding>
@@ -81,8 +81,8 @@ Vzhledem k tomu, že tato vlastnost je vystavena pouze na binaryMessageEncodingB
 </customBinding>
  ```
 
-Klient i služba musí souhlasit s odesíláním a přijímáním komprimovaných zpráv, a proto musí být vlastnost compressionFormat nakonfigurována na elementu binaryMessageEncoding v klientovi i ve službě. Výjimka protocol je vyvolána, pokud služba nebo klient není nakonfigurován pro kompresi, ale druhá strana je. Povolení komprese by mělo být pečlivě zváženo. Komprese je většinou užitečná, pokud je šířka pásma sítě kritickým bodem. V případě, že procesor je kritickým bodem, komprese sníží propustnost. V simulovaném prostředí musí být provedeno vhodné testování, aby se zjistilo, zda je to přínosem pro aplikaci  
+Klient i služba musí souhlasit s odesíláním a přijímáním komprimovaných zpráv, a proto musí být vlastnost compressionFormat nakonfigurována na elementu binaryMessageEncoding na straně klienta i služby. ProtocolException je vyvolána, pokud buď není nakonfigurována služba nebo klient pro komprimaci, ale druhá strana je. Povolení komprese by mělo být pečlivě zváženo. Komprese je hlavně užitečná v případě, že šířka pásma sítě je kritická. V případě, že je procesor kritickým bodem, komprese sníží propustnost. Aby bylo možné zjistit, zda se jedná o výhody aplikace, je nutné provést příslušné testování v simulovaném prostředí.  
   
 ## <a name="see-also"></a>Viz také
 
-- [Vazby](../../../../docs/framework/wcf/feature-details/bindings.md)
+- [Vazby](bindings.md)
