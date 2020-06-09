@@ -2,21 +2,21 @@
 title: System.ServiceModel.Channels.MsmqStartingService
 ms.date: 03/30/2017
 ms.assetid: 7248afaf-5ad9-4d7a-ba07-781a60a0ef9b
-ms.openlocfilehash: a69883cecc163e6e81661fc6ddcda203ab28b742
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d0aff57c3962c9623085b6378c3fa9a05053ea23
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61936393"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84582345"
 ---
-# <a name="systemservicemodelchannelsmsmqstartingservice"></a><span data-ttu-id="7a161-102">System.ServiceModel.Channels.MsmqStartingService</span><span class="sxs-lookup"><span data-stu-id="7a161-102">System.ServiceModel.Channels.MsmqStartingService</span></span>
-<span data-ttu-id="7a161-103">System.ServiceModel.Channels.MsmqStartingService</span><span class="sxs-lookup"><span data-stu-id="7a161-103">System.ServiceModel.Channels.MsmqStartingService</span></span>  
+# <a name="systemservicemodelchannelsmsmqstartingservice"></a><span data-ttu-id="516ac-102">System.ServiceModel.Channels.MsmqStartingService</span><span class="sxs-lookup"><span data-stu-id="516ac-102">System.ServiceModel.Channels.MsmqStartingService</span></span>
+<span data-ttu-id="516ac-103">System.ServiceModel.Channels.MsmqStartingService</span><span class="sxs-lookup"><span data-stu-id="516ac-103">System.ServiceModel.Channels.MsmqStartingService</span></span>  
   
-## <a name="description"></a><span data-ttu-id="7a161-104">Popis</span><span class="sxs-lookup"><span data-stu-id="7a161-104">Description</span></span>  
- <span data-ttu-id="7a161-105">Hostitelské prostředí spustila službu.</span><span class="sxs-lookup"><span data-stu-id="7a161-105">The hosting environment started the service.</span></span>  
+## <a name="description"></a><span data-ttu-id="516ac-104">Popis</span><span class="sxs-lookup"><span data-stu-id="516ac-104">Description</span></span>  
+ <span data-ttu-id="516ac-105">Hostující prostředí spustilo službu.</span><span class="sxs-lookup"><span data-stu-id="516ac-105">The hosting environment started the service.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="7a161-106">Viz také:</span><span class="sxs-lookup"><span data-stu-id="7a161-106">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="516ac-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="516ac-106">See also</span></span>
 
-- [<span data-ttu-id="7a161-107">Trasování</span><span class="sxs-lookup"><span data-stu-id="7a161-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [<span data-ttu-id="7a161-108">Řešení problémů s aplikací pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="7a161-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
-- [<span data-ttu-id="7a161-109">Správa a diagnostika</span><span class="sxs-lookup"><span data-stu-id="7a161-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [<span data-ttu-id="516ac-107">Trasování</span><span class="sxs-lookup"><span data-stu-id="516ac-107">Tracing</span></span>](index.md)
+- [<span data-ttu-id="516ac-108">Řešení potíží s aplikací pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="516ac-108">Using Tracing to Troubleshoot Your Application</span></span>](using-tracing-to-troubleshoot-your-application.md)
+- [<span data-ttu-id="516ac-109">Správa a diagnostika</span><span class="sxs-lookup"><span data-stu-id="516ac-109">Administration and Diagnostics</span></span>](../index.md)
