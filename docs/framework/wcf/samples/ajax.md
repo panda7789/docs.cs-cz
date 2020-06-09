@@ -2,34 +2,34 @@
 title: AJAX
 ms.date: 03/30/2017
 ms.assetid: 9e0eb40a-69ef-4821-bdc3-45a9b71a58c3
-ms.openlocfilehash: d80166eaed2598f21529e81c81985d78a23bf0c9
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 85b3451b2337d6fe2c9dcc16a1930663b5e6de19
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65882125"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84575794"
 ---
 # <a name="ajax"></a>AJAX
-Tato část obsahuje ukázky, které demonstrují funkce asynchronní JavaScript a XML.  
+Tato část obsahuje ukázky, které demonstrují asynchronní funkce JavaScriptu a XML.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [JSONP](../../../../docs/framework/wcf/samples/jsonp.md)  
- Ukazuje, jak podporovat JSON s odsazení (JSONP) služby WCF REST.  
+ [JSONP](jsonp.md)  
+ Ukazuje, jak podporovat JSON s odsazením (JSONP) ve službách WCF REST.  
   
- [Serializace JSON](../../../../docs/framework/wcf/samples/json-serialization.md)  
- Popisuje způsob použití <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> k serializaci a deserializaci data ve formátu JavaScript Object Notation (JSON).  
+ [Serializace JSON](json-serialization.md)  
+ Ukazuje, jak použít <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> k serializaci a deserializaci dat ve formátu JavaScript Object Notation (JSON).  
   
- [Základní služba AJAX](../../../../docs/framework/wcf/samples/basic-ajax-service.md)  
- Ukazuje, jak pomocí WCF základní službu asynchronní jazyka JavaScript technologie ASP.NET a XML (AJAX).  
+ [Základní služba AJAX](basic-ajax-service.md)  
+ Ukazuje, jak používat WCF k vytvoření základní ASP.NET asynchronního JavaScriptu a služby jazyka XML (AJAX).  
   
- [Služba AJAX využívající HTTP POST](../../../../docs/framework/wcf/samples/ajax-service-using-http-post.md)  
- Ukazuje, jak pomocí WCF službu asynchronní jazyka JavaScript technologie ASP.NET a XML (AJAX), který používá HTTP POST.  
+ [Služba AJAX, která používá HTTP POST](ajax-service-using-http-post.md)  
+ Ukazuje, jak pomocí WCF vytvořit službu ASP.NET Asynchronous JavaScript a XML (AJAX), která používá HTTP POST.  
   
- [Služba AJAX bez konfigurace](../../../../docs/framework/wcf/samples/ajax-service-without-configuration.md)  
- Ukazuje, jak pomocí WCF základní službu asynchronní jazyka JavaScript technologie ASP.NET a XML (AJAX).  
+ [Služba AJAX bez konfigurace](ajax-service-without-configuration.md)  
+ Ukazuje, jak používat WCF k vytvoření základní ASP.NET asynchronního JavaScriptu a služby jazyka XML (AJAX).  
   
- [Služba AJAX využívající komplexní typy](../../../../docs/framework/wcf/samples/ajax-service-using-complex-types-sample.md)  
- Ukazuje, jak pomocí WCF vytvořte službu ASP.NET asynchronní JavaScript a XML (AJAX), která vytváří instance komplexních typů.  
+ [Služba AJAX využívající komplexní typy](ajax-service-using-complex-types-sample.md)  
+ Ukazuje, jak používat WCF k vytvoření ASP.NET asynchronního JavaScriptu a služby XML (AJAX), která vytváří instance komplexních typů.  
   
- [Služba AJAX s protokoly JSON a XML](../../../../docs/framework/wcf/samples/ajax-service-with-json-and-xml-sample.md)  
- Ukazuje, jak pomocí WCF službu asynchronní JavaScript a XML (AJAX), který vrací data JavaScript Object Notation (JSON) nebo XML.
+ [Služba AJAX s protokoly JSON a XML](ajax-service-with-json-and-xml-sample.md)  
+ Ukazuje, jak pomocí WCF vytvořit asynchronní službu JavaScript a XML (AJAX), která vrací buď JavaScript Object Notation (JSON) nebo XML data.
