@@ -1,5 +1,6 @@
 ---
 title: Zpracování vstupně-výstupních chyb v .NET
+description: Přečtěte si, jak zpracovávat chyby v/v v .NET. Mapování kódů chyb na výjimky, zpracování výjimek v vstupně-výstupních operacích a zpracování IOException.
 ms.date: 08/27/2018
 ms.technology: dotnet-standard
 dev_langs:
@@ -11,12 +12,12 @@ helpviewer_keywords:
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: c592039b3b12eedcfceda45c2f54403a8e04b5d5
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.openlocfilehash: 45f3951b727d3b615d8384541ff169e8840acab0
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81242670"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84599799"
 ---
 # <a name="handling-io-errors-in-net"></a>Zpracování vstupně-výstupních chyb v .NET
 
@@ -54,8 +55,8 @@ Vzhledem k tomu, že se jedná o závislé na operačním systému, může být 
 | <xref:System.IO.PathTooLongException> | Ano | Ano |
 | <xref:System.OperationCanceledException> | Ano | Ano |
 | <xref:System.UnauthorizedAccessException> | Ano | Ano |
-| <xref:System.ArgumentException> | .NET Core 2,0 a starší| Ano |
-| <xref:System.NotSupportedException> | Ne | Ano |
+| <xref:System.ArgumentException> | .NET Core 2,0 a starší| Yes |
+| <xref:System.NotSupportedException> | Ne | Yes |
 | <xref:System.Security.SecurityException> | Ne | Jenom omezená důvěra |
 
 ## <a name="handling-ioexception"></a>Zpracování IOException
@@ -71,7 +72,7 @@ Všimněte si, že v kódu zpracování výjimek byste měli vždy zpracovat <xr
 
 V případě nástroje <xref:System.IO.IOException> můžete získat další informace o chybě z vlastnosti [IOException. HRESULT](xref:System.Exception.HResult) . Chcete-li převést hodnotu HResult na kód chyby Win32, provedete horní 16 bitů hodnoty 32. V následující tabulce jsou uvedeny kódy chyb, které mohou být zabaleny do <xref:System.IO.IOException> .
 
-| HResult | Trvalé | Description |
+| HResult | Trvalé | Popis |
 | --- | --- | --- |
 | ERROR_SHARING_VIOLATION | 32 | Chybí název souboru, nebo je soubor nebo adresář používán. |
 | ERROR_FILE_EXISTS | 80 | Soubor již existuje. |

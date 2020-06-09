@@ -2,16 +2,16 @@
 title: WS Dual Http
 ms.date: 03/30/2017
 ms.assetid: 9997eba5-29ec-48db-86f3-fa77b241fb1a
-ms.openlocfilehash: 1f1592598c0ed148f06c0a99ccdb8a8347175d8f
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 4acf2491c242099f6c8b6c9c01dc18e9c99c9934
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74716791"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84589731"
 ---
 # <a name="ws-dual-http"></a>WS Dual Http
 
-Dvojitá ukázka HTTP ukazuje, jak nakonfigurovat vazbu `WSDualHttpBinding`. Tato ukázka se skládá z programu klientské konzoly (. exe) a knihovny služeb (. dll) hostované službou Internetová informační služba (IIS). Služba implementuje oboustranný kontrakt. Kontrakt je definován rozhraním `ICalculatorDuplex`, které zpřístupňuje matematické operace (sčítání, odčítání, násobení a dělení). V této ukázce rozhraní `ICalculatorDuplex` umožňuje klientovi provádět matematické operace, které vypočítávají výsledek spuštění přes relaci. Nezávisle služba vrátí výsledky v rozhraní `ICalculatorDuplexCallback`. Duplexní smlouva vyžaduje relaci, protože je nutné vytvořit kontext, který bude korelovat sadu zpráv odesílaných mezi klientem a službou. Vazba `WSDualHttpBinding` podporuje duplexní komunikaci.
+Dvojitá ukázka HTTP ukazuje, jak nakonfigurovat `WSDualHttpBinding` vazbu. Tato ukázka se skládá z programu klientské konzoly (. exe) a knihovny služeb (. dll) hostované službou Internetová informační služba (IIS). Služba implementuje oboustranný kontrakt. Kontrakt je definován `ICalculatorDuplex` rozhraním, které zpřístupňuje matematické operace (sčítání, odčítání, násobení a dělení). V této ukázce `ICalculatorDuplex` rozhraní umožňuje klientovi provádět matematické operace, které vypočítávají výsledek spuštění přes relaci. Nezávisle služba vrátí výsledky na `ICalculatorDuplexCallback` rozhraní. Duplexní smlouva vyžaduje relaci, protože je nutné vytvořit kontext, který bude korelovat sadu zpráv odesílaných mezi klientem a službou. `WSDualHttpBinding`Vazba podporuje duplexní komunikaci.
 
 > [!NOTE]
 > Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.
@@ -21,11 +21,11 @@ Dvojitá ukázka HTTP ukazuje, jak nakonfigurovat vazbu `WSDualHttpBinding`. Tat
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\WS\DualHttp`
 
-Pokud chcete nakonfigurovat koncový bod služby s `WSDualHttpBinding`, zadejte vazbu v konfiguraci koncového bodu, jak je znázorněno na obrázku.
+Chcete-li nakonfigurovat koncový bod služby pomocí `WSDualHttpBinding` , zadejte vazbu v konfiguraci koncového bodu, jak je znázorněno na obrázku.
 
 ```xml
 <endpoint address=""
@@ -81,14 +81,14 @@ Při spuštění ukázky se zobrazí zprávy vracené klientovi do rozhraní zp�
     %windir%\Microsoft.NET\Framework\v4.0.XXXXX\aspnet_regiis.exe /i /enable
     ```
 
-2. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
+2. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](one-time-setup-procedure-for-the-wcf-samples.md).
 
-3. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
+3. Chcete-li sestavit edici C# nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](building-the-samples.md).
 
-4. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).
+4. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](running-the-samples.md).
 
     > [!IMPORTANT]
-    > Při spuštění klienta nástroje v konfiguraci mezi počítači Nezapomeňte nahradit localhost v atributu `address` [\<koncového bodu > \<elementu klienta >](../../configure-apps/file-schema/wcf/endpoint-of-client.md) a atribut `clientBaseAddress`\<[vazby](../../configure-apps/file-schema/wcf/bindings.md) > [elementu\<](../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md) elementu s názvem příslušného počítače, jak je znázorněno na následujícím obrázku:
+    > Při spuštění klienta nástroje v konfiguraci mezi počítači, je nutné nahradit localhost v obou `address` atributech [ \<endpoint> \<client> ](../../configure-apps/file-schema/wcf/endpoint-of-client.md) elementu a `clientBaseAddress` atribut [\<binding>](../../configure-apps/file-schema/wcf/bindings.md) elementu [\<wsDualHttpBinding>](../../configure-apps/file-schema/wcf/wsdualhttpbinding.md) elementu názvem příslušného počítače, jak je znázorněno níže:
 
     ```xml
     <client>
