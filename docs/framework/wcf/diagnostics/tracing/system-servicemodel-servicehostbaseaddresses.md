@@ -2,21 +2,21 @@
 title: System.ServiceModel.ServiceHostBaseAddresses
 ms.date: 03/30/2017
 ms.assetid: a36b8d38-8719-4d51-923a-420ec6c009e7
-ms.openlocfilehash: fe16208a3ff277fe8322d75f27bcdd961f031ae8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d4a01f5e74616ee87a55aea280891d8a85993d00
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61703436"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597823"
 ---
-# <a name="systemservicemodelservicehostbaseaddresses"></a><span data-ttu-id="1fe89-102">System.ServiceModel.ServiceHostBaseAddresses</span><span class="sxs-lookup"><span data-stu-id="1fe89-102">System.ServiceModel.ServiceHostBaseAddresses</span></span>
-<span data-ttu-id="1fe89-103">System.ServiceModel.ServiceHostBaseAddresses</span><span class="sxs-lookup"><span data-stu-id="1fe89-103">System.ServiceModel.ServiceHostBaseAddresses</span></span>  
+# <a name="systemservicemodelservicehostbaseaddresses"></a><span data-ttu-id="d2016-102">System.ServiceModel.ServiceHostBaseAddresses</span><span class="sxs-lookup"><span data-stu-id="d2016-102">System.ServiceModel.ServiceHostBaseAddresses</span></span>
+<span data-ttu-id="d2016-103">System.ServiceModel.ServiceHostBaseAddresses</span><span class="sxs-lookup"><span data-stu-id="d2016-103">System.ServiceModel.ServiceHostBaseAddresses</span></span>  
   
-## <a name="description"></a><span data-ttu-id="1fe89-104">Popis</span><span class="sxs-lookup"><span data-stu-id="1fe89-104">Description</span></span>  
- <span data-ttu-id="1fe89-105">Uživatelé můžou zobrazit všechny základní adresy registry service.</span><span class="sxs-lookup"><span data-stu-id="1fe89-105">Users can view all the base addresses the service registers.</span></span>  
+## <a name="description"></a><span data-ttu-id="d2016-104">Popis</span><span class="sxs-lookup"><span data-stu-id="d2016-104">Description</span></span>  
+ <span data-ttu-id="d2016-105">Uživatelé mohou zobrazit všechny základní adresy, které zaregistrují služby.</span><span class="sxs-lookup"><span data-stu-id="d2016-105">Users can view all the base addresses the service registers.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="1fe89-106">Viz také:</span><span class="sxs-lookup"><span data-stu-id="1fe89-106">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="d2016-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="d2016-106">See also</span></span>
 
-- [<span data-ttu-id="1fe89-107">Trasování</span><span class="sxs-lookup"><span data-stu-id="1fe89-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [<span data-ttu-id="1fe89-108">Řešení problémů s aplikací pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="1fe89-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
-- [<span data-ttu-id="1fe89-109">Správa a diagnostika</span><span class="sxs-lookup"><span data-stu-id="1fe89-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [<span data-ttu-id="d2016-107">Trasování</span><span class="sxs-lookup"><span data-stu-id="d2016-107">Tracing</span></span>](index.md)
+- [<span data-ttu-id="d2016-108">Řešení potíží s aplikací pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="d2016-108">Using Tracing to Troubleshoot Your Application</span></span>](using-tracing-to-troubleshoot-your-application.md)
+- [<span data-ttu-id="d2016-109">Správa a diagnostika</span><span class="sxs-lookup"><span data-stu-id="d2016-109">Administration and Diagnostics</span></span>](../index.md)
