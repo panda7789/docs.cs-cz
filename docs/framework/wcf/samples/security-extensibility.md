@@ -2,43 +2,43 @@
 title: Rozšiřitelnost zabezpečení
 ms.date: 03/30/2017
 ms.assetid: 2afe044d-df4a-49a4-9865-38700474c3dd
-ms.openlocfilehash: afb11d240c25e6b9dbfd5b5c0a63759af8c534f5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f3fc9a482271b904ccf56f1a911d3a44172bb40e
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61787475"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84602385"
 ---
 # <a name="security-extensibility"></a>Rozšiřitelnost zabezpečení
-Tato část obsahuje ukázky, které předvádějí vlastní zabezpečení ve Windows Communication Foundation (WCF).  
+Tato část obsahuje ukázky, které ukazují vlastní zabezpečení v Windows Communication Foundation (WCF).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Zprostředkovatel trvale vystavených tokenů](../../../../docs/framework/wcf/samples/durable-issued-token-provider.md)  
- Ukazuje, jak implementovat vlastní klienta vydán zprostředkovatele tokenu.  
+ [Trvale vydaný poskytovatel tokenu](durable-issued-token-provider.md)  
+ Ukazuje, jak implementovat vlastního poskytovatele tokenu vydaných klientů.  
   
- [Zprostředkovatel tokenů SAML](../../../../docs/framework/wcf/samples/saml-token-provider.md)  
- Ukazuje, jak implementovat vlastní klienta zprostředkovatel tokenů SAML.  
+ [Zprostředkovatel tokenů zabezpečení SAML](saml-token-provider.md)  
+ Ukazuje, jak implementovat vlastního poskytovatele tokenu SAML klienta.  
   
- [Podpora tokenů](../../../../docs/framework/wcf/samples/supporting-tokens.md)  
- Ukazuje, jak přidat další tokeny na zprávu, která používá WS-Security.  
+ [Podpora tokenů](supporting-tokens.md)  
+ Ukazuje, jak přidat další tokeny do zprávy, která používá WS-Security.  
   
- [Ověřovací data tokenu](../../../../docs/framework/wcf/samples/token-authenticator.md)  
+ [Ověřovací data tokenu](token-authenticator.md)  
  Ukazuje, jak implementovat vlastní ověřovací data tokenu.  
   
- [Zprostředkovatel tokenů](../../../../docs/framework/wcf/samples/token-provider.md)  
- Ukazuje, jak implementovat vlastní zprostředkovatele tokenu.  
+ [Zprostředkovatel tokenu](token-provider.md)  
+ Ukazuje, jak implementovat vlastního poskytovatele tokenů.  
   
- [Validátor hesel pro uživatelská jména](../../../../docs/framework/wcf/samples/user-name-password-validator.md)  
- Ukazuje, jak implementovat vlastní UserNamePassword validátor.  
+ [Validátor hesel pro uživatelská jména](user-name-password-validator.md)  
+ Ukazuje, jak implementovat vlastní validátor UserNamePassword.  
   
- [Validátor certifikátu X.509](../../../../docs/framework/wcf/samples/x-509-certificate-validator.md)  
- Ukazuje, jak implementovat vlastní validátor certifikátu X.509.  
+ [Validátor certifikátu X.509](x-509-certificate-validator.md)  
+ Ukazuje, jak implementovat vlastní validátor certifikátů X. 509.  
   
- [Zásady autorizace](../../../../docs/framework/wcf/samples/authorization-policy.md)  
- Ukazuje, jak implementovat zásady autorizace vlastních deklarací identity a přidružená služba vlastního Správce autorizací.  
+ [Zásada autorizace](authorization-policy.md)  
+ Ukazuje, jak implementovat vlastní zásady autorizace deklarací identity a přidruženého vlastního Správce autorizací služby.  
   
- [Vlastní token](../../../../docs/framework/wcf/samples/custom-token.md)  
- Ukazuje, jak přidat vlastní implementaci token do aplikace Windows Communication Foundation (WCF).  
+ [Vlastní token](custom-token.md)  
+ Ukazuje, jak přidat vlastní implementaci tokenu do aplikace Windows Communication Foundation (WCF).  
   
- [Ověřování klienta](../../../../docs/framework/wcf/samples/client-validation.md)  
- Demonstruje postup zápisu klienta chování koncového bodu, která ověřuje koncový bod služby k zajištění, že koncový bod služby je bezpečné používat.
+ [Ověřování ze strany klienta](client-validation.md)  
+ Ukazuje, jak napsat chování koncového bodu klienta, který ověřuje koncový bod služby, aby bylo zajištěno, že je koncový bod služby bezpečně používán.

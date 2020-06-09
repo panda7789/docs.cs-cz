@@ -2,20 +2,20 @@
 title: Řízení front zpráv do WCF
 ms.date: 03/30/2017
 ms.assetid: 6d718eb0-9f61-4653-8a75-d2dac8fb3520
-ms.openlocfilehash: 541ea23e6748242db57661ceda8e1fedecb66884
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 82e71afc911bff2504be15f7f9f2e736d943972b
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76747116"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84584958"
 ---
 # <a name="message-queuing-to-windows-communication-foundation"></a>Řízení front zpráv do WCF
 
 Tato ukázka předvádí, jak může aplikace řízení front zpráv (MSMQ) odesílat zprávy MSMQ službě Windows Communication Foundation (WCF). Služba je samoobslužná Konzolová aplikace, která vám umožní sledovat službu přijímající zprávy zařazené do fronty.
 
- Kontrakt služby je `IOrderProcessor`, který definuje jednosměrnou službu, která je vhodná pro použití s frontami. Zpráva služby MSMQ neobsahuje záhlaví akce, takže není možné automaticky mapovat různé zprávy MSMQ na provozní kontrakty. Proto může existovat pouze jedna kontrakt operace. Pokud chcete pro službu definovat více než jednu kontrakt operace, aplikace musí poskytnout informace o tom, které záhlaví ve zprávě služby MSMQ (například popisek nebo ID korelace) se dá použít k rozhodnutí, který kontrakt operace se má odeslat.
+ Kontrakt služby je `IOrderProcessor` , který definuje jednosměrnou službu, která je vhodná pro použití s frontami. Zpráva služby MSMQ neobsahuje záhlaví akce, takže není možné automaticky mapovat různé zprávy MSMQ na provozní kontrakty. Proto může existovat pouze jedna kontrakt operace. Pokud chcete pro službu definovat více než jednu kontrakt operace, aplikace musí poskytnout informace o tom, které záhlaví ve zprávě služby MSMQ (například popisek nebo ID korelace) se dá použít k rozhodnutí, který kontrakt operace se má odeslat.
 
- Zpráva služby MSMQ neobsahuje informace o tom, která záhlaví jsou namapována na různé parametry kontraktu operace. Parametr je typu <xref:System.ServiceModel.MsmqIntegration.MsmqMessage%601>(`MsmqMessage<T>`), který obsahuje podkladovou zprávu služby MSMQ. Typ "T" ve třídě <xref:System.ServiceModel.MsmqIntegration.MsmqMessage%601>(`MsmqMessage<T>`) představuje data serializovaná do těla zprávy služby MSMQ. V této ukázce je typ `PurchaseOrder` serializován do těla zprávy služby MSMQ.
+ Zpráva služby MSMQ neobsahuje informace o tom, která záhlaví jsou namapována na různé parametry kontraktu operace. Parametr je typu <xref:System.ServiceModel.MsmqIntegration.MsmqMessage%601> ( `MsmqMessage<T>` ), který obsahuje podkladovou zprávu služby MSMQ. Typ "T" v <xref:System.ServiceModel.MsmqIntegration.MsmqMessage%601> `MsmqMessage<T>` třídě () představuje data serializovaná do těla zprávy služby MSMQ. V této ukázce `PurchaseOrder` je typ serializován do těla zprávy služby MSMQ.
 
  Následující vzorový kód ukazuje kontrakt služby pro službu zpracování objednávek.
 
@@ -45,7 +45,7 @@ public static void Main()
 }
 ```
 
- Služba vytvoří a otevře <xref:System.ServiceModel.ServiceHost> pro `OrderProcessorService`, jak je znázorněno v následujícím ukázkovém kódu.
+ Služba vytvoří a otevře <xref:System.ServiceModel.ServiceHost> pro `OrderProcessorService` , jak je znázorněno v následujícím ukázkovém kódu.
 
 ```csharp
 using (ServiceHost serviceHost = new ServiceHost(typeof(OrderProcessorService)))
@@ -69,7 +69,7 @@ using (ServiceHost serviceHost = new ServiceHost(typeof(OrderProcessorService)))
 </appSettings>
 ```
 
- Klientská aplikace je aplikace služby MSMQ, která používá metodu <xref:System.Messaging.MessageQueue.Send%2A> k odeslání trvalé a transakční zprávy do fronty, jak je znázorněno v následujícím ukázkovém kódu.
+ Klientská aplikace je aplikace služby MSMQ, která používá <xref:System.Messaging.MessageQueue.Send%2A> metodu k odeslání trvalé a transakční zprávy do fronty, jak je znázorněno v následujícím ukázkovém kódu.
 
 ```csharp
 //Connect to the queue.
@@ -115,7 +115,7 @@ Console.ReadLine();
 
 ## <a name="set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky
 
-1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
+1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](one-time-setup-procedure-for-the-wcf-samples.md).
 
 2. Pokud je služba spuštěna jako první, zkontroluje, zda je fronta k dispozici. Pokud fronta není přítomna, služba ji vytvoří. Službu můžete nejdřív spustit, abyste mohli vytvořit frontu, nebo ji můžete vytvořit pomocí Správce fronty MSMQ. Pomocí těchto kroků vytvořte ve Windows 2008 frontu.
 
@@ -127,11 +127,11 @@ Console.ReadLine();
 
     4. Zaškrtněte políčko **transakční** .
 
-    5. Jako název nové fronty zadejte `ServiceModelSamplesTransacted`.
+    5. `ServiceModelSamplesTransacted`Jako název nové fronty zadejte.
 
-3. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
+3. Chcete-li sestavit edici C# nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](building-the-samples.md).
 
-4. Chcete-li spustit ukázku v konfiguraci s jedním počítačem, postupujte podle pokynů v [části spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).
+4. Chcete-li spustit ukázku v konfiguraci s jedním počítačem, postupujte podle pokynů v [části spuštění ukázek Windows Communication Foundation](running-the-samples.md).
 
 ## <a name="run-the-sample-across-computers"></a>Spuštění ukázky napříč počítači
 
@@ -150,12 +150,12 @@ Console.ReadLine();
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\MSMQIntegration\MsmqToWcf`
 
 ## <a name="see-also"></a>Viz také
 
-- [Fronty ve WCF](../../../../docs/framework/wcf/feature-details/queues-in-wcf.md)
-- [Postupy: Výměna zpráv s koncovými body WCF a aplikací pro řazení zpráv do front](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)
-- [Řízení front zpráv](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/ms711472(v=vs.85))
+- [Fronty ve WCF](../feature-details/queues-in-wcf.md)
+- [Postupy: Výměna zpráv s koncovými body WCF a aplikací pro řazení zpráv do front](../feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)
+- [Služba Řízení front zpráv](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/ms711472(v=vs.85))

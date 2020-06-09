@@ -2,24 +2,24 @@
 title: System.ServiceModel.TxAsyncAbort
 ms.date: 03/30/2017
 ms.assetid: bce47ff2-abd0-4b58-8667-ebf1ef3580b8
-ms.openlocfilehash: a6989da7b457e819a49d7c27e8732c7f33dc51b8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5147f22f1ca6d9b6b366297d691a4f963f407021
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61768749"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84576587"
 ---
 # <a name="systemservicemodeltxasyncabort"></a>System.ServiceModel.TxAsyncAbort
-Zadanou transakci byla asynchronně přerušena.  
+Zadaná transakce byla asynchronně přerušena.  
   
 ## <a name="description"></a>Popis  
- Aktuální transakce byla přerušena z důvodu jiné účastníka hlasování pro přerušení, vypršení časových limitů, ke kterým dochází, nebo jiná chyba uvnitř účastník transakce.  
+ Aktuální transakce byla přerušena z důvodu dalšího účastníka pro přerušení, vypršení časového limitu nebo jiné chyby uvnitř účastníka transakce.  
   
-## <a name="troubleshooting"></a>Poradce při potížích  
- Pokud toto přerušení neočekávaný a zjistěte jeho důvod skutečné pro přerušení, zkontrolujte všechny protokoly systému.  
+## <a name="troubleshooting"></a>Řešení potíží  
+ Zkontrolujte všechny systémové protokoly, pokud je toto přerušení neočekávané, aby bylo možné určit skutečný důvod pro přerušení.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Trasování](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [Řešení problémů s aplikací pomocí trasování](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
-- [Správa a diagnostika](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [Trasování](index.md)
+- [Řešení potíží s aplikací pomocí trasování](using-tracing-to-troubleshoot-your-application.md)
+- [Správa a diagnostika](../index.md)

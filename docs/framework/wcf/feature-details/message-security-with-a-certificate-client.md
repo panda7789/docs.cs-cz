@@ -5,46 +5,46 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 99770573-c815-4428-a38c-e4335c8bd7ce
-ms.openlocfilehash: 3660877194931c2be5b9b1c9aa54e2595701697f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2b2717bc68da9f07cd38e10a5d75b2a7df9add45
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184648"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84602632"
 ---
 # <a name="message-security-with-a-certificate-client"></a>Zabezpečení zpráv pomocí klientských certifikátů
-Následující scénář ukazuje klienta a služby WCF (Windows Communication Foundation) zabezpečené pomocí režimu zabezpečení zpráv. Klient i služba jsou ověřeni pomocí certifikátů. Další informace naleznete v [tématu Distributed Application Security](../../../../docs/framework/wcf/feature-details/distributed-application-security.md).
+Následující scénář zobrazuje klienta a službu Windows Communication Foundation (WCF) zabezpečený pomocí režimu zabezpečení zpráv. Klient i služba jsou ověřovány pomocí certifikátů. Další informace najdete v tématu [zabezpečení distribuované aplikace](distributed-application-security.md).
 
- ![Snímek obrazovky, který zobrazuje klienta s certifikátem.](./media/message-security-with-a-certificate-client/client-with-certificate.gif)  
+ ![Snímek obrazovky zobrazující klienta s certifikátem](./media/message-security-with-a-certificate-client/client-with-certificate.gif)  
   
- Ukázková aplikace naleznete v tématu [Message Security Certificate](../../../../docs/framework/wcf/samples/message-security-certificate.md).  
+ Ukázkovou aplikaci najdete v tématu [certifikát zabezpečení zpráv](../samples/message-security-certificate.md).  
 
 |Charakteristika|Popis|  
 |--------------------|-----------------|  
 |Režim zabezpečení|Zpráva|  
-|Vzájemná funkční spolupráce|Pouze WCF|  
-|Ověřování (server)|Použití servisního certifikátu|  
+|Interoperabilita|Pouze WCF|  
+|Ověřování (Server)|Použití certifikátu služby|  
 |Ověřování (klient)|Použití klientského certifikátu|  
-|Integrita|Ano|  
-|Důvěrnost|Ano|  
+|Integrita|Yes|  
+|Důvěrnost|Yes|  
 |Přenos|HTTP|  
 |Vazba|<xref:System.ServiceModel.WSHttpBinding>|  
   
 ## <a name="service"></a>Služba  
- Následující kód a konfigurace jsou určeny ke spuštění nezávisle. Proveďte jednu z těchto akcí:  
+ Následující kód a konfigurace jsou určeny ke spuštění nezávisle. Proveďte některou z následujících akcí:  
   
 - Vytvořte samostatnou službu pomocí kódu bez konfigurace.  
   
 - Vytvořte službu pomocí zadané konfigurace, ale nedefinujte žádné koncové body.  
   
-### <a name="code"></a>kód  
+### <a name="code"></a>Kód  
  Následující kód ukazuje, jak vytvořit koncový bod služby, který používá zabezpečení zpráv k vytvoření zabezpečeného kontextu.  
   
  [!code-csharp[C_SecurityScenarios#10](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#10)]
  [!code-vb[C_SecurityScenarios#10](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#10)]  
   
 ### <a name="configuration"></a>Konfigurace  
- Následující konfiguraci lze použít namísto kódu.  
+ Místo kódu lze použít následující konfiguraci.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -85,23 +85,23 @@ Následující scénář ukazuje klienta a služby WCF (Windows Communication Fo
 ```  
   
 ## <a name="client"></a>Klient  
- Následující kód a konfigurace jsou určeny ke spuštění nezávisle. Proveďte jednu z těchto akcí:  
+ Následující kód a konfigurace jsou určeny ke spuštění nezávisle. Proveďte některou z následujících akcí:  
   
-- Vytvořte samostatného klienta pomocí kódu (a klientského kódu).  
+- Vytvořte samostatného klienta pomocí kódu (a kódu klienta).  
   
-- Vytvořte klienta, který nedefinuje žádné adresy koncového bodu. Místo toho použijte konstruktor klienta, který bere název konfigurace jako argument. Například:  
+- Vytvořte klienta, který nedefinuje žádné adresy koncových bodů. Místo toho použijte konstruktor klienta, který převezme název konfigurace jako argument. Například:  
   
      [!code-csharp[C_SecurityScenarios#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#0)]
      [!code-vb[C_SecurityScenarios#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#0)]  
   
-### <a name="code"></a>kód  
- Následující kód vytvoří klienta. Vazba je zabezpečení režimu zprávy a typ `Certificate`pověření klienta je nastavena na .  
+### <a name="code"></a>Kód  
+ Následující kód vytvoří klienta. Vazba je zabezpečení režimu zprávy a typ přihlašovacích údajů klienta je nastaven na hodnotu `Certificate` .  
   
  [!code-csharp[C_SecurityScenarios#17](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#17)]
  [!code-vb[C_SecurityScenarios#17](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#17)]  
   
 ### <a name="configuration"></a>Konfigurace  
- Následující konfigurace určuje klientský certifikát pomocí chování koncového bodu. Další informace o certifikátech naleznete v [tématu Práce s certifikáty](../../../../docs/framework/wcf/feature-details/working-with-certificates.md). Kód také používá `identity` <> prvek k určení dns (DOMAIN Name System) očekávané identity serveru. Další informace o identitě naleznete v [tématu Identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  
+ Následující konfigurace určuje klientský certifikát pomocí chování koncového bodu. Další informace o certifikátech najdete v tématu [práce s certifikáty](working-with-certificates.md). Kód také používá <`identity`> element k určení systému DNS (Domain Name System) očekávané identity serveru. Další informace o identitě najdete v tématu [Identita a ověřování služby](service-identity-and-authentication.md).  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -145,7 +145,7 @@ Následující scénář ukazuje klienta a služby WCF (Windows Communication Fo
   
 ## <a name="see-also"></a>Viz také
 
-- [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)
-- [Identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)
-- [Práce s certifikáty](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)
-- [Model zabezpečení pro infrastrukturu aplikací pro Windows Server](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Přehled zabezpečení](security-overview.md)
+- [Identita a ověřování služby](service-identity-and-authentication.md)
+- [Práce s certifikáty](working-with-certificates.md)
+- [Model zabezpečení pro Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

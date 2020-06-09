@@ -2,37 +2,37 @@
 title: Vazby Net MSMQ
 ms.date: 03/30/2017
 ms.assetid: fe4bb696-f57c-4cb3-9b7e-9d95fe6b8323
-ms.openlocfilehash: ee32ea09eed28c1c7cd5df2df2d13fd5f41f4b22
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 622341ef00f5d8950fa0c013e427f20e02187893
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61972377"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84602424"
 ---
 # <a name="net-msmq-binding"></a>Vazby Net MSMQ
-Tato část obsahuje ukázky, které demonstrují, pomocí atributů vazby služby MSMQ elementu koncového bodu.  
+Tato část obsahuje ukázky, které ukazují použití atributů vazeb služby MSMQ elementu koncového bodu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Zpracované vazby služby MSMQ](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md)  
- Ukazuje, jak k provedení transakčního komunikaci ve frontě pomocí služby Řízení front zpráv (MSMQ).  
+ [Zpracované vazby služby MSMQ](transacted-msmq-binding.md)  
+ Ukazuje, jak pomocí služby Řízení front zpráv (MSMQ) provádět komunikaci v transakční frontě.  
   
- [Nestálá komunikace ve frontě](../../../../docs/framework/wcf/samples/volatile-queued-communication.md)  
- Ukazuje, jak k provádění nestálá komunikace ve frontě za přenos řízení front zpráv (MSMQ).  
+ [Nestálá komunikace ve frontě](volatile-queued-communication.md)  
+ Ukazuje, jak provést nestálou komunikaci ve frontě prostřednictvím přenosu služby Řízení front zpráv (MSMQ).  
   
- [Fronty nedoručených zpráv](../../../../docs/framework/wcf/samples/dead-letter-queues.md)  
- Ukazuje, jak pro zpracování a zpracování zpráv, které selhaly doručování.  
+ [Fronty nedoručených zpráv](dead-letter-queues.md)  
+ Ukazuje, jak zpracovávat a zpracovávat zprávy, které selhaly při doručování.  
   
- [Zacházení s nezpracovatelnými zprávami ve službě MSMQ 4.0](../../../../docs/framework/wcf/samples/poison-message-handling-in-msmq-4-0.md)  
- Ukazuje, jak provádět zpracování ve službě MSMQ 4.0 pomocí nezpracovatelných zpráv.  
+ [Zacházení s nezpracovatelnými zprávami v MSMQ 4.0](poison-message-handling-in-msmq-4-0.md)  
+ Ukazuje, jak provádět manipulaci s nezpracovatelovou zprávou v rámci služby pomocí MSMQ 4,0.  
   
- [Relace a fronty](../../../../docs/framework/wcf/samples/sessions-and-queues.md)  
- Ukazuje, jak odesílat a přijímat sadu související zprávy ve frontě komunikace prostřednictvím přenosu služby Řízení front zpráv (MSMQ).  
+ [Relace a fronty](sessions-and-queues.md)  
+ Ukazuje, jak odeslat a přijmout sadu souvisejících zpráv v komunikaci ve frontě prostřednictvím přenosu služby Řízení front zpráv (MSMQ).  
   
- [Obousměrná komunikace](../../../../docs/framework/wcf/samples/two-way-communication.md)  
- Ukazuje, jak se provedly počet zrušených zpracovaných obousměrná komunikace ve frontě MSMQ.
+ [Obousměrná komunikace](two-way-communication.md)  
+ Ukazuje, jak provést transakční obousměrnou komunikaci přes službu MSMQ.
   
- [SRMP](../../../../docs/framework/wcf/samples/srmp.md)  
- Ukazuje, jak k provedení transakčního komunikaci ve frontě pomocí služby Řízení front zpráv (MSMQ) přes protokol HTTP.  
+ [SRMP](srmp.md)  
+ Ukazuje, jak pomocí služby Řízení front zpráv (MSMQ) přes protokol HTTP provádět komunikaci v transakční frontě.  
   
- [Zabezpečení zprávy pomocí služby Řízení front zpráv](../../../../docs/framework/wcf/samples/message-security-over-message-queuing.md)  
- Ukazuje, jak implementovat aplikaci, která používá WS-Security x.509 v3 s ověřováním pomocí certifikátu klienta a vyžaduje ověření serveru pomocí služby MSMQ na server certifikát x.509 v3.
+ [Zabezpečení zprávy pomocí služby Řízení front zpráv](message-security-over-message-queuing.md)  
+ Ukazuje, jak implementovat aplikaci, která používá WS-Security s ověřováním certifikátů X. 509 v3 pro klienta, a vyžaduje ověření serveru pomocí certifikátu X. 509 v3 serveru přes službu MSMQ.

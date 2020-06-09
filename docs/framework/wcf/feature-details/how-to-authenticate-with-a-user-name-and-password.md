@@ -4,24 +4,24 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - authentication [WCF], user name and password
 ms.assetid: a5415be2-0ef3-464c-9f76-c255cb8165a4
-ms.openlocfilehash: 33205f9e12fcee53f2f29b63b836ea0cbc792025
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: e8dc9177afc590a6467855decfa8450b37c6fc77
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834738"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84601280"
 ---
 # <a name="how-to-authenticate-with-a-user-name-and-password"></a>Postupy: Ověřování pomocí uživatelského jména a hesla
 
-Toto téma ukazuje, jak povolit službu Windows Communication Foundation (WCF) k ověřování klienta s uživatelským jménem a heslem v doméně systému Windows. Předpokládá, že máte funkční, samoobslužnou hostovanou službu WCF. Příklad vytvoření základní samoobslužné služby WCF najdete v [kurzu Začínáme](../../../../docs/framework/wcf/getting-started-tutorial.md). Toto téma předpokládá, že je služba nakonfigurovaná v kódu. Pokud se chcete podívat na příklad konfigurace podobné služby pomocí konfiguračního souboru, přečtěte si téma [zabezpečení zpráv – uživatelské jméno](../samples/message-security-user-name.md).
+Toto téma ukazuje, jak povolit službu Windows Communication Foundation (WCF) k ověřování klienta s uživatelským jménem a heslem v doméně systému Windows. Předpokládá, že máte funkční, samoobslužnou hostovanou službu WCF. Příklad vytvoření základní samoobslužné služby WCF najdete v [kurzu Začínáme](../getting-started-tutorial.md). Toto téma předpokládá, že je služba nakonfigurovaná v kódu. Pokud se chcete podívat na příklad konfigurace podobné služby pomocí konfiguračního souboru, přečtěte si téma [zabezpečení zpráv – uživatelské jméno](../samples/message-security-user-name.md).
 
-Pokud chcete nakonfigurovat službu pro ověřování svých klientů pomocí uživatelského jména a hesla domény Windows, použijte <xref:System.ServiceModel.WSHttpBinding> a nastavte jeho vlastnost `Security.Mode` na `Message`. Kromě toho je nutné zadat certifikát x509, který bude použit k zašifrování uživatelského jména a hesla, protože jsou odesílány z klienta do služby.
+Pokud chcete nakonfigurovat službu pro ověřování svých klientů pomocí uživatelského jména a hesla domény Windows, použijte <xref:System.ServiceModel.WSHttpBinding> a nastavte jeho `Security.Mode` vlastnost na `Message` . Kromě toho je nutné zadat certifikát x509, který bude použit k zašifrování uživatelského jména a hesla, protože jsou odesílány z klienta do služby.
 
 Na straně klienta musíte požádat uživatele o uživatelské jméno a heslo a zadat přihlašovací údaje uživatele na proxy serveru služby WCF.
 
 ## <a name="to-configure-a-wcf-service-to-authenticate-using-windows-domain-username-and-password"></a>Konfigurace služby WCF pro ověřování pomocí uživatelského jména a hesla v doméně Windows
 
-1. Vytvořte instanci <xref:System.ServiceModel.WSHttpBinding>, nastavte režim zabezpečení vazby na <xref:System.ServiceModel.WSHttpSecurity.Message?displayProperty=nameWithType>, nastavte `ClientCredentialType` vazby na <xref:System.ServiceModel.MessageCredentialType.UserName?displayProperty=nameWithType>a přidejte koncový bod služby s použitím nakonfigurované vazby na hostitele služby, jak je znázorněno v následujícím kódu:
+1. Vytvořte instanci <xref:System.ServiceModel.WSHttpBinding> , nastavte režim zabezpečení vazby na <xref:System.ServiceModel.WSHttpSecurity.Message?displayProperty=nameWithType> , nastavte `ClientCredentialType` vazbu na <xref:System.ServiceModel.MessageCredentialType.UserName?displayProperty=nameWithType> a přidejte koncový bod služby pomocí nakonfigurované vazby na hostitele služby, jak je znázorněno v následujícím kódu:
 
     ```csharp
     // ...
@@ -40,7 +40,7 @@ Na straně klienta musíte požádat uživatele o uživatelské jméno a heslo a
     // ...
     ```
 
-    Můžete použít svůj vlastní certifikát. stačí upravit kód, který bude odkazovat na váš certifikát. Další informace o vytváření a používání certifikátů najdete v tématu [práce s certifikáty](../../../../docs/framework/wcf/feature-details/working-with-certificates.md). Ujistěte se, že je certifikát v úložišti certifikátů Důvěryhodné osoby pro místní počítač. Můžete to provést tak, že spustíte MMC. exe a vyberete **soubor**, **Přidat nebo odebrat modul snap-in...** položka nabídky. V dialogovém okně **Přidat nebo odebrat moduly snap-in** vyberte **modul snap-in Certifikáty** a klikněte na **Přidat**. V dialogovém okně modul snap-in certifikáty vyberte možnost **účet počítače**. Ve výchozím nastavení se certifikát vygenerovaný z ukázka zabezpečení jméno uživatele zprávy nachází ve složce osobní nebo certifikáty.  Bude uveden jako "localhost" pod sloupcem vystaveno pro v okně MMC. Přetáhněte certifikát do složky **Důvěryhodné osoby** . To umožní, aby WCF při ověřování považovalo certifikát za důvěryhodný certifikát.
+    Můžete použít svůj vlastní certifikát. stačí upravit kód, který bude odkazovat na váš certifikát. Další informace o vytváření a používání certifikátů najdete v tématu [práce s certifikáty](working-with-certificates.md). Ujistěte se, že je certifikát v úložišti certifikátů Důvěryhodné osoby pro místní počítač. Můžete to provést tak, že spustíte MMC. exe a vyberete **soubor**, **Přidat nebo odebrat modul snap-in...** položka nabídky. V dialogovém okně **Přidat nebo odebrat moduly snap-in** vyberte **modul snap-in Certifikáty** a klikněte na **Přidat**. V dialogovém okně modul snap-in certifikáty vyberte možnost **účet počítače**. Ve výchozím nastavení se certifikát vygenerovaný z ukázka zabezpečení jméno uživatele zprávy nachází ve složce osobní nebo certifikáty.  Bude uveden jako "localhost" pod sloupcem vystaveno pro v okně MMC. Přetáhněte certifikát do složky **Důvěryhodné osoby** . To umožní, aby WCF při ověřování považovalo certifikát za důvěryhodný certifikát.
 
 ## <a name="to-call-the-service-passing-username-and-password"></a>Volání služby předávající uživatelské jméno a heslo
 
@@ -81,7 +81,7 @@ Na straně klienta musíte požádat uživatele o uživatelské jméno a heslo a
     // Call the service operation using the proxy
     ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.ServiceModel.WSHttpBinding>
 - <xref:System.ServiceModel.WSHttpSecurity>

@@ -2,12 +2,12 @@
 title: Vytvoření vlastní hlavičky, která je podepsaná a/nebo šifrovaná
 ms.date: 03/30/2017
 ms.assetid: e8668b37-c79f-4714-9de5-afcb88b9ff02
-ms.openlocfilehash: d737647f8c0442a3d6fa0d077a1ffe2c251ea043
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 0adb4100bca1add2c23ff2c802ddb5e2cb1c368c
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70856172"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84579655"
 ---
 # <a name="creating-a-custom-header-that-is-signed-and-or-encrypted"></a>Vytvoření vlastní hlavičky, která je podepsaná a/nebo šifrovaná
 Při volání služby jiného typu než WCF pomocí klienta WCF je někdy nutné použít vlastní hlavičky SOAP. V rámci WCF existuje chyba kanonikalizace, která zabraňuje vlastním hlavičkám, které jsou podepsané a šifrované pro práci se službou jiného typu než WCF. Problém je způsoben nesprávnou kanonikalizací výchozích oborů názvů XML. To je problematické jenom při volání služeb jiných než WCF s vlastními hlavičkami, které jsou podepsané nebo šifrované.  Když služba obdrží zprávu obsahující podepsané a/nebo zašifrované vlastní záhlaví, nemůže ověřit podpis. Toto alternativní řešení předchází chybě kanonikalizace, umožňuje vzájemnou spolupráci s jinými službami než WCF, ale nebrání interoperabilitě se službami WCF.  
@@ -56,8 +56,8 @@ public  class MyMessageContract
 }  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Výchozí kontrakt zprávy](../../../../docs/framework/wcf/samples/default-message-contract.md)
-- [Kontrakty zpráv](../../../../docs/framework/wcf/samples/message-contracts.md)
-- [Použití kontraktů zpráv](../../../../docs/framework/wcf/feature-details/using-message-contracts.md)
+- [Výchozí kontrakt zprávy](../samples/default-message-contract.md)
+- [Kontrakty zpráv](../samples/message-contracts.md)
+- [Použití kontraktů zpráv](using-message-contracts.md)

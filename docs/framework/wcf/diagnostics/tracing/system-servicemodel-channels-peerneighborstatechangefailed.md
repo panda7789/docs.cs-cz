@@ -2,21 +2,21 @@
 title: System.ServiceModel.Channels.PeerNeighborStateChangeFailed
 ms.date: 03/30/2017
 ms.assetid: 95153aa1-0e04-4857-83d9-9963f5e40b4e
-ms.openlocfilehash: c934b5ac819ebccce4fd3aa0d6528caad34b1f49
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9b85550183d1d111b405fc75118dc966053f7fbe
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61950004"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84577315"
 ---
 # <a name="systemservicemodelchannelspeerneighborstatechangefailed"></a>System.ServiceModel.Channels.PeerNeighborStateChangeFailed
 Stav souseda byl poškozen.  
   
 ## <a name="description"></a>Popis  
- Vyvolá se po neúspěšném pokusu změny stavu sousední trasování. To znamená, že neočekávané vnitřní chybě nebo poškozená paměti.  
+ K tomuto trasování dochází při neúspěšném pokusu o změnu stavu souseda. To indikuje neočekávanou vnitřní chybu nebo poškozenou paměť.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Trasování](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [Řešení problémů s aplikací pomocí trasování](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
-- [Správa a diagnostika](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [Trasování](index.md)
+- [Řešení potíží s aplikací pomocí trasování](using-tracing-to-troubleshoot-your-application.md)
+- [Správa a diagnostika](../index.md)

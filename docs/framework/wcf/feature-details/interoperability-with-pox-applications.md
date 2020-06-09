@@ -1,24 +1,24 @@
 ---
-title: Vzájemná funkční spolupráce s aplikacemi POX
+title: Interoperabilita s aplikacemi POX
 ms.date: 03/30/2017
 ms.assetid: 449276b8-4633-46f0-85c9-81f01d127636
-ms.openlocfilehash: 17b85ab41589a130e950cd52c759305cc17e92b7
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 64a6d850a32b14bc60cd43466e04b53a7a39be81
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65591045"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84579264"
 ---
-# <a name="interoperability-with-pox-applications"></a>Vzájemná funkční spolupráce s aplikacemi POX
+# <a name="interoperability-with-pox-applications"></a>Interoperabilita s aplikacemi POX
 
-"Plain Old XML" (POX) aplikace komunikovat výměnou nezpracované zprávy protokolu HTTP, které obsahují pouze data aplikací XML, která není uzavřen v rámci obálky protokolu SOAP. Windows Communication Foundation (WCF) můžete poskytovat služby a klienti, kteří používají POX zprávy. Ve službě je možné k implementaci služeb, které zpřístupňují koncové body pro klienty, například webových prohlížečů a skriptovací jazyky, které odesílání a příjem zpráv POX WCF. Na straně klienta je možné implementovat klienty, kteří komunikují se službami na základě POX programovacího modelu WCF.  
+"Obyčejné staré aplikace XML" (POX) komunikují výměnou nezpracovaných zpráv HTTP, které obsahují jenom data aplikace XML, která nejsou uzavřená v obálce protokolu SOAP. Windows Communication Foundation (WCF) může poskytovat služby i klienty, kteří používají zprávy POX. Ve službě lze WCF použít k implementaci služeb, které zpřístupňují koncové body klientům, jako jsou webové prohlížeče a skriptovací jazyky, které odesílají a získávají zprávy POX. Na straně klienta lze použít programovací model WCF k implementaci klientů, kteří komunikují se službami založeným na POX.  
   
 > [!NOTE]
-> Tento dokument byl původně zapsán pro rozhraní .NET Framework 3.0.  Rozhraní .NET framework 3.5 obsahuje integrovanou podporu pro práci s aplikacemi POX. Další informace o najdete v tématu [WCF Web HTTP programovací Model](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md).
+> Tento dokument byl původně napsán pro .NET Framework 3,0.  .NET Framework 3,5 obsahuje integrovanou podporu pro práci s POX aplikacemi. Další informace najdete v tématu [model programování webového protokolu HTTP WCF](wcf-web-http-programming-model.md).
   
-## <a name="pox-programming-with-wcf"></a>POX programování s použitím technologie WCF
+## <a name="pox-programming-with-wcf"></a>POX programování pomocí WCF
 
-Služby WCF, které komunikují prostřednictvím protokolu HTTP použijte POX zprávy [ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md).
+Služby WCF, které komunikují přes protokol HTTP pomocí zpráv POX, používají [\<customBinding>](../../configure-apps/file-schema/wcf/custombinding.md) .
 
 ```xml
 <customBinding>
@@ -31,13 +31,13 @@ Služby WCF, které komunikují prostřednictvím protokolu HTTP použijte POX z
 
 Tato vlastní vazba obsahuje dva prvky:
 
-- [\<httpTransport>](../../../../docs/framework/configure-apps/file-schema/wcf/httptransport.md)
+- [\<httpTransport>](../../configure-apps/file-schema/wcf/httptransport.md)
 
-- [\<textMessageEncoding>](../../../../docs/framework/configure-apps/file-schema/wcf/textmessageencoding.md)
+- [\<textMessageEncoding>](../../configure-apps/file-schema/wcf/textmessageencoding.md)
 
-Standardní kodér textu zprávy WCF je speciálně nakonfigurován pro použití <xref:System.ServiceModel.Channels.MessageVersion.None%2A> hodnotu, která umožňuje zpracování XML zprávy datových částí, které přicházejí nejsou zabaleny v obálce SOAP.
+Standardní kodér textových zpráv WCF je speciálně nakonfigurován tak, aby používal <xref:System.ServiceModel.Channels.MessageVersion.None%2A> hodnotu, což umožňuje zpracovat datové části zpráv XML, které nepřicházejí do obálky protokolu SOAP.
 
-Klienti WCF, které komunikují prostřednictvím protokolu HTTP POX zprávy použijte podobně jako vazbu (viz následující imperativního kódu).
+Klienti WCF, kteří komunikují přes HTTP pomocí zpráv POX, používají podobnou vazbu (viz následující imperativní kód).
 
 ```csharp
 private static Binding CreatePoxBinding()
@@ -50,15 +50,15 @@ private static Binding CreatePoxBinding()
 }
 ```
 
-Vzhledem k tomu POX klienty musíte explicitně zadat identifikátory URI, na který odesílají zprávy, se obvykle musí nakonfigurovat <xref:System.ServiceModel.Channels.HttpTransportBindingElement> k ruční režim adresování tak, že nastavíte <xref:System.ServiceModel.Channels.TransportBindingElement.ManualAddressing%2A> vlastnost `true` u elementu. To umožňuje zprávy bylo nutné řešit explicitně kód aplikace a není nutné vytvořit novou <xref:System.ServiceModel.ChannelFactory> pokaždé, když aplikace odešle zprávu do jiný identifikátor URI HTTP.
+Vzhledem k tomu, že klienti POX musí explicitně zadat identifikátory URI, na které odesílají zprávy, obvykle musí nakonfigurovat <xref:System.ServiceModel.Channels.HttpTransportBindingElement> režim ruční adresování nastavením vlastnosti na hodnotu <xref:System.ServiceModel.Channels.TransportBindingElement.ManualAddressing%2A> `true` elementu. To umožňuje, aby zprávy byly explicitně řešeny kódem aplikace a není nutné vytvářet nové, <xref:System.ServiceModel.ChannelFactory> kdykoli aplikace odešle zprávu na jiný identifikátor URI protokolu HTTP.
 
-Protože POX zprávy nepoužívejte k předání informací důležité protokolu SOAP záhlaví, POX klienty a služby často manipulovat kusy podkladový požadavek HTTP, který se použije k odeslání nebo přijetí zprávy. Protokol HTTP konkrétní informace, jako jsou hlavičky protokolu HTTP a stavové kódy jsou prezentované v programovacího modelu WCF pomocí dvou tříd:
+Vzhledem k tomu, že zprávy POX nepoužívají hlavičky protokolu SOAP k předávání důležitých informací o protokolu, musí klienti a služby POX často manipulovat s částmi základní žádosti HTTP použitou k odeslání nebo přijetí zprávy. Informace protokolu specifické pro protokol HTTP, jako jsou hlavičky protokolu HTTP a stavové kódy, jsou umístěny v programovacím modelu WCF prostřednictvím dvou tříd:
 
-- <xref:System.ServiceModel.Channels.HttpRequestMessageProperty>, který obsahuje informace o požadavku HTTP, jako jsou metody a žádost o hlavičky protokolu HTTP.
+- <xref:System.ServiceModel.Channels.HttpRequestMessageProperty>, který obsahuje informace o požadavku HTTP, jako je například metoda HTTP a Hlavička požadavku.
 
-- <xref:System.ServiceModel.Channels.HttpResponseMessageProperty>, který obsahuje informace odpovědi HTTP, jako je například popis stavu HTTP kódu a stav, stejně jako všechny hlavičky odpovědí HTTP.
+- <xref:System.ServiceModel.Channels.HttpResponseMessageProperty>, který obsahuje informace o odpovědi HTTP, například stavový kód HTTP a popis stavu a také všechny hlavičky odpovědí HTTP.
   
-Následující příklad kódu ukazuje, jak vytvořit požadavku HTTP GET, adresovanou `http://localhost:8100/customers`.
+Následující příklad kódu ukazuje, jak vytvořit zprávu požadavku HTTP GET, která je adresována na `http://localhost:8100/customers` .
 
 ```csharp
 Message request = Message.CreateMessage( MessageVersion.None, String.Empty );
@@ -70,6 +70,6 @@ property.SuppressEntityBody = true;
 request.Properties.Add( HttpRequestMessageProperty.Name, property );
 ```
 
-První, žádost o vyprázdnění <xref:System.ServiceModel.Channels.Message> je vytvořen zavoláním <xref:System.ServiceModel.Channels.Message.CreateMessage%28System.ServiceModel.Channels.MessageVersion%2CSystem.String%29>. <xref:System.ServiceModel.Channels.MessageVersion.None%2A> Parametr se používá k označení, že není potřeba obálku protokolu SOAP a <xref:System.String.Empty> parametr se předává jako akce. Zprávy s požadavkem je pak určena nastavením <xref:System.ServiceModel.Channels.MessageHeaders.To%2A> záhlaví na požadovaný identifikátor URI. Další <xref:System.ServiceModel.Channels.HttpRequestMessageProperty> se vytvoří a <xref:System.ServiceModel.Channels.HttpRequestMessageProperty.Method%2A> je nastavena na příkaz HTTP GET metody a <xref:System.ServiceModel.Channels.HttpRequestMessageProperty.SuppressEntityBody%2A> je nastavena na `true` k označení, že by se posílat žádná data v těle odchozí zpráva požadavku HTTP. Nakonec je přidána vlastnost požadavek <xref:System.ServiceModel.Channels.Message.Properties%2A> kolekce zprávy s požadavkem, může ovlivnit, jak přenos pomocí protokolu HTTP odesílá požadavek. Zprávu je připravený k odeslání přes příslušné instanci <xref:System.ServiceModel.Channels.IRequestChannel>.
+Nejprve je vytvořen prázdný požadavek <xref:System.ServiceModel.Channels.Message> voláním <xref:System.ServiceModel.Channels.Message.CreateMessage%28System.ServiceModel.Channels.MessageVersion%2CSystem.String%29> . <xref:System.ServiceModel.Channels.MessageVersion.None%2A>Parametr se používá k označení, že obálka SOAP není povinná a <xref:System.String.Empty> jako akce se předává parametr. Zpráva s požadavkem se pak řeší nastavením <xref:System.ServiceModel.Channels.MessageHeaders.To%2A> hlavičky na požadovaný identifikátor URI. Dále <xref:System.ServiceModel.Channels.HttpRequestMessageProperty> je vytvořena a je nastavena na <xref:System.ServiceModel.Channels.HttpRequestMessageProperty.Method%2A> metodu Get příkazu HTTP a <xref:System.ServiceModel.Channels.HttpRequestMessageProperty.SuppressEntityBody%2A> je nastavena na hodnotu `true` , která označuje, že v těle zprávy odchozího požadavku HTTP by neměly být odesílána žádná data. Nakonec se do kolekce zprávy požadavku přidá vlastnost Request <xref:System.ServiceModel.Channels.Message.Properties%2A> , aby mohla ovlivnit, jak přenos HTTP posílá požadavek. Zpráva je pak připravena k odeslání prostřednictvím vhodné instance <xref:System.ServiceModel.Channels.IRequestChannel> .
 
-Podobné techniky slouží ve službě k extrakci <xref:System.ServiceModel.Channels.HttpRequestMessageProperty> z k příchozí zprávě a konstrukce odpověď.
+Podobné techniky lze použít na službu k extrakci <xref:System.ServiceModel.Channels.HttpRequestMessageProperty> z příchozí zprávy a vytvoření odpovědi.

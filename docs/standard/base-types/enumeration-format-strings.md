@@ -1,5 +1,6 @@
 ---
-title: Formátové řetězce výčtu
+title: Vytvoření výčtu řetězců formátu
+description: Vytvářejte řetězce formátu výčtu pomocí metody Enum. ToString v rozhraní .NET. Formátuje číselné, šestnáctkové a řetězcové hodnoty členů výčtu.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -10,60 +11,60 @@ helpviewer_keywords:
 - enumeration format strings
 - formatting [.NET Framework], enumeration
 ms.assetid: dd1ff672-1052-42cf-8666-4924fb6cd1a1
-ms.openlocfilehash: da7634758f5c4319fa18612d216682dc141318fd
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 825357cf4a56132dae0870972d316eff89b0c94f
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78155955"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84583424"
 ---
-# <a name="enumeration-format-strings"></a>Formátové řetězce výčtu
+# <a name="enumeration-format-strings"></a>Vytvoření výčtu řetězců formátu
 
-Metodu <xref:System.Enum.ToString%2A?displayProperty=nameWithType> můžete použít k vytvoření nového objektu řetězce, který představuje číselnou, šestnáctkovou nebo řetězcovou hodnotu člena výčtu. Tato metoda trvá jeden z řetězce formátování výčtu určit hodnotu, kterou chcete vrátit.
+Metodu lze použít <xref:System.Enum.ToString%2A?displayProperty=nameWithType> k vytvoření nového řetězcového objektu, který představuje číselnou, šestnáctkovou nebo řetězcovou hodnotu člena výčtu. Tato metoda přebírá jeden z formátovacích řetězců výčtu k určení hodnoty, kterou chcete vrátit.
 
-V následujících částech jsou uvedeny řetězce formátování výčtu a hodnoty, které vracejí. Tyto specifikátory formátu nejsou rozlišována malá a velká písmena.
+V následujících oddílech jsou uvedeny řetězce formátování výčtu a hodnoty, které vrací. Tyto specifikátory formátu nerozlišují velká a malá písmena.
 
 ## <a name="g-or-g"></a>G nebo g
 
-Zobrazí položku výčtu jako hodnotu řetězce, pokud je to možné, a jinak zobrazí celou hodnotu aktuální instance. Pokud je výčet definován pomocí sady atributů **Flags,** řetězcové hodnoty každé platné položky jsou spojeny dohromady, oddělené čárkami. Pokud atribut **Flags** není nastaven, zobrazí se jako číselná položka neplatná hodnota. Následující příklad ilustruje specifikátor formátu G.
+Zobrazuje položku výčtu jako řetězcovou hodnotu, pokud je to možné, a jinak zobrazuje celočíselnou hodnotu aktuální instance. Pokud je výčet definován s nastaveným atributem **Flags** , jsou řetězcové hodnoty každé platné položky zřetězeny dohromady, oddělené čárkami. Pokud atribut **Flags** není nastaven, zobrazí se jako číselná položka neplatná hodnota. Následující příklad znázorňuje specifikátor formátu G.
 
 [!code-csharp[Formatting.Enum#1](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.Enum/cs/enum1.cs#1)]
 [!code-vb[Formatting.Enum#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Enum/vb/enum1.vb#1)]
 
 ## <a name="f-or-f"></a>F nebo f
 
-Pokud je to možné, zobrazí položku výčtu jako hodnotu řetězce. Pokud hodnota může být zcela zobrazena jako součet položek ve výčtu (i v **případě, že** atribut Flags není k dispozici), řetězcové hodnoty každé platné položky jsou spojeny dohromady, oddělené čárkami. Pokud hodnotu nelze zcela určit položkami výčtu, je hodnota formátována jako celá hodnota. Následující příklad ilustruje specifikátor formátu F.
+Pokud je to možné, zobrazí položku výčtu jako řetězcovou hodnotu. Pokud hodnota může být zcela zobrazená jako součet položek ve výčtu (i když atribut **Flags** není přítomný), jsou řetězcové hodnoty každé platné položky zřetězeny dohromady, oddělené čárkami. Pokud hodnota nemůže být zcela určena položkami výčtu, bude hodnota formátována jako celočíselná hodnota. Následující příklad ilustruje specifikátor formátu F.
 
 [!code-csharp[Formatting.Enum#2](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.Enum/cs/enum1.cs#2)]
 [!code-vb[Formatting.Enum#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Enum/vb/enum1.vb#2)]
 
 ## <a name="d-or-d"></a>D nebo d
 
-Zobrazí položku výčtu jako celou hodnotu v co nejkratší reprezentaci. Následující příklad ilustruje specifikátor formátu D.
+Zobrazí položku výčtu jako celočíselnou hodnotu v nejkratší možné reprezentaci. Následující příklad ilustruje specifikátor formátu D.
 
 [!code-csharp[Formatting.Enum#3](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.Enum/cs/enum1.cs#3)]
 [!code-vb[Formatting.Enum#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Enum/vb/enum1.vb#3)]
 
 ## <a name="x-or-x"></a>X nebo x
 
-Zobrazí položku výčtu jako šestnáctkovou hodnotu. Hodnota je podle potřeby reprezentována počátečními nulami, aby bylo zajištěno, že výsledný řetězec má dva znaky pro každý bajt v [základním číselném typu](xref:System.Enum.GetUnderlyingType%2A)typu výčtu . Následující příklad ilustruje specifikátor formátu X. V příkladu základní typ <xref:System.ConsoleColor> obou <xref:System.IO.FileAttributes> <xref:System.Int32>a je , nebo 32bitové (nebo 4 bajtové) celé číslo, které vytváří řetězec výsledků 8 znaků.
+Zobrazí položku výčtu jako šestnáctkovou hodnotu. Hodnota je vyjádřena podle potřeby počátečními nulami pro zajištění, že výsledný řetězec má dva znaky pro každý bajt v [základním číselném typu](xref:System.Enum.GetUnderlyingType%2A)typu výčtu. Následující příklad znázorňuje specifikátor formátu X. V příkladu nadřazený typ <xref:System.ConsoleColor> a <xref:System.IO.FileAttributes> je <xref:System.Int32> , nebo 32 (nebo 4 bajt) celé číslo, které vytváří výsledný řetězec 8 znaků.
 
 [!code-csharp[Formatting.Enum#4](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.Enum/cs/enum1.cs#4)]
 [!code-vb[Formatting.Enum#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Enum/vb/enum1.vb#4)]
 
 ## <a name="example"></a>Příklad
 
-Následující příklad definuje výčet s `Colors` názvem, který se `Red` `Blue`skládá `Green`ze tří položek: , a .
+Následující příklad definuje výčet `Colors` s názvem, který se skládá ze tří položek: `Red` , `Blue` a `Green` .
 
 [!code-csharp[Formatting.Enum#5](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.Enum/cs/enum1.cs#5)]
 [!code-vb[Formatting.Enum#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Enum/vb/enum1.vb#5)]
 
-Po vytvoření výčtu je definována instance může být deklarována následujícím způsobem.
+Po definování výčtu může být instance deklarována následujícím způsobem.
 
 [!code-csharp[Formatting.Enum#6](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.Enum/cs/enum1.cs#6)]
 [!code-vb[Formatting.Enum#6](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Enum/vb/enum1.vb#6)]
 
-Metodu `Color.ToString(System.String)` lze pak použít k zobrazení hodnoty výčtu různými způsoby v závislosti na specifikátoru formátu, který jí byl předán.
+`Color.ToString(System.String)`Metoda může být použita k zobrazení hodnoty výčtu různými způsoby v závislosti na použitém specifikátoru formátu.
 
 [!code-csharp[Formatting.Enum#7](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.Enum/cs/enum1.cs#7)]
 [!code-vb[Formatting.Enum#7](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Enum/vb/enum1.vb#7)]
