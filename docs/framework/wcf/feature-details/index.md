@@ -6,72 +6,72 @@ helpviewer_keywords:
 - WCF, features
 - Windows Communication Foundation, features
 ms.assetid: 9b4368ca-0bd3-40dc-a539-bcd5779cee5f
-ms.openlocfilehash: c97bd891f0bbb58f8b267296b9b53e00a5486622
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 80728cd5f677617e8727e9f8c4b0c4b85767975c
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62047045"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84596887"
 ---
 # <a name="wcf-feature-details"></a>Podrobnosti o funkcích WCF
-Windows Communication Foundation (WCF) umožňuje rozsáhlou kontrolu nad funkce zasílání zpráv aplikace. Témata v této části najdete podrobnosti o dostupných funkcí. Další informace o základní programování naleznete v tématu [základní programování WCF](../../../../docs/framework/wcf/basic-wcf-programming.md).  
+Windows Communication Foundation (WCF) umožňuje rozsáhlou kontrolu nad funkcemi pro zasílání zpráv v aplikaci. Témata v této části najdete v podrobnostech o dostupných funkcích. Další informace o základním programování naleznete v tématu [Základní programování WCF](../basic-wcf-programming.md).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Služby pracovních postupů](../../../../docs/framework/wcf/feature-details/workflow-services.md)  
+ [Služby pracovních postupů](workflow-services.md)  
  Popisuje, jak vytvořit a nakonfigurovat služby pracovního postupu.  
   
- [Koncové body: Adresy, vazby a kontrakty](../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)  
- Popisuje, jak řídit různých aspektech vaší služby.  
+ [Koncové body: adresy, vazby a kontrakty](endpoints-addresses-bindings-and-contracts.md)  
+ V této části najdete popis postupu řízení více aspektů služby.  
   
- [Přenos a serializace dat](../../../../docs/framework/wcf/feature-details/data-transfer-and-serialization.md)  
- Popisuje, jak můžete přizpůsobit serializace dat pro součinnost nebo budoucí kompatibilitu.  
+ [Přenos a serializace dat](data-transfer-and-serialization.md)  
+ Popisuje, jak lze pro meziprovozu nebo budoucí kompatibilitu přizpůsobit serializaci dat.  
   
- [Relace, vytváření instancí a souběžnost](../../../../docs/framework/wcf/feature-details/sessions-instancing-and-concurrency.md)  
- Popisuje režimy vytváření instancí a relace WCF a tom, jak vybrat správný režim pro vaši aplikaci.  
+ [Relace, vytváření instancí a souběžnost](sessions-instancing-and-concurrency.md)  
+ Popisuje režimy vytváření instancí a relace WCF a výběr správného režimu pro vaši aplikaci.  
   
- [Přenosy](../../../../docs/framework/wcf/feature-details/transports.md)  
- Popisuje postup konfigurace přenosové vrstvy, nejnižší úroveň zásobníku kanálu.  
+ [Přenosy](transports.md)  
+ V této části najdete popis postupu konfigurace transportní vrstvy, nejnižší úrovně zásobníku kanálů.  
   
- [Fronty a spolehlivé relace](../../../../docs/framework/wcf/feature-details/queues-and-reliable-sessions.md)  
- Popisuje front, které ukládat zprávy z odeslání aplikace jménem přijímající aplikace a později předávání těchto zpráv do přijímající aplikace.  
+ [Fronty a spolehlivé relace](queues-and-reliable-sessions.md)  
+ Popisuje fronty, které ukládají zprávy z odesílající aplikace jménem přijímající aplikace a později předají tyto zprávy do přijímající aplikace.  
   
- [Transakce](../../../../docs/framework/wcf/feature-details/transactions-in-wcf.md)  
- Vysvětluje, jak vytvořit počet zrušených zpracovaných operací, které můžete se vrátit zpět v případě potřeby.  
+ [Transakce](transactions-in-wcf.md)  
+ Vysvětluje, jak vytvořit transakční operace, které se v případě potřeby dají vrátit zpátky.  
   
- [Zabezpečení](../../../../docs/framework/wcf/feature-details/security.md)  
- Popisuje, jak vám pomůže vytvářet aplikace, které mají důvěrnost a integrita pomáhá zabezpečení WCF. Ověřování a autorizace jsou také k dispozici, jako jsou funkce auditování.  
+ [Zabezpečení](security.md)  
+ Popisuje, jak vám zabezpečení WCF pomáhá vytvářet aplikace, které mají důvěrnost a integritu. K dispozici jsou také možnosti ověřování a autorizace, jako jsou funkce auditování.  
   
- [Síť rovnocenných počítačů](../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md)  
- Podrobně popisuje, jak vytvořit sdílené služeb a klientů.  
+ [Síť rovnocenných počítačů](peer-to-peer-networking.md)  
+ Podrobnosti o tom, jak vytvořit partnerské služby a klienty.  
   
- [Metadata](../../../../docs/framework/wcf/feature-details/metadata.md)  
- Popisuje architekturu metadat a formátů.  
+ [Metadata](metadata.md)  
+ Popisuje architekturu a formáty metadat.  
   
- [Klienti](../../../../docs/framework/wcf/feature-details/clients.md)  
- Popisuje, jak vytvořit celou řadu klientů, kteří přístup ke službám.  
+ [Klienti](clients.md)  
+ V této části najdete popis postupu vytvoření různých klientů, kteří přistupují ke službám.  
   
- [Hostování](../../../../docs/framework/wcf/feature-details/hosting.md)  
- Popisuje, který je hostitelem. Služba je možné hostovat v jiné aplikaci, nebo může být v místním prostředí.  
+ [Hosting](hosting.md)  
+ Popisuje hostování. Služba může být hostována jinou aplikací nebo může být hostována v místním prostředí.  
   
- [Interoperabilita a integrace](../../../../docs/framework/wcf/feature-details/interoperability-and-integration.md)  
- Popisuje způsob použití WCF k rozšíření existující logic namísto nutnosti jeho přepsání, pokud máte značné investice do aplikací založených na komponentách logiky hostované v modelu COM +.  
+ [Interoperabilita a integrace](interoperability-and-integration.md)  
+ Popisuje, jak používat WCF k rozšiřování stávající logiky namísto nutnosti přepsat ji, pokud máte významnou investici do aplikační logiky, která je hostována v modelu COM+.  
   
- [Programovací model webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)  
- Popisuje Web programovacího modelu WCF, který umožňuje vývojářům vystavovat operací služby WCF ke koncovým bodům protokolu SOAP.  
+ [Programovací model webových služeb HTTP WCF](wcf-web-http-programming-model.md)  
+ Popisuje model webového programování WCF, který vývojářům umožňuje vystavit operace služby WCF pro koncové body bez protokolu SOAP.  
   
- [Syndikace WCF](../../../../docs/framework/wcf/feature-details/wcf-syndication.md)  
- Popisuje podporu k jednoduchým způsobem můžete zveřejnit informační kanály syndikace ze služby WCF.  
+ [Syndikace WCF](wcf-syndication.md)  
+ Popisuje podporu pro snadné zpřístupnění Syndikačních kanálů ze služby WCF.  
   
- [Integrace jazyka AJAX a podpora JSON](../../../../docs/framework/wcf/feature-details/ajax-integration-and-json-support.md)  
- Popisuje podporu pro asynchronní jazyka JavaScript technologie ASP.NET a XML (AJAX) a formátu dat JavaScript Object Notation (JSON) umožňující služby WCF k vystavení operace klientům AJAX.  
+ [Integrace jazyka AJAX a podpora JSON](ajax-integration-and-json-support.md)  
+ Popisuje podporu pro ASP.NET Asynchronous JavaScript and XML (AJAX) a formát dat JavaScript Object Notation (JSON), které umožňují službám WCF vystavovat operace klientům AJAX.  
   
- [Zjišťování WCF](../../../../docs/framework/wcf/feature-details/wcf-discovery.md)  
- Popisuje podporu o povolení služby být zjistitelné za běhu pomocí protokolu WS-Discovery interoperabilní způsobem.  
+ [Zjišťování WCF](wcf-discovery.md)  
+ V této části najdete popis podpory, aby bylo možné povolit služby zjistitelným způsobem za běhu pomocí protokolu WS-Discovery.  
   
- [Směrování](../../../../docs/framework/wcf/feature-details/routing.md)  
+ [Směrování](routing.md)  
  Popisuje směrovací službu.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.ServiceModel>  
   
  <xref:System.ServiceModel.Channels>  
@@ -81,4 +81,4 @@ Windows Communication Foundation (WCF) umožňuje rozsáhlou kontrolu nad funkce
  <xref:System.ServiceModel.Routing>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Základní programování WCF](../../../../docs/framework/wcf/basic-wcf-programming.md)
+ [Základní programování WCF](../basic-wcf-programming.md)

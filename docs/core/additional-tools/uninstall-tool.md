@@ -3,12 +3,12 @@ title: Odinstalační nástroj
 description: Přehled nástroje pro odinstalaci rozhraní .NET Core, což je průvodce nástrojem, který umožňuje řízené vyčištění sad .NET Core SDK a modulů runtime.
 author: sfoslund
 ms.date: 05/27/2020
-ms.openlocfilehash: 4e70fd3438b582bd5a0d6a52d7e58ed5e07f8811
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: dcfa12a3ec5fe0e8a29c5897ee4c71bfc7352eda
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84446903"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84590796"
 ---
 # <a name="net-core-uninstall-tool"></a>Nástroj pro odinstalaci .NET Core
 
@@ -27,7 +27,7 @@ Z důvodu těchto omezení nemusí nástroj na počítači odinstalovat všechny
 
 ## <a name="install-the-tool"></a>Instalace nástroje
 
-Nástroj pro odinstalaci rozhraní .NET Core si můžete stáhnout [odsud a najít](https://aka.ms/dotnet-core-uninstall-tool) zdrojový kód v úložišti GitHub [/CLI-Lab](https://github.com/dotnet/cli-lab) .
+Nástroj pro odinstalaci rozhraní .NET Core si můžete stáhnout ze [stránky vydaných verzí nástroje](https://aka.ms/dotnet-core-uninstall-tool) a najít zdrojový kód v úložišti GitHub [/CLI-Lab](https://github.com/dotnet/cli-lab) .
 
 > [!NOTE]
 > Tento nástroj vyžaduje zvýšení oprávnění k odinstalování sad SDK a modulů runtime .NET Core. Proto by měl být nainstalován v adresáři chráněném zápisem, například *C:\Program Files* ve Windows nebo */usr/local/bin* na MacOS. Viz také [zvýšený přístup pro příkazy dotnet](../tools/elevated-access.md). Další informace najdete v [podrobných pokynech k instalaci](https://aka.ms/dotnet-core-uninstall-tool).
@@ -518,7 +518,7 @@ V některých případech už nepotřebujete a chcete, `NuGetFallbackFolder` aby
 
 1. Otevřete panel **Přidat nebo odebrat programy**.
 2. Vyhledejte `Microsoft .NET Core SDK Uninstall Tool`.
-3. Vyberte **odinstalovat**.
+3. Vyberte **Odinstalovat**.
 
 ## <a name="macos"></a>[macOS](#tab/macos)
 
