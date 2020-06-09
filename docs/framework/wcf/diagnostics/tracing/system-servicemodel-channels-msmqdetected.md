@@ -2,21 +2,21 @@
 title: System.ServiceModel.Channels.MsmqDetected
 ms.date: 03/30/2017
 ms.assetid: ff20cef5-89d2-408e-a431-8c31a9d878d5
-ms.openlocfilehash: 8e40089915cb356a68119b25430a7d007f84a007
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 96c391cd066055dd09ae62713bde60c9bd66878e
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61596605"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84601969"
 ---
-# <a name="systemservicemodelchannelsmsmqdetected"></a><span data-ttu-id="fc3de-102">System.ServiceModel.Channels.MsmqDetected</span><span class="sxs-lookup"><span data-stu-id="fc3de-102">System.ServiceModel.Channels.MsmqDetected</span></span>
-<span data-ttu-id="fc3de-103">System.ServiceModel.Channels.MsmqDetected</span><span class="sxs-lookup"><span data-stu-id="fc3de-103">System.ServiceModel.Channels.MsmqDetected</span></span>  
+# <a name="systemservicemodelchannelsmsmqdetected"></a><span data-ttu-id="953ff-102">System.ServiceModel.Channels.MsmqDetected</span><span class="sxs-lookup"><span data-stu-id="953ff-102">System.ServiceModel.Channels.MsmqDetected</span></span>
+<span data-ttu-id="953ff-103">System.ServiceModel.Channels.MsmqDetected</span><span class="sxs-lookup"><span data-stu-id="953ff-103">System.ServiceModel.Channels.MsmqDetected</span></span>  
   
-## <a name="description"></a><span data-ttu-id="fc3de-104">Popis</span><span class="sxs-lookup"><span data-stu-id="fc3de-104">Description</span></span>  
- <span data-ttu-id="fc3de-105">MSMQ byla úspěšně nalezena.</span><span class="sxs-lookup"><span data-stu-id="fc3de-105">MSMQ detected successfully.</span></span>  
+## <a name="description"></a><span data-ttu-id="953ff-104">Popis</span><span class="sxs-lookup"><span data-stu-id="953ff-104">Description</span></span>  
+ <span data-ttu-id="953ff-105">Služba MSMQ byla úspěšně nalezena.</span><span class="sxs-lookup"><span data-stu-id="953ff-105">MSMQ detected successfully.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="fc3de-106">Viz také:</span><span class="sxs-lookup"><span data-stu-id="fc3de-106">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="953ff-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="953ff-106">See also</span></span>
 
-- [<span data-ttu-id="fc3de-107">Trasování</span><span class="sxs-lookup"><span data-stu-id="fc3de-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [<span data-ttu-id="fc3de-108">Řešení problémů s aplikací pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="fc3de-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
-- [<span data-ttu-id="fc3de-109">Správa a diagnostika</span><span class="sxs-lookup"><span data-stu-id="fc3de-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [<span data-ttu-id="953ff-107">Trasování</span><span class="sxs-lookup"><span data-stu-id="953ff-107">Tracing</span></span>](index.md)
+- [<span data-ttu-id="953ff-108">Řešení potíží s aplikací pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="953ff-108">Using Tracing to Troubleshoot Your Application</span></span>](using-tracing-to-troubleshoot-your-application.md)
+- [<span data-ttu-id="953ff-109">Správa a diagnostika</span><span class="sxs-lookup"><span data-stu-id="953ff-109">Administration and Diagnostics</span></span>](../index.md)
