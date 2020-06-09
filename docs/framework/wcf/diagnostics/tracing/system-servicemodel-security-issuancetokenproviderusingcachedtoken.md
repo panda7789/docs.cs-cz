@@ -2,21 +2,21 @@
 title: System.ServiceModel.Security.IssuanceTokenProviderUsingCachedToken
 ms.date: 03/30/2017
 ms.assetid: ee51ed4e-821c-4010-8d64-eabde522169f
-ms.openlocfilehash: 1a9156ed5acdd81db5bf0feb76512c5a4959acfa
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 47468a04ab49439565740e3c378c9b1765190d84
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61926864"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84579875"
 ---
-# <a name="systemservicemodelsecurityissuancetokenproviderusingcachedtoken"></a><span data-ttu-id="b52ef-102">System.ServiceModel.Security.IssuanceTokenProviderUsingCachedToken</span><span class="sxs-lookup"><span data-stu-id="b52ef-102">System.ServiceModel.Security.IssuanceTokenProviderUsingCachedToken</span></span>
-<span data-ttu-id="b52ef-103">System.ServiceModel.Security.IssuanceTokenProviderUsingCachedToken</span><span class="sxs-lookup"><span data-stu-id="b52ef-103">System.ServiceModel.Security.IssuanceTokenProviderUsingCachedToken</span></span>  
+# <a name="systemservicemodelsecurityissuancetokenproviderusingcachedtoken"></a><span data-ttu-id="241a7-102">System.ServiceModel.Security.IssuanceTokenProviderUsingCachedToken</span><span class="sxs-lookup"><span data-stu-id="241a7-102">System.ServiceModel.Security.IssuanceTokenProviderUsingCachedToken</span></span>
+<span data-ttu-id="241a7-103">System.ServiceModel.Security.IssuanceTokenProviderUsingCachedToken</span><span class="sxs-lookup"><span data-stu-id="241a7-103">System.ServiceModel.Security.IssuanceTokenProviderUsingCachedToken</span></span>  
   
-## <a name="description"></a><span data-ttu-id="b52ef-104">Popis</span><span class="sxs-lookup"><span data-stu-id="b52ef-104">Description</span></span>  
- <span data-ttu-id="b52ef-105">Poskytovatel IssuanceTokenProvider použil token služby uložený v mezipaměti.</span><span class="sxs-lookup"><span data-stu-id="b52ef-105">The IssuanceTokenProvider used the cached service token.</span></span>  
+## <a name="description"></a><span data-ttu-id="241a7-104">Popis</span><span class="sxs-lookup"><span data-stu-id="241a7-104">Description</span></span>  
+ <span data-ttu-id="241a7-105">Poskytovatel IssuanceTokenProvider použil token služby v mezipaměti.</span><span class="sxs-lookup"><span data-stu-id="241a7-105">The IssuanceTokenProvider used the cached service token.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="b52ef-106">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b52ef-106">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="241a7-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="241a7-106">See also</span></span>
 
-- [<span data-ttu-id="b52ef-107">Trasování</span><span class="sxs-lookup"><span data-stu-id="b52ef-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [<span data-ttu-id="b52ef-108">Řešení problémů s aplikací pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="b52ef-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
-- [<span data-ttu-id="b52ef-109">Správa a diagnostika</span><span class="sxs-lookup"><span data-stu-id="b52ef-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [<span data-ttu-id="241a7-107">Trasování</span><span class="sxs-lookup"><span data-stu-id="241a7-107">Tracing</span></span>](index.md)
+- [<span data-ttu-id="241a7-108">Řešení potíží s aplikací pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="241a7-108">Using Tracing to Troubleshoot Your Application</span></span>](using-tracing-to-troubleshoot-your-application.md)
+- [<span data-ttu-id="241a7-109">Správa a diagnostika</span><span class="sxs-lookup"><span data-stu-id="241a7-109">Administration and Diagnostics</span></span>](../index.md)
