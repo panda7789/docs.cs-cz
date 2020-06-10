@@ -2,12 +2,12 @@
 title: Instalace služby Řízení front zpráv (MSMQ)
 ms.date: 03/30/2017
 ms.assetid: 7ddcd497-3e04-427e-bc04-3610ad98b01e
-ms.openlocfilehash: 8ecbd07adfb6bfb4e9898f9b8508809480d17e16
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: 1bf79ed5dbcb9f2ace903260cc440e77df3aef09
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76921106"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84592291"
 ---
 # <a name="installing-message-queuing-msmq"></a>Instalace služby Řízení front zpráv (MSMQ)
 Následující postupy ukazují, jak nainstalovat službu Řízení front zpráv 4,0 a službu Řízení front zpráv 3,0.  
@@ -41,7 +41,7 @@ Následující postupy ukazují, jak nainstalovat službu Řízení front zpráv
   
     - Podpora protokolu HTTP služby MSMQ.  
   
-4. Klikněte na tlačítko **OK**.  
+4. Klikněte na **OK**.  
   
 5. Pokud se zobrazí výzva k restartování počítače, kliknutím na tlačítko **OK** dokončete instalaci.  
   
@@ -62,6 +62,6 @@ Následující postupy ukazují, jak nainstalovat službu Řízení front zpráv
   
 6. Pokud se zobrazí výzva k restartování počítače, kliknutím na tlačítko **OK** dokončete instalaci.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Pokyny k instalaci](../../../../docs/framework/wcf/samples/set-up-instructions.md)
+- [Pokyny k instalaci](set-up-instructions.md)

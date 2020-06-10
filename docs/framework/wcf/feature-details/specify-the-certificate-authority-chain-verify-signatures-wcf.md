@@ -5,34 +5,34 @@ helpviewer_keywords:
 - certificates [WCF], specifying the certificate authority certificate chain
 - certificates [WCF], verifying signatures
 ms.assetid: 7c719355-aa41-4567-80d0-5115a8cf73fd
-ms.openlocfilehash: 664d0e1a3f59ce391bb055dcded5cfc1b8fff115
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 103d68d4ccb4cc243d28037260c1f9f380485ff6
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64586167"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600306"
 ---
 # <a name="how-to-specify-the-certificate-authority-certificate-chain-used-to-verify-signatures-wcf"></a>Postupy: Zadání řetězu certifikátů certifikační autority používaného k ověřování podpisů (WCF)
-Přijetí Windows Communication Foundation (WCF) protokolu SOAP zprávy podepsány pomocí certifikátu X.509, ve výchozím nastavení ověřuje, že certifikát X.509 byl vydán důvěryhodnou certifikační autoritou. To se provádí vyhledávání v úložišti certifikátů a určení, pokud certifikát u této certifikační autoritě je určený jako důvěryhodné. Aby WCF za účelem určení musí být nainstalována řetěz certifikátů certifikační autority v úložišti certifikátů správné.  
+Pokud Windows Communication Foundation (WCF) obdrží zprávu SOAP podepsaná pomocí certifikátu X. 509, ve výchozím nastavení ověří, že certifikát X. 509 byl vydán důvěryhodnou certifikační autoritou. Provedete to tak, že si vyhledáte úložiště certifikátů a určíte, jestli je certifikát pro tuto certifikační autoritu označený jako důvěryhodný. Aby mohl WCF toto určení provést, musí být řetěz certifikátů certifikační autority nainstalovaný ve správném úložišti certifikátů.  
   
-### <a name="to-install-a-certification-authority-certificate-chain"></a>Chcete-li nainstalovat řetěz certifikátů certifikační autority  
+### <a name="to-install-a-certification-authority-certificate-chain"></a>Instalace řetězu certifikátů certifikační autority  
   
-- Pro každou certifikační autoritu, která si klade za cíl příjemce zprávy protokolu SOAP důvěřovat instalaci certifikátů X.509 vystavených, řetěz certifikátů certifikační autority do úložiště certifikátů, WCF je nakonfigurován k načtení certifikátů X.509 z.  
+- Pro každou certifikační autoritu, kterou příjemce zprávy protokolu SOAP zamýšlí důvěřovat certifikátům X. 509 vydaným z, nainstalujte řetěz certifikátů certifikační autority do úložiště certifikátů, ve kterém je WCF nakonfigurované pro načtení certifikátů X. 509.  
   
-     Například pokud příjemce zprávu protokolu SOAP v úmyslu důvěřovat společnost Microsoft vydá nové certifikáty X.509, řetěz certifikátů certifikační autority pro Microsoft musí být nainstalován v úložišti certifikátů, které WCF je nastaven na Hledat certifikáty X.509. Úložiště certifikátů, ve kterém hledá WCF certifikáty X.509 je zadat v kódu nebo konfigurace. Například můžete zadat v kódu pomocí <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A> metoda nebo v konfiguraci několika způsoby, třeba [ \<serviceCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-clientcredentials-element.md) .  
+     Pokud například příjemce zprávy protokolu SOAP důvěřuje certifikátům X. 509 vydaných společností Microsoft, musí být v úložišti certifikátů, které je nastaveno pro technologii WCF, nainstalovaná certifikační autorita pro Microsoft, aby vyhledala certifikáty X. 509 z. Úložiště certifikátů, ve kterém bude WCF Hledat certifikáty X. 509, může být zadáno v kódu nebo v konfiguraci. To lze například zadat v kódu pomocí <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A> metody nebo v konfiguraci několika způsoby, včetně [\<serviceCertificate>](../../configure-apps/file-schema/wcf/servicecertificate-of-clientcredentials-element.md) .  
   
-     Protože Windows se dodává se sadou výchozích řetězy certifikátů pro důvěryhodné certifikační autority, nemusí být potřeba instalovat řetěz certifikátů pro všechny certifikační autority.  
+     Vzhledem k tomu, že se systém Windows dodává se sadou výchozích řetězů certifikátů pro důvěryhodné certifikační autority, nemusí být nutné instalovat řetěz certifikátů pro všechny certifikační autority.  
   
     1. Exportujte řetěz certifikátů certifikační autority.  
   
-         Přesně jak je to závisí na certifikační autoritě. Pokud certifikační autorita běží certifikační služby společnosti Microsoft, vyberte **stáhnout certifikát certifikační Autority, řetěz certifikátů nebo seznam CRL**a klikněte na tlačítko **stáhnout certifikát certifikační Autority**.  
+         Přesně to, jak se to dělá, závisí na certifikační autoritě. Pokud certifikační autorita používá službu Microsoft Certificate Services, vyberte **Stáhnout certifikát certifikační autority, řetěz certifikátů nebo seznam CRL**a pak zvolte **Stáhnout certifikát certifikační autority**.  
   
     2. Importujte řetěz certifikátů certifikační autority.  
   
-         V Microsoft Management Console (MMC), otevřete modul snap-in Certifikáty. Úložiště certifikátů je nakonfigurovaný tento WCF načíst certifikáty X.509 z vyberte **důvěryhodné kořenové** **certifikačních autorit** složky. V části **důvěryhodných kořenových certifikačních autorit** složky, klikněte pravým tlačítkem na **certifikáty** složku, přejděte na příkaz **všechny úkoly**a potom klikněte na tlačítko **Import** . Zadejte soubor exportovali v kroku.  
+         V konzole MMC (Microsoft Management Console) otevřete modul snap-in Certifikáty. V případě úložiště certifikátů, ze kterého je WCF nakonfigurované pro načtení certifikátů X. 509, vyberte složku **důvěryhodných kořenových** **certifikačních autorit** . Ve složce **Důvěryhodné kořenové certifikační autority** klikněte pravým tlačítkem na složku **certifikáty** , přejděte na **všechny úlohy**a klikněte na **importovat**. Zadejte soubor exportovaný v kroku a.  
   
-         Další informace o pomocí modulu snap-in Certifikáty konzoly MMC, naleznete v tématu [jak: Zobrazení certifikátů pomocí modulu Snap-in konzoly MMC](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md).  
+         Další informace o použití modulu snap-in Certifikáty s konzolou MMC najdete v tématu [Postup: zobrazení certifikátů pomocí modulu snap-in konzoly MMC](how-to-view-certificates-with-the-mmc-snap-in.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Práce s certifikáty](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)
+- [Práce s certifikáty](working-with-certificates.md)

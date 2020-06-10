@@ -12,58 +12,58 @@ helpviewer_keywords:
 - graphics features [WPF]
 - transition effects [WPF]
 ms.assetid: 1817d9dc-3d6c-46cb-afc8-63b0bae35e37
-ms.openlocfilehash: 8636afcc5b63b71dc729812a7f3eb4945ba49494
-ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
+ms.openlocfilehash: ecc54ad9453343f6306b0133fa180abd0db46f82
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80112034"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84596420"
 ---
 # <a name="graphics-and-multimedia"></a>Grafika a multimédia
 
 <a name="introduction"></a>
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]poskytuje podporu pro multimédia, vektorovou grafiku, animaci a kompozici obsahu, což vývojářům usnadňuje vytváření zajímavých uživatelských rozhraní a obsahu. Pomocí sady Visual Studio můžete vytvářet vektorovou grafiku nebo složité animace a integrovat média do aplikací.
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]poskytuje podporu pro multimédia, vektorovou grafiku, animaci a kompozici obsahu, což vývojářům usnadňuje vytváření zajímavých uživatelských rozhraní a obsahu. Pomocí sady Visual Studio můžete vytvářet vektorová grafika nebo složitá animace a integrovat multimédia do svých aplikací.
 
-Toto téma představuje grafické, animační [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]a mediální funkce aplikace , které umožňují přidávat grafiku, přechodové efekty, zvuk a video do aplikací.
+V tomto tématu se seznámíte s grafickými, animačními a mediálními funkcemi [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] , které umožňují přidat do aplikací grafiku, efekty přechodu, zvuk a video.
 
 > [!NOTE]
-> Použití wpf typů ve službě systému Windows se důrazně nedoporučuje. Pokud se pokusíte použít wpf typy ve službě systému Windows, služba nemusí fungovat podle očekávání.
+> Použití typů WPF ve službě systému Windows se důrazně nedoporučuje. Pokud se pokusíte použít typy WPF ve službě systému Windows, služba nemusí fungovat podle očekávání.
 
 <a name="whats_new_with_graphics_and_multimedia_in_wpf_4"></a>
 
-## <a name="whats-new-with-graphics-and-multimedia-in-wpf-4"></a>Co je nového s grafikou a multimédii ve WPF 4
+## <a name="whats-new-with-graphics-and-multimedia-in-wpf-4"></a>Co je nového u grafiky a multimédií v WPF 4
 
-Bylo provedeno několik změn týkajících se grafiky a animací.
+V souvislosti s grafikou a animacemi byly provedeny některé změny.
 
-- Zaokrouhlení rozložení
+- Zaoblení rozložení
 
-  Když okraj objektu spadne uprostřed zařízení s obrazovými body, grafický systém nezávislý na DPI může vytvářet artefakty vykreslování, například rozmazané nebo poloprůhledné okraje. Předchozí verze WPF zahrnuty pixel přichycení pomoci zpracovat tento případ. Program Silverlight 2 zavedl zaokrouhlení rozvržení, což je další způsob, jak přesunout prvky tak, aby okraje spadaly na hranice celých obrazových bodů. WPF nyní podporuje zaokrouhlení rozložení s připojenou <xref:System.Windows.FrameworkElement.UseLayoutRounding%2A> vlastností na <xref:System.Windows.FrameworkElement>.
+  Když okraj objektu spadá do středu zařízení v pixelech, může grafický systém nezávislý na DPI vytvořit artefakty vykreslování, jako je rozmazaný nebo částečně transparentní okraj. Předchozí verze WPF zahrnovaly přichycení k pixelům, které vám pomůžou s tímto případem pracovat. Program Silverlight 2 představil zaoblení rozložení, což je jiný způsob, jak přesunout prvky tak, aby hrany klesly na celé celé pixelové hranice. WPF teď podporuje zaokrouhlování rozložení s <xref:System.Windows.FrameworkElement.UseLayoutRounding%2A> připojenou vlastností on <xref:System.Windows.FrameworkElement> .
 
-- Složení uložené v mezipaměti
+- Kompozice v mezipaměti
 
-  Pomocí nové <xref:System.Windows.Media.BitmapCache> a <xref:System.Windows.Media.BitmapCacheBrush> třídy, můžete ukládat do mezipaměti komplexní část vizuálního stromu jako rastrový obrázek a výrazně zlepšit dobu vykreslování. Bitmapa zůstává reagovat na vstup uživatele, jako je například kliknutí myší, a můžete malovat na jiné prvky, stejně jako jakýkoli štětec.
+  Pomocí nových <xref:System.Windows.Media.BitmapCache> <xref:System.Windows.Media.BitmapCacheBrush> tříd a můžete ukládat složitou část vizuálního stromu do mezipaměti a významně zlepšit dobu vykreslování. Rastrový obrázek zůstává reagovat na vstup uživatele, jako je například kliknutí myší, a můžete ho malovat na jiné prvky stejně jako u libovolného štětce.
 
-- Podpora pro Pixel Shader 3
+- Podpora funkce Pixel Shader 3
 
-  WPF 4 staví na <xref:System.Windows.Media.Effects.ShaderEffect> podpoře zavedené v WPF 3.5 SP1 tím, že umožňuje aplikacím psát efekty pomocí Pixel Shader (PS) verze 3.0. Model shaderu PS 3.0 je sofistikovanější než PS 2.0, což umožňuje ještě více efektů na podporovaný hardware.
+  WPF 4 sestavuje na <xref:System.Windows.Media.Effects.ShaderEffect> podporu představené v wpf 3,5 SP1 tím, že umožňuje aplikacím zapisovat efekty pomocí funkce pixel shader (PS) verze 3,0. Model shaderu PS 3,0 je propracovanější než PS 2,0, který umožňuje ještě více efektů na podporovaném hardwaru.
 
 - Funkce usnadnění
 
-  Můžete vylepšit animace s funkcemi náběhu/doběhu, které poskytují další kontrolu nad chováním animací. Můžete například použít <xref:System.Windows.Media.Animation.ElasticEase> a animaci, která animaci poskytne pružné chování. Další informace naleznete v náběh/doběhu typy v oboru <xref:System.Windows.Media.Animation> názvů.
+  Animace můžete vylepšit funkcemi usnadnění, což vám poskytne další kontrolu nad chováním animací. Například můžete použít na animaci a dát tak animaci k funkci <xref:System.Windows.Media.Animation.ElasticEase> pružiny. Další informace naleznete v tématu typy náběh a doběh v <xref:System.Windows.Media.Animation> oboru názvů.
 
 <a name="graphics_and_rendering"></a>
 
 ## <a name="graphics-and-rendering"></a>Grafika a vykreslování
 
-WPF obsahuje podporu pro vysoce kvalitní 2D grafiku. Funkce zahrnuje stopy, geometrie, obrazy, tvary a transformace. Další informace naleznete v [tématu Graphics](graphics.md). Vykreslování grafických prvků je založeno na <xref:System.Windows.Media.Visual> třídě. Struktura vizuálních objektů na obrazovce je popsána vizuálním stromem. Další informace naleznete v [tématu Přehled vykreslení grafiky WPF](wpf-graphics-rendering-overview.md).
+WPF zahrnuje podporu vysoce kvalitní 2D grafiky. Mezi tyto funkce patří štětce, geometrií, obrázky, tvary a transformace. Další informace najdete v tématu [Grafika](graphics.md). Vykreslování grafických prvků je založeno na <xref:System.Windows.Media.Visual> třídě. Struktura vizuálních objektů na obrazovce je popsána ve vizuálním stromu. Další informace naleznete v tématu [Přehled vykreslování grafiky WPF](wpf-graphics-rendering-overview.md).
 
 ### <a name="2d-shapes"></a>2D obrazce
 
-WPF poskytuje knihovnu běžně používaných vektorově kreslených 2D tvarů, jako jsou obdélníky a elipsy, které ukazují následující obrázek.
+WPF poskytuje knihovnu běžně používaných 2D 2D tvarů, jako jsou obdélníky a tři tečky, které jsou znázorněny na následujícím obrázku.
 
 ![Diagram znázorňující elipsy a obdélníky.](./media/index/two-deminsional-shapes-ellipses-rectangles.png)
 
-Tyto vnitřní wpf tvary nejsou pouze tvary: jsou programovatelné prvky, které implementují mnoho funkcí, které očekáváte od většiny běžných ovládacích prvků, které zahrnují vstup klávesnice a myši. Následující příklad ukazuje, jak <xref:System.Windows.UIElement.MouseUp> zpracovat událost <xref:System.Windows.Shapes.Ellipse> vydopravené klepnutím na prvek.
+Tyto vnitřní tvary WPF nejsou pouze tvary: Jedná se o programovatelné prvky, které implementují mnoho funkcí, které očekáváte od nejběžnějších ovládacích prvků, které zahrnují vstup z klávesnice a myši. Následující příklad ukazuje, jak zpracovat <xref:System.Windows.UIElement.MouseUp> událost vyvolanou kliknutím na <xref:System.Windows.Shapes.Ellipse> prvek.
 
 ```xaml
 <Window
@@ -93,73 +93,73 @@ Partial Public Class Window1
 End Class
 ```
 
-Následující obrázek znázorňuje výstup [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] pro předchozí značky a kód na pozadí.
+Následující ilustrace ukazuje výstup předchozí [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] značky a kódu na pozadí.
 
-![Okno se zprávou s nápisem "Klikli jste na elipsu!"](./media/index/messagebox-text-output.png)
+![Okno se zprávou, že jste klikli na elipsu!](./media/index/messagebox-text-output.png)
 
-Další informace naleznete [v tématu Obrazce a základní výkres v přehledu WPF](shapes-and-basic-drawing-in-wpf-overview.md). Úvodní ukázka viz [Ukázka prvků tvarů](https://github.com/Microsoft/WPF-Samples/tree/master/Graphics/ShapeElements).
+Další informace naleznete v tématu [Shapes and Basic Drawing in WPF Overview](shapes-and-basic-drawing-in-wpf-overview.md). Úvodní vzorek naleznete v tématu [Ukázka prvků tvaru](https://github.com/Microsoft/WPF-Samples/tree/master/Graphics/ShapeElements).
 
-### <a name="2d-geometries"></a>2D geometrie
+### <a name="2d-geometries"></a>2D geometrií
 
-Pokud 2D obrazce, které poskytuje WPF, nejsou dostatečné, můžete použít podporu WPF pro geometrie a cesty k vytvoření vlastní. Následující obrázek znázorňuje, jak můžete pomocí geometrií vytvářet tvary jako stopu výkresu a oříznout další prvky WPF.
+Pokud 2D obrazce, které WPF poskytuje, nejsou dostačující, můžete použít podporu WPF pro geometrií a cesty a vytvořit vlastní. Následující obrázek ukazuje, jak lze použít geometrií k vytváření tvarů, jako štětec kresby a k vystřihování dalších prvků WPF.
 
-![Snímek obrazovky znázorňující, jak můžete k vytváření obrazců použít geometrie.](./media/index/use-geometries-create-shapes.png)
+![Snímek obrazovky znázorňující, jak můžete pomocí geometrií vytvořit obrazce.](./media/index/use-geometries-create-shapes.png)
 
-Další informace naleznete v [tématu Přehled geometrie](geometry-overview.md). Úvodní vzorek viz [Vzorek geometrie](https://github.com/Microsoft/WPF-Samples/tree/master/Graphics/Geometry).
+Další informace najdete v tématu [geometrie Overview](geometry-overview.md). Úvodní ukázku najdete v tématu [geometrií Sample](https://github.com/Microsoft/WPF-Samples/tree/master/Graphics/Geometry).
 
 ### <a name="2d-effects"></a>2D efekty
 
-WPF poskytuje knihovnu 2D tříd, které můžete použít k vytvoření různých efektů. Schopnost 2D vykreslování [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] WPF umožňuje malovat prvky, které mají přechody, rastrové obrázky, výkresy a videa; a manipulovat s nimi pomocí otočení, změny velikosti a zkosení. Následující obrázek uvádí příklad mnoha efektů, kterých můžete dosáhnout pomocí stop WPF.
+WPF poskytuje knihovnu 2D tříd, které lze použít k vytvoření celé řady efektů. Funkce 2D vykreslování WPF poskytuje možnost malovat [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] prvky, které mají přechody, bitmapy, kresby a videa, a manipulovat s nimi pomocí rotace, škálování a zkosení. Následující ilustrace obsahuje příklad mnoha efektů, které lze dosáhnout pomocí štětců WPF.
 
-![Obrázek znázorňující různé stopy WPF a prvky malby.](./media/index/brushes-paint-elements.png)
+![Ilustrace znázorňující různé prvky WPF štětců a malování.](./media/index/brushes-paint-elements.png)
 
-Další informace naleznete v tématu [Přehled stop y WPF](wpf-brushes-overview.md). Úvodní vzorek viz [Vzorek štětců](https://github.com/Microsoft/WPF-Samples/tree/master/Graphics/Brushes).
+Další informace najdete v tématu [Přehled štětců WPF](wpf-brushes-overview.md). Úvodní vzorek naleznete v tématu [Ukázka štětce](https://github.com/Microsoft/WPF-Samples/tree/master/Graphics/Brushes).
 
 <a name="rendering"></a>
 
-## <a name="3d-rendering"></a>3D vykreslování
+## <a name="3d-rendering"></a>Prostorové vykreslování
 
-WPF poskytuje sadu funkcí 3D vykreslování, které se integrují [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]s podporou 2D grafiky ve WPF, abyste mohli vytvořit více vzrušujícího rozložení a vizualizace dat. Na jednom konci spektra umožňuje WPF vykreslit 2D obrazy na povrchy 3D tvarů, což ukazuje následující obrázek.
+WPF poskytuje sadu 3D funkcí vykreslování, které se integrují s podporou 2D grafiky v WPF, aby bylo možné vytvořit zajímavější rozložení, [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] a vizualizaci dat. Na jednom konci spektra umožňuje WPF vykreslovat 2D obrázky na povrchu 3D tvarů, který ukazuje následující obrázek.
 
-![Snímek obrazovky s ukázkou 3D obrazců s různými texturami](./media/index/visual-three-dimensional-shape.png)
+![Snímek obrazovky s ukázkou znázorňující tvary 3D s různými texturami](./media/index/visual-three-dimensional-shape.png)
 
-Další informace naleznete v tématu [Přehled 3D grafiky](3-d-graphics-overview.md). Úvodní vzorek viz [3D vzorek těles](https://go.microsoft.com/fwlink/?LinkID=159964).
+Další informace najdete v tématu [Přehled 3D grafiky](3-d-graphics-overview.md). Úvodní vzorek najdete v tématu [Ukázka prostorových plných](https://go.microsoft.com/fwlink/?LinkID=159964).
 
 <a name="animation"></a>
 
 ## <a name="animation"></a>Animace
 
-Pomocí animace můžete provádět růst, chvění, otáčení a slábnutí ovládacích prvků a prvků; a vytvářet zajímavé přechody stránek a další. Vzhledem k tomu, že WPF umožňuje animovat většinu vlastností, můžete nejen animovat většinu objektů WPF, můžete také použít WPF k animaci vlastních objektů, které vytvoříte.
+Pomocí animace můžete měnit, protřepe, zesílit a mizet ovládací prvky a prvky. a k vytváření zajímavých přechodů stránky a dalších. Vzhledem k tomu, že WPF umožňuje animovat většinu vlastností, nestačí pouze animovat většinu objektů WPF, můžete také použít WPF k animaci vlastních objektů, které vytvoříte.
 
-![Snímek obrazovky s animovanou krychli](./media/index/animate-custom-objects.png)
+![Snímek obrazovky s animovanou datovou krychlí](./media/index/animate-custom-objects.png)
 
-Další informace naleznete v [tématu Přehled animace](animation-overview.md). Úvodní ukázku naleznete v galerii [příkladů animace](https://github.com/Microsoft/WPF-Samples/tree/master/Animation/AnimationExamples).
+Další informace najdete v tématu [Přehled animací](animation-overview.md). Úvodní vzorek najdete v tématu [animace příklad Galerie](https://github.com/Microsoft/WPF-Samples/tree/master/Animation/AnimationExamples).
 
 <a name="media"></a>
 
 ## <a name="media"></a>Média
 
-Obrázky, video a zvuk jsou způsoby, jak přenášet informace a uživatelské prostředí bohaté na média.
+Obrázky, videa a zvuky jsou mediální a bohatě náročné způsoby, jak vyjádřit informace a uživatelské prostředí.
 
 ### <a name="images"></a>Image
 
-Obrázky, které obsahují ikony, pozadí a dokonce i části animací, jsou základní součástí většiny aplikací. Vzhledem k tomu, že často potřebujete používat obrázky, WPF zveřejňuje schopnost pracovat s nimi různými způsoby. Následující obrázek znázorňuje pouze jeden z těchto způsobů.
+Obrázky, které obsahují ikony, pozadí a dokonce i části animací, jsou základní součástí většiny aplikací. Vzhledem k tomu, že je často potřeba použít image, WPF nabízí možnost pracovat s nimi různými způsoby. Následující ilustrace znázorňuje pouze jeden z těchto způsobů.
 
-![Ukázkový snímek obrazovky s stylingem](../controls/./media/stylingintro-eventtriggers.png "StylingIntro_EventTriggers")
+![Ukázka stylu snímku obrazovky](../controls/media/stylingintro-eventtriggers.png "StylingIntro_EventTriggers")
 
-Další informace naleznete v [tématu Přehled zpracování obrázků](imaging-overview.md).
+Další informace najdete v tématu [Přehled imagí](imaging-overview.md).
 
 ### <a name="video-and-audio"></a>Video a zvuk
 
-Základním rysem grafických schopností WPF je poskytnout nativní podporu pro práci s multimédii, která zahrnuje video a audio. Následující příklad ukazuje, jak vložit přehrávač médií do aplikace.
+Základní funkcí grafických schopností WPF je poskytnout nativní podporu pro práci s multimédii, která zahrnuje video a zvuk. Následující příklad ukazuje, jak vložit přehrávač médií do aplikace.
 
 ```xaml
 <MediaElement Source="media\numbers.wmv" Width="450" Height="250" />
 ```
 
-<xref:System.Windows.Controls.MediaElement>je schopen přehrávat video i zvuk a je dostatečně rozšiřitelný, aby umožnil snadné vytváření vlastních ubru.
+<xref:System.Windows.Controls.MediaElement>je schopný přehrávat video i zvuk a je dostatečně rozšiřitelný, aby bylo možné snadno vytvořit vlastní uživatelská rozhraní.
 
-Další informace naleznete v přehledu [multimédií](multimedia-overview.md).
+Další informace najdete v tématu [Přehled multimédií](multimedia-overview.md).
 
 ## <a name="see-also"></a>Viz také
 
@@ -167,9 +167,9 @@ Další informace naleznete v přehledu [multimédií](multimedia-overview.md).
 - <xref:System.Windows.Media.Animation>
 - <xref:System.Windows.Media.Media3D>
 - [2D grafika a obrázky](../advanced/optimizing-performance-2d-graphics-and-imaging.md)
-- [Přehled objektů Shape a základního kreslení ve WPF](shapes-and-basic-drawing-in-wpf-overview.md)
+- [Tvary a základní kresby v přehledu WPF](shapes-and-basic-drawing-in-wpf-overview.md)
 - [Přehled malování plnými barvami a přechody](painting-with-solid-colors-and-gradients-overview.md)
-- [Malování pomocí obrázků, kreseb a vizuálních objektů](painting-with-images-drawings-and-visuals.md)
+- [Kreslení pomocí obrázků, kreseb a vizuálních objektů](painting-with-images-drawings-and-visuals.md)
 - [Postupy: Témata animace a časování](animation-and-timing-how-to-topics.md)
 - [Přehled 3D grafiky](3-d-graphics-overview.md)
 - [Přehled multimédií](multimedia-overview.md)

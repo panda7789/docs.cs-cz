@@ -2,19 +2,19 @@
 title: 'Postupy: Vytvoření služby WCF, která komunikuje přes WebSockets'
 ms.date: 03/30/2017
 ms.assetid: bafbbd89-eab8-4e9a-b4c3-b7b0178e12d8
-ms.openlocfilehash: d420ac8fcb98ddec195093be8ae25be37443da4e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5aade8e3fb2049521ed06f5f1a148be2e4636e36
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184980"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597108"
 ---
 # <a name="how-to-create-a-wcf-service-that-communicates-over-websockets"></a>Postupy: Vytvoření služby WCF, která komunikuje přes WebSockets
-WCF služby a <xref:System.ServiceModel.NetHttpBinding> klienti mohou použít vazbu ke komunikaci přes WebSockets.  WebSockets bude použit, <xref:System.ServiceModel.NetHttpBinding> když určuje servisní smlouvy definuje smlouvu zpětného volání. Toto téma popisuje, jak implementovat službu <xref:System.ServiceModel.NetHttpBinding> WCF a klienta, který používá ke komunikaci přes WebSockets.  
+Služby a Klienti WCF mohou pomocí <xref:System.ServiceModel.NetHttpBinding> vazby komunikovat přes objekty WebSockets.  WebSockets se použijí, když <xref:System.ServiceModel.NetHttpBinding> určí kontrakt služby, který definuje kontrakt zpětného volání. Toto téma popisuje, jak implementovat službu WCF a klienta, který používá <xref:System.ServiceModel.NetHttpBinding> ke komunikaci přes objekty WebSockets.  
   
 ### <a name="define-the-service"></a>Definování služby  
   
-1. Definování smlouvy zpětného volání  
+1. Definování kontraktu zpětného volání  
   
     ```csharp  
     [ServiceContract]  
@@ -25,9 +25,9 @@ WCF služby a <xref:System.ServiceModel.NetHttpBinding> klienti mohou použít v
         }  
     ```  
   
-     Tato smlouva bude implementována klientskou aplikací, aby služba mohla odesílat zprávy zpět klientovi.  
+     Tato smlouva bude implementována klientskou aplikací, aby mohla služba odesílat zprávy zpět klientovi.  
   
-2. Definujte servisní smlouvu `IStockQuoteCallback` a zadejte rozhraní jako kontrakt zpětného volání.  
+2. Definujte kontrakt služby a určete `IStockQuoteCallback` rozhraní jako kontrakt zpětného volání.  
   
     ```csharp  
     [ServiceContract(CallbackContract = typeof(IStockQuoteCallback))]  
@@ -38,7 +38,7 @@ WCF služby a <xref:System.ServiceModel.NetHttpBinding> klienti mohou použít v
         }  
     ```  
   
-3. Implementujte servisní smlouvu.  
+3. Implementujte kontrakt služby.  
   
     ```csharp
     public class StockQuoteService : IStockQuoteService  
@@ -59,7 +59,7 @@ WCF služby a <xref:System.ServiceModel.NetHttpBinding> klienti mohou použít v
     }  
     ```  
   
-     Operace `StartSendingQuotes` služby je implementována jako asynchronní volání. Načteme kanál zpětného `OperationContext` volání pomocí a pokud je kanál otevřený, provedeme asynchronní volání kanálu zpětného volání.  
+     Operace služby `StartSendingQuotes` je implementována jako asynchronní volání. Kanál zpětného volání načteme pomocí operátoru `OperationContext` a, pokud je kanál otevřený, provádíme asynchronní volání na kanálu zpětného volání.  
   
 4. Konfigurace služby  
   
@@ -90,9 +90,9 @@ WCF služby a <xref:System.ServiceModel.NetHttpBinding> klienti mohou použít v
     </configuration>  
     ```  
   
-     Konfigurační soubor služby závisí na výchozíkoncové body WCF. Oddíl `<protocolMapping>` se používá k `NetHttpBinding` určení, že by měl být použit pro výchozí vytvořené koncové body.  
+     Konfigurační soubor služby spoléhá na výchozí koncové body WCF. `<protocolMapping>`Oddíl slouží k určení, zda má `NetHttpBinding` být použit pro výchozí koncové body.  
   
-### <a name="define-the-client"></a>Definovat klienta  
+### <a name="define-the-client"></a>Definování klienta  
   
 1. Implementujte kontrakt zpětného volání.  
   
@@ -106,7 +106,7 @@ WCF služby a <xref:System.ServiceModel.NetHttpBinding> klienti mohou použít v
             }  
     ```  
   
-     Operace smlouvy zpětného volání je implementována jako asynchronní metoda.  
+     Operace kontraktu zpětného volání je implementována jako asynchronní metoda.  
   
     1. Implementujte kód klienta.  
   
@@ -131,7 +131,7 @@ WCF služby a <xref:System.ServiceModel.NetHttpBinding> klienti mohou použít v
         }  
         ```  
   
-         CallbackHandler se opakuje zde pro přehlednost. Klientská aplikace vytvoří nový InstanceContext a určuje implementaci rozhraní zpětného volání. Dále vytvoří instanci třídy proxy, která odesílá odkaz na nově vytvořený InstanceContext. Když klient volá službu, služba zavolá klientovi pomocí zadané smlouvy zpětného volání.  
+         Hodnota CallbackHandler se tady opakuje pro přehlednost. Klientská aplikace vytvoří novou funkci InstanceContext a určí implementaci rozhraní zpětného volání. V dalším kroku se vytvoří instance třídy proxy, která posílá odkaz na nově vytvořenou třídu InstanceContext. Když klient zavolá službu, služba zavolá klienta pomocí zadaného kontraktu zpětného volání.  
   
     2. Konfigurace klienta  
   
@@ -158,10 +158,10 @@ WCF služby a <xref:System.ServiceModel.NetHttpBinding> klienti mohou použít v
         </configuration>  
         ```  
   
-         Není nic zvláštního, co musíte udělat v konfiguraci klienta, `NetHttpBinding`stačí zadat koncový bod na straně klienta pomocí .  
+         V konfiguraci klienta nemusíte nic dělat, stačí zadat koncový bod na straně klienta pomocí `NetHttpBinding` .  
   
 ## <a name="example"></a>Příklad  
- Následuje úplný kód použitý v tomto tématu.  
+ Následuje kompletní kód, který se používá v tomto tématu.  
   
 ```csharp  
 // IStockQuoteService.cs  
@@ -320,5 +320,5 @@ namespace Client
   
 ## <a name="see-also"></a>Viz také
 
-- [Synchronní a asynchronní operace](../../../../docs/framework/wcf/synchronous-and-asynchronous-operations.md)
-- [Používání vazeb NetHttpBinding](../../../../docs/framework/wcf/feature-details/using-the-nethttpbinding.md)
+- [Synchronní a asynchronní operace](../synchronous-and-asynchronous-operations.md)
+- [Používání vazeb NetHttpBinding](using-the-nethttpbinding.md)

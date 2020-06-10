@@ -2,12 +2,12 @@
 title: 'Postupy: Konfigurace služeb WCF pro spolupráci s klienty WSE 3.0'
 ms.date: 03/30/2017
 ms.assetid: 0f38c4a0-49a6-437c-bdde-ad1d138d3c4a
-ms.openlocfilehash: bd9f2bec94ca45f76590f64366428a00edd5d6ea
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: 600b9c28d92f9e2b6e4d586b052cc5762d591521
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74141741"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84599058"
 ---
 # <a name="how-to-configure-wcf-services-to-interoperate-with-wse-30-clients"></a>Postupy: Konfigurace služeb WCF pro spolupráci s klienty WSE 3.0
 
@@ -19,13 +19,13 @@ Služby Windows Communication Foundation (WCF) jsou kompatibilní s rozšířen�
 
     Chcete-li určit, že verze specifikace WS-Addressing ve verzi ze srpna 2004 se používá pro kódování zprávy, musí být vytvořena vlastní vazba.
 
-    1. Přidejte podřízenou [\<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md) do [\<vazeb >](../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md) konfiguračního souboru služby.
+    1. Přidejte podřízenou položku [\<customBinding>](../../configure-apps/file-schema/wcf/custombinding.md) ke [\<bindings>](../../configure-apps/file-schema/wcf/bindings.md) konfiguračnímu souboru služby.
 
-    2. Zadejte název vazby přidáním [\<vazby >](../../configure-apps/file-schema/wcf/bindings.md) do [\<](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md) a nastavením atributu `name`.
+    2. Zadejte název vazby přidáním [\<binding>](../../configure-apps/file-schema/wcf/bindings.md) do [\<customBinding>](../../configure-apps/file-schema/wcf/custombinding.md) a nastavením `name` atributu.
 
-    3. Zadejte režim ověřování a verzi specifikací WS-Security, které se používají k zabezpečení zpráv, které jsou kompatibilní s WSE 3,0, přidáním [\<podřízené > zabezpečení](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) [\<> vazby](../../configure-apps/file-schema/wcf/bindings.md).
+    3. Určete režim ověřování a verzi specifikací WS-Security, která se používá k zabezpečení zpráv kompatibilních s WSE 3,0 přidáním podřízeného prvku [\<security>](../../configure-apps/file-schema/wcf/security-of-custombinding.md) do [\<binding>](../../configure-apps/file-schema/wcf/bindings.md) .
 
-        Chcete-li nastavit režim ověřování, nastavte atribut `authenticationMode` [\<> zabezpečení](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md). Režim ověřování je zhruba stejný jako kontrolní výraz zabezpečení klíč v WSE 3,0. Následující tabulka mapuje režimy ověřování ve službě WCF na klíč kontrolní výrazy zabezpečení v WSE 3,0.
+        Chcete-li nastavit režim ověřování, nastavte `authenticationMode` atribut [\<security>](../../configure-apps/file-schema/wcf/security-of-custombinding.md) . Režim ověřování je zhruba stejný jako kontrolní výraz zabezpečení klíč v WSE 3,0. Následující tabulka mapuje režimy ověřování ve službě WCF na klíč kontrolní výrazy zabezpečení v WSE 3,0.
 
         |Režim ověřování WCF|Kontrolní výraz zabezpečení WSE 3,0 klíč|
         |-----------------------------|----------------------------------------|
@@ -36,24 +36,24 @@ Služby Windows Communication Foundation (WCF) jsou kompatibilní s rozšířen�
         |<xref:System.ServiceModel.Configuration.AuthenticationMode.UserNameOverTransport>|`usernameOverTransportSecurity`|
         |<xref:System.ServiceModel.Configuration.AuthenticationMode.UserNameForCertificate>|`usernameForCertificateSecurity`|
 
-        \* jedné z hlavních rozdílů mezi `mutualCertificate10Security` a `mutualCertificate11Security`mi kontrolními výrazy zabezpečení klíč je verze specifikace WS-Security, kterou WSE používá k zabezpečení zpráv SOAP. Pro `mutualCertificate10Security`se používá WS-Security 1,0, zatímco pro `mutualCertificate11Security`se používá WS-Security 1,1. V případě WCF je verze specifikace WS-Security určena v atributu `messageSecurityVersion` [\<> zabezpečení](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md).
+        \*Jednou z hlavních rozdílů mezi `mutualCertificate10Security` `mutualCertificate11Security` kontrolními výrazy zabezpečení a klíč je verze specifikace WS-Security, kterou WSE používá k zabezpečení zpráv SOAP. V případě se `mutualCertificate10Security` používá WS-security 1,0, zatímco pro je použito WS-security 1,1 `mutualCertificate11Security` . V případě WCF je verze specifikace WS-Security určena v `messageSecurityVersion` atributu [\<security>](../../configure-apps/file-schema/wcf/security-of-custombinding.md) .
 
-        Chcete-li nastavit verzi specifikace WS-Security, která je použita k zabezpečení zpráv protokolu SOAP, nastavte atribut `messageSecurityVersion` [\<> zabezpečení](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md). Pro spolupráci s WSE 3,0 nastavte hodnotu atributu `messageSecurityVersion` na <xref:System.ServiceModel.MessageSecurityVersion.WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10%2A>.
+        Chcete-li nastavit verzi specifikace WS-Security, která je použita k zabezpečení zpráv protokolu SOAP, nastavte `messageSecurityVersion` atribut [\<security>](../../configure-apps/file-schema/wcf/security-of-custombinding.md) . Pro spolupráci s WSE 3,0 nastavte hodnotu `messageSecurityVersion` atributu na <xref:System.ServiceModel.MessageSecurityVersion.WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10%2A> .
 
-    4. Určete, že služba WCF používá verzi ze srpna 2004 specifikace WS-Addressing přidáním [\<textMessageEncoding >](../../../../docs/framework/configure-apps/file-schema/wcf/textmessageencoding.md) a nastavte `messageVersion` na hodnotu <xref:System.ServiceModel.Channels.MessageVersion.Soap11WSAddressingAugust2004%2A>.
+    4. Určete, že služba WCF používá verzi ze srpna 2004 specifikace WS-Addressing přidáním [\<textMessageEncoding>](../../configure-apps/file-schema/wcf/textmessageencoding.md) a nastavenou na `messageVersion` hodnotu <xref:System.ServiceModel.Channels.MessageVersion.Soap11WSAddressingAugust2004%2A> .
 
         > [!NOTE]
-        > Pokud používáte protokol SOAP 1,2, nastavte atribut `messageVersion` na hodnotu <xref:System.ServiceModel.Channels.MessageVersion.Soap12WSAddressingAugust2004%2A>.
+        > Pokud používáte SOAP 1,2, nastavte `messageVersion` atribut na <xref:System.ServiceModel.Channels.MessageVersion.Soap12WSAddressingAugust2004%2A> .
 
 2. Určete, že služba používá vlastní vazbu.
 
-    1. Nastavte atribut `binding` [\<koncového bodu >](../../../../docs/framework/configure-apps/file-schema/wcf/endpoint-element.md) elementu na `customBinding`.
+    1. Nastavte `binding` atribut [\<endpoint>](../../configure-apps/file-schema/wcf/endpoint-element.md) elementu na `customBinding` .
 
-    2. Nastavte atribut `bindingConfiguration` [\<koncového bodu >](../../../../docs/framework/configure-apps/file-schema/wcf/endpoint-element.md) elementu na hodnotu zadanou v atributu `name`\<[vazby](../../configure-apps/file-schema/wcf/bindings.md) > pro vlastní vazbu.
+    2. Nastavte `bindingConfiguration` atribut [\<endpoint>](../../configure-apps/file-schema/wcf/endpoint-element.md) elementu na hodnotu zadanou v `name` atributu [\<binding>](../../configure-apps/file-schema/wcf/bindings.md) pro vlastní vazbu.
 
 ## <a name="example"></a>Příklad
 
-Následující příklad kódu určuje, že `Service.HelloWorldService` používá vlastní vazbu pro spolupráci s klienty WSE 3,0. Vlastní vazba určuje, že verze 2004 protokolu WS-Addressing a WS-Security 1,1 sady specifikací slouží ke kódování vyměňovaných zpráv. Zprávy jsou zabezpečeny pomocí režimu ověřování <xref:System.ServiceModel.Configuration.AuthenticationMode.AnonymousForCertificate>.
+Následující příklad kódu určuje, že `Service.HelloWorldService` používá vlastní vazbu pro spolupráci s klienty WSE 3,0. Vlastní vazba určuje, že verze 2004 protokolu WS-Addressing a WS-Security 1,1 sady specifikací slouží ke kódování vyměňovaných zpráv. Zprávy jsou zabezpečeny pomocí <xref:System.ServiceModel.Configuration.AuthenticationMode.AnonymousForCertificate> režimu ověřování.
 
 ```xml
 <configuration>
@@ -92,6 +92,6 @@ Následující příklad kódu určuje, že `Service.HelloWorldService` použív
 </configuration>
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Postupy: Přizpůsobení vazeb poskytovaných systémem](../../../../docs/framework/wcf/extending/how-to-customize-a-system-provided-binding.md)
+- [Postupy: Přizpůsobení vazeb poskytovaných systémem](../extending/how-to-customize-a-system-provided-binding.md)

@@ -2,15 +2,15 @@
 title: Zabezpečení přenosu WS
 ms.date: 03/30/2017
 ms.assetid: 33a20358-5e1b-458a-a6a9-15753bc7b99b
-ms.openlocfilehash: 5a911323ff3766f2e28a9916a349ba88e583a9c5
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: d0f357ddcfc355bac8eeb86d57641add0013a052
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84143638"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84596394"
 ---
 # <a name="ws-transport-security"></a>Zabezpečení přenosu WS
-Tato ukázka demonstruje použití zabezpečení přenosu SSL s <xref:System.ServiceModel.WSHttpBinding> vazbou. Ve výchozím nastavení `wsHttpBinding` Vazba poskytuje komunikaci pomocí protokolu HTTP. Pokud je nakonfigurovaná pro zabezpečení přenosu, vazba podporuje komunikaci pomocí protokolu HTTPS. Tato ukázka je založená na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) , která implementuje službu kalkulačky. `wsHttpBinding`Je určen a nakonfigurován v konfiguračních souborech aplikace pro klienta a službu.  
+Tato ukázka demonstruje použití zabezpečení přenosu SSL s <xref:System.ServiceModel.WSHttpBinding> vazbou. Ve výchozím nastavení `wsHttpBinding` Vazba poskytuje komunikaci pomocí protokolu HTTP. Pokud je nakonfigurovaná pro zabezpečení přenosu, vazba podporuje komunikaci pomocí protokolu HTTPS. Tato ukázka je založená na [Začínáme](getting-started-sample.md) , která implementuje službu kalkulačky. `wsHttpBinding`Je určen a nakonfigurován v konfiguračních souborech aplikace pro klienta a službu.  
   
 > [!NOTE]
 > Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
@@ -24,7 +24,7 @@ Tato ukázka demonstruje použití zabezpečení přenosu SSL s <xref:System.Ser
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\WS\wsTransportSecurity`  
   
- Kód programu v ukázce je stejný jako u služby [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) . Před vytvořením a spuštěním ukázky musíte vytvořit certifikát a přiřadit ho pomocí Průvodce certifikátem webového serveru. Definice koncového bodu a definice vazby v nastavení konfiguračního souboru umožňují `Transport` režim zabezpečení, jak je znázorněno v následující ukázkové konfiguraci pro klienta.  
+ Kód programu v ukázce je stejný jako u služby [Začínáme](getting-started-sample.md) . Před vytvořením a spuštěním ukázky musíte vytvořit certifikát a přiřadit ho pomocí Průvodce certifikátem webového serveru. Definice koncového bodu a definice vazby v nastavení konfiguračního souboru umožňují `Transport` režim zabezpečení, jak je znázorněno v následující ukázkové konfiguraci pro klienta.  
   
 ```xml  
 <system.serviceModel>  
@@ -77,10 +77,10 @@ Press <ENTER> to terminate client.
     %windir%\Microsoft.NET\Framework\v4.0.XXXXX\aspnet_regiis.exe /i /enable  
     ```  
   
-2. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+2. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](one-time-setup-procedure-for-the-wcf-samples.md).  
   
-3. Ujistěte se, že jste provedli [pokyny k instalaci certifikátu serveru Internetová informační služba (IIS)](../../../../docs/framework/wcf/samples/iis-server-certificate-installation-instructions.md).  
+3. Ujistěte se, že jste provedli [pokyny k instalaci certifikátu serveru Internetová informační služba (IIS)](iis-server-certificate-installation-instructions.md).  
   
-4. Chcete-li sestavit edici C# nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+4. Chcete-li sestavit edici C# nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](building-the-samples.md).  
   
-5. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+5. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](running-the-samples.md).  
