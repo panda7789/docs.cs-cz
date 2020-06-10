@@ -8,30 +8,30 @@ helpviewer_keywords:
 - WCF, federation
 - federation
 ms.assetid: 675fa143-6a4e-4be3-8afc-673334ab55ec
-ms.openlocfilehash: 810c5b127a34fb0a35e8fd2d83ff59e00aca0ba1
-ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
+ms.openlocfilehash: df057d64feb89d1e43b938b36cb48f2f103b17d0
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68972050"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84595385"
 ---
 # <a name="how-to-disable-secure-sessions-on-a-wsfederationhttpbinding"></a>Postupy: Zakázání zabezpečených relací u třídy WSFederationHttpBinding
 
-Některé služby můžou vyžadovat federované přihlašovací údaje, ale nepodporují zabezpečené relace. V takovém případě je nutné zakázat funkci Zabezpečená relace. Na rozdíl od <xref:System.ServiceModel.WSHttpBinding> <xref:System.ServiceModel.WSFederationHttpBinding> , Třída neposkytuje způsob, jak zakázat zabezpečené relace při komunikaci se službou. Místo toho je nutné vytvořit vlastní vazbu, která nahrazuje nastavení zabezpečené relace nástrojem Bootstrap.
+Některé služby můžou vyžadovat federované přihlašovací údaje, ale nepodporují zabezpečené relace. V takovém případě je nutné zakázat funkci Zabezpečená relace. Na rozdíl od <xref:System.ServiceModel.WSHttpBinding> , <xref:System.ServiceModel.WSFederationHttpBinding> Třída neposkytuje způsob, jak zakázat zabezpečené relace při komunikaci se službou. Místo toho je nutné vytvořit vlastní vazbu, která nahrazuje nastavení zabezpečené relace nástrojem Bootstrap.
 
-Toto téma ukazuje, jak upravit prvky vazby obsažené v a <xref:System.ServiceModel.WSFederationHttpBinding> vytvořit vlastní vazbu. Výsledek je stejný <xref:System.ServiceModel.WSFederationHttpBinding> jako s s tím rozdílem, že nepoužívá zabezpečené relace.
+Toto téma ukazuje, jak upravit prvky vazby obsažené v a <xref:System.ServiceModel.WSFederationHttpBinding> vytvořit vlastní vazbu. Výsledek je stejný jako s <xref:System.ServiceModel.WSFederationHttpBinding> s tím rozdílem, že nepoužívá zabezpečené relace.
 
 ## <a name="to-create-a-custom-federated-binding-without-secure-session"></a>Vytvoření vlastní federované vazby bez zabezpečené relace
 
 1. Vytvořte instanci <xref:System.ServiceModel.WSFederationHttpBinding> třídy buď imperativně v kódu, nebo načtením z konfiguračního souboru.
 
-2. Naklonujte <xref:System.ServiceModel.Channels.CustomBinding>do. <xref:System.ServiceModel.WSFederationHttpBinding>
+2. Naklonujte <xref:System.ServiceModel.WSFederationHttpBinding> do <xref:System.ServiceModel.Channels.CustomBinding> .
 
-3. <xref:System.ServiceModel.Channels.SecurityBindingElement> Vyhledejte<xref:System.ServiceModel.Channels.CustomBinding>v.
+3. Vyhledejte <xref:System.ServiceModel.Channels.SecurityBindingElement> v <xref:System.ServiceModel.Channels.CustomBinding> .
 
-4. <xref:System.ServiceModel.Security.Tokens.SecureConversationSecurityTokenParameters> Vyhledejte<xref:System.ServiceModel.Channels.SecurityBindingElement>v.
+4. Vyhledejte <xref:System.ServiceModel.Security.Tokens.SecureConversationSecurityTokenParameters> v <xref:System.ServiceModel.Channels.SecurityBindingElement> .
 
-5. Nahraďte původní <xref:System.ServiceModel.Channels.SecurityBindingElement> elementem vazby zabezpečení Bootstrap <xref:System.ServiceModel.Security.Tokens.SecureConversationSecurityTokenParameters>z.
+5. Nahraďte původní <xref:System.ServiceModel.Channels.SecurityBindingElement> elementem vazby zabezpečení Bootstrap z <xref:System.ServiceModel.Security.Tokens.SecureConversationSecurityTokenParameters> .
 
 ## <a name="example"></a>Příklad
 
@@ -44,6 +44,6 @@ Následující příklad vytvoří vlastní federované vazby bez zabezpečené 
 
 - Chcete-li zkompilovat příklad kódu, vytvořte projekt, který odkazuje na sestavení System. ServiceModel. dll.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Vazby a zabezpečení](../../../../docs/framework/wcf/feature-details/bindings-and-security.md)
+- [Vazby a zabezpečení](bindings-and-security.md)

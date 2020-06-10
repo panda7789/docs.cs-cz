@@ -2,12 +2,12 @@
 title: Validátor certifikátu X.509
 ms.date: 03/30/2017
 ms.assetid: 3b042379-02c4-4395-b927-e57c842fd3e0
-ms.openlocfilehash: ba73381bb6211dcbd1ddad1457f9ae8611008d43
-ms.sourcegitcommit: 839777281a281684a7e2906dccb3acd7f6a32023
+ms.openlocfilehash: 32d99b93ef014967aa04bc70f73fbd2ebcfe2c60
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82141213"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84594826"
 ---
 # <a name="x509-certificate-validator"></a>Validátor certifikátu X.509
 
@@ -23,7 +23,7 @@ V části Souhrn tento příklad ukazuje, jak:
 
 - Server je ověřený pomocí certifikátu X. 509 serveru.
 
-Služba zpřístupňuje jeden koncový bod pro komunikaci se službou, definovaná pomocí konfiguračního souboru App. config. Koncový bod se skládá z adresy, vazby a kontraktu. Vazba je nakonfigurována se standardem `wsHttpBinding` , který používá `WSSecurity` výchozí nastavení a ověřování klientského certifikátu. Chování služby určuje vlastní režim pro ověřování klientských certifikátů X. 509 spolu s typem třídy validátoru. Chování také Určuje certifikát serveru pomocí elementu serviceCertificate. Certifikát serveru musí obsahovat stejnou hodnotu pro `SubjectName` jako `findValue` v [ \<serviceCertificate>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md).
+Služba zpřístupňuje jeden koncový bod pro komunikaci se službou, definovaná pomocí konfiguračního souboru App. config. Koncový bod se skládá z adresy, vazby a kontraktu. Vazba je nakonfigurována se standardem `wsHttpBinding` , který používá výchozí nastavení `WSSecurity` a ověřování klientského certifikátu. Chování služby určuje vlastní režim pro ověřování klientských certifikátů X. 509 spolu s typem třídy validátoru. Chování také Určuje certifikát serveru pomocí elementu serviceCertificate. Certifikát serveru musí obsahovat stejnou hodnotu pro `SubjectName` jako `findValue` v [\<serviceCertificate>](../../configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) .
 
 ```xml
   <system.serviceModel>
@@ -95,7 +95,7 @@ Služba zpřístupňuje jeden koncový bod pro komunikaci se službou, definovan
       </system.serviceModel>
 ```
 
-Konfigurace koncového bodu klienta se skládá z názvu konfigurace, absolutní adresy koncového bodu služby, vazby a kontraktu. Vazba klienta je nakonfigurovaná s odpovídajícím režimem a `clientCredentialType`zprávou.
+Konfigurace koncového bodu klienta se skládá z názvu konfigurace, absolutní adresy koncového bodu služby, vazby a kontraktu. Vazba klienta je nakonfigurovaná s odpovídajícím režimem a zprávou `clientCredentialType` .
 
 ```xml
 <system.serviceModel>
@@ -199,7 +199,7 @@ catch (Exception e)
 }
 ```
 
-Tato ukázka používá vlastní X509CertificateValidator k ověření certifikátů. Ukázka implementuje CustomX509CertificateValidator odvozené z <xref:System.IdentityModel.Selectors.X509CertificateValidator>. Další informace najdete <xref:System.IdentityModel.Selectors.X509CertificateValidator> v dokumentaci. Tato konkrétní ukázka vlastního validátoru implementuje metodu Validate pro přijetí libovolného certifikátu X. 509, který je vystaven vlastním držitelem, jak je znázorněno v následujícím kódu.
+Tato ukázka používá vlastní X509CertificateValidator k ověření certifikátů. Ukázka implementuje CustomX509CertificateValidator odvozené z <xref:System.IdentityModel.Selectors.X509CertificateValidator> . Další informace najdete v dokumentaci <xref:System.IdentityModel.Selectors.X509CertificateValidator> . Tato konkrétní ukázka vlastního validátoru implementuje metodu Validate pro přijetí libovolného certifikátu X. 509, který je vystaven vlastním držitelem, jak je znázorněno v následujícím kódu.
 
 ```csharp
 public class CustomX509CertificateValidator : X509CertificateValidator
@@ -305,7 +305,7 @@ Níže najdete stručný přehled různých částí dávkových souborů, aby j
 
 #### <a name="to-set-up-and-build-the-sample"></a>Nastavení a sestavení ukázky
 
-1. Při sestavování řešení postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
+1. Při sestavování řešení postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](building-the-samples.md).
 
 2. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle následujících pokynů.
 
@@ -332,13 +332,13 @@ Níže najdete stručný přehled různých částí dávkových souborů, aby j
 
 4. Zkopírujte soubory klientských programů do adresáře klienta v klientském počítači. Zkopírujte také do klienta soubory Setup. bat, Cleanup. bat a ImportServiceCert. bat.
 
-5. Na serveru spusťte `setup.bat service` v Developer Command Prompt pro Visual Studio otevřené s oprávněními správce. Při `setup.bat` spuštění s `service` argumentem se vytvoří certifikát služby s plně kvalifikovaným názvem domény počítače a vyexportuje certifikát služby do souboru s názvem Service. cer.
+5. Na serveru spusťte `setup.bat service` v Developer Command Prompt pro Visual Studio otevřené s oprávněními správce. Při spuštění `setup.bat` s `service` argumentem se vytvoří certifikát služby s plně kvalifikovaným názvem domény počítače a vyexportuje certifikát služby do souboru s názvem Service. cer.
 
-6. Upravte soubor Service. exe. config tak, aby odrážel nový název certifikátu ( `findValue` v atributu [ \<serviceCertificate>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md)), který je stejný jako plně kvalifikovaný název domény počítače. Změňte také název počítače ve \<službě>/\<adres BaseAddresses> elementu z místního hostitele na plně kvalifikovaný název počítače služby.
+6. Upravte soubor Service. exe. config tak, aby odrážel nový název certifikátu (v `findValue` atributu [\<serviceCertificate>](../../configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) ), který je stejný jako plně kvalifikovaný název domény počítače. Také změňte název počítače v \<service> / \<baseAddresses> elementu z localhost na plně kvalifikovaný název počítače služby.
 
 7. Zkopírujte soubor Service. cer z adresáře služby do adresáře klienta v klientském počítači.
 
-8. Na straně klienta spusťte `setup.bat client` v Developer Command Prompt pro Visual Studio otevřené s oprávněními správce. Při `setup.bat` spuštění s `client` argumentem se vytvoří klientský certifikát s názvem Client.com a exportuje se klientský certifikát do souboru s názvem Client. cer.
+8. Na straně klienta spusťte `setup.bat client` v Developer Command Prompt pro Visual Studio otevřené s oprávněními správce. Při spuštění `setup.bat` s `client` argumentem se vytvoří klientský certifikát s názvem Client.com a exportuje se klientský certifikát do souboru s názvem Client. cer.
 
 9. V souboru Client. exe. config v klientském počítači změňte hodnotu adresy koncového bodu tak, aby odpovídala nové adrese vaší služby. Provedete to tak, že nahradíte localhost názvem domény na plně kvalifikovaném názvu domény serveru.
 
@@ -357,4 +357,4 @@ Níže najdete stručný přehled různých částí dávkových souborů, aby j
 1. Po dokončení ukázky spusťte na složce Samples Cleanup. bat. Tím dojde k odebrání certifikátů serveru a klienta z úložiště certifikátů.
 
 > [!NOTE]
-> Tento skript při spuštění této ukázky mezi počítači neodebere certifikáty služby na klientovi. Pokud jste spustili ukázky Windows Communication Foundation (WCF), které používají certifikáty napříč počítači, nezapomeňte vymazat certifikáty služby, které byly nainstalovány v úložišti CurrentUser-TrustedPeople. Použijte následující příkaz: `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` například:. `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`
+> Tento skript při spuštění této ukázky mezi počítači neodebere certifikáty služby na klientovi. Pokud jste spustili ukázky Windows Communication Foundation (WCF), které používají certifikáty napříč počítači, nezapomeňte vymazat certifikáty služby, které byly nainstalovány v úložišti CurrentUser-TrustedPeople. Použijte následující příkaz: `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` například: `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com` .

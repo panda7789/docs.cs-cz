@@ -1,5 +1,6 @@
 ---
 title: Vytváření nových řetězců v .NET
+description: Naučte se vytvářet řetězce pomocí přiřazení, konstruktorů tříd nebo metod System. String, které spojují několik řetězců, polí řetězců nebo objektů v rozhraní .NET.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -13,12 +14,12 @@ helpviewer_keywords:
 - strings [.NET Framework], creating
 - Insert method
 ms.assetid: 06fdf123-2fac-4459-8904-eb48ab908a30
-ms.openlocfilehash: a5dfe6429ac135202874f0524a252a7af900bd8d
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: b44d0f8e1717ead72e28f0be644644961d1482b6
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84279009"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84596445"
 ---
 # <a name="creating-new-strings-in-net"></a>Vytváření nových řetězců v .NET
 .NET Framework umožňuje vytvoření řetězců pomocí jednoduchého přiřazení a také přetížení konstruktoru třídy pro podporu vytváření řetězců pomocí několika různých parametrů. .NET Framework také poskytuje několik metod ve <xref:System.String?displayProperty=nameWithType> třídě, které vytvářejí nové řetězcové objekty kombinací několika řetězců, polí řetězců nebo objektů.  

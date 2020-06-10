@@ -4,15 +4,15 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - COM+ [WCF], configuring service settings
 ms.assetid: f42a55a8-3af8-4394-9fdd-bf12a93780eb
-ms.openlocfilehash: 31096ca510c868cf43ca6ef60126c98a8832d2c5
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: 3fb4b31038845d223248e72d32b3e7413f2aef63
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70895122"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597173"
 ---
 # <a name="how-to-configure-com-service-settings"></a>Postupy: Konfigurace nastavení služby modelu COM+
-Při přidání nebo odebrání rozhraní aplikace pomocí nástroje pro konfiguraci služby COM+ se konfigurace webové služby aktualizuje v konfiguračním souboru aplikace. V hostovaném režimu modelu COM+ je soubor Application. config umístěn v kořenovém adresáři aplikace (výchozí je aplikace\\%ProgramFiles%\ComPlus {AppID}). V obou režimech hostovaných na webu je soubor Web. config umístěný v zadaném adresáři vroot.  
+Při přidání nebo odebrání rozhraní aplikace pomocí nástroje pro konfiguraci služby COM+ se konfigurace webové služby aktualizuje v konfiguračním souboru aplikace. V hostovaném režimu modelu COM+ je soubor Application. config umístěn v kořenovém adresáři aplikace ( \\ výchozí je aplikace%ProgramFiles%\ComPlus {AppID}). V obou režimech hostovaných na webu je soubor Web. config umístěný v zadaném adresáři vroot.  
   
 > [!NOTE]
 > K ochraně proti manipulaci se zprávami mezi klientem a serverem se musí použít podepisování zpráv. K ochraně před zpřístupněním informací ze zpráv mezi klientem a serverem by se měla použít taky zpráva nebo šifrování transportní vrstvy. Stejně jako u služby Windows Communication Foundation (WCF) byste měli omezit počet souběžných volání, připojení, instancí a probíhajících operací pomocí omezování. To pomáhá zabránit vyšší spotřebě prostředků. Chování omezování se zadává prostřednictvím nastavení konfiguračního souboru služby.  
@@ -96,6 +96,6 @@ public interface IFinancesContract : IDisposable
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Integrace s aplikacemi modelu COM+](../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications.md)
+- [Integrace s aplikacemi modelu COM+](integrating-with-com-plus-applications.md)

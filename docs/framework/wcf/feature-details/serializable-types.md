@@ -2,46 +2,46 @@
 title: Serializovatelné typy
 ms.date: 03/30/2017
 ms.assetid: f1c8539a-6a79-4413-b294-896f0957b2cd
-ms.openlocfilehash: 0913d523e93505934b1cf231284e356baba5ded3
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: e65fcb93c5c36bb289b825cef58b3adc6f5155f5
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65591671"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84586101"
 ---
 # <a name="serializable-types"></a>Serializovatelné typy
-Ve výchozím nastavení <xref:System.Runtime.Serialization.DataContractSerializer> serializuje všechny veřejně viditelné typy. Všechny vlastnosti veřejné čtení a zápis a pole typu se serializují.  
+Ve výchozím nastavení jsou <xref:System.Runtime.Serialization.DataContractSerializer> všechny veřejně viditelné typy serializovány. Všechny veřejné vlastnosti pro čtení i zápis a pole typu jsou serializovány.  
   
- Výchozí chování lze změnit použitím <xref:System.Runtime.Serialization.DataContractAttribute> a <xref:System.Runtime.Serialization.DataMemberAttribute> atributy k typům a členům této funkce může být užitečné v situacích, ve kterých máte typy, které nejsou pod vaší kontrolou a nelze ji upravit a přidat atributy. <xref:System.Runtime.Serialization.DataContractSerializer> Rozpoznává tyto "zrušeno označení" typy.  
+ Můžete změnit výchozí chování pomocí <xref:System.Runtime.Serialization.DataContractAttribute> <xref:System.Runtime.Serialization.DataMemberAttribute> atributů a na typy a členy, které tato funkce může být užitečná v situacích, kdy máte typy, které nejsou pod vaší kontrolou a nelze je upravit pro přidání atributů. <xref:System.Runtime.Serialization.DataContractSerializer>Rozpozná takové "neoznačené" typy.  
   
-## <a name="serialization-defaults"></a>Výchozí serializace  
- Můžete použít <xref:System.Runtime.Serialization.DataContractAttribute> a <xref:System.Runtime.Serialization.DataMemberAttribute> atributy explicitně řídit nebo přizpůsobení serializaci typů a členů. Kromě toho můžete použít tyto atributy k privátním položkám. Ale i typy, které nejsou označené tyto atributy jsou serializovat a deserializovat. Platí následující pravidla a výjimky:  
+## <a name="serialization-defaults"></a>Výchozí hodnoty serializace  
+ Atributy a můžete použít <xref:System.Runtime.Serialization.DataContractAttribute> <xref:System.Runtime.Serialization.DataMemberAttribute> k explicitnímu řízení nebo přizpůsobení serializace typů a členů. Kromě toho můžete tyto atributy použít u soukromých polí. Nicméně i typy, které nejsou označeny těmito atributy, jsou serializovány a deserializovány. Platí následující pravidla a výjimky:  
   
-- <xref:System.Runtime.Serialization.DataContractSerializer> Odvodí kontraktu dat z typů bez atributů s použitím výchozí vlastnosti typů nově vytvořený.  
+- <xref:System.Runtime.Serialization.DataContractSerializer>Odvodí kontrakt dat z typů bez atributů pomocí výchozích vlastností nově vytvořených typů.  
   
-- Všechny veřejné polí a vlastností s veřejnou `get` a `set` metody serializován, jestliže nenainstalujete opravu <xref:System.Runtime.Serialization.IgnoreDataMemberAttribute> atribut pro tohoto člena.  
+- Všechna veřejná pole a vlastnosti s veřejnými `get` a `set` metodami jsou serializovány, pokud atribut nepoužijete <xref:System.Runtime.Serialization.IgnoreDataMemberAttribute> pro daného člena.  
   
-- Sémantika serializace je podobné jako u <xref:System.Xml.Serialization.XmlSerializer>.  
+- Sémantika serializace je podobná těm z <xref:System.Xml.Serialization.XmlSerializer> .  
   
-- Zrušit označení typy jsou serializovat pouze veřejné typy s konstruktory, které nemají parametry. Výjimkou z tohoto pravidla je <xref:System.Runtime.Serialization.ExtensionDataObject> použít s <xref:System.Runtime.Serialization.IExtensibleDataObject> rozhraní.  
+- V neoznačených typech jsou serializovány pouze veřejné typy s konstruktory, které nemají parametry. Výjimkou z tohoto pravidla se <xref:System.Runtime.Serialization.ExtensionDataObject> používá s <xref:System.Runtime.Serialization.IExtensibleDataObject> rozhraním.  
   
-- Pole jen pro čtení, vlastnosti bez `get` nebo `set` metody a vlastnosti s interní nebo privátní `set` nebo `get` metody nejsou serializována. Tyto vlastnosti jsou ignorovány a není vyvolána žádná výjimka, s výjimkou kolekce jenom pro získání.  
+- Pole jen pro čtení, vlastnosti bez `get` metody nebo `set` a vlastnosti s interními nebo soukromými `set` nebo `get` metodami nejsou serializovány. Tyto vlastnosti jsou ignorovány a není vyvolána žádná výjimka, s výjimkou případů, kdy jsou kolekce pouze pro Get.  
   
-- <xref:System.Xml.Serialization.XmlSerializer> atributy (například `XmlElement`, `XmlAttribute`, `XmlIgnore`, `XmlInclude`, a tak dále) jsou ignorovány.  
+- <xref:System.Xml.Serialization.XmlSerializer>atributy (například `XmlElement` , `XmlAttribute` ,, `XmlIgnore` `XmlInclude` a tak dále) jsou ignorovány.  
   
-- Pokud se nevztahují <xref:System.Runtime.Serialization.DataContractAttribute> atributů pro daný typ serializátor ignoruje libovolnému členovi v tomto typu, na který <xref:System.Runtime.Serialization.DataMemberAttribute> atribut se používá.  
+- Pokud nepoužijete <xref:System.Runtime.Serialization.DataContractAttribute> atribut na daný typ, serializátor ignoruje všechny členy v tomto typu, na který <xref:System.Runtime.Serialization.DataMemberAttribute> je atribut použit.  
   
-- <xref:System.Runtime.Serialization.DataContractSerializer.KnownTypes%2A> Vlastnost je podporována v typech neoznačené <xref:System.Runtime.Serialization.DataContractAttribute> atribut. To zahrnuje podporu <xref:System.Runtime.Serialization.KnownTypeAttribute> atribut na neoznačených typy.  
+- <xref:System.Runtime.Serialization.DataContractSerializer.KnownTypes%2A>Vlastnost je podporována v typech, které nejsou označeny <xref:System.Runtime.Serialization.DataContractAttribute> atributem. To zahrnuje podporu pro <xref:System.Runtime.Serialization.KnownTypeAttribute> atribut u neoznačených typů.  
   
-- Chcete-li "odhlásit" procesu serializace pro veřejné členy, vlastnosti nebo pole, použijte <xref:System.Runtime.Serialization.IgnoreDataMemberAttribute> atribut pro tohoto člena.  
+- Chcete-li odhlásit z procesu serializace pro veřejné členy, vlastnosti nebo pole, použijte <xref:System.Runtime.Serialization.IgnoreDataMemberAttribute> atribut pro daného člena.  
   
 ## <a name="inheritance"></a>Dědičnost  
- Zrušit označení typy (typy bez <xref:System.Runtime.Serialization.DataContractAttribute> atribut) může dědit z typů, které mají tento atribut; však není povolená opačně: typy s atributem nemůže dědit z zrušeno označení typy. Toto pravidlo je vynuceno především k zajištění zpětné kompatibility s kódem napsaným v dřívějších verzích rozhraní .NET Framework.  
+ Neoznačené typy (typy bez <xref:System.Runtime.Serialization.DataContractAttribute> atributu) můžou dědit z typů, které mají tento atribut, ale reverzní není povolený: typy s atributem nemůžou dědit z neoznačených typů. Toto pravidlo je vynutilo primárně, aby se zajistila zpětná kompatibilita s kódem napsaným v dřívějších verzích .NET Framework.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Runtime.Serialization.IgnoreDataMemberAttribute>
 - <xref:System.Runtime.Serialization.DataContractAttribute>
 - <xref:System.Runtime.Serialization.DataMemberAttribute>
 - <xref:System.Xml.Serialization.XmlSerializer>
-- [Typy podporované serializátorem kontraktu dat](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md)
+- [Typy podporované serializátorem kontraktu dat](types-supported-by-the-data-contract-serializer.md)

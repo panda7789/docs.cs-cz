@@ -2,12 +2,12 @@
 title: Hostování v aplikaci služby pro Windows
 ms.date: 03/30/2017
 ms.assetid: f4199998-27f3-4dd9-aee4-0a4addfa9f24
-ms.openlocfilehash: a07aade4619b644dadd1d5acdcb5252b305b94d0
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: ba49d123508ceb8da677d1e9c67721e4f86aa7c3
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75964494"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597329"
 ---
 # <a name="hosting-in-a-windows-service-application"></a>Hostování v aplikaci služby pro Windows
 Služby systému Windows (dříve označované jako služby systému Windows NT) poskytují model procesu, zvláště vhodný pro aplikace, které musí být spuštěny v dlouhodobém spustitelném souboru a nezobrazují žádnou formu uživatelského rozhraní. Doba platnosti procesu aplikace služby systému Windows je spravována správcem řízení služeb (SCM), který umožňuje spustit, zastavit a pozastavit aplikace služby systému Windows. Proces služby systému Windows můžete nakonfigurovat tak, aby se spouštěl automaticky při spuštění počítače a aby byl vhodný hostující prostředí pro aplikace "Always On". Další informace o aplikacích služby systému Windows najdete v tématu [aplikace služby systému Windows](https://go.microsoft.com/fwlink/?LinkId=89450).  
@@ -24,23 +24,23 @@ Služby systému Windows (dříve označované jako služby systému Windows NT)
   
 ### <a name="to-host-wcf-inside-of-a-windows-service-application"></a>Hostování technologie WCF v rámci aplikace služby systému Windows  
   
-1. Vytvořte aplikaci služby systému Windows. Můžete psát aplikace služby systému Windows ve spravovaném kódu pomocí tříd v oboru názvů <xref:System.ServiceProcess>. Tato aplikace musí zahrnovat jednu třídu, která dědí z <xref:System.ServiceProcess.ServiceBase>.  
+1. Vytvořte aplikaci služby systému Windows. Můžete psát aplikace služby systému Windows ve spravovaném kódu pomocí tříd v <xref:System.ServiceProcess> oboru názvů. Tato aplikace musí zahrnovat jednu třídu, která dědí z <xref:System.ServiceProcess.ServiceBase> .  
   
 2. Propojte životnost služeb WCF s životností aplikace služby systému Windows. Obvykle chcete, aby služby WCF hostované v aplikaci služby systému Windows byly aktivní při spuštění hostující služby, zastavily naslouchání zpráv při zastavení hostitelské služby a vypnutí hostitelského procesu, když služba WCF narazí na chybu. To lze provést následujícím způsobem:  
   
-    - Přepište <xref:System.ServiceProcess.ServiceBase.OnStart%28System.String%5B%5D%29> pro otevření jedné nebo více instancí <xref:System.ServiceModel.ServiceHost>. Jedna aplikace služby systému Windows může hostovat několik služeb WCF, které se spouštějí a zastavují jako skupina.  
+    - Přepsáním <xref:System.ServiceProcess.ServiceBase.OnStart%28System.String%5B%5D%29> otevřete jednu nebo více instancí <xref:System.ServiceModel.ServiceHost> . Jedna aplikace služby systému Windows může hostovat několik služeb WCF, které se spouštějí a zastavují jako skupina.  
   
-    - Přepsat <xref:System.ServiceProcess.ServiceBase.OnStop%2A> pro volání <xref:System.ServiceModel.Channels.CommunicationObject.Closed> na <xref:System.ServiceModel.ServiceHost> všechny spuštěné služby WCF, které byly spuštěny během <xref:System.ServiceProcess.ServiceBase.OnStart%28System.String%5B%5D%29>.  
+    - Přepište <xref:System.ServiceProcess.ServiceBase.OnStop%2A> pro volání <xref:System.ServiceModel.Channels.CommunicationObject.Closed> na <xref:System.ServiceModel.ServiceHost> všechny spuštěné služby WCF, které byly spuštěny během <xref:System.ServiceProcess.ServiceBase.OnStart%28System.String%5B%5D%29> .  
   
-    - Přihlaste se k odběru události <xref:System.ServiceModel.Channels.CommunicationObject.Faulted> <xref:System.ServiceModel.ServiceHost> a použijte třídu <xref:System.ServiceProcess.ServiceController> k ukončení aplikace služby systému Windows v případě chyby.  
+    - Přihlaste se k odběru <xref:System.ServiceModel.Channels.CommunicationObject.Faulted> události <xref:System.ServiceModel.ServiceHost> a použijte <xref:System.ServiceProcess.ServiceController> třídu k ukončení aplikace služby systému Windows v případě chyby.  
   
      Aplikace služby systému Windows, které hostují služby WCF, se nasazují a spravují stejným způsobem jako aplikace služby systému Windows, které nevyužívají WCF.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.ServiceProcess>
 - [Návod: Vytvoření aplikace služby systému Windows v návrháři součástí](https://go.microsoft.com/fwlink/?LinkId=94875)
-- [Postupy: Hostování služby WCF ve spravované službě Windows](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-a-managed-windows-service.md)
-- [Hostitel služby Windows](../../../../docs/framework/wcf/samples/windows-service-host.md)
+- [Postupy: Hostování služby WCF ve spravované službě Windows](how-to-host-a-wcf-service-in-a-managed-windows-service.md)
+- [Hostitel služby Windows](../samples/windows-service-host.md)
 - [Architektura programování aplikace služby](https://go.microsoft.com/fwlink/?LinkId=94876)
 - [Funkce hostování technologie Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677189(v=azure.10))

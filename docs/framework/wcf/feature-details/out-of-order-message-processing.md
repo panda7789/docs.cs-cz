@@ -2,18 +2,18 @@
 title: Zpracování zpráv mimo pořadí
 ms.date: 03/30/2017
 ms.assetid: 33fc62a5-5d59-461c-a37a-0e1b51ac763d
-ms.openlocfilehash: 4e1864b25a4dbe8192cd5c692c75645bebbb92d2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7930f26cf5957158a16d65085267cf1bab2e4504
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61701239"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84598720"
 ---
 # <a name="out-of-order-message-processing"></a>Zpracování zpráv mimo pořadí
-Služby pracovních postupů může záviset na zprávy odesílané v určitém pořadí. Služba pracovního postupu obsahuje jeden nebo více <xref:System.ServiceModel.Activities.Receive> aktivity a každý <xref:System.ServiceModel.Activities.Receive> aktivity očekává konkrétní zprávu. Zprávy od klientů může bez záruky doručení konkrétní přenos, zpoždění a proto doručeny v pořadí, které nemusí očekávají služby pracovního postupu. Implementace služby pracovního postupu, který nevyžaduje zprávy odeslané v konkrétní pořadí se obvykle provádí pomocí paralelní aktivity. Pro složitější aplikační protokol pracovní postup by se mohla stát velmi složité velmi rychle.  Funkce ve Windows Communication Foundation (WCF) zpracování zpráv mimo pořadí umožňuje vytvořit pracovní postup, bez složitosti vnořené paralelní aktivity. Zpracování zpráv mimo pořadí je podporována pouze na kanály, které podporují <xref:System.ServiceModel.Channels.ReceiveContext> jako jsou třeba vazby služby MSMQ WCF.  
+Služby pracovních postupů můžou záviset na zprávách odesílaných v určitém pořadí. Služba pracovního postupu obsahuje jednu nebo více <xref:System.ServiceModel.Activities.Receive> aktivit a každá <xref:System.ServiceModel.Activities.Receive> aktivita očekává určitou zprávu. Bez jakýchkoli konkrétních záruk přenosů za provozu můžou být zprávy odesílané klienty zpožděné a proto se doručí v pořadí, ve kterém služba pracovního postupu nemusí očekávat. Implementace služby pracovního postupu, která nevyžaduje odeslání zprávy v určitém pořadí, se obvykle provádí pomocí paralelní aktivity. Pro složitější aplikační protokol by byl pracovní postup velmi složitý velmi rychle.  Funkce zpracování zpráv mimo pořadí v Windows Communication Foundation (WCF) umožňuje vytvořit takový pracovní postup bez nutnosti složitosti vnořených paralelních aktivit. Zpracování zpráv mimo pořadí je podporováno pouze na kanálech, které podporují <xref:System.ServiceModel.Channels.ReceiveContext> například vazby služby MSMQ WCF.  
   
 ## <a name="enabling-out-of-order-message-processing"></a>Povolení zpracování zpráv mimo pořadí  
- Zpracování zpráv mimo pořadí se povoluje nastavením <xref:System.ServiceModel.Activities.WorkflowService.AllowBufferedReceive%2A> vlastnost `true` na workflowservice hodnotu vlastnosti. Následující příklad ukazuje, jak nastavit <xref:System.ServiceModel.Activities.WorkflowService.AllowBufferedReceive%2A> vlastností v kódu.  
+ Zpracování zpráv mimo pořadí je povoleno nastavením vlastnosti na hodnotu <xref:System.ServiceModel.Activities.WorkflowService.AllowBufferedReceive%2A> `true` implementace WorkflowService. Následující příklad ukazuje, jak nastavit <xref:System.ServiceModel.Activities.WorkflowService.AllowBufferedReceive%2A> vlastnost v kódu.  
   
 ```csharp  
 // Code: Opt-in to Buffered Receive processing...  
@@ -25,7 +25,7 @@ WorkflowService service = new WorkflowService
 };  
 ```  
   
- Můžete také použít `AllowBufferedReceive` atribut služby pracovních postupů v XAML, jak je znázorněno v následujícím příkladu.  
+ Můžete také použít `AllowBufferedReceive` atribut pro službu pracovního postupu v jazyce XAML, jak je znázorněno v následujícím příkladu.  
   
 ```xaml  
 // Xaml: Opt-in to Buffered Receive processing...  
@@ -34,8 +34,8 @@ WorkflowService service = new WorkflowService
 </Sequence>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.ServiceModel.Channels.ReceiveContext>
-- [Služby pracovních postupů](../../../../docs/framework/wcf/feature-details/workflow-services.md)
-- [Fronty a spolehlivé relace](../../../../docs/framework/wcf/feature-details/queues-and-reliable-sessions.md)
+- [Služby pracovních postupů](workflow-services.md)
+- [Fronty a spolehlivé relace](queues-and-reliable-sessions.md)

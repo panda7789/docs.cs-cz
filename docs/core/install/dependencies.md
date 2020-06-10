@@ -3,14 +3,14 @@ title: Závislosti .NET Core SDK a modulu runtime – .NET Core
 description: Podrobně popisuje operační systém a požadavky na architekturu procesoru pro instalaci .NET Core SDK a modulu runtime v systémech Windows, Linux a macOS.
 author: leecow
 ms.author: leecow
-ms.date: 04/30/2020
+ms.date: 06/01/2020
 zone_pivot_groups: operating-systems-set-one
-ms.openlocfilehash: 280aa1431686ff99257580bb024a84b1e57f85c0
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: 81f6ab436428d71f71d9fd0f560bd2b0512a519b
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82895479"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84590757"
 ---
 # <a name="net-core-dependencies-and-requirements"></a>Závislosti a požadavky .NET Core
 
@@ -28,7 +28,7 @@ Tento článek podrobně popisuje, které operační systémy a architektura pro
 Rozhraní .NET Core 3,1 podporuje následující verze systému Windows:
 
 > [!NOTE]
-> `+` Symbol představuje minimální verzi.
+> `+`Symbol představuje minimální verzi.
 
 | Operační systém                            | Verze                        | Architektury   |
 | ----------------------------- | ------------------------------ | --------------- |
@@ -46,7 +46,7 @@ Další informace o podporovaných operačních systémech .NET Core 3,1, distri
 Rozhraní .NET Core 3,0 podporuje následující verze systému Windows:
 
 > [!NOTE]
-> `+` Symbol představuje minimální verzi.
+> `+`Symbol představuje minimální verzi.
 
 | Operační systém                            | Verze                        | Architektury   |
 | ----------------------------- | ------------------------------ | --------------- |
@@ -57,14 +57,14 @@ Rozhraní .NET Core 3,0 podporuje následující verze systému Windows:
 
 Další informace o podporovaných operačních systémech .NET Core 3,0, distribucích a zásadách životního cyklu najdete v článku [podporované verze operačních systémů pro .NET core 3,0](https://github.com/dotnet/core/blob/master/release-notes/3.0/3.0-supported-os.md).
 
-# <a name="net-core-22"></a>[.NET Core 2.2](#tab/netcore22)
+# <a name="net-core-22"></a>[.NET Core 2,2](#tab/netcore22)
 
 *.NET Core 2,2 je aktuálně mimo podporu. Další informace najdete v tématu [zásady podpory pro .NET Core](https://dotnet.microsoft.com/platform/support/policy/dotnet-core).*
 
 Rozhraní .NET Core 2,2 podporuje následující verze systému Windows:
 
 > [!NOTE]
-> `+` Symbol představuje minimální verzi.
+> `+`Symbol představuje minimální verzi.
 
 | Operační systém                            | Verze                        | Architektury   |
 | ----------------------------- | ------------------------------ | --------------- |
@@ -80,7 +80,7 @@ Další informace o podporovaných operačních systémech .NET Core 2,2, distri
 Rozhraní .NET Core 2,1 podporuje následující verze systému Windows:
 
 > [!NOTE]
-> `+` Symbol představuje minimální verzi.
+> `+`Symbol představuje minimální verzi.
 
 | Operační systém                            | Verze                        | Architektury   |
 | ----------------------------- | ------------------------------ | --------------- |
@@ -120,7 +120,7 @@ Výše uvedené požadavky se vyžadují také v případě, že dojde k jedné 
 >
 > \-ani
 >
-> Knihovna *hostfxr. dll* byla nalezena, ale byla načtena z *jazyka C\\\<: path_to_app \\>hostfxr. dll* se nezdařila.
+> Knihovna *hostfxr. dll* byla nalezena, ale načtení z *jazyka C: \\ \<path_to_app> \\ hostfxr. dll* se nezdařilo.
 
 ::: zone-end
 
@@ -133,7 +133,7 @@ Výše uvedené požadavky se vyžadují také v případě, že dojde k jedné 
 .NET Core 3,1 se podporuje v následujících distribucích a verzích systému Linux:
 
 > [!NOTE]
-> `+` Symbol představuje minimální verzi.
+> `+`Symbol představuje minimální verzi.
 
 | Operační systém                             | Verze               | Architektury    |
 | ------------------------------ | --------------------- | ---------------- |
@@ -164,7 +164,7 @@ Další informace o tom, jak nainstalovat .NET Core 3,1 na ARM64 (kernel 4.14 +)
 .NET Core 3,0 se podporuje v následujících distribucích a verzích systému Linux:
 
 > [!NOTE]
-> `+` Symbol představuje minimální verzi.
+> `+`Symbol představuje minimální verzi.
 
 | Operační systém                             | Verze               | Architektury    |
 | ------------------------------ | --------------------- | ---------------- |
@@ -183,7 +183,7 @@ Další informace o podporovaných operačních systémech .NET Core 3,0, distri
 
 Další informace o tom, jak nainstalovat .NET Core 3,0 na ARM64, najdete v tématu [instalace .NET core 3,0 na Linux ARM64](https://gist.github.com/richlander/467813274cea8abc624553ee72b28213).
 
-# <a name="net-core-22"></a>[.NET Core 2.2](#tab/netcore22)
+# <a name="net-core-22"></a>[.NET Core 2,2](#tab/netcore22)
 
 *.NET Core 2,2 je aktuálně mimo podporu. Další informace najdete v tématu [zásady podpory pro .NET Core](https://dotnet.microsoft.com/platform/support/policy/dotnet-core).*
 
@@ -192,7 +192,7 @@ Další informace o tom, jak nainstalovat .NET Core 3,0 na ARM64, najdete v tém
 .NET Core 2,2 se podporuje v následujících distribucích a verzích systému Linux:
 
 > [!NOTE]
-> `+` Symbol představuje minimální verzi.
+> `+`Symbol představuje minimální verzi.
 
 | Operační systém                             |  Verze                |  Architektury   |
 | ------------------------------ | ----------------------- | ---------------- |
@@ -216,7 +216,7 @@ Další informace o podporovaných operačních systémech .NET Core 2,2, distri
 .NET Core 2,1 se podporuje v následujících distribucích a verzích systému Linux:
 
 > [!NOTE]
-> `+` Symbol představuje minimální verzi.
+> `+`Symbol představuje minimální verzi.
 
 | Operační systém                             |  Verze                |  Architektury   |
 | ------------------------------ | ----------------------- | ---------------- |
@@ -316,7 +316,7 @@ Pro aplikace .NET Core, které používají sestavení *System. Drawing. Common*
 Rozhraní .NET Core je podporované v následujících verzích macOS:
 
 > [!NOTE]
-> `+` Symbol představuje minimální verzi.
+> `+`Symbol představuje minimální verzi.
 
 | Verze .NET Core | macOS                 | Architektury |     |
 | ----------------- | --------------------- | --------------| --- |
