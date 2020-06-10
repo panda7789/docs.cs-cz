@@ -1,5 +1,6 @@
 ---
 title: Zrušení ve spravovaných vláknech
+description: Pochopení zrušení ve spravovaných vláknech Přečtěte si o tokenech zrušení při kooperativním rušení asynchronních nebo dlouhodobě spuštěných synchronních operací.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,12 +9,12 @@ dev_langs:
 helpviewer_keywords:
 - cancellation in .NET, overview
 ms.assetid: eea11fe5-d8b0-4314-bb5d-8a58166fb1c3
-ms.openlocfilehash: e56d0f71afdc9281271b7d15316a133e7c720bd0
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 9af4a64e50eff65023d5ed5bda868af2f8323a96
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84277879"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662833"
 ---
 # <a name="cancellation-in-managed-threads"></a>Zrušení ve spravovaných vláknech
 Počínaje .NET Framework 4 používá .NET Framework jednotný model pro spolupráci se zrušením asynchronních nebo dlouhodobě spuštěných synchronních operací. Tento model je založen na odlehčeném objektu nazývaném token zrušení. Objekt, který vyvolá jednu nebo více operací, které lze zrušit, například vytvořením nových vláken nebo úkolů, předá token každé operaci. Jednotlivé operace mohou v nástroji předat kopie tokenu jiným operacím. V některých případech může objekt, který vytvořil token, použít ho k vyžádání, že operace přestanou dělat, co dělají. Pouze žádající objekt může vystavit žádost o zrušení a každý naslouchací proces zodpovídá za všímáteí žádosti a na ni včas reagovat.  

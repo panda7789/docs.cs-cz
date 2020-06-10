@@ -1,65 +1,65 @@
 ---
-title: Jak porovnat řetězce - Průvodce C#
-description: Naučte se, jak porovnat a seřadit hodnoty řetězce, s nebo bez případu, s nebo bez pořadí specifické pro jazykovou verzi
+title: Porovnávání řetězců – Průvodce C#
+description: Přečtěte si, jak porovnat a seřadit řetězcové hodnoty s použitím nebo bez případu s použitím řazení konkrétní jazykové verze nebo bez něj.
 ms.date: 10/03/2018
 helpviewer_keywords:
 - strings [C#], comparison
 - comparing strings [C#]
-ms.openlocfilehash: dda3ec8cb6a0131867e6ea3bb0cf7199d86058ff
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 725441f5399f72b6457af461d51419c35077f4c2
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "73973324"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662911"
 ---
-# <a name="how-to-compare-strings-in-c"></a>Jak porovnat řetězce v C\#
+# <a name="how-to-compare-strings-in-c"></a>Jak porovnat řetězce v jazyce C\#
 
-Porovnáte řetězce odpovědět na jednu ze dvou otázek: "Jsou tyto dva řetězce stejné?" nebo "V jakém pořadí by měly být tyto řetězce umístěny při jejich třídění?"
+Porovnáte řetězce, abyste odpověděli na jednu ze dvou otázek: "jsou tyto dva řetězce stejné?" nebo "v jakém pořadí mají být tyto řetězce umístěny při jejich řazení?"
 
-Tyto dvě otázky jsou komplikovány faktory, které ovlivňují porovnání řetězců:
+Tyto dvě otázky jsou složité faktory, které ovlivňují porovnávání řetězců:
 
-- Můžete zvolit posuzované nebo jazykové srovnání.
-- Můžete si vybrat, jestli záleží na případu.
+- Můžete zvolit ordinální nebo jazykové porovnání.
+- Můžete si vybrat, jestli se jedná o případové věci.
 - Můžete zvolit porovnání specifické pro jazykovou verzi.
-- Jazykové porovnání jsou závislé na jazykové verzi a platformě.
+- Jazykové porovnání představují jazykovou verzi a závislé na platformě.
 
 [!INCLUDE[interactive-note](~/includes/csharp-interactive-note.md)]
 
-Při porovnávání řetězců, definujete pořadí mezi nimi. Porovnání se používají k řazení posloupnosti řetězců. Jakmile je sekvence ve známém pořadí, je snazší vyhledávat, a to jak pro software, tak pro člověka. Jiné porovnání může zkontrolovat, zda řetězce jsou stejné. Tyto kontroly stejnosti jsou podobné rovnosti, ale některé rozdíly, jako jsou rozdíly v případech, mohou být ignorovány.
+Při porovnávání řetězců definujete mezi nimi objednávku. K řazení posloupnosti řetězců slouží porovnávání. Jakmile je sekvence ve známém pořadí, je snazší hledat jak pro software, tak pro lidi. Jiné porovnání mohou kontrolovat, zda jsou řetězce stejné. Tyto sameness kontroly jsou podobné rovnosti, ale některé rozdíly, například rozdíly v různých velikostech, mohou být ignorovány.
 
-## <a name="default-ordinal-comparisons"></a>Výchozí číselné porovnání
+## <a name="default-ordinal-comparisons"></a>Výchozí ordinální porovnávání
 
-Ve výchozím nastavení nejběžnější operace:
+Standardně nejběžnější operace:
 
 - <xref:System.String.CompareTo%2A?displayProperty=nameWithType>
 - <xref:System.String.Equals%2A?displayProperty=nameWithType>
-- <xref:System.String.op_Equality%2A?displayProperty=nameWithType>a <xref:System.String.op_Inequality%2A?displayProperty=nameWithType>, to [znamená, `==` `!=`že provozovatelé rovnosti a ](../language-reference/operators/equality-operators.md#string-equality), resp.
+- <xref:System.String.op_Equality%2A?displayProperty=nameWithType>a, <xref:System.String.op_Inequality%2A?displayProperty=nameWithType> to znamená [operátory rovnosti `==` a `!=` ](../language-reference/operators/equality-operators.md#string-equality)v uvedeném pořadí
 
-proveďte řadové porovnání rozlišující malá a velká písmena a v případě potřeby použijte aktuální jazykovou verzi. Následující příklad ukazuje, že:
+provede porovnávání v řádu rozlišující velká a malá písmena a v případě potřeby použije aktuální jazykovou verzi. Následující příklad ukazuje, že:
 
-[!code-csharp-interactive[Comparing strings using an ordinal comparison](../../../samples/snippets/csharp/how-to/strings/CompareStrings.cs#1)]
+:::code language="csharp" interactive="try-dotnet-method" source="../../../samples/snippets/csharp/how-to/strings/CompareStrings.cs" id="Snippet1":::
 
-Výchozí řadové porovnání nebere v úvahu jazyková pravidla při porovnávání řetězců. Porovnává binární hodnotu každého <xref:System.Char> objektu ve dvou řetězcích. V důsledku toho je výchozí řadové porovnání také rozlišování velkých a malých písmen.
+Výchozí ordinální porovnávání při porovnávání řetězců nebere v úvahu jazyková pravidla. Porovnává binární hodnotu každého <xref:System.Char> objektu ve dvou řetězcích. V důsledku toho výchozí ordinální porovnávání rozlišuje i velká a malá písmena.
 
-Všimněte si, že <xref:System.String.Equals%2A?displayProperty=nameWithType> test `==` rovnosti s a a `!=` <xref:System.String.CompareTo%2A?displayProperty=nameWithType> operátory se liší od porovnání řetězců pomocí metody a. <xref:System.String.Compare(System.String,System.String)?displayProperty=nameWithType)> Zatímco testy rovnosti provést případ rozlišování ordinální porovnání, metody porovnání provést případ rozlišování, jazyková verze citlivé porovnání pomocí aktuální jazykové verze. Vzhledem k tomu, že výchozí metody porovnání často provádět různé typy porovnání, doporučujeme vždy provést záměr kódu jasné voláním přetížení, které explicitně určuje typ porovnání provést.
+Všimněte si, že test rovnosti s <xref:System.String.Equals%2A?displayProperty=nameWithType> `==` operátory a a a se `!=` liší od porovnání řetězců pomocí <xref:System.String.CompareTo%2A?displayProperty=nameWithType> <xref:System.String.Compare(System.String,System.String)?displayProperty=nameWithType)> metod a. I když testy rovnosti provádějí ordinální porovnávání rozlišující velká a malá písmena, metody porovnání provádějí porovnání zohledňující velká a malá písmena s použitím aktuální jazykové verze. Vzhledem k tomu, že výchozí metody porovnání často provádějí různé typy porovnávání, doporučujeme, abyste vždy vymazali záměr kódu tím, že zavoláte přetížení, které explicitně určuje typ porovnání, které má být provedeno.
 
-## <a name="case-insensitive-ordinal-comparisons"></a>Ordinální porovnání bez rozlišování velkých a malých písmen
+## <a name="case-insensitive-ordinal-comparisons"></a>Ordinální porovnávání bez rozlišení velkých a malých písmen
 
-Tato <xref:System.String.Equals(System.String,System.StringComparison)?displayProperty=nameWithType> metoda umožňuje zadat <xref:System.StringComparison> hodnotu<xref:System.StringComparison.OrdinalIgnoreCase?displayProperty=nameWithType>
-pro poslané číslovky bez rozlišování velkých a malých písmen. Existuje také statická <xref:System.String.Compare(System.String,System.String,System.StringComparison)?displayProperty=nameWithType> metoda, která provádí porovnání ordinal bez rozlišování velkých a malých písmen, pokud zadáte hodnotu <xref:System.StringComparison.OrdinalIgnoreCase?displayProperty=nameWithType> argumentu. <xref:System.StringComparison> Ty jsou uvedeny v následujícím kódu:
+<xref:System.String.Equals(System.String,System.StringComparison)?displayProperty=nameWithType>Metoda umožňuje zadat <xref:System.StringComparison> hodnotu<xref:System.StringComparison.OrdinalIgnoreCase?displayProperty=nameWithType>
+pro ordinální porovnávání bez rozlišování velkých a malých písmen. Existuje také statická <xref:System.String.Compare(System.String,System.String,System.StringComparison)?displayProperty=nameWithType> metoda, která provede porovnávání bez rozlišení velkých a malých písmen, pokud zadáte hodnotu <xref:System.StringComparison.OrdinalIgnoreCase?displayProperty=nameWithType> <xref:System.StringComparison> argumentu. Jsou uvedeny v následujícím kódu:
 
-[!code-csharp-interactive[Comparing strings ignoring case](../../../samples/snippets/csharp/how-to/strings/CompareStrings.cs#2)]
+:::code language="csharp" interactive="try-dotnet-method" source="../../../samples/snippets/csharp/how-to/strings/CompareStrings.cs" id="Snippet2":::
 
-Při provádění rozlišování velkých a malých písmen řadové porovnání, tyto metody používají konvencí skříně [invariantní jazykové verze](xref:System.Globalization.CultureInfo.InvariantCulture).
+Při porovnávání podle pořadového čísla bez rozlišení velkých a malých písmen tyto metody používají konvence pro používání velkých a malých písmen v [neutrální jazykové verzi](xref:System.Globalization.CultureInfo.InvariantCulture).
 
-## <a name="linguistic-comparisons"></a>Jazyková srovnání
+## <a name="linguistic-comparisons"></a>Jazyková porovnání
 
-Řetězce lze také objednat pomocí jazykových pravidel pro aktuální jazykovou verzi.
-To se někdy označuje jako "pořadí řazení slov". Při provádění jazykového porovnání mohou mít některé nealfanumerické znaky unicode přiřazeny speciální váhy. Například pomlčka "-" může mít velmi malou váhu přiřazenou tak, aby se vedle sebe vedle sebe zobrazovaly "co-op" a "coop" v pořadí řazení. Kromě toho některé znaky Unicode může být <xref:System.Char> ekvivalentní posloupnost instancí. Následující příklad používá frázi "Tančí na ulici". v němčině s "ss" (U+0073 U+0073) v jednom řetězci a "ß" (U+00DF) v jiném. Lingvisticky (v systému Windows), "ss" se rovná německé Esszet: 'ß' znak v obou "en-US" a "de-DE" kultury.
+Řetězce lze také seřadit pomocí lingvistických pravidel pro aktuální jazykovou verzi.
+Někdy se označuje jako "pořadí řazení slov". Pokud provedete jazykové porovnání, některé nealfanumerické znaky Unicode mohou mít přiřazeny zvláštní váhy. Například spojovník "-" může mít přiřazenu velmi malou váhu, aby se "Co-op" a "Coop" zobrazovaly vedle sebe v pořadí řazení. Kromě toho může být několik znaků Unicode ekvivalentní sekvenci <xref:System.Char> instancí. Následující příklad používá frázi "ty se roztancoval na ulici". v němčině s "SS" (U + 0073 U + 0073) v jednom řetězci a "ß" (U + 00DF) v jiném. V jazyku (ve Windows) se "SS" rovná Esszet německému znaku: "ß" v jazykových verzích "en-US" i "de-DE".
 
-[!code-csharp-interactive[Comparing strings using linguistic rules](../../../samples/snippets/csharp/how-to/strings/CompareStrings.cs#3)]
+:::code language="csharp" interactive="try-dotnet-method" source="../../../samples/snippets/csharp/how-to/strings/CompareStrings.cs" id="Snippet3":::
 
-Tato ukázka ukazuje povahu jazykového porovnání závislé na operačním systému. Hostitelem interaktivního okna je hostitel Linuxu. Jazykové a posvěcené porovnání dosáhnout stejných výsledků. Pokud jste spustili stejnou ukázku na hostiteli systému Windows, zobrazí se následující výstup:
+Tato ukázka demonstruje charakter jazykových porovnávání závislých na operačním systému. Hostitelem pro interaktivní okno je hostitel Linux. Jazykové a ordinální porovnávání vytváří stejné výsledky. Pokud jste spustili stejnou ukázku na hostiteli Windows, zobrazí se následující výstup:
 
 ```console
 <coop> is less than <co-op> using invariant culture
@@ -70,18 +70,18 @@ Tato ukázka ukazuje povahu jazykového porovnání závislé na operačním sys
 <co-op> is less than <cop> using ordinal comparison
 ```
 
-V systému Windows se pořadí řazení "cop", "coop" a "co-op" změní, když změníte z jazykového porovnání na řadové porovnání. Dvě německé věty také porovnávají odlišně pomocí různých typů porovnání.
+V systému Windows se pořadí řazení "COP", "Coop" a "Co-op" mění při změně z lingvistového porovnání na ordinální porovnávání. Dvě německé věty také porovnávají odlišně pomocí různých typů porovnání.
 
-## <a name="comparisons-using-specific-cultures"></a>Porovnání pomocí specifických kultur
+## <a name="comparisons-using-specific-cultures"></a>Porovnání pomocí konkrétní jazykové verze
 
-Tato ukázka ukládá <xref:System.Globalization.CultureInfo> objekty pro jazykové verze en US a de-DE.
-Porovnání se provádí pomocí <xref:System.Globalization.CultureInfo> objektu k zajištění porovnání specifické pro jazykovou verzi.
+Tento příklad ukládá <xref:System.Globalization.CultureInfo> objekty pro kultury en-US a de-de.
+Porovnání jsou prováděna pomocí <xref:System.Globalization.CultureInfo> objektu pro zajištění porovnání specifického pro jazykovou verzi.
 
-Použitá jazyková verze ovlivňuje jazykové porovnání. Následující příklad ukazuje výsledky porovnání dvou německých vět pomocí jazykové verze "en US" a jazykové verze "de-DE":
+Použitá jazyková verze má vliv na jazyková porovnání. Následující příklad ukazuje výsledky porovnání dvou německých vět pomocí jazykové verze "en-US" a jazykové verze de-DE ":
 
-[!code-csharp-interactive[Comparing strings across cultures](../../../samples/snippets/csharp/how-to/strings/CompareStrings.cs#4)]
+:::code language="csharp" interactive="try-dotnet-method" source="../../../samples/snippets/csharp/how-to/strings/CompareStrings.cs" id="Snippet4":::
 
-Porovnání zkoumaná jazykovou verzi se obvykle používají k porovnání a řazení řetězců vstup uživatelů s jinými řetězci vstup uživatelů. Znaky a konvence řazení těchto řetězců se mohou lišit v závislosti na národním prostředí počítače uživatele. Dokonce i řetězce, které obsahují identické znaky mohou řadit odlišně v závislosti na jazykové verzi aktuálního vlákna. Kromě toho zkuste tento ukázkový kód místně na počítači se systémem Windows a budete mít následující výsledky:
+Porovnávání závislé na jazykové verzi se obvykle používá k porovnání a řazení vstupu řetězců uživateli s jinými řetězci, které uživatelé používají. Tyto znaky a konvence řazení těchto řetězců se mohou lišit v závislosti na národním prostředí počítače uživatele. Dokonce i řetězce, které obsahují identické znaky, mohou být tříděny různě v závislosti na jazykové verzi aktuálního vlákna. Kromě toho vyzkoušejte tento ukázkový kód místně na počítači s Windows a zobrazí se vám následující výsledky:
 
 ```console
 <coop> is less than <co-op> using en-US culture
@@ -92,44 +92,44 @@ Porovnání zkoumaná jazykovou verzi se obvykle používají k porovnání a ř
 <co-op> is less than <cop> using ordinal comparison
 ```
 
-Jazykové porovnání jsou závislé na aktuální jazykové verzi a jsou závislé na os. Musíte vzít v úvahu, že při práci s porovnání řetězců.
+Jazykové porovnání jsou závislé na aktuální jazykové verzi a jsou závislé na operačním systému. Musíte vzít v úvahu při práci s porovnáváním řetězců.
 
 ## <a name="linguistic-sorting-and-searching-strings-in-arrays"></a>Jazykové řazení a hledání řetězců v polích
 
-Následující příklady ukazují, jak řadit a vyhledávat řetězce v poli pomocí jazykového porovnání závislého na aktuální jazykové verzi. Použijete statické <xref:System.Array> metody, <xref:System.StringComparer?displayProperty=nameWithType> které trvat parametr.
+Následující příklady ukazují, jak řadit a hledat řetězce v poli pomocí jazykového porovnání závislého na aktuální jazykové verzi. Použijete statické <xref:System.Array> metody, které přijímají <xref:System.StringComparer?displayProperty=nameWithType> parametr.
 
 Tento příklad ukazuje, jak seřadit pole řetězců pomocí aktuální jazykové verze:
 
-[!code-csharp-interactive[Sorting an array of strings](../../../samples/snippets/csharp/how-to/strings/CompareStrings.cs#5)]
+:::code language="csharp" interactive="try-dotnet-method" source="../../../samples/snippets/csharp/how-to/strings/CompareStrings.cs" id="Snippet5":::
 
-Po seřazení pole můžete vyhledávat položky pomocí binárního vyhledávání. Binární hledání začíná uprostřed kolekce k určení, která polovina kolekce bude obsahovat požadovaný řetězec. Každé následné porovnání rozdělí zbývající část kolekce na polovinu.  Pole je seřazeno pomocí . <xref:System.StringComparer.CurrentCulture?displayProperty=nameWithType> Místní funkce `ShowWhere` zobrazuje informace o tom, kde byl řetězec nalezen. Pokud řetězec nebyl nalezen, vrácená hodnota označuje, kde by byl, kdyby byl nalezen.
+Po seřazení pole můžete vyhledat položky pomocí binárního vyhledávání. Binární vyhledávání začíná uprostřed kolekce, aby bylo možné zjistit, která polovina kolekce by obsahovala hledaný řetězec. Každé následné porovnání rozděluje zbývající část kolekce na polovinu.  Pole je řazeno pomocí <xref:System.StringComparer.CurrentCulture?displayProperty=nameWithType> . Místní funkce `ShowWhere` zobrazí informace o tom, kde byl řetězec nalezen. Pokud řetězec nebyl nalezen, vrácená hodnota označuje, kde by byla nalezena.
 
-[!code-csharp-interactive[Searching in a sorted array](../../../samples/snippets/csharp/how-to/strings/CompareStrings.cs#6)]
+:::code language="csharp" interactive="try-dotnet-method" source="../../../samples/snippets/csharp/how-to/strings/CompareStrings.cs" id="Snippet6":::
 
-## <a name="ordinal-sorting-and-searching-in-collections"></a>Řadové třídění a vyhledávání ve sbírkách
+## <a name="ordinal-sorting-and-searching-in-collections"></a>Ordinální řazení a hledání v kolekcích
 
-Následující kód používá <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> třídu kolekce k ukládání řetězců. Řetězce jsou seřazeny <xref:System.Collections.Generic.List%601.Sort%2A?displayProperty=nameWithType> pomocí metody. Tato metoda potřebuje delegáta, který porovnává a objednávky dva řetězce. Metoda <xref:System.String.CompareTo%2A?displayProperty=nameWithType> poskytuje tuto funkci porovnání. Spusťte ukázku a dodržujte pořadí. Tato operace řazení používá řadové řazení rozlišující malá a velká písmena. Statické <xref:System.String.Compare%2A?displayProperty=nameWithType> metody byste použili k určení různých pravidel porovnání.
+Následující kód používá <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> třídu kolekce k ukládání řetězců. Řetězce jsou řazeny pomocí <xref:System.Collections.Generic.List%601.Sort%2A?displayProperty=nameWithType> metody. Tato metoda vyžaduje delegáta, který porovnává a řadí dva řetězce. <xref:System.String.CompareTo%2A?displayProperty=nameWithType>Metoda poskytuje funkci porovnání. Spusťte ukázku a sledujte objednávku. Tato operace řazení používá řazení s rozlišujícími písmeny. Použijte statické <xref:System.String.Compare%2A?displayProperty=nameWithType> metody k určení různých pravidel porovnání.
 
-[!code-csharp-interactive[Sorting a list of strings](../../../samples/snippets/csharp/how-to/strings/CompareStrings.cs#7)]
+:::code language="csharp" interactive="try-dotnet-method" source="../../../samples/snippets/csharp/how-to/strings/CompareStrings.cs" id="Snippet7":::
 
-Po seřazení lze seznam řetězců prohledávat pomocí binárního vyhledávání. Následující ukázka ukazuje, jak prohledávat seřazené uvedené pomocí stejné funkce porovnání. Místní funkce `ShowWhere` ukazuje, kde je nebo by byl hledaný text:
+Po seřazení lze seznam řetězců vyhledat pomocí binárního vyhledávání. Následující příklad ukazuje, jak vyhledat seřazený seznam pomocí stejné funkce porovnání. Místní funkce `ShowWhere` zobrazuje, kde je požadovaný text nebo by byl:
 
-[!code-csharp-interactive[csProgGuideStrings#11](../../../samples/snippets/csharp/how-to/strings/CompareStrings.cs#8)]
+:::code language="csharp" interactive="try-dotnet-method" source="../../../samples/snippets/csharp/how-to/strings/CompareStrings.cs" id="Snippet8":::
 
-Při řazení a vyhledávání vždy používejte stejný typ porovnání. Použití různých typů porovnání pro řazení a vyhledávání přináší neočekávané výsledky.
+Vždy nezapomeňte použít stejný typ porovnání pro řazení a vyhledávání. Použití různých typů porovnání pro řazení a vyhledávání vytváří neočekávané výsledky.
 
-Kolekce <xref:System.Collections.Hashtable?displayProperty=nameWithType>třídy, jako <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> je například , <xref:System.StringComparer?displayProperty=nameWithType> <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType>a mají konstruktory, `string`které berou parametr, když je typ prvků nebo klíčů . Obecně byste měli použít tyto konstruktory, kdykoli <xref:System.StringComparer.Ordinal?displayProperty=nameWithType> <xref:System.StringComparer.OrdinalIgnoreCase?displayProperty=nameWithType>je to možné, a určit buď nebo .
+Třídy kolekce, jako například <xref:System.Collections.Hashtable?displayProperty=nameWithType> , <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType> a <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> mají konstruktory, které přijímají <xref:System.StringComparer?displayProperty=nameWithType> parametr, pokud je typ elementů nebo klíčů `string` . Obecně byste měli používat tyto konstruktory, kdykoli je to možné, a zadat buď <xref:System.StringComparer.Ordinal?displayProperty=nameWithType> nebo <xref:System.StringComparer.OrdinalIgnoreCase?displayProperty=nameWithType> .
 
 ## <a name="reference-equality-and-string-interning"></a>Referenční rovnost a interning řetězců
 
-Žádný ze vzorků <xref:System.Object.ReferenceEquals%2A>nepoužil . Tato metoda určuje, pokud dva řetězce jsou stejný objekt. To může vést k nekonzistentní výsledky v porovnání řetězců. Následující příklad ukazuje *funkci interning řetězce* jazyka C#. Když program deklaruje dvě nebo více identických proměnných řetězce, kompilátor je všechny uloží do stejného umístění. Voláním <xref:System.Object.ReferenceEquals%2A> metody uvidíte, že dva řetězce skutečně odkazují na stejný objekt v paměti. Použijte <xref:System.String.Copy%2A?displayProperty=nameWithType> metodu, aby se zabránilo interning. Po nastolování kopie mají dva řetězce různá umístění úložiště, i když mají stejnou hodnotu. Spusťte následující ukázku, `a` `b` která ukazuje, že řetězce a jsou *internovány,* což znamená, že sdílejí stejné úložiště. Struny `a` a `c` nejsou.
+Žádná z ukázek se nepoužila <xref:System.Object.ReferenceEquals%2A> . Tato metoda určuje, zda jsou dva řetězce stejného objektu. To může vést k nekonzistentním výsledkům při porovnávání řetězců. Následující příklad ukazuje funkci pro *učně řetězců* jazyka C#. Když program deklaruje dvě nebo více identických řetězcových proměnných, kompilátor je uloží do stejného umístění. Voláním <xref:System.Object.ReferenceEquals%2A> metody můžete vidět, že dva řetězce ve skutečnosti odkazují na stejný objekt v paměti. Použijte <xref:System.String.Copy%2A?displayProperty=nameWithType> metodu pro zamezení interning. Po provedení kopie mají tyto dva řetězce různá umístění úložiště, a to i v případě, že mají stejnou hodnotu. Spuštěním následujícího příkladu zobrazíte tyto řetězce `a` a `b` jsou *interně* , což znamená, že sdílejí stejné úložiště. Řetězce `a` a `c` nejsou.
 
-[!code-csharp-interactive[Demonstrating string interning](../../../samples/snippets/csharp/how-to/strings/CompareStrings.cs#9)]
+:::code language="csharp" interactive="try-dotnet-method" source="../../../samples/snippets/csharp/how-to/strings/CompareStrings.cs" id="Snippet9":::
 
 > [!NOTE]
-> Při testování rovnosti řetězců, měli byste použít metody, které explicitně určit, jaký druh porovnání máte v úmyslu provést. Váš kód je mnohem více udržovatelný a čitelný. Použijte přetížení metody <xref:System.String?displayProperty=nameWithType> a <xref:System.Array?displayProperty=nameWithType> třídy, které <xref:System.StringComparison> mají parametr výčtu. Můžete zadat, jaký typ porovnání provést. Vyhněte `==` `!=` se použití a operátory při testování rovnosti. Metody <xref:System.String.CompareTo%2A?displayProperty=nameWithType> instance vždy provádět řadové porovnání rozlišování velkých a malých písmen. Jsou primárně vhodné pro řazení řetězců abecedně.
+> Při testování rovnosti řetězců byste měli použít metody, které explicitně určují, jaký druh porovnání máte v úmyslu provést. Váš kód je mnohem udržovatelnější a čitelný. Použijte přetížení metod <xref:System.String?displayProperty=nameWithType> <xref:System.Array?displayProperty=nameWithType> třídy a, které přijímají <xref:System.StringComparison> parametr výčtu. Určíte, který typ porovnání se má provést. Nepoužívejte `==` operátory a `!=` při testování rovnosti. <xref:System.String.CompareTo%2A?displayProperty=nameWithType>Metody instance vždy provádějí porovnání rozlišující velká a malá písmena. Jsou primárně vhodné pro řazení řetězců abecedně.
 
-Můžete intern řetězec nebo načíst odkaz na existující internovaný řetězec voláním <xref:System.String.Intern%2A?displayProperty=nameWithType> metody. Chcete-li zjistit, zda je <xref:System.String.IsInterned%2A?displayProperty=nameWithType> řetězec internován, zavolejte metodu.
+Můžete interně vytvořit řetězec nebo načíst odkaz na existující interně volaný řetězec voláním <xref:System.String.Intern%2A?displayProperty=nameWithType> metody. Chcete-li zjistit, zda je řetězec interně, zavolejte <xref:System.String.IsInterned%2A?displayProperty=nameWithType> metodu.
 
 ## <a name="see-also"></a>Viz také
 

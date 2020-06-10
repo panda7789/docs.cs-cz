@@ -1,5 +1,6 @@
 ---
 title: Úvod do PLINQ
+description: Naučte se, jak paralelně provádět dotazy pomocí PLINQ v .NET. PLINQ představuje dotaz integrovaný do paralelního jazyka (LINQ).
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,12 +9,12 @@ dev_langs:
 helpviewer_keywords:
 - PLINQ queries, introduction to
 ms.assetid: eaa720d8-8999-4eb7-8df5-3c19ca61cad0
-ms.openlocfilehash: e50b2bf15d9a627f70ff01616bf2c72c70d7ff33
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 9dbc4fde3f72d01aee91978ed5cb0baf0895de26
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290678"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662456"
 ---
 # <a name="introduction-to-plinq"></a>Úvod do PLINQ
 
@@ -35,7 +36,7 @@ Zbývající část tohoto článku poskytuje přehled hlavních tříd PLINQ a 
 
 ## <a name="the-parallelenumerable-class"></a>Třída ParallelEnumerable
 
-<xref:System.Linq.ParallelEnumerable?displayProperty=nameWithType>Třída zpřístupňuje téměř všechny funkce PLINQ. A zbytek <xref:System.Linq?displayProperty=nameWithType> typů oboru názvů je zkompilován do sestavení System. Core. dll. Výchozí projekty C# a Visual Basic v aplikaci Visual Studio odkazují na sestavení a importují obor názvů.
+<xref:System.Linq.ParallelEnumerable?displayProperty=nameWithType>Třída zpřístupňuje téměř všechny funkce PLINQ. A zbytek <xref:System.Linq?displayProperty=nameWithType> typů oboru názvů je zkompilován do sestavení System.Core.dll. Výchozí projekty C# a Visual Basic v aplikaci Visual Studio odkazují na sestavení a importují obor názvů.
 
 <xref:System.Linq.ParallelEnumerable>zahrnuje implementace všech standardních operátorů dotazů, které LINQ to Objects podporuje, i když se o ně nepokusí paralelizovat. Pokud nejste obeznámeni s LINQ, přečtěte si téma [Úvod do LINQ (C#)](../../csharp/programming-guide/concepts/linq/index.md) a [Úvod do LINQ (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/introduction-to-linq.md).
 

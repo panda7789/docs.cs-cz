@@ -1,5 +1,6 @@
 ---
 title: Volba mezi třídou a strukturou
+description: Naučte se, jak rozhodnout, zda navrhnout typ jako třídu nebo navrhnout typ jako strukturu. Pochopení způsobu, jakým se v rozhraní .NET liší typy odkazů a typy hodnot
 ms.date: 10/22/2008
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -12,12 +13,12 @@ helpviewer_keywords:
 - classes [.NET Framework], vs. structures
 - type design guidelines, classes
 ms.assetid: f8b8ec9b-0ba7-4dea-aadf-a93395cd804f
-ms.openlocfilehash: 4b4a619214fe6ba49f21a88cd132dcb3f2704608
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 9d757e77292c1226fbe2328cce082033ae8f7003
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84280358"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662599"
 ---
 # <a name="choosing-between-class-and-struct"></a>Volba mezi třídou a strukturou
 Jedno ze základních rozhodnutí o návrhu každé plošky návrháře architektury je bez ohledu na to, zda je možné navrhnout typ jako třídu (odkazový typ) nebo jako strukturu (typ hodnoty). Dobrým porozumění rozdílům v chování typů odkazu a hodnot je rozhodující při této volbě.

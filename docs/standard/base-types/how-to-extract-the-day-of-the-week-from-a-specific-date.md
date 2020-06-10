@@ -1,5 +1,6 @@
 ---
 title: 'Postupy: Extrahování dne v týdnu z konkrétního data'
+description: Zjistěte, jak určit pořadové číslo dne v týdnu pro určité datum v .NET. Přečtěte si, jak zobrazit lokalizovaný název dne v týdnu pro konkrétní datum.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -22,12 +23,12 @@ helpviewer_keywords:
 - DateTimeOffset.ToString method
 - full weekday names
 ms.assetid: 1c9bef76-5634-46cf-b91c-9b9eb72091d7
-ms.openlocfilehash: 128ff4887601431f75981f13b51a11469e65d65c
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: fa0eb6c36b88594543d08680af104b5408c295f9
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290471"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662612"
 ---
 # <a name="how-to-extract-the-day-of-the-week-from-a-specific-date"></a>Postupy: Extrahování dne v týdnu z konkrétního data
 .NET Framework usnadňuje určení pořadového čísla dne v týdnu pro konkrétní datum a zobrazení lokalizovaného názvu dne v týdnu pro konkrétní datum. Hodnota výčtu, která určuje den v týdnu odpovídající konkrétnímu datu, je k dispozici z <xref:System.DateTime.DayOfWeek%2A> <xref:System.DateTimeOffset.DayOfWeek%2A> vlastnosti nebo. Naproti tomu, že načtení názvu dne v týdnu je operace formátování, kterou lze provést voláním metody formátování, jako je například metoda hodnoty data a času `ToString` nebo <xref:System.String.Format%2A?displayProperty=nameWithType> metoda. V tomto tématu se dozvíte, jak provést tyto operace formátování.  

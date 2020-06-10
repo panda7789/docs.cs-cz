@@ -1,5 +1,6 @@
 ---
 title: Možnosti regulárních výrazů
+description: Naučte se používat možnosti regulárních výrazů v .NET, jako je například porovnávání bez rozlišení velkých a malých písmen, víceřádkový režim a režim zprava doleva.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -12,18 +13,18 @@ helpviewer_keywords:
 - inline option constructs
 - options parameter
 ms.assetid: c82dc689-7e82-4767-a18d-cd24ce5f05e9
-ms.openlocfilehash: 8c742c855234bfd9653bb57036c41e7ccce66295
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 268e05c2212539b030ccc3c7195f618bb3afa707
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289288"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662872"
 ---
 # <a name="regular-expression-options"></a>Možnosti regulárních výrazů
 
 Ve výchozím nastavení porovnání vstupního řetězce s jakýmkoli literálovým znakem ve vzoru regulárního výrazu rozlišuje velká a malá písmena, prázdné znaky ve vzoru regulárního výrazu jsou interpretovány jako literální prázdné znaky a zachytávající skupiny v regulárním výrazu jsou pojmenovány implicitně a také explicitně. Můžete upravit tyto a několik dalších aspektů výchozího chování regulárních výrazů zadáním možností regulárních výrazů. Tyto možnosti, které jsou uvedeny v následující tabulce, mohou být zahrnuty vložené jako součást vzoru regulárního výrazu, nebo mohou být zadány do <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> konstruktoru třídy nebo statické metody porovnávání vzorů jako <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType> hodnota výčtu.
 
-|Člen RegexOptions|Vložený znak|Účinek|
+|Člen RegexOptions|Vložený znak|Efekt|
 |-------------------------|----------------------|------------|
 |<xref:System.Text.RegularExpressions.RegexOptions.None>|Není k dispozici|Použijte výchozí chování. Další informace najdete v tématu [výchozí možnosti](#default-options).|
 |<xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase>|`i`|Použije porovnávání, které nerozlišuje velká a malá písmena. Další informace naleznete v tématu [porovnávání bez rozlišování velkých a](#case-insensitive-matching)malých písmen.|

@@ -1,5 +1,6 @@
 ---
 title: Seskupovací konstrukce v regulárních výrazech
+description: Naučte se používat seskupovací konstrukce v .NET. Seskupovací konstrukce vymezují dílčí výrazy regulárního výrazu a zachytávají podřetězce vstupního řetězce.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -13,12 +14,12 @@ helpviewer_keywords:
 - constructs, grouping
 - grouping constructs
 ms.assetid: 0fc18634-f590-4062-8d5c-f0b71abe405b
-ms.openlocfilehash: 5be98a5a213592b169bee430d84c4fc3a1d5fcef
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: d737e5758ee7a940aeea3ded9a7937d687393116
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290523"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662625"
 ---
 # <a name="grouping-constructs-in-regular-expressions"></a>Seskupovací konstrukce v regulárních výrazech
 Seskupovací konstrukce vymezují dílčí výrazy regulárního výrazu a zachycují podřetězce vstupního řetězce. Konstrukce seskupení lze použít k následujícím akcím:  

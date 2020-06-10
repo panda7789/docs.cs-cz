@@ -1,5 +1,6 @@
 ---
 title: Šifrování dat
+description: Naučte se šifrovat data v .NET. Můžete použít symetrické šifrování u datových proudů nebo můžete použít asymetrické šifrování na malý počet bajtů.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -11,12 +12,12 @@ helpviewer_keywords:
 - cryptography [.NET Framework], asymmetric
 - asymmetric encryption
 ms.assetid: 7ecce51f-db5f-4bd4-9321-cceb6fcb2a77
-ms.openlocfilehash: 3230836b93ea191e5de27717a918038f2f8dead6
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 6cebdecd461f28f8228ebb8440dbff218dc211db
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288352"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662521"
 ---
 # <a name="encrypting-data"></a>Šifrování dat
 Symetrické šifrování a asymetrické šifrování se provádí pomocí různých procesů. Symetrické šifrování se provádí na datových proudech a je proto užitečné pro šifrování velkých objemů dat. Asymetrické šifrování se provádí na malém počtu bajtů a je proto užitečné jenom pro malé objemy dat.  

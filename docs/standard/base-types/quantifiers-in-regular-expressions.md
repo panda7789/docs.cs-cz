@@ -1,5 +1,6 @@
 ---
 title: Kvantifikátory v regulárních výrazech
+description: Přečtěte si o kvantifikátorech regulárních výrazů, které určují, kolik instancí znaku, skupiny nebo třídy znaků musí být ve vstupu přítomné, aby odpovídaly.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -14,12 +15,12 @@ helpviewer_keywords:
 - quantifiers
 - lazy quantifiers
 ms.assetid: 36b81212-6511-49ed-a8f1-ff080415312f
-ms.openlocfilehash: dbfe4422b89b6223988ec9c6034d4b91b6ec8b5d
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 2fc47a834f8f5b18021aa4f321345b8d7e4e8459
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84276145"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662885"
 ---
 # <a name="quantifiers-in-regular-expressions"></a>Kvantifikátory v regulárních výrazech
 Kvantifikátory určují, kolik instancí znaku, skupiny nebo třídy znaků musí být přítomné ve vstupu pro nalezení shody.  V následující tabulce jsou uvedeny kvantifikátory podporované rozhraním .NET.  

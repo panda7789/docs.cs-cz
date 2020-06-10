@@ -1,5 +1,6 @@
 ---
 title: Kovariance a kontravariance v obecných typech
+description: Přečtěte si o kovarianci, která umožňuje použít více odvozený typ a kontravariance, což umožňuje použít méně odvozený typ v obecných typech .NET.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -11,12 +12,12 @@ helpviewer_keywords:
 - covariance and contravariance in generics
 - generic type parameters
 ms.assetid: 2678dc63-c7f9-4590-9ddc-0a4df684d42e
-ms.openlocfilehash: b11b5fc93d9b7289e62d6abc9d3ca19027a107c5
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 12de1554bb6e33b69d0d2bba24001e7e4c2d8a65
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287555"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84663041"
 ---
 # <a name="covariance-and-contravariance-in-generics"></a>Kovariance a kontravariance v obecných typech
 Kovariance a kontravariance jsou výrazy, které odkazují na schopnost použít více odvozeného typu (konkrétnější) nebo méně odvozený typ (méně specifické), než bylo původně určeno. Parametry obecného typu podporují kovarianci a kontravarianci za účelem zvýšení flexibility při přiřazování a používání obecných typů. Pokud hovoříme o typu systému, pak jsou pojmy kovariance, kontravariance a invariance definovány následovně: Příklady předpokládají základní třídu s názvem `Base` a odvozenou třídu s názvem `Derived` .  
@@ -126,7 +127,7 @@ Kovariance a kontravariance jsou výrazy, které odkazují na schopnost použít
  Počínaje .NET Framework 4 mají Visual Basic a C# klíčová slova, která umožňují označit parametry obecného typu rozhraní a delegátů jako kovariantní nebo kontravariantní.  
   
 > [!NOTE]
-> Počínaje verzí 2.0 rozhraní .NET Framework podporuje modul CLR (Common Language Runtime) anotace variance v parametrech obecného typu. Před .NET Framework 4 je jediným způsobem, jak definovat obecnou třídu, která má tyto poznámky, použít jazyk MSIL (Microsoft Intermediate Language), buď zkompilováním třídy pomocí nástroje [Ilasm. exe (IL Assembler)](../../framework/tools/ilasm-exe-il-assembler.md) , nebo vygenerováním v dynamickém sestavení.  
+> Počínaje verzí 2.0 rozhraní .NET Framework podporuje modul CLR (Common Language Runtime) anotace variance v parametrech obecného typu. Před .NET Framework 4 je jediným způsobem, jak definovat obecnou třídu, která má tyto poznámky, použít jazyk MSIL (Microsoft Intermediate Language), a to buď zkompilováním třídy s [Ilasm.exe (IL Assembler)](../../framework/tools/ilasm-exe-il-assembler.md) , nebo vygenerováním v dynamickém sestavení.  
   
  Parametr kovariantního typu je označený `out` klíčovým slovem ( `Out` klíčové slovo v Visual Basic `+` pro [Assembler MSIL](../../framework/tools/ilasm-exe-il-assembler.md)). Parametr kovariantního typu můžete použít jako návratovou hodnotu metody, která patří do rozhraní, nebo jako návratový typ delegátu. Typ kovariantního parametru nelze použít jako omezení obecného typu pro metody rozhraní.  
   

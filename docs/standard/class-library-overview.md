@@ -1,5 +1,6 @@
 ---
 title: Přehled knihovny tříd .NET
+description: Přečtěte si o knihovně tříd .NET. Implementace rozhraní .NET zahrnují třídy, rozhraní, delegáty a typy hodnot, které poskytují přístup k funkčnosti systému.
 ms.date: 02/08/2018
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -37,12 +38,12 @@ helpviewer_keywords:
 - integer value type
 - base types, class library
 ms.assetid: 7e4c5921-955d-4b06-8709-101873acf157
-ms.openlocfilehash: b076298a5a5f90a3c2dd39e4c5c9684e02a291c4
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 7eb9aa9714dcb920118a6422b9f6c78775bf1a5c
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289236"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662924"
 ---
 # <a name="net-class-library-overview"></a>Přehled knihovny tříd .NET
 
@@ -89,7 +90,7 @@ Implementace rozhraní .NET zahrnují třídy, rozhraní, delegáty a typy hodno
 |Integer|<xref:System.Byte>|8 bitů unsigned integer.|**Bytové**|**bytové**|**unsigned char**|**bytové**|  
 ||<xref:System.SByte>|8bitové celé číslo se znaménkem.<br /><br /> Není kompatibilní se specifikací CLS.|**SByte**|**SByte**|**char**<br /> -nebo-<br /> **signed** **char**|**SByte**|  
 ||<xref:System.Int16>|16bitové celé číslo se znaménkem.|**Dostatečná**|**short**|**short**|**Int16**|  
-||<xref:System.Int32>|32 celé číslo se znaménkem.|**Čísla**|**int**|**int**<br /><br /> -nebo-<br /><br /> **long**|**int**|  
+||<xref:System.Int32>|32 celé číslo se znaménkem.|**Integer**|**int**|**int**<br /><br /> -nebo-<br /><br /> **long**|**int**|  
 ||<xref:System.Int64>|64 celé číslo se znaménkem.|**Dlouhou**|**long**|**__int64**|**Int64**|  
 ||<xref:System.UInt16>|16bitová unsigned integer.<br /><br /> Není kompatibilní se specifikací CLS.|**UShort**|**ushort**|**unsigned short**|**UInt16**|  
 ||<xref:System.UInt32>|32 bitová unsigned integer.<br /><br /> Není kompatibilní se specifikací CLS.|**UInteger –**|**uint**|**unsigned int**<br /> -nebo-<br /> **unsigned long**|**UInt32**|  
@@ -97,7 +98,7 @@ Implementace rozhraní .NET zahrnují třídy, rozhraní, delegáty a typy hodno
 |Plovoucí desetinná čárka|<xref:System.Single>|Číslo s plovoucí desetinnou čárkou s jednoduchou přesností (32).|**Single**|**Plovák**|**Plovák**|**float32**<br> nebo<br>**konkrétní**|  
 ||<xref:System.Double>|Číslo s plovoucí desetinnou čárkou s dvojitou přesností (64).|**Klepat**|**double**|**double**|**Plovák**<br> nebo <br> **double**|  
 |Logické|<xref:System.Boolean>|Logická hodnota (true nebo false).|**Logická hodnota**|**bool**|**bool**|**bool**|  
-|Ostatní|<xref:System.Char>|Znak Unicode (16 bitů).|**Char**|**char**|**wchar_t**|**char**|  
+|Další|<xref:System.Char>|Znak Unicode (16 bitů).|**Char**|**char**|**wchar_t**|**char**|  
 ||<xref:System.Decimal>|Desítková hodnota (128).|**Notaci**|**decimal**|**Notaci**|**decimal**|  
 ||<xref:System.IntPtr>|Celé číslo se znaménkem, jehož velikost závisí na základní platformě (32 hodnota na 32 platformě 64 a na 64 32bitové platformě).|**IntPtr**<br /><br /> Není k dispozici žádný předdefinovaný typ.|**IntPtr**<br /><br /> Není k dispozici žádný předdefinovaný typ.|**IntPtr**<br /><br /> Není k dispozici žádný předdefinovaný typ.|**unativeint –**|  
 ||<xref:System.UIntPtr>|Unsigned integer, jehož velikost závisí na základní platformě (32 hodnota na 32 platformě a na hodnotě 64-bit na platformě pro 64).<br /><br /> Není kompatibilní se specifikací CLS.|**UIntPtr**<br /><br /> Není k dispozici žádný předdefinovaný typ.|**UIntPtr**<br /><br /> Není k dispozici žádný předdefinovaný typ.|**UIntPtr**<br /><br /> Není k dispozici žádný předdefinovaný typ.|**unativeint –**|  

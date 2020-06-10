@@ -1,40 +1,38 @@
 ---
-title: Jak bezpečně obsazení pomocí porovnávání vzorů a je a jako operátory
-description: Naučte se používat techniky porovnávání vzorů k bezpečnému přetypování proměnných na jiný typ. Můžete použít porovnávání vzorů, stejně jako is a jako operátory bezpečně převést typy.
+title: Jak bezpečně přetypovat pomocí porovnávání vzorů a operátorů is a as
+description: Naučte se používat techniky porovnávání vzorů k bezpečnému přetypování proměnných na jiný typ. Můžete použít porovnávání vzorů a také operátory is a as pro bezpečné převod typů.
 ms.date: 09/05/2018
 helpviewer_keywords:
 - cast operators [C#], as and is operators
 - as operator [C#]
 - is operator [C#]
-ms.openlocfilehash: 9f5690e6840098f94360dba89f09fb23b258b782
-ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
+ms.openlocfilehash: f10ce837057cc61b84130f237a13af708849dfc5
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81739051"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662963"
 ---
-# <a name="how-to-safely-cast-by-using-pattern-matching-and-the-is-and-as-operators"></a>Jak bezpečně obsazení pomocí porovnávání vzorů a je a jako operátory
+# <a name="how-to-safely-cast-by-using-pattern-matching-and-the-is-and-as-operators"></a>Jak bezpečně přetypovat pomocí porovnávání vzorů a operátorů is a as
 
-Protože objekty jsou polymorfní, je možné, aby proměnná typu základní třídy držela odvozený [typ](../programming-guide/types/index.md). Pro přístup k členům instance odvozeného typu je nutné [přetypovat](../programming-guide/types/casting-and-type-conversions.md) hodnotu zpět na odvozený typ. Obsazení však vytváří riziko vyvolání <xref:System.InvalidCastException>. C# poskytuje [příkazy porovnávání vzorů,](../pattern-matching.md) které provádějí přetypování podmíněně pouze v případě, že bude úspěšné. C# také poskytuje [is](../language-reference/operators/type-testing-and-cast.md#is-operator) a [jako](../language-reference/operators/type-testing-and-cast.md#as-operator) operátory k testování, pokud je hodnota určitého typu.
+Vzhledem k tomu, že objekty jsou polymorfní, je možné, že proměnná typu základní třídy bude uchovávat odvozený [typ](../programming-guide/types/index.md). Chcete-li získat přístup ke členům instance odvozeného typu, je nutné [přetypovat](../programming-guide/types/casting-and-type-conversions.md) hodnotu zpět na odvozený typ. Přetypování však vytvoří riziko vyvolání <xref:System.InvalidCastException> . Jazyk C# poskytuje příkazy pro [porovnávání vzorů](../pattern-matching.md) , které provádějí přetypování podmíněně pouze v případě, že budou úspěšné. Jazyk C# také poskytuje operátory [is](../language-reference/operators/type-testing-and-cast.md#is-operator) a [as](../language-reference/operators/type-testing-and-cast.md#as-operator) k otestování, jestli je hodnota určitého typu.
 
-Následující příklad ukazuje, jak používat `is` příkaz odpovídající vzorek:
+Následující příklad ukazuje, jak použít příkaz pro porovnávání vzorů `is` :
 
-[!code-csharp[Pattern matching is statement](../../../samples/snippets/csharp/how-to/safelycast/patternmatching/Program.cs#PatternMatchingIs)]
+:::code language="csharp" source="../../../samples/snippets/csharp/how-to/safelycast/patternmatching/Program.cs" id="PatternMatchingIs":::
 
-Předchozí ukázka ukazuje několik funkcí syntaxe porovnávání vzorů. Příkaz `if (a is Mammal m)` kombinuje test s přiřazení inicializace. Přiřazení dochází pouze v případě, že test proběhne úspěšně. Proměnná `m` je pouze v oboru `if` v vloženém příkazu, kde byla přiřazena. Nelze získat `m` přístup později ve stejné metodě. Předchozí příklad také ukazuje, jak použít [ `as` operátor](../language-reference/operators/type-testing-and-cast.md#as-operator) k převodu objektu na zadaný typ.
+Předchozí příklad ukazuje několik funkcí syntaxe porovnávání vzorů. `if (a is Mammal m)`Příkaz kombinuje test s přiřazením inicializace. Přiřazení probíhá pouze v případě, že test proběhl úspěšně. Proměnná `m` je pouze v oboru vloženého příkazu, `if` kde byla přiřazena. Ke stejné metodě nemůžete získat přístup `m` později. Předchozí příklad také ukazuje, jak použít [ `as` operátor](../language-reference/operators/type-testing-and-cast.md#as-operator) pro převod objektu na zadaný typ.
 
-Stejnou syntaxi můžete použít také pro testování, pokud má [hodnotu s možnou hodnotou s hodnotou s možnou hodnotou,](../language-reference/builtin-types/nullable-value-types.md) jak je znázorněno v následujícím příkladu:
+Můžete také použít stejnou syntaxi pro testování, pokud [typ hodnoty s možnou hodnotou null](../language-reference/builtin-types/nullable-value-types.md) má hodnotu, jak je znázorněno v následujícím příkladu:
 
-[!code-csharp[Pattern matching with nullable types](../../../samples/snippets/csharp/how-to/safelycast/nullablepatternmatching/Program.cs#PatternMatchingNullable)]
+:::code language="csharp" source="../../../samples/snippets/csharp/how-to/safelycast/nullablepatternmatching/Program.cs" id="PatternMatchingNullable":::
 
-Předchozí ukázka ukazuje další funkce porovnávání vzorů pro použití s převody. Můžete otestovat proměnnou pro vzorek null kontrolou `null` konkrétně pro hodnotu. Pokud je `null`hodnota runtime proměnné `is` , příkaz kontrolu pro `false`typ vždy vrátí . Příkaz porovnávání `is` vzorů neumožňuje typ hodnoty s `int?` možnou hodnotou s hodnotou, kterou lze upustit, například nebo `Nullable<int>`, ale můžete otestovat jakýkoli jiný typ hodnoty. Vzory `is` z předchozího příkladu nejsou omezeny na typy hodnot s hodnotou null. Tyto vzorky můžete také použít k testování, pokud má proměnná `null`typu odkazu hodnotu nebo je .
+Předchozí příklad ukazuje další funkce porovnávání vzorů pro použití s převody. Můžete otestovat proměnnou pro vzorec null tak, že zkontrolujete specifickou `null` hodnotu. Pokud je běhová hodnota proměnné `null` , `is` Kontrola příkazu pro typ vždy vrátí `false` . Příkaz porovnávání vzorů `is` nepovoluje typ hodnoty s možnou hodnotou null, jako je například `int?` nebo `Nullable<int>` , ale můžete ho otestovat na jakýkoli jiný typ hodnoty. `is`Vzorce z předchozího příkladu nejsou omezeny na typy hodnot s možnou hodnotou null. Tyto vzory můžete také použít k otestování, zda proměnná typu odkazu má hodnotu nebo je `null` .
 
-Předchozí ukázka také ukazuje, jak použít `switch` vzorek typu v příkazu, kde proměnná může být jeden z mnoha různých typů.
+Předchozí ukázka také ukazuje, jak použít vzor typu v `switch` příkazu, kde proměnná může být jedním z mnoha různých typů.
 
-Pokud chcete otestovat, zda je proměnná daný typ, ale nepřiřaďte ji nové proměnné, můžete použít `is` operátory a `as` pro typy odkazů a typy hodnot s možnou hodnotou, kterou lze použít. Následující kód ukazuje, jak `is` `as` používat příkazy a, které byly součástí jazyka C# před porovnávání vzorů byla zavedena k testování, pokud proměnná je daného typu:
+Pokud chcete otestovat, zda je proměnná daný typ, ale nechcete ji přiřadit k nové proměnné, můžete použít `is` `as` operátory a pro typy odkazů a typy s možnou hodnotou null. Následující kód ukazuje, jak použít `is` `as` příkazy a, které byly součástí jazyka C# před zavedením vzorového porovnávání za účelem testování, zda je proměnná daného typu:
 
-[!code-csharp[testing variable types with the is and as statements](../../../samples/snippets/csharp/how-to/safelycast/asandis/Program.cs#IsAndAs)]
+:::code language="csharp" source="../../../samples/snippets/csharp/how-to/safelycast/asandis/Program.cs" id="IsAndAs":::
 
-Jak můžete vidět porovnáním tohoto kódu s kódem porovnávání vzorů, syntaxe porovnávání vzorů poskytuje robustnější funkce kombinací testu a přiřazení v jednom příkazu. Pokud je to možné, použijte syntaxi porovnávání vzorů.
-
-Tyto ukázky můžete vyzkoušet tak, že se podíváte na kód v našem [úložišti GitHub](https://github.com/dotnet/docs/tree/master/samples/snippets/csharp/how-to/safelycast). Nebo si můžete stáhnout ukázky [jako zip soubor](../../../samples/snippets/csharp/how-to/safelycast.zip).
+Jak vidíte pomocí porovnání tohoto kódu s kódem porovnávání vzorů, syntaxe porovnávání vzorů poskytuje robustnější funkce kombinací testu a přiřazení v rámci jednoho příkazu. Pokud je to možné, použijte syntaxi porovnávání vzorů.

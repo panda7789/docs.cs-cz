@@ -1,5 +1,6 @@
 ---
 title: Řetězení úloh pomocí úloh pokračování
+description: Naučte se řetězit úkol pomocí úloh pokračování v .NET. Pokračující úkol je asynchronní úloha, která je vyvolána jinou úlohou.
 ms.date: 02/11/2019
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,12 +9,12 @@ dev_langs:
 helpviewer_keywords:
 - tasks, continuations
 ms.assetid: 0b45e9a2-de28-46ce-8212-1817280ed42d
-ms.openlocfilehash: c6952b4b341a76e15d9699a06cd64ae7b6b4f047
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 90317f3db5bcf2371494e14a1ca1dd16d049e0bd
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84285609"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662469"
 ---
 # <a name="chaining-tasks-by-using-continuation-tasks"></a>Řetězení úloh pomocí úloh pokračování
 V asynchronním programování je běžné pro jednu asynchronní operaci po dokončení, k vyvolání druhé operace a předání dat do ní. Pokračování je tradičně prováděno pomocí metod zpětného volání. V knihovně Task Parallel Library jsou stejné funkce poskytovány *pokračujícími úkoly*. Pokračující úkol (označuje se také jako pokračování) je asynchronní úloha, která je vyvolána jinou úlohou, která se označuje jako *předchůdce*po dokončení předchůdce.  

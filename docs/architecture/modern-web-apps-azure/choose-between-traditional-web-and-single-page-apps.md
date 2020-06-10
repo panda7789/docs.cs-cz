@@ -1,123 +1,125 @@
 ---
 title: Volba mezi tradičními webovými aplikacemi a jednostránkovými aplikacemi
-description: Přečtěte si, jak si vybrat mezi tradičními webovými aplikacemi a jednostránkovými aplikacemi (SPA) při vytváření webových aplikací.
+description: Naučte se při sestavování webových aplikací zvolit mezi tradičními webovými aplikacemi a jednostránkové (Single Page Applications).
 author: ardalis
 ms.author: wiwagn
 ms.date: 12/04/2019
-ms.openlocfilehash: d4ed76455001c1a0b8e2e2f1bb90ce8715dd0052
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0aef42b78114a11c70456cb3122d3dcb5143f983
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77450105"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662703"
 ---
-# <a name="choose-between-traditional-web-apps-and-single-page-apps-spas"></a>Vyberte si mezi tradičními webovými aplikacemi a jednostránkovými aplikacemi (SPA)
+# <a name="choose-between-traditional-web-apps-and-single-page-apps-spas"></a>Volba mezi tradičními Web Apps a jednostránkové aplikacemi
 
-> "Atwood zákon: Každá aplikace, která může být napsána v JavaScriptu, bude nakonec napsán v JavaScriptu."  
-> _\-Jeff Atwood_
+> "Zákonem o atwoodemi: Jakákoliv aplikace, kterou lze zapsat do JavaScriptu, bude nakonec napsána v JavaScriptu."  
+> _\-Jan Atwoodem_
 
-Existují dva obecné přístupy k vytváření webových aplikací dnes: tradiční webové aplikace, které provádějí většinu aplikační logiky na serveru, a jednostránkové aplikace (SP), které provádějí většinu logiky uživatelského rozhraní ve webovém prohlížeči, komunikace s webovým serverem především pomocí webových API. Hybridní přístup je také možné, nejjednodušší je hostit jeden nebo více bohatých SPA-jako podaplikace v rámci větší tradiční webové aplikace.
+Existují dva obecné přístupy k sestavování webových aplikací Dnes: tradiční webové aplikace, které provádějí většinu aplikační logiky na serveru, a jednostránkové aplikace (jednostránkové), které provádějí většinu logiky uživatelského rozhraní ve webovém prohlížeči, a komunikují s webovým serverem primárně pomocí webových rozhraní API. K dispozici je také hybridní přístup, nejjednodušší je hostovat jednu nebo více propracovaných podprocesů, které se budou líbit, jako v rámci větší tradiční webové aplikace.
 
-Tradiční webové aplikace používejte v::
+Tradiční webové aplikace používejte v těchto případech:
 
-- Požadavky na straně klienta vaší aplikace jsou jednoduché nebo dokonce jen pro čtení.
+- Požadavky vaší aplikace na straně klienta jsou jednoduché nebo dokonce jen pro čtení.
 
 - Vaše aplikace musí fungovat v prohlížečích bez podpory JavaScriptu.
 
-- Váš tým není obeznámen s vývojovými technikami JavaScriptu nebo TypeScriptu.
+- Váš tým není obeznámen s techniky vývoje JavaScriptu nebo TypeScript.
 
-Spa použijte, když:
+Zabezpečené ověřování pomocí hesla použijte v těchto případech:
 
-- Aplikace musí vystavit bohaté uživatelské rozhraní s mnoha funkcemi.
+- Vaše aplikace musí vystavovat bohatší uživatelské rozhraní s mnoha funkcemi.
 
-- Váš tým je obeznámen s vývojem JavaScriptu a/nebo TypeScriptu.
+- Váš tým je obeznámen s vývojem JavaScript a/nebo TypeScript.
 
-- Aplikace již musí vystavit rozhraní API pro jiné (interní nebo veřejné) klienty.
+- Vaše aplikace musí již vystavit rozhraní API pro jiné (interní nebo veřejné) klienty.
 
-Kromě toho spa architektury vyžadují větší architektonické a bezpečnostní znalosti. Zažívají větší konve kvůli častým aktualizacím a novým architekturám než tradiční webové aplikace. Konfigurace automatizovaných procesů sestavení a nasazení a využití možností nasazení, jako jsou kontejnery, může být obtížnější s aplikacemi SPA než u tradičních webových aplikací.
+Kromě toho architektura SPA vyžaduje větší architekturu a odbornosti zabezpečení. Dochází k většímu množství změn v důsledku častých aktualizací a nových architektur než tradičních webových aplikací. Konfigurace automatizovaných procesů sestavování a nasazování a využití možností nasazení, jako jsou kontejnery, můžou být obtížnější s aplikacemi SPA než s tradičními webovými aplikacemi.
 
-Zlepšení uživatelské zkušenosti umožněné přístupem SPA musí být porovnáno s těmito úvahami.
+Vylepšení uživatelského prostředí, které může přístup k zabezpečenému přístupu přes SPA udělat, je třeba zvážit na základě těchto doporučení.
 
 ## <a name="blazor"></a>Blazor
 
-ASP.NET Core 3.0 představuje nový model pro vytváření bohatého, interaktivního a kompozičného ui s názvem Blazor. Blazor server-side umožňuje vývojářům vytvářet uživatelské rozhraní s břitvou na serveru a pro tento kód, které mají být dodány do prohlížeče a provedeny client-side pomocí [WebAssembly](https://webassembly.org/). Blazor server-side je nyní k dispozici s ASP.NET Core 3.0 nebo novější. Blazor klientská strana by měla být k dispozici v roce 2020.
+ASP.NET Core 3,0 zavádí nový model pro vytváření bohatých, interaktivních a sestavitelního uživatelského rozhraní s názvem Blazor. Blazor na straně serveru umožňuje vývojářům vytvářet uživatelské rozhraní pomocí jazyků C# a Razor na serveru a pro interaktivní uživatelské rozhraní připojené k prohlížeči v reálném čase pomocí trvalého připojení ke službě Signal.
 
-Blazor poskytuje novou, třetí možnost, aby zvážila při hodnocení, zda vytvořit čistě server-poskytnuté webové aplikace nebo SPA. Můžete vytvářet bohaté, SPA-jako klient-side chování pomocí Blazor, bez nutnosti významného vývoje JavaScriptu. Aplikace Blazor mohou volat api pro vyžádání dat nebo provádění operací na straně serveru.
+Blazor WebAssembly zavádí další možnost pro aplikace Blazor, která umožňuje jejich spuštění v prohlížeči pomocí webového sestavení. Vzhledem k tomu, že se jedná o reálné rozhraní .NET běžící na webovém sestavení, můžete znovu použít kód a knihovny z částí aplikace na straně serveru.
 
-Zvažte vytvoření webové aplikace s Blazor, když:
+Blazor poskytuje novou, třetí možnost, kterou je třeba vzít v úvahu při vyhodnocování, jestli se má sestavit čistě webová aplikace vydaná serverem nebo SPA. Pomocí Blazor můžete sestavovat bohatě, SPA jako chování na straně klienta a nemusíte přitom významně vyvíjet JavaScript. Aplikace Blazor můžou volat rozhraní API pro vyžádání dat nebo provádění operací na straně serveru.
 
-- Aplikace musí vystavit bohaté uživatelské rozhraní
+Zvažte vytvoření webové aplikace pomocí Blazor v těchto případech:
 
-- Váš tým je s vývojem .NET pohodlnější než vývoj JavaScriptu nebo TypeScriptu
+- Vaše aplikace musí vystavovat bohatší uživatelské rozhraní.
 
-Další informace o Blazoru najdete [v tématu Začínáme s Blazorem](https://blazor.net/docs/get-started.html).
+- Váš tým je pohodlnější při vývoji .NET, než JavaScript nebo vývoj TypeScript.
 
-## <a name="when-to-choose-traditional-web-apps"></a>Kdy si vybrat tradiční webové aplikace
+Další informace o Blazor najdete v tématu Začínáme [s Blazor](https://blazor.net/docs/get-started.html).
 
-Následuje podrobnější vysvětlení dříve uvedených důvodů pro výběr tradičních webových aplikací.
+## <a name="when-to-choose-traditional-web-apps"></a>Kdy zvolit tradiční webové aplikace
 
-**Aplikace má jednoduché, případně jen pro čtení, požadavky na straně klienta**
+Následuje podrobnější vysvětlení výše uvedených důvodů pro vybírání tradičních webových aplikací.
 
-Mnoho webových aplikací jsou primárně konzumovány v jen pro čtení způsobem drtivá většina jejich uživatelů. Aplikace jen pro čtení (nebo většinou pro čtení) mají tendenci být mnohem jednodušší než ty, které udržují a manipulují s velkým státem. Vyhledávač se může například skládat z jednoho vstupního bodu s textovým polem a druhé stránky pro zobrazení výsledků hledání. Anonymní uživatelé mohou snadno provádět požadavky a je málo potřeba logiky na straně klienta. Podobně, blog nebo systém pro správu obsahu veřejné aplikace obvykle se skládá hlavně z obsahu s malým chováním na straně klienta. Tyto aplikace jsou snadno postaveny jako tradiční webové aplikace založené na serveru, které provádějí logiku na webovém serveru a vykreslují HTML, které mají být zobrazeny v prohlížeči. Skutečnost, že každá jedinečná stránka webu má svou vlastní adresu URL, která může být záložkou a indexována vyhledávači (ve výchozím nastavení, aniž by bylo třeba ji přidávat jako samostatnou vlastnost aplikace), je také jasným přínosem v takových scénářích.
+**Vaše aplikace má jednoduché, možná jen pro čtení, požadavky na na straně klienta.**
 
-**Vaše aplikace musí fungovat v prohlížečích bez podpory JavaScriptu**
+Mnohé webové aplikace jsou primárně využívány způsobem, který je určen jen pro čtení, prostřednictvím obrovské většiny jejich uživatelů. Aplikace jen pro čtení (nebo jen pro čtení) jsou obvykle mnohem jednodušší než ty, které udržují a manipulují s velkým stavem. Například vyhledávací stroj může sestávat z jediného vstupního bodu s textovým polem a druhou stránkou pro zobrazení výsledků hledání. Anonymní uživatelé můžou snadno vytvářet požadavky a pro logiku na straně klienta je málo nutná. Podobně se jako veřejná aplikace pro blog nebo systém správy obsahu obvykle skládá hlavně z hlediska obsahu s malým chováním na straně klienta. Tyto aplikace jsou snadno sestavené jako tradiční webové aplikace založené na serveru, které provádějí logiku na webovém serveru a vykreslují HTML pro zobrazení v prohlížeči. Skutečnost, že každá jedinečná stránka webu má svou vlastní adresu URL, kterou je možné zadělit a indexovat vyhledávacími moduly (ve výchozím nastavení je to bez nutnosti přidat tuto možnost jako samostatnou funkci aplikace) je také v takových scénářích jasné zvýhodnění.
 
-Webové aplikace, které potřebují fungovat v prohlížečích s omezenou nebo žádnou podporou JavaScriptu, by měly být napsány pomocí tradičních pracovních postupů webové aplikace (nebo alespoň být schopen se k takovému chování vrátit). Technologie BEZ OV Vyžadují javascript na straně klienta, aby fungoval; Pokud není k dispozici, nejsou spa dobrou volbou.
+**Vaše aplikace musí fungovat v prohlížečích bez podpory JavaScriptu.**
 
-**Váš tým není obeznámen s technologiemi vývoje JavaScriptu nebo TypeScriptu**
+Webové aplikace, které potřebují fungovat v prohlížečích s omezením nebo bez podpory JavaScriptu, by měly být zapsány pomocí tradičních pracovních postupů webové aplikace (nebo je musí být možné vrátit k takovému chování). Jednostránkové vyžaduje JavaScript na straně klienta, aby fungoval. Pokud není k dispozici, není jednostránkové vhodným řešením.
 
-Pokud váš tým není obeznámen s JavaScriptem nebo TypeScriptem, ale je obeznámen s vývojem webových aplikací na straně serveru, pak bude pravděpodobně schopen dodat tradiční webovou aplikaci rychleji než SPA. Pokud není požadováno naučit se programovat plány SPNebo nebo pokud není vyžadováno uživatelské prostředí poskytované spa, jsou tradiční webové aplikace produktivnější volbou pro týmy, které jsou již obeznámeny s jejich vytvářením.
+**Váš tým není obeznámen s techniky vývoje JavaScriptu nebo TypeScript.**
 
-## <a name="when-to-choose-spas"></a>Kdy si vybrat sraby
+Pokud váš tým není obeznámen s jazykem JavaScript nebo TypeScript, ale je obeznámen s vývojem webových aplikací na straně serveru, bude pravděpodobně moci doručovat tradiční webovou aplikaci rychleji než SPA. Pokud se jednostránkové, že se naučíte programovat program, nebo se vyžaduje uživatelské prostředí, které zabezpečené SPA vyžaduje, jsou tradiční webové aplikace efektivnější volbou pro týmy, které už jsou obeznámené sestavou.
 
-Následuje podrobnější vysvětlení, kdy zvolit styl vývoje aplikací s jednou stránkou pro webovou aplikaci.
+## <a name="when-to-choose-spas"></a>Kdy zvolit jednostránkové
 
-**Aplikace musí vystavit bohaté uživatelské rozhraní s mnoha funkcemi**
+Následuje podrobnější vysvětlení, kdy zvolit pro vaši webovou aplikaci styl jedné stránky pro vývoj aplikací.
 
-Místní certifikační konzole mohou podporovat bohaté funkce na straně klienta, které nevyžadují opětovné načtení stránky, protože uživatelé provází akce nebo procházet mezi oblastmi aplikace. Technologie ZABEZPEČENÍ se mohou načítat rychleji, načítat data na pozadí a akce jednotlivých uživatelů jsou citlivější, protože opětovné načtení celé stránky je vzácné. Technologie SRAB mohou podporovat přírůstkové aktualizace a ukládat částečně vyplněné formuláře nebo dokumenty, aniž by uživatel musel kliknout na tlačítko pro odeslání formuláře. SpA může podporovat bohaté chování na straně klienta, jako je například přetažení, mnohem snadněji než tradiční aplikace. Certifikáty zabezpečení mohou být navrženy tak, aby běžely v odpojeném režimu a aby byly aktualizovány modely na straně klienta, které jsou nakonec synchronizovány zpět na server po obnovení připojení. Pokud požadavky aplikace zahrnují bohaté funkce, které přesahují rámec toho, co nabízejí typické formuláře HTML, zvolte aplikaci ve stylu SPA.
+**Vaše aplikace musí vystavovat bohatší uživatelské rozhraní s mnoha funkcemi.**
 
-Často je třeba implementovat funkce, které jsou integrovány do tradičních webových aplikací, jako je například zobrazení smysluplné adresy URL v adresním řádku odrážející aktuální operaci (a umožňuje uživatelům záložku nebo přímý odkaz na tuto adresu URL pro návrat k ní). Místní ochrana osobních and sifanů by také měla uživatelům umožnit používat tlačítka prohlížeče pro záda a vpřed s výsledky, které je nepřekvapí.
+Jednostránkové může podporovat bohatou funkcionalitu na straně klienta, která nevyžaduje opětovné načtení stránky, protože uživatelé probírají akce nebo přecházejí mezi oblastmi aplikace. Jednostránkové se může načíst rychleji, načítat data na pozadí a jednotlivé akce uživatelů jsou větší reakce, protože celá data na stránce jsou zřídka. Jednostránkové může podporovat přírůstkové aktualizace, ukládat částečně dokončené formuláře nebo dokumenty, aniž by uživatel musel kliknout na tlačítko pro odeslání formuláře. Jednostránkové může podporovat rozsáhlá chování na straně klienta, jako je například přetahování, mnohem jednodušší než tradiční aplikace. Jednostránkové může být navržená tak, aby běžela v odpojeném režimu a prováděla aktualizace modelu na straně klienta, které se nakonec po opětovném navázání připojení zpátky na server. Pokud požadavky vaší aplikace obsahují bohatou funkci, která překračuje možnosti, které se zobrazí v typických formulářích HTML, vyberte aplikaci ve stylu SPA.
 
-**Váš tým je obeznámen s vývojem JavaScriptu a/nebo TypeScriptu**
+Jednostránkové je často potřeba implementovat funkce, které jsou integrované do tradičních webových aplikací, jako je například zobrazení smysluplné adresy URL na adresním řádku odrážet aktuální operaci (a povolením, aby uživatelé mohli k této adrese URL přejít nebo přímý odkaz). Jednostránkové by měl také uživatelům dovolit, aby používali tlačítka pro zpět a přeposílání v prohlížeči s výsledky, které se na ně neočekávaně.
 
-Psaní postupů pro řešení v řepa vyžaduje znalost JavaScriptu a/nebo TypeScriptu a programovacích technik a knihoven na straně klienta. Váš tým by měl být kompetentní v psaní moderní JavaScript pomocí SPA framework jako Angular.
+**Váš tým je obeznámen s vývojem JavaScript a/nebo TypeScript.**
 
-> ### <a name="references--spa-frameworks"></a>Reference – SPA Frameworks
+Psaní jednostránkové vyžaduje znalost pomocí JavaScriptu a/nebo TypeScript a postupů programování a knihoven na straně klienta. Váš tým by měl být příslušný pro psaní moderního JavaScriptu pomocí architektury SPA, jako je například úhlová.
+
+> ### <a name="references--spa-frameworks"></a>Odkazy – rozhraní SPA
 >
 > - **Angular**  
 >   <https://angular.io>
-> - **Reagovat**
+> - **Reaguje**
 >   <https://reactjs.org/>
-> - **Porovnání javascriptových rámců**  
+> - **Porovnání platforem JavaScript**  
 >   <https://jsreport.io/the-ultimate-guide-to-javascript-frameworks/>
 
-**Aplikace již musí vystavit rozhraní API pro jiné (interní nebo veřejné) klienty.**
+**Vaše aplikace už musí vystavit rozhraní API pro jiné (interní nebo veřejné) klienty.**
 
-Pokud již podporujete webové rozhraní API pro použití jinými klienty, může vyžadovat méně úsilí k vytvoření implementace SPA, která využívá tato rozhraní API, spíše než reprodukovat logiku ve formě na straně serveru. Sraby rozsáhle využívají webová řešení API k dotazování a aktualizaci dat při interakci uživatelů s aplikací.
+Pokud už podporujete webové rozhraní API pro použití jinými klienty, může to vyžadovat menší úsilí k vytvoření implementace SPA, která tato rozhraní API využívá místo reprodukce logiky ve formuláři na straně serveru. Jednostránkové rozsáhlých použití webových rozhraní API k dotazování a aktualizaci dat, když uživatelé pracují s aplikací.
 
-## <a name="when-to-choose-blazor"></a>Kdy si vybrat Blazor
+## <a name="when-to-choose-blazor"></a>Kdy zvolit Blazor
 
-Následuje podrobnější vysvětlení, kdy si vybrat Blazor pro vaši webovou aplikaci.
+Následuje podrobnější vysvětlení, kdy zvolit Blazor pro vaši webovou aplikaci.
 
-**Aplikace musí vystavit bohaté uživatelské rozhraní**
+**Vaše aplikace musí vystavovat bohatší uživatelské rozhraní.**
 
-Stejně jako JavaScript-založené SPA, Blazor aplikace mohou podporovat bohaté chování klienta bez opětovného načtení stránky. Tyto aplikace lépe reagují na uživatele a načítají pouze data (nebo HTML) potřebná k reakci na danou interakci s uživatelem. Správně navrženy aplikace Blazor na straně serveru lze nakonfigurovat tak, aby běžely jako aplikace Blazor na straně klienta s minimálními změnami, jakmile je tato funkce podporována.
+Podobně jako jednostránkové založené na JavaScriptu můžou aplikace Blazor podporovat bohatá chování klienta bez nutnosti opětovného načtení stránky. Tyto aplikace jsou lépe reagují na uživatele a načítají se pouze data (nebo HTML), která jsou nutná k reakci na danou interakci uživatele. Správně navržené aplikace Blazor na straně serveru můžou být nakonfigurované tak, aby se spouštěly jako aplikace Blazor na straně klienta s minimálními změnami, jakmile je tato funkce podporovaná.
 
-**Váš tým je s vývojem .NET pohodlnější než vývoj JavaScriptu nebo TypeScriptu**
+**Váš tým je pohodlnější při vývoji .NET, než JavaScript nebo vývoj TypeScript.**
 
-Mnoho vývojářů je produktivnějších s rozhraními .NET a Razor než s jazyky na straně klienta, jako je JavaScript nebo TypeScript. Vzhledem k tomu, že serverová strana aplikace je již vyvíjena s rozhraním .NET, pomocí Blazor zajišťuje, že každý vývojář rozhraní .NET v týmu může pochopit a potenciálně vytvořit chování front-endu aplikace.
+Mnoho vývojářů nabízí vyšší produktivitu díky .NET a Razor než s jazyky na straně klienta, jako je JavaScript nebo TypeScript. Vzhledem k tomu, že serverová strana aplikace je již vyvíjena pomocí technologie .NET, aplikace Blazor zajistí, že každý vývojář rozhraní .NET v týmu může pochopit a potenciálně sestavit chování pro front-end aplikace.
 
 ## <a name="decision-table"></a>Tabulka rozhodnutí
 
-Následující tabulka rozhodnutí shrnuje některé základní faktory, které je třeba vzít v úvahu při výběru mezi tradiční webovou aplikací, spa nebo aplikací Blazor.
+Následující rozhodovací tabulka shrnuje některé základní faktory, které je potřeba vzít v úvahu při volbě mezi tradiční webovou aplikací, ZABEZPEČENou nebo Blazor aplikací.
 
-| **Faktor**                                           | **Tradiční webová aplikace** | **Jednostránková aplikace** | **Aplikace Blazor**  |
+| **Jednotek**                                           | **Tradiční webová aplikace** | **Jednostránková aplikace** | **Aplikace Blazor**  |
 | ---------------------------------------------------- | ----------------------- | --------------------------- | --------------- |
-| Požadovaná znalost týmu s JavaScriptem/TypeScriptem | **Minimální**             | **Požadováno**                | **Minimální**     |
-| Podpora prohlížečů bez skriptování                   | **Podporovány**           | **Nepodporuje se**           | **Podporovány**   |
-| Minimální chování aplikace na straně klienta             | **Dobře se hodí**         | **Zbytečná**                | **Životaschopné**      |
-| Bohaté a komplexní požadavky na uživatelské rozhraní            | **Omezeně**             | **Dobře se hodí**             | **Dobře se hodí** |
+| Požadovaný tým se znalostí jazyka JavaScript a TypeScript | **Minimální**             | **Požadováno**                | **Minimální**     |
+| Podpora prohlížečů bez skriptování                   | **Doložen**           | **Nepodporováno**           | **Doložen**   |
+| Minimální chování aplikace na straně klienta             | **Dobře hodící se**         | **Přehnaně důkladné**                | **Realizovat**      |
+| Bohatě komplexní požadavky na uživatelské rozhraní            | **Omezeně**             | **Dobře hodící se**             | **Dobře hodící se** |
 
 >[!div class="step-by-step"]
->[Předchozí](modern-web-applications-characteristics.md)
->[další](architectural-principles.md)
+>[Předchozí](modern-web-applications-characteristics.md) 
+> [Další](architectural-principles.md)

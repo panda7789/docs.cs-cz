@@ -1,5 +1,6 @@
 ---
 title: Tok dat (Task Parallel Library)
+description: Naučte se používat součásti toku dat v rámci Task Parallel Library (TPL) ke zlepšení odolnosti aplikací s podporou souběžného zpracování.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - Task Parallel Library, dataflows
 - TPL dataflow library
 ms.assetid: 643575d0-d26d-4c35-8de7-a9c403e97dd6
-ms.openlocfilehash: e1d4dc596f57a4c75c11806f95099ee5593c6c03
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 2c7bbc9bf935159ab66bd2a61a60b9484e67018a
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84285531"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662547"
 ---
 # <a name="dataflow-task-parallel-library"></a>Tok dat (Task Parallel Library)
 Task Parallel Library (TPL) poskytuje součásti toku dat, které vám pomůžou zvýšit odolnost aplikací s podporou souběžného zpracování. Tyto komponenty toku dat jsou souhrnně označovány jako *Knihovna rozhraní TPL Dataflow*. Tento model toku dat propaguje programování založené na objektu actor tím, že zajišťuje předávání zpráv v procesu pro hrubý úlohy toku dat a zřetězení. Komponenty toku dat jsou vytvořeny na typech a plánování infrastruktury aplikace TPL a integrovány s podporou jazyka C#, Visual Basic a F # pro asynchronní programování. Tyto součásti toku dat jsou užitečné v případě, že máte více operací, které musí komunikovat s jiným asynchronním nebo pokud chcete data zpracovat, jakmile budou k dispozici. Zvažte například aplikaci, která zpracovává obrazová data z webové kamery. Pomocí modelu toku dat aplikace může zpracovat snímky imagí, jakmile budou k dispozici. Pokud aplikace vylepšuje snímky obrázků, například provedením světlé nápravy nebo snížení červeného oka, můžete vytvořit *kanál* komponent toku dat. Každá fáze kanálu může použít více hrubých paralelních funkcí, jako jsou funkce, které poskytuje TPL, k transformaci image.  
