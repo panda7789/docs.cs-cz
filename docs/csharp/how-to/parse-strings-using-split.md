@@ -1,6 +1,6 @@
 ---
-title: Jak analyzovat řetězce pomocí String.Split (C# Guide)
-description: String.Split vrátí pole řetězců rozdělených ze sady oddělovačů. Je to snadný způsob, jak analyzovat struny.
+title: Jak analyzovat řetězce pomocí String. Split (Průvodce C#)
+description: String. Split vrátí pole řetězců rozdělené ze sady oddělovačů. Je to snadný způsob, jak analyzovat řetězce.
 ms.date: 01/03/2018
 helpviewer_keywords:
 - splitting strings [C#]
@@ -9,49 +9,47 @@ helpviewer_keywords:
 - parse strings
 ms.assetid: 729c2923-4169-41c6-9c90-ef176c1e2953
 ms.custom: mvc
-ms.openlocfilehash: cf8307517213b54041b272843232eb595660b2e9
-ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
+ms.openlocfilehash: 4f0056426fb29ec3d76093e57fa45e2046f27a4f
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "81389506"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662989"
 ---
-# <a name="how-to-parse-strings-using-stringsplit-in-c"></a><span data-ttu-id="decad-104">Jak analyzovat řetězce pomocí String.Split v C\#</span><span class="sxs-lookup"><span data-stu-id="decad-104">How to parse strings using String.Split in C\#</span></span>
+# <a name="how-to-parse-strings-using-stringsplit-in-c"></a><span data-ttu-id="08a91-104">Jak analyzovat řetězce pomocí řetězce. rozdělit v jazyce C\#</span><span class="sxs-lookup"><span data-stu-id="08a91-104">How to parse strings using String.Split in C\#</span></span>
 
-<span data-ttu-id="decad-105">Metoda <xref:System.String.Split%2A?displayProperty=nameWithType> vytvoří pole podřetězců rozdělením vstupního řetězce na základě jednoho nebo více oddělovačů.</span><span class="sxs-lookup"><span data-stu-id="decad-105">The <xref:System.String.Split%2A?displayProperty=nameWithType> method creates an array of substrings by splitting the input string based on one or more delimiters.</span></span> <span data-ttu-id="decad-106">Často se jedná o nejjednodušší způsob, jak oddělit řetězec na hranice slov.</span><span class="sxs-lookup"><span data-stu-id="decad-106">It is often the easiest way to separate a string on word boundaries.</span></span> <span data-ttu-id="decad-107">Používá se také k rozdělení řetězců na jiné konkrétní znaky nebo řetězce.</span><span class="sxs-lookup"><span data-stu-id="decad-107">It is also used to split strings on other specific characters or strings.</span></span>
+<span data-ttu-id="08a91-105"><xref:System.String.Split%2A?displayProperty=nameWithType>Metoda vytvoří pole podřetězců rozdělením vstupního řetězce na základě jednoho nebo více oddělovačů.</span><span class="sxs-lookup"><span data-stu-id="08a91-105">The <xref:System.String.Split%2A?displayProperty=nameWithType> method creates an array of substrings by splitting the input string based on one or more delimiters.</span></span> <span data-ttu-id="08a91-106">Je často nejjednodušší způsob, jak oddělit řetězec na hranici slova.</span><span class="sxs-lookup"><span data-stu-id="08a91-106">It is often the easiest way to separate a string on word boundaries.</span></span> <span data-ttu-id="08a91-107">Používá se také k rozdělení řetězců na jiné konkrétní znaky nebo řetězce.</span><span class="sxs-lookup"><span data-stu-id="08a91-107">It is also used to split strings on other specific characters or strings.</span></span>
 
 [!INCLUDE[interactive-note](~/includes/csharp-interactive-note.md)]
 
-<span data-ttu-id="decad-108">Následující kód rozdělí společnou frázi do pole řetězců pro každé slovo.</span><span class="sxs-lookup"><span data-stu-id="decad-108">The following code splits a common phrase into an array of strings for each word.</span></span>
+<span data-ttu-id="08a91-108">Následující kód rozdělí společnou frázi na pole řetězců pro každé slovo.</span><span class="sxs-lookup"><span data-stu-id="08a91-108">The following code splits a common phrase into an array of strings for each word.</span></span>
 
-[!code-csharp-interactive[split strings on word boundaries](../../../samples/snippets/csharp/how-to/strings/ParseStringsUsingSplit.cs#1)]
+:::code language="csharp" interactive="try-dotnet-method" source="../../../samples/snippets/csharp/how-to/strings/ParseStringsUsingSplit.cs" id="Snippet1":::
 
-<span data-ttu-id="decad-109">Každá instance znaku oddělovače vytvoří hodnotu ve vráceném poli.</span><span class="sxs-lookup"><span data-stu-id="decad-109">Every instance of a separator character produces a value in the returned array.</span></span> <span data-ttu-id="decad-110">Po sobě jdoucí oddělovací znaky vytvářejí prázdný řetězec jako hodnotu ve vráceném poli.</span><span class="sxs-lookup"><span data-stu-id="decad-110">Consecutive separator characters produce the empty string as a value in the returned array.</span></span> <span data-ttu-id="decad-111">Můžete vidět, jak je vytvořen prázdný řetězec v následujícím příkladu, který používá znak mezery jako oddělovač.</span><span class="sxs-lookup"><span data-stu-id="decad-111">You can see how an empty string is created in the following example, which uses the space character as a separator.</span></span>
+<span data-ttu-id="08a91-109">Každá instance znaku oddělovače vytvoří hodnotu ve vráceném poli.</span><span class="sxs-lookup"><span data-stu-id="08a91-109">Every instance of a separator character produces a value in the returned array.</span></span> <span data-ttu-id="08a91-110">Po sobě jdoucí oddělovací znaky vytvoří prázdný řetězec jako hodnotu ve vráceném poli.</span><span class="sxs-lookup"><span data-stu-id="08a91-110">Consecutive separator characters produce the empty string as a value in the returned array.</span></span> <span data-ttu-id="08a91-111">V následujícím příkladu vidíte, jak se vytvoří prázdný řetězec, který jako oddělovač používá znak mezery.</span><span class="sxs-lookup"><span data-stu-id="08a91-111">You can see how an empty string is created in the following example, which uses the space character as a separator.</span></span>
 
-[!code-csharp-interactive[split strings with repeated separators](../../../samples/snippets/csharp/how-to/strings/ParseStringsUsingSplit.cs#2)]
+:::code language="csharp" interactive="try-dotnet-method" source="../../../samples/snippets/csharp/how-to/strings/ParseStringsUsingSplit.cs" id="Snippet2":::
 
-<span data-ttu-id="decad-112">Toto chování usnadňuje formáty, jako jsou soubory csv oddělené čárkami (CSV), které představují tabulková data.</span><span class="sxs-lookup"><span data-stu-id="decad-112">This behavior makes it easier for formats like comma-separated values (CSV) files representing tabular data.</span></span> <span data-ttu-id="decad-113">Po sobě jdoucí čárky představují prázdný sloupec.</span><span class="sxs-lookup"><span data-stu-id="decad-113">Consecutive commas represent a blank column.</span></span>
+<span data-ttu-id="08a91-112">Toto chování usnadňuje formátování jako soubory hodnot oddělených čárkami (CSV), které představují tabulková data.</span><span class="sxs-lookup"><span data-stu-id="08a91-112">This behavior makes it easier for formats like comma-separated values (CSV) files representing tabular data.</span></span> <span data-ttu-id="08a91-113">Po sobě jdoucí čárky představuje prázdný sloupec.</span><span class="sxs-lookup"><span data-stu-id="08a91-113">Consecutive commas represent a blank column.</span></span>
 
-<span data-ttu-id="decad-114">Můžete předat volitelný <xref:System.StringSplitOptions.RemoveEmptyEntries?displayProperty=nameWithType> parametr vyloučit všechny prázdné řetězce ve vráceném poli.</span><span class="sxs-lookup"><span data-stu-id="decad-114">You can pass an optional <xref:System.StringSplitOptions.RemoveEmptyEntries?displayProperty=nameWithType> parameter to exclude any empty strings in the returned array.</span></span> <span data-ttu-id="decad-115">Pro složitější zpracování vrácené kolekce můžete použít [LINQ](../programming-guide/concepts/linq/index.md) k manipulaci s výsledkovou sekvencí.</span><span class="sxs-lookup"><span data-stu-id="decad-115">For more complicated processing of the returned collection, you can use [LINQ](../programming-guide/concepts/linq/index.md) to manipulate the result sequence.</span></span>
+<span data-ttu-id="08a91-114">Můžete předat volitelný <xref:System.StringSplitOptions.RemoveEmptyEntries?displayProperty=nameWithType> parametr pro vyloučení prázdných řetězců ve vráceném poli.</span><span class="sxs-lookup"><span data-stu-id="08a91-114">You can pass an optional <xref:System.StringSplitOptions.RemoveEmptyEntries?displayProperty=nameWithType> parameter to exclude any empty strings in the returned array.</span></span> <span data-ttu-id="08a91-115">Pro složitější zpracování vrácené kolekce můžete použít [LINQ](../programming-guide/concepts/linq/index.md) k manipulaci s pořadím výsledků.</span><span class="sxs-lookup"><span data-stu-id="08a91-115">For more complicated processing of the returned collection, you can use [LINQ](../programming-guide/concepts/linq/index.md) to manipulate the result sequence.</span></span>
 
-<span data-ttu-id="decad-116"><xref:System.String.Split%2A?displayProperty=nameWithType>můžete použít více oddělovacích znaků.</span><span class="sxs-lookup"><span data-stu-id="decad-116"><xref:System.String.Split%2A?displayProperty=nameWithType> can use multiple separator characters.</span></span>
-<span data-ttu-id="decad-117">Následující příklad používá mezery, čárky, tečky, dvojtečky a tabulátory, všechny <xref:System.String.Split%2A>předané v poli obsahujícím tyto oddělující znaky do .</span><span class="sxs-lookup"><span data-stu-id="decad-117">The following example uses spaces, commas, periods, colons, and tabs, all passed in an array containing these separating characters, to <xref:System.String.Split%2A>.</span></span>
-<span data-ttu-id="decad-118">Smyčka v dolní části kódu zobrazí každé slovo v vrácené pole.</span><span class="sxs-lookup"><span data-stu-id="decad-118">The loop at the bottom of the code displays each of the words in the returned array.</span></span>  
+<span data-ttu-id="08a91-116"><xref:System.String.Split%2A?displayProperty=nameWithType>může použít více znaků oddělovače.</span><span class="sxs-lookup"><span data-stu-id="08a91-116"><xref:System.String.Split%2A?displayProperty=nameWithType> can use multiple separator characters.</span></span>
+<span data-ttu-id="08a91-117">Následující příklad používá mezery, čárky, tečky, dvojtečky a tabulátory, všechny předané v poli, které obsahuje tyto dělicí znaky, do <xref:System.String.Split%2A> .</span><span class="sxs-lookup"><span data-stu-id="08a91-117">The following example uses spaces, commas, periods, colons, and tabs, all passed in an array containing these separating characters, to <xref:System.String.Split%2A>.</span></span>
+<span data-ttu-id="08a91-118">Smyčka v dolní části kódu zobrazí všechna slova ve vráceném poli.</span><span class="sxs-lookup"><span data-stu-id="08a91-118">The loop at the bottom of the code displays each of the words in the returned array.</span></span>
 
-[!code-csharp-interactive[split strings using multiple separators](../../../samples/snippets/csharp/how-to/strings/ParseStringsUsingSplit.cs#3)]
+:::code language="csharp" interactive="try-dotnet-method" source="../../../samples/snippets/csharp/how-to/strings/ParseStringsUsingSplit.cs" id="Snippet3":::
 
-<span data-ttu-id="decad-119">Po sobě jdoucí instance libovolného oddělovače vytvoří prázdný řetězec ve výstupním poli:</span><span class="sxs-lookup"><span data-stu-id="decad-119">Consecutive instances of any separator produce the empty string in the output array:</span></span>
+<span data-ttu-id="08a91-119">Po sobě jdoucí instance libovolného oddělovače vyprodukuje prázdný řetězec v výstupním poli:</span><span class="sxs-lookup"><span data-stu-id="08a91-119">Consecutive instances of any separator produce the empty string in the output array:</span></span>
 
-[!code-csharp-interactive[split strings using multiple consecutive separators](../../../samples/snippets/csharp/how-to/strings/ParseStringsUsingSplit.cs#4)]
+:::code language="csharp" interactive="try-dotnet-method" source="../../../samples/snippets/csharp/how-to/strings/ParseStringsUsingSplit.cs" id="Snippet4":::
 
-<span data-ttu-id="decad-120"><xref:System.String.Split%2A?displayProperty=nameWithType>může trvat pole řetězců (sekvence znaků, které fungují jako oddělovače pro analýzu cílového řetězce, namísto jednotlivých znaků).</span><span class="sxs-lookup"><span data-stu-id="decad-120"><xref:System.String.Split%2A?displayProperty=nameWithType> can take an array of strings (character sequences that act as separators for parsing the target string, instead of single characters).</span></span>  
-  
-[!code-csharp-interactive[split strings using strings as separators](../../../samples/snippets/csharp/how-to/strings/ParseStringsUsingSplit.cs#5)]
+<span data-ttu-id="08a91-120"><xref:System.String.Split%2A?displayProperty=nameWithType>může převzít pole řetězců (sekvence znaků, které fungují jako oddělovače pro analýzu cílového řetězce místo jednotlivých znaků).</span><span class="sxs-lookup"><span data-stu-id="08a91-120"><xref:System.String.Split%2A?displayProperty=nameWithType> can take an array of strings (character sequences that act as separators for parsing the target string, instead of single characters).</span></span>
 
-<span data-ttu-id="decad-121">Tyto ukázky můžete vyzkoušet tak, že se podíváte na kód v našem [úložišti GitHub](https://github.com/dotnet/docs/tree/master/samples/snippets/csharp/how-to/strings).</span><span class="sxs-lookup"><span data-stu-id="decad-121">You can try these samples by looking at the code in our [GitHub repository](https://github.com/dotnet/docs/tree/master/samples/snippets/csharp/how-to/strings).</span></span> <span data-ttu-id="decad-122">Nebo si můžete stáhnout ukázky [jako zip soubor](../../../samples/snippets/csharp/how-to/strings.zip).</span><span class="sxs-lookup"><span data-stu-id="decad-122">Or you can download the samples [as a zip file](../../../samples/snippets/csharp/how-to/strings.zip).</span></span>
+:::code language="csharp" interactive="try-dotnet-method" source="../../../samples/snippets/csharp/how-to/strings/ParseStringsUsingSplit.cs" id="Snippet5":::
 
-## <a name="see-also"></a><span data-ttu-id="decad-123">Viz také</span><span class="sxs-lookup"><span data-stu-id="decad-123">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="08a91-121">Viz také</span><span class="sxs-lookup"><span data-stu-id="08a91-121">See also</span></span>
 
-- [<span data-ttu-id="decad-124">Programovací příručka jazyka C#</span><span class="sxs-lookup"><span data-stu-id="decad-124">C# Programming Guide</span></span>](../programming-guide/index.md)
-- [<span data-ttu-id="decad-125">Řetězce</span><span class="sxs-lookup"><span data-stu-id="decad-125">Strings</span></span>](../programming-guide/strings/index.md)
-- [<span data-ttu-id="decad-126">Regulární výrazy rozhraní .NET</span><span class="sxs-lookup"><span data-stu-id="decad-126">.NET Regular Expressions</span></span>](../../standard/base-types/regular-expressions.md)
+- [<span data-ttu-id="08a91-122">Průvodce programováním v C#</span><span class="sxs-lookup"><span data-stu-id="08a91-122">C# programming guide</span></span>](../programming-guide/index.md)
+- [<span data-ttu-id="08a91-123">Řetězce</span><span class="sxs-lookup"><span data-stu-id="08a91-123">Strings</span></span>](../programming-guide/strings/index.md)
+- [<span data-ttu-id="08a91-124">Regulární výrazy .NET</span><span class="sxs-lookup"><span data-stu-id="08a91-124">.NET regular expressions</span></span>](../../standard/base-types/regular-expressions.md)

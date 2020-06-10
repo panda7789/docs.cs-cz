@@ -1,5 +1,6 @@
 ---
 title: 'Postupy: Explicitní generování výjimek'
+description: Zjistěte, jak v rozhraní .NET vyvolat výjimku explicitně pomocí příkazu throw jazyka C# nebo příkazu Visual Basic throw.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -12,22 +13,22 @@ helpviewer_keywords:
 - exceptions, throwing
 - implicitly throwing exceptions
 ms.assetid: 72bdd157-caa9-4478-9ee3-cb4500b84528
-ms.openlocfilehash: 750da20b8c1c40901cc363ac0eff8af888821ce9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2dd939f9edd58ba91ea74df5d6930087849f0560
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75708859"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662781"
 ---
-# <a name="how-to-explicitly-throw-exceptions"></a><span data-ttu-id="08568-102">Jak explicitně vyvolat výjimky</span><span class="sxs-lookup"><span data-stu-id="08568-102">How to explicitly throw exceptions</span></span>
+# <a name="how-to-explicitly-throw-exceptions"></a><span data-ttu-id="7af36-103">Postup explicitního vyvolání výjimek</span><span class="sxs-lookup"><span data-stu-id="7af36-103">How to explicitly throw exceptions</span></span>
 
-<span data-ttu-id="08568-103">Můžete explicitně vyvolat výjimku [`throw`](../../csharp/language-reference/keywords/throw.md) pomocí C# [`Throw`](../../visual-basic/language-reference/statements/throw-statement.md) nebo Visual Basic prohlášení.</span><span class="sxs-lookup"><span data-stu-id="08568-103">You can explicitly throw an exception using the C# [`throw`](../../csharp/language-reference/keywords/throw.md) or the Visual Basic [`Throw`](../../visual-basic/language-reference/statements/throw-statement.md) statement.</span></span> <span data-ttu-id="08568-104">Můžete také vyvolat zachycené výjimky znovu pomocí příkazu. `throw`</span><span class="sxs-lookup"><span data-stu-id="08568-104">You can also throw a caught exception again using the `throw` statement.</span></span> <span data-ttu-id="08568-105">Je vhodné kódování praxe přidat informace o výjimce, která je znovu vyvolána poskytnout další informace při ladění.</span><span class="sxs-lookup"><span data-stu-id="08568-105">It is good coding practice to add information to an exception that is re-thrown to provide more information when debugging.</span></span>
+<span data-ttu-id="7af36-104">Výjimku lze explicitně vyvolat pomocí jazyka C# [`throw`](../../csharp/language-reference/keywords/throw.md) nebo [`Throw`](../../visual-basic/language-reference/statements/throw-statement.md) příkazu Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="7af36-104">You can explicitly throw an exception using the C# [`throw`](../../csharp/language-reference/keywords/throw.md) or the Visual Basic [`Throw`](../../visual-basic/language-reference/statements/throw-statement.md) statement.</span></span> <span data-ttu-id="7af36-105">Zachycenou výjimku můžete také vyvolat znovu pomocí `throw` příkazu.</span><span class="sxs-lookup"><span data-stu-id="7af36-105">You can also throw a caught exception again using the `throw` statement.</span></span> <span data-ttu-id="7af36-106">Je vhodné postupovat při kódování pro přidání informací do výjimky, která se znovu vyvolala k poskytnutí dalších informací při ladění.</span><span class="sxs-lookup"><span data-stu-id="7af36-106">It is good coding practice to add information to an exception that is re-thrown to provide more information when debugging.</span></span>
 
-<span data-ttu-id="08568-106">Následující příklad kódu `try` / `catch` používá blok zachytit <xref:System.IO.FileNotFoundException>možné .</span><span class="sxs-lookup"><span data-stu-id="08568-106">The following code example uses a `try`/`catch` block to catch a possible <xref:System.IO.FileNotFoundException>.</span></span> <span data-ttu-id="08568-107">Následující `try` blok je `catch` blok, <xref:System.IO.FileNotFoundException> který zachytí a zapíše zprávu do konzoly, pokud datový soubor nebyl nalezen.</span><span class="sxs-lookup"><span data-stu-id="08568-107">Following the `try` block is a `catch` block that catches the <xref:System.IO.FileNotFoundException> and writes a message to the console if the data file is not found.</span></span> <span data-ttu-id="08568-108">Dalším příkazem `throw` je příkaz, který <xref:System.IO.FileNotFoundException> vyvolá nový a přidá textové informace k výjimce.</span><span class="sxs-lookup"><span data-stu-id="08568-108">The next statement is the `throw` statement that throws a new <xref:System.IO.FileNotFoundException> and adds text information to the exception.</span></span>
+<span data-ttu-id="7af36-107">Následující příklad kódu používá `try` / `catch` blok k zachycení možného <xref:System.IO.FileNotFoundException> .</span><span class="sxs-lookup"><span data-stu-id="7af36-107">The following code example uses a `try`/`catch` block to catch a possible <xref:System.IO.FileNotFoundException>.</span></span> <span data-ttu-id="7af36-108">Po `try` bloku je `catch` blok, který zachytává <xref:System.IO.FileNotFoundException> a zapisuje zprávu do konzoly, pokud datový soubor nebyl nalezen.</span><span class="sxs-lookup"><span data-stu-id="7af36-108">Following the `try` block is a `catch` block that catches the <xref:System.IO.FileNotFoundException> and writes a message to the console if the data file is not found.</span></span> <span data-ttu-id="7af36-109">Další příkaz je `throw` příkaz, který vyvolá novou <xref:System.IO.FileNotFoundException> a přidá do výjimky textové informace.</span><span class="sxs-lookup"><span data-stu-id="7af36-109">The next statement is the `throw` statement that throws a new <xref:System.IO.FileNotFoundException> and adds text information to the exception.</span></span>
 
 [!code-csharp[Exception.Throwing#1](~/samples/snippets/csharp/VS_Snippets_CLR/Exception.Throwing/CS/throw.cs#1)]
 [!code-vb[Exception.Throwing#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Exception.Throwing/VB/throw.vb#1)]  
 
-## <a name="see-also"></a><span data-ttu-id="08568-109">Viz také</span><span class="sxs-lookup"><span data-stu-id="08568-109">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="7af36-110">Viz také</span><span class="sxs-lookup"><span data-stu-id="7af36-110">See also</span></span>
 
-- [<span data-ttu-id="08568-110">Výjimky</span><span class="sxs-lookup"><span data-stu-id="08568-110">Exceptions</span></span>](index.md)
+- [<span data-ttu-id="7af36-111">Výjimky</span><span class="sxs-lookup"><span data-stu-id="7af36-111">Exceptions</span></span>](index.md)

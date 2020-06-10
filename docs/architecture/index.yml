@@ -6,12 +6,12 @@ metadata:
   description: Seznamte se s doporučenými postupy pro architekty, vytváření a migraci aplikací .NET.
   ms.topic: landing-page
   ms.date: 03/19/2020
-  ms.openlocfilehash: ff3b842d33ea3fd5d9cbed5b39b2757933c1a616
-  ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+  ms.openlocfilehash: 664edba616c962a6599e6bf5395ece44b0e817db
+  ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/19/2020
-  ms.locfileid: "83613639"
+  ms.lasthandoff: 06/10/2020
+  ms.locfileid: "84662755"
 landingContent:
 - title: Vývoj aplikací pro ASP.NET Core
   linkLists:
@@ -37,6 +37,8 @@ landingContent:
     links:
     - text: Hello World kurz mikroslužeb
       url: https://dotnet.microsoft.com/learn/aspnet/microservice-tutorial/intro
+    - text: Vytvoření a nasazení cloudové nativní ASP.NET Core mikroslužeb
+      url: https://docs.microsoft.com/learn/modules/microservices-aspnet-core
 - title: Migrace aplikací .NET do Azure
   linkLists:
   - linkListType: concept
