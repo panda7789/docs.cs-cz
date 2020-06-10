@@ -2,21 +2,21 @@
 title: System.Runtime.Serialization.XsdImportAnnotationFailed
 ms.date: 03/30/2017
 ms.assetid: f52ff1d8-7b0d-421c-bf08-a9fbd0e76968
-ms.openlocfilehash: 46c6edc481f1f45641bcbd52c2bfde9d1a54b848
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 88a5ebfc3e2c82abe907c41bbd646377af7130da
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61784511"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84594241"
 ---
 # <a name="systemruntimeserializationxsdimportannotationfailed"></a>System.Runtime.Serialization.XsdImportAnnotationFailed
 System.Runtime.Serialization.XsdImportAnnotationFailed  
   
 ## <a name="description"></a>Popis  
- Nepovedlo se importovat poznámku při importu XSD.  
+ Import poznámky během importu XSD se nezdařil.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Trasování](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [Řešení problémů s aplikací pomocí trasování](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
-- [Správa a diagnostika](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [Trasování](index.md)
+- [Řešení potíží s aplikací pomocí trasování](using-tracing-to-troubleshoot-your-application.md)
+- [Správa a diagnostika](../index.md)

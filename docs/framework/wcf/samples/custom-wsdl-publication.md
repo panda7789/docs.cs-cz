@@ -2,29 +2,29 @@
 title: Vlastní publikování WSDL
 ms.date: 03/30/2017
 ms.assetid: 3b3e8103-2c95-4db3-a05b-46aa8e9d4d29
-ms.openlocfilehash: ae6d5fdf243d5000090e993bd3353c6180d0ccaa
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b18ac2f72d58c768b3784e1c414a71cdaec50c01
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79145056"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84596692"
 ---
 # <a name="custom-wsdl-publication"></a>Vlastní publikování WSDL
-Tato ukázka ukazuje, jak:  
+Tato ukázka předvádí, jak:  
   
-- Implementujte <xref:System.ServiceModel.Description.IWsdlExportExtension?displayProperty=nameWithType> na <xref:System.ServiceModel.Description.IContractBehavior?displayProperty=nameWithType> vlastní atribut exportovat atribut vlastnosti jako poznámky WSDL.  
+- Implementujte <xref:System.ServiceModel.Description.IWsdlExportExtension?displayProperty=nameWithType> vlastní <xref:System.ServiceModel.Description.IContractBehavior?displayProperty=nameWithType> atribut pro export vlastností atributu jako anotace WSDL.  
   
-- Implementovat <xref:System.ServiceModel.Description.IWsdlImportExtension?displayProperty=nameWithType> importovat vlastní WSDL poznámky.  
+- Implementujte <xref:System.ServiceModel.Description.IWsdlImportExtension?displayProperty=nameWithType> pro import vlastních poznámek WSDL.  
   
-- <xref:System.ServiceModel.Description.IServiceContractGenerationExtension?displayProperty=nameWithType> Implementovat <xref:System.ServiceModel.Description.IOperationContractGenerationExtension?displayProperty=nameWithType> a na vlastní chování smlouvy a vlastní operace chování, respektive psát importované poznámky jako komentáře v CodeDom pro importované smlouvy a operace.  
+- Implementujte <xref:System.ServiceModel.Description.IServiceContractGenerationExtension?displayProperty=nameWithType> a <xref:System.ServiceModel.Description.IOperationContractGenerationExtension?displayProperty=nameWithType> na vlastní chování kontraktu a chování vlastní operace pro zápis importovaných poznámek jako komentářů v CodeDom pro importovanou smlouvu a operaci.  
   
-- Pomocí <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> ke stažení WSDL, <xref:System.ServiceModel.Description.WsdlImporter?displayProperty=nameWithType> a importovat WSDL pomocí vlastního wsdl import a <xref:System.ServiceModel.Description.ServiceContractGenerator?displayProperty=nameWithType> generovat Windows Communication Foundation (WCF) klientský kód s WSDL poznámky jako /// a ''' komentáře v Jazyce C# a Visual Basic.  
+- Použijte <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> ke stažení WSDL, a <xref:System.ServiceModel.Description.WsdlImporter?displayProperty=nameWithType> pro Import WSDL pomocí vlastního programu pro Import WSDL, a <xref:System.ServiceModel.Description.ServiceContractGenerator?displayProperty=nameWithType> pro generování kódu klienta Windows Communication Foundation (WCF) s poznámkami WSDL jako//a v jazyce C# a Visual Basic.  
   
 > [!NOTE]
-> Postup instalace a pokyny k sestavení pro tuto ukázku jsou umístěny na konci tohoto tématu.  
+> Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
   
 ## <a name="service"></a>Služba  
- Služba v této ukázce je označena dvěma vlastními atributy. První , `WsdlDocumentationAttribute`přijímá řetězec v konstruktoru a lze použít k poskytnutí rozhraní smlouvy nebo operace s řetězcem, který popisuje jeho použití. Druhý , `WsdlParamOrReturnDocumentationAttribute`lze použít k vrácení hodnot nebo parametrů k popisu těchto hodnot v operaci. Následující příklad ukazuje servisní `ICalculator`smlouvu , popsanou pomocí těchto atributů.  
+ Služba v této ukázce je označena dvěma vlastními atributy. První,, `WsdlDocumentationAttribute` přijímá řetězec v konstruktoru a lze jej použít pro poskytnutí rozhraní kontraktu nebo operace s řetězcem, který popisuje jeho použití. Druhý, `WsdlParamOrReturnDocumentationAttribute` ,, lze použít pro návrat hodnoty nebo parametry k popisu těchto hodnot v operaci. Následující příklad ukazuje kontrakt služby, `ICalculator` popsaný pomocí těchto atributů.  
   
 ```csharp  
 // Define a service contract.
@@ -67,9 +67,9 @@ public interface ICalculator
 }  
 ```  
   
- Implements `WsdlDocumentationAttribute` <xref:System.ServiceModel.Description.IContractBehavior> a <xref:System.ServiceModel.Description.IOperationBehavior>, tak atribut instance jsou <xref:System.ServiceModel.Description.ContractDescription> přidány <xref:System.ServiceModel.Description.OperationDescription> do odpovídající nebo při otevření služby. Atribut také implementuje <xref:System.ServiceModel.Description.IWsdlExportExtension>. Při <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportContract%28System.ServiceModel.Description.WsdlExporter%2CSystem.ServiceModel.Description.WsdlContractConversionContext%29> volání, <xref:System.ServiceModel.Description.WsdlExporter> který se používá k exportu <xref:System.ServiceModel.Description.WsdlContractConversionContext> metadat a který obsahuje objekty popisu služby jsou předány jako parametry umožňující změnu exportovaných metadat.  
+ `WsdlDocumentationAttribute`Implementuje <xref:System.ServiceModel.Description.IContractBehavior> a <xref:System.ServiceModel.Description.IOperationBehavior> , takže instance atributů jsou přidány do odpovídající <xref:System.ServiceModel.Description.ContractDescription> nebo <xref:System.ServiceModel.Description.OperationDescription> při otevření služby. Atribut také implementuje <xref:System.ServiceModel.Description.IWsdlExportExtension> . Při <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportContract%28System.ServiceModel.Description.WsdlExporter%2CSystem.ServiceModel.Description.WsdlContractConversionContext%29> volání metody, <xref:System.ServiceModel.Description.WsdlExporter> která slouží k exportu metadat a <xref:System.ServiceModel.Description.WsdlContractConversionContext> obsahuje objekty popisu služby, jsou předány jako parametry, které umožňují úpravu exportovaných metadat.  
   
- V této ukázce, v závislosti <xref:System.ServiceModel.Description.ContractDescription> na <xref:System.ServiceModel.Description.OperationDescription>tom, zda export kontextu objekt má nebo , komentář je extrahován z atributu pomocí vlastnosti text a je přidán do wsdl anotace prvek, jak je znázorněno v následujícím kódu.  
+ V této ukázce, v závislosti na tom, zda má objekt kontextu exportu <xref:System.ServiceModel.Description.ContractDescription> nebo <xref:System.ServiceModel.Description.OperationDescription> , je komentář extrahován z atributu pomocí vlastnosti text a je přidán do prvku poznámky WSDL, jak je znázorněno v následujícím kódu.  
   
 ```csharp
 public void ExportContract(WsdlExporter exporter, WsdlContractConversionContext context)
@@ -108,7 +108,7 @@ public void ExportContract(WsdlExporter exporter, WsdlContractConversionContext 
 }
 ```  
   
- Pokud je operace exportována, ukázka používá `WsdlParamOrReturnDocumentationAttribute` reflexe k získání všech hodnot pro parametry a vrácené hodnoty a přidá je do prvků poznámky WSDL pro tuto operaci následujícím způsobem.  
+ Je-li exportována operace, používá ukázka reflexe k získání všech `WsdlParamOrReturnDocumentationAttribute` hodnot parametrů a vrácených hodnot a přidává je do prvků poznámky WSDL pro tuto operaci následujícím způsobem.  
   
 ```csharp
 // Get returns information  
@@ -170,12 +170,12 @@ for (int i = 0; i < args.Length; i++)
 ```  
   
 ## <a name="svcutil-client"></a>Klient Svcutil  
- Tato ukázka nepoužívá Svcutil.exe. Smlouva je k dispozici v souboru generatedClient.cs tak, aby po ukázka ukazuje vlastní WSDL import a generování kódu, služby lze vyvolat. Chcete-li použít následující vlastní WSDL import pro tento příklad, můžete spustit `/svcutilConfig` Svcutil.exe a zadat možnost, která poskytuje `WsdlDocumentation.dll` cestu ke konfiguračnímu souboru klienta použitému v této ukázce, který odkazuje na knihovnu. Chcete-li `WsdlDocumentationImporter`však načíst program , musí být program Svuctil.exe schopen vyhledat a načíst knihovnu, `WsdlDocumentation.dll` což znamená, že je registrován v globální mezipaměti sestavení v cestě nebo je ve stejném adresáři jako svcutil.exe. Pro základní vzorek, jako je tento, nejjednodušší věc udělat, je zkopírovat Svcutil.exe `WsdlDocumentation.dll` a konfigurační soubor klienta do stejného adresáře jako a spustit jej odtud.  
+ Tato ukázka nepoužívá Svcutil. exe. Smlouva je k dispozici v souboru generatedClient.cs tak, aby po ukázce předvedla vlastní import a generování kódu WSDL, službu lze vyvolat. Chcete-li použít následující vlastní Import WSDL pro tento příklad, můžete spustit Svcutil. exe a zadat možnost a zadat `/svcutilConfig` cestu ke konfiguračnímu souboru klienta použitému v této ukázce, který odkazuje na `WsdlDocumentation.dll` knihovnu. Aby bylo možné načíst `WsdlDocumentationImporter` , ale Svuctil. exe musí být schopna najít a načíst `WsdlDocumentation.dll` knihovnu, což znamená, že je registrována v globální mezipaměti sestavení (GAC), v cestě nebo je ve stejném adresáři jako Svcutil. exe. Pro základní vzorek, jako je to nejjednodušší, je zkopírovat Svcutil. exe a konfigurační soubor klienta do stejného adresáře jako `WsdlDocumentation.dll` a spustit ho odtud.  
   
-## <a name="the-custom-wsdl-importer"></a>Vlastní wsdl import  
- Vlastní <xref:System.ServiceModel.Description.IWsdlImportExtension> objekt `WsdlDocumentationImporter` také <xref:System.ServiceModel.Description.IContractBehavior> implementuje <xref:System.ServiceModel.Description.IOperationBehavior> a má být přidán <xref:System.ServiceModel.Description.IServiceContractGenerationExtension> do <xref:System.ServiceModel.Description.IOperationContractGenerationExtension> importovaných ServiceEndpoints a má být vyvolán k úpravě generování kódu při vytváření smlouvy nebo operace.  
+## <a name="the-custom-wsdl-importer"></a>Vlastní Import WSDL  
+ Vlastní <xref:System.ServiceModel.Description.IWsdlImportExtension> objekt `WsdlDocumentationImporter` také implementuje <xref:System.ServiceModel.Description.IContractBehavior> a <xref:System.ServiceModel.Description.IOperationBehavior> k přidání do importovaných ServiceEndpoints a <xref:System.ServiceModel.Description.IServiceContractGenerationExtension> a <xref:System.ServiceModel.Description.IOperationContractGenerationExtension> k vyvolání pro úpravu generování kódu při vytváření kontraktu nebo kódu operace.  
   
- Nejprve v <xref:System.ServiceModel.Description.IWsdlImportExtension.ImportContract%28System.ServiceModel.Description.WsdlImporter%2CSystem.ServiceModel.Description.WsdlContractConversionContext%29> metodě ukázka určuje, zda je anotace WSDL na úrovni smlouvy nebo operace a přidá se jako chování v příslušném oboru a předá importovaný text poznámky svému konstruktoru.  
+ Nejprve <xref:System.ServiceModel.Description.IWsdlImportExtension.ImportContract%28System.ServiceModel.Description.WsdlImporter%2CSystem.ServiceModel.Description.WsdlContractConversionContext%29> Ukázka v metodě určí, zda je Poznámka WSDL na úrovni smlouvy nebo operace, a přidá samu sebe jako chování v příslušném oboru a předá importovaná text poznámky do konstruktoru.  
   
 ```csharp
 public void ImportContract(WsdlImporter importer, WsdlContractConversionContext context)  
@@ -202,7 +202,7 @@ public void ImportContract(WsdlImporter importer, WsdlContractConversionContext 
 }  
 ```  
   
- Potom při generování kódu, systém vyvolá <xref:System.ServiceModel.Description.IServiceContractGenerationExtension.GenerateContract%28System.ServiceModel.Description.ServiceContractGenerationContext%29> a <xref:System.ServiceModel.Description.IOperationContractGenerationExtension.GenerateOperation%28System.ServiceModel.Description.OperationContractGenerationContext%29> metody, předávání příslušné informace o kontextu. Ukázka zformátuje vlastní poznámky WSDL a vloží je jako komentáře do CodeDom.  
+ Po vygenerování kódu pak systém vyvolá <xref:System.ServiceModel.Description.IServiceContractGenerationExtension.GenerateContract%28System.ServiceModel.Description.ServiceContractGenerationContext%29> metody a a předává <xref:System.ServiceModel.Description.IOperationContractGenerationExtension.GenerateOperation%28System.ServiceModel.Description.OperationContractGenerationContext%29> příslušné kontextové informace. Ukázka formátuje vlastní anotace WSDL a vkládá je jako komentáře do CodeDom.  
   
 ```csharp
 public void GenerateContract(ServiceContractGenerationContext context)  
@@ -219,7 +219,7 @@ public void GenerateOperation(OperationContractGenerationContext context)
 ```  
   
 ## <a name="the-client-application"></a>Klientská aplikace  
- Klientská aplikace načte vlastní import WSDL zadáním v konfiguračním souboru aplikace.  
+ Klientská aplikace načte vlastní Import WSDL zadáním do konfiguračního souboru aplikace.  
   
 ```xml  
 <client>  
@@ -234,7 +234,7 @@ public void GenerateOperation(OperationContractGenerationContext context)
 </client>  
 ```  
   
- Po zadání vlastního dovozce načte systém metadat WCF vlastní <xref:System.ServiceModel.Description.WsdlImporter> importér do všech vytvořených pro tento účel. Tato ukázka <xref:System.ServiceModel.Description.MetadataExchangeClient> používá ke stažení <xref:System.ServiceModel.Description.WsdlImporter> metadata, správně nakonfigurován pro import metadat pomocí <xref:System.ServiceModel.Description.ServiceContractGenerator> vlastního importu vzorku vytvoří a zkompilovat upravené informace o smlouvě do jazyka Visual Basic a C# klientský kód, který lze použít v sadě Visual Studio pro podporu Intellisense nebo kompilovány do dokumentace XML.  
+ Po určení vlastního dovozce načte systém metadat WCF vlastní dovozce do libovolného <xref:System.ServiceModel.Description.WsdlImporter> vytvořeného pro tento účel. V této ukázce se používá <xref:System.ServiceModel.Description.MetadataExchangeClient> ke stažení metadat, ke <xref:System.ServiceModel.Description.WsdlImporter> správné konfiguraci pro import metadat pomocí vlastního importu, který ukázka vytvoří, a <xref:System.ServiceModel.Description.ServiceContractGenerator> ke kompilaci upravených informací o kontraktu do obou Visual Basic i C# kódu klienta, které lze použít v sadě Visual Studio pro podporu technologie IntelliSense nebo kompilování do dokumentace XML.  
   
 ```csharp
 /// From WSDL Documentation:  
@@ -292,17 +292,17 @@ public interface ICalculator
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Ujistěte se, že jste provedli [jednorázový postup instalace pro ukázky windows communication foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. Chcete-li vytvořit c# nebo Visual Basic .NET vydání řešení, postupujte podle pokynů v [sestavení windows communication foundation ukázky](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Chcete-li sestavit edici C# nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](building-the-samples.md).  
   
-3. Chcete-li spustit ukázku v konfiguraci jednoho nebo více počítačů, postupujte podle pokynů v [části Spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](running-the-samples.md).  
   
 > [!IMPORTANT]
-> Ukázky mohou být již nainstalovány v počítači. Před pokračováním zkontrolujte následující (výchozí) adresář.  
+> Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >
 > `<InstallDrive>:\WF_WCF_Samples`  
 >
-> Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a Windows Workflow Foundation (WF) Ukázky pro rozhraní .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka je umístěna v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Metadata\WsdlDocumentation`  

@@ -2,19 +2,19 @@
 title: 'Postupy: Přístup ke službám WCF pomocí jednosměrných kontraktů a kontraktů požadavek-odpověď'
 ms.date: 03/30/2017
 ms.assetid: 7e10d3a5-fcf4-4a4b-a8d6-92ee2c988b3b
-ms.openlocfilehash: 533b97892b15c9034679efba6e4da5e72b56099b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9c8bd0d21be1d87d536eb6f943e782fc4da352a8
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79185146"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597186"
 ---
 # <a name="how-to-access-wcf-services-with-one-way-and-request-reply-contracts"></a>Postupy: Přístup ke službám WCF pomocí jednosměrných kontraktů a kontraktů požadavek-odpověď
-Následující postupy popisují, jak získat přístup ke službě WCF (Windows Communication Foundation), která definuje jednosměrnou smlouvu a kontrakt požadavku a odpovědi a která nepoužívá duplexní komunikační vzor.  
+Následující postupy popisují, jak přistupovat ke službě Windows Communication Foundation (WCF), která definuje jednosměrný kontrakt a kontrakt požadavek-odpověď, který nepoužívá duplexní způsob komunikace.  
   
-### <a name="to-define-the-service"></a>Chcete-li definovat službu  
+### <a name="to-define-the-service"></a>Definování služby  
   
-1. Deklarujte servisní smlouvu. Operace, které mají být jednosměrné, musí mít `IsOneWay` nastaveny na `true` <xref:System.ServiceModel.OperationContractAttribute>v rámci . Následující kód deklaruje `IOneWayCalculator` smlouvu, `Add`která `Subtract` `Multiply`má `Divide`jednosměrné operace pro , , a . Definuje také operaci odpovědi požadavku `SayHello`na volání .  
+1. Deklarujte kontrakt služby. Operace, které mají být jednosměrné, musí mít `IsOneWay` nastavenou hodnotu `true` v rámci <xref:System.ServiceModel.OperationContractAttribute> . Následující kód deklaruje `IOneWayCalculator` kontrakt, který má jednosměrné operace pro `Add` , `Subtract` , `Multiply` a `Divide` . Také definuje operaci odpovědi na žádost s názvem `SayHello` .  
   
     ```csharp  
     [ServiceContract(Namespace = "http://Microsoft.ServiceModel.Samples")]  
@@ -33,7 +33,7 @@ Následující postupy popisují, jak získat přístup ke službě WCF (Windows
     }  
     ```  
   
-2. Implementujte servisní smlouvu. Následující kód implementuje `IOnewayCalculator` rozhraní.  
+2. Implementujte kontrakt služby. Následující kód implementuje `IOnewayCalculator` rozhraní.  
   
     ```csharp  
     [ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Multiple, InstanceContextMode = InstanceContextMode.PerCall)]  
@@ -71,7 +71,7 @@ Následující postupy popisují, jak získat přístup ke službě WCF (Windows
     }  
     ```  
   
-3. Hostujte službu v konzolové aplikaci. Následující kód ukazuje, jak hostovat službu.  
+3. Hostovat službu v konzolové aplikaci. Následující kód ukazuje, jak hostovat službu.  
   
     ```csharp  
     // Host the service within this EXE console application.  
@@ -109,7 +109,7 @@ Následující postupy popisují, jak získat přístup ke službě WCF (Windows
   
 ### <a name="to-access-the-service"></a>Přístup ke službě  
   
-1. Spusťte [nástroj ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) pomocí koncové adresy výměny metadat k `Svcutil http://localhost:8000/Service` vytvoření třídy klienta pro službu pomocí následujícího příkazového řádku: [Nástroj ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) generuje sadu rozhraní a tříd, jak je znázorněno v následujícím ukázkovém kódu.  
+1. Spusťte nástroj pro dodávání [metadat ServiceModel (Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) pomocí adresy koncového bodu výměny metadat k vytvoření třídy klienta pro službu pomocí následujícího příkazového řádku `Svcutil http://localhost:8000/Service` : [Nástroj pro nastavení metadat ServiceModel (Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) vygeneruje sadu rozhraní a tříd, jak je znázorněno v následujícím ukázkovém kódu.  
   
     ```csharp  
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0")]  
@@ -194,7 +194,7 @@ Následující postupy popisují, jak získat přístup ke službě WCF (Windows
     }  
     ```  
   
-     Všimněte `IOneWayCalculator` si v rozhraní, že operace <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> jednosměrné `true` služby mají atribut nastavený a operace služby požadavek odpověď má atribut nastavený na výchozí hodnotu . `false` Všimněte `OneWayCalculatorClient` si také třídy. Toto je třída, kterou použijete k volání služby.  
+     Všimněte si `IOneWayCalculator` , že v rozhraní, které má jednosměrnou operaci služby <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> atribut nastaven na `true` a operace služby požadavek-odpověď má atribut nastaven na výchozí hodnotu, `false` . Všimněte si také `OneWayCalculatorClient` třídy. Toto je třída, kterou použijete k volání služby.  
   
 2. Vytvořte objekt klienta.  
   
@@ -239,7 +239,7 @@ Následující postupy popisují, jak získat přístup ke službě WCF (Windows
     Console.WriteLine("SayHello() returned: " + response);  
     ```  
   
-4. Zavřete klienta zavřít připojení a vyčistit prostředky.  
+4. Ukončením klienta ukončete připojení a vyčistěte prostředky.  
   
     ```csharp  
     //Closing the client gracefully closes the connection and cleans up resources  
@@ -247,7 +247,7 @@ Následující postupy popisují, jak získat přístup ke službě WCF (Windows
     ```  
   
 ## <a name="example"></a>Příklad  
- Následuje úplný seznam kódu použitého v tomto tématu.  
+ Následuje úplný seznam kódu používaného v tomto tématu.  
   
 ```csharp  
 // Service.cs  
@@ -402,4 +402,4 @@ namespace Microsoft.ServiceModel.Samples
   
 ## <a name="see-also"></a>Viz také
 
-- [Jednosměrné služby](../../../../docs/framework/wcf/feature-details/one-way-services.md)
+- [Jednosměrné služby](one-way-services.md)

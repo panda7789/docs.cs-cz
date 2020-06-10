@@ -1,5 +1,6 @@
 ---
 title: 'Postupy: Zápis smyčky Parallel.For pomocí proměnných v místním vláknu'
+description: Podívejte se na příklad, jak napsat Parallel. for smyčka v rozhraní .NET, která používá proměnné místního vlákna, které ukládají a načítají stav každého samostatného úkolu ve smyčce.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,12 +9,12 @@ dev_langs:
 helpviewer_keywords:
 - parallel for loops, how to use local state
 ms.assetid: 68384064-7ee7-41e2-90e3-71f00bde01bb
-ms.openlocfilehash: bb6ac1a64c3a71646946d1af894d1124b12e4769
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 9cff507757aab2e5676df2fabb02a237a2172c17
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290756"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84599786"
 ---
 # <a name="how-to-write-a-parallelfor-loop-with-thread-local-variables"></a>Postupy: Zápis smyčky Parallel.For pomocí proměnných v místním vláknu
 Tento příklad ukazuje, jak použít proměnné místního vlákna k ukládání a načítání stavu v každé samostatné úloze, která je vytvořena <xref:System.Threading.Tasks.Parallel.For%2A> smyčkou. Pomocí místních dat vlákna se můžete vyhnout režie synchronizace velkého počtu přístupů ke sdílenému stavu. Místo psaní do sdíleného prostředku v každé iteraci vypočítáte a uložíte hodnotu, dokud nebudou všechny iterace úlohy dokončeny. Nakonec můžete zapsat konečný výsledek do sdíleného prostředku nebo ho předat jiné metodě.  

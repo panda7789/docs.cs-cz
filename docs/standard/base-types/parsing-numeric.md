@@ -1,5 +1,6 @@
 ---
 title: Analýza číselných řetězců v .NET
+description: Naučte se analyzovat číselné řetězce v .NET. Naučte se analyzovat poskytovatele formátu, hodnoty výčtu NumberStyles a číslice Unicode.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -11,12 +12,12 @@ helpviewer_keywords:
 - enumerations [.NET Framework], parsing strings
 - base types, parsing strings
 ms.assetid: e39324ee-72e5-42d4-a80d-bf3ee7fc6c59
-ms.openlocfilehash: 000419e63e86607cd76728ae6e15ac6cd67b87f4
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: b184bad10b816c1eae798302337b5c901732ad7f
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84277645"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84589536"
 ---
 # <a name="parsing-numeric-strings-in-net"></a>Analýza číselných řetězců v síti NET
 Všechny číselné typy mají dvě statické metody analýzy `Parse` a `TryParse` , které lze použít k převedení řetězcové reprezentace čísla na číselný typ. Tyto metody umožňují analyzovat řetězce, které byly vytvořeny pomocí řetězců formátu v hodnotách [standardního číselného formátu](standard-numeric-format-strings.md) a řetězců [vlastního číselného formátu](custom-numeric-format-strings.md). Ve výchozím nastavení `Parse` metody a `TryParse` mohou úspěšně převést řetězce, které obsahují celočíselné desítkové číslice pouze na celočíselné hodnoty. Můžou úspěšně převést řetězce, které obsahují celočíselné a zlomkové číslice, oddělovače skupin a oddělovač desetinných míst na hodnoty s plovoucí desetinnou čárkou. `Parse`Metoda vyvolá výjimku, pokud se operace nezdařila, zatímco `TryParse` Metoda vrátí `false` .  
