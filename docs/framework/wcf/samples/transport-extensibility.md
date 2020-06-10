@@ -2,22 +2,22 @@
 title: Rozšiřitelnost přenosů
 ms.date: 03/30/2017
 ms.assetid: 3c9108be-f60f-4035-9f57-1da58c325420
-ms.openlocfilehash: 9e7ce17c74abaa70140c4ddf8c7410bde59c9785
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 57868f72658831039e936bd4325836b24531a6dc
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61971363"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84596523"
 ---
-# <a name="transport-extensibility"></a><span data-ttu-id="dc019-102">Rozšiřitelnost přenosů</span><span class="sxs-lookup"><span data-stu-id="dc019-102">Transport Extensibility</span></span>
-<span data-ttu-id="dc019-103">Tato část obsahuje ukázky, které předvádějí vlastní přenosy ve Windows Communication Foundation (WCF).</span><span class="sxs-lookup"><span data-stu-id="dc019-103">This section contains samples that demonstrate custom transports in Windows Communication Foundation (WCF).</span></span>  
+# <a name="transport-extensibility"></a><span data-ttu-id="19cd0-102">Rozšiřitelnost přenosů</span><span class="sxs-lookup"><span data-stu-id="19cd0-102">Transport Extensibility</span></span>
+<span data-ttu-id="19cd0-103">Tato část obsahuje ukázky, které ukazují vlastní přenosy v Windows Communication Foundation (WCF).</span><span class="sxs-lookup"><span data-stu-id="19cd0-103">This section contains samples that demonstrate custom transports in Windows Communication Foundation (WCF).</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="dc019-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="dc019-104">In This Section</span></span>  
- [<span data-ttu-id="dc019-105">Aktivace UDP</span><span class="sxs-lookup"><span data-stu-id="dc019-105">UDP Activation</span></span>](../../../../docs/framework/wcf/samples/udp-activation.md)  
- <span data-ttu-id="dc019-106">Ukazuje, jak rozšířit [přenosu: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) vzorku pro podporu proces aktivace pomocí služby Aktivace procesu Windows (WAS).</span><span class="sxs-lookup"><span data-stu-id="dc019-106">Demonstrates how to extend the [Transport: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) sample to support process activation using the Windows Process Activation Service (WAS).</span></span>  
+## <a name="in-this-section"></a><span data-ttu-id="19cd0-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="19cd0-104">In This Section</span></span>  
+ [<span data-ttu-id="19cd0-105">Aktivace UDP</span><span class="sxs-lookup"><span data-stu-id="19cd0-105">UDP Activation</span></span>](udp-activation.md)  
+ <span data-ttu-id="19cd0-106">Ukazuje, jak pomocí aktivační služby procesů systému Windows (WAS) roztáhnout ukázku [Transport: UDP](transport-udp.md) pro podporu aktivace procesu.</span><span class="sxs-lookup"><span data-stu-id="19cd0-106">Demonstrates how to extend the [Transport: UDP](transport-udp.md) sample to support process activation using the Windows Process Activation Service (WAS).</span></span>  
   
- [<span data-ttu-id="dc019-107">Přenos: Vlastní transakce přes UDP</span><span class="sxs-lookup"><span data-stu-id="dc019-107">Transport: Custom Transactions over UDP</span></span>](../../../../docs/framework/wcf/samples/transport-custom-transactions-over-udp-sample.md)  
- <span data-ttu-id="dc019-108">Ukazuje, jak rozšířit přenos UDP vzorku pro podporu toku transakcí vlastní a ukazuje použití <xref:System.ServiceModel.Channels.TransactionMessageProperty> vlastnost.</span><span class="sxs-lookup"><span data-stu-id="dc019-108">Demonstrates how to extend the UDP Transport sample to support custom transaction flow and shows the use of the <xref:System.ServiceModel.Channels.TransactionMessageProperty> property.</span></span>  
+ [<span data-ttu-id="19cd0-107">Přenos: Vlastní transakce přes UDP</span><span class="sxs-lookup"><span data-stu-id="19cd0-107">Transport: Custom Transactions over UDP</span></span>](transport-custom-transactions-over-udp-sample.md)  
+ <span data-ttu-id="19cd0-108">Ukazuje, jak roztáhnout ukázku přenosu UDP pro podporu toku vlastní transakce a ukazuje použití <xref:System.ServiceModel.Channels.TransactionMessageProperty> Vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="19cd0-108">Demonstrates how to extend the UDP Transport sample to support custom transaction flow and shows the use of the <xref:System.ServiceModel.Channels.TransactionMessageProperty> property.</span></span>  
   
- [<span data-ttu-id="dc019-109">Přenos: Vzájemná funkční spolupráce WSE 3.0 TCP</span><span class="sxs-lookup"><span data-stu-id="dc019-109">Transport: WSE 3.0 TCP Interoperability</span></span>](../../../../docs/framework/wcf/samples/transport-wse-3-0-tcp-interoperability.md)  
- <span data-ttu-id="dc019-110">Tento příklad ukazuje, jak implementovat duplexní relace TCP jako vlastní přenosu Windows Communication Foundation (WCF).</span><span class="sxs-lookup"><span data-stu-id="dc019-110">This sample demonstrates how to implement a TCP duplex session as a custom Windows Communication Foundation (WCF) transport.</span></span>
+ [<span data-ttu-id="19cd0-109">Přenos: Interoperabilita TCP ve WSE 3.0</span><span class="sxs-lookup"><span data-stu-id="19cd0-109">Transport: WSE 3.0 TCP Interoperability</span></span>](transport-wse-3-0-tcp-interoperability.md)  
+ <span data-ttu-id="19cd0-110">Tato ukázka předvádí, jak implementovat relaci duplexního připojení TCP jako vlastní přenos Windows Communication Foundation (WCF).</span><span class="sxs-lookup"><span data-stu-id="19cd0-110">This sample demonstrates how to implement a TCP duplex session as a custom Windows Communication Foundation (WCF) transport.</span></span>
