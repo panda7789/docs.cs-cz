@@ -1,17 +1,17 @@
 ---
-title: Vytvoření konzolové aplikace pomocí .NET Core pomocí Visual Studio Code
+title: Vytvoření konzolové aplikace .NET Core pomocí Visual Studio Code
 description: Naučte se vytvořit konzolovou aplikaci .NET Core pomocí Visual Studio Code a .NET Core CLI.
 ms.date: 05/22/2020
-ms.openlocfilehash: 673c4a639a2cab26261b7cdafd5d8e20acfafb94
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: 6d8f9adb2f77dbfd2d1cf54c80f1cdea582b1d96
+ms.sourcegitcommit: f6350c2c542e6edd52d7e9d6667b96d85d810e67
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84201709"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84717507"
 ---
-# <a name="tutorial-create-a-console-application-with-net-core-using-visual-studio-code"></a>Kurz: Vytvoření konzolové aplikace pomocí .NET Core pomocí Visual Studio Code
+# <a name="tutorial-create-a-net-core-console-application-using-visual-studio-code"></a>Kurz: Vytvoření konzolové aplikace .NET Core pomocí Visual Studio Code
 
-V tomto kurzu se dozvíte, jak vytvořit a spustit konzolovou aplikaci .NET Core pomocí Visual Studio Code a .NET Core CLI. Úkoly projektu, jako je vytváření, kompilování a spuštění projektu, jsou prováděny pomocí rozhraní příkazového řádku, takže můžete postupovat podle tohoto kurzu v jiném editoru kódu a v případě potřeby spustit příkazy v terminálu.
+V tomto kurzu se dozvíte, jak vytvořit a spustit konzolovou aplikaci .NET Core pomocí Visual Studio Code a .NET Core CLI. Úkoly projektu, jako je vytváření, kompilování a spuštění projektu, jsou prováděny pomocí .NET Core CLI. Pokud chcete, můžete postupovat podle tohoto kurzu v jiném editoru kódu a v terminálu spustit příkazy.
 
 ## <a name="prerequisites"></a>Požadavky
 
@@ -20,25 +20,29 @@ V tomto kurzu se dozvíte, jak vytvořit a spustit konzolovou aplikaci .NET Core
 
 ## <a name="create-the-app"></a>Vytvoření aplikace
 
-1. Otevřete Visual Studio Code.
+Vytvořte projekt konzolové aplikace .NET Core s názvem HelloWorld.
 
-1. Vytvořte projekt.
+1. Spusťte Visual Studio Code.
 
-   1. V hlavní nabídce vyberte **soubor**  >  **Otevřít složku** / **otevřít...** , vytvořte složku *HelloWorld* a klikněte na **Vybrat složku** / **otevřít**.
+1. V hlavní nabídce vyberte **soubor**  >  **Otevřít složku** (**soubor**  >  **otevřít...** v MacOS).
 
-      Název složky se ve výchozím nastavení zobrazí jako název projektu a název oboru názvů. Později do kurzu přidáte kód, který předpokládá, že je obor názvů projektu `HelloWorld` .
+1. V dialogovém okně **Otevřít složku** vytvořte složku *HelloWorld* a klikněte na **Vybrat složku** (**otevřít** v MacOS).
 
-   1. Kliknutím na **Terminal** **Zobrazit**  >  **terminál** v hlavní nabídce otevřete terminál v Visual Studio Code.
+   Název složky se ve výchozím nastavení zobrazí jako název projektu a název oboru názvů. Později do kurzu přidáte kód, který předpokládá, že je obor názvů projektu `HelloWorld` .
 
-      **Terminál** se otevře s příkazovým řádkem ve složce *HelloWorld* .
+1. Kliknutím na **Terminal** **Zobrazit**  >  **terminál** v hlavní nabídce otevřete terminál v Visual Studio Code.
 
-   1. V **terminálu**zadejte následující příkaz:
+   **Terminál** se otevře s příkazovým řádkem ve složce *HelloWorld* .
 
-      ```dotnetcli
-      dotnet new console
-      ```
+1. V **terminálu**zadejte následující příkaz:
 
-Šablona konzolové aplikace pro .NET Core definuje třídu `Program` s jedinou metodou, `Main` která přijímá <xref:System.String> pole jako argument. Soubor *program.cs* má následující kód:
+   ```dotnetcli
+   dotnet new console
+   ```
+
+Šablona vytvoří jednoduchou aplikaci "Hello World". Volá <xref:System.Console.WriteLine(System.String)?displayProperty=nameWithType> metodu pro zobrazení "Hello World!" v okně konzoly.
+
+Kód šablony definuje třídu, `Program` , s jedinou metodou, `Main` která přijímá <xref:System.String> pole jako argument:
 
 ```csharp
 using System;
@@ -56,8 +60,6 @@ namespace HelloWorld
 ```
 
 `Main`je vstupním bodem aplikace, metodou, která je automaticky volána modulem runtime při spuštění aplikace. Jakékoli argumenty příkazového řádku, které jsou zadány při spuštění aplikace, jsou k dispozici v poli *args* .
-
-Šablona vytvoří jednoduchou aplikaci, která volá <xref:System.Console.WriteLine(System.String)?displayProperty=nameWithType> metodu pro zobrazení "Hello World!" v okně konzoly.
 
 ## <a name="run-the-app"></a>Spuštění aplikace
 
@@ -85,11 +87,11 @@ Vylepšete aplikaci, aby se uživateli zobrazila výzva k zadání názvu a zobr
 
    ![Vyzvat k chybějícím prostředkům](media/with-visual-studio-code/missing-assets.png)
 
-1. Nahraďte obsah `Main` metody v *program.cs*, což je aktuálně pouze řádek, který volá `Console.WriteLine` , s následujícím kódem:
+1. Nahraďte obsah `Main` metody v *program.cs*, což je řádek, který volá `Console.WriteLine` , s následujícím kódem:
 
-   :::code language="csharp" source="./snippets/with-visual-studio/csharp/Program.cs" id="Snippet1":::
+   :::code language="csharp" source="./snippets/with-visual-studio/csharp/Program.cs" id="1":::
 
-   Tento kód zobrazí "" Jaké je vaše jméno? " v okně konzoly a počkejte, dokud uživatel nezadá řetězec následovaný klávesou **ENTER** . Tento řetězec je uložen v proměnné s názvem `name` . Načítá také hodnotu <xref:System.DateTime.Now?displayProperty=nameWithType> vlastnosti, která obsahuje aktuální místní čas a přiřadí ji k proměnné s názvem `date` . Nakonec tyto hodnoty zobrazí v okně konzoly.
+   Tento kód zobrazí "" Jaké je vaše jméno? " v okně konzoly a počkejte, dokud uživatel nezadá řetězec následovaný klávesou <kbd>ENTER</kbd> . Tento řetězec je uložen v proměnné s názvem `name` . Načítá také hodnotu <xref:System.DateTime.Now?displayProperty=nameWithType> vlastnosti, která obsahuje aktuální místní čas a přiřadí ji k proměnné s názvem `date` . Nakonec tyto hodnoty zobrazí v okně konzoly.
 
    `\n`Představuje znak nového řádku.
 
@@ -106,7 +108,7 @@ Vylepšete aplikaci, aby se uživateli zobrazila výzva k zadání názvu a zobr
    dotnet run
    ```
 
-1. Zadáním názvu a stisknutím klávesy **ENTER** odpovězte na výzvu.
+1. Zadáním názvu a stisknutím klávesy <kbd>ENTER</kbd> odpovězte na výzvu.
 
    :::image type="content" source="media/debugging-with-visual-studio-code/run-modified-program.png" alt-text="Okno terminálu s upraveným výstupem programu":::
 
@@ -118,7 +120,7 @@ Vylepšete aplikaci, aby se uživateli zobrazila výzva k zadání názvu a zobr
 
 ## <a name="next-steps"></a>Další kroky
 
-V tomto kurzu jste vytvořili aplikaci .NET Core. V dalším kurzu ladění aplikace.
+V tomto kurzu jste vytvořili konzolovou aplikaci .NET Core. V dalším kurzu ladění aplikace.
 
 > [!div class="nextstepaction"]
 > [Ladění konzolové aplikace .NET Core pomocí Visual Studio Code](debugging-with-visual-studio-code.md)

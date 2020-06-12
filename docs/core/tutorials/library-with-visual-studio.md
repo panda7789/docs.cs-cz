@@ -1,26 +1,23 @@
 ---
-title: Vytvoření knihovny tříd .NET Standard v aplikaci Visual Studio
+title: Vytvoření .NET Standard knihovny tříd pomocí sady Visual Studio
 description: Naučte se vytvářet .NET Standard knihovny tříd pomocí sady Visual Studio.
-ms.date: 05/21/2020
+ms.date: 06/08/2020
 dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: 7d64ca32bdbe20f949ae575bc4c3f9bbb594fffd
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: ef9c62b0378e1064d8cfd90a8c59aed74ea312b2
+ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84283621"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84701562"
 ---
-# <a name="tutorial-create-a-net-standard-library-in-visual-studio"></a>Kurz: Vytvoření knihovny .NET Standard v aplikaci Visual Studio
-
-*Knihovna tříd* definuje typy a metody, které jsou volány aplikací. Knihovna tříd, která cílí na .NET Standard 2,0, umožňuje, aby byla vaše knihovna volána jakoukoli implementací .NET, která podporuje tuto verzi .NET Standard. Po dokončení knihovny tříd se můžete rozhodnout, zda je chcete distribuovat jako součást třetí strany, nebo zda ji chcete zahrnout jako součást sady s jednou nebo více aplikacemi.
-
-> [!NOTE]
-> Seznam verzí .NET Standard a platforem, které podporují, najdete v tématu [.NET Standard](../../standard/net-standard.md).
+# <a name="tutorial-create-a-net-standard-library-using-visual-studio"></a>Kurz: Vytvoření knihovny .NET Standard pomocí sady Visual Studio
 
 V tomto kurzu vytvoříte jednoduchou knihovnu nástrojů, která obsahuje jedinou metodu pro zpracování řetězců. Implementujete ho jako [metodu rozšíření](../../csharp/programming-guide/classes-and-structs/extension-methods.md) , takže ji můžete zavolat, jako kdyby byla členem <xref:System.String> třídy.
+
+*Knihovna tříd* definuje typy a metody, které jsou volány aplikací. Knihovna tříd, která cílí na .NET Standard 2,0, umožňuje, aby byla vaše knihovna volána jakoukoli implementací .NET, která podporuje tuto verzi .NET Standard. Po dokončení knihovny tříd ji můžete distribuovat jako součást třetí strany nebo jako součást balíčku s jednou nebo více aplikacemi.
 
 ## <a name="prerequisites"></a>Požadavky
 
@@ -28,13 +25,13 @@ V tomto kurzu vytvoříte jednoduchou knihovnu nástrojů, která obsahuje jedin
 
   Další informace najdete v části [instalace pomocí sady Visual Studio](../install/sdk.md?pivots=os-windows#install-with-visual-studio) v článku [instalace .NET Core SDK](../install/sdk.md?pivots=os-windows) .
 
-## <a name="create-a-visual-studio-solution"></a>Vytvoření řešení pro Visual Studio
+## <a name="create-a-solution"></a>Vytvoření řešení
 
 Začněte vytvořením prázdného řešení pro vložení projektu knihovny tříd do. Řešení sady Visual Studio slouží jako kontejner pro jeden nebo více projektů. Do stejného řešení přidáte další související projekty.
 
 Vytvoření prázdného řešení:
 
-1. Otevřete sadu Visual Studio.
+1. Spusťte Visual Studio.
 
 2. V okně Start vyberte možnost **vytvořit nový projekt**.
 
@@ -75,7 +72,7 @@ Vytvoření prázdného řešení:
 
 ## <a name="add-a-console-app-to-the-solution"></a>Přidání konzolové aplikace do řešení
 
-Použijte knihovnu tříd v konzolové aplikaci, která vyzve uživatele k zadání řetězce a oznamuje, zda řetězec začíná velkým znakem.
+Přidejte konzolovou aplikaci, která používá knihovnu tříd. Aplikace vyzve uživatele, aby zadal řetězec a nahlásil, jestli řetězec začíná velkým znakem.
 
 1. Do řešení přidejte novou konzolovou aplikaci .NET Core s názvem prezentující.
 
@@ -87,18 +84,6 @@ Použijte knihovnu tříd v konzolové aplikaci, která vyzve uživatele k zadá
 
    1. Na stránce **Konfigurovat nový projekt** zadejte do pole **název projektu** **prezentující** . Potom zvolte **Create** (Vytvořit).
 
-1. V **Průzkumník řešení**klikněte pravým tlačítkem myši na projekt **prezentace** a v místní nabídce vyberte **nastavit jako spouštěný projekt** .
-
-   ![Místní nabídka projektu sady Visual Studio pro nastavení spouštěného projektu](media/library-with-visual-studio/set-startup-project-context-menu.png)
-
-1. Zpočátku má nový projekt konzolové aplikace přístup ke knihovně tříd. Chcete-li, aby mohla volat metody v knihovně tříd, vytvořte odkaz na projekt knihovny tříd. V **Průzkumník řešení**klikněte pravým tlačítkem myši na `ShowCase` uzel **závislosti** projektu a vyberte možnost **Přidat odkaz na projekt**.
-
-   ![Přidat kontextovou nabídku odkazu v aplikaci Visual Studio](media/library-with-visual-studio/add-reference-context-menu.png)
-
-1. V dialogovém okně **Správce odkazů** vyberte projekt **StringLibrary** a vyberte **OK**.
-
-   ![Dialog Správce odkazů s vybraným StringLibrary](media/library-with-visual-studio/manage-project-references.png)
-
 1. V okně kódu pro soubor *program.cs* nebo *program. vb* nahraďte celý kód následujícím kódem.
 
    :::code language="csharp" source="./snippets/library-with-visual-studio/csharp/ShowCase/Program.cs":::
@@ -106,19 +91,42 @@ Použijte knihovnu tříd v konzolové aplikaci, která vyzve uživatele k zadá
 
    Kód používá `row` proměnnou k udržování počtu řádků dat zapsaných do okna konzoly. Pokaždé, když je větší nebo rovno 25, kód vymaže okno konzoly a zobrazí uživateli zprávu.
 
-   Program vyzve uživatele k zadání řetězce. Označuje, zda řetězec začíná velkým znakem. Pokud uživatel stiskne klávesu ENTER bez zadání řetězce, aplikace skončí a okno konzoly se zavře.
+   Program vyzve uživatele k zadání řetězce. Označuje, zda řetězec začíná velkým znakem. Pokud uživatel stiskne klávesu <kbd>ENTER</kbd> bez zadání řetězce, aplikace skončí a okno konzoly se zavře.
 
-1. V případě potřeby změňte panel nástrojů pro zkompilování **ladicí** verze `ShowCase` projektu. Zkompilujte a spusťte program tak, že vyberete zelenou šipku na **tlačítku pro** sestavování.
+## <a name="add-a-project-reference"></a>Přidat odkaz na projekt
+
+Zpočátku má nový projekt konzolové aplikace přístup ke knihovně tříd. Chcete-li, aby mohla volat metody v knihovně tříd, vytvořte odkaz na projekt knihovny tříd.
+
+1. V **Průzkumník řešení**klikněte pravým tlačítkem myši na `ShowCase` uzel **závislosti** projektu a vyberte možnost **Přidat odkaz na projekt**.
+
+   ![Přidat kontextovou nabídku odkazu v aplikaci Visual Studio](media/library-with-visual-studio/add-reference-context-menu.png)
+
+1. V dialogovém okně **Správce odkazů** vyberte projekt **StringLibrary** a vyberte **OK**.
+
+   ![Dialog Správce odkazů s vybraným StringLibrary](media/library-with-visual-studio/manage-project-references.png)
+
+## <a name="run-the-app"></a>Spuštění aplikace
+
+1. V **Průzkumník řešení**klikněte pravým tlačítkem myši na projekt **prezentace** a v místní nabídce vyberte **nastavit jako spouštěný projekt** .
+
+   ![Místní nabídka projektu sady Visual Studio pro nastavení spouštěného projektu](media/library-with-visual-studio/set-startup-project-context-menu.png)
+
+1. Stisknutím klávesy <kbd>SHIFT</kbd> + <kbd>F5</kbd> zkompilujete a spustíte program bez ladění.
 
    ![Panel nástrojů projekt sady Visual Studio zobrazující tlačítko ladění](media/library-with-visual-studio/visual-studio-project-toolbar.png)
 
-1. Vyzkoušejte program zadáním řetězců a stisknutím klávesy **ENTER**a stisknutím klávesy **ENTER** ukončete.
+1. Vyzkoušejte program zadáním řetězců a stisknutím klávesy <kbd>ENTER</kbd>a stisknutím klávesy <kbd>ENTER</kbd> ukončete.
 
    :::image type="content" source="media/library-with-visual-studio/run-showcase.png" alt-text="Okno konzoly s předvedením":::
+
+## <a name="additional-resources"></a>Další zdroje
+
+* [Vývoj knihoven pomocí .NET Core CLI](libraries.md)
+* [.NET Standard verze a podporované platformy](../../standard/net-standard.md).
 
 ## <a name="next-steps"></a>Další kroky
 
 V tomto kurzu jste vytvořili řešení, přidali projekt knihovny a Přidali jste projekt konzolové aplikace, který používá knihovnu. V dalším kurzu přidáte do řešení projekt testování částí.
 
 > [!div class="nextstepaction"]
-> [Testování knihovny .NET Standard pomocí .NET Core v aplikaci Visual Studio](testing-library-with-visual-studio.md)
+> [Testování knihovny .NET Standard pomocí .NET Core pomocí sady Visual Studio](testing-library-with-visual-studio.md)

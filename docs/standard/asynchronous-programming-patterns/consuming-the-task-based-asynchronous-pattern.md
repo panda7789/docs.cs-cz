@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Task-based Asynchronous Pattern, .NET Framework support for
 - .NET Framework, asynchronous design patterns
 ms.assetid: 033cf871-ae24-433d-8939-7a3793e547bf
-ms.openlocfilehash: 2553a573a9827b8f9232ddab132bd9331586a0f1
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 960d328e156d66b0bdc7baf4d4e0f151fd4d543c
+ms.sourcegitcommit: f6350c2c542e6edd52d7e9d6667b96d85d810e67
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84583827"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84717494"
 ---
 # <a name="consuming-the-task-based-asynchronous-pattern"></a>Použití asynchronního vzoru založeného na úloze
 
@@ -227,7 +227,7 @@ string [] pages = await Task.WhenAll(
  Můžete použít stejné techniky zpracování výjimek, které jsme probrali v předchozím scénáři vracejícím anulování:
 
 ```csharp
-Task [] asyncOps =
+Task<string> [] asyncOps =
     (from url in urls select DownloadStringAsync(url)).ToArray();
 try
 {
@@ -834,7 +834,7 @@ private static void Produce(int data)
 > [!NOTE]
 > <xref:System.Threading.Tasks.Dataflow>Obor názvů je k dispozici v .NET Framework 4,5 až **NuGet**. Chcete-li nainstalovat sestavení, které obsahuje <xref:System.Threading.Tasks.Dataflow> obor názvů, otevřete projekt v aplikaci Visual Studio, v nabídce projekt vyberte možnost **Spravovat balíčky NuGet** a vyhledejte balíček Microsoft. tpl. Dataflow online.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Asynchronní vzor založený na úlohách (TAP)](task-based-asynchronous-pattern-tap.md)
 - [Implementace asynchronního vzoru založeného na úlohách](implementing-the-task-based-asynchronous-pattern.md)

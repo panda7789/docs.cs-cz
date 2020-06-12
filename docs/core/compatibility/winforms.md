@@ -2,12 +2,12 @@
 title: model Windows Forms přerušující změny
 description: Obsahuje seznam nejnovějších změn v model Windows Forms pro .NET Core.
 ms.date: 01/08/2020
-ms.openlocfilehash: 75d369c7fb999da81a50fe46716e125c3840eb7a
-ms.sourcegitcommit: c2c1269a81ffdcfc8675bcd9a8505b1a11ffb271
+ms.openlocfilehash: bd87e438ecf9930bfcd5377f9a3799d5f3693f49
+ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/25/2020
-ms.locfileid: "82158434"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84702465"
 ---
 # <a name="breaking-changes-in-windows-forms"></a>Průlomové změny v model Windows Forms
 
@@ -20,6 +20,7 @@ Na této stránce jsou popsány následující přerušující se změny:
 | [Odebrané ovládací prvky stavového řádku](#removed-status-bar-controls) | 5.0 |
 | [Metody WinForms teď vyvolávají výjimku ArgumentException.](#winforms-methods-now-throw-argumentexception) | 5.0 |
 | [Metody WinForms teď vyvolávají ArgumentNullException](#winforms-methods-now-throw-argumentnullexception) | 5.0 |
+| [Vlastnosti WinForms teď vyvolávají výjimku ArgumentOutOfRangeException.](#winforms-properties-now-throw-argumentoutofrangeexception) | 5.0 |
 | [Odebrané ovládací prvky](#removed-controls) | 3.1 |
 | [Pokud je zobrazený popis, událost CellFormatting se neaktivuje.](#cellformatting-event-not-raised-if-tooltip-is-shown) | 3.1 |
 | [Control. DefaultFont se změnil na Segoe UI 9 bodů.](#default-control-font-changed-to-segoe-ui-9-pt) | 3.0 |
@@ -47,6 +48,10 @@ Na této stránce jsou popsány následující přerušující se změny:
 ***
 
 [!INCLUDE [null-args-cause-argumentnullexception](../../../includes/core-changes/windowsforms/5.0/null-args-cause-argumentnullexception.md)]
+
+***
+
+[!INCLUDE [invalid-args-cause-argumentoutofrangeexception](../../../includes/core-changes/windowsforms/5.0/invalid-args-cause-argumentoutofrangeexception.md)]
 
 ***
 
@@ -114,6 +119,6 @@ Na této stránce jsou popsány následující přerušující se změny:
 
 ***
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Port model Windows Forms aplikace do .NET Core](../porting/winforms.md)

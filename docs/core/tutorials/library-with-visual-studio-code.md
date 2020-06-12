@@ -1,22 +1,19 @@
 ---
-title: Vytvoření knihovny tříd .NET Standard v Visual Studio Code
+title: Vytvoření .NET Standard knihovny tříd pomocí Visual Studio Code
 description: Naučte se vytvářet .NET Standard knihovny tříd pomocí Visual Studio Code.
-ms.date: 05/29/2020
-ms.openlocfilehash: 5720ac374d50ef27a07d463e57af1bd95a352d83
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.date: 06/08/2020
+ms.openlocfilehash: f7d2319bcea58f63ca40e43ba39745bdf1b394ce
+ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84446949"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84701796"
 ---
-# <a name="tutorial-create-a-net-standard-library-in-visual-studio-code"></a>Kurz: Vytvoření knihovny .NET Standard v Visual Studio Code
-
-*Knihovna tříd* definuje typy a metody, které jsou volány aplikací. Knihovna tříd, která cílí na .NET Standard 2,0, umožňuje, aby byla vaše knihovna volána jakoukoli implementací .NET, která podporuje tuto verzi .NET Standard. Po dokončení knihovny tříd se můžete rozhodnout, zda je chcete distribuovat jako balíček NuGet, nebo zahrnout jako součást sady s jednou nebo více aplikacemi.
-
-> [!NOTE]
-> Seznam verzí .NET Standard a platforem, které podporují, najdete v tématu [.NET Standard](../../standard/net-standard.md).
+# <a name="tutorial-create-a-net-standard-library-using-visual-studio-code"></a>Kurz: Vytvoření knihovny .NET Standard pomocí Visual Studio Code
 
 V tomto kurzu vytvoříte jednoduchou knihovnu nástrojů, která obsahuje jedinou metodu pro zpracování řetězců. Implementujete ho jako [metodu rozšíření](../../csharp/programming-guide/classes-and-structs/extension-methods.md) , takže ji můžete zavolat, jako kdyby byla členem <xref:System.String> třídy.
+
+*Knihovna tříd* definuje typy a metody, které jsou volány aplikací. Knihovna tříd, která cílí na .NET Standard 2,0, umožňuje, aby byla vaše knihovna volána jakoukoli implementací .NET, která podporuje tuto verzi .NET Standard. Po dokončení knihovny tříd ji můžete distribuovat jako součást třetí strany nebo jako součást balíčku s jednou nebo více aplikacemi.
 
 ## <a name="prerequisites"></a>Požadavky
 
@@ -27,9 +24,11 @@ V tomto kurzu vytvoříte jednoduchou knihovnu nástrojů, která obsahuje jedin
 
 Začněte vytvořením prázdného řešení pro vložení projektu knihovny tříd do. Řešení slouží jako kontejner pro jeden nebo více projektů. Do stejného řešení přidáte další související projekty.
 
-1. Otevřete Visual Studio Code.
+1. Spusťte Visual Studio Code.
 
-1. V hlavní nabídce vyberte **soubor**  >  **Otevřít složku**otevřít / **...** , vytvořte složku *ClassLibraryProjects* a klikněte na **Vybrat složku** / **otevřít**.
+1. V hlavní nabídce vyberte **soubor**  >  **Otevřít složku** (**otevřít...** v MacOS).
+
+1. V dialogovém okně **Otevřít složku** vytvořte složku *ClassLibraryProjects* a klikněte na **Vybrat složku** (**otevřít** v MacOS).
 
 1. Kliknutím na **Terminal** **Zobrazit**  >  **terminál** v hlavní nabídce otevřete terminál v Visual Studio Code.
 
@@ -156,7 +155,21 @@ Přidejte konzolovou aplikaci, která používá knihovnu tříd. Aplikace vyzve
    Project `ShowCase\ShowCase.csproj` added to the solution.
    ```
 
-1. Zpočátku má nový projekt konzolové aplikace přístup ke knihovně tříd. Chcete-li, aby mohla volat metody v knihovně tříd, vytvořte odkaz na projekt knihovny tříd spuštěním následujícího příkazu:
+1. Otevřete seznam *prezentujes/program. cs* a nahraďte celý kód následujícím kódem.
+
+   :::code language="csharp" source="./snippets/library-with-visual-studio/csharp/ShowCase/Program.cs":::
+
+   Kód používá `row` proměnnou k udržování počtu řádků dat zapsaných do okna konzoly. Pokaždé, když je větší nebo rovno 25, kód vymaže okno konzoly a zobrazí uživateli zprávu.
+
+   Program vyzve uživatele k zadání řetězce. Označuje, zda řetězec začíná velkým znakem. Pokud uživatel stiskne klávesu <kbd>ENTER</kbd> bez zadání řetězce, aplikace skončí a okno konzoly se zavře.
+
+1. Uložte provedené změny.
+
+## <a name="add-a-project-reference"></a>Přidat odkaz na projekt
+
+Zpočátku má nový projekt konzolové aplikace přístup ke knihovně tříd. Chcete-li, aby mohla volat metody v knihovně tříd, vytvořte odkaz na projekt knihovny tříd.
+
+1. Spusťte následující příkaz:
 
    ```dotnetcli
    dotnet add ShowCase/Showcase.csproj reference StringLibrary/StringLibrary.csproj
@@ -168,17 +181,9 @@ Přidejte konzolovou aplikaci, která používá knihovnu tříd. Aplikace vyzve
    Reference `..\StringLibrary\StringLibrary.csproj` added to the project.
    ```
 
-1. Otevřete seznam *prezentujes/program. cs* a nahraďte celý kód následujícím kódem.
+## <a name="run-the-app"></a>Spuštění aplikace
 
-   :::code language="csharp" source="./snippets/library-with-visual-studio/csharp/ShowCase/Program.cs":::
-
-   Kód používá `row` proměnnou k udržování počtu řádků dat zapsaných do okna konzoly. Pokaždé, když je větší nebo rovno 25, kód vymaže okno konzoly a zobrazí uživateli zprávu.
-
-   Program vyzve uživatele k zadání řetězce. Označuje, zda řetězec začíná velkým znakem. Pokud uživatel stiskne klávesu ENTER bez zadání řetězce, aplikace skončí a okno konzoly se zavře.
-
-1. Uložte provedené změny.
-
-1. Spusťte program.
+1. V terminálu spusťte následující příkaz:
 
    ```dotnetcli
    dotnet run --project ShowCase/ShowCase.csproj
@@ -203,10 +208,11 @@ Přidejte konzolovou aplikaci, která používá knihovnu tříd. Aplikace vyzve
 ## <a name="additional-resources"></a>Další zdroje
 
 * [Vývoj knihoven pomocí .NET Core CLI](libraries.md)
+* [.NET Standard verze a podporované platformy](../../standard/net-standard.md).
 
 ## <a name="next-steps"></a>Další kroky
 
 V tomto kurzu jste vytvořili řešení, přidali projekt knihovny a Přidali jste projekt konzolové aplikace, který používá knihovnu. V dalším kurzu přidáte do řešení projekt testování částí.
 
 > [!div class="nextstepaction"]
-> [Testování knihovny .NET Standard pomocí .NET Core v Visual Studio Code](testing-library-with-visual-studio-code.md)
+> [Testování knihovny .NET Standard pomocí .NET Core s využitím Visual Studio Code](testing-library-with-visual-studio-code.md)

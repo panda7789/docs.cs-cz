@@ -1,15 +1,15 @@
 ---
-title: Testování .NET Standard knihovny tříd pomocí .NET Core v Visual Studio Code
+title: Otestování .NET Standard knihovny tříd pomocí .NET Core s využitím Visual Studio Code
 description: Vytvoří projekt testu jednotek pro knihovnu tříd .NET Core. Ověřte, zda knihovna tříd .NET Core pracuje správně s testy jednotek.
-ms.date: 05/29/2020
-ms.openlocfilehash: be227453bd441028cc6ce348c00fad944140238f
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.date: 06/08/2020
+ms.openlocfilehash: a61fd952eea2dec0d5a9f351d3f3d01c738e8fad
+ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84292187"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84701030"
 ---
-# <a name="tutorial-test-a-net-standard-library-with-net-core-in-visual-studio-code"></a>Kurz: testování knihovny .NET Standard pomocí .NET Core v Visual Studio Code
+# <a name="tutorial-test-a-net-standard-class-library-with-net-core-using-visual-studio-code"></a>Kurz: testování .NET Standard knihovny tříd pomocí .NET Core pomocí Visual Studio Code
 
 V tomto kurzu se dozvíte, jak automatizovat testování částí přidáním testovacího projektu do řešení.
 
@@ -19,7 +19,9 @@ V tomto kurzu se dozvíte, jak automatizovat testování částí přidáním te
 
 ## <a name="create-a-unit-test-project"></a>Vytvoření projektu testování částí
 
-1. Otevřete Visual Studio Code.
+Testy jednotek poskytují automatizované softwarové testování během vývoje a publikování. Testovací rozhraní, které používáte v tomto kurzu, je MSTest. [MSTest](https://github.com/Microsoft/testfx-docs) je jedna ze tří testovacích rozhraní, ze kterých si můžete vybrat. Ostatní jsou [xUnit](https://xunit.net/) a [nUnit](https://nunit.org/).
+
+1. Spusťte Visual Studio Code.
 
 1. Otevřete `ClassLibraryProjects` řešení, které jste vytvořili v části [vytvoření knihovny .NET Standard v aplikaci Visual Studio](library-with-visual-studio.md).
 
@@ -55,16 +57,17 @@ V tomto kurzu se dozvíte, jak automatizovat testování částí přidáním te
 
    Každá metoda označená pomocí [[TestMethod]](xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute) v testovací třídě s označením [[TestClass]](xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute) je provedena automaticky při spuštění testu jednotky.
 
-   > [!NOTE]
-   > MSTest je jedna ze tří testovacích rozhraní, ze kterých si můžete vybrat. Ostatní jsou xUnit a nUnit.
-
 1. Přidejte testovací projekt do řešení.
 
    ```dotnetcli
    dotnet sln add StringLibraryTest/StringLibraryTest.csproj
    ```
 
-1. Vytvořte odkaz na projekt knihovny tříd spuštěním následujícího příkazu:
+## <a name="add-a-project-reference"></a>Přidat odkaz na projekt
+
+Aby projekt testu spolupracoval s `StringLibrary` třídou, přidejte do projektu odkaz `StringLibraryTest` na `StringLibrary` projekt.
+
+1. Spusťte následující příkaz:
 
    ```dotnetcli
    dotnet add StringLibraryTest/StringLibraryTest.csproj reference StringLibrary/StringLibrary.csproj
@@ -89,7 +92,7 @@ Při testování `StringLibrary.StartsWithUpper` metody je třeba zadat počet �
 
 Vzhledem k tomu, že vaše metoda knihovny zpracovává řetězce, je také vhodné se ujistit, že úspěšně zpracovává [prázdný řetězec ( `String.Empty` )](xref:System.String.Empty) a a `null` řetězec. Prázdný řetězec je jeden, který nemá žádné znaky a jehož hodnota <xref:System.String.Length> je 0. `null`Řetězec je ten, který se neinicializoval. Můžete zavolat `StartsWithUpper` přímo jako statickou metodu a předat jeden <xref:System.String> argument. Nebo můžete zavolat `StartsWithUpper` jako metodu rozšíření pro `string` proměnnou přiřazenou k `null` .
 
-Budete definovat tři metody, z nichž každá volá <xref:Microsoft.VisualStudio.TestTools.UnitTesting.Assert> metodu opakovaně pro každý prvek v poli řetězců. Vzhledem k tomu, že testovací metoda selže, jakmile najde první selhání, zavoláte přetížení metody, které vám umožní předat řetězec, který označuje hodnotu řetězce použitou ve volání metody.
+Budete definovat tři metody, z nichž každá volá <xref:Microsoft.VisualStudio.TestTools.UnitTesting.Assert> metodu pro každý prvek v poli řetězců. Zavoláte přetížení metody, které vám umožní zadat chybovou zprávu, která se zobrazí v případě selhání testu. Zpráva identifikuje řetězec, který způsobil chybu.
 
 Postup vytvoření testovacích metod:
 
@@ -122,7 +125,7 @@ Postup vytvoření testovacích metod:
 
 ## <a name="handle-test-failures"></a>Zpracování selhání testu
 
-Pokud pracujete s vývojem řízeným testováním (TDD), napíšete nejprve testy a při jejich prvním spuštění dojde k chybě. Potom do aplikace přidáte kód, který provede test úspěšně. V tomto případě jste po zápisu kódu aplikace, který ověřuje, vytvořili test, takže jste neviděli test neúspěšný. Chcete-li ověřit, že test selže, pokud očekáváte, že selže, přidejte do vstupu testu neplatnou hodnotu.
+Pokud pracujete s vývojem řízeným testováním (TDD), napíšete nejprve testy a při jejich prvním spuštění dojde k chybě. Potom do aplikace přidáte kód, který provede test úspěšně. Pro tento kurz jste vytvořili test po zápisu kódu aplikace, který ověřuje, takže jste neviděli test neúspěšný. Chcete-li ověřit, že test selže, pokud očekáváte, že selže, přidejte do vstupu testu neplatnou hodnotu.
 
 1. Upravte `words` pole v `TestDoesNotStartWithUpper` metodě tak, aby obsahovalo řetězec "Error" (chyba).
 
@@ -137,7 +140,7 @@ Pokud pracujete s vývojem řízeným testováním (TDD), napíšete nejprve tes
    dotnet test StringLibraryTest/StringLibraryTest.csproj
    ```
 
-   Výstup terminálu ukazuje, že jeden test se nezdařil, a obsahuje chybovou zprávu pro neúspěšný test.
+   Výstup terminálu ukazuje, že jeden test se nezdařil, a obsahuje chybovou zprávu pro neúspěšný test: Assert. NEPRAVDA. Očekávané pro ' error ': false; skutečnost: true ". Z důvodu chyby nejsou v poli Po otestování "Error" žádné řetězce.
 
    ```
    Starting test execution, please wait...
@@ -157,11 +160,11 @@ Pokud pracujete s vývojem řízeným testováním (TDD), napíšete nejprve tes
    Total time: 1.7825 Seconds
    ```
 
-1. Vraťte změny, které jste provedli v kroku 1, a odeberte řetězec "Error" (chyba). Spusťte test znovu a testy proběhnou znovu.
+1. Odeberte řetězec "Error", který jste přidali v kroku 1. Spusťte test znovu a testy proběhnou znovu.
 
 ## <a name="test-the-release-version-of-the-library"></a>Testování verze pro vydání knihovny
 
-Nyní, když testy prošly všechny při spuštění ladicí verze knihovny, spusťte testy dodatečně k sestavení vydání knihovny. Několik faktorů, včetně optimalizací kompilátoru, může někdy způsobit různé chování mezi sestaveními ladění a vydání.
+Nyní, když testy úspěšně prošly při spuštění sestavení ladění knihovny, spusťte testy dodatečně k sestavení vydání knihovny. Několik faktorů, včetně optimalizací kompilátoru, může někdy způsobit různé chování mezi sestaveními ladění a vydání.
 
 1. Spusťte testy s konfigurací sestavení vydaných verzí:
 
@@ -173,7 +176,7 @@ Nyní, když testy prošly všechny při spuštění ladicí verze knihovny, spu
 
 ## <a name="additional-resources"></a>Další zdroje
 
-- [Testování částí v .NET Core a .NET Standard](../testing/index.md)
+* [Testování částí v .NET Core a .NET Standard](../testing/index.md)
 
 ## <a name="next-steps"></a>Další kroky
 

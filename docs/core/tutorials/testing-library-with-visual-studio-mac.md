@@ -1,45 +1,41 @@
 ---
-title: Testování knihovny tříd .NET Standard pomocí .NET Core pomocí sady Visual Studio
+title: Otestování .NET Standard knihovny tříd pomocí .NET Core s využitím Visual Studio pro Mac
 description: Vytvoří projekt testu jednotek pro knihovnu tříd .NET Core. Ověřte, zda knihovna tříd .NET Core pracuje správně s testy jednotek.
 ms.date: 06/08/2020
-dev_langs:
-- csharp
-- vb
-ms.custom: vs-dotnet
-ms.openlocfilehash: f20b089fd22794d5aaeff34502e960fe41a565e1
+ms.openlocfilehash: a183049623df44cbb8c4abd47ce6e78d91adae12
 ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 06/11/2020
-ms.locfileid: "84700966"
+ms.locfileid: "84713607"
 ---
-# <a name="tutorial-test-a-net-standard-class-library-with-net-core-using-visual-studio"></a>Kurz: testování .NET Standard knihovny tříd pomocí .NET Core pomocí sady Visual Studio
+# <a name="test-a-net-standard-class-library-with-net-core-using-visual-studio"></a>Testování knihovny tříd .NET Standard pomocí .NET Core pomocí sady Visual Studio
 
 V tomto kurzu se dozvíte, jak automatizovat testování částí přidáním testovacího projektu do řešení.
 
 ## <a name="prerequisites"></a>Požadavky
 
-- Tento kurz spolupracuje s řešením, které vytvoříte v části [Vytvoření knihovny .NET Standard v sadě Visual Studio](library-with-visual-studio.md).
+- Tento kurz spolupracuje s řešením, které vytvoříte v části [Vytvoření knihovny .NET Standard v Visual Studio pro Mac](library-with-visual-studio-mac.md).
 
 ## <a name="create-a-unit-test-project"></a>Vytvoření projektu testování částí
 
 Testy jednotek poskytují automatizované softwarové testování během vývoje a publikování. [MSTest](https://github.com/Microsoft/testfx-docs) je jedna ze tří testovacích rozhraní, ze kterých si můžete vybrat. Ostatní jsou [xUnit](https://xunit.net/) a [nUnit](https://nunit.org/).
 
-1. Spusťte Visual Studio.
+1. Spusťte Visual Studio pro Mac.
 
-1. Otevřete `ClassLibraryProjects` řešení, které jste vytvořili v části [vytvoření knihovny .NET Standard v aplikaci Visual Studio](library-with-visual-studio.md).
+1. Otevřete `ClassLibraryProjects` řešení, které jste vytvořili v části [vytvoření knihovny .NET Standard v Visual Studio pro Mac](library-with-visual-studio-mac.md).
 
-1. Přidejte do řešení nový projekt testování částí s názvem "StringLibraryTest".
+1. Na panelu **řešení** <kbd>klikněte na</kbd> `ClassLibraryProjects` řešení a vyberte **Přidat**  >  **Nový projekt**.
 
-   1. V **Průzkumník řešení** klikněte pravým tlačítkem na řešení a vyberte **Přidat**  >  **Nový projekt**.
+1. V dialogovém okně **Nový projekt** vyberte možnost **testy** z uzlu **web a konzola** . Vyberte **projekt MSTest** a potom klikněte na tlačítko **Další**.
 
-   1. Na stránce **Přidat nový projekt** zadejte do vyhledávacího pole **MSTest** . V seznamu jazyk vyberte **C#** nebo **Visual Basic** a pak vyberte **všechny platformy** ze seznamu platforem.
+   :::image type="content" source="media/testing-library-with-visual-studio-mac/visual-studio-mac-unit-test-project.png" alt-text="Visual Studio – nový projekt – dialogové okno pro vytvoření testovacího projektu":::
 
-   1. Zvolte šablonu **projekt testů MSTest (.NET Core)** a klikněte na tlačítko **Další**.
+1. Vyberte **.NET Core 3,1**. Pojmenujte nový projekt "StringLibraryTest" a vyberte **vytvořit**.
 
-   1. Na stránce **Konfigurovat nový projekt** zadejte do pole **název projektu** **StringLibraryTest** . Potom zvolte **Create** (Vytvořit).
+   :::image type="content" source="media/testing-library-with-visual-studio-mac/visual-studio-mac-new-project-name.png" alt-text="Visual Studio Mac – dialog nového projektu zadání názvu projektu":::
 
-1. Visual Studio vytvoří projekt a otevře soubor třídy v okně Code (kód) s následujícím kódem. Pokud jazyk, který chcete použít, není zobrazen, změňte selektor jazyka v horní části stránky.
+   Visual Studio vytvoří soubor třídy s následujícím kódem:
 
    ```csharp
    using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -57,37 +53,23 @@ Testy jednotek poskytují automatizované softwarové testování během vývoje
    }
    ```
 
-   ```vb
-   Imports Microsoft.VisualStudio.TestTools.UnitTesting
-
-   Namespace StringLibraryTest
-       <TestClass>
-       Public Class UnitTest1
-           <TestMethod>
-           Sub TestSub()
-
-           End Sub
-       End Class
-   End Namespace
-   ```
-
    Zdrojový kód vytvořený šablonou testu jednotky provede následující akce:
 
    - Importuje <xref:Microsoft.VisualStudio.TestTools.UnitTesting?displayProperty=nameWithType> obor názvů, který obsahuje typy používané pro testování částí.
    - Aplikuje <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute> atribut na `UnitTest1` třídu.
-   - Použije <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute> atribut pro definování `TestMethod1` v jazyce C# nebo `TestSub` v Visual Basic.
+   - Aplikuje <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute> atribut na `TestMethod1` .
 
    Každá metoda označená pomocí [[TestMethod]](xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute) v testovací třídě s označením [[TestClass]](xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute) je provedena automaticky při spuštění testu jednotky.
 
 ## <a name="add-a-project-reference"></a>Přidat odkaz na projekt
 
-Aby projekt testu spolupracoval s `StringLibrary` třídou, přidejte odkaz do projektu **StringLibraryTest** do `StringLibrary` projektu.
+Aby projekt testu spolupracoval s `StringLibrary` třídou, přidejte odkaz na `StringLibrary` projekt.
 
-1. V **Průzkumník řešení**klikněte pravým tlačítkem myši na uzel **závislosti** projektu **StringLibraryTest** a v místní nabídce vyberte **Přidat odkaz na projekt** .
+1. Na panelu **řešení** klikněte v části **StringLibraryTest**na **závislosti** <kbd>CTRL</kbd>. V místní nabídce vyberte **Přidat odkaz** .
 
-1. V dialogovém okně **Správce odkazů** rozbalte uzel **projekty** a zaškrtněte políčko vedle položky **StringLibrary**. Přidání odkazu na `StringLibrary` sestavení umožňuje kompilátoru najít metody **StringLibrary** při kompilování projektu **StringLibraryTest** .
+1. V dialogovém okně **odkazy** vyberte projekt **StringLibrary** . Vyberte **OK**.
 
-1. Vyberte **OK**.
+      :::image type="content" source="media/testing-library-with-visual-studio-mac/visual-studio-mac-edit-references.png" alt-text="Dialogové okno Visual Studio Mac Edit References":::
 
 ## <a name="add-and-run-unit-test-methods"></a>Přidat a spustit metody testování částí
 
@@ -112,31 +94,31 @@ Budete definovat tři metody, z nichž každá volá <xref:Microsoft.VisualStudi
 
 Postup vytvoření testovacích metod:
 
-1. V okně kódu *UnitTest1.cs* nebo *UnitTest1. vb* nahraďte kód následujícím kódem:
+1. Otevřete soubor *UnitTest1.cs* a nahraďte kód následujícím kódem:
 
    :::code language="csharp" source="./snippets/library-with-visual-studio/csharp/StringLibraryTest/UnitTest1.cs":::
-   :::code language="vb" source="./snippets/library-with-visual-studio/vb/StringLibraryTest/UnitTest1.vb":::
 
    Test velkých písmen v `TestStartsWithUpper` metodě obsahuje řecké velké písmeno alfa (u + 0391) a velké písmeno cyrilice em (u + 041C). Test malých písmen v `TestDoesNotStartWithUpper` metodě obsahuje řecké malé písmeno alfa (U + 03B1) a malé písmeno g (u + 0433).
 
-1. Na panelu nabídek vyberte **soubor**  >  **Uložit UnitTest1.cs jako** nebo **soubor**  >  **Uložit UnitTest1. vb jako**. V dialogovém okně **Uložit soubor jako** vyberte šipku vedle tlačítka **Uložit** a vyberte **Uložit s kódováním**.
+1. V řádku nabídek vyberte **soubor**  >  **Uložit jako**. V dialogovém okně se ujistěte, že je **kódování** nastaveno na **kódování Unicode (UTF-8)**.
 
-   > [!div class="mx-imgBorder"]
-   > ![Visual Studio uložit soubor jako dialog](./media/testing-library-with-visual-studio/save-file-as-dialog.png)
+   :::image type="content" source="media/testing-library-with-visual-studio-mac/save-file-as-dialog.png" alt-text="Visual Studio uložit soubor jako dialog":::
 
-1. Kliknutím na tlačítko **Ano** v dialogovém okně **Potvrdit uložení jako** soubor uložte.
-
-1. V dialogovém okně **Upřesnit možnosti uložení** vyberte v rozevíracím seznamu **kódování** znakovou **sadu Unicode (UTF-8 s podpisem 65001)** a vyberte **OK**.
-
-   > [!div class="mx-imgBorder"]
-   > ![Dialogové okno Upřesnit možnosti uložení v aplikaci Visual Studio](./media/testing-library-with-visual-studio/advanced-save-options.png)
+1. Až se zobrazí dotaz, jestli chcete nahradit existující soubor, vyberte **nahradit**.
 
    Pokud neuložíte zdrojový kód jako soubor s kódováním UTF8, Visual Studio ho může uložit jako soubor ASCII. Pokud k tomu dojde, modul runtime nebude přesně kódovat znaky UTF8 mimo rozsah ASCII a výsledky testu nebudou správné.
 
-1. Na panelu nabídek vyberte možnost **test**  >  **Spustit všechny testy**. Pokud okno **Průzkumník testů** není otevřené, otevřete ho výběrem **test**  >  **Test Explorer**. Tři testy jsou uvedeny v části **prošlé testy** a v části **Souhrn** se zobrazí výsledek testovacího běhu.
+1. Otevřete panel **testování částí** na pravé straně obrazovky. V nabídce vyberte **Zobrazit**  >  **testy** .
 
-   > [!div class="mx-imgBorder"]
-   > ![Okno Průzkumníka testů s předáváním testů](./media/testing-library-with-visual-studio/test-explorer-window.png)
+1. Kliknutím na ikonu **Dock (ukotvit** ) ponechejte panel otevřený.
+
+   :::image type="content" source="media/testing-library-with-visual-studio-mac/visual-studio-mac-unit-test-dock-icon.png" alt-text="Ikona ukotvení panelu Visual Studio pro Mac testování částí":::
+
+1. Klikněte na tlačítko **Spustit vše** .
+
+   Všechny testy jsou passované.
+
+   :::image type="content" source="media/testing-library-with-visual-studio-mac/visual-studio-mac-unit-test-pass.png" alt-text="Visual Studio pro Mac očekávanou zkušební průchody":::
 
 ## <a name="handle-test-failures"></a>Zpracování selhání testu
 
@@ -149,23 +131,17 @@ Pokud pracujete s vývojem řízeným testováním (TDD), napíšete nejprve tes
                       "1234", ".", ";", " " };
    ```
 
-   ```vb
-   Dim words() As String = { "alphabet", "Error", "zebra", "abc", "αυτοκινητοβιομηχανία", "государство",
-                      "1234", ".", ";", " " }
+1. Spusťte testy znovu.
 
-   ```
+   Tentokrát okno **Průzkumník testů** indikuje, že dva testy byly úspěšné a jedna se nezdařila.
 
-1. Spusťte test výběrem možnosti **test**  >  **Spustit všechny testy** z řádku nabídek. Okno **Průzkumník testů** indikuje, že dva testy byly úspěšné a jedna se nezdařila.
+   :::image type="content" source="media/testing-library-with-visual-studio-mac/failed-test-window.png" alt-text="Okno Průzkumníka testů s neúspěšnými testy":::
 
-   > [!div class="mx-imgBorder"]
-   > ![Okno Průzkumníka testů s neúspěšnými testy](./media/testing-library-with-visual-studio/failed-test-window.png)
+1. <kbd>stiskněte klávesu CTRL</kbd>a klikněte na neúspěšný test `TestDoesNotStartWithUpper` a v místní nabídce vyberte možnost **Zobrazit panel výsledků** .
 
-1. Vyberte neúspěšný test `TestDoesNotStartWith` .
+   Na panelu **výsledků** se zobrazí zpráva vytvořená kontrolním výrazem: Assert. NEPRAVDA. Očekávané pro ' error ': false; skutečnost: true ". Z důvodu chyby nejsou v poli Po otestování "Error" žádné řetězce.
 
-   V okně **Průzkumník testů** se zobrazí zpráva vytvořená kontrolním výrazem: Assert. NEPRAVDA. Očekávané pro ' error ': false; skutečnost: true ". Z důvodu chyby nejsou v poli Po otestování "Error" žádné řetězce.
-
-   > [!div class="mx-imgBorder"]
-   > ![Okno Průzkumníka testů znázorňující chybu kontrolního výrazu NEPRAVDA](./media/testing-library-with-visual-studio/failed-test-detail.png)
+   :::image type="content" source="media/testing-library-with-visual-studio-mac/visual-studio-mac-unit-test-failure.png" alt-text="Okno Průzkumníka testů znázorňující chybu kontrolního výrazu NEPRAVDA":::
 
 1. Odeberte řetězec "Error", který jste přidali v kroku 1. Spusťte test znovu a testy proběhnou znovu.
 
@@ -177,19 +153,22 @@ Testování sestavení pro vydání:
 
 1. Na panelu nástrojů sady Visual Studio změňte konfiguraci sestavení z **ladit** na **release**.
 
-   > [!div class="mx-imgBorder"]
-   > ![Panel nástrojů sady Visual Studio s zvýrazněným sestavením pro vydání](./media/testing-library-with-visual-studio/visual-studio-toolbar-release.png)
+   :::image type="content" source="media/testing-library-with-visual-studio-mac/visual-studio-toolbar-release.png" alt-text="Panel nástrojů sady Visual Studio s zvýrazněným sestavením pro vydání":::
 
-1. V **Průzkumník řešení**klikněte pravým tlačítkem myši na projekt **StringLibrary** a vyberte **sestavení** z místní nabídky pro rekompilaci knihovny.
+1. Na panelu **řešení** klikněte v nabídce <kbd>CTRL</kbd>na projekt **StringLibrary** a vyberte **sestavení** z místní nabídky pro rekompilaci knihovny.
 
-   > [!div class="mx-imgBorder"]
-   > ![Místní nabídka StringLibrary s příkazem Build](./media/testing-library-with-visual-studio/build-library-context-menu.png)
+   :::image type="content" source="media/testing-library-with-visual-studio-mac/build-library-context-menu.png" alt-text="Místní nabídka StringLibrary s příkazem Build":::
 
-1. Spusťte testy jednotek výběrem možnosti **test spustit**  >  **všechny testy** z řádku nabídek. Testy jsou passované.
+1. Znovu spusťte testy jednotek.
+
+   Testy jsou passované.
+
+## <a name="debug-tests"></a>Ladit testy
+
+Můžete použít stejný postup jako v [kurzu: ladění konzolové aplikace .NET Core pomocí Visual Studio pro Mac](debugging-with-visual-studio-mac.md) pro ladění kódu pomocí projektu testování částí. Místo spuštění projektu <kbd>aplikace pro</kbd>selektory klikněte v místní nabídce na projekt **StringLibraryTests** a vyberte **Spustit ladění projektu** . Visual Studio spustí testovací projekt pomocí připojeného ladicího programu. Spuštění se zastaví na všech zarážekch, které jste přidali do testovacího projektu, nebo na podkladový kód knihovny.
 
 ## <a name="additional-resources"></a>Další zdroje
 
-* [Základy testování částí – Visual Studio](/visualstudio/test/unit-test-basics)
 * [Testování částí v .NET Core a .NET Standard](../testing/index.md)
 
 ## <a name="next-steps"></a>Další kroky
@@ -197,14 +176,14 @@ Testování sestavení pro vydání:
 V tomto kurzu testujete jednotku knihovny tříd. Knihovnu můžete zpřístupnit ostatním tím, že ji publikujete do [NuGet](https://nuget.org) jako balíček. Pokud se chcete dozvědět, jak postupovat, postupujte podle kurzu NuGet:
 
 > [!div class="nextstepaction"]
-> [Vytvoření a publikování balíčku NuGet pomocí sady Visual Studio](/nuget/quickstart/create-and-publish-a-package-using-visual-studio?tabs=netcore-cli)
+> [Vytvoření a publikování balíčku (rozhraní příkazového řádku dotnet)](/nuget/quickstart/create-and-publish-a-package-using-the-dotnet-cli)
 
 Pokud knihovnu publikujete jako balíček NuGet, můžou ji nainstalovat a používat i ostatní. Pokud se chcete dozvědět, jak postupovat, postupujte podle kurzu NuGet:
 
 > [!div class="nextstepaction"]
-> [Instalace a použití balíčku v aplikaci Visual Studio](/nuget/quickstart/install-and-use-a-package-in-visual-studio)
+> [Instalace a použití balíčku v Visual Studio pro Mac](/nuget/quickstart/install-and-use-a-package-in-visual-studio-mac)
 
 Knihovna nemusí být distribuována jako balíček. Dá se seskupit pomocí konzolové aplikace, která ho používá. Informace o tom, jak publikovat konzolovou aplikaci, najdete v předchozím kurzu v této sérii:
 
 > [!div class="nextstepaction"]
-> [Publikování konzolové aplikace .NET Core pomocí sady Visual Studio](publishing-with-visual-studio.md)
+> [Publikování konzolové aplikace .NET Core pomocí Visual Studio pro Mac](publishing-with-visual-studio-mac.md)

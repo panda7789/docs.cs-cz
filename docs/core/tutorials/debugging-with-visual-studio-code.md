@@ -2,12 +2,12 @@
 title: Ladění konzolové aplikace .NET Core pomocí Visual Studio Code
 description: Naučte se ladit konzolovou aplikaci .NET Core pomocí Visual Studio Code.
 ms.date: 05/26/2020
-ms.openlocfilehash: 82b2798397d702aa2a50c04bf6e4d569b97e3666
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 40e9b114df1bd12fb05bfb773781d6009d087a06
+ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241510"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84702124"
 ---
 # <a name="tutorial-debug-a-net-core-console-application-using-visual-studio-code"></a>Kurz: ladění konzolové aplikace .NET Core pomocí Visual Studio Code
 
@@ -19,25 +19,25 @@ Tento kurz zavádí ladicí nástroje, které jsou k dispozici v Visual Studio C
 
 ## <a name="use-debug-build-configuration"></a>Použít konfiguraci sestavení pro ladění
 
-*Ladění* a *vydání* jsou dvě konfigurace sestavení .NET Core. Použijete konfiguraci sestavení ladění pro ladění a konfiguraci vydání pro finální distribuci vydaných verzí.
+*Ladění* a vydaných *verzí* jsou integrované konfigurace sestavení .NET Core. Použijete konfiguraci sestavení ladění pro ladění a konfiguraci vydání pro finální distribuci vydaných verzí.
 
 V konfiguraci ladění program kompiluje s úplnými symbolickými informacemi o ladění a bez optimalizace. Optimalizace komplikuje ladění, protože vztah mezi zdrojovým kódem a vygenerovanými pokyny je složitější. Konfigurace pro vydání programu neobsahuje žádné symbolické ladicí informace a je plně optimalizována.
 
- Ve výchozím nastavení Visual Studio Code používá konfiguraci sestavení ladění, takže je nemusíte před laděním měnit.
+Ve výchozím nastavení Visual Studio Code spuštění nastavení používá konfiguraci sestavení ladění, takže je nemusíte před laděním měnit.
+
+1. Spusťte Visual Studio Code.
+
+1. Otevřete složku projektu, který jste vytvořili v [části Vytvoření konzolové aplikace .NET Core v Visual Studio Code](with-visual-studio-code.md).
 
 ## <a name="set-a-breakpoint"></a>Nastavení zarážky
 
-Zarážka dočasně přerušuje provádění aplikace *před* provedením řádku se zarážkou.
-
-1. Otevřete Visual Studio Code.
-
-1. Otevřete složku projektu *HelloWorld* , kterou jste vytvořili v [části Vytvoření konzolové aplikace .net Core v Visual Studio Code](with-visual-studio-code.md).
+*Zarážka* dočasně přerušuje provádění aplikace před provedením řádku se zarážkou.
 
 1. Otevřete soubor *program.cs* .
 
-1. Nastavte *zarážku* na řádku, který zobrazuje název, datum a čas kliknutím na levý okraj okna Code (kód). Levý okraj je nalevo od čísel řádků. Dalším způsobem, jak nastavit zarážku, je umístit kurzor do řádku kódu a stisknout <kbd>F9</kbd>.
+1. Nastavte *zarážku* na řádku, který zobrazuje název, datum a čas kliknutím na levý okraj okna Code (kód). Levý okraj je nalevo od čísel řádků. Další způsoby, jak nastavit zarážku, jsou stisknuté klávesou <kbd>F9</kbd> nebo výběrem možnosti **Spustit**  >  **přepínací zarážku** z nabídky, když je vybraná řádka kódu.
 
-   Jak ukazuje následující obrázek, Visual Studio Code označuje řádek, na kterém je zarážka nastavena, zobrazením červené tečky na levém okraji.
+   Visual Studio Code určuje čáru, na které je zarážka nastavena, zobrazením červené tečky na levém okraji.
 
    :::image type="content" source="media/debugging-with-visual-studio-code/breakpoint-set.png" alt-text="Sada zarážek":::
 
@@ -45,7 +45,7 @@ Zarážka dočasně přerušuje provádění aplikace *před* provedením řádk
 
 Zarážka je umístěna po `Console.ReadLine` volání metody. **Konzola ladění** nepřijímá vstup terminálu pro spuštěný program. Pro zpracování vstupu terminálu během ladění můžete použít integrovaný terminál (jeden z Visual Studio Code Windows) nebo externí terminál. V tomto kurzu použijete integrovaný terminál.
 
-1. Otevřete *. VSCode/Launch. JSON*.
+1. Otevřete *. VSCode/launch.jsna*.
 
 1. Změňte `console` nastavení na `integratedTerminal` .
 
@@ -69,7 +69,7 @@ Zarážka je umístěna po `Console.ReadLine` volání metody. **Konzola laděn�
 
    :::image type="content" source="media/debugging-with-visual-studio-code/select-debug-pane.png" alt-text="Otevřete kartu ladění v Visual Studio Code":::
 
-1. Spustit ladění tak, že vyberete zelenou šipku v horní části podokna, vedle možnosti **spuštění .NET Core (konzola)**.  Dalším způsobem, jak spustit ladění, je stisknout klávesu <kbd>F5</kbd>.
+1. V horní části podokna vyberte zelenou šipku a vedle položku **.NET Core Launch (konzola)**. Jiný způsob, jak spustit program v režimu ladění, je výběrem možnosti **Spustit**  >  **ladění** z nabídky.
 
    :::image type="content" source="media/debugging-with-visual-studio-code/start-debugging.png" alt-text="Spustit ladění":::
 
@@ -83,7 +83,7 @@ Zarážka je umístěna po `Console.ReadLine` volání metody. **Konzola laděn�
 
    :::image type="content" source="media/debugging-with-visual-studio-code/breakpoint-hit.png" alt-text="Pozice zarážky, zobrazení lokálních hodnot":::
 
-## <a name="change-variable-values"></a>Změnit hodnoty proměnných
+## <a name="use-the-debug-console"></a>Použití konzoly ladění
 
 Okno **konzoly ladění** vám umožní pracovat s aplikací, kterou ladíte. Můžete změnit hodnotu proměnných, abyste viděli, jak ovlivní váš program.
 
@@ -113,7 +113,7 @@ Okno **konzoly ladění** vám umožní pracovat s aplikací, kterou ladíte. M�
 
 Program zobrazí řetězec, který uživatel zadá. Co se stane, když uživatel nezadá něco? Můžete to otestovat s užitečnou funkcí ladění nazývanou *podmíněná zarážka*.
 
-1. Klikněte pravým tlačítkem myši (<kbd>CTRL</kbd>+ kliknutí na MacOS) na červenou tečku, která představuje zarážku. V místní nabídce vyberte **Upravit zarážku** , aby se otevřelo dialogové okno, které vám umožní zadat podmíněný výraz.
+1. Klikněte pravým tlačítkem myši (<kbd>CTRL +</kbd>kliknutí na MacOS) na červenou tečku, která představuje zarážku. V místní nabídce vyberte **Upravit zarážku** , aby se otevřelo dialogové okno, které vám umožní zadat podmíněný výraz.
 
    :::image type="content" source="media/debugging-with-visual-studio-code/breakpoint-context-menu.png" alt-text="Místní nabídka zarážky":::
 
@@ -127,7 +127,7 @@ Program zobrazí řetězec, který uživatel zadá. Co se stane, když uživatel
 
    Pokaždé, když je dosaženo zarážky, ladicí program volá `String.IsNullOrEmpty(name)` metodu a přeruší se na tomto řádku pouze v případě, že se volání metody vrátí `true` .
 
-   Místo podmíněného výrazu lze určit *Počet volání*, který přerušuje spuštění programu před provedením určitého příkazu, nebo *podmínku filtru*, která přerušuje spuštění programu na základě takových atributů jako identifikátor vlákna, název procesu nebo název vlákna.
+   Místo podmíněného výrazu můžete zadat *počet*průchodů, který přerušuje spuštění programu před provedením příkazu určeného počtu. Další možností je určit *podmínku filtru*, která přerušuje spuštění programu na základě takových atributů jako identifikátor vlákna, název procesu nebo název vlákna.
 
 1. Spusťte program s laděním stisknutím klávesy <kbd>F5</kbd>.
 
@@ -149,7 +149,7 @@ Program zobrazí řetězec, který uživatel zadá. Co se stane, když uživatel
 
 1. Vyberte kartu **terminál** a stisknutím libovolné klávesy ukončete program a zastavte ladění.
 
-1. Vymažte zarážku kliknutím na tečku na levém okraji okna Code (kód). Dalším způsobem, jak zrušit zarážku, je stisknutí klávesy <kbd>F9</kbd> při výběru řádku kódu.
+1. Vymažte zarážku kliknutím na tečku na levém okraji okna Code (kód). Další způsoby, jak zarážku vymazat, je stisknutí klávesy <kbd>F9</kbd> nebo zvolením možnosti **Spustit > v nabídce Přepnout zarážku** , zatímco je vybraný řádek kódu.
 
 1. Pokud se zobrazí upozornění, že bude ztracena Podmínka zarážky, vyberte možnost **odebrat zarážku**.
 
@@ -165,17 +165,17 @@ Visual Studio Code také umožňuje krokovat řádek po řádku programu a monit
 
    V tomto okamžiku okno **proměnné** ukazuje, že `args` pole je prázdné a `name` `date` má výchozí hodnoty.
 
-1. Vyberte **Krok do** nebo stiskněte klávesu <kbd>F11</kbd>.
+1. Vyberte možnost **Spustit**  >  **Krok do** nebo stiskněte klávesu <kbd>F11</kbd>.
 
    :::image type="content" source="media/debugging-with-visual-studio-code/step-into.png" alt-text="Tlačítko Krokovat s vnořením":::
 
    Visual Studio Code zvýrazní další řádek.
 
-1. Vyberte **Krok do** nebo stiskněte klávesu <kbd>F11</kbd>.
+1. Vyberte možnost **Spustit**  >  **Krok do** nebo stiskněte klávesu <kbd>F11</kbd>.
 
    Visual Studio Code spustí `Console.WriteLine` pro příkazový řádek název a zvýrazní další řádek provádění. Další řádek je `Console.ReadLine` pro `name` . Okno **proměnné** se nezměnilo a karta **terminálu** zobrazuje "Co je vaše jméno?" výzv.
 
-1. Vyberte **Krok do** nebo stiskněte klávesu <kbd>F11</kbd>.
+1. Vyberte možnost **Spustit**  >  **Krok do** nebo stiskněte klávesu <kbd>F11</kbd>.
 
    Visual Studio zvýrazní `name` přiřazení proměnné. V okně **proměnné** se zobrazí, že `name` je stále `null` .
 
@@ -183,19 +183,19 @@ Visual Studio Code také umožňuje krokovat řádek po řádku programu a monit
 
    Karta **terminálu** nezobrazuje řetězec, který zadáte při zadávání, ale <xref:System.Console.ReadLine%2A?displayProperty=nameWithType> metoda zachytí vstup.
 
-1. Vyberte **Krok do** nebo stiskněte klávesu <kbd>F11</kbd>.
+1. Vyberte možnost **Spustit**  >  **Krok do** nebo stiskněte klávesu <kbd>F11</kbd>.
 
    Visual Studio Code zvýrazní `date` přiřazení proměnné. Okno **proměnné** zobrazuje hodnotu vrácenou voláním <xref:System.Console.ReadLine%2A?displayProperty=nameWithType> metody. Na kartě **terminál** se zobrazí řetězec, který jste zadali na příkazovém řádku.
 
-1. Vyberte **Krok do** nebo stiskněte klávesu <kbd>F11</kbd>.
+1. Vyberte možnost **Spustit**  >  **Krok do** nebo stiskněte klávesu <kbd>F11</kbd>.
 
    Okno **proměnné** zobrazuje hodnotu `date` proměnné po přiřazení z <xref:System.DateTime.Now?displayProperty=nameWithType> Vlastnosti.
 
-1. Vyberte **Krok do** nebo stiskněte klávesu <kbd>F11</kbd>.
+1. Vyberte možnost **Spustit**  >  **Krok do** nebo stiskněte klávesu <kbd>F11</kbd>.
 
    Visual Studio Code volá <xref:System.Console.WriteLine(System.String,System.Object,System.Object)?displayProperty=nameWithType> metodu. V okně konzoly se zobrazí formátovaný řetězec.
 
-1. Vyberte **Krok ven** nebo stiskněte klávesu <kbd>SHIFT</kbd> + <kbd>F11</kbd>.
+1. Vyberte možnost **Spustit**  >  **Krok ven** nebo stiskněte klávesu <kbd>SHIFT</kbd> + <kbd>F11</kbd>.
 
    :::image type="content" source="media/debugging-with-visual-studio-code/step-out.png" alt-text="Tlačítko pro krokování":::
 
@@ -205,7 +205,7 @@ Visual Studio Code také umožňuje krokovat řádek po řádku programu a monit
 
 1. Ukončete program stisknutím libovolné klávesy.
 
-## <a name="select-release-build-configuration"></a>Vybrat konfiguraci sestavení pro vydání
+## <a name="use-release-build-configuration"></a>Použít konfiguraci sestavení pro vydání
 
 Po otestování ladicí verze aplikace byste měli také kompilovat a testovat verzi vydání. Verze Release zahrnuje optimalizace kompilátoru, které mohou ovlivnit chování aplikace. Například optimalizace kompilátoru, které jsou navrženy pro zlepšení výkonu, mohou vytvářet konflikty časování v aplikacích s více vlákny.
 

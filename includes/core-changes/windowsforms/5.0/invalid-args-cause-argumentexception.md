@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: f1fc70075ef09a4f036c69788342c07ee51d72ce
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: aab7d8538c875e35c832acc2a6c64beb84d4fb47
+ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83702483"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84702432"
 ---
 ### <a name="winforms-methods-now-throw-argumentexception"></a>Metody WinForms teď vyvolávají výjimku ArgumentException.
 
@@ -19,12 +19,13 @@ Vyvolání <xref:System.ArgumentException> vyhovuje chování modulu runtime .NE
 Následující tabulka uvádí ovlivněné metody a parametry:
 
 | Metoda | Název parametru | Podmínka | Přidaná verze |
-|-|-|-|
+|-|-|-|-|
 | <xref:System.Windows.Forms.TabControl.GetToolTipText(System.Object)?displayProperty=fullName> | `item` | Argument není typu <xref:System.Windows.Forms.TabPage> . | 5,0 Preview 1 |
+| <xref:System.Windows.Forms.DataFormats.GetFormat(System.String)?displayProperty=fullName> | `format` | Argument je `null` , <xref:System.String.Empty?displayProperty=nameWithType> nebo mezera. | 5,0 Preview 5 |
 
 #### <a name="version-introduced"></a>Představená verze
 
-.NET 5,0 Preview 1
+.NET 5,0
 
 #### <a name="recommended-action"></a>Doporučená akce
 
@@ -38,11 +39,13 @@ Windows Forms
 #### <a name="affected-apis"></a>Ovlivněná rozhraní API
 
 - <xref:System.Windows.Forms.TabControl.GetToolTipText(System.Object)?displayProperty=fullName>
+- <xref:System.Windows.Forms.DataFormats.GetFormat(System.String)?displayProperty=fullName>
 
 <!-- 
 
 #### Affected APIs
 
 - `M:System.Windows.Forms.TabControl.GetToolTipText(System.Object)`
+- `M:System.Windows.Forms.DataFormats.GetFormat(System.String)`
 
 -->
