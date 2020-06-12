@@ -1,486 +1,467 @@
-- name: Dokumentace k .NET Core
-  href: index.yml
-- name: Úvod do .NET Core
-  href: introduction.md
-- name: Přehled .NET Core
-  href: about.md
-- name: Instalace
-  items:
-    - name: Přehled
-      href: install/index.md
-    - name: Instalace sady SDK
-      href: install/sdk.md
-    - name: Instalace modulu runtime
-      href: install/runtime.md
-    - name: Podporovaný operační systém a závislosti
-      href: install/dependencies.md
-    - name: Odebrání zastaralých modulů runtime a sad SDK
-      href: install/remove-runtime-sdk-versions.md
-    - name: Správa šablon pro .NET
-      href: install/templates.md
-    - name: Záležitosti „notářského“ ověřování pro macOS
-      href: install/macos-notarization-issues.md
-    - name: Jak kontrolovat verze .NET Core
-      href: install/how-to-detect-installed-versions.md
-    - name: Správci balíčků pro Linux
-      items:
-        - name: Ubuntu 20.04
-          href: install/linux-package-manager-ubuntu-2004.md
-        - name: Ubuntu 19.10
-          href: install/linux-package-manager-ubuntu-1910.md
-        - name: Ubuntu 19.04
-          href: install/linux-package-manager-ubuntu-1904.md
-        - name: Ubuntu 18.04
-          href: install/linux-package-manager-ubuntu-1804.md
-        - name: Ubuntu 16.04
-          href: install/linux-package-manager-ubuntu-1604.md
-        - name: CentOS 8
-          href: install/linux-package-manager-centos8.md
-        - name: CentOS 7
-          href: install/linux-package-manager-centos7.md
-        - name: Debian 10
-          href: install/linux-package-manager-debian10.md
-        - name: Debian 9
-          href: install/linux-package-manager-debian9.md
-        - name: Fedora 32
-          href: install/linux-package-manager-fedora32.md
-        - name: Fedora 31
-          href: install/linux-package-manager-fedora31.md
-        - name: Fedora 30
-          href: install/linux-package-manager-fedora30.md
-        - name: Fedora 29
-          href: install/linux-package-manager-fedora29.md
-        - name: OpenSUSE 15
-          href: install/linux-package-manager-opensuse15.md
-        - name: RHEL 8
-          href: install/linux-package-manager-rhel8.md
-        - name: RHEL 7
-          href: install/linux-package-manager-rhel7.md
-        - name: SLES 15
-          href: install/linux-package-manager-sles15.md
-        - name: SLES 12
-          href: install/linux-package-manager-sles12.md
-    - name: Instalace lokalizované technologie IntelliSense
-      href: install/localized-intellisense.md
-- name: Začínáme
-  href: get-started.md
-- name: Co je nového v .NET Core
-  items:
-    - name: Co je nového v .NET Core 3.1
-      href: whats-new/dotnet-core-3-1.md
-    - name: Co je nového v .NET Core 3.0
-      href: whats-new/dotnet-core-3-0.md
-    - name: Co je nového v .NET Core 2.2
-      href: whats-new/dotnet-core-2-2.md
-    - name: Co je nového v .NET Core 2.1
-      href: whats-new/dotnet-core-2-1.md
-    - name: Co je nového v .NET Core 2.0
-      href: whats-new/dotnet-core-2-0.md
-- name: Změny způsobující chyby
-  displayName: app compatibility
-  href: compatibility/
-- name: Kurzy
-  items:
-    - name: Použití sady Visual Studio
-      items:
-        - name: Vytvoření konzolové aplikace
-          href: tutorials/with-visual-studio.md
-          displayName: 'tutorials, visual studio, vs'
-        - name: Ladění aplikace
-          href: tutorials/debugging-with-visual-studio.md
-          displayName: 'tutorials, visual studio, vs'
-        - name: Publikování aplikace
-          href: tutorials/publishing-with-visual-studio.md
-          displayName: 'tutorials, visual studio, vs'
-        - name: Vytvoření knihovny
-          href: tutorials/library-with-visual-studio.md
-          displayName: 'tutorials, visual studio, vs'
-        - name: Test jednotek u knihovny
-          href: tutorials/testing-library-with-visual-studio.md
-          displayName: 'tutorials, visual studio, vs'
-        - name: Instalace a použití balíčku
-          href: /nuget/quickstart/install-and-use-a-package-in-visual-studio
-          displayName: 'tutorials, visual studio, vs'
-        - name: Vytvoření a publikování balíčku
-          href: /nuget/quickstart/create-and-publish-a-package-using-visual-studio
-          displayName: 'tutorials, visual studio, vs'
-    - name: Použití editoru Visual Studio Code
-      items:
-        - name: Vytvoření konzolové aplikace
-          href: tutorials/with-visual-studio-code.md
-          displayName: 'tutorials, visual studio code, vs code, cli'
-        - name: Ladění aplikace
-          href: tutorials/debugging-with-visual-studio-code.md
-          displayName: 'tutorials, visual studio code, vs code'
-        - name: Publikování aplikace
-          href: tutorials/publishing-with-visual-studio-code.md
-          displayName: 'tutorials, visual studio, vs'
-        - name: Vytvoření knihovny
-          href: tutorials/library-with-visual-studio-code.md
-          displayName: 'tutorials, visual studio, vs'
-        - name: Test jednotek u knihovny
-          href: tutorials/testing-library-with-visual-studio-code.md
-          displayName: 'tutorials, visual studio, vs'
-        - name: Instalace a použití balíčku
-          href: /nuget/quickstart/install-and-use-a-package-using-the-dotnet-cli
-          displayName: 'tutorials, cli'
-        - name: Vytvoření a publikování balíčku
-          href: /nuget/quickstart/create-and-publish-a-package-using-the-dotnet-cli
-          displayName: tutorials
-    - name: Použití sady Visual Studio pro Mac
-      items:
-        - name: Vytvoření konzolové aplikace
-          href: tutorials/using-on-mac-vs.md
-          displayName: tutorials
-        - name: Vytvoření knihovny s následným testem jednotek
-          href: tutorials/using-on-mac-vs-full-solution.md
-          displayName: tutorials
-        - name: Instalace a použití balíčku
-          href: /nuget/quickstart/install-and-use-a-package-in-visual-studio-mac
-          displayName: tutorials
-    - name: Pokročilá témata
-      items:
-        - name: Test jednotek u aplikace s použitím xUnit
-          href: tutorials/testing-with-cli.md
-          displayName: 'tutorials, cli'
-        - name: Jak vytvářet knihovny
-          href: tutorials/libraries.md
-        - name: Vytvoření šablon pro rozhraní příkazového řádku (CLI)
-          items:
-            - name: 1 – Vytvoření šablony položky
-              href: tutorials/cli-templates-create-item-template.md
-              displayName: 'tutorials, cli'
-            - name: 2 – Vytvoření šablony projektu
-              href: tutorials/cli-templates-create-project-template.md
-              displayName: 'tutorials, cli'
-            - name: 3 – Vytvoření sady šablon
-              href: tutorials/cli-templates-create-template-pack.md
-              displayName: 'tutorials, cli'
-        - name: Vytvoření nástrojů pro rozhraní příkazového řádku (CLI)
-          items:
-            - name: 1 – Vytvoření nástroje
-              displayName: 'tools, tutorials, cli'
-              href: tools/global-tools-how-to-create.md
-            - name: 2 – Vytvoření globálního nástroje
-              displayName: 'tools, tutorials, cli'
-              href: tools/global-tools-how-to-use.md
-            - name: 3 – Vytvoření místního nástroje
-              href: tools/local-tools-how-to-use.md
-              displayName: 'tools, tutorials, cli'
-        - name: Vytvoření aplikace pomocí modulů plug-in
-          href: tutorials/creating-app-with-plugin-support.md
-    - name: Další kurzy
-      href: tutorials/index.md
-- name: Sady SDK projektu
-  items:
-    - name: Přehled
-      href: project-sdk/overview.md
-    - name: Odkaz
-      items:
-        - name: Microsoft.NET.Sdk
-          href: project-sdk/msbuild-props.md
-        - name: Microsoft.NET.Sdk.Web
-          href: /aspnet/core/razor-pages/web-sdk?toc=/dotnet/core/toc.json&bc=/dotnet/breadcrumb/toc.json
-        - name: Microsoft.NET.Sdk.Razor
-          href: /aspnet/core/razor-pages/sdk?toc=/dotnet/core/toc.json&bc=/dotnet/breadcrumb/toc.json
-- name: Přehled sady .NET Core SDK
-  href: sdk.md
-- name: Rozhraní příkazového řádku .NET Core
-  items:
-    - name: Přehled
-      href: tools/index.md
-    - name: Odkaz
-      items:
-        - name: dotnet
-          href: tools/dotnet.md
-        - name: dotnet build
-          href: tools/dotnet-build.md
-        - name: dotnet build-server
-          href: tools/dotnet-build-server.md
-        - name: dotnet clean
-          href: tools/dotnet-clean.md
-        - name: dotnet help
-          href: tools/dotnet-help.md
-        - name: dotnet migrate
-          href: tools/dotnet-migrate.md
-        - name: dotnet msbuild
-          href: tools/dotnet-msbuild.md
-        - name: dotnet new
-          href: tools/dotnet-new.md
-        - name: dotnet nuget
-          items:
-            - name: dotnet nuget delete
-              href: tools/dotnet-nuget-delete.md
-            - name: dotnet nuget locals
-              href: tools/dotnet-nuget-locals.md
-            - name: dotnet nuget push
-              href: tools/dotnet-nuget-push.md
-            - name: dotnet nuget add source
-              href: tools/dotnet-nuget-add-source.md
-            - name: dotnet nuget disable source
-              href: tools/dotnet-nuget-disable-source.md
-            - name: dotnet nuget enable source
-              href: tools/dotnet-nuget-enable-source.md
-            - name: dotnet nuget list source
-              href: tools/dotnet-nuget-list-source.md
-            - name: dotnet nuget remove source
-              href: tools/dotnet-nuget-remove-source.md
-            - name: dotnet nuget update source
-              href: tools/dotnet-nuget-update-source.md
-        - name: dotnet pack
-          href: tools/dotnet-pack.md
-        - name: dotnet publish
-          href: tools/dotnet-publish.md
-        - name: dotnet restore
-          href: tools/dotnet-restore.md
-        - name: dotnet run
-          href: tools/dotnet-run.md
-        - name: dotnet sln
-          href: tools/dotnet-sln.md
-        - name: dotnet store
-          href: tools/dotnet-store.md
-        - name: dotnet test
-          href: tools/dotnet-test.md
-        - name: dotnet tool
-          items:
-            - name: dotnet tool install
-              href: tools/dotnet-tool-install.md
-            - name: dotnet tool list
-              href: tools/dotnet-tool-list.md
-            - name: dotnet tool restore
-              href: tools/dotnet-tool-restore.md
-            - name: dotnet tool run
-              href: tools/dotnet-tool-run.md
-            - name: dotnet tool uninstall
-              href: tools/dotnet-tool-uninstall.md
-            - name: dotnet tool update
-              href: tools/dotnet-tool-update.md
-        - name: dotnet vstest
-          href: tools/dotnet-vstest.md
-        - name: dotnet-install scripts
-          href: tools/dotnet-install-script.md
-        - name: Příkazy odkazu na projekt
-          items:
-            - name: dotnet add reference
-              href: tools/dotnet-add-reference.md
-            - name: dotnet list reference
-              href: tools/dotnet-list-reference.md
-            - name: dotnet remove reference
-              href: tools/dotnet-remove-reference.md
-        - name: Příkazy balíčku projektu
-          items:
-            - name: dotnet add package
-              href: tools/dotnet-add-package.md
-            - name: dotnet list package
-              href: tools/dotnet-list-package.md
-            - name: dotnet remove package
-              href: tools/dotnet-remove-package.md
-    - name: Globální a místní nástroje
-      items:
-        - name: Správa nástrojů
-          href: tools/global-tools.md
-        - name: Řešení potíží s nástroji
-          href: tools/troubleshoot-usage-issues.md
-    - name: global.json – přehled
-      href: tools/global-json.md
-    - name: Vlastní šablony
-      href: tools/custom-templates.md
-    - name: Telemetrie
-      href: tools/telemetry.md
-    - name: Přístup se zvýšenými oprávněními
-      href: tools/elevated-access.md
-    - name: Povolení dokončování pomocí tabulátoru
-      href: tools/enable-tab-autocomplete.md
-- name: Diagnostické nástroje
-  items:
-    - name: Přehled
-      href: diagnostics/index.md
-    - name: Spravované ladicí programy
-      href: diagnostics/managed-debuggers.md
-    - name: Protokolování a trasování
-      href: diagnostics/logging-tracing.md
-    - name: Globální nástroje .NET Core CLI
-      items:
-        - name: dotnet-counters
-          href: diagnostics/dotnet-counters.md
-        - name: dotnet-dump
-          href: diagnostics/dotnet-dump.md
-        - name: dotnet-trace
-          href: diagnostics/dotnet-trace.md
-    - name: Kurzy diagnostiky .NET Core
-      items:
-        - name: Ladění nevrácené paměti
-          href: diagnostics/debug-memory-leak.md
-- name: Další nástroje platformy .NET Core
-  items:
-    - name: Přehled
-      href: additional-tools/index.md
-    - name: Nástroj pro odinstalaci .NET Core
-      href: additional-tools/uninstall-tool.md
-    - name: WCF Web Service Reference Provider
-      href: additional-tools/wcf-web-service-reference-guide.md
-    - name: dotnet-svcutil
-      href: additional-tools/dotnet-svcutil-guide.md
-    - name: dotnet-svcutil.xmlserializer
-      href: additional-tools/dotnet-svcutil.xmlserializer-guide.md
-    - name: XML Serializer Generator
-      href: additional-tools/xml-serializer-generator.md
-- name: Nasazení aplikací
-  items:
-    - name: Přehled
-      href: deploying/index.md
-    - name: Publikování aplikací v rozhraní příkazového řádku
-      href: deploying/deploy-with-cli.md
-    - name: Nasazení aplikací pomocí sady Visual Studio
-      href: deploying/deploy-with-vs.md
-    - name: Vytvoření balíčku NuGet v rozhraní příkazového řádku
-      href: deploying/creating-nuget-packages.md
-    - name: Samostatné nasazení – dopředné posunutí modulu runtime
-      href: deploying/runtime-patch-selection.md
-    - name: Odebrání nechtěných součástí a zachování pouze samostatně nasaditelných součástí a spustitelných souborů
-      href: deploying/trim-self-contained.md
-    - name: Úložiště balíčků modulu runtime
-      href: deploying/runtime-store.md
-- name: Docker
-  items:
-    - name: Úvod k .NET a Dockeru
-      href: docker/introduction.md
-    - name: Kontejnerizace aplikace .NET Core
-      href: docker/build-container.md
-    - name: Nástroje kontejneru v sadě Visual Studio
-      href: /visualstudio/containers/overview
-- name: Konfigurace běhového prostředí
-  items:
-    - name: Nastavení
-      href: run-time-config/index.md
-    - name: Nastavení kompilace
-      href: run-time-config/compilation.md
-    - name: Nastavení ladění a profilace
-      href: run-time-config/debugging-profiling.md
-    - name: Nastavení systému uvolňování paměti
-      href: run-time-config/garbage-collector.md
-    - name: Nastavení globalizace
-      href: run-time-config/globalization.md
-    - name: Nastavení sítě
-      href: run-time-config/networking.md
-    - name: Nastavení dělení na vlákna
-      href: run-time-config/threading.md
-- name: Migrace
-  items:
-    - name: .NET Core 2.0 na 2.1
-      href: migration/20-21.md
-    - name: Migrace ze souboru project.json
-      href: migration/index.md
-    - name: Mapování mezi project.json a csproj
-      href: tools/project-json-to-csproj.md
-    - name: Přehled změn v CLI
-      href: tools/cli-msbuild-architecture.md
-    - name: Dodatky k formátu csproj
-      href: tools/csproj.md
-    - name: Migrace z DNX
-      href: migration/from-dnx.md
-- name: Přenos z rozhraní .NET Framework
-  items:
-    - name: Přehled
-      href: porting/index.md
-    - name: Analýza závislostí třetích stran
-      href: porting/third-party-deps.md
-    - name: Přenos knihoven
-      href: porting/libraries.md
-    - name: Uspořádání projektů pro .NET Core
-      href: porting/project-structure.md
-    - name: Nedostupné technologie
-      href: porting/net-framework-tech-unavailable.md
-    - name: Nástroje
-      href: porting/tools.md
-    - name: Použití sady Windows Compatibility Pack
-      href: porting/windows-compat-pack.md
-    - name: Portování projektů Windows Forms
-      href: porting/winforms.md
-    - name: Portování projektů WPF
-      href: ../desktop-wpf/migration/convert-project-from-net-framework.md
-    - name: Portování projektů v C++/CLI
-      href: porting/cpp-cli.md
-- name: Testování jednotek
-  displayName: 'xUnit,NUnit,MSTest,unit testing,testing'
-  items:
-    - name: Přehled
-      href: testing/index.md
-    - name: Osvědčené postupy pro testování částí
-      href: testing/unit-testing-best-practices.md
-    - name: xUnit
-      items:
-        - name: 'Testování částí v C#'
-          href: testing/unit-testing-with-dotnet-test.md
-        - name: 'Testování částí v F#'
-          href: testing/unit-testing-fsharp-with-dotnet-test.md
-        - name: Testování částí ve Visual Basicu
-          href: testing/unit-testing-visual-basic-with-dotnet-test.md
-    - name: NUnit
-      items:
-        - name: 'Testování částí v C#'
-          href: testing/unit-testing-with-nunit.md
-        - name: 'Testování částí v F#'
-          href: testing/unit-testing-fsharp-with-nunit.md
-        - name: Testování částí ve Visual Basicu
-          href: testing/unit-testing-visual-basic-with-nunit.md
-    - name: MSTest
-      items:
-        - name: 'Testování částí v C#'
-          href: testing/unit-testing-with-mstest.md
-        - name: 'Testování částí v F#'
-          href: testing/unit-testing-fsharp-with-mstest.md
-        - name: Testování částí ve Visual Basicu
-          href: testing/unit-testing-visual-basic-with-mstest.md
-    - name: Spouštění selektivních testů jednotek
-      href: testing/selective-unit-tests.md
-    - name: Seřazení testů jednotek
-      href: testing/order-unit-tests.md
-    - name: Publikovaný výstup testování částí
-      href: testing/unit-testing-published-output.md
-    - name: Live Unit Testing pro projekty .NET Core pomocí sady Visual Studio
-      href: /visualstudio/test/live-unit-testing-start
-- name: Správa verzí
-  items:
-    - name: Přehled
-      href: versions/index.md
-    - name: Výběr verze .NET Core
-      href: versions/selection.md
-- name: Katalog RID (Runtime Identifier)
-  href: rid-catalog.md
-- name: Názvy manifestů k prostředkům
-  href: resources/manifest-file-names.md
-- name: Správa a načítání závislostí
-  items:
-    - name: Správa závislostí
-      href: tools/dependencies.md
-    - name: Načítání závislostí
-      href: dependency-loading/overview.md
-    - name: Vysvětlení používání třídy AssemblyLoadContext
-      href: dependency-loading/understanding-assemblyloadcontext.md
-    - name: Podrobnosti o načítání závislosti
-      items:
-        - name: Výchozí testování závislostí
-          href: dependency-loading/default-probing.md
-        - name: Načítání spravovaných sestavení
-          href: dependency-loading/loading-managed.md
-        - name: Načítání satelitních sestavení
-          href: dependency-loading/loading-resources.md
-        - name: Načítání nespravovaných knihoven
-          href: dependency-loading/loading-unmanaged.md
-    - name: Kurzy
-      items:
-        - name: Vytvoření aplikace .NET Core pomocí modulů plug-in
-          href: tutorials/creating-app-with-plugin-support.md
-        - name: Jak se používá a ladí funkce zrušení načtení sestavení v .NET Core
-          href: ../standard/assembly/unloadability.md
-- name: Vytváření distribučních balíčků .NET Core
-  href: distribution-packaging.md
-- name: Vystavení komponent .NET Core pro COM
-  href: native-interop/expose-components-to-com.md
-- name: Hostování .NET Core z nativního kódu
-  href: tutorials/netcore-hosting.md
-- name: 'Balíčky, metabalíčky a architektury'
-  href: packages.md
-- name: Kontinuální integrace
-  href: tools/using-ci-with-cli.md
+items:
+  - name: Dokumentace k .NET Core
+    href: index.yml
+  - name: Úvod do .NET Core
+    href: introduction.md
+  - name: Přehled .NET Core
+    href: about.md
+  - name: Instalace
+    items:
+      - name: Přehled
+        href: install/index.md
+      - name: Instalace sady SDK
+        href: install/sdk.md
+      - name: Instalace modulu runtime
+        href: install/runtime.md
+      - name: Podporovaný operační systém a závislosti
+        href: install/dependencies.md
+      - name: Odebrání zastaralých modulů runtime a sad SDK
+        href: install/remove-runtime-sdk-versions.md
+      - name: Správa šablon pro .NET
+        href: install/templates.md
+      - name: Záležitosti „notářského“ ověřování pro macOS
+        href: install/macos-notarization-issues.md
+      - name: Jak kontrolovat verze .NET Core
+        href: install/how-to-detect-installed-versions.md
+      - name: Linux
+        items:
+          - name: Přehled
+            href: install/linux.md
+          - name: Ubuntu
+            href: install/linux-ubuntu.md
+          - name: CentOS
+            href: install/linux-centos.md
+          - name: Debian
+            href: install/linux-debian.md
+          - name: Fedora
+            href: install/linux-fedora.md
+          - name: OpenSUSE
+            href: install/linux-opensuse.md
+          - name: Redhat Enterprise Linux
+            href: install/linux-rhel.md
+          - name: SLES
+            href: install/linux-sles.md
+      - name: Instalace lokalizované technologie IntelliSense
+        href: install/localized-intellisense.md
+  - name: Začínáme
+    href: get-started.md
+  - name: Co je nového v .NET Core
+    items:
+      - name: Co je nového v .NET Core 3.1
+        href: whats-new/dotnet-core-3-1.md
+      - name: Co je nového v .NET Core 3.0
+        href: whats-new/dotnet-core-3-0.md
+      - name: Co je nového v .NET Core 2.2
+        href: whats-new/dotnet-core-2-2.md
+      - name: Co je nového v .NET Core 2.1
+        href: whats-new/dotnet-core-2-1.md
+      - name: Co je nového v .NET Core 2.0
+        href: whats-new/dotnet-core-2-0.md
+  - name: Změny způsobující chyby
+    displayName: app compatibility
+    href: compatibility/
+  - name: Kurzy
+    items:
+      - name: Použití sady Visual Studio
+        items:
+          - name: Vytvoření konzolové aplikace
+            href: tutorials/with-visual-studio.md
+            displayName: 'tutorials, visual studio, vs'
+          - name: Ladění aplikace
+            href: tutorials/debugging-with-visual-studio.md
+            displayName: 'tutorials, visual studio, vs'
+          - name: Publikování aplikace
+            href: tutorials/publishing-with-visual-studio.md
+            displayName: 'tutorials, visual studio, vs'
+          - name: Vytvoření knihovny
+            href: tutorials/library-with-visual-studio.md
+            displayName: 'tutorials, visual studio, vs'
+          - name: Test jednotek u knihovny
+            href: tutorials/testing-library-with-visual-studio.md
+            displayName: 'tutorials, visual studio, vs'
+          - name: Instalace a použití balíčku
+            href: /nuget/quickstart/install-and-use-a-package-in-visual-studio
+            displayName: 'tutorials, visual studio, vs'
+          - name: Vytvoření a publikování balíčku
+            href: /nuget/quickstart/create-and-publish-a-package-using-visual-studio
+            displayName: 'tutorials, visual studio, vs'
+      - name: Použití editoru Visual Studio Code
+        items:
+          - name: Vytvoření konzolové aplikace
+            href: tutorials/with-visual-studio-code.md
+            displayName: 'tutorials, visual studio code, vs code, cli'
+          - name: Ladění aplikace
+            href: tutorials/debugging-with-visual-studio-code.md
+            displayName: 'tutorials, visual studio code, vs code'
+          - name: Publikování aplikace
+            href: tutorials/publishing-with-visual-studio-code.md
+            displayName: 'tutorials, visual studio, vs'
+          - name: Vytvoření knihovny
+            href: tutorials/library-with-visual-studio-code.md
+            displayName: 'tutorials, visual studio, vs'
+          - name: Test jednotek u knihovny
+            href: tutorials/testing-library-with-visual-studio-code.md
+            displayName: 'tutorials, visual studio, vs'
+          - name: Instalace a použití balíčku
+            href: /nuget/quickstart/install-and-use-a-package-using-the-dotnet-cli
+            displayName: 'tutorials, cli'
+          - name: Vytvoření a publikování balíčku
+            href: /nuget/quickstart/create-and-publish-a-package-using-the-dotnet-cli
+            displayName: tutorials
+      - name: Použití sady Visual Studio pro Mac
+        items:
+          - name: Vytvoření konzolové aplikace
+            href: tutorials/using-on-mac-vs.md
+            displayName: tutorials
+          - name: Vytvoření knihovny s následným testem jednotek
+            href: tutorials/using-on-mac-vs-full-solution.md
+            displayName: tutorials
+          - name: Instalace a použití balíčku
+            href: /nuget/quickstart/install-and-use-a-package-in-visual-studio-mac
+            displayName: tutorials
+      - name: Pokročilá témata
+        items:
+          - name: Test jednotek u aplikace s použitím xUnit
+            href: tutorials/testing-with-cli.md
+            displayName: 'tutorials, cli'
+          - name: Jak vytvářet knihovny
+            href: tutorials/libraries.md
+          - name: Vytvoření šablon pro rozhraní příkazového řádku (CLI)
+            items:
+              - name: 1 – Vytvoření šablony položky
+                href: tutorials/cli-templates-create-item-template.md
+                displayName: 'tutorials, cli'
+              - name: 2 – Vytvoření šablony projektu
+                href: tutorials/cli-templates-create-project-template.md
+                displayName: 'tutorials, cli'
+              - name: 3 – Vytvoření sady šablon
+                href: tutorials/cli-templates-create-template-pack.md
+                displayName: 'tutorials, cli'
+          - name: Vytvoření nástrojů pro rozhraní příkazového řádku (CLI)
+            items:
+              - name: 1 – Vytvoření nástroje
+                displayName: 'tools, tutorials, cli'
+                href: tools/global-tools-how-to-create.md
+              - name: 2 – Vytvoření globálního nástroje
+                displayName: 'tools, tutorials, cli'
+                href: tools/global-tools-how-to-use.md
+              - name: 3 – Vytvoření místního nástroje
+                href: tools/local-tools-how-to-use.md
+                displayName: 'tools, tutorials, cli'
+          - name: Vytvoření aplikace pomocí modulů plug-in
+            href: tutorials/creating-app-with-plugin-support.md
+      - name: Další kurzy
+        href: tutorials/index.md
+  - name: Sady SDK projektu
+    items:
+      - name: Přehled
+        href: project-sdk/overview.md
+      - name: Odkaz
+        items:
+          - name: Microsoft.NET.Sdk
+            href: project-sdk/msbuild-props.md
+          - name: Microsoft.NET.Sdk.Web
+            href: /aspnet/core/razor-pages/web-sdk?toc=/dotnet/core/toc.json&bc=/dotnet/breadcrumb/toc.json
+          - name: Microsoft.NET.Sdk.Razor
+            href: /aspnet/core/razor-pages/sdk?toc=/dotnet/core/toc.json&bc=/dotnet/breadcrumb/toc.json
+  - name: Přehled sady .NET Core SDK
+    href: sdk.md
+  - name: Rozhraní příkazového řádku .NET Core
+    items:
+      - name: Přehled
+        href: tools/index.md
+      - name: Odkaz
+        items:
+          - name: dotnet
+            href: tools/dotnet.md
+          - name: dotnet build
+            href: tools/dotnet-build.md
+          - name: dotnet build-server
+            href: tools/dotnet-build-server.md
+          - name: dotnet clean
+            href: tools/dotnet-clean.md
+          - name: dotnet help
+            href: tools/dotnet-help.md
+          - name: dotnet migrate
+            href: tools/dotnet-migrate.md
+          - name: dotnet msbuild
+            href: tools/dotnet-msbuild.md
+          - name: dotnet new
+            href: tools/dotnet-new.md
+          - name: dotnet nuget
+            items:
+              - name: dotnet nuget delete
+                href: tools/dotnet-nuget-delete.md
+              - name: dotnet nuget locals
+                href: tools/dotnet-nuget-locals.md
+              - name: dotnet nuget push
+                href: tools/dotnet-nuget-push.md
+              - name: dotnet nuget add source
+                href: tools/dotnet-nuget-add-source.md
+              - name: dotnet nuget disable source
+                href: tools/dotnet-nuget-disable-source.md
+              - name: dotnet nuget enable source
+                href: tools/dotnet-nuget-enable-source.md
+              - name: dotnet nuget list source
+                href: tools/dotnet-nuget-list-source.md
+              - name: dotnet nuget remove source
+                href: tools/dotnet-nuget-remove-source.md
+              - name: dotnet nuget update source
+                href: tools/dotnet-nuget-update-source.md
+          - name: dotnet pack
+            href: tools/dotnet-pack.md
+          - name: dotnet publish
+            href: tools/dotnet-publish.md
+          - name: dotnet restore
+            href: tools/dotnet-restore.md
+          - name: dotnet run
+            href: tools/dotnet-run.md
+          - name: dotnet sln
+            href: tools/dotnet-sln.md
+          - name: dotnet store
+            href: tools/dotnet-store.md
+          - name: dotnet test
+            href: tools/dotnet-test.md
+          - name: dotnet tool
+            items:
+              - name: dotnet tool install
+                href: tools/dotnet-tool-install.md
+              - name: dotnet tool list
+                href: tools/dotnet-tool-list.md
+              - name: dotnet tool restore
+                href: tools/dotnet-tool-restore.md
+              - name: dotnet tool run
+                href: tools/dotnet-tool-run.md
+              - name: dotnet tool uninstall
+                href: tools/dotnet-tool-uninstall.md
+              - name: dotnet tool update
+                href: tools/dotnet-tool-update.md
+          - name: dotnet vstest
+            href: tools/dotnet-vstest.md
+          - name: dotnet-install scripts
+            href: tools/dotnet-install-script.md
+          - name: Příkazy odkazu na projekt
+            items:
+              - name: dotnet add reference
+                href: tools/dotnet-add-reference.md
+              - name: dotnet list reference
+                href: tools/dotnet-list-reference.md
+              - name: dotnet remove reference
+                href: tools/dotnet-remove-reference.md
+          - name: Příkazy balíčku projektu
+            items:
+              - name: dotnet add package
+                href: tools/dotnet-add-package.md
+              - name: dotnet list package
+                href: tools/dotnet-list-package.md
+              - name: dotnet remove package
+                href: tools/dotnet-remove-package.md
+      - name: Globální a místní nástroje
+        items:
+          - name: Správa nástrojů
+            href: tools/global-tools.md
+          - name: Řešení potíží s nástroji
+            href: tools/troubleshoot-usage-issues.md
+      - name: global.json – přehled
+        href: tools/global-json.md
+      - name: Vlastní šablony
+        href: tools/custom-templates.md
+      - name: Telemetrie
+        href: tools/telemetry.md
+      - name: Přístup se zvýšenými oprávněními
+        href: tools/elevated-access.md
+      - name: Povolení dokončování pomocí tabulátoru
+        href: tools/enable-tab-autocomplete.md
+  - name: Diagnostické nástroje
+    items:
+      - name: Přehled
+        href: diagnostics/index.md
+      - name: Spravované ladicí programy
+        href: diagnostics/managed-debuggers.md
+      - name: Protokolování a trasování
+        href: diagnostics/logging-tracing.md
+      - name: Globální nástroje .NET Core CLI
+        items:
+          - name: dotnet-counters
+            href: diagnostics/dotnet-counters.md
+          - name: dotnet-dump
+            href: diagnostics/dotnet-dump.md
+          - name: dotnet-trace
+            href: diagnostics/dotnet-trace.md
+      - name: Kurzy diagnostiky .NET Core
+        items:
+          - name: Ladění nevrácené paměti
+            href: diagnostics/debug-memory-leak.md
+  - name: Další nástroje platformy .NET Core
+    items:
+      - name: Přehled
+        href: additional-tools/index.md
+      - name: Nástroj pro odinstalaci .NET Core
+        href: additional-tools/uninstall-tool.md
+      - name: WCF Web Service Reference Provider
+        href: additional-tools/wcf-web-service-reference-guide.md
+      - name: dotnet-svcutil
+        href: additional-tools/dotnet-svcutil-guide.md
+      - name: dotnet-svcutil.xmlserializer
+        href: additional-tools/dotnet-svcutil.xmlserializer-guide.md
+      - name: XML Serializer Generator
+        href: additional-tools/xml-serializer-generator.md
+  - name: Nasazení aplikací
+    items:
+      - name: Přehled
+        href: deploying/index.md
+      - name: Publikování aplikací v rozhraní příkazového řádku
+        href: deploying/deploy-with-cli.md
+      - name: Nasazení aplikací pomocí sady Visual Studio
+        href: deploying/deploy-with-vs.md
+      - name: Vytvoření balíčku NuGet v rozhraní příkazového řádku
+        href: deploying/creating-nuget-packages.md
+      - name: Samostatné nasazení – dopředné posunutí modulu runtime
+        href: deploying/runtime-patch-selection.md
+      - name: Odebrání nechtěných součástí a zachování pouze samostatně nasaditelných součástí a spustitelných souborů
+        href: deploying/trim-self-contained.md
+      - name: Úložiště balíčků modulu runtime
+        href: deploying/runtime-store.md
+  - name: Docker
+    items:
+      - name: Úvod k .NET a Dockeru
+        href: docker/introduction.md
+      - name: Kontejnerizace aplikace .NET Core
+        href: docker/build-container.md
+      - name: Nástroje kontejneru v sadě Visual Studio
+        href: /visualstudio/containers/overview
+  - name: Konfigurace běhového prostředí
+    items:
+      - name: Nastavení
+        href: run-time-config/index.md
+      - name: Nastavení kompilace
+        href: run-time-config/compilation.md
+      - name: Nastavení ladění a profilace
+        href: run-time-config/debugging-profiling.md
+      - name: Nastavení systému uvolňování paměti
+        href: run-time-config/garbage-collector.md
+      - name: Nastavení globalizace
+        href: run-time-config/globalization.md
+      - name: Nastavení sítě
+        href: run-time-config/networking.md
+      - name: Nastavení dělení na vlákna
+        href: run-time-config/threading.md
+  - name: Migrace
+    items:
+      - name: .NET Core 2.0 na 2.1
+        href: migration/20-21.md
+      - name: Migrace ze souboru project.json
+        href: migration/index.md
+      - name: Mapování mezi project.json a csproj
+        href: tools/project-json-to-csproj.md
+      - name: Přehled změn v CLI
+        href: tools/cli-msbuild-architecture.md
+      - name: Dodatky k formátu csproj
+        href: tools/csproj.md
+      - name: Migrace z DNX
+        href: migration/from-dnx.md
+  - name: Přenos z rozhraní .NET Framework
+    items:
+      - name: Přehled
+        href: porting/index.md
+      - name: Analýza závislostí třetích stran
+        href: porting/third-party-deps.md
+      - name: Přenos knihoven
+        href: porting/libraries.md
+      - name: Uspořádání projektů pro .NET Core
+        href: porting/project-structure.md
+      - name: Nedostupné technologie
+        href: porting/net-framework-tech-unavailable.md
+      - name: Nástroje
+        href: porting/tools.md
+      - name: Použití sady Windows Compatibility Pack
+        href: porting/windows-compat-pack.md
+      - name: Portování projektů Windows Forms
+        href: porting/winforms.md
+      - name: Portování projektů WPF
+        href: ../desktop-wpf/migration/convert-project-from-net-framework.md
+      - name: Portování projektů v C++/CLI
+        href: porting/cpp-cli.md
+  - name: Testování jednotek
+    displayName: 'xUnit,NUnit,MSTest,unit testing,testing'
+    items:
+      - name: Přehled
+        href: testing/index.md
+      - name: Osvědčené postupy pro testování částí
+        href: testing/unit-testing-best-practices.md
+      - name: xUnit
+        items:
+          - name: 'Testování částí v C#'
+            href: testing/unit-testing-with-dotnet-test.md
+          - name: 'Testování částí v F#'
+            href: testing/unit-testing-fsharp-with-dotnet-test.md
+          - name: Testování částí ve Visual Basicu
+            href: testing/unit-testing-visual-basic-with-dotnet-test.md
+      - name: NUnit
+        items:
+          - name: 'Testování částí v C#'
+            href: testing/unit-testing-with-nunit.md
+          - name: 'Testování částí v F#'
+            href: testing/unit-testing-fsharp-with-nunit.md
+          - name: Testování částí ve Visual Basicu
+            href: testing/unit-testing-visual-basic-with-nunit.md
+      - name: MSTest
+        items:
+          - name: 'Testování částí v C#'
+            href: testing/unit-testing-with-mstest.md
+          - name: 'Testování částí v F#'
+            href: testing/unit-testing-fsharp-with-mstest.md
+          - name: Testování částí ve Visual Basicu
+            href: testing/unit-testing-visual-basic-with-mstest.md
+      - name: Spouštění selektivních testů jednotek
+        href: testing/selective-unit-tests.md
+      - name: Seřazení testů jednotek
+        href: testing/order-unit-tests.md
+      - name: Publikovaný výstup testování částí
+        href: testing/unit-testing-published-output.md
+      - name: Live Unit Testing pro projekty .NET Core pomocí sady Visual Studio
+        href: /visualstudio/test/live-unit-testing-start
+  - name: Správa verzí
+    items:
+      - name: Přehled
+        href: versions/index.md
+      - name: Výběr verze .NET Core
+        href: versions/selection.md
+  - name: Katalog RID (Runtime Identifier)
+    href: rid-catalog.md
+  - name: Názvy manifestů k prostředkům
+    href: resources/manifest-file-names.md
+  - name: Správa a načítání závislostí
+    items:
+      - name: Správa závislostí
+        href: tools/dependencies.md
+      - name: Načítání závislostí
+        href: dependency-loading/overview.md
+      - name: Vysvětlení používání třídy AssemblyLoadContext
+        href: dependency-loading/understanding-assemblyloadcontext.md
+      - name: Podrobnosti o načítání závislosti
+        items:
+          - name: Výchozí testování závislostí
+            href: dependency-loading/default-probing.md
+          - name: Načítání spravovaných sestavení
+            href: dependency-loading/loading-managed.md
+          - name: Načítání satelitních sestavení
+            href: dependency-loading/loading-resources.md
+          - name: Načítání nespravovaných knihoven
+            href: dependency-loading/loading-unmanaged.md
+      - name: Kurzy
+        items:
+          - name: Vytvoření aplikace .NET Core pomocí modulů plug-in
+            href: tutorials/creating-app-with-plugin-support.md
+          - name: Jak se používá a ladí funkce zrušení načtení sestavení v .NET Core
+            href: ../standard/assembly/unloadability.md
+  - name: Vytváření distribučních balíčků .NET Core
+    href: distribution-packaging.md
+  - name: Vystavení komponent .NET Core pro COM
+    href: native-interop/expose-components-to-com.md
+  - name: Hostování .NET Core z nativního kódu
+    href: tutorials/netcore-hosting.md
+  - name: 'Balíčky, metabalíčky a architektury'
+    href: packages.md
+  - name: Kontinuální integrace
+    href: tools/using-ci-with-cli.md
