@@ -1,5 +1,6 @@
 ---
 title: Synchronizace dat pro vícevláknové zpracování
+description: Naučte se synchronizovat data pro multithreading v .NET. Výběr strategií, například synchronizovaných oblastí kódu, ruční synchronizace nebo synchronizovaných kontextů.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - threading [.NET], synchronizing threads
 - managed threading
 ms.assetid: b980eb4c-71d5-4860-864a-6dfe3692430a
-ms.openlocfilehash: 7f064738472a65ce89f17efc4d7ea00ac98280d0
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 4d528c54816961caa251ce054abf2c6cf07e9d01
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291094"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84769103"
 ---
 # <a name="synchronizing-data-for-multithreading"></a>Synchronizace dat pro Multithreading
 
@@ -33,8 +34,8 @@ Pokud více vláken může volat vlastnosti a metody jednoho objektu, je důlež
 |Kategorie|Globální pole|Statická pole|Statické metody|Pole instance|Metody instance|Konkrétní bloky kódu|  
 |--------------|-------------------|-------------------|--------------------|---------------------|----------------------|--------------------------|  
 |Žádná synchronizace|Ne|Ne|Ne|Ne|Ne|Ne|  
-|Synchronizovaný kontext|Ne|Ne|No|Ano|Ano|No|  
-|Synchronizované oblasti kódu|Ne|Ne|Pouze v případě označení|No|Pouze v případě označení|Pouze v případě označení|  
+|Synchronizovaný kontext|Ne|Ne|Ne|Ano|Ano|Ne|  
+|Synchronizované oblasti kódu|Ne|Ne|Pouze v případě označení|Ne|Pouze v případě označení|Pouze v případě označení|  
 |Ruční synchronizace|Ruční|Ruční|Ruční|Ruční|Ruční|Ruční|  
   
 ## <a name="no-synchronization"></a>Žádná synchronizace  

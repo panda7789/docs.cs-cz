@@ -1,5 +1,6 @@
 ---
 title: Asynchronní vzor založený na událostech (EAP)
+description: Viz odkazy na články týkající se asynchronního vzoru založeného na událostech (EAP) v rozhraní .NET, jako je implementace, osvědčené postupy, implementace klienta EAP a další.
 ms.date: 07/23/2018
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - asynchronous programming, design patterns
 - asynchronous programming
 ms.assetid: c6baed9f-2a25-4728-9a9a-53b7b14840cf
-ms.openlocfilehash: 604e7a944579a284004817009b06c11b268d5daf
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 03b4d914d72b96b882c774565654c022b145b5f2
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289431"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84768869"
 ---
 # <a name="event-based-asynchronous-pattern-eap"></a>Asynchronní vzor založený na událostech (EAP)
 
@@ -44,7 +45,7 @@ Existuje několik způsobů, jak vystavit asynchronní funkce pro klientský kó
  [Postupy: Použití komponent, které podporují asynchronní vzor založený na událostech](how-to-use-components-that-support-the-event-based-asynchronous-pattern.md)  
  Popisuje způsob použití komponenty, která podporuje asynchronní vzor založený na událostech.  
   
-## <a name="reference"></a>Odkaz
+## <a name="reference"></a>Referenční informace
 
  <xref:System.ComponentModel.AsyncOperation>  
  Popisuje <xref:System.ComponentModel.AsyncOperation> třídu a má odkazy na všechny její členy.  

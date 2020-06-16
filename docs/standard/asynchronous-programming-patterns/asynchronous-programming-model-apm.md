@@ -1,5 +1,6 @@
 ---
 title: Model asynchronního programování (APM)
+description: Přečtěte si o modelu asynchronního programování (APM) v rozhraní .NET. Objevte, jak zahájit a ukončit asynchronní operaci.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -11,12 +12,12 @@ helpviewer_keywords:
 - stopping asynchronous operations
 - asynchronous programming, beginning operations
 ms.assetid: c9b3501e-6bc6-40f9-8efd-4b6d9e39ccf0
-ms.openlocfilehash: 96ad18e613d68ee97f4e5666afe77febadc6f991
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 5ab5d15d24aac80ef4a31c039f7af9dacce4a8d8
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289977"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84769181"
 ---
 # <a name="asynchronous-programming-model-apm"></a>Model asynchronního programování (APM)
 Asynchronní operace, která používá <xref:System.IAsyncResult> vzor návrhu, je implementována jako dvě metody s názvem `BeginOperationName` `EndOperationName` , které začínají a končí *operací* asynchronní operace. Například <xref:System.IO.FileStream> Třída poskytuje <xref:System.IO.FileStream.BeginRead%2A> <xref:System.IO.FileStream.EndRead%2A> metody a pro asynchronní čtení bajtů ze souboru. Tyto metody implementují asynchronní verze <xref:System.IO.FileStream.Read%2A> metody.  

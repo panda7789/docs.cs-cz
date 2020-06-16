@@ -1,6 +1,6 @@
 ---
 title: Obecný systém typů
-description: Přečtěte si o systému typů v .NET.
+description: Prozkoumejte systém typů v .NET. Přečtěte si o typech v rozhraní .NET (hodnotových typech nebo odkazových typech), typu definice, členech typu a charakteristikách členů typu.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -16,12 +16,12 @@ helpviewer_keywords:
 - namespaces [.NET Framework], types
 - types, about types
 ms.assetid: 53c57c96-83e1-4ee3-9543-9ac832671a89
-ms.openlocfilehash: a1aa244d470402823fc22e12cb5e32bbbdcd87fe
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: db0ecd59f122228d33b74be6dec51371413d68b3
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289340"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84767829"
 ---
 # <a name="common-type-system"></a>Obecný systém typů
 
@@ -45,7 +45,7 @@ Společný typ systému definuje, jak jsou typy deklarovány, používány a spr
   
  Obecný systém typů v rozhraní .NET podporuje následující pět kategorií typů:  
   
-- [Hmotnostní](#classes)  
+- [Třídy](#classes)  
   
 - [Struktury](#structures)  
   
@@ -229,7 +229,7 @@ Společný typ systému definuje, jak jsou typy deklarovány, používány a spr
   
 - [Vnořené typy](#nested-types)  
 
-### <a name="fields"></a>Pole
+### <a name="fields"></a>Fields (Pole)
 
  Pole popisuje a obsahuje část stavu typu. Pole mohou být libovolného typu podporovaného modulem runtime. Nejčastěji jsou pole buď `private` nebo `protected` , aby byly přístupné pouze v rámci třídy nebo z odvozené třídy. Pokud hodnota pole může být upravena mimo jeho typ, je obvykle použito přistupující objekt sady vlastností. Veřejně vystavená pole jsou obvykle jen pro čtení a můžou mít dva typy:  
   
@@ -284,9 +284,9 @@ Společný typ systému definuje, jak jsou typy deklarovány, používány a spr
 |abstract|Metody, vlastnosti a události|Typ neposkytuje implementaci metody. Typy, které dědí nebo implementují abstraktní metody, musí poskytovat implementaci pro metodu. Jediná výjimka je v případě, že odvozený typ je sám abstraktní typ. Všechny abstraktní metody jsou virtuální.|  
 |privátní, Rodina, sestavení, rodina a sestavení, Rodina, sestavení nebo veřejné|Vše|Definuje přístupnost člena:<br /><br /> private<br /> Přístupný pouze v rámci stejného typu jako člen nebo v rámci vnořeného typu.<br /><br /> family<br /> Přístupné ze stejného typu jako člen a z odvozeného typu, který z něj dědí.<br /><br /> sestavení<br /> Přístupný pouze v sestavení, ve kterém je definován typ.<br /><br /> Rodina a sestavení<br /> Přístupný pouze z typů, které jsou způsobilé pro rodinu a přístup k sestavení.<br /><br /> řada nebo sestavení<br /> Přístupný pouze z typů, které jsou způsobilé pro přístup buď k rodině, nebo k sestavení.<br /><br /> public<br /> Přístupný z libovolného typu.|  
 |finální|Metody, vlastnosti a události|Virtuální metodu nelze přepsat v odvozeném typu.|  
-|pouze pro inicializaci|Pole|Hodnotu lze inicializovat pouze a nelze ji zapsat po inicializaci.|  
+|pouze pro inicializaci|Fields (Pole)|Hodnotu lze inicializovat pouze a nelze ji zapsat po inicializaci.|  
 |případě|Pole, metody, vlastnosti a události|Pokud člen není označen jako `static` (c# a c++), `Shared` (Visual Basic), `virtual` (c# a c++) nebo `Overridable` (Visual Basic), je členem instance (není k dispozici žádné klíčové slovo instance). V paměti bude tolik kopií takových členů, jako jsou objekty, které ho používají.|  
-|literál|Pole|Hodnota přiřazená k poli je pevná hodnota, která je známá v době kompilace předdefinovaného typu hodnoty. Pole literálu jsou někdy označována jako konstanty.|  
+|literál|Fields (Pole)|Hodnota přiřazená k poli je pevná hodnota, která je známá v době kompilace předdefinovaného typu hodnoty. Pole literálu jsou někdy označována jako konstanty.|  
 |NewSlot nebo override|Vše|Definuje, jak člen komunikuje se zděděnými členy, které mají stejnou signaturu:<br /><br /> NewSlot<br /> Skryje zděděné členy, které mají stejnou signaturu.<br /><br /> override<br /> Nahrazuje definici zděděné virtuální metody.<br /><br /> Výchozí hodnota je NewSlot.|  
 |static|Pole, metody, vlastnosti a události|Člen patří do typu, ve kterém je definován, nikoli na konkrétní instanci typu; člen existuje i v případě, že instance typu není vytvořena a je sdílena mezi všemi instancemi typu.|  
 |virtual|Metody, vlastnosti a události|Metoda může být implementována odvozeným typem a lze ji vyvolat staticky nebo dynamicky. Pokud se používá dynamické volání, typ instance, která provádí volání v době běhu (spíše než typ známý v době kompilace), určuje, která implementace metody je volána. Chcete-li vyvolat virtuální metodu staticky, proměnná může být převedena na typ, který používá požadovanou verzi metody.|  
@@ -306,6 +306,6 @@ Společný typ systému definuje, jak jsou typy deklarovány, používány a spr
   
 ## <a name="see-also"></a>Viz také
 
-- [.NET API – prohlížeč](/dotnet/api)
+- [Prohlížeč rozhraní .NET API](/dotnet/api)
 - [CLR (Common Language Runtime)](../clr.md)
 - [Převod typu v .NET](type-conversion.md)

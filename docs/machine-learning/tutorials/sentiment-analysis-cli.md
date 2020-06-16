@@ -6,12 +6,12 @@ ms.author: cesardl
 ms.date: 06/03/2020
 ms.custom: mvc,mlnet-tooling
 ms.topic: tutorial
-ms.openlocfilehash: 64190546157bc9386314a3080c5364fd854d7704
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: aab59463daad30748277602b9ab1d8ca2f3fa1f5
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84602225"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84767673"
 ---
 # <a name="analyze-sentiment-using-the-mlnet-cli"></a>Analýza mínění pomocí rozhraní příkazového řádku ML.NET
 
@@ -94,8 +94,6 @@ Použijeme existující datovou sadu, která se používá pro scénář Analýz
     - **Cílová doba průzkumu a výuky** pro experiment je **10 sekund** .
 
     Zobrazí se výstup z rozhraní příkazového řádku, podobně jako:
-
-    <!-- markdownlint-disable MD023 MD025 -->
 
     ![Klasifikace rozhraní příkazového řádku ML.NET v prostředí PowerShell](./media/mlnet-cli/mlnet-classification-powershell.gif)
 

@@ -1,5 +1,6 @@
 ---
 title: 'Návod: Vytvoření kanálu toku dat'
+description: Vytvoření kanálu toku dat, což je řada komponent, neboli bloků toku dat. Blok toku dat má určitý úkol, který přispívá k většímu cíli.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - Task Parallel Library, dataflows
 - TPL dataflow library, creating dataflow pipeline
 ms.assetid: 69308f82-aa22-4ac5-833d-e748533b58e8
-ms.openlocfilehash: cfe3296815dc344b0d9d1f7bad1ab4a130380e2b
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 7fe12b63b04d403334e4b64a421b105550467ca4
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84284608"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84767868"
 ---
 # <a name="walkthrough-creating-a-dataflow-pipeline"></a>Návod: Vytvoření kanálu toku dat
 I když můžete použít <xref:System.Threading.Tasks.Dataflow.DataflowBlock.Receive%2A?displayProperty=nameWithType> metody, <xref:System.Threading.Tasks.Dataflow.DataflowBlock.ReceiveAsync%2A?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Dataflow.DataflowBlock.TryReceive%2A?displayProperty=nameWithType> pro příjem zpráv ze zdrojových bloků, můžete také připojit bloky zpráv pro vytvoření *kanálu toku*dat. Kanál toku dat je řada komponent neboli *bloků toku*dat, z nichž každý provádí konkrétní úkol, který přispívá k většímu cíli. Každý blok toku dat v kanálu toku dat provádí práci, když obdrží zprávu z jiného bloku toku dat. Analogie k tomuto je montážní čára pro výrobu automobilu. Vzhledem k tomu, že každá vozidlo prochází přes čáru sestavení, jedna stanice sestaví rámec, druhý instaluje modul a tak dále. Vzhledem k tomu, že čára sestavení umožňuje sestavovat více vozidel současně, poskytuje lepší propustnost než sestavování celé vozidlo v jednom okamžiku.
@@ -53,7 +54,7 @@ I když můžete použít <xref:System.Threading.Tasks.Dataflow.DataflowBlock.Re
  [!code-csharp[TPLDataflow_Palindromes#3](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_palindromes/cs/dataflowpalindromes.cs#3)]
  [!code-vb[TPLDataflow_Palindromes#3](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_palindromes/vb/dataflowpalindromes.vb#3)]  
   
-|Člen|Typ|Description|  
+|Člen|Typ|Popis|  
 |------------|----------|-----------------|  
 |`downloadString`|<xref:System.Threading.Tasks.Dataflow.TransformBlock%602>|Stáhne z webu text knihy.|  
 |`createWordList`|<xref:System.Threading.Tasks.Dataflow.TransformBlock%602>|Odděluje text knihy do pole slov.|  

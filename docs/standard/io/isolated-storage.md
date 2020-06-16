@@ -1,5 +1,6 @@
 ---
 title: Izolované úložiště
+description: Prozkoumejte izolované úložiště, což je mechanismus úložiště dat, který poskytuje izolaci & bezpečnost definováním standardizovaných způsobů asociace kódu s uloženými daty.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -18,12 +19,12 @@ helpviewer_keywords:
 - data storage using isolated storage, options
 - isolation
 ms.assetid: aff939d7-9e49-46f2-a8cd-938d3020e94e
-ms.openlocfilehash: f98af970c8827623298fb43cd0653bdaafb20dd3
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 30ed8314d8045a599207cb0195474fdfde41760d
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84278879"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84768934"
 ---
 # <a name="isolated-storage"></a>Izolované úložiště
 <a name="top"></a>Pro desktopové aplikace je izolované úložiště mechanismus pro ukládání dat, který poskytuje izolaci a bezpečnost definováním standardizovaných způsobů asociace kódu s uloženými daty. Standardizace poskytuje také další výhody. Správci mohou používat nástroje, které jsou navrženy pro manipulaci izolovaného úložiště, a nakonfigurovat kapacitu úložiště souborů, nastavit zásady zabezpečení a odstranit nepoužívaná data. Díky izolovanému úložišti váš kód pro zadání bezpečných umístění v systému souborů již nevyžaduje jedinečné cesty a data jsou chráněna před ostatními aplikacemi, které mají přístup pouze k izolovanému úložišti. Pevně zakódovaná informace, která označuje oblast umístění aplikace, není vyžadována.
@@ -49,7 +50,7 @@ Toto téma obsahuje následující oddíly:
 
 - [Související témata](#related_topics)
 
-- [Odkaz](#reference)
+- [Reference](#reference)
 
 <a name="data_compartments_and_stores"></a>
 

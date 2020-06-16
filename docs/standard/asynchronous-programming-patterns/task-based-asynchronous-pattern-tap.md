@@ -1,5 +1,6 @@
 ---
 title: Asynchronní vzor založený na úlohách (TAP)
+description: Přečtěte si o asynchronním vzoru založeném na úlohách (klepněte). Klepněte na je doporučený asynchronní návrhový vzor pro vývoj v .NET.
 ms.date: 02/26/2019
 ms.technology: dotnet-standard
 dev_langs:
@@ -12,12 +13,12 @@ helpviewer_keywords:
 - Task-based Asynchronous Pattern, .NET Framework support for
 - .NET Framework, asynchronous design patterns
 ms.assetid: 8cef1fcf-6f9f-417c-b21f-3fd8bac75007
-ms.openlocfilehash: 4a08c8a72116ea509f559e412c5f270f3471bf1c
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 36784cd403891ddbeb4ea6d22ad89640ce1234c3
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84276436"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84768492"
 ---
 # <a name="task-based-asynchronous-pattern-tap"></a>Asynchronní vzor založený na úlohách (klepnutím)
 Asynchronní vzor založený na úlohách (klepněte) je založen na <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> typech a <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType> v <xref:System.Threading.Tasks?displayProperty=nameWithType> oboru názvů, které slouží k reprezentaci libovolných asynchronních operací. TAP je doporučený asynchronní návrh vzoru pro nový vývoj.  

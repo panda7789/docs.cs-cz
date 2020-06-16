@@ -1,5 +1,6 @@
 ---
 title: 'Postupy: komprimace a extrakce souborů'
+description: Komprimovat & extrahuje soubory pomocí System. IO. Compression. Podívejte se na příklady použití podřízený ZipFile, ZipArchive, ZipArchiveEntry, DeflateStream & GZipStream.
 ms.date: 01/14/2019
 ms.technology: dotnet-standard
 dev_langs:
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - compression
 - compress files
 ms.assetid: e9876165-3c60-4c84-a272-513e47acf579
-ms.openlocfilehash: 28f9a0baa73f58b0a5c7f93a4b0b3ece3b87c3a5
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: c13f464432aa6f67136d3a844bdeda256e7ab9b6
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288560"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84769233"
 ---
 # <a name="how-to-compress-and-extract-files"></a>Postupy: komprimace a extrakce souborů
 
@@ -30,7 +31,7 @@ ms.locfileid: "84288560"
 Následující příklady znázorňují některé operace, které můžete provádět s komprimovanými soubory. Tyto příklady vyžadují, aby byly do projektu přidány následující balíčky NuGet:
 
 - [System. IO. Compression](https://www.nuget.org/packages/System.IO.Compression)
-- [System. IO. Compression. podřízený ZipFile](https://www.nuget.org/packages/System.IO.Compression.ZipFile)
+- [SouborSystem.IO.Compression.Zip](https://www.nuget.org/packages/System.IO.Compression.ZipFile)
 
 Pokud používáte .NET Framework, přidejte do projektu odkazy na tyto dvě knihovny:
 
@@ -50,7 +51,7 @@ Ukázku spustíte tak, že ve složce programu vytvoříte složku *Start* a nap
 
 Následující příklad prochází obsah existujícího souboru *zip* a extrahuje soubory, které mají příponu *. txt* . Používá <xref:System.IO.Compression.ZipArchive> třídu pro přístup k souboru zip a <xref:System.IO.Compression.ZipArchiveEntry> třídu pro kontrolu jednotlivých položek. Metoda rozšíření <xref:System.IO.Compression.ZipFileExtensions.ExtractToFile%2A> pro <xref:System.IO.Compression.ZipArchiveEntry> objekt je k dispozici ve <xref:System.IO.Compression.ZipFileExtensions?displayProperty=nameWithType> třídě.
 
-Ukázku spustíte tak, že ve složce programu umístíte soubor *. zip* s názvem *Result. zip* . Po zobrazení výzvy zadejte název složky, do které se má extrahovat.
+Ukázku spustíte tak, že ve složce programu umístíte soubor *. zip* s názvem *result.zip* . Po zobrazení výzvy zadejte název složky, do které se má extrahovat.
 
 > [!IMPORTANT]
 > V případě souborů rozzipovává je nutné vyhledat cesty ke škodlivým souborům, které mohou uniknout z adresáře, do kterého jste extrahováni. To se označuje jako útok pomocí cesty. Následující příklad ukazuje, jak kontrolovat škodlivé cesty k souborům a poskytuje bezpečný způsob, jak je rozbalit.

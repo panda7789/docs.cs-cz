@@ -1,16 +1,17 @@
 ---
 title: Kdy použít kolekci s bezpečnými vlákny
+description: Zjistěte, kdy použít kolekci bezpečnou pro přístup z více vláken v rozhraní .NET. K dispozici je 5 typů kolekcí, které jsou speciálně navržené pro podporu vícevláknových operací Add & Remove.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
 - thread-safe collections, when to upgrade
 ms.assetid: a9babe97-e457-4ff3-b528-a1bc940d5320
-ms.openlocfilehash: e2c5d612abb824c93c611514a836c811e6e65efe
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: cea9c038896d07d526874e2ae4c33e479eaa3963
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288872"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84769129"
 ---
 # <a name="when-to-use-a-thread-safe-collection"></a>Kdy použít kolekci s bezpečnými vlákny
 .NET Framework 4 zavádí pět nových typů kolekcí, které jsou speciálně navržené tak, aby podporovaly operace přidávání a odebírání s více vlákny. Aby bylo možné dosáhnout bezpečnosti více vláken, tyto nové typy používají různé druhy efektivního uzamykání a synchronizačních mechanismů bez zámků. Synchronizace přidává k operaci režii. Množství režie závisí na druhu používané synchronizace, typu prováděných operací a dalších faktorech, jako je počet vláken, která se pokoušejí souběžně přistupovat ke kolekci.  

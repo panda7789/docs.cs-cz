@@ -1,5 +1,6 @@
 ---
 title: 'Postupy: čtení a zápis do nově vytvořeného datového souboru'
+description: Přečtěte si, jak číst a zapisovat do nově vytvořeného datového souboru v rozhraní .NET pomocí tříd System. IO. BinaryReader a System. IO. BinaryWriter.
 ms.date: 01/21/2019
 ms.technology: dotnet-standard
 dev_langs:
@@ -13,12 +14,12 @@ helpviewer_keywords:
 - I/O [.NET Framework], writing data
 - BinaryWriter class, examples
 ms.assetid: e209d949-31e8-44ea-8e38-87f9093f3093
-ms.openlocfilehash: 18f44af81a38a48da3115d2082ef45af39f06529
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 9a6b2985b7f532476c0f4c0f998d710f95e55d3a
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291809"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84769155"
 ---
 # <a name="how-to-read-and-write-to-a-newly-created-data-file"></a>Postupy: čtení a zápis do nově vytvořeného datového souboru
 <xref:System.IO.BinaryWriter?displayProperty=nameWithType>Třídy a <xref:System.IO.BinaryReader?displayProperty=nameWithType> jsou používány pro zápis a čtení jiných dat než řetězců znaků. Následující příklad ukazuje, jak vytvořit prázdný datový proud souboru, zapsat do něj data a číst z něj data.

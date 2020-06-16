@@ -1,5 +1,6 @@
 ---
 title: Čtení ze schémat XML a zápis do nich
+description: Čtení a zápis schémat XML Schema Definition Language (XSD) ze souborů nebo jiných zdrojů v rozhraní .NET pomocí rozhraní API SOM (Schema Object Model)
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -7,12 +8,12 @@ dev_langs:
 - vb
 - cpp
 ms.assetid: b5757c4a-ea59-467e-ac62-be2bfe24eb77
-ms.openlocfilehash: bf1078d52f5e9056da6b28acc8dd2fc257eb3636
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 874b0bdb0e13d545cfff4c813881f1398a8f9487
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291250"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84767660"
 ---
 # <a name="reading-and-writing-xml-schemas"></a>Čtení ze schémat XML a zápis do nich
 Rozhraní API modelu modelu objektu schématu (SOM) lze použít ke čtení a zápisu schémat XML Schema Definition Language (XSD) ze souborů nebo jiných zdrojů a sestavení schémat XML v paměti pomocí tříd v <xref:System.Xml.Schema?displayProperty=nameWithType> oboru názvů, které jsou mapovány na struktury definované v doporučeních schématu xml konsorcium World Wide Web (W3C).  

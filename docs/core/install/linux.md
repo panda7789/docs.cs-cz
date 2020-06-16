@@ -4,12 +4,12 @@ description: Přečtěte si, jaké distribuce systému Linux podporují instalac
 author: thraka
 ms.author: adegeo
 ms.date: 06/01/2020
-ms.openlocfilehash: fec3cf9e99c2db5d7312280f676bc2a3344f1ae1
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: fbb057825395d4e024f99e1abbd1a6e65ba1dce7
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84602892"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84768350"
 ---
 # <a name="install-net-core-on-linux"></a>Nainstalovat .NET Core v systému Linux
 
@@ -28,6 +28,26 @@ Následující verze rozhraní .NET Core již nejsou ❌ podporovány. Soubory k
 - 2.0
 
 Tyto nepodporované verze nejsou podrobně popsané v následujících částech a při pokusu o jejich instalaci se můžou lišit vaše kilometry.
+
+## <a name="alpine"></a>Alpine
+
+Pro Alpine nejsou k dispozici žádní instalační programy. Musíte buď použít [instalační skript](linux-alpine.md#scripted-install) , nebo postupovat podle pokynů k [ruční instalaci](linux-alpine.md#manual-install) .
+
+Následující tabulka uvádí seznam aktuálně podporovaných vydání .NET Core a verze alpské, na kterých jsou podporované. Tyto verze zůstanou podporované, dokud verze [.NET Core nedosáhne konce podpory](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) nebo když verze [alpské dosáhne konce životnosti](https://wiki.alpinelinux.org/wiki/Alpine_Linux:Releases).
+
+- ✔️ označuje, že verze Alpine nebo .NET Core je stále podporovaná.
+- ❌Indikuje, že verze Alpine nebo .NET Core není v této alpské verzi podporovaná.
+- Pokud se ✔️á jak verze Alpine, tak i verze .NET Core, je podporovaná kombinace operačních systémů a .NET.
+
+| Alpine                      | .NET Core 2.1 | .NET Core 3,1 | .NET 5 Preview |
+|-----------------------------|---------------|---------------|----------------|
+| ✔️ [3,12](linux-alpine.md)  | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 Preview |
+| ✔️ [3,11](linux-alpine.md)  | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 Preview |
+| ✔️ [3,10](linux-alpine.md)  | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 Preview |
+| ✔️ [3,9](linux-alpine.md)   | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 Preview |
+| ❌[3,8](linux-alpine.md)   | ✔️ 2,1        | ❌3,1        | ❌5,0 Preview |
+
+Další informace najdete v tématu [instalace .NET Core na alpské](linux-alpine.md).
 
 ## <a name="centos"></a>CentOS
 
@@ -56,7 +76,7 @@ Následující tabulka uvádí seznam aktuálně podporovaných vydání .NET Co
 |--------------------------|---------------|---------------|----------------|
 | ✔️ [10](linux-debian.md#debian-10-)     | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 Preview |
 | ✔️ [9](linux-debian.md#debian-9-)       | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 Preview |
-| ❌[8](linux-debian.md#debian-8-)       | ✔️ 2,1        | ❌3,1        | ❌5,0 Preview |
+| ❌ [8](linux-debian.md#debian-8-)       | ✔️ 2,1        | ❌3,1        | ❌5,0 Preview |
 
 ## <a name="fedora"></a>Fedora
 

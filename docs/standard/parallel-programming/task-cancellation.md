@@ -1,5 +1,6 @@
 ---
 title: Zrušení úlohy
+description: Pochopení zrušení úlohy, které je podporováno v třídách úloh a úloh <TResult> prostřednictvím použití tokenů zrušení v rozhraní .NET.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - tasks, cancellation
 - asynchronous task cancellation
 ms.assetid: 3ecf1ea9-e399-4a6a-a0d6-8475f48dcb28
-ms.openlocfilehash: 9f17b11699195e5b2186d008ebefce306834ea8d
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 1d9b7b35341961c27107f007e0eafa51ef49e232
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84285271"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84768661"
 ---
 # <a name="task-cancellation"></a>Zrušení úlohy
 <xref:System.Threading.Tasks.Task?displayProperty=nameWithType>Třídy a <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType> podporují zrušení prostřednictvím použití tokenů zrušení v .NET Framework. Další informace naleznete v tématu [zrušení ve spravovaných vláknech](../threading/cancellation-in-managed-threads.md). Ve třídách úloh zahrnuje zrušení spolupráci mezi uživatelským delegátem, který představuje zrušitelnou operaci, a kódem, který požaduje zrušení.  Úspěšné zrušení zahrnuje požadavek, který volá <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=nameWithType> metodu, a uživatelský delegát ukončí operaci včas. Operace může být ukončena pomocí jedné z těchto možností:  

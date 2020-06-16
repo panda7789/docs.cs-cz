@@ -2,18 +2,18 @@
 title: Parametry
 ms.date: 12/13/2019
 description: Naučte se používat parametry SQL.
-ms.openlocfilehash: 1d2f818ad392a919faedd785394de28a9c6f56c3
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b24610a5cb65e2b24171452acef9bf55b4995431
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79400454"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84768947"
 ---
 # <a name="parameters"></a>Parametry
 
 Parametry slouží k ochraně před útoky prostřednictvím injektáže SQL. Namísto zřetězení vstupu uživatele s příkazy SQL použijte parametry pro zajištění, že vstup je někdy považován za hodnotu literálu a nikdy se neprovede. V SQLite jsou parametry obvykle povoleny všude, kde je v příkazech jazyka SQL povolen literál.
 
-Parametry mohou mít předponu buď `:`, `@`nebo. `$`
+Parametry mohou mít předponu buď `:` , `@` nebo `$` .
 
 [!code-csharp[](../../../../samples/snippets/standard/data/sqlite/HelloWorldSample/Program.cs?name=snippet_Parameter)]
 
@@ -25,12 +25,12 @@ Pomocí <xref:Microsoft.Data.Sqlite.SqliteParameter.Size> vlastnosti Zkraťte te
 
 ```csharp
 // Truncate name to 30 characters
-command.Parameters.AddWithValue("$name", name).Length = 30;
+command.Parameters.AddWithValue("$name", name).Size = 30;
 ```
 
 ## <a name="alternative-types"></a>Alternativní typy
 
-V některých případech může být vhodné použít jiný typ SQLite. Provedete to nastavením <xref:Microsoft.Data.Sqlite.SqliteParameter.SqliteType> vlastnosti.
+V některých případech může být vhodné použít jiný typ SQLite. Provedete to nastavením <xref:Microsoft.Data.Sqlite.SqliteParameter.SqliteType> Vlastnosti.
 
 Lze použít následující alternativní mapování typů. Výchozí mapování najdete v tématu [datové typy](types.md).
 

@@ -1,5 +1,6 @@
 ---
 title: Základy dělení na spravovaná vlákna
+description: Viz odkazy na další články spravovaného vlákna, které pokrývají témata, například výjimky, synchronizaci dat, popředí & vlákny na pozadí, místní úložiště a další.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - threading [.NET Framework], about threading
 - managed threading
 ms.assetid: b2944911-0e8f-427d-a8bb-077550618935
-ms.openlocfilehash: 4d2a96619fd1c48c79b5590efdb52c307d29710c
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: d4a4ceabf29bd0f6f537e59ba477f9da686b1ef5
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291003"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84769090"
 ---
 # <a name="managed-threading-basics"></a>Základy spravovaného zřetězení
 
@@ -44,7 +45,7 @@ Prvních pět témat této části vám pomůže určit, kdy použít spravovan�
  [Úložiště vláken Thread Local: statická pole a datové sloty ve vztahu k vláknům](thread-local-storage-thread-relative-static-fields-and-data-slots.md)  
  Popisuje mechanismy úložiště související s vlákny.  
   
-## <a name="reference"></a>Odkaz
+## <a name="reference"></a>Referenční informace
 
  <xref:System.Threading.Thread>  
  Poskytuje referenční dokumentaci pro třídu **vlákna** , která představuje spravované vlákno, bez ohledu na to, zda pochází z nespravovaného kódu nebo byl vytvořen ve spravované aplikaci.  

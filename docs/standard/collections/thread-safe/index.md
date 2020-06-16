@@ -1,16 +1,17 @@
 ---
 title: Kolekce se zabezpečenými vlákny
+description: Začínáme s kolekcemi bezpečnými pro přístup z více vláken, které používají obor názvů System. Collections. v rozhraní .NET, což zahrnuje třídy kolekce zabezpečené a škálovatelné pro přístup z více vláken
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
 - thread-safe collections, overview
 ms.assetid: 2e7ca21f-786c-4367-96be-0cf3f3dcc6bd
-ms.openlocfilehash: 7af59cf0fdbe8d5c7d7d586b4b86992ae1dc7601
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 3a252124ade4c43961c06697367bbc4ca5d0c9cb
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290367"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84768583"
 ---
 # <a name="thread-safe-collections"></a>Kolekce se zabezpečenými vlákny
 .NET Framework 4 zavádí <xref:System.Collections.Concurrent?displayProperty=nameWithType> obor názvů, který obsahuje několik tříd kolekcí, které jsou bezpečné pro přístup z více vláken a jsou škálovatelné. Více vláken může bezpečně a efektivně přidávat nebo odebírat položky z těchto kolekcí, aniž by bylo potřeba provádět další synchronizaci v uživatelském kódu. Při psaní nového kódu, použijte souběžné třídy kolekce vždy, když více vláken bude zapisovat do kolekce současně. Pokud čtete pouze ze sdílené kolekce, pak můžete použít třídy v <xref:System.Collections.Generic?displayProperty=nameWithType> oboru názvů. Doporučujeme, abyste nepoužívali třídy kolekcí 1,0, pokud není nutné cílit na .NET Framework 1,1 nebo starší modul runtime.  

@@ -1,5 +1,6 @@
 ---
-title: Vlastní formátovací řetězce TimeSpan
+title: Vlastní řetězce formátu TimeSpan
+description: Porozumění vlastním řetězcům formátu TimeSpan v rozhraní .NET. Vlastní formátovací řetězec obsahuje jeden nebo více specifikátorů formátu TimeSpan & libovolný počet literálních znaků.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -13,383 +14,383 @@ helpviewer_keywords:
 - formatting [.NET Framework], time
 - custom TimeSpan format strings
 ms.assetid: a63ebf55-7269-416b-b4f5-286f6c03bf0e
-ms.openlocfilehash: a5963f9afe422206627a1baea47339ecb81becf0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 54079975b9b73844f598a7c7a7fea1a64bd6450c
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75348323"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84768557"
 ---
-# <a name="custom-timespan-format-strings"></a>Vlastní formátovací řetězce TimeSpan
+# <a name="custom-timespan-format-strings"></a>Vlastní řetězce formátu TimeSpan
 
-Formátovací <xref:System.TimeSpan> řetězec definuje řetězcovou <xref:System.TimeSpan> reprezentaci hodnoty, která je výsledkem operace formátování. Vlastní formátovací řetězec se skládá <xref:System.TimeSpan> z jednoho nebo více vlastních specifikátorů formátu spolu s libovolným počtem literálových znaků. Libovolný řetězec, který není [formátovací řetězec Standard TimeSpan,](standard-timespan-format-strings.md) je interpretován jako vlastní <xref:System.TimeSpan> formátovací řetězec.
+<xref:System.TimeSpan>Formátovací řetězec definuje řetězcovou reprezentaci <xref:System.TimeSpan> hodnoty, která je výsledkem operace formátování. Vlastní formátovací řetězec se skládá z jednoho nebo více vlastních <xref:System.TimeSpan> specifikátorů formátu spolu s libovolným počtem literálních znaků. Libovolný řetězec, který není [standardním řetězcem formátu TimeSpan](standard-timespan-format-strings.md) , je interpretován jako <xref:System.TimeSpan> řetězec vlastního formátu.
 
 > [!IMPORTANT]
-> Vlastní <xref:System.TimeSpan> specifikátory formátu neobsahují zástupné oddělovací symboly, například symboly, které oddělují dny od hodin, hodin od minut nebo sekund od zlomkových sekund. Místo toho tyto symboly musí být zahrnuty ve vlastním řetězci formátu jako literály řetězce. Například `"dd\.hh\:mm"` definuje tečku (.) jako oddělovač mezi dny a hodinami a dvojtečku (:) jako separátor mezi hodinami a minutami.
+> <xref:System.TimeSpan>Specifikátory vlastního formátu neobsahují zástupné symboly pro oddělovače, například symboly, které oddělují dny od hodin, hodin od minut nebo sekund od zlomků sekund. Místo toho je nutné tyto symboly zahrnout do vlastního řetězce formátu jako řetězcové literály. Například `"dd\.hh\:mm"` definuje tečku (.) jako oddělovač mezi dny a hodiny a dvojtečku (:) jako oddělovač mezi hodinami a minutami.
 >
-> Vlastní <xref:System.TimeSpan> specifikátory formátu také neobsahují symbol znaménku, který umožňuje rozlišovat mezi negativními a kladnýmčasovými intervaly. Chcete-li zahrnout symbol znaménku, musíte vytvořit formátovací řetězec pomocí podmíněné logiky. Sekce [Další znaky](#other-characters) obsahuje příklad.
+> Vlastní <xref:System.TimeSpan> specifikátory formátu také nezahrnují symbol znaménka, který umožňuje odlišit záporné a kladné časové intervaly. Chcete-li zahrnout symbol znaménka, je nutné sestavit řetězec formátu pomocí podmíněné logiky. Část s [dalšími znaky](#other-characters) obsahuje příklad.
 
-Řetězcové reprezentace <xref:System.TimeSpan> hodnot jsou vytvářeny voláním <xref:System.TimeSpan.ToString%2A?displayProperty=nameWithType> přetížení metody a metodami, které podporují <xref:System.String.Format%2A?displayProperty=nameWithType>složené formátování, například . Další informace naleznete [v tématu Typy formátování](formatting-types.md) a Složené [formátování](composite-formatting.md). Následující příklad ilustruje použití vlastních formátovacích řetězců při operacích formátování.
+Řetězcové reprezentace <xref:System.TimeSpan> hodnot jsou vytvářeny voláním přetížení <xref:System.TimeSpan.ToString%2A?displayProperty=nameWithType> metody a metodami, které podporují složené formátování, jako je například <xref:System.String.Format%2A?displayProperty=nameWithType> . Další informace najdete v tématu [typy formátování](formatting-types.md) a [složené formátování](composite-formatting.md). Následující příklad ukazuje použití vlastních řetězců formátu při formátování operací.
 
 [!code-csharp[Conceptual.TimeSpan.Custom#1](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.timespan.custom/cs/customformatexample1.cs#1)]
 [!code-vb[Conceptual.TimeSpan.Custom#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.custom/vb/customformatexample1.vb#1)]
 
-Vlastní <xref:System.TimeSpan> formátovací řetězce jsou <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> také <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> používány a metody k definování požadovaného formátu vstupních řetězců pro analýzu operací. (Analýza převede řetězcovou reprezentaci hodnoty na tuto hodnotu.) Následující příklad ilustruje použití standardních formátovacích řetězců v operacích analýzy.
+Vlastní <xref:System.TimeSpan> řetězce formátu jsou také používány <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> metodami a k definování požadovaného formátu vstupních řetězců pro účely analýzy. (Analýza převede řetězcovou reprezentaci hodnoty na tuto hodnotu.) Následující příklad ilustruje použití standardního formátovacího řetězce při analýze operací.
 
 [!code-csharp[Conceptual.TimeSpan.Custom#2](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.timespan.custom/cs/customparseexample1.cs#2)]
 [!code-vb[Conceptual.TimeSpan.Custom#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.custom/vb/customparseexample1.vb#2)]
 
-<a name="table"></a>Následující tabulka popisuje vlastní specifikátory formátu data a času.
+<a name="table"></a>Následující tabulka popisuje specifikátory vlastního formátu data a času.
 
 | Specifikátor formátu | Popis | Příklad |
 |----------------------|-----------------|-------------|
-|"d", "%d"|Počet celých dnů v časovém intervalu.<br /><br /> Další informace: [Vlastní specifikátor formátu "d"](#dSpecifier).|`new TimeSpan(6, 14, 32, 17, 685):`<br /><br /> `%d`--> "6"<br /><br /> `d\.hh\:mm`--> "6.14:32"|
-|"dd"-"dddddddd"|Počet celých dnů v časovém intervalu, doplněný úvodními nulami podle potřeby.<br /><br /> Další informace: [Vlastní specifikátory formátu "dd"-"ddddddd"](#ddSpecifier).|`new TimeSpan(6, 14, 32, 17, 685):`<br /><br /> `ddd`--> "006"<br /><br /> `dd\.hh\:mm`--> "06.14:32"|
-|"h", "%h"|Počet celých hodin v časovém intervalu, které se nepočítají jako součást dnů. Jednociferné hodiny nemají úvodní nulu.<br /><br /> Další informace: [Vlastní specifikátor formátu "h"](#hSpecifier).|`new TimeSpan(6, 14, 32, 17, 685):`<br /><br /> `%h`--> "14"<br /><br /> `hh\:mm`--> "14:32"|
-|"hh"|Počet celých hodin v časovém intervalu, které se nepočítají jako součást dnů. Jednociferné hodiny mají počáteční nulu.<br /><br /> Další informace: [Vlastní specifikátor formátu "hh"](#hhSpecifier).|`new TimeSpan(6, 14, 32, 17, 685):`<br /><br /> `hh`--> "14"<br /><br /> `new TimeSpan(6, 8, 32, 17, 685):`<br /><br /> `hh`--> 08|
-|"m", "%m"|Počet celých minut v časovém intervalu, které nejsou zahrnuty jako součást hodin nebo dnů. Jednociferné minuty nemají úvodní nulu.<br /><br /> Další informace: [Vlastní specifikátor formátu "m"](#mSpecifier).|`new TimeSpan(6, 14, 8, 17, 685):`<br /><br /> `%m`--> "8"<br /><br /> `h\:m`--> "14:8"|
-|"mm"|Počet celých minut v časovém intervalu, které nejsou zahrnuty jako součást hodin nebo dnů. Jednociferné minuty mají počáteční nulu.<br /><br /> Další informace: [Vlastní specifikátor formátu "mm"](#mmSpecifier).|`new TimeSpan(6, 14, 8, 17, 685):`<br /><br /> `mm`--> "08"<br /><br /> `new TimeSpan(6, 8, 5, 17, 685):`<br /><br /> `d\.hh\:mm\:ss`--> 6.08:05:17.|
-|"s", "%s"|Počet celých sekund v časovém intervalu, které nejsou zahrnuty jako součást hodin, dnů nebo minut. Jednociferné sekundy nemají úvodní nulu.<br /><br /> Další informace: [Vlastní specifikátor formátu "s"](#sSpecifier).|`TimeSpan.FromSeconds(12.965)`:<br /><br /> `%s`--> 12.<br /><br /> `s\.fff`--> 12.965.|
-|"ss"|Počet celých sekund v časovém intervalu, které nejsou zahrnuty jako součást hodin, dnů nebo minut.  Jednociferné sekundy mají počáteční nulu.<br /><br /> Další informace: [Vlastní specifikátor formátu "ss"](#ssSpecifier).|`TimeSpan.FromSeconds(6.965)`:<br /><br /> `ss`--> 06<br /><br /> `ss\.fff`--> 6.965.|
-|"f", "%f"|Desetiny sekundy v časovém intervalu.<br /><br /> Další informace: [Vlastní specifikátor formátu "f"](#fSpecifier).|`TimeSpan.FromSeconds(6.895)`:<br /><br /> `f`--> 8<br /><br /> `ss\.f`--> 06,8.|
-|"ff"|Setiny sekundy v časovém intervalu.<br /><br /> Další informace: [Vlastní specifikátor formátu "ff"](#ffSpecifier).|`TimeSpan.FromSeconds(6.895)`:<br /><br /> `ff`--> 89.<br /><br /> `ss\.ff`--> 6,89 .|
-|"fff"|Milisekundy v časovém intervalu.<br /><br /> Další informace: [Vlastní specifikátor formátu "fff"](#f3Specifier).|`TimeSpan.FromSeconds(6.895)`:<br /><br /> `fff`--> 895.<br /><br /> `ss\.fff`--> 6.895.|
-|"ffff"|Deset tisícin sekundy v časovém intervalu.<br /><br /> Další informace: [Vlastní specifikátor formátu ffff](#f4Specifier).|`TimeSpan.Parse("0:0:6.8954321")`:<br /><br /> `ffff`--> 8954.<br /><br /> `ss\.ffff`--> 6.8954.|
-|"fffff"|Sto tisícin sekundy v časovém intervalu.<br /><br /> Další informace: [Vlastní specifikátor formátu "fffff"](#f5Specifier).|`TimeSpan.Parse("0:0:6.8954321")`:<br /><br /> `fffff`--> 89543<br /><br /> `ss\.fffff`--> 06.89543|
-|"ffffff"|Miliontiny sekundy v časovém intervalu.<br /><br /> Další informace: [Vlastní specifikátor formátu ffffff](#f6Specifier).|`TimeSpan.Parse("0:0:6.8954321")`:<br /><br /> `ffffff`--> 895432<br /><br /> `ss\.ffffff`--> 06.895432|
-|"fffffff"|Deset miliontin sekundy (nebo zlomkové klíšťata) v časovém intervalu.<br /><br /> Další informace: [Vlastní specifikátor formátu fffffff](#f7Specifier).|`TimeSpan.Parse("0:0:6.8954321")`:<br /><br /> `fffffff`--> 8954321<br /><br /> `ss\.fffffff`--> 06.8954321|
-|"F", "%F"|Desetiny sekundy v časovém intervalu. Pokud je číslice nula, nezobrazí se žádná hodnota.<br /><br /> Další informace: [Vlastní specifikátor formátu "F"](#F_Specifier).|`TimeSpan.Parse("00:00:06.32")`:<br /><br /> `%F`: 3<br /><br /> `TimeSpan.Parse("0:0:3.091")`:<br /><br /> `ss\.F`: 03.|
-|"FF"|Setiny sekundy v časovém intervalu. Nejsou zahrnuty žádné zlomkové koncové nuly nebo dvě nulová číslice.<br /><br /> Další informace: [Vlastní specifikátor formátu "FF"](#FF_Specifier).|`TimeSpan.Parse("00:00:06.329")`:<br /><br /> `FF`: 32<br /><br /> `TimeSpan.Parse("0:0:3.101")`:<br /><br /> `ss\.FF`: 03.1|
-|"FFF"|Milisekundy v časovém intervalu. Žádné zlomkové koncové nuly nejsou zahrnuty.<br /><br /> Další informace:|`TimeSpan.Parse("00:00:06.3291")`:<br /><br /> `FFF`: 329<br /><br /> `TimeSpan.Parse("0:0:3.1009")`:<br /><br /> `ss\.FFF`: 03.1|
-|"FFFF"|Deset tisícin sekundy v časovém intervalu. Žádné zlomkové koncové nuly nejsou zahrnuty.<br /><br /> Další informace: [Vlastní specifikátor formátu FFFF](#F4_Specifier).|`TimeSpan.Parse("00:00:06.32917")`:<br /><br /> `FFFFF`: 3291<br /><br /> `TimeSpan.Parse("0:0:3.10009")`:<br /><br /> `ss\.FFFF`: 03.1|
-|"FFFFF"|Sto tisícin sekundy v časovém intervalu. Žádné zlomkové koncové nuly nejsou zahrnuty.<br /><br /> Další informace: [Vlastní specifikátor formátu FFFFF](#F5_Specifier).|`TimeSpan.Parse("00:00:06.329179")`:<br /><br /> `FFFFF`: 32917<br /><br /> `TimeSpan.Parse("0:0:3.100009")`:<br /><br /> `ss\.FFFFF`: 03.1|
-|"FFFFFF"|Miliontiny sekundy v časovém intervalu. Nejsou zobrazeny žádné zlomkové koncové nuly.<br /><br /> Další informace: [Vlastní specifikátor formátu FFFFFF](#F6_Specifier).|`TimeSpan.Parse("00:00:06.3291791")`:<br /><br /> `FFFFFF`: 329179<br /><br /> `TimeSpan.Parse("0:0:3.1000009")`:<br /><br /> `ss\.FFFFFF`: 03.1|
-|"FFFFFFF"|Deset milionů sekundy v časovém intervalu. Nejsou zobrazeny žádné zlomkové koncové nuly nebo sedm nul.<br /><br /> Další informace: [Vlastní specifikátor formátu FFFFFFF](#F7_Specifier).|`TimeSpan.Parse("00:00:06.3291791")`:<br /><br /> `FFFFFF`: 3291791<br /><br /> `TimeSpan.Parse("0:0:3.1900000")`:<br /><br /> `ss\.FFFFFF`: 03.19|
-|'*řetězec*'|Oddělovač řetězcového literálu.<br /><br /> Další informace: [Další znaky](#other-characters).|`new TimeSpan(14, 32, 17):`<br /><br /> `hh':'mm':'ss`--> "14:32:17"|
-|&#92;|Řídicí znak.<br /><br /> Další informace: [Další znaky](#other-characters).|`new TimeSpan(14, 32, 17):`<br /><br /> `hh\:mm\:ss`--> "14:32:17"|
-|Jakýkoli jiný znak|Jakýkoli jiný neuvozený znak je interpretován jako vlastní specifikátor formátu.<br /><br /> Další informace: [Další znaky](#other-characters).|`new TimeSpan(14, 32, 17):`<br /><br /> `hh\:mm\:ss`--> "14:32:17"|
+|"d", "% d"|Počet celých dnů v časovém intervalu.<br /><br /> Další informace: [Specifikátor vlastního formátu "d"](#dSpecifier).|`new TimeSpan(6, 14, 32, 17, 685):`<br /><br /> `%d`--> "6"<br /><br /> `d\.hh\:mm`--> "6.14:32"|
+|"dd" – "dddddddd"|Počet celých dnů v časovém intervalu, doplněno počátečními nulami podle potřeby.<br /><br /> Další informace: [specifikátory "dd" – "dddddddd" vlastního formátu](#ddSpecifier).|`new TimeSpan(6, 14, 32, 17, 685):`<br /><br /> `ddd`--> "006"<br /><br /> `dd\.hh\:mm`--> "06.14:32"|
+|"h", "% h"|Počet celých hodin v časovém intervalu, které se nepočítají jako součást dnů. Jednociferné číslo hodiny nemá počáteční nulu.<br /><br /> Další informace: [specifikátor "h" vlastního formátu](#hSpecifier).|`new TimeSpan(6, 14, 32, 17, 685):`<br /><br /> `%h`--> "14"<br /><br /> `hh\:mm`--> "14:32"|
+|"hh"|Počet celých hodin v časovém intervalu, které se nepočítají jako součást dnů. Jednociferné číslo hodiny má počáteční nulu.<br /><br /> Další informace: [specifikátor "HH" vlastního formátu](#hhSpecifier).|`new TimeSpan(6, 14, 32, 17, 685):`<br /><br /> `hh`--> "14"<br /><br /> `new TimeSpan(6, 8, 32, 17, 685):`<br /><br /> `hh`--> 08|
+|"m", "% m"|Počet celých minut v časovém intervalu, které nejsou zahrnuté jako součást hodin nebo dnů. Jednociferné číslo minut nemá počáteční nulu.<br /><br /> Další informace: [Specifikátor vlastního formátu "m"](#mSpecifier).|`new TimeSpan(6, 14, 8, 17, 685):`<br /><br /> `%m`--> "8"<br /><br /> `h\:m`--> "14:8"|
+|"mm"|Počet celých minut v časovém intervalu, které nejsou zahrnuté jako součást hodin nebo dnů. Jednociferné číslo minut má počáteční nulu.<br /><br /> Další informace: [specifikátor "mm" vlastního formátu](#mmSpecifier).|`new TimeSpan(6, 14, 8, 17, 685):`<br /><br /> `mm`--> "08"<br /><br /> `new TimeSpan(6, 8, 5, 17, 685):`<br /><br /> `d\.hh\:mm\:ss`--> 6.08:05:17|
+|"s", "% s"|Počet celých sekund v časovém intervalu, které nejsou zahrnuté jako součást hodin, dnů nebo minut. Jednociferné číslo sekund nemá počáteční nulu.<br /><br /> Další informace: [Specifikátor vlastního formátu "s"](#sSpecifier).|`TimeSpan.FromSeconds(12.965)`:<br /><br /> `%s`--> 12<br /><br /> `s\.fff`--> 12,965|
+|"ss"|Počet celých sekund v časovém intervalu, které nejsou zahrnuté jako součást hodin, dnů nebo minut.  Jednociferné číslo sekund má počáteční nulu.<br /><br /> Další informace: [Specifikátor vlastního formátu "SS"](#ssSpecifier).|`TimeSpan.FromSeconds(6.965)`:<br /><br /> `ss`--> 06<br /><br /> `ss\.fff`--> 06,965|
+|"f", "% f"|Desetiny sekundy v časovém intervalu.<br /><br /> Další informace: [specifikátor "f" vlastního formátu](#fSpecifier).|`TimeSpan.FromSeconds(6.895)`:<br /><br /> `f`--> 8<br /><br /> `ss\.f`--> 06,8|
+|"ff"|Setiny sekundy v časovém intervalu.<br /><br /> Další informace: [specifikátor "FF" vlastního formátu](#ffSpecifier).|`TimeSpan.FromSeconds(6.895)`:<br /><br /> `ff`--> 89<br /><br /> `ss\.ff`--> 06,89|
+|"fff"|Milisekundy v časovém intervalu.<br /><br /> Další informace: [specifikátor "fff" vlastního formátu](#f3Specifier).|`TimeSpan.FromSeconds(6.895)`:<br /><br /> `fff`--> 895<br /><br /> `ss\.fff`--> 06,895|
+|"ffff"|Deset – sekundy sekundy v časovém intervalu.<br /><br /> Další informace: [Specifikátor vlastního formátu "FFFF"](#f4Specifier).|`TimeSpan.Parse("0:0:6.8954321")`:<br /><br /> `ffff`--> 8954<br /><br /> `ss\.ffff`--> 06,8954|
+|"fffff"|Set-sekundy sekundy v časovém intervalu.<br /><br /> Další informace: [Specifikátor vlastního formátu "fffff"](#f5Specifier).|`TimeSpan.Parse("0:0:6.8954321")`:<br /><br /> `fffff`--> 89543<br /><br /> `ss\.fffff`--> 06,89543|
+|"ffffff"|Desetimiliontiny sekundy v časovém intervalu.<br /><br /> Další informace: [Specifikátor vlastního formátu "FFFFFF"](#f6Specifier).|`TimeSpan.Parse("0:0:6.8954321")`:<br /><br /> `ffffff`--> 895432<br /><br /> `ss\.ffffff`--> 06,895432|
+|"fffffff"|Desítkový Desetimiliontiny sekundy (nebo zlomkové takty) v časovém intervalu.<br /><br /> Další informace: [Specifikátor vlastního formátu "fffffff"](#f7Specifier).|`TimeSpan.Parse("0:0:6.8954321")`:<br /><br /> `fffffff`--> 8954321<br /><br /> `ss\.fffffff`--> 06,8954321|
+|"F", "% F"|Desetiny sekundy v časovém intervalu. Pokud je číslice nula, nezobrazí se žádná hodnota.<br /><br /> Další informace: [specifikátor "F" vlastního formátu](#F_Specifier).|`TimeSpan.Parse("00:00:06.32")`:<br /><br /> `%F`: 3<br /><br /> `TimeSpan.Parse("0:0:3.091")`:<br /><br /> `ss\.F`0,03.|
+|"FF"|Setiny sekundy v časovém intervalu. Nezahrnují se žádné zlomkové koncové nuly nebo dvě číslice nula.<br /><br /> Další informace: [specifikátor "FF" vlastního formátu](#FF_Specifier).|`TimeSpan.Parse("00:00:06.329")`:<br /><br /> `FF`: 32<br /><br /> `TimeSpan.Parse("0:0:3.101")`:<br /><br /> `ss\.FF`: 03,1|
+|"FFF"|Milisekundy v časovém intervalu. Žádné zlomkové koncové nuly nejsou zahrnuty.<br /><br /> Další informace:|`TimeSpan.Parse("00:00:06.3291")`:<br /><br /> `FFF`: 329<br /><br /> `TimeSpan.Parse("0:0:3.1009")`:<br /><br /> `ss\.FFF`: 03,1|
+|"FFFF"|Deset – sekundy sekundy v časovém intervalu. Žádné zlomkové koncové nuly nejsou zahrnuty.<br /><br /> Další informace: [Specifikátor vlastního formátu "FFFF"](#F4_Specifier).|`TimeSpan.Parse("00:00:06.32917")`:<br /><br /> `FFFFF`: 3291<br /><br /> `TimeSpan.Parse("0:0:3.10009")`:<br /><br /> `ss\.FFFF`: 03,1|
+|"FFFFF"|Set-sekundy sekundy v časovém intervalu. Žádné zlomkové koncové nuly nejsou zahrnuty.<br /><br /> Další informace: [Specifikátor vlastního formátu "fffff"](#F5_Specifier).|`TimeSpan.Parse("00:00:06.329179")`:<br /><br /> `FFFFF`: 32917<br /><br /> `TimeSpan.Parse("0:0:3.100009")`:<br /><br /> `ss\.FFFFF`: 03,1|
+|"FFFFFF"|Desetimiliontiny sekundy v časovém intervalu. Nezobrazí se žádné zlomkové koncové nuly.<br /><br /> Další informace: [Specifikátor vlastního formátu "FFFFFF"](#F6_Specifier).|`TimeSpan.Parse("00:00:06.3291791")`:<br /><br /> `FFFFFF`: 329179<br /><br /> `TimeSpan.Parse("0:0:3.1000009")`:<br /><br /> `ss\.FFFFFF`: 03,1|
+|"FFFFFFF"|Deset milionů sekund v časovém intervalu. Nezobrazí se žádné zlomkové koncové nuly nebo sedm nul.<br /><br /> Další informace: [Specifikátor vlastního formátu "fffffff"](#F7_Specifier).|`TimeSpan.Parse("00:00:06.3291791")`:<br /><br /> `FFFFFF`: 3291791<br /><br /> `TimeSpan.Parse("0:0:3.1900000")`:<br /><br /> `ss\.FFFFFF`: 03,19|
+|*řetězec "String*"|Oddělovač řetězcového literálu.<br /><br /> Další informace: [jiné znaky](#other-characters).|`new TimeSpan(14, 32, 17):`<br /><br /> `hh':'mm':'ss`--> "14:32:17"|
+|&#92;|Řídicí znak.<br /><br /> Další informace: [jiné znaky](#other-characters).|`new TimeSpan(14, 32, 17):`<br /><br /> `hh\:mm\:ss`--> "14:32:17"|
+|Jakýkoli jiný znak|Jakýkoli jiný znak bez řídicího znaku je interpretován jako specifikátor vlastního formátu.<br /><br /> Další informace: [jiné znaky](#other-characters).|`new TimeSpan(14, 32, 17):`<br /><br /> `hh\:mm\:ss`--> "14:32:17"|
 
-## <a name="dSpecifier"></a>Vlastní specifikátor formátu "d"
+## <a name="the-d-custom-format-specifier"></a><a name="dSpecifier"></a>Specifikátor vlastního formátu "d"
 
-Vlastní specifikátor formátu "d" vyvodí hodnotu <xref:System.TimeSpan.Days%2A?displayProperty=nameWithType> vlastnosti, která představuje počet celých dnů v časovém intervalu. Výstupy celý počet dní v <xref:System.TimeSpan> hodnotě, i v případě, že hodnota má více než jednu číslici. Pokud je hodnota <xref:System.TimeSpan.Days%2A?displayProperty=nameWithType> vlastnosti nulová, specifikátor vydělá "0".
+Specifikátor vlastního formátu "d" vypíše hodnotu <xref:System.TimeSpan.Days%2A?displayProperty=nameWithType> vlastnosti, která představuje počet celých dnů v časovém intervalu. Vypíše celý počet dní v <xref:System.TimeSpan> hodnotě, a to i v případě, že hodnota má více než jednu číslici. Pokud má <xref:System.TimeSpan.Days%2A?displayProperty=nameWithType> vlastnost hodnotu nula, výstup specifikátoru "0".
 
-Pokud je vlastní specifikátor formátu "d" použit samostatně, zadejte "%d", aby nebyl nesprávně interpretován jako standardní formátovací řetězec. V následujícím příkladu je uvedena ukázka.
+Pokud je specifikátor vlastního formátu "d" použit samostatně, zadejte "% d", aby nebyl špatně interpretován jako řetězec standardního formátu. V následujícím příkladu je uvedena ukázka.
 
 [!code-csharp[Conceptual.TimeSpan.Custom#3](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.timespan.custom/cs/customexamples1.cs#3)]
 [!code-vb[Conceptual.TimeSpan.Custom#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.custom/vb/customexamples1.vb#3)]
 
-Následující příklad ilustruje použití vlastního specifikátoru formátu "d".
+Následující příklad ilustruje použití specifikátoru vlastního formátu "d".
 
 [!code-csharp[Conceptual.TimeSpan.Custom#4](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.timespan.custom/cs/customexamples1.cs#4)]
 [!code-vb[Conceptual.TimeSpan.Custom#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.custom/vb/customexamples1.vb#4)]
 
-[Zpět na stůl](#table)
+[Zpět na tabulku](#table)
 
-## <a name="ddSpecifier"></a>Vlastní specifikátory formátu "dd"-"dddddddd"
+## <a name="the-dd-dddddddd-custom-format-specifiers"></a><a name="ddSpecifier"></a>Specifikátory vlastního formátu "dd"-"dddddddd"
 
-Vlastní specifikátory formátu "dd", "dddd", "ddddd", "ddddd", "ddddddd" a "dddddddd" vlastní specifikátory formátu vyhotovují hodnotu <xref:System.TimeSpan.Days%2A?displayProperty=nameWithType> vlastnosti, která představuje počet celých dnů v časovém intervalu.
+Specifikátor vlastního formátu "dd", "ddd", "dddd", "ddddd", "DDDDDD", "ddddddd" a "dddddddd" <xref:System.TimeSpan.Days%2A?displayProperty=nameWithType> vystupují hodnotu vlastnosti, která představuje počet celých dní v časovém intervalu.
 
-Výstupní řetězec obsahuje minimální počet číslic určený počtem znaků "d" v specifikátoru formátu a je podle potřeby doplněn počátečními nulami. Pokud číslice v počtu dní překročí počet znaků "d" v specifikátoru formátu, je ve výsledném řetězci výstup emitovaný celý počet dní.
+Výstupní řetězec obsahuje minimální počet číslic určený počtem "d" znaků ve specifikátoru formátu a je doplněn počátečními nulami podle potřeby. Pokud číslice v počtu dní překročí počet znaků "d" ve specifikátoru formátu, je celý počet dní výstup ve výsledném řetězci.
 
-Následující příklad používá tyto specifikátory formátu k <xref:System.TimeSpan> zobrazení řetězcové reprezentace dvou hodnot. Hodnota složky days prvního časového intervalu je nulová; hodnota složky dnů druhé je 365.
+Následující příklad používá tyto specifikátory formátu k zobrazení řetězcové reprezentace dvou <xref:System.TimeSpan> hodnot. Hodnota komponenty dní v prvním časovém intervalu je nulová. hodnota složky dní druhé hodnoty je 365.
 
 [!code-csharp[Conceptual.TimeSpan.Custom#5](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.timespan.custom/cs/customexamples1.cs#5)]
 [!code-vb[Conceptual.TimeSpan.Custom#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.custom/vb/customexamples1.vb#5)]
 
-[Zpět na stůl](#table)
+[Zpět na tabulku](#table)
 
-## <a name="hSpecifier"></a>Vlastní specifikátor formátu "h"
+## <a name="the-h-custom-format-specifier"></a><a name="hSpecifier"></a>Specifikátor vlastního formátu "h"
 
-Vlastní specifikátor formátu "h" vyvodí hodnotu <xref:System.TimeSpan.Hours%2A?displayProperty=nameWithType> vlastnosti, která představuje počet celých hodin v časovém intervalu, který se nepočítá jako součást jeho denní součásti. Vrátí hodnotu jednomístného řetězce, pokud <xref:System.TimeSpan.Hours%2A?displayProperty=nameWithType> je hodnota vlastnosti 0 až 9, a vrátí dvoumístnou řetězcovou hodnotu, pokud se hodnota <xref:System.TimeSpan.Hours%2A?displayProperty=nameWithType> vlastnosti pohybuje od 10 do 23.
+Specifikátor vlastního formátu "h" vypíše hodnotu <xref:System.TimeSpan.Hours%2A?displayProperty=nameWithType> vlastnosti, která představuje počet celých hodin v časovém intervalu, který není počítán jako součást komponenty Day. Vrátí jednociferné číslo řetězce <xref:System.TimeSpan.Hours%2A?displayProperty=nameWithType> , pokud je hodnota vlastnosti 0 až 9 a vrátí hodnotu řetězce se dvěma číslicemi, pokud je hodnota <xref:System.TimeSpan.Hours%2A?displayProperty=nameWithType> vlastnosti v rozsahu od 10 do 23.
 
-Pokud je vlastní specifikátor formátu "h" použit samostatně, zadejte %h, aby nebyl nesprávně interpretován jako standardní formátovací řetězec. V následujícím příkladu je uvedena ukázka.
+Pokud je specifikátor vlastního formátu "h" použit samostatně, zadejte "% h" tak, že není špatně interpretován jako řetězec standardního formátu. V následujícím příkladu je uvedena ukázka.
 
 [!code-csharp[Conceptual.TimeSpan.Custom#6](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.timespan.custom/cs/customexamples1.cs#6)]
 [!code-vb[Conceptual.TimeSpan.Custom#6](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.custom/vb/customexamples1.vb#6)]
 
-Obvykle v operaci analýzy vstupní řetězec, který obsahuje pouze jedno číslo je interpretován jako počet dní. Pomocí vlastního specifikátoru formátu %h můžete místo toho interpretovat číselný řetězec jako počet hodin. V následujícím příkladu je uvedena ukázka.
+V rámci operace analýzy obvykle je vstupní řetězec, který obsahuje pouze jedno číslo, interpretován jako počet dní. Pomocí specifikátoru vlastního formátu "% h" můžete místo toho interpretovat číselný řetězec jako počet hodin. V následujícím příkladu je uvedena ukázka.
 
 [!code-csharp[Conceptual.TimeSpan.Custom#8](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.timespan.custom/cs/customexamples1.cs#8)]
 [!code-vb[Conceptual.TimeSpan.Custom#8](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.custom/vb/customexamples1.vb#8)]
 
-Následující příklad ilustruje použití vlastního specifikátoru formátu "h".
+Následující příklad ilustruje použití specifikátoru vlastního formátu "h".
 
 [!code-csharp[Conceptual.TimeSpan.Custom#7](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.timespan.custom/cs/customexamples1.cs#7)]
 [!code-vb[Conceptual.TimeSpan.Custom#7](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.custom/vb/customexamples1.vb#7)]
 
-[Zpět na stůl](#table)
+[Zpět na tabulku](#table)
 
-## <a name="hhSpecifier"></a>Vlastní specifikátor formátu "hh"
+## <a name="the-hh-custom-format-specifier"></a><a name="hhSpecifier"></a>Specifikátor vlastního formátu "HH"
 
-Vlastní specifikátor formátu "hh" vyvodí hodnotu <xref:System.TimeSpan.Hours%2A?displayProperty=nameWithType> vlastnosti, která představuje počet celých hodin v časovém intervalu, který se nepočítá jako součást jeho denní součásti. Pro hodnoty od 0 do 9 obsahuje výstupní řetězec počáteční nulu.
+Specifikátor vlastního formátu "HH" vypíše hodnotu <xref:System.TimeSpan.Hours%2A?displayProperty=nameWithType> vlastnosti, která představuje počet celých hodin v časovém intervalu, který není počítán jako součást komponenty Day. V případě hodnot od 0 do 9 obsahuje výstupní řetězec úvodní nuly.
 
-Obvykle v operaci analýzy vstupní řetězec, který obsahuje pouze jedno číslo je interpretován jako počet dní. Vlastní specifikátor formátu "hh" můžete místo toho interpretovat číselný řetězec jako počet hodin. V následujícím příkladu je uvedena ukázka.
+V rámci operace analýzy obvykle je vstupní řetězec, který obsahuje pouze jedno číslo, interpretován jako počet dní. Místo toho můžete použít Specifikátor vlastního formátu "HH" k interpretaci číselného řetězce jako počet hodin. V následujícím příkladu je uvedena ukázka.
 
 [!code-csharp[Conceptual.TimeSpan.Custom#9](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.timespan.custom/cs/customexamples1.cs#9)]
 [!code-vb[Conceptual.TimeSpan.Custom#9](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.custom/vb/customexamples1.vb#9)]
 
-Následující příklad ilustruje použití vlastního specifikátoru formátu "hh".
+Následující příklad ilustruje použití specifikátoru vlastního formátu "HH".
 
 [!code-csharp[Conceptual.TimeSpan.Custom#10](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.timespan.custom/cs/customexamples1.cs#10)]
 [!code-vb[Conceptual.TimeSpan.Custom#10](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.custom/vb/customexamples1.vb#10)]
 
-[Zpět na stůl](#table)
+[Zpět na tabulku](#table)
 
-## <a name="mSpecifier"></a>Vlastní specifikátor formátu "m"
+## <a name="the-m-custom-format-specifier"></a><a name="mSpecifier"></a>Specifikátor vlastního formátu "m"
 
-Vlastní specifikátor formátu "m" vyvodí hodnotu <xref:System.TimeSpan.Minutes%2A?displayProperty=nameWithType> vlastnosti, která představuje počet celých minut v časovém intervalu, který se nepočítá jako součást jeho denní součásti. Vrátí hodnotu jednomístného řetězce, pokud <xref:System.TimeSpan.Minutes%2A?displayProperty=nameWithType> je hodnota vlastnosti 0 až 9, a vrátí dvoumístnou řetězcovou hodnotu, pokud se hodnota <xref:System.TimeSpan.Minutes%2A?displayProperty=nameWithType> vlastnosti pohybuje od 10 do 59.
+Specifikátor vlastního formátu "m" vypíše hodnotu <xref:System.TimeSpan.Minutes%2A?displayProperty=nameWithType> vlastnosti, která představuje počet celých minut v časovém intervalu, který není počítán jako součást komponenty Day. Vrátí jednociferné číslo řetězce <xref:System.TimeSpan.Minutes%2A?displayProperty=nameWithType> , pokud je hodnota vlastnosti 0 až 9 a vrátí hodnotu řetězce se dvěma číslicemi, pokud je hodnota <xref:System.TimeSpan.Minutes%2A?displayProperty=nameWithType> vlastnosti v rozsahu od 10 do 59.
 
-Pokud je vlastní specifikátor formátu "m" použit samostatně, zadejte %m, aby nebyl nesprávně interpretován jako standardní formátovací řetězec. V následujícím příkladu je uvedena ukázka.
+Pokud je specifikátor vlastního formátu "m" použit samostatně, zadejte "% m" tak, že není špatně interpretován jako standardní formátovací řetězec. V následujícím příkladu je uvedena ukázka.
 
 [!code-csharp[Conceptual.TimeSpan.Custom#6](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.timespan.custom/cs/customexamples1.cs#6)]
 [!code-vb[Conceptual.TimeSpan.Custom#6](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.custom/vb/customexamples1.vb#6)]
 
-Obvykle v operaci analýzy vstupní řetězec, který obsahuje pouze jedno číslo je interpretován jako počet dní. Pomocí vlastního specifikátoru formátu %m můžete místo toho interpretovat číselný řetězec jako počet minut. V následujícím příkladu je uvedena ukázka.
+V rámci operace analýzy obvykle je vstupní řetězec, který obsahuje pouze jedno číslo, interpretován jako počet dní. Místo toho můžete pomocí specifikátoru vlastního formátu "% m" interpretovat číselný řetězec jako počet minut. V následujícím příkladu je uvedena ukázka.
 
 [!code-csharp[Conceptual.TimeSpan.Custom#11](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.timespan.custom/cs/customexamples1.cs#11)]
 [!code-vb[Conceptual.TimeSpan.Custom#11](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.custom/vb/customexamples1.vb#11)]
 
-Následující příklad ilustruje použití vlastního specifikátoru formátu "m".
+Následující příklad ilustruje použití specifikátoru vlastního formátu "m".
 
 [!code-csharp[Conceptual.TimeSpan.Custom#12](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.timespan.custom/cs/customexamples1.cs#12)]
 [!code-vb[Conceptual.TimeSpan.Custom#12](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.custom/vb/customexamples1.vb#12)]
 
-[Zpět na stůl](#table)
+[Zpět na tabulku](#table)
 
-## <a name="mmSpecifier"></a>Vlastní specifikátor formátu "mm"
+## <a name="the-mm-custom-format-specifier"></a><a name="mmSpecifier"></a>Specifikátor vlastního formátu "mm"
 
-Vlastní specifikátor formátu "mm" vyvezuje hodnotu <xref:System.TimeSpan.Minutes%2A?displayProperty=nameWithType> vlastnosti, která představuje počet celých minut v časovém intervalu, který není zahrnut jako součást součásti hodin nebo dnů. Pro hodnoty od 0 do 9 obsahuje výstupní řetězec počáteční nulu.
+Specifikátor vlastního formátu "mm" vyprodukuje hodnotu <xref:System.TimeSpan.Minutes%2A?displayProperty=nameWithType> vlastnosti, která představuje počet celých minut v časovém intervalu, který není zahrnutý jako součást jeho hodin nebo dnů. V případě hodnot od 0 do 9 obsahuje výstupní řetězec úvodní nuly.
 
-Obvykle v operaci analýzy vstupní řetězec, který obsahuje pouze jedno číslo je interpretován jako počet dní. Vlastní specifikátor formátu "mm" můžete místo toho interpretovat číselný řetězec jako počet minut. V následujícím příkladu je uvedena ukázka.
+V rámci operace analýzy obvykle je vstupní řetězec, který obsahuje pouze jedno číslo, interpretován jako počet dní. Místo toho můžete použít Specifikátor vlastního formátu "mm" k interpretaci číselného řetězce jako počet minut. V následujícím příkladu je uvedena ukázka.
 
 [!code-csharp[Conceptual.TimeSpan.Custom#13](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.timespan.custom/cs/customexamples1.cs#13)]
 [!code-vb[Conceptual.TimeSpan.Custom#13](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.custom/vb/customexamples1.vb#13)]
 
-Následující příklad ilustruje použití vlastního specifikátoru formátu "mm".
+Následující příklad ilustruje použití specifikátoru vlastního formátu "mm".
 
 [!code-csharp[Conceptual.TimeSpan.Custom#14](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.timespan.custom/cs/customexamples1.cs#14)]
 [!code-vb[Conceptual.TimeSpan.Custom#14](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.custom/vb/customexamples1.vb#14)]
 
-[Zpět na stůl](#table)
+[Zpět na tabulku](#table)
 
-## <a name="sSpecifier"></a>Vlastní specifikátor formátu "s"
+## <a name="the-s-custom-format-specifier"></a><a name="sSpecifier"></a>Specifikátor vlastního formátu "s"
 
-Vlastní specifikátor formátu "s" vyvodí hodnotu <xref:System.TimeSpan.Seconds%2A?displayProperty=nameWithType> vlastnosti, která představuje počet celých sekund v časovém intervalu, který není zahrnut jako součást součásti hodin, dnů nebo minut. Vrátí hodnotu jednomístného řetězce, pokud <xref:System.TimeSpan.Seconds%2A?displayProperty=nameWithType> je hodnota vlastnosti 0 až 9, a vrátí dvoumístnou řetězcovou hodnotu, pokud se hodnota <xref:System.TimeSpan.Seconds%2A?displayProperty=nameWithType> vlastnosti pohybuje od 10 do 59.
+Specifikátor vlastního formátu "s" obsahuje hodnotu <xref:System.TimeSpan.Seconds%2A?displayProperty=nameWithType> vlastnosti, která představuje počet celých sekund v časovém intervalu, který není zahrnutý jako součást své hodiny, dny nebo minuty. Vrátí jednociferné číslo řetězce <xref:System.TimeSpan.Seconds%2A?displayProperty=nameWithType> , pokud je hodnota vlastnosti 0 až 9 a vrátí hodnotu řetězce se dvěma číslicemi, pokud je hodnota <xref:System.TimeSpan.Seconds%2A?displayProperty=nameWithType> vlastnosti v rozsahu od 10 do 59.
 
-Pokud je vlastní specifikátor formátu "s" použit samostatně, zadejte %s, aby nebyl nesprávně interpretován jako standardní formátovací řetězec. V následujícím příkladu je uvedena ukázka.
+Pokud je specifikátor vlastního formátu "s" použit samostatně, zadejte "% s", aby nebyl špatně interpretován jako řetězec standardního formátu. V následujícím příkladu je uvedena ukázka.
 
 [!code-csharp[Conceptual.TimeSpan.Custom#15](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.timespan.custom/cs/customexamples1.cs#15)]
 [!code-vb[Conceptual.TimeSpan.Custom#15](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.custom/vb/customexamples1.vb#15)]
 
-Obvykle v operaci analýzy vstupní řetězec, který obsahuje pouze jedno číslo je interpretován jako počet dní. Vlastní specifikátor formátu %s můžete místo toho interpretovat číselný řetězec jako počet sekund. V následujícím příkladu je uvedena ukázka.
+V rámci operace analýzy obvykle je vstupní řetězec, který obsahuje pouze jedno číslo, interpretován jako počet dní. Pomocí specifikátoru vlastního formátu "% s" můžete místo toho interpretovat číselný řetězec jako počet sekund. V následujícím příkladu je uvedena ukázka.
 
 [!code-csharp[Conceptual.TimeSpan.Custom#17](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.timespan.custom/cs/customexamples1.cs#17)]
 [!code-vb[Conceptual.TimeSpan.Custom#17](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.custom/vb/customexamples1.vb#17)]
 
-Následující příklad ilustruje použití vlastního specifikátoru formátu "s".
+Následující příklad ilustruje použití specifikátoru vlastního formátu "s".
 
 [!code-csharp[Conceptual.TimeSpan.Custom#16](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.timespan.custom/cs/customexamples1.cs#16)]
 [!code-vb[Conceptual.TimeSpan.Custom#16](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.custom/vb/customexamples1.vb#16)]
 
-[Zpět na stůl](#table)
+[Zpět na tabulku](#table)
 
-## <a name="ssSpecifier"></a>Vlastní specifikátor formátu "ss"
+## <a name="the-ss-custom-format-specifier"></a><a name="ssSpecifier"></a>Specifikátor vlastního formátu "SS"
 
-Vlastní specifikátor formátu "ss" vyvezuje hodnotu <xref:System.TimeSpan.Seconds%2A?displayProperty=nameWithType> vlastnosti, která představuje počet celých sekund v časovém intervalu, který není zahrnut jako součást součásti hodin, dnů nebo minut. Pro hodnoty od 0 do 9 obsahuje výstupní řetězec počáteční nulu.
+Specifikátor vlastního formátu "SS" vypíše hodnotu <xref:System.TimeSpan.Seconds%2A?displayProperty=nameWithType> vlastnosti, která představuje počet celých sekund v časovém intervalu, který není zahrnutý jako součást své hodiny, dny nebo minuty. V případě hodnot od 0 do 9 obsahuje výstupní řetězec úvodní nuly.
 
-Obvykle v operaci analýzy vstupní řetězec, který obsahuje pouze jedno číslo je interpretován jako počet dní. Vlastní specifikátor formátu "ss" můžete místo toho interpretovat číselný řetězec jako počet sekund. V následujícím příkladu je uvedena ukázka.
+V rámci operace analýzy obvykle je vstupní řetězec, který obsahuje pouze jedno číslo, interpretován jako počet dní. Specifikátor vlastního formátu "SS" můžete použít místo toho k interpretaci číselného řetězce jako počtu sekund. V následujícím příkladu je uvedena ukázka.
 
 [!code-csharp[Conceptual.TimeSpan.Custom#18](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.timespan.custom/cs/customexamples1.cs#18)]
 [!code-vb[Conceptual.TimeSpan.Custom#18](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.custom/vb/customexamples1.vb#18)]
 
-Následující příklad ilustruje použití vlastního specifikátoru formátu "ss".
+Následující příklad ilustruje použití specifikátoru vlastního formátu "SS".
 
 [!code-csharp[Conceptual.TimeSpan.Custom#19](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.timespan.custom/cs/customexamples1.cs#19)]
 [!code-vb[Conceptual.TimeSpan.Custom#19](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.custom/vb/customexamples1.vb#19)]
 
-[Zpět na stůl](#table)
+[Zpět na tabulku](#table)
 
-## <a name="fSpecifier"></a>Vlastní specifikátor formátu "f"
+## <a name="the-f-custom-format-specifier"></a><a name="fSpecifier"></a>Specifikátor vlastního formátu "f"
 
-Vlastní specifikátor formátu "f" vyvezuu desetiny sekundy v časovém intervalu. Při operaci formátování jsou všechny zbývající zlomkové číslice zkráceny. V operaci analýzy, která <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> volá metodu or, musí vstupní řetězec obsahovat přesně jednu zlomkovou číslici.
+Specifikátor vlastního formátu "f" vyprodukuje desetiny sekundy v časovém intervalu. V operaci formátování se zkrátí zbývající zlomkové číslice. V operaci analýzy, která volá <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> metodu nebo <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> , musí vstupní řetězec obsahovat přesně jednu zlomkovou číslici.
 
-Pokud je vlastní specifikátor formátu "f" použit samostatně, zadejte "%f", aby nebyl nesprávně interpretován jako standardní formátovací řetězec.
+Pokud specifikátor vlastního formátu "f" použijete samostatně, zadejte "% f", takže není špatně interpretován jako standardní formátovací řetězec.
 
-Následující příklad používá vlastní specifikátor formátu "f" k zobrazení desetin sekundy v hodnotě. <xref:System.TimeSpan> "f" se používá nejprve jako jediný specifikátor formátu a poté v kombinaci s specifikátorem "s" ve vlastním formátovacím řetězci.
-
-[!code-csharp[Conceptual.TimeSpan.Custom#20](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.timespan.custom/cs/fspecifiers1.cs#20)]
-[!code-vb[Conceptual.TimeSpan.Custom#20](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.custom/vb/fspecifiers1.vb#20)]
-
-[Zpět na stůl](#table)
-
-## <a name="ffSpecifier"></a>Vlastní specifikátor formátu "ff"
-
-Vlastní specifikátor formátu "ff" vyvezuje setiny sekundy v časovém intervalu. Při operaci formátování jsou všechny zbývající zlomkové číslice zkráceny. V operaci analýzy, která <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> volá metodu or, musí vstupní řetězec obsahovat přesně dvě zlomkové číslice.
-
-Následující příklad používá specifikátor vlastního formátu "ff" k zobrazení setin <xref:System.TimeSpan> sekundy v hodnotě. "ff" se používá nejprve jako jediný specifikátor formátu a poté v kombinaci s specifikátorem "s" ve vlastním formátovacím řetězci.
+Následující příklad používá specifikátor vlastního formátu "f" pro zobrazení desetiny sekundy v <xref:System.TimeSpan> hodnotě. "f" se používá jako jediný specifikátor formátu a v kombinaci se specifikátorem "s" ve vlastním formátovacím řetězci.
 
 [!code-csharp[Conceptual.TimeSpan.Custom#20](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.timespan.custom/cs/fspecifiers1.cs#20)]
 [!code-vb[Conceptual.TimeSpan.Custom#20](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.custom/vb/fspecifiers1.vb#20)]
 
-[Zpět na stůl](#table)
+[Zpět na tabulku](#table)
 
-## <a name="f3Specifier"></a>Vlastní specifikátor formátu "fff"
+## <a name="the-ff-custom-format-specifier"></a><a name="ffSpecifier"></a>Specifikátor vlastního formátu "FF"
 
-Vlastní specifikátor formátu "fff" (se třemi znaky "f") vyvodí milisekundy v časovém intervalu. Při operaci formátování jsou všechny zbývající zlomkové číslice zkráceny. V operaci analýzy, která <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> volá metodu or, musí vstupní řetězec obsahovat přesně tři zlomkové číslice.
+Specifikátor vlastního formátu "FF" vyprodukuje setiny sekundy v časovém intervalu. V operaci formátování se zkrátí zbývající zlomkové číslice. V operaci analýzy, která volá <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> metodu nebo <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> , musí vstupní řetězec obsahovat přesně dvě zlomkové číslice.
 
-Následující příklad používá vlastní specifikátor formátu "fff" k zobrazení <xref:System.TimeSpan> milisekund v hodnotě. "fff" se používá nejprve jako jediný specifikátor formátu a poté v kombinaci s specifikátorem "s" ve vlastním formátovacím řetězci.
-
-[!code-csharp[Conceptual.TimeSpan.Custom#20](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.timespan.custom/cs/fspecifiers1.cs#20)]
-[!code-vb[Conceptual.TimeSpan.Custom#20](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.custom/vb/fspecifiers1.vb#20)]
-
-[Zpět na stůl](#table)
-
-## <a name="f4Specifier"></a>Vlastní specifikátor formátu ffff
-
-Vlastní specifikátor formátu "ffff" (se čtyřmi znaky "f") vyráží deset tisícin sekundy v časovém intervalu. Při operaci formátování jsou všechny zbývající zlomkové číslice zkráceny. V operaci analýzy, která <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> volá metodu or, musí vstupní řetězec obsahovat přesně čtyři zlomkové číslice.
-
-Následující příklad používá specifikátor vlastního formátu ffff k zobrazení deseti tisícin sekundy v hodnotě. <xref:System.TimeSpan> "ffff" se používá nejprve jako jediný specifikátor formátu a poté v kombinaci s specifikátorem "s" ve vlastním formátovacím řetězci.
+Následující příklad používá specifikátor vlastního formátu "FF" pro zobrazení setiny sekundy v <xref:System.TimeSpan> hodnotě. "FF" se používá jako jediný specifikátor formátu a v kombinaci se specifikátorem "s" ve vlastním formátovacím řetězci.
 
 [!code-csharp[Conceptual.TimeSpan.Custom#20](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.timespan.custom/cs/fspecifiers1.cs#20)]
 [!code-vb[Conceptual.TimeSpan.Custom#20](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.custom/vb/fspecifiers1.vb#20)]
 
-[Zpět na stůl](#table)
+[Zpět na tabulku](#table)
 
-## <a name="f5Specifier"></a>Vlastní specifikátor formátu "fffff"
+## <a name="the-fff-custom-format-specifier"></a><a name="f3Specifier"></a>Specifikátor vlastního formátu "fff"
 
-Vlastní specifikátor formátu "fffff" (s pěti znaky "f" ) vyráží stotisícinsekundy sekundy v časovém intervalu. Při operaci formátování jsou všechny zbývající zlomkové číslice zkráceny. V operaci analýzy, která <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> volá metodu or, musí vstupní řetězec obsahovat přesně pět zlomkových číslic.
+Specifikátor vlastního formátu "fff" (se třemi "f" znaky) vytvoří výstup milisekund v časovém intervalu. V operaci formátování se zkrátí zbývající zlomkové číslice. V operaci analýzy, která volá <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> metodu nebo <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> , musí vstupní řetězec obsahovat přesně tři zlomkové číslice.
 
-Následující příklad používá vlastní specifikátor formátu fffff k zobrazení stotisícin sekundy v hodnotě. <xref:System.TimeSpan> "fffff" se používá nejprve jako jediný specifikátor formátu a poté v kombinaci s specifikátorem "s" ve vlastním formátovacím řetězci.
-
-[!code-csharp[Conceptual.TimeSpan.Custom#20](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.timespan.custom/cs/fspecifiers1.cs#20)]
-[!code-vb[Conceptual.TimeSpan.Custom#20](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.custom/vb/fspecifiers1.vb#20)]
-
-[Zpět na stůl](#table)
-
-## <a name="f6Specifier"></a>Vlastní specifikátor formátu ffffff
-
-Vlastní specifikátor formátu "ffffff" (se šesti znaky "f") vyvodí miliontiny sekundy v časovém intervalu. Při operaci formátování jsou všechny zbývající zlomkové číslice zkráceny. V operaci analýzy, která <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> volá metodu or, musí vstupní řetězec obsahovat přesně šest zlomkových číslic.
-
-Následující příklad používá vlastní specifikátor formátu ffffff k zobrazení miliontin <xref:System.TimeSpan> sekundy v hodnotě. Používá se nejprve jako jediný specifikátor formátu a poté v kombinaci s specifikátorem "s" ve vlastním formátovacím řetězci.
+Následující příklad používá specifikátor vlastního formátu "fff" pro zobrazení milisekund v <xref:System.TimeSpan> hodnotě. "fff" se používá jako jediný specifikátor formátu a v kombinaci se specifikátorem "s" ve vlastním formátovacím řetězci.
 
 [!code-csharp[Conceptual.TimeSpan.Custom#20](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.timespan.custom/cs/fspecifiers1.cs#20)]
 [!code-vb[Conceptual.TimeSpan.Custom#20](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.custom/vb/fspecifiers1.vb#20)]
 
-[Zpět na stůl](#table)
+[Zpět na tabulku](#table)
 
-## <a name="f7Specifier"></a>Vlastní specifikátor formátu fffffff
+## <a name="the-ffff-custom-format-specifier"></a><a name="f4Specifier"></a>Specifikátor vlastního formátu "FFFF"
 
-Vlastní specifikátor formátu "fffffff" (se sedmi znaky "f" ) vyráží deset miliontin sekundy (nebo zlomkový počet značek) v časovém intervalu. V operaci analýzy, která <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> volá metodu or, musí vstupní řetězec obsahovat přesně sedm zlomkových číslic.
+Specifikátor vlastního formátu "FFFF" (se čtyřmi znaky "f") vytvoří výstup deseti sekundy sekundy v časovém intervalu. V operaci formátování se zkrátí zbývající zlomkové číslice. V operaci analýzy, která volá <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> metodu nebo <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> , musí vstupní řetězec obsahovat přesně čtyři zlomkové číslice.
 
-Následující příklad používá vlastní specifikátor formátu fffffff k zobrazení zlomkového <xref:System.TimeSpan> počtu značek v hodnotě. Používá se nejprve jako jediný specifikátor formátu a poté v kombinaci s specifikátorem "s" ve vlastním formátovacím řetězci.
+Následující příklad používá specifikátor vlastního formátu "FFFF" pro zobrazení deseti sekundy sekundy v <xref:System.TimeSpan> hodnotě. "FFFF" se používá jako jediný specifikátor formátu a v kombinaci se specifikátorem "s" ve vlastním formátovacím řetězci.
 
 [!code-csharp[Conceptual.TimeSpan.Custom#20](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.timespan.custom/cs/fspecifiers1.cs#20)]
 [!code-vb[Conceptual.TimeSpan.Custom#20](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.custom/vb/fspecifiers1.vb#20)]
 
-[Zpět na stůl](#table)
+[Zpět na tabulku](#table)
 
-## <a name="F_Specifier"></a>Vlastní specifikátor formátu "F"
+## <a name="the-fffff-custom-format-specifier"></a><a name="f5Specifier"></a>Specifikátor vlastního formátu "fffff"
 
-Vlastní specifikátor formátu "F" vyvezuje desetiny sekundy v časovém intervalu. Při operaci formátování jsou všechny zbývající zlomkové číslice zkráceny. Pokud je hodnota desetin y sekundy časového intervalu nulová, není zahrnuta do výsledného řetězce. V operaci analýzy, která <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> volá metodu nebo, je přítomnost desetin druhé číslice nepovinná.
+Specifikátor vlastního formátu "fffff" (s pěti znaky "f") zapisuje stovky-sekundy sekundy v časovém intervalu. V operaci formátování se zkrátí zbývající zlomkové číslice. V operaci analýzy, která volá <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> metodu nebo <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> , musí vstupní řetězec obsahovat přesně pět zlomkových číslic.
 
-Pokud je vlastní specifikátor formátu "F" použit samostatně, zadejte %F, aby nebyl nesprávně interpretován jako standardní formátovací řetězec.
+Následující příklad používá specifikátor vlastního formátu "fffff" pro zobrazení hodnoty set-sekundy sekundy v <xref:System.TimeSpan> hodnotě. "fffff" slouží jako první specifikátor formátu a v kombinaci se specifikátorem "s" v řetězci vlastního formátu.
 
-Následující příklad používá vlastní specifikátor formátu "F" k zobrazení desetin sekundy v hodnotě. <xref:System.TimeSpan> Používá také tento vlastní specifikátor formátu v operaci analýzy.
+[!code-csharp[Conceptual.TimeSpan.Custom#20](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.timespan.custom/cs/fspecifiers1.cs#20)]
+[!code-vb[Conceptual.TimeSpan.Custom#20](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.custom/vb/fspecifiers1.vb#20)]
+
+[Zpět na tabulku](#table)
+
+## <a name="the-ffffff-custom-format-specifier"></a><a name="f6Specifier"></a>Specifikátor vlastního formátu "FFFFFF"
+
+Specifikátor vlastního formátu "FFFFFF" (obsahující šest znaků f) výstupuje Desetimiliontiny sekundy v časovém intervalu. V operaci formátování se zkrátí zbývající zlomkové číslice. V operaci analýzy, která volá <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> metodu nebo <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> , musí vstupní řetězec obsahovat přesně šest zlomkových číslic.
+
+Následující příklad používá specifikátor vlastního formátu "FFFFFF" pro zobrazení Desetimiliontiny sekundy v <xref:System.TimeSpan> hodnotě. Slouží jako první specifikátor formátu a v kombinaci se specifikátorem "s" ve vlastním formátovacím řetězci.
+
+[!code-csharp[Conceptual.TimeSpan.Custom#20](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.timespan.custom/cs/fspecifiers1.cs#20)]
+[!code-vb[Conceptual.TimeSpan.Custom#20](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.custom/vb/fspecifiers1.vb#20)]
+
+[Zpět na tabulku](#table)
+
+## <a name="the-fffffff-custom-format-specifier"></a><a name="f7Specifier"></a>Specifikátor vlastního formátu "fffffff"
+
+Specifikátor vlastního formátu "fffffff" (se sedmi "f" znaky) vytvoří výstup deseti Desetimiliontiny sekundy (nebo desetinné číslo tiků) v časovém intervalu. V operaci analýzy, která volá <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> metodu nebo <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> , musí vstupní řetězec obsahovat přesně sedm zlomkových číslic.
+
+Následující příklad používá specifikátor vlastního formátu "fffffff" pro zobrazení zlomkového počtu tiků v <xref:System.TimeSpan> hodnotě. Slouží jako první specifikátor formátu a v kombinaci se specifikátorem "s" ve vlastním formátovacím řetězci.
+
+[!code-csharp[Conceptual.TimeSpan.Custom#20](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.timespan.custom/cs/fspecifiers1.cs#20)]
+[!code-vb[Conceptual.TimeSpan.Custom#20](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.custom/vb/fspecifiers1.vb#20)]
+
+[Zpět na tabulku](#table)
+
+## <a name="the-f-custom-format-specifier"></a><a name="F_Specifier"></a>Specifikátor vlastního formátu "F"
+
+Specifikátor vlastního formátu "F" vyprodukuje desetiny sekundy v časovém intervalu. V operaci formátování se zkrátí zbývající zlomkové číslice. Pokud je hodnota počtu desetin časových intervalů sekundy nula, není součástí výsledného řetězce. V operaci analýzy, která volá <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> metodu nebo <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> , je přítomnost desetin druhé číslice volitelná.
+
+Pokud specifikátor vlastního formátu "F" použijete samostatně, zadejte "% F", takže není špatně interpretován jako standardní formátovací řetězec.
+
+Následující příklad používá specifikátor vlastního formátu "F" pro zobrazení desetiny sekundy v <xref:System.TimeSpan> hodnotě. Používá také tento vlastní specifikátor formátu v operaci analýzy.
 
 [!code-csharp[Conceptual.TimeSpan.Custom#21](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.timespan.custom/cs/f_specifiers1.cs#21)]
 [!code-vb[Conceptual.TimeSpan.Custom#21](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.custom/vb/f_specifiers1.vb#21)]
 
-[Zpět na stůl](#table)
+[Zpět na tabulku](#table)
 
-## <a name="FF_Specifier"></a>Vlastní specifikátor formátu "FF"
+## <a name="the-ff-custom-format-specifier"></a><a name="FF_Specifier"></a>Specifikátor vlastního formátu "FF"
 
-Vlastní specifikátor formátu "FF" vyvezuje setiny sekundy v časovém intervalu. Při operaci formátování jsou všechny zbývající zlomkové číslice zkráceny. Pokud existují nějaké koncové zlomkové nuly, nejsou zahrnuty do výsledného řetězce. V operaci analýzy, která <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> volá metodu or, je přítomnost desetin a setin druhé číslice nepovinná.
+Specifikátor vlastního formátu "FF" vyprodukuje setiny sekundy v časovém intervalu. V operaci formátování se zkrátí zbývající zlomkové číslice. Pokud jsou žádné koncové zlomky nula, nejsou zahrnuty ve výsledném řetězci. V operaci analýzy, která volá <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> metodu nebo <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> , je přítomnost desátého a setiny druhé číslice volitelná.
 
-Následující příklad používá vlastní specifikátor formátu FF k zobrazení setin sekundy v hodnotě. <xref:System.TimeSpan> Používá také tento vlastní specifikátor formátu v operaci analýzy.
+Následující příklad používá specifikátor vlastního formátu "FF" pro zobrazení setiny sekundy v <xref:System.TimeSpan> hodnotě. Používá také tento vlastní specifikátor formátu v operaci analýzy.
 
 [!code-csharp[Conceptual.TimeSpan.Custom#22](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.timespan.custom/cs/f_specifiers1.cs#22)]
 [!code-vb[Conceptual.TimeSpan.Custom#22](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.custom/vb/f_specifiers1.vb#22)]
 
-[Zpět na stůl](#table)
+[Zpět na tabulku](#table)
 
-## <a name="F3_Specifier"></a>Vlastní specifikátor formátu FFF
+## <a name="the-fff-custom-format-specifier"></a><a name="F3_Specifier"></a>Specifikátor vlastního formátu "FFF"
 
-Vlastní specifikátor formátu "FFF" (se třemi znaky "F") vyvázne milisekundy v časovém intervalu. Při operaci formátování jsou všechny zbývající zlomkové číslice zkráceny. Pokud existují nějaké koncové zlomkové nuly, nejsou zahrnuty do výsledného řetězce. V operaci analýzy, která <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> volá metodu or, je přítomnost desetin, setin a tisícin druhé číslice nepovinná.
+Specifikátor vlastního formátu "FFF" (se třemi "F" znaky) vytvoří výstup milisekund v časovém intervalu. V operaci formátování se zkrátí zbývající zlomkové číslice. Pokud jsou žádné koncové zlomky nula, nejsou zahrnuty ve výsledném řetězci. V operaci analýzy, která volá <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> metodu nebo <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> , je přítomnost desetin, setinách a sekundy druhé číslice volitelná.
 
-Následující příklad používá vlastní specifikátor formátu "FFF" k zobrazení tisícin <xref:System.TimeSpan> sekundy v hodnotě. Používá také tento vlastní specifikátor formátu v operaci analýzy.
+Následující příklad používá specifikátor vlastního formátu "FFF" pro zobrazení sekundy sekundy v <xref:System.TimeSpan> hodnotě. Používá také tento vlastní specifikátor formátu v operaci analýzy.
 
 [!code-csharp[Conceptual.TimeSpan.Custom#23](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.timespan.custom/cs/f_specifiers1.cs#23)]
 [!code-vb[Conceptual.TimeSpan.Custom#23](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.custom/vb/f_specifiers1.vb#23)]
 
-[Zpět na stůl](#table)
+[Zpět na tabulku](#table)
 
-## <a name="F4_Specifier"></a>Vlastní specifikátor formátu FFFF
+## <a name="the-ffff-custom-format-specifier"></a><a name="F4_Specifier"></a>Specifikátor vlastního formátu "FFFF"
 
-Vlastní specifikátor formátu FFFF (se čtyřmi znaky "F") vyráží deset tisícin sekundy v časovém intervalu. Při operaci formátování jsou všechny zbývající zlomkové číslice zkráceny. Pokud existují nějaké koncové zlomkové nuly, nejsou zahrnuty do výsledného řetězce. V operaci analýzy, která <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> volá metodu nebo, je přítomnost desetin, setin, tisícin a deseti tisícin druhé číslice nepovinná.
+Specifikátor vlastního formátu "FFFF" (se čtyřmi znaky "F") vytvoří výstup deseti sekundy sekundy v časovém intervalu. V operaci formátování se zkrátí zbývající zlomkové číslice. Pokud jsou žádné koncové zlomky nula, nejsou zahrnuty ve výsledném řetězci. V operaci analýzy, která volá <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> metodu nebo <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> , je přítomnost desetin, setinách, sekundy a desíti-sekundy druhé číslice volitelná.
 
-Následující příklad používá vlastní specifikátor formátu FFFF k zobrazení deseti tisícin sekundy v hodnotě. <xref:System.TimeSpan> Používá také vlastní specifikátor formátu FFFF v operaci analýzy.
+Následující příklad používá specifikátor vlastního formátu "FFFF" pro zobrazení deseti sekundy sekundy v <xref:System.TimeSpan> hodnotě. Používá také specifikátor vlastního formátu "FFFF" v operaci analýzy.
 
 [!code-csharp[Conceptual.TimeSpan.Custom#24](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.timespan.custom/cs/f_specifiers1.cs#24)]
 [!code-vb[Conceptual.TimeSpan.Custom#24](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.custom/vb/f_specifiers1.vb#24)]
 
-[Zpět na stůl](#table)
+[Zpět na tabulku](#table)
 
-## <a name="F5_Specifier"></a>Vlastní specifikátor formátu FFFFF
+## <a name="the-fffff-custom-format-specifier"></a><a name="F5_Specifier"></a>Specifikátor vlastního formátu "FFFFF"
 
-Vlastní specifikátor formátu "FFFFF" (s pěti znaky "F") vyráží stotisícinsekundy sekundy v časovém intervalu. Při operaci formátování jsou všechny zbývající zlomkové číslice zkráceny. Pokud existují nějaké koncové zlomkové nuly, nejsou zahrnuty do výsledného řetězce. V operaci analýzy, která <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> volá metodu nebo, je přítomnost desetin, setin, tisícin, deseti tisícin a stotisícin druhé číslice nepovinná.
+Specifikátor vlastního formátu "FFFFF" (s pěti znaky "F") zapisuje stovky-sekundy sekundy v časovém intervalu. V operaci formátování se zkrátí zbývající zlomkové číslice. Pokud jsou žádné koncové zlomky nula, nejsou zahrnuty ve výsledném řetězci. V operaci analýzy, která volá <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> metodu nebo <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> , je přítomnost desátých, setinách, sekundy, desíti-sekundy a set-sekundy druhé číslice volitelná.
 
-Následující příklad používá vlastní specifikátor formátu "FFFFF" k zobrazení stotisícin <xref:System.TimeSpan> sekundy v hodnotě. Používá také vlastní specifikátor formátu "FFFFF" v operaci analýzy.
+Následující příklad používá specifikátor vlastního formátu "FFFFF" pro zobrazení hodnoty set-sekundy sekundy v <xref:System.TimeSpan> hodnotě. Používá také specifikátor vlastního formátu "FFFFF" v operaci analýzy.
 
 [!code-csharp[Conceptual.TimeSpan.Custom#25](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.timespan.custom/cs/f_specifiers1.cs#25)]
 [!code-vb[Conceptual.TimeSpan.Custom#25](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.custom/vb/f_specifiers1.vb#25)]
 
-[Zpět na stůl](#table)
+[Zpět na tabulku](#table)
 
-## <a name="F6_Specifier"></a>Vlastní specifikátor formátu FFFFFF
+## <a name="the-ffffff-custom-format-specifier"></a><a name="F6_Specifier"></a>Specifikátor vlastního formátu "FFFFFF"
 
-Vlastní specifikátor formátu FFFFFF (se šesti znaky "F") vyvodí miliontiny sekundy v časovém intervalu. Při operaci formátování jsou všechny zbývající zlomkové číslice zkráceny. Pokud existují nějaké koncové zlomkové nuly, nejsou zahrnuty do výsledného řetězce. V operaci analýzy, která <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> volá metodu nebo, je přítomnost desetin, setin, tisícin, deseti tisícin, stotisícin a miliontin druhé číslice nepovinná.
+Specifikátor vlastního formátu "FFFFFF" (obsahující šest znaků F) výstupuje Desetimiliontiny sekundy v časovém intervalu. V operaci formátování se zkrátí zbývající zlomkové číslice. Pokud jsou žádné koncové zlomky nula, nejsou zahrnuty ve výsledném řetězci. V operaci analýzy, která volá <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> metodu nebo <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> , je přítomnost desetin, setinách, sekundy, desíti-sekundy, set-sekundy a Desetimiliontiny druhé číslice volitelná.
 
-Následující příklad používá vlastní specifikátor formátu FFFFFF k zobrazení miliontin <xref:System.TimeSpan> sekundy v hodnotě. Používá také tento vlastní specifikátor formátu v operaci analýzy.
+Následující příklad používá specifikátor vlastního formátu "FFFFFF" pro zobrazení Desetimiliontiny sekundy v <xref:System.TimeSpan> hodnotě. Používá také tento vlastní specifikátor formátu v operaci analýzy.
 
 [!code-csharp[Conceptual.TimeSpan.Custom#26](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.timespan.custom/cs/f_specifiers1.cs#26)]
 [!code-vb[Conceptual.TimeSpan.Custom#26](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.custom/vb/f_specifiers1.vb#26)]
 
-[Zpět na stůl](#table)
+[Zpět na tabulku](#table)
 
-## <a name="F7_Specifier"></a>Vlastní specifikátor formátu FFFFFFF
+## <a name="the-fffffff-custom-format-specifier"></a><a name="F7_Specifier"></a>Specifikátor vlastního formátu "FFFFFFF"
 
-Vlastní specifikátor formátu "FFFFFFF" (se sedmi znaky "F") vydezuje deset miliontin sekundy (nebo zlomkový počet značek) v časovém intervalu. Pokud existují nějaké koncové zlomkové nuly, nejsou zahrnuty do výsledného řetězce. V operaci analýzy, která <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> volá metodu or, je přítomnost sedmi desetinných číslic ve vstupním řetězci volitelná.
+Specifikátor vlastního formátu "FFFFFFF" (se sedmi "F" znaky) vytvoří výstup deseti Desetimiliontiny sekundy (nebo desetinné číslo tiků) v časovém intervalu. Pokud jsou žádné koncové zlomky nula, nejsou zahrnuty ve výsledném řetězci. V operaci analýzy, která volá <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> metodu nebo <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> , je přítomnost sedmi zlomkových číslic ve vstupním řetězci volitelná.
 
-Následující příklad používá vlastní specifikátor formátu FFFFFFF k zobrazení zlomkových <xref:System.TimeSpan> částí sekundy v hodnotě. Používá také tento vlastní specifikátor formátu v operaci analýzy.
+Následující příklad používá specifikátor vlastního formátu "FFFFFFF" pro zobrazení zlomkových částí sekundy v <xref:System.TimeSpan> hodnotě. Používá také tento vlastní specifikátor formátu v operaci analýzy.
 
 [!code-csharp[Conceptual.TimeSpan.Custom#27](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.timespan.custom/cs/f_specifiers1.cs#27)]
 [!code-vb[Conceptual.TimeSpan.Custom#27](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.custom/vb/f_specifiers1.vb#27)]
 
-[Zpět na stůl](#table)
+[Zpět na tabulku](#table)
 
-## <a name="other-characters"></a>Další znaky
+## <a name="other-characters"></a>Jiné znaky
 
-Jakýkoli jiný neuvozený znak ve formátovacím řetězci, včetně prázdného znaku, je interpretován jako vlastní specifikátor formátu. Ve většině případů přítomnost jiného neuvozeného <xref:System.FormatException>znaku má za následek .
+Jakýkoli jiný znak bez řídicího znaku ve formátovacím řetězci, včetně prázdného znaku, je interpretován jako specifikátor vlastního formátu. Ve většině případů přítomnost jakéhokoli jiného neřídicího znaku má za následek <xref:System.FormatException> .
 
-Existují dva způsoby, jak zahrnout literál znak do řetězce formátu:
+Existují dva způsoby, jak zahrnout literální znak do formátovacího řetězce:
 
-- Uzavřete ji do jednoduchých uvozovek (oddělovač literálu řetězce).
+- Uzavřete ho do jednoduchých uvozovek (literální řetězcový oddělovač).
 
-- Před ním s zpětné lomítko ("\\"), který je interpretován jako řídicí znak. To znamená, že v c#musí být @-quotedformátovací řetězec buď , nebo znak literálu musí předcházet další zpětné lomítko.
+- Před něj uveďte zpětné lomítko (" \\ "), které je interpretováno jako řídicí znak. To znamená, že v jazyce C# musí být formátovací řetězec buď @-quoted nebo znak literálu musí předcházet další zpětné lomítko.
 
-  V některých případech bude pravděpodobně muset použít podmíněnou logiku zahrnout uvozený literál ve formátu řetězce. Následující příklad používá podmíněnou logiku k zahrnutí symbolu znaménku pro záporné časové intervaly.
+  V některých případech může být nutné použít podmíněnou logiku pro zahrnutí řídicího literálu do řetězce formátu. V následujícím příkladu je použita podmíněná logika pro zahrnutí symbol znaménka pro záporné časové intervaly.
 
   [!code-csharp[Conceptual.TimeSpan.Custom#29](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.timespan.custom/cs/negativevalues1.cs#29)]
   [!code-vb[Conceptual.TimeSpan.Custom#29](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.custom/vb/negativevalues1.vb#29)]
 
-Rozhraní .NET nedefinuje gramatiku pro oddělovače v časových intervalech. To znamená, že oddělovače mezi dny a hodinami, hodinami a minutami, minutami a sekundami a sekundami a zlomky sekundy musí být všechny považovány za literály znaků ve formátovacím řetězci.
+.NET nedefinuje gramatiku pro oddělovače v časových intervalech. To znamená, že oddělovače mezi dny a hodiny, hodiny a minuty, minuty a sekundy a sekundy a zlomky sekund musí být zpracovány jako znakové literály v řetězci formátu.
 
-Následující příklad používá řídicí znak a jednu uvozovku k definování vlastního formátovacího řetězce, který obsahuje slovo "minuty" ve výstupním řetězci.
+Následující příklad používá řídicí znak i jednoduchou uvozovku k definování vlastního formátovacího řetězce, který obsahuje slovo "minuty" ve výstupním řetězci.
 
 [!code-csharp[Conceptual.TimeSpan.Custom#28](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.timespan.custom/cs/literal1.cs#28)]
 [!code-vb[Conceptual.TimeSpan.Custom#28](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.custom/vb/literal1.vb#28)]
 
-[Zpět na stůl](#table)
+[Zpět na tabulku](#table)
 
 ## <a name="see-also"></a>Viz také
 
