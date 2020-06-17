@@ -2,12 +2,12 @@
 title: dotnet – příkaz testu
 description: Příkaz dotnet test se používá ke spouštění testů jednotek v daném projektu.
 ms.date: 04/29/2020
-ms.openlocfilehash: cbe9e7cce1722efb808c68ee49bb9012be6dcff7
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 911d10917c2262c0bd32ef30d48da0f85ac39a39
+ms.sourcegitcommit: 1eae045421d9ea2bfc82aaccfa5b1ff1b8c9e0e4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84594449"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84803160"
 ---
 # <a name="dotnet-test"></a>dotnet test
 
@@ -90,7 +90,7 @@ Kde `Microsoft.NET.Test.Sdk` je testovací hostitel, `xunit` je testovací rozhr
 
 - **`-f|--framework <FRAMEWORK>`**
 
-  Vynutí použití `dotnet` nebo .NET Framework testovacího hostitele pro binární soubory testu. Tato možnost určuje pouze typ hostitele, který se má použít. Skutečná verze rozhraní, která se má použít, se určuje pomocí *runtimeconfig. JSON* testovacího projektu. Pokud není zadaný, použije se k určení typu hostitele [atribut pro sestavení targetFramework](/dotnet/api/system.runtime.versioning.targetframeworkattribute) . Když je tento atribut ze souboru *. dll*odstraněn, je použit hostitel .NET Framework.
+  Vynutí použití `dotnet` nebo .NET Framework testovacího hostitele pro binární soubory testu. Tato možnost určuje pouze typ hostitele, který se má použít. Skutečná verze rozhraní, která se má použít, je určená *runtimeconfig.jsna* testovacím projektu. Pokud není zadaný, použije se k určení typu hostitele [atribut pro sestavení targetFramework](/dotnet/api/system.runtime.versioning.targetframeworkattribute) . Když je tento atribut ze souboru *. dll*odstraněn, je použit hostitel .NET Framework.
 
 - **`--filter <EXPRESSION>`**
 
@@ -134,7 +134,7 @@ Kde `Microsoft.NET.Test.Sdk` je testovací hostitel, `xunit` je testovací rozhr
 
 - **`-s|--settings <SETTINGS_FILE>`**
 
-  `.runsettings`Soubor, který se má použít pro spuštění testů. `TargetPlatform`Element (x86 | x64) nemá žádný vliv na `dotnet test` . Chcete-li spustit testy, které cílí na x86, nainstalujte verzi x86 rozhraní .NET Core. Bitová verze příkazu *dotnet. exe* , který je na cestě, bude použit pro spouštění testů. Další informace najdete v následujících materiálech:
+  `.runsettings`Soubor, který se má použít pro spuštění testů. `TargetPlatform`Element (x86 | x64) nemá žádný vliv na `dotnet test` . Chcete-li spustit testy, které cílí na x86, nainstalujte verzi x86 rozhraní .NET Core. Bitová verze *dotnet.exe* , která se nachází na cestě, je to, co se použije ke spouštění testů. Další informace najdete v následujících materiálech:
 
   - [Nakonfigurujte testy jednotek pomocí `.runsettings` souboru.](/visualstudio/test/configure-unit-tests-by-using-a-dot-runsettings-file)
   - [Konfigurace testovacího běhu](https://github.com/Microsoft/vstest-docs/blob/master/docs/configure.md)
@@ -175,7 +175,7 @@ Kde `Microsoft.NET.Test.Sdk` je testovací hostitel, `xunit` je testovací rozhr
   dotnet test --logger trx
   ```
 
-- Spusťte testy v projektu v aktuálním adresáři a vygenerujte soubor pokrytí kódu (po instalaci [Coverlet](https://github.com/tonerdo/coverlet/blob/master/README.md)):
+- Spusťte testy v projektu v aktuálním adresáři a vygenerujte soubor pokrytí kódu (po instalaci integrace kolektorů [Coverlet](https://github.com/coverlet-coverage/coverlet/blob/master/Documentation/VSTestIntegration.md) ):
 
   ```dotnetcli
   dotnet test --collect:"XPlat Code Coverage"

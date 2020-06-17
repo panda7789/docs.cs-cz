@@ -1,21 +1,21 @@
 ---
-title: Předdefinované typy – odkaz jazyka C#
-description: Naučte se c# předdefinované hodnoty a typy odkazů
+title: Předdefinované typy – reference jazyka C#
+description: Přečtěte si předdefinované hodnoty a typy odkazů v jazyce C#
 ms.date: 02/04/2020
 helpviewer_keywords:
 - types [C#], built-in
 - built-in C# types
 ms.assetid: 54f901f2-bf2f-472c-ae8d-73e8ecfc57fe
-ms.openlocfilehash: bf8823c6674b1ff3f0028a50df8ce8d0f803cfc1
-ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
+ms.openlocfilehash: 3366f718cd83a28f475fae9b4e65ce37fe7d8c7b
+ms.sourcegitcommit: 1eae045421d9ea2bfc82aaccfa5b1ff1b8c9e0e4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "81389496"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84803194"
 ---
-# <a name="built-in-types-c-reference"></a>Předdefinované typy (odkaz C#
+# <a name="built-in-types-c-reference"></a>Předdefinované typy (Referenční dokumentace jazyka C#)
 
-V následující tabulce jsou uvedeny předdefinované typy [hodnot](value-types.md) jazyka C#:
+V následující tabulce jsou uvedeny typy předdefinovaných [hodnot](value-types.md) jazyka C#:
 
 |Klíčové slovo typu C#|Typ .NET|
 |--------------|-------------------------|
@@ -33,24 +33,24 @@ V následující tabulce jsou uvedeny předdefinované typy [hodnot](value-types
 |[`short`](integral-numeric-types.md)|<xref:System.Int16?displayProperty=nameWithType>|
 |[`ushort`](integral-numeric-types.md)|<xref:System.UInt16?displayProperty=nameWithType>|
 
-V následující tabulce jsou uvedeny předdefinované typy [odkazů](../keywords/reference-types.md) jazyka C#:
+V následující tabulce jsou uvedeny typy integrovaných [referencí](../keywords/reference-types.md) jazyka C#:
 
 |Klíčové slovo typu C#|Typ .NET|
 |--------------|-------------------------|
 |[`object`](reference-types.md#the-object-type)|<xref:System.Object?displayProperty=nameWithType>|
 |[`string`](reference-types.md#the-string-type)|<xref:System.String?displayProperty=nameWithType>|
+|[`dynamic`](reference-types.md#the-dynamic-type)|<xref:System.Object?displayProperty=nameWithType>|
 
-V předchozích tabulkách je každé klíčové slovo c# z levého sloupce aliasem odpovídajícího typu .NET. Jsou zaměnitelné. Například následující deklarace deklarují proměnné stejného typu:
+V předchozích tabulkách je každé klíčové slovo typu C# z levého sloupce alias pro odpovídající typ rozhraní .NET. Jsou zaměnitelné. Například následující deklarace deklaruje proměnné stejného typu:
 
 ```csharp
 int a = 123;
 System.Int32 b = 123;
 ```
 
-Klíčové [`void`](void.md) slovo představuje nepřítomnost typu. Použijete jej jako návratový typ metody, která nevrací hodnotu.
+[`void`](void.md)Klíčové slovo představuje absenci typu. Použijete ho jako návratový typ metody, která nevrací hodnotu.
 
 ## <a name="see-also"></a>Viz také
 
 - [Referenční dokumentace k jazyku C#](../index.md)
-- [Výchozí hodnoty typů jazyka C#](default-values.md)
-- [`dynamic`Klíčové slovo](reference-types.md#the-dynamic-type)
+- [Výchozí hodnoty typů C#](default-values.md)

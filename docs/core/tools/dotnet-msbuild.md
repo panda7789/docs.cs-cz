@@ -1,23 +1,23 @@
 ---
-title: dotnet msbuild, příkaz
-description: Příkaz dotnet msbuild poskytuje přístup k příkazovému řádku MSBuild.
+title: dotnet MSBuild – příkaz
+description: Příkaz dotnet MSBuild poskytuje přístup k příkazovému řádku MSBuild.
 ms.date: 02/14/2020
-ms.openlocfilehash: 88e85868e2d7de564b2e4c90ce6e78bde4cb350e
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: 9739fe782e17db3955db087ca1781ad4280cd491
+ms.sourcegitcommit: 1eae045421d9ea2bfc82aaccfa5b1ff1b8c9e0e4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463625"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84803178"
 ---
 # <a name="dotnet-msbuild"></a>dotnet msbuild
 
-**Tento článek se týká:** ✔️ .NET Core 2.x SDK a novější verze
+**Tento článek se týká:** ✔️ .NET Core 2. x SDK a novějších verzí
 
-## <a name="name"></a>Název
+## <a name="name"></a>Name
 
-`dotnet msbuild`- Vytvoří projekt a všechny jeho závislosti.
+`dotnet msbuild`– Sestavení projektu a všech jeho závislostí. Poznámka: Pokud existuje více, může být nutné zadat soubor řešení nebo projektu.
 
-## <a name="synopsis"></a>Synopse
+## <a name="synopsis"></a>Stručný obsah
 
 ```dotnetcli
 dotnet msbuild <MSBUILD_ARGUMENTS>
@@ -27,11 +27,11 @@ dotnet msbuild -h
 
 ## <a name="description"></a>Popis
 
-Příkaz `dotnet msbuild` umožňuje přístup k plně funkční MSBuild.
+`dotnet msbuild`Příkaz umožňuje přístup k plně funkčnímu nástroji MSBuild.
 
-Příkaz má přesně stejné možnosti jako existující klient příkazového řádku MSBuild pouze pro projekty ve stylu sady SDK. Možnosti jsou všechny stejné. Další informace o dostupných možnostech naleznete v [odkazu na příkazový řádek MSBuild](/visualstudio/msbuild/msbuild-command-line-reference).
+Příkaz má stejné možnosti jako stávající klient příkazového řádku MSBuild jenom pro projekty ve stylu sady SDK. Možnosti jsou všechny stejné. Další informace o dostupných možnostech naleznete v tématu Referenční dokumentace k [příkazovému řádku MSBuild](/visualstudio/msbuild/msbuild-command-line-reference).
 
-Příkaz [sestavení dotnet](dotnet-build.md) je `dotnet msbuild -restore -target:Build`ekvivalentní . [dotnet sestavení](dotnet-build.md) se běžně používá pro vytváření projektů, ale protože vždy `dotnet msbuild` spustí cíl sestavení, můžete použít, když nechcete sestavit projekt. Pokud máte například konkrétní cíl, který chcete spustit bez `dotnet msbuild` sestavení projektu, použijte a zadejte cíl.
+Příkaz [dotnet Build](dotnet-build.md) je ekvivalentní k `dotnet msbuild -restore` . Pokud nechcete sestavit projekt a máte konkrétní cíl, který chcete spustit, použijte `dotnet build` nebo `dotnet msbuild` a zadejte cíl.
 
 ## <a name="examples"></a>Příklady
 
@@ -41,20 +41,21 @@ Příkaz [sestavení dotnet](dotnet-build.md) je `dotnet msbuild -restore -targe
   dotnet msbuild
   ```
 
-- Sestavení projektu a jeho závislostí pomocí konfigurace verze:
+- Sestavení projektu a jeho závislostí pomocí konfigurace vydané verze:
 
   ```dotnetcli
   dotnet msbuild -property:Configuration=Release
   ```
 
-- Spusťte cíl publikování `osx.10.11-x64` a publikujte pro RID:
+- Spusťte cíl publikování a publikování pro `osx.10.11-x64` identifikátor RID:
 
   ```dotnetcli
   dotnet msbuild -target:Publish -property:RuntimeIdentifiers=osx.10.11-x64
   ```
 
-- Podívejte se na celý projekt se všemi cíli zahrnutými do sady SDK:
+- Zobrazit celý projekt se všemi cíli, které jsou součástí sady SDK:
 
   ```dotnetcli
   dotnet msbuild -preprocess
+  dotnet msbuild -preprocess:<fileName>.xml
   ```

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - compiler options [C#], listed by category
 - Visual C#, compiler options listed by category
 ms.assetid: 96437ecc-6502-4cd3-b070-e9386a298e83
-ms.openlocfilehash: ffa5372678362e47eb59d8b041da55c79bf8475d
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 1e78b920eb6a1eae870a425b91711ac9d87b6530
+ms.sourcegitcommit: 1eae045421d9ea2bfc82aaccfa5b1ff1b8c9e0e4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84447040"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84811683"
 ---
 # <a name="c-compiler-options-listed-by-category"></a>Možnosti kompilátoru C# uvedené podle kategorie
 
@@ -49,7 +49,7 @@ Následující možnosti kompilátoru jsou seřazené podle kategorie. Abecední
 |[-keycontainer](keycontainer-compiler-option.md)|Určuje název kontejneru kryptografických klíčů.|
 |[-keyfile](keyfile-compiler-option.md)|Určuje název souboru, který obsahuje kryptografický klíč.|
 |[-lib](lib-compiler-option.md)|Určuje umístění sestavení, na které odkazuje [odkaz](reference-compiler-option.md).|
-|[-nostdlib](nostdlib-compiler-option.md)|Instruuje kompilátor, aby neimportoval standardní knihovnu (mscorlib. dll).|
+|[-nostdlib](nostdlib-compiler-option.md)|Instruuje kompilátor, aby neimportoval standardní knihovnu (mscorlib.dll).|
 |[-publicsign](publicsign-compiler-option.md)|Použijte veřejný klíč bez podepsání sestavení, ale nastavte bitovou kopii v sestavení, která značí, že je sestavení podepsáno.|
 |[– Referenční informace](reference-compiler-option.md)|Importuje metadata ze souboru, který obsahuje sestavení.|
 |– Analyzátor|Spustit analyzátory z tohoto sestavení (krátký tvar:/a)|
@@ -63,11 +63,11 @@ Následující možnosti kompilátoru jsou seřazené podle kategorie. Abecední
 |------------|-------------|
 |[-bugreport](bugreport-compiler-option.md)|Vytvoří soubor, který obsahuje informace, které usnadňují hlášení chyby.|
 |[-checked](checked-compiler-option.md)|Určuje, zda aritmetické aritmetické operace přetéká hranice datového typu způsobí výjimku v době běhu.|
-|[– ladění](debug-compiler-option.md)|Instruuje kompilátor, aby vygeneroval ladicí informace.|
+|[-debug](debug-compiler-option.md)|Instruuje kompilátor, aby vygeneroval ladicí informace.|
 |[-errorreport](errorreport-compiler-option.md)|Nastaví chování zasílání zpráv o chybách.|
 |[-fullpaths](fullpaths-compiler-option.md)|Určuje absolutní cestu k souboru ve výstupu kompilátoru.|
 |[-nowarn](nowarn-compiler-option.md)|Potlačí generování zadaných upozornění kompilátorem.|
-|[-Nullable](nullable-compiler-option.md)|Určuje možnost kontextu s možnou hodnotou null.|
+|[-nullable](nullable-compiler-option.md)|Určuje možnost kontextu s možnou hodnotou null.|
 |[-warn](warn-compiler-option.md)|Nastaví úroveň upozornění.|
 |[-warnaserror](warnaserror-compiler-option.md)|Propaguje upozornění na chyby.|
 |RuleSet\<file>|Zadejte soubor RuleSet, který zakáže konkrétní diagnostiku.|
@@ -107,7 +107,7 @@ Následující možnosti kompilátoru jsou seřazené podle kategorie. Abecední
 |[-unsafe](unsafe-compiler-option.md)|Povolí kompilaci kódu, který používá klíčové slovo [unsafe](../keywords/unsafe.md) .|
 |[-utf8output](utf8output-compiler-option.md)|Zobrazí výstup kompilátoru pomocí kódování UTF-8.|
 |– paralelní [+&#124;-]|Určuje, jestli se má použít souběžné sestavení (+).|
-|-checksumalgorithm:\<alg>|Zadejte algoritmus pro výpočet kontrolního součtu zdrojového souboru uloženého v souboru PDB.  Podporované hodnoty jsou: SHA1 (výchozí) nebo SHA256.<br>Microsoft doporučuje SHA256 z důvodu kolizí problémů se SHA1.|
+|-checksumalgorithm:\<alg>|Zadejte algoritmus pro výpočet kontrolního součtu zdrojového souboru uloženého v souboru PDB.  Podporované hodnoty jsou: SHA256 (default) nebo SHA1.<br>Microsoft doporučuje SHA256 z důvodu kolizí problémů se SHA1.|
 
 ## <a name="obsolete-options"></a>Zastaralé možnosti
 

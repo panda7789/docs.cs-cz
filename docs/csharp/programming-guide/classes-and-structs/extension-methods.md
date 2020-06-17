@@ -6,12 +6,12 @@ helpviewer_keywords:
 - extension methods [C#]
 - methods [C#], extension
 ms.assetid: 175ce3ff-9bbf-4e64-8421-faeb81a0bb51
-ms.openlocfilehash: 5db2797870b6c2e1998f17f1d8e4df8aa3f95c9e
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 0f9c0f053e531a44640084a35dc5d8e844ee0b46
+ms.sourcegitcommit: 1eae045421d9ea2bfc82aaccfa5b1ff1b8c9e0e4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241406"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84803179"
 ---
 # <a name="extension-methods-c-programming-guide"></a>Metody rozšíření (Průvodce programováním v C#)
 
@@ -54,7 +54,7 @@ Obecně platí, že budete pravděpodobně volat metody rozšíření mnohem ča
 using System.Linq;
 ```
 
-(Je také možné, že budete muset přidat odkaz na System. Core. dll.) Všimněte si, že standardní operátory dotazu se teď zobrazují v IntelliSense jako další metody dostupné pro většinu <xref:System.Collections.Generic.IEnumerable%601> typů.
+(Je také možné, že budete muset přidat odkaz na System.Core.dll.) Všimněte si, že standardní operátory dotazu se teď zobrazují v IntelliSense jako další metody dostupné pro většinu <xref:System.Collections.Generic.IEnumerable%601> typů.
 
 ## <a name="binding-extension-methods-at-compile-time"></a>Vytváření vazeb na metody rozšíření v době kompilace
 
@@ -80,7 +80,7 @@ V minulosti bylo běžné vytvořit "třídy kolekcí", které implementovaly <x
 
 Při použití průsvitek nebo jiného návrhu vrstvené aplikace je běžné mít sadu entit domény nebo Přenos dat objekty, které lze použít ke komunikaci napříč hranicemi aplikací. Tyto objekty obecně neobsahují žádné funkce nebo pouze minimální funkce, které se vztahují na všechny vrstvy aplikace. Metody rozšíření lze použít k přidání funkcionality, která je specifická pro každou vrstvu aplikace bez načítání objektu mimo jiné, než je potřeba nebo žádoucí v jiných vrstvách.
 
-```aspx-csharp
+```csharp
 public class DomainEntity
 {
     public int Id { get; set; }

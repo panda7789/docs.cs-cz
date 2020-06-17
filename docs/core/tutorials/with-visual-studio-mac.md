@@ -2,12 +2,12 @@
 title: Vytvoření konzolové aplikace .NET Core pomocí Visual Studio pro Mac
 description: Naučte se vytvořit konzolovou aplikaci .NET Core pomocí Visual Studio pro Mac.
 ms.date: 06/02/2020
-ms.openlocfilehash: 57f16e510270b7256b285493b1f978101fc11804
-ms.sourcegitcommit: f6350c2c542e6edd52d7e9d6667b96d85d810e67
+ms.openlocfilehash: 9cab838eaab2c59d8a0270267514f57acb7c60fb
+ms.sourcegitcommit: 1eae045421d9ea2bfc82aaccfa5b1ff1b8c9e0e4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84717520"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84811673"
 ---
 # <a name="tutorial-create-a-net-core-console-application-using-visual-studio-for-mac"></a>Kurz: Vytvoření konzolové aplikace .NET Core pomocí Visual Studio pro Mac
 
@@ -84,7 +84,7 @@ Vylepšete aplikaci, aby se uživateli zobrazila výzva k zadání názvu a zobr
 
 1. V *program.cs*nahraďte obsah `Main` metody, což je řádek, který volá `Console.WriteLine` , s následujícím kódem:
 
-   :::code language="csharp" source="./snippets/with-visual-studio/csharp/Program.cs" id="1":::
+   :::code language="csharp" source="./snippets/with-visual-studio/csharp/Program.cs" id="MainMethod":::
 
    Tento kód zobrazí "" Jaké je vaše jméno? " v okně konzoly a počkejte, dokud uživatel nezadá řetězec následovaný klávesou <kbd>ENTER</kbd> . Tento řetězec je uložen v proměnné s názvem `name` . Načítá také hodnotu <xref:System.DateTime.Now?displayProperty=nameWithType> vlastnosti, která obsahuje aktuální místní čas a přiřadí ji k proměnné s názvem `date` . Nakonec tyto hodnoty zobrazí v okně konzoly.
 

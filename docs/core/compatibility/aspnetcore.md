@@ -2,15 +2,15 @@
 title: ASP.NET Core přerušující změny
 titleSuffix: ''
 description: Zobrazí seznam nejnovějších změn v ASP.NET Core.
-ms.date: 04/29/2020
+ms.date: 06/11/2020
 author: scottaddie
 ms.author: scaddie
-ms.openlocfilehash: 2e89a14c948365da1e7a04fc8d5ca4008842f8d8
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: a6ddf97f907a1cba57e51d6fd516d1f94272f725
+ms.sourcegitcommit: 1eae045421d9ea2bfc82aaccfa5b1ff1b8c9e0e4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84446965"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84803274"
 ---
 # <a name="aspnet-core-breaking-changes"></a>ASP.NET Core přerušující změny
 
@@ -21,7 +21,7 @@ Na této stránce jsou popsány následující přerušující se změny:
 - [Odebrání zastaralých rozhraní API pro antipadělání, CORS, diagnostiku, MVC a směrování](#obsolete-antiforgery-cors-diagnostics-mvc-and-routing-apis-removed)
 - [Ověřování: Google + zastaralá](#authentication-google-deprecated-and-replaced)
 - [Ověřování: vlastnost HttpContext. Authentication byla odebrána.](#authentication-httpcontextauthentication-property-removed)
-- [Ověřování: nahrazené typy Newtonsoft. JSON](#authentication-newtonsoftjson-types-replaced)
+- [Ověřování: Newtonsoft.Jsu nahrazených typů](#authentication-newtonsoftjson-types-replaced)
 - [Ověřování: změnil se podpis OAuthHandler ExchangeCodeAsync.](#authentication-oauthhandler-exchangecodeasync-signature-changed)
 - [Autorizace: přetížení AddAuthorization se přesunulo do jiného sestavení.](#authorization-addauthorization-overload-moved-to-different-assembly)
 - [Autorizace: IAllowAnonymous se odebral z AuthorizationFilterContext. filters.](#authorization-iallowanonymous-removed-from-authorizationfiltercontextfilters)
@@ -50,7 +50,9 @@ Na této stránce jsou popsány následující přerušující se změny:
 - [Identita: SignInAsync vyvolá výjimku pro neověřenou identitu.](#identity-signinasync-throws-exception-for-unauthenticated-identity)
 - [Identita: konstruktor SignInManager akceptuje nový parametr.](#identity-signinmanager-constructor-accepts-new-parameter)
 - [Identita: uživatelské rozhraní používá funkci statických webových prostředků.](#identity-ui-uses-static-web-assets-feature)
+- [Kestrel: ve výchozím nastavení se zjistily změny v konfiguraci v době běhu.](#kestrel-configuration-changes-at-run-time-detected-by-default)
 - [Kestrel: odebrané adaptéry připojení](#kestrel-connection-adapters-removed)
+- [Kestrel: výchozí podporované verze protokolu TLS se změnily](#kestrel-default-supported-tls-protocol-versions-changed)
 - [Kestrel: bylo odebráno prázdné sestavení HTTPS.](#kestrel-empty-https-assembly-removed)
 - [Kestrel: hlavičky přípojných vozidel žádosti přesunuté do nové kolekce](#kestrel-request-trailer-headers-moved-to-new-collection)
 - [Kestrel: změny vrstvy abstrakce transportu](#kestrel-transport-abstractions-removed-and-made-public)
@@ -98,7 +100,14 @@ Na této stránce jsou popsány následující přerušující se změny:
 
 ***
 
-[!INCLUDE [Localization: "Pubternal" APIs removed](~/includes/core-changes/aspnetcore/5.0/localization-pubternal-apis-removed.md)]
+[!INCLUDE[Kestrel: Configuration changes at run time detected by default](~/includes/core-changes/aspnetcore/5.0/kestrel-configuration-changes-at-run-time-detected-by-default.md)]
+
+***
+[!INCLUDE[Kestrel: Default supported TLS protocol versions changed](~/includes/core-changes/aspnetcore/5.0/kestrel-default-supported-tls-protocol-versions-changed.md)]
+
+***
+
+[!INCLUDE[Localization: "Pubternal" APIs removed](~/includes/core-changes/aspnetcore/5.0/localization-pubternal-apis-removed.md)]
 
 ***
 

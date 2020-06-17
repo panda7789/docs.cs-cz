@@ -17,12 +17,12 @@ helpviewer_keywords:
 - Insert method
 - strings [.NET Framework], StringBuilder object
 ms.assetid: 5c14867c-9a99-45bc-ae7f-2686700d377a
-ms.openlocfilehash: b10d1c4579f10ca4fb84797ee67342825aaa9c32
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: 83d4b9327b55c511e2a46486e519e3cd0c77b1a3
+ms.sourcegitcommit: 1eae045421d9ea2bfc82aaccfa5b1ff1b8c9e0e4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84662937"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84803229"
 ---
 # <a name="using-the-stringbuilder-class-in-net"></a>Použití třídy StringBuilder v .NET
 <xref:System.String>Objekt je neměnný. Pokaždé, když použijete jednu z metod ve <xref:System.String?displayProperty=nameWithType> třídě, vytvoříte nový objekt String v paměti, který vyžaduje nové přidělení místa pro tento nový objekt. V situacích, kdy potřebujete provést opakované úpravy řetězce, může být režie spojená s vytvářením nového <xref:System.String> objektu náročná. <xref:System.Text.StringBuilder?displayProperty=nameWithType>Třída může být použita, pokud chcete upravit řetězec bez vytvoření nového objektu. Například použití <xref:System.Text.StringBuilder> třídy může zvýšit výkon při zřetězení mnoha řetězců dohromady ve smyčce.  
@@ -67,7 +67,7 @@ ms.locfileid: "84662937"
 |<xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType>|Nahradí specifikátor formátu předaný v řetězci s formátovaným textem.|  
 |<xref:System.Text.StringBuilder.Insert%2A?displayProperty=nameWithType>|Vloží řetězec nebo objekt do zadaného indexu aktuálního **StringBuilder**.|  
 |<xref:System.Text.StringBuilder.Remove%2A?displayProperty=nameWithType>|Odebere zadaný počet znaků z aktuálního **StringBuilder**.|  
-|<xref:System.Text.StringBuilder.Replace%2A?displayProperty=nameWithType>|Nahradí zadaný znak v zadaném indexu.|  
+|<xref:System.Text.StringBuilder.Replace%2A?displayProperty=nameWithType>|Nahradí všechny výskyty zadaného znaku nebo řetězce v aktuálním **StringBuilder** pomocí jiného zadaného znaku nebo řetězce.|  
   
 ### <a name="append"></a>Připojit  
  Metodu **Append** lze použít k přidání textu nebo řetězcové reprezentace objektu na konec řetězce reprezentovaného aktuálním **StringBuilder**. Následující příklad inicializuje **StringBuilder** na "Hello World" a pak na konec objektu připojí nějaký text. Místo se přiděluje automaticky podle potřeby.  
