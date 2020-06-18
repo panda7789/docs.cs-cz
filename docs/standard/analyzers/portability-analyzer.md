@@ -4,12 +4,12 @@ description: Naučte se používat nástroj Analyzátor přenositelnosti .NET k 
 ms.date: 09/13/2019
 ms.technology: dotnet-standard
 ms.assetid: 0375250f-5704-4993-a6d5-e21c499cea1e
-ms.openlocfilehash: 7fe5aafe1ad8bf87883ebe27f2aa4fb102a01e45
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: d2a9551565e9ef0a2ed76960c869829fc2e86a1f
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84501794"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84903607"
 ---
 # <a name="the-net-portability-analyzer"></a>Analyzátor přenositelnosti .NET
 
@@ -32,9 +32,6 @@ Pokud chcete začít používat analyzátor přenositelnosti .NET v aplikaci Vis
 ![Snímek obrazovky s analyzátorem přenositelnosti](./media/portability-analyzer/portability-screenshot.png)
 
 Můžete také použít konzolovou aplikaci ApiPort, kterou si můžete stáhnout z [úložiště ApiPort](https://aka.ms/apiportdownload). Pomocí `listTargets` Možnosti příkaz můžete zobrazit dostupný cílový seznam a pak vybrat cílové platformy zadáním `-t` Možnosti nebo pomocí `--target` příkazu.
-
-> [!IMPORTANT]
-> Pokud při spuštění tohoto nástroje neexistují žádné výsledky, nemusí být výchozí cíle k dispozici. Pokud k tomu dojde, dbejte na to, abyste přidali explicitní cíle.
 
 ### <a name="solution-wide-view"></a>Zobrazení v celé řešení
 

@@ -18,16 +18,16 @@ helpviewer_keywords:
 - AsyncOperation class
 - AsyncCompletedEventArgs class
 ms.assetid: 43402d19-8d30-426d-8785-1a4478233bfa
-ms.openlocfilehash: 9ffb2e2f426e2d2d97998a89a3e8d306de4f29ca
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: e36ae21e1e03c8c5c688b7446f660ab1bb666a94
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84583658"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84904374"
 ---
 # <a name="implementing-the-event-based-asynchronous-pattern"></a>Implementace asynchronního vzoru založeného na událostech
 
-Pokud píšete třídu s některými operacemi, které mohou znamenat znatelné prodlevy, zvažte, že je možné poskytnout asynchronní funkce pomocí [přehledu asynchronního vzoru založeného na událostech](event-based-asynchronous-pattern-overview.md).
+Zapisujete-li třídu s některými operacemi, které mohou způsobit znatelné zpoždění, je vhodné zajistit asynchronní funkce implementací [asynchronního vzoru založeného na událostech](event-based-asynchronous-pattern-overview.md).
 
 Asynchronní vzor založený na událostech poskytuje standardizovaný způsob, jak zabalit třídu, která obsahuje asynchronní funkce. Pokud je tato třída implementována s podpůrnými třídami jako <xref:System.ComponentModel.AsyncOperationManager> , bude správně fungovat v jakémkoli modelu aplikace, včetně ASP.NET, konzolových aplikací a aplikací model Windows Forms.
 

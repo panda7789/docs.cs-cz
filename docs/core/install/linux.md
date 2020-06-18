@@ -4,12 +4,12 @@ description: Přečtěte si, jaké distribuce systému Linux podporují instalac
 author: thraka
 ms.author: adegeo
 ms.date: 06/01/2020
-ms.openlocfilehash: fbb057825395d4e024f99e1abbd1a6e65ba1dce7
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: e668ad733481c2d9b73994b6344b38768f5851fe
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84768350"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84903373"
 ---
 # <a name="install-net-core-on-linux"></a>Nainstalovat .NET Core v systému Linux
 
@@ -78,6 +78,8 @@ Následující tabulka uvádí seznam aktuálně podporovaných vydání .NET Co
 | ✔️ [9](linux-debian.md#debian-9-)       | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 Preview |
 | ❌ [8](linux-debian.md#debian-8-)       | ✔️ 2,1        | ❌3,1        | ❌5,0 Preview |
 
+Další informace najdete v tématu [instalace .NET Core na Debian](linux-debian.md).
+
 ## <a name="fedora"></a>Fedora
 
 Fedora jako správce balíčků používá DNF.
@@ -113,6 +115,8 @@ Následující tabulka uvádí seznam aktuálně podporovaných vydání .NET Co
 |----------------------------|---------------|---------------|----------------|
 | ✔️ [15](linux-opensuse.md#opensuse-15-)     | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 Preview |
 
+Další informace najdete v tématu [instalace .NET Core na openSUSE](linux-opensuse.md).
+
 ## <a name="red-hat"></a>Red Hat
 
 Red Hat Enterprise Linux (RHEL) používá jako správce balíčků Yumu (RHEL 7) a DNF (RHEL 8).
@@ -128,6 +132,8 @@ Následující tabulka uvádí seznam aktuálně podporovaných vydání .NET Co
 | ✔️ [8](linux-rhel.md#rhel-8-) | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 Preview |
 | ✔️ [7](linux-rhel.md#rhel-7-) | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 Preview |
 
+Další informace najdete v tématu [instalace .NET Core na RHEL](linux-rhel.md).
+
 ## <a name="sles"></a>SLES
 
 SLES používá zypperu jako správce balíčků.
@@ -142,6 +148,8 @@ Následující tabulka uvádí seznam aktuálně podporovaných vydání .NET Co
 |------------------------|---------------|---------------|----------------|
 | ✔️ [15](linux-sles.md#sles-15-)     | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 Preview |
 | ✔️ [12 SP2](linux-sles.md#sles-12-) | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 Preview |
+
+Další informace najdete v tématu [instalace .NET Core na SLES](linux-sles.md).
 
 ## <a name="ubuntu"></a>Ubuntu
 
