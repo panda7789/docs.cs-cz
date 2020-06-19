@@ -2,12 +2,12 @@
 title: Variance v delegátech (C#)
 ms.date: 07/20/2015
 ms.assetid: 19de89d2-8224-4406-8964-2965b732b890
-ms.openlocfilehash: d41c0d3d54df96031fc7989e0fdc78e9f358a40a
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 7370813179040f54e65adf3b568a1fd914223f1d
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241341"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84990041"
 ---
 # <a name="variance-in-delegates-c"></a>Variance v delegátech (C#)
 .NET Framework 3,5 zavedl podporu variance pro porovnání signatur metod s typy delegátů ve všech delegátech v jazyce C#. To znamená, že můžete přiřadit delegáty nejen metody, které mají odpovídající signatury, ale také metody, které vracejí více odvozené typy (kovariance), nebo které přijímají parametry, které mají méně odvozené typy (kontravariance), než je určeno typem delegáta. To zahrnuje obecné i neobecné delegáty.  
@@ -158,7 +158,8 @@ dvariant("test");
 ```  
   
 ### <a name="combining-variant-generic-delegates"></a>Kombinovaná obecná Delegáti variant  
- Neměli byste kombinovat delegáty variant. <xref:System.Delegate.Combine%2A>Metoda nepodporuje převod delegáta variant a očekává, že Delegáti budou mít naprosto stejný typ. To může vést k výjimce za běhu, Pokud kombinujete delegáty buď pomocí <xref:System.Delegate.Combine%2A> metody, nebo pomocí `+` operátoru, jak je znázorněno v následujícím příkladu kódu.  
+
+Nekombinujte delegáty variant. <xref:System.Delegate.Combine%2A>Metoda nepodporuje převod delegáta variant a očekává, že Delegáti budou mít naprosto stejný typ. To může vést k výjimce za běhu, Pokud kombinujete delegáty buď pomocí <xref:System.Delegate.Combine%2A> metody, nebo pomocí `+` operátoru, jak je znázorněno v následujícím příkladu kódu.  
   
 ```csharp  
 Action<object> actObj = x => Console.WriteLine("object: {0}", x);  

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, finalizers
 - finalizers [C#]
 ms.assetid: 1ae6e46d-a4b1-4a49-abe5-b97f53d9e049
-ms.openlocfilehash: a266cfd5996aca7b7a6b297b0775526cf38b8f64
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 62fc531a8064a8a5cb144a89aa9975b3199db976
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241419"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84990116"
 ---
 # <a name="finalizers-c-programming-guide"></a>Finalizační metody (Průvodce programováním v C#)
 Finalizační metody (označované také jako **destruktory**) se používají k provedení všech nezbytných finálních vyčištění při shromažďování instance třídy systémem uvolňování paměti.  
@@ -52,24 +52,24 @@ protected override void Finalize()
 }  
 ```  
   
- To znamená, že `Finalize` Metoda je volána rekurzivně pro všechny instance v řetězu dědičnosti, od nejvíce odvozené k nejméně odvozenému.  
+ Tento návrh znamená, že `Finalize` Metoda je volána rekurzivně pro všechny instance v řetězu dědičnosti, od nejvíce odvozené k nejméně odvozenému.  
   
 > [!NOTE]
 > Nemusíte používat prázdné finalizační metody. Pokud třída obsahuje finalizační metodu, je ve `Finalize` frontě vytvořena položka. Po volání finalizační metody je vyvolán systém uvolňování paměti pro zpracování fronty. Prázdný finalizační metoda vyvolá jenom nepotřebnou ztrátu výkonu.  
   
- Programátor nemá žádné řízení při volání finalizační metody, protože je určen systémem uvolňování paměti. Systém uvolňování paměti kontroluje objekty, které již aplikace nepoužívá. Pokud se považuje za objekt s nárokem na finalizaci, zavolá finalizační metodu (pokud existuje) a uvolní paměť použitou k uložení objektu.
+ Programátor nemá žádnou kontrolu nad tím, kdy se volá finalizační metoda; systém uvolňování paměti určuje, kdy se má zavolat. Systém uvolňování paměti kontroluje objekty, které již aplikace nepoužívá. Pokud se považuje za objekt s nárokem na finalizaci, zavolá finalizační metodu (pokud existuje) a uvolní paměť použitou k uložení objektu.
 
  V .NET Frameworkch aplikacích (ale ne v aplikacích .NET Core), jsou také volány finalizační metody při ukončení programu.
   
- Je možné vynutit uvolňování paměti voláním <xref:System.GC.Collect%2A> , ale většinou by se to mělo vyhnout, protože může způsobit problémy s výkonem.  
+ Je možné vynutit uvolňování paměti voláním <xref:System.GC.Collect%2A> , ale většinou v čase, toto volání by se mělo vyhnout, protože může způsobit problémy s výkonem.  
   
 ## <a name="using-finalizers-to-release-resources"></a>Použití finalizační metody k uvolnění prostředků  
- Obecně platí, že jazyk C# při vývoji s jazykem, který necílí na modul runtime s uvolňováním paměti, nevyžaduje tolik správy paměti, kolik je potřeba. Důvodem je to, že systém uvolňování paměti .NET implicitně spravuje přidělování a uvolňování paměti pro vaše objekty. Pokud však vaše aplikace zapouzdřuje nespravované prostředky, jako jsou například Windows, soubory a síťová připojení, měli byste k uvolnění těchto prostředků použít finalizační metody. Pokud je objekt způsobilý pro finalizaci, systém uvolňování paměti spustí `Finalize` metodu objektu.
+ Obecně platí, že v jazyce C# není pro vývojáře v rámci jazyků, které necílí na modul runtime s uvolňováním paměti, potřeba tolik správy paměti. Důvodem je to, že systém uvolňování paměti .NET implicitně spravuje přidělování a uvolňování paměti pro vaše objekty. Pokud však vaše aplikace zapouzdřuje nespravované prostředky, jako jsou například Windows, soubory a síťová připojení, měli byste k uvolnění těchto prostředků použít finalizační metody. Pokud je objekt způsobilý pro finalizaci, systém uvolňování paměti spustí `Finalize` metodu objektu.
   
 ## <a name="explicit-release-of-resources"></a>Explicitní vydání prostředků  
- Pokud vaše aplikace používá nákladný externí prostředek, doporučujeme vám, abyste poskytli způsob, jak prostředek explicitně uvolnit před tím, než systém uvolňování paměti uvolní objekt. Provedete to tak `Dispose` , že implementujete metodu z <xref:System.IDisposable> rozhraní, které provádí nezbytné vyčištění objektu. To může výrazně zlepšit výkon aplikace. I s tímto explicitním ovládáním prostředků se finalizační metoda stala ochranou pro vyčištění prostředků v případě, že volání `Dispose` metody se nezdařilo.  
+ Pokud vaše aplikace používá nákladný externí prostředek, doporučujeme vám, abyste poskytli způsob, jak prostředek explicitně uvolnit před tím, než systém uvolňování paměti uvolní objekt. Chcete-li uvolnit prostředek, implementujte `Dispose` metodu z <xref:System.IDisposable> rozhraní, které provádí nezbytné vyčištění objektu. To může výrazně zlepšit výkon aplikace. I s tímto explicitním ovládáním prostředků se finalizační metoda stala ochranou pro vyčištění prostředků, pokud volání `Dispose` metody neproběhne úspěšně.  
   
- Další podrobnosti o čištění prostředků najdete v následujících tématech:  
+ Další informace o čištění prostředků najdete v následujících článcích:  
   
 - [Vymazání nespravovaných prostředků](../../../standard/garbage-collection/unmanaged.md)  
   

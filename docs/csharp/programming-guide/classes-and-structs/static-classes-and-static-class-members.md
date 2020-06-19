@@ -8,12 +8,12 @@ helpviewer_keywords:
 - C# language, static classes
 - static class members [C#]
 ms.assetid: 235614b5-1371-4dbd-9abd-b406a8b0298b
-ms.openlocfilehash: f5e355d66d9b022a037d53e1241e76282852888e
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 71cbf8278b3a8092e93a8ae3d8be291540f16cc3
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241458"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84990106"
 ---
 # <a name="static-classes-and-static-class-members-c-programming-guide"></a>Statické třídy a jejich členové (Průvodce programováním v C#)
 
@@ -54,7 +54,7 @@ Console.WriteLine(Math.Round(Math.Abs(dub)));
   
  Vytvoření statické třídy je proto v podstatě stejné jako vytvoření třídy, která obsahuje pouze statické členy a soukromý konstruktor. Privátní konstruktor zabraňuje vytvoření instance třídy. Výhodou použití statické třídy je, že kompilátor může zkontrolovat, zda nejsou omylem přidány žádné členy instance. Kompilátor zajistí, že instance této třídy nelze vytvořit.  
   
- Statické třídy jsou zapečetěné, a proto je nelze zdědit. Nemůžou dědit z žádné třídy s výjimkou <xref:System.Object> . Statické třídy nemůžou obsahovat konstruktor instance; mohou však obsahovat statický konstruktor. Nestatické třídy by měly také definovat statický konstruktor, pokud třída obsahuje statické členy, které vyžadují netriviální inicializaci. Další informace naleznete v tématu [statické konstruktory](./static-constructors.md).  
+ Statické třídy jsou zapečetěné, a proto je nelze zdědit. Nemůžou dědit z žádné třídy s výjimkou <xref:System.Object> . Statické třídy nemůžou obsahovat konstruktor instance. Mohou však obsahovat statický konstruktor. Nestatické třídy by měly také definovat statický konstruktor, pokud třída obsahuje statické členy, které vyžadují netriviální inicializaci. Další informace naleznete v tématu [statické konstruktory](./static-constructors.md).  
   
 ## <a name="example"></a>Příklad  
  Tady je příklad statické třídy, která obsahuje dvě metody, které převádějí teplotu z Celsia na Fahrenheita a z Fahrenheita na Celsia:  
@@ -62,15 +62,15 @@ Console.WriteLine(Math.Round(Math.Abs(dub)));
  [!code-csharp[csProgGuideObjects#31](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#31)]  
   
 ## <a name="static-members"></a>Statické členy  
- Nestatická třída může obsahovat statické metody, pole, vlastnosti nebo události. Statický člen je volat na třídu, i když nebyla vytvořena žádná instance třídy. K statickému členu se vždy používá název třídy, nikoli název instance. Existuje pouze jedna kopie statického člena bez ohledu na to, kolik instancí třídy je vytvořeno. Statické metody a vlastnosti nemohou přistupovat k nestatickým polím a událostem v jejich nadřazeném typu a nemohou přistupovat k proměnné instance libovolného objektu, pokud není explicitně předána parametrem metody.  
+ Nestatická třída může obsahovat statické metody, pole, vlastnosti nebo události. Statický člen je volat na třídu, i když nebyla vytvořena žádná instance třídy. K statickému členu se vždy používá název třídy, nikoli název instance. Existuje pouze jedna kopie statického člena bez ohledu na to, kolik instancí třídy je vytvořeno. Statické metody a vlastnosti nemají přístup k nestatickým polím a událostem ve svých nadřazených typech a nemohou přistupovat k proměnné instance žádného objektu, pokud není explicitně předána parametrem metody.  
   
  Je obvyklejší deklarovat nestatickou třídu s některými statickými členy, než deklarovat celou třídu jako statickou. Dvě společná použití statických polí jsou uchovávají počet objektů, které byly vytvořeny instance, nebo ukládají hodnotu, která musí být sdílena mezi všemi instancemi.  
   
  Statické metody mohou být přetíženy, ale nejsou přepsány, protože patří do třídy, a nikoli do žádné instance třídy.  
   
- I když pole nemůže být deklarováno jako `static const` , pole [const](../../language-reference/keywords/const.md) je v podstatě statické v jeho chování. Patří do typu, nikoli do instancí typu. Proto lze k polím const přistup pomocí stejného `ClassName.MemberName` zápisu, který se používá pro statická pole. Není požadována žádná instance objektu.  
+ I když pole nemůže být deklarováno jako `static const` , pole [const](../../language-reference/keywords/const.md) je v podstatě statické v jeho chování. Patří do typu, nikoli do instancí typu. Proto `const` lze k polím přistupovat pomocí stejného `ClassName.MemberName` zápisu, který je použit pro statická pole. Není požadována žádná instance objektu.  
   
- Jazyk C# nepodporuje statické lokální proměnné (proměnné, které jsou deklarovány v oboru metody).  
+ Jazyk C# nepodporuje statické lokální proměnné (tj. proměnné, které jsou deklarovány v oboru metody).  
   
  Statické členy třídy deklarujete pomocí `static` klíčového slova před návratovým typem členu, jak je znázorněno v následujícím příkladu:  
   

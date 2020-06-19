@@ -2,12 +2,12 @@
 title: Úloha asynchronního programovacího modelu (klepnutím) s modifikátorem Async a operátoru Await (C#)
 ms.date: 05/22/2017
 ms.assetid: 9bcf896a-5826-4189-8c1a-3e35fa08243a
-ms.openlocfilehash: d575a369a3c9766938e3996c527e27539e3e62e2
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 90bee745a393ac35ac968e9f4f6b6c83ad8fbb46
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241952"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84990070"
 ---
 # <a name="task-asynchronous-programming-model"></a>Model asynchronního programování úloh
 
@@ -40,7 +40,7 @@ Asynchronní přístup přidává ekvivalent automatického přenosu do seznamu 
 
 Klíčová slova [Async](../../../language-reference/keywords/async.md) a [await](../../../language-reference/operators/await.md) v jazyce C# představují srdce asynchronního programování. Pomocí těchto dvou klíčových slov můžete použít prostředky v .NET Framework, .NET Core nebo prostředí Windows Runtime k vytvoření asynchronní metody téměř stejně snadno, jako vytváříte synchronní metodu. Asynchronní metody, které definujete pomocí `async` klíčového slova, jsou označovány jako *asynchronní metody*.
 
-Následující příklad ukazuje asynchronní metodu. Téměř vše v rámci kódu by vám mělo být zcela známé.
+Následující příklad ukazuje asynchronní metodu. Téměř vše v kódu by mělo vypadat dobře.
 
 Na konci tohoto tématu můžete najít úplný ukázkový soubor Windows Presentation Foundation (WPF) a můžete si stáhnout ukázku z [Async Sample: příklad z tématu "asynchronní programování s Async a await"](https://docs.microsoft.com/samples/dotnet/samples/async-and-await-cs/).
 
@@ -234,7 +234,7 @@ Asynchronní rozhraní API v prostředí Windows Runtime programování mají je
 
 ## <a name="naming-convention"></a><a name="BKMK_NamingConvention"></a>Konvence pojmenování
 
-Podle konvence metody, které vracejí běžně čekajíelné typy (například,, `Task` `Task<T>` `ValueTask` , `ValueTask<T>` ), by měly mít názvy, které končí na "Async". Metody, které spouštějí asynchronní operaci, ale nevracejí očekávaný typ, by neměly mít názvy, které končí na "Async", ale mohou začínat na "begin", "Start" nebo některé jiné operace, které tuto metodu navrhují, nevrátí ani nevyvolávají výsledek operace.
+Podle konvence metody, které vracejí běžně čekajíelné typy (například, `Task` `Task<T>` , `ValueTask` ,), `ValueTask<T>` by měly mít názvy končící na "Async". Metody, které spouštějí asynchronní operaci, ale nevracejí očekávaný typ, by neměly mít názvy, které končí na "Async", ale mohou začínat na "begin", "Start" nebo některé jiné operace, které tuto metodu navrhují, nevrátí ani nevyvolávají výsledek operace.
 
 Můžete ignorovat konvenci, kde událost, základní třída a rozhraní smlouvy navrhují odlišný název. Například byste neměli přejmenovat běžné obslužné rutiny událostí, jako je například `Button1_Click` .
 
@@ -245,7 +245,7 @@ Můžete ignorovat konvenci, kde událost, základní třída a rozhraní smlouv
 |[Návod: přístup k webu pomocí modifikátoru Async a operátoru Await (C#)](./walkthrough-accessing-the-web-by-using-async-and-await.md)|Ukazuje, jak převést synchronní řešení WPF na asynchronní řešení WPF. Aplikace stáhne řadu webových stránek.|[Asynchronní Ukázka: přístup k webovému návodu](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f)|
 |[Postup rozšiřování asynchronního návodu pomocí Task. WhenAll (C#)](./how-to-extend-the-async-walkthrough-by-using-task-whenall.md)|Přidá <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> předchozí návod. Použití nástroje `WhenAll` spustí všechna stahování ve stejnou dobu.||
 |[Jak zajistit paralelní více webových požadavků pomocí modifikátoru Async a operátoru Await (C#)](./how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md)|Ukazuje, jak spustit několik úloh současně.|[Asynchronní vzorek: paralelní provádění více webových požadavků](https://code.msdn.microsoft.com/Async-Make-Multiple-Web-49adb82e)|
-|[Asynchronní návratové typy (C#)](./async-return-types.md)|Znázorňuje typy, které může vrátit asynchronní metoda, a vysvětluje, kdy se každý typ hodí.||
+|[Asynchronní návratové typy (C#)](./async-return-types.md)|Znázorňuje typy, které mohou vracet asynchronní metody, a vysvětluje, kdy je každý typ vhodný.||
 |[Řízení toku v asynchronních programech (C#)](./control-flow-in-async-programs.md)|Podrobně sleduje tok řízení pomocí sledu očekávání výrazů v asynchronním programu.|[Asynchronní vzorek: tok řízení v asynchronních programech](https://code.msdn.microsoft.com/Async-Sample-Control-Flow-5c804fc0)|
 |[Vyladění aplikace s modifikátorem Async (C#)](./fine-tuning-your-async-application.md)|Ukazuje, jak přidat k asynchronnímu řešení následující funkce:<br /><br /> - [Zrušení asynchronní úlohy nebo seznamu úloh (C#)](./cancel-an-async-task-or-a-list-of-tasks.md)<br />- [Zrušení asynchronních úloh po určitém časovém intervalu (C#)](./cancel-async-tasks-after-a-period-of-time.md)<br />- [Zrušení zbývajících asynchronních úloh po dokončení jedné z nich (C#)](./cancel-remaining-async-tasks-after-one-is-complete.md)<br />- [Spuštění více asynchronních úloh a jejich zpracování po dokončení (C#)](./start-multiple-async-tasks-and-process-them-as-they-complete.md)|[Asynchronní vzorek: jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)|
 |[Zpracování Vícenásobný přístup v asynchronních aplikacích (C#)](./handling-reentrancy-in-async-apps.md)|Ukazuje, jak zpracovat případy, ve kterých je aktivní asynchronní operace restartována v době, kdy běží.||

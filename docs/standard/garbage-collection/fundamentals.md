@@ -11,12 +11,12 @@ helpviewer_keywords:
 - garbage collection, workstation
 - garbage collection, managed heap
 ms.assetid: 67c5a20d-1be1-4ea7-8a9a-92b0b08658d2
-ms.openlocfilehash: d59f368f21964c07d371df604f0728fa6ca8ac00
-ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
+ms.openlocfilehash: 438188b6d694bdeab772c43ef92e5621c68facff
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84307030"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84990216"
 ---
 # <a name="fundamentals-of-garbage-collection"></a>Základní informace o uvolňování paměti
 
@@ -60,7 +60,7 @@ Následující seznam shrnuje důležité koncepty paměti CLR.
 
 - Pokud není k dispozici dostatek adresního prostoru pro rezervaci nebo fyzické místo pro potvrzení, můžete nedostatek paměti.
 
-  Stránkovací soubor se používá i v případě, že je nízká tlak fyzické paměti (tj. poptávka pro fyzickou paměť). Když je první tlak fyzické paměti vysoký, operační systém musí uvolnit místo ve fyzické paměti pro ukládání dat a zálohuje některá data, která jsou ve fyzické paměti pro stránkovací soubor. Tato data nejsou stránkovaná, dokud je nepotřebujete, takže je možné vyskytnout stránkování v situacích, kdy je nízký tlak fyzické paměti.
+  Stránkovací soubor se používá i v případě, že je nízká tlak fyzické paměti (tj. poptávka pro fyzickou paměť). Při prvním vysokém zatížení fyzické paměti musí operační systém uvolnit místo ve fyzické paměti pro ukládání dat a pak zálohuje některá data, která jsou ve fyzické paměti pro stránkovací soubor. Tato data nejsou stránkovaná, dokud je nepotřebujete, takže je možné vyskytnout stránkování v situacích, kdy je nízký tlak fyzické paměti.
   
 ### <a name="memory-allocation"></a>Přidělení paměti
 

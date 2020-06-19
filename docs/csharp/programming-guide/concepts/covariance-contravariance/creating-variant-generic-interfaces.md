@@ -2,12 +2,12 @@
 title: Vytváření variantních obecných rozhraní (C#)
 ms.date: 07/20/2015
 ms.assetid: 30330ec4-9df2-4838-a535-6c406d0ed4df
-ms.openlocfilehash: 27760fd73c8c40fc108106b87b2102ab5e07263c
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: a8e3e010c0e5d5490aee35603cad4fd6c1dc29e0
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241380"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84990051"
 ---
 # <a name="creating-variant-generic-interfaces-c"></a>Vytváření variantních obecných rozhraní (C#)
 
@@ -144,9 +144,9 @@ interface ICovariant<out T> { }
 
 ### <a name="avoiding-ambiguity"></a>Předcházení nejednoznačnosti
 
-Při implementaci variantních obecných rozhraní může odchylka někdy vést k nejednoznačnosti. To by mělo být zabráněno.
+Při implementaci variantních obecných rozhraní může odchylka někdy vést k nejednoznačnosti. Taková nejednoznačnost by se měla vyhnout.
 
-Například pokud explicitně implementujete stejné obecné rozhraní variant s různými parametry obecného typu v jedné třídě, může to vytvořit nejednoznačnost. Kompilátor nevytvoří v tomto případě chybu, ale není určena, která implementace rozhraní bude zvolena za běhu. To může vést k drobným chybám ve vašem kódu. Uvažujte následující příklad kódu.
+Například pokud explicitně implementujete stejné obecné rozhraní variant s různými parametry obecného typu v jedné třídě, může to vytvořit nejednoznačnost. Kompilátor nevytvoří v tomto případě chybu, ale není určena, která implementace rozhraní bude zvolena za běhu. Tato nejednoznačnost by mohla vést k drobným chybám ve vašem kódu. Uvažujte následující příklad kódu.
 
 ```csharp
 // Simple class hierarchy.

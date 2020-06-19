@@ -1,17 +1,17 @@
 ---
-title: Pořadí testů jednotek
+title: Seřazení testů jednotek
 description: Přečtěte si, jak objednat testy jednotek pomocí .NET Core.
 author: IEvangelist
 ms.date: 05/18/2020
 zone_pivot_groups: unit-testing-framework-set-one
-ms.openlocfilehash: ce0d01c924075ffcc9ad49ef8aca49222c10c921
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: 3400ae440a828054624d67c14807ee72783e466a
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83704557"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84989260"
 ---
-# <a name="order-unit-tests"></a>Pořadí testů jednotek
+# <a name="order-unit-tests"></a>Seřazení testů jednotek
 
 V některých případech možná budete chtít, aby testy jednotek běžely v určitém pořadí. V ideálním případě pořadí, ve _kterém by testy_ jednotek běžely, nezáleží a je [osvědčeným postupem](unit-testing-best-practices.md) vyhnout se řazení jednotek. Bez ohledu na to může být potřeba. V takovém případě tento článek ukazuje, jak objednat testovací běhy.
 
@@ -84,4 +84,4 @@ Pro explicitní seřazení testů NUnit poskytuje [`OrderAttribute`](https://git
 ## <a name="next-steps"></a>Další kroky
 
 > [!div class="nextstepaction"]
-> [Osvědčené postupy pro testování částí](unit-testing-best-practices.md)
+> [Pokrytí kódu testu jednotek](unit-testing-code-coverage.md)

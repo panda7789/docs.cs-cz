@@ -7,12 +7,12 @@ helpviewer_keywords:
 - nullable compiler option [C#]
 - /nullable compiler option [C#]
 - -nullable compiler option [C#]
-ms.openlocfilehash: a68255dba18a022784cd4aaf0027c371893c577b
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 7454bb316507c3aaea208094127552712421dff6
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84449811"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84990123"
 ---
 # <a name="-nullable-c-compiler-options"></a>-Nullable (možnosti kompilátoru C#)
 
@@ -42,13 +42,13 @@ Vyvolání metod popsaných s následujícími atributy ovlivní také analýzu 
 - Jednoduché předběžné podmínky: <xref:System.Diagnostics.CodeAnalysis.AllowNullAttribute> a<xref:System.Diagnostics.CodeAnalysis.DisallowNullAttribute>
 - Jednoduché následné stavy: <xref:System.Diagnostics.CodeAnalysis.MaybeNullAttribute> a<xref:System.Diagnostics.CodeAnalysis.NotNullAttribute>
 - Podmíněné následné podmínky: <xref:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute> a<xref:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute>
-- <xref:System.Diagnostics.CodeAnalysis.DoesNotReturnIfAttribute>(např. `DoesNotReturnIf(false)` pro <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> ) a<xref:System.Diagnostics.CodeAnalysis.DoesNotReturnAttribute>
+- <xref:System.Diagnostics.CodeAnalysis.DoesNotReturnIfAttribute>(například `DoesNotReturnIf(false)` pro <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> ) a<xref:System.Diagnostics.CodeAnalysis.DoesNotReturnAttribute>
 - <xref:System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute>
 - Stavy po členu: <xref:System.Diagnostics.CodeAnalysis.MemberNotNullAttribute.%23ctor(System.String)> a<xref:System.Diagnostics.CodeAnalysis.MemberNotNullAttribute.%23ctor(System.String[])>
 
 ### <a name="to-set-this-compiler-option-in-a-project"></a>Nastavení této možnosti kompilátoru v projektu
 
-Úpravou *. csproj* přidejte `<Nullable>` značku v `Project/PropertyGroup` hierarchii:
+Upravte soubor *. csproj* pro přidání `<Nullable>` značky v rámci `Project/PropertyGroup` hierarchie:
 
 ```xml
 <Project Sdk="...">

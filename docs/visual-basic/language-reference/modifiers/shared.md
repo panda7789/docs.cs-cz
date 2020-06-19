@@ -11,12 +11,12 @@ helpviewer_keywords:
 - shared [elements VB]
 - elements [Visual Basic], shared
 ms.assetid: 2bf7cf2c-b0dd-485e-8749-b5d674dab4cd
-ms.openlocfilehash: d8c9879ea2f62bfbeaa378d0aaee806623ea1c55
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: b51c88e1af3a720912af8ba6aaf8ae4016af9cfa
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84579109"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84990188"
 ---
 # <a name="shared-visual-basic"></a>Shared (Visual Basic)
 
@@ -24,7 +24,7 @@ Určuje, že nejmíň jeden deklarovaný programový prvek je spojen s třídou 
 
 ## <a name="when-to-use-shared"></a>Kdy použít Shared
 
-Sdílení člena třídy nebo struktury zpřístupňuje každou instanci, nikoli *nesdílenou*, kde každá instance udržuje svou vlastní kopii. To je užitečné, například pokud se hodnota proměnné vztahuje na celou aplikaci. Pokud deklarujete tuto proměnnou `Shared` , pak všechny instance budou přistupovat ke stejnému umístění úložiště a pokud jedna instance změní hodnotu proměnné, všechny instance budou přistupovat k aktualizované hodnotě.
+Sdílení člena třídy nebo struktury zpřístupňuje každou instanci, nikoli *nesdílenou*, kde každá instance udržuje svou vlastní kopii. Sdílení je užitečné, například pokud se hodnota proměnné vztahuje na celou aplikaci. Pokud deklarujete tuto proměnnou `Shared` , pak všechny instance budou přistupovat ke stejnému umístění úložiště a pokud jedna instance změní hodnotu proměnné, všechny instance budou přistupovat k aktualizované hodnotě.
 
 Sdílení nemění úroveň přístupu člena. Například člen třídy může být sdílen a soukromý (přístupný pouze z třídy) nebo nesdílené a veřejné. Další informace najdete v tématu [úrovně přístupu v Visual Basic](../../programming-guide/language-features/declared-elements/access-levels.md).
 
@@ -50,7 +50,7 @@ Sdílení nemění úroveň přístupu člena. Například člen třídy může 
 
 - **Přístup prostřednictvím proměnné instance.** Je možné přistupovat ke sdílenému prvku tím, že je kvalifikován s názvem proměnné, která obsahuje konkrétní instanci své třídy nebo struktury. I když to obvykle funguje podle očekávání, kompilátor vygeneruje zprávu upozornění a provede přístup prostřednictvím třídy nebo názvu struktury namísto proměnné.
 
-- **Přístup prostřednictvím výrazu instance.** Pokud přistupujete ke sdílenému prvku prostřednictvím výrazu, který vrací instanci své třídy nebo struktury, kompilátor provede přístup prostřednictvím třídy nebo názvu struktury namísto vyhodnocení výrazu. Výsledkem je neočekávané výsledky, pokud jste určili výraz k provádění dalších akcí a také k vrácení instance. Toto dokládá následující příklad.
+- **Přístup prostřednictvím výrazu instance.** Pokud přistupujete ke sdílenému prvku prostřednictvím výrazu, který vrací instanci své třídy nebo struktury, kompilátor provede přístup prostřednictvím třídy nebo názvu struktury namísto vyhodnocení výrazu. Tento přístup vytvoří neočekávané výsledky, pokud jste určili výraz k provedení jiných akcí a také k vrácení instance. Následující příklad znázorňuje tuto situaci.
   
     ```vb
     Sub Main()
@@ -82,7 +82,7 @@ Sdílení nemění úroveň přístupu člena. Například člen třídy může 
     End Class
     ```
 
-     V předchozím příkladu kompilátor vygeneruje zprávu upozornění pokaždé, když kód přistupuje ke sdílené vlastnosti `Total` prostřednictvím instance. V každém případě přistupuje přímo přes třídu `ShareTotal` a nevyužívá žádné instance. V případě zamýšleného volání procedury `ReturnClass` to znamená, že ani negeneruje volání `ReturnClass` , takže se neprovádí další akce zobrazení "Function ReturnClass () s názvem".
+     V předchozím příkladu kompilátor vygeneruje zprávu upozornění pokaždé, když kód přistupuje ke sdílené vlastnosti `Total` prostřednictvím instance. V každém případě je přístup přímo přes třídu `ShareTotal` a nevyužívá žádné instance. V případě zamýšleného volání procedury `ReturnClass` to znamená, že ani negeneruje volání `ReturnClass` , takže se neprovádí další akce zobrazení "Function ReturnClass () s názvem".
 
 `Shared`V těchto kontextech lze použít modifikátor:
 

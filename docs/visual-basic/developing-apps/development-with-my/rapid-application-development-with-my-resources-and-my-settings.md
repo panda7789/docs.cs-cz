@@ -7,12 +7,12 @@ helpviewer_keywords:
 - rapid application development (RAD), My.Settings
 - My.Resources object [Visual Basic], developing applications
 ms.assetid: 68284ab1-b685-4814-a2a4-01ae40445ff8
-ms.openlocfilehash: 6c53d11a3830a5a8a2cb898728bed8694a226686
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: fd1ec25582e919b84235502f5921edfbc6e1dade
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84411665"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84990206"
 ---
 # <a name="rapid-application-development-with-myresources-and-mysettings-visual-basic"></a>Rychlý vývoj aplikací s použitím objektů My.Resources a My.Settings (Visual Basic)
 
@@ -24,7 +24,7 @@ ms.locfileid: "84411665"
   
  [!code-vb[VbVbcnMy#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMy/VB/Class1.vb#7)]  
   
- `My.Resources`Objekt zpřístupňuje pouze globální prostředky. Neposkytuje přístup k souborům prostředků přidruženým k formulářům. Musíte získat přístup k prostředkům formuláře z formuláře.  
+ `My.Resources`Objekt zpřístupňuje pouze globální prostředky. Neposkytuje přístup k souborům prostředků přidruženým k formulářům. Přístup k prostředkům formuláře z formuláře.  
   
  Podobně `My.Settings` objekt poskytuje přístup k nastavení aplikace a umožňuje dynamicky ukládat a načítat nastavení vlastností a další informace pro vaši aplikaci. Další informace naleznete v tématu [objekt My. Resources](../../language-reference/objects/my-resources-object.md) a [My. Settings Object](../../language-reference/objects/my-settings-object.md).  
   

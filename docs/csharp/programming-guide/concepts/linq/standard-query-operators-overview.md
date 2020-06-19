@@ -2,17 +2,17 @@
 title: Přehled standardních operátorů dotazů (C#)
 ms.date: 07/20/2015
 ms.assetid: 812fa119-5f65-4139-b4fa-55dccd8dc3ac
-ms.openlocfilehash: 2327ed84734e4f4ad826e02ed4e30b8784a59716
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 095a0b7a7a8265f235d28a4634ea82cdcd7a60c0
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287414"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84990014"
 ---
 # <a name="standard-query-operators-overview-c"></a>Přehled standardních operátorů dotazů (C#)
 *Standardní operátory dotazu* jsou metody, které tvoří vzor LINQ. Většina těchto metod pracuje na sekvencích, kde sekvence je objekt, jehož typ implementuje <xref:System.Collections.Generic.IEnumerable%601> rozhraní nebo <xref:System.Linq.IQueryable%601> rozhraní. Standardní operátory dotazu poskytují možnosti dotazování, včetně filtrování, projekce, agregace, řazení a dalších.  
   
- Existují dvě sady standardních operátorů dotazů LINQ, jeden, který pracuje na objektech typu <xref:System.Collections.Generic.IEnumerable%601> a druhý, který pracuje s objekty typu <xref:System.Linq.IQueryable%601> . Metody, které tvoří každou sadu, jsou statické členy <xref:System.Linq.Enumerable> tříd a v <xref:System.Linq.Queryable> uvedeném pořadí. Jsou definovány jako *metody rozšíření* typu, na kterém pracují. Metody rozšíření mohou být volány buď pomocí syntaxe statické metody, nebo syntaxe metody instance.  
+ Existují dvě sady operátorů dotazu LINQ Standard: jeden, který pracuje na objektech typu <xref:System.Collections.Generic.IEnumerable%601> , další, který pracuje na objektech typu <xref:System.Linq.IQueryable%601> . Metody, které tvoří každou sadu, jsou statické členy <xref:System.Linq.Enumerable> tříd a v <xref:System.Linq.Queryable> uvedeném pořadí. Jsou definovány jako *metody rozšíření* typu, na kterém pracují. Metody rozšíření mohou být volány buď pomocí syntaxe statické metody, nebo syntaxe metody instance.  
   
  Kromě toho několik metod standardních operátorů dotazů pracuje na jiných typech než těch, které jsou založeny na <xref:System.Collections.Generic.IEnumerable%601> nebo <xref:System.Linq.IQueryable%601> . <xref:System.Linq.Enumerable>Typ definuje dvě takové metody, které pracují s objekty typu <xref:System.Collections.IEnumerable> . Tyto metody <xref:System.Linq.Enumerable.Cast%60%601%28System.Collections.IEnumerable%29> a <xref:System.Linq.Enumerable.OfType%60%601%28System.Collections.IEnumerable%29> umožňují povolit dotazování na kolekci, která není Parametrizovaná, nebo neobecná, aby bylo možné dotazovat ve vzorci LINQ. To dělají vytvořením silně typované kolekce objektů. <xref:System.Linq.Queryable>Třída definuje dvě podobné metody <xref:System.Linq.Queryable.Cast%60%601%28System.Linq.IQueryable%29> a <xref:System.Linq.Queryable.OfType%60%601%28System.Linq.IQueryable%29> , které pracují s objekty typu <xref:System.Linq.Queryable> .  
   
@@ -20,7 +20,7 @@ ms.locfileid: "84287414"
   
  Pro metody, které pracují s kolekcemi v paměti, což znamená, že tyto metody, které rozšíření <xref:System.Collections.Generic.IEnumerable%601> , vrátí vyčíslitelné objekty argumenty, které byly předány metodě. Při vytváření výčtu tohoto objektu je vytvořena logika operátoru dotazu a jsou vráceny výsledky dotazu.  
   
- Naproti tomu metody, které rozšiřuje, <xref:System.Linq.IQueryable%601> neimplementují žádné dotazy, ale sestaví strom výrazu, který představuje dotaz, který má být proveden. Zpracování dotazu je zpracováváno zdrojovým <xref:System.Linq.IQueryable%601> objektem.  
+ Naopak metody, které rozšiřuje, <xref:System.Linq.IQueryable%601> neimplementují žádné chování při dotazování. Vytvoří strom výrazu, který představuje dotaz, který má být proveden. Zpracování dotazu je zpracováváno zdrojovým <xref:System.Linq.IQueryable%601> objektem.  
   
  Volání metod dotazů lze zřetězit společně v jednom dotazu, který umožňuje, aby se dotazy staly libovolně složité.  
   
@@ -73,7 +73,7 @@ foreach (var obj in query)
  Můžete rozšířit sadu standardních operátorů dotazů vytvořením metod specifických pro doménu, které jsou vhodné pro vaši cílovou doménu nebo technologii. Standardní operátory dotazu můžete také nahradit vlastními implementacemi, které poskytují další služby, jako je vzdálené vyhodnocení, překlad dotazů a optimalizace. Příklad najdete v tématu <xref:System.Linq.Enumerable.AsEnumerable%2A> .  
   
 ## <a name="related-sections"></a>Související oddíly  
- Následující odkazy odkazují na témata, která poskytují další informace o různých standardních dotazovacích operátorech na základě funkcí.  
+ Následující odkazy odkazují na články, které poskytují další informace o různých standardních dotazovacích operátorech založených na funkcích.  
   
  [Řazení dat (C#)](./sorting-data.md)  
   

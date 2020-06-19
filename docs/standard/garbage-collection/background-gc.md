@@ -5,12 +5,12 @@ ms.date: 04/21/2020
 helpviewer_keywords:
 - garbage collection, background
 - background garbage collection
-ms.openlocfilehash: 8134c0af55d74e57dcfce8c7174265b8c9902feb
-ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
+ms.openlocfilehash: 780503288d3474cd99a595bdbd52c3a5abba5308
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84307069"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84990227"
 ---
 # <a name="background-garbage-collection"></a>Uvolňování paměti na pozadí
 
@@ -57,7 +57,7 @@ Na následujícím obrázku je znázorněno uvolňování paměti *serveru* na p
 
 V pracovní stanici nebo uvolňování paměti serveru můžete [Povolit souběžné uvolňování paměti](../../framework/configure-apps/file-schema/runtime/gcconcurrent-element.md), které umožňuje spouštět vlákna souběžně s vyhrazeným vláknem, které provádí uvolňování paměti po většinu doby trvání kolekce. Tato možnost má vliv jenom na uvolňování paměti v generaci 2. generace 0 a 1 jsou vždy nesouběžná, protože dokončí rychlé.
 
-Souběžné uvolňování paměti umožňuje interaktivním aplikacím lépe reagovat tím, že minimalizuje pozastavení kolekce. Spravovaná vlákna mohou i nadále běžet v době, kdy běží souběžné vlákno uvolňování paměti. Výsledkem je kratší pozastavení během uvolňování paměti.
+Souběžné uvolňování paměti umožňuje interaktivním aplikacím lépe reagovat tím, že minimalizuje pozastavení kolekce. Spravovaná vlákna mohou i nadále běžet v době, kdy běží souběžné vlákno uvolňování paměti. Výsledkem tohoto návrhu je kratší pozastavení, zatímco dojde k uvolnění paměti.
 
 Souběžné uvolňování paměti se provádí ve vyhrazeném vlákně. Ve výchozím nastavení spustí modul CLR uvolňování paměti pracovní stanice s povoleným souběžným uvolňováním paměti na počítačích s jedním procesorem i s více procesory.
 
