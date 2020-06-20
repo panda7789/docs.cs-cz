@@ -4,12 +4,12 @@ description: Naučte se používat funkce pokrytí kódu pro testy jednotek .NET
 author: IEvangelist
 ms.author: dapine
 ms.date: 06/16/2020
-ms.openlocfilehash: 47f10ae367f511d5d02d32bfcb35bf4775a3e946
-ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
+ms.openlocfilehash: d19975283bf60e5cf3a9656c1b6f7966e12d2176
+ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84990277"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85105421"
 ---
 # <a name="use-code-coverage-for-unit-testing"></a>Použití pokrytí kódu pro testování částí
 
@@ -266,10 +266,11 @@ Níže je příklad souboru *coverage.cobertura.xml* .
 > Jako alternativu můžete použít balíček MSBuild, pokud systém sestavení již využívá MSBuild. Z příkazového řádku změňte adresáře na projekt *XUnit. Coverlet. MSBuild* a spusťte `dotnet test` příkaz:
 >
 > ```dotnetcli
-> dotnet test --collect:"XPlat Code Coverage"
+> dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura
 > ```
 >
-> Výsledný soubor *coverage.cobertura.xml* je výstup.
+> Výsledný soubor *coverage.cobertura.xml* je výstup.  
+> [Tady](https://github.com/coverlet-coverage/coverlet/blob/master/Documentation/MSBuildIntegration.md) můžete postupovat podle příručky integraton MSBuild.
 
 ## <a name="generate-reports"></a>Generování sestav
 
