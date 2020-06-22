@@ -29,6 +29,8 @@ items:
             href: install/linux.md
           - name: Ubuntu
             href: install/linux-ubuntu.md
+          - name: Alpine
+            href: install/linux-alpine.md
           - name: CentOS
             href: install/linux-centos.md
           - name: Debian
@@ -403,25 +405,25 @@ items:
         href: testing/unit-testing-best-practices.md
       - name: xUnit
         items:
-          - name: 'Testování částí v C#'
+          - name: Testování částí v C#
             href: testing/unit-testing-with-dotnet-test.md
-          - name: 'Testování částí v F#'
+          - name: Testování částí v F#
             href: testing/unit-testing-fsharp-with-dotnet-test.md
           - name: Testování částí ve Visual Basicu
             href: testing/unit-testing-visual-basic-with-dotnet-test.md
       - name: NUnit
         items:
-          - name: 'Testování částí v C#'
+          - name: Testování částí v C#
             href: testing/unit-testing-with-nunit.md
-          - name: 'Testování částí v F#'
+          - name: Testování částí v F#
             href: testing/unit-testing-fsharp-with-nunit.md
           - name: Testování částí ve Visual Basicu
             href: testing/unit-testing-visual-basic-with-nunit.md
       - name: MSTest
         items:
-          - name: 'Testování částí v C#'
+          - name: Testování částí v C#
             href: testing/unit-testing-with-mstest.md
-          - name: 'Testování částí v F#'
+          - name: Testování částí v F#
             href: testing/unit-testing-fsharp-with-mstest.md
           - name: Testování částí ve Visual Basicu
             href: testing/unit-testing-visual-basic-with-mstest.md
@@ -429,6 +431,8 @@ items:
         href: testing/selective-unit-tests.md
       - name: Seřazení testů jednotek
         href: testing/order-unit-tests.md
+      - name: Pokrytí kódu testování částí
+        href: testing/unit-testing-code-coverage.md
       - name: Publikovaný výstup testování částí
         href: testing/unit-testing-published-output.md
       - name: Live Unit Testing pro projekty .NET Core pomocí sady Visual Studio
