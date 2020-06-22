@@ -464,16 +464,22 @@
       href: additional-apis/index.md
     - name: Microsoft.SqlServer.Server
       items:
-        - name: SmiOrderProperty.Item
-          href: additional-apis/microsoft.sqlserver.server.smiorderproperty.item.md
+        - name: SmiOrderProperty – třída
+          items:
+            - name: Item – vlastnost
+              href: additional-apis/microsoft.sqlserver.server.smiorderproperty.item.md
     - name: Systém
       items:
-        - name: Exception.PrepForRemoting – metoda
-          href: additional-apis/system.exception.prepforremoting.md
+        - name: Exception – třída
+          items:
+            - name: PrepForRemoting – metoda
+              href: additional-apis/system.exception.prepforremoting.md
     - name: System.Data.SqlTypes
       items:
-        - name: SqlChars.Stream – vlastnost
-          href: additional-apis/system.data.sqltypes.sqlchars.stream.md
+        - name: SqlChars – třída
+          items:
+            - name: Stream – vlastnost
+              href: additional-apis/system.data.sqltypes.sqlchars.stream.md
         - name: SqlStreamChars – třída
           items:
             - name: SqlStreamChars – konstruktor
@@ -500,10 +506,14 @@
               href: additional-apis/system.data.sqltypes.sqlstreamchars.write.md
     - name: System.IO
       items:
-        - name: MemoryStream.InternalGetOriginAndLength method
-          href: additional-apis/system.io.memorystream.internalgetoriginandlength.md
+        - name: MemoryStream – třída
+          items:
+            - name: InternalGetOriginAndLength – metoda
+              href: additional-apis/system.io.memorystream.internalgetoriginandlength.md
     - name: System.Net
       items:
+        - name: ComNetOS – třída
+          href: additional-apis/system.net.comnetos.md
         - name: Connection – třída
           href: additional-apis/connection.md
           items:
@@ -514,8 +524,10 @@
           items:
             - name: m_ConnectionList – pole
               href: additional-apis/m_connectionlist.md
-        - name: ConnectStream.Connection – vlastnost
-          href: additional-apis/system.net.connectstream.connection.md
+        - name: ConnectStream – třída
+          items:
+            - name: Connection – vlastnost
+              href: additional-apis/system.net.connectstream.connection.md
         - name: CoreResponseData – třída
           href: additional-apis/coreresponsedata.md
           items:
@@ -523,6 +535,10 @@
               href: additional-apis/coreresponsedata_m_responseheaders.md
             - name: m_StatusCode – pole
               href: additional-apis/coreresponsedata_m_statuscode.md
+        - name: ExceptionHelper – třída
+          href: additional-apis/system.net.exceptionhelper.md
+        - name: HttpStatusDescription – třída
+          href: additional-apis/system.net.httpstatusdescription.md
         - name: HttpWebRequest – třída
           items:
             - name: _AutoRedirects – pole
@@ -531,22 +547,46 @@
               href: additional-apis/httpwebrequest__coreresponse.md
             - name: _HttpResponse – pole
               href: additional-apis/_httpresponse.md
-        - name: PooledStream.NetworkStream – vlastnost
-          href: additional-apis/system.net.pooledstream.networkstream.md
+        - name: Logging – třída
+          href: additional-apis/system.net.logging.md
+        - name: MailAddressParser – třída
+          href: additional-apis/system.net.mail.mailaddressparser.md
+        - name: MailBnfHelper – třída
+          href: additional-apis/system.net.mime.mailbnfhelper.md
+        - name: PooledStream – třída
+          items:
+            - name: NetworkStream – vlastnost
+              href: additional-apis/system.net.pooledstream.networkstream.md
+        - name: QuotedPairReader – třída
+          href: additional-apis/system.net.mail.quotedpairreader.md
         - name: RtcState – třída
           href: additional-apis/system.net.rtcstate.md
         - name: ServicePoint – třída
           items:
             - name: m_ConnectionGroupList – pole
               href: additional-apis/m_connectiongrouplist.md
+        - name: ServicePointManager – třída
+          items:
+            - name: CloseConnectionGroups – metoda
+              href: additional-apis/system.net.servicepointmanager.closeconnectiongroups.md
             - name: s_ServicePointTable – pole
               href: additional-apis/s_servicepointtable.md
-        - name: TlsStream.m_Worker – pole
-          href: additional-apis/system.net.tlsstream.m_worker.md
+        - name: TlsStream – třída
+          items:
+            - name: m_Worker – pole
+              href: additional-apis/system.net.tlsstream.m_worker.md
+        - name: UnsafeNclNativeMethods – třída
+          href: additional-apis/system.net.unsafenclnativemethods.md
+        - name: WebHeaderCollection – třída
+          items:
+            - name: AddInternal – metoda
+              href: additional-apis/system.net.webheadercollection.addinternal.md
     - name: System.Net.Security
       items:
-        - name: SslState.SslProtocol – vlastnost
-          href: additional-apis/system.net.security.sslstate.sslprotocol.md
+        - name: SslState – třída
+          items:
+            - name: SslProtocol – vlastnost
+              href: additional-apis/system.net.security.sslstate.sslprotocol.md
     - name: System.ServiceModel.Channels
       items:
         - name: Message – třída
@@ -557,8 +597,10 @@
               href: additional-apis/system.servicemodel.channels.message.writestartheaders.md
     - name: System.Windows.Diagnostics
       items:
-        - name: VisualDiagnostics.s_isDebuggerCheckDisabledForTestPurposes
-          href: additional-apis/s-isdebuggercheckdisabledfortestpurposes-field.md
+        - name: VisualDiagnostics – třída
+          items:
+            - name: s_isDebuggerCheckDisabledForTestPurposes – pole
+              href: additional-apis/s-isdebuggercheckdisabledfortestpurposes-field.md
     - name: System.Windows.Forms.Design
       items:
         - name: DataMemberFieldEditor – třída
@@ -567,7 +609,7 @@
           href: additional-apis/datamemberlisteditor-class.md
     - name: System.Windows.Xps
       items:
-        - name: XpsDocumentWriter
+        - name: XpsDocumentWriter – třída
           items:
             - name: raise__WritingCancelled – metoda
               href: additional-apis/xpsdocumentwriter-raise-writingcancelled-method-system-windows-xps.md
@@ -585,8 +627,10 @@
               href: additional-apis/xpsdocumentwriter-writingprogresschanged-event-system-windows-xps.md
     - name: System.Xml
       items:
-        - name: XmlReader.CreateSqlReader – metoda
-          href: additional-apis/system.xml.xmlreader.createsqlreader.md
+        - name: XmlReader – třída
+          items:
+            - name: CreateSqlReader – metoda
+              href: additional-apis/system.xml.xmlreader.createsqlreader.md
     - name: adodb – názvový prostor
       items:
         - name: Connection – rozhraní
@@ -601,16 +645,22 @@
           href: additional-apis/stdole.dispparams.md
         - name: EXCEPINFO – struktura
           href: additional-apis/stdole.excepinfo.md
-        - name: IFont.Name – vlastnost
-          href: additional-apis/stdole.ifont.name.md
+        - name: IFont – třída
+          items:
+            - name: Name – vlastnost
+              href: additional-apis/stdole.ifont.name.md
         - name: IFontDisp – rozhraní
           href: additional-apis/stdole.ifontdisp.md
-        - name: IPicture.Handle – vlastnost
-          href: additional-apis/stdole.ipicture.handle.md
+        - name: IPicture – třída
+          items:
+            - name: Handle – vlastnost
+              href: additional-apis/stdole.ipicture.handle.md
         - name: IPictureDisp – rozhraní
           href: additional-apis/stdole.ipicturedisp.md
-        - name: IPictureDisp.Handle – vlastnost
-          href: additional-apis/stdole.ipicturedisp.handle.md
+        - name: IPictureDisp – třída
+          items:
+            - name: Handle – vlastnost
+              href: additional-apis/stdole.ipicturedisp.handle.md
         - name: StdFont – rozhraní
           href: additional-apis/stdole.stdfont.md
         - name: StdPicture – rozhraní
