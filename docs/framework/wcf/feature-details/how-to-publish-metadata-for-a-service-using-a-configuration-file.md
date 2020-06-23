@@ -1,13 +1,14 @@
 ---
 title: 'Postupy: Publikování metadat služby promocí konfiguračního souboru'
+description: Naučte se publikovat metadata pro službu WCF pomocí konfiguračního souboru. Publikování umožňuje klientům získat tato metadata pomocí žádosti GET nebo HTTP/GET.
 ms.date: 03/30/2017
 ms.assetid: f061443f-92df-4824-b36a-609c4cd14a17
-ms.openlocfilehash: 976e1e0bb2c6479f7599165a1c6fe83bae4e17c1
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: d5d425be7f02a204476c4f6e81441aca9ea39fcc
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84596978"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246815"
 ---
 # <a name="how-to-publish-metadata-for-a-service-using-a-configuration-file"></a>Postupy: Publikování metadat služby promocí konfiguračního souboru
 Jedná se o jedno ze dvou témat s postupy, které ukazují publikování metadat pro službu Windows Communication Foundation (WCF). Existují dva způsoby, jak zadat, jak má služba publikovat metadata, pomocí konfiguračního souboru a pomocí kódu. V tomto tématu se dozvíte, jak publikovat metadata pro službu pomocí konfiguračního souboru.  
@@ -92,7 +93,7 @@ namespace Metadata.Samples
   
 ### <a name="to-publish-metadata-for-a-wcf-service-using-an-application-configuration-file"></a>Publikování metadat služby WCF pomocí konfiguračního souboru aplikace  
   
-1. V souboru App. config po zavření `</services>` elementu vytvořte `<behaviors>` element.  
+1. V souboru App.config za uzavíracím `</services>` prvkem vytvořte `<behaviors>` element.  
 
 2. V rámci `<behaviors>` elementu přidejte `<serviceBehaviors>` element.  
 

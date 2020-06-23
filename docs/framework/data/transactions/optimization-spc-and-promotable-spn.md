@@ -1,13 +1,14 @@
 ---
 title: Optimalizace pomocí jednofázového potvrzení a možné zařazení jednofázového oznámení
+description: Optimalizujte výkon pomocí jediné fáze potvrzení a oznámení s jednou fází. Přečtěte si o infrastruktuře System. Transactions v .NET.
 ms.date: 03/30/2017
 ms.assetid: 57beaf1a-fb4d-441a-ab1d-bc0c14ce7899
-ms.openlocfilehash: f486315b8a8c90e6616ca95fb6be4b2ae3719b7e
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 89ce82e673340c93254983c078f78a2501129383
+ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70205895"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85141975"
 ---
 # <a name="optimization-using-single-phase-commit-and-promotable-single-phase-notification"></a>Optimalizace pomocí jednofázového potvrzení a možné zařazení jednofázového oznámení
 
@@ -46,7 +47,7 @@ V tomto případě
 
 2. Při volání CN2 druhé připojení <xref:System.Transactions.Transaction.EnlistPromotableSinglePhase%2A>, volání selže, protože je potřebný další možné zařazení. Z tohoto důvodu musí CN2 získat transakci DTC, chcete-li předat SQL. Chcete-li to provést, používá jednu z metody poskytované <xref:System.Transactions.TransactionInterop> třídy a vytvořit formát transakce, která mohou být zadány SQL.
 
-3. <xref:System.Transactions><xref:System.Transactions.ITransactionPromoter.Promote%2A> volá metodu<xref:System.Transactions.ITransactionPromoter> na rozhraní implementované CN1.
+3. <xref:System.Transactions>volá <xref:System.Transactions.ITransactionPromoter.Promote%2A> metodu na <xref:System.Transactions.ITransactionPromoter> rozhraní implementované CN1.
 
 4. V tomto okamžiku CN1 eskaluje transakce, pomocí některé mechanismus, které jsou specifické pro SQL 2005 a <xref:System.Data>.
 
@@ -58,13 +59,13 @@ V tomto případě
 
 ## <a name="single-phase-commit-optimization"></a>Optimalizace potvrzení jedna fáze
 
-Protokol potvrzení jedné fáze je efektivnější za běhu jako všechny aktualizace jsou provedeno bez explicitního koordinace. Chcete-li využít výhod této optimalizace, měli byste implementovat pomocí Správce prostředků <xref:System.Transactions.ISinglePhaseNotification> rozhraní pro daný prostředek a zařadit do transakce pomocí <xref:System.Transactions.Transaction.EnlistDurable%2A> nebo <xref:System.Transactions.Transaction.EnlistVolatile%2A> metody. Konkrétně by parametr *EnlistmentOptions* měl být roven <xref:System.Transactions.EnlistmentOptions.None> tomu, aby bylo zajištěno provedení jediné fáze potvrzení.
+Protokol potvrzení jedné fáze je efektivnější za běhu jako všechny aktualizace jsou provedeno bez explicitního koordinace. Chcete-li využít výhod této optimalizace, měli byste implementovat pomocí Správce prostředků <xref:System.Transactions.ISinglePhaseNotification> rozhraní pro daný prostředek a zařadit do transakce pomocí <xref:System.Transactions.Transaction.EnlistDurable%2A> nebo <xref:System.Transactions.Transaction.EnlistVolatile%2A> metody. Konkrétně by parametr *EnlistmentOptions* měl <xref:System.Transactions.EnlistmentOptions.None> být roven tomu, aby bylo zajištěno provedení jediné fáze potvrzení.
 
 Vzhledem k tomu <xref:System.Transactions.ISinglePhaseNotification> rozhraní je odvozena z <xref:System.Transactions.IEnlistmentNotification> rozhraní, není-li váš správce prostředků nárok na jediné fázi potvrzení, pak může i nadále přijímat dvě fáze potvrzení oznámení. Pokud váš správce prostředků přijme <xref:System.Transactions.ISinglePhaseNotification.SinglePhaseCommit%2A> oznámení ze Správce TM, by měl akci k provedení práce, které jsou nezbytné k potvrzení a odpovídajícím způsobem informovat správce transakcí, pokud má být potvrzena nebo vrácena zpět voláním transakce <xref:System.Transactions.SinglePhaseEnlistment.Committed%2A>, <xref:System.Transactions.SinglePhaseEnlistment.Aborted%2A>, nebo <xref:System.Transactions.SinglePhaseEnlistment.InDoubt%2A> metodu na <xref:System.Transactions.SinglePhaseEnlistment> parametru. Odpověď <xref:System.Transactions.Enlistment.Done%2A> na zařazení v této fázi zahrnuje sémantiku jen pro čtení. Proto by neměl Odpovědět <xref:System.Transactions.Enlistment.Done%2A> spolu s některou z ostatních metod.
 
 Pokud je k dispozici pouze jedno nestálé zařazení a žádné trvalé zařazení, nestálá zařazení obdrží oznámení SPC. Pokud existují nějaké nestálé zařazení a jenom jedno trvalé zařazení, nestálá zařazení získají 2PC. Po dokončení, trvalý zařazení obdrží certifikát SPC.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Uvedení prostředků jako účastníků v transakci](enlisting-resources-as-participants-in-a-transaction.md)
 - [Potvrzení transakce v jedné fázi a více fázích](committing-a-transaction-in-single-phase-and-multi-phase.md)

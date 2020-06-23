@@ -1,17 +1,18 @@
 ---
 title: 'Koncové body: adresy, vazby a kontrakty'
+description: Zjistěte, jak veškerá komunikace se službou WCF probíhá prostřednictvím koncových bodů služby, které klientům poskytují přístup k funkcím, které služba nabízí.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - endpoints [WCF]
 - Windows Communication Foundation [WCF], endpoints
 - WCF [WCF], endpoints
 ms.assetid: 9ddc46ee-1883-4291-9926-28848c57e858
-ms.openlocfilehash: 3ac7f0b165b99a1ed3702628958f7d4c7702f5b1
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: ce0874bfed716716b6fd1801b35a4266095cd752
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84593513"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247309"
 ---
 # <a name="endpoints-addresses-bindings-and-contracts"></a>Koncové body: adresy, vazby a kontrakty
 
@@ -41,7 +42,7 @@ Každý koncový bod se skládá z následujících možností:
 
   Další informace najdete v tématu [určení adresy koncového bodu](../specifying-an-endpoint-address.md).
 
-- Binding: Vazba určuje, jak komunikovat s koncovým bodem. Sem patří:
+- Binding: Vazba určuje, jak komunikovat s koncovým bodem. To zahrnuje:
 
   - Transportní protokol, který se má použít (například TCP nebo HTTP).
 
@@ -88,8 +89,8 @@ Popisuje postup vytvoření koncového bodu služby v konfiguraci.
 [Postupy: Vytvoření koncového bodu služby v kódu](how-to-create-a-service-endpoint-in-code.md)\
 Popisuje postup vytvoření koncového bodu služby v kódu.
 
-[Postupy: použití Svcutil. exe k ověření kódu zkompilované služby](how-to-use-svcutil-exe-to-validate-compiled-service-code.md)\
-V této části najdete popis postupu při detekci chyb v implementacích a konfiguracích služby bez hostování služby pomocí nástroje pro nástroj pro [metadata ServiceModel (Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md).
+[Postupy: použití Svcutil.exe k ověření zkompilovaného kódu služby](how-to-use-svcutil-exe-to-validate-compiled-service-code.md)\
+V této části najdete popis postupu při detekci chyb v implementacích a konfiguracích služby bez hostování služby pomocí [Nástroje pro nástroj pro metadata ServiceModel (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md).
 
 ## <a name="see-also"></a>Viz také
 

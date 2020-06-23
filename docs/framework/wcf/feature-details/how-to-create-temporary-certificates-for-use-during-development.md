@@ -1,20 +1,21 @@
 ---
-title: 'Postupy: vytváření dočasných certifikátů pro použití během vývoje'
+title: 'Postupy: Vytváření dočasných certifikátů pro použití během vývoje'
+description: Naučte se používat rutinu PowerShellu k vytvoření dvou dočasných certifikátů X. 509 pro použití při vývoji zabezpečené služby nebo klienta služby WCF.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - certificates [WCF], creating temporary certificates
 - temporary certificates [WCF]
 ms.assetid: bc5f6637-5513-4d27-99bb-51aad7741e4a
-ms.openlocfilehash: 9e01ccb29ad017a2657ab08b54d7f01ef4564481
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: 0a21548386639a9f6a8c8572e5d7928ffdb270d6
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75964540"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247036"
 ---
-# <a name="how-to-create-temporary-certificates-for-use-during-development"></a>Postupy: vytváření dočasných certifikátů pro použití během vývoje
+# <a name="how-to-create-temporary-certificates-for-use-during-development"></a>Postupy: Vytváření dočasných certifikátů pro použití během vývoje
 
-Při vývoji zabezpečené služby nebo klienta pomocí Windows Communication Foundation (WCF) je často nutné dodat certifikát X. 509, který se má použít jako přihlašovací údaje. Certifikát obvykle je součástí řetězce certifikátů s kořenovou autoritou, která se nachází v úložišti důvěryhodných kořenových certifikačních autorit počítače. Řetěz certifikátů vám umožní určit rozsah sady certifikátů, ve kterých je kořenová autorita z vaší organizace nebo organizační jednotky. Chcete-li tuto možnost emulovat v době vývoje, můžete vytvořit dva certifikáty, které splňují požadavky na zabezpečení. První je certifikát podepsaný svým držitelem, který je umístěn v úložišti důvěryhodných kořenových certifikačních autorit a druhý certifikát je vytvořen z prvního a je umístěn v osobním úložišti umístění místního počítače nebo osobního úložiště Aktuální umístění uživatele. Toto téma vás provede kroky k vytvoření těchto dvou certifikátů pomocí rutiny [New-SelfSignedCertificate](/powershell/module/pkiclient/new-selfsignedcertificate) prostředí PowerShell.
+Při vývoji zabezpečené služby nebo klienta pomocí Windows Communication Foundation (WCF) je často nutné dodat certifikát X. 509, který se má použít jako přihlašovací údaje. Certifikát obvykle je součástí řetězce certifikátů s kořenovou autoritou, která se nachází v úložišti důvěryhodných kořenových certifikačních autorit počítače. Řetěz certifikátů vám umožní určit rozsah sady certifikátů, ve kterých je kořenová autorita z vaší organizace nebo organizační jednotky. Chcete-li tuto možnost emulovat v době vývoje, můžete vytvořit dva certifikáty, které splňují požadavky na zabezpečení. První je certifikát podepsaný svým držitelem, který je umístěný v úložišti důvěryhodných kořenových certifikačních autorit, a druhý certifikát se vytvoří z prvního a uloží se do osobního úložiště umístění místního počítače nebo do osobního úložiště aktuálního umístění uživatele. Toto téma vás provede kroky k vytvoření těchto dvou certifikátů pomocí rutiny [New-SelfSignedCertificate](/powershell/module/pkiclient/new-selfsignedcertificate) prostředí PowerShell.
 
 > [!IMPORTANT]
 > Certifikáty, které generuje rutina New-SelfSignedCertificate, jsou k dispozici pouze pro účely testování. Při nasazování služby nebo klienta nezapomeňte použít příslušný certifikát poskytovaný certifikační autoritou. Může to být buď certifikát serveru Windows Server ve vaší organizaci, nebo třetí strana.
@@ -31,7 +32,7 @@ Následující příkaz vytvoří certifikát podepsaný svým držitelem s náz
 $rootcert = New-SelfSignedCertificate -CertStoreLocation Cert:\CurrentUser\My -DnsName "RootCA" -TextExtension @("2.5.29.19={text}CA=true") -KeyUsage CertSign,CrlSign,DigitalSignature
 ```
 
-Musíme vyexportovat certifikát do souboru PFX, aby se mohl importovat do, kde bude potřeba v pozdějším kroku. Při exportu certifikátu s privátním klíčem je nutné zadat heslo k ochraně. Heslo ukládáme do `SecureString` a pomocí rutiny [Export-vybíráte](/powershell/module/pkiclient/export-pfxcertificate) vyexportujete certifikát s přidruženým privátním klíčem do souboru PFX. Do souboru CRT také ukládáme jenom veřejný certifikát pomocí rutiny [Export-Certificate](/powershell/module/pkiclient/export-certificate) .
+Musíme vyexportovat certifikát do souboru PFX, aby se mohl importovat do, kde bude potřeba v pozdějším kroku. Při exportu certifikátu s privátním klíčem je nutné zadat heslo k ochraně. Uložíme heslo do `SecureString` a pomocí rutiny [Export-vybíráte](/powershell/module/pkiclient/export-pfxcertificate) vyexportujete certifikát s přidruženým privátním klíčem do souboru PFX. Do souboru CRT také ukládáme jenom veřejný certifikát pomocí rutiny [Export-Certificate](/powershell/module/pkiclient/export-certificate) .
 
 ```powershell
 [System.Security.SecureString]$rootcertPassword = ConvertTo-SecureString -String "password" -Force -AsPlainText
@@ -42,7 +43,7 @@ Export-Certificate -Cert $rootCertPath -FilePath 'RootCA.crt'
 
 ## <a name="to-create-a-new-certificate-signed-by-a-root-authority-certificate"></a>Vytvoření nového certifikátu podepsaného certifikátem kořenové autority
 
-Následující příkaz vytvoří certifikát podepsaný `RootCA`em s názvem subjektu "SignedByRootCA", který používá privátní klíč vystavitele.
+Následující příkaz vytvoří certifikát podepsaný pomocí `RootCA` názvu subjektu "SignedByRootCA" pomocí privátního klíče vystavitele.
 
 ```powershell
 $testCert = New-SelfSignedCertificate -CertStoreLocation Cert:\LocalMachine\My -DnsName "SignedByRootCA" -KeyExportPolicy Exportable -KeyLength 2048 -KeyUsage DigitalSignature,KeyEncipherment -Signer $rootCert
@@ -112,7 +113,7 @@ Další informace o použití certifikátů v technologii WCF najdete v tématu 
 
 Nezapomeňte odstranit dočasné certifikáty kořenové autority z **důvěryhodných kořenových certifikačních autorit** a **osobní** složky tak, že kliknete pravým tlačítkem na certifikát a pak kliknete na **Odstranit**.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Práce s certifikáty](working-with-certificates.md)
 - [Postupy: Zobrazení certifikátů pomocí modulu snap-in konzoly MMC](how-to-view-certificates-with-the-mmc-snap-in.md)

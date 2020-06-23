@@ -1,5 +1,6 @@
 ---
 title: Přesměrování verzí sestavení
+description: Přesměrování odkazů na vytváření vazeb v době kompilace na různé verze sestavení .NET, sestavení třetích stran nebo vašich sestavení vlastní aplikace.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - assembly binding, redirection
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - application configuration [.NET Framework]
 - assemblies [.NET Framework], binding redirection
 ms.assetid: 88fb1a17-6ac9-4b57-8028-193aec1f727c
-ms.openlocfilehash: 0d55171e37ec056b3470d238a60bc32f2feb04fb
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 4cfd4336fb9999c996bea28eb86f1143932d4c51
+ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "81646047"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85141731"
 ---
 # <a name="redirecting-assembly-versions"></a>Přesměrování verzí sestavení
 
@@ -23,7 +24,7 @@ Můžete přesměrovat odkazy na vázání v době kompilace na sestavení .NET 
 ## <a name="assembly-unification-and-default-binding"></a>Sjednocení sestavení a výchozí vazba
  Vazby na .NET Framework sestavení jsou někdy přesměrovány pomocí procesu nazývaného *sjednocení sestavení*. .NET Framework se skládá z verze modulu CLR (Common Language Runtime) a přibližně dvou desítek .NET Framework sestavení, která tvoří knihovnu typů. Tato .NET Framework sestavení jsou zpracována modulem runtime jako jediná jednotka. Ve výchozím nastavení platí, že při spuštění aplikace jsou všechny odkazy na typy v kódu spouštěny modulem runtime směrovány na .NET Framework sestavení, která mají stejné číslo verze jako modul runtime, který je načten v procesu. Přesměrování, která se vyskytují v tomto modelu, jsou výchozím chováním modulu runtime.
 
- Například pokud vaše aplikace odkazuje na typy v oboru názvů System. XML a byla sestavena pomocí .NET Framework 4,5, obsahuje statické odkazy na sestavení System. XML, které je dodáváno s běhovou verzí 4,5. Chcete-li přesměrovat odkaz vazby tak, aby odkazoval na sestavení System. XML dodávané s .NET Framework 4, můžete informace o přesměrování umístit do konfiguračního souboru aplikace. Přesměrování vazby v konfiguračním souboru pro sestavení sjednocené .NET Framework zruší sjednocení pro toto sestavení.
+ Například pokud vaše aplikace odkazuje na typy v oboru názvů System.XML a byla sestavena pomocí .NET Framework 4,5, obsahuje statické odkazy na sestavení System.XML, které je dodáváno s modulem runtime verze 4,5. Chcete-li přesměrovat odkaz vazby tak, aby odkazoval na sestavení System.XML, které je dodáváno s .NET Framework 4, můžete informace o přesměrování umístit do konfiguračního souboru aplikace. Přesměrování vazby v konfiguračním souboru pro sestavení sjednocené .NET Framework zruší sjednocení pro toto sestavení.
 
  Kromě toho můžete chtít ručně přesměrovat vazbu sestavení pro sestavení třetích stran, pokud je k dispozici více verzí.
 
@@ -55,17 +56,17 @@ Můžete přesměrovat odkazy na vázání v době kompilace na sestavení .NET 
 
 ### <a name="relying-on-automatic-binding-redirection"></a>Spoléhá se na automatické přesměrování vazby.
 
-Když v aplikaci Visual Studio vytvoříte desktopovou aplikaci, která se zaměřuje na .NET Framework 4.5.1 nebo novější verzi, aplikace použije automatické přesměrování vazby. To znamená, že pokud dvě součásti odkazují na různé verze stejného sestavení se silným názvem, modul runtime automaticky přidá přesměrování vazby na novější verzi sestavení v souboru konfigurace výstupní aplikace (App. config). Toto přesměrování přepíše sjednocení sestavení, které by jinak mohlo probíhat. Zdrojový soubor app.config není změněn. Řekněme například, že vaše aplikace přímo odkazuje na součást mimo pásmo .NET Framework, ale používá knihovnu třetí strany, která cílí na starší verzi stejné komponenty. Při kompilaci aplikace se konfigurační soubor výstupní aplikace změní tak, aby obsahoval přesměrování vazby na novější verzi součásti. Pokud vytvoříte webovou aplikaci, obdržíte upozornění sestavení týkající se konfliktu vazby, který zase poskytuje možnost Přidat potřebné přesměrování vazby na zdrojový konfigurační soubor webu.
+Když v aplikaci Visual Studio vytvoříte desktopovou aplikaci, která se zaměřuje na .NET Framework 4.5.1 nebo novější verzi, aplikace použije automatické přesměrování vazby. To znamená, že pokud dvě součásti odkazují na různé verze stejného sestavení se silným názvem, modul runtime automaticky přidá přesměrování vazby na novější verzi sestavení v souboru konfigurace výstupní aplikace (app.config). Toto přesměrování přepíše sjednocení sestavení, které by jinak mohlo probíhat. Zdrojový soubor app.config není změněn. Řekněme například, že vaše aplikace přímo odkazuje na součást mimo pásmo .NET Framework, ale používá knihovnu třetí strany, která cílí na starší verzi stejné komponenty. Při kompilaci aplikace se konfigurační soubor výstupní aplikace změní tak, aby obsahoval přesměrování vazby na novější verzi součásti. Pokud vytvoříte webovou aplikaci, obdržíte upozornění sestavení týkající se konfliktu vazby, který zase poskytuje možnost Přidat potřebné přesměrování vazby na zdrojový konfigurační soubor webu.
 
-Pokud ručně přidáte přesměrování vazby na zdrojový soubor App. config v době kompilace, Visual Studio se pokusí sjednotit sestavení na základě přidaných přesměrování vazby. Řekněme například, že vložíte následující přesměrování vazby pro sestavení:
+Pokud ručně přidáte přesměrování vazby do zdrojového app.config souboru v době kompilace, Visual Studio se pokusí sjednotit sestavení na základě přidaných přesměrování vazby. Řekněme například, že vložíte následující přesměrování vazby pro sestavení:
 
 `<bindingRedirect oldVersion="3.0.0.0" newVersion="2.0.0.0" />`
 
-Pokud jiný projekt ve vaší aplikaci odkazuje na verzi 1.0.0.0 stejného sestavení, automatické přesměrování vazby přidá následující položku do výstupního souboru App. config tak, aby aplikace byla sjednocená na 2.0.0.0 verze tohoto sestavení:
+Pokud jiný projekt ve vaší aplikaci odkazuje na verzi 1.0.0.0 stejného sestavení, automatické přesměrování vazby přidá následující položku do výstupního app.config souboru tak, aby aplikace byla sjednocená na 2.0.0.0 verze tohoto sestavení:
 
 `<bindingRedirect oldVersion="1.0.0.0" newVersion="2.0.0.0" />`
 
-Pokud vaše aplikace cílí na starší verze .NET Framework, můžete povolit automatické přesměrování vazby. Toto výchozí chování můžete přepsat poskytnutím informací o přesměrování vazby v souboru App. config pro jakékoli sestavení nebo vypnutím funkce přesměrování vazby. Informace o tom, jak tuto funkci zapnout nebo vypnout, najdete v tématu [Postup: povolení a zákaz automatického přesměrování vazby](how-to-enable-and-disable-automatic-binding-redirection.md).
+Pokud vaše aplikace cílí na starší verze .NET Framework, můžete povolit automatické přesměrování vazby. Toto výchozí chování můžete přepsat poskytnutím informací o přesměrování vazby v souboru app.config pro jakékoli sestavení nebo vypnutím funkce přesměrování vazby. Informace o tom, jak tuto funkci zapnout nebo vypnout, najdete v tématu [Postup: povolení a zákaz automatického přesměrování vazby](how-to-enable-and-disable-automatic-binding-redirection.md).
 
 <a name="bypass_PP"></a>
 ### <a name="bypassing-publisher-policy"></a>Obejití zásad vydavatele

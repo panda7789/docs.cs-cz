@@ -1,17 +1,18 @@
 ---
 title: 'Postupy: Používání poskytovatele členství ASP.NET'
+description: Přečtěte si, jak poskytovatel členství ASP.NET podporuje webové stránky, které uživatelům umožňují vytvořit uživatelské jméno a heslo pro přístup bez použití doménového účtu systému Windows.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - WCF and ASP.NET
 - WCF, authorization
 - WCF, security
 ms.assetid: 322c56e0-938f-4f19-a981-7b6530045b90
-ms.openlocfilehash: 840e4a5d365f2adbaf335c1061a580665a39824d
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 6d527993dcf1fc5d5cd39bf22c3e772baf60e62f
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84595320"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246724"
 ---
 # <a name="how-to-use-the-aspnet-membership-provider"></a>Postupy: Používání poskytovatele členství ASP.NET
 
@@ -28,7 +29,7 @@ Vývojáři Windows Communication Foundation (WCF) můžou využít výhod těch
 
 ### <a name="to-configure-the-membership-provider"></a>Konfigurace poskytovatele členství
 
-1. V souboru Web. config v rámci `system.web` prvku < > vytvořte < `membership` > element.
+1. V souboru Web.config v rámci `system.web` elementu <> vytvořte `membership` prvek <>.
 
 2. V rámci `<membership>` elementu vytvořte `<providers>` element.
 

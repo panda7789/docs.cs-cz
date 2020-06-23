@@ -1,51 +1,52 @@
 ---
 title: Duplexní služby
+description: Naučte se, jak vytvořit duplexní kontrakt služby ve službě WCF, který umožňuje oběma koncovým bodům posílat zprávy mezi sebou prostřednictvím kanálu vytvořeného klientem.
 ms.date: 05/09/2018
 dev_langs:
 - csharp
 - vb
 ms.assetid: 396b875a-d203-4ebe-a3a1-6a330d962e95
-ms.openlocfilehash: 4fd8b679dcd4ac9efce5fa915118736b15206068
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: a43bb63a0ccf1a34b79dce755c19f7ed4cb6c16c
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834772"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247348"
 ---
 # <a name="duplex-services"></a>Duplexní služby
 
 Duplexní kontrakt služby je vzor výměny zpráv, ve kterém oba koncové body mohou odesílat zprávy jiným způsobem nezávisle. Duplexní služba, proto může odesílat zprávy zpátky do koncového bodu klienta a poskytovat tak chování podobné událostem. Duplexní komunikace probíhá při připojení klienta ke službě a poskytování služby s kanálem, ve kterém služba může odesílat zprávy zpět klientovi. Všimněte si, že chování funkcí duplexní služby funguje pouze v rámci relace.
 
-Pro vytvoření duplexního kontraktu vytvoříte dvojici rozhraní. První je rozhraní kontraktu služby, které popisuje operace, které může klient vyvolat. Tento kontrakt služby musí ve vlastnosti <xref:System.ServiceModel.ServiceContractAttribute.CallbackContract%2A?displayProperty=nameWithType> zadat *kontrakt zpětného volání* . Kontrakt zpětného volání je rozhraní, které definuje operace, které může služba volat na koncový bod klienta. Duplexní kontrakt nevyžaduje relaci, i když se systémem zajištěné duplexní vazby využívají.
+Pro vytvoření duplexního kontraktu vytvoříte dvojici rozhraní. První je rozhraní kontraktu služby, které popisuje operace, které může klient vyvolat. Tento kontrakt služby musí ve vlastnosti zadat *kontrakt zpětného volání* <xref:System.ServiceModel.ServiceContractAttribute.CallbackContract%2A?displayProperty=nameWithType> . Kontrakt zpětného volání je rozhraní, které definuje operace, které může služba volat na koncový bod klienta. Duplexní kontrakt nevyžaduje relaci, i když se systémem zajištěné duplexní vazby využívají.
 
 Následuje příklad duplexního kontraktu.
 
 [!code-csharp[c_DuplexServices#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_duplexservices/cs/service.cs#0)]
 [!code-vb[c_DuplexServices#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_duplexservices/vb/service.vb#0)]
 
-Třída `CalculatorService` implementuje primární rozhraní `ICalculatorDuplex`. Služba používá režim instance <xref:System.ServiceModel.InstanceContextMode.PerSession> k udržení výsledku pro každou relaci. Soukromá vlastnost s názvem `Callback` přistupuje ke kanálu zpětného volání klientovi. Služba používá zpětné volání pro posílání zpráv zpátky do klienta prostřednictvím rozhraní zpětného volání, jak je znázorněno v následujícím ukázkovém kódu.
+`CalculatorService`Třída implementuje primární `ICalculatorDuplex` rozhraní. Služba používá <xref:System.ServiceModel.InstanceContextMode.PerSession> režim instance k uchování výsledku pro každou relaci. Soukromá vlastnost s názvem `Callback` přistupuje k kanálu zpětného volání klientovi. Služba používá zpětné volání pro posílání zpráv zpátky do klienta prostřednictvím rozhraní zpětného volání, jak je znázorněno v následujícím ukázkovém kódu.
 
 [!code-csharp[c_DuplexServices#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_duplexservices/cs/service.cs#1)]
 [!code-vb[c_DuplexServices#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_duplexservices/vb/service.vb#1)]
 
-Klient musí poskytnout třídu, která implementuje rozhraní zpětného volání pro oboustrannou smlouvu pro příjem zpráv ze služby. Následující vzorový kód ukazuje třídu `CallbackHandler`, která implementuje rozhraní `ICalculatorDuplexCallback`.
+Klient musí poskytnout třídu, která implementuje rozhraní zpětného volání pro oboustrannou smlouvu pro příjem zpráv ze služby. Následující vzorový kód ukazuje `CallbackHandler` třídu, která implementuje `ICalculatorDuplexCallback` rozhraní.
 
 [!code-csharp[c_DuplexServices#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_duplexservices/cs/client.cs#2)]
 [!code-vb[c_DuplexServices#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_duplexservices/vb/client.vb#2)]
 
-Klient služby WCF, který je generován pro duplexní smlouvu, vyžaduje, aby při konstrukci poskytoval třídu <xref:System.ServiceModel.InstanceContext>. Tato třída <xref:System.ServiceModel.InstanceContext> slouží jako web pro objekt, který implementuje rozhraní zpětného volání a zpracovává zprávy odesílané zpět ze služby. Třída <xref:System.ServiceModel.InstanceContext> je vytvořena s instancí třídy `CallbackHandler`. Tento objekt zpracovává zprávy odesílané ze služby klientovi na rozhraní zpětného volání.
+Klient služby WCF, který je generován pro duplexní smlouvu, vyžaduje, <xref:System.ServiceModel.InstanceContext> aby byla při konstrukci poskytnuta třída. Tato <xref:System.ServiceModel.InstanceContext> Třída se používá jako web pro objekt, který implementuje rozhraní zpětného volání a zpracovává zprávy odesílané zpět ze služby. <xref:System.ServiceModel.InstanceContext>Třída je vytvořena s instancí `CallbackHandler` třídy. Tento objekt zpracovává zprávy odesílané ze služby klientovi na rozhraní zpětného volání.
 
 [!code-csharp[c_DuplexServices#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_duplexservices/cs/client.cs#3)]
 [!code-vb[c_DuplexServices#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_duplexservices/vb/client.vb#3)]
 
-Aby bylo možné vytvořit vazbu, která podporuje komunikaci relace i duplexní komunikaci, musí být nastavena konfigurace služby. Element `wsDualHttpBinding` podporuje komunikaci relací a umožňuje duplexní komunikaci tím, že poskytuje duální připojení HTTP, jedno pro každý směr.
+Aby bylo možné vytvořit vazbu, která podporuje komunikaci relace i duplexní komunikaci, musí být nastavena konfigurace služby. `wsDualHttpBinding`Element podporuje komunikaci relací a umožňuje duplexní komunikaci tím, že poskytuje duální připojení HTTP, jedno pro každý směr.
 
 Na straně klienta je nutné nakonfigurovat adresu, kterou může server použít pro připojení ke klientovi, jak je znázorněno v následující ukázkové konfiguraci.
 
 > [!NOTE]
-> Neduplexní klienti, kteří se nedaří ověřit pomocí zabezpečené konverzace, obvykle vyvolají <xref:System.ServiceModel.Security.MessageSecurityException>. Pokud však dojde k ověření duplexního klienta, který používá zabezpečenou konverzaci, klient obdrží místo toho <xref:System.TimeoutException>.
+> Neduplexní klienti, kteří se nedaří ověřit pomocí zabezpečené konverzace, obvykle vyvolají <xref:System.ServiceModel.Security.MessageSecurityException> . Pokud však dojde k ověření duplexního klienta, který používá zabezpečenou konverzaci, klient obdrží <xref:System.TimeoutException> místo toho.
 
-Pokud vytvoříte klienta nebo službu pomocí elementu `WSHttpBinding` a nezahrnete koncový bod zpětného volání klienta, zobrazí se následující chyba.
+Pokud vytvoříte klienta nebo službu pomocí `WSHttpBinding` elementu a nezahrnete koncový bod zpětného volání klienta, zobrazí se následující chyba.
 
 ```console
 HTTP could not register URL
@@ -87,9 +88,9 @@ Následující vzorový kód ukazuje, jak zadat adresu koncového bodu klienta v
 ```
 
 > [!WARNING]
-> Duplexní model se automaticky nerozpozná, když služba nebo klient ukončí svůj kanál. Takže pokud se klient neočekávaně ukončí, služba se ve výchozím nastavení nebude informovat nebo pokud se služba neočekávaně ukončí, klient nebude upozorněn. Pokud používáte službu, která je odpojena, je vyvolána výjimka <xref:System.ServiceModel.CommunicationException>. Klienti a služby můžou implementovat svůj vlastní protokol, aby si je vzájemně oznámili. Další informace o zpracování chyb naleznete v tématu [zpracování chyb WCF](../wcf-error-handling.md).
+> Duplexní model se automaticky nerozpozná, když služba nebo klient ukončí svůj kanál. Takže pokud se klient neočekávaně ukončí, služba se ve výchozím nastavení nebude informovat nebo pokud se služba neočekávaně ukončí, klient nebude upozorněn. Pokud používáte službu, která je odpojena, <xref:System.ServiceModel.CommunicationException> vyvolá se výjimka. Klienti a služby můžou implementovat svůj vlastní protokol, aby si je vzájemně oznámili. Další informace o zpracování chyb naleznete v tématu [zpracování chyb WCF](../wcf-error-handling.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Duplex](../samples/duplex.md)
 - [Nastavení chování klienta za běhu](../specifying-client-run-time-behavior.md)

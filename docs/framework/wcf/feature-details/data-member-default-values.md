@@ -1,5 +1,6 @@
 ---
 title: Vychozí hodnoty datových členů
+description: Naučte se, jak vynechat datový člen ze serializovaných dat, když má .NET Framework výchozí hodnotu. Služba WCF může zvýšit výkon tím, že neserializace výchozí.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - data members [WCF], default values
 - data members [WCF]
 ms.assetid: 53a3b505-4b27-444b-b079-0eb84a97cfd8
-ms.openlocfilehash: e4eaaec880ecfcff24d9d5b4e8347a84738e070b
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 97946a6b7da14efdcb5229b4cc5d0799eb8d7723
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84593475"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247374"
 ---
 # <a name="data-member-default-values"></a>Vychozí hodnoty datových členů
 V .NET Framework typy mají koncept *výchozích hodnot*. Například pro libovolný typ odkazu je výchozí hodnota `null` a pro typ integer je nula. Občas je žádoucí vynechat datový člen ze serializovaných dat, když je nastaven na jeho výchozí hodnotu. Vzhledem k tomu, že má člen výchozí hodnotu, není nutné serializovat skutečnou hodnotu; Tato výhoda má vliv na výkon.  

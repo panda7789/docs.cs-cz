@@ -1,5 +1,6 @@
 ---
 title: Známé typy kontraktů dat
+description: Zjistěte, jak model kontraktu dat používá třídu KnownTypeAttribute k určení typů, které mají být zahrnuty během deserializace v rámci služby WCF.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - KnownTypeAttribute [WCF]
 - KnownTypes [WCF]
 ms.assetid: 1a0baea1-27b7-470d-9136-5bbad86c4337
-ms.openlocfilehash: b7d78def4d656dea59af5400c7ed7deeef28cd0c
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 52b0caaaac976893dcf5ef5c228ccc4f53bdbe9e
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597446"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247478"
 ---
 # <a name="data-contract-known-types"></a>Známé typy kontraktů dat
 <xref:System.Runtime.Serialization.KnownTypeAttribute>Třída umožňuje zadat předem typy, které by měly být zahrnuty za účelem posouzení během deserializace. Pracovní příklad naleznete v příkladu [známých typů](../samples/known-types.md) .  
@@ -77,7 +78,7 @@ ms.locfileid: "84597446"
  V následujícím příkladu kontrakt dat uchovává číslo a operaci, která se má provést na daném čísle. `Numbers`Datový člen může být celé číslo, pole celých čísel nebo <xref:System.Collections.Generic.List%601> , které obsahuje celá čísla.  
   
 > [!CAUTION]
-> To bude fungovat jenom na straně klienta, pokud SVCUTIL. K vygenerování proxy serveru WCF se používá EXE. Svcutil. EXE načítá metadata ze služby, včetně všech známých typů. Bez těchto informací klient nebude moci deserializovat typy.  
+> To bude fungovat jenom na straně klienta, pokud se k vygenerování proxy serveru WCF používá SVCUTIL.EXE. SVCUTIL.EXE načítá metadata ze služby, včetně všech známých typů. Bez těchto informací klient nebude moci deserializovat typy.  
   
  [!code-csharp[C_KnownTypeAttribute#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_knowntypeattribute/cs/source.cs#6)]
  [!code-vb[C_KnownTypeAttribute#6](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_knowntypeattribute/vb/source.vb#6)]  

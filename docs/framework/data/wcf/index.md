@@ -1,22 +1,23 @@
 ---
 title: WCF Data Services 4.5
+description: Přečtěte si o WCF Data Services, .NET Framework komponentě, která podporuje služby pro vystavení a využití dat pomocí sémantiky REST.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Astoria
 - WCF Data Services, getting started
 ms.assetid: 73d2bec3-7c92-4110-b905-11bb0462357a
-ms.openlocfilehash: aace683b1a105445b5a3ba3de0a6a671859588b5
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.openlocfilehash: ca6b196e8c910f97ead6d1df5b6c0dd6c49c68a4
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75937446"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247750"
 ---
 # <a name="wcf-data-services-45"></a>WCF Data Services 4.5
 
 WCF Data Services (dříve označované jako "ADO.NET Data Services") je součástí .NET Framework, která umožňuje vytvářet služby, které používají protokol OData (Open Data Protocol) k vystavování a využívání dat prostřednictvím webu nebo intranetu, a to pomocí sémantiky opětovného [přenosu stavu (REST)](https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm). OData zpřístupňuje data jako prostředky, které jsou adresovatelné pomocí identifikátorů URI. Data se získávají a mění pomocí standardních příkazů HTTP GET, PUT, POST a DELETE. OData používá konvence vztahů mezi entitami [model EDM (Entity Data Model)](../adonet/entity-data-model.md) k vystavení prostředků jako sady entit, které souvisejí s přidruženími.
 
-WCF Data Services používá protokol OData k adresování a aktualizaci prostředků. Tímto způsobem můžete získat přístup k těmto službám z libovolného klienta, který podporuje OData. OData vám umožňuje vyžádat a zapsat data do prostředků pomocí známých formátů přenosu: Atom, sady standardů pro výměnu a aktualizaci dat jako XML a JavaScript Object Notation (JSON). Formát výměny dat založený na textu se v AJAX široce používá. vyrovnání.
+WCF Data Services používá protokol OData k adresování a aktualizaci prostředků. Tímto způsobem můžete získat přístup k těmto službám z libovolného klienta, který podporuje OData. OData umožňuje vyžádat a zapsat data do prostředků pomocí známých formátů přenosu: Atom, sady standardů pro výměnu a aktualizaci dat ve formátu XML a JavaScript Object Notation (JSON), textový formát výměny dat založený na rozsáhlých aplikacích v AJAX.
 
 WCF Data Services můžou vystavovat data, která pocházejí z různých zdrojů, jako kanály OData. Nástroje sady Visual Studio usnadňují vytvoření služby založené na protokolu OData pomocí Entity Framework datového modelu ADO.NET. Můžete také vytvořit kanály OData na základě tříd modulu CLR (Common Language Runtime) a dokonce i pozdě vázaných nebo netypových dat.
 
@@ -28,13 +29,13 @@ V závislosti na vašich zájmech zvažte, jak začít s WCF Data Services v jed
 
 Chci se pustit přímo v...
 
-- [Rychlý start](quickstart-wcf-data-services.md)
+- [Rychlé zprovoznění](quickstart-wcf-data-services.md)
 
 - [Začínáme](getting-started-with-wcf-data-services.md)
 
 Pouze zobrazit kód...
 
-- [Rychlý start](quickstart-wcf-data-services.md)
+- [Rychlé zprovoznění](quickstart-wcf-data-services.md)
 
 - [Postupy: Provádění dotazů v datové službě](how-to-execute-data-service-queries-wcf-data-services.md)
 
@@ -77,7 +78,7 @@ Pořád ještě potřebuji nějaké další informace...
 
 - [Blog týmu WCF Data Services](https://docs.microsoft.com/archive/blogs/astoriateam/)
 
-- [Prostředky](wcf-data-services-resources.md)
+- [Zdroje informací](wcf-data-services-resources.md)
 
 ## <a name="in-this-section"></a>V tomto oddílu
 
@@ -101,6 +102,6 @@ Popisuje, jak vytvořit a nakonfigurovat datovou službu, která zveřejňuje ka
 
 Popisuje použití klientských knihoven ke využívání kanálů OData z klientské aplikace .NET Framework.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Převádění stavu reprezentace (REST)](https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm)

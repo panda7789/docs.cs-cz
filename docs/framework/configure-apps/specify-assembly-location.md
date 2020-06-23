@@ -1,17 +1,18 @@
 ---
 title: Určení umístění sestavení
+description: Viz jak zadat umístění sestavení v rozhraní .NET pomocí elementu codeBase nebo prvku zjišťování v konfiguračním souboru XML.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - configuration [.NET Framework], applications
 - application configuration [.NET Framework]
 - assemblies [.NET Framework], specifying location
 ms.assetid: 1cb92bd7-6bab-44cf-8fd3-36303ce84fea
-ms.openlocfilehash: ead69d1e850050214c15295134c06ff6f66e9760
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: e14bdc12598d0aa6cdd2789b09a04ab8ed134169
+ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "81646035"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85141701"
 ---
 # <a name="specifying-an-assemblys-location"></a>Určení umístění sestavení
 Existují dva způsoby, jak zadat umístění sestavení:  

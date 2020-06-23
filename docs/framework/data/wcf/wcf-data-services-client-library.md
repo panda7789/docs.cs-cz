@@ -1,22 +1,23 @@
 ---
 title: Klientská knihovna pro WCF Data Services
+description: Naučte se používat klientské knihovny WCF Data Services pro přístup k datům z klientské aplikace .NET Framework a jejich změny.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - WCF Data Services, client library
 - DataServiceQuery class, about DataServiceQuery class
 - DataServiceContext class, about DataServiceContext class
 ms.assetid: 21075e50-8917-413e-a8ea-35a0f6e65aa5
-ms.openlocfilehash: 556482e3e43460016162dfbdd9b31f9a68c0af46
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.openlocfilehash: 58d038d5c2ac4973c2b41f4d49c1746f48f2a2fb
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75900873"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247737"
 ---
 # <a name="wcf-data-services-client-library"></a>Klientská knihovna pro WCF Data Services
 Jakákoli aplikace může komunikovat s datovou službou založenou na protokolu OData (Open Data Protocol), pokud může odeslat požadavek HTTP a zpracovat datový kanál OData, který vrátí datová služba. Tato vzájemná funkční spolupráce umožňuje přístup ke službám založeným na standardu OData z široké škály aplikací s podporou webu. WCF Data Services obsahuje klientské knihovny, které poskytují bohatší programovací prostředí při využívání kanálů OData z .NET Framework nebo aplikací založených na programu Silverlight.  
   
- Dvě hlavní třídy klientské knihovny jsou třída <xref:System.Data.Services.Client.DataServiceContext> a třída <xref:System.Data.Services.Client.DataServiceQuery%601>. Třída <xref:System.Data.Services.Client.DataServiceContext> zapouzdřuje operace, které jsou podporovány pro zadanou datovou službu. I když služba OData je Bezstavová, kontext není. Proto můžete použít třídu <xref:System.Data.Services.Client.DataServiceContext> k údržbě stavu klienta mezi interakcemi s datovou službou, aby bylo možné podporovat funkce, jako je například Správa změn. Tato třída také spravuje identity a sleduje změny. Třída <xref:System.Data.Services.Client.DataServiceQuery%601> představuje dotaz na konkrétní sadu entit.  
+ Dvě hlavní třídy klientské knihovny jsou <xref:System.Data.Services.Client.DataServiceContext> třídy a <xref:System.Data.Services.Client.DataServiceQuery%601> třídy. <xref:System.Data.Services.Client.DataServiceContext>Třída zapouzdřuje operace, které jsou podporovány pro zadanou datovou službu. I když služba OData je Bezstavová, kontext není. Proto můžete použít <xref:System.Data.Services.Client.DataServiceContext> třídu k údržbě stavu klienta mezi interakcemi s datovou službou, aby bylo možné podporovat funkce, jako je například Správa změn. Tato třída také spravuje identity a sleduje změny. <xref:System.Data.Services.Client.DataServiceQuery%601>Třída reprezentuje dotaz na konkrétní sadu entit.  
   
  Tato část popisuje, jak používat klientské knihovny pro přístup k datům z klientské aplikace .NET Framework a jejich změně. Další informace o použití klientské knihovny WCF Data Services s aplikací založenou na programu Silverlight naleznete v tématu [WCF Data Services (Silverlight)](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc838234(v%3dvs.95)). K dispozici jsou další klientské knihovny, které umožňují využívat informační kanál OData v jiných typech aplikací. Další informace o sadě OData SDK naleznete v tématu [sada OData SDK – vzorový kód](https://www.odata.org/ecosystem/#sdk).
   
@@ -51,7 +52,7 @@ Jakákoli aplikace může komunikovat s datovou službou založenou na protokolu
  [Práce s binárními daty](working-with-binary-data-wcf-data-services.md)  
  Popisuje způsob přístupu a změny binárních dat vrácených datovou službou jako datový proud.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Definování datových služeb WCF Data Services](defining-wcf-data-services.md)
 - [Začínáme](getting-started-with-wcf-data-services.md)

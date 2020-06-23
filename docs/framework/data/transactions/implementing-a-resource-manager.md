@@ -1,20 +1,21 @@
 ---
 title: Implementace správce prostředků
+description: Implementace správce prostředků v rozhraní .NET. Správce prostředků spravuje prostředky používané v transakcích. Správce transakcí koordinuje akce správce prostředků.
 ms.date: 03/30/2017
 ms.assetid: d5c153f6-4419-49e3-a5f1-a50ae4c81bf3
-ms.openlocfilehash: f64a729f49d546dd16c25a2be1f9bd64a2ca8f63
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: bf40c6eaee35a5a548c6de4a286e46c4d4a66aca
+ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70205946"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85141846"
 ---
 # <a name="implementing-a-resource-manager"></a>Implementace správce prostředků
 Každý prostředek, který používá v transakci spravuje správce prostředků, jejichž akce jsou koordinovaný správcem transakcí. Správci prostředků pracují ve spolupráci se správcem transakcí k poskytování aplikací s zárukou atomicitu a izolaci. Microsoft SQL Server, fronty zpráv trvalý, tabulky hodnot hash v paměti jsou všechny příklady správci prostředků.  
   
  Správce prostředků spravuje trvalé nebo přechodné data. Životnost (nebo naopak nestálosti) materiálu manager odkazuje na tom, zda správce prostředků podporuje obnovení po selhání. Pokud správce prostředků podporuje obnovení po selhání, přenese data do trvalého úložiště během fáze 1 (připravit) tak, pokud správce prostředků nebude fungovat, můžete zařadit do transakce při obnovení, znovu a správné činnostem podle oznámení obdržená z správce transakcí. Obecně platí správci těkavých prostředků spravovat těkavých prostředků, jako jsou například struktury dat v paměti (například v paměti zpracováván jako transakce hashtable) a správci trvalý prostředků spravovat prostředky, které mají více trvalé záložní úložiště (například databáze jehož záložní úložiště je disku).  
   
- Chcete-li, aby zdroj k účasti v transakci musí zařadit do transakce. Třída definuje sadu metod, jejichž názvy začínají na zařazení, které tuto funkci poskytují. <xref:System.Transactions.Transaction> Různé metody **zařazení** odpovídají různým typům zařazení, které může mít správce prostředků. Konkrétně používají <xref:System.Transactions.Transaction.EnlistVolatile%2A> metody pro těkavých materiály a <xref:System.Transactions.Transaction.EnlistDurable%2A> metody pro trvalý zdroje. Pro jednoduchost, jakmile se rozhodnete, zda se má použít <xref:System.Transactions.Transaction.EnlistDurable%2A> nebo <xref:System.Transactions.Transaction.EnlistVolatile%2A> metoda založená na podporu své prostředků životnost, by měl zařazení materiálu k účasti na dvě fáze potvrzení (2PC) implementací <xref:System.Transactions.IEnlistmentNotification> rozhraní pro váš správce prostředků. Další informace o 2PC naleznete v tématu [potvrzení transakce v jedné fázi a několika fázích](committing-a-transaction-in-single-phase-and-multi-phase.md).  
+ Chcete-li, aby zdroj k účasti v transakci musí zařadit do transakce. <xref:System.Transactions.Transaction>Třída definuje sadu metod, jejichž názvy začínají na **zařazení** , které tuto funkci poskytují. Různé metody **zařazení** odpovídají různým typům zařazení, které může mít správce prostředků. Konkrétně používají <xref:System.Transactions.Transaction.EnlistVolatile%2A> metody pro těkavých materiály a <xref:System.Transactions.Transaction.EnlistDurable%2A> metody pro trvalý zdroje. Pro jednoduchost, jakmile se rozhodnete, zda se má použít <xref:System.Transactions.Transaction.EnlistDurable%2A> nebo <xref:System.Transactions.Transaction.EnlistVolatile%2A> metoda založená na podporu své prostředků životnost, by měl zařazení materiálu k účasti na dvě fáze potvrzení (2PC) implementací <xref:System.Transactions.IEnlistmentNotification> rozhraní pro váš správce prostředků. Další informace o 2PC naleznete v tématu [potvrzení transakce v jedné fázi a několika fázích](committing-a-transaction-in-single-phase-and-multi-phase.md).  
   
  Pomocí zapsání správce prostředků zajišťuje, že ji zpětná volání získá ze Správce transakcí při potvrzení nebo přerušení transakce. Existuje jedna instance <xref:System.Transactions.IEnlistmentNotification> za zařazení. Obvykle je jeden zařazení na transakci, ale můžete zvolit správce prostředků k zařazení vícekrát v rámci jedné transakce.  
   

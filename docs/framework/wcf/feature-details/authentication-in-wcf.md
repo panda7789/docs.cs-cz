@@ -1,16 +1,17 @@
 ---
 title: Ověřování ve WCF
+description: Přečtěte si o několika mechanismech služby WCF, které poskytují ověřování, jako je ověřování systému Windows, certifikáty X. 509 a uživatelské jméno a heslo.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - authentication [WCF]
 - security [WCF], authentication
 ms.assetid: 9254d873-843d-4c6e-bea4-8184ac3e44f4
-ms.openlocfilehash: b513c9713bd2c04e125915d1a0a87c86ce249666
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 4c3348cfb84b8571dc1f24b774ffcd691aaa5001
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597641"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247517"
 ---
 # <a name="authentication-in-wcf"></a>Ověřování ve WCF
 V následujících tématech najdete řadu různých mechanismů v Windows Communication Foundation (WCF), které poskytují ověřování, například ověřování systému Windows, certifikáty X. 509 a uživatelské jméno a hesla.  

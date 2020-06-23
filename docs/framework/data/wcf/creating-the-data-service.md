@@ -1,16 +1,17 @@
 ---
 title: Vytvoření datové služby WCF v aplikaci Visual Studio
+description: Naučte se, jak vytvořit ukázkovou datovou službu, která používá WCF Data Services k vystavení datového kanálu OData na základě ukázkové databáze.
 ms.date: 08/24/2018
 dev_langs:
 - csharp
 - vb
 ms.assetid: 34d1d971-5e18-4c22-9bf6-d3612e27ea59
-ms.openlocfilehash: 72e3b35465968674a20aa48262d3425a2190ff74
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: 739cb6971209792724a2e939ca4f4821d5879c8c
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74802276"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247788"
 ---
 # <a name="create-the-data-service"></a>Vytvoření datové služby
 
@@ -26,11 +27,11 @@ V tomto tématu vytvoříte ukázkovou datovou službu, která používá WCF Da
 
 ## <a name="create-the-aspnet-web-app"></a>Vytvoření webové aplikace v ASP.NET
 
-1. V aplikaci Visual Studio v nabídce **soubor** vyberte **Nový** > **projekt**.
+1. V aplikaci Visual Studio v nabídce **soubor** vyberte **Nový**  >  **projekt**.
 
 1. V dialogovém okně **Nový projekt** v části buď Visual Basic nebo Visual C# vyberte kategorii **Web** a pak vyberte **ASP.NET webová aplikace**.
 
-1. Jako název projektu zadejte `NorthwindService` a pak vyberte **OK**.
+1. `NorthwindService`Jako název projektu zadejte a pak vyberte **OK**.
 
 1. V dialogovém okně **Nová webová aplikace ASP.NET** vyberte **prázdné** a pak vyberte **OK**.
 
@@ -38,15 +39,15 @@ V tomto tématu vytvoříte ukázkovou datovou službu, která používá WCF Da
 
     1. V **Průzkumník řešení**klikněte pravým tlačítkem na projekt ASP.NET, který jste právě vytvořili, a pak zvolte **vlastnosti**.
 
-    2. Vyberte kartu **Web** a nastavte hodnotu textového pole **konkrétní port** na `12345`.
+    2. Vyberte kartu **Web** a nastavte hodnotu textového pole **konkrétní port** na `12345` .
 
 ## <a name="define-the-data-model"></a>Definování datového modelu
 
-1. V **Průzkumník řešení**klikněte pravým tlačítkem myši na název projektu ASP.NET a potom klikněte na **Přidat** > **Nová položka**.
+1. V **Průzkumník řešení**klikněte pravým tlačítkem na název projektu ASP.NET a pak klikněte na **Přidat**  >  **novou položku**.
 
-2. V dialogovém okně **Přidat novou položku** vyberte kategorii **dat** a pak vyberte **ADO.NET model EDM (Entity Data Model)** .
+2. V dialogovém okně **Přidat novou položku** vyberte kategorii **dat** a pak vyberte **ADO.NET model EDM (Entity Data Model)**.
 
-3. Jako název datového modelu zadejte `Northwind.edmx`.
+3. Jako název datového modelu zadejte `Northwind.edmx` .
 
 4. V **průvodci model EDM (Entity Data Model)** vyberte **EF Designer z databáze**a pak klikněte na **Další**.
 
@@ -54,7 +55,7 @@ V tomto tématu vytvoříte ukázkovou datovou službu, která používá WCF Da
 
     - Pokud nemáte připojení databáze již nakonfigurováno, klikněte na tlačítko **nové připojení** a vytvořte nové připojení. Další informace naleznete v tématu [How to: Create Connections to SQL Server databases](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/s4yys16a(v=vs.90)). Tato instance SQL Server musí mít připojenou ukázkovou databázi Northwind.
 
-         \- nebo –
+         \-ani
 
     - Pokud máte připojení k databázi, které je už nakonfigurované pro připojení k databázi Northwind, vyberte toto připojení ze seznamu připojení.
 
@@ -64,7 +65,7 @@ V tomto tématu vytvoříte ukázkovou datovou službu, která používá WCF Da
 
 ## <a name="create-the-wcf-data-service"></a>Vytvoření datové služby WCF
 
-1. V **Průzkumník řešení**klikněte pravým tlačítkem na projekt ASP.NET a pak zvolte **Přidat** > **novou položku**.
+1. V **Průzkumník řešení**klikněte pravým tlačítkem myši na projekt ASP.NET a pak zvolte možnost **Přidat**  >  **novou položku**.
 
 2. V dialogovém okně **Přidat novou položku** vyberte v kategorii **Web** šablonu položky **datové služby WCF** .
 
@@ -73,18 +74,18 @@ V tomto tématu vytvoříte ukázkovou datovou službu, která používá WCF Da
    > [!NOTE]
    > Šablona **WCF Data Service** je k dispozici v aplikaci visual Studio 2015, ale ne v aplikaci visual Studio 2017 nebo novější.
 
-3. Jako název služby zadejte `Northwind`.
+3. Jako název služby zadejte `Northwind` .
 
      Visual Studio vytvoří kód XML a soubory kódu pro novou službu. Ve výchozím nastavení se otevře okno Editor kódu. V **Průzkumník řešení**služba má název Northwind s příponou *. svc.cs* nebo *. svc. vb*.
 
-4. V kódu pro datovou službu nahraďte komentář `/* TODO: put your data source class name here */` v definici třídy definující datovou službu s typem, který je kontejnerem entit datového modelu, který je v tomto případě `NorthwindEntities`. Definice třídy by měla vypadat takto:
+4. V kódu pro datovou službu nahraďte komentář `/* TODO: put your data source class name here */` v definici třídy definující datovou službu typem, který je kontejnerem entit datového modelu, který je v tomto případě `NorthwindEntities` . Definice třídy by měla vypadat takto:
 
      [!code-csharp[Astoria Quickstart Service#ServiceDefinition](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_quickstart_service/cs/northwind.svc.cs#servicedefinition)]
      [!code-vb[Astoria Quickstart Service#ServiceDefinition](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_quickstart_service/vb/northwind.svc.vb#servicedefinition)]
 
 ## <a name="enable-access-to-data-service-resources"></a>Povolit přístup k prostředkům datové služby
 
-1. V kódu pro datovou službu nahraďte zástupný kód ve funkci `InitializeService` následujícím způsobem:
+1. V kódu pro datovou službu nahraďte zástupný kód ve `InitializeService` funkci následujícím textem:
 
      [!code-csharp[Astoria Quickstart Service#AllReadConfig](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_quickstart_service/cs/northwind.svc.cs#allreadconfig)]
      [!code-vb[Astoria Quickstart Service#AllReadConfig](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_quickstart_service/vb/northwind.svc.vb#allreadconfig)]
@@ -101,6 +102,6 @@ V tomto tématu vytvoříte ukázkovou datovou službu, která používá WCF Da
 > [!div class="nextstepaction"]
 > [Přístup ke službě z webového prohlížeče](accessing-the-service-from-a-web-browser-wcf-data-services-quickstart.md)
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [ADO.NET model EDM (Entity Data Model) nástroje](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399249(v=vs.100))

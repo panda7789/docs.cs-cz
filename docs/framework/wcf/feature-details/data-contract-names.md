@@ -1,5 +1,6 @@
 ---
 title: Názvy kontraktu dat
+description: Zjistěte kontrakt dat a pravidla pro pojmenovávání členů a výchozí chování infrastruktury WCF, které podporují komunikaci pomocí ekvivalentních kontraktů dat.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,78 +8,78 @@ dev_langs:
 helpviewer_keywords:
 - data contracts [WCF], naming
 ms.assetid: 31f87e6c-247b-48f5-8e94-b9e1e33d8d09
-ms.openlocfilehash: 16a42a2808104a77e56e93564a679dfc578e73f6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 85c533d683558520d46f259db0bdb34dcb1214c9
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61857272"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247400"
 ---
 # <a name="data-contract-names"></a>Názvy kontraktu dat
 
-Stejné typy někdy nesdílejí klienta a služby. Stále, můžete předat data do sebe navzájem kontraktů dat jsou ekvivalentní na obou stranách. [Ekvivalence kontraktů dat](data-contract-equivalence.md) vychází kontraktu dat a názvy datových členů, a proto poskytuje mechanismus pro mapování typů a členů na tyto názvy. Toto téma popisuje pravidla pro vytváření názvů kontraktů dat, stejně jako výchozí chování infrastruktury Windows Communication Foundation (WCF) při vytváření názvů.
+V některých případech klient a služba nesdílejí stejné typy. Mohou i nadále předávat data, dokud jsou kontrakty dat rovnocenné na obou stranách. [Ekvivalence kontraktů dat](data-contract-equivalence.md) je založena na názvech kontraktů dat a datových členů, a proto je k dispozici mechanismus pro mapování typů a členů na tyto názvy. Toto téma vysvětluje pravidla pro pojmenovávání kontraktů dat a také výchozí chování infrastruktury Windows Communication Foundation (WCF) při vytváření názvů.
 
 ## <a name="basic-rules"></a>Základní pravidla
-Základní pravidla týkající se názvů data, která zahrnují smlouvy:
+Mezi základní pravidla týkající se názvů kontraktů dat patří:
 
-- Název kontraktu dat plně kvalifikovaný se skládá z oboru názvů a název.
+- Plně kvalifikovaný název kontraktu dat se skládá z oboru názvů a názvu.
 
 - Datové členy mají pouze názvy, ale žádné obory názvů.
 
-- Při zpracování kontraktů dat, infrastruktura WCF je malá a velká písmena na obory názvů a názvy kontraktů dat a datové členy.
+- Při zpracování kontraktů dat se v infrastruktuře WCF rozlišují velká a malá písmena pro obory názvů a názvy kontraktů dat a datových členů.
 
 ## <a name="data-contract-namespaces"></a>Obory názvů kontraktu dat
-Obor názvů kontraktu dat má podobu z identifikátor URI (Uniform Resource). Identifikátor URI může být absolutní nebo relativní. Ve výchozím nastavení jsou přiřazeny kontraktů dat pro určitý typ oboru názvů, který přichází z běžné language runtime (CLR) oboru názvů typu.
+Obor názvů kontraktu dat má formu identifikátoru URI (Uniform Resource Identifier). Identifikátor URI může být buď absolutní, nebo relativní. Ve výchozím nastavení jsou kontrakty dat pro určitý typ přiřazeny k oboru názvů, který pochází z oboru názvů Common Language Runtime (CLR) daného typu.
 
-Ve výchozím nastavení, libovolný daný obor názvů CLR (ve formátu *Clr.Namespace*) je namapovaný na obor názvů `http://schemas.datacontract.org/2004/07/Clr.Namespace`. Chcete-li přepsat toto výchozí nastavení, použijte <xref:System.Runtime.Serialization.ContractNamespaceAttribute> atributu na celý modul nebo sestavení. Můžete také určit obor názvů kontraktu dat pro každý typ, nastavte <xref:System.Runtime.Serialization.DataContractAttribute.Namespace%2A> vlastnost <xref:System.Runtime.Serialization.DataContractAttribute>.
-
-> [!NOTE]
-> `http://schemas.microsoft.com/2003/10/Serialization` Obor názvů je vyhrazené a nejde použít jako obor názvů kontraktu dat.
+Ve výchozím nastavení jsou všechny zadané obory názvů CLR (ve formátu *CLR. Namespace*) namapovány na obor názvů `http://schemas.datacontract.org/2004/07/Clr.Namespace` . Chcete-li přepsat toto výchozí nastavení, použijte <xref:System.Runtime.Serialization.ContractNamespaceAttribute> atribut pro celý modul nebo sestavení. Případně pro řízení oboru názvů kontraktu dat pro každý typ nastavte <xref:System.Runtime.Serialization.DataContractAttribute.Namespace%2A> vlastnost <xref:System.Runtime.Serialization.DataContractAttribute> .
 
 > [!NOTE]
-> Nejde přepsat výchozí obor názvů v typy kontraktu dat, které obsahují `delegate` deklarace.
+> `http://schemas.microsoft.com/2003/10/Serialization`Obor názvů je rezervovaný a nedá se použít jako obor názvů kontraktu dat.
+
+> [!NOTE]
+> Výchozí obor názvů nelze přepsat v typech kontraktů dat, které obsahují `delegate` deklarace.
 
 ## <a name="data-contract-names"></a>Názvy kontraktu dat
-Výchozí název kontraktu dat pro daný typ je název tohoto typu. Chcete-li přepsat výchozí hodnotu, nastavte <xref:System.Runtime.Serialization.DataContractAttribute.Name%2A> vlastnost <xref:System.Runtime.Serialization.DataContractAttribute> alternativní název. Zvláštní pravidla pro obecné typy jsou popsány v "Data názvy pro obecné typy kontraktů" dále v tomto tématu.
+Výchozí název kontraktu dat pro daný typ je název tohoto typu. Chcete-li přepsat výchozí hodnotu, nastavte <xref:System.Runtime.Serialization.DataContractAttribute.Name%2A> vlastnost na <xref:System.Runtime.Serialization.DataContractAttribute> alternativní název. Zvláštní pravidla pro obecné typy jsou popsána v části "názvy kontraktů dat pro obecné typy" dále v tomto tématu.
 
 ## <a name="data-member-names"></a>Názvy datových členů
-Výchozí název datový člen daného pole nebo vlastnosti je název pole nebo vlastnost. Chcete-li přepsat výchozí hodnotu, nastavte <xref:System.Runtime.Serialization.DataMemberAttribute.Name%2A> vlastnost <xref:System.Runtime.Serialization.DataMemberAttribute> alternativní hodnotě.
+Výchozím názvem datového členu pro dané pole nebo vlastnost je název daného pole nebo vlastnosti. Pro přepsání výchozí <xref:System.Runtime.Serialization.DataMemberAttribute.Name%2A> hodnoty nastavte vlastnost <xref:System.Runtime.Serialization.DataMemberAttribute> na jinou hodnotu.
 
 ### <a name="examples"></a>Příklady
-Následující příklad ukazuje, jak můžete přepsat výchozí názvový chování kontraktech dat a datové členy.
+Následující příklad ukazuje, jak můžete přepsat výchozí chování při pojmenovávání kontraktů dat a datových členů.
 
 [!code-csharp[C_DataContractNames#1](~/samples/snippets/csharp/VS_Snippets_CFX/c_datacontractnames/cs/source.cs#1)]
 [!code-vb[C_DataContractNames#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/c_datacontractnames/vb/source.vb#1)]
 
 ## <a name="data-contract-names-for-generic-types"></a>Názvy kontraktů dat pro obecné typy
-Existují zvláštní pravidla pro určování názvů kontraktu dat pro obecné typy. Tato pravidla pomáhají vyhnete kolize názvů kontraktu dat mezi dvěma uzavřených obecných typů stejného obecného typu.
+Pro určení názvů kontraktů dat pro obecné typy existují zvláštní pravidla. Tato pravidla zabraňují kolizi názvů kontraktů dat mezi dvěma uzavřenými obecnými typy stejného obecného typu.
 
-Ve výchozím nastavení, název kontraktu dat pro obecný typ není název typu, za nímž následuje řetězec "", za nímž následuje názvů kontraktu dat obecné parametry, za nímž následuje *hash* vypočítán s použitím názvů kontraktu dat Obecné parametry. Hodnota hash je výsledkem matematické funkce, která funguje jako "otisk prstu", který jednoznačně identifikuje část data. Když jsou všechny obecné parametry primitivní typy, je vynechána, hodnoty hash.
+Ve výchozím nastavení je název kontraktu dat pro obecný typ název typu následovaný řetězcem "of" následovaným názvy kontraktů dat obecných parametrů následovaným *hodnotou hash* vypočítanou pomocí oborů názvů kontraktu dat obecných parametrů. Hodnota hash je výsledkem matematické funkce, která funguje jako "otisk", který jednoznačně identifikuje část dat. Pokud jsou všechny obecné parametry primitivní typy, je hodnota hash vynechána.
 
-Například zobrazení typů v následujícím příkladu.
+Podívejte se například na typy v následujícím příkladu.
 
 [!code-csharp[C_DataContractNames#2](~/samples/snippets/csharp/VS_Snippets_CFX/c_datacontractnames/cs/source.cs#2)]
 [!code-vb[C_DataContractNames#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/c_datacontractnames/vb/source.vb#2)]
 
-V tomto příkladu typ `Drawing<Square,RegularRedBrush>` má název kontraktu dat "DrawingOfSquareRedBrush5HWGAU6h", kde "5HWGAU6h" je hodnota hash "urn: tvary" a "urn: výchozí" obory názvů. Typ `Drawing<Square,SpecialRedBrush>` má název kontraktu dat "DrawingOfSquareRedBrushjpB5LgQ_S", kde "jpB5LgQ_S" je hodnota hash "urn: tvary" a "urn: zvláštní" obory názvů. Všimněte si, že pokud se nepoužívá-the-hash, dva názvy jsou identické a tím dojde k kolize názvů.
+V tomto příkladu `Drawing<Square,RegularRedBrush>` má typ název kontraktu dat "DrawingOfSquareRedBrush5HWGAU6h", kde "5HWGAU6h" je hodnota hash "urn: Shapes" a "urn: default" Namespaces. Typ `Drawing<Square,SpecialRedBrush>` má název kontraktu dat "DrawingOfSquareRedBrushjpB5LgQ_S", kde "jpB5LgQ_S" je hodnota hash "urn: Shapes" a "urn: Special" Namespaces. Všimněte si, že pokud se hodnota hash nepoužívá, jsou tyto dva názvy identické, a proto dojde ke kolizi názvů.
 
-## <a name="customizing-data-contract-names-for-generic-types"></a>Přizpůsobení názvů kontraktu dat pro obecné typy
+## <a name="customizing-data-contract-names-for-generic-types"></a>Přizpůsobení názvů kontraktů dat pro obecné typy
 
-V některých případech jsou názvy datových kontraktů vygenerované pro obecné typy, jak je popsáno výše, nepřijatelné. Například můžete vědět předem do kolize názvů se nespustí a může být vhodné odebrat-the-hash. V takovém případě můžete použít <xref:System.Runtime.Serialization.DataContractAttribute.Name%2A?displayProperty=nameWithType> vlastnosti k určení způsobu, jak generovat názvy. Můžete použít číslice ve složených závorkách uvnitř `Name` vlastnost odkazovat na data názvy kontraktů obecné parametry. (0 označuje první parametr, 1 odkazuje na druhé atd.) Znak čísla (#) uvnitř složených závorek můžete použít k odkazování na-the-hash. Můžete použít každý z těchto odkazů vícekrát nebo vůbec.
+Někdy nejsou přijatelné názvy kontraktů dat vygenerované pro obecné typy, jak je popsáno výše. Můžete například určit, že se nebudete muset zacházet do kolizí názvů a může chtít odebrat hodnotu hash. V takovém případě můžete použít <xref:System.Runtime.Serialization.DataContractAttribute.Name%2A?displayProperty=nameWithType> vlastnost k určení jiného způsobu generování názvů. Čísla ve složených závorkách uvnitř vlastnosti můžete použít `Name` k odkazování na názvy kontraktů dat obecných parametrů. (0 odkazuje na první parametr, 1 odkazuje na druhý atd.) Pokud chcete odkazovat na hodnotu hash, můžete v složených závorkách použít znak (#). Každý z těchto odkazů můžete použít vícekrát nebo vůbec.
 
-Například předchozí obecný `Drawing` typ může být deklarovány jak je znázorněno v následujícím příkladu.
+Například předchozí obecný `Drawing` typ mohl být deklarován, jak je znázorněno v následujícím příkladu.
 
 [!code-csharp[c_DataContractNames#3](~/samples/snippets/csharp/VS_Snippets_CFX/c_datacontractnames/cs/source.cs#3)]
 [!code-vb[c_DataContractNames#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/c_datacontractnames/vb/source.vb#3)]
 
-V tomto případě, typ `Drawing<Square,RegularRedBrush>` má název kontraktu dat "Drawing_using_RedBrush_brush_and_Square_shape". Upozorňujeme, že je "{#}" v <xref:System.Runtime.Serialization.DataContractAttribute.Name%2A> vlastnost,-the-hash není součástí názvu a proto je náchylný k pojmenování typ kolize, například typ `Drawing<Square,SpecialRedBrush>` bude mít přesně stejný název kontraktu dat.
+V tomto případě `Drawing<Square,RegularRedBrush>` má typ název kontraktu dat "Drawing_using_RedBrush_brush_and_Square_shape". Všimněte si, že vzhledem k tomu, že ve vlastnosti existuje "{#}" <xref:System.Runtime.Serialization.DataContractAttribute.Name%2A> , hodnota hash není součástí názvu, a proto je typ náchyln k kolizí názvů; například typ `Drawing<Square,SpecialRedBrush>` by měl přesně stejný název kontraktu dat.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Runtime.Serialization.DataContractAttribute>
 - <xref:System.Runtime.Serialization.DataMemberAttribute>
 - <xref:System.Runtime.Serialization.ContractNamespaceAttribute>
 - [Použití kontraktů dat](using-data-contracts.md)
 - [Ekvivalence kontraktů dat](data-contract-equivalence.md)
-- [Názvy kontraktů dat](data-contract-names.md)
+- [Názvy kontraktu dat](data-contract-names.md)
 - [Správa verzí kontraktů dat](data-contract-versioning.md)

@@ -1,16 +1,17 @@
 ---
 title: 'Postupy: Povolení streamování'
+description: Naučte se, jak povolit streamované zprávy ve službě WCF namísto výchozích přenosů ve vyrovnávací paměti, které je potřeba před zpracováním úplně přijmout.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 6ca2cf4b-c7a1-49d8-a79b-843a90556ba4
-ms.openlocfilehash: c2c22ab699a996f4bc40d0b5f620ddd92ffe8059
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 538fd8634094aa6fbf097ddb94469d7bca749a63
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84593227"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247023"
 ---
 # <a name="how-to-enable-streaming"></a>Postupy: Povolení streamování
 Windows Communication Foundation (WCF) může odesílat zprávy pomocí vyrovnávacích pamětí nebo přenosů přes datový proud. Ve výchozím režimu přenosu do vyrovnávací paměti musí být zpráva zcela doručena předtím, než ji příjemce může přečíst. V režimu přenosu datového proudu může příjemce zahájit zpracování zprávy před úplným doručením. Režim streamování je užitečný v případě, že předávané informace jsou zdlouhavé a dají se zpracovat sériově. Režim streamování je vhodný také v případě, že je zpráva příliš velká a nemůže být zcela ukládána do vyrovnávací paměti.  
@@ -77,4 +78,4 @@ Windows Communication Foundation (WCF) může odesílat zprávy pomocí vyrovná
 ## <a name="see-also"></a>Viz také
 
 - [Objemná data a streamování](large-data-and-streaming.md)
-- [Stream](../samples/stream.md)
+- [Datový proud](../samples/stream.md)

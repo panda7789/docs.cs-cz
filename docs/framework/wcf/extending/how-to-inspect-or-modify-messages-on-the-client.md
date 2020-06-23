@@ -1,35 +1,36 @@
 ---
 title: 'Postupy: Kontrola a změny zpráv v klientovi'
+description: Přečtěte si, jak zkontrolovat nebo upravit příchozí nebo odchozí zprávy v rámci klienta nebo služby WCF implementací vhodného rozhraní.
 ms.date: 03/30/2017
 ms.assetid: b8256335-f1c2-419f-b862-9f220ccad84c
-ms.openlocfilehash: db1a99d2ed1f765e39815e6b6c70d6ada1db1d15
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 6f6a3d20d7f3a9fb79de5cd3e29096e270d0f188
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79185529"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247504"
 ---
 # <a name="how-to-inspect-or-modify-messages-on-the-client"></a>Postupy: Kontrola a změny zpráv v klientovi
-Můžete zkontrolovat nebo upravit příchozí nebo odchozí zprávy přes wcf <xref:System.ServiceModel.Dispatcher.IClientMessageInspector?displayProperty=nameWithType> klienta implementací a vložením do běhu klienta. Další informace naleznete v [tématu Rozšíření klientů](extending-clients.md). Ekvivalentní funkce služby je <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector?displayProperty=nameWithType>. Úplný příklad kódu naleznete v ukázce [Inspektory zpráv.](../samples/message-inspectors.md)  
+Můžete kontrolovat nebo upravovat příchozí nebo odchozí zprávy v klientovi WCF implementací <xref:System.ServiceModel.Dispatcher.IClientMessageInspector?displayProperty=nameWithType> a vložením do modulu runtime klienta. Další informace najdete v tématu [rozšíření klientů](extending-clients.md). Ekvivalentní funkce služby je <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector?displayProperty=nameWithType> . Úplný příklad kódu najdete v tématu Ukázka [kontrolorů zpráv](../samples/message-inspectors.md) .  
   
-### <a name="to-inspect-or-modify-messages"></a>Kontrola nebo úprava zpráv  
+### <a name="to-inspect-or-modify-messages"></a>Kontrola nebo změna zpráv  
   
 1. Implementujte rozhraní <xref:System.ServiceModel.Dispatcher.IClientMessageInspector?displayProperty=nameWithType>.  
   
-2. Implementujte <xref:System.ServiceModel.Description.IEndpointBehavior?displayProperty=nameWithType> <xref:System.ServiceModel.Description.IContractBehavior?displayProperty=nameWithType> nebo v závislosti na oboru, do kterého chcete vložit inspektor zpráv klienta. <xref:System.ServiceModel.Description.IEndpointBehavior?displayProperty=nameWithType>umožňuje změnit chování na úrovni koncového bodu. <xref:System.ServiceModel.Description.IContractBehavior?displayProperty=nameWithType>umožňuje změnit chování na úrovni smlouvy.  
+2. Implementujte <xref:System.ServiceModel.Description.IEndpointBehavior?displayProperty=nameWithType> nebo <xref:System.ServiceModel.Description.IContractBehavior?displayProperty=nameWithType> v závislosti na rozsahu, ve kterém chcete vložit inspektor zprávy klienta. <xref:System.ServiceModel.Description.IEndpointBehavior?displayProperty=nameWithType>umožňuje změnit chování na úrovni koncového bodu. <xref:System.ServiceModel.Description.IContractBehavior?displayProperty=nameWithType>umožňuje změnit chování na úrovni smlouvy.  
   
-3. Před voláním <xref:System.ServiceModel.ClientBase%601.Open%2A?displayProperty=nameWithType> metody nebo <xref:System.ServiceModel.ICommunicationObject.Open%2A?displayProperty=nameWithType> na metodu na <xref:System.ServiceModel.ChannelFactory%601?displayProperty=nameWithType>. Podrobnosti naleznete [v tématu Konfigurace a rozšíření běhu s chováním](configuring-and-extending-the-runtime-with-behaviors.md).  
+3. Před voláním <xref:System.ServiceModel.ClientBase%601.Open%2A?displayProperty=nameWithType> metody nebo v zadejte chování <xref:System.ServiceModel.ICommunicationObject.Open%2A?displayProperty=nameWithType> <xref:System.ServiceModel.ChannelFactory%601?displayProperty=nameWithType> . Podrobnosti najdete v tématu [Konfigurace a rozšíření modulu runtime s chováním](configuring-and-extending-the-runtime-with-behaviors.md).  
   
 ## <a name="example"></a>Příklad  
  Následující příklady kódu ukazují, v pořadí:  
   
 - Implementace inspektora klienta.  
   
-- Chování koncového bodu, který vloží inspektor.  
+- Chování koncového bodu, které vkládá inspektor.  
   
-- A <xref:System.ServiceModel.Configuration.BehaviorExtensionElement>- odvozené třídy, která umožňuje přidat chování v konfiguračním souboru.  
+- <xref:System.ServiceModel.Configuration.BehaviorExtensionElement>Třída odvozená, která umožňuje přidat chování do konfiguračního souboru.  
   
-- Konfigurační soubor, který přidá chování koncového bodu, který vloží inspektor zpráv klienta do běhu klienta.  
+- Konfigurační soubor, který přidá chování koncového bodu, které vloží inspektor zprávy klienta do modulu runtime klienta.  
   
 ```csharp  
 // Client message inspector  

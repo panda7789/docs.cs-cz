@@ -1,13 +1,14 @@
 ---
 title: Úrovně důvěryhodnosti zabezpečení v přístupu k prostředkům
+description: Pochopení úrovní důvěryhodnosti zabezpečení při přístupu k prostředkům v .NET. Existují 3 hlavní úrovně důvěryhodnosti pro System. Transactions.
 ms.date: 03/30/2017
 ms.assetid: fb5be924-317d-4d69-b33a-3d18ecfb9d6e
-ms.openlocfilehash: 7070d82c430b762059153c544e26478dc2d7ae39
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 64f298460bde99181ab8dc8be13ae95aaa846299
+ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70205879"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85141949"
 ---
 # <a name="security-trust-levels-in-accessing-resources"></a>Úrovně důvěryhodnosti zabezpečení v přístupu k prostředkům
 Toto téma popisuje, jak je omezen přístup na studijních materiálech, které <xref:System.Transactions> zveřejňuje.  
@@ -16,7 +17,7 @@ Toto téma popisuje, jak je omezen přístup na studijních materiálech, které
   
 - **AllowPartiallyTrustedCallers** (APTCA) pro aplikace, které používají transakce v rámci jedné domény aplikace.  
   
-- **DistributedTransactionPermission** (DTP) pro aplikace, které používají distribuované transakce.  
+- **DistributedTransactionPermission** (DTP) pro aplikace používající distribuované transakce.  
   
 - Úplný vztah důvěryhodnosti pro trvalý zdroje, aplikace pro správu konfigurace a starší definiční aplikace.  
   
@@ -26,7 +27,7 @@ Toto téma popisuje, jak je omezen přístup na studijních materiálech, které
 ## <a name="trust-levels"></a>Úrovně důvěryhodnosti  
   
 ### <a name="aptca-partial-trust"></a>APTCA (částečným vztahem důvěryhodnosti)  
- Sestavení může být voláno částečně důvěryhodným kódem, protože bylo označeno atributem AllowPartiallyTrustedCallers (APTCA). <xref:System.Transactions> Tento atribut v podstatě odstraní implicitní <xref:System.Security.Permissions.SecurityAction.LinkDemand> pro sadu oprávnění **FullTrust** , která je jinak automaticky umístěna do každé veřejně přístupné metody v každém typu. Nicméně některé typy a členy stále vyžadují bezpečnějších oprávnění.  
+ <xref:System.Transactions>Sestavení může být voláno částečně důvěryhodným kódem, protože bylo označeno atributem **ALLOWPARTIALLYTRUSTEDCALLERS** (APTCA). Tento atribut v podstatě odstraní implicitní <xref:System.Security.Permissions.SecurityAction.LinkDemand> pro sadu oprávnění **FullTrust** , která je jinak automaticky umístěna do každé veřejně přístupné metody v každém typu. Nicméně některé typy a členy stále vyžadují bezpečnějších oprávnění.  
   
  Atribut APTCA umožňuje aplikacím používat transakcí v částečným vztahem důvěryhodnosti v rámci jediné doméně aplikace. To umožňuje-eskalován transakce a Nestálá zařazení, které lze použít pro zpracování chyb. Příkladem je tabulka transacted hash a aplikace, která ji používá. Data lze přidat do a odebrán z tabulky hash v rámci jedné transakce. Pokud později transakce vrácena zpět, všechny změny provedené v tabulce hash v rámci dané transakce lze vrátit zpět.  
   

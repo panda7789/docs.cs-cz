@@ -1,20 +1,21 @@
 ---
 title: Eskalace správy transakcí
+description: Přečtěte si o eskalaci správy transakcí v rozhraní .NET, což je proces migrace transakce z komponent jednoho správce transakcí do jiné.
 ms.date: 03/30/2017
 ms.assetid: 1e96331e-31b6-4272-bbbd-29ed1e110460
-ms.openlocfilehash: d2f027f8a94ee8f0cd23d0f0909ecc9137873bc2
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: a0b70f4be0f041be95b02537e06f9ec19a9b6183
+ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70205841"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85141654"
 ---
 # <a name="transaction-management-escalation"></a>Eskalace správy transakcí
 Windows je hostitelem sadu služeb a moduly, které společně tvoří transakcí správce. Transakce řízení eskalace popisuje proces migrace transakcí z jednoho z komponenty správce transakcí.  
   
  <xref:System.Transactions>zahrnuje komponentu správce transakcí, která koordinuje transakci zahrnující maximálně jeden trvalý prostředek nebo více těkavých prostředků. Vzhledem k tomu, že správce transakcí se používá pouze volání uvnitř aplikační domény, bude vrácen nejlepší výkon. Vývojáři nemusí přímo spolupracovat se správcem transakcí. Místo toho je poskytována běžné infrastruktury, který definuje rozhraní, běžné chování a pomocné třídy <xref:System.Transactions> oboru názvů.  
   
- Pokud chcete transakci uvést do objektu v jiné doméně aplikace (včetně hranic mezi procesy a počítači) na stejném počítači, <xref:System.Transactions> infrastruktura automaticky předává transakci, která má být spravována společností Microsoft. DTC (Distributed Transaction Coordinator) (MSDTC). Eskalace také dochází v případě zařazení jiného správce prostředků trvalý. Když eskalován, transakce zůstane spravovaných ve stavu zvýšenými až do jeho dokončení.  
+ Pokud chcete transakci uvést do objektu v jiné doméně aplikace (včetně hranic mezi procesy a počítači) na stejném počítači, <xref:System.Transactions> infrastruktura automaticky předává transakci, která má být spravována službou Microsoft DTC (Distributed Transaction Coordinator) (MSDTC). Eskalace také dochází v případě zařazení jiného správce prostředků trvalý. Když eskalován, transakce zůstane spravovaných ve stavu zvýšenými až do jeho dokončení.  
   
  Mezi <xref:System.Transactions> transakce a transakce MSDTC, je zprostředkovatel druh transakce, které jsou k dispozici prostřednictvím možné jedné fáze zařazení (PSPE). PSPE je jiný důležité mechanismus v <xref:System.Transactions> pro optimalizaci výkonu. Umožňuje vzdálený trvalý prostředek umístěný v různých aplikační domény, procesu nebo počítače se účastnit programu <xref:System.Transactions> transakce, aniž by ji chcete-li být rozšířena na transakci MSDTC. Další informace o PSPE najdete v tématu [zařazení prostředků jako účastníků v transakci](enlisting-resources-as-participants-in-a-transaction.md).  
   
