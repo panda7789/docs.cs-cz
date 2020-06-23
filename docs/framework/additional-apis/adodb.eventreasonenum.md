@@ -1,5 +1,6 @@
 ---
-title: Výčet EventReason (Stream)
+title: EventReason výčet (ADODB)
+description: Získejte informace o výčtu EventReason v .NET. Tento výčet je v oboru názvů ADODB a v sestavení ADODB (v knihovně adodb.dll).
 ms.date: 03/28/2019
 topic_type:
 - apiref
@@ -9,41 +10,41 @@ api_location:
 - adodb.dll
 api_type:
 - Assembly
-ms.openlocfilehash: 0d02fb683335cf0db7d73d9d3ea545e65ca384a9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bbb616625777e0193af4da10770502da904f401a
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61675465"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84989888"
 ---
-# <a name="eventreason-enumeration"></a><span data-ttu-id="ddae1-102">Výčet EventReason</span><span class="sxs-lookup"><span data-stu-id="ddae1-102">EventReason Enumeration</span></span>
+# <a name="eventreason-enumeration"></a><span data-ttu-id="658c0-104">Výčet EventReason</span><span class="sxs-lookup"><span data-stu-id="658c0-104">EventReason Enumeration</span></span>
 
 ```csharp
 [GuidAttribute("00000531-0000-0010-8000-00AA006D2EA4")]
 public enum EventReasonEnum
 ```
 
-## <a name="members"></a><span data-ttu-id="ddae1-103">Členové</span><span class="sxs-lookup"><span data-stu-id="ddae1-103">Members</span></span>
+## <a name="members"></a><span data-ttu-id="658c0-105">Členové</span><span class="sxs-lookup"><span data-stu-id="658c0-105">Members</span></span>
 
-| <span data-ttu-id="ddae1-104">Název členu</span><span class="sxs-lookup"><span data-stu-id="ddae1-104">Member name</span></span>  | <span data-ttu-id="ddae1-105">Popis</span><span class="sxs-lookup"><span data-stu-id="ddae1-105">Description</span></span>  |
+| <span data-ttu-id="658c0-106">Název členu</span><span class="sxs-lookup"><span data-stu-id="658c0-106">Member name</span></span>  | <span data-ttu-id="658c0-107">Description</span><span class="sxs-lookup"><span data-stu-id="658c0-107">Description</span></span>  |
 |---|---|
-|<span data-ttu-id="ddae1-106">adRsnAddNew</span><span class="sxs-lookup"><span data-stu-id="ddae1-106">adRsnAddNew</span></span>  |   |
-|<span data-ttu-id="ddae1-107">adRsnDelete</span><span class="sxs-lookup"><span data-stu-id="ddae1-107">adRsnDelete</span></span>  |   |
-|<span data-ttu-id="ddae1-108">adRsnUpdate</span><span class="sxs-lookup"><span data-stu-id="ddae1-108">adRsnUpdate</span></span>  |   |
-|<span data-ttu-id="ddae1-109">adRsnUndoUpdate</span><span class="sxs-lookup"><span data-stu-id="ddae1-109">adRsnUndoUpdate</span></span>  |   |
-|<span data-ttu-id="ddae1-110">adRsnUndoAddNew</span><span class="sxs-lookup"><span data-stu-id="ddae1-110">adRsnUndoAddNew</span></span>  |   |
-|<span data-ttu-id="ddae1-111">adRsnUndoDelete</span><span class="sxs-lookup"><span data-stu-id="ddae1-111">adRsnUndoDelete</span></span>  |   |
-|<span data-ttu-id="ddae1-112">adRsnRequery</span><span class="sxs-lookup"><span data-stu-id="ddae1-112">adRsnRequery</span></span>  |   |
-|<span data-ttu-id="ddae1-113">adRsnResynch</span><span class="sxs-lookup"><span data-stu-id="ddae1-113">adRsnResynch</span></span>  |   |
-| <span data-ttu-id="ddae1-114">adRsnClose</span><span class="sxs-lookup"><span data-stu-id="ddae1-114">adRsnClose</span></span>  |   |
-| <span data-ttu-id="ddae1-115">adRsnMove</span><span class="sxs-lookup"><span data-stu-id="ddae1-115">adRsnMove</span></span>  |   |
-| <span data-ttu-id="ddae1-116">adRsnFirstChange</span><span class="sxs-lookup"><span data-stu-id="ddae1-116">adRsnFirstChange</span></span>  |   |
-| <span data-ttu-id="ddae1-117">adRsnMoveFirst</span><span class="sxs-lookup"><span data-stu-id="ddae1-117">adRsnMoveFirst</span></span>  |   |
-| <span data-ttu-id="ddae1-118">adRsnMovePrevious</span><span class="sxs-lookup"><span data-stu-id="ddae1-118">adRsnMovePrevious</span></span>  |   |
-| <span data-ttu-id="ddae1-119">adRsnMoveLast</span><span class="sxs-lookup"><span data-stu-id="ddae1-119">adRsnMoveLast</span></span>  |   |
+|<span data-ttu-id="658c0-108">adRsnAddNew</span><span class="sxs-lookup"><span data-stu-id="658c0-108">adRsnAddNew</span></span>  |   |
+|<span data-ttu-id="658c0-109">adRsnDelete</span><span class="sxs-lookup"><span data-stu-id="658c0-109">adRsnDelete</span></span>  |   |
+|<span data-ttu-id="658c0-110">adRsnUpdate</span><span class="sxs-lookup"><span data-stu-id="658c0-110">adRsnUpdate</span></span>  |   |
+|<span data-ttu-id="658c0-111">adRsnUndoUpdate</span><span class="sxs-lookup"><span data-stu-id="658c0-111">adRsnUndoUpdate</span></span>  |   |
+|<span data-ttu-id="658c0-112">adRsnUndoAddNew</span><span class="sxs-lookup"><span data-stu-id="658c0-112">adRsnUndoAddNew</span></span>  |   |
+|<span data-ttu-id="658c0-113">adRsnUndoDelete</span><span class="sxs-lookup"><span data-stu-id="658c0-113">adRsnUndoDelete</span></span>  |   |
+|<span data-ttu-id="658c0-114">adRsnRequery</span><span class="sxs-lookup"><span data-stu-id="658c0-114">adRsnRequery</span></span>  |   |
+|<span data-ttu-id="658c0-115">adRsnResynch</span><span class="sxs-lookup"><span data-stu-id="658c0-115">adRsnResynch</span></span>  |   |
+| <span data-ttu-id="658c0-116">adRsnClose</span><span class="sxs-lookup"><span data-stu-id="658c0-116">adRsnClose</span></span>  |   |
+| <span data-ttu-id="658c0-117">adRsnMove</span><span class="sxs-lookup"><span data-stu-id="658c0-117">adRsnMove</span></span>  |   |
+| <span data-ttu-id="658c0-118">adRsnFirstChange</span><span class="sxs-lookup"><span data-stu-id="658c0-118">adRsnFirstChange</span></span>  |   |
+| <span data-ttu-id="658c0-119">adRsnMoveFirst</span><span class="sxs-lookup"><span data-stu-id="658c0-119">adRsnMoveFirst</span></span>  |   |
+| <span data-ttu-id="658c0-120">adRsnMovePrevious</span><span class="sxs-lookup"><span data-stu-id="658c0-120">adRsnMovePrevious</span></span>  |   |
+| <span data-ttu-id="658c0-121">adRsnMoveLast</span><span class="sxs-lookup"><span data-stu-id="658c0-121">adRsnMoveLast</span></span>  |   |
 
-## <a name="requirements"></a><span data-ttu-id="ddae1-120">Požadavky</span><span class="sxs-lookup"><span data-stu-id="ddae1-120">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="658c0-122">Požadavky</span><span class="sxs-lookup"><span data-stu-id="658c0-122">Requirements</span></span>
 
-<span data-ttu-id="ddae1-121">**Namespace:** `adodb`</span><span class="sxs-lookup"><span data-stu-id="ddae1-121">**Namespace:** `adodb`</span></span>
+<span data-ttu-id="658c0-123">**Obor názvů:**`adodb`</span><span class="sxs-lookup"><span data-stu-id="658c0-123">**Namespace:** `adodb`</span></span>
 
-<span data-ttu-id="ddae1-122">**Sestavení:** Stream (v adodb.dll)</span><span class="sxs-lookup"><span data-stu-id="ddae1-122">**Assembly:** adodb (in adodb.dll)</span></span>
+<span data-ttu-id="658c0-124">**Sestavení:** ADODB (v adodb.dll)</span><span class="sxs-lookup"><span data-stu-id="658c0-124">**Assembly:** adodb (in adodb.dll)</span></span>

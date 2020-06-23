@@ -1,27 +1,28 @@
 ---
 title: Konfigurace hodnot časových limitů u vazby
+description: Naučte se spravovat nastavení časových limitů pro vazby WCF za účelem zvýšení výkonu, použitelnosti a zabezpečení vaší služby.
 ms.date: 03/30/2017
 ms.assetid: b5c825a2-b48f-444a-8659-61751ff11d34
-ms.openlocfilehash: 968e80bbd4b50d72d089a325f8e3fe498de2eac2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c41824a242d9b42290183cd70b9acf5b8ee59e6b
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79185289"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245112"
 ---
-# <a name="configuring-timeout-values-on-a-binding"></a><span data-ttu-id="f2648-102">Konfigurace hodnot časových limitů u vazby</span><span class="sxs-lookup"><span data-stu-id="f2648-102">Configuring Timeout Values on a Binding</span></span>
-<span data-ttu-id="f2648-103">Existuje několik nastavení časového času k dispozici ve vazbách WCF.</span><span class="sxs-lookup"><span data-stu-id="f2648-103">There are a number of timeout settings available in WCF bindings.</span></span> <span data-ttu-id="f2648-104">Správné nastavení časového času může zlepšit nejen výkon služby, ale také hrát roli v použitelnosti a zabezpečení vaší služby.</span><span class="sxs-lookup"><span data-stu-id="f2648-104">Setting these timeout settings correctly can improve not only your service’s performance but also play a role in the usability and security of your service.</span></span> <span data-ttu-id="f2648-105">Následující časové osy jsou k dispozici na WCF vazby:</span><span class="sxs-lookup"><span data-stu-id="f2648-105">The following timeouts are available on WCF bindings:</span></span>  
+# <a name="configuring-timeout-values-on-a-binding"></a><span data-ttu-id="8e22f-103">Konfigurace hodnot časových limitů u vazby</span><span class="sxs-lookup"><span data-stu-id="8e22f-103">Configuring Timeout Values on a Binding</span></span>
+<span data-ttu-id="8e22f-104">V vazbách WCF je dostupných několik nastavení časového limitu.</span><span class="sxs-lookup"><span data-stu-id="8e22f-104">There are a number of timeout settings available in WCF bindings.</span></span> <span data-ttu-id="8e22f-105">Nastavení těchto nastavení časového limitu může správně zlepšit nejen výkon služby, ale také hrát roli v oblasti použitelnosti a zabezpečení vaší služby.</span><span class="sxs-lookup"><span data-stu-id="8e22f-105">Setting these timeout settings correctly can improve not only your service’s performance but also play a role in the usability and security of your service.</span></span> <span data-ttu-id="8e22f-106">V vazbách WCF jsou k dispozici následující časové limity:</span><span class="sxs-lookup"><span data-stu-id="8e22f-106">The following timeouts are available on WCF bindings:</span></span>  
   
-1. <span data-ttu-id="f2648-106">OpenTimeout</span><span class="sxs-lookup"><span data-stu-id="f2648-106">OpenTimeout</span></span>  
+1. <span data-ttu-id="8e22f-107">OpenTimeout</span><span class="sxs-lookup"><span data-stu-id="8e22f-107">OpenTimeout</span></span>  
   
-2. <span data-ttu-id="f2648-107">CloseTimeout</span><span class="sxs-lookup"><span data-stu-id="f2648-107">CloseTimeout</span></span>  
+2. <span data-ttu-id="8e22f-108">CloseTimeout</span><span class="sxs-lookup"><span data-stu-id="8e22f-108">CloseTimeout</span></span>  
   
-3. <span data-ttu-id="f2648-108">SendTimeout</span><span class="sxs-lookup"><span data-stu-id="f2648-108">SendTimeout</span></span>  
+3. <span data-ttu-id="8e22f-109">SendTimeout</span><span class="sxs-lookup"><span data-stu-id="8e22f-109">SendTimeout</span></span>  
   
-4. <span data-ttu-id="f2648-109">ReceiveTimeout</span><span class="sxs-lookup"><span data-stu-id="f2648-109">ReceiveTimeout</span></span>  
+4. <span data-ttu-id="8e22f-110">ReceiveTimeout</span><span class="sxs-lookup"><span data-stu-id="8e22f-110">ReceiveTimeout</span></span>  
   
-## <a name="wcf-binding-timeouts"></a><span data-ttu-id="f2648-110">Časové osy vazby WCF</span><span class="sxs-lookup"><span data-stu-id="f2648-110">WCF Binding Timeouts</span></span>  
- <span data-ttu-id="f2648-111">Každé z nastavení popsaných v tomto tématu jsou provedeny na vazbě sám, a to buď v kódu nebo konfigurace.</span><span class="sxs-lookup"><span data-stu-id="f2648-111">Each of the settings discussed in this topic are made on the binding itself, either in code or configuration.</span></span> <span data-ttu-id="f2648-112">Následující kód ukazuje, jak programově nastavit časové toky na vazbě WCF v kontextu samoobslužné služby.</span><span class="sxs-lookup"><span data-stu-id="f2648-112">The following code shows how to programmatically set timeouts on a WCF binding in the context of a self-hosted service.</span></span>  
+## <a name="wcf-binding-timeouts"></a><span data-ttu-id="8e22f-111">Vypršení časových limitů vazeb WCF</span><span class="sxs-lookup"><span data-stu-id="8e22f-111">WCF Binding Timeouts</span></span>  
+ <span data-ttu-id="8e22f-112">Každé nastavení popsané v tomto tématu se provádí na samotné vazbě, a to buď v kódu, nebo v konfiguraci.</span><span class="sxs-lookup"><span data-stu-id="8e22f-112">Each of the settings discussed in this topic are made on the binding itself, either in code or configuration.</span></span> <span data-ttu-id="8e22f-113">Následující kód ukazuje, jak programově nastavit vypršení časových limitů u vazby WCF v kontextu samoobslužné služby.</span><span class="sxs-lookup"><span data-stu-id="8e22f-113">The following code shows how to programmatically set timeouts on a WCF binding in the context of a self-hosted service.</span></span>  
   
 ```csharp  
 public static void Main()
@@ -54,7 +55,7 @@ public static void Main()
 }
 ```  
   
- <span data-ttu-id="f2648-113">Následující příklad ukazuje, jak nakonfigurovat časové toky na vazbě v konfiguračním souboru.</span><span class="sxs-lookup"><span data-stu-id="f2648-113">The following example shows how to configure timeouts on a binding in a configuration file.</span></span>  
+ <span data-ttu-id="8e22f-114">Následující příklad ukazuje způsob konfigurace časových limitů u vazby v konfiguračním souboru.</span><span class="sxs-lookup"><span data-stu-id="8e22f-114">The following example shows how to configure timeouts on a binding in a configuration file.</span></span>  
   
 ```xml  
 <configuration>
@@ -72,22 +73,22 @@ public static void Main()
 </configuration>
 ```  
   
- <span data-ttu-id="f2648-114">Další informace o těchto nastaveních naleznete <xref:System.ServiceModel.Channels.Binding> v dokumentaci pro třídu.</span><span class="sxs-lookup"><span data-stu-id="f2648-114">More information about these settings can be found in the documentation for the <xref:System.ServiceModel.Channels.Binding> class.</span></span>  
+ <span data-ttu-id="8e22f-115">Další informace o těchto nastaveních najdete v dokumentaci pro <xref:System.ServiceModel.Channels.Binding> třídu.</span><span class="sxs-lookup"><span data-stu-id="8e22f-115">More information about these settings can be found in the documentation for the <xref:System.ServiceModel.Channels.Binding> class.</span></span>  
   
-### <a name="client-side-timeouts"></a><span data-ttu-id="f2648-115">Časové opozí na straně klienta</span><span class="sxs-lookup"><span data-stu-id="f2648-115">Client-side Timeouts</span></span>  
- <span data-ttu-id="f2648-116">Na straně klienta:</span><span class="sxs-lookup"><span data-stu-id="f2648-116">On the client side:</span></span>  
+### <a name="client-side-timeouts"></a><span data-ttu-id="8e22f-116">Vypršení časových limitů na straně klienta</span><span class="sxs-lookup"><span data-stu-id="8e22f-116">Client-side Timeouts</span></span>  
+ <span data-ttu-id="8e22f-117">Na straně klienta:</span><span class="sxs-lookup"><span data-stu-id="8e22f-117">On the client side:</span></span>  
   
-1. <span data-ttu-id="f2648-117">SendTimeout – slouží k inicializaci OperationTimeout, který řídí celý proces odesílání zprávy, včetně přijetí odpovědi na operaci služby požadavek/odpověď.</span><span class="sxs-lookup"><span data-stu-id="f2648-117">SendTimeout – used to initialize the OperationTimeout, which governs the whole process of sending a message, including receiving a reply message for a request/reply service operation.</span></span> <span data-ttu-id="f2648-118">Tento časový opova platí také při odesílání odpovědí z metody smlouvy zpětného volání.</span><span class="sxs-lookup"><span data-stu-id="f2648-118">This timeout also applies when sending reply messages from a callback contract method.</span></span>  
+1. <span data-ttu-id="8e22f-118">SendTimeout – slouží k inicializaci OperationTimeout, který řídí celý proces odeslání zprávy, včetně přijetí zprávy odpovědi pro operaci služby žádosti a odpověď.</span><span class="sxs-lookup"><span data-stu-id="8e22f-118">SendTimeout – used to initialize the OperationTimeout, which governs the whole process of sending a message, including receiving a reply message for a request/reply service operation.</span></span> <span data-ttu-id="8e22f-119">Tento časový limit platí i při posílání odpovědí na zprávy z metody kontraktu zpětného volání.</span><span class="sxs-lookup"><span data-stu-id="8e22f-119">This timeout also applies when sending reply messages from a callback contract method.</span></span>  
   
-2. <span data-ttu-id="f2648-119">OpenTimeout – používá se při otevírání kanálů, když není zadána žádná explicitní hodnota časového času.</span><span class="sxs-lookup"><span data-stu-id="f2648-119">OpenTimeout – used when opening channels when no explicit timeout value is specified.</span></span>  
+2. <span data-ttu-id="8e22f-120">OpenTimeout – používá se při otevírání kanálů, když není zadaná žádná explicitní hodnota časového limitu.</span><span class="sxs-lookup"><span data-stu-id="8e22f-120">OpenTimeout – used when opening channels when no explicit timeout value is specified.</span></span>  
   
-3. <span data-ttu-id="f2648-120">CloseTimeout – používá se při zavírání kanálů, když není zadána žádná explicitní hodnota časového času.</span><span class="sxs-lookup"><span data-stu-id="f2648-120">CloseTimeout – used when closing channels when no explicit timeout value is specified.</span></span>  
+3. <span data-ttu-id="8e22f-121">CloseTimeout – používá se při zavírání kanálů, když není zadaná žádná explicitní hodnota časového limitu.</span><span class="sxs-lookup"><span data-stu-id="8e22f-121">CloseTimeout – used when closing channels when no explicit timeout value is specified.</span></span>  
   
-4. <span data-ttu-id="f2648-121">ReceiveTimeout – se nepoužívá.</span><span class="sxs-lookup"><span data-stu-id="f2648-121">ReceiveTimeout – is not used.</span></span>  
+4. <span data-ttu-id="8e22f-122">ReceiveTimeout – se nepoužívá.</span><span class="sxs-lookup"><span data-stu-id="8e22f-122">ReceiveTimeout – is not used.</span></span>  
   
-### <a name="service-side-timeouts"></a><span data-ttu-id="f2648-122">Časové výtažky na straně služby</span><span class="sxs-lookup"><span data-stu-id="f2648-122">Service-side Timeouts</span></span>  
- <span data-ttu-id="f2648-123">Na straně služby:</span><span class="sxs-lookup"><span data-stu-id="f2648-123">On the service side:</span></span>  
+### <a name="service-side-timeouts"></a><span data-ttu-id="8e22f-123">Vypršení časových limitů na straně služby</span><span class="sxs-lookup"><span data-stu-id="8e22f-123">Service-side Timeouts</span></span>  
+ <span data-ttu-id="8e22f-124">Na straně služby:</span><span class="sxs-lookup"><span data-stu-id="8e22f-124">On the service side:</span></span>  
   
-1. <span data-ttu-id="f2648-124">SendTimeout, OpenTimeout, CloseTimeout jsou stejné jako na straně klienta.</span><span class="sxs-lookup"><span data-stu-id="f2648-124">SendTimeout, OpenTimeout, CloseTimeout are the same as on the client.</span></span>  
+1. <span data-ttu-id="8e22f-125">SendTimeout, OpenTimeout, CloseTimeout jsou stejné jako u klienta.</span><span class="sxs-lookup"><span data-stu-id="8e22f-125">SendTimeout, OpenTimeout, CloseTimeout are the same as on the client.</span></span>  
   
-2. <span data-ttu-id="f2648-125">ReceiveTimeout – používá vrstva rozhraní služby k inicializaci relace nečinnosti časový limit, který určuje, jak dlouho relace může být nečinný před vypršením časového limitu.</span><span class="sxs-lookup"><span data-stu-id="f2648-125">ReceiveTimeout – used by the Service Framework Layer to initialize the session-idle timeout which controls how long a session can be idle before timing out.</span></span>
+2. <span data-ttu-id="8e22f-126">ReceiveTimeout – používá se vrstvou rozhraní služby k inicializaci časového limitu nečinnosti relace, který určuje, jak dlouho může být relace nečinná, než vyprší časový limit.</span><span class="sxs-lookup"><span data-stu-id="8e22f-126">ReceiveTimeout – used by the Service Framework Layer to initialize the session-idle timeout which controls how long a session can be idle before timing out.</span></span>
