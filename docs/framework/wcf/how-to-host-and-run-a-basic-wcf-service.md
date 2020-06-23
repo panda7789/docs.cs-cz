@@ -1,5 +1,6 @@
 ---
 title: 'Kurz: hostování a spuštění služby Windows Communication Foundation Basic'
+description: Naučte se, jak hostovat službu WCF v konzolové aplikaci jako součást série článků, které vám pomůžou začít vytvářet aplikace WCF.
 ms.date: 03/19/2019
 dev_langs:
 - csharp
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - WCF services [WCF]
 - WCF services [WCF], running
 ms.assetid: 31774d36-923b-4e2d-812e-aa190127266f
-ms.openlocfilehash: 872844487578843492e05dd2abb87b50e0bec91c
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 5318991087e71430523681d601d3b38c4513027b
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291393"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246126"
 ---
 # <a name="tutorial-host-and-run-a-basic-windows-communication-foundation-service"></a>Kurz: hostování a spuštění služby Windows Communication Foundation Basic
 
@@ -194,7 +195,7 @@ Proveďte následující změny kódu:
 
 1. Sestavte řešení a potom spusťte konzolovou aplikaci **GettingStartedHost** ze sady Visual Studio.
 
-    Služba musí být spuštěná s oprávněními správce. Vzhledem k tomu, že jste otevřeli aplikaci Visual Studio s oprávněními správce, při spuštění **GettingStartedHost** v aplikaci Visual Studio se aplikace spouští také s oprávněními správce. Jako alternativu můžete otevřít nový příkazový řádek jako správce (v místní nabídce vyberte **Další**  >  **Spustit jako správce** ) a v něm spustit **GettingStartedHost. exe** .
+    Služba musí být spuštěná s oprávněními správce. Vzhledem k tomu, že jste otevřeli aplikaci Visual Studio s oprávněními správce, při spuštění **GettingStartedHost** v aplikaci Visual Studio se aplikace spouští také s oprávněními správce. Jako alternativu můžete otevřít nový příkazový řádek jako správce (v místní nabídce vyberte **Další**  >  **Spustit jako správce** ) a spustit **GettingStartedHost.exe** v rámci něj.
 
 2. Otevřete webový prohlížeč a přejděte na stránku služby na adrese `http://localhost:8000/GettingStarted/CalculatorService` .
 

@@ -1,34 +1,35 @@
 ---
 title: Konfigurace služeb pomocí konfiguračních souborů
+description: Přečtěte si, jak konfigurační soubor pro službu WCF poskytuje flexibilitu při poskytování dat o chování koncových bodů a služeb během nasazení.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - configuring services [WCF]
 ms.assetid: c9c8cd32-2c9d-4541-ad0d-16dff6bd2a00
-ms.openlocfilehash: caf6e238ca286e5e712c0273e10502655fd7ff4a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1a3266ad8890436c9be9d0f2b231aeaca0f9236e
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79174794"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245424"
 ---
 # <a name="configuring-services-using-configuration-files"></a>Konfigurace služeb pomocí konfiguračních souborů
-Konfigurace služby WCF (Windows Communication Foundation) s konfiguračním souborem poskytuje data o chování koncového bodu a služby v okamžiku nasazení namísto v době návrhu. Toto téma popisuje primární techniky, které jsou k dispozici.  
+Konfigurace služby Windows Communication Foundation (WCF) pomocí konfiguračního souboru vám poskytne flexibilitu při poskytování dat o chování koncových bodů a služeb v bodě nasazení místo v době návrhu. Toto téma popisuje primární techniky k dispozici.  
   
- Služba WCF je konfigurovatelná pomocí konfigurační technologie rozhraní .NET Framework. Nejčastěji jsou prvky XML přidány do souboru Web.config pro web Internetové informační služby (IIS), který je hostitelem služby WCF. Prvky umožňují změnit podrobnosti, jako jsou adresy koncového bodu (skutečné adresy používané ke komunikaci se službou) na základě strojpo počítači. WCF navíc obsahuje několik prvků poskytovaných systémem, které umožňují rychle vybrat nejzákladnější funkce pro službu. Počínaje rozhraním .NET Framework 4 je wcf dodáván s novým výchozím konfiguračním modelem, který zjednodušuje požadavky na konfiguraci WCF. Pokud nezadáte žádnou konfiguraci WCF pro konkrétní službu, runtime automaticky nakonfiguruje službu s některými standardními koncovými body a výchozí vazbou/chováním. V praxi je konfigurace zápisu hlavní součástí programování aplikací WCF.  
+ Služba WCF se dá konfigurovat pomocí technologie konfigurace .NET Framework. Nejčastěji se prvky XML přidávají do souboru Web.config pro web Internetová informační služba (IIS), který je hostitelem služby WCF. Tyto prvky umožňují změnit podrobnosti, jako jsou adresy koncových bodů (skutečné adresy používané ke komunikaci se službou) na počítačích jednotlivých počítačů. Kromě toho WCF zahrnuje několik prvků poskytovaných systémem, které umožňují rychle vybrat základní funkce pro službu. Počínaje .NET Framework 4 přichází WCF k dispozici nový výchozí konfigurační model, který zjednodušuje požadavky na konfiguraci WCF. Pokud neposkytnete konfiguraci služby WCF pro konkrétní službu, modul runtime automaticky nakonfiguruje vaši službu s některými standardními koncovými body a výchozí vazbou/chování. V praxi je psaní konfigurace hlavní součástí programování aplikací WCF.  
   
- Další informace naleznete [v tématu Konfigurace vazeb pro služby](configuring-bindings-for-wcf-services.md). Seznam nejčastěji používaných prvků naleznete v tématu [Vazby poskytované systémem](system-provided-bindings.md). Další informace o výchozích koncových bodech, vazbách a chování naleznete v [tématu Zjednodušená konfigurace](simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](./samples/simplified-configuration-for-wcf-services.md).  
+ Další informace najdete v tématu [Konfigurace vazeb pro služby](configuring-bindings-for-wcf-services.md). Seznam nejčastěji používaných prvků najdete v tématu [vazby poskytované systémem](system-provided-bindings.md). Další informace o výchozích koncových bodech, vazbách a chování najdete v tématu [zjednodušená konfigurace](simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](./samples/simplified-configuration-for-wcf-services.md).  
   
 > [!IMPORTANT]
-> Při nasazování souběžných scénářů, kde jsou nasazeny dvě různé verze služby, je nutné zadat částečné názvy sestavení odkazovaných v konfiguračních souborech. Důvodem je, že konfigurační soubor je sdílen ve všech verzích služby a mohou být spuštěny v různých verzích rozhraní .NET Framework.  
+> Při nasazování souběžných scénářů, kde jsou nasazeny dvě různé verze služby, je nutné zadat částečné názvy sestavení, na které se odkazuje v konfiguračních souborech. Je to proto, že konfigurační soubor je sdílen napříč všemi verzemi služby a mohl by být spuštěn v různých verzích .NET Framework.  
   
 ## <a name="systemconfiguration-webconfig-and-appconfig"></a>System.Configuration: Web.config a App.config  
- WCF používá konfigurační systém System.Configuration rozhraní .NET Framework.  
+ WCF používá konfigurační systém System.Configuration .NET Framework.  
   
- Při konfiguraci služby v sadě Visual Studio určete nastavení pomocí souboru Web.config nebo souboru App.config. Volba názvu konfiguračního souboru je určena hostitelským prostředím, které zvolíte pro službu. Pokud používáte službu IIS k hostování služby, použijte soubor Web.config. Pokud používáte jiné hostitelské prostředí, použijte soubor App.config.  
+ Při konfiguraci služby v aplikaci Visual Studio použijte k zadání nastavení buď soubor Web.config, nebo App.config soubor. Volba názvu konfiguračního souboru je určena hostujícím prostředím, které jste si zvolili pro službu. Pokud používáte službu IIS k hostování vaší služby, použijte soubor Web.config. Pokud používáte jiné hostitelské prostředí, použijte soubor App.config.  
   
- V sadě Visual Studio se soubor s názvem App.config používá k vytvoření konečného konfiguračního souboru. Konečný název skutečně použitý pro konfiguraci závisí na názvu sestavení. Například sestavení s názvem "Cohowinery.exe" má konečný název konfiguračního souboru "Cohowinery.exe.config". Je však třeba upravit pouze soubor App.config. Změny provedené v tomto souboru jsou automaticky provedeny do konečného konfiguračního souboru aplikace v době kompilace.  
+ V aplikaci Visual Studio se k vytvoření finálního konfiguračního souboru používá soubor s názvem App.config. Konečný název, který je ve skutečnosti použitý pro konfiguraci, závisí na názvu sestavení. Například sestavení s názvem "Cohowinery.exe" má konečný název konfiguračního souboru "Cohowinery.exe.config". Je však třeba upravit soubor App.config. Změny provedené v tomto souboru jsou automaticky provedeny v konečném konfiguračním souboru aplikace v době kompilace.  
   
- Při použití souboru App.config sloučí soubor Konfigurace souboru App.config s obsahem souboru Machine.config při spuštění aplikace a použití konfigurace. Tento mechanismus umožňuje nastavení celého počítače, které mají být definovány v souboru Machine.config. Soubor App.config lze použít k přepsání nastavení souboru Machine.config; můžete také zamknout v nastavení v souboru Machine.config tak, aby si zvykli. V případě Web.config sloučí konfigurační systém soubory Web.config ve všech adresářích, které vedou k adresáři aplikace, do konfigurace, která bude použita. Další informace o konfiguraci a prioritách <xref:System.Configuration> nastavení naleznete v tématech v oboru názvů.  
+ V části použití App.config se zaznamená, že konfigurační systém sloučí App.config soubor s obsahem Machine.config souboru při spuštění aplikace a použije se konfigurace. Tento mechanismus umožňuje definovat nastavení pro všechny počítače v souboru Machine.config. Soubor App.config lze použít k přepsání nastavení Machine.config souboru; Můžete také uzamknout nastavení v souboru Machine.config tak, aby se používala. V případě Web.config konfigurační systém sloučí Web.config soubory ve všech adresářích až do adresáře aplikace do konfigurace, která se použije. Další informace o konfiguraci a prioritách nastavení naleznete v tématech v <xref:System.Configuration> oboru názvů.  
   
 ## <a name="major-sections-of-the-configuration-file"></a>Hlavní části konfiguračního souboru  
  Hlavní části konfiguračního souboru obsahují následující prvky.  
@@ -64,59 +65,59 @@ Konfigurace služby WCF (Windows Communication Foundation) s konfiguračním sou
 ```  
   
 > [!NOTE]
-> Vazby a chování oddíly jsou volitelné a jsou zahrnuty pouze v případě potřeby.  
+> Části vazby a chování jsou volitelné a jsou zahrnuty pouze v případě potřeby.  
   
-### <a name="the-services-element"></a>Služby \<> Element  
- Prvek `services` obsahuje specifikace pro všechny služby, které aplikace hostuje. Počínaje zjednodušeným konfiguračním modelem v rozhraní .NET Framework 4 je tato část volitelná.  
+### <a name="the-services-element"></a>\<services>Element  
+ `services`Element obsahuje specifikace pro všechny služby, které jsou hostiteli aplikace. Počínaje zjednodušeným modelem konfigurace v .NET Framework 4 je tato část volitelná.  
   
- [\<služby>](../configure-apps/file-schema/wcf/services.md)  
+ [\<services>](../configure-apps/file-schema/wcf/services.md)  
   
-### <a name="the-service-element"></a>Služba \<> Element  
+### <a name="the-service-element"></a>\<service>Element  
  Každá služba má tyto atributy:  
   
-- `name`. Určuje typ, který poskytuje implementaci servisní smlouvy. Toto je plně kvalifikovaný název, který se skládá z oboru názvů, tečky a potom názvu typu. Například `"MyNameSpace.myServiceType"`.  
+- `name`. Určuje typ, který poskytuje implementaci kontraktu služby. Toto je plně kvalifikovaný název, který se skládá z oboru názvů, tečky a názvu typu. Například `"MyNameSpace.myServiceType"`.  
   
-- `behaviorConfiguration`. Určuje název jednoho z `behavior` prvků nalezených `behaviors` v prvku. Zadané chování řídí akce, jako je například zda služba umožňuje zosobnění. Pokud je jeho hodnota prázdný `behaviorConfiguration` název nebo ne je k dispozici, pak je do služby přidána výchozí sada chování služby.  
+- `behaviorConfiguration`. Určuje název jednoho z `behavior` prvků nalezených v `behaviors` elementu. Zadané chování řídí akce, například zda služba umožňuje zosobnění. Pokud je jeho hodnota prázdný název, nebo není zadána žádná, bude `behaviorConfiguration` do služby přidána výchozí sada chování služby.  
   
-- [\<servisní>](../configure-apps/file-schema/wcf/service.md)  
+- [\<service>](../configure-apps/file-schema/wcf/service.md)  
   
-### <a name="the-endpoint-element"></a>Koncový \<bod> element  
- Každý koncový bod vyžaduje adresu, vazbu a smlouvu, které jsou reprezentovány následujícími atributy:  
+### <a name="the-endpoint-element"></a>\<endpoint>Element  
+ Každý koncový bod vyžaduje adresu, vazbu a kontrakt, které jsou reprezentované následujícími atributy:  
   
-- `address`. Určuje identifikátor URI (Uniform Resource Identifier) služby, což může být absolutní adresa nebo adresa, která je dána vzhledem k základní adrese služby. Pokud je nastavena na prázdný řetězec, znamená to, že koncový bod <xref:System.ServiceModel.ServiceHost> je k dispozici na základní adrese, která je určena při vytváření pro službu.  
+- `address`. Určuje identifikátor URI (Uniform Resource Identifier) služby, který může být absolutní adresa nebo jedna z nich relativní vzhledem k základní adrese služby. Pokud je parametr nastaven na prázdný řetězec, znamená to, že koncový bod je k dispozici na základní adrese, která je určena při vytváření <xref:System.ServiceModel.ServiceHost> služby pro službu.  
   
-- `binding`. Obvykle určuje systémem poskytované <xref:System.ServiceModel.WSHttpBinding>vazby jako , ale můžete také určit uživatelem definované vazby. Zadaná vazba určuje typ přenosu, zabezpečení a kódování a zda jsou podporovány nebo povoleny spolehlivé relace, transakce nebo streamování.  
+- `binding`. Obvykle určuje systémovou vazbu <xref:System.ServiceModel.WSHttpBinding> , jako je, ale může také specifikovat uživatelsky definované vazby. Zadaná vazba určuje typ přenosu, zabezpečení a používaného kódování a to, jestli jsou podporované nebo povolené spolehlivé relace, transakce nebo streamování.  
   
-- `bindingConfiguration`. Pokud musí být změněny výchozí hodnoty vazby, lze to `binding` provést `bindings` konfigurací příslušného prvku v elementu. Tento atribut by měl mít `name` stejnou hodnotu jako atribut `binding` prvku, který se používá ke změně výchozích hodnot. Pokud není zadán žádný `bindingConfiguration` název nebo není zadán žádný ve vazbě, použije se v koncovém bodě výchozí vazba typu vazby.  
+- `bindingConfiguration`. Pokud je nutné upravit výchozí hodnoty vazby, lze to provést nakonfigurováním příslušného `binding` prvku v `bindings` elementu. Tento atribut by měl mít stejnou hodnotu jako `name` atribut `binding` prvku, který se používá ke změně výchozích hodnot. Pokud není zadán žádný název nebo pokud není `bindingConfiguration` zadána žádná vazba, je v tomto koncovém bodu použita výchozí vazba typu vazby.  
   
-- `contract`. Určuje rozhraní, které definuje smlouvu. Toto je rozhraní implementované v typu CLR (CLR) jazyka určeného `name` atributem `service` prvku.  
+- `contract`. Určuje rozhraní, které definuje kontrakt. Toto je rozhraní implementované v typu modulu CLR (Common Language Runtime) určeném `name` atributem `service` elementu.  
   
-- [\<>koncového bodu](../configure-apps/file-schema/wcf/endpoint-element.md)  
+- [\<endpoint>](../configure-apps/file-schema/wcf/endpoint-element.md)  
   
-### <a name="the-bindings-element"></a>Vazby \<> Element  
- Prvek `bindings` obsahuje specifikace pro všechny vazby, které lze použít libovolný koncový bod definovaný v libovolné službě.  
+### <a name="the-bindings-element"></a>\<bindings>Element  
+ `bindings`Element obsahuje specifikace pro všechny vazby, které mohou být použity jakýmkoli koncovým bodem definovaným v jakékoli službě.  
   
- [\<vázání>](../configure-apps/file-schema/wcf/bindings.md)  
+ [\<bindings>](../configure-apps/file-schema/wcf/bindings.md)  
   
-### <a name="the-binding-element"></a>Vazba \<> Element  
- Prvky `binding` obsažené v `bindings` prvku může být buď jeden ze systémem poskytované vazby (viz [System-Provided Vazby)](system-provided-bindings.md)nebo vlastní vazby (viz [vlastní vazby).](./extending/custom-bindings.md) Prvek `binding` má `name` atribut, který koreluje vazbu s `bindingConfiguration` koncovým `endpoint` bodem zadaným v atributu prvku. Pokud není zadán žádný název, pak tato vazba odpovídá výchozí mu typ vazby.  
+### <a name="the-binding-element"></a>\<binding>Element  
+ `binding`Prvky obsažené v `bindings` elementu mohou být buď jedna z těchto vazeb poskytovaných systémem (viz téma [vazby poskytnuté systémem](system-provided-bindings.md)) nebo vlastní vazba (viz [vlastní vazby](./extending/custom-bindings.md)). `binding`Element má `name` atribut, který koreluje vazbu s koncovým bodem zadaným v `bindingConfiguration` atributu `endpoint` elementu. Pokud název není zadán, bude tato vazba odpovídat výchozímu typu vazby.  
   
-Další informace o konfiguraci služeb a klientů naleznete v [tématu Konfigurace služeb WCF](configuring-services.md).
+Další informace o konfiguraci služeb a klientů najdete v tématu [Konfigurace služeb WCF](configuring-services.md).
   
- [\<závazné>](../configure-apps/file-schema/wcf/bindings.md)  
+ [\<binding>](../configure-apps/file-schema/wcf/bindings.md)  
   
-### <a name="the-behaviors-element"></a>Chování \<> Element  
- Toto je prvek `behavior` kontejneru pro prvky, které definují chování pro službu.  
+### <a name="the-behaviors-element"></a>\<behaviors>Element  
+ Toto je prvek kontejneru pro `behavior` prvky, které definují chování pro službu.  
   
- [\<chování>](../configure-apps/file-schema/wcf/behaviors.md)  
+ [\<behaviors>](../configure-apps/file-schema/wcf/behaviors.md)  
   
-### <a name="the-behavior-element"></a>Chování \<> Element  
- Každý `behavior` prvek je `name` identifikován atributem a poskytuje buď systémové `throttling` chování, například <> nebo vlastní chování. Pokud není uveden žádný název, pak tento prvek chování odpovídá výchozí službě nebo chování koncového bodu.  
+### <a name="the-behavior-element"></a>\<behavior>Element  
+ Každý `behavior` element je identifikován `name` atributem a poskytuje buď chování poskytované systémem, například <`throttling`> nebo vlastní chování. Pokud název není zadán, bude tento prvek chování odpovídat výchozímu chování služby nebo koncového bodu.  
   
- [\<chování>](../configure-apps/file-schema/wcf/behavior-of-servicebehaviors.md)  
+ [\<behavior>](../configure-apps/file-schema/wcf/behavior-of-servicebehaviors.md)  
   
-## <a name="how-to-use-binding-and-behavior-configurations"></a>Použití konfigurace vazby a chování  
- WCF usnadňuje sdílení konfigurací mezi koncovými body pomocí referenčního systému v konfiguraci. Spíše než přímo přiřazení konfiguračních hodnot ke koncovému `bindingConfiguration` bodu, `<binding>` hodnoty konfigurace související s vazbou jsou seskupeny do prvků v části. Konfigurace vazby je pojmenovaná skupina nastavení na vazbě. Koncové body pak `bindingConfiguration` mohou odkazovat na název podle.  
+## <a name="how-to-use-binding-and-behavior-configurations"></a>Jak používat konfigurace vazeb a chování  
+ Technologie WCF usnadňuje sdílení konfigurací mezi koncovými body pomocí referenčního systému v konfiguraci. Místo přímého přiřazování hodnot konfigurace koncovému bodu jsou konfigurační hodnoty související s vazbami seskupeny do `bindingConfiguration` prvků v `<binding>` oddílu. Konfigurace vazby je pojmenovaná skupina nastavení pro vazbu. Koncové body pak mohou odkazovat `bindingConfiguration` podle názvu.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -148,9 +149,9 @@ Další informace o konfiguraci služeb a klientů naleznete v [tématu Konfigur
 </configuration>  
 ```  
   
- `bindingConfiguration` `<binding>` Je `name` nastavena v prvku. Musí `name` být jedinečný řetězec v rámci oboru typu vazby – v tomto případě [<basicHttpBinding\>](../configure-apps/file-schema/wcf/basichttpbinding.md)nebo prázdnou hodnotu odkazovat na výchozí vazbu. Koncový bod odkazuje na konfiguraci `bindingConfiguration` nastavením atributu na tento řetězec.  
+ `name` `bindingConfiguration` Je nastaven v `<binding>` elementu. `name`Musí být jedinečný řetězec v rámci oboru typu vazby – v tomto případě [<\> BasicHttpBinding](../configure-apps/file-schema/wcf/basichttpbinding.md)nebo prázdná hodnota pro odkazování na výchozí vazbu. Koncový bod odkazuje na konfiguraci nastavením `bindingConfiguration` atributu na tento řetězec.  
   
- A `behaviorConfiguration` je implementována stejným způsobem, jak je znázorněno v následující ukázce.  
+ A `behaviorConfiguration` je implementován stejným způsobem, jak je znázorněno v následující ukázce.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -181,14 +182,14 @@ Další informace o konfiguraci služeb a klientů naleznete v [tématu Konfigur
 </configuration>  
 ```  
   
- Všimněte si, že výchozí sada chování služby jsou přidány do služby. Tento systém umožňuje koncovým bodům sdílet běžné konfigurace bez předefinování nastavení. Pokud je vyžadován obor celého počítače, vytvořte konfiguraci vazby nebo chování v souboru Machine.config. Nastavení konfigurace jsou k dispozici ve všech souborech App.config. [Nástroj Editor konfigurace (SvcConfigEditor.exe)](configuration-editor-tool-svcconfigeditor-exe.md) usnadňuje vytváření konfigurací.  
+ Všimněte si, že se do služby přidala výchozí sada chování služby. Tento systém umožňuje koncovým bodům sdílet společné konfigurace bez předefinování nastavení. Je-li požadován obor v rámci rozsahu počítače, vytvořte v Machine.config konfiguraci vazby nebo chování. Konfigurační nastavení jsou k dispozici ve všech App.config souborech. [Nástroj Editor konfigurací (SvcConfigEditor.exe)](configuration-editor-tool-svcconfigeditor-exe.md) usnadňuje vytváření konfigurací.  
   
 ## <a name="behavior-merge"></a>Sloučení chování  
- Funkce sloučení chování usnadňuje správu chování, pokud chcete, aby sada běžných chování byla použita konzistentně. Tato funkce umožňuje určit chování na různých úrovních hierarchie konfigurace a nechat služby dědit chování z více úrovní hierarchie konfigurace. Pro ilustraci, jak to funguje, předpokládáte, že máte ve službě IIS následující rozložení virtuálního adresáře:  
+ Funkce sloučení chování usnadňuje správu chování, když chcete, aby se sada běžných chování používala konzistentně. Tato funkce umožňuje zadat chování na různých úrovních konfigurační hierarchie a mít služby dědění chování z více úrovní konfigurační hierarchie. K tomu, abyste se vypředpokládali, jak to funguje, máte ve službě IIS následující rozložení virtuálních adresářů:  
   
  `~\Web.config~\Service.svc~\Child\Web.config~\Child\Service.svc`
   
- A `~\Web.config` váš soubor má následující obsah:  
+ A `~\Web.config` soubor má následující obsah:  
   
 ```xml  
 <configuration>  
@@ -204,7 +205,7 @@ Další informace o konfiguraci služeb a klientů naleznete v [tématu Konfigur
 </configuration>  
 ```  
   
- A máte podřízený web.config umístěný na adrese ~\Child\Web.config s následujícím obsahem:  
+ A máte podřízený Web.config nacházející se v umístění ~\Child\Web.config s následujícím obsahem:  
   
 ```xml  
 <configuration>  
@@ -220,9 +221,9 @@ Další informace o konfiguraci služeb a klientů naleznete v [tématu Konfigur
 </configuration>  
 ```  
   
- Služba umístěná na adrese ~\Child\Service.svc se bude chovat, jako by měla chování ladění a metadat služby. Služba umístěná na adrese ~\Service.svc bude mít pouze chování serviceDebug. Co se stane, je, že dvě kolekce chování se stejným názvem (v tomto případě prázdný řetězec) jsou sloučeny.  
+ Služba, která se nachází na ~ \Child\Service.svc, se bude chovat, jako by se jednalo o chování serviceDebug a oddílu serviceMetadata. Služba nacházející se na ~ \Service.svc bude mít pouze chování serviceDebug. K tomu dochází, když se sloučí dvě kolekce chování se stejným názvem (v tomto případě je to prázdný řetězec).  
   
- Kolekce chování můžete také vymazat \<pomocí značky clear> a odebráním \<jednotlivých chování z kolekce pomocí značky remove>. Například následující dvě konfigurace výsledky v podřízené služby s pouze serviceMetadata chování:  
+ Můžete také vymazat kolekce chování pomocí \<clear> značky a odebrat jednotlivá chování z kolekce pomocí \<remove> značky. Například následující dvě výsledky konfigurace v podřízené službě mají pouze chování oddílu serviceMetadata:  
   
 ```xml  
 <configuration>  
@@ -254,17 +255,17 @@ Další informace o konfiguraci služeb a klientů naleznete v [tématu Konfigur
 </configuration>  
 ```  
   
- Sloučení chování se provádí pro bezejmenné kolekce chování, jak je uvedeno výše a pojmenované kolekce chování také.  
+ Sloučení chování je provedeno pro kolekce chování Nameless, jak je uvedeno výše, a pojmenované kolekce chování také.  
   
- Sloučení chování funguje v hostitelském prostředí služby IIS, ve kterém se soubory Web.config hierarchicky slučují s kořenovým souborem Web.config a machine.config. Ale funguje také v aplikačním prostředí, kde machine.config může sloučit se souborem App.config.  
+ Sloučení chování funguje v hostitelském prostředí služby IIS, ve kterém se Web.config soubory sloučí hierarchicky s kořenovým Web.config souborem a machine.config. Ale funguje i v prostředí aplikace, kde se machine.config můžou sloučit se souborem App.config.  
   
- Sloučení chování platí pro chování koncového bodu a chování služby v konfiguraci.  
+ Sloučení chování se aplikuje na chování koncového bodu i na chování služby v konfiguraci.  
   
- Pokud kolekce podřízené chování obsahuje chování, které je již k dispozici v nadřazené kolekci chování, podřízené chování přepíše nadřazené. Takže pokud nadřazené kolekce chování měl `<serviceMetadata httpGetEnabled="False" />` a podřízené chování kolekce měla `<serviceMetadata httpGetEnabled="True" />`, podřízené chování by přepsat nadřazené chování v kolekci chování a httpGetEnabled by být "true".  
+ Pokud kolekce podřízených chování obsahuje chování, které již je přítomno v nadřazené kolekci chování, podřízené chování přepíše nadřazený objekt. Takže pokud kolekce nadřazených chování měla `<serviceMetadata httpGetEnabled="False" />` a podřízená kolekce chování měla `<serviceMetadata httpGetEnabled="True" />` , může podřízené chování přepsat nadřazené chování v kolekci chování a HttpGetEnabled by byla "true".  
   
 ## <a name="see-also"></a>Viz také
 
 - [Zjednodušená konfigurace](simplified-configuration.md)
 - [Konfigurace služeb WCF](configuring-services.md)
-- [\<servisní>](../configure-apps/file-schema/wcf/service.md)
-- [\<závazné>](../configure-apps/file-schema/wcf/bindings.md)
+- [\<service>](../configure-apps/file-schema/wcf/service.md)
+- [\<binding>](../configure-apps/file-schema/wcf/bindings.md)

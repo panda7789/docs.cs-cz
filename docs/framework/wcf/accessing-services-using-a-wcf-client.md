@@ -1,5 +1,6 @@
 ---
 title: Přístup ke službám pomocí klienta WCF
+description: Naučte se vytvořit proxy server klienta WCF pro vaši službu WCF. Klientská aplikace používá ke komunikaci se službou klientský proxy server.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - clients [WCF], consuming services
 ms.assetid: d780af9f-73c5-42db-9e52-077a5e4de7fe
-ms.openlocfilehash: 462d9a3923009f0124c2b90b6fa86dfa9869a3c5
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 25446a89a0b5657d32d77e2d0d57f58f36bed71b
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72316543"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245541"
 ---
 # <a name="accessing-services-using-a-wcf-client"></a>Přístup ke službám pomocí klienta WCF
 
@@ -26,16 +27,16 @@ Po vytvoření služby je dalším krokem vytvoření proxy klienta WCF. Klients
 
 3. Vytvořte instanci proxy serveru služby WCF.
 
-Proxy klient služby WCF se dá vytvořit ručně pomocí nástroje Service model metadat (SvcUtil. exe), kde najdete další informace v tématu [Nástroj pro nástroj pro metadata typu ServiceModel (Svcutil. exe)](servicemodel-metadata-utility-tool-svcutil-exe.md). Proxy klient služby WCF lze také vygenerovat v rámci sady Visual Studio pomocí funkce **Přidat odkaz na službu** . Pro vygenerování proxy serveru služby WCF pomocí obou metod, které musí služba běžet. Pokud je služba v místním prostředí hostována, musíte spustit hostitele. Pokud je služba hostovaná ve službě IIS/nemusíte dělat něco jiného.
+Proxy klienta WCF se dá vytvořit ručně pomocí nástroje Service model metadat Tool (SvcUtil.exe), kde najdete další informace v tématu [Nástroj pro nástroj pro metadata typu ServiceModel (Svcutil.exe)](servicemodel-metadata-utility-tool-svcutil-exe.md). Proxy klient služby WCF lze také vygenerovat v rámci sady Visual Studio pomocí funkce **Přidat odkaz na službu** . Pro vygenerování proxy serveru služby WCF pomocí obou metod, které musí služba běžet. Pokud je služba v místním prostředí hostována, musíte spustit hostitele. Pokud je služba hostovaná ve službě IIS/nemusíte dělat něco jiného.
 
 ## <a name="servicemodel-metadata-utility-tool"></a>Nástroj pro metadata ServiceModel
- Nástroj pro vytváření [metadat (Svcutil. exe) třídy ServiceModel](servicemodel-metadata-utility-tool-svcutil-exe.md) je nástroj příkazového řádku pro generování kódu z metadat. Následující použití je příkladem základního příkazu Svcutil. exe.
+ Nástroj pro vytváření [metadat (Svcutil.exe) třídy ServiceModel](servicemodel-metadata-utility-tool-svcutil-exe.md) je nástroj příkazového řádku pro generování kódu z metadat. Toto použití je příkladem základního příkazu Svcutil.exe.
 
 ```console
 Svcutil.exe <service's Metadata Exchange (MEX) address or HTTP GET address>
 ```
 
- Alternativně můžete použít Svcutil. exe se soubory WSDL (Web Services Description Language) a XSD (XML Schema Definition Language) v systému souborů.
+ Alternativně můžete použít Svcutil.exe se soubory WSDL (Web Services Description Language) a XML Schema Definition Language (XSD) v systému souborů.
 
 ```console
 Svcutil.exe <list of WSDL and XSD files on file system>
@@ -56,7 +57,7 @@ Svcutil.exe <file1 [,file2]>
 
 ## <a name="add-service-reference-in-visual-studio"></a>Přidat odkaz na službu v aplikaci Visual Studio
 
- Po spuštění služby klikněte pravým tlačítkem myši na projekt, který bude obsahovat proxy klienta WCF, a vyberte **Přidat** **odkaz na službu** > . V **dialogovém okně Přidat odkaz na službu**zadejte adresu URL služby, kterou chcete zavolat, a klikněte na tlačítko **Přejít** . V dialogovém okně se zobrazí seznam služeb dostupných na adrese, kterou zadáte. Dvojím kliknutím na službu zobrazte dostupné kontrakty a operace, zadejte obor názvů pro vygenerovaný kód a klikněte na tlačítko **OK** .
+ U spuštěné služby klikněte pravým tlačítkem myši na projekt, který bude obsahovat proxy klienta WCF a vyberte **Přidat**  >  **odkaz na službu**. V **dialogovém okně Přidat odkaz na službu**zadejte adresu URL služby, kterou chcete zavolat, a klikněte na tlačítko **Přejít** . V dialogovém okně se zobrazí seznam služeb dostupných na adrese, kterou zadáte. Dvojím kliknutím na službu zobrazte dostupné kontrakty a operace, zadejte obor názvů pro vygenerovaný kód a klikněte na tlačítko **OK** .
 
 ## <a name="example"></a>Příklad
  Následující příklad kódu ukazuje kontrakt služby vytvořenou pro službu.
@@ -82,7 +83,7 @@ Public Interface ICalculator
 End Interface
 ```
 
- Nástroj pro dodávání metadat ServiceModel a **Přidat odkaz na službu** v aplikaci Visual Studio generuje následující třídu klienta WCF. Třída dědí z obecné třídy <xref:System.ServiceModel.ClientBase%601> a implementuje rozhraní `ICalculator`. Nástroj také vygeneruje rozhraní `ICalculator` (zde není zobrazeno).
+ Nástroj pro dodávání metadat ServiceModel a **Přidat odkaz na službu** v aplikaci Visual Studio generuje následující třídu klienta WCF. Třída dědí z obecné <xref:System.ServiceModel.ClientBase%601> třídy a implementuje `ICalculator` rozhraní. Nástroj také vygeneruje `ICalculator` rozhraní (zde není zobrazen).
 
 ```csharp
 public partial class CalculatorClient : System.ServiceModel.ClientBase<ICalculator>, ICalculator
@@ -178,20 +179,20 @@ Console.WriteLine("Add({0},{1}) = {2}", value1, value2, result)
 
 Mnoho výjimek vyvolaných klientem WCF je způsobeno výjimkou ve službě. Mezi příklady patří:
 
-- <xref:System.Net.Sockets.SocketException>: vzdálený hostitel nuceně zavřel existující připojení.
+- <xref:System.Net.Sockets.SocketException>: Vzdálený hostitel nuceně zavřel existující připojení.
 
-- <xref:System.ServiceModel.CommunicationException>: základní připojení bylo neočekávaně ukončeno.
+- <xref:System.ServiceModel.CommunicationException>: Základní připojení bylo neočekávaně ukončeno.
 
-- <xref:System.ServiceModel.CommunicationObjectAbortedException>: připojení soketu bylo přerušeno. To může být způsobeno chybou při zpracování vaší zprávy, překročením časového limitu příjmu vzdáleným hostitelem nebo problémem se síťovými prostředky.
+- <xref:System.ServiceModel.CommunicationObjectAbortedException>: Připojení soketu bylo přerušeno. To může být způsobeno chybou při zpracování vaší zprávy, překročením časového limitu příjmu vzdáleným hostitelem nebo problémem se síťovými prostředky.
 
 Pokud dojde k těmto typům výjimek, nejlepším způsobem, jak problém vyřešit, je zapnout trasování na straně služby a určit, k jaké výjimce došlo. Další informace o trasování naleznete v tématu [trasování](./diagnostics/tracing/index.md) a [používání trasování pro řešení potíží s aplikací](./diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Postupy: Vytvoření klienta](how-to-create-a-wcf-client.md)
 - [Postupy: Přístup ke službám pomocí duplexního kontraktu](./feature-details/how-to-access-services-with-a-duplex-contract.md)
 - [Postupy: Asynchronní volání operací služby](./feature-details/how-to-call-wcf-service-operations-asynchronously.md)
-- [Postupy: Přístup ke službám pomocí jednosměrných kontraktů a kontraktů žádost-odpověď](./feature-details/how-to-access-wcf-services-with-one-way-and-request-reply-contracts.md)
+- [Postupy: Přístup ke službám pomocí jednosměrných kontraktů a kontraktů požadavek-odpověď](./feature-details/how-to-access-wcf-services-with-one-way-and-request-reply-contracts.md)
 - [Postupy: Přístup ke službě WSE 3.0](./feature-details/how-to-access-a-wse-3-0-service-with-a-wcf-client.md)
 - [Principy generovaného klientského kódu](./feature-details/understanding-generated-client-code.md)
 - [Postupy: Vylepšení doby spouštění klientských aplikací WCF pomocí XmlSerializer](./feature-details/startup-time-of-wcf-client-applications-using-the-xmlserializer.md)

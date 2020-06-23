@@ -1,24 +1,25 @@
 ---
 title: Konfigurace chování klientů
+description: 'Přečtěte si o dvou způsobech, které WCF nakonfiguruje chování: v konfiguračním souboru aplikace nebo programově z volající aplikace.'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: df5b32fa-e73b-4e8e-b66f-357c748e0173
-ms.openlocfilehash: ca466af71f62ef72e021753b132afdc847f75d76
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 4b83862221cf249455478c3ade159a3101062f3e
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72320694"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245437"
 ---
 # <a name="configuring-client-behaviors"></a>Konfigurace chování klientů
-Windows Communication Foundation (WCF) konfiguruje chování dvěma způsoby: buď odkazem na konfigurace chování, které jsou definovány v části `<behavior>` konfiguračního souboru klientské aplikace – nebo programově v volající aplikaci. V tomto tématu jsou popsány oba přístupy.  
+Windows Communication Foundation (WCF) nakonfiguruje chování dvěma způsoby: buď odkazem na konfigurace chování, které jsou definovány v `<behavior>` části konfiguračního souboru klientské aplikace – nebo programově v volající aplikaci. V tomto tématu jsou popsány oba přístupy.  
   
- Při použití konfiguračního souboru je konfigurace chování pojmenovaná kolekce nastavení konfigurace. Název každé konfigurace chování musí být jedinečný. Tento řetězec se používá v atributu `behaviorConfiguration` konfigurace koncového bodu pro propojení koncového bodu s chováním.  
+ Při použití konfiguračního souboru je konfigurace chování pojmenovaná kolekce nastavení konfigurace. Název každé konfigurace chování musí být jedinečný. Tento řetězec se používá v `behaviorConfiguration` atributu konfigurace koncového bodu pro propojení koncového bodu s chováním.  
   
 ## <a name="example"></a>Příklad  
- Následující konfigurační kód definuje chování s názvem `myBehavior`. Koncový bod klienta odkazuje na toto chování v atributu `behaviorConfiguration`.  
+ Následující konfigurační kód definuje chování s názvem `myBehavior` . Koncový bod klienta odkazuje na toto chování v `behaviorConfiguration` atributu.  
   
 ```xml  
 <configuration>  
@@ -43,14 +44,14 @@ Windows Communication Foundation (WCF) konfiguruje chování dvěma způsoby: bu
 ```  
   
 ## <a name="using-behaviors-programmatically"></a>Programové použití chování  
- Chování můžete také nakonfigurovat nebo vložit programově tak, že před otevřením klienta vyhledáte příslušnou vlastnost `Behaviors` objektu klienta služby Windows Communication Foundation (WCF) nebo objektu factory kanálu klienta.  
+ Chování můžete taky nakonfigurovat nebo vložit programově tak, že `Behaviors` před otevřením klienta vyhledáte příslušnou vlastnost objektu klienta Windows Communication Foundation (WCF) nebo objektu factory kanálu klienta.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu ukazuje, jak programově vložit chování přístupem k vlastnosti <xref:System.ServiceModel.Description.ServiceEndpoint.Behaviors%2A> v <xref:System.ServiceModel.Description.ServiceEndpoint> vrácené vlastností <xref:System.ServiceModel.ChannelFactory.Endpoint%2A> před vytvořením objektu kanálu.  
+ Následující příklad kódu ukazuje, jak programově vložit chování přístupem k <xref:System.ServiceModel.Description.ServiceEndpoint.Behaviors%2A> vlastnosti <xref:System.ServiceModel.Description.ServiceEndpoint> vrácenou z <xref:System.ServiceModel.ChannelFactory.Endpoint%2A> vlastnosti před vytvořením objektu kanálu.  
   
  [!code-csharp[ChannelFactoryBehaviors#10](../../../samples/snippets/csharp/VS_Snippets_CFX/channelfactorybehaviors/cs/client.cs#10)]
  [!code-vb[ChannelFactoryBehaviors#10](../../../samples/snippets/visualbasic/VS_Snippets_CFX/channelfactorybehaviors/vb/client.vb#10)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [chování \<>](../configure-apps/file-schema/wcf/behaviors.md)
+- [\<behaviors>](../configure-apps/file-schema/wcf/behaviors.md)

@@ -1,13 +1,14 @@
 ---
 title: Výběr typu pověření
+description: Přečtěte si o přihlašovacích údajích, způsobu jejich použití ve službě WCF a o tom, jak vybrat správné přihlašovací údaje pro vaši aplikaci, aby bylo možné navázat deklaraci identity nebo schopností.
 ms.date: 03/30/2017
 ms.assetid: bf707063-3f30-4304-ab53-0e63413728a8
-ms.openlocfilehash: 7bcc5f407077b32d85b7f1e5f7ddbc5aba4b80c1
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 7a8a6880e5fc3982bb7f470c34a77c771c26effd
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84586192"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85244917"
 ---
 # <a name="selecting-a-credential-type"></a>Výběr typu pověření
 *Přihlašovací údaje* jsou pomocí služby data Windows Communication Foundation (WCF) navázány buď požadované identity, nebo schopnosti. Například Passport je přihlašovací údaje, které jsou státními záležitostmi k prokázání občanství v zemi nebo oblasti. V rámci WCF můžou přihlašovací údaje trvat mnoho forem, jako jsou tokeny uživatelských jmen a certifikáty X. 509. Toto téma popisuje přihlašovací údaje, jak se používají ve službě WCF a jak vybrat správné přihlašovací údaje pro vaši aplikaci.  
@@ -23,7 +24,7 @@ ms.locfileid: "84586192"
 ## <a name="transport-credential-types"></a>Typy přenosových údajů  
  V následující tabulce jsou uvedeny možné typy přihlašovacích údajů klienta, které mohou být použity v rámci vazby v režimu zabezpečení přenosu. Při vytváření služby nastavte `ClientCredentialType` vlastnost na jednu z těchto hodnot, abyste určili typ přihlašovacích údajů, které musí klient zadat ke komunikaci s vaší službou. Můžete nastavit typy buď v kódu, nebo v konfiguračních souborech.  
   
-|Nastavení|Popis|  
+|Nastavení|Description|  
 |-------------|-----------------|  
 |Žádné|Určuje, že klient nemusí prezentovat žádné přihlašovací údaje. To se týká anonymního klienta.|  
 |Basic|Určuje základní ověřování pro klienta. Další informace najdete v tématu RFC2617 –[ověřování protokolu http: základní a ověřování algoritmem Digest](ftp://ftp.rfc-editor.org/in-notes/rfc2617.txt).|  
@@ -36,7 +37,7 @@ ms.locfileid: "84586192"
 ### <a name="message-client-credential-types"></a>Typy přihlašovacích údajů klienta zprávy  
  Následující tabulka uvádí možné typy přihlašovacích údajů, které můžete použít při vytváření aplikace, která používá zabezpečení zpráv. Tyto hodnoty můžete použít buď v kódu, nebo v konfiguračních souborech.  
   
-|Nastavení|Popis|  
+|Nastavení|Description|  
 |-------------|-----------------|  
 |Žádné|Určuje, že klient nemusí prezentovat přihlašovací údaje. To se týká anonymního klienta.|  
 |Windows|Umožňuje výměnu zpráv SOAP v rámci kontextu zabezpečení vytvořeného pomocí pověření systému Windows.|  

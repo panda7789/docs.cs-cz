@@ -1,5 +1,6 @@
 ---
 title: CoreResponseData – třída
+description: Pochopení třídy CoreResponseData, která představuje analýzu hlaviček protokolu HTTP a textu odpovědi. Je v oboru názvů System.Net v .NET.
 ms.date: 01/29/2018
 topic_type:
 - apiref
@@ -10,32 +11,32 @@ api_location:
 api_type:
 - Assembly
 author: stevewhims
-ms.openlocfilehash: 39a14a3df5059cc47cd4879e4d4ba351cc7b655b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8248cc20f6528a1c3bc64c9b9339a3a3000d03a0
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79156113"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84989800"
 ---
 # <a name="coreresponsedata-class"></a>CoreResponseData – třída
 
-Třída `CoreResponseData` představuje analýzu hlavičky HTTP a tělo odpovědi.
+`CoreResponseData`Třída představuje analýzu hlaviček protokolu HTTP a textu odpovědi.
 
-## <a name="syntax"></a>Syntaxe
+## <a name="syntax"></a>Syntax
   
 ```csharp
 internal class CoreResponseData
 ```
 
 > [!WARNING]
-> Toto rozhraní API je interní a není určen pro použití přímo ve vašem kódu. Místo toho byste <xref:System.Diagnostics.DiagnosticSource> měli použít připojit síťový kód. Viz [DiagnosticSource Uživatelská příručka](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/DiagnosticSourceUsersGuide.md).
+> Toto rozhraní API je interní a není určeno pro použití přímo v kódu. Místo toho byste měli použít <xref:System.Diagnostics.DiagnosticSource> k zavěšení síťového kódu. Viz [uživatelská příručka pro DiagnosticSource](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/DiagnosticSourceUsersGuide.md).
 >
-> Společnost Microsoft nepodporuje použití této třídy v produkční aplikaci za žádných okolností.
+> Společnost Microsoft v žádné situaci nepodporuje použití této třídy v produkční aplikaci.
 
 ## <a name="requirements"></a>Požadavky
 
 **Obor názvů:**<xref:System.Net>
 
-**Sestava:** Systém (v souboru System.dll)
+**Sestavení:** Systém (v System.dll)
 
-**Verze rozhraní .NET Framework:** K dispozici od 2.0.
+**Verze .NET Framework:** K dispozici od verze 2,0.

@@ -1,5 +1,6 @@
 ---
 title: <system.serviceModel>
+description: Přečtěte si o prvcích konfigurace ServiceModel WCF, které umožňují nakonfigurovat službu WCF a klientské aplikace.
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#system.ServiceModel
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - <system.serviceModel> element
 - system.serviceModel element
 ms.assetid: 78519531-ad7a-40d3-b3e7-42f1103d8854
-ms.openlocfilehash: 2125ce00b0e23f2e93ff251549f9c1276892b16b
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 567cbd2cc07ee82e795daa067b9034b2b8dc1974
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70399445"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85243955"
 ---
 # \<system.serviceModel>
 Tento oddíl konfigurace obsahuje všechny prvky konfigurace ServiceModel Windows Communication Foundation (WCF).  
@@ -21,7 +22,7 @@ Tento oddíl konfigurace obsahuje všechny prvky konfigurace ServiceModel Window
 [**\<configuration>**](../configuration-element.md)\
 &nbsp;&nbsp;**\<system.serviceModel>**  
   
-## <a name="syntax"></a>Syntaxe  
+## <a name="syntax"></a>Syntax  
   
 ```xml  
 <system.serviceModel>
@@ -68,7 +69,7 @@ Tento oddíl konfigurace obsahuje všechny prvky konfigurace ServiceModel Window
 |[\<bindings>](bindings.md)|Tato část obsahuje kolekci standardních a vlastních vazeb. Každá položka je identifikována jejím jedinečným `name` . Služby používají vazby propojením s použitím `name` .|  
 |[\<client>](client.md)|Tato část obsahuje seznam koncových bodů, které klient používá pro připojení ke službě.|  
 |[\<comContracts>](comcontracts.md)|Tato část definuje kontrakty COM aktivované pro WCF a zprostředkovatele komunikace s objekty COM.|  
-|[\<commonBehaviors>](commonbehaviors.md)|Tento oddíl lze definovat pouze v souboru Machine. config. Definuje dvě podřízené kolekce s názvem `endpointBehaviors` a `serviceBehaviors` .  Každá kolekce definuje prvky chování spotřebované všemi koncovými body a službami WCF v daném počítači.  Pokud je chování definováno v obou `<commonBehaviors>` částech a `<behaviors>` , chování v \<behaviors> oddílu má přednost.|  
+|[\<commonBehaviors>](commonbehaviors.md)|Tento oddíl lze definovat pouze v souboru machine.config. Definuje dvě podřízené kolekce s názvem `endpointBehaviors` a `serviceBehaviors` .  Každá kolekce definuje prvky chování spotřebované všemi koncovými body a službami WCF v daném počítači.  Pokud je chování definováno v obou `<commonBehaviors>` částech a `<behaviors>` , chování v \<behaviors> oddílu má přednost.|  
 |[\<diagnostics>](diagnostics.md)|Tato část obsahuje nastavení pro diagnostické funkce služby WCF. Uživatel může povolit nebo zakázat trasování, čítače výkonu a zprostředkovatele rozhraní WMI a může přidat vlastní filtry zpráv.|  
 |[\<extensions>](extensions-section.md)|Tato část obsahuje kolekci rozšíření, která umožňují uživateli vytvořit uživatelsky definované vazby, chování a další aspekty rozšíření.|  
 |[\<protocolMapping>](protocolmapping.md)|Tato část definuje sadu výchozích mapování protokolů mezi schématy transportního protokolu (např. http, NET. TCP, NET. pipe, atd.) a WCF vazbami.|  

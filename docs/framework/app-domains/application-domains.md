@@ -1,5 +1,6 @@
 ---
 title: Aplikační domény
+description: Přečtěte si o aplikačních doménách, které poskytují hranici izolace mezi aplikacemi pro zabezpečení, spolehlivost, správu verzí a & uvolňování sestavení v rozhraní .NET.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - process boundaries for isolation
@@ -12,12 +13,12 @@ helpviewer_keywords:
 - code, verification process
 - verification testing code
 ms.assetid: 113a8bbf-6875-4a72-a49d-ca2d92e19cc8
-ms.openlocfilehash: a5c9f4248e060d231941269f39cadbc7147ce27f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d6accd11e33c0556fdd7596b2790f4787dce7ae1
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399873"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84903477"
 ---
 # <a name="application-domains"></a>Aplikační domény
 
@@ -46,7 +47,7 @@ Operační systémy a běhová prostředí obvykle poskytují určitou formu izo
     > [!NOTE]
     > Nelze uvolnit jednotlivá sestavení nebo typy. Pouze úplná doména může být uvolněna.  
   
-- Kód spuštěný v jedné aplikaci nemůže přistupovat přímo k kódu nebo prostředkům z jiné aplikace. Modul CLR (Common Language Runtime) vynutil tuto izolaci tím, že zabraňuje přímému volání mezi objekty v různých aplikačních doménách. Objekty, které jsou předávány mezi doménami, jsou buď zkopírovány nebo otevřeny serverem proxy. Pokud je objekt zkopírován, volání objektu je místní. To znamená, že volající i odkazovaný objekt jsou ve stejné doméně aplikace. Pokud je objekt otevřen prostřednictvím proxy serveru, volání objektu je vzdálené. V tomto případě je volající a odkazovaný objekt v různých doménách aplikace. Volání mezi doménami používají stejnou infrastrukturu vzdáleného volání jako volání mezi dvěma procesy nebo mezi dvěma počítači. V takovém případě musí být metadata odkazovaného objektu k dispozici v obou doménách aplikace, aby bylo možné volání metody správně zkompilovat JIT. Pokud volající doména nemá přístup k metadatům pro objekt, který je volán, kompilace může selhat s výjimkou typu <xref:System.IO.FileNotFoundException>. Další informace najdete v tématu [vzdálené objekty](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/72x4h507(v=vs.100)). Mechanismus pro určení způsobu, jakým lze objekty používat napříč doménami, je určen objektem. Další informace naleznete v tématu <xref:System.MarshalByRefObject?displayProperty=nameWithType>.  
+- Kód spuštěný v jedné aplikaci nemůže přistupovat přímo k kódu nebo prostředkům z jiné aplikace. Modul CLR (Common Language Runtime) vynutil tuto izolaci tím, že zabraňuje přímému volání mezi objekty v různých aplikačních doménách. Objekty, které jsou předávány mezi doménami, jsou buď zkopírovány nebo otevřeny serverem proxy. Pokud je objekt zkopírován, volání objektu je místní. To znamená, že volající i odkazovaný objekt jsou ve stejné doméně aplikace. Pokud je objekt otevřen prostřednictvím proxy serveru, volání objektu je vzdálené. V tomto případě je volající a odkazovaný objekt v různých doménách aplikace. Volání mezi doménami používají stejnou infrastrukturu vzdáleného volání jako volání mezi dvěma procesy nebo mezi dvěma počítači. V takovém případě musí být metadata odkazovaného objektu k dispozici v obou doménách aplikace, aby bylo možné volání metody správně zkompilovat JIT. Pokud volající doména nemá přístup k metadatům pro objekt, který je volán, kompilace může selhat s výjimkou typu <xref:System.IO.FileNotFoundException> . Další informace najdete v tématu [vzdálené objekty](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/72x4h507(v=vs.100)). Mechanismus pro určení způsobu, jakým lze objekty používat napříč doménami, je určen objektem. Další informace naleznete v tématu <xref:System.MarshalByRefObject?displayProperty=nameWithType>.  
   
 - Chování kódu je vymezeno aplikací, ve které běží. Jinými slovy aplikační doména poskytuje nastavení konfigurace, jako jsou například zásady verze aplikace, umístění všech vzdálených sestavení, ke kterým přistupuje, a informace o tom, kde najít sestavení, která jsou načtena do domény.  
   
@@ -74,7 +75,7 @@ Operační systémy a běhová prostředí obvykle poskytují určitou formu izo
   
  Kód zkompilovaný JIT nelze sdílet pro sestavení, která jsou načtena do kontextu load-from, pomocí <xref:System.Reflection.Assembly.LoadFrom%2A> metody <xref:System.Reflection.Assembly> třídy nebo načtena z imagí pomocí přetížení <xref:System.Reflection.Assembly.Load%2A> metody, která určuje Bajtová pole.  
   
- Sestavení, která byla zkompilována do nativního kódu pomocí nástroje [Ngen. exe (generátor nativních bitových kopií)](../tools/ngen-exe-native-image-generator.md) , lze sdílet mezi doménami aplikace, pokud jsou při prvním načtení do procesu načtena doménově neutrální.  
+ Sestavení, která byla zkompilována do nativního kódu pomocí [Ngen.exe (generátor nativních bitových kopií)](../tools/ngen-exe-native-image-generator.md) , lze sdílet mezi aplikačními doménami, pokud jsou při prvním načtení do procesu načtena doménově neutrální.  
   
  Kód zkompilovaný JIT pro sestavení, které obsahuje vstupní bod aplikace, je sdílen pouze v případě, že lze sdílet všechny jeho závislosti.  
   
@@ -96,19 +97,19 @@ Operační systémy a běhová prostředí obvykle poskytují určitou formu izo
 
 ### <a name="application-domains-and-cultures"></a>Domény a jazykové verze aplikace
 
- Jazyková verze, která je reprezentována <xref:System.Globalization.CultureInfo> objektem, je přidružena k vláknům. Můžete získat jazykovou verzi, která je přidružená k aktuálně spuštěnému vláknu <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> pomocí vlastnosti, a můžete získat nebo nastavit jazykovou verzi, která je přidružená k aktuálně spuštěnému vláknu pomocí <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType> vlastnosti. Pokud je jazyková verze, která je přidružena k vláknu, explicitně nastavena pomocí <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType> vlastnosti, je nadále přidružena k danému vláknu, pokud vlákno překračuje hranice aplikační domény. V opačném případě je jazyková verze, která je přidružena k vláknu v daném čase, určena hodnotou <xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture%2A?displayProperty=nameWithType> vlastnosti v doméně aplikace, ve které je vlákno spuštěno:  
+ Jazyková verze, která je reprezentována <xref:System.Globalization.CultureInfo> objektem, je přidružena k vláknům. Můžete získat jazykovou verzi, která je přidružená k aktuálně spuštěnému vláknu pomocí <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> vlastnosti, a můžete získat nebo nastavit jazykovou verzi, která je přidružená k aktuálně spuštěnému vláknu pomocí <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType> Vlastnosti. Pokud je jazyková verze, která je přidružena k vláknu, explicitně nastavena pomocí <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType> vlastnosti, je nadále přidružena k danému vláknu, pokud vlákno překračuje hranice aplikační domény. V opačném případě je jazyková verze, která je přidružena k vláknu v daném čase, určena hodnotou <xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture%2A?displayProperty=nameWithType> vlastnosti v doméně aplikace, ve které je vlákno spuštěno:  
   
-- Pokud hodnota vlastnosti není `null`, jazyková verze, která je vrácena vlastností, je přidružena k vláknu (a tedy vráceny pomocí vlastností <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType> a <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> ).  
+- Pokud hodnota vlastnosti není `null` , jazyková verze, která je vrácena vlastností, je přidružena k vláknu (a tedy vráceny pomocí <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType> <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> vlastností a).  
   
-- Pokud je `null`hodnota vlastnosti, je aktuální jazyková verze systému přidružena k vláknu.  
+- Pokud je hodnota vlastnosti `null` , je aktuální jazyková verze systému přidružena k vláknu.  
   
 ## <a name="programming-with-application-domains"></a>Programování s aplikačními doménami
 
  Domény aplikace jsou obvykle vytvářeny a manipulují programově pomocí hostitelů modulu runtime. Někdy však může aplikace chtít pracovat i s doménami aplikace. Například program aplikace může načíst součást aplikace do domény, aby bylo možné uvolnit doménu (a komponentu) bez nutnosti zastavit celou aplikaci.  
   
- <xref:System.AppDomain> Je programové rozhraní k aplikačním doménám. Tato třída obsahuje metody pro vytváření a uvolňování domén, k vytvoření instancí typů v doménách a k registraci různých oznámení, jako je například uvolnění domény aplikace. V následující tabulce jsou uvedeny běžně <xref:System.AppDomain> používané metody.  
+ <xref:System.AppDomain>Je programové rozhraní k aplikačním doménám. Tato třída obsahuje metody pro vytváření a uvolňování domén, k vytvoření instancí typů v doménách a k registraci různých oznámení, jako je například uvolnění domény aplikace. V následující tabulce jsou uvedeny běžně používané <xref:System.AppDomain> metody.  
   
-|AppDomain – metoda|Popis|  
+|AppDomain – metoda|Description|  
 |----------------------|-----------------|  
 |<xref:System.AppDomain.CreateDomain%2A>|Vytvoří novou doménu aplikace. Doporučuje se použít přetížení této metody, která určuje <xref:System.AppDomainSetup> objekt. Toto je upřednostňovaný způsob, jak nastavit vlastnosti nové domény, jako je například základ aplikace nebo kořenový adresář aplikace. umístění konfiguračního souboru pro doménu; a cestu pro hledání, kterou modul CLR (Common Language Runtime) používá k načtení sestavení do domény.|  
 |<xref:System.AppDomain.ExecuteAssembly%2A> a <xref:System.AppDomain.ExecuteAssemblyByName%2A>|Spustí sestavení v doméně aplikace. Toto je metoda instance, takže ji lze použít ke spouštění kódu v jiné doméně aplikace, ke které máte odkaz.|  
@@ -124,7 +125,7 @@ Operační systémy a běhová prostředí obvykle poskytují určitou formu izo
 
  Proměnná prostředí, která nastavuje výchozí zásady optimalizace zavaděče spustitelné aplikace.  
   
-### <a name="syntax"></a>Syntaxe  
+### <a name="syntax"></a>Syntax  
   
 ```env  
 COMPLUS_LoaderOptimization = 1  
@@ -147,7 +148,7 @@ COMPLUS_LoaderOptimization = 1
   
 ### <a name="code-example"></a>Příklad kódu
 
- Chcete-li vynutit, aby se všechna sestavení nenačítala jako doménově neutrální pro službu IISADMIN, je možné `COMPLUS_LoaderOptimization=1` dosáhnout připojením k hodnotě s více řetězci v HKEY_LOCAL_MACHINE \System\currentcontrolset\services\iisadmin klíče prostředí.  
+ Chcete-li vynutit, aby se všechna sestavení nenačítala jako doménově neutrální pro službu IISADMIN, je možné dosáhnout připojením `COMPLUS_LoaderOptimization=1` k hodnotě s více řetězci v HKEY_LOCAL_MACHINE \system\currentcontrolset\services\iisadmin klíče prostředí.  
   
 ```env  
 Key = HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\IISADMIN  

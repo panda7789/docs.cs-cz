@@ -1,33 +1,34 @@
 ---
 title: Interoperabilita se službami Enterprise Services a transakcemi modelu COM+
+description: Pochopení interoperability s podnikovými službami a transakcemi COM+ v .NET pomocí oboru názvů System. Transactions.
 ms.date: 03/30/2017
 ms.assetid: d0fd0d26-fe86-443b-b208-4d57d39fa4aa
-ms.openlocfilehash: 98890c4c054a5063f91e429b13cfd6bab9f3dc15
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ebd6166fbd99ef102cf10ba1bcef9e3eb8aaa5da
+ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64596861"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85141898"
 ---
 # <a name="interoperability-with-enterprise-services-and-com-transactions"></a>Interoperabilita se službami Enterprise Services a transakcemi modelu COM+
 <xref:System.Transactions> Obor názvů podporuje spolupráci mezi objekty transakce vytvořené pomocí tohoto oboru názvů a transakce vytvořené pomocí modelu COM +.  
   
  Můžete použít <xref:System.Transactions.EnterpriseServicesInteropOption> výčet při vytváření nového <xref:System.Transactions.TransactionScope> instance k zadání úrovně interoperability s modelu COM +.  
   
- Ve výchozím nastavení, když kód aplikace ověří statické <xref:System.Transactions.Transaction.Current%2A> vlastnost <xref:System.Transactions> pokusy o vyhledání transakcí, která je jinak aktuální nebo <xref:System.Transactions.TransactionScope> objektu, která způsobila, že <xref:System.Transactions.Transaction.Current%2A> je **null**. Pokud tento soubor nelze nalézt jednu z těchto <xref:System.Transactions> dotazuje kontext modelu COM + pro transakci. Všimněte si, že i když <xref:System.Transactions> setkat s transakcí z modelu COM + kontextu, stále upřednostňuje transakcí, které jsou pro nativní <xref:System.Transactions>.  
+ Ve výchozím nastavení, když kód aplikace kontroluje statickou <xref:System.Transactions.Transaction.Current%2A> vlastnost, se <xref:System.Transactions> pokusí vyhledat transakci, která je jinak aktuální, nebo <xref:System.Transactions.TransactionScope> objekt, který určuje, že má <xref:System.Transactions.Transaction.Current%2A> **hodnotu null**. Pokud tento soubor nelze nalézt jednu z těchto <xref:System.Transactions> dotazuje kontext modelu COM + pro transakci. Všimněte si, že i když <xref:System.Transactions> setkat s transakcí z modelu COM + kontextu, stále upřednostňuje transakcí, které jsou pro nativní <xref:System.Transactions>.  
   
 ## <a name="interoperability-levels"></a>Interoperabilita úrovně  
  <xref:System.Transactions.EnterpriseServicesInteropOption> Výčet definuje následující úrovně interoperability –<xref:System.Transactions.EnterpriseServicesInteropOption.None>, <xref:System.Transactions.EnterpriseServicesInteropOption.Full> a <xref:System.Transactions.EnterpriseServicesInteropOption.Automatic>.  
   
  <xref:System.Transactions.TransactionScope> Třída poskytuje konstruktory, které přijímají <xref:System.Transactions.EnterpriseServicesInteropOption> jako parametr.  
   
- <xref:System.Transactions.EnterpriseServicesInteropOption.None>, jak název naznačuje, znamená, že neexistuje žádná interoperability mezi <xref:System.EnterpriseServices> kontexty a obory transakce. Po vytvoření <xref:System.Transactions.TransactionScope> objekt s <xref:System.Transactions.EnterpriseServicesInteropOption.None>, veškeré změny <xref:System.Transactions.Transaction.Current%2A> se neprojeví v daném kontextu. Podobně změny transakce v rámci modelu COM + se neprojeví v <xref:System.Transactions.Transaction.Current%2A>. Jedná se o nejrychlejší režim operaci pro <xref:System.Transactions> vzhledem k tomu, že neexistuje žádná další synchronizace vyžadována. <xref:System.Transactions.EnterpriseServicesInteropOption.None> je výchozí hodnota používaná metodou <xref:System.Transactions.TransactionScope> s všechny konstruktory, které nepřijímají <xref:System.Transactions.EnterpriseServicesInteropOption> jako parametr.  
+ <xref:System.Transactions.EnterpriseServicesInteropOption.None>, jak název napovídá, znamená, že neexistuje žádná interoperabilita mezi <xref:System.EnterpriseServices> kontexty a obory transakcí. Po vytvoření <xref:System.Transactions.TransactionScope> objekt s <xref:System.Transactions.EnterpriseServicesInteropOption.None>, veškeré změny <xref:System.Transactions.Transaction.Current%2A> se neprojeví v daném kontextu. Podobně změny transakce v rámci modelu COM + se neprojeví v <xref:System.Transactions.Transaction.Current%2A>. Jedná se o nejrychlejší režim operaci pro <xref:System.Transactions> vzhledem k tomu, že neexistuje žádná další synchronizace vyžadována. <xref:System.Transactions.EnterpriseServicesInteropOption.None>je výchozí hodnotou <xref:System.Transactions.TransactionScope> , kterou používá se všemi konstruktory, které neakceptují <xref:System.Transactions.EnterpriseServicesInteropOption> jako parametr.  
   
  Pokud chcete sloučit <xref:System.EnterpriseServices> transakce s okolí transakci, je nutné použít buď <xref:System.Transactions.EnterpriseServicesInteropOption.Full> nebo <xref:System.Transactions.EnterpriseServicesInteropOption.Automatic>. Oba tyto hodnoty jsou závislé na funkci služby bez součástí a proto vám by měl být spuštěn v systému Windows XP Service Pack 2 nebo Windows Server 2003 při jejich používání.  
   
- <xref:System.Transactions.EnterpriseServicesInteropOption.Full> Určuje, zda okolí transakce pro <xref:System.Transactions> a <xref:System.EnterpriseServices> jsou vždy stejné. Je výsledkem vytvoření nového <xref:System.EnterpriseServices> transakční kontextu a transakcí, která byla platná pro použití <xref:System.Transactions.TransactionScope> je aktuální pro tento kontext. Jako takový transakce v <xref:System.Transactions.Transaction.Current%2A> je zcela synchronizaci s transakcí v <xref:System.EnterpriseServices.ContextUtil.Transaction%2A>. Tato hodnota představuje snížení výkonu vzhledem k tomu, že nový modelu COM + kontexty může být nutné k vytvoření.  
+ <xref:System.Transactions.EnterpriseServicesInteropOption.Full>Určuje, že ambientní transakce pro <xref:System.Transactions> a <xref:System.EnterpriseServices> jsou vždy stejné. Je výsledkem vytvoření nového <xref:System.EnterpriseServices> transakční kontextu a transakcí, která byla platná pro použití <xref:System.Transactions.TransactionScope> je aktuální pro tento kontext. Jako takový transakce v <xref:System.Transactions.Transaction.Current%2A> je zcela synchronizaci s transakcí v <xref:System.EnterpriseServices.ContextUtil.Transaction%2A>. Tato hodnota představuje snížení výkonu vzhledem k tomu, že nový modelu COM + kontexty může být nutné k vytvoření.  
   
- <xref:System.Transactions.EnterpriseServicesInteropOption.Automatic> Určuje následující požadavky:  
+ <xref:System.Transactions.EnterpriseServicesInteropOption.Automatic>určuje následující požadavky:  
   
 - Při <xref:System.Transactions.Transaction.Current%2A> je zaškrtnuto, <xref:System.Transactions> by měl podporu transakcí v rámci modelu COM +, jestliže zjistí, zda je spuštěna v kontextu jiných než výchozí kontext. Všimněte si, že výchozí kontext nemůže obsahovat transakcí. Proto ve výchozím kontextu, dokonce i s <xref:System.Transactions.EnterpriseServicesInteropOption.Automatic>, transakce uložený v místním úložišti podprocesů používaný <xref:System.Transactions> je vrácena pro <xref:System.Transactions.Transaction.Current%2A>.  
   
@@ -37,7 +38,7 @@ ms.locfileid: "64596861"
   
  V souhrnu při vytváření nového oboru transakce platí následující pravidla:  
   
-1. <xref:System.Transactions.Transaction.Current%2A> Pokud chcete zobrazit, pokud je transakce je zaškrtnuto. Výsledkem této kontrole:  
+1. <xref:System.Transactions.Transaction.Current%2A>je zaškrtnuto, aby se zobrazila transakce. Výsledkem této kontrole:  
   
     - Kontrola, zda je obor.  
   
@@ -53,22 +54,22 @@ ms.locfileid: "64596861"
   
 3. Pokud novou transakci má být vytvořen, následující hodnoty <xref:System.Transactions.EnterpriseServicesInteropOption> za následek:  
   
-    - <xref:System.Transactions.EnterpriseServicesInteropOption.Full>: je vytvořen transakcí spojený s kontextem modelu COM +.  
+    - <xref:System.Transactions.EnterpriseServicesInteropOption.Full>: je vytvořena transakce přidružená k kontextu modelu COM+.  
   
-    - <xref:System.Transactions.EnterpriseServicesInteropOption.None>: <xref:System.Transactions> transakce je vytvořen.  
+    - <xref:System.Transactions.EnterpriseServicesInteropOption.None>: <xref:System.Transactions> transakce je vytvořena.  
   
-    - <xref:System.Transactions.EnterpriseServicesInteropOption.Automatic>: Pokud je kontext modelu COM +, transakcí je vytvořen a připojit ke kontextu.  
+    - <xref:System.Transactions.EnterpriseServicesInteropOption.Automatic>: Pokud existuje kontext modelu COM+, transakce je vytvořena a připojena k tomuto kontextu.  
   
  Následující tabulka znázorňuje kontext služby Enterprise (ES) a transakční obor, který vyžaduje, aby transakce pomocí <xref:System.Transactions.EnterpriseServicesInteropOption> výčtu.  
   
-|Kontext ES|Žádné|Automatické|Do bloku|  
+|Kontext ES|Žádné|Automaticky|Do bloku|  
 |----------------|----------|---------------|----------|  
 |Výchozí kontext|Výchozí kontext|Výchozí kontext|Vytvořit nový <br />transakční kontextu|  
 |Jiné než výchozí kontext|Udržovat kontextu klienta|Vytvořit nový transakční kontext|Vytvořit nový transakční kontext|  
   
  Následující tabulka popisuje, co okolí transakce je, daný konkrétní <xref:System.EnterpriseServices> kontextu a transakční obor, který vyžaduje, aby transakce pomocí <xref:System.Transactions.EnterpriseServicesInteropOption> výčtu.  
   
-|Kontext ES|Žádné|Automatické|Do bloku|  
+|Kontext ES|Žádné|Automaticky|Do bloku|  
 |----------------|----------|---------------|----------|  
 |Výchozí kontext|ST|ST|ES|  
 |Jiné než výchozí kontext|ST|ES|ES|  

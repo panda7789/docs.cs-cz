@@ -1,5 +1,6 @@
 ---
 title: Rozdíly v ověřování certifikátů mezi zabezpečeními HTTPS, SSL přes TCP a SOAP
+description: Přečtěte si o certifikátech se zabezpečením pomocí protokolu SOAP (Message-Layer), které WCF nabízí kromě protokolu HTTPS nebo TCP, a o tom, jak WCF tyto certifikáty ověřuje.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - certificates [WCF], validation differences
 ms.assetid: 953a219f-4745-4019-9894-c70704f352e6
-ms.openlocfilehash: dcde7bb4cc193d18737d26facbbd69ccd597d66b
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 97d51e5b65ebf20e80a69512370b68a51eeb28a7
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84599331"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245268"
 ---
 # <a name="certificate-validation-differences-between-https-ssl-over-tcp-and-soap-security"></a>Rozdíly v ověřování certifikátů mezi zabezpečeními HTTPS, SSL přes TCP a SOAP
 Kromě protokolu TLS (Transport Layer Security) přes protokol HTTP (HTTPS) nebo TCP můžete použít certifikáty ve službě Windows Communication Foundation (WCF) se zabezpečením protokolu SOAP (Message-Layer). Toto téma popisuje rozdíly v způsobu ověření certifikátů.  

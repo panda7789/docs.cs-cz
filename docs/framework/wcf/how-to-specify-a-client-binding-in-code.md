@@ -1,45 +1,46 @@
 ---
 title: 'Postupy: Zadání klientské vazby v kódu'
+description: Naučte se, jak určit vazbu pro klienta WCF imperativně v kódu. V tomto příkladu přistupuje klient ke službě.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 6bee5da4-adf7-42e6-8f78-63a9e5c6dbad
-ms.openlocfilehash: 9be571d7be020aef546fdd7ec7cb7519a48ea350
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e5e1dff98121985a598579d83043de838e21e5f1
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184059"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85244501"
 ---
 # <a name="how-to-specify-a-client-binding-in-code"></a>Postupy: Zadání klientské vazby v kódu
-V tomto příkladu je klient vytvořen pro použití služby kalkulačky a vazba pro tohoto klienta je zadána imperativně v kódu. Klient přistupuje k `CalculatorService` `ICalculator` aplikaci , která implementuje <xref:System.ServiceModel.BasicHttpBinding> rozhraní, a služba i klient používají třídu.  
+V tomto příkladu je vytvořen klient pro použití služby kalkulačky a vazba pro tohoto klienta je v kódu určena imperativně. Klient přistupuje k `CalculatorService` rozhraní, které implementuje `ICalculator` rozhraní a jak službu, tak i klient používající <xref:System.ServiceModel.BasicHttpBinding> třídu.  
   
- Tento postup předpokládá, že je spuštěna služba kalkulačky. Informace o vytváření služby naleznete v [tématu Postup: Zadání vazby služby v konfiguraci](how-to-specify-a-service-binding-in-configuration.md). Používá také [ServiceModel Metadata Utility Tool (Svcutil.exe)](servicemodel-metadata-utility-tool-svcutil-exe.md)Windows Communication Foundation (WCF) poskytuje automaticky generovat klientské součásti. Nástroj generuje kód klienta pro přístup ke službě.  
+ Tento postup předpokládá, že je spuštěná služba kalkulačky. Informace o sestavování služby najdete v tématu [How to: určení vazby služby v konfiguraci](how-to-specify-a-service-binding-in-configuration.md). K automatickému generování komponent klienta používá také nástroj pro dodávání [metadat (Svcutil.exe)](servicemodel-metadata-utility-tool-svcutil-exe.md)Windows Communication Foundation (WCF). Nástroj vygeneruje kód klienta pro přístup ke službě.  
   
- Klient je postaven ve dvou částech. Svcutil.exe `ClientCalculator` generuje, který implementuje `ICalculator` rozhraní. Tato klientská aplikace je pak vytvořena `ClientCalculator` vytvořením instance a zadáním vazby a adresy pro službu v kódu.  
+ Klient je sestaven ve dvou částech. Svcutil.exe generuje `ClientCalculator` rozhraní, které implementuje `ICalculator` rozhraní. Tato klientská aplikace je pak vytvořena konstrukcí instance `ClientCalculator` a pak zadáním vazby a adresy služby v kódu.  
   
- Zdrojovou kopii tohoto příkladu naleznete v ukázce [BasicBinding.](./samples/basicbinding.md)  
+ Zdrojovou kopii tohoto příkladu najdete v ukázce [BasicBinding](./samples/basicbinding.md) .  
   
 ### <a name="to-specify-a-custom-binding-in-code"></a>Určení vlastní vazby v kódu  
   
-1. Pomocí příkazu Svcutil.exe z příkazového řádku vygenerujte kód z metadat služby.  
+1. K vygenerování kódu z metadat služby použijte Svcutil.exe z příkazového řádku.  
   
     ```console  
     Svcutil.exe <service's Metadata Exchange (MEX) address or HTTP GET address>
     ```  
   
-2. Klient, který je generován `ICalculator` obsahuje rozhraní, které definuje servisní smlouvy, které implementace klienta musí splňovat.  
+2. Vygenerovaný klient obsahuje `ICalculator` rozhraní, které definuje kontrakt služby, který musí implementace klienta splňovat.  
   
      [!code-csharp[C_HowTo_CodeClientBinding#1](../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_codeclientbinding/cs/client.cs#1)]
      [!code-vb[C_HowTo_CodeClientBinding#1](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_codeclientbinding/vb/client.vb#1)]  
   
-3. Vygenerovaný klient také `ClientCalculator`obsahuje implementaci .  
+3. Vygenerovaný klient také obsahuje implementaci `ClientCalculator` .  
   
      [!code-csharp[C_HowTo_CodeClientBinding#2](../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_codeclientbinding/cs/client.cs#2)]
      [!code-vb[C_HowTo_CodeClientBinding#2](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_codeclientbinding/vb/client.vb#2)]  
   
-4. Vytvořte `ClientCalculator` instanci, <xref:System.ServiceModel.BasicHttpBinding> která používá třídu v klientské aplikaci, a pak zavolejte operace služby na zadanou adresu.  
+4. Vytvořte instanci `ClientCalculator` , která používá <xref:System.ServiceModel.BasicHttpBinding> třídu v klientské aplikaci, a potom zavolejte operace služby na zadané adrese.  
   
      [!code-csharp[C_HowTo_CodeClientBinding#3](../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_codeclientbinding/cs/client.cs#3)]
      [!code-vb[C_HowTo_CodeClientBinding#3](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_codeclientbinding/vb/client.vb#3)]  

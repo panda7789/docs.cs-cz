@@ -1,5 +1,6 @@
 ---
 title: Správa deklarací a autorizace s modelem identity
+description: Přečtěte si o hlavních konceptech programování pro model identity WCF, což je model založený na deklaracích pro provádění autorizací.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - authorization [WCF]
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - claims [WCF]
 - authorization [WCF], managing with the Identity Model
 ms.assetid: 099defbb-5d35-434e-9336-1a49b9ec7663
-ms.openlocfilehash: f9138102435aab07e5c1771ce5dba85bacbcac99
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 0d5687f8ac5021c008254f0f5cc453eda5e538c7
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84586348"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245125"
 ---
 # <a name="managing-claims-and-authorization-with-the-identity-model"></a>Správa deklarací a autorizace s modelem identity
 Autorizace je proces určení, které entity mají oprávnění ke změně, zobrazení nebo jinému přístupu k prostředku počítače. Například v podniku můžou mít přístup jenom správci k souborům svých zaměstnanců. Windows Communication Foundation (WCF) podporuje dva mechanismy pro provádění zpracování autorizace. První mechanismus umožňuje řídit autorizaci pomocí stávajících konstrukcí modulu CLR (Common Language Runtime). Druhý je model založený na deklaracích, který se označuje jako *model identity*. WCF používá model identity k vytváření deklarací z příchozích zpráv; Třídy modelu identity se dají rozšířit tak, aby podporovaly nové typy deklarací pro vlastní autorizační schémata. Toto téma představuje přehled hlavních konceptů programování funkce modelu identity a také seznam nejdůležitějších tříd, které tato funkce používá.  
@@ -75,7 +76,7 @@ Autorizace je proces určení, které entity mají oprávnění ke změně, zobr
 ## <a name="claims"></a>Deklarace identity  
  Model identity je systém založený na deklaracích. Deklarace identity popisují možnosti spojené s některými entitami v systému, často uživatel tohoto systému. Sadu deklarací přidružených k dané entitě lze představit jako klíč. Konkrétní deklarace definují tvar tohoto klíče, podobně jako fyzický klíč, který se používá k otevření zámku v dvířek. K získání přístupu k prostředkům se používají deklarace identity. Přístup k danému chráněnému prostředku je určený porovnáním deklarací identity potřebných pro přístup k tomuto prostředku s deklaracemi přidruženými k entitě, která se pokouší o přístup.  
   
- Deklarace je výrazem práva s ohledem na konkrétní hodnotu. Právo může být něco podobného jako "čtení", "Write" nebo "Execute". Hodnota může být databáze, soubor, poštovní schránka nebo vlastnost. Deklarace identity mají také typ deklarace identity. Kombinace typu deklarace identity a práva poskytuje mechanismus pro určení schopností v souvislosti s hodnotou. Například deklarace identity typu "File", s pravou "číst" nad hodnotou "biografie. doc", označuje, že entita, ke které je tato deklarace identity přidružena, má přístup pro čtení do souboru biografie. doc. Deklarace identity typu "Name" s pravou "PossessProperty" nad hodnotou "Martin" označuje, že entita, ke které je tato deklarace identity přidružena, má vlastnost Name s hodnotou "Martin".  
+ Deklarace je výrazem práva s ohledem na konkrétní hodnotu. Právo může být něco podobného jako "čtení", "Write" nebo "Execute". Hodnota může být databáze, soubor, poštovní schránka nebo vlastnost. Deklarace identity mají také typ deklarace identity. Kombinace typu deklarace identity a práva poskytuje mechanismus pro určení schopností v souvislosti s hodnotou. Například deklarace identity typu "File", s pravou "Read" nad hodnotu "Biography.doc", označuje, že entita, ke které je tato deklarace identity přidružena, má k souboru přístup pro čtení Biography.doc. Deklarace identity typu "Name" s pravou "PossessProperty" nad hodnotou "Martin" označuje, že entita, ke které je tato deklarace identity přidružena, má vlastnost Name s hodnotou "Martin".  
   
  I když jsou v rámci modelu identity definované různé typy deklarací identity a práva, je systém rozšiřitelný a umožňuje různým systémům sestavovat na infrastruktuře infrastruktury modelu identity, aby bylo možné definovat další typy deklarací identity a oprávnění podle potřeby.  
   
@@ -130,7 +131,7 @@ Autorizace je proces určení, které entity mají oprávnění ke změně, zobr
 ## <a name="identity-model-programming"></a>Programování modelu identity  
  Následující tabulka popisuje objektový model používaný k programování rozšíření modelu identity. Tyto třídy existují v <xref:System.IdentityModel.Policy> <xref:System.IdentityModel.Claims> oborech názvů nebo.  
   
-|Třída|Popis|  
+|Třída|Description|  
 |-----------|-----------------|  
 |Autorizační součást|Třída modelu identity, která implementuje <xref:System.IdentityModel.Policy.IAuthorizationComponent> rozhraní.|  
 |<xref:System.IdentityModel.Policy.IAuthorizationComponent>|Rozhraní, které poskytuje jednu vlastnost řetězce jen pro čtení: ID. Hodnota této vlastnosti je jedinečná pro každou instanci v systému, který implementuje toto rozhraní.|  
@@ -144,7 +145,7 @@ Autorizace je proces určení, které entity mají oprávnění ke změně, zobr
   
  Následující třídy jsou také používány pro programování modelu identity, ale nebyly nalezeny v <xref:System.IdentityModel.Policy> <xref:System.IdentityModel.Claims> oborech názvů nebo.  
   
-|Třída|Popis|  
+|Třída|Description|  
 |-----------|-----------------|  
 |<xref:System.ServiceModel.ServiceAuthorizationManager>|Třída, která poskytuje metodu – <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%2A> k provádění kontrol autorizace na základě deklarace identity pro každou operaci ve službě. Musíte odvozovat z třídy a přepsat metodu.|  
 |<xref:System.ServiceModel.Description.ServiceAuthorizationBehavior>|Zapečetěná třída, která poskytuje různé vlastnosti související s chováním služby, která se vztahuje k autorizaci.|  
@@ -153,7 +154,7 @@ Autorizace je proces určení, které entity mají oprávnění ke změně, zobr
 ### <a name="significant-members"></a>Významnou členy  
  Následující členové se běžně používají k vytváření nových typů deklarací.  
   
-|Člen|Popis|  
+|Člen|Description|  
 |------------|-----------------|  
 |<xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%2A>|Odvozené třídy implementují tuto metodu, aby před spuštěním operací ve službě prováděla kontroly přístupu založené na deklaracích. Jakékoli a všechny informace v dodaných <xref:System.ServiceModel.OperationContext> nebo jinde se dají prozkoumat při rozhodování o kontrole přístupu. Pokud se <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%2A> vrátí `true` , pak se udělí přístup a operace se může spustit. Pokud se `CheckAccessCore` vrátí `false` , přístup se odepře a operace se nespustí. Příklad najdete v tématu [Postup: Vytvoření vlastního Správce autorizací pro službu](../extending/how-to-create-a-custom-authorization-manager-for-a-service.md).|  
 |<xref:System.ServiceModel.Description.ServiceAuthorizationBehavior.ServiceAuthorizationManager%2A>|Vrátí <xref:System.ServiceModel.ServiceAuthorizationManager> pro službu. <xref:System.ServiceModel.ServiceAuthorizationManager>Zodpovídá za provádění autorizačních rozhodnutí.|  

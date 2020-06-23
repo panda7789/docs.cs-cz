@@ -1,19 +1,20 @@
 ---
 title: Doporučené nastavení pro trasování a protokolování zpráv
+description: Seznamte se s doporučenými nastaveními trasování a protokolování zpráv pro různá prostředí ve službě WCF.
 ms.date: 03/30/2017
 ms.assetid: c6aca6e8-704e-4779-a9ef-50c46850249e
-ms.openlocfilehash: 9d2586570a3f590735c2a8e1ca176580886c8d92
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 71067a4d6f4cec65a148a8162c40e44d82b85784
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84578913"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245321"
 ---
 # <a name="recommended-settings-for-tracing-and-message-logging"></a>Doporučené nastavení pro trasování a protokolování zpráv
 Toto téma popisuje doporučené trasování a nastavení protokolování zpráv pro různá operační prostředí.  
   
 ## <a name="recommended-settings-for-a-production-environment"></a>Doporučené nastavení pro produkční prostředí  
- V případě produkčního prostředí, pokud používáte zdroje trasování WCF, nastavte na `switchValue` upozornění. Pokud používáte `System.ServiceModel` zdroj trasování WCF, nastavte `switchValue` atribut na `Warning` a `propagateActivity` atribut na `true` . Pokud používáte zdroj trasování definovaný uživatelem, nastavte `switchValue` atribut na `Warning, ActivityTracing` . To lze provést ručně pomocí [nástroje Configuration Editor (SvcConfigEditor. exe)](../../configuration-editor-tool-svcconfigeditor-exe.md). Pokud nepředpokládáte, že dojde ke zvýšení výkonu, můžete nastavit `switchValue` atribut na `Information` ve všech dříve uvedených případech, které generují poměrně velký objem dat trasování. Následující příklad znázorňuje Tato doporučená nastavení.  
+ V případě produkčního prostředí, pokud používáte zdroje trasování WCF, nastavte na `switchValue` upozornění. Pokud používáte `System.ServiceModel` zdroj trasování WCF, nastavte `switchValue` atribut na `Warning` a `propagateActivity` atribut na `true` . Pokud používáte zdroj trasování definovaný uživatelem, nastavte `switchValue` atribut na `Warning, ActivityTracing` . To lze provést ručně pomocí [nástroje Configuration Editor (SvcConfigEditor.exe)](../../configuration-editor-tool-svcconfigeditor-exe.md). Pokud nepředpokládáte, že dojde ke zvýšení výkonu, můžete nastavit `switchValue` atribut na `Information` ve všech dříve uvedených případech, které generují poměrně velký objem dat trasování. Následující příklad znázorňuje Tato doporučená nastavení.  
   
 ```xml  
 <configuration>  

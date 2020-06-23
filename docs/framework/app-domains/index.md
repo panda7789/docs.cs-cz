@@ -1,5 +1,6 @@
 ---
 title: Programování s doménami aplikací a sestaveními
+description: Získejte informace o programování s aplikačními doménami a sestaveními v .NET. V tématu odkazy na témata s postupy & příklady vytváření aplikačních domén & sestaveních.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - assemblies [.NET Framework], programming
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - application domains, programming
 - programming application domains
 ms.assetid: 96d3b8e3-bef8-4da0-9a81-9841e23a94e9
-ms.openlocfilehash: 3f66eacaf30f8001cdbf3a486e5ce1c878712e2f
-ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
+ms.openlocfilehash: 1c28fe0abeb279a1dbbc6dcf043c1780c72d79df
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/20/2020
-ms.locfileid: "81644277"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84903435"
 ---
 # <a name="programming-with-application-domains-and-assemblies"></a>Programování s doménami aplikací a sestaveními
 

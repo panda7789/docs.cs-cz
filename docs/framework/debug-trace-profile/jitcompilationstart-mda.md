@@ -1,5 +1,6 @@
 ---
 title: jitCompilationStart – pomocník spravovaného ladění (MDA)
+description: Použijte pomocníka spravovaného ladění jitCompilationStart – (MDA), který je spuštěn k hlášení, když kompilátor JIT (just-in-time) začne kompilovat funkci .NET.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - JIT compilation
@@ -7,18 +8,18 @@ helpviewer_keywords:
 - JitCompilationStart MDA
 - managed debugging assistants (MDAs), JIT compilation
 ms.assetid: 5ffd2857-d0ba-4342-9824-9ffe04ec135d
-ms.openlocfilehash: 9cae942bc01e9263720dbfe9acfb21bbb70bc548
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: bf2d09f433f0b8e4056fecd1f4e82bf3b91dd2bc
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77216262"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84904127"
 ---
 # <a name="jitcompilationstart-mda"></a>jitCompilationStart – pomocník spravovaného ladění (MDA)
-V případě, že kompilátor JIT (just-in-time) začne kompilovat funkci, je aktivována funkce Pomocník pro spravované ladění (MDA) `jitCompilationStart`.  
+`jitCompilationStart`Je aktivován pomocník spravovaného ladění (MDA), který bude hlásit, že kompilátor JIT (just-in-time) začne kompilovat funkci.  
   
 ## <a name="symptoms"></a>Příznaky  
- Velikost pracovní sady roste pro program, který je již v nativním formátu bitové kopie, protože do procesu je načtena knihovna Mscorjit. dll.  
+ Velikost pracovní sady se zvyšuje pro program, který je již v nativním formátu obrázku, protože mscorjit.dll je načten do procesu.  
   
 ## <a name="cause"></a>Příčina  
  Ne všechna sestavení, na kterých je program závislý, byla vygenerována v nativním formátu nebo ty, které nejsou správně registrovány.  
@@ -37,7 +38,7 @@ method name="Test!ns2.C0::m"
 ```  
   
 ## <a name="configuration"></a>Konfigurace  
- Následující konfigurační soubor znázorňuje různé filtry, které mohou být použity k vyfiltrování, které metody jsou hlášeny při prvním kompilování JIT. Můžete určit, že budou všechny metody hlášeny nastavením hodnoty atributu name na \*.  
+ Následující konfigurační soubor znázorňuje různé filtry, které mohou být použity k vyfiltrování, které metody jsou hlášeny při prvním kompilování JIT. Můžete určit, že budou všechny metody hlášeny nastavením hodnoty atributu name na \* .  
   
 ```xml  
 <mdaConfig>  

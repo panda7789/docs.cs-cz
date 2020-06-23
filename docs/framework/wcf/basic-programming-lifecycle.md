@@ -1,15 +1,16 @@
 ---
 title: Základní programovací životní cyklus
+description: Přečtěte si informace o úlohách pro sestavení aplikace WCF. WCF umožňuje aplikacím komunikovat na stejném počítači, v sítích nebo na různých platformách aplikace.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - service creation [WCF]
 ms.assetid: 7cf21bfe-23bd-46aa-8033-609f851dbf76
-ms.openlocfilehash: fe578ba3c655c9c9ea8398b9b2e4d4f974153c8e
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: c672827fff780fd263f5355520bb6ccf02bb902e
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72320815"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245528"
 ---
 # <a name="basic-programming-lifecycle"></a>Základní programovací životní cyklus
 Windows Communication Foundation (WCF) umožňuje aplikacím komunikovat bez ohledu na to, jestli jsou ve stejném počítači, přes Internet nebo na různých aplikačních platformách. Toto téma popisuje úkoly, které jsou nutné k vytvoření aplikace WCF. Pracovní ukázkovou aplikaci najdete v tématu [Začínáme kurzu](getting-started-tutorial.md).  
@@ -31,6 +32,6 @@ Windows Communication Foundation (WCF) umožňuje aplikacím komunikovat bez ohl
   
  Jakmile se seznámíte s vývojem kontraktů služby, můžete si také přečíst [Úvod k rozšíření](introduction-to-extensibility.md). Pokud máte ve své službě problémy, podívejte se na [rychlý Start pro řešení potíží WCF](wcf-troubleshooting-quickstart.md) a podívejte se, jestli mají ostatní stejné nebo podobné problémy.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Implementace kontraktů služeb](implementing-service-contracts.md)

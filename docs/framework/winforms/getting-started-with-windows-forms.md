@@ -1,5 +1,6 @@
 ---
-title: Začínáme
+title: začínáme
+description: Naučte se, jak pomocí model Windows Forms vytvářet výkonné aplikace založené na Windows, které zobrazují data, zpracovávat vstupy uživatelů a pomáhat s nasazením aplikací.
 ms.date: 03/30/2017
 f1_keywords:
 - Designer_System.Windows.Forms.Design.FormDocumentDesigner
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - Windows Forms, getting started
 - getting started [Windows Forms], Windows Forms
 ms.assetid: a031aa58-5027-4082-b590-df7c12c77dec
-ms.openlocfilehash: c5ea75bf826aa658269ec983b60e9dd2eb520ce0
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: ac4f166ca264f2533c5f174273fe60dcb9622a29
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76743480"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84903594"
 ---
 # <a name="getting-started-with-windows-forms"></a>Začínáme s Windows Forms
 Pomocí model Windows Forms můžete vytvářet výkonné aplikace založené na systému Windows. Následující témata popisují podrobnější informace o tom, jak využít sílu model Windows Forms k zobrazení dat, zpracování vstupu uživatele a snadnému nasazení aplikací a s vyšším zabezpečením.  
@@ -22,7 +23,7 @@ Pomocí model Windows Forms můžete vytvářet výkonné aplikace založené na
  [Přehled produktu Windows Forms](windows-forms-overview.md)  
  Obsahuje přehled model Windows Forms a inteligentních klientských aplikací.  
   
- [Vytvoření nového formuláře Windows Forms](creating-a-new-windows-form.md)  
+ [Vytvoření nového formuláře Windows Form](creating-a-new-windows-form.md)  
  Obsahuje odkazy na témata, která popisují základní koncepty pro vytváření model Windows Formsch aplikací.  
   
  [Vytváření obslužných rutin událostí ve Windows Forms](creating-event-handlers-in-windows-forms.md)  
@@ -34,7 +35,7 @@ Pomocí model Windows Forms můžete vytvářet výkonné aplikace založené na
  [Změna vzhledu Windows Forms](changing-the-appearance-of-windows-forms.md)  
  Obsahuje odkazy na témata, která ukazují, jak změnit vzhled model Windows Formsch aplikací.  
   
- [Windows Forms – ovládací prvky](./controls/index.md)  
+ [Ovládací prvky model Windows Forms](./controls/index.md)  
  Obsahuje odkazy na témata, která popisují a ukazují, jak používat model Windows Forms ovládací prvky a komponenty.  
   
  [Uživatelský vstup ve Windows Forms](user-input-in-windows-forms.md)  

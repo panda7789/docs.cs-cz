@@ -1,5 +1,6 @@
 ---
 title: Vazby a zabezpečení
+description: Zjistěte, jak vybrat správnou vazbu pro vaše požadavky na zabezpečení. Vazby poskytované systémem, které jsou součástí WCF, poskytují rychlý způsob, jak programovat aplikace WCF.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - bindings [WCF], security
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - Windows Communication Foundation, security
 - bindings [WCF]
 ms.assetid: 4de03dd3-968a-4e65-af43-516e903d7f95
-ms.openlocfilehash: 0c41f357d63158979e448c2cc36f1e80b74b18d4
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: e012ec9ad340c74f5bc776cfc6d8b88326210fec
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84587505"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245327"
 ---
 # <a name="bindings-and-security"></a>Vazby a zabezpečení
 
@@ -204,18 +205,18 @@ Následující tabulka uvádí vazby, které podporují různá nastavení reži
 |-------------|----------------------------|--------------------------|--------------------------------------------|
 |`BasicHttpBinding`|Ano|Ano|Ano|
 |`WSHttpBinding`|Ano|Ano|Ano|
-|`WSDualHttpBinding`|No|Yes|No|
+|`WSDualHttpBinding`|No|Ano|No|
 |`NetTcpBinding`|Ano|Ano|Ano|
-|`NetNamedPipeBinding`|Ano|Ne|No|
+|`NetNamedPipeBinding`|Ano|Ne|Ne|
 |`NetMsmqBinding`|Ano|Ano|No|
-|`MsmqIntegrationBinding`|Yes|Ne|Ne|
-|`wsFederationHttpBinding`|No|Ano|Ano|
+|`MsmqIntegrationBinding`|Ano|Ne|Ne|
+|`wsFederationHttpBinding`|Ne|Ano|Ano|
 
 ## <a name="transport-credentials-in-bindings"></a>Přihlašovací údaje pro přenos ve vazbách
 
 Následující tabulka uvádí typy přihlašovacích údajů klienta, které jsou k dispozici při použití `BasicHttpBinding` nebo `WSHttpBinding` v režimu zabezpečení přenosu.
 
-|Typ|Popis|
+|Typ|Description|
 |----------|-----------------|
 |Žádné|Určuje, že klient nemusí prezentovat žádné přihlašovací údaje. To se týká anonymního klienta.|
 |Basic|Základní ověřování. Další informace najdete v dokumentu RFC 2617 – ověřování HTTP: základní a ověřování algoritmem Digest, dostupné na adrese <https://go.microsoft.com/fwlink/?LinkId=84023> .|
@@ -229,7 +230,7 @@ Následující tabulka uvádí typy přihlašovacích údajů klienta, které js
 
 V následující tabulce jsou uvedeny typy přihlašovacích údajů klienta, které jsou k dispozici při použití vazby v režimu zabezpečení zprávy.
 
-|Typ|Popis|
+|Typ|Description|
 |----------|-----------------|
 |Žádné|Umožňuje službě interakci s anonymními klienty.|
 |Windows|Povoluje výměnu zpráv SOAP pod ověřeným kontextem pověření systému Windows.|

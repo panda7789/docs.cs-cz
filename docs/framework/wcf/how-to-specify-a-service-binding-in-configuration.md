@@ -1,42 +1,43 @@
 ---
 title: 'Postupy: Zadání vazby služby v konfiguraci'
+description: Naučte se Konfigurovat koncový bod pro službu WCF v konfiguračním souboru. Kontrakt je definován pro službu a implementován ve třídě.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 885037f7-1c2b-4d7a-90d9-06b89be172f2
-ms.openlocfilehash: 245fe50ed5a80c51163652defb642cebefd55dbd
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 92d0834091a1f243df6be214f606fbf0093dca54
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184023"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85244553"
 ---
 # <a name="how-to-specify-a-service-binding-in-configuration"></a>Postupy: Zadání vazby služby v konfiguraci
-V tomto příkladu `ICalculator` je smlouva definována pro službu základní `CalculatorService` kalkulačky, služba je implementována ve třídě a její koncový bod je <xref:System.ServiceModel.BasicHttpBinding>nakonfigurován v souboru Web.config, kde je uvedeno, že služba používá . Popis konfigurace této služby pomocí kódu namísto konfigurace naleznete v tématu [How to: Specify a Service Binding in Code](how-to-specify-a-service-binding-in-code.md).  
+V tomto příkladu `ICalculator` je smlouva definovaná pro základní službu kalkulačky, služba je implementovaná ve `CalculatorService` třídě a pak její koncový bod je nakonfigurovaný v souboru Web.config, kde je zadaný, aby služba používala <xref:System.ServiceModel.BasicHttpBinding> . Popis postupu konfigurace této služby pomocí kódu namísto konfigurace najdete v tématu [How to: určení vazby služby v kódu](how-to-specify-a-service-binding-in-code.md).  
   
- Obvykle je osvědčeným postupem zadat vazby a adresu informace deklarativně v konfiguraci, nikoli imperativně v kódu. Definování koncových bodů v kódu obvykle není praktické, protože vazby a adresy pro nasazenou službu se obvykle liší od těch, které se používají při vývoji služby. Obecněji řečeno, udržování vazby a adresování informace z kódu umožňuje změnit bez nutnosti znovu zkompilovat nebo znovu nasadit aplikaci.  
+ Obvykle je osvědčeným postupem zadat vazby a informace o adrese deklarativně v konfiguraci, nikoli imperativně v kódu. Definování koncových bodů v kódu obvykle není praktické, protože vazby a adresy nasazené služby se obvykle liší od těch, které se použily při vývoji služby. Obecně platí, že zachování vazby a adresování informací z kódu umožňuje jejich změnu bez nutnosti opětovné kompilace nebo opětovného nasazení aplikace.  
   
- Pomocí [nástroje Configuration Editor Tool (SvcConfigEditor.exe)](configuration-editor-tool-svcconfigeditor-exe.md)lze provedení všech následujících kroků konfigurace.  
+ Pomocí [nástroje Editor konfigurací (SvcConfigEditor.exe)](configuration-editor-tool-svcconfigeditor-exe.md)je možné provést všechny následující kroky konfigurace.  
   
  Zdrojovou kopii tohoto příkladu naleznete v tématu [BasicBinding](./samples/basicbinding.md).  
   
-## <a name="to-specify-the-basichttpbinding-to-use-to-configure-the-service"></a>Určení funkce BasicHttpBinding, která se má použít ke konfiguraci služby  
+## <a name="to-specify-the-basichttpbinding-to-use-to-configure-the-service"></a>Určení BasicHttpBinding, který se má použít ke konfiguraci služby  
   
-1. Definujte servisní smlouvu pro typ služby.  
+1. Definujte kontrakt služby pro typ služby.  
   
      [!code-csharp[C_HowTo_ConfigureServiceBinding#1](../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_configureservicebinding/cs/source.cs#1)]
      [!code-vb[C_HowTo_ConfigureServiceBinding#1](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_configureservicebinding/vb/source.vb#1)]  
   
-2. Implementujte servisní smlouvu ve třídě služeb.  
+2. Implementujte kontrakt služby ve třídě služby.  
   
      [!code-csharp[C_HowTo_ConfigureServiceBinding#2](../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_configureservicebinding/cs/source.cs#2)]
      [!code-vb[C_HowTo_ConfigureServiceBinding#2](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_configureservicebinding/vb/source.vb#2)]  
   
     > [!NOTE]
-    > Informace o adrese nebo vazbě nejsou zadány v rámci implementace služby. Kód také nemusí být zapsán, aby se tyto informace načítají z konfiguračního souboru.  
+    > V rámci implementace služby nejsou zadány informace o adrese nebo vazbě. Také není nutné zapisovat kód pro načtení těchto informací z konfiguračního souboru.  
   
-3. Vytvořte soubor Web.config pro konfiguraci `CalculatorService` koncového <xref:System.ServiceModel.WSHttpBinding>bodu, který používá soubor .  
+3. Vytvořte soubor Web.config pro konfiguraci koncového bodu pro `CalculatorService` , který používá <xref:System.ServiceModel.WSHttpBinding> .  
   
     ```xml  
     <?xml version="1.0" encoding="utf-8" ?>  
@@ -74,15 +75,15 @@ V tomto příkladu `ICalculator` je smlouva definována pro službu základní `
     </configuration>  
     ```  
   
-4. Vytvořte soubor Service.svc, který obsahuje následující řádek, a umístěte jej do virtuálního adresáře Internetové informační služby (IIS).  
+4. Vytvořte soubor Service. svc, který obsahuje následující řádek, a umístěte ho do virtuálního adresáře Internetová informační služba (IIS).  
   
     ```  
     <%@ServiceHost language=c# Service="CalculatorService" %>
     ```  
   
-## <a name="to-modify-the-default-values-of-the-binding-properties"></a>Změna výchozích hodnot vlastností vazby  
+## <a name="to-modify-the-default-values-of-the-binding-properties"></a>Úprava výchozích hodnot vlastností vazby  
   
-1. Chcete-li upravit jednu z <xref:System.ServiceModel.WSHttpBinding>výchozích hodnot vlastností `<binding name="Binding1">` , vytvořte nový název konfigurace vazby - - v rámci elementu [ \<wsHttpBinding>](../configure-apps/file-schema/wcf/wshttpbinding.md) a nastavte nové hodnoty pro atributy vazby v tomto elementu vazby. Chcete-li například změnit výchozí hodnoty časového limitu otevření a zavření 1 minuty až 2 minuty, přidejte do konfiguračního souboru následující.  
+1. Chcete-li upravit jednu z hodnot výchozích vlastností <xref:System.ServiceModel.WSHttpBinding> , vytvořte nový název konfigurace vazby `<binding name="Binding1">` v rámci [\<wsHttpBinding>](../configure-apps/file-schema/wcf/wshttpbinding.md) elementu a nastavte nové hodnoty atributů vazby v tomto elementu vazby. Chcete-li například změnit výchozí hodnoty časového limitu pro otevření a ukončení 1 minuty na 2 minuty, přidejte následující do konfiguračního souboru.  
   
     ```xml  
     <wsHttpBinding>  

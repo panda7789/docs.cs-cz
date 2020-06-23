@@ -1,13 +1,14 @@
 ---
 title: Trasování událostí pro Windows
+description: Tato ukázka předvádí, jak implementovat E2E (end to-end) trasování pomocí trasování událostí pro Windows (ETW) a ETWTraceListener.
 ms.date: 03/30/2017
 ms.assetid: ac99a063-e2d2-40cc-b659-d23c2f783f92
-ms.openlocfilehash: 0bdbf6699a0cfa3dce58abda4c989fb25d764459
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 210186285ed749a5d1567becd6738939b0bd9d03
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600555"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85244423"
 ---
 # <a name="etw-tracing"></a>Trasování událostí pro Windows
 Tato ukázka předvádí, jak implementovat E2E (end to-end) trasování pomocí trasování událostí pro Windows (ETW) a `ETWTraceListener` který je součástí této ukázky. Ukázka je založena na [Začínáme](getting-started-sample.md) a zahrnuje trasování ETW.  
@@ -47,12 +48,12 @@ Tato ukázka předvádí, jak implementovat E2E (end to-end) trasování pomocí
 </system.diagnostics>  
 ```  
   
- Před použitím tohoto naslouchacího procesu musí být spuštěná relace trasování ETW. Tuto relaci lze spustit pomocí programu Logman. exe nebo nástroji tracelog. exe. Tato ukázka obsahuje soubor SetupETW. bat, takže můžete nastavit relaci trasování ETW spolu se souborem CleanupETW. bat pro ukončení relace a dokončení souboru protokolu.  
+ Před použitím tohoto naslouchacího procesu musí být spuštěná relace trasování ETW. Tuto relaci lze spustit pomocí Logman.exe nebo Tracelog.exe. V této ukázce je obsažen SetupETW.bat soubor, takže můžete nastavit relaci trasování ETW spolu se souborem CleanupETW.bat pro ukončení relace a dokončení souboru protokolu.  
   
 > [!NOTE]
 > Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu. Další informace o těchto nástrojích najdete v tématu.<https://go.microsoft.com/fwlink/?LinkId=56580>  
   
- Při použití ETWTraceListener se trasování zaznamenávají do binárních souborů. ETL. Když je zapnuté trasování ServiceModel, všechna vygenerovaná trasování se zobrazí ve stejném souboru. Pro zobrazení souborů protokolu ETL a. svclog použijte [Nástroj Prohlížeč trasování služby (SvcTraceViewer. exe)](../service-trace-viewer-tool-svctraceviewer-exe.md) . Prohlížeč vytvoří ucelený pohled na systém, který umožňuje trasovat zprávu z jejího zdroje do jejího cíle a bodu spotřeby.  
+ Při použití ETWTraceListener se trasování zaznamenávají do binárních souborů. ETL. Když je zapnuté trasování ServiceModel, všechna vygenerovaná trasování se zobrazí ve stejném souboru. K zobrazení souborů protokolu. ETL a. svclog použijte [Nástroj Prohlížeč trasování služby (SvcTraceViewer.exe)](../service-trace-viewer-tool-svctraceviewer-exe.md) . Prohlížeč vytvoří ucelený pohled na systém, který umožňuje trasovat zprávu z jejího zdroje do jejího cíle a bodu spotřeby.  
   
  Naslouchací proces trasování ETW podporuje cyklické protokolování. Tuto funkci povolíte tak, že přejdete na **Start**, **spustíte** a zadáte `cmd` příkaz a spustíte konzolu příkazů. V následujícím příkazu nahraďte `<logfilename>` parametr názvem souboru protokolu.  
   
@@ -74,7 +75,7 @@ logman start Wcf
 logman stop Wcf  
 ```  
   
- Tento proces generuje binární cyklické protokoly, které můžete zpracovat s vámi zvoleným nástrojem, včetně [nástroje Service Trace Viewer (SvcTraceViewer. exe)](../service-trace-viewer-tool-svctraceviewer-exe.md) nebo Tracerpt.  
+ Tento proces generuje binární cyklické protokoly, které můžete zpracovat s vámi zvoleným nástrojem, včetně [nástroje Service Trace Viewer (SvcTraceViewer.exe)](../service-trace-viewer-tool-svctraceviewer-exe.md) nebo Tracerpt.  
   
  Můžete si také projít ukázku [cyklického trasování](circular-tracing.md) , kde najdete další informace o alternativním naslouchacího procesu, který provede cyklické protokolování.  
   
@@ -85,13 +86,13 @@ logman stop Wcf
 2. Při sestavování řešení postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](building-the-samples.md).  
   
     > [!NOTE]
-    > Chcete-li použít příkazy RegisterProvider. bat, SetupETW. bat a CleanupETW. bat, je nutné spustit pod účtem místního správce. Pokud používáte systém Windows Vista nebo novější, musíte spustit také příkazový řádek se zvýšenými oprávněními. Provedete to tak, že kliknete pravým tlačítkem na ikonu příkazového řádku a potom kliknete na **Spustit jako správce**.  
+    > Chcete-li použít příkazy RegisterProvider.bat, SetupETW.bat a CleanupETW.bat, je nutné spustit pod účtem místního správce. Pokud používáte systém Windows Vista nebo novější, musíte spustit také příkazový řádek se zvýšenými oprávněními. Provedete to tak, že kliknete pravým tlačítkem na ikonu příkazového řádku a potom kliknete na **Spustit jako správce**.  
   
-3. Před spuštěním ukázky spusťte na klientech a na serveru RegisterProvider. bat. Tím se vytvoří výsledný soubor ETWTracingSampleLog. ETL, který vygeneruje trasování, které může číst prohlížeč trasování služby. Tento soubor najdete ve složce C:\Logs.. Pokud tato složka neexistuje, je nutné ji vytvořit nebo nebudou vygenerována žádná trasování. Pak na klientských a serverovém počítači spusťte SetupETW. bat a zahajte tak relaci trasování ETW. Soubor SetupETW. bat najdete ve složce CS\Client.  
+3. Před spuštěním ukázky spusťte RegisterProvider.bat na klientovi a na serveru. Tím se vytvoří výsledný soubor ETWTracingSampleLog. ETL, který vygeneruje trasování, které může číst prohlížeč trasování služby. Tento soubor najdete ve složce C:\Logs.. Pokud tato složka neexistuje, je nutné ji vytvořit nebo nebudou vygenerována žádná trasování. Pak na klientských a serverovém počítači spusťte SetupETW.bat a zahajte tak relaci trasování ETW. Soubor SetupETW.bat najdete ve složce CS\Client.  
   
 4. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](running-the-samples.md).  
   
-5. Po dokončení ukázky spusťte CleanupETW. bat, aby se dokončilo vytváření souboru ETWTracingSampleLog. ETL.  
+5. Po dokončení ukázky spusťte CleanupETW.bat, aby se dokončilo vytváření souboru ETWTracingSampleLog. ETL.  
   
 6. V prohlížeči trasování služby otevřete soubor ETWTracingSampleLog. ETL. Zobrazí se výzva k uložení binárního naformátovaného souboru jako souboru. svclog.  
   

@@ -1,13 +1,14 @@
 ---
 title: Pokyny k bráně firewall
+description: Přečtěte si, jak povolit porty nebo programy v bráně firewall pro ukázky WCF. V závislosti na vašich požadavcích a prostředí zabezpečení použijte jeden z těchto postupů.
 ms.date: 03/30/2017
 ms.assetid: a7dc429f-65ac-4faf-974a-77d5fb977fe1
-ms.openlocfilehash: 343fa695039f6767f6ab33daa4e3cc51e8db5e47
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.openlocfilehash: de55d067960b8f2096c129f6feaf037219e06a96
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75899644"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246138"
 ---
 # <a name="firewall-instructions"></a>Pokyny pro bránu firewall
 
@@ -28,14 +29,14 @@ Pokud si nejste jistí, který postup chcete použít, vyberte první možnost. 
 
 1. Sestavte ukázku.
 
-2. Vyberte **spustit** > **spustit**a zadejte `firewall.cpl`. Tím se otevře aplet **ovládacího panelu brány Windows Firewall** .
+2. Vyberte **Spustit**  >  **běh**a zadejte `firewall.cpl` . Tím se otevře aplet **ovládacího panelu brány Windows Firewall** .
 
     > [!NOTE]
     > Abyste mohli spouštět ukázky, které vyžadují komunikaci přes bránu Windows Firewall, musíte mít oprávnění ke změně nastavení brány firewall. Pokud některá nastavení brány firewall nejsou k dispozici a počítač je připojen k doméně, může správce systému řídit tato nastavení prostřednictvím Zásady skupiny.
 
 3. Proveďte jeden z následujících kroků pro konkrétní operační systém, aby bylo možné program přes bránu Windows Firewall:
 
-    - V systému Windows 7 nebo Windows Server 2008 R2 klikněte na možnost **Povolení programu nebo funkce přes bránu Windows Firewall**. Klikněte na **změnit nastavení** > **povolí jiný program**.
+    - V systému Windows 7 nebo Windows Server 2008 R2 klikněte na možnost **Povolení programu nebo funkce přes bránu Windows Firewall**. Klikněte na **změnit nastavení**  >  .**umožní vám jiný program**.
 
     - V systému Windows Vista nebo Windows Server 2008 klikněte na možnost **Povolení programu přes bránu Windows Firewall**.
 
@@ -49,7 +50,7 @@ Pokud si nejste jistí, který postup chcete použít, vyberte první možnost. 
 
 ## <a name="enable-a-port-range-in-advance"></a>Povolit rozsah portů předem
 
-1. Vyberte **spustit** > **spustit**a zadejte `firewall.cpl`. Tím se otevře aplet **ovládacího panelu brány Windows Firewall** .
+1. Vyberte **Spustit**  >  **běh**a zadejte `firewall.cpl` . Tím se otevře aplet **ovládacího panelu brány Windows Firewall** .
 
 2. V systému Windows 7 nebo Windows Server 2008 R2 postupujte podle těchto kroků.
 
@@ -61,7 +62,7 @@ Pokud si nejste jistí, který postup chcete použít, vyberte první možnost. 
 
     4. Vyberte **port** a klikněte na **Další**.
 
-    5. Vyberte **TCP** a do pole **konkrétní místní porty** zadejte `8000, 8001, 8002, 8003, 9000, 80, 443`.
+    5. Vyberte **TCP** a zadejte `8000, 8001, 8002, 8003, 9000, 80, 443` do pole **konkrétní místní porty** .
 
     6. Klikněte na **Další**.
 
@@ -69,7 +70,7 @@ Pokud si nejste jistí, který postup chcete použít, vyberte první možnost. 
 
     8. Vyberte **doména** a **privátní**a klikněte na **Další**.
 
-    9. Pojmenujte toto pravidlo `WCF-WF 4.0 Samples`a klikněte na **Dokončit**.
+    9. Pojmenujte toto pravidlo `WCF-WF 4.0 Samples` a klikněte na **Dokončit**.
 
     10. Klikněte na **odchozí pravidla** a opakujte kroky c až h.
 

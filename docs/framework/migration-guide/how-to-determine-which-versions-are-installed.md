@@ -1,6 +1,6 @@
 ---
 title: Zjištění nainstalovaných verzí rozhraní .NET Framework
-description: Pomocí kódu, regedit. exe nebo PowerShellu zjistíte, které verze .NET Framework jsou nainstalovány na počítači pomocí dotazování registru systému Windows.
+description: Pomocí kódu, regedit.exe nebo PowerShellu zjistíte, které verze .NET Framework jsou nainstalovány na počítači pomocí dotazování registru systému Windows.
 ms.date: 02/03/2020
 dev_langs:
 - csharp
@@ -10,12 +10,12 @@ helpviewer_keywords:
 - versions, determining for .NET Framework
 - .NET Framework, determining version
 ms.assetid: 40a67826-e4df-4f59-a651-d9eb0fdc755d
-ms.openlocfilehash: d25e4ae97877462b2a3b90e51262fb656921e392
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 122441e9238fd91199aed255b0125f69081c0a8c
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83205490"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84990147"
 ---
 # <a name="how-to-determine-which-net-framework-versions-are-installed"></a>Postupy: určení, které verze .NET Framework jsou nainstalovány
 
@@ -58,10 +58,10 @@ Hodnota REG_DWORD **verze** v registru představuje verzi .NET Framework, která
 | .NET Framework 4.6     | Ve Windows 10:393295<br />Ve všech ostatních operačních systémech Windows: 393297 |
 | .NET Framework 4.6.1   | V systémech Windows 10 listopad Update: 394254<br />Ve všech ostatních operačních systémech Windows (včetně Windows 10): 394271 |
 | .NET Framework 4.6.2   | Ve Windows 10 – aktualizace pro výročí a Windows Server 2016:394802<br />Ve všech ostatních operačních systémech Windows (včetně dalších operačních systémů Windows 10): 394806 |
-| .NET Framework 4,7     | Ve Windows 10 Creators Update: 460798<br />Ve všech ostatních operačních systémech Windows (včetně dalších operačních systémů Windows 10): 460805 |
+|  .NET Framework 4.7     | Ve Windows 10 Creators Update: 460798<br />Ve všech ostatních operačních systémech Windows (včetně dalších operačních systémů Windows 10): 460805 |
 | .NET Framework 4.7.1   | V systému Windows 10 patří mezi tvůrci aktualizace a Windows Server verze 1709:461308<br/>Ve všech ostatních operačních systémech Windows (včetně dalších operačních systémů Windows 10): 461310 |
 |  .NET Framework 4.7.2   | Ve Windows 10. dubna 2018 Update a Windows Server verze 1803:461808<br/>Ve všech operačních systémech Windows s výjimkou Windows 10 dubna 2018 Update a Windows Server verze 1803:461814 |
-|  .NET Framework 4.8     | Ve Windows 10 května 2019 Update a Windows 10 listopadu 2019 Update: 528040<br/>Ve Windows 10 Květen 2020 Update: 528209<br/>Ve všech ostatních operačních systémech Windows (včetně dalších operačních systémů Windows 10): 528049 |
+|  .NET Framework 4.8     | Ve Windows 10 května 2019 Update a Windows 10 listopadu 2019 Update: 528040<br/>Ve Windows 10 Květen 2020 Update: 528372<br/>Ve všech ostatních operačních systémech Windows (včetně dalších operačních systémů Windows 10): 528049 |
 
 ### <a name="minimum-version"></a>Minimální verze
 
@@ -77,7 +77,7 @@ Například pokud vaše aplikace běží pod .NET Framework 4,8 nebo novější 
 | .NET Framework 4.6     | 393295 |
 | .NET Framework 4.6.1   | 394254 |
 | .NET Framework 4.6.2   | 394802 |
-| .NET Framework 4,7     | 460798 |
+|  .NET Framework 4.7     | 460798 |
 | .NET Framework 4.7.1   | 461308 |
 |  .NET Framework 4.7.2   | 461808 |
 |  .NET Framework 4.8     | 528040 |
@@ -173,9 +173,9 @@ Následující příklad vyhledá .NET Framework 1 až 4 verze, které jsou nain
 
 Modul CLR .NET Framework nainstalovaný s .NET Framework má samostatnou verzi. Existují dva způsoby, jak zjistit verzi .NET Framework CLR:
 
-- **Nástroj Clrver. exe**
+- **Nástroj Clrver.exe**
 
-  K určení, které verze modulu CLR jsou nainstalovány v počítači, použijte [Nástroj verze CLR (Clrver. exe)](../tools/clrver-exe-clr-version-tool.md) . Otevřete [Developer Command Prompt pro Visual Studio](../tools/developer-command-prompt-for-vs.md) a zadejte `clrver` .
+  K určení, které verze modulu CLR jsou nainstalovány v počítači, použijte [Nástroj verze CLR (Clrver.exe)](../tools/clrver-exe-clr-version-tool.md) . Otevřete [Developer Command Prompt pro Visual Studio](../tools/developer-command-prompt-for-vs.md) a zadejte `clrver` .
 
   Ukázkový výstup:
 

@@ -1,5 +1,6 @@
 ---
 title: Tokeny a deklarace SAML
+description: Naučte se, jak WFC používá tokeny SAML k přenosu příkazů, které jsou sadami deklarací, které provedla jedna entita o jiné entitě.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - issued tokens
 - SAML token
 ms.assetid: 930b6e34-9eab-4e95-826c-4e06659bb977
-ms.openlocfilehash: 6220365d5c43299a75d1e0fa8e46a7392b0ccaa2
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: c054e594af69def96879852a5145675b3123614a
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84590368"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85244943"
 ---
 # <a name="saml-tokens-and-claims"></a>Tokeny a deklarace SAML
 *Tokeny* SAML (Security Assert Markup Language) představují reprezentace deklarací XML. Ve výchozím nastavení používají tokeny SAML Windows Communication Foundation (WCF) ve federovaném scénáři zabezpečení *tokeny*.  
@@ -31,7 +32,7 @@ ms.locfileid: "84590368"
 4. Podpis přes token SAML informuje předávající stranu, že se token vystavil službou tokenu zabezpečení. Podpis zprávy vytvořený pomocí klíče důkazu oznamuje předávající straně, že byl token vydán klientovi.  
   
 ## <a name="from-claims-to-samlattributes"></a>Z deklarací identity na SamlAttributes  
- V rámci WCF jsou příkazy v tokenech SAML modelované jako <xref:System.IdentityModel.Tokens.SamlAttribute> objekty, které se dají naplnit přímo z <xref:System.IdentityModel.Claims.Claim> objektů, za předpokladu, že <xref:System.IdentityModel.Claims.Claim> objekt má <xref:System.IdentityModel.Claims.Claim.Right%2A> vlastnost <xref:System.IdentityModel.Claims.Rights.PossessProperty%2A> a <xref:System.IdentityModel.Claims.Claim.Resource%2A> vlastnost je typu <xref:System.String> . Například:  
+ V rámci WCF jsou příkazy v tokenech SAML modelované jako <xref:System.IdentityModel.Tokens.SamlAttribute> objekty, které se dají naplnit přímo z <xref:System.IdentityModel.Claims.Claim> objektů, za předpokladu, že <xref:System.IdentityModel.Claims.Claim> objekt má <xref:System.IdentityModel.Claims.Claim.Right%2A> vlastnost <xref:System.IdentityModel.Claims.Rights.PossessProperty%2A> a <xref:System.IdentityModel.Claims.Claim.Resource%2A> vlastnost je typu <xref:System.String> . Příklad:  
   
  [!code-csharp[c_CreateSTS#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_creatests/cs/source.cs#8)]
  [!code-vb[c_CreateSTS#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_creatests/vb/source.vb#8)]  

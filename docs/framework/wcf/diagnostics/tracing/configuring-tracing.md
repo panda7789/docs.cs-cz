@@ -1,15 +1,16 @@
 ---
 title: Konfigurace trasování
+description: Naučte se, jak povolit trasování, konfigurovat zdroje trasování, nastavit trasování a šíření aktivity a nastavit naslouchací procesy trasování pro přístup k trasováním ve službě WCF.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - tracing [WCF]
 ms.assetid: 82922010-e8b3-40eb-98c4-10fc05c6d65d
-ms.openlocfilehash: 2fbe5b48a9405c9236923ffec268683bdf570831
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 55d701ee6769099698d2fd869a1502d94237b5a8
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84579004"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245346"
 ---
 # <a name="configuring-tracing"></a>Konfigurace trasování
 Toto téma popisuje, jak lze povolit trasování, nakonfigurovat zdroje trasování pro generování trasování a nastavení úrovní trasování, nastavení trasování a šíření aktivit pro podporu komplexní korelace trasování a nastavení posluchačů trasování pro přístup k trasování.  
@@ -32,7 +33,7 @@ Toto téma popisuje, jak lze povolit trasování, nakonfigurovat zdroje trasová
   
  Pokud používáte body rozšiřitelnosti WCF, jako je například vlastní operace invokers, měli byste vygenerovat vlastní trasování. Důvodem je, že pokud implementujete bod rozšiřitelnosti, WCF již nemůže generovat standardní trasování ve výchozí cestě. Pokud neimplementujete podporu ručního trasování tím, že vygenerujete trasování, možná neuvidíte trasování, které očekáváte.  
   
- Trasování lze nakonfigurovat úpravou konfiguračního souboru aplikace – buď Web. config pro aplikace hostované na webu, nebo APPNAME. exe. config pro aplikace hostované v místním prostředí. Následuje příklad takového úprav. Další informace o těchto nastaveních najdete v části Konfigurace naslouchacího procesu trasování pro využívání trasování.  
+ Trasování můžete nakonfigurovat úpravou konfiguračního souboru aplikace – buď Web.config pro aplikace hostované na webu, nebo Appname.exe.config pro samoobslužné aplikace. Následuje příklad takového úprav. Další informace o těchto nastaveních najdete v části Konfigurace naslouchacího procesu trasování pro využívání trasování.  
   
 ```xml  
 <configuration>  
@@ -53,7 +54,7 @@ Toto téma popisuje, jak lze povolit trasování, nakonfigurovat zdroje trasová
 ```  
   
 > [!NOTE]
-> Chcete-li upravit konfigurační soubor projektu služby WCF v aplikaci Visual Studio, klikněte pravým tlačítkem myši na konfigurační soubor aplikace – buď Web. config pro aplikace hostované pro web, nebo APPNAME. exe. config pro aplikaci hostovanou v **Průzkumník řešení**. Pak zvolte položku **Upravit konfiguraci služby WCF** v kontextové nabídce. Tím se spustí [Nástroj Configuration Editor (SvcConfigEditor. exe)](../../configuration-editor-tool-svcconfigeditor-exe.md), který umožňuje změnit nastavení konfigurace pro služby WCF pomocí grafického uživatelského rozhraní.  
+> Chcete-li upravit konfigurační soubor projektu služby WCF v aplikaci Visual Studio, klikněte pravým tlačítkem myši na konfigurační soubor aplikace, buď Web.config pro aplikace hostované na webu, nebo Appname.exe.config pro samoobslužnou aplikaci v **Průzkumník řešení**. Pak zvolte položku **Upravit konfiguraci služby WCF** v kontextové nabídce. Tím se spustí [Nástroj Configuration Editor (SvcConfigEditor.exe)](../../configuration-editor-tool-svcconfigeditor-exe.md), který umožňuje změnit nastavení konfigurace pro služby WCF pomocí grafického uživatelského rozhraní.  
   
 ## <a name="configuring-trace-sources-to-emit-traces"></a>Konfigurace zdrojů trasování pro vygenerování trasování  
  WCF definuje zdroj trasování pro každé sestavení. Trasování generovaná v rámci sestavení jsou k dispozici pro naslouchací procesy definované pro tento zdroj. Jsou definovány následující zdroje trasování:  
@@ -152,7 +153,7 @@ Toto téma popisuje, jak lze povolit trasování, nakonfigurovat zdroje trasová
   
 |Úroveň trasování|Povaha sledovaných událostí|Obsah sledovaných událostí|Sledované události|Cíl uživatele|  
 |-----------------|----------------------------------|-----------------------------------|--------------------|-----------------|  
-|Vypnout|Není k dispozici|Není k dispozici|Žádná trasování nejsou vygenerována.|Není k dispozici|  
+|Vypnout|–|–|Žádná trasování nejsou vygenerována.|–|  
 |Kritické|"Záporné" události: události, které indikují neočekávané zpracování nebo chybový stav.||Neošetřené výjimky, včetně následujících, jsou protokolovány:<br /><br /> – OutOfMemoryException<br />-ThreadAbortException (CLR vyvolá všechny ThreadAbortExceptionHandler)<br />-StackOverflowException (nelze zachytit)<br />– ConfigurationErrorsException<br />– SEHException –<br />– Chyby spuštění aplikace<br />– FailFast – události<br />– Systém přestane reagovat.<br />-Poškozené zprávy: trasování zpráv, které způsobí selhání aplikace.|Administrators<br /><br /> Vývojáři aplikací|  
 |Chyba|"Záporné" události: události, které indikují neočekávané zpracování nebo chybový stav.|Došlo k neočekávanému zpracování. Aplikace nebyla schopna provést úlohu podle očekávání. Aplikace je však stále v provozu.|Všechny výjimky jsou protokolovány.|Administrators<br /><br /> Vývojáři aplikací|  
 |Upozornění|"Záporné" události: události, které indikují neočekávané zpracování nebo chybový stav.|Je možné, že došlo k potížím nebo se může vyskytnout, ale aplikace pořád funguje správně. Nemusí však nadále fungovat správně.|-Aplikace přijímá více požadavků, než umožňuje nastavení omezení.<br />– Fronta pro příjem se blíží své maximální nakonfigurované kapacitě.<br />– Byl překročen časový limit.<br />-Pověření byla zamítnuta.|Administrators<br /><br /> Vývojáři aplikací|  

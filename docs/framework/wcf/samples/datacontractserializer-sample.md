@@ -1,15 +1,16 @@
 ---
 title: Ukázka třídy DataContractSerializer
+description: Tato ukázka demonstruje třídu DataContractSerializer ve službě WCF, která provádí obecné serializace a deserializaci služeb pro třídy kontraktů dat.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - XML Formatter
 ms.assetid: e0a2fe89-3534-48c8-aa3c-819862224571
-ms.openlocfilehash: 07c6d3b10f2a0478f8fb3835f0b040668c5013ce
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: c2f62c8926f09e2d4cdea1941909e7d8f59c43a0
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600007"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85244397"
 ---
 # <a name="datacontractserializer-sample"></a>Ukázka třídy DataContractSerializer
 Ukázka DataContractSerializer demonstruje <xref:System.Runtime.Serialization.DataContractSerializer> , který provádí obecné serializace a deserializaci služeb pro třídy kontraktu dat. Ukázka vytvoří `Record` objekt, zaserializace jej do paměťového proudu a deserializace paměťového proudu zpět na jiný `Record` objekt k demonstraci použití <xref:System.Runtime.Serialization.DataContractSerializer> . Ukázka potom serializaci `Record` objektu pomocí binárního zapisovače k předvedení, jak má zapisovač vliv na serializaci.  
@@ -130,7 +131,7 @@ Press <ENTER> to terminate client.
   
 2. Chcete-li sestavit edici C# nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](building-the-samples.md).  
   
-3. Chcete-li spustit ukázku, spusťte klienta z příkazového řádku zadáním příkazu client\bin\client.exe.  
+3. Chcete-li spustit ukázku, spusťte klienta z příkazového řádku zadáním client\bin\client.exe.  
   
 > [!IMPORTANT]
 > Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  

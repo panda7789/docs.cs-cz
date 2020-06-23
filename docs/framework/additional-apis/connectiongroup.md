@@ -1,5 +1,6 @@
 ---
 title: ConnectionGroup – třída
+description: Přečtěte si o třídě Connection Group, která seskupuje připojení v rámci ServicePoint kontextu a slouží ke správě kontextu síťových prostředků v rozhraní .NET.
 ms.date: 05/01/2017
 topic_type:
 - apiref
@@ -10,32 +11,32 @@ api_location:
 api_type:
 - Assembly
 ms.assetid: 25c08217-fdeb-44b9-9cd6-1b4955d6e602
-ms.openlocfilehash: 8ebc97112d2044efca85520ee942ed0f587529ee
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7121713b26880f2490b40d59d92d431a567519b3
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79156152"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84989822"
 ---
 # <a name="connectiongroup-class"></a>ConnectionGroup – třída
 
-Třída `ConnectionGroup` seskupuje seznam připojení <xref:System.Net.ServicePoint> v rámci kontextu a používá se k udržování kontextu pro síťové prostředky (například proxy servery a samostatné klienty).
+`ConnectionGroup`Třída seskupuje seznam připojení v rámci <xref:System.Net.ServicePoint> kontextu a slouží k zachování kontextu síťových prostředků (například proxy a samostatných klientů).
 
-## <a name="syntax"></a>Syntaxe
+## <a name="syntax"></a>Syntax
   
 ```csharp  
 internal class ConnectionGroup
 ```
 
 > [!WARNING]
-> Třída `ConnectionGroup` je interní a není určena pro použití přímo ve vašem kódu.
+> `ConnectionGroup`Třída je interní a není určena pro použití přímo v kódu.
 >
-> Společnost Microsoft nepodporuje použití této třídy v produkční aplikaci za žádných okolností.
+> Společnost Microsoft v žádné situaci nepodporuje použití této třídy v produkční aplikaci.
 
 ## <a name="requirements"></a>Požadavky
 
 **Obor názvů:**<xref:System.Net>
 
-**Sestava:** Systém (v souboru System.dll)
+**Sestavení:** Systém (v System.dll)
 
-**Verze rozhraní .NET Framework:** K dispozici od 2.0.
+**Verze .NET Framework:** K dispozici od verze 2,0.

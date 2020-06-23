@@ -1,5 +1,6 @@
 ---
-title: 'Kurz: Implementace smlouvy o poskytování služeb windows communication foundation'
+title: 'Kurz: implementace kontraktu služby Windows Communication Foundation'
+description: Naučte se, jak přidat kód pro implementaci rozhraní služby WCF jako součást série článků, které vám pomůžou začít vytvářet aplikace WCF.
 ms.date: 03/19/2019
 dev_langs:
 - csharp
@@ -7,28 +8,28 @@ dev_langs:
 helpviewer_keywords:
 - service contracts [WCF], implementing
 ms.assetid: d5ab51ba-61ae-403e-b3c8-e2669e326806
-ms.openlocfilehash: debdeeac7064f5bae21622b2d9de84a4d8a0e66f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 89f97610cccd42c2a5d298baa667327d077fd472
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184069"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85244644"
 ---
-# <a name="tutorial-implement-a-windows-communication-foundation-service-contract"></a>Kurz: Implementace smlouvy o poskytování služeb windows communication foundation
+# <a name="tutorial-implement-a-windows-communication-foundation-service-contract"></a>Kurz: implementace kontraktu služby Windows Communication Foundation
 
-Tento kurz popisuje druhý z pěti úkolů potřebných k vytvoření základní aplikace Windows Communication Foundation (WCF). Přehled výukových programů najdete v [tématu Výuka: Začínáme s aplikacemi Windows Communication Foundation](getting-started-tutorial.md).
+Tento kurz popisuje druhý z pěti úkolů potřebných k vytvoření aplikace Basic Windows Communication Foundation (WCF). Přehled kurzů najdete v tématu [kurz: Začínáme s Windows Communication Foundation aplikacemi](getting-started-tutorial.md).
 
-Dalším krokem pro vytvoření aplikace WCF je přidat kód pro implementaci rozhraní služby WCF, které jste vytvořili v předchozím kroku. V tomto kroku vytvoříte `CalculatorService` třídu s názvem, `ICalculator` která implementuje uživatelem definované rozhraní. Každá metoda v následujícím kódu volá operaci kalkulačky a zapíše text do konzoly k jeho testování.
+Dalším krokem pro vytvoření aplikace WCF je přidání kódu pro implementaci rozhraní služby WCF, které jste vytvořili v předchozím kroku. V tomto kroku vytvoříte třídu s názvem `CalculatorService` , která implementuje uživatelsky definované `ICalculator` rozhraní. Každá metoda v následujícím kódu volá operaci kalkulačky a zapisuje text do konzoly pro její otestování.
 
 V tomto kurzu se naučíte:
 > [!div class="checklist"]
 >
-> - Přidejte kód k implementaci smlouvy o poskytování služeb WCF.
+> - Přidejte kód pro implementaci kontraktu služby WCF.
 > - Sestavte řešení.
 
-## <a name="add-code-to-implement-the-wcf-service-contract"></a>Přidání kódu k implementaci smlouvy o poskytování služeb WCF
+## <a name="add-code-to-implement-the-wcf-service-contract"></a>Přidání kódu pro implementaci kontraktu služby WCF
 
-V **části GettingStartedLib**otevřete soubor **Service1.cs** nebo **Service1.vb** a nahraďte jeho kód následujícím kódem:
+V **GettingStartedLib**otevřete soubor **Service1.cs** nebo **Service1. vb** a nahraďte jeho kód následujícím kódem:
 
 ```csharp
 using System;
@@ -117,33 +118,33 @@ Namespace GettingStartedLib
 End Namespace
 ```
 
-## <a name="edit-appconfig"></a>Upravit soubor App.config
+## <a name="edit-appconfig"></a>Upravit App.config
 
-Upravte **soubor App.config** v **aplikaci GettingStartedLib** tak, aby odrážela změny provedené v kódu.
+Upravte **App.config** v **GettingStartedLib** tak, aby odrážely změny, které jste provedli v kódu.
 
-- Pro projekty Visual C#:
+- Pro projekty v jazyce Visual C#:
   - Změnit řádek 14 na`<service name="GettingStartedLib.CalculatorService">`
   - Změnit řádek 17 na`<add baseAddress = "http://localhost:8000/GettingStarted/CalculatorService" />`
-  - Změnit řádek 22 na`<endpoint address="" binding="wsHttpBinding" contract="GettingStartedLib.ICalculator">`
+  - Změna řádku 22 na`<endpoint address="" binding="wsHttpBinding" contract="GettingStartedLib.ICalculator">`
 
-- Pro projekty jazyka Visual Basic:
+- Pro Visual Basic projekty:
   - Změnit řádek 14 na`<service name="GettingStartedLib.GettingStartedLib.CalculatorService">`
   - Změnit řádek 17 na`<add baseAddress = "http://localhost:8000/GettingStarted/CalculatorService" />`
-  - Změnit řádek 22 na`<endpoint address="" binding="wsHttpBinding" contract="GettingStartedLib.GettingStartedLib.ICalculator">`
+  - Změna řádku 22 na`<endpoint address="" binding="wsHttpBinding" contract="GettingStartedLib.GettingStartedLib.ICalculator">`
 
-## <a name="compile-the-code"></a>Kompilace kódu
+## <a name="compile-the-code"></a>Kompilovat kód
 
-Vytvořte řešení a ověřte, že neexistují žádné chyby kompilace. Pokud používáte Visual Studio, v nabídce **Sestavení** vyberte **Build Solution** (nebo stiskněte **Ctrl**+**Shift**+**B**).
+Sestavte řešení, abyste ověřili, že nedošlo k chybám kompilace. Pokud používáte aplikaci Visual Studio, v nabídce **sestavení** vyberte **sestavení řešení** (nebo stiskněte klávesy **CTRL** + **SHIFT** + **B**).
 
 ## <a name="next-steps"></a>Další kroky
 
 V tomto kurzu jste se naučili:
 > [!div class="checklist"]
 >
-> - Přidejte kód k implementaci smlouvy o poskytování služeb WCF.
+> - Přidejte kód pro implementaci kontraktu služby WCF.
 > - Sestavte řešení.
 
-Přejdete k dalšímu kurzu, kde se dozvíte, jak spustit službu WCF.
+Přejděte k dalšímu kurzu, kde se dozvíte, jak spustit službu WCF.
 
 > [!div class="nextstepaction"]
-> [Kurz: Hostování a spuštění základní služby WCF](how-to-host-and-run-a-basic-wcf-service.md)
+> [Kurz: hostování a spuštění základní služby WCF](how-to-host-and-run-a-basic-wcf-service.md)

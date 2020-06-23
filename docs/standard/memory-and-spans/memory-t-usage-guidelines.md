@@ -5,12 +5,12 @@ ms.date: 10/01/2018
 helpviewer_keywords:
 - Memory&lt;T&gt; and Span&lt;T&gt; best practices
 - using Memory&lt;T&gt; and Span&lt;T&gt;
-ms.openlocfilehash: cb9075a12bb8d842cd8e937e74f8869c910fc0ab
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: d9a50fa18e027b6df7415438e1a5584003f7a094
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84201942"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245593"
 ---
 # <a name="memoryt-and-spant-usage-guidelines"></a>Pokyny k používání Memory\<T> a Span\<T>
 
@@ -121,7 +121,7 @@ Použití parametru typu <xref:System.Span%601> místo typu <xref:System.Memory%
 
 V některých případech budete muset <xref:System.Memory%601> místo parametru použít parametr <xref:System.Span%601> , a to i v případě, že jste plně synchronně. Možná rozhraní API, které zabíráte, přijímá jenom <xref:System.Memory%601> argumenty. Je to v pořádku, ale mějte na paměti, že při použití synchronně dochází k kompromisům <xref:System.Memory%601> .
 
-<a name="rule-2" />
+<a name="rule-2"></a>
 
 **#2 pravidla: použijte ReadOnlySpan \<T> nebo ReadOnlyMemory, \<T> Pokud by vyrovnávací paměť měla být jen pro čtení.**
 

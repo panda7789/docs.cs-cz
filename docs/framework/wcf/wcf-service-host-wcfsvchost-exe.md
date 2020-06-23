@@ -1,21 +1,22 @@
 ---
 title: Hostitel služby WCF (WcfSvcHost.exe)
+description: Hostitel služby WCF použijte k hostování a testování služby, kterou jste implementovali. Službu můžete testovat pomocí testovacího klienta WCF nebo svého vlastního klienta.
 ms.date: 03/30/2017
 ms.assetid: 8643a63d-a357-4c39-bd6c-cdfdf71e370e
-ms.openlocfilehash: b8fb32111a80178f5eb92411eb4990decb645bb6
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: efc9512766d2a9cc814083ab632226d98917bf4e
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74837737"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245723"
 ---
 # <a name="wcf-service-host-wcfsvchostexe"></a>Hostitel služby WCF (WcfSvcHost.exe)
 
-Hostitel služby Windows Communication Foundation (WCF) (WcfSvcHost. exe) umožňuje spustit ladicí program sady Visual Studio (F5) pro automatické hostování a testování služby, kterou jste implementovali. Pak můžete službu otestovat pomocí testovacího klienta WCF (WcfTestClient. exe) nebo svého vlastního klienta, abyste našli a opravili případné chyby.
+Hostitel služby Windows Communication Foundation (WCF) (WcfSvcHost.exe) umožňuje spustit ladicí program sady Visual Studio (F5) pro automatické hostování a testování služby, kterou jste nasadili. Pak můžete službu otestovat pomocí testovacího klienta WCF (WcfTestClient.exe) nebo svého vlastního klienta, abyste našli a opravili případné chyby.
 
 ## <a name="wcf-service-host"></a>Hostitel služby WCF
 
-Hostitel služby WCF vytvoří výčet služby v projektu služby WCF, načte konfiguraci projektu a vytvoří instanci hostitele pro každou službu, kterou zjistí. Nástroj je integrován do sady Visual Studio prostřednictvím šablony služby WCF a je vyvolána při zahájení ladění projektu.
+Hostitel služby WCF vypíše služby v projektu služby WCF, načte konfiguraci projektu a vytvoří instanci hostitele pro každou službu, kterou najde. Nástroj je integrován do sady Visual Studio prostřednictvím šablony služby WCF a je vyvolána při zahájení ladění projektu.
 
 Pomocí hostitele služby WCF můžete hostovat službu WCF (v projektu knihovny služby WCF), aniž byste museli psát další kód nebo potvrzování konkrétního hostitele během vývoje.
 
@@ -26,7 +27,7 @@ Pomocí hostitele služby WCF můžete hostovat službu WCF (v projektu knihovny
 
 Hostitel služby WCF může hostovat následující typy projektů knihovny služby WCF: knihovna služeb WCF, Knihovna služby sekvenčního pracovního postupu, Knihovna služby pracovního postupu stavového stroje a Knihovna služby syndikace. Hostitel služby WCF může také hostovat tyto služby, které lze přidat do projektu knihovny služeb pomocí funkce **Přidat položku** . Patří sem služba WCF, služba stavu WF, služba WF pro stavové služby a sekvenční služba XAML WF.
 
-Nezapomeňte však, že nástroj vám nepomůže nakonfigurovat hostitele. Pro tuto úlohu musíte ručně upravit soubor App. config. Nástroj také neověřuje uživatelsky definované konfigurační soubory.
+Nezapomeňte však, že nástroj vám nepomůže nakonfigurovat hostitele. Pro tuto úlohu musíte ručně upravit soubor App.config. Nástroj také neověřuje uživatelsky definované konfigurační soubory.
 
 > [!CAUTION]
 > Hostitel služby WCF byste neměli používat k hostování služeb v produkčním prostředí, protože pro tento účel nebyl navržen.  Hostitel služby WCF nepodporuje požadavky na spolehlivost, zabezpečení a spravovatelnost takového prostředí. Místo toho použijte službu IIS, protože poskytuje špičkové funkce pro spolehlivost a monitorování a je upřednostňovaným řešením pro hostování služeb. Po dokončení vývoje služeb byste měli migrovat služby z hostitele služby WCF do služby IIS.
@@ -51,13 +52,13 @@ Chcete-li se ujistit, že se používá klient testu WCF, klikněte pravým tla�
 
 #### <a name="using-a-custom-client"></a>Použití vlastního klienta
 
-Chcete-li použít vlastního klienta, klikněte pravým tlačítkem myši na projekt v **Průzkumníku řešení** v aplikaci Visual Studio, vyberte možnost **vlastnosti**a pak vyberte kartu **ladění** . klikněte na tlačítko **spustit projekt** a v dialogovém okně **argumenty příkazového řádku** upravte parametr `/client` tak, aby odkazoval na vlastního klienta, jak je uvedeno v následujícím příkladu.
+Chcete-li použít vlastního klienta, klikněte pravým tlačítkem myši na projekt v **Průzkumníku řešení** v aplikaci Visual Studio, vyberte možnost **vlastnosti**a pak vyberte kartu **ladění** . klikněte na tlačítko **spustit projekt** a upravte `/client` parametr v dialogovém okně **argumenty příkazového řádku** tak, aby odkazoval na vlastního klienta, jak je uvedeno v následujícím příkladu.
 
 `/client:"path/CustomClient.exe"`
 
 Když stisknete klávesu F5 ke spuštění služby znovu, hostitel služby WCF automaticky spustí vlastního klienta při spuštění ladicího programu.
 
-Můžete také použít parametr `/clientArg:` a zadat řetězec jako argument, který je předán vlastní klientské aplikaci, jak je uvedeno v následujícím příkladu.
+Můžete také použít `/clientArg:` parametr k zadání řetězce jako argument, který je předán vlastní klientské aplikaci, jak je uvedeno v následujícím příkladu.
 
 `/client:"path/CustomClient.exe" /clientArg:"arguments that are passed to Client"`
 
@@ -111,16 +112,16 @@ Hostitele služby WCF můžete vypnout následujícími čtyřmi způsoby:
 
 ## <a name="using-service-host-without-administrator-privilege"></a>Použití hostitele služby bez oprávnění správce
 
-Aby uživatelé bez oprávnění správce mohli vyvíjet služby WCF, vytvoří se seznam ACL (Access Control) pro obor názvů "http://+:8731/Design_Time_Addresses" při instalaci sady Visual Studio. Seznam řízení přístupu (ACL) je nastavený na (uživatelské rozhraní), které zahrnuje všechny interaktivní uživatele přihlášené k počítači. Správci mohou přidat nebo odebrat uživatele z tohoto seznamu ACL nebo otevřít další porty. Tento seznam řízení přístupu umožňuje uživatelům používat automatické hostování služby WCF (wcfSvcHost. exe) bez udělení oprávnění správce.
+Aby uživatelé bez oprávnění správce mohli vyvíjet služby WCF, vytvoří se seznam ACL (Access Control) pro obor názvů " http://+:8731/Design_Time_Addresses " během instalace sady Visual Studio. Seznam řízení přístupu (ACL) je nastavený na (uživatelské rozhraní), které zahrnuje všechny interaktivní uživatele přihlášené k počítači. Správci mohou přidat nebo odebrat uživatele z tohoto seznamu ACL nebo otevřít další porty. Tento seznam řízení přístupu umožňuje uživatelům používat automatické hostování služby WCF (wcfSvcHost.exe) bez udělení oprávnění správce.
 
-Přístup můžete upravit pomocí nástroje Netsh. exe v systému Windows Vista pod účtem správce se zvýšenými oprávněními. Následuje příklad použití nástroje Netsh. exe.
+Přístup můžete upravit pomocí nástroje netsh.exe v systému Windows Vista pod účtem správce se zvýšenými oprávněními. Následuje příklad použití netsh.exe.
 
 ```console
 netsh http add urlacl url=http://+:8001/MyService user=<domain>\<user>
 ```
 
-Další informace o nástroji Netsh. exe najdete v části "[použití nástroje Netsh. exe a přepínačů příkazového řádku](https://docs.microsoft.com/previous-versions/tn-archive/bb490939(v=technet.10))".
+Další informace o netsh.exe naleznete v části "[Jak používat nástroj Netsh.exe a přepínače příkazového řádku](https://docs.microsoft.com/previous-versions/tn-archive/bb490939(v=technet.10))".
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Testovací klient WCF (WcfTestClient.exe)](wcf-test-client-wcftestclient-exe.md)

@@ -1,13 +1,14 @@
 ---
 title: Nasazení služby WCF hostované Internetovou informační službou
+description: Přečtěte si o úkolech nezbytných pro vývoj a nasazení služby WCF hostované ve službě IIS, počínaje ověřením instalace součástí
 ms.date: 03/30/2017
 ms.assetid: 04ebd329-3fbd-44c3-b3ab-1de3517e27d7
-ms.openlocfilehash: 826a8798ada8f04173b047dc27829c384f79e2b8
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 886fd9b8d8cf3059b1fd8679c5dd89ee015f2adf
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84599240"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245090"
 ---
 # <a name="deploying-an-internet-information-services-hosted-wcf-service"></a>Nasazení služby WCF hostované Internetovou informační službou
 
@@ -35,7 +36,7 @@ Pokyny k instalaci služby IIS do jiných operačních systémů najdete v téma
 
 Proces instalace pro .NET Framework automaticky registruje WCF ve službě IIS, pokud je služba IIS na tomto počítači již nainstalována. Pokud je služba IIS nainstalovaná po .NET Framework, vyžaduje se k registraci WCF se službou IIS a ASP.NET další krok. To můžete provést následujícím způsobem v závislosti na vašem operačním systému:
 
-- Windows 7 a Windows Server 2003: k registraci WCF se službou IIS použijte nástroj pro [registraci ServiceModel (ServiceModelReg. exe)](../servicemodelreg-exe.md) . Chcete-li použít tento nástroj, zadejte **ServiceModelReg. exe/i/x** v [Developer Command Prompt pro Visual Studio](../../tools/developer-command-prompt-for-vs.md).
+- Windows 7 a Windows Server 2003: k registraci WCF se službou IIS použijte nástroj pro [registraci ServiceModel (ServiceModelReg.exe)](../servicemodelreg-exe.md) . Chcete-li použít tento nástroj, zadejte do [Developer Command Prompt pro Visual Studio](../../tools/developer-command-prompt-for-vs.md) **ServiceModelReg.exe/i/x** .
 
 - Windows 7: nakonec musíte ověřit, že je ASP.NET nakonfigurovaný tak, aby používal verzi .NET Framework 4 nebo novější. Provedete to tak, že spustíte nástroj ASPNET_Regiis s `–i` možností. Další informace najdete v tématu [Nástroj pro registraci služby IIS ASP.NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/k6h9cz8h(v=vs.90)).
 
@@ -75,7 +76,7 @@ Další informace o modelu kompilace ASP.NET 2,0 naleznete v tématu [Přehled k
 
 ## <a name="configure-the-wcf-service"></a>Konfigurace služby WCF
 
-Služby WCF hostované službou IIS ukládají svou konfiguraci do souboru Web. config aplikace. Služby hostované službou IIS používají stejné konfigurační prvky a syntaxi jako služby WCF hostované mimo službu IIS. Následující omezení jsou však pro hostování prostředí IIS jedinečná:
+Služby WCF hostované službou IIS ukládají svou konfiguraci do souboru Web.config aplikace. Služby hostované službou IIS používají stejné konfigurační prvky a syntaxi jako služby WCF hostované mimo službu IIS. Následující omezení jsou však pro hostování prostředí IIS jedinečná:
 
 - Základní adresy pro služby hostované službou IIS.
 

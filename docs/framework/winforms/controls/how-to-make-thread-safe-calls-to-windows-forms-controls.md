@@ -1,6 +1,7 @@
 ---
-title: Volání ovládacích prvků bezpečná pro přístup z více vláken
+title: Udělat volání bezpečná pro přístup z více vláken na ovládací prvky
 ms.date: 02/19/2019
+description: Naučte se implementovat multithreading ve vaší aplikaci voláním ovládacích prvků pro více vláken v bezpečném vlákně.
 dev_langs:
 - csharp
 - vb
@@ -15,22 +16,22 @@ helpviewer_keywords:
 - threading [Windows Forms], cross-thread calls
 - controls [Windows Forms], multithreading
 ms.assetid: 138f38b6-1099-4fd5-910c-390b41cbad35
-ms.openlocfilehash: 365b1acb693b9ff2be603a3e659ed8d846a7696a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b5f4de7bd3d8d89de98dbe27e2dbf360763670d0
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79142001"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84904179"
 ---
-# <a name="how-to-make-thread-safe-calls-to-windows-forms-controls"></a>Postup: Volání ovládacích prvků windows forms bezpečných pro přístup z více vláken
+# <a name="how-to-make-thread-safe-calls-to-windows-forms-controls"></a>Postupy: provádění volání bezpečných pro přístup z více vláken k ovládacím prvkům model Windows Forms
 
-Multithreading může zlepšit výkon aplikací pro Windows Forms, ale přístup k ovládacím prvkům Windows Forms není ze své podstaty bezpečný pro přístup z více vláken. Multithreading může vystavit váš kód velmi závažné a složité chyby. Dvě nebo více podprocesů manipulaci s ovládacím prvkem může vynutit ovládací prvek do nekonzistentního stavu a vést ke sporovým stavům, zablokování a zamrznutí nebo zablokování. Pokud implementujete multithreading ve vaší aplikaci, nezapomeňte volat ovládací prvky mezi vlákny bezpečným způsobem. Další informace naleznete v [tématu Osvědčené postupy spravovaného podprocesu](../../../standard/threading/managed-threading-best-practices.md).
+Multithreading může zlepšit výkon aplikací model Windows Forms, ale přístup k ovládacím prvkům model Windows Forms není v podstatě bezpečný pro přístup z více vláken. Multithreading může váš kód vystavit velmi vážným a složitým chybám. Dva nebo více vláken manipulující s ovládacím prvkem může vynutit ovládací prvek do nekonzistentního stavu a vést ke konfliktům časování, zablokování a zablokování nebo zablokování. Pokud implementujete multithreading v aplikaci, nezapomeňte volat ovládací prvky pro více vláken v bezpečném vlákně. Další informace najdete v tématu [osvědčené postupy pro spravované vlákno](../../../standard/threading/managed-threading-best-practices.md).
 
-Existují dva způsoby, jak bezpečně volat ovládací prvek Windows Forms z vlákna, které tento ovládací prvek nevytvořilo. Tuto metodu <xref:System.Windows.Forms.Control.Invoke%2A?displayProperty=fullName> můžete použít k volání delegáta vytvořeného v hlavním vlákně, který zase volá ovládací prvek. Nebo můžete implementovat <xref:System.ComponentModel.BackgroundWorker?displayProperty=nameWithType>, který používá model řízený událostmi k oddělení práce provedené ve vlákně na pozadí od vykazování výsledků.
+Existují dva způsoby, jak bezpečně volat ovládací prvek model Windows Forms z vlákna, které tento ovládací prvek nevytvořil. Můžete použít <xref:System.Windows.Forms.Control.Invoke%2A?displayProperty=fullName> metodu pro volání delegáta vytvořeného v hlavním vlákně, který zase volá ovládací prvek. Nebo můžete implementovat <xref:System.ComponentModel.BackgroundWorker?displayProperty=nameWithType> , který používá model řízený událostmi k oddělení práce provedené ve vlákně na pozadí z vytváření sestav o výsledcích.
 
 ## <a name="unsafe-cross-thread-calls"></a>Nebezpečná volání mezi vlákny
 
-Je nebezpečné volat ovládací prvek přímo z vlákna, které jej nevytvořilo. Následující fragment kódu ilustruje nebezpečné volání ovládacího <xref:System.Windows.Forms.TextBox?displayProperty=nameWithType> prvku. Obslužná `Button1_Click` `WriteTextUnsafe` rutina události vytvoří nové <xref:System.Windows.Forms.TextBox.Text%2A?displayProperty=nameWithType> vlákno, které přímo nastaví vlastnost hlavního vlákna.
+Není bezpečné volat ovládací prvek přímo z vlákna, které ho nevytvořilo. Následující fragment kódu ilustruje nebezpečné volání <xref:System.Windows.Forms.TextBox?displayProperty=nameWithType> ovládacího prvku. `Button1_Click`Obslužná rutina události vytvoří nové `WriteTextUnsafe` vlákno, které nastaví vlastnost hlavního vlákna <xref:System.Windows.Forms.TextBox.Text%2A?displayProperty=nameWithType> přímo.
 
 ```csharp
 private void Button1_Click(object sender, EventArgs e)
@@ -55,37 +56,37 @@ Private Sub WriteTextUnsafe()
 End Sub
 ```
 
-Ladicí program sady Visual Studio zjistí tato <xref:System.InvalidOperationException> nebezpečná volání vlákna vyvoláním funkce s **neplatnou operací mezi vlákny. Ovládací prvek "" přistupovat z podprocesu než vlákno, které bylo vytvořeno na.** Vždy <xref:System.InvalidOperationException> dochází pro nebezpečné volání mezi vlákny během ladění sady Visual Studio a může dojít za běhu aplikace. Problém byste měli vyřešit, ale výjimku <xref:System.Windows.Forms.Control.CheckForIllegalCrossThreadCalls%2A?displayProperty=nameWithType> můžete `false`zakázat nastavením vlastnosti na .
+Ladicí program sady Visual Studio detekuje tato nebezpečná volání vláken tím <xref:System.InvalidOperationException> , že vyvolává zprávu, **operace křížového vlákna není platná. Ovládací prvek "", ke kterému se přistupoval z jiného vlákna než z vlákna, ve kterém byl vytvořen.** <xref:System.InvalidOperationException>Vždy dojde k nebezpečným voláním mezi vlákny během ladění sady Visual Studio a může dojít v modulu runtime aplikace. Měli byste problém vyřešit, ale tuto výjimku můžete zakázat nastavením <xref:System.Windows.Forms.Control.CheckForIllegalCrossThreadCalls%2A?displayProperty=nameWithType> vlastnosti na `false` .
 
 ## <a name="safe-cross-thread-calls"></a>Bezpečná volání mezi vlákny
 
-Následující příklady kódu ukazují dva způsoby, jak bezpečně volat ovládací prvek Windows Forms z vlákna, které jej nevytvořilo:
+Následující příklady kódu ukazují dva způsoby, jak bezpečně volat ovládací prvek model Windows Forms z vlákna, které ho nevytvořilo:
 
-1. Metoda, <xref:System.Windows.Forms.Control.Invoke%2A?displayProperty=fullName> která volá delegáta z hlavního vlákna pro volání ovládacího prvku.
-2. Součást, <xref:System.ComponentModel.BackgroundWorker?displayProperty=nameWithType> která nabízí model řízený událostmi.
+1. <xref:System.Windows.Forms.Control.Invoke%2A?displayProperty=fullName>Metoda, která volá delegáta z hlavního vlákna pro volání ovládacího prvku.
+2. <xref:System.ComponentModel.BackgroundWorker?displayProperty=nameWithType>Komponenta, která nabízí model řízený událostmi.
 
-V obou příkladech podproces na pozadí spí po dobu jedné sekundy simulovat práci, která se provádí v tomto vlákně.
+V obou příkladech je vlákno na pozadí v jednom sekundu pro simulaci práce v tomto vlákně.
 
-Tyto příklady můžete vytvořit a spustit jako aplikace rozhraní .NET Framework z příkazového řádku jazyka C# nebo Visual Basic. Další informace naleznete v [tématu Vytvoření příkazového řádku s csc.exe](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md) nebo [Sestavení z příkazového řádku (Visual Basic)](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md).
+Tyto příklady můžete sestavit a spustit jako aplikace .NET Framework z příkazového řádku jazyka C# nebo Visual Basic. Další informace najdete v tématu [sestavování z příkazového řádku pomocí csc.exe](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md) nebo [sestavení z příkazového řádku (Visual Basic)](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md).
 
-Počínaje rozhraním .NET Core 3.0 můžete také vytvářet a spouštět příklady jako aplikace Windows .NET Core ze složky, která má název složky .NET Core Windows Forms * \<>.csproj* soubor projektu.
+Počínaje rozhraním .NET Core 3,0 můžete také sestavit a spustit příklady jako aplikace Windows .NET Core ze složky, která obsahuje soubor projektu .NET Core model Windows Forms * \<folder name> . csproj* .
 
-## <a name="example-use-the-invoke-method-with-a-delegate"></a>Příklad: Použití metody Invoke s delegátem
+## <a name="example-use-the-invoke-method-with-a-delegate"></a>Příklad: použití metody Invoke s delegátem
 
-Následující příklad ukazuje vzor pro zajištění volání bezpečné pro přístup z více vláken ovládacího prvku Windows Forms. Dotazuje <xref:System.Windows.Forms.Control.InvokeRequired%2A?displayProperty=fullName> vlastnost, která porovnává id vytvoření vlákna ovládacího prvku s ID volajícího vlákna. Pokud ID podprocesu jsou stejné, volá ovládací prvek přímo. Pokud ID podprocesu se liší, volá metodu <xref:System.Windows.Forms.Control.Invoke%2A?displayProperty=nameWithType> s delegátem z hlavního vlákna, který provede skutečné volání ovládacího prvku.
+Následující příklad ukazuje vzor pro zajištění volání bezpečného pro přístup z více vláken do ovládacího prvku model Windows Forms. Dotazuje se na <xref:System.Windows.Forms.Control.InvokeRequired%2A?displayProperty=fullName> vlastnost, která porovnává vytvoření ID vlákna pro ID volajícího vlákna. Pokud jsou identifikátory vlákna stejné, volá ovládací prvek přímo. Pokud jsou ID vláken odlišná, volá <xref:System.Windows.Forms.Control.Invoke%2A?displayProperty=nameWithType> metodu s delegátem z hlavního vlákna, které provádí vlastní volání ovládacího prvku.
 
-Umožňuje `SafeCallDelegate` nastavení <xref:System.Windows.Forms.TextBox> vlastnosti <xref:System.Windows.Forms.TextBox.Text%2A> ovládacího prvku. Metoda `WriteTextSafe` se <xref:System.Windows.Forms.Control.InvokeRequired%2A>dotazuje . Pokud <xref:System.Windows.Forms.Control.InvokeRequired%2A> `true`vrátí `WriteTextSafe` , `SafeCallDelegate` předá metodu <xref:System.Windows.Forms.Control.Invoke%2A> provést skutečné volání ovládacího prvku. Pokud <xref:System.Windows.Forms.Control.InvokeRequired%2A> `false`vrátí `WriteTextSafe` , <xref:System.Windows.Forms.TextBox.Text%2A?displayProperty=nameWithType> nastaví přímo. Obslužná rutina `Button1_Click` události `WriteTextSafe` vytvoří nové vlákno a spustí metodu.
+`SafeCallDelegate`Umožňuje nastavit <xref:System.Windows.Forms.TextBox> vlastnost ovládacího prvku <xref:System.Windows.Forms.TextBox.Text%2A> . `WriteTextSafe`Metoda se dotazuje <xref:System.Windows.Forms.Control.InvokeRequired%2A> . Pokud <xref:System.Windows.Forms.Control.InvokeRequired%2A> vrátí `true` , `WriteTextSafe` předává `SafeCallDelegate` <xref:System.Windows.Forms.Control.Invoke%2A> metodu metodě, aby provedla skutečné volání ovládacího prvku. Pokud <xref:System.Windows.Forms.Control.InvokeRequired%2A> `false` se vrátí, `WriteTextSafe` nastaví <xref:System.Windows.Forms.TextBox.Text%2A?displayProperty=nameWithType> přímo. `Button1_Click`Obslužná rutina události vytvoří nové vlákno a spustí `WriteTextSafe` metodu.
 
  [!code-csharp[ThreadSafeCalls#1](~/samples/snippets/winforms/thread-safe/example1/cs/Form1.cs)]
  [!code-vb[ThreadSafeCalls#1](~/samples/snippets/winforms/thread-safe/example1/vb/Form1.vb)]  
 
-## <a name="example-use-a-backgroundworker-event-handler"></a>Příklad: Použití obslužné rutiny události BackgroundWorker
+## <a name="example-use-a-backgroundworker-event-handler"></a>Příklad: použití obslužné rutiny události BackgroundWorker
 
-Snadný způsob, jak implementovat multithreading je s komponentou, <xref:System.ComponentModel.BackgroundWorker?displayProperty=nameWithType> která používá model řízený událostmi. Podproces na <xref:System.ComponentModel.BackgroundWorker.DoWork?displayProperty=nameWithType> pozadí spustí událost, která nepracuje s hlavním vláknem. Hlavní vlákno spustí <xref:System.ComponentModel.BackgroundWorker.ProgressChanged?displayProperty=nameWithType> <xref:System.ComponentModel.BackgroundWorker.RunWorkerCompleted?displayProperty=nameWithType> obslužné rutiny a události, které mohou volat ovládací prvky hlavního vlákna.
+Snadný způsob, jak implementovat multithreading, je s <xref:System.ComponentModel.BackgroundWorker?displayProperty=nameWithType> komponentou, která používá model řízený událostmi. Vlákno na pozadí spouští <xref:System.ComponentModel.BackgroundWorker.DoWork?displayProperty=nameWithType> událost, která nekomunikuje s hlavním vláknem. Hlavní vlákno spouští <xref:System.ComponentModel.BackgroundWorker.ProgressChanged?displayProperty=nameWithType> <xref:System.ComponentModel.BackgroundWorker.RunWorkerCompleted?displayProperty=nameWithType> obslužné rutiny události a, které mohou volat ovládací prvky hlavního vlákna.
 
-Chcete-li provést volání bezpečné <xref:System.ComponentModel.BackgroundWorker>pro přístup z více vláken pomocí , vytvořte <xref:System.ComponentModel.BackgroundWorker.DoWork> metodu ve vlákně na pozadí, která provede práci, a spojte ji s událostí. Vytvořte jinou metodu v hlavním vlákně pro hlášení výsledků <xref:System.ComponentModel.BackgroundWorker.ProgressChanged> <xref:System.ComponentModel.BackgroundWorker.RunWorkerCompleted> práce na pozadí a svázání s událostí nebo. Chcete-li spustit vlákno <xref:System.ComponentModel.BackgroundWorker.RunWorkerAsync%2A?displayProperty=nameWithType>na pozadí, volejte .
+Chcete-li provést volání bezpečné pro přístup z více vláken pomocí <xref:System.ComponentModel.BackgroundWorker> , vytvořte v vlákně na pozadí metodu, která provede práci, a navažte ji na <xref:System.ComponentModel.BackgroundWorker.DoWork> událost. Vytvořte další metodu v hlavním vlákně, abyste nahlásili výsledky práce na pozadí a navázali ji <xref:System.ComponentModel.BackgroundWorker.ProgressChanged> na <xref:System.ComponentModel.BackgroundWorker.RunWorkerCompleted> událost nebo. Chcete-li spustit vlákno na pozadí, zavolejte <xref:System.ComponentModel.BackgroundWorker.RunWorkerAsync%2A?displayProperty=nameWithType> .
 
-Příklad používá <xref:System.ComponentModel.BackgroundWorker.RunWorkerCompleted> obslužnou <xref:System.Windows.Forms.TextBox> rutinu <xref:System.Windows.Forms.TextBox.Text%2A> události k nastavení vlastnosti ovládacího prvku. Příklad použití události <xref:System.ComponentModel.BackgroundWorker.ProgressChanged> naleznete <xref:System.ComponentModel.BackgroundWorker>v tématu .
+V příkladu se používá <xref:System.ComponentModel.BackgroundWorker.RunWorkerCompleted> obslužná rutina události k nastavení <xref:System.Windows.Forms.TextBox> vlastnosti ovládacího prvku <xref:System.Windows.Forms.TextBox.Text%2A> . Příklad použití <xref:System.ComponentModel.BackgroundWorker.ProgressChanged> události naleznete v tématu <xref:System.ComponentModel.BackgroundWorker> .
 
  [!code-csharp[ThreadSafeCalls#2](~/samples/snippets/winforms/thread-safe/example2/cs/Form1.cs)]
  [!code-vb[ThreadSafeCalls#2](~/samples/snippets/winforms/thread-safe/example2/vb/Form1.vb)]  
@@ -93,6 +94,6 @@ Příklad používá <xref:System.ComponentModel.BackgroundWorker.RunWorkerCompl
 ## <a name="see-also"></a>Viz také
 
 - <xref:System.ComponentModel.BackgroundWorker>
-- [Postup: Spuštění operace na pozadí](how-to-run-an-operation-in-the-background.md)
-- [Postup: Implementace formuláře, který používá operaci na pozadí](how-to-implement-a-form-that-uses-a-background-operation.md)
-- [Vývoj vlastních ovládacích prvků windows forms pomocí rozhraní .NET Framework](developing-custom-windows-forms-controls.md)
+- [Postupy: spuštění operace na pozadí](how-to-run-an-operation-in-the-background.md)
+- [Postupy: Implementace formuláře, který používá operaci na pozadí](how-to-implement-a-form-that-uses-a-background-operation.md)
+- [Vývoj vlastních ovládacích prvků model Windows Forms pomocí .NET Framework](developing-custom-windows-forms-controls.md)

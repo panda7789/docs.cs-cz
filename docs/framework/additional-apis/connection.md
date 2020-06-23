@@ -1,5 +1,6 @@
 ---
-title: Třída připojení (System.Net)
+title: Connection – třída (System.Net)
+description: Přečtěte si o třídě Connection v rozhraní .NET. Tato třída analyzuje serverové odpovědi, požadavky na fronty a požadavky kanálu. Je v oboru názvů System.NET.
 ms.date: 05/01/2017
 ms.technology: dotnet-networking
 topic_type:
@@ -11,32 +12,32 @@ api_location:
 api_type:
 - Assembly
 ms.assetid: 6f0b8902-f31c-4ab9-a8c9-de43228995ec
-ms.openlocfilehash: dc0a594f7ae2bb9fc1883ec7ef672805bbc08778
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: cb28724ed782fc5395dc74e9c59249ebdea44ddf
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79156178"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84989831"
 ---
 # <a name="connection-class"></a>Connection – třída
 
-Třída `Connection` analyzuje odpovědi serveru, požadavky na fronty a požadavky na kanál.
+`Connection`Třída analyzuje serverové odpovědi, požadavky na fronty a požadavky kanálu.
 
-## <a name="syntax"></a>Syntaxe
+## <a name="syntax"></a>Syntax
   
 ```csharp  
 internal class Connection : PooledStream
 ```
 
 > [!WARNING]
-> Třída `Connection` je interní a není určena pro použití přímo ve vašem kódu.
+> `Connection`Třída je interní a není určena pro použití přímo v kódu.
 >
-> Společnost Microsoft nepodporuje použití této třídy v produkční aplikaci za žádných okolností.
+> Společnost Microsoft v žádné situaci nepodporuje použití této třídy v produkční aplikaci.
 
 ## <a name="requirements"></a>Požadavky
 
 **Obor názvů:**<xref:System.Net>
 
-**Sestava:** Systém (v souboru System.dll)
+**Sestavení:** Systém (v System.dll)
 
-**Verze rozhraní .NET Framework:** K dispozici od 2.0.
+**Verze .NET Framework:** K dispozici od verze 2,0.

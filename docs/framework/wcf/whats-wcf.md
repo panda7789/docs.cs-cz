@@ -1,17 +1,18 @@
 ---
 title: Co je to Windows Communication Foundation
+description: Přečtěte si o Windows Communication Foundation, což je rozhraní pro vytváření aplikací orientovaných na služby.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Windows Communication Foundation [WCF], technology overview
 - technology overview [WCF]
 - WCF [WCF], technology overview
 ms.assetid: 40e1009d-ef15-450b-9848-62eabe5e5738
-ms.openlocfilehash: fd78f2cd8266f94c577801623a84b56919c82973
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 84cb45d62409769a79fa6a401fdb1aa6934c4099
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600851"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245606"
 ---
 # <a name="what-is-windows-communication-foundation"></a>Co je to Windows Communication Foundation
 Windows Communication Foundation (WCF) je rozhraní pro vytváření aplikací orientovaných na služby. Pomocí WCF můžete odesílat data jako asynchronní zprávy z jednoho koncového bodu služby do jiného. Koncový bod služby může být součástí nepřetržitě dostupné služby hostované službou IIS nebo může být služba hostovaná v aplikaci. Koncovým bodem může být klient služby, která žádá o data z koncového bodu služby. Zprávy mohou být jednoduché jako jeden znak nebo Word odeslaný jako XML nebo jako datový proud binárních dat. Mezi několik ukázkových scénářů patří:
@@ -78,7 +79,7 @@ WCF zahrnuje následující sadu funkcí. Další informace najdete v tématu [P
 
      REST je příkladem vyvíjející se technologie Web 2,0. WCF se dá nakonfigurovat tak, aby zpracovával "jednoduchá" data XML, která nejsou zabalená v obálce SOAP. WCF lze také rozšířit tak, aby podporovalo konkrétní formáty XML, jako je například ATOM (oblíbený Standard RSS), a dokonce i jiné formáty než XML, jako je například JavaScript Object Notation (JSON).
 
-- **Možností**
+- **Rozšiřitelnost**
 
      Architektura WCF má několik bodů rozšiřitelnosti. Pokud se vyžaduje další funkce, je k dispozici několik vstupních bodů, které vám umožní přizpůsobit chování služby. Další informace o dostupných bodech rozšiřitelnosti najdete v tématu [rozšíření WCF](./extending/index.md).
 

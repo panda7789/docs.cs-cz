@@ -1,18 +1,19 @@
 ---
 title: Trasování a protokolování zpráv
+description: Naučte se používat nástroj pro prohlížení služby Service Trace Viewer (SvcTraceViewer.exe) k zobrazení trasování a protokolů zpráv pomocí této ukázky WFC.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Tracing and logging
 ms.assetid: a4f39bfc-3c5e-4d51-a312-71c5c3ce0afd
-ms.openlocfilehash: 9af50f138a2788fc7af0ce5d07e95df49d6675cb
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: bb49334252c2415223b0f8f5559a6dc838d175e3
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84602645"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246022"
 ---
 # <a name="tracing-and-message-logging"></a>Trasování a protokolování zpráv
-Tato ukázka demonstruje, jak povolit trasování a protokolování zpráv. Výsledné trasování a protokoly zpráv se zobrazují pomocí [nástroje Service Trace Viewer (SvcTraceViewer. exe)](../service-trace-viewer-tool-svctraceviewer-exe.md). Tato ukázka je založena na [Začínáme](getting-started-sample.md).  
+Tato ukázka demonstruje, jak povolit trasování a protokolování zpráv. Výsledné trasování a protokoly zpráv se zobrazují pomocí [nástroje Service Trace Viewer (SvcTraceViewer.exe)](../service-trace-viewer-tool-svctraceviewer-exe.md). Tato ukázka je založena na [Začínáme](getting-started-sample.md).  
   
 > [!NOTE]
 > Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
@@ -81,7 +82,7 @@ Tato ukázka demonstruje, jak povolit trasování a protokolování zpráv. Výs
   
  Při záznamu zprávy je typ trasování závislý na tom, zda je sledován v klientovi nebo na serveru. Například zpráva "Přidat", která je odeslána klientovi, je sledována pod kategorií "TransportWrite" na klientovi, zatímco stejná zpráva je sledována pod kategorií "TransportRead" ve službě.  
   
- Nakonfigurujte naslouchací proces trasování přidáním následujícího kódu do <xref:System.Diagnostics> oddílu souboru App. config klienta nebo souboru Web. config služby.  
+ Nakonfigurujte naslouchací proces trasování přidáním následujícího kódu do <xref:System.Diagnostics> oddílu App.config souboru klienta nebo Web.config souboru služby:  
   
 ```xml  
 <system.diagnostics>  
