@@ -1,16 +1,17 @@
 ---
 title: Přehled zabezpečení přenosu
+description: Přečtěte si o hlavních mechanismech zabezpečení přenosu v rámci vazeb poskytovaných systémem WCF. Tyto mechanismy zabezpečení závisí na použitém vázání a přenosu.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 00959326-aa9d-44d0-af61-54933d4adc7f
-ms.openlocfilehash: 5c6b6389122b32ed8db701020a8c13ba17225867
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 6302a949e8d0a041446b75dd3769b8ba2d1fc2b5
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84585672"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85244826"
 ---
 # <a name="transport-security-overview"></a>Přehled zabezpečení přenosu
 Mechanismy zabezpečení přenosu v Windows Communication Foundation (WCF) závisí na používané vazbě a přenosu. Například při použití <xref:System.ServiceModel.WSHttpBinding> třídy je přenos HTTP a primární mechanismus pro zabezpečení přenosu je SSL (Secure Sockets Layer) (SSL) prostřednictvím protokolu HTTP, obvykle se označuje jako https. Toto téma popisuje hlavní mechanismy zabezpečení přenosu používané v rámci vazeb poskytovaných systémem WCF.  
@@ -62,7 +63,7 @@ Mechanismy zabezpečení přenosu v Windows Communication Foundation (WCF) závi
  To umožňuje serveru používat pro ověřování protokol NTLM, pokud dojde k chybě protokolu Kerberos. Další informace o konfiguraci služby IIS ve službě IIS 6,0 najdete v tématu [vynucení ověřování NTLM](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc786486(v=ws.10)). Pro IIS 7,0 ověřování systému Windows zahrnuje ověřování protokolem NTLM. Další informace najdete v tématu [Konfigurace certifikátů serveru ve službě IIS 7](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732230(v=ws.10)).
   
 ## <a name="wshttpbinding"></a>WsHttpBinding  
- <xref:System.ServiceModel.WSHttpBinding>Třída je navržena pro zajištění spolupráce se službami, které implementují specifikace WS-*. Zabezpečení přenosu této vazby je SSL (Secure Sockets Layer) (SSL) prostřednictvím protokolu HTTP nebo HTTPS. Chcete-li vytvořit aplikaci WCF, která používá protokol SSL, použijte k hostování aplikace službu IIS. Případně, pokud vytváříte samoobslužnou aplikaci, použijte nástroj HttpCfg. exe k vytvoření vazby certifikátu X. 509 na konkrétní port v počítači. Číslo portu je zadáno jako součást aplikace WCF jako adresa koncového bodu. Při použití transportního režimu musí adresa koncového bodu zahrnovat protokol HTTPS, jinak se za běhu vyvolá výjimka. Další informace najdete v tématu [zabezpečení přenosu HTTP](http-transport-security.md).  
+ <xref:System.ServiceModel.WSHttpBinding>Třída je navržena pro zajištění spolupráce se službami, které implementují specifikace WS-*. Zabezpečení přenosu této vazby je SSL (Secure Sockets Layer) (SSL) prostřednictvím protokolu HTTP nebo HTTPS. Chcete-li vytvořit aplikaci WCF, která používá protokol SSL, použijte k hostování aplikace službu IIS. Případně, pokud vytváříte samoobslužnou aplikaci, použijte nástroj HttpCfg.exe k vytvoření vazby certifikátu X. 509 na konkrétní port v počítači. Číslo portu je zadáno jako součást aplikace WCF jako adresa koncového bodu. Při použití transportního režimu musí adresa koncového bodu zahrnovat protokol HTTPS, jinak se za běhu vyvolá výjimka. Další informace najdete v tématu [zabezpečení přenosu HTTP](http-transport-security.md).  
   
  Pro ověřování klienta nastavte <xref:System.ServiceModel.HttpTransportSecurity.ClientCredentialType%2A> vlastnost <xref:System.ServiceModel.HttpTransportSecurity> třídy na jednu z <xref:System.ServiceModel.HttpClientCredentialType> hodnot výčtu. Hodnoty výčtu jsou stejné jako typy přihlašovacích údajů klienta pro <xref:System.ServiceModel.BasicHttpBinding> a jsou navržené pro hostování se službami IIS.  
   

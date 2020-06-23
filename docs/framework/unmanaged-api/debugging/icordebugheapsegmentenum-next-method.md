@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 51625fd0-7399-49c7-b22b-5dfb05451fe6
 topic_type:
 - apiref
-ms.openlocfilehash: c9999961ec20a31cf82d5ad60104bcdd04c340d1
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 3d4e44eefaf99a40b9c4f1c45e7dd81192f8b607
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83210173"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84904270"
 ---
 # <a name="icordebugheapsegmentenumnext-method"></a>ICorDebugHeapSegmentEnum::Next – metoda
-Získá zadaný počet instancí [COR_HEAPOBJECT](cor-heapobject-structure.md) , které obsahují informace o oblastech paměti spravované haldy.  
+Získá zadaný počet instancí [COR_SEGMENT](cor-segment-structure.md) , které obsahují informace o oblastech paměti spravované haldy.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,10 +39,10 @@ HRESULT Next(
  pro Počet segmentů, které mají být načteny.  
   
  segmenty  
- mimo Pole ukazatelů, z nichž každý odkazuje na objekt [COR_HEAPOBJECT](cor-heapobject-structure.md) , který poskytuje informace o oblasti paměti ve spravované haldě.  
+ mimo Pole ukazatelů, z nichž každý odkazuje na objekt [COR_SEGMENT](cor-segment-structure.md) , který poskytuje informace o oblasti paměti ve spravované haldě.  
   
  pceltFetched  
- mimo Ukazatel na počet skutečně vrácených objektů [COR_HEAPOBJECT](cor-heapobject-structure.md) `segments` . Tato hodnota může být `null` `celt` , pokud je 1.  
+ mimo Ukazatel na počet skutečně vrácených objektů [COR_SEGMENT](cor-segment-structure.md) `segments` . Tato hodnota může být `null` `celt` , pokud je 1.  
   
 ## <a name="remarks"></a>Poznámky  
   

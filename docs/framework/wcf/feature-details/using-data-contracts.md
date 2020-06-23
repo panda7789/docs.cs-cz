@@ -1,5 +1,6 @@
 ---
 title: Použití kontraktů dat
+description: Přečtěte si o kontraktu dat, který definuje, pro každý parametr nebo návratový typ, jaká data jsou serializovaná k výměně mezi klientem a serverem WCF.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - WCF, data
 - data contracts [WCF]
 ms.assetid: a3ae7b21-c15c-4c05-abd8-f483bcbf31af
-ms.openlocfilehash: 0d11b48d3021bf0d92d74ab67bc18c2bdd2bdd0e
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 80ea2a8bd67c627fbe11ee07e640704c1a41ef7b
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84594995"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85244722"
 ---
 # <a name="using-data-contracts"></a>Použití kontraktů dat
 *Kontrakt dat* je formální smlouva mezi službou a klientem, která abstraktně popisuje data, která se mají vyměňovat. To znamená, že ke komunikaci klient a služba nemusí sdílet stejné typy, jenom stejné kontrakty dat. Kontrakt dat přesně definuje pro každý parametr nebo návratový typ, jaká data jsou serializovaná (převedená do XML), která se mají vyměňovat.  

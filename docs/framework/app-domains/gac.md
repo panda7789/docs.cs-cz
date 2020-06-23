@@ -1,5 +1,6 @@
 ---
 title: Globální mezipaměť sestavení
+description: Seznamte se s globální mezipamětí sestavení, která je mezipaměť kódu v celém počítači, kde je nainstalován modul CLR (Common Language Runtime) pro rozhraní .NET.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - assemblies [.NET Framework], global assembly cache
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - global assembly cache, about
 - access control lists [.NET Framework]
 ms.assetid: cf5eacd0-d3ec-4879-b6da-5fd5e4372202
-ms.openlocfilehash: 22adf103ce38e189a277405af220880d5ce0b1db
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 7f08bb4cf279924b12432f259dae8ce5a8474285
+ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73119923"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85104906"
 ---
 # <a name="global-assembly-cache"></a>Globální mezipaměť sestavení
 Každý počítač, ve kterém je nainstalován modul CLR (Common Language Runtime), má mezipaměť kódu v celém počítači nazývanou globální mezipaměť sestavení (GAC). Globální mezipaměť sestavení ukládá sestavení speciálně určená pro sdílení několika aplikacemi v počítači.  
@@ -29,7 +30,7 @@ Každý počítač, ve kterém je nainstalován modul CLR (Common Language Runti
   
 - Použijte instalační program navržený pro práci s globální mezipamětí sestavení. Toto je upřednostňovaná možnost pro instalaci sestavení do globální mezipaměti sestavení (GAC).  
   
-- Použijte vývojářský nástroj nazvaný [Global Assembly Cache (Gacutil. exe)](../tools/gacutil-exe-gac-tool.md), který poskytuje Windows SDK.  
+- Použijte vývojářský nástroj nazvaný [globální mezipaměť sestavení (Gacutil.exe)](../tools/gacutil-exe-gac-tool.md), který poskytuje Windows SDK.  
   
     > [!NOTE]
     > V rámci scénářů nasazení použijte Instalační služba systému Windows k instalaci sestavení do globální mezipaměti sestavení (GAC). Použijte nástroj globální mezipaměť sestavení (GAC) pouze ve scénářích vývoje, protože neposkytuje počítání odkazů na sestavení a další funkce, které jsou k dispozici při použití Instalační služba systému Windows.  

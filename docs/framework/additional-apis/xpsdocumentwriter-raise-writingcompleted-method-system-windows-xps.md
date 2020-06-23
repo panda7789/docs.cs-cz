@@ -1,5 +1,6 @@
 ---
-title: Metoda XpsDocumentWriter.raise__WritingCompleted (System.Windows.XPs)
+title: XpsDocumentWriter. raise__WritingCompleted – metoda (System. Windows. XPS)
+description: Pochopte metodu XpsDocumentWriter. raise__WritingCompleted, která vyvolává událost WritingCompleted pro dokument XPS (XML Paper Specification) v rozhraní .NET.
 TOCTitle: raise__WritingCompleted Method
 ms.date: 12/12/2007
 api_location:
@@ -10,14 +11,14 @@ api_type:
 - Assembly
 topic_type:
 - apiref
-ms.openlocfilehash: 5d4c11b20624b543ee5c366f5da15afb573fb22d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 287fa2286c7acd5061672453c5be11c3ff34ca80
+ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79155671"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85105234"
 ---
-# <a name="xpsdocumentwriterraise__writingcompleted-method"></a>Metoda WritingsDocumentWriter.raise\_\_WritingCompleted
+# <a name="xpsdocumentwriterraise__writingcompleted-method"></a>XpsDocumentWriter. vyvolat \_ \_ WritingCompleted – metoda
 
 Vyvolá <xref:System.Windows.Xps.XpsDocumentWriter.WritingCompleted> událost.
 
@@ -40,6 +41,6 @@ public void raise__WritingCompleted (object value0,
 
 **Obor názvů:**<xref:System.Windows.Xps>
 
-**Sestava:** System.Printing (v souboru system.printing.dll)
+**Sestavení:** System. Printing (v system.printing.dll)
 
-**Verze rozhraní .NET Framework:** 3.0
+**Verze .NET Framework:** 3,0

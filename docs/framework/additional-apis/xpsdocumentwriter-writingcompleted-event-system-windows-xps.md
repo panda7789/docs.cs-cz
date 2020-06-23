@@ -1,5 +1,6 @@
 ---
-title: Událost XpsDocumentWriter._WritingCompleted (System.Windows.XPs)
+title: XpsDocumentWriter. _WritingCompleted – událost (System. Windows. XPS)
+description: Pochopte událost XpsDocumentWriter. _WritingCompleted, která nastane, když se v rozhraní .NET dokončí operace zápisu pro dokument XPS (XML Paper Specification).
 ms.date: 10/17/2017
 api_location:
 - system.printing.dll
@@ -11,18 +12,18 @@ api_type:
 - Assembly
 topic_type:
 - apiref
-ms.openlocfilehash: 0c233965638217ad5b25b9792fe07fb4d73dbe18
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3926630cafa2fea4e499e86d7c8b8eb707b8fd95
+ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79155619"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85105191"
 ---
-# <a name="xpsdocumentwriter_writingcompleted-event"></a>XpsDocumentWriter. \_Událost WritingCompleted
+# <a name="xpsdocumentwriter_writingcompleted-event"></a>XpsDocumentWriter. \_ Událost WritingCompleted
 
-Vyvolá se po dokončení operace zápisu.
+Nastane, pokud se dokončí operace zápisu.
 
-## <a name="syntax"></a>Syntaxe
+## <a name="syntax"></a>Syntax
 
 ``` csharp
 internal event WritingCompletedEventHandler _WritingCompleted
@@ -32,6 +33,6 @@ internal event WritingCompletedEventHandler _WritingCompleted
 
 **Obor názvů:**<xref:System.Windows.Xps>
 
-**Sestava:** System.Printing (v souboru system.printing.dll)
+**Sestavení:** System. Printing (v system.printing.dll)
 
-**Verze rozhraní .NET Framework:** K dispozici od 3.0
+**Verze .NET Framework:** K dispozici od od 3,0

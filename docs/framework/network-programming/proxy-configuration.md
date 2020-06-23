@@ -12,12 +12,12 @@ helpviewer_keywords:
 - network, proxy configuration
 - proxies, configuring
 ms.assetid: 353c0a8b-4cee-44f6-8e65-60e286743df9
-ms.openlocfilehash: d1c8b69223ab470d505d9f8007bc01b29fdc66b8
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 4d62f5736e9aa469be49d101e85851bc01b7c159
+ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502207"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85141602"
 ---
 # <a name="proxy-configuration"></a>Konfigurace proxy serveru
 Proxy server zpracovává požadavky klienta na prostředky. Proxy může vrátit požadovaný prostředek ze své mezipaměti nebo odeslat požadavek na server, kde se nachází prostředek. Proxy mohou zlepšit výkon sítě snížením počtu požadavků odesílaných na vzdálené servery. Proxy servery je také možné použít k omezení přístupu k prostředkům.  
@@ -67,7 +67,7 @@ Proxy server zpracovává požadavky klienta na prostředky. Proxy může vráti
 <system.net>  
     <defaultProxy>  
         <proxy  proxyaddress="http://proxy.contoso.com:3128"  
-                bypassonlocal="true"  
+                bypassonlocal="True"  
         />  
         <bypasslist>  
             <add address="[a-z]+.blueyonderairlines.com$" />  
@@ -76,7 +76,7 @@ Proxy server zpracovává požadavky klienta na prostředky. Proxy může vráti
 </system.net>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Net.WebProxy>
 - <xref:System.Net.GlobalProxySelection>

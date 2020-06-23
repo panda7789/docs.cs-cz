@@ -1,22 +1,23 @@
 ---
 title: Podpora víc vazeb webu IIS
+description: Přečtěte si, jak poskytnout více základních adres, které používají stejný protokol na stejné lokalitě při hostování služby WCF ve službě IIS.
 ms.date: 03/30/2017
 ms.assetid: 40440495-254d-45c8-a8c6-b29f364892ba
-ms.openlocfilehash: e364be55687323d3059c4a7e084818e3f7d54d5f
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 290dca03dbed7d0a7442a3903b735eb189929ed1
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76743440"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85244865"
 ---
 # <a name="supporting-multiple-iis-site-bindings"></a>Podpora víc vazeb webu IIS
-Při hostování služby Windows Communication Foundation (WCF) pod Internetová informační služba (IIS) 7,0 možná budete chtít poskytnout více základních adres, které používají stejný protokol na stejné lokalitě. To umožňuje stejné službě reagovat na několik různých identifikátorů URI. To je užitečné, když chcete hostovat službu, která naslouchá na `http://www.contoso.com` a `http://contoso.com`. Také je užitečné vytvořit službu, která má základní adresu pro interní uživatele a samostatnou základní adresu pro externí uživatele. Například: `http://internal.contoso.com` a `http://www.contoso.com`  
+Při hostování služby Windows Communication Foundation (WCF) pod Internetová informační služba (IIS) 7,0 možná budete chtít poskytnout více základních adres, které používají stejný protokol na stejné lokalitě. To umožňuje stejné službě reagovat na několik různých identifikátorů URI. To je užitečné, když chcete hostovat službu, která naslouchá na `http://www.contoso.com` a `http://contoso.com` . Také je užitečné vytvořit službu, která má základní adresu pro interní uživatele a samostatnou základní adresu pro externí uživatele. Například: `http://internal.contoso.com` a `http://www.contoso.com`  
   
 > [!NOTE]
 > Tato funkce je k dispozici pouze pomocí protokolu HTTP.  
   
 ## <a name="multiple-base-addresses"></a>Několik základních adres  
- Tato funkce je dostupná pouze pro služby WCF hostované v rámci služby IIS. Tato funkce není ve výchozím nastavení povolená. Chcete-li jej povolit, je nutné přidat atribut `multipleSiteBindingsEnabled` do prvku <`serviceHostingEnvironment`> elementu v souboru Web. config a nastavit jej na `true`, jak je znázorněno v následujícím příkladu.  
+ Tato funkce je dostupná pouze pro služby WCF hostované v rámci služby IIS. Tato funkce není ve výchozím nastavení povolená. Chcete-li jej povolit, je nutné přidat `multipleSiteBindingsEnabled` atribut do `serviceHostingEnvironment` prvku <> v souboru Web.config a nastavit jej na `true` , jak je znázorněno v následujícím příkladu.  
   
 ```xml  
 <serviceHostingEnvironment multipleSiteBindingsEnabled="true"/>  

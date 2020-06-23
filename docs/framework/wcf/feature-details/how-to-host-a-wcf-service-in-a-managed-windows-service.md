@@ -1,16 +1,17 @@
 ---
 title: 'Postupy: Hostování služby WCF ve spravované službě Windows'
+description: Naučte se vytvořit službu WCF, která je hostována službou systému Windows. Tato možnost hostování je k dispozici ve všech verzích Windows.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 8e37363b-4dad-4fb6-907f-73c30fac1d9a
-ms.openlocfilehash: dbd51abbc30b1010f7c4f206aad9a773eca0a714
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 4e07aa7aac82fae5cfd1bfc759ef724cf87a873a
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84593175"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246933"
 ---
 # <a name="how-to-host-a-wcf-service-in-a-managed-windows-service"></a>Postupy: Hostování služby WCF ve spravované službě Windows
 
@@ -18,7 +19,7 @@ Toto téma popisuje základní kroky potřebné k vytvoření služby Windows Co
 
 Služby systému Windows je možné spravovat pomocí modulu Microsoft. ManagementConsole. snap-in v konzole MMC (Microsoft Management Console) a je možné je nakonfigurovat tak, aby se při spuštění systému automaticky spustily. Tato možnost hostování se skládá z registrace domény aplikace (AppDomain), která je hostitelem služby WCF jako spravované služby systému Windows, aby byla doba životnosti procesu řízena správcem řízení služeb (SCM) pro služby systému Windows.
 
-Kód služby zahrnuje implementaci služby servisního kontraktu, třídy služby systému Windows a instalační třídy. Třída implementace služby, `CalculatorService` , je služba WCF. `CalculatorWindowsService`Je služba systému Windows. Chcete-li se kvalifikovat jako služba systému Windows, třída dědí z `ServiceBase` a `OnStart` implementuje `OnStop` metody a. V je `OnStart` <xref:System.ServiceModel.ServiceHost> vytvořen pro `CalculatorService` typ a otevřen. V nástroji `OnStop` je služba zastavená a vyřazená. Hostitel taky zodpovídá za poskytnutí základní adresy pro hostitele služby, který je nakonfigurovaný v nastavení aplikace. Instalační třída, která dědí z <xref:System.Configuration.Install.Installer> , umožňuje programu instalovat program jako službu systému Windows pomocí nástroje Installutil. exe.
+Kód služby zahrnuje implementaci služby servisního kontraktu, třídy služby systému Windows a instalační třídy. Třída implementace služby, `CalculatorService` , je služba WCF. `CalculatorWindowsService`Je služba systému Windows. Chcete-li se kvalifikovat jako služba systému Windows, třída dědí z `ServiceBase` a `OnStart` implementuje `OnStop` metody a. V je `OnStart` <xref:System.ServiceModel.ServiceHost> vytvořen pro `CalculatorService` typ a otevřen. V nástroji `OnStop` je služba zastavená a vyřazená. Hostitel taky zodpovídá za poskytnutí základní adresy pro hostitele služby, který je nakonfigurovaný v nastavení aplikace. Instalační třída, která dědí z <xref:System.Configuration.Install.Installer> , umožňuje programu instalovat program jako službu systému Windows pomocí nástroje Installutil.exe.
 
 ## <a name="construct-the-service-and-provide-the-hosting-code"></a>Sestavte službu a poskytněte hostující kód
 
@@ -32,7 +33,7 @@ Kód služby zahrnuje implementaci služby servisního kontraktu, třídy služb
 
     - System.ServiceModel.dll
 
-    - System. ServiceProcess. dll
+    - System.ServiceProcess.dll
 
     - System.Configuration.Install.dll
 
@@ -66,7 +67,7 @@ Kód služby zahrnuje implementaci služby servisního kontraktu, třídy služb
      [!code-csharp[c_HowTo_HostInNTService#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_hostinntservice/cs/service.cs#5)]
      [!code-vb[c_HowTo_HostInNTService#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_hostinntservice/vb/service.vb#5)]
 
-11. Vytvořte novou třídu s názvem `ProjectInstaller` , která dědí z <xref:System.Configuration.Install.Installer> a která je označena atributem <xref:System.ComponentModel.RunInstallerAttribute> na hodnotu `true` . To umožňuje instalaci služby systému Windows pomocí nástroje Installutil. exe.
+11. Vytvořte novou třídu s názvem `ProjectInstaller` , která dědí z <xref:System.Configuration.Install.Installer> a která je označena atributem <xref:System.ComponentModel.RunInstallerAttribute> na hodnotu `true` . To umožňuje instalaci služby systému Windows pomocí nástroje Installutil.exe.
 
      [!code-csharp[c_HowTo_HostInNTService#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_hostinntservice/cs/service.cs#6)]
      [!code-vb[c_HowTo_HostInNTService#6](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_hostinntservice/vb/service.vb#6)]
@@ -110,7 +111,7 @@ Kód služby zahrnuje implementaci služby servisního kontraktu, třídy služb
     </configuration>
     ```
 
-     Klikněte pravým tlačítkem na soubor App. config v **Průzkumník řešení** a vyberte **vlastnosti**. V části **Kopírovat do výstupního adresáře** vyberte **Kopírovat, pokud je novější**.
+     Pravým tlačítkem myši klikněte na soubor App.config v **Průzkumník řešení** a vyberte **vlastnosti**. V části **Kopírovat do výstupního adresáře** vyberte **Kopírovat, pokud je novější**.
 
      Tento příklad explicitně určuje koncové body v konfiguračním souboru. Pokud do služby nepřidáte žádné koncové body, modul runtime přidá pro vás výchozí koncové body. Protože je v tomto příkladu služba <xref:System.ServiceModel.Description.ServiceMetadataBehavior> nastavená na `true` , má vaše služba také povolenou metadata publikování. Další informace o výchozích koncových bodech, vazbách a chování najdete v tématu [zjednodušená konfigurace](../simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../samples/simplified-configuration-for-wcf-services.md).
 
@@ -122,7 +123,7 @@ Kód služby zahrnuje implementaci služby servisního kontraktu, třídy služb
 
      `services.msc`Pro přístup ke Správci řízení služeb (SCM) zadejte na příkazovém řádku. Služba systému Windows by se měla zobrazit v části služby jako "WCFWindowsServiceSample". Služba WCF může reagovat jenom na klienty, pokud je spuštěná služba systému Windows. Chcete-li službu spustit, klikněte na ni pravým tlačítkem myši a vyberte Start nebo zadejte do příkazového řádku příkaz **net start WCFWindowsServiceSample** .
 
-3. Pokud provedete změny služby, musíte ji nejdřív zastavit a odinstalovat. Chcete-li službu zastavit, klikněte pravým tlačítkem myši na službu v SCM a vyberte stop (zastavit) nebo do příkazového řádku **zadejte net stop WCFWindowsServiceSample** . Všimněte si, že pokud zastavíte službu systému Windows a potom spustíte klienta, <xref:System.ServiceModel.EndpointNotFoundException> dojde k výjimce, když se klient pokusí o přístup ke službě. Pokud chcete odinstalovat typ služby systému Windows **Installutil/u bin\service.exe** na příkazovém řádku.
+3. Pokud provedete změny služby, musíte ji nejdřív zastavit a odinstalovat. Chcete-li službu zastavit, klikněte pravým tlačítkem myši na službu v SCM a vyberte stop (zastavit) nebo do příkazového řádku **zadejte net stop WCFWindowsServiceSample** . Všimněte si, že pokud zastavíte službu systému Windows a potom spustíte klienta, <xref:System.ServiceModel.EndpointNotFoundException> dojde k výjimce, když se klient pokusí o přístup ke službě. Chcete-li odinstalovat typ služby systému Windows **Installutil/u bin\service.exe** v příkazovém řádku.
 
 ## <a name="example"></a>Příklad
 

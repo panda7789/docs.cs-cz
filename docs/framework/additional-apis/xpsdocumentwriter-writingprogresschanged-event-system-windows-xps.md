@@ -1,5 +1,6 @@
 ---
-title: Událost XpsDocumentWriter._WritingProgressChanged (System.Windows.XPs)
+title: XpsDocumentWriter. _WritingProgressChanged – událost (System. Windows. XPS)
+description: Projděte si událost XpsDocumentWriter. _WritingProgressChanged, která nastane, když zapisovač dokumentů XPS (XML Paper Specification) aktualizuje svůj pokrok v rozhraní .NET.
 ms.date: 10/17/2017
 api_location:
 - system.printing.dll
@@ -11,18 +12,18 @@ api_type:
 - Assembly
 topic_type:
 - apiref
-ms.openlocfilehash: 4d61a11ec6546ed4e1b0011d541f10fec4f86b68
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a54f1fbc04d7f1ada6bf893f2e8bfb9d98d372df
+ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79155580"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85105049"
 ---
-# <a name="xpsdocumentwriter_writingprogresschanged-event"></a>XpsDocumentWriter. \_Událost WritingProgressChanged
+# <a name="xpsdocumentwriter_writingprogresschanged-event"></a>XpsDocumentWriter. \_ Událost WritingProgressChanged
 
-Vyvolá se, <xref:System.Windows.Xps.XpsDocumentWriter> když aktualizuje jeho průběh.
+Vyvolá se v případě, že <xref:System.Windows.Xps.XpsDocumentWriter> Probíhá aktualizace.
 
-## <a name="syntax"></a>Syntaxe
+## <a name="syntax"></a>Syntax
 
 ``` csharp
 internal event WritingProgressChangedEventHandler _WritingProgressChanged
@@ -32,6 +33,6 @@ internal event WritingProgressChangedEventHandler _WritingProgressChanged
 
 **Obor názvů:**<xref:System.Windows.Xps>
 
-**Sestava:** System.Printing (v souboru system.printing.dll)
+**Sestavení:** System. Printing (v system.printing.dll)
 
-**Verze rozhraní .NET Framework:** K dispozici od 3.0
+**Verze .NET Framework:** K dispozici od od 3,0

@@ -1,5 +1,6 @@
 ---
-title: Rozhraní StdPicture (stdole)
+title: Rozhraní StdPicture (Stdole)
+description: Podívejte se na referenční informace o rozhraní StdPicture v .NET. Toto rozhraní je v oboru názvů Stdole a v sestavení Stdole (v knihovně stdole.dll).
 ms.date: 03/28/2019
 topic_type:
 - apiref
@@ -9,12 +10,12 @@ api_location:
 - stdole.dll
 api_type:
 - Assembly
-ms.openlocfilehash: c3b1fa2274c58061c446e42b3331e69fdf991b42
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 86aeaeddd1e4e68030089acbd485cc535dfd891b
+ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61705958"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85105291"
 ---
 # <a name="stdpicture-interface"></a>StdPicture – rozhraní
 
@@ -25,6 +26,6 @@ public interface StdPicture : Picture
 
 ## <a name="requirements"></a>Požadavky
 
-**Namespace:** `stdole`
+**Obor názvů:**`stdole`
 
-**Sestavení:** stdole (v stdole.dll)
+**Sestavení:** Stdole (v stdole.dll)

@@ -1,16 +1,17 @@
 ---
 title: 'Postupy: Asynchronní volání operací služby WCF'
+description: Naučte se, jak vytvořit klienta WCF, který umožňuje asynchronní přístup k operaci služby pomocí asynchronního modelu volání založeného na událostech.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 0face17f-43ca-417b-9b33-737c0fc360df
-ms.openlocfilehash: 400ed8e5ee8b236e9d0f843f27b7c2112ec28861
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: aa31f64473111800f4cd01907a0446c94f368456
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84601254"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247231"
 ---
 # <a name="how-to-call-wcf-service-operations-asynchronously"></a>Postupy: Asynchronní volání operací služby WCF
 
@@ -23,7 +24,7 @@ Tento článek popisuje, jak může klient přistupovat k operaci služby asynch
   
 #### <a name="to-call-wcf-service-operations-asynchronously"></a>Asynchronní volání operací služby WCF  
   
-1. Spusťte nástroj Nástroj pro dodané [metadata (Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) pomocí `/async` `/tcv:Version35` možností a příkazu společně, jak je znázorněno v následujícím příkazu.  
+1. Spusťte nástroj Nástroj pro [metadata ServiceModel (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) pomocí `/async` `/tcv:Version35` možností a příkazu společně, jak je znázorněno v následujícím příkazu.  
   
     ```console
     svcutil /n:http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Samples http://localhost:8000/servicemodelsamples/service/mex /a /tcv:Version35  
@@ -31,17 +32,17 @@ Tento článek popisuje, jak může klient přistupovat k operaci služby asynch
   
      Vygeneruje se kromě synchronních a standardních asynchronních operací založených na delegátech Třída klienta WCF, která obsahuje:  
   
-    - Dvě `operationName` > `Async` operace <pro použití s přístupem k asynchronnímu volání založenému na událostech. Například:  
+    - Dvě `operationName` > `Async` operace <pro použití s přístupem k asynchronnímu volání založenému na událostech. Příklad:  
   
          [!code-csharp[EventAsync#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/eventasync/cs/generatedclient.cs#1)]
          [!code-vb[EventAsync#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/eventasync/vb/generatedclient.vb#1)]  
   
-    - Operace dokončila události <formuláře `operationName` > `Completed` pro použití s přístupem k asynchronnímu volání založenému na událostech. Například:  
+    - Operace dokončila události <formuláře `operationName` > `Completed` pro použití s přístupem k asynchronnímu volání založenému na událostech. Příklad:  
   
          [!code-csharp[EventAsync#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/eventasync/cs/generatedclient.cs#2)]
          [!code-vb[EventAsync#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/eventasync/vb/generatedclient.vb#2)]  
   
-    - <xref:System.EventArgs?displayProperty=nameWithType>typy pro každou operaci (<formuláře `operationName` > `CompletedEventArgs` ) pro použití s přístupem k asynchronnímu volání založenému na událostech. Například:  
+    - <xref:System.EventArgs?displayProperty=nameWithType>typy pro každou operaci (<formuláře `operationName` > `CompletedEventArgs` ) pro použití s přístupem k asynchronnímu volání založenému na událostech. Příklad:  
   
          [!code-csharp[EventAsync#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/eventasync/cs/generatedclient.cs#3)]
          [!code-vb[EventAsync#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/eventasync/vb/generatedclient.vb#3)]  
@@ -51,7 +52,7 @@ Tento článek popisuje, jak může klient přistupovat k operaci služby asynch
      [!code-csharp[EventAsync#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/eventasync/cs/client.cs#4)]
      [!code-vb[EventAsync#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/eventasync/vb/client.vb#4)]  
   
-3. Před voláním operace použijte nový obecný <xref:System.EventHandler%601?displayProperty=nameWithType> typ <`operationName` > `EventArgs` pro přidání metody obslužné rutiny (vytvořené v předchozím kroku) do `operationName` > `Completed` události <. Pak zavolejte metodu <`operationName` > `Async` . Například:  
+3. Před voláním operace použijte nový obecný <xref:System.EventHandler%601?displayProperty=nameWithType> typ <`operationName` > `EventArgs` pro přidání metody obslužné rutiny (vytvořené v předchozím kroku) do `operationName` > `Completed` události <. Pak zavolejte metodu <`operationName` > `Async` . Příklad:  
   
      [!code-csharp[EventAsync#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/eventasync/cs/client.cs#5)]
      [!code-vb[EventAsync#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/eventasync/vb/client.vb#5)]  

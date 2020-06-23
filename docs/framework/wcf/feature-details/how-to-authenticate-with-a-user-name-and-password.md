@@ -1,15 +1,16 @@
 ---
 title: 'Postupy: Ověřování pomocí uživatelského jména a hesla'
+description: Naučte se, jak povolit službu WCF pro ověřování klienta pomocí uživatelského jména a hesla domény systému Windows s ukázkovým kódem.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - authentication [WCF], user name and password
 ms.assetid: a5415be2-0ef3-464c-9f76-c255cb8165a4
-ms.openlocfilehash: e8dc9177afc590a6467855decfa8450b37c6fc77
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 1f938f8041b2577b3705266948f29b42f23a6fd7
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84601280"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247244"
 ---
 # <a name="how-to-authenticate-with-a-user-name-and-password"></a>Postupy: Ověřování pomocí uživatelského jména a hesla
 
@@ -32,7 +33,7 @@ Na straně klienta musíte požádat uživatele o uživatelské jméno a heslo a
     // ...
     ```
 
-2. Zadejte certifikát serveru, který se používá k šifrování uživatelského jména a hesla odesílaných po drátě. Tento kód by měl hned následovat po výše uvedeném kódu. V následujícím příkladu je použit certifikát, který je vytvořen souborem Setup. bat z ukázkového [uživatelského jména zabezpečení zprávy](../samples/message-security-user-name.md) :
+2. Zadejte certifikát serveru, který se používá k šifrování uživatelského jména a hesla odesílaných po drátě. Tento kód by měl hned následovat po výše uvedeném kódu. V následujícím příkladu je použit certifikát, který je vytvořen souborem setup.bat z ukázkového [uživatelského jména zabezpečení zprávy](../samples/message-security-user-name.md) :
 
     ```csharp
     // ...
@@ -40,7 +41,7 @@ Na straně klienta musíte požádat uživatele o uživatelské jméno a heslo a
     // ...
     ```
 
-    Můžete použít svůj vlastní certifikát. stačí upravit kód, který bude odkazovat na váš certifikát. Další informace o vytváření a používání certifikátů najdete v tématu [práce s certifikáty](working-with-certificates.md). Ujistěte se, že je certifikát v úložišti certifikátů Důvěryhodné osoby pro místní počítač. Můžete to provést tak, že spustíte MMC. exe a vyberete **soubor**, **Přidat nebo odebrat modul snap-in...** položka nabídky. V dialogovém okně **Přidat nebo odebrat moduly snap-in** vyberte **modul snap-in Certifikáty** a klikněte na **Přidat**. V dialogovém okně modul snap-in certifikáty vyberte možnost **účet počítače**. Ve výchozím nastavení se certifikát vygenerovaný z ukázka zabezpečení jméno uživatele zprávy nachází ve složce osobní nebo certifikáty.  Bude uveden jako "localhost" pod sloupcem vystaveno pro v okně MMC. Přetáhněte certifikát do složky **Důvěryhodné osoby** . To umožní, aby WCF při ověřování považovalo certifikát za důvěryhodný certifikát.
+    Můžete použít svůj vlastní certifikát. stačí upravit kód, který bude odkazovat na váš certifikát. Další informace o vytváření a používání certifikátů najdete v tématu [práce s certifikáty](working-with-certificates.md). Ujistěte se, že je certifikát v úložišti certifikátů Důvěryhodné osoby pro místní počítač. Můžete to provést tak, že spustíte mmc.exe a vyberete **soubor**, **Přidat nebo odebrat modul snap-in...** položka nabídky. V dialogovém okně **Přidat nebo odebrat moduly snap-in** vyberte **modul snap-in Certifikáty** a klikněte na **Přidat**. V dialogovém okně modul snap-in certifikáty vyberte možnost **účet počítače**. Ve výchozím nastavení se certifikát vygenerovaný z ukázka zabezpečení jméno uživatele zprávy nachází ve složce osobní nebo certifikáty.  Bude uveden jako "localhost" pod sloupcem vystaveno pro v okně MMC. Přetáhněte certifikát do složky **Důvěryhodné osoby** . To umožní, aby WCF při ověřování považovalo certifikát za důvěryhodný certifikát.
 
 ## <a name="to-call-the-service-passing-username-and-password"></a>Volání služby předávající uživatelské jméno a heslo
 

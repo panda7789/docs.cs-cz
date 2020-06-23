@@ -1,5 +1,6 @@
 ---
 title: 'Postupy: Konfigurace portu s certifikátem SSL'
+description: Naučte se konfigurovat port s certifikátem X. 509, který je vyžadován pro samoobslužnou službu WCF s třídou WSHttpBinding pomocí zabezpečení přenosu.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - WCF, security mode
 - WCF, security
 ms.assetid: b8abcc8e-a5f5-4317-aca5-01e3c40ab24d
-ms.openlocfilehash: 30b24c4ff06cc7249d3ddb6d95549a574e313f52
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 0eccdf916dae7b886cbc4e6563e6dfe17039c321
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84579615"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247179"
 ---
 # <a name="how-to-configure-a-port-with-an-ssl-certificate"></a>Postupy: Konfigurace portu s certifikátem SSL
 
@@ -22,22 +23,22 @@ Při vytváření služby Windows Communication Foundation v místním prostřed
   
  K nakonfigurování portu závisí nástroj, který použijete, na operačním systému, který běží na vašem počítači.  
   
- Pokud používáte systém Windows Server 2003, použijte nástroj HttpCfg. exe. V systému Windows Server 2003 je tento nástroj nainstalován. Další informace najdete v tématu [Httpcfg Overview](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc787508(v=ws.10)). Dokumentace k nástrojům [podpory systému Windows](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc781601(v=ws.10)) vysvětluje syntaxi nástroje HttpCfg. exe.  
+ Pokud používáte systém Windows Server 2003, použijte nástroj HttpCfg.exe. V systému Windows Server 2003 je tento nástroj nainstalován. Další informace najdete v tématu [Httpcfg Overview](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc787508(v=ws.10)). V dokumentaci k nástrojům [podpory systému Windows](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc781601(v=ws.10)) je vysvětlena syntaxe nástroje Httpcfg.exe Tool.  
   
- Pokud používáte systém Windows Vista, použijte nástroj Netsh. exe, který je již nainstalován.
+ Pokud používáte systém Windows Vista, použijte nástroj Netsh.exe, který je již nainstalován.
   
 > [!NOTE]
 > Úprava certifikátů uložených v počítači vyžaduje oprávnění správce.  
   
 ## <a name="determine-how-ports-are-configured"></a>Určení způsobu konfigurace portů  
   
-1. V systému Windows Server 2003 nebo Windows XP použijte nástroj HttpCfg. exe k zobrazení aktuální konfigurace portu pomocí přepínačů **dotaz** a **SSL** , jak je znázorněno v následujícím příkladu.  
+1. V systému Windows Server 2003 nebo Windows XP použijte nástroj HttpCfg.exe k zobrazení aktuální konfigurace portu pomocí přepínačů **dotaz** a **SSL** , jak je znázorněno v následujícím příkladu.  
   
     ```console
     httpcfg query ssl  
     ```  
   
-2. V systému Windows Vista se pomocí nástroje Netsh. exe zobrazí aktuální konfigurace portů, jak je znázorněno v následujícím příkladu.  
+2. V systému Windows Vista použijte nástroj Netsh.exe k zobrazení aktuální konfigurace portu, jak je znázorněno v následujícím příkladu.  
   
     ```console  
     netsh http show sslcert  
@@ -55,7 +56,7 @@ Při vytváření služby Windows Communication Foundation v místním prostřed
   
 ## <a name="bind-an-ssl-certificate-to-a-port-number"></a>Vytvoření vazby certifikátu SSL k číslu portu  
   
-1. V systému Windows Server 2003 nebo Windows XP použijte nástroj HttpCfg. exe v režimu "Set" v úložišti SSL (Secure Sockets Layer) (SSL) k navázání certifikátu na číslo portu. Nástroj používá kryptografický otisk k identifikaci certifikátu, jak je znázorněno v následujícím příkladu.  
+1. V systému Windows Server 2003 nebo Windows XP použijte nástroj HttpCfg.exe v režimu "Set" v úložišti SSL (Secure Sockets Layer) (SSL) k navázání certifikátu na číslo portu. Nástroj používá kryptografický otisk k identifikaci certifikátu, jak je znázorněno v následujícím příkladu.  
   
     ```console  
     httpcfg set ssl -i 0.0.0.0:8012 -h 0000000000003ed9cd0c315bbb6dc1c08da5e6  
@@ -65,7 +66,7 @@ Při vytváření služby Windows Communication Foundation v místním prostřed
   
     - Přepínač **-h** určuje kryptografický otisk certifikátu.  
   
-2. V systému Windows Vista použijte nástroj Netsh. exe, jak je znázorněno v následujícím příkladu.  
+2. V systému Windows Vista použijte nástroj Netsh.exe, jak je znázorněno v následujícím příkladu.  
   
     ```console  
     netsh http add sslcert ipport=0.0.0.0:8000 certhash=0000000000003ed9cd0c315bbb6dc1c08da5e6 appid={00112233-4455-6677-8899-AABBCCDDEEFF}
@@ -73,19 +74,19 @@ Při vytváření služby Windows Communication Foundation v místním prostřed
   
     - Parametr **certhash** určuje kryptografický otisk certifikátu.  
   
-    - Parametr **ipport** určuje IP adresu a port a funguje stejně jako přepínač **-i** nástroje HttpCfg. exe, který je popsán.  
+    - Parametr **ipport** určuje IP adresu a port a funguje stejně jako přepínač **-i** popsaným nástrojem Httpcfg.exe.  
   
     - Parametr **AppID** je identifikátor GUID, který lze použít k identifikaci vlastnící aplikace.  
   
 ## <a name="bind-an-ssl-certificate-to-a-port-number-and-support-client-certificates"></a>Vytvoření vazby certifikátu SSL k číslu portu a podpora klientských certifikátů  
   
-1. V systému Windows Server 2003 nebo Windows XP pro podporu klientů, kteří se ověřují pomocí certifikátů X. 509 na transportní vrstvě, postupujte podle výše uvedeného postupu, ale předejte další parametr příkazového řádku HttpCfg. exe, jak je znázorněno v následujícím příkladu.  
+1. Pokud chcete v systému Windows Server 2003 nebo Windows XP podporovat klienty, kteří se ověřují pomocí certifikátů X. 509 na transportní vrstvě, postupujte podle předchozího postupu, ale předejte další parametr příkazového řádku pro HttpCfg.exe, jak je znázorněno v následujícím příkladu.  
   
     ```console  
     httpcfg set ssl -i 0.0.0.0:8012 -h 0000000000003ed9cd0c315bbb6dc1c08da5e6 -f 2  
     ```  
   
-     Přepínač **-f** má syntaxi `n` , kde n je číslo v rozmezí od 1 do 7. Hodnota 2, jak je znázorněno v předchozím příkladu, umožňuje klientské certifikáty na transportní vrstvě. Hodnota 3 povolí klientským certifikátům a mapuje tyto certifikáty na účet systému Windows. Chování dalších hodnot naleznete v nápovědě k HttpCfg. exe.  
+     Přepínač **-f** má syntaxi `n` , kde n je číslo v rozmezí od 1 do 7. Hodnota 2, jak je znázorněno v předchozím příkladu, umožňuje klientské certifikáty na transportní vrstvě. Hodnota 3 povolí klientským certifikátům a mapuje tyto certifikáty na účet systému Windows. Chování jiných hodnot najdete v tématu HttpCfg.exe nápovědě.  
   
 2. Pokud chcete v systému Windows Vista podporovat klienty, kteří se ověřují pomocí certifikátů X. 509 na transportní vrstvě, postupujte podle výše uvedeného postupu, jak je znázorněno v následujícím příkladu.  
   
@@ -95,19 +96,19 @@ Při vytváření služby Windows Communication Foundation v místním prostřed
   
 ## <a name="delete-an-ssl-certificate-from-a-port-number"></a>Odstraní certifikát SSL z čísla portu.  
   
-1. Pomocí nástroje HttpCfg. exe nebo Netsh. exe zobrazte porty a kryptografické otisky všech vazeb v počítači. Chcete-li vytisknout informace na disk, použijte znak přesměrování ">", jak je znázorněno v následujícím příkladu.  
+1. Pomocí nástroje HttpCfg.exe nebo Netsh.exe Zobrazte porty a kryptografické otisky všech vazeb v počítači. Chcete-li vytisknout informace na disk, použijte znak přesměrování ">", jak je znázorněno v následujícím příkladu.  
   
     ```console  
     httpcfg query ssl>myMachinePorts.txt  
     ```
   
-2. V systému Windows Server 2003 nebo Windows XP použijte nástroj HttpCfg. exe s klíčovými slovy **Delete** a **SSL** . Použijte přepínač **-i** k určení `IP` `port` kryptografického otisku a parametru **-h** .  
+2. V systému Windows Server 2003 nebo Windows XP použijte nástroj HttpCfg.exe s klíčovými slovy **Delete** a **SSL** . Použijte přepínač **-i** k určení `IP` `port` kryptografického otisku a parametru **-h** .  
   
     ```console  
     httpcfg delete ssl -i 0.0.0.0:8005 -h 0000000000003ed9cd0c315bbb6dc1c08da5e6  
     ```  
   
-3. V systému Windows Vista použijte nástroj Netsh. exe, jak je znázorněno v následujícím příkladu.  
+3. V systému Windows Vista použijte nástroj Netsh.exe, jak je znázorněno v následujícím příkladu.  
   
     ```console  
     Netsh http delete sslcert ipport=0.0.0.0:8005  

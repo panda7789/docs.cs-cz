@@ -1,5 +1,6 @@
 ---
 title: 'Postupy: Zpřístupnění certifikátů X.509 pro WCF'
+description: Naučte se, jak nastavit certifikát X. 509 k přístupu ke službě WCF. Kód aplikace musí určovat název a umístění úložiště certifikátů. Mohou existovat i další požadavky.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - certificates [WCF], making X.509 certificates accessible to WCF
 - X.509 certificates [WCF], making accessible to WCF
 ms.assetid: a54e407c-c2b5-4319-a648-60e43413664b
-ms.openlocfilehash: e4f1aae021c4be49847b3b6dcd14b5a0a237c899
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 5cc1118640bcf1262d88cb8cdb39939ae315cae3
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597043"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246867"
 ---
 # <a name="how-to-make-x509-certificates-accessible-to-wcf"></a>Postupy: Zpřístupnění certifikátů X.509 pro WCF
 Aby byl certifikát X. 509 přístupný Windows Communication Foundation (WCF), kód aplikace musí určovat název a umístění úložiště certifikátů. V určitých případech musí mít identita procesu přístup k souboru, který obsahuje privátní klíč přidružený k certifikátu X. 509. K získání privátního klíče přidruženého k certifikátu X. 509 v úložišti certifikátů musí mít WCF oprávnění k tomu. Ve výchozím nastavení má přístup k privátnímu klíči certifikátu pouze vlastník a systémový účet.  
@@ -29,10 +30,10 @@ Aby byl certifikát X. 509 přístupný Windows Communication Foundation (WCF), 
   
         |Použití certifikátu X. 509|Privátní klíč|  
         |---------------------------|-----------------|  
-        |Digitální podepisování odchozí zprávy SOAP.|Yes|  
-        |Ověřuje se podpis příchozí zprávy SOAP.|No|  
-        |Šifrování odchozí zprávy SOAP.|No|  
-        |Probíhá dešifrování příchozí zprávy protokolu SOAP.|Yes|  
+        |Digitální podepisování odchozí zprávy SOAP.|Ano|  
+        |Ověřuje se podpis příchozí zprávy SOAP.|Ne|  
+        |Šifrování odchozí zprávy SOAP.|Ne|  
+        |Probíhá dešifrování příchozí zprávy protokolu SOAP.|Ano|  
   
     2. Určete umístění a název úložiště certifikátů, ve kterém je certifikát uložený.  
   
@@ -60,9 +61,9 @@ Aby byl certifikát X. 509 přístupný Windows Communication Foundation (WCF), 
         |Klient (aplikace konzoly nebo WinForms).|Aktuálně přihlášený uživatel.|  
         |Služba, která je samostatně hostována.|Aktuálně přihlášený uživatel.|  
         |Služba, která je hostována ve službě IIS 6,0 (Windows Server 2003) nebo IIS 7,0 (Windows Vista).|SÍŤOVÁ SLUŽBA|  
-        |Služba, která je hostována ve službě IIS 5. X (Windows XP).|Řízeno `<processModel>` prvkem v souboru Machine. config. Výchozí účet je ASPNET.|  
+        |Služba, která je hostována ve službě IIS 5. X (Windows XP).|Ovládáno `<processModel>` prvkem v souboru Machine.config. Výchozí účet je ASPNET.|  
   
-    5. Udělte oprávnění ke čtení souboru, který obsahuje privátní klíč, k účtu, pod kterým běží WCF, pomocí nástroje, jako je Icacls. exe.  
+    5. Udělte oprávnění ke čtení souboru, který obsahuje privátní klíč, k účtu, pod kterým běží WCF, pomocí nástroje, jako je icacls.exe.  
   
          Následující příklad kódu upraví volitelný seznam řízení přístupu (DACL) pro zadaný soubor a udělí účtu síťové služby čtení (: R) přístup k souboru.  
   

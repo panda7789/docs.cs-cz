@@ -1,5 +1,6 @@
 ---
-title: Rozhraní StdFont (stdole)
+title: Rozhraní StdFont (Stdole)
+description: Podívejte se na referenční informace o rozhraní StdFont v .NET. Toto rozhraní je v oboru názvů Stdole a v sestavení Stdole (v knihovně stdole.dll).
 ms.date: 03/28/2019
 topic_type:
 - apiref
@@ -9,12 +10,12 @@ api_location:
 - stdole.dll
 api_type:
 - Assembly
-ms.openlocfilehash: 703a8dd6134ad6045fc46d4d0a9c652feb204ff5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 974d3a3b0ea6dc762f27f812a609eeec4376bc24
+ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79155806"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85105269"
 ---
 # <a name="stdfont-interface"></a>StdFont – rozhraní
 
@@ -28,4 +29,4 @@ public interface StdFont : Font,
 
 **Obor názvů:**`stdole`
 
-**Sestava:** stdole (v stdole.dll)
+**Sestavení:** Stdole (v stdole.dll)

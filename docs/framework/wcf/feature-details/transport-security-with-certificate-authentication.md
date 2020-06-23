@@ -1,15 +1,16 @@
 ---
 title: Zabezpečení přenosu s ověřováním certifikátu
+description: Přečtěte si, jak WFC používá certifikáty pro ověřování serverů a klientů při použití zabezpečení přenosu.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 ms.assetid: 3d726b71-4d8b-4581-a3bb-02b9af51d11b
-ms.openlocfilehash: 47322cbcddf9f33101bbfbeaa07a3fab74b9d26a
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 3da1202a5ad3b953470b50dd5924b2ab45f301eb
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84576015"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85244775"
 ---
 # <a name="transport-security-with-certificate-authentication"></a>Zabezpečení přenosu s ověřováním certifikátu
 
@@ -21,18 +22,18 @@ Tento článek popisuje použití certifikátů X. 509 pro ověřování server�
   
  Další informace o používání certifikátu se službou najdete v tématu [práce s certifikáty](working-with-certificates.md) a [Postupy: Konfigurace portu s certifikátem SSL](how-to-configure-a-port-with-an-ssl-certificate.md). V následující tabulce jsou popsány různé charakteristiky scénáře.  
   
-|Charakteristika|Popis|  
+|Charakteristika|Description|  
 |--------------------|-----------------|  
 |Režim zabezpečení|Přenos|  
 |Interoperabilita|Se stávajícími klienty a službami webové služby.|  
 |Ověřování (Server)<br /><br /> Ověřování (klient)|Ano (pomocí certifikátu SSL)<br /><br /> Ano (pomocí certifikátu X. 509)|  
-|Integrita dat|Yes|  
-|Důvěrnost dat|Yes|  
+|Integrita dat|Ano|  
+|Důvěrnost dat|Ano|  
 |Přenos|HTTPS|  
 |Vazba|<xref:System.ServiceModel.WSHttpBinding>|  
   
 ## <a name="configure-the-service"></a>Konfigurace služby  
- Vzhledem k tomu, že je služba v tomto scénáři hostovaná v rámci služby IIS, je nakonfigurovaná se souborem Web. config. Následující Web. config ukazuje, jak nakonfigurovat <xref:System.ServiceModel.WSHttpBinding> pro použití zabezpečení přenosu a pověření klienta X. 509.  
+ Vzhledem k tomu, že je služba v tomto scénáři hostovaná v rámci služby IIS, je nakonfigurovaná s web.config souborem. Následující web.config ukazuje, jak nakonfigurovat <xref:System.ServiceModel.WSHttpBinding> pro použití zabezpečení přenosu a pověření klienta X. 509.  
   
 ```xml  
 <configuration>  
@@ -63,7 +64,7 @@ Tento článek popisuje použití certifikátů X. 509 pro ověřování server�
 ```  
   
 ## <a name="configure-the-client"></a>Konfigurace klienta  
- Klienta lze nakonfigurovat v kódu nebo v souboru App. config. Následující příklad ukazuje, jak nakonfigurovat klienta v kódu.  
+ Klienta lze nakonfigurovat v kódu nebo v souboru app.config. Následující příklad ukazuje, jak nakonfigurovat klienta v kódu.  
   
 ```csharp
 // Create the binding.  
@@ -97,7 +98,7 @@ Console.WriteLine(cc.Add(100, 1111));
 cc.Close();  
 ```  
   
- Případně můžete nakonfigurovat klienta v souboru App. config, jak je znázorněno v následujícím příkladu:  
+ Případně můžete klienta nakonfigurovat v souboru App.config, jak je znázorněno v následujícím příkladu:  
   
 ```xml  
 <configuration>  

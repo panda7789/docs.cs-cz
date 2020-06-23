@@ -1,15 +1,16 @@
 ---
 title: Hostování v Aktivační službě procesů systému Windows
+description: Přečtěte si o tom, jak byla spravována aktivace a životního cyklu pracovních procesů obsahujících aplikace, které hostují služby WCF.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - hosting services [WCF], WAS
 ms.assetid: d2b9d226-15b7-41fc-8c9a-cb651ac20ecd
-ms.openlocfilehash: d0253202b0fad9a452507ed4296bc4a09b78e569
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 6b0b23c21762009341fd62c029431824dd26d6c3
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597303"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247257"
 ---
 # <a name="hosting-in-windows-process-activation-service"></a>Hostování v Aktivační službě procesů systému Windows
 Aktivační služba procesů systému Windows (WAS) spravuje aktivaci a životnost pracovních procesů, které obsahují aplikace, které hostují služby Windows Communication Foundation (WCF). Model procesu WAS generalizuje model procesu IIS 6,0 pro server HTTP tím, že odebere závislost na HTTP. To umožňuje službám WCF používat protokoly HTTP i non-HTTP, jako je NET. TCP, v hostitelském prostředí, které podporuje aktivaci prostřednictvím zpráv, a nabízí možnost hostovat v daném počítači velký počet aplikací.  
@@ -46,7 +47,7 @@ Aktivační služba procesů systému Windows (WAS) spravuje aktivaci a životno
 - `net.tcp://contoso.com/Billing/GetOrders.svc/SecureEndpoint`
   
 ## <a name="the-was-runtime"></a>BYL za běhu  
- Aplikace jsou uspořádány do webů pro účely adresování a správy. V době běhu jsou aplikace seskupeny také dohromady do fondů aplikací. Fond aplikací může obsahovat mnoho různých aplikací z mnoha různých lokalit. Všechny aplikace v rámci fondu aplikací sdílejí společnou sadu charakteristik běhu. Všechny mají například všechny spuštěné pod stejnou verzí modulu CLR (Common Language Runtime) a všechny sdílejí společnou identitu procesu. Každý fond aplikací odpovídá instanci pracovního procesu (W3wp. exe). Každá spravovaná aplikace spuštěná ve sdíleném fondu aplikací je izolovaná od ostatních aplikací prostřednictvím třídy AppDomain CLR.  
+ Aplikace jsou uspořádány do webů pro účely adresování a správy. V době běhu jsou aplikace seskupeny také dohromady do fondů aplikací. Fond aplikací může obsahovat mnoho různých aplikací z mnoha různých lokalit. Všechny aplikace v rámci fondu aplikací sdílejí společnou sadu charakteristik běhu. Všechny mají například všechny spuštěné pod stejnou verzí modulu CLR (Common Language Runtime) a všechny sdílejí společnou identitu procesu. Každý fond aplikací odpovídá instanci pracovního procesu (w3wp.exe). Každá spravovaná aplikace spuštěná ve sdíleném fondu aplikací je izolovaná od ostatních aplikací prostřednictvím třídy AppDomain CLR.  
   
 ## <a name="see-also"></a>Viz také
 

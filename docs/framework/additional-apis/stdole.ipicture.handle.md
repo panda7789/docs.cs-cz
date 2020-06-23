@@ -1,5 +1,6 @@
 ---
-title: Vlastnost IPicture.Handle (stdole)
+title: IPicture. Handle – vlastnost (Stdole)
+description: Získejte referenční informace o vlastnosti IPicture. Handle v .NET. Tato vlastnost získá popisovač na obrázek spravovaný v rámci tohoto objektu obrázku.
 ms.date: 02/22/2019
 topic_type:
 - apiref
@@ -10,16 +11,16 @@ api_location:
 - stdole.dll
 api_type:
 - Assembly
-ms.openlocfilehash: e65be9cbccbe4e52b81b2eba7a473720eb966e83
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 85c8f2c3fcdbecd69bc9b3dc9c13f4ccea41038b
+ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65634442"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85105334"
 ---
 # <a name="ipicturehandle-property"></a>IPicture.Handle – vlastnost
 
-Získá popisovač obrázek spravují v rámci tohoto obrázku objektu pro určenou lokalitu.
+Získá popisovač obrázku spravovaného v tomto objektu obrázku do zadaného umístění.
 
 ```csharp
 int Handle { get; }
@@ -31,6 +32,6 @@ int Handle { get; }
 
 ## <a name="requirements"></a>Požadavky
 
-**Namespace:** `stdole`
+**Obor názvů:**`stdole`
 
-**Sestavení:** stdole (v stdole.dll)
+**Sestavení:** Stdole (v stdole.dll)

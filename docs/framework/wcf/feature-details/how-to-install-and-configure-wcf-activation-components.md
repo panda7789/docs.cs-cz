@@ -1,15 +1,16 @@
 ---
 title: 'Postupy: Instalace a konfigurace aktivačních komponent WCF'
+description: Naučte se, jak nastavit aktivační službu procesů systému Windows (WAS) v systému Windows Vista na hostování služeb WCF, které nekomunikují prostřednictvím protokolu HTTP.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - HTTP activation [WCF]
 ms.assetid: 33a7054a-73ec-464d-83e5-b203aeded658
-ms.openlocfilehash: f7a846b076691394cb855e4978e890cdcac76eb2
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 84a0dcc4fed28ebd7a536bdabfcdc389be6072d8
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597030"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246880"
 ---
 # <a name="how-to-install-and-configure-wcf-activation-components"></a>Postupy: Instalace a konfigurace aktivačních komponent WCF
 
@@ -35,7 +36,7 @@ Po instalaci a konfiguraci nástroje se podívejte na téma [Postupy: hostován�
 
 ## <a name="to-configure-the-was-to-support-tcp-activation"></a>Konfigurace nástroje WAS na podporu aktivace protokolem TCP
 
-1. Aby bylo možné podporovat NET. TCP Activation, musí být výchozí webová stránka nejprve svázána s portem NET. TCP. To můžete provést pomocí nástroje Appcmd. exe, který se instaluje se sadou nástrojů pro správu služby IIS 7,0. V okně příkazového řádku na úrovni správce spusťte následující příkaz.
+1. Aby bylo možné podporovat NET. TCP Activation, musí být výchozí webová stránka nejprve svázána s portem NET. TCP. To můžete provést pomocí Appcmd.exe, která se instaluje se sadou nástrojů pro správu služby IIS 7,0. V okně příkazového řádku na úrovni správce spusťte následující příkaz.
 
     ```console
     %windir%\system32\inetsrv\appcmd.exe set site "Default Web Site" -+bindings.[protocol='net.tcp',bindingInformation='808:*']

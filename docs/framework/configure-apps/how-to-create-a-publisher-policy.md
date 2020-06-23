@@ -1,5 +1,6 @@
 ---
 title: 'Postupy: Vytváření zásad vydavatele'
+description: Zjistěte, jak mohou dodavatelé sestavení vytvořit soubor zásad vydavatele s upgradovaným sestavením v .NET, aby bylo stanoveno, že aplikace by měly používat novější verzi.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - publisher policy assembly
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - GAC (global assembly cache), publisher policy assembly
 - global assembly cache, publisher policy assembly
 ms.assetid: 8046bc5d-2fa9-4277-8a5e-6dcc96c281d9
-ms.openlocfilehash: 7c36f6126f0d779a43a22fc11e647ba2d3b03a30
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 23e9d8144ec5742e0371d566b7af59dc9dd30c9b
+ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "81646057"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85105405"
 ---
 # <a name="how-to-create-a-publisher-policy"></a>Postupy: Vytváření zásad vydavatele
 
@@ -49,7 +50,7 @@ Informace o tom, jak zadat základ kódu, naleznete v tématu [určení umístě
 
 ## <a name="creating-the-publisher-policy-assembly"></a>Vytváření sestavení zásad vydavatele
 
-Pomocí [linkeru sestavení (Al. exe)](../tools/al-exe-assembly-linker.md) vytvořte sestavení zásad vydavatele.
+Pomocí [linkeru sestavení (Al.exe)](../tools/al-exe-assembly-linker.md) vytvořte sestavení zásad vydavatele.
 
 #### <a name="to-create-a-publisher-policy-assembly"></a>Vytvoření sestavení zásad vydavatele
 
@@ -65,7 +66,7 @@ V tomto příkazu:
 
 - `publisherPolicyAssemblyFile`Argument je název sestavení zásad vydavatele, které je výsledkem tohoto příkazu. Název souboru sestavení musí odpovídat formátu:
 
-  ' Policy. majorNumber. minorNumber. mainAssemblyName. dll '
+  policy.majorNumber.minorNumber.mainAssemblyName.dll
 
 - `keyPairFile`Argument je název souboru, který obsahuje dvojici klíčů. Sestavení zásad sestavení a vydavatel je nutné podepsat se stejnou dvojicí klíčů.
 
@@ -88,7 +89,7 @@ Další příčinou je, že linker verze 2,0 nelze použít k vytvoření sestav
 
 ## <a name="adding-the-publisher-policy-assembly-to-the-global-assembly-cache"></a>Přidání sestavení zásad vydavatele do globální mezipaměti sestavení (GAC)
 
-K přidání sestavení zásad vydavatele do globální mezipaměti sestavení [(GAC) použijte nástroj Global Assembly Cache (Gacutil. exe)](../tools/gacutil-exe-gac-tool.md) .
+Použijte [nástroj globální mezipaměť sestavení (Gacutil.exe)](../tools/gacutil-exe-gac-tool.md) , chcete-li přidat sestavení zásad vydavatele do globální mezipaměti sestavení (GAC).
 
 ### <a name="to-add-the-publisher-policy-assembly-to-the-global-assembly-cache"></a>Chcete-li přidat sestavení zásad vydavatele do globální mezipaměti sestavení (GAC)
 

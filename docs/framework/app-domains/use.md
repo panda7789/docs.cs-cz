@@ -1,17 +1,18 @@
 ---
 title: Používání domén aplikací
+description: Použijte aplikační domény, které poskytují jednotku izolace pro modul CLR (Common Language Runtime). Domény aplikace se vytvářejí a spouštějí v rámci procesu.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - application domains, about
 - common language runtime, application domains
 - runtime, application domains
 ms.assetid: c6d99815-e022-4d2c-9420-1d7ab5b9d504
-ms.openlocfilehash: 6ee02a3f27a645f19fd6a327052939586fac4aa9
-ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
+ms.openlocfilehash: df2a63716904ebfc6ee163121a1f07e53aa07514
+ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/20/2020
-ms.locfileid: "81645426"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85105187"
 ---
 # <a name="using-application-domains"></a>Používání domén aplikací
 
@@ -46,7 +47,7 @@ Popisuje, jak stínové kopírování umožňuje aktualizace sestavení, když j
 Vysvětluje, jak můžete obdržet oznámení o vyvolání výjimky před tím, než modul CLR (Common Language Runtime) začne hledat obslužné rutiny výjimek.  
   
 [Řešení načítání sestavení](../../standard/assembly/resolve-loads.md)  
-Poskytuje pokyny k použití <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> události pro řešení selhání načtení sestavení.  
+Poskytuje pokyny <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> k použití události pro řešení selhání načtení sestavení.  
   
 ## <a name="reference"></a>Referenční informace  
 
