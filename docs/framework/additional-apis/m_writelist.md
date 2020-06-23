@@ -1,5 +1,6 @@
 ---
-title: Pole Connection.m_WriteList
+title: Connection. m_WriteList – pole
+description: Získat informace o připojení. m_WriteList pole v .NET. Toto pole ArrayList obsahuje objekty HttpWebRequest, které jsou zařazeny do fronty k odeslání prostřednictvím protokolu HTTP.
 ms.date: 05/01/2017
 topic_type:
 - apiref
@@ -10,32 +11,32 @@ api_location:
 api_type:
 - Assembly
 ms.assetid: 235503c1-1d01-4f59-895f-ae2cf15b3345
-ms.openlocfilehash: 6c60831ddf23ce8ac9afcf244383d24732c3ef8b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a627cb062036e3ab098c2d6e97f9a77ebfa75a33
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79155834"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84989597"
 ---
-# <a name="connectionm_writelist-field"></a><span data-ttu-id="dcdda-102">Pole Connection.m\_WriteList</span><span class="sxs-lookup"><span data-stu-id="dcdda-102">Connection.m\_WriteList Field</span></span>
+# <a name="connectionm_writelist-field"></a><span data-ttu-id="373c4-104">Pole Connection. m \_ WriteList</span><span class="sxs-lookup"><span data-stu-id="373c4-104">Connection.m\_WriteList Field</span></span>
 
-<span data-ttu-id="dcdda-103">`Connection.m_WriteList`je <xref:System.Collections.ArrayList> objekty, <xref:System.Net.HttpWebRequest> které jsou zařazeny do fronty k odeslání přes PROTOKOL HTTP.</span><span class="sxs-lookup"><span data-stu-id="dcdda-103">`Connection.m_WriteList` is an <xref:System.Collections.ArrayList> of <xref:System.Net.HttpWebRequest> objects that are queued up to be sent over HTTP.</span></span>
+<span data-ttu-id="373c4-105">`Connection.m_WriteList`je <xref:System.Collections.ArrayList> <xref:System.Net.HttpWebRequest> objekty, které jsou zařazeny do fronty k odeslání prostřednictvím protokolu HTTP.</span><span class="sxs-lookup"><span data-stu-id="373c4-105">`Connection.m_WriteList` is an <xref:System.Collections.ArrayList> of <xref:System.Net.HttpWebRequest> objects that are queued up to be sent over HTTP.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="dcdda-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="dcdda-104">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="373c4-106">Syntax</span><span class="sxs-lookup"><span data-stu-id="373c4-106">Syntax</span></span>
   
 ```csharp  
 private ArrayList m_WriteList
 ```
 
 > [!WARNING]
-> <span data-ttu-id="dcdda-105">Pole `Connection.m_WriteList` je soukromé a není určeno k použití přímo ve vašem kódu.</span><span class="sxs-lookup"><span data-stu-id="dcdda-105">The `Connection.m_WriteList` field is private and is not meant to be used directly in your code.</span></span>
+> <span data-ttu-id="373c4-107">`Connection.m_WriteList`Pole je soukromé a není určeno pro použití přímo v kódu.</span><span class="sxs-lookup"><span data-stu-id="373c4-107">The `Connection.m_WriteList` field is private and is not meant to be used directly in your code.</span></span>
 >
-> <span data-ttu-id="dcdda-106">Společnost Microsoft nepodporuje použití tohoto pole v produkční aplikaci za žádných okolností.</span><span class="sxs-lookup"><span data-stu-id="dcdda-106">Microsoft does not support the use of this field in a production application under any circumstance.</span></span>
+> <span data-ttu-id="373c4-108">Společnost Microsoft v žádné situaci nepodporuje použití tohoto pole v produkční aplikaci.</span><span class="sxs-lookup"><span data-stu-id="373c4-108">Microsoft does not support the use of this field in a production application under any circumstance.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="dcdda-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="dcdda-107">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="373c4-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="373c4-109">Requirements</span></span>
 
-<span data-ttu-id="dcdda-108">**Obor názvů:**<xref:System.Net></span><span class="sxs-lookup"><span data-stu-id="dcdda-108">**Namespace:** <xref:System.Net></span></span>
+<span data-ttu-id="373c4-110">**Obor názvů:**<xref:System.Net></span><span class="sxs-lookup"><span data-stu-id="373c4-110">**Namespace:** <xref:System.Net></span></span>
 
-<span data-ttu-id="dcdda-109">**Sestava:** Systém (v souboru System.dll)</span><span class="sxs-lookup"><span data-stu-id="dcdda-109">**Assembly:** System (in System.dll)</span></span>
+<span data-ttu-id="373c4-111">**Sestavení:** Systém (v System.dll)</span><span class="sxs-lookup"><span data-stu-id="373c4-111">**Assembly:** System (in System.dll)</span></span>
 
-<span data-ttu-id="dcdda-110">**Verze rozhraní .NET Framework:** K dispozici od 2.0.</span><span class="sxs-lookup"><span data-stu-id="dcdda-110">**.NET Framework versions:** Available since 2.0.</span></span>
+<span data-ttu-id="373c4-112">**Verze .NET Framework:** K dispozici od verze 2,0.</span><span class="sxs-lookup"><span data-stu-id="373c4-112">**.NET Framework versions:** Available since 2.0.</span></span>

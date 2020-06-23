@@ -1,47 +1,48 @@
 ---
 title: Použití nastavení aplikace a uživatelských nastavení
 ms.date: 03/30/2017
+description: Naučte se používat nastavení aplikace a uživatelská nastavení k vytváření a přístup k hodnotám, které jsou trvalé mezi relacemi spuštění aplikace.
 helpviewer_keywords:
 - user settings [Windows Forms]
 - application settings [Windows Forms], how-to topics
 ms.assetid: 54682d3b-1cbf-4683-9351-012b8b4286b5
-ms.openlocfilehash: ea6994e653b3a06239634f5a0fddea84a07086e2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a30fd354986265eca002fce57bccf5b3bb2adc15
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61777179"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84903165"
 ---
-# <a name="using-application-settings-and-user-settings"></a><span data-ttu-id="fb3f2-102">Použití nastavení aplikace a uživatelských nastavení</span><span class="sxs-lookup"><span data-stu-id="fb3f2-102">Using Application Settings and User Settings</span></span>
-<span data-ttu-id="fb3f2-103">Od verze rozhraní .NET Framework 2.0, můžete vytvořit a přistupovat k hodnotám, které jsou trvalé mezi jednotlivými relacemi spuštění aplikace.</span><span class="sxs-lookup"><span data-stu-id="fb3f2-103">Starting with the .NET Framework 2.0, you can create and access values that are persisted between application execution sessions.</span></span> <span data-ttu-id="fb3f2-104">Tyto hodnoty jsou označovány jako *nastavení*.</span><span class="sxs-lookup"><span data-stu-id="fb3f2-104">These values are called *settings*.</span></span> <span data-ttu-id="fb3f2-105">Nastavení může představovat předvolby uživatele nebo cenné informace aplikace je potřeba použít.</span><span class="sxs-lookup"><span data-stu-id="fb3f2-105">Settings can represent user preferences, or valuable information the application needs to use.</span></span> <span data-ttu-id="fb3f2-106">Můžete vytvořit řadu nastavení, které ukládají uživatelské předvolby pro barevné schéma aplikace.</span><span class="sxs-lookup"><span data-stu-id="fb3f2-106">For example, you might create a series of settings that store user preferences for the color scheme of an application.</span></span> <span data-ttu-id="fb3f2-107">Nebo může uložit připojovací řetězec, který určuje databázi, která vaše aplikace používá.</span><span class="sxs-lookup"><span data-stu-id="fb3f2-107">Or you might store the connection string that specifies a database that your application uses.</span></span> <span data-ttu-id="fb3f2-108">Nastavení povolit, že jste k oběma zachovat informace, které jsou důležité pro aplikaci mimo kód a vytvářet profily, které ukládají požadavků jednotlivých uživatelů.</span><span class="sxs-lookup"><span data-stu-id="fb3f2-108">Settings allow you to both persist information that is critical to the application outside the code, and to create profiles that store the preferences of individual users.</span></span>  
+# <a name="using-application-settings-and-user-settings"></a><span data-ttu-id="a4012-103">Použití nastavení aplikace a uživatelských nastavení</span><span class="sxs-lookup"><span data-stu-id="a4012-103">Using Application Settings and User Settings</span></span>
+<span data-ttu-id="a4012-104">Počínaje .NET Framework 2,0 můžete vytvořit a přistupovat k hodnotám, které jsou trvalé mezi relacemi spuštění aplikace.</span><span class="sxs-lookup"><span data-stu-id="a4012-104">Starting with the .NET Framework 2.0, you can create and access values that are persisted between application execution sessions.</span></span> <span data-ttu-id="a4012-105">Tyto hodnoty se nazývají *Nastavení*.</span><span class="sxs-lookup"><span data-stu-id="a4012-105">These values are called *settings*.</span></span> <span data-ttu-id="a4012-106">Nastavení může představovat uživatelské preference nebo cenné informace, které aplikace potřebuje použít.</span><span class="sxs-lookup"><span data-stu-id="a4012-106">Settings can represent user preferences, or valuable information the application needs to use.</span></span> <span data-ttu-id="a4012-107">Můžete například vytvořit řadu nastavení, která ukládají předvolby uživatele pro barevné schéma aplikace.</span><span class="sxs-lookup"><span data-stu-id="a4012-107">For example, you might create a series of settings that store user preferences for the color scheme of an application.</span></span> <span data-ttu-id="a4012-108">Případně můžete uložit připojovací řetězec, který určuje databázi, kterou vaše aplikace používá.</span><span class="sxs-lookup"><span data-stu-id="a4012-108">Or you might store the connection string that specifies a database that your application uses.</span></span> <span data-ttu-id="a4012-109">Nastavení umožňují uchovat informace, které jsou pro aplikaci mimo kód kritické, a vytvářet profily, které ukládají předvolby jednotlivých uživatelů.</span><span class="sxs-lookup"><span data-stu-id="a4012-109">Settings allow you to both persist information that is critical to the application outside the code, and to create profiles that store the preferences of individual users.</span></span>  
   
- <span data-ttu-id="fb3f2-109">Témata v této části popisují způsob použití nastavení v době návrhu a běhu.</span><span class="sxs-lookup"><span data-stu-id="fb3f2-109">The topics in this section describe how to use settings at design time and run time.</span></span>  
+ <span data-ttu-id="a4012-110">Témata v této části popisují, jak používat nastavení v době návrhu a v době běhu.</span><span class="sxs-lookup"><span data-stu-id="a4012-110">The topics in this section describe how to use settings at design time and run time.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="fb3f2-110">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="fb3f2-110">In This Section</span></span>  
- [<span data-ttu-id="fb3f2-111">Postupy: Vytvořit nové nastavení v době návrhu</span><span class="sxs-lookup"><span data-stu-id="fb3f2-111">How To: Create a New Setting at Design Time</span></span>](how-to-create-a-new-setting-at-design-time.md)  
+## <a name="in-this-section"></a><span data-ttu-id="a4012-111">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="a4012-111">In This Section</span></span>  
+ [<span data-ttu-id="a4012-112">Postupy: Vytvoření nového nastavení při návrhu</span><span class="sxs-lookup"><span data-stu-id="a4012-112">How To: Create a New Setting at Design Time</span></span>](how-to-create-a-new-setting-at-design-time.md)  
   
- <span data-ttu-id="fb3f2-112">Vysvětluje, jak vytvořit nové nastavení pro aplikaci pomocí sady Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="fb3f2-112">Explains how to use Visual Studio to create a new setting for an application.</span></span>  
+ <span data-ttu-id="a4012-113">Vysvětluje, jak pomocí sady Visual Studio vytvořit nové nastavení pro aplikaci.</span><span class="sxs-lookup"><span data-stu-id="a4012-113">Explains how to use Visual Studio to create a new setting for an application.</span></span>  
   
- [<span data-ttu-id="fb3f2-113">Postupy: Změna hodnoty existujícího nastavení při návrhu</span><span class="sxs-lookup"><span data-stu-id="fb3f2-113">How To: Change the Value of an Existing Setting at Design Time</span></span>](how-to-change-the-value-of-an-existing-setting-at-design-time.md)  
+ [<span data-ttu-id="a4012-114">Postupy: Změna hodnoty existujícího nastavení při návrhu</span><span class="sxs-lookup"><span data-stu-id="a4012-114">How To: Change the Value of an Existing Setting at Design Time</span></span>](how-to-change-the-value-of-an-existing-setting-at-design-time.md)  
   
- <span data-ttu-id="fb3f2-114">Popisuje, jak pomocí sady Visual Studio ke změně hodnoty existujícího nastavení.</span><span class="sxs-lookup"><span data-stu-id="fb3f2-114">Describes how to use Visual Studio to change the value of an existing setting.</span></span>  
+ <span data-ttu-id="a4012-115">Popisuje, jak pomocí sady Visual Studio změnit hodnotu existujícího nastavení.</span><span class="sxs-lookup"><span data-stu-id="a4012-115">Describes how to use Visual Studio to change the value of an existing setting.</span></span>  
   
- [<span data-ttu-id="fb3f2-115">Postupy: Změna hodnoty nastavení mezi relacemi aplikace</span><span class="sxs-lookup"><span data-stu-id="fb3f2-115">How To: Change the Value of a Setting Between Application Sessions</span></span>](how-to-change-the-value-of-a-setting-between-application-sessions.md)  
+ [<span data-ttu-id="a4012-116">Postupy: Změna hodnoty nastavení mezi relacemi aplikace</span><span class="sxs-lookup"><span data-stu-id="a4012-116">How To: Change the Value of a Setting Between Application Sessions</span></span>](how-to-change-the-value-of-a-setting-between-application-sessions.md)  
   
- <span data-ttu-id="fb3f2-116">Podrobné informace o tom, jak změnit hodnoty nastavení v kompilované aplikace mezi jednotlivými relacemi aplikace.</span><span class="sxs-lookup"><span data-stu-id="fb3f2-116">Details how to change the value of a setting in a compiled application between application sessions.</span></span>  
+ <span data-ttu-id="a4012-117">Podrobnosti o tom, jak změnit hodnotu nastavení v kompilované aplikaci mezi aplikačními relacemi.</span><span class="sxs-lookup"><span data-stu-id="a4012-117">Details how to change the value of a setting in a compiled application between application sessions.</span></span>  
   
- [<span data-ttu-id="fb3f2-117">Postupy: Čtení uživatelských nastavení při běhu pomocíC#</span><span class="sxs-lookup"><span data-stu-id="fb3f2-117">How To: Read Settings at Run Time With C#</span></span>](how-to-read-settings-at-run-time-with-csharp.md)  
+ [<span data-ttu-id="a4012-118">Postupy: Čtení uživatelských nastavení při běhu pomocí C#</span><span class="sxs-lookup"><span data-stu-id="a4012-118">How To: Read Settings at Run Time With C#</span></span>](how-to-read-settings-at-run-time-with-csharp.md)  
   
- <span data-ttu-id="fb3f2-118">Popisuje, jak použít kód pro čtení nastavení s C#.</span><span class="sxs-lookup"><span data-stu-id="fb3f2-118">Describes how to use code to read settings with C#.</span></span>  
+ <span data-ttu-id="a4012-119">Popisuje způsob použití kódu ke čtení nastavení pomocí jazyka C#.</span><span class="sxs-lookup"><span data-stu-id="a4012-119">Describes how to use code to read settings with C#.</span></span>  
   
- [<span data-ttu-id="fb3f2-119">Postupy: Zápis uživatelských nastavení při běhu pomocíC#</span><span class="sxs-lookup"><span data-stu-id="fb3f2-119">How To: Write User Settings at Run Time with C#</span></span>](how-to-write-user-settings-at-run-time-with-csharp.md)  
+ [<span data-ttu-id="a4012-120">Postupy: Zápis uživatelských nastavení při běhu pomocí C#</span><span class="sxs-lookup"><span data-stu-id="a4012-120">How To: Write User Settings at Run Time with C#</span></span>](how-to-write-user-settings-at-run-time-with-csharp.md)  
   
- <span data-ttu-id="fb3f2-120">Vysvětluje, jak použít kód pro zápis a uložte příslušné hodnoty uživatelským nastavením u C#.</span><span class="sxs-lookup"><span data-stu-id="fb3f2-120">Explains how to use code to write and save the values of user settings with C#.</span></span>  
+ <span data-ttu-id="a4012-121">Vysvětluje, jak použít kód pro zápis a uložení hodnot uživatelských nastavení pomocí C#.</span><span class="sxs-lookup"><span data-stu-id="a4012-121">Explains how to use code to write and save the values of user settings with C#.</span></span>  
   
- [<span data-ttu-id="fb3f2-121">Postupy: Přidání více množin nastavení do vaší aplikace vC#</span><span class="sxs-lookup"><span data-stu-id="fb3f2-121">How To: Add Multiple Sets of Settings To Your Application in C#</span></span>](how-to-add-multiple-sets-of-settings-to-your-application-in-csharp.md)  
+ [<span data-ttu-id="a4012-122">Postupy: Přidání více množin nastavení do vaší aplikace v C#</span><span class="sxs-lookup"><span data-stu-id="a4012-122">How To: Add Multiple Sets of Settings To Your Application in C#</span></span>](how-to-add-multiple-sets-of-settings-to-your-application-in-csharp.md)  
   
- <span data-ttu-id="fb3f2-122">Podrobnosti o přidání více množin nastavení do aplikace s C#.</span><span class="sxs-lookup"><span data-stu-id="fb3f2-122">Details how to add multiple sets of settings to an application with C#.</span></span>  
+ <span data-ttu-id="a4012-123">Podrobně popisuje, jak přidat více sad nastavení do aplikace pomocí jazyka C#.</span><span class="sxs-lookup"><span data-stu-id="a4012-123">Details how to add multiple sets of settings to an application with C#.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="fb3f2-123">Viz také:</span><span class="sxs-lookup"><span data-stu-id="fb3f2-123">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a4012-124">Viz také</span><span class="sxs-lookup"><span data-stu-id="a4012-124">See also</span></span>
 
-- [<span data-ttu-id="fb3f2-124">Nastavení aplikace pro model Windows Forms</span><span class="sxs-lookup"><span data-stu-id="fb3f2-124">Application Settings for Windows Forms</span></span>](application-settings-for-windows-forms.md)
+- [<span data-ttu-id="a4012-125">Nastavení aplikace pro model Windows Forms</span><span class="sxs-lookup"><span data-stu-id="a4012-125">Application Settings for Windows Forms</span></span>](application-settings-for-windows-forms.md)
