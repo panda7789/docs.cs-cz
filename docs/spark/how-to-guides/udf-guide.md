@@ -4,12 +4,12 @@ description: Naučte se implementovat uživatelsky definované funkce (UDF) v ro
 ms.date: 06/11/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: 96597c7e2d45dfdf8406b0d3e80daad270996b97
-ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
+ms.openlocfilehash: fe3dec187f94f84adb1217c39ff6aabc4b4db1c5
+ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85105593"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85142014"
 ---
 # <a name="create-user-defined-functions-udf-in-net-for-apache-spark"></a>Vytváření uživatelem definovaných funkcí (UDF) v rozhraní .NET pro Apache Spark
 
@@ -61,7 +61,7 @@ Pokud chcete lépe pochopit, jak implementovat UDF, přečtěte si [pomocné fun
 
 ## <a name="udf-serialization"></a>Serializace systému souborů UDF
 
-Vzhledem k tomu, že UDF jsou funkce, které je třeba spustit na pracovních procesech, musí být tyto pracovní procesy serializovány a odesílány do pracovních částí z ovladače. [Delegát](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/delegates/), který je odkazem na metodu, musí být serializován stejně jako jeho [cíl](https://docs.microsoft.com/en-us/dotnet/api/system.delegate.target?view=netframework-4.8) , což je instance třídy, na které aktuální delegát vyvolá metodu instance. V tomto [příkladu kódu na GitHubu](https://github.com/dotnet/spark/blob/master/src/csharp/Microsoft.Spark/Utils/CommandSerDe.cs#L149) získáte lepší přehled o tom, jak se provádí serializace systému souborů UDF.
+Vzhledem k tomu, že UDF jsou funkce, které je třeba spustit na pracovních procesech, musí být tyto pracovní procesy serializovány a odesílány do pracovních částí z ovladače. [Delegát](../../csharp/programming-guide/delegates/index.md), který je odkazem na metodu, musí být serializován i jeho [cíl](xref:System.Delegate.Target%2A), což je instance třídy, na které aktuální delegát vyvolá metodu instance. V tomto [příkladu kódu na GitHubu](https://github.com/dotnet/spark/blob/master/src/csharp/Microsoft.Spark/Utils/CommandSerDe.cs#L149) získáte lepší přehled o tom, jak se provádí serializace systému souborů UDF.
 
 Rozhraní .NET pro Apache Spark používá .NET Core, které nepodporují serializaci delegátů. Místo toho se reflexe používá k serializaci cíle, kde je definován delegát. Pokud je ve společném oboru definováno více delegátů, mají sdílený uzávěr, který se stal cílem reflexe pro serializaci.
 

@@ -2,12 +2,12 @@
 title: dotnet-install scripts
 description: Přečtěte si o příkazu dotnet – instalace skriptů pro instalaci .NET Core SDK a sdíleného modulu runtime.
 ms.date: 04/30/2020
-ms.openlocfilehash: 9f5cef9cfcca1d8b344021efe803c063a7393f8e
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: 464e6fafa1c2e661892bcb3b35ba172ca1d7e76b
+ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83802727"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85141240"
 ---
 # <a name="dotnet-install-scripts-reference"></a>dotnet – Reference k instalaci skriptů
 
@@ -28,7 +28,7 @@ dotnet-install.ps1 [-Architecture <ARCHITECTURE>] [-AzureFeed]
     [-SkipNonVersionedFiles] [-UncachedFeed] [-Verbose]
     [-Version <VERSION>]
 
-dotnet-install.ps1 -Help
+Get-Help ./dotnet-install.ps1
 ```
 
 Linux/macOS:
@@ -94,9 +94,9 @@ Instalační skripty neaktualizují registr ve Windows. Stačí stáhnout binár
 
   Slouží jako řetězec dotazu, který se má připojit k datovému kanálu Azure. Umožňuje změnit adresu URL tak, aby používala neveřejné účty úložiště BLOB.
 
-- **`-Help|--help`**
+- **`--help`**
 
-  Vytiskne nápovědu pro skript.
+  Vytiskne nápovědu pro skript. Platí jenom pro skript bash. Pro prostředí PowerShell použijte `Get-Help ./dotnet-install.ps1` .
 
 - **`-InstallDir|--install-dir <DIRECTORY>`**
 
@@ -104,7 +104,7 @@ Instalační skripty neaktualizují registr ve Windows. Stačí stáhnout binár
 
 - **`-JSonFile|--jsonfile <JSONFILE>`**
 
-  Určuje cestu k souboru [Global. JSON](global-json.md) , který se použije k určení verze sady SDK. Soubor *Global. JSON* musí mít hodnotu pro `sdk:version` .
+  Určuje cestu k [global.jsv](global-json.md) souboru, který se použije k určení verze sady SDK. *global.jsv* souboru musí mít hodnotu pro `sdk:version` .
 
 - **`-NoCdn|--no-cdn`**
 
@@ -143,7 +143,7 @@ Instalační skripty neaktualizují registr ve Windows. Stačí stáhnout binár
 
 - **`-SkipNonVersionedFiles|--skip-non-versioned-files`**
 
-  Přeskočí instalaci souborů bez verze, jako je například *dotnet. exe*, pokud již existují.
+  Přeskočí instalaci souborů bez verze, například *dotnet.exe*, pokud již existují.
 
 - **`-UncachedFeed|--uncached-feed`**
 
