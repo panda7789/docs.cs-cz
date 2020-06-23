@@ -1,13 +1,14 @@
 ---
 title: Objemná data a vysílání datových proudů
+description: Seznamte se s důležitými informacemi o komunikaci založené na XML WCF, kodérech a streamovaná data, včetně přenosu binárních dat.
 ms.date: 03/30/2017
 ms.assetid: ab2851f5-966b-4549-80ab-c94c5c0502d2
-ms.openlocfilehash: 21993f230b19a76020807e1f17bd6256f2ee0b1c
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 2eb57e2f57bebb2e765ea798b3dff27e0187e8c7
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84586322"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246581"
 ---
 # <a name="large-data-and-streaming"></a>Objemná data a vysílání datových proudů
 
@@ -66,7 +67,7 @@ Windows Communication Foundation (WCF) je komunikační infrastruktura založen�
   
  Každá standardní vazba obsahuje předem nakonfigurovaný kodér, přičemž vazby s předponou NET * používají binární kodér (zahrnutím <xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement> třídy), zatímco <xref:System.ServiceModel.BasicHttpBinding> <xref:System.ServiceModel.WSHttpBinding> třídy a používají ve výchozím nastavení kodér textových zpráv (prostřednictvím <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> třídy).  
   
-|Element vazby kodéru|Popis|  
+|Element vazby kodéru|Description|  
 |-----------------------------|-----------------|  
 |<xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>|Kodér textu zprávy je výchozím kodérem pro všechny vazby založené na protokolu HTTP a vhodnou volbou pro všechny vlastní vazby, kde je interoperabilita nejvyššími obavy. Tento kodér čte a zapisuje standardní textové zprávy protokolu SOAP 1.1/SOAP 1,2 bez speciálního zpracování pro binární data. Pokud <xref:System.ServiceModel.Channels.MessageVersion?displayProperty=nameWithType> je vlastnost zprávy nastavena na, je obálka <xref:System.ServiceModel.Channels.MessageVersion.None?displayProperty=nameWithType> protokolu SOAP vynechána z výstupu a je serializován pouze obsah textu zprávy.|  
 |<xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement>|Kodér zpráv MTOM je textový kodér, který implementuje speciální zpracování pro binární data a ve výchozím nastavení se v žádném ze standardních vazeb nepoužívá, protože se jedná o výhradně nástroj pro optimalizaci velkých a malých písmen. Pokud zpráva obsahuje binární data, která překročí prahovou hodnotu, která má za důsledek kódování MTOM, data se externě přidělí na část MIME za obálkou zprávy. Viz povolení MTOM později v této části.|  

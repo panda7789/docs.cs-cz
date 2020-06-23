@@ -1,16 +1,17 @@
 ---
 title: Používání třídy Message
+description: Přečtěte si o třídě zprávy, která je základem pro WCF. Je nutné programovat pomocí třídy zpráv přímo pouze v některých pokročilých scénářích.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: d1d62bfb-2aa3-4170-b6f8-c93d3afdbbed
-ms.openlocfilehash: 142578ef76a70fed27dc0137378b59e228cd25c9
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: f806e257cfd3ccc5118a5783e2eda48eef4ba0bf
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84585646"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246490"
 ---
 # <a name="using-the-message-class"></a>Používání třídy Message
 <xref:System.ServiceModel.Channels.Message>Třída je zásadní pro Windows Communication Foundation (WCF). Veškerá komunikace mezi klienty a službami nakonec vede k <xref:System.ServiceModel.Channels.Message> posílání a přijímání instancí.  

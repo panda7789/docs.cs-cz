@@ -1,16 +1,17 @@
 ---
 title: Konfigurace hodnot časových limitů u vazby
+description: Naučte se spravovat nastavení časových limitů pro vazby WCF za účelem zvýšení výkonu, použitelnosti a zabezpečení vaší služby.
 ms.date: 03/30/2017
 ms.assetid: b5c825a2-b48f-444a-8659-61751ff11d34
-ms.openlocfilehash: 968e80bbd4b50d72d089a325f8e3fe498de2eac2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c41824a242d9b42290183cd70b9acf5b8ee59e6b
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79185289"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245112"
 ---
 # <a name="configuring-timeout-values-on-a-binding"></a>Konfigurace hodnot časových limitů u vazby
-Existuje několik nastavení časového času k dispozici ve vazbách WCF. Správné nastavení časového času může zlepšit nejen výkon služby, ale také hrát roli v použitelnosti a zabezpečení vaší služby. Následující časové osy jsou k dispozici na WCF vazby:  
+V vazbách WCF je dostupných několik nastavení časového limitu. Nastavení těchto nastavení časového limitu může správně zlepšit nejen výkon služby, ale také hrát roli v oblasti použitelnosti a zabezpečení vaší služby. V vazbách WCF jsou k dispozici následující časové limity:  
   
 1. OpenTimeout  
   
@@ -20,8 +21,8 @@ Existuje několik nastavení časového času k dispozici ve vazbách WCF. Sprá
   
 4. ReceiveTimeout  
   
-## <a name="wcf-binding-timeouts"></a>Časové osy vazby WCF  
- Každé z nastavení popsaných v tomto tématu jsou provedeny na vazbě sám, a to buď v kódu nebo konfigurace. Následující kód ukazuje, jak programově nastavit časové toky na vazbě WCF v kontextu samoobslužné služby.  
+## <a name="wcf-binding-timeouts"></a>Vypršení časových limitů vazeb WCF  
+ Každé nastavení popsané v tomto tématu se provádí na samotné vazbě, a to buď v kódu, nebo v konfiguraci. Následující kód ukazuje, jak programově nastavit vypršení časových limitů u vazby WCF v kontextu samoobslužné služby.  
   
 ```csharp  
 public static void Main()
@@ -54,7 +55,7 @@ public static void Main()
 }
 ```  
   
- Následující příklad ukazuje, jak nakonfigurovat časové toky na vazbě v konfiguračním souboru.  
+ Následující příklad ukazuje způsob konfigurace časových limitů u vazby v konfiguračním souboru.  
   
 ```xml  
 <configuration>
@@ -72,22 +73,22 @@ public static void Main()
 </configuration>
 ```  
   
- Další informace o těchto nastaveních naleznete <xref:System.ServiceModel.Channels.Binding> v dokumentaci pro třídu.  
+ Další informace o těchto nastaveních najdete v dokumentaci pro <xref:System.ServiceModel.Channels.Binding> třídu.  
   
-### <a name="client-side-timeouts"></a>Časové opozí na straně klienta  
+### <a name="client-side-timeouts"></a>Vypršení časových limitů na straně klienta  
  Na straně klienta:  
   
-1. SendTimeout – slouží k inicializaci OperationTimeout, který řídí celý proces odesílání zprávy, včetně přijetí odpovědi na operaci služby požadavek/odpověď. Tento časový opova platí také při odesílání odpovědí z metody smlouvy zpětného volání.  
+1. SendTimeout – slouží k inicializaci OperationTimeout, který řídí celý proces odeslání zprávy, včetně přijetí zprávy odpovědi pro operaci služby žádosti a odpověď. Tento časový limit platí i při posílání odpovědí na zprávy z metody kontraktu zpětného volání.  
   
-2. OpenTimeout – používá se při otevírání kanálů, když není zadána žádná explicitní hodnota časového času.  
+2. OpenTimeout – používá se při otevírání kanálů, když není zadaná žádná explicitní hodnota časového limitu.  
   
-3. CloseTimeout – používá se při zavírání kanálů, když není zadána žádná explicitní hodnota časového času.  
+3. CloseTimeout – používá se při zavírání kanálů, když není zadaná žádná explicitní hodnota časového limitu.  
   
 4. ReceiveTimeout – se nepoužívá.  
   
-### <a name="service-side-timeouts"></a>Časové výtažky na straně služby  
+### <a name="service-side-timeouts"></a>Vypršení časových limitů na straně služby  
  Na straně služby:  
   
-1. SendTimeout, OpenTimeout, CloseTimeout jsou stejné jako na straně klienta.  
+1. SendTimeout, OpenTimeout, CloseTimeout jsou stejné jako u klienta.  
   
-2. ReceiveTimeout – používá vrstva rozhraní služby k inicializaci relace nečinnosti časový limit, který určuje, jak dlouho relace může být nečinný před vypršením časového limitu.
+2. ReceiveTimeout – používá se vrstvou rozhraní služby k inicializaci časového limitu nečinnosti relace, který určuje, jak dlouho může být relace nečinná, než vyprší časový limit.

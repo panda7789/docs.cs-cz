@@ -1,5 +1,6 @@
 ---
-title: Pole HttpWebRequest._HttpResponse
+title: HttpWebRequest. _HttpResponse – pole
+description: Porozumět poli HttpWebRequest. _HttpResponse v .NET. Toto pole je HttpWebResponse typ obsahující podrobnosti odpovědi HTTP z požadavku HTTP.
 ms.date: 05/01/2017
 topic_type:
 - apiref
@@ -10,32 +11,32 @@ api_location:
 api_type:
 - Assembly
 ms.assetid: eab9b789-beb4-4c28-b2d8-78debc7ba129
-ms.openlocfilehash: 0c5bfc56299aa06dd59c2598588044e81a69933a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 70058e1183abf5b6bfd172497f65a3ceb2344060
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79156243"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84989963"
 ---
-# <a name="httpwebrequest_httpresponse-field"></a>HttpWebRequest. \_Pole HttpResponse
+# <a name="httpwebrequest_httpresponse-field"></a>HttpWebRequest. \_ Pole HttpResponse
 
-`HttpWebRequest._HttpResponse`je <xref:System.Net.HttpWebResponse> obsahující podrobnosti odpovědi HTTP z požadavku HTTP. To může `null` být, dokud je přijata odpověď HTTP.
+`HttpWebRequest._HttpResponse`<xref:System.Net.HttpWebResponse>obsahuje podrobnosti odpovědi HTTP z požadavku HTTP. Může to být `null` až do přijetí odpovědi HTTP.
 
-## <a name="syntax"></a>Syntaxe
+## <a name="syntax"></a>Syntax
   
 ```csharp  
 internal HttpWebResponse _HttpResponse
 ```
 
 > [!WARNING]
-> Pole `HttpWebRequest._HttpResponse` je interní a není určeno k použití přímo ve vašem kódu.
+> `HttpWebRequest._HttpResponse`Pole je interní a není určeno pro použití přímo v kódu.
 >
-> Společnost Microsoft nepodporuje použití tohoto pole v produkční aplikaci za žádných okolností.
+> Společnost Microsoft v žádné situaci nepodporuje použití tohoto pole v produkční aplikaci.
 
 ## <a name="requirements"></a>Požadavky
 
 **Obor názvů:**<xref:System.Net>
 
-**Sestava:** Systém (v souboru System.dll)
+**Sestavení:** Systém (v System.dll)
 
-**Verze rozhraní .NET Framework:** K dispozici od 2.0.
+**Verze .NET Framework:** K dispozici od verze 2,0.

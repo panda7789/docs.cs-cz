@@ -1,18 +1,19 @@
 ---
 title: Zjednodušená konfigurace pro služby WCF
+description: Naučte se implementovat a nakonfigurovat typickou službu a klienta pomocí WCF. Služba komunikuje pomocí koncového bodu zadaného v konfiguračním souboru.
 ms.date: 03/30/2017
 ms.assetid: 1e39ec25-18a3-4fdc-b6a3-9dfafbd60112
-ms.openlocfilehash: 61720fff957bfe7a13da1d7498487342b2ee234c
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 46a0c878b29de34219413a508799ddaddf507dd8
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84584100"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246216"
 ---
 # <a name="simplified-configuration-for-wcf-services"></a>Zjednodušená konfigurace pro služby WCF
 Tato ukázka předvádí, jak implementovat a nakonfigurovat typickou službu a klienta pomocí Windows Communication Foundation (WCF). Tato ukázka je základem pro všechny ostatní základní ukázkové technologie.  
   
- Tato služba, která zpřístupňuje koncový bod pro komunikaci se službou, používá zjednodušenou konfiguraci v .NET Framework 4. Před .NET Framework 4 je koncový bod obvykle definován v konfiguračním souboru (Web. config), jak je znázorněno v následujícím příkladu kódu konfigurace.  
+ Tato služba, která zpřístupňuje koncový bod pro komunikaci se službou, používá zjednodušenou konfiguraci v .NET Framework 4. Před .NET Framework 4 je koncový bod obvykle definován v konfiguračním souboru (Web.config), jak je znázorněno v následujícím příkladu kódu konfigurace.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" ?>  

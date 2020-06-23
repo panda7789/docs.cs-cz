@@ -1,5 +1,6 @@
 ---
 title: Práce s certifikáty
+description: Přečtěte si o funkcích digitálního certifikátu X. 509 a o tom, jak je používat ve službě WCF. Zdroje informací v tomto článku vám můžou podrobněji vysvětlit tyto koncepty.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - certificates [WCF]
 ms.assetid: 6ffb8682-8f07-4a45-afbb-8d2487e9dbc3
-ms.openlocfilehash: e61437efd87c30758c36d642bb9269ad2966c951
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 8090e84b33e2a6f442d387c7012e6ccdc2900dd1
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600111"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246399"
 ---
 # <a name="working-with-certificates"></a>Práce s certifikáty
 
@@ -57,7 +58,7 @@ Výběr místa uložení certifikátu závisí na tom, jak a kdy se služba nebo
 
 ### <a name="accessing-stores"></a>Přístup k obchodům
 
-Úložiště jsou chráněná pomocí seznamů řízení přístupu (ACL), stejně jako složky v počítači. Při vytváření služby hostované službou Internetová informační služba (IIS) se proces ASP.NET spouští pod účtem ASP.NET. Tento účet musí mít přístup k úložišti, které obsahuje certifikáty, které služba používá. Každé z hlavních úložišť je chráněno pomocí výchozího seznamu přístupu, ale seznamy lze upravit. Pokud vytvoříte samostatnou roli pro přístup k úložišti, musíte této roli udělit oprávnění k přístupu. Informace o tom, jak upravit seznam přístupu pomocí nástroje WinHttpCertConfig. exe, najdete v tématu [Postup: vytváření dočasných certifikátů pro použití během vývoje](how-to-create-temporary-certificates-for-use-during-development.md).
+Úložiště jsou chráněná pomocí seznamů řízení přístupu (ACL), stejně jako složky v počítači. Při vytváření služby hostované službou Internetová informační služba (IIS) se proces ASP.NET spouští pod účtem ASP.NET. Tento účet musí mít přístup k úložišti, které obsahuje certifikáty, které služba používá. Každé z hlavních úložišť je chráněno pomocí výchozího seznamu přístupu, ale seznamy lze upravit. Pokud vytvoříte samostatnou roli pro přístup k úložišti, musíte této roli udělit oprávnění k přístupu. Informace o tom, jak upravit seznam přístupu pomocí nástroje WinHttpCertConfig.exe, najdete v tématu [Postupy: vytváření dočasných certifikátů pro použití během vývoje](how-to-create-temporary-certificates-for-use-during-development.md).
 
 ## <a name="chain-trust-and-certificate-authorities"></a>Důvěryhodnost řetězení a certifikační autority
 

@@ -1,13 +1,14 @@
 ---
 title: Princip ověřování HTTP
+description: Projděte si tento Úvod k ověřování HTTP ve službě WCF, včetně schémat ověřování HTTP a výběr schématu ověřování.
 ms.date: 03/30/2017
 ms.assetid: 9376309a-39e3-4819-b47b-a73982b57620
-ms.openlocfilehash: a31c9f96185364c59dca1ff26251a30f5d7a88bc
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 761ab7a92aa26ce1437eefa360e5b46df179e32d
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84595086"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246516"
 ---
 # <a name="understanding-http-authentication"></a>Princip ověřování HTTP
 Ověřování je proces identifikace, zda má klient nárok na přístup k prostředku. Protokol HTTP podporuje ověřování jako způsob vyjednávání přístupu k zabezpečenému prostředku.  
@@ -17,7 +18,7 @@ Ověřování je proces identifikace, zda má klient nárok na přístup k prost
 ## <a name="http-authentication-schemes"></a>Schémata ověřování HTTP  
  Server může určit několik schémat ověřování, ze kterých bude klient vybírat. Následující tabulka popisuje některé z schémat ověřování, které se běžně nacházejí v aplikacích pro Windows.  
   
-|Schéma ověřování|Popis|  
+|Schéma ověřování|Description|  
 |---------------------------|-----------------|  
 |Anonymní|Anonymní požadavek neobsahuje žádné informace o ověřování. Jedná se o ekvivalent přidělení přístupu k prostředku všem všem.|  
 |Basic|Základní ověřování pošle řetězec zakódovaný ve formátu base64, který obsahuje uživatelské jméno a heslo pro klienta. Base64 není forma šifrování a měla by být považována za stejnou jako odeslání uživatelského jména a hesla v nešifrovaném textu. Pokud je potřeba chránit prostředek, důrazně zvažte použití jiného schématu ověřování než základní ověřování.|  

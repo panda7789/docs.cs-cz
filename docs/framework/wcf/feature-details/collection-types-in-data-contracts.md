@@ -1,5 +1,6 @@
 ---
 title: Typy kolekcí v kontraktech dat
+description: Přečtěte si, jak model kontraktu dat zpracovává kolekce v .NET Framework a jak WCF podporuje serializaci dat pro typy kolekcí.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - data contracts [WCF], collection types
 - collection types [WCF]
 ms.assetid: 9b45b28e-0a82-4ea3-8c33-ec0094aff9d5
-ms.openlocfilehash: a10b7c5295407cfbb36446581a4b75670e37bc6a
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 83acf1f74bf3cb117f3f94743eda32d3f2cc4b82
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84579746"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245177"
 ---
 # <a name="collection-types-in-data-contracts"></a>Typy kolekcí v kontraktech dat
 
@@ -255,7 +256,7 @@ Chcete-li zvolit typy kolekce, které mají být vygenerovány, předejte seznam
 Při odkazování na obecné typy musí být buď plně otevřené obecné nebo plně uzavřené obecné typy.
 
 > [!NOTE]
-> Při použití nástroje Svcutil. exe lze tento odkaz provést pomocí přepínače příkazového řádku **/CollectionType** (krátký tvar: **/CT**). Mějte na paměti, že musíte také zadat sestavení pro odkazované typy kolekcí pomocí přepínače **/reference** (krátký tvar: **/r**). Pokud je typ obecný, musí následovat zadní uvozovka a počet obecných parametrů. Zpětná uvozovka ( \` ) se Nepleťe s znakem jednoduché uvozovky ('). Můžete zadat více odkazovaných typů kolekce pomocí přepínače **/CollectionType** více než jednou.
+> Při použití nástroje Svcutil.exe lze tento odkaz provést pomocí přepínače příkazového řádku **/CollectionType** (krátký tvar: **/CT**). Mějte na paměti, že musíte také zadat sestavení pro odkazované typy kolekcí pomocí přepínače **/reference** (krátký tvar: **/r**). Pokud je typ obecný, musí následovat zadní uvozovka a počet obecných parametrů. Zpětná uvozovka ( \` ) se Nepleťe s znakem jednoduché uvozovky ('). Můžete zadat více odkazovaných typů kolekce pomocí přepínače **/CollectionType** více než jednou.
 
 Například pokud chcete, aby všechny seznamy byly importovány jako obecné <xref:System.Collections.Generic.List%601> .
 

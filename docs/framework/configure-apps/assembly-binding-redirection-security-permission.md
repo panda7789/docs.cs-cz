@@ -1,16 +1,17 @@
 ---
 title: Bezpečnostní oprávnění k přesměrování vazby sestavení
+description: Přečtěte si o oprávnění zabezpečení vyžadovaného pro explicitní přesměrování vazby sestavení v konfiguračním souboru aplikace v rozhraní .NET.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - side-by-side execution, assembly binding redirection
 - assemblies [.NET Framework], binding redirection
 ms.assetid: 24a5cdff-7ed9-4195-93f3-edf6899019fc
-ms.openlocfilehash: b59689e78f901637674c0a1df28ed74411e8e7c7
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: a8596bcac4efb0aea07efcfde6726d8bbf148c24
+ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "69921377"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85105088"
 ---
 # <a name="assembly-binding-redirection-security-permission"></a>Bezpečnostní oprávnění k přesměrování vazby sestavení
 Explicitní přesměrování vazeb sestavení v konfiguračním souboru aplikace vyžaduje oprávnění zabezpečení. To platí pro přesměrování sestavení rozhraní .NET Framework a sestavení třetích stran. Oprávnění je uděleno nastavením <xref:System.Security.Permissions.SecurityPermissionFlag> příznaku na <xref:System.Security.Permissions.SecurityPermission> . Spravovaná sestavení nemají ve výchozím nastavení žádná oprávnění.  
@@ -28,7 +29,7 @@ Explicitní přesměrování vazeb sestavení v konfiguračním souboru aplikac
 |Zóna Internetu|**ZAOKROUHL**|  
 |Nedůvěryhodné zóny|**ZAOKROUHL**|  
   
- Správce může změnit tato nastavení zabezpečení na podporu nebo omezení konkrétních scénářů v daném počítači. Neexistují žádné nástroje pro změnu nastavení příznaku **BindingRedirects** z výchozí hodnoty. Správce musí ručně upravit soubor Security. config v počítači uživatele.  
+ Správce může změnit tato nastavení zabezpečení na podporu nebo omezení konkrétních scénářů v daném počítači. Neexistují žádné nástroje pro změnu nastavení příznaku **BindingRedirects** z výchozí hodnoty. Správce musí ručně upravit soubor Security.config v počítači uživatele.  
   
 ## <a name="see-also"></a>Viz také
 

@@ -1,5 +1,6 @@
 ---
 title: 'Postupy: Použití přihlašovacích údajů k zabezpečení přenosů a zpráv'
+description: Naučte se implementovat zabezpečení přenosu s přihlašovacími údaji pro zprávy, které nabízí nejlepší přenos a režimy zabezpečení zpráv ve službě WCF.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - TransportWithMessageCredentials
 ms.assetid: 6cc35346-c37a-4859-b82b-946c0ba6e68f
-ms.openlocfilehash: f49c0eb46141081b91100a5ae1869cbcf556e353
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: f632a4389eafc155cedcae94707c9418b6696f2c
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84579381"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246646"
 ---
 # <a name="how-to-use-transport-security-and-message-credentials"></a>Postupy: Použití přihlašovacích údajů k zabezpečení přenosů a zpráv
 Zabezpečení služby pomocí přenosu a přihlašovacích údajů pro zprávy využívá nejlepší z přenosů i režimů zabezpečení zpráv v Windows Communication Foundation (WCF). Zabezpečení transportní vrstvy zajišťuje integritu a důvěrnost, zatímco zabezpečení vrstev zpráv poskytuje celou řadu přihlašovacích údajů, které nejsou možné s přísným mechanismem zabezpečení přenosu. V tomto tématu se dozvíte o základních krocích pro implementaci přenosu s přihlašovacími údaji zprávy pomocí <xref:System.ServiceModel.WSHttpBinding> <xref:System.ServiceModel.NetTcpBinding> vazeb a. Další informace o nastavení režimu zabezpečení naleznete v tématu [How to: set a Security Mode](../how-to-set-the-security-mode.md).  
@@ -25,7 +26,7 @@ Zabezpečení služby pomocí přenosu a přihlašovacích údajů pro zprávy v
   
 ### <a name="to-use-the-wshttpbinding-with-a-certificate-for-transport-security-in-code"></a>Použití WSHttpBinding s certifikátem pro zabezpečení přenosu (v kódu)  
   
-1. Pomocí nástroje HttpCfg. exe navažte certifikát SSL s portem v počítači. Další informace najdete v tématu [Postup: Konfigurace portu s certifikátem SSL](how-to-configure-a-port-with-an-ssl-certificate.md).  
+1. Pomocí nástroje HttpCfg.exe navažte certifikát SSL s portem v počítači. Další informace najdete v tématu [Postup: Konfigurace portu s certifikátem SSL](how-to-configure-a-port-with-an-ssl-certificate.md).  
   
 2. Vytvořte instanci <xref:System.ServiceModel.WSHttpBinding> třídy a nastavte <xref:System.ServiceModel.WSHttpSecurity.Mode%2A> vlastnost na <xref:System.ServiceModel.SecurityMode.TransportWithMessageCredential> .  
   

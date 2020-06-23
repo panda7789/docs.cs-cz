@@ -1,15 +1,16 @@
 ---
 title: <wsHttpBinding>
+description: Definuje zabezpečenou, spolehlivou a interoperabilní vazbu HTTP vhodnou pro neduplexní kontrakty služeb, které implementují zasílání zpráv WS-Reliable a WS-Security.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - wsHttpBinding Element
 ms.assetid: 0eee8ced-ad68-427d-b95a-97260e98deed
-ms.openlocfilehash: a71ad2a2279eabbcf917df58d7bedec0e728f9e5
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: d603f699145622cb1b70ecf99ea542572e841eac
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "74140389"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85243981"
 ---
 # \<wsHttpBinding>
 Definuje bezpečnou, spolehlivou a interoperabilní vazbu, která je vhodná pro neduplexní kontrakty služeb. Vazba implementuje následující specifikace: WS-Reliable Messaging pro spolehlivost a WS-Security pro zabezpečení a ověřování zpráv. Přenos je HTTP a kódování zprávy je kódování text/XML.  
@@ -19,7 +20,7 @@ Definuje bezpečnou, spolehlivou a interoperabilní vazbu, která je vhodná pro
 &nbsp;&nbsp;&nbsp;&nbsp;[**\<bindings>**](bindings.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<wsHttpBinding>**  
   
-## <a name="syntax"></a>Syntaxe  
+## <a name="syntax"></a>Syntax  
   
 ```xml  
 <wsHttpBinding>

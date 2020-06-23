@@ -1,5 +1,6 @@
 ---
-title: Pole CoreResponseData.m_StatusCode
+title: CoreResponseData. m_StatusCode – pole
+description: Přečtěte si o poli CoreResponseData. m_StatusCode v .NET. Pole je HttpStatusCode typ, který obsahuje stav odpovědi HTTP.
 ms.date: 01/29/2018
 topic_type:
 - apiref
@@ -10,32 +11,32 @@ api_location:
 api_type:
 - Assembly
 author: stevewhims
-ms.openlocfilehash: dfed9a748e959f0f751408566c7cbb4d2fa13e3c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 05950290bde96511432941ce679e663126878663
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79156070"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84989772"
 ---
-# <a name="coreresponsedatam_statuscode-field"></a>Pole StatusCode\_coreResponseData.m
+# <a name="coreresponsedatam_statuscode-field"></a>CoreResponseData. m \_ StatusCode – pole
 
-`CoreResponseData.m_StatusCode`je <xref:System.Net.HttpStatusCode> obsahující stav odpovědi.
+`CoreResponseData.m_StatusCode`<xref:System.Net.HttpStatusCode>obsahuje stav odpovědi.
 
-## <a name="syntax"></a>Syntaxe
+## <a name="syntax"></a>Syntax
   
 ```csharp
 public HttpStatusCode m_StatusCode
 ```
 
 > [!WARNING]
-> Toto rozhraní API není určen pro použití přímo ve vašem kódu. Místo toho byste <xref:System.Diagnostics.DiagnosticSource> měli použít připojit síťový kód. Viz [DiagnosticSource Uživatelská příručka](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/DiagnosticSourceUsersGuide.md).
+> Toto rozhraní API není určeno k použití přímo v kódu. Místo toho byste měli použít <xref:System.Diagnostics.DiagnosticSource> k zavěšení síťového kódu. Viz [uživatelská příručka pro DiagnosticSource](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/DiagnosticSourceUsersGuide.md).
 >
-> Společnost Microsoft nepodporuje použití této třídy v produkční aplikaci za žádných okolností.
+> Společnost Microsoft v žádné situaci nepodporuje použití této třídy v produkční aplikaci.
 
 ## <a name="requirements"></a>Požadavky
 
 **Obor názvů:**<xref:System.Net>
 
-**Sestava:** Systém (v souboru System.dll)
+**Sestavení:** Systém (v System.dll)
 
-**Verze rozhraní .NET Framework:** K dispozici od 2.0.
+**Verze .NET Framework:** K dispozici od verze 2,0.

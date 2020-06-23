@@ -1,5 +1,6 @@
 ---
 title: Používání třídy XmlSerializer
+description: Seznamte se s objektem XmlSerializer, který služba WCF používá k serializaci dat ve vaší aplikaci do formátu XML, který se přenáší mezi klienty a službami.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - XmlSerializer [WCF], using
 ms.assetid: c680602d-39d3-44f1-bf22-8e6654ad5069
-ms.openlocfilehash: 2ef2d0eefb571f64040fabd16fd65fdfde7a626d
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: f7473de3f34ba543b4fabfe93167ea267f16dda5
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600202"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246376"
 ---
 # <a name="using-the-xmlserializer-class"></a>Používání třídy XmlSerializer
 
@@ -40,7 +41,7 @@ Rozhraní <xref:System.Runtime.Serialization.DataContractSerializer> , které se
 
 WCF podporuje také <xref:System.Xml.Serialization.XmlSerializer> třídu. <xref:System.Xml.Serialization.XmlSerializer>Třída není jedinečná pro WCF. Je to stejný Serializační modul, který používají webové služby ASP.NET. <xref:System.Xml.Serialization.XmlSerializer>Třída podporuje mnohem užší sadu typů než <xref:System.Runtime.Serialization.DataContractSerializer> třídy, ale umožňuje mnohem větší kontrolu nad výsledným XML a podporuje mnohem více ve standardu XSD (XML Schema Definition Language). Nevyžaduje také žádné deklarativní atributy pro Serializovatelné typy. Další informace naleznete v tématu serializace XML v dokumentaci .NET Framework. <xref:System.Xml.Serialization.XmlSerializer>Třída nepodporuje typy kontraktů dat.
 
-Při použití Svcutil. exe nebo funkce **Přidat odkaz na službu** v aplikaci Visual Studio k vygenerování kódu klienta pro službu třetí strany nebo pro přístup k schématu třetí strany se pro vás automaticky vybere vhodný serializátor. Pokud schéma není kompatibilní s nástrojem <xref:System.Runtime.Serialization.DataContractSerializer> , <xref:System.Xml.Serialization.XmlSerializer> je vybrána možnost.
+Při použití Svcutil.exe nebo funkce **Přidat odkaz na službu** v aplikaci Visual Studio k vygenerování kódu klienta pro službu třetí strany nebo pro přístup k schématu třetí strany je pro vás automaticky vybrán vhodný serializátor. Pokud schéma není kompatibilní s nástrojem <xref:System.Runtime.Serialization.DataContractSerializer> , <xref:System.Xml.Serialization.XmlSerializer> je vybrána možnost.
 
 ## <a name="manually-switching-to-the-xmlserializer"></a>Ruční přepnutí na XmlSerializer
 
@@ -73,7 +74,7 @@ I když <xref:System.Runtime.Serialization.DataContractSerializer> je třída v�
 
 Serializátor použitý pro službu je nedílnou součástí kontraktu a nedá se změnit výběrem jiné vazby nebo změnou dalších nastavení konfigurace.
 
-Další důležité požadavky na zabezpečení se vztahují na <xref:System.Xml.Serialization.XmlSerializer> třídu. Nejprve důrazně doporučujeme, aby všechny aplikace WCF, které tuto třídu používají, byly <xref:System.Xml.Serialization.XmlSerializer> podepsány klíčem, který je chráněn před zveřejněním. Toto doporučení platí v případě, že je proveden ruční přepínač na, <xref:System.Xml.Serialization.XmlSerializer> a když je proveden automatický přepínač (pomocí Svcutil. exe, přidat odkaz na službu nebo podobný nástroj). Důvodem je, že <xref:System.Xml.Serialization.XmlSerializer> Serializační modul podporuje načítání *předem generovaných sestavení serializace* , pokud jsou podepsány stejným klíčem jako aplikace. Nepodepsaná aplikace je zcela nechráněná proti škodlivému sestavení, které odpovídá očekávanému názvu předem generovaného sestavení serializace, které je umístěno ve složce aplikace nebo v globální mezipaměti sestavení (GAC). Před provedením této akce musí útočník nejprve získat přístup pro zápis do jednoho z těchto dvou umístění.
+Další důležité požadavky na zabezpečení se vztahují na <xref:System.Xml.Serialization.XmlSerializer> třídu. Nejprve důrazně doporučujeme, aby všechny aplikace WCF, které tuto třídu používají, byly <xref:System.Xml.Serialization.XmlSerializer> podepsány klíčem, který je chráněn před zveřejněním. Toto doporučení platí v případě, že je proveden ruční přepínač na, <xref:System.Xml.Serialization.XmlSerializer> a když je proveden automatický přepínač (například Svcutil.exe, přidat odkaz na službu nebo podobný nástroj). Důvodem je, že <xref:System.Xml.Serialization.XmlSerializer> Serializační modul podporuje načítání *předem generovaných sestavení serializace* , pokud jsou podepsány stejným klíčem jako aplikace. Nepodepsaná aplikace je zcela nechráněná proti škodlivému sestavení, které odpovídá očekávanému názvu předem generovaného sestavení serializace, které je umístěno ve složce aplikace nebo v globální mezipaměti sestavení (GAC). Před provedením této akce musí útočník nejprve získat přístup pro zápis do jednoho z těchto dvou umístění.
 
 Jiná hrozba, která existuje pokaždé, když použijete <xref:System.Xml.Serialization.XmlSerializer> , souvisí s přístupem k zápisu do dočasné složky systému. <xref:System.Xml.Serialization.XmlSerializer>Serializační modul vytvoří a použije dočasná *sestavení serializace* v této složce. Měli byste si uvědomit, že každý proces s přístupem pro zápis do dočasné složky může přepsat tato sestavení serializace škodlivým kódem.
 
@@ -173,9 +174,9 @@ Při importu schématu vygenerovaného z `IXmlSerializable` typů existuje něko
 
 - Vygenerované schéma může být platné schéma kontraktu dat, jak je popsáno v tématu [referenční informace schématu kontraktu dat](data-contract-schema-reference.md). V takovém případě se schéma dá importovat jako běžné a jsou vygenerované běžné typy kontraktů dat.
 
-- Vygenerované schéma nesmí být platným schématem kontraktu dat. Například metoda poskytovatele schématu může generovat schéma, které zahrnuje atributy XML, které nejsou podporovány v modelu kontraktu dat. V takovém případě můžete schéma importovat jako `IXmlSerializable` typy. Tento režim importu není ve výchozím nastavení zapnutý, ale dá se snadno povolit – například s `/importXmlTypes` přepínačem příkazového řádku, který se nachází v nástroji pro podporu [metadat ServiceModel (Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md). Tato informace je podrobněji popsána v tématu [Import schématu pro generování tříd](importing-schema-to-generate-classes.md). Všimněte si, že je nutné pracovat přímo s XML pro vaše instance typu. Je také vhodné zvážit použití jiné technologie serializace, která podporuje širší škálu schématu – viz téma o použití `XmlSerializer` .
+- Vygenerované schéma nesmí být platným schématem kontraktu dat. Například metoda poskytovatele schématu může generovat schéma, které zahrnuje atributy XML, které nejsou podporovány v modelu kontraktu dat. V takovém případě můžete schéma importovat jako `IXmlSerializable` typy. Tento režim importu není ve výchozím nastavení zapnutý, ale dá se snadno povolit – například s `/importXmlTypes` přepínačem příkazového řádku pro nástroj pro dokládání [metadat (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md). Tato informace je podrobněji popsána v tématu [Import schématu pro generování tříd](importing-schema-to-generate-classes.md). Všimněte si, že je nutné pracovat přímo s XML pro vaše instance typu. Je také vhodné zvážit použití jiné technologie serializace, která podporuje širší škálu schématu – viz téma o použití `XmlSerializer` .
 
-- Můžete chtít znovu použít stávající `IXmlSerializable` typy na proxy místo generování nových. V tomto případě lze pomocí odkazovaného typu, který je popsán v tématu Import schématu pro generování typů, použít k označení typu pro opakované použití. To odpovídá použití `/reference` přepínače na Svcutil. exe, který určuje sestavení, které obsahuje typy pro opakované použití.
+- Můžete chtít znovu použít stávající `IXmlSerializable` typy na proxy místo generování nových. V tomto případě lze pomocí odkazovaného typu, který je popsán v tématu Import schématu pro generování typů, použít k označení typu pro opakované použití. To odpovídá použití `/reference` přepínače na svcutil.exe, který určuje sestavení, které obsahuje typy pro opakované použití.
 
 ### <a name="xmlserializer-legacy-behavior"></a>Chování ve starších verzích XmlSerializer
 

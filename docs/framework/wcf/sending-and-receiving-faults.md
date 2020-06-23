@@ -1,5 +1,6 @@
 ---
 title: Chyby odesílání a přijímání
+description: Přečtěte si, jak může služba nebo duplexní klient odesílat chyby protokolu SOAP při výskytu chybového stavu a způsobu, jakým aplikace klienta nebo služby tyto chyby zpracovává.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - handling faults [WCF], sending
 ms.assetid: 7be6fb96-ce2a-450b-aebe-f932c6a4bc5d
-ms.openlocfilehash: dc9dcb5d8e36984d1e5a2e5c5124e74509de7f3d
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 23f63fde2755a29cd545d3aefe699cad8dbecb3b
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72320218"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85244319"
 ---
 # <a name="sending-and-receiving-faults"></a>Chyby odesílání a přijímání
 
@@ -20,33 +21,33 @@ Chyby protokolu SOAP vyjadřují informace chybové podmínky ze služby kliento
 
 ## <a name="sending-soap-faults"></a>Odesílání chyb protokolu SOAP
 
-Deklarované chyby protokolu SOAP jsou ty, ve kterých operace má <xref:System.ServiceModel.FaultContractAttribute?displayProperty=nameWithType>, která určuje vlastní typ chyby protokolu SOAP. Nedeklarované chyby protokolu SOAP jsou ty, které nejsou ve kontraktu pro operaci zadané.
+Deklarované chyby protokolu SOAP jsou ty, ve kterých operace má a <xref:System.ServiceModel.FaultContractAttribute?displayProperty=nameWithType> Určuje vlastní typ chyby SOAP. Nedeklarované chyby protokolu SOAP jsou ty, které nejsou ve kontraktu pro operaci zadané.
 
 ### <a name="sending-declared-faults"></a>Odesílání deklarovaných chyb
 
-Chcete-li odeslat deklarovanou chybu protokolu SOAP, zjistěte chybový stav, pro který je chyba protokolu SOAP vhodná, a vyvolejte novou <xref:System.ServiceModel.FaultException%601?displayProperty=nameWithType>, kde je parametr typu novým objektem typu určeného v <xref:System.ServiceModel.FaultContractAttribute> pro tuto operaci. Následující příklad kódu ukazuje použití <xref:System.ServiceModel.FaultContractAttribute> k určení, že operace `SampleMethod` může vracet chybu protokolu SOAP s typem podrobností `GreetingFault`.
+Chcete-li odeslat deklarovanou chybu protokolu SOAP, zjistěte chybový stav, pro který je chyba protokolu SOAP vhodná, a vyvolejte nový <xref:System.ServiceModel.FaultException%601?displayProperty=nameWithType> , kde parametr typu je nový objekt typu určeného v poli <xref:System.ServiceModel.FaultContractAttribute> pro tuto operaci. Následující příklad kódu ukazuje použití <xref:System.ServiceModel.FaultContractAttribute> pro určení, že `SampleMethod` operace může vracet chybu protokolu SOAP s typem podrobností `GreetingFault` .
 
 [!code-csharp[FaultContractAttribute#4](../../../samples/snippets/csharp/VS_Snippets_CFX/faultcontractattribute/cs/services.cs#4)]
 [!code-vb[FaultContractAttribute#4](../../../samples/snippets/visualbasic/VS_Snippets_CFX/faultcontractattribute/vb/services.vb#4)]
 
-Chcete-li klientovi předat informace o chybě `GreetingFault`, Zachyťte příslušný chybový stav a vyvolejte nové <xref:System.ServiceModel.FaultException%601?displayProperty=nameWithType> typu `GreetingFault` s novým objektem `GreetingFault` jako argument, jak je uvedeno v následujícím příkladu kódu. Pokud klient je klientská aplikace WCF, dojde k tomu jako spravovaná výjimka, kde typ je <xref:System.ServiceModel.FaultException%601?displayProperty=nameWithType> typu `GreetingFault`.
+Chcete-li předat `GreetingFault` informace o chybě klientovi, Zachyťte příslušný chybový stav a vyvolejte nový <xref:System.ServiceModel.FaultException%601?displayProperty=nameWithType> typ `GreetingFault` s novým `GreetingFault` objektem jako argument, jak je uvedeno v následujícím příkladu kódu. Pokud klient je klientská aplikace WCF, dojde k tomu jako spravovaná výjimka, kde typ je <xref:System.ServiceModel.FaultException%601?displayProperty=nameWithType> typu `GreetingFault` .
 
 [!code-csharp[FaultContractAttribute#5](../../../samples/snippets/csharp/VS_Snippets_CFX/faultcontractattribute/cs/services.cs#5)]
 [!code-vb[FaultContractAttribute#5](../../../samples/snippets/visualbasic/VS_Snippets_CFX/faultcontractattribute/vb/services.vb#5)]
 
 ### <a name="sending-undeclared-faults"></a>Odesílání nedeklarovaných chyb
 
-Odesílání nedeklarovaných chyb může být velmi užitečné pro rychlé diagnostikování a ladění problémů v aplikacích WCF, ale jeho užitečnost jako ladicí nástroj je omezený. Obecně platí, že při ladění doporučujeme použít vlastnost <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType>. Když nastavíte tuto hodnotu na true, klienti budou mít takové chyby jako <xref:System.ServiceModel.FaultException%601> výjimek typu <xref:System.ServiceModel.ExceptionDetail>.
+Odesílání nedeklarovaných chyb může být velmi užitečné pro rychlé diagnostikování a ladění problémů v aplikacích WCF, ale jeho užitečnost jako ladicí nástroj je omezený. Obecně platí, že při ladění doporučujeme použít <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> vlastnost. Když nastavíte tuto hodnotu na true, klienti budou mít takové chyby jako <xref:System.ServiceModel.FaultException%601> výjimky typu <xref:System.ServiceModel.ExceptionDetail> .
 
 > [!IMPORTANT]
-> Vzhledem k tomu, že spravované výjimky mohou vystavovat interní informace o aplikaci, nastavení <xref:System.ServiceModel.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> nebo <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> na `true` může povolit klientům WCF získat informace o výjimkách interních operací služby, včetně identifikovatelných osobních údajů nebo jiných citlivých. informace.
+> Vzhledem k tomu, že spravované výjimky mohou vystavovat interní informace o aplikaci, nastavení <xref:System.ServiceModel.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> nebo <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> `true` může povolit klientům WCF získat informace o výjimkách interních operací služby, včetně identifikovatelných osobních údajů nebo jiných citlivých informací.
 >
-> Proto doporučujeme nastavit <xref:System.ServiceModel.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> nebo <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> na `true` jenom jako dočasné ladění aplikace služby. Kromě toho WSDL pro metodu, která vrací neošetřené spravované výjimky tímto způsobem, neobsahuje kontrakt pro <xref:System.ServiceModel.FaultException%601> typu <xref:System.ServiceModel.ExceptionDetail>. Aby klienti mohli správně získat informace o ladění, musí očekávat neznámou chybu SOAP (vrácená klientům WCF jako objekty <xref:System.ServiceModel.FaultException?displayProperty=nameWithType>).
+> Proto se nastavení <xref:System.ServiceModel.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> nebo <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> na `true` dá doporučit jenom jako způsob dočasného ladění aplikace služby. Kromě toho WSDL pro metodu, která vrací neošetřené spravované výjimky tímto způsobem, neobsahuje kontrakt pro <xref:System.ServiceModel.FaultException%601> typ <xref:System.ServiceModel.ExceptionDetail> . <xref:System.ServiceModel.FaultException?displayProperty=nameWithType>Aby klienti mohli správně získat informace o ladění, musí očekávat neznámou chybu SOAP (vrácený klientům WCF jako objekty).
 
-Chcete-li odeslat nedeklarovanou chybu protokolu SOAP, vyvolejte objekt <xref:System.ServiceModel.FaultException?displayProperty=nameWithType> (tj. není to obecný typ <xref:System.ServiceModel.FaultException%601>) a předejte řetězec konstruktoru. Tato služba je vystavena klientským aplikacím WCF jako vyvolaná výjimka <xref:System.ServiceModel.FaultException?displayProperty=nameWithType>, kde je řetězec k dispozici voláním metody <xref:System.ServiceModel.FaultException%601.ToString%2A?displayProperty=nameWithType>.
+Chcete-li odeslat nedeklarovanou chybu protokolu SOAP, vyvolejte <xref:System.ServiceModel.FaultException?displayProperty=nameWithType> objekt (tj. ne obecný typ <xref:System.ServiceModel.FaultException%601> ) a předejte řetězec konstruktoru. To je zpřístupněno klientským aplikacím WCF jako vyvolaná <xref:System.ServiceModel.FaultException?displayProperty=nameWithType> výjimka, kde je řetězec k dispozici voláním <xref:System.ServiceModel.FaultException%601.ToString%2A?displayProperty=nameWithType> metody.
 
 > [!NOTE]
-> Pokud deklarujete chybu SOAP typu String a potom ji vyvolejte ve vaší službě jako <xref:System.ServiceModel.FaultException%601>, kde parametr typu je <xref:System.String?displayProperty=nameWithType>, hodnota řetězce je přiřazena vlastnosti <xref:System.ServiceModel.FaultException%601.Detail%2A?displayProperty=nameWithType> a není k dispozici od <xref:System.ServiceModel.FaultException%601.ToString%2A?displayProperty=nameWithType>.
+> Pokud deklarujete chybu SOAP typu String a potom ji vyvoláte ve vaší službě jako <xref:System.ServiceModel.FaultException%601> parametr typu je <xref:System.String?displayProperty=nameWithType> hodnota řetězce přiřazena <xref:System.ServiceModel.FaultException%601.Detail%2A?displayProperty=nameWithType> vlastnosti a není k dispozici z <xref:System.ServiceModel.FaultException%601.ToString%2A?displayProperty=nameWithType> .
 
 ## <a name="handling-faults"></a>Zpracování chyb
 
@@ -56,27 +57,27 @@ V klientech WCF jsou chyby protokolu SOAP, ke kterým došlo během komunikace, 
 
 - <xref:System.ServiceModel.CommunicationException>
 
-objekty <xref:System.TimeoutException> jsou vyvolány, pokud operace překročí zadané časové období.
+<xref:System.TimeoutException>objekty jsou vyvolány, když operace překročí zadané časové období.
 
-objekty <xref:System.ServiceModel.CommunicationException> jsou vyvolány v případě, že dojde k určité opravitelné chybě komunikace v rámci služby nebo klienta.
+<xref:System.ServiceModel.CommunicationException>objekty jsou vyvolány v případě, že dojde k určité opravitelné chybě komunikace v rámci služby nebo klienta.
 
-Třída <xref:System.ServiceModel.CommunicationException> má dva důležité odvozené typy, <xref:System.ServiceModel.FaultException> a obecný typ <xref:System.ServiceModel.FaultException%601>.
+<xref:System.ServiceModel.CommunicationException>Třída má dva důležité odvozené typy <xref:System.ServiceModel.FaultException> a obecný <xref:System.ServiceModel.FaultException%601> typ.
 
-<xref:System.ServiceModel.FaultException> výjimky jsou vyvolány, pokud naslouchací proces obdrží chybu, která není očekávána nebo určena v kontraktu operace; k tomu obvykle dochází, když se aplikace ladí a služba má vlastnost <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> nastavenou na `true`.
+<xref:System.ServiceModel.FaultException>výjimky jsou vyvolány, když naslouchací proces obdrží chybu, která není očekávána nebo určena v kontraktu operace; obvykle k tomu dochází, když je aplikace Laděna a služba má <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> vlastnost nastavenou na `true` .
 
-<xref:System.ServiceModel.FaultException%601> výjimky jsou vyvolány v klientovi, když je v reakci na obousměrnou operaci přijata chyba, která je zadána v kontraktu operace (to znamená, že metoda s atributem <xref:System.ServiceModel.OperationContractAttribute> s atributem <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> nastaveným na `false`).
-
-> [!NOTE]
-> Pokud má služba WCF vlastnost <xref:System.ServiceModel.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> nebo <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> nastavenou na `true`, klient se nachází jako nedeklarovaný <xref:System.ServiceModel.FaultException%601> typu <xref:System.ServiceModel.ExceptionDetail>. Klienti mohou buď zachytit tuto konkrétní chybu, nebo zpracovat chybu v bloku catch pro <xref:System.ServiceModel.FaultException>.
-
-Pro klienty a služby jsou obvykle důležité výjimky <xref:System.ServiceModel.FaultException%601>, <xref:System.TimeoutException> a <xref:System.ServiceModel.CommunicationException>.
+<xref:System.ServiceModel.FaultException%601>výjimky jsou vyvolány v klientovi, pokud je v reakci na obousměrnou operaci přijata chyba, která je zadána v kontraktu operace (tj. metodou s <xref:System.ServiceModel.OperationContractAttribute> atributem <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> nastaveným na hodnotu `false` ).
 
 > [!NOTE]
-> K dalším výjimkám samozřejmě dochází. Neočekávané výjimky zahrnují závažná selhání jako <xref:System.OutOfMemoryException?displayProperty=nameWithType>; obvykle by aplikace neměly tyto metody zachytit.
+> Pokud má služba WCF <xref:System.ServiceModel.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> vlastnost nebo nastavenou na `true` klientské prostředí, jedná se o nedeklaraci <xref:System.ServiceModel.FaultException%601> typu <xref:System.ServiceModel.ExceptionDetail> . Klienti mohou buď zachytit tuto konkrétní chybu, nebo zpracovat chybu v bloku catch pro <xref:System.ServiceModel.FaultException> .
+
+<xref:System.ServiceModel.FaultException%601> <xref:System.TimeoutException> <xref:System.ServiceModel.CommunicationException> Pro klienty a služby jsou typicky důležité pouze výjimky, a.
+
+> [!NOTE]
+> K dalším výjimkám samozřejmě dochází. Neočekávané výjimky zahrnují závažná selhání <xref:System.OutOfMemoryException?displayProperty=nameWithType> , jako je, obvykle by aplikace neměly tyto metody zachytit.
 
 ### <a name="catch-fault-exceptions-in-the-correct-order"></a>Zachytit výjimky chyb ve správném pořadí
 
-Vzhledem k tomu, že <xref:System.ServiceModel.FaultException%601> je odvozen z <xref:System.ServiceModel.FaultException> a <xref:System.ServiceModel.FaultException> je odvozeno od <xref:System.ServiceModel.CommunicationException>, je důležité zachytit tyto výjimky ve správném pořadí. Pokud například máte blok try/catch, ve kterém jste nejprve zachytili <xref:System.ServiceModel.CommunicationException>, jsou zde zpracovány všechny zadané a neurčené chyby protokolu SOAP; žádné následné bloky catch pro zpracování vlastní výjimky <xref:System.ServiceModel.FaultException%601> nejsou nikdy vyvolány.
+Vzhledem <xref:System.ServiceModel.FaultException%601> k tomu, že jsou odvozeny z <xref:System.ServiceModel.FaultException> a jsou <xref:System.ServiceModel.FaultException> odvozeny z <xref:System.ServiceModel.CommunicationException> , je důležité zachytit tyto výjimky ve správném pořadí. Pokud například máte blok try/catch, ve kterém jste nejprve zachytili <xref:System.ServiceModel.CommunicationException> , všechny zadané a nespecifikované chyby SOAP jsou zpracovávány. jakékoli následné bloky catch pro zpracování vlastní <xref:System.ServiceModel.FaultException%601> výjimky nejsou nikdy vyvolány.
 
 Pamatujte, že jedna operace může vracet libovolný počet zadaných chyb. Každá chyba je jedinečného typu a musí se zpracovat samostatně.
 
@@ -90,9 +91,9 @@ Kanály klientského objektu jsou obvykle uzavřeny jedním z následujících z
 
 - Při recyklování objektu klienta služby WCF.
 
-- Když klientská aplikace volá <xref:System.ServiceModel.ClientBase%601.Close%2A?displayProperty=nameWithType>.
+- Když klientská aplikace volá <xref:System.ServiceModel.ClientBase%601.Close%2A?displayProperty=nameWithType> .
 
-- Když klientská aplikace volá <xref:System.ServiceModel.ICommunicationObject.Close%2A?displayProperty=nameWithType>.
+- Když klientská aplikace volá <xref:System.ServiceModel.ICommunicationObject.Close%2A?displayProperty=nameWithType> .
 
 - Když klientská aplikace zavolá operaci, která je ukončující operací pro relaci.
 
@@ -107,15 +108,15 @@ Pokud chyba předává informace o chybě specifické pro určitou operaci a je 
 Následující příklad kódu ukazuje, jak zpracovat výjimky chyb protokolu SOAP v základní klientské aplikaci, včetně deklarované chyby a nedeklarované chyby.
 
 > [!NOTE]
-> Tento vzorový kód nepoužívá konstrukci `using`. Vzhledem k tomu, že uzavírací kanály můžou vyvolat výjimky, doporučuje se nejprve vytvořit klienta WCF a pak otevřít, použít a zavřít klienta WCF ve stejném bloku try. Podrobnosti najdete v tématu [Přehled klientů WCF](wcf-client-overview.md) a [použití funkcí zavřít a přerušit k vydání prostředků klienta WCF](./samples/use-close-abort-release-wcf-client-resources.md).
+> Tento vzorový kód nepoužívá `using` konstrukci. Vzhledem k tomu, že uzavírací kanály můžou vyvolat výjimky, doporučuje se nejprve vytvořit klienta WCF a pak otevřít, použít a zavřít klienta WCF ve stejném bloku try. Podrobnosti najdete v tématu [Přehled klientů WCF](wcf-client-overview.md) a [použití funkcí zavřít a přerušit k vydání prostředků klienta WCF](./samples/use-close-abort-release-wcf-client-resources.md).
 
 [!code-csharp[FaultContractAttribute#3](../../../samples/snippets/csharp/VS_Snippets_CFX/faultcontractattribute/cs/client.cs#3)]
 [!code-vb[FaultContractAttribute#3](../../../samples/snippets/visualbasic/VS_Snippets_CFX/faultcontractattribute/vb/client.vb#3)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.ServiceModel.FaultException>
 - <xref:System.ServiceModel.FaultException%601>
 - <xref:System.ServiceModel.CommunicationException?displayProperty=nameWithType>
 - [Očekávané výjimky](./samples/expected-exceptions.md)
-- [Použití funkcí zavřít a přerušit k vydání prostředků klienta WCF](./samples/use-close-abort-release-wcf-client-resources.md)
+- [Použití metod Close a Abort k uvolnění prostředků klienta WCF](./samples/use-close-abort-release-wcf-client-resources.md)

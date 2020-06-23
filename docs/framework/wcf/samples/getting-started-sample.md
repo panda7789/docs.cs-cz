@@ -1,5 +1,6 @@
 ---
 title: Ukázka Začínáme
+description: Naučte se implementovat typickou službu a typického klienta pomocí WCF. Tato ukázka je základem pro všechny ostatní základní ukázkové technologie.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - basic samples [WCF], getting started
 ms.assetid: 967a3d94-0261-49ff-b85a-20bb07f1af20
-ms.openlocfilehash: fc4a7e9acb15f77140732638b2982dd4a9dae9ce
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: b23be1b33f227154b916429c063ec4106229bb3c
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84575183"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246230"
 ---
 # <a name="getting-started-sample"></a>Ukázka Začínáme
 
@@ -32,7 +33,7 @@ Ukázka Začínáme ukazuje, jak implementovat typickou službu a typický klien
 
 Služba popisuje operace, které provádí v kontraktu služby, který zveřejňuje veřejně jako metadata. Služba také obsahuje kód pro implementaci operací.
 
-Klient obsahuje definici kontraktu služby a proxy třídy pro přístup ke službě. Proxy kód se generuje z metadat služby pomocí nástroje pro nástroj pro [metadata ServiceModel (Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md).
+Klient obsahuje definici kontraktu služby a proxy třídy pro přístup ke službě. Proxy kód se generuje z metadat služby pomocí [Nástroje pro nástroj pro metadata ServiceModel (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md).
 
 V systému Windows Vista je služba hostována v aktivační službě systému Windows (WAS). V systému Windows XP a Windows Server 2003 je hostovaný pomocí Internetová informační služba (IIS) a ASP.NET. Hostování služby ve službě IIS nebo služba mohla být aktivována automaticky při prvním otevření.
 
@@ -123,7 +124,7 @@ public class CalculatorService : ICalculator
 }
 ```
 
-Služba zpřístupňuje koncový bod pro komunikaci se službou, definovaný pomocí konfiguračního souboru (Web. config), jak je znázorněno v následující ukázkové konfiguraci.
+Služba zpřístupňuje koncový bod pro komunikaci se službou, definovaný pomocí konfiguračního souboru (Web.config), jak je znázorněno v následující ukázkové konfiguraci.
 
 ```xaml
 <services>
@@ -174,7 +175,7 @@ Rozhraní ve výchozím nastavení nevystavuje metadata. V takovém případě s
 </system.serviceModel>
 ```
 
-Klient komunikuje pomocí daného typu kontraktu pomocí třídy klienta, která je generována [nástrojem Svcutil. exe (Nástroj pro metadata ServiceModel)](../servicemodel-metadata-utility-tool-svcutil-exe.md). Tento vygenerovaný klient je obsažen v souboru generatedClient.cs nebo generatedClient. vb. Tento nástroj načte metadata pro danou službu a vygeneruje klienta pro použití klientskou aplikací ke komunikaci pomocí daného typu kontraktu. Hostovaná služba musí být k dispozici, aby vygenerovala klientský kód, protože služba se používá k načtení aktualizovaných metadat.
+Klient komunikuje s použitím daného typu kontraktu pomocí třídy klienta, která je generována nástrojem pro nástroj pro [metadata ServiceModel (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md). Tento vygenerovaný klient je obsažen v souboru generatedClient.cs nebo generatedClient. vb. Tento nástroj načte metadata pro danou službu a vygeneruje klienta pro použití klientskou aplikací ke komunikaci pomocí daného typu kontraktu. Hostovaná služba musí být k dispozici, aby vygenerovala klientský kód, protože služba se používá k načtení aktualizovaných metadat.
 
  Spusťte následující příkaz z příkazového řádku sady SDK v adresáři klienta pro vygenerování typovaného proxy serveru:
 
@@ -186,7 +187,7 @@ Pokud chcete vygenerovat klienta v Visual Basic zadejte z příkazového řádku
 
 `Svcutil.exe /n:"http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Samples" http://localhost/servicemodelsamples/service.svc/mex /l:vb /out:generatedClient.vb`
 
-Pomocí vygenerovaného klienta může klient získat přístup k danému koncovému bodu služby nakonfigurováním příslušné adresy a vazby. Podobně jako u služby používá klient konfigurační soubor (App. config) k určení koncového bodu, se kterým chce komunikovat. Konfigurace koncového bodu klienta se skládá z absolutní adresy koncového bodu služby, vazby a kontraktu, jak je znázorněno v následujícím příkladu.
+Pomocí vygenerovaného klienta může klient získat přístup k danému koncovému bodu služby nakonfigurováním příslušné adresy a vazby. Podobně jako u služby používá klient konfigurační soubor (App.config) k určení koncového bodu, se kterým chce komunikovat. Konfigurace koncového bodu klienta se skládá z absolutní adresy koncového bodu služby, vazby a kontraktu, jak je znázorněno v následujícím příkladu.
 
 ```xaml
 <client>

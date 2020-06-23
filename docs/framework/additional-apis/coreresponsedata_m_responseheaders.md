@@ -1,5 +1,6 @@
 ---
-title: Pole CoreResponseData.m_ResponseHeaders
+title: CoreResponseData. m_ResponseHeaders – pole
+description: Porozumět poli CoreResponseData. m_ResponseHeaders v .NET. Toto pole je typ WebHeaderCollection, který obsahuje hlavičky přidružené k odpovědi serveru.
 ms.date: 01/29/2018
 topic_type:
 - apiref
@@ -10,32 +11,32 @@ api_location:
 api_type:
 - Assembly
 author: stevewhims
-ms.openlocfilehash: 723df6dc2de978695608d106e3a01bde286fc4fe
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7c7b896193cb81e9fc9e3ec28110359003a36728
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79156100"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84989788"
 ---
-# <a name="coreresponsedatam_responseheaders-field"></a>Pole Odpovědi CoreResponseData.m\_ResponseHeaders
+# <a name="coreresponsedatam_responseheaders-field"></a>CoreResponseData. m \_ ResponseHeaders hostitele – pole
 
-`CoreResponseData.m_ResponseHeaders`<xref:System.Net.WebHeaderCollection> je záhlaví přidružená k odpovědi serveru.
+`CoreResponseData.m_ResponseHeaders`je hlavičkou, která je <xref:System.Net.WebHeaderCollection> přidružená k odpovědi serveru.
 
-## <a name="syntax"></a>Syntaxe
+## <a name="syntax"></a>Syntax
   
 ```csharp
 public WebHeaderCollection m_ResponseHeaders
 ```
 
 > [!WARNING]
-> Toto rozhraní API není určen pro použití přímo ve vašem kódu. Místo toho byste <xref:System.Diagnostics.DiagnosticSource> měli použít připojit síťový kód. Viz [DiagnosticSource Uživatelská příručka](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/DiagnosticSourceUsersGuide.md).
+> Toto rozhraní API není určeno k použití přímo v kódu. Místo toho byste měli použít <xref:System.Diagnostics.DiagnosticSource> k zavěšení síťového kódu. Viz [uživatelská příručka pro DiagnosticSource](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/DiagnosticSourceUsersGuide.md).
 >
-> Společnost Microsoft nepodporuje použití této třídy v produkční aplikaci za žádných okolností.
+> Společnost Microsoft v žádné situaci nepodporuje použití této třídy v produkční aplikaci.
 
 ## <a name="requirements"></a>Požadavky
 
 **Obor názvů:**<xref:System.Net>
 
-**Sestava:** Systém (v souboru System.dll)
+**Sestavení:** Systém (v System.dll)
 
-**Verze rozhraní .NET Framework:** K dispozici od 2.0.
+**Verze .NET Framework:** K dispozici od verze 2,0.

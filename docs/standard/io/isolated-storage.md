@@ -19,12 +19,12 @@ helpviewer_keywords:
 - data storage using isolated storage, options
 - isolation
 ms.assetid: aff939d7-9e49-46f2-a8cd-938d3020e94e
-ms.openlocfilehash: 30ed8314d8045a599207cb0195474fdfde41760d
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: 4ce32c766e7a454c1294eb38266a84602cf8e241
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84768934"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245632"
 ---
 # <a name="isolated-storage"></a>Izolované úložiště
 <a name="top"></a>Pro desktopové aplikace je izolované úložiště mechanismus pro ukládání dat, který poskytuje izolaci a bezpečnost definováním standardizovaných způsobů asociace kódu s uloženými daty. Standardizace poskytuje také další výhody. Správci mohou používat nástroje, které jsou navrženy pro manipulaci izolovaného úložiště, a nakonfigurovat kapacitu úložiště souborů, nastavit zásady zabezpečení a odstranit nepoužívaná data. Díky izolovanému úložišti váš kód pro zadání bezpečných umístění v systému souborů již nevyžaduje jedinečné cesty a data jsou chráněna před ostatními aplikacemi, které mají přístup pouze k izolovanému úložišti. Pevně zakódovaná informace, která označuje oblast umístění aplikace, není vyžadována.
@@ -105,6 +105,97 @@ Povolené využití určené dle <xref:System.Security.Permissions.IsolatedStora
 |<xref:System.Security.Permissions.IsolatedStorageContainment.AssemblyIsolationByRoamingUser>|Stejné jako `AssemblyIsolationByUser` , ale úložiště se uloží do umístění, které se bude používat při roamingu, pokud jsou povolené cestovní profily uživatelů a neuplatní se kvóty.|Stejné jako v systému `AssemblyIsolationByUser` , ale bez kvót se zvyšuje riziko útoku DOS (Denial of Service).|
 |<xref:System.Security.Permissions.IsolatedStorageContainment.AdministerIsolatedStorageByUser>|Izolace podle uživatele. Tuto úroveň oprávnění používají obvykle pouze nástroje pro správu a ladění.|Přístup s tímto oprávněním umožňuje kódu zobrazit nebo odstranit jakýkoli soubor nebo adresář v izolovaném úložišti uživatele (bez ohledu na izolaci sestavení). Mezi rizika patří mimo jiné únik informací a ztráta dat.|
 |<xref:System.Security.Permissions.IsolatedStorageContainment.UnrestrictedIsolatedStorage>|Izolace podle všech uživatelů, domén a sestavení. Tuto úroveň oprávnění používají obvykle pouze nástroje pro správu a ladění.|Toto oprávnění vytváří potenciál pro celkové vyzrazení veškerých izolovaných úložišť všech uživatelů.|
+
+## <a name="safety-of-isolated-storage-components-with-regard-to-untrusted-data"></a>Bezpečnost komponent izolovaného úložiště s ohledem na nedůvěryhodná data
+
+__Tato část se vztahuje na následující architektury:__
+
+- .NET Framework (všechny verze)
+- .NET Core 2.1 +
+- .NET 5.0 +
+
+.NET Framework a .NET Core nabízejí [izolované úložiště](/dotnet/standard/io/isolated-storage) jako mechanismus pro zachování dat pro uživatele, aplikaci nebo komponentu. Toto je starší verze součásti, která je primárně navržena pro scénáře zabezpečení přístupu ke kódu.
+
+Různá rozhraní API a nástroje izolovaného úložiště se dají použít ke čtení dat napříč hranicemi důvěryhodnosti. Například čtení dat z oboru v rámci počítače může agregovat data z jiných, případně méně důvěryhodných uživatelských účtů v počítači. Komponenty nebo aplikace, které se čtou z oborů izolovaného úložiště v rámci počítače, by měly znát důsledky čtení těchto dat.
+
+### <a name="security-sensitive-apis-which-can-read-from-the-machine-wide-scope"></a>Rozhraní API citlivá na zabezpečení, která se dají číst z rozsahu v rámci počítače
+
+Komponenty nebo aplikace, které volají některá z následujících rozhraní API načtených z oboru v rámci počítače:
+
+ * [IsolatedStorageFile. GetEnumerator](/dotnet/api/system.io.isolatedstorage.isolatedstoragefile.getenumerator), předání oboru, který obsahuje příznak IsolatedStorageScope. Machine
+ * [IsolatedStorageFile. GetMachineStoreForApplication](/dotnet/api/system.io.isolatedstorage.isolatedstoragefile.getmachinestoreforapplication)
+ * [IsolatedStorageFile. GetMachineStoreForAssembly](/dotnet/api/system.io.isolatedstorage.isolatedstoragefile.getmachinestoreforassembly)
+ * [IsolatedStorageFile. GetMachineStoreForDomain](/dotnet/api/system.io.isolatedstorage.isolatedstoragefile.getmachinestorefordomain)
+ * [IsolatedStorageFile. GetStore](/dotnet/api/system.io.isolatedstorage.isolatedstoragefile.getstore)– předání oboru, který obsahuje příznak IsolatedStorageScope. Machine
+ * [IsolatedStorageFile. Remove](/dotnet/api/system.io.isolatedstorage.isolatedstoragefile.remove), předání oboru, který obsahuje `IsolatedStorageScope.Machine` příznak
+
+[Nástroj izolovaného úložiště](/dotnet/framework/tools/storeadm-exe-isolated-storage-tool) `storeadm.exe` je ovlivněn při volání s `/machine` přepínačem, jak je znázorněno v následujícím kódu:
+
+```txt
+storeadm.exe /machine [any-other-switches]
+```
+
+Nástroj izolovaného úložiště je k dispozici jako součást sady Visual Studio a sady .NET Framework SDK.
+
+Pokud aplikace nezahrnuje volání do předchozích rozhraní API, nebo pokud pracovní postup nezahrnuje volání `storeadm.exe` tímto způsobem, tento dokument se nepoužije.
+
+### <a name="impact-in-multi-user-environments"></a>Dopad na prostředí s více uživateli
+
+Jak už bylo zmíněno dříve, dopad z těchto rozhraní API z dat zapsaných z jednoho vztahu důvěryhodnosti na zabezpečení je načtený z jiného důvěryhodného prostředí. Izolované úložiště obecně používá jedno ze tří umístění ke čtení a zápisu dat:
+
+1. `%LOCALAPPDATA%\IsolatedStorage\`Například `C:\Users\<username>\AppData\Local\IsolatedStorage\` , pro `User` obor.
+2. `%APPDATA%\IsolatedStorage\`Například `C:\Users\<username>\AppData\Roaming\IsolatedStorage\` , pro `User|Roaming` obor.
+3. `%PROGRAMDATA%\IsolatedStorage\`Například `C:\ProgramData\IsolatedStorage\` , pro `Machine` obor.
+
+První dvě umístění jsou izolovaná pro jednotlivé uživatele. Systém Windows zajišťuje, aby různé uživatelské účty ve stejném počítači nemohly přistupovat ke složkám uživatelských profilů. Pomocí dvou různých uživatelských účtů, které používají nebo ukládají, se nezobrazují `User` `User|Roaming` data ostatních a nemůžou kolidovat mezi ostatními daty.
+
+Třetí umístění se sdílí mezi všemi uživatelskými účty v počítači. Různé účty můžou číst z tohoto umístění a zapisovat do tohoto umístění a můžou si vidět data ostatních.
+
+Předchozí cesty se můžou lišit v závislosti na používané verzi Windows.
+
+Nyní uvažujte o více uživatelích se dvěma registrovanými uživateli _Mallory_ a _Bob_. Mallory má možnost přístupu ke svému adresáři profilu uživatele `C:\Users\Mallory\` a může přistupovat k umístění úložiště v rámci sdíleného počítače `C:\ProgramData\IsolatedStorage\` . Nemůže získat přístup k adresáři uživatelských profilů Bob `C:\Users\Bob\` .
+
+Pokud chce Mallory zaútočit na Bob, může zapsat data do umístění úložiště v rámci místního počítače a pak se pokusit o vlivu Bobovi na čtení z úložiště na úrovni počítače. Když Bob spustí aplikaci, která čte z tohoto obchodu, bude tato aplikace pracovat s daty, která jsou tam umístěná, ale z kontextu uživatelského účtu Boba. Zbývající část tohoto dokumentu má za cíl nejrůznější vektory útoku a kroky, které aplikace můžou udělat, aby se minimalizovala rizika těchto útoků.
+
+__Poznámka:__ Aby byl takový útok proveden, Mallory vyžaduje:
+
+* Uživatelský účet v počítači.
+* Možnost umístit soubor do známého umístění v systému souborů.
+* Znalosti, které Bob bude v určitém okamžiku, spustí aplikaci, která se pokusí číst tato data.
+
+Nejedná se o vektory hrozeb, které se vztahují na standardní desktopové prostředí s jedním uživatelem, jako jsou domácí počítače nebo firemní pracovní stanice s jedním zaměstnancem.
+
+#### <a name="elevation-of-privilege"></a>Zvýšení oprávnění
+
+K útoku __na zvýšení oprávnění__ dochází, když aplikace Bob přečte soubor Mallory a automaticky se pokusí provést určitou akci na základě obsahu této datové části. Vezměte v úvahu aplikaci, která čte obsah spouštěcího skriptu z úložiště pro celé počítače a předává je do nástroje `Process.Start` . Pokud Mallory může umístit škodlivý skript do úložiště v celém počítači, když Bob spustí svoji aplikaci:
+
+* Jeho aplikace analyzuje a spouští škodlivý skript Mallory _v kontextu profilu uživatele Boba_.
+* Mallory Gaines přístup k účtu Boba na místním počítači.
+
+#### <a name="denial-of-service"></a>Odmítnutí služby
+
+K útoku __DOS__ dojde, když aplikace Bob přečte soubor Mallory a dojde k chybě nebo jinak přestane fungovat správně. Zvažte znovu výše zmíněnou aplikaci, která se pokusí analyzovat spouštěcí skript z úložiště na úrovni počítače. Pokud Mallory může umístit soubor s poškozeným obsahem v rámci úložiště na úrovni počítače, může:
+
+* Způsobí, že aplikace Bob vyvolá v úvodní cestě výjimku.
+* Zabrání spuštění aplikace úspěšně v důsledku výjimky.
+
+Pak má Bobovi možnost spustit aplikaci v rámci vlastního uživatelského účtu.
+
+#### <a name="information-disclosure"></a>Zpřístupnění informací
+
+K __odhalení informací__ dojde v případě, že Mallory může přesvědčit Bobovi o zpřístupnění obsahu souboru, ke kterému Mallory nemá normálně přístup. Vezměte v úvahu, že Bob má tajný soubor *C:\Users\Bob\secret.txt* , který chce Mallory načíst. Zná cestu k tomuto souboru, ale nemůže ji přečíst, protože systém Windows ji zakazuje získat přístup k adresáři profilu uživatele Boba.
+
+Místo toho Mallory umístí pevný odkaz do úložiště na úrovni počítače. Jedná se o speciální druh souboru, který neobsahuje žádný obsah, ale odkazuje na jiný soubor na disku. Při pokusu o čtení souboru pevného odkazu se místo toho přečte obsah souboru, který cílí na odkaz. Po vytvoření pevného odkazu nemůže Mallory stále číst obsah souboru, protože nemá přístup k cíli ( `C:\Users\Bob\secret.txt` ) odkazu. _Bob ale má k_ tomuto souboru přístup.
+
+Když aplikace Bob načte z úložiště na celém počítači, nyní nechtěně přečte obsah svého `secret.txt` souboru, stejně jako kdyby byl samotný soubor přítomen v úložišti na celé počítače. Když se aplikace Bob ukončí, při pokusu o uložení souboru do úložiště na celé počítače se v adresáři * C:\ProgramData\IsolatedStorage zachová aktuální kopie souboru \* . Vzhledem k tomu, že tento adresář je čitelný jakýmkoli uživatelem v počítači, může Mallory nyní číst obsah souboru.
+
+### <a name="best-practices-to-defend-against-these-attacks"></a>Osvědčené postupy pro obranu před těmito útoky
+
+__Důležité informace:__ Pokud má vaše prostředí více vzájemně nedůvěryhodných __uživatelů,__ NEVOLEJTE rozhraní API `IsolatedStorageFile.GetEnumerator(IsolatedStorageScope.Machine)` ani Nevolejte nástroj `storeadm.exe /machine /list` . Obě tyto předpokládají, že provozují důvěryhodná data. Může-li útočník naplnit škodlivou datovou část v úložišti na celém počítači, může tato datová část vést k zvýšení úrovně oprávnění v kontextu uživatele, který tyto příkazy spouští.
+
+Pokud pracujete v prostředí s více uživateli, zvažte použití izolovaných funkcí úložiště, které cílí na obor _počítače_ . Pokud aplikace musí číst data z umístění v rámci počítače, raději Přečtěte data z umístění, do kterého budou zapisovat jenom účty správců. `%PROGRAMFILES%`Adresář a `HKLM` podregistr registru představují příklady umístění, která jsou zapisovatelná jenom správcům a jsou čitelná pro všechny. Data načtená z těchto umístění se proto považují za důvěryhodná.
+
+Pokud aplikace musí používat obor _počítače_ v prostředí s více uživateli, ověřte obsah všech souborů, které si přečtete z úložiště pro celé počítače. Pokud aplikace deserializace grafy objektů z těchto souborů, zvažte použití bezpečnějších serializátorů, jako je `XmlSerializer` místo nebezpečných serializátorů, jako je například `BinaryFormatter` nebo `NetDataContractSerializer` . Používejte opatrnost u hluboce vnořených grafů objektů nebo objektů, které provádějí přidělování prostředků na základě obsahu souboru.
 
 <a name="isolated_storage_locations"></a>
 

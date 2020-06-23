@@ -1,16 +1,17 @@
 ---
 title: Zabezpečení přenosu pomocí anonymního klienta
+description: Projděte si tento scénář WCF, který používá zabezpečení přenosu k ověření serveru pomocí certifikátu, který důvěřuje klientovi. Klient není ověřen.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 056653a5-384e-4a02-ae3c-1b0157d2ccb4
-ms.openlocfilehash: c3e44c87dfa70ac3a7acc5a83ac596efc22b6155
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 08cfb8c1a5581f17a251224430018764bed80b0f
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75344761"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245008"
 ---
 # <a name="transport-security-with-an-anonymous-client"></a>Zabezpečení přenosu pomocí anonymního klienta
 
@@ -22,19 +23,19 @@ Další informace o používání certifikátu se službou najdete v tématu [pr
 
 ![Použití zabezpečení přenosu u anonymního klienta](./media/8fa2e931-0cfb-4aaa-9272-91d652b85d8d.gif)
 
-|Charakteristika|Popis|
+|Charakteristika|Description|
 |--------------------|-----------------|
-|Režim zabezpečení|Doprava|
+|Režim zabezpečení|Přenos|
 |Interoperabilita|Se stávajícími webovými službami a klienty|
 |Ověřování (Server)<br /><br /> Ověřování (klient)|Ano<br /><br /> Úroveň aplikace (žádná podpora WCF)|
 |Integrita|Ano|
 |Důvěrnost|Ano|
-|Doprava|HTTPS|
+|Přenos|HTTPS|
 |Vazba|<xref:System.ServiceModel.WSHttpBinding>|
 
-## <a name="service"></a>Service
+## <a name="service"></a>Služba
 
-Následující kód a konfigurace jsou určeny ke spuštění nezávisle. Proveďte jednu z těchto akcí:
+Následující kód a konfigurace jsou určeny ke spuštění nezávisle. Proveďte jednu z následujících akcí:
 
 - Vytvořte samostatnou službu pomocí kódu bez konfigurace.
 
@@ -80,7 +81,7 @@ Následující kód nastaví stejný koncový bod pomocí konfigurace. Klient ne
 
 ## <a name="client"></a>Klient
 
-Následující kód a konfigurace jsou určeny ke spuštění nezávisle. Proveďte jednu z těchto akcí:
+Následující kód a konfigurace jsou určeny ke spuštění nezávisle. Proveďte jednu z následujících akcí:
 
 - Vytvořte samostatného klienta pomocí kódu (a kódu klienta).
 
@@ -121,7 +122,7 @@ Následující konfiguraci lze použít místo kódu k nastavení služby.
 </configuration>
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přehled zabezpečení](security-overview.md)
 - [Zabezpečení přenosu WS](../samples/ws-transport-security.md)

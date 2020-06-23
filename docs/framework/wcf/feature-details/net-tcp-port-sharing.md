@@ -1,16 +1,17 @@
 ---
 title: Sdílení portů Net.TCP
+description: Přečtěte si o protokolu založeném na protokolu TCP pro vysoce výkonné komunikace a službě, která umožňuje sdílení portů napříč několika uživatelskými procesy ve službě WCF.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - port activation [WCF]
 - port sharing [WCF]
 ms.assetid: f13692ee-a179-4439-ae72-50db9534eded
-ms.openlocfilehash: d9c6caa546d9f31f4e68b850dc1b1e750da2e93c
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: a9579c588906f509dd835d3c9b25571495d147e0
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84598759"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245242"
 ---
 # <a name="nettcp-port-sharing"></a>Sdílení portů Net.TCP
 Windows Communication Foundation (WCF) poskytuje nový síťový protokol založený na TCP (NET. TCP://) pro vysoce výkonné komunikace. Služba WCF také zavádí novou součást systému, což je služba sdílení portů Net. TCP, která umožňuje sdílení portů Net. TCP napříč několika uživatelskými procesy.  
@@ -20,9 +21,9 @@ Windows Communication Foundation (WCF) poskytuje nový síťový protokol založ
   
  Použití čísel portů k rozlišení mezi aplikacemi mělo problémy se zabezpečením. Brány firewall jsou obecně nakonfigurované pro blokování provozu TCP na všech portech s výjimkou několika známých vstupních bodů, takže nasazení aplikace, která používá nestandardní port, je často komplikované nebo dokonce znemožňuje vzhledem k přítomnosti podnikových a osobních bran firewall. Aplikace, které mohou komunikovat přes standardní, dobře známé porty, které jsou již povoleny, omezují vnější plochu pro útok. Mnohé síťové aplikace využívají protokol HTTP, protože většina bran firewall je ve výchozím nastavení nakonfigurovaná tak, aby umožňovala provoz na portu TCP 80.  
   
- Protokol HTTP. Model SYS, ve kterém je v rámci platformy Windows na jednom portu TCP multiplexovaná provoz pro mnoho různých aplikací HTTP. Tato možnost poskytuje běžný bod řízení pro Správce brány firewall a umožňuje vývojářům aplikací minimalizovat náklady na nasazení nových aplikací, které mohou využívat síť.  
+ Model HTTP.SYS, ve kterém se na platformě Windows stane provoz pro mnoho různých aplikací HTTP na jednom portu TCP. Tato možnost poskytuje běžný bod řízení pro Správce brány firewall a umožňuje vývojářům aplikací minimalizovat náklady na nasazení nových aplikací, které mohou využívat síť.  
   
- Možnost sdílení portů mezi více aplikacemi HTTP byla dlouhodobě funkcí Internetová informační služba (IIS). Ale byl jenom s úvodem protokolu HTTP. SYS (naslouchací proces protokolu HTTP v režimu jádra) se službou IIS 6,0, že tato infrastruktura byla plně zobecněna. V důsledku toho HTTP. SYS umožňuje libovolným uživatelským procesům sdílet porty TCP vyhrazené pro přenosy HTTP. Tato možnost umožňuje mnoha aplikacím HTTP souběžně ve stejném fyzickém počítači v samostatných izolovaných procesech během sdílení síťové infrastruktury vyžadované pro odesílání a příjem provozu přes port TCP 80. Služba sdílení portů Net. TCP umožňuje stejný typ sdílení portů pro aplikace NET. TCP.  
+ Možnost sdílení portů mezi více aplikacemi HTTP byla dlouhodobě funkcí Internetová informační služba (IIS). Ale byl jenom s představením HTTP.SYS (naslouchací proces protokolu HTTP v režimu jádra) se službou IIS 6,0, že tato infrastruktura byla plně zobecněná. V důsledku toho HTTP.SYS umožňuje libovolným uživatelským procesům sdílet porty TCP vyhrazené pro přenosy HTTP. Tato možnost umožňuje mnoha aplikacím HTTP souběžně ve stejném fyzickém počítači v samostatných izolovaných procesech během sdílení síťové infrastruktury vyžadované pro odesílání a příjem provozu přes port TCP 80. Služba sdílení portů Net. TCP umožňuje stejný typ sdílení portů pro aplikace NET. TCP.  
   
 ## <a name="port-sharing-architecture"></a>Architektura sdílení portů  
  Architektura sdílení portů ve službě WCF má tři hlavní součásti:  

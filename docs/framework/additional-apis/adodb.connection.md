@@ -1,5 +1,6 @@
 ---
-title: Rozhraní připojení (adodb)
+title: Rozhraní pro připojení (ADODB)
+description: Viz Referenční informace pro rozhraní připojení v rozhraní .NET. Toto rozhraní je v oboru názvů ADODB a v sestavení ADODB (v knihovně adodb.dll).
 ms.date: 03/28/2019
 topic_type:
 - apiref
@@ -9,12 +10,12 @@ api_location:
 - adodb.dll
 api_type:
 - Assembly
-ms.openlocfilehash: cb80fb7071398e07e1d86aa920fae1895ea34081
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e1889715b6cd11746056558b76e21f6226d4161f
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79156204"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84989947"
 ---
 # <a name="connection-interface"></a>Připojení rozhraní
 
@@ -28,4 +29,4 @@ public interface Connection : _Connection,
 
 **Obor názvů:**`adodb`
 
-**Sestava:** adodb (v adodb.dll)
+**Sestavení:** ADODB (v adodb.dll)

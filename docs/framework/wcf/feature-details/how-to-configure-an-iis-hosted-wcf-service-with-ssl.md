@@ -1,20 +1,21 @@
 ---
 title: 'Postupy: Konfigurace služby WCF hostované v IIS se SSL'
+description: Přečtěte si, jak nastavit službu WCF hostovanou službou IIS pro použití zabezpečení přenosu HTTP, což vyžaduje certifikát zaregistrovaný ve službě IIS.
 ms.date: 03/30/2017
 ms.assetid: df2fe31f-a4bb-4024-92ca-b74ba055e038
-ms.openlocfilehash: fb3e87021c3dce1172250f33fd302916920af74d
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 8dc4692863d93e407a122c0ba93ae38323b8b213
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597225"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245255"
 ---
 # <a name="how-to-configure-an-iis-hosted-wcf-service-with-ssl"></a>Postupy: Konfigurace služby WCF hostované v IIS se SSL
 Toto téma popisuje, jak nastavit službu WCF hostovanou službou IIS pro použití zabezpečení přenosu HTTP. Zabezpečení přenosu HTTP vyžaduje, aby byl certifikát SSL zaregistrován ve službě IIS. Pokud nemáte certifikát SSL, můžete k vygenerování testovacího certifikátu použít službu IIS. Dále musíte přidat vazbu SSL na web a nakonfigurovat vlastnosti ověřování webu. Nakonec musíte nakonfigurovat službu WCF tak, aby používala protokol HTTPS.  
   
 ### <a name="creating-a-self-signed-certificate"></a>Vytvoření certifikátu podepsaného svým držitelem  
   
-1. Otevřete Správce Internetová informační služba (inetmgr. exe) a v levém stromovém zobrazení vyberte název počítače. Na pravé straně obrazovky výběr certifikátů serveru  
+1. Otevřete Internetová informační služba Manager (inetmgr.exe) a v levém stromovém zobrazení vyberte název vašeho počítače. Na pravé straně obrazovky výběr certifikátů serveru  
   
      ![Domovská obrazovka Správce služby IIS](media/mg-inetmgrhome.jpg "mg_INetMgrHome")  
   
@@ -62,7 +63,7 @@ Toto téma popisuje, jak nastavit službu WCF hostovanou službou IIS pro použi
   
 ### <a name="configure-wcf-service-for-http-transport-security"></a>Konfigurace služby WCF pro zabezpečení přenosu HTTP  
   
-1. V souboru Web. config služby WCF Nakonfigurujte vazbu HTTP na použití zabezpečení přenosu, jak je znázorněno v následujícím kódu XML.  
+1. Ve web.config služby WCF Nakonfigurujte vazbu HTTP tak, aby používala zabezpečení přenosu, jak je znázorněno v následujícím kódu XML.  
   
     ```xml  
     <bindings>  
@@ -94,7 +95,7 @@ Toto téma popisuje, jak nastavit službu WCF hostovanou službou IIS pro použi
     ```  
   
 ## <a name="example"></a>Příklad  
- Následuje kompletní příklad souboru Web. config pro službu WCF pomocí zabezpečení přenosu HTTP.  
+ Následuje kompletní příklad souboru web.config pro službu WCF pomocí zabezpečení přenosu HTTP.  
   
 ```xml  
 <?xml version="1.0"?>  

@@ -1,5 +1,6 @@
 ---
 title: 'Postupy: Vkládání uvozovek do řetězce'
+description: Přečtěte si, jak umístit uvozovky do textového řetězce. Seznamte se také s použitím pole quote jako konstanty.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,23 +11,23 @@ helpviewer_keywords:
 - TextBox control [Windows Forms], displaying quotation marks
 - quotation marks [Windows Forms], adding to strings in text boxes
 ms.assetid: 68bdc3f3-4177-4eab-99cd-cac17a82b515
-ms.openlocfilehash: c14747291d6c41144eef97b258f852bbe14ef07d
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 08a3e2ab5662cbbf7825890ab430fddcd7b4a9ce
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76735894"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84903620"
 ---
 # <a name="how-to-put-quotation-marks-in-a-string-windows-forms"></a>Postupy: Vkládání uvozovek do řetězce (Windows Forms)
-Někdy je vhodné umístit uvozovky ("") do textového řetězce. Například:  
+Někdy je vhodné umístit uvozovky ("") do textového řetězce. Příklad:  
   
  Uvedli jsme, že poslouží jako "považovat za".  
   
- Jako alternativu můžete také použít pole <xref:Microsoft.VisualBasic.ControlChars.Quote> jako konstantu.  
+ Jako alternativu můžete také použít <xref:Microsoft.VisualBasic.ControlChars.Quote> pole jako konstantu.  
   
 ### <a name="to-place-quotation-marks-in-a-string-in-your-code"></a>Vložení uvozovek do řetězce v kódu  
   
-1. V Visual Basic vložte do řádku dvě uvozovky jako vložený znak uvozovek. V vizuálu C# a vizuálu C++vložte řídicí sekvenci \\"jako vložený znak uvozovek. Chcete-li například vytvořit předchozí řetězec, použijte následující kód.  
+1. V Visual Basic vložte do řádku dvě uvozovky jako vložený znak uvozovek. V jazyce Visual C# a Visual C++ vložte řídicí sekvenci \\ jako vložený znak uvozovek. Chcete-li například vytvořit předchozí řetězec, použijte následující kód.  
   
     ```vb  
     Private Sub InsertQuote()  
@@ -50,7 +51,7 @@ Někdy je vhodné umístit uvozovky ("") do textového řetězce. Například:
   
      -nebo-  
   
-2. Vložte znak ASCII nebo Unicode pro uvozovky. V Visual Basic použijte znak ASCII (34). V vizuálu C#použijte znak Unicode (\u0022).  
+2. Vložte znak ASCII nebo Unicode pro uvozovky. V Visual Basic použijte znak ASCII (34). V jazyce Visual C# použijte znak Unicode (\u0022).  
   
     ```vb  
     Private Sub InsertAscii()  
@@ -98,4 +99,4 @@ Někdy je vhodné umístit uvozovky ("") do textového řetězce. Například:
 - [Postupy: Vytvoření textového pole určeného jen pro čtení](how-to-create-a-read-only-text-box-windows-forms.md)
 - [Postupy: Výběr textu v ovládacím prvku Windows Forms TextBox](how-to-select-text-in-the-windows-forms-textbox-control.md)
 - [Postupy: Zobrazování více řádků v ovládacím prvku Windows Forms TextBox](how-to-view-multiple-lines-in-the-windows-forms-textbox-control.md)
-- [Ovládací prvek TextBox](textbox-control-windows-forms.md)
+- [TextBox – ovládací prvek](textbox-control-windows-forms.md)

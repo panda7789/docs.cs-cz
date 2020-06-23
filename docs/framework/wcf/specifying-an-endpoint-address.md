@@ -1,5 +1,6 @@
 ---
 title: Zadání adresy koncového bodu
+description: Přečtěte si o adrese koncového bodu, o jedné části třídy ServiceEndpoint v rámci WCF. Veškerá komunikace se službou WCF probíhá prostřednictvím svých koncových bodů.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - endpoints [WCF], addressing
 ms.assetid: ac24f5ad-9558-4298-b168-c473c68e819b
-ms.openlocfilehash: 5ec6432d2f9cc7bf8619f59bad470c6b2cb190e0
-ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
+ms.openlocfilehash: e1bd9e5a27d1bc86d2d3e04ee82221a27a4e1fa8
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83441016"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245981"
 ---
 # <a name="specifying-an-endpoint-address"></a>Zadání adresy koncového bodu
 
@@ -42,13 +43,13 @@ Při hostování se službou IIS se instance nespravuje <xref:System.ServiceMode
 
 ## <a name="defining-endpoint-addresses-in-configuration"></a>Definování adres koncových bodů v konfiguraci
 
-Pokud chcete v konfiguračním souboru definovat koncový bod, použijte element [ \< Endpoint>](../configure-apps/file-schema/wcf/endpoint-element.md) .
+Chcete-li definovat koncový bod v konfiguračním souboru, použijte [\<endpoint>](../configure-apps/file-schema/wcf/endpoint-element.md) element.
 
 [!code-xml[S_UEHelloWorld#5](./snippets/specifying-an-endpoint-address/serviceapp2.config#5)]
 
-Při <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A> volání metody (to znamená, když se hostující aplikace pokusí spustit službu), systém vyhledá element [ \<>služby](../configure-apps/file-schema/wcf/service.md) s atributem Name, který určuje "UE". Samples. HelloService ". Pokud je nalezen element [ \<>služby](../configure-apps/file-schema/wcf/service.md) , systém načte zadanou třídu a vytvoří koncové body pomocí definice koncových bodů, které jsou k dispozici v konfiguračním souboru. Tento mechanismus umožňuje načíst a spustit službu se dvěma řádky kódu a přitom zachovat informace o vazbách a adresování z vašeho kódu. Výhodou tohoto přístupu je, že tyto změny lze provést bez nutnosti opětovné kompilace nebo opětovného nasazení aplikace.
+Při <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A> volání metody (to znamená, když se hostující aplikace pokusí spustit službu), systém vyhledá [\<service>](../configure-apps/file-schema/wcf/service.md) element s atributem Name, který určuje "UE". Samples. HelloService ". Pokud [\<service>](../configure-apps/file-schema/wcf/service.md) je element nalezen, systém načte zadanou třídu a vytvoří koncové body pomocí definice koncových bodů, které jsou k dispozici v konfiguračním souboru. Tento mechanismus umožňuje načíst a spustit službu se dvěma řádky kódu a přitom zachovat informace o vazbách a adresování z vašeho kódu. Výhodou tohoto přístupu je, že tyto změny lze provést bez nutnosti opětovné kompilace nebo opětovného nasazení aplikace.
 
-Volitelné hlavičky jsou deklarovány v [ \<>hlaviček ](../configure-apps/file-schema/wcf/headers-element.md). Následuje příklad prvků, které slouží k určení koncových bodů pro službu v konfiguračním souboru, který rozlišuje dvě hlavičky: "Gold" klienti z `http://tempuri1.org/` a "standardní" klienti z `http://tempuri2.org/` . Klient volající tuto službu musí mít v konfiguračním souboru [ \<>příslušné hlavičky](../configure-apps/file-schema/wcf/headers-element.md) .
+Volitelné hlavičky jsou deklarovány v [\<headers>](../configure-apps/file-schema/wcf/headers-element.md) . Následuje příklad prvků, které slouží k určení koncových bodů pro službu v konfiguračním souboru, který rozlišuje dvě hlavičky: "Gold" klienti z `http://tempuri1.org/` a "standardní" klienti z `http://tempuri2.org/` . Klient volající tuto službu musí mít odpovídající [\<headers>](../configure-apps/file-schema/wcf/headers-element.md) konfigurační soubor.
 
 [!code-xml[S_UEHelloWorld#1](./snippets/specifying-an-endpoint-address/serviceapp.config#1)]
 
@@ -91,4 +92,4 @@ Pokud jsou koncové body explicitně poskytnuty, lze výchozí koncové body př
 - <xref:System.ServiceModel.EndpointAddress>
 - [Identita a ověřování služby](./feature-details/service-identity-and-authentication.md)
 - [Přehled vytváření koncových bodů](endpoint-creation-overview.md)
-- [Hostování](./feature-details/hosting.md)
+- [Hosting](./feature-details/hosting.md)

@@ -1,13 +1,14 @@
 ---
 title: Volání služby typu REST ze služby WCF
+description: Naučte se, jak vytvořit službu WCF pomocí správného kontextu se službou ve stylu REST vytvořením oboru a voláním služby ve stylu REST z tohoto oboru.
 ms.date: 03/30/2017
 ms.assetid: 77df81d8-7f53-4daf-8d2d-bf7996e94d5a
-ms.openlocfilehash: eaa5d08faa335740124fcf698b22d2d324cd2c54
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 15f468923cf55feb85e7aeca1a2cc5e38050d665
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84576483"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245294"
 ---
 # <a name="calling-a-rest-style-service-from-a-wcf-service"></a>Volání služby typu REST ze služby WCF
 

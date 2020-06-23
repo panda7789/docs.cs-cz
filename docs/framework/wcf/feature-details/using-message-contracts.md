@@ -1,5 +1,6 @@
 ---
 title: Použití kontraktů zpráv
+description: Naučte se, jak pomocí atributů kontraktu zpráv vytvořit kontrakt zprávy s určením struktury zprávy protokolu SOAP v WFC.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - message contracts [WCF]
 ms.assetid: 1e19c64a-ae84-4c2f-9155-91c54a77c249
-ms.openlocfilehash: 1b102b97c62df0bb8b031ded0f9165a11f8a8911
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 0a75298b50df74ddf15904af43a0eb62c5ba8496
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600267"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85244709"
 ---
 # <a name="using-message-contracts"></a>Použití kontraktů zpráv
 Obvykle při sestavování aplikací Windows Communication Foundation (WCF), vývojáři účtují téměř pozor na datové struktury a problémy serializace a nepotřebují se k tomu zabývat strukturou zpráv, ve kterých jsou data přenášena. Pro tyto aplikace je vytvoření kontraktů dat pro parametry nebo návratové hodnoty jednoduché. (Další informace najdete v tématu [určení přenos dat v kontraktech služby](specifying-data-transfer-in-service-contracts.md).)  

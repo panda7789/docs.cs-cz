@@ -1,5 +1,6 @@
 ---
-title: Událost XpsDocumentWriter._WritingCancelled (System.Windows.XPs)
+title: XpsDocumentWriter. _WritingCancelled – událost (System. Windows. XPS)
+description: Přečtěte si o události XpsDocumentWriter. _WritingCancelled, ke které dojde při zrušení operace zápisu XPS (XML Paper Specification) nebo WriteAsync v rozhraní .NET.
 ms.date: 10/17/2017
 api_location:
 - system.printing.dll
@@ -11,18 +12,18 @@ api_type:
 - Assembly
 topic_type:
 - apiref
-ms.openlocfilehash: 79f9d3c4163b05719d2296d30b87a35a4c282212
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5e07085ed3573f01acdb63962ca868debb7b49fa
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79155606"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84903490"
 ---
-# <a name="xpsdocumentwriter_writingcancelled-event"></a>XpsDocumentWriter. \_ZápisZrušená událost
+# <a name="xpsdocumentwriter_writingcancelled-event"></a>XpsDocumentWriter. \_ Událost WritingCancelled
 
-Vyvolá se <xref:System.Windows.Xps.XpsDocumentWriter.Write%2A> při <xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%2A> zrušení operace nebo operace.
+Vyvolá se při <xref:System.Windows.Xps.XpsDocumentWriter.Write%2A> <xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%2A> zrušení operace nebo.
 
-## <a name="syntax"></a>Syntaxe
+## <a name="syntax"></a>Syntax
 
 ``` csharp
 internal event WritingCancelledEventHandler _WritingCancelled
@@ -32,6 +33,6 @@ internal event WritingCancelledEventHandler _WritingCancelled
 
 **Obor názvů:**<xref:System.Windows.Xps>
 
-**Sestava:** System.Printing (v souboru system.printing.dll)
+**Sestavení:** System. Printing (v system.printing.dll)
 
-**Verze rozhraní .NET Framework:** K dispozici od 3.0
+**Verze .NET Framework:** K dispozici od od 3,0

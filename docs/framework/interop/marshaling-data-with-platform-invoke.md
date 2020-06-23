@@ -1,5 +1,6 @@
 ---
 title: Zařazování dat s voláním platformy
+description: Zařazování dat s voláním platformy v rozhraní .NET. Podívejte se na seznam datových typů používaných v rozhraních API systému Windows a ve stylu jazyka C a vyhledejte jejich ekvivalenty spravovaného typu .NET.
 ms.date: 03/20/2019
 dev_langs:
 - cpp
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - data marshaling, platform invoke
 - marshaling, platform invoke
 ms.assetid: dc5c76cf-7b12-406f-b79c-d1a023ec245d
-ms.openlocfilehash: b8c4e9d835db044912d1cbed92a14dd05e7de658
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 27045790780c1eef9537bdf7e52deb579e2b467c
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399936"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84904101"
 ---
 # <a name="marshaling-data-with-platform-invoke"></a>Zařazování dat s voláním platformy
 
@@ -23,7 +24,7 @@ Chcete-li volat funkce exportované z nespravované knihovny, aplikace .NET Fram
 
 - Nahraďte spravované datové typy pro nespravované datové typy.
 
-Dokumentaci dodanou s nespravovanou funkcí můžete použít k vytvoření ekvivalentního spravovaného prototypu použitím atributu s jeho nepovinnými poli a nahrazením spravovaných datových typů pro nespravované typy. Pokyny k použití <xref:System.Runtime.InteropServices.DllImportAttribute>naleznete v tématu [spotřebovávání nespravovaných funkcí DLL](consuming-unmanaged-dll-functions.md).
+Dokumentaci dodanou s nespravovanou funkcí můžete použít k vytvoření ekvivalentního spravovaného prototypu použitím atributu s jeho nepovinnými poli a nahrazením spravovaných datových typů pro nespravované typy. Pokyny k použití <xref:System.Runtime.InteropServices.DllImportAttribute> naleznete v tématu [spotřebovávání nespravovaných funkcí DLL](consuming-unmanaged-dll-functions.md).
 
 V této části jsou uvedeny ukázky, které ukazují, jak vytvořit prototypy spravované funkce pro předávání argumentů a přijímání návratových hodnot z funkcí exportovaných nespravovanými knihovnami. Ukázky také ukazují, kdy použít <xref:System.Runtime.InteropServices.MarshalAsAttribute> atribut a <xref:System.Runtime.InteropServices.Marshal> třídu k explicitnímu zařazování dat.
 
@@ -31,7 +32,7 @@ V této části jsou uvedeny ukázky, které ukazují, jak vytvořit prototypy s
 
 V následující tabulce jsou uvedeny datové typy používané ve funkcích rozhraní API systému Windows a ve stylu jazyka C. Mnoho nespravovaných knihoven obsahuje funkce, které tyto datové typy předají jako parametry a návratové hodnoty. Třetí sloupec uvádí odpovídající .NET Framework typ hodnoty nebo třídu, která se používá ve spravovaném kódu. V některých případech můžete nahradit typ stejné velikosti pro typ uvedený v tabulce.
 
-|Nespravovaný typ v rozhraních API systému Windows|Nespravovaný typ jazyka C|Spravovaný typ|Popis|
+|Nespravovaný typ v rozhraních API systému Windows|Nespravovaný typ jazyka C|Spravovaný typ|Description|
 |--------------------------------|-------------------------------|------------------------|-----------------|
 |`VOID`|`void`|<xref:System.Void?displayProperty=nameWithType>|Používá se pro funkci, která nevrací hodnotu.|
 |`HANDLE`|`void *`|<xref:System.IntPtr?displayProperty=nameWithType> nebo <xref:System.UIntPtr?displayProperty=nameWithType>|32 bitů v systémech Windows 32, 64 bitů v systémech Windows 64 v 16bitovém operačním systému Windows.|
@@ -57,7 +58,7 @@ Odpovídající typy v Visual Basic, C# a C++ naleznete v tématu [Úvod do knih
 
 ## <a name="pinvokelibdll"></a>PinvokeLib.dll
 
-Následující kód definuje funkce knihovny, které poskytuje PInvoke. dll. Mnoho ukázek popsaných v této části volá tuto knihovnu.
+Následující kód definuje funkce knihovny, které poskytuje Pinvoke.dll. Mnoho ukázek popsaných v této části volá tuto knihovnu.
 
 ### <a name="example"></a>Příklad
 

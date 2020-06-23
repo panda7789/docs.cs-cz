@@ -1,13 +1,14 @@
 ---
 title: Relace, vytváření instancí a souběžnost
+description: Přečtěte si o relacích, vytváření instancí a souběžnosti, způsobu jejich použití a interakcích mezi nimi v WFC.
 ms.date: 03/30/2017
 ms.assetid: 50797a3b-7678-44ed-8138-49ac1602f35b
-ms.openlocfilehash: 070e9ed25e2c0cce1309fb27e3f6a02bb01f3d2c
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 41eef5a962c702eebd6b9a34607b542ec6bbd97b
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600319"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246542"
 ---
 # <a name="sessions-instancing-and-concurrency"></a>Relace, vytváření instancí a souběžnost
 *Relace* je korelace všech zpráv posílaných mezi dvěma koncovými body. Vytváření *instancí* odkazuje na řízení životnosti uživatelem definovaných objektů služeb a jejich souvisejících <xref:System.ServiceModel.InstanceContext> objektů. *Concurrency* je termín uvedený pro řízení počtu vláken spuštěných ve <xref:System.ServiceModel.InstanceContext> stejnou dobu.  
@@ -105,7 +106,7 @@ public class CalculatorService : ICalculatorConcurrency
 |-------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|  
 |PerCall|– Chování s relačním kanálem: relace a <xref:System.ServiceModel.InstanceContext> pro každé volání.<br />– Chování s kanálem bez relace: je vyvolána výjimka.|– Chování s relačním kanálem: relace a <xref:System.ServiceModel.InstanceContext> pro každé volání.<br />– Chování s kanálem bez relace: <xref:System.ServiceModel.InstanceContext> pro každé volání.|-Chování s kanálem relace: je vyvolána výjimka.<br />– Chování s kanálem bez relace: <xref:System.ServiceModel.InstanceContext> pro každé volání.|  
 |PerSession|– Chování s relačním kanálem: relace a <xref:System.ServiceModel.InstanceContext> pro každý kanál.<br />– Chování s kanálem bez relace: je vyvolána výjimka.|– Chování s relačním kanálem: relace a <xref:System.ServiceModel.InstanceContext> pro každý kanál.<br />– Chování s kanálem bez relace: <xref:System.ServiceModel.InstanceContext> pro každé volání.|-Chování s kanálem relace: je vyvolána výjimka.<br />– Chování s kanálem bez relace: <xref:System.ServiceModel.InstanceContext> pro každé volání.|  
-|Single|– Chování s relačním kanálem: relace a jedna <xref:System.ServiceModel.InstanceContext> pro všechna volání.<br />– Chování s kanálem bez relace: je vyvolána výjimka.|– Chování s kanálem relace: relace a <xref:System.ServiceModel.InstanceContext> pro vytvořeného nebo uživatelem zadaného typu singleton.<br />– Chování s kanálem bez relace: <xref:System.ServiceModel.InstanceContext> pro vytvořeného nebo uživatelem zadaného typu singleton.|-Chování s kanálem relace: je vyvolána výjimka.<br />– Chování s kanálem bez relace: <xref:System.ServiceModel.InstanceContext> pro každý vytvořený typ singleton nebo pro uživatelem zadaný typ singleton.|  
+|Jeden|– Chování s relačním kanálem: relace a jedna <xref:System.ServiceModel.InstanceContext> pro všechna volání.<br />– Chování s kanálem bez relace: je vyvolána výjimka.|– Chování s kanálem relace: relace a <xref:System.ServiceModel.InstanceContext> pro vytvořeného nebo uživatelem zadaného typu singleton.<br />– Chování s kanálem bez relace: <xref:System.ServiceModel.InstanceContext> pro vytvořeného nebo uživatelem zadaného typu singleton.|-Chování s kanálem relace: je vyvolána výjimka.<br />– Chování s kanálem bez relace: <xref:System.ServiceModel.InstanceContext> pro každý vytvořený typ singleton nebo pro uživatelem zadaný typ singleton.|  
   
 ## <a name="see-also"></a>Viz také
 

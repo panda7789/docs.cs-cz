@@ -1,5 +1,6 @@
 ---
 title: Identita a ověřování služby
+description: Přečtěte si o identitě koncového bodu služby, hodnoty generované ze služby WSDL, kterou služba WCF používá k ověření služby.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - authentication [WCF], specifying the identity of a service
 ms.assetid: a4c8f52c-5b30-45c4-a545-63244aba82be
-ms.openlocfilehash: 6c12c3aadf53f9fddef2f0b0124994db15565cb5
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: ae217b4a2c3432321c7ef2e663922a87b82acbea
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600371"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246568"
 ---
 # <a name="service-identity-and-authentication"></a>Identita a ověřování služby
 *Identita koncového bodu* služby je hodnota generovaná z jazyka WSDL (Service Web Services Description Language). Tato hodnota se rozšíří na libovolného klienta, který se používá k ověření služby. Poté, co klient zahájí komunikaci s koncovým bodem a služba se sama ověří pro klienta, klient porovná hodnotu identity koncového bodu se skutečnou hodnotou vrácenou procesem ověřování koncového bodu. Pokud se shodují, je zajištěno, že klient kontaktoval očekávaný koncový bod služby. Tato funkce je chráněná proti *útokům phishing* tím, že brání klientovi v přesměrování na koncový bod hostovaný škodlivou službou.  
@@ -32,7 +33,7 @@ ms.locfileid: "84600371"
   
  Zpracování identity na klientovi je obdobné jako ověřování klientů ve službě. Zabezpečená služba nespustí kód, dokud nebudou pověření klienta ověřena. Podobně klient neodesílá zprávy službě, dokud nejsou ověřeny přihlašovací údaje služby na základě toho, co je v metadatech služby známo předem.  
   
- <xref:System.ServiceModel.EndpointAddress.Identity%2A>Vlastnost <xref:System.ServiceModel.EndpointAddress> třídy představuje identitu služby volanou klientem. Služba publikuje <xref:System.ServiceModel.EndpointAddress.Identity%2A> ve svých metadatech. Když vývojář klienta spustí nástroj pro dodané [metadata (Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) proti koncovému bodu služby, vygenerovaná konfigurace obsahuje hodnotu <xref:System.ServiceModel.EndpointAddress.Identity%2A> Vlastnosti služby. Infrastruktura WCF (Pokud je nakonfigurovaná s zabezpečením) ověří, že služba má zadanou identitu.  
+ <xref:System.ServiceModel.EndpointAddress.Identity%2A>Vlastnost <xref:System.ServiceModel.EndpointAddress> třídy představuje identitu služby volanou klientem. Služba publikuje <xref:System.ServiceModel.EndpointAddress.Identity%2A> ve svých metadatech. Když vývojář klienta spustí nástroj pro dodané [metadata (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) proti koncovému bodu služby, vygenerovaná konfigurace obsahuje hodnotu <xref:System.ServiceModel.EndpointAddress.Identity%2A> Vlastnosti služby. Infrastruktura WCF (Pokud je nakonfigurovaná s zabezpečením) ověří, že služba má zadanou identitu.  
   
 > [!IMPORTANT]
 > Metadata obsahují očekávanou identitu služby, proto doporučujeme, abyste metadata služby vystavili zabezpečeným způsobem, například vytvořením koncového bodu HTTPS pro službu. Další informace najdete v tématu [Postup: zabezpečení koncových bodů metadat](how-to-secure-metadata-endpoints.md).  
@@ -40,14 +41,14 @@ ms.locfileid: "84600371"
 ## <a name="identity-types"></a>Typy identit  
  Služba může poskytovat šest typů identit. Každý typ identity odpovídá prvku, který může být obsažen uvnitř `<identity>` elementu v konfiguraci. Použitý typ závisí na scénáři a požadavcích na zabezpečení služby. V následující tabulce jsou popsány jednotlivé typy identity.  
   
-|Typ identity|Popis|Typický scénář|  
+|Typ identity|Description|Typický scénář|  
 |-------------------|-----------------|----------------------|  
 |DNS (Domain Name System)|Tento prvek použijte s certifikáty X. 509 nebo účty systému Windows. Porovnává název DNS zadaný v přihlašovacích údajích s hodnotou zadanou v tomto elementu.|Kontrolu DNS umožňuje používat certifikáty s názvy DNS nebo subjektu. Pokud se certifikát vydává znovu se stejným názvem DNS nebo subjektu, je tato kontroler identity stále platná. Když se certifikát znovu vydá, získá nový klíč RSA, ale uchová stejný název DNS nebo subjektu. To znamená, že klienti nemusí aktualizovat informace o identitě služby.|  
 |Certifikát. Výchozí hodnota, pokud `ClientCredentialType` je nastavena na certifikát.|Tento prvek určuje hodnotu certifikátu X. 509 zakódovaného ve formátu base64, která se má porovnat s klientem.<br /><br /> Tento prvek použijte také při použití služby CardSpace jako přihlašovacích údajů pro ověření služby.|Tento prvek omezuje ověřování na jeden certifikát na základě jeho hodnoty kryptografického otisku. To umožňuje striktní ověřování, protože hodnoty kryptografických otisků jsou jedinečné. K tomu dochází s jednou výstrahou: Pokud se certifikát vydává znovu se stejným názvem subjektu, má také nový kryptografický otisk. Proto klienti nebudou moci ověřit službu, pokud není známý nový kryptografický otisk. Další informace o hledání kryptografického otisku certifikátu naleznete v tématu [How to: načítají se kryptografický otisk certifikátu](how-to-retrieve-the-thumbprint-of-a-certificate.md).|  
 |Odkaz na certifikát|Stejné jako dříve popsaná možnost certifikátu. Tento element však umožňuje zadat název certifikátu a umístění úložiště, ze kterého se má certifikát načíst.|Stejné jako scénář certifikátu popsaný výše.<br /><br /> Výhodou je, že umístění úložiště certifikátů se může změnit.|  
 |RSA|Tento prvek určuje hodnotu klíče RSA pro porovnání s klientem. To se podobá možnosti certifikátu, ale místo použití kryptografického otisku certifikátu se místo toho použije klíč RSA certifikátu.|Ověřování RSA umožňuje výslovně omezit ověřování na jeden certifikát založený na jeho klíči RSA. To umožňuje striktní ověřování konkrétního klíče RSA na úkor služby, která už nefunguje se stávajícími klienty, pokud se změní hodnota klíče RSA.|  
 |Hlavní název uživatele (UPN). Výchozí hodnota v případě, že `ClientCredentialType` je nastavena na hodnotu Windows a proces služby není spuštěn pod jedním ze systémových účtů.|Tento prvek určuje hlavní název uživatele (UPN), pod kterým je služba spuštěná. V části protokol a identita protokolu Kerberos [můžete přepsat identitu služby pro ověřování](../extending/overriding-the-identity-of-a-service-for-authentication.md).|Tím se zajistí, že služba bude běžet v rámci určitého uživatelského účtu systému Windows. Uživatelský účet může být buď aktuálně přihlášený uživatel, nebo služba spuštěná v rámci určitého uživatelského účtu.<br /><br /> Toto nastavení využívá zabezpečení protokolu Kerberos systému Windows, pokud je služba spuštěna pod účtem domény v prostředí služby Active Directory.|  
-|Hlavní název služby (SPN). Výchozí hodnota v případě, že `ClientCredentialType` je nastavena na hodnotu Windows a proces služby je spuštěn pod jedním ze systémových účtů – LocalService, LocalSystem nebo NetworkService.|Tento prvek určuje hlavní název služby (SPN) přidružený k účtu služby. V části protokol a identita protokolu Kerberos [můžete přepsat identitu služby pro ověřování](../extending/overriding-the-identity-of-a-service-for-authentication.md).|Tím se zajistí, že hlavní název služby (SPN) a konkrétní účet systému Windows přidružený k hlavnímu názvu služby identifikují službu.<br /><br /> K přidružení účtu počítače k uživatelskému účtu služby můžete použít nástroj Setspn. exe.<br /><br /> Toto nastavení využívá zabezpečení služby Windows Kerberos, pokud je služba spuštěna pod jedním z účtů systému nebo pod účtem domény, který má přidružený název SPN a počítač je členem domény v prostředí služby Active Directory.|  
+|Hlavní název služby (SPN). Výchozí hodnota v případě, že `ClientCredentialType` je nastavena na hodnotu Windows a proces služby je spuštěn pod jedním ze systémových účtů – LocalService, LocalSystem nebo NetworkService.|Tento prvek určuje hlavní název služby (SPN) přidružený k účtu služby. V části protokol a identita protokolu Kerberos [můžete přepsat identitu služby pro ověřování](../extending/overriding-the-identity-of-a-service-for-authentication.md).|Tím se zajistí, že hlavní název služby (SPN) a konkrétní účet systému Windows přidružený k hlavnímu názvu služby identifikují službu.<br /><br /> K přidružení účtu počítače pro uživatelský účet služby můžete použít nástroj Setspn.exe.<br /><br /> Toto nastavení využívá zabezpečení služby Windows Kerberos, pokud je služba spuštěna pod jedním z účtů systému nebo pod účtem domény, který má přidružený název SPN a počítač je členem domény v prostředí služby Active Directory.|  
   
 ## <a name="specifying-identity-at-the-service"></a>Zadání identity ve službě  
  Obvykle není nutné nastavovat identitu na službě, protože výběr typu přihlašovacích údajů klienta Určuje typ identity, která je vystavena v metadatech služby. Další informace o tom, jak přepsat nebo zadat identitu služby, najdete v tématu [přepisující identitu služby pro ověřování](../extending/overriding-the-identity-of-a-service-for-authentication.md).  
@@ -64,7 +65,7 @@ ms.locfileid: "84600371"
  [!code-vb[C_Identity#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_identity/vb/source.vb#5)]  
   
 ## <a name="specifying-identity-at-the-client"></a>Určení identity na klientovi  
- V době návrhu obvykle klientský vývojář k vygenerování konfigurace klienta používá nástroj pro dodávání [metadat (Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) . Generovaný konfigurační soubor (určený pro použití klientem) obsahuje identitu serveru. Například následující kód je vygenerován ze služby, která určuje identitu DNS, jak je znázorněno v předchozím příkladu. Všimněte si, že hodnota identity koncového bodu klienta odpovídá hodnotě služby. V takovém případě, když klient obdrží pověření Windows (Kerberos) pro službu, očekává hodnotu `contoso.com` .  
+ V době návrhu obvykle klientský vývojář k vygenerování konfigurace klienta používá nástroj pro dodávání [metadat (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) . Generovaný konfigurační soubor (určený pro použití klientem) obsahuje identitu serveru. Například následující kód je vygenerován ze služby, která určuje identitu DNS, jak je znázorněno v předchozím příkladu. Všimněte si, že hodnota identity koncového bodu klienta odpovídá hodnotě služby. V takovém případě, když klient obdrží pověření Windows (Kerberos) pro službu, očekává hodnotu `contoso.com` .  
 
  Pokud místo systému Windows služba Určuje certifikát jako typ pověření klienta, očekává se, že vlastnost DNS certifikátu bude hodnota `contoso.com` . (Nebo pokud je vlastnost DNS `null` , musí být název subjektu certifikátu `contoso.com` .)  
   

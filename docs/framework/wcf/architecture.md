@@ -1,26 +1,27 @@
 ---
 title: Architektura Windows Communication Foundation
+description: Seznamte se s hlavními vrstvami architektury Windows Communication Foundation, včetně kontraktů, modulu runtime služby, zasílání zpráv a aktivace & hostování.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Windows Communication Foundation [WCF], architecture
 - WCF [WCF], architecture
 - architecture [WCF]
 ms.assetid: a3bcb0a1-56ea-4ba6-9736-d260d90dade5
-ms.openlocfilehash: f34a05a436dd021f0d1fcc05f3a12a058123acdc
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: a07d5c4be2e36b8123e39a0a04d841797e34212b
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72320837"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245567"
 ---
 # <a name="windows-communication-foundation-architecture"></a>Architektura Windows Communication Foundation
 Následující obrázek znázorňuje hlavní vrstvy architektury Windows Communication Foundation (WCF).  
   
 ## <a name="wcf-architecture"></a>Architektura WCF  
- (./media/wcf-architecture.gif "WCF_Architecture") ![architektury WCF]  
+ ![Architektura WCF](./media/wcf-architecture.gif "WCF_Architecture")  
   
 ### <a name="contracts-and-descriptions"></a>Smlouvy a popisy  
- Smlouvy definují různé aspekty systému zpráv. Kontrakt dat popisuje všechny parametry, které tvoří každou zprávu, kterou může služba vytvořit nebo spotřebovat. Parametry zprávy jsou definovány dokumenty XSD (XML Schema Definition Language) a umožňují jakýmkoli systémům, které porozuměl XML ke zpracování dokumentů. Kontrakt zprávy definuje konkrétní části zprávy pomocí protokolů SOAP a umožňuje lepší kontrolu nad částmi zprávy, pokud interoperabilita takovou přesnost vyžaduje. Kontrakt služby určuje vlastní signatury metody služby a distribuuje se jako rozhraní v jednom z podporovaných programovacích jazyků, jako je Visual Basic nebo vizuál C#.  
+ Smlouvy definují různé aspekty systému zpráv. Kontrakt dat popisuje všechny parametry, které tvoří každou zprávu, kterou může služba vytvořit nebo spotřebovat. Parametry zprávy jsou definovány dokumenty XSD (XML Schema Definition Language) a umožňují jakýmkoli systémům, které porozuměl XML ke zpracování dokumentů. Kontrakt zprávy definuje konkrétní části zprávy pomocí protokolů SOAP a umožňuje lepší kontrolu nad částmi zprávy, pokud interoperabilita takovou přesnost vyžaduje. Kontrakt služby určuje skutečné signatury metody služby a distribuuje se jako rozhraní v jednom z podporovaných programovacích jazyků, jako je Visual Basic nebo Visual C#.  
   
  Zásady a vazby stanoví podmínky, které jsou nutné ke komunikaci se službou.  Vazba například musí (minimálně) určovat použitý přenos (například HTTP nebo TCP) a kódování. Zásady zahrnují požadavky na zabezpečení a další podmínky, které musí být splněny ke komunikaci se službou.  
   
@@ -29,7 +30,7 @@ Následující obrázek znázorňuje hlavní vrstvy architektury Windows Communi
   
  Rozšiřitelnost umožňuje přizpůsobení procesů modulu runtime. Například kontrola zprávy je zařízení pro kontrolu částí zprávy a filtrování parametrů umožňuje, aby probíhají přednastavené akce založené na filtrech pracujících v záhlavích zpráv.  
   
-### <a name="messaging"></a>Messaging  
+### <a name="messaging"></a>Zasílání zpráv  
  Vrstva zasílání zpráv se skládá z *kanálů*. Kanál je komponenta, která zpracovává zprávu nějakým způsobem, například ověřením zprávy. Sada kanálů je také známá jako *zásobník kanálů*. Kanály pracují se zprávami a záhlavími zpráv. To se liší od vrstvy runtime služby, která se primárně zabývá zpracováním obsahu těla zprávy.  
   
  Existují dva typy kanálů: přenosové kanály a kanály protokolu.  
@@ -45,7 +46,7 @@ Následující obrázek znázorňuje hlavní vrstvy architektury Windows Communi
   
  Služby je také možné *hostovat*nebo spouštět ve spustitelném souboru spravovaném externím agentem, jako je služba IIS nebo aktivační služba systému Windows (WAS). BYLO povoleno automatické aktivace aplikací WCF při nasazení v počítači se systémem. Služby je také možné spustit ručně jako spustitelné soubory (soubory. exe). Službu lze také spustit automaticky jako službu systému Windows. Komponenty modelu COM+ je také možné hostovat jako služby WCF.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Co je Windows Communication Foundation](whats-wcf.md)
 - [Základní koncepty Windows Communication Foundation](fundamental-concepts.md)

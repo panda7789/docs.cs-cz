@@ -1,13 +1,14 @@
 ---
 title: 'Vlastní kodér zpráv: Vlastní kodér textu'
+description: Pomocí této ukázky můžete implementovat vlastní kodér textových zpráv pomocí WCF. Tento kodér podporuje všechna kódování znaků podporovaná platformou pro interoperabilitu.
 ms.date: 03/30/2017
 ms.assetid: 68ff5c74-3d33-4b44-bcae-e1d2f5dea0de
-ms.openlocfilehash: b60fa2a84520ad208d435a0c9284c19b5de8e989
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 88ddc79e6cc1df654aea851cedb0e60c6fbcd017
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600604"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246269"
 ---
 # <a name="custom-message-encoder-custom-text-encoder"></a>Vlastní kodér zpráv: Vlastní kodér textu
 
@@ -214,14 +215,14 @@ CustomBinding binding = new CustomBinding(bindingElements);
 
 Jakýkoli typ, který je odvozen z, <xref:System.ServiceModel.Channels.MessageEncodingBindingElement> je zodpovědný za aktualizaci verze vazby SOAP v dokumentu WSDL vygenerovaného pro službu. To se provádí implementací `ExportEndpoint` metody na <xref:System.ServiceModel.Description.IWsdlExportExtension> rozhraní a následným úpravou vygenerovaného WSDL. V této ukázce `CustomTextMessageBindingElement` používá exportní LOGIKU WSDL z `TextMessageEncodingBindingElement` .
 
-V této ukázce je konfigurace klienta konfigurována ručně. Nemůžete použít Svcutil. exe ke generování konfigurace klienta, protože `CustomTextMessageBindingElement` neexportuje kontrolní výraz zásady pro popsání jeho chování. Obecně byste měli implementovat <xref:System.ServiceModel.Description.IPolicyExportExtension> rozhraní na vlastní element vazby pro export kontrolního výrazu vlastní zásady, který popisuje chování nebo funkci implementovanou prvkem vazby. Příklad exportu kontrolního výrazu zásady pro vlastní prvek vazby naleznete v ukázce [Transport: UDP](transport-udp.md) .
+V této ukázce je konfigurace klienta konfigurována ručně. Nemůžete použít Svcutil.exe k vygenerování konfigurace klienta, protože `CustomTextMessageBindingElement` neexportuje kontrolní výraz zásady pro popsání jeho chování. Obecně byste měli implementovat <xref:System.ServiceModel.Description.IPolicyExportExtension> rozhraní na vlastní element vazby pro export kontrolního výrazu vlastní zásady, který popisuje chování nebo funkci implementovanou prvkem vazby. Příklad exportu kontrolního výrazu zásady pro vlastní prvek vazby naleznete v ukázce [Transport: UDP](transport-udp.md) .
 
 ## <a name="message-encoding-binding-configuration-handler"></a>Obslužná rutina konfigurace vazby kódování zprávy
 V předchozí části se dozvíte, jak programově používat vlastní kodér textových zpráv. `CustomTextMessageEncodingBindingSection`Implementuje obslužnou rutinu konfigurace, která umožňuje určit použití vlastního kodéru textových zpráv v rámci konfiguračního souboru. `CustomTextMessageEncodingBindingSection`Třída je odvozena z <xref:System.ServiceModel.Configuration.BindingElementExtensionElement> třídy. `BindingElementType`Vlastnost informuje konfigurační systém typu elementu vazby, který má být pro tento oddíl vytvořen.
 
 Všechna nastavení definovaná nástrojem `CustomTextMessageBindingElement` jsou vystavena jako vlastnosti v `CustomTextMessageEncodingBindingSection` . <xref:System.Configuration.ConfigurationPropertyAttribute>Pomoc při mapování atributů elementů konfigurace na vlastnosti a nastavení výchozích hodnot, pokud atribut není nastaven. Poté, co jsou hodnoty z konfigurace načteny a aplikovány na vlastnosti typu, <xref:System.ServiceModel.Configuration.BindingElementExtensionElement.CreateBindingElement%2A> je volána metoda, která převede vlastnosti na konkrétní instanci elementu vazby.
 
-Tato obslužná rutina konfigurace mapuje následující reprezentace v App. config nebo Web. config pro službu nebo klienta.
+Tato obslužná rutina konfigurace mapuje následující reprezentace v App.config nebo Web.config pro službu nebo klienta.
 
 ```xml
 <customTextMessageEncoding encoding="utf-8" contentType="text/xml" messageVersion="Soap11Addressing1" />

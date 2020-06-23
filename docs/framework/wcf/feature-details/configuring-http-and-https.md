@@ -1,21 +1,22 @@
 ---
 title: Konfigurace HTTP a HTTPS
+description: Naučte se konfigurovat HTTP/HTTPS, aby mohly komunikovat služby a klienty WCF. Nakonfigurujte registraci adresy URL a výjimku brány firewall pomocí Netsh.exe.
 ms.date: 04/08/2019
 helpviewer_keywords:
 - configuring HTTP [WCF]
 ms.assetid: b0c29a86-bc0c-41b3-bc1e-4eb5bb5714d4
-ms.openlocfilehash: f7fd2bad6ced09b638cc1bb5d539fab1b9ce7d25
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: fbff78ff8e2c5c4fa73a56a3fdc15163596aa985
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75336690"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245138"
 ---
 # <a name="configuring-http-and-https"></a>Konfigurace HTTP a HTTPS
 
-Služby a Klienti WCF můžou komunikovat přes protokol HTTP a HTTPS. Nastavení HTTP/HTTPS jsou nakonfigurovaná pomocí Internetová informační služba (IIS) nebo pomocí nástroje příkazového řádku. Když je služba WCF hostovaná v rámci nastavení IIS HTTP nebo HTTPS, můžete nakonfigurovat v rámci služby IIS (pomocí nástroje inetmgr. exe). Pokud je služba WCF v místním prostředí, nastavení HTTP nebo HTTPS se konfigurují pomocí nástroje příkazového řádku.
+Služby a Klienti WCF můžou komunikovat přes protokol HTTP a HTTPS. Nastavení HTTP/HTTPS jsou nakonfigurovaná pomocí Internetová informační služba (IIS) nebo pomocí nástroje příkazového řádku. Když je služba WCF hostovaná v rámci nastavení IIS HTTP nebo HTTPS, můžete nakonfigurovat v rámci služby IIS (pomocí nástroje inetmgr.exe). Pokud je služba WCF v místním prostředí, nastavení HTTP nebo HTTPS se konfigurují pomocí nástroje příkazového řádku.
 
-Minimálně je potřeba nakonfigurovat registraci adresy URL a přidat výjimku brány firewall pro adresu URL, kterou bude služba používat. Tato nastavení můžete nakonfigurovat pomocí nástroje Netsh. exe.
+Minimálně je potřeba nakonfigurovat registraci adresy URL a přidat výjimku brány firewall pro adresu URL, kterou bude služba používat. Tato nastavení můžete nakonfigurovat pomocí nástroje Netsh.exe.
 
 ## <a name="configuring-namespace-reservations"></a>Konfigurace rezervací oboru názvů
 
@@ -23,13 +24,13 @@ Rezervace oboru názvů přiřadí práva pro část oboru názvů URL protokolu
 
 Běžící aplikace může vytvořit podobný požadavek na přidání registrace oboru názvů. Registrace a rezervace jsou konkurenční pro části oboru názvů. Rezervace může mít přednost před registrací podle pořadí rozlišení [mezi deklaracemi oboru názvů, které zahrnují zástupné znaky](/windows/desktop/Http/routing-incoming-requests). V takovém případě rezervace blokuje běžící aplikaci od přijímání požadavků.
 
-Následující příklad používá nástroj Netsh. exe:
+Následující příklad používá nástroj Netsh.exe:
 
 ```console
 netsh http add urlacl url=http://+:80/MyUri user=DOMAIN\user
 ```
 
-Tento příkaz přidá rezervaci adresy URL pro zadaný obor názvů URL pro účet doména \ uživatel. Další informace o použití příkazu netsh získáte tak, že do příkazového řádku zadáte `netsh http add urlacl /?` a stisknete klávesu ENTER.
+Tento příkaz přidá rezervaci adresy URL pro zadaný obor názvů URL pro účet doména \ uživatel. Další informace o použití příkazu netsh získáte zadáním `netsh http add urlacl /?` příkazu do příkazového řádku a stisknutím klávesy ENTER.
 
 ## <a name="configuring-a-firewall-exception"></a>Konfigurace výjimky brány firewall
 
@@ -55,11 +56,11 @@ netsh http add iplisten ipaddress=0.0.0.0:8000
 
 ## <a name="other-configuration-settings"></a>Další nastavení konfigurace
 
-Při použití <xref:System.ServiceModel.WSDualHttpBinding>připojení klienta používá výchozí hodnoty, které jsou kompatibilní s rezervacemi oboru názvů a bránou Windows Firewall. Pokud se rozhodnete přizpůsobit základní adresu klienta duálního připojení, musíte také nakonfigurovat tato nastavení protokolu HTTP v klientovi tak, aby odpovídala nové adrese.
+Při použití nástroje <xref:System.ServiceModel.WSDualHttpBinding> připojení klienta používá výchozí hodnoty, které jsou kompatibilní s rezervacemi oboru názvů a bránou Windows Firewall. Pokud se rozhodnete přizpůsobit základní adresu klienta duálního připojení, musíte také nakonfigurovat tato nastavení protokolu HTTP v klientovi tak, aby odpovídala nové adrese.
 
-Rozhraní API serveru HTTP má několik pokročilých nastavení konfigurace, která nejsou k dispozici prostřednictvím HttpCfg. Tato nastavení jsou zachována v registru a platí pro všechny aplikace spuštěné v systémech, které používají rozhraní API serveru HTTP. Informace o těchto nastaveních najdete v tématu [nastavení registru http. sys pro službu IIS](https://support.microsoft.com/help/820129/http-sys-registry-settings-for-windows). Většina uživatelů tyto nastavení nepotřebuje měnit.
+Rozhraní API serveru HTTP má několik pokročilých nastavení konfigurace, která nejsou k dispozici prostřednictvím HttpCfg. Tato nastavení jsou zachována v registru a platí pro všechny aplikace spuštěné v systémech, které používají rozhraní API serveru HTTP. Informace o těchto nastaveních najdete v tématu [Http.sys nastavení registru pro službu IIS](https://support.microsoft.com/help/820129/http-sys-registry-settings-for-windows). Většina uživatelů tyto nastavení nepotřebuje měnit.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.ServiceModel.WSDualHttpBinding>
 - [Postupy: Konfigurace portu s certifikátem SSL](how-to-configure-a-port-with-an-ssl-certificate.md)

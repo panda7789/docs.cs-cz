@@ -1,5 +1,6 @@
 ---
 title: Nastavení pořadí ovládacích prvků na kartě
+description: Naučte se, jak nastavit pořadí ovládacích prvků na model Windows Forms. Nastavte pořadí ovládacích prvků pomocí sady Visual Studio nebo použijte vlastnost TabIndex v okno Vlastnosti.
 ms.date: 03/30/2017
 f1_keywords:
 - TabStop
@@ -13,12 +14,12 @@ ms.assetid: 71fa8e76-0472-414b-ad3c-0f90166e0ad7
 author: jillre
 ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: 5d53e411bda0279271e4f73e1842c52fd6d9b3a9
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 3d16da1ac73cc030b92bb36c4bfa3a79985339bf
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76746839"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84903356"
 ---
 # <a name="how-to-set-the-tab-order-on-windows-forms"></a>Postupy: nastavení pořadí ovládacích prvků na model Windows Forms
 
@@ -38,25 +39,25 @@ Pořadí prvků je pořadí, ve kterém uživatel přesune fokus z jednoho ovlá
 3. Po dokončení vyberte možnost **pořadí prvků** v nabídce **zobrazení** a nechejte tak režim pořadí tabulátoru.
 
    > [!NOTE]
-   > Ovládací prvky, které nemohou získat fokus, a také zakázané a neviditelné ovládací prvky, nemají vlastnost <xref:System.Windows.Forms.Control.TabIndex%2A> a nejsou zahrnuty v pořadí prvků. Když uživatel stiskne klávesu TAB, tyto ovládací prvky se přeskočí.
+   > Ovládací prvky, které nemohou získat fokus, a také zakázané a neviditelné ovládací prvky, nemají <xref:System.Windows.Forms.Control.TabIndex%2A> vlastnost a nejsou zahrnuty v pořadí prvků. Když uživatel stiskne klávesu TAB, tyto ovládací prvky se přeskočí.
 
-Alternativně lze pořadí karet nastavit v okno Vlastnosti pomocí vlastnosti <xref:System.Windows.Forms.Control.TabIndex%2A>. Vlastnost <xref:System.Windows.Forms.Control.TabIndex%2A> ovládacího prvku určuje, kde je umístěn v pořadí prvků. Ve výchozím nastavení má první vykreslený ovládací prvek hodnotu <xref:System.Windows.Forms.Control.TabIndex%2A> 0, druhý má <xref:System.Windows.Forms.Control.TabIndex%2A> 1 atd.
+Alternativně lze pořadí prvků nastavit v okno Vlastnosti pomocí <xref:System.Windows.Forms.Control.TabIndex%2A> Vlastnosti. <xref:System.Windows.Forms.Control.TabIndex%2A>Vlastnost ovládacího prvku určuje, kde je umístěn v pořadí prvků. Ve výchozím nastavení má první vykreslený ovládací prvek <xref:System.Windows.Forms.Control.TabIndex%2A> hodnotu 0, druhá má <xref:System.Windows.Forms.Control.TabIndex%2A> 1, a tak dále.
 
-Kromě toho má <xref:System.Windows.Forms.GroupBox> ovládací prvek ve výchozím nastavení vlastní hodnotu <xref:System.Windows.Forms.Control.TabIndex%2A>, což je celé číslo. Vlastní ovládací prvek <xref:System.Windows.Forms.GroupBox> nemůže mít fokus v době běhu. Proto každý ovládací prvek v rámci <xref:System.Windows.Forms.GroupBox> má svou vlastní desítkovou hodnotu <xref:System.Windows.Forms.Control.TabIndex%2A>, počínaje hodnotou. 0. Přirozeně se při zvýšení <xref:System.Windows.Forms.Control.TabIndex%2A> ovládacího prvku <xref:System.Windows.Forms.GroupBox> zvýší jeho ovládací prvky odpovídajícím způsobem. Pokud jste změnili <xref:System.Windows.Forms.Control.TabIndex%2A>ovou hodnotu z 5 na 6, <xref:System.Windows.Forms.Control.TabIndex%2A> hodnota prvního ovládacího prvku v jeho skupině se automaticky změní na 6,0 atd.
+Kromě toho <xref:System.Windows.Forms.GroupBox> má ovládací prvek ve výchozím nastavení vlastní <xref:System.Windows.Forms.Control.TabIndex%2A> hodnotu, což je celé číslo. <xref:System.Windows.Forms.GroupBox>Samotný ovládací prvek nemůže mít fokus v době běhu. Proto každý ovládací prvek v rámci <xref:System.Windows.Forms.GroupBox> má svou vlastní desítkovou <xref:System.Windows.Forms.Control.TabIndex%2A> hodnotu, počínaje hodnotou. 0. Přirozeně, jako u <xref:System.Windows.Forms.Control.TabIndex%2A> <xref:System.Windows.Forms.GroupBox> ovládacího prvku, se zvyšuje odpovídajícím způsobem ovládací prvky v rámci něj. Pokud jste změnili <xref:System.Windows.Forms.Control.TabIndex%2A> hodnotu z 5 na 6, <xref:System.Windows.Forms.Control.TabIndex%2A> hodnota prvního ovládacího prvku v příslušné skupině se automaticky změní na 6,0 a tak dále.
 
-Nakonec může být jakýkoli ovládací prvek mnoha na formuláři v pořadí prvků vynechán. Obvykle stisknutí klávesy TAB v době běhu vybere každý ovládací prvek v pořadí prvků. Vypnutím vlastnosti <xref:System.Windows.Forms.Control.TabStop%2A> můžete nastavit, aby byl ovládací prvek předán v pořadí prvků formuláře.
+Nakonec může být jakýkoli ovládací prvek mnoha na formuláři v pořadí prvků vynechán. Obvykle stisknutí klávesy TAB v době běhu vybere každý ovládací prvek v pořadí prvků. Vypnutím <xref:System.Windows.Forms.Control.TabStop%2A> vlastnosti můžete nastavit, aby byl ovládací prvek předán v pořadí prvků formuláře.
 
 ## <a name="to-remove-a-control-from-the-tab-order"></a>Odebrání ovládacího prvku z pořadí karet
 
-V okně **vlastnosti** nastavte vlastnost <xref:System.Windows.Forms.Control.TabStop%2A> ovládacího prvku na **hodnotu NEPRAVDA** .
+<xref:System.Windows.Forms.Control.TabStop%2A>V okně **vlastnosti** nastavte vlastnost ovládacího prvku na **hodnotu false** .
 
-Ovládací prvek, jehož vlastnost <xref:System.Windows.Forms.Control.TabStop%2A> byla nastavena na `false` nadále udržuje pozici v pořadí prvků, i když je ovládací prvek vynechán při cyklickém procházení ovládacími prvky pomocí klávesy TAB.
+Ovládací prvek <xref:System.Windows.Forms.Control.TabStop%2A> , jehož vlastnost byla nastavena tak `false` , aby nadále zachoval pozici v pořadí prvků, i když je ovládací prvek vynechán při cyklickém procházení ovládacími prvky pomocí klávesy TAB.
 
 > [!NOTE]
-> Skupina přepínačů má v době běhu jednu zarážku tabulátoru. Vybrané tlačítko (to znamená, že tlačítko s vlastností <xref:System.Windows.Forms.RadioButton.Checked%2A> nastavenou na hodnotu `true`) má vlastnost <xref:System.Windows.Forms.Control.TabStop%2A> automaticky nastavenou na `true`, zatímco ostatní tlačítka mají svou <xref:System.Windows.Forms.Control.TabStop%2A> vlastnost nastavenou na `false`. Další informace o seskupení <xref:System.Windows.Forms.RadioButton> ovládacích prvků naleznete v tématu [seskupení model Windows Forms ovládací prvky RadioButton pro fungování jako sady](how-to-group-windows-forms-radiobutton-controls-to-function-as-a-set.md).
+> Skupina přepínačů má v době běhu jednu zarážku tabulátoru. Vybrané tlačítko (to znamená, že tlačítko s <xref:System.Windows.Forms.RadioButton.Checked%2A> vlastností nastavenou na hodnotu `true` ) má svou <xref:System.Windows.Forms.Control.TabStop%2A> vlastnost automaticky nastavenou na hodnotu `true` , zatímco ostatní tlačítka mají svou <xref:System.Windows.Forms.Control.TabStop%2A> vlastnost nastavenou na `false` . Další informace o <xref:System.Windows.Forms.RadioButton> ovládacích prvcích seskupení naleznete v tématu [seskupení model Windows Forms ovládací prvky RadioButton pro fungování jako sady](how-to-group-windows-forms-radiobutton-controls-to-function-as-a-set.md).
 
 ## <a name="see-also"></a>Viz také
 
-- [Windows Forms – ovládací prvky](index.md)
+- [Ovládací prvky model Windows Forms](index.md)
 - [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)
 - [Ovládací prvky Windows Forms podle funkce](windows-forms-controls-by-function.md)

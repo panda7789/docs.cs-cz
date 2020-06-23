@@ -1,13 +1,14 @@
 ---
 title: Konfigurace klienta
+description: Naučte se používat konfiguraci klienta WCF k určení adresy, vazby, chování a smlouvy pro koncový bod, který se používá pro připojení ke službě.
 ms.date: 03/30/2017
 ms.assetid: 5da5bd3b-65d9-43b7-91b9-cc9e989b1350
-ms.openlocfilehash: 2d17438095e65ccf922061c03e406bab35b07c5d
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: c3e3d4904bad39e951e8ba69013ac95894130489
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84593656"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245372"
 ---
 # <a name="client-configuration"></a>Konfigurace klienta
 Můžete použít konfiguraci klienta Windows Communication Foundation (WCF) k určení adresy, vazby, chování a kontraktu, vlastností "ABC" koncového bodu klienta, které klienti používají pro připojení ke koncovým bodům služby. [\<client>](../../configure-apps/file-schema/wcf/client.md)Element má [\<endpoint>](../../configure-apps/file-schema/wcf/endpoint-of-client.md) element, jehož atributy se používají ke konfiguraci koncového bodu ABCs. Tyto atributy jsou popsány v části [Konfigurace koncových bodů](#configuring-endpoints) .  
@@ -15,7 +16,7 @@ Můžete použít konfiguraci klienta Windows Communication Foundation (WCF) k u
  [\<endpoint>](../../configure-apps/file-schema/wcf/endpoint-of-client.md)Element také obsahuje [\<metadata>](../../configure-apps/file-schema/wcf/metadata.md) element, který se používá k určení nastavení pro import a export metadat, [\<headers>](../../configure-apps/file-schema/wcf/headers.md) elementu, který obsahuje kolekci vlastních hlaviček adres, a [\<identity>](../../configure-apps/file-schema/wcf/identity.md) elementu, který umožňuje ověřování koncového bodu jinými koncovými body výměny zpráv. [\<headers>](../../configure-apps/file-schema/wcf/headers.md)Prvky a [\<identity>](../../configure-apps/file-schema/wcf/identity.md) jsou uvedeny <xref:System.ServiceModel.EndpointAddress> v části a jsou popsány v článku [adresy](endpoint-addresses.md) . Odkazy na témata, která vysvětlují použití rozšíření metadat, jsou k dispozici v části [Konfigurace metadat](#configuring-metadata) .  
   
 ## <a name="configuring-endpoints"></a>Konfigurace koncových bodů  
- Konfigurace klienta je navržena tak, aby umožňovala klientovi určit jeden nebo více koncových bodů, každý s vlastním názvem, adresou a kontraktem, přičemž každý odkazuje na [\<bindings>](../../configure-apps/file-schema/wcf/bindings.md) [\<behaviors>](../../configure-apps/file-schema/wcf/behaviors.md) prvky a v konfiguraci klienta, které se mají použít ke konfiguraci tohoto koncového bodu. Konfigurační soubor klienta by měl mít název app. config, protože se jedná o název, který modul runtime WCF očekává. Následující příklad ukazuje konfigurační soubor klienta.  
+ Konfigurace klienta je navržena tak, aby umožňovala klientovi určit jeden nebo více koncových bodů, každý s vlastním názvem, adresou a kontraktem, přičemž každý odkazuje na [\<bindings>](../../configure-apps/file-schema/wcf/bindings.md) [\<behaviors>](../../configure-apps/file-schema/wcf/behaviors.md) prvky a v konfiguraci klienta, které se mají použít ke konfiguraci tohoto koncového bodu. Konfigurační soubor klienta by měl mít název "App.config", protože se jedná o název, který modul runtime WCF očekává. Následující příklad ukazuje konfigurační soubor klienta.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  

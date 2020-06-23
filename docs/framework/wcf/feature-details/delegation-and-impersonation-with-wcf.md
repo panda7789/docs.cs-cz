@@ -1,5 +1,6 @@
 ---
 title: Delegace a zosobnění se službou WCF
+description: Přečtěte si informace o metodách zosobnění a delegování, které WCF používá k omezení přístupu klientů k prostředkům domény služby.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - impersonation [WCF]
 - delegation [WCF]
 ms.assetid: 110e60f7-5b03-4b69-b667-31721b8e3152
-ms.openlocfilehash: e491925fdbe8d44df8e0c64b563eb92569453e35
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 7f8d3695a36a43ca6bf796b141c07f6d2d088354
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84599253"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245073"
 ---
 # <a name="delegation-and-impersonation-with-wcf"></a>Delegace a zosobnění se službou WCF
 *Zosobnění* je běžná technika, kterou služby používají k omezení přístupu klientů k prostředkům domény služby. Prostředky domény služby můžou být prostředky počítače, například místní soubory (zosobnění), nebo prostředek na jiném počítači, například sdílená složka (delegování). Ukázkovou aplikaci najdete v tématu [zosobnění klienta](../samples/impersonating-the-client.md). Příklad použití zosobnění najdete v tématu [Postup: zosobnění klienta ve službě](../how-to-impersonate-a-client-on-a-service.md).  
@@ -113,14 +114,14 @@ ms.locfileid: "84599253"
   
 |`AllowedImpersonationLevel`osa|Služba má`SeImpersonatePrivilege`|Služba a klient podporují delegování|Token uložený v mezipaměti`ImpersonationLevel`|  
 |---------------------------------------|------------------------------------------|--------------------------------------------------|---------------------------------------|  
-|Anonymní|Yes|Není k dispozici|Zosobnění|  
-|Anonymní|No|Není k dispozici|Identifikace|  
+|Anonymní|Ano|Není k dispozici|Zosobnění|  
+|Anonymní|Ne|Není k dispozici|Identifikace|  
 |Identifikace|Není k dispozici|Není k dispozici|Identifikace|  
-|Zosobnění|Yes|Není k dispozici|Zosobnění|  
-|Zosobnění|No|Není k dispozici|Identifikace|  
+|Zosobnění|Ano|Není k dispozici|Zosobnění|  
+|Zosobnění|Ne|Není k dispozici|Identifikace|  
 |Delegování|Ano|Ano|Delegování|  
-|Delegování|Yes|No|Zosobnění|  
-|Delegování|No|Není k dispozici|Identifikace|  
+|Delegování|Ano|Ne|Zosobnění|  
+|Delegování|Ne|Není k dispozici|Identifikace|  
   
 ## <a name="impersonation-level-obtained-from-user-name-credentials-and-cached-token-impersonation"></a>Úroveň zosobnění získaná od přihlašovacích údajů uživatelského jména a zosobnění tokenu v mezipaměti  
  Po předání služby jeho uživatelskému jménu a heslu umožní klient, aby se služba WCF přihlásila jako tento uživatel, což je ekvivalentní nastavení `AllowedImpersonationLevel` vlastnosti <xref:System.Security.Principal.TokenImpersonationLevel.Delegation> . ( `AllowedImpersonationLevel` Je k dispozici v <xref:System.ServiceModel.Security.WindowsClientCredential> <xref:System.ServiceModel.Security.HttpDigestClientCredential> třídách a.) Následující tabulka uvádí úroveň zosobnění získaná, když služba přijímá přihlašovací údaje uživatelského jména.  
@@ -128,16 +129,16 @@ ms.locfileid: "84599253"
 |`AllowedImpersonationLevel`|Služba má`SeImpersonatePrivilege`|Služba a klient podporují delegování|Token uložený v mezipaměti`ImpersonationLevel`|  
 |---------------------------------|------------------------------------------|--------------------------------------------------|---------------------------------------|  
 |Není k dispozici|Ano|Ano|Delegování|  
-|Není k dispozici|Yes|No|Zosobnění|  
-|Není k dispozici|No|Není k dispozici|Identifikace|  
+|Není k dispozici|Ano|Ne|Zosobnění|  
+|Není k dispozici|Ne|Není k dispozici|Identifikace|  
   
 ## <a name="impersonation-level-obtained-from-s4u-based-impersonation"></a>Úroveň zosobnění získaná z zosobnění založené na S4U  
   
 |Služba má`SeTcbPrivilege`|Služba má`SeImpersonatePrivilege`|Služba a klient podporují delegování|Token uložený v mezipaměti`ImpersonationLevel`|  
 |----------------------------------|------------------------------------------|--------------------------------------------------|---------------------------------------|  
 |Ano|Ano|Není k dispozici|Zosobnění|  
-|Yes|No|Není k dispozici|Identifikace|  
-|No|Není k dispozici|Není k dispozici|Identifikace|  
+|Ano|Ne|Není k dispozici|Identifikace|  
+|Ne|Není k dispozici|Není k dispozici|Identifikace|  
   
 ## <a name="mapping-a-client-certificate-to-a-windows-account"></a>Mapování klientského certifikátu na účet systému Windows  
  Je možné, aby se klient mohl přihlásit ke službě pomocí certifikátu a aby služba namapovala klienta na existující účet prostřednictvím služby Active Directory. Následující kód XML ukazuje, jak nakonfigurovat službu pro mapování certifikátu.  
@@ -179,8 +180,8 @@ sh.Credentials.ClientCertificate.Authentication.MapClientCertificateToWindowsAcc
   
 |Úroveň zosobnění|Služba může provádět delegování mezi procesy|Služba může provádět delegování mezi počítači|  
 |-------------------------|---------------------------------------------------|---------------------------------------------------|  
-|<xref:System.Security.Principal.TokenImpersonationLevel.Identification>|Ne|No|  
-|<xref:System.Security.Principal.TokenImpersonationLevel.Impersonation>|Yes|No|  
+|<xref:System.Security.Principal.TokenImpersonationLevel.Identification>|Ne|Ne|  
+|<xref:System.Security.Principal.TokenImpersonationLevel.Impersonation>|Ano|No|  
 |<xref:System.Security.Principal.TokenImpersonationLevel.Delegation>|Ano|Ano|  
   
  Následující příklad kódu ukazuje, jak použít delegování.  

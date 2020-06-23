@@ -1,5 +1,6 @@
 ---
-title: Vlastnost IFont.Name (stdole)
+title: IFont.Name – vlastnost (Stdole)
+description: Získejte referenční informace o vlastnosti IFont.Name v .NET. Tato vlastnost pro čtení/zápis je v oboru názvů Stdole a v sestavení Stdole.
 ms.date: 02/22/2019
 topic_type:
 - apiref
@@ -11,12 +12,12 @@ api_location:
 - stdole.dll
 api_type:
 - Assembly
-ms.openlocfilehash: b74992174d244845e1db2b283d962f2b87071c91
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: bdc773956c15554b0700d78dcdc833d8111da896
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65634417"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84989498"
 ---
 # <a name="ifontname-property"></a>IFont.Name – vlastnost
 
@@ -30,6 +31,6 @@ string Name { get; set; }
 
 ## <a name="requirements"></a>Požadavky
 
-**Namespace:** `stdole`
+**Obor názvů:**`stdole`
 
-**Sestavení:** stdole (v stdole.dll)
+**Sestavení:** Stdole (v stdole.dll)

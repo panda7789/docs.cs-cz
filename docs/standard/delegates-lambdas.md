@@ -6,12 +6,12 @@ ms.author: wiwagn
 ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: fe2e4b4c-6483-4106-a4b4-a33e2e306591
-ms.openlocfilehash: 43e896bfe267299d3b0cb12a8f71e42fe2c87a88
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 184c9f61fd8456b22e8ecb262c131793160b49b0
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84280787"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85244007"
 ---
 # <a name="delegates-and-lambdas"></a>Delegáty a výrazy lambda
 
@@ -108,7 +108,7 @@ public class Program
 
 Jak vidíte, tělo delegáta je pouze sada výrazů, jako jakýkoli jiný delegát. Ale namísto toho, že se jedná o samostatnou definici, zavedli jsme v našem volání metody _ad hoc_ <xref:System.Collections.Generic.List%601.FindAll%2A?displayProperty=nameWithType> .
 
-Nicméně i s tímto přístupem existuje stále spousta kódu, který můžeme vrátit. Toto je místo, kde se dodávají *výrazy lambda* . Výrazy lambda nebo pouze "výrazy lambda" pro krátkou hodnotu byly představeny v jazyce C# 3,0 jako jeden ze základních stavebních bloků jazyka LINQ (Language Integrated Query). Jsou to pouze pohodlnější syntaxe pro použití delegátů. Deklaruje signaturu a tělo metody, ale nemají oficiální identitu své vlastní, pokud nejsou přiřazeni delegátovi. Na rozdíl od delegátů lze přímo přiřadit jako levou stranu registrace události nebo v různých klauzulích a metodách LINQ.
+Nicméně i s tímto přístupem existuje stále spousta kódu, který můžeme vrátit. Toto je místo, kde se dodávají *výrazy lambda* . Výrazy lambda nebo pouze "výrazy lambda" pro krátkou hodnotu byly představeny v jazyce C# 3,0 jako jeden ze základních stavebních bloků jazyka LINQ (Language Integrated Query). Jsou to pouze pohodlnější syntaxe pro použití delegátů. Deklaruje signaturu a tělo metody, ale nemají oficiální identitu své vlastní, pokud nejsou přiřazeni delegátovi. Na rozdíl od delegátů mohou být přímo přiřazeny jako pravá strana registrace události nebo v různých klauzulích a metodách LINQ.
 
 Vzhledem k tomu, že výraz lambda je pouze dalším způsobem určení delegáta, by měl být možné přepsat výše uvedený vzorek tak, aby namísto anonymního delegáta používal výraz lambda.
 
