@@ -32,7 +32,7 @@ V této části jsou uvedeny ukázky, které ukazují, jak vytvořit prototypy s
 
 V následující tabulce jsou uvedeny datové typy používané ve funkcích rozhraní API systému Windows a ve stylu jazyka C. Mnoho nespravovaných knihoven obsahuje funkce, které tyto datové typy předají jako parametry a návratové hodnoty. Třetí sloupec uvádí odpovídající .NET Framework typ hodnoty nebo třídu, která se používá ve spravovaném kódu. V některých případech můžete nahradit typ stejné velikosti pro typ uvedený v tabulce.
 
-|Nespravovaný typ v rozhraních API systému Windows|Nespravovaný typ jazyka C|Spravovaný typ|Description|
+|Nespravovaný typ v rozhraních API systému Windows|Nespravovaný typ jazyka C|Spravovaný typ|Popis|
 |--------------------------------|-------------------------------|------------------------|-----------------|
 |`VOID`|`void`|<xref:System.Void?displayProperty=nameWithType>|Používá se pro funkci, která nevrací hodnotu.|
 |`HANDLE`|`void *`|<xref:System.IntPtr?displayProperty=nameWithType> nebo <xref:System.UIntPtr?displayProperty=nameWithType>|32 bitů v systémech Windows 32, 64 bitů v systémech Windows 64 v 16bitovém operačním systému Windows.|

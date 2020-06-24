@@ -24,7 +24,7 @@ Tento článek obsahuje seznam .NET Framework rozhraní API, které byly buď vy
 
 Pro zlepšení vývoje pro různé platformy a zavedení nových funkcí v brzkém případě některé .NET Framework funkce byly vydány mimo pásmo (OOB).
 
-| Project | Description |  
+| Project | Popis |  
 | ------- | ----------- |  
 | <xref:System.Collections.Immutable> | Poskytuje kolekce, které jsou vláknem bezpečné a zaručují, aby nikdy neměnily obsah. |
 | <xref:System.Net.Http.WinHttpHandler> | Poskytuje obslužnou rutinu zpráv pro <xref:System.Net.Http.HttpClient> založenou na rozhraní WinHTTP systému Windows. |
@@ -35,7 +35,7 @@ Pro zlepšení vývoje pro různé platformy a zavedení nových funkcí v brzk�
 
 Některé knihovny cílí na konkrétní platformy. <xref:System.Text.CodePagesEncodingProvider>Třída například zpřístupňuje kódování znakové stránky aplikacím UWP vyvinutým pomocí .NET Framework.
   
-| Project | Description |  
+| Project | Popis |  
 | ------- | ----------- |  
 | <xref:System.Text.CodePagesEncodingProvider> | Rozšiřuje <xref:System.Text.EncodingProvider> třídu tak, aby byly k dispozici kódování znakové stránky aplikacím, které cílí na Univerzální platforma Windows. |  
   

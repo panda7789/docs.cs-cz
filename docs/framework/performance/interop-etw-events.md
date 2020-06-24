@@ -32,7 +32,7 @@ Klíčové slovo a úroveň jsou uvedeny v následující tabulce. (Další info
   
  V následující tabulce jsou uvedena data události.  
   
-|Název pole|Datový typ|Description|  
+|Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
 |ModuleID|Win: UInt16|Identifikátor modulu.|  
 |StubMethodID|Win: UInt64|Identifikátor metody zástupné procedury.|  
@@ -62,7 +62,7 @@ Klíčové slovo a úroveň jsou uvedeny v následující tabulce.
   
  V následující tabulce jsou uvedena data události.  
   
-|Název pole|Datový typ|Description|  
+|Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
 |ModuleID|Win: UInt16|Identifikátor modulu.|  
 |StubMethodID|Win: UInt64|Identifikátor metody zástupné procedury.|  
