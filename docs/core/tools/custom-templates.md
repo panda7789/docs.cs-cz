@@ -1,14 +1,14 @@
 ---
 title: Vlastní šablony pro dotnet New
 description: Seznamte se s vlastními šablonami pro jakýkoli typ projektu nebo souborů .NET.
-author: thraka
+author: adegeo
 ms.date: 05/20/2020
-ms.openlocfilehash: 56fcbfbc168143007f0772ce8a12347f7e25e50b
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: cabe220917e7ff688a2c2d2df56d9bc7f8afdf56
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84005310"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85324509"
 ---
 # <a name="custom-templates-for-dotnet-new"></a>Vlastní šablony pro dotnet New
 
@@ -36,7 +36,7 @@ dotnet new --list
 Šablona se skládá z následujících částí:
 
 - Zdrojové soubory a složky.
-- Konfigurační soubor (*template. JSON*).
+- Konfigurační soubor (*template.jszapnut*).
 
 ### <a name="source-files-and-folders"></a>Zdrojové soubory a složky
 
@@ -45,30 +45,30 @@ Zdrojové soubory a složky zahrnují libovolné soubory a složky, které má m
 - Modul šablon nevyžaduje vložení speciálních tokenů do zdrojového kódu vašeho projektu.
 - Soubory s kódem nejsou speciální soubory ani upravovány jakýmkoli způsobem pro práci s modulem šablon. Proto nástroje, které běžně používáte při práci s projekty, fungují také s obsahem šablony.
 - Projekty šablon můžete sestavovat, spouštět a ladit stejně jako u všech ostatních projektů.
-- Můžete rychle vytvořit šablonu z existujícího projektu pouhým přidáním konfiguračního souboru *./.template.config/Template.JSON* do projektu.
+- Můžete rychle vytvořit šablonu z existujícího projektu pouhým přidáním *./.template.config/template.js* do konfiguračního souboru do projektu.
 
 Soubory a složky uložené v šabloně nejsou omezeny na formální typy projektů .NET. Zdrojové soubory a složky mohou být tvořeny jakýmkoli obsahem, který chcete vytvořit při použití šablony, a to i v případě, že modul šablon vytvoří jako výstup pouze jeden soubor.
 
-Soubory vygenerované šablonou lze upravit na základě logiky a nastavení, které jste zadali v konfiguračním souboru *template. JSON* . Uživatel může tato nastavení přepsat předáním možností `dotnet new <TEMPLATE>` příkazu. Běžným příkladem vlastní logiky je poskytnutí názvu pro třídu nebo proměnnou v souboru kódu, který je nasazen šablonou.
+Soubory vygenerované šablonou lze upravit na základě logiky a nastavení, které jste zadali v *template.js* v konfiguračním souboru. Uživatel může tato nastavení přepsat předáním možností `dotnet new <TEMPLATE>` příkazu. Běžným příkladem vlastní logiky je poskytnutí názvu pro třídu nebo proměnnou v souboru kódu, který je nasazen šablonou.
 
-### <a name="templatejson"></a>Template. JSON
+### <a name="templatejson"></a>template.jsna
 
-Soubor *template. JSON* je umístěný ve složce *. template. config* v kořenovém adresáři šablony. Soubor poskytuje konfigurační informace modulu šablony. Minimální konfigurace vyžaduje, aby členové byli uvedeni v následující tabulce, která je dostačující k vytvoření funkční šablony.
+*template.jsv* souboru se umístí do složky *.template.config* v kořenovém adresáři šablony. Soubor poskytuje konfigurační informace modulu šablony. Minimální konfigurace vyžaduje, aby členové byli uvedeni v následující tabulce, která je dostačující k vytvoření funkční šablony.
 
-| Člen            | Typ          | Description |
+| Člen            | Typ          | Popis |
 | ----------------- | ------------- | ----------- |
-| `$schema`         | Identifikátor URI           | Schéma JSON pro soubor *template. JSON* . Editory podporující schémata JSON povolují funkce úprav JSON při určení schématu. Například [Visual Studio Code](https://code.visualstudio.com/) vyžaduje, aby tento člen povoloval technologii IntelliSense. Použijte hodnotu `http://json.schemastore.org/template` . |
+| `$schema`         | Identifikátor URI           | Schéma JSON pro *template.jsv* souboru Editory podporující schémata JSON povolují funkce úprav JSON při určení schématu. Například [Visual Studio Code](https://code.visualstudio.com/) vyžaduje, aby tento člen povoloval technologii IntelliSense. Použijte hodnotu `http://json.schemastore.org/template` . |
 | `author`          | řetězec        | Autor šablony |
 | `classifications` | Array (řetězec) | Nula nebo více vlastností šablony, kterou může uživatel použít k vyhledání šablony při jejím hledání. Klasifikace se také zobrazí ve sloupci *značky* , když se objeví v seznamu šablon vytvořených pomocí `dotnet new -l|--list` příkazu. |
 | `identity`        | řetězec        | Jedinečný název pro tuto šablonu. |
 | `name`            | řetězec        | Název šablony, kterou by uživatelé měli vidět. |
 | `shortName`       | řetězec        | Výchozí zkrácený název pro výběr šablony, která se vztahuje na prostředí, kde je název šablony určený uživatelem, který není vybraný prostřednictvím grafického uživatelského rozhraní. Krátký název je například užitečný při použití šablon z příkazového řádku s příkazy CLI. |
 
-Úplné schéma pro soubor *template. JSON* najdete v [úložišti schémat JSON](http://json.schemastore.org/template). Další informace o souboru *template. JSON* najdete v tématu [dotnet šablonování wiki](https://github.com/dotnet/templating/wiki).
+Úplné schéma pro *template.jsv* souboru najdete v [úložišti schémat JSON](http://json.schemastore.org/template). Další informace o *template.jsv* souboru najdete v tématu [dotnet šablonování wiki](https://github.com/dotnet/templating/wiki).
 
 #### <a name="example"></a>Příklad
 
-Tady je například složka šablony, která obsahuje dva soubory obsahu: *Console.cs* a *Readme. txt*. Všimněte si, že existuje požadovaná složka s názvem *. template. config* , která obsahuje soubor *template. JSON* .
+Tady je například složka šablony, která obsahuje dva soubory obsahu: *Console.cs* a *readme.txt*. Všimněte si, že je k dispozici požadovaná složka s názvem *.template.config* obsahující *template.jsv* souboru.
 
 ```text
 └───mytemplate
@@ -79,7 +79,7 @@ Tady je například složka šablony, která obsahuje dva soubory obsahu: *Conso
             template.json
 ```
 
-Soubor *template. JSON* vypadá takto:
+*template.jsv* souboru vypadá takto:
 
 ```json
 {
@@ -144,7 +144,7 @@ Zde je příklad souboru *. csproj* , který následuje za všemi výše uveden�
 </Project>
 ```
 
-Následující příklad ukazuje strukturu souborů a složek použití souboru *. csproj* k vytvoření sady šablon. Soubor *MyDotnetTemplates. csproj* a složky *šablon* jsou umístěny v kořenu adresáře s názvem *project_folder*. Složka *Templates* obsahuje dvě šablony, *mytemplate1* a *mytemplate2*. Každá šablona má soubory obsahu a složku *. template. config* pomocí konfiguračního souboru *template. JSON* .
+Následující příklad ukazuje strukturu souborů a složek použití souboru *. csproj* k vytvoření sady šablon. Soubor *MyDotnetTemplates. csproj* a složky *šablon* jsou umístěny v kořenu adresáře s názvem *project_folder*. Složka *Templates* obsahuje dvě šablony, *mytemplate1* a *mytemplate2*. Každá šablona obsahuje soubory obsahu a složku *.template.config* s *template.jsv* konfiguračním souboru.
 
 ```text
 project_folder
@@ -187,7 +187,7 @@ dotnet new -i <PATH_TO_NUPKG_FILE>
 
 ### <a name="to-install-a-template-from-a-file-system-directory"></a>Instalace šablony z adresáře systému souborů
 
-Šablony lze nainstalovat ze složky šablony, jako je například složka *mytemplate1* z výše uvedeného příkladu. Zadejte cestu ke složce ve složce *. template. config* . Cesta k adresáři šablon nemusí být absolutní. K odinstalaci šablony, která je nainstalovaná ze složky, je ale nutná absolutní cesta.
+Šablony lze nainstalovat ze složky šablony, jako je například složka *mytemplate1* z výše uvedeného příkladu. Zadejte cestu ke složce *.template.config* složky. Cesta k adresáři šablon nemusí být absolutní. K odinstalaci šablony, která je nainstalovaná ze složky, je ale nutná absolutní cesta.
 
 ```dotnetcli
 dotnet new -i <FILE_SYSTEM_DIRECTORY>
@@ -225,7 +225,7 @@ Currently installed items:
 ...
 ```
 
-První úroveň položek po `Currently installed items:` jsou identifikátory použité při odinstalaci šablony. A jsou uvedeny v příkladu výše `Microsoft.DotNet.Common.ItemTemplates` `Microsoft.DotNet.Common.ProjectTemplates.3.0` . Pokud byla šablona nainstalována pomocí cesty systému souborů, tento identifikátor bude cestou složky složky *. template. config* .
+První úroveň položek po `Currently installed items:` jsou identifikátory použité při odinstalaci šablony. A jsou uvedeny v příkladu výše `Microsoft.DotNet.Common.ItemTemplates` `Microsoft.DotNet.Common.ProjectTemplates.3.0` . Pokud byla šablona nainstalována pomocí cesty systému souborů, tento identifikátor bude cestou ke složce *.template.config* složky.
 
 ## <a name="uninstalling-a-template"></a>Odinstalace šablony
 
@@ -237,7 +237,7 @@ Pokud byl balíček nainstalován buď pomocí kanálu NuGet, nebo přímo v sou
 dotnet new -u <NUGET_PACKAGE_ID>
 ```
 
-Pokud byl balíček nainstalovaný zadáním cesty ke složce *. template. config* , použijte k odinstalaci balíčku tuto **absolutní** cestu. Ve výstupu poskytnutém příkazem můžete zobrazit absolutní cestu k šabloně `dotnet new -u` . Další informace najdete v části [získání seznamu nainstalovaných šablon](#get-a-list-of-installed-templates) výše.
+Pokud byl balíček nainstalovaný zadáním cesty ke složce *.template.config* , použijte k odinstalaci balíčku tuto **absolutní** cestu. Ve výstupu poskytnutém příkazem můžete zobrazit absolutní cestu k šabloně `dotnet new -u` . Další informace najdete v části [získání seznamu nainstalovaných šablon](#get-a-list-of-installed-templates) výše.
 
 ```dotnetcli
 dotnet new -u <ABSOLUTE_FILE_SYSTEM_DIRECTORY>
@@ -257,4 +257,4 @@ dotnet new <TEMPLATE>
 - [dotnet/šablonování wiki úložiště GitHub](https://github.com/dotnet/templating/wiki)
 - [dotnet/dotnet-Template-Samples – úložiště GitHub](https://github.com/dotnet/dotnet-template-samples)
 - [Jak vytvořit vlastní šablony pro dotnet New](https://devblogs.microsoft.com/dotnet/how-to-create-your-own-templates-for-dotnet-new/)
-- [*template. JSON* – schéma v ÚLOŽIŠTI schémat JSON](http://json.schemastore.org/template)
+- [*template.js* schématu v ÚLOŽIŠTI schémat JSON](http://json.schemastore.org/template)

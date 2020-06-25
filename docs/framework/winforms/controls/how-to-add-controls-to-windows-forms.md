@@ -1,5 +1,6 @@
 ---
 title: Přidání ovládacích prvků
+description: Naučte se, jak nakreslit ovládací prvek ve formuláři Windows. Ovládací prvek je komponenta na formuláři, kterou můžete použít k zobrazení informací nebo přijetí vstupu uživatele.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - Windows Forms controls, adding to form
 - controls [Windows Forms], adding
 ms.assetid: 2af86001-9d62-4154-87fb-66db2c3cd9fd
-ms.openlocfilehash: 560089a23fbcccb0f0d5683a95ad06dd9c59556d
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: d9ab0d78fa0153cce20fb17d22f6e9e781229ece
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76743965"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85325883"
 ---
 # <a name="how-to-add-controls-to-windows-forms"></a>Postupy: Přidávání ovládacích prvků do formulářů Windows
 
@@ -44,14 +45,14 @@ Většina formulářů je navržena přidáním ovládacích prvků na plochu fo
     > [!NOTE]
     > Můžete dvakrát kliknout na ovládací prvek v **sadě nástrojů** a přidat ho do levého horního rohu formuláře ve výchozí velikosti.
 
-    Ovládací prvky lze také dynamicky přidávat do formuláře za běhu. V následujícím příkladu kódu bude ovládací prvek <xref:System.Windows.Forms.TextBox> přidán do formuláře při kliknutí na ovládací prvek <xref:System.Windows.Forms.Button>.
+    Ovládací prvky lze také dynamicky přidávat do formuláře za běhu. V následujícím příkladu kódu <xref:System.Windows.Forms.TextBox> bude ovládací prvek přidán do formuláře při <xref:System.Windows.Forms.Button> kliknutí na ovládací prvek.
 
     > [!NOTE]
-    > Následující postup vyžaduje existenci formuláře s ovládacím prvkem **tlačítko** , `Button1`, již je umístěn.
+    > Následující postup vyžaduje existenci formuláře s ovládacím prvkem **tlačítko** , `Button1` na kterém je již umístěn.
 
 ## <a name="to-add-a-control-to-a-form-programmatically"></a>Postup pro přidání ovládacího prvku do formuláře prostřednictvím kódu programu
 
-1. V metodě, která zpracovává událost `Click` tlačítka v rámci třídy formuláře, vložte kód podobný následujícímu pro přidání odkazu na proměnnou ovládacího prvku, nastavte `Location`ovládacího prvku a přidejte ovládací prvek.
+1. V metodě, která zpracovává `Click` Událost tlačítka v rámci třídy formuláře, vložte kód podobný následujícímu pro přidání odkazu na proměnnou ovládacího prvku, nastavení ovládacího prvku `Location` a přidání ovládacího prvku.
 
     ```vb
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
@@ -85,11 +86,11 @@ Většina formulářů je navržena přidáním ovládacích prvků na plochu fo
     > Můžete také přidat kód pro inicializaci dalších vlastností ovládacího prvku.
 
     > [!IMPORTANT]
-    > Místní počítač můžete vystavit bezpečnostnímu riziku prostřednictvím sítě odkazem na škodlivý `UserControl`. To by mělo být obavy jenom v případě, že by škodlivá osoba vytvořila škodlivý vlastní ovládací prvek, a pak ji nepřidali do projektu omylem.
+    > Místní počítač můžete vystavit bezpečnostnímu riziku prostřednictvím sítě, a to tak, že se na něj odkazuje škodlivá aktivita `UserControl` . To by mělo být obavy jenom v případě, že by škodlivá osoba vytvořila škodlivý vlastní ovládací prvek, a pak ji nepřidali do projektu omylem.
 
 ## <a name="see-also"></a>Viz také
 
-- [Windows Forms – ovládací prvky](index.md)
-- [Postupy: Změna velikosti ovládacích prvků ve Windows Forms](how-to-resize-controls-on-windows-forms.md)
+- [Ovládací prvky model Windows Forms](index.md)
+- [Postupy: Změna velikosti ovládacích prvků ve formulářích Windows](how-to-resize-controls-on-windows-forms.md)
 - [Postupy: Nastavení textu zobrazovaného ovládacím prvkem Windows Forms](how-to-set-the-text-displayed-by-a-windows-forms-control.md)
 - [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)

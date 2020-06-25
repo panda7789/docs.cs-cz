@@ -11,19 +11,18 @@ helpviewer_keywords:
 - PEverify.exe
 - PE files, PEVerify
 ms.assetid: f4f46f9e-8d08-4e66-a94b-0c69c9b0bbfa
-ms.openlocfilehash: d7962bc91d89d3bd183697011aed1afca0fb0fc1
-ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
+ms.openlocfilehash: 478c04a45c7f9d3ad568a6bc4a12a89fe786583a
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84904205"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85325620"
 ---
 # <a name="peverifyexe-peverify-tool"></a>Peverify.exe (nástroj PEVerify)
-Nástroj PEVerify pomáhá vývojářům generujícím Microsoft Intermediate Language (MSIL) (například autorům kompilátorů a vývojářům skriptovacích modulů) zjistit, zda jejich kód MSIL a přidružená metadata splňují požadavky na bezpečnost typů. Některé kompilátory generují kód ověřitelně bezpečného typu pouze tehdy, když se vyhnete určitým jazykovým konstrukcím. Pokud jako vývojář používáte takový kompilátor, můžete chtít ověřit, že nebyla ohrožena bezpečnost typů vašeho kódu. V této situaci můžete spustit nástroj PEVerify pro soubory ke kontrole jazyka MSIL a metadat.  
+
+Nástroj Nástroj PEVerify pomáhá vývojářům vygenerovat jazyk MSIL (Microsoft Intermediate Language) (například moduly pro zápisy kompilátoru a vývojáře skriptovacího stroje), aby určil, zda jejich kód jazyka MSIL a přidružená metadata splňují požadavky na bezpečnost typů. Některé kompilátory generují kód ověřitelně bezpečného typu pouze tehdy, když se vyhnete určitým jazykovým konstrukcím. Pokud používáte takový kompilátor, můžete chtít ověřit, že jste neohrozili bezpečnost typů kódu. Můžete spustit nástroj Nástroj PEVerify v souborech a ověřit jazyk MSIL a metadata.  
   
- Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li spustit nástroj, použijte Developer Command Prompt pro Visual Studio (nebo příkazový řádek sady Visual Studio v systému Windows 7). Další informace najdete v tématu [výzvy k zadání příkazu](developer-command-prompt-for-vs.md).  
-  
- V příkazovém řádku zadejte následující:  
+ Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li spustit nástroj, použijte Developer Command Prompt pro Visual Studio (nebo příkazový řádek sady Visual Studio v systému Windows 7). Další informace najdete v tématu [výzvy k zadání příkazu](developer-command-prompt-for-vs.md).
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -33,11 +32,11 @@ peverify filename [options]
   
 ## <a name="parameters"></a>Parametry  
   
-|Argument|Description|  
+|Argument|Popis|  
 |--------------|-----------------|  
 |*Bitmap*|Přenosný spustitelný soubor (PE), pro který chcete zkontrolovat jazyk MSIL a metadata.|  
   
-|Možnost|Description|  
+|Možnost|Popis|  
 |------------|-----------------|  
 |**/Break =** *maxErrorCount*|Po *maxErrorCount* chybách zruší ověření.<br /><br /> Tento parametr není podporován v rozhraní .NET Framework verze 2.0 a vyšší.|  
 |**/clock**|Změří a oznámí následující časy ověření v milisekundách:<br /><br /> **MD Val. koloběh**<br /> Cyklus ověření metadat<br /><br /> **MD Val. Pure**<br /> Čisté ověření metadat<br /><br /> **IL – ver. koloběh**<br /> Cyklus ověřování Microsoft Intermediate Language (MSIL)<br /><br /> **IL – ver – čistá**<br /> Čisté ověřování MSIL<br /><br /> Časy **MD Val. Cycle** a **Il ver. Cycle** zahrnují dobu potřebnou k provedení nezbytných postupů spuštění a vypnutí. Časy **MD Val. Pure** a **Il verze Pure** odrážejí dobu potřebnou k provedení ověřování nebo ověření.|  
@@ -46,7 +45,7 @@ peverify filename [options]
 |**/Ignore =** *Hex. Code* [, *Hex. Code*]|Ignoruje zadané kódy chyb.|  
 |**/Ignore = @** *responseFile*|Ignoruje kódy chyb uvedené v zadaném souboru odpovědí.|  
 |**/Il**|Provede kontroly ověřování bezpečnosti typů jazyka MSIL pro metody implementované v sestavení určeném parametrem *filename*. Nástroj vrátí podrobné popisy jednotlivých nalezených problémů, pokud nezadáte možnost **/quiet** .|  
-|**/MD**|Provádí kontroly ověřování metadat u sestavení určeného parametrem *filename*. Prochází kompletní strukturu metadat v souboru a hlásí všechny zaznamenané problémy s ověřením.|  
+|**/MD**|Provádí kontroly ověřování metadat u sestavení určeného parametrem *filename*. Tato možnost provede úplnou strukturu metadat v rámci souboru a oznámí všechny zjištěné problémy s ověřením.|  
 |**/nologo**|Potlačí zobrazení informací o verzi a autorských právech produktu.|  
 |**/nosymbols**|V rozhraní .NET Framework verze 2.0 potlačí zobrazování čísel řádků z důvodu zpětné kompatibility.|  
 |**parametr**|Nastaví tichý režim; potlačí výstup hlášení problémů ověření. Nástroj Peverify.exe stále hlásí, zda je soubor typově bezpečný, ale již nehlásí informace o problémech, které brání v ověření bezpečnosti typu.|  
@@ -62,7 +61,7 @@ peverify filename [options]
   
  Nástroj Peverify.exe provádí komplexní kontroly MSIL u platných metadat na základě analýzy datového toku a seznamu několika stovek pravidel. Podrobné informace o kontrolách, které Peverify.exe provádí, naleznete v části specifikace ověření metadat a specifikace sady MSIL instrukcí ve složce průvodce pro vývojáře v Windows SDK.  
   
- Všimněte si, že .NET Framework verze 2,0 nebo novější podporuje ověřitelné `byref` návraty zadané pomocí následujících instrukcí jazyka MSIL: `dup` , `ldsflda` ,, `ldflda` `ldelema` `call` a `unbox` .  
+.NET Framework verze 2,0 nebo novější podporuje ověřitelné `byref` návraty zadané pomocí následujících instrukcí jazyka MSIL: `dup` , `ldsflda` , `ldflda` ,, a `ldelema` `call` `unbox` .  
   
 ## <a name="examples"></a>Příklady  
  Následující příkaz provede kontroly ověřování metadat a ověření bezpečnosti typů jazyka MSIL pro metody implementované v sestavení `myAssembly.exe` .  

@@ -1,5 +1,6 @@
 ---
-title: Spustit procedury v nastavených intervalech s komponentou časovače
+title: Spouštění procedur v nastavených intervalech pomocí komponenty Timer
+description: Naučte se, jak používat komponentu časovače formuláře Windows ke spouštění procedur v nastavených intervalech nebo při uplynutí nastaveného časového intervalu.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -13,38 +14,38 @@ helpviewer_keywords:
 - Timer component [Windows Forms], initializing
 - procedures [Windows Forms], specific time intervals
 ms.assetid: 8025247a-2de4-4d86-b8ab-a8cb8aeab2ea
-ms.openlocfilehash: 52d68a8136551384f67ff6232799600af09f8b66
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 6847819fcec98d01d38b8e44604a259f06be7c02
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79182048"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85325763"
 ---
 # <a name="how-to-run-procedures-at-set-intervals-with-the-windows-forms-timer-component"></a>Postupy: Spouštění procedur v nastavených intervalech pomocí součásti Windows Forms Timer
-Někdy můžete chtít vytvořit proceduru, která běží v určitých časových intervalech, dokud není smyčka dokončena nebo která se spustí po uplynutí nastaveného časového intervalu. Součást <xref:System.Windows.Forms.Timer> umožňuje takový postup.  
+Někdy můžete chtít vytvořit proceduru, která bude spuštěna v určitých časových intervalech, dokud se smyčka nedokončí nebo dokud se nespustí při uplynutí nastaveného časového intervalu. <xref:System.Windows.Forms.Timer>Tato součást provádí takový postup.  
   
- Tato součást je určena pro prostředí windows forms. Pokud potřebujete časovač, který je vhodný pro prostředí serveru, naleznete [v tématu Úvod do časovačů založených na serveru](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/tb9yt5e6(v=vs.90)).  
+ Tato součást je navržená pro model Windows Forms prostředí. Pokud potřebujete časovač, který je vhodný pro serverové prostředí, přečtěte si téma [Úvod k časovačům založeným na serveru](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/tb9yt5e6(v=vs.90)).  
   
 > [!NOTE]
-> Při použití komponenty existují <xref:System.Windows.Forms.Timer> určitá omezení. Další informace naleznete [v tématu Omezení vlastnosti Interval součásti časovače formulářů systému Windows](limitations-of-the-timer-component-interval-property.md).  
+> Při použití komponenty existují určitá omezení <xref:System.Windows.Forms.Timer> . Další informace najdete v tématu [omezení vlastnosti intervalů součásti časovače model Windows Forms](limitations-of-the-timer-component-interval-property.md).  
   
-## <a name="to-run-a-procedure-at-set-intervals-with-the-timer-component"></a>Spuštění procedury v nastavených intervalech s komponentou Timer  
+## <a name="to-run-a-procedure-at-set-intervals-with-the-timer-component"></a>Spuštění procedury v nastavených intervalech pomocí komponenty Timer  
   
-1. Přidejte <xref:System.Windows.Forms.Timer> a do formuláře. Viz následující příklad části pro ilustraci, jak to udělat programově. Visual Studio má také podporu pro přidávání součástí do formuláře. Viz [také postup: Přidání ovládacích prvků bez uživatelského rozhraní do formulářů systému Windows](how-to-add-controls-without-a-user-interface-to-windows-forms.md).  
+1. Přidejte <xref:System.Windows.Forms.Timer> do formuláře. V následujícím ukázkovém oddílu najdete ukázku toho, jak to provést programově. Visual Studio také podporuje přidávání součástí do formuláře. Viz také [Postupy: Přidání ovládacích prvků bez uživatelského rozhraní pro model Windows Forms](how-to-add-controls-without-a-user-interface-to-windows-forms.md).  
   
-2. Nastavte <xref:System.Windows.Forms.Timer.Interval%2A> vlastnost (v milisekundách) pro časovač. Tato vlastnost určuje, kolik času uběhne před znovu spuštěním procedury.  
+2. Nastavte <xref:System.Windows.Forms.Timer.Interval%2A> vlastnost (v milisekundách) pro časovač. Tato vlastnost určuje, kolik času bude před opakováním postupu probíhat znovu.  
   
     > [!NOTE]
-    > Čím častěji dojde k události časovače, tím více času procesoru se používá v reakci na událost. To může zpomalit celkový výkon. Nenastavovat menší interval, než potřebujete.  
+    > Častěji dojde k události časovače, při reagování na událost se používá více procesorového času. To může zpomalit celkový výkon. Nenastavte kratší interval, než kolik potřebujete.  
   
-3. Napište příslušný <xref:System.Windows.Forms.Timer.Tick> kód do obslužné rutiny události. Kód napíšete v této události bude spuštěn <xref:System.Windows.Forms.Timer.Interval%2A> v intervalu určeném ve vlastnosti.  
+3. V <xref:System.Windows.Forms.Timer.Tick> obslužné rutině události napište příslušný kód. Kód, který zapíšete do této události, bude spuštěn v intervalu zadaném ve <xref:System.Windows.Forms.Timer.Interval%2A> Vlastnosti.  
   
-4. Nastavte <xref:System.Windows.Forms.Timer.Enabled%2A> vlastnost `true` pro spuštění časovače. K <xref:System.Windows.Forms.Timer.Tick> události začne dojít a postup se spustí v nastaveném intervalu.  
+4. Nastavte <xref:System.Windows.Forms.Timer.Enabled%2A> vlastnost na hodnotu `true` pro spuštění časovače. Dojde <xref:System.Windows.Forms.Timer.Tick> k zahájení události a spustí se procedura v nastaveném intervalu.  
   
-5. Ve vhodnou dobu nastavte <xref:System.Windows.Forms.Timer.Enabled%2A> vlastnost, chcete-li `false` proceduru znovu spustit. Nastavení intervalu `0` na nezpůsobí zastavení časovače.  
+5. Ve vhodné době nastavte <xref:System.Windows.Forms.Timer.Enabled%2A> vlastnost na hodnotu `false` pro zastavení spuštění procedury. Nastavení intervalu `0` nezpůsobí zastavení časovače.  
   
 ## <a name="example"></a>Příklad  
- Tento první příklad kódu sleduje denní dobu v přírůstcích po jedné sekundě. Používá ve <xref:System.Windows.Forms.Button>formuláři <xref:System.Windows.Forms.Label>a <xref:System.Windows.Forms.Timer> , a komponentu. Vlastnost <xref:System.Windows.Forms.Timer.Interval%2A> je nastavena na 1000 (rovná se jedné sekundě). V <xref:System.Windows.Forms.Timer.Tick> případě, že popisek titulek je nastavena na aktuální čas. Po klepnutí na tlačítko <xref:System.Windows.Forms.Timer.Enabled%2A> je vlastnost `false`nastavena na , což zastaví časovač v aktualizaci titulku popisku. Následující příklad kódu vyžaduje, abyste měli <xref:System.Windows.Forms.Button> formulář `Button1`s <xref:System.Windows.Forms.Timer> názvem `Timer1`ovládacího <xref:System.Windows.Forms.Label> prvku `Label1`, ovládacím prvkem s názvem a ovládacím prvkem s názvem .  
+ Tento první příklad kódu sleduje denní dobu v přírůstcích po jednom sekundě. Používá <xref:System.Windows.Forms.Button> <xref:System.Windows.Forms.Label> komponentu, a a <xref:System.Windows.Forms.Timer> na formuláři. <xref:System.Windows.Forms.Timer.Interval%2A>Vlastnost je nastavena na 1000 (je rovna jedné sekundě). V <xref:System.Windows.Forms.Timer.Tick> případě je titulek popisku nastaven na aktuální čas. Po kliknutí na tlačítko <xref:System.Windows.Forms.Timer.Enabled%2A> je vlastnost nastavena na hodnotu `false` a zastavením časovače z aktualizace titulku popisku. Následující příklad kódu vyžaduje, abyste měli formulář s <xref:System.Windows.Forms.Button> ovládacím prvkem s názvem `Button1` , <xref:System.Windows.Forms.Timer> ovládací prvek s názvem `Timer1` a <xref:System.Windows.Forms.Label> ovládací prvek s názvem `Label1` .  
   
 ```vb  
 Private Sub InitializeTimer()  
@@ -149,7 +150,7 @@ private:
 ```  
   
 ## <a name="example"></a>Příklad  
- Tento druhý příklad kódu spustí proceduru každých 600 milisekund, dokud nebude smyčka dokončena. Následující příklad kódu vyžaduje, abyste měli <xref:System.Windows.Forms.Button> formulář `Button1`s <xref:System.Windows.Forms.Timer> názvem `Timer1`ovládacího <xref:System.Windows.Forms.Label> prvku `Label1`, ovládacím prvkem s názvem a ovládacím prvkem s názvem .  
+ Tento druhý příklad kódu spouští proceduru každých 600 milisekund, dokud se smyčka nedokončí. Následující příklad kódu vyžaduje, abyste měli formulář s <xref:System.Windows.Forms.Button> ovládacím prvkem s názvem `Button1` , <xref:System.Windows.Forms.Timer> ovládací prvek s názvem `Timer1` a <xref:System.Windows.Forms.Label> ovládací prvek s názvem `Label1` .  
   
 ```vb  
 ' This variable will be the loop counter.  

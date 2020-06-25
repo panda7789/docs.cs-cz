@@ -6,30 +6,31 @@ ms.technology: dotnet-standard
 helpviewer_keywords:
 - thread-safe collections, when to upgrade
 ms.assetid: a9babe97-e457-4ff3-b528-a1bc940d5320
-ms.openlocfilehash: cea9c038896d07d526874e2ae4c33e479eaa3963
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: 499af6d7b8de1decbcffefe0a3b1420cc548488a
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84769129"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85326040"
 ---
-# <a name="when-to-use-a-thread-safe-collection"></a>Kdy použít kolekci s bezpečnými vlákny
-.NET Framework 4 zavádí pět nových typů kolekcí, které jsou speciálně navržené tak, aby podporovaly operace přidávání a odebírání s více vlákny. Aby bylo možné dosáhnout bezpečnosti více vláken, tyto nové typy používají různé druhy efektivního uzamykání a synchronizačních mechanismů bez zámků. Synchronizace přidává k operaci režii. Množství režie závisí na druhu používané synchronizace, typu prováděných operací a dalších faktorech, jako je počet vláken, která se pokoušejí souběžně přistupovat ke kolekci.  
+# <a name="when-to-use-a-thread-safe-collection"></a>Kdy použít kolekci bezpečnou pro přístup z více vláken
+
+.NET Framework 4 zavedl pět typů kolekcí, které jsou speciálně navržené pro podporu vícevláknových operací přidávání a odebírání. Pro zajištění bezpečnosti vláken tyto typy používají různé druhy efektivních zámků a synchronizačních mechanismů bez zámků. Synchronizace přidává k operaci režii. Množství režie závisí na druhu používané synchronizace, typu prováděných operací a dalších faktorech, jako je počet vláken, která se pokoušejí souběžně přistupovat ke kolekci.  
   
  V některých scénářích je režijní náklady na synchronizaci zanedbatelná a umožňuje, aby vícevláknový typ byl výrazně rychlejší a lépe škálovatelný, než je ekvivalent bez bezpečného vlákna, pokud je chráněn externím zámkem. V jiných scénářích může režie způsobit, že typ bezpečný pro přístup z více vláken provede a škáluje o stejné nebo ještě pomalejší úrovni než verze typu externě uzamčená bez možnosti bezpečného přístupu z více vláken.  
   
  V následujících částech najdete obecné pokyny k tomu, kdy použít kolekci bezpečnou pro přístup z více vláken a jejich ekvivalent bez bezpečného přístupu k vláknům, který má uživatelem poskytnutý zámek pro operace čtení a zápisu. Vzhledem k tomu, že výkon se může lišit v závislosti na mnoha faktorech, doprovodné materiály nejsou specifické a nemusí nutně platit za všech okolností. Pokud je výkon velmi důležitý, pak nejlepším způsobem určení toho, který typ kolekce použít, je měření výkonu na základě reprezentativních konfigurací počítačů a zatížení. Tento dokument používá následující výrazy:  
   
- *Scénář čistého producenta pro spotřebitele*  
+ *Scénář čistého producenta pro spotřebitele*\
  Jakékoli dané vlákno buď přidává nebo odebírá prvky, ale ne obojí.  
   
- *Smíšený scénář producent – příjemce*  
+ *Smíšený scénář producent – příjemce*\
  Jakékoli dané vlákno je přidávání a odebírání prvků.  
   
- *Zrychlení*  
+ *Zrychlení*\
  Rychlejší výkon algoritmu vzhledem k jinému typu ve stejném scénáři.  
   
- *Škálovatelnost*  
+ *Škálovatelnost*\
  Zvýšení výkonu, které je úměrné počtu jader v počítači. Algoritmus, který se škáluje, se zrychluje na osm jader, než na dvou jádrech.  
   
 ## <a name="concurrentqueuet-vs-queuet"></a>ConcurrentQueue (T) vs. Queue (T)  

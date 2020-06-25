@@ -1,6 +1,6 @@
 ---
-title: Volba mezi DateTime, DateTimeOffset, TimeSpan a TimeZoneInfo
-description: Naučte se vybírat mezi typy DateTime, DateTimeOffset, TimeSpan a TimeZoneInfo, které reprezentují informace o datu a čase v .NET.
+title: Compare DateTime, DateTimeOffset, TimeSpan a TimeZoneInfo
+description: Přečtěte si o rozdílech mezi typy DateTime, DateTimeOffset, TimeSpan a TimeZoneInfo, které reprezentují informace o datu a čase v .NET.
 ms.date: 04/10/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -14,16 +14,16 @@ helpviewer_keywords:
 - time zones [.NET Framework], type options
 - DateTime structure
 ms.assetid: 07f17aad-3571-4014-9ef3-b695a86f3800
-ms.openlocfilehash: 0b89d0fd36af00796105af50f51803c90cce2605
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: 03d00fb802032b981a5ebe80f7166eba0fb54a60
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84662807"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85326054"
 ---
-# <a name="choosing-between-datetime-datetimeoffset-timespan-and-timezoneinfo"></a>Volba mezi DateTime, DateTimeOffset, TimeSpan a TimeZoneInfo
+# <a name="choose-between-datetime-datetimeoffset-timespan-and-timezoneinfo"></a>Volba mezi DateTime, DateTimeOffset, TimeSpan a TimeZoneInfo
 
-Aplikace .NET, které používají informace o datu a čase, jsou velmi rozdílné a můžou tyto informace použít několika způsoby. Mezi běžně používané informace o datu a času patří následující:
+Aplikace .NET mohou používat informace o datu a čase několika způsoby. Mezi běžně používané informace o datu a času patří:
 
 - Aby odrážela pouze datum, takže časové údaje nejsou důležité.
 
@@ -33,7 +33,7 @@ Aplikace .NET, které používají informace o datu a čase, jsou velmi rozdíln
 
 - Chcete-li načíst informace o datu a čase ze zdrojů mimo rozhraní .NET, obvykle v případě, kdy jsou informace o datu a čase uloženy v jednoduchém datovém typu.
 
-- Pro jednoznačnou a jednoznačně identifikují jediný bod v čase. Některé aplikace vyžadují, aby bylo datum a čas dvojznačné jenom v hostitelském systému. jiné vyžadují, aby byly v rámci systémů jednoznačně deserializovatelné a používané v jiném systému kdekoli na světě, ale data serializovaná v jednom systému.
+- Pro jednoznačnou a jednoznačně identifikují jediný bod v čase. Některé aplikace vyžadují, aby bylo datum a čas dvojznačné jenom v hostitelském systému. Jiné aplikace vyžadují, aby byly v různých systémech jednoznačné (to znamená, že datum serializované v jednom systému může být smysluplně deserializované a používané v jiném systému kdekoli na světě).
 
 - Chcete-li zachovat více souvisejících časů (například místní čas žadatele a čas serveru pro webový požadavek).
 
@@ -48,7 +48,7 @@ Rozhraní .NET zahrnuje <xref:System.DateTime> <xref:System.DateTimeOffset> typy
 
 <xref:System.DateTime>Hodnota definuje konkrétní datum a čas. Obsahuje <xref:System.DateTime.Kind%2A> vlastnost, která poskytuje omezené informace o časovém pásmu, do kterého patří datum a čas. <xref:System.DateTimeKind>Hodnota vrácená <xref:System.DateTime.Kind%2A> vlastností označuje, zda <xref:System.DateTime> hodnota představuje místní čas ( <xref:System.DateTimeKind.Local?displayProperty=nameWithType> ), KOORDINOVANÝ světový čas (UTC) ( <xref:System.DateTimeKind.Utc?displayProperty=nameWithType> ) nebo nespecifikovaný čas ( <xref:System.DateTimeKind.Unspecified?displayProperty=nameWithType> ).
 
-<xref:System.DateTime>Struktura je vhodná pro aplikace, které mají následující:
+<xref:System.DateTime>Struktura je vhodná pro aplikace s jednou nebo více následujícími charakteristikami:
 
 - Pracují pouze s kalendářními daty.
 
@@ -73,7 +73,7 @@ Pokud konkrétní <xref:System.DateTime> hodnota představuje UTC, tato hodnota 
 
 <xref:System.DateTimeOffset>Struktura představuje hodnotu data a času spolu s posunem, který označuje, jak velká hodnota se liší od času UTC. Proto hodnota vždy jednoznačně identifikuje jediný bod v čase.
 
-<xref:System.DateTimeOffset>Typ zahrnuje všechny funkce <xref:System.DateTime> typu společně s vědomím časového pásma. To je vhodné pro aplikace, které provedly následující akce:
+<xref:System.DateTimeOffset>Typ zahrnuje všechny funkce <xref:System.DateTime> typu společně s vědomím časového pásma. To je vhodné pro aplikace, které:
 
 - Jedinečně a jednoznačně identifikují jediný bod v čase. <xref:System.DateTimeOffset>Typ lze použít k jednoznačnému definování významu "nyní", k protokolování časů transakcí, k protokolování časů události systému nebo aplikace a k záznamu časů vytváření a úprav souborů.
 
@@ -82,14 +82,14 @@ Pokud konkrétní <xref:System.DateTime> hodnota představuje UTC, tato hodnota 
 - Zachovejte více souvisejících časů, pokud jsou tyto časy uloženy jako dvě samostatné hodnoty nebo jako dva členy struktury.
 
 > [!NOTE]
-> Tato použití pro <xref:System.DateTimeOffset> hodnoty jsou mnohem častější než u <xref:System.DateTime> hodnot. V důsledku toho <xref:System.DateTimeOffset> by se měl považovat za výchozí typ data a času pro vývoj aplikací.
+> Tato použití pro <xref:System.DateTimeOffset> hodnoty jsou mnohem častější než u <xref:System.DateTime> hodnot. V důsledku toho zvažte <xref:System.DateTimeOffset> jako výchozí typ data a času pro vývoj aplikací.
 
-<xref:System.DateTimeOffset>Hodnota není svázána s konkrétním časovým pásmem, ale může pocházet z celé řady časových pásem. Pro ilustraci tohoto příkladu obsahuje následující příklad časová pásma, do kterých <xref:System.DateTimeOffset> může patřit určitý počet hodnot (včetně místního tichomořského času).
+<xref:System.DateTimeOffset>Hodnota není vázaná na konkrétní časové pásmo, ale může pocházet z nejrůznějších časových pásem. Následující příklad uvádí časová pásma, ke kterým <xref:System.DateTimeOffset> může patřit určitý počet hodnot (včetně místního tichomořského času).
 
 [!code-csharp[System.DateTimeOffset.Conceptual#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual/cs/Conceptual1.cs#1)]
 [!code-vb[System.DateTimeOffset.Conceptual#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual/vb/Conceptual1.vb#1)]
 
-Výstup ukazuje, že každá hodnota data a času v tomto příkladu může patřit alespoň do tří různých časových pásem. <xref:System.DateTimeOffset>Hodnota 6/10/2007 ukazuje, že pokud hodnota data a času představuje letní čas, jeho posun od času UTC ještě nutně neodpovídá základnímu posunu UTC počátečního časového pásma nebo k posunu od času UTC, který se nachází v jeho zobrazovaném názvu. To znamená, že vzhledem k tomu, že jedna <xref:System.DateTimeOffset> hodnota není pevně spojená s časovým pásmem, nemůže odrážet přechod časového pásma do a z letního času. To může být obzvláště problematické, pokud se k manipulaci s hodnotou používá aritmetickí data a času <xref:System.DateTimeOffset> . Diskuzi o tom, jak provádět aritmetické operace s daty a časy způsobem, který bere v úvahu pravidla úpravy časového pásma, najdete v tématu [provádění aritmetických operací s daty a časy](performing-arithmetic-operations.md).
+Výstup ukazuje, že každá hodnota data a času v tomto příkladu může patřit alespoň do tří různých časových pásem. <xref:System.DateTimeOffset>Hodnota 6/10/2007 ukazuje na to, že pokud hodnota data a času představuje letní čas, posun od času UTC ještě nutně neodpovídá základnímu posunu UTC prvotního časového pásma nebo k posunu od času UTC, který se nachází v jeho zobrazovaném názvu. Vzhledem k tomu <xref:System.DateTimeOffset> , že jedna hodnota není pevně spojená s časovým pásmem, nemůže odrážet přechod časového pásma do a z letního času. To může být problematické, pokud se k manipulaci s hodnotou používá aritmetickí data a času <xref:System.DateTimeOffset> . Diskuzi o tom, jak provádět aritmetické operace s daty a časy způsobem, který bere v úvahu pravidla úpravy časového pásma, najdete v tématu [provádění aritmetických operací s daty a časy](performing-arithmetic-operations.md).
 
 ## <a name="the-timespan-structure"></a>Struktura TimeSpan
 
@@ -117,7 +117,7 @@ Následující příklad definuje `StoreInfo` strukturu, která zahrnuje <xref:S
 
 V některých případech <xref:System.TimeZoneInfo> může použití úplné výhody třídy vyžadovat další vývojovou práci. Pokud hodnoty data a času nejsou pevně spojeny s časovými pásmy, ke kterým patří, je vyžadována další práce. Pokud vaše aplikace neposkytuje nějaký mechanismus pro propojení data a času s přidruženým časovým pásmem, je možné, že konkrétní hodnota data a času se stane nepřidruženým k časovému pásmu. Jednou z metod propojení těchto informací je definování třídy nebo struktury, která obsahuje hodnotu data a času a souvisejícího objektu časového pásma.
 
-Využití výhod časových pásem v rozhraní .NET je možné pouze v případě, že časové pásmo, do kterého patří hodnota data a času, je známo při vytváření instance objektu data a času. To se často nejedná o případ, zejména v webových nebo síťových aplikacích.
+Chcete-li využít podporu časových pásem v rozhraní .NET, je nutné znát časové pásmo, do kterého hodnota data a času patří, když je vytvořena instance objektu data a času. Časové pásmo není často známo, zejména ve webových nebo síťových aplikacích.
 
 ## <a name="see-also"></a>Viz také
 

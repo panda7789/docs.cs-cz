@@ -3,15 +3,15 @@ title: Co je nového v .NET Core 3.0
 description: Přečtěte si o nových funkcích, které najdete v .NET Core 3,0.
 dev_langs:
 - csharp
-author: thraka
+author: adegeo
 ms.author: adegeo
 ms.date: 01/27/2020
-ms.openlocfilehash: 422cb7b20e2644ab44f9573f101fb6b53ab1dd2f
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 7caeaaa834dc827998d7d1bc3a25ba4e194996f4
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83378828"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85324414"
 ---
 # <a name="whats-new-in-net-core-30"></a>Co je nového v .NET Core 3.0
 
@@ -257,14 +257,14 @@ Místní nástroje spoléhají na název souboru manifestu `dotnet-tools.json` v
 
 U globálních i místních nástrojů se vyžaduje kompatibilní verze modulu runtime. Mnoho nástrojů, které jsou aktuálně na NuGet.org Target pro .NET Core Runtime 2,1. Pokud chcete tyto nástroje nainstalovat globálně nebo lokálně, budete si muset nainstalovat [modul runtime .NET Core 2,1](https://dotnet.microsoft.com/download/dotnet-core/2.1).
 
-### <a name="new-globaljson-options"></a>Nové možnosti Global. JSON
+### <a name="new-globaljson-options"></a>Nové global.jsmožností
 
-Soubor *Global. JSON* má nové možnosti, které poskytují větší flexibilitu při pokusu o definování používané verze .NET Core SDK. Nové možnosti jsou:
+*global.jsv* souboru obsahuje nové možnosti, které poskytují větší flexibilitu při pokusu o definování používané verze .NET Core SDK. Nové možnosti jsou:
 
 - `allowPrerelease`: Určuje, zda má Řešitel sady SDK zvážit předprodejní verze při výběru verze sady SDK, která se má použít.
 - `rollForward`: Označuje zásadu pro převzetí služeb při obnovení, která se má použít při výběru verze sady SDK, a to buď jako záložní, pokud konkrétní verze sady SDK chybí, nebo jako direktiva pro použití vyšší verze.
 
-Další informace o změnách, včetně výchozích hodnot, podporovaných hodnot a nových pravidel pro porovnání, najdete v tématu [Přehled globálního formátu JSON](../tools/global-json.md).
+Další informace o změnách, včetně výchozích hodnot, podporovaných hodnot a nových pravidel pro porovnání, najdete v tématu [global.jspřehledu](../tools/global-json.md).
 
 ### <a name="smaller-garbage-collection-heap-sizes"></a>Menší velikosti haldy uvolňování paměti
 
@@ -319,7 +319,7 @@ Další informace o režimech vysokého rozlišení DPI najdete v tématu [vývo
 
 Ve Windows teď můžete vytvářet spravované komponenty, které lze volat v modelu COM. Tato možnost je zásadní pro použití .NET Core s modely doplňku COM a také k zajištění parity s .NET Framework.
 
-Na rozdíl od .NET Framework, kde se *Knihovna Mscoree. dll* použila jako server com, .NET Core při sestavování komponenty com přidá nativní spouštěcí knihovnu DLL do adresáře *bin* .
+Na rozdíl od .NET Framework, kde se *mscoree.dll* používal jako server com, .NET Core při sestavování komponenty com přidá nativní spouštěcí knihovnu DLL do adresáře *bin* .
 
 Příklad vytvoření komponenty modelu COM a její využití naleznete v [ukázce modelu COM](https://github.com/dotnet/samples/tree/master/core/extensions/COMServerDemo).
 
@@ -539,13 +539,13 @@ System.Console.WriteLine($"RuntimeInformation.FrameworkDescription: {System.Runt
 
 ### <a name="fast-built-in-json-support"></a>Rychlá integrovaná podpora JSON
 
-Uživatelé rozhraní .NET mají převážně na [Newtonsoft. JSON](https://www.newtonsoft.com/json) a další oblíbené knihovny JSON, které budou mít i nadále dobré možnosti. `Newtonsoft.Json`používá řetězce .NET jako základní datový typ, který je v digestoři UTF-16.
+Uživatelé rozhraní .NET mají z velké části [Newtonsoft.Jsna](https://www.newtonsoft.com/json) a dalších oblíbených knihovnách JSON, které budou mít i nadále dobré možnosti. `Newtonsoft.Json`používá řetězce .NET jako základní datový typ, který je v digestoři UTF-16.
 
 Nová integrovaná podpora JSON je vysoce výkonná, nízká alokace a funguje s textem JSON kódovaným ve formátu UTF-8. Další informace o <xref:System.Text.Json> oboru názvů a typech naleznete v následujících článcích:
 
 * [Serializace JSON v .NET – přehled](../../standard/serialization/system-text-json-overview.md)
 * [Postup serializace a deserializace JSON v rozhraní .NET](../../standard/serialization/system-text-json-how-to.md).
-* [Postup migrace z Newtonsoft. JSON na System. text. JSON](../../standard/serialization/system-text-json-migrate-from-newtonsoft-how-to.md)
+* [Postup migrace z Newtonsoft.Jsna do System.Text.Jsna](../../standard/serialization/system-text-json-migrate-from-newtonsoft-how-to.md)
 
 ### <a name="http2-support"></a>Podpora HTTP/2
 

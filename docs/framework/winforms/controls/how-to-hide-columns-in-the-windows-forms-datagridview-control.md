@@ -1,5 +1,6 @@
 ---
 title: Skrýt sloupce v ovládacím prvku DataGridView
+description: Přečtěte si, jak skrýt sloupce programově v ovládacím prvku DataGridView model Windows Forms nastavením vlastnosti DataGridViewColumn. Visible na false.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,23 +10,23 @@ helpviewer_keywords:
 - data grids [Windows Forms], hiding columns
 - columns [Windows Forms], hiding
 ms.assetid: 3f94143a-2ef0-49a5-a22a-b2e6f9289642
-ms.openlocfilehash: 7ac6ccac5c02f014d5aa629956e51675cc60fddc
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 46d7faea76098406b8e0a91d22922bf9ca391e28
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76736557"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85325912"
 ---
 # <a name="how-to-hide-columns-in-the-windows-forms-datagridview-control"></a>Postupy: Skrytí sloupců v ovládacím prvku Windows Forms DataGridView
-Někdy budete chtít zobrazit pouze některé sloupce, které jsou k dispozici v ovládacím prvku model Windows Forms <xref:System.Windows.Forms.DataGridView>. Například můžete chtít zobrazit mzdový sloupec zaměstnanců uživatelům s přihlašovacími údaji pro správu při jejich skrývání od jiných uživatelů. Alternativně můžete chtít navazovat ovládací prvek na zdroj dat, který obsahuje mnoho sloupců, pouze některé z nich chcete zobrazit. V takovém případě obvykle odeberete sloupce, které nemají zájem o zobrazení, a ne jejich skrytí.  
+Někdy budete chtít zobrazit pouze některé sloupce, které jsou k dispozici v <xref:System.Windows.Forms.DataGridView> ovládacím prvku model Windows Forms. Například můžete chtít zobrazit mzdový sloupec zaměstnanců uživatelům s přihlašovacími údaji pro správu při jejich skrývání od jiných uživatelů. Alternativně můžete chtít navazovat ovládací prvek na zdroj dat, který obsahuje mnoho sloupců, pouze některé z nich chcete zobrazit. V takovém případě obvykle odeberete sloupce, které nemají zájem o zobrazení, a ne jejich skrytí.  
   
- V ovládacím prvku <xref:System.Windows.Forms.DataGridView> určuje hodnota vlastnosti <xref:System.Windows.Forms.DataGridViewColumn.Visible%2A> sloupce, zda je tento sloupec zobrazen.  
+ V <xref:System.Windows.Forms.DataGridView> ovládacím prvku <xref:System.Windows.Forms.DataGridViewColumn.Visible%2A> určuje hodnota vlastnosti sloupce, zda je tento sloupec zobrazen.  
   
  Pro tuto úlohu se v aplikaci Visual Studio podporuje.  Viz také [Postupy: skrytí sloupců v ovládacím prvku DataGridView model Windows Forms pomocí návrháře](hide-columns-in-the-datagrid-using-the-designer.md).  
   
 ### <a name="to-hide-a-column-programmatically"></a>Postup pro skrytí sloupce prostřednictvím kódu programu  
   
-- Vlastnost <xref:System.Windows.Forms.DataGridViewColumn.Visible%2A?displayProperty=nameWithType> nastavte na hodnotu `false`. Chcete-li skrýt `CustomerID` sloupec, který je automaticky generován během vytváření datové vazby, umístěte následující příklad kódu do obslužné rutiny události <xref:System.Windows.Forms.DataGridView.DataBindingComplete>.  
+- Nastavte <xref:System.Windows.Forms.DataGridViewColumn.Visible%2A?displayProperty=nameWithType> vlastnost na hodnotu `false` . Chcete-li skrýt `CustomerID` sloupec, který je generován automaticky během vytváření datových vazeb, umístěte následující příklad kódu do <xref:System.Windows.Forms.DataGridView.DataBindingComplete> obslužné rutiny události.  
   
      [!code-csharp[System.Windows.Forms.DataGridViewMisc#063](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/CS/datagridviewmisc.cs#063)]
      [!code-vb[System.Windows.Forms.DataGridViewMisc#063](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/VB/datagridviewmisc.vb#063)]  
@@ -33,9 +34,9 @@ Někdy budete chtít zobrazit pouze některé sloupce, které jsou k dispozici v
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
-- <xref:System.Windows.Forms.DataGridView> ovládací prvek s názvem `dataGridView1`, který obsahuje sloupec s názvem `CustomerID`.  
+- <xref:System.Windows.Forms.DataGridView>Ovládací prvek s názvem `dataGridView1` , který obsahuje sloupec s názvem `CustomerID` .  
   
-- Odkazy na <xref:System?displayProperty=nameWithType> a <xref:System.Windows.Forms?displayProperty=nameWithType> sestavení.  
+- Odkazy na <xref:System?displayProperty=nameWithType> sestavení a <xref:System.Windows.Forms?displayProperty=nameWithType> .  
   
 ## <a name="see-also"></a>Viz také
 

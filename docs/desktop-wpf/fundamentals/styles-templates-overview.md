@@ -1,18 +1,18 @@
 ---
 title: Styly a šablony
 description: Přečtěte si o prostředcích XAML v Windows Presentation Foundation (WPF) pro .NET Core. Seznamte se s typy prostředků XAML, které se týkají stylů a motivů.
-author: thraka
+author: adegeo
 ms.author: adegeo
 ms.date: 09/09/2019
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: f845e739ec3cae502d1e4fd6631f987c5364a42e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: faa54e0a3c827717114ca6ca4f033c1c4c3acfa8
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "82071883"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85325778"
 ---
 # <a name="styles-and-templates-in-wpf"></a>Styly a šablony v subsystému WPF
 
@@ -38,11 +38,11 @@ Ukázka jednoduché fotky používá styly a šablonování k vytvoření vizuá
 
 ## <a name="styles"></a>Styly
 
-Můžete si představit <xref:System.Windows.Style> jako pohodlný způsob, jak použít sadu hodnot vlastností na více prvků. Můžete použít styl na jakémkoli prvku, který je odvozen <xref:System.Windows.FrameworkElement> z nebo <xref:System.Windows.FrameworkContentElement> jako <xref:System.Windows.Window> nebo. <xref:System.Windows.Controls.Button>
+Můžete si představit <xref:System.Windows.Style> jako pohodlný způsob, jak použít sadu hodnot vlastností na více prvků. Můžete použít styl na jakémkoli prvku, který je odvozen z <xref:System.Windows.FrameworkElement> nebo jako <xref:System.Windows.FrameworkContentElement> <xref:System.Windows.Window> nebo <xref:System.Windows.Controls.Button> .
 
 Nejběžnější způsob, jak deklarovat styl, je jako prostředek v `Resources` oddílu v souboru XAML. Vzhledem k tomu, že styly jsou prostředky, řídí se stejnými pravidly oboru, která se vztahují na všechny prostředky. Put, kde deklarujete styl, ovlivňuje, kde lze použít styl. Například pokud deklarujete styl v kořenovém elementu souboru XAML definice aplikace, styl lze použít kdekoli v aplikaci.
 
-Například následující kód XAML deklaruje dva styly pro `TextBlock`, jeden automaticky aplikovaný na všechny `TextBlock` prvky a druhý, který musí být explicitně odkazován.
+Například následující kód XAML deklaruje dva styly pro `TextBlock` , jeden automaticky aplikovaný na všechny `TextBlock` prvky a druhý, který musí být explicitně odkazován.
 
 [!code-xaml[SnippetDefaultTextBlockStyleBasedOn](~/samples/snippets/desktop-guide/wpf/styles-and-templates-intro/csharp/Window2.xaml#SnippetDefaultTextBlockStyleBasedOn)]
 
@@ -58,13 +58,13 @@ Další informace naleznete v tématu [vytvoření stylu pro ovládací prvek](s
 
 V WPF <xref:System.Windows.Controls.ControlTemplate> ovládací prvek definuje vzhled ovládacího prvku. Můžete změnit strukturu a vzhled ovládacího prvku definováním nového <xref:System.Windows.Controls.ControlTemplate> a přiřazením k ovládacímu prvku. V mnoha případech šablony poskytují dostatečnou flexibilitu, takže nemusíte psát vlastní ovládací prvky.
 
-Každému ovládacímu prvku je přiřazena výchozí šablona vlastnosti [Control. template](xref:System.Windows.Controls.Control.Template) . Šablona spojuje vizuální prezentaci ovládacího prvku s možnostmi ovládacího prvku. Vzhledem k tomu, že v jazyce XAML definujete šablonu, můžete změnit její vzhled bez psaní kódu. Každá šablona je navržena pro konkrétní ovládací prvek, jako je <xref:System.Windows.Controls.Button>například.
+Každému ovládacímu prvku je přiřazena výchozí šablona vlastnosti [Control. template](xref:System.Windows.Controls.Control.Template) . Šablona spojuje vizuální prezentaci ovládacího prvku s možnostmi ovládacího prvku. Vzhledem k tomu, že v jazyce XAML definujete šablonu, můžete změnit její vzhled bez psaní kódu. Každá šablona je navržena pro konkrétní ovládací prvek, jako je například <xref:System.Windows.Controls.Button> .
 
 Obvykle deklarujete šablonu jako prostředek v `Resources` oddílu souboru XAML. Stejně jako u všech prostředků platí pravidla oboru.
 
 Šablony ovládacích prvků jsou mnohem větší, než styl. Důvodem je, že šablona ovládacího prvku přepíše vizuální vzhled celého ovládacího prvku, zatímco styl jednoduše aplikuje změny vlastností na existující ovládací prvek. Vzhledem k tomu, že šablona ovládacího prvku je použita nastavením vlastnosti [Control. template](xref:System.Windows.Controls.Control.Template) , můžete použít styl k definování nebo nastavení šablony.
 
-Návrháři obecně umožňují vytvořit kopii existující šablony a upravit ji. Například v návrháři aplikace Visual Studio WPF `CheckBox` vyberte ovládací prvek a potom klikněte pravým tlačítkem a vyberte **Upravit šablonu** > **vytvořit kopii**. Tento příkaz vygeneruje *styl definující šablonu*.
+Návrháři obecně umožňují vytvořit kopii existující šablony a upravit ji. Například v návrháři aplikace Visual Studio WPF vyberte `CheckBox` ovládací prvek a potom klikněte pravým tlačítkem a vyberte **Upravit šablonu**  >  **vytvořit kopii**. Tento příkaz vygeneruje *styl definující šablonu*.
 
 ```xaml
 <Style x:Key="CheckBoxStyle1" TargetType="{x:Type CheckBox}">
@@ -103,11 +103,11 @@ Příklad naleznete v tématu [Vytvoření šablony pro ovládací prvek](../the
 
 ### <a name="templatebinding"></a>TemplateBinding
 
-Možná jste si všimli, že prostředek šablony definovaný v předchozí části používá [rozšíření značek TemplateBinding](../../framework/wpf/advanced/templatebinding-markup-extension.md). `TemplateBinding` Je optimalizovaná forma vazby pro scénáře šablon, která je podobná vazbě vytvořené s `{Binding RelativeSource={RelativeSource TemplatedParent}}`. `TemplateBinding`je užitečné pro vázání částí šablony na vlastnosti ovládacího prvku. Každý ovládací prvek má například <xref:System.Windows.Controls.Control.BorderThickness> vlastnost. Použijte `TemplateBinding` ke správě, který prvek v šabloně je ovlivněn nastavením tohoto ovládacího prvku.
+Možná jste si všimli, že prostředek šablony definovaný v předchozí části používá [rozšíření značek TemplateBinding](../../framework/wpf/advanced/templatebinding-markup-extension.md). `TemplateBinding`Je optimalizovaná forma vazby pro scénáře šablon, která je podobná vazbě vytvořené s `{Binding RelativeSource={RelativeSource TemplatedParent}}` . `TemplateBinding`je užitečné pro vázání částí šablony na vlastnosti ovládacího prvku. Každý ovládací prvek má například <xref:System.Windows.Controls.Control.BorderThickness> vlastnost. Použijte `TemplateBinding` ke správě, který prvek v šabloně je ovlivněn nastavením tohoto ovládacího prvku.
 
 ### <a name="contentcontrol-and-itemscontrol"></a>ContentControl a ItemsControl
 
-Pokud <xref:System.Windows.Controls.ContentPresenter> <xref:System.Windows.Controls.ControlTemplate> je deklarována v typu <xref:System.Windows.Controls.ContentControl>, <xref:System.Windows.Controls.ContentPresenter> bude automaticky vytvořena vazba na vlastnosti <xref:System.Windows.Controls.ContentControl.ContentTemplate%2A> a. <xref:System.Windows.Controls.ContentControl.Content%2A> <xref:System.Windows.Controls.ItemsPresenter> Podobně,,,, který je v <xref:System.Windows.Controls.ControlTemplate> z, <xref:System.Windows.Controls.ItemsControl> bude automaticky svázán s vlastnostmi <xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A> a <xref:System.Windows.Controls.ItemsControl.Items%2A> .
+Pokud <xref:System.Windows.Controls.ContentPresenter> je deklarována v typu <xref:System.Windows.Controls.ControlTemplate> <xref:System.Windows.Controls.ContentControl> , <xref:System.Windows.Controls.ContentPresenter> bude automaticky vytvořena vazba na <xref:System.Windows.Controls.ContentControl.ContentTemplate%2A> <xref:System.Windows.Controls.ContentControl.Content%2A> vlastnosti a. Podobně, <xref:System.Windows.Controls.ItemsPresenter> ,,, který je v <xref:System.Windows.Controls.ControlTemplate> z, <xref:System.Windows.Controls.ItemsControl> bude automaticky svázán s <xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A> vlastnostmi a <xref:System.Windows.Controls.ItemsControl.Items%2A> .
 
 ## <a name="datatemplates"></a>Šablony DataTemplates
 
@@ -115,50 +115,50 @@ V této ukázkové aplikaci je k dispozici <xref:System.Windows.Controls.ListBox
 
 [!code-xaml[ListBox](~/samples/snippets/desktop-guide/wpf/styles-and-templates-intro/csharp/Window3.xaml#SnippetListBox)]
 
-V <xref:System.Windows.Controls.ListBox> současné době vypadá jako následující.
+<xref:System.Windows.Controls.ListBox>V současné době vypadá jako následující.
 
 ![Seznam před použitím šablony](./media/styles-and-templates-overview/stylingintro-listboxbefore.png "StylingIntro_ListBoxBefore")
 
-Většina ovládacích prvků má nějaký typ obsahu a tento obsah často pochází z dat, ke kterým vytváříte vazbu. V této ukázce jsou data seznamem fotek. V rámci <xref:System.Windows.DataTemplate> WPF použijte k definování vizuální reprezentace dat. V podstatě to, co jste umístili <xref:System.Windows.DataTemplate> do, určí, co data ve vykreslené aplikaci vypadá jako.
+Většina ovládacích prvků má nějaký typ obsahu a tento obsah často pochází z dat, ke kterým vytváříte vazbu. V této ukázce jsou data seznamem fotek. V rámci WPF použijte <xref:System.Windows.DataTemplate> k definování vizuální reprezentace dat. V podstatě to, co jste umístili do, <xref:System.Windows.DataTemplate> určí, co data ve vykreslené aplikaci vypadá jako.
 
 V naší ukázkové aplikaci má každý vlastní `Photo` objekt `Source` vlastnost typu String, která určuje cestu k souboru obrázku. V současné době se objekty fotografie zobrazují jako cesty k souborům.
 
 [!code-csharp[PhotoClass](~/samples/snippets/desktop-guide/wpf/styles-and-templates-intro/csharp/Photo.cs#PhotoClass)]
 [!code-vb[PhotoClass](~/samples/snippets/desktop-guide/wpf/styles-and-templates-intro/vb/Photo.vb#PhotoClass)]
 
-Aby se fotky zobrazovaly jako obrázky, vytvoříte prostředek <xref:System.Windows.DataTemplate> jako prostředek.
+Aby se fotky zobrazovaly jako obrázky, vytvoříte <xref:System.Windows.DataTemplate> prostředek jako prostředek.
 
 [!code-xaml[DataTemplate](~/samples/snippets/desktop-guide/wpf/styles-and-templates-intro/csharp/Window4.xaml#SnippetDataTemplate)]
 
-Všimněte si, <xref:System.Windows.DataTemplate.DataType%2A> že vlastnost je podobná <xref:System.Windows.Style.TargetType%2A> vlastnosti třídy <xref:System.Windows.Style>. Pokud <xref:System.Windows.DataTemplate> je v části Resources (prostředky), když <xref:System.Windows.DataTemplate.DataType%2A> zadáte vlastnost na typ a `x:Key`vynecháte <xref:System.Windows.DataTemplate> , použije se při každém výskytu tohoto typu. Vždy máte možnost přiřadit <xref:System.Windows.DataTemplate> s `x:Key` a pak ji nastavit jako `StaticResource` pro vlastnosti, které přebírají <xref:System.Windows.DataTemplate> typy, jako je <xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A> například vlastnost nebo <xref:System.Windows.Controls.ContentControl.ContentTemplate%2A> vlastnost.
+Všimněte si, že <xref:System.Windows.DataTemplate.DataType%2A> vlastnost je podobná <xref:System.Windows.Style.TargetType%2A> vlastnosti třídy <xref:System.Windows.Style> . Pokud <xref:System.Windows.DataTemplate> je v části Resources (prostředky), když zadáte <xref:System.Windows.DataTemplate.DataType%2A> vlastnost na typ a vynecháte, použije se při `x:Key` <xref:System.Windows.DataTemplate> každém výskytu tohoto typu. Vždy máte možnost přiřadit <xref:System.Windows.DataTemplate> s `x:Key` a pak ji nastavit jako `StaticResource` pro vlastnosti, které přebírají <xref:System.Windows.DataTemplate> typy, jako je například <xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A> vlastnost nebo <xref:System.Windows.Controls.ContentControl.ContentTemplate%2A> vlastnost.
 
-<xref:System.Windows.DataTemplate> V podstatě v předchozím příkladu definuje, že pokaždé, když je `Photo` objekt, by měl být uveden jako <xref:System.Windows.Controls.Image> v rámci <xref:System.Windows.Controls.Border>. Tato <xref:System.Windows.DataTemplate>aplikace teď vypadá jako to.
+<xref:System.Windows.DataTemplate>V podstatě v předchozím příkladu definuje, že pokaždé, když je `Photo` objekt, by měl být uveden jako <xref:System.Windows.Controls.Image> v rámci <xref:System.Windows.Controls.Border> . Tato <xref:System.Windows.DataTemplate> aplikace teď vypadá jako to.
 
 ![Obrázek fotografie](./media/styles-and-templates-overview/stylingintro-photosasimages.png "StylingIntro_PhotosAsImages")
 
-Model data šablonování poskytuje další funkce. Například pokud zobrazujete data kolekce obsahující další kolekce <xref:System.Windows.Controls.HeaderedItemsControl> pomocí typu <xref:System.Windows.Controls.Menu> <xref:System.Windows.Controls.TreeView>, jako je například nebo, je k dispozici. <xref:System.Windows.HierarchicalDataTemplate> Další funkcí šablonování dat je <xref:System.Windows.Controls.DataTemplateSelector>, která umožňuje zvolit <xref:System.Windows.DataTemplate> použití v závislosti na vlastní logice. Další informace najdete v tématu [Přehled šablonování dat](../../framework/wpf/data/data-templating-overview.md), který poskytuje podrobnější diskuzi o různých funkcích šablonování dat.
+Model data šablonování poskytuje další funkce. Například pokud zobrazujete data kolekce obsahující další kolekce pomocí typu, jako je například <xref:System.Windows.Controls.HeaderedItemsControl> <xref:System.Windows.Controls.Menu> nebo <xref:System.Windows.Controls.TreeView> , je k dispozici <xref:System.Windows.HierarchicalDataTemplate> . Další funkcí šablonování dat je <xref:System.Windows.Controls.DataTemplateSelector> , která umožňuje zvolit <xref:System.Windows.DataTemplate> použití v závislosti na vlastní logice. Další informace najdete v tématu [Přehled šablonování dat](../../framework/wpf/data/data-templating-overview.md), který poskytuje podrobnější diskuzi o různých funkcích šablonování dat.
 
 ## <a name="triggers"></a>Aktivační události
 
-Trigger nastaví vlastnosti nebo spustí akce, jako je například animace, když se změní hodnota vlastnosti nebo dojde k vyvolání události. <xref:System.Windows.Style>, <xref:System.Windows.Controls.ControlTemplate>a <xref:System.Windows.DataTemplate> všechny mají `Triggers` vlastnost, která může obsahovat sadu triggerů. K dispozici je několik typů triggerů.
+Trigger nastaví vlastnosti nebo spustí akce, jako je například animace, když se změní hodnota vlastnosti nebo dojde k vyvolání události. <xref:System.Windows.Style>, <xref:System.Windows.Controls.ControlTemplate> a <xref:System.Windows.DataTemplate> všechny mají `Triggers` vlastnost, která může obsahovat sadu triggerů. K dispozici je několik typů triggerů.
 
 ### <a name="propertytriggers"></a>PropertyTriggers
 
 Sada <xref:System.Windows.Trigger> , která nastavuje hodnoty vlastností nebo spouští akce založené na hodnotě vlastnosti, se nazývá Trigger vlastnosti.
 
-Chcete-li předvést, jak používat triggery vlastností, <xref:System.Windows.Controls.ListBoxItem> můžete provést všechny částečně transparentní, pokud není vybrán. Následující styl nastaví <xref:System.Windows.UIElement.Opacity%2A> hodnotu typu <xref:System.Windows.Controls.ListBoxItem> na. `0.5` Pokud je <xref:System.Windows.Controls.ListBoxItem.IsSelected%2A> `true`však <xref:System.Windows.UIElement.Opacity%2A> vlastnost nastavena na `1.0`.
+Chcete-li předvést, jak používat triggery vlastností, můžete provést všechny <xref:System.Windows.Controls.ListBoxItem> částečně transparentní, pokud není vybrán. Následující styl nastaví <xref:System.Windows.UIElement.Opacity%2A> hodnotu typu <xref:System.Windows.Controls.ListBoxItem> na `0.5` . Pokud <xref:System.Windows.Controls.ListBoxItem.IsSelected%2A> je však vlastnost `true` <xref:System.Windows.UIElement.Opacity%2A> nastavena na `1.0` .
 
 [!code-xaml[PropertyTrigger](~/samples/snippets/desktop-guide/wpf/styles-and-templates-intro/csharp/Window5.xaml#SnippetPropertyTrigger)]
 
-Tento <xref:System.Windows.Trigger> příklad používá k nastavení hodnoty vlastnosti, ale Všimněte si, <xref:System.Windows.Trigger> že třída má také vlastnosti <xref:System.Windows.TriggerBase.EnterActions%2A> a <xref:System.Windows.TriggerBase.ExitActions%2A> , které umožňují triggeru provádět akce.
+Tento příklad používá <xref:System.Windows.Trigger> k nastavení hodnoty vlastnosti, ale Všimněte si, že <xref:System.Windows.Trigger> Třída má také <xref:System.Windows.TriggerBase.EnterActions%2A> <xref:System.Windows.TriggerBase.ExitActions%2A> vlastnosti a, které umožňují triggeru provádět akce.
 
-Všimněte si, <xref:System.Windows.FrameworkElement.MaxHeight%2A> že vlastnost třídy <xref:System.Windows.Controls.ListBoxItem> je nastavena na `75`hodnotu. Na následujícím obrázku je třetí položka vybraná položka.
+Všimněte si, že <xref:System.Windows.FrameworkElement.MaxHeight%2A> vlastnost třídy <xref:System.Windows.Controls.ListBoxItem> je nastavena na hodnotu `75` . Na následujícím obrázku je třetí položka vybraná položka.
 
 ![Zobrazení stylu ListView](./media/styles-and-templates-overview/stylingintro-triggers.png "StylingIntro_triggers")
 
 ### <a name="eventtriggers-and-storyboards"></a>EventTriggers a scénáře
 
-Jiný typ triggeru je <xref:System.Windows.EventTrigger>, který spustí sadu akcí založenou na výskytu události. <xref:System.Windows.EventTrigger> Například následující objekty určují, že když ukazatel myši vstoupí do <xref:System.Windows.Controls.ListBoxItem>, <xref:System.Windows.FrameworkElement.MaxHeight%2A> vlastnost se animuje na hodnotu `90` za `0.2` druhé období. Když se ukazatel myši přesune mimo položku, vrátí se vlastnost na původní hodnotu za tečku `1` sekundy. Všimněte si, že není nutné zadávat <xref:System.Windows.Media.Animation.DoubleAnimation.To%2A> hodnotu <xref:System.Windows.ContentElement.MouseLeave> animace. Je to proto, že animace může sledovat původní hodnotu.
+Jiný typ triggeru je <xref:System.Windows.EventTrigger> , který spustí sadu akcí založenou na výskytu události. Například následující <xref:System.Windows.EventTrigger> objekty určují, že když ukazatel myši vstoupí do <xref:System.Windows.Controls.ListBoxItem> , <xref:System.Windows.FrameworkElement.MaxHeight%2A> vlastnost se animuje na hodnotu `90` za `0.2` druhé období. Když se ukazatel myši přesune mimo položku, vrátí se vlastnost na původní hodnotu za tečku `1` sekundy. Všimněte si, že není nutné zadávat <xref:System.Windows.Media.Animation.DoubleAnimation.To%2A> hodnotu <xref:System.Windows.ContentElement.MouseLeave> animace. Je to proto, že animace může sledovat původní hodnotu.
 
 [!code-xaml[StyleEventTriggers](~/samples/snippets/desktop-guide/wpf/styles-and-templates-intro/csharp/Window6.xaml#SnippetStyleEventTriggers)]
 
@@ -170,11 +170,11 @@ Na následujícím obrázku je ukazatel myši ukazující na třetí položku.
 
 ### <a name="multitriggers-datatriggers-and-multidatatriggers"></a>Více triggerů, DataTriggers a MultiDataTriggers
 
-Kromě <xref:System.Windows.Trigger> a existují i <xref:System.Windows.EventTrigger>další typy triggerů. <xref:System.Windows.MultiTrigger>umožňuje nastavit hodnoty vlastností na základě několika podmínek. Použijete <xref:System.Windows.DataTrigger> a <xref:System.Windows.MultiDataTrigger> , pokud je vlastnost vaší podmínky vázána na data.
+Kromě <xref:System.Windows.Trigger> a existují i <xref:System.Windows.EventTrigger> Další typy triggerů. <xref:System.Windows.MultiTrigger>umožňuje nastavit hodnoty vlastností na základě několika podmínek. Použijete <xref:System.Windows.DataTrigger> a, <xref:System.Windows.MultiDataTrigger> Pokud je vlastnost vaší podmínky vázána na data.
 
 ## <a name="visual-states"></a>Vizuální stavy
 
-Ovládací prvky jsou vždy v určitém **stavu**. Například pokud se ukazatel myši pohybuje na povrchu ovládacího prvku, je ovládací prvek považován za v běžném stavu `MouseOver`. Ovládací prvek bez konkrétního stavu je považován za v běžném `Normal` stavu. Stavy jsou rozdělené do skupin a výše uvedené stavy jsou součástí skupiny `CommonStates`stavů. Většina ovládacích prvků má dvě skupiny `CommonStates` stavů `FocusStates`: a. V každé skupině stavů použité pro ovládací prvek je ovládací prvek vždy v jednom stavu každé skupiny, například `CommonStates.MouseOver` a. `FocusStates.Unfocused` Nicméně ovládací prvek nemůže být ve dvou různých stavech v rámci stejné skupiny, například `CommonStates.Normal` a. `CommonStates.Disabled` Zde je tabulka stavů, které jsou rozpoznány a používány nejvíce ovládacími prvky.
+Ovládací prvky jsou vždy v určitém **stavu**. Například pokud se ukazatel myši pohybuje na povrchu ovládacího prvku, je ovládací prvek považován za v běžném stavu `MouseOver` . Ovládací prvek bez konkrétního stavu je považován za v běžném `Normal` stavu. Stavy jsou rozdělené do skupin a výše uvedené stavy jsou součástí skupiny stavů `CommonStates` . Většina ovládacích prvků má dvě skupiny stavů: `CommonStates` a `FocusStates` . V každé skupině stavů použité pro ovládací prvek je ovládací prvek vždy v jednom stavu každé skupiny, například `CommonStates.MouseOver` a `FocusStates.Unfocused` . Nicméně ovládací prvek nemůže být ve dvou různých stavech v rámci stejné skupiny, například `CommonStates.Normal` a `CommonStates.Disabled` . Zde je tabulka stavů, které jsou rozpoznány a používány nejvíce ovládacími prvky.
 
 | Název VisualState | Název VisualStateGroup | Popis |
 | ---------------- | --------------------- | ----------- |
@@ -185,9 +185,9 @@ Ovládací prvky jsou vždy v určitém **stavu**. Například pokud se ukazatel
 | Focused          | FocusStates           | Ovládací prvek má fokus. |
 | Bez fokusu        | FocusStates           | Ovládací prvek nemá fokus. |
 
-Definováním elementu <xref:System.Windows.VisualStateManager?displayProperty=fullName> v kořenovém prvku šablony ovládacího prvku lze spustit animace, když ovládací prvek vstoupí do určitého stavu. `VisualStateManager` Deklaruje, které kombinace <xref:System.Windows.VisualStateGroup> a <xref:System.Windows.VisualState> ke sledování. Když ovládací prvek vstoupí do sledovaného stavu, `VisaulStateManager` je spuštěna animace definovaná pomocí.
+Definováním <xref:System.Windows.VisualStateManager?displayProperty=fullName> elementu v kořenovém prvku šablony ovládacího prvku lze spustit animace, když ovládací prvek vstoupí do určitého stavu. `VisualStateManager`Deklaruje, které kombinace <xref:System.Windows.VisualStateGroup> a <xref:System.Windows.VisualState> ke sledování. Když ovládací prvek vstoupí do sledovaného stavu, je spuštěna animace definovaná pomocí `VisaulStateManager` .
 
-Například následující kód XAML sleduje `CommonStates.MouseOver` stav pro animaci barvy výplně elementu s názvem. `backgroundElement` Když se ovládací prvek vrátí do `CommonStates.Normal` stavu, je obnovena Barva výplně elementu s `backgroundElement` názvem.
+Například následující kód XAML sleduje `CommonStates.MouseOver` stav pro animaci barvy výplně elementu s názvem `backgroundElement` . Když se ovládací prvek vrátí do `CommonStates.Normal` stavu, je obnovena Barva výplně elementu s názvem `backgroundElement` .
 
 ```xaml
 <ControlTemplate x:Key="roundbutton" TargetType="Button">
@@ -216,11 +216,11 @@ Další informace o scénářích najdete v tématu [Přehled scénářů](../..
 
 ## <a name="shared-resources-and-themes"></a>Sdílené prostředky a motivy
 
-Typická aplikace WPF může mít více prostředků uživatelského rozhraní, které jsou v rámci aplikace aplikovány. Souhrnná Tato sada prostředků může být považována za motiv aplikace. WPF poskytuje podporu pro prostředky uživatelského rozhraní pro sbalení jako motiv pomocí slovníku prostředků, který je zapouzdřen jako <xref:System.Windows.ResourceDictionary> třída.
+Typická aplikace WPF může mít více prostředků uživatelského rozhraní, které jsou v rámci aplikace aplikovány. Souhrnná Tato sada prostředků může být považována za motiv aplikace. WPF poskytuje podporu pro prostředky uživatelského rozhraní pro sbalení jako motiv pomocí slovníku prostředků, který je zapouzdřen jako <xref:System.Windows.ResourceDictionary> Třída.
 
 Motivy WPF jsou definovány pomocí mechanismu stylů a šablonování, který WPF zpřístupňuje pro přizpůsobení vizuálů všech prvků.
 
-Prostředky motivu WPF se ukládají do integrovaných slovníků prostředků. Tyto slovníky prostředků musí být vloženy v rámci podepsaného sestavení a mohou být buď vloženy do stejného sestavení jako samotný kód nebo do souběžného sestavení. Pro PresentationFramework. dll, sestavení, které obsahuje ovládací prvky WPF, jsou prostředky motivů v sérii souběžných sestavení.
+Prostředky motivu WPF se ukládají do integrovaných slovníků prostředků. Tyto slovníky prostředků musí být vloženy v rámci podepsaného sestavení a mohou být buď vloženy do stejného sestavení jako samotný kód nebo do souběžného sestavení. Pro PresentationFramework.dll sestavení, které obsahuje ovládací prvky WPF, jsou prostředky motivů v sérii souběžných sestavení.
 
 Motiv se bude zobrazovat jako poslední místo pro hledání stylu elementu. Hledání se obvykle začne prozkoumáním stromu elementu, který hledá příslušný prostředek, a pak se podívejte do kolekce prostředků aplikace a nakonec dotazovat systém. To dává vývojářům aplikací možnost předefinovat styl pro libovolný objekt na úrovni stromu nebo aplikace, než se přiblíží k motivu.
 
@@ -234,7 +234,7 @@ Chcete-li sdílet sadu prostředků, včetně stylů a šablon, v rámci aplikac
 </ResourceDictionary.MergedDictionaries>
 ```
 
-Je to sdílení `shared.xaml`, které sám definuje <xref:System.Windows.ResourceDictionary> sadu prostředků stylu a štětce, která umožňuje ovládacím prvkům v aplikaci konzistentní vzhled.
+Je to sdílení `shared.xaml` , které sám definuje <xref:System.Windows.ResourceDictionary> sadu prostředků stylu a štětce, která umožňuje ovládacím prvkům v aplikaci konzistentní vzhled.
 
 Další informace najdete v tématu [sloučené slovníky prostředků](../../framework/wpf/advanced/merged-resource-dictionaries.md).
 

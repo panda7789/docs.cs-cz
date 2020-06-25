@@ -2,15 +2,15 @@
 title: ASP.NET Core přerušující změny
 titleSuffix: ''
 description: Zobrazí seznam nejnovějších změn v ASP.NET Core.
-ms.date: 06/11/2020
+ms.date: 06/23/2020
 author: scottaddie
 ms.author: scaddie
-ms.openlocfilehash: a6ddf97f907a1cba57e51d6fd516d1f94272f725
-ms.sourcegitcommit: 1eae045421d9ea2bfc82aaccfa5b1ff1b8c9e0e4
+ms.openlocfilehash: cf6b2eb46504c12aa670ccfc68531598dd9705a3
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84803274"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85325450"
 ---
 # <a name="aspnet-core-breaking-changes"></a>ASP.NET Core přerušující změny
 
@@ -45,15 +45,18 @@ Na této stránce jsou popsány následující přerušující se změny:
 - [HTTP: změny infrastruktury textu odpovědi](#http-response-body-infrastructure-changes)
 - [HTTP: některé soubory cookie SameSite výchozí hodnoty se změnily](#http-some-cookie-samesite-defaults-changed-to-none)
 - [HTTP: ve výchozím nastavení je zakázaná synchronní v/v.](#http-synchronous-io-disabled-in-all-servers)
+- [HttpSys: nové vyjednávání klientského certifikátu je ve výchozím nastavení zakázané.](#httpsys-client-certificate-renegotiation-disabled-by-default)
 - [Identita: přetížení metody AddDefaultUI bylo odebráno.](#identity-adddefaultui-method-overload-removed)
 - [Identita: Změna verze Bootstrap uživatelského rozhraní](#identity-default-bootstrap-version-of-ui-changed)
 - [Identita: SignInAsync vyvolá výjimku pro neověřenou identitu.](#identity-signinasync-throws-exception-for-unauthenticated-identity)
 - [Identita: konstruktor SignInManager akceptuje nový parametr.](#identity-signinmanager-constructor-accepts-new-parameter)
 - [Identita: uživatelské rozhraní používá funkci statických webových prostředků.](#identity-ui-uses-static-web-assets-feature)
+- [IIS: UrlRewrite řetězce dotazů middleware jsou zachovány.](#iis-urlrewrite-middleware-query-strings-are-preserved)
 - [Kestrel: ve výchozím nastavení se zjistily změny v konfiguraci v době běhu.](#kestrel-configuration-changes-at-run-time-detected-by-default)
 - [Kestrel: odebrané adaptéry připojení](#kestrel-connection-adapters-removed)
 - [Kestrel: výchozí podporované verze protokolu TLS se změnily](#kestrel-default-supported-tls-protocol-versions-changed)
 - [Kestrel: bylo odebráno prázdné sestavení HTTPS.](#kestrel-empty-https-assembly-removed)
+- [Kestrel: HTTP/2 zakázáno přes TLS v nekompatibilních verzích Windows](#kestrel-http2-disabled-over-tls-on-incompatible-windows-versions)
 - [Kestrel: hlavičky přípojných vozidel žádosti přesunuté do nové kolekce](#kestrel-request-trailer-headers-moved-to-new-collection)
 - [Kestrel: změny vrstvy abstrakce transportu](#kestrel-transport-abstractions-removed-and-made-public)
 - [Lokalizace: rozhraní API označená jako zastaralá](#localization-resourcemanagerwithculturestringlocalizer-and-withculture-marked-obsolete)
@@ -100,10 +103,22 @@ Na této stránce jsou popsány následující přerušující se změny:
 
 ***
 
+[!INCLUDE[HttpSys: Client certificate renegotiation disabled by default](~/includes/core-changes/aspnetcore/5.0/httpsys-client-certificate-renegotiation-disabled-by-default.md)]
+
+***
+
+[!INCLUDE[IIS: UrlRewrite middleware query strings are preserved](~/includes/core-changes/aspnetcore/5.0/iis-urlrewrite-middleware-query-strings-are-preserved.md)]
+
+***
+
 [!INCLUDE[Kestrel: Configuration changes at run time detected by default](~/includes/core-changes/aspnetcore/5.0/kestrel-configuration-changes-at-run-time-detected-by-default.md)]
 
 ***
 [!INCLUDE[Kestrel: Default supported TLS protocol versions changed](~/includes/core-changes/aspnetcore/5.0/kestrel-default-supported-tls-protocol-versions-changed.md)]
+
+***
+
+[!INCLUDE[Kestrel: HTTP/2 disabled over TLS on incompatible Windows versions](~/includes/core-changes/aspnetcore/5.0/kestrel-disables-http2-over-tls.md)]
 
 ***
 

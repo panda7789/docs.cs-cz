@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Task-based Asynchronous Pattern, .NET Framework support for
 - .NET Framework, asynchronous design patterns
 ms.assetid: 033cf871-ae24-433d-8939-7a3793e547bf
-ms.openlocfilehash: 960d328e156d66b0bdc7baf4d4e0f151fd4d543c
-ms.sourcegitcommit: f6350c2c542e6edd52d7e9d6667b96d85d810e67
+ms.openlocfilehash: f1a5070c106055b268d43751300d84269fed6a36
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84717494"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85325998"
 ---
 # <a name="consuming-the-task-based-asynchronous-pattern"></a>Použití asynchronního vzoru založeného na úloze
 
@@ -341,7 +341,7 @@ if (await recommendation) BuyStock(symbol);
 ```
 
 #### <a name="interleaving"></a>Potřeba prokládání
- Vezměte v úvahu případ, kdy stahujete obrázky z webu a zpracováváte jednotlivé Image (například přidáním obrázku do ovládacího prvku uživatelského rozhraní).  Je nutné provést zpracování postupně ve vlákně uživatelského rozhraní, ale chcete stáhnout obrázky jako souběžně. Nechcete také přidržet obrázky do uživatelského rozhraní, dokud se všechny nestáhnou – chcete je přidat po dokončení:
+ Vezměte v úvahu případ, kdy stahujete obrázky z webu a zpracováváte jednotlivé Image (například přidáním obrázku do ovládacího prvku uživatelského rozhraní). Bitové kopie se zpracovávají postupně na vlákně uživatelského rozhraní, ale chcete image stahovat co nejaktuálnější, pokud je to možné. Nechcete také přidržet obrázky do uživatelského rozhraní, dokud se všechny nestáhnou. Místo toho je chcete přidat po dokončení.
 
 ```csharp
 List<Task<Bitmap>> imageTasks =
@@ -453,7 +453,7 @@ private static async Task UntilCompletionOrCancellation(
 }
 ```
 
- Tato implementace znovu povolí uživatelské rozhraní hned po rozhodnutí Bail, ale neruší základní asynchronní operace.  Další možností je zrušit nedokončené operace, když se rozhodnete Bail, ale nebudete moci znovu vytvořit uživatelské rozhraní, dokud se operace neprojeví, potenciálně v důsledku ukončení v důsledku žádosti o zrušení:
+ Tato implementace znovu povolí uživatelské rozhraní hned po rozhodnutí Bail, ale neruší základní asynchronní operace. Další možností je zrušit probíhající operace, když se rozhodnete Bail, ale nebudete moci znovu vytvořit uživatelské rozhraní, dokud se operace nedokončí, potenciálně v důsledku ukončení z důvodu žádosti o zrušení:
 
 ```csharp
 private CancellationTokenSource m_cts;
@@ -632,7 +632,7 @@ double currentPrice = await NeedOnlyOne(
 ```
 
 ### <a name="interleaved-operations"></a>Prokládané operace
- <xref:System.Threading.Tasks.Task.WhenAny%2A>Při práci s velmi velkým počtem úloh je možné využít potenciální potíže s výkonem při použití metody pro podporu scénáře prokládaných dat. Každé volání, které má <xref:System.Threading.Tasks.Task.WhenAny%2A> za následek pokračování zaregistrované u každého úkolu. Pro N počet úkolů to vede k pokračování v počtu (N<sup>2</sup>), které bylo vytvořeno během doby trvání prokládání operací. Pokud pracujete s velkou sadou úkolů, můžete k vyřešení problému s výkonem použít kombinátorem ( `Interleaved` v následujícím příkladu):
+ V případě, že <xref:System.Threading.Tasks.Task.WhenAny%2A> pracujete s velkými sadami úkolů, můžete při použití metody pro podporu scénáře využít potenciální problémy s výkonem. Každé volání, které má <xref:System.Threading.Tasks.Task.WhenAny%2A> za následek pokračování zaregistrované u každého úkolu. Pro N počet úkolů to vede k pokračování v počtu (N<sup>2</sup>), které bylo vytvořeno během doby trvání prokládání operací. Pokud pracujete s velkou sadou úkolů, můžete k vyřešení problému s výkonem použít kombinátorem ( `Interleaved` v následujícím příkladu):
 
 ```csharp
 static IEnumerable<Task<T>> Interleaved<T>(IEnumerable<Task<T>> tasks)
@@ -696,7 +696,7 @@ public static Task<T[]> WhenAllOrFirstException<T>(IEnumerable<Task<T>> tasks)
 ```
 
 ## <a name="building-task-based-data-structures"></a>Vytváření datových struktur založených na úlohách
- Kromě možnosti vytvářet vlastní kombinátory založené na úlohách, které mají datovou strukturu <xref:System.Threading.Tasks.Task> a <xref:System.Threading.Tasks.Task%601> které představují jak výsledky asynchronní operace, tak i nutná synchronizace pro připojení, díky tomu je velmi výkonný typ, který umožňuje vytvářet vlastní datové struktury, které se mají použít v asynchronních scénářích.
+ Kromě možnosti vytvářet vlastní kombinátory založenou na úlohách, které mají datovou strukturu <xref:System.Threading.Tasks.Task> a <xref:System.Threading.Tasks.Task%601> které představují jak výsledky asynchronní operace, tak i nutná synchronizace pro připojení, díky tomu je účinný typ, na který se mají vytvářet vlastní datové struktury, které se mají použít v asynchronních scénářích.
 
 ### <a name="asynccache"></a>AsyncCache
  Jedním z důležitých aspektů úkolu je, že může být předána více příjemcům, z nichž to může očekávat, zaregistrovat pokračování s ním, získat výsledek nebo výjimky (v případě <xref:System.Threading.Tasks.Task%601> ) a tak dále.  Tato technologie <xref:System.Threading.Tasks.Task> je <xref:System.Threading.Tasks.Task%601> naprosto vhodná pro použití v asynchronní infrastruktuře ukládání do mezipaměti.  Tady je příklad malé, ale výkonné asynchronní mezipaměti postavené nad <xref:System.Threading.Tasks.Task%601> :
@@ -752,7 +752,7 @@ private async void btnDownload_Click(object sender, RoutedEventArgs e)
 ### <a name="asyncproducerconsumercollection"></a>AsyncProducerConsumerCollection
  Úkoly můžete použít také k vytváření datových struktur pro koordinaci asynchronních aktivit.  Vezměte v úvahu jeden z klasických paralelních vzorů návrhu: producent/příjemce.  V tomto vzoru producenti generují data, která jsou využívána příjemci, a producenti a spotřebitelé můžou běžet paralelně. Například příjemce zpracuje položku 1, která byla dříve vygenerována výrobcem, který nyní vyrábí položku 2.  Pro vzorek producent/příjemce invariably potřebovat určitou datovou strukturu pro ukládání práce vytvořené producenty, aby se příjemci mohli dostat k oznámením o nových datech a najít je, když jsou k dispozici.
 
- Tady je jednoduchá datová struktura postavená na úkolech, která umožňuje použití asynchronních metod jako výrobců a spotřebitelů:
+ Tady je jednoduchá datová struktura, která je postavená na úkolech, která umožňuje použití asynchronních metod jako výrobců a spotřebitelů:
 
 ```csharp
 public class AsyncProducerConsumerCollection<T>
@@ -834,7 +834,7 @@ private static void Produce(int data)
 > [!NOTE]
 > <xref:System.Threading.Tasks.Dataflow>Obor názvů je k dispozici v .NET Framework 4,5 až **NuGet**. Chcete-li nainstalovat sestavení, které obsahuje <xref:System.Threading.Tasks.Dataflow> obor názvů, otevřete projekt v aplikaci Visual Studio, v nabídce projekt vyberte možnost **Spravovat balíčky NuGet** a vyhledejte balíček Microsoft. tpl. Dataflow online.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Asynchronní vzor založený na úlohách (TAP)](task-based-asynchronous-pattern-tap.md)
 - [Implementace asynchronního vzoru založeného na úlohách](implementing-the-task-based-asynchronous-pattern.md)

@@ -1,5 +1,6 @@
 ---
 title: Vytvoření vazby objektů k ovládacím prvkům DataGridView
+description: Naučte se, jak vytvořit vazby kolekce objektů k ovládacímu prvku DataGridView model Windows Forms, aby se každý objekt zobrazoval jako samostatný řádek.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,15 +10,15 @@ helpviewer_keywords:
 - data grids [Windows Forms], object binding
 - object binding [Windows Forms], DataGridView control
 ms.assetid: cb8f29fa-577e-4e2b-883f-3a01c6189b9c
-ms.openlocfilehash: d5aa5cb64c7fb2b82d69d6c87134ee901b84f5c1
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: add0047937b404dcec1ea12bac8053bb9bdfcf1c
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76746699"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85325854"
 ---
 # <a name="how-to-bind-objects-to-windows-forms-datagridview-controls"></a>Postupy: Připojení objektů k ovládacím prvkům Windows Forms DataGridView
-Následující příklad kódu ukazuje, jak vytvořit vazby kolekce objektů k ovládacímu prvku <xref:System.Windows.Forms.DataGridView> tak, aby se každý objekt zobrazoval jako samostatný řádek. Tento příklad také ukazuje, jak zobrazit vlastnost s výčtovým typem v <xref:System.Windows.Forms.DataGridViewComboBoxColumn> tak, aby rozevírací seznam pole se seznamem obsahoval hodnoty výčtu.  
+Následující příklad kódu ukazuje, jak vytvořit vazby kolekce objektů k <xref:System.Windows.Forms.DataGridView> ovládacímu prvku tak, aby se každý objekt zobrazoval jako samostatný řádek. Tento příklad také ukazuje, jak zobrazit vlastnost s výčtovým typem v <xref:System.Windows.Forms.DataGridViewComboBoxColumn> , aby rozevírací seznam pole se seznamem obsahoval hodnoty výčtu.  
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[System.Windows.Forms.DataGridView._CollectionBound#00](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView._CollectionBound/CS/collectionbound.cs#00)]

@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Přidávání a odebírání položek v ConcurrentDictionary'
+title: Přidávání a odebírání položek v ConcurrentDictionary
 description: Přečtěte si příklad, jak přidat, načíst, aktualizovat a odebrat položky z třídy ConcurrentDictionary<TKey, TValue> kolekce v rozhraní .NET.
 ms.date: 05/04/2020
 ms.technology: dotnet-standard
@@ -9,14 +9,14 @@ dev_langs:
 helpviewer_keywords:
 - thread-safe collections, concurrent dictionary
 ms.assetid: 81b64b95-13f7-4532-9249-ab532f629598
-ms.openlocfilehash: 827eb9db984289929c591046a4713419c9587312
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: 0bfc17d93ea3088a7b2e4209e25003856770b9e7
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84662859"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85325965"
 ---
-# <a name="how-to-add-and-remove-items-from-a-concurrentdictionary"></a>Postupy: Přidávání a odebírání položek v ConcurrentDictionary
+# <a name="how-to-add-and-remove-items-from-a-concurrentdictionary"></a>Postup přidání a odebrání položek z ConcurrentDictionary
 
 Tento příklad ukazuje, jak přidat, načíst, aktualizovat a odebrat položky z <xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=nameWithType> . Tato třída kolekce je implementace bezpečná pro přístup z více vláken. Doporučujeme, abyste ho používali vždy, když se více vláken může pokusit o přístup k prvkům současně.
 
@@ -37,9 +37,9 @@ Následující příklad používá dvě <xref:System.Threading.Tasks.Task> inst
 
 <xref:System.Collections.Concurrent.ConcurrentDictionary%602>je určen pro scénáře s více vlákny. K přidání nebo odebrání položek z kolekce není nutné v kódu používat zámky. Je však vždy možné, že jedno vlákno načte hodnotu a další vlákno okamžitě aktualizuje kolekci tím, že zadává stejnou klíčovou novou hodnotu.
 
-I když všechny metody jsou bezpečné pro přístup z <xref:System.Collections.Concurrent.ConcurrentDictionary%602> více vláken, ne všechny metody jsou atomické, konkrétně <xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A> a <xref:System.Collections.Concurrent.ConcurrentDictionary%602.AddOrUpdate%2A> . Uživatelský delegát, který je předán těmto metodám, je vyvolán mimo vnitřní zámek slovníku (to je provedeno, aby se zabránilo neznámému kódu v blokování všech vláken). Proto je možné, že dojde k této sekvenci událostí:
+I když všechny metody jsou bezpečné pro přístup z <xref:System.Collections.Concurrent.ConcurrentDictionary%602> více vláken, ne všechny metody jsou atomické, konkrétně <xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A> a <xref:System.Collections.Concurrent.ConcurrentDictionary%602.AddOrUpdate%2A> . Chcete-li zabránit neznámému kódu v blokování všech vláken, uživatelský delegát, který je předán do těchto metod, je vyvolán mimo vnitřní zámek slovníku. Proto je možné, že dojde k této sekvenci událostí:
 
-1. _vlákno_ volá <xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A> , nenalezne žádnou položku a vytvoří novou položku, která má být přidána, voláním `valueFactory` delegáta.
+1. _vlákno_ volá <xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A> , nenalezne žádnou položku a vytvoří novou položku, která má být přidána, vyvoláním `valueFactory` delegáta.
 
 1. _threadB_ volání <xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A> současně, jeho `valueFactory` delegát je vyvolána a dorazí na interní zámek před _vláknem_, a proto je do slovníku přidána nová dvojice klíč-hodnota.
 

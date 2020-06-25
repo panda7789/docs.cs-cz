@@ -3,16 +3,16 @@ title: Úprava obsahu řetězce – Průvodce C#
 ms.date: 02/26/2018
 helpviewer_keywords:
 - strings [C#], modifying
-ms.openlocfilehash: a32665b67cfa73aa7d4753a1427c6955827e1b86
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: e607a8a2e96a73f64463d75a75a2bfe3f518d118
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84663002"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85324168"
 ---
 # <a name="how-to-modify-string-contents-in-c"></a>Postup úpravy obsahu řetězce v jazyce C\#
 
-Tento článek ukazuje několik postupů, jak vytvořit `string` úpravu existující `string` . Všechny techniky ukázaly, že vrátí výsledek úprav jako nový `string` objekt. Pokud to chcete jasně ukázat, příklady všechny ukládají výsledek do nové proměnné. Po spuštění každého příkladu si pak můžete prohlédnout původní `string` i `string` výslednou změnu.
+Tento článek ukazuje několik postupů, jak vytvořit `string` úpravu existující `string` . Všechny techniky ukázaly, že vrátí výsledek úprav jako nový `string` objekt. Chcete-li Ukázat, že původní a upravený řetězec jsou odlišné instance, příklady uloží výsledek do nové proměnné. Můžete si prohlédnout původní `string` a nové, upravené `string` při spuštění každého příkladu.
 
 [!INCLUDE[interactive-note](~/includes/csharp-interactive-note.md)]
 
@@ -68,7 +68,7 @@ Vzhledem k tomu, že řetězce jsou neměnné, předchozí příklady všechny v
 
 :::code language="csharp" source="../../../samples/snippets/csharp/how-to/strings/ModifyStrings.cs" id="Snippet7":::
 
-Můžete upravit řetězec v pevném bloku s nebezpečným kódem, ale **důrazně** nedoporučujeme upravovat obsah řetězce po vytvoření řetězce. Tím dojde k nepředvídatelným účelům. Například pokud někdo interně interně předává řetězec, který má stejný obsah jako váš, bude mít kopii a neočekává se, že upravujete svůj řetězec vůbec.
+Můžete upravit řetězec v pevném bloku s nebezpečným kódem, ale **důrazně** nedoporučujeme upravovat obsah řetězce po vytvoření řetězce. Tím dojde k nepředvídatelným účelům. Například pokud někdo interně předává řetězec, který má stejný obsah jako váš, získá kopii a neočekává, že upravujete řetězec.
 
 ## <a name="see-also"></a>Viz také
 

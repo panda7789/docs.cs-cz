@@ -1,15 +1,15 @@
 ---
 title: Instalace .NET Core na Debian – .NET Core
 description: Ukazuje různé způsoby, jak nainstalovat .NET Core SDK a modul runtime .NET Core v Debian.
-author: thraka
+author: adegeo
 ms.author: adegeo
 ms.date: 06/04/2020
-ms.openlocfilehash: c66d8e1daad4e59a766781b7117600352879b724
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: ded9d2be72e8ec476d5ace752e44d92eb0ee1028
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84603053"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85324922"
 ---
 # <a name="install-net-core-sdk-or-net-core-runtime-on-debian"></a>Instalace .NET Core SDK nebo modulu runtime .NET Core v Debian
 
@@ -31,7 +31,7 @@ Následující tabulka uvádí seznam aktuálně podporovaných vydání .NET Co
 |--------------------------|---------------|---------------|----------------|
 | ✔️ [10](#debian-10-)     | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 Preview |
 | ✔️ [9](#debian-9-)       | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 Preview |
-| ❌[8](#debian-8-)       | ✔️ 2,1        | ❌3,1        | ❌5,0 Preview |
+| ❌ [8](#debian-8-)       | ✔️ 2,1        | ❌3,1        | ❌5,0 Preview |
 
 Následující verze rozhraní .NET Core již nejsou podporovány. Soubory ke stažení pro tyto soubory zůstanou publikované:
 

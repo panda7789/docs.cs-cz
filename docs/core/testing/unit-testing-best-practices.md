@@ -4,12 +4,12 @@ description: Naučte se osvědčené postupy pro psaní testů jednotek, které 
 author: jpreese
 ms.author: wiwagn
 ms.date: 07/28/2018
-ms.openlocfilehash: 9115ff69b269e3723820fd8505d1a9f8ca278d12
-ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
+ms.openlocfilehash: 8a879c16e48dfde617f9cd20f58cab96039361f0
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84989370"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85324478"
 ---
 # <a name="unit-testing-best-practices-with-net-core-and-net-standard"></a>Osvědčené postupy testování částí pomocí .NET Core a .NET Standard
 
@@ -24,7 +24,7 @@ Od [Jan Reese](https://reese.dev) se speciálním poděkováním [Roy Osherove](
 ### <a name="less-time-performing-functional-tests"></a>Méně času provádění funkčních testů
 Funkční testy jsou nákladné. Obvykle zahrnují otevření aplikace a provedení posloupnosti kroků (nebo někoho jiného), které je nutné provést, aby bylo možné ověřit očekávané chování. Tyto kroky nemusí být vždy známy testerovi, což znamená, že se budou muset obrátit na více znalostí v oblasti, aby bylo možné provést test. Testování může trvat několik sekund, než se u triviálních změn nebo minut pro větší změny. Nakonec je třeba tento proces opakovat pro každou změnu, kterou v systému provedete.
 
-Testování částí na druhé straně může trvat milisekundy, které je možné spustit při stisknutí tlačítka a nemusí nutně vyžadovat, aby byly v systému velké znalosti. Bez ohledu na to, zda test projde nebo se nezdařil, je až do nástroje Test Runner, nikoli z jednotlivce.
+Testování částí na druhé straně trvá milisekundy, můžete je spustit při stisknutí tlačítka a nemusíte nutně vyžadovat, aby byly v systému velké znalosti. Bez ohledu na to, zda test projde nebo se nezdařil, je až do nástroje Test Runner, nikoli z jednotlivce.
 
 ### <a name="protection-against-regression"></a>Ochrana před regresí
 Chyby regrese jsou chyby, které jsou představeny, když je provedena změna aplikace. Pro testery je běžné, že netestují pouze své nové funkce, ale také funkce, které existovaly předem, aby bylo možné ověřit, že dříve implementované funkce stále fungují podle očekávání.
@@ -53,14 +53,14 @@ Zápis testů pro váš kód bude přirozeně oddělit váš kód, protože by b
 
 Vysoké procento pokrytí kódu je často spojeno s vyšší kvalitou kódu. Měření samotné ale *nemůže* určit kvalitu kódu. Nastavení procentuálního cíle pokrytí kódu po výzvám souvisejícím může být counterproductive. Představte si složitý projekt s tisíci podmíněných větví a Představte si, že jste nastavili cíl 95% pokrytí kódu. V současné době projekt udržuje 90% pokrytí kódu. Doba, kterou bere v úvahu pro všechny hraniční případy v zbývajících 5%, by mohla být obrovským podnikem a rychle se zmenšuje její velikost.
 
-Vysoké procento pokrytí kódu není indikátorem úspěchu, ani to neznamená vysokou kvalitu kódu. Jusst představuje množství kódu, který je pokryt jednotkovým testováním. Další informace najdete v tématu [testování rozsahu pokrytí kódu](unit-testing-code-coverage.md).
+Vysoké procento pokrytí kódu není indikátorem úspěchu, ani to neznamená vysokou kvalitu kódu. Pouze představuje množství kódu, který je pokryt jednotkovým testováním. Další informace najdete v tématu [testování rozsahu pokrytí kódu](unit-testing-code-coverage.md).
 
 ## <a name="lets-speak-the-same-language"></a>Pojďme hovořit o stejný jazyk
-Při komunikaci s testováním je *Tento pojem velmi* nepoužit. Následující text definuje nejběžnější typy *napodobenin* při psaní testů jednotek:
+Tento pojem *je často* při komunikaci s testováním často nepoužit. Následující body definují nejběžnější typy *napodobenin* při psaní jednotkových testů:
 
-*Napodobeniny* – napodobenina je obecný termín, který lze použít k popisu zástupné procedury nebo objektu objektu. Bez ohledu na to, jestli se jedná o zástupnou proceduru nebo objekt, závisí na kontextu, ve kterém se používá. Jinak řečeno, napodobenina může být zástupná procedura nebo maketa.
+*Napodobeniny* – napodobenina je obecný termín, který lze použít k popisu buď zástupné procedury nebo objektu typu. Bez ohledu na to, zda se jedná o zástupnou proceduru nebo objekt, závisí na kontextu, ve kterém se používá. Jinak řečeno, napodobenina může být zástupná procedura nebo maketa.
 
-*Model* – objekt typu Object je falešným objektem v systému, který určuje, zda nebo není test jednotky úspěšný nebo neúspěšný. Napodobení se zahájí jako napodobenina, dokud není uplatněna na.
+*Model* – objekt typu Object je falešným objektem v systému, který určuje, zda nebo není test jednotky úspěšný nebo neúspěšný. Napodobení se zahájí jako napodobenina, dokud se neuplatní.
 
 *Zástupná* procedura – zástupný kód pro existující závislost (nebo spolupracovníka) v systému je ovladatelné přístupnou náhradou. Pomocí zástupné procedury můžete testovat kód bez nutnosti pracovat přímo se závislostí. Ve výchozím nastavení se napodobenina zahájí jako zástupná procedura.
 
@@ -75,7 +75,7 @@ purchase.ValidateOrders();
 Assert.True(purchase.CanBeShipped);
 ```
 
-Toto je příklad zástupné procedury, která se označuje jako objekt typu. V tomto případě se jedná o zástupnou proceduru. Právě předáváte v pořadí jako prostředek, který je možné vytvořit `Purchase` (testovaný systém). Název `MockOrder` je také velmi zavádějící, protože znovu není v pořádku.
+Toto je příklad zástupné procedury, která se označuje jako objekt typu. V tomto případě se jedná o zástupnou proceduru. Právě předáváte v pořadí jako prostředek, který je možné vytvořit `Purchase` (testovaný systém). Název `MockOrder` je také zavádějící, protože znovu není pořadím.
 
 Lepší přístup by byl
 
@@ -88,7 +88,7 @@ purchase.ValidateOrders();
 Assert.True(purchase.CanBeShipped);
 ```
 
-Přejmenováním třídy na `FakeOrder` , jste vytvořili třídu a mnohem obecnější, třídu lze použít jako objekt typu nebo jako zástupnou proceduru. Podle toho, co je vhodnější pro testovací případ. Ve výše uvedeném příkladu `FakeOrder` se používá jako zástupná procedura. Nepoužíváte ho `FakeOrder` v žádném tvaru nebo formuláři během kontrolního výrazu. `FakeOrder`byla právě předána do `Purchase` třídy, aby splňovala požadavky konstruktoru.
+Přejmenováním třídy na `FakeOrder` , jste vytvořili třídu a mnohem obecnější, třídu lze použít jako objekt typu nebo jako zástupnou proceduru. Podle toho, co je vhodnější pro testovací případ. Ve výše uvedeném příkladu `FakeOrder` se používá jako zástupná procedura. Nepoužíváte ho `FakeOrder` v žádném tvaru nebo formuláři během kontrolního výrazu. `FakeOrder`byla předána do `Purchase` třídy, aby splňovala požadavky konstruktoru.
 
 Pokud ho chcete použít jako objekt, může to vypadat nějak takto.
 
@@ -157,7 +157,7 @@ Vstup, který se má použít v testu jednotek, by měl být nejjednodušší, a
 - Testy jsou odolnější vůči budoucím změnám v základu kódu.
 - Blíže k testovacímu chování při implementaci.
 
-Testy, které obsahují více informací, než je nutné k předání testu, mají větší šanci na zavedení chyb do testu a může udělat záměr méně jasného záměru testu. Při psaní testů, které chcete zaměřit na chování. Nastavení zvláštních vlastností pro modely nebo použití nenulových hodnot v případě potřeby, pouze odčítání od toho, co se snažíte prokázat.
+Testy, které obsahují více informací, než je nutné k předání testu, mají větší šanci na zavedení chyb do testu a může udělat záměr méně jasného záměru testu. Při psaní testů se chcete zaměřit na chování. Nastavení zvláštních vlastností pro modely nebo použití nenulových hodnot v případě potřeby, pouze odčítání od toho, co se snažíte prokázat.
 
 #### <a name="bad"></a>Chybně:
 [!code-csharp[BeforeMinimallyPassing](../../../samples/snippets/core/testing/unit-testing-best-practices/csharp/before/StringCalculatorTests.cs#BeforeMinimallyPassing)]
@@ -210,7 +210,7 @@ Pokud pro testy požadujete podobný objekt nebo stav, preferovat pomocnou metod
 
 - Při čtení testů došlo k méně nejasnostem, protože veškerý kód je viditelný v rámci každého testu.
 - Menší pravděpodobnost nastavení pro daný test je příliš velká nebo příliš malá.
-- Menší šance na stav sdílení mezi testy, které mezi nimi vytváří nežádoucí závislosti.
+- Menší šance na stav sdílení mezi testy, který vytváří nežádoucí závislosti mezi nimi.
 
 V rozhraních testování částí `Setup` je volána před každou a každou jednotkovou zkouškou v rámci sady testů. I když se některý z nich může zobrazit jako užitečný nástroj, obvykle končí na bloated a těžko čte testy. Každý test bude mít k dispozici různé požadavky, aby bylo možné spustit test a začít. Bohužel `Setup` vynutí, abyste pro každý test používali přesně stejné požadavky.
 
@@ -294,7 +294,7 @@ public void ParseLogLine_ByDefault_ReturnsTrimmedResult()
 S tímto pohledem, pokud vidíte soukromou metodu, vyhledejte veřejnou metodu a zapište testy proti této metodě. Vzhledem k tomu, že soukromá metoda vrátí očekávaný výsledek, neznamená to, že systém, který nakonec volá privátní metodu, používá výsledek správně.
 
 ### <a name="stub-static-references"></a>Statické odkazy na zástupné procedury
-Jedním ze zásad testování částí je, že musí mít plnou kontrolu nad testovaným systémem. To může být problematické, pokud výrobní kód zahrnuje volání statických odkazů (např. `DateTime.Now` ). Vezměte v úvahu následující kód:
+Jedním ze zásad testování částí je, že musí mít plnou kontrolu nad testovaným systémem. To může být problematické, pokud výrobní kód zahrnuje volání statických odkazů (například `DateTime.Now` ). Vezměte v úvahu následující kód:
 
 ```csharp
 public int GetDiscountedPrice(int price)

@@ -158,19 +158,20 @@ helpviewer_keywords:
 - Windows Runtime Metadata Export Tool, error messages
 - error messages, Winmdexp.exe
 ms.assetid: 8271973c-deba-47a6-8e5e-04ce63f146ad
-ms.openlocfilehash: 5fb5abe84d43df85be557a2bec2245284a74024b
-ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
+ms.openlocfilehash: 1b44273bd5a8868ba426d9ac0eabbefcb725e70f
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84904192"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85325604"
 ---
 # <a name="winmdexpexe-error-messages"></a>Chybové zprávy nástroje Winmdexp.exe
+
 Proces sestavení volá [Winmdexp.exe (Nástroj pro export metadat prostředí Windows Runtime)](winmdexp-exe-windows-runtime-metadata-export-tool.md) při použití šablony **prostředí Windows Runtime komponenty** v aplikaci Visual Studio 2012, takže Winmdexp.exe chybové zprávy se zobrazí v **Seznam chyb**. Winmdexp.exe funguje v modulu, který je zkompilován s `/target:winmdobj` možností. Protože vyžaduje zkompilovaný modul jako vstup, jeho chybové zprávy se nezobrazí, pokud kompilace nebude úspěšná.  
   
  Chybové zprávy jsou navržené tak, aby obsahovaly všechny informace, které potřebujete k vyřešení chybových podmínek, které jsou vykazují. Některé problémy ale vyžadují více informací, než se bude vejít do zprávy. Další informace najdete v [části diagnostikování prostředí Windows runtimech chybových podmínek komponent](https://docs.microsoft.com/previous-versions/hh977010(v=vs.110)).  
   
- Pokud vaše chyba není popsána v tomto článku a máte pocit, že zpráva neobsahuje dostatečné informace k vyřešení problému, použijte prosím odkaz na zpětnou vazbu v tomto článku a přidejte chybovou zprávu. Případně můžete vytvořit chybu na [webu komunity vývojářů](https://developercommunity.visualstudio.com/). Můžete se také podívat na Další informace o [fórech Microsoftu](https://social.msdn.microsoft.com/Forums/).  
+ Pokud vaše chyba není popsána v tomto článku a máte pocit, že zpráva neobsahuje dostatečné informace k vyřešení problému, použijte odkaz na zpětnou vazbu v tomto článku a přidejte chybovou zprávu. Případně můžete vytvořit chybu na [webu komunity vývojářů](https://developercommunity.visualstudio.com/). Můžete se také podívat na Další informace o [fórech Microsoftu](https://social.msdn.microsoft.com/Forums/).  
   
 ## <a name="see-also"></a>Viz také
 

@@ -2,16 +2,16 @@
 title: dotnet-install scripts
 description: Přečtěte si o příkazu dotnet – instalace skriptů pro instalaci .NET Core SDK a sdíleného modulu runtime.
 ms.date: 04/30/2020
-ms.openlocfilehash: 464e6fafa1c2e661892bcb3b35ba172ca1d7e76b
-ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
+ms.openlocfilehash: d03877d76212f7b22de0a1075cf50fc75bd104b6
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85141240"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85324430"
 ---
 # <a name="dotnet-install-scripts-reference"></a>dotnet – Reference k instalaci skriptů
 
-## <a name="name"></a>Name
+## <a name="name"></a>Název
 
 `dotnet-install.ps1` | `dotnet-install.sh`-Skript použitý k instalaci .NET Core SDK a sdíleného modulu runtime.
 
@@ -44,24 +44,47 @@ dotnet-install.sh  [--architecture <ARCHITECTURE>] [--azure-feed]
 dotnet-install.sh --help
 ```
 
+Skript bash také čte přepínače prostředí PowerShell, takže můžete použít přepínače prostředí PowerShell se skriptem v systémech Linux/macOS.
+
 ## <a name="description"></a>Popis
 
-`dotnet-install`Skripty se používají k provedení instalace .NET Core SDK bez správy, která zahrnuje .NET Core CLI a sdílený modul runtime.
+`dotnet-install`Skripty provádějí instalaci .NET Core SDK bez správy, což zahrnuje .NET Core CLI a sdílený modul runtime. K dispozici jsou dva skripty:
+
+* PowerShellový skript, který funguje v systému Windows.
+* Skript bash, který funguje v systému Linux/macOS.
+
+### <a name="purpose"></a>Účel
+
+ Zamýšlené použití skriptů je pro scénáře průběžné integrace (CI), kde:
+
+* Sadu SDK je potřeba nainstalovat bez zásahu uživatele a bez oprávnění správce.
+* Instalace sady SDK není nutné uchovávat v několika spuštěních CI.
+
+  Typická posloupnost událostí:
+  * CI se aktivuje.
+  * CI nainstaluje sadu SDK pomocí jednoho z těchto skriptů.
+  * CI dokončí svou práci a vymaže dočasná data včetně instalace sady SDK.
+
+Chcete-li nastavit vývojové prostředí nebo spustit aplikace, použijte instalační programy a nikoli tyto skripty.
+
+### <a name="recommended-version"></a>Doporučená verze
 
 Doporučujeme používat stabilní verzi skriptů:
 
 - Bash (Linux/macOS):<https://dot.net/v1/dotnet-install.sh>
 - PowerShell (Windows):<https://dot.net/v1/dotnet-install.ps1>
 
-Hlavní užitečnost těchto skriptů je ve scénářích automatizace a v instalacích bez správy. Existují dva skripty: jeden je PowerShellový skript, který funguje ve Windows, a druhý je bash skript, který funguje na Linux/macOS. Oba skripty mají stejné chování. Skript bash také čte přepínače prostředí PowerShell, takže můžete použít přepínače prostředí PowerShell se skriptem v systémech Linux/macOS.
+### <a name="script-behavior"></a>Chování skriptu
 
-Instalační skripty stáhnou soubor ZIP/tarballu z buildu CLI a budou pokračovat v jeho instalaci buď ve výchozím umístění, nebo v umístění určeném parametrem `-InstallDir|--install-dir` . Ve výchozím nastavení stáhnou instalační skripty sadu SDK a nainstaluje ji. Pokud chcete získat pouze sdílený modul runtime, zadejte `-Runtime|--runtime` argument.
+Oba skripty mají stejné chování. Stáhnou soubor ZIP/tarballu z buildu CLI a budou pokračovat v jeho instalaci buď ve výchozím umístění, nebo v umístění určeném parametrem `-InstallDir|--install-dir` .
 
-Ve výchozím nastavení skript přidá umístění instalace do $PATH pro aktuální relaci. Přepsat toto výchozí chování zadáním `-NoPath|--no-path` argumentu.
+Ve výchozím nastavení stáhnou instalační skripty sadu SDK a nainstaluje ji. Pokud chcete získat pouze sdílený modul runtime, zadejte `-Runtime|--runtime` argument.
+
+Ve výchozím nastavení skript přidá umístění instalace do $PATH pro aktuální relaci. Přepsat toto výchozí chování zadáním `-NoPath|--no-path` argumentu. Skript nenastavuje `DOTNET_ROOT` proměnnou prostředí.
 
 Před spuštěním skriptu nainstalujte požadované [závislosti](../install/dependencies.md).
 
-Konkrétní verzi můžete nainstalovat pomocí `-Version|--version` argumentu. Verze musí být zadána jako verze se třemi částmi (například `2.1.0` ). Pokud není zadaný, použije se `latest` verze.
+Konkrétní verzi můžete nainstalovat pomocí `-Version|--version` argumentu. Verze musí být zadána jako číslo verze se třemi částmi, například `2.1.0` . Pokud není zadaná verze, skript nainstaluje `latest` verzi.
 
 Instalační skripty neaktualizují registr ve Windows. Stačí stáhnout binární soubory zip a zkopírovat je do složky. Pokud chcete aktualizovat hodnoty klíčů registru, použijte instalátory .NET Core.
 

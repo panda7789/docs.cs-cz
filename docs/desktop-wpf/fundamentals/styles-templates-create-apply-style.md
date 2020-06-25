@@ -1,18 +1,18 @@
 ---
 title: Vytvoření stylu pro ovládací prvek
 description: Naučte se, jak vytvořit a odkazovat na styl ovládacího prvku v Windows Presentation Foundation a .NET Core.
-author: thraka
+author: adegeo
 ms.author: adegeo
 ms.date: 09/12/2019
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: 2956dbf93a1d34feca31d3ab10536f5089010189
-ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
+ms.openlocfilehash: de186cd6da83ffef8a5cd59df581e88b24bc474d
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "82071267"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85325795"
 ---
 # <a name="create-a-style-for-a-control-in-wpf"></a>Vytvoření stylu pro ovládací prvek v subsystému WPF
 
@@ -22,7 +22,7 @@ Pomocí Windows Presentation Foundation (WPF) můžete přizpůsobit vzhled exis
 
 ## <a name="create-a-style"></a>Vytvoření stylu
 
-Můžete si představit <xref:System.Windows.Style> jako pohodlný způsob, jak použít sadu hodnot vlastností na jeden nebo více prvků. Můžete použít styl na jakémkoli prvku, který je odvozen <xref:System.Windows.FrameworkElement> z nebo <xref:System.Windows.FrameworkContentElement> jako <xref:System.Windows.Window> nebo. <xref:System.Windows.Controls.Button>
+Můžete si představit <xref:System.Windows.Style> jako pohodlný způsob, jak použít sadu hodnot vlastností na jeden nebo více prvků. Můžete použít styl na jakémkoli prvku, který je odvozen z <xref:System.Windows.FrameworkElement> nebo jako <xref:System.Windows.FrameworkContentElement> <xref:System.Windows.Window> nebo <xref:System.Windows.Controls.Button> .
 
 Nejběžnější způsob, jak deklarovat styl, je jako prostředek v `Resources` oddílu v souboru XAML. Vzhledem k tomu, že styly jsou prostředky, řídí se stejnými pravidly oboru, která se vztahují na všechny prostředky. Put, kde deklarujete styl, ovlivňuje, kde lze použít styl. Například pokud deklarujete styl v kořenovém elementu souboru XAML definice aplikace, styl lze použít kdekoli v aplikaci.
 
@@ -32,7 +32,7 @@ Pokud deklarujete styl v jednom ze souborů XAML aplikace, styl lze použít pou
 
 [!code-xaml[AppResources](~/samples/snippets/desktop-guide/wpf/styles-and-templates-intro/csharp/WindowSingleResource.xaml#WindowResources)]
 
-Styl se skládá z `<Setter>` podřízených prvků, které nastavují vlastnosti na prvcích, na které se styl aplikuje. V předchozím příkladu si všimněte, že styl je nastaven na hodnotu použít na `TextBlock` typy prostřednictvím `TargetType` atributu. Styl nastaví <xref:System.Windows.Controls.Control.FontSize%2A> na `15` a. <xref:System.Windows.Controls.Control.FontWeight%2A> `ExtraBold` Přidejte `<Setter>` pro každou vlastnost styl, který se změní.
+Styl se skládá z `<Setter>` podřízených prvků, které nastavují vlastnosti na prvcích, na které se styl aplikuje. V předchozím příkladu si všimněte, že styl je nastaven na hodnotu použít na `TextBlock` typy prostřednictvím `TargetType` atributu. Styl nastaví na <xref:System.Windows.Controls.Control.FontSize%2A> `15` a <xref:System.Windows.Controls.Control.FontWeight%2A> `ExtraBold` . Přidejte `<Setter>` pro každou vlastnost styl, který se změní.
 
 ## <a name="apply-a-style-implicitly"></a>Implicitně použít styl
 
@@ -42,7 +42,7 @@ A <xref:System.Windows.Style> je pohodlný způsob, jak použít sadu hodnot vla
 
 ![Ukázka stylu snímku obrazovky](./media/styles-and-templates-overview/stylingintro-textblocksbefore.png "StylingIntro_TextBlocksBefore")
 
-Výchozí vzhled lze změnit nastavením vlastností, jako jsou například <xref:System.Windows.Controls.Control.FontSize%2A> a <xref:System.Windows.Controls.Control.FontFamily%2A>, u každého <xref:System.Windows.Controls.TextBlock> prvku přímo. Pokud však chcete, aby <xref:System.Windows.Controls.TextBlock> prvky sdílely některé vlastnosti, můžete vytvořit <xref:System.Windows.Style> v `Resources` části souboru XAML, jak je znázorněno zde.
+Výchozí vzhled lze změnit nastavením vlastností, jako jsou například <xref:System.Windows.Controls.Control.FontSize%2A> a <xref:System.Windows.Controls.Control.FontFamily%2A> , u každého <xref:System.Windows.Controls.TextBlock> prvku přímo. Pokud však chcete <xref:System.Windows.Controls.TextBlock> , aby prvky sdílely některé vlastnosti, můžete vytvořit <xref:System.Windows.Style> v `Resources` části souboru XAML, jak je znázorněno zde.
 
 [!code-xaml[DefaultTextBlockStyle](~/samples/snippets/desktop-guide/wpf/styles-and-templates-intro/csharp/Window1.xaml#SnippetDefaultTextBlockStyle)]
 
@@ -54,7 +54,7 @@ Nyní se <xref:System.Windows.Controls.TextBlock> prvky zobrazí takto.
 
 ## <a name="apply-a-style-explicitly"></a>Použít styl explicitně
 
-Pokud přidáte `x:Key` atribut s hodnotou do stylu, styl již nebude implicitně aplikován na všechny prvky objektu <xref:System.Windows.Style.TargetType%2A>. Na elementy, které mají explicitně odkaz na styl, se použije styl.
+Pokud přidáte `x:Key` atribut s hodnotou do stylu, styl již nebude implicitně aplikován na všechny prvky objektu <xref:System.Windows.Style.TargetType%2A> . Na elementy, které mají explicitně odkaz na styl, se použije styl.
 
 Tady je styl z předchozí části, ale deklarovaný s `x:Key` atributem.
 
@@ -64,44 +64,44 @@ Chcete-li použít styl, nastavte <xref:System.Windows.FrameworkElement.Style%2A
 
 [!code-xaml[ExplicitStyleReference](~/samples/snippets/desktop-guide/wpf/styles-and-templates-intro/csharp/WindowExplicitStyle.xaml#ExplicitStyleReference)]
 
-Všimněte si, že <xref:System.Windows.Controls.TextBlock> první prvek má použit styl, zatímco druhý element TextBlock zůstane beze změny. Implicitní styl z předchozí části byl změněn na styl, který deklaruje `x:Key` atribut, což znamená, že jediným prvkem ovlivněným stylem je ten, který na styl odkazoval přímo.
+Všimněte si, že první <xref:System.Windows.Controls.TextBlock> prvek má použit styl, zatímco druhý element TextBlock zůstane beze změny. Implicitní styl z předchozí části byl změněn na styl, který deklaruje `x:Key` atribut, což znamená, že jediným prvkem ovlivněným stylem je ten, který na styl odkazoval přímo.
 
 ![Ukázka stylu snímku obrazovky](./media/styles-and-templates-overview/create-a-style-explicit-textblock.png "Vytvoření-a-Style – Explicit – TextBlock")
 
 Když je styl použit, explicitně nebo implicitně, bude uzavřen a nelze jej změnit. Chcete-li změnit styl, který byl použit, vytvořte nový styl, který nahradí stávající. Další informace najdete v tématu <xref:System.Windows.Style.IsSealed%2A> vlastnost.
 
-Můžete vytvořit objekt, který zvolí styl, který se použije v závislosti na vlastní logice. Příklad naleznete v příkladu, který je <xref:System.Windows.Controls.StyleSelector> k dispozici pro třídu.
+Můžete vytvořit objekt, který zvolí styl, který se použije v závislosti na vlastní logice. Příklad naleznete v příkladu, který je k dispozici pro <xref:System.Windows.Controls.StyleSelector> třídu.
 
 ## <a name="apply-a-style-programmatically"></a>Použití stylu programově
 
-Chcete-li přiřadit pojmenované styly k elementu programově, Získejte styl z kolekce Resources a přiřaďte ji k <xref:System.Windows.FrameworkElement.Style%2A> vlastnosti elementu. Položky v kolekci prostředků jsou typu <xref:System.Object>. Proto je nutné přetypování načteného stylu na typ <xref:System.Windows.Style?displayProperty=fullName> před jeho přiřazením do `Style` vlastnosti. Například následující kód nastaví styl `TextBlock` pojmenovaného `textblock1` na definovaný styl. `TitleText`
+Chcete-li přiřadit pojmenované styly k elementu programově, Získejte styl z kolekce Resources a přiřaďte ji k vlastnosti elementu <xref:System.Windows.FrameworkElement.Style%2A> . Položky v kolekci prostředků jsou typu <xref:System.Object> . Proto je nutné přetypování načteného stylu na typ <xref:System.Windows.Style?displayProperty=fullName> před jeho přiřazením do `Style` Vlastnosti. Například následující kód nastaví styl `TextBlock` pojmenovaného `textblock1` na definovaný styl `TitleText` .
 
 [!code-csharp[SetStyleCode](~/samples/snippets/desktop-guide/wpf/styles-and-templates-intro/csharp/Window2.xaml.cs#SnippetSetStyleCode)]
 [!code-vb[SetStyleCode](~/samples/snippets/desktop-guide/wpf/styles-and-templates-intro/vb/MainWindow.xaml.vb#SnippetSetStyleCode)]
 
 ## <a name="extend-a-style"></a>Roztažení stylu
 
-Možná budete chtít, aby <xref:System.Windows.Controls.TextBlock> vaše dva prvky sdílely některé hodnoty vlastností, například <xref:System.Windows.Controls.Control.FontFamily%2A> a uprostřed <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A>. Ale také budete chtít **, aby měl text má** další vlastnosti. To lze provést vytvořením nového stylu, který je založen na prvním stylu, jak je znázorněno zde.
+Možná budete chtít <xref:System.Windows.Controls.TextBlock> , aby vaše dva prvky sdílely některé hodnoty vlastností, například <xref:System.Windows.Controls.Control.FontFamily%2A> a uprostřed <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A> . Ale také budete chtít **, aby měl text má** další vlastnosti. To lze provést vytvořením nového stylu, který je založen na prvním stylu, jak je znázorněno zde.
 
 [!code-xaml[DefaultTextBlockStyleBasedOn](~/samples/snippets/desktop-guide/wpf/styles-and-templates-intro/csharp/Window2.xaml#SnippetDefaultTextBlockStyleBasedOn)]
 
 [!code-xaml[TextBlocksExplicit](~/samples/snippets/desktop-guide/wpf/styles-and-templates-intro/csharp/Window2.xaml#SnippetTextBlocksExplicit)]
 
-Tento `TextBlock` styl je nyní zarovnán na střed, používá `Comic Sans MS` písmo `26`, které má velikost, a barvu popředí nastavenou na hodnotu <xref:System.Windows.Media.LinearGradientBrush> zobrazenou v příkladu. Všimněte si, že Přepisuje <xref:System.Windows.Controls.Control.FontSize%2A> hodnotu základního stylu. Pokud je k dispozici více <xref:System.Windows.Setter> než jeden ukazatel ukazující na stejnou vlastnost <xref:System.Windows.Style>v rámci `Setter` , má přednost deklarace, která je deklarována jako poslední.
+Tento `TextBlock` styl je nyní zarovnán na střed, používá `Comic Sans MS` písmo, které má velikost `26` , a barvu popředí nastavenou na hodnotu <xref:System.Windows.Media.LinearGradientBrush> zobrazenou v příkladu. Všimněte si, že Přepisuje <xref:System.Windows.Controls.Control.FontSize%2A> hodnotu základního stylu. Pokud je k dispozici více než jeden <xref:System.Windows.Setter> ukazatel ukazující na stejnou vlastnost v rámci <xref:System.Windows.Style> , má `Setter` přednost deklarace, která je deklarována jako poslední.
 
-Následující příklad ukazuje, <xref:System.Windows.Controls.TextBlock> co prvky teď vypadají jako:
+Následující příklad ukazuje, co <xref:System.Windows.Controls.TextBlock> prvky teď vypadají jako:
 
 ![TextBlocks ve stylu](./media/styles-and-templates-overview/stylingintro-textblocks.png "StylingIntro_TextBlocks")
 
-Tento `TitleText` styl rozšiřuje styl, který byl vytvořen pro <xref:System.Windows.Controls.TextBlock> typ, na který odkazuje. `BasedOn="{StaticResource {x:Type TextBlock}}"` Styl, který má `x:Key` , lze také zvětšit pomocí `x:Key` stylu. Pokud se například použil styl s názvem `Header1` a chtěli jste tento styl zvětšit, použijete. `BasedOn="{StaticResource Header1}"`
+Tento `TitleText` styl rozšiřuje styl, který byl vytvořen pro <xref:System.Windows.Controls.TextBlock> typ, na který odkazuje `BasedOn="{StaticResource {x:Type TextBlock}}"` . Styl, který má, lze také zvětšit `x:Key` pomocí `x:Key` stylu. Pokud se například použil styl s názvem `Header1` a chtěli jste tento styl zvětšit, použijete `BasedOn="{StaticResource Header1}"` .
 
 ## <a name="relationship-of-the-targettype-property-and-the-xkey-attribute"></a>Vztah vlastnosti TargetType a atributu X:Key –
 
-Jak bylo uvedeno dříve, nastavení <xref:System.Windows.Style.TargetType%2A> vlastnosti na `TextBlock` hodnotu bez přiřazení stylu `x:Key` způsobí, že styl bude použit pro všechny <xref:System.Windows.Controls.TextBlock> elementy. V tomto případě `x:Key` je implicitně nastaven na `{x:Type TextBlock}`. To znamená, že pokud explicitně nastavíte `x:Key` hodnotu na jinou než `{x:Type TextBlock}`, <xref:System.Windows.Style> není použita na všechny `TextBlock` prvky automaticky. Místo toho je nutné použít styl (pomocí `x:Key` hodnoty) na `TextBlock` elementy explicitně. Pokud je váš styl v části Resources (prostředky) a `TargetType` nenastavíte vlastnost na styl, je nutné nastavit `x:Key` atribut.
+Jak bylo uvedeno dříve, nastavení <xref:System.Windows.Style.TargetType%2A> vlastnosti na hodnotu `TextBlock` bez přiřazení stylu `x:Key` způsobí, že styl bude použit pro všechny <xref:System.Windows.Controls.TextBlock> elementy. V tomto případě `x:Key` je implicitně nastaven na `{x:Type TextBlock}` . To znamená, že pokud explicitně nastavíte `x:Key` hodnotu na jinou než `{x:Type TextBlock}` , <xref:System.Windows.Style> není použita na všechny `TextBlock` prvky automaticky. Místo toho je nutné použít styl (pomocí `x:Key` hodnoty) na `TextBlock` elementy explicitně. Pokud je váš styl v části Resources (prostředky) a nenastavíte `TargetType` vlastnost na styl, je nutné nastavit `x:Key` atribut.
 
-Kromě poskytování výchozí hodnoty pro `x:Key`, `TargetType` vlastnost určuje typ, pro který se aplikuje vlastnosti setter. Pokud nezadáte `TargetType`, je nutné kvalifikovat vlastnosti <xref:System.Windows.Setter> objektů pomocí názvu třídy pomocí syntaxe. `Property="ClassName.Property"` `Property="FontSize"`Například místo nastavení musíte <xref:System.Windows.Setter.Property%2A> nastavit na `"TextBlock.FontSize"` nebo. `"Control.FontSize"`
+Kromě poskytování výchozí hodnoty pro `x:Key` , `TargetType` vlastnost určuje typ, pro který se aplikuje vlastnosti setter. Pokud nezadáte, je `TargetType` nutné kvalifikovat vlastnosti <xref:System.Windows.Setter> objektů pomocí názvu třídy pomocí syntaxe `Property="ClassName.Property"` . Například místo nastavení `Property="FontSize"` musíte nastavit <xref:System.Windows.Setter.Property%2A> na `"TextBlock.FontSize"` nebo `"Control.FontSize"` .
 
-Všimněte si také, že mnoho ovládacích prvků WPF sestává z kombinace jiných ovládacích prvků WPF. Vytvoříte-li styl, který se vztahuje na všechny ovládací prvky typu, mohou se zobrazit neočekávané výsledky. Například pokud vytvoříte styl, který <xref:System.Windows.Controls.TextBlock> cílí na typ v <xref:System.Windows.Window>, styl bude použit pro všechny `TextBlock` ovládací prvky v okně, a to i v případě, že `TextBlock` je součástí jiného ovládacího prvku, jako je například. <xref:System.Windows.Controls.ListBox>
+Všimněte si také, že mnoho ovládacích prvků WPF sestává z kombinace jiných ovládacích prvků WPF. Vytvoříte-li styl, který se vztahuje na všechny ovládací prvky typu, mohou se zobrazit neočekávané výsledky. Například pokud vytvoříte styl, který cílí na <xref:System.Windows.Controls.TextBlock> typ v <xref:System.Windows.Window> , styl bude použit pro všechny `TextBlock` ovládací prvky v okně, a to i v případě, že `TextBlock` je součástí jiného ovládacího prvku, jako je například <xref:System.Windows.Controls.ListBox> .
 
 ## <a name="see-also"></a>Viz také
 

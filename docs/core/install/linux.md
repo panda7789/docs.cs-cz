@@ -1,15 +1,15 @@
 ---
 title: Nainstalovat distribuce .NET Core a Linux
 description: Přečtěte si, jaké distribuce systému Linux podporují instalaci .NET Core v systému Linux.
-author: thraka
+author: adegeo
 ms.author: adegeo
 ms.date: 06/01/2020
-ms.openlocfilehash: e668ad733481c2d9b73994b6344b38768f5851fe
-ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
+ms.openlocfilehash: 22c07c5a8263dd6059f415cb4d9e2915811351b0
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84903373"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85324631"
 ---
 # <a name="install-net-core-on-linux"></a>Nainstalovat .NET Core v systému Linux
 

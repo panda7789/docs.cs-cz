@@ -13,14 +13,15 @@ helpviewer_keywords:
 - Task-based Asynchronous Pattern, .NET Framework support for
 - .NET Framework, asynchronous design patterns
 ms.assetid: 8cef1fcf-6f9f-417c-b21f-3fd8bac75007
-ms.openlocfilehash: 36784cd403891ddbeb4ea6d22ad89640ce1234c3
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: 21675d26fa2f11d93801e2ba4ffec96b238b97b8
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84768492"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85325074"
 ---
-# <a name="task-based-asynchronous-pattern-tap"></a>Asynchronní vzor založený na úlohách (klepnutím)
+# <a name="task-based-asynchronous-pattern"></a>Asynchronní vzor založený na úlohách
+
 Asynchronní vzor založený na úlohách (klepněte) je založen na <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> typech a <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType> v <xref:System.Threading.Tasks?displayProperty=nameWithType> oboru názvů, které slouží k reprezentaci libovolných asynchronních operací. TAP je doporučený asynchronní návrh vzoru pro nový vývoj.  
   
 ## <a name="naming-parameters-and-return-types"></a>Pojmenovávání, parametry a návratové typy
@@ -29,14 +30,14 @@ TAP používá jedinou metodu k reprezentaci zahájení a dokončení asynchronn
   
  Metoda klepnutí vrátí buď <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> nebo a, na <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType> základě toho, zda odpovídající synchronní metoda vrátí typ void nebo typ `TResult` .  
   
- Parametry metody klepnutí by měly odpovídat parametrům jeho synchronního protějšku a měly by být zadány ve stejném pořadí.  `out` `ref` Parametry a jsou však z tohoto pravidla vyloučeny a je třeba se jim vyhnout zcela. Všechna data, která by byla vrácena prostřednictvím `out` parametru nebo `ref` , by měla být vrácena jako součást `TResult` vrácená funkcí <xref:System.Threading.Tasks.Task%601> a měla by použít řazenou kolekci členů nebo vlastní datovou strukturu pro přizpůsobení více hodnot. Měli byste také zvážit přidání <xref:System.Threading.CancellationToken> parametru i v případě, že synchronní protějšek metody klepnutí na ni nenabízí žádný.
+ Parametry metody klepnutí by měly odpovídat parametrům jeho synchronního protějšku a měly by být zadány ve stejném pořadí.  `out` `ref` Parametry a jsou však z tohoto pravidla vyloučeny a je třeba se jim vyhnout zcela. Všechna data, která by byla vrácena prostřednictvím `out` parametru nebo `ref` , by měla být vrácena jako součást `TResult` vrácená funkcí <xref:System.Threading.Tasks.Task%601> a měla by použít řazenou kolekci členů nebo vlastní datovou strukturu pro přizpůsobení více hodnot. Také zvažte přidání <xref:System.Threading.CancellationToken> parametru i v případě, že synchronní protějšek metody klepnutí na ni nenabízí žádný.
 
  Metody, které jsou odčleněny výhradně na vytváření, manipulaci nebo kombinaci úloh (kde je asynchronní záměr metody jasný v názvu metody nebo v názvu typu, ke kterému patří metoda), nemusí následovat po tomto vzoru názvů. Tyto metody jsou často označovány jako *kombinátory*. Příklady kombinátory zahrnují <xref:System.Threading.Tasks.Task.WhenAll%2A> a a <xref:System.Threading.Tasks.Task.WhenAny%2A> jsou popsány v tématu [použití integrovaného oddílu založeného na úlohách kombinátory](consuming-the-task-based-asynchronous-pattern.md#combinators) článku, který [spotřebovává asynchronní vzor založený na úlohách](consuming-the-task-based-asynchronous-pattern.md).  
   
  Příklady, jak se syntaxe klepnutí liší od syntaxe používané v zastaralých asynchronních vzorech programování, jako je asynchronní programovací model (APM) a asynchronní vzor založený na událostech (EAP), naleznete v tématu [asynchronní programovací vzory](index.md).  
   
 ## <a name="initiating-an-asynchronous-operation"></a>Inicializace asynchronní operace  
- Asynchronní metoda, která je založena na TAP, zvládne malé množství práce synchronně, například validaci argumentů a spouštění asynchronní operace před vrácením výsledné úlohy. Synchronní práce by měly být neustále udržovány na minimu, aby asynchronní metody mohly vracet rychle. Mezi důvody pro rychlý návrat patří:  
+ Asynchronní metoda, která je založena na TAP, zvládne malé množství práce synchronně, například validaci argumentů a spouštění asynchronní operace před vrácením výsledné úlohy. Synchronní práce by měly být neustále udržovány na minimu, aby asynchronní metody mohly vracet rychle. Mezi důvody pro rychlé návratu patří:  
   
 - Asynchronní metody mohou být vyvolány z vlákna uživatelského rozhraní (UI) a dlouhotrvající synchronní práce může mít negativní dopad na odezvu aplikace.  
   
@@ -48,7 +49,7 @@ TAP používá jedinou metodu k reprezentaci zahájení a dokončení asynchronn
  Asynchronní metoda by měla vyvolat výjimku z volání asynchronní metody pouze jako odpověď na chybu použití. Chyby použití by se nikdy neměly objevit v produkčním kódu. Například pokud předání odkazu s hodnotou null ( `Nothing` v Visual Basic) jako jeden z argumentů metody způsobí chybový stav (obvykle reprezentovaný <xref:System.ArgumentNullException> výjimku), můžete změnit volající kód, aby se zajistilo, že odkaz s hodnotou null není nikdy předán. U všech ostatních chyb by měly být výjimky, ke kterým dochází při spuštění asynchronní metody, přiřazeny vrácené úloze i v případě, že se asynchronní metoda dokončí synchronně předtím, než je úloha vrácena. Úloha obvykle obsahuje nanejvýš jednu výjimku. Pokud však úloha představuje více operací (například <xref:System.Threading.Tasks.Task.WhenAll%2A> ), může být k jedné úloze přidruženo více výjimek.  
   
 ## <a name="target-environment"></a>Cílové prostředí  
- Při implementaci metody TAP můžete určit, kde dochází k asynchronnímu spouštění. Úlohy můžete spouštět ve fondu vláken, implementovat je pomocí asynchronního I/O (bez vázání na vlákno pro většinu spuštění operace), spustit je na konkrétním vlákně (například vlákně UI) nebo použít libovolný počet potenciálních kontextů. Metoda klepnutí může dokonce mít nic ke spuštění a může vrátit <xref:System.Threading.Tasks.Task> , která představuje výskyt podmínky jinde v systému (například úkol, který představuje data přicházející do struktury dat ve frontě).
+ Při implementaci metody TAP můžete určit, kde dochází k asynchronnímu spouštění. Můžete se rozhodnout spustit úlohu ve fondu vláken, implementovat ji pomocí asynchronního vstupně-výstupních operací (bez vazby k vláknu pro většinu provádění operace), spustit ji v konkrétním vlákně (například vlákna uživatelského rozhraní) nebo použít libovolný počet potenciálních kontextů. Metoda klepnutí může dokonce mít nic ke spuštění a může vrátit <xref:System.Threading.Tasks.Task> , která představuje výskyt podmínky jinde v systému (například úkol, který představuje data přicházející do struktury dat ve frontě).
 
  Volající metody klepnutí může blokovat čekání na provedení metody klepnutí synchronním čekáním na výsledný úkol nebo může spustit další (pokračování) kód po dokončení asynchronní operace. Tvůrce kódu pokračování má kontrolu nad tím, kde se spustí kód. Kód pro pokračování můžete vytvořit buď explicitně, prostřednictvím metod <xref:System.Threading.Tasks.Task> třídy (například <xref:System.Threading.Tasks.Task.ContinueWith%2A> ) nebo implicitně pomocí jazykové podpory postavené na pokračování (například `await` v jazyce C#, `Await` v Visual Basic v `AwaitValue` F #).  
   
@@ -72,14 +73,14 @@ TAP používá jedinou metodu k reprezentaci zahájení a dokončení asynchronn
 ## <a name="progress-reporting-optional"></a>Vytváření sestav průběhu (volitelné)  
  Některé asynchronní operace těží z poskytování oznámení o průběhu. Ta se obvykle používají k aktualizaci uživatelského rozhraní informacemi o průběhu asynchronní operace.
 
- V klepněte na průběh je zpracováno prostřednictvím <xref:System.IProgress%601> rozhraní, které je předáno asynchronní metodě jako parametr, který je obvykle pojmenován `progress` .  Poskytnutí rozhraní průběhu při volání asynchronní metody pomáhá eliminovat konflikty časování, které jsou výsledkem nesprávného použití (to znamená, když obslužným rutinám, které jsou nesprávně zaregistrovány po zahájení operace, chybí aktualizace).  Důležitější je, že rozhraní průběhu podporuje různé implementace průběhu podle náročnosti kódu.  Náročný kód se bude například starat pouze o nejnovější aktualizaci průběhu nebo může chtít mít všechny aktualizace ve vyrovnávací paměti nebo může chtít vyvolat akci pro každou aktualizaci nebo může chtít řídit, zda je volání zařazeno do konkrétního vlákna. Všech těchto možností lze dosáhnout pomocí různých implementací rozhraní přizpůsobených potřebám konkrétního příjemce.  Stejně jako u zrušení, klepnutí na implementace by měly poskytnout <xref:System.IProgress%601> parametr pouze v případě, že rozhraní API podporuje oznámení o průběhu.
+ V klepněte na průběh je zpracováno prostřednictvím <xref:System.IProgress%601> rozhraní, které je předáno asynchronní metodě jako parametr, který je obvykle pojmenován `progress` .  Poskytnutí rozhraní průběhu při volání asynchronní metody pomáhá eliminovat konflikty časování, které jsou výsledkem nesprávného použití (to znamená, když obslužným rutinám, které jsou nesprávně zaregistrovány po zahájení operace, chybí aktualizace).  Důležitější je, že rozhraní průběhu podporuje různé implementace průběhu podle náročnosti kódu.  Náročný kód se bude například starat pouze o nejnovější aktualizaci průběhu nebo může chtít mít všechny aktualizace ve vyrovnávací paměti nebo může chtít vyvolat akci pro každou aktualizaci nebo může chtít řídit, zda je volání zařazeno do konkrétního vlákna. Všechny tyto možnosti mohou být dosaženy pomocí jiné implementace rozhraní, přizpůsobené potřebám konkrétního příjemce.  Stejně jako u zrušení, klepnutí na implementace by měly poskytnout <xref:System.IProgress%601> parametr pouze v případě, že rozhraní API podporuje oznámení o průběhu.
 
  Například pokud `ReadAsync` Metoda popsaná výše v tomto článku může nahlásit mezikrokový postup ve formě Počet přečtených bajtů, může být zpětné volání průběhu <xref:System.IProgress%601> rozhraní:  
   
  [!code-csharp[Conceptual.TAP#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.tap/cs/examples1.cs#2)]
  [!code-vb[Conceptual.TAP#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.tap/vb/examples1.vb#2)]  
   
- Pokud `FindFilesAsync` Metoda vrátí seznam všech souborů, které splňují konkrétní vzor hledání, zpětné volání průběhu může poskytnout odhad procentuální hodnoty dokončené práce a také aktuální sadu částečných výsledků.  To může provést buď s uspořádanou n-ticí:  
+ Pokud `FindFilesAsync` Metoda vrátí seznam všech souborů, které splňují konkrétní vzor hledání, zpětné volání průběhu může poskytnout odhad procenta dokončené práce a aktuální sady částečných výsledků. Tyto informace může poskytnout jedna z řazených kolekcí členů:  
   
  [!code-csharp[Conceptual.TAP#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.tap/cs/examples1.cs#3)]
  [!code-vb[Conceptual.TAP#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.tap/vb/examples1.vb#3)]  
@@ -91,7 +92,7 @@ TAP používá jedinou metodu k reprezentaci zahájení a dokončení asynchronn
   
  V druhém případě se speciální datový typ obvykle používá s příponou `ProgressInfo` .  
   
- Pokud klepnutím na implementace zadáte přetížení, která přijímají `progress` parametr, musí umožnit argumentu `null` , v takovém případě se nebude hlásit žádný průběh. Klepněte na implementace, které by měly vykázat průběh na <xref:System.Progress%601> objekt synchronně, což umožňuje asynchronní metodě rychle poskytnout průběh a umožnit spotřebiteli postup určit, jak a kde je vhodné informace zpracovat. Například instance průběhu může zvolit zařazování zpětných volání a vyvolat události na zachyceném synchronizačním kontextu.  
+ Pokud klepnutí na implementace poskytují přetížení, která přijímají `progress` parametr, musí umožnit argumentu `null` , v takovém případě se neoznamuje žádný průběh. Klepnutím na implementace by měl být průběh <xref:System.Progress%601> objektu hlášen synchronně, což umožňuje asynchronní metodě rychle poskytnout průběh. Umožňuje také spotřebiteli postupu určit, jak a kde je vhodné tyto informace zpracovat. Například instance průběhu může zvolit zařazování zpětných volání a vyvolat události na zachyceném synchronizačním kontextu.  
   
 ## <a name="iprogresst-implementations"></a>\<T>Implementace IProgress  
  .NET Framework 4,5 poskytuje jednu <xref:System.IProgress%601> implementaci: <xref:System.Progress%601> . <xref:System.Progress%601>Třída je deklarována takto:  
@@ -136,7 +137,7 @@ Public MethodNameAsync(…, cancellationToken As CancellationToken,
                        progress As IProgress(Of T)) As Task  
 ```  
   
- Mnoho implementací TAP však neposkytuje funkce zrušení ani průběhu, takže vyžadují jedinou metodu:  
+ Mnoho implementací klepnutí ale neposkytuje možnosti zrušení nebo průběh, takže vyžadují jedinou metodu:  
   
 ```csharp  
 public Task MethodNameAsync(…);  
@@ -184,11 +185,11 @@ Public MethodNameAsync(…, cancellationToken As CancellationToken,
   
  Aby bylo možné kompenzovat dvě chybějící mezilehlé kombinace, mohou vývojáři předat <xref:System.Threading.CancellationToken.None%2A> nebo zadat výchozí <xref:System.Threading.CancellationToken> parametry pro `cancellationToken` parametr a `null` pro `progress` parametr.  
   
- Pokud očekáváte, že každé použití metody TAP bude podporovat zrušení nebo průběh, můžete vynechat přetížení, které nepřijímá odpovídající parametr.  
+ Pokud očekáváte, že každé použití metody klepnutí bude podporovat zrušení nebo průběh, můžete vynechat přetížení, které neakceptují příslušný parametr.  
   
  Pokud se rozhodnete zveřejnit více přetížení, aby bylo zrušení nebo průběh volitelné, přetížení, která nepodporují zrušení nebo průběh, by se měla chovat, jako by byla předána <xref:System.Threading.CancellationToken.None%2A> pro zrušení nebo `null` pro průběh přetížení, který je podporuje.  
   
-## <a name="related-topics"></a>Související témata  
+## <a name="related-articles"></a>Související články
   
 |Nadpis|Popis|  
 |-----------|-----------------|  

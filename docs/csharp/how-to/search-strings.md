@@ -6,12 +6,12 @@ helpviewer_keywords:
 - strings [C#], searching with String methods
 - strings [C#], searching with regular expressions
 ms.assetid: fb1d9a6d-598d-4a35-bd5f-b86012edcb2b
-ms.openlocfilehash: f5fd61452d6f83bd035b5c6930bd09673c0ded23
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: 34f9f2df11f9b7c51fcec2f8475a50ccf4c5e220
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84662950"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85324134"
 ---
 # <a name="how-to-search-strings"></a>Jak hledat řetězce
 
@@ -23,11 +23,11 @@ Typ [řetězce](../language-reference/builtin-types/reference-types.md#the-strin
 
 ## <a name="does-a-string-contain-text"></a>Obsahuje řetězec text?
 
-<xref:System.String.Contains%2A?displayProperty=nameWithType> <xref:System.String.StartsWith%2A?displayProperty=nameWithType> <xref:System.String.EndsWith%2A?displayProperty=nameWithType> Metody a vyhledávají konkrétní text v řetězci. Následující příklad ukazuje každou z těchto metod a variaci, která používá hledání bez rozlišení velkých a malých písmen:
+<xref:System.String.Contains%2A?displayProperty=nameWithType>Metody, <xref:System.String.StartsWith%2A?displayProperty=nameWithType> a <xref:System.String.EndsWith%2A?displayProperty=nameWithType> vyhledávají konkrétní text v řetězci. Následující příklad ukazuje každou z těchto metod a variaci, která používá vyhledávání bez rozlišování velkých a malých písmen:
 
 :::code language="csharp" interactive="try-dotnet-method" source="../../../samples/snippets/csharp/how-to/strings/SearchStrings.cs" id="Snippet1":::
 
-Předchozí příklad ukazuje důležitý bod pro použití těchto metod. U hledání se ve výchozím nastavení **rozlišují malá a velká písmena** . Pomocí <xref:System.StringComparison.CurrentCultureIgnoreCase?displayProperty=nameWithType> hodnoty Enum určíte hledání bez rozlišení velkých a malých písmen.
+Předchozí příklad ukazuje důležitý bod pro použití těchto metod. U hledání se ve výchozím nastavení **rozlišují malá a velká písmena** . Použijte <xref:System.StringComparison.CurrentCultureIgnoreCase?displayProperty=nameWithType> hodnotu výčtu k určení hledání bez rozlišování velkých a malých písmen.
 
 ## <a name="where-does-the-sought-text-occur-in-a-string"></a>Kde v řetězci dojde k hledanému textu?
 
@@ -41,7 +41,7 @@ Předchozí příklad ukazuje důležitý bod pro použití těchto metod. U hle
 
 Následující příklad kódu vyhledá ve větě slovo "" nebo "jejich", ignoruje případ. Statická metoda <xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType> provede hledání. Dáte mu řetězec pro hledání a vzor hledání. V tomto případě třetí argument určuje hledání bez rozlišování velkých a malých písmen. Další informace naleznete v tématu <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType>.
 
-Vzor hledání popisuje hledaný text. Následující tabulka popisuje jednotlivé prvky vzoru vyhledávání. (V následující tabulce je použit jediný, `\` který musí být uvozen jako `\\` v řetězci jazyka C#).
+Vzor hledání popisuje hledaný text. Následující tabulka popisuje jednotlivé prvky vzoru vyhledávání. (Níže uvedená tabulka používá jeden `\` , který musí být uvozen jako `\\` v řetězci jazyka C#).
 
 | Vzor  | Význam                          |
 |----------|----------------------------------|

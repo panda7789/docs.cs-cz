@@ -1,35 +1,35 @@
 ---
-title: Kontrola nainstalovaných verzí .NET Core ve Windows, Linuxu a macOS - .NET Core
-description: Přečtěte si, jak vypsat, které verze rozhraní .NET Core jsou v počítači nainstalovány. To zahrnuje běh .NET Core runtime a SDK.
-author: thraka
+title: Kontrolovat nainstalované verze .NET Core v systémech Windows, Linux a macOS – .NET Core
+description: Naučte se, jak zobrazit seznam verzí rozhraní .NET Core, které jsou nainstalovány ve vašem počítači. To zahrnuje modul runtime .NET Core a sadu SDK.
+author: adegeo
 ms.author: adegeo
 ms.date: 12/04/2019
 ms.custom: updateeachrelease
 zone_pivot_groups: operating-systems-set-one
-ms.openlocfilehash: 3a78acee6cf427085e98f14353fc2c0ac65d3d80
-ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
+ms.openlocfilehash: cc4d9c6a366cd0e5da4c3446536c93efdc9f5503
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/20/2020
-ms.locfileid: "81645338"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85324819"
 ---
-# <a name="how-to-check-that-net-core-is-already-installed"></a>Jak zkontrolovat, zda je jádro .NET Core již nainstalováno
+# <a name="how-to-check-that-net-core-is-already-installed"></a>Jak ověřit, že je rozhraní .NET Core již nainstalováno
 
-Tento článek vás naučí, jak zkontrolovat, které verze rozhraní .NET Core runtime a sady SDK jsou v počítači nainstalovány. Jádro .NET již bylo nainstalováno, pokud máte integrované vývojové prostředí, jako je visual studio nebo visual studio pro Mac.
+V tomto článku se dozvíte, jak zjistit, které verze modulu runtime .NET Core a sady SDK jsou nainstalovány ve vašem počítači. Pokud máte integrované vývojové prostředí, jako je například Visual Studio nebo Visual Studio pro Mac, je možné, že rozhraní .NET Core již bylo nainstalováno.
 
-Instalace sady SDK nainstaluje odpovídající runtime.
+Instalace sady SDK nainstaluje odpovídající modul runtime.
 
-Pokud některý příkaz v tomto článku selže, nemáte nainstalovaný runtime nebo SDK. Další informace naleznete v [tématu Stažení a instalace jádra .NET](index.md)Core .
+Pokud některý z příkazů v tomto článku neproběhne úspěšně, nemáte nainstalovaný modul runtime nebo sadu SDK. Další informace najdete v tématu [Stažení a instalace .NET Core](index.md).
 
-## <a name="check-sdk-versions"></a>Kontrola verzí sady SDK
+## <a name="check-sdk-versions"></a>Kontrolovat verze sady SDK
 
-Můžete zjistit, které verze sady .NET Core SDK jsou aktuálně nainstalovány s terminálem. Otevřete terminál a spusťte následující příkaz.
+Můžete si prohlédnout, které verze .NET Core SDK jsou aktuálně nainstalovány s terminálem. Otevřete terminál a spusťte následující příkaz.
 
 ```dotnetcli
 dotnet --list-sdks
 ```
 
-Získáte výstup podobný následující.
+Zobrazí se výstup podobný následujícímu.
 
 ::: zone pivot="os-windows"
 
@@ -76,15 +76,15 @@ Získáte výstup podobný následující.
 
 ::: zone-end
 
-## <a name="check-runtime-versions"></a>Kontrola verzí za běhu
+## <a name="check-runtime-versions"></a>Kontrolovat verze modulu runtime
 
-Můžete zjistit, které verze runtime jádra .NET jsou aktuálně nainstalovány pomocí následujícího příkazu.
+Verze modulu runtime .NET Core, které jsou aktuálně nainstalovány, můžete zobrazit pomocí následujícího příkazu.
 
 ```dotnetcli
 dotnet --list-runtimes
 ```
 
-Získáte výstup podobný následující.
+Zobrazí se výstup podobný následujícímu.
 
 ::: zone pivot="os-windows"
 
@@ -166,56 +166,56 @@ Microsoft.NETCore.App 3.1.0 [/usr/local/share/dotnet/shared/Microsoft.NETCore.Ap
 
 ::: zone-end
 
-## <a name="check-for-install-folders"></a>Kontrola instalačních složek
+## <a name="check-for-install-folders"></a>Vyhledat složky pro instalaci
 
-Je možné, že rozhraní .NET Core je `PATH` nainstalováno, ale není přidáno do proměnné pro váš operační systém nebo profil uživatele. Spuštění příkazů z předchozích částí nemusí fungovat. Jako alternativu můžete zkontrolovat, zda existují instalační složky .NET Core.
+Je možné, že je rozhraní .NET Core nainstalované, ale není přidané do `PATH` proměnné pro váš operační systém nebo profil uživatele. Spuštění příkazů z předchozích sekcí nemusí fungovat. Alternativně můžete ověřit, zda existují instalační složky rozhraní .NET Core.
 
-Při instalaci rozhraní .NET Core z instalačního programu nebo skriptu je nainstalován do standardní složky. Většinu času instalační program nebo skript, který používáte k instalaci .NET Core vám dává možnost nainstalovat do jiné složky. Pokud se rozhodnete nainstalovat do jiné složky, upravte začátek cesty ke složce.
+Když instalujete .NET Core z instalačního programu nebo skriptu, nainstaluje se do složky Standard. Většinu času instalačního programu nebo skriptu, který používáte k instalaci .NET Core, vám dává možnost nainstalovat do jiné složky. Pokud se rozhodnete nainstalovat do jiné složky, upravte začátek cesty ke složce.
 
 ::: zone pivot="os-windows"
 
-- **spustitelný soubor dotnet**\
-_C:\\programové\\soubory\\dotnet dotnet.exe_
+- **dotnet – spustitelný soubor**\
+_C: \\ Program Files \\ dotnet \\dotnet.exe_
 
-- **Sada SDK rozhraní .NET**\
-_C:\\programové\\soubory\\dotnet sdk\\{version}\\_
+- **SADA .NET SDK**\
+_C: \\ Program Files \\ dotnet \\ SDK \\ {Version}\\_
 
-- **Doba běhu rozhraní .NET**\
-_C:\\programové\\soubory\\\\dotnet sdílené\\{runtime-type} {version}\\_
+- **Modul runtime .NET**\
+_C: \\ Program Files \\ dotnet \\ Shared \\ {runtime-Type} \\ {Version}\\_
 
 ::: zone-end
 
 ::: zone pivot="os-linux"
 
-- **spustitelný soubor dotnet**\
+- **dotnet – spustitelný soubor**\
 _/home/user/share/dotnet/dotnet_
 
-- **Sada SDK rozhraní .NET**\
+- **SADA .NET SDK**\
 _/home/user/share/dotnet/sdk/{version}/_
 
-- **Doba běhu rozhraní .NET**\
+- **Modul runtime .NET**\
 _/home/user/share/dotnet/shared/{runtime-type}/{version}/_
 
 ::: zone-end
 
 ::: zone pivot="os-macos"
 
-- **spustitelný soubor dotnet**\
+- **dotnet – spustitelný soubor**\
 _/usr/local/share/dotnet/dotnet_
 
-- **Sada SDK rozhraní .NET**\
+- **SADA .NET SDK**\
 _/usr/local/share/dotnet/sdk/{version}/_
 
-- **Doba běhu rozhraní .NET**\
+- **Modul runtime .NET**\
 _/usr/local/share/dotnet/shared/{runtime-type}/{version}/_
 
 ::: zone-end
 
 ## <a name="more-information"></a>Další informace
 
-Pomocí příkazu `dotnet --info`můžete zobrazit verze sady SDK i verze runtime . Získáte také další informace týkající se životního prostředí, jako je například verze operačního systému a identifikátor runtime (RID).
+Verze SDK a běhové verze můžete zobrazit pomocí příkazu `dotnet --info` . Získáte i další informace související s prostředím, jako je například verze operačního systému a identifikátor modulu runtime (RID).
 
 ## <a name="next-steps"></a>Další kroky
 
-- [Nainstalujte rozhraní .NET Core Runtime](runtime.md).
-- [Nainstalujte sadu .NET Core SDK](sdk.md).
+- [Nainstalujte modul runtime .NET Core](runtime.md).
+- [Nainstalujte .NET Core SDK](sdk.md).

@@ -1,19 +1,19 @@
 ---
 title: Instalace a Správa šablon sady SDK – .NET Core
 description: Naučte se instalovat šablony .NET Core v systémech Windows, Linux a macOS.
-author: thraka
+author: adegeo
 ms.author: adegeo
 ms.date: 04/24/2020
 zone_pivot_groups: operating-systems-set-one
 no-loc:
 - dotnet new
 - dotnet nuget add source
-ms.openlocfilehash: 0a3c8655d55bf63de1e91337ce3a2ac399b07d0f
-ms.sourcegitcommit: 5988e9a29cedb8757320817deda3c08c6f44a6aa
+ms.openlocfilehash: 09acae1409eb0492be10bd3a61b14da5be57c6c7
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82200613"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85324488"
 ---
 # <a name="manage-net-project-and-item-templates"></a>Správa projektů a šablon položek .NET
 
@@ -23,13 +23,13 @@ Další informace o vytváření šablon najdete v tématu [kurz: vytvoření š
 
 ## <a name="install-template"></a>Nainstalovat šablonu
 
-Šablony jsou nainstalovány pomocí příkazu [dotnet New](../tools/dotnet-new.md) SDK s `-i` parametrem. Můžete buď zadat identifikátor balíčku NuGet šablony, nebo složku, která obsahuje soubory šablon.
+Šablony jsou nainstalovány prostřednictvím [dotnet new](../tools/dotnet-new.md) příkazu sady SDK s `-i` parametrem. Můžete buď zadat identifikátor balíčku NuGet šablony, nebo složku, která obsahuje soubory šablon.
 
 ### <a name="nuget-hosted-package"></a>Hostovaný balíček NuGet
 
 Šablony rozhraní .NET CLI se nahrají do [NuGet](https://www.nuget.org/) pro rozsáhlou distribuci. Šablony je také možné instalovat z privátního informačního kanálu. Místo nahrání šablony do informačního kanálu NuGet lze soubory šablon *nupkg* distribuovat a ručně nainstalovat, jak je popsáno v části [místní balíček NuGet](#local-nuget-package) .
 
-Další informace o konfiguraci kanálů NuGet najdete v tématu [dotnet NuGet Add source](../tools/dotnet-nuget-add-source.md).
+Další informace o konfiguraci kanálů NuGet najdete v tématu [dotnet nuget add source](../tools/dotnet-nuget-add-source.md) .
 
 K instalaci sady šablon z výchozího kanálu NuGet použijte `dotnet new -i {package-id}` příkaz:
 
@@ -83,7 +83,7 @@ dotnet new -i ~/code/nuget-packages/some-folder/
 
 ::: zone-end
 
-`{folder-path}` Zadaný v příkazu se zobrazí jako identifikátor sady šablon pro všechny nalezené šablony. Jak je uvedeno v části [šablony seznamu](#list-templates) , můžete získat seznam šablon nainstalovaných pomocí `dotnet new -u` příkazu. V tomto příkladu je identifikátor sady šablon zobrazen jako složka použitá pro instalaci:
+`{folder-path}`Zadaný v příkazu se zobrazí jako identifikátor sady šablon pro všechny nalezené šablony. Jak je uvedeno v části [šablony seznamu](#list-templates) , můžete získat seznam šablon nainstalovaných pomocí `dotnet new -u` příkazu. V tomto příkladu je identifikátor sady šablon zobrazen jako složka použitá pro instalaci:
 
 ::: zone pivot="os-windows"
 
@@ -127,7 +127,7 @@ Currently installed items:
 
 ## <a name="uninstall-template"></a>Odinstalace šablony
 
-Šablony se odinstalují pomocí příkazu [dotnet New](../tools/dotnet-new.md) SDK s `-u` parametrem. Můžete buď zadat identifikátor balíčku NuGet šablony, nebo složku, která obsahuje soubory šablon.
+Šablony se odinstalují pomocí [dotnet new](../tools/dotnet-new.md) příkazu SDK s `-u` parametrem. Můžete buď zadat identifikátor balíčku NuGet šablony, nebo složku, která obsahuje soubory šablon.
 
 ### <a name="nuget-package"></a>Balíček NuGet
 

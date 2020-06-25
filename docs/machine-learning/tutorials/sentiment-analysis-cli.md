@@ -6,12 +6,12 @@ ms.author: cesardl
 ms.date: 06/03/2020
 ms.custom: mvc,mlnet-tooling
 ms.topic: tutorial
-ms.openlocfilehash: aab59463daad30748277602b9ab1d8ca2f3fa1f5
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: fcd325d518b276ccb042f3702db978e9189715b8
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84767673"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85326029"
 ---
 # <a name="analyze-sentiment-using-the-mlnet-cli"></a>Analýza mínění pomocí rozhraní příkazového řádku ML.NET
 
@@ -52,7 +52,7 @@ Použijeme existující datovou sadu, která se používá pro scénář Analýz
 
 2. Zkopírujte `yelp_labelled.txt` soubor do složky, kterou jste dříve vytvořili (například `/cli-test` ).
 
-3. Otevřete preferovaný příkazový řádek a přejděte do složky, do které jste zkopírovali soubor DataSet. Například:
+3. Otevřete preferovaný příkazový řádek a přejděte do složky, do které jste zkopírovali soubor DataSet. Příklad:
 
     ```console
     cd /cli-test
@@ -175,7 +175,7 @@ Tyto vyčíslované prostředky jsou vysvětleny v následujících krocích kur
         ```
 
     - Další řádek kódu používá `ConsumeModel.Predict()` metodu pro zadaná vstupní data k vytvoření předpovědi a vrácení výsledků (na základě schématu ModelOutput.cs).
-    - Poslední řádky kódu tisknou vlastnosti vzorových dat (v tomto případě komentář) a také předpověď mínění a odpovídající skóre pro kladné mínění (1) a záporné mínění (2).
+    - Poslední řádky kódu tisknou vlastnosti vzorových dat (v tomto případě komentář) i předpověď mínění a odpovídající skóre pro kladné mínění (1) a záporné mínění (2).
 
 1. Spusťte projekt, a to buď pomocí původních ukázkových dat načtených z prvního řádku datové sady, nebo poskytnutím vlastních pevně zakódovaných ukázkových dat. Měli byste dosáhnout předpovědi srovnatelné s:
 

@@ -1,5 +1,6 @@
 ---
 title: Zobrazení data ve vlastním formátu pomocí ovládacího prvku DateTimePicker
+description: Naučte se používat ovládací prvek model Windows Forms DateTimePicker k formátování zobrazení dat a časů v ovládacím prvku.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,21 +11,21 @@ helpviewer_keywords:
 - examples [Windows Forms], DateTimePicker control
 - dates [Windows Forms], displaying in DateTimePicker control
 ms.assetid: 39767691-2d2b-46b6-a663-b7901e581a6e
-ms.openlocfilehash: a27dbe737b81af86c0ac50b791bcd87bafe05b4f
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 773070136e4fd43ab1bf510ebcaf6b0aa6a7ba8a
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76745930"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85325834"
 ---
 # <a name="how-to-display-a-date-in-a-custom-format-with-the-windows-forms-datetimepicker-control"></a>Postupy: Zobrazení data ve vlastním formátu pomocí ovládacího prvku Windows Forms DateTimePicker
-Ovládací prvek model Windows Forms <xref:System.Windows.Forms.DateTimePicker> poskytuje flexibilitu při formátování zobrazení dat a časů v ovládacím prvku. Vlastnost <xref:System.Windows.Forms.DateTimePicker.Format%2A> umožňuje vybrat z předdefinovaných formátů, které jsou uvedeny v <xref:System.Windows.Forms.DateTimePickerFormat>. Pokud žádný z těchto důvodů není pro vaše účely vhodný, můžete vytvořit vlastní styl formátu pomocí znaků formátu uvedených v <xref:System.Windows.Forms.DateTimePicker.CustomFormat%2A>.  
+<xref:System.Windows.Forms.DateTimePicker>Ovládací prvek model Windows Forms poskytuje flexibilitu při formátování zobrazení dat a časů v ovládacím prvku. <xref:System.Windows.Forms.DateTimePicker.Format%2A>Vlastnost umožňuje vybrat z předdefinovaných formátů, které jsou uvedeny v části <xref:System.Windows.Forms.DateTimePickerFormat> . Pokud žádný z těchto důvodů není pro vaše účely vhodný, můžete vytvořit vlastní styl formátu pomocí znaků formátu uvedených v části <xref:System.Windows.Forms.DateTimePicker.CustomFormat%2A> .  
   
 ### <a name="to-display-a-custom-format"></a>Zobrazení vlastního formátu  
   
-1. Vlastnost <xref:System.Windows.Forms.DateTimePicker.Format%2A> nastavte na hodnotu `DateTimePickerFormat.Custom`.  
+1. Nastavte <xref:System.Windows.Forms.DateTimePicker.Format%2A> vlastnost na hodnotu `DateTimePickerFormat.Custom` .  
   
-2. Nastavte vlastnost <xref:System.Windows.Forms.DateTimePicker.CustomFormat%2A> na řetězec formátu.  
+2. Nastavte <xref:System.Windows.Forms.DateTimePicker.CustomFormat%2A> vlastnost na řetězec formátu.  
   
     ```vb  
     DateTimePicker1.Format = DateTimePickerFormat.Custom  
@@ -65,5 +66,5 @@ Ovládací prvek model Windows Forms <xref:System.Windows.Forms.DateTimePicker> 
   
 ## <a name="see-also"></a>Viz také
 
-- [Ovládací prvek DateTimePicker](datetimepicker-control-windows-forms.md)
+- [DateTimePicker – ovládací prvek](datetimepicker-control-windows-forms.md)
 - [Postupy: Nastavení a vracení kalendářních dat pomocí ovládacího prvku Windows Forms DateTimePicker](how-to-set-and-return-dates-with-the-windows-forms-datetimepicker-control.md)
