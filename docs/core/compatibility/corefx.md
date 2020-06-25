@@ -2,12 +2,12 @@
 title: Přerušující změny knihovny základních tříd
 description: Obsahuje seznam nejnovějších změn v základních knihovnách .NET.
 ms.date: 09/20/2019
-ms.openlocfilehash: 45de0f0d418437cf1677c9a8c7cfc9b6c33a24ef
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 1c56358e69d0dd6e8572a41229c1b9edbcdad795
+ms.sourcegitcommit: 63bb83322814f5e5e5c5b69939b14a3139a6ca7e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144474"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85365610"
 ---
 # <a name="core-net-libraries-breaking-changes"></a>Základní knihovny .NET – přerušující změny
 
@@ -19,6 +19,7 @@ Na této stránce jsou popsány následující přerušující se změny:
 | - | :-: |
 | [Metody SSE a SSE2 CompareGreaterThan správně zpracovávají vstupy NaN.](#sse-and-sse2-comparegreaterthan-methods-properly-handle-nan-inputs) | 5.0 |
 | [Sada CounterSet. provedení operace CreateCounterSetInstance nyní vyvolá chybu InvalidOperationException, pokud již instance existuje.](#countersetcreatecountersetinstance-now-throws-invalidoperationexception-if-instance-already-exists) | 5.0 |
+| [Balíček Microsoft. DotNet. PlatformAbstractions se odebral.](#microsoftdotnetplatformabstractions-package-removed) | 5.0 |
 | [Rozhraní API, která verze sestav nyní hlásí produkt a nikoli verzi souboru](#apis-that-report-version-now-report-product-and-not-file-version) | 3.0 |
 | [Vlastní instance EncoderFallbackBuffer se nemůžou vrátit rekurzivně.](#custom-encoderfallbackbuffer-instances-cannot-fall-back-recursively) | 3.0 |
 | [Změny chování při formátování a analýze plovoucí desetinné čárky](#floating-point-formatting-and-parsing-behavior-changed) | 3.0 |
@@ -48,6 +49,10 @@ Na této stránce jsou popsány následující přerušující se změny:
 ***
 
 [!INCLUDE [createcountersetinstance-throws-invalidoperation](../../../includes/core-changes/corefx/5.0/createcountersetinstance-throws-invalidoperation.md)]
+
+***
+
+[!INCLUDE [platformabstractions-package-removed](../../../includes/core-changes/corefx/5.0/platformabstractions-package-removed.md)]
 
 ***
 

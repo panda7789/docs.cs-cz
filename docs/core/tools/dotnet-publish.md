@@ -2,12 +2,12 @@
 title: dotnet publish – příkaz
 description: Příkaz dotnet publish publikuje projekt nebo řešení .NET Core do adresáře.
 ms.date: 02/24/2020
-ms.openlocfilehash: 697746291a8b34a856433049fe7264ad0ea4af7a
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: 61cfcf06586f3ac66526de69a17b8aef3cf0c795
+ms.sourcegitcommit: 63bb83322814f5e5e5c5b69939b14a3139a6ca7e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83761899"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85365580"
 ---
 # <a name="dotnet-publish"></a>dotnet publish
 
@@ -32,13 +32,13 @@ dotnet publish [<PROJECT>|<SOLUTION>] [-c|--configuration <CONFIGURATION>]
 dotnet publish -h|--help
 ```
 
-## <a name="description"></a>Popis
+## <a name="description"></a>Description
 
 `dotnet publish`zkompiluje aplikaci, přečte prostřednictvím svých závislostí zadaných v souboru projektu a publikuje výslednou sadu souborů do adresáře. Výstup obsahuje následující prostředky:
 
 - Kód zprostředkujícího jazyka (IL) v sestavení s příponou *DLL* .
-- Soubor *. DEPS. JSON* , který obsahuje všechny závislosti projektu.
-- Soubor *. runtimeconfig. JSON* , který určuje sdílený modul runtime, který aplikace očekává, a další možnosti konfigurace pro modul runtime (například typ uvolňování paměti).
+- *.deps.jsv* souboru, který obsahuje všechny závislosti projektu.
+- *.runtimeconfig.jsv* souboru, který určuje sdílený modul runtime, který aplikace očekává, a další možnosti konfigurace pro modul runtime (například typ uvolňování paměti).
 - Závislosti aplikace, které jsou zkopírovány z mezipaměti NuGet do výstupní složky.
 
 `dotnet publish`Výstup příkazu je připravený k nasazení do hostitelského systému (například server, počítač, Mac, notebook) k provedení. Jedná se o jediný oficiálně podporovaný způsob, jak připravit aplikaci pro nasazení. V závislosti na typu nasazení, které projekt určuje, hostující systém může nebo nemusí mít nainstalovaný modul .NET Core Shared runtime. Další informace najdete v tématu [publikování aplikací .NET Core pomocí .NET Core CLI](../deploying/deploy-with-cli.md).
@@ -49,7 +49,7 @@ dotnet publish -h|--help
 
 ### <a name="msbuild"></a>MSBuild
 
-`dotnet publish`Příkaz volá MSBuild, který vyvolá `Publish` cíl. Všechny parametry předané do `dotnet publish` jsou předány do nástroje MSBuild. `-c`Parametry a se `-o` mapují do `Configuration` vlastností a v `OutputPath` uvedeném pořadí.
+`dotnet publish`Příkaz volá MSBuild, který vyvolá `Publish` cíl. Všechny parametry předané do `dotnet publish` jsou předány do nástroje MSBuild. `-c`Parametry a se `-o` mapují do `Configuration` vlastností a v `PublishDir` uvedeném pořadí.
 
 `dotnet publish`Příkaz přijímá možnosti nástroje MSBuild, jako je například `-p` pro nastavení vlastností a `-l` k definování protokolovacího nástroje. Můžete například nastavit vlastnost MSBuild pomocí formátu: `-p:<NAME>=<VALUE>` . Vlastnosti související s publikováním můžete také nastavit tak, že odkazujete na soubor *. pubxml* , například:
 
@@ -59,7 +59,7 @@ dotnet publish -p:PublishProfile=Properties\PublishProfiles\FolderProfile.pubxml
 
 Další informace najdete v následujících materiálech:
 
-- [Reference k příkazovému řádku nástroje MSBuild](/visualstudio/msbuild/msbuild-command-line-reference)
+- [Referenční dokumentace pro použití nástroje MSBuild v příkazovém řádku](/visualstudio/msbuild/msbuild-command-line-reference)
 - [Publikační profily sady Visual Studio (. pubxml) pro nasazení aplikace ASP.NET Core](/aspnet/core/host-and-deploy/visual-studio-publish-profiles)
 - [dotnet msbuild](dotnet-msbuild.md)
 
@@ -85,7 +85,7 @@ Další informace najdete v následujících materiálech:
 
 - **`--force`**
 
-  Vynutí vyřešení všech závislostí i v případě, že bylo poslední obnovení úspěšné. Zadání tohoto příznaku je stejné jako odstranění souboru *Project. assets. JSON* .
+  Vynutí vyřešení všech závislostí i v případě, že bylo poslední obnovení úspěšné. Zadání tohoto příznaku je stejné jako odstranění *project.assets.jsv* souboru.
 
 - **`-h|--help`**
 
@@ -233,7 +233,7 @@ Další informace najdete v následujících materiálech:
 - [Katalog identifikátoru runtime (RID)](../rid-catalog.md)
 - [Práce s macOS Catalina notarization](../install/macos-notarization-issues.md)
 - [Adresářová struktura publikované aplikace](/aspnet/core/hosting/directory-structure)
-- [Reference k příkazovému řádku nástroje MSBuild](/visualstudio/msbuild/msbuild-command-line-reference)
+- [Referenční dokumentace pro použití nástroje MSBuild v příkazovém řádku](/visualstudio/msbuild/msbuild-command-line-reference)
 - [Publikační profily sady Visual Studio (. pubxml) pro nasazení aplikace ASP.NET Core](/aspnet/core/host-and-deploy/visual-studio-publish-profiles)
 - [dotnet msbuild](dotnet-msbuild.md)
 - [ILLInk. Tasks](https://aka.ms/dotnet-illink)
