@@ -1,43 +1,44 @@
 ---
 title: Vytvoření nového formuláře Windows Form
+description: Najděte si témata, která zavedou základní slovník, pokyny a pokyny, které byste měli pochopit, když začnete vytvářet aplikaci model Windows Forms.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Windows Forms, getting started
 - Windows Forms, creating a new form
 ms.assetid: c725559c-803e-4725-80fa-96aba93de29a
-ms.openlocfilehash: 409dd945ebd26d212f62745ce6751f7507641bb2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f1ef899e46c804cb174814b0abbd9490ce6221d5
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62009055"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85325954"
 ---
-# <a name="creating-a-new-windows-form"></a><span data-ttu-id="0c554-102">Vytvoření nového formuláře Windows Form</span><span class="sxs-lookup"><span data-stu-id="0c554-102">Creating a New Windows Form</span></span>
-<span data-ttu-id="0c554-103">Toto téma obsahuje odkazy na témata, která popisují, jak vytvořit první aplikaci Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="0c554-103">This topic contains links to topics that describe how to create your first Windows Forms application.</span></span> <span data-ttu-id="0c554-104">Témata v této části také zavádí některé základní slovník a pokyny, které byste měli rozumět, kdy začnete vytvářet aplikace modelu Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="0c554-104">Also, the topics in this section introduce some of the basic vocabulary and guidelines that you should understand when you start to create a Windows Forms application.</span></span> <span data-ttu-id="0c554-105">Další informace o aplikacích pro Windows Forms, ovládací prvky můžete použít, události a zpracování událostí a jak zpracovat vstup od uživatele, najdete v seznamu příbuzné téma.</span><span class="sxs-lookup"><span data-stu-id="0c554-105">To learn more about Windows Forms applications, the controls you can use on them, events and handling events, and how to handle input from the user, see the related topic list.</span></span>  
+# <a name="creating-a-new-windows-form"></a><span data-ttu-id="16a06-103">Vytvoření nového formuláře Windows Form</span><span class="sxs-lookup"><span data-stu-id="16a06-103">Creating a New Windows Form</span></span>
+<span data-ttu-id="16a06-104">Toto téma obsahuje odkazy na témata, která popisují, jak vytvořit první model Windows Forms aplikaci.</span><span class="sxs-lookup"><span data-stu-id="16a06-104">This topic contains links to topics that describe how to create your first Windows Forms application.</span></span> <span data-ttu-id="16a06-105">Témata v této části také představují některé základní slovníky a pokyny, které byste měli pochopit, když začnete vytvářet model Windows Forms aplikace.</span><span class="sxs-lookup"><span data-stu-id="16a06-105">Also, the topics in this section introduce some of the basic vocabulary and guidelines that you should understand when you start to create a Windows Forms application.</span></span> <span data-ttu-id="16a06-106">Chcete-li získat další informace o model Windows Formsch aplikacích, ovládací prvky, které můžete používat na nich, události a zpracování událostí, a jak zpracovat vstup od uživatele, přečtěte si související seznam témat.</span><span class="sxs-lookup"><span data-stu-id="16a06-106">To learn more about Windows Forms applications, the controls you can use on them, events and handling events, and how to handle input from the user, see the related topic list.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="0c554-106">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="0c554-106">In This Section</span></span>  
- <span data-ttu-id="0c554-107">[Windows Forms – souřadnice](windows-forms-coordinates.md).</span><span class="sxs-lookup"><span data-stu-id="0c554-107">[Windows Forms Coordinates](windows-forms-coordinates.md).</span></span>  
- <span data-ttu-id="0c554-108">Popisuje souřadnice klienta a obrazovky.</span><span class="sxs-lookup"><span data-stu-id="0c554-108">Describes client and screen coordinates.</span></span>  
+## <a name="in-this-section"></a><span data-ttu-id="16a06-107">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="16a06-107">In This Section</span></span>  
+ <span data-ttu-id="16a06-108">[Model Windows Forms souřadnice](windows-forms-coordinates.md).</span><span class="sxs-lookup"><span data-stu-id="16a06-108">[Windows Forms Coordinates](windows-forms-coordinates.md).</span></span>  
+ <span data-ttu-id="16a06-109">Popisuje souřadnice klienta a obrazovky.</span><span class="sxs-lookup"><span data-stu-id="16a06-109">Describes client and screen coordinates.</span></span>  
   
- [<span data-ttu-id="0c554-109">Postupy: Vytvoření aplikace Windows Forms z příkazového řádku</span><span class="sxs-lookup"><span data-stu-id="0c554-109">How to: Create a Windows Forms Application from the Command Line</span></span>](how-to-create-a-windows-forms-application-from-the-command-line.md)  
- <span data-ttu-id="0c554-110">Popisuje, jak vytvořit základní formulář Windows a kompilaci z příkazového řádku.</span><span class="sxs-lookup"><span data-stu-id="0c554-110">Describes how to create a basic Windows Form and compile it from the command line.</span></span>  
+ [<span data-ttu-id="16a06-110">Postupy: Vytvoření aplikace Windows Forms z příkazového řádku</span><span class="sxs-lookup"><span data-stu-id="16a06-110">How to: Create a Windows Forms Application from the Command Line</span></span>](how-to-create-a-windows-forms-application-from-the-command-line.md)  
+ <span data-ttu-id="16a06-111">Popisuje, jak vytvořit základní formulář Windows a zkompilovat ho z příkazového řádku.</span><span class="sxs-lookup"><span data-stu-id="16a06-111">Describes how to create a basic Windows Form and compile it from the command line.</span></span>  
   
-## <a name="reference"></a><span data-ttu-id="0c554-111">Odkaz</span><span class="sxs-lookup"><span data-stu-id="0c554-111">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="16a06-112">Referenční informace</span><span class="sxs-lookup"><span data-stu-id="16a06-112">Reference</span></span>  
  <xref:System.Windows.Forms.Form>  
- <span data-ttu-id="0c554-112">Tato třída popisuje a obsahuje odkazy na všechny její členy.</span><span class="sxs-lookup"><span data-stu-id="0c554-112">Describes this class and contains links to all its members.</span></span>  
+ <span data-ttu-id="16a06-113">Popisuje tuto třídu a obsahuje odkazy na všechny její členy.</span><span class="sxs-lookup"><span data-stu-id="16a06-113">Describes this class and contains links to all its members.</span></span>  
   
  <xref:System.Windows.Forms.Control>  
- <span data-ttu-id="0c554-113">Tato třída popisuje a obsahuje odkazy na všechny její členy.</span><span class="sxs-lookup"><span data-stu-id="0c554-113">Describes this class and contains links to all its members.</span></span>  
+ <span data-ttu-id="16a06-114">Popisuje tuto třídu a obsahuje odkazy na všechny její členy.</span><span class="sxs-lookup"><span data-stu-id="16a06-114">Describes this class and contains links to all its members.</span></span>  
   
-## <a name="related-sections"></a><span data-ttu-id="0c554-114">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="0c554-114">Related Sections</span></span>  
- [<span data-ttu-id="0c554-115">Zpracování uživatelského vstupu</span><span class="sxs-lookup"><span data-stu-id="0c554-115">Handling User Input</span></span>](./controls/handling-user-input.md)  
- <span data-ttu-id="0c554-116">Obsahuje odkazy na témata vstupu uživatele a jak ji zpracovat aplikace Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="0c554-116">Contains links to topics that discuss user input and how to handle it in Windows Forms applications.</span></span>  
+## <a name="related-sections"></a><span data-ttu-id="16a06-115">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="16a06-115">Related Sections</span></span>  
+ [<span data-ttu-id="16a06-116">Zpracování uživatelského vstupu</span><span class="sxs-lookup"><span data-stu-id="16a06-116">Handling User Input</span></span>](./controls/handling-user-input.md)  
+ <span data-ttu-id="16a06-117">Obsahuje odkazy na témata, která popisují vstup uživatele a jejich zpracování v aplikacích model Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="16a06-117">Contains links to topics that discuss user input and how to handle it in Windows Forms applications.</span></span>  
   
- [<span data-ttu-id="0c554-117">Vytváření obslužných rutin událostí ve Windows Forms</span><span class="sxs-lookup"><span data-stu-id="0c554-117">Creating Event Handlers in Windows Forms</span></span>](creating-event-handlers-in-windows-forms.md)  
- <span data-ttu-id="0c554-118">Obsahuje odkazy na témata, která popisují, jak zpracovávat události v aplikacích Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="0c554-118">Contains links to topics that describe how to handle events in Windows Forms applications.</span></span>  
+ [<span data-ttu-id="16a06-118">Vytváření obslužných rutin událostí ve Windows Forms</span><span class="sxs-lookup"><span data-stu-id="16a06-118">Creating Event Handlers in Windows Forms</span></span>](creating-event-handlers-in-windows-forms.md)  
+ <span data-ttu-id="16a06-119">Obsahuje odkazy na témata, která popisují, jak zpracovávat události v aplikacích model Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="16a06-119">Contains links to topics that describe how to handle events in Windows Forms applications.</span></span>  
   
- [<span data-ttu-id="0c554-119">Změna vzhledu Windows Forms</span><span class="sxs-lookup"><span data-stu-id="0c554-119">Changing the Appearance of Windows Forms</span></span>](changing-the-appearance-of-windows-forms.md)  
- <span data-ttu-id="0c554-120">Obsahuje odkazy na témata, která ukazují, jak změnit vzhled aplikace Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="0c554-120">Contains links to topics that show how to change the appearance of Windows Forms applications.</span></span>  
+ [<span data-ttu-id="16a06-120">Změna vzhledu Windows Forms</span><span class="sxs-lookup"><span data-stu-id="16a06-120">Changing the Appearance of Windows Forms</span></span>](changing-the-appearance-of-windows-forms.md)  
+ <span data-ttu-id="16a06-121">Obsahuje odkazy na témata, která ukazují, jak změnit vzhled model Windows Formsch aplikací.</span><span class="sxs-lookup"><span data-stu-id="16a06-121">Contains links to topics that show how to change the appearance of Windows Forms applications.</span></span>  
   
- [<span data-ttu-id="0c554-121">Ovládací prvky Windows Forms podle funkce</span><span class="sxs-lookup"><span data-stu-id="0c554-121">Windows Forms Controls by Function</span></span>](./controls/windows-forms-controls-by-function.md)  
- <span data-ttu-id="0c554-122">Obsahuje odkazy na témata popisující ovládací prvky, které můžete použít v aplikacích Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="0c554-122">Contains links to topics that describe the controls you can use in Windows Forms applications.</span></span>
+ [<span data-ttu-id="16a06-122">Ovládací prvky Windows Forms podle funkce</span><span class="sxs-lookup"><span data-stu-id="16a06-122">Windows Forms Controls by Function</span></span>](./controls/windows-forms-controls-by-function.md)  
+ <span data-ttu-id="16a06-123">Obsahuje odkazy na témata, která popisují ovládací prvky, které můžete použít v aplikacích model Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="16a06-123">Contains links to topics that describe the controls you can use in Windows Forms applications.</span></span>
