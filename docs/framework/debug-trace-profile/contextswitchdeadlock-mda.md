@@ -1,5 +1,6 @@
 ---
 title: contextSwitchDeadlock – pomocník spravovaného ladění (MDA)
+description: Přečtěte si o Pomocníkovi pro Managed Debugging contextSwitchDeadlock – (MDA) v rozhraní .NET, který se aktivuje při zjištění vzájemného zablokování během přechodu kontextu modelu COM.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - deadlocks [.NET Framework]
@@ -12,16 +13,16 @@ helpviewer_keywords:
 - message pumping
 - context switching deadlocks
 ms.assetid: 26dfaa15-9ddb-4b0a-b6da-999bba664fa6
-ms.openlocfilehash: e3fc4a2cb35cdcc713ba0ef362071083af08a27b
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 52db4f2c88bac4e8cac621cca989fa10acb43f94
+ms.sourcegitcommit: a2c8b19e813a52b91facbb5d7e3c062c7188b457
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77217557"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85416015"
 ---
 # <a name="contextswitchdeadlock-mda"></a>contextSwitchDeadlock – pomocník spravovaného ladění (MDA)
 
-Pokud se během přechodu kontextu modelu COM zjistí zablokování, aktivuje se Pomocník s `contextSwitchDeadlock` Managed Debugging Assistant (MDA).
+`contextSwitchDeadlock`Pomocník spravovaného ladění (MDA) je aktivován při zjištění vzájemného zablokování při pokusu o přechod kontextu modelu COM.
 
 ## <a name="symptoms"></a>Příznaky
 
@@ -31,9 +32,9 @@ Nejběžnějším příznakem je, že volání na nespravované součásti model
 
 Nejpravděpodobnější příčinou je, že vlákno s jedním vláknem (STA) neprovádí pumpu zpráv. Vlákno STA buď čeká bez pumpování zpráv, nebo provádí zdlouhavé operace a neumožňuje frontě zpráv pumpovat.
 
-Zvýšení využití paměti v průběhu času je způsobeno tím, že se podproces finalizačního vlákna snaží volat `Release` na nespravované součásti modelu COM a tato součást nevrací.  To brání finalizačnímu objektu v uvolnění jiných objektů.
+Zvýšení využití paměti v průběhu času je způsobeno tím, že se podproces finalizačního procesu pokusí zavolat `Release` na nespravovanou komponentu modelu COM a tato součást se nevrátí.  To brání finalizačnímu objektu v uvolnění jiných objektů.
 
-Ve výchozím nastavení je model vláken pro hlavní vlákno Visual Basic konzolových aplikací STA. Tato aplikace MDA je aktivována, pokud vlákno STA používá interoperabilitu modelu COM přímo nebo nepřímo prostřednictvím modulu CLR (Common Language Runtime) nebo ovládacího prvku třetí strany.  Chcete-li se vyhnout aktivaci tohoto MDA ve Visual Basic konzolové aplikaci, použijte atribut <xref:System.MTAThreadAttribute> na metodu Main nebo upravte aplikaci na zprávy pumpy.
+Ve výchozím nastavení je model vláken pro hlavní vlákno Visual Basic konzolových aplikací STA. Tato aplikace MDA je aktivována, pokud vlákno STA používá interoperabilitu modelu COM přímo nebo nepřímo prostřednictvím modulu CLR (Common Language Runtime) nebo ovládacího prvku třetí strany.  Chcete-li se vyhnout aktivaci tohoto MDA ve Visual Basic konzolové aplikaci, použijte <xref:System.MTAThreadAttribute> atribut na metodu Main nebo upravte aplikaci na zprávy pumpy.
 
 Je možné, že se tento MDA při splnění všech následujících podmínek aktivuje jako nepravdivá:
 

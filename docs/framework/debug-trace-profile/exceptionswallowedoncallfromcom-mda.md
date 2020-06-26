@@ -1,5 +1,6 @@
 ---
 title: exceptionSwallowedOnCallFromCom – pomocník spravovaného ladění (MDA)
+description: Přečtěte si pomocníka spravovaného ladění Exceptionswallowedoncallfromcom – v .NET. K tomuto problému MDA dojde, pokud byla vyvolána výjimka, ale neexistuje žádný dobrý způsob, jak ji ohlásit.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - messages, informational
@@ -9,15 +10,15 @@ helpviewer_keywords:
 - MDAs (managed debugging assistants), exceptions
 - ExceptionSwallowedOnCallFromCOM MDA
 ms.assetid: 55d6ab12-f251-4aab-aa64-aacbe9d9f974
-ms.openlocfilehash: 4ccb03c9a8a473c10f15b00e64810b04f21504c9
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 434f06cf953147d5c245e625db997bed6dbef700
+ms.sourcegitcommit: a2c8b19e813a52b91facbb5d7e3c062c7188b457
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77217515"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85415950"
 ---
 # <a name="exceptionswallowedoncallfromcom-mda"></a>exceptionSwallowedOnCallFromCom – pomocník spravovaného ladění (MDA)
-Pokud je vyvolána výjimka z kódu modulu CLR (Common Language Runtime), který je volán z modelu COM prostřednictvím metody, která nemá nespravovaný návratový typ HRESULT, je aktivována aplikace `exceptionSwallowedOnCallFromCOM` Managed Debugging Assistant (MDA).  
+`exceptionSwallowedOnCallFromCOM`Pokud je vyvolána výjimka z kódu modulu CLR (Common Language Runtime), který je volán z modelu COM prostřednictvím metody, která nemá nespravovaný návratový typ HRESULT, je aktivována pomocník spravovaného ladění (MDA).  
   
 ## <a name="symptoms"></a>Příznaky  
  Volání spravované komponenty z modelu COM vrátí hodnotu FALSE nebo 0. Případně, pokud má metoda návratový typ void, nesmí být žádné náznaky, že při provádění metody došlo k výjimce. V tomto případě bude výjimka tiše zachycena a provádění se vrátí volajícímu modelu COM.  

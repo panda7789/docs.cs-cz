@@ -1,5 +1,6 @@
 ---
 title: fatalExecutionEngineError – pomocník spravovaného ladění (MDA)
+description: Přečtěte si pomocníka spravovaného ladění FatalExecutionEngineError – (MDA) v rozhraní .NET, který se může aktivovat kvůli neočekávanému ukončení procesu.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - corrupted CLR
@@ -12,15 +13,15 @@ helpviewer_keywords:
 - FatalExecutionEngineError MDA
 - managed debugging assistants (MDAs), fatal errors
 ms.assetid: 8b559e44-2393-4e4e-8160-7558d37a4a89
-ms.openlocfilehash: e25c9ef6ec43089f1d85479d1afe301232ed1d4f
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 0806d2eaa1752c88bebd03304fbe5c8094416a48
+ms.sourcegitcommit: a2c8b19e813a52b91facbb5d7e3c062c7188b457
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77217494"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85415924"
 ---
 # <a name="fatalexecutionengineerror-mda"></a>fatalExecutionEngineError – pomocník spravovaného ladění (MDA)
-Pokud byla zjištěna závažná chyba v modulu CLR (Common Language Runtime), je aktivována pomocná aplikace `fatalExecutionEngineError` Managed Debugging Assistant (MDA). Proces se ukončí.  
+`fatalExecutionEngineError`Pokud byla zjištěna závažná chyba v modulu CLR (Common Language Runtime), je aktivována pomocník spravovaného ladění (MDA). Proces se ukončí.  
   
 ## <a name="symptoms"></a>Příznaky  
  Neočekávané ukončení procesu. Jiné příznaky nelze určit, protože k selhání CLR může dojít z nejrůznějších důvodů.  

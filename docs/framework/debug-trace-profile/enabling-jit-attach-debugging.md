@@ -1,33 +1,34 @@
 ---
-title: Povolení JIT – ladění Attach
+title: 'Povolení JIT – ladění Attach '
+description: Povolit JIT (just-in time) připojit ladění pro připojení ladicího programu k procesu, když dojde k chybám Může se aktivovat určitými metodami nebo funkcemi.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - JIT-attach debugging
 - debugging [.NET Framework], JIT-attach debugging
 ms.assetid: f91fc5f7-de5a-4f23-b6ac-f450e63c662e
-ms.openlocfilehash: 7adf1316a36d781439d364746fa11795a7fe165a
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: d1190c51a9cc6b5322ec832e0d35bc01dc855b12
+ms.sourcegitcommit: a2c8b19e813a52b91facbb5d7e3c062c7188b457
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77217537"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85416041"
 ---
-# <a name="enabling-jit-attach-debugging"></a>Povolení JIT – ladění Attach
+# <a name="enabling-jit-attach-debugging"></a>Povolení JIT – ladění Attach 
 Ladění JIT za běhu je fráze sloužící k popisu připojení ladicího programu k procesu, když dojde k chybám, nebo může být aktivována konkrétními metodami nebo funkcemi.  
   
  Ladění JIT JIT se používá v následujících podmínkách selhání:  
   
 - Neošetřené výjimky (v nativním i spravovaném kódu).  
   
-- Metoda <xref:System.Environment.FailFast%2A?displayProperty=nameWithType> nebo funkce [RaiseFailFastException](/windows/win32/api/errhandlingapi/nf-errhandlingapi-raisefailfastexception) (řada Windows 7)  
+- <xref:System.Environment.FailFast%2A?displayProperty=nameWithType>Metoda nebo funkce [RaiseFailFastException](/windows/win32/api/errhandlingapi/nf-errhandlingapi-raisefailfastexception) (řada Windows 7).  
   
 - Kritické chyby modulu runtime.  
   
  Ladění JIT JIT se spouští také voláními následujících metod a funkcí:  
   
-- Metoda <xref:System.Diagnostics.Debugger.Launch%2A?displayProperty=nameWithType>.  
+- <xref:System.Diagnostics.Debugger.Launch%2A?displayProperty=nameWithType>Metoda.  
   
-- Metoda <xref:System.Diagnostics.Debugger.Break%2A?displayProperty=nameWithType>.  
+- <xref:System.Diagnostics.Debugger.Break%2A?displayProperty=nameWithType>Metoda.  
   
 - Funkce [DebugBreak](/windows/win32/api/debugapi/nf-debugapi-debugbreak) (Win32).  
   
@@ -36,4 +37,4 @@ Ladění JIT za běhu je fráze sloužící k popisu připojení ladicího progr
 ## <a name="see-also"></a>Viz také
 
 - [Ladění, trasování a profilace](index.md)
-- [Usnadnění ladění obrázku](making-an-image-easier-to-debug.md)
+- [Usnadnění ladění image](making-an-image-easier-to-debug.md)

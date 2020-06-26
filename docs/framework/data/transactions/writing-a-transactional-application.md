@@ -1,16 +1,17 @@
 ---
 title: Zápis transakční aplikace
+description: Zápis transakční aplikace v .NET. Použijte explicitní nebo implicitní programovací model s třídou Transaction nebo třídou TransactionScope v uvedeném pořadí.
 ms.date: 03/30/2017
 ms.assetid: a4d891f2-6fc8-4395-93c6-6819492406e0
-ms.openlocfilehash: 318771c83a5b7ebc0f3fb2bb8c59240269a2dea9
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 0235bb507d974e0bd3a7046ea213d8b78d870d59
+ms.sourcegitcommit: a2c8b19e813a52b91facbb5d7e3c062c7188b457
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70205820"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85415768"
 ---
 # <a name="writing-a-transactional-application"></a>Zápis transakční aplikace
-Jako programátor transakční aplikace můžete využívat výhod dvou programovacích modelů poskytované <xref:System.Transactions> obor názvů umožní vytvořit transakci. Můžete využít explicitní programovací model pomocí <xref:System.Transactions.Transaction> třídy nebo implicitní programovací model, ve kterém jsou transakce automaticky spravovány infrastrukturou, <xref:System.Transactions.TransactionScope> pomocí třídy. Doporučujeme použít implicitní model transakce pro vývoj. Další informace o tom, jak používat obor transakce v tématu [implementace implicitní transakce pomocí oboru transakce](implementing-an-implicit-transaction-using-transaction-scope.md) , najdete v tématu.  
+Jako programátor transakční aplikace můžete využívat výhod dvou programovacích modelů poskytované <xref:System.Transactions> obor názvů umožní vytvořit transakci. Můžete využít explicitní programovací model pomocí <xref:System.Transactions.Transaction> třídy nebo implicitní programovací model, ve kterém jsou transakce automaticky spravovány infrastrukturou, pomocí <xref:System.Transactions.TransactionScope> třídy. Doporučujeme použít implicitní model transakce pro vývoj. Další informace o tom, jak používat obor transakce v tématu [implementace implicitní transakce pomocí oboru transakce](implementing-an-implicit-transaction-using-transaction-scope.md) , najdete v tématu.  
   
  Oba modely podporují potvrzení transakcí, když program dosáhne konzistentního stavu. Pokud je potvrzení úspěšné, je transakce trvale potvrzena. Pokud se potvrzení nezdaří, přerušení transakce. Je-li program aplikace nelze úspěšně dokončit transakce, pokusí se přerušit a vrácení transakce.  
   

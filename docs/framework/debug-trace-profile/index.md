@@ -1,5 +1,6 @@
 ---
 title: Ladění, trasování a profilace
+description: Přečtěte si o ladění, trasování a profilaci v rozhraní .NET. Viz články, které se týkají ladění JIT (just-in-time), trasování a instrumentace aplikací a dalších.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - debugging [.NET Framework]
@@ -13,23 +14,23 @@ helpviewer_keywords:
 - troubleshooting applications [.NET Framework]
 - application development [.NET Framework], profiling
 ms.assetid: 4a04863e-2475-46f4-bc3f-3c11510c2a4b
-ms.openlocfilehash: 1a43c7fbcb810b22ff9bc409c233d2b1da67370e
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 745f16652c02e3409e7fa7a48beacbf7e777e924
+ms.sourcegitcommit: a2c8b19e813a52b91facbb5d7e3c062c7188b457
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77217403"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85415976"
 ---
 # <a name="debugging-tracing-and-profiling"></a>Ladění, trasování a profilace
-Chcete-li ladit aplikaci .NET Framework, musí být kompilátor a prostředí modulu runtime nakonfigurovány tak, aby umožňovaly ladicímu programu připojit se k aplikaci a aby bylo možné vytvořit symboly a mapy řádků, pokud je to možné, pro aplikaci a její odpovídající Microsoft Intermediate jazyk (MSIL). Po ladění spravované aplikace se dá profilovat, aby se zvýšil výkon. Profilování vyhodnocuje a popisuje řádky zdrojového kódu, které generují nejčastěji spouštěný kód, a dobu, po kterou je potřeba je spustit.  
+Chcete-li ladit aplikaci .NET Framework, musí být kompilátor a prostředí modulu runtime nakonfigurovány tak, aby umožňovaly ladicímu programu připojit se k aplikaci a vytvořit symboly a mapy řádků, pokud je to možné, pro aplikaci a odpovídající jazyk MSIL (Microsoft Intermediate Language). Po ladění spravované aplikace se dá profilovat, aby se zvýšil výkon. Profilování vyhodnocuje a popisuje řádky zdrojového kódu, které generují nejčastěji spouštěný kód, a dobu, po kterou je potřeba je spustit.  
   
- Aplikace .NET Framework lze snadno ladit pomocí sady Visual Studio, která zpracovává mnoho podrobností o konfiguraci. Pokud není nainstalována aplikace Visual Studio, můžete kontrolovat a zlepšovat výkon aplikací .NET Framework pomocí tříd ladění v oboru názvů .NET Framework <xref:System.Diagnostics>. Tento obor názvů obsahuje třídy <xref:System.Diagnostics.Trace>, <xref:System.Diagnostics.Debug>a <xref:System.Diagnostics.TraceSource> pro trasování toku spouštění a třídy <xref:System.Diagnostics.Process>, <xref:System.Diagnostics.EventLog>a <xref:System.Diagnostics.PerformanceCounter> pro kód profilace.  
+ Aplikace .NET Framework lze snadno ladit pomocí sady Visual Studio, která zpracovává mnoho podrobností o konfiguraci. Pokud není nainstalována aplikace Visual Studio, můžete kontrolovat a zlepšovat výkon aplikací .NET Framework pomocí tříd ladění v <xref:System.Diagnostics> oboru názvů .NET Framework. Tento obor názvů obsahuje <xref:System.Diagnostics.Trace> <xref:System.Diagnostics.Debug> třídy, a <xref:System.Diagnostics.TraceSource> pro sledování toku spouštění a <xref:System.Diagnostics.Process> <xref:System.Diagnostics.EventLog> třídy, a <xref:System.Diagnostics.PerformanceCounter> pro kód profilace.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Povolení JIT – ladění Attach](enabling-jit-attach-debugging.md)  
  Ukazuje, jak nakonfigurovat registr pro JIT – připojit ladicí stroj k aplikaci .NET Framework.  
   
- [Usnadnění ladění obrázku](making-an-image-easier-to-debug.md)  
+ [Usnadnění ladění image](making-an-image-easier-to-debug.md)  
  Ukazuje, jak zapnout a optimalizovat sledování JIT, aby bylo sestavení snazší ladit.  
   
  [Trasování a instrumentace aplikací](tracing-and-instrumenting-applications.md)  
@@ -45,7 +46,7 @@ Chcete-li ladit aplikaci .NET Framework, musí být kompilátor a prostředí mo
  Popisuje čítače, které lze použít ke sledování výkonu aplikace.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Ladění aplikací ASP.NET nebo ASP.NET Core v aplikaci Visual Studio](/visualstudio/debugger/how-to-enable-debugging-for-aspnet-applications)  
+ [Ladění aplikací ASP.NET nebo ASP.NET Core v sadě Visual Studio](/visualstudio/debugger/how-to-enable-debugging-for-aspnet-applications)  
  Poskytuje předpoklady a pokyny pro ladění aplikace ASP.NET během vývoje nebo po nasazení.  
   
  [Průvodce vývojem](../development-guide.md)  
