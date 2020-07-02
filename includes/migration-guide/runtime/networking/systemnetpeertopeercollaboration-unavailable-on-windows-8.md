@@ -1,18 +1,27 @@
 ---
-ms.openlocfilehash: edcd6cb6e0d3c3229304f29d3b569800da0a3a01
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: 311adfdc98c766adf1e88ee9bc7e601d2cd13ba5
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59803664"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85620041"
 ---
-### <a name="systemnetpeertopeercollaboration-unavailable-on-windows-8"></a>System.Net.PeerToPeer.Collaboration není k dispozici v systému Windows 8
+### <a name="systemnetpeertopeercollaboration-unavailable-on-windows-8"></a>System .NET. PeerToPeer. Collaboration není v systému Windows 8 k dispozici
 
-|   |   |
-|---|---|
-|Podrobnosti|Obor názvů System.Net.PeerToPeer.Collaboration není k dispozici v systému Windows 8 nebo vyšší.|
-|Doporučení|Aplikace, které podporují Windows 8 nebo vyšší se musí aktualizovat na nebyly závislé na tento obor názvů ani jejích členů.|
-|Rozsah|Hlavní|
-|Version|4.5|
-|Type|Modul runtime|
-|Ovlivněná rozhraní API|<ul><li><xref:System.Net.PeerToPeer.Collaboration?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a>Podrobnosti
+
+Obor názvů System .NET. PeerToPeer. Collaboration není dostupný ve Windows 8 nebo novějším.
+
+#### <a name="suggestion"></a>Návrh
+
+Aplikace, které podporují Windows 8 nebo novější, se musí aktualizovat, aby nezávisí na tomto oboru názvů nebo jeho členech.
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   |Hlavní|
+|Verze|4.5|
+|Typ|Modul runtime
+
+#### <a name="affected-apis"></a>Ovlivněná rozhraní API
+
+-<xref:System.Net.PeerToPeer.Collaboration?displayProperty=nameWithType></li></ul>|

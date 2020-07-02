@@ -1,17 +1,23 @@
 ---
-ms.openlocfilehash: fa472b3a142f55f0cbdd83eabbbb00bddd9786d8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f8e5dee9e97956cea78b7c8ec999af1afe9ac66b
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61842012"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85620050"
 ---
-### <a name="minfreememorypercentagetoactiveservice-is-now-respected"></a>Nyní je dodržena MinFreeMemoryPercentageToActiveService
+### <a name="minfreememorypercentagetoactiveservice-is-now-respected"></a>MinFreeMemoryPercentageToActiveService se teď dodržuje.
 
-|   |   |
-|---|---|
-|Podrobnosti|Toto nastavení vytváří minimální velikost paměti, které musí být k dispozici na serveru, před aktivací služby WCF. Slouží k zabránění <xref:System.OutOfMemoryException?displayProperty=name> výjimky. Toto nastavení v rozhraní .NET Framework 4.5, nemělo žádný vliv. V rozhraní .NET Framework 4.5.1 nezaznamenáme nastavení.|
-|Doporučení|Pokud volné paměti dostupné na webovém serveru je nižší než procento definované v nastavení konfigurace, dojde k výjimce. Některé služby WCF, které úspěšně spuštěny a byl spuštěn v prostředí omezené paměti teď může selhat.|
-|Rozsah|Vedlejší|
-|Version|4.5.1|
-|Type|Modul runtime|
+#### <a name="details"></a>Podrobnosti
+
+Toto nastavení určuje minimální velikost paměti, která musí být k dispozici na serveru, než bude možné aktivovat službu WCF. Je navržena tak, aby nedocházelo k <xref:System.OutOfMemoryException?displayProperty=fullName> výjimkám. V .NET Framework 4,5 Toto nastavení nemá žádný vliv. V .NET Framework 4.5.1 je nastavení pozorováno.
+
+#### <a name="suggestion"></a>Návrh
+
+K výjimce dojde, pokud je volná paměť na webovém serveru menší než procento definované konfiguračním nastavením. Některé služby WCF, které úspěšně začaly a běžely v prostředí omezené paměti, teď můžou selhat.
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   |Vedlejší|
+|Verze|4.5.1|
+|Typ|Modul runtime|

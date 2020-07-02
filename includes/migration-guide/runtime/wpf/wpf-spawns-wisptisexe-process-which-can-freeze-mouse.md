@@ -1,17 +1,23 @@
 ---
-ms.openlocfilehash: cbd599f7467c3b360bbe1c76a65abfdb840a1530
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e0f72d19a884087b1f0f6ebd1b6baea75bc37af4
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "67803250"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85620105"
 ---
-### <a name="wpf-spawns-a-wisptisexe-process-which-can-freeze-the-mouse"></a>WPF spawns wisptis.exe proces, který může zmrazit myš
+### <a name="wpf-spawns-a-wisptisexe-process-which-can-freeze-the-mouse"></a>WPF vytvoří proces wisptis.exe, který může zablokovat myš.
 
-|   |   |
-|---|---|
-|Podrobnosti|V 4.5.2 byl zaveden problém, který způsobuje, <code>wisptis.exe</code> že se zplozený, který může zmrazit vstup myši.|
-|Návrh|Oprava tohoto problému je k dispozici v servisní verzi rozhraní .NET Framework 4.5.2 (kumulativní oprava hotfix 3026376) nebo upgradem na rozhraní .NET Framework 4.6|
-|Rozsah|Hlavní|
-|Version|4.5.2|
+#### <a name="details"></a>Podrobnosti
+
+Byl představen problém v 4.5.2, který způsobuje, že <code>wisptis.exe</code> by bylo možné zablokovat vstup myši.
+
+#### <a name="suggestion"></a>Návrh
+
+Oprava tohoto problému je k dispozici v servisním vydání .NET Framework 4.5.2 (kumulativní oprava hotfix 3026376) nebo prostřednictvím upgradu na .NET Framework 4,6
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   |Hlavní|
+|Verze|4.5.2|
 |Typ|Modul runtime|

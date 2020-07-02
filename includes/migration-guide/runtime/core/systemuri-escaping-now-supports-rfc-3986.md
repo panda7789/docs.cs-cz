@@ -1,18 +1,27 @@
 ---
-ms.openlocfilehash: 1654d58651bf14b0e7c21de2afa827634b7db858
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: 1d7dc808d5b514acc582675d6ccdbd5778314624
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59235330"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619990"
 ---
-### <a name="systemuri-escaping-now-supports-rfc-3986"></a>System.Uri uvozovacích znaků nyní podporuje RFC 3986
+### <a name="systemuri-escaping-now-supports-rfc-3986"></a>Uvozovací znaky System. URI teď podporují RFC 3986.
 
-|   |   |
-|---|---|
-|Podrobnosti|Identifikátor URI uvození došlo ke změně v rozhraní .NET Framework 4.5 na podporu [RFC 3986](https://tools.ietf.org/html/rfc3986). Konkrétní změny patří:<ul><li><xref:System.Uri.EscapeDataString(System.String)?displayProperty=name> řídí vyhrazené znaky dle RFC 3986.</li><li><xref:System.Uri.EscapeUriString(System.String)?displayProperty=name> neuvozuje vyhrazené znaky.</li><li><xref:System.Uri.UnescapeDataString(System.String)?displayProperty=name> nevyvolá výjimku, pokud nalezne neplatnou řídicí sekvenci.</li><li>Nerezervované řídicí znaky nejsou uvozeny řídicími znaky.</li></ul>|
-|Doporučení|<ul><li>Aktualizace aplikace není závislý na <xref:System.Uri.UnescapeDataString(System.String)?displayProperty=name> vyvolá v případě neplatnou řídicí sekvenci. Tato sekvence musí být rozpoznány přímo nyní.</li><li>Podobně očekávají, že Escaped a znakem identifikátor URI a Data řetězce mohou se lišit od rozhraní .NET Framework 4.0 a rozhraní .NET Framework 4.5 a by neměl být porovnat se verze rozhraní .NET přímo. Místo toho jejich analyzovat a před všechny porovnávání normalized v jedné verzi rozhraní .NET.</li></ul>|
-|Rozsah|Vedlejší|
-|Version|4.5|
-|Type|Modul runtime|
-|Ovlivněná rozhraní API|<ul><li><xref:System.Uri.EscapeDataString(System.String)?displayProperty=nameWithType></li><li><xref:System.Uri.EscapeUriString(System.String)?displayProperty=nameWithType></li><li><xref:System.Uri.UnescapeDataString(System.String)?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a>Podrobnosti
+
+Uvozovací znaky URI se v .NET Framework 4,5 změnily na podporu [RFC 3986](https://tools.ietf.org/html/rfc3986). Mezi konkrétní změny patří:<ul><li><xref:System.Uri.EscapeDataString(System.String)?displayProperty=fullName>řídí vyhrazené znaky na základě RFC 3986.</li><li><xref:System.Uri.EscapeUriString(System.String)?displayProperty=fullName>neřídí vyhrazené znaky.</li><li><xref:System.Uri.UnescapeDataString(System.String)?displayProperty=fullName>nevyvolá výjimku, pokud nalezne neplatnou řídicí sekvenci.</li><li>Nerezervované řídicí znaky nejsou uvozeny řídicími znaky.</li></ul>
+
+#### <a name="suggestion"></a>Návrh
+
+<ul><li>Aktualizujte aplikace tak, aby se nespoléhaly na <xref:System.Uri.UnescapeDataString(System.String)?displayProperty=fullName> vyvolání v případě neplatné řídicí sekvence. Tyto sekvence musí být zjišťovány přímo nyní.</li><li>Podobně lze očekávat, že řídicí a neřídící identifikátor URI a datové řetězce se mohou lišit od .NET Framework 4,0 a .NET Framework 4,5 a nesmí být porovnány přímo v různých verzích rozhraní .NET. Místo toho by se měly analyzovat a normalizovat v jedné verzi rozhraní .NET před provedením jakýchkoli porovnání.</li></ul>
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   |Vedlejší|
+|Verze|4.5|
+|Typ|Modul runtime
+
+#### <a name="affected-apis"></a>Ovlivněná rozhraní API
+
+-<xref:System.Uri.EscapeDataString(System.String)?displayProperty=nameWithType></li><li><xref:System.Uri.EscapeUriString(System.String)?displayProperty=nameWithType></li><li><xref:System.Uri.UnescapeDataString(System.String)?displayProperty=nameWithType></li></ul>|

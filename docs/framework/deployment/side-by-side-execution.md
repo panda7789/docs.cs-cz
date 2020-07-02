@@ -1,15 +1,16 @@
 ---
 title: Souběžné spouštění v .NET Framework
+description: Prozkoumejte souběžné spouštění v .NET. Souběžné spouštění umožňuje spouštět mnoho verzí aplikace nebo komponenty na stejném počítači.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - side-by-side execution
 ms.assetid: 649f1342-766b-49e6-a90d-5b019a751e11
-ms.openlocfilehash: e965702943149d3ed34be39bb2923ad52dcf90ca
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 6cd6fb73b27957fdea85cd9a92bf2aa3bafda1ce
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79181648"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619400"
 ---
 # <a name="side-by-side-execution-in-the-net-framework"></a>Souběžné spouštění v .NET Framework
 
@@ -17,13 +18,13 @@ Souběžné spouštění je možnost spuštění několika verzí aplikace nebo 
   
 Následující obrázek znázorňuje několik aplikací, které používají dvě různé verze modulu runtime v jednom počítači. Aplikace A, B a C používají modul runtime verze 1.0, zatímco aplikace D používá modul runtime verze 1.1.  
   
-![Souběžné provádění různých verzí runtime,](./media/side-by-side-execution/side-by-side-runtime-execution.gif)  
+![Souběžné spouštění různých verzí modulu runtime,](./media/side-by-side-execution/side-by-side-runtime-execution.gif)  
   
 Rozhraní .NET Framework zahrnuje modul CLR (Common Language Runtime) a kolekci sestavení, která obsahují typy rozhraní API. Modul runtime a sestavení rozhraní .NET Framework jsou opatřeny samostatnými verzemi. Například verze 4.0 modulu runtime je ve skutečnosti verzí 4.0.319, zatímco verze 1.0 sestavení rozhraní .NET Framework je verzí 1.0.3300.0.  
   
 Následující obrázek znázorňuje několik aplikací, které používají dvě různé verze komponenty na stejném počítači. Aplikace A a B používá verzi komponenty 1.0, zatímco aplikace C používá verzi 2.0 stejné komponenty.  
   
-![Diagram, který ukazuje souběžné provádění součásti.](./media/side-by-side-execution/side-by-side-component-execution.gif)  
+![Diagram, který znázorňuje souběžné spouštění součásti.](./media/side-by-side-execution/side-by-side-component-execution.gif)  
   
 Souběžné spouštění dává větší kontrolu nad tím, s jakou verzí komponenty je aplikace propojena, a větší kontrolu nad tím, jakou verzi modulu runtime aplikace používá.  
   
@@ -35,15 +36,15 @@ Souběžné spouštění a rozhraní .NET Framework poskytují následující fu
   
 - Sestavení se silným názvem.  
   
-     Souběžné spouštění používá sestavení se silným názvem k vytvoření vazby informací o typu ke konkrétní verzi sestavení. Díky tomu aplikace nebo součást nevytvoří vazbu k neplatné verzi sestavení. Sestavení se silným názvem také umožňují, aby na stejném počítači existovalo více verzí souboru a aby je mohly využívat aplikace. Další informace naleznete [v tématu Sestavení se silným názvem](../../standard/assembly/strong-named.md).  
+     Souběžné spouštění používá sestavení se silným názvem k vytvoření vazby informací o typu ke konkrétní verzi sestavení. Díky tomu aplikace nebo součást nevytvoří vazbu k neplatné verzi sestavení. Sestavení se silným názvem také umožňují, aby na stejném počítači existovalo více verzí souboru a aby je mohly využívat aplikace. Další informace naleznete v tématu [sestavení se silným názvem](../../standard/assembly/strong-named.md).  
   
 - Úložiště kódu podporující verze.  
   
-     Rozhraní .NET Framework poskytuje úložiště kódu podporující verze v globální mezipaměti sestavení (GAC). Globální mezipaměť sestavení (GAC) je mezipaměť kódu pro celý počítač, která je k dispozici na všech počítačích s nainstalovaným rozhraním .NET Framework. Jsou v ní uložena sestavení na základě informací o verzi, jazykové verzi a vydavateli a podporuje více verzí komponent a aplikací. Další informace naleznete v [tématu Global Assembly Cache](../app-domains/gac.md).  
+     Rozhraní .NET Framework poskytuje úložiště kódu podporující verze v globální mezipaměti sestavení (GAC). Globální mezipaměť sestavení (GAC) je mezipaměť kódu pro celý počítač, která je k dispozici na všech počítačích s nainstalovaným rozhraním .NET Framework. Jsou v ní uložena sestavení na základě informací o verzi, jazykové verzi a vydavateli a podporuje více verzí komponent a aplikací. Další informace naleznete v tématu [globální mezipaměť sestavení (GAC](../app-domains/gac.md)).  
   
 - Izolace.  
   
-     Pomocí rozhraní .NET Framework lze vytvořit aplikace a komponenty, které jsou spouštěny v izolaci. Izolace je základní součástí souběžného spouštění. Zahrnuje znalost prostředků, které využíváte, a zkušenosti se sdílením prostředků napříč několika verzemi aplikace nebo komponenty. Izolace zahrnuje také ukládání souborů na základě verze. Další informace o izolaci naleznete [v tématu Pokyny pro vytváření komponent pro souběžné spuštění](guidelines-for-creating-components-for-side-by-side-execution.md).  
+     Pomocí rozhraní .NET Framework lze vytvořit aplikace a komponenty, které jsou spouštěny v izolaci. Izolace je základní součástí souběžného spouštění. Zahrnuje znalost prostředků, které využíváte, a zkušenosti se sdílením prostředků napříč několika verzemi aplikace nebo komponenty. Izolace zahrnuje také ukládání souborů na základě verze. Další informace o izolaci najdete v tématu [pokyny pro vytváření komponent pro souběžné spouštění](guidelines-for-creating-components-for-side-by-side-execution.md).  
   
 ## <a name="version-compatibility"></a>Kompatibilita verzí  
 
@@ -53,53 +54,53 @@ Verze rozhraní .NET Framework jsou považovány za celek, který sestává z m
   
 ## <a name="locating-runtime-version-information"></a>Vyhledání informací o verzi běhového prostředí  
 
-Informace o tom, s jakou verzí za běhu byla aplikace nebo komponenta zkompilována a které verze runtime, které aplikace potřebuje ke spuštění, jsou uloženy ve dvou umístěních. Při kompilaci aplikace nebo součásti jsou informace o verzi modulu runtime použité ke kompilaci uloženy ve spravovaném spustitelném souboru. Informace o verzích runtime, které aplikace nebo komponenta vyžaduje, jsou uloženy v konfiguračním souboru aplikace.  
+Informace o tom, které verze modulu runtime aplikace nebo komponenty byly kompilovány s a které verze modulu runtime aplikace vyžaduje ke spuštění, jsou uloženy ve dvou umístěních. Když je zkompilována aplikace nebo komponenta, informace o verzi modulu runtime použité ke kompilaci jsou uloženy ve spravovaném spustitelném souboru. Informace o běhových verzích, které aplikace nebo komponenta vyžaduje, jsou uložené v konfiguračním souboru aplikace.  
   
-### <a name="runtime-version-information-in-the-managed-executable"></a>Informace o verzi modulu Runtime ve spravovaném spustitelném souboru  
+### <a name="runtime-version-information-in-the-managed-executable"></a>Informace o verzi modulu runtime ve spravovaném spustitelném souboru  
 
-Přenosná hlavička souboru spustitelného souboru (PE) každé spravované aplikace a součásti obsahuje informace o runtime verzi, se kterou byla vytvořena. Běžný jazyk runtime používá tyto informace k určení nejpravděpodobnější verze runtime aplikace potřebuje ke spuštění.  
+Hlavička přenositelného spustitelného souboru (PE) každé spravované aplikace a komponenty obsahuje informace o verzi modulu runtime, pomocí které byla vytvořena. Modul CLR (Common Language Runtime) používá tyto informace k určení nejpravděpodobnější verze modulu runtime, kterou aplikace potřebuje spustit.  
   
-### <a name="runtime-version-information-in-the-application-configuration-file"></a>Informace o verzi za běhu v konfiguračním souboru aplikace  
+### <a name="runtime-version-information-in-the-application-configuration-file"></a>Informace o verzi modulu runtime v konfiguračním souboru aplikace  
 
-Kromě informací v hlavičce souboru PE lze aplikaci nasadit pomocí konfiguračního souboru aplikace, který poskytuje informace o verzi za běhu. Konfigurační soubor aplikace je soubor založený na xml, který je vytvořen vývojářem aplikace a který je dodáván s aplikací. [ \<Pokud](../configure-apps/file-schema/startup/requiredruntime-element.md) je v tomto souboru k dispozici, funkce requiredRuntime> Element [ \<spouštěcí>](../configure-apps/file-schema/startup/startup-element.md)určuje, které verze runtime a které verze komponenty aplikace podporuje. Tento soubor můžete také použít při testování k testování kompatibility aplikace s různými verzemi runtime.  
+Kromě informací v hlavičce souboru PE může být aplikace nasazena pomocí konfiguračního souboru aplikace, který poskytuje informace o verzi modulu runtime. Konfigurační soubor aplikace je soubor založený na jazyce XML, který je vytvořen vývojářem aplikace a který je dodáván s aplikací. [ \<requiredRuntime> Prvek](../configure-apps/file-schema/startup/requiredruntime-element.md) [ \<startup> oddílu](../configure-apps/file-schema/startup/startup-element.md), pokud se nachází v tomto souboru, určuje, které verze modulu runtime a které verze komponenty aplikace podporuje. Tento soubor můžete také použít při testování k otestování kompatibility aplikace s různými verzemi modulu runtime.  
   
-Nespravovaný kód, včetně aplikací modelu COM a COM+, může mít konfigurační soubory aplikací, které runtime používá pro interakci se spravovaným kódem. Konfigurační soubor aplikace ovlivňuje jakýkoli spravovaný kód, který aktivujete prostřednictvím serveru COM. Soubor může určit, které verze runtime podporuje, stejně jako sestavení přesměrování. Ve výchozím nastavení používají interopové aplikace com volající spravovaný kód nejnovější verzi runtime nainstalovanou v počítači.  
+Nespravovaný kód, včetně aplikací COM a COM+, může mít konfigurační soubory aplikace, které modul runtime používá pro interakci se spravovaným kódem. Konfigurační soubor aplikace má vliv na veškerý spravovaný kód, který aktivujete pomocí modelu COM. Soubor může určovat, které verze modulu runtime podporuje, i přesměrování sestavení. Ve výchozím nastavení používají spolupracující aplikace COM volání spravovaného kódu nejnovější verzi modulu runtime, který je v počítači nainstalován.  
   
- Další informace o konfiguračních souborech aplikace naleznete v [tématu Konfigurace aplikací](../configure-apps/index.md).  
+ Další informace o konfiguračních souborech aplikace najdete v tématu [Konfigurace aplikací](../configure-apps/index.md).  
   
 ## <a name="determining-which-version-of-the-runtime-to-load"></a>Určení verze běhového prostředí, která má být načtena  
 
-Běžný jazyk runtime používá následující informace k určení, která verze runtime načíst pro aplikaci:  
+Modul CLR (Common Language Runtime) používá následující informace k určení verze modulu runtime, který se má načíst pro aplikaci:  
   
-- Runtime verze, které jsou k dispozici.  
+- Verze modulu runtime, které jsou k dispozici.  
   
-- Runtime verze, které podporuje aplikace.  
+- Verze modulu runtime, které aplikace podporuje.  
   
-### <a name="supported-runtime-versions"></a>Podporované verze modulu Runtime  
+### <a name="supported-runtime-versions"></a>Podporované verze modulu runtime  
 
-Modul runtime používá konfigurační soubor aplikace a hlavičku přenosného spustitelného souboru (PE) k určení, kterou verzi modulu runtime aplikace podporuje. Pokud není k dispozici žádný konfigurační soubor aplikace, načte doba runtime verzi runtime zadanou v hlavičce souboru PE aplikace, pokud je tato verze k dispozici.  
+Modul runtime používá konfigurační soubor aplikace a hlavičku přenositelného spustitelného souboru (PE) k určení verze modulu runtime, který aplikace podporuje. Pokud není přítomen konfigurační soubor aplikace, modul runtime načte verzi modulu runtime určenou v hlavičce souboru PE aplikace, pokud je tato verze k dispozici.  
   
-Pokud je k dispozici konfigurační soubor aplikace, runtime určuje příslušnou verzi runtime k načtení na základě výsledků následujícího procesu:  
+Pokud je přítomen konfigurační soubor aplikace, modul runtime určí vhodnou verzi modulu runtime, která se má načíst na základě výsledků následujícího procesu:  
   
-1. Modul runtime zkontroluje [ \<prvek supportedRuntime> Element](../configure-apps/file-schema/startup/supportedruntime-element.md) v konfiguračním souboru aplikace. Pokud jedna nebo více podporovaných verzí modulu runtime zadaných v ** \<podporovaném** prvku runtime>jsou k dispozici, modul runtime načte verzi modulu runtime určenou prvním ** \<podporovaným prvkem>modulrun.** Pokud tato verze není k dispozici, modul runtime zkontroluje další ** \<podporovaný modul Runtime>** elementa a pokusí se načíst zadanou verzi modulu runtime. Pokud tato verze modulu runtime není k dispozici, následné ** \<podporované Modul runtime>** prvky jsou zkontrolovány. Pokud není k dispozici žádná z podporovaných verzí modulu runtime, modul runtime nenačte verzi modulu runtime a zobrazí zprávu uživateli (viz krok 3).  
+1. Modul runtime prověřuje element [ \<supportedRuntime> elementu](../configure-apps/file-schema/startup/supportedruntime-element.md) v konfiguračním souboru aplikace. Pokud je přítomna jedna nebo více podporovaných verzí modulu runtime určených v **\<supportedRuntime>** prvku, modul runtime načte verzi modulu runtime určenou prvním **\<supportedRuntime>** prvkem. Pokud tato verze není k dispozici, modul runtime prověřuje další **\<supportedRuntime>** prvek a pokusí se načíst zadanou verzi modulu runtime. Pokud tato verze modulu runtime není k dispozici, **\<supportedRuntime>** jsou zkontrolovány další prvky. Pokud není k dispozici žádná z podporovaných verzí modulu runtime, modul runtime nedokáže načíst verzi modulu runtime a zobrazí uživateli zprávu (viz krok 3).  
   
-2. Modul runtime přečte záhlaví souboru PE spustitelného souboru aplikace. Pokud je k dispozici verze runtime určená hlavičkou souboru PE, načte se tato verze. Pokud zadaná verze runtime není k dispozici, hledá runtime verzi runtime určenou společností Microsoft jako kompatibilní s verzí runtime v hlavičce pe. Pokud tato verze nebyla nalezena, proces pokračuje krok 3.  
+2. Modul runtime čte hlavičku souboru PE spustitelného souboru aplikace. Je-li verze modulu runtime určená hlavičkou souboru PE k dispozici, modul runtime tuto verzi načte. Pokud zadaná verze modulu runtime není k dispozici, modul runtime vyhledá verzi modulu runtime určenou společností Microsoft, aby byla kompatibilní s verzí modulu runtime v hlavičce PE. Pokud se tato verze nenajde, proces pokračuje krokem 3.  
   
-3. Modul runtime zobrazí zprávu oznamující, že verze modulu runtime podporovaná aplikací není k dispozici. Doba běhu není načtena.  
+3. Modul runtime zobrazí zprávu s oznámením, že verze modulu runtime podporovaná aplikací není k dispozici. Modul runtime není zaveden.  
   
     > [!NOTE]
-    > Zobrazení této zprávy můžete potlačit pomocí hodnoty NoGuiFromShim pod klíčem registru HKLM\Software\Microsoft\\. NETFramework nebo pomocí proměnné prostředí COMPLUS_NoGuiFromShim. Můžete například potlačit zprávu pro aplikace, které obvykle nekomunikují s uživatelem, například bezobslužné instalace nebo služby systému Windows. Při potlačení tohoto zobrazení zprávy zapíše zaběhu zprávu do protokolu událostí.  Nastavte hodnotu registru NoGuiFromShim na 1 potlačit tuto zprávu pro všechny aplikace v počítači. Alternativně nastavte proměnnou prostředí COMPLUS_NoGuiFromShim na 1 potlačit zprávu pro aplikace spuštěné v určitém kontextu uživatele.  
+    > Zobrazení této zprávy můžete potlačit pomocí hodnoty NoGuiFromShim v klíči registru HKLM\Software\Microsoft \\ . NETFramework nebo pomocí proměnné prostředí COMPLUS_NoGuiFromShim. Můžete například potlačit zprávu pro aplikace, které obvykle nepracují s uživatelem, například bezobslužné instalace nebo služby systému Windows. Když se toto zobrazení této zprávy potlačí, modul runtime zapíše zprávu do protokolu událostí.  Nastavte hodnotu registru NoGuiFromShim na 1 pro potlačení této zprávy pro všechny aplikace v počítači. Případně můžete nastavit proměnnou prostředí COMPLUS_NoGuiFromShim na hodnotu 1, chcete-li potlačit zprávu pro aplikace spuštěné v konkrétním uživatelském kontextu.  
   
 > [!NOTE]
-> Po načtení verze runtime mohou přesměrování vazeb sestavení určit, že bude načtena jiná verze jednotlivého sestavení rozhraní .NET Framework. Tato přesměrování vazby ovlivní pouze konkrétní sestavení, které je přesměrováno.  
+> Po načtení verze modulu runtime může přesměrování vazby sestavení určit, že je načtena jiná verze samostatného sestavení .NET Framework. Tyto přesměrování vazby ovlivňují pouze konkrétní sestavení, které je přesměrováno.  
   
 ## <a name="partially-qualified-assembly-names-and-side-by-side-execution"></a>Částečně kvalifikované názvy sestavení a souběžné spouštění  
 
-Vzhledem k tomu, že jsou potenciálním zdrojem souběžných problémů, částečně kvalifikované odkazy na sestavení lze použít pouze k vazbě na sestavení v adresáři aplikace. Vyhněte se částečně kvalifikované sestavení odkazy v kódu.  
+Vzhledem k tomu, že se jedná o potenciální zdroj souběžných problémů, lze použít částečně kvalifikované odkazy na sestavení pouze k vytvoření vazby k sestavením v adresáři aplikace. Vyhněte se částečně kvalifikovaným odkazům na sestavení ve vašem kódu.  
   
-Chcete-li zmírnit částečně kvalifikované odkazy na sestavení v kódu, můžete použít prvek [ \<qualifyAssembly>](../configure-apps/file-schema/runtime/qualifyassembly-element.md) v konfiguračním souboru aplikace k úplnému kvalifikaci částečně kvalifikovaných odkazů na sestavení, ke kterým dochází v kódu. Pomocí prvku ** \<qualifyAssembly>** určete pouze pole, která nebyla nastavena v částečném odkazu. Identita sestavení uvedená v atributu **fullName** musí obsahovat všechny informace potřebné k úplnému zařazení názvu sestavení: název sestavení, veřejný klíč, jazyková verze a verze.  
+Chcete-li zmírnit částečně kvalifikované odkazy na sestavení v kódu, můžete použít [\<qualifyAssembly>](../configure-apps/file-schema/runtime/qualifyassembly-element.md) element v konfiguračním souboru aplikace k plnému určení částečně kvalifikovaných odkazů na sestavení, které se vyskytují v kódu. Použijte **\<qualifyAssembly>** element k určení pouze těch polí, která nebyla nastavena v částečném odkazu. Identita sestavení uvedená v atributu **FullName** musí obsahovat všechny informace potřebné k plnému kvalifikovanému názvu sestavení: název sestavení, veřejný klíč, jazyková verze a verze.  
   
- Následující příklad ukazuje položku konfiguračního `myAssembly`souboru aplikace, aby bylo plně kvalifikováno sestavení s názvem .  
+ Následující příklad ukazuje položku konfiguračního souboru aplikace pro úplné zařazení sestavení s názvem `myAssembly` .  
   
 ```xml  
 <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
@@ -111,10 +112,10 @@ publicKeyToken=...,
 </assemblyBinding>
 ```  
   
- Kdykoli odkazuje příkaz zatížení `myAssembly`sestavení , tato nastavení konfiguračního `myAssembly` souboru způsobí, že za běhu automaticky přeloží částečně kvalifikovaný odkaz na plně kvalifikovaný odkaz. Například Assembly.Load("myAssembly") se stane Assembly.Load("myAssembly, version=1.0.0.0, publicKeyToken=..., culture=neutral").  
+ Při každém odkazu na příkaz načtení sestavení `myAssembly` způsobí tato nastavení konfiguračního souboru, aby modul runtime automaticky přeložil částečně kvalifikovaný `myAssembly` odkaz na plně kvalifikovaný odkaz. Například Assembly. Load ("myAssembly") se bude jednat o Assembly. Load ("myAssembly, Version = 1.0.0.0, publicKeyToken =..., Culture = neutral").  
   
 > [!NOTE]
-> Metodu **LoadWithPartialName** můžete použít k obejití omezení běžného časového režimu jazyka, které zakazuje načítání částečně odkazovaných sestavení z globální mezipaměti sestavení. Tato metoda by měla být použita pouze ve scénářích vzdálené komunikace, protože může snadno způsobit problémy při souběžném spuštění.  
+> Pomocí metody **LoadWithPartialName** můžete obejít omezení modulu CLR (Common Language Runtime), které zabrání načtení částečně odkazovaných sestavení z globální mezipaměti sestavení (GAC). Tato metoda by se měla používat jenom ve scénářích vzdálené komunikace, protože může snadno způsobovat problémy při souběžném spouštění.  
   
 ## <a name="related-topics"></a>Související témata  
   
@@ -128,4 +129,4 @@ publicKeyToken=...,
   
 ## <a name="reference"></a>Referenční informace  
 
-[\<podporovaný modul> Modul runtime](../configure-apps/file-schema/startup/supportedruntime-element.md)
+[\<supportedRuntime>Objekt](../configure-apps/file-schema/startup/supportedruntime-element.md)

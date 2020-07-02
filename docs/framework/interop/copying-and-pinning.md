@@ -1,5 +1,6 @@
 ---
 title: Kopírování a přichycování
+description: Přečtěte si, jak může zařazovací modul Interop kopírovat nebo připnout data, která jsou zařazování. Kopírování dat umístí kopii dat z jednoho umístění v paměti do jiného umístění.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - pinning, interop marshaling
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - interop marshaling, copying
 - interop marshaling, pinning
 ms.assetid: 0059f576-e460-4e70-b257-668870e420b8
-ms.openlocfilehash: f6db7d37293015911c1285d39e19bf7542a7ac59
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: b7931813cd5254375eda81515f388c85c78fa284
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123643"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85618776"
 ---
 # <a name="copying-and-pinning"></a>Kopírování a přichycování
 
@@ -24,7 +25,7 @@ Argumenty metody předané hodnotou jsou zařazeny do nespravovaného kódu jako
 
 ![Diagram znázorňující typy odkazů předané hodnotou a odkazem.](./media/copying-and-pinning/interop-marshal-reference-pin.gif)
 
-Připnutí dočasně uzamkne data v jejich aktuálním umístění v paměti, takže tím brání jejich přemístění systémem uvolňování paměti společného jazykového modulu runtime. Data zařazovacího modulu připnete k omezení režijních nákladů na kopírování a zvýšení výkonu. Typ dat určuje, zda je zkopírován nebo připnuté během procesu zařazování.  Připnutí se provádí automaticky během zařazování pro objekty <xref:System.String>, jako je, můžete ale také ručně připnout paměť <xref:System.Runtime.InteropServices.GCHandle> pomocí třídy.
+Připnutí dočasně uzamkne data v jejich aktuálním umístění v paměti, takže tím brání jejich přemístění systémem uvolňování paměti společného jazykového modulu runtime. Data zařazovacího modulu připnete k omezení režijních nákladů na kopírování a zvýšení výkonu. Typ dat určuje, zda je zkopírován nebo připnuté během procesu zařazování.  Připnutí se provádí automaticky během zařazování pro objekty, jako je <xref:System.String> , můžete ale také ručně připnout paměť pomocí <xref:System.Runtime.InteropServices.GCHandle> třídy.
 
 ## <a name="formatted-blittable-classes"></a>Formátované přenositelné třídy
 
@@ -41,9 +42,9 @@ Formátované nepřenositelné třídy mají pevně dané rozložení ( [naform�
 
 - Pokud je nepřenosná třída zařazená odkazem, Volaný obdrží ukazatel na ukazatel na kopii struktury dat.
 
-- Pokud je <xref:System.Runtime.InteropServices.InAttribute> atribut nastaven, bude tato kopie vždy inicializována se stavem instance, zařazování podle potřeby.
+- Pokud <xref:System.Runtime.InteropServices.InAttribute> je atribut nastaven, bude tato kopie vždy inicializována se stavem instance, zařazování podle potřeby.
 
-- Pokud je <xref:System.Runtime.InteropServices.OutAttribute> atribut nastaven, stav je vždy zkopírován zpět do instance při návratu, zařazování podle potřeby.
+- Pokud <xref:System.Runtime.InteropServices.OutAttribute> je atribut nastaven, stav je vždy zkopírován zpět do instance při návratu, zařazování podle potřeby.
 
 - Pokud jsou nastaveny atributy **InAttribute** i **subattribute** , jsou požadovány obě kopie. Pokud je atribut vynechán, zařazovací modul může být optimalizován vyřazením buď zkopírování.
 
@@ -78,7 +79,7 @@ Pokud <xref:System.String?displayProperty=nameWithType> je předána odkazem, za
 
 Když <xref:System.Text.StringBuilder?displayProperty=nameWithType> je předána hodnotou, zařazovací modul předává odkaz na vnitřní vyrovnávací paměť **StringBuilder** přímo volajícímu. Volající a volaný musí souhlasit s velikostí vyrovnávací paměti. Volající je zodpovědný za vytvoření **StringBuilder** s adekvátní délkou. Volaný musí podniknout nezbytná opatření, aby se zajistilo, že vyrovnávací paměť nebude přetečení. **StringBuilder** je výjimka pro pravidlo, které odkazuje na typy předané hodnotou, ve výchozím nastavení předány jako parametry v parametrech. Vždycky se předává jako vstupně-výstupní.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Výchozí chování zařazování](default-marshaling-behavior.md)
 - [Směrové atributy](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/77e6taeh(v=vs.100))

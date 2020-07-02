@@ -1,18 +1,27 @@
 ---
-ms.openlocfilehash: 4c65cd62b2d84ef2b852d10a04e5f6ce0cc82d3a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 23ba6064a283b47312a66f3636c2834a7d58106e
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61648989"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619945"
 ---
-### <a name="adonet-now-attempts-to-automatically-reconnect-broken-sql-connections"></a>ADO.NET teď pokusí automaticky znovu připojila, přerušení připojení SQL
+### <a name="adonet-now-attempts-to-automatically-reconnect-broken-sql-connections"></a>ADO.NET se teď pokusí automaticky znovu připojit k přerušeným připojením SQL.
 
-|   |   |
-|---|---|
-|Podrobnosti|Od rozhraní .NET Framework 4.5.1, rozhraní .NET Framework se pokusí automaticky znovu připojila, přerušení připojení SQL. I když to budou obvykle vytvořit obdobné aplikace spolehlivější, existují hraniční případy, kdy aplikace potřebuje vědět, že se ztratí připojení, tak, aby se provedlo určitou akci při opětovné připojení.|
-|Doporučení|Pokud tato funkce nežádoucí z důvodu kompatibility, je možné ho zakázat nastavením <xref:System.Data.SqlClient.SqlConnectionStringBuilder.ConnectRetryCount?displayProperty=name> vlastnost připojovacího řetězce (nebo <xref:System.Data.SqlClient.SqlConnectionStringBuilder?displayProperty=name>) na hodnotu 0.|
-|Rozsah|Edge|
-|Version|4.5.1|
-|Type|Modul runtime|
-|Ovlivněná rozhraní API|<ul><li><xref:System.Data.IDbConnection.ConnectionString?displayProperty=nameWithType></li><li><xref:System.Data.SqlClient.SqlConnection.ConnectionString?displayProperty=nameWithType></li><li><xref:System.Configuration.ConnectionStringSettings.ConnectionString?displayProperty=nameWithType></li><li><xref:System.Data.Common.DbConnection.ConnectionString?displayProperty=nameWithType></li><li><xref:System.Data.Common.DbConnectionStringBuilder.ConnectionString?displayProperty=nameWithType></li><li><xref:System.Data.SqlClient.SqlConnectionStringBuilder.%23ctor?displayProperty=nameWithType></li><li><xref:System.Data.SqlClient.SqlConnectionStringBuilder.%23ctor(System.String)?displayProperty=nameWithType></li><li><xref:System.Data.Common.DbConnectionStringBuilder.%23ctor?displayProperty=nameWithType></li><li><xref:System.Data.Common.DbConnectionStringBuilder.%23ctor(System.Boolean)?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a>Podrobnosti
+
+Počínaje .NET Framework 4.5.1 se .NET Framework pokusí automaticky znovu připojit přerušená připojení SQL. I když se tím obvykle aplikace spolehlivější, existují hraniční případy, ve kterých aplikace potřebuje znát, že připojení bylo ztraceno, aby mohlo při opětovném připojení provést nějakou akci.
+
+#### <a name="suggestion"></a>Návrh
+
+Pokud je tato funkce nežádoucí kvůli problémům s kompatibilitou, může být zakázána nastavením <xref:System.Data.SqlClient.SqlConnectionStringBuilder.ConnectRetryCount?displayProperty=fullName> vlastnosti připojovacího řetězce (nebo <xref:System.Data.SqlClient.SqlConnectionStringBuilder?displayProperty=fullName> ) na hodnotu 0.
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   |Edge|
+|Verze|4.5.1|
+|Typ|Modul runtime
+
+#### <a name="affected-apis"></a>Ovlivněná rozhraní API
+
+-<xref:System.Data.IDbConnection.ConnectionString?displayProperty=nameWithType></li><li><xref:System.Data.SqlClient.SqlConnection.ConnectionString?displayProperty=nameWithType></li><li><xref:System.Configuration.ConnectionStringSettings.ConnectionString?displayProperty=nameWithType></li><li><xref:System.Data.Common.DbConnection.ConnectionString?displayProperty=nameWithType></li><li><xref:System.Data.Common.DbConnectionStringBuilder.ConnectionString?displayProperty=nameWithType></li><li><xref:System.Data.SqlClient.SqlConnectionStringBuilder.%23ctor></li><li><xref:System.Data.SqlClient.SqlConnectionStringBuilder.%23ctor(System.String)></li><li><xref:System.Data.Common.DbConnectionStringBuilder.%23ctor></li><li><xref:System.Data.Common.DbConnectionStringBuilder.%23ctor(System.Boolean)></li></ul>|

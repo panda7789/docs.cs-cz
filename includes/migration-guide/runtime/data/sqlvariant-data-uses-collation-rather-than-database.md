@@ -1,17 +1,23 @@
 ---
-ms.openlocfilehash: e7a5a95a5d13f3396d396ad0d74a19a0efa3a967
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: d606fbc4048421bc572cfe3db2e06bbcd4529e25
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59235274"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85620005"
 ---
-### <a name="sqlvariant-data-uses-sqlvariant-collation-rather-than-database-collation"></a>SQL_VARIANT data používá kolaci sql_variant spíše než řazení databáze
+### <a name="sql_variant-data-uses-sql_variant-collation-rather-than-database-collation"></a>Sql_variant dat používá místo řazení databáze sql_variant kolaci.
 
-|   |   |
-|---|---|
-|Podrobnosti|<code>sql_variant</code> použití dat <code>sql_variant</code> spíše než řazení databáze.|
-|Doporučení|Tato změna adresuje možné poškození dat, pokud se řazení databáze liší od <code>sql_variant</code> kolace. Aplikace využívající poškozená data mohou selhat.|
-|Rozsah|Transparentní|
-|Version|4.5|
-|Type|Modul runtime|
+#### <a name="details"></a>Podrobnosti
+
+<code>sql_variant</code>data používají <code>sql_variant</code> řazení místo řazení databáze.
+
+#### <a name="suggestion"></a>Návrh
+
+Tato změna řeší možné poškození dat, pokud se řazení databáze liší od <code>sql_variant</code> řazení. Aplikace využívající poškozená data mohou selhat.
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   |Průhlednost|
+|Verze|4.5|
+|Typ|Modul runtime|

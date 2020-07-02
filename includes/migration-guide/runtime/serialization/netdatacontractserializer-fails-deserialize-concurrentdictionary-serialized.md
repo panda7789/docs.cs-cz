@@ -1,18 +1,27 @@
 ---
-ms.openlocfilehash: 380f662349a8dcd04e5bf445e1479d0a32d5861f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: eef5633ec8566f6d5216b7dca4387766cacb600d
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61648998"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85620062"
 ---
-### <a name="netdatacontractserializer-fails-to-deserialize-a-concurrentdictionary-serialized-with-a-different-net-version"></a>NetDataContractSerializer se nepodařilo deserializovat ConcurrentDictionary serializovat s příznakem jinou verzi rozhraní .NET
+### <a name="netdatacontractserializer-fails-to-deserialize-a-concurrentdictionary-serialized-with-a-different-net-version"></a>NetDataContractSerializer nemůže deserializovat ConcurrentDictionary serializovaný pomocí jiné verze rozhraní .NET.
 
-|   |   |
-|---|---|
-|Podrobnosti|Standardně <xref:System.Runtime.Serialization.NetDataContractSerializer?displayProperty=name> lze použít pouze v případě, že i serializaci a deserializaci končí sdílet stejné typy CLR. Proto není zaručeno, že objekt serializovat s příznakem jednu verzi rozhraní .NET Framework lze deserializovat jinou verzí.<xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=name> je typ, který je známý nechcete správně deserializovat, je-li serializovat pomocí rozhraní .NET Framework 4.5 nebo dřívější a deserializovat s použitím rozhraní .NET Framework 4.5.1 nebo novější.|
-|Doporučení|Existuje několik možných řešeních tohoto problému:<ul><li>Upgrade serializaci počítač k používání rozhraní .NET Framework 4.5.1, také.</li><li>Použití <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=name> místo <xref:System.Runtime.Serialization.NetDataContractSerializer?displayProperty=name> jako to neočekává přesně stejné typy CLR serializaci a deserializaci skončí.</li><li>Použití <xref:System.Collections.Generic.Dictionary%602?displayProperty=name> místo <xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=name> od neproběhne této konkrétní 4.5 –&gt;4.5.1 přerušit.</li></ul>|
-|Rozsah|Vedlejší|
-|Version|4.5.1|
-|Type|Modul runtime|
-|Ovlivněná rozhraní API|<ul><li><xref:System.Runtime.Serialization.NetDataContractSerializer.Deserialize(System.IO.Stream)?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a>Podrobnosti
+
+Podle návrhu <xref:System.Runtime.Serialization.NetDataContractSerializer?displayProperty=fullName> lze použít pouze v případě, že serializace a deserializace ukončí sdílení stejných typů CLR. Proto není zaručeno, že objekt serializovaný pomocí jedné verze .NET Framework lze deserializovat jinou verzí.<xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=fullName> je typ, který se označuje jako neserializace správně v případě, že je serializovaná s .NET Framework 4,5 nebo starším a deserializována s .NET Framework 4.5.1 nebo novějším.
+
+#### <a name="suggestion"></a>Návrh
+
+K dispozici je několik možných meziproblémových řešení tohoto problému:<ul><li>Upgradujte počítač serializace na použití .NET Framework 4.5.1 i.</li><li><xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=fullName>Místo toho použijte <xref:System.Runtime.Serialization.NetDataContractSerializer?displayProperty=fullName> , protože neočekává přesně stejné typy CLR jak v serializaci, tak i deserializaci na konci.</li><li><xref:System.Collections.Generic.Dictionary%602?displayProperty=fullName>Místo toho použijte, <xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=fullName> protože neprojeví tuto konkrétní přerušení 4,5- &gt; 4.5.1.</li></ul>
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   |Vedlejší|
+|Verze|4.5.1|
+|Typ|Modul runtime
+
+#### <a name="affected-apis"></a>Ovlivněná rozhraní API
+
+-<xref:System.Runtime.Serialization.NetDataContractSerializer.Deserialize(System.IO.Stream)?displayProperty=nameWithType></li></ul>|

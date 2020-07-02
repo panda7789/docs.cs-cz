@@ -1,18 +1,27 @@
 ---
-ms.openlocfilehash: 74f00821f2304664729faa8de2f0163c6611f513
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a007022bf32ffe76861f6f9016a7edace17b0f61
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66379620"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85620044"
 ---
-### <a name="data-written-to-printsystemjobinfojobstream-must-be-in-xps-format"></a>Data zapsaná do PrintSystemJobInfo.JobStream musí být ve formátu XPS
+### <a name="data-written-to-printsystemjobinfojobstream-must-be-in-xps-format"></a>Data zapsaná do PrintSystemJobInfo. tok úloh musí být ve formátu XPS.
 
-|   |   |
-|---|---|
-|Podrobnosti|<xref:System.Printing.PrintSystemJobInfo.JobStream> Zpřístupňuje vlastnost datového proudu tiskové úlohy. Uživatel může odesílat nezpracovaná data na základní součásti tisku operačního systému pomocí zápisu s tímto datovým proudem. Od verze rozhraní .NET Framework 4.5 na Windows 8 a novější verze operačního systému Windows, zapsaná data do tohoto datového proudu musí být ve formátu XPS jako datový proud balíčku.|
-|Doporučení|Výstup vytisknout obsah, můžete provést jeden z následujících akcí:<ul><li>Použití <xref:System.Windows.Xps.XpsDocumentWriter> třídy do výstupního vytisknout obsah. Toto je Doporučená alternativa.</li><li>Ujistěte se, že data přenášená do datový proud vrácený <xref:System.Printing.PrintSystemJobInfo.JobStream> vlastnost je ve formátu XPS jako datový proud balíčku.</li></ul>|
-|Scope|Vedlejší|
-|Version|4.5|
-|Type|Modul runtime|
-|Ovlivněná rozhraní API|<ul><li><xref:System.Printing.PrintSystemJobInfo.JobStream?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a>Podrobnosti
+
+<xref:System.Printing.PrintSystemJobInfo.JobStream>Vlastnost zpřístupňuje datový proud tiskové úlohy. Uživatel může do tohoto datového proudu odeslat nezpracovaná data do základních tiskových součástí operačního systému. Od verze .NET Framework 4,5 ve Windows 8 a novějších verzích operačního systému Windows musí být data zapsaná do tohoto datového proudu ve formátu XPS jako datový proud balíčku.
+
+#### <a name="suggestion"></a>Návrh
+
+Pro výstup tiskového obsahu můžete provést jednu z následujících akcí:<ul><li>Použijte <xref:System.Windows.Xps.XpsDocumentWriter> třídu pro výstup tiskového obsahu. Toto je Doporučená alternativa.</li><li>Zajistěte, aby data odesílaná do datového proudu vráceného <xref:System.Printing.PrintSystemJobInfo.JobStream> vlastností byla ve formátu XPS jako datový proud balíčku.</li></ul>
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   |Vedlejší|
+|Verze|4.5|
+|Typ|Modul runtime
+
+#### <a name="affected-apis"></a>Ovlivněná rozhraní API
+
+-<xref:System.Printing.PrintSystemJobInfo.JobStream?displayProperty=nameWithType></li></ul>|

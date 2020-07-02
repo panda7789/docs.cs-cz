@@ -1,18 +1,27 @@
 ---
-ms.openlocfilehash: cda5df4b673412a7c8c59f80f89c19c13dc81dc1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7ac0cac53ab2fa7657d0ae58f11d9e777631acc9
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "67858533"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85620089"
 ---
-### <a name="accessing-a-wpf-datagrids-selected-items-from-a-handler-of-the-datagrids-unloadingrow-event-can-cause-a-nullreferenceexception"></a>Přístup k vybraným položkám WPF DataGrid z obslužné rutiny události UnloadingRow serveru DataGrid může způsobit výjimku NullReferenceException
+### <a name="accessing-a-wpf-datagrids-selected-items-from-a-handler-of-the-datagrids-unloadingrow-event-can-cause-a-nullreferenceexception"></a>Přístup k vybraným položkám ovládacího prvku DataGrid v GRAFICKÉm přístupu z obslužné rutiny události UnloadingRow objektu DataGrid může způsobit NullReferenceException.
 
-|   |   |
-|---|---|
-|Podrobnosti|Z důvodu chyby v rozhraní .NET Framework 4.5, obslužné rutiny <xref:System.Windows.Controls.DataGrid> událostí pro události zahrnující odebrání řádku může způsobit vyvolání, <xref:System.NullReferenceException?displayProperty=name> pokud mají přístup <xref:System.Windows.Controls.DataGrid>k 's <xref:System.Windows.Controls.Primitives.Selector.SelectedItem?displayProperty=name> nebo <xref:System.Windows.Controls.Primitives.MultiSelector.SelectedItems?displayProperty=name> vlastnosti.|
-|Návrh|Tento problém byl vyřešen v rozhraní .NET Framework 4.6 a může být vyřešen upgradem na tuto verzi rozhraní .NET Framework.|
-|Rozsah|Vedlejší|
-|Version|4.5|
-|Typ|Modul runtime|
-|Ovlivněná rozhraní API|<ul><li><xref:System.Windows.Controls.DataGrid.UnloadingRow?displayProperty=nameWithType></li><li><xref:System.Windows.Controls.DataGrid.UnloadingRowDetails?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a>Podrobnosti
+
+V důsledku chyby v .NET Framework 4,5 může obslužná rutina události pro <xref:System.Windows.Controls.DataGrid> události zahrnující odebrání řádku způsobit <xref:System.NullReferenceException?displayProperty=fullName> vyvolání, pokud přistupuje k <xref:System.Windows.Controls.DataGrid> <xref:System.Windows.Controls.Primitives.Selector.SelectedItem?displayProperty=fullName> <xref:System.Windows.Controls.Primitives.MultiSelector.SelectedItems?displayProperty=fullName> vlastnostem nebo.
+
+#### <a name="suggestion"></a>Návrh
+
+Tento problém byl opravený v .NET Framework 4,6 a může se řešit upgradem na verzi .NET Framework.
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   |Vedlejší|
+|Verze|4.5|
+|Typ|Modul runtime
+
+#### <a name="affected-apis"></a>Ovlivněná rozhraní API
+
+-<xref:System.Windows.Controls.DataGrid.UnloadingRow?displayProperty=nameWithType></li><li><xref:System.Windows.Controls.DataGrid.UnloadingRowDetails?displayProperty=nameWithType></li></ul>|

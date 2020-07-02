@@ -4,12 +4,12 @@ description: Ukazuje různé způsoby, jak nainstalovat .NET Core SDK a modul ru
 author: adegeo
 ms.author: adegeo
 ms.date: 06/04/2020
-ms.openlocfilehash: eef724138f2b908bf8601a509d298a06e55fb13e
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: ed4f5b914d03cfb072ee4ba168c67262e0d40c08
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85324741"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619426"
 ---
 # <a name="install-net-core-sdk-or-net-core-runtime-on-ubuntu"></a>Instalace .NET Core SDK nebo modulu runtime .NET Core v Ubuntu
 
@@ -201,16 +201,17 @@ sudo apt-get update; \
 
 Při instalaci nástroje pomocí Správce balíčků se tyto knihovny nainstalují za vás. Pokud ale ručně nainstalujete rozhraní .NET Core nebo publikujete samostatnou aplikaci, musíte se ujistit, že jsou nainstalované tyto knihovny:
 
-- liblttng-ust0
-- libcurl3 (pro 14. x a 16. x)
-- libcurl4 (pro 18. x)
-- libssl 1.0.0
-- libkrb5-3
-- zlib1g
+- libc6
+- libgcc1
+- libgssapi – krb5 – 2
 - libicu52 (pro 14. x)
 - libicu55 (pro 16. x)
-- libicu57 (pro 17. x)
 - libicu60 (pro 18. x)
+- libicu66 (pro 20. x)
+- libssl 1.0.0 (pro 14. x, 16. x)
+- libssl 1.1 (pro 18. x, 20. x)
+- libstdc + + 6
+- zlib1g
 
 Pro aplikace .NET Core, které používají sestavení *System. Drawing. Common* , potřebujete také následující závislost:
 

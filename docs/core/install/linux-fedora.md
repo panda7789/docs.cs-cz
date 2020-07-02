@@ -4,12 +4,12 @@ description: Ukazuje různé způsoby, jak nainstalovat .NET Core SDK a modul ru
 author: adegeo
 ms.author: adegeo
 ms.date: 06/04/2020
-ms.openlocfilehash: c9774ff347382a6fe0be1ac1dcb78a74242ec999
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: c90c08eefa074fa139642a268f879af79d7280da
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85324790"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619478"
 ---
 # <a name="install-net-core-sdk-or-net-core-runtime-on-fedora"></a>Instalace .NET Core SDK nebo modulu runtime .NET Core v Fedora
 
@@ -129,7 +129,7 @@ V této části najdete informace o běžných chybách, ke kterým může dojí
 
 ## <a name="dependencies"></a>Závislosti
 
-[!INCLUDE [linux-install-dependencies](includes/linux-install-dependencies.md)]
+[!INCLUDE [linux-rpm-install-dependencies](includes/linux-rpm-install-dependencies.md)]
 
 ## <a name="scripted-install"></a>Skriptovaná instalace
 

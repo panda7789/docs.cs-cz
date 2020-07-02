@@ -1,5 +1,6 @@
 ---
 title: 'Postupy: Implementace funkcí zpětného volání'
+description: Podívejte se, jak implementovat funkce zpětného volání. V tomto příkladu spravovaná aplikace, která používá vyvolání platformy, vytiskne hodnotu popisovače pro každé okno v počítači.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,12 +9,12 @@ dev_langs:
 helpviewer_keywords:
 - callback function, implementing
 ms.assetid: e55b3712-b9ea-4453-bd9a-ad5cfa2f6bfa
-ms.openlocfilehash: b7aae1e70ac736d60bed1e79291235db1c220281
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 31c657372e760c8d57f9714b20178967ad85fcd3
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79181419"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619114"
 ---
 # <a name="how-to-implement-callback-functions"></a>Postupy: Implementace funkcí zpětného volání
 Následující postup a příklad ukazují, jak spravovaná aplikace, pomocí vyvolání platformy, může vytisknout hodnotu popisovače pro každé okno v místním počítači. Konkrétně postup a příklad používají funkci **EnumWindows** pro krokování seznamu oken a spravované funkce zpětného volání (pojmenované zpětné volání) k vytištění hodnoty popisovače okna.  
@@ -28,7 +29,7 @@ Následující postup a příklad ukazují, jak spravovaná aplikace, pomocí vy
   
      Jedno potvrzení, že tato funkce vyžaduje zpětné volání, je přítomnost argumentu **lpEnumFunc** . Je běžné, že je v názvu argumentů, které přebírají ukazatel na funkci zpětného volání, v kombinaci s příponou **Func** zobrazená předpona **LP** (dlouhý ukazatel). Dokumentaci k funkcím Win32 naleznete v sadě Microsoft Platform SDK.  
   
-2. Vytvořte spravovanou funkci zpětného volání. Příklad deklaruje typ delegáta, který se nazývá `CallBack`, který přijímá dva argumenty (**HWND** a **lParam**). První argument je popisovač okna. druhý argument je definován aplikací. V této verzi musí být oba argumenty celá čísla.  
+2. Vytvořte spravovanou funkci zpětného volání. Příklad deklaruje typ delegáta, který se nazývá `CallBack` , který přijímá dva argumenty (**HWND** a **lParam**). První argument je popisovač okna. druhý argument je definován aplikací. V této verzi musí být oba argumenty celá čísla.  
   
      Funkce zpětného volání obecně vracejí nenulové hodnoty pro indikaci úspěšného a nulového označení selhání. Tento příklad explicitně nastaví návratovou hodnotu na **true** pro pokračování výčtu.  
   
@@ -127,7 +128,7 @@ int main()
 }  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Funkce zpětného volání](callback-functions.md)
 - [Volání funkce DLL](calling-a-dll-function.md)

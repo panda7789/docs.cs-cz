@@ -1,17 +1,23 @@
 ---
-ms.openlocfilehash: ab2907b05bff409fed9a370d5cbebbf3d1575d2f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3eab96149be1e40d528cfd552bbe05ca766cf4e8
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66379523"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619993"
 ---
-### <a name="systemthreadingtaskstask-no-longer-throw-objectdisposedexception-after-object-is-disposed"></a>System.Threading.Tasks.Task již nezobrazují výjimku objectdisposedexception – po uvolnění objektu
+### <a name="systemthreadingtaskstask-no-longer-throw-objectdisposedexception-after-object-is-disposed"></a>System. Threading. Tasks. Task již nevyvolává ObjectDisposedException po uvolnění objektu.
 
-|   |   |
-|---|---|
-|Podrobnosti|S výjimkou <xref:System.Threading.Tasks.Task.System%23IAsyncResult%23AsyncWaitHandle>, <xref:System.Threading.Tasks.Task?displayProperty=name> metody již nezobrazují výjimku <xref:System.ObjectDisposedException?displayProperty=name> po vyřazení objektu. Tato změna podporuje používání úkolů v mezipaměti. Například metoda může vrátit úlohu uloženou v mezipaměti pro zastupování již dokončené operace namísto přidělení nové úlohy. To nebylo v předchozích verzích rozhraní .NET Framework možné, protože příjemci úlohy s ní mohli nakládat.|
-|Doporučení|Mějte na paměti, že metody úloh může již nezobrazují výjimku <xref:System.ObjectDisposedException?displayProperty=name> v případech, kdy vyřazení objektu. Pokud aplikace se v závislosti na tuto výjimku vědět, že byl odstraněn úkolu, musí aktualizovat na hodnotu explicitně kontrolovat stav úlohy pomocí <xref:System.Threading.Tasks.Task.Status>.|
-|Scope|Vedlejší|
-|Version|4.5|
-|Type|Modul runtime|
+#### <a name="details"></a>Podrobnosti
+
+S výjimkou <xref:System.Threading.Tasks.Task.System%23IAsyncResult%23AsyncWaitHandle> , <xref:System.Threading.Tasks.Task?displayProperty=fullName> metody již nevyvolávají <xref:System.ObjectDisposedException?displayProperty=fullName> výjimku po vyřazení objektu. Tato změna podporuje používání úkolů v mezipaměti. Například metoda může vrátit úlohu uloženou v mezipaměti pro zastupování již dokončené operace namísto přidělení nové úlohy. To nebylo v předchozích verzích rozhraní .NET Framework možné, protože příjemci úlohy s ní mohli nakládat.
+
+#### <a name="suggestion"></a>Návrh
+
+Uvědomte si, že metody úloh již nemusí být <xref:System.ObjectDisposedException?displayProperty=fullName> v případě uvolnění objektu vyhozeny. Pokud byla aplikace v závislosti na této výjimce známa s tím, že byla úloha vyřazena, měla by být aktualizována tak, aby explicitně kontrolovala stav úlohy pomocí <xref:System.Threading.Tasks.Task.Status> .
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   |Vedlejší|
+|Verze|4.5|
+|Typ|Modul runtime|

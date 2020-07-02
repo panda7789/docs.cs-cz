@@ -1,16 +1,19 @@
 ---
-ms.openlocfilehash: e0846ebde07d1932c8344f2b1cce1ea398440ec1
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: f123f37d3f1be7d5b6805ac58529c1872a81f20b
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59803628"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619954"
 ---
-### <a name="compiler-support-for-type-forwarding-when-multi-targeting-mscorlib"></a>Podpora kompilátoru pro typ předávání při cílení na více platforem mscorlib
+### <a name="compiler-support-for-type-forwarding-when-multi-targeting-mscorlib"></a>Podpora kompilátoru pro přesměrování typu při cílení na více cílů mscorlib
 
-|   |   |
-|---|---|
-|Podrobnosti|Nová funkce CodeDOM umožňuje kompilátoru kompilovat proti cílové verzi souboru mscorlib.dll místo verze rozhraní .NET Framework 4.5 knihovny mscorlib.dll.|
-|Rozsah|Edge|
-|Version|4.5|
-|Type|Modul runtime|
+#### <a name="details"></a>Podrobnosti
+
+Nová funkce CodeDOM umožňuje kompilátoru kompilovat proti cílové verzi mscorlib.dll namísto verze .NET Framework 4,5 mscorlib.dll.
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   |Edge|
+|Verze|4.5|
+|Typ|Modul runtime|

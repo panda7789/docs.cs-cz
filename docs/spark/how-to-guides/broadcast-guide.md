@@ -1,21 +1,23 @@
 ---
 title: Použití proměnných všesměrového vysílání v rozhraní .NET pro Apache Spark
 description: Naučte se používat v rozhraní .NET proměnné všesměrového vysílání pro Apache Spark aplikace.
-ms.date: 06/11/2020
+ms.date: 06/25/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: 391e32cda14a9b3186ac96800351ddcb39a3d359
-ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
+ms.openlocfilehash: d86b160855cc4d3f3a6502f5606d4766b7c06aa0
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85105596"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85617853"
 ---
 # <a name="use-broadcast-variables-in-net-for-apache-spark"></a>Použití proměnných všesměrového vysílání v rozhraní .NET pro Apache Spark
 
 V tomto článku se dozvíte, jak používat proměnné všesměrového vysílání v rozhraní .NET pro Apache Spark. [Proměnné všesměrového vysílání v Apache Spark](https://spark.apache.org/docs/2.2.0/rdd-programming-guide.html#broadcast-variables) jsou mechanismy pro sdílení proměnných v rámci prováděcích modulů, které jsou určeny jen pro čtení. Proměnné všesměrového vysílání umožňují uchovávat v každém počítači proměnnou, která je jen pro čtení uložená v mezipaměti, a ne jejich kopii s úkoly. Pomocí proměnných všesměrového vysílání můžete každému uzlu přidělit kopii velké vstupní datové sady účinným způsobem.
 
 Vzhledem k tomu, že jsou data posílána pouze jednou, mají proměnné vysílání výkonnostní přínosy ve srovnání s místními proměnnými, které jsou odeslány vykonavatelům s každou úlohou. Podívejte se na [oficiální dokumentaci k proměnným všesměrového vysílání](https://spark.apache.org/docs/2.2.0/rdd-programming-guide.html#broadcast-variables) , kde získáte hlubší znalosti proměnných všesměrového vysílání a důvody, proč se používají.
+
+[!INCLUDE [spark-preview-note](../../../includes/spark-preview-note.md)]
 
 ## <a name="create-broadcast-variables"></a>Vytvořit proměnné vysílání
 

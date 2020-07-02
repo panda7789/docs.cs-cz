@@ -1,5 +1,6 @@
 ---
 title: Zařazování delegáta jako metody zpětného volání
+description: Naučte se zařadit delegáta jako metodu zpětného volání. Podívejte se na příklad, jak předat delegáty nespravované funkci, která očekává ukazatele na funkci.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - data marshaling, Callback sample
 - marshaling, Callback sample
 ms.assetid: 6ddd7866-9804-4571-84de-83f5cc017a5a
-ms.openlocfilehash: c71c89e5797745144a2baed2d4846e3d9f9f26be
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: bf9ef3b9d48c0869dcc96820c3a2fb6fb608479e
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73114016"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85618945"
 ---
 # <a name="marshaling-a-delegate-as-a-callback-method"></a>Zařazování delegáta jako metody zpětného volání
 Tato ukázka předvádí, jak předat delegáty nespravované funkci očekávající ukazatele na funkce. Delegát je třída, která může obsahovat odkaz na metodu a je ekvivalentní k ukazateli funkce bezpečnému pro typ nebo funkci zpětného volání.
@@ -24,21 +25,21 @@ Tato ukázka předvádí, jak předat delegáty nespravované funkci očekávaj�
 
 Ukázka zpětného volání používá následující nespravované funkce, které jsou zobrazeny s původní deklarací funkce:
 
-- `TestCallBack`exportováno z knihovny pinvokelib. dll.
+- `TestCallBack`exportováno z PinvokeLib.dll.
 
     ```cpp
     void TestCallBack(FPTR pf, int value);
     ```
 
-- `TestCallBack2`exportováno z knihovny pinvokelib. dll.
+- `TestCallBack2`exportováno z PinvokeLib.dll.
 
     ```cpp
     void TestCallBack2(FPTR2 pf2, char* value);
     ```
 
-[Knihovny pinvokelib. dll](marshaling-data-with-platform-invoke.md#pinvokelibdll) je vlastní nespravovaná knihovna, která obsahuje implementaci pro dříve uvedené funkce.
+[PinvokeLib.dll](marshaling-data-with-platform-invoke.md#pinvokelibdll) je vlastní nespravovaná knihovna, která obsahuje implementaci pro dříve uvedené funkce.
 
-V této ukázce `NativeMethods` třída obsahuje spravované prototypy pro metody `TestCallBack` a. `TestCallBack2` Obě metody předají delegátovi funkce zpětného volání jako parametr. Signatura delegáta musí odpovídat podpisu metody, na kterou odkazuje. Například delegáti `FPtr` a `FPtr2` mají signatury, které jsou stejné jako metody `DoSomething` a `DoSomething2` .
+V této ukázce `NativeMethods` Třída obsahuje spravované prototypy pro `TestCallBack` `TestCallBack2` metody a. Obě metody předají delegátovi funkce zpětného volání jako parametr. Signatura delegáta musí odpovídat podpisu metody, na kterou odkazuje. Například `FPtr` `FPtr2` Delegáti a mají signatury, které jsou stejné jako `DoSomething` metody a `DoSomething2` .
 
 ## <a name="declaring-prototypes"></a>Deklarace prototypů
 [!code-cpp[Conceptual.Interop.Marshaling#37](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.interop.marshaling/cpp/callback.cpp#37)]
@@ -50,7 +51,7 @@ V této ukázce `NativeMethods` třída obsahuje spravované prototypy pro metod
 [!code-csharp[Conceptual.Interop.Marshaling#38](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.interop.marshaling/cs/callback.cs#38)]
 [!code-vb[Conceptual.Interop.Marshaling#38](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.interop.marshaling/vb/callback.vb#38)]
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Různé vzorky zařazování](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ss9sb93t(v=vs.100))
 - [Datové typy vyvolání platformy](marshaling-data-with-platform-invoke.md#platform-invoke-data-types)

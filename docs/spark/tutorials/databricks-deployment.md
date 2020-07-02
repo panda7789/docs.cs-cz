@@ -1,15 +1,15 @@
 ---
 title: Nasazení rozhraní .NET pro Apache Spark aplikaci do datacihlů
 description: Zjistěte, jak nasadit rozhraní .NET pro Apache Spark aplikaci do datacihlů.
-ms.date: 05/12/2020
+ms.date: 06/25/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 4010f363e8ba606a7294ea32dc34587da6d6c8aa
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: 9e0b99b6706bf51adaa6e3795d1c81179e14cb7a
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202232"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85618334"
 ---
 # <a name="tutorial-deploy-a-net-for-apache-spark-application-to-databricks"></a>Kurz: nasazení rozhraní .NET pro Apache Spark aplikaci do datacihlů
 
@@ -23,6 +23,8 @@ V tomto kurzu se naučíte:
 > - Publikování aplikace .NET pro Apache Spark.
 > - Vytvoření úlohy Spark a clusteru Spark
 > - Spusťte aplikaci v clusteru Spark.
+
+[!INCLUDE [spark-preview-note](../../../includes/spark-preview-note.md)]
 
 ## <a name="prerequisites"></a>Požadavky
 
@@ -53,7 +55,7 @@ V této části vytvoříte pomocí portálu Azure pracovní prostor služby Azu
     |**Skupina prostředků**     | Určete, jestli chcete vytvořit novou skupinu prostředků, nebo použít existující. Skupina prostředků je kontejner, který uchovává související prostředky pro řešení Azure. Další informace naleznete v tématu [Přehled skupin prostředků v Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview). |
     |**Umístění**     | Vyberte preferovanou oblast. Informace o dostupných oblastech najdete v tématu [služby Azure dostupné v jednotlivých oblastech](https://azure.microsoft.com/regions/services/).        |
     |**Cenová úroveň**     |  Vyberte si mezi **standardem**, **Premium**nebo **zkušební verzí**. Další informace o těchto úrovních najdete na [stránce s cenami za Databricks](https://azure.microsoft.com/pricing/details/databricks/).       |
-    |**Virtual Network**     |   No       |
+    |**Virtual Network**     |   Ne       |
 
 3. Vyberte **Vytvořit**. Vytvoření pracovního prostoru trvá několik minut. Při vytváření pracovního prostoru můžete zobrazit stav nasazení v části **oznámení**.
 
@@ -135,7 +137,7 @@ V dalším kroku publikujete *mySparkApp* vytvořenou v [rozhraní .NET pro Apac
 
    **Ve Windows:**
 
-   Přejděte na mySparkApp/bin/Release/netcoreapp 3.1/Ubuntu. 16.04-x64. Potom klikněte pravým tlačítkem na složku pro **publikování** a vyberte **Odeslat do > Komprimovaná složka (ZIP)**. Pojmenujte novou složku **Publish. zip**.
+   Přejděte na mySparkApp/bin/Release/netcoreapp 3.1/Ubuntu. 16.04-x64. Potom klikněte pravým tlačítkem na složku pro **publikování** a vyberte **Odeslat do > Komprimovaná složka (ZIP)**. Pojmenujte **publish.zip**nové složky.
 
    **V systému Linux spusťte následující příkaz:**
 
@@ -155,7 +157,7 @@ V této části nahrajete několik souborů do DBFS, aby měl váš cluster vše
    databricks fs cp Microsoft.Spark.Worker.netcoreapp3.1.linux-x64-0.6.0.tar.gz dbfs:/spark-dotnet/   Microsoft.Spark.Worker.netcoreapp2.1.linux-x64-0.6.0.tar.gz
    ```
 
-2. Spuštěním následujících příkazů nahrajte zbývající soubory, které cluster bude potřebovat ke spuštění vaší aplikace: složku pro stažení zip, *input. txt*a *Microsoft-Spark-2.4. x-0.3.1. jar*.
+2. Spuštěním následujících příkazů nahrajte zbývající soubory, které cluster bude potřebovat ke spuštění vaší aplikace: složku pro stažení zip, *input.txt*a *Microsoft-Spark-2.4. x-0.3.1. jar*.
 
    ```console
    cd mySparkApp

@@ -1,5 +1,6 @@
 ---
 title: Postup přidání úvodní obrazovky
+description: Zjistěte, jak přidat spouštěcí okno nebo úvodní obrazovku do aplikace Windows Presentation Foundation (WPF).
 ms.date: 08/18/2018
 helpviewer_keywords:
 - WPF [WPF], splash screen
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - SplashScreen class [WPF]
 - splash screen [WPF]
 ms.assetid: d70a25c4-5fb9-4c27-b01d-b1b8ef39b3fd
-ms.openlocfilehash: 39f53e21c40f036c65894b4f275cd5fb414999be
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 0d0cf2e2a550320650c3b4a0c257071a0403c32b
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76740448"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85617957"
 ---
 # <a name="how-to-add-a-splash-screen-to-a-wpf-application"></a>Postupy: Přidání úvodní obrazovky do aplikace WPF
 
@@ -44,7 +45,7 @@ Toto téma ukazuje, jak přidat spouštěcí okno nebo *úvodní obrazovku*do ap
 
 V **Průzkumník řešení**odstraňte obrázek úvodní obrazovky.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.SplashScreen>
 - [Postupy: Přidání existujících položek do projektu](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/9f4t9t92(v=vs.100))

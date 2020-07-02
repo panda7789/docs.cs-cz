@@ -1,18 +1,27 @@
 ---
-ms.openlocfilehash: a5b3e325c13d2f56532ebc6ebb5c259d565a4952
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c3e39e49747be709977d7fba3c39b59f5575c40d
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66379676"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85620110"
 ---
-### <a name="xmlschemaexception-now-sets-line-positions-properly"></a>Xmlschemaexception – správně teď nastavuje pozice řádků
+### <a name="xmlschemaexception-now-sets-line-positions-properly"></a>XmlSchemaException – nyní nastavuje pozice řádků správně
 
-|   |   |
-|---|---|
-|Podrobnosti|Pokud <xref:System.Xml.Linq.LoadOptions.SetLineInfo> hodnota se předá metodě načíst a dojde k chybě ověření, <xref:System.Xml.Schema.XmlSchemaException.LineNumber> a <xref:System.Xml.Schema.XmlSchemaException.LinePosition> vlastnosti nyní obsahují informace řádku.|
-|Doporučení|Kód zpracování výjimek, který předpokládá <xref:System.Xml.Schema.XmlSchemaException.LineNumber> a <xref:System.Xml.Schema.XmlSchemaException.LinePosition> nebude sada by měl aktualizovat, protože tyto vlastnosti budou nyní nastavit správně při použití SetLineInfo při načítání XML.|
-|Scope|Edge|
-|Version|4.5|
-|Type|Modul runtime|
-|Ovlivněná rozhraní API|<ul><li><xref:System.Xml.Linq.LoadOptions.SetLineInfo?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a>Podrobnosti
+
+Pokud <xref:System.Xml.Linq.LoadOptions.SetLineInfo> je hodnota předána metodě Load a dojde k chybě ověření, <xref:System.Xml.Schema.XmlSchemaException.LineNumber> <xref:System.Xml.Schema.XmlSchemaException.LinePosition> vlastnosti a nyní obsahují informace o řádku.
+
+#### <a name="suggestion"></a>Návrh
+
+Kód pro zpracování výjimek, který předpokládá <xref:System.Xml.Schema.XmlSchemaException.LineNumber> a <xref:System.Xml.Schema.XmlSchemaException.LinePosition> nebude nastaven, by měl být aktualizován, protože tyto vlastnosti budou nyní nastaveny správně, pokud se při načítání XML používá SetLineInfo.
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   |Edge|
+|Verze|4.5|
+|Typ|Modul runtime
+
+#### <a name="affected-apis"></a>Ovlivněná rozhraní API
+
+-<xref:System.Xml.Linq.LoadOptions.SetLineInfo?displayProperty=nameWithType></li></ul>|

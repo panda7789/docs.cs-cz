@@ -4,12 +4,12 @@ description: Ukazuje různé způsoby, jak nainstalovat .NET Core SDK a modul ru
 author: adegeo
 ms.author: adegeo
 ms.date: 06/04/2020
-ms.openlocfilehash: ded9d2be72e8ec476d5ace752e44d92eb0ee1028
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: 68a3e848b3d80806e875dfb2fb7e2cbf223f8ad5
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85324922"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619491"
 ---
 # <a name="install-net-core-sdk-or-net-core-runtime-on-debian"></a>Instalace .NET Core SDK nebo modulu runtime .NET Core v Debian
 
@@ -127,7 +127,26 @@ sudo apt-get update; \
 
 ## <a name="dependencies"></a>Závislosti
 
-[!INCLUDE [linux-install-dependencies](includes/linux-install-dependencies.md)]
+Při instalaci nástroje pomocí Správce balíčků se tyto knihovny nainstalují za vás. Pokud ale ručně nainstalujete rozhraní .NET Core nebo publikujete samostatnou aplikaci, musíte se ujistit, že jsou nainstalované tyto knihovny:
+
+- libc6
+- libgcc1
+- libgssapi – krb5 – 2
+- libicu52 (pro 8. x)
+- libicu57 (pro 9. x)
+- libicu63 (pro 10. x)
+- libicu67 (pro 11. x)
+- libssl 1.0.0 (pro 8. x)
+- libssl 1.1 (pro 9. x-11. x)
+- libstdc + + 6
+- zlib1g
+
+Pro aplikace .NET Core, které používají sestavení *System. Drawing. Common* , potřebujete také následující závislost:
+
+- libgdiplus (verze 6.0.1 nebo novější)
+
+  > [!WARNING]
+  > Můžete nainstalovat nejnovější verzi *libgdiplus* přidáním úložiště mono do systému. Další informace naleznete v tématu <https://www.mono-project.com/download/stable/>.
 
 ## <a name="scripted-install"></a>Skriptovaná instalace
 

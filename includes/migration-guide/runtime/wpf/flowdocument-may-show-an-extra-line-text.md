@@ -1,18 +1,27 @@
 ---
-ms.openlocfilehash: 6c1740df66ead271afa5f97dc125587810946bc6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0470cefc05fb5da6a6195ee0a96f04feef01fd10
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66379528"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85620086"
 ---
-### <a name="flowdocument-may-show-an-extra-line-of-text"></a>FlowDocument můžou zobrazovat další řádek textu
+### <a name="flowdocument-may-show-an-extra-line-of-text"></a>FlowDocument může zobrazit další řádek textu.
 
-|   |   |
-|---|---|
-|Podrobnosti|V některých případech <xref:System.Windows.Documents.FlowDocument> elementu se zobrazí další řádek textu při spuštění v rozhraní .NET Framework 4.5 ve srovnání s způsob zobrazení při spuštění v rozhraní .NET Framework 4.0. Nejsou žádné známé případy změny způsobující jakýkoli text, který se má zobrazit nesprávně nebo illegibly, ale může způsobit text, který se zobrazí, která dříve byla vynechána z <xref:System.Windows.Documents.FlowDocument>v zobrazení.|
-|Doporučení|V některých případech můžete zmenšit vlastnost PageHeight zobrazení elementu jednou obnovit předchozí počet zobrazených řádků.|
-|Scope|Edge|
-|Version|4.5|
-|Type|Modul runtime|
-|Ovlivněná rozhraní API|<ul><li><xref:System.Windows.Documents.FlowDocument.%23ctor?displayProperty=nameWithType></li><li><xref:System.Windows.Documents.FlowDocument.%23ctor(System.Windows.Documents.Block)?displayProperty=nameWithType></li><li><xref:System.Windows.Controls.FlowDocumentReader.%23ctor?displayProperty=nameWithType></li><li><xref:System.Windows.Controls.FlowDocumentPageViewer.%23ctor?displayProperty=nameWithType></li><li><xref:System.Windows.Controls.Primitives.DocumentPageView.%23ctor?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a>Podrobnosti
+
+V některých případech prvek při spuštění <xref:System.Windows.Documents.FlowDocument> na .NET Framework 4,5 ve srovnání se zobrazením na .NET Framework 4,0 zobrazí další řádek textu. Neexistují žádné známé případy změny, což způsobí, že by se text zobrazil špatně nebo illegibly, ale může to způsobit, že se text v zobrazení dříve vynechal <xref:System.Windows.Documents.FlowDocument> .
+
+#### <a name="suggestion"></a>Návrh
+
+V některých případech může zmenšit předchozí počet zobrazených řádků tím, že se zmenší vlastnost PageHeight elementu zobrazení o jeden.
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   |Edge|
+|Verze|4.5|
+|Typ|Modul runtime
+
+#### <a name="affected-apis"></a>Ovlivněná rozhraní API
+
+-<xref:System.Windows.Documents.FlowDocument.%23ctor></li><li><xref:System.Windows.Documents.FlowDocument.%23ctor(System.Windows.Documents.Block)></li><li><xref:System.Windows.Controls.FlowDocumentReader.%23ctor></li><li><xref:System.Windows.Controls.FlowDocumentPageViewer.%23ctor></li><li><xref:System.Windows.Controls.Primitives.DocumentPageView.%23ctor></li></ul>|

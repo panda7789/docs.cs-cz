@@ -1,5 +1,6 @@
 ---
 title: 'Postupy: Vytvoření a připojení ke kolekci ObservableCollection'
+description: Zjistěte, jak vytvořit a vytvořit vazby na kolekci, která je odvozena od třídy kolekci ObservableCollection v Windows Presentation Foundation.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,18 +9,18 @@ helpviewer_keywords:
 - data binding [WPF], ObservableCollection class
 - notifications [WPF]
 ms.assetid: 6cf7e275-df76-41c6-a611-53b889b8fd5a
-ms.openlocfilehash: 596f6ae71e83c5aa3b2b80764f68a8abf08cdb7b
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 36e3d2d84aff0ab96c9b2914da28d4c968c32bac
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73453513"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85617866"
 ---
 # <a name="how-to-create-and-bind-to-an-observablecollection"></a>Postupy: Vytvoření a připojení ke kolekci ObservableCollection
-Tento příklad ukazuje, jak vytvořit a vytvořit vazby na kolekci, která je odvozena z třídy <xref:System.Collections.ObjectModel.ObservableCollection%601>, což je třída kolekce, která poskytuje oznámení, když se položky přidají nebo odeberou.  
+Tento příklad ukazuje, jak vytvořit a vytvořit vazby na kolekci, která je odvozena z <xref:System.Collections.ObjectModel.ObservableCollection%601> třídy, což je třída kolekce, která poskytuje oznámení, když se položky přidají nebo odeberou.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje implementaci kolekce `NameList`:  
+ Následující příklad ukazuje implementaci `NameList` kolekce:  
   
 ```csharp  
 public class NameList : ObservableCollection<PersonName>  
@@ -104,7 +105,7 @@ Public Class PersonName
 End Class  
 ```  
   
- Kolekci lze vytvořit pro vazbu stejným způsobem jako ostatní objekty modulu CLR (Common Language Runtime), jak je popsáno v tématu [zpřístupnění dat pro vazbu v jazyce XAML](how-to-make-data-available-for-binding-in-xaml.md). Můžete například vytvořit instanci kolekce v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] a zadat kolekci jako prostředek, jak je znázorněno zde:  
+ Kolekci lze vytvořit pro vazbu stejným způsobem jako ostatní objekty modulu CLR (Common Language Runtime), jak je popsáno v tématu [zpřístupnění dat pro vazbu v jazyce XAML](how-to-make-data-available-for-binding-in-xaml.md). Například můžete vytvořit instanci kolekce v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] a zadat kolekci jako prostředek, jak je znázorněno zde:  
   
 ```xaml  
 <Window  
@@ -133,10 +134,10 @@ End Class
          IsSynchronizedWithCurrentItem="True"/>  
 ```  
   
- Tady se nezobrazuje definice `NameItemTemplate`.  
+ `NameItemTemplate`Tady není zobrazená definice.  
   
 > [!NOTE]
-> Objekty v kolekci musí splňovat požadavky popsané v tématu [Přehled zdrojů vazby](binding-sources-overview.md). Zejména pokud používáte <xref:System.Windows.Data.BindingMode.OneWay> nebo <xref:System.Windows.Data.BindingMode.TwoWay> (například chcete, aby se vaše [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] aktualizovala, když se dynamicky mění vlastnosti zdrojového kódu), musíte implementovat vhodný mechanizmus oznámení změněné vlastnosti, jako je například <xref:System.ComponentModel.INotifyPropertyChanged> rozhraní.  
+> Objekty v kolekci musí splňovat požadavky popsané v tématu [Přehled zdrojů vazby](binding-sources-overview.md). Zejména pokud používáte <xref:System.Windows.Data.BindingMode.OneWay> nebo <xref:System.Windows.Data.BindingMode.TwoWay> (například chcete, [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] aby se aktualizace aktualizovala při dynamické změně vlastností zdroje), musíte implementovat vhodný mechanizmus oznámení změněné vlastnosti, jako je <xref:System.ComponentModel.INotifyPropertyChanged> rozhraní.  
   
  Další informace najdete v části vazba na kolekce v tématu [Přehled datové vazby](../../../desktop-wpf/data/data-binding-overview.md).  
   
@@ -144,6 +145,6 @@ End Class
 
 - [Řazení dat v zobrazení](how-to-sort-data-in-a-view.md)
 - [Filtrování dat v zobrazení](how-to-filter-data-in-a-view.md)
-- [Řazení a seskupení dat pomocí zobrazení XAML](how-to-sort-and-group-data-using-a-view-in-xaml.md)
+- [Řazení a seskupení dat pomocí zobrazení v jazyce XAML](how-to-sort-and-group-data-using-a-view-in-xaml.md)
 - [Přehled datových vazeb](../../../desktop-wpf/data/data-binding-overview.md)
-- [Témata s postupy](data-binding-how-to-topics.md)
+- [– postupy](data-binding-how-to-topics.md)

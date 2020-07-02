@@ -10,12 +10,12 @@ helpviewer_keywords:
 - tooltips [Windows Forms], for controls
 - examples [Windows Forms], tooltips
 ms.assetid: c4b60637-4c0a-44c2-a103-f66dff887936
-ms.openlocfilehash: 15134b38d11de30d0e6a2f998f6ea266affc40d7
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: 144ba5b6bffb4a538e345f7b2df4a453fc6fd63d
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85325970"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85618022"
 ---
 # <a name="how-to-set-tooltips-for-controls-on-a-windows-form-at-design-time"></a>Postupy: Nastavení popisků pro ovládací prvky ve formuláři Windows v době návrhu
 
@@ -75,7 +75,7 @@ Můžete nastavit <xref:System.Windows.Forms.ToolTip> řetězec v kódu nebo v N
 
 2. V okně **vlastnosti** odstraňte text v **popisku v ToolTip1**.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [ToolTip – přehled komponenty](tooltip-component-overview-windows-forms.md)
 - [Postupy: Změna zpoždění komponenty Windows Forms ToolTip](how-to-change-the-delay-of-the-windows-forms-tooltip-component.md)

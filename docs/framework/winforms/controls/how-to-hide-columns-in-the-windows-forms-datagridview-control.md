@@ -1,6 +1,6 @@
 ---
 title: Skrýt sloupce v ovládacím prvku DataGridView
-description: Přečtěte si, jak skrýt sloupce programově v ovládacím prvku DataGridView model Windows Forms nastavením vlastnosti DataGridViewColumn. Visible na false.
+description: Naučte se skrývat sloupce programově v ovládacím prvku DataGridView model Windows Forms nastavením vlastnosti DataGridViewColumn. Visible na false.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,12 +10,12 @@ helpviewer_keywords:
 - data grids [Windows Forms], hiding columns
 - columns [Windows Forms], hiding
 ms.assetid: 3f94143a-2ef0-49a5-a22a-b2e6f9289642
-ms.openlocfilehash: 46d7faea76098406b8e0a91d22922bf9ca391e28
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: 27e9f331151acd68d76233bc7dbb09c2d870afde
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85325912"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85618048"
 ---
 # <a name="how-to-hide-columns-in-the-windows-forms-datagridview-control"></a>Postupy: Skrytí sloupců v ovládacím prvku Windows Forms DataGridView
 Někdy budete chtít zobrazit pouze některé sloupce, které jsou k dispozici v <xref:System.Windows.Forms.DataGridView> ovládacím prvku model Windows Forms. Například můžete chtít zobrazit mzdový sloupec zaměstnanců uživatelům s přihlašovacími údaji pro správu při jejich skrývání od jiných uživatelů. Alternativně můžete chtít navazovat ovládací prvek na zdroj dat, který obsahuje mnoho sloupců, pouze některé z nich chcete zobrazit. V takovém případě obvykle odeberete sloupce, které nemají zájem o zobrazení, a ne jejich skrytí.  
@@ -38,7 +38,7 @@ Někdy budete chtít zobrazit pouze některé sloupce, které jsou k dispozici v
   
 - Odkazy na <xref:System?displayProperty=nameWithType> sestavení a <xref:System.Windows.Forms?displayProperty=nameWithType> .  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridViewColumn.Visible%2A?displayProperty=nameWithType>

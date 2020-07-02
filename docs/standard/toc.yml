@@ -639,6 +639,8 @@
       items:
         - name: Volba mezi třídou a strukturou
           href: design-guidelines/choosing-between-class-and-struct.md
+        - name: Volba mezi anonymními typy a typy řazených kolekcí členů
+          href: design-guidelines/choosing-between-anonymous-and-tuple.md
         - name: Návrh abstraktní třídy
           href: design-guidelines/abstract-class.md
         - name: Návrh statické třídy

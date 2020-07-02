@@ -1,5 +1,6 @@
 ---
-title: Určení zaškrtnutých položek v ovládacím prvku CheckedListBox
+title: Určení zkontrolovaných položek v ovládacím prvku CheckedListBox
+description: Naučte se určit kontrolované položky v model Windows Forms ovládacím prvku CheckedListBox pomocí iterace v kolekci uložené ve vlastnosti CheckedItems.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,19 +10,19 @@ helpviewer_keywords:
 - check boxes [Windows Forms], determining checked state
 - CheckedListBox control [Windows Forms], determining checked state
 ms.assetid: 178b477d-27c9-489c-8914-44a9623a4d41
-ms.openlocfilehash: 5d93a63e9c1c6aae91ecfe83590c59450a565afe
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: fd8845ef83da7406ff4f1468506a23e3f4d386a0
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79182194"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85618347"
 ---
 # <a name="how-to-determine-checked-items-in-the-windows-forms-checkedlistbox-control"></a>Postupy: Určení zaškrtnutých položek v ovládacím prvku Windows Forms CheckedListBox
-Při prezentaci dat <xref:System.Windows.Forms.CheckedListBox> v ovládacím prvku Windows Forms můžete iterate prostřednictvím kolekce uložené ve <xref:System.Windows.Forms.CheckedListBox.CheckedItems%2A> vlastnosti nebo krokovat seznam pomocí <xref:System.Windows.Forms.CheckedListBox.GetItemChecked%2A> metody k určení, které položky jsou kontrolovány. Metoda <xref:System.Windows.Forms.CheckedListBox.GetItemChecked%2A> přebírá číslo indexu položky jako `true` `false`jeho argument a vrátí nebo . Na rozdíl od toho, <xref:System.Windows.Forms.ListBox.SelectedItems%2A> co <xref:System.Windows.Forms.ListBox.SelectedIndices%2A> byste mohli očekávat, a vlastnosti neurčují, které položky jsou kontrolovány; určují, které položky jsou zvýrazněny.  
+Při prezentaci dat v <xref:System.Windows.Forms.CheckedListBox> ovládacím prvku model Windows Forms můžete buď iterovat přes kolekci uloženou ve <xref:System.Windows.Forms.CheckedListBox.CheckedItems%2A> vlastnosti, nebo krokovat seznam pomocí <xref:System.Windows.Forms.CheckedListBox.GetItemChecked%2A> metody k určení, které položky jsou zaškrtnuty. <xref:System.Windows.Forms.CheckedListBox.GetItemChecked%2A>Metoda přijímá číslo indexu položky jako svůj argument a vrátí `true` nebo `false` . Na rozdíl od toho, co byste mohli očekávat, <xref:System.Windows.Forms.ListBox.SelectedItems%2A> <xref:System.Windows.Forms.ListBox.SelectedIndices%2A> vlastnosti a neurčují, které položky jsou zaškrtnuty. určují, které položky jsou zvýrazněny.  
   
-### <a name="to-determine-checked-items-in-a-checkedlistbox-control"></a>Určení zaškrtnutých položek v ovládacím prvku CheckedListBox  
+### <a name="to-determine-checked-items-in-a-checkedlistbox-control"></a>Určení zkontrolovaných položek v ovládacím prvku CheckedListBox  
   
-1. Iterát prostřednictvím <xref:System.Windows.Forms.CheckedListBox.CheckedItems%2A> kolekce, počínaje 0, protože kolekce je na základě nuly. Všimněte si, že tato metoda vám číslo položky v seznamu zaškrtnutých položek, nikoli celkový seznam. Pokud tedy není zaškrtnuta první položka v seznamu a druhá položka je zaškrtnuta, zobrazí se v níže uvedeném kódu text jako "Checked Item 1 = MyListItem2".  
+1. Iterujte přes <xref:System.Windows.Forms.CheckedListBox.CheckedItems%2A> kolekci, počínaje 0, protože kolekce je založená na nule. Všimněte si, že tato metoda vám poskytne číslo položky v seznamu zkontrolovaných položek, ne na celkový seznam. Takže pokud není první položka v seznamu zaškrtnutá a je zaškrtnuta druhá položka, zobrazí se v následujícím kódu text jako "kontrolovaná položka 1 = MyListItem2".  
   
     ```vb  
     ' Determine if there are any items checked.  
@@ -66,9 +67,9 @@ Při prezentaci dat <xref:System.Windows.Forms.CheckedListBox> v ovládacím prv
     }  
     ```  
   
-     - nebo -  
+     - ani  
   
-2. Krokovat <xref:System.Windows.Forms.CheckedListBox.Items%2A> kolekce, počínaje 0, protože kolekce je na <xref:System.Windows.Forms.CheckedListBox.GetItemChecked%2A> základě nuly a volání metody pro každou položku. Všimněte si, že tato metoda vám číslo položky v celkovém seznamu, takže pokud první položka v seznamu není zaškrtnuta a druhá položka je zaškrtnuta, zobrazí se něco jako "Položka 2 = MyListItem2".  
+2. Projděte si <xref:System.Windows.Forms.CheckedListBox.Items%2A> kolekci od 0, od 0, protože je kolekce založená na nule a zavolejte <xref:System.Windows.Forms.CheckedListBox.GetItemChecked%2A> metodu pro každou položku. Všimněte si, že tato metoda vám poskytne číslo položky v celkovém seznamu, takže pokud není první položka v seznamu zaškrtnuta a je zaškrtnuta druhá položka, zobrazí se něco jako "položka 2 = MyListItem2".  
   
     ```vb  
     Dim i As Integer  
@@ -111,6 +112,6 @@ Při prezentaci dat <xref:System.Windows.Forms.CheckedListBox> v ovládacím prv
     MessageBox::Show(s);  
     ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Ovládací prvky Windows Forms používané k výpisu možností](windows-forms-controls-used-to-list-options.md)

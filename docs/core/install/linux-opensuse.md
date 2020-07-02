@@ -4,12 +4,12 @@ description: Ukazuje různé způsoby, jak nainstalovat .NET Core SDK a modul ru
 author: adegeo
 ms.author: adegeo
 ms.date: 06/04/2020
-ms.openlocfilehash: 3a2ff1ca1519428f42c88048dde22aa11baaaa01
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: 24f0a5b5278d038c2f941b0984efcacd91dcbe31
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85324754"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619465"
 ---
 # <a name="install-net-core-sdk-or-net-core-runtime-on-opensuse"></a>Instalace .NET Core SDK nebo modulu runtime .NET Core v openSUSE
 
@@ -69,7 +69,22 @@ V této části najdete informace o běžných chybách, ke kterým může dojí
 
 ## <a name="dependencies"></a>Závislosti
 
-[!INCLUDE [linux-install-dependencies](includes/linux-install-dependencies.md)]
+Při instalaci nástroje pomocí Správce balíčků se tyto knihovny nainstalují za vás. Pokud ale ručně nainstalujete rozhraní .NET Core nebo publikujete samostatnou aplikaci, musíte se ujistit, že jsou nainstalované tyto knihovny:
+
+- krb5
+- libicu
+- libopenssl1_0_0
+
+Pokud je verze OpenSSL cílového běhového prostředí 1,1 nebo novější, budete muset nainstalovat **kompatibilní openssl10**.
+
+Další informace o závislostech najdete v tématu [samostatné aplikace pro Linux](https://github.com/dotnet/core/blob/master/Documentation/self-contained-linux-apps.md).
+
+Pro aplikace .NET Core, které používají sestavení *System. Drawing. Common* , budete také potřebovat následující závislost:
+
+- [libgdiplus (verze 6.0.1 nebo novější)](https://www.mono-project.com/docs/gui/libgdiplus/)
+
+  > [!WARNING]
+  > Můžete nainstalovat nejnovější verzi *libgdiplus* přidáním úložiště mono do systému. Další informace naleznete v tématu <https://www.mono-project.com/download/stable/>.
 
 ## <a name="scripted-install"></a>Skriptovaná instalace
 

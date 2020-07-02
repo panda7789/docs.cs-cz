@@ -1,17 +1,23 @@
 ---
-ms.openlocfilehash: 22f8e3bb1ba72379b3f5fc87a077e5fe57f89bf8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 907c4aa5573c392a68afad0a4d937eadcd556440
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "67858841"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85620008"
 ---
-### <a name="null-coalescer-values-are-not-visible-in-debugger-until-one-step-later"></a>Hodnoty null coalescer nejsou viditelné v ladicím programu až o krok později
+### <a name="null-coalescer-values-are-not-visible-in-debugger-until-one-step-later"></a>Hodnoty null coalescer nejsou v ladicím programu viditelné, dokud jeden krok později
 
-|   |   |
-|---|---|
-|Podrobnosti|Chyba v rozhraní .NET Framework 4.5 způsobí, že hodnoty nastavené prostřednictvím operace null coalescing nebudou viditelné v ladicím programu ihned po spuštění operace přiřazení při spuštění v 64bitové verzi rozhraní Framework.|
-|Návrh|Krokování jeden další čas v ladicím programu způsobí, že hodnota místní/pole správně aktualizovány. Tento problém byl také vyřešen v rozhraní .NET Framework 4.6; upgrade na tuto verzi rozhraní Framework by měl problém vyřešit.|
-|Rozsah|Edge|
-|Version|4.5|
+#### <a name="details"></a>Podrobnosti
+
+Chyba v .NET Framework 4,5 způsobí, že hodnoty nastavené prostřednictvím operace sloučení s hodnotou null nejsou viditelné v ladicím programu ihned po provedení operace přiřazení, pokud je spuštěná v 64 bitové verzi rozhraní .NET Framework.
+
+#### <a name="suggestion"></a>Návrh
+
+Krokování jednoho dalšího času v ladicím programu způsobí, že hodnota místního/pole bude správně aktualizována. Tento problém se také vyřešil v .NET Framework 4,6; upgrade na tuto verzi rozhraní by měl vyřešit tento problém.
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   |Edge|
+|Verze|4.5|
 |Typ|Modul runtime|

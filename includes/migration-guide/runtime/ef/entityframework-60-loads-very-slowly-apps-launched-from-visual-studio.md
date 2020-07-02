@@ -1,17 +1,23 @@
 ---
-ms.openlocfilehash: f9fbda5cc4517db40c4b5b543eb7e8c6c71292d7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ee12ccdfb95cc576cd35815b895c6041c08a0353
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66379630"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85620023"
 ---
-### <a name="entityframework-60-loads-very-slowly-in-apps-launched-from-visual-studio"></a>Načtení objektu EntityFramework 6.0 velmi pomalu v aplikacích pro spuštění ze sady Visual Studio
+### <a name="entityframework-60-loads-very-slowly-in-apps-launched-from-visual-studio"></a>EntityFramework 6,0 v aplikacích spuštěných ze sady Visual Studio se velmi pomalu načítá
 
-|   |   |
-|---|---|
-|Podrobnosti|Spuštění aplikace ze sady Visual Studio 2013, která používá EntityFramework 6.0 může být velmi pomalé.|
-|Doporučení|Tento problém je vyřešen v objektu EntityFramework 6.0.2. Aktualizace objektu EntityFramework, aby tyto problémy s výkonem.|
-|Scope|Edge|
-|Version|4.5|
-|Type|Modul runtime|
+#### <a name="details"></a>Podrobnosti
+
+Spuštění aplikace z Visual Studio 2013, která používá EntityFramework 6,0, může být velmi pomalé.
+
+#### <a name="suggestion"></a>Návrh
+
+Tento problém je opravený v EntityFramework 6.0.2. Aktualizujte EntityFramework, abyste se vyhnuli problémům s výkonem.
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   |Edge|
+|Verze|4.5|
+|Typ|Modul runtime|

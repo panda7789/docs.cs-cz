@@ -1,5 +1,6 @@
 ---
 title: Přehled datových šablon
+description: Prozkoumejte flexibilitu modelu data šablonování, která definuje prezentaci vašich dat v Windows Presentation Foundation (WPF).
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,193 +11,193 @@ helpviewer_keywords:
 - templates [WPF], data
 - data templates [WPF]
 ms.assetid: 0f4d9f8c-0230-4013-bd7b-e8e7fed01b4a
-ms.openlocfilehash: b9e55eac1c72cd3deec21754373da4364a7cfed2
-ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
+ms.openlocfilehash: 0226085a82cf97ea799a5a2d38e879b239d9b52a
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/20/2020
-ms.locfileid: "81646464"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619647"
 ---
 # <a name="data-templating-overview"></a>Přehled datových šablon
-Model wpf data šablonování poskytuje velkou flexibilitu při definování prezentace dat. Ovládací prvky WPF mají vestavěné funkce pro podporu přizpůsobení prezentace dat. Toto téma nejprve ukazuje, jak definovat <xref:System.Windows.DataTemplate> a pak zavádí další funkce šablon dat, jako je například výběr šablon na základě vlastní logiky a podporu pro zobrazení hierarchických dat.
+Model dat šablonování WPF poskytuje skvělou flexibilitu pro definování prezentace vašich dat. Ovládací prvky WPF mají integrovanou funkcionalitu, která podporuje přizpůsobení prezentace dat. Toto téma nejprve ukazuje, jak definovat <xref:System.Windows.DataTemplate> a následně zavádí další funkce šablonování dat, jako je například výběr šablon založených na vlastní logice a podpora zobrazení hierarchických dat.
 
 <a name="Prerequisites"></a>
 ## <a name="prerequisites"></a>Požadavky
- Toto téma se zaměřuje na funkce šablonování dat a není zavedení koncepty datové vazby. Informace o základních konceptech datové vazby naleznete v tématu [Přehled datové vazby](../../../desktop-wpf/data/data-binding-overview.md).
+ Toto téma se zaměřuje na funkce šablonování dat a není Úvod k konceptům datových vazeb. Informace o základních konceptech datových vazeb najdete v tématu [Přehled datové vazby](../../../desktop-wpf/data/data-binding-overview.md).
 
- <xref:System.Windows.DataTemplate>je o prezentaci dat a je jednou z mnoha funkcí poskytovaných wpf styling a šablonování modelu. Úvod wpf styl a šablonování modelu, například jak použít <xref:System.Windows.Style> nastavení vlastností na ovládací prvky, naleznete v [tématu Styling a šablonování.](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
+ <xref:System.Windows.DataTemplate>je o prezentaci dat a je jednou z mnoha funkcí poskytovaných stylem WPF a modelem šablonování. Základní informace o stylu WPF a modelu šablonování, například jak použít <xref:System.Windows.Style> k nastavení vlastností ovládacích prvků, naleznete v tématu [stylování a šablonování](../../../desktop-wpf/fundamentals/styles-templates-overview.md) .
 
- Kromě toho je důležité `Resources`pochopit , které jsou v <xref:System.Windows.Style> <xref:System.Windows.DataTemplate> podstatě to, co umožňují objekty, jako je například opakovaně použitelné. Další informace o prostředcích naleznete v tématu [XAML Resources](../../../desktop-wpf/fundamentals/xaml-resources-define.md).
+ Kromě toho je důležité pochopit `Resources` , co je v podstatě to, co je <xref:System.Windows.Style> <xref:System.Windows.DataTemplate> potřeba k opakovanému použití objektů, jako jsou a. Další informace o prostředcích najdete v tématu věnovaném [prostředkům XAML](../../../desktop-wpf/fundamentals/xaml-resources-define.md).
 
 <a name="DataTemplating_Basic"></a>
-## <a name="data-templating-basics"></a>Základy šablon dat
+## <a name="data-templating-basics"></a>Základy šablonování dat
 
- Chcete-li <xref:System.Windows.DataTemplate> ukázat, proč je důležité, pojďme projít příklad vazby dat. V tomto příkladu <xref:System.Windows.Controls.ListBox> máme, který je `Task` vázán na seznam objektů. Každý `Task` objekt `TaskName` má (řetězec), `Description` (řetězec), `Priority` (int) a `TaskType`vlastnost typu `Enum` , `Home` což `Work`je s hodnotami a .
+ Abychom ukázali <xref:System.Windows.DataTemplate> , proč je důležité, Podívejme se na příklad datové vazby. V tomto příkladu máme objekt <xref:System.Windows.Controls.ListBox> vázaný na seznam `Task` objektů. Každý `Task` objekt má `TaskName` (řetězec), `Description` (String), a `Priority` (int) a vlastnost typu `TaskType` , což je `Enum` s hodnotami `Home` a `Work` .
 
  [!code-xaml[DataTemplatingIntro_snip#Resources](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTemplatingIntro_snip/CSharp/Window1.xaml#resources)]
 [!code-xaml[DataTemplatingIntro_snip#UI1](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTemplatingIntro_snip/CSharp/Window1.xaml#ui1)]
 [!code-xaml[DataTemplatingIntro_snip#UI2](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTemplatingIntro_snip/CSharp/Window1.xaml#ui2)]
 
 <a name="without_a_datatemplate"></a>
-### <a name="without-a-datatemplate"></a>Bez šablony dat
- Bez <xref:System.Windows.DataTemplate>, <xref:System.Windows.Controls.ListBox> naše v současné době vypadá takto:
+### <a name="without-a-datatemplate"></a>Bez šablony DataTemplate
+ Bez a by <xref:System.Windows.DataTemplate> náš v <xref:System.Windows.Controls.ListBox> současnosti vypadal takto:
 
- ![Ukázkový snímek obrazovky s šablonami dat](./media/datatemplatingintro-fig1.png "DataTemplatingIntro_fig1")
+ ![Snímek obrazovky ukázkového data šablonování](./media/datatemplatingintro-fig1.png "DataTemplatingIntro_fig1")
 
- Co se děje je, že bez <xref:System.Windows.Controls.ListBox> konkrétnípokyny, ve výchozím nastavení volání `ToString` při pokusu o zobrazení objektů v kolekci. Proto pokud `Task` objekt přepíše `ToString` metodu, <xref:System.Windows.Controls.ListBox> pak zobrazí řetězcovou reprezentaci každého zdrojového objektu v podkladové kolekci.
+ To se děje proto, že bez jakýchkoli specifických instrukcí <xref:System.Windows.Controls.ListBox> ve výchozím nastavení volá `ToString` při pokusu o zobrazení objektů v kolekci. Proto pokud `Task` objekt Přepisuje `ToString` metodu, pak <xref:System.Windows.Controls.ListBox> zobrazí řetězcovou reprezentaci každého zdrojového objektu v příslušné kolekci.
 
- Pokud například `Task` třída přepíše `ToString` metodu tímto způsobem, `name` `TaskName` kde je pole pro vlastnost:
+ Například pokud `Task` Třída přepíše `ToString` metodu tímto způsobem, kde `name` je pole pro `TaskName` vlastnost:
 
  [!code-csharp[DataTemplatingIntro_snip#ToString](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTemplatingIntro_snip/CSharp/Data.cs#tostring)]
  [!code-vb[DataTemplatingIntro_snip#ToString](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DataTemplatingIntro_snip/visualbasic/data.vb#tostring)]
 
- Pak <xref:System.Windows.Controls.ListBox> vypadá takto:
+ Pak <xref:System.Windows.Controls.ListBox> vypadá jako toto:
 
- ![Ukázkový snímek obrazovky s šablonami dat](./media/datatemplatingintro-fig2.png "DataTemplatingIntro_fig2")
+ ![Snímek obrazovky ukázkového data šablonování](./media/datatemplatingintro-fig2.png "DataTemplatingIntro_fig2")
 
- To je však omezující a nepružné. Také pokud jste vazba na data XML, nebude možné `ToString`přepsat .
+ To však omezuje a neflexibilní. Pokud vytváříte vazbu na data XML, nebudete moci přepsat `ToString` .
 
 <a name="defining_simple_datatemplate"></a>
-### <a name="defining-a-simple-datatemplate"></a>Definování jednoduché šablony dat
- Řešením je definovat <xref:System.Windows.DataTemplate>. Jedním ze způsobů, jak <xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A> to udělat, je nastavit vlastnost na <xref:System.Windows.Controls.ListBox> <xref:System.Windows.DataTemplate>. To, co <xref:System.Windows.DataTemplate> zadáte ve svém objektu, se stane vizuální strukturou datového objektu. Následující <xref:System.Windows.DataTemplate> je poměrně jednoduché. Dáváme pokyny, že každá <xref:System.Windows.Controls.TextBlock> položka se <xref:System.Windows.Controls.StackPanel>objeví jako tři prvky v rámci . Každý <xref:System.Windows.Controls.TextBlock> prvek je vázán na `Task` vlastnost třídy.
+### <a name="defining-a-simple-datatemplate"></a>Definování jednoduché šablony DataTemplate
+ Řešením je definování <xref:System.Windows.DataTemplate> . Jedním ze způsobů, jak to provést, je nastavit <xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A> vlastnost na <xref:System.Windows.Controls.ListBox> <xref:System.Windows.DataTemplate> . To, co zadáte v rámci, <xref:System.Windows.DataTemplate> se bude vizuálně strukturou datového objektu. Toto <xref:System.Windows.DataTemplate> je poměrně jednoduché. Poskytujeme pokyny, že se každá položka zobrazí jako tři <xref:System.Windows.Controls.TextBlock> prvky v rámci <xref:System.Windows.Controls.StackPanel> . Každý <xref:System.Windows.Controls.TextBlock> prvek je svázán s vlastností `Task` třídy.
 
  [!code-xaml[DataTemplatingIntro_snip#Inline](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTemplatingIntro_snip/CSharp/Window1.xaml#inline)]
 
- Podkladová data pro příklady v tomto tématu je kolekce clr objektů. Pokud jste vazba na data XML, základní pojmy jsou stejné, ale je mírný syntaktický rozdíl. Například místo toho, abyste <xref:System.Windows.Data.Binding.XPath%2A> měli `@TaskName` , byste nastavili `TaskName` `Path=TaskName`(pokud je atributem uzlu XML).
+ Podkladová data pro příklady v tomto tématu jsou kolekce objektů CLR. Pokud vytváříte vazbu na data XML, základní koncepty jsou stejné, ale je to mírně syntaktický rozdíl. Například místo toho byste `Path=TaskName` měli nastavit <xref:System.Windows.Data.Binding.XPath%2A> `@TaskName` (Pokud `TaskName` je atribut vašeho uzlu XML).
 
- Nyní <xref:System.Windows.Controls.ListBox> náš vypadá takto:
+ Teď <xref:System.Windows.Controls.ListBox> vypadá to, že by to vypadalo takto:
 
- ![Ukázkový snímek obrazovky s šablonami dat](./media/datatemplatingintro-fig3.png "DataTemplatingIntro_fig3")
+ ![Snímek obrazovky ukázkového data šablonování](./media/datatemplatingintro-fig3.png "DataTemplatingIntro_fig3")
 
 <a name="defining_datatemplate_as_a_resource"></a>
-### <a name="creating-the-datatemplate-as-a-resource"></a>Vytvoření šablony data jako prostředku
- Ve výše uvedeném příkladu jsme definovali <xref:System.Windows.DataTemplate> vřadit. Je běžnější definovat v části zdroje tak, aby mohl být opakovaně použitelný objekt, jako v následujícím příkladu:
+### <a name="creating-the-datatemplate-as-a-resource"></a>Vytvoření DataTemplate jako prostředku
+ Ve výše uvedeném příkladu jsme definovali <xref:System.Windows.DataTemplate> inline. Je běžnější ji definovat v části Resources (prostředky), takže se může jednat o opakovaně použitelný objekt, jak je uvedeno v následujícím příkladu:
 
  [!code-xaml[DataTemplatingIntro_snip#R1](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTemplatingIntro_snip/CSharp/Window1.xaml#r1)]
 [!code-xaml[DataTemplatingIntro_snip#AsResource](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTemplatingIntro_snip/CSharp/Window1.xaml#asresource)]
 [!code-xaml[DataTemplatingIntro_snip#R2](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTemplatingIntro_snip/CSharp/Window1.xaml#r2)]
 
- Nyní můžete `myTaskTemplate` použít jako prostředek, jako v následujícím příkladu:
+ Nyní můžete použít `myTaskTemplate` jako prostředek, jako v následujícím příkladu:
 
  [!code-xaml[DataTemplatingIntro_snip#MyTaskTemplate](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTemplatingIntro_snip/CSharp/Window1.xaml#mytasktemplate)]
 
- Protože `myTaskTemplate` je prostředek, můžete nyní použít na jiné ovládací prvky, které mají vlastnost, která má <xref:System.Windows.DataTemplate> typ. Jak je znázorněno výše, <xref:System.Windows.Controls.ItemsControl> <xref:System.Windows.Controls.ListBox>pro objekty, jako je například , je <xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A> vlastnost. Pro <xref:System.Windows.Controls.ContentControl> objekty je <xref:System.Windows.Controls.ContentControl.ContentTemplate%2A> vlastnost.
+ Vzhledem k tomu `myTaskTemplate` , že je prostředek, můžete jej nyní použít na jiné ovládací prvky, které mají vlastnost, která přebírá <xref:System.Windows.DataTemplate> typ. Jak je uvedeno výše, pro <xref:System.Windows.Controls.ItemsControl> objekty, jako například <xref:System.Windows.Controls.ListBox> , je to <xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A> vlastnost. Pro <xref:System.Windows.Controls.ContentControl> objekty je to <xref:System.Windows.Controls.ContentControl.ContentTemplate%2A> vlastnost.
 
 <a name="Styling_DataType"></a>
 ### <a name="the-datatype-property"></a>Vlastnost DataType
- Třída <xref:System.Windows.DataTemplate> má <xref:System.Windows.DataTemplate.DataType%2A> vlastnost, která je <xref:System.Windows.Style.TargetType%2A> velmi podobná <xref:System.Windows.Style> vlastnost i třídy. Proto místo zadání `x:Key` for for <xref:System.Windows.DataTemplate> ve výše uvedeném příkladu, můžete provést následující:
+ <xref:System.Windows.DataTemplate>Třída má <xref:System.Windows.DataTemplate.DataType%2A> vlastnost, která je velmi podobná <xref:System.Windows.Style.TargetType%2A> vlastnosti <xref:System.Windows.Style> třídy. Místo toho, `x:Key` <xref:System.Windows.DataTemplate> abyste v předchozím příkladu určili pro, můžete postupovat takto:
 
  [!code-xaml[DataTemplatingIntro_snip#DataType](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTemplatingIntro_snip/CSharp/Window1.xaml#datatype)]
 
- To <xref:System.Windows.DataTemplate> se automaticky `Task` použije na všechny objekty. Všimněte si, `x:Key` že v tomto případě je nastavenimplicitně. Proto pokud <xref:System.Windows.DataTemplate> přiřadíte `x:Key` tuto hodnotu, přepíšete implicitní `x:Key` a <xref:System.Windows.DataTemplate> nebude použito automaticky.
+ To <xref:System.Windows.DataTemplate> se automaticky použije pro všechny `Task` objekty. Všimněte si, že v tomto případě `x:Key` je nastaven implicitně. Proto pokud přiřadíte tuto <xref:System.Windows.DataTemplate> `x:Key` hodnotu, přepíšete implicitní `x:Key` a <xref:System.Windows.DataTemplate> automaticky se nepoužije.
 
- Pokud <xref:System.Windows.Controls.ContentControl> jste vazba kolekce `Task` objektů, <xref:System.Windows.Controls.ContentControl> nepoužívá výše uvedené <xref:System.Windows.DataTemplate> automaticky. Důvodem je, že <xref:System.Windows.Controls.ContentControl> vazba na potřebuje další informace k rozlišení, zda chcete vytvořit vazbu na celou kolekci nebo jednotlivé objekty. Pokud <xref:System.Windows.Controls.ContentControl> sledujete výběr <xref:System.Windows.Controls.ItemsControl> typu, můžete nastavit <xref:System.Windows.Data.Binding.Path%2A> vlastnost <xref:System.Windows.Controls.ContentControl> vazby na`/`" " označující, že máte zájem o aktuální položku. Příklad najdete v tématu [Vazba na kolekci a zobrazit informace založené na výběru](how-to-bind-to-a-collection-and-display-information-based-on-selection.md). V opačném případě je <xref:System.Windows.DataTemplate> třeba zadat <xref:System.Windows.Controls.ContentControl.ContentTemplate%2A> explicitně nastavením vlastnosti.
+ Pokud vytváříte vazbu a <xref:System.Windows.Controls.ContentControl> ke kolekci `Task` objektů, <xref:System.Windows.Controls.ContentControl> nepoužije se výše uvedené <xref:System.Windows.DataTemplate> automaticky. Důvodem je to, že vazba na určitou <xref:System.Windows.Controls.ContentControl> potřebnou informaci rozliší, zda chcete vytvořit vazbu na celou kolekci nebo jednotlivé objekty. Pokud <xref:System.Windows.Controls.ContentControl> sledujete výběr <xref:System.Windows.Controls.ItemsControl> typu, můžete nastavit <xref:System.Windows.Data.Binding.Path%2A> vlastnost <xref:System.Windows.Controls.ContentControl> vazby na "", která `/` označuje, že máte zájem o aktuální položku. Příklad naleznete v tématu [vazba na kolekci a zobrazení informací na základě výběru](how-to-bind-to-a-collection-and-display-information-based-on-selection.md). V opačném případě je nutné <xref:System.Windows.DataTemplate> explicitně zadat nastavení <xref:System.Windows.Controls.ContentControl.ContentTemplate%2A> Vlastnosti.
 
- Vlastnost <xref:System.Windows.DataTemplate.DataType%2A> je zvláště užitečné, <xref:System.Windows.Data.CompositeCollection> pokud máte různé typy datových objektů. Příklad viz [Implementace CompositeCollection](how-to-implement-a-compositecollection.md).
+ Tato <xref:System.Windows.DataTemplate.DataType%2A> vlastnost je užitečná hlavně v případě, že máte <xref:System.Windows.Data.CompositeCollection> různé typy datových objektů. Příklad naleznete v tématu [implementace složené sadycollection](how-to-implement-a-compositecollection.md).
 
 <a name="adding_more_to_datatemplate"></a>
-## <a name="adding-more-to-the-datatemplate"></a>Přidání další chození do šablony Dat
- V současné době se data zobrazují s potřebnými informacemi, ale určitě je zde prostor pro zlepšení. Vylepšeme prezentaci přidáním <xref:System.Windows.Controls.Border>, <xref:System.Windows.Controls.Grid>a , <xref:System.Windows.Controls.TextBlock> a některé prvky, které popisují data, která se zobrazuje.
+## <a name="adding-more-to-the-datatemplate"></a>Přidání dalších do šablony DataTemplate
+ V současné době se data zobrazují s potřebnými informacemi, ale pro zlepšení je k dispozici jen omezení místa. Pojďme vylepšit prezentaci přidáním <xref:System.Windows.Controls.Border> , a <xref:System.Windows.Controls.Grid> a některých <xref:System.Windows.Controls.TextBlock> prvků popisujících zobrazená data.
 
  [!code-xaml[DataTemplatingIntro#AddingMore](~/samples/snippets/xaml/VS_Snippets_Wpf/DataTemplatingIntro/xaml/window1.xaml#addingmore)]
 [!code-xaml[DataTemplatingIntro#AddingMore2](~/samples/snippets/xaml/VS_Snippets_Wpf/DataTemplatingIntro/xaml/window1.xaml#addingmore2)]
 
- Následující snímek <xref:System.Windows.Controls.ListBox> obrazovky ukazuje <xref:System.Windows.DataTemplate>s tímto upraveným :
+ Následující snímek obrazovky ukazuje <xref:System.Windows.Controls.ListBox> s tímto upraveným <xref:System.Windows.DataTemplate> :
 
- ![Ukázkový snímek obrazovky s šablonami dat](./media/datatemplatingintro-fig4.png "DataTemplatingIntro_fig4")
+ ![Snímek obrazovky ukázkového data šablonování](./media/datatemplatingintro-fig4.png "DataTemplatingIntro_fig4")
 
- Můžeme nastavit <xref:System.Windows.Controls.Control.HorizontalContentAlignment%2A> <xref:System.Windows.HorizontalAlignment.Stretch> na <xref:System.Windows.Controls.ListBox> na ujistěte se, že šířka položek zabírá celý prostor:
+ Můžeme nastavit na, aby se zajistilo, že <xref:System.Windows.Controls.Control.HorizontalContentAlignment%2A> <xref:System.Windows.HorizontalAlignment.Stretch> <xref:System.Windows.Controls.ListBox> Šířka položek zabere celé místo:
 
  [!code-xaml[DataTemplatingIntro_snip#Stretch](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTemplatingIntro_snip/CSharp/Window1.xaml#stretch)]
 
- S <xref:System.Windows.Controls.Control.HorizontalContentAlignment%2A> vlastností <xref:System.Windows.HorizontalAlignment.Stretch>nastavenou <xref:System.Windows.Controls.ListBox> na , nyní vypadá takto:
+ S <xref:System.Windows.Controls.Control.HorizontalContentAlignment%2A> vlastností nastavenou na <xref:System.Windows.HorizontalAlignment.Stretch> , <xref:System.Windows.Controls.ListBox> teď vypadá takto:
 
- ![Ukázkový snímek obrazovky s šablonami dat](./media/datatemplatingintro-fig5.png "DataTemplatingIntro_fig5")
+ ![Snímek obrazovky ukázkového data šablonování](./media/datatemplatingintro-fig5.png "DataTemplatingIntro_fig5")
 
 <a name="DataTrigger_to_Apply_Property_Values"></a>
-### <a name="use-datatriggers-to-apply-property-values"></a>Použití aktivačních událostí data k použití hodnot vlastností
- Aktuální prezentace nám neříká, `Task` zda je úkol domácnosti nebo úkol kanceláře. Nezapomeňte, `Task` že objekt `TaskType` má `TaskType`vlastnost typu , což je `Home` `Work`výčet s hodnotami a .
+### <a name="use-datatriggers-to-apply-property-values"></a>Použijte k použití hodnot vlastností datatriggery
+ Aktuální prezentace nám neřekne, jestli `Task` je to Domovská úloha nebo úkol Office. Mějte na paměti, že `Task` objekt má `TaskType` vlastnost typu `TaskType` , což je výčet s hodnotami `Home` a `Work` .
 
- V následujícím příkladu <xref:System.Windows.DataTrigger> <xref:System.Windows.Controls.Border.BorderBrush%2A> nastaví prvek `border` pojmenovaný, `Yellow` `TaskType` pokud `TaskType.Home`je vlastnost .
+ V následujícím příkladu <xref:System.Windows.DataTrigger> nastaví <xref:System.Windows.Controls.Border.BorderBrush%2A> prvek elementu s názvem `border` na, `Yellow` Pokud `TaskType` je vlastnost `TaskType.Home` .
 
  [!code-xaml[DataTemplatingIntro#DT](~/samples/snippets/xaml/VS_Snippets_Wpf/DataTemplatingIntro/xaml/window1.xaml#dt)]
 [!code-xaml[DataTemplatingIntro#DataTrigger](~/samples/snippets/xaml/VS_Snippets_Wpf/DataTemplatingIntro/xaml/window1.xaml#datatrigger)]
 [!code-xaml[DataTemplatingIntro#AddingMore2](~/samples/snippets/xaml/VS_Snippets_Wpf/DataTemplatingIntro/xaml/window1.xaml#addingmore2)]
 
- Naše aplikace nyní vypadá takto. Domácí úkoly se zobrazí se žlutým ohraničením a kancelářské úkoly se zobrazí s aqua ohraničením:
+ Naše aplikace teď vypadá jako v následujícím příkladu. Domovské úkoly se zobrazí se žlutým ohraničením a úkoly Office se zobrazí s azurová ohraničením:
 
- ![Ukázkový snímek obrazovky s šablonami dat](./media/datatemplatingintro-fig6.png "DataTemplatingIntro_fig6")
+ ![Snímek obrazovky ukázkového data šablonování](./media/datatemplatingintro-fig6.png "DataTemplatingIntro_fig6")
 
- V tomto <xref:System.Windows.DataTrigger> příkladu <xref:System.Windows.Setter> používá a nastavit hodnotu vlastnosti. Třídy aktivačních <xref:System.Windows.TriggerBase.EnterActions%2A> událostí <xref:System.Windows.TriggerBase.ExitActions%2A> mají také vlastnosti a, které umožňují spustit sadu akcí, jako jsou animace. Kromě toho je také <xref:System.Windows.MultiDataTrigger> třída, která umožňuje použít změny na základě více hodnot vlastností vázaných na data.
+ V tomto příkladu <xref:System.Windows.DataTrigger> používá nástroj <xref:System.Windows.Setter> k nastavení hodnoty vlastnosti. Třídy triggeru mají také <xref:System.Windows.TriggerBase.EnterActions%2A> vlastnosti a <xref:System.Windows.TriggerBase.ExitActions%2A> , které umožňují spustit sadu akcí, například animace. Kromě toho existuje také <xref:System.Windows.MultiDataTrigger> třída, která umožňuje použít změny založené na více hodnotách vlastností vázaných na data.
 
- Alternativní způsob, jak dosáhnout stejného <xref:System.Windows.Controls.Border.BorderBrush%2A> efektu `TaskType` je vázat vlastnost na vlastnost a použít `TaskType` převaděč hodnoty vrátit barvu na základě hodnoty. Vytvoření výše uvedeného efektu pomocí převodníku je o něco efektivnější z hlediska výkonu. Navíc vytvoření vlastního převaděče poskytuje větší flexibilitu, protože dodáváte vlastní logiku. Nakonec, jakou techniku zvolíte, závisí na vašem scénáři a vašich preferencích. Informace o tom, jak napsat <xref:System.Windows.Data.IValueConverter>převaděč, naleznete v tématu .
+ Alternativním způsobem, jak dosáhnout stejného účinku, je vytvořit vazby <xref:System.Windows.Controls.Border.BorderBrush%2A> Vlastnosti k `TaskType` vlastnosti a použít konvertor hodnoty k vrácení barvy na základě `TaskType` hodnoty. Vytvoření výše uvedeného efektu pomocí převaděče je mírně efektivnější z pohledu výkonu. Vytváření vlastního převaděče navíc přináší větší flexibilitu, protože poskytujete vlastní logiku. A nakonec, kterou metodu zvolíte, závisí na vašem scénáři a vaší předvolbě. Informace o tom, jak napsat převaděč, najdete v tématu <xref:System.Windows.Data.IValueConverter> .
 
 <a name="what_belongs_in_datatemplate"></a>
-### <a name="what-belongs-in-a-datatemplate"></a>Co patří do šablony data?
+### <a name="what-belongs-in-a-datatemplate"></a>Co patří do šablony DataTemplate?
 
-V předchozím příkladu jsme umístili <xref:System.Windows.DataTemplate> aktivační <xref:System.Windows.DataTemplate.Triggers%2A?displayProperty=nameWithType> událost do using vlastnost. Aktivační <xref:System.Windows.Setter> událost nastaví hodnotu vlastnosti elementu <xref:System.Windows.Controls.Border> (prvku), který <xref:System.Windows.DataTemplate>je v rámci . Však pokud vlastnosti, které `Setters` se týkají nejsou vlastnosti <xref:System.Windows.DataTemplate>prvků, které jsou v rámci aktuální <xref:System.Windows.Style> , může <xref:System.Windows.Controls.ListBoxItem> být vhodnější nastavit vlastnosti <xref:System.Windows.Controls.ListBox>pomocí, která je pro třídu (pokud ovládací prvek, který je vazba je ). Pokud například chcete <xref:System.Windows.Trigger> animovat <xref:System.Windows.UIElement.Opacity%2A> hodnotu položky, když myš odkazuje na položku, definujete aktivační události v rámci <xref:System.Windows.Controls.ListBoxItem> stylu. Příklad naleznete v [úvodu k stylingu a šablonování ukázka](https://github.com/Microsoft/WPF-Samples/tree/master/Styles%20&%20Templates/IntroToStylingAndTemplating).
+V předchozím příkladu jsme vložili Trigger do pole <xref:System.Windows.DataTemplate> pomocí <xref:System.Windows.DataTemplate.Triggers%2A?displayProperty=nameWithType> Vlastnosti. <xref:System.Windows.Setter>Aktivační událost nastavuje hodnotu vlastnosti elementu ( <xref:System.Windows.Controls.Border> elementu), který je v rámci <xref:System.Windows.DataTemplate> . Nicméně pokud vlastnosti, které jsou na starosti `Setters` , nejsou vlastnostmi prvků, které jsou v aktuálním <xref:System.Windows.DataTemplate> , může být vhodnější nastavit vlastnosti pomocí <xref:System.Windows.Style> třídy, která je pro třídu (Pokud je ovládací prvek, který vytváříte, <xref:System.Windows.Controls.ListBoxItem> a <xref:System.Windows.Controls.ListBox> ). Například pokud chcete, <xref:System.Windows.Trigger> aby animace <xref:System.Windows.UIElement.Opacity%2A> hodnoty položky, když ukazatel myši přejde na položku, definovali triggery ve <xref:System.Windows.Controls.ListBoxItem> stylu. Příklad naleznete v tématu [Úvod do stylu a šablonování Sample](https://github.com/Microsoft/WPF-Samples/tree/master/Styles%20&%20Templates/IntroToStylingAndTemplating).
 
- Obecně mějte na paměti, že <xref:System.Windows.DataTemplate> se použije na <xref:System.Windows.Controls.ListBoxItem> každý z generovaných (další informace o <xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A> tom, jak a kde je skutečně použita, naleznete na stránce.). Týká <xref:System.Windows.DataTemplate> se pouze prezentace a vzhledu datových objektů. Ve většině případů všechny ostatní aspekty prezentace, například to, jak položka <xref:System.Windows.Controls.ListBox> vypadá, když je vybrána nebo jak <xref:System.Windows.DataTemplate>položky rozloží, nepatří do definice . Příklad naleznete v části [Styling a Šablonování ovládacího prvku ItemsControl.](#DataTemplating_ItemsControl)
+ Obecně Pamatujte na to, že se <xref:System.Windows.DataTemplate> použije na každý z generovaných <xref:System.Windows.Controls.ListBoxItem> (Další informace o tom, jak a kde se ve skutečnosti používají) najdete na <xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A> stránce. Máte <xref:System.Windows.DataTemplate> obavy jenom o prezentaci a vzhled datových objektů. Ve většině případů všechny ostatní aspekty prezentace, například to, co položka vypadá, když je vybraná nebo jak <xref:System.Windows.Controls.ListBox> rozloží položky, nepatří do definice <xref:System.Windows.DataTemplate> . Příklad naleznete v části [stylování a šablonování oddílu ItemsControl](#DataTemplating_ItemsControl) .
 
 <a name="Styling_StyleSelection"></a>
-## <a name="choosing-a-datatemplate-based-on-properties-of-the-data-object"></a>Výběr šablony data na základě vlastností datového objektu
- V části [Vlastnost datatypu](#Styling_DataType) jsme diskutovali o tom, že můžete definovat různé šablony dat pro různé datové objekty. To je užitečné zejména <xref:System.Windows.Data.CompositeCollection> v případě, že máte různé typy nebo kolekce s položkami různých typů. V části [Použít datové aktivační události k použití hodnot vlastností](#DataTrigger_to_Apply_Property_Values) jsme ukázali, že pokud máte <xref:System.Windows.DataTemplate> kolekci stejného typu datových objektů, můžete vytvořit a potom pomocí aktivačních událostí použít změny na základě hodnot vlastností každého datového objektu. Aktivační události však umožňují použít hodnoty vlastností nebo spustit animace, ale neposkytují vám flexibilitu při rekonstrukci struktury datových objektů. Některé scénáře mohou vyžadovat vytvoření <xref:System.Windows.DataTemplate> jiného pro datové objekty, které jsou stejného typu, ale mají různé vlastnosti.
+## <a name="choosing-a-datatemplate-based-on-properties-of-the-data-object"></a>Výběr datové šablony na základě vlastností datového objektu
+ V části [vlastnosti DataType](#Styling_DataType) jsme probrali, že můžete definovat různé datové šablony pro různé datové objekty. To je obzvláště užitečné v případě, že máte <xref:System.Windows.Data.CompositeCollection> různé typy nebo kolekce s položkami různých typů. V části [použití datových triggerů k použití hodnot vlastností](#DataTrigger_to_Apply_Property_Values) jsme ukázali, že pokud máte kolekci stejného typu datových objektů, můžete vytvořit <xref:System.Windows.DataTemplate> a potom použít triggery k uplatnění změn v závislosti na hodnotách vlastností každého datového objektu. Triggery ale umožňují aplikovat hodnoty vlastností nebo spustit animace, ale neposkytují flexibilitu pro rekonstrukci struktury datových objektů. Některé scénáře mohou vyžadovat, abyste vytvořili jiný <xref:System.Windows.DataTemplate> pro datové objekty, které jsou stejného typu, ale mají různé vlastnosti.
 
- Například pokud `Task` objekt má `Priority` hodnotu `1`, můžete chtít, aby zcela jiný vzhled sloužit jako výstraha pro sebe. V takovém případě vytvoříte <xref:System.Windows.DataTemplate> pro zobrazení objektů `Task` s vysokou prioritou. Do oddílu zdroje <xref:System.Windows.DataTemplate> přidáme následující:
+ Například pokud `Task` má objekt `Priority` hodnotu `1` , může být vhodné dát zcela odlišný vzhled, který bude sloužit jako výstraha pro sebe. V takovém případě vytvoříte <xref:System.Windows.DataTemplate> pro zobrazení objektů s vysokou prioritou `Task` . Pojďme do <xref:System.Windows.DataTemplate> části Resources přidat následující:
 
  [!code-xaml[DataTemplatingIntro_snip#ImportantTemplate](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTemplatingIntro_snip/CSharp/Window1.xaml#importanttemplate)]
 
-Tento příklad používá vlastnost [DataTemplate.Resources.](xref:System.Windows.FrameworkTemplate.Resources%2A) Prostředky definované v této části jsou <xref:System.Windows.DataTemplate>sdíleny prvky v rámci rozhraní .
+Tento příklad používá vlastnost [DataTemplate. Resources](xref:System.Windows.FrameworkTemplate.Resources%2A) . Prostředky definované v tomto oddílu jsou sdíleny prvky v rámci <xref:System.Windows.DataTemplate> .
 
- Chcete-li zadat <xref:System.Windows.DataTemplate> logiku pro `Priority` výběr, který chcete použít na <xref:System.Windows.Controls.DataTemplateSelector> základě hodnoty <xref:System.Windows.Controls.DataTemplateSelector.SelectTemplate%2A> datového objektu, vytvořte podtřídu a přepište metodu. V následujícím příkladu <xref:System.Windows.Controls.DataTemplateSelector.SelectTemplate%2A> metoda poskytuje logiku vrátit příslušnou šablonu `Priority` na základě hodnoty vlastnosti. Šablona k vrácení se nachází ve zdrojích <xref:System.Windows.Window> obalového prvku.
+ Chcete-li zadat logiku pro výběr <xref:System.Windows.DataTemplate> , který má být použit na základě `Priority` hodnoty datového objektu, vytvořte podtřídu <xref:System.Windows.Controls.DataTemplateSelector> a přepište <xref:System.Windows.Controls.DataTemplateSelector.SelectTemplate%2A> metodu. V následujícím příkladu <xref:System.Windows.Controls.DataTemplateSelector.SelectTemplate%2A> poskytuje metoda logiku k vrácení příslušné šablony na základě hodnoty `Priority` Vlastnosti. Šablona, která se má vrátit, se nachází v prostředcích obklopujícího <xref:System.Windows.Window> prvku.
 
  [!code-csharp[DataTemplatingIntro_snip#DTSClass](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTemplatingIntro_snip/CSharp/TaskListDataTemplateSelector.cs#dtsclass)]
  [!code-vb[DataTemplatingIntro_snip#DTSClass](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DataTemplatingIntro_snip/visualbasic/tasklistdatatemplateselector.vb#dtsclass)]
 
- Pak můžeme deklarovat `TaskListDataTemplateSelector` jako zdroj:
+ Pak můžeme deklarovat `TaskListDataTemplateSelector` jako prostředek:
 
  [!code-xaml[DataTemplatingIntro_snip#R1](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTemplatingIntro_snip/CSharp/Window1.xaml#r1)]
 [!code-xaml[DataTemplatingIntro_snip#DTS](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTemplatingIntro_snip/CSharp/Window1.xaml#dts)]
 [!code-xaml[DataTemplatingIntro_snip#R2](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTemplatingIntro_snip/CSharp/Window1.xaml#r2)]
 
- Chcete-li použít prostředek pro výběr <xref:System.Windows.Controls.ItemsControl.ItemTemplateSelector%2A> šablony, <xref:System.Windows.Controls.ListBox>přiřaďte jej k vlastnosti . Volá <xref:System.Windows.Controls.ListBox> metodu <xref:System.Windows.Controls.DataTemplateSelector.SelectTemplate%2A> `TaskListDataTemplateSelector` pro každou z položek v podkladové kolekci. Volání předá datový objekt jako parametr položky. Který <xref:System.Windows.DataTemplate> je vrácen a metoda je pak použita na tento datový objekt.
+ Chcete-li použít prostředek selektor šablony, přiřaďte jej k <xref:System.Windows.Controls.ItemsControl.ItemTemplateSelector%2A> vlastnosti <xref:System.Windows.Controls.ListBox> . <xref:System.Windows.Controls.ListBox>Volá <xref:System.Windows.Controls.DataTemplateSelector.SelectTemplate%2A> metodu `TaskListDataTemplateSelector` pro každou položku v podkladové kolekci. Volání předá datový objekt jako parametr položky. <xref:System.Windows.DataTemplate>K tomuto datovému objektu se pak použije metoda, která je vrácená metodou.
 
  [!code-xaml[DataTemplatingIntro_snip#ItemTemplateSelector](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTemplatingIntro_snip/CSharp/Window1.xaml#itemtemplateselector)]
 
- S voličem šablony na <xref:System.Windows.Controls.ListBox> místě, nyní se zobrazí takto:
+ Při selektoru šablony se <xref:System.Windows.Controls.ListBox> nyní zobrazí následující:
 
- ![Ukázkový snímek obrazovky s šablonami dat](./media/datatemplatingintro-fig7.png "DataTemplatingIntro_fig7")
+ ![Snímek obrazovky ukázkového data šablonování](./media/datatemplatingintro-fig7.png "DataTemplatingIntro_fig7")
 
-Tím končí naše diskuse o tomto příkladu. Kompletní ukázku naleznete v [tématu Úvod do ukázky šablonování dat](https://github.com/Microsoft/WPF-Samples/tree/master/Data%20Binding/DataTemplatingIntro).
+Tím se dokončí naše diskuze na tomto příkladu. Úplnou ukázku najdete v tématu [Úvod do data šablonování Sample](https://github.com/Microsoft/WPF-Samples/tree/master/Data%20Binding/DataTemplatingIntro).
 
 <a name="DataTemplating_ItemsControl"></a>
-## <a name="styling-and-templating-an-itemscontrol"></a>Stylování a šablonování ovládacího prvku ItemsControl
- I když <xref:System.Windows.Controls.ItemsControl> není jediný typ ovládacího prvku, který můžete použít <xref:System.Windows.DataTemplate> s, <xref:System.Windows.Controls.ItemsControl> je velmi běžný scénář svázat s kolekcí. V části [Co patří do DataTemplate](#what_belongs_in_datatemplate) jsme diskutovali, že definice vašeho <xref:System.Windows.DataTemplate> by se měla týkat pouze prezentace dat. Chcete-li vědět, kdy není vhodné <xref:System.Windows.DataTemplate> použít, je důležité pochopit různé vlastnosti <xref:System.Windows.Controls.ItemsControl>stylu a šablony poskytované rozhraním . Následující příklad je určen k ilustraci funkce každé z těchto vlastností. <xref:System.Windows.Controls.ItemsControl> V tomto příkladu je `Tasks` vázán na stejnou kolekci jako v předchozím příkladu. Pro demonstrační účely jsou všechny styly a šablony v tomto příkladu deklarovány jako vložky.
+## <a name="styling-and-templating-an-itemscontrol"></a>Stylování a šablonování ItemsControl
+ I když <xref:System.Windows.Controls.ItemsControl> není jediný typ ovládacího prvku, který lze použít <xref:System.Windows.DataTemplate> s, je velmi běžný scénář pro svázání s <xref:System.Windows.Controls.ItemsControl> kolekcí. V části [co patří do datové šablony](#what_belongs_in_datatemplate) jsme probrali, že definice vaší služby <xref:System.Windows.DataTemplate> by měla být dotčena pouze s prezentací dat. Aby bylo známo, že není vhodné použít <xref:System.Windows.DataTemplate> , je důležité pochopit různé vlastnosti stylu a šablony, které poskytuje <xref:System.Windows.Controls.ItemsControl> . Následující příklad je navržen pro ilustraci funkce každé z těchto vlastností. <xref:System.Windows.Controls.ItemsControl>V tomto příkladu je svázán se stejnou `Tasks` kolekcí jako v předchozím příkladu. Pro demonstrační účely jsou styly a šablony v tomto příkladu deklarovány jako vložené.
 
  [!code-xaml[DataTemplatingIntro_snip#ItemsControlProperties](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTemplatingIntro_snip/CSharp/Window1.xaml#itemscontrolproperties)]
 
- Následuje snímek obrazovky příkladu při vykreslení:
+ Následuje snímek obrazovky příkladu při jeho vykreslení:
 
- ![Příklad obrazovky PoložkyControl](./media/databinding-itemscontrolproperties.png "DataBinding_ItemsControlProperties")
+ ![ItemsControl – ukázkový snímek obrazovky](./media/databinding-itemscontrolproperties.png "DataBinding_ItemsControlProperties")
 
- Všimněte si, <xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A>že místo použití <xref:System.Windows.Controls.ItemsControl.ItemTemplateSelector%2A>, můžete použít . Příklad naleznete v předchozí části. Podobně namísto použití <xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A>, máte možnost použít <xref:System.Windows.Controls.ItemsControl.ItemContainerStyleSelector%2A>.
+ Všimněte si, že místo použití <xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A> můžete použít <xref:System.Windows.Controls.ItemsControl.ItemTemplateSelector%2A> . Příklad najdete v předchozí části. Podobně namísto použití nástroje <xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A> máte možnost použít <xref:System.Windows.Controls.ItemsControl.ItemContainerStyleSelector%2A> .
 
- Dvě další vlastnosti související <xref:System.Windows.Controls.ItemsControl> se stylem, <xref:System.Windows.Controls.ItemsControl.GroupStyle%2A> <xref:System.Windows.Controls.ItemsControl.GroupStyleSelector%2A>které zde nejsou zobrazeny, jsou a .
+ Dvě další vlastnosti související se styly <xref:System.Windows.Controls.ItemsControl> , které nejsou zde zobrazeny, jsou <xref:System.Windows.Controls.ItemsControl.GroupStyle%2A> a <xref:System.Windows.Controls.ItemsControl.GroupStyleSelector%2A> .
 
 <a name="DataTemplating_HeirarchicalDataTemplate"></a>
 ## <a name="support-for-hierarchical-data"></a>Podpora hierarchických dat
- Zatím jsme se jen podíval na to, jak se vázat a zobrazit jednu sbírku. Někdy máte kolekci, která obsahuje další kolekce. Třída <xref:System.Windows.HierarchicalDataTemplate> je určena pro <xref:System.Windows.Controls.HeaderedItemsControl> použití s typy pro zobrazení těchto dat. V následujícím příkladu `ListLeagueList` je `League` seznam objektů. Každý `League` objekt `Name` má a `Division` kolekci objektů. Každý `Division` má `Name` a kolekce `Team` objektů a `Team` každý `Name`objekt má .
+ Zatím jsme se podívali jenom na to, jak vytvořit a zobrazit jednu kolekci. Někdy máte kolekci, která obsahuje další kolekce. <xref:System.Windows.HierarchicalDataTemplate>Třída je navržena pro použití s <xref:System.Windows.Controls.HeaderedItemsControl> typy k zobrazení těchto dat. V následujícím příkladu `ListLeagueList` je seznam `League` objektů. Každý `League` objekt má `Name` a kolekci `Division` objektů. Každá z nich `Division` má `Name` a a kolekci `Team` objektů a každý `Team` objekt má `Name` .
 
  [!code-xaml[HierarchicalDataTemplateSnippet#HDT](~/samples/snippets/csharp/VS_Snippets_Wpf/HierarchicalDataTemplateSnippet/CS/window1.xaml#hdt)]
 
- Příklad ukazuje, že pomocí <xref:System.Windows.HierarchicalDataTemplate>aplikace můžete snadno zobrazit data seznamu, která obsahují další seznamy. Následuje snímek obrazovky příkladu.
+ Tento příklad ukazuje, že s použitím <xref:System.Windows.HierarchicalDataTemplate> můžete snadno zobrazit seznam dat, která obsahují další seznamy. Níže je příklad snímku.
 
- ![Ukázkový snímek ukázky šablony HierarchicalDataTemplate](./media/databinding-hierarchicaldatatemplate.png "DataBinding_HierarchicalDataTemplate")
+ ![Ukázkový snímek obrazovky HierarchicalDataTemplate](./media/databinding-hierarchicaldatatemplate.png "DataBinding_HierarchicalDataTemplate")
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Datová vazba](../advanced/optimizing-performance-data-binding.md)
-- [Najít prvky generované šablonou dat](how-to-find-datatemplate-generated-elements.md)
+- [Hledání elementů generovaných šablonou DataTemplate](how-to-find-datatemplate-generated-elements.md)
 - [Styly a šablony](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
 - [Přehled datových vazeb](../../../desktop-wpf/data/data-binding-overview.md)
-- [Přehled stylů záhlaví sloupců a šablon GridView](../controls/gridview-column-header-styles-and-templates-overview.md)
+- [GridView Styly záhlaví sloupců a přehled šablon](../controls/gridview-column-header-styles-and-templates-overview.md)

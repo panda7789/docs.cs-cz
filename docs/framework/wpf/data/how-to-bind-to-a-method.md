@@ -1,37 +1,38 @@
 ---
-title: 'Postupy: Vytvoření vazby k metodě'
+title: 'Postupy: Připojení k metodě'
+description: Podle tohoto příkladu se dozvíte, jak vytvořit vazby k metodě objektu v Windows Presentation Foundation (WPF).
 ms.date: 03/30/2017
 helpviewer_keywords:
 - data binding [WPF], binding to methods using ObjectDataProvider
 - binding [WPF], to methods
 - methods [WPF], binding to
 ms.assetid: 5f55e71e-2182-42a0-88d1-700cc1427a7a
-ms.openlocfilehash: 6cdad46fd6d9ef3bc4ce1a13fedb6ff1d639d93e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9501e6357203c21651e85f1d65059be1d70becf2
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61967840"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619595"
 ---
-# <a name="how-to-bind-to-a-method"></a>Postupy: Vytvoření vazby k metodě
-Následující příklad ukazuje, jak vytvořit vazbu na metodu pomocí <xref:System.Windows.Data.ObjectDataProvider>.  
+# <a name="how-to-bind-to-a-method"></a>Postupy: Připojení k metodě
+Následující příklad ukazuje, jak vytvořit spojení s metodou pomocí <xref:System.Windows.Data.ObjectDataProvider> .  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu `TemperatureScale` je třída, která obsahuje metodu `ConvertTemp`, který přebírá dva parametry (jeden z `double` a jeden z `enum` typ `TempType)` a převede zadanou hodnotu z jednoho teploty škálování. V následujícím příkladu <xref:System.Windows.Data.ObjectDataProvider> slouží k vytvoření instance `TemperatureScale` objektu. `ConvertTemp` Metoda je volána pomocí dvou zadaných parametrů.  
+ V tomto příkladu `TemperatureScale` je třída, která má metodu `ConvertTemp` , která má dva parametry (jeden z těchto `double` typů a jeden z nich `enum` `TempType)` a převádí danou hodnotu z jednoho měřítka teploty na jiný). V následujícím příkladu <xref:System.Windows.Data.ObjectDataProvider> se používá pro vytvoření instance `TemperatureScale` objektu. `ConvertTemp`Metoda je volána se dvěma zadanými parametry.  
   
  [!code-xaml[BindToMethod#WindowResources](~/samples/snippets/csharp/VS_Snippets_Wpf/BindToMethod/CS/Window1.xaml#windowresources)]  
   
- Teď, když metoda je k dispozici jako prostředek, můžete vázat na jeho výsledky. V následujícím příkladu <xref:System.Windows.Controls.TextBox.Text%2A> vlastnost <xref:System.Windows.Controls.TextBox> a <xref:System.Windows.Controls.Primitives.Selector.SelectedValue%2A> z <xref:System.Windows.Controls.ComboBox> jsou vázány na dva parametry metody. To umožňuje uživatelům zadat teploty pro převod a teploty škálování pro převod z. Všimněte si, že <xref:System.Windows.Data.Binding.BindsDirectlyToSource%2A> je nastavena na `true` vzhledem k tomu, že jsme připojujete <xref:System.Windows.Data.ObjectDataProvider.MethodParameters%2A> vlastnost <xref:System.Windows.Data.ObjectDataProvider> instance a nikoli vlastnosti objektu zabalený nástrojem <xref:System.Windows.Data.ObjectDataProvider> ( `TemperatureScale` objekt).  
+ Teď, když je metoda k dispozici jako prostředek, můžete vytvořit vazby na její výsledky. V následujícím příkladu <xref:System.Windows.Controls.TextBox.Text%2A> vlastnost třídy <xref:System.Windows.Controls.TextBox> a je <xref:System.Windows.Controls.Primitives.Selector.SelectedValue%2A> <xref:System.Windows.Controls.ComboBox> svázána s dvěma parametry metody. Díky tomu mohou uživatelé určit teplotu, která se má převést, a škála teploty pro převod. Všimněte si, že <xref:System.Windows.Data.Binding.BindsDirectlyToSource%2A> je nastavena na, protože je vytvořena `true` vazba na <xref:System.Windows.Data.ObjectDataProvider.MethodParameters%2A> vlastnost <xref:System.Windows.Data.ObjectDataProvider> instance a nikoli vlastnosti objektu zabaleného <xref:System.Windows.Data.ObjectDataProvider> ( `TemperatureScale` objekt).  
   
- <xref:System.Windows.Controls.ContentControl.Content%2A> Posledního <xref:System.Windows.Controls.Label> aktualizuje, když uživatel upraví obsah <xref:System.Windows.Controls.TextBox> nebo výběr <xref:System.Windows.Controls.ComboBox>.  
+ <xref:System.Windows.Controls.ContentControl.Content%2A>Poslední <xref:System.Windows.Controls.Label> aktualizace, pokud uživatel upraví obsah <xref:System.Windows.Controls.TextBox> nebo výběru <xref:System.Windows.Controls.ComboBox> .  
   
  [!code-xaml[BindToMethod#UI](~/samples/snippets/csharp/VS_Snippets_Wpf/BindToMethod/CS/Window1.xaml#ui)]  
   
- Převaděč `DoubleToString` přijímá typ double a převede ji na řetězec v <xref:System.Windows.Data.IValueConverter.Convert%2A> směr (ze zdroje vazby na cíl vazby, který je <xref:System.Windows.Controls.TextBox.Text%2A> vlastnost) a převede `string` k `double` v <xref:System.Windows.Data.IValueConverter.ConvertBack%2A> směr.  
+ Konvertor `DoubleToString` přebírá dvojitou hodnotu a převede ji na řetězec ve <xref:System.Windows.Data.IValueConverter.Convert%2A> směru (od zdroje vazby k cíli vazby, který je <xref:System.Windows.Controls.TextBox.Text%2A> vlastnost) a převádí `string` na a `double` ve <xref:System.Windows.Data.IValueConverter.ConvertBack%2A> směru.  
   
- `InvalidationCharacterRule` Je <xref:System.Windows.Controls.ValidationRule> , která zkontroluje neobsahuje neplatné znaky. Chyba šablony výchozí, což je červené ohraničení kolem <xref:System.Windows.Controls.TextBox>, zobrazí se oznámení uživatelům, pokud vstupní hodnota není hodnotu double.  
+ `InvalidationCharacterRule`Je a <xref:System.Windows.Controls.ValidationRule> , který kontroluje neplatné znaky. Výchozí šablona chyby, která je červeným ohraničením kolem <xref:System.Windows.Controls.TextBox> , se zobrazí uživateli s informací o tom, že vstupní hodnota není dvojitá hodnota.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Témata s postupy](data-binding-how-to-topics.md)
-- [Vytvoření vazby k vyčíslení](how-to-bind-to-an-enumeration.md)
+- [– postupy](data-binding-how-to-topics.md)
+- [Vazba na výčet](how-to-bind-to-an-enumeration.md)

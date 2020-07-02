@@ -1,18 +1,27 @@
 ---
-ms.openlocfilehash: addfd55fd01b13e9088e4706ff846fc624aafa68
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: 2aa6603e2ed77ffa94fbc6325cd5db50985bda6a
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59803705"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85620080"
 ---
-### <a name="previewlostkeyboardfocus-is-called-repeatedly-if-its-handler-shows-a-windows-forms-message-box"></a>PreviewLostKeyboardFocus je voláno opakovaně její obslužná rutina se zobrazí okno se zprávou Windows Forms
+### <a name="previewlostkeyboardfocus-is-called-repeatedly-if-its-handler-shows-a-windows-forms-message-box"></a>PreviewLostKeyboardFocus se volá opakovaně, pokud jeho obslužná rutina zobrazuje okno se zprávou model Windows Forms.
 
-|   |   |
-|---|---|
-|Podrobnosti|Počínaje .NET Framework 4.5, volání <xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType> z <xref:System.Windows.UIElement.PreviewLostKeyboardFocus> způsobí, že obslužná rutina obslužnou rutinu znovu vyvolána při zavření okna se zprávou, může mít za následek nekonečnou smyčku okna se zprávou.|
-|Doporučení|Chcete-li tento problém obejít dvěma způsoby:<ol><li>Může se jim vyhnout voláním <xref:System.Windows.MessageBox.Show%2A?displayProperty=nameWithType> místo <xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>.</li><li>Může se jim vyhnout tím, že zobrazuje zprávy <xref:System.Windows.UIElement.LostKeyboardFocus?displayProperty=nameWithType> obslužné rutiny události (nikoli <xref:System.Windows.UIElement.PreviewLostKeyboardFocus?displayProperty=name> obslužná rutina události).</li></ol>|
-|Rozsah|Edge|
-|Version|4.5|
-|Type|Modul runtime|
-|Ovlivněná rozhraní API|<ul><li><xref:System.Windows.ContentElement.PreviewLostKeyboardFocus?displayProperty=nameWithType></li><li><xref:System.Windows.IInputElement.PreviewLostKeyboardFocus?displayProperty=nameWithType></li><li><xref:System.Windows.UIElement.PreviewLostKeyboardFocus?displayProperty=nameWithType></li><li><xref:System.Windows.UIElement3D.PreviewLostKeyboardFocus?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a>Podrobnosti
+
+Počínaje .NET Framework 4,5, volání <xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType> z <xref:System.Windows.UIElement.PreviewLostKeyboardFocus> obslužné rutiny způsobí, že se obslužná rutina znovu aktivuje při zavření okna se zprávou, což může vést k nekonečné smyčce oken se zprávami.
+
+#### <a name="suggestion"></a>Návrh
+
+Tento problém můžete vyřešit dvěma způsoby:<ol><li>Je možné se vyhnout voláním <xref:System.Windows.MessageBox.Show%2A?displayProperty=nameWithType> místo <xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType> .</li><li>Je možné se vyhnout zobrazením okna se zprávou z <xref:System.Windows.UIElement.LostKeyboardFocus> obslužné rutiny události (na rozdíl od <xref:System.Windows.UIElement.PreviewLostKeyboardFocus?displayProperty=fullName> obslužné rutiny události).</li></ol>
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   |Edge|
+|Verze|4.5|
+|Typ|Modul runtime
+
+#### <a name="affected-apis"></a>Ovlivněná rozhraní API
+
+-<xref:System.Windows.ContentElement.PreviewLostKeyboardFocus?displayProperty=nameWithType></li><li><xref:System.Windows.IInputElement.PreviewLostKeyboardFocus?displayProperty=nameWithType></li><li><xref:System.Windows.UIElement.PreviewLostKeyboardFocus?displayProperty=nameWithType></li><li><xref:System.Windows.UIElement3D.PreviewLostKeyboardFocus?displayProperty=nameWithType></li></ul>|

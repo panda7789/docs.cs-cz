@@ -1,5 +1,6 @@
 ---
 title: Předávání struktur
+description: Pochopte, jak předat struktury a třídy nespravovaným funkcím. Seznamte se s atributem StructLayoutAttribute, který slouží k definování formátovaných typů.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - platform invoke, calling unmanaged functions
 ms.assetid: 9b92ac73-32b7-4e1b-862e-6d8d950cf169
-ms.openlocfilehash: 11e329fa8f0c059b6c2f1c8ccb1d6bd0d0f0030a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: eae28d6746cd89d98b659b9eb957f158e1319190
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79181341"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85620817"
 ---
 # <a name="passing-structures"></a>Předávání struktur
 Mnoho nespravovaných funkcí očekává předání, jako parametr funkce, členů struktur (uživatelsky definovaných typů v Visual Basic) nebo členů tříd, které jsou definovány ve spravovaném kódu. Při předávání struktur nebo tříd do nespravovaného kódu pomocí vyvolání platformy je nutné zadat další informace, chcete-li zachovat původní rozložení a zarovnání. Toto téma zavádí <xref:System.Runtime.InteropServices.StructLayoutAttribute> atribut, který slouží k definování formátovaných typů. Pro spravované struktury a třídy můžete vybrat z několika předvídatelných chování rozložení dodaných výčtem **LayoutKind** .  
@@ -34,7 +35,7 @@ Mnoho nespravovaných funkcí očekává předání, jako parametr funkce, člen
 - Použijte třídu předanou odkazem, pokud nespravovaná funkce požaduje dvě úrovně dereference.  
   
 ## <a name="declaring-and-passing-structures"></a>Deklarace a předávání struktur  
- Následující příklad ukazuje, jak definovat struktury `Point` a `Rect` ve spravovaném kódu a předat typy jako parametr funkci **PtInRect** v souboru User32. dll. **PtInRect** má následující nespravovaný podpis:  
+ Následující příklad ukazuje, jak definovat `Point` `Rect` struktury a ve spravovaném kódu a předat typy jako parametr funkci **PtInRect** v souboru User32.dll. **PtInRect** má následující nespravovaný podpis:  
   
 ```cpp
 BOOL PtInRect(const RECT *lprc, POINT pt);  
@@ -88,7 +89,7 @@ internal static class NativeMethods
 ```  
   
 ## <a name="declaring-and-passing-classes"></a>Deklarace a předávání tříd  
- Můžete předat členy třídy do nespravované funkce knihovny DLL, pokud má třída pevné členské rozložení. Následující příklad ukazuje, jak předat členy `MySystemTime` třídy, které jsou definovány v sekvenčním pořadí, do **GetSystemTime** v souboru User32. dll. **GetSystemTime** má následující nespravovaný podpis:  
+ Můžete předat členy třídy do nespravované funkce knihovny DLL, pokud má třída pevné členské rozložení. Následující příklad ukazuje, jak předat členy `MySystemTime` třídy, které jsou definovány v sekvenčním pořadí, do **GetSystemTime** v souboru User32.dll. **GetSystemTime** má následující nespravovaný podpis:  
   
 ```cpp
 void GetSystemTime(SYSTEMTIME* SystemTime);  
@@ -173,7 +174,7 @@ public class TestPlatformInvoke
 }  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Volání funkce DLL](calling-a-dll-function.md)
 - <xref:System.Runtime.InteropServices.StructLayoutAttribute>

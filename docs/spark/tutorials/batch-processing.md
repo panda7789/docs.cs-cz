@@ -3,14 +3,14 @@ title: Kurz dávkového zpracování pomocí .NET pro Apache Spark
 description: Naučte se provádět dávkové zpracování pomocí .NET pro Apache Spark.
 author: mamccrea
 ms.author: mamccrea
-ms.date: 12/13/2019
+ms.date: 06/25/2020
 ms.topic: tutorial
-ms.openlocfilehash: b00f560317c085058d791e17954603670fccf60f
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: dbc3ab5cc4bd7f438e9f3f8e5d36c764d785ce4b
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84594514"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85618282"
 ---
 # <a name="tutorial-do-batch-processing-with-net-for-apache-spark"></a>Kurz: zpracování služby Batch pomocí rozhraní .NET pro Apache Spark
 
@@ -25,6 +25,8 @@ V tomto kurzu se naučíte:
 > * Vytvoření a spuštění rozhraní .NET pro Apache Spark aplikaci
 > * Čtení dat do datového rámce a příprava na analýzu
 > * Zpracování dat pomocí Spark SQL
+
+[!INCLUDE [spark-preview-note](../../../includes/spark-preview-note.md)]
 
 ## <a name="prerequisites"></a>Požadavky
 

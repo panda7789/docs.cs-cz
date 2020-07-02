@@ -1,5 +1,6 @@
 ---
 title: 'Postupy: Omezení blikání grafiky dvojitým uložením do vyrovnávací paměti pro formuláře a ovládací prvky'
+description: Naučte se snižovat blikání grafiky pomocí dvojího ukládání do vyrovnávací paměti pro model Windows Forms a používat ovládací prvky pro řešení problémů blikání přidružených k operacím vykreslování.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,28 +9,28 @@ helpviewer_keywords:
 - flicker [Windows Forms], reducing in Windows Forms
 - graphics [Windows Forms], reducing double-buffered flicker
 ms.assetid: 91083d3a-653f-4f15-a467-0f37b2aa39d6
-ms.openlocfilehash: d143d7ec87a214a900264e069b329ea28a92c3e9
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: f7c0425729f8a1a780124621788a1c49e06e0c4e
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65590378"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85618126"
 ---
 # <a name="how-to-reduce-graphics-flicker-with-double-buffering-for-forms-and-controls"></a>Postupy: Omezení blikání grafiky dvojitým uložením do vyrovnávací paměti pro formuláře a ovládací prvky
-K vyřešení blikání problémy související s více operací malířského dvojité ukládání do vyrovnávací paměti používá vyrovnávací paměti. Pokud dvojité ukládání do vyrovnávací paměti je povolená, všechny operace Malování vykresleny nejprve do vyrovnávací paměti namísto na návrhovém povrchu na obrazovce. Po dokončení všechny operace Malování vyrovnávací paměť je zkopírován přímo do na návrhovém povrchu s ním spojená. Protože pouze jediného grafického operace se provádí na obrazovce, image blikání spojené s operacemi komplexní Malování se odstraní. Pro většinu aplikací výchozí dvojité ukládání do vyrovnávací paměti rozhraní .NET Framework poskytuje poskytne nejlepší výsledky. Standardní ovládací prvky Windows Forms jsou dvojité vyrovnávací paměti ve výchozím nastavení. Můžete povolit výchozí dvojité ukládání do vyrovnávací paměti do svých formulářů a je také autorem ovládací prvky dvěma způsoby. Můžete buď nastaven <xref:System.Windows.Forms.Control.DoubleBuffered%2A> vlastnost `true`, nebo můžete volat <xref:System.Windows.Forms.Control.SetStyle%2A> metody nastavte <xref:System.Windows.Forms.ControlStyles.OptimizedDoubleBuffer> příznak, který `true`. Obě metody povolí výchozí dvojité ukládání do vyrovnávací paměti pro formuláře nebo ovládacího prvku a zadejte vykreslování bez blikání grafiky. Volání <xref:System.Windows.Forms.Control.SetStyle%2A> metoda se doporučuje jenom pro vlastní ovládací prvky, pro které jste napsali v kódu vykreslování.  
+Dvojité ukládání do vyrovnávací paměti používá vyrovnávací paměť k řešení problémů blikání spojených s více operacemi malování. Pokud je povoleno dvojité ukládání do vyrovnávací paměti, všechny operace Malování se nejprve vykreslí do vyrovnávací paměti místo kresby na obrazovce. Po dokončení všech operací Malování se vyrovnávací paměť zkopíruje přímo na kreslicí plochu, která je k ní přidružená. Vzhledem k tomu, že se na obrazovce provádí jenom jedna operace grafiky, odstraní se blikání obrázku přidruženého k složitým operacím malování. U většiny aplikací nabízí výchozí dvojité ukládání do vyrovnávací paměti, které poskytuje .NET Framework, nejlepší výsledky. Standardní ovládací prvky model Windows Forms jsou ve výchozím nastavení dvojitě uloženy do vyrovnávací paměti. Ve formulářích můžete povolit výchozí dvojité ukládání do vyrovnávací paměti a vytvořené ovládací prvky dvěma způsoby. Můžete buď nastavit <xref:System.Windows.Forms.Control.DoubleBuffered%2A> vlastnost na `true` , nebo můžete zavolat <xref:System.Windows.Forms.Control.SetStyle%2A> metodu pro nastavení <xref:System.Windows.Forms.ControlStyles.OptimizedDoubleBuffer> příznaku na `true` . Obě metody povolí výchozí dvojité ukládání do vyrovnávací paměti pro formulář nebo ovládací prvek a poskytuje vykreslování grafiky bez blikání. Volání <xref:System.Windows.Forms.Control.SetStyle%2A> metody je doporučeno pouze pro vlastní ovládací prvky, pro které jste napsali veškerý kód vykreslování.  
   
- Pro pokročilejší dvojité vyrovnávací paměti scénáře, jako je například animace nebo rozšířené paměti pro správu můžete implementovat vlastní logiku dvojité vyrovnávací paměti. Další informace najdete v tématu [jak: Ruční správa grafiky uložené do vyrovnávací paměti](how-to-manually-manage-buffered-graphics.md).  
+ Pro pokročilejší scénáře s dvojitou vyrovnávací pamětí, jako je například animace nebo Pokročilá správa paměti, můžete implementovat svou vlastní dvojitou logiku ukládání do vyrovnávací paměti. Další informace naleznete v tématu [How to: manualed Graphics Buffered](how-to-manually-manage-buffered-graphics.md).  
   
-### <a name="to-reduce-flicker"></a>Abyste snížili blikání  
+### <a name="to-reduce-flicker"></a>Snížení blikání  
   
-- Nastavte <xref:System.Windows.Forms.Control.DoubleBuffered%2A> vlastnost `true`.  
+- Nastavte <xref:System.Windows.Forms.Control.DoubleBuffered%2A> vlastnost na hodnotu `true` .  
   
      [!code-csharp[System.Windows.Forms.LegacyBufferedGraphics#31](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.LegacyBufferedGraphics/CS/Class1.cs#31)]
      [!code-vb[System.Windows.Forms.LegacyBufferedGraphics#31](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.LegacyBufferedGraphics/VB/Class1.vb#31)]  
   
- \- nebo –  
+ \-ani  
   
-- Volání <xref:System.Windows.Forms.Control.SetStyle%2A> metody nastavte <xref:System.Windows.Forms.ControlStyles.OptimizedDoubleBuffer> příznak `true`.  
+- Zavolejte <xref:System.Windows.Forms.Control.SetStyle%2A> metodu pro nastavení <xref:System.Windows.Forms.ControlStyles.OptimizedDoubleBuffer> příznaku na `true` .  
   
      [!code-csharp[System.Windows.Forms.LegacyBufferedGraphics#32](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.LegacyBufferedGraphics/CS/Class1.cs#32)]
      [!code-vb[System.Windows.Forms.LegacyBufferedGraphics#32](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.LegacyBufferedGraphics/VB/Class1.vb#32)]  

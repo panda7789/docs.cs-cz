@@ -1,18 +1,27 @@
 ---
-ms.openlocfilehash: 74ce1bbc9a887aee3a33eaf05084e8c2000967c2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: cd59818fe674e10a206725bea8a74c4aceed99b1
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66379522"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85620098"
 ---
-### <a name="wpf-textbox-selected-text-appears-a-different-color-when-the-text-box-is-inactive"></a>Textové pole WPF vybraný text se zobrazí odlišnou barvou, když do textového pole je neaktivní
+### <a name="wpf-textbox-selected-text-appears-a-different-color-when-the-text-box-is-inactive"></a>Textové pole WPF – vybraný text se zobrazí v případě neaktivního textového pole s jinou barvou
 
-|   |   |
-|---|---|
-|Podrobnosti|V rozhraní .NET Framework 4.5, když je neaktivní ovládacího prvku WPF textového pole (nemá fokus), zobrazí se vybraný text v poli jinou barvou, než když je aktivní ovládací prvek.|
-|Doporučení|Může se obnovit předchozí chování (.NET Framework 4.0) tak, že nastavíte <xref:System.Windows.FrameworkCompatibilityPreferences.AreInactiveSelectionHighlightBrushKeysSupported> vlastnost <code>false</code>.|
-|Scope|Edge|
-|Version|4.5|
-|Type|Modul runtime|
-|Ovlivněná rozhraní API|<ul><li><xref:System.Windows.Controls.TextBox?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a>Podrobnosti
+
+V .NET Framework 4,5, pokud je ovládací prvek textového pole WPF neaktivní (nemá fokus), se vybraný text v poli zobrazí jinou barvou, než je ovládací prvek aktivní.
+
+#### <a name="suggestion"></a>Návrh
+
+Předchozí chování (.NET Framework 4,0) může být obnoveno nastavením <xref:System.Windows.FrameworkCompatibilityPreferences.AreInactiveSelectionHighlightBrushKeysSupported> vlastnosti na <code>false</code> .
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   |Edge|
+|Verze|4.5|
+|Typ|Modul runtime
+
+#### <a name="affected-apis"></a>Ovlivněná rozhraní API
+
+-<xref:System.Windows.Controls.TextBox?displayProperty=nameWithType></li></ul>|

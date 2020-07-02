@@ -1,18 +1,27 @@
 ---
-ms.openlocfilehash: 94fad6fe910da6c528c5e13f529a6db274e07d5c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: 52406f1e4ea4eda417909e52cf6529631cb0ae33
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59235349"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619963"
 ---
-### <a name="change-in-behavior-for-taskwaitall-methods-with-time-out-arguments"></a>Změna chování pro metody Task.WaitAll s argumenty časového limitu
+### <a name="change-in-behavior-for-taskwaitall-methods-with-time-out-arguments"></a>Změna chování pro metody Task. WaitAll s argumenty časového limitu
 
-|   |   |
-|---|---|
-|Podrobnosti|<xref:System.Threading.Tasks.Task.WaitAll%2A?displayProperty=nameWithType> chování byla provedena konzistentnější v rozhraní .NET Framework 4.5.In rozhraní .NET Framework 4, tyto metody chovaly nekonzistentně. Po vypršení časového limitu, pokud jeden nebo více úlohy nebyly dokončeny nebo došlo ke zrušení před voláním metody, vyvolala metoda výjimku <xref:System.AggregateException?displayProperty=name> výjimky. Pokud časový limit vypršel, když žádné úlohy nebyly dokončeny nebo došlo ke zrušení před voláním metody, ale jeden nebo více úloh zadalo tyto stavy po volání metody, metoda vrátila hodnotu false.<br/><br/>V rozhraní .NET Framework 4.5, tato přetížení metody nyní vrátí hodnotu false, pokud žádné úlohy jsou stále spuštěna, když uplynutím časového limitu, a generují výjimku <xref:System.AggregateException?displayProperty=name> výjimku pouze v případě, že vstupní úloha byla zrušena (bez ohledu na to, jestli byl před nebo po metodu volání) a jsou pořád spuštěné žádné úlohy.|
-|Doporučení|Pokud <xref:System.AggregateException?displayProperty=name> se zachycení jako způsob zjišťování úlohu, která byla zrušena před verzí <xref:System.Threading.Tasks.Task.WaitAll%2A> volání volaná kód by měl místo toho proveďte stejné zjišťování prostřednictvím <xref:System.Threading.Tasks.Task.IsCanceled%2A> vlastnosti (například:. Any(t =&gt; t.IsCanceled)) od rozhraní .NET Framework 4.6 pouze vyvolá v takovém případě všechny očekávané úlohy jsou dokončeny před časový limit.|
-|Rozsah|Vedlejší|
-|Version|4.5|
-|Type|Modul runtime|
-|Ovlivněná rozhraní API|<ul><li><xref:System.Threading.Tasks.Task.WaitAll(System.Threading.Tasks.Task[],System.Int32)?displayProperty=nameWithType></li><li><xref:System.Threading.Tasks.Task.WaitAll(System.Threading.Tasks.Task[],System.Int32,System.Threading.CancellationToken)?displayProperty=nameWithType></li><li><xref:System.Threading.Tasks.Task.WaitAll(System.Threading.Tasks.Task[],System.TimeSpan)?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a>Podrobnosti
+
+<xref:System.Threading.Tasks.Task.WaitAll%2A?displayProperty=nameWithType>chování bylo v souladu s .NET Framework 4.5.In .NET Framework 4, tyto metody se chovají nekonzistentně. Po vypršení časového limitu, pokud před voláním metody byla dokončena nebo zrušena jedna nebo více úloh, metoda vyvolala <xref:System.AggregateException?displayProperty=fullName> výjimku. Po vypršení časového limitu, pokud nebyly dokončeny nebo zrušeny žádné úkoly před voláním metody, ale jedna nebo více úloh zadal tyto stavy po volání metody, metoda vrátila hodnotu false.<br/><br/>V .NET Framework 4,5 Tato přetížení metody nyní vrací hodnotu false, pokud některé úlohy stále běží, když vypršel časový limit, a vyvolávají <xref:System.AggregateException?displayProperty=fullName> výjimku pouze v případě, že vstupní úkol byl zrušen (bez ohledu na to, zda byl dříve nebo po volání metody) a zda stále nejsou spuštěny žádné další úlohy.
+
+#### <a name="suggestion"></a>Návrh
+
+Pokud <xref:System.AggregateException?displayProperty=fullName> byla zachycena jako způsob detekce úlohy, která byla zrušena před <xref:System.Threading.Tasks.Task.WaitAll%2A> vyvoláním volání, měl by tento kód místo toho provádět stejné zjišťování prostřednictvím <xref:System.Threading.Tasks.Task.IsCanceled%2A> vlastnosti (například:. Any (t = &gt; t. uncanceled)), protože .NET Framework 4,6 bude v takovém případě vyvolána pouze v případě, že všechny očekávané úkoly byly dokončeny před časovým limitem.
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   |Vedlejší|
+|Verze|4.5|
+|Typ|Modul runtime
+
+#### <a name="affected-apis"></a>Ovlivněná rozhraní API
+
+-<xref:System.Threading.Tasks.Task.WaitAll(System.Threading.Tasks.Task[],System.Int32)?displayProperty=nameWithType></li><li><xref:System.Threading.Tasks.Task.WaitAll(System.Threading.Tasks.Task[],System.Int32,System.Threading.CancellationToken)?displayProperty=nameWithType></li><li><xref:System.Threading.Tasks.Task.WaitAll(System.Threading.Tasks.Task[],System.TimeSpan)?displayProperty=nameWithType></li></ul>|

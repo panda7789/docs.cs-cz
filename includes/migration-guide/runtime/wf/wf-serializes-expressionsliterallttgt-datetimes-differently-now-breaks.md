@@ -1,17 +1,23 @@
 ---
-ms.openlocfilehash: 335647f899c79eff22e313fa40b2e2a73e7cfff0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 87013a04f7ff975e40a3c49c41c1c5acc2374066
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66379646"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85620077"
 ---
-### <a name="wf-serializes-expressionsliteralt-datetimes-differently-now-breaks-custom-xaml-parsers"></a>WF serializuje Expressions.Literal\<T > DateTimes odlišně, teď (přeruší vlastní analyzátory XAML)
+### <a name="wf-serializes-expressionsliterallttgt-datetimes-differently-now-breaks-custom-xaml-parsers"></a>WF serializace výrazy. literály T literály se &lt; &gt; teď liší (přerušují vlastní analyzátory XAML).
 
-|   |   |
-|---|---|
-|Podrobnosti|Přidružené <xref:System.Windows.Markup.ValueSerializer> převede objekt <xref:System.DateTime?displayProperty=name> nebo <xref:System.DateTimeOffset?displayProperty=name> jehož druhý objekt a <xref:System.DateTime.Millisecond?displayProperty=name> komponenty jsou nenulové a (pro <xref:System.DateTime?displayProperty=name> hodnotu) jehož <xref:System.DateTime.Kind> vlastnost není property – element Syntaxe namísto řetězce. Tato změna umožňuje <xref:System.DateTime?displayProperty=name> a <xref:System.DateTimeOffset?displayProperty=name> hodnoty round-trip. Vlastní analyzátory XAML, které předpokládají, že vstup XAML je v syntaxi atributu, nebudou pracovat správně.|
-|Doporučení|Tato změna umožňuje <xref:System.DateTime?displayProperty=name> a <xref:System.DateTimeOffset?displayProperty=name> hodnoty round-trip. Vlastní analyzátory XAML, které předpokládají, že vstup XAML je v syntaxi atributu, nebudou pracovat správně.|
-|Scope|Edge|
-|Version|4.5|
-|Type|Modul runtime|
+#### <a name="details"></a>Podrobnosti
+
+Přidružený <xref:System.Windows.Markup.ValueSerializer> objekt převede <xref:System.DateTime?displayProperty=fullName> objekt nebo, <xref:System.DateTimeOffset?displayProperty=fullName> jehož sekunda a <xref:System.DateTime.Millisecond?displayProperty=fullName> komponenty jsou nenulové a (pro <xref:System.DateTime?displayProperty=fullName> hodnotu), jejíž vlastnost není <xref:System.DateTime.Kind> určena pro syntaxi elementu vlastnosti místo řetězce. Tato změna umožňuje <xref:System.DateTime?displayProperty=fullName> , <xref:System.DateTimeOffset?displayProperty=fullName> aby hodnoty a byly kulaté Trip. Vlastní analyzátory XAML, které předpokládají, že vstup XAML je v syntaxi atributu, nebudou pracovat správně.
+
+#### <a name="suggestion"></a>Návrh
+
+Tato změna umožňuje <xref:System.DateTime?displayProperty=fullName> , <xref:System.DateTimeOffset?displayProperty=fullName> aby hodnoty a byly kulaté Trip. Vlastní analyzátory XAML, které předpokládají, že vstup XAML je v syntaxi atributu, nebudou pracovat správně.
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   |Edge|
+|Verze|4.5|
+|Typ|Modul runtime|

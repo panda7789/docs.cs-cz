@@ -1,18 +1,27 @@
 ---
-ms.openlocfilehash: 51691ced3f05201f784ccdeffbc130e34748b7c1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 06c699281c8890ac65be1d282b72b54774acc280
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66379537"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85620101"
 ---
-### <a name="wpf-datatemplate-elements-are-now-visible-to-uia"></a>Jsou nyní viditelné pro UIA elementů WPF DataTemplate
+### <a name="wpf-datatemplate-elements-are-now-visible-to-uia"></a>Prvky WPF DataTemplate jsou teď viditelné pro UIA
 
-|   |   |
-|---|---|
-|Podrobnosti|Dříve <xref:System.Windows.DataTemplate?displayProperty=name> elementy byly neviditelná pro automatizaci uživatelského rozhraní. Počínaje 4.5, automatizace uživatelského rozhraní se rozpoznat tyto prvky. To je užitečné v mnoha případech ale může dojít k narušení testy, které jsou závislé na stromu UIA neobsahující <xref:System.Windows.DataTemplate?displayProperty=name> elementy.|
-|Doporučení|Testy automatizace uživatelského rozhraní pro tuto aplikaci může být nutné aktualizovat, aby se zohlednily stromu UIA nyní včetně dříve neviditelné <xref:System.Windows.DataTemplate?displayProperty=name> elementy. Testy, které očekávají některých prvků bude vedle sebe mohou nyní nutné očekávat dříve neviditelné prvky UIA mezi. Nebo testy, které spoléhají na určité počty nebo indexů pro prvky UIA možná bude nutné aktualizovat s novými hodnotami.|
-|Scope|Edge|
-|Version|4.5|
-|Type|Modul runtime|
-|Ovlivněná rozhraní API|<ul><li><xref:System.Windows.DataTemplate.%23ctor?displayProperty=nameWithType></li><li><xref:System.Windows.DataTemplate.%23ctor(System.Object)?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a>Podrobnosti
+
+Dříve <xref:System.Windows.DataTemplate?displayProperty=fullName> byly elementy pro automatizaci uživatelského rozhraní neviditelné. Počínaje 4,5 bude automatizace uživatelského rozhraní detekovat tyto prvky. To je užitečné v mnoha případech, ale může přerušit testy závislé na UIA stromech, které neobsahují <xref:System.Windows.DataTemplate?displayProperty=fullName> prvky.
+
+#### <a name="suggestion"></a>Návrh
+
+Testy pro automatizaci uživatelského rozhraní pro tuto aplikaci se možná budou muset aktualizovat na účet UIA stromu hned včetně dříve neviditelných <xref:System.Windows.DataTemplate?displayProperty=fullName> prvků. Například testy, které očekávají, že některé prvky jsou vedle sebe, mohou nyní potřebovat očekávat dříve neviditelné prvky UIA v mezi. Nebo testy, které spoléhají na určité počty nebo indexy pro prvky UIA, mohou vyžadovat aktualizaci novými hodnotami.
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   |Edge|
+|Verze|4.5|
+|Typ|Modul runtime
+
+#### <a name="affected-apis"></a>Ovlivněná rozhraní API
+
+-<xref:System.Windows.DataTemplate.%23ctor></li><li><xref:System.Windows.DataTemplate.%23ctor(System.Object)></li></ul>|

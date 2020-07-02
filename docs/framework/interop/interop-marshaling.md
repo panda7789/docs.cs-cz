@@ -1,17 +1,18 @@
 ---
 title: Zařazování spolupráce
+description: Začínáme s interop marshaling, který určuje, jak jsou data předávána v argumentech metody a návratové hodnoty mezi spravovanou a nespravovanou pamětí během volání.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - marshaling, COM interop
 - interop marshaling
 - interop marshaling, about interop marshaling
 ms.assetid: 115f7a2f-d422-4605-ab36-13a8dd28142a
-ms.openlocfilehash: 70514811a9d236dc485f64fc34297cdb057a1512
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: ca733d59abc4ca3d9d470b054ee9e34b5084ae38
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73124278"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85618971"
 ---
 # <a name="interop-marshaling"></a>Zařazování spolupráce
 
@@ -42,12 +43,12 @@ Model COM má také zařazovací modul, který zařazování dat mezi objekty CO
 
 ### <a name="com-clients-and-managed-servers"></a>Klienti modelu COM a spravované servery
 
-Exportovaný spravovaný server s knihovnou typů zaregistrovanou modulem [Regasm. exe (nástroj registrace sestavení)](../tools/regasm-exe-assembly-registration-tool.md) má položku `ThreadingModel` registru nastavenou na `Both`. Tato hodnota indikuje, že server může být aktivovaný v prostředí STA (Single-threaded Apartment) nebo v modelu MTA (Apartment). Objekt serveru je vytvořen ve stejném typu Apartment jako jeho volající, jak je znázorněno v následující tabulce:
+Exportovaný spravovaný server s knihovnou typů zaregistrovanou [Regasm.exe (nástroj registrace sestavení)](../tools/regasm-exe-assembly-registration-tool.md) má `ThreadingModel` položku registru nastavenou na `Both` . Tato hodnota indikuje, že server může být aktivovaný v prostředí STA (Single-threaded Apartment) nebo v modelu MTA (Apartment). Objekt serveru je vytvořen ve stejném typu Apartment jako jeho volající, jak je znázorněno v následující tabulce:
 
 |Klient modelu COM|Server .NET|Požadavky zařazování|
 |----------------|-----------------|-----------------------------|
 |REŽIMU|`Both`Vytvoří STA.|Zařazování do stejného typu apartment.|
-|Agent|`Both`se staly MTA.|Zařazování do stejného typu apartment.|
+|MTA|`Both`se staly MTA.|Zařazování do stejného typu apartment.|
 
 Vzhledem k tomu, že klient a Server jsou ve stejném typu apartment, služba interop marshaling automaticky zpracovává všechna zařazování dat. Následující ilustrace znázorňuje interop marshaling službu, která je provozována mezi spravovanými a nespravovanými haldami v rámci stejného typu Apartment ve stylu COM.
 
@@ -57,14 +58,14 @@ Pokud plánujete exportovat spravovaný server, uvědomte si, že klient COM ur�
 
 ### <a name="managed-clients-and-com-servers"></a>Spravované klienty a servery COM
 
-Výchozím nastavením pro objekty Apartment spravovaného klienta je MTA; Typ aplikace klienta .NET však může změnit výchozí nastavení. Například Visual Basic nastavení klienta Apartment je STA. Pro kontrolu a změnu <xref:System.STAThreadAttribute?displayProperty=nameWithType>nastavení bytu <xref:System.MTAThreadAttribute?displayProperty=nameWithType>spravovaného <xref:System.Threading.Thread.ApartmentState%2A?displayProperty=nameWithType> klienta můžete použít <xref:System.Web.UI.Page.AspCompatMode%2A?displayProperty=nameWithType> vlastnost,, vlastnost nebo vlastnost.
+Výchozím nastavením pro objekty Apartment spravovaného klienta je MTA; Typ aplikace klienta .NET však může změnit výchozí nastavení. Například Visual Basic nastavení klienta Apartment je STA. <xref:System.STAThreadAttribute?displayProperty=nameWithType> <xref:System.MTAThreadAttribute?displayProperty=nameWithType> <xref:System.Threading.Thread.ApartmentState%2A?displayProperty=nameWithType> <xref:System.Web.UI.Page.AspCompatMode%2A?displayProperty=nameWithType> Pro kontrolu a změnu nastavení bytu spravovaného klienta můžete použít vlastnost,, vlastnost nebo vlastnost.
 
 Autor komponenty nastaví spřažení vlákna pro server COM. V následující tabulce jsou uvedeny kombinace nastavení bytu pro klienty rozhraní .NET a servery COM. Zobrazuje také výsledné požadavky na zařazování pro kombinace.
 
 |Klient .NET|Server COM|Požadavky zařazování|
 |-----------------|----------------|-----------------------------|
-|MTA (výchozí)|Agent<br /><br /> REŽIMU|Zařazování Interop.<br /><br /> Interoperabilita a zařazování modelu COM.|
-|REŽIMU|Agent<br /><br /> REŽIMU|Interoperabilita a zařazování modelu COM.<br /><br /> Zařazování Interop.|
+|MTA (výchozí)|MTA<br /><br /> REŽIMU|Zařazování Interop.<br /><br /> Interoperabilita a zařazování modelu COM.|
+|REŽIMU|MTA<br /><br /> REŽIMU|Interoperabilita a zařazování modelu COM.<br /><br /> Zařazování Interop.|
 
 Pokud jsou spravovaný klient a nespravovaný Server ve stejném typu apartment, služba interop marshaling zpracovává všechna zařazování dat. Pokud je ale klient a server inicializovaný v různých podsystémech, vyžaduje se také zařazování COM. Následující ilustrace znázorňuje prvky volání křížového typu:
 
@@ -122,7 +123,7 @@ Některé nespravované volání lze přesměrovat prostřednictvím protokolu S
 |[Výchozí chování zařazování](default-marshaling-behavior.md)|Popisuje pravidla, která služba interop marshaling používá k zařazování dat.|
 |[Zařazování dat s voláním platformy](marshaling-data-with-platform-invoke.md)|Popisuje, jak deklarovat parametry metody a předávat argumenty funkcím exportovaným nespravovanými knihovnami.|
 |[Zařazování dat se spoluprací COM](marshaling-data-with-com-interop.md)|Popisuje, jak přizpůsobit obálky modelu COM pro změnu chování při zařazování.|
-|[Postup: Migrace spravovaného kódu DCOM do WCF](how-to-migrate-managed-code-dcom-to-wcf.md)|Popisuje, jak migrovat z modelu DCOM na WCF.|
+|[Postupy: Migrace spravovaného kódu DCOM do WCF](how-to-migrate-managed-code-dcom-to-wcf.md)|Popisuje, jak migrovat z modelu DCOM na WCF.|
 |[Postupy: Mapování výsledků HRESULT a výjimek](how-to-map-hresults-and-exceptions.md)|Popisuje, jak namapovat vlastní výjimky na HRESULTs a poskytuje úplné mapování z každého HRESULT na jeho srovnatelnou třídu výjimek v .NET Framework.|
 |[Spolupráce pomocí obecných typů](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms229590(v=vs.100))|Popisuje, které akce jsou podporovány při použití obecných typů pro interoperabilitu modelu COM.|
 |[Spolupráce s nespravovaným kódem](index.md)|Popisuje služby vzájemné funkční spolupráce poskytované modulem CLR (Common Language Runtime).|

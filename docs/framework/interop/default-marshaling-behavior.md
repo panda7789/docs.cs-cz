@@ -1,5 +1,6 @@
 ---
 title: Výchozí chování zařazování
+description: Seznamte se s výchozím chováním zařazování v .NET. Projděte si správu paměti pomocí interop marshaling a podívejte se na výchozí zařazování pro třídy, delegáty a typy hodnot.
 ms.date: 06/26/2018
 dev_langs:
 - csharp
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - interoperation with unmanaged code, marshaling
 - marshaling behavior
 ms.assetid: c0a9bcdf-3df8-4db3-b1b6-abbdb2af809a
-ms.openlocfilehash: f7df323dacfbee3361fe75d831f1e87df328b194
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+ms.openlocfilehash: 0469874d016725eb6423bb8453e9657b2be923d4
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80989217"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85618568"
 ---
 # <a name="default-marshaling-behavior"></a>Výchozí chování zařazování
 Zařazování Interop funguje s pravidly, která určují, jak se data přidružená k parametrům metody chovají při průchodu mezi spravovanou a nespravovanou pamětí. Tato Vestavěná pravidla řídí tyto aktivity zařazování jako transformace datových typů, ať už volaný může změnit předaných dat a vracet tyto změny volajícímu a za kterých okolnosti zařazování poskytuje optimalizace výkonu.  
@@ -37,9 +38,9 @@ BSTR MethodOne (BSTR b) {
 }  
 ```  
   
- Pokud však definujete metodu jako prototyp vyvolání platformy, nahraďte každý typ **BSTR** <xref:System.String> typem a voláním `MethodOne`, modul CLR (Common Language Runtime) se pokusí uvolnit `b` dvakrát. Chování zařazování lze změnit pomocí <xref:System.IntPtr> typů namísto **řetězcových** typů.  
+ Pokud však definujete metodu jako prototyp vyvolání platformy, nahraďte každý typ **BSTR** <xref:System.String> typem a voláním `MethodOne` , modul CLR (Common Language Runtime) se pokusí uvolnit `b` dvakrát. Chování zařazování lze změnit pomocí <xref:System.IntPtr> typů namísto **řetězcových** typů.  
   
- Modul runtime vždy používá metodu **CoTaskMemFree** k uvolnění paměti. Pokud paměť, se kterou pracujete, nebyla přidělena pomocí metody **CoTaskMemAlloc** , musíte použít **IntPtr** a uvolnit paměť ručně pomocí vhodné metody. Podobně se můžete vyhnout automatickému uvolňování paměti v situacích, kdy by paměť neměla být nikdy uvolněna, například při použití funkce **GetCommandLine** z Kernel32. dll, která vrací ukazatel na paměť jádra. Podrobnosti o ručním uvolnění paměti najdete v [ukázce vyrovnávací paměti](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/x3txb6xc(v=vs.100)).  
+ Modul runtime vždy používá metodu **CoTaskMemFree** k uvolnění paměti. Pokud paměť, se kterou pracujete, nebyla přidělena pomocí metody **CoTaskMemAlloc** , musíte použít **IntPtr** a uvolnit paměť ručně pomocí vhodné metody. Podobně se můžete vyhnout automatickému uvolňování paměti v situacích, kdy by se paměť nikdy neuvolnila, například při použití funkce **GetCommandLine** z Kernel32.dll, která vrací ukazatel na paměť jádra. Podrobnosti o ručním uvolnění paměti najdete v [ukázce vyrovnávací paměti](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/x3txb6xc(v=vs.100)).  
   
 ## <a name="default-marshaling-for-classes"></a>Výchozí zařazování pro třídy  
  Třídy lze zařadit pouze pomocí zprostředkovatele komunikace s objekty COM a jsou vždy zařazeny jako rozhraní. V některých případech je rozhraní použité k zařazení třídy známé jako rozhraní třídy. Informace o přepsání rozhraní třídy s rozhraním dle vašeho výběru naleznete v tématu [Představujeme rozhraní třídy](../../standard/native-interop/com-callable-wrapper.md#introducing-the-class-interface).  
@@ -75,7 +76,7 @@ BSTR MethodOne (BSTR b) {
   
 - U zprostředkovatele komunikace s objekty COM je delegát zařazen jako rozhraní COM typu **_Delegate** ve výchozím nastavení. Rozhraní **_Delegate** je definováno v knihovně typů mscorlib. tlb a obsahuje <xref:System.Delegate.DynamicInvoke%2A?displayProperty=nameWithType> metodu, která umožňuje zavolat metodu, na kterou odkazuje delegát.  
   
- V následující tabulce jsou uvedeny možnosti zařazování pro datový typ spravovaného delegáta. <xref:System.Runtime.InteropServices.MarshalAsAttribute> Atribut poskytuje několik <xref:System.Runtime.InteropServices.UnmanagedType> hodnot výčtu pro zařazení delegátů.  
+ V následující tabulce jsou uvedeny možnosti zařazování pro datový typ spravovaného delegáta. <xref:System.Runtime.InteropServices.MarshalAsAttribute>Atribut poskytuje několik <xref:System.Runtime.InteropServices.UnmanagedType> hodnot výčtu pro zařazení delegátů.  
   
 |Typ výčtu|Popis nespravovaného formátu|  
 |----------------------|-------------------------------------|  
@@ -112,12 +113,12 @@ interface DelegateTest : IDispatch {
   
  Na ukazatel na funkci lze odkázat stejným způsobem, jako jakýkoli jiný nespravovaný ukazatel na funkci lze odkázat.  
 
-V tomto příkladu, když jsou dva Delegáti zařazeni jako <xref:System.Runtime.InteropServices.UnmanagedType.FunctionPtr?displayProperty=nameWithType>, výsledek je `int` a ukazatel na `int`. Vzhledem k tomu, že typy delegátů `int` jsou zařazeny, zde představuje ukazatel na`void*`typ void (), což je adresa delegáta v paměti. Jinými slovy, tento výsledek je specifický pro 32 systémy Windows, protože `int` tady představuje velikost ukazatele na funkci.
+V tomto příkladu, když jsou dva Delegáti zařazeni jako <xref:System.Runtime.InteropServices.UnmanagedType.FunctionPtr?displayProperty=nameWithType> , výsledek je `int` a ukazatel na `int` . Vzhledem k tomu, že typy delegátů jsou zařazeny, `int` zde představuje ukazatel na typ void ( `void*` ), což je adresa delegáta v paměti. Jinými slovy, tento výsledek je specifický pro 32 systémy Windows, protože `int` tady představuje velikost ukazatele na funkci.
 
 > [!NOTE]
 > Odkaz na ukazatel funkce na spravovaný delegát, který uchovává nespravovaný kód, nebrání modulu Common Language Runtime v provádění uvolňování paměti ve spravovaném objektu.  
   
- Například následující `cb` kód je nesprávný, protože odkaz na objekt, který je předán `SetChangeHandler` metodě, nezůstane `cb` po dobu životnosti `Test` metody aktivní. Jakmile je `cb` objekt uvolněn z paměti, ukazatel funkce předaný do `SetChangeHandler` již není platný.  
+ Například následující kód je nesprávný, protože odkaz na `cb` objekt, který je předán `SetChangeHandler` metodě, nezůstane `cb` po dobu životnosti `Test` metody aktivní. Jakmile `cb` je objekt uvolněn z paměti, ukazatel funkce předaný do již `SetChangeHandler` není platný.  
   
 ```csharp  
 public class ExternalAPI {  
@@ -140,7 +141,7 @@ internal class DelegateTest {
 }  
 ```  
   
- Aby bylo možné kompenzovat neočekávané uvolňování paměti, volající musí zajistit `cb` , že objekt zůstane aktivní, dokud se nepoužívá ukazatel nespravované funkce. V případě potřeby může být nespravovaný kód upozorněn na spravovaný kód, pokud ukazatel na funkci již není potřeba, jak ukazuje následující příklad.  
+ Aby bylo možné kompenzovat neočekávané uvolňování paměti, volající musí zajistit, že `cb` objekt zůstane aktivní, dokud se nepoužívá ukazatel nespravované funkce. V případě potřeby může být nespravovaný kód upozorněn na spravovaný kód, pokud ukazatel na funkci již není potřeba, jak ukazuje následující příklad.  
   
 ```csharp  
 internal class DelegateTest {  
@@ -170,7 +171,7 @@ internal class DelegateTest {
   
  Kromě popisných formátovaných typů toto téma identifikuje [typy systémových hodnot](#system-value-types) , které mají neobvyklé chování při zařazování.  
   
- Zformátovaný typ je komplexní typ, který obsahuje informace, které explicitně řídí rozložení jeho členů v paměti. Informace o rozložení členů jsou k dispozici <xref:System.Runtime.InteropServices.StructLayoutAttribute> pomocí atributu. Rozložení může být jedna z následujících <xref:System.Runtime.InteropServices.LayoutKind> hodnot výčtu:  
+ Zformátovaný typ je komplexní typ, který obsahuje informace, které explicitně řídí rozložení jeho členů v paměti. Informace o rozložení členů jsou k dispozici pomocí <xref:System.Runtime.InteropServices.StructLayoutAttribute> atributu. Rozložení může být jedna z následujících <xref:System.Runtime.InteropServices.LayoutKind> hodnot výčtu:  
   
 - **LayoutKind. auto**  
   
@@ -185,7 +186,7 @@ internal class DelegateTest {
      Označuje, že jsou členové rozloženi podle <xref:System.Runtime.InteropServices.FieldOffsetAttribute> zadaného pole.  
   
 ### <a name="value-types-used-in-platform-invoke"></a>Typy hodnot používané při vyvolání platformy  
- V následujícím příkladu typy `Point` a `Rect` poskytují informace o rozložení členů pomocí **StructLayoutAttribute**.  
+ V následujícím příkladu `Point` `Rect` typy a poskytují informace o rozložení členů pomocí **StructLayoutAttribute**.  
   
 ```vb  
 Imports System.Runtime.InteropServices  
@@ -218,7 +219,7 @@ public struct Rect {
 }  
 ```  
   
- Při zařazení do nespravovaného kódu jsou tyto formátované typy zařazeny jako struktury ve stylu jazyka C. To poskytuje snadný způsob volání nespravovaného rozhraní API, které má argumenty struktury. Například struktury `POINT` a `RECT` lze předat funkci **PtInRect** rozhraní API systému Microsoft Windows následujícím způsobem:  
+ Při zařazení do nespravovaného kódu jsou tyto formátované typy zařazeny jako struktury ve stylu jazyka C. To poskytuje snadný způsob volání nespravovaného rozhraní API, které má argumenty struktury. Například `POINT` `RECT` struktury a lze předat funkci **PtInRect** rozhraní API systému Microsoft Windows následujícím způsobem:  
   
 ```cpp  
 BOOL PtInRect(const RECT *lprc, POINT pt);  
@@ -241,7 +242,7 @@ internal static class NativeMethods
 }
 ```
   
- Typ `Rect` hodnoty musí být předán odkazem, protože NESPRAVOVANÉ rozhraní API očekává ukazatel na objekt `RECT` , který má být předán funkci. Typ `Point` hodnoty je předán podle hodnoty, protože NESPRAVOVANÉ rozhraní API očekává `POINT` , že má být předán do zásobníku. Tento drobný rozdíl je velmi důležitý. Odkazy jsou předány nespravovanému kódu jako ukazatelé. Hodnoty jsou předány nespravovanému kódu v zásobníku.  
+ `Rect`Typ hodnoty musí být předán odkazem, protože nespravované rozhraní API očekává ukazatel na objekt, `RECT` který má být předán funkci. `Point`Typ hodnoty je předán podle hodnoty, protože nespravované rozhraní API očekává, že má `POINT` být předán do zásobníku. Tento drobný rozdíl je velmi důležitý. Odkazy jsou předány nespravovanému kódu jako ukazatelé. Hodnoty jsou předány nespravovanému kódu v zásobníku.  
   
 > [!NOTE]
 > Při zařazování formátovaného typu jako struktury jsou k dispozici pouze pole v rámci tohoto typu. Pokud typ obsahuje metody, vlastnosti nebo události, jsou nepřístupné z nespravovaného kódu.  
@@ -251,7 +252,7 @@ internal static class NativeMethods
 > [!NOTE]
 > Pokud typ odkazu obsahuje členy nepřenositelného typu, je převod požadován dvakrát: při prvním předání argumentu na nespravovanou stranu a při návratu z volání. Z důvodu těchto přidaných režijních nákladů musí být parametry nebo výstupy explicitně aplikovány na argument, pokud volající chce zobrazit změny provedené volaným.  
   
- V následujícím příkladu má `SystemTime` třída sekvenční rozložení členů a může být předána funkci **GetSystemTime** rozhraní API systému Windows.  
+ V následujícím příkladu `SystemTime` má třída sekvenční rozložení členů a může být předána funkci **GetSystemTime** rozhraní API systému Windows.  
   
 ```vb  
 <StructLayout(LayoutKind.Sequential)> Public Class SystemTime  
@@ -303,9 +304,9 @@ internal static class NativeMethods
 }
 ```
   
- Všimněte si, `SystemTime` že argument není zadán jako argument odkazu, protože `SystemTime` je třída, nikoli typ hodnoty. Na rozdíl od hodnotových typů jsou třídy vždy předány odkazem.  
+ Všimněte si, že `SystemTime` argument není zadán jako argument odkazu, protože `SystemTime` je třída, nikoli typ hodnoty. Na rozdíl od hodnotových typů jsou třídy vždy předány odkazem.  
   
- Následující příklad kódu ukazuje jinou `Point` třídu, která má metodu s názvem. `SetXY` Vzhledem k tomu, že typ má sekvenční rozložení, lze jej předat nespravovanému kódu a zařadit jako strukturu. `SetXY` Člen však nelze volat z nespravovaného kódu, i když je objekt předán odkazem.  
+ Následující příklad kódu ukazuje jinou `Point` třídu, která má metodu s názvem `SetXY` . Vzhledem k tomu, že typ má sekvenční rozložení, lze jej předat nespravovanému kódu a zařadit jako strukturu. `SetXY`Člen však nelze volat z nespravovaného kódu, i když je objekt předán odkazem.  
   
 ```vb  
 <StructLayout(LayoutKind.Sequential)> Public Class Point  
@@ -329,7 +330,7 @@ public class Point {
 ```  
   
 ### <a name="value-types-used-in-com-interop"></a>Typy hodnot používané při zprostředkovateli komunikace s objekty COM  
- Naformátované typy lze také předat voláním metody spolupráce modelu COM. Ve skutečnosti platí, že při exportu do knihovny typů jsou typy hodnot automaticky převedeny na struktury. Jak ukazuje následující příklad, typ `Point` hodnoty se stal definicí typu (typedef) s názvem. `Point` Všechny odkazy na typ `Point` hodnoty jinde v knihovně typů jsou nahrazeny `Point` definicí typedef.  
+ Naformátované typy lze také předat voláním metody spolupráce modelu COM. Ve skutečnosti platí, že při exportu do knihovny typů jsou typy hodnot automaticky převedeny na struktury. Jak ukazuje následující příklad, `Point` typ hodnoty se stal definicí typu (typedef) s názvem `Point` . Všechny odkazy na `Point` typ hodnoty jinde v knihovně typů jsou nahrazeny `Point` definicí typedef.  
   
  **Reprezentace knihovny typů**  
   
@@ -346,13 +347,13 @@ interface _Graphics {
 }  
 ```  
   
- Stejná pravidla, která se používají k zařazování hodnot a odkazů na volání vyvolání platformy, se používají při zařazování přes rozhraní COM. Například když je instance typu `Point` hodnoty předána z .NET Framework do modelu COM, `Point` je předána hodnotou. Pokud je `Point` typ hodnoty předán pomocí odkazu, ukazatel na objekt `Point` je předán do zásobníku. Zařazovací modul Interop nepodporuje v obou směrech vyšší úroveň dereference (**Point** \* \*).  
+ Stejná pravidla, která se používají k zařazování hodnot a odkazů na volání vyvolání platformy, se používají při zařazování přes rozhraní COM. Například když `Point` je instance typu hodnoty předána z .NET Framework do modelu COM, `Point` je předána hodnotou. Pokud `Point` je typ hodnoty předán pomocí odkazu, ukazatel na objekt `Point` je předán do zásobníku. Zařazovací modul Interop nepodporuje**Point** \* \* v obou směrech vyšší úroveň dereference (Point).  
   
 > [!NOTE]
-> Struktury s hodnotou <xref:System.Runtime.InteropServices.LayoutKind> výčtu nastavenou na hodnotu **Explicit** nelze použít v zprostředkovatele komunikace s objekty COM, protože exportovaná knihovna typů nemůže vyjádřit explicitní rozložení.  
+> Struktury s <xref:System.Runtime.InteropServices.LayoutKind> hodnotou výčtu nastavenou na hodnotu **Explicit** nelze použít v zprostředkovatele komunikace s objekty COM, protože exportovaná knihovna typů nemůže vyjádřit explicitní rozložení.  
   
 ### <a name="system-value-types"></a>Typy systémových hodnot  
- <xref:System> Obor názvů má několik typů hodnot, které reprezentují zabalený formát primitivních typů modulu runtime. Například struktura typu <xref:System.Int32?displayProperty=nameWithType> hodnoty představuje podobu v podobě pole **ELEMENT_TYPE_I4**. Namísto zařazování těchto typů jako struktur, jako jiné formátované typy, jste je zařadíi stejným způsobem jako primitivní typy, které jsou v poli. Hodnota **System. Int32** je proto zařazena jako **ELEMENT_TYPE_I4** namísto struktury obsahující jednoho člena typu **Long**. Následující tabulka obsahuje seznam typů hodnot v oboru názvů **System** , které jsou zabaleny do reprezentace primitivních typů.  
+ <xref:System>Obor názvů má několik typů hodnot, které reprezentují zabalený formát primitivních typů modulu runtime. Například struktura typu hodnoty <xref:System.Int32?displayProperty=nameWithType> představuje podobu v podobě pole **ELEMENT_TYPE_I4**. Namísto zařazování těchto typů jako struktur, jako jiné formátované typy, jste je zařadíi stejným způsobem jako primitivní typy, které jsou v poli. Hodnota **System. Int32** je proto zařazena jako **ELEMENT_TYPE_I4** namísto struktury obsahující jednoho člena typu **Long**. Následující tabulka obsahuje seznam typů hodnot v oboru názvů **System** , které jsou zabaleny do reprezentace primitivních typů.  
   
 |Typ systémové hodnoty|Typ elementu|  
 |-----------------------|------------------|  
@@ -437,7 +438,7 @@ interface IValueTypes : IDispatch {
 };  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Přenositelné a nepřenositelné typy](blittable-and-non-blittable-types.md)
 - [Kopírování a přichycování](copying-and-pinning.md)

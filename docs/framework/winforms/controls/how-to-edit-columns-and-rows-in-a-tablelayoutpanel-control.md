@@ -1,5 +1,6 @@
 ---
 title: 'Postupy: Upravování sloupců a řádků v ovládacím prvku TableLayoutPanel'
+description: Naučte se, jak používat dialogové okno Styly sloupců a řádků pro úpravu řádků a sloupců ovládacích prvků model Windows Forms.
 ms.date: 03/30/2017
 f1_keywords:
 - net.ComponentModel.StyleCollectionEditor
@@ -8,27 +9,27 @@ helpviewer_keywords:
 - TableLayoutPanel control [Windows Forms], editing
 - rows [Windows Forms], editing
 ms.assetid: c367ed43-40dc-49eb-9e0f-ba70e83dfec0
-ms.openlocfilehash: 4473b20eea57088104a51eb1b6c080219223d214
-ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
+ms.openlocfilehash: cfd2ca4be5d5a2658a9a129d911f1dba9670ccfd
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77628641"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619348"
 ---
 # <a name="how-to-edit-columns-and-rows-in-a-tablelayoutpanel-control"></a>Postupy: Upravování sloupců a řádků v ovládacím prvku TableLayoutPanel
 
-Editor kolekce ovládacího prvku <xref:System.Windows.Forms.TableLayoutPanel>, který se nazývá dialogové okno **styly sloupců a řádků** , lze použít k úpravě řádků a sloupců ovládacích prvků.
+Můžete použít Editor kolekce <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku, označovaný jako dialogové okno **styly sloupců a řádků** , chcete-li upravit řádky a sloupce ovládacích prvků.
 
 > [!NOTE]
-> Chcete-li, aby byl ovládací prvek rozložen na více řádků nebo sloupců, nastavte `RowSpan` a vlastnosti `ColumnSpan` ovládacího prvku. Další informace naleznete v tématu [Návod: uspořádání ovládacích prvků na model Windows Forms pomocí kontejneru TableLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md).
+> Chcete-li, aby ovládací prvek zahrnoval více řádků nebo sloupců, nastavte `RowSpan` `ColumnSpan` vlastnosti a na ovládacím prvku. Další informace naleznete v tématu [Návod: uspořádání ovládacích prvků na model Windows Forms pomocí kontejneru TableLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md).
 >
-> Pokud chcete ovládací prvek v rámci buňky zarovnat, nebo pokud chcete, aby se ovládací prvek roztáhnou v rámci buňky, použijte vlastnost <xref:System.Windows.Forms.Control.Anchor%2A> ovládacího prvku. Další informace naleznete v tématu [Návod: uspořádání ovládacích prvků na model Windows Forms pomocí kontejneru TableLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md).
+> Chcete-li zarovnat ovládací prvek v rámci buňky, nebo pokud chcete, aby se ovládací prvek roztáhl v rámci buňky, použijte vlastnost ovládacího prvku <xref:System.Windows.Forms.Control.Anchor%2A> . Další informace naleznete v tématu [Návod: uspořádání ovládacích prvků na model Windows Forms pomocí kontejneru TableLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md).
 
 ## <a name="to-edit-rows-and-columns"></a>Úprava řádků a sloupců
 
-1. Přetáhněte ovládací prvek <xref:System.Windows.Forms.TableLayoutPanel> z **panelu nástrojů** do formuláře.
+1. Přetáhněte <xref:System.Windows.Forms.TableLayoutPanel> ovládací prvek z **panelu nástrojů** do formuláře.
 
-2. Klikněte na piktogram akcí návrháře <xref:System.Windows.Forms.TableLayoutPanel> (![malé černé šipky](./media/designer-actions-glyph.gif)) a výběrem možnosti **Upravit řádky a sloupce** otevřete dialogové okno **styly sloupců a řádků** . Můžete také kliknout pravým tlačítkem myši na ovládací prvek <xref:System.Windows.Forms.TableLayoutPanel> a vybrat možnost **Upravit řádky a sloupce** z místní nabídky.
+2. Klikněte na <xref:System.Windows.Forms.TableLayoutPanel> glyf akcí ovládacího prvku ( ![ malá černá šipka ](./media/designer-actions-glyph.gif) ) a vyberte **Upravit řádky a sloupce** . otevře se dialogové okno **styly sloupců a řádků** . Můžete také kliknout pravým tlačítkem myši na <xref:System.Windows.Forms.TableLayoutPanel> ovládací prvek a vybrat možnost **Upravit řádky a sloupce** z místní nabídky.
 
 3. Chcete-li přidat nebo odebrat sloupce, vyberte **sloupce** z rozevíracího seznamu **typ člena** .
 
@@ -42,7 +43,7 @@ Editor kolekce ovládacího prvku <xref:System.Windows.Forms.TableLayoutPanel>, 
 
 8. Chcete-li odebrat řádek nebo sloupec, klikněte na tlačítko **Odebrat** a odstraňte aktuálně vybranou položku v seznamu **členů** .
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Forms.SizeType>
-- [Ovládací prvek TableLayoutPanel](tablelayoutpanel-control-windows-forms.md)
+- [TableLayoutPanel – ovládací prvek](tablelayoutpanel-control-windows-forms.md)

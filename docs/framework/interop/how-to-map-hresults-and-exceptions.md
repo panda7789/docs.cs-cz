@@ -1,5 +1,6 @@
 ---
 title: 'Postupy: Mapování výsledků HRESULT a výjimek'
+description: Přečtěte si, jak namapovat hodnoty HRESULT vracené z metod modelu COM na výjimky vyvolané metodami .NET. Modul runtime zpracovává přechod mezi COM a .NET.
 ms.date: 03/30/2017
 dev_langs:
 - cpp
@@ -11,12 +12,12 @@ helpviewer_keywords:
 - COM interop, HRESULTs
 - COM interop, exceptions
 ms.assetid: 610b364b-2761-429d-9c4a-afbc3e66f1b9
-ms.openlocfilehash: e186228d1dc9a42ddfe92428f7dfad29a5789095
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 827e79bdefcde7ae94567e5341ade76097dc8eaa
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79181396"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619101"
 ---
 # <a name="how-to-map-hresults-and-exceptions"></a>Postupy: Mapování výsledků HRESULT a výjimek
 Metody modelu COM hlásí chyby vrácením hodnoty HRESULTs; metody rozhraní .NET hlásí je vyvoláním výjimek. Modul runtime zpracovává přechod mezi dvěma. Každá třída výjimky v .NET Framework se mapuje na HRESULT.  
@@ -25,11 +26,11 @@ Metody modelu COM hlásí chyby vrácením hodnoty HRESULTs; metody rozhraní .N
   
  Pokud vytvoříte třídu, která rozšiřuje **System. Exception**, je nutné nastavit pole HRESULT během konstrukce. V opačném případě základní třída přiřadí hodnotu HRESULT. Nové třídy výjimek lze namapovat na existující hodnotu HRESULT tím, že zadáte hodnotu v konstruktoru výjimky.  
   
- Všimněte si, že modul runtime někdy ignoruje `HRESULT` v případech, kde se `IErrorInfo` nachází ve vlákně.  K tomuto chování může dojít v případech, `HRESULT` kdy a `IErrorInfo` nepředstavuje stejnou chybu.  
+ Všimněte si, že modul runtime někdy ignoruje `HRESULT` v případech, kde se nachází `IErrorInfo` ve vlákně.  K tomuto chování může dojít v případech, kdy `HRESULT` a `IErrorInfo` nepředstavuje stejnou chybu.  
   
 ### <a name="to-create-a-new-exception-class-and-map-it-to-an-hresult"></a>Chcete-li vytvořit novou třídu výjimky a namapovat ji na HRESULT  
   
-1. Pomocí následujícího kódu vytvořte novou třídu výjimky `NoAccessException` a namapujte ji na HRESULT. `E_ACCESSDENIED`  
+1. Pomocí následujícího kódu vytvořte novou třídu výjimky `NoAccessException` a namapujte ji na HRESULT `E_ACCESSDENIED` .  
   
     ```cpp  
     Class NoAccessException : public ApplicationException  
@@ -126,7 +127,7 @@ CMyClass::MethodThatThrows
   
  Pokud objekt modelu COM nepodporuje **IErrorInfo**, modul runtime inicializuje objekt výjimky s výchozími hodnotami. V následující tabulce jsou uvedena jednotlivá pole přidružená k objektu výjimky a určuje zdroj výchozích informací, když objekt COM podporuje **IErrorInfo**.  
   
- Všimněte si, že modul runtime někdy ignoruje `HRESULT` v případech, kde se `IErrorInfo` nachází ve vlákně.  K tomuto chování může dojít v případech, `HRESULT` kdy a `IErrorInfo` nepředstavuje stejnou chybu.  
+ Všimněte si, že modul runtime někdy ignoruje `HRESULT` v případech, kde se nachází `IErrorInfo` ve vlákně.  K tomuto chování může dojít v případech, kdy `HRESULT` a `IErrorInfo` nepředstavuje stejnou chybu.  
   
 |Pole výjimky|Zdroj informací z modelu COM|  
 |---------------------|------------------------------------|  
@@ -140,7 +141,7 @@ CMyClass::MethodThatThrows
   
  Pole výjimek, jako je například **zpráva**, **zdroj**a **trasování zásobníku** , nejsou pro **StackOverflowException**k dispozici.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Pokročilá interoperabilita modelu COM](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bd9cdfyx(v=vs.100))
 - [Výjimky](../../standard/exceptions/index.md)

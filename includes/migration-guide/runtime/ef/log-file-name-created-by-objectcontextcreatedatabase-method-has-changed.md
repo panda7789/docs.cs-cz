@@ -1,18 +1,27 @@
 ---
-ms.openlocfilehash: cf1a8169351e29c18d85303fb32d4394877448f4
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: 768a948849064cedb38110f5ed271717442325c0
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59803713"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85620020"
 ---
-### <a name="log-file-name-created-by-the-objectcontextcreatedatabase-method-has-changed-to-match-sql-server-specifications"></a>Změnil se název souboru protokolu vytvořené metodou ObjectContext.CreateDatabase tak, aby odpovídaly specifikace serveru SQL Server
+### <a name="log-file-name-created-by-the-objectcontextcreatedatabase-method-has-changed-to-match-sql-server-specifications"></a>Název souboru protokolu vytvořený metodou ObjectContext. CreateDatabase se změnil tak, aby odpovídal SQL Server specifikacím.
 
-|   |   |
-|---|---|
-|Podrobnosti|Když <xref:System.Data.Objects.ObjectContext.CreateDatabase?displayProperty=name> metoda je volána buď přímo nebo pomocí Code First se zprostředkovatelem SqlClient a je hodnota AttachDBFilename připojovacího řetězce, vytvoří soubor protokolu s názvem filename_log.ldf místo filename.ldf (kde název_souboru je název soubor určený hodnotou AttachDBFilename). Tato změna zlepšuje ladění poskytnutím souboru protokolu s názvem podle specifikace serveru SQL Server.|
-|Doporučení|Pokud název souboru protokolu je důležité pro aplikace, aplikace se musí aktualizovat můžete očekávat formát názvu souboru standardní _log.ldf.|
-|Rozsah|Edge|
-|Version|4.5|
-|Type|Modul runtime|
-|Ovlivněná rozhraní API|<ul><li><xref:System.Data.Objects.ObjectContext.CreateDatabase?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a>Podrobnosti
+
+Pokud <xref:System.Data.Objects.ObjectContext.CreateDatabase?displayProperty=fullName> je metoda volána přímo nebo pomocí Code First se zprostředkovatelem SqlClient a hodnotou AttachDBFilename v připojovacím řetězci, vytvoří soubor protokolu s názvem filename_log. ldf namísto filename. ldf (kde filename je název souboru určeného hodnotou AttachDBFilename). Tato změna zlepšuje ladění poskytnutím souboru protokolu s názvem podle specifikace serveru SQL Server.
+
+#### <a name="suggestion"></a>Návrh
+
+Pokud je název souboru protokolu pro aplikaci důležitý, měla by být aplikace aktualizována tak, aby byla očekávána standardní _log formát názvu souboru. ldf.
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   |Edge|
+|Verze|4.5|
+|Typ|Modul runtime
+
+#### <a name="affected-apis"></a>Ovlivněná rozhraní API
+
+-<xref:System.Data.Objects.ObjectContext.CreateDatabase?displayProperty=nameWithType></li></ul>|

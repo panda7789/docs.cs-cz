@@ -2,12 +2,12 @@
 title: 'Asynchronní programování v jazyce C #'
 description: Přehled podpory jazyka C# pro asynchronní programování pomocí asynchronního, operátoru await, úlohy a úlohy<T>
 ms.date: 06/04/2020
-ms.openlocfilehash: fbbd08f8c0e650c366ca1d283825e629fcb952d7
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 992ccd3a015653ea9ee13dfc309d47711ad0fca4
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84446427"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619712"
 ---
 # <a name="asynchronous-programming-with-async-and-await"></a>Asynchronní programování pomocí modifikátoru Async a operátoru Await
 
@@ -56,7 +56,7 @@ Pojďme začít aktualizací tohoto kódu, aby vlákno neblokovalo úlohy spušt
 :::code language="csharp" source="snippets/index/AsyncBreakfast-V2/Program.cs" id="SnippetMain":::
 
 > [!IMPORTANT]
-> Celkový uplynulý čas je zhruba stejný jako počáteční verze synchonous. Kód ještě může využít výhod některých klíčových funkcí asynchronního programování.
+> Celkový uplynulý čas je zhruba stejný jako počáteční verze synchonous. Kód ještě využije některé klíčové funkce asynchronního programování.
 
 > [!TIP]
 > Tělo metody `FryEggsAsync` , `FryBaconAsync` a `ToastBreadAsync` byly aktualizovány, aby vracely hodnoty, `Task<Egg>` `Task<Bacon>` a `Task<Toast>` v uvedeném pořadí. Metody se přejmenují z původní verze tak, aby zahrnovaly příponu "Async". Jejich implementace se zobrazují jako součást [finální verze](#final-version) dále v tomto článku.

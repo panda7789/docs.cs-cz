@@ -1,17 +1,23 @@
 ---
-ms.openlocfilehash: 02a3c1b5a9693535feeab56d9b0f7c9d360749ff
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: 39d609c955596354d1af28b4ed19d367dab0462b
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59803633"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619930"
 ---
-### <a name="pageloadcomplete-event-no-longer-causes-systemwebuiwebcontrolsentitydatasource-control-to-invoke-data-binding"></a>Události Page.LoadComplete již nezpůsobuje, že ovládací prvek System.Web.UI.WebControls.EntityDataSource datovou vazbu
+### <a name="pageloadcomplete-event-no-longer-causes-systemwebuiwebcontrolsentitydatasource-control-to-invoke-data-binding"></a>Událost Page. LoadComplete již nezpůsobí, že ovládací prvek System. Web. UI. WebControls. EntityDataSource vyvolá datovou vazbu.
 
-|   |   |
-|---|---|
-|Podrobnosti|<xref:System.Web.UI.Page.LoadComplete> Událost již nezpůsobuje, že <xref:System.Web.UI.WebControls.EntityDataSource?displayProperty=name> ovládacího prvku na datovou vazbu pro změny vytvoření/aktualizace nebo odstranění parametrů. Tato změna eliminuje nadbytečné cesty k databázi, zabraňuje resetu hodnot ovládacích prvků a vytváří chování, které je konzistentní s jinými ovládacími prvky dat jako <xref:System.Web.UI.WebControls.SqlDataSource?displayProperty=name> a <xref:System.Web.UI.WebControls.ObjectDataSource?displayProperty=name>. Tato změna vytváří různé chování v nepravděpodobném případě, že aplikace závislá na vyvolání datové vazby v <xref:System.Web.UI.Page.LoadComplete> událostí.|
-|Doporučení|Pokud je potřeba pro vázání dat, vyvolejte ručně databind ve událost, která předchází v po obnovení.|
-|Rozsah|Edge|
-|Version|4.5|
-|Type|Modul runtime|
+#### <a name="details"></a>Podrobnosti
+
+<xref:System.Web.UI.Page.LoadComplete>Událost již nezpůsobuje, <xref:System.Web.UI.WebControls.EntityDataSource?displayProperty=fullName> aby ovládací prvek vyvolal datovou vazbu pro změny v parametrech Create, Update a DELETE. Tato změna eliminuje nadbytečné cesty k databázi, zabraňuje resetu hodnot ovládacích prvků a vytváří chování, které je konzistentní s jinými ovládacími prvky dat, jako jsou <xref:System.Web.UI.WebControls.SqlDataSource?displayProperty=fullName> a <xref:System.Web.UI.WebControls.ObjectDataSource?displayProperty=fullName> . Tato změna vytváří různé chování v nepravděpodobném případě, že aplikace spoléhají na vyvolání datových vazeb v <xref:System.Web.UI.Page.LoadComplete> události.
+
+#### <a name="suggestion"></a>Návrh
+
+Pokud je potřeba vytvořit datovou vazbu, ručně Vyvolejte příkaz DataBind v události, která je výše v příspěvku po návratu.
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   |Edge|
+|Verze|4.5|
+|Typ|Modul runtime|
