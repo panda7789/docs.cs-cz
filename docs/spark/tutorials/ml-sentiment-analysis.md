@@ -1,72 +1,74 @@
 ---
-title: Analýza mínění s rozhraním .NET pro Apache Spark a kurz ML.NET
-description: V tomto kurzu se dozvíte, jak používat ML.NET s rozhraním .NET pro Apache Spark pro analýzu mínění.
+title: Kurz analýzy mínění s rozhraním .NET pro Apache Spark a ML.NET
+description: V tomto kurzu se naučíte používat ML.NET s .NET pro Apache Spark pro analýzu mínění.
 author: mamccrea
 ms.author: mamccrea
-ms.date: 03/25/2019
+ms.date: 06/25/2020
 ms.topic: tutorial
-ms.openlocfilehash: cdd1214c26a5d5a4b159df3a396ec6f36b9fc0dd
-ms.sourcegitcommit: a9b8945630426a575ab0a332e568edc807666d1b
+ms.openlocfilehash: 69deb30419b98536fa309547d94f59bb266e413c
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80391256"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85617574"
 ---
-# <a name="tutorial-sentiment-analysis-with-net-for-apache-spark-and-mlnet"></a><span data-ttu-id="040cd-103">Kurz: Analýza mínění s rozhraním .NET pro Apache Spark a ML.NET</span><span class="sxs-lookup"><span data-stu-id="040cd-103">Tutorial: Sentiment analysis with .NET for Apache Spark and ML.NET</span></span>
+# <a name="tutorial-sentiment-analysis-with-net-for-apache-spark-and-mlnet"></a><span data-ttu-id="070f4-103">Kurz: analýza mínění pomocí technologie .NET pro Apache Spark a ML.NET</span><span class="sxs-lookup"><span data-stu-id="070f4-103">Tutorial: Sentiment analysis with .NET for Apache Spark and ML.NET</span></span>
 
-<span data-ttu-id="040cd-104">Tento kurz vás naučí, jak provést analýzu mínění online recenzí pomocí ML.NET a .NET pro Apache Spark.</span><span class="sxs-lookup"><span data-stu-id="040cd-104">This tutorial teaches you how to do sentiment analysis of online reviews using ML.NET and .NET for Apache Spark.</span></span> <span data-ttu-id="040cd-105">[ML.NET](http://dot.net/ml) je bezplatný, multiplatformní rámec strojového učení s otevřeným zdrojovým kódem.</span><span class="sxs-lookup"><span data-stu-id="040cd-105">[ML.NET](http://dot.net/ml) is a free, cross-platform, open-source machine learning framework.</span></span> <span data-ttu-id="040cd-106">Můžete použít ML.NET s .NET pro Apache Spark škálovat školení a predikce algoritmů strojového učení.</span><span class="sxs-lookup"><span data-stu-id="040cd-106">You can use ML.NET with .NET for Apache Spark to scale the training and prediction of machine learning algorithms.</span></span>
+<span data-ttu-id="070f4-104">V tomto kurzu se naučíte, jak provádět analýzu online recenzí mínění pomocí ML.NET a .NET pro Apache Spark.</span><span class="sxs-lookup"><span data-stu-id="070f4-104">This tutorial teaches you how to do sentiment analysis of online reviews using ML.NET and .NET for Apache Spark.</span></span> <span data-ttu-id="070f4-105">[Ml.NET](http://dot.net/ml) je bezplatná platforma pro strojové učení open source pro různé platformy.</span><span class="sxs-lookup"><span data-stu-id="070f4-105">[ML.NET](http://dot.net/ml) is a free, cross-platform, open-source machine learning framework.</span></span> <span data-ttu-id="070f4-106">ML.NET můžete použít s rozhraním .NET pro Apache Spark ke škálování školení a předpovědi algoritmů strojového učení.</span><span class="sxs-lookup"><span data-stu-id="070f4-106">You can use ML.NET with .NET for Apache Spark to scale the training and prediction of machine learning algorithms.</span></span>
 
-<span data-ttu-id="040cd-107">V tomto kurzu se naučíte:</span><span class="sxs-lookup"><span data-stu-id="040cd-107">In this tutorial, you learn how to:</span></span>
+<span data-ttu-id="070f4-107">V tomto kurzu se naučíte:</span><span class="sxs-lookup"><span data-stu-id="070f4-107">In this tutorial, you learn how to:</span></span>
 
 > [!div class="checklist"]
 >
-> * <span data-ttu-id="040cd-108">Vytvořte model analýzy mínění pomocí ML.NET Tvůrce modelů v sadě Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="040cd-108">Create a sentiment analysis model using ML.NET Model Builder in Visual Studio.</span></span>
-> * <span data-ttu-id="040cd-109">Vytvořte rozhraní .NET pro konzolovou aplikaci Apache Spark.</span><span class="sxs-lookup"><span data-stu-id="040cd-109">Create a .NET for Apache Spark console app.</span></span>
-> * <span data-ttu-id="040cd-110">Zapište a implementujte uživatelem definovanou funkci.</span><span class="sxs-lookup"><span data-stu-id="040cd-110">Write and implement a user-defined function.</span></span>
-> * <span data-ttu-id="040cd-111">Spusťte rozhraní .NET pro konzolovou aplikaci Apache Spark.</span><span class="sxs-lookup"><span data-stu-id="040cd-111">Run a .NET for Apache Spark console app.</span></span>
+> * <span data-ttu-id="070f4-108">Vytvoření modelu analýzy mínění pomocí Tvůrce modelů ML.NET v aplikaci Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="070f4-108">Create a sentiment analysis model using ML.NET Model Builder in Visual Studio.</span></span>
+> * <span data-ttu-id="070f4-109">Vytvořte aplikaci pro konzolu .NET pro Apache Spark.</span><span class="sxs-lookup"><span data-stu-id="070f4-109">Create a .NET for Apache Spark console app.</span></span>
+> * <span data-ttu-id="070f4-110">Zápis a implementace uživatelsky definované funkce.</span><span class="sxs-lookup"><span data-stu-id="070f4-110">Write and implement a user-defined function.</span></span>
+> * <span data-ttu-id="070f4-111">Spusťte konzolovou aplikaci .NET pro Apache Spark.</span><span class="sxs-lookup"><span data-stu-id="070f4-111">Run a .NET for Apache Spark console app.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="040cd-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="040cd-112">Prerequisites</span></span>
+[!INCLUDE [spark-preview-note](../../../includes/spark-preview-note.md)]
 
-* <span data-ttu-id="040cd-113">Pokud jste nevyvinuli .NET pro aplikaci Apache Spark dříve, začněte s [kurzem Začínáme,](get-started.md) abyste se seznámili se základy.</span><span class="sxs-lookup"><span data-stu-id="040cd-113">If you haven't developed a .NET for Apache Spark application before, start with the [Getting Started tutorial](get-started.md) to become familiar with the basics.</span></span> <span data-ttu-id="040cd-114">Než budete pokračovat v tomto kurzu, dokončete všechny předpoklady pro kurz Začínáme.</span><span class="sxs-lookup"><span data-stu-id="040cd-114">Complete all of the prerequisites for the Getting Started tutorial before you continue with this tutorial.</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="070f4-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="070f4-112">Prerequisites</span></span>
 
-* <span data-ttu-id="040cd-115">Tento kurz používá ML.NET Tvůrce modelů (preview), vizuální rozhraní dostupné v sadě Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="040cd-115">This tutorial uses the ML.NET Model Builder (preview), a visual interface available in Visual Studio.</span></span> <span data-ttu-id="040cd-116">Pokud ještě visual studio nemáte, můžete si zdarma stáhnout verzi sady Visual Studio ve [verzi Visual Studia.](https://visualstudio.microsoft.com/downloads/)</span><span class="sxs-lookup"><span data-stu-id="040cd-116">If you don't already have Visual Studio, you can [download the Community version of Visual Studio](https://visualstudio.microsoft.com/downloads/) for free.</span></span>
+* <span data-ttu-id="070f4-113">Pokud jste ještě nevyvinuli rozhraní .NET pro Apache Spark aplikaci, začněte pomocí [Začínáme kurzu](get-started.md) , kde se seznámíte se základy.</span><span class="sxs-lookup"><span data-stu-id="070f4-113">If you haven't developed a .NET for Apache Spark application before, start with the [Getting Started tutorial](get-started.md) to become familiar with the basics.</span></span> <span data-ttu-id="070f4-114">Před pokračováním v tomto kurzu dokončete všechny požadavky pro Začínáme kurz.</span><span class="sxs-lookup"><span data-stu-id="070f4-114">Complete all of the prerequisites for the Getting Started tutorial before you continue with this tutorial.</span></span>
 
-* <span data-ttu-id="040cd-117">[Stažení a instalace](https://marketplace.visualstudio.com/items?itemName=MLNET.07) ML.NET Tvůrce modelů (náhled).</span><span class="sxs-lookup"><span data-stu-id="040cd-117">[Download and install](https://marketplace.visualstudio.com/items?itemName=MLNET.07) ML.NET Model Builder (preview).</span></span>
+* <span data-ttu-id="070f4-115">V tomto kurzu se používá k dispozici vizuální rozhraní tvůrce modelů ML.NET (Preview), které je dostupné v aplikaci Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="070f4-115">This tutorial uses the ML.NET Model Builder (preview), a visual interface available in Visual Studio.</span></span> <span data-ttu-id="070f4-116">Pokud ještě nemáte Visual Studio, můžete [si zdarma stáhnout verzi sady Visual Studio pro komunitu](https://visualstudio.microsoft.com/downloads/) .</span><span class="sxs-lookup"><span data-stu-id="070f4-116">If you don't already have Visual Studio, you can [download the Community version of Visual Studio](https://visualstudio.microsoft.com/downloads/) for free.</span></span>
 
-* <span data-ttu-id="040cd-118">Stáhněte si datové sady [yelptest.csv](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/MachineLearning/Sentiment/Resources/yelptest.csv) a [yelptrain.csv](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/MachineLearning/Sentiment/Resources/yelptrain.csv) Yelp.</span><span class="sxs-lookup"><span data-stu-id="040cd-118">Download the [yelptest.csv](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/MachineLearning/Sentiment/Resources/yelptest.csv) and [yelptrain.csv](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/MachineLearning/Sentiment/Resources/yelptrain.csv) Yelp review datasets.</span></span>
+* <span data-ttu-id="070f4-117">[Stáhnout a nainstalovat](https://marketplace.visualstudio.com/items?itemName=MLNET.07) ML.NET model Builder (Preview).</span><span class="sxs-lookup"><span data-stu-id="070f4-117">[Download and install](https://marketplace.visualstudio.com/items?itemName=MLNET.07) ML.NET Model Builder (preview).</span></span>
 
-## <a name="review-the-data"></a><span data-ttu-id="040cd-119">Kontrola údajů</span><span class="sxs-lookup"><span data-stu-id="040cd-119">Review the data</span></span>
+* <span data-ttu-id="070f4-118">Stáhněte [yelptest.csv](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/MachineLearning/Sentiment/Resources/yelptest.csv) a [yelptrain.csv](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/MachineLearning/Sentiment/Resources/yelptrain.csv) Yelp zkontrolovat datové sady.</span><span class="sxs-lookup"><span data-stu-id="070f4-118">Download the [yelptest.csv](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/MachineLearning/Sentiment/Resources/yelptest.csv) and [yelptrain.csv](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/MachineLearning/Sentiment/Resources/yelptrain.csv) Yelp review datasets.</span></span>
 
-<span data-ttu-id="040cd-120">Dataset recenzí Yelpu obsahuje online recenze Yelpu o různých službách.</span><span class="sxs-lookup"><span data-stu-id="040cd-120">The Yelp reviews dataset contains online Yelp reviews about various services.</span></span> <span data-ttu-id="040cd-121">Otevřete [soubor yelptrain.csv](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/MachineLearning/Sentiment/Resources/yelptrain.csv) a všimněte si struktury dat.</span><span class="sxs-lookup"><span data-stu-id="040cd-121">Open [yelptrain.csv](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/MachineLearning/Sentiment/Resources/yelptrain.csv) and notice the structure of the data.</span></span> <span data-ttu-id="040cd-122">První sloupec obsahuje text recenze a druhý sloupec obsahuje skóre mínění.</span><span class="sxs-lookup"><span data-stu-id="040cd-122">The first column contains review text, and the second column contains sentiment scores.</span></span> <span data-ttu-id="040cd-123">Pokud je skóre mínění 1, recenze je kladná a pokud je skóre mínění 0, je recenze záporná.</span><span class="sxs-lookup"><span data-stu-id="040cd-123">If the sentiment score is 1, the review is positive, and if the sentiment score is 0, the review is negative.</span></span>
+## <a name="review-the-data"></a><span data-ttu-id="070f4-119">Kontrola dat</span><span class="sxs-lookup"><span data-stu-id="070f4-119">Review the data</span></span>
 
-<span data-ttu-id="040cd-124">Následující tabulka obsahuje ukázková data:</span><span class="sxs-lookup"><span data-stu-id="040cd-124">The following table contains sample data:</span></span>
+<span data-ttu-id="070f4-120">Datová sada Yelp Reviews obsahuje online Yelp recenze o různých službách.</span><span class="sxs-lookup"><span data-stu-id="070f4-120">The Yelp reviews dataset contains online Yelp reviews about various services.</span></span> <span data-ttu-id="070f4-121">Otevřete [yelptrain.csv](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/MachineLearning/Sentiment/Resources/yelptrain.csv) a Všimněte si struktury dat.</span><span class="sxs-lookup"><span data-stu-id="070f4-121">Open [yelptrain.csv](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/MachineLearning/Sentiment/Resources/yelptrain.csv) and notice the structure of the data.</span></span> <span data-ttu-id="070f4-122">První sloupec obsahuje text Revize a druhý sloupec obsahuje mínění skóre.</span><span class="sxs-lookup"><span data-stu-id="070f4-122">The first column contains review text, and the second column contains sentiment scores.</span></span> <span data-ttu-id="070f4-123">Pokud je mínění skóre 1, je kontrola kladná a pokud je skóre mínění 0, kontrola je záporná.</span><span class="sxs-lookup"><span data-stu-id="070f4-123">If the sentiment score is 1, the review is positive, and if the sentiment score is 0, the review is negative.</span></span>
 
-|<span data-ttu-id="040cd-125">ReviewText</span><span class="sxs-lookup"><span data-stu-id="040cd-125">ReviewText</span></span>|<span data-ttu-id="040cd-126">Mínění</span><span class="sxs-lookup"><span data-stu-id="040cd-126">Sentiment</span></span>|
+<span data-ttu-id="070f4-124">Následující tabulka obsahuje ukázková data:</span><span class="sxs-lookup"><span data-stu-id="070f4-124">The following table contains sample data:</span></span>
+
+|<span data-ttu-id="070f4-125">ReviewText</span><span class="sxs-lookup"><span data-stu-id="070f4-125">ReviewText</span></span>|<span data-ttu-id="070f4-126">Mínění</span><span class="sxs-lookup"><span data-stu-id="070f4-126">Sentiment</span></span>|
 |-|-|
-|<span data-ttu-id="040cd-127">Wow... Miloval toto místo.</span><span class="sxs-lookup"><span data-stu-id="040cd-127">Wow... Loved this place.</span></span>|    <span data-ttu-id="040cd-128">1</span><span class="sxs-lookup"><span data-stu-id="040cd-128">1</span></span>|
-|<span data-ttu-id="040cd-129">Kůrka není dobrá.</span><span class="sxs-lookup"><span data-stu-id="040cd-129">Crust is not good.</span></span>|    <span data-ttu-id="040cd-130">0</span><span class="sxs-lookup"><span data-stu-id="040cd-130">0</span></span>|
+|<span data-ttu-id="070f4-127">Wow... Tohle místo.</span><span class="sxs-lookup"><span data-stu-id="070f4-127">Wow... Loved this place.</span></span>|    <span data-ttu-id="070f4-128">1</span><span class="sxs-lookup"><span data-stu-id="070f4-128">1</span></span>|
+|<span data-ttu-id="070f4-129">Crust není dobrá.</span><span class="sxs-lookup"><span data-stu-id="070f4-129">Crust is not good.</span></span>|    <span data-ttu-id="070f4-130">0</span><span class="sxs-lookup"><span data-stu-id="070f4-130">0</span></span>|
 
-## <a name="build-your-machine-learning-model"></a><span data-ttu-id="040cd-131">Sestavte si svůj model strojového učení</span><span class="sxs-lookup"><span data-stu-id="040cd-131">Build your machine learning model</span></span>
+## <a name="build-your-machine-learning-model"></a><span data-ttu-id="070f4-131">Sestavení modelu Machine Learning</span><span class="sxs-lookup"><span data-stu-id="070f4-131">Build your machine learning model</span></span>
 
-1. <span data-ttu-id="040cd-132">Otevřete Visual Studio a vytvořte novou aplikaci konzoly C# (.NET Core).</span><span class="sxs-lookup"><span data-stu-id="040cd-132">Open Visual Studio and create a new C# Console App (.NET Core).</span></span> <span data-ttu-id="040cd-133">Název projektu *MLSparkModel*.</span><span class="sxs-lookup"><span data-stu-id="040cd-133">Name the project *MLSparkModel*.</span></span>
+1. <span data-ttu-id="070f4-132">Otevřete Visual Studio a vytvořte novou konzolovou aplikaci v jazyce C# (.NET Core).</span><span class="sxs-lookup"><span data-stu-id="070f4-132">Open Visual Studio and create a new C# Console App (.NET Core).</span></span> <span data-ttu-id="070f4-133">Pojmenujte projekt *MLSparkModel*.</span><span class="sxs-lookup"><span data-stu-id="070f4-133">Name the project *MLSparkModel*.</span></span>
 
-1. <span data-ttu-id="040cd-134">V **Průzkumníku řešení**klepněte pravým tlačítkem myši na projekt *MLSparkModel.*</span><span class="sxs-lookup"><span data-stu-id="040cd-134">In **Solution Explorer**, right-click the *MLSparkModel* project.</span></span> <span data-ttu-id="040cd-135">Pak vyberte **Přidat > strojové učení**.</span><span class="sxs-lookup"><span data-stu-id="040cd-135">Then select **Add > Machine Learning**.</span></span>
+1. <span data-ttu-id="070f4-134">V **Průzkumník řešení**klikněte pravým tlačítkem myši na projekt *MLSparkModel* .</span><span class="sxs-lookup"><span data-stu-id="070f4-134">In **Solution Explorer**, right-click the *MLSparkModel* project.</span></span> <span data-ttu-id="070f4-135">Pak vyberte **přidat > Machine Learning**.</span><span class="sxs-lookup"><span data-stu-id="070f4-135">Then select **Add > Machine Learning**.</span></span>
 
-1. <span data-ttu-id="040cd-136">V ML.NET Tvůrce modelů vyberte dlaždici **scénáře Analýzy mínění.**</span><span class="sxs-lookup"><span data-stu-id="040cd-136">From the ML.NET Model Builder, select the **Sentiment Analysis** scenario tile.</span></span>
+1. <span data-ttu-id="070f4-136">V Tvůrci modelů ML.NET vyberte dlaždici **Analýza mínění** scénář.</span><span class="sxs-lookup"><span data-stu-id="070f4-136">From the ML.NET Model Builder, select the **Sentiment Analysis** scenario tile.</span></span>
 
-1. <span data-ttu-id="040cd-137">Na stránce **Přidat data** nahrajte datovou sadu *yelptrain.csv.*</span><span class="sxs-lookup"><span data-stu-id="040cd-137">On the **Add data** page, upload the *yelptrain.csv* data set.</span></span>
+1. <span data-ttu-id="070f4-137">Na stránce **Přidat data** nahrajte *yelptrain.csv* datovou sadu.</span><span class="sxs-lookup"><span data-stu-id="070f4-137">On the **Add data** page, upload the *yelptrain.csv* data set.</span></span>
 
-1. <span data-ttu-id="040cd-138">Z rozbalovací nabídky **Sloupce k předvídání** zvolte *Mínění.*</span><span class="sxs-lookup"><span data-stu-id="040cd-138">Choose *Sentiment* from the **Columns to Predict** dropdown.</span></span>
+1. <span data-ttu-id="070f4-138">Vyberte *mínění* ze **sloupců k předpovědi** rozevíracího seznamu.</span><span class="sxs-lookup"><span data-stu-id="070f4-138">Choose *Sentiment* from the **Columns to Predict** dropdown.</span></span>
 
-1. <span data-ttu-id="040cd-139">Na stránce **Vlak** nastavte čas tréninku na *60 sekund* a vyberte **Spustit trénink**.</span><span class="sxs-lookup"><span data-stu-id="040cd-139">On the **Train** page, set the time to train to *60 seconds* and select **Start training**.</span></span> <span data-ttu-id="040cd-140">Všimněte si stavu tréninku v části **Průběh**.</span><span class="sxs-lookup"><span data-stu-id="040cd-140">Notice the status of your training under **Progress**.</span></span>
+1. <span data-ttu-id="070f4-139">Na stránce **vlak** nastavte čas na vlak na *60 sekund* a vyberte **Spustit školení**.</span><span class="sxs-lookup"><span data-stu-id="070f4-139">On the **Train** page, set the time to train to *60 seconds* and select **Start training**.</span></span> <span data-ttu-id="070f4-140">V části **průběh**si všimněte stavu školení.</span><span class="sxs-lookup"><span data-stu-id="070f4-140">Notice the status of your training under **Progress**.</span></span>
 
-1. <span data-ttu-id="040cd-141">Po dokončení školení Builder, **Vyhodnotit** výsledky školení.</span><span class="sxs-lookup"><span data-stu-id="040cd-141">Once Model Builder is finished training, **Evaluate** the training results.</span></span> <span data-ttu-id="040cd-142">Do textového pole pod položkou **Vyzkoušejte model** a výběrem **možnosti Předpovědět** můžete zadat fráze, chcete-li zobrazit výstup.</span><span class="sxs-lookup"><span data-stu-id="040cd-142">You can type phrases into the text box below **Try your model** and select **Predict** to see the output.</span></span>
+1. <span data-ttu-id="070f4-141">Po dokončení školení pro tvůrce modelů **vyhodnoťte** výsledky školení.</span><span class="sxs-lookup"><span data-stu-id="070f4-141">Once Model Builder is finished training, **Evaluate** the training results.</span></span> <span data-ttu-id="070f4-142">Do textového pole níže můžete zadat fráze a **vyzkoušet** si tak výstup a pak vybrat **předpověď** .</span><span class="sxs-lookup"><span data-stu-id="070f4-142">You can type phrases into the text box below **Try your model** and select **Predict** to see the output.</span></span>
 
-1. <span data-ttu-id="040cd-143">Vyberte **Kód** a pak vyberte **Přidat projekty** a přidejte model ML do řešení.</span><span class="sxs-lookup"><span data-stu-id="040cd-143">Select **Code** and then select **Add Projects** to add the ML model to the solution.</span></span>
+1. <span data-ttu-id="070f4-143">Vyberte **kód** a pak vyberte **Přidat projekty** a přidejte do řešení model ml.</span><span class="sxs-lookup"><span data-stu-id="070f4-143">Select **Code** and then select **Add Projects** to add the ML model to the solution.</span></span>
 
-1. <span data-ttu-id="040cd-144">Všimněte si, že do vašich řešení jsou přidány dva projekty: **MLSparkModelML.ConsoleApp** a **MLSparkModelML.Model**.</span><span class="sxs-lookup"><span data-stu-id="040cd-144">Notice that two projects are added to your solutions: **MLSparkModelML.ConsoleApp** and **MLSparkModelML.Model**.</span></span>
+1. <span data-ttu-id="070f4-144">Všimněte si, že do řešení jsou přidány dva projekty: **MLSparkModelML. ConsoleApp** a **MLSparkModelML. model**.</span><span class="sxs-lookup"><span data-stu-id="070f4-144">Notice that two projects are added to your solutions: **MLSparkModelML.ConsoleApp** and **MLSparkModelML.Model**.</span></span>
 
-1. <span data-ttu-id="040cd-145">Poklepejte na projektu *MLSpark* C# a všimněte si, že byl přidán následující odkaz na projekt.</span><span class="sxs-lookup"><span data-stu-id="040cd-145">Double-click on your *MLSpark* C# project and notice that the following project reference has been added.</span></span>
+1. <span data-ttu-id="070f4-145">Dvakrát klikněte na projekt C# *MLSpark* a Všimněte si, že byl přidán následující odkaz na projekt.</span><span class="sxs-lookup"><span data-stu-id="070f4-145">Double-click on your *MLSpark* C# project and notice that the following project reference has been added.</span></span>
 
    ```xml
    <ItemGroup>
@@ -74,19 +76,19 @@ ms.locfileid: "80391256"
    </ItemGroup>
    ```
 
-## <a name="create-a-console-app"></a><span data-ttu-id="040cd-146">Vytvoření konzolové aplikace</span><span class="sxs-lookup"><span data-stu-id="040cd-146">Create a console app</span></span>
+## <a name="create-a-console-app"></a><span data-ttu-id="070f4-146">Vytvoření konzolové aplikace</span><span class="sxs-lookup"><span data-stu-id="070f4-146">Create a console app</span></span>
 
-<span data-ttu-id="040cd-147">Tvůrce modelů pro vás vytvoří konzolovou aplikaci.</span><span class="sxs-lookup"><span data-stu-id="040cd-147">Model Builder creates a console app for you.</span></span>
+<span data-ttu-id="070f4-147">Tvůrce modelů vytvoří pro vás konzolovou aplikaci.</span><span class="sxs-lookup"><span data-stu-id="070f4-147">Model Builder creates a console app for you.</span></span>
 
-1. <span data-ttu-id="040cd-148">Klepněte pravým tlačítkem myši na **mlstovam v** Průzkumníku řešení a vyberte **příkaz Spravovat balíčky NuGet**.</span><span class="sxs-lookup"><span data-stu-id="040cd-148">Right-click on **MLSparkModelML.Console** in Solution Explorer, and select **Manage NuGet Packages**.</span></span>
+1. <span data-ttu-id="070f4-148">V Průzkumník řešení klikněte pravým tlačítkem na **MLSparkModelML. Console** a vyberte **Spravovat balíčky NuGet**.</span><span class="sxs-lookup"><span data-stu-id="070f4-148">Right-click on **MLSparkModelML.Console** in Solution Explorer, and select **Manage NuGet Packages**.</span></span>
 
-1. <span data-ttu-id="040cd-149">Vyhledejte **Microsoft.Spark** a nainstalujte balíček.</span><span class="sxs-lookup"><span data-stu-id="040cd-149">Search for **Microsoft.Spark** and install the package.</span></span> <span data-ttu-id="040cd-150">**Microsoft.ML** je automaticky nainstalován pro vás Builder.</span><span class="sxs-lookup"><span data-stu-id="040cd-150">**Microsoft.ML** is automatically installed for you by Model Builder.</span></span>
+1. <span data-ttu-id="070f4-149">Vyhledejte **Microsoft. Spark** a nainstalujte balíček.</span><span class="sxs-lookup"><span data-stu-id="070f4-149">Search for **Microsoft.Spark** and install the package.</span></span> <span data-ttu-id="070f4-150">**Microsoft.ml** se automaticky nainstaluje pomocí Tvůrce modelů.</span><span class="sxs-lookup"><span data-stu-id="070f4-150">**Microsoft.ML** is automatically installed for you by Model Builder.</span></span>
 
-### <a name="create-a-sparksession"></a><span data-ttu-id="040cd-151">Vytvoření sparksession</span><span class="sxs-lookup"><span data-stu-id="040cd-151">Create a SparkSession</span></span>
+### <a name="create-a-sparksession"></a><span data-ttu-id="070f4-151">Vytvoření SparkSession</span><span class="sxs-lookup"><span data-stu-id="070f4-151">Create a SparkSession</span></span>
 
-1. <span data-ttu-id="040cd-152">Otevřete soubor *Program.cs* pro **soubor MLSparkModelML.ConsoleApp**.</span><span class="sxs-lookup"><span data-stu-id="040cd-152">Open the *Program.cs* file for **MLSparkModelML.ConsoleApp**.</span></span> <span data-ttu-id="040cd-153">Tento soubor byl automaticky generován tvůrcem modelů.</span><span class="sxs-lookup"><span data-stu-id="040cd-153">This file was autogenerated by Model Builder.</span></span> <span data-ttu-id="040cd-154">Odstraňte `using` příkazy, obsah Main() metoda `CreateSingleDataSample` a oblast.</span><span class="sxs-lookup"><span data-stu-id="040cd-154">Delete the `using` statements, the contents of the Main() method, and the `CreateSingleDataSample` region.</span></span>
+1. <span data-ttu-id="070f4-152">Otevřete soubor *program.cs* pro **MLSparkModelML. ConsoleApp**.</span><span class="sxs-lookup"><span data-stu-id="070f4-152">Open the *Program.cs* file for **MLSparkModelML.ConsoleApp**.</span></span> <span data-ttu-id="070f4-153">Tento soubor byl automaticky vygenerován pomocí Tvůrce modelů.</span><span class="sxs-lookup"><span data-stu-id="070f4-153">This file was autogenerated by Model Builder.</span></span> <span data-ttu-id="070f4-154">Odstraňte `using` příkazy, obsah metody Main () a `CreateSingleDataSample` oblast.</span><span class="sxs-lookup"><span data-stu-id="070f4-154">Delete the `using` statements, the contents of the Main() method, and the `CreateSingleDataSample` region.</span></span>
 
-1. <span data-ttu-id="040cd-155">Na začátek `using` *Program.cs*přidejte následující další příkazy :</span><span class="sxs-lookup"><span data-stu-id="040cd-155">Add the following additional `using` statements to the top of the *Program.cs*:</span></span>
+1. <span data-ttu-id="070f4-155">`using`Do horní části *program.cs*přidejte následující dodatečné příkazy:</span><span class="sxs-lookup"><span data-stu-id="070f4-155">Add the following additional `using` statements to the top of the *Program.cs*:</span></span>
 
    ```csharp
    using System;
@@ -97,9 +99,9 @@ ms.locfileid: "80391256"
    using MLSparkModelML.Model;
    ```
 
-1. <span data-ttu-id="040cd-156">Změňte `DATA_FILEPATH` cestu *yelptest.csv*.</span><span class="sxs-lookup"><span data-stu-id="040cd-156">Change the `DATA_FILEPATH` to the path of your *yelptest.csv*.</span></span>
+1. <span data-ttu-id="070f4-156">Změňte na `DATA_FILEPATH` cestu k vašemu *yelptest.csv*.</span><span class="sxs-lookup"><span data-stu-id="070f4-156">Change the `DATA_FILEPATH` to the path of your *yelptest.csv*.</span></span>
 
-1. <span data-ttu-id="040cd-157">Přidejte do metody `Main` následující kód `SparkSession`a vytvořte nový .</span><span class="sxs-lookup"><span data-stu-id="040cd-157">Add the following code to your `Main` method to create a new `SparkSession`.</span></span> <span data-ttu-id="040cd-158">Relace Spark je vstupním bodem k programování Spark s datovou sadou a rozhraním DataFrame API.</span><span class="sxs-lookup"><span data-stu-id="040cd-158">The Spark Session is the entry point to programming Spark with the Dataset and DataFrame API.</span></span>
+1. <span data-ttu-id="070f4-157">Přidejte následující kód do `Main` metody pro vytvoření nového `SparkSession` .</span><span class="sxs-lookup"><span data-stu-id="070f4-157">Add the following code to your `Main` method to create a new `SparkSession`.</span></span> <span data-ttu-id="070f4-158">Relace Spark je vstupním bodem pro programování Sparku s využitím datové sady a rozhraní API dataframe.</span><span class="sxs-lookup"><span data-stu-id="070f4-158">The Spark Session is the entry point to programming Spark with the Dataset and DataFrame API.</span></span>
 
    ```csharp
    SparkSession spark = SparkSession
@@ -108,11 +110,11 @@ ms.locfileid: "80391256"
         .GetOrCreate();
    ```
 
-   <span data-ttu-id="040cd-159">Volání výše vytvořeného *objektu spark* umožňuje přístup k funkcím Spark a DataFrame v celém programu.</span><span class="sxs-lookup"><span data-stu-id="040cd-159">Calling the *spark* object created above allows you to access Spark and DataFrame functionality throughout your program.</span></span>
+   <span data-ttu-id="070f4-159">Volání objektu *Spark* , který jste vytvořili výše, vám umožní přístup k funkcím Sparku a dataframe v celém programu.</span><span class="sxs-lookup"><span data-stu-id="070f4-159">Calling the *spark* object created above allows you to access Spark and DataFrame functionality throughout your program.</span></span>
 
-### <a name="create-a-dataframe-and-print-to-console"></a><span data-ttu-id="040cd-160">Vytvoření datového rámečku a tisk na konzolu</span><span class="sxs-lookup"><span data-stu-id="040cd-160">Create a DataFrame and print to console</span></span>
+### <a name="create-a-dataframe-and-print-to-console"></a><span data-ttu-id="070f4-160">Vytvoření datového rámce a tisk do konzoly</span><span class="sxs-lookup"><span data-stu-id="070f4-160">Create a DataFrame and print to console</span></span>
 
-<span data-ttu-id="040cd-161">Přečtěte si v yelp recenzi data ze souboru `DataFrame` *yelptest.csv* jako .</span><span class="sxs-lookup"><span data-stu-id="040cd-161">Read in the Yelp review data from the *yelptest.csv* file as a `DataFrame`.</span></span> <span data-ttu-id="040cd-162">Zahrnout `header` `inferSchema` a možnosti.</span><span class="sxs-lookup"><span data-stu-id="040cd-162">Include `header` and `inferSchema` options.</span></span> <span data-ttu-id="040cd-163">Možnost `header` přečte první řádek *yelptest.csv* jako názvy sloupců namísto dat.</span><span class="sxs-lookup"><span data-stu-id="040cd-163">The `header` option reads the first line of *yelptest.csv* as column names instead of data.</span></span> <span data-ttu-id="040cd-164">Tato `inferSchema` možnost odvodí typy sloupců na základě dat.</span><span class="sxs-lookup"><span data-stu-id="040cd-164">The `inferSchema` option infers column types based on the data.</span></span>
+<span data-ttu-id="070f4-161">Přečtěte si v Yelp data ze souboru *yelptest.csv* jako `DataFrame` .</span><span class="sxs-lookup"><span data-stu-id="070f4-161">Read in the Yelp review data from the *yelptest.csv* file as a `DataFrame`.</span></span> <span data-ttu-id="070f4-162">Zahrnutí `header` a `inferSchema` Možnosti.</span><span class="sxs-lookup"><span data-stu-id="070f4-162">Include `header` and `inferSchema` options.</span></span> <span data-ttu-id="070f4-163">`header`Možnost načte první řádek *yelptest.csv* jako názvy sloupců místo dat.</span><span class="sxs-lookup"><span data-stu-id="070f4-163">The `header` option reads the first line of *yelptest.csv* as column names instead of data.</span></span> <span data-ttu-id="070f4-164">`inferSchema`Možnost odvodí typy sloupců na základě dat.</span><span class="sxs-lookup"><span data-stu-id="070f4-164">The `inferSchema` option infers column types based on the data.</span></span>
 
 ```csharp
 DataFrame df = spark
@@ -124,22 +126,22 @@ DataFrame df = spark
 df.Show();
 ```
 
-### <a name="register-a-user-defined-function"></a><span data-ttu-id="040cd-165">Registrace uživatelem definované funkce</span><span class="sxs-lookup"><span data-stu-id="040cd-165">Register a user-defined function</span></span>
+### <a name="register-a-user-defined-function"></a><span data-ttu-id="070f4-165">Registrovat uživatelsky definovanou funkci</span><span class="sxs-lookup"><span data-stu-id="070f4-165">Register a user-defined function</span></span>
 
-<span data-ttu-id="040cd-166">K provádění výpočtů a analýz na datech můžete použít uontové soubory, *uživatelem definované funkce*, v aplikacích Spark.</span><span class="sxs-lookup"><span data-stu-id="040cd-166">You can use UDFs, *user-defined functions*, in Spark applications to do calculations and analysis on your data.</span></span> <span data-ttu-id="040cd-167">V tomto kurzu použijete ML.NET s UDF k vyhodnocení každé recenze Yelpu.</span><span class="sxs-lookup"><span data-stu-id="040cd-167">In this tutorial, you use ML.NET with a UDF to evaluate each Yelp review.</span></span>
+<span data-ttu-id="070f4-166">UDF, *uživatelsky definované funkce*v aplikacích Spark můžete použít k výpočtům a analýzám vašich dat.</span><span class="sxs-lookup"><span data-stu-id="070f4-166">You can use UDFs, *user-defined functions*, in Spark applications to do calculations and analysis on your data.</span></span> <span data-ttu-id="070f4-167">V tomto kurzu použijete ML.NET se systémem souborů UDF k vyhodnocení každé kontroly Yelp.</span><span class="sxs-lookup"><span data-stu-id="070f4-167">In this tutorial, you use ML.NET with a UDF to evaluate each Yelp review.</span></span>
 
-<span data-ttu-id="040cd-168">Přidejte do `Main` metody následující kód pro `MLudf`registraci udf s názvem .</span><span class="sxs-lookup"><span data-stu-id="040cd-168">Add the following code to your `Main` method to register a UDF called `MLudf`.</span></span>
+<span data-ttu-id="070f4-168">Přidejte následující kód do `Main` metody pro registraci volání UDF `MLudf` .</span><span class="sxs-lookup"><span data-stu-id="070f4-168">Add the following code to your `Main` method to register a UDF called `MLudf`.</span></span>
 
 ```csharp
 spark.Udf()
     .Register<string, bool>("MLudf", predict);
 ```
 
-<span data-ttu-id="040cd-169">Tento UDF bere řetězec yelpu recenzi jako vstup a výstupy true nebo false pro pozitivní nebo negativní pocity, v uvedeném pořadí.</span><span class="sxs-lookup"><span data-stu-id="040cd-169">This UDF takes a Yelp review string as input, and outputs true or false for positive or negative sentiments, respectively.</span></span> <span data-ttu-id="040cd-170">Používá *predict()* metodu, kterou definujete v pozdějším kroku.</span><span class="sxs-lookup"><span data-stu-id="040cd-170">It uses the *predict()* method that you define in a later step.</span></span>
+<span data-ttu-id="070f4-169">Tato UDF přebírá řetězec Yelp revize jako vstup a výstupy hodnot true nebo false pro kladné nebo záporné zabarvení, v uvedeném pořadí.</span><span class="sxs-lookup"><span data-stu-id="070f4-169">This UDF takes a Yelp review string as input, and outputs true or false for positive or negative sentiments, respectively.</span></span> <span data-ttu-id="070f4-170">Používá metodu *předpověď ()* , kterou definujete v pozdějším kroku.</span><span class="sxs-lookup"><span data-stu-id="070f4-170">It uses the *predict()* method that you define in a later step.</span></span>
 
-### <a name="use-spark-sql-to-call-the-udf"></a><span data-ttu-id="040cd-171">Volání UDF pomocí Spark SQL</span><span class="sxs-lookup"><span data-stu-id="040cd-171">Use Spark SQL to call the UDF</span></span>
+### <a name="use-spark-sql-to-call-the-udf"></a><span data-ttu-id="070f4-171">Použití Spark SQL pro volání UDF</span><span class="sxs-lookup"><span data-stu-id="070f4-171">Use Spark SQL to call the UDF</span></span>
 
-<span data-ttu-id="040cd-172">Teď, když jste si přečetli data a začlenili ML, použijte Spark SQL k volání UDF, který spustí analýzu mínění na každém řádku datového rámce.</span><span class="sxs-lookup"><span data-stu-id="040cd-172">Now that you've read in your data and incorporated ML, use Spark SQL to call the UDF that will run sentiment analysis on each row of your DataFrame.</span></span> <span data-ttu-id="040cd-173">Do metody přidejte `Main` následující kód:</span><span class="sxs-lookup"><span data-stu-id="040cd-173">Add the following code to your `Main` method:</span></span>
+<span data-ttu-id="070f4-172">Teď, když jste si přečetli svoje data a zahrnuli ML, použijte Spark SQL pro volání UDF, který spustí analýzu mínění na každém řádku vašeho datového rámce.</span><span class="sxs-lookup"><span data-stu-id="070f4-172">Now that you've read in your data and incorporated ML, use Spark SQL to call the UDF that will run sentiment analysis on each row of your DataFrame.</span></span> <span data-ttu-id="070f4-173">Do metody přidejte následující kód `Main` :</span><span class="sxs-lookup"><span data-stu-id="070f4-173">Add the following code to your `Main` method:</span></span>
 
 ```csharp
 // Use Spark SQL to call ML.NET UDF
@@ -155,9 +157,9 @@ sqlDf.Show(20, 0, false);
 spark.Stop();
 ```
 
-### <a name="create-predict-method"></a><span data-ttu-id="040cd-174">Vytvořit metodu predict()</span><span class="sxs-lookup"><span data-stu-id="040cd-174">Create predict() method</span></span>
+### <a name="create-predict-method"></a><span data-ttu-id="070f4-174">Create prediktivní () – metoda</span><span class="sxs-lookup"><span data-stu-id="070f4-174">Create predict() method</span></span>
 
-<span data-ttu-id="040cd-175">Před `Main()` metodu přidejte následující kód.</span><span class="sxs-lookup"><span data-stu-id="040cd-175">Add the following code before your `Main()` method.</span></span> <span data-ttu-id="040cd-176">Tento kód je podobný tomu, co je produkován Model Builder v *ConsumeModel.cs*.</span><span class="sxs-lookup"><span data-stu-id="040cd-176">This code is similar to what is produced by Model Builder in *ConsumeModel.cs*.</span></span> <span data-ttu-id="040cd-177">Přesunutím této metody do konzole načtete model načítání při každém spuštění aplikace.</span><span class="sxs-lookup"><span data-stu-id="040cd-177">Moving this method to your console loads the model loading each time you run your app.</span></span>
+<span data-ttu-id="070f4-175">Do své metody přidejte následující kód `Main()` .</span><span class="sxs-lookup"><span data-stu-id="070f4-175">Add the following code before your `Main()` method.</span></span> <span data-ttu-id="070f4-176">Tento kód je podobný tomu, co je vytvořeno tvůrcem modelů v *ConsumeModel.cs*.</span><span class="sxs-lookup"><span data-stu-id="070f4-176">This code is similar to what is produced by Model Builder in *ConsumeModel.cs*.</span></span> <span data-ttu-id="070f4-177">Přesunutím této metody do konzoly načtete model načítání při každém spuštění aplikace.</span><span class="sxs-lookup"><span data-stu-id="070f4-177">Moving this method to your console loads the model loading each time you run your app.</span></span>
 
 ```csharp
 private static readonly PredictionEngine<ModelInput, ModelOutput> _predictionEngine;
@@ -180,33 +182,33 @@ static bool predict(string text)
 }
 ```
 
-## <a name="add-the-model-to-your-console-app"></a><span data-ttu-id="040cd-178">Přidání modelu do konzolové aplikace</span><span class="sxs-lookup"><span data-stu-id="040cd-178">Add the model to your console app</span></span>
+## <a name="add-the-model-to-your-console-app"></a><span data-ttu-id="070f4-178">Přidání modelu do aplikace konzoly</span><span class="sxs-lookup"><span data-stu-id="070f4-178">Add the model to your console app</span></span>
 
-<span data-ttu-id="040cd-179">V Průzkumníku řešení zkopírujte soubor *MLModel.zip* z projektu **MLSparkModelML.Model** a vložte jej do projektu **MLSparkModelML.ConsoleApp.**</span><span class="sxs-lookup"><span data-stu-id="040cd-179">In Solution Explorer, copy the *MLModel.zip* file from the **MLSparkModelML.Model** project and paste it in the **MLSparkModelML.ConsoleApp** project.</span></span> <span data-ttu-id="040cd-180">Odkaz je automaticky přidán do *MLSToModelML.ConsoleApp.csproj*.</span><span class="sxs-lookup"><span data-stu-id="040cd-180">A reference is automatically added in *MLSparkModelML.ConsoleApp.csproj*.</span></span>
+<span data-ttu-id="070f4-179">V Průzkumník řešení zkopírujte *MLModel.zip* soubor z projektu **MLSparkModelML. model** a vložte ho do projektu **MLSparkModelML. ConsoleApp** .</span><span class="sxs-lookup"><span data-stu-id="070f4-179">In Solution Explorer, copy the *MLModel.zip* file from the **MLSparkModelML.Model** project and paste it in the **MLSparkModelML.ConsoleApp** project.</span></span> <span data-ttu-id="070f4-180">Odkaz je automaticky přidán do *MLSparkModelML. ConsoleApp. csproj*.</span><span class="sxs-lookup"><span data-stu-id="070f4-180">A reference is automatically added in *MLSparkModelML.ConsoleApp.csproj*.</span></span>
 
-## <a name="run-your-code"></a><span data-ttu-id="040cd-181">Spuštění kódu</span><span class="sxs-lookup"><span data-stu-id="040cd-181">Run your code</span></span>
+## <a name="run-your-code"></a><span data-ttu-id="070f4-181">Spuštění kódu</span><span class="sxs-lookup"><span data-stu-id="070f4-181">Run your code</span></span>
 
-<span data-ttu-id="040cd-182">Slouží `spark-submit` ke spuštění kódu.</span><span class="sxs-lookup"><span data-stu-id="040cd-182">Use `spark-submit` to run your code.</span></span> <span data-ttu-id="040cd-183">Přejděte do kořenové složky aplikace konzoly pomocí příkazového řádku a spusťte následující příkazy.</span><span class="sxs-lookup"><span data-stu-id="040cd-183">Navigate to your console app's root folder using the command prompt and run the following commands.</span></span>
+<span data-ttu-id="070f4-182">Použijte `spark-submit` ke spuštění kódu.</span><span class="sxs-lookup"><span data-stu-id="070f4-182">Use `spark-submit` to run your code.</span></span> <span data-ttu-id="070f4-183">Pomocí příkazového řádku přejděte do kořenové složky vaší aplikace konzoly a spusťte následující příkazy.</span><span class="sxs-lookup"><span data-stu-id="070f4-183">Navigate to your console app's root folder using the command prompt and run the following commands.</span></span>
 
-<span data-ttu-id="040cd-184">Nejprve vyčistěte a publikujte aplikaci.</span><span class="sxs-lookup"><span data-stu-id="040cd-184">First, clean and publish your app.</span></span>
+<span data-ttu-id="070f4-184">Nejdřív aplikaci vyčistěte a publikujte.</span><span class="sxs-lookup"><span data-stu-id="070f4-184">First, clean and publish your app.</span></span>
 
 ```dotnetcli
 dotnet clean
 dotnet publish
 ```
 
-<span data-ttu-id="040cd-185">Potom přejděte do složky publikování aplikace `spark-submit` konzoly a spusťte následující příkaz.</span><span class="sxs-lookup"><span data-stu-id="040cd-185">Then navigate to the console app's publish folder and run the following `spark-submit` command.</span></span> <span data-ttu-id="040cd-186">Nezapomeňte aktualizovat příkaz se skutečnou cestou vašeho souboru Microsoft Spark jar.</span><span class="sxs-lookup"><span data-stu-id="040cd-186">Remember to update the command with the actual path of your Microsoft Spark jar file.</span></span>
+<span data-ttu-id="070f4-185">Pak přejděte do složky pro publikování konzolové aplikace a spusťte následující `spark-submit` příkaz.</span><span class="sxs-lookup"><span data-stu-id="070f4-185">Then navigate to the console app's publish folder and run the following `spark-submit` command.</span></span> <span data-ttu-id="070f4-186">Nezapomeňte aktualizovat příkaz o skutečnou cestu k vašemu souboru Microsoft Spark jar.</span><span class="sxs-lookup"><span data-stu-id="070f4-186">Remember to update the command with the actual path of your Microsoft Spark jar file.</span></span>
 
 ```dotnetcli
 %SPARK_HOME%\bin\spark-submit --class org.apache.spark.deploy.dotnet.DotnetRunner --master local microsoft-spark-2.4.x-0.10.0.jar dotnet MLSparkModelML.ConsoleApp.dll
 ```
 
-## <a name="get-the-code"></a><span data-ttu-id="040cd-187">Získání kódu</span><span class="sxs-lookup"><span data-stu-id="040cd-187">Get the code</span></span>
+## <a name="get-the-code"></a><span data-ttu-id="070f4-187">Získání kódu</span><span class="sxs-lookup"><span data-stu-id="070f4-187">Get the code</span></span>
 
-<span data-ttu-id="040cd-188">Tento kurz je podobný kódu z analýzy mínění s velkým [objemem dat.](https://github.com/dotnet/spark/tree/master/examples/Microsoft.Spark.CSharp.Examples/MachineLearning/Sentiment)</span><span class="sxs-lookup"><span data-stu-id="040cd-188">This tutorial is similar to the code from the [Sentiment Analysis with Big Data](https://github.com/dotnet/spark/tree/master/examples/Microsoft.Spark.CSharp.Examples/MachineLearning/Sentiment) example.</span></span>
+<span data-ttu-id="070f4-188">Tento kurz je podobný kódu z příkladu [Analýza mínění s velkými](https://github.com/dotnet/spark/tree/master/examples/Microsoft.Spark.CSharp.Examples/MachineLearning/Sentiment) objemy dat.</span><span class="sxs-lookup"><span data-stu-id="070f4-188">This tutorial is similar to the code from the [Sentiment Analysis with Big Data](https://github.com/dotnet/spark/tree/master/examples/Microsoft.Spark.CSharp.Examples/MachineLearning/Sentiment) example.</span></span>
 
-## <a name="next-steps"></a><span data-ttu-id="040cd-189">Další kroky</span><span class="sxs-lookup"><span data-stu-id="040cd-189">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="070f4-189">Další kroky</span><span class="sxs-lookup"><span data-stu-id="070f4-189">Next steps</span></span>
 
-<span data-ttu-id="040cd-190">Přejdete k dalšímu článku, kde se dozvíte, jak provést strukturované streamování pomocí rozhraní .NET pro Apache Spark.</span><span class="sxs-lookup"><span data-stu-id="040cd-190">Advance to the next article to learn how to do Structured Streaming with .NET for Apache Spark.</span></span>
+<span data-ttu-id="070f4-190">V dalším článku se dozvíte, jak provádět strukturované streamování pomocí rozhraní .NET pro Apache Spark.</span><span class="sxs-lookup"><span data-stu-id="070f4-190">Advance to the next article to learn how to do Structured Streaming with .NET for Apache Spark.</span></span>
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="040cd-191">Kurz: Strukturované streamování s rozhraním .NET pro Apache Spark</span><span class="sxs-lookup"><span data-stu-id="040cd-191">Tutorial: Structured Streaming with .NET for Apache Spark</span></span>](streaming.md)
+> [<span data-ttu-id="070f4-191">Kurz: strukturované streamování s rozhraním .NET pro Apache Spark</span><span class="sxs-lookup"><span data-stu-id="070f4-191">Tutorial: Structured Streaming with .NET for Apache Spark</span></span>](streaming.md)

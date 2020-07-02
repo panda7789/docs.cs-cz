@@ -1,18 +1,34 @@
 ---
-ms.openlocfilehash: 923105114c9e8da02c61c842cc02bed1ead3eddc
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: dfdb62e8dd6db67d4fd12aba93928f4615e3f284
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "67859013"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85614605"
 ---
-### <a name="tabcontrol-selectionchanged-event-and-selectedcontent-property"></a><span data-ttu-id="2e037-101">TabControl SelectionZměněn událost a Vlastnost SelectedContent</span><span class="sxs-lookup"><span data-stu-id="2e037-101">TabControl SelectionChanged event and SelectedContent property</span></span>
+### <a name="tabcontrol-selectionchanged-event-and-selectedcontent-property"></a><span data-ttu-id="0aee6-101">Událost TabControl SelectionChanged a vlastnost SelectedContent</span><span class="sxs-lookup"><span data-stu-id="0aee6-101">TabControl SelectionChanged event and SelectedContent property</span></span>
 
-|   |   |
-|---|---|
-|<span data-ttu-id="2e037-102">Podrobnosti</span><span class="sxs-lookup"><span data-stu-id="2e037-102">Details</span></span>|<span data-ttu-id="2e037-103">Počínaje rozhraním .NET Framework 4.7.1 aktualizuje <xref:System.Windows.Controls.TabControl> <xref:System.Windows.Controls.TabControl.SelectedContent> hodnotu své <xref:System.Windows.Controls.Primitives.Selector.SelectionChanged> vlastnosti před vyvoláním události při změně jejího výběru. V rozhraní .NET Framework 4.7 a starších verzích došlo po události k aktualizaci selectedcontent.</span><span class="sxs-lookup"><span data-stu-id="2e037-103">Starting with the .NET Framework 4.7.1, a <xref:System.Windows.Controls.TabControl> updates the value of its <xref:System.Windows.Controls.TabControl.SelectedContent> property before raising the <xref:System.Windows.Controls.Primitives.Selector.SelectionChanged> event, when its selection changes.In the .NET Framework 4.7 and earlier versions, the update to SelectedContent happened after the event.</span></span>|
-|<span data-ttu-id="2e037-104">Návrh</span><span class="sxs-lookup"><span data-stu-id="2e037-104">Suggestion</span></span>|<span data-ttu-id="2e037-105">Aplikace, které cílí na rozhraní .NET Framework 4.7.1 nebo novější, se <code>&lt;runtime&gt;</code> můžou odhlásit z této změny a používat starší chování přidáním následujícího textu do části konfiguračního souboru aplikace:</span><span class="sxs-lookup"><span data-stu-id="2e037-105">Apps that target the .NET Framework 4.7.1 or later can opt out of this change and use legacy behavior by adding the following to the <code>&lt;runtime&gt;</code> section of the application configuration file:</span></span><pre><code class="lang-xml">&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.Windows.Controls.TabControl.SelectionPropertiesCanLagBehindSelectionChangedEvent=true&quot; /&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;</code></pre><span data-ttu-id="2e037-106">Aplikace, které cílí na rozhraní .NET Framework 4.7 nebo starší, ale jsou spuštěny v rozhraní .NET <code>&lt;runtime&gt;</code> Framework 4.7.1 nebo novějším, mohou nové chování povolit přidáním následujícího řádku do části souboru .configuration aplikace:</span><span class="sxs-lookup"><span data-stu-id="2e037-106">Apps that target the .NET Framework 4.7 or earlier but are running on the .NET Framework 4.7.1 or later can enable the new behavior by adding the following line to the <code>&lt;runtime&gt;</code> section of the application .configuration file:</span></span><pre><code class="lang-xml">&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.Windows.Controls.TabControl.SelectionPropertiesCanLagBehindSelectionChangedEvent=false&quot; /&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;</code></pre>|
-|<span data-ttu-id="2e037-107">Rozsah</span><span class="sxs-lookup"><span data-stu-id="2e037-107">Scope</span></span>|<span data-ttu-id="2e037-108">Vedlejší</span><span class="sxs-lookup"><span data-stu-id="2e037-108">Minor</span></span>|
-|<span data-ttu-id="2e037-109">Version</span><span class="sxs-lookup"><span data-stu-id="2e037-109">Version</span></span>|<span data-ttu-id="2e037-110">4.7.1</span><span class="sxs-lookup"><span data-stu-id="2e037-110">4.7.1</span></span>|
-|<span data-ttu-id="2e037-111">Typ</span><span class="sxs-lookup"><span data-stu-id="2e037-111">Type</span></span>|<span data-ttu-id="2e037-112">Změna cílení</span><span class="sxs-lookup"><span data-stu-id="2e037-112">Retargeting</span></span>|
-|<span data-ttu-id="2e037-113">Ovlivněná rozhraní API</span><span class="sxs-lookup"><span data-stu-id="2e037-113">Affected APIs</span></span>|<ul><li><xref:System.Windows.Controls.TabControl.SelectedContent?displayProperty=nameWithType></li><li><xref:System.Windows.Controls.Primitives.Selector.SelectionChanged?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a><span data-ttu-id="0aee6-102">Podrobnosti</span><span class="sxs-lookup"><span data-stu-id="0aee6-102">Details</span></span>
+
+<span data-ttu-id="0aee6-103">Počínaje .NET Framework 4.7.1 <xref:System.Windows.Controls.TabControl> aktualizuje hodnotu vlastnosti před vyvoláním <xref:System.Windows.Controls.TabControl.SelectedContent> <xref:System.Windows.Controls.Primitives.Selector.SelectionChanged> události, když se změní její výběr. V .NET Framework 4,7 a starších verzích se po události stala aktualizace SelectedContent.</span><span class="sxs-lookup"><span data-stu-id="0aee6-103">Starting with the .NET Framework 4.7.1, a <xref:System.Windows.Controls.TabControl> updates the value of its <xref:System.Windows.Controls.TabControl.SelectedContent> property before raising the <xref:System.Windows.Controls.Primitives.Selector.SelectionChanged> event, when its selection changes.In the .NET Framework 4.7 and earlier versions, the update to SelectedContent happened after the event.</span></span>
+
+#### <a name="suggestion"></a><span data-ttu-id="0aee6-104">Návrh</span><span class="sxs-lookup"><span data-stu-id="0aee6-104">Suggestion</span></span>
+
+<span data-ttu-id="0aee6-105">Aplikace, které cílí na .NET Framework 4.7.1 nebo novější, si mohou tuto změnu odhlásit a použít starší chování tak, že do `<runtime>` části konfiguračního souboru aplikace přidáte následující:</span><span class="sxs-lookup"><span data-stu-id="0aee6-105">Apps that target the .NET Framework 4.7.1 or later can opt out of this change and use legacy behavior by adding the following to the `<runtime>` section of the application configuration file:</span></span>
+
+<pre><code class="lang-xml">&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.Windows.Controls.TabControl.SelectionPropertiesCanLagBehindSelectionChangedEvent=true&quot; /&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;</code></pre>
+
+<span data-ttu-id="0aee6-106">Aplikace, které cílí na .NET Framework 4,7 nebo starší, ale běží na .NET Framework 4.7.1 nebo novějším, můžou nové chování povolit přidáním následujícího řádku do `<runtime>` oddílu souboru Application. Configuration:</span><span class="sxs-lookup"><span data-stu-id="0aee6-106">Apps that target the .NET Framework 4.7 or earlier but are running on the .NET Framework 4.7.1 or later can enable the new behavior by adding the following line to the `<runtime>` section of the application .configuration file:</span></span>
+
+<pre><code class="lang-xml">&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.Windows.Controls.TabControl.SelectionPropertiesCanLagBehindSelectionChangedEvent=false&quot; /&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;</code></pre>
+
+| <span data-ttu-id="0aee6-107">Name</span><span class="sxs-lookup"><span data-stu-id="0aee6-107">Name</span></span>    | <span data-ttu-id="0aee6-108">Hodnota</span><span class="sxs-lookup"><span data-stu-id="0aee6-108">Value</span></span>       |
+|:--------|:------------|
+| <span data-ttu-id="0aee6-109">Rozsah</span><span class="sxs-lookup"><span data-stu-id="0aee6-109">Scope</span></span>   | <span data-ttu-id="0aee6-110">Vedlejší</span><span class="sxs-lookup"><span data-stu-id="0aee6-110">Minor</span></span>       |
+| <span data-ttu-id="0aee6-111">Verze</span><span class="sxs-lookup"><span data-stu-id="0aee6-111">Version</span></span> | <span data-ttu-id="0aee6-112">4.7.1</span><span class="sxs-lookup"><span data-stu-id="0aee6-112">4.7.1</span></span>       |
+| <span data-ttu-id="0aee6-113">Typ</span><span class="sxs-lookup"><span data-stu-id="0aee6-113">Type</span></span>    | <span data-ttu-id="0aee6-114">Změna cílení</span><span class="sxs-lookup"><span data-stu-id="0aee6-114">Retargeting</span></span> |
+
+#### <a name="affected-apis"></a><span data-ttu-id="0aee6-115">Ovlivněná rozhraní API</span><span class="sxs-lookup"><span data-stu-id="0aee6-115">Affected APIs</span></span>
+
+- <xref:System.Windows.Controls.TabControl.SelectedContent?displayProperty=nameWithType>
+- <xref:System.Windows.Controls.Primitives.Selector.SelectionChanged?displayProperty=nameWithType>

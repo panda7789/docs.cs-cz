@@ -1,18 +1,34 @@
 ---
-ms.openlocfilehash: 9ec5fa379556dedeaa7a35e34f004340ab47a39c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c5a061dffa1deb66e1769d6ec70dfa2155ac6a31
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "67804425"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85615706"
 ---
-### <a name="calling-createdefaultauthorizationcontext-with-a-null-argument-has-changed"></a><span data-ttu-id="fabce-101">Volání CreateDefaultAuthorizationContext s nulovým argumentem bylo změněno.</span><span class="sxs-lookup"><span data-stu-id="fabce-101">Calling CreateDefaultAuthorizationContext with a null argument has changed</span></span>
+### <a name="calling-createdefaultauthorizationcontext-with-a-null-argument-has-changed"></a><span data-ttu-id="fa060-101">Volání CreateDefaultAuthorizationContext s argumentem null se změnilo.</span><span class="sxs-lookup"><span data-stu-id="fa060-101">Calling CreateDefaultAuthorizationContext with a null argument has changed</span></span>
 
-|   |   |
-|---|---|
-|<span data-ttu-id="fabce-102">Podrobnosti</span><span class="sxs-lookup"><span data-stu-id="fabce-102">Details</span></span>|<span data-ttu-id="fabce-103">Implementace <xref:System.IdentityModel.Policy.AuthorizationContext?displayProperty=name> vrácené volání <xref:System.IdentityModel.Policy.AuthorizationContext.CreateDefaultAuthorizationContext(System.Collections.Generic.IList{System.IdentityModel.Policy.IAuthorizationPolicy})?displayProperty=name> s null authorizationPolicies argument změnil jeho implementaci v rozhraní .NET Framework 4.6.</span><span class="sxs-lookup"><span data-stu-id="fabce-103">The implementation of the <xref:System.IdentityModel.Policy.AuthorizationContext?displayProperty=name> returned by a call to the <xref:System.IdentityModel.Policy.AuthorizationContext.CreateDefaultAuthorizationContext(System.Collections.Generic.IList{System.IdentityModel.Policy.IAuthorizationPolicy})?displayProperty=name> with a null authorizationPolicies argument has changed its implementation in the .NET Framework 4.6.</span></span>|
-|<span data-ttu-id="fabce-104">Návrh</span><span class="sxs-lookup"><span data-stu-id="fabce-104">Suggestion</span></span>|<span data-ttu-id="fabce-105">Ve výjimečných případech wcf aplikace, které používají vlastní ověřování může zobrazit rozdíly v chování.</span><span class="sxs-lookup"><span data-stu-id="fabce-105">In rare cases, WCF apps that use custom authentication may see behavioral differences.</span></span> <span data-ttu-id="fabce-106">V takových případech lze předchozí chování obnovit dvěma způsoby:</span><span class="sxs-lookup"><span data-stu-id="fabce-106">In such cases, the previous behavior can be restored in either of two ways:</span></span><ol><li><span data-ttu-id="fabce-107">Překompilujte aplikaci tak, aby cílila na starší verzi rozhraní .NET Framework než 4.6.</span><span class="sxs-lookup"><span data-stu-id="fabce-107">Recompile your app to target an earlier version of the .NET Framework than 4.6.</span></span> <span data-ttu-id="fabce-108">Pro služby hostované službou &lt;IIS použijte&quot;element httpRuntime targetFramework= x.x&quot;  / &gt; k cílení na starší verzi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="fabce-108">For IIS-hosted services, use the &lt;httpRuntime targetFramework=&quot;x.x&quot; /&gt; element to target an earlier version of the .NET Framework.</span></span></li><li><span data-ttu-id="fabce-109">Do části souboru <code>&lt;appSettings&gt;</code> app.config přidejte následující řádek:<code>&lt;add key=&quot;appContext.SetSwitch:Switch.System.IdentityModel.EnableCachedEmptyDefaultAuthorizationContext&quot; value=&quot;true&quot; /&gt;</code></span><span class="sxs-lookup"><span data-stu-id="fabce-109">Add the following line to the <code>&lt;appSettings&gt;</code> section of your app.config file: <code>&lt;add key=&quot;appContext.SetSwitch:Switch.System.IdentityModel.EnableCachedEmptyDefaultAuthorizationContext&quot; value=&quot;true&quot; /&gt;</code></span></span></li></ol>|
-|<span data-ttu-id="fabce-110">Rozsah</span><span class="sxs-lookup"><span data-stu-id="fabce-110">Scope</span></span>|<span data-ttu-id="fabce-111">Vedlejší</span><span class="sxs-lookup"><span data-stu-id="fabce-111">Minor</span></span>|
-|<span data-ttu-id="fabce-112">Version</span><span class="sxs-lookup"><span data-stu-id="fabce-112">Version</span></span>|<span data-ttu-id="fabce-113">4.6</span><span class="sxs-lookup"><span data-stu-id="fabce-113">4.6</span></span>|
-|<span data-ttu-id="fabce-114">Typ</span><span class="sxs-lookup"><span data-stu-id="fabce-114">Type</span></span>|<span data-ttu-id="fabce-115">Změna cílení</span><span class="sxs-lookup"><span data-stu-id="fabce-115">Retargeting</span></span>|
-|<span data-ttu-id="fabce-116">Ovlivněná rozhraní API</span><span class="sxs-lookup"><span data-stu-id="fabce-116">Affected APIs</span></span>|<ul><li><xref:System.IdentityModel.Policy.AuthorizationContext.CreateDefaultAuthorizationContext(System.Collections.Generic.IList{System.IdentityModel.Policy.IAuthorizationPolicy})?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a><span data-ttu-id="fa060-102">Podrobnosti</span><span class="sxs-lookup"><span data-stu-id="fa060-102">Details</span></span>
+
+<span data-ttu-id="fa060-103">Implementace <xref:System.IdentityModel.Policy.AuthorizationContext?displayProperty=fullName> vrácená voláním <xref:System.IdentityModel.Policy.AuthorizationContext.CreateDefaultAuthorizationContext(System.Collections.Generic.IList{System.IdentityModel.Policy.IAuthorizationPolicy})?displayProperty=fullName> s argumentem s hodnotou null authorizationPolicies se změnila jeho implementace v .NET Framework 4,6.</span><span class="sxs-lookup"><span data-stu-id="fa060-103">The implementation of the <xref:System.IdentityModel.Policy.AuthorizationContext?displayProperty=fullName> returned by a call to the <xref:System.IdentityModel.Policy.AuthorizationContext.CreateDefaultAuthorizationContext(System.Collections.Generic.IList{System.IdentityModel.Policy.IAuthorizationPolicy})?displayProperty=fullName> with a null authorizationPolicies argument has changed its implementation in the .NET Framework 4.6.</span></span>
+
+#### <a name="suggestion"></a><span data-ttu-id="fa060-104">Návrh</span><span class="sxs-lookup"><span data-stu-id="fa060-104">Suggestion</span></span>
+
+<span data-ttu-id="fa060-105">Ve výjimečných případech můžou aplikace WCF, které používají vlastní ověřování, zobrazovat rozdíly v chování.</span><span class="sxs-lookup"><span data-stu-id="fa060-105">In rare cases, WCF apps that use custom authentication may see behavioral differences.</span></span> <span data-ttu-id="fa060-106">V takových případech je možné předchozí chování obnovit jedním ze dvou způsobů:</span><span class="sxs-lookup"><span data-stu-id="fa060-106">In such cases, the previous behavior can be restored in either of two ways:</span></span>
+
+- <span data-ttu-id="fa060-107">Znovu zkompilujte aplikaci a Zaměřte se na starší verzi .NET Framework než 4,6.</span><span class="sxs-lookup"><span data-stu-id="fa060-107">Recompile your app to target an earlier version of the .NET Framework than 4.6.</span></span> <span data-ttu-id="fa060-108">Pro služby hostované službou IIS použijte `<httpRuntime targetFramework="x.x">` element k zacílení na starší verzi .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="fa060-108">For IIS-hosted services, use the `<httpRuntime targetFramework="x.x">` element to target an earlier version of the .NET Framework.</span></span>
+- <span data-ttu-id="fa060-109">Přidejte následující řádek do `<appSettings>` části souboru app.config:</span><span class="sxs-lookup"><span data-stu-id="fa060-109">Add the following line to the `<appSettings>` section of your app.config file:</span></span>
+
+    ```xml
+    <add key="appContext.SetSwitch:Switch.System.IdentityModel.EnableCachedEmptyDefaultAuthorizationContext" value="true" />
+    ```
+
+| <span data-ttu-id="fa060-110">Name</span><span class="sxs-lookup"><span data-stu-id="fa060-110">Name</span></span>    | <span data-ttu-id="fa060-111">Hodnota</span><span class="sxs-lookup"><span data-stu-id="fa060-111">Value</span></span>       |
+|:--------|:------------|
+| <span data-ttu-id="fa060-112">Rozsah</span><span class="sxs-lookup"><span data-stu-id="fa060-112">Scope</span></span>   | <span data-ttu-id="fa060-113">Vedlejší</span><span class="sxs-lookup"><span data-stu-id="fa060-113">Minor</span></span>       |
+| <span data-ttu-id="fa060-114">Verze</span><span class="sxs-lookup"><span data-stu-id="fa060-114">Version</span></span> | <span data-ttu-id="fa060-115">4.6</span><span class="sxs-lookup"><span data-stu-id="fa060-115">4.6</span></span>         |
+| <span data-ttu-id="fa060-116">Typ</span><span class="sxs-lookup"><span data-stu-id="fa060-116">Type</span></span>    | <span data-ttu-id="fa060-117">Změna cílení</span><span class="sxs-lookup"><span data-stu-id="fa060-117">Retargeting</span></span> |
+
+#### <a name="affected-apis"></a><span data-ttu-id="fa060-118">Ovlivněná rozhraní API</span><span class="sxs-lookup"><span data-stu-id="fa060-118">Affected APIs</span></span>
+
+- <xref:System.IdentityModel.Policy.AuthorizationContext.CreateDefaultAuthorizationContext(System.Collections.Generic.IList{System.IdentityModel.Policy.IAuthorizationPolicy})?displayProperty=nameWithType>

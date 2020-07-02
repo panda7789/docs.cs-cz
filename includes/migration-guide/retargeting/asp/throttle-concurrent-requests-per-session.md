@@ -1,17 +1,29 @@
 ---
-ms.openlocfilehash: 9c3eedb7f7d4cd030a12c141b8630876c1ffdb4d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b521f4163bf5bf4a369d0eec12dae503703a976e
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "67859168"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85614436"
 ---
-### <a name="throttle-concurrent-requests-per-session"></a><span data-ttu-id="2ad23-101">Omezení souběžných požadavků na relaci</span><span class="sxs-lookup"><span data-stu-id="2ad23-101">Throttle concurrent requests per session</span></span>
+### <a name="throttle-concurrent-requests-per-session"></a><span data-ttu-id="4ac79-101">Omezit souběžné požadavky na relaci</span><span class="sxs-lookup"><span data-stu-id="4ac79-101">Throttle concurrent requests per session</span></span>
 
-|   |   |
-|---|---|
-|<span data-ttu-id="2ad23-102">Podrobnosti</span><span class="sxs-lookup"><span data-stu-id="2ad23-102">Details</span></span>|<span data-ttu-id="2ad23-103">V rozhraní .NET Framework 4.6.2 a starší ASP.NET provádí požadavky se stejným Sessionid postupně a ASP.NET vždy vydává Sessionid prostřednictvím cookies ve výchozím nastavení.</span><span class="sxs-lookup"><span data-stu-id="2ad23-103">In the .NET Framework 4.6.2 and earlier, ASP.NET executes requests with the same Sessionid sequentially, and ASP.NET always issues the Sessionid through cookies by default.</span></span> <span data-ttu-id="2ad23-104">Pokud stránka trvá dlouhou dobu reagovat, bude výrazně snížit výkon serveru pouhým stisknutím klávesy F5 v prohlížeči.</span><span class="sxs-lookup"><span data-stu-id="2ad23-104">If a page takes a long time to respond, it will significantly degrade server performance just by pressing F5 on the browser.</span></span> <span data-ttu-id="2ad23-105">V opravě jsme přidali čítač pro sledování požadavků ve frontě a ukončení požadavků, pokud překročí zadaný limit.</span><span class="sxs-lookup"><span data-stu-id="2ad23-105">In the fix, we added a counter to track the queued requests and terminate the requests when they exceed a specified limit.</span></span> <span data-ttu-id="2ad23-106">Výchozí hodnota je 50.</span><span class="sxs-lookup"><span data-stu-id="2ad23-106">The default value is 50.</span></span> <span data-ttu-id="2ad23-107">Pokud je dosaženo limitu, bude do protokolu událostí zaznamenáno upozornění a odpověď HTTP 500 může být zaznamenána do protokolu služby IIS.</span><span class="sxs-lookup"><span data-stu-id="2ad23-107">If the limit is reached, a warning will be logged in the event log, and an HTTP 500 response may be recorded in the IIS log.</span></span>|
-|<span data-ttu-id="2ad23-108">Návrh</span><span class="sxs-lookup"><span data-stu-id="2ad23-108">Suggestion</span></span>|<span data-ttu-id="2ad23-109">Chcete-li obnovit staré chování, můžete do souboru web.config přidat následující nastavení a odhlásit se z nového chování.</span><span class="sxs-lookup"><span data-stu-id="2ad23-109">To restore the old behavior, you can add the following setting to your web.config file to opt out of the new behavior.</span></span><pre><code class="lang-xml">&lt;appSettings&gt;&#13;&#10;&lt;add key=&quot;aspnet:RequestQueueLimitPerSession&quot; value=&quot;2147483647&quot;/&gt;&#13;&#10;&lt;/appSettings&gt;&#13;&#10;</code></pre>|
-|<span data-ttu-id="2ad23-110">Rozsah</span><span class="sxs-lookup"><span data-stu-id="2ad23-110">Scope</span></span>|<span data-ttu-id="2ad23-111">Edge</span><span class="sxs-lookup"><span data-stu-id="2ad23-111">Edge</span></span>|
-|<span data-ttu-id="2ad23-112">Version</span><span class="sxs-lookup"><span data-stu-id="2ad23-112">Version</span></span>|<span data-ttu-id="2ad23-113">4.7</span><span class="sxs-lookup"><span data-stu-id="2ad23-113">4.7</span></span>|
-|<span data-ttu-id="2ad23-114">Typ</span><span class="sxs-lookup"><span data-stu-id="2ad23-114">Type</span></span>|<span data-ttu-id="2ad23-115">Změna cílení</span><span class="sxs-lookup"><span data-stu-id="2ad23-115">Retargeting</span></span>|
+#### <a name="details"></a><span data-ttu-id="4ac79-102">Podrobnosti</span><span class="sxs-lookup"><span data-stu-id="4ac79-102">Details</span></span>
+
+<span data-ttu-id="4ac79-103">V .NET Framework 4.6.2 a dříve ASP.NET spouští požadavky se stejným identifikátorem SessionID sekvenčně a ASP.NET vždy vystavuje identifikátor SessionID prostřednictvím souborů cookie ve výchozím nastavení.</span><span class="sxs-lookup"><span data-stu-id="4ac79-103">In the .NET Framework 4.6.2 and earlier, ASP.NET executes requests with the same Sessionid sequentially, and ASP.NET always issues the Sessionid through cookies by default.</span></span> <span data-ttu-id="4ac79-104">Pokud bude odpověď trvat dlouhou dobu, významně sníží výkon serveru pouhým stisknutím klávesy <kbd>F5</kbd> v prohlížeči.</span><span class="sxs-lookup"><span data-stu-id="4ac79-104">If a page takes a long time to respond, it will significantly degrade server performance just by pressing <kbd>F5</kbd> on the browser.</span></span> <span data-ttu-id="4ac79-105">V této opravě jsme přidali čítač, který sleduje požadavky ve frontě a ukončí žádosti, když překročí zadaný limit.</span><span class="sxs-lookup"><span data-stu-id="4ac79-105">In the fix, we added a counter to track the queued requests and terminate the requests when they exceed a specified limit.</span></span> <span data-ttu-id="4ac79-106">Výchozí hodnota je 50.</span><span class="sxs-lookup"><span data-stu-id="4ac79-106">The default value is 50.</span></span> <span data-ttu-id="4ac79-107">Pokud je dosaženo limitu, bude zaznamenáno upozornění v protokolu událostí a odpověď HTTP 500 může být zaznamenána v protokolu služby IIS.</span><span class="sxs-lookup"><span data-stu-id="4ac79-107">If the limit is reached, a warning will be logged in the event log, and an HTTP 500 response may be recorded in the IIS log.</span></span>
+
+#### <a name="suggestion"></a><span data-ttu-id="4ac79-108">Návrh</span><span class="sxs-lookup"><span data-stu-id="4ac79-108">Suggestion</span></span>
+
+<span data-ttu-id="4ac79-109">Chcete-li obnovit původní chování, můžete do souboru web.config přidat následující nastavení, abyste se odhlásili od nového chování.</span><span class="sxs-lookup"><span data-stu-id="4ac79-109">To restore the old behavior, you can add the following setting to your web.config file to opt out of the new behavior.</span></span>
+
+```xml
+<appSettings>
+    <add key="aspnet:RequestQueueLimitPerSession" value="2147483647"/>
+</appSettings>
+```
+
+| <span data-ttu-id="4ac79-110">Name</span><span class="sxs-lookup"><span data-stu-id="4ac79-110">Name</span></span>    | <span data-ttu-id="4ac79-111">Hodnota</span><span class="sxs-lookup"><span data-stu-id="4ac79-111">Value</span></span>       |
+|:--------|:------------|
+| <span data-ttu-id="4ac79-112">Rozsah</span><span class="sxs-lookup"><span data-stu-id="4ac79-112">Scope</span></span>   | <span data-ttu-id="4ac79-113">Edge</span><span class="sxs-lookup"><span data-stu-id="4ac79-113">Edge</span></span>        |
+| <span data-ttu-id="4ac79-114">Verze</span><span class="sxs-lookup"><span data-stu-id="4ac79-114">Version</span></span> | <span data-ttu-id="4ac79-115">4,7</span><span class="sxs-lookup"><span data-stu-id="4ac79-115">4.7</span></span>         |
+| <span data-ttu-id="4ac79-116">Typ</span><span class="sxs-lookup"><span data-stu-id="4ac79-116">Type</span></span>    | <span data-ttu-id="4ac79-117">Změna cílení</span><span class="sxs-lookup"><span data-stu-id="4ac79-117">Retargeting</span></span> |

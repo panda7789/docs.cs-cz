@@ -1,17 +1,23 @@
 ---
-ms.openlocfilehash: 4c6a89f9753989a5ad061e847dff70d2af0b3cf4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 863e7035827537e0f943af05c2f0232029b99db8
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62088478"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85617195"
 ---
-### <a name="entity-framework-version-must-match-the-net-framework-version"></a><span data-ttu-id="687a6-101">Entity Framework verze musí odpovídat verzi rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="687a6-101">Entity Framework version must match the .NET Framework version</span></span>
+### <a name="entity-framework-version-must-match-the-net-framework-version"></a><span data-ttu-id="dc539-101">Verze Entity Framework musí odpovídat verzi .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="dc539-101">Entity Framework version must match the .NET Framework version</span></span>
 
-|   |   |
-|---|---|
-|<span data-ttu-id="687a6-102">Podrobnosti</span><span class="sxs-lookup"><span data-stu-id="687a6-102">Details</span></span>|<span data-ttu-id="687a6-103">S verzí rozhraní .NET framework by si měly odpovídat verzi rozhraní entity framework.</span><span class="sxs-lookup"><span data-stu-id="687a6-103">The entity framework version should be matched with the .NET framework version.</span></span> <span data-ttu-id="687a6-104">Entity Framework 5 se doporučuje pro rozhraní .NET Framework 4.5.</span><span class="sxs-lookup"><span data-stu-id="687a6-104">Entity Framework 5 is recommended for .NET Framework 4.5.</span></span> <span data-ttu-id="687a6-105">Existují některé známé problémy s platformou EF s 4.x v projektu rozhraní .NET Framework 4.5 kolem <xref:System.ComponentModel.DataAnnotations>.</span><span class="sxs-lookup"><span data-stu-id="687a6-105">There are some known issues with EF 4.x in a .NET Framework 4.5 project around <xref:System.ComponentModel.DataAnnotations>.</span></span> <span data-ttu-id="687a6-106">V rozhraní .NET 4.5 tyto se přesunuly na jiné sestavení, takže dojde k problémům určující, které poznámky k použití.</span><span class="sxs-lookup"><span data-stu-id="687a6-106">In .NET 4.5, these were moved to a different assembly, so there are issues determining which annotations to use.</span></span>|
-|<span data-ttu-id="687a6-107">Doporučení</span><span class="sxs-lookup"><span data-stu-id="687a6-107">Suggestion</span></span>|<span data-ttu-id="687a6-108">Upgrade na rozhraní Entity Framework 5 pro rozhraní .NET Framework 4.5</span><span class="sxs-lookup"><span data-stu-id="687a6-108">Upgrade to Entity Framework 5 for .NET Framework 4.5</span></span>|
-|<span data-ttu-id="687a6-109">Rozsah</span><span class="sxs-lookup"><span data-stu-id="687a6-109">Scope</span></span>|<span data-ttu-id="687a6-110">Hlavní</span><span class="sxs-lookup"><span data-stu-id="687a6-110">Major</span></span>|
-|<span data-ttu-id="687a6-111">Version</span><span class="sxs-lookup"><span data-stu-id="687a6-111">Version</span></span>|<span data-ttu-id="687a6-112">4.5</span><span class="sxs-lookup"><span data-stu-id="687a6-112">4.5</span></span>|
-|<span data-ttu-id="687a6-113">Type</span><span class="sxs-lookup"><span data-stu-id="687a6-113">Type</span></span>|<span data-ttu-id="687a6-114">Změna cílení</span><span class="sxs-lookup"><span data-stu-id="687a6-114">Retargeting</span></span>|
+#### <a name="details"></a><span data-ttu-id="dc539-102">Podrobnosti</span><span class="sxs-lookup"><span data-stu-id="dc539-102">Details</span></span>
+
+<span data-ttu-id="dc539-103">Verze Entity Framework (EF) by měla odpovídat verzi .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="dc539-103">The Entity Framework (EF) version should be matched with the .NET Framework version.</span></span> <span data-ttu-id="dc539-104">Pro .NET Framework 4,5 se doporučuje Entity Framework 5.</span><span class="sxs-lookup"><span data-stu-id="dc539-104">Entity Framework 5 is recommended for .NET Framework 4.5.</span></span> <span data-ttu-id="dc539-105">K dispozici jsou některé známé problémy s EF 4. x v projektu .NET Framework 4,5 <xref:System.ComponentModel.DataAnnotations> .</span><span class="sxs-lookup"><span data-stu-id="dc539-105">There are some known issues with EF 4.x in a .NET Framework 4.5 project around <xref:System.ComponentModel.DataAnnotations>.</span></span> <span data-ttu-id="dc539-106">V .NET Framework 4,5 byly tyto přesunuty do jiného sestavení, takže dojde k problémům s určením, které poznámky se mají použít.</span><span class="sxs-lookup"><span data-stu-id="dc539-106">In .NET Framework 4.5, these were moved to a different assembly, so there are issues determining which annotations to use.</span></span>
+
+#### <a name="suggestion"></a><span data-ttu-id="dc539-107">Návrh</span><span class="sxs-lookup"><span data-stu-id="dc539-107">Suggestion</span></span>
+
+<span data-ttu-id="dc539-108">Upgrade na Entity Framework 5 pro .NET Framework 4,5</span><span class="sxs-lookup"><span data-stu-id="dc539-108">Upgrade to Entity Framework 5 for .NET Framework 4.5</span></span>
+
+| <span data-ttu-id="dc539-109">Name</span><span class="sxs-lookup"><span data-stu-id="dc539-109">Name</span></span>    | <span data-ttu-id="dc539-110">Hodnota</span><span class="sxs-lookup"><span data-stu-id="dc539-110">Value</span></span>       |
+|:--------|:------------|
+| <span data-ttu-id="dc539-111">Rozsah</span><span class="sxs-lookup"><span data-stu-id="dc539-111">Scope</span></span>   | <span data-ttu-id="dc539-112">Hlavní</span><span class="sxs-lookup"><span data-stu-id="dc539-112">Major</span></span>       |
+| <span data-ttu-id="dc539-113">Verze</span><span class="sxs-lookup"><span data-stu-id="dc539-113">Version</span></span> | <span data-ttu-id="dc539-114">4.5</span><span class="sxs-lookup"><span data-stu-id="dc539-114">4.5</span></span>         |
+| <span data-ttu-id="dc539-115">Typ</span><span class="sxs-lookup"><span data-stu-id="dc539-115">Type</span></span>    | <span data-ttu-id="dc539-116">Změna cílení</span><span class="sxs-lookup"><span data-stu-id="dc539-116">Retargeting</span></span> |
