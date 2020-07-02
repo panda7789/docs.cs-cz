@@ -8,22 +8,12 @@ items:
   - name: Instalace
     items:
       - name: Přehled
-        href: install/index.md
-      - name: Instalace sady SDK
-        href: install/sdk.md
-      - name: Instalace modulu runtime
-        href: install/runtime.md
-      - name: Podporovaný operační systém a závislosti
-        href: install/dependencies.md
-      - name: Odebrání zastaralých modulů runtime a sad SDK
-        href: install/remove-runtime-sdk-versions.md
-      - name: Správa šablon pro .NET
-        href: install/templates.md
-      - name: Záležitosti „notářského“ ověřování pro macOS
-        href: install/macos-notarization-issues.md
-      - name: Jak kontrolovat verze .NET Core
-        href: install/how-to-detect-installed-versions.md
-      - name: Linux
+        href: install/index.yml
+      - name: Instalace v systému Windows
+        href: install/windows.md
+      - name: Instalace v systému macOS
+        href: install/macos.md
+      - name: Instalace v systému Linux
         items:
           - name: Přehled
             href: install/linux.md
@@ -43,6 +33,14 @@ items:
             href: install/linux-rhel.md
           - name: SLES
             href: install/linux-sles.md
+      - name: Odebrání zastaralých modulů runtime a sad SDK
+        href: install/remove-runtime-sdk-versions.md
+      - name: Správa šablon pro .NET
+        href: install/templates.md
+      - name: Záležitosti „notářského“ ověřování pro macOS
+        href: install/macos-notarization-issues.md
+      - name: Jak kontrolovat verze .NET Core
+        href: install/how-to-detect-installed-versions.md
       - name: Instalace lokalizované technologie IntelliSense
         href: install/localized-intellisense.md
   - name: Začínáme
