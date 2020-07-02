@@ -1,5 +1,6 @@
 ---
-title: 'Postupy: Řízení elementu MediaElement pomocí scénáře'
+title: 'Postupy: Řízení MediaElement pomocí scénáře'
+description: Řízení přehrávání médií pomocí scénáře ve Windows Presentation Foundation (WPF). Vezměte v úvahu tento příklad pro vytvoření jednoduchého přehrávače médií.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,31 +12,31 @@ helpviewer_keywords:
 - media [WPF], controlling playback with Storyboards
 - playback of media [WPF], controlling with Storyboards
 ms.assetid: 6128ca77-b826-4e36-b968-6f237157c543
-ms.openlocfilehash: ae785e11b1da0f2c408b24021ad46ab071419378
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5a5e41b9a28211495fd3374c1a51a655dd867bca
+ms.sourcegitcommit: b6a1869f97a37f11a68c90afde1a520a6887dcbc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62032225"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853734"
 ---
-# <a name="how-to-control-a-mediaelement-by-using-a-storyboard"></a>Postupy: Řízení elementu MediaElement pomocí scénáře
-Tento příklad ukazuje, jak řídit <xref:System.Windows.Controls.MediaElement> pomocí <xref:System.Windows.Media.MediaTimeline> v <xref:System.Windows.Media.Animation.Storyboard>.  
+# <a name="how-to-control-a-mediaelement-by-using-a-storyboard"></a>Postupy: Řízení MediaElement pomocí scénáře
+Tento příklad ukazuje, jak řídit pomocí <xref:System.Windows.Controls.MediaElement> <xref:System.Windows.Media.MediaTimeline> v <xref:System.Windows.Media.Animation.Storyboard> .  
   
 ## <a name="example"></a>Příklad  
- Při použití <xref:System.Windows.Media.MediaTimeline> v <xref:System.Windows.Media.Animation.Storyboard> řídit načasování <xref:System.Windows.Controls.MediaElement>, funkce je stejný jako funkce jiných <xref:System.Windows.Media.Animation.Timeline> objekty, jako je například animace. Například <xref:System.Windows.Media.MediaTimeline> používá <xref:System.Windows.Media.Animation.Timeline> vlastnosti, například <xref:System.Windows.Media.Animation.Timeline.BeginTime%2A> vlastnosti a určit, kdy se má spustit <xref:System.Windows.Controls.MediaElement> (spuštění přehrání média). Využívá také <xref:System.Windows.Media.Animation.Timeline.Duration%2A> vlastnosti a určit tak jak dlouho se <xref:System.Windows.Controls.MediaElement> aktivní (doba trvání přehrání média). Další informace o používání <xref:System.Windows.Media.Animation.Timeline> objekty s <xref:System.Windows.Media.Animation.Storyboard>, naleznete v tématu [přehled scénářů](storyboards-overview.md).  
+ Použijete-li <xref:System.Windows.Media.MediaTimeline> v <xref:System.Windows.Media.Animation.Storyboard> k řízení časování a <xref:System.Windows.Controls.MediaElement> , je funkce totožná s funkcemi jiných <xref:System.Windows.Media.Animation.Timeline> objektů, jako jsou například animace. Například <xref:System.Windows.Media.MediaTimeline> používá <xref:System.Windows.Media.Animation.Timeline> vlastnosti jako <xref:System.Windows.Media.Animation.Timeline.BeginTime%2A> vlastnost k určení, kdy se má spustit <xref:System.Windows.Controls.MediaElement> (spustit přehrávání média). Tato vlastnost také používá <xref:System.Windows.Media.Animation.Timeline.Duration%2A> vlastnost k určení, jak dlouho <xref:System.Windows.Controls.MediaElement> je aktivní (doba přehrávání média). Další informace o použití objektů s objektem naleznete <xref:System.Windows.Media.Animation.Timeline> <xref:System.Windows.Media.Animation.Storyboard> v tématu [Přehled scénářů](storyboards-overview.md).  
   
- Tento příklad ukazuje, jak vytvořit jednoduchý přehrávač, který používá <xref:System.Windows.Media.MediaTimeline> ovládat přehrávání. Media player obsahuje přehrát, pozastavit, obnovit a zastavit tlačítka. Přehrávač má také <xref:System.Windows.Controls.Slider> ovládací prvek, který slouží jako indikátor průběhu.  
+ Tento příklad ukazuje, jak vytvořit jednoduchý přehrávač médií, který používá <xref:System.Windows.Media.MediaTimeline> k řízení přehrávání. Přehrávač médií obsahuje tlačítka Přehrát, pozastavit, obnovit a zastavit. Hráč má také <xref:System.Windows.Controls.Slider> ovládací prvek, který funguje jako indikátor průběhu.  
   
- Následující příklad vytvoří [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] pro media player.  
+ Následující příklad vytvoří [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] pro Media Player.  
   
  [!code-xaml[MediaGallery_snip#MediaTimelineExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/MediaGallery_snip/VB/MediaTimelineExample.xaml#mediatimelineexamplewholepage)]  
   
- Následující příklad vytvoří funkce pro indikátor průběhu.  
+ Následující příklad vytvoří funkci pro indikátor průběhu.  
   
  [!code-csharp[MediaGallery_snip#CodeBehindMediaTimelineExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/MediaGallery_snip/CSharp/MediaTimelineExample.xaml.cs#codebehindmediatimelineexamplewholepage)]
  [!code-vb[MediaGallery_snip#CodeBehindMediaTimelineExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/MediaGallery_snip/VB/MediaTimelineExample.xaml.vb#codebehindmediatimelineexamplewholepage)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Controls.MediaElement>
 - <xref:System.Windows.Media.MediaTimeline>
@@ -44,5 +45,5 @@ Tento příklad ukazuje, jak řídit <xref:System.Windows.Controls.MediaElement>
 - [Přehled scénářů](storyboards-overview.md)
 - [Přehled animací klíčových snímků](key-frame-animations-overview.md)
 - [Přehled animace](animation-overview.md)
-- [Témata s postupy](audio-and-video-how-to-topics.md)
+- [– postupy](audio-and-video-how-to-topics.md)
 - [Grafika a multimédia](index.md)
