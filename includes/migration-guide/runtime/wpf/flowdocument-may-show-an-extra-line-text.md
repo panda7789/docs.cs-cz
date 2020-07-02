@@ -1,18 +1,27 @@
 ---
-ms.openlocfilehash: 6c1740df66ead271afa5f97dc125587810946bc6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0470cefc05fb5da6a6195ee0a96f04feef01fd10
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66379528"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85620086"
 ---
-### <a name="flowdocument-may-show-an-extra-line-of-text"></a><span data-ttu-id="0396c-101">FlowDocument můžou zobrazovat další řádek textu</span><span class="sxs-lookup"><span data-stu-id="0396c-101">FlowDocument may show an extra line of text</span></span>
+### <a name="flowdocument-may-show-an-extra-line-of-text"></a><span data-ttu-id="1a4d4-101">FlowDocument může zobrazit další řádek textu.</span><span class="sxs-lookup"><span data-stu-id="1a4d4-101">FlowDocument may show an extra line of text</span></span>
 
-|   |   |
-|---|---|
-|<span data-ttu-id="0396c-102">Podrobnosti</span><span class="sxs-lookup"><span data-stu-id="0396c-102">Details</span></span>|<span data-ttu-id="0396c-103">V některých případech <xref:System.Windows.Documents.FlowDocument> elementu se zobrazí další řádek textu při spuštění v rozhraní .NET Framework 4.5 ve srovnání s způsob zobrazení při spuštění v rozhraní .NET Framework 4.0.</span><span class="sxs-lookup"><span data-stu-id="0396c-103">In some cases, a <xref:System.Windows.Documents.FlowDocument> element will display an extra line of text when running on the .NET Framework 4.5 compared to how it displayed when run on the .NET Framework 4.0.</span></span> <span data-ttu-id="0396c-104">Nejsou žádné známé případy změny způsobující jakýkoli text, který se má zobrazit nesprávně nebo illegibly, ale může způsobit text, který se zobrazí, která dříve byla vynechána z <xref:System.Windows.Documents.FlowDocument>v zobrazení.</span><span class="sxs-lookup"><span data-stu-id="0396c-104">There are no known cases of the change causing any text to be displayed poorly or illegibly, but it could cause text to appear that previously was omitted from a <xref:System.Windows.Documents.FlowDocument>'s view.</span></span>|
-|<span data-ttu-id="0396c-105">Doporučení</span><span class="sxs-lookup"><span data-stu-id="0396c-105">Suggestion</span></span>|<span data-ttu-id="0396c-106">V některých případech můžete zmenšit vlastnost PageHeight zobrazení elementu jednou obnovit předchozí počet zobrazených řádků.</span><span class="sxs-lookup"><span data-stu-id="0396c-106">In some cases, decreasing the display element's PageHeight property by one can restore the previous number of displayed lines.</span></span>|
-|<span data-ttu-id="0396c-107">Scope</span><span class="sxs-lookup"><span data-stu-id="0396c-107">Scope</span></span>|<span data-ttu-id="0396c-108">Edge</span><span class="sxs-lookup"><span data-stu-id="0396c-108">Edge</span></span>|
-|<span data-ttu-id="0396c-109">Version</span><span class="sxs-lookup"><span data-stu-id="0396c-109">Version</span></span>|<span data-ttu-id="0396c-110">4.5</span><span class="sxs-lookup"><span data-stu-id="0396c-110">4.5</span></span>|
-|<span data-ttu-id="0396c-111">Type</span><span class="sxs-lookup"><span data-stu-id="0396c-111">Type</span></span>|<span data-ttu-id="0396c-112">Modul runtime</span><span class="sxs-lookup"><span data-stu-id="0396c-112">Runtime</span></span>|
-|<span data-ttu-id="0396c-113">Ovlivněná rozhraní API</span><span class="sxs-lookup"><span data-stu-id="0396c-113">Affected APIs</span></span>|<ul><li><xref:System.Windows.Documents.FlowDocument.%23ctor?displayProperty=nameWithType></li><li><xref:System.Windows.Documents.FlowDocument.%23ctor(System.Windows.Documents.Block)?displayProperty=nameWithType></li><li><xref:System.Windows.Controls.FlowDocumentReader.%23ctor?displayProperty=nameWithType></li><li><xref:System.Windows.Controls.FlowDocumentPageViewer.%23ctor?displayProperty=nameWithType></li><li><xref:System.Windows.Controls.Primitives.DocumentPageView.%23ctor?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a><span data-ttu-id="1a4d4-102">Podrobnosti</span><span class="sxs-lookup"><span data-stu-id="1a4d4-102">Details</span></span>
+
+<span data-ttu-id="1a4d4-103">V některých případech prvek při spuštění <xref:System.Windows.Documents.FlowDocument> na .NET Framework 4,5 ve srovnání se zobrazením na .NET Framework 4,0 zobrazí další řádek textu.</span><span class="sxs-lookup"><span data-stu-id="1a4d4-103">In some cases, a <xref:System.Windows.Documents.FlowDocument> element will display an extra line of text when running on the .NET Framework 4.5 compared to how it displayed when run on the .NET Framework 4.0.</span></span> <span data-ttu-id="1a4d4-104">Neexistují žádné známé případy změny, což způsobí, že by se text zobrazil špatně nebo illegibly, ale může to způsobit, že se text v zobrazení dříve vynechal <xref:System.Windows.Documents.FlowDocument> .</span><span class="sxs-lookup"><span data-stu-id="1a4d4-104">There are no known cases of the change causing any text to be displayed poorly or illegibly, but it could cause text to appear that previously was omitted from a <xref:System.Windows.Documents.FlowDocument>'s view.</span></span>
+
+#### <a name="suggestion"></a><span data-ttu-id="1a4d4-105">Návrh</span><span class="sxs-lookup"><span data-stu-id="1a4d4-105">Suggestion</span></span>
+
+<span data-ttu-id="1a4d4-106">V některých případech může zmenšit předchozí počet zobrazených řádků tím, že se zmenší vlastnost PageHeight elementu zobrazení o jeden.</span><span class="sxs-lookup"><span data-stu-id="1a4d4-106">In some cases, decreasing the display element's PageHeight property by one can restore the previous number of displayed lines.</span></span>
+
+| <span data-ttu-id="1a4d4-107">Name</span><span class="sxs-lookup"><span data-stu-id="1a4d4-107">Name</span></span>    | <span data-ttu-id="1a4d4-108">Hodnota</span><span class="sxs-lookup"><span data-stu-id="1a4d4-108">Value</span></span>       |
+|:--------|:------------|
+| <span data-ttu-id="1a4d4-109">Rozsah</span><span class="sxs-lookup"><span data-stu-id="1a4d4-109">Scope</span></span>   |<span data-ttu-id="1a4d4-110">Edge</span><span class="sxs-lookup"><span data-stu-id="1a4d4-110">Edge</span></span>|
+|<span data-ttu-id="1a4d4-111">Verze</span><span class="sxs-lookup"><span data-stu-id="1a4d4-111">Version</span></span>|<span data-ttu-id="1a4d4-112">4.5</span><span class="sxs-lookup"><span data-stu-id="1a4d4-112">4.5</span></span>|
+|<span data-ttu-id="1a4d4-113">Typ</span><span class="sxs-lookup"><span data-stu-id="1a4d4-113">Type</span></span>|<span data-ttu-id="1a4d4-114">Modul runtime</span><span class="sxs-lookup"><span data-stu-id="1a4d4-114">Runtime</span></span>
+
+#### <a name="affected-apis"></a><span data-ttu-id="1a4d4-115">Ovlivněná rozhraní API</span><span class="sxs-lookup"><span data-stu-id="1a4d4-115">Affected APIs</span></span>
+
+-<xref:System.Windows.Documents.FlowDocument.%23ctor></li><li><xref:System.Windows.Documents.FlowDocument.%23ctor(System.Windows.Documents.Block)></li><li><xref:System.Windows.Controls.FlowDocumentReader.%23ctor></li><li><xref:System.Windows.Controls.FlowDocumentPageViewer.%23ctor></li><li><xref:System.Windows.Controls.Primitives.DocumentPageView.%23ctor></li></ul>|

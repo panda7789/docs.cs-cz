@@ -1,18 +1,27 @@
 ---
-ms.openlocfilehash: 74ce1bbc9a887aee3a33eaf05084e8c2000967c2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: cd59818fe674e10a206725bea8a74c4aceed99b1
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66379522"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85620098"
 ---
-### <a name="wpf-textbox-selected-text-appears-a-different-color-when-the-text-box-is-inactive"></a><span data-ttu-id="0c712-101">Textové pole WPF vybraný text se zobrazí odlišnou barvou, když do textového pole je neaktivní</span><span class="sxs-lookup"><span data-stu-id="0c712-101">WPF TextBox selected text appears a different color when the text box is inactive</span></span>
+### <a name="wpf-textbox-selected-text-appears-a-different-color-when-the-text-box-is-inactive"></a><span data-ttu-id="087c8-101">Textové pole WPF – vybraný text se zobrazí v případě neaktivního textového pole s jinou barvou</span><span class="sxs-lookup"><span data-stu-id="087c8-101">WPF TextBox selected text appears a different color when the text box is inactive</span></span>
 
-|   |   |
-|---|---|
-|<span data-ttu-id="0c712-102">Podrobnosti</span><span class="sxs-lookup"><span data-stu-id="0c712-102">Details</span></span>|<span data-ttu-id="0c712-103">V rozhraní .NET Framework 4.5, když je neaktivní ovládacího prvku WPF textového pole (nemá fokus), zobrazí se vybraný text v poli jinou barvou, než když je aktivní ovládací prvek.</span><span class="sxs-lookup"><span data-stu-id="0c712-103">In .NET Framework 4.5, when a WPF text box control is inactive (it doesn't have focus), the selected text inside the box will appear a different color than when the control is active.</span></span>|
-|<span data-ttu-id="0c712-104">Doporučení</span><span class="sxs-lookup"><span data-stu-id="0c712-104">Suggestion</span></span>|<span data-ttu-id="0c712-105">Může se obnovit předchozí chování (.NET Framework 4.0) tak, že nastavíte <xref:System.Windows.FrameworkCompatibilityPreferences.AreInactiveSelectionHighlightBrushKeysSupported> vlastnost <code>false</code>.</span><span class="sxs-lookup"><span data-stu-id="0c712-105">The previous (.NET Framework 4.0) behavior may be restored by setting the <xref:System.Windows.FrameworkCompatibilityPreferences.AreInactiveSelectionHighlightBrushKeysSupported> property to <code>false</code>.</span></span>|
-|<span data-ttu-id="0c712-106">Scope</span><span class="sxs-lookup"><span data-stu-id="0c712-106">Scope</span></span>|<span data-ttu-id="0c712-107">Edge</span><span class="sxs-lookup"><span data-stu-id="0c712-107">Edge</span></span>|
-|<span data-ttu-id="0c712-108">Version</span><span class="sxs-lookup"><span data-stu-id="0c712-108">Version</span></span>|<span data-ttu-id="0c712-109">4.5</span><span class="sxs-lookup"><span data-stu-id="0c712-109">4.5</span></span>|
-|<span data-ttu-id="0c712-110">Type</span><span class="sxs-lookup"><span data-stu-id="0c712-110">Type</span></span>|<span data-ttu-id="0c712-111">Modul runtime</span><span class="sxs-lookup"><span data-stu-id="0c712-111">Runtime</span></span>|
-|<span data-ttu-id="0c712-112">Ovlivněná rozhraní API</span><span class="sxs-lookup"><span data-stu-id="0c712-112">Affected APIs</span></span>|<ul><li><xref:System.Windows.Controls.TextBox?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a><span data-ttu-id="087c8-102">Podrobnosti</span><span class="sxs-lookup"><span data-stu-id="087c8-102">Details</span></span>
+
+<span data-ttu-id="087c8-103">V .NET Framework 4,5, pokud je ovládací prvek textového pole WPF neaktivní (nemá fokus), se vybraný text v poli zobrazí jinou barvou, než je ovládací prvek aktivní.</span><span class="sxs-lookup"><span data-stu-id="087c8-103">In .NET Framework 4.5, when a WPF text box control is inactive (it doesn't have focus), the selected text inside the box will appear a different color than when the control is active.</span></span>
+
+#### <a name="suggestion"></a><span data-ttu-id="087c8-104">Návrh</span><span class="sxs-lookup"><span data-stu-id="087c8-104">Suggestion</span></span>
+
+<span data-ttu-id="087c8-105">Předchozí chování (.NET Framework 4,0) může být obnoveno nastavením <xref:System.Windows.FrameworkCompatibilityPreferences.AreInactiveSelectionHighlightBrushKeysSupported> vlastnosti na <code>false</code> .</span><span class="sxs-lookup"><span data-stu-id="087c8-105">The previous (.NET Framework 4.0) behavior may be restored by setting the <xref:System.Windows.FrameworkCompatibilityPreferences.AreInactiveSelectionHighlightBrushKeysSupported> property to <code>false</code>.</span></span>
+
+| <span data-ttu-id="087c8-106">Name</span><span class="sxs-lookup"><span data-stu-id="087c8-106">Name</span></span>    | <span data-ttu-id="087c8-107">Hodnota</span><span class="sxs-lookup"><span data-stu-id="087c8-107">Value</span></span>       |
+|:--------|:------------|
+| <span data-ttu-id="087c8-108">Rozsah</span><span class="sxs-lookup"><span data-stu-id="087c8-108">Scope</span></span>   |<span data-ttu-id="087c8-109">Edge</span><span class="sxs-lookup"><span data-stu-id="087c8-109">Edge</span></span>|
+|<span data-ttu-id="087c8-110">Verze</span><span class="sxs-lookup"><span data-stu-id="087c8-110">Version</span></span>|<span data-ttu-id="087c8-111">4.5</span><span class="sxs-lookup"><span data-stu-id="087c8-111">4.5</span></span>|
+|<span data-ttu-id="087c8-112">Typ</span><span class="sxs-lookup"><span data-stu-id="087c8-112">Type</span></span>|<span data-ttu-id="087c8-113">Modul runtime</span><span class="sxs-lookup"><span data-stu-id="087c8-113">Runtime</span></span>
+
+#### <a name="affected-apis"></a><span data-ttu-id="087c8-114">Ovlivněná rozhraní API</span><span class="sxs-lookup"><span data-stu-id="087c8-114">Affected APIs</span></span>
+
+-<xref:System.Windows.Controls.TextBox?displayProperty=nameWithType></li></ul>|

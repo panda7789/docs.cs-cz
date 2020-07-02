@@ -1,17 +1,23 @@
 ---
-ms.openlocfilehash: dbe96abebdc61fae469f7727673e6fcb93cbc739
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: cecb7b2abd4f57fdaacb0ea373cc19dc3cd9b24a
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "67803242"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619936"
 ---
-### <a name="no-longer-able-to-set-enableviewstatemac-to-false"></a><span data-ttu-id="846e9-101">Již nelze nastavit EnableViewStateMac na false</span><span class="sxs-lookup"><span data-stu-id="846e9-101">No longer able to set EnableViewStateMac to false</span></span>
+### <a name="no-longer-able-to-set-enableviewstatemac-to-false"></a><span data-ttu-id="6de81-101">Už není možné nastavit EnableViewStateMac na false.</span><span class="sxs-lookup"><span data-stu-id="6de81-101">No longer able to set EnableViewStateMac to false</span></span>
 
-|   |   |
-|---|---|
-|<span data-ttu-id="846e9-102">Podrobnosti</span><span class="sxs-lookup"><span data-stu-id="846e9-102">Details</span></span>|<span data-ttu-id="846e9-103">ASP.NET již umožňuje vývojářům specifikovat <code>&lt;pages enableViewStateMac=&quot;false&quot;/&gt;</code> nebo <code>&lt;@Page EnableViewStateMac=&quot;false&quot; %&gt;</code>.</span><span class="sxs-lookup"><span data-stu-id="846e9-103">ASP.NET no longer allows developers to specify <code>&lt;pages enableViewStateMac=&quot;false&quot;/&gt;</code> or <code>&lt;@Page EnableViewStateMac=&quot;false&quot; %&gt;</code>.</span></span> <span data-ttu-id="846e9-104">Ověřovací kód zprávy stavu zobrazení (MAC) je nyní vynucen pro všechny požadavky s vloženým stavem zobrazení.</span><span class="sxs-lookup"><span data-stu-id="846e9-104">The view state message authentication code (MAC) is now enforced for all requests with embedded view state.</span></span> <span data-ttu-id="846e9-105">Ovlivněny <code>false</code> jsou pouze aplikace, které explicitně nastavují vlastnost EnableViewStateMac.</span><span class="sxs-lookup"><span data-stu-id="846e9-105">Only apps that explicitly set the EnableViewStateMac property to <code>false</code> are affected.</span></span>|
-|<span data-ttu-id="846e9-106">Návrh</span><span class="sxs-lookup"><span data-stu-id="846e9-106">Suggestion</span></span>|<span data-ttu-id="846e9-107">EnableViewStateMac musí být považován za true a všechny výsledné chyby MAC musí být vyřešeny (jak je vysvětleno v [tomto návodu](https://support.microsoft.com/kb/2915218), který obsahuje více rozlišení v závislosti na specifika toho, co je příčinou chyb MAC).</span><span class="sxs-lookup"><span data-stu-id="846e9-107">EnableViewStateMac must be assumed to be true, and any resulting MAC errors must be resolved (as explained in [this guidance](https://support.microsoft.com/kb/2915218), which contains multiple resolutions depending on the specifics of what is causing MAC errors).</span></span>|
-|<span data-ttu-id="846e9-108">Rozsah</span><span class="sxs-lookup"><span data-stu-id="846e9-108">Scope</span></span>|<span data-ttu-id="846e9-109">Hlavní</span><span class="sxs-lookup"><span data-stu-id="846e9-109">Major</span></span>|
-|<span data-ttu-id="846e9-110">Version</span><span class="sxs-lookup"><span data-stu-id="846e9-110">Version</span></span>|<span data-ttu-id="846e9-111">4.5.2</span><span class="sxs-lookup"><span data-stu-id="846e9-111">4.5.2</span></span>|
-|<span data-ttu-id="846e9-112">Typ</span><span class="sxs-lookup"><span data-stu-id="846e9-112">Type</span></span>|<span data-ttu-id="846e9-113">Modul runtime</span><span class="sxs-lookup"><span data-stu-id="846e9-113">Runtime</span></span>|
+#### <a name="details"></a><span data-ttu-id="6de81-102">Podrobnosti</span><span class="sxs-lookup"><span data-stu-id="6de81-102">Details</span></span>
+
+<span data-ttu-id="6de81-103">ASP.NET už neumožňuje vývojářům zadat <code>&lt;pages enableViewStateMac=&quot;false&quot;/&gt;</code> nebo <code>&lt;@Page EnableViewStateMac=&quot;false&quot; %&gt;</code> .</span><span class="sxs-lookup"><span data-stu-id="6de81-103">ASP.NET no longer allows developers to specify <code>&lt;pages enableViewStateMac=&quot;false&quot;/&gt;</code> or <code>&lt;@Page EnableViewStateMac=&quot;false&quot; %&gt;</code>.</span></span> <span data-ttu-id="6de81-104">Pro všechny požadavky se stavem vloženého zobrazení je nyní vynutil ověřovací kód zprávy o stavu zobrazení (MAC).</span><span class="sxs-lookup"><span data-stu-id="6de81-104">The view state message authentication code (MAC) is now enforced for all requests with embedded view state.</span></span> <span data-ttu-id="6de81-105">Ovlivněny jsou pouze aplikace, které explicitně nastavily vlastnost EnableViewStateMac <code>false</code> .</span><span class="sxs-lookup"><span data-stu-id="6de81-105">Only apps that explicitly set the EnableViewStateMac property to <code>false</code> are affected.</span></span>
+
+#### <a name="suggestion"></a><span data-ttu-id="6de81-106">Návrh</span><span class="sxs-lookup"><span data-stu-id="6de81-106">Suggestion</span></span>
+
+<span data-ttu-id="6de81-107">EnableViewStateMac se musí předpokládat, že má hodnotu true, a všechny výsledné chyby MAC musí být vyřešené (jak je vysvětleno v [těchto pokynech](https://support.microsoft.com/kb/2915218), které obsahují více rozlišení v závislosti na konkrétních hodnotách, které způsobují chyby Mac).</span><span class="sxs-lookup"><span data-stu-id="6de81-107">EnableViewStateMac must be assumed to be true, and any resulting MAC errors must be resolved (as explained in [this guidance](https://support.microsoft.com/kb/2915218), which contains multiple resolutions depending on the specifics of what is causing MAC errors).</span></span>
+
+| <span data-ttu-id="6de81-108">Name</span><span class="sxs-lookup"><span data-stu-id="6de81-108">Name</span></span>    | <span data-ttu-id="6de81-109">Hodnota</span><span class="sxs-lookup"><span data-stu-id="6de81-109">Value</span></span>       |
+|:--------|:------------|
+| <span data-ttu-id="6de81-110">Rozsah</span><span class="sxs-lookup"><span data-stu-id="6de81-110">Scope</span></span>   |<span data-ttu-id="6de81-111">Hlavní</span><span class="sxs-lookup"><span data-stu-id="6de81-111">Major</span></span>|
+|<span data-ttu-id="6de81-112">Verze</span><span class="sxs-lookup"><span data-stu-id="6de81-112">Version</span></span>|<span data-ttu-id="6de81-113">4.5.2</span><span class="sxs-lookup"><span data-stu-id="6de81-113">4.5.2</span></span>|
+|<span data-ttu-id="6de81-114">Typ</span><span class="sxs-lookup"><span data-stu-id="6de81-114">Type</span></span>|<span data-ttu-id="6de81-115">Modul runtime</span><span class="sxs-lookup"><span data-stu-id="6de81-115">Runtime</span></span>|

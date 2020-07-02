@@ -1,18 +1,27 @@
 ---
-ms.openlocfilehash: 33ad1c044001e0a8d09708cc7a1f06e05cb307de
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: 687118157020ede200f97a0125c4740a06bf4b5e
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59803691"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85620014"
 ---
-### <a name="different-exception-handling-for-objectcontextcreatedatabase-and-dbproviderservicescreatedatabase-methods"></a><span data-ttu-id="e17db-101">Zpracování metody ObjectContext.CreateDatabase a DbProviderServices.CreateDatabase různých výjimek</span><span class="sxs-lookup"><span data-stu-id="e17db-101">Different exception handling for ObjectContext.CreateDatabase and DbProviderServices.CreateDatabase methods</span></span>
+### <a name="different-exception-handling-for-objectcontextcreatedatabase-and-dbproviderservicescreatedatabase-methods"></a><span data-ttu-id="1d35c-101">Různé zpracování výjimek pro metody ObjectContext. CreateDatabase a DbProviderServices. CreateDatabase</span><span class="sxs-lookup"><span data-stu-id="1d35c-101">Different exception handling for ObjectContext.CreateDatabase and DbProviderServices.CreateDatabase methods</span></span>
 
-|   |   |
-|---|---|
-|<span data-ttu-id="e17db-102">Podrobnosti</span><span class="sxs-lookup"><span data-stu-id="e17db-102">Details</span></span>|<span data-ttu-id="e17db-103">Počínaje .NET Framework 4.5, pokud se vytváření databáze nezdaří, <code>CreateDatabase</code> metody se pokusí zrušit prázdnou databázi.</span><span class="sxs-lookup"><span data-stu-id="e17db-103">Beginning in .NET Framework 4.5, if database creation fails, <code>CreateDatabase</code> methods will attempt to drop the empty database.</span></span> <span data-ttu-id="e17db-104">Pokud operace proběhne úspěšně, původní <xref:System.Data.SqlClient.SqlException?displayProperty=name> se rozšíří (místo <xref:System.InvalidOperationException?displayProperty=name> , která byla vždy vyvolána v rozhraní .NET Framework 4.0)</span><span class="sxs-lookup"><span data-stu-id="e17db-104">If that operation succeeds, the original <xref:System.Data.SqlClient.SqlException?displayProperty=name> will be propagated (instead of the <xref:System.InvalidOperationException?displayProperty=name> that was always thrown in .NET Framework 4.0)</span></span>|
-|<span data-ttu-id="e17db-105">Doporučení</span><span class="sxs-lookup"><span data-stu-id="e17db-105">Suggestion</span></span>|<span data-ttu-id="e17db-106">Při zachytávání <xref:System.InvalidOperationException?displayProperty=name> při provádění <xref:System.Data.Objects.ObjectContext.CreateDatabase> nebo <xref:System.Data.Common.DbProviderServices.CreateDatabase(System.Data.Common.DbConnection,System.Nullable{System.Int32},System.Data.Metadata.Edm.StoreItemCollection)>, SQLExceptions by měl nyní také být zachycena.</span><span class="sxs-lookup"><span data-stu-id="e17db-106">When catching an <xref:System.InvalidOperationException?displayProperty=name> while executing <xref:System.Data.Objects.ObjectContext.CreateDatabase> or <xref:System.Data.Common.DbProviderServices.CreateDatabase(System.Data.Common.DbConnection,System.Nullable{System.Int32},System.Data.Metadata.Edm.StoreItemCollection)>, SQLExceptions should now also be caught.</span></span>|
-|<span data-ttu-id="e17db-107">Rozsah</span><span class="sxs-lookup"><span data-stu-id="e17db-107">Scope</span></span>|<span data-ttu-id="e17db-108">Vedlejší</span><span class="sxs-lookup"><span data-stu-id="e17db-108">Minor</span></span>|
-|<span data-ttu-id="e17db-109">Version</span><span class="sxs-lookup"><span data-stu-id="e17db-109">Version</span></span>|<span data-ttu-id="e17db-110">4.5</span><span class="sxs-lookup"><span data-stu-id="e17db-110">4.5</span></span>|
-|<span data-ttu-id="e17db-111">Type</span><span class="sxs-lookup"><span data-stu-id="e17db-111">Type</span></span>|<span data-ttu-id="e17db-112">Modul runtime</span><span class="sxs-lookup"><span data-stu-id="e17db-112">Runtime</span></span>|
-|<span data-ttu-id="e17db-113">Ovlivněná rozhraní API</span><span class="sxs-lookup"><span data-stu-id="e17db-113">Affected APIs</span></span>|<ul><li><xref:System.Data.Objects.ObjectContext.CreateDatabase?displayProperty=nameWithType></li><li><xref:System.Data.Common.DbProviderServices.CreateDatabase(System.Data.Common.DbConnection,System.Nullable{System.Int32},System.Data.Metadata.Edm.StoreItemCollection)?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a><span data-ttu-id="1d35c-102">Podrobnosti</span><span class="sxs-lookup"><span data-stu-id="1d35c-102">Details</span></span>
+
+<span data-ttu-id="1d35c-103">Počínaje .NET Framework 4,5, pokud se vytvoření databáze nezdaří, <code>CreateDatabase</code> metody se pokusí odstranit prázdnou databázi.</span><span class="sxs-lookup"><span data-stu-id="1d35c-103">Beginning in .NET Framework 4.5, if database creation fails, <code>CreateDatabase</code> methods will attempt to drop the empty database.</span></span> <span data-ttu-id="1d35c-104">Pokud je tato operace úspěšná, <xref:System.Data.SqlClient.SqlException?displayProperty=fullName> bude rozšířena původní (místo toho <xref:System.InvalidOperationException?displayProperty=fullName> , který byl vždy vyvolán v .NET Framework 4,0).</span><span class="sxs-lookup"><span data-stu-id="1d35c-104">If that operation succeeds, the original <xref:System.Data.SqlClient.SqlException?displayProperty=fullName> will be propagated (instead of the <xref:System.InvalidOperationException?displayProperty=fullName> that was always thrown in .NET Framework 4.0)</span></span>
+
+#### <a name="suggestion"></a><span data-ttu-id="1d35c-105">Návrh</span><span class="sxs-lookup"><span data-stu-id="1d35c-105">Suggestion</span></span>
+
+<span data-ttu-id="1d35c-106">Při zachycení <xref:System.InvalidOperationException?displayProperty=fullName> při spuštění <xref:System.Data.Objects.ObjectContext.CreateDatabase> nebo <xref:System.Data.Common.DbProviderServices.CreateDatabase(System.Data.Common.DbConnection,System.Nullable{System.Int32},System.Data.Metadata.Edm.StoreItemCollection)> SQLExceptions by nyní mělo být zachyceno také.</span><span class="sxs-lookup"><span data-stu-id="1d35c-106">When catching an <xref:System.InvalidOperationException?displayProperty=fullName> while executing <xref:System.Data.Objects.ObjectContext.CreateDatabase> or <xref:System.Data.Common.DbProviderServices.CreateDatabase(System.Data.Common.DbConnection,System.Nullable{System.Int32},System.Data.Metadata.Edm.StoreItemCollection)>, SQLExceptions should now also be caught.</span></span>
+
+| <span data-ttu-id="1d35c-107">Name</span><span class="sxs-lookup"><span data-stu-id="1d35c-107">Name</span></span>    | <span data-ttu-id="1d35c-108">Hodnota</span><span class="sxs-lookup"><span data-stu-id="1d35c-108">Value</span></span>       |
+|:--------|:------------|
+| <span data-ttu-id="1d35c-109">Rozsah</span><span class="sxs-lookup"><span data-stu-id="1d35c-109">Scope</span></span>   |<span data-ttu-id="1d35c-110">Vedlejší</span><span class="sxs-lookup"><span data-stu-id="1d35c-110">Minor</span></span>|
+|<span data-ttu-id="1d35c-111">Verze</span><span class="sxs-lookup"><span data-stu-id="1d35c-111">Version</span></span>|<span data-ttu-id="1d35c-112">4.5</span><span class="sxs-lookup"><span data-stu-id="1d35c-112">4.5</span></span>|
+|<span data-ttu-id="1d35c-113">Typ</span><span class="sxs-lookup"><span data-stu-id="1d35c-113">Type</span></span>|<span data-ttu-id="1d35c-114">Modul runtime</span><span class="sxs-lookup"><span data-stu-id="1d35c-114">Runtime</span></span>
+
+#### <a name="affected-apis"></a><span data-ttu-id="1d35c-115">Ovlivněná rozhraní API</span><span class="sxs-lookup"><span data-stu-id="1d35c-115">Affected APIs</span></span>
+
+-<xref:System.Data.Objects.ObjectContext.CreateDatabase?displayProperty=nameWithType></li><li><xref:System.Data.Common.DbProviderServices.CreateDatabase(System.Data.Common.DbConnection,System.Nullable{System.Int32},System.Data.Metadata.Edm.StoreItemCollection)?displayProperty=nameWithType></li></ul>|

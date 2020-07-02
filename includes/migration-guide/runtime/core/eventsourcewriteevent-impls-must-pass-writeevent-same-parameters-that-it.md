@@ -1,17 +1,23 @@
 ---
-ms.openlocfilehash: 47d0aa554d88726caca35fa6bebe4d863fdc0695
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 662c140f019add66ff6605d47ad1f32c3f50d711
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61842014"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619975"
 ---
-### <a name="eventsourcewriteevent-impls-must-pass-writeevent-the-same-parameters-that-it-received-plus-id"></a><span data-ttu-id="b5383-101">EventSource.WriteEvent impls musíte předat metodě WriteEvent stejné parametry, které obdržel (plus ID)</span><span class="sxs-lookup"><span data-stu-id="b5383-101">EventSource.WriteEvent impls must pass WriteEvent the same parameters that it received (plus ID)</span></span>
+### <a name="eventsourcewriteevent-impls-must-pass-writeevent-the-same-parameters-that-it-received-plus-id"></a><span data-ttu-id="09100-101">EventSource. WriteEvent impls musí předat WriteEvent stejné parametry (plus ID).</span><span class="sxs-lookup"><span data-stu-id="09100-101">EventSource.WriteEvent impls must pass WriteEvent the same parameters that it received (plus ID)</span></span>
 
-|   |   |
-|---|---|
-|<span data-ttu-id="b5383-102">Podrobnosti</span><span class="sxs-lookup"><span data-stu-id="b5383-102">Details</span></span>|<span data-ttu-id="b5383-103">Runtime modul vynucuje nyní kontrakt, který určuje následující: Třída odvozená z <xref:System.Diagnostics.Tracing.EventSource?displayProperty=name> , který definuje ETW metodě události musí volat základní třídy <code>EventSource.WriteEvent</code> metoda s ID události, za nímž následuje stejné argumenty, které byla předána metodě události trasování událostí pro Windows.</span><span class="sxs-lookup"><span data-stu-id="b5383-103">The runtime now enforces the contract that specifies the following: A class derived from <xref:System.Diagnostics.Tracing.EventSource?displayProperty=name> that defines an ETW event method must call the base class <code>EventSource.WriteEvent</code> method with the event ID followed by the same arguments that the ETW event method was passed.</span></span>|
-|<span data-ttu-id="b5383-104">Doporučení</span><span class="sxs-lookup"><span data-stu-id="b5383-104">Suggestion</span></span>|<span data-ttu-id="b5383-105"><xref:System.IndexOutOfRangeException?displayProperty=name> Je vyvolána výjimka, pokud <xref:System.Diagnostics.Tracing.EventListener?displayProperty=name> přečte <xref:System.Diagnostics.Tracing.EventSource?displayProperty=name> data v procesu pro zdroje událostí, která porušuje tento kontrakt.</span><span class="sxs-lookup"><span data-stu-id="b5383-105">An <xref:System.IndexOutOfRangeException?displayProperty=name> exception is thrown if an <xref:System.Diagnostics.Tracing.EventListener?displayProperty=name> reads <xref:System.Diagnostics.Tracing.EventSource?displayProperty=name> data in process for an event source that violates this contract.</span></span>|
-|<span data-ttu-id="b5383-106">Rozsah</span><span class="sxs-lookup"><span data-stu-id="b5383-106">Scope</span></span>|<span data-ttu-id="b5383-107">Vedlejší</span><span class="sxs-lookup"><span data-stu-id="b5383-107">Minor</span></span>|
-|<span data-ttu-id="b5383-108">Version</span><span class="sxs-lookup"><span data-stu-id="b5383-108">Version</span></span>|<span data-ttu-id="b5383-109">4.5.1</span><span class="sxs-lookup"><span data-stu-id="b5383-109">4.5.1</span></span>|
-|<span data-ttu-id="b5383-110">Type</span><span class="sxs-lookup"><span data-stu-id="b5383-110">Type</span></span>|<span data-ttu-id="b5383-111">Modul runtime</span><span class="sxs-lookup"><span data-stu-id="b5383-111">Runtime</span></span>|
+#### <a name="details"></a><span data-ttu-id="09100-102">Podrobnosti</span><span class="sxs-lookup"><span data-stu-id="09100-102">Details</span></span>
+
+<span data-ttu-id="09100-103">Modul runtime nyní vynutil kontrakt, který určuje následující: třída odvozená z <xref:System.Diagnostics.Tracing.EventSource?displayProperty=fullName> , která definuje metodu události ETW, musí volat metodu základní třídy <code>EventSource.WriteEvent</code> s ID události následovaný stejnými argumenty, které byla metoda události ETW úspěšná.</span><span class="sxs-lookup"><span data-stu-id="09100-103">The runtime now enforces the contract that specifies the following: A class derived from <xref:System.Diagnostics.Tracing.EventSource?displayProperty=fullName> that defines an ETW event method must call the base class <code>EventSource.WriteEvent</code> method with the event ID followed by the same arguments that the ETW event method was passed.</span></span>
+
+#### <a name="suggestion"></a><span data-ttu-id="09100-104">Návrh</span><span class="sxs-lookup"><span data-stu-id="09100-104">Suggestion</span></span>
+
+<span data-ttu-id="09100-105"><xref:System.IndexOutOfRangeException?displayProperty=fullName>Výjimka je vyvolána, pokud je <xref:System.Diagnostics.Tracing.EventListener?displayProperty=fullName> <xref:System.Diagnostics.Tracing.EventSource?displayProperty=fullName> v procesu načtena data pro zdroj události, který je v rozporu s touto smlouvou.</span><span class="sxs-lookup"><span data-stu-id="09100-105">An <xref:System.IndexOutOfRangeException?displayProperty=fullName> exception is thrown if an <xref:System.Diagnostics.Tracing.EventListener?displayProperty=fullName> reads <xref:System.Diagnostics.Tracing.EventSource?displayProperty=fullName> data in process for an event source that violates this contract.</span></span>
+
+| <span data-ttu-id="09100-106">Name</span><span class="sxs-lookup"><span data-stu-id="09100-106">Name</span></span>    | <span data-ttu-id="09100-107">Hodnota</span><span class="sxs-lookup"><span data-stu-id="09100-107">Value</span></span>       |
+|:--------|:------------|
+| <span data-ttu-id="09100-108">Rozsah</span><span class="sxs-lookup"><span data-stu-id="09100-108">Scope</span></span>   |<span data-ttu-id="09100-109">Vedlejší</span><span class="sxs-lookup"><span data-stu-id="09100-109">Minor</span></span>|
+|<span data-ttu-id="09100-110">Verze</span><span class="sxs-lookup"><span data-stu-id="09100-110">Version</span></span>|<span data-ttu-id="09100-111">4.5.1</span><span class="sxs-lookup"><span data-stu-id="09100-111">4.5.1</span></span>|
+|<span data-ttu-id="09100-112">Typ</span><span class="sxs-lookup"><span data-stu-id="09100-112">Type</span></span>|<span data-ttu-id="09100-113">Modul runtime</span><span class="sxs-lookup"><span data-stu-id="09100-113">Runtime</span></span>|
