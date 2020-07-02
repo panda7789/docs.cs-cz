@@ -1,19 +1,21 @@
 ---
 title: Vytváření uživatelem definovaných funkcí (UDF) v rozhraní .NET pro Apache Spark
 description: Naučte se implementovat uživatelsky definované funkce (UDF) v rozhraní .NET pro Apache Spark aplikace.
-ms.date: 06/11/2020
+ms.date: 06/25/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: fe3dec187f94f84adb1217c39ff6aabc4b4db1c5
-ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
+ms.openlocfilehash: 97afda8ed17d3719c534d72ad3ad026745a70922
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85142014"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85620921"
 ---
 # <a name="create-user-defined-functions-udf-in-net-for-apache-spark"></a>Vytváření uživatelem definovaných funkcí (UDF) v rozhraní .NET pro Apache Spark
 
 V tomto článku se dozvíte, jak používat uživatelsky definované funkce (UDF) v rozhraní .NET pro Apache Spark. [UDF)](https://spark.apache.org/docs/latest/api/java/org/apache/spark/sql/expressions/UserDefinedFunction.html) je funkce Sparku, která umožňuje používat vlastní funkce k rozšiřování integrovaných funkcí systému. UDF transformuje hodnoty z jednoho řádku v tabulce a vytvoří v závislosti na logice definované v systému souborů UDF jednu odpovídající výstupní hodnotu na řádek.
+
+[!INCLUDE [spark-preview-note](../../../includes/spark-preview-note.md)]
 
 ## <a name="define-udfs"></a>Definovat UDF
 

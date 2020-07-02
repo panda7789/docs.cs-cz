@@ -1,17 +1,23 @@
 ---
-ms.openlocfilehash: 566a3e0455b30e901b09be88b4256ffe67bdc2b5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 809ca85b347fabc44573e2e0c5a43261d68590d3
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "67802511"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85621103"
 ---
-### <a name="workflow-sql-persistence-adds-primary-key-clusters-and-disallows-null-values-in-some-columns"></a>Trvalosti SQL pracovního postupu přidá clustery primárního klíče a v některých sloupcích zakáže hodnoty null.
+### <a name="workflow-sql-persistence-adds-primary-key-clusters-and-disallows-null-values-in-some-columns"></a>Trvalost pracovního postupu SQL přidává clustery primárního klíče a v některých sloupcích nepovoluje hodnoty null.
 
-|   |   |
-|---|---|
-|Podrobnosti|Počínaje rozhraním .NET Framework 4.7 používají tabulky vytvořené pro úložiště instancí pracovního postupu SQL (SWIS) skriptem SqlWorkflowInstanceStoreSchema.sql primární klíče. Z tohoto důvodu identity <code>null</code> nepodporují hodnoty. Provoz SWIS není touto změnou ovlivněn. Aktualizace byly provedeny pro podporu transakční replikace serveru SQL Server.|
-|Návrh|Aby bylo možné tuto změnu provést, musí být soubor SQL SqlWorkflowInstanceStoreSchemaUpgrade.sql použit pro existující instalace. Nové instalace databáze budou mít automaticky změnu.|
-|Rozsah|Edge|
-|Version|4.7|
+#### <a name="details"></a>Podrobnosti
+
+Počínaje .NET Framework 4,7 jsou tabulky vytvořené pro úložiště instancí SQL pracovního postupu (SWIS) pomocí skriptu SqlWorkflowInstanceStoreSchema. SQL, který používá clusterované primární klíče. Z tohoto důvodu identity nepodporují <code>null</code> hodnoty. Tato změna nemá vliv na operaci SWIS. Aktualizace byly provedeny pro podporu SQL Server transakční replikace.
+
+#### <a name="suggestion"></a>Návrh
+
+Pro tuto změnu je nutné použít soubor SQL SqlWorkflowInstanceStoreSchemaUpgrade. SQL pro existující instalace. Nové instalace databáze budou automaticky mít změnu.
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   |Edge|
+|Verze|4,7|
 |Typ|Modul runtime|

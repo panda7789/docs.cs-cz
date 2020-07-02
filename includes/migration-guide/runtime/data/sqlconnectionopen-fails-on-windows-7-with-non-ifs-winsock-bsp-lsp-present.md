@@ -1,18 +1,27 @@
 ---
-ms.openlocfilehash: 65d9edc1e7377a86f8185ebf28bb5bee3a3f887d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a1db9916c69c5974191eb6108fb54a0d9ff060d2
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "67803175"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85622040"
 ---
-### <a name="sqlconnectionopen-fails-on-windows-7-with-non-ifs-winsock-bsp-or-lsp-present"></a>SqlConnection.Open selže v systému Windows 7 s non-IFS Winsock BSP nebo LSP přítomen
+### <a name="sqlconnectionopen-fails-on-windows-7-with-non-ifs-winsock-bsp-or-lsp-present"></a>SqlConnection. Open se nepovedlo ve Windows 7 s neifs Winsock BSP nebo LSP.
 
-|   |   |
-|---|---|
-|Podrobnosti|<xref:System.Data.SqlClient.SqlConnection.Open>a <xref:System.Data.SqlClient.SqlConnection.OpenAsync(System.Threading.CancellationToken)> selhání v rozhraní .NET Framework 4.5, pokud jsou v počítači spuštěny v počítači se systémem Windows 7 s rozhraním BSP nebo LSP, které nejsou službou IFS Winsock. Chcete-li zjistit, zda je nainstalován a) je <code>netsh WinSock Show Catalog</code> nainstalován a neifs bsp nebo LSP, použijte příkaz a zkontrolujte každou <code>Winsock Catalog Provider Entry</code> položku, která je vrácena. Pokud má hodnota Příznaky <code>0x20000</code> služby nastavený bit, poskytovatel použije popisovače IFS a bude pracovat správně. Pokud <code>0x20000</code> je bit čistý (není nastaven), jedná se o neIFS BSP nebo LSP.|
-|Návrh|Tato chyba byla opravena v rozhraní .NET Framework 4.5.2, takže se jí lze vyhnout upgradem rozhraní .NET Framework. Alternativně se tomu lze vyhnout odebráním všech nainstalovaných lsp rozhraní LSP bez rozhraní IFS Winsock.|
-|Rozsah|Vedlejší|
-|Version|4.5|
-|Typ|Modul runtime|
-|Ovlivněná rozhraní API|<ul><li><xref:System.Data.SqlClient.SqlConnection.Open?displayProperty=nameWithType></li><li><xref:System.Data.SqlClient.SqlConnection.OpenAsync(System.Threading.CancellationToken)?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a>Podrobnosti
+
+<xref:System.Data.SqlClient.SqlConnection.Open>a <xref:System.Data.SqlClient.SqlConnection.OpenAsync(System.Threading.CancellationToken)> v počítači se systémem Windows 7 selže v .NET Framework 4,5, pokud je spuštěný počítač se systémem Windows 7, který není IFS Winsock BSP nebo LSP. Chcete-li zjistit, zda je nainstalováno neifs BSP nebo LSP, použijte <code>netsh WinSock Show Catalog</code> příkaz a zkontrolujte všechny <code>Winsock Catalog Provider Entry</code> vrácené položky. Pokud má hodnota příznaků služby <code>0x20000</code> nastaven bit, zprostředkovatel použije popisovač IFS a bude správně fungovat. Pokud <code>0x20000</code> je bit jasný (nenastavený), jedná se o NEIFS BSP nebo LSP.
+
+#### <a name="suggestion"></a>Návrh
+
+Tato chyba byla opravena v .NET Framework 4.5.2, takže se ji můžete vyhnout upgradem .NET Framework. Případně se můžete vyhnout odebráním všech nainstalovaných rozhraní Winsock LSP typu non-IFS.
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   |Vedlejší|
+|Verze|4.5|
+|Typ|Modul runtime
+
+#### <a name="affected-apis"></a>Ovlivněná rozhraní API
+
+-<xref:System.Data.SqlClient.SqlConnection.Open?displayProperty=nameWithType></li><li><xref:System.Data.SqlClient.SqlConnection.OpenAsync(System.Threading.CancellationToken)?displayProperty=nameWithType></li></ul>|

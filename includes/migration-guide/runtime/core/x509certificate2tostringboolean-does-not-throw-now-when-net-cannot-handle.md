@@ -1,18 +1,27 @@
 ---
-ms.openlocfilehash: 0dfc87201b9b31cd9d936f2c965c7d0ca0140cab
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 51208762cea2a5688c5d43e5d444d4e014e5f0b4
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "67858584"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85621139"
 ---
-### <a name="x509certificate2tostringboolean-does-not-throw-now-when-net-cannot-handle-the-certificate"></a>X509Certificate2.ToString(Boolean) nevyvolá nyní, když rozhraní .NET nemůže zpracovat certifikát
+### <a name="x509certificate2tostringboolean-does-not-throw-now-when-net-cannot-handle-the-certificate"></a>X509Certificate2. ToString (Boolean) nevrátí hodnotu Now, pokud rozhraní .NET nemůže zpracovat certifikát.
 
-|   |   |
-|---|---|
-|Podrobnosti|V rozhraní .NET Framework 4.5.2 a starších <code>true</code> verzích by tato metoda vyvolala, pokud by byla předána pro podrobný parametr a byly nainstalovány certifikáty, které nebyly podporovány rozhraním .NET Framework. Nyní metoda bude úspěšné a vrátí platný řetězec, který vynechá nepřístupné části certifikátu.|
-|Návrh|Jakýkoli kód <xref:System.Security.Cryptography.X509Certificates.X509Certificate2.ToString(System.Boolean)?displayProperty=nameWithType> v závislosti na by měl být aktualizován očekávat, že vrácený řetězec může vyloučit některá data certifikátu (například veřejný klíč, soukromý klíč a rozšíření) v některých případech, ve kterých by rozhraní API dříve vyvolána.|
-|Rozsah|Edge|
-|Version|4.6|
-|Typ|Modul runtime|
-|Ovlivněná rozhraní API|<ul><li><xref:System.Security.Cryptography.X509Certificates.X509Certificate2.ToString(System.Boolean)?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a>Podrobnosti
+
+V .NET Framework 4.5.2 a starších verzích vyvolala Tato metoda, pokud <code>true</code> byla předána parametru verbose, a nainstalují se certifikáty, které nepodporovala .NET Framework. Nyní bude metoda úspěšná a vrátí platný řetězec, který vynechá nepřístupné části certifikátu.
+
+#### <a name="suggestion"></a>Návrh
+
+Jakýkoli kód, který závisí na <xref:System.Security.Cryptography.X509Certificates.X509Certificate2.ToString(System.Boolean)?displayProperty=nameWithType> tom, by měl být aktualizován, aby bylo možné očekávat, že vrácený řetězec může vyloučit některá data certifikátu (například veřejný klíč, privátní klíč a rozšíření) v některých případech, kdy by předtím bylo vyvoláno rozhraní API.
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   |Edge|
+|Verze|4.6|
+|Typ|Modul runtime
+
+#### <a name="affected-apis"></a>Ovlivněná rozhraní API
+
+-<xref:System.Security.Cryptography.X509Certificates.X509Certificate2.ToString(System.Boolean)?displayProperty=nameWithType></li></ul>|

@@ -1,5 +1,6 @@
 ---
 title: Zařazování tříd, struktur a sjednocení
+description: Přečtěte si, jak zařazovat třídy, struktury a sjednocení. Zobrazte si ukázky zařazování tříd, struktur s vnořenými strukturami, poli struktur a sjednocení.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -18,12 +19,12 @@ helpviewer_keywords:
 - data marshaling, platform invoke
 - marshaling, platform invoke
 ms.assetid: 027832a2-9b43-4fd9-9b45-7f4196261a4e
-ms.openlocfilehash: 708ed6a232950cb69796f105f6f198749ed53a24
-ms.sourcegitcommit: 5988e9a29cedb8757320817deda3c08c6f44a6aa
+ms.openlocfilehash: 5e616b5bb513939cadd8fe5c72675ba0b6e070a3
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82200012"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85621519"
 ---
 # <a name="marshaling-classes-structures-and-unions"></a>Zařazování tříd, struktur a sjednocení
 
@@ -51,25 +52,25 @@ Tato ukázka předvádí, jak předat strukturu, která odkazuje na druhou struk
   
 Ukázka struktury používá následující nespravované funkce, které jsou zobrazeny s původní deklarací funkce:
 
-- **TestStructInStruct** exportovaný z knihovny pinvokelib. dll.
+- **TestStructInStruct** exportovaný z PinvokeLib.dll.
 
     ```cpp
     int TestStructInStruct(MYPERSON2* pPerson2);
     ```
 
-- **TestStructInStruct3** exportovaný z knihovny pinvokelib. dll.
+- **TestStructInStruct3** exportovaný z PinvokeLib.dll.
 
     ```cpp
     void TestStructInStruct3(MYPERSON3 person3);
     ```
 
-- **TestArrayInStruct** exportovaný z knihovny pinvokelib. dll.
+- **TestArrayInStruct** exportovaný z PinvokeLib.dll.
 
     ```cpp
     void TestArrayInStruct(MYARRAYSTRUCT* pStruct);
     ```
 
-[Knihovny pinvokelib. dll](marshaling-data-with-platform-invoke.md#pinvokelibdll) je vlastní nespravovaná knihovna, která obsahuje implementace pro dříve uvedené funkce a čtyři struktury: **MYPERSON**, **MYPERSON2**, **MYPERSON3**a **MYARRAYSTRUCT**. Tyto struktury obsahují následující prvky:
+[PinvokeLib.dll](marshaling-data-with-platform-invoke.md#pinvokelibdll) je vlastní nespravovaná knihovna, která obsahuje implementace pro dříve uvedené funkce a čtyři struktury: **MYPERSON**, **MYPERSON2**, **MYPERSON3**a **MYARRAYSTRUCT**. Tyto struktury obsahují následující prvky:
 
 ```cpp
 typedef struct _MYPERSON
@@ -97,7 +98,7 @@ typedef struct _MYARRAYSTRUCT
 } MYARRAYSTRUCT;
 ```
 
-Struktury spravované `MyPerson`, `MyPerson2`, `MyPerson3`a `MyArrayStruct` mají následující charakteristiky:
+Struktury spravované `MyPerson` , `MyPerson2` , `MyPerson3` a `MyArrayStruct` mají následující charakteristiky:
 
 - `MyPerson`obsahuje pouze členy řetězce. Pole [CharSet](specifying-a-character-set.md) nastaví řetězce na formát ANSI při předání do nespravované funkce.
 
@@ -105,11 +106,11 @@ Struktury spravované `MyPerson`, `MyPerson2`, `MyPerson3`a `MyArrayStruct` maj�
 
 - `MyPerson3`obsahuje `MyPerson` jako vloženou strukturu. Strukturu vloženou v jiné struktuře lze sloučit umístěním prvků vložené struktury přímo do hlavní struktury, nebo může být ponechána jako vložená struktura, jak je provedeno v této ukázce.
 
-- `MyArrayStruct`obsahuje pole celých čísel. <xref:System.Runtime.InteropServices.MarshalAsAttribute> Atribut nastaví hodnotu <xref:System.Runtime.InteropServices.UnmanagedType> výčtu na **ByValArray**, která slouží k označení počtu prvků v poli.
+- `MyArrayStruct`obsahuje pole celých čísel. <xref:System.Runtime.InteropServices.MarshalAsAttribute>Atribut nastaví <xref:System.Runtime.InteropServices.UnmanagedType> hodnotu výčtu na **ByValArray**, která slouží k označení počtu prvků v poli.
 
-Pro všechny struktury v této ukázce se používá <xref:System.Runtime.InteropServices.StructLayoutAttribute> atribut, aby bylo zajištěno, že jsou členy uspořádány v paměti postupně, v pořadí, ve kterém jsou uvedeny.
+Pro všechny struktury v této ukázce se <xref:System.Runtime.InteropServices.StructLayoutAttribute> používá atribut, aby bylo zajištěno, že jsou členy uspořádány v paměti postupně, v pořadí, ve kterém jsou uvedeny.
 
-`NativeMethods` Třída obsahuje `TestStructInStruct`spravované prototypy pro, a `TestStructInStruct3` `TestArrayInStruct` metody, které jsou `App` volány třídou. Každý prototyp deklaruje jeden parametr následujícím způsobem:
+`NativeMethods`Třída obsahuje spravované prototypy pro `TestStructInStruct` , `TestStructInStruct3` a metody, které `TestArrayInStruct` jsou volány `App` třídou. Každý prototyp deklaruje jeden parametr následujícím způsobem:
 
 - `TestStructInStruct`deklaruje odkaz na typ `MyPerson2` jako jeho parametr.
 
@@ -117,7 +118,7 @@ Pro všechny struktury v této ukázce se používá <xref:System.Runtime.Intero
 
 - `TestArrayInStruct`deklaruje odkaz na typ `MyArrayStruct` jako jeho parametr.
 
-Struktury jako argumenty metod jsou předávány hodnotou, pokud parametr neobsahuje klíčové slovo **ref** (**ByRef** in Visual Basic). Například `TestStructInStruct` metoda předává odkaz (hodnota adresy) objektu typu `MyPerson2` na nespravovaný kód. Aby bylo možné manipulovat se strukturou, na kterou `MyPerson2` odkazuje, ukázka vytvoří vyrovnávací paměť zadané velikosti a vrátí její adresu kombinací metod <xref:System.Runtime.InteropServices.Marshal.AllocCoTaskMem%2A?displayProperty=nameWithType> a. <xref:System.Runtime.InteropServices.Marshal.SizeOf%2A?displayProperty=nameWithType> V dalším kroku zkopíruje ukázka obsah spravované struktury do nespravované vyrovnávací paměti. Nakonec ukázka používá <xref:System.Runtime.InteropServices.Marshal.PtrToStructure%2A?displayProperty=nameWithType> metodu pro zařazování dat z nespravované vyrovnávací paměti do spravovaného objektu a <xref:System.Runtime.InteropServices.Marshal.FreeCoTaskMem%2A?displayProperty=nameWithType> metodu pro uvolnění nespravovaného bloku paměti.
+Struktury jako argumenty metod jsou předávány hodnotou, pokud parametr neobsahuje klíčové slovo **ref** (**ByRef** in Visual Basic). Například `TestStructInStruct` Metoda předává odkaz (hodnota adresy) objektu typu `MyPerson2` na nespravovaný kód. Aby bylo možné manipulovat se strukturou, `MyPerson2` na kterou odkazuje, ukázka vytvoří vyrovnávací paměť zadané velikosti a vrátí její adresu kombinací <xref:System.Runtime.InteropServices.Marshal.AllocCoTaskMem%2A?displayProperty=nameWithType> <xref:System.Runtime.InteropServices.Marshal.SizeOf%2A?displayProperty=nameWithType> metod a. V dalším kroku zkopíruje ukázka obsah spravované struktury do nespravované vyrovnávací paměti. Nakonec ukázka používá <xref:System.Runtime.InteropServices.Marshal.PtrToStructure%2A?displayProperty=nameWithType> metodu pro zařazování dat z nespravované vyrovnávací paměti do spravovaného objektu a <xref:System.Runtime.InteropServices.Marshal.FreeCoTaskMem%2A?displayProperty=nameWithType> metodu pro uvolnění nespravovaného bloku paměti.
 
 ### <a name="declaring-prototypes"></a>Deklarace prototypů
 
@@ -137,7 +138,7 @@ Tato ukázka předvádí, jak předat strukturu, která obsahuje druhou, vložen
 
 Ukázka FindFile – používá následující nespravovanou funkci, která se zobrazuje s její původní deklarací funkce:
 
-- **FindFirstFile** exportovaný z Kernel32. dll.
+- **FindFirstFile** exportovaný z Kernel32.dll.
 
     ```cpp
     HANDLE FindFirstFile(LPCTSTR lpFileName, LPWIN32_FIND_DATA lpFindFileData);
@@ -161,9 +162,9 @@ typedef struct _WIN32_FIND_DATA
 } WIN32_FIND_DATA, *PWIN32_FIND_DATA;
 ```
 
-V této ukázce `FindData` třída obsahuje odpovídající datový člen pro každý prvek původní struktury a vloženou strukturu. Místo dvou původních vyrovnávacích pamětí znaků třída nahradí řetězce. **MarshalAsAttribute** nastaví <xref:System.Runtime.InteropServices.UnmanagedType> výčet na **ByValTStr**, který slouží k identifikaci vložených znakových polí s pevnou délkou, která se zobrazí v nespravovaných strukturách.
+V této ukázce `FindData` Třída obsahuje odpovídající datový člen pro každý prvek původní struktury a vloženou strukturu. Místo dvou původních vyrovnávacích pamětí znaků třída nahradí řetězce. **MarshalAsAttribute** nastaví <xref:System.Runtime.InteropServices.UnmanagedType> výčet na **ByValTStr**, který slouží k identifikaci vložených znakových polí s pevnou délkou, která se zobrazí v nespravovaných strukturách.
 
-`NativeMethods` Třída obsahuje spravovaný prototyp `FindFirstFile` metody, která předá `FindData` třídu jako parametr. Parametr musí být deklarován s atributy <xref:System.Runtime.InteropServices.InAttribute> a <xref:System.Runtime.InteropServices.OutAttribute> , protože třídy, které jsou odkazové typy, jsou předány jako parametry ve výchozím nastavení.
+`NativeMethods`Třída obsahuje spravovaný prototyp `FindFirstFile` metody, která předá `FindData` třídu jako parametr. Parametr musí být deklarován s <xref:System.Runtime.InteropServices.InAttribute> <xref:System.Runtime.InteropServices.OutAttribute> atributy a, protože třídy, které jsou odkazové typy, jsou předány jako parametry ve výchozím nastavení.
 
 ### <a name="declaring-prototypes"></a>Deklarace prototypů
 
@@ -183,13 +184,13 @@ Tato ukázka předvádí, jak předat struktury obsahující pouze typy hodnot a
 
 Vzor sjednocení používá následující nespravovanou funkci zobrazenou s původní deklarací funkce:
 
-- **TestUnion** exportovaný z knihovny pinvokelib. dll.
+- **TestUnion** exportovaný z PinvokeLib.dll.
 
     ```cpp
     void TestUnion(MYUNION u, int type);
     ```
 
-[Knihovny pinvokelib. dll](marshaling-data-with-platform-invoke.md#pinvokelibdll) je vlastní nespravovaná knihovna, která obsahuje implementaci dříve uvedené funkce a dvou sjednocení, **MYUNION** a **MYUNION2**. Sjednocení obsahují následující prvky:
+[PinvokeLib.dll](marshaling-data-with-platform-invoke.md#pinvokelibdll) je vlastní nespravovaná knihovna, která obsahuje implementaci dříve uvedené funkce a dvou sjednocení, **MYUNION** a **MYUNION2**. Sjednocení obsahují následující prvky:
 
 ```cpp
 union MYUNION
@@ -205,11 +206,11 @@ union MYUNION2
 };
 ```
 
-Ve spravovaném kódu jsou sjednocení definována jako struktury. `MyUnion` Struktura obsahuje dva typy hodnot jako členy: celé číslo a typ Double. <xref:System.Runtime.InteropServices.StructLayoutAttribute> Atribut je nastaven na řízení přesné pozice jednotlivých datových členů. <xref:System.Runtime.InteropServices.FieldOffsetAttribute> Atribut poskytuje fyzickou pozici polí v rámci nespravované reprezentace sjednocení. Všimněte si, že oba členové mají stejné hodnoty posunutí, takže členové mohou definovat stejnou část paměti.
+Ve spravovaném kódu jsou sjednocení definována jako struktury. `MyUnion`Struktura obsahuje dva typy hodnot jako členy: celé číslo a typ Double. <xref:System.Runtime.InteropServices.StructLayoutAttribute>Atribut je nastaven na řízení přesné pozice jednotlivých datových členů. <xref:System.Runtime.InteropServices.FieldOffsetAttribute>Atribut poskytuje fyzickou pozici polí v rámci nespravované reprezentace sjednocení. Všimněte si, že oba členové mají stejné hodnoty posunutí, takže členové mohou definovat stejnou část paměti.
 
-`MyUnion2_1`a `MyUnion2_2` obsahují hodnotový typ (Integer) a řetězec v uvedeném pořadí. Ve spravovaném kódu se typy hodnot a typy odkazů nepovolují překrývat. Tato ukázka používá přetížení metody, aby volající mohl použít oba typy při volání stejné nespravované funkce. Rozložení `MyUnion2_1` je explicitní a má přesnou hodnotu posunu. Naproti tomu `MyUnion2_2` má sekvenční rozložení, protože explicitní rozložení nejsou povolena s odkazovým typem. <xref:System.Runtime.InteropServices.MarshalAsAttribute> Atribut nastaví <xref:System.Runtime.InteropServices.UnmanagedType> výčet na **ByValTStr**, který se používá k identifikaci vložených znakových polí s pevnou délkou, která se zobrazí v nespravovaném vyjádření sjednocení.
+`MyUnion2_1`a `MyUnion2_2` obsahují hodnotový typ (Integer) a řetězec v uvedeném pořadí. Ve spravovaném kódu se typy hodnot a typy odkazů nepovolují překrývat. Tato ukázka používá přetížení metody, aby volající mohl použít oba typy při volání stejné nespravované funkce. Rozložení `MyUnion2_1` je explicitní a má přesnou hodnotu posunu. Naproti tomu `MyUnion2_2` má sekvenční rozložení, protože explicitní rozložení nejsou povolena s odkazovým typem. <xref:System.Runtime.InteropServices.MarshalAsAttribute>Atribut nastaví <xref:System.Runtime.InteropServices.UnmanagedType> výčet na **ByValTStr**, který se používá k identifikaci vložených znakových polí s pevnou délkou, která se zobrazí v nespravovaném vyjádření sjednocení.
 
-`NativeMethods` Třída obsahuje prototypy pro metody `TestUnion` a `TestUnion2` . `TestUnion2`je přetížený pro deklaraci `MyUnion2_1` nebo `MyUnion2_2` jako parametry.
+`NativeMethods`Třída obsahuje prototypy pro `TestUnion` `TestUnion2` metody a. `TestUnion2`je přetížený pro deklaraci `MyUnion2_1` nebo `MyUnion2_2` jako parametry.
 
 ### <a name="declaring-prototypes"></a>Deklarace prototypů
 
@@ -225,7 +226,7 @@ Ve spravovaném kódu jsou sjednocení definována jako struktury. `MyUnion` Str
 
 ## <a name="platform-sample"></a>Ukázka platformy
 
-V některých scénářích `struct` se `union` rozložení může lišit v závislosti na cílové platformě. Zvažte například typ, který [`STRRET`](/windows/win32/api/shtypes/ns-shtypes-strret) je definován ve scénáři modelu com:
+V některých scénářích `struct` se `union` rozložení může lišit v závislosti na cílové platformě. Zvažte například typ, který je [`STRRET`](/windows/win32/api/shtypes/ns-shtypes-strret) definován ve scénáři modelu com:
 
 ```c++
 #include <pshpack8.h> /* Defines the packing of the struct */
@@ -308,7 +309,7 @@ Tato ukázka předvádí, jak předat ukazatel na třídu nespravované funkci, 
 
 Ukázka sysTime – používá následující nespravovanou funkci, která se zobrazuje s její původní deklarací funkce:
 
-- **GetSystemTime** exportovaný z Kernel32. dll.
+- **GetSystemTime** exportovaný z Kernel32.dll.
 
     ```cpp
     VOID GetSystemTime(LPSYSTEMTIME lpSystemTime);
@@ -329,9 +330,9 @@ typedef struct _SYSTEMTIME {
 } SYSTEMTIME, *PSYSTEMTIME;
 ```
 
-V této ukázce `SystemTime` třída obsahuje prvky původní struktury reprezentované jako členy třídy. <xref:System.Runtime.InteropServices.StructLayoutAttribute> Atribut je nastaven tak, aby bylo zajištěno, že jsou členy uspořádány v paměti sekvenčně v pořadí, ve kterém jsou zobrazeny.
+V této ukázce `SystemTime` Třída obsahuje prvky původní struktury reprezentované jako členy třídy. <xref:System.Runtime.InteropServices.StructLayoutAttribute>Atribut je nastaven tak, aby bylo zajištěno, že jsou členy uspořádány v paměti sekvenčně v pořadí, ve kterém jsou zobrazeny.
 
-`NativeMethods` Třída obsahuje spravovaný prototyp `GetSystemTime` metody, která ve výchozím nastavení předává `SystemTime` třídu jako vstupně-výstupní parametr. Parametr musí být deklarován s atributy <xref:System.Runtime.InteropServices.InAttribute> a <xref:System.Runtime.InteropServices.OutAttribute> , protože třídy, které jsou odkazové typy, jsou předány jako parametry ve výchozím nastavení. Aby volající mohl přijímat výsledky, musí být tyto [směrové atributy](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/77e6taeh(v=vs.100)) aplikovány explicitně. `App` Třída vytvoří novou instanci `SystemTime` třídy a přistupuje k jejím datovým polím.
+`NativeMethods`Třída obsahuje spravovaný prototyp `GetSystemTime` metody, která `SystemTime` ve výchozím nastavení předává třídu jako vstupně-výstupní parametr. Parametr musí být deklarován s <xref:System.Runtime.InteropServices.InAttribute> <xref:System.Runtime.InteropServices.OutAttribute> atributy a, protože třídy, které jsou odkazové typy, jsou předány jako parametry ve výchozím nastavení. Aby volající mohl přijímat výsledky, musí být tyto [směrové atributy](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/77e6taeh(v=vs.100)) aplikovány explicitně. `App`Třída vytvoří novou instanci `SystemTime` třídy a přistupuje k jejím datovým polím.
 
 ### <a name="code-samples"></a>Ukázky kódů
 
@@ -345,7 +346,7 @@ Tento příklad ukazuje, jak předat pole struktur obsahující celá čísla a 
 
 Tento příklad ukazuje, jak volat nativní funkci pomocí <xref:System.Runtime.InteropServices.Marshal> třídy a pomocí nebezpečného kódu.
 
-Tato ukázka používá funkce obálky a vyvolání platformy definované v [knihovny pinvokelib. dll](marshaling-data-with-platform-invoke.md#pinvokelibdll), které jsou také k dispozici ve zdrojových souborech. Používá `TestOutArrayOfStructs` funkci a `MYSTRSTRUCT2` strukturu. Struktura obsahuje následující prvky:
+Tato ukázka používá funkce obálky a vyvolání platformy definované v [PinvokeLib.dll](marshaling-data-with-platform-invoke.md#pinvokelibdll), které jsou také k dispozici ve zdrojových souborech. Používá `TestOutArrayOfStructs` funkci a `MYSTRSTRUCT2` strukturu. Struktura obsahuje následující prvky:
 
 ```cpp
 typedef struct _MYSTRSTRUCT2
@@ -355,11 +356,11 @@ typedef struct _MYSTRSTRUCT2
 } MYSTRSTRUCT2;
 ```
 
-`MyStruct` Třída obsahuje objekt řetězce znaků ANSI. <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet> Pole určuje formát ANSI. `MyUnsafeStruct`, je struktura obsahující <xref:System.IntPtr> typ místo řetězce.
+`MyStruct`Třída obsahuje objekt řetězce znaků ANSI. <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet>Pole určuje formát ANSI. `MyUnsafeStruct`, je struktura obsahující <xref:System.IntPtr> typ místo řetězce.
 
-`NativeMethods` Třída obsahuje přetíženou metodu `TestOutArrayOfStructs` prototypu. Pokud metoda deklaruje ukazatel jako parametr, třída by měla být označena `unsafe` klíčovým slovem. Vzhledem k tomu, že Visual Basic nemůže použít nezabezpečený kód, přetíženou metodu, nezabezpečený modifikátor a `MyUnsafeStruct` strukturu jsou zbytečné.
+`NativeMethods`Třída obsahuje přetíženou `TestOutArrayOfStructs` metodu prototypu. Pokud metoda deklaruje ukazatel jako parametr, třída by měla být označena `unsafe` klíčovým slovem. Vzhledem k tomu, že Visual Basic nemůže použít nezabezpečený kód, přetíženou metodu, nezabezpečený modifikátor a `MyUnsafeStruct` strukturu jsou zbytečné.
 
-`App` Třída implementuje `UsingMarshaling` metodu, která provádí všechny úlohy, které jsou nezbytné k předání pole. Pole je označeno pomocí `out` klíčového`ByRef` slova (v Visual Basic) k označení toho, že data přecházejí z volaného volajícího. Implementace používá následující <xref:System.Runtime.InteropServices.Marshal> metody třídy:
+`App`Třída implementuje `UsingMarshaling` metodu, která provádí všechny úlohy, které jsou nezbytné k předání pole. Pole je označeno pomocí `out` `ByRef` klíčového slova (v Visual Basic) k označení toho, že data přecházejí z volaného volajícího. Implementace používá následující <xref:System.Runtime.InteropServices.Marshal> metody třídy:
 
 - <xref:System.Runtime.InteropServices.Marshal.PtrToStructure%2A>pro zařazování dat z nespravované vyrovnávací paměti do spravovaného objektu.
 
@@ -381,7 +382,7 @@ Jak už jsme uvedli, C# umožňuje nezabezpečený kód a Visual Basic ne. V uk�
 [!code-csharp[Conceptual.Interop.Marshaling#21](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.interop.marshaling/cs/outarrayofstructs.cs#21)]
 [!code-vb[Conceptual.Interop.Marshaling#21](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.interop.marshaling/vb/outarrayofstructs.vb#21)]
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Zařazování dat s voláním platformy](marshaling-data-with-platform-invoke.md)
 - [Zařazování řetězců](marshaling-strings.md)

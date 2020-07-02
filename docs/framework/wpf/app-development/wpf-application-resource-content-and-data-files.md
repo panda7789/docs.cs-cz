@@ -1,5 +1,6 @@
 ---
 title: Prostředky aplikace, obsah a datové soubory
+description: Přečtěte si o speciální podpoře pro konfiguraci, identifikaci a používání datových souborů aplikace v Windows Presentation Foundation (WPF).
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -17,12 +18,12 @@ helpviewer_keywords:
 - application development [WPF], files
 - application management [WPF]
 ms.assetid: 7ad2943b-3961-41d3-8fc6-1582d43f5d99
-ms.openlocfilehash: 19cb530fc5c70df3a7af7ac41836b3dfd97594e9
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 324b3eb922f0fd1d1d9ad00105a06a7fbdb8effd
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144809"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85622858"
 ---
 # <a name="wpf-application-resource-content-and-data-files"></a>Zdroj, obsah a datové soubory zdroje aplikací WPF
 Aplikace Microsoft Windows jsou často závislé na souborech, které obsahují data, která nejsou spustitelná, například [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] obrázky, videa a zvuky. Windows Presentation Foundation (WPF) nabízí speciální podporu pro konfiguraci, identifikaci a používání těchto typů datových souborů, které se nazývají datové soubory aplikace. Tato podpora se otáčí kolem konkrétní sady typů datových souborů aplikace, včetně:  
@@ -237,6 +238,6 @@ Aplikace Microsoft Windows jsou často závislé na souborech, které obsahují 
 ## <a name="rebuilding-after-changing-build-type"></a>Opětovné sestavení po změně typu sestavení  
  Po změně typu sestavení datového souboru aplikace je nutné znovu sestavit celou aplikaci, abyste zajistili, že tyto změny budou provedeny. Pokud sestavíte pouze aplikaci, změny se neprojeví.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Sbalení URI v technologii WPF](pack-uris-in-wpf.md)

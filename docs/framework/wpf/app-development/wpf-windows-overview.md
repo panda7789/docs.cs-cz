@@ -1,5 +1,6 @@
 ---
 title: Přehled systému Windows
+description: Seznamte se se základy vytváření a správy Windows pro samostatné aplikace v Windows Presentation Foundation (WPF).
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -28,12 +29,12 @@ helpviewer_keywords:
 - modal dialog boxes [WPF]
 - displaying XAML pages [WPF]
 ms.assetid: 737d04ec-8861-46c3-8d44-fa11d3528d23
-ms.openlocfilehash: 24f2d1fc64333230c10afb79baed5dc373b3d590
-ms.sourcegitcommit: 839777281a281684a7e2906dccb3acd7f6a32023
+ms.openlocfilehash: e1ad3c118fbaea8f1e23d012721f0cf3c2c50015
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82141178"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85622884"
 ---
 # <a name="wpf-windows-overview"></a>Přehled WPF Windows
 Uživatelé pracují se samostatnými aplikacemi Windows Presentation Foundation (WPF) prostřednictvím systému Windows. Hlavním účelem okna je hostování obsahu, který vizualizuje data a umožňuje uživatelům pracovat s daty. Samostatné aplikace WPF poskytují vlastní okna pomocí <xref:System.Windows.Window> třídy. V tomto tématu <xref:System.Windows.Window> se seznámíte se základy vytváření a správy oken v samostatných aplikacích.  
@@ -86,18 +87,18 @@ Uživatelé pracují se samostatnými aplikacemi Windows Presentation Foundation
  [!code-csharp[WindowsOverviewSnippets#MarkupAndCodeBehindWindowCODEBEHIND](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewSnippets/CSharp/MarkupAndCodeBehindWindow.xaml.cs#markupandcodebehindwindowcodebehind)]
  [!code-vb[WindowsOverviewSnippets#MarkupAndCodeBehindWindowCODEBEHIND](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WindowsOverviewSnippets/VisualBasic/MarkupAndCodeBehindWindow.xaml.vb#markupandcodebehindwindowcodebehind)]  
   
- Chcete-li [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] povolit spolupráci souboru značek a souboru s kódem na pozadí, jsou vyžadovány následující:  
+ Chcete-li povolit spolupráci [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] souboru značek a souboru s kódem na pozadí, jsou vyžadovány následující:  
   
-- V kódu musí `Window` element obsahovat `x:Class` atribut. Když je `x:Class` aplikace sestavena, existence v souboru označení způsobí, že nástroj Microsoft Build Engine (MSBuild) vytvoří `partial` třídu, která je odvozena z <xref:System.Windows.Window> a má název, který je určen `x:Class` atributem. To vyžaduje přidání deklarace oboru názvů XML pro [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] schéma ( `xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"` ). Vygenerovaná `partial` třída implementuje `InitializeComponent` metodu, která je volána k registraci událostí a nastavení vlastností, které jsou implementovány v označení.  
+- V kódu `Window` musí element obsahovat `x:Class` atribut. Když je aplikace sestavena, existence `x:Class` v souboru označení způsobí, že nástroj Microsoft Build Engine (MSBuild) vytvoří `partial` třídu, která je odvozena z <xref:System.Windows.Window> a má název, který je určen `x:Class` atributem. To vyžaduje přidání deklarace oboru názvů XML pro [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] schéma ( `xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"` ). Vygenerovaná `partial` Třída implementuje `InitializeComponent` metodu, která je volána k registraci událostí a nastavení vlastností, které jsou implementovány v označení.  
   
-- V kódu na pozadí třída musí být `partial` třída se stejným názvem, který je určen `x:Class` atributem v označení a musí odvozovat z. <xref:System.Windows.Window> To umožňuje, aby soubor s kódem na pozadí byl přidružen ke `partial` třídě, která je generována pro soubor označení při sestavení aplikace (viz [Vytvoření aplikace WPF](building-a-wpf-application-wpf.md)).  
+- V kódu na pozadí třída musí být `partial` Třída se stejným názvem, který je určen `x:Class` atributem v označení a musí odvozovat z <xref:System.Windows.Window> . To umožňuje, aby soubor s kódem na pozadí byl přidružen ke `partial` třídě, která je generována pro soubor označení při sestavení aplikace (viz [Vytvoření aplikace WPF](building-a-wpf-application-wpf.md)).  
   
-- V kódu na pozadí <xref:System.Windows.Window> třída musí implementovat konstruktor, který volá `InitializeComponent` metodu. `InitializeComponent`je implementována třídou vygenerovanou `partial` souborem označení pro registraci událostí a nastavení vlastností, které jsou definovány v označení.  
+- V kódu na pozadí <xref:System.Windows.Window> Třída musí implementovat konstruktor, který volá `InitializeComponent` metodu. `InitializeComponent`je implementována třídou vygenerovanou souborem označení `partial` pro registraci událostí a nastavení vlastností, které jsou definovány v označení.  
   
 > [!NOTE]
-> Přidáte-li do projektu <xref:System.Windows.Window> nový pomocí sady Visual Studio, <xref:System.Windows.Window> je implementováno pomocí kódu a kódu na pozadí a obsahuje nezbytnou konfiguraci pro vytvoření přidružení mezi značkami a soubory kódu na pozadí, jak je popsáno zde.  
+> Přidáte-li <xref:System.Windows.Window> do projektu nový pomocí sady Visual Studio, <xref:System.Windows.Window> je implementováno pomocí kódu a kódu na pozadí a obsahuje nezbytnou konfiguraci pro vytvoření přidružení mezi značkami a soubory kódu na pozadí, jak je popsáno zde.  
   
- S touto konfigurací se můžete soustředit na definování vzhledu okna v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] kódu a implementaci jeho chování v kódu na pozadí. Následující příklad ukazuje okno s tlačítkem, implementované v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] kódu a obslužná rutina události pro <xref:System.Windows.Controls.Primitives.ButtonBase.Click> událost tlačítka, implementovaná v kódu na pozadí.  
+ S touto konfigurací se můžete soustředit na definování vzhledu okna v kódu [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] a implementaci jeho chování v kódu na pozadí. Následující příklad ukazuje okno s tlačítkem, implementované v kódu [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] a obslužná rutina události pro <xref:System.Windows.Controls.Primitives.ButtonBase.Click> Událost tlačítka, implementovaná v kódu na pozadí.  
   
  [!code-xaml[WindowsOverviewWindowWithButtonSnippets#MarkupAndCodeBehindWindowMARKUP](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewWindowWithButtonSnippets/CSharp/MarkupAndCodeBehindWindow.xaml#markupandcodebehindwindowmarkup)]  
   
@@ -137,11 +138,11 @@ Uživatelé pracují se samostatnými aplikacemi Windows Presentation Foundation
   
  [!code-csharp[WindowsOverviewStartupEventSnippets#AppCODEBEHIND](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewStartupEventSnippets/CSharp/App.xaml.cs#appcodebehind)]  
   
- V tomto příkladu `MarkupAndCodeBehindWindow` je vytvořena instance při spuštění aplikace, což nastane při vyvolání <xref:System.Windows.Application.Startup> události.  
+ V tomto příkladu `MarkupAndCodeBehindWindow` je vytvořena instance při spuštění aplikace, což nastane při <xref:System.Windows.Application.Startup> vyvolání události.  
   
- Při vytvoření instance okna je odkaz na něj automaticky přidán do seznamu oken, který je spravován <xref:System.Windows.Application> objektem (viz <xref:System.Windows.Application.Windows%2A?displayProperty=nameWithType>). Kromě toho první okno, které má být vytvořena instance, je ve výchozím nastavení nastaveno <xref:System.Windows.Application> jako hlavní okno aplikace (viz <xref:System.Windows.Application.MainWindow%2A?displayProperty=nameWithType>).  
+ Při vytvoření instance okna je odkaz na něj automaticky přidán do seznamu oken, který je spravován <xref:System.Windows.Application> objektem (viz <xref:System.Windows.Application.Windows%2A?displayProperty=nameWithType> ). Kromě toho první okno, které má být vytvořena instance, je ve výchozím nastavení nastaveno <xref:System.Windows.Application> jako hlavní okno aplikace (viz <xref:System.Windows.Application.MainWindow%2A?displayProperty=nameWithType> ).  
   
- Okno je nakonec otevřeno voláním <xref:System.Windows.Window.Show%2A> metody; výsledek je znázorněn na následujícím obrázku.  
+ Okno je nakonec otevřeno voláním metody. <xref:System.Windows.Window.Show%2A> výsledek je znázorněn na následujícím obrázku.  
   
  ![Okno otevřené voláním okna. show](./media/wpf-windows-overview//window-opened-show-method.png)  
   
@@ -156,36 +157,36 @@ Uživatelé pracují se samostatnými aplikacemi Windows Presentation Foundation
   
  [!code-xaml[WindowsOverviewSnippets#ApplicationStartupUriMARKUP](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewSnippets/CSharp/App.xaml#applicationstartupurimarkup)]  
   
- Po spuštění aplikace <xref:System.Windows.Application.StartupUri%2A> je okno určené hodnotou otevřeno nemodální. interně je okno otevřeno voláním jeho <xref:System.Windows.Window.Show%2A> metody.  
+ Po spuštění aplikace je okno určené hodnotou <xref:System.Windows.Application.StartupUri%2A> otevřeno nemodální. interně je okno otevřeno voláním jeho <xref:System.Windows.Window.Show%2A> metody.  
   
 <a name="Ownership"></a>
 #### <a name="window-ownership"></a>Vlastnictví okna  
- Okno, které je otevřeno pomocí <xref:System.Windows.Window.Show%2A> metody, nemá implicitní relaci s oknem, který ho vytvořil. Uživatelé mohou pracovat s některým z oken nezávisle na sobě, což znamená, že jedno okno může provádět následující akce:  
+ Okno, které je otevřeno pomocí metody, nemá <xref:System.Windows.Window.Show%2A> implicitní relaci s oknem, který ho vytvořil. uživatelé mohou pracovat s některým z oken nezávisle na sobě, což znamená, že jedno okno může provést následující akce:  
   
-- Zakrytí druhé (Pokud má jedna z oken nastavenou <xref:System.Windows.Window.Topmost%2A> vlastnost `true`).  
+- Zakrytí druhé (Pokud má jedna z oken <xref:System.Windows.Window.Topmost%2A> nastavenou vlastnost `true` ).  
   
 - Minimalizujte, maximalizujete a obnovíte, aniž by to ovlivnilo druhý.  
   
- Některá okna vyžadují relaci s oknem, který je otevírá. Například aplikace integrovaného vývojového prostředí (IDE) může otevřít okna vlastností a nástrojů, jejichž typické chování je pokrýt okno, které je vytvoří. Kromě toho by tato okna měla vždycky zavřít, minimalizovat, maximalizovat a obnovit ve vzájemné součinnosti s oknem, který je vytvořil. Takový vztah může být vytvořen tak, že *jedno okno* naplňuje jako jiné a je dosaženo <xref:System.Windows.Window.Owner%2A> nastavením vlastnosti vlastnictví *okna* s odkazem na *okno vlastníka*. To je ukázáno v následujícím příkladu.  
+ Některá okna vyžadují relaci s oknem, který je otevírá. Například aplikace integrovaného vývojového prostředí (IDE) může otevřít okna vlastností a nástrojů, jejichž typické chování je pokrýt okno, které je vytvoří. Kromě toho by tato okna měla vždycky zavřít, minimalizovat, maximalizovat a obnovit ve vzájemné součinnosti s oknem, který je vytvořil. Takový vztah může být vytvořen tak, že *jedno okno* naplňuje jako jiné a je dosaženo nastavením <xref:System.Windows.Window.Owner%2A> vlastnosti vlastnictví *okna* s odkazem na *okno vlastníka*. To je ukázáno v následujícím příkladu.  
   
  [!code-csharp[WindowOwnerOwnedWindowsSnippets#SetWindowOwnerCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowOwnerOwnedWindowsSnippets/CSharp/MainWindow.xaml.cs#setwindowownercode)]
  [!code-vb[WindowOwnerOwnedWindowsSnippets#SetWindowOwnerCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WindowOwnerOwnedWindowsSnippets/visualbasic/mainwindow.xaml.vb#setwindowownercode)]  
   
  Po navázání vlastnictví:  
   
-- Vlastněné okno může odkazovat na své nadřazené okno kontrolou hodnoty jeho <xref:System.Windows.Window.Owner%2A> vlastnosti.  
+- Vlastněné okno může odkazovat na své nadřazené okno kontrolou hodnoty jeho <xref:System.Windows.Window.Owner%2A> Vlastnosti.  
   
-- Okno vlastník může zjistit, že je v něm vlastní systém Windows, a to tak, <xref:System.Windows.Window.OwnedWindows%2A> že zkontroluje hodnotu jeho vlastnosti.  
+- Okno vlastník může zjistit, že je v něm vlastní systém Windows, a to tak, že zkontroluje hodnotu jeho <xref:System.Windows.Window.OwnedWindows%2A> Vlastnosti.  
   
 <a name="Preventing"></a>
 #### <a name="preventing-window-activation"></a>Prevence aktivace okna  
  Existují situace, kdy by systém Windows neměl být aktivovaný, pokud je zobrazený, například okna konverzace aplikace ve stylu kurýrní služby nebo okna oznámení e-mailové aplikace.  
   
- Pokud má aplikace okno, které by se nemělo aktivovat, pokud je zobrazeno, můžete nastavit <xref:System.Windows.Window.ShowActivated%2A> jeho vlastnost `false` na hodnotu před <xref:System.Windows.Window.Show%2A> prvním voláním metody. Jako důsledek:  
+ Pokud má aplikace okno, které by se nemělo aktivovat, pokud je zobrazeno, můžete nastavit jeho <xref:System.Windows.Window.ShowActivated%2A> vlastnost na hodnotu `false` před <xref:System.Windows.Window.Show%2A> prvním voláním metody. Jako důsledek:  
   
 - Okno není aktivováno.  
   
-- <xref:System.Windows.Window.Activated> Událost okna není vyvolána.  
+- Událost okna není <xref:System.Windows.Window.Activated> vyvolána.  
   
 - Aktuálně aktivované okno zůstane aktivované.  
   
@@ -193,34 +194,34 @@ Uživatelé pracují se samostatnými aplikacemi Windows Presentation Foundation
   
 - Okno je aktivováno.  
   
-- Vyvolá se <xref:System.Windows.Window.Activated> událost okna.  
+- <xref:System.Windows.Window.Activated>Vyvolá se událost okna.  
   
 - Dříve aktivované okno je deaktivováno.  
   
-- V reakci na <xref:System.Windows.Window.Deactivated> akce <xref:System.Windows.Window.Activated> uživatele jsou následně vyvolány okno a události.  
+- <xref:System.Windows.Window.Deactivated> <xref:System.Windows.Window.Activated> V reakci na akce uživatele jsou následně vyvolány okno a události.  
   
 <a name="Window_Activation"></a>
 ### <a name="window-activation"></a>Aktivace okna  
- Při prvním otevření okna se zobrazí okno aktivní (Pokud se nezobrazí s <xref:System.Windows.Window.ShowActivated%2A> nastavením na `false`). *Aktivní okno* je okno, které aktuálně zachytí vstup uživatele, například tahy kláves a kliknutí myší. Když dojde k aktivaci okna, vyvolá <xref:System.Windows.Window.Activated> událost.  
+ Při prvním otevření okna se zobrazí okno aktivní (Pokud se nezobrazí s <xref:System.Windows.Window.ShowActivated%2A> nastavením na `false` ). *Aktivní okno* je okno, které aktuálně zachytí vstup uživatele, například tahy kláves a kliknutí myší. Když dojde k aktivaci okna, vyvolá <xref:System.Windows.Window.Activated> událost.  
   
 > [!NOTE]
-> Při prvním otevření okna se události <xref:System.Windows.FrameworkElement.Loaded> a <xref:System.Windows.Window.ContentRendered> vyvolá až po vyvolání <xref:System.Windows.Window.Activated> události. V takovém případě může být okno efektivně považováno za otevřené při <xref:System.Windows.Window.ContentRendered> vyvolání.  
+> Při prvním otevření okna se <xref:System.Windows.FrameworkElement.Loaded> události a vyvolá až <xref:System.Windows.Window.ContentRendered> po <xref:System.Windows.Window.Activated> vyvolání události. V takovém případě může být okno efektivně považováno za otevřené při <xref:System.Windows.Window.ContentRendered> vyvolání.  
   
  Po aktivaci okna může uživatel aktivovat jiné okno ve stejné aplikaci nebo aktivovat jinou aplikaci. Pokud k tomu dojde, stane se aktuálně aktivní okno deaktivováno a vyvolá <xref:System.Windows.Window.Deactivated> událost. Podobně když uživatel vybere aktuálně deaktivované okno, okno se znovu aktivuje a <xref:System.Windows.Window.Activated> vyvolá se.  
   
- Jedním z běžných důvodů, <xref:System.Windows.Window.Activated> jak <xref:System.Windows.Window.Deactivated> zpracovat a zakázat funkce, které lze spustit pouze v případě, že je okno aktivní. Například některá okna zobrazují interaktivní obsah, který vyžaduje stálý vstup uživatele nebo pozornost, včetně her a přehrávačů videí. Následující příklad je zjednodušený přehrávač videa, který ukazuje, jak zpracovat <xref:System.Windows.Window.Activated> a <xref:System.Windows.Window.Deactivated> implementovat toto chování.  
+ Jedním z běžných důvodů, jak zpracovat a <xref:System.Windows.Window.Activated> <xref:System.Windows.Window.Deactivated> Zakázat funkce, které lze spustit pouze v případě, že je okno aktivní. Například některá okna zobrazují interaktivní obsah, který vyžaduje stálý vstup uživatele nebo pozornost, včetně her a přehrávačů videí. Následující příklad je zjednodušený přehrávač videa, který ukazuje, jak zpracovat <xref:System.Windows.Window.Activated> a <xref:System.Windows.Window.Deactivated> implementovat toto chování.  
   
  [!code-xaml[WindowsOverviewSnippets#ActivationDeactivationMARKUP](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewSnippets/CSharp/CustomMediaPlayerWindow.xaml#activationdeactivationmarkup)]  
   
  [!code-csharp[WindowsOverviewSnippets#ActivationDeactivationCODEBEHIND](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewSnippets/CSharp/CustomMediaPlayerWindow.xaml.cs#activationdeactivationcodebehind)]
  [!code-vb[WindowsOverviewSnippets#ActivationDeactivationCODEBEHIND](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WindowsOverviewSnippets/VisualBasic/CustomMediaPlayerWindow.xaml.vb#activationdeactivationcodebehind)]  
   
- Jiné typy aplikací mohou stále spouštět kód na pozadí, když dojde k deaktivaci okna. Například poštovní klient může pokračovat v dotazování poštovního serveru, zatímco uživatel používá jiné aplikace. Tyto aplikace často poskytují jiné nebo dodatečné chování při deaktivaci hlavního okna. V souvislosti s e-mailovým programem může to znamenat, že by se nová položka pošty přidala do doručené pošty a přidala se ikona oznámení do systémového zásobníku. Ikona oznámení musí být zobrazena pouze v případě, že okno pošty není aktivní, což lze určit kontrolou <xref:System.Windows.Window.IsActive%2A> vlastnosti.  
+ Jiné typy aplikací mohou stále spouštět kód na pozadí, když dojde k deaktivaci okna. Například poštovní klient může pokračovat v dotazování poštovního serveru, zatímco uživatel používá jiné aplikace. Tyto aplikace často poskytují jiné nebo dodatečné chování při deaktivaci hlavního okna. V souvislosti s e-mailovým programem může to znamenat, že by se nová položka pošty přidala do doručené pošty a přidala se ikona oznámení do systémového zásobníku. Ikona oznámení musí být zobrazena pouze v případě, že okno pošty není aktivní, což lze určit kontrolou <xref:System.Windows.Window.IsActive%2A> Vlastnosti.  
   
- Pokud je úloha na pozadí dokončena, okno může chtít uživateli upozorňovat na naléhavější voláním <xref:System.Windows.Window.Activate%2A> metody. Pokud uživatel pracuje s jinou aplikací aktivovanou, když <xref:System.Windows.Window.Activate%2A> je volána, tlačítko na hlavním panelu bude blikat. Pokud uživatel spolupracuje s aktuální aplikací, volání <xref:System.Windows.Window.Activate%2A> přepne okno do popředí.  
+ Pokud je úloha na pozadí dokončena, okno může chtít uživateli upozorňovat na naléhavější voláním <xref:System.Windows.Window.Activate%2A> metody. Pokud uživatel pracuje s jinou aplikací aktivovanou <xref:System.Windows.Window.Activate%2A> , když je volána, tlačítko na hlavním panelu bude blikat. Pokud uživatel spolupracuje s aktuální aplikací, volání přepne <xref:System.Windows.Window.Activate%2A> okno do popředí.  
   
 > [!NOTE]
-> Můžete zpracovávat aktivaci rozsahu aplikace pomocí událostí <xref:System.Windows.Application.Activated?displayProperty=nameWithType> a. <xref:System.Windows.Application.Deactivated?displayProperty=nameWithType>  
+> Můžete zpracovávat aktivaci rozsahu aplikace pomocí <xref:System.Windows.Application.Activated?displayProperty=nameWithType> <xref:System.Windows.Application.Deactivated?displayProperty=nameWithType> událostí a.  
   
 <a name="Closing_a_Window"></a>
 ### <a name="closing-a-window"></a>Zavření okna  
@@ -249,27 +250,27 @@ Uživatelé pracují se samostatnými aplikacemi Windows Presentation Foundation
  [!code-csharp[WindowsOverviewSnippets#WindowWithFileExitCODEBEHIND](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewSnippets/CSharp/WindowWithFileExit.xaml.cs#windowwithfileexitcodebehind)]
  [!code-vb[WindowsOverviewSnippets#WindowWithFileExitCODEBEHIND](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WindowsOverviewSnippets/VisualBasic/WindowWithFileExit.xaml.vb#windowwithfileexitcodebehind)]  
   
- Po zavření okna vyvolá dvě události: <xref:System.Windows.Window.Closing> a. <xref:System.Windows.Window.Closed>  
+ Po zavření okna vyvolá dvě události: <xref:System.Windows.Window.Closing> a <xref:System.Windows.Window.Closed> .  
   
- <xref:System.Windows.Window.Closing>je aktivována před zavřením okna a poskytuje mechanismus, pomocí kterého lze zabránit zavření okna. Jedním z běžných důvodů, jak zabránit zavření okna, je, pokud obsah okna obsahuje upravená data. V takovém <xref:System.Windows.Window.Closing> případě může být událost zpracována za účelem zjištění, zda jsou data nečistá, a pokud ano, požádejte uživatele, aby buď pokračoval v zavírání okna bez uložení dat, nebo zrušení zavření okna. Následující příklad ukazuje klíčové aspekty manipulace <xref:System.Windows.Window.Closing>.  
+ <xref:System.Windows.Window.Closing>je aktivována před zavřením okna a poskytuje mechanismus, pomocí kterého lze zabránit zavření okna. Jedním z běžných důvodů, jak zabránit zavření okna, je, pokud obsah okna obsahuje upravená data. V takovém <xref:System.Windows.Window.Closing> případě může být událost zpracována za účelem zjištění, zda jsou data nečistá, a pokud ano, požádejte uživatele, aby buď pokračoval v zavírání okna bez uložení dat, nebo zrušení zavření okna. Následující příklad ukazuje klíčové aspekty manipulace <xref:System.Windows.Window.Closing> .  
   
  [!code-csharp[WindowClosingSnippets](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowClosingSnippets/CSharp/DataWindow.xaml.cs)]
  [!code-vb[WindowClosingSnippets](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WindowClosingSnippets/visualbasic/datawindow.xaml.vb)]  
 
- Obslužná <xref:System.Windows.Window.Closing> rutina události je předána <xref:System.ComponentModel.CancelEventArgs>a, která `Boolean` <xref:System.ComponentModel.CancelEventArgs.Cancel%2A> implementuje vlastnost, která je `true` nastavena na, aby zabránila zavření okna.  
+ <xref:System.Windows.Window.Closing>Obslužná rutina události je předána a <xref:System.ComponentModel.CancelEventArgs> , která implementuje `Boolean` <xref:System.ComponentModel.CancelEventArgs.Cancel%2A> vlastnost, která je nastavena na, `true` aby zabránila zavření okna.  
   
- Pokud <xref:System.Windows.Window.Closing> není zpracována nebo je zpracována, ale není zrušeno, okno se zavře. Těsně před tím, než se okno <xref:System.Windows.Window.Closed> skutečně zavře, se vyvolá. V tuto chvíli není možné zabránit zavření okna.  
+ Pokud není <xref:System.Windows.Window.Closing> zpracována nebo je zpracována, ale není zrušeno, okno se zavře. Těsně před tím, než se okno skutečně zavře, <xref:System.Windows.Window.Closed> se vyvolá. V tuto chvíli není možné zabránit zavření okna.  
   
 > [!NOTE]
-> Aplikaci lze nakonfigurovat tak, aby se automaticky vypnula při zavření okna hlavní aplikace (viz <xref:System.Windows.Application.MainWindow%2A>) nebo po zavření posledního okna. Podrobnosti najdete v tématu <xref:System.Windows.Application.ShutdownMode%2A>.  
+> Aplikaci lze nakonfigurovat tak, aby se automaticky vypnula při zavření okna hlavní aplikace (viz <xref:System.Windows.Application.MainWindow%2A> ) nebo po zavření posledního okna. Podrobnosti najdete v tématu <xref:System.Windows.Application.ShutdownMode%2A>.  
   
  I když může být okno explicitně uzavřeno prostřednictvím mechanismů, které jsou k dispozici v klientských a klientských oblastech, může být okno také implicitně uzavřeno v důsledku chování v jiných částech aplikace nebo Windows, včetně následujících:  
   
 - Uživatel se odhlásí nebo vypne v systému Windows.  
   
-- Vlastník okna se zavře (viz <xref:System.Windows.Window.Owner%2A>).  
+- Vlastník okna se zavře (viz <xref:System.Windows.Window.Owner%2A> ).  
   
-- Hlavní okno aplikace je zavřené a <xref:System.Windows.Application.ShutdownMode%2A> je <xref:System.Windows.ShutdownMode.OnMainWindowClose>.  
+- Hlavní okno aplikace je zavřené a <xref:System.Windows.Application.ShutdownMode%2A> je <xref:System.Windows.ShutdownMode.OnMainWindowClose> .  
   
 - <xref:System.Windows.Application.Shutdown%2A>je volána.  
   
@@ -282,13 +283,13 @@ Uživatelé pracují se samostatnými aplikacemi Windows Presentation Foundation
   
  ![Diagram, který zobrazuje události v době života okna.](./media/wpf-windows-overview/window-lifetime-events.png)  
   
- Následující ilustrace znázorňuje sekvenci hlavních událostí v době životnosti okna, které je zobrazeno bez aktivace (<xref:System.Windows.Window.ShowActivated%2A> je nastaveno na `false` hodnotu před zobrazením okna):  
+ Následující ilustrace znázorňuje sekvenci hlavních událostí v době životnosti okna, které je zobrazeno bez aktivace ( <xref:System.Windows.Window.ShowActivated%2A> je nastaveno na hodnotu `false` před zobrazením okna):  
   
  ![Diagram, který zobrazuje události v době života okna bez aktivace.](./media/wpf-windows-overview/window-lifetime-no-activation.png)  
   
 <a name="WindowLocation"></a>
 ## <a name="window-location"></a>Umístění okna  
- Když je okno otevřené, má umístění v rozměrech x a y relativně k ploše. Toto umístění lze určit kontrolou vlastností <xref:System.Windows.Window.Left%2A> a <xref:System.Windows.Window.Top%2A> v uvedeném pořadí. Nastavením těchto vlastností lze změnit umístění okna.  
+ Když je okno otevřené, má umístění v rozměrech x a y relativně k ploše. Toto umístění lze určit kontrolou <xref:System.Windows.Window.Left%2A> vlastností a v <xref:System.Windows.Window.Top%2A> uvedeném pořadí. Nastavením těchto vlastností lze změnit umístění okna.  
   
  Můžete také zadat počáteční umístění <xref:System.Windows.Window> při prvním zobrazení nastavením <xref:System.Windows.Window.WindowStartupLocation%2A> vlastnosti pomocí jedné z následujících <xref:System.Windows.WindowStartupLocation> hodnot výčtu:  
   
@@ -298,11 +299,11 @@ Uživatelé pracují se samostatnými aplikacemi Windows Presentation Foundation
   
 - <xref:System.Windows.WindowStartupLocation.Manual>  
   
- Pokud je <xref:System.Windows.WindowStartupLocation.Manual>počáteční umístění zadané jako a vlastnosti <xref:System.Windows.Window.Left%2A> a <xref:System.Windows.Window.Top%2A> nejsou nastavené, požádá Windows o <xref:System.Windows.Window> umístění, ve kterém se bude zobrazovat.  
+ Pokud je počáteční umístění zadané jako <xref:System.Windows.WindowStartupLocation.Manual> a <xref:System.Windows.Window.Left%2A> <xref:System.Windows.Window.Top%2A> vlastnosti a nejsou nastavené, <xref:System.Windows.Window> požádá Windows o umístění, ve kterém se bude zobrazovat.  
   
 <a name="Topmost_Windows_and_Z_Order"></a>
 ### <a name="topmost-windows-and-z-order"></a>V horních oknech a pořadí Z  
- Kromě umístění x a y má okno také místo v dimenzi z, které určuje jeho svislou polohu vzhledem k ostatním systémům Windows. Toto se říká pořadí vykreslování v okně a existují dva typy: normální pořadí vykreslování a nejvyšší pořadí vykreslování. Umístění okna v *normálním pořadí z* je určeno, zda je aktuálně aktivní nebo ne. Ve výchozím nastavení je okno umístěno v normálním pořadí z. Umístění okna v *horním pořadí z* je také určeno, zda je aktuálně aktivní nebo ne. Kromě toho Windows v horním pořadí z je vždycky umístěný nad Windows v normálním pořadí z. Okno je umístěno v horní části pořadí z – nastavením jeho <xref:System.Windows.Window.Topmost%2A> vlastnosti na. `true`  
+ Kromě umístění x a y má okno také místo v dimenzi z, které určuje jeho svislou polohu vzhledem k ostatním systémům Windows. Toto se říká pořadí vykreslování v okně a existují dva typy: normální pořadí vykreslování a nejvyšší pořadí vykreslování. Umístění okna v *normálním pořadí z* je určeno, zda je aktuálně aktivní nebo ne. Ve výchozím nastavení je okno umístěno v normálním pořadí z. Umístění okna v *horním pořadí z* je také určeno, zda je aktuálně aktivní nebo ne. Kromě toho Windows v horním pořadí z je vždycky umístěný nad Windows v normálním pořadí z. Okno je umístěno v horní části pořadí z – nastavením jeho <xref:System.Windows.Window.Topmost%2A> vlastnosti na `true` .  
   
  [!code-xaml[WindowsOverviewSnippets#TopmostWindowMARKUP1](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewSnippets/CSharp/TopmostWindow.xaml#topmostwindowmarkup1)]  
   
@@ -310,17 +311,17 @@ Uživatelé pracují se samostatnými aplikacemi Windows Presentation Foundation
   
 <a name="WindowSize"></a>
 ## <a name="window-size"></a>Velikost okna  
- Kromě umístění na ploše má okno velikost, která je určena několika vlastnostmi, včetně různých vlastností šířky a výšky a <xref:System.Windows.Window.SizeToContent%2A>.  
+ Kromě umístění na ploše má okno velikost, která je určena několika vlastnostmi, včetně různých vlastností šířky a výšky a <xref:System.Windows.Window.SizeToContent%2A> .  
   
- <xref:System.Windows.FrameworkElement.MinWidth%2A>, <xref:System.Windows.FrameworkElement.Width%2A>, a <xref:System.Windows.FrameworkElement.MaxWidth%2A> slouží ke správě rozsahu šířek, které může okno mít během své životnosti a jsou konfigurovány tak, jak je znázorněno v následujícím příkladu.  
+ <xref:System.Windows.FrameworkElement.MinWidth%2A>, <xref:System.Windows.FrameworkElement.Width%2A> , a <xref:System.Windows.FrameworkElement.MaxWidth%2A> slouží ke správě rozsahu šířek, které může okno mít během své životnosti a jsou konfigurovány tak, jak je znázorněno v následujícím příkladu.  
   
  [!code-xaml[WindowsOverviewSnippets#WidthWindowMARKUP1](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewSnippets/CSharp/WidthWindow.xaml#widthwindowmarkup1)]  
   
- Výška okna je spravována <xref:System.Windows.FrameworkElement.MinHeight%2A>pomocí <xref:System.Windows.FrameworkElement.Height%2A>,, <xref:System.Windows.FrameworkElement.MaxHeight%2A>a, a je konfigurována tak, jak je znázorněno v následujícím příkladu.  
+ Výška okna je spravována pomocí <xref:System.Windows.FrameworkElement.MinHeight%2A> , <xref:System.Windows.FrameworkElement.Height%2A> , a <xref:System.Windows.FrameworkElement.MaxHeight%2A> , a je konfigurována tak, jak je znázorněno v následujícím příkladu.  
   
  [!code-xaml[WindowsOverviewSnippets#HeightWindowMARKUP1](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewSnippets/CSharp/HeightWindow.xaml#heightwindowmarkup1)]  
   
- Vzhledem k tomu, že různé hodnoty šířky a hodnoty výšky určují rozsah, je možné, že šířka a Výška okna s možností změny velikosti budou kdekoli v zadaném rozsahu pro příslušnou dimenzi. Chcete-li zjistit aktuální šířku a výšku, <xref:System.Windows.FrameworkElement.ActualWidth%2A> zkontrolujte <xref:System.Windows.FrameworkElement.ActualHeight%2A>a v uvedeném pořadí.  
+ Vzhledem k tomu, že různé hodnoty šířky a hodnoty výšky určují rozsah, je možné, že šířka a Výška okna s možností změny velikosti budou kdekoli v zadaném rozsahu pro příslušnou dimenzi. Chcete-li zjistit aktuální šířku a výšku, zkontrolujte <xref:System.Windows.FrameworkElement.ActualWidth%2A> a <xref:System.Windows.FrameworkElement.ActualHeight%2A> v uvedeném pořadí.  
   
  Pokud chcete, aby Šířka a Výška okna měla velikost, která se vejde na velikost obsahu okna, můžete použít <xref:System.Windows.Window.SizeToContent%2A> vlastnost, která má následující hodnoty:  
   
@@ -330,7 +331,7 @@ Uživatelé pracují se samostatnými aplikacemi Windows Presentation Foundation
   
 - <xref:System.Windows.SizeToContent.Height>. Přizpůsobit výšce obsahu, která má stejný efekt jako nastavení obou <xref:System.Windows.FrameworkElement.MinHeight%2A> i <xref:System.Windows.FrameworkElement.MaxHeight%2A> na výšku obsahu.  
   
-- <xref:System.Windows.SizeToContent.WidthAndHeight>. Přizpůsobit šířce a výšce obsahu, která má stejný efekt jako nastavení <xref:System.Windows.FrameworkElement.MinHeight%2A> obou i <xref:System.Windows.FrameworkElement.MaxHeight%2A> na výšku obsahu a nastavení <xref:System.Windows.FrameworkElement.MinWidth%2A> i <xref:System.Windows.FrameworkElement.MaxWidth%2A> na šířku obsahu.  
+- <xref:System.Windows.SizeToContent.WidthAndHeight>. Přizpůsobit šířce a výšce obsahu, která má stejný efekt jako nastavení obou i <xref:System.Windows.FrameworkElement.MinHeight%2A> <xref:System.Windows.FrameworkElement.MaxHeight%2A> na výšku obsahu a nastavení i <xref:System.Windows.FrameworkElement.MinWidth%2A> <xref:System.Windows.FrameworkElement.MaxWidth%2A> na šířku obsahu.  
   
  Následující příklad ukazuje okno, které automaticky přizpůsobí svůj obsah, jak je to možné, vertikálně i vodorovně, pokud je zobrazeno první.  
   
@@ -365,18 +366,18 @@ Uživatelé pracují se samostatnými aplikacemi Windows Presentation Foundation
   
 4. <xref:System.Windows.FrameworkElement.Width%2A?displayProperty=nameWithType>  
   
- Pořadí priorit může také určit velikost okna v případě maximalizace, které je spravováno pomocí <xref:System.Windows.Window.WindowState%2A> vlastnosti.  
+ Pořadí priorit může také určit velikost okna v případě maximalizace, které je spravováno pomocí <xref:System.Windows.Window.WindowState%2A> Vlastnosti.  
   
 <a name="WindowState"></a>
 ## <a name="window-state"></a>Stav okna  
  Během životnosti okna s možností změny velikosti může mít tři stavy: normální, minimalizované a maximalizované. Okno s *normálním* stavem je výchozí stav okna. Okno s tímto stavem umožňuje uživateli, aby ho přesunul a změnil jeho velikost pomocí úchytu změny velikosti nebo ohraničení, pokud jde o změnu velikosti.  
   
- Okno s *minimalizovaným* stavem se sbalí na jeho tlačítko na panelu úkolů <xref:System.Windows.Window.ShowInTaskbar%2A> , pokud je `true`nastaveno na hodnotu; v opačném případě se sbalí na nejmenší možnou velikost, kterou může být, a přemístit je do levého dolního rohu plochy. Velikost minimalizovaného okna nelze měnit pomocí ohraničení nebo změny velikosti, i když minimalizované okno, které není zobrazeno na panelu úloh, lze přetáhnout na plochu.  
+ Okno s *minimalizovaným* stavem se sbalí na jeho tlačítko na panelu úkolů <xref:System.Windows.Window.ShowInTaskbar%2A> , pokud je nastaveno na hodnotu `true` ; v opačném případě se sbalí na nejmenší možnou velikost, která může být a přemístění do levého dolního rohu plochy. Velikost minimalizovaného okna nelze měnit pomocí ohraničení nebo změny velikosti, i když minimalizované okno, které není zobrazeno na panelu úloh, lze přetáhnout na plochu.  
   
- Okno s *maximalizovaném* stavem se zvětšuje na maximální velikost, která může být, což bude mít až velkou <xref:System.Windows.FrameworkElement.MaxWidth%2A> <xref:System.Windows.FrameworkElement.MaxHeight%2A>hodnotu, a <xref:System.Windows.Window.SizeToContent%2A> vlastnosti se určí. Podobně jako minimalizované okno nelze upravit velikost maximalizovaného okna pomocí úchytu pro změnu velikosti nebo přetažením ohraničení.  
+ Okno s *maximalizovaném* stavem se zvětšuje na maximální velikost, která může být, což bude mít až velkou hodnotu, <xref:System.Windows.FrameworkElement.MaxWidth%2A> <xref:System.Windows.FrameworkElement.MaxHeight%2A> a <xref:System.Windows.Window.SizeToContent%2A> vlastnosti se určí. Podobně jako minimalizované okno nelze upravit velikost maximalizovaného okna pomocí úchytu pro změnu velikosti nebo přetažením ohraničení.  
   
 > [!NOTE]
-> Hodnoty <xref:System.Windows.Window.Top%2A> <xref:System.Windows.FrameworkElement.Height%2A> vlastností, <xref:System.Windows.Window.Left%2A>, <xref:System.Windows.FrameworkElement.Width%2A>a v okně vždy reprezentují hodnoty pro normální stav, a to i v případě, že je okno momentálně maximalizováno nebo minimalizováno.  
+> Hodnoty <xref:System.Windows.Window.Top%2A> vlastností,, a <xref:System.Windows.Window.Left%2A> v <xref:System.Windows.FrameworkElement.Width%2A> <xref:System.Windows.FrameworkElement.Height%2A> okně vždy reprezentují hodnoty pro normální stav, a to i v případě, že je okno momentálně maximalizováno nebo minimalizováno.  
   
  Stav okna lze nakonfigurovat nastavením jeho <xref:System.Windows.Window.WindowState%2A> vlastnosti, která může mít jednu z následujících <xref:System.Windows.WindowState> hodnot výčtu:  
   
@@ -390,11 +391,11 @@ Uživatelé pracují se samostatnými aplikacemi Windows Presentation Foundation
   
  [!code-xaml[WindowsOverviewSnippets#WindowStateWindowMARKUP1](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewSnippets/CSharp/WindowStateWindow.xaml#windowstatewindowmarkup1)]  
   
- Obecně byste měli nastavit <xref:System.Windows.Window.WindowState%2A> , aby se nakonfiguroval počáteční stav okna. Jakmile se zobrazí okno pro změnu velikosti, uživatelé mohou změnit stav okna stisknutím tlačítek minimalizovat, maximalizovat a obnovit v záhlaví okna.  
+ Obecně byste měli nastavit, <xref:System.Windows.Window.WindowState%2A> aby se nakonfiguroval počáteční stav okna. Jakmile se zobrazí okno pro změnu velikosti, uživatelé mohou změnit stav okna stisknutím tlačítek minimalizovat, maximalizovat a obnovit v záhlaví okna.  
   
 <a name="WindowAppearance"></a>
 ## <a name="window-appearance"></a>Vzhled okna  
- Můžete změnit vzhled oblasti klienta okna přidáním obsahu pro jednotlivé okno, jako jsou tlačítka, popisky a textová pole. Chcete-li nakonfigurovat neklientskou oblast <xref:System.Windows.Window> , poskytuje několik vlastností, které <xref:System.Windows.Window.Icon%2A> zahrnují nastavení ikony okna a <xref:System.Windows.Window.Title%2A> nastavení jeho názvu.  
+ Můžete změnit vzhled oblasti klienta okna přidáním obsahu pro jednotlivé okno, jako jsou tlačítka, popisky a textová pole. Chcete-li nakonfigurovat neklientskou oblast, <xref:System.Windows.Window> poskytuje několik vlastností, které zahrnují <xref:System.Windows.Window.Icon%2A> Nastavení ikony okna a <xref:System.Windows.Window.Title%2A> nastavení jeho názvu.  
   
  Můžete také změnit vzhled a chování ohraničení neklientské oblasti tím, že nakonfigurujete režim změny velikosti okna, styl okna a zda se zobrazí jako tlačítko na panelu úloh plochy.  
 
@@ -412,11 +413,11 @@ Uživatelé pracují se samostatnými aplikacemi Windows Presentation Foundation
   
 - <xref:System.Windows.ResizeMode.CanResizeWithGrip>  
   
- Stejně jako <xref:System.Windows.Window.WindowStyle%2A>v se režim změny velikosti okna pravděpodobně během své životnosti nezmění, což znamená, že je pravděpodobně možné ho nastavit ze [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] značek.  
+ Stejně jako v se <xref:System.Windows.Window.WindowStyle%2A> režim změny velikosti okna pravděpodobně během své životnosti nezmění, což znamená, že je pravděpodobně možné ho nastavit ze [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] značek.  
   
  [!code-xaml[WindowsOverviewSnippets#ResizeModeWindowMARKUP1](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewSnippets/CSharp/ResizeModeWindow.xaml#resizemodewindowmarkup1)]  
   
- Všimněte si, že kontrolu <xref:System.Windows.Window.WindowState%2A> vlastností můžete zjistit, zda je okno maximalizováno, minimalizováno nebo obnoveno.  
+ Všimněte si, že kontrolu vlastností můžete zjistit, zda je okno maximalizováno, minimalizováno nebo obnoveno <xref:System.Windows.Window.WindowState%2A> .  
   
 <a name="Window_Style"></a>
 ### <a name="window-style"></a>Styl okna  
@@ -436,18 +437,18 @@ Uživatelé pracují se samostatnými aplikacemi Windows Presentation Foundation
   
  ![Ilustrace stylů ohraničení okna](./media/wpf-windows-overview/window-border-styles.png)  
   
- Můžete nastavit <xref:System.Windows.Window.WindowStyle%2A> pomocí [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] značky nebo kódu; vzhledem k tomu, že se během doby platnosti okna pravděpodobně nemění, je pravděpodobně možné ho nakonfigurovat pomocí [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] značek.  
+ Můžete nastavit <xref:System.Windows.Window.WindowStyle%2A> pomocí [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] značky nebo kódu; vzhledem k tomu, že se po celou dobu životnosti okna pravděpodobně nemění, je pravděpodobné, že ho budete konfigurovat pomocí [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] značek.  
   
  [!code-xaml[WindowsOverviewSnippets#WindowStyleWindowMARKUP1](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewSnippets/CSharp/WindowStyleWindow.xaml#windowstylewindowmarkup1)]  
   
 #### <a name="non-rectangular-window-style"></a>Styl neobdélníkového okna  
- Existují také situace, kdy styly ohraničení, které <xref:System.Windows.Window.WindowStyle%2A> umožňují, nejsou dostačující. Například můžete chtít vytvořit aplikaci s neobdélníkovým ohraničením, například Microsoft Windows Media Player používá.  
+ Existují také situace, kdy styly ohraničení, které umožňují, nejsou <xref:System.Windows.Window.WindowStyle%2A> dostačující. Například můžete chtít vytvořit aplikaci s neobdélníkovým ohraničením, například Microsoft Windows Media Player používá.  
   
  Představte si například okno bublinového slova, které vidíte na následujícím obrázku:  
   
  ![Okno bublinového slova, které říká, že se má přetáhnout](./media/wpf-windows-overview/non-rectangular-window-figure.png)  
   
- Tento typ okna lze vytvořit nastavením <xref:System.Windows.Window.WindowStyle%2A> vlastnosti na <xref:System.Windows.WindowStyle.None>a pomocí speciální podpory, která <xref:System.Windows.Window> má transparentnost.  
+ Tento typ okna lze vytvořit nastavením <xref:System.Windows.Window.WindowStyle%2A> vlastnosti na <xref:System.Windows.WindowStyle.None> a pomocí speciální podpory, která <xref:System.Windows.Window> má transparentnost.  
   
  [!code-xaml[WindowsOverviewSnippets#TransparentWindowMARKUP1](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewSnippets/CSharp/TransparentWindow.xaml#transparentwindowmarkup1)]  
   
@@ -460,13 +461,13 @@ Výchozí vzhled okna obsahuje tlačítko na hlavním panelu, podobně jako na n
 
  ![Snímek obrazovky, který zobrazuje okno s tlačítkem hlavního panelu.](./media/wpf-windows-overview/window-taskbar-button.png)  
   
- Některé typy oken nemají tlačítko na hlavním panelu, například pole se zprávami a dialogová okna (viz dialogová [okna Přehled](dialog-boxes-overview.md)). Nastavením <xref:System.Windows.Window.ShowInTaskbar%2A> vlastnosti (`true` ve výchozím nastavení) můžete určit, zda je zobrazeno tlačítko na panelu úloh okna.  
+ Některé typy oken nemají tlačítko na hlavním panelu, například pole se zprávami a dialogová okna (viz dialogová [okna Přehled](dialog-boxes-overview.md)). Nastavením <xref:System.Windows.Window.ShowInTaskbar%2A> vlastnosti ( `true` ve výchozím nastavení) můžete určit, zda je zobrazeno tlačítko na panelu úloh okna.  
   
  [!code-xaml[WindowsOverviewSnippets#ShowInTaskbarWindowMARKUP1](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewSnippets/CSharp/ShowInTaskbarWindow.xaml#showintaskbarwindowmarkup1)]  
   
 <a name="SecurityConsiderations"></a>
 ## <a name="security-considerations"></a>Aspekty zabezpečení  
- <xref:System.Windows.Window>vyžaduje `UnmanagedCode` , aby se vytvořila instance oprávnění zabezpečení. Pro aplikace nainstalované a spouštěné z místního počítače spadá do sady oprávnění udělených aplikaci.  
+ <xref:System.Windows.Window>vyžaduje, `UnmanagedCode` aby se vytvořila instance oprávnění zabezpečení. Pro aplikace nainstalované a spouštěné z místního počítače spadá do sady oprávnění udělených aplikaci.  
   
  To však spadá mimo sadu oprávnění udělených aplikacím, které jsou spouštěny z Internetu nebo místního intranetu pomocí technologie ClickOnce. V důsledku toho se uživatelům zobrazí upozornění zabezpečení ClickOnce a bude muset zvýšit úroveň oprávnění pro aplikaci na úplný vztah důvěryhodnosti.  
   
@@ -478,7 +479,7 @@ Výchozí vzhled okna obsahuje tlačítko na hlavním panelu, podobně jako na n
   
  Dialogová okna jsou okna, která se často používají k získání informací z uživatele k dokončení funkce. Například když chce uživatel otevřít soubor, dialogové okno **otevřít soubor** se obvykle zobrazí v aplikaci k získání názvu souboru od uživatele. Další informace najdete v tématu [Přehled dialogových oken](dialog-boxes-overview.md).  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Window>
 - <xref:System.Windows.MessageBox>

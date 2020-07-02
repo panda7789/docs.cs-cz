@@ -1,18 +1,27 @@
 ---
-ms.openlocfilehash: 735278848cb7399e414a128afc650a0a1f882337
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 395463225e3c1f1d168dd019ea75966ad54e5a8a
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "67857590"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85621109"
 ---
-### <a name="changing-the-isenabled-property-of-the-parent-of-a-textblock-control-affects-any-child-controls"></a>Změna vlastnosti IsEnabled nadřazeného ovládacího prvku TextBlock ovlivní všechny podřízené ovládací prvky.
+### <a name="changing-the-isenabled-property-of-the-parent-of-a-textblock-control-affects-any-child-controls"></a>Změna vlastnosti-Enable nadřazené položky ovládacího prvku TextBlock se projeví u všech podřízených ovládacích prvků.
 
-|   |   |
-|---|---|
-|Podrobnosti|Počínaje rozhraním .NET Framework 4.6.2 má změna <xref:System.Windows.UIElement.IsEnabled?displayProperty=name> <xref:System.Windows.Controls.TextBlock?displayProperty=name> vlastnosti nadřazeného ovládacího prvku vliv <xref:System.Windows.Controls.TextBlock?displayProperty=name> na všechny podřízené ovládací prvky (například hypertextové odkazy a tlačítka) ovládacího prvku. V rozhraní .NET Framework 4.6.1 a starší <xref:System.Windows.Controls.TextBlock?displayProperty=name> verze ovládací prvky <xref:System.Windows.UIElement.IsEnabled?displayProperty=name> uvnitř ne <xref:System.Windows.Controls.TextBlock?displayProperty=name> vždy odrážet stav vlastnosti nadřazené.|
-|Návrh|Žádné. Tato změna odpovídá očekávané chování pro <xref:System.Windows.Controls.TextBlock?displayProperty=name> ovládací prvky uvnitř ovládacího prvku.|
-|Rozsah|Vedlejší|
-|Version|4.6.2|
-|Typ|Modul runtime|
-|Ovlivněná rozhraní API|<ul><li><xref:System.Windows.UIElement.IsEnabled?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a>Podrobnosti
+
+Počínaje .NET Framework 4.6.2 se změna <xref:System.Windows.UIElement.IsEnabled?displayProperty=fullName> vlastnosti nadřazeného <xref:System.Windows.Controls.TextBlock?displayProperty=fullName> ovládacího prvku projeví u všech podřízených ovládacích prvků (jako jsou hypertextové odkazy a tlačítka) <xref:System.Windows.Controls.TextBlock?displayProperty=fullName> ovládacího prvku. V .NET Framework 4.6.1 a dřívějších verzích ovládací prvky uvnitř <xref:System.Windows.Controls.TextBlock?displayProperty=fullName> neodrážely stav <xref:System.Windows.UIElement.IsEnabled?displayProperty=fullName> vlastnosti <xref:System.Windows.Controls.TextBlock?displayProperty=fullName> nadřazeného objektu.
+
+#### <a name="suggestion"></a>Návrh
+
+Žádné Tato změna odpovídá očekávanému chování ovládacích prvků uvnitř <xref:System.Windows.Controls.TextBlock?displayProperty=fullName> ovládacího prvku.
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   |Vedlejší|
+|Verze|4.6.2|
+|Typ|Modul runtime
+
+#### <a name="affected-apis"></a>Ovlivněná rozhraní API
+
+-<xref:System.Windows.UIElement.IsEnabled?displayProperty=nameWithType></li></ul>|

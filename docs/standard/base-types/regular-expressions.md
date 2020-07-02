@@ -1,7 +1,7 @@
 ---
-title: .NET Framework – regulární výrazy
+title: Regulární výrazy .NET
 description: Pomocí regulárních výrazů můžete najít konkrétní vzory znaků, ověřit text, pracovat s textovými řetězci, & přidat extrahované řetězce do kolekce v rozhraní .NET.
-ms.date: 03/30/2017
+ms.date: 06/30/2020
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
@@ -21,12 +21,12 @@ helpviewer_keywords:
 - .NET Framework regular expressions
 - strings [.NET Framework], regular expressions
 ms.assetid: 521b3f6d-f869-42e1-93e5-158c54a6895d
-ms.openlocfilehash: d9505cdfb57faf586c714aa7dd537210959f50d8
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: f57199c2ddf6569020554e74b6e70801844da641
+ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84768830"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85802894"
 ---
 # <a name="net-regular-expressions"></a>Regulární výrazy .NET
 
@@ -67,6 +67,8 @@ Další informace o jazyce regulárních výrazů najdete v tématu [Jazyk regul
 ## <a name="regular-expression-examples"></a>Příklady regulárních výrazů
 
 Třída <xref:System.String> zahrnuje celou řadu metod pro vyhledání nebo nahrazení řetězce, které lze ve větším řetězci použít při vyhledávání textových literálů. Regulární výrazy jsou nejužitečnější při hledání jednoho nebo více dílčích podřetězců ve větším řetězci, nebo při identifikaci vzorů v řetězci, jak je znázorněno v následujícím příkladu.
+
+[!INCLUDE [regex](../../../includes/regex.md)]
 
 > [!TIP]
 > <xref:System.Web.RegularExpressions>Obor názvů obsahuje počet objektů regulárních výrazů, které implementují předdefinované vzory regulárních výrazů pro analýzu řetězců z HTML, XML a dokumentů ASP.NET. Například <xref:System.Web.RegularExpressions.TagRegex> třída identifikuje počáteční značky v řetězci a <xref:System.Web.RegularExpressions.CommentRegex> třída identifikuje ASP.NET komentáře v řetězci.

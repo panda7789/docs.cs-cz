@@ -4,14 +4,20 @@ description: Přečtěte si, jaké distribuce systému Linux podporují instalac
 author: adegeo
 ms.author: adegeo
 ms.date: 06/01/2020
-ms.openlocfilehash: 22c07c5a8263dd6059f415cb4d9e2915811351b0
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: 06a90d7fecfe9f25d26caccb2fe3aedec0176f64
+ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85324631"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85803089"
 ---
 # <a name="install-net-core-on-linux"></a>Nainstalovat .NET Core v systému Linux
+
+> [!div class="op_single_selector"]
+>
+> - [Instalace v systému Windows](windows.md)
+> - [Instalace v systému macOS](macos.md)
+> - [Instalace v systému Linux](linux.md)
 
 Rozhraní .NET Core je k dispozici v různých distribucích systému Linux. Většina platforem a distribucí pro Linux má každý rok hlavní verzi a většina nabízí správce balíčků, který se používá k instalaci .NET Core. Tento článek popisuje, co je aktuálně podporováno a který správce balíčků používá.
 
@@ -174,3 +180,9 @@ Následující tabulka představuje stav podpory Ubuntu a .NET Core.
 | ✔️ [16,04 (LTS)](linux-ubuntu.md#1604-) | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 Preview |
 
 Další informace najdete v tématu [instalace .NET Core na Ubuntu](linux-ubuntu.md).
+
+## <a name="next-steps"></a>Další kroky
+
+- [Jak zjistit, zda je rozhraní .NET Core již nainstalováno](how-to-detect-installed-versions.md?pivots=os-linux).
+- [Kurz: vytvoření nové aplikace pomocí Visual Studio Code](../tutorials/with-visual-studio-code.md).
+- [Kurz: kontejnerizace aplikace .NET Core](../docker/build-container.md)

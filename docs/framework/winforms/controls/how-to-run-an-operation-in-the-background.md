@@ -1,5 +1,6 @@
 ---
 title: 'Postupy: Spuštění operace na pozadí'
+description: Naučte se používat třídu BackgroundWorker ke spuštění časově náročného model Windows Forms operace na pozadí.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -13,21 +14,21 @@ helpviewer_keywords:
 - threading [Windows Forms], background operations
 - background operations
 ms.assetid: 5b56e2aa-dc05-444f-930c-2d7b23f9ad5b
-ms.openlocfilehash: 77f75a7eb1d7cc536df7110ef55727fbdf789f23
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 6b2a97f5acf1e906dfe141aee62e99a4e50dca9f
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65591612"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85621571"
 ---
 # <a name="how-to-run-an-operation-in-the-background"></a>Postupy: Spuštění operace na pozadí
-Pokud máte operace, která bude trvat dlouhou dobu pro dokončení, a nechcete způsobit prodlevy v uživatelském rozhraní, můžete použít <xref:System.ComponentModel.BackgroundWorker> má třída spustit operaci v jiném vlákně.  
+Pokud máte operaci, která bude trvat dlouhou dobu, a nechcete ve svém uživatelském rozhraní způsobovat prodlevy, můžete použít <xref:System.ComponentModel.BackgroundWorker> třídu ke spuštění operace v jiném vlákně.  
   
- Následující příklad kódu ukazuje, jak spustit časově náročná operace na pozadí. Formulář obsahuje **Start** a **zrušit** tlačítka. Klikněte na tlačítko **Start** tlačítko Spustit asynchronní operace. Klikněte na tlačítko **zrušit** tlačítko Zastavit spuštěné asynchronní operaci. Se zobrazí výsledek každé operace <xref:System.Windows.Forms.MessageBox>.  
+ Následující příklad kódu ukazuje, jak spustit časově náročnou operaci na pozadí. Formulář obsahuje tlačítka **Spustit** a **Storno** . Kliknutím na tlačítko **Spustit** spusťte asynchronní operaci. Kliknutím na tlačítko **Storno** zastavíte spuštěnou asynchronní operaci. Výsledek každé operace se zobrazí v <xref:System.Windows.Forms.MessageBox> .  
   
- Není k dispozici rozsáhlou podporu pro tuto úlohu v sadě Visual Studio.  
+ Existuje Rozsáhlá podpora pro tento úkol v aplikaci Visual Studio.  
   
- Viz také [názorný postup: Spuštění operace na pozadí](walkthrough-running-an-operation-in-the-background.md).  
+ Viz také [Návod: spuštění operace na pozadí](walkthrough-running-an-operation-in-the-background.md).  
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[System.ComponentModel.BackgroundWorker.Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.BackgroundWorker.Example/CS/Form1.cs#1)]
@@ -36,7 +37,7 @@ Pokud máte operace, která bude trvat dlouhou dobu pro dokončení, a nechcete 
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
-- Odkazy na sestavení systému, System.Drawing a System.Windows.Forms.  
+- Odkazy na sestavení System, System. Drawing a System. Windows. Forms.  
   
 ## <a name="see-also"></a>Viz také:
 

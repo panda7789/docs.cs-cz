@@ -1,5 +1,6 @@
 ---
 title: virtualCERCall – pomocník spravovaného ladění (MDA)
+description: Přečtěte si pomocníka spravovaného ladění virtualCERCall (MDA), který je vyvolán, pokud CER obsahuje volání virtuální metody, kterou nelze automaticky připravit.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - MDAs (managed debugging assistants), CER calls
@@ -9,26 +10,26 @@ helpviewer_keywords:
 - CER calls
 - managed debugging assistants (MDAs), CER calls
 ms.assetid: 1eb18c7a-f5e0-443f-80fb-67bfbb047da2
-ms.openlocfilehash: a2112baed863b1035cbee4e956c1b6e271ff6e3c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: fab0686b1c7d2fbb1485f6e4b82d008495a553cd
+ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79181712"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85803557"
 ---
 # <a name="virtualcercall-mda"></a>virtualCERCall – pomocník spravovaného ladění (MDA)
-Spravovaný `virtualCERCall` ladicí asistent (MDA) je aktivován jako upozornění označující, že lokalita volání v rámci grafu volání v rámci grafu volání omezené ho spuštění (CER) odkazuje na virtuální cíl, to znamená virtuální volání nefinal virtual metody nebo volání pomocí rozhraní. Modul CLR (COMMON Language runtime) nemůže předpovědět cílovou metodu těchto volání z mezilehlého jazyka a analýzy metadat samostatně. V důsledku toho nelze připravit strom volání jako součást grafu CER a přerušení podprocesu v tomto podstromu nelze automaticky blokovat. Tento MDA varuje před případy, kdy cer může být <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareMethod%2A> nutné rozšířit pomocí explicitní volání metody, jakmile další informace potřebné k výpočtu cíle volání je známa v době běhu.  
+`virtualCERCall`Pomocník spravovaného ladění (MDA) je aktivován jako upozornění indikující, že web volání v rámci grafu volání v oblasti s omezením (CER) odkazuje na virtuální cíl, to znamená virtuální volání nekonečné virtuální metody nebo volání pomocí rozhraní. Modul CLR (Common Language Runtime) nemůže předpovědět cílovou metodu těchto volání ze samotného mezilehlého jazyka a analýzy metadat. V důsledku toho nelze strom volání připravit jako součást grafu CER a přerušení vlákna v tomto podstromu nelze automaticky blokovat. Tento MDA upozorňuje na případy, kdy může být potřeba rozšíření CER pomocí explicitního volání metody, jakmile jsou <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareMethod%2A> Další informace vyžadované pro výpočet cíle volání známy v době běhu.  
   
 ## <a name="symptoms"></a>Příznaky  
- CER, které nejsou spuštěny při přerušení podprocesu nebo je uvolněna doména aplikace.  
+ CERs, které neběží, když je vlákno přerušeno nebo je doména aplikace uvolněna.  
   
 ## <a name="cause"></a>Příčina  
- Cer obsahuje volání virtuální metody, která nemůže být připravena automaticky.  
+ CER obsahuje volání virtuální metody, která se nedá automaticky připravit.  
   
 ## <a name="resolution"></a>Řešení  
  Volání <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareMethod%2A> virtuální metody.  
   
-## <a name="effect-on-the-runtime"></a>Vliv na běhový čas  
+## <a name="effect-on-the-runtime"></a>Vliv na modul runtime  
  Tento MDA nemá žádný vliv na CLR.  
   
 ## <a name="output"></a>Výstup  
@@ -94,7 +95,7 @@ void MethodWithCer(MyClass object)
 }  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
 - [Diagnostikování chyb pomocí asistentů spravovaného ladění](diagnosing-errors-with-managed-debugging-assistants.md)

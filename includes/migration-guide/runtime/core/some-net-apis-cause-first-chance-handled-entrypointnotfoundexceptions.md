@@ -1,18 +1,27 @@
 ---
-ms.openlocfilehash: b23f06ec5b27fbd7976a4b62ba6105c607eaee39
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ed526095459a48aa37b585dfed79cc12b9fb9e56
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61664302"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85622041"
 ---
-### <a name="some-net-apis-cause-first-chance-handled-entrypointnotfoundexceptions"></a>První možnost některá rozhraní API pro .NET příčina EntryPointNotFoundExceptions (zpracování)
+### <a name="some-net-apis-cause-first-chance-handled-entrypointnotfoundexceptions"></a>Některá rozhraní API .NET způsobují první šanci (zpracovává) EntryPointNotFoundExceptions
 
-|   |   |
-|---|---|
-|Podrobnosti|V rozhraní .NET Framework 4.5, začal malý počet metod rozhraní .NET, vyvolání první příležitosti <xref:System.EntryPointNotFoundException?displayProperty=name>s. Tyto výjimky se zpracovávají v rámci rozhraní .NET Framework, ale může poškodit automatizace testů, který nebyl očekáván první příležitosti výjimky. Tato stejná rozhraní API přerušením, dokud některé scénáře ApiVerifier HighVersionLie je povolená.|
-|Doporučení|Upgradem na rozhraní .NET Framework 4.5.1 se lze vyvarovat této chyby. Můžete také aktualizovat automatizace testů tak, že nedojde k narušení na první odpovídající <xref:System.EntryPointNotFoundException?displayProperty=name>s.|
-|Rozsah|Edge|
-|Version|4.5|
-|Type|Modul runtime|
-|Ovlivněná rozhraní API|<ul><li><xref:System.Diagnostics.Debug.Assert(System.Boolean)?displayProperty=nameWithType></li><li><xref:System.Diagnostics.Debug.Assert(System.Boolean,System.String)?displayProperty=nameWithType></li><li><xref:System.Diagnostics.Debug.Assert(System.Boolean,System.String,System.String)?displayProperty=nameWithType></li><li><xref:System.Diagnostics.Debug.Assert(System.Boolean,System.String,System.String,System.Object[])?displayProperty=nameWithType></li><li><xref:System.Xml.Serialization.XmlSerializer.%23ctor(System.Type)?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a>Podrobnosti
+
+V .NET Framework 4,5, malý počet metod .NET začal s prvními možnostmi aktivována <xref:System.EntryPointNotFoundException?displayProperty=fullName> . Tyto výjimky byly zpracovány v rámci .NET Framework, ale mohly by poškodit automatizaci testu, která neočekávala první pravděpodobnost výjimek. Tato stejná rozhraní API přeruší některé scénáře ApiVerifier, pokud je povolená HighVersionLie.
+
+#### <a name="suggestion"></a>Návrh
+
+Tato chyba se může vyhnout upgradem na .NET Framework 4.5.1. Alternativně lze automatizaci testů aktualizovat na nepřerušení při první popravděpodobném <xref:System.EntryPointNotFoundException?displayProperty=fullName> .
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   |Edge|
+|Verze|4.5|
+|Typ|Modul runtime
+
+#### <a name="affected-apis"></a>Ovlivněná rozhraní API
+
+-<xref:System.Diagnostics.Debug.Assert(System.Boolean)?displayProperty=nameWithType></li><li><xref:System.Diagnostics.Debug.Assert(System.Boolean,System.String)?displayProperty=nameWithType></li><li><xref:System.Diagnostics.Debug.Assert(System.Boolean,System.String,System.String)?displayProperty=nameWithType></li><li><xref:System.Diagnostics.Debug.Assert(System.Boolean,System.String,System.String,System.Object[])?displayProperty=nameWithType></li><li><xref:System.Xml.Serialization.XmlSerializer.%23ctor(System.Type)></li></ul>|

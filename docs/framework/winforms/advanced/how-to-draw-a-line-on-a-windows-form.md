@@ -1,5 +1,6 @@
 ---
-title: 'Postupy: Kreslení čáry na formuláři Windows'
+title: 'Postupy: Kreslení čáry v rozhraní Windows Forms'
+description: Naučte se, jak na formuláři nakreslit čáru tím, že zpracujete událost nátěru a pak ji vyplníte pomocí vlastnosti Graphics objektu PaintEventArgs.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,25 +13,25 @@ helpviewer_keywords:
 - lines [Windows Forms], drawing
 - drawing lines
 ms.assetid: 55c1dbeb-75d0-430c-9814-a24b8971ad8c
-ms.openlocfilehash: aab04b9236175cedd154b817db5a6f6450503105
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c8e92dc265c63413275561d0e2e3aa820eaec724
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62004156"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85621623"
 ---
-# <a name="how-to-draw-a-line-on-a-windows-form"></a>Postupy: Kreslení čáry na formuláři Windows
-V tomto příkladu nakreslí čáru na formuláři. Obvykle při kreslení ve formuláři je zpracovat formuláře <xref:System.Windows.Forms.Control.Paint> události a provádět kreslení pomocí <xref:System.Windows.Forms.PaintEventArgs.Graphics%2A> vlastnost <xref:System.Windows.Forms.PaintEventArgs>, jak je znázorněno v tomto příkladu  
+# <a name="how-to-draw-a-line-on-a-windows-form"></a>Postupy: Kreslení čáry v rozhraní Windows Forms
+Tento příklad nakreslí čáru na formuláři. Při kreslení na formuláři se obvykle zpracovává <xref:System.Windows.Forms.Control.Paint> událost formuláře a provádí vykreslování pomocí <xref:System.Windows.Forms.PaintEventArgs.Graphics%2A> vlastnosti <xref:System.Windows.Forms.PaintEventArgs> , jak je znázorněno v tomto příkladu.  
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[System.Drawing.UsingAPen#11](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingAPen/CS/Class1.cs#11)]
  [!code-vb[System.Drawing.UsingAPen#11](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingAPen/VB/Class1.vb#11)]  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- V předchozím příkladu je určený k použití pomocí Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.Control.Paint> obslužné rutiny události.  
+ Předchozí příklad je navržen pro použití s model Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs> `e` , což je parametr <xref:System.Windows.Forms.Control.Paint> obslužné rutiny události.  
   
 ## <a name="robust-programming"></a>Robustní programování  
- Vždy byste měli zavolat <xref:System.IDisposable.Dispose%2A> na všechny objekty, které využívají systémové prostředky, jako například <xref:System.Drawing.Pen> objekty.  
+ Vždy byste měli volat <xref:System.IDisposable.Dispose%2A> všechny objekty, které využívají systémové prostředky, jako například <xref:System.Drawing.Pen> objekty.  
   
 ## <a name="see-also"></a>Viz také:
 

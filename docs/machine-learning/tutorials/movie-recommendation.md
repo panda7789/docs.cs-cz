@@ -1,100 +1,102 @@
 ---
-title: 'Kurz: Postavit film doporučující - matice faktorizace'
-description: Tento kurz ukazuje, jak vytvořit doporučujefilm s ML.NET v aplikaci konzoly .NET Core. Kroky používají C# a Visual Studio 2019.
+title: 'Kurz: vytvoření faktoru pro vystavení filmů – vytváření matic'
+description: V tomto kurzu se dozvíte, jak v konzolové aplikaci .NET Core sestavit doporučení pro film pomocí ML.NET. Postup používá jazyk C# a Visual Studio 2019.
 author: briacht
-ms.date: 09/30/2019
+ms.date: 06/30/2020
 ms.custom: mvc, title-hack-0516
 ms.topic: tutorial
-ms.openlocfilehash: a1d7ef6226580fd3172b5714f9d7358298ba6668
-ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
+ms.openlocfilehash: 5445a255d32f824b1e451c828f1d46b3e1c16001
+ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81607994"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85803375"
 ---
-# <a name="tutorial-build-a-movie-recommender-using-matrix-factorization-with-mlnet"></a>Kurz: Vytvořte film doporučující pomocí matice faktorizace s ML.NET
+# <a name="tutorial-build-a-movie-recommender-using-matrix-factorization-with-mlnet"></a>Kurz: sestavení doporučení pro film pomocí vytváření matic s ML.NET
 
-Tento kurz ukazuje, jak vytvořit doporučujefilm s ML.NET v aplikaci konzoly .NET Core. Kroky používají C# a Visual Studio 2019.
+V tomto kurzu se dozvíte, jak v konzolové aplikaci .NET Core sestavit doporučení pro film pomocí ML.NET. Postup používá jazyk C# a Visual Studio 2019.
 
 V tomto kurzu se naučíte:
 > [!div class="checklist"]
 >
-> * Výběr algoritmu strojového učení
+> * Vyberte algoritmus strojového učení.
 > * Příprava a načtení dat
-> * Sestavení a trénování modelu
+> * Sestavování a výuka modelu
 > * Vyhodnocení modelu
 > * Nasazení a využití modelu
 
-Zdrojový kód pro tento kurz najdete v úložišti [dotnet/samples.](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/MovieRecommendation)
+Zdrojový kód pro tento kurz najdete v úložišti [dotnet/Samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/MovieRecommendation) .
 
 ## <a name="machine-learning-workflow"></a>Pracovní postup strojového učení
 
-K dokončení úkolu a všech dalších ML.NET úkolu použijete následující kroky:
+Pomocí následujících kroků můžete provést úlohu a také všechny další úlohy ML.NET:
 
 1. [Načtení dat](#load-your-data)
-2. [Sestavte a trénujte svůj model](#build-and-train-your-model)
+2. [Sestavování a výuka modelu](#build-and-train-your-model)
 3. [Vyhodnocení modelu](#evaluate-your-model)
 4. [Použití modelu](#use-your-model)
 
 ## <a name="prerequisites"></a>Požadavky
 
-* [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) nebo novější nebo Visual Studio 2017 verze 15.6 nebo novější s nainstalovanou úlohou "Vývoj napříč platformami..NET Core cross-platform".
+* [Visual studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) nebo novější nebo visual Studio 2017 verze 15,6 nebo novější s nainstalovanou úlohou nasazení .NET Core pro různé platformy.
 
-## <a name="select-the-appropriate-machine-learning-task"></a>Výběr příslušného úkolu strojového učení
+## <a name="select-the-appropriate-machine-learning-task"></a>Vyberte příslušný úkol strojového učení.
 
-Existuje několik způsobů, jak přistupovat k problémům s doporučeními, jako je například doporučení seznamu filmů nebo doporučení seznamu souvisejících produktů, ale v tomto případě předevíte, jaké hodnocení (1-5) uživatel poskytne určitému filmu, a doporučí tento film, pokud je vyšší než definovaná prahová hodnota (čím vyšší je hodnocení, tím vyšší je pravděpodobnost, že uživatel bude mít rád konkrétní film).
+Existuje několik způsobů, jak získat přístup k potížím s doporučeními, jako je například doporučený seznam filmů nebo doporučený seznam souvisejících produktů, ale v tomto případě budete předpovídat, jaké hodnocení (1-5) bude uživatel podávat konkrétnímu videu, a doporučit tento film, pokud je vyšší než definovaná prahová hodnota (čím vyšší je pravděpodobnost, že uživatel míru určitý film).
 
 ## <a name="create-a-console-application"></a>Vytvoření konzolové aplikace
 
 ### <a name="create-a-project"></a>Vytvoření projektu
 
-1. Otevřete sadu Visual Studio 2017. Na řádku nabídek vyberte **Soubor** > **nového** > **projektu.** V dialogovém okně **Nový projekt** vyberte uzel **Visual C#** následovaný uzlem **.NET Core.** Pak vyberte šablonu projektu **Konzola Aplikace (.NET Core).** Do textového pole **Název** zadejte "MovieRecommender" a pak vyberte tlačítko **OK.**
+1. Otevřete sadu Visual Studio 2017. Z řádku nabídek vyberte **soubor**  >  **Nový**  >  **projekt** . V dialogovém okně **Nový projekt** vyberte uzel **Visual C#** následovaný uzlem **.NET Core** . Pak vyberte šablonu projektu **aplikace konzoly (.NET Core)** . Do textového pole **název** zadejte "MovieRecommender" a pak vyberte tlačítko **OK** .
 
-2. Vytvořte adresář s názvem *Data* v projektu pro uložení datové sady:
+2. Vytvořte v projektu adresář s názvem *data* pro uložení datové sady:
 
-    V **Průzkumníku řešení**klepněte pravým tlačítkem myši na projekt a vyberte **přidat** > **novou složku**. Zadejte "Data" a stiskněte enter.
+    V **Průzkumník řešení**klikněte pravým tlačítkem myši na projekt a vyberte **Přidat**  >  **novou složku**. Zadejte "data" a stiskněte ENTER.
 
-3. Nainstalujte **balíčky NuGet Microsoft.ML** a **Microsoft.ML.Recommender:**
+3. Nainstalujte balíčky NuGet **Microsoft.ml** a **Microsoft. ml. doporučování** :
 
-    V **Průzkumníku řešení**klepněte pravým tlačítkem myši na projekt a vyberte **příkaz Spravovat balíčky NuGet**. Jako zdroj balíčku zvolte "nuget.org", vyberte kartu **Procházet,** vyhledejte **Microsoft.ML**, vyberte balíček v seznamu a vyberte tlačítko **Instalovat.** V dialogovém okně **Náhled změn** vyberte tlačítko **Ok** a pak v dialogovém okně **Přijetí licence** vyberte tlačítko **Přijmout,** pokud souhlasíte s licenčními podmínkami pro uvedené balíčky. Opakujte tento postup pro **Microsoft.ML.Recommender**.
+    [!INCLUDE [mlnet-current-nuget-version](../../../includes/mlnet-current-nuget-version.md)]
 
-4. V horní `using` části *Program.cs* souboru přidejte následující příkazy:
+    V **Průzkumník řešení**klikněte pravým tlačítkem na projekt a vyberte **Spravovat balíčky NuGet**. Jako zdroj balíčku zvolte "nuget.org", vyberte kartu **Procházet** , vyhledejte **Microsoft.ml**, vyberte balíček v seznamu a klikněte na tlačítko **nainstalovat** . Pokud souhlasíte s licenčními podmínkami pro uvedené balíčky, klikněte na tlačítko **OK** v dialogovém okně **Náhled změn** a potom v dialogovém okně pro **přijetí licence** vyberte tlačítko **přijmout** . Opakujte tento postup pro **Microsoft. ml. doporučuje**se.
+
+4. Do `using` horní části souboru *program.cs* přidejte následující příkazy:
 
     [!code-csharp[UsingStatements](~/samples/snippets/machine-learning/MovieRecommendation/csharp/Program.cs#UsingStatements "Add necessary usings")]
 
-### <a name="download-your-data"></a>Stažení dat
+### <a name="download-your-data"></a>Stažení vašich dat
 
-1. Stáhněte si dvě datové sady a uložte je do dříve vytvořené *datové* složky:
+1. Stáhněte dvě datové sady a uložte je do složky *dat* , kterou jste vytvořili dříve:
 
-   * Klikněte pravým tlačítkem myši na [*recommendation-ratings-train.csv*](https://raw.githubusercontent.com/dotnet/machinelearning-samples/master/samples/csharp/getting-started/MatrixFactorization_MovieRecommendation/Data/recommendation-ratings-train.csv) a vyberte "Uložit odkaz (nebo cíl) Jako ..."
-   * Klikněte pravým tlačítkem myši na [*recommendation-ratings-test.csv*](https://raw.githubusercontent.com/dotnet/machinelearning-samples/master/samples/csharp/getting-started/MatrixFactorization_MovieRecommendation/Data/recommendation-ratings-test.csv) a vyberte "Uložit odkaz (nebo cíl) jako..."
+   * Klikněte pravým tlačítkem na [*recommendation-ratings-train.csv*](https://raw.githubusercontent.com/dotnet/machinelearning-samples/master/samples/csharp/getting-started/MatrixFactorization_MovieRecommendation/Data/recommendation-ratings-train.csv) a vyberte Uložit odkaz (nebo cíl) jako...
+   * Klikněte pravým tlačítkem na [*recommendation-ratings-test.csv*](https://raw.githubusercontent.com/dotnet/machinelearning-samples/master/samples/csharp/getting-started/MatrixFactorization_MovieRecommendation/Data/recommendation-ratings-test.csv) a vyberte Uložit odkaz (nebo cíl) jako...
 
-     Ujistěte se, \*že soubory .csv uložíte do složky *Data,* nebo je po uložení jinde přesuňte soubory \*.csv do složky *Data.*
+     Ujistěte se \* , že soubory. csv ukládáte do složky *data* nebo když je uložíte jinam, přesuňte \* soubory. CSV do složky *data* .
 
-2. V Průzkumníku řešení klepněte \*pravým tlačítkem myši na jednotlivé soubory .csv a vyberte **příkaz Vlastnosti**. V části **Upřesnit**změňte hodnotu **Kopírovat do výstupního adresáře** na **Kopírovat, pokud je novější**.
+2. V Průzkumník řešení klikněte pravým tlačítkem na každý ze \* souborů. csv a vyberte **vlastnosti**. V části **Upřesnit**změňte hodnotu **Kopírovat do výstupního adresáře** na **Kopírovat, pokud je novější**.
 
-   ![GIF uživatele, který vybírá kopii, pokud je novější ve VS.](./media/movie-recommendation/copy-to-output-if-newer.gif)
+   ![GIF uživatele, který vybírá kopii, pokud je novější v VS.](./media/movie-recommendation/copy-to-output-if-newer.gif)
 
 ## <a name="load-your-data"></a>Načtení dat
 
-Prvním krokem v procesu ML.NET je připravit a načíst data školení a testování modelu.
+Prvním krokem v procesu ML.NET je příprava a načtení modelu školení a testování dat.
 
-Data hodnocení doporučení jsou `Train` `Test` rozdělena do datových sad a jsou rozdělena. Data `Train` se používají k přizpůsobení modelu. Data `Test` se používá k předpovědi s trénovaný model a vyhodnotit výkon modelu. Je běžné mít 80/20 rozdělit `Train` s `Test` a data.
+Data hodnocení doporučení jsou rozdělena do `Train` datových `Test` sad a. `Train`Data se používají k přizpůsobení modelu. `Test`Data se používají k zajištění předpovědiy s vyškolenou modelem a vyhodnocení výkonu modelu. Je běžné mít 80/20 rozdělení s `Train` `Test` daty a.
 
-Níže je náhled dat z \*vašich souborů .csv:
+Níže je zobrazená ukázka dat z vašich \* souborů. CSV:
 
 ![Snímek obrazovky s náhledem datové sady CVS](./media/movie-recommendation/csv-file-dataset-preview.png)
 
-V \*souborech .csv jsou čtyři sloupce:
+V \* souborech. CSV jsou čtyři sloupce:
 
 * `userId`
 * `movieId`
 * `rating`
 * `timestamp`
 
-Ve strojovém učení se sloupce, které se používají k vytvoření předpovědi, nazývají [Funkce](../resources/glossary.md#feature)a sloupec s vrácenou predikcí se nazývá [Label](../resources/glossary.md#label).
+Ve službě Machine Learning se ve sloupcích, které se používají k vytvoření předpovědi, říká [funkce](../resources/glossary.md#feature)a sloupec s vrácenou předpověď se nazývá [popisek](../resources/glossary.md#label).
 
-Chcete předpovědět hodnocení filmů, takže sloupec `Label`hodnocení je . Další tři sloupce `userId` `movieId`, `timestamp` , `Features` a všechny `Label`se používají k předvídání .
+Chcete odhadnout hodnocení filmů, takže sloupec hodnocení je `Label` . Další tři sloupce,, `userId` `movieId` a `timestamp` jsou `Features` použity k předpovědi `Label` .
 
 | Funkce      | Popisek         |
 | ------------- |:-------------:|
@@ -102,46 +104,46 @@ Chcete předpovědět hodnocení filmů, takže sloupec `Label`hodnocení je . D
 | `movieId`      |               |
 | `timestamp`     |               |
 
-Je na vás, rozhodnout, které `Features` se `Label`používají k předvídání . Můžete také použít metody, jako [je důležitost funkce permutace,](../how-to-guides/explain-machine-learning-model-permutation-feature-importance-ml-net.md) které vám pomohou s výběrem toho nejlepšího `Features`.
+Je až na to, abyste se rozhodli, které `Features` se použijí k předpovědi `Label` . Můžete také použít metody, jako je například [funkce permutace důležitost](../how-to-guides/explain-machine-learning-model-permutation-feature-importance-ml-net.md) , pro usnadnění výběru nejlepšího `Features` .
 
-V takovém případě byste `timestamp` měli sloupec `Feature` odstranit jako a protože časové razítko ve skutečnosti nemá vliv na to, jak uživatel hodnotí daný film, a proto by nepřispělk přesnější predikci:
+V takovém případě byste měli sloupec eliminovat, `timestamp` `Feature` protože časové razítko ve skutečnosti neovlivňuje způsob, jakým se uživatel podílí na videu, a proto by nebyl přispívat k zajištění přesnější předpovědi:
 
 | Funkce      | Popisek         |
 | ------------- |:-------------:|
 | `userId`        |    `rating`     |
 | `movieId`      |               |
 
-Dále je nutné definovat strukturu dat pro vstupní třídu.
+Dále musíte definovat datovou strukturu pro vstupní třídu.
 
-Přidání nové třídy do projektu:
+Přidejte do projektu novou třídu:
 
-1. V **Průzkumníku řešení**klepněte pravým tlačítkem myši na projekt a potom vyberte **přidat > novou položku**.
+1. V **Průzkumník řešení**klikněte pravým tlačítkem myši na projekt a vyberte **Přidat > nová položka**.
 
-2. V **dialogovém okně Přidat novou položku**vyberte **Třídu** a změňte pole **Název** na *MovieRatingData.cs*. Potom vyberte tlačítko **Přidat.**
+2. V **dialogovém okně Přidat novou položku**vyberte **třída** a změňte pole **název** na *MovieRatingData.cs*. Pak vyberte tlačítko **Přidat** .
 
-Soubor *MovieRatingData.cs* se otevře v editoru kódu. Na začátek `using` *MovieRatingData.cs*přidejte následující příkaz :
+V editoru kódu se otevře soubor *MovieRatingData.cs* . `using`Do horní části *MovieRatingData.cs*přidejte následující příkaz:
 
 ```csharp
 using Microsoft.ML.Data;
 ```
 
-Vytvořte třídu volanou `MovieRating` odebráním existující definice třídy a přidáním následujícího kódu v *MovieRatingData.cs*:
+Vytvořte třídu s názvem `MovieRating` odebráním existující definice třídy a přidáním následujícího kódu do *MovieRatingData.cs*:
 
 [!code-csharp[MovieRatingClass](~/samples/snippets/machine-learning/MovieRecommendation/csharp/MovieRatingData.cs#MovieRatingClass "Add the Movie Rating class")]
 
-`MovieRating`určuje třídu vstupních dat. Atribut [LoadColumn](xref:Microsoft.ML.Data.LoadColumnAttribute.%23ctor%28System.Int32%29) určuje, které sloupce (podle indexu sloupce) v datové sadě by měly být načteny. Sloupce `userId` `movieId` a jsou `Features` vaše (vstupy, které poskytnete `Label`modelu předpovědět ) `Label` a sloupec hodnocení je ten, který budete předpovídat (výstup modelu).
+`MovieRating`Určuje vstupní datovou třídu. Atribut [LoadColumn](xref:Microsoft.ML.Data.LoadColumnAttribute.%23ctor%28System.Int32%29) určuje, které sloupce (podle indexu sloupce) v datové sadě by měly být načteny. `userId`Sloupce a `movieId` jsou vaše `Features` (vstupy, které model poskytnete k předpovídání `Label` ), a sloupec hodnocení je `Label` , který budete předpovídat (výstup modelu).
 
-Vytvořte jinou třídu , `MovieRatingPrediction`chcete-li reprezentovat `MovieRating` předpokládané výsledky přidáním následujícího kódu za třídu v *MovieRatingData.cs*:
+Vytvořte další třídu, `MovieRatingPrediction` pro reprezentaci předpokládaných výsledků přidáním následujícího kódu za `MovieRating` třídu v *MovieRatingData.cs*:
 
 [!code-csharp[PredictionClass](~/samples/snippets/machine-learning/MovieRecommendation/csharp/MovieRatingData.cs#PredictionClass "Add the Movie Prediction Class")]
 
-V *Program.cs*nahraďte `Console.WriteLine("Hello World!")` uvnitř `Main()`následující kód :
+V *program.cs*nahraďte `Console.WriteLine("Hello World!")` následující kód následujícím kódem `Main()` :
 
 [!code-csharp[MLContext](~/samples/snippets/machine-learning/MovieRecommendation/csharp/Program.cs#MLContext "Add MLContext")]
 
-[Třída MLContext](xref:Microsoft.ML.MLContext) je výchozím bodem pro všechny operace `mlContext` ML.NET a inicializace vytvoří nové prostředí ML.NET, které lze sdílet mezi objekty pracovního postupu vytváření modelu. Je to podobné, koncepčně, v `DBContext` entity frameworku.
+[Třída MLContext](xref:Microsoft.ML.MLContext) je výchozím bodem pro všechny operace ml.NET a inicializace `mlContext` vytvoří nové prostředí ml.NET, které lze sdílet napříč objekty pracovního postupu vytváření modelů. Je podobný, koncepčně, na `DBContext` v Entity Framework.
 
-Po `Main()`, vytvořte `LoadData()`metodu s názvem :
+Poté `Main()` Vytvořte metodu s názvem `LoadData()` :
 
 ```csharp
 public static (IDataView training, IDataView test) LoadData(MLContext mlContext)
@@ -151,37 +153,37 @@ public static (IDataView training, IDataView test) LoadData(MLContext mlContext)
 ```
 
 > [!NOTE]
-> Tato metoda vám dá chybu, dokud nepřidáte příkaz return v následujících krocích.
+> Tato metoda vám poskytne chybu, dokud nepřidáte příkaz return v následujících krocích.
 
-Inicializovat proměnné datové cesty, načíst \*data ze souborů .csv a vrátit data `Train` a `Test` jako `IDataView` objekty `LoadData()`přidáním následujícího jako následující řádek kódu v :
+Inicializujte proměnné cesty k datům, načtěte data ze \* souborů. csv a vraťte `Train` `Test` data a jako `IDataView` objekty přidáním následujícího jako další řádek kódu v `LoadData()` :
 
 [!code-csharp[LoadData](~/samples/snippets/machine-learning/MovieRecommendation/csharp/Program.cs#LoadData "Load data from data paths")]
 
-Data v ML.NET je reprezentována jako [třída IDataView](xref:Microsoft.ML.IDataView). `IDataView`je flexibilní a efektivní způsob popisu tabulkových dat (číselných a textových). Data lze načíst z textového souboru nebo v reálném čase (například databáze SQL nebo soubory protokolu) do objektu. `IDataView`
+Data v ML.NET jsou reprezentována jako [Třída IDataView](xref:Microsoft.ML.IDataView). `IDataView`je flexibilní a efektivní způsob, jak popsat tabulková data (číselná a text). Data je možné načíst z textového souboru nebo v reálném čase (například databáze SQL nebo soubory protokolu) do `IDataView` objektu.
 
-[LoadFromTextFile()](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile%60%601%28Microsoft.ML.DataOperationsCatalog,System.String,System.Char,System.Boolean,System.Boolean,System.Boolean,System.Boolean%29) definuje schéma dat a čte v souboru. Přebírá proměnné cesty dat a vrátí `IDataView`. V takovém případě zadáte cestu `Test` pro `Train` vaše soubory a soubory a označíte záhlaví textového souboru (aby bylo možné správně používat názvy sloupců) a oddělovač dat znaků čárky (výchozí oddělovač je karta).
+[LoadFromTextFile ()](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile%60%601%28Microsoft.ML.DataOperationsCatalog,System.String,System.Char,System.Boolean,System.Boolean,System.Boolean,System.Boolean%29) definuje schéma dat a čte data v souboru. Převezme proměnné cesty k datům a vrátí `IDataView` . V takovém případě zadáte cestu k `Test` souborům a a `Train` určíte hlavičku textového souboru (takže může použít názvy sloupců správně) a oddělovač dat znaků čárky (výchozí oddělovač je karta).
 
-Přidejte do metody `Main()` následující kód `LoadData()` pro volání `Train` `Test` metody a vrácení dat a:
+Do metody přidejte následující kód `Main()` pro volání `LoadData()` metody a vraťte `Train` `Test` data a:
 
 [!code-csharp[LoadDataMain](~/samples/snippets/machine-learning/MovieRecommendation/csharp/Program.cs#LoadDataMain "Add LoadData method to Main")]
 
-## <a name="build-and-train-your-model"></a>Sestavte a trénujte svůj model
+## <a name="build-and-train-your-model"></a>Sestavování a výuka modelu
 
-Existují tři hlavní pojmy v ML.NET: [Data](../resources/glossary.md#data), [Transformers](../resources/glossary.md#transformer)a [Estimators](../resources/glossary.md#estimator).
+Existují tři hlavní koncepty v ML.NET: [data](../resources/glossary.md#data), [transformátory](../resources/glossary.md#transformer)a [odhady](../resources/glossary.md#estimator).
 
-Algoritmy školení strojového učení vyžadují data v určitém formátu. `Transformers`se používají k transformaci tabulkových dat do kompatibilního formátu.
+Školicí algoritmy Machine Learning vyžadují data v určitém formátu. `Transformers`slouží k transformaci tabulkových dat do kompatibilního formátu.
 
-![Diagram toku dat transformátoru.](./media/movie-recommendation/data-transformer-transformed.png)
+![Diagram toku dat transformátoru](./media/movie-recommendation/data-transformer-transformed.png)
 
-`Transformers` Vytvořením souboru `Estimators`ML.NET vytvořit . `Estimators`přijímat údaje a `Transformers`vracet .
+Vytvoříte `Transformers` v ml.NET vytvořením `Estimators` . `Estimators`Převezměte data a vraťte se `Transformers` .
 
-![Diagram toku dat odhadu.](./media/movie-recommendation/data-estimator-transformer.png)
+![Diagram toku dat Estimator](./media/movie-recommendation/data-estimator-transformer.png)
 
-Algoritmus školení doporučení, který budete používat pro `Estimator`školení modelu je příkladem .
+Vzorový algoritmus pro školení, který použijete pro školení modelu, je příkladem `Estimator` .
 
-Vytvořte `Estimator` následující kroky:
+Vytvořte `Estimator` pomocí následujících kroků:
 
-Vytvořte `BuildAndTrainModel()` metodu, `LoadData()` hned za metodou, pomocí následujícího kódu:
+Vytvořte `BuildAndTrainModel()` metodu hned za `LoadData()` metodou pomocí následujícího kódu:
 
 ```csharp
 public static ITransformer BuildAndTrainModel(MLContext mlContext, IDataView trainingDataView)
@@ -191,52 +193,52 @@ public static ITransformer BuildAndTrainModel(MLContext mlContext, IDataView tra
 ```
 
 > [!NOTE]
-> Tato metoda vám dá chybu, dokud nepřidáte příkaz return v následujících krocích.
+> Tato metoda vám poskytne chybu, dokud nepřidáte příkaz return v následujících krocích.
 
-Definujte transformace dat přidáním následujícího kódu do `BuildAndTrainModel()`aplikace :
+Definujte transformace dat přidáním následujícího kódu do `BuildAndTrainModel()` :
 
 [!code-csharp[DataTransformations](~/samples/snippets/machine-learning/MovieRecommendation/csharp/Program.cs#DataTransformations "Define data transformations")]
 
-`userId` Vzhledem `movieId` k tomu, a představují uživatele a názvy filmů, nikoli skutečné hodnoty, použijete `Feature` metodu [MapValueToKey()](xref:Microsoft.ML.ConversionsExtensionsCatalog.MapValueToKey%2A) k transformaci každého `userId` do `movieId` sloupce typu číselného klíče (formát přijatý algoritmy doporučení) a přidáte je jako nové sloupce datové sady:
+Vzhledem k tomu, že `userId` a `movieId` zastupují uživatele a názvy filmů, ne reálné hodnoty, použijte metodu [MapValueToKey ()](xref:Microsoft.ML.ConversionsExtensionsCatalog.MapValueToKey%2A) pro transformaci každého `userId` a každého `movieId` na sloupec číselného typu klíče `Feature` (formát přijatý pomocí algoritmů doporučení) a přidejte je jako nové sloupce datové sady:
 
 | userId | movieId | Popisek | userIdEncoded | movieIdEncoded |
 | ------------- |:-------------:| -----:|-----:|-----:|
-| 1 | 1 | 4 | userKey1 | filmKlíč1 |
-| 1 | 3 | 4 | userKey1 | filmKey2 |
-| 1 | 6 | 4 | userKey1 | filmKlíč3 |
+| 1 | 1 | 4 | userKey1 | movieKey1 |
+| 1 | 3 | 4 | userKey1 | movieKey2 |
+| 1 | 6 | 4 | userKey1 | movieKey3 |
 
-Zvolte algoritmus strojového učení a přidejte jej k definicím transformace `BuildAndTrainModel()`dat přidáním následujícího jako následující řádek kódu v :
+Vyberte algoritmus strojového učení a přidejte ho k definicím transformace dat. Přidejte následující kód jako další řádek kódu v `BuildAndTrainModel()` :
 
 [!code-csharp[AddAlgorithm](~/samples/snippets/machine-learning/MovieRecommendation/csharp/Program.cs#AddAlgorithm "Add the training algorithm with options")]
 
-[MatrixFactorizationTrainer](xref:Microsoft.ML.RecommendationCatalog.RecommendationTrainers.MatrixFactorization%28Microsoft.ML.Trainers.MatrixFactorizationTrainer.Options%29) je vaše doporučení školení algoritmus.  [Faktorizace matice](https://en.wikipedia.org/wiki/Matrix_factorization_(recommender_systems)) je běžný přístup k doporučení, pokud máte data o tom, jak uživatelé hodnotili produkty v minulosti, což je případ datových sad v tomto kurzu. Existují další algoritmy doporučení, pokud máte k dispozici různá data (další informace naleznete v části [Další algoritmy doporučení](#other-recommendation-algorithms) níže).
+[MatrixFactorizationTrainer](xref:Microsoft.ML.RecommendationCatalog.RecommendationTrainers.MatrixFactorization%28Microsoft.ML.Trainers.MatrixFactorizationTrainer.Options%29) je váš školicí algoritmus pro doporučení.  Vytváření [matic](https://en.wikipedia.org/wiki/Matrix_factorization_(recommender_systems)) je obvyklým přístupem k doporučením, když máte data o tom, jak uživatelé mají v minulosti hodnocené produkty, což je případ datových sad v tomto kurzu. Existují i další algoritmy doporučení, pokud máte dostupná jiná data (Další informace najdete v části [ostatní algoritmy doporučení](#other-recommendation-algorithms) níže).
 
-V tomto případě `Matrix Factorization` algoritmus používá metodu s názvem "kolaborativní filtrování", která předpokládá, že pokud uživatel 1 má stejný názor jako uživatel 2 na určitý problém, pak uživatel 1 je pravděpodobnější, že se bude cítit stejným způsobem jako uživatel 2 o jiném problému.
+V takovém případě `Matrix Factorization` algoritmus používá metodu nazvanou "filtrování spolupráce", což předpokládá, že pokud uživatel 1 má stejné stanovisko jako uživatel 2 k určitému problému, pak uživatel 1 je pravděpodobnější, že uživatel 2 má stejný dojem jako uživatel 2 o jiném problému.
 
-Například pokud uživatel 1 a uživatel 2 hodnotí filmy podobně, pak uživatel 2 s větší pravděpodobností užije film, který uživatel 1 sledoval a vysoce hodnotil:
+Například pokud uživatel 1 a uživatel 2 znamená filmy podobně, je pravděpodobnější, že uživatel 2 požívá film, který uživatel 1 sledoval a hodnotil vysoce:
 
 | | `Incredibles 2 (2018)` | `The Avengers (2012)` | `Guardians of the Galaxy (2014)` |
 | -------------:|-------------:| -----:|-----:|
-| Uživatel 1 | Sledoval a líbil film | Sledoval a líbil film | Sledoval a líbil film |
-| Uživatel 2 | Sledoval a líbil film | Sledoval a líbil film | Nesledoval - DOPORUČIT film |
+| Uživatel 1 | Sledovaný a nelíbí se film | Sledovaný a nelíbí se film | Sledovaný a nelíbí se film |
+| Uživatel 2 | Sledovaný a nelíbí se film | Sledovaný a nelíbí se film | Nesledováno – doporučit video |
 
-Trenér `Matrix Factorization` má několik možností , o [kterých](xref:Microsoft.ML.Trainers.MatrixFactorizationTrainer.Options)si můžete přečíst více v části [Hyperparameters algoritmus](#algorithm-hyperparameters) níže.
+`Matrix Factorization`Trainer má několik [možností](xref:Microsoft.ML.Trainers.MatrixFactorizationTrainer.Options), které si můžete přečíst v části s [parametry algoritmu](#algorithm-hyperparameters) níže.
 
-Připevněte model `Train` k datům a vraťte trénovaný model `BuildAndTrainModel()` přidáním následujícího jako následující řádek kódu v metodě:
+Přizpůsobte si model `Train` datům a vraťte vyškolený model přidáním následujícího jako další řádek kódu v `BuildAndTrainModel()` metodě:
 
 [!code-csharp[FitModel](~/samples/snippets/machine-learning/MovieRecommendation/csharp/Program.cs#FitModel "Call the Fit method and return back the trained model")]
 
-[Metoda Fit()](xref:Microsoft.ML.Trainers.MatrixFactorizationTrainer.Fit%28Microsoft.ML.IDataView,Microsoft.ML.IDataView%29) trénuje váš model s poskytnutou trénovací datovou sadou. Technicky provede `Estimator` definice transformací dat a použitím trénování a vrátí zpět trénovaný model, což je . `Transformer`
+Metoda [přizpůsobení ():](xref:Microsoft.ML.Trainers.MatrixFactorizationTrainer.Fit%28Microsoft.ML.IDataView,Microsoft.ML.IDataView%29) nahlaste svůj model pomocí poskytnuté datové sady školení. Technicky, provede `Estimator` definice transformací dat a používáním školení a vrátí zpět školicí model, který je `Transformer` .
 
-Přidejte následující jako další řádek `Main()` kódu v `BuildAndTrainModel()` metodě volat metodu a vrátit trénovaný model:
+Přidejte následující jako další řádek kódu v `Main()` metodě pro volání vaší `BuildAndTrainModel()` metody a vraťte školený model:
 
 [!code-csharp[BuildTrainModelMain](~/samples/snippets/machine-learning/MovieRecommendation/csharp/Program.cs#BuildTrainModelMain "Add BuildAndTrainModel method in Main")]
 
 ## <a name="evaluate-your-model"></a>Vyhodnocení modelu
 
-Po trénování modelu použijte testovací data k vyhodnocení toho, jak si model vede.
+Jakmile svůj model provedete, použijte k vyhodnocení způsobu provádění modelu testovací data.
 
-Vytvořte `EvaluateModel()` metodu, `BuildAndTrainModel()` hned za metodou, pomocí následujícího kódu:
+Vytvořte `EvaluateModel()` metodu hned za `BuildAndTrainModel()` metodou pomocí následujícího kódu:
 
 ```csharp
 public static void EvaluateModel(MLContext mlContext, IDataView testDataView, ITransformer model)
@@ -245,27 +247,27 @@ public static void EvaluateModel(MLContext mlContext, IDataView testDataView, IT
 }
 ```
 
-Transformace `Test` dat přidáním následujícího `EvaluateModel()`kódu do aplikace :
+Transformujte `Test` data přidáním následujícího kódu do `EvaluateModel()` :
 
 [!code-csharp[Transform](~/samples/snippets/machine-learning/MovieRecommendation/csharp/Program.cs#Transform "Transform the test data")]
 
-[Transform()](xref:Microsoft.ML.ITransformer.Transform%2A) Metoda umožňuje předpovědi pro více zapředpokladu vstupní řádky testovací datové sady.
+Metoda [Transforming ()](xref:Microsoft.ML.ITransformer.Transform%2A) zpřístupňuje předpovědi pro více zadaných vstupních řádků testovací sady dat.
 
-Vyhodnoťte model přidáním následujícího `EvaluateModel()` jako následující řádek kódu v metodě:
+Vyhodnoťte model přidáním následujícího jako další řádek kódu v `EvaluateModel()` metodě:
 
 [!code-csharp[Evaluate](~/samples/snippets/machine-learning/MovieRecommendation/csharp/Program.cs#Evaluate "Evaluate the model using predictions from the test data")]
 
-Jakmile máte předpověď nastavit, [Evaluate()](xref:Microsoft.ML.RecommendationCatalog.Evaluate%2A) metoda vyhodnotí model, který porovnává předpovídané hodnoty s aktuální `Labels` v testovací datové sady a vrátí metriky o tom, jak model funguje.
+Jakmile máte předpověď nastavenou, metoda [Evaluate ()](xref:Microsoft.ML.RecommendationCatalog.Evaluate%2A) posuzuje model, který porovnává předpovězené hodnoty se skutečným `Labels` v testovací sadě a vrací metriky, jak model provádí.
 
-Vytiskněte metriky hodnocení do konzoly přidáním následujícího `EvaluateModel()` jako následující řádek kódu v metodě:
+Vytiskněte metriky vyhodnocení do konzoly přidáním následujícího jako další řádek kódu v `EvaluateModel()` metodě:
 
 [!code-csharp[PrintMetrics](~/samples/snippets/machine-learning/MovieRecommendation/csharp/Program.cs#PrintMetrics "Print the evaluation metrics")]
 
-Přidejte následující jako další řádek `Main()` kódu v `EvaluateModel()` metodě pro volání metody:
+Přidejte následující jako další řádek kódu v `Main()` metodě pro volání `EvaluateModel()` metody:
 
 [!code-csharp[EvaluateModelMain](~/samples/snippets/machine-learning/MovieRecommendation/csharp/Program.cs#EvaluateModelMain "Add EvaluateModel method in Main")]
 
-Výstup zatím by měl vypadat podobně jako následující text:
+Výstup by měl vypadat podobně jako v následujícím textu:
 
 ```console
 =============== Training the model ===============
@@ -295,19 +297,19 @@ Rms: 0.994051469730769
 RSquared: 0.412556298844873
 ```
 
-V tomto výstupu je 20 iterací. V každé iteraci se míra chyby sníží a sblíží blíže a blíže k 0.
+V tomto výstupu existují 20 iterací. V každé iteraci se míra chyb zmenší a konverguje blíž a blíže k hodnotě 0.
 
-(RMS `root of mean squared error` nebo RMSE) se používá k měření rozdílů mezi modelem předpovídaných hodnot a sledovaných hodnot testovací datové sady. Technicky je to druhá odmocnina průměru čtverců chyb. Čím nižší je, tím lepší je model.
+`root of mean squared error`(RMS nebo RMSE) slouží k měření rozdílů mezi předpokládanými hodnotami modelu a datovou sadou testů, které byly pozorovány. Technicky je to druhá odmocnina průměru průměrných čtverců chyb. Čím nižší je, tím lepší je model.
 
-`R Squared`označuje, jak dobře data odpovídají modelu. Rozsah od 0 do 1. Hodnota 0 znamená, že data jsou náhodná nebo jinak nelze přizpůsobit modelu. Hodnota 1 znamená, že model přesně odpovídá datům. Chcete, `R Squared` aby vaše skóre bylo co nejblíže k 1, jak je to možné.
+`R Squared`Určuje, jak dobře data vyhovují modelu. Rozsah od 0 do 1. Hodnota 0 znamená, že data jsou náhodná nebo jinak nelze přizpůsobit modelu. Hodnota 1 znamená, že model přesně odpovídá datům. Chcete, `R Squared` aby vaše skóre bylo co nejblíže k 1.
 
-Vytváření úspěšných modelů je iterativní proces. Tento model má počáteční nižší kvalitu jako kurz používá malé datové sady poskytovat rychlé školení modelu. Pokud nejste spokojeni s kvalitou modelu, můžete se pokusit vylepšit tím, že poskytuje větší trénovací datové sady nebo výběrem různých trénovacích algoritmů s různými hyperparametry pro každý algoritmus. Další informace najdete v části [Vylepšete model](#improve-your-model) níže.
+Sestavování úspěšných modelů je iterativní proces. Tento model má počáteční nižší kvalitu, protože kurz používá pro zajištění rychlého školení modelů malé datové sady. Pokud nejste spokojeni s kvalitou modelu, můžete se pokusit ho zlepšit poskytnutím větších školicích datových sad nebo výběrem různých školicích algoritmů s různými parametry Hyper-v pro každý algoritmus. Další informace najdete v části [vylepšení modelu](#improve-your-model) níže.
 
 ## <a name="use-your-model"></a>Použití modelu
 
-Nyní můžete použít trénovaný model k předpovědi na nová data.
+Nyní můžete použít svůj vycvičený model k vytvoření předpovědi pro nová data.
 
-Vytvořte `UseModelForSinglePrediction()` metodu, `EvaluateModel()` hned za metodou, pomocí následujícího kódu:
+Vytvořte `UseModelForSinglePrediction()` metodu hned za `EvaluateModel()` metodou pomocí následujícího kódu:
 
 ```csharp
 public static void UseModelForSinglePrediction(MLContext mlContext, ITransformer model)
@@ -316,28 +318,28 @@ public static void UseModelForSinglePrediction(MLContext mlContext, ITransformer
 }
 ```
 
-Pomocí `PredictionEngine` tohoto slouží k předvídání `UseModelForSinglePrediction()`hodnocení přidáním následujícího kódu do :
+Použijte `PredictionEngine` pro předpověď hodnocení přidáním následujícího kódu do `UseModelForSinglePrediction()` :
 
 [!code-csharp[PredictionEngine](~/samples/snippets/machine-learning/MovieRecommendation/csharp/Program.cs#PredictionEngine "Create Prediction Engine")]
 
-[PredictionEngine](xref:Microsoft.ML.PredictionEngine%602) je rozhraní API pohodlí, které umožňuje provádět předpověď na jednu instanci dat. [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602)není bezpečný pro přístup z více vláken. Je přijatelné používat v jednovláknových nebo prototypových prostředích. Pro zlepšení výkonu a bezpečnosti vláken `PredictionEnginePool` v produkčním [`ObjectPool`](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601) prostředí [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) použijte službu, která vytvoří objekty pro použití v celé aplikaci. V této příručce naleznete [informace o tom, `PredictionEnginePool` ](../how-to-guides/serve-model-web-api-ml-net.md#register-predictionenginepool-for-use-in-the-application)jak používat v ASP.NET základní webové rozhraní API .
+[PredictionEngine](xref:Microsoft.ML.PredictionEngine%602) je praktické rozhraní API, které umožňuje provádět předpovědi pro jednu instanci dat. [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602)není bezpečná pro přístup z více vláken. Je přijatelné pro použití v prostředích s jedním vláknem nebo prototypem. Pro zvýšení výkonu a bezpečnosti vláken v produkčních prostředích použijte `PredictionEnginePool` službu, která vytvoří [`ObjectPool`](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601) [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) objekty pro použití v celé aplikaci. V této příručce najdete informace o tom, jak [používat `PredictionEnginePool` ASP.NET Core webového rozhraní API](../how-to-guides/serve-model-web-api-ml-net.md#register-predictionenginepool-for-use-in-the-application).
 
 > [!NOTE]
-> `PredictionEnginePool`rozšíření služby je v současné době ve verzi preview.
+> `PredictionEnginePool`rozšíření služby je momentálně ve verzi Preview.
 
-Vytvořte instanci volané `MovieRating` `testInput` a předat jej Prediction Engine přidáním následující `UseModelForSinglePrediction()` jako další řádky kódu v metodě:
+Vytvořte instanci s `MovieRating` názvem `testInput` a předejte ji do modulu předpovědi přidáním následujícího jako další řádky kódu v `UseModelForSinglePrediction()` metodě:
 
 [!code-csharp[MakeSinglePrediction](~/samples/snippets/machine-learning/MovieRecommendation/csharp/Program.cs#MakeSinglePrediction "Make a single prediction with the Prediction Engine")]
 
-[Predict()](xref:Microsoft.ML.PredictionEngine%602.Predict%2A) Funkce provede předpověď na jeden sloupec dat.
+Funkce [prediktivní ()](xref:Microsoft.ML.PredictionEngine%602.Predict%2A) provede předpověď na jeden sloupec dat.
 
-Potom můžete použít `Score`, nebo předpokládané hodnocení, k určení, zda chcete doporučit film s movieId 10 pro uživatele 6. Čím vyšší `Score`je , tím vyšší je pravděpodobnost, že se uživateli bude určitý film líbit. V tomto případě řekněme, že doporučujete filmy s předpokládaným hodnocením > 3.5.
+Pak můžete použít `Score` nebo předpovězené hodnocení, abyste zjistili, jestli chcete pro uživatele 6 doporučit video s movieId 10. Čím vyšší je `Score` pravděpodobnost, že uživatel míru konkrétní film. V takovém případě řekněme, že doporučujeme filmy s předpokládaným hodnocením > 3,5.
 
-Chcete-li vytisknout výsledky, přidejte následující jako `UseModelForSinglePrediction()` další řádky kódu v metodě:
+Chcete-li vytisknout výsledky, přidejte následující jako další řádky kódu v `UseModelForSinglePrediction()` metodě:
 
 [!code-csharp[PrintResults](~/samples/snippets/machine-learning/MovieRecommendation/csharp/Program.cs#PrintResults "Print the recommendation prediction results")]
 
-Přidejte následující jako další řádek `Main()` kódu v `UseModelForSinglePrediction()` metodě pro volání metody:
+Přidejte následující jako další řádek kódu v `Main()` metodě pro volání `UseModelForSinglePrediction()` metody:
 
 [!code-csharp[UseModelMain](~/samples/snippets/machine-learning/MovieRecommendation/csharp/Program.cs#UseModelMain "Add UseModelForSinglePrediction method in Main")]
 
@@ -350,9 +352,9 @@ Movie 10 is recommended for user 6
 
 ### <a name="save-your-model"></a>Uložení modelu
 
-Chcete-li použít model k předpovědi v aplikacích koncových uživatelů, musíte nejprve uložit model.
+Pokud chcete model použít k tomu, aby předpovědi aplikace pro koncové uživatele, musíte nejdřív model Uložit.
 
-Vytvořte `SaveModel()` metodu, `UseModelForSinglePrediction()` hned za metodou, pomocí následujícího kódu:
+Vytvořte `SaveModel()` metodu hned za `UseModelForSinglePrediction()` metodou pomocí následujícího kódu:
 
 ```csharp
 public static void SaveModel(MLContext mlContext, DataViewSchema trainingDataViewSchema, ITransformer model)
@@ -361,23 +363,23 @@ public static void SaveModel(MLContext mlContext, DataViewSchema trainingDataVie
 }
 ```
 
-Uložte trénovaný model přidáním následujícího kódu v metodě: `SaveModel()`
+Uložte svůj vycvičený model přidáním následujícího kódu do `SaveModel()` metody:
 
 [!code-csharp[SaveModel](~/samples/snippets/machine-learning/MovieRecommendation/csharp/Program.cs#SaveModel "Save the model to a zip file")]
 
-Tato metoda uloží trénovaný model do souboru ZIP (ve složce "Data"), který pak lze použít v jiných aplikacích .NET k předpovědi.
+Tato metoda uloží váš vyškolený model do souboru. zip (do složky "data"), který pak můžete použít v jiných aplikacích .NET k vytvoření předpovědi.
 
-Přidejte následující jako další řádek `Main()` kódu v `SaveModel()` metodě pro volání metody:
+Přidejte následující jako další řádek kódu v `Main()` metodě pro volání `SaveModel()` metody:
 
 [!code-csharp[SaveModelMain](~/samples/snippets/machine-learning/MovieRecommendation/csharp/Program.cs#SaveModelMain "Create SaveModel method in Main")]
 
 ### <a name="use-your-saved-model"></a>Použití uloženého modelu
 
-Po uložení trénovaného modelu můžete model využívat v různých prostředích. Informace o tom, jak zprovoznit trénovaný model strojového učení v aplikacích, najdete v tématu [Ukládání a načítání trénovaného modelu.](../how-to-guides/save-load-machine-learning-models-ml-net.md)
+Po uložení svého vyučeného modelu můžete model využívat v různých prostředích. Další informace o tom, jak zprovoznění model strojového učení v aplikacích, najdete v tématu [ukládání a načítání](../how-to-guides/save-load-machine-learning-models-ml-net.md) školicích modelů.
 
 ## <a name="results"></a>Výsledky
 
-Po provedení výše uvedených kroků spusťte konzolovou aplikaci (Ctrl + F5). Vaše výsledky z výše uvedené predikce by měly být podobné následujícímu. Může se zobrazit upozornění nebo zpracování zpráv, ale tyto zprávy byly odebrány z následujících výsledků pro přehlednost.
+Po provedení kroků uvedených výše spusťte konzolovou aplikaci (CTRL + F5). Vaše výsledky z jedné předpovědi výše by měly být podobné následujícímu. Můžou se zobrazovat upozornění nebo zprávy o zpracování, ale tyto zprávy se z následujících výsledků odebraly z důvodu srozumitelnosti.
 
 ```console
 =============== Training the model ===============
@@ -410,33 +412,33 @@ Movie 10 is recommended for user 6
 =============== Saving the model to a file ===============
 ```
 
-Blahopřejeme! Nyní jste úspěšně vytvořili model strojového učení pro doporučování filmů. Zdrojový kód pro tento kurz najdete v úložišti [dotnet/samples.](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/MovieRecommendation)
+Gratulujeme! Teď jste úspěšně vytvořili model strojového učení pro doporučování filmů. Zdrojový kód pro tento kurz najdete v úložišti [dotnet/Samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/MovieRecommendation) .
 
 ## <a name="improve-your-model"></a>Vylepšení modelu
 
-Existuje několik způsobů, jak můžete zlepšit výkon modelu, takže můžete získat přesnější předpovědi.
+Existuje několik způsobů, jak můžete zlepšit výkon modelu, abyste mohli získat přesnější předpovědi.
 
 ### <a name="data"></a>Data
 
-Přidání dalších trénovacích dat, která mají dostatek vzorků pro každého uživatele a id filmu, může pomoci zlepšit kvalitu modelu doporučení.
+Přidání dalších školicích dat, která mají dostatek ukázek pro každého uživatele a ID filmu, může pomoci zlepšit kvalitu modelu doporučení.
 
-[Křížové ověření](../how-to-guides/train-machine-learning-model-cross-validation-ml-net.md) je technika pro vyhodnocení modelů, které náhodně rozdělí data do podmnožiny (namísto extrahování testovacích dat z datové sady, jako jste to udělali v tomto kurzu) a bere některé skupiny jako data vlaku a některé skupiny jako testovací data. Tato metoda překonává rozdělení vlakového testu z hlediska kvality modelu.
+[Mezi ověřováním](../how-to-guides/train-machine-learning-model-cross-validation-ml-net.md) je metoda pro vyhodnocování modelů, které náhodně rozdělí data do podmnožiny (místo extrakce testovacích dat z datové sady, jako jste to udělali v tomto kurzu), a jako testovací data převezme některé skupiny jako data výukového programu. Tato metoda vykonává rozdělení výukového testu z hlediska kvality modelu.
 
 ### <a name="features"></a>Funkce
 
-V tomto kurzu použijete `Features` pouze`user id` `movie id`tři `rating`( , , a ), které jsou poskytovány datové sady.
+V tomto kurzu použijete pouze tři `Features` ( `user id` , `movie id` , a `rating` ), které jsou poskytovány datovou sadou.
 
-I když je to dobrý začátek, ve skutečnosti `Features` můžete chtít přidat další atributy nebo (například věk, pohlaví, geografické umístění atd.), pokud jsou zahrnuty v datové sadě. Přidání relevantnější `Features` může pomoci zlepšit výkon modelu doporučení.
+I když je to dobrý začátek, možná budete chtít přidat další atributy nebo `Features` (například věk, pohlaví, geografické umístění atd.), pokud jsou zahrnuté v datové sadě. Přidání relevantních `Features` výsledků může pomoci zlepšit výkon vašeho modelu doporučení.
 
-Pokud si nejste `Features` jisti, které by mohly být pro váš úkol strojového učení nejdůležitější, můžete také využít funkce výpočtu (FCC) a [permutace funkce význam](../how-to-guides/explain-machine-learning-model-permutation-feature-importance-ml-net.md), který ML.NET poskytuje objevit nejvlivnější `Features`.
+Pokud si nejste jistí `Features` , které z nich může být pro úlohu strojového učení nejrelevantnější, můžete také využít důležitost funkcí pro výpočet příspěvků (FCC) a [funkce permutace](../how-to-guides/explain-machine-learning-model-permutation-feature-importance-ml-net.md), které ml.NET poskytuje k tomu, abyste zjistili, co je v nejvyšší míře `Features` .
 
-### <a name="algorithm-hyperparameters"></a>Hyperparametry algoritmu
+### <a name="algorithm-hyperparameters"></a>Parametry algoritmu
 
-Zatímco ML.NET poskytuje dobré výchozí trénovací algoritmy, můžete dále doladit výkon změnou [hyperparametry](../resources/glossary.md#hyperparameter)algoritmu .
+I když ML.NET poskytuje dobré výchozí algoritmy pro školení, můžete ještě více ladit výkon změnou [parametrů](../resources/glossary.md#hyperparameter)algoritmu.
 
-Pro `Matrix Factorization`, můžete experimentovat s hyperparameters, jako je [NumberOfIterations](xref:Microsoft.ML.Trainers.MatrixFactorizationTrainer.Options.NumberOfIterations) a [ApproximationRank](xref:Microsoft.ML.Trainers.MatrixFactorizationTrainer.Options.ApproximationRank) chcete-li zjistit, zda to dává lepší výsledky.
+Pro můžete `Matrix Factorization` experimentovat s parametry, jako je [NumberOfIterations](xref:Microsoft.ML.Trainers.MatrixFactorizationTrainer.Options.NumberOfIterations) a [ApproximationRank](xref:Microsoft.ML.Trainers.MatrixFactorizationTrainer.Options.ApproximationRank) , abyste viděli, jestli vám dává lepší výsledky.
 
-Například v tomto kurzu jsou možnosti algoritmu:
+Například v tomto kurzu jsou k disřadě možnosti algoritmu:
 
 ```csharp
 var options = new MatrixFactorizationTrainer.Options
@@ -449,22 +451,22 @@ var options = new MatrixFactorizationTrainer.Options
 };
 ```
 
-### <a name="other-recommendation-algorithms"></a>Další doporučující algoritmy
+### <a name="other-recommendation-algorithms"></a>Další algoritmy doporučení
 
-Algoritmus faktorizace matice s kolaborativním filtrováním je pouze jedním přístupem pro provádění doporučení filmu. V mnoha případech nemusí být data hodnocení k dispozici a historie filmů je k dispozici pouze od uživatelů. V ostatních případech můžete mít více než jen údaje o hodnocení uživatele.
+Algoritmus vyfaktoringu matice s filtrováním pro spolupráci je jediným řešením pro provádění doporučení filmu. V mnoha případech možná nemáte dostupná data hodnocení a k dispozici máte jenom historii filmů od uživatelů. V jiných případech možná budete mít více než jenom data hodnocení uživatele.
 
 | Algoritmus       | Scénář           | Ukázka  |
 | ------------- |:-------------:| -----:|
-| Faktorizace matice jedné třídy | Použijte tuto položku, pokud máte pouze userId a movieId. Tento styl doporučení je založen na scénáři koupě nebo produktech často zakoupených společně, což znamená, že zákazníkům doporučí sadu produktů na základě vlastní historie nákupních objednávek. | [>Vyzkoušejte si to](https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/getting-started/MatrixFactorization_ProductRecommendation) |
-| Faktorizační stroje s vědomi terénu | Použijte k doporučení, pokud máte více funkcí nad rámec userId, productId a hodnocení (například popis produktu nebo cena produktu). Tato metoda také používá přístup kolaborativní filtrování. | [>Vyzkoušejte si to](https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/end-to-end-apps/Recommendation-MovieRecommender) |
+| Faktor vytváření matic třídy | Toto použijte, když máte jenom userId a movieId. Tento styl doporučení je založen na scénáři společného nákupu, nebo na produktech, které se často kupují, což znamená, že zákazníkům doporučí sadu produktů na základě vlastní historie nákupních objednávek. | [>vyzkoušet](https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/getting-started/MatrixFactorization_ProductRecommendation) |
+| Počítače pro vytváření faktoringu s podporou polí | Použijte k tomu doporučení, když máte víc funkcí nad ID uživatele, productId a hodnocení (například popis produktu nebo cena produktu). Tato metoda také používá přístup pro filtrování spolupráce. | [>vyzkoušet](https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/end-to-end-apps/Recommendation-MovieRecommender) |
 
-### <a name="new-user-scenario"></a>Nový uživatelský scénář
+### <a name="new-user-scenario"></a>Scénář nového uživatele
 
-Jedním z běžných problémů při filtrování spolupráce je problém studeného startu, který je, když máte nového uživatele bez předchozích dat, ze kterých by bylo možné vyvodit závěry. Tento problém je často vyřešen tím, že žádá nové uživatele, aby vytvořili profil a například hodnotili filmy, které viděli v minulosti. Zatímco tato metoda klade určitou zátěž pro uživatele, poskytuje některá počáteční data pro nové uživatele bez historie hodnocení.
+Jedním z běžných potíží při filtrování spolupráce je problém s studeným startem, který je v případě, že máte nového uživatele, který nemá žádná předchozí data pro vykreslování odvození z. Tento problém se často vyřeší tím, že požádá nového uživatele, aby vytvořil profil a například rychlost, jakou videa viděli v minulosti. I když tato metoda přináší uživateli určitou režii, poskytuje několik počátečních dat pro nové uživatele bez historie hodnocení.
 
 ## <a name="resources"></a>Zdroje a prostředky
 
-Data použitá v tomto kurzu jsou odvozena z [MovieLens Dataset](http://files.grouplens.org/datasets/movielens/).
+Data použitá v tomto kurzu jsou odvozena z [datové sady MovieLens](http://files.grouplens.org/datasets/movielens/).
 
 ## <a name="next-steps"></a>Další kroky
 
@@ -472,12 +474,12 @@ V tomto kurzu jste se naučili:
 
 > [!div class="checklist"]
 >
-> * Výběr algoritmu strojového učení
+> * Vyberte algoritmus strojového učení.
 > * Příprava a načtení dat
-> * Sestavení a trénování modelu
+> * Sestavování a výuka modelu
 > * Vyhodnocení modelu
 > * Nasazení a využití modelu
 
-Přejdete k dalšímu kurzu, abyste se dozvěděli více
+Pokud se chcete dozvědět víc, přejděte k dalšímu kurzu.
 > [!div class="nextstepaction"]
 > [Analýza mínění](sentiment-analysis.md)

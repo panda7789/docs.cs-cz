@@ -1,5 +1,6 @@
 ---
 title: Vytvoření třídy k umístění funkcí DLL
+description: Vytvořte obálku spravované třídy v rozhraní .NET, která bude uchovávat funkce knihovny DLL, což pomáhá zapouzdřit funkce platformy.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - COM interop, DLL functions
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - platform invoke, creating class for functions
 - DLL functions
 ms.assetid: e08e4c34-0223-45f7-aa55-a3d8dd979b0f
-ms.openlocfilehash: 765d4344553a6e65b930a7bf586a41144d220fc6
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: b8aa0361ee5213cb947a102f903d1a7a35331f17
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123628"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85622169"
 ---
 # <a name="creating-a-class-to-hold-dll-functions"></a>Vytvoření třídy k umístění funkcí DLL
 Zabalení často používané funkce knihovny DLL ve spravované třídě představuje účinný přístup k zapouzdření funkčnosti platformy. I když není nutné tak učinit v každém případě, poskytnutí obálky třídy je pohodlné, protože definování funkcí knihovny DLL může být náročné a náchylné k chybám. Pokud programujete v Visual Basic nebo C#, musíte deklarovat funkce knihovny DLL v rámci třídy nebo modulu Visual Basic.  
@@ -34,7 +35,7 @@ Zabalení často používané funkce knihovny DLL ve spravované třídě předs
   
  Můžete pojmenovat třídu a její metody, které jste si zařadíte. Příklady, které ukazují, jak vytvořit. Deklarace založené na síti, které se mají použít s voláním platformy, najdete v tématu [zařazování dat pomocí vyvolání platformy](marshaling-data-with-platform-invoke.md).  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Používání nespravovaných funkcí DLL](consuming-unmanaged-dll-functions.md)
 - [Identifikace funkcí ve knihovnách DLL](identifying-functions-in-dlls.md)

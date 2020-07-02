@@ -1,5 +1,6 @@
 ---
 title: Identifikátory URI Pack
+description: Přečtěte si o mnoha způsobech použití identifikátorů URI (Uniform Resource Identifier) k identifikaci a načítání souborů v Windows Presentation Foundation (WPF).
 ms.date: 03/30/2017
 helpviewer_keywords:
 - pack URI scheme [WPF]
@@ -9,18 +10,18 @@ helpviewer_keywords:
 - loading non-resource files
 - application management [WPF]
 ms.assetid: 43adb517-21a7-4df3-98e8-09e9cdf764c4
-ms.openlocfilehash: a98c97a4aa95fb956a2ca6d417e009a281a938b6
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: 1d19dec0d846659f8de6ed518a7f98d224354a82
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77124478"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85621688"
 ---
 # <a name="pack-uris-in-wpf"></a>Sbalení URI v technologii WPF
 
 V Windows Presentation Foundation (WPF) se k identifikaci a načítání souborů v mnoha různých způsobech používají identifikátory URI (Uniform Resource Identifier), včetně následujících:
 
-- Určení [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)], který se má zobrazit při prvním spuštění aplikace
+- Určení, [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] které se má zobrazit při prvním spuštění aplikace
 
 - Načítají se obrázky.
 
@@ -52,7 +53,7 @@ Pro identifikaci částí používá specifikace OPC rozšiřitelnost RFC 2396 (
 
 Schéma, které je určeno identifikátorem URI, je definováno jeho předponou; protokol HTTP, FTP a soubor jsou známé příklady. Schéma identifikátoru URI balíčku používá jako své schéma "sadu" a obsahuje dvě komponenty: autorita a cesta. Následuje formát pro identifikátor URI balíčku.
 
-*cesta*/*autority* Pack://
+Cesta k*autoritě* / *path* Pack://
 
 *Autorita* určuje typ balíčku, který součást obsahuje, zatímco *cesta* určuje umístění součásti v rámci balíčku.
 
@@ -85,7 +86,7 @@ V následujících částech se dozvíte, jak vytvořit identifikátory URI bal�
 
 ## <a name="resource-file-pack-uris"></a>Identifikátory URI sad prostředků souboru
 
-Soubory prostředků jsou nakonfigurovány jako MSBuild `Resource` položky a jsou zkompilovány do sestavení. WPF podporuje konstrukci identifikátorů URI balíčku, které lze použít k identifikaci souborů prostředků, které jsou zkompilovány do místního sestavení nebo zkompilovány do sestavení, které je odkazováno z místního sestavení.
+Soubory prostředků jsou nakonfigurovány jako `Resource` položky MSBuild a jsou zkompilovány do sestavení. WPF podporuje konstrukci identifikátorů URI balíčku, které lze použít k identifikaci souborů prostředků, které jsou zkompilovány do místního sestavení nebo zkompilovány do sestavení, které je odkazováno z místního sestavení.
 
 <a name="Local_Assembly_Resource_File"></a>
 
@@ -97,7 +98,7 @@ Identifikátor URI balíčku pro soubor prostředků kompilovaný do místního 
 
 - **Cesta**: název souboru prostředků, včetně jeho cesty, relativní vzhledem k místnímu kořenu složky sestavení projektu.
 
-Následující příklad ukazuje identifikátor URI balíčku pro soubor prostředků [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], který je umístěn v kořenovém adresáři složky projektu místního sestavení.
+Následující příklad ukazuje identifikátor URI balíčku pro [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubor prostředků, který je umístěn v kořenovém adresáři složky projektu místního sestavení.
 
 `pack://application:,,,/ResourceFile.xaml`
 
@@ -115,7 +116,7 @@ Identifikátor URI balíčku pro soubor prostředků kompilovaný do odkazované
 
 - **Cesta**: název souboru prostředků, který je zkompilován do odkazovaného sestavení. Cesta musí odpovídat následujícímu formátu:
 
-  *AssemblyShortName*{ *; Verze*] { *; PublicKey*]; součást/*cesta*
+  *AssemblyShortName*{*; Verze*] {*; PublicKey*]; součást/*cesta*
 
   - **AssemblyShortName**: krátký název odkazovaného sestavení.
 
@@ -127,7 +128,7 @@ Identifikátor URI balíčku pro soubor prostředků kompilovaný do odkazované
 
   - **/Path**: název souboru prostředků, včetně jeho cesty, vzhledem k kořenu složky projektu odkazovaného sestavení.
 
-Následující příklad ukazuje identifikátor URI balíčku pro soubor prostředků [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], který je umístěn v kořenovém adresáři složky projektu odkazovaného sestavení.
+Následující příklad ukazuje identifikátor URI balíčku pro [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubor prostředků, který je umístěn v kořenovém adresáři složky projektu odkazovaného sestavení.
 
 `pack://application:,,,/ReferencedAssembly;component/ResourceFile.xaml`
 
@@ -135,7 +136,7 @@ Následující příklad ukazuje identifikátor URI balíčku pro [!INCLUDE[TLA2
 
 `pack://application:,,,/ReferencedAssembly;component/Subfolder/ResourceFile.xaml`
 
-Následující příklad ukazuje identifikátor URI balíčku pro soubor prostředků [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], který je umístěn v kořenové složce odkazované složky projektu pro specifické verze sestavení.
+Následující příklad ukazuje identifikátor URI balíčku pro [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubor prostředků, který je umístěn v kořenové složce odkazované složky projektu pro specifické verze sestavení.
 
 `pack://application:,,,/ReferencedAssembly;v1.0.0.1;component/ResourceFile.xaml`
 
@@ -153,11 +154,11 @@ Identifikátor URI balíčku pro soubor obsahu používá následující autorit
 
 - **Cesta**: název souboru obsahu, včetně jeho cesty relativního k umístění systému souborů v hlavním spustitelném sestavení aplikace.
 
-Následující příklad ukazuje identifikátor URI balíčku pro soubor [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] obsahu umístěný ve stejné složce jako spustitelné sestavení.
+Následující příklad ukazuje identifikátor URI balíčku pro [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubor obsahu, který je umístěn ve stejné složce jako spustitelné sestavení.
 
 `pack://application:,,,/ContentFile.xaml`
 
-Následující příklad ukazuje identifikátor URI balíčku pro soubor [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] obsahu umístěný v podsložce, která je relativní vzhledem k spustitelnému sestavení aplikace.
+Následující příklad ukazuje identifikátor URI balíčku pro [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubor obsahu umístěný v podsložce, která je relativní vzhledem k spustitelnému sestavení aplikace.
 
 `pack://application:,,,/Subfolder/ContentFile.xaml`
 
@@ -174,11 +175,11 @@ Identifikátor URI balíčku pro lokalitu zdrojového souboru používá násled
 
 - **Cesta**: název lokality zdrojového souboru, včetně cesty relativního k umístění, ze kterého se spustilo spustitelné sestavení.
 
-Následující příklad ukazuje identifikátor URI balíčku pro [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] web zdrojového souboru uložený v umístění, ze kterého se spouští spustitelné sestavení.
+Následující příklad ukazuje identifikátor URI balíčku pro [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] lokalitu zdrojového souboru, uložený v umístění, ze kterého se spouští spustitelné sestavení.
 
 `pack://siteoforigin:,,,/SiteOfOriginFile.xaml`
 
-Následující příklad ukazuje identifikátor URI balíčku pro [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] web zdrojového souboru, uložený v podsložce, která je relativní k umístění, ze kterého se spouští sestavení spustitelného souboru aplikace.
+Následující příklad ukazuje identifikátor URI balíčku pro [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] lokalitu zdrojového souboru, uložený v podsložce, která je relativní k umístění, ze kterého se spouští sestavení spustitelného objektu aplikace.
 
 `pack://siteoforigin:,,,/Subfolder/SiteOfOriginFile.xaml`
 
@@ -186,9 +187,9 @@ Následující příklad ukazuje identifikátor URI balíčku pro [!INCLUDE[TLA2
 
 ## <a name="page-files"></a>Stránkovací soubory
 
-Soubory XAML, které jsou konfigurovány jako MSBuild `Page` položky, jsou zkompilovány do sestavení stejným způsobem jako soubory prostředků. V důsledku toho mohou být MSBuild `Page` položky identifikovány pomocí identifikátorů URI Pack pro soubory prostředků.
+Soubory XAML, které jsou konfigurovány jako položky MSBuild, `Page` jsou zkompilovány do sestavení stejným způsobem jako soubory prostředků. V důsledku toho `Page` mohou být položky MSBuild identifikovány pomocí identifikátorů URI balíčků pro soubory prostředků.
 
-Typy [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] souborů, které jsou běžně nakonfigurované jako MSBuild`Page` položky, mají jako svůj kořenový prvek jednu z následujících hodnot:
+Typy [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] souborů, které jsou běžně nakonfigurované jako položky MSBuild, `Page` mají jako svůj kořenový prvek jednu z následujících hodnot:
 
 - <xref:System.Windows.Window?displayProperty=nameWithType>
 
@@ -206,7 +207,7 @@ Typy [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] sou
 
 ## <a name="absolute-vs-relative-pack-uris"></a>Absolutní identifikátory URI sady vs. relativní Pack
 
-Plně kvalifikovaný identifikátor URI balíčku zahrnuje schéma, autoritu a cestu a je považován za absolutní identifikátor URI balíčku. V rámci zjednodušení pro vývojáře [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] prvky obvykle umožňují nastavit příslušné atributy s identifikátorem URI relativního balíčku, který obsahuje pouze cestu.
+Plně kvalifikovaný identifikátor URI balíčku zahrnuje schéma, autoritu a cestu a je považován za absolutní identifikátor URI balíčku. V rámci zjednodušení pro vývojáře [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] prvky obvykle umožňují nastavit odpovídající atributy s identifikátorem URI relativního balíčku, který obsahuje pouze cestu.
 
 Zvažte například následující absolutní identifikátor URI balíčku pro soubor prostředků v místním sestavení.
 
@@ -253,21 +254,21 @@ Tento identifikátor URI absolutního balíčku může odkazovat buď na soubor 
 
 Aby bylo možné určit typ souboru, na který odkazuje identifikátor URI balíčku, rozpozná WPF identifikátory URI pro soubory prostředků v místních sestavení a souborech obsahu pomocí následujících heuristik:
 
-1. Sondujte metadata sestavení pro atribut <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute>, který se shoduje s identifikátorem URI balíčku.
+1. Sondujte metadata sestavení pro <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute> atribut, který odpovídá identifikátoru URI balíčku.
 
-2. Pokud je nalezen atribut <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute>, cesta k identifikátoru URI balíčku odkazuje na soubor obsahu.
+2. Pokud <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute> je atribut nalezen, cesta k identifikátoru URI balíčku odkazuje na soubor obsahu.
 
-3. Pokud atribut <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute> nebyl nalezen, proveďte test souborů prostředků sady, které jsou zkompilovány do místního sestavení.
+3. Pokud <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute> atribut nebyl nalezen, proveďte test souborů prostředků sady, které jsou zkompilovány do místního sestavení.
 
 4. Pokud je nalezen soubor prostředků odpovídající cestě k identifikátoru URI balíčku, cesta k identifikátoru URI balíčku odkazuje na soubor prostředků.
 
-5. Pokud se prostředek nenajde, interně vytvořené <xref:System.Uri> je neplatné.
+5. Pokud se prostředek nenajde, interně vytvořené pole <xref:System.Uri> je neplatné.
 
 Rozlišení identifikátoru URI se nevztahuje na identifikátory URI, které odkazují na následující:
 
 - Soubory obsahu v odkazovaných sestaveních: tyto typy souborů rozhraní WPF nepodporují.
 
-- Vložené soubory v odkazovaných sestaveních: identifikátory URI, které je identifikují, jsou jedinečné, protože zahrnují název odkazovaného sestavení a příponu `;component`.
+- Vložené soubory v odkazovaných sestaveních: identifikátory URI, které je identifikují, jsou jedinečné, protože zahrnují název odkazovaného sestavení a `;component` příponu.
 
 - Lokalita se zdrojovými soubory: identifikátory URI, které je identifikují, jsou jedinečné, protože se jedná o jediné soubory, které je možné identifikovat pomocí identifikátorů URI balíčků, které obsahují siteoforigin:///autoritu.
 
@@ -297,7 +298,7 @@ Tyto vlastnosti lze nastavit z kódu i kódu. Tato část ukazuje základní kon
 
 ### <a name="using-pack-uris-in-markup"></a>Použití identifikátorů URI Pack v kódu
 
-Identifikátor URI balíku je zadán v označení nastavením elementu atributu s identifikátorem URI balíčku. Například:
+Identifikátor URI balíku je zadán v označení nastavením elementu atributu s identifikátorem URI balíčku. Příklad:
 
 `<element attribute="pack://application:,,,/File.xaml" />`
 
@@ -305,7 +306,7 @@ Tabulka 1 znázorňuje různé identifikátory URI absolutních balíčků, kter
 
 Tabulka 1: identifikátory URI absolutních balíčků v kódu
 
-|File|Identifikátor URI absolutního balíčku|
+|Soubor|Identifikátor URI absolutního balíčku|
 |----------|-------------------------------------------------------------------------------------------------------------------------|
 |Místní sestavení souboru prostředků|`"pack://application:,,,/ResourceFile.xaml"`|
 |Soubor prostředků v sestavení místních podsložek|`"pack://application:,,,/Subfolder/ResourceFile.xaml"`|
@@ -321,7 +322,7 @@ Tabulka 2 znázorňuje různé identifikátory URI pro relativní balíčky, kte
 
 Tabulka 2: identifikátory URI relativních balíčků v kódu
 
-|File|Identifikátor URI relativního balíčku|
+|Soubor|Identifikátor URI relativního balíčku|
 |----------|-------------------------------------------------------------------------------------------------------------------------|
 |Soubor prostředků v místním sestavení|`"/ResourceFile.xaml"`|
 |Soubor prostředků v podsložce místního sestavení|`"/Subfolder/ResourceFile.xaml"`|
@@ -334,19 +335,19 @@ Tabulka 2: identifikátory URI relativních balíčků v kódu
 
 ### <a name="using-pack-uris-in-code"></a>Použití identifikátorů URI Pack v kódu
 
-Identifikátor URI balíčku zadáte v kódu vytvořením instance třídy <xref:System.Uri> a předáním identifikátoru URI balíčku jako parametru konstruktoru. To je patrné z následujícího příkladu.
+Identifikátor URI balíčku zadáte v kódu vytvořením instance <xref:System.Uri> třídy a předáním identifikátoru URI balíčku jako parametru konstruktoru. To je patrné z následujícího příkladu.
 
 ```csharp
 Uri uri = new Uri("pack://application:,,,/File.xaml");
 ```
 
-Ve výchozím nastavení třída <xref:System.Uri> považuje identifikátory URI balíčku za absolutní. V důsledku toho je vyvolána výjimka, když je vytvořena instance třídy <xref:System.Uri> s identifikátorem URI relativního balíčku.
+Ve výchozím nastavení <xref:System.Uri> Třída považuje identifikátory URI balíčku za absolutní. V důsledku toho je vyvolána výjimka, když <xref:System.Uri> je vytvořena instance třídy s identifikátorem URI relativního balíčku.
 
 ```csharp
 Uri uri = new Uri("/File.xaml");
 ```
 
-Naštěstí <xref:System.Uri.%23ctor%28System.String%2CSystem.UriKind%29> přetížení konstruktoru <xref:System.Uri> třídy přijímá parametr typu <xref:System.UriKind>, který umožňuje určit, zda je identifikátor URI balíčku buď absolutní, nebo relativní.
+Naštěstí <xref:System.Uri.%23ctor%28System.String%2CSystem.UriKind%29> přetížení <xref:System.Uri> konstruktoru třídy přijímá parametr typu, který umožňuje <xref:System.UriKind> určit, zda je identifikátor URI balíčku buď absolutní, nebo relativní.
 
 ```csharp
 // Absolute URI (default)
@@ -356,7 +357,7 @@ Uri relativeUri = new Uri("/File.xaml",
                         UriKind.Relative);
 ```
 
-Pokud jste si jisti, že poskytnutý identifikátor URI Pack je jeden nebo druhý, je třeba zadat pouze <xref:System.UriKind.Absolute> nebo <xref:System.UriKind.Relative>. Pokud neznáte typ identifikátoru URI balíčku, který se používá, například když uživatel zadá identifikátor URI balíčku za běhu, použijte místo toho <xref:System.UriKind.RelativeOrAbsolute>.
+Měli byste zadat jenom <xref:System.UriKind.Absolute> nebo <xref:System.UriKind.Relative> , pokud jste si jisti, že poskytnutý identifikátor URI Pack je jeden nebo druhý. Pokud neznáte typ identifikátoru URI balíčku, který se používá, například když uživatel zadá v době běhu identifikátor URI balíčku, použijte <xref:System.UriKind.RelativeOrAbsolute> místo toho.
 
 ```csharp
 // Relative or Absolute URI provided by user via a text box
@@ -364,11 +365,11 @@ TextBox userProvidedUriTextBox = new TextBox();
 Uri uri = new Uri(userProvidedUriTextBox.Text, UriKind.RelativeOrAbsolute);
 ```
 
-Tabulka 3 znázorňuje různé identifikátory URI relativních balíčků, které můžete zadat v kódu pomocí <xref:System.Uri?displayProperty=nameWithType>.
+Tabulka 3 znázorňuje různé identifikátory URI relativních balíčků, které můžete zadat v kódu pomocí <xref:System.Uri?displayProperty=nameWithType> .
 
 Tabulka 3: identifikátory URI absolutních balíčků v kódu
 
-|File|Identifikátor URI absolutního balíčku|
+|Soubor|Identifikátor URI absolutního balíčku|
 |----------|-------------------------------------------------------------------------------------------------------------------------|
 |Místní sestavení souboru prostředků|`Uri uri = new Uri("pack://application:,,,/ResourceFile.xaml", UriKind.Absolute);`|
 |Soubor prostředků v sestavení místních podsložek|`Uri uri = new Uri("pack://application:,,,/Subfolder/ResourceFile.xaml", UriKind.Absolute);`|
@@ -380,11 +381,11 @@ Tabulka 3: identifikátory URI absolutních balíčků v kódu
 |Lokalita zdrojového souboru|`Uri uri = new Uri("pack://siteoforigin:,,,/SOOFile.xaml", UriKind.Absolute);`|
 |Lokalita zdrojového souboru v podsložce|`Uri uri = new Uri("pack://siteoforigin:,,,/Subfolder/SOOFile.xaml", UriKind.Absolute);`|
 
-Tabulka 4 znázorňuje různé identifikátory URI relativních balíčků, které můžete zadat v kódu pomocí <xref:System.Uri?displayProperty=nameWithType>.
+Tabulka 4 znázorňuje různé identifikátory URI pro relativní balíčky, které můžete zadat v kódu pomocí <xref:System.Uri?displayProperty=nameWithType> .
 
 Tabulka 4: identifikátory URI relativních balíčků v kódu
 
-|File|Identifikátor URI relativního balíčku|
+|Soubor|Identifikátor URI relativního balíčku|
 |----------|-------------------------------------------------------------------------------------------------------------------------|
 |Místní sestavení souboru prostředků|`Uri uri = new Uri("/ResourceFile.xaml", UriKind.Relative);`|
 |Soubor prostředků v sestavení místních podsložek|`Uri uri = new Uri("/Subfolder/ResourceFile.xaml", UriKind.Relative);`|
@@ -403,7 +404,7 @@ V předchozích částech byly popsány postupy sestavení identifikátorů URI 
 
 #### <a name="specifying-the-ui-to-show-when-an-application-starts"></a>Určení uživatelského rozhraní, které se zobrazí při spuštění aplikace
 
-<xref:System.Windows.Application.StartupUri%2A> určuje první [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)], který se má zobrazit při spuštění aplikace WPF. Pro samostatné aplikace může být [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] okno, jak je znázorněno v následujícím příkladu.
+<xref:System.Windows.Application.StartupUri%2A>Určuje první [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] , který se má zobrazit při spuštění aplikace WPF. Pro samostatné aplikace [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] může být okno, jak je znázorněno v následujícím příkladu.
 
 [!code-xaml[PackURIOverviewSnippets#StartupUriWindow](~/samples/snippets/csharp/VS_Snippets_Wpf/PackURIOverviewSnippets/CS/Copy of App.xaml#startupuriwindow)]
 
@@ -411,7 +412,7 @@ Samostatné aplikace a aplikace prohlížeče XAML (XBAP) mohou také určit str
 
 [!code-xaml[PackURIOverviewSnippets#StartupUriPage](~/samples/snippets/csharp/VS_Snippets_Wpf/PackURIOverviewSnippets/CS/App.xaml#startupuripage)]
 
-Pokud je aplikace samostatnou aplikací a je určena Stránka s <xref:System.Windows.Application.StartupUri%2A>, WPF otevře <xref:System.Windows.Navigation.NavigationWindow> pro hostování stránky. Pro XBAP se stránka zobrazuje v prohlížeči hostitele.
+Pokud je aplikace samostatnou aplikací a je určena Stránka s nástrojem <xref:System.Windows.Application.StartupUri%2A> , WPF otevře <xref:System.Windows.Navigation.NavigationWindow> pro hostování stránky. Pro XBAP se stránka zobrazuje v prohlížeči hostitele.
 
 <a name="Navigating_to_a_Page"></a>
 
@@ -453,12 +454,12 @@ Další informace o práci s mediálním obsahem najdete v tématu [grafika a mu
 
 #### <a name="loading-a-resource-dictionary-from-the-site-of-origin"></a>Načítání slovníku prostředků z lokality původu
 
-Slovníky prostředků (<xref:System.Windows.ResourceDictionary>) lze použít k podpoře motivů aplikace. Jedním ze způsobů, jak vytvářet a spravovat motivy, je vytvořit několik motivů jako slovníky prostředků nacházející se v lokalitě aplikace, kde je původ. To umožňuje přidat a aktualizovat motivy bez nutnosti opětovné kompilace a opětovného nasazení aplikace. Tyto slovníky prostředků je možné identifikovat a načíst pomocí identifikátorů URI Pack, který je znázorněn v následujícím příkladu.
+Slovníky prostředků ( <xref:System.Windows.ResourceDictionary> ) lze použít k podpoře motivů aplikace. Jedním ze způsobů, jak vytvářet a spravovat motivy, je vytvořit několik motivů jako slovníky prostředků nacházející se v lokalitě aplikace, kde je původ. To umožňuje přidat a aktualizovat motivy bez nutnosti opětovné kompilace a opětovného nasazení aplikace. Tyto slovníky prostředků je možné identifikovat a načíst pomocí identifikátorů URI Pack, který je znázorněn v následujícím příkladu.
 
 [!code-xaml[ResourceDictionarySnippets#ResourceDictionaryPackURI](~/samples/snippets/csharp/VS_Snippets_Wpf/ResourceDictionarySnippets/CS/App.xaml#resourcedictionarypackuri)]
 
 Přehled motivů v WPF naleznete v tématu [stylování a šablonování](../../../desktop-wpf/fundamentals/styles-templates-overview.md).
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Prostředek, obsah a datové soubory aplikace WPF](wpf-application-resource-content-and-data-files.md)

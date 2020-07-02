@@ -1,17 +1,23 @@
 ---
-ms.openlocfilehash: 318609c15d2e0b9a7ee59b38463735b33ef87974
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0f87f9e9b87860da97ce96e18104b44ec4327c91
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "67857209"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85621094"
 ---
-### <a name="wcf-pipeconnectiongethashalgorithm-now-uses-sha256"></a>WCF PipeConnection.GetHashAlgorithm nyní používá SHA256
+### <a name="wcf-pipeconnectiongethashalgorithm-now-uses-sha256"></a>WCF připojení PipeConnection bylo. GetHashAlgorithm teď používá SHA256.
 
-|   |   |
-|---|---|
-|Podrobnosti|Počínaje rozhraním .NET Framework 4.7.1 používá nadace Windows Communication Foundation k generování náhodných názvů pojmenovaných kanálů hash SHA256. V rozhraní .NET Framework 4.7 a starších verzích používala hašiš SHA1.|
-|Návrh|Pokud s touto změnou narazíte na problém s kompatibilitou v rozhraní .NET Framework 4.7.1 <code>&lt;runtime&gt;</code> nebo novějším, můžete ji odhlásit přidáním následujícího řádku do části souboru app.config:<pre><code class="lang-xml">&lt;configuration&gt;&#13;&#10;&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.ServiceModel.UseSha1InPipeConnectionGetHashAlgorithm=true&quot; /&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;&lt;/configuration&gt;&#13;&#10;</code></pre>|
-|Rozsah|Vedlejší|
-|Version|4.7.1|
+#### <a name="details"></a>Podrobnosti
+
+Počínaje .NET Framework 4.7.1 Windows Communication Foundation používá SHA256 hash k vygenerování náhodných názvů pro pojmenované kanály. V .NET Framework 4,7 a starších verzích používala hodnotu hash SHA1.
+
+#### <a name="suggestion"></a>Návrh
+
+Pokud narazíte na problém s kompatibilitou s touto změnou v .NET Framework 4.7.1 nebo novějším, můžete ji odhlásit přidáním následujícího řádku do <code>&lt;runtime&gt;</code> části app.config souboru:<pre><code class="lang-xml">&lt;configuration&gt;&#13;&#10;&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.ServiceModel.UseSha1InPipeConnectionGetHashAlgorithm=true&quot; /&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;&lt;/configuration&gt;&#13;&#10;</code></pre>
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   |Vedlejší|
+|Verze|4.7.1|
 |Typ|Modul runtime|

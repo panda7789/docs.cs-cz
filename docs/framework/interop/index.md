@@ -1,5 +1,6 @@
 ---
 title: Spolupráce s nespravovaným kódem
+description: Kontrola spolupráce s nespravovaným kódem. CLR se zakrývá od klientů a serverů, jak se liší objektové modely komponent .NET a nespravovaný kód.
 ms.date: 01/17/2018
 helpviewer_keywords:
 - unmanaged code, interoperation
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - interoperation with unmanaged code, about interoperation
 - components [.NET Framework], interoperation with unmanaged code
 ms.assetid: ccb68ce7-b0e9-4ffb-839d-03b1cd2c1258
-ms.openlocfilehash: 12183f390a5178f038c6dd2122a72a33e31ae0ee
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1cebd75907fd202715cb337593186d248107bdbb
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73457966"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85621870"
 ---
 # <a name="interoperating-with-unmanaged-code"></a>Spolupráce s nespravovaným kódem
 
@@ -23,7 +24,7 @@ ms.locfileid: "73457966"
 
 Kód, který se spouští pod ovládacím prvkem modulu runtime, se nazývá spravovaný kód. Naopak kód, který se spouští mimo modul runtime, se nazývá nespravovaný kód. Mezi příklady nespravovaného kódu patří komponenty modelu COM, rozhraní ActiveX a funkce rozhraní API systému Windows.
 
-## <a name="in-this-section"></a>V tomto oddílu
+## <a name="in-this-section"></a>V této části
 
 [Vystavení komponent COM pro rozhraní .NET Framework](exposing-com-components.md)  
 Popisuje, jak použít komponenty modelu COM z aplikace .NET Framework.
@@ -44,15 +45,15 @@ Popisuje mapování mezi výjimkami a HRESULTs.
 Popisuje způsob vložení informací o typu pro typy modelu COM do sestavení a jak modul CLR (Common Language Runtime) určí rovnocennost integrovaných typů COM.
 
 [Postupy: Generování primárních sestavení vzájemné spolupráce pomocí Tlbimp.exe](how-to-generate-primary-interop-assemblies-using-tlbimp-exe.md)  
-Popisuje, jak vypracovávat primární spolupracující sestavení pomocí nástroje *Tlbimp. exe* (importér knihovny typů).
+Popisuje, jak lze vydávat primární spolupracující sestavení pomocí *Tlbimp.exe* (importér knihovny typů).
 
 [Postupy: Registrace primárních sestavení spolupráce](how-to-register-primary-interop-assemblies.md)  
 Popisuje, jak registrovat primární sestavení vzájemné spolupráce předtím, než na ně můžete odkazovat v projektech.
 
-[Bezregistrační zprostředkovatel komunikace s objekty COM](registration-free-com-interop.md)  
+[Zprostředkovatel komunikace s objekty COM bez registrace](registration-free-com-interop.md)  
 Popisuje, jak může zprostředkovatel komunikace s objekty COM aktivovat součásti bez použití registru systému Windows.
 
-[Postupy: Konfigurace bezregistrační aktivace komponent využívajících rozhraní .NET Framework](configure-net-framework-based-com-components-for-reg.md)  
+[Postupy: Konfigurace komponent COM využívajících rozhraní .NET Framework pro aktivaci bez registrace](configure-net-framework-based-com-components-for-reg.md)  
 Popisuje, jak vytvořit manifest aplikace a jak vytvořit a vložit manifest součásti.
 
 ## <a name="related-sections"></a>Související oddíly

@@ -1,5 +1,6 @@
 ---
 title: Import knihovny typů ve formě sestavení
+description: Importujte knihovnu typů, která obsahuje definice typu modelu COM, jako sestavení. Naučte se, jak vytvářet metadata z knihovny typů, což vede k sestavení vzájemné spolupráce.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - importing type library
@@ -15,12 +16,12 @@ helpviewer_keywords:
 - COM interop, importing type library
 - COM interop, exposing COM components
 ms.assetid: d1898229-cd40-426e-a275-f3eb65fbc79f
-ms.openlocfilehash: e1a21175bcabc72b86a328d4f73ecec37140c304
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e5187e3c2ce533f25a38e93bc3715dd3e2e47c11
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73107588"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85622715"
 ---
 # <a name="importing-a-type-library-as-an-assembly"></a>Import knihovny typů ve formě sestavení
 
@@ -46,13 +47,13 @@ Po nalezení knihovny typů, která obsahuje implementaci cílového typu modelu
 
   Visual Studio automaticky převede typy modelu COM v knihovně typů na metadata v sestavení. Pokyny najdete v tématu [Postupy: Přidání odkazů do knihoven typů](how-to-add-references-to-type-libraries.md).
 
-- [Importér knihovny typů (Tlbimp. exe)](../tools/tlbimp-exe-type-library-importer.md)
+- [Importér knihovny typů (Tlbimp.exe)](../tools/tlbimp-exe-type-library-importer.md)
 
   Importér knihovny typů poskytuje možnosti příkazového řádku pro úpravu metadat ve výsledném definičním souboru, naimportuje typy z existující knihovny typů a vygeneruje definiční sestavení a obor názvů. Pokyny naleznete v tématu [How to: Generate spolupracující sestavení z knihoven typů](how-to-generate-interop-assemblies-from-type-libraries.md).
 
 - Třída <xref:System.Runtime.InteropServices.TypeLibConverter?displayProperty=nameWithType>
 
-  Tato třída poskytuje metody pro převod tříd typu coclass a rozhraní v knihovně typů na metadata v rámci sestavení. Vytváří stejný výstup metadat jako Tlbimp. exe. Nicméně na rozdíl od nástroje Tlbimp. exe může <xref:System.Runtime.InteropServices.TypeLibConverter> třída převést knihovnu typů v paměti na metadata.
+  Tato třída poskytuje metody pro převod tříd typu coclass a rozhraní v knihovně typů na metadata v rámci sestavení. Vytvoří stejný výstup metadat jako Tlbimp.exe. Nicméně na rozdíl od Tlbimp.exe <xref:System.Runtime.InteropServices.TypeLibConverter> Třída může převést knihovnu typů v paměti na metadata.
 
 - Vlastní obálky
 
@@ -70,12 +71,12 @@ Po nalezení knihovny typů, která obsahuje implementaci cílového typu modelu
 
  Další informace o procesu importu zprostředkovatele komunikace s objekty COM naleznete v tématu [Souhrn převodu knihovny typů na sestavení](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100)).
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.Runtime.InteropServices.TypeLibConverter>
 - [Vystavení komponent COM pro rozhraní .NET Framework](exposing-com-components.md)
 - [Souhrn převodu knihovny typů na sestavení](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100))
-- [Tlbimp. exe (importér knihovny typů)](../tools/tlbimp-exe-type-library-importer.md)
+- [Tlbimp.exe (importér knihovny typů)](../tools/tlbimp-exe-type-library-importer.md)
 - [Přizpůsobení standardních obálek](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/h7hx9abd(v=vs.100))
 - [Použití typů modelu COM ve spravovaném kódu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/3y76b69k(v=vs.100))
 - [Kompilace projektu interoperability](compiling-an-interop-project.md)

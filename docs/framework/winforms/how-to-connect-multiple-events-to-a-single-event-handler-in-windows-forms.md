@@ -1,5 +1,6 @@
 ---
 title: 'Postupy: připojení více událostí k jedné obslužné rutině události'
+description: Naučte se, jak připojit více událostí k jedné obslužné rutině události v model Windows Forms pomocí zobrazení událostí okno Vlastnosti v C#.
 ms.date: 03/30/2017
 dev_langs:
 - vb
@@ -10,15 +11,15 @@ helpviewer_keywords:
 - Windows Forms controls, events
 - menu items [Windows Forms], multicasting event-handling methods
 ms.assetid: 5a20749a-41b5-4acc-8eb1-9e5040b0a2c4
-ms.openlocfilehash: 0591291522ab1da04fef90bf1c0a73cf33ba0518
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: cca85c223b46d9a82dbc3e34e3377fb83c075959
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76739605"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85621883"
 ---
 # <a name="how-to-connect-multiple-events-to-a-single-event-handler-in-windows-forms"></a>Postupy: Připojení více událostí k jedné obslužné rutině událostí ve Windows Forms
-V návrhu aplikace může být nutné použít jednu obslužnou rutinu události pro více událostí nebo mít více událostí stejný postup. Například je často účinný časový okamžik, který má příkaz nabídky vyvolat stejnou událost jako tlačítko na formuláři, pokud vystavuje stejné funkce. To lze provést pomocí zobrazení událostí okno Vlastnosti v C# nebo pomocí klíčového slova `Handles` a rozevíracího seznamu název **třídy** a **názvu metody** v editoru kódu Visual Basic.  
+V návrhu aplikace může být nutné použít jednu obslužnou rutinu události pro více událostí nebo mít více událostí stejný postup. Například je často účinný časový okamžik, který má příkaz nabídky vyvolat stejnou událost jako tlačítko na formuláři, pokud vystavuje stejné funkce. Můžete to provést pomocí zobrazení událostí okno Vlastnosti v C# nebo pomocí `Handles` rozevíracích seznamů název **třídy** a názvu **metody** v editoru kódu Visual Basic.  
   
 ### <a name="to-connect-multiple-events-to-a-single-event-handler-in-visual-basic"></a>Připojení více událostí k jedné obslužné rutině události v Visual Basic  
   
@@ -28,7 +29,7 @@ V návrhu aplikace může být nutné použít jednu obslužnou rutinu události
   
 3. V rozevíracím seznamu **název metody** vyberte jednu z událostí, které má obslužná rutina události zpracovat.  
   
-4. Editor kódu vloží příslušnou obslužnou rutinu události a umístí kurzor do metody. V následujícím příkladu je to událost <xref:System.Windows.Forms.Control.Click> pro ovládací prvek <xref:System.Windows.Forms.Button>.  
+4. Editor kódu vloží příslušnou obslužnou rutinu události a umístí kurzor do metody. V následujícím příkladu je to <xref:System.Windows.Forms.Control.Click> událost <xref:System.Windows.Forms.Button> ovládacího prvku.  
   
     ```vb  
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click  
@@ -36,7 +37,7 @@ V návrhu aplikace může být nutné použít jednu obslužnou rutinu události
     End Sub  
     ```  
   
-5. Přidejte další události, které chcete zpracovat, do klauzule `Handles`.  
+5. Do klauzule přidejte další události, které byste chtěli zpracovat `Handles` .  
   
     ```vb  
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click, Button2.Click  
@@ -60,7 +61,7 @@ V návrhu aplikace může být nutné použít jednu obslužnou rutinu události
   
      Kód se přidá do formuláře, aby se událost navázala na existující obslužnou rutinu události.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Vytváření obslužných rutin událostí ve Windows Forms](creating-event-handlers-in-windows-forms.md)
 - [Přehled obslužných rutin událostí](event-handlers-overview-windows-forms.md)

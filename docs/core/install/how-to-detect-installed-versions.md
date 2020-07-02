@@ -6,12 +6,12 @@ ms.author: adegeo
 ms.date: 12/04/2019
 ms.custom: updateeachrelease
 zone_pivot_groups: operating-systems-set-one
-ms.openlocfilehash: cc4d9c6a366cd0e5da4c3446536c93efdc9f5503
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: 96db0d707cefed791d9c2c01a6615e9af5168cc5
+ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85324819"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85802985"
 ---
 # <a name="how-to-check-that-net-core-is-already-installed"></a>Jak ověřit, že je rozhraní .NET Core již nainstalováno
 
@@ -19,7 +19,7 @@ V tomto článku se dozvíte, jak zjistit, které verze modulu runtime .NET Core
 
 Instalace sady SDK nainstaluje odpovídající modul runtime.
 
-Pokud některý z příkazů v tomto článku neproběhne úspěšně, nemáte nainstalovaný modul runtime nebo sadu SDK. Další informace najdete v tématu [Stažení a instalace .NET Core](index.md).
+Pokud některý z příkazů v tomto článku neproběhne úspěšně, nemáte nainstalovaný modul runtime nebo sadu SDK. Další informace najdete v článcích věnovaném instalaci pro [Windows](windows.md), [MacOS](macos.md)nebo [Linux](linux.md).
 
 ## <a name="check-sdk-versions"></a>Kontrolovat verze sady SDK
 

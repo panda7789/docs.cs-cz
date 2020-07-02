@@ -1,17 +1,23 @@
 ---
-ms.openlocfilehash: 6fafb689af5d50b31b19f5d1fe7090a6c256ca45
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5e2e8d1ec5d698d1c1649c2a0a1b4b77dbdf4022
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "67802460"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85621118"
 ---
-### <a name="wpf-printing-stack-update"></a>Aktualizace zásobníku tisku WPF
+### <a name="wpf-printing-stack-update"></a>Aktualizace zásobníku pro tisk WPF
 
-|   |   |
-|---|---|
-|Podrobnosti|WPF je tisková rozhraní <xref:System.Printing.PrintQueue?displayProperty=name> API pomocí nyní volání okna rozhraní API balíčku tiskových dokumentů ve prospěch nyní zastaralé XPS Print API. Změna byla provedena s ohledem na použitelnost; uživatelé ani vývojáři by měli vidět žádné změny v chování nebo využití rozhraní API. Nový tiskový zásobník je ve výchozím nastavení povolen při spuštění v aktualizaci Windows 10 Creators Update. Starý tiskový zásobník bude i nadále fungovat stejně jako dříve ve starších verzích systému Windows.|
-|Návrh|Chcete-li použít starý zásobník v aktualizaci <code>UseXpsOMPrinting</code> Windows 10 <code>HKEY_CURRENT_USER\Software\Microsoft\.NETFramework\Windows Presentation Foundation\Printing</code> Creators <code>1</code>Update, nastavte REG_DWORD hodnotu klíče registru na .|
-|Rozsah|Edge|
-|Version|4.7|
+#### <a name="details"></a>Podrobnosti
+
+Rozhraní API pro tisk v GRAFICKÉm rozhraní <xref:System.Printing.PrintQueue?displayProperty=fullName> API pomocí okna pro tisk balíčku. Tato změna se provedla s ohledem na službu. žádný z uživatelů ani vývojářů by neměl zobrazovat žádné změny v chování nebo použití rozhraní API. Při spuštění ve Windows 10 Creators Update je nový tiskový zásobník standardně povolený. Starý tiskový zásobník bude dál fungovat stejně jako dřív ve starších verzích Windows.
+
+#### <a name="suggestion"></a>Návrh
+
+Pokud chcete použít starou sadu Windows 10 Creators Update, nastavte <code>UseXpsOMPrinting</code> REG_DWORD hodnotu <code>HKEY_CURRENT_USER\Software\Microsoft\.NETFramework\Windows Presentation Foundation\Printing</code> klíče registru na <code>1</code> .
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   |Edge|
+|Verze|4,7|
 |Typ|Modul runtime|

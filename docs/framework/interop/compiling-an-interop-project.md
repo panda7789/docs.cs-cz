@@ -1,5 +1,6 @@
 ---
 title: Kompilace projektu interoperability
+description: Přečtěte si, jak zkompilovat projekt zprostředkovatele komunikace s objekty COM, který je kompilován jako spravované projekty, pokud odkazuje na jedno nebo více sestavení obsahujících importované typy modelu COM.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - interoperation with unmanaged code, compiling
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - interoperation with unmanaged code, exposing COM components
 - COM interop, exposing COM components
 ms.assetid: 6fcf6588-5e25-41af-b4ae-780974f2c3df
-ms.openlocfilehash: 32102910ae674a97e941e1346a1898585f503527
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a8dfbeb88d0057eb3c9047b4435f021750ed86d2
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123674"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85620856"
 ---
 # <a name="compiling-an-interop-project"></a>Kompilace projektu interoperability
 
@@ -37,7 +38,7 @@ Projekty Interop modelu COM, které odkazují na jedno nebo více sestavení obs
 
  Chcete-li zkompilovat aplikaci, která zahrnuje primární definiční sestavení při nasazení, použijte přepínač **/reference** Compiler a zadejte název definičního sestavení.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Vystavení komponent COM pro rozhraní .NET Framework](exposing-com-components.md)
 - [Jazyková nezávislost a jazykově nezávislé komponenty](../../standard/language-independence-and-language-independent-components.md)

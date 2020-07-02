@@ -1,7 +1,7 @@
 ---
 title: 'Příklad regulárního výrazu: vyhledávání HREF atributů'
 description: Podívejte se na příklad regulárních výrazů v .NET. V příkladu se prohledá vstupní řetězec a zobrazí všechny hodnoty atributů href a jejich umístění.
-ms.date: 03/30/2017
+ms.date: 06/30/2020
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
@@ -14,17 +14,19 @@ helpviewer_keywords:
 - regular expressions [.NET Framework], examples
 - pattern-matching with regular expressions, examples
 ms.assetid: fae2c15b-7adf-4b15-b118-58eb3906994f
-ms.openlocfilehash: 36273901ac9afb762ac70ee5d6dcd80ff0ede11d
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 7bcc2a4242bfaed3e3340347a30e97e7e4060794
+ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84583489"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85802846"
 ---
 # <a name="regular-expression-example-scanning-for-hrefs"></a>Příklad regulárního výrazu: vyhledávání HREF atributů
 Následující příklad vyhledá vstupní řetězec a zobrazí všechny atributy href = "..." hodnoty a jejich umístění v řetězci.  
-  
-## <a name="the-regex-object"></a>Objekt Regex  
+
+[!INCLUDE [regex](../../../includes/regex.md)]
+
+## <a name="the-regex-object"></a>Objekt Regex
  Vzhledem k tomu `DumpHRefs` , že metodu lze volat víckrát z uživatelského kódu, používá `static` metodu ( `Shared` v Visual Basic) <xref:System.Text.RegularExpressions.Regex.Match%28System.String%2CSystem.String%2CSystem.Text.RegularExpressions.RegexOptions%29?displayProperty=nameWithType> . To umožňuje modulu regulárních výrazů ukládat do mezipaměti regulární výraz a vyhnout se režii při vytváření instancí nového <xref:System.Text.RegularExpressions.Regex> objektu pokaždé, když je metoda volána. <xref:System.Text.RegularExpressions.Match>Objekt je pak použit k iterování všech shod v řetězci.  
   
  [!code-csharp[RegularExpressions.Examples.HREF#1](../../../samples/snippets/csharp/VS_Snippets_CLR/RegularExpressions.Examples.HREF/cs/example.cs#1)]
@@ -55,6 +57,6 @@ Následující příklad vyhledá vstupní řetězec a zobrazí všechny atribut
   
  Aby tato řešení vyřešila tyto problémy, <xref:System.Text.RegularExpressions.Regex> Třída podporuje syntaxi `(?<name>…)` pro zachycení shody do zadané patice (slot lze pojmenovat pomocí řetězce nebo celého čísla; celá čísla lze odvolat rychleji). Proto mohou být alternativní shody stejného řetězce směrovány na stejné místo. V případě konfliktu je poslední shoda odhozena do slotu úspěšná. (K dispozici je však úplný seznam více shod pro jednu oblast. Podrobnosti najdete v <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType> kolekci.)  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Regulární výrazy .NET](regular-expressions.md)

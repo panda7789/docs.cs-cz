@@ -1,18 +1,27 @@
 ---
-ms.openlocfilehash: cbe1b32fa40e509f620845866c7a584e37f49a80
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f955e270f709ddf6eea2e44bbcf386e372b9f6e3
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "67858614"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85621136"
 ---
-### <a name="targetframeworkname-for-default-app-domain-no-longer-defaults-to-null-if-not-set"></a>TargetFrameworkName pro výchozí doménu aplikace již není výchozí hodnotou null, pokud není nastavena
+### <a name="targetframeworkname-for-default-app-domain-no-longer-defaults-to-null-if-not-set"></a>Hodnota vlastnosti TargetFramework pro výchozí doménu aplikace už není nastavená na hodnotu null.
 
-|   |   |
-|---|---|
-|Podrobnosti|Dříve <xref:System.AppDomainSetup.TargetFrameworkName?displayProperty=name> byla null ve výchozí doméně aplikace, pokud nebyla explicitně nastavena. Počínaje 4.6, <xref:System.AppDomainSetup.TargetFrameworkName?displayProperty=name> vlastnost pro výchozí doméně aplikace bude mít výchozí hodnotu odvozenou z TargetFrameworkAttribute (pokud je k dispozici). Domény aplikací, které nejsou výchozí, <xref:System.AppDomainSetup.TargetFrameworkName?displayProperty=name> budou nadále dědit své domény z výchozí domény aplikace (která nebude ve výchozím nastavení null v 4.6), pokud není explicitně přepsána.|
-|Návrh|Kód by měl být <xref:System.AppDomainSetup.TargetFrameworkName> aktualizován tak, aby nezávisel na výchozí hodnotě null. Pokud je požadováno, aby tato vlastnost nadále vyhodnocovat na hodnotu null, může být explicitně nastavena na tuto hodnotu.|
-|Rozsah|Edge|
-|Version|4.6|
-|Typ|Modul runtime|
-|Ovlivněná rozhraní API|<ul><li><xref:System.AppDomainSetup.TargetFrameworkName?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a>Podrobnosti
+
+<xref:System.AppDomainSetup.TargetFrameworkName?displayProperty=fullName>Dříve byla ve výchozí doméně aplikace null, pokud nebyla explicitně nastavena. Počínaje 4,6 <xref:System.AppDomainSetup.TargetFrameworkName?displayProperty=fullName> bude mít vlastnost pro výchozí doménu aplikace výchozí hodnotu odvozenou od TargetFrameworkAttribute (Pokud je k dispozici). Domény aplikací, které nejsou výchozí, budou nadále dědit <xref:System.AppDomainSetup.TargetFrameworkName?displayProperty=fullName> z výchozí domény aplikace (nejedná se o výchozí hodnotu null v 4,6), pokud není explicitně přepsána.
+
+#### <a name="suggestion"></a>Návrh
+
+Kód by měl být aktualizován na nezávisle na <xref:System.AppDomainSetup.TargetFrameworkName> výchozím nastavení na hodnotu null. Pokud je nutné, aby se tato vlastnost i nadále vyhodnotila na hodnotu null, může být explicitně nastavena na tuto hodnotu.
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   |Edge|
+|Verze|4.6|
+|Typ|Modul runtime
+
+#### <a name="affected-apis"></a>Ovlivněná rozhraní API
+
+-<xref:System.AppDomainSetup.TargetFrameworkName?displayProperty=nameWithType></li></ul>|

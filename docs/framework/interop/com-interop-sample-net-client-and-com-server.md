@@ -1,5 +1,6 @@
 ---
 title: 'Ukázka zprostředkovatele s objekty COM: klient .NET a server COM'
+description: Přečtěte si ukázku kódu, který ukazuje, jak klient .NET přistupuje k serveru COM za účelem vytvoření instance coclass COM a volání členů třídy za účelem provádění výpočtů hypotéky.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - interoperation with unmanaged code, samples
 - COM interop, samples
 ms.assetid: a3f752bb-8945-4e1b-8163-71def6e9f137
-ms.openlocfilehash: d854f474845322ae6df1da5788890a69720a5272
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bc95197813f5e4b0f4c7db6a8f0c24e8b27e4c3e
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79181493"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85620869"
 ---
 # <a name="com-interop-sample-net-client-and-com-server"></a>Ukázka zprostředkovatele s objekty COM: klient .NET a server COM
 Tato ukázka předvádí, jak [klient .NET](#cpconcominteropsamplenetclientcomserveranchor1), sestavený pro přístup k [serveru com](#cpconcominteropsamplenetclientcomserveranchor2), vytvoří instanci třídy coclass modelu COM a volá členy třídy za účelem provedení výpočtů hypotéky.  
@@ -297,6 +298,6 @@ static double Round(double value, short digits)
 }  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Vystavení komponent COM pro rozhraní .NET Framework](exposing-com-components.md)

@@ -1,5 +1,6 @@
 ---
-title: 'Postupy: Kreslení vyplněného obdélníku na formuláři Windows'
+title: 'Postupy: Kreslení plného obdélníku v rozhraní Windows Form'
+description: Naučte se programově nakreslit plný obdélník na formuláři Windows. Přečtěte si také informace o kompilování kódu.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,15 +13,15 @@ helpviewer_keywords:
 - rectangles [Windows Forms], drawing
 - drawing rectangles
 ms.assetid: d656a93c-987d-4809-aafd-493fe17450f0
-ms.openlocfilehash: e551eacf0924c9bffa802fb5d2ba8bae7c1c3a98
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0ad8ec97000e29b2194a9eda713aa43d5557b44c
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62004299"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85621636"
 ---
-# <a name="how-to-draw-a-filled-rectangle-on-a-windows-form"></a>Postupy: Kreslení vyplněného obdélníku na formuláři Windows
-V tomto příkladu Kreslení plného obdélníku ve formuláři.  
+# <a name="how-to-draw-a-filled-rectangle-on-a-windows-form"></a>Postupy: Kreslení plného obdélníku v rozhraní Windows Form
+Tento příklad nakreslí vyplněný obdélník na formuláři.  
   
 ## <a name="example"></a>Příklad  
  [!code-cpp[System.Drawing.ConceptualHowTos#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ConceptualHowTos/cpp/form1.cpp#2)]
@@ -28,10 +29,10 @@ V tomto příkladu Kreslení plného obdélníku ve formuláři.
  [!code-vb[System.Drawing.ConceptualHowTos#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ConceptualHowTos/VB/form1.vb#2)]  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Tuto metodu nelze volat <xref:System.Windows.Forms.Form.Load> obslužné rutiny události. Vykreslený obsah aktivním, pokud je velikost nebo zakryto jiný formulář. formuláře. Chcete-li obsah automaticky repaint, by měly přepsat <xref:System.Windows.Forms.Control.OnPaint%2A> metody.  
+ Tuto metodu nelze volat v <xref:System.Windows.Forms.Form.Load> obslužné rutině události. Nakreslený obsah nebude překreslen v případě, že dojde ke změně velikosti formuláře nebo jeho skrytí jiným formulářem. Chcete-li obsah automaticky překreslit, měli byste přepsat <xref:System.Windows.Forms.Control.OnPaint%2A> metodu.  
   
 ## <a name="robust-programming"></a>Robustní programování  
- Vždy byste měli zavolat <xref:System.IDisposable.Dispose%2A> na všechny objekty, které využívají systémové prostředky, jako například <xref:System.Drawing.Brush> a <xref:System.Drawing.Graphics> objekty.  
+ Vždy byste měli volat <xref:System.IDisposable.Dispose%2A> všechny objekty, které využívají systémové prostředky, například <xref:System.Drawing.Brush> a <xref:System.Drawing.Graphics> objekty.  
   
 ## <a name="see-also"></a>Viz také:
 

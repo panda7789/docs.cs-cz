@@ -1,16 +1,17 @@
 ---
 title: 'Postupy: Registrace primárních sestavení spolupráce'
+description: Zaregistrujte primární spolupracující sestavení pomocí nástroje pro registraci sestavení (Regasm.exe) a přečtěte si informace o dalších problémech souvisejících se sestaveními spolupráce.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - registering primary interop assemblies
 - primary interop assemblies, registering
 ms.assetid: 4b2fcf8a-429d-43ce-8334-e026040be8bb
-ms.openlocfilehash: c799e4ead2932f1c376a57488df30390ad48b90f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a15bda7b40f160b31028c62cf7c73bdedd9541fa
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73107684"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85622741"
 ---
 # <a name="how-to-register-primary-interop-assemblies"></a>Postupy: Registrace primárních sestavení spolupráce
 
@@ -22,7 +23,7 @@ Třídy lze zařadit pouze pomocí zprostředkovatele komunikace s objekty COM a
 
  I v případě, že neplánujete vystavovat typy modelu COM třetích stran, může použití primárního definičního sestavení zjednodušit úlohu vzájemného fungování komponent modelu COM. Tato strategie ale neposkytuje žádnou izolaci ze změn, které může dodavatel dělat pro typy definované v primárním definičním sestavení. Pokud vaše aplikace vyžaduje takovou izolaci, vygenerujte vlastní definiční sestavení namísto použití primárního definičního sestavení.
 
- Předtím, než je možné na ně odkazovat pomocí sady Visual Studio, je nutné zaregistrovat všechna získaná primární sestavení vzájemné spolupráce na vašem vývojovém počítači. Visual Studio hledá a použije primární definiční sestavení při prvním odkazování typu z knihovny typů modelu COM. Pokud Visual Studio nemůže najít primární definiční sestavení přidružené k knihovně typů, zobrazí se výzva k jeho získání nebo nabídce pro vytvoření sestavení vzájemné spolupráce. Nástroj pro [Import knihovny typů (Tlbimp. exe)](../tools/tlbimp-exe-type-library-importer.md) také používá registr k nalezení primárních sestavení vzájemné spolupráce.
+ Předtím, než je možné na ně odkazovat pomocí sady Visual Studio, je nutné zaregistrovat všechna získaná primární sestavení vzájemné spolupráce na vašem vývojovém počítači. Visual Studio hledá a použije primární definiční sestavení při prvním odkazování typu z knihovny typů modelu COM. Pokud Visual Studio nemůže najít primární definiční sestavení přidružené k knihovně typů, zobrazí se výzva k jeho získání nebo nabídce pro vytvoření sestavení vzájemné spolupráce. Podobně, nástroj pro [Import knihovny typů (Tlbimp.exe)](../tools/tlbimp-exe-type-library-importer.md) také používá registr k nalezení primárních sestavení vzájemné spolupráce.
 
  I když není nutné registrovat primární spolupracující sestavení, pokud plánujete použít Visual Studio, registrace poskytuje dvě výhody:
 
@@ -30,7 +31,7 @@ Třídy lze zařadit pouze pomocí zprostředkovatele komunikace s objekty COM a
 
 - Můžete se vyhnout nechtěnému generování a použití nového definičního sestavení, pokud v některých případech v budoucnu použijete aplikaci Visual Studio k odkazování na typ, pro který máte neregistrované primární spolupracující sestavení.
 
-K registraci primárního definičního sestavení použijte [Nástroj pro registraci sestavení (Regasm. exe)](../tools/regasm-exe-assembly-registration-tool.md) .
+Použijte [Nástroj pro registraci sestavení (Regasm.exe)](../tools/regasm-exe-assembly-registration-tool.md) k registraci primárního definičního sestavení.
 
 ## <a name="to-register-a-primary-interop-assembly"></a>Registrace primárního definičního sestavení
 
@@ -38,7 +39,7 @@ K registraci primárního definičního sestavení použijte [Nástroj pro regis
 
      **Regasm** *AssemblyName*
 
-     V tomto příkazu je *AssemblyName* název souboru registrovaného sestavení. Nástroj Regasm. exe přidá položku pro primární definiční sestavení pod stejným klíčem registru jako původní knihovnu typů.
+     V tomto příkazu je *AssemblyName* název souboru registrovaného sestavení. Regasm.exe přidá položku pro primární definiční sestavení pod stejným klíčem registru jako původní knihovnu typů.
 
 ## <a name="example"></a>Příklad
  Následující příklad registruje `CompanyA.UtilLib.dll` primární definiční sestavení.
@@ -47,7 +48,7 @@ K registraci primárního definičního sestavení použijte [Nástroj pro regis
 regasm CompanyA.UtilLib.dll
 ```
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Programování s primárními definičními sestaveními](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/baxfadst(v=vs.100))
 - [Hledání primárních sestavení vzájemné spolupráce](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/y06sxw56(v=vs.100))

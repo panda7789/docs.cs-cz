@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: 0fb21b09fbf97f9c9ac2bf2982c391b87e2debc1
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 7a4ffd5b1b58e6ea7fd46c676e139b77a126aa2b
+ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614354"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85803024"
 ---
 # <a name="deploy-net-core-apps-with-visual-studio"></a>Nasazení aplikací .NET Core pomocí sady Visual Studio
 
@@ -71,7 +71,7 @@ Nasazení rozhraní závislého na rozhraní s jednou nebo více závislostmi t�
 
 1. Pomocí **Správce balíčků NuGet** přidejte do svého projektu odkaz na balíček NuGet; a pokud balíček ještě není ve vašem systému k dispozici, nainstalujte ho. Správce balíčků otevřete tak, že vyberete **nástroje**správce  >  **balíčků NuGet**  >  **Spravovat balíčky NuGet pro řešení**.
 
-1. Ověřte, že jsou v systému nainstalované závislosti třetích stran (například `Newtonsoft.Json` ), a pokud nejsou, nainstalujte je. Karta **Installed (instalovat** ) obsahuje seznam balíčků NuGet nainstalovaných ve vašem systému. Pokud `Newtonsoft.Json` zde není uveden, vyberte kartu **Procházet** a do vyhledávacího pole zadejte "Newtonsoft. JSON". Vyberte `Newtonsoft.Json` a v pravém podokně vyberte svůj projekt před výběrem možnosti **nainstalovat**.
+1. Ověřte, že jsou v systému nainstalované závislosti třetích stran (například `Newtonsoft.Json` ), a pokud nejsou, nainstalujte je. Karta **Installed (instalovat** ) obsahuje seznam balíčků NuGet nainstalovaných ve vašem systému. Pokud `Newtonsoft.Json` zde není uveden, vyberte kartu **Procházet** a do vyhledávacího pole zadejte "Newtonsoft.Json". Vyberte `Newtonsoft.Json` a v pravém podokně vyberte svůj projekt před výběrem možnosti **nainstalovat**.
 
 1. Pokud `Newtonsoft.Json` je v systému už nainstalovaná, přidejte ho do svého projektu tak, že ho vyberete v pravém podokně na kartě **Spravovat balíčky pro řešení** .
 
@@ -98,7 +98,7 @@ Nasazení samostatného nasazení bez závislostí třetích stran zahrnuje vytv
 
    Chcete-li povolit režim invariant, klikněte pravým tlačítkem myši na projekt (ne řešení) v **Průzkumník řešení**a vyberte **Upravit SCD. csproj** nebo **upravte SCD. vbproj**. Pak přidejte do souboru následující zvýrazněné řádky:
 
-   [!code-xml[globalization-invariant-mode](./snippets/deploy-with-vs/xml/invariant.csproj?highlight=6-8)]
+   [!code-xml[globalization-invariant-mode](./snippets/deploy-with-vs/xml/invariant.csproj?highlight=7-9)]
 
 1. Vytvořte sestavení pro ladění aplikace.
 
@@ -192,9 +192,9 @@ Pro každou platformu, na kterou vaše aplikace cílí, udělejte toto:
 
 1. Vyberte umístění, kde aplikace Visual Studio publikuje vaši aplikaci.
 
-   Pokud publikujete pouze na jednu platformu, můžete přijmout výchozí hodnotu v textovém poli **Zvolit složku** ; Tím se publikuje nasazení aplikace závislé na rozhraní do adresáře * \< Project-Directory> \bin\release\netcoreapp2.1\publish* .
+   Pokud publikujete pouze na jednu platformu, můžete přijmout výchozí hodnotu v textovém poli **Zvolit složku** ; Tím se publikuje nasazení aplikace závislé na rozhraní do adresáře * \<project-directory> \bin\Release\netcoreapp2.1\publish* .
 
-   Pokud publikujete na více než jednu platformu, přidejte řetězec, který identifikuje cílovou platformu. Například pokud připojíte řetězec "Linux" do cesty k souboru, Visual Studio publikuje nasazení aplikace závislé na rozhraní do adresáře * \< Project-Directory> \bin\release\netcoreapp2.1\publish\linux* .
+   Pokud publikujete na více než jednu platformu, přidejte řetězec, který identifikuje cílovou platformu. Například pokud připojíte řetězec "Linux" do cesty k souboru, Visual Studio publikuje nasazení aplikace závislé na rozhraní do adresáře * \<project-directory> \bin\Release\netcoreapp2.1\publish\linux* .
 
 1. Vytvořte profil tak, že vyberete ikonu rozevíracího seznamu vedle tlačítka **publikovat** a vyberete **vytvořit profil**. Pak vyberte tlačítko **vytvořit profil** a vytvořte profil.
 
@@ -268,7 +268,7 @@ Nasazení samostatně uzavřeného nasazení s jednou nebo více závislostmi t�
 
 1. Pomocí **Správce balíčků NuGet** přidejte do svého projektu odkaz na balíček NuGet; a pokud balíček ještě není ve vašem systému k dispozici, nainstalujte ho. Správce balíčků otevřete tak, že vyberete **nástroje**správce  >  **balíčků NuGet**  >  **Spravovat balíčky NuGet pro řešení**.
 
-1. Ověřte, že jsou v systému nainstalované závislosti třetích stran (například `Newtonsoft.Json` ), a pokud nejsou, nainstalujte je. Karta **Installed (instalovat** ) obsahuje seznam balíčků NuGet nainstalovaných ve vašem systému. Pokud `Newtonsoft.Json` zde není uveden, vyberte kartu **Procházet** a do vyhledávacího pole zadejte "Newtonsoft. JSON". Vyberte `Newtonsoft.Json` a v pravém podokně vyberte svůj projekt před výběrem možnosti **nainstalovat**.
+1. Ověřte, že jsou v systému nainstalované závislosti třetích stran (například `Newtonsoft.Json` ), a pokud nejsou, nainstalujte je. Karta **Installed (instalovat** ) obsahuje seznam balíčků NuGet nainstalovaných ve vašem systému. Pokud `Newtonsoft.Json` zde není uveden, vyberte kartu **Procházet** a do vyhledávacího pole zadejte "Newtonsoft.Json". Vyberte `Newtonsoft.Json` a v pravém podokně vyberte svůj projekt před výběrem možnosti **nainstalovat**.
 
 1. Pokud `Newtonsoft.Json` je v systému už nainstalovaná, přidejte ho do svého projektu tak, že ho vyberete v pravém podokně na kartě **Spravovat balíčky pro řešení** .
 
@@ -309,7 +309,7 @@ Při nasazení aplikace jsou také součástí souborů aplikace všechny závis
 
 Samostatné nasazení můžete nasadit jenom pomocí knihovny třetích stran na platformy podporované touto knihovnou. To se podobá tomu, že se závislosti třetích stran s nativními závislostmi v nasazení závislém na rozhraní, kde nativní závislosti neexistují na cílové platformě, pokud se tam dříve nenainstalovaly.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Nasazení aplikace .NET Core](index.md)
 - [Katalog identifikátorů runtime .NET Core (RID)](../rid-catalog.md)

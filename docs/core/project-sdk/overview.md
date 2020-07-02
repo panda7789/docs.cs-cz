@@ -4,12 +4,12 @@ titleSuffix: ''
 description: Přečtěte si o sadách SDK projektu .NET Core.
 ms.date: 02/02/2020
 ms.topic: conceptual
-ms.openlocfilehash: 67dede3caabd2967adca22e7563376c761829655
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 9db62ab7774e3dd71412fa346d78ae0c62a2f81f
+ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144236"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85803038"
 ---
 # <a name="net-core-project-sdks"></a>Sady SDK pro projekty .NET Core
 
@@ -19,7 +19,7 @@ Projekty .NET Core jsou přidruženy k sadě SDK (Software Development Kit). Ka�
 
 Pro .NET Core jsou k dispozici následující sady SDK:
 
-| ID | Popis | Sestavy|
+| ID | Popis | úložiště|
 | - | - | - |
 | `Microsoft.NET.Sdk` | .NET Core SDK | <https://github.com/dotnet/sdk> |
 | `Microsoft.NET.Sdk.Web` | [Sada Web SDK](/aspnet/core/razor-pages/web-sdk) pro .NET Core | <https://github.com/aspnet/websdk> |
@@ -41,7 +41,7 @@ Projekty .NET Core jsou založeny na formátu [MSBuild](/visualstudio/msbuild/ms
 </Project>
 ```
 
-Pokud chcete zadat sadu SDK, která pochází z NuGet, zahrňte na konci názvu verzi nebo zadejte název a verzi v souboru *Global. JSON* .
+Pokud chcete zadat sadu SDK, která pochází z NuGet, zahrňte na konci názvu tuto verzi, nebo zadejte název a verzi v souboru *global.js* .
 
 ```xml
 <Project Sdk="MSBuild.Sdk.Extras/2.0.54">
@@ -89,9 +89,9 @@ Následující tabulka ukazuje, které prvky a které [globy](https://en.wikiped
 
 | Prvek           | Zahrnout glob                              | Vyloučit glob                                                  | Odebrat glob              |
 |-------------------|-------------------------------------------|---------------------------------------------------------------|--------------------------|
-| Sestavení           | \*\*/\*cs (nebo jiné jazykové rozšíření) | \*\*/\*uživatelský  \*\*/\*.\* Souhrn  \*\*/\*. SLN  \*\*/\*. vssscc  | Není k dispozici                      |
-| EmbeddedResource  | \*\*/\*. resx                              | \*\*/\*uživatelský \*\*/\*.\* Souhrn \*\*/\*. SLN \*\*/\*. vssscc     | Není k dispozici                      |
-| Žádné              | \*\*/\*                                   | \*\*/\*uživatelský \*\*/\*.\* Souhrn \*\*/\*. SLN \*\*/\*. vssscc     | \*\*/\*cs \*\*/\*. RESX |
+| Sestavení           | \*\*/\*cs (nebo jiné jazykové rozšíření) | \*\*/\*uživatelský  \*\*/\*.\* Souhrn  \*\*/\*. SLN  \*\*/\*. vssscc  | –                      |
+| EmbeddedResource  | \*\*/\*. resx                              | \*\*/\*uživatelský \*\*/\*.\* Souhrn \*\*/\*. SLN \*\*/\*. vssscc     | –                      |
+| Žádná              | \*\*/\*                                   | \*\*/\*uživatelský \*\*/\*.\* Souhrn \*\*/\*. SLN \*\*/\*. vssscc     | \*\*/\*cs \*\*/\*. RESX |
 
 > [!NOTE]
 > `./bin`Složky a `./obj` , které jsou reprezentovány `$(BaseOutputPath)` vlastnostmi a nástroje `$(BaseIntermediateOutputPath)` MSBuild, jsou ve výchozím nastavení vyloučeny z globy. Vyloučení jsou reprezentovány vlastností `$(DefaultItemExcludes)` .
@@ -174,8 +174,8 @@ Chcete-li využívat vlastní cíl v projektu, přidejte `PackageReference` prve
 
 Můžete nakonfigurovat, jak se má používat vlastní cíl. Vzhledem k tomu, že se jedná o cíl MSBuild, může záviset na daném cíli, spustit po jiném cíli nebo být ručně vyvolán pomocí `dotnet msbuild -t:<target-name>` příkazu. Chcete-li však zajistit lepší činnost koncového uživatele, můžete kombinovat nástroje pro jednotlivé projekty a vlastní cíle. V tomto scénáři akceptuje Nástroj pro každý projekt jakékoli parametry, které jsou potřeba, a překládá se na požadované [`dotnet msbuild`](../tools/dotnet-msbuild.md) vyvolání, které provádí cíl. Ukázku tohoto druhu součinnosti si můžete prohlédnout v úložišti [ukázek MVP 2016 Hackathon](https://github.com/dotnet/MVPSummitHackathon2016) v [`dotnet-packer`](https://github.com/dotnet/MVPSummitHackathon2016/tree/master/dotnet-packer) projektu.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Instalace .NET Core](../install/index.md)
+- [Instalace .NET Core](../install/index.yml)
 - [Jak používat sady SDK projektů MSBuild](/visualstudio/msbuild/how-to-use-project-sdk)
 - [Balíčky vlastních cílů a vlastností MSBuild balíčku pomocí NuGet](/nuget/create-packages/creating-a-package#include-msbuild-props-and-targets-in-a-package)

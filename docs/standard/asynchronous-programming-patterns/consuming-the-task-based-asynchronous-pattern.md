@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Task-based Asynchronous Pattern, .NET Framework support for
 - .NET Framework, asynchronous design patterns
 ms.assetid: 033cf871-ae24-433d-8939-7a3793e547bf
-ms.openlocfilehash: f1a5070c106055b268d43751300d84269fed6a36
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: 68b1f723b3dcc4fd16073a653a778aa480cfa32e
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85325998"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85621753"
 ---
 # <a name="consuming-the-task-based-asynchronous-pattern"></a>Použití asynchronního vzoru založeného na úloze
 
@@ -521,7 +521,7 @@ public async void btnDownload_Click(object sender, RoutedEventArgs e)
             Task.WhenAll(from url in urls select GetBitmapAsync(url));
         if (downloads == await Task.WhenAny(downloads, Task.Delay(3000)))
         {
-            foreach(var bmp in downloads) panel.AddImage(bmp);
+            foreach(var bmp in downloads.Result) panel.AddImage(bmp);
             status.Text = "Downloaded";
         }
         else
@@ -834,7 +834,7 @@ private static void Produce(int data)
 > [!NOTE]
 > <xref:System.Threading.Tasks.Dataflow>Obor názvů je k dispozici v .NET Framework 4,5 až **NuGet**. Chcete-li nainstalovat sestavení, které obsahuje <xref:System.Threading.Tasks.Dataflow> obor názvů, otevřete projekt v aplikaci Visual Studio, v nabídce projekt vyberte možnost **Spravovat balíčky NuGet** a vyhledejte balíček Microsoft. tpl. Dataflow online.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Asynchronní vzor založený na úlohách (TAP)](task-based-asynchronous-pattern-tap.md)
 - [Implementace asynchronního vzoru založeného na úlohách](implementing-the-task-based-asynchronous-pattern.md)

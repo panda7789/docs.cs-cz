@@ -1,18 +1,27 @@
 ---
-ms.openlocfilehash: d75eff2d2a43ab4488577014ec43a9826b2b2924
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9b734fe960165b6d4b97b861cb3e8f31979f25c5
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "68237820"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85621085"
 ---
-### <a name="remove-ssl3-from-the-wcf-transportdefaults"></a>Odebrání ssl3 z wcf transportdefaults
+### <a name="remove-ssl3-from-the-wcf-transportdefaults"></a>Odebrání SSL3 z TransportDefaults WCF
 
-|   |   |
-|---|---|
-|Podrobnosti|Při použití protokolu NetTcp se zabezpečením přenosu a typem pověření certifikátu již protokol SSL 3 není výchozím protokolem používaným pro vyjednávání zabezpečeného připojení. Ve většině případů by nemělo být žádný dopad na existující aplikace jako TLS 1.0 byla vždy zahrnuta do seznamu protokolů pro NetTcp. Všichni stávající klienti by měli být schopni vyjednat připojení pomocí alespoň TLS1.0.|
-|Návrh|Pokud je požadováno Ssl3, použijte jeden z následujících konfiguračních mechanismů přidat Ssl3 do seznamu vyjednaných protokolů.<ul><li><xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement.SslProtocols></li><li><xref:System.ServiceModel.TcpTransportSecurity.SslProtocols></li><li>[<](~/docs/framework/configure-apps/file-schema/wcf/transport-of-nettcpbinding.md)</li><li>[&lt;sslStreamSecurity&gt; &lt;sekce&gt;customBinding ]~/docs/framework/configure-apps/file-schema/wcf/sslstreamsecurity.md)</li></ul>|
-|Rozsah|Edge|
-|Version|4.6.2|
-|Typ|Modul runtime|
-|Ovlivněná rozhraní API|<ul><li><xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement.SslProtocols?displayProperty=nameWithType></li><li><xref:System.ServiceModel.TcpTransportSecurity.SslProtocols?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a>Podrobnosti
+
+Pokud používáte NetTcp se zabezpečením přenosu a typem přihlašovacích údajů certifikátu, protokol SSL 3 už není výchozím protokolem používaným pro vyjednávání zabezpečeného připojení. Ve většině případů by nemělo dojít k žádným dopadům na stávající aplikace, protože protokol TLS 1,0 byl vždycky zahrnutý do seznamu protokolů pro NetTcp. Všichni existující klienti by měli být schopni vyjednat připojení pomocí aspoň TLS 1.0.
+
+#### <a name="suggestion"></a>Návrh
+
+Pokud se vyžaduje SSL3, použijte jeden z následujících konfiguračních mechanismů a přidejte SSL3 do seznamu sjednaných protokolů.<ul><li><xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement.SslProtocols></li><li><xref:System.ServiceModel.TcpTransportSecurity.SslProtocols></li><li>[<](~/docs/framework/configure-apps/file-schema/wcf/transport-of-nettcpbinding.md)</li><li>[ &lt; &gt; oddíl sslStreamSecurity v &lt; CustomBinding &gt; ] ~/docs/Framework/Configure-Apps/File-Schema/WCF/sslStreamSecurity.MD)</li></ul>
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   |Edge|
+|Verze|4.6.2|
+|Typ|Modul runtime
+
+#### <a name="affected-apis"></a>Ovlivněná rozhraní API
+
+-<xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement.SslProtocols?displayProperty=nameWithType></li><li><xref:System.ServiceModel.TcpTransportSecurity.SslProtocols?displayProperty=nameWithType></li></ul>|

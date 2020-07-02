@@ -1,5 +1,6 @@
 ---
 title: Vytváření prototypů ve spravovaném kódu
+description: Vytvořte prototypy ve spravovaném kódu .NET, abyste měli přístup k nespravovaným funkcím a používali pole atributů, která přistupují k definici metody ve spravovaném kódu.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -17,12 +18,12 @@ helpviewer_keywords:
 - DLL functions
 - object fields in platform invoke
 ms.assetid: ecdcf25d-cae3-4f07-a2b6-8397ac6dc42d
-ms.openlocfilehash: 712040c3482b51c4dafe0ee87fdda8cd848fb7fc
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 76b1a87c4513fdee21c5c3d5eba533b11e022e3a
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123617"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85622156"
 ---
 # <a name="creating-prototypes-in-managed-code"></a>Vytváření prototypů ve spravovaném kódu
 Toto téma popisuje, jak získat přístup k nespravovaným funkcím a zavádí několik polí atributů, která přistupují k definici metody ve spravovaném kódu. Příklady, které ukazují, jak vytvořit. Deklarace založené na síti, které se mají použít s voláním platformy, najdete v tématu [zařazování dat pomocí vyvolání platformy](marshaling-data-with-platform-invoke.md).  
@@ -30,7 +31,7 @@ Toto téma popisuje, jak získat přístup k nespravovaným funkcím a zavádí 
  Předtím, než budete moci získat přístup k nespravované funkci knihovny DLL ze spravovaného kódu, je nutné znát název funkce a název knihovny DLL, která ji exportuje. Pomocí těchto informací můžete začít psát spravovanou definici pro nespravovanou funkci, která je implementována v knihovně DLL. Kromě toho můžete upravit způsob, jakým volání platformy vytvoří funkci a zařadí data do a z funkce.  
   
 > [!NOTE]
-> Funkce rozhraní API systému Windows, které přidělují řetězec, umožňují uvolnit řetězec pomocí metody, jako je `LocalFree`například. Volání platformy zpracovává tyto parametry odlišně. Pro volání vyvolání platformy nastavte parametr jako `IntPtr` typ místo `String` typu. Použijte metody, které jsou k dispozici v <xref:System.Runtime.InteropServices.Marshal?displayProperty=nameWithType> třídě, a převeďte typ na řetězec ručně a uvolněte ho ručně.  
+> Funkce rozhraní API systému Windows, které přidělují řetězec, umožňují uvolnit řetězec pomocí metody, jako je například `LocalFree` . Volání platformy zpracovává tyto parametry odlišně. Pro volání vyvolání platformy nastavte parametr jako `IntPtr` typ místo `String` typu. Použijte metody, které jsou k dispozici v třídě, a <xref:System.Runtime.InteropServices.Marshal?displayProperty=nameWithType> převeďte typ na řetězec ručně a uvolněte ho ručně.  
   
 ## <a name="declaration-basics"></a>Základy deklarace  
  Spravované definice na nespravované funkce jsou závislé na jazyku, jak vidíte v následujících příkladech. Další kompletní příklady kódu naleznete v tématu [Příklady vyvolání platformy](platform-invoke-examples.md).  
@@ -45,7 +46,7 @@ Friend Class NativeMethods
 End Class
 ```
   
- Chcete-li <xref:System.Runtime.InteropServices.DllImportAttribute.BestFitMapping?displayProperty=nameWithType>použít <xref:System.Runtime.InteropServices.DllImportAttribute.CallingConvention?displayProperty=nameWithType>pole <xref:System.Runtime.InteropServices.DllImportAttribute.ExactSpelling?displayProperty=nameWithType>, <xref:System.Runtime.InteropServices.DllImportAttribute.PreserveSig?displayProperty=nameWithType>, <xref:System.Runtime.InteropServices.DllImportAttribute.SetLastError?displayProperty=nameWithType>,, <xref:System.Runtime.InteropServices.DllImportAttribute.ThrowOnUnmappableChar?displayProperty=nameWithType> , nebo na deklaraci Visual Basic, je nutné použít <xref:System.Runtime.InteropServices.DllImportAttribute> atribut namísto `Declare` příkazu.  
+ Chcete-li <xref:System.Runtime.InteropServices.DllImportAttribute.BestFitMapping?displayProperty=nameWithType> použít <xref:System.Runtime.InteropServices.DllImportAttribute.CallingConvention?displayProperty=nameWithType> pole,,, <xref:System.Runtime.InteropServices.DllImportAttribute.ExactSpelling?displayProperty=nameWithType> <xref:System.Runtime.InteropServices.DllImportAttribute.PreserveSig?displayProperty=nameWithType> , <xref:System.Runtime.InteropServices.DllImportAttribute.SetLastError?displayProperty=nameWithType> , nebo <xref:System.Runtime.InteropServices.DllImportAttribute.ThrowOnUnmappableChar?displayProperty=nameWithType> na deklaraci Visual Basic, je nutné použít <xref:System.Runtime.InteropServices.DllImportAttribute> atribut namísto `Declare` příkazu.  
   
 ```vb
 Imports System.Runtime.InteropServices
@@ -90,23 +91,23 @@ extern "C" int MessageBox(
 |Pole|Popis|  
 |-----------|-----------------|  
 |<xref:System.Runtime.InteropServices.DllImportAttribute.BestFitMapping>|Povolí nebo zakáže mapování podle nejlepšího umístění.|  
-|<xref:System.Runtime.InteropServices.DllImportAttribute.CallingConvention>|Určuje konvenci volání, která se má použít při předávání argumentů metody. Výchozí hodnota je `WinAPI`, která odpovídá `__stdcall` 32 platformám založeným na technologii Intel.|  
+|<xref:System.Runtime.InteropServices.DllImportAttribute.CallingConvention>|Určuje konvenci volání, která se má použít při předávání argumentů metody. Výchozí hodnota je `WinAPI` , která odpovídá `__stdcall` 32 platformám založeným na technologii Intel.|  
 |<xref:System.Runtime.InteropServices.DllImportAttribute.CharSet>|Ovládací prvky pro pokládání názvů a způsob, jakým se mají zařazovat řetězcové argumenty do funkce. Výchozí formát je `CharSet.Ansi`.|  
 |<xref:System.Runtime.InteropServices.DllImportAttribute.EntryPoint>|Určuje vstupní bod knihovny DLL, který má být volán.|  
 |<xref:System.Runtime.InteropServices.DllImportAttribute.ExactSpelling>|Určuje, zda má být vstupní bod změněn tak, aby odpovídal znakové sadě. Výchozí hodnota se liší podle programovacího jazyka.|  
 |<xref:System.Runtime.InteropServices.DllImportAttribute.PreserveSig>|Určuje, zda má být podpis spravované metody transformován na nespravovaný podpis, který vrací HRESULT a má další argument [out, retval] pro návratovou hodnotu.<br /><br /> Výchozí hodnota je `true` (podpis by neměl být transformované).|  
-|<xref:System.Runtime.InteropServices.DllImportAttribute.SetLastError>|Umožňuje volajícímu použít funkci `Marshal.GetLastWin32Error` rozhraní API k určení, zda došlo k chybě při provádění metody. V Visual Basic je `true`výchozí hodnota; v jazyce C# a C++ je `false`výchozí hodnota.|  
+|<xref:System.Runtime.InteropServices.DllImportAttribute.SetLastError>|Umožňuje volajícímu použít `Marshal.GetLastWin32Error` funkci rozhraní API k určení, zda došlo k chybě při provádění metody. V Visual Basic výchozí hodnota je `true` ; v jazyce C# a C++ je výchozí hodnota `false` .|  
 |<xref:System.Runtime.InteropServices.DllImportAttribute.ThrowOnUnmappableChar>|Řídí vyvolání výjimky na nemapovatelný znak Unicode, který je převeden na znak ANSI "?".|  
   
- Podrobné referenční informace najdete v tématu <xref:System.Runtime.InteropServices.DllImportAttribute>.  
+ Podrobné referenční informace najdete v tématu <xref:System.Runtime.InteropServices.DllImportAttribute> .  
   
 ## <a name="platform-invoke-security-considerations"></a>Požadavky na zabezpečení volání platformy  
- Členy `Assert` <xref:System.Security.Permissions.SecurityAction> , `Deny`a `PermitOnly` jsou označováni jako *modifikátory procházení zásobníku*. Tyto členy jsou ignorovány, pokud jsou používány jako deklarativní atributy v deklaracích vyvolání platformy a příkazy IDL (Interface Definition Language) modelu COM.  
+ `Assert`Členy, `Deny` a `PermitOnly` <xref:System.Security.Permissions.SecurityAction> jsou označováni jako *modifikátory procházení zásobníku*. Tyto členy jsou ignorovány, pokud jsou používány jako deklarativní atributy v deklaracích vyvolání platformy a příkazy IDL (Interface Definition Language) modelu COM.  
   
 ### <a name="platform-invoke-examples"></a>Příklady vyvolání platformy  
  Ukázky pro volání platformy v této části ilustrují použití `RegistryPermission` atributu s modifikátory procházení zásobníku.  
   
- V <xref:System.Security.Permissions.SecurityAction> `Assert`následujícím příkladu jsou modifikátory, `Deny`a `PermitOnly` ignorovány.  
+ V následujícím příkladu <xref:System.Security.Permissions.SecurityAction> `Assert` `Deny` `PermitOnly` jsou modifikátory, a ignorovány.  
   
 ```csharp  
 [DllImport("MyClass.dll", EntryPoint = "CallRegistryPermission")]  
@@ -122,7 +123,7 @@ extern "C" int MessageBox(
     private static extern bool CallRegistryPermissionDeny();  
 ```  
   
- Nicméně `Demand` modifikátor v následujícím příkladu je přijat.  
+ Nicméně `Demand` Modifikátor v následujícím příkladu je přijat.  
   
 ```csharp
 [DllImport("MyClass.dll", EntryPoint = "CallRegistryPermission")]  
@@ -185,7 +186,7 @@ class PInvokeScenario
 #### <a name="com-interop-examples"></a>Příklady spolupráce modelu COM  
  Ukázky spolupráce modelu COM v této části ilustrují použití `RegistryPermission` atributu s modifikátory procházení zásobníku.  
   
- Následující deklarace rozhraní COM interop rozhraní ignorují `Assert`modifikátory `Deny`, `PermitOnly` a podobně jako příklady vyvolání platformy v předchozí části.  
+ Následující deklarace rozhraní COM interop rozhraní ignorují `Assert` `Deny` `PermitOnly` modifikátory, a podobně jako příklady vyvolání platformy v předchozí části.  
   
 ```csharp
 [ComImport, Guid("12345678-43E6-43c9-9A13-47F40B338DE0")]  
@@ -229,7 +230,7 @@ interface IDemandStubsItf
 }  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Používání nespravovaných funkcí DLL](consuming-unmanaged-dll-functions.md)
 - [Určení vstupního bodu](specifying-an-entry-point.md)

@@ -1,17 +1,23 @@
 ---
-ms.openlocfilehash: 946096cb9510ca12bbd2cecd00099142308b072a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9659068304eb208fd6a0a753273453bc669fbc56
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "67856965"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85621115"
 ---
-### <a name="keytips-behavior-improved-in-wpf"></a>Chování klíčových tipů bylo v wpf vylepšeno
+### <a name="keytips-behavior-improved-in-wpf"></a>Vylepšení chování tipů v WPF
 
-|   |   |
-|---|---|
-|Podrobnosti|Klíčové klávesy chování byla změněna tak, aby parity s chováním v aplikaci Microsoft Word a Průzkumníkwindows. Kontrolou, zda je povolen stav klíčového klíče <xref:System.Windows.Input.KeyEventArgs.SystemKey> nebo ne <xref:System.Windows.Input.Key> v <xref:System.Windows.Input.Key.F11>případě stisknutí (zejména nebo) wpf zpracovává klávesové zkratky odpovídajícím způsobem. Klávesové zkratky nyní zavře tezi nabídky i v případě, že je otevřena myší.|
-|Návrh|Není dostupné.|
-|Rozsah|Edge|
-|Version|4.7.2|
+#### <a name="details"></a>Podrobnosti
+
+Chování tipů kláves bylo upraveno tak, aby se v aplikacích Microsoft Word a Windows Explorer nastavila parita s chováním. Tím, že zkontrolujete, jestli je stav KeyTip povolený nebo ne v případě, že se <xref:System.Windows.Input.KeyEventArgs.SystemKey> stiskne (konkrétně <xref:System.Windows.Input.Key> nebo <xref:System.Windows.Input.Key.F11> ) stisknutí, WPF zpracuje KeyTip klíče správně. Pomocí klávesových tipů nyní můžete zavřít nabídku i v případě, že ji otevřete myší.
+
+#### <a name="suggestion"></a>Návrh
+
+–
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   |Edge|
+|Verze|4.7.2|
 |Typ|Modul runtime|

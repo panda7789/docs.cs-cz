@@ -1,17 +1,23 @@
 ---
-ms.openlocfilehash: a573a78109036b87201b53f72aa8dba6755e7a21
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 6da589057cebfbf3f67a46b8d49d3a61f037c4c7
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "67802475"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85622237"
 ---
-### <a name="crash-in-selector-when-removing-an-item-from-a-custom-incc-collection"></a>Selhání v selectoru při odebírání položky z vlastní kolekce INCC
+### <a name="crash-in-selector-when-removing-an-item-from-a-custom-incc-collection"></a>Chyba v selektoru při odebírání položky z vlastní kolekce INCC
 
-|   |   |
-|---|---|
-|Podrobnosti|Může <code>T:System.InvalidOperationException</code> dojít v následujícím scénáři:<ul><li>ItemsSource pro <code>T:System.Windows.Controls.Primitives.Selector</code> a je kolekce s <code>T:System.Collections.Specialized.INotifyCollectionChanged</code>vlastní implementaci .</li><li>Vybraná položka bude odebrána z kolekce.</li><li>Má <code>T:System.Collections.Specialized.NotifyCollectionChangedEventArgs</code> <code>P:System.Collections.Specialized.NotifyCollectionChangedEventArgs.OldStartingIndex</code> = -1 (označující neznámou polohu).</li></ul>Zásobník volání výjimky začíná na adrese System.Windows.Threading.Dispatcher.VerifyAccess() na adrese System.Windows.DependencyObject.GetValue(DependencyProperty dp) na adrese System.Windows.Controls.Primitives.Selector.GetIsSelected(DependencyObject Element)Tato výjimka může dojít v rozhraní .NET Framework 4.5, pokud aplikace má více než jeden podproces dispečera. V rozhraní .NET Framework 4.7 může dojít k výjimce také v aplikacích s jedním podprocesem dispečera. Problém je vyřešen v rozhraní .NET Framework 4.7.1.|
-|Návrh|Upgrade na rozhraní .NET Framework 4.7.1.|
-|Rozsah|Vedlejší|
-|Version|4.7|
+#### <a name="details"></a>Podrobnosti
+
+K <code>T:System.InvalidOperationException</code> tomu může dojít v následujícím scénáři:<ul><li>ItemsSource pro <code>T:System.Windows.Controls.Primitives.Selector</code> je kolekce s vlastní implementací <code>T:System.Collections.Specialized.INotifyCollectionChanged</code> .</li><li>Vybraná položka je odebrána z kolekce.</li><li><code>T:System.Collections.Specialized.NotifyCollectionChangedEventArgs</code>Má <code>P:System.Collections.Specialized.NotifyCollectionChangedEventArgs.OldStartingIndex</code> =-1 (indikuje neznámou pozici).</li></ul>Zásobník volání výjimky začíná na System. Windows. Threading. Dispatcher. VerifyAccess () na System. Windows. DependencyObject. GetValue (DependencyProperty DP) na System. Windows. Controls. Primitivs. Selector. GetIsSelected (DependencyObject element) Tato výjimka se může vyskytovat v .NET Framework 4,5, pokud má aplikace více než jedno dispečerský podproces. V .NET Framework 4,7 se výjimka může nacházet také v aplikacích s jedním dispečerem vlákna. Problém je vyřešen .NET Framework 4.7.1.
+
+#### <a name="suggestion"></a>Návrh
+
+Upgradujte na .NET Framework 4.7.1.
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   |Vedlejší|
+|Verze|4,7|
 |Typ|Modul runtime|

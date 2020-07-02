@@ -9,12 +9,12 @@ helpviewer_keywords:
 - parameters, design guidelines
 - reserved parameters
 ms.assetid: 3f33bf46-4a7b-43b3-bb78-1ffebe0dcfa6
-ms.openlocfilehash: 46c1b8f03d054a63ea837a73fd30eeed163ab0a4
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: e0bc52f5679a7771d5690be9f903e677ce611605
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290094"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85621584"
 ---
 # <a name="parameter-design"></a>Návrh parametru
 
@@ -40,7 +40,7 @@ Tato část obsahuje obecné pokyny pro návrh parametrů, včetně oddílů s p
 
  Tím se lépe komunikuje vztah mezi metodami.
 
-### <a name="choose-between-enum-and-boolean-parameters"></a>Zvolit mezi výčtovým a logickým parametrem
+### <a name="choosing-between-enum-and-boolean-parameters"></a>Volba mezi výčtovým a logickým parametrem  
  ✔️ použít výčty, pokud by měl člen jinak mít dva nebo více logických parametrů.
 
  ❌Nepoužívejte logické hodnoty, pokud nebudete naprosto jisti, že nikdy nebude potřeba více než dvě hodnoty.
@@ -49,7 +49,7 @@ Tato část obsahuje obecné pokyny pro návrh parametrů, včetně oddílů s p
 
  ✔️ Zvažte použití logických hodnot pro parametry konstruktoru, které jsou skutečné hodnoty dvou stavů a slouží pouze k inicializaci logických vlastností.
 
-### <a name="validate-arguments"></a>Ověřit argumenty
+### <a name="validating-arguments"></a>Ověřují se argumenty
  ✔️ PROVÉST ověření argumentů předaných veřejným, chráněným nebo explicitně implementovaným členům. Throw <xref:System.ArgumentException?displayProperty=nameWithType> nebo jedna z jejích podtříd, pokud se ověřování nezdařilo.
 
  Všimněte si, že skutečné ověření nemusí nutně probíhat ve veřejném nebo chráněném členu. Může dojít na nižší úrovni v některé soukromé nebo interní rutině. Hlavním bodem je, že celá oblast Surface, která je vystavena koncovým uživatelům, kontroluje argumenty.
@@ -66,10 +66,10 @@ Tato část obsahuje obecné pokyny pro návrh parametrů, včetně oddílů s p
 
  Pokud je člen citlivý na zabezpečení, doporučujeme vytvořit kopii a pak ověřit a zpracovat argument.
 
-### <a name="pass-parameters"></a>Parametry předání
+### <a name="parameter-passing"></a>Předávání parametrů
  Z perspektivy návrháře architektury existují tři hlavní skupiny parametrů: parametry podle hodnoty, `ref` parametry a `out` parametry.
 
- Pokud je předán argument pomocí parametru podle hodnoty, člen obdrží kopii skutečného předaného argumentu. Pokud je argumentem hodnotový typ, je kopie argumentu vložena do zásobníku. Pokud je argumentem odkazový typ, kopie odkazu je vložena do zásobníku. Nejoblíbenější jazyky CLR, jako je C#, Visual Basic a C++, jsou ve výchozím nastavení předány parametrům podle hodnoty.
+ Pokud je předán argument pomocí parametru podle hodnoty, člen obdrží kopii skutečného předaného argumentu. Pokud je argumentem hodnotový typ, je kopie argumentu vložena do zásobníku. Pokud je argumentem odkazový typ, kopie odkazu je vložena do zásobníku. Nejoblíbenější jazyky CLR, jako je C#, VB.NET a C++, ve výchozím nastavení předávání parametrů podle hodnoty.
 
  Když je argument předán pomocí `ref` parametru, člen obdrží odkaz na vlastní předaný argument. Pokud je argumentem hodnotový typ, odkaz na argument je vložen do zásobníku. Pokud je argumentem odkazový typ, odkaz na odkaz je vložen do zásobníku. `Ref`parametry lze použít k umožnění člena upravovat argumenty předané volajícím.
 
@@ -151,11 +151,11 @@ public class String {
 
  Například není nutné předávat počáteční index, protože k dosažení stejného výsledku lze použít jednoduchou aritmetickou akci s ukazatelem.
 
- *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*
+ *Částečně &copy; 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*
 
  *Přetištěno oprávněním Pearsonova vzdělávání, Inc. z [pokynů pro návrh rozhraní: konvence, idiomy a vzory pro opakovaně použitelné knihovny .NET, druhá edice](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) od Krzysztof Cwalina a Brad Abrams, publikovaly 22. října 2008 Addison-Wesley Professional jako součást sady Microsoft Windows Development Series.*
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Pokyny pro návrh členů](member.md)
 - [Pokyny k návrhu architektury](index.md)
