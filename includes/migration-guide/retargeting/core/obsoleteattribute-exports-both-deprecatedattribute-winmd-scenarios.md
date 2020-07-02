@@ -1,17 +1,23 @@
 ---
-ms.openlocfilehash: e8c48c4b1031813ce62f576e5bf1f94c082dfe4b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 424e8ff704b888aa3d2c1254ac712da4034f59b8
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62088469"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85616047"
 ---
-### <a name="obsoleteattribute-exports-as-both-obsoleteattribute-and-deprecatedattribute-in-winmd-scenarios"></a>ObsoleteAttribute exportuje jako ObsoleteAttribute a DeprecatedAttribute ve scénářích WinMD
+### <a name="obsoleteattribute-exports-as-both-obsoleteattribute-and-deprecatedattribute-in-winmd-scenarios"></a>ObsoleteAttribute exportuje jako ObsoleteAttribute i DeprecatedAttribute ve scénářích WinMD
 
-|   |   |
-|---|---|
-|Podrobnosti|Při vytváření knihovny metadat Windows (soubor winmd), <xref:System.ObsoleteAttribute?displayProperty=name> atribut se exportují jako <xref:System.ObsoleteAttribute?displayProperty=name> a [Windows.Foundation.DeprecatedAttribute](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.deprecatedattribute).|
-|Doporučení|Rekompilace existující zdrojový kód, který používá <xref:System.ObsoleteAttribute?displayProperty=name> atribut může generovat upozornění při využívání, že kód z C++/CX nebo JavaScript.We nedoporučujeme použití obou <xref:System.ObsoleteAttribute?displayProperty=name> a [ Windows.Foundation.DeprecatedAttribute](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.deprecatedattribute) kód ve spravovaných sestavení; může dojít v upozorněních sestavení.|
-|Rozsah|Edge|
-|Version|4.5.1|
-|Type|Změna cílení|
+#### <a name="details"></a>Podrobnosti
+
+Když vytváříte knihovnu metadat systému Windows (soubor. winmd), <xref:System.ObsoleteAttribute?displayProperty=fullName> atribut je exportován jako i <xref:System.ObsoleteAttribute?displayProperty=fullName> [Windows. Foundation. DeprecatedAttribute](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.deprecatedattribute).
+
+#### <a name="suggestion"></a>Návrh
+
+Opětovná kompilace stávajícího zdrojového kódu, který používá <xref:System.ObsoleteAttribute?displayProperty=fullName> atribut, může generovat upozornění při využívání kódu z C++/CX nebo JavaScript. nedoporučujeme <xref:System.ObsoleteAttribute?displayProperty=fullName> pro kód ve spravovaných sestaveních použít jak oba, tak [Windows. Foundation. DeprecatedAttribute](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.deprecatedattribute) , což může vést k upozorněním sestavení.
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   | Edge        |
+| Verze | 4.5.1       |
+| Typ    | Změna cílení |

@@ -1,18 +1,41 @@
 ---
-ms.openlocfilehash: 3e9a1009167d8a765bc401d64a574bd123736ccd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 53d74db1a77e62cc64250658281fd3e4706fe494
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61639399"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85614428"
 ---
-### <a name="allow-unicode-bidirectional-control-characters-in-uris"></a>Povolit řídicí znaky Unicode obousměrné v identifikátorech URI
+### <a name="allow-unicode-bidirectional-control-characters-in-uris"></a>Povoluje v identifikátorech URI obousměrné řídicí znaky (Unicode).
 
-|   |   |
-|---|---|
-|Podrobnosti|Určuje kódování Unicode několik speciální řídicí znaky, které určuje orientaci textu. V předchozích verzích rozhraní .NET Framework tyto znaky se nesprávně chyběly všechny identifikátory URI i v případě, že byly k dispozici v jejich procentuálně zakódovaný formuláře. Aby bylo možné lépe postupujte podle [RFC 3987](https://tools.ietf.org/html/rfc3987), umožňujeme teď tyto znaky v identifikátorech URI. Pokud najít nekódovaných v identifikátoru URI, jsou procentuálně zakódovaný. Pokud najít procentuálně zakódovaný jsou ponechané jako-je.|
-|Doporučení|U aplikací s cílovou verzí rozhraní .NET Framework počínaje 4.7.2 Podpora kódování Unicode obousměrné znaky ve výchozím nastavení zapnutá. Pokud tuto změnu nežádoucí, můžete jej zakázat přidáním následujícího kódu [AppContextSwitchOverrides](~/docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) přepněte <code>&lt;runtime&gt;</code> oddílu konfiguračního souboru aplikace:<pre><code class="lang-xml">&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.Uri.DontKeepUnicodeBidiFormattingCharacters=true&quot; /&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;</code></pre>Pro aplikace, které jsou cíleny na starší verze rozhraní .NET Framework, ale jsou spuštěny v rozhraní .NET Framework 4.7.2 počínaje verzí podpora je ve výchozím nastavení zakázané obousměrné znaky kódování Unicode. Můžete ji povolit tak, že přidáte následující [AppContextSwitchOverrides](~/docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) přepněte <code>&lt;runtime&gt;</code> oddílu konfiguračního souboru aplikace::<pre><code class="lang-xml">&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.Uri.DontKeepUnicodeBidiFormattingCharacters=false&quot; /&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;</code></pre>|
-|Rozsah|Vedlejší|
-|Version|4.7.2|
-|Type|Změna cílení|
-|Ovlivněná rozhraní API|<ul><li><xref:System.Uri?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a>Podrobnosti
+
+Unicode určuje několik speciálních řídicích znaků, které se používají k určení orientace textu. V předchozích verzích .NET Framework byly tyto znaky nesprávně odstraněny ze všech identifikátorů URI i v případě, že byly přítomny ve formuláři s kódováním v procentech. Aby bylo možné lépe dodržovat [specifikaci RFC 3987](https://tools.ietf.org/html/rfc3987), teď tyto znaky povolujeme v identifikátorech URI. Pokud se v identifikátoru URI najde nekódovaný, jsou v procentech zakódované. V případě, že nalezené procento jsou zakódovány, jsou ponechány, jak jsou.
+
+#### <a name="suggestion"></a>Návrh
+
+Pro aplikace, které cílí na verze .NET Framework počínaje 4.7.2, je ve výchozím nastavení povolená podpora obousměrných znaků Unicode. Pokud je tato změna nežádoucí, můžete ji zakázat přidáním následujícího přepínače [AppContextSwitchOverrides](~/docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) do `<runtime>` části konfiguračního souboru aplikace:
+
+```xml
+<runtime>
+<AppContextSwitchOverrides value="Switch.System.Uri.DontKeepUnicodeBidiFormattingCharacters=true" />
+</runtime>
+```
+
+Pro aplikace, které cílí na starší verze .NET Framework, ale běží v rámci verzí počínaje .NET Framework 4.7.2, je ve výchozím nastavení zakázaná podpora obousměrných znaků Unicode. Můžete ji povolit přidáním následujícího přepínače [AppContextSwitchOverrides](~/docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) do `<runtime>` části konfiguračního souboru aplikace::
+
+```xml
+<runtime>
+<AppContextSwitchOverrides value="Switch.System.Uri.DontKeepUnicodeBidiFormattingCharacters=false" />
+</runtime>
+```
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   | Vedlejší       |
+| Verze | 4.7.2       |
+| Typ    | Změna cílení |
+
+#### <a name="affected-apis"></a>Ovlivněná rozhraní API
+
+- <xref:System.Uri?displayProperty=nameWithType>

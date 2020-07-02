@@ -1,18 +1,30 @@
 ---
-ms.openlocfilehash: 4892f75e4ae673d9d9cc7e9eeb6fb9b1a73f572e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c1e85941c8c6c31c7d937d0671ad955fa6490783
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "67859305"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85614437"
 ---
-### <a name="rsacng-now-correctly-loads-rsa-keys-of-non-standard-key-size"></a>RSACng nyní správně načte rsa klíče nestandardní velikosti klíče
+### <a name="rsacng-now-correctly-loads-rsa-keys-of-non-standard-key-size"></a>Algoritmem RSACng nyní správně načítá klíče RSA nestandardní velikosti klíče.
 
-|   |   |
-|---|---|
-|Podrobnosti|Ve verzích rozhraní .NET Framework před verzí 4.6.2 nemají zákazníci s nestandardními velikostmi <xref:System.Security.Cryptography.X509Certificates.RSACertificateExtensions.GetRSAPublicKey(System.Security.Cryptography.X509Certificates.X509Certificate2)?displayProperty=name> <xref:System.Security.Cryptography.X509Certificates.RSACertificateExtensions.GetRSAPrivateKey(System.Security.Cryptography.X509Certificates.X509Certificate2)?displayProperty=name> klíčů pro certifikáty RSA přístup k těmto klíčům prostřednictvím metod a extension.  A <xref:System.Security.Cryptography.CryptographicException?displayProperty=name> se &quot;zprávou Je vyvolána&quot; požadovaná velikost klíče. V rozhraní .NET Framework 4.6.2 byl tento problém opraven. Podobně a <xref:System.Security.Cryptography.RSA.ImportParameters(System.Security.Cryptography.RSAParameters)> <xref:System.Security.Cryptography.RSACng.ImportParameters(System.Security.Cryptography.RSAParameters)> nyní pracovat s nestandardní velikosti kláves <xref:System.Security.Cryptography.CryptographicException?displayProperty=name>bez házení .|
-|Návrh|Pokud existuje logika zpracování výjimek, která závisí <xref:System.Security.Cryptography.CryptographicException?displayProperty=name> na předchozí chování, kde je vyvolána při použití nestandardní velikosti klíče, zvažte odebrání logiky.|
-|Rozsah|Edge|
-|Version|4.6.2|
-|Typ|Změna cílení|
-|Ovlivněná rozhraní API|<ul><li><xref:System.Security.Cryptography.RSA.ImportParameters(System.Security.Cryptography.RSAParameters)?displayProperty=nameWithType></li><li><xref:System.Security.Cryptography.RSACng.ImportParameters(System.Security.Cryptography.RSAParameters)?displayProperty=nameWithType></li><li><xref:System.Security.Cryptography.X509Certificates.RSACertificateExtensions.GetRSAPrivateKey(System.Security.Cryptography.X509Certificates.X509Certificate2)?displayProperty=nameWithType></li><li><xref:System.Security.Cryptography.X509Certificates.RSACertificateExtensions.GetRSAPublicKey(System.Security.Cryptography.X509Certificates.X509Certificate2)?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a>Podrobnosti
+
+V .NET Framework verzích starších než 4.6.2 zákazníci, kteří mají nestandardní velikosti klíčů pro certifikáty RSA, nemůžou získat přístup k těmto klíčům prostřednictvím <xref:System.Security.Cryptography.X509Certificates.RSACertificateExtensions.GetRSAPublicKey(System.Security.Cryptography.X509Certificates.X509Certificate2)?displayProperty=fullName> <xref:System.Security.Cryptography.X509Certificates.RSACertificateExtensions.GetRSAPrivateKey(System.Security.Cryptography.X509Certificates.X509Certificate2)?displayProperty=fullName> rozšiřujících metod a.  A <xref:System.Security.Cryptography.CryptographicException?displayProperty=fullName> se zprávou &quot; , že požadovaná velikost klíče není podporována, &quot; je vyvolána. V .NET Framework 4.6.2 Tento problém byl vyřešen. Podobně <xref:System.Security.Cryptography.RSA.ImportParameters(System.Security.Cryptography.RSAParameters)> a <xref:System.Security.Cryptography.RSACng.ImportParameters(System.Security.Cryptography.RSAParameters)> teď můžete pracovat s nestandardními velikostmi klíčů bez vyvolání <xref:System.Security.Cryptography.CryptographicException?displayProperty=fullName> .
+
+#### <a name="suggestion"></a>Návrh
+
+Pokud je k dispozici logika zpracování výjimek, která spoléhá na předchozí chování, kde <xref:System.Security.Cryptography.CryptographicException?displayProperty=fullName> je vyvolána při použití nestandardních velikostí klíčů, zvažte odebrání logiky.
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   | Edge        |
+| Verze | 4.6.2       |
+| Typ    | Změna cílení |
+
+#### <a name="affected-apis"></a>Ovlivněná rozhraní API
+
+- <xref:System.Security.Cryptography.RSA.ImportParameters(System.Security.Cryptography.RSAParameters)?displayProperty=nameWithType>
+- <xref:System.Security.Cryptography.RSACng.ImportParameters(System.Security.Cryptography.RSAParameters)?displayProperty=nameWithType>
+- <xref:System.Security.Cryptography.X509Certificates.RSACertificateExtensions.GetRSAPrivateKey(System.Security.Cryptography.X509Certificates.X509Certificate2)?displayProperty=nameWithType>
+- <xref:System.Security.Cryptography.X509Certificates.RSACertificateExtensions.GetRSAPublicKey(System.Security.Cryptography.X509Certificates.X509Certificate2)?displayProperty=nameWithType>

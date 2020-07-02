@@ -1,18 +1,27 @@
 ---
-ms.openlocfilehash: 8a1e2ca0790cb62e3c2c879f2ba0bb169ef07d77
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9b184f54650d2efb31ec66f443198b19ceaeb5f3
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "67804359"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85614476"
 ---
-### <a name="applicationfiltermessage-no-longer-throws-for-re-entrant-implementations-of-imessagefilterprefiltermessage"></a>Application.FilterMessage již nevyvolá pro znovu vstupující implementace zprávy IMessageFilter.PreFilterMessage
+### <a name="applicationfiltermessage-no-longer-throws-for-re-entrant-implementations-of-imessagefilterprefiltermessage"></a>Application. FilterMessage již nevyvolává implementaci IMessageFilter. PreFilterMessage pro opětovného vstupu.
 
-|   |   |
-|---|---|
-|Podrobnosti|Před rozhraním .NET Framework 4.6.1 <xref:System.Windows.Forms.IMessageFilter.PreFilterMessage(System.Windows.Forms.Message@)> by <xref:System.Windows.Forms.Application.AddMessageFilter(System.Windows.Forms.IMessageFilter)?displayProperty=name> <xref:System.Windows.Forms.Application.RemoveMessageFilter(System.Windows.Forms.IMessageFilter)?displayProperty=name> volání <xref:System.Windows.Forms.Application.FilterMessage(System.Windows.Forms.Message@)> s <xref:System.Windows.Forms.Application.DoEvents>a, které <xref:System.IndexOutOfRangeException?displayProperty=name>volalo nebo (a také voláno) způsobilo .<p/>Počínaje aplikacemi zaměřenými na rozhraní .NET Framework 4.6.1 již tato výjimka není vyvolána a mohou být použity filtry pro opětovné zahájení.|
-|Návrh|Uvědomte <xref:System.Windows.Forms.Application.FilterMessage(System.Windows.Forms.Message@)> si, že již nebude <xref:System.Windows.Forms.IMessageFilter.PreFilterMessage(System.Windows.Forms.Message@)> házet pro re-účastníka chování popsané výše. To se týká pouze aplikací, které cílí na rozhraní .NET Framework 4.6.1.Aplikace, které cílí na rozhraní .NET Framework 4.6.1, se mohou odhlásit z této změny (nebo aplikace, které cílí na starší architektury, se mohou přihlásit) pomocí přepínače kompatibility [DontSupportReentrantFilterMessage.](~/docs/framework/migration-guide/mitigation-custom-imessagefilter-prefiltermessage-implementations.md#mitigation)|
-|Rozsah|Edge|
-|Version|4.6.1|
-|Typ|Změna cílení|
-|Ovlivněná rozhraní API|<ul><li><xref:System.Windows.Forms.Application.FilterMessage(System.Windows.Forms.Message@)?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a>Podrobnosti
+
+Před .NET Framework 4.6.1 by volání pomocí metody, <xref:System.Windows.Forms.Application.FilterMessage(System.Windows.Forms.Message@)> <xref:System.Windows.Forms.IMessageFilter.PreFilterMessage(System.Windows.Forms.Message@)> která volala <xref:System.Windows.Forms.Application.AddMessageFilter(System.Windows.Forms.IMessageFilter)?displayProperty=fullName> nebo <xref:System.Windows.Forms.Application.RemoveMessageFilter(System.Windows.Forms.IMessageFilter)?displayProperty=fullName> (i při volání <xref:System.Windows.Forms.Application.DoEvents> ) <xref:System.IndexOutOfRangeException?displayProperty=fullName> , způsobila.<p/>Počínaje aplikacemi, které cílí na .NET Framework 4.6.1, už tato výjimka není vyvolaná, a znovu zacílené filtry, jak je popsáno výše, se dají použít.
+
+#### <a name="suggestion"></a>Návrh
+
+Uvědomte si, že <xref:System.Windows.Forms.Application.FilterMessage(System.Windows.Forms.Message@)> se už nebude vyvolávat pro chování opětovného zadaného <xref:System.Windows.Forms.IMessageFilter.PreFilterMessage(System.Windows.Forms.Message@)> postupu popsané výše. To ovlivňuje jenom aplikace cílené na .NET Framework 4.6.1. aplikace, které cílí na .NET Framework 4.6.1, si můžou tuto změnu odhlásit (nebo se můžou použít aplikace cílené na starší verze) pomocí přepínače [DontSupportReentrantFilterMessage](~/docs/framework/migration-guide/mitigation-custom-imessagefilter-prefiltermessage-implementations.md#mitigation) Compatibility.
+
+| Name          | Hodnota       |
+|:--------------|:------------|
+| Rozsah         | Edge        |
+| Verze       | 4.6.1       |
+| Typ          | Změna cílení |
+
+#### <a name="affected-apis"></a>Ovlivněná rozhraní API
+
+- <xref:System.Windows.Forms.Application.FilterMessage(System.Windows.Forms.Message@)?displayProperty=nameWithType>

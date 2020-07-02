@@ -1,18 +1,41 @@
 ---
-ms.openlocfilehash: c008809606372c84b05a2facd1cac1293382aed4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 36a9db601f7637185bf48dfcbe2233b4489fcdcf
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "67859361"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85614444"
 ---
-### <a name="aescryptoserviceprovider-decryptor-provides-a-reusable-transform"></a>Dešifrátor AesCryptoServiceProvider poskytuje opakovaně použitelnou transformaci
+### <a name="aescryptoserviceprovider-decryptor-provides-a-reusable-transform"></a>Dešifrovací modul AesCryptoServiceProvider poskytuje opakovaně použitelnou transformaci.
 
-|   |   |
-|---|---|
-|Podrobnosti|Počínaje aplikacemi, které cílí na rozhraní .NET Framework 4.6.2, <xref:System.Security.Cryptography.AesCryptoServiceProvider> dešifrovací program poskytuje opakovaně použitelnou transformaci. Po volání <xref:System.Security.Cryptography.CryptoAPITransform.TransformFinalBlock(System.Byte[],System.Int32,System.Int32)?displayProperty=name>, transformace je reinitialized a lze znovu použít. Pro aplikace, které cílí na starší verze rozhraní .NET Framework, <xref:System.Security.Cryptography.CryptoAPITransform.TransformBlock(System.Byte[],System.Int32,System.Int32,System.Byte[],System.Int32)?displayProperty=name> pokus u <xref:System.Security.Cryptography.CryptoAPITransform.TransformFinalBlock(System.Byte[],System.Int32,System.Int32)?displayProperty=name> opětovného <xref:System.Security.Cryptography.CryptographicException> použití decryptor voláním po volání vyvolá nebo vytváří poškozená data.|
-|Návrh|Dopad této změny by měla být minimální, protože se jedná o očekávané chování. Aplikace, které závisí na předchozím chování, se z něj mohou <code>&lt;runtime&gt;</code> odhlásit přidáním následujícího nastavení konfigurace do části konfiguračního souboru aplikace:<pre><code class="lang-xml">&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.Security.Cryptography.AesCryptoServiceProvider.DontCorrectlyResetDecryptor=true&quot;/&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;</code></pre>Kromě toho se aplikace, které cílí na předchozí verzi rozhraní .NET Framework, ale jsou spuštěny v rámci verze rozhraní .NET Framework <code>&lt;runtime&gt;</code> začínající rozhraním .NET Framework 4.6.2, mohou přihlásit přidáním následujícího nastavení konfigurace do části konfiguračního souboru aplikace:<pre><code class="lang-xml">&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.Security.Cryptography.AesCryptoServiceProvider.DontCorrectlyResetDecryptor=false&quot;/&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;</code></pre>|
-|Rozsah|Vedlejší|
-|Version|4.6.2|
-|Typ|Změna cílení|
-|Ovlivněná rozhraní API|<ul><li><xref:System.Security.Cryptography.AesCryptoServiceProvider.CreateDecryptor?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a>Podrobnosti
+
+Od aplikací, které cílí na .NET Framework 4.6.2, <xref:System.Security.Cryptography.AesCryptoServiceProvider> dešifrovací modul poskytuje opakovaně použitelnou transformaci. Po volání <xref:System.Security.Cryptography.CryptoAPITransform.TransformFinalBlock(System.Byte[],System.Int32,System.Int32)?displayProperty=fullName> je transformace znovu inicializována a lze ji znovu použít. Pro aplikace, které cílí na starší verze .NET Framework, se pokusí znovu použít dešifrovací modul voláním <xref:System.Security.Cryptography.CryptoAPITransform.TransformBlock(System.Byte[],System.Int32,System.Int32,System.Byte[],System.Int32)?displayProperty=fullName> po volání metody <xref:System.Security.Cryptography.CryptoAPITransform.TransformFinalBlock(System.Byte[],System.Int32,System.Int32)?displayProperty=fullName> vyvolá <xref:System.Security.Cryptography.CryptographicException> nebo vytvoří poškozená data.
+
+#### <a name="suggestion"></a>Návrh
+
+Dopad této změny by měl být minimální, protože se jedná o očekávané chování. Aplikace, které závisí na předchozím chování, se můžou z něj odhlásit tím, že do `<runtime>` části konfiguračního souboru aplikace přidají následující nastavení konfigurace:
+
+```xml
+<runtime>
+<AppContextSwitchOverrides value="Switch.System.Security.Cryptography.AesCryptoServiceProvider.DontCorrectlyResetDecryptor=true"/>
+</runtime>
+```
+
+Kromě toho aplikace, které cílí na předchozí verzi .NET Framework, ale jsou spuštěné v rámci verze .NET Framework počínaje .NET Framework 4.6.2, můžou se k ní přihlásit přidáním následujícího nastavení konfigurace do `<runtime>` oddílu konfiguračního souboru aplikace:
+
+```xml
+<runtime>
+<AppContextSwitchOverrides value="Switch.System.Security.Cryptography.AesCryptoServiceProvider.DontCorrectlyResetDecryptor=false"/>
+</runtime>
+```
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   | Vedlejší       |
+| Verze | 4.6.2       |
+| Typ    | Změna cílení |
+
+#### <a name="affected-apis"></a>Ovlivněná rozhraní API
+
+- <xref:System.Security.Cryptography.AesCryptoServiceProvider.CreateDecryptor?displayProperty=nameWithType>

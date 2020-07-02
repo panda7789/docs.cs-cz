@@ -1,17 +1,27 @@
 ---
-ms.openlocfilehash: 190bca720504535cb54e498ca8da23fbb6634ad4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bd656478a55856e676853e57f3e7386ea0aa0211
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "67804593"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85614544"
 ---
-### <a name="currentculture-is-not-preserved-across-wpf-dispatcher-operations"></a>CurrentCulture není zachována v rámci operací WPF Dispečer
+### <a name="currentculture-is-not-preserved-across-wpf-dispatcher-operations"></a>CurrentCulture se nezachová přes operace dispečera WPF.
 
-|   |   |
-|---|---|
-|Podrobnosti|Počínaje rozhraním .NET Framework <xref:System.Globalization.CultureInfo.CurrentCulture?displayProperty=name> 4.6 <xref:System.Globalization.CultureInfo.CurrentUICulture?displayProperty=name> <xref:System.Windows.Threading.Dispatcher?displayProperty=name> budou na konci této operace dispečera ztraceny nebo provedené v rámci rozhraní .NET Framework. Podobně změny <xref:System.Globalization.CultureInfo.CurrentCulture?displayProperty=name> nebo <xref:System.Globalization.CultureInfo.CurrentUICulture?displayProperty=name> mimo operaci Dispečera nemusí být projevené při provádění této operace. Prakticky řečeno, to <xref:System.Globalization.CultureInfo.CurrentCulture?displayProperty=name> znamená, že a <xref:System.Globalization.CultureInfo.CurrentUICulture?displayProperty=name> změny nemusí tok mezi WPF ui zpětná volání a další kód v aplikaci WPF. To je způsobeno <xref:System.Threading.ExecutionContext?displayProperty=name> změnou, <xref:System.Globalization.CultureInfo.CurrentCulture?displayProperty=name> <xref:System.Globalization.CultureInfo.CurrentUICulture?displayProperty=name> která způsobuje a má být uložena v kontextu spuštění počínaje aplikacemi zaměřenými na rozhraní .NET Framework 4.6. WPF dispečer operace uložit kontext spuštění slouží k zahájení operace a obnovit předchozí kontext po dokončení operace. Vzhledem k tomu, <xref:System.Globalization.CultureInfo.CurrentCulture?displayProperty=name> a <xref:System.Globalization.CultureInfo.CurrentUICulture?displayProperty=name> jsou nyní součástí tohoto kontextu, změny v rámci operace dispečera nejsou trvalé mimo operaci.|
-|Návrh|Aplikace ovlivněné touto změnou může obejít <xref:System.Globalization.CultureInfo.CurrentCulture?displayProperty=name> <xref:System.Globalization.CultureInfo.CurrentUICulture?displayProperty=name> uložením požadované nebo v poli a vrácení všech těl operace dispečera <xref:System.Globalization.CultureInfo.CurrentCulture?displayProperty=name> <xref:System.Globalization.CultureInfo.CurrentUICulture?displayProperty=name> (včetně obslužné rutiny události uI), které jsou správné a jsou nastaveny. Alternativně vzhledem k tomu, že změna ExecutionContext, která je základem této změny WPF, ovlivňuje pouze aplikace zaměřené na rozhraní .NET Framework 4.6 nebo novější, lze této přestávce zabránit cílením na rozhraní .NET Framework 4.5.2.Apps, které cílí na rozhraní .NET Framework 4.6 nebo novější, mohou také fungovat nastavením následujícího přepínače kompatibility:<pre><code class="lang-csharp">AppContext.SetSwitch(&quot;Switch.System.Globalization.NoAsyncCurrentCulture&quot;, true);&#13;&#10;</code></pre>Tento problém byl opraven WPF v rozhraní .NET Framework 4.6.2. Byla také opravena v rozhraní .NET Frameworks 4.6, 4.6.1 až [KB 3139549](https://support.microsoft.com/kb/3139549). Aplikace zaměřené na rozhraní .NET Framework 4.6 nebo novější <xref:System.Globalization.CultureInfo.CurrentCulture?displayProperty=name> / <xref:System.Globalization.CultureInfo.CurrentUICulture?displayProperty=name>automaticky získají správné chování v aplikacích WPF - ) budou zachovány v rámci operací dispečera.|
-|Rozsah|Vedlejší|
-|Version|4.6|
-|Typ|Změna cílení|
+#### <a name="details"></a>Podrobnosti
+
+Počínaje .NET Framework 4,6 se změny <xref:System.Globalization.CultureInfo.CurrentCulture?displayProperty=fullName> nebo <xref:System.Globalization.CultureInfo.CurrentUICulture?displayProperty=fullName> provedené v rámci a na <xref:System.Windows.Threading.Dispatcher?displayProperty=fullName> konci této operace dispečera ztratí. Podobně se změny <xref:System.Globalization.CultureInfo.CurrentCulture?displayProperty=fullName> nebo <xref:System.Globalization.CultureInfo.CurrentUICulture?displayProperty=fullName> provedou mimo operaci dispečera se nemusí projevit, když se tato operace provede. Prakticky řečeno, to znamená, že <xref:System.Globalization.CultureInfo.CurrentCulture?displayProperty=fullName> a <xref:System.Globalization.CultureInfo.CurrentUICulture?displayProperty=fullName> změny nemusí tok mezi zpětnými VOLÁNÍMI uživatelského rozhraní WPF a jiným kódem v aplikaci WPF. Důvodem je změna v <xref:System.Threading.ExecutionContext?displayProperty=fullName> tom, že tyto příčiny <xref:System.Globalization.CultureInfo.CurrentCulture?displayProperty=fullName> a <xref:System.Globalization.CultureInfo.CurrentUICulture?displayProperty=fullName> budou uloženy v kontextu spuštění počínaje aplikacemi, které cílí na .NET Framework 4,6. Operace dispečera WPF ukládá kontext spuštění, který se používá k zahájení operace a obnovení předchozího kontextu po dokončení operace. Vzhledem k tomu, že <xref:System.Globalization.CultureInfo.CurrentCulture?displayProperty=fullName> a <xref:System.Globalization.CultureInfo.CurrentUICulture?displayProperty=fullName> jsou nyní součástí tohoto kontextu, nejsou změny v rámci operace dispečera zachovány mimo operaci.
+
+#### <a name="suggestion"></a>Návrh
+
+Aplikace ovlivněné touto změnou mohou obejít jejich uložením požadovaného <xref:System.Globalization.CultureInfo.CurrentCulture?displayProperty=fullName> nebo <xref:System.Globalization.CultureInfo.CurrentUICulture?displayProperty=fullName> v poli a kontrolou všech subjektů dispečera operace (včetně obslužných rutin zpětného volání událostí uživatelského rozhraní), které <xref:System.Globalization.CultureInfo.CurrentCulture?displayProperty=fullName> jsou správné a <xref:System.Globalization.CultureInfo.CurrentUICulture?displayProperty=fullName> nastaveny. Alternativně platí, že ExecutionContext Změna základní změny této aplikace WPF ovlivní jenom aplikace cílené na .NET Framework 4,6 nebo novější. Toto přerušení se dá vyhnout tím, že zacílíte na .NET Framework 4.5.2. aplikace, které cílí na .NET Framework 4,6 nebo novější, můžou problém vyřešit také nastavením následujícího přepínače kompatibility:
+
+<pre><code class="lang-csharp">AppContext.SetSwitch(&quot;Switch.System.Globalization.NoAsyncCurrentCulture&quot;, true);&#13;&#10;</code></pre>
+
+Tento problém vyřešila WPF v .NET Framework 4.6.2. Byla také opravena v rozhraní .NET Framework 4,6, 4.6.1 až [KB 3139549](https://support.microsoft.com/kb/3139549). Aplikace cílené na .NET Framework 4,6 nebo novějším budou automaticky dostávat správné chování v aplikacích WPF- <xref:System.Globalization.CultureInfo.CurrentCulture?displayProperty=fullName> / <xref:System.Globalization.CultureInfo.CurrentUICulture?displayProperty=fullName> ) by se zachovaly napříč operacemi dispečera.
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   | Vedlejší       |
+| Verze | 4.6         |
+| Typ    | Změna cílení |

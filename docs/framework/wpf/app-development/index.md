@@ -1,130 +1,131 @@
 ---
 title: Vývoj aplikací
+description: Naučte se vytvářet různé aplikace pomocí architektury Windows Presentation Foundation (WPF).
 ms.date: 01/26/2018
 helpviewer_keywords:
 - WPF [WPF], about application development
 - application development [WPF], about
 ms.assetid: 2996ce5e-81e9-49ae-881b-952db3dd1b7e
-ms.openlocfilehash: 5ff9f58b72982f79e70b80f60c10828c3b54e5bb
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ac4227785f2fc398217b3aa8984176844264bbaa
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79186006"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85613732"
 ---
 # <a name="application-development"></a>Vývoj aplikací
-<a name="introduction"></a>Windows Presentation Foundation (WPF) je prezentační architektura, kterou lze použít k vývoji následujících typů aplikací:  
+<a name="introduction"></a>Windows Presentation Foundation (WPF) je prezentační rozhraní, které lze použít k vývoji následujících typů aplikací:  
   
-- Samostatné aplikace (tradiční styl aplikace systému Windows vytvořené jako spustitelná sestavení, která jsou nainstalována do klientského počítače a spouštěna z ní).  
+- Samostatné aplikace (tradiční styly aplikací pro Windows postavené jako spustitelná sestavení, která jsou nainstalovaná a spouštěná z klientského počítače).  
   
-- Aplikace prohlížeče XAML (XBAPs) (aplikace složené z navigačních stránek, které jsou vytvořeny jako spustitelná sestavení a hostované webovými prohlížeči, jako je Microsoft Internet Explorer nebo Mozilla Firefox).  
+- Aplikace prohlížeče XAML (XBAP) (aplikace tvořené navigačními stránkami, které jsou sestaveny jako spustitelná sestavení a hostovány webovými prohlížeči, jako je například Microsoft Internet Explorer nebo Mozilla Firefox).  
   
 - Vlastní knihovny ovládacích prvků (nespustitelná sestavení obsahující opakovaně použitelné ovládací prvky).  
   
 - Knihovny tříd (nespustitelná sestavení, která obsahují opakovaně použitelné třídy).  
   
 > [!NOTE]
-> Použití wpf typů ve službě systému Windows se důrazně nedoporučuje. Pokud se pokusíte použít tyto funkce ve službě systému Windows, nemusí fungovat podle očekávání.  
+> Použití typů WPF ve službě systému Windows se důrazně nedoporučuje. Pokud se pokusíte tyto funkce použít ve službě systému Windows, nemusí fungovat podle očekávání.  
   
- Chcete-li vytvořit tuto sadu aplikací, WPF implementuje celou řadu služeb. Toto téma obsahuje přehled těchto služeb a kde najít další informace.  
+ Pro sestavení této sady aplikací WPF implementuje hostitele služeb. V tomto tématu najdete přehled těchto služeb a kde najdete další informace.  
 
 <a name="Application_Management"></a>
 ## <a name="application-management"></a>Správa aplikací  
- Spustitelné aplikace WPF obvykle vyžadují základní sadu funkcí, která zahrnuje následující:  
+ Spustitelné aplikace WPF běžně vyžadují základní sadu funkcí, které zahrnují následující:  
   
-- Vytváření a správa společné aplikační infrastruktury (včetně vytvoření metody vstupního bodu a smyčky zpráv systému Windows pro příjem systémových a vstupních zpráv).  
+- Vytvoření a Správa běžné aplikační infrastruktury (včetně vytvoření metody vstupního bodu a smyčky zpráv systému Windows pro příjem systémových a vstupních zpráv).  
   
 - Sledování a interakce s životností aplikace.  
   
 - Načítání a zpracování parametrů příkazového řádku.  
   
-- Sdílení vlastností a [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] prostředků oboru aplikace.  
+- Sdílení vlastností a prostředků oboru aplikace [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]  
   
 - Zjišťování a zpracování neošetřených výjimek.  
   
-- Vracím únikové kódy.  
+- Vracení ukončovacích kódů  
   
-- Správa oken v samostatných aplikacích.  
+- Správa systému Windows v samostatných aplikacích.  
   
-- Sledování navigace v aplikacích prohlížeče XAML (XBAPs) a samostatných aplikacích s navigačními okny a rámečky.  
+- Sledování navigace v aplikacích prohlížeče XAML (XBAP) a samostatné aplikace s navigačními okny a snímky.  
   
- Tyto funkce jsou <xref:System.Windows.Application> implementovány třídou, kterou přidáte do aplikací pomocí *definice aplikace*.  
+ Tyto možnosti jsou implementovány <xref:System.Windows.Application> třídou, kterou přidáte do aplikací pomocí *definice aplikace*.  
   
- Další informace naleznete v [tématu Application Management Overview](application-management-overview.md).  
+ Další informace najdete v tématu [Přehled správy aplikací](application-management-overview.md).  
   
 <a name="WPF_Application_Resource__Content__and_Data_Files"></a>
 ## <a name="wpf-application-resource-content-and-data-files"></a>Zdroj, obsah a datové soubory zdroje aplikací WPF  
- WPF rozšiřuje základní podporu v rozhraní Microsoft .NET Framework pro vložené prostředky s podporou pro tři druhy nespustitelných datových souborů: prostředek, obsah a data. Další informace naleznete v [tématu WPF Aplikační zdroj, obsah a datové soubory](wpf-application-resource-content-and-data-files.md).  
+ WPF rozšiřuje základní podporu v Microsoft .NET Framework pro vložené prostředky a podporuje tři druhy nespustitelných datových souborů: zdroj, obsah a data. Další informace naleznete v tématu [prostředky aplikace WPF, obsah a datové soubory](wpf-application-resource-content-and-data-files.md).  
   
- Klíčovou součástí podpory nespustitelných datových souborů WPF je schopnost identifikovat a načíst je pomocí jedinečného identifikátoru URI. Další informace naleznete [v tématu Pack URI v WPF](pack-uris-in-wpf.md).  
+ Klíčovou součástí podpory pro nespustitelné datové soubory WPF je schopnost identifikovat a načíst je pomocí jedinečného identifikátoru URI. Další informace najdete v tématu [identifikátory URI Pack v](pack-uris-in-wpf.md)subsystému WPF.  
   
 <a name="Windows_and_Dialog_Boxes"></a>
 ## <a name="windows-and-dialog-boxes"></a>Okna a dialogová okna  
- Uživatelé interagují se samostatnými aplikacemi WPF prostřednictvím oken. Účelem okna je hostovat obsah aplikace a zpřístupnit funkce aplikace, které obvykle umožňují uživatelům pracovat s obsahem. V WPF jsou okna zapouzdřena třídou, <xref:System.Windows.Window> která podporuje:  
+ Uživatelé pracují se samostatnými aplikacemi WPF prostřednictvím systému Windows. Účelem okna je hostování obsahu aplikace a vystavení funkcí aplikace, které obvykle uživatelům umožňují pracovat s obsahem. V technologii WPF jsou okna zapouzdřena <xref:System.Windows.Window> třídou, která podporuje:  
   
 - Vytváření a zobrazování oken.  
   
-- Vytvoření vztahů mezi vlastníkem/vlastněným oknem.  
+- Vytváření vztahů mezi vlastníkem a vlastníkem okna.  
   
 - Konfigurace vzhledu okna (například velikost, umístění, ikony, text záhlaví, ohraničení).  
   
-- Sledování a interakce s životností okna.  
+- Sledování a interakce s dobou života okna.  
   
- Další informace naleznete v tématu [WPF Windows Overview](wpf-windows-overview.md).  
+ Další informace najdete v tématu [Přehled Windows WPF](wpf-windows-overview.md).  
   
- <xref:System.Windows.Window>podporuje možnost vytvořit speciální typ okna známého jako dialogové okno. Lze vytvořit modální i nemodální typy dialogových oken.  
+ <xref:System.Windows.Window>podporuje možnost vytvoření speciálního typu okna označovaného jako dialogové okno. Lze vytvořit modální i nemodální typy dialogových oken.  
   
- Pro větší pohodlí a výhody opětovného použití a konzistentní uživatelské prostředí napříč aplikacemi wpf <xref:Microsoft.Win32.SaveFileDialog>zveřejňuje <xref:System.Windows.Controls.PrintDialog>tři běžná dialogová okna systému Windows: <xref:Microsoft.Win32.OpenFileDialog>, , a .  
+ Pro usnadnění a výhody opětovné použitelnosti a konzistentní uživatelské prostředí napříč aplikacemi poskytuje WPF tři z dialogových oken běžné Windows: <xref:Microsoft.Win32.OpenFileDialog> , a <xref:Microsoft.Win32.SaveFileDialog> <xref:System.Windows.Controls.PrintDialog> .  
   
- Okno se zprávou je speciální typ dialogového okna pro zobrazení důležitých textových informací uživatelům a pro kladení jednoduchých otázek Ano/Ne/OK/Zrušení. Třídu <xref:System.Windows.MessageBox> slouží k vytvoření a zobrazení oken zpráv.  
+ Okno se zprávou je speciální typ dialogového okna pro zobrazení důležitých textových informací uživatelům a pro dotazování jednoduchých dotazů Ano/Ne/OK/zrušit. Třídu můžete použít <xref:System.Windows.MessageBox> k vytvoření a zobrazení oken se zprávami.  
   
- Další informace naleznete v [tématu Přehled dialogových oken](dialog-boxes-overview.md).  
+ Další informace najdete v tématu [Přehled dialogových oken](dialog-boxes-overview.md).  
   
 <a name="Navigation"></a>
 ## <a name="navigation"></a>Navigace  
- WPF podporuje webovou navigaci<xref:System.Windows.Controls.Page>pomocí stránek (<xref:System.Windows.Documents.Hyperlink>) a hypertextových odkazů ( ). Navigace může být implementována různými způsoby, které zahrnují následující:  
+ WPF podporuje navigaci na webovém stylu pomocí stránek ( <xref:System.Windows.Controls.Page> ) a hypertextových odkazů ( <xref:System.Windows.Documents.Hyperlink> ). Navigace může být implementována různými způsoby, které zahrnují následující:  
   
 - Samostatné stránky, které jsou hostovány ve webovém prohlížeči.  
   
-- Stránky zkompilované do XBAP, který je hostován ve webovém prohlížeči.  
+- Stránky zkompilované do XBAP, která je hostována ve webovém prohlížeči.  
   
-- Stránky zkompilované do samostatné aplikace a hostované navigačním oknem (<xref:System.Windows.Navigation.NavigationWindow>).  
+- Stránky zkompilované do samostatné aplikace a hostované v navigačním okně ( <xref:System.Windows.Navigation.NavigationWindow> ).  
   
-- Stránky, které jsou hostovány<xref:System.Windows.Controls.Frame>rámcem ( ), které mohou být hostovány na samostatné stránce, nebo stránky zkompilované do XBAP nebo samostatné aplikace.  
+- Stránky, které jsou hostovány rámcem ( <xref:System.Windows.Controls.Frame> ), které mohou být hostovány na samostatné stránce nebo na stránce zkompilované do aplikace XBAP nebo samostatné aplikace.  
   
- Pro usnadnění navigace wpf implementuje následující:  
+ Pro usnadnění navigace WPF implementuje následující:  
   
-- <xref:System.Windows.Navigation.NavigationService>, sdílený navigační modul pro zpracování navigačních <xref:System.Windows.Controls.Frame> <xref:System.Windows.Navigation.NavigationWindow>požadavků používaných aplikacemi , a XBAPs pro podporu navigace v rámci aplikace.  
+- <xref:System.Windows.Navigation.NavigationService>sdílený navigační modul pro zpracování žádostí o navigaci používaných aplikacemi <xref:System.Windows.Controls.Frame> , <xref:System.Windows.Navigation.NavigationWindow> a XBAP pro podporu navigace uvnitř aplikace.  
   
-- Navigační metody pro zahájení navigace.  
+- Navigační metody pro zahájení navigace  
   
-- Navigační události pro sledování a interakci s životností navigace.  
+- Navigační události pro sledování a interakci s dobou života navigace  
   
-- Zapamatování zpět a vpřed navigace pomocí deníku, který může být také kontrolována a manipulovat.  
+- Zapamatování navigace zpět a přeposlání pomocí deníku, který lze také kontrolovat a manipulovat.  
   
- Další informace naleznete v [tématu Navigační přehled](navigation-overview.md).  
+ Informace najdete v tématu [Přehled navigace](navigation-overview.md).  
   
- WPF také podporuje speciální typ navigace známý jako strukturované navigace. Strukturované navigace lze volat jednu nebo více stránek, které vracejí data strukturovaným a předvídatelným způsobem, který je konzistentní s volající funkce. Tato funkce závisí <xref:System.Windows.Navigation.PageFunction%601> na třídě, která je popsána dále ve [strukturované navigační přehled](structured-navigation-overview.md). <xref:System.Windows.Navigation.PageFunction%601>slouží také ke zjednodušení vytváření složitých navigačních topologie, které jsou popsány v [přehledu navigačních topologií](navigation-topologies-overview.md).  
+ WPF také podporuje speciální typ navigace známý jako strukturovaná navigace. Strukturované navigace lze použít k volání jedné nebo více stránek, které vracejí data strukturovaným a předvídatelným způsobem, který je konzistentní s voláním funkce. Tato schopnost závisí na <xref:System.Windows.Navigation.PageFunction%601> třídě, která je podrobněji popsána v [přehledu strukturované navigace](structured-navigation-overview.md). <xref:System.Windows.Navigation.PageFunction%601>slouží také ke zjednodušení vytváření komplexních navigačních topologií, které jsou popsány v tématu [Přehled topologií navigace](navigation-topologies-overview.md).  
   
 <a name="Hosting"></a>
-## <a name="hosting"></a>Hostování  
- XBAPs mohou být hostovány v aplikaci Microsoft Internet Explorer nebo Firefox. Každý hostingový model má svou vlastní sadu úvah a omezení, které jsou zahrnuty v [Hostingu](hosting-wpf-applications.md).  
+## <a name="hosting"></a>Hosting  
+ Aplikace XBAP je možné hostovat v aplikacích Microsoft Internet Explorer a Firefox. Každý model hostování má vlastní sadu důležitých informací a omezení, které jsou pokryty v [hostování](hosting-wpf-applications.md).  
   
 <a name="Build_and_Deploy"></a>
 ## <a name="build-and-deploy"></a>Sestavení a nasazení  
- Přestože jednoduché wpf aplikace lze sestavit z příkazového řádku pomocí kompilátorů příkazového řádku, WPF integruje s Visual Studio poskytovat další podporu, která zjednodušuje vývoj a proces sestavení. Další informace naleznete [v tématu Vytváření aplikace WPF](building-a-wpf-application-wpf.md).  
+ I když jednoduché aplikace WPF mohou být sestaveny z příkazového řádku pomocí kompilátorů příkazového řádku, WPF se integruje se sadou Visual Studio a poskytuje další podporu, která zjednodušuje proces vývoje a sestavování. Další informace naleznete v tématu [sestavování aplikace WPF](building-a-wpf-application-wpf.md).  
   
- V závislosti na typu aplikace, kterou vytvoříte, existuje jedna nebo více možností nasazení, ze kterých si můžete vybrat. Další informace naleznete [v tématu Nasazení aplikace WPF](deploying-a-wpf-application-wpf.md).  
+ V závislosti na typu aplikace, kterou sestavíte, existuje jedna nebo více možností nasazení, ze kterých si můžete vybrat. Další informace naleznete v tématu [nasazení aplikace WPF](deploying-a-wpf-application-wpf.md).  
   
 <a name="related_topics"></a>
 ## <a name="related-topics"></a>Související témata  
   
 |Nadpis|Popis|  
 |-----------|-----------------|  
-|[Přehled správy aplikací](application-management-overview.md)|Obsahuje přehled třídy včetně správy životnosti <xref:System.Windows.Application> aplikace, oken, prostředků aplikace a navigace.|  
-|[Okna ve WPF](windows-in-wpf-applications.md)|Obsahuje podrobnosti o správě oken v <xref:System.Windows.Window> aplikaci, včetně použití třídy a dialogových oken.|  
-|[Přehled navigace](navigation-overview.md)|Obsahuje přehled správy navigace mezi stránkami aplikace.|  
-|[Hostování](hosting-wpf-applications.md)|Obsahuje přehled aplikací prohlížeče XAML (XBAPs).|  
-|[Sestavení a nasazení](building-and-deploying-wpf-applications.md)|Popisuje, jak vytvořit a nasadit aplikaci WPF.|  
-|[Úvod k použití WPF v sadě Visual Studio](../getting-started/introduction-to-wpf-in-vs.md)|Popisuje hlavní rysy WPF.|  
-|[Návod: Moje první desktopová aplikace WPF](../getting-started/walkthrough-my-first-wpf-desktop-application.md)|Návod, který ukazuje, jak vytvořit aplikaci WPF pomocí navigace na stránce, rozložení, ovládací prvky, obrázky, styly a vazby.|
+|[Přehled správy aplikací](application-management-overview.md)|Poskytuje přehled <xref:System.Windows.Application> třídy, včetně správy životního cyklu aplikací, Windows, prostředků aplikací a navigace.|  
+|[Okna ve WPF](windows-in-wpf-applications.md)|Obsahuje podrobnosti o správě oken v aplikaci, včetně způsobu použití <xref:System.Windows.Window> polí a dialogových oken.|  
+|[Přehled navigace](navigation-overview.md)|Poskytuje přehled o správě navigace mezi stránkami aplikace.|  
+|[Hosting](hosting-wpf-applications.md)|Poskytuje přehled aplikací prohlížeče XAML (XBAP).|  
+|[Sestavení a nasazení](building-and-deploying-wpf-applications.md)|Popisuje, jak sestavit a nasadit vaši aplikaci WPF.|  
+|[Úvod k použití WPF v sadě Visual Studio](../getting-started/introduction-to-wpf-in-vs.md)|Popisuje hlavní funkce WPF.|  
+|[Návod: Moje první desktopová aplikace WPF](../getting-started/walkthrough-my-first-wpf-desktop-application.md)|Návod, který ukazuje, jak vytvořit aplikaci WPF pomocí navigace na stránce, rozložení, ovládacích prvků, obrázků, stylů a vazeb.|

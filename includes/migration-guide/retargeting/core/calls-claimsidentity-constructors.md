@@ -1,18 +1,37 @@
 ---
-ms.openlocfilehash: c10d617e07ca2fa0239298d449d93cf833b83fce
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.openlocfilehash: b88f7d4a17f885b687d99ab9410a56039e176080
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81274927"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85614429"
 ---
-### <a name="calls-to-claimsidentity-constructors"></a>Volání konstruktorů ClaimsIdentity
+### <a name="calls-to-claimsidentity-constructors"></a>Volání konstruktorů hodnota ClaimsIdentity
 
-|   |   |
-|---|---|
-|Podrobnosti|Počínaje rozhraním .NET Framework 4.6.2 dochází <xref:System.Security.Claims.ClaimsIdentity> ke změně způsobu, jakým konstruktory s parametrem <xref:System.Security.Principal.IIdentity?displayProperty=name> nastavují <xref:System.Security.Claims.ClaimsIdentity.Actor?displayProperty=name> vlastnost. Pokud <xref:System.Security.Principal.IIdentity?displayProperty=name> je argument <xref:System.Security.Claims.ClaimsIdentity> emitovaný <xref:System.Security.Claims.ClaimsIdentity.Actor?displayProperty=name> objektem <xref:System.Security.Claims.ClaimsIdentity> a <code>null</code>vlastnost <xref:System.Security.Claims.ClaimsIdentity.Actor?displayProperty=name> tohoto objektu není <xref:System.Security.Claims.ClaimsIdentity.Clone> , je vlastnost připojena pomocí metody. V rámci 4.6.1 a starší <xref:System.Security.Claims.ClaimsIdentity.Actor?displayProperty=name> verze vlastnost je připojen jako existující odkaz. Z důvodu této změny počínaje rozhraním .NET Framework <xref:System.Security.Claims.ClaimsIdentity.Actor?displayProperty=name> 4.6.2 se vlastnost <xref:System.Security.Claims.ClaimsIdentity> <xref:System.Security.Claims.ClaimsIdentity.Actor?displayProperty=name> nového objektu nerovná vlastnosti argumentu konstruktoru. <xref:System.Security.Principal.IIdentity?displayProperty=name> V rozhraní .NET Framework 4.6.1 a starších verzích je stejná.|
-|Návrh|Pokud je toto chování nežádoucí, můžete předchozí <code>Switch.System.Security.ClaimsIdentity.SetActorAsReferenceWhenCopyingClaimsIdentity</code> chování obnovit nastavením <code>true</code>přepínače v konfiguračním souboru aplikace na . To vyžaduje, abyste do <code>&lt;runtime&gt;</code> části souboru web.config přidali následující:<pre><code class="lang-xml">&lt;configuration&gt;&#13;&#10;&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.Security.ClaimsIdentity.SetActorAsReferenceWhenCopyingClaimsIdentity=true&quot; /&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;&lt;/configuration&gt;&#13;&#10;</code></pre>|
-|Rozsah|Edge|
-|Version|4.6.2|
-|Typ|Změna cílení|
-|Ovlivněná rozhraní API|<ul><li><xref:System.Security.Claims.ClaimsIdentity.%23ctor(System.Security.Principal.IIdentity)></li><li><xref:System.Security.Claims.ClaimsIdentity.%23ctor(System.Security.Principal.IIdentity,System.Collections.Generic.IEnumerable{System.Security.Claims.Claim})></li><li><xref:System.Security.Claims.ClaimsIdentity.%23ctor(System.Security.Principal.IIdentity,System.Collections.Generic.IEnumerable{System.Security.Claims.Claim},System.String,System.String,System.String)></li></ul>|
+#### <a name="details"></a>Podrobnosti
+
+Počínaje .NET Framework 4.6.2 dojde ke změně v tom, jak <xref:System.Security.Claims.ClaimsIdentity> konstruktory s <xref:System.Security.Principal.IIdentity?displayProperty=fullName> parametrem nastaví <xref:System.Security.Claims.ClaimsIdentity.Actor?displayProperty=fullName> vlastnost. Pokud <xref:System.Security.Principal.IIdentity?displayProperty=fullName> je argumentem <xref:System.Security.Claims.ClaimsIdentity> objekt a <xref:System.Security.Claims.ClaimsIdentity.Actor?displayProperty=fullName> vlastnost tohoto objektu není, je <xref:System.Security.Claims.ClaimsIdentity> `null` <xref:System.Security.Claims.ClaimsIdentity.Actor?displayProperty=fullName> vlastnost připojena pomocí <xref:System.Security.Claims.ClaimsIdentity.Clone> metody. V rozhraní Framework 4.6.1 a starších verzích <xref:System.Security.Claims.ClaimsIdentity.Actor?displayProperty=fullName> je vlastnost připojena jako stávající odkaz. Z důvodu této změny, počínaje .NET Framework 4.6.2, není <xref:System.Security.Claims.ClaimsIdentity.Actor?displayProperty=fullName> vlastnost nového <xref:System.Security.Claims.ClaimsIdentity> objektu shodná s <xref:System.Security.Claims.ClaimsIdentity.Actor?displayProperty=fullName> vlastností <xref:System.Security.Principal.IIdentity?displayProperty=fullName> argumentu konstruktoru. V .NET Framework 4.6.1 a dřívějších verzích se rovná.
+
+#### <a name="suggestion"></a>Návrh
+
+Pokud je toto chování nežádoucí, můžete předchozí chování obnovit nastavením `Switch.System.Security.ClaimsIdentity.SetActorAsReferenceWhenCopyingClaimsIdentity` přepínače v konfiguračním souboru aplikace na `true` . To vyžaduje, abyste do `<runtime>` oddílu web.config souboru přidali následující:
+
+```xml
+<configuration>
+  <runtime>
+    <AppContextSwitchOverrides value="Switch.System.Security.ClaimsIdentity.SetActorAsReferenceWhenCopyingClaimsIdentity=true" />
+  </runtime>
+</configuration>
+```
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   | Edge        |
+| Verze | 4.6.2       |
+| Typ    | Změna cílení |
+
+#### <a name="affected-apis"></a>Ovlivněná rozhraní API
+
+- <xref:System.Security.Claims.ClaimsIdentity.%23ctor(System.Security.Principal.IIdentity)>
+- <xref:System.Security.Claims.ClaimsIdentity.%23ctor(System.Security.Principal.IIdentity,System.Collections.Generic.IEnumerable{System.Security.Claims.Claim})>
+- <xref:System.Security.Claims.ClaimsIdentity.%23ctor(System.Security.Principal.IIdentity,System.Collections.Generic.IEnumerable{System.Security.Claims.Claim},System.String,System.String,System.String)>

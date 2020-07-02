@@ -1,18 +1,43 @@
 ---
-ms.openlocfilehash: 897bb0b0650c633b87a792516c62566f491ec3fd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7e42a294b151d07a6fdc61308cdf92df7a31a1d6
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61762559"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85614485"
 ---
-### <a name="deflatestream-uses-native-apis-for-decompression"></a>DeflateStream využívá nativní rozhraní API pro dekompresi
+### <a name="deflatestream-uses-native-apis-for-decompression"></a>DeflateStream používá nativní rozhraní API pro dekompresi
 
-|   |   |
-|---|---|
-|Podrobnosti|Od verze rozhraní .NET Framework 4.7.2, provádění dekomprese v <code>T:System.IO.Compression.DeflateStream</code> došlo ke změně třídy používat nativní rozhraní API Windows ve výchozím nastavení. Obvykle to vede k zlepšení výkonu. Cílení na verzi rozhraní .NET Framework 4.7.2 nebo vyšší pomocí nativní implementaci všech aplikací .NET. Tato změna může vést k určité rozdíly v chování, mezi které patří:<ul><li>Zprávy o výjimkách, může být jiný. Typ výjimky vyvolané, ale zůstává stejná.</li><li>Některých speciálních situacích, například nemá dostatek paměti k dokončení operace, mohou být zpracovány jinak.</li><li>Jsou známy rozdíly pro analýzu hlavičce gzip (Poznámka: pouze <code>GZipStream</code> nastavení pro dekompresi ovlivňuje):</li><li>Výjimky při analýze neplatné záhlaví mohou být vyvolány v různých časech.</li><li>Nativní implementaci vynutí, že nebylo vyhrazeno hodnoty některých příznaků v hlavičce gzip (to znamená [FLG](http://www.zlib.org/rfc-gzip.html#header-trailer)) jsou nastavené podle specifikace, což může způsobit, že ji vyvolá výjimku, kde již dříve byly ignorovány neplatné hodnoty.</li></ul>|
-|Doporučení|Pokud dekomprese pomocí nativních rozhraní API má negativně ovlivněn chování vaší aplikace, můžete se rozhodnout tuto funkci tak, že přidáte <code>Switch.System.IO.Compression.DoNotUseNativeZipLibraryForDecompression</code> přepněte <code>runtime</code> část souboru app.config a nastavíte ho na <code>true</code>:<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;&#13;&#10;&lt;configuration&gt;&#13;&#10;&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides&#13;&#10;value=&quot;Switch.System.IO.Compression.DoNotUseNativeZipLibraryForDecompression=true&quot; /&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;&lt;/configuration&gt;&#13;&#10;</code></pre>|
-|Rozsah|Vedlejší|
-|Version|4.7.2|
-|Type|Změna cílení|
-|Ovlivněná rozhraní API|<ul><li><xref:System.IO.Compression.DeflateStream?displayProperty=nameWithType></li><li><xref:System.IO.Compression.GZipStream?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a>Podrobnosti
+
+Počínaje .NET Framework 4.7.2 se implementace dekomprese ve `T:System.IO.Compression.DeflateStream` třídě změnila tak, aby ve výchozím nastavení používala nativní rozhraní API systému Windows. Obvykle to vede k výraznému zlepšení výkonu. Všechny aplikace .NET cílené na .NET Framework verze 4.7.2 nebo vyšší používají nativní implementaci. Tato změna může mít za následek určité rozdíly v chování, mezi které patří:
+
+- Zprávy výjimek se mohou lišit. Typ vyvolané výjimky však zůstává stejný.
+- Některé zvláštní situace, jako je například nedostatek paměti k dokončení operace, mohou být zpracovány jinak.
+- Existují známé rozdíly pro analýzu hlavičky gzip (Poznámka: `GZipStream` je ovlivněna pouze sada pro dekompresi):
+- Výjimky při analýze neplatných hlaviček mohou být vyvolány v různých časech.
+- Nativní implementace vynucuje, že hodnoty pro některé vyhrazené příznaky v hlavičce gzip (tj. [FLG](http://www.zlib.org/rfc-gzip.html#header-trailer)) jsou nastaveny podle specifikace, což může způsobit výjimku, pokud byly dříve neplatné hodnoty ignorovány.
+
+#### <a name="suggestion"></a>Návrh
+
+Pokud dekomprese s nativními rozhraními API negativně ovlivnila chování vaší aplikace, můžete tuto funkci odhlásit přidáním `Switch.System.IO.Compression.DoNotUseNativeZipLibraryForDecompression` přepínače do `runtime` části souboru app.config a nastavením na `true` :
+
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <runtime>
+    <AppContextSwitchOverrides value="Switch.System.IO.Compression.DoNotUseNativeZipLibraryForDecompression=true" />
+  </runtime>
+</configuration>
+```
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   | Vedlejší       |
+| Verze | 4.7.2       |
+| Typ    | Změna cílení |
+
+#### <a name="affected-apis"></a>Ovlivněná rozhraní API
+
+- <xref:System.IO.Compression.DeflateStream?displayProperty=nameWithType>
+- <xref:System.IO.Compression.GZipStream?displayProperty=nameWithType>

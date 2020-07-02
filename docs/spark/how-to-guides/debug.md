@@ -1,19 +1,21 @@
 ---
-title: Ladění rozhraní .NET pro aplikaci Apache Spark v systému Windows
-description: Přečtěte si, jak ladit rozhraní .NET pro aplikaci Apache Spark ve Windows.
-ms.date: 01/29/2020
+title: Ladění rozhraní .NET pro Apache Spark aplikaci ve Windows
+description: Naučte se ladit rozhraní .NET pro Apache Spark aplikace ve Windows.
+ms.date: 06/25/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: dac6aed1f7faba7f07b722a6dac0da930ab9ec66
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9209d5bdec6dd85f6d21a502fb07204effef1934
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79185812"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85617753"
 ---
-# <a name="debug-a-net-for-apache-spark-application"></a>Ladění rozhraní .NET pro aplikaci Apache Spark
+# <a name="debug-a-net-for-apache-spark-application"></a>Ladění aplikace .NET pro Apache Spark
 
-Tento návod poskytuje postup ladění aplikace .NET pro Apache Spark v systému Windows.
+Tento postup poskytuje kroky pro ladění rozhraní .NET pro Apache Spark aplikaci v systému Windows.
+
+[!INCLUDE [spark-preview-note](../../../includes/spark-preview-note.md)]
 
 ## <a name="debug-your-application"></a>Ladění aplikace
 
@@ -27,7 +29,7 @@ spark-submit \
   debug
 ```
 
-Při spuštění příkazu se zobrazí následující výstup:
+Po spuštění příkazu se zobrazí následující výstup:
 
 ```console
 ***********************************************************************
@@ -35,22 +37,22 @@ Při spuštění příkazu se zobrazí následující výstup:
 ***********************************************************************
 ```
 
-V režimu ladění DotnetRunner nespustí aplikaci .NET, ale místo toho čeká na spuštění aplikace .NET. Ponechejte toto okno příkazového řádku otevřené a spusťte aplikaci .NET prostřednictvím ladicího programu jazyka C#, chcete-li ladit aplikaci. Spusťte aplikaci .NET s ladicím programem Jazyka C#[(Ladicí program visual studia pro Windows/macOS](https://visualstudio.microsoft.com/vs/) nebo [Rozšíření debuggeru jazyka C# v kódu sady Visual Studio)](https://code.visualstudio.com/Docs/editor/debugging)pro ladění aplikace.
+V režimu ladění DotnetRunner nespustí aplikaci .NET, ale místo toho čeká na spuštění aplikace .NET. Nechte okno příkazového řádku otevřené a spusťte aplikaci .NET prostřednictvím ladicího programu C# k ladění aplikace. Spusťte aplikaci .NET pomocí ladicího programu jazyka C# (ladicí program sady[Visual Studio pro Windows/MacOS](https://visualstudio.microsoft.com/vs/) nebo [C# Debugger v Visual Studio Code](https://code.visualstudio.com/Docs/editor/debugging)), chcete-li ladit aplikaci.
 
-## <a name="debug-a-user-defined-function-udf"></a>Ladění uživatelem definované funkce (UDF)
+## <a name="debug-a-user-defined-function-udf"></a>Ladění uživatelsky definované funkce (UDF)
 
 > [!NOTE]
-> Uživatelem definované funkce jsou podporovány pouze v systému Windows s ladicím programem sady Visual Studio.
+> Uživatelsky definované funkce jsou podporovány pouze ve Windows pomocí ladicího programu sady Visual Studio.
 
-Před `spark-submit`spuštěním nastavte následující proměnnou prostředí:
+Před spuštěním `spark-submit` nastavte následující proměnnou prostředí:
 
 ```bat
 set DOTNET_WORKER_DEBUG=1
 ```
 
-Když spustíte aplikaci `Choose Just-In-Time Debugger` Spark, objeví se okno. Zvolte ladicí program sady Visual Studio.
+Když spouštíte aplikaci Spark, `Choose Just-In-Time Debugger` okno se automaticky otevře. Vyberte ladicí program sady Visual Studio.
 
-Ladicí program se přeruší na následujícím místě v [TaskRunner.cs](https://github.com/dotnet/spark/blob/5e9c08b430b4bc56b5f42252c4b73437377afaed/src/csharp/Microsoft.Spark.Worker/TaskRunner.cs#L52):
+Ladicí program se přeruší v následujícím umístění v [TaskRunner.cs](https://github.com/dotnet/spark/blob/5e9c08b430b4bc56b5f42252c4b73437377afaed/src/csharp/Microsoft.Spark.Worker/TaskRunner.cs#L52):
 
 ```csharp
 if (EnvironmentUtils.GetEnvironmentVariableAsBool("DOTNET_WORKER_DEBUG"))
@@ -59,16 +61,16 @@ if (EnvironmentUtils.GetEnvironmentVariableAsBool("DOTNET_WORKER_DEBUG"))
 }
 ```
 
-Přejděte do souboru *CS* obsahujícího formát UDF, který chcete ladit, a [nastavte zarážku](https://docs.microsoft.com/visualstudio/debugger/using-breakpoints?view=vs-2019). Zarážka `The breakpoint will not currently be hit` bude uvedeno, protože pracovník ještě nenačetl sestavení, které obsahuje UDF.
+Přejděte k souboru *. cs* obsahujícímu systém souborů UDF, který chcete ladit, a [Nastavte zarážku](https://docs.microsoft.com/visualstudio/debugger/using-breakpoints?view=vs-2019). Zarážka znamená, že `The breakpoint will not currently be hit` pracovní proces ještě nenačte sestavení, které obsahuje UDF.
 
-Hit `F5` pokračovat ve vaší aplikaci a zarážka bude nakonec přístupů.
+`F5`Přivedete se k pokračování aplikace a nakonec zarážka bude k dispozice.
 
 > [!NOTE]
-> Pro každý úkol se zobrazí okno Zvolit debugger v čase. Chcete-li se vyhnout nadměrnému vyskakovacím líacím, nastavte počet vykonavatelů na nízké číslo. Můžete například použít volbu **--master local[1]** pro spark-submit a nastavit počet úkolů na 1, který spustí jednu instanci ladicího programu.
+> Pro každý úkol se zobrazí okno zvolit ladicí program za běhu. Aby nedocházelo k nadměrným překryvům, nastavte počet prováděcích modulů na nízké číslo. Například můžete použít **místní možnost--Master [1]** pro Spark-Submit k nastavení počtu úkolů na 1, což spustí jednu instanci ladicího programu.
 
 ## <a name="debug-scala-code"></a>Ladění kódu Scala
 
-Pokud potřebujete ladit kód na straně Scala (`DotnetRunner`, `DotnetBackendHandler`, atd.), můžete použít následující příkaz a připojit ladicí program ke spuštěnému procesu pomocí [IntelliJ](https://www.jetbrains.com/help/idea/attaching-to-local-process.html):
+Pokud potřebujete ladit Scala kód ( `DotnetRunner` , `DotnetBackendHandler` atd.), můžete použít následující příkaz a připojit ladicí program k běžícímu procesu pomocí [IntelliJ](https://www.jetbrains.com/help/idea/attaching-to-local-process.html):
 
 ```shell
 spark-submit \
@@ -79,11 +81,11 @@ spark-submit \
   <path-to-your-app-exe> <argument(s)-to-your-app>
 ```
 
-Po spuštění příkazu připojte ladicí program ke spuštěnému procesu pomocí [programu Intellij](https://www.jetbrains.com/help/idea/attaching-to-local-process.html).
+Po spuštění příkazu připojte ladicí program k běžícímu procesu pomocí [IntelliJ](https://www.jetbrains.com/help/idea/attaching-to-local-process.html).
 
 ## <a name="next-steps"></a>Další kroky
 
-* [Začínáme s rozhraním .NET pro Apache Spark](../tutorials/get-started.md)
-* [Nasazení rozhraní .NET pro aplikaci Apache Spark do Azure HDInsight](../tutorials/hdinsight-deployment.md)
-* [Nasazení rozhraní .NET pro aplikaci Apache Spark do databricks](../tutorials/databricks-deployment.md)
-* [Nasazení rozhraní .NET pro aplikaci Apache Spark do amazonského EMR Spark](../tutorials/amazon-emr-spark-deployment.md)
+* [Začínáme s .NET pro Apache Spark](../tutorials/get-started.md)
+* [Nasazení aplikace .NET pro Apache Spark do Azure HDInsight](../tutorials/hdinsight-deployment.md)
+* [Nasazení rozhraní .NET pro Apache Spark aplikaci do datacihlů](../tutorials/databricks-deployment.md)
+* [Nasazení .NET pro Apache Spark aplikaci do Amazon EMR Spark](../tutorials/amazon-emr-spark-deployment.md)

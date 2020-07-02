@@ -1,17 +1,23 @@
 ---
-ms.openlocfilehash: 4c6a89f9753989a5ad061e847dff70d2af0b3cf4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 863e7035827537e0f943af05c2f0232029b99db8
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62088478"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85617195"
 ---
-### <a name="entity-framework-version-must-match-the-net-framework-version"></a>Entity Framework verze musí odpovídat verzi rozhraní .NET Framework
+### <a name="entity-framework-version-must-match-the-net-framework-version"></a>Verze Entity Framework musí odpovídat verzi .NET Framework.
 
-|   |   |
-|---|---|
-|Podrobnosti|S verzí rozhraní .NET framework by si měly odpovídat verzi rozhraní entity framework. Entity Framework 5 se doporučuje pro rozhraní .NET Framework 4.5. Existují některé známé problémy s platformou EF s 4.x v projektu rozhraní .NET Framework 4.5 kolem <xref:System.ComponentModel.DataAnnotations>. V rozhraní .NET 4.5 tyto se přesunuly na jiné sestavení, takže dojde k problémům určující, které poznámky k použití.|
-|Doporučení|Upgrade na rozhraní Entity Framework 5 pro rozhraní .NET Framework 4.5|
-|Rozsah|Hlavní|
-|Version|4.5|
-|Type|Změna cílení|
+#### <a name="details"></a>Podrobnosti
+
+Verze Entity Framework (EF) by měla odpovídat verzi .NET Framework. Pro .NET Framework 4,5 se doporučuje Entity Framework 5. K dispozici jsou některé známé problémy s EF 4. x v projektu .NET Framework 4,5 <xref:System.ComponentModel.DataAnnotations> . V .NET Framework 4,5 byly tyto přesunuty do jiného sestavení, takže dojde k problémům s určením, které poznámky se mají použít.
+
+#### <a name="suggestion"></a>Návrh
+
+Upgrade na Entity Framework 5 pro .NET Framework 4,5
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   | Hlavní       |
+| Verze | 4.5         |
+| Typ    | Změna cílení |

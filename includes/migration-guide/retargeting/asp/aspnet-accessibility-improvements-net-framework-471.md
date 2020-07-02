@@ -1,17 +1,44 @@
 ---
-ms.openlocfilehash: f18b96eaeec8a6427ffb7776327517989d0225d0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 418bcdca1e9a325894891d7b0e080ce035e2d1b4
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "72887749"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85614460"
 ---
-### <a name="aspnet-accessibility-improvements-in-net-framework-471"></a>ASP.NET zlepšení přístupnosti v rozhraní .NET Framework 4.7.1
+### <a name="aspnet-accessibility-improvements-in-net-framework-471"></a>Vylepšení přístupnosti ASP.NET v .NET Framework 4.7.1
 
-|   |   |
-|---|---|
-|Podrobnosti|Počínaje rozhraním .NET Framework 4.7.1 ASP.NET vylepšilo způsob práce ASP.NET webových ovládacích prvků s technologií usnadnění v sadě Visual Studio, aby byla lépe ASP.NET zákazníkům.  Patří mezi ně následující změny:<ul><li>Změny pro implementaci chybějících vzorů usnadnění přístupu k rozhraní v ovládacích prvcích, jako je dialogové okno Přidat pole v průvodci zobrazením podrobností nebo dialogové okno Konfigurovat zobrazení seznamu průvodce listview.</li><li>Změny pro zlepšení zobrazení v režimu vysokého kontrastu, například editor polí datových stránek.</li><li>Změny pro zlepšení prostředí navigace pomocí klávesnice pro ovládací prvky, například dialogové okno Pole v průvodci Upravit pole operátoru ovládacího prvku DataPager, dialogové okno Konfigurovat kontext objektu nebo dialogové okno Konfigurovat selction dat průvodcem Konfigurovat zdroj dat.</li></ul>|
-|Návrh|**Jak se přihlásit nebo odhlásit z těchto změn**<br>Aby visual studio návrháře těžit z těchto změn, musí běžet v rozhraní .NET Framework 4.7.1 nebo novější. Webová aplikace může těžit z těchto změn v některé z následujících způsobů:<ul><li>Nainstalujte Visual Studio 2017 15.3 nebo novější, který podporuje nové funkce usnadnění s následující AppContext Switch ve výchozím nastavení.</li><li>Odhlásit se z chování starší <code>Switch.UseLegacyAccessibilityFeatures</code> usnadnění přidáním <code>&lt;runtime&gt;</code> AppContext přepínač do sekce v devenv.exe.config souboru a nastavení na <code>false</code>, jak ukazuje následující příklad.</li></ul><pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#13;&#10;&lt;configuration&gt;&#13;&#10;&lt;runtime&gt;&#13;&#10;...&#13;&#10;&lt;!-- AppContextSwitchOverrides value attribute is in the form of &#39;key1=true/false;key2=true/false&#39;  --&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.UseLegacyAccessibilityFeatures=false&quot; /&gt;&#13;&#10;...&#13;&#10;&lt;/runtime&gt;&#13;&#10;&lt;/configuration&gt;&#13;&#10;</code></pre>Aplikace, které cílí na rozhraní .NET Framework 4.7.1 nebo novější a chtějí zachovat starší chování usnadnění <code>true</code>přístupu, se mohou přihlásit k použití starších funkcí usnadnění explicitním nastavením tohoto přepínače AppContext na .|
-|Rozsah|Vedlejší|
-|Version|4.7.1|
-|Typ|Změna cílení|
+#### <a name="details"></a>Podrobnosti
+
+Počínaje .NET Framework 4.7.1, ASP.NET zlepšila, jak webové ovládací prvky ASP.NET pracují s technologiemi usnadnění v aplikaci Visual Studio, aby lépe podporovaly ASP.NET zákazníky.  Mezi ně patří tyto změny:
+
+- Změny pro implementaci chybějících vzorů přístupnosti uživatelského rozhraní v ovládacích prvcích, jako je dialogové okno Přidat pole v průvodci zobrazení podrobností nebo dialogové okno Konfigurovat ListView Průvodce ListView.
+- Změny pro zlepšení zobrazení v režimu Vysoký kontrast, jako je například editor polí datového pageru.
+- Změny pro zlepšení prostředí navigace klávesnicí pro ovládací prvky, jako je dialogové okno pole v průvodci úpravou polí stránkování ovládacího prvku DataPager, dialogové okno Konfigurovat ObjectContext nebo dialogové okno Konfigurovat výběr dat v Průvodci konfigurací zdroje dat.
+
+#### <a name="suggestion"></a>Návrh
+
+**Jak vyjádřit nebo odhlásit tyto změny** Aby mohl Návrhář sady Visual Studio těžit z těchto změn, musí běžet na .NET Framework 4.7.1 nebo novějším. Webová aplikace může tyto změny využít v jednom z následujících způsobů:
+
+- Nainstalujte Visual Studio 2017 15,3 nebo novější, které ve výchozím nastavení podporují nové funkce usnadnění s následujícím přepínačem AppContext.
+- Odsouhlasení se starším chováním funkce usnadnění přidáním `Switch.UseLegacyAccessibilityFeatures` přepínače AppContext do `<runtime>` oddílu v souboru devenv.exe.config a jeho nastavením na `false` , jak ukazuje následující příklad.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+<runtime>
+...
+<!-- AppContextSwitchOverrides value attribute is in the form of 'key1=true/false;key2=true/false'  -->
+<AppContextSwitchOverrides value="Switch.UseLegacyAccessibilityFeatures=false" />
+...
+</runtime>
+</configuration>
+```
+
+Aplikace, které cílí na .NET Framework 4.7.1 nebo novější a chtějí zachovat starší funkce usnadnění, se můžou přihlásit k používání starších funkcí pro usnadnění přístupu tím, že explicitně nastaví tento přepínač AppContext na `true` .
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   | Vedlejší       |
+| Verze | 4.7.1       |
+| Typ    | Změna cílení |

@@ -1,17 +1,102 @@
 ---
-ms.openlocfilehash: 5e8674d0a9bb6e12784d9898fb01a26aa6de8c8f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e528a41748d9353c96d443f68e15e7a98ee7f4ae
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "72887748"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85616241"
 ---
-### <a name="accessibility-improvements-in-windows-forms-controls-for-net-48"></a>Vylepšení usnadnění v ovládacích prvcích windows forms pro rozhraní .NET 4.8
+### <a name="accessibility-improvements-in-windows-forms-controls-for-net-48"></a>Vylepšení usnadnění v ovládacích prvcích model Windows Forms pro .NET 4,8
 
-|   |   |
-|---|---|
-|Podrobnosti|Rozhraní Windows Forms Framework pokračuje ve zlepšování způsobu práce s technologiemi usnadnění přístupu, aby lépe podporovalo zákazníky windows forms. Patří mezi ně následující změny:<ul><li>Změny pro zlepšení zobrazení v režimu vysokého kontrastu.</li><li>Změny interakce s Předčítáním</li><li>Změny v hierarchii Přístupné (zlepšení navigace prostřednictvím stromu automatizace uživatelského rozhraní).</li></ul>|
-|Návrh|**Jak se přihlásit nebo odhlásit z těchto změn**<br>Aby aplikace mohla využívat tyto změny, musí být spuštěna v rozhraní .NET Framework 4.8. Aplikace se může přihlásit do těchto změn jedním z následujících způsobů:<ul><li>Je znovu zkompilován tak, aby cílil rozhraní .NET Framework 4.8. Tyto změny usnadnění jsou ve výchozím nastavení povoleny v aplikacích windows forms, které cílí na rozhraní .NET Framework 4.8.</li><li>Zaměřuje se na rozhraní .NET Framework 4.7.2 nebo starší verzi a odhlásí se z <code>&lt;runtime&gt;</code> chování starší usnadnění přidáním následujícího [přepínače AppContext](https://docs.microsoft.com/dotnet/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element) do části konfiguračního souboru aplikace a jeho nastavením na <code>false</code>, jak ukazuje následující příklad.</li></ul><pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#13;&#10;&lt;configuration&gt;&#13;&#10;&lt;startup&gt;&#13;&#10;&lt;supportedRuntime version=&quot;v4.0&quot; sku=&quot;.NETFramework,Version=v4.7&quot;/&gt;&#13;&#10;&lt;/startup&gt;&#13;&#10;&lt;runtime&gt;&#13;&#10;&lt;!-- AppContextSwitchOverrides value attribute is in the form of &#39;key1=true/false;key2=true/false  --&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.UseLegacyAccessibilityFeatures=false;Switch.UseLegacyAccessibilityFeatures.2=false;Switch.UseLegacyAccessibilityFeatures.3=false&quot; /&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;&lt;/configuration&gt;&#13;&#10;</code></pre>Všimněte si, že chcete-li se přihlásit k funkcím usnadnění přidané v rozhraní .NET Framework 4.8, musíte se také přihlásit k funkcím usnadnění rozhraní .NET Framework 4.7.1 a 4.7.2. Aplikace, které cílí na rozhraní .NET Framework 4.8 a chtějí zachovat starší chování usnadnění, se <code>true</code>můžou přihlásit k používání starších funkcí usnadnění explicitním nastavením tohoto přepínače AppContext na . Povolení podpory vyvolání kláves klávesnice <code>Switch.System.Windows.Forms.UseLegacyToolTipDisplay=false</code> vyžaduje přidání řádku do hodnoty AppContextSwitchOverrides:<pre><code class="lang-xml">&#39;&lt;AppContextSwitchOverrides value=&quot;Switch.UseLegacyAccessibilityFeatures=false;Switch.UseLegacyAccessibilityFeatures.2=false;Switch.UseLegacyAccessibilityFeatures.3=false;Switch.System.Windows.Forms.UseLegacyToolTipDisplay=false&quot; /&gt;&#39;&#13;&#10;</code></pre>Všimněte si, že povolení této funkce vyžaduje přihlášení k výše uvedené funkce usnadnění rozhraní .NET Framework 4.7.1 - 4.8. Pokud se neodpojí některá z funkcí usnadnění, ale funkce zobrazení <xref:System.NotSupportedException> popisku je přihlášena, bude při prvním přístupu k těmto funkcím vyvolána doba běhu. Zpráva o výjimce označuje, že popisy klávesnice vyžadují, aby bylo povoleno zlepšení usnadnění přístupu úrovně 3. **Použití barev definovaných osem v motivech s vysokým kontrastem**<ul><li>Vylepšené motivy s vysokým kontrastem.</li></ul>**Vylepšená podpora pro Předčítání**<ul><li>Předčítání nyní oznamuje směr řazení <xref:System.Windows.Forms.DataGridViewColumn> při oznámení přístupného názvu <xref:System.Windows.Forms.DataGridViewCell>.</li></ul>**Vylepšená podpora přístupnosti CheckedListBox**<ul><li>Vylepšená podpora předčítání <xref:System.Windows.Forms.CheckedListBox> pro ovládací prvek. Při přechodu <xref:System.Windows.Forms.CheckedListBox> na ovládací prvek pomocí klávesnice Program <xref:System.Windows.Forms.CheckedListBox> Předčítání položku zaostří a oznámí ji.</li><li>Prázdný ovládací prvek CheckedListBox má nyní nakreslený obdélník fokusu pro virtuální první položku, když se ovládací prvek zaměří.</li></ul>**Vylepšená podpora přístupnosti služby ComboBox**<ul><li>Povolená podpora automatizace <xref:System.Windows.Forms.ComboBox> uživatelského rozhraní pro ovládací prvek, se schopností používat oznámení automatizace uživatelského rozhraní a další funkce automatizace uživatelského rozhraní.</li></ul>**Vylepšená podpora usnadnění datového zobrazení**<ul><li>Povolená podpora automatizace uživatelského rozhraní pro <xref:System.Windows.Forms.DataGridView> řízení se schopností používat oznámení automatizace uživatelského rozhraní a další funkce automatizace uživatelského rozhraní.</li><li>Prvek Automatizace uživatelského rozhraní, <xref:System.Windows.Forms.DataGridViewComboBoxEditingControl> <xref:System.Windows.Forms.DataGridViewTextBoxEditingControl> který odpovídá nebo je nyní podřízený odpovídající editační buňky.</li></ul>**Vylepšená podpora přístupnosti linklabelů**<ul><li>Lepší <xref:System.Windows.Forms.LinkLabel> přístupnost ovládacího prvku: Předčítání oznámí zakázaný <xref:System.Windows.Forms.LinkLabel> stav propojení, pokud je odpovídající ovládací prvek zakázán.</li></ul>**Vylepšená podpora usnadnění progressbar**<ul><li>Povolená podpora automatizace <xref:System.Windows.Forms.ProgressBar> uživatelského rozhraní pro ovládací prvek s možností používat oznámení automatizace uživatelského rozhraní a další funkce automatizace uživatelského rozhraní. Vývojáři teď můžou používat oznámení automatizace uživatelského rozhraní, která může Předčítání oznamovat k označení průběhu.</li></ul>Přehled přehledu událostí automatizace uživatelského rozhraní, včetně událostí oznámení automatizace uživatelského rozhraní, najdete v tématu [Přehled událostí automatizace uživatelského rozhraní](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-eventsoverview). **Vylepšená podpora přístupnosti PropertyGrid**<ul><li>Povolená podpora automatizace <xref:System.Windows.Forms.PropertyGrid> uživatelského rozhraní pro ovládací prvek, se schopností používat oznámení automatizace uživatelského rozhraní a další funkce automatizace uživatelského rozhraní.</li><li>Prvek Automatizace uživatelského rozhraní, který odpovídá aktuálně upravené vlastnosti je nyní podřízený odpovídající položky vlastnosti ui automation element.</li><li>Prvek položky vlastnosti UI Automation je nyní podřízeným <xref:System.Windows.Forms.PropertyGrid> prvkem odpovídající kategorie, pokud je nadřazený ovládací prvek nastaven na zobrazení kategorií.</li></ul>**Vylepšená podpora nástroje ToolStrip**<ul><li>Povolená podpora automatizace <xref:System.Windows.Forms.ToolStrip> uživatelského rozhraní pro ovládací prvek, se schopností používat oznámení automatizace uživatelského rozhraní a další funkce automatizace uživatelského rozhraní.</li><li>Vylepšená <xref:System.Windows.Forms.ToolStrip> navigace mezi položkami.</li><li>V režimu položek fokus předčítání nezmizí a nepřejde na skryté položky.</li></ul>**Vylepšené vizuální podněty**<ul><li>Prázdný <xref:System.Windows.Forms.CheckedListBox> ovládací prvek nyní zobrazí indikátor fokusu, když obdrží fokus.</li></ul>Poznámka: Podpora automatizace uživatelského rozhraní je povolena pro ovládací prvky za běhu, ale nepoužívá se v době návrhu. Přehled automatizace uživatelského rozhraní najdete v tématu [Přehled automatizace uživatelského rozhraní](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-overview).</p>**Popisky ovládacích prvků pomocí klávesnice**<ul><li>Popisek ovládacího prvku lze nyní vyvolat zaostřením ovládacího prvku pomocí klávesnice. Tato funkce musí být povolena explicitně pro aplikaci (viz část ** &quot;Jak se přihlásit nebo odhlásit z těchto změn)&quot;**</li></ul>|
-|Rozsah|Hlavní|
-|Version|4.8|
-|Typ|Změna cílení|
+#### <a name="details"></a>Podrobnosti
+
+Rozhraní model Windows Forms Framework pokračuje v vylepšování toho, jak funguje s technologiemi usnadnění pro lepší podporu model Windows Formsch zákazníků. Mezi ně patří tyto změny:
+
+- Změny pro zlepšení zobrazení v režimu Vysoký kontrast.
+- Změny interakce s programem Narrator.
+- Změny v přístupné hierarchii (Vylepšení navigace prostřednictvím stromu automatizace uživatelského rozhraní).
+
+#### <a name="suggestion"></a>Návrh
+
+**Jak vyjádřit nebo odhlásit tyto změny** Aby aplikace mohla tyto změny využívat, musí běžet na .NET Framework 4,8. Aplikace se může přihlásit k těmto změnám jedním z následujících způsobů:
+
+- Zkompiluje se znovu a zacílí na .NET Framework 4,8. Tyto změny přístupnosti jsou ve výchozím nastavení povolené v aplikacích model Windows Forms, které cílí na .NET Framework 4,8.
+- Cílí na .NET Framework 4.7.2 nebo starší verze a výslovný ze staršího chování přístupnosti přidáním následujícího [přepínače AppContext](https://docs.microsoft.com/dotnet/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element) do `<runtime>` oddílu konfiguračního souboru aplikace a jeho nastavením na `false` , jak ukazuje následující příklad.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <startup>
+    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.7"/>
+  </startup>
+  <runtime>
+    <!-- AppContextSwitchOverrides value attribute is in the form of 'key1=true/false;key2=true/false  -->
+    <AppContextSwitchOverrides value="Switch.UseLegacyAccessibilityFeatures=false;Switch.UseLegacyAccessibilityFeatures.2=false;Switch.UseLegacyAccessibilityFeatures.3=false" />
+  </runtime>
+</configuration>
+```
+
+Všimněte si, že pokud se chcete přihlásit k funkcím pro usnadnění přidaným v .NET Framework 4,8, musíte také vyjádřit souhlas s funkcemi přístupnosti .NET Framework 4.7.1 a 4.7.2. Aplikace, které cílí na .NET Framework 4,8 a chtějí zachovat starší možnosti přístupnosti, se můžou přihlásit k používání starších funkcí pro usnadnění přístupu, a to explicitně nastavením tohoto přepínače AppContext na `true` . Povolení podpory vyvolání popisku klávesnice vyžaduje přidání `Switch.System.Windows.Forms.UseLegacyToolTipDisplay=false` řádku k hodnotě AppContextSwitchOverrides:
+
+```xml
+<AppContextSwitchOverrides value="Switch.UseLegacyAccessibilityFeatures=false;Switch.UseLegacyAccessibilityFeatures.2=false;Switch.UseLegacyAccessibilityFeatures.3=false;Switch.System.Windows.Forms.UseLegacyToolTipDisplay=false" />
+```
+
+Upozorňujeme, že povolení této funkce vyžaduje, abyste se při4.7.1I k výše uvedeným funkcím pro usnadnění přístupu .NET Framework 4,8. V případě, že se některé funkce přístupnosti nepovolují, ale v nástroji se zobrazí funkce zobrazení popisu, <xref:System.NotSupportedException> vyvolá se při prvním přístupu k těmto funkcím modul runtime. Zpráva o výjimce indikuje, že popisky klávesnice vyžadují, aby byla povolená vylepšení přístupnosti úrovně 3.
+
+**Použití barev definovaných operačním systémem v motivech Vysoký kontrast**
+
+- Vylepšené motivy s vysokým kontrastem.
+
+**Vylepšená podpora Narrator**
+
+- Program Narrator nyní oznamuje směr řazení <xref:System.Windows.Forms.DataGridViewColumn> Při oznamování přístupového názvu a <xref:System.Windows.Forms.DataGridViewCell> .
+
+**Vylepšená podpora usnadnění CheckedListBox**
+
+- Vylepšená podpora Narrator pro <xref:System.Windows.Forms.CheckedListBox> ovládací prvek. Při přechodu k <xref:System.Windows.Forms.CheckedListBox> ovládacímu prvku pomocí klávesnice se program Narrator zaměřuje na <xref:System.Windows.Forms.CheckedListBox> položku a oznamuje ji.
+- Prázdný ovládací prvek CheckedListBox nyní obsahuje obdélník fokusu pro virtuální první položku, pokud se ovládací prvek změní na fokus.
+
+**Vylepšená podpora funkce ComboBox**
+
+- Povolena Podpora automatizace uživatelského rozhraní pro <xref:System.Windows.Forms.ComboBox> ovládací prvek s možností používat oznámení o automatizaci uživatelského rozhraní a další funkce automatizace uživatelského rozhraní.
+**Vylepšená podpora usnadnění přístupu DataGridView**
+
+- Povolená Podpora automatizace uživatelského rozhraní pro <xref:System.Windows.Forms.DataGridView> řízení s možností používat oznámení automatizace uživatelského rozhraní a další funkce automatizace uživatelského rozhraní.
+- Prvek automatizace uživatelského rozhraní, který odpovídá <xref:System.Windows.Forms.DataGridViewComboBoxEditingControl> nebo <xref:System.Windows.Forms.DataGridViewTextBoxEditingControl> je nyní podřízenosti odpovídající buňky pro úpravy.
+
+**Vylepšená podpora usnadnění LinkLabel**
+
+- Vylepšené <xref:System.Windows.Forms.LinkLabel> přístupnost ovládacího prvku: Narrator oznamuje zakázaný stav odkazu, pokud je odpovídající <xref:System.Windows.Forms.LinkLabel> ovládací prvek zakázán.
+
+**Vylepšená podpora funkcí ProgressBar**
+
+- Povolena Podpora automatizace uživatelského rozhraní pro <xref:System.Windows.Forms.ProgressBar> ovládací prvek s možností používat oznámení o automatizaci uživatelského rozhraní a další funkce automatizace uživatelského rozhraní. Vývojáři teď můžou používat upozornění na automatizaci uživatelského rozhraní, které může program Narrator oznámit, aby označoval průběh.
+Přehled událostí automatizace uživatelského rozhraní, včetně událostí oznámení automatizace uživatelského rozhraní, najdete v tématu [Přehled událostí automatizace](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-eventsoverview)uživatelského rozhraní.
+
+**Vylepšená podpora funkcí PropertyGrid**
+
+- Povolena Podpora automatizace uživatelského rozhraní pro <xref:System.Windows.Forms.PropertyGrid> ovládací prvek s možností používat oznámení o automatizaci uživatelského rozhraní a další funkce automatizace uživatelského rozhraní.
+- Prvek automatizace uživatelského rozhraní, který odpovídá aktuálně upravované vlastnosti, je nyní podřízenou položkou příslušného elementu automatizace uživatelského rozhraní pro položku vlastností.
+- Prvek položky vlastnosti automatizace uživatelského rozhraní je nyní podřízenou položkou odpovídajícího prvku kategorie, pokud <xref:System.Windows.Forms.PropertyGrid> je nadřazený ovládací prvek nastaven na zobrazení kategorií.
+
+**Vylepšená podpora ovládacího prvku ToolStrip**
+
+- Povolena Podpora automatizace uživatelského rozhraní pro <xref:System.Windows.Forms.ToolStrip> ovládací prvek s možností používat oznámení o automatizaci uživatelského rozhraní a další funkce automatizace uživatelského rozhraní.
+- Vylepšená navigace prostřednictvím <xref:System.Windows.Forms.ToolStrip> položek
+- V režimu položek nezmizí fokus Předčítání a nepřejde na skryté položky.
+
+**Vylepšené vizuální pomůcky**
+
+- Prázdný <xref:System.Windows.Forms.CheckedListBox> ovládací prvek nyní zobrazuje indikátor fokusu, když dostane fokus.
+Poznámka: Podpora automatizace uživatelského rozhraní je povolená pro ovládací prvky v modulu runtime, ale nepoužívá se v době návrhu. Přehled automatizace uživatelského rozhraní najdete v tématu [Přehled automatizace uživatelského rozhraní](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-overview).
+
+**Vyvolání popisů ovládacích prvků pomocí klávesnice**
+
+- Popis ovládacího prvku se teď dá vyvolat tak, že se ovládací prvek vymění pomocí klávesnice. Tato funkce musí být pro aplikaci explicitně povolená (viz část ** &quot; jak tyto změny &quot; výslovně zapnout nebo**vypnout).
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   | Hlavní       |
+| Verze | 4,8         |
+| Typ    | Změna cílení |

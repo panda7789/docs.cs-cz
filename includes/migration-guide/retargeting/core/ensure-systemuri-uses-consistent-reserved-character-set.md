@@ -1,18 +1,44 @@
 ---
-ms.openlocfilehash: 2ec5224b1ab16c05f6f942f6084f1ab105b71b0f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 21921156295d89aad04f3197fef9fa322f3c8c87
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61762565"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85614445"
 ---
-### <a name="ensure-systemuri-uses-a-consistent-reserved-character-set"></a>Ujistěte se, že System.Uri používá konzistentní vyhrazené znakovou sadu
+### <a name="ensure-systemuri-uses-a-consistent-reserved-character-set"></a>Zajistěte, aby System. URI používal konzistentní vyhrazenou znakovou sadu.
 
-|   |   |
-|---|---|
-|Podrobnosti|V <xref:System.Uri?displayProperty=fullName>určité procentuálně zakódovaný znaky, které byly někdy dekódovat jsou nyní konzistentně vlevo kódování. Tato akce proběhne přes vlastnosti a metody, které přístup k součástem cestu, dotaz, fragment nebo informací o uživateli identifikátoru URI. Chování se změní, pouze pokud obě z následujících akcí jsou splněny:<ul><li>Identifikátor URI obsahuje kódované podobě některého z následující vyhrazené znaky: <code>:</code>, <code>'</code>, <code>(</code>, <code>)</code>, <code>!</code> nebo <code>*</code>.</li><li>Identifikátor URI obsahuje znakové sady Unicode nebo kódovaný nerezervované znaků. Pokud jsou splněny obě výše uvedené, jsou zakódovány vlevo kódovaného vyhrazené znaky. V předchozích verzích rozhraní .NET Framework se dekódovat.</li></ul>|
-|Doporučení|U aplikací s cílovou verzí rozhraní .NET Framework počínaje 4.7.2 nové dekódování chování ve výchozím nastavení zapnutá. Pokud tuto změnu nežádoucí, můžete jej zakázat přidáním následujícího kódu [AppContextSwitchOverrides](~/docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) přepněte <code>&lt;runtime&gt;</code> oddílu konfiguračního souboru aplikace:<pre><code class="lang-xml">&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.Uri.DontEnableStrictRFC3986ReservedCharacterSets=true&quot; /&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;</code></pre>Pro aplikace, které jsou cíleny na starší verze rozhraní .NET Framework, ale jsou spuštěny v rozhraní .NET Framework 4.7.2 počínaje verzí je ve výchozím nastavení zakázáno nové dekódování chování. Můžete ji povolit tak, že přidáte následující [AppContextSwitchOverrides](~/docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) přepněte <code>&lt;runtime&gt;</code> oddílu konfiguračního souboru aplikace::<pre><code class="lang-xml">&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.Uri.DontEnableStrictRFC3986ReservedCharacterSets=false&quot; /&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;</code></pre>|
-|Rozsah|Vedlejší|
-|Version|4.7.2|
-|Type|Změna cílení|
-|Ovlivněná rozhraní API|<ul><li><xref:System.Uri?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a>Podrobnosti
+
+V <xref:System.Uri?displayProperty=fullName> je teď zakódovaných znaků, které jsou v procentech zakódovaných v procentech, trvale zakódované. K tomu dojde v rámci vlastností a metod, které přistupují k komponentám URI, dotaz, fragment nebo UserInfo. Chování se změní jenom v případě, že jsou splněné obě následující podmínky:
+
+- Identifikátor URI obsahuje kódovaný tvar libovolného z následujících vyhrazených znaků: `:` , `'` , `(` , `)` `!` nebo `*` .
+- Identifikátor URI obsahuje znak Unicode nebo kódovaný nevyhrazený znak. Pokud jsou obě výše uvedené pravdivé, zakódované vyhrazené znaky jsou zakódované vlevo. V předchozích verzích .NET Framework jsou Dekódovatelné.
+
+#### <a name="suggestion"></a>Návrh
+
+U aplikací, které cílí na verze .NET Framework počínaje 4.7.2, je ve výchozím nastavení povolené nové chování při dekódování. Pokud je tato změna nežádoucí, můžete ji zakázat přidáním následujícího přepínače [AppContextSwitchOverrides](~/docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) do `<runtime>` části konfiguračního souboru aplikace:
+
+```xml
+<runtime>
+  <AppContextSwitchOverrides value="Switch.System.Uri.DontEnableStrictRFC3986ReservedCharacterSets=true" />
+</runtime>
+```
+
+U aplikací, které cílí na starší verze .NET Framework, ale běží v rámci verzí počínaje .NET Framework 4.7.2, je ve výchozím nastavení zakázané nové chování při dekódování. Můžete ji povolit přidáním následujícího přepínače [AppContextSwitchOverrides](~/docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) do `<runtime>` části konfiguračního souboru aplikace:
+
+```xml
+<runtime>
+  <AppContextSwitchOverrides value="Switch.System.Uri.DontEnableStrictRFC3986ReservedCharacterSets=false" />
+</runtime>
+```
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   | Vedlejší       |
+| Verze | 4.7.2       |
+| Typ    | Změna cílení |
+
+#### <a name="affected-apis"></a>Ovlivněná rozhraní API
+
+- <xref:System.Uri?displayProperty=nameWithType>

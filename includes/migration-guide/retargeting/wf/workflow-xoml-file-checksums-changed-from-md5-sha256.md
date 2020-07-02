@@ -1,17 +1,29 @@
 ---
-ms.openlocfilehash: f59c9f048bb3cd3f425e36b931302258fcf693f5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2aa424ff5e3308b730c22cb865993d4100f193cc
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "67803485"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85616240"
 ---
-### <a name="workflow-xoml-file-checksums-changed-from-md5-to-sha256"></a>Kontrolní součty souborů XOML pracovního postupu změněny z MD5 na SHA256
+### <a name="workflow-xoml-file-checksums-changed-from-md5-to-sha256"></a>Kontrolní součty souborů XOML pracovního postupu se změnily z MD5 na SHA256
 
-|   |   |
-|---|---|
-|Podrobnosti|Pro podporu ladění pracovních postupů založených na XOML pomocí sady Visual Studio je při vytváření projektů pracovních postupů obsahujících soubory XOML <xref:System.Workflow.ComponentModel.Compiler.WorkflowMarkupSourceAttribute.MD5Digest?displayProperty=nameWithType> zahrnut kontrolní součet obsahu souboru XOML v kódu generovaném jako hodnota. V rozhraní .NET Framework 4.7.2 a starších verzích tento algoritmus hash kontrolního součtu používal algoritmus MD5, který způsoboval problémy v systémech s podporou FIPS. Počínaje rozhraním .NET Framework 4.8 je použitý algoritmus SHA256. Chcete-li být kompatibilní s WorkflowMarkupSourceAttribute.MD5Digest, jsou použity pouze prvních 16 bajtů generované kontrolní součet. To může způsobit problémy při ladění. Možná budete muset znovu sestavit projekt.|
-|Návrh|Pokud opětovné sestavení projektu problém nevyřeší, zkuste <code>AppContext</code> &quot;nastavit přepínač Switch.System.Workflow.ComponentModel.UseLegacyHashForXomlFileChecksum&quot; na true. V kódu:<pre><code class="lang-csharp">System.AppContext.SetSwitch(&quot;Switch.System.Workflow.ComponentModel.UseLegacyHashForXomlFileChecksum&quot;, true);&#13;&#10;</code></pre>Nebo v konfiguračním souboru (to musí být v Souboru MSBuild.exe.config pro nástroj MSBuild.exe, který používáte):<pre><code class="lang-xml">&lt;configuration&gt;&#13;&#10;&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.Workflow.ComponentModel.UseLegacyHashForXomlFileChecksum=true&quot; /&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;&lt;/configuration&gt;&#13;&#10;</code></pre>|
-|Rozsah|Vedlejší|
-|Version|4.8|
-|Typ|Změna cílení|
+#### <a name="details"></a>Podrobnosti
+
+Aby bylo možné podporovat ladění pracovních postupů na základě souborů XOML pomocí sady Visual Studio, jsou při vytváření projektů pracovních postupů obsahujících soubory XOML kontrolní součet obsahu souboru XOML obsažen v kódu generovaném jako <xref:System.Workflow.ComponentModel.Compiler.WorkflowMarkupSourceAttribute.MD5Digest?displayProperty=nameWithType> hodnota. V .NET Framework 4.7.2 a dřívějších verzích tato kontrolní hodnota hash použila algoritmus MD5, který způsobil problémy se systémy s podporou standardu FIPS. Počínaje .NET Framework 4,8 se používá algoritmus SHA256. Aby bylo možné compatibile pomocí WorkflowMarkupSourceAttribute. MD5Digest, jsou použity pouze prvních 16 bajtů vygenerovaného kontrolního součtu. To může způsobit problémy při ladění. Možná budete muset projekt znovu sestavit.
+
+#### <a name="suggestion"></a>Návrh
+
+Pokud znovu sestavíte projekt, zkuste nastavit `AppContext` přepínač &quot;Switch.System. Workflow. ComponentModel. UseLegacyHashForXomlFileChecksum &quot; na hodnotu true. V kódu:
+
+<pre><code class="lang-csharp">System.AppContext.SetSwitch(&quot;Switch.System.Workflow.ComponentModel.UseLegacyHashForXomlFileChecksum&quot;, true);&#13;&#10;</code></pre>
+
+Nebo v konfiguračním souboru (musí být MSBuild.exe.config pro MSBuild.exe, které používáte):
+
+<pre><code class="lang-xml">&lt;configuration&gt;&#13;&#10;&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.Workflow.ComponentModel.UseLegacyHashForXomlFileChecksum=true&quot; /&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;&lt;/configuration&gt;&#13;&#10;</code></pre>
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   | Vedlejší       |
+| Verze | 4,8         |
+| Typ    | Změna cílení |

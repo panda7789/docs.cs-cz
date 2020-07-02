@@ -1,18 +1,33 @@
 ---
-ms.openlocfilehash: 4529d8040fc08b5290ac46abd1ef752086ea3aeb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 80e61d4dd5b8d4754a39e95e37475fefff57fcbd
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62088477"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85617170"
 ---
-### <a name="new-ambiguous-dispatcherinvoke-overloads-could-result-in-different-behavior"></a>Nová přetížení (nejednoznačný) Dispatcher.Invoke by mohlo způsobit různé chování
+### <a name="new-ambiguous-dispatcherinvoke-overloads-could-result-in-different-behavior"></a>New (dvojznačný) Dispatcher. Invoke přetížení může mít za následek odlišné chování.
 
-|   |   |
-|---|---|
-|Podrobnosti|Rozhraní .NET Framework 4.5 přidá nová přetížení <xref:System.Windows.Threading.Dispatcher.Invoke%2A?displayProperty=nameWithType> , které zahrnují parametr typu <xref:System.Action>. Při nové kompilaci stávajícího kódu mohou kompilátory vyřešit volání metod Dispatcher.Invoke, které mají <xref:System.Delegate> parametr jako volání metod Dispatcher.Invoke s <xref:System.Action> parametru. Pokud je volání přetížení Dispatcher.Invoke s <xref:System.Delegate> parametrem je vyřešeno jako volání přetížení Dispatcher.Invoke s <xref:System.Action> parametr, mohou nastat následující rozdíly v chování:<ul><li>Pokud dojde k výjimce <xref:System.Windows.Threading.Dispatcher.UnhandledExceptionFilter> a <xref:System.Windows.Threading.Dispatcher.UnhandledException> události nejsou započteny. Místo toho jsou výjimky zpracovávány <xref:System.Threading.Tasks.TaskScheduler.UnobservedTaskException?displayProperty=name> událostí.</li><li>Volání některých členů jako <xref:System.Windows.Threading.DispatcherOperation.Result>, zablokována až do dokončení operace.</li></ul>|
-|Doporučení|Vyhněte se nejednoznačnosti (a potenciální rozdíly v výjimek zpracování nebo blokování chování), code volání Dispatcher.Invoke lze předat prázdný object [] jako druhý parametr je vyvolat volání opravdu řešení přetížení metody rozhraní .NET Framework 4.0.|
-|Rozsah|Vedlejší|
-|Version|4.5|
-|Type|Změna cílení|
-|Ovlivněná rozhraní API|<ul><li><xref:System.Windows.Threading.Dispatcher.Invoke(System.Delegate,System.Object[])?displayProperty=nameWithType></li><li><xref:System.Windows.Threading.Dispatcher.Invoke(System.Delegate,System.TimeSpan,System.Object[])?displayProperty=nameWithType></li><li><xref:System.Windows.Threading.Dispatcher.Invoke(System.Delegate,System.TimeSpan,System.Windows.Threading.DispatcherPriority,System.Object[])?displayProperty=nameWithType></li><li><xref:System.Windows.Threading.Dispatcher.Invoke(System.Delegate,System.Windows.Threading.DispatcherPriority,System.Object[])?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a>Podrobnosti
+
+.NET Framework 4,5 přidává nová přetížení <xref:System.Windows.Threading.Dispatcher.Invoke%2A?displayProperty=nameWithType> , která obsahují parametr typu <xref:System.Action> . Pokud je existující kód znovu zkompilován, kompilátory mohou vyřešit volání metody Dispatcher. Invoke metod, které mají <xref:System.Delegate> parametr jako volání metody Dispatcher. Invoke metod s <xref:System.Action> parametrem. Pokud volání metody Dispatcher. Invoke přetížení s <xref:System.Delegate> parametrem je přeloženo jako volání metody Dispatcher. Invoke přetížení s <xref:System.Action> parametrem, mohou nastat následující rozdíly v chování:
+
+- Pokud dojde k výjimce, <xref:System.Windows.Threading.Dispatcher.UnhandledExceptionFilter> <xref:System.Windows.Threading.Dispatcher.UnhandledException> události a nejsou vyvolány. Místo toho jsou výjimky zpracovávány <xref:System.Threading.Tasks.TaskScheduler.UnobservedTaskException?displayProperty=fullName> událostí.
+- Volání některých členů, například <xref:System.Windows.Threading.DispatcherOperation.Result> , zablokuje, dokud se operace nedokončí.
+
+#### <a name="suggestion"></a>Návrh
+
+Aby nedocházelo k nejednoznačnosti (a potenciálním rozdílům v chování zpracování výjimek nebo blokování), kód volajícího metody Dispatcher. Invoke může předat prázdný objekt [] jako druhý parametr volání metody Invoke, aby bylo zajištěno překládání na přetížení metody .NET Framework 4,0.
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   | Vedlejší       |
+| Verze | 4.5         |
+| Typ    | Změna cílení |
+
+#### <a name="affected-apis"></a>Ovlivněná rozhraní API
+
+- <xref:System.Windows.Threading.Dispatcher.Invoke(System.Delegate,System.Object[])?displayProperty=nameWithType>
+- <xref:System.Windows.Threading.Dispatcher.Invoke(System.Delegate,System.TimeSpan,System.Object[])?displayProperty=nameWithType>
+- <xref:System.Windows.Threading.Dispatcher.Invoke(System.Delegate,System.TimeSpan,System.Windows.Threading.DispatcherPriority,System.Object[])?displayProperty=nameWithType>
+- <xref:System.Windows.Threading.Dispatcher.Invoke(System.Delegate,System.Windows.Threading.DispatcherPriority,System.Object[])?displayProperty=nameWithType>

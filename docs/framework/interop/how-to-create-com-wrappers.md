@@ -1,20 +1,21 @@
 ---
 title: 'Postupy: Vytváření obálek COM'
+description: Vytváření obálek modelu COM (Component Object Model) pomocí sady Visual Studio nebo nástrojů .NET (Tlbimp.exe a Regasm.exe). Obě metody generují dva typy obálky COM.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - COM,wrappers creating
 - COM,wrappers Visual Studio
 ms.assetid: bdf89bea-1623-45ee-a57b-cf7c90395efa
-ms.openlocfilehash: 035d6439ec90426d7b68e05043ea8b6722f81d28
-ms.sourcegitcommit: 43cbde34970f5f38f30c43cd63b9c7e2e83717ae
+ms.openlocfilehash: 286526c710287e6efa3e49a7f7c55e3687076e29
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81121603"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85617389"
 ---
 # <a name="how-to-create-com-wrappers"></a>Postupy: Vytváření obálek COM
 
-Obálky modelu COM (Component Object Model) můžete vytvořit pomocí funkcí sady Visual Studio 2005 nebo nástrojů .NET Framework nástroje Tlbimp. exe a Regasm. exe. Obě metody generují dva typy wrapperů COM:
+Obálky modelu COM (Component Object Model) můžete vytvořit pomocí funkcí sady Visual Studio 2005 nebo nástrojů .NET Framework Tlbimp.exe a Regasm.exe. Obě metody generují dva typy wrapperů COM:
 
 - [Běhová obálka](../../standard/native-interop/runtime-callable-wrapper.md) , která se má volat z knihovny typů pro spuštění objektu COM ve spravovaném kódu.
 
@@ -43,7 +44,7 @@ Nyní můžete napsat kód pro přístup k objektu COM. Můžete začít deklaro
   
 ### <a name="to-create-a-runtime-callable-wrapper-using-net-framework-tools"></a>Vytvoření obálky s požadovanou metodou spuštění pomocí .NET Frameworkch nástrojů  
   
-- Spusťte nástroj [Tlbimp. exe (importér knihovny typů)](../tools/tlbimp-exe-type-library-importer.md) .  
+- Spusťte nástroj [Tlbimp.exe (importér knihovny typů)](../tools/tlbimp-exe-type-library-importer.md) .  
   
  Tento nástroj vytvoří sestavení, které obsahuje metadata modulu runtime pro typy definované v původní knihovně typů.  
   
@@ -65,13 +66,13 @@ Nyní můžete napsat kód pro přístup k objektu COM. Můžete začít deklaro
   
 ### <a name="to-create-a-com-callable-wrapper-using-net-framework-tools"></a>Vytvoření obálky s požadovanou metodou COM pomocí .NET Frameworkch nástrojů  
   
-Spusťte nástroj [Regasm. exe (Nástroj pro registraci sestavení)](../tools/regasm-exe-assembly-registration-tool.md) .  
+Spusťte nástroj [Regasm.exe (Nástroj pro registraci sestavení)](../tools/regasm-exe-assembly-registration-tool.md) .  
   
 Tento nástroj přečte metadata sestavení a přidá nezbytné položky do registru. V důsledku toho mohou klienti modelu COM vytvářet .NET Framework třídy transparentně. Můžete použít sestavení, jako by šlo o nativní třídu COM.  
   
-Můžete spustit nástroj Regasm. exe pro sestavení nacházející se v jakémkoli adresáři a poté spustit nástroj [Gacutil. exe (nástroj Global Assembly Cache Tool)](../tools/gacutil-exe-gac-tool.md) , aby jej bylo možné přesunout do globální mezipaměti sestavení (GAC). Přesunutí sestavení neověřuje položky registru umístění, protože globální mezipaměť sestavení (GAC) je vždy zkoumána v případě, že sestavení není nalezeno jinde.  
+Můžete spustit Regasm.exe pro sestavení nacházející se v jakémkoli adresáři a potom spuštěním [Gacutil.exe (nástroj Global Assembly Cache Tool)](../tools/gacutil-exe-gac-tool.md) ho přesunout do globální mezipaměti sestavení (GAC). Přesunutí sestavení neověřuje položky registru umístění, protože globální mezipaměť sestavení (GAC) je vždy zkoumána v případě, že sestavení není nalezeno jinde.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Obálka volatelná za běhu](../../standard/native-interop/runtime-callable-wrapper.md)
 - [Obálka volatelná aplikacemi COM](../../standard/native-interop/com-callable-wrapper.md)

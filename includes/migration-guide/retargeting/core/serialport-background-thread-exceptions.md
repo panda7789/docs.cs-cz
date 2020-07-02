@@ -1,18 +1,41 @@
 ---
-ms.openlocfilehash: 81b104d8e5a9ccc8e790c3b16e4837cfa0c0def5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e66a5c2a33a4ab5cf35013c1843936ffd01f90a2
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "67858924"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85614501"
 ---
-### <a name="serialport-background-thread-exceptions"></a>Výjimky vlákna na pozadí SerialPort
+### <a name="serialport-background-thread-exceptions"></a>Portu SerialPort výjimky vlákna na pozadí
 
-|   |   |
-|---|---|
-|Podrobnosti|Vlákna na <xref:System.IO.Ports.SerialPort> pozadí vytvořená pomocí datových proudů již neukončí proces při vyvolání výjimek operačního režimu. <br/>V aplikacích, které cílí na rozhraní .NET Framework 4.7 a starší verze, je proces ukončen, když je vyvolána výjimka operačního systému na vlákno na pozadí vytvořené mno stvím datového <xref:System.IO.Ports.SerialPort> proudu. <br/>V aplikacích, které cílí na rozhraní .NET Framework 4.7.1 nebo novější verzi, vlákna na pozadí čekají na události operačního systému související s aktivním sériovým portem a v některých případech mohou dojít k chybě, například náhlé odebrání sériového portu.|
-|Návrh|U aplikací, které cílí na rozhraní .NET Framework 4.7.1, můžete odhlásit zpracování <code>&lt;runtime&gt;</code> výjimek, <code>app.config</code> pokud to není žádoucí přidáním následujícího textu do části souboru:<pre><code class="lang-xml">&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.IO.Ports.DoNotCatchSerialStreamThreadExceptions=true&quot; /&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;</code></pre>U aplikací, které cílí na starší verze rozhraní .NET Framework, ale běží v rozhraní .NET Framework 4.7.1 nebo novějším, se můžete přihlásit ke zpracování výjimek přidáním následujících položek do <code>&lt;runtime&gt;</code> části <code>app.config</code> souboru:<pre><code class="lang-xml">&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.IO.Ports.DoNotCatchSerialStreamThreadExceptions=false&quot; /&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;</code></pre>|
-|Rozsah|Vedlejší|
-|Version|4.7.1|
-|Typ|Změna cílení|
-|Ovlivněná rozhraní API|<ul><li><xref:System.IO.Ports.SerialPort?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a>Podrobnosti
+
+Vlákna na pozadí vytvořená pomocí <xref:System.IO.Ports.SerialPort> datových proudů už neukončí proces, když jsou vyvolány výjimky operačního systému. <br/>V aplikacích, které cílí na .NET Framework 4,7 a starších verzí, je proces ukončen, pokud je vyvolána výjimka operačního systému ve vlákně na pozadí vytvořeném pomocí <xref:System.IO.Ports.SerialPort> datového proudu. <br/>V aplikacích, které cílí na .NET Framework 4.7.1 nebo novější verzi, vlákna na pozadí čekají na události operačního systému související s aktivním sériovým portem a v některých případech by mohlo dojít k chybě, jako je například náhlé odebrání sériového portu.
+
+#### <a name="suggestion"></a>Návrh
+
+U aplikací, které cílí na .NET Framework 4.7.1, se můžete rozhodnout o zpracování výjimek, pokud to není žádoucí, a to tak, že do `<runtime>` části souboru přidáte následující `app.config` :
+
+```xml
+<runtime>
+  <AppContextSwitchOverrides value="Switch.System.IO.Ports.DoNotCatchSerialStreamThreadExceptions=true" />
+</runtime>
+```
+
+Pro aplikace, které jsou cíleny na starší verze .NET Framework, ale běží na .NET Framework 4.7.1 nebo novější, můžete vyjádřit ke zpracování výjimek přidáním následujícího do `<runtime>` části `app.config` souboru:
+
+```xml
+<runtime>
+  <AppContextSwitchOverrides value="Switch.System.IO.Ports.DoNotCatchSerialStreamThreadExceptions=false" />
+</runtime>
+```
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   | Vedlejší       |
+| Verze | 4.7.1       |
+| Typ    | Změna cílení |
+
+#### <a name="affected-apis"></a>Ovlivněná rozhraní API
+
+- <xref:System.IO.Ports.SerialPort?displayProperty=nameWithType>

@@ -1,18 +1,35 @@
 ---
-ms.openlocfilehash: f5d93d76ab3409d4d4c1870cfef94cac59f9475c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 53ded5ae6e5a025fc7992da099c3481587bb6f31
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61762551"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85614580"
 ---
-### <a name="privatefontcollectionaddfontfile-method-releases-font-resources"></a>Metoda PrivateFontCollection.AddFontFile uvolní prostředky písma
+### <a name="privatefontcollectionaddfontfile-method-releases-font-resources"></a>Metoda PrivateFontCollection. AddFontFile uvolní prostředky písma.
 
-|   |   |
-|---|---|
-|Podrobnosti|V rozhraní .NET Framework 4.7.1 a předchozí verze <xref:System.Drawing.Text.PrivateFontCollection?displayProperty=nameWithType> třídy neuvolní prostředků písem GDI + po <xref:System.Drawing.Text.PrivateFontCollection> uvolnění pro <xref:System.Drawing.Font> objekty, které se přidají do této kolekce pomocí <xref:System.Drawing.Text.PrivateFontCollection.AddFontFile(System.String)> metoda. V rozhraní .NET Framework 4.7.2 a později <xref:System.Drawing.Text.FontCollection.Dispose%2A> aktualizací, které byly přidány do kolekce jako soubory písem GDI +.|
-|Doporučení|<strong>Jak aktivování nebo zrušení těchto změn</strong>aby aplikace využívat tyto změny, musíte spustit na rozhraní .NET Framework 4.7.2 nebo novější. Aplikace mohou těžit z těchto změn v některém z následujících způsobů:<ul><li>Ji znovu zkompilovat cíleny na rozhraní.NET Framework 4.7.2. Tato změna je ve výchozím nastavení cíleny na rozhraní.NET Framework 4.7.2 aplikací Windows Forms pro povolená nebo novější.</li><li>Cílí na rozhraní .NET Framework 4.7.1 nebo starší verzi a výslovný chování starších verzí usnadnění přidáním následujícího kódu [přepínač AppContext](~/docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) k <code>&lt;runtime&gt;</code> část souboru app.config a nastavíte ho na <code>false</code>, jak ukazuje následující příklad.</li></ul><pre><code class="lang-xml">&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.Drawing.Text.DoNotRemoveGdiFontsResourcesFromFontCollection=false&quot;/&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;</code></pre>Aplikace, které se zaměřují na rozhraní .NET Framework 4.7.2 nebo novější a chcete zachovat starší chování se mohou přihlásit a explicitním nastavením na tento přepínač AppContext vydané zdroje písma <code>true</code>.|
-|Rozsah|Edge|
-|Version|4.7.2|
-|Type|Změna cílení|
-|Ovlivněná rozhraní API|<ul><li><xref:System.Drawing.Text.PrivateFontCollection.AddFontFile(System.String)?displayProperty=nameWithType></li><li><xref:System.Drawing.Text.FontCollection.Dispose?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a>Podrobnosti
+
+V .NET Framework 4.7.1 a předchozích verzích <xref:System.Drawing.Text.PrivateFontCollection?displayProperty=nameWithType> Třída neuvolní prostředky písma GDI+ po <xref:System.Drawing.Text.PrivateFontCollection> uvolnění pro <xref:System.Drawing.Font> objekty, které jsou přidány do této kolekce pomocí <xref:System.Drawing.Text.PrivateFontCollection.AddFontFile(System.String)> metody. Ve .NET Framework 4.7.2 a novější <xref:System.Drawing.Text.FontCollection.Dispose%2A> verze vydává písma GDI+, která byla přidána do kolekce jako soubory.
+
+#### <a name="suggestion"></a>Návrh
+
+**Jak vyjádřit nebo odhlásit tyto změny** Aby aplikace mohla tyto změny využívat, musí běžet na .NET Framework 4.7.2 nebo novějším. Aplikace může tyto změny využít v jednom z následujících způsobů:
+
+- Zkompiluje se znovu a zacílí na .NET Framework 4.7.2. Tato změna je ve výchozím nastavení povolená v aplikacích model Windows Forms, které cílí na .NET Framework 4.7.2 nebo novějším.
+- Cílí na .NET Framework 4.7.1 nebo dřívější verzi a výslovný ze staršího chování přístupnosti přidáním následujícího [přepínače AppContext](https://docs.microsoft.com/dotnet/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element) do `<runtime>` oddílu app.config souboru a jeho nastavením na `false` , jak ukazuje následující příklad.
+
+<pre><code class="lang-xml">&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.Drawing.Text.DoNotRemoveGdiFontsResourcesFromFontCollection=false&quot;/&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;</code></pre>
+
+Aplikace, které cílí na .NET Framework 4.7.2 nebo novější a chtějí zachovat starší verze chování, se můžou rozhodnout, že neuvolní prostředky písma explicitním nastavením tohoto přepínače AppContext na `true` .
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   | Edge        |
+| Verze | 4.7.2       |
+| Typ    | Změna cílení |
+
+#### <a name="affected-apis"></a>Ovlivněná rozhraní API
+
+- <xref:System.Drawing.Text.PrivateFontCollection.AddFontFile(System.String)?displayProperty=nameWithType>
+- <xref:System.Drawing.Text.FontCollection.Dispose?displayProperty=nameWithType>

@@ -1,17 +1,29 @@
 ---
-ms.openlocfilehash: 9c3eedb7f7d4cd030a12c141b8630876c1ffdb4d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b521f4163bf5bf4a369d0eec12dae503703a976e
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "67859168"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85614436"
 ---
-### <a name="throttle-concurrent-requests-per-session"></a>Omezení souběžných požadavků na relaci
+### <a name="throttle-concurrent-requests-per-session"></a>Omezit souběžné požadavky na relaci
 
-|   |   |
-|---|---|
-|Podrobnosti|V rozhraní .NET Framework 4.6.2 a starší ASP.NET provádí požadavky se stejným Sessionid postupně a ASP.NET vždy vydává Sessionid prostřednictvím cookies ve výchozím nastavení. Pokud stránka trvá dlouhou dobu reagovat, bude výrazně snížit výkon serveru pouhým stisknutím klávesy F5 v prohlížeči. V opravě jsme přidali čítač pro sledování požadavků ve frontě a ukončení požadavků, pokud překročí zadaný limit. Výchozí hodnota je 50. Pokud je dosaženo limitu, bude do protokolu událostí zaznamenáno upozornění a odpověď HTTP 500 může být zaznamenána do protokolu služby IIS.|
-|Návrh|Chcete-li obnovit staré chování, můžete do souboru web.config přidat následující nastavení a odhlásit se z nového chování.<pre><code class="lang-xml">&lt;appSettings&gt;&#13;&#10;&lt;add key=&quot;aspnet:RequestQueueLimitPerSession&quot; value=&quot;2147483647&quot;/&gt;&#13;&#10;&lt;/appSettings&gt;&#13;&#10;</code></pre>|
-|Rozsah|Edge|
-|Version|4.7|
-|Typ|Změna cílení|
+#### <a name="details"></a>Podrobnosti
+
+V .NET Framework 4.6.2 a dříve ASP.NET spouští požadavky se stejným identifikátorem SessionID sekvenčně a ASP.NET vždy vystavuje identifikátor SessionID prostřednictvím souborů cookie ve výchozím nastavení. Pokud bude odpověď trvat dlouhou dobu, významně sníží výkon serveru pouhým stisknutím klávesy <kbd>F5</kbd> v prohlížeči. V této opravě jsme přidali čítač, který sleduje požadavky ve frontě a ukončí žádosti, když překročí zadaný limit. Výchozí hodnota je 50. Pokud je dosaženo limitu, bude zaznamenáno upozornění v protokolu událostí a odpověď HTTP 500 může být zaznamenána v protokolu služby IIS.
+
+#### <a name="suggestion"></a>Návrh
+
+Chcete-li obnovit původní chování, můžete do souboru web.config přidat následující nastavení, abyste se odhlásili od nového chování.
+
+```xml
+<appSettings>
+    <add key="aspnet:RequestQueueLimitPerSession" value="2147483647"/>
+</appSettings>
+```
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   | Edge        |
+| Verze | 4,7         |
+| Typ    | Změna cílení |

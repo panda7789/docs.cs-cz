@@ -1,18 +1,34 @@
 ---
-ms.openlocfilehash: 9ec5fa379556dedeaa7a35e34f004340ab47a39c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c5a061dffa1deb66e1769d6ec70dfa2155ac6a31
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "67804425"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85615706"
 ---
-### <a name="calling-createdefaultauthorizationcontext-with-a-null-argument-has-changed"></a>Volání CreateDefaultAuthorizationContext s nulovým argumentem bylo změněno.
+### <a name="calling-createdefaultauthorizationcontext-with-a-null-argument-has-changed"></a>Volání CreateDefaultAuthorizationContext s argumentem null se změnilo.
 
-|   |   |
-|---|---|
-|Podrobnosti|Implementace <xref:System.IdentityModel.Policy.AuthorizationContext?displayProperty=name> vrácené volání <xref:System.IdentityModel.Policy.AuthorizationContext.CreateDefaultAuthorizationContext(System.Collections.Generic.IList{System.IdentityModel.Policy.IAuthorizationPolicy})?displayProperty=name> s null authorizationPolicies argument změnil jeho implementaci v rozhraní .NET Framework 4.6.|
-|Návrh|Ve výjimečných případech wcf aplikace, které používají vlastní ověřování může zobrazit rozdíly v chování. V takových případech lze předchozí chování obnovit dvěma způsoby:<ol><li>Překompilujte aplikaci tak, aby cílila na starší verzi rozhraní .NET Framework než 4.6. Pro služby hostované službou &lt;IIS použijte&quot;element httpRuntime targetFramework= x.x&quot;  / &gt; k cílení na starší verzi rozhraní .NET Framework.</li><li>Do části souboru <code>&lt;appSettings&gt;</code> app.config přidejte následující řádek:<code>&lt;add key=&quot;appContext.SetSwitch:Switch.System.IdentityModel.EnableCachedEmptyDefaultAuthorizationContext&quot; value=&quot;true&quot; /&gt;</code></li></ol>|
-|Rozsah|Vedlejší|
-|Version|4.6|
-|Typ|Změna cílení|
-|Ovlivněná rozhraní API|<ul><li><xref:System.IdentityModel.Policy.AuthorizationContext.CreateDefaultAuthorizationContext(System.Collections.Generic.IList{System.IdentityModel.Policy.IAuthorizationPolicy})?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a>Podrobnosti
+
+Implementace <xref:System.IdentityModel.Policy.AuthorizationContext?displayProperty=fullName> vrácená voláním <xref:System.IdentityModel.Policy.AuthorizationContext.CreateDefaultAuthorizationContext(System.Collections.Generic.IList{System.IdentityModel.Policy.IAuthorizationPolicy})?displayProperty=fullName> s argumentem s hodnotou null authorizationPolicies se změnila jeho implementace v .NET Framework 4,6.
+
+#### <a name="suggestion"></a>Návrh
+
+Ve výjimečných případech můžou aplikace WCF, které používají vlastní ověřování, zobrazovat rozdíly v chování. V takových případech je možné předchozí chování obnovit jedním ze dvou způsobů:
+
+- Znovu zkompilujte aplikaci a Zaměřte se na starší verzi .NET Framework než 4,6. Pro služby hostované službou IIS použijte `<httpRuntime targetFramework="x.x">` element k zacílení na starší verzi .NET Framework.
+- Přidejte následující řádek do `<appSettings>` části souboru app.config:
+
+    ```xml
+    <add key="appContext.SetSwitch:Switch.System.IdentityModel.EnableCachedEmptyDefaultAuthorizationContext" value="true" />
+    ```
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   | Vedlejší       |
+| Verze | 4.6         |
+| Typ    | Změna cílení |
+
+#### <a name="affected-apis"></a>Ovlivněná rozhraní API
+
+- <xref:System.IdentityModel.Policy.AuthorizationContext.CreateDefaultAuthorizationContext(System.Collections.Generic.IList{System.IdentityModel.Policy.IAuthorizationPolicy})?displayProperty=nameWithType>

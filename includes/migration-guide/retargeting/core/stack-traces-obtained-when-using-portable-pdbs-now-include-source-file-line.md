@@ -1,18 +1,43 @@
 ---
-ms.openlocfilehash: 384f8c7fa08b69c13d05edb3404787d428dad837
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c7500550cd9714a9788a7dea68af04823f000f7f
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61639425"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85614532"
 ---
-### <a name="stack-traces-obtained-when-using-portable-pdbs-now-include-source-file-and-line-information-if-requested"></a>Trasování zásobníku, které získáte při použití souborům portable PDB nyní zahrnují informace o zdrojovém souboru a řádku, pokud o to požádá
+### <a name="stack-traces-obtained-when-using-portable-pdbs-now-include-source-file-and-line-information-if-requested"></a>Trasování zásobníku získané při použití přenosných soubory PDB nyní obsahuje zdrojový soubor a informace o řádku, pokud je požadováno
 
-|   |   |
-|---|---|
-|Podrobnosti|Počínaje rozhraním .NET Framework 4.7.2, trasování zásobníku, které získáte při použití souborům portable PDB obsahovat zdrojového souboru a řádku informace na požádání. Ve verzích před rozhraní .NET Framework 4.7.2, zdrojového souboru a řádku by být informace není k dispozici při použití souborům portable PDB i v případě, že explicitně vyžádány.|
-|Doporučení|Pro aplikace, které se zaměřují na rozhraní .NET Framework 4.7.2, můžete zrušit informace zdrojového souboru a řádku při použití přenosných souborů pdb, pokud není žádoucí, přidáním následujícího <code>&lt;runtime&gt;</code> část vaší <code>app.config</code> souboru:<pre><code class="lang-xml">&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.Diagnostics.IgnorePortablePDBsInStackTraces=true&quot; /&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;</code></pre>U aplikací určených pro starší verze rozhraní .NET Framework ale spustit v rozhraní .NET Framework 4.7.2 nebo později, můžete přejít do zdrojového souboru a řádku informace při použití přidáním následujícího kódu k souborům portable PDB <code>&lt;runtime&gt;</code> část vaší <code>app.config</code>souboru:<pre><code class="lang-xml">&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.Diagnostics.IgnorePortablePDBsInStackTraces=false&quot; /&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;</code></pre>|
-|Rozsah|Edge|
-|Version|4.7.2|
-|Type|Změna cílení|
-|Ovlivněná rozhraní API|<ul><li><xref:System.Diagnostics.StackTrace.%23ctor(System.Boolean)?displayProperty=nameWithType></li><li><xref:System.Diagnostics.StackTrace.%23ctor(System.Exception,System.Boolean)?displayProperty=nameWithType><li><xref:System.Diagnostics.StackTrace.%23ctor(System.Exception,System.Int32,System.Boolean)?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a>Podrobnosti
+
+Počínaje .NET Framework 4.7.2, trasování zásobníku získané při použití přenosných soubory PDB zahrnují zdrojový soubor a informace o řádku, pokud je to požadováno. Ve verzích starších než .NET Framework 4.7.2 nebude při použití přenosného soubory PDB k dispozici informace o zdrojovém souboru a řádku, i když je výslovně požadováno.
+
+#### <a name="suggestion"></a>Návrh
+
+Pro aplikace cílené na .NET Framework 4.7.2 můžete odhlásit zdrojový soubor a informace o řádku při použití přenosných soubory PDB, pokud to není žádoucí, a to tak, že do `<runtime>` části souboru přidáte následující `app.config` :
+
+```xml
+<runtime>
+  <AppContextSwitchOverrides value="Switch.System.Diagnostics.IgnorePortablePDBsInStackTraces=true" />
+</runtime>
+```
+
+Pro aplikace, které cílí na starší verze .NET Framework, ale běží na .NET Framework 4.7.2 nebo novějším, můžete při používání přenosných soubory PDB použít následující informace ke zdrojovému souboru a řádku, a to přidáním následujícího do `<runtime>` části `app.config` souboru:
+
+```xml
+<runtime>
+  <AppContextSwitchOverrides value="Switch.System.Diagnostics.IgnorePortablePDBsInStackTraces=false" />
+</runtime>
+```
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   | Edge        |
+| Verze | 4.7.2       |
+| Typ    | Změna cílení |
+
+#### <a name="affected-apis"></a>Ovlivněná rozhraní API
+
+- <xref:System.Diagnostics.StackTrace.%23ctor(System.Boolean)>
+- <xref:System.Diagnostics.StackTrace.%23ctor(System.Exception,System.Boolean)>
+- <xref:System.Diagnostics.StackTrace.%23ctor(System.Exception,System.Int32,System.Boolean)>

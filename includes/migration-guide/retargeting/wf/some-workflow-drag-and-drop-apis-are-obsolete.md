@@ -1,18 +1,30 @@
 ---
-ms.openlocfilehash: 297af393e86c65e84ea7271d98eab36dbc6dbb0e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b6cb7edcd6bed50efdf59f3321320ac8cd1b1ab8
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62088482"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85617223"
 ---
-### <a name="some-workflow-drag-and-drop-apis-are-obsolete"></a>Některá rozhraní API a přetahování pracovního postupu jsou popsané zastaralé
+### <a name="some-workflow-drag-and-drop-apis-are-obsolete"></a>Některá rozhraní API pro přetažení pracovního postupu jsou zastaralá.
 
-|   |   |
-|---|---|
-|Podrobnosti|Toto rozhraní API a přetažení pracovní postup je zastaralá a způsobí upozornění kompilátoru, že pokud aplikace je znovu sestavit na 4.5.|
-|Doporučení|Nové <xref:System.Activities.Presentation.DragDropHelper?displayProperty=name> by místo toho použít rozhraní API, které podporují operace s více objekty. Alternativně lze potlačit upozornění sestavení nebo lze se vyhnout pomocí staršího kompilátoru. Rozhraní API jsou stále podporovány.|
-|Rozsah|Vedlejší|
-|Version|4.5|
-|Type|Změna cílení|
-|Ovlivněná rozhraní API|<ul><li><xref:System.Activities.Presentation.DragDropHelper.DoDragMove(System.Activities.Presentation.WorkflowViewElement,System.Windows.Point)?displayProperty=nameWithType></li><li><xref:System.Activities.Presentation.DragDropHelper.GetCompositeView(System.Windows.DragEventArgs)?displayProperty=nameWithType></li><li><xref:System.Activities.Presentation.DragDropHelper.GetDraggedModelItem(System.Windows.DragEventArgs)?displayProperty=nameWithType></li><li><xref:System.Activities.Presentation.DragDropHelper.GetDroppedObject(System.Windows.DependencyObject,System.Windows.DragEventArgs,System.Activities.Presentation.EditingContext)?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a>Podrobnosti
+
+Rozhraní API pro přetažení tohoto pracovního postupu je zastaralé a způsobí upozornění kompilátoru, pokud je aplikace znovu vytvořená proti 4,5.
+
+#### <a name="suggestion"></a>Návrh
+
+<xref:System.Activities.Presentation.DragDropHelper?displayProperty=fullName>Místo toho by se měla použít nová rozhraní API podporující operace s více objekty. Alternativně lze upozornění sestavení potlačit nebo je lze zabránit pomocí staršího kompilátoru. Rozhraní API jsou pořád podporovaná.
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   | Vedlejší       |
+| Verze | 4.5         |
+| Typ    | Změna cílení |
+
+#### <a name="affected-apis"></a>Ovlivněná rozhraní API
+
+- <xref:System.Activities.Presentation.DragDropHelper.DoDragMove(System.Activities.Presentation.WorkflowViewElement,System.Windows.Point)?displayProperty=nameWithType>
+- <xref:System.Activities.Presentation.DragDropHelper.GetCompositeView(System.Windows.DragEventArgs)?displayProperty=nameWithType>
+- <xref:System.Activities.Presentation.DragDropHelper.GetDraggedModelItem(System.Windows.DragEventArgs)?displayProperty=nameWithType>
+- <xref:System.Activities.Presentation.DragDropHelper.GetDroppedObject(System.Windows.DependencyObject,System.Windows.DragEventArgs,System.Activities.Presentation.EditingContext)?displayProperty=nameWithType>

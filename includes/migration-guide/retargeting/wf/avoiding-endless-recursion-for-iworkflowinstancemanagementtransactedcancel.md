@@ -1,17 +1,27 @@
 ---
-ms.openlocfilehash: f78f31f4328a45b5ef3f25cdf6eddac1b17fb6e6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: daf09748e69e70ad982bcee14461b66579f3bb87
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61639445"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85614561"
 ---
-### <a name="avoiding-endless-recursion-for-iworkflowinstancemanagementtransactedcancel-and-iworkflowinstancemanagementtransactedterminate"></a>Jak se vyhnout nekonečné rekurzi IWorkflowInstanceManagement.TransactedCancel a IWorkflowInstanceManagement.TransactedTerminate
+### <a name="avoiding-endless-recursion-for-iworkflowinstancemanagementtransactedcancel-and-iworkflowinstancemanagementtransactedterminate"></a>Zamezení nekonečné rekurzování pro IWorkflowInstanceManagement. TransactedCancel a IWorkflowInstanceManagement. TransactedTerminate
 
-|   |   |
-|---|---|
-|Podrobnosti|Za určitých okolností při použití <xref:System.ServiceModel.Activities.IWorkflowInstanceManagement.TransactedCancel%2A?displayProperty=nameWithType> nebo <xref:System.ServiceModel.Activities.IWorkflowInstanceManagement.TransactedTerminate%2A?displayProperty=nameWithType> instance služby API zrušit nebo ukončení pracovního postupu, instance pracovního postupu může dojít k přetečení zásobníku z důvodu nekonečné rekurzi při <code>Workflow</code> modul runtime pokusí k uchování instance služby v rámci zpracování požadavku. K problému dochází, pokud je instance pracovního postupu ve stavu, ve kterém se čeká na některé další nevyřízené WCF požadavek do jiné služby na dokončení. <code>TransactedCancel</code> a <code>TransactedTerminate</code> operace vytvořit pracovní položky, které jsou zařazeny do fronty pro instance služby pracovního postupu. Tyto pracovní položky nejsou provedeny v rámci zpracování <code>TransactedCancel/TransactedTerminate</code> požadavku. Vzhledem k tomu, že instance služby pracovního postupu je zaneprázdněn čekání na další nevyřízené žádosti WCF k dokončení, pracovní položky vytvořené zůstane ve frontě. <code>TransactedCancel/TransactedTerminate</code> Dokončení operace a ovládací prvek se vrátí zpět do klienta. Když transakce přidružené <code>TransactedCancel/TransactedTerminate</code> operace pokusí o potvrzení, je potřeba zachovat stav instance pracovního postupu služby. Ale protože je zbývající <code>WCF</code> požadavků pro instanci aplikace, modul runtime pracovního postupu nejde zachovat instance pracovního postupu služby a nekonečné rekurzi smyčky vede k přetečení zásobníku. Protože <code>TransactedCancel</code> a <code>TransactedTerminate</code> pouze vytvořit pracovní položku v paměti, skutečnost, že existuje transakce nemá žádný účinek. Vrácení transakce není zahodit pracovní položky. K vyřešení tohoto problému, počínaje rozhraním .NET Framework 4.7.2, zavedli jsme <code>AppSetting</code> , které mohou být přidány do <code>web.config/app.config</code> služby pracovního postupu, že má ignorovat transakce pro <code>TransactedCancel</code> a <code>TransactedTerminate</code>. To umožňuje transakce se zapsat, aniž byste museli čekat pro instanci pracovního postupu k uchování. Název nastavení aplikace pro tuto funkci <code>microsoft:WorkflowServices:IgnoreTransactionsForTransactedCancelAndTransactedTerminate</code>. Hodnota <code>true</code> označuje, že transakce by měl být ignorovány, tedy není zpomalován přetečení zásobníku. Výchozí hodnota tohoto nastavení aplikace je <code>false</code>, takže neovlivní existující instance služby pracovního postupu.|
-|Doporučení|Pokud používáte AppFabric nebo jiného <xref:System.ServiceModel.Activities.IWorkflowInstanceManagement> klienta a jsou dochází k přetečení zásobníku v instanci služby pracovního postupu při pokusu o zrušení nebo ukončení instance pracovního postupu, můžete přidat následující <code>&lt;appSettings&gt;</code> část web.config/ soubor App.config pro službu pracovního postupu:<pre><code class="lang-xml">&lt;add key=&quot;microsoft:WorkflowServices:IgnoreTransactionsForTransactedCancelAndTransactedTerminate&quot; value=&quot;true&quot;/&gt;&#13;&#10;</code></pre>Pokud nejsou problému dochází, není potřeba to udělat.|
-|Rozsah|Edge|
-|Version|4.7.2|
-|Type|Změna cílení|
+#### <a name="details"></a>Podrobnosti
+
+Za určitých okolností, kdy <xref:System.ServiceModel.Activities.IWorkflowInstanceManagement.TransactedCancel%2A?displayProperty=nameWithType> pomocí <xref:System.ServiceModel.Activities.IWorkflowInstanceManagement.TransactedTerminate%2A?displayProperty=nameWithType> rozhraní API nebo zrušení nebo ukončení instance služby worklow, může instance pracovního postupu dojít k přetečení zásobníku z důvodu nekonečné rekurze, když se `Workflow` modul runtime pokusí zachovat instanci služby v rámci zpracování žádosti. K tomuto problému dochází, pokud je instance pracovního postupu ve stavu, kdy čeká na dokončení jiné zbývající žádosti WCF na jinou službu. `TransactedCancel`Operace a `TransactedTerminate` vytvoří pracovní položky, které jsou zařazeny do fronty pro instanci služby pracovního postupu. Tyto pracovní položky nejsou provedeny jako součást zpracování `TransactedCancel/TransactedTerminate` žádosti. Vzhledem k tomu, že instance služby pracovního postupu je zaneprázdněná čekáním na dokončení jiné zbývající žádosti WCF, bude vytvořená pracovní položka zařazená do fronty. `TransactedCancel/TransactedTerminate`Operace se dokončí a ovládací prvek se vrátí zpátky na klienta. V případě, že transakce přidružená k `TransactedCancel/TransactedTerminate` operaci se pokusí o potvrzení, musí zachovat stav instance službě pracovního postupu. Ale vzhledem k tomu, že existuje nekonečný `WCF` požadavek na instanci, modul runtime pracovního postupu nemůže zachovat instanci služby pracovního postupu a nekonečné smyčka rekurze vede k přetečení zásobníku. Protože `TransactedCancel` a `TransactedTerminate` pouze vytvoří pracovní položku v paměti, fakt, že transakce existuje, nemá žádný vliv. Vrácení zpět transakce nezruší pracovní položku. Pro vyřešení tohoto problému, který začíná v .NET Framework 4.7.2, jsme představili `AppSetting` , kterou je možné přidat do `web.config/app.config` služby pracovního postupu, která mu oznamuje, že má ignorovat transakce pro `TransactedCancel` a `TransactedTerminate` . To umožňuje transakci potvrdit bez čekání na zachování instance pracovního postupu. AppSetting pro tuto funkci je pojmenována `microsoft:WorkflowServices:IgnoreTransactionsForTransactedCancelAndTransactedTerminate` . Hodnota `true` označuje, že by měla být transakce ignorována, čímž se vyhne přetečení zásobníku. Výchozí hodnota tohoto AppSetting je `false` , takže existující instance služby pracovního postupu nebudou ovlivněny.
+
+#### <a name="suggestion"></a>Návrh
+
+Pokud používáte AppFabric nebo jiného <xref:System.ServiceModel.Activities.IWorkflowInstanceManagement> klienta a při pokusu o zrušení nebo ukončení instance pracovního postupu dojde k přetečení zásobníku v instanci službě pracovního postupu, můžete do `<appSettings>` části souboru web.config/app.config pro službu pracovního postupu přidat následující:
+
+<pre><code class="lang-xml">&lt;add key=&quot;microsoft:WorkflowServices:IgnoreTransactionsForTransactedCancelAndTransactedTerminate&quot; value=&quot;true&quot;/&gt;&#13;&#10;</code></pre>
+
+Pokud se problém nevyřeší, nemusíte to dělat.
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   | Edge        |
+| Verze | 4.7.2       |
+| Typ    | Změna cílení |

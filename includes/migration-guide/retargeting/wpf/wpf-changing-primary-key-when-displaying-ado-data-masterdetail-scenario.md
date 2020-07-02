@@ -1,17 +1,42 @@
 ---
-ms.openlocfilehash: 2cd107dc92fd0fae89717c38840ce7ea44f3ac9a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 35fc4782ebbba33f5fc6668712af9d89d00cafe9
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61639457"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85614620"
 ---
-### <a name="wpf-changing-a-primary-key-when-displaying-ado-data-in-a-masterdetail-scenario"></a>Změna primárního klíče při zobrazování dat ADO v případě záznamů Master/Detail v WPF
+### <a name="wpf-changing-a-primary-key-when-displaying-ado-data-in-a-masterdetail-scenario"></a>WPF měnící primární klíč při zobrazení dat ADO ve scénáři hlavní/podrobnosti
 
-|   |   |
-|---|---|
-|Podrobnosti|Předpokládejme, že máte kolekci ADO položky typu <code>Order</code>, s relation s názvem &quot;OrderDetails&quot; týkající se kolekce položek typu <code>Detail</code> přes primární klíč &quot;OrderID&quot;. V aplikaci WPF může vytvoření vazby ovládacího prvku seznam v podrobnostech uvedeném pořadí:<pre><code class="lang-xml">&lt;ListBox ItemsSource=&quot;{Binding Path=OrderDetails}&quot; &gt;&#13;&#10;</code></pre>kde je DataContext <code>Order</code>. WPF získá hodnotu <code>OrderDetails</code> vlastnost – shromažďování D všech <code>Detail</code> položky, jejichž <code>OrderID</code> odpovídá <code>OrderID</code> hlavní položky. Změna chování nastane při změně primárního klíče <code>OrderID</code> hlavní položky. ADO automaticky změní <code>OrderID</code> každé příslušné záznamy v kolekci podrobností (konkrétně těm, které jsou zkopírovány do kolekce D).  Ale co se stane D?<ul><li>Staré chování:   Shromažďování D je zrušeno.   Hlavní položky nemá <em>není</em> vyvolat oznámení o změně pro vlastnost <code>OrderDetails</code>.  Objekt ListBox i nadále používat shromažďování D, která je teď prázdný.</li><li>Nové chování:  Shromažďování D je beze změny.   Každá z jeho položek vyvolá oznámení o změně pro <code>OrderID</code> vlastnost.  Objekt ListBox dál používat shromažďování D a zobrazí podrobnosti o s novými <code>OrderID</code>.</li></ul>WPF implementuje nové chování tak, že vytvoříte kolekci D jiným způsobem: zavoláním metody ADO <xref:System.Data.DataRowView.CreateChildView(System.Data.DataRelation,System.Boolean)?displayProperty=nameWithType> s <code>followParent</code> argument nastaven na <code>true</code>.|
-|Doporučení|Aplikace získá pomocí následující přepínač AppContext nové chování.<pre><code class="lang-xml">&lt;configuration&gt;&#13;&#10;&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.Windows.Data.DoNotUseFollowParentWhenBindingToADODataRelation=false&quot;/&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;&lt;/configuration&gt;&#13;&#10;&#13;&#10;</code></pre>Výchozí hodnota přepínače <code>true</code> (staré chování) pro aplikace, které cílí na .NET 4.7.1 nebo dolů a <code>false</code> (nové chování) pro aplikace, které cílí na .NET 4.7.2 nebo vyšší.|
-|Rozsah|Vedlejší|
-|Version|4.7.2|
-|Type|Změna cílení|
+#### <a name="details"></a>Podrobnosti
+
+Předpokládejme, že máte kolekci položek typu ADO `Order` s relací s názvem OrderDetails, která &quot; &quot; ji souvisí s kolekcí položek typu `Detail` prostřednictvím pole ČísloObjednávky primárního klíče &quot; &quot; . V aplikaci WPF můžete vytvořit propojení ovládacího prvku seznam s podrobnostmi o daném pořadí:
+
+```xaml
+<ListBox ItemsSource="{Binding Path=OrderDetails}" >
+```
+
+kde DataContext je `Order` . WPF Získá hodnotu `OrderDetails` vlastnosti-a kolekci D všech `Detail` položek, jejichž `OrderID` `OrderID` počet odpovídá hlavní položce. Změna chování nastane při změně primárního klíče `OrderID` hlavní položky. ADO automaticky změní `OrderID` všechny ovlivněné záznamy v kolekci podrobností (konkrétně ty zkopírované do kolekce D).  Ale co se stane se D?
+
+- Staré chování: kolekce D je zrušená. Hlavní položka *nevyvolává oznámení* o změně vlastnosti `OrderDetails` . Seznam stále používá kolekci D, která je nyní prázdná.
+- Nové chování: kolekce D se nezměnila. Každá z jeho položek vyvolá oznámení o změně `OrderID` Vlastnosti. Seznam stále používá kolekci D a zobrazuje podrobnosti s novým `OrderID` . WPF implementuje nové chování vytvořením kolekce D jiným způsobem: voláním metody ADO <xref:System.Data.DataRowView.CreateChildView(System.Data.DataRelation,System.Boolean)?displayProperty=nameWithType> s `followParent` argumentem nastaveným na `true` .
+
+#### <a name="suggestion"></a>Návrh
+
+Aplikace získá nové chování pomocí následujícího přepínače AppContext.
+
+```xml
+<configuration>
+  <runtime>
+    <AppContextSwitchOverrides value="Switch.System.Windows.Data.DoNotUseFollowParentWhenBindingToADODataRelation=false"/>
+  </runtime>
+</configuration>
+```
+
+Přepínač nastaví výchozí nastavení `true` (staré chování) pro aplikace, které cílí na rozhraní .NET 4.7.1 nebo níže, a na `false` (nové chování) pro aplikace, které cílí na rozhraní .NET 4.7.2 nebo vyšší.
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   | Vedlejší       |
+| Verze | 4.7.2       |
+| Typ    | Změna cílení |

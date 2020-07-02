@@ -1,17 +1,23 @@
 ---
-ms.openlocfilehash: ef0381dc2ce4373b2a62e8ebefa44152059ca332
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4a22d78f2308aab544d7a7d2e4d05ddc1ad5457d
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61639469"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85617235"
 ---
-### <a name="xml-schema-validation-is-stricter"></a>Je ověřování schématu XML přísnější
+### <a name="xml-schema-validation-is-stricter"></a>Ověřování schématu XML je přísnější
 
-|   |   |
-|---|---|
-|Podrobnosti|V rozhraní .NET Framework 4.5 je ověřování schématu XML přísnější. Jestliže použijete xsd:anyURI k vyhodnocení URI jako protokolu e-mailu a v URI jsou mezery, vyhodnocení selže. V předchozích verzích rozhraní .NET Framework ověření proběhlo úspěšně. Změna ovlivní pouze aplikace, které se zaměřují na rozhraní .NET Framework 4.5.|
-|Doporučení|V případě potřeby volnější ověřování rozhraní .NET Framework 4.0 ověřování aplikace může cílit verzi 4.0 rozhraní .NET Framework. Pokud mění se cílení na .NET Framework 4.5, však musí ujistit se, že nejsou neplatné identifikátory URI (s mezerami) stanovená jako hodnoty atributů s datovým typem anyURI provedena revize kódu.|
-|Rozsah|Vedlejší|
-|Version|4.5|
-|Type|Změna cílení|
+#### <a name="details"></a>Podrobnosti
+
+V .NET Framework 4,5 je ověřování schématu XML přísnější. Jestliže použijete xsd:anyURI k vyhodnocení URI jako protokolu e-mailu a v URI jsou mezery, vyhodnocení selže. V předchozích verzích rozhraní .NET Framework ověření proběhlo úspěšně. Tato změna ovlivní pouze aplikace, které cílí na .NET Framework 4,5.
+
+#### <a name="suggestion"></a>Návrh
+
+Pokud je potřeba ověření k dis.NET Framework 4,0, ověřování aplikace může cílit na verzi 4,0 .NET Framework. Při přecílení na .NET Framework 4,5 byste však měli provést revizi kódu, aby bylo zajištěno, že neplatné identifikátory URI (s mezerami) nejsou očekávány jako hodnoty atributu s datovým typem anyURI.
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   | Vedlejší       |
+| Verze | 4.5         |
+| Typ    | Změna cílení |

@@ -1,18 +1,27 @@
 ---
-ms.openlocfilehash: 9678c077e278a9d76ffd5c2ce10e63ebe3ad09f7
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: abef47c64a7cfd99c5b50bf2100401a2d5fcc5c3
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "68235526"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85614493"
 ---
-### <a name="x509certificateclaimsetfindclaims-considers-all-claimtypes"></a>X509CertificateClaimSet.FindClaims bere v úvahu všechny claimTypes
+### <a name="x509certificateclaimsetfindclaims-considers-all-claimtypes"></a>X509CertificateClaimSet. FindClaims se považuje za všechny claimTypes
 
-|   |   |
-|---|---|
-|Podrobnosti|V aplikacích, které cílí na rozhraní .NET Framework 4.6.1, pokud je sada deklarací X509 inicializována z certifikátu, který má více položek DNS ve svém poli SAN, <xref:System.IdentityModel.Claims.X509CertificateClaimSet.FindClaims(System.String,System.String)?displayProperty=name> metoda se pokusí porovnat argument claimType se všemi položkami DNS. U aplikací, které cílí na předchozí <xref:System.IdentityModel.Claims.X509CertificateClaimSet.FindClaims(System.String,System.String)?displayProperty=name> verze rozhraní .NET Framework, se metoda pokusí porovnat argument claimType pouze s poslední položkou DNS.|
-|Návrh|Tato změna se týká pouze aplikací zaměřených na rozhraní .NET Framework 4.6.1. Tato změna může být zakázána (nebo povolena, pokud targetting pre-4.6.1) s [přepínačem kompatibility DisableMultipleDNSEntries.](~/docs/framework/migration-guide/mitigation-x509certificateclaimset-findclaims-method.md#mitigation)|
-|Rozsah|Vedlejší|
-|Version|4.6.1|
-|Typ|Změna cílení|
-|Ovlivněná rozhraní API|<ul><li><xref:System.IdentityModel.Claims.X509CertificateClaimSet.FindClaims(System.String,System.String)?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a>Podrobnosti
+
+Pokud se v aplikacích, které cílí na .NET Framework 4.6.1, inicializuje sada deklarací x509 z certifikátu, který má ve svém poli SAN více položek DNS, <xref:System.IdentityModel.Claims.X509CertificateClaimSet.FindClaims(System.String,System.String)?displayProperty=fullName> metoda se pokusí porovnat s argumentem ClaimType se všemi položkami DNS. U aplikací, které cílí na předchozí verze .NET Framework, se <xref:System.IdentityModel.Claims.X509CertificateClaimSet.FindClaims(System.String,System.String)?displayProperty=fullName> Metoda pokusí porovnat argument ClaimType jenom s poslední položkou DNS.
+
+#### <a name="suggestion"></a>Návrh
+
+Tato změna ovlivní pouze aplikace, které cílí na .NET Framework 4.6.1. Tato změna může být vypnutá (nebo povolená, pokud cílíte na předběžnou 4.6.1) s přepínačem [DisableMultipleDNSEntries](~/docs/framework/migration-guide/mitigation-x509certificateclaimset-findclaims-method.md#mitigation) Compatibility.
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   | Vedlejší       |
+| Verze | 4.6.1       |
+| Typ    | Změna cílení |
+
+#### <a name="affected-apis"></a>Ovlivněná rozhraní API
+
+- <xref:System.IdentityModel.Claims.X509CertificateClaimSet.FindClaims(System.String,System.String)?displayProperty=nameWithType>

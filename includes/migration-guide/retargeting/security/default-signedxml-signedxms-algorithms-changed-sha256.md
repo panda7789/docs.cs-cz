@@ -1,18 +1,42 @@
 ---
-ms.openlocfilehash: db076d6799e4de5b8610cf9c1aac79b5386a7229
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e2ae329d027d605e6331afe422e550990fab1042
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "67859049"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85614538"
 ---
-### <a name="default-signedxml-and-signedxms-algorithms-changed-to-sha256"></a>Výchozí algoritmy SignedXML a SignedXMS byly změněny na SHA256.
+### <a name="default-signedxml-and-signedxms-algorithms-changed-to-sha256"></a>Výchozí algoritmy SignedXML a SignedXMS se změnily na SHA256
 
-|   |   |
-|---|---|
-|Podrobnosti|V rozhraní .NET Framework 4.7 a starší signedxml a signedcms výchozí SHA1 pro některé operace. Počínaje rozhraním .NET Framework 4.7.1 je sha256 pro tyto operace ve výchozím nastavení povolen. Tato změna je nezbytná, protože SHA1 již není považován za zabezpečený.|
-|Návrh|Existují dvě nové hodnoty přepínacího kontextu, které řídí, zda se sha1 (nezabezpečené) nebo SHA256 používá ve výchozím nastavení:<ul><li>Switch.System.Security.Cryptography.Xml.UseInsecureHashAlgorithms</li><li>Switch.System.Security.Cryptography.Pkcs.UseInsecureHashAlgorithms</li></ul>Pro aplikace, které cílí na rozhraní .NET Framework 4.7.1 a novější verze, pokud je použití SHA256 nežádoucí, můžete obnovit výchozí sha1 přidáním následujícího konfiguračního přepínače do sekce [runtime](~/docs/framework/configure-apps/file-schema/runtime/runtime-element.md) konfiguračního souboru aplikace:<pre><code class="lang-xml">&lt;AppContextSwitchOverrides value=&quot;Switch.System.Security.Cryptography.Xml.UseInsecureHashAlgorithms=true;Switch.System.Security.Cryptography.Pkcs.UseInsecureHashAlgorithms=true&quot; /&gt;&#13;&#10;</code></pre>U aplikací, které cílí na rozhraní .NET Framework 4.7 a starší verze, se můžete do této změny přihlásit přidáním následujícího konfiguračního přepínače do části [runtime](~/docs/framework/configure-apps/file-schema/runtime/runtime-element.md) konfiguračního souboru aplikace:<pre><code class="lang-xml">&lt;AppContextSwitchOverrides value=&quot;Switch.System.Security.Cryptography.Xml.UseInsecureHashAlgorithms=false;Switch.System.Security.Cryptography.Pkcs.UseInsecureHashAlgorithms=false&quot; /&gt;&#13;&#10;</code></pre>|
-|Rozsah|Vedlejší|
-|Version|4.7.1|
-|Typ|Změna cílení|
-|Ovlivněná rozhraní API|<ul><li><xref:System.Security.Cryptography.Pkcs.CmsSigner?displayProperty=nameWithType></li><li><xref:System.Security.Cryptography.Xml.SignedXml?displayProperty=nameWithType></li><li><xref:System.Security.Cryptography.Xml.Reference?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a>Podrobnosti
+
+V .NET Framework 4,7 a starších verzích SignedXML a SignedCMS jako výchozí SHA1 pro některé operace. Počínaje .NET Framework 4.7.1 je SHA256 ve výchozím nastavení povolen pro tyto operace. Tato změna je nezbytná, protože SHA1 již není považována za zabezpečenou.
+
+#### <a name="suggestion"></a>Návrh
+
+Existují dvě nové hodnoty přepnutí kontextu, které určují, jestli se ve výchozím nastavení používá SHA1 (nezabezpečené) nebo SHA256:
+
+- Switch.System.Security.Cryptography.Xml. UseInsecureHashAlgorithms
+- Switch.System. Security. Cryptography. PKCS. UseInsecureHashAlgorithms pro aplikace cílené na .NET Framework 4.7.1 a novějších verzích, pokud je použití SHA256 nežádoucí, můžete obnovit výchozí hodnotu SHA1 přidáním následujícího konfiguračního přepínače do oddílu [runtime](~/docs/framework/configure-apps/file-schema/runtime/runtime-element.md) konfiguračního souboru aplikace:
+
+```xml
+<AppContextSwitchOverrides value="Switch.System.Security.Cryptography.Xml.UseInsecureHashAlgorithms=true;Switch.System.Security.Cryptography.Pkcs.UseInsecureHashAlgorithms=true" />
+```
+
+Pro aplikace, které cílí na .NET Framework 4,7 a starší verze, se můžete přihlásit k této změně přidáním následujícího konfiguračního přepínače do oddílu [runtime](~/docs/framework/configure-apps/file-schema/runtime/runtime-element.md) konfiguračního souboru aplikace:
+
+```xml
+<AppContextSwitchOverrides value="Switch.System.Security.Cryptography.Xml.UseInsecureHashAlgorithms=false;Switch.System.Security.Cryptography.Pkcs.UseInsecureHashAlgorithms=false" />
+```
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   | Vedlejší       |
+| Verze | 4.7.1       |
+| Typ    | Změna cílení |
+
+#### <a name="affected-apis"></a>Ovlivněná rozhraní API
+
+- <xref:System.Security.Cryptography.Pkcs.CmsSigner?displayProperty=nameWithType>
+- <xref:System.Security.Cryptography.Xml.SignedXml?displayProperty=nameWithType>
+- <xref:System.Security.Cryptography.Xml.Reference?displayProperty=nameWithType>

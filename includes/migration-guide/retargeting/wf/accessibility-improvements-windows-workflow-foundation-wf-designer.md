@@ -1,17 +1,72 @@
 ---
-ms.openlocfilehash: d4f03e10d6f3dc879d80cb6de57c0a54b0ec8a2c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d420be76645fc71ac922542fa49f799a473e9a83
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74284095"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85614556"
 ---
-### <a name="accessibility-improvements-in-windows-workflow-foundation-wf-workflow-designer"></a>Vylepšení usnadnění v návrháři pracovních postupů Nadace pracovních postupů systému Windows Workflow Foundation (WF)
+### <a name="accessibility-improvements-in-windows-workflow-foundation-wf-workflow-designer"></a>Vylepšení usnadnění v Návrháři pracovního postupu programovací model Windows Workflow Foundation (WF)
 
-|   |   |
-|---|---|
-|Podrobnosti|Návrhář pracovních postupů Nadace pracovních postupů systému Windows (WF) zlepšuje způsob jeho fungování s technologiemi usnadnění přístupu. Mezi tato vylepšení patří následující změny:<ul><li>Pořadí polí se v některých ovládacích prvcích změní zleva doprava a shora dolů:</li><li>Okno inalcializovat korelaci pro <xref:System.ServiceModel.Activities.InitializeCorrelation> nastavení korelačních dat pro aktivitu</li><li>Okno definice obsahu <xref:System.ServiceModel.Activities.Receive>pro <xref:System.ServiceModel.Activities.Send> <xref:System.ServiceModel.Activities.SendReply>, <xref:System.ServiceModel.Activities.ReceiveReply> , a aktivity</li><li>Další funkce jsou k dispozici prostřednictvím klávesnice:</li><li>Při úpravách vlastností aktivity mohou být skupiny vlastností sbaleny pomocí klávesnice při prvním zaměření.</li><li>Výstražné ikony jsou nyní přístupné pomocí klávesnice.</li><li>Tlačítko Další vlastnosti v okně Vlastnosti je nyní přístupné pomocí klávesnice.</li><li>Uživatelé klávesnice mají nyní přístup k položkám záhlaví v podokně Argumenty a proměnné návrháře pracovních postupů.</li><li>Lepší viditelnost položek s fokusem, například když:</li><li>Přidání řádků do datových mříží používaných návrhářem pracovních postupů a návrháři aktivit.</li><li>Procházení polí v <xref:System.ServiceModel.Activities.ReceiveReply> <xref:System.ServiceModel.Activities.SendReply> a aktivity.</li><li>Nastavení výchozích hodnot pro proměnné nebo argumenty</li><li>Programy pro čtení z obrazovky nyní správně rozpoznávají:</li><li>Zarážky nastavené v návrháři pracovního postupu.</li><li>V <xref:System.Activities.Statements.FlowSwitch%601> <xref:System.Activities.Statements.FlowDecision>oblasti <xref:System.ServiceModel.Activities.CorrelationScope> , a aktivity.</li><li>Obsah aktivity. <xref:System.ServiceModel.Activities.Receive></li><li>Cílový typ aktivity. <xref:System.Activities.Statements.InvokeMethod></li><li>Výjimka combobox a Finally <xref:System.Activities.Statements.TryCatch> části aktivity.</li><li>Seseznam typu zprávy, rozdělovač v okně Přidat inicializační stavkovy korelace, okno Definice obsahu a okno<xref:System.ServiceModel.Activities.Receive> <xref:System.ServiceModel.Activities.Send>Korelovat Na definování v aktivitách zasílání zpráv ( , , <xref:System.ServiceModel.Activities.SendReply>, a <xref:System.ServiceModel.Activities.ReceiveReply>).</li><li>Přechody a přechody stavových přechodů.</li><li>Poznámky a konektory <xref:System.Activities.Statements.FlowDecision> na aktivity.</li><li>Kontextové nabídky (kliknutí pravým tlačítkem myši) pro aktivity.</li><li>Editory hodnot vlastností, tlačítko Vymazat hledání, tlačítka Podle kategorie a Abecední řazení a dialogové okno Editor výrazů v mřížce vlastností.</li><li>Procento zvětšení v Návrháři pracovního postupu.</li><li>Oddělovač <xref:System.Activities.Statements.Parallel> v <xref:System.Activities.Statements.Pick> a aktivity.</li><li>Aktivita. <xref:System.Activities.Statements.InvokeDelegate></li><li>Okno Vybrat typy pro aktivity slovníku (<code>Microsoft.Activities.AddToDictionary&lt;TKey,TValue&gt;</code>, <code>Microsoft.Activities.RemoveFromDictionary&lt;TKey,TValue&gt;</code>, atd.).</li><li>Okno Procházet a vybrat typ rozhraní .NET.</li><li>Popis cesty v Návrháři pracovního postupu.</li><li>Uživatelům, kteří zvolí motivy s vysokým kontrastem, se zobrazí mnoho vylepšení viditelnosti návrháře pracovních postupů a jeho ovládacích prvků, jako jsou lepší kontrastní poměry mezi prvky a výraznější výběrová pole používaná pro prvky fokusu.</li></ul>|
-|Návrh|Pokud máte aplikaci s přehostovaným návrhářem pracovních postupů, může vaše aplikace těžit z těchto změn provedením jedné z těchto akcí:<ul><li>Překompilujte aplikaci a zacilte na rozhraní .NET Framework 4.7.1. Tyto změny usnadnění přístupu jsou ve výchozím nastavení povoleny.</li><li>Pokud vaše aplikace cílí na rozhraní .NET Framework 4.7 nebo starší, ale běží na rozhraní .NET Framework 4.7.1, <code>&lt;runtime&gt;</code> můžete se odhlásit z těchto <code>false</code>starších chování usnadnění přidáním následujícího [přepínače AppContext](~/docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) do části souboru app.config a nastavte jej na , jak ukazuje následující příklad.</li></ul><pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#13;&#10;&lt;configuration&gt;&#13;&#10;&lt;startup&gt;&#13;&#10;&lt;supportedRuntime version=&quot;v4.0&quot; sku=&quot;.NETFramework,Version=v4.7&quot;/&gt;&#13;&#10;&lt;/startup&gt;&#13;&#10;&lt;runtime&gt;&#13;&#10;&lt;!-- AppContextSwitchOverrides value attribute is in the form of &#39;key1=true/false;key2=true/false  --&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.UseLegacyAccessibilityFeatures=false&quot; /&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;&lt;/configuration&gt;&#13;&#10;</code></pre>Aplikace, které cílí na rozhraní .NET Framework 4.7.1 nebo novější a chtějí zachovat starší chování usnadnění <code>true</code>přístupu, se mohou přihlásit k použití starších funkcí usnadnění explicitním nastavením tohoto přepínače AppContext na .|
-|Rozsah|Vedlejší|
-|Version|4.7.1|
-|Typ|Změna cílení|
+#### <a name="details"></a>Podrobnosti
+
+Návrhář pracovního postupu programovací model Windows Workflow Foundation (WF) vylepšuje, jak funguje s technologiemi usnadnění. Tato vylepšení zahrnují následující změny:
+
+- Pořadí karet se změní na zleva doprava a shora dolů v některých ovládacích prvcích:
+- Okno Inicializace korelace pro nastavení dat korelace pro <xref:System.ServiceModel.Activities.InitializeCorrelation> aktivitu
+- Okno Definice obsahu pro <xref:System.ServiceModel.Activities.Receive> <xref:System.ServiceModel.Activities.Send> aktivity,, a <xref:System.ServiceModel.Activities.SendReply> <xref:System.ServiceModel.Activities.ReceiveReply>
+- Další funkce jsou k dispozici prostřednictvím klávesnice:
+- Při úpravách vlastností aktivity mohou být skupiny vlastností sbaleny klávesnicí při prvním zaměření.
+- Ikony upozornění jsou teď dostupné pomocí klávesnice.
+- Tlačítko Další vlastnosti v okno Vlastnosti je teď dostupné pomocí klávesnice.
+- Uživatelé s klávesnicí teď mají přístup k položkám záhlaví v podoknech argumenty a proměnné Návrhář postupu provádění.
+- Vylepšená viditelnost položek s fokusem, například když:
+- Přidávání řádků do datových mříží používaných návrháři Návrhář postupu provádění a aktivit.
+- Procházení polí v <xref:System.ServiceModel.Activities.ReceiveReply> <xref:System.ServiceModel.Activities.SendReply> aktivitách a
+- Nastavení výchozích hodnot pro proměnné nebo argumenty
+- Čtečky obrazovky teď můžou správně rozpoznat:
+- Zarážky nastavené v Návrháři postupu.
+- <xref:System.Activities.Statements.FlowSwitch%601>Aktivity, <xref:System.Activities.Statements.FlowDecision> a <xref:System.ServiceModel.Activities.CorrelationScope> .
+- Obsah <xref:System.ServiceModel.Activities.Receive> aktivity
+- Cílový typ <xref:System.Activities.Statements.InvokeMethod> aktivity.
+- Pole se seznamem výjimek a oddíl finally v <xref:System.Activities.Statements.TryCatch> aktivitě.
+- Pole se seznamem typ zprávy, rozdělovač v okně Přidat Inicializátory korelace, okno Definice obsahu a okno Vlastnosti CorrelatesOn definice v aktivitách zasílání zpráv (,, <xref:System.ServiceModel.Activities.Receive> <xref:System.ServiceModel.Activities.Send> <xref:System.ServiceModel.Activities.SendReply> a <xref:System.ServiceModel.Activities.ReceiveReply> ).
+- Cíle přechodů a přechodů stavového stroje.
+- Poznámky a konektory v <xref:System.Activities.Statements.FlowDecision> aktivitách.
+- Místní nabídky pro aktivity v kontextu (klikněte pravým tlačítkem myši).
+- Editor hodnot vlastností, tlačítko Vymazat hledání, kategorie podle abecedy a abecední řazení a dialogové okno Editor výrazů v mřížce vlastností.
+- Procento přiblížení v Návrhář postupu provádění.
+- Oddělovač v rámci <xref:System.Activities.Statements.Parallel> a <xref:System.Activities.Statements.Pick> aktivity.
+- <xref:System.Activities.Statements.InvokeDelegate>Aktivita.
+- Okno vybrat typy pro aktivity slovníku ( `Microsoft.Activities.AddToDictionary&lt;TKey,TValue>` , `Microsoft.Activities.RemoveFromDictionary&lt;TKey,TValue>` atd.).
+- Okno Procházet a vybrat typ .NET.
+- Popis cesty v Návrhář postupu provádění.
+- Uživatelé, kteří si zvolí Vysoký kontrast Themes, uvidí mnoho vylepšení viditelnosti Návrhář postupu provádění a jeho ovládací prvky, jako je lepší poměr kontrastu mezi prvky a další pole výběru, která se používají pro prvky fokusu.
+
+#### <a name="suggestion"></a>Návrh
+
+Pokud máte aplikaci s novým hostovaným návrhářem pracovních postupů, může vaše aplikace tyto změny využít provedením některé z těchto akcí:
+
+- Zkompilujte aplikaci a Zaměřte se na .NET Framework 4.7.1. Tyto změny přístupnosti jsou ve výchozím nastavení povolené.
+- Pokud je vaše aplikace cílena na .NET Framework 4,7 nebo starší, ale běží na .NET Framework 4.7.1, můžete si z těchto starších chování přístupnosti přidat následující app.config [přepínač AppContext](~/docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) `<runtime>` a nastavit ji na `false` , jak ukazuje následující příklad.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <startup>
+    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.7"/>
+  </startup>
+  <runtime>
+    <!-- AppContextSwitchOverrides value attribute is in the form of 'key1=true/false;key2=true/false  -->
+    <AppContextSwitchOverrides value="Switch.UseLegacyAccessibilityFeatures=false" />
+  </runtime>
+</configuration>
+```
+
+Aplikace, které cílí na .NET Framework 4.7.1 nebo novější a chtějí zachovat starší funkce usnadnění, se můžou přihlásit k používání starších funkcí pro usnadnění přístupu tím, že explicitně nastaví tento přepínač AppContext na `true` .
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   | Vedlejší       |
+| Verze | 4.7.1       |
+| Typ    | Změna cílení |

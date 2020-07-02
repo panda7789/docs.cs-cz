@@ -1,17 +1,29 @@
 ---
-ms.openlocfilehash: 3bde64b80e5dcfe98bbf598700b6d7004e3c3c9d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a82b720fd4e771481ea1142a88a095443afa0d5b
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61762556"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85614604"
 ---
-### <a name="keyboard-focus-now-moves-correctly-across-multiple-layers-of-winformswpf-hosting"></a>Fokus klávesnice nyní správně přesune ve více vrstvách hostování WinForms nebo WPF
+### <a name="keyboard-focus-now-moves-correctly-across-multiple-layers-of-winformswpf-hosting"></a>Fokus klávesnice se teď přesouvá správně napříč několika vrstvami hostování WinForms nebo WPF.
 
-|   |   |
-|---|---|
-|Podrobnosti|Vezměte v úvahu aplikace WPF hostování ovládací prvek WinForms, který je zase hostitelem ovládacích prvků WPF. Uživatelé se možná nebudou moct kartu z vrstvy WinForms, pokud je první nebo poslední ovládací prvek v této vrstvě WPF <code>System.Windows.Forms.Integration.ElementHost</code>. Tato změna řeší tento problém, a uživatelé mají nyní možnost kartu z vrstvy WinForms. Automatizované aplikace, které spoléhají na fokus nikdy uvození vrstvě WinForms už nemusí fungovat podle očekávání.|
-|Doporučení|Jako vývojář, který chce využít tato změna při cílení na určitou verzi rozhraní framework níže .NET 4.7.2 můžete nastavit následující sadu příznaků AppContext na hodnotu false pro změnu, aby byla povolená.<pre><code class="lang-xml">&lt;configuration&gt;&#13;&#10;&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.UseLegacyAccessibilityFeatures=false;Switch.UseLegacyAccessibilityFeatures.2=false&quot;/&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;&lt;/configuration&gt;&#13;&#10;</code></pre>Aplikace WPF, musíte vyjádřit výslovný souhlas s všechny dřívější vylepšení přístupnosti získat novější vylepšení. Jinými slovy, i <code>Switch.UseLegacyAccessibilityFeatures</code> a <code>Switch.UseLegacyAccessibilityFeatures.2</code> přepínače musí být setA vývojář, který vyžaduje funkci předchozí zároveň cílí na .NET 4.7.2 nebo větší může nastavit následující AppContext příznak na hodnotu true, tato změna se deaktivuje.<pre><code class="lang-xml">&lt;configuration&gt;&#13;&#10;&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.UseLegacyAccessibilityFeatures.2=true&quot;/&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;&lt;/configuration&gt;&#13;&#10;</code></pre>|
-|Rozsah|Edge|
-|Version|4.7.2|
-|Type|Změna cílení|
+#### <a name="details"></a>Podrobnosti
+
+Zvažte použití aplikace WPF hostující ovládací prvek WinForms, který zase hostuje ovládací prvky WPF. Pokud je jako první nebo poslední ovládací prvek v této vrstvě WPF, uživatelé nemusí být schopni kartu vymezit z vrstvy WinForms `System.Windows.Forms.Integration.ElementHost` . Tato změna opravuje tento problém a uživatelé teď mohou z vrstvy WinForms karet vymezit. Automatizované aplikace, které spoléhají na fokus bez použití uvozovacích znaků vrstvy WinForms, nemusí nadále fungovat podle očekávání.
+
+#### <a name="suggestion"></a>Návrh
+
+Vývojář, který chce tuto změnu využít při cílení na verzi architektury pod platformou .NET 4.7.2, může nastavit následující sadu příznaků AppContext na hodnotu false, aby bylo možné změnu povolit.
+
+<pre><code class="lang-xml">&lt;configuration&gt;&#13;&#10;&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.UseLegacyAccessibilityFeatures=false;Switch.UseLegacyAccessibilityFeatures.2=false&quot;/&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;&lt;/configuration&gt;&#13;&#10;</code></pre>
+
+Aplikace WPF musí pro pozdější vylepšení získat výslovný souhlas se všemi vylepšeními přístupnosti v rané fázi. Jinými slovy, `Switch.UseLegacyAccessibilityFeatures` a `Switch.UseLegacyAccessibilityFeatures.2` přepínači musí být setA vývojář, který vyžaduje předchozí funkčnost při cílení na rozhraní .NET 4.7.2 nebo vyšší, může nastavit následující příznak AppContext na hodnotu true, aby se změna zakázala.
+
+<pre><code class="lang-xml">&lt;configuration&gt;&#13;&#10;&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.UseLegacyAccessibilityFeatures.2=true&quot;/&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;&lt;/configuration&gt;&#13;&#10;</code></pre>
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   | Edge        |
+| Verze | 4.7.2       |
+| Typ    | Změna cílení |

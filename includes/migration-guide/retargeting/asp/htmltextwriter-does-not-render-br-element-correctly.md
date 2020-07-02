@@ -1,18 +1,28 @@
 ---
-ms.openlocfilehash: e600b8249096eecb13f63ea00343a771a8c12b60
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8f03e5166e7f1f598e9bba7fb8c550809f287b82
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "67804494"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85615633"
 ---
-### <a name="htmltextwriter-does-not-render-br-element-correctly"></a>HtmlTextWriter nevykresluje `<br/>` prvek správně
+### <a name="htmltextwriter-does-not-render-br-element-correctly"></a>HtmlTextWriter nevykresluje `<br/>` element správně
 
-|   |   |
-|---|---|
-|Podrobnosti|Počínaje rozhraním .NET Framework 4.6, <xref:System.Web.UI.HtmlTextWriter.RenderBeginTag(System.String)> volání a <xref:System.Web.UI.HtmlTextWriter.RenderEndTag> s elementem <code>&lt;BR /&gt;</code> správně vloží pouze jeden <code>&lt;BR /&gt;</code> (namísto dvou)|
-|Návrh|Pokud aplikace závisela na <code>&lt;BR /&gt;</code> další <xref:System.Web.UI.HtmlTextWriter.RenderBeginTag(System.String)> značce, měla by být volána podruhé. Všimněte si, že tato změna chování ovlivňuje pouze aplikace, které cílí na rozhraní .NET Framework 4.6 nebo novější, takže další možností je cílit na předchozí verzi rozhraní .NET Framework, aby bylo možné získat staré chování.|
-|Rozsah|Edge|
-|Version|4.6|
-|Typ|Změna cílení|
-|Ovlivněná rozhraní API|<ul><li><xref:System.Web.UI.HtmlTextWriter.RenderBeginTag(System.String)?displayProperty=nameWithType></li><li><xref:System.Web.UI.HtmlTextWriter.RenderBeginTag(System.Web.UI.HtmlTextWriterTag)?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a>Podrobnosti
+
+Počínaje .NET Framework 4,6, volání <xref:System.Web.UI.HtmlTextWriter.RenderBeginTag(System.String)> a <xref:System.Web.UI.HtmlTextWriter.RenderEndTag> s `<BR />` elementem budou správně vložena pouze jedna `<BR />` (místo dvou).
+
+#### <a name="suggestion"></a>Návrh
+
+Pokud je aplikace závislá na `<BR />` značce navíc, <xref:System.Web.UI.HtmlTextWriter.RenderBeginTag(System.String)> měla by být volána podruhé. Všimněte si, že tato změna chování ovlivňuje pouze aplikace, které cílí na .NET Framework 4,6 nebo novější, takže další možnost je cílit na předchozí verzi .NET Framework, aby bylo možné získat staré chování.
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   | Edge        |
+| Verze | 4.6         |
+| Typ    | Změna cílení |
+
+#### <a name="affected-apis"></a>Ovlivněná rozhraní API
+
+- <xref:System.Web.UI.HtmlTextWriter.RenderBeginTag(System.String)?displayProperty=nameWithType>
+- <xref:System.Web.UI.HtmlTextWriter.RenderBeginTag(System.Web.UI.HtmlTextWriterTag)?displayProperty=nameWithType>

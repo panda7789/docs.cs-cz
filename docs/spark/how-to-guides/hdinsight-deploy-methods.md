@@ -1,29 +1,31 @@
 ---
-title: Odeslání úlohy .NET pro Apache Spark do Azure HDInsight
-description: Přečtěte si, jak odeslat úlohu .NET pro Apache Spark do Azure HDInsight pomocí spark-submit a Apache Livy.
-ms.date: 11/19/2019
+title: Odeslání úlohy .NET for Apache Spark do Azure HDInsight
+description: Naučte se, jak odeslat úlohu .NET for Apache Spark do Azure HDInsight pomocí Spark-Submit a Apache Livy.
+ms.date: 06/25/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: 83359f7f613b500a4ce121ce1612cda0ad1191ab
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 50611b1f62934a446e5b80a8c53698efe23cd1fc
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79185789"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85617688"
 ---
-# <a name="submit-a-net-for-apache-spark-job-to-azure-hdinsight"></a>Odeslání úlohy .NET pro Apache Spark do Azure HDInsight
+# <a name="submit-a-net-for-apache-spark-job-to-azure-hdinsight"></a>Odeslání úlohy .NET for Apache Spark do Azure HDInsight
 
-Existují dva způsoby nasazení úlohy .NET pro `spark-submit` Apache Spark do HDInsightu: a Apache Livy.
+Existují dva způsoby, jak nasadit aplikaci .NET pro Apache Spark úlohy do HDInsight: `spark-submit` a Apache Livy.
 
-## <a name="deploy-using-spark-submit"></a>Nasazení pomocí spark-submit
+[!INCLUDE [spark-preview-note](../../../includes/spark-preview-note.md)]
 
-Pomocí příkazu [spark-submit](https://spark.apache.org/docs/latest/submitting-applications.html) můžete odeslat .NET pro úlohy Apache Spark do Azure HDInsight.
+## <a name="deploy-using-spark-submit"></a>Nasazení pomocí Spark-Submit
 
-1. Přejděte do clusteru HDInsight Spark na webu Azure Portal a pak vyberte **Přihlášení SSH + Cluster**.
+K odeslání .NET pro úlohy Apache Spark do Azure HDInsight můžete použít příkaz [Spark-Submit](https://spark.apache.org/docs/latest/submitting-applications.html) .
 
-2. Zkopírujte přihlašovací údaje ssh a vložte přihlášení do terminálu. Přihlaste se ke clusteru pomocí hesla, které nastavíte při vytváření clusteru. Měli byste vidět zprávy, které vás vítají na Ubuntu a Spark.
+1. Přejděte do clusteru HDInsight Spark v Azure Portal a pak vyberte **ssh + přihlášení ke clusteru**.
 
-3. Pomocí příkazu **spark-submit** můžete aplikaci spouštět v clusteru HDInsight. Nezapomeňte nahradit **mycontainer** a **mystorageaccount** v ukázkovém skriptu skutečnými názvy kontejneru objektů blob a účtu úložiště. Nezapomeňte také nahradit `microsoft-spark-2.3.x-0.6.0.jar` příslušným souborem jar, který používáte pro nasazení. `2.3.x`představuje verzi Apache Spark `0.6.0` a představuje verzi [.NET pro pracovníka Apache Spark](https://github.com/dotnet/spark/releases).
+2. Zkopírujte přihlašovací informace SSH a vložte přihlašovací jméno do terminálu. Přihlaste se ke svému clusteru pomocí hesla, které jste nastavili při vytváření clusteru. Měli byste vidět zprávy, které vás přivítá vás a Ubuntu a Spark.
+
+3. Pomocí příkazu **Spark-Submit** spusťte aplikaci v clusteru HDInsight. Nezapomeňte nahradit **myContainer** a **mystorageaccount** v ukázkovém skriptu skutečnými názvy vašeho kontejneru objektů BLOB a účtu úložiště. Nezapomeňte také nahradit `microsoft-spark-2.3.x-0.6.0.jar` vhodným souborem jar, který používáte pro nasazení. `2.3.x`představuje verzi Apache Spark a `0.6.0` představuje verzi [rozhraní .net pro Apache Spark Worker](https://github.com/dotnet/spark/releases).
 
    ```bash
    $SPARK_HOME/bin/spark-submit \
@@ -35,9 +37,9 @@ Pomocí příkazu [spark-submit](https://spark.apache.org/docs/latest/submitting
 
 ## <a name="deploy-using-apache-livy"></a>Nasazení pomocí Apache Livy
 
-[Pomocí apache livy](https://livy.incubator.apache.org/), rozhraní APACHE Spark REST API, můžete odeslat rozhraní .NET pro úlohy Apache Spark do clusteru Azure HDInsight Spark. Další informace naleznete v [tématu Vzdálené úlohy s Apache Livy](https://docs.microsoft.com/azure/hdinsight/spark/apache-spark-livy-rest-interface).
+K odeslání rozhraní .NET pro Apache Spark úlohy do clusteru Azure HDInsight Spark můžete použít [Apache Livy](https://livy.incubator.apache.org/)Apache Spark REST API. Další informace najdete v tématu [vzdálené úlohy s Apache Livy](https://docs.microsoft.com/azure/hdinsight/spark/apache-spark-livy-rest-interface).
 
-Následující příkaz na Linuxu `curl`můžete spustit pomocí :
+Následující příkaz můžete na platformě Linux spustit pomocí `curl` :
 
 ```bash
 curl -k -v -X POST "https://<your spark cluster>.azurehdinsight.net/livy/batches" \
@@ -56,6 +58,6 @@ EOF
 
 ## <a name="next-steps"></a>Další kroky
 
-* [Začínáme s rozhraním .NET pro Apache Spark](../tutorials/get-started.md)
-* [Nasazení rozhraní .NET pro aplikaci Apache Spark do Azure HDInsight](../tutorials/hdinsight-deployment.md)
+* [Začínáme s .NET pro Apache Spark](../tutorials/get-started.md)
+* [Nasazení aplikace .NET pro Apache Spark do Azure HDInsight](../tutorials/hdinsight-deployment.md)
 * [Dokumentace ke službě HDInsight](https://docs.microsoft.com/azure/hdinsight/)

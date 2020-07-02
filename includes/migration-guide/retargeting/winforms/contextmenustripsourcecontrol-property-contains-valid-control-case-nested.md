@@ -1,18 +1,38 @@
 ---
-ms.openlocfilehash: f1a1eab471d46f018a8e0d0cf787d487cf67c11e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 97299ddb9bee89c792ddb3d2b9c37516180996f7
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61762562"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85614568"
 ---
-### <a name="contextmenustripsourcecontrol-property-contains-a-valid-control-in-the-case-of-nested-toolstripmenuitems"></a>Vlastnost ContextMenuStrip.SourceControl obsahuje platný ovládací prvek v případě vnořených ToolStripMenuItems
+### <a name="contextmenustripsourcecontrol-property-contains-a-valid-control-in-the-case-of-nested-toolstripmenuitems"></a>Vlastnost ContextMenuStrip. SourceControl obsahuje platný ovládací prvek v případě vnořeného ToolStripMenuItems
 
-|   |   |
-|---|---|
-|Podrobnosti|V rozhraní .NET Framework 4.7.1 a předchozí verze <xref:System.Windows.Forms.ContextMenuStrip.SourceControl?displayProperty=nameWithType> vlastnost nesprávně vrátí hodnotu null, když uživatel otevře nabídku z vnořené <xref:System.Windows.Forms.ToolStripMenuItem> ovládacích prvků. V rozhraní .NET Framework 4.7.2 a novějších verzích <xref:System.Windows.Forms.ContextMenuStrip.SourceControl> vlastnost je vždycky nastavený na skutečný zdroj ovládacího prvku.|
-|Doporučení|<strong>Jak aktivování nebo zrušení těchto změn</strong>aby aplikace využívat tyto změny, musíte spustit na rozhraní .NET Framework 4.7.2 nebo novější. Aplikace mohou těžit z těchto změn v některém z následujících způsobů:<ul><li>To cílí na .NET Framework 4.7.2. Tato změna je ve výchozím nastavení cíleny na rozhraní.NET Framework 4.7.2 aplikací Windows Forms pro povolená nebo novější.</li><li>Cílí na rozhraní .NET Framework 4.7.1 nebo starší verzi a výslovný chování starších verzí usnadnění přidáním následujícího kódu [přepínač AppContext](~/docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) k <code>&lt;runtime&gt;</code> část souboru app.config a nastavíte ho na <code>false</code>, jak ukazuje následující příklad.</li></ul><pre><code class="lang-xml">&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.Windows.Forms.UseLegacyContextMenuStripSourceControlValue=false&quot;/&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;</code></pre>Aplikace, které se zaměřují na rozhraní .NET Framework 4.7.2 nebo novější a chcete zachovat starší chování můžete přejít k využívání staršího zdrojového hodnoty ovládacího prvku explicitním nastavením na tento přepínač AppContext <code>true</code>.|
-|Rozsah|Edge|
-|Version|4.7.2|
-|Type|Změna cílení|
-|Ovlivněná rozhraní API|<ul><li><xref:System.Windows.Forms.ContextMenuStrip.SourceControl?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a>Podrobnosti
+
+V .NET Framework 4.7.1 a předchozích verzích <xref:System.Windows.Forms.ContextMenuStrip.SourceControl?displayProperty=nameWithType> vlastnost nesprávně vrací hodnotu null, pokud uživatel otevře nabídku z vnořených <xref:System.Windows.Forms.ToolStripMenuItem> ovládacích prvků. V .NET Framework 4.7.2 a novějším <xref:System.Windows.Forms.ContextMenuStrip.SourceControl> je vlastnost vždy nastavena na skutečný ovládací prvek zdroje.
+
+#### <a name="suggestion"></a>Návrh
+
+**Jak vyjádřit nebo odhlásit tyto změny** Aby aplikace mohla tyto změny využívat, musí běžet na .NET Framework 4.7.2 nebo novějším. Aplikace může tyto změny využít v jednom z následujících způsobů:
+
+- Cílí na .NET Framework 4.7.2. Tato změna je ve výchozím nastavení povolená v aplikacích model Windows Forms, které cílí na .NET Framework 4.7.2 nebo novějším.
+- Cílí na .NET Framework 4.7.1 nebo dřívější verzi a výslovný ze staršího chování přístupnosti přidáním následujícího [přepínače AppContext](https://docs.microsoft.com/dotnet/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element) do `<runtime>` oddílu app.config souboru a jeho nastavením na `false` , jak ukazuje následující příklad.
+
+```xml
+<runtime>
+  <AppContextSwitchOverrides value="Switch.System.Windows.Forms.UseLegacyContextMenuStripSourceControlValue=false"/>
+</runtime>
+```
+
+Aplikace, které cílí na .NET Framework 4.7.2 nebo novější a chtějí zachovat starší verze správy, se mohou vyjádřit k použití starší hodnoty správy zdrojového kódu explicitně nastavením tohoto přepínače AppContext na `true` .
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   | Edge        |
+| Verze | 4.7.2       |
+| Typ    | Změna cílení |
+
+#### <a name="affected-apis"></a>Ovlivněná rozhraní API
+
+- <xref:System.Windows.Forms.ContextMenuStrip.SourceControl?displayProperty=nameWithType>

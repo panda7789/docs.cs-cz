@@ -1,18 +1,58 @@
 ---
-ms.openlocfilehash: 136ffc9305de79679ac9d254c026ecb0debc7c52
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0024b2a53444319788b8cdd312d537f994070b5e
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "68235557"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85614509"
 ---
-### <a name="sslstream-supports-tls-alerts"></a>SslStream podporuje výstrahy TLS
+### <a name="sslstream-supports-tls-alerts"></a>SslStream podporuje výstrahy TLS.
 
-|   |   |
-|---|---|
-|Podrobnosti|Po selhání tls <xref:System.IO.IOException?displayProperty=name> handshake, s <xref:System.ComponentModel.Win32Exception?displayProperty=name> vnitřní výjimku bude vyvolána první operace čtení a zápisu vstupně-v.) Kód <xref:System.ComponentModel.Win32Exception.NativeErrorCode?displayProperty=name> pro <xref:System.ComponentModel.Win32Exception?displayProperty=name> lze mapovat na Výstrahu TLS od vzdálené strany pomocí [kódů chyb Schannel pro výstrahy TLS a SSL](https://docs.microsoft.com/windows/desktop/SecAuthN/schannel-error-codes-for-tls-and-ssl-alerts). Další informace naleznete v [tématu RFC 2246: Oddíl 7.2.2 Upozornění na chyby](https://tools.ietf.org/html/rfc2246#section-7.2.2). <br/>Chování v rozhraní .NET Framework 4.6.2 a starší je, že kanál přenosu (obvykle připojení TCP) bude časový limit během zápisu nebo čtení, pokud druhá strana selhala handshake a okamžitě poté odmítl připojení.|
-|Návrh|Aplikace volající síťová vstupně-v., <xref:System.IO.Stream.Read(System.Byte[],System.Int32,System.Int32)> / <xref:System.IO.Stream.Write(System.Byte[],System.Int32,System.Int32)> jako je například zpracování <xref:System.IO.IOException> nebo <xref:System.TimeoutException?displayProperty=name>.<br/>Funkce výstrah TLS je ve výchozím nastavení povolena počínaje rozhraním .NET Framework 4.7. Aplikace, které cílí na verze rozhraní .NET Framework od 4.0 do 4.6.2 spuštěné v systému rozhraní .NET Framework 4.7 nebo vyšší, budou mít tuto funkci zakázánou, aby byla zachována kompatibilita. <br/>Následující konfigurační rozhraní API je k dispozici pro povolení nebo zakázání funkce pro rozhraní .NET Framework 4.6 a novější aplikace spuštěné v rozhraní .NET Framework 4.7 nebo novější.<ul><li>Programově:</li></ul>Musí být úplně první věc, kterou aplikace dělá, protože ServicePointManager inicializuje pouze jednou:<pre><code class="lang-csharp">AppContext.SetSwitch(&quot;TestSwitch.LocalAppContext.DisableCaching&quot;, true);&#13;&#10;AppContext.SetSwitch(&quot;Switch.System.Net.DontEnableTlsAlerts&quot;, true); // Set to &#39;false&#39; to enable the feature in .NET Framework 4.6 - 4.6.2.&#13;&#10;</code></pre><ul><li>AppConfig:</li></ul><pre><code class="lang-xml">&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.Net.DontEnableTlsAlerts=true&quot;/&gt;&#13;&#10;&lt;!-- Set to &#39;false&#39; to enable the feature in .NET Framework 4.6 - 4.6.2. --&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;</code></pre><ul><li>Klíč registru (globální počítač):</li></ul>Nastavte hodnotu, chcete-li <code>false</code> povolit funkci v rozhraní .NET Framework 4.6 - 4.6.2.<ul><li>Klíč: HKLM\SOFTWARE\Wow6432Node\Microsoft\.NETFramework\AppContext\Switch.System.Net.DontEnableTlsAlerts</li><li>Typ: Řetězec</li><li>Hodnota: &quot;true&quot;</li></ul>|
-|Rozsah|Edge|
-|Version|4.7|
-|Typ|Změna cílení|
-|Ovlivněná rozhraní API|<ul><li><xref:System.Net.Security.SslStream?displayProperty=nameWithType></li><li><xref:System.Net.WebRequest?displayProperty=nameWithType></li><li><xref:System.Net.HttpWebRequest?displayProperty=nameWithType></li><li><xref:System.Net.FtpWebRequest?displayProperty=nameWithType></li><li><xref:System.Net.Mail.SmtpClient?displayProperty=nameWithType></li><li><xref:System.Net.Http?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a>Podrobnosti
+
+Po neúspěšném ověření TLS handshake <xref:System.IO.IOException?displayProperty=fullName> <xref:System.ComponentModel.Win32Exception?displayProperty=fullName> bude při první vstupně-výstupní operaci čtení/zápisu vygenerována vnitřní výjimka. <xref:System.ComponentModel.Win32Exception.NativeErrorCode?displayProperty=fullName>Kód pro je <xref:System.ComponentModel.Win32Exception?displayProperty=fullName> možné namapovat na výstrahu TLS od vzdálené strany pomocí [kódů chyb Schannel pro výstrahy TLS a SSL](https://docs.microsoft.com/windows/desktop/SecAuthN/schannel-error-codes-for-tls-and-ssl-alerts). Další informace najdete v [dokumentu RFC 2246: upozornění na chyby oddílu](https://tools.ietf.org/html/rfc2246#section-7.2.2)s. <br/>Chování v .NET Framework 4.6.2 a starším je to, že transportní kanál (obvykle připojení TCP) bude mít časový limit během zápisu nebo čtení, pokud druhá strana nedokázala handshake a okamžitě následně odmítla připojení.
+
+#### <a name="suggestion"></a>Návrh
+
+Aplikace volající rozhraní API v/v sítě, jako <xref:System.IO.Stream.Read(System.Byte[],System.Int32,System.Int32)> / <xref:System.IO.Stream.Write(System.Byte[],System.Int32,System.Int32)> je například obslužná rutina <xref:System.IO.IOException> nebo <xref:System.TimeoutException?displayProperty=fullName> .<br/>Ve výchozím nastavení je funkce výstrahy TLS povolená od .NET Framework 4,7. Aplikace cílené na verze .NET Framework od 4,0 do 4.6.2, které běží na .NET Framework 4,7 nebo vyšší systém, budou mít funkci zakázanou, aby zachovala kompatibilitu. <br/>K dispozici je následující konfigurační rozhraní API, které umožňuje povolit nebo zakázat funkci .NET Framework 4,6 a novějších aplikací spuštěných v .NET Framework 4,7 nebo novějším.
+
+- Programově: musí se jednat o velmi první věc, kterou aplikace provede, protože Třída ServicePointManager se inicializuje jenom jednou:
+
+    ```csharp
+    AppContext.SetSwitch("TestSwitch.LocalAppContext.DisableCaching", true);
+
+    // Set to 'false' to enable the feature in .NET Framework 4.6 - 4.6.2.
+    AppContext.SetSwitch("Switch.System.Net.DontEnableTlsAlerts", true);
+    ```
+
+- AppConfig
+
+    ```xml
+    <runtime>
+      <AppContextSwitchOverrides value="Switch.System.Net.DontEnableTlsAlerts=true"/>
+      <!-- Set to 'false' to enable the feature in .NET Framework 4.6 - 4.6.2. -->
+    </runtime>
+    ```
+
+- Klíč registru (globální počítač): nastavte hodnotu pro `false` Povolení funkce v .NET Framework 4,6-4.6.2.
+
+    ```ini
+    Key: HKLM\SOFTWARE\Wow6432Node\Microsoft\.NETFramework\AppContext\Switch.System.Net.DontEnableTlsAlerts
+    - Type: String
+    - Value: "true"
+    ```
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   | Edge        |
+| Verze | 4,7         |
+| Typ    | Změna cílení |
+
+#### <a name="affected-apis"></a>Ovlivněná rozhraní API
+
+- <xref:System.Net.Security.SslStream?displayProperty=nameWithType>
+- <xref:System.Net.WebRequest?displayProperty=nameWithType>
+- <xref:System.Net.HttpWebRequest?displayProperty=nameWithType>
+- <xref:System.Net.FtpWebRequest?displayProperty=nameWithType>
+- <xref:System.Net.Mail.SmtpClient?displayProperty=nameWithType>
+- <xref:System.Net.Http?displayProperty=nameWithType>

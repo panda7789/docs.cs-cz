@@ -1,18 +1,48 @@
 ---
-ms.openlocfilehash: 2f960942bda54505690cbac3151ef74ec0ab5ebb
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: dd7d3e445772e4b5ec148576ccd1374d56e251bd
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "68235518"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85614525"
 ---
-### <a name="deadlock-may-result-when-using-reentrant-services"></a>Zablokování může dojít při použití služeb Reentrant
+### <a name="deadlock-may-result-when-using-reentrant-services"></a>Při použití přidaných služeb může dojít k zablokování.
 
-|   |   |
-|---|---|
-|Podrobnosti|Zablokování může mít za následek služby Reentrant, která omezuje instance služby na jedno vlákno spuštění najednou. Služby náchylné k výskytu tohoto <xref:System.ServiceModel.ServiceBehaviorAttribute> problému budou mít v kódu následující:<pre><code class="lang-csharp">[ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Reentrant)]&#13;&#10;</code></pre>|
-|Návrh|Chcete-li tento problém vyřešit, můžete provést následující kroky:<ul><li>Nastavte režim souběžnosti služby <xref:System.ServiceModel.ConcurrencyMode.Single?displayProperty=nameWithType> &lt;na system.servicemodel.concurrencyMode.Multiple?displayProperty=nameWithType&gt;. Například:</li></ul><pre><code class="lang-csharp">[ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Single)]&#13;&#10;</code></pre><ul><li>Nainstalujte nejnovější aktualizaci rozhraní .NET Framework 4.6.2 nebo upgradujte na novější verzi rozhraní .NET Framework. Tím se zakáže <xref:System.Threading.ExecutionContext> <xref:System.ServiceModel.OperationContext.Current?displayProperty=nameWithType>tok in . Toto chování je konfigurovatelné; je ekvivalentní přidání následujícího nastavení aplikace do konfiguračního souboru:</li></ul><pre><code class="lang-xml">&lt;appSettings&gt;&#13;&#10;&lt;add key=&quot;Switch.System.ServiceModel.DisableOperationContextAsyncFlow&quot; value=&quot;true&quot; /&gt;&#13;&#10;&lt;/appSettings&gt;&#13;&#10;</code></pre>Hodnota <code>Switch.System.ServiceModel.DisableOperationContextAsyncFlow</code> by měla být <code>false</code> nikdy nastavena na služby Rentrant.|
-|Rozsah|Vedlejší|
-|Version|4.6.2|
-|Typ|Změna cílení|
-|Ovlivněná rozhraní API|<ul><li><xref:System.ServiceModel.ServiceBehaviorAttribute?displayProperty=nameWithType></li><li><xref:System.ServiceModel.ConcurrencyMode.Reentrant?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a>Podrobnosti
+
+Zablokování může mít za následek předanou službu, která omezí instance služby na jeden podproces spuštění v čase. Služby náchylné k tomuto problému budou mít <xref:System.ServiceModel.ServiceBehaviorAttribute> v kódu následující:
+
+```csharp
+[ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Reentrant)]
+```
+
+#### <a name="suggestion"></a>Návrh
+
+K vyřešení tohoto problému můžete postupovat takto:
+
+- Nastavte režim souběžnosti služby na <xref:System.ServiceModel.ConcurrencyMode.Single?displayProperty=nameWithType> nebo &lt; System. ServiceModel. ConcurrencyMode. Multiple? DisplayProperty = nameWithType &gt; . Příklad:
+
+```csharp
+[ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Reentrant)]
+```
+
+- Nainstalujte nejnovější aktualizaci .NET Framework 4.6.2 nebo upgradujte na novější verzi .NET Framework. Tím se zakáže tok v nástroji <xref:System.Threading.ExecutionContext> <xref:System.ServiceModel.OperationContext.Current?displayProperty=nameWithType> . Toto chování je konfigurovatelné. je ekvivalentní přidat následující nastavení aplikace do konfiguračního souboru:
+
+```xml
+<appSettings>
+  <add key="Switch.System.ServiceModel.DisableOperationContextAsyncFlow" value="true" />
+</appSettings>
+```
+
+Hodnota `Switch.System.ServiceModel.DisableOperationContextAsyncFlow` by nikdy neměla být nastavená na `false` pro znovu vstupující služby.
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   | Vedlejší       |
+| Verze | 4.6.2       |
+| Typ    | Změna cílení |
+
+#### <a name="affected-apis"></a>Ovlivněná rozhraní API
+
+- <xref:System.ServiceModel.ServiceBehaviorAttribute?displayProperty=nameWithType>
+- <xref:System.ServiceModel.ConcurrencyMode.Reentrant?displayProperty=nameWithType>

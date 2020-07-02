@@ -1,18 +1,57 @@
 ---
-ms.openlocfilehash: f0d1bbbc6d89bf0d8c62ea65c9c450116c349d49
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 47d3829748deef2c7c3610816b8941bf88da7ec6
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "72887751"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85614589"
 ---
-### <a name="accessibility-improvements-in-wpf"></a>Vylepšení přístupnosti v WPF
+### <a name="accessibility-improvements-in-wpf"></a>Vylepšení usnadnění v WPF
 
-|   |   |
-|---|---|
-|Podrobnosti|**Vylepšení vysokého kontrastu**<br><ul><li>Fokus <xref:System.Windows.Controls.Expander> pro ovládací prvek je nyní viditelný. V předchozích verzích rozhraní .NET Framework nebyl.</li><li>Text a <xref:System.Windows.Controls.CheckBox> <xref:System.Windows.Controls.RadioButton> ovládací prvky, když jsou vybrány, je nyní lépe vidět než v předchozích verzích rozhraní .NET Framework.</li><li>Ohraničení zakázaného <xref:System.Windows.Controls.ComboBox> textu má nyní stejnou barvu jako zakázaný text. V předchozích verzích rozhraní .NET Framework nebyl.</li><li>Zakázaná a zaostřená tlačítka nyní používají správnou barvu motivu. V předchozích verzích rozhraní .NET Framework nebyly.</li><li>Rozbalovací tlačítko je nyní <xref:System.Windows.Controls.ComboBox> viditelné, když je <xref:System.Windows.Controls.ToolBar.ComboBoxStyleKey?displayProperty=nameWithType>styl ovládacího prvku nastaven na , V předchozích verzích rozhraní .NET Framework nebyl.</li><li>Šipka indikátoru <xref:System.Windows.Controls.DataGrid> řazení v ovládacím prvku nyní používá barvy motivu. V předchozích verzích rozhraní .NET Framework se tak nestalo.</li><li>Výchozí styl hypertextového odkazu se nyní změní na správnou barvu motivu na myši. V předchozích verzích rozhraní .NET Framework se tak nestalo.</li><li>Fokus klávesnice na přepínacích tlačítkách je nyní viditelný. V předchozích verzích rozhraní .NET Framework nebyl.</li><li>Sloupec <xref:System.Windows.Controls.DataGrid> zaškrtávacího políčka ovládacího prvku nyní používá očekávané barvy pro zpětnou vazbu fokusu klávesnice. V předchozích verzích rozhraní .NET Framework se tak nestalo.</li><li>vizuály fokusu klávesnice <xref:System.Windows.Controls.ComboBox> <xref:System.Windows.Controls.ListBox> jsou nyní viditelné a ovládací prvky. V předchozích verzích rozhraní .NET Framework nebyl.</p></li></ul>**Vylepšení interakce čtečky obrazovky**<br><ul><li><xref:System.Windows.Controls.Expander>ovládací prvky jsou nyní správně oznámeny jako skupiny (rozbalit/sbalit) programy pro čtení z obrazovky.</li><li><xref:System.Windows.Controls.DataGridCell>ovládací prvky jsou nyní správně oznámeny jako buňka datové mřížky (lokalizované) programy pro čtení z obrazovky.</li><li>Programy pro čtení z obrazovky nyní <xref:System.Windows.Controls.ComboBox>oznámí název upravitelného souboru .</li><li><xref:System.Windows.Controls.PasswordBox>ovládací prvky již &quot;nejsou oznamovány jako žádná položka v zobrazení&quot; programy pro čtení z obrazovky.</p></li></ul>**Podpora pro LiveRegion**<br>Programy pro čtení z obrazovky, jako je Předčítání, pomáhají uživatelům znát obsah uživatelského rozhraní aplikace, obvykle popisem něčeho o uživatelském rozhraní, které je aktuálně zaměřené, protože to je pravděpodobně prvek největšího zájmu uživatele. Pokud se však prvek uživatelského rozhraní někde na obrazovce změní a nemá fokus, uživatel nemusí být informován a chybět důležité informace. LiveRegions jsou určeny k vyřešení tohoto problému. Vývojář je může použít k informování čtečky obrazovky nebo jiného klienta [automatizace uživatelského rozhraní,](~/docs/framework/ui-automation/ui-automation-overview.md) že byla provedena důležitá změna prvku uživatelského rozhraní. Program pro čtení z obrazovky se pak může rozhodnout, jak a kdy o této změně informuje uživatele. Vlastnost LiveSetting také umožňuje programpro čtení z obrazovky vědět, jak důležité je informovat uživatele o změně provedené v uživatelském rozhraní.|
-|Návrh|**Jak se přihlásit nebo odhlásit z těchto změn**<br>Aby aplikace mohla využívat tyto změny, musí být spuštěna v rozhraní .NET Framework 4.7.1 nebo novějším. Aplikace může těžit z těchto změn v některém z následujících způsobů:<ul><li>Zaměřte rozhraní .NET Framework 4.7.1. Toto je doporučený postup. Tyto změny usnadnění jsou ve výchozím nastavení povoleny v aplikacích WPF, které cílí na rozhraní .NET Framework 4.7.1 nebo novější.</li><li>Odhlásí se z chování starší usnadnění přidáním následující [appcontext přepínač](~/docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) v <code>&lt;runtime&gt;</code> části souboru <code>false</code>konfigurace aplikace a nastavení na , jak ukazuje následující příklad.</li></ul><pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#13;&#10;&lt;configuration&gt;&#13;&#10;&lt;startup&gt;&#13;&#10;&lt;supportedRuntime version=&quot;v4.0&quot; sku=&quot;.NETFramework,Version=v4.7&quot;/&gt;&#13;&#10;&lt;/startup&gt;&#13;&#10;&lt;runtime&gt;&#13;&#10;&lt;!-- AppContextSwitchOverrides value attribute is in the form of &#39;key1=true/false;key2=true/false  --&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.UseLegacyAccessibilityFeatures=false&quot; /&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;&lt;/configuration&gt;&#13;&#10;</code></pre>Aplikace, které cílí na rozhraní .NET Framework 4.7.1 nebo novější a chtějí zachovat starší chování usnadnění <code>true</code>přístupu, se mohou přihlásit k použití starších funkcí usnadnění explicitním nastavením tohoto přepínače AppContext na .<br>Přehled automatizace uživatelského rozhraní najdete v tématu [Přehled automatizace uživatelského rozhraní](~/docs/framework/ui-automation/ui-automation-overview.md).|
-|Rozsah|Hlavní|
-|Version|4.7.1|
-|Typ|Změna cílení|
-|Ovlivněná rozhraní API|<ul><li><xref:System.Windows.Automation.AutomationElementIdentifiers.LiveSettingProperty?displayProperty=nameWithType></li><li><xref:System.Windows.Automation.AutomationElementIdentifiers.LiveRegionChangedEvent?displayProperty=nameWithType></li><li><xref:System.Windows.Automation.AutomationLiveSetting?displayProperty=nameWithType></li><li><xref:System.Windows.Automation.AutomationProperties.LiveSettingProperty?displayProperty=nameWithType></li><li><xref:System.Windows.Automation.AutomationProperties.SetLiveSetting(System.Windows.DependencyObject,System.Windows.Automation.AutomationLiveSetting)?displayProperty=nameWithType></li><li><xref:System.Windows.Automation.AutomationProperties.GetLiveSetting(System.Windows.DependencyObject)?displayProperty=nameWithType></li><li><xref:System.Windows.Automation.Peers.AutomationPeer.GetLiveSettingCore?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a>Podrobnosti
+
+**Vylepšení Vysoký kontrast**
+<ul><li>Fokus <xref:System.Windows.Controls.Expander> ovládacího prvku je nyní viditelný. V předchozích verzích .NET Framework nebyl.
+-Text v <xref:System.Windows.Controls.CheckBox> <xref:System.Windows.Controls.RadioButton> ovládacím prvku a ovládací prvky, pokud jsou vybrány, je nyní snazší zobrazit než v předchozích .NET Framework verzích.
+-Ohraničení zakázané <xref:System.Windows.Controls.ComboBox> je teď stejnou barvou jako zakázaný text. V předchozích verzích .NET Framework nebyl.
+-Zakázaná a zaměřená tlačítka teď používají správnou barvu motivu. V předchozích verzích .NET Framework neexistovaly.
+-Rozevírací tlačítko je nyní viditelné <xref:System.Windows.Controls.ComboBox> , pokud je styl ovládacího prvku nastaven na hodnotu <xref:System.Windows.Controls.ToolBar.ComboBoxStyleKey?displayProperty=nameWithType> v předchozích verzích .NET Framework, nikoli.
+-Šipka indikátoru řazení v <xref:System.Windows.Controls.DataGrid> ovládacím prvku teď používá barvy motivu. V předchozích verzích .NET Framework neexistovaly.
+-Výchozí styl hypertextového odkazu se nyní změní na správnou barvu motivu při stisknutí myši. V předchozích verzích .NET Framework neexistovaly.
+-Fokus klávesnice na přepínačích je nyní viditelný. V předchozích verzích .NET Framework nebyl.
+-<xref:System.Windows.Controls.DataGrid>Sloupec CheckBox ovládacího prvku nyní používá očekávané barvy pro zpětnou vazbu fokusu klávesnice. V předchozích verzích .NET Framework neexistovaly.
+-vizuály fokusu klávesnice jsou teď viditelné v <xref:System.Windows.Controls.ComboBox> <xref:System.Windows.Controls.ListBox> ovládacích prvcích a. V předchozích verzích .NET Framework nebyl.</p>
+**Vylepšení interakce čtečky obrazovky**
+<ul><li><xref:System.Windows.Controls.Expander>ovládací prvky jsou nyní správně ohlášeny jako skupiny (rozbalení či sbalení) pomocí nástrojů pro čtení obrazovky.
+- <xref:System.Windows.Controls.DataGridCell>ovládací prvky jsou nyní správně ohlášeny jako buňka datové mřížky (lokalizované) čtečkami obrazovky.
+-Čtečky obrazovky teď budou oznamovat název, který lze upravovat <xref:System.Windows.Controls.ComboBox> .
+- <xref:System.Windows.Controls.PasswordBox>ovládací prvky již nejsou oznámeny, protože &quot; čtečky obrazovky neobsahují žádné položky &quot; .</p>
+**Podpora LiveRegion** Čtečky obrazovky, jako je Narrator, pomohou lidem zjistit obsah uživatelského rozhraní aplikace, obvykle tím, že popisují něco o aktuálně zaměřeném uživatelském rozhraní, protože je pravděpodobné, že je prvkem největší zájem na uživatele. Pokud se však prvek uživatelského rozhraní na obrazovce změní někam a nemá fokus, uživatel nemusí být informován o důležitých informacích a nemusí být k dispozici. LiveRegions jsou určeny k vyřešení tohoto problému. Vývojář je může použít k informování čtečky obrazovky nebo jakéhokoliv jiného klienta [automatizace uživatelského rozhraní](~/docs/framework/ui-automation/ui-automation-overview.md) , že došlo k důležité změně v prvku uživatelského rozhraní. Čtečka obrazovky pak může rozhodnout, jak a kdy se má uživatel informovat o této změně. Vlastnost LiveSetting také umožňuje, aby čtečka obrazovky věděla, jak důležité je informovat uživatele o změně provedené v uživatelském rozhraní.
+
+#### <a name="suggestion"></a>Návrh
+
+**Jak vyjádřit nebo odhlásit tyto změny** Aby aplikace mohla tyto změny využívat, musí běžet na .NET Framework 4.7.1 nebo novějším. Aplikace může tyto změny využít v jednom z následujících způsobů:
+
+- Zaměřte se na .NET Framework 4.7.1. Toto je doporučený postup. Tyto změny přístupnosti jsou ve výchozím nastavení povolené v aplikacích WPF, které cílí na .NET Framework 4.7.1 nebo novějším.
+- Výslovný se ze starší verze chování přístupnosti přidáním následujícího [přepínače AppContext](~/docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) v `<runtime>` části konfiguračního souboru aplikace a jeho nastavením na `false` , jak ukazuje následující příklad.
+
+<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#13;&#10;&lt;configuration&gt;&#13;&#10;&lt;startup&gt;&#13;&#10;&lt;supportedRuntime version=&quot;v4.0&quot; sku=&quot;.NETFramework,Version=v4.7&quot;/&gt;&#13;&#10;&lt;/startup&gt;&#13;&#10;&lt;runtime&gt;&#13;&#10;&lt;!-- AppContextSwitchOverrides value attribute is in the form of &#39;key1=true/false;key2=true/false  --&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.UseLegacyAccessibilityFeatures=false&quot; /&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;&lt;/configuration&gt;&#13;&#10;</code></pre>
+
+Aplikace, které cílí na .NET Framework 4.7.1 nebo novější a chtějí zachovat starší funkce usnadnění, se můžou přihlásit k používání starších funkcí pro usnadnění přístupu tím, že explicitně nastaví tento přepínač AppContext na `true` .
+Přehled automatizace uživatelského rozhraní najdete v tématu [Přehled automatizace uživatelského rozhraní](~/docs/framework/ui-automation/ui-automation-overview.md).
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   | Hlavní       |
+| Verze | 4.7.1       |
+| Typ    | Změna cílení |
+
+#### <a name="affected-apis"></a>Ovlivněná rozhraní API
+
+- <xref:System.Windows.Automation.AutomationElementIdentifiers.LiveSettingProperty?displayProperty=nameWithType>
+- <xref:System.Windows.Automation.AutomationElementIdentifiers.LiveRegionChangedEvent?displayProperty=nameWithType>
+- <xref:System.Windows.Automation.AutomationLiveSetting?displayProperty=nameWithType>
+- <xref:System.Windows.Automation.AutomationProperties.LiveSettingProperty?displayProperty=nameWithType>
+- <xref:System.Windows.Automation.AutomationProperties.SetLiveSetting(System.Windows.DependencyObject,System.Windows.Automation.AutomationLiveSetting)?displayProperty=nameWithType>
+- <xref:System.Windows.Automation.AutomationProperties.GetLiveSetting(System.Windows.DependencyObject)?displayProperty=nameWithType>
+- <xref:System.Windows.Automation.Peers.AutomationPeer.GetLiveSettingCore?displayProperty=nameWithType>

@@ -1,17 +1,29 @@
 ---
-ms.openlocfilehash: 0a3dc43ebdc58d54675f2264a8ee56d9f4358cd8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c646372104457e8bc5d418744847f3ee771c8d8b
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "67859116"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85614537"
 ---
-### <a name="wcf-message-security-now-is-able-to-use-tls11-and-tls12"></a>Zabezpečení zpráv WCF je nyní schopno používat TLS1.1 a TLS1.2
+### <a name="wcf-message-security-now-is-able-to-use-tls11-and-tls12"></a>Zabezpečení zpráv WCF teď může používat protokol TLS 1.1 a TLS 1.2.
 
-|   |   |
-|---|---|
-|Podrobnosti|Počínaje rozhraním .NET Framework 4.7 mohou zákazníci konfigurovat tls1.1 nebo TLS1.2 v zabezpečení zpráv WCF kromě SSL3.0 a TLS1.0 prostřednictvím nastavení konfigurace aplikace.|
-|Návrh|V rozhraní .NET Framework 4.7 je ve výchozím nastavení zakázána podpora tls1.1 a TLS1.2 v zabezpečení zpráv WCF. Můžete ji povolit přidáním následujícího řádku do <code>&lt;runtime&gt;</code> oddílu souboru app.config nebo web.config:<pre><code class="lang-xml">&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.ServiceModel.DisableUsingServicePointManagerSecurityProtocols=false;Switch.System.Net.DontEnableSchUseStrongCrypto=false&quot; /&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;</code></pre>|
-|Rozsah|Edge|
-|Version|4.7|
-|Typ|Změna cílení|
+#### <a name="details"></a>Podrobnosti
+
+Počínaje .NET Framework 4,7 můžou zákazníci kromě nastavení konfigurace aplikace nakonfigurovat protokol TLS 1.1 nebo TLS 1.2 v zabezpečení zpráv WCF i na zabezpečení SSL 3.0 a TLS 1.0.
+
+#### <a name="suggestion"></a>Návrh
+
+Ve výchozím nastavení je v .NET Framework 4,7 podporovaná podpora TLS 1.1 a TLS 1.2 v zabezpečení zpráv WCF. Můžete ji povolit přidáním následujícího řádku do `<runtime>` oddílu app.config nebo web.config souboru:
+
+```xml
+<runtime>
+<AppContextSwitchOverrides value="Switch.System.ServiceModel.DisableUsingServicePointManagerSecurityProtocols=false;Switch.System.Net.DontEnableSchUseStrongCrypto=false" />
+</runtime>
+```
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   | Edge        |
+| Verze | 4,7         |
+| Typ    | Změna cílení |

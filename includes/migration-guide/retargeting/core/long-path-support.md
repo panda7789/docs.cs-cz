@@ -1,17 +1,41 @@
 ---
-ms.openlocfilehash: 506218195417548880a9d8d10508a570a7769682
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 67e3ff5000ebd38064ed8a57e4fe561afa31f8d8
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "67859249"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85614477"
 ---
 ### <a name="long-path-support"></a>Podpora dlouhých cest
 
-|   |   |
-|---|---|
-|Podrobnosti|Počínaje aplikacemi, které cílí na rozhraní .NET Framework 4.6.2, jsou podporovány dlouhé cesty (až <code>MAX_PATH</code>32 kB znaků) a bylo odebráno omezení délky cesty o 260 znaků (nebo ) . Pro aplikace, které jsou překompilovány na cíl .NET Framework 4.6.2, cesty kódu, který dříve <xref:System.IO.PathTooLongException?displayProperty=name> <xref:System.IO.PathTooLongException?displayProperty=name> hodil, protože cesta překročila 260 znaků, nyní vyvolá pouze za následujících podmínek:<ul><li>Délka cesty je větší <xref:System.Int16.MaxValue> než (32 767) znaků.</li><li>Operační systém <code>COR_E_PATHTOOLONG</code> vrátí nebo jeho ekvivalent.</li></ul>Pro aplikace, které cílí na rozhraní .NET Framework 4.6.1 <xref:System.IO.PathTooLongException?displayProperty=name> a starší verze, runtime automaticky vyvolá vždy, když cesta překročí 260 znaků.|
-|Návrh|U aplikací, které cílí na rozhraní .NET Framework 4.6.2, se můžete odhlásit <code>&lt;runtime&gt;</code> z podpory <code>app.config</code> dlouhé cesty, pokud to není žádoucí, přidáním následujícího textu do části souboru:<pre><code class="lang-xml">&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.IO.BlockLongPaths=true&quot; /&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;</code></pre>U aplikací, které cílí na starší verze rozhraní .NET Framework, ale běží v rozhraní .NET Framework 4.6.2 nebo novějším, se můžete přihlásit k podpoře dlouhé cesty přidáním následujících položek do <code>&lt;runtime&gt;</code> části <code>app.config</code> souboru:<pre><code class="lang-xml">&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.IO.BlockLongPaths=false&quot; /&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;</code></pre>|
-|Rozsah|Vedlejší|
-|Version|4.6.2|
-|Typ|Změna cílení|
+#### <a name="details"></a>Podrobnosti
+
+Počínaje aplikacemi, které cílí na .NET Framework 4.6.2, se podporují dlouhé cesty (z až 32 znaků) a odeberou se omezení 260 znaků (nebo `MAX_PATH` ) na délkách cest. Pro aplikace, které jsou znovu kompilovány pro cílení na .NET Framework 4.6.2, cesty kódu, které dříve vyvolaly, <xref:System.IO.PathTooLongException?displayProperty=fullName> protože cesta překročila 260 znaků, bude nyní vyvolána <xref:System.IO.PathTooLongException?displayProperty=fullName> pouze za následujících podmínek:
+
+- Délka cesty je větší než <xref:System.Int16.MaxValue> (32 767) znaků.
+- Operační systém vrátí `COR_E_PATHTOOLONG` nebo jeho ekvivalent.
+Pro aplikace, které cílí na .NET Framework 4.6.1 a starší verze, modul runtime automaticky vyvolá <xref:System.IO.PathTooLongException?displayProperty=fullName> vždy, když cesta překračuje 260 znaků.
+
+#### <a name="suggestion"></a>Návrh
+
+U aplikací, které cílí na .NET Framework 4.6.2, se můžete rozhodnout, že podporu dlouhých cest nebudete mít, pokud to není žádoucí, a to tak, že do `<runtime>` části souboru přidáte následující `app.config` :
+
+```xml
+<runtime>
+  <AppContextSwitchOverrides value="Switch.System.IO.BlockLongPaths=true" />
+</runtime>
+```
+
+Pro aplikace, které cílí na starší verze .NET Framework, ale běží na .NET Framework 4.6.2 nebo novější, se můžete rozhodnout pro podporu dlouhých cest tím, že do `<runtime>` části souboru přidáte následující `app.config` :
+
+```xml
+<runtime>
+  <AppContextSwitchOverrides value="Switch.System.IO.BlockLongPaths=false" />
+</runtime>
+```
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   | Vedlejší       |
+| Verze | 4.6.2       |
+| Typ    | Změna cílení |

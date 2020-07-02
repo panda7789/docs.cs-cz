@@ -1,18 +1,43 @@
 ---
-ms.openlocfilehash: e4860113f45d3b3466e01e5db61d355a8ea745df
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 148312743dd274728b178951548889dc3a680528
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "68235509"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85614468"
 ---
-### <a name="change-in-path-separator-character-in-fullname-property-of-ziparchiveentry-objects"></a>Změna znaku oddělovače cesty ve vlastnosti FullName objektů ZipArchiveEntry
+### <a name="change-in-path-separator-character-in-fullname-property-of-ziparchiveentry-objects"></a>Změna v znaku oddělovače cesty ve vlastnosti FullName objektů ZipArchiveEntry
 
-|   |   |
-|---|---|
-|Podrobnosti|U aplikací, které cílí na rozhraní .NET Framework 4.6.1 a novější verze, se znak oddělovače cesty změnil z zpětného lomítka (&quot;\&quot;) lomítko (&quot;/&quot;) <xref:System.IO.Compression.ZipArchiveEntry.FullName> ve <xref:System.IO.Compression.ZipArchiveEntry> vlastnosti objektů vytvořených <xref:System.IO.Compression.ZipFile.CreateFromDirectory%2A> přetížením metody. Změna uvede implementaci .NET do souladu s oddílem 4.4.17.1 [. SPECIFIKACE FORMÁTU SOUBORU ZIP](https://pkware.cachefly.net/webdocs/casestudies/APPNOTE.TXT) a umožňuje . ZIP archivy, které mají být dekomprimovány v systémech, které nejsou systémy Windows.<br />Dekomprese souboru ZIP vytvořeného aplikací, která cílí na předchozí verzi rozhraní .NET Framework v operačních systémech, například v systému Macintosh, nezachová adresářovou strukturu. Například na Macintosh vytvoří sadu souborů, jejichž název souboru zřetězí cestu k adresáři, spolu s případnými znaky zpětného lomítka (&quot;&quot;) a názvem souboru. V důsledku toho není zachována adresářová struktura dekomprimovaných souborů.|
-|Návrh|Dopad této změny na . Soubory ZIP, které jsou dekomprimovány v operačním systému <xref:System.IO?displayProperty=nameWithType> Windows pomocí rozhraní API v oboru názvů rozhraní .NET&quot;/&quot;Framework, by&quot;\&měly být minimální, protože tato rozhraní API mohou bezproblémově zpracovat lomítko ( ) nebo zpětné lomítko ( quot;) jako znak oddělovače cesty.<br />Pokud je tato změna nežádoucí, můžete se od ní odhlásit přidáním nastavení konfigurace do [<](~/docs/framework/configure-apps/file-schema/runtime/runtime-element.md) části konfiguračního souboru aplikace. Následující příklad ukazuje <code>&lt;runtime&gt;</code> oddíl i <code>Switch.System.IO.Compression.ZipFile.UseBackslash</code> přepínač opt-out:<pre><code class="lang-xml">&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.IO.Compression.ZipFile.UseBackslash=true&quot; /&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;</code></pre>Kromě toho aplikace, které cílí na předchozí verze rozhraní .NET Framework, ale jsou spuštěny v rozhraní .NET Framework 4.6.1 a novějšíverze můžete přihlásit k tomuto chování přidáním nastavení konfigurace do [<](~/docs/framework/configure-apps/file-schema/runtime/runtime-element.md) části konfiguračního souboru aplikace. V následujícím textu <code>&lt;runtime&gt;</code> je <code>Switch.System.IO.Compression.ZipFile.UseBackslash</code> uveden oddíl i přepínač pro přihlášení.<pre><code class="lang-xml">&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.IO.Compression.ZipFile.UseBackslash=false&quot; /&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;</code></pre>|
-|Rozsah|Edge|
-|Version|4.6.1|
-|Typ|Změna cílení|
-|Ovlivněná rozhraní API|<ul><li><xref:System.IO.Compression.ZipFile.CreateFromDirectory(System.String,System.String)?displayProperty=nameWithType></li><li><xref:System.IO.Compression.ZipFile.CreateFromDirectory(System.String,System.String,System.IO.Compression.CompressionLevel,System.Boolean)?displayProperty=nameWithType></li><li><xref:System.IO.Compression.ZipFile.CreateFromDirectory(System.String,System.String,System.IO.Compression.CompressionLevel,System.Boolean,System.Text.Encoding)?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a>Podrobnosti
+
+U aplikací, které cílí na .NET Framework 4.6.1 a novější verze, se znak oddělovače cesty změnil z zpětného lomítka (" \" ) na lomítko ("/") ve <xref:System.IO.Compression.ZipArchiveEntry.FullName> vlastnosti <xref:System.IO.Compression.ZipArchiveEntry> objektů vytvořených přetížením <xref:System.IO.Compression.ZipFile.CreateFromDirectory%2A> metody. Tato změna přináší implementaci rozhraní .NET do souladu s oddílem 4.4.17.1 [. Specifikace formátu souboru ZIP](https://pkware.cachefly.net/webdocs/casestudies/APPNOTE.TXT) a umožňuje. Archivy ZIP, které se mají dekomprimovat v systémech jiných než Windows<br />Dekomprimace souboru ZIP vytvořeného aplikací, která cílí na předchozí verzi .NET Framework v operačních systémech jiných než Windows, jako je například Macintosh, se nepodařilo zachovat adresářovou strukturu. Například v počítači Macintosh vytvoří sadu souborů, jejichž název souboru zřetězí cestu k adresáři, spolu se znakem zpětného lomítka ("") a názvem souboru. V důsledku toho není zachována adresářová struktura dekomprimovaných souborů.
+
+#### <a name="suggestion"></a>Návrh
+
+Dopad této změny na. Soubory ZIP, které jsou v operačním systému Windows dekomprimovány pomocí rozhraní API v <xref:System.IO?displayProperty=nameWithType> oboru názvů .NET Framework, by měly být minimální, protože tato rozhraní API můžou hladě zpracovávat lomítka ("/") nebo zpětné lomítko (" \" ) jako znak oddělovače cesty.<br />Pokud je tato změna nežádoucí, můžete ji odhlásit přidáním nastavení konfigurace do [<](~/docs/framework/configure-apps/file-schema/runtime/runtime-element.md) oddílu konfiguračního souboru aplikace. Následující příklad ukazuje jak `<runtime>` oddíl, tak přepínač pro `Switch.System.IO.Compression.ZipFile.UseBackslash` výslovný souhlas:
+
+```xml
+<runtime>
+  <AppContextSwitchOverrides value="Switch.System.IO.Compression.ZipFile.UseBackslash=true" />
+</runtime>
+```
+
+Kromě toho aplikace, které cílí na předchozí verze .NET Framework, ale běží v .NET Framework 4.6.1 a novějších verzích se můžou k tomuto chování vyjádřit přidáním nastavení konfigurace do [<](~/docs/framework/configure-apps/file-schema/runtime/runtime-element.md) oddílu konfiguračního souboru aplikace. Následující příklad ukazuje `<runtime>` oddíl i `Switch.System.IO.Compression.ZipFile.UseBackslash` přepínač pro výslovný souhlas.
+
+```xml
+<runtime>
+  <AppContextSwitchOverrides value="Switch.System.IO.Compression.ZipFile.UseBackslash=false" />
+</runtime>
+```
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   | Edge        |
+| Verze | 4.6.1       |
+| Typ    | Změna cílení |
+
+#### <a name="affected-apis"></a>Ovlivněná rozhraní API
+
+- <xref:System.IO.Compression.ZipFile.CreateFromDirectory(System.String,System.String)?displayProperty=nameWithType>
+- <xref:System.IO.Compression.ZipFile.CreateFromDirectory(System.String,System.String,System.IO.Compression.CompressionLevel,System.Boolean)?displayProperty=nameWithType>
+- <xref:System.IO.Compression.ZipFile.CreateFromDirectory(System.String,System.String,System.IO.Compression.CompressionLevel,System.Boolean,System.Text.Encoding)?displayProperty=nameWithType>

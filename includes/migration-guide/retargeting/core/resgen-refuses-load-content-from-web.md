@@ -1,17 +1,23 @@
 ---
-ms.openlocfilehash: 6cdd410cc818c2c0a993a364e550f5f92ed6a821
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f980c8029375074889505a8eb7e8a65aaa8d74e4
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61762555"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85614517"
 ---
-### <a name="resgen-refuses-to-load-content-from-the-web"></a>Resgen odmítá k načtení obsahu z webu
+### <a name="resgen-refuses-to-load-content-from-the-web"></a>Resgen odmítá načíst obsah z webu.
 
-|   |   |
-|---|---|
-|Podrobnosti|binární formátovaný vstup může obsahovat soubory .resx. Pokud se pokusíte použít aplikaci resgen se načíst soubor, který byl stažen z nedůvěryhodného umístění, se nepovedlo se načíst vstupní ve výchozím nastavení.|
-|Doporučení|Resgen, kteří vyžadují načítání binární formátovaný vstup z nedůvěryhodného umístění můžete odebrat značku webu ze vstupního souboru nebo použít datového toku zvuku nabízí výslovného nesouhlasu s. Přidejte následující nastavení registru použít počítač široký odhlásit datového toku zvuku nabízí: [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft.NETFramework\SDK] &quot;AllowProcessOfUntrustedResourceFiles&quot;=&quot;true&quot;|
-|Rozsah|Edge|
-|Version|4.7.2|
-|Type|Změna cílení|
+#### <a name="details"></a>Podrobnosti
+
+soubory RESX mohou obsahovat binární formátovaný vstup. Pokud se pokusíte použít Resgen k načtení souboru staženého z nedůvěryhodného umístění, ve výchozím nastavení se nepodaří načíst vstup.
+
+#### <a name="suggestion"></a>Návrh
+
+Uživatelé Resgen, kteří vyžadují načítání binárního formátovaného vstupu z nedůvěryhodných umístění, mohou buď odebrat značku webu ze vstupního souboru, nebo použít Quirk pro odhlášení. Přidejte následující nastavení registru, aby bylo možné použít Quirk pro místní počítač: [HKEY_LOCAL_MACHINE \software\microsoft.netframework\sdk] &quot; AllowProcessOfUntrustedResourceFiles &quot; = &quot; true&quot;
+
+| Name    | Hodnota       |
+|:--------|:------------|
+| Rozsah   | Edge        |
+| Verze | 4.7.2       |
+| Typ    | Změna cílení |

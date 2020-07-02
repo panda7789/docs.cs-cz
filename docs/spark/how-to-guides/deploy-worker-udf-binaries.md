@@ -1,19 +1,21 @@
 ---
 title: Nasazení rozhraní .NET pro Apache Spark pro pracovní procesy a uživatelem definované binární soubory funkcí
 description: Naučte se, jak nasadit rozhraní .NET pro Apache Spark pro pracovní procesy a uživatelem definované binární soubory funkcí.
-ms.date: 01/21/2019
+ms.date: 06/25/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: 042f336431a1c8cad7d94cf10cbe64b72ddfce5b
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 672a32c430bd702167a294d2b895ac1ac90bf67e
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84596458"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85617714"
 ---
 # <a name="deploy-net-for-apache-spark-worker-and-user-defined-function-binaries"></a>Nasazení rozhraní .NET pro Apache Spark pro pracovní procesy a uživatelem definované binární soubory funkcí
 
 Tento postup poskytuje obecné pokyny k nasazení rozhraní .NET pro Apache Spark pro pracovní procesy a uživatelem definované binární soubory funkcí. Zjistíte, které proměnné prostředí se mají nastavit, a také některé běžně používané parametry pro spouštění aplikací pomocí `spark-submit` .
+
+[!INCLUDE [spark-preview-note](../../../includes/spark-preview-note.md)]
 
 ## <a name="configurations"></a>Konfigurace
 Konfigurace zobrazují obecné proměnné prostředí a nastavení parametrů, aby bylo možné nasadit rozhraní .NET pro Apache Spark pro pracovní procesy a uživatelem definované binární soubory funkcí.
@@ -46,12 +48,12 @@ Jakmile je aplikace Spark připojená do [balíčku](https://spark.apache.org/do
 
 ## <a name="frequently-asked-questions"></a>Nejčastější dotazy
 ### <a name="when-i-run-a-spark-app-with-udfs-i-get-a-filenotfoundexception-error-what-should-i-do"></a>Při spuštění aplikace Spark s UDF se zobrazí chyba "FileNotFoundException". Co bych měl/a dělat?
-> **Chyba:** [Chyba] [TaskRunner] [0] ProcessStream () se nezdařilo. výjimka: System. IO. FileNotFoundException: sestavení ' MySparkApp, Version = 1.0.0.0, Culture = neutral, PublicKeyToken = null ' nebyl nalezen: ' mySparkApp. dll '
+> **Chyba:** [Chyba] [TaskRunner] [0] ProcessStream () se nezdařilo s výjimkou: System. IO. FileNotFoundException: sestavení MySparkApp, verze = 1.0.0.0, Culture = neutral, PublicKeyToken = null – soubor nebyl nalezen: ' mySparkApp.dll '
 
 **Odpověď:** Ověřte, že `DOTNET_ASSEMBLY_SEARCH_PATHS` je správně nastavená proměnná prostředí. Měla by to být cesta, která obsahuje vaše `mySparkApp.dll` .
 
 ### <a name="after-i-upgraded-my-net-for-apache-spark-version-and-reset-the-dotnet_worker_dir-environment-variable-why-do-i-still-get-the-following-ioexception-error"></a>Po upgradu rozhraní .NET pro Apache Spark verzi a resetování `DOTNET_WORKER_DIR` proměnné prostředí se mi zobrazí následující `IOException` Chyba?
-> **Chyba:** Ztráta úlohy 0,0 ve fázi 11,0 (TID 24, localhost, ovladač prováděcího modulu): Java. IO. IOException: nelze spustit program Microsoft. spark. Worker. exe: Chyba CreateProcess = 2, systém nemůže najít zadaný soubor.
+> **Chyba:** Ztráta úlohy 0,0 ve fázi 11,0 (TID 24, localhost, ovladač prováděcího modulu): Java. IO. IOException: nelze spustit program "Microsoft.Spark.Worker.exe": Chyba CreateProcess = 2, systém nemůže najít zadaný soubor.
 
 **Odpověď:** Zkuste nejdřív restartovat okno PowerShellu (nebo jiná okna příkazu), aby bylo možné převzít nejnovější hodnoty proměnných prostředí. Pak program spusťte.
 
