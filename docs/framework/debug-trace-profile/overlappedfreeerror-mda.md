@@ -1,5 +1,6 @@
 ---
 title: overlappedFreeError – pomocník spravovaného ladění (MDA)
+description: Přečtěte si pomocníka spravovaného ladění overlappedFreeError – (MDA) v rozhraní .NET, který se může aktivovat při narušení přístupu nebo poškození haldy uvolňování paměti.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - OverlappedFreeError MDA
@@ -9,15 +10,15 @@ helpviewer_keywords:
 - MDAs (managed debugging assistants), overlapped structures
 - freeing overlapped structures
 ms.assetid: b6ab2d48-6eee-4bab-97a3-046b3b0a5470
-ms.openlocfilehash: 8a0c72cf26ef8434719ff6661ef15a44f51c8740
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 9be33c59723ecb2743f2bc610d7fb69d24ff388c
+ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77217253"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85803909"
 ---
 # <a name="overlappedfreeerror-mda"></a>overlappedFreeError – pomocník spravovaného ladění (MDA)
-Pokud je metoda <xref:System.Threading.Overlapped.Free%28System.Threading.NativeOverlapped%2A%29?displayProperty=nameWithType> volána před dokončením překrývající se operace, je aktivována funkce Pomocník pro Managed debugginger (MDA) `overlappedFreeError`.  
+`overlappedFreeError`Pokud <xref:System.Threading.Overlapped.Free%28System.Threading.NativeOverlapped%2A%29?displayProperty=nameWithType> je metoda volána před dokončením překryté operace, je aktivována funkce pomocník spravovaného ladění (MDA).  
   
 ## <a name="symptoms"></a>Příznaky  
  Narušení přístupu nebo poškození haldy uvolňování paměti.  
@@ -28,7 +29,7 @@ Pokud je metoda <xref:System.Threading.Overlapped.Free%28System.Threading.Native
  V případě, že se překrytá operace nezačala úspěšně, tato aplikace MDA nemusí představovat chybu.  
   
 ## <a name="resolution"></a>Řešení  
- Před voláním metody <xref:System.Threading.Overlapped.Free%28System.Threading.NativeOverlapped%2A%29> zajistěte, aby vstupně-výstupní operace s použitím překryté struktury byla dokončena.  
+ Před voláním metody zajistěte, aby byla vstupně-výstupní operace s použitím překryté struktury dokončená <xref:System.Threading.Overlapped.Free%28System.Threading.NativeOverlapped%2A%29> .  
   
 ## <a name="effect-on-the-runtime"></a>Vliv na modul runtime  
  Tento MDA nemá žádný vliv na CLR.  
@@ -48,7 +49,7 @@ Pokud je metoda <xref:System.Threading.Overlapped.Free%28System.Threading.Native
 </mdaConfig>  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
 - [Diagnostikování chyb pomocí asistentů spravovaného ladění](diagnosing-errors-with-managed-debugging-assistants.md)

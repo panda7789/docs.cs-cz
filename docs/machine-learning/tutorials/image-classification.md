@@ -1,15 +1,15 @@
 ---
 title: 'Kurz: model klasifikace imagí ML.NET z TensorFlow'
 description: Přečtěte si, jak přenést znalosti z existujícího modelu TensorFlow do nového modelu klasifikace imagí ML.NET. Model TensorFlow byl vyškolen pro klasifikaci imagí do tisíc kategorií. Model ML.NET využívá učení přenosu pro klasifikaci imagí do méně širších kategorií.
-ms.date: 01/30/2020
+ms.date: 06/30/2020
 ms.topic: tutorial
 ms.custom: mvc, title-hack-0612
-ms.openlocfilehash: ae6094d5acd4d26482f3690e174d82bbf1807266
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 38fa349e743da54a21aeb65b76a0273a17c3fae7
+ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144432"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85803999"
 ---
 # <a name="tutorial-generate-an-mlnet-image-classification-model-from-a-pre-trained-tensorflow-model"></a>Kurz: generování modelu klasifikace imagí ML.NET z předem připraveného modelu TensorFlow
 
@@ -66,9 +66,9 @@ Klasifikace obrázku je běžný Machine Learning úkol, který nám umožňuje 
 >[!Note]
 > Předchozí image patří do Wikimedia a jsou jim tyto atributy:
 >
-> * Veřejná doména "220px-Pepperoni_pizza. jpg", <https://commons.wikimedia.org/w/index.php?curid=79505> ,
-> * "119px-Nalle_-_a_small_brown_teddy_bear. jpg" pomocí [Jonik](https://commons.wikimedia.org/wiki/User:Jonik) – s použitím uživatelsky optimalizovaného grafu, kopie od-SA 2,0, <https://commons.wikimedia.org/w/index.php?curid=48166> .
-> * "193px-Broodrooster. jpg" podle [M. Minderhoud](https://nl.wikipedia.org/wiki/Gebruiker:Michiel1972) vlastní práce, CC by-sa 3,0,<https://commons.wikimedia.org/w/index.php?curid=27403>
+> * Veřejné domény "220px-Pepperoni_pizza.jpg", <https://commons.wikimedia.org/w/index.php?curid=79505> ,
+> * "119px-Nalle_-_a_small_brown_teddy_bear.jpg" pomocí [Jonik](https://commons.wikimedia.org/wiki/User:Jonik) – fotograficky založeného na programu cc-SA 2,0, <https://commons.wikimedia.org/w/index.php?curid=48166> .
+> * "193px-Broodrooster.jpg" podle [M. Minderhoud](https://nl.wikipedia.org/wiki/Gebruiker:Michiel1972) – vlastní práce, CC by-sa 3,0,<https://commons.wikimedia.org/w/index.php?curid=27403>
 
 `Inception model`Je vyškolená pro klasifikaci imagí do tisíc kategorií, ale pro tento kurz je potřeba klasifikovat obrázky v menší sadě kategorií a jenom na těchto kategoriích. Zadejte `transfer` část `transfer learning` . Můžete přenést `Inception model` schopnost rozpoznávat a klasifikovat obrázky pro nové kategorie omezené na vlastní třídění imagí.
 
@@ -122,12 +122,14 @@ Obrázky školení a testování se nacházejí ve složkách assetů, které st
 
 1. Nainstalujte **balíček NuGet Microsoft.ml**:
 
+    [!INCLUDE [mlnet-current-nuget-version](../../../includes/mlnet-current-nuget-version.md)]
+
     * V Průzkumník řešení klikněte pravým tlačítkem na projekt a vyberte **Spravovat balíčky NuGet**.
     * Jako zdroj balíčku zvolte "nuget.org", vyberte kartu Procházet a vyhledejte **Microsoft.ml**.
-    * Klikněte na rozevírací seznam **verze** , v seznamu vyberte balíček **1.4.0** a vyberte tlačítko **nainstalovat** .
+    * Vyberte tlačítko **instalovat** .
     * V dialogovém okně **Náhled změn** vyberte tlačítko **OK** .
     * Pokud souhlasíte s licenčními podmínkami pro uvedené balíčky, v dialogu pro **přijetí licence** vyberte tlačítko **přijmout** .
-    * Opakujte tyto kroky pro **Microsoft. ml. ImageAnalytics v 1.4.0**, **SciSharp. TensorFlow. Redist v 1.15.0** a **Microsoft. ml. TensorFlow v 1.4.0**.
+    * Opakujte tyto kroky pro **Microsoft. ml. ImageAnalytics**, **SciSharp. TensorFlow. Redist** a **Microsoft. ml. TensorFlow**.
 
 ### <a name="download-assets"></a>Stažení prostředků
 

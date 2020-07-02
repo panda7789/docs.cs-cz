@@ -1,5 +1,6 @@
 ---
 title: openGenericCERCall – pomocník spravovaného ladění (MDA)
+description: Přečtěte si pomocníka spravovaného ladění openGenericCERCall, který se může aktivovat, když se kód CER nespustí, když se vlákno přeruší nebo když se doména aplikace uvolní.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - MDAs (managed debugging assistants), CER calls
@@ -10,36 +11,36 @@ helpviewer_keywords:
 - managed debugging assistants (MDAs), CER calls
 - generics [.NET Framework], open generic CER calls
 ms.assetid: da3e4ff3-2e67-4668-9720-fa776c97407e
-ms.openlocfilehash: 7492a4c0547680a6ace85a5f7c98567770f5575a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4df33b0cdf9759edec47f02b3feb671d03284ec8
+ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79181778"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85803934"
 ---
 # <a name="opengenericcercall-mda"></a>openGenericCERCall – pomocník spravovaného ladění (MDA)
 
-Spravovaný `openGenericCERCall` ladicí asistent je aktivován, aby varoval, že graf oblasti omezeného spuštění (CER) s obecnými proměnnými typu v kořenové metodě je zpracováván v době kompilace JIT nebo nativnígenerace bitové kopie a alespoň jedna z proměnných obecného typu je typ odkazu na objekt.
+`openGenericCERCall`Pomocník spravovaného ladění je aktivován, aby upozornil na to, že graf s omezeným výkonem (CER) s proměnnými obecného typu v kořenové metodě je zpracováván při KOMPILACI JIT nebo v době generování nativní bitové kopie a nejméně jedna z obecných typů proměnných je typ odkazu na objekt.
 
 ## <a name="symptoms"></a>Příznaky
 
-Kód CER se nespustí, pokud je vlákno přerušeno nebo když je uvolněna doména aplikace.
+Kód CER se nespustí, pokud je vlákno přerušeno nebo pokud je doména aplikace uvolněna.
 
 ## <a name="cause"></a>Příčina
 
-V době kompilace JIT je instance obsahující typ odkazu na objekt pouze reprezentativní, protože výsledný kód je sdílen a každá z proměnných typu odkazu na objekt může být libovolný typ odkazu na objekt. To může zabránit přípravě některých prostředků run-time předem.
+V době kompilace JIT je vytváření instancí obsahující typ odkazu na objekt pouze zástupce, protože výsledný kód je sdílen a každá proměnná typu odkazu na objekt může být libovolný typ odkazu na objekt. To může předem zabránit přípravě některých prostředků za běhu.
 
-Zejména metody s proměnnými typu obecného typu mohou líně přidělit prostředky na pozadí. Tyto položky jsou označovány jako položky obecného slovníku. Například pro `List<T> list = new List<T>();` příkaz, `T` kde je obecná proměnná typu, musí runtime vyhledat a případně vytvořit `List<Object>, List<String>`přesnou inkaso za běhu, například , a tak dále. To může selhat z různých důvodů mimo kontrolu vývojáře, jako je například nedostatek paměti.
+Konkrétně metody s proměnnými obecného typu mohou laxně vytvářená přidělit prostředky na pozadí. Ty jsou označovány jako položky obecného slovníku. Například pro příkaz, `List<T> list = new List<T>();` kde `T` je proměnná obecného typu, musí modul runtime vyhledat a případně vytvořit přesnou instanci v době běhu, například, `List<Object>, List<String>` a tak dále. To může selhat z nejrůznějších důvodů mimo řízení vývojáře, jako je například nedostatek paměti.
 
-Tento MDA by měl být aktivován pouze v době kompilace JIT, nikoli v případě, že existuje přesná instance.
+Tato položka MDA by měla být aktivována pouze v době kompilace JIT, nikoli v případě přesného vytvoření instance.
 
-Když je aktivován tento MDA, pravděpodobné příznaky jsou, že CER nejsou funkční pro špatné konkresace. Ve skutečnosti se runtime nepokusil implementovat CER za okolností, které způsobily aktivaci MDA. Takže pokud vývojář používá sdílenou instanci CER, pak jit kompilace chyby, obecné typy typu načítání chyby nebo podproces přeruší v rámci oblasti zamýšlené CER nejsou zachyceny.
+Když je tento MDA aktivovaný, je pravděpodobným symptomem, že CERs nejsou funkční pro špatné vytváření instancí. Ve skutečnosti se modul runtime nepokusil implementovat CER za okolností, které způsobily aktivaci modulu MDA. Takže pokud vývojář používá sdílené vytváření instancí CER, chyby kompilace JIT, chyby načítání obecných typů nebo přerušení vlákna v rámci oblasti zamýšleného CER se nezachycují.
 
 ## <a name="resolution"></a>Řešení
 
-Nepoužívejte obecné proměnné typu, které jsou typu odkazu na objekt pro metody, které mohou obsahovat CER.
+Nepoužívejte proměnné obecného typu, které jsou typu odkazu na objekt pro metody, které mohou obsahovat CER.
 
-## <a name="effect-on-the-runtime"></a>Vliv na běhový čas
+## <a name="effect-on-the-runtime"></a>Vliv na modul runtime
 
 Tento MDA nemá žádný vliv na CLR.
 
@@ -66,7 +67,7 @@ Následuje ukázka výstupu z tohoto MDA:
 
 ## <a name="example"></a>Příklad
 
-Kód CER není spuštěn.
+Kód CER není proveden.
 
 ```csharp
 using System;
@@ -110,7 +111,7 @@ class MyClass
 }
 ```
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareMethod%2A>
 - <xref:System.Runtime.ConstrainedExecution>

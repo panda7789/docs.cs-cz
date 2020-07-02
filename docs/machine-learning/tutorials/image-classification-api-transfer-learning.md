@@ -3,15 +3,15 @@ title: 'Kurz: automatizované vizuální prověřování pomocí učení přenos
 description: V tomto kurzu se dozvíte, jak pomocí funkce Transfer Learning vytvořit TensorFlow model hloubkového učení v ML.NET pomocí rozhraní API pro detekci imagí pro klasifikaci imagí konkrétních ploch jako prasklé nebo neprasklé.
 author: luisquintanilla
 ms.author: luquinta
-ms.date: 12/12/2019
+ms.date: 06/30/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 2915259d7c7031b9e699c7fd0cf65cf723c41680
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 17fbb8c6714f3af47c0b554aec2c53c8046021bb
+ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144419"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85803739"
 ---
 # <a name="tutorial-automated-visual-inspection-using-transfer-learning-with-the-mlnet-image-classification-api"></a>Kurz: automatizované vizuální prověřování pomocí přenosu přenosu s rozhraním API pro klasifikaci imagí ML.NET
 
@@ -81,7 +81,10 @@ Předem vydaný model použitý v tomto kurzu je 101 varianta modelu zbytkové s
 Teď, když máte obecné znalosti o učení přenosů a rozhraní API klasifikace imagí, je čas sestavování aplikace.
 
 1. Vytvořte **konzolovou aplikaci C# .NET Core** nazvanou "DeepLearning_ImageClassification_Binary".
-1. Nainstalujte balíček NuGet verze **Microsoft.ml** **1.4.0** :
+1. Nainstalujte balíček NuGet **Microsoft.ml** :
+
+    [!INCLUDE [mlnet-current-nuget-version](../../../includes/mlnet-current-nuget-version.md)]
+
     1. V Průzkumník řešení klikněte pravým tlačítkem na projekt a vyberte **Spravovat balíčky NuGet**.
     1. Jako zdroj balíčku vyberte "nuget.org".
     1. Vyberte kartu **Procházet**.
@@ -89,7 +92,7 @@ Teď, když máte obecné znalosti o učení přenosů a rozhraní API klasifika
     1. Vyhledejte **Microsoft.ml**.
     1. Vyberte tlačítko **instalovat** .
     1. Pokud souhlasíte s licenčními podmínkami pro uvedené balíčky, klikněte na tlačítko **OK** v dialogovém okně **Náhled změn** a potom v dialogovém okně pro **přijetí licence** vyberte tlačítko **přijmout** .
-    1. Opakujte tyto kroky pro balíček **Microsoft. ml. Vision** verze **1.4.0**, **SciSharp. TensorFlow. Redist** verze **1.15.0**a **Microsoft. ml. ImageAnalytics** verze **1.4.0** NuGet Packages.
+    1. Opakujte tyto kroky pro balíčky **Microsoft. ml. Vision**, **SciSharp. TensorFlow. Redist**a **Microsoft. ml. ImageAnalytics** NuGet.
 
 ### <a name="prepare-and-understand-the-data"></a>Příprava a pochopení dat
 
@@ -378,7 +381,7 @@ Image: 7001-163.jpg | Actual Value: UD | Predicted Value: UD
 Image: 7001-210.jpg | Actual Value: UD | Predicted Value: UD
 ```
 
-Po kontrole obrázku *7001 -220. jpg* vidíte, že ve skutečnosti není prasklý.
+Po kontrole *7001-220.jpg* image vidíte, že ve skutečnosti není prasklá.
 
 ![Obrázek datové sady SDNET2018 použité pro předpověď](./media/image-classification-api-transfer-learning/predictedimage.jpg)
 
