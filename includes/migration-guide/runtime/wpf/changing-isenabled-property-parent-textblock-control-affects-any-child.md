@@ -1,18 +1,27 @@
 ---
-ms.openlocfilehash: 735278848cb7399e414a128afc650a0a1f882337
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 395463225e3c1f1d168dd019ea75966ad54e5a8a
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "67857590"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85621109"
 ---
-### <a name="changing-the-isenabled-property-of-the-parent-of-a-textblock-control-affects-any-child-controls"></a><span data-ttu-id="40869-101">Změna vlastnosti IsEnabled nadřazeného ovládacího prvku TextBlock ovlivní všechny podřízené ovládací prvky.</span><span class="sxs-lookup"><span data-stu-id="40869-101">Changing the IsEnabled property of the parent of a TextBlock control affects any child controls</span></span>
+### <a name="changing-the-isenabled-property-of-the-parent-of-a-textblock-control-affects-any-child-controls"></a><span data-ttu-id="b8750-101">Změna vlastnosti-Enable nadřazené položky ovládacího prvku TextBlock se projeví u všech podřízených ovládacích prvků.</span><span class="sxs-lookup"><span data-stu-id="b8750-101">Changing the IsEnabled property of the parent of a TextBlock control affects any child controls</span></span>
 
-|   |   |
-|---|---|
-|<span data-ttu-id="40869-102">Podrobnosti</span><span class="sxs-lookup"><span data-stu-id="40869-102">Details</span></span>|<span data-ttu-id="40869-103">Počínaje rozhraním .NET Framework 4.6.2 má změna <xref:System.Windows.UIElement.IsEnabled?displayProperty=name> <xref:System.Windows.Controls.TextBlock?displayProperty=name> vlastnosti nadřazeného ovládacího prvku vliv <xref:System.Windows.Controls.TextBlock?displayProperty=name> na všechny podřízené ovládací prvky (například hypertextové odkazy a tlačítka) ovládacího prvku. V rozhraní .NET Framework 4.6.1 a starší <xref:System.Windows.Controls.TextBlock?displayProperty=name> verze ovládací prvky <xref:System.Windows.UIElement.IsEnabled?displayProperty=name> uvnitř ne <xref:System.Windows.Controls.TextBlock?displayProperty=name> vždy odrážet stav vlastnosti nadřazené.</span><span class="sxs-lookup"><span data-stu-id="40869-103">Starting with the .NET Framework 4.6.2, changing the <xref:System.Windows.UIElement.IsEnabled?displayProperty=name> property of the parent of a <xref:System.Windows.Controls.TextBlock?displayProperty=name> control affects any child controls (such as hyperlinks and buttons) of the <xref:System.Windows.Controls.TextBlock?displayProperty=name> control.In the .NET Framework 4.6.1 and earlier versions, controls inside a <xref:System.Windows.Controls.TextBlock?displayProperty=name> did not always reflect the state of the <xref:System.Windows.UIElement.IsEnabled?displayProperty=name> property of the <xref:System.Windows.Controls.TextBlock?displayProperty=name> parent.</span></span>|
-|<span data-ttu-id="40869-104">Návrh</span><span class="sxs-lookup"><span data-stu-id="40869-104">Suggestion</span></span>|<span data-ttu-id="40869-105">Žádné.</span><span class="sxs-lookup"><span data-stu-id="40869-105">None.</span></span> <span data-ttu-id="40869-106">Tato změna odpovídá očekávané chování pro <xref:System.Windows.Controls.TextBlock?displayProperty=name> ovládací prvky uvnitř ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="40869-106">This change conforms to the expected behavior for controls inside a <xref:System.Windows.Controls.TextBlock?displayProperty=name> control.</span></span>|
-|<span data-ttu-id="40869-107">Rozsah</span><span class="sxs-lookup"><span data-stu-id="40869-107">Scope</span></span>|<span data-ttu-id="40869-108">Vedlejší</span><span class="sxs-lookup"><span data-stu-id="40869-108">Minor</span></span>|
-|<span data-ttu-id="40869-109">Version</span><span class="sxs-lookup"><span data-stu-id="40869-109">Version</span></span>|<span data-ttu-id="40869-110">4.6.2</span><span class="sxs-lookup"><span data-stu-id="40869-110">4.6.2</span></span>|
-|<span data-ttu-id="40869-111">Typ</span><span class="sxs-lookup"><span data-stu-id="40869-111">Type</span></span>|<span data-ttu-id="40869-112">Modul runtime</span><span class="sxs-lookup"><span data-stu-id="40869-112">Runtime</span></span>|
-|<span data-ttu-id="40869-113">Ovlivněná rozhraní API</span><span class="sxs-lookup"><span data-stu-id="40869-113">Affected APIs</span></span>|<ul><li><xref:System.Windows.UIElement.IsEnabled?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a><span data-ttu-id="b8750-102">Podrobnosti</span><span class="sxs-lookup"><span data-stu-id="b8750-102">Details</span></span>
+
+<span data-ttu-id="b8750-103">Počínaje .NET Framework 4.6.2 se změna <xref:System.Windows.UIElement.IsEnabled?displayProperty=fullName> vlastnosti nadřazeného <xref:System.Windows.Controls.TextBlock?displayProperty=fullName> ovládacího prvku projeví u všech podřízených ovládacích prvků (jako jsou hypertextové odkazy a tlačítka) <xref:System.Windows.Controls.TextBlock?displayProperty=fullName> ovládacího prvku. V .NET Framework 4.6.1 a dřívějších verzích ovládací prvky uvnitř <xref:System.Windows.Controls.TextBlock?displayProperty=fullName> neodrážely stav <xref:System.Windows.UIElement.IsEnabled?displayProperty=fullName> vlastnosti <xref:System.Windows.Controls.TextBlock?displayProperty=fullName> nadřazeného objektu.</span><span class="sxs-lookup"><span data-stu-id="b8750-103">Starting with the .NET Framework 4.6.2, changing the <xref:System.Windows.UIElement.IsEnabled?displayProperty=fullName> property of the parent of a <xref:System.Windows.Controls.TextBlock?displayProperty=fullName> control affects any child controls (such as hyperlinks and buttons) of the <xref:System.Windows.Controls.TextBlock?displayProperty=fullName> control.In the .NET Framework 4.6.1 and earlier versions, controls inside a <xref:System.Windows.Controls.TextBlock?displayProperty=fullName> did not always reflect the state of the <xref:System.Windows.UIElement.IsEnabled?displayProperty=fullName> property of the <xref:System.Windows.Controls.TextBlock?displayProperty=fullName> parent.</span></span>
+
+#### <a name="suggestion"></a><span data-ttu-id="b8750-104">Návrh</span><span class="sxs-lookup"><span data-stu-id="b8750-104">Suggestion</span></span>
+
+<span data-ttu-id="b8750-105">Žádné</span><span class="sxs-lookup"><span data-stu-id="b8750-105">None.</span></span> <span data-ttu-id="b8750-106">Tato změna odpovídá očekávanému chování ovládacích prvků uvnitř <xref:System.Windows.Controls.TextBlock?displayProperty=fullName> ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="b8750-106">This change conforms to the expected behavior for controls inside a <xref:System.Windows.Controls.TextBlock?displayProperty=fullName> control.</span></span>
+
+| <span data-ttu-id="b8750-107">Name</span><span class="sxs-lookup"><span data-stu-id="b8750-107">Name</span></span>    | <span data-ttu-id="b8750-108">Hodnota</span><span class="sxs-lookup"><span data-stu-id="b8750-108">Value</span></span>       |
+|:--------|:------------|
+| <span data-ttu-id="b8750-109">Rozsah</span><span class="sxs-lookup"><span data-stu-id="b8750-109">Scope</span></span>   |<span data-ttu-id="b8750-110">Vedlejší</span><span class="sxs-lookup"><span data-stu-id="b8750-110">Minor</span></span>|
+|<span data-ttu-id="b8750-111">Verze</span><span class="sxs-lookup"><span data-stu-id="b8750-111">Version</span></span>|<span data-ttu-id="b8750-112">4.6.2</span><span class="sxs-lookup"><span data-stu-id="b8750-112">4.6.2</span></span>|
+|<span data-ttu-id="b8750-113">Typ</span><span class="sxs-lookup"><span data-stu-id="b8750-113">Type</span></span>|<span data-ttu-id="b8750-114">Modul runtime</span><span class="sxs-lookup"><span data-stu-id="b8750-114">Runtime</span></span>
+
+#### <a name="affected-apis"></a><span data-ttu-id="b8750-115">Ovlivněná rozhraní API</span><span class="sxs-lookup"><span data-stu-id="b8750-115">Affected APIs</span></span>
+
+-<xref:System.Windows.UIElement.IsEnabled?displayProperty=nameWithType></li></ul>|

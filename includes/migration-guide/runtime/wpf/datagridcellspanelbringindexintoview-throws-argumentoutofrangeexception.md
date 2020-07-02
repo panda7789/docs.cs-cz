@@ -1,18 +1,27 @@
 ---
-ms.openlocfilehash: 1a1fc91ea2bb81e0f94b64323085ccf99072a1f5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d78d083b16ac034c6c393dbc0f6094ee4c6c63c0
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "67802516"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85622347"
 ---
-### <a name="datagridcellspanelbringindexintoview-throws-argumentoutofrangeexception"></a><span data-ttu-id="fa0d7-101">DataGridCellsPanel.BringIndexIntoView vyvolá argumentOutOfRangeException</span><span class="sxs-lookup"><span data-stu-id="fa0d7-101">DataGridCellsPanel.BringIndexIntoView throws ArgumentOutOfRangeException</span></span>
+### <a name="datagridcellspanelbringindexintoview-throws-argumentoutofrangeexception"></a><span data-ttu-id="f5908-101">DataGridCellsPanel. BringIndexIntoView vyvolá výjimku ArgumentOutOfRangeException.</span><span class="sxs-lookup"><span data-stu-id="f5908-101">DataGridCellsPanel.BringIndexIntoView throws ArgumentOutOfRangeException</span></span>
 
-|   |   |
-|---|---|
-|<span data-ttu-id="fa0d7-102">Podrobnosti</span><span class="sxs-lookup"><span data-stu-id="fa0d7-102">Details</span></span>|<span data-ttu-id="fa0d7-103"><xref:System.Windows.Controls.DataGrid.ScrollIntoView(System.Object)>bude fungovat asynchronně, pokud je povolena virtualizace sloupců, ale šířky sloupců ještě nebyly určeny.</span><span class="sxs-lookup"><span data-stu-id="fa0d7-103"><xref:System.Windows.Controls.DataGrid.ScrollIntoView(System.Object)> will work asynchronously when column virtualization is enabled but the column widths have not yet been determined.</span></span>  <span data-ttu-id="fa0d7-104">Pokud sloupce jsou odebrány před asynchronní <xref:System.ArgumentOutOfRangeException?displayProperty=name> práce se stane, může dojít k.</span><span class="sxs-lookup"><span data-stu-id="fa0d7-104">If columns are removed before the asynchronous work happens, an <xref:System.ArgumentOutOfRangeException?displayProperty=name> can occur.</span></span>|
-|<span data-ttu-id="fa0d7-105">Návrh</span><span class="sxs-lookup"><span data-stu-id="fa0d7-105">Suggestion</span></span>|<span data-ttu-id="fa0d7-106">Některý z následujících:</span><span class="sxs-lookup"><span data-stu-id="fa0d7-106">Any one of the following:</span></span><ol><li><span data-ttu-id="fa0d7-107">Upgrade na rozhraní .NET Framework 4.7.</span><span class="sxs-lookup"><span data-stu-id="fa0d7-107">Upgrade to .NET Framework 4.7.</span></span></li><li><span data-ttu-id="fa0d7-108">Nainstalujte nejnovější servisní opravu pro rozhraní .NET Framework 4.6.2.</span><span class="sxs-lookup"><span data-stu-id="fa0d7-108">Install the latest servicing patch for .NET Framework 4.6.2.</span></span></li><li><span data-ttu-id="fa0d7-109">Vyhněte se odebírání <xref:System.Windows.Controls.DataGrid.ScrollIntoView(System.Object)> sloupců, dokud nebude dokončena asynchronní odpověď na.</span><span class="sxs-lookup"><span data-stu-id="fa0d7-109">Avoid removing columns until the asynchronous response to <xref:System.Windows.Controls.DataGrid.ScrollIntoView(System.Object)> has completed.</span></span></li></ol>|
-|<span data-ttu-id="fa0d7-110">Rozsah</span><span class="sxs-lookup"><span data-stu-id="fa0d7-110">Scope</span></span>|<span data-ttu-id="fa0d7-111">Edge</span><span class="sxs-lookup"><span data-stu-id="fa0d7-111">Edge</span></span>|
-|<span data-ttu-id="fa0d7-112">Version</span><span class="sxs-lookup"><span data-stu-id="fa0d7-112">Version</span></span>|<span data-ttu-id="fa0d7-113">4.6.2</span><span class="sxs-lookup"><span data-stu-id="fa0d7-113">4.6.2</span></span>|
-|<span data-ttu-id="fa0d7-114">Typ</span><span class="sxs-lookup"><span data-stu-id="fa0d7-114">Type</span></span>|<span data-ttu-id="fa0d7-115">Modul runtime</span><span class="sxs-lookup"><span data-stu-id="fa0d7-115">Runtime</span></span>|
-|<span data-ttu-id="fa0d7-116">Ovlivněná rozhraní API</span><span class="sxs-lookup"><span data-stu-id="fa0d7-116">Affected APIs</span></span>|<ul><li><xref:System.Windows.Controls.DataGrid.ScrollIntoView(System.Object)?displayProperty=nameWithType></li><li><xref:System.Windows.Controls.DataGrid.ScrollIntoView(System.Object,System.Windows.Controls.DataGridColumn)?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a><span data-ttu-id="f5908-102">Podrobnosti</span><span class="sxs-lookup"><span data-stu-id="f5908-102">Details</span></span>
+
+<span data-ttu-id="f5908-103"><xref:System.Windows.Controls.DataGrid.ScrollIntoView(System.Object)>bude pracovat asynchronně, pokud je povolena virtualizace sloupce, ale ještě nebyly určeny šířky sloupců.</span><span class="sxs-lookup"><span data-stu-id="f5908-103"><xref:System.Windows.Controls.DataGrid.ScrollIntoView(System.Object)> will work asynchronously when column virtualization is enabled but the column widths have not yet been determined.</span></span>  <span data-ttu-id="f5908-104">Pokud jsou sloupce odebrány před tím, než dojde k asynchronní práci, <xref:System.ArgumentOutOfRangeException?displayProperty=fullName> může dojít k chybě.</span><span class="sxs-lookup"><span data-stu-id="f5908-104">If columns are removed before the asynchronous work happens, an <xref:System.ArgumentOutOfRangeException?displayProperty=fullName> can occur.</span></span>
+
+#### <a name="suggestion"></a><span data-ttu-id="f5908-105">Návrh</span><span class="sxs-lookup"><span data-stu-id="f5908-105">Suggestion</span></span>
+
+<span data-ttu-id="f5908-106">Jednu z následujících možností:</span><span class="sxs-lookup"><span data-stu-id="f5908-106">Any one of the following:</span></span><ol><li><span data-ttu-id="f5908-107">Upgradujte na .NET Framework 4,7.</span><span class="sxs-lookup"><span data-stu-id="f5908-107">Upgrade to .NET Framework 4.7.</span></span></li><li><span data-ttu-id="f5908-108">Nainstalujte nejnovější servisní opravu pro .NET Framework 4.6.2.</span><span class="sxs-lookup"><span data-stu-id="f5908-108">Install the latest servicing patch for .NET Framework 4.6.2.</span></span></li><li><span data-ttu-id="f5908-109">Vyhněte se odebírání sloupců, dokud nebude <xref:System.Windows.Controls.DataGrid.ScrollIntoView(System.Object)> dokončena asynchronní odpověď.</span><span class="sxs-lookup"><span data-stu-id="f5908-109">Avoid removing columns until the asynchronous response to <xref:System.Windows.Controls.DataGrid.ScrollIntoView(System.Object)> has completed.</span></span></li></ol>
+
+| <span data-ttu-id="f5908-110">Name</span><span class="sxs-lookup"><span data-stu-id="f5908-110">Name</span></span>    | <span data-ttu-id="f5908-111">Hodnota</span><span class="sxs-lookup"><span data-stu-id="f5908-111">Value</span></span>       |
+|:--------|:------------|
+| <span data-ttu-id="f5908-112">Rozsah</span><span class="sxs-lookup"><span data-stu-id="f5908-112">Scope</span></span>   |<span data-ttu-id="f5908-113">Edge</span><span class="sxs-lookup"><span data-stu-id="f5908-113">Edge</span></span>|
+|<span data-ttu-id="f5908-114">Verze</span><span class="sxs-lookup"><span data-stu-id="f5908-114">Version</span></span>|<span data-ttu-id="f5908-115">4.6.2</span><span class="sxs-lookup"><span data-stu-id="f5908-115">4.6.2</span></span>|
+|<span data-ttu-id="f5908-116">Typ</span><span class="sxs-lookup"><span data-stu-id="f5908-116">Type</span></span>|<span data-ttu-id="f5908-117">Modul runtime</span><span class="sxs-lookup"><span data-stu-id="f5908-117">Runtime</span></span>
+
+#### <a name="affected-apis"></a><span data-ttu-id="f5908-118">Ovlivněná rozhraní API</span><span class="sxs-lookup"><span data-stu-id="f5908-118">Affected APIs</span></span>
+
+-<xref:System.Windows.Controls.DataGrid.ScrollIntoView(System.Object)?displayProperty=nameWithType></li><li><xref:System.Windows.Controls.DataGrid.ScrollIntoView(System.Object,System.Windows.Controls.DataGridColumn)?displayProperty=nameWithType></li></ul>|
