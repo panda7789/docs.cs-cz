@@ -3,12 +3,12 @@ title: Reference k příkazům rozhraní příkazového řádku ML.NET
 description: Přehled, ukázky a Reference k příkazu pro automatický vlak v nástroji CLI ML.NET
 ms.date: 06/03/2020
 ms.custom: mlnet-tooling
-ms.openlocfilehash: 397f6fda8554024624b3ef630856dc8eca9696b2
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 4c6cb1346c16f6162077d3414140d693de9e0d8c
+ms.sourcegitcommit: 182c7b6c079ebcc0e1898dfd9e921b9ef472ea2c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84594540"
+ms.lasthandoff: 07/03/2020
+ms.locfileid: "85946938"
 ---
 # <a name="the-mlnet-cli-command-reference"></a>Reference k příkazům rozhraní příkazového řádku ML.NET
 
@@ -309,7 +309,7 @@ Soubor modelu ML.NET (. Soubor ZIP) bude mít stejný název i.
 
 ## <a name="output-path"></a>Výstupní cesta
 
-`--output-path | -o`řetezce
+`--output | -o`řetezce
 
 Kořenové umístění/složka, do které se umístí vygenerovaný výstup Výchozí je aktuální adresář.
 
