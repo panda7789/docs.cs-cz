@@ -1,5 +1,6 @@
 ---
 title: Syntaxe značek cesty
+description: Přečtěte si o výkonném a komplexním minimu jazyku, který můžete použít k zadání cesty Compact geometrií v Windows Presentation Foundation (WPF).
 ms.date: 03/30/2017
 helpviewer_keywords:
 - attribute usage in XAML [WPF]
@@ -7,220 +8,220 @@ helpviewer_keywords:
 - graphics [WPF], PathGeometry class
 - XAML [WPF], object element usage
 ms.assetid: b8586241-a02d-486e-9223-e1e98e047f41
-ms.openlocfilehash: adcedcea6c8d6d988021cbbccf87bd25a042fd16
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 6d2778522b622f0b0dcb59673e793a6d772a4b4f
+ms.sourcegitcommit: b6a1869f97a37f11a68c90afde1a520a6887dcbc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79181851"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853651"
 ---
 # <a name="path-markup-syntax"></a>Syntaxe značek cesty
-Cesty jsou popsány v [obrazcích a základní výkres v WPF Přehled](shapes-and-basic-drawing-in-wpf-overview.md) a [Přehled geometrie](geometry-overview.md), ale toto téma podrobně popisuje [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]výkonný a složitý mini-jazyk, který můžete použít k určení geometrie cesty kompaktněji pomocí .  
+Cesty jsou popsány v tématu [Shapes and Basic Drawing in WPF Overview](shapes-and-basic-drawing-in-wpf-overview.md) a [Geometry Overview](geometry-overview.md), ale toto téma podrobně popisuje výkonný a složitý miniický jazyk, který můžete použít k určení cesty geometrií kompaktnější pomocí [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] .  
   
 <a name="prerequisites"></a>
 ## <a name="prerequisites"></a>Požadavky  
- Chcete-li pochopit toto téma, měli <xref:System.Windows.Media.Geometry> byste být obeznámeni se základními funkcemi objektů. Další informace naleznete v tématu [Přehled geometrie](geometry-overview.md).  
+ Pro pochopení tohoto tématu byste měli být obeznámeni se základními funkcemi <xref:System.Windows.Media.Geometry> objektů. Další informace najdete v [přehledu geometrie](geometry-overview.md).  
   
 <a name="abouthisdocument"></a>
-## <a name="streamgeometry-and-pathfigurecollection-mini-languages"></a>Minijazyky StreamGeometry a PathFigureCollection  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]poskytuje dvě třídy, které poskytují mini-jazyky pro popis geometrické cesty: <xref:System.Windows.Media.StreamGeometry> a <xref:System.Windows.Media.PathFigureCollection>.  
+## <a name="streamgeometry-and-pathfigurecollection-mini-languages"></a>StreamGeometry a PathFigureCollection zkrácené jazyky  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]poskytuje dvě třídy, které poskytují zkrácené jazyky pro popis geometrických cest: <xref:System.Windows.Media.StreamGeometry> a <xref:System.Windows.Media.PathFigureCollection> .  
   
-- <xref:System.Windows.Media.StreamGeometry> Mini-jazyk se používá při nastavování vlastnosti <xref:System.Windows.Media.Geometry>typu <xref:System.Windows.UIElement> , například <xref:System.Windows.Shapes.Path> <xref:System.Windows.UIElement.Clip%2A> vlastnost nebo <xref:System.Windows.Shapes.Path.Data%2A> vlastnost prvku. Následující příklad používá syntaxi <xref:System.Windows.Media.StreamGeometry>atributu k vytvoření .  
+- <xref:System.Windows.Media.StreamGeometry>Při nastavování vlastnosti typu <xref:System.Windows.Media.Geometry> , jako je například <xref:System.Windows.UIElement.Clip%2A> vlastnost <xref:System.Windows.UIElement> nebo <xref:System.Windows.Shapes.Path.Data%2A> vlastnost prvku, používáte zkrácený jazyk <xref:System.Windows.Shapes.Path> . Následující příklad používá syntaxi atributu k vytvoření <xref:System.Windows.Media.StreamGeometry> .  
   
      [!code-xaml[GeometrySample_snip_XAML#GraphicsMMStreamGeometryAttributeSyntaxInline](~/samples/snippets/csharp/VS_Snippets_Wpf/GeometrySample_snip_XAML/CS/MiniLanguageExample.xaml#graphicsmmstreamgeometryattributesyntaxinline)]  
   
-- Minijazyk <xref:System.Windows.Media.PathFigureCollection> se používá při <xref:System.Windows.Media.PathGeometry.Figures%2A> nastavování <xref:System.Windows.Media.PathGeometry>vlastnosti rozhraní . Následující příklad používá syntaxi atributu k vytvoření <xref:System.Windows.Media.PathFigureCollection> a <xref:System.Windows.Media.PathGeometry>.  
+- <xref:System.Windows.Media.PathFigureCollection>Při nastavování vlastnosti pro je použit zkrácený jazyk <xref:System.Windows.Media.PathGeometry.Figures%2A> <xref:System.Windows.Media.PathGeometry> . Následující příklad používá syntaxi atributu pro vytvoření <xref:System.Windows.Media.PathFigureCollection> pro <xref:System.Windows.Media.PathGeometry> .  
   
      [!code-xaml[GeometrySample_snip_XAML#GraphicsMMPathFigureCollectionAttributeSyntaxInline](~/samples/snippets/csharp/VS_Snippets_Wpf/GeometrySample_snip_XAML/CS/MiniLanguageExample.xaml#graphicsmmpathfigurecollectionattributesyntaxinline)]  
   
- Jak můžete vidět z předchozích příkladů, dva mini-jazyky jsou velmi podobné. Je vždy možné použít <xref:System.Windows.Media.PathGeometry> v každé situaci, kdy <xref:System.Windows.Media.StreamGeometry>byste mohli použít ; takže který z nich byste měli použít? Použijte, <xref:System.Windows.Media.StreamGeometry> když není nutné upravit cestu po jejím vytvoření; použijte, <xref:System.Windows.Media.PathGeometry> pokud potřebujete upravit cestu.  
+ Jak vidíte v předchozích příkladech, dva malé jazyky jsou velmi podobné. V jakékoli situaci je vždycky možné použít <xref:System.Windows.Media.PathGeometry> , pokud byste mohli použít <xref:System.Windows.Media.StreamGeometry> , takže byste měli použít? Použijte, <xref:System.Windows.Media.StreamGeometry> když po jeho vytvoření nemusíte cestu upravovat <xref:System.Windows.Media.PathGeometry> . Pokud budete chtít cestu změnit, použijte.  
   
- Další informace o rozdílech <xref:System.Windows.Media.PathGeometry> <xref:System.Windows.Media.StreamGeometry> mezi objekty a objekty naleznete v přehledu [geometrie](geometry-overview.md).  
+ Další informace o rozdílech mezi <xref:System.Windows.Media.PathGeometry> objekty a <xref:System.Windows.Media.StreamGeometry> naleznete v [přehledu geometrie](geometry-overview.md).  
   
-### <a name="a-note-about-white-space"></a>Poznámka o prázdnéploše  
- Pro stručnost je v následujících částech syntaxe zobrazena jedna mezera, ale více mezer je také přijatelné všude tam, kde je zobrazena jedna mezera.  
+### <a name="a-note-about-white-space"></a>Poznámka o mezerách  
+ V případě zkrácení se v následujících oddílech syntaxe zobrazí jedno místo, ale více mezer je současně přijatelné všude, kde je zobrazeno jedno místo.  
   
- Dvě čísla ve skutečnosti nemusí být oddělena čárkou nebo mezerami, ale to lze provést pouze v případě, že výsledný řetězec je jednoznačný. Například, `2..3` je vlastně dvě čísla: "2." A ".3". Podobně `2-3` je "2" a "-3". Mezery nejsou vyžadovány před nebo po příkazy, a to buď.  
+ Dvě čísla ve skutečnosti nemusí být oddělena čárkou nebo prázdným znakem, ale lze ji provést pouze v případě, že výsledný řetězec je nejednoznačný. Například `2..3` je ve skutečnosti dvě čísla: "2". A ". 3". Podobně `2-3` je to "2" a "-3". Mezery nejsou požadovány před nebo za příkazy, buď.  
   
-### <a name="syntax"></a>Syntaxe  
- Syntaxe [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] použití atributu pro <xref:System.Windows.Media.StreamGeometry> a <xref:System.Windows.Media.FillRule> se skládá z volitelné hodnoty a jednoho nebo více popisů obrázku.  
+### <a name="syntax"></a>Syntax  
+ [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]Syntaxe použití atributu pro <xref:System.Windows.Media.StreamGeometry> se skládá z volitelné <xref:System.Windows.Media.FillRule> hodnoty a jednoho nebo více popisů obrázku.  
   
-|Využití atributu XAML StreamGeometry|  
+|Použití atributu StreamGeometry XAML|  
 |-----------------------------------------|  
-|`<`*vlastnost objektu* *property* `="`[ `fillRule`] `figureDescription`[ `figureDescription`]*`" ... />`|  
+|`<`*Object* – *vlastnost* `="` [ `fillRule` ] `figureDescription` [ `figureDescription` ] *`" ... />`|  
   
- Syntaxe [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] použití atributu pro a <xref:System.Windows.Media.PathFigureCollection> se skládá z jednoho nebo více popisů obrázku.  
+ [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]Syntaxe použití atributu pro <xref:System.Windows.Media.PathFigureCollection> se skládá z jednoho nebo více popisů obrázku.  
   
-|Využití atributu PathFigureCollection XAML|  
+|Použití atributu PathFigureCollection XAML|  
 |-----------------------------------------------|  
-|`<`*vlastnost* *objektu* `="` `figureDescription`[ `figureDescription`]*`" ... />`|  
+|`<`*Object* – *vlastnost* `="` `figureDescription` [ `figureDescription` ] *`" ... />`|  
   
-|Označení|Popis|  
+|Pojem|Popis|  
 |----------|-----------------|  
-|*Fillrule*|<xref:System.Windows.Media.FillRule?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Media.StreamGeometry> Určuje, zda se <xref:System.Windows.Media.FillRule.EvenOdd> <xref:System.Windows.Media.FillRule.Nonzero> <xref:System.Windows.Media.PathGeometry.FillRule%2A>použije písmeno nebo .<br /><br /> -   `F0`určuje pravidlo <xref:System.Windows.Media.FillRule.EvenOdd> výplně.<br />-   `F1`určuje pravidlo <xref:System.Windows.Media.FillRule.Nonzero> výplně.<br /><br /> Pokud tento příkaz vynechete, podcesta použije <xref:System.Windows.Media.FillRule.EvenOdd>výchozí chování, které je . Pokud zadáte tento příkaz, musíte jej nejprve umístit.|  
-|*obrázekPopis*|Obrázek složený z příkazu move, příkazů kreslení a volitelného příkazu zavřít.<br /><br /> `moveCommand` `drawCommands`  `[` `closeCommand` `]`|  
-|*moveCommand*|Příkaz move, který určuje počáteční bod obrázku. Viz část [Příkaz k přesunutí.](#themovecommand)|  
-|*drawPříkazy*|Jeden nebo více příkazů kreslení, které popisují obsah obrázku. Viz část [Nakreslit příkazy.](#drawcommands)|  
-|*closeCommand*|Volitelný příkaz zavřít, který zavře obrázek. Viz část [Zavřít příkaz.](#closecommand)|  
+|*fillRule*|<xref:System.Windows.Media.FillRule?displayProperty=nameWithType><br /><br /> Určuje, zda <xref:System.Windows.Media.StreamGeometry> používá <xref:System.Windows.Media.FillRule.EvenOdd> <xref:System.Windows.Media.FillRule.Nonzero> <xref:System.Windows.Media.PathGeometry.FillRule%2A> .<br /><br /> -   `F0`Určuje <xref:System.Windows.Media.FillRule.EvenOdd> pravidlo výplně.<br />-   `F1`Určuje <xref:System.Windows.Media.FillRule.Nonzero> pravidlo výplně.<br /><br /> Pokud tento příkaz vynecháte, použije dílčí cesta výchozí chování, což je <xref:System.Windows.Media.FillRule.EvenOdd> . Pokud zadáte tento příkaz, musíte ho nejdřív umístit.|  
+|*figureDescription*|Obrázek tvořený příkazem Move, příkazy kreslení a volitelným ukončovacím příkazem.<br /><br /> `moveCommand` `drawCommands`  `[` `closeCommand` `]`|  
+|*moveCommand*|Příkaz Move, který určuje počáteční bod obrázku. Viz část [přesunutí příkazu](#themovecommand) .|  
+|*drawCommands*|Jeden nebo více příkazů kreslení popisujících obsah obrázku. Viz část [Draw Commands](#drawcommands) .|  
+|*closeCommand*|Volitelný uzavírací příkaz, který zavírá obrázek. Viz část [příkazu Zavřít](#closecommand) .|  
   
 <a name="themovecommand"></a>
-## <a name="move-command"></a>Přesunout, příkaz  
+## <a name="move-command"></a>Přesunout příkaz  
  Určuje počáteční bod nového obrázku.  
   
-|Syntaxe|  
+|Syntax|  
 |------------|  
-|`M`*startpoint*<br /><br /> - nebo -<br /><br /> `m`*startpoint*|  
+|`M`*startPoint*<br /><br /> - nebo -<br /><br /> `m`*startPoint*|  
   
-|Označení|Popis|  
+|Pojem|Popis|  
 |----------|-----------------|  
-|*startpoint*|<xref:System.Windows.Point?displayProperty=nameWithType><br /><br /> Počáteční bod nové holce.|  
+|*startPoint*|<xref:System.Windows.Point?displayProperty=nameWithType><br /><br /> Počáteční bod nového obrázku.|  
   
- Velká písmena `M` `startPoint` označují, že je absolutní hodnota; malá písmena `m` `startPoint` označují, že je posun k předchozímu bodu, nebo (0,0), pokud neexistuje. Pokud za příkazem move uvádíte více bodů, bude k těmto bodům nakreslena čára, i když jste zadali příkaz čáry.  
+ Velká písmena `M` označují, že `startPoint` se jedná o absolutní hodnotu; malé písmeno `m` označuje, že `startPoint` se jedná o posun k předchozímu bodu, nebo (0, 0), pokud žádný neexistuje. Pokud vypíšete více bodů po příkazu přesunout, je čára nakreslena na tyto body, i když jste zadali příkaz line.  
   
 <a name="drawcommands"></a>
-## <a name="draw-commands"></a>Kreslit příkazy  
- Příkaz kreslení se může skládat z několika příkazů tvaru. K dispozici jsou následující příkazy tvaru: čára, vodorovná čára, svislá čára, krychlová Bezierova křivka, kvadratická Bezierova křivka, hladká kubická Bezierova křivka, hladká kvadratická Bezierova křivka a eliptický oblouk.  
+## <a name="draw-commands"></a>Příkazy Draw  
+ Příkaz pro kreslení se může skládat z několika příkazů Shape. K dispozici jsou následující příkazy tvaru: line, vodorovná čára, svislá čára, krychle Bézierovy křivky, kvadratická Bézierová křivka, plynulá křivka Bézierovy krychle, plynulá kvadratická křivka a eliptický oblouk  
   
- Každý příkaz zadáte pomocí velkých nebo malých písmen: velká písmena označují absolutní hodnoty a malá písmena označují relativní hodnoty: řídicí body pro tento segment jsou relativní vzhledem ke koncovému bodu předchozího příkladu. Při postupném zadávání více než jednoho příkazu stejného typu můžete vynechat duplicitní položku příkazu; například `L 100,200 300,400` je ekvivalentní `L 100,200 L 300,400`. Následující tabulka popisuje **příkazy pro přesun** a **kreslení.**  
+ Jednotlivé příkazy zadáte pomocí velkých nebo malých písmen: velká písmena označují absolutní hodnoty a malá písmena: relativní hodnoty: řídicí body pro tento segment jsou relativní vzhledem k koncovému bodu v předchozím příkladu. Při sekvenčním zadávání více než jednoho příkazu stejného typu můžete položku duplikovat příkaz vynechat; například `L 100,200 300,400` je ekvivalentem k `L 100,200 L 300,400` . Následující tabulka popisuje příkazy **Move** a **Draw** .  
   
-### <a name="line-command"></a>Příkaz řádek  
- Vytvoří přímku mezi aktuálním a zadaným koncovým bodem. `l 20 30`a `L 20,30` jsou příklady platných **řádkových** příkazů.  
+### <a name="line-command"></a>Příkaz line  
+ Vytvoří rovnou čáru mezi aktuálním bodem a zadaným koncovým bodem. `l 20 30`a `L 20,30` jsou příklady platných příkazů **řádků** .  
   
-|Syntaxe|  
+|Syntax|  
 |------------|  
 |`L`*koncový bod*<br /><br /> - nebo -<br /><br /> `l`*koncový bod*|  
   
-|Označení|Popis|  
+|Pojem|Popis|  
 |----------|-----------------|  
-|*Koncový bod*|<xref:System.Windows.Point?displayProperty=nameWithType><br /><br /> Koncový bod čáry.|  
+|*Služba*|<xref:System.Windows.Point?displayProperty=nameWithType><br /><br /> Koncový bod řádku|  
 
-Velká písmena `L` `endPoint` označují, že je absolutní hodnota; malá písmena `l` `endPoint` označují, že je posun k předchozímu bodu, nebo (0,0), pokud neexistuje.
+Velká písmena `L` označují, že `endPoint` se jedná o absolutní hodnotu; malé písmeno `l` označuje, že `endPoint` se jedná o posun k předchozímu bodu, nebo (0, 0), pokud žádný neexistuje.
 
 ### <a name="horizontal-line-command"></a>Příkaz Vodorovná čára  
  Vytvoří vodorovnou čáru mezi aktuálním bodem a zadanou souřadnicí x. `H 90`je příkladem platného příkazu vodorovné čáry.
 
-|Syntaxe|  
+|Syntax|  
 |------------|  
-|`H`  *X*<br /><br /> - nebo -<br /><br /> `h`  *X*|  
+|`H`  *znak*<br /><br /> - nebo -<br /><br /> `h`  *znak*|  
   
-|Označení|Popis|  
+|Pojem|Popis|  
 |----------|-----------------|  
-|*X*|<xref:System.Double?displayProperty=nameWithType><br /><br /> Souřadnice x koncového bodu čáry.|  
+|*x*|<xref:System.Double?displayProperty=nameWithType><br /><br /> Souřadnice x koncového bodu řádku|  
   
-Velká písmena `H` `x` označují, že je absolutní hodnota; malá písmena `h` `x` označují, že je posun k předchozímu bodu, nebo (0,0), pokud neexistuje.
+Velká písmena `H` označují, že `x` se jedná o absolutní hodnotu; malé písmeno `h` označuje, že `x` se jedná o posun k předchozímu bodu, nebo (0, 0), pokud žádný neexistuje.
   
-### <a name="vertical-line-command"></a>Příkaz Svislé čáry  
+### <a name="vertical-line-command"></a>Příkaz svislá čára  
  Vytvoří svislou čáru mezi aktuálním bodem a zadanou souřadnicí y. `v 90`je příkladem platného příkazu svislé čáry.
 
-|Syntaxe|  
+|Syntax|  
 |------------|  
-|`V`  *Y*<br /><br /> - nebo -<br /><br /> `v`  *Y*|  
+|`V`  *požadované*<br /><br /> - nebo -<br /><br /> `v`  *požadované*|  
   
-|Označení|Popis|  
+|Pojem|Popis|  
 |----------|-----------------|  
-|*Y*|<xref:System.Double?displayProperty=nameWithType><br /><br /> Souřadnice y koncového bodu čáry.|  
+|*požadované*|<xref:System.Double?displayProperty=nameWithType><br /><br /> Souřadnice y koncového bodu řádku|  
 
-Velká písmena `V` `y` označují, že je absolutní hodnota; malá písmena `v` `y` označují, že je posun k předchozímu bodu, nebo (0,0), pokud neexistuje.  
+Velká písmena `V` označují, že `y` se jedná o absolutní hodnotu; malé písmeno `v` označuje, že `y` se jedná o posun k předchozímu bodu, nebo (0, 0), pokud žádný neexistuje.  
 
-### <a name="cubic-bezier-curve-command"></a>Příkaz Kubické beziierovy křivky  
- Vytvoří kubickou Bezierovu křivku mezi aktuálním bodem a zadaným koncovým bodem pomocí dvou určených řídicích bodů (`controlPoint`1 a `controlPoint`2). `C 100,200 200,400 300,200`je příkladem platného příkazu křivky.  
+### <a name="cubic-bezier-curve-command"></a>Krychle Bézierovy křivky – příkaz  
+ Vytvoří Bézierovu křivku krychle mezi aktuálním bodem a zadaným koncovým bodem pomocí dvou určených řídicích bodů ( `controlPoint` 1 a `controlPoint` 2). `C 100,200 200,400 300,200`je příkladem platného příkazu křivky.  
   
-|Syntaxe|  
+|Syntax|  
 |------------|  
-|`C``controlPoint`1`controlPoint`2.`endPoint`<br /><br /> - nebo -<br /><br /> `c``controlPoint`1`controlPoint`2.`endPoint`|  
+|`C``controlPoint`1 `controlPoint` 2`endPoint`<br /><br /> - nebo -<br /><br /> `c``controlPoint`1 `controlPoint` 2`endPoint`|  
   
-|Označení|Popis|  
+|Pojem|Popis|  
 |----------|-----------------|  
-|`controlPoint`1|<xref:System.Windows.Point?displayProperty=nameWithType><br /><br /> První řídicí bod křivky, který určuje počáteční tečnu křivky.|  
-|`controlPoint`2|<xref:System.Windows.Point?displayProperty=nameWithType><br /><br /> Druhý řídicí bod křivky, který určuje koncovou tečnu křivky.|  
-|`endPoint`|<xref:System.Windows.Point?displayProperty=nameWithType><br /><br /> Bod, ke kterému je křivka nakreslena.|  
+|`controlPoint`první|<xref:System.Windows.Point?displayProperty=nameWithType><br /><br /> První řídicí bod křivky, který určuje počáteční tangens křivky.|  
+|`controlPoint`odst|<xref:System.Windows.Point?displayProperty=nameWithType><br /><br /> Druhý řídicí bod křivky, který určuje koncovou tečnu křivky.|  
+|`endPoint`|<xref:System.Windows.Point?displayProperty=nameWithType><br /><br /> Bod, do kterého se má křivka vykreslovat|  
   
-### <a name="quadratic-bezier-curve-command"></a>Kvadratická Bezierova křivka, příkaz  
- Vytvoří kvadratickou Bezierovu křivku mezi aktuálním a zadaným`controlPoint`koncovým bodem pomocí určeného řídicího bodu ( ). `q 100,200 300,200`je příkladem platného příkazu kvadratické Bezierovy křivky.  
+### <a name="quadratic-bezier-curve-command"></a>Příkaz kvadratické Bézierovy křivky  
+ Vytvoří kvadratickou Bézierovu křivku mezi aktuálním bodem a zadaným koncovým bodem pomocí zadaného řídicího bodu ( `controlPoint` ). `q 100,200 300,200`je příkladem platného příkazu kvadratické Bézierovy křivky.  
   
-|Syntaxe|  
+|Syntax|  
 |------------|  
 |`Q` `controlPoint` `endPoint`<br /><br /> - nebo -<br /><br /> `q` `controlPoint` `endPoint`|  
   
-|Označení|Popis|  
+|Pojem|Popis|  
 |----------|-----------------|  
 |`controlPoint`|<xref:System.Windows.Point?displayProperty=nameWithType><br /><br /> Řídicí bod křivky, který určuje počáteční a koncové tečny křivky.|  
-|`endPoint`|<xref:System.Windows.Point?displayProperty=nameWithType><br /><br /> Bod, ke kterému je křivka nakreslena.|  
+|`endPoint`|<xref:System.Windows.Point?displayProperty=nameWithType><br /><br /> Bod, do kterého se má křivka vykreslovat|  
   
-### <a name="smooth-cubic-bezier-curve-command"></a>Příkaz Hladká kubická Bezierova křivka  
- Vytvoří kubickou Bezierovu křivku mezi aktuálním a zadaným koncovým bodem. Předpokládá se, že první řídicí bod je odrazem druhého řídicího bodu předchozího příkazu vzhledem k aktuálnímu bodu. Pokud neexistuje žádný předchozí příkaz nebo pokud předchozí příkaz nebyl příkazem kubické Bezierovy křivky nebo příkazem hladké kubické Bezierovy křivky, předpokládejme, že první řídicí bod je totožný s aktuálním bodem. Druhý řídicí bod, řídicí bod pro konec křivky, `controlPoint`je určen 2. Je například `S 100,200 200,300` platný příkaz hladké kubické Bezierovy křivky.  
+### <a name="smooth-cubic-bezier-curve-command"></a>Příkaz plynulé Bézierovy křivky krychle  
+ Vytvoří Bézierovu křivku krychle mezi aktuálním bodem a zadaným koncovým bodem. První řídicí bod se předpokládá jako odraz druhého řídicího bodu předchozího příkazu vzhledem k aktuálnímu bodu. Pokud není k dispozici žádný předchozí příkaz, nebo pokud předchozí příkaz nebyl příkazem Bézierovy křivky krychle nebo hladkým příkazem Bézierovy křivky, Předpokládejme, že první řídicí bod je koincident s aktuálním bodem. Druhý řídicí bod, řídicí bod pro konec křivky, je určen `controlPoint` 2. Například `S 100,200 200,300` je platný příkaz plynule Bézierovy křivky krychle.  
   
-|Syntaxe|  
+|Syntax|  
 |------------|  
-|`S``controlPoint`2.`endPoint`<br /><br /> - nebo -<br /><br /> `s``controlPoint`2.`endPoint`|  
+|`S` `controlPoint`2`endPoint`<br /><br /> - nebo -<br /><br /> `s` `controlPoint`2`endPoint`|  
   
-|Označení|Popis|  
+|Pojem|Popis|  
 |----------|-----------------|  
-|`controlPoint`2|<xref:System.Windows.Point?displayProperty=nameWithType><br /><br /> Řídicí bod křivky, který určuje koncovou tečnu křivky.|  
-|`endPoint`|<xref:System.Windows.Point?displayProperty=nameWithType><br /><br /> Bod, ke kterému je křivka nakreslena.|  
+|`controlPoint`odst|<xref:System.Windows.Point?displayProperty=nameWithType><br /><br /> Řídicí bod křivky, který určuje koncovou tečnu křivky.|  
+|`endPoint`|<xref:System.Windows.Point?displayProperty=nameWithType><br /><br /> Bod, do kterého se má křivka vykreslovat|  
   
-### <a name="smooth-quadratic-bezier-curve-command"></a>Příkaz Kvadratické Bezierovy křivky  
- Vytvoří kvadratickou Bezierovu křivku mezi aktuálním a zadaným koncovým bodem. Řídicí bod je považován za odraz řídicího bodu předchozího příkazu vzhledem k aktuálnímu bodu. Pokud neexistuje žádný předchozí příkaz nebo pokud předchozí příkaz nebyl kvadratický příkaz Bezierovy křivky nebo příkaz hladké kvadratické Bezierovy křivky, řídicí bod je totožný s aktuálním bodem.  
+### <a name="smooth-quadratic-bezier-curve-command"></a>Příkaz plynule kvadratické Bézierovy křivky  
+ Vytvoří kvadratickou Bézierovu křivku mezi aktuálním bodem a zadaným koncovým bodem. V ovládacím bodu se předpokládá, že se jedná o odraz řídicího bodu předchozího příkazu vzhledem k aktuálnímu bodu. Pokud není k dispozici žádný předchozí příkaz nebo pokud předchozí příkaz nebyl kvadratický příkaz Bézierovy křivky nebo je-li k dispozici příkaz plynule kvadratické Bézierovy křivky, je řídicí bod koincident s aktuálním bodem.  
   
-|Syntaxe|  
+|Syntax|  
 |------------|  
 |`T` `controlPoint` `endPoint`<br /><br /> - nebo -<br /><br /> `t` `controlPoint` `endPoint`|  
   
-|Označení|Popis|  
+|Pojem|Popis|  
 |----------|-----------------|  
-|`controlPoint`|<xref:System.Windows.Point?displayProperty=nameWithType><br /><br /> Řídicí bod křivky, který určuje počáteční a tečnou křivky.|  
-|`endPoint`|<xref:System.Windows.Point?displayProperty=nameWithType><br /><br /> Bod, ke kterému je křivka nakreslena.|  
+|`controlPoint`|<xref:System.Windows.Point?displayProperty=nameWithType><br /><br /> Řídicí bod křivky, který určuje počáteční a tečnu křivky.|  
+|`endPoint`|<xref:System.Windows.Point?displayProperty=nameWithType><br /><br /> Bod, do kterého se má křivka vykreslovat|  
   
-### <a name="elliptical-arc-command"></a>Příkaz eliptický oblouk  
- Vytvoří eliptický oblouk mezi aktuálním a určeným koncovým bodem.  
+### <a name="elliptical-arc-command"></a>Eliptický oblouk – příkaz  
+ Vytvoří eliptický oblouk mezi aktuálním bodem a zadaným koncovým bodem.  
   
-|Syntaxe|  
+|Syntax|  
 |------------|  
 |`A` `size` `rotationAngle` `isLargeArcFlag` `sweepDirectionFlag` `endPoint`<br /><br /> - nebo -<br /><br /> `a` `size` `rotationAngle` `isLargeArcFlag` `sweepDirectionFlag` `endPoint`|  
   
-|Označení|Popis|  
+|Pojem|Popis|  
 |----------|-----------------|  
-|`size`|<xref:System.Windows.Size?displayProperty=nameWithType><br /><br /> Poloměr x a y oblouku.|  
-|`rotationAngle`|<xref:System.Double?displayProperty=nameWithType><br /><br /> Rotace elipsy, ve stupních.|  
-|`isLargeArcFlag`|Nastavte na 1, pokud by měl být úhel oblouku 180 stupňů nebo větší; v opačném případě nastavte 0.|  
-|`sweepDirectionFlag`|Nastavte na 1, pokud je oblouk nakreslen ve směru kladného úhlu; v opačném případě nastavte 0.|  
-|`endPoint`|<xref:System.Windows.Point?displayProperty=nameWithType><br /><br /> Bod, ke kterému je nakreslena oblouku.|  
+|`size`|<xref:System.Windows.Size?displayProperty=nameWithType><br /><br /> X-a y-poloměr oblouku.|  
+|`rotationAngle`|<xref:System.Double?displayProperty=nameWithType><br /><br /> Rotace elipsy ve stupních.|  
+|`isLargeArcFlag`|Nastavte na hodnotu 1, pokud má úhel oblouku 180 stupňů nebo větší. v opačném případě nastavte na 0.|  
+|`sweepDirectionFlag`|Nastavte na hodnotu 1, je-li oblouk vykreslen v úhlu kladného úhlu; v opačném případě nastavte na 0.|  
+|`endPoint`|<xref:System.Windows.Point?displayProperty=nameWithType><br /><br /> Bod, na který je vykreslován oblouk.|  
   
 <a name="closecommand"></a>
 ## <a name="the-close-command"></a>Příkaz Zavřít  
- Ukončí aktuální obrázek a vytvoří čáru, která spojuje aktuální bod s počátečním bodem obrázku. Tento příkaz vytvoří spoj(roh) mezi posledním segmentem a prvním segmentem obrázku.  
+ Ukončí aktuální obrázek a vytvoří čáru, která připojí aktuální bod k počátečnímu bodu obrázku. Tento příkaz vytvoří spojnici (roh) mezi posledním segmentem a prvním segmentem obrázku.  
   
-|Syntaxe|  
+|Syntax|  
 |------------|  
 |`Z`<br /><br /> - nebo -<br /><br /> `z`|  
 
 <a name="pointsyntax"></a>
 ## <a name="point-syntax"></a>Syntaxe bodu  
- Popisuje souřadnice x a y bodu, kde (0,0) je levý horní roh.
+ Popisuje souřadnice x a y bodu, kde (0, 0) je levý horní roh.
   
-|Syntaxe|  
+|Syntax|  
 |------------|  
 |`x` `,` `y`<br /><br /> - nebo -<br /><br /> `x` `y`|  
   
-|Označení|Popis|  
+|Pojem|Popis|  
 |----------|-----------------|  
-|`x`|<xref:System.Double?displayProperty=nameWithType><br /><br /> Souřadnice x bodu.|  
-|`y`|<xref:System.Double?displayProperty=nameWithType><br /><br /> Souřadnice bodu.|  
+|`x`|<xref:System.Double?displayProperty=nameWithType><br /><br /> Souřadnice x bodu|  
+|`y`|<xref:System.Double?displayProperty=nameWithType><br /><br /> Souřadnice y bodu|  
   
 <a name="specialvalues"></a>
 ## <a name="special-values"></a>Speciální hodnoty  
- Namísto standardní číselné hodnoty můžete také použít následující speciální hodnoty. Tyto hodnoty rozlišují malá a velká písmena.  
+ Místo standardní číselné hodnoty můžete také použít následující speciální hodnoty. U těchto hodnot se rozlišují malá a velká písmena.  
   
  Nekonečno  
- Představuje <xref:System.Double.PositiveInfinity?displayProperty=nameWithType>.  
+ Představuje <xref:System.Double.PositiveInfinity?displayProperty=nameWithType> .  
   
- -Nekonečno  
- Představuje <xref:System.Double.NegativeInfinity?displayProperty=nameWithType>.  
+ – Nekonečno  
+ Představuje <xref:System.Double.NegativeInfinity?displayProperty=nameWithType> .  
   
  Není číslo  
- Představuje <xref:System.Double.NaN?displayProperty=nameWithType>.  
+ Představuje <xref:System.Double.NaN?displayProperty=nameWithType> .  
   
- Můžete také použít vědecký zápis. Například `+1.e17` je platná hodnota.  
+ Můžete použít také vědecký zápis. Například `+1.e17` je platná hodnota.  
   
 ## <a name="see-also"></a>Viz také
 
@@ -228,6 +229,6 @@ Velká písmena `V` `y` označují, že je absolutní hodnota; malá písmena `v
 - <xref:System.Windows.Media.StreamGeometry>
 - <xref:System.Windows.Media.PathGeometry>
 - <xref:System.Windows.Media.PathFigureCollection>
-- [Přehled objektů Shape a základního kreslení ve WPF](shapes-and-basic-drawing-in-wpf-overview.md)
+- [Tvary a základní kresby v přehledu WPF](shapes-and-basic-drawing-in-wpf-overview.md)
 - [Přehled geometrie](geometry-overview.md)
-- [Témata s postupy](geometries-how-to-topics.md)
+- [– postupy](geometries-how-to-topics.md)

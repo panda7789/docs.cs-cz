@@ -3,13 +3,13 @@ title: Použití pokrytí kódu pro testování částí
 description: Naučte se používat funkce pokrytí kódu pro testy jednotek .NET.
 author: IEvangelist
 ms.author: dapine
-ms.date: 06/16/2020
-ms.openlocfilehash: d19975283bf60e5cf3a9656c1b6f7966e12d2176
-ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
+ms.date: 07/01/2020
+ms.openlocfilehash: af64116e86c3f46f37c8d5d079b9c86084095485
+ms.sourcegitcommit: b6a1869f97a37f11a68c90afde1a520a6887dcbc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85105421"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853908"
 ---
 # <a name="use-code-coverage-for-unit-testing"></a>Použití pokrytí kódu pro testování částí
 
@@ -18,6 +18,8 @@ Testování částí vám pomůžou zajistit funkčnost a poskytnout způsob ov�
 Tento článek popisuje použití pokrytí kódu pro testování částí pomocí Coverlet a generování sestav pomocí ReportGenerator. I když se tento článek zaměřuje na C# a xUnit jako testovací rozhraní, budou fungovat i MSTest a NUnit. Coverlet je [Open source projekt na GitHubu](https://github.com/coverlet-coverage/coverlet) , který poskytuje architekturu pokrytí kódu pro různé platformy pro C#. [Coverlet](https://dotnetfoundation.org/projects/coverlet) je součástí .NET Foundation. Coverlet shromažďuje data testovacího běhu Cobertura, která se používají pro generování sestav.
 
 Kromě toho tento článek podrobně popisuje, jak používat informace o pokrytí kódu shromážděné z testovacího běhu Coverlet k vygenerování sestavy. Generování sestav je možné pomocí jiného [Open source projektu na GitHub-ReportGenerator](https://github.com/danielpalme/ReportGenerator). ReportGenerator převádí sestavy pokrytí vygenerované Coberturami mezi mnoho dalších, a to v různých formátech v rámci lidských čitelných sestav.
+
+Tento článek je založený na [ukázkovém projektu zdrojového kódu](https://docs.microsoft.com/samples/dotnet/samples/unit-testing-code-coverage-cs), který je k dispozici v prohlížeči ukázek.
 
 ## <a name="system-under-test"></a>Testovaný systém
 
@@ -270,7 +272,7 @@ Níže je příklad souboru *coverage.cobertura.xml* .
 > ```
 >
 > Výsledný soubor *coverage.cobertura.xml* je výstup.  
-> [Tady](https://github.com/coverlet-coverage/coverlet/blob/master/Documentation/MSBuildIntegration.md) můžete postupovat podle příručky integraton MSBuild.
+> Můžete postupovat podle příručky pro integraci MSBuild [tady](https://github.com/coverlet-coverage/coverlet/blob/master/Documentation/MSBuildIntegration.md) .
 
 ## <a name="generate-reports"></a>Generování sestav
 
@@ -300,6 +302,7 @@ Po spuštění tohoto příkazu představuje soubor HTML vygenerovanou sestavu.
 - [ReportGenerator úložiště GitHubu](https://github.com/danielpalme/ReportGenerator)
 - [Projektový web ReportGenerator](https://danielpalme.github.io/ReportGenerator)
 - [Příkaz .NET Core CLI test](../tools/dotnet-test.md)
+- [Ukázkový zdrojový kód](https://docs.microsoft.com/samples/dotnet/samples/unit-testing-code-coverage-cs)
 
 ## <a name="next-steps"></a>Další kroky
 
