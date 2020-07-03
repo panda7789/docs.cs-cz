@@ -46,6 +46,8 @@
           href: base-types/type-conversion.md
         - name: Tabulky převodu typů
           href: base-types/conversion-tables.md
+        - name: Volba mezi anonymními typy a typy řazených kolekcí členů
+          href: base-types/choosing-between-anonymous-and-tuple.md
         - name: 'Formáty čísel, kalendářních dat a dalších typů'
           items:
             - name: Přehled
@@ -639,8 +641,6 @@
       items:
         - name: Volba mezi třídou a strukturou
           href: design-guidelines/choosing-between-class-and-struct.md
-        - name: Volba mezi anonymními typy a typy řazených kolekcí členů
-          href: design-guidelines/choosing-between-anonymous-and-tuple.md
         - name: Návrh abstraktní třídy
           href: design-guidelines/abstract-class.md
         - name: Návrh statické třídy
