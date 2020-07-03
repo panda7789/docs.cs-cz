@@ -1,5 +1,6 @@
 ---
 title: Windows Presentation Foundation
+description: Seznamte se s jednotným programovacím modelem v Windows Presentation Foundation (WPF) pro vytváření podnikových desktopových aplikací ve Windows.
 ms.date: 01/25/2018
 applies_to:
 - Windows 10
@@ -14,24 +15,24 @@ helpviewer_keywords:
 - Windows Presentation Foundation [WPF]
 - WPF [WPF]
 ms.assetid: f667bd15-2134-41e9-b4af-5ced6fafab5d
-ms.openlocfilehash: 69cdae86a295793c8da6b7f663b22846ae2c32b2
-ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
+ms.openlocfilehash: 078e747ab9237324aba8168b543b2347e845de81
+ms.sourcegitcommit: b6a1869f97a37f11a68c90afde1a520a6887dcbc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72919359"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853409"
 ---
-# <a name="windows-presentation-foundation"></a><span data-ttu-id="63dca-102">Windows Presentation Foundation</span><span class="sxs-lookup"><span data-stu-id="63dca-102">Windows Presentation Foundation</span></span>
+# <a name="windows-presentation-foundation"></a><span data-ttu-id="dcf65-103">Windows Presentation Foundation</span><span class="sxs-lookup"><span data-stu-id="dcf65-103">Windows Presentation Foundation</span></span>
 
-<span data-ttu-id="63dca-103">Windows Presentation Foundation (WPF) poskytuje vývojářům jednotný programovací model pro vytváření podnikových aplikací pro stolní počítače ve Windows.</span><span class="sxs-lookup"><span data-stu-id="63dca-103">Windows Presentation Foundation (WPF) provides developers with a unified programming model for building line-of-business desktop applications on Windows.</span></span>
+<span data-ttu-id="dcf65-104">Windows Presentation Foundation (WPF) poskytuje vývojářům jednotný programovací model pro vytváření podnikových aplikací pro stolní počítače ve Windows.</span><span class="sxs-lookup"><span data-stu-id="dcf65-104">Windows Presentation Foundation (WPF) provides developers with a unified programming model for building line-of-business desktop applications on Windows.</span></span>
 
-- [<span data-ttu-id="63dca-104">Úvod do WPF</span><span class="sxs-lookup"><span data-stu-id="63dca-104">Introduction to WPF</span></span>](introduction-to-wpf.md)
-- [<span data-ttu-id="63dca-105">Začínáme</span><span class="sxs-lookup"><span data-stu-id="63dca-105">Getting Started</span></span>](getting-started/index.md)
-- [<span data-ttu-id="63dca-106">Vývoj aplikací</span><span class="sxs-lookup"><span data-stu-id="63dca-106">Application Development</span></span>](app-development/index.md)
-- [<span data-ttu-id="63dca-107">Pokročilé</span><span class="sxs-lookup"><span data-stu-id="63dca-107">Advanced</span></span>](advanced/index.md)
-- [<span data-ttu-id="63dca-108">Ovládací prvky</span><span class="sxs-lookup"><span data-stu-id="63dca-108">Controls</span></span>](controls/index.md)
-- [<span data-ttu-id="63dca-109">Data</span><span class="sxs-lookup"><span data-stu-id="63dca-109">Data</span></span>](data/index.md)
-- [<span data-ttu-id="63dca-110">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="63dca-110">Graphics and Multimedia</span></span>](graphics-multimedia/index.md)
-- [<span data-ttu-id="63dca-111">Zabezpečení</span><span class="sxs-lookup"><span data-stu-id="63dca-111">Security</span></span>](security-wpf.md)
-- [<span data-ttu-id="63dca-112">Ukázky WPF</span><span class="sxs-lookup"><span data-stu-id="63dca-112">WPF Samples</span></span>](wpf-samples.md)
-- [<span data-ttu-id="63dca-113">Knihovna tříd</span><span class="sxs-lookup"><span data-stu-id="63dca-113">Class Library</span></span>](class-library-wpf.md)
+- [<span data-ttu-id="dcf65-105">Úvod do WPF</span><span class="sxs-lookup"><span data-stu-id="dcf65-105">Introduction to WPF</span></span>](introduction-to-wpf.md)
+- [<span data-ttu-id="dcf65-106">Začínáme</span><span class="sxs-lookup"><span data-stu-id="dcf65-106">Getting Started</span></span>](getting-started/index.md)
+- [<span data-ttu-id="dcf65-107">Vývoj aplikací</span><span class="sxs-lookup"><span data-stu-id="dcf65-107">Application Development</span></span>](app-development/index.md)
+- [<span data-ttu-id="dcf65-108">Pokročilý</span><span class="sxs-lookup"><span data-stu-id="dcf65-108">Advanced</span></span>](advanced/index.md)
+- [<span data-ttu-id="dcf65-109">Ovládací prvky</span><span class="sxs-lookup"><span data-stu-id="dcf65-109">Controls</span></span>](controls/index.md)
+- [<span data-ttu-id="dcf65-110">Data</span><span class="sxs-lookup"><span data-stu-id="dcf65-110">Data</span></span>](data/index.md)
+- [<span data-ttu-id="dcf65-111">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="dcf65-111">Graphics and Multimedia</span></span>](graphics-multimedia/index.md)
+- [<span data-ttu-id="dcf65-112">Zabezpečení</span><span class="sxs-lookup"><span data-stu-id="dcf65-112">Security</span></span>](security-wpf.md)
+- [<span data-ttu-id="dcf65-113">Ukázky WPF</span><span class="sxs-lookup"><span data-stu-id="dcf65-113">WPF Samples</span></span>](wpf-samples.md)
+- [<span data-ttu-id="dcf65-114">Knihovna tříd</span><span class="sxs-lookup"><span data-stu-id="dcf65-114">Class Library</span></span>](class-library-wpf.md)
