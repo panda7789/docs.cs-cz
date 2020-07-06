@@ -19,8 +19,11 @@
         - name: Zosobnění a návrat
           href: impersonating-and-reverting.md
     - name: Kryptografický model
-      href: cryptography-model.md
       items:
+        - name: Přehled
+          href: cryptography-model.md
+        - name: Kryptografie pro různé platformy
+          href: cross-platform-cryptography.md
         - name: Šifrovací služby
           href: cryptographic-services.md
         - name: Generování klíčů pro šifrování a dešifrování
@@ -45,9 +48,9 @@
           href: how-to-encrypt-xml-elements-with-asymmetric-keys.md
         - name: 'Postupy: Dešifrování elementů XML pomocí asymetrických klíčů'
           href: how-to-decrypt-xml-elements-with-asymmetric-keys.md
-        - name: 'Postupy: Šifrování XML elementů pomocí certifikátů X.509'
+        - name: 'Postupy: Šifrování elementů XML pomocí certifikátů X.509'
           href: how-to-encrypt-xml-elements-with-x-509-certificates.md
-        - name: 'Postupy: Dešifrování XML elementů pomocí certifikátů X.509'
+        - name: 'Postupy: Dešifrování elementů XML pomocí certifikátů X.509'
           href: how-to-decrypt-xml-elements-with-x-509-certificates.md
         - name: 'Postupy: Podepisování dokumentů XML digitálními podpisy'
           href: how-to-sign-xml-documents-with-digital-signatures.md
