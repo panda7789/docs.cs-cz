@@ -1,13 +1,12 @@
 ---
 title: Publikování konzolové aplikace .NET Core pomocí Visual Studio Code
 description: Publikování vytvoří sadu souborů, které jsou nutné ke spuštění aplikace .NET Core.
-ms.date: 06/08/2020
-ms.openlocfilehash: 442d08c9b016407327ba30db0aae78b5cf6b6fe3
-ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
-ms.translationtype: MT
+ms.date: 07/04/2020
+ms.openlocfilehash: 8fd9975e8a88704b9dea45b40127c8dc03f7d09f
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84701447"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86051880"
 ---
 # <a name="tutorial-publish-a-net-core-console-application-using-visual-studio-code"></a>Kurz: publikování konzolové aplikace .NET Core pomocí Visual Studio Code
 
@@ -112,4 +111,4 @@ V následujících krocích se podíváte na soubory vytvořené procesem publik
 V tomto kurzu jste publikovali konzolovou aplikaci. V dalším kurzu vytvoříte knihovnu tříd.
 
 > [!div class="nextstepaction"]
-> [Vytvoření knihovny .NET Standard v Visual Studio pro Mac](library-with-visual-studio-mac.md)
+> [Vytvoření knihovny .NET Standard v Visual Studio Code](library-with-visual-studio-code.md)

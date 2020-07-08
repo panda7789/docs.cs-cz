@@ -2,12 +2,11 @@
 title: 'Postupy: Hostování služby WCF ve WAS'
 ms.date: 03/30/2017
 ms.assetid: 9e3e213e-2dce-4f98-81a3-f62f44caeb54
-ms.openlocfilehash: 1e338440b3a630840230df838e46579e3725bb60
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
-ms.translationtype: MT
+ms.openlocfilehash: 40460baeb136345f2532ec6ad5035bd5d3a40254
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84593110"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86051984"
 ---
 # <a name="how-to-host-a-wcf-service-in-was"></a>Postupy: Hostování služby WCF ve WAS
 Toto téma popisuje základní kroky potřebné k vytvoření služby Aktivace procesů systému Windows (označované také jako) hostované služby Windows Communication Foundation (WCF). BYLA Nová aktivační služba procesů, která je generalizací funkcí služby Internetová informační služba (IIS), které fungují s protokoly přenosů bez protokolu HTTP. Služba WCF používá rozhraní naslouchacího adaptéru ke komunikaci s požadavky na aktivaci, které jsou přijímány prostřednictvím protokolů jiných než HTTP podporovaných službou WCF, jako je například TCP, pojmenované kanály a služba Řízení front zpráv.  
@@ -47,7 +46,7 @@ Toto téma popisuje základní kroky potřebné k vytvoření služby Aktivace p
   
      [!code-csharp[C_HowTo_HostInWAS#1122](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_hostinwas/cs/service.cs#1122)]  
   
-3. Vytvořte soubor Web. config pro definování vazby, <xref:System.ServiceModel.NetTcpBinding> která bude použita pro `CalculatorService` koncové body.  
+3. Vytvořte soubor Web.config pro definování vazby, <xref:System.ServiceModel.NetTcpBinding> která bude použita pro `CalculatorService` koncové body.  
   
     ```xml  
     <?xml version="1.0" encoding="utf-8" ?>  
@@ -66,7 +65,7 @@ Toto téma popisuje základní kroky potřebné k vytvoření služby Aktivace p
   
 4. Vytvořte soubor Service. svc, který obsahuje následující kód.  
   
-   ```
+   ```aspx-csharp
    <%@ServiceHost language=c# Service="CalculatorService" %>
    ```
   
@@ -74,7 +73,7 @@ Toto téma popisuje základní kroky potřebné k vytvoření služby Aktivace p
   
 ### <a name="to-create-a-client-to-use-the-service"></a>Vytvoření klienta pro používání služby  
   
-1. K vygenerování kódu z metadat služby použijte [Nástroj Svcutil. exe (s metadaty ServiceModel)](../servicemodel-metadata-utility-tool-svcutil-exe.md) z příkazového řádku.  
+1. K vygenerování kódu z metadat služby použijte nástroj pro použití [metadat ServiceModel (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) z příkazového řádku.  
   
     ```console
     Svcutil.exe <service's Metadata Exchange (MEX) address or HTTP GET address>
@@ -88,7 +87,7 @@ Toto téma popisuje základní kroky potřebné k vytvoření služby Aktivace p
   
      [!code-csharp[C_HowTo_HostInWAS#1222](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_hostinwas/cs/client.cs#1222)]  
   
-4. Konfigurace klienta, který používá, <xref:System.ServiceModel.NetTcpBinding> je vygenerována také nástrojem Svcutil. exe. Tento soubor by měl být pojmenován v souboru App. config při použití sady Visual Studio.  
+4. Konfigurace klienta, který používá, <xref:System.ServiceModel.NetTcpBinding> je vygenerována také Svcutil.exe. Tento soubor by měl být při použití sady Visual Studio pojmenován v souboru App.config.  
   
      [!code-xml[C_HowTo_HostInWAS#2211](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_hostinwas/common/app.config#2211)]
   

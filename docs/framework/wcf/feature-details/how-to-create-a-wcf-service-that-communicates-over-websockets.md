@@ -2,12 +2,11 @@
 title: 'Postupy: Vytvoření služby WCF, která komunikuje přes WebSockets'
 ms.date: 03/30/2017
 ms.assetid: bafbbd89-eab8-4e9a-b4c3-b7b0178e12d8
-ms.openlocfilehash: 5aade8e3fb2049521ed06f5f1a148be2e4636e36
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
-ms.translationtype: MT
+ms.openlocfilehash: 80c62ddc6630d26c6c178d1eeff8c6df05bf1d00
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597108"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86051932"
 ---
 # <a name="how-to-create-a-wcf-service-that-communicates-over-websockets"></a>Postupy: Vytvoření služby WCF, která komunikuje přes WebSockets
 Služby a Klienti WCF mohou pomocí <xref:System.ServiceModel.NetHttpBinding> vazby komunikovat přes objekty WebSockets.  WebSockets se použijí, když <xref:System.ServiceModel.NetHttpBinding> určí kontrakt služby, který definuje kontrakt zpětného volání. Toto téma popisuje, jak implementovat službu WCF a klienta, který používá <xref:System.ServiceModel.NetHttpBinding> ke komunikaci přes objekty WebSockets.  
@@ -257,7 +256,7 @@ namespace Server
 </configuration>  
 ```  
   
-```
+```aspx-csharp
 <!-- StockQuoteService.svc -->  
 <%@ ServiceHost Language="C#" Debug="true" Service="Server.StockQuoteService" CodeBehind="StockQuoteService.svc.cs" %>  
 ```  
