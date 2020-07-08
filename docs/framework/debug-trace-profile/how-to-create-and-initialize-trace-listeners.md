@@ -1,5 +1,6 @@
 ---
 title: 'Postupy: Vytváření a inicializace naslouchacích procesů trasování'
+description: Naučte se vytvářet a inicializovat naslouchací procesy trasování pomocí tříd, jako je System. Diagnostics. DefaultTraceListener v rozhraní .NET.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,24 +12,23 @@ helpviewer_keywords:
 - tracing [.NET Framework], trace listeners
 - logs, trace listeners
 ms.assetid: 21726de1-61ee-4fdc-9dd0-3be49324d066
-ms.openlocfilehash: ce0df0af32d6798c89c8db6761d18febc1c398bb
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
-ms.translationtype: MT
+ms.openlocfilehash: 752306124e41a7fb7458daccc8c2891631eb9616
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77217445"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86051204"
 ---
 # <a name="how-to-create-and-initialize-trace-listeners"></a>Postupy: Vytváření a inicializace naslouchacích procesů trasování
 
-Třídy <xref:System.Diagnostics.Debug?displayProperty=nameWithType> a <xref:System.Diagnostics.Trace?displayProperty=nameWithType> odesílají zprávy do objektů nazývaných naslouchací procesy, které přijímají a zpracovávají tyto zprávy. Jeden takový naslouchací proces, <xref:System.Diagnostics.DefaultTraceListener?displayProperty=nameWithType>, je automaticky vytvořen a inicializován v případě, že je povoleno trasování nebo ladění. Pokud chcete, aby byl výstup <xref:System.Diagnostics.Trace> nebo <xref:System.Diagnostics.Debug> směrován do dalších zdrojů, je nutné vytvořit a inicializovat další naslouchací procesy trasování.
+<xref:System.Diagnostics.Debug?displayProperty=nameWithType>Třídy a <xref:System.Diagnostics.Trace?displayProperty=nameWithType> odesílají zprávy do objektů nazývaných naslouchací procesy, které přijímají a zpracovávají tyto zprávy. Jeden takový naslouchací proces, <xref:System.Diagnostics.DefaultTraceListener?displayProperty=nameWithType> je automaticky vytvořen a inicializován v případě, že je povoleno trasování nebo ladění. Chcete-li <xref:System.Diagnostics.Trace> <xref:System.Diagnostics.Debug> , aby byl výstup směrován do dalších zdrojů, je nutné vytvořit a inicializovat další naslouchací procesy trasování.
 
-Naslouchací procesy, které vytvoříte, by měly odpovídat potřebám vaší aplikace. Například pokud chcete textový záznam všech výstupů trasování, vytvořte <xref:System.Diagnostics.TextWriterTraceListener> naslouchací proces, který zapíše veškerý výstup do nového textového souboru, pokud je povolen. Na druhé straně, pokud chcete zobrazit výstup pouze během provádění aplikace, vytvořte <xref:System.Diagnostics.ConsoleTraceListener> naslouchací proces, který přesměruje výstup do okna konzoly. <xref:System.Diagnostics.EventLogTraceListener> může směrovat výstup trasování do protokolu událostí. Další informace naleznete v tématu [Trace Listeners](trace-listeners.md).
+Naslouchací procesy, které vytvoříte, by měly odpovídat potřebám vaší aplikace. Například pokud chcete textový záznam všech výstupů trasování, vytvořte <xref:System.Diagnostics.TextWriterTraceListener> naslouchací proces, který zapíše veškerý výstup do nového textového souboru, pokud je povolen. Na druhé straně, pokud chcete zobrazit výstup pouze během provádění aplikace, vytvořte <xref:System.Diagnostics.ConsoleTraceListener> naslouchací proces, který směruje veškerý výstup do okna konzoly. <xref:System.Diagnostics.EventLogTraceListener>Může směrovat výstup trasování do protokolu událostí. Další informace naleznete v tématu [Trace Listeners](trace-listeners.md).
 
 Naslouchací procesy trasování lze vytvořit v [konfiguračním souboru aplikace](../configure-apps/index.md) nebo v kódu. Doporučujeme použít konfigurační soubory aplikace, protože umožňují přidat, upravit nebo odebrat naslouchací procesy trasování bez nutnosti měnit kód.
 
 ### <a name="to-create-and-use-a-trace-listener-by-using-a-configuration-file"></a>Vytvoření a použití naslouchacího procesu trasování pomocí konfiguračního souboru
 
-1. Deklarujte naslouchací proces trasování v konfiguračním souboru aplikace. Pokud naslouchací proces, který vytváříte, vyžaduje jiné objekty, deklarujte je také. Následující příklad ukazuje, jak vytvořit naslouchací proces nazvaný `myListener`, který zapisuje do textového souboru `TextWriterOutput.log`.
+1. Deklarujte naslouchací proces trasování v konfiguračním souboru aplikace. Pokud naslouchací proces, který vytváříte, vyžaduje jiné objekty, deklarujte je také. Následující příklad ukazuje, jak vytvořit naslouchací proces s názvem `myListener` , který zapisuje do textového souboru `TextWriterOutput.log` .
 
     ```xml
     <configuration>
@@ -43,7 +43,7 @@ Naslouchací procesy trasování lze vytvořit v [konfiguračním souboru aplika
     </configuration>
     ```
 
-2. Použijte třídu <xref:System.Diagnostics.Trace> v kódu k zápisu zprávy do posluchačů trasování.
+2. Použijte <xref:System.Diagnostics.Trace> třídu v kódu k zápisu zprávy do posluchačů trasování.
 
     ```vb
     Trace.TraceInformation("Test message.")
@@ -59,7 +59,7 @@ Naslouchací procesy trasování lze vytvořit v [konfiguračním souboru aplika
 
 ### <a name="to-create-and-use-a-trace-listener-in-code"></a>Vytvoření a použití naslouchacího procesu trasování v kódu
 
-- Přidejte naslouchací proces trasování do kolekce <xref:System.Diagnostics.Trace.Listeners%2A> a odešlete trasovací informace do posluchačů.
+- Přidejte naslouchací proces trasování do <xref:System.Diagnostics.Trace.Listeners%2A> kolekce a odešlete trasovací informace do posluchačů.
 
     ```vb
     Trace.Listeners.Add(New TextWriterTraceListener("TextWriterOutput.log", "myListener"))
@@ -75,9 +75,9 @@ Naslouchací procesy trasování lze vytvořit v [konfiguračním souboru aplika
     Trace.Flush();
     ```
 
-    \- nebo-
+    \-ani
 
-- Pokud nechcete, aby naslouchací proces přijímal výstup trasování, nepřidávejte ho do kolekce <xref:System.Diagnostics.Trace.Listeners%2A>. Můžete vygenerovat výstup pomocí naslouchacího procesu nezávisle na kolekci <xref:System.Diagnostics.Trace.Listeners%2A> voláním metod vlastního výstupu naslouchacího procesu. Následující příklad ukazuje, jak zapsat řádek do naslouchacího procesu, který není v kolekci <xref:System.Diagnostics.Trace.Listeners%2A>.
+- Pokud nechcete, aby naslouchací proces přijímal výstup trasování, nepřidávejte ho do <xref:System.Diagnostics.Trace.Listeners%2A> kolekce. Můžete vygenerovat výstup pomocí naslouchacího procesu nezávisle na <xref:System.Diagnostics.Trace.Listeners%2A> kolekci voláním metod vlastního výstupu naslouchacího procesu. Následující příklad ukazuje, jak zapsat řádek do naslouchacího procesu, který není v <xref:System.Diagnostics.Trace.Listeners%2A> kolekci.
 
     ```vb
     Dim myListener As New TextWriterTraceListener("TextWriterOutput.log", "myListener")

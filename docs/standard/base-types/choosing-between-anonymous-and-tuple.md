@@ -3,12 +3,11 @@ title: Volba mezi anonymními a řazenými typy řazených kolekcí členů
 description: Zjistěte, kdy je vhodné zvolit mezi anonymními typy a typem řazené kolekce členů.
 ms.date: 07/01/2020
 ms.technology: dotnet-standard
-ms.openlocfilehash: 24ab770d709b9f3968f4c7fe4b01eb0729dbd751
-ms.sourcegitcommit: b6a1869f97a37f11a68c90afde1a520a6887dcbc
-ms.translationtype: MT
+ms.openlocfilehash: 2f927b59d7206dd0f405c11529f93b56a1c778a0
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85854000"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86052075"
 ---
 # <a name="choosing-between-anonymous-and-tuple-types"></a>Volba mezi anonymními a řazenými typy řazených kolekcí členů
 
@@ -103,7 +102,7 @@ Možná budete chtít vždycky používat <xref:System.ValueTuple> <xref:System.
 
 ### <a name="key-differences"></a>Klíčové rozdíly
 
-| Název                     | Modifikátor přístupu | Typ     | Název vlastní vlastnosti | Podpora dekonstrukce | Podpora stromu výrazů |
+| Name                     | Modifikátor přístupu | Typ     | Název vlastního člena | Podpora dekonstrukce | Podpora stromu výrazů |
 |--------------------------|-----------------|----------|----------------------|------------------------|-------------------------|
 | Anonymní typy          | `internal`      | `class`  | ✔️                   | ❌                     | ✔️                     |
 | <xref:System.Tuple>      | `public`        | `class`  | ❌                   | ❌                     | ✔️                     |

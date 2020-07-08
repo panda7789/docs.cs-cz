@@ -2,22 +2,21 @@
 title: Přejmenování služby WCF
 ms.date: 03/30/2017
 ms.assetid: 14235a65-b1c5-409d-b6cc-a979acd54bbd
-ms.openlocfilehash: 8cb86621972423f55bfa18c60c1d4eb60cacb205
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: MT
+ms.openlocfilehash: 1179e7b235130e1967c79843b7a11f55622a01fb
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64651047"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86052049"
 ---
 # <a name="renaming-a-wcf-service"></a>Přejmenování služby WCF
-Toto téma popisuje, jak můžete přejmenovat služby Windows Communication Foundation (WCF).  
+Toto téma popisuje, jak lze přejmenovat službu Windows Communication Foundation (WCF).  
   
 ## <a name="renaming-a-wcf-service"></a>Přejmenování služby WCF  
- Proveďte následující kroky pro přejmenování služby v šabloně služby Windows Communication Foundation (WCF)  
+ Provedením následujících kroků přejmenujete službu v šabloně Windows Communication Foundation (WCF),  
   
-- Změňte název třídy, která implementuje služby.  
+- Změňte název třídy, která implementuje službu.  
   
-- V konfiguračním souboru služby změňte název služby na nový název, který jste zvolili, jak je uvedeno v následujícím příkladu. Konfigurační soubor může být soubor app.config nebo web.config v závislosti na modelu hostingu.  
+- V konfiguračním souboru služby změňte název služby na nový název, který jste zvolili, jak je uvedeno v následujícím příkladu. Konfigurační soubor může být buď app.config, nebo web.config soubor v závislosti na modelu hostování.  
   
 ```xml  
 <system.servicemodel>  
@@ -28,19 +27,19 @@ Toto téma popisuje, jak můžete přejmenovat služby Windows Communication Fou
 </system.servicemodel>  
 ```  
   
-- Pokud je služba webhosted, používá soubor *.svc. Otevřete soubor svc file a změnit název vaší služby, jak je uvedeno v následujícím příkladu. Tento krok není nezbytné pro aplikace v místním prostředí, protože není dostupný žádný soubor svc.  
+- Pokud je vaše služba hostitelem webhostovaná, používá soubor * \* . svc* . Otevřete soubor svc a upravte název vaší služby, jak je uvedeno v následujícím příkladu. Tento krok není nutný pro samoobslužné aplikace, protože není k dispozici žádný soubor svc.  
   
-```  
+```aspx-csharp
 <%@ ServiceHost Service="WcfService.NewName">  
 ```  
   
 ## <a name="renaming-a-wcf-service-contract"></a>Přejmenování kontraktu služby WCF  
   
-- Proveďte následující kroky pro přejmenování kontrakt služby  
+- Chcete-li přejmenovat kontrakt služby, proveďte následující kroky.  
   
 - Změňte název kontraktu služby.  
   
-- V konfiguračním souboru služby změňte název kontraktu služby na nový název, který jste zvolili, jak je uvedeno v následujícím příkladu. Konfigurační soubor může být soubor app.config nebo web.config v závislosti na modelu hostingu.  
+- V konfiguračním souboru služby změňte název kontraktu služby na nový název, který jste zvolili, jak je uvedeno v následujícím příkladu. Konfigurační soubor může být buď app.config, nebo web.config soubor v závislosti na modelu hostování.  
   
 ```xml  
 <system.servicemodel>  

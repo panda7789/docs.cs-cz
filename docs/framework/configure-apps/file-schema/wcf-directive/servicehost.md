@@ -2,20 +2,19 @@
 title: '@ServiceHost'
 ms.date: 03/30/2017
 ms.assetid: 96ba6967-00f2-422f-9aa7-15de4d33ebf3
-ms.openlocfilehash: fdd6d83836c4ef31a4d7c8e68cb0cc050ac6bea4
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
-ms.translationtype: MT
+ms.openlocfilehash: cb425d9f4dadd97e93946a2b4cd9d059ea8504ce
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "76787804"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86051360"
 ---
 # <a name="servicehost"></a>\@Hostiteli
 
 Přidruží továrnu, která se používá k vytváření hostitele služby pro hostování služby, a dalších aspektů programování potřebných pro přístup k nebo zkompilování hostujícího kódu, který je k dispozici v souboru. svc.
 
-## <a name="syntax"></a>Syntaxe
+## <a name="syntax"></a>Syntax
 
-```xml
+```aspx-csharp
 <% @ServiceHost
 Service = "Service, ServiceNamespace"
 Factory = "Factory, FactoryNamespace"
@@ -35,7 +34,7 @@ Název typu CLR hostované služby. Mělo by se jednat o kvalifikovaný název t
 
 Název typu CLR objektu pro vytváření hostitele služby, který se používá k vytvoření instance hostitele služby. Tento atribut je nepovinný. Je-li tento parametr zadán, <xref:System.ServiceModel.Activation.ServiceHostFactory> je použita výchozí hodnota, která vrací instanci <xref:System.ServiceModel.ServiceHost> .
 
-### <a name="debug"></a>Ladění
+### <a name="debug"></a>Ladit
 
 Určuje, zda má být služba Windows Communication Foundation (WCF) zkompilována se symboly ladění. `true`Pokud má být služba WCF zkompilována se symboly ladění; v opačném případě `false` .
 
@@ -63,7 +62,7 @@ Udržujte implementace továrny co nejblíže. Pokud máte spoustu vlastní logi
 
 Chcete-li například povolit koncový bod s povoleným AJAX pro `MyService` , zadejte <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory> pro hodnotu `Factory` atributu místo výchozí <xref:System.ServiceModel.Activation.ServiceHostFactory> v `@ServiceHost` direktivě, jak je znázorněno v následujícím příkladu:
 
-```xml
+```aspx-csharp
 <% @ServiceHost
 Service="MyService"
 Language="C#"

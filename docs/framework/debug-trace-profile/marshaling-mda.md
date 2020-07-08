@@ -1,5 +1,6 @@
 ---
 title: zařazování MDA
+description: Projděte si průvodce zařazování spravovaného ladění (MDA), který je vyvolán, pokud CLR nastaví zařazovací informace pro parametr metody nebo pole struktury.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - marshaling, run-time errors
@@ -7,15 +8,14 @@ helpviewer_keywords:
 - managed debugging assistants (MDAs), marshaling
 - MDAs (managed debugging assistants), marshaling
 ms.assetid: 5433b1f8-b0e5-40c9-a49a-0e5bd213363d
-ms.openlocfilehash: f7bb630d3a1e832cf6bf083ce4cf603034248ceb
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
-ms.translationtype: MT
+ms.openlocfilehash: 77811c526d1770b91b14aa1199dfc7b3177e6c59
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77217324"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86051152"
 ---
 # <a name="marshaling-mda"></a>zařazování MDA
-Když CLR nastaví zařazovací informace pro parametr metody nebo pole struktury, aktivuje se Pomocník s `marshaling`em spravovaného ladění (MDA). Tento MDA nefunguje pro sestavení kompilovaná JIT.  
+`marshaling`Pokud CLR nastaví zařazovací informace pro parametr metody nebo pole struktury, je aktivován pomocník spravovaného ladění (MDA). Tento MDA nefunguje pro sestavení kompilovaná JIT.  
   
 ## <a name="effect-on-the-runtime"></a>Vliv na modul runtime  
  Tento MDA nemá žádný vliv na CLR.  
@@ -29,7 +29,7 @@ name="assembly!Namespace.Class::myChar
 ```  
   
 ## <a name="configuration"></a>Konfigurace  
- Konfigurace MDA umožňuje filtrovat hlášené informace o zařazování na základě názvu pole nebo metody.  Následující příklad ukazuje použití prvků `methodFilter`, `fieldFilter`a `match` k určení filtrů.  Nastavením atributu `name` na hvězdičku (\*) se bude shodovat vše.  
+ Konfigurace MDA umožňuje filtrovat hlášené informace o zařazování na základě názvu pole nebo metody.  Následující příklad ukazuje použití `methodFilter` `fieldFilter` prvků, a `match` k určení filtrů.  Nastavení `name` atributu na hvězdičku ( \* ) bude odpovídat všem.  
   
 ```xml  
 <mdaConfig>  

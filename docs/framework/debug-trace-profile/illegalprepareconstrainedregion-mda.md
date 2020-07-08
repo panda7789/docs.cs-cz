@@ -1,5 +1,6 @@
 ---
 title: illegalPrepareConstrainedRegion – pomocník spravovaného ladění (MDA)
+description: Přečtěte si pomocníka spravovaného ladění illegalPrepareConstrainedRegion, který je vyvolán, pokud volání PrepareConstrainedRegions není následováno příkazem try.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - PrepareConstrainedRegions method
@@ -8,30 +9,29 @@ helpviewer_keywords:
 - IllegalPrepareConstrainedRegions MDA
 - MDAs (managed debugging assistants), illegal PrepareConstrainedRegions
 ms.assetid: 2f9b5031-f910-4e01-a196-f89eab313eaf
-ms.openlocfilehash: b80d6160876834b22e8d9d1eb7112b8b67c15fcc
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
-ms.translationtype: MT
+ms.openlocfilehash: d6a0d1d95840ebd735806c5547730ae9e0b2aace
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77216463"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86051282"
 ---
 # <a name="illegalprepareconstrainedregion-mda"></a>illegalPrepareConstrainedRegion – pomocník spravovaného ladění (MDA)
-Pokud volání metody <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A?displayProperty=nameWithType> přímo nepředchází příkaz `try` obslužné rutiny výjimky, je aktivována aplikace `illegalPrepareConstrainedRegion` Managed Debugging Assistant (MDA). Toto omezení je na úrovni jazyka MSIL, takže je povoleno mít zdroj negenerující kód mezi voláním a `try`, jako jsou například komentáře.  
+`illegalPrepareConstrainedRegion`Pomocník spravovaného ladění (MDA) je aktivován, pokud <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A?displayProperty=nameWithType> volání metody přímo nepředchází `try` příkaz obslužné rutiny výjimky. Toto omezení je na úrovni MSIL, takže je povoleno mít zdroj negenerující kód mezi voláním a `try` , jako jsou komentáře.  
   
 ## <a name="symptoms"></a>Příznaky  
- Omezená oblast provádění (CER), která se nikdy nepovažuje za takovou, ale jako jednoduchý blok zpracování výjimek (`finally` nebo `catch`). V důsledku toho se oblast nespustí v případě stavu mimo paměti nebo přerušení vlákna.  
+ Omezená oblast provádění (CER), která se nikdy nepovažuje za takovou, ale jako jednoduchý blok zpracování výjimek ( `finally` nebo `catch` ). V důsledku toho se oblast nespustí v případě stavu mimo paměti nebo přerušení vlákna.  
   
 ## <a name="cause"></a>Příčina  
- Vzor přípravy pro CER se nedodržuje správně.  Toto je chybná událost. Volání metody <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> používané k označení obslužných rutin výjimek v `catch`/`finally`/`fault`/`filter` bloky musí být použity těsně před příkazem `try`.  
+ Vzor přípravy pro CER se nedodržuje správně.  Toto je chybná událost. <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A>Volání metody použité k označení obslužných rutin výjimek, protože zavedete-li CER do jejich `catch` / `finally` / `fault` / `filter` bloků, je nutné použít těsně před `try` příkazem.  
   
 ## <a name="resolution"></a>Řešení  
- Zajistěte, aby volání <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> následovalo těsně před příkazem `try`.  
+ Zajistěte, aby volání <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> následovalo těsně před `try` příkazem.  
   
 ## <a name="effect-on-the-runtime"></a>Vliv na modul runtime  
  Tento MDA nemá žádný vliv na CLR.  
   
 ## <a name="output"></a>Výstup  
- MDA zobrazuje název metody, která volá metodu <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A>, posun MSIL a zprávu indikující volání bezprostředně před začátkem bloku try.  
+ MDA zobrazuje název metody, která volá <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> metodu, posun MSIL a zprávu indikující volání bezprostředně před začátkem bloku try.  
   
 ## <a name="configuration"></a>Konfigurace  
   

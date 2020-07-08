@@ -4,12 +4,11 @@ description: 'Seznamte se s nepojmenovanými a pojmenovanými typy řazené kole
 ms.date: 05/15/2018
 ms.technology: csharp-fundamentals
 ms.assetid: ee8bf7c3-aa3e-4c9e-a5c6-e05cc6138baa
-ms.openlocfilehash: 497f95811677c300e1fadad65eb495dced7f2da3
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
-ms.translationtype: MT
+ms.openlocfilehash: 0fb6f043857a9932b7a86f773cce812e0fd49dcb
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84374613"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86051854"
 ---
 # <a name="c-tuple-types"></a>Typy řazené kolekce členů jazyka C#
 
@@ -46,7 +45,7 @@ Tyto názvy jsou jedinými názvy, které můžete použít pro *nepojmenované 
 Řazená kolekce členů v předchozím příkladu byla inicializována pomocí literálových konstant a v jazyce C# 7,1 nebudou vytvořeny názvy elementů pomocí *projekce názvů polí řazené kolekce členů* .
 
 Při inicializaci řazené kolekce členů ale můžete použít nové funkce jazyka, které každému poli přidávají lepší názvy. Tím dojde k vytvoření *pojmenované řazené kolekce členů*.
-Pojmenované řazené kolekce členů mají stále elementy s názvem `Item1` , `Item2` `Item3` a tak dále.
+Pojmenované řazené kolekce členů mají stále prvky s názvem `Item1` ,, `Item2` `Item3` a tak dále.
 Mají však také synonyma pro libovolný z těchto elementů, které máte pojmenovány.
 Pojmenovanou řazenou kolekci členů vytvoříte zadáním názvů pro každý prvek. Jedním ze způsobů, jak zadat názvy v rámci inicializace řazené kolekce členů:
 
@@ -54,7 +53,7 @@ Pojmenovanou řazenou kolekci členů vytvoříte zadáním názvů pro každý 
 
 Tato synonyma jsou zpracovávána kompilátorem a jazykem, aby bylo možné používat pojmenované řazené kolekce členů efektivně. IDEs a editory můžou tyto sémantické názvy číst pomocí rozhraní Roslyn API. Na prvky pojmenované řazené kolekce členů můžete odkazovat pomocí těchto sémantických názvů kdekoli ve stejném sestavení. Kompilátor nahradí názvy, které jste definovali, `Item*` ekvivalenty při generování zkompilovaného výstupu. Kompilovaný jazyk MSIL (Microsoft Intermediate Language) neobsahuje názvy, které jste těmto prvkům zadali.
 
-Počínaje jazykem C# 7,1 mohou být názvy polí pro řazené kolekce členů poskytnuty z proměnných používaných k inicializaci řazené kolekce členů. Tato metoda je označována jako **[Inicializátory projekcí řazené kolekce členů](#tuple-projection-initializers)**. Následující kód vytvoří řazenou kolekci členů s názvem `accumulation` s prvky `count` (celé číslo) a `sum` (Double).
+Počínaje jazykem C# 7,1 mohou být názvy polí pro řazené kolekce členů poskytnuty z proměnných používaných k inicializaci řazené kolekce členů. Poskytování názvů polí pro řazené kolekce členů je označováno jako **[Inicializátory projekce řazené kolekce členů](#tuple-projection-initializers)**. Následující kód vytvoří řazenou kolekci členů s názvem `accumulation` s prvky `count` (celé číslo) a `sum` (Double).
 
 [!code-csharp[ProjectedTuple](../../samples/snippets/csharp/tuples/program.cs#ProjectedTupleNames "Named tuple")]
 
@@ -147,7 +146,7 @@ Jedním z nejběžnějších použití pro řazené kolekce členů je jako náv
 
 > [!NOTE]
 > Tyto příklady vypočítají nesprávnou směrodatnou odchylku vzorků.
-> Opravený Vzorec směrodatné odchylky (standardní vzorek) rozdělí součet kvadratických rozdílů od střední hodnoty (N-1) namísto N, jako `Average` metoda rozšíření. Pokud chcete získat další informace o rozdílech mezi těmito vzorci pro směrodatnou odchylku, Projděte si text statistiky.
+> Opravený Vzorec směrodatné odchylky (standardní vzorek) rozdělí součet kvadratických rozdílů od střední hodnoty (N-1) namísto N, jako `Average` metoda rozšíření.
 
 Předchozí kód následuje vzorec Textbook pro směrodatnou odchylku. Vytváří správnou odpověď, ale jedná se o neefektivní implementaci. Tato metoda sestaví sekvenci dvakrát: jednou pro vytvoření průměru a jednou pro vytvoření průměru z čtverce rozdílu v průměru.
 (Nezapomeňte, že dotazy LINQ jsou vyhodnoceny jako laxně vytvářená, takže výpočet rozdílů od střední hodnoty a průměr těchto rozdílů činí pouze jeden výčet.)

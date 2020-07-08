@@ -2,12 +2,11 @@
 title: 'Postupy: Výměna zpráv ve spolehlivých relacích'
 ms.date: 03/30/2017
 ms.assetid: 87cd0e75-dd2c-44c1-8da0-7b494bbdeaea
-ms.openlocfilehash: 5b01ddfd95db2f7e88f9481265c348f4f16fbbee
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
-ms.translationtype: MT
+ms.openlocfilehash: 39dd6636f80b107ced1caac29869c6c66e67e21e
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84579473"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86052036"
 ---
 # <a name="how-to-exchange-messages-within-a-reliable-session"></a>Postupy: Výměna zpráv ve spolehlivých relacích
 
@@ -27,13 +26,13 @@ Zdrojovou kopii tohoto příkladu najdete v tématu o [spolehlivé relaci WS](..
 
    [!code-csharp[c_HowTo_UseReliableSession#1122](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_usereliablesession/cs/service.cs#1122)]
 
-1. Vytvořte soubor *Web. config* pro konfiguraci koncového bodu pro `CalculatorService` , který používá se <xref:System.ServiceModel.WSHttpBinding> zapnutou spolehlivou relací a objednání požadovaných zpráv.
+1. Vytvořte soubor *Web.config* pro konfiguraci koncového bodu pro `CalculatorService` , který používá možnost <xref:System.ServiceModel.WSHttpBinding> s povolenou spolehlivou relací a seřazeným doručením požadovaných zpráv.
 
    [!code-xml[c_HowTo_UseReliableSession#2111](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_usereliablesession/common/web.config#2111)]
 
 1. Vytvořte soubor *Service. svc* , který obsahuje řádek:
 
-   ```
+   ```aspx-csharp
    <%@ServiceHost language=c# Service="CalculatorService" %>
    ```
 
@@ -41,7 +40,7 @@ Zdrojovou kopii tohoto příkladu najdete v tématu o [spolehlivé relaci WS](..
 
 ### <a name="configure-the-client-with-a-wshttpbinding-to-use-a-reliable-session"></a>Konfigurace klienta s WSHttpBinding pro použití spolehlivé relace
 
-1. K vygenerování kódu z metadat služby použijte [Nástroj*Svcutil. exe*(ServiceModel Metadata Utility)](../servicemodel-metadata-utility-tool-svcutil-exe.md) z příkazového řádku:
+1. Pro generování kódu z metadat služby použijte nástroj pro dodané [metadata (*Svcutil.exe*)](../servicemodel-metadata-utility-tool-svcutil-exe.md) z příkazového řádku:
 
    ```console
    Svcutil.exe <service's Metadata Exchange (MEX) address or HTTP GET address>
@@ -55,7 +54,7 @@ Zdrojovou kopii tohoto příkladu najdete v tématu o [spolehlivé relaci WS](..
 
    [!code-csharp[C_HowTo_UseReliableSession#1222](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_usereliablesession/cs/client.cs#1222)]
 
-1. *Svcutil. exe* také generuje konfiguraci pro klienta, který používá <xref:System.ServiceModel.WSHttpBinding> třídu. Pojmenujte konfigurační soubor *App. config* při použití sady Visual Studio.
+1. *Svcutil.exe* také generuje konfiguraci pro klienta, který používá <xref:System.ServiceModel.WSHttpBinding> třídu. Při použití sady Visual Studio pojmenujte konfigurační soubor *App.config* .
 
    [!code-xml[C_HowTo_UseReliableSession#2211](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_usereliablesession/common/app.config#2211)]
 
@@ -67,7 +66,7 @@ Zdrojovou kopii tohoto příkladu najdete v tématu o [spolehlivé relaci WS](..
 
 ## <a name="example"></a>Příklad
 
-Několik vazeb poskytovaných systémem podporuje ve výchozím nastavení spolehlivé relace. Zde jsou některé z nich:
+Několik vazeb poskytovaných systémem podporuje ve výchozím nastavení spolehlivé relace. Tady jsou některé z nich:
 
 - <xref:System.ServiceModel.WSDualHttpBinding>
 

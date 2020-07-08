@@ -4,12 +4,11 @@ description: Naučte se sestavovat znovu použitelné součásti uživatelského
 author: danroth27
 ms.author: daroth
 ms.date: 09/18/2019
-ms.openlocfilehash: 1a5f6b63143c4fd7a276219b9c4877e9e355c996
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
-ms.translationtype: MT
+ms.openlocfilehash: f6528b1e68b49b6ee3949baca166f4806448718b
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83378324"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86051449"
 ---
 # <a name="build-reusable-ui-components-with-blazor"></a>Sestavení opakovaně použitelných součástí uživatelského rozhraní pomocí Blazor
 
@@ -79,16 +78,16 @@ Následující tabulka shrnuje různé direktivy Razor používané v Blazor a j
 
 |Směrnici    |Popis|Příklad|Ekvivalentní webové formuláře|
 |-------------|-----------|-------|--------------------|
-|`@attribute` |Přidá do komponenty atribut na úrovni třídy.|`@attribute [Authorize]`|Žádné|
+|`@attribute` |Přidá do komponenty atribut na úrovni třídy.|`@attribute [Authorize]`|Žádná|
 |`@code`      |Přidá do komponenty členy třídy.|`@code { ... }`|`<script runat="server">...</script>`|
 |`@implements`|Implementuje zadané rozhraní.|`@implements IDisposable`|Použití kódu na pozadí|
 |`@inherits`  |Dědí ze zadané základní třídy.|`@inherits MyComponentBase`|`<%@ Control Inherits="MyUserControlBase" %>`|
-|`@inject`    |Vloží službu do komponenty.|`@inject IJSRuntime JS`|Žádné|
+|`@inject`    |Vloží službu do komponenty.|`@inject IJSRuntime JS`|Žádná|
 |`@layout`    |Určuje komponentu rozložení pro komponentu.|`@layout MainLayout`|`<%@ Page MasterPageFile="~/Site.Master" %>`|
-|`@namespace` |Nastaví obor názvů pro komponentu.|`@namespace MyNamespace`|Žádné|
+|`@namespace` |Nastaví obor názvů pro komponentu.|`@namespace MyNamespace`|Žádná|
 |`@page`      |Určuje trasu pro komponentu.|`@page "/product/{id}"`|`<%@ Page %>`|
 |`@typeparam` |Určuje parametr obecného typu pro komponentu.|`@typeparam TItem`|Použití kódu na pozadí|
-|`@using`     |Určuje obor názvů, který se má uvést do oboru.|`@using MyComponentNamespace`|Přidat obor názvů do *souboru Web. config*|
+|`@using`     |Určuje obor názvů, který se má uvést do oboru.|`@using MyComponentNamespace`|Přidat obor názvů v *web.config*|
 
 Komponenty Razor také usnadňují rozsáhlé použití *atributů direktiv* u elementů pro řízení různých aspektů, jak se komponenty dostanou kompilovat (zpracování událostí, vázání dat, komponenta & odkazů na prvky a tak dále). Atribut direktivy All se řídí společnou obecnou syntaxí, kde jsou hodnoty v závorkách volitelné:
 
@@ -110,7 +109,7 @@ Různé atributy direktiv používané Blazor ( `@onclick` , `@bind` , `@ref` a 
 
 Mnohé z syntaxí používaných v souborech *. aspx* a *. ascx* mají paralelní syntaxe v Razor. Níže je jednoduché porovnání syntaxí pro webové formuláře ASP.NET a Razor.
 
-|Funkce                      |webové formuláře           |Syntaxe               |Razor         |Syntaxe |
+|Funkce                      |webové formuláře           |Syntax               |Razor         |Syntax |
 |-----------------------------|--------------------|---------------------|--------------|-------|
 |Direktivy                   |`<%@ [directive] %>`|`<%@ Page %>`        |`@[directive]`|`@page`|
 |Bloky kódu                  |`<% %>`             |`<% int x = 123; %>` |`@{ }`        |`@{ int x = 123; }`|
@@ -146,7 +145,7 @@ Kromě normálního formátu HTML mohou komponenty také použít jiné komponen
 Na rozdíl od webových formulářů ASP.NET, komponent v Blazor:
 
 - Nepoužívejte předponu elementu (například `asp:` ).
-- Nevyžaduje registraci na stránce nebo v *souboru Web. config*.
+- Pro stránku nebo *web.config*Nevyžadovat registraci.
 
 Komponenty Razor si můžete představit jako typy .NET, protože jsou přesně to, co jsou. Pokud je odkazováno na sestavení obsahující komponentu, je součást k dispozici pro použití. Chcete-li převést obor názvů komponenty do oboru, použijte `@using` direktivu:
 
@@ -602,8 +601,8 @@ Výstup této součásti vypadá takto:
 ```html
 <h1>My list</h1>
 <ul>
-    <li>The message is: message1</li>
-    <li>The message is: message2</li>
+    <li><p>The message is: message1</p></li>
+    <li><p>The message is: message2</p></li>
 <ul>
 ```
 
@@ -639,7 +638,7 @@ public class CounterBase : ComponentBase
 
 Viditelnost členů komponenty v základní třídě musí být `protected` nebo `public` viditelná pro třídu součásti.
 
-## <a name="additional-resources"></a>Další materiály a zdroje informací
+## <a name="additional-resources"></a>Další zdroje
 
 Předchozí není vyčerpávajícím způsobem všech aspektů Blazor komponent. Další informace o tom, jak [vytvořit a používat ASP.NET Core komponenty Razor](/aspnet/core/blazor/components), najdete v dokumentaci k Blazor.
 

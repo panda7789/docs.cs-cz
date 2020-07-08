@@ -8,17 +8,16 @@ helpviewer_keywords:
 - object creation [Visual Basic], COM objects
 - COM objects, walkthroughs
 ms.assetid: 7b07a463-bc72-4392-9ba0-9dfcb697a44f
-ms.openlocfilehash: bb312317b2bbcb77bed9e3966db6d9fd5db79e4c
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
-ms.translationtype: MT
+ms.openlocfilehash: 6ff23f73af384a1440bcebd4b6bac21714e01756
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84396737"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86051477"
 ---
 # <a name="walkthrough-creating-com-objects-with-visual-basic"></a>Návod: Vytváření objektů modelu COM pomocí jazyka Visual Basic
 Při vytváření nových aplikací nebo součástí je nejvhodnější vytvořit .NET Framework sestavení. Visual Basic ale také usnadňuje vystavení .NET Framework součásti modelu COM. To vám umožní poskytnout nové komponenty pro starší sady aplikací, které vyžadují komponenty modelu COM. Tento návod ukazuje, jak použít Visual Basic k vystavení objektů .NET Framework jako objektů COM, a to s šablonou třídy modelu COM i bez ní.  
   
- Nejjednodušší způsob, jak vystavit objekty COM, je použití šablony třídy modelu COM. Šablona třídy modelu COM vytvoří novou třídu a potom nakonfiguruje projekt tak, aby generoval třídu a interoperabilitu vrstvu jako objekt modelu COM a zaregistroval jej s operačním systémem.  
+ Nejjednodušší způsob, jak vystavit objekty COM, je použití šablony třídy modelu COM. Tato šablona vytvoří novou třídu a potom nakonfiguruje projekt tak, aby generoval třídu s vrstvou interoperability jako objekt modelu COM a zaregistroval ji v operačním systému.  
   
 > [!NOTE]
 > I když můžete vystavit třídu vytvořenou v Visual Basic jako objekt modelu COM pro použití nespravovaného kódu, nejedná se o skutečný objekt COM a nelze jej použít Visual Basic. Další informace najdete v tématu [interoperabilita modelu COM v aplikacích .NET Framework](com-interoperability-in-net-framework-applications.md).  
