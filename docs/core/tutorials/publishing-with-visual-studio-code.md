@@ -4,6 +4,7 @@ description: Publikování vytvoří sadu souborů, které jsou nutné ke spušt
 ms.date: 07/04/2020
 ms.openlocfilehash: 8fd9975e8a88704b9dea45b40127c8dc03f7d09f
 ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 07/07/2020
 ms.locfileid: "86051880"
