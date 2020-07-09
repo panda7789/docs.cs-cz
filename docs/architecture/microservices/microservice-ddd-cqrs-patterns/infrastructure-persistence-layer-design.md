@@ -1,49 +1,49 @@
 ---
 title: Návrh vrstvy trvalosti infrastruktury
-description: Architektura mikroslužeb .NET pro kontejnerizované aplikace .NET | Prozkoumejte vzor úložiště v návrhu vrstvy trvalosti infrastruktury.
+description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Prozkoumejte vzor úložiště v návrhu vrstvy trvalosti infrastruktury.
 ms.date: 10/08/2018
-ms.openlocfilehash: 1b2665e81ade60affa84563121c04bca08537f07
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+ms.openlocfilehash: 3c18582eb5db61a61b366c06f361d297e698b39a
+ms.sourcegitcommit: 4ad2f8920251f3744240c3b42a443ffbe0a46577
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80988476"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86100844"
 ---
 # <a name="design-the-infrastructure-persistence-layer"></a>Návrh vrstvy trvalosti infrastruktury
 
-Součásti trvalosti dat poskytují přístup k datům hostovaným v rámci hranic mikroslužby (to znamená databáze mikroslužeb). Obsahují skutečné implementace komponent, jako jsou úložiště a [jednotky pracovních](https://martinfowler.com/eaaCatalog/unitOfWork.html) tříd, <xref:Microsoft.EntityFrameworkCore.DbContext> jako jsou vlastní entity Framework (EF) objekty. EF DbContext implementuje úložiště a vzory jednotky práce.
+Komponenty Trvalost dat poskytují přístup k datům hostovaným v rámci hranic mikroslužby (tj. databáze mikroslužeb). Obsahují skutečnou implementaci komponent, jako jsou úložiště a [jednotky pracovních](https://martinfowler.com/eaaCatalog/unitOfWork.html) tříd, jako jsou například objekty EF (Custom Entity Framework) <xref:Microsoft.EntityFrameworkCore.DbContext> . EF DbContext implementuje jak úložiště, tak i pracovní jednotky.
 
 ## <a name="the-repository-pattern"></a>Vzor úložiště
 
-Repozitáře jsou třídy nebo součásti, které zapouzdřují logiku potřebnou pro přístup ke zdrojům dat. Centralizují běžné funkce přístupu k datům a poskytují lepší udržovatelnost a oddělují infrastrukturu nebo technologii používanou pro přístup k databázím z vrstvy modelu domény. Pokud používáte objekt relační mapovač (ORM), jako je entity Framework, kód, který musí být implementován je zjednodušena, díky LINQ a silné psaní. To umožňuje zaměřit se na logiku trvalost dat spíše než na připojení k datům instalatérství.
+Úložiště jsou třídy nebo komponenty, které zapouzdřují logiku potřebnou k přístupu ke zdrojům dat. Slouží k centralizaci běžných funkcí přístupu k datům, což zajišťuje lepší udržovatelnost a odpojuje infrastrukturu nebo technologii používanou pro přístup k databázím z vrstvy doménového modelu. Použijete-li objektově-relační mapovači (ORM), jako je Entity Framework, kód, který musí být implementován, je zjednodušený, díky LINQ a silnému psaní. To vám umožní soustředit se na logiku trvalosti dat, a ne na domovníing pro přístup k datům.
 
-Vzor úložiště je dobře zdokumentovaný způsob práce se zdrojem dat. V knize [Vzory architektury podnikových aplikací](https://www.amazon.com/Patterns-Enterprise-Application-Architecture-Martin/dp/0321127420/)popisuje Martin Fowler repozitář takto:
+Vzor úložiště je dobře dokumentovaný způsob práce se zdrojem dat. V rámci příručky k [architektuře podnikových aplikací](https://www.amazon.com/Patterns-Enterprise-Application-Architecture-Martin/dp/0321127420/)Fowlera Martin popisuje úložiště následujícím způsobem:
 
-> Úložiště provádí úkoly prostředníka mezi vrstvami modelu domény a mapováním dat, které funguje podobně jako sada objektů domény v paměti. Klientské objekty deklarativně vytvářet dotazy a odesílat je do úložišť pro odpovědi. Koncepčně úložiště zapouzdřuje sadu objektů uložených v databázi a operace, které lze provést na nich, poskytuje způsob, který je blíže k vrstvě trvalosti. Repozitáře také podporují účel jasného a jednosměrného oddělení závislosti mezi pracovní doménou a přidělováním nebo mapováním dat.
+> Úložiště provádí úlohy zprostředkovatele mezi vrstvami doménového modelu a mapováním dat a funguje podobným způsobem jako sada doménových objektů v paměti. Klientské objekty deklarativně sestavují dotazy a odesílají je do úložišť pro odpovědi. V koncepčním případě úložiště zapouzdřuje sadu objektů uložených v databázi a operace, které lze v nich provést, a poskytuje tak způsob, který je blíže vrstvě trvalosti. Úložiště také podporují účely oddělení, jasně i v jednom směru závislost mezi pracovní doménou a přidělením nebo mapováním dat.
 
-### <a name="define-one-repository-per-aggregate"></a>Definovat jedno úložiště na agregaci
+### <a name="define-one-repository-per-aggregate"></a>Definování jednoho úložiště na agregaci
 
-Pro každý agregační nebo agregační kořenbyste měli vytvořit jednu třídu úložiště. V mikroslužbě založené na vzoru návrhu řízeného doménou (DDD) by jediným kanálem, který byste měli použít k aktualizaci databáze, by měly být repozitáře. Důvodem je, že mají vztah 1:1 s agregační kořen, který řídí agregační invariants a transakční konzistence. Je v pořádku dotazovat databáze prostřednictvím jiných kanálů (stejně jako můžete provést po cqrs přístup), protože dotazy nemění stav databáze. Transakční oblast (tj. aktualizace) však musí být vždy řízena úložišti a agregačními kořeny.
+Pro každý agregovaný nebo agregovaný kořenový adresář byste měli vytvořit jednu třídu úložiště. V mikroslužbě založené na vzorcích pro návrh na základě domén (DDD) by měl být jediným kanálem, který byste měli použít k aktualizaci databáze, úložiště. Důvodem je, že mají relaci 1:1 s agregovaným kořenovým adresářem, který řídí invariantování agregace a transakční konzistenci. Je možné se dotazovat databáze prostřednictvím jiných kanálů (jak můžete postupovat podle CQRS přístupu), protože dotazy nemění stav databáze. Nicméně transakční oblast (tj. aktualizace) musí být vždy ovládána úložištěm a agregovanými kořeny.
 
-V podstatě úložiště umožňuje naplnit data v paměti, která pochází z databáze ve formě entit domény. Jakmile entity jsou v paměti, mohou být změněny a potom trvalé zpět do databáze prostřednictvím transakcí.
+V podstatě umožňuje úložiště naplnit data v paměti, která pocházejí z databáze, ve formě doménových entit. Jakmile jsou entity v paměti, můžou se změnit a pak trvale uložit do databáze prostřednictvím transakcí.
 
-Jak již bylo uvedeno dříve, pokud používáte architekturu CQS/CQRS, počáteční dotazy jsou prováděny vedlejšími dotazy mimo model domény, prováděné jednoduchými příkazy SQL pomocí Dapper. Tento přístup je mnohem flexibilnější než úložiště, protože můžete dotazovat a připojit všechny tabulky, které potřebujete, a tyto dotazy nejsou omezeny pravidly z agregací. Tato data přejdou do prezentační vrstvy nebo klientské aplikace.
+Jak bylo uvedeno dříve, pokud používáte model architektury CQS/CQRS, počáteční dotazy se provádějí pomocí dotazů na straně sebe z doménového modelu, které provádí jednoduché příkazy SQL pomocí Dapperem. Tento přístup je mnohem flexibilnější než u úložišť, protože můžete zadávat dotazy a spojit se s libovolnými tabulkami, které potřebujete, a tyto dotazy nejsou omezeny pravidly z agregací. Tato data přecházejí do prezentační vrstvy nebo klientské aplikace.
 
-Pokud uživatel provede změny, data, která mají být aktualizována, pocházejí z klientské aplikace nebo prezentační vrstvy do aplikační vrstvy (například služby webového rozhraní API). Když obdržíte příkaz v obslužné rutině příkazu, můžete použít úložiště k získání dat, která chcete aktualizovat z databáze. Aktualizujete jej v paměti s daty předanými pomocí příkazů a potom přidáte nebo aktualizujete data (entity domény) v databázi prostřednictvím transakce.
+Pokud uživatel provede změny, data, která mají být aktualizována, pocházejí z klientské aplikace nebo prezentační vrstvy do aplikační vrstvy (například služby webového rozhraní API). Když obdržíte příkaz v obslužné rutině příkazu, použijete úložiště k získání dat, která chcete aktualizovat z databáze. Aktualizujete ho v paměti daty, která byla předána pomocí příkazů, a pak v databázi přidáte nebo aktualizujete data (entity domény) v rámci transakce.
 
-Je důležité znovu zdůraznit, že byste měli definovat pouze jedno úložiště pro každý kořenový adresář agregace, jak je znázorněno na obrázku 7-17. Chcete-li dosáhnout cíle agregační kořen zachovat transakční konzistenci mezi všechny objekty v rámci agregace, nikdy byste neměli vytvářet úložiště pro každou tabulku v databázi.
+Je důležité se znovu zdůraznit, že byste měli definovat jenom jedno úložiště pro každý agregovaný kořen, jak je znázorněno na obrázku 7-17. Aby bylo možné dosáhnout cíle agregovaného kořene pro zachování transakční konzistence mezi všemi objekty v rámci agregace, neměli byste nikdy vytvořit úložiště pro každou tabulku v databázi.
 
-![Diagram znázorňující vztahy domény a jiné infrastruktury.](./media/infrastructure-persistence-layer-design/repository-aggregate-database-table-relationships.png)
+![Diagram znázorňující vztahy domény a jiné infrastruktury](./media/infrastructure-persistence-layer-design/repository-aggregate-database-table-relationships.png)
 
 **Obrázek 7-17**. Vztah mezi úložišti, agregacemi a databázovými tabulkami
 
-Výše uvedený diagram znázorňuje vztahy mezi vrstvami domény a infrastruktury: Agregace kupujícího závisí na IBuyerRepository a Agregace pořadí závisí na rozhraní IOrderRepository, tato rozhraní jsou implementovány ve vrstvě infrastruktury odpovídajícími úložišti, které závisí na UnitOfWork, také implementováno tam, že přistupuje k tabulkám v datové vrstvě.
+Výše uvedený diagram znázorňuje vztahy mezi doménami a vrstvami infrastruktury: agregace kupující závisí na IBuyerRepositorych a agregačních seřazeních závisí na rozhraních IOrderRepository. Tato rozhraní se implementují do vrstvy infrastruktury odpovídajícími úložišti, která jsou závislá na UnitOfWork, která se taky implementuje v této oblasti, která přistupuje k tabulkám v datové vrstvě.
 
-### <a name="enforce-one-aggregate-root-per-repository"></a>Vynucení jednoho agregačního kořenového adresáře na úložiště
+### <a name="enforce-one-aggregate-root-per-repository"></a>Vysazení jednoho agregovaného kořene na úložiště
 
-Může být užitečné implementovat návrh úložiště takovým způsobem, že vynucuje pravidlo, že pouze agregační kořeny by měly mít úložiště. Můžete vytvořit obecný nebo základní typ úložiště, který omezuje typ entit, se `IAggregateRoot` kterými pracuje, aby bylo zajištěno, že mají rozhraní značky.
+To může být užitečné pro implementaci návrhu úložiště takovým způsobem, že vynutilo pravidlo, že by měli mít úložiště jenom agregované kořeny. Můžete vytvořit obecný nebo základní typ úložiště, který omezuje typ entit, se kterými pracuje, aby bylo zajištěno, že mají `IAggregateRoot` rozhraní značek.
 
-Proto každá třída úložiště implementovaná ve vrstvě infrastruktury implementuje vlastní smlouvu nebo rozhraní, jak je znázorněno v následujícím kódu:
+Proto každá třída úložiště implementovaná na infrastruktuře infrastruktury implementuje svůj vlastní kontrakt nebo rozhraní, jak je znázorněno v následujícím kódu:
 
 ```csharp
 namespace Microsoft.eShopOnContainers.Services.Ordering.Infrastructure.Repositories
@@ -65,7 +65,7 @@ public interface IOrderRepository : IRepository<Order>
 }
 ```
 
-Lepší způsob, jak mít kód vynutit konvence, které každé úložiště souvisí s jeden agregace je implementovat obecný typ úložiště. Tímto způsobem je explicitní, že používáte úložiště k cílení na konkrétní agregaci. To lze snadno provést implementací obecného `IRepository` základního rozhraní, jako v následujícím kódu:
+Lepší způsob, jak mít kód vyhovět konvenci, že každé úložiště souvisí s jednou agregací, je implementovat obecný typ úložiště. Tímto způsobem je explicitní použít úložiště k zaměření na konkrétní agregaci. To lze snadno provést implementací obecného `IRepository` základního rozhraní, jak je uvedeno v následujícím kódu:
 
 ```csharp
 public interface IRepository<T> where T : IAggregateRoot
@@ -74,59 +74,59 @@ public interface IRepository<T> where T : IAggregateRoot
 }
 ```
 
-### <a name="the-repository-pattern-makes-it-easier-to-test-your-application-logic"></a>Vzor úložiště usnadňuje testování aplikační logiky
+### <a name="the-repository-pattern-makes-it-easier-to-test-your-application-logic"></a>Vzor úložiště usnadňuje testování logiky aplikace.
 
-Vzor úložiště umožňuje snadno otestovat aplikaci pomocí testování částí. Nezapomeňte, že testy částí pouze otestovat váš kód, nikoli infrastruktury, takže abstrakce úložiště usnadnit dosažení tohoto cíle.
+Vzor úložiště vám umožňuje snadno testovat aplikace pomocí testů jednotek. Mějte na paměti, že testy jednotek testují pouze kód, nikoli infrastrukturu, takže abstrakce úložiště usnadňují dosažení tohoto cíle.
 
-Jak je uvedeno v předchozí části, doporučujeme definovat a umístit rozhraní úložiště ve vrstvě modelu domény tak, aby aplikační vrstva, jako je například mikroslužba webového rozhraní API, nezávisela přímo na vrstvě infrastruktury, kde jste implementovali skutečné třídy úložiště. Tímto způsobem a pomocí vkládání závislostí v řadičích webového rozhraní API můžete implementovat mock repozitáře, které vracejí falešná data namísto dat z databáze. Tento přístup oddělený umožňuje vytvářet a spouštět testy částí, které zaměřují logiku vaší aplikace bez nutnosti připojení k databázi.
+Jak je uvedeno v předchozí části, doporučujeme definovat a umístit rozhraní úložiště do vrstvy doménového modelu, takže aplikační vrstva, jako je například vaše mikroslužba webového rozhraní API, nezávisí přímo na vrstvě infrastruktury, ve které jste implementovali skutečné třídy úložiště. Tímto způsobem a použitím injektáže závislosti v řadičích webového rozhraní API můžete implementovat napodobná úložiště, která vracejí falešná data namísto dat z databáze. Tento oddělený přístup umožňuje vytvořit a spustit testy jednotek, které se zaměřují na logiku vaší aplikace bez nutnosti připojení k databázi.
 
-Připojení k databázím může selhat a co je důležitější, spuštění stovky testů proti databázi je špatné ze dvou důvodů. Za prvé, to může trvat dlouhou dobu, protože velký počet testů. Za druhé, záznamy databáze může změnit a ovlivnit výsledky testů tak, aby nemusí být konzistentní. Testování proti databázi není testování částí, ale test integrace. Měli byste mít mnoho testů částí spuštěna rychle, ale méně testů integrace proti databázím.
+Připojení k databázím může selhat a důležitější je, že spouštění stovek testů proti databázi je ze dvou důvodů špatné. Za prvé může trvat dlouhou dobu z důvodu velkého počtu testů. Za druhé se můžou záznamy databáze změnit a ovlivnit výsledky testů, aby mohly být nekonzistentní. Testování proti databázi není jednotkovým testem, ale s testem integrace. Měli byste mít spoustu testů jednotek spuštěných rychleji, ale méně integračních testů pro databáze.
 
-Pokud jde o oddělení obavy pro testování částí, vaše logika pracuje na entity domény v paměti. Předpokládá, že třída úložiště je dodala. Jakmile vaše logika upraví entity domény, předpokládá, že třída úložiště je bude správně ukládat. Důležitým bodem je zde vytvořit testy částí proti modelu domény a jeho logiky domény. Agregační kořeny jsou hlavní hranice konzistence v DDD.
+V souvislosti s oddělením potíží s testováním jednotek vaše logika funguje na doménových entitách v paměti. Předpokládá, že třída úložiště je dodala. Jakmile vaše logika upraví entity domény, předpokládá se, že třída úložiště bude ukládat správně. Důležitým bodem je postup, jak vytvořit testování částí pro doménový model a jeho doménovou logiku. Agregované kořeny jsou hlavní hranice konzistence v DDD.
 
-Úložiště implementovaná v eShopOnContainers spoléhají na implementaci EF Core DbContext vzoru úložiště a jednotky práce pomocí jeho sledování změn, takže tuto funkci neduplikují.
+Úložiště implementovaná v eShopOnContainers spoléhají EF Core na DbContext implementaci úložiště a pracovní jednotky pracovních schémat pomocí sledování změn, takže tyto funkce neduplikují.
 
-### <a name="the-difference-between-the-repository-pattern-and-the-legacy-data-access-class-dal-class-pattern"></a>Rozdíl mezi vzorem úložiště a starším vzorem třídy přístupu k datům (třída DAL)
+### <a name="the-difference-between-the-repository-pattern-and-the-legacy-data-access-class-dal-class-pattern"></a>Rozdíl mezi vzorem úložiště a vzorem třídy pro přístup k datům starší verze (třída DAL)
 
-Objekt pro přístup k datům přímo provádí operace přístupu k datům a trvalosti proti úložišti. Úložiště označí data operacemi, které chcete provést v paměti jednotky pracovního objektu <xref:Microsoft.EntityFrameworkCore.DbContext> (jako v EF při použití třídy), ale tyto aktualizace nejsou prováděny okamžitě do databáze.
+Objekt pro přístup k datům přímo provádí operace přístupu k datům a trvalých operací proti úložišti. Úložiště označí data operacemi, které chcete provést, v paměti objektu Working Object (jako v EF při použití <xref:Microsoft.EntityFrameworkCore.DbContext> třídy), ale tyto aktualizace nejsou okamžitě provedeny v databázi.
 
-Jednotka práce se označuje jako jedna transakce, která zahrnuje více operací vložení, aktualizace nebo odstranění. Jednoduše řečeno, to znamená, že pro konkrétní akci uživatele, jako je například registrace na webu, jsou všechny operace vložení, aktualizace a odstranění zpracovány v jedné transakci. To je efektivnější než zpracování více databázových transakcí v chattier způsobem.
+Pracovní jednotka je označována jako jediná transakce, která zahrnuje několik operací vložení, aktualizace nebo odstranění. V jednoduchých případech to znamená, že pro konkrétní akci uživatele, jako je například registrace na webu, jsou všechny operace vložení, aktualizace a odstranění zpracovávány v rámci jedné transakce. To je efektivnější než zpracování více transakcí databáze chattier způsobem.
 
-Tyto více operací trvalosti jsou prováděny později v jedné akci, když váš kód z aplikační vrstvy příkazy. Rozhodnutí o použití změn v paměti na skutečné úložiště databáze je obvykle založena na [jednotce práce vzor](https://martinfowler.com/eaaCatalog/unitOfWork.html). V EF je vzor jednotky práce <xref:Microsoft.EntityFrameworkCore.DbContext>implementován jako .
+Tyto vícenásobné operace trvalosti jsou prováděny později v rámci jedné akce, když kód z aplikační vrstvy je příkaz. Rozhodnutí o použití změn v paměti pro skutečné úložiště databáze je obvykle založené na [modelu pracovní jednotky](https://martinfowler.com/eaaCatalog/unitOfWork.html). V EF je pracovní jednotka modelu implementována jako <xref:Microsoft.EntityFrameworkCore.DbContext> .
 
-V mnoha případech tento vzor nebo způsob použití operací proti úložišti může zvýšit výkon aplikace a snížit možnost nekonzistence. Také snižuje blokování transakcí v databázových tabulkách, protože všechny zamýšlené operace jsou potvrzeny jako součást jedné transakce. To je efektivnější ve srovnání s prováděním mnoha izolovaných operací proti databázi. Proto vybrané ORM můžete optimalizovat provádění proti databázi seskupením několik akcí aktualizace v rámci stejné transakce, na rozdíl od mnoha malých a samostatných provádění transakcí.
+V mnoha případech může tento model nebo způsob použití operací s úložištěm zvýšit výkon aplikace a snížit možnost nekonzistencí. Také snižuje blokování transakcí v databázových tabulkách, protože všechny zamýšlené operace jsou potvrzeny jako součást jedné transakce. To je efektivnější pro porovnání se spouštěním velkého množství izolovaných operací s databází. Proto vybraný ORM může optimalizovat spouštění proti databázi seskupením několika akcí aktualizace v rámci stejné transakce, na rozdíl od mnoha malých a oddělených spuštění transakcí.
 
-### <a name="repositories-shouldnt-be-mandatory"></a>Repozitáře by neměly být povinné
+### <a name="repositories-shouldnt-be-mandatory"></a>Úložiště by neměla být povinná
 
-Vlastní úložiště jsou užitečné z důvodů uvedených dříve a to je přístup pro řazení mikroslužeb v eShopOnContainers. Však není základní vzor implementovat v návrhu DDD nebo dokonce obecně .NET vývoj.
+Vlastní úložiště jsou užitečná z výše uvedených důvodů a to je přístup k řazení mikroslužby v eShopOnContainers. Nejedná se ale o zásadní vzor, který by bylo možné implementovat v rámci návrhu DDD nebo dokonce i při obecném vývoji pro .NET.
 
-Například, Jimmy Bogard, při poskytování přímé zpětné vazby pro tuto příručku, řekl následující:
+Například Jimmy Bogard při poskytování přímé zpětné vazby k této příručce říkáme následující:
 
-> Tohle bude asi moje největší zpětná vazba. Já opravdu nejsem fanoušek repozitářů, hlavně proto, že skrývají důležité detaily základního mechanismu perzistence. To je důvod, proč jsem jít na MediatR pro příkazy, taky. Mohu použít plnou sílu perzistence vrstvy, a tlačit všechny, že doména chování do mé souhrnné kořeny. Obvykle se nechci vysmívat svým repozitářům - stále potřebuji mít integrační test se skutečnou věcí. Chystáte CQRS znamenalo, že jsme neměli opravdu potřebu repozitářů nic víc.
+> To pravděpodobně bude největší zpětnou vazbu. Nerozumím ventilátoru úložišť, hlavně protože skrývají důležité podrobnosti základního mechanismu trvalosti. Z tohoto důvodu je to pro příkazy MediatR. Můžu použít plný výkon vrstvy trvalosti a všechny tyto vlastnosti domény nahrajte do agregovaných kořenů. Nechci obvykle nastavovat moje úložiště – I přesto je potřeba mít tento test integrace s skutečnou věc. CQRS znamenalo, že ještě nepotřebujeme nějaká úložiště.
 
-Úložiště může být užitečné, ale nejsou důležité pro váš návrh DDD, tak, jak agregační vzor a bohatý model domény jsou. Proto použijte vzor úložiště nebo ne, jak uznáte za vhodné. V každém případě budete používat vzor úložiště při použití EF Core, i když v tomto případě úložiště pokrývá celou mikroslužbu nebo ohraničený kontext.
+Úložiště můžou být užitečná, ale pro návrh DDD nejsou kritická, a to tak, jak jsou agregovaným vzorem a bohatým doménovým modelem. Proto použijte vzor úložiště, a to podle potřeby. V takovém případě budete používat model úložiště vždy, když použijete EF Core i když v tomto případě úložiště pokrývá celý mikroslužbu nebo ohraničený kontext.
 
 ## <a name="additional-resources"></a>Další zdroje
 
 ### <a name="repository-pattern"></a>Vzor úložiště
 
-- **Edward Hieatt a Rob mě. Vzor úložiště.** \
+- **Edward Hieatt a Rob mě. Vzor úložiště** \
   <https://martinfowler.com/eaaCatalog/repository.html>
 
 - **Vzor úložiště** \
   <https://docs.microsoft.com/previous-versions/msp-n-p/ff649690(v=pandp.10)>
 
-- **Eric Evans. Návrh řízený doménou: Řešení složitosti v srdci softwaru.** (Kniha; obsahuje diskusi o vzoru úložiště) \
+- **Eric Evans. Návrh založený na doméně: řešení složitosti na srdce softwaru.** (Kniha; zahrnuje diskusi ke vzoru úložiště) \
   <https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/>
 
-### <a name="unit-of-work-pattern"></a>Jednotka pracovního vzoru
+### <a name="unit-of-work-pattern"></a>Vzor pracovní jednotky
 
-- **Martin Fowler. Jednotka pracovního vzoru.** \
+- **Martin Fowlera. Model pracovní jednotky.** \
   <https://martinfowler.com/eaaCatalog/unitOfWork.html>
 
-- **Implementace úložiště a jednotky pracovních vzorů v ASP.NET aplikace MVC** \
+- **Implementace vzorového úložiště a pracovní jednotky v aplikaci ASP.NET MVC** \
   <https://docs.microsoft.com/aspnet/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application>
 
 >[!div class="step-by-step"]
->[Předchozí](domain-events-design-implementation.md)
->[další](infrastructure-persistence-layer-implemenation-entity-framework-core.md)
+>[Předchozí](domain-events-design-implementation.md) 
+> [Další](infrastructure-persistence-layer-implementation-entity-framework-core.md)

@@ -3,12 +3,12 @@ title: 'Kurz: vytvoření prvního analyzátoru a opravy kódu'
 description: V tomto kurzu najdete podrobné pokyny k sestavení analyzátoru a opravy kódu pomocí sady .NET Compiler SDK (rozhraní Roslyn API).
 ms.date: 08/01/2018
 ms.custom: mvc
-ms.openlocfilehash: 23ebf4befc75e08592890d85f2dda51251f59cd6
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: c70fcacc6cb30969e5c69ffd0954ac52e637a915
+ms.sourcegitcommit: 4ad2f8920251f3744240c3b42a443ffbe0a46577
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396286"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86100935"
 ---
 # <a name="tutorial-write-your-first-analyzer-and-code-fix"></a>Kurz: vytvoření prvního analyzátoru a opravy kódu
 
@@ -17,6 +17,25 @@ Sada .NET Compiler Platform SDK poskytuje nástroje, které potřebujete k vytv�
 V tomto kurzu se seznámíte s vytvořením **analyzátoru** a s doprovodnou **opravou kódu** pomocí rozhraní API Roslyn. Analyzátor je způsob, jak provádět analýzu zdrojového kódu a nahlásit problém uživateli. V případě potřeby může analyzátor také poskytnout opravu kódu, která představuje úpravu zdrojového kódu uživatele. V tomto kurzu se vytvoří analyzátor, který najde deklarace místních proměnných, které by se daly deklarovat pomocí `const` modifikátoru, ale ne. Oprava doprovodného kódu upraví tyto deklarace a přidá `const` modifikátor.
 
 ## <a name="prerequisites"></a>Požadavky
+
+> [!NOTE]
+> Aktuální šablona sady Visual Studio **Analyzer s opravou kódu (.NET Standard)** obsahuje známou chybu a měla by být opravena ve verzi Visual Studio 2019 verze 16,7. Projekty v šabloně nebudou zkompilovány, pokud nejsou provedeny následující změny:
+>
+> 1. Výběr **nástrojů**  >  **Možnosti**nástroje  >  **Správce balíčků NuGet**  >  **zdroje balíčků**
+>    - Kliknutím na tlačítko plus přidejte nový zdroj:
+>    - Nastavte **zdroj** na `https://dotnet.myget.org/F/roslyn-analyzers/api/v3/index.json` a vyberte **aktualizovat** .
+> 1. Z **Průzkumník řešení**klikněte pravým tlačítkem myši na projekt **MakeConst. vsix** a vyberte **Upravit soubor projektu** .
+>    - Aktualizujte `<AssemblyName>` uzel pro přidání `.Visx` přípony:
+>      - `<AssemblyName>MakeConst.Vsix</AssemblyName>`
+>    - Aktualizujte `<ProjectReference>` uzel na řádku 41 pro změnu `TargetFramework` hodnoty:
+>      - `<ProjectReference Update="@(ProjectReference)" AdditionalProperties="TargetFramework=netstandard2.0" />`
+> 1. Aktualizujte soubor *MakeConstUnitTests.cs* v projektu *MakeConst. test* :
+>    - Změňte řádek 9 na následující, Všimněte si změny oboru názvů:
+>      - `using Verify = Microsoft.CodeAnalysis.CSharp.Testing.MSTest.CodeFixVerifier<`
+>    - Řádek 24 změňte na následující metodu:
+>      - `await Verify.VerifyAnalyzerAsync(test);`
+>    - Řádek 62 změňte na následující metodu:
+>      - `await Verify.VerifyCodeFixAsync(test, expected, fixtest);`
 
 - [Visual Studio 2017](https://visualstudio.microsoft.com/vs/older-downloads/#visual-studio-2017-and-other-products)
 - [Visual Studio 2019](https://www.visualstudio.com/downloads)
@@ -55,7 +74,7 @@ Analýza, která určuje, zda může být proměnná vytvořena, je vyžadována
 - V části **Visual C# > rozšiřitelnosti**vyberte možnost **analyzátor s opravou kódu (.NET Standard)**.
 - Pojmenujte projekt "**MakeConst**" a klikněte na tlačítko OK.
 
-Analyzátor se šablonou opravy kódu vytvoří tři projekty: jeden obsahuje analyzátor a opravu kódu, druhým je projekt testu jednotek a třetí je projekt VSIX. Výchozí spouštěný projekt je projekt VSIX. Stisknutím klávesy **F5** spusťte projekt VSIX. Tím se spustí druhá instance sady Visual Studio, která zavedla nový analyzátor.
+Analyzátor se šablonou opravy kódu vytvoří tři projekty: jeden obsahuje analyzátor a opravu kódu, druhým je projekt testu jednotek a třetí je projekt VSIX. Výchozí spouštěný projekt je projekt VSIX. Stisknutím klávesy <kbd>F5</kbd> spusťte projekt VSIX. Tím se spustí druhá instance sady Visual Studio, která zavedla nový analyzátor.
 
 > [!TIP]
 > Při spuštění analyzátoru spustíte druhou kopii sady Visual Studio. Tato druhá kopie používá k uložení nastavení jiný podregistr registru. To umožňuje odlišit nastavení vizuálu v obou kopiích sady Visual Studio. Můžete vybrat jiný motiv pro experimentální běh sady Visual Studio. Kromě toho nevytvářejte roaming nastavení ani přihlášení k účtu aplikace Visual Studio pomocí experimentálního spuštění sady Visual Studio. Který udržuje nastavení odlišně.
@@ -170,7 +189,7 @@ Právě přidaný kód zajišťuje, že proměnná nebude změněna, a je proto 
 context.ReportDiagnostic(Diagnostic.Create(Rule, context.Node.GetLocation()));
 ```
 
-Svůj průběh můžete zjistit stisknutím klávesy **F5** ke spuštění analyzátoru. Můžete načíst konzolovou aplikaci, kterou jste vytvořili dříve, a pak přidat následující zkušební kód:
+Svůj průběh můžete zjistit stisknutím klávesy <kbd>F5</kbd> ke spuštění analyzátoru. Můžete načíst konzolovou aplikaci, kterou jste vytvořili dříve, a pak přidat následující zkušební kód:
 
 ```csharp
 int x = 0;
@@ -251,7 +270,7 @@ Na konec metody přidejte následující kód `MakeConstAsync` :
 
 [!code-csharp[replace the declaration](~/samples/snippets/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst/MakeConstCodeFixProvider.cs#ReplaceDocument  "Generate a new document by replacing the declaration")]
 
-Oprava kódu je připravená k vyzkoušení.  Stisknutím klávesy F5 spusťte projekt analyzátoru v druhé instanci aplikace Visual Studio. Ve druhé instanci sady Visual Studio vytvořte nový projekt konzolové aplikace v jazyce C# a přidejte několik deklarací místních proměnných inicializovaných s konstantními hodnotami do metody Main. Uvidíte, že jsou hlášeny jako upozornění, jak je uvedeno níže.
+Oprava kódu je připravená k vyzkoušení.  Stisknutím klávesy <kbd>F5</kbd> spusťte projekt analyzátoru v druhé instanci aplikace Visual Studio. Ve druhé instanci sady Visual Studio vytvořte nový projekt konzolové aplikace v jazyce C# a přidejte několik deklarací místních proměnných inicializovaných s konstantními hodnotami do metody Main. Uvidíte, že jsou hlášeny jako upozornění, jak je uvedeno níže.
 
 ![Může vytvořit konstantní upozornění.](media/how-to-write-csharp-analyzer-code-fix/make-const-warning.png)
 
@@ -310,7 +329,7 @@ Předchozí kód také provedl několik změn kódu, který vytváří očekáva
 
 [!code-csharp[string constants for fix test](~/samples/snippets/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst.Test/MakeConstUnitTests.cs#FirstFixTest "string constants for fix test")]
 
-Spusťte tyto dva testy, abyste se ujistili, že jsou průchody. V aplikaci Visual Studio otevřete **Průzkumníka testů** výběrem **test**  >  **Windows**  >  **Průzkumník testů**systému Windows.  Stiskněte odkaz **Spustit vše** .
+Spusťte tyto dva testy, abyste se ujistili, že jsou průchody. V aplikaci Visual Studio otevřete **Průzkumníka testů** výběrem **test**  >  **Windows**  >  **Průzkumník testů**systému Windows. Pak vyberte odkaz **Spustit vše** .
 
 ## <a name="create-tests-for-valid-declarations"></a>Vytvořit testy pro platné deklarace
 
@@ -503,12 +522,12 @@ Tyto zvuky jako velké množství kódu. Není to. Nahraďte řádek, který dek
 using Microsoft.CodeAnalysis.Simplification;
 ```
 
-Spusťte testy a všechny by měly být passované. Congratulate se tak, že spustíte kompletní analyzátor. Stisknutím kombinace kláves CTRL + F5 spusťte projekt analyzátoru v druhé instanci sady Visual Studio s načteným rozšířením Roslyn Preview.
+Spusťte testy a všechny by měly být passované. Congratulate se tak, že spustíte kompletní analyzátor. Stisknutím <kbd>kombinace kláves CTRL + F5</kbd> spusťte projekt analyzátoru v druhé instanci sady Visual Studio s načteným rozšířením Roslyn Preview.
 
 - Ve druhé instanci sady Visual Studio vytvořte nový projekt konzolové aplikace v jazyce C# a přidejte `int x = "abc";` ho do metody Main. Děkujeme, že při první opravě chyby by se pro tuto místní proměnnou proměnné nemělo hlásit žádné upozornění (i když dojde k chybě kompilátoru, jak se očekávalo).
 - Dále přidejte `object s = "abc";` do metody Main. Z důvodu druhé opravy chyby by se nemělo hlásit žádné upozornění.
 - Nakonec přidejte další místní proměnnou, která používá `var` klíčové slovo. Uvidíte, že se nahlásí upozornění a na levé straně se zobrazí návrh.
-- Přesuňte kurzor editoru na podtržení vlnovkou a stiskněte kombinaci kláves CTRL +. pro zobrazení navrhované opravy kódu. Po výběru opravy kódu si všimněte, že klíčové slovo var se nyní zpracovává správně.
+- Přesuňte kurzor editoru na podtržení vlnovkou a stiskněte <kbd>kombinaci kláves CTRL +</kbd>. pro zobrazení navrhované opravy kódu. Po výběru opravy kódu si všimněte, že klíčové slovo var se nyní zpracovává správně.
 
 Nakonec přidejte následující kód:
 
@@ -520,7 +539,7 @@ int k = i + j;
 
 Po těchto změnách získáte červené vlnovky pouze první dvě proměnné. Přidejte `const` do obou a a zobrazí se `i` `j` nové upozornění, protože se `k` teď může jednat o `const` .
 
-Blahopřejeme! Vytvořili jste první rozšíření .NET Compiler Platform, které provádí průběžnou analýzu kódu k detekci problému a nabízí rychlou opravu pro její opravu. Na cestě jste se naučili mnoho rozhraní API kódu, která jsou součástí sady .NET Compiler Platform SDK (rozhraní API Roslyn). Práci s [dokončenou ukázkou](https://github.com/dotnet/samples/tree/master/csharp/roslyn-sdk/Tutorials/MakeConst) najdete v našem úložišti GitHub Samples.
+Gratulujeme! Vytvořili jste první rozšíření .NET Compiler Platform, které provádí průběžnou analýzu kódu k detekci problému a nabízí rychlou opravu pro její opravu. Na cestě jste se naučili mnoho rozhraní API kódu, která jsou součástí sady .NET Compiler Platform SDK (rozhraní API Roslyn). Práci s [dokončenou ukázkou](https://github.com/dotnet/samples/tree/master/csharp/roslyn-sdk/Tutorials/MakeConst) najdete v našem úložišti GitHub Samples.
 
 ## <a name="other-resources"></a>Další prostředky
 
