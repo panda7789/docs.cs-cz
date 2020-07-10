@@ -1,13 +1,13 @@
 ---
 title: N-tice
-description: Přečtěte si F# o řazené kolekci členů, seskupení nepojmenovaných, ale seřazených hodnot, případně různých typů.
+description: 'Přečtěte si o řazené kolekci členů F #, seskupení nepojmenovaných, ale seřazených hodnot, případně různých typů.'
 ms.date: 05/16/2016
-ms.openlocfilehash: 7a15d7e0c6c9b42118dd75066f02cbb2e05335fc
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 5d26fd5d7ec5b4939a895a6d2a6a0d7fc6c6c733
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68630236"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86173286"
 ---
 # <a name="tuples"></a>N-tice
 
@@ -22,7 +22,7 @@ struct(element, ... ,element )
 
 ## <a name="remarks"></a>Poznámky
 
-Každý *prvek* v předchozí syntaxi může být libovolný platný F# výraz.
+Každý *prvek* v předchozí syntaxi může být libovolný platný výraz F #.
 
 ## <a name="examples"></a>Příklady
 
@@ -52,7 +52,7 @@ Kopírování elementů z referenční řazené kolekce členů do struktury řa
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/tuples/basic-examples.fsx#L62-L66)]
 
-Funkce `fst` a`snd` (pouze řazené kolekce členů) vrací první a druhý prvek řazené kolekce členů v uvedeném pořadí.
+Funkce `fst` a `snd` (pouze řazené kolekce členů) vrací první a druhý prvek řazené kolekce členů v uvedeném pořadí.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/tuples/basic-examples.fsx#L72-L73)]
 
@@ -80,17 +80,17 @@ Použití řazené kolekce členů jako parametru zakáže procesu curryfikace. 
 
 ## <a name="names-of-tuple-types"></a>Názvy typů řazené kolekce členů
 
-Když napíšete název typu, který je řazené kolekce členů, použijete `*` symbol k oddělení prvků. V případě řazené kolekce členů, `int`která se `float`skládá z, `string` `(10, 10.0, "ten")`a, jako je typ, by byl zápis typu následující.
+Když napíšete název typu, který je řazené kolekce členů, použijete `*` symbol k oddělení prvků. V případě řazené kolekce členů, která se skládá z, a, jako je `int` `float` `string` `(10, 10.0, "ten")` typ, by byl zápis typu následující.
 
 ```fsharp
 int * float * string
 ```
 
-## <a name="interoperation-with-c-tuples"></a>Spolupráce s C# řazenými kolekcemi členů
+## <a name="interoperation-with-c-tuples"></a>Spolupráce s řazenými kolekcemi členů jazyka C#
 
-C#7,0 zavedl do jazyka řazené kolekce členů.  Řazené kolekce C# členů v jsou struktury a jsou ekvivalentní k řazeným kolekcím F#členů struktury v.  Pokud potřebujete pracovat s nástrojem C#, je nutné použít řazené kolekce členů struktury.
+Jazyk C# 7,0 představil do jazyka řazené kolekce členů.  Řazené kolekce členů v jazyce C# jsou struktury a jsou ekvivalentní k řazeným kolekcím členů struktury v F #.  Pokud potřebujete pracovat s jazykem C#, je nutné použít řazené kolekce členů struktury.
 
-To je snadné.  Představte si například, že musíte předat řazenou kolekci C# členů ke třídě a pak využít svůj výsledek, což je také řazená kolekce členů:
+To je snadné.  Představte si například, že musíte předat řazenou kolekci členů ke třídě jazyka C# a pak využít svůj výsledek, což je také řazená kolekce členů:
 
 ```csharp
 namespace CSharpTupleInterop
@@ -103,7 +103,7 @@ namespace CSharpTupleInterop
 }
 ```
 
-Ve vašem F# kódu pak můžete předat řazenou kolekci členů struktury jako parametr a využít výsledek jako řazenou kolekci členů struktury.
+V kódu F # pak můžete předat řazenou kolekci členů struktury jako parametr a využít výsledek jako řazenou kolekci členů struktury.
 
 ```fsharp
 open TupleInterop
@@ -118,7 +118,7 @@ Vzhledem k tomu, že řazené kolekce členů a řazené kolekce členů mají z
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/tuples/interop.fsx#L5-L12)]
 
-Je nutné porovnávání vzorů u jedné řazené kolekce členů a vytvořit druhé s částmi prvků.  Příklad:
+Je nutné porovnávání vzorů u jedné řazené kolekce členů a vytvořit druhé s částmi prvků.  Například:
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/tuples/interop.fsx#L18-L22)]
 
@@ -126,13 +126,13 @@ Je nutné porovnávání vzorů u jedné řazené kolekce členů a vytvořit dr
 
 Tato část vysvětluje formu řazených kolekcí členů při jejich kompilaci.  Pokud necílíte .NET Framework 3,5 nebo nižší, nemusíte informace číst.
 
-Řazené kolekce členů jsou kompilovány do objektů jednoho z několika obecných typů, `System.Tuple`všech pojmenovaných, které jsou přetíženy na aritou nebo podle počtu parametrů typu. Typy řazené kolekce členů se zobrazí v tomto formuláři, když je zobrazíte z C# jiného jazyka, jako je například nebo Visual Basic, nebo pokud používáte nástroj, který F# nemá informace o konstrukcích. `Tuple` Typy byly představeny v .NET Framework 4. Pokud cílíte na starší verzi .NET Framework, kompilátor používá verze [System. Tuple](https://msdn.microsoft.com/library/5ac7953d-acdc-4a58-bfb7-c1f6406c0fa3) z verze 2,0 F# základní knihovny. Typy v této knihovně jsou používány pouze pro aplikace, které cílí na verze .NET Framework 2,0, 3,0 a 3,5. Přesměrování typu se používá k zajištění binární kompatibility mezi .NET Framework 2,0 a .NET Framework 4 F# komponentami.
+Řazené kolekce členů jsou kompilovány do objektů jednoho z několika obecných typů, všech pojmenovaných `System.Tuple` , které jsou přetíženy na aritou nebo podle počtu parametrů typu. Typy řazené kolekce členů se zobrazí v tomto formuláři, když je zobrazíte z jiného jazyka, jako je například C# nebo Visual Basic, nebo pokud používáte nástroj, který nemá informace o konstrukcích F #. `Tuple`Typy byly představeny v .NET Framework 4. Pokud cílíte na starší verzi .NET Framework, kompilátor použije verze [System. Tuple](https://msdn.microsoft.com/library/5ac7953d-acdc-4a58-bfb7-c1f6406c0fa3) z verze 2,0 základní knihovny F #. Typy v této knihovně jsou používány pouze pro aplikace, které cílí na verze .NET Framework 2,0, 3,0 a 3,5. Přesměrování typu se používá k zajištění binární kompatibility mezi .NET Framework 2,0 a .NET Framework 4 součásti F #.
 
 ### <a name="compiled-form-of-struct-tuples"></a>Kompilovaná forma řazených kolekcí členů struktury
 
-Řazené kolekce členů struktury (například `struct (x, y)`) jsou zásadním rozdílem od řazených kolekcí členů odkazu.  Jsou zkompilovány do <xref:System.ValueTuple> typu, přetíženy pomocí aritou nebo počtu parametrů typu.  Jsou ekvivalentní k [ C# 7,0 řazených kolekcí členů](../../csharp/tuples.md) a [Visual Basic 2017 řazené kolekce členů](../../visual-basic/programming-guide/language-features/data-types/tuples.md)a spolupracují obousměrně.
+Řazené kolekce členů struktury (například `struct (x, y)` ) jsou zásadním rozdílem od řazených kolekcí členů odkazu.  Jsou zkompilovány do <xref:System.ValueTuple> typu, přetíženy pomocí aritou nebo počtu parametrů typu.  Jsou ekvivalentní k [řazené kolekci členů C# 7,0](../../csharp/language-reference/builtin-types/value-tuples.md) a [Visual Basic 2017 řazené kolekce členů](../../visual-basic/programming-guide/language-features/data-types/tuples.md)a pracují obousměrně.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Referenční dokumentace jazyka F#](index.md)
+- [Referenční dokumentace jazyka F #](index.md)
 - [Typy F#](fsharp-types.md)

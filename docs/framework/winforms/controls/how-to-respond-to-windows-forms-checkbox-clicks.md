@@ -1,5 +1,6 @@
 ---
 title: Reakce na kliknutí na ovládací prvek CheckBox
+description: Naučte se programovat aplikaci model Windows Forms k provedení určité akce v závislosti na stavu zaškrtávacího políčka.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,19 +13,19 @@ helpviewer_keywords:
 - double-clicks
 - check boxes [Windows Forms], responding to events
 ms.assetid: c39f901e-8899-43b6-aa31-939cbf7089fb
-ms.openlocfilehash: 6ff20c443519446d3804b325924cb3c5cbedea97
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 58944bc421f990343b6c58484aaab3d79c8bda5e
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79141923"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174494"
 ---
 # <a name="how-to-respond-to-windows-forms-checkbox-clicks"></a>Postupy: Reakce na kliknutí na prvek Windows Forms CheckBox
-Kdykoli uživatel klepne na <xref:System.Windows.Forms.CheckBox> ovládací <xref:System.Windows.Forms.Control.Click> prvek Windows Forms, dojde k události. Aplikaci můžete naprogramovat tak, aby provedla určitou akci v závislosti na stavu zaškrtávacího políčka.  
+Pokaždé, když uživatel klikne na <xref:System.Windows.Forms.CheckBox> ovládací prvek model Windows Forms, <xref:System.Windows.Forms.Control.Click> dojde k události. Aplikaci můžete programovat k provedení určité akce v závislosti na stavu zaškrtávacího políčka.  
   
-### <a name="to-respond-to-checkbox-clicks"></a>Chcete-li reagovat na kliknutí Na checkbox  
+### <a name="to-respond-to-checkbox-clicks"></a>Reakce na kliknutí na zaškrtávací políčko  
   
-1. V <xref:System.Windows.Forms.Control.Click> obslužné <xref:System.Windows.Forms.CheckBox.Checked%2A> rutině události použijte vlastnost k určení stavu ovládacího prvku a proveďte všechny nezbytné akce.  
+1. V <xref:System.Windows.Forms.Control.Click> obslužné rutině události použijte <xref:System.Windows.Forms.CheckBox.Checked%2A> vlastnost k určení stavu ovládacího prvku a proveďte potřebné akce.  
   
     ```vb  
     Private Sub CheckBox1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles CheckBox1.Click  
@@ -71,16 +72,16 @@ Kdykoli uživatel klepne na <xref:System.Windows.Forms.CheckBox> ovládací <xre
     ```  
   
     > [!NOTE]
-    > Pokud se uživatel pokusí poklepat na <xref:System.Windows.Forms.CheckBox> ovládací prvek, každé kliknutí bude zpracováno samostatně. to znamená, <xref:System.Windows.Forms.CheckBox> že ovládací prvek nepodporuje událost poklepání.  
+    > Pokud se uživatel pokusí dvakrát kliknout na <xref:System.Windows.Forms.CheckBox> ovládací prvek, každé kliknutí bude zpracováno samostatně; to znamená, že <xref:System.Windows.Forms.CheckBox> ovládací prvek nepodporuje událost dvojitého kliknutí.  
   
     > [!NOTE]
-    > Když <xref:System.Windows.Forms.CheckBox.AutoCheck%2A> je `true` vlastnost (výchozí), <xref:System.Windows.Forms.CheckBox> je automaticky vybrána nebo vymazána po klepnutí. V opačném případě je <xref:System.Windows.Forms.CheckBox.Checked%2A> nutné ručně <xref:System.Windows.Forms.Control.Click> nastavit vlastnost, když dojde k události.  
+    > Pokud <xref:System.Windows.Forms.CheckBox.AutoCheck%2A> je vlastnost `true` (výchozí), při kliknutí se <xref:System.Windows.Forms.CheckBox> automaticky vybere nebo zruší její zaškrtnutí. V opačném případě je nutné ručně nastavit <xref:System.Windows.Forms.CheckBox.Checked%2A> vlastnost, jakmile <xref:System.Windows.Forms.Control.Click> dojde k události.  
   
-     Ovládací <xref:System.Windows.Forms.CheckBox> prvek můžete také použít k určení průběhu akce.  
+     Můžete také použít <xref:System.Windows.Forms.CheckBox> ovládací prvek k určení postupu.  
   
-### <a name="to-determine-a-course-of-action-when-a-check-box-is-clicked"></a>Určení postupu po klepnutí na zaškrtávací políčko  
+### <a name="to-determine-a-course-of-action-when-a-check-box-is-clicked"></a>Určení postupu při kliknutí na zaškrtávací políčko  
   
-1. Pomocí příkazu case můžete zadat <xref:System.Windows.Forms.CheckBox.CheckState%2A> dotaz na hodnotu vlastnosti k určení postupu. Pokud <xref:System.Windows.Forms.CheckBox.ThreeState%2A> je vlastnost `true`nastavena <xref:System.Windows.Forms.CheckBox.CheckState%2A> na , může vlastnost vrátit tři možné hodnoty, které představují zaškrtnuté políčko, nezaškrtnuté políčko nebo třetí neurčitý stav, ve kterém je pole zobrazeno se ztlumeným vzhledem, což znamená, že možnost není k dispozici.  
+1. Použijte příkaz Case pro dotaz na hodnotu <xref:System.Windows.Forms.CheckBox.CheckState%2A> vlastnosti pro určení postupu. Pokud <xref:System.Windows.Forms.CheckBox.ThreeState%2A> je vlastnost nastavena na hodnotu `true` , <xref:System.Windows.Forms.CheckBox.CheckState%2A> vlastnost může vracet tři možné hodnoty, které reprezentují políčko zaškrtnuto, políčko není zaškrtnuto nebo třetí neurčitý stav, v němž je pole zobrazeno s ztlumeným vzhledem k označení možnosti není k dispozici.  
   
     ```vb  
     Private Sub CheckBox1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles CheckBox1.Click  
@@ -133,11 +134,11 @@ Kdykoli uživatel klepne na <xref:System.Windows.Forms.CheckBox> ovládací <xre
     ```  
   
     > [!NOTE]
-    > Pokud <xref:System.Windows.Forms.CheckBox.ThreeState%2A> je vlastnost `true`nastavena <xref:System.Windows.Forms.CheckBox.Checked%2A> na `true` , <xref:System.Windows.Forms.CheckState.Checked> <xref:System.Windows.Forms.CheckState.Indeterminate>vlastnost vrátí pro obě a .  
+    > Pokud <xref:System.Windows.Forms.CheckBox.ThreeState%2A> je vlastnost nastavena na `true` , <xref:System.Windows.Forms.CheckBox.Checked%2A> vrátí vlastnost `true` pro i <xref:System.Windows.Forms.CheckState.Checked> <xref:System.Windows.Forms.CheckState.Indeterminate> .  
   
 ## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.CheckBox>
 - [CheckBox – přehled ovládacího prvku](checkbox-control-overview-windows-forms.md)
 - [Postupy: Nastavení možností pomocí ovládacích prvků Windows Forms CheckBox](how-to-set-options-with-windows-forms-checkbox-controls.md)
-- [Ovládací prvek ovládacího prvku CheckBox](checkbox-control-windows-forms.md)
+- [Ovládací prvek CheckBox](checkbox-control-windows-forms.md)

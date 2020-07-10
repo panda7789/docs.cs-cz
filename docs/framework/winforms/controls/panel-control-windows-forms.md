@@ -1,20 +1,21 @@
 ---
 title: Ovládací prvek Panel
+description: Naučte se používat ovládací prvek panelu model Windows Forms, konkrétně použití panelů k rozdělení formuláře podle funkce.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - controls [Windows Forms], grouping
 - grouping controls
 - Panel control [Windows Forms]
 ms.assetid: 37c69803-5084-4347-b035-54cfbabdc310
-ms.openlocfilehash: 2ebf058383296db82a5451d743abd9e9fdc76085
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 58190eb740696862571e1a246a56bf5daffc2864
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76744294"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174455"
 ---
 # <a name="panel-control-windows-forms"></a>Ovládací prvek Panel (Windows Forms)
-Ovládací prvky `Panel` model Windows Forms slouží k poskytnutí identifikovatelného seskupení pro jiné ovládací prvky. Obvykle používáte panely k rozdělení formuláře podle funkce. Ovládací prvek `Panel` je podobný ovládacímu prvku <xref:System.Windows.Forms.GroupBox>; ale pouze ovládací prvek `Panel` může mít posuvníky a pouze ovládací prvek <xref:System.Windows.Forms.GroupBox> zobrazí titulek.  
+`Panel`Ovládací prvky model Windows Forms slouží k poskytnutí identifikovatelného seskupení pro jiné ovládací prvky. Obvykle používáte panely k rozdělení formuláře podle funkce. `Panel`Ovládací prvek je podobný <xref:System.Windows.Forms.GroupBox> ovládacímu prvku, ale pouze `Panel` ovládací prvek může mít posuvníky a pouze <xref:System.Windows.Forms.GroupBox> ovládací prvek zobrazuje titulek.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Přehled ovládacího prvku Panel](panel-control-overview-windows-forms.md)  
@@ -29,7 +30,7 @@ Ovládací prvky `Panel` model Windows Forms slouží k poskytnutí identifikova
  [Postupy: Nastavení pozadí panelu](how-to-set-the-background-of-a-windows-forms-panel.md)  
  Popisuje způsob zobrazení barvy pozadí a obrázku pozadí na panelu.  
   
-## <a name="reference"></a>Referenční informace  
+## <a name="reference"></a>Reference  
  <xref:System.Windows.Forms.Panel>  
  Popisuje tuto třídu a má odkazy na všechny její členy.  
   

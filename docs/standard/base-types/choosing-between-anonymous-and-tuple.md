@@ -5,12 +5,12 @@ author: IEvangelist
 ms.author: dapine
 ms.date: 07/01/2020
 ms.technology: dotnet-standard
-ms.openlocfilehash: 9140250ad1f48501bf1d2e53a1c179e6823f19cd
-ms.sourcegitcommit: 4ad2f8920251f3744240c3b42a443ffbe0a46577
+ms.openlocfilehash: 9c186133a639faf187c89d872856d860a20f5a2d
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86100961"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174215"
 ---
 # <a name="choosing-between-anonymous-and-tuple-types"></a>Volba mezi anonymními a řazenými typy řazených kolekcí členů
 
@@ -90,12 +90,7 @@ foreach (var (formatted, ticks) in
 }
 ```
 
-Jazyk C# poskytuje jazykovou podporu pro řazené kolekce členů s <xref:System.ValueTuple> typem a sémantikou pro:
-
-- [Přiřazení řazené kolekce členů](../../csharp/tuples.md#assignment-and-tuples)
-- [Dekonstrukce řazené kolekce členů](../../csharp/deconstruct.md) (neomezeno na řazené kolekce členů)
-- [Kontroly rovnosti řazené kolekce členů](../../csharp/tuples.md#equality-and-tuples)
-- [Inicializátory řazené kolekce členů](../../csharp/tuples.md#tuple-projection-initializers)
+Další informace o řazených kolekcích členů naleznete v tématu [typy řazené kolekce členů (Referenční dokumentace jazyka C#)](../../csharp/language-reference/builtin-types/value-tuples.md) nebo [n-tice (Visual Basic)](../../visual-basic/programming-guide/language-features/data-types/tuples.md).
 
 Předchozí příklady jsou všechny funkčně ekvivalentní, ale. Existují mírné rozdíly v jejich použitelnosti a jejich základní implementace.
 
@@ -105,7 +100,7 @@ Možná budete chtít vždycky používat <xref:System.ValueTuple> <xref:System.
 
 ### <a name="key-differences"></a>Klíčové rozdíly
 
-| Name                     | Modifikátor přístupu | Typ     | Název vlastního člena | Podpora dekonstrukce | Podpora stromu výrazů |
+| Název                     | Modifikátor přístupu | Typ     | Název vlastního člena | Podpora dekonstrukce | Podpora stromu výrazů |
 |--------------------------|-----------------|----------|----------------------|------------------------|-------------------------|
 | Anonymní typy          | `internal`      | `class`  | ✔️                   | ❌                     | ✔️                     |
 | <xref:System.Tuple>      | `public`        | `class`  | ❌                   | ❌                     | ✔️                     |
@@ -127,5 +122,6 @@ Jako vývojář výběr mezi řazenými kolekcemi členů a anonymními typy je 
 
 - [Anonymní typy](../../csharp/programming-guide/classes-and-structs/anonymous-types.md)
 - [Stromy výrazů](../../csharp/expression-trees.md)
-- [Typy řazené kolekce členů](../../csharp/tuples.md)
+- [Tuple – typy (Referenční dokumentace jazyka C#)](../../csharp/language-reference/builtin-types/value-tuples.md)
+- [Řazené kolekce členů (Visual Basic)](../../visual-basic/programming-guide/language-features/data-types/tuples.md)
 - [Pokyny k návrhu typu](../design-guidelines/type.md)

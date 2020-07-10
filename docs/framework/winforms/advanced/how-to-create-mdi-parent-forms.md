@@ -1,42 +1,43 @@
 ---
 title: 'Postupy: Vytváření nadřazených formulářů MDI'
+description: Naučte se vytvořit nadřazený formulář MDI programově a pomocí Návrhář formulářů.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - parent forms
 - MDI [Windows Forms], creating forms
 ms.assetid: 12c71221-2377-4bb6-b10b-7b4b300fd462
-ms.openlocfilehash: 2aa4261d6354f744f000f36a87e70a39f5c004ea
-ms.sourcegitcommit: 0d0a6e96737dfe24d3257b7c94f25d9500f383ea
+ms.openlocfilehash: d387837a565ca247f62828c19f353990b35117c7
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65211374"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174702"
 ---
 # <a name="how-to-create-mdi-parent-forms"></a>Postupy: Vytváření nadřazených formulářů MDI
 
 > [!IMPORTANT]
-> Toto téma používá <xref:System.Windows.Forms.MainMenu> ovládací prvek, který byl nahrazen <xref:System.Windows.Forms.MenuStrip> ovládacího prvku. <xref:System.Windows.Forms.MainMenu> Ovládací prvek se zachovává kvůli zpětné kompatibilitě a budoucí použití, pokud se rozhodnete. Informace o vytváření MDI nadřazený formulář s využitím <xref:System.Windows.Forms.MenuStrip>, naleznete v tématu [jak: Vytvoření seznamu okna MDI pomocí MenuStrip](../controls/how-to-create-an-mdi-window-list-with-menustrip-windows-forms.md).
+> Toto téma používá <xref:System.Windows.Forms.MainMenu> ovládací prvek, který byl nahrazen <xref:System.Windows.Forms.MenuStrip> ovládacím prvkem. <xref:System.Windows.Forms.MainMenu>Ovládací prvek se zachovává pro zpětnou kompatibilitu i pro budoucí použití, pokud zvolíte. Informace o vytvoření nadřazeného formuláře MDI pomocí a <xref:System.Windows.Forms.MenuStrip> naleznete v tématu [How to: Create a Window MDI list with MenuStrip](../controls/how-to-create-an-mdi-window-list-with-menustrip-windows-forms.md).
 
-Základ pro aplikace rozhraní více dokumentů (MDI) je nadřazený formulář MDI. Toto je formulář, který obsahuje podřízených oken MDI, které jsou dílčí windows, ve kterém uživatel pracuje v aplikaci MDI. Vytvoření nadřazený formulář MDI je jednoduché, v Návrháři formulářů Windows a prostřednictvím kódu programu.
+Základem aplikace MDI (Multiple Document Interface) je nadřazený formulář MDI. Jedná se o formulář, který obsahuje podřízená okna MDI, což je dílčí systém Windows, podle kterého uživatel pracuje s aplikací MDI. Vytvoření nadřazeného formuláře MDI je jednoduché v Návrhář formulářů i programově.
 
-## <a name="create-an-mdi-parent-form-at-design-time"></a>Vytvořit nadřazený formulář MDI v době návrhu
+## <a name="create-an-mdi-parent-form-at-design-time"></a>Vytvoření nadřazeného formuláře MDI v době návrhu
 
-1. Vytvoření projektu aplikace Windows v sadě Visual Studio.
+1. Vytvořte projekt aplikace pro Windows v aplikaci Visual Studio.
 
-2. V **vlastnosti** okno, nastaveno <xref:System.Windows.Forms.Form.IsMdiContainer%2A> vlastnost **true**.
+2. V okně **vlastnosti** nastavte <xref:System.Windows.Forms.Form.IsMdiContainer%2A> vlastnost na **hodnotu true**.
 
-     Ta určuje formuláře jako kontejnerem MDI pro podřízená okna.
+     Tato položka označuje formulář jako kontejner MDI pro podřízená okna.
 
     > [!NOTE]
-    > Při nastavování vlastností **vlastnosti** okna, můžete také nastavit `WindowState` vlastnost **Maximized**, pokud chcete, můžete, protože je nejjednodušší k manipulaci s podřízených oken MDI, pokud je nadřazený formulář maximalizované. Kromě toho mějte na paměti, že okraj nadřazený formulář MDI vyzvedne, až bude systémovou barvou (nastavení v Ovládacích panelech systému Windows), nikoli barva pozadí nastavíte pomocí <xref:System.Windows.Forms.Control.BackColor%2A?displayProperty=nameWithType> vlastnost.
+    > Při nastavování vlastností v okně **vlastnosti** můžete také nastavit `WindowState` vlastnost na **maximalizovat**, pokud chcete, protože je nejjednodušší pracovat s podřízenými okny MDI při maximalizaci nadřazeného formuláře. Kromě toho mějte na paměti, že hrana nadřazeného formuláře MDI vybere systémovou barvu (nastavenou v ovládacím panelu systém Windows) místo barvy pozadí, kterou jste nastavili pomocí <xref:System.Windows.Forms.Control.BackColor%2A?displayProperty=nameWithType> Vlastnosti.
 
-3. Z **nástrojů**, přetáhněte **MenuStrip** ovládacího prvku na formuláři. Vytvoření položky nabídek nejvyšší úrovně s **Text** vlastnost nastavena na hodnotu **& soubor** s názvem položky podnabídky **& Nový** a **Zavřít**. Také vytvořit nabídek nejvyšší úrovně položky volá **& okno**.
+3. Z **panelu nástrojů**přetáhněte ovládací prvek **MenuStrip** do formuláře. Vytvořte položku nabídky nejvyšší úrovně s vlastností **text** nastavenou na **&soubor** s položkami podnabídky s názvem **&New** a **&Close**. Vytvořte také položku nabídky nejvyšší úrovně s názvem **&okno**.
 
-     Vytvoří a skrytí položek nabídky v době běhu nabídce první a druhé nabídky bude sledovat, otevřete podřízených oken MDI. V tomto okamžiku jste vytvořili nadřazeného okna MDI.
+     První nabídka vytvoří a skryje položky nabídky za běhu a druhá nabídka bude sledovat otevřené podřízené okna MDI. V tomto okamžiku jste vytvořili nadřazené okno MDI.
 
-4. Stisknutím klávesy **F5** ke spuštění aplikace. Informace o vytváření podřízeného MDI windows, které působí v rámci nadřazený formulář MDI, naleznete v tématu [jak: Vytváření podřízených formulářů MDI](how-to-create-mdi-child-forms.md).
+4. Stisknutím klávesy **F5** spusťte aplikaci. Informace o vytváření podřízených oken MDI, které pracují v nadřazeném formuláři MDI, naleznete v tématu [How to: Create MDI-podřízené formuláře](how-to-create-mdi-child-forms.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Aplikace MDI (Multiple-Document Interface)](multiple-document-interface-mdi-applications.md)
 - [Postupy: Vytváření podřízených formulářů MDI](how-to-create-mdi-child-forms.md)

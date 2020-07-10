@@ -1,19 +1,20 @@
 ---
-title: Ovládací prvek TextBox
+title: TextBox – ovládací prvek
+description: Přečtěte si o různých aspektech ovládacího prvku TextBox model Windows Forms, včetně jeho použití k upravitelnému textu a jeho nastavení jen pro čtení.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - text boxes
 - TextBox control [Windows Forms]
 ms.assetid: e5a06987-8aec-4271-b196-2245ba992d62
-ms.openlocfilehash: 7bdca52e62b6e7b014d28478b291a1157486527b
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 026f6d2653e41dabd3db7490660b6ce19846d397
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76742784"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174442"
 ---
 # <a name="textbox-control-windows-forms"></a>TextBox – ovládací prvek (Windows Forms)
-Textová pole model Windows Forms slouží k získání vstupu od uživatele nebo k zobrazení textu. `TextBox` ovládací prvek se obecně používá pro upravitelný text, i když ho lze také nastavit jen pro čtení. Textová pole mohou zobrazovat více řádků, zalamovat text podle velikosti ovládacího prvku a přidat základní formátování. Ovládací prvek `TextBox` umožňuje zobrazení textu nebo zadání v ovládacím prvku v jednom formátu.  
+Textová pole model Windows Forms slouží k získání vstupu od uživatele nebo k zobrazení textu. Tento `TextBox` ovládací prvek se obecně používá pro upravitelný text, i když ho lze také nastavit jen pro čtení. Textová pole mohou zobrazovat více řádků, zalamovat text podle velikosti ovládacího prvku a přidat základní formátování. `TextBox`Ovládací prvek umožňuje v ovládacím prvku zobrazit nebo zadat jeden formát textu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Přehled ovládacího prvku TextBox](textbox-control-overview-windows-forms.md)  
@@ -37,7 +38,7 @@ Textová pole model Windows Forms slouží k získání vstupu od uživatele neb
  [Postupy: Zobrazování více řádků v ovládacím prvku Windows Forms TextBox](how-to-view-multiple-lines-in-the-windows-forms-textbox-control.md)  
  Popisuje, jak nastavit procházení textového pole.  
   
-## <a name="reference"></a>Referenční informace  
+## <a name="reference"></a>Reference  
  Třída <xref:System.Windows.Forms.TextBox>  
  Popisuje tuto třídu a má odkazy na všechny její členy.  
   

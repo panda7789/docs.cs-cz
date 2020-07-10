@@ -1,28 +1,31 @@
 ---
-title: Migrace z webových formulářů ASP.NET na Blazor
-description: Naučte se, jak získat přístup k migraci existující aplikace webových formulářů ASP.NET do Blazor.
+title: Migrace z webových formulářů ASP.NET naBlazor
+description: Naučte se, jak získat přístup k migraci existující aplikace webových formulářů ASP.NET do Blazor .
 author: twsouthwick
 ms.author: tasou
+no-loc:
+- Blazor
+- WebAssembly
 ms.date: 09/19/2019
-ms.openlocfilehash: c70e4a4f57ddac97db4d58d9f876f7edc6aa6ce9
-ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
+ms.openlocfilehash: 464d2f535acd3b9774fe240b4feeda1875f98022
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84306978"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86173143"
 ---
-# <a name="migrate-from-aspnet-web-forms-to-blazor"></a>Migrace z webových formulářů ASP.NET na Blazor
+# <a name="migrate-from-aspnet-web-forms-to-blazor"></a>Migrace z webových formulářů ASP.NET naBlazor
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
-Migrace základu kódu z webových formulářů ASP.NET na Blazor je časově náročná úloha, která vyžaduje plánování. Tato kapitola popisuje proces. Něco, co usnadňuje přechod, je zajistit, že aplikace dodržuje *N-vrstvou* architekturu a v takovém případě je model aplikace (v tomto případě webový formulář) oddělený od obchodní logiky. Tato logická oddělení vrstev umožňuje vymazat to, co je potřeba přesunout do .NET Core a Blazor.
+Migrace základu kódu z webových formulářů ASP.NET na Blazor je časově náročná úloha, která vyžaduje plánování. Tato kapitola popisuje proces. Něco, co usnadňuje přechod, je zajistit, že aplikace dodržuje *N-vrstvou* architekturu a v takovém případě je model aplikace (v tomto případě webový formulář) oddělený od obchodní logiky. Tato logická oddělení vrstev umožňuje vymazat to, co je potřeba přesunout do .NET Core a Blazor .
 
 V tomto příkladu se používá aplikace eShop, která je dostupná na [GitHubu](https://github.com/dotnet-architecture/eShopOnBlazor) . eShop je služba katalogu, která poskytuje možnosti CRUD prostřednictvím vstupu a ověření formuláře.
 
-Proč by se měla pracovní aplikace migrovat na Blazor? Mnohokrát není potřeba. Webové formuláře ASP.NET budou v mnoha letech i nadále podporovány. Mnohé z funkcí, které Blazor poskytuje, se ale podporují jenom u migrované aplikace. Mezi tyto funkce patří:
+Proč by se měla migrovat pracovní aplikace na Blazor ? Mnohokrát není potřeba. Webové formuláře ASP.NET budou v mnoha letech i nadále podporovány. Mnohé z funkcí, které nabízí, ale Blazor podporují jenom migrované aplikace. Mezi tyto funkce patří:
 
 - Vylepšení výkonu v rozhraní, jako je například`Span<T>`
-- Schopnost spustit jako WebAssembly
+- Možnost spuštění jakoWebAssembly
 - Podpora více platforem pro Linux a macOS
 - Nasazení místního nasazení aplikace nebo sdíleného rozhraní, aniž by to ovlivnilo jiné aplikace
 
@@ -30,9 +33,9 @@ Pokud jsou tyto nebo jiné nové funkce přesvědčivější, může se v migrac
 
 ## <a name="server-side-versus-client-side-hosting"></a>Hostování na straně serveru a na straně klienta
 
-Jak je popsáno v kapitole [hostující modely](hosting-models.md) , může být aplikace Blazor hostována dvěma různými způsoby: na straně serveru a na straně klienta. Model na straně serveru používá ASP.NET Core připojení k signalizaci ke správě aktualizací modelu DOM při spuštění libovolného skutečného kódu na serveru. Model na straně klienta běží v prohlížeči jako WebAssembly a nevyžaduje žádná připojení k serveru. K dispozici je několik rozdílů, které by mohly ovlivnit, což je nejlepší pro konkrétní aplikaci:
+Jak je popsáno v kapitole [hostující modely](hosting-models.md) , Blazor aplikace může být hostována dvěma různými způsoby: na straně serveru a na straně klienta. Model na straně serveru používá ASP.NET Core připojení k signalizaci ke správě aktualizací modelu DOM při spuštění libovolného skutečného kódu na serveru. Model na straně klienta se spouští jako WebAssembly v prohlížeči a nevyžaduje žádná připojení k serveru. K dispozici je několik rozdílů, které by mohly ovlivnit, což je nejlepší pro konkrétní aplikaci:
 
-- Spuštění jako WebAssembly je stále ve vývoji a nemusí podporovat všechny funkce (například vlákna) v aktuálním čase.
+- Běží tak, jak WebAssembly je stále ve vývoji, a nemusí podporovat všechny funkce (například vlákna) v aktuálním čase.
 - Komunikace mezi konverzacemi mezi klientem a serverem může způsobit problémy s latencí v režimu na straně serveru.
 - Přístup k databázím a interním nebo chráněným službám vyžaduje samostatnou službu s hostováním na straně klienta.
 
@@ -42,11 +45,11 @@ V době psaní je model na straně serveru podrobněji podobný webovým formul�
 
 Tento krok prvotní migrace je vytvoření nového projektu. Tento typ projektu je založen na projektech stylu sady SDK rozhraní .NET Core a zjednodušuje většinu často používaných vzorů, které byly použity v předchozích formátech projektu. Další podrobnosti naleznete v kapitole o [struktuře projektu](project-structure.md).
 
-Po vytvoření projektu nainstalujte knihovny, které byly použity v předchozím projektu. Ve starších projektech webových formulářů jste pravděpodobně použili soubor *Packages. config* pro výpis požadovaných balíčků NuGet. V novém projektu ve stylu sady SDK byl soubor *Packages. config* nahrazen `<PackageReference>` prvky v souboru projektu. Výhodou tohoto přístupu je, že všechny závislosti se nainstalují po cestách. Vypíšete pouze závislosti nejvyšší úrovně, které vás zajímají.
+Po vytvoření projektu nainstalujte knihovny, které byly použity v předchozím projektu. V dřívějších projektech webových formulářů jste pravděpodobně použili soubor *packages.config* k vypsání požadovaných balíčků NuGet. V novém projektu ve stylu sady SDK byla *packages.config* nahrazena `<PackageReference>` prvky v souboru projektu. Výhodou tohoto přístupu je, že všechny závislosti se nainstalují po cestách. Vypíšete pouze závislosti nejvyšší úrovně, které vás zajímají.
 
 Mnohé ze závislostí, které používáte, jsou k dispozici pro .NET Core, včetně Entity Framework 6 a log4net. Pokud není k dispozici žádná verze .NET Core nebo .NET Standard, je často možné použít .NET Framework verzi. Vaše ujetých km se může lišit. Jakékoli použité rozhraní API, které není dostupné v .NET Core, způsobí chybu za běhu. Visual Studio vás upozorní na tyto balíčky. Žlutá ikona se zobrazí v uzlu **odkazy** projektu v **Průzkumník řešení**.
 
-V projektu eShop založeném na Blazor můžete zobrazit balíčky, které jsou nainstalovány. Soubor *Packages. config* byl dřív uveden v každém balíčku, který se používá v projektu, což má za následek to, že soubor bude téměř 50 řádků dlouhý. Fragment souboru *Packages. config* je:
+V Blazor projektu eshop založeném na službě můžete vidět balíčky, které jsou nainstalovány. Dříve soubor *packages.config* uvedený v každém balíčku, který je v projektu použit, což má za následek to, že soubor bude téměř 50 řádků dlouhý. Fragment *packages.config* je:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -74,7 +77,7 @@ V projektu eShop založeném na Blazor můžete zobrazit balíčky, které jsou 
 
 `<packages>`Element zahrnuje všechny nezbytné závislosti. Je obtížné zjistit, které z těchto balíčků jsou zahrnuty, protože je budete potřebovat. Některé `<package>` prvky jsou uvedeny jednoduše, aby splňovaly požadavky na závislosti, které požadujete.
 
-Projekt Blazor uvádí závislosti, které požadujete v rámci `<ItemGroup>` elementu v souboru projektu:
+BlazorProjekt uvádí závislosti, které požadujete v rámci `<ItemGroup>` elementu v souboru projektu:
 
 ```xml
 <ItemGroup>
@@ -88,7 +91,7 @@ Jeden balíček NuGet, který zjednodušuje životnost vývojářů webových fo
 
 ## <a name="enable-startup-process"></a>Povolit proces po spuštění
 
-Proces spuštění pro Blazor se změnil z webových formulářů a následuje podobné nastavení pro další ASP.NET Core služby. Když jsou hostované komponenty na straně serveru Blazor, spustí se jako součást normální aplikace ASP.NET Core. Při hostování v prohlížeči pomocí webového sestavení používají komponenty Blazor podobný model hostování. Rozdílem je, že komponenty jsou spouštěny jako samostatná služba ze všech back-end procesů. V obou případech je spuštění podobné.
+Proces spuštění pro Blazor byl změněn z webových formulářů a následuje podobné nastavení pro jiné ASP.NET Core služby. Když jsou hostované serverové Blazor komponenty spouštěné jako součást normální ASP.NET Core aplikace. Při hostování v prohlížeči pomocí nástroje WebAssembly Blazor komponenty používají podobný model hostování. Rozdílem je, že komponenty jsou spouštěny jako samostatná služba ze všech back-end procesů. V obou případech je spuštění podobné.
 
 Soubor *Global.asax.cs* je výchozí spouštěcí stránka pro projekty webových formulářů. V projektu eShop tento soubor konfiguruje kontejner inverze ovládacího prvku (IoC) a zpracovává různé události životního cyklu aplikace nebo žádosti. Některé z těchto událostí jsou zpracovávány pomocí middlewaru (například `Application_BeginRequest` ). Jiné události vyžadují přepsání konkrétních služeb prostřednictvím injektáže závislostí (DI).
 
@@ -159,7 +162,7 @@ public class Global : HttpApplication, IContainerProviderAccessor
 }
 ```
 
-Předchozí soubor se na `Startup` straně serveru Blazor jako třída:
+Předchozí soubor se na `Startup` straně serveru stal třídou Blazor :
 
 ```csharp
 public class Startup
@@ -246,13 +249,13 @@ public class Startup
 
 Jednu významnou změnu, kterou si můžete všimnout z webových formulářů, je význačnost DI. DI byl princip identifikátoru GUID v návrhu ASP.NET Core. Podporuje přizpůsobení téměř všech aspektů ASP.NET Core Frameworku. Existuje i integrovaný poskytovatel služeb, který je možné použít pro mnoho scénářů. Pokud je vyžadováno více přizpůsobení, může být podporováno mnoha projekty komunity. Můžete třeba přenášet svoji investici do knihovny DI Library od třetích stran.
 
-V původní aplikaci eShop existuje určitá konfigurace pro správu relací. Vzhledem k tomu, že Blazor na straně serveru používá pro komunikaci signál ASP.NET Core, stav relace není podporován, protože připojení mohou vzniknout nezávisle na kontextu HTTP. Aplikace, která používá stav relace, vyžaduje před spuštěním jako aplikaci Blazor přearchitekturu.
+V původní aplikaci eShop existuje určitá konfigurace pro správu relací. Vzhledem k tomu, že na straně serveru Blazor používá nástroj ASP.NET Core signalizace pro komunikaci, není stav relace podporován, protože připojení mohou vzniknout nezávisle na kontextu http. Aplikace, která používá stav relace, vyžaduje přearchitekturu před spuštěním jako Blazor aplikaci.
 
 Další informace o spuštění aplikace najdete v tématu [spuštění aplikace](app-startup.md).
 
 ## <a name="migrate-http-modules-and-handlers-to-middleware"></a>Migrace modulů a obslužných rutin HTTP do middlewaru
 
-Moduly a obslužné rutiny HTTP jsou běžné vzory ve webových formulářích pro řízení kanálu požadavků protokolu HTTP. Třídy, které implementují `IHttpModule` nebo `IHttpHandler` můžou být zaregistrované a zpracovávají příchozí požadavky. Webové formuláře nakonfigurují moduly a obslužné rutiny v souboru *Web. config* . Webové formuláře jsou také silně založené na zpracování událostí životního cyklu aplikace. ASP.NET Core místo toho používá middleware. Middleware je zaregistrován v `Configure` metodě `Startup` třídy. Pořadí spouštění middlewaru je určeno pořadím registrace.
+Moduly a obslužné rutiny HTTP jsou běžné vzory ve webových formulářích pro řízení kanálu požadavků protokolu HTTP. Třídy, které implementují `IHttpModule` nebo `IHttpHandler` můžou být zaregistrované a zpracovávají příchozí požadavky. Webové formuláře nakonfigurují moduly a obslužné rutiny v souboru *web.config* . Webové formuláře jsou také silně založené na zpracování událostí životního cyklu aplikace. ASP.NET Core místo toho používá middleware. Middleware je zaregistrován v `Configure` metodě `Startup` třídy. Pořadí spouštění middlewaru je určeno pořadím registrace.
 
 V části [Povolit proces po spuštění](#enable-startup-process) byla událost životního cyklu vyvolána webovými formuláři jako `Application_BeginRequest` metoda. Tato událost není k dispozici v ASP.NET Core. Jedním ze způsobů, jak toto chování dosáhnout, je implementovat middleware, jak je vidět v příkladu souboru *Startup.cs* . Tento middleware provádí stejnou logiku a následně přenáší řízení na další obslužnou rutinu v kanálu middlewaru.
 
@@ -283,9 +286,9 @@ Další informace o sdružování a minifikace najdete v tématu [statické pros
 
 ## <a name="migrate-aspx-pages"></a>Migrovat stránky ASPX
 
-Stránka v aplikaci webových formulářů je soubor s příponou *. aspx* . Stránku webových formulářů je často možné namapovat na komponentu v Blazor. Komponenta Blazor je vytvořená v souboru s příponou *. Razor* . Pro projekt eShop se pět stránek převede na stránku Razor.
+Stránka v aplikaci webových formulářů je soubor s příponou *. aspx* . Stránka webových formulářů je často mapována na komponentu v nástroji Blazor . BlazorKomponenta je vytvořená v souboru s příponou *. Razor* . Pro projekt eShop se pět stránek převede na stránku Razor.
 
-Například zobrazení podrobností obsahuje tři soubory v projektu webových formulářů: *Details. aspx*, *Details.aspx.cs*a *Details.aspx.Designer.cs*. Při převodu na Blazor jsou kód na pozadí a značky zkombinovány do *Details. Razor*. Kompilace Razor (ekvivalentní k těm, co je v souborech *. Designer.cs* ), je uložena v adresáři *obj* a ve výchozím nastavení není viditelná v **Průzkumník řešení**. Stránka webových formulářů se skládá z následujících značek:
+Například zobrazení podrobností obsahuje tři soubory v projektu webových formulářů: *Details. aspx*, *Details.aspx.cs*a *Details.aspx.Designer.cs*. Při převodu na Blazor je kód na pozadí a označení zkombinován do *Details. Razor*. Kompilace Razor (ekvivalentní k těm, co je v souborech *. Designer.cs* ), je uložena v adresáři *obj* a ve výchozím nastavení není viditelná v **Průzkumník řešení**. Stránka webových formulářů se skládá z následujících značek:
 
 ```aspx-csharp
 <%@ Page Title="Details" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Details.aspx.cs" Inherits="eShopLegacyWebForms.Catalog.Details" %>
@@ -520,11 +523,11 @@ Při převodu na Blazor se stránka webových formulářů převede na následuj
 }
 ```
 
-Všimněte si, že kód a značky jsou ve stejném souboru. Všechny požadované služby jsou zpřístupněny s `@inject` atributem. Na základě `@page` této direktivy lze na této stránce přejít v `Catalog/Details/{id}` trase. Hodnota `{id}` zástupného symbolu trasy byla omezena na celé číslo. Jak je popsáno v části [Směrování](pages-routing-layouts.md) na rozdíl od webových formulářů, komponenta Razor explicitně uvádí svou trasu a všechny zahrnuté parametry. Mnoho ovládacích prvků webových formulářů nemůže mít v Blazor stejné protějšky. Často se jedná o ekvivalentní fragment kódu HTML, který bude sloužit ke stejnému účelu. Například `<asp:Label />` ovládací prvek lze nahradit `<label>` elementem jazyka HTML.
+Všimněte si, že kód a značky jsou ve stejném souboru. Všechny požadované služby jsou zpřístupněny s `@inject` atributem. Na základě `@page` této direktivy lze na této stránce přejít v `Catalog/Details/{id}` trase. Hodnota `{id}` zástupného symbolu trasy byla omezena na celé číslo. Jak je popsáno v části [Směrování](pages-routing-layouts.md) na rozdíl od webových formulářů, komponenta Razor explicitně uvádí svou trasu a všechny zahrnuté parametry. Mnoho ovládacích prvků webových formulářů nemůže mít přesnou protějšek v Blazor . Často se jedná o ekvivalentní fragment kódu HTML, který bude sloužit ke stejnému účelu. Například `<asp:Label />` ovládací prvek lze nahradit `<label>` elementem jazyka HTML.
 
-### <a name="model-validation-in-blazor"></a>Ověřování modelu v Blazor
+### <a name="model-validation-in-blazor"></a>Ověřování modelu vBlazor
 
-Pokud váš kód webového formuláře zahrnuje ověřování, můžete přenést většinu z toho, co máte, s méně než nedostatečnými změnami. Výhodou spuštění v Blazor je, že stejnou logiku ověřování můžete spustit bez nutnosti vlastního JavaScriptu. Datové poznámky umožňují snadné ověřování modelu.
+Pokud váš kód webového formuláře zahrnuje ověřování, můžete přenést většinu z toho, co máte, s méně než nedostatečnými změnami. Výhodou pro spuštění v Blazor je, že stejnou logiku ověřování můžete spustit bez nutnosti vlastního JavaScriptu. Datové poznámky umožňují snadné ověřování modelu.
 
 Například stránka *vytvořit. aspx* obsahuje formulář pro zadávání dat s ověřením. Ukázkový fragment kódu by vypadal takto:
 
@@ -539,7 +542,7 @@ Například stránka *vytvořit. aspx* obsahuje formulář pro zadávání dat s
 </div>
 ```
 
-V Blazor je k dispozici ekvivalentní označení v souboru *Create. Razor* :
+V je Blazor ekvivalentní označení k dispozici v souboru *Create. Razor* :
 
 ```razor
 <EditForm Model="_item" OnValidSubmit="@...">
@@ -557,7 +560,7 @@ V Blazor je k dispozici ekvivalentní označení v souboru *Create. Razor* :
 </EditForm>
 ```
 
-`EditForm`Kontext zahrnuje podporu ověřování a může být zabalen kolem vstupu. Poznámky k datům představují běžný způsob, jak přidat ověřování. Taková podpora ověřování se dá přidat prostřednictvím `DataAnnotationsValidator` součásti. Další informace o tomto mechanismu najdete v tématu [ASP.NET Core Blazor Forms and Validation](/aspnet/core/blazor/forms-validation).
+`EditForm`Kontext zahrnuje podporu ověřování a může být zabalen kolem vstupu. Poznámky k datům představují běžný způsob, jak přidat ověřování. Taková podpora ověřování se dá přidat prostřednictvím `DataAnnotationsValidator` součásti. Další informace o tomto mechanismu najdete v tématu [ASP.NET Core Blazor Forms a ověřování](/aspnet/core/blazor/forms-validation).
 
 ## <a name="migrate-built-in-web-forms-controls"></a>Migrace vestavěných ovládacích prvků webových formulářů
 
@@ -565,11 +568,11 @@ V Blazor je k dispozici ekvivalentní označení v souboru *Create. Razor* :
 
 ## <a name="migrate-configuration"></a>Migrace konfigurace
 
-V projektu webových formulářů se konfigurační data nejčastěji ukládají v souboru *Web. config* . Konfigurační data jsou k dispozici v nástroji `ConfigurationManager` . Služby se často vyžadovaly k analýze objektů. S .NET Framework 4.7.2 bylo možné do konfigurace přidat prostřednictvím `ConfigurationBuilders` . Tito tvůrci povolili vývojářům přidat různé zdroje pro konfiguraci, která se pak sestavila za běhu a načetla potřebné hodnoty.
+V projektu webových formulářů se konfigurační data nejčastěji ukládají do souboru *web.config* . Konfigurační data jsou k dispozici v nástroji `ConfigurationManager` . Služby se často vyžadovaly k analýze objektů. S .NET Framework 4.7.2 bylo možné do konfigurace přidat prostřednictvím `ConfigurationBuilders` . Tito tvůrci povolili vývojářům přidat různé zdroje pro konfiguraci, která se pak sestavila za běhu a načetla potřebné hodnoty.
 
 ASP.NET Core představil flexibilní konfigurační systém, který umožňuje definovat zdroj konfigurace nebo zdroje používané vaší aplikací a nasazením. `ConfigurationBuilder`Infrastruktura, kterou můžete používat v aplikaci webových formulářů, byla modelována za použití konceptů v systému ASP.NET Core Configuration.
 
-Následující fragment kódu ukazuje, jak projekt eShop webových formulářů používá *Web. config* k ukládání hodnot konfigurace:
+Následující fragment kódu ukazuje, jak projekt eShop webových formulářů používá *web.config* k ukládání hodnot konfigurace:
 
 ```xml
 <configuration>
@@ -586,7 +589,7 @@ Následující fragment kódu ukazuje, jak projekt eShop webových formulářů 
 </configuration>
 ```
 
-Je běžné, že tajné klíče, jako jsou databázové připojovací řetězce, jsou uložené v *souboru Web. config*. Tajné kódy jsou nevyhnutelně trvale uložené v nezabezpečených umístěních, jako je například Správa zdrojového kódu. V Blazor v ASP.NET Core je předchozí konfigurace založená na XML nahrazena následujícím kódem JSON:
+Je běžné, že tajné klíče, například databázové připojovací řetězce, budou uloženy v rámci *web.config*. Tajné kódy jsou nevyhnutelně trvale uložené v nezabezpečených umístěních, jako je například Správa zdrojového kódu. V Blazor případě ASP.NET Core je předchozí konfigurace založená na XML nahrazena následujícím kódem JSON:
 
 ```json
 {
@@ -600,7 +603,7 @@ Je běžné, že tajné klíče, jako jsou databázové připojovací řetězce,
 
 JSON je výchozí formát konfigurace; ASP.NET Core však podporuje mnoho dalších formátů, včetně XML. K dispozici jsou také různé formáty podporované komunitou.
 
-Konstruktor třídy projektu Blazor `Startup` přijímá `IConfiguration` instanci prostřednictvím metody di známé jako injektáže konstruktoru:
+Konstruktor Blazor `Startup` třídy projektu přijímá `IConfiguration` instanci prostřednictvím metody di známé jako injektáže konstruktoru:
 
 ```csharp
 public class Startup
@@ -615,7 +618,7 @@ public class Startup
 }
 ```
 
-Ve výchozím nastavení proměnné prostředí, soubory JSON (*appSettings. JSON* a *appSettings. { Prostředí}. JSON*) a možnosti příkazového řádku jsou registrovány jako platné zdroje konfigurace v objektu konfigurace. Ke zdrojům konfigurace je možné přistup prostřednictvím `Configuration[key]` . Pokročilejší technikou je svázání konfiguračních dat s objekty pomocí vzoru možností. Další informace o konfiguraci a vzoru možností najdete v tématu [konfigurace v ASP.NET Core](/aspnet/core/fundamentals/configuration/) a [vzory možností v ASP.NET Core v](/aspnet/core/fundamentals/configuration/options)uvedeném pořadí.
+Ve výchozím nastavení proměnné prostředí, soubory JSON (*appsettings.jsna* a *appSettings. { Prostředí}. JSON*) a možnosti příkazového řádku jsou registrovány jako platné zdroje konfigurace v objektu konfigurace. Ke zdrojům konfigurace je možné přistup prostřednictvím `Configuration[key]` . Pokročilejší technikou je svázání konfiguračních dat s objekty pomocí vzoru možností. Další informace o konfiguraci a vzoru možností najdete v tématu [konfigurace v ASP.NET Core](/aspnet/core/fundamentals/configuration/) a [vzory možností v ASP.NET Core v](/aspnet/core/fundamentals/configuration/options)uvedeném pořadí.
 
 ## <a name="migrate-data-access"></a>Migrace přístupu k datům
 
@@ -626,13 +629,13 @@ Následující změny související s EF byly nutné pro eShop:
 - V .NET Framework `DbContext` objekt přijímá řetězec ve tvaru *název = ConnectionString* a používá připojovací řetězec z `ConfigurationManager.AppSettings[ConnectionString]` k připojení. V rozhraní .NET Core to není podporováno. Připojovací řetězec musí být dodán.
 - K databázi došlo synchronním způsobem. I když to funguje, může dojít ke zhoršení škálovatelnosti. Tato logika by se měla přesunout do asynchronního vzoru.
 
-I když se nejedná o stejnou nativní podporu vazby datové sady, Blazor poskytuje flexibilitu a výkon díky podpoře C# na stránce Razor. Můžete například provádět výpočty a zobrazovat výsledek. Další informace o vzorech dat v Blazor naleznete v kapitole [přístup k datům](data.md) .
+I když se nejedná o stejnou nativní podporu vazby datové sady, Blazor poskytuje flexibilitu a výkon díky podpoře C# na stránce Razor. Můžete například provádět výpočty a zobrazovat výsledek. Další informace o vzorech dat v nástroji Blazor naleznete v kapitole [přístup k datům](data.md) .
 
 ## <a name="architectural-changes"></a>Změny architektury
 
-Nakonec existují některé důležité rozdíly v architektuře, které je potřeba vzít v úvahu při migraci na Blazor. Mnohé z těchto změn platí pro cokoli na základě .NET Core nebo ASP.NET Core.
+Nakonec existují některé důležité rozdíly architektury, které je potřeba vzít v úvahu při migraci na Blazor . Mnohé z těchto změn platí pro cokoli na základě .NET Core nebo ASP.NET Core.
 
-Vzhledem k tomu, že Blazor je postaven na rozhraní .NET Core, existují důvody pro zajištění podpory .NET Core. Některé z hlavních změn zahrnují odebrání následujících funkcí:
+Vzhledem k tomu Blazor , že je rozhraní .NET Core postaveno, existují i pokyny k zajištění podpory .NET Core. Některé z hlavních změn zahrnují odebrání následujících funkcí:
 
 - Více objektů třídy AppDomains
 - Vzdálenou
@@ -651,7 +654,7 @@ Mnoho operací v ASP.NET Core je asynchronní, což umožňuje snazší načíta
 
 ## <a name="migration-conclusion"></a>Závěr migrace
 
-V tomto okamžiku jste viděli spoustu příkladů toho, co je potřeba k přesunutí projektu webových formulářů do Blazor. Úplný příklad naleznete v projektu [eShopOnBlazor](https://github.com/dotnet-architecture/eShopOnBlazor) .
+V tomto okamžiku jste viděli spoustu příkladů toho, co je potřeba k přesunutí projektu webových formulářů do Blazor . Úplný příklad naleznete v projektu [eShopOn Blazor ](https://github.com/dotnet-architecture/eShopOnBlazor) .
 
 >[!div class="step-by-step"]
 >[Předchozí](security-authentication-authorization.md)

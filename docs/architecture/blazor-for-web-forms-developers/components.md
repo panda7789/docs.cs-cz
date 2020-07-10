@@ -1,22 +1,25 @@
 ---
-title: Sestavení opakovaně použitelných součástí uživatelského rozhraní pomocí Blazor
-description: Naučte se sestavovat znovu použitelné součásti uživatelského rozhraní pomocí Blazor a jak se porovnávají s ovládacími prvky webových formulářů ASP.NET.
+title: Sestavení opakovaně použitelných součástí uživatelského rozhraní sBlazor
+description: Naučte se sestavovat opakovaně použitelné součásti uživatelského rozhraní Blazor a jak se porovnávají s ovládacími prvky webových formulářů ASP.NET.
 author: danroth27
 ms.author: daroth
+no-loc:
+- Blazor
 ms.date: 09/18/2019
-ms.openlocfilehash: f6528b1e68b49b6ee3949baca166f4806448718b
-ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
+ms.openlocfilehash: 9577fc916bb11783b885b2641242820865c0b115
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86051449"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86173337"
 ---
-# <a name="build-reusable-ui-components-with-blazor"></a>Sestavení opakovaně použitelných součástí uživatelského rozhraní pomocí Blazor
+# <a name="build-reusable-ui-components-with-blazor"></a>Sestavení opakovaně použitelných součástí uživatelského rozhraní sBlazor
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Jednou ze skvělých věcí o webových formulářích ASP.NET je to, jak umožňuje zapouzdření opakovaně použitelných částí kódu uživatelského rozhraní (UI) do opakovaně použitelných ovládacích prvků uživatelského rozhraní. Vlastní uživatelské ovládací prvky lze definovat v označení pomocí souborů *. ascx* . Můžete také vytvořit podrobné serverové ovládací prvky v kódu s podporou plného návrháře.
 
-Blazor také podporuje zapouzdření uživatelského rozhraní prostřednictvím *komponent*. Součást:
+Blazorpodporuje také zapouzdření uživatelského rozhraní prostřednictvím *komponent*. Součást:
 
 - Je samostatně obsažený blok uživatelského rozhraní.
 - Udržuje vlastní logiku stavu a vykreslování.
@@ -78,13 +81,13 @@ Následující tabulka shrnuje různé direktivy Razor používané v Blazor a j
 
 |Směrnici    |Popis|Příklad|Ekvivalentní webové formuláře|
 |-------------|-----------|-------|--------------------|
-|`@attribute` |Přidá do komponenty atribut na úrovni třídy.|`@attribute [Authorize]`|Žádná|
+|`@attribute` |Přidá do komponenty atribut na úrovni třídy.|`@attribute [Authorize]`|Žádný|
 |`@code`      |Přidá do komponenty členy třídy.|`@code { ... }`|`<script runat="server">...</script>`|
 |`@implements`|Implementuje zadané rozhraní.|`@implements IDisposable`|Použití kódu na pozadí|
 |`@inherits`  |Dědí ze zadané základní třídy.|`@inherits MyComponentBase`|`<%@ Control Inherits="MyUserControlBase" %>`|
-|`@inject`    |Vloží službu do komponenty.|`@inject IJSRuntime JS`|Žádná|
+|`@inject`    |Vloží službu do komponenty.|`@inject IJSRuntime JS`|Žádný|
 |`@layout`    |Určuje komponentu rozložení pro komponentu.|`@layout MainLayout`|`<%@ Page MasterPageFile="~/Site.Master" %>`|
-|`@namespace` |Nastaví obor názvů pro komponentu.|`@namespace MyNamespace`|Žádná|
+|`@namespace` |Nastaví obor názvů pro komponentu.|`@namespace MyNamespace`|Žádný|
 |`@page`      |Určuje trasu pro komponentu.|`@page "/product/{id}"`|`<%@ Page %>`|
 |`@typeparam` |Určuje parametr obecného typu pro komponentu.|`@typeparam TItem`|Použití kódu na pozadí|
 |`@using`     |Určuje obor názvů, který se má uvést do oboru.|`@using MyComponentNamespace`|Přidat obor názvů v *web.config*|
@@ -95,7 +98,7 @@ Komponenty Razor také usnadňují rozsáhlé použití *atributů direktiv* u e
 @directive(-suffix(:name))(="value")
 ```
 
-Následující tabulka shrnuje různé atributy pro direktivy Razor používané v Blazor.
+Následující tabulka shrnuje různé atributy pro direktivy Razor používané v Blazor .
 
 |Atribut    |Popis|Příklad|
 |-------------|-----------|-------|
@@ -105,11 +108,11 @@ Následující tabulka shrnuje různé atributy pro direktivy Razor používané
 |`@key`       |Určuje klíč, který má být použit rozdílovým algoritmem pro zachování prvků v kolekci.|`<DetailsEditor @key="person" Details="person.Details" />`|
 |`@ref`       |Zachycuje odkaz na komponentu nebo HTML element.|`<MyDialog @ref="myDialog" />`|
 
-Různé atributy direktiv používané Blazor ( `@onclick` , `@bind` , `@ref` a tak dále) jsou popsány v následujících částech a v pozdějších kapitolách.
+Různé atributy direktiv používané pomocí Blazor ( `@onclick` , `@bind` , `@ref` a tak dále) jsou popsány v následujících částech a v pozdějších kapitolách.
 
 Mnohé z syntaxí používaných v souborech *. aspx* a *. ascx* mají paralelní syntaxe v Razor. Níže je jednoduché porovnání syntaxí pro webové formuláře ASP.NET a Razor.
 
-|Funkce                      |webové formuláře           |Syntax               |Razor         |Syntax |
+|Funkce                      |webové formuláře           |Syntaxe               |Razor         |Syntaxe |
 |-----------------------------|--------------------|---------------------|--------------|-------|
 |Direktivy                   |`<%@ [directive] %>`|`<%@ Page %>`        |`@[directive]`|`@page`|
 |Bloky kódu                  |`<% %>`             |`<% int x = 123; %>` |`@{ }`        |`@{ int x = 123; }`|
@@ -130,7 +133,7 @@ Chcete-li přidat členy do třídy komponenty Razor, použijte `@code` direktiv
 }
 ```
 
-Vzhledem k tomu, že je Razor založen na jazyce C#, musí být zkompilován z projektu jazyka C# (*. csproj*). Soubory *. Razor* nemůžete kompilovat z Visual Basicho projektu (*. vbproj*). Stále můžete odkazovat na Visual Basic projekty z projektu Blazor. Opak je pravda.
+Vzhledem k tomu, že je Razor založen na jazyce C#, musí být zkompilován z projektu jazyka C# (*. csproj*). Soubory *. Razor* nemůžete kompilovat z Visual Basicho projektu (*. vbproj*). Stále můžete odkazovat na Visual Basic projekty z Blazor projektu. Opak je pravda.
 
 Úplný odkaz na syntaxe Razor naleznete v tématu [syntaxe Razor reference for ASP.NET Core](/aspnet/core/mvc/views/razor).
 
@@ -142,7 +145,7 @@ Kromě normálního formátu HTML mohou komponenty také použít jiné komponen
 <Counter />
 ```
 
-Na rozdíl od webových formulářů ASP.NET, komponent v Blazor:
+Na rozdíl od webových formulářů ASP.NET, součástí v Blazor :
 
 - Nepoužívejte předponu elementu (například `asp:` ).
 - Pro stránku nebo *web.config*Nevyžadovat registraci.
@@ -155,7 +158,7 @@ Komponenty Razor si můžete představit jako typy .NET, protože jsou přesně 
 <Counter />
 ```
 
-Jak je vidět ve výchozích projektech Blazor, je běžné umístit `@using` direktivy do souboru *_Imports. Razor* tak, aby byly importovány do všech souborů *. Razor* ve stejném adresáři a v podřízených adresářích.
+Jak je vidět ve výchozích Blazor projektech, je běžné umístit `@using` direktivy do souboru *_Imports. Razor* tak, aby byly importovány do všech souborů *. Razor* ve stejném adresáři a v podřízených adresářích.
 
 Pokud obor názvů pro komponentu není v oboru, můžete určit komponentu pomocí jejího úplného názvu typu, jak je možné v jazyce C#:
 
@@ -165,7 +168,7 @@ Pokud obor názvů pro komponentu není v oboru, můžete určit komponentu pomo
 
 ## <a name="component-parameters"></a>Parametry součásti
 
-Ve webových formulářích ASP.NET můžete Flow parametry a data do ovládacích prvků pomocí veřejných vlastností. Tyto vlastnosti lze nastavit v kódu pomocí atributů nebo nastavit přímo v kódu. Komponenty Blazor fungují podobným způsobem, i když vlastnosti komponenty musí být označeny také `[Parameter]` atributem, který má být považován za parametr komponenty.
+Ve webových formulářích ASP.NET můžete Flow parametry a data do ovládacích prvků pomocí veřejných vlastností. Tyto vlastnosti lze nastavit v kódu pomocí atributů nebo nastavit přímo v kódu. Blazorkomponenty fungují podobným způsobem, i když vlastnosti komponent musí být označeny `[Parameter]` atributem, který má být považován za parametrem součásti.
 
 Následující `Counter` Komponenta definuje parametr komponenty s názvem `IncrementAmount` , který lze použít k určení množství, které se má `Counter` zvýšit při každém kliknutí na tlačítko.
 
@@ -189,7 +192,7 @@ Následující `Counter` Komponenta definuje parametr komponenty s názvem `Incr
 }
 ```
 
-Chcete-li určit parametr komponenty v Blazor, použijte atribut jako ve webových formulářích ASP.NET:
+Chcete-li určit parametr komponenty v Blazor , použijte atribut jako ve webových formulářích ASP.NET:
 
 ```razor
 <Counter IncrementAmount="10" />
@@ -197,7 +200,7 @@ Chcete-li určit parametr komponenty v Blazor, použijte atribut jako ve webový
 
 ## <a name="event-handlers"></a>Obslužné rutiny událostí
 
-Webové formuláře ASP.NET a Blazor poskytují programovací model založený na událostech pro zpracování událostí uživatelského rozhraní. Příklady takových událostí zahrnují kliknutí na tlačítko a textové zadání. Ve webových formulářích ASP.NET používáte ovládací prvky HTML serveru pro zpracování událostí uživatelského rozhraní vystavených modelem DOM, nebo můžete zpracovávat události vystavené ovládacími prvky webového serveru. Události jsou na serveru umístěny prostřednictvím požadavků po návratu do formuláře. Vezměte v úvahu následující tlačítko Web Forms klikněte na příklad:
+Jak webové formuláře ASP.NET, tak Blazor poskytují programovací model založený na událostech pro zpracování událostí uživatelského rozhraní. Příklady takových událostí zahrnují kliknutí na tlačítko a textové zadání. Ve webových formulářích ASP.NET používáte ovládací prvky HTML serveru pro zpracování událostí uživatelského rozhraní vystavených modelem DOM, nebo můžete zpracovávat události vystavené ovládacími prvky webového serveru. Události jsou na serveru umístěny prostřednictvím požadavků po návratu do formuláře. Vezměte v úvahu následující tlačítko Web Forms klikněte na příklad:
 
 *Čítač. ascx*
 
@@ -217,7 +220,7 @@ public partial class Counter : System.Web.UI.UserControl
 }
 ```
 
-V Blazor můžete zaregistrovat obslužné rutiny pro události uživatelského rozhraní modelu DOM přímo pomocí atributů direktiv formuláře `@on{event}` . `{event}`Zástupný symbol představuje název události. Například můžete naslouchat tomu, že kliknete na tlačítko takto:
+V Blazor nástroji můžete zaregistrovat obslužné rutiny pro události uživatelského rozhraní modelu DOM přímo pomocí atributů direktiv formuláře `@on{event}` . `{event}`Zástupný symbol představuje název události. Například můžete naslouchat tomu, že kliknete na tlačítko takto:
 
 ```razor
 <button @onclick="OnClick">Click me!</button>
@@ -308,7 +311,7 @@ Komponenty mohou také definovat vlastní události definováním parametru sou�
 
 ## <a name="data-binding"></a>Datová vazba
 
-Blazor poskytuje jednoduchý mechanismus pro svázání dat z komponenty uživatelského rozhraní do stavu komponenty. Tento přístup se liší od funkcí ve webových formulářích ASP.NET pro svázání dat ze zdrojů dat až po ovládací prvky uživatelského rozhraní. Zpracováváme data z různých zdrojů dat v části řešení problémů [s daty](data.md) .
+Blazorposkytuje jednoduchý mechanismus pro svázání dat z komponenty uživatelského rozhraní do stavu komponenty. Tento přístup se liší od funkcí ve webových formulářích ASP.NET pro svázání dat ze zdrojů dat až po ovládací prvky uživatelského rozhraní. Zpracováváme data z různých zdrojů dat v části řešení problémů [s daty](data.md) .
 
 Chcete-li vytvořit obousměrnou datovou vazbu z komponenty uživatelského rozhraní do stavu komponenty, použijte `@bind` atribut direktiva. V následujícím příkladu je hodnota zaškrtávacího políčka svázána s `isChecked` polem.
 
@@ -430,9 +433,9 @@ public partial class Counter : System.Web.UI.UserControl
 }
 ```
 
-Komponenty Blazor mají také dobře definovaný životní cyklus. Životní cyklus komponenty lze použít k inicializaci stavu součásti a implementaci pokročilého chování komponent.
+Blazorkomponenty mají také dobře definovaný životní cyklus. Životní cyklus komponenty lze použít k inicializaci stavu součásti a implementaci pokročilého chování komponent.
 
-Všechny metody životního cyklu komponenty Blazor mají synchronní i asynchronní verzi. Vykreslování součásti je synchronní. Asynchronní logiku nelze spustit jako součást vykreslování komponenty. Veškerá asynchronní logika musí být spuštěna jako součást `async` metody životního cyklu.
+Všechny Blazor metody životního cyklu komponenty mají synchronní i asynchronní verzi. Vykreslování součásti je synchronní. Asynchronní logiku nelze spustit jako součást vykreslování komponenty. Veškerá asynchronní logika musí být spuštěna jako součást `async` metody životního cyklu.
 
 ### <a name="oninitialized"></a>Inicializováno
 
@@ -479,7 +482,7 @@ protected override async Task OnAfterRenderAsync(bool firstRender)
 
 ### <a name="idisposable"></a>IDisposable
 
-Komponenty Blazor mohou implementovat `IDisposable` pro uvolnění prostředků, pokud je komponenta odebrána z uživatelského rozhraní. Komponenta Razor může implementovat `IDispose` pomocí `@implements` direktivy:
+Blazorsoučásti mohou implementovat `IDisposable` pro uvolnění prostředků, pokud je komponenta odebrána z uživatelského rozhraní. Komponenta Razor může implementovat `IDispose` pomocí `@implements` direktivy:
 
 ```razor
 @using System
@@ -497,9 +500,9 @@ Komponenty Blazor mohou implementovat `IDisposable` pro uvolnění prostředků,
 
 ## <a name="capture-component-references"></a>Zachytit odkazy na komponenty
 
-Ve webových formulářích ASP.NET je běžné manipulovat s instancí ovládacího prvku přímo v kódu odkazem na jeho ID. V Blazor je také možné zachytit odkaz na komponentu a manipulovat s nimi, i když je to mnohem méně běžné.
+Ve webových formulářích ASP.NET je běžné manipulovat s instancí ovládacího prvku přímo v kódu odkazem na jeho ID. V nástroji je Blazor také možné zachytit odkaz na komponentu a manipulovat s nimi, i když je to mnohem méně běžné.
 
-Chcete-li zachytit odkaz na komponentu v Blazor, použijte `@ref` atribut direktiva. Hodnota atributu by měla odpovídat názvu nastavitelné pole se stejným typem, jako má Odkazovaná komponenta.
+Chcete-li zachytit odkaz na komponentu v Blazor , použijte `@ref` atribut direktiva. Hodnota atributu by měla odpovídat názvu nastavitelné pole se stejným typem, jako má Odkazovaná komponenta.
 
 ```razor
 <MyLoginDialog @ref="loginDialog" ... />
@@ -520,17 +523,17 @@ Manipulace se stavem součásti přímo pomocí odkazů na součásti se nedopor
 
 ## <a name="capture-element-references"></a>Zachytit odkazy elementu
 
-Komponenty Blazor mohou zachytit odkazy na prvek. Na rozdíl od serverových ovládacích prvků HTML ve webových formulářích ASP.NET nemůžete manipulovat s DOM přímo pomocí odkazu elementu v Blazor. Blazor zpracovává většinu interakcí DOM za použití jejich rozdílového algoritmu modelu DOM. Zachycené odkazy na prvky v Blazor jsou neprůhledné. Používají se však k předání konkrétního odkazu na element ve volání interoperability JavaScriptu. Další informace o zprostředkovateli komunikace s JavaScriptem naleznete v tématu [ASP.NET Core Blazor JavaScript](/aspnet/core/blazor/javascript-interop).
+Blazorkomponenty mohou zachytit odkazy na prvek. Na rozdíl od serverových ovládacích prvků HTML ve webových formulářích ASP.NET nemůžete manipulovat s DOM přímo pomocí odkazu elementu v Blazor . Blazorzpracovává většinu interakcí DOM za použití jejich rozdílového algoritmu modelu DOM. Zachycené odkazy na prvky v Blazor jsou neprůhledné. Používají se však k předání konkrétního odkazu na element ve volání interoperability JavaScriptu. Další informace o zprostředkovateli komunikace s JavaScriptem naleznete v tématu [ASP.NET Core Blazor interoperability JavaScriptu](/aspnet/core/blazor/javascript-interop).
 
 ## <a name="templated-components"></a>Komponenty bez vizuálního vzhledu
 
 Ve webových formulářích ASP.NET můžete vytvořit *ovládací prvky s šablonami*. Ovládací prvky s šablonou umožňují vývojáři zadat část kódu HTML použitou k vykreslení ovládacího prvku kontejneru. Mechanismus sestavování serverových ovládacích prvků na základě šablon je složitý, ale umožňuje výkonné scénáře pro vykreslování dat uživatelsky přizpůsobitelným způsobem. Příklady ovládacích prvků s šablonami jsou `Repeater` a `DataList` .
 
-Komponenty Blazor lze také šablonou definovat definováním parametrů součásti typu `RenderFragment` nebo `RenderFragment<T>` . `RenderFragment`Představuje blok značek Razor, který lze následně vykreslit komponentou. `RenderFragment<T>`Je blok značek Razor, který přebírá parametr, který lze zadat při vykreslení fragmentu vykreslování.
+Blazorkomponenty lze také šablonou definovat definováním parametrů součásti typu `RenderFragment` nebo `RenderFragment<T>` . `RenderFragment`Představuje blok značek Razor, který lze následně vykreslit komponentou. `RenderFragment<T>`Je blok značek Razor, který přebírá parametr, který lze zadat při vykreslení fragmentu vykreslování.
 
 ### <a name="child-content"></a>Podřízený obsah
 
-Komponenty Blazor můžou zachytit svůj podřízený obsah `RenderFragment` a vykreslovat ho jako součást vykreslování komponent. Chcete-li zachytit podřízený obsah, definujte parametr součásti typu `RenderFragment` a pojmenujte jej `ChildContent` .
+Blazorkomponenty mohou zachytit svůj podřízený obsah jako `RenderFragment` a vykreslovat tento obsah jako součást vykreslování komponent. Chcete-li zachytit podřízený obsah, definujte parametr součásti typu `RenderFragment` a pojmenujte jej `ChildContent` .
 
 *ChildContentComponent. Razor*
 
@@ -555,7 +558,7 @@ Nadřazená komponenta pak může poskytovat podřízený obsah pomocí normáln
 
 ### <a name="template-parameters"></a>Parametry šablony
 
-Komponenta Blazor šablon může také definovat více parametrů součásti typu `RenderFragment` nebo `RenderFragment<T>` . Parametr pro `RenderFragment<T>` lze zadat při jeho vyvolání. Chcete-li zadat parametr obecného typu pro komponentu, použijte `@typeparam` direktivu Razor.
+BlazorKomponenta šablon může také definovat více parametrů součásti typu `RenderFragment` nebo `RenderFragment<T>` . Parametr pro `RenderFragment<T>` lze zadat při jeho vyvolání. Chcete-li zadat parametr obecného typu pro komponentu, použijte `@typeparam` direktivu Razor.
 
 *SimpleListView. Razor*
 
@@ -608,7 +611,7 @@ Výstup této součásti vypadá takto:
 
 ## <a name="code-behind"></a>Kód na pozadí
 
-Komponenta Blazor je obvykle vytvořená v jednom souboru *. Razor* . Je však také možné oddělit kód a značky pomocí souboru kódu na pozadí. Chcete-li použít soubor komponenty, přidejte soubor C#, který se shoduje s názvem souboru komponenty, ale s přidaným rozšířením *. cs* (*Counter.Razor.cs*). Použijte soubor C# k definování základní třídy pro komponentu. Základní třídu můžete pojmenovat cokoli, co byste chtěli, ale je běžné pojmenovat třídu stejně jako třídu komponenty, ale s `Base` rozšířením ( `CounterBase` ). Třída založená na komponentě musí také odvozovat z `ComponentBase` . Poté v souboru komponenty Razor přidejte `@inherits` direktivu pro určení základní třídy pro komponentu ( `@inherits CounterBase` ).
+BlazorSoučást je obvykle vytvořená v jednom souboru *. Razor* . Je však také možné oddělit kód a značky pomocí souboru kódu na pozadí. Chcete-li použít soubor komponenty, přidejte soubor C#, který se shoduje s názvem souboru komponenty, ale s přidaným rozšířením *. cs* (*Counter.Razor.cs*). Použijte soubor C# k definování základní třídy pro komponentu. Základní třídu můžete pojmenovat cokoli, co byste chtěli, ale je běžné pojmenovat třídu stejně jako třídu komponenty, ale s `Base` rozšířením ( `CounterBase` ). Třída založená na komponentě musí také odvozovat z `ComponentBase` . Poté v souboru komponenty Razor přidejte `@inherits` direktivu pro určení základní třídy pro komponentu ( `@inherits CounterBase` ).
 
 *Čítač. Razor*
 
@@ -638,9 +641,9 @@ public class CounterBase : ComponentBase
 
 Viditelnost členů komponenty v základní třídě musí být `protected` nebo `public` viditelná pro třídu součásti.
 
-## <a name="additional-resources"></a>Další zdroje
+## <a name="additional-resources"></a>Další zdroje informací
 
-Předchozí není vyčerpávajícím způsobem všech aspektů Blazor komponent. Další informace o tom, jak [vytvořit a používat ASP.NET Core komponenty Razor](/aspnet/core/blazor/components), najdete v dokumentaci k Blazor.
+Předchozí není vyčerpávajícím způsobem všech aspektů Blazor komponent. Další informace o tom, jak [vytvořit a používat ASP.NET Core komponenty Razor](/aspnet/core/blazor/components), najdete v Blazor dokumentaci.
 
 >[!div class="step-by-step"]
 >[Předchozí](app-startup.md) 

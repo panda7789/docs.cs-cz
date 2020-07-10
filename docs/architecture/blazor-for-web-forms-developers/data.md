@@ -1,15 +1,17 @@
 ---
 title: Přístup k datům a jejich správa
-description: Naučte se, jak přistupovat k datům ve webových formulářích ASP.NET a Blazor a zpracovávat je.
+description: Naučte se, jak přistupovat k datům ve webových formulářích ASP.NET a pracovat s nimi Blazor .
 author: csharpfritz
 ms.author: jefritz
+no-loc:
+- Blazor
 ms.date: 04/26/2020
-ms.openlocfilehash: b9805da60722de1b5d4f91107e856f647f7564a7
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 4bf9bee21ce1db828dbe0aeb156d5e15cae4f703
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84446470"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86173301"
 ---
 # <a name="work-with-data"></a>Práce s daty
 
@@ -75,7 +77,7 @@ services.AddDbContext<MyDbContext>(options =>
     options.UseSqlServer("MY DATABASE CONNECTION STRING"));
 ```
 
-Předchozí kód se připojí k databázi SQL Server se zadaným připojovacím řetězcem. Připojovací řetězec můžete umístit do souboru *appSettings. JSON* , proměnných prostředí nebo jiných umístění úložiště konfigurace a odpovídajícím způsobem nahradit tento vložený řetězec.
+Předchozí kód se připojí k databázi SQL Server se zadaným připojovacím řetězcem. Připojovací řetězec můžete umístit do *appsettings.js* do souboru, proměnných prostředí nebo jiných umístění úložiště konfigurace a odpovídajícím způsobem nahradit tento vložený řetězec.
 
 Pak můžete vygenerovat databázovou tabulku, která je vhodná pro tuto třídu, pomocí následujících příkazů:
 
@@ -115,7 +117,7 @@ services.AddHttpClient("github", client =>
 });
 ```
 
-Kdykoli potřebujete přístup k datům z GitHubu, vytvořte klienta s názvem `github` . Klient je nakonfigurován se základní adresou a hlavičky požadavku jsou nastaveny odpovídajícím způsobem. Zapněte `IHttpClientFactory` do komponent Blazor pomocí `@inject` direktivy nebo `[Inject]` atributu vlastnosti. Vytvořte svého pojmenovaného klienta a v interakci se službami použijte následující syntaxi:
+Kdykoli potřebujete přístup k datům z GitHubu, vytvořte klienta s názvem `github` . Klient je nakonfigurován se základní adresou a hlavičky požadavku jsou nastaveny odpovídajícím způsobem. Zapněte `IHttpClientFactory` do svých Blazor komponent pomocí `@inject` direktivy nebo `[Inject]` atributu vlastnosti. Vytvořte svého pojmenovaného klienta a v interakci se službami použijte následující syntaxi:
 
 ```razor
 @inject IHttpClientFactory factory

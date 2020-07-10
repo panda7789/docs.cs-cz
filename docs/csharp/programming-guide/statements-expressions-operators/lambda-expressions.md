@@ -8,12 +8,12 @@ helpviewer_keywords:
 - expression lambda [C#]
 - expressions [C#], lambda
 ms.assetid: 57e3ba27-9a82-4067-aca7-5ca446b7bf93
-ms.openlocfilehash: b86fe4fd91b395498926512650490f8d3a0383a1
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: ffda4ad93451d6991aeb20ed01511f16fd3e512b
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83761834"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174150"
 ---
 # <a name="lambda-expressions-c-programming-guide"></a>Výrazy lambda (Průvodce programováním v C#)
 
@@ -141,7 +141,7 @@ Další informace o tom, jak vytvořit a používat asynchronní metody, nalezne
 
 ## <a name="lambda-expressions-and-tuples"></a>Výrazy lambda a řazené kolekce členů
 
-Počínaje jazykem C# 7,0 poskytuje jazyk C# integrovanou podporu pro [řazené kolekce členů](../../tuples.md). Můžete zadat řazenou kolekci členů jako argument pro lambda výraz a váš výraz lambda může také vrátit řazenou kolekci členů. V některých případech kompilátor C# používá odvození typu k určení typů komponent řazené kolekce členů.
+Počínaje jazykem C# 7,0 poskytuje jazyk C# integrovanou podporu pro [řazené kolekce členů](../../language-reference/builtin-types/value-tuples.md). Můžete zadat řazenou kolekci členů jako argument pro lambda výraz a váš výraz lambda může také vrátit řazenou kolekci členů. V některých případech kompilátor C# používá odvození typu k určení typů komponent řazené kolekce členů.
 
 Řazenou kolekci členů můžete definovat tak, že v závorkách seřadíte seznam jeho komponent oddělených čárkami. Následující příklad používá řazené kolekce členů se třemi komponenty k předání sekvence čísel lambda výrazu, který zdvojnásobuje každou hodnotu a vrátí řazenou kolekci členů se třemi komponentami, které obsahují výsledek násobení.
 
@@ -151,7 +151,7 @@ Obvykle se pole řazené kolekce členů nazývají `Item1` , `Item2` atd. Můž
 
 [!code-csharp-interactive[lambda and named tuples](~/samples/snippets/csharp/programming-guide/lambda-expressions/LambdasAndTuples.cs#WithComponentName)]
 
-Další informace o řazených kolekcích členů jazyka C# naleznete v tématu [typy řazené kolekce členů jazyka c#](../../tuples.md).
+Další informace o řazených kolekcích členů jazyka C# naleznete v tématu [typy řazené kolekce členů](../../language-reference/builtin-types/value-tuples.md).
 
 ## <a name="lambdas-with-the-standard-query-operators"></a>Výrazy lambda se standardními operátory dotazu
 

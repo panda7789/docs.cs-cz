@@ -4,12 +4,12 @@ description: Zjistěte, kterou cestu migrace do Azure je pro vaši webovou aplik
 author: CESARDELATORRE
 ms.author: cesardl
 ms.date: 03/01/2020
-ms.openlocfilehash: a8ad946b03f97272cb8685620858af6b21a372dc
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+ms.openlocfilehash: 162dc8eb87dfd78d050b93b1c24ac573d7092126
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "82072107"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174293"
 ---
 # <a name="choose-the-right-azure-hosting-option"></a>Zvolit správnou možnost hostování Azure
 
@@ -33,7 +33,7 @@ V následující tabulce je uvedeno několik porovnání a doporučení, která 
 |Kdy je použít      |<ul><li>Aplikace má silné závislosti na instalaci serveru a místních. msi.</li><li>Chcete nejjednodušší cestu k migraci aplikace</li></ul>|Aplikace nemá žádné závislosti na serveru, jedná se pouze o čistě ASP.NET webovou aplikaci (MVC, WebForm) nebo N-vrstvou aplikaci (webové rozhraní API, WCf) přistupující k databázovému serveru. |<ul><li>Aplikace má závislosti na původním serveru, ale tyto závislosti mohou být zahrnuty v imagi Docker Windows.</li><li>Chcete aplikaci modernizovat, aby byla [cloudová DevOps připravená](../../architecture/modernize-with-azure-containers/modernize-existing-apps-to-cloud-optimized/reasons-to-modernize-existing-net-apps-to-cloud-optimized-applications.md)</li></ul>|
 |Výhody & výhodách  |<ul><li>Nejjednodušší cesta k migraci</li><li>Známé prostředí. Prostředí nasazení je virtuální počítač, takže je podobný místním serverům.</li></ul> |Průběžná údržba PaaS, nejjednodušší způsob, jak spravovat a škálovat aplikace v Azure. |<ul><li>Připraveno pro budoucnost, cloudové DevOps – připravené závislosti, které jsou součástí kontejnerů aplikace.</li><li>Skoro není potřeba Refaktorovat kód .NET/C #.</li></ul> |
 |Nevýhody             |Je IaaS. Údržba je nákladná. Musíte spravovat infrastrukturu virtuálního počítače o sítích, nástroji pro vyrovnávání zatížení, škálování na více instancí, správě služby IIS atd. |<ul><li>Ne všechny aplikace jsou [podporovány](https://appmigration.microsoft.com/assessment) .</li><li>Některé aplikace může být potřeba Refaktorovat a dokonce trochu měnit její architekturu, aby podporovaly Azure App Service.</li></ul> |<ul><li>Křivka výukového kurzu Docker</li><li>Některé změny nastavení kódu a konfigurace aplikace</li></ul>|
-|Požadavky |Virtuální počítač s Windows serverem se stejnými požadavky než aplikace pro místní prostředí | Azure App Service požadavky určené v [kontrolách připravenosti](https://github.com/Azure/App-Service-Migration-Assistant/wiki/Readiness-Checks). |<ul><li>[Docker Engine – Enterprise pro Windows Server 2019](https://azuremarketplace.microsoft.com/marketplace/apps/cloud-infrastructure-services.docker-windows-2019)<br />– nebo –</li><li>[Azure Container Service (AKS)](https://azure.microsoft.com/services/container-service/) (to je Kubernetes Orchestrator)<br />– nebo –<li>[Azure Service Fabric](https://azure.microsoft.com/services/service-fabric/) Orchestrator</li></ul> |
+|Požadavky |Virtuální počítač s Windows serverem se stejnými požadavky než aplikace pro místní prostředí | Azure App Service požadavky určené v [kontrolách připravenosti](https://github.com/Azure/App-Service-Migration-Assistant/wiki/Readiness-Checks). |<ul><li>[Docker Engine – Enterprise pro Windows Server 2019](https://azuremarketplace.microsoft.com/marketplace/apps/cloud-infrastructure-services.docker-windows-2019)<br />nebo</li><li>[Azure Container Service (AKS)](https://azure.microsoft.com/services/container-service/) (to je Kubernetes Orchestrator)<br />nebo<li>[Azure Service Fabric](https://azure.microsoft.com/services/service-fabric/) Orchestrator</li></ul> |
 |Jak migrovat |Viz [migrace do Azure Virtual Machines](vm.md) | Viz [migrace Azure App Service](app-service.md) | Postupovat podle pokynů, scénářů a návodů, které jsou vysvětleny ve [stávajících aplikacích .NET modernizaci pomocí Azure a kontejnerů Windows – kniha](https://aka.ms/liftandshiftwithcontainersebook) |
 
 Při plánování migrace do Azure pro stávající aplikace .NET Framework znázorňuje následující vývojový diagram rozhodovací strom. Pokud je to možné, vyzkoušejte si možnost jako první, ale možnost B je nejjednodušší cesta, která se má provést.
@@ -46,7 +46,7 @@ Při migraci relačních databází do Azure máte více možností. V tématu [
 
 ## <a name="networking-and-security-considerations"></a>Požadavky na sítě a zabezpečení
 
-Při nasazování aplikací do veřejného cloudu, jako je Microsoft Azure, můžete chtít izolovat a zabezpečit určité sítě [vytvořením sítě zóny DMZ](https://docs.microsoft.com/azure/architecture/reference-architectures/dmz/), jako je [DMZ mezi Azure a místním](https://docs.microsoft.com/azure/architecture/reference-architectures/dmz/secure-vnet-hybrid) prostředím nebo [DMZ mezi Azure a internetem](https://docs.microsoft.com/azure/architecture/reference-architectures/dmz/secure-vnet-dmz). Zóny DMZ se dá implementovat s [Azure Virtual Network](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview).
+Při nasazování aplikací do veřejného cloudu, jako je Microsoft Azure, můžete chtít izolovat a zabezpečit určité sítě [vytvořením sítě zóny DMZ](/azure/architecture/reference-architectures/dmz/), jako je [DMZ mezi Azure a místním](/azure/architecture/reference-architectures/dmz/secure-vnet-hybrid) prostředím nebo [DMZ mezi Azure a internetem](/azure/architecture/reference-architectures/dmz/secure-vnet-dmz). Zóny DMZ se dá implementovat s [Azure Virtual Network](/azure/virtual-network/virtual-networks-overview).
 
 Virtuální sítě Azure umožňují:
 
@@ -57,15 +57,15 @@ Virtuální sítě Azure umožňují:
 - Vytváření propracovaných síťových topologií pomocí virtuálních zařízení
 - Získejte izolované a vysoce zabezpečené prostředí pro vaše aplikace.
 
-Pokud chcete začít vytvářet vlastní virtuální síť, přečtěte si [dokumentaci k Azure Virtual Network](https://docs.microsoft.com/azure/virtual-network/).
+Pokud chcete začít vytvářet vlastní virtuální síť, přečtěte si [dokumentaci k Azure Virtual Network](/azure/virtual-network/).
 
 ## <a name="authentication-and-authorization-considerations-when-migrating-to-azure"></a>Pokyny k ověřování a autorizaci při migraci do Azure
 
 Nejdůležitějším problémem každé organizace, která přesouvá do cloudu, je zabezpečení. Většina společností investovala značnou dobu, peníze a strojírenství při navrhování a vývoji modelu zabezpečení a je důležité, aby mohli využívat stávající investice, jako jsou úložiště identit a řešení jednotného přihlašování.
 
-Řada stávajících aplikací .NET B2E Enterprise běžících místně používá službu Active Directory pro ověřování a správu identit. Azure AD Connect umožňuje integrovat místní adresáře s Azure Active Directory. Informace o tom, jak začít, najdete v tématu [Integrace místních adresářů s Azure Active Directory](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect).
+Řada stávajících aplikací .NET B2E Enterprise běžících místně používá službu Active Directory pro ověřování a správu identit. Azure AD Connect umožňuje integrovat místní adresáře s Azure Active Directory. Informace o tom, jak začít, najdete v tématu [Integrace místních adresářů s Azure Active Directory](/azure/active-directory/connect/active-directory-aadconnect).
 
-Další plánování týkající se Azure Active Directory najdete v tématu [požadavky na identitu pro vaše řešení hybridní identity](https://docs.microsoft.com/azure/active-directory/active-directory-hybrid-identity-design-considerations-business-needs) .
+Další plánování týkající se Azure Active Directory najdete v tématu [požadavky na identitu pro vaše řešení hybridní identity](/azure/active-directory/active-directory-hybrid-identity-design-considerations-business-needs) .
 
 Mezi další možnosti protokolu pro ověřování patří [OAuth](https://en.wikipedia.org/wiki/OAuth) a [OpenID](https://en.wikipedia.org/wiki/OpenID), které jsou běžné v aplikacích určených pro uživatele. Při použití autonomních databází identity, jako je například ASP.NET Identity SQL Database zabalená IdentityServer4 pomocí OAuth, se obvykle nevyžaduje žádné připojení k místním databázím ani adresářům.
 

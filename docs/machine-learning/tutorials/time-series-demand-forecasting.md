@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.author: luquinta
 author: luisquintanilla
-ms.openlocfilehash: 4ea002b690de877fd6f955c05eb8235f46e0a870
-ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
+ms.openlocfilehash: d93bdee8d5a057be0f405fe4334d7edbdc0649ec
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85803210"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174403"
 ---
 # <a name="tutorial-forecast-bike-rental-service-demand-with-time-series-analysis-and-mlnet"></a>Kurz: odhadování poptávky po nájemce kol s využitím analýzy časových řad a ML.NET
 
@@ -33,7 +33,7 @@ V tomto kurzu se naučíte:
 
 ## <a name="time-series-forecasting-sample-overview"></a>Ukázka prognózy časových řad – přehled
 
-Tato ukázka je **Konzolová aplikace C# .NET Core** , která vypovídá poptávku za nájemné za kolo pomocí algoritmu analýzy univariate Time Series, který se označuje jako analýza s jedním spektrem. Kód pro tuto ukázku najdete v úložišti [dotnet/machinelearning-Samples](https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/getting-started/Forecasting_BikeSharingDemand) na GitHubu.
+Tato ukázka je **Konzolová aplikace C# .NET Core** , která vypovídá poptávku za nájemné za kolo pomocí algoritmu analýzy univariate Time Series, který se označuje jako analýza v jednotném spektru. Kód pro tuto ukázku najdete v úložišti [dotnet/machinelearning-Samples](https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/getting-started/Forecasting_BikeSharingDemand) na GitHubu.
 
 ## <a name="understand-the-problem"></a>Pochopení problému
 
@@ -41,7 +41,7 @@ Aby bylo možné spustit efektivní operaci, Správa inventáře hraje klíčovo
 
 Technika analýzy dat používaných v tomto kurzu je univariate analýza časových řad. Analýza Univariate Time-Series se při určitých intervalech, jako je měsíční prodej, podívá na jedno číselné pozorování v určitém časovém intervalu.
 
-Algoritmus použitý v tomto kurzu je [Analýza s jedním spektrem (SSA)](http://ssa.cf.ac.uk/zhigljavsky/pdfs/SSA/SSA_encyclopedia.pdf). SSA funguje tak, že rozdělí časovou řadu do sady základních komponent. Tyto komponenty lze interpretovat jako části signálu, který odpovídá trendům, hluku, sezónnost a mnoha dalším faktorům. Poté jsou tyto komponenty znovu sestaveny a použity k předpovědi hodnot v budoucnu.
+Algoritmus použitý v tomto kurzu je [Analýza jednotného spektra (SSA)](http://ssa.cf.ac.uk/zhigljavsky/pdfs/SSA/SSA_encyclopedia.pdf). SSA funguje tak, že rozdělí časovou řadu do sady základních komponent. Tyto komponenty lze interpretovat jako části signálu, který odpovídá trendům, hluku, sezónnost a mnoha dalším faktorům. Poté jsou tyto komponenty znovu sestaveny a použity k předpovědi hodnot v budoucnu.
 
 ## <a name="create-console-application"></a>Vytvoření konzolové aplikace
 
@@ -83,7 +83,7 @@ CREATE TABLE [Rentals] (
 
 Následuje ukázka dat:
 
-| RentalDate | Year | TotalRentals |
+| RentalDate | Year (Rok) | TotalRentals |
 | --- | --- | --- |
 |1/1/2011|0|985|
 |1/2/2011|0|801|
@@ -254,7 +254,7 @@ Pokud jste s modelem spokojeni, uložte ho pro pozdější použití v jiných a
 
     [!code-csharp [BuildForecast](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L54)]
 
-1. Spusťte aplikaci. Výstup podobný tomuto: by měl být zobrazený v konzole nástroje. V případě zkrácení byl výstup zúžený.
+1. Aplikaci spusťte. Výstup podobný tomuto: by měl být zobrazený v konzole nástroje. V případě zkrácení byl výstup zúžený.
 
     ```text
     Evaluation Metrics
@@ -283,7 +283,7 @@ Kontrola skutečných a předpokládaných hodnot zobrazuje následující vztah
 
 I když hodnoty prognózy nepředpověď nad přesný počet nájemného, poskytují přesnější rozsah hodnot, který umožňuje operaci optimalizace používání prostředků.
 
-Gratulujeme! Teď jste úspěšně vytvořili model strojového učení s časovou řadou k prognózování poptávky po pronájmu kol.
+Blahopřejeme. Teď jste úspěšně vytvořili model strojového učení s časovou řadou k prognózování poptávky po pronájmu kol.
 
 Zdrojový kód pro tento kurz najdete v úložišti [dotnet/machinelearning-Samples](https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/getting-started/Forecasting_BikeSharingDemand) .
 

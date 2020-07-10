@@ -1,0 +1,223 @@
+### YamlMime:Landing
+title: Azure pro vývojáře na platformě .NET
+summary: Pomocí těchto kurzů a nástrojů pro vývojáře na platformě .NET začněte vyvíjet aplikace pro Cloud. .NET ❤ Azure
+metadata:
+  title: Azure pro vývojáře na platformě .NET
+  description: Dokumentace, ukázky a odkazy pro vývoj s využitím .NET a Azure
+  ms.date: 06/12/2020
+  ms.topic: landing-page
+  ms.collection: collection
+  ms.technology: azure
+  ms.service: multiple
+  ms.prod: azure-dotnet
+  ms.openlocfilehash: a7b9b909e500979750d57cc6047153123cd192e5
+  ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 07/09/2020
+  ms.locfileid: "86174934"
+landingContent:
+- title: Začínáme s .NET v Azure
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Seznámení s Azure a .NET
+      url: intro.md
+  - linkListType: get-started
+    links:
+    - text: Vývojové nástroje .NET
+      url: tools.md
+    - text: Ověření aplikace
+      url: authentication.md
+    - text: Protokolování
+      url: logging.md
+    - text: Příklad sady SDK
+      url: /samples/dotnet/samples/azure-identity-resource-management-storage/
+  - linkListType: learn
+    links:
+    - text: Základy Azure
+      url: /learn/paths/azure-fundamentals/
+  - linkListType: download
+    links:
+    - text: Ukázka kódu
+      url: /samples/browse/?products=azure&languages=csharp%2Caspx-csharp%2Cfsharp%2Cvb
+  - linkListType: reference
+    links:
+    - text: Reference ke knihovnám Azure pro rozhraní .NET API
+      url: /dotnet/api/overview/azure/?view=azure-dotnet
+- title: Sestavování webových aplikací
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: App Service
+      url: /azure/app-service/overview
+    - text: Azure Functions
+      url: /azure/azure-functions/functions-overview
+  - linkListType: quickstart
+    links:
+    - text: Nasazení webové aplikace v ASP.NET
+      url: /azure/app-service/app-service-web-get-started-dotnet
+    - text: Sestavení funkce bez serveru
+      url: /azure/azure-functions/functions-create-your-first-function-visual-studio
+  - linkListType: learn
+    links:
+    - text: Hostování webové aplikace s Azure App Service
+      url: /learn/modules/host-a-web-app-with-azure-app-service/
+    - text: Vývoj, testování a nasazení funkce Azure Functions pomocí sady Visual Studio
+      url: /learn/modules/develop-test-deploy-azure-functions-with-visual-studio/
+    - text: Publikování a správa rozhraní API s Azure API Managementem
+      url: /learn/modules/publish-manage-apis-with-azure-api-management/
+  - linkListType: tutorial
+    links:
+    - text: ASP.NET Core webové aplikace s App Service a Azure SQL Database
+      url: /azure/app-service/app-service-web-tutorial-dotnet-sqldatabase
+    - text: Správa identit pomocí ASP.NET a Azure SQL Database
+      url: /azure/app-service/app-service-web-tutorial-connect-msi
+    - text: Webové rozhraní API s CORS v Azure App Service
+      url: /azure/app-service/app-service-web-tutorial-rest-api
+- title: Sestavování nativních cloudových aplikací
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Spuštění a ladění mikroslužby v Kubernetes
+      url: /azure/dev-spaces/quickstart-netcore-visualstudio
+  - linkListType: learn
+    links:
+    - text: Vytvoření a nasazení nativní cloudové mikroslužby v ASP.NET Core
+      url: /learn/modules/microservices-aspnet-core/
+  - linkListType: how-to-guide
+    links:
+    - text: Nasazení aplikace .NET Core do Azure Container Registry
+      url: /visualstudio/containers/hosting-web-apps-in-docker
+  - linkListType: tutorial
+    links:
+    - text: ASP.NET Core aplikace pomocí nástrojů kontejnerů sady Visual Studio
+      url: /visualstudio/containers/container-tools
+    - text: Nasazení a ladění více kontejnerů v AKS
+      url: /azure/dev-spaces/multi-service-netcore-visualstudio
+    - text: Dynamická konfigurace a příznaky funkcí pomocí Azure App config
+      url: /azure/azure-app-configuration/use-feature-flags-dotnet-core
+- title: Ověřování a zabezpečení
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Platforma Microsoft identity (Azure AD)
+      url: /azure/active-directory/develop/
+  - linkListType: learn
+    links:
+    - text: Zabezpečení aplikace pomocí OpenID Connect a Azure AD
+      url: /learn/modules/secure-app-with-oidc-and-azure-ad/
+    - text: Zabezpečení vlastních rozhraní API s identitou Microsoftu
+      url: /learn/modules/identity-secure-custom-api/
+    - text: Zabezpečení webové aplikace v ASP.NET Core s využitím ASP.NET Identity Framework
+      url: /learn/modules/secure-aspnet-core-identity/
+  - linkListType: tutorial
+    links:
+    - text: Přidání přihlášení do Microsoftu do webové aplikace v ASP.NET
+      url: /azure/active-directory/develop/tutorial-v2-asp-webapp
+    - text: Použití Azure Key Vault s ASP.NET Core
+      url: /azure/key-vault/tutorial-net-create-vault-azure-web-app
+    - text: Integrace Azure AD B2C s webovým rozhraním API
+      url: /azure/active-directory-b2c/tutorial-single-page-app-webapi
+  - linkListType: reference
+    links:
+    - text: Klientská knihovna Azure identity pro .NET
+      url: /dotnet/api/overview/azure/identity-readme?view=azure-dotnet
+- title: Práce s &mi daty úložiště
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Volba správného úložiště dat
+      url: /azure/architecture/guide/technology-choices/data-store-overview
+  - linkListType: quickstart
+    links:
+    - text: Použití .NET k dotazování Azure SQL Database nebo spravované instance Azure SQL
+      url: /azure/azure-sql/database/connect-query-dotnet-core
+    - text: Použití .NET k dotazování služby Azure PostgreSQL
+      url: /azure/postgresql/connect-csharp
+  - linkListType: learn
+    links:
+    - text: Vývoj a konfigurace aplikace ASP.NET, která zadává dotazy do databáze Azure SQL
+      url: /learn/modules/develop-app-that-queries-azure-sql/
+    - text: Sestavení aplikace .NET Core v editoru Visual Studio Code pro službu Azure Cosmos DB
+      url: /learn/modules/build-cosmos-db-app-with-vscode/
+    - text: Ukládání dat aplikace pomocí úložiště objektů blob v Azure
+      url: /learn/modules/store-app-data-with-azure-blob-storage/
+    - text: Zachování a načtení relačních dat pomocí technologie Entity Framework Core
+      url: /learn/modules/persist-data-ef-core/
+  - linkListType: tutorial
+    links:
+    - text: Připojení a dotazování databáze Azure Database for PostgreSQL
+      url: /azure/postgresql/connect-csharp
+- title: Zasílání zpráv v Azure
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Ukládání zpráv s frontami Azure
+      url: /azure/storage/queues/storage-queues-introduction
+    - text: Zasílání zpráv mezi aplikacemi pomocí Azure Service Bus
+      url: /azure/service-bus-messaging
+    - text: Streamování velkých objemů dat pomocí Event Hubs
+      url: /azure/event-hubs/event-hubs-about
+    - text: Sestavování aplikací založených na událostech pomocí Event Grid
+      url: /azure/event-grid/overview
+  - linkListType: quickstart
+    links:
+    - text: Použití Azure Queue Storage
+      url: /azure/storage/queues/storage-dotnet-how-to-use-queues?tabs=dotnet
+    - text: Použití Azure Service Busch front
+      url: /azure/service-bus-messaging/service-bus-dotnet-get-started-with-queues
+    - text: Ingestování dat v reálném čase prostřednictvím Azure Event Hubs
+      url: /azure/event-hubs/event-hubs-dotnet-standard-getstarted-send
+    - text: Směrování vlastních událostí pomocí Event Grid
+      url: /azure/event-grid/custom-event-quickstart
+- title: Diagnostika a monitorování
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Azure Monitor
+      url: /azure/azure-monitor/overview
+  - linkListType: learn
+    links:
+    - text: Zaznamenání a zobrazení časů načítání stránek ve webové aplikaci Azure
+      url: /learn/modules/capture-page-load-times-application-insights/
+  - linkListType: how-to-guide
+    links:
+    - text: Řešení potíží s ASP.NET Core v Azure App Service a IIS
+      url: /aspnet/core/test/troubleshoot-azure-iis
+    - text: Application Insights pomocí .NET Core ILogger
+      url: /azure/azure-monitor/app/ilogger
+    - text: Application Insights pro aplikace služby Worker
+      url: /azure/azure-monitor/app/worker-service
+    - text: Řešení potíží s aplikací v Azure App Service pomocí sady Visual Studio
+      url: /azure/app-service/troubleshoot-dotnet-visual-studio
+- title: Migrace
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Volba možnosti hostování Azure
+      url: ./migration/choose.md
+  - linkListType: how-to-guide
+    links:
+    - text: Migrace webové aplikace nebo služby .NET do Azure App Service
+      url: ./migration/app-service.md
+    - text: Migrace aplikace ASP.NET do virtuálního počítače Azure
+      url: ./migration/vm.md
+    - text: Migrace databáze SQL Serveru do Azure
+      url: ./migration/sql.md
+- title: Příručky architektury .NET
+  linkLists:
+  - linkListType: learn
+    links:
+    - text: Architektura moderních aplikací v Azure
+      url: /learn/paths/architect-modern-apps/
+  - linkListType: architecture
+    links:
+    - text: 'Mikroslužby .NET: Architektura kontejnerizovaných aplikací .NET'
+      url: /dotnet/architecture/microservices/
+    - text: Navrhování moderních webových aplikací pomocí ASP.NET Core a Azure
+      url: /dotnet/architecture/modern-web-apps-azure/
+    - text: Životní cyklus kontejnerizovaných aplikací Dockeru s platformou a nástroji Microsoft
+      url: /dotnet/architecture/containerized-lifecycle/
+    - text: Modernizace stávajících aplikací .NET pomocí cloudu Azure a kontejnerů Windows
+      url: /dotnet/architecture/modernize-with-azure-containers/

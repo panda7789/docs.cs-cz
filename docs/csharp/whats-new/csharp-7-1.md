@@ -1,46 +1,46 @@
 ---
 title: Co je nového v jazyce C# 7.1
-description: Přehled nových funkcí v C# 7.1.
+description: Přehled nových funkcí v C# 7,1.
 ms.date: 04/09/2019
-ms.openlocfilehash: 5d2d6f51b6422f5b4db5c6bd275b5ffce1f695f8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: fe6e49eb01e24a27bc7970900c05150378ab194a
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399705"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174767"
 ---
 # <a name="whats-new-in-c-71"></a>Co je nového v jazyce C# 7.1
 
-C# 7.1 je první bod vydání jazyka C#. To znamená zvýšenou kadenci uvolňování pro jazyk. Nové funkce můžete použít dříve, ideálně když je každá nová funkce připravena. C# 7.1 přidává možnost nakonfigurovat kompilátor tak, aby odpovídal zadané verzi jazyka. To umožňuje oddělit rozhodnutí o upgradu nástroje z rozhodnutí o upgradu jazykové verze.
+C# 7,1 je první bod verze jazyka C#. Označuje zvýšené verze tempo pro daný jazyk. Nové funkce můžete použít dřív, v ideálním případě, kdy je každá nová funkce připravená. C# 7,1 přidává schopnost nakonfigurovat kompilátor tak, aby odpovídal zadané verzi jazyka. To umožňuje oddělit rozhodnutí o upgradu nástrojů od rozhodnutí upgradovat jazykové verze.
 
-C# 7.1 přidá prvek konfigurace [výběru jazykové verze,](../language-reference/configure-language-version.md) tři nové funkce jazyka a nové chování kompilátoru.
+C# 7,1 přidá prvek konfigurace [výběru jazykové verze](../language-reference/configure-language-version.md) , tři nové funkce jazyka a nové chování kompilátoru.
 
-Nové jazykové funkce v této verzi jsou:
+Nové funkce jazyka v této verzi jsou:
 
-- [`async``Main` metoda](#async-main)
-  - Vstupní bod pro aplikaci `async` může mít modifikátor.
-- [`default`doslovné výrazy](#default-literal-expressions)
-  - Výchozí literálové výrazy můžete použít ve výchozích výrazech hodnoty, když lze odvodit cílový typ.
-- [Odvozené názvy prvků řazené kolekce členů](#inferred-tuple-element-names)
+- [`async``Main`Metoda](#async-main)
+  - Vstupní bod aplikace může mít `async` modifikátor.
+- [`default`literálové výrazy](#default-literal-expressions)
+  - Můžete použít výchozí literálové výrazy ve výchozích hodnotových výrazech, pokud cílový typ lze odvodit.
+- [Odvozené názvy elementů řazené kolekce členů](#inferred-tuple-element-names)
   - Názvy prvků řazené kolekce členů lze odvodit z inicializace řazené kolekce členů v mnoha případech.
-- [Porovnávání vzorů u parametrů obecného typu](#pattern-matching-on-generic-type-parameters)
-  - Výrazy shody vzoru můžete použít u proměnných, jejichž typ je parametrem obecného typu.
+- [Porovnávání vzorů v parametrech obecného typu](#pattern-matching-on-generic-type-parameters)
+  - Můžete použít výrazy porovnávání vzorů u proměnných, jejichž typ je parametr obecného typu.
 
-Nakonec kompilátor má `-refout` dvě `-refonly` možnosti a že generování [sestavení referenční](#reference-assembly-generation)ovládací prvek .
+Nakonec má kompilátor dvě možnosti `-refout` a odkaz na `-refonly` [generování sestavení odkazu](#reference-assembly-generation).
 
-Chcete-li v bodové verzi používat nejnovější funkce, je třeba [nakonfigurovat jazykovou verzi kompilátoru](../language-reference/configure-language-version.md) a vybrat její verzi.
+Chcete-li používat nejnovější funkce v bodu vydání, je nutné [nakonfigurovat verzi jazyka kompilátoru](../language-reference/configure-language-version.md) a vybrat verzi.
 
-Zbývající část tohoto článku obsahuje přehled jednotlivých funkcí. U každé funkce se dozvíte důvody, které za ní stojí. Naučíte se syntaxi. Tyto funkce můžete prozkoumat ve `dotnet try` vašem prostředí pomocí globálního nástroje:
+Zbývající část tohoto článku poskytuje přehled jednotlivých funkcí. U každé funkce se dozvíte, co je důvod na pozadí. Naučíte se syntaxí. Pomocí globálního nástroje můžete prozkoumat tyto funkce ve vašem prostředí `dotnet try` :
 
-1. Nainstalujte globální nástroj [dotnet-try.](https://github.com/dotnet/try/blob/master/README.md#setup)
-1. Klonovat úložiště [dotnet/try-samples.](https://github.com/dotnet/try-samples)
-1. Nastavte aktuální adresář do podadresáře *csharp7* pro úložiště *try-samples.*
+1. Nainstalujte nástroj [dotnet-try](https://github.com/dotnet/try/blob/master/README.md#setup) Global.
+1. Naklonujte úložiště [dotnet/try-Samples](https://github.com/dotnet/try-samples) .
+1. Nastavte aktuální adresář do podadresáře *csharp7* pro úložiště *Try-Samples* .
 1. Spusťte `dotnet try`.
 
-## <a name="async-main"></a>Asynchronní hlavní
+## <a name="async-main"></a>Asynchronní – hlavní
 
-*Asynchronní hlavní* metoda umožňuje `await` použít `Main` ve vaší metodě.
-Dříve budete muset napsat:
+*Asynchronní metoda Main* umožňuje použití `await` v `Main` metodě.
+Dříve byste museli psát:
 
 ```csharp
 static int Main()
@@ -60,7 +60,7 @@ static async Task<int> Main()
 }
 ```
 
-Pokud program nevrátí ukončovací kód, můžete `Main` deklarovat metodu, která vrací <xref:System.Threading.Tasks.Task>:
+Pokud program nevrátí ukončovací kód, můžete deklarovat `Main` metodu, která vrátí <xref:System.Threading.Tasks.Task> :
 
 ```csharp
 static async Task Main()
@@ -69,12 +69,12 @@ static async Task Main()
 }
 ```
 
-Můžete si přečíst více o podrobnostech v hlavním článku [asynchronní](../programming-guide/main-and-command-args/index.md) v programovací příručce.
+Další informace o podrobnostech najdete v tématu [asynchronní Hlavní](../programming-guide/main-and-command-args/index.md) článek v příručce pro programování.
 
 ## <a name="default-literal-expressions"></a>Výchozí literálové výrazy
 
-Výchozí literálové výrazy jsou vylepšením výchozích výrazů hodnot.
-Tyto výrazy inicializují proměnnou na výchozí hodnotu. Kde jste dříve napsali:
+Výchozí literálové výrazy představují vylepšení výchozích hodnotových výrazů.
+Tyto výrazy inicializují proměnnou na výchozí hodnotu. Kam jste předtím napsali:
 
 ```csharp
 Func<string, bool> whereClause = default(Func<string, bool>);
@@ -86,11 +86,11 @@ Nyní můžete vynechat typ na pravé straně inicializace:
 Func<string, bool> whereClause = default;
 ```
 
-Další informace naleznete ve [výchozím části literálu](../language-reference/operators/default.md#default-literal) v článku [výchozího operátora.](../language-reference/operators/default.md)
+Další informace naleznete v části [výchozí literály](../language-reference/operators/default.md#default-literal) v článku [výchozí operátor](../language-reference/operators/default.md) .
 
-## <a name="inferred-tuple-element-names"></a>Odvozené názvy prvků řazené kolekce členů
+## <a name="inferred-tuple-element-names"></a>Odvozené názvy elementů řazené kolekce členů
 
-Tato funkce je malé vylepšení funkce řazené kolekce členů zavedené v C# 7.0. Mnohokrát při inicializaci n-tice, proměnné použité pro pravé straně přiřazení jsou stejné jako názvy, které chcete pro n-tice prvky:
+Tato funkce představuje malé vylepšení funkce řazené kolekce členů představené v C# 7,0. V mnoha případech, kdy inicializujete řazenou kolekci členů, jsou proměnné používané pro pravou stranu přiřazení stejné jako názvy, které byste chtěli použít pro prvky řazené kolekce členů:
 
 ```csharp
 int count = 5;
@@ -98,7 +98,7 @@ string label = "Colors used in the map";
 var pair = (count: count, label: label);
 ```
 
-Názvy n-tice prvky lze odvodit z proměnné použité k inicializaci n-tice v C# 7.1:
+Názvy prvků řazené kolekce členů lze odvodit z proměnných používaných k inicializaci řazené kolekce členů v jazyce C# 7,1:
 
 ```csharp
 int count = 5;
@@ -106,13 +106,13 @@ string label = "Colors used in the map";
 var pair = (count, label); // element names are "count" and "label"
 ```
 
-Další informace o této funkci najdete v článku [n-tic.](../tuples.md)
+Další informace o této funkci najdete v článku [typy řazené kolekce členů](../language-reference/builtin-types/value-tuples.md) .
 
-## <a name="pattern-matching-on-generic-type-parameters"></a>Porovnávání vzorů u parametrů obecného typu
+## <a name="pattern-matching-on-generic-type-parameters"></a>Porovnávání vzorů v parametrech obecného typu
 
-Počínaje C# 7.1, vzor `is` výraz `switch` a vzorek typu může mít typ parametru obecného typu. To může být nejužitečnější při kontrole `struct` `class` typů, které mohou být buď nebo typy a chcete se vyhnout zabalení.
+Počínaje jazykem C# 7,1, výraz vzoru pro `is` a `switch` vzor typu může mít typ parametru obecného typu. To může být nejužitečnější při kontrole typů, které mohou být buď `struct` nebo `class` typy, a chcete se vyhnout zabalení.
 
 ## <a name="reference-assembly-generation"></a>Generování referenčního sestavení
 
-Existují dvě nové možnosti kompilátoru, které generují *sestavení pouze pro odkazy*: [-refout](../language-reference/compiler-options/refout-compiler-option.md) a [-refonly](../language-reference/compiler-options/refonly-compiler-option.md).
-Propojené články vysvětlují tyto možnosti a referenční sestavení podrobněji.
+Existují dvě nové možnosti kompilátoru, které generují *pouze referenční sestavení*: [-refout](../language-reference/compiler-options/refout-compiler-option.md) a [-nepoužívejte refout](../language-reference/compiler-options/refonly-compiler-option.md).
+Odkazované články vysvětlují tyto možnosti a odkazují na sestavení podrobněji.

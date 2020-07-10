@@ -2,13 +2,13 @@
 title: Migrace webové aplikace v ASP.NET do virtuálního počítače Azure
 description: Naučte se migrovat webovou aplikaci v ASP.NET z místního prostředí na virtuální počítač Azure.
 ms.topic: how-to
-ms.date: 11/15/2017
-ms.openlocfilehash: cc9477de92e6105762636ed3a2241949e69ac8ea
-ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
+ms.date: 06/20/2020
+ms.openlocfilehash: 5ef340d020b72bebe46fe598fe68e7d02d0c0363
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "82072121"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174241"
 ---
 # <a name="migrate-an-aspnet-web-application-to-an-azure-virtual-machine"></a>Migrace webové aplikace v ASP.NET na virtuální počítač Azure
 
@@ -24,14 +24,14 @@ Tyto kurzy ukazují kroky pro vytvoření (nebo migraci) virtuálního počíta�
 
 - Vytvořte virtuální počítač pro aplikaci ASP.NET v Azure pomocí jedné z následujících možností:
   - [Vytvoření nového virtuálního počítače pro aplikace ASP.NET](https://go.microsoft.com/fwlink/?linkid=863237)
-  - [Migrace stávajícího místního virtuálního počítače VMWare](https://docs.microsoft.com/azure/migrate/tutorial-migrate-vmware)
-  - [Migrace stávajícího místního virtuálního počítače Hyper-V](https://docs.microsoft.com/azure/migrate/tutorial-migrate-hyper-v)
+  - [Migrace stávajícího místního virtuálního počítače VMWare](/azure/migrate/tutorial-migrate-vmware)
+  - [Migrace stávajícího místního virtuálního počítače Hyper-V](/azure/migrate/tutorial-migrate-hyper-v)
 - [Publikování aplikace pomocí sady Visual Studio](https://go.microsoft.com/fwlink/?linkid=863240)
-- [Vytvoření zabezpečené virtuální sítě pro vaše virtuální počítače](https://docs.microsoft.com/azure/virtual-network/virtual-network-get-started-vnet-subnet)
-- [Vytvoření kanálu CI/CD pro vaši aplikaci](https://docs.microsoft.com/vsts/build-release/apps/cd/deploy-webdeploy-iis-deploygroups)
-- [Přechod na škálu virtuálních počítačů s vysokou dostupností a škálovatelností](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-deploy-app)
+- [Vytvoření zabezpečené virtuální sítě pro vaše virtuální počítače](/azure/virtual-network/virtual-network-get-started-vnet-subnet)
+- [Vytvoření kanálu CI/CD pro vaši aplikaci](/vsts/build-release/apps/cd/deploy-webdeploy-iis-deploygroups)
+- [Přechod na škálu virtuálních počítačů s vysokou dostupností a škálovatelností](/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-deploy-app)
 
-## <a name="considerations"></a>Požadavky
+## <a name="considerations"></a>Co je potřeba vzít v úvahu
 
 ### <a name="benefits"></a>Výhody
 
@@ -39,13 +39,13 @@ Virtuální počítače nabízejí nejjednodušší cestu k migraci aplikace z m
 
 ### <a name="virtual-machine-size"></a>Velikost virtuálního počítače
 
-Vyberte velikost virtuálního počítače a typ, který je nejlépe optimalizovaný pro vaše zatížení. Další informace najdete v tématu [velikosti pro virtuální počítače s Windows v Azure](https://docs.microsoft.com/azure/virtual-machines/windows/sizes).
+Vyberte velikost virtuálního počítače a typ, který je nejlépe optimalizovaný pro vaše zatížení. Další informace najdete v tématu [velikosti pro virtuální počítače s Windows v Azure](/azure/virtual-machines/windows/sizes).
 
 ### <a name="maintenance"></a>Údržba
 
-Stejně jako v místním počítači zodpovídáte za údržbu a aktualizaci<sup>&#42;</sup>virtuálních počítačů. Pokud vaše aplikace může běžet v prostředí PaaS (Platform as a Service), jako je například [Azure App Service](https://docs.microsoft.com/azure/app-service/) nebo v [kontejneru](https://docs.microsoft.com/azure/app-service/containers/), které tuto potřebu odstraní.
+Stejně jako v místním počítači zodpovídáte za údržbu a aktualizaci<sup>&#42;</sup>virtuálních počítačů. Pokud vaše aplikace může běžet v prostředí PaaS (Platform as a Service), jako je například [Azure App Service](/azure/app-service/) nebo v [kontejneru](/azure/app-service/containers/), které tuto potřebu odstraní.
 
-*<sup>&#42;</sup> [automatické upgrady operačního systému pro Virtual Machine Scale Sets](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-upgrade) jsou aktuálně k dispozici jako služba ve verzi Preview.*
+*<sup>&#42;</sup> [automatické upgrady operačního systému pro Virtual Machine Scale Sets](/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-upgrade) jsou aktuálně k dispozici jako služba ve verzi Preview.*
 
 ### <a name="virtual-networks"></a>Virtuální sítě
 
@@ -54,15 +54,15 @@ Virtuální sítě Azure umožňují:
 - Sestavení hybridní infrastruktury, kterou ovládáte
 - Přineste si vlastní IP adresy a servery DNS
 - Vytvoření izolovaného a vysoce zabezpečeného prostředí pro vaše aplikace
-- Připojte svůj virtuální počítač k místní síti pomocí jedné z několika [možností připojení](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways#s2smulti) .
+- Připojte svůj virtuální počítač k místní síti pomocí jedné z několika [možností připojení](/azure/vpn-gateway/vpn-gateway-about-vpngateways#s2smulti) .
 - Integrujte svůj virtuální počítač do místní sítě pomocí [ExpressRoute](https://azure.microsoft.com/services/expressroute/)
 
-Informace o tom, jak začít, najdete v [dokumentaci k Virtual Network](https://docs.microsoft.com/azure/virtual-network/)
+Informace o tom, jak začít, najdete v [dokumentaci k Virtual Network](/azure/virtual-network/)
 
 ### <a name="active-directory"></a>Active Directory
 Mnoho aplikací používá ke správě ověřování a správy identit službu Active Directory.
 
-- Azure AD Connect umožňuje integrovat místní adresáře s Azure Active Directory. Informace o tom, jak začít, najdete v tématu [Integrace místních adresářů s Azure Active Directory](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect).
+- Azure AD Connect umožňuje integrovat místní adresáře s Azure Active Directory. Informace o tom, jak začít, najdete v tématu [Integrace místních adresářů s Azure Active Directory](/azure/active-directory/connect/active-directory-aadconnect).
 - [ExpressRoute](https://azure.microsoft.com/services/expressroute/) také umožňuje vaší aplikaci přistupovat k místní službě Active Directory.
 
 ### <a name="sql-databases"></a>Databáze SQL
@@ -77,10 +77,10 @@ Pokud vaše aplikace používá místní databázi, aplikace ve výchozím nasta
 #### <a name="virtual-machine-scale-sets"></a>Virtual Machine Scale Sets
 Chcete mít jistotu, že je vaše aplikace vysoce dostupná a může škálovat, migrovat image virtuálního počítače do sady škálování virtuálních počítačů Azure, aby se zlepšila dostupnost a škálovatelnost vaší aplikace. VM Scale Sets poskytují možnost použít existující virtuální počítač, který jste už nakonfigurovali, nebo vytvořit kanál sestavení pro sestavení image s vaší aplikací.
 
-Informace o tom, jak začít, najdete v tématu [nasazení aplikace ve službě Virtual Machine Scale Sets](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-deploy-app).
+Informace o tom, jak začít, najdete v tématu [nasazení aplikace ve službě Virtual Machine Scale Sets](/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-deploy-app).
 
 #### <a name="centralized-logging"></a>Centralizované protokolování
-Při spuštění aplikace napříč několika instancemi zvažte ukládání protokolů do centralizovaného umístění, jako je například [Azure Storage](https://docs.microsoft.com/azure/storage/).
+Při spuštění aplikace napříč několika instancemi zvažte ukládání protokolů do centralizovaného umístění, jako je například [Azure Storage](/azure/storage/).
 
 ## <a name="next-steps"></a>Další kroky
 

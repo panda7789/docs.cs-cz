@@ -2,13 +2,16 @@
 title: gRPC
 description: Přečtěte si o gRPC, její roli v cloudových nativních aplikacích a o tom, jak se liší od komunikace HTTP RESTful.
 author: robvet
+no-loc:
+- Blazor
+- Blazor WebAssembly
 ms.date: 05/13/2020
-ms.openlocfilehash: 35a8325dd82e946d88b09b223287e2871be88ffa
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: 6b41363008405032f4233448f134a8a602dbd26a
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84201323"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86173156"
 ---
 # <a name="grpc"></a>gRPC
 
@@ -81,7 +84,7 @@ Upřednostnit gRPC pro následující scénáře:
 - Komunikace Point-to-Point – gRPC může nabízet zprávy v reálném čase bez cyklického dotazování a má vynikající podporu pro obousměrné streamování.
 - Omezená prostředí sítě – binární zprávy gRPC jsou vždycky menší než ekvivalentní textová zpráva JSON.
 
-V době psaní tohoto zápisu se gRPC primárně používá pro back-end služby. Většina moderních prohlížečů nemůže poskytnout úroveň ovládacího prvku HTTP/2, která je nutná k podpoře klienta front-endu gRPC. V takovém případě je k dispozici [první iniciativa](https://devblogs.microsoft.com/aspnet/grpc-web-experiment/) , která umožňuje gRPC komunikaci z aplikací založených na prohlížeči vytvořených pomocí technologie JavaScript nebo Blazor WebAssembly. [GRPC-web pro .NET](https://github.com/grpc/grpc/blob/master/doc/PROTOCOL-WEB.md) umožňuje aplikaci ASP.NET Core gRPC podporovat funkce gRPC v prohlížečových aplikacích:
+V době psaní tohoto zápisu se gRPC primárně používá pro back-end služby. Většina moderních prohlížečů nemůže poskytnout úroveň ovládacího prvku HTTP/2, která je nutná k podpoře klienta front-endu gRPC. V takovém případě je k dispozici [první iniciativa](https://devblogs.microsoft.com/aspnet/grpc-web-experiment/) , která umožňuje gRPC komunikaci z aplikací založených na prohlížeči vytvořených pomocí JavaScriptu nebo Blazor WebAssembly technologií. [GRPC-web pro .NET](https://github.com/grpc/grpc/blob/master/doc/PROTOCOL-WEB.md) umožňuje aplikaci ASP.NET Core gRPC podporovat funkce gRPC v prohlížečových aplikacích:
 
 - Silně typované, klienti vygenerované kódem
 - Kompaktní zprávy Protobuf

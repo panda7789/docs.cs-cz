@@ -1,5 +1,6 @@
 ---
 title: Typy rastrových obrázků
+description: Přečtěte si o typech rastrových obrázků a podporovaných formátech grafických souborů GDI+, včetně formátů BMP, JPG, GIF, PNG a TIFF.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - jpeg files
@@ -20,26 +21,26 @@ helpviewer_keywords:
 - bitmaps [Windows Forms], file format
 - Exchangeable Image File
 ms.assetid: 6be085a2-2c13-47c8-b80a-c18b32777d8d
-ms.openlocfilehash: 2243c9ce2d8ba741143d301c38e8b88d7b196c98
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 09b74ef476467b0bba5aac1f58db278b3898ef17
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69914825"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174676"
 ---
 # <a name="types-of-bitmaps"></a>Typy rastrových obrázků
 Rastrový obrázek je pole bitů, které určují barvu jednotlivých pixelů v obdélníkovém poli pixelů. Počet bitů, které jsou pro jednotlivé pixely vyčleněny, určuje počet barev, které lze přiřadit k danému obrazovému bodu. Například pokud je každý pixel reprezentován 4 bity, pak je možné přiřadit k určitému pixelu jednu z 16 různých barev (2 ^ 4 = 16). Následující tabulka ukazuje několik příkladů počtu barev, které lze přiřadit k pixelu reprezentovanému daným počtem bitů.  
   
 |Bitů na pixel|Počet barev, které lze přiřadit k obrazovému bodu|  
 |--------------------|------------------------------------------------------|  
-|1|2^1 = 2|  
-|2|2^2 = 4|  
-|4|2^4 = 16|  
-|8|2^8 = 256|  
-|16|2^16 = 65,536|  
-|24|2^24 = 16,777,216|  
+|1|2 ^ 1 = 2|  
+|2|2 ^ 2 = 4|  
+|4|2 ^ 4 = 16|  
+|8|2 ^ 8 = 256|  
+|16|2 ^ 16 = 65 536|  
+|24|2 ^ 24 = 16 777 216|  
   
- Soubory na disku, které ukládají rastry, obvykle obsahují jeden nebo více bloků s informacemi, které ukládají informace, jako je počet bitů na pixel, počet pixelů v každém řádku a počet řádků v poli. Takový soubor může obsahovat také tabulku barev (někdy označovanou jako paleta barev). Tabulka barev mapuje čísla v rastrovém obrázku na konkrétní barvy. Následující obrázek znázorňuje zvětšený obrázek spolu s jeho rastrovou a barevnou tabulkou. Každý pixel je reprezentován číslem 4 bitů, takže v tabulce barev je 2 ^ 4 = 16 barev. Jednotlivé barvy v tabulce jsou reprezentovány pomocí 16bitového čísla: 8 bitů pro červenou, 8 bitů pro zelenou a 8 bitů pro modrou. Čísla jsou uvedena v šestnáctkovém formátu (základní 16): A = 10, B = 11, C = 12, D = 13, E = 14, F = 15.  
+ Soubory na disku, které ukládají rastry, obvykle obsahují jeden nebo více bloků s informacemi, které ukládají informace, jako je počet bitů na pixel, počet pixelů v každém řádku a počet řádků v poli. Takový soubor může obsahovat také tabulku barev (někdy označovanou jako paleta barev). Tabulka barev mapuje čísla v rastrovém obrázku na konkrétní barvy. Následující obrázek znázorňuje zvětšený obrázek spolu s jeho rastrovou a barevnou tabulkou. Každý pixel je reprezentován číslem 4 bitů, takže v tabulce barev je 2 ^ 4 = 16 barev. Každá barva v tabulce je reprezentována pomocí 24hodinového čísla: 8 bitů pro červenou, 8 bitů pro zelenou a 8 bitů pro modrou. Čísla jsou uvedena v hexadecimálním formátu (základní 16): A = 10, B = 11, C = 12, D = 13, E = 14, F = 15.  
   
  ![Ukázka rastrového obrázku](./media/aboutgdip03-art01.gif "AboutGdip03_Art01")  
   
@@ -66,11 +67,11 @@ Rastrový obrázek je pole bitů, které určují barvu jednotlivých pixelů v 
   
  Úroveň komprese v obrazech JPEG je konfigurovatelná, ale vyšší úrovně komprese (menší soubory) vede k větší ztrátě informací. Kompresní poměr 20:1 často vytváří obrázek, který člověk v lidském oka obtížně rozlišuje od originálu. Následující ilustrace znázorňuje obrázek BMP a dva obrázky JPEG, které byly zkomprimovány z tohoto obrázku BMP. První JPEG má kompresní poměr 4:1 a druhý JPEG má kompresní poměr přibližně 8:1.  
   
- ![Ukázky pro typ] souboru (./media/aboutgdip03-art03.gif "AboutGdip03_Art03")  
+ ![Ukázky pro typ souboru](./media/aboutgdip03-art03.gif "AboutGdip03_Art03")  
   
  Komprese JPEG nefunguje dobře pro čárové kresby, bloky plných barev a ostré hranice. Následující ilustrace znázorňuje BMP spolu se dvěma JPEG a GIF. Soubory JPEG a GIF byly komprimovány z BMP. Kompresní poměr je 4:1 pro GIF, 4:1 pro menší formát JPEG a 8:3 pro větší formát JPEG. Všimněte si, že GIF udržuje ostré hranice podél čar, ale JPEG obvykle rozostří hranice.  
   
- ![Filetypes](./media/aboutgdip03-art03a.gif "AboutGdip03_Art03A")  
+ ![Podporovány](./media/aboutgdip03-art03a.gif "AboutGdip03_Art03A")  
   
  JPEG je kompresní schéma, nikoli formát souboru. Formát JPEG File Interchange Format (JFIF) je formát souboru, který se běžně používá pro ukládání a přenos imagí komprimovaných podle schématu JPEG. Soubory JFIF zobrazované webovými prohlížeči používají příponu. jpg.  
   
@@ -85,7 +86,7 @@ Rastrový obrázek je pole bitů, které určují barvu jednotlivých pixelů v 
 ### <a name="tag-image-file-format-tiff"></a>TIFF (tag Image File Format)  
  TIFF je flexibilní a přizpůsobitelný formát, který podporuje širokou škálu platforem a aplikací pro zpracování obrázků. Soubory TIFF můžou ukládat obrázky s libovolným počtem bitů na pixel a můžou využívat nejrůznější algoritmy komprese. Několik imagí může být uloženo v jednom souboru TIFF s více stránkami. Informace související s imagí (provedený skener, hostitelský počítač, typ komprese, orientace, vzorky na pixel atd.) mohou být uloženy v souboru a uspořádány pomocí značek. Formát TIFF lze podle potřeby rozšířit o schválení a přidání nových značek.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Drawing.Image?displayProperty=nameWithType>
 - <xref:System.Drawing.Bitmap?displayProperty=nameWithType>

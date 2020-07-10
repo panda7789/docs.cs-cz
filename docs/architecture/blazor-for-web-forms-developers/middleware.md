@@ -3,23 +3,25 @@ title: Moduly, obslužné rutiny a middleware
 description: Přečtěte si o zpracování požadavků HTTP pomocí modulů, obslužných rutin a middlewaru.
 author: danroth27
 ms.author: daroth
+no-loc:
+- Blazor
 ms.date: 10/11/2019
-ms.openlocfilehash: 3ecc109c54f88b5b06a1474f7c6e262d426a78a9
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: ff2b3fd41316a1c8c20a0eed9a585e5fd2733af3
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75337479"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86173182"
 ---
 # <a name="modules-handlers-and-middleware"></a>Moduly, obslužné rutiny a middleware
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
-Aplikace ASP.NET Core je postavená na řadě *middlewaru*. Middleware jsou obslužné rutiny, které jsou uspořádány do kanálu pro zpracování požadavků a odpovědí. V aplikaci webového formuláře obslužné rutiny a moduly HTTP vyřeší podobné problémy. V ASP.NET Core jsou moduly, obslužné rutiny, *Global.asax.cs*a životní cyklus aplikace nahrazeny middlewarem. V této kapitole se dozvíte, jaký middleware v kontextu aplikace Blazor.
+Aplikace ASP.NET Core je postavená na řadě *middlewaru*. Middleware jsou obslužné rutiny, které jsou uspořádány do kanálu pro zpracování požadavků a odpovědí. V aplikaci webového formuláře obslužné rutiny a moduly HTTP vyřeší podobné problémy. V ASP.NET Core jsou moduly, obslužné rutiny, *Global.asax.cs*a životní cyklus aplikace nahrazeny middlewarem. V této kapitole se dozvíte, jaký middleware v kontextu Blazor aplikace.
 
 ## <a name="overview"></a>Přehled
 
-Kanál požadavků ASP.NET Core se skládá z posloupnosti delegátů požadavku a volají se jeden po druhém. Následující diagram znázorňuje tento koncept. Vlákno provádění postupuje po směru černé šipky.
+Kanál žádostí o ASP.NET Core se skládá z posloupnosti delegátů požadavků, který se nazývá jedna po druhé. Následující diagram znázorňuje koncept. Vlákno provádění následuje za černými šipkami.
 
 ![kanálu](media/middleware/request-delegate-pipeline.png)
 
@@ -35,7 +37,7 @@ ASP.NET 4. x zahrnuje mnoho modulů. Podobným způsobem má ASP.NET Core také 
 
 V následující tabulce jsou uvedeny náhradní middleware a součásti v ASP.NET Core.
 
-|– modul                 |ASP.NET 4. x – modul           |Možnost ASP.NET Core|
+|Modul                 |ASP.NET 4. x – modul           |Možnost ASP.NET Core|
 |-----------------------|-----------------------------|-------------------|
 |Chyby protokolu HTTP            |`CustomErrorModule`          |[Middleware stránky stavového kódu](/aspnet/core/fundamentals/error-handling#usestatuscodepages)|
 |Výchozí dokument       |`DefaultDocumentModule`      |[Middleware výchozích souborů](/aspnet/core/fundamentals/static-files#serve-a-default-document)|
@@ -46,10 +48,10 @@ V následující tabulce jsou uvedeny náhradní middleware a součásti v ASP.N
 |Ukládání HTTP do mezipaměti           |`HttpCacheModule`            |[Middleware pro ukládání odpovědí do mezipaměti](/aspnet/core/performance/caching/middleware)|
 |Protokolování HTTP           |`HttpLoggingModule`          |[Protokolování ASP.NET Core](/aspnet/core/fundamentals/logging/index)|
 |Přesměrování protokolu HTTP       |`HttpRedirectionModule`      |[Middleware pro přepis adres URL](/aspnet/core/fundamentals/url-rewriting)|
-|filtry ISAPI          |`IsapiFilterModule`          |[Middleware](/aspnet/core/fundamentals/middleware/index)|
+|Filtry ISAPI          |`IsapiFilterModule`          |[Middleware](/aspnet/core/fundamentals/middleware/index)|
 |ISAPI                  |`IsapiModule`                |[Middleware](/aspnet/core/fundamentals/middleware/index)|
 |Filtrování žádostí      |`RequestFilteringModule`     |[Přepis adres URL IRule middlewaru](/aspnet/core/fundamentals/url-rewriting#irule-based-rule)|
-|Přepsání adresy URL&#8224;   |`RewriteModule`              |[Middleware pro přepis adres URL](/aspnet/core/fundamentals/url-rewriting)|
+|&#8224; přepsání adresy URL   |`RewriteModule`              |[Middleware pro přepis adres URL](/aspnet/core/fundamentals/url-rewriting)|
 |Statická komprese     |`StaticCompressionModule`    |[Middleware pro kompresi odpovědí](/aspnet/core/performance/response-compression)|
 |Statický obsah         |`StaticFileModule`           |[Middleware statických souborů](/aspnet/core/fundamentals/static-files)|
 |Autorizace URL      |`UrlAuthorizationModule`     |[ASP.NET Core identity](/aspnet/core/security/authentication/identity)|
@@ -88,8 +90,8 @@ public class Startup
 }
 ```
 
-Middleware může být také definována jako třída, buď implementací rozhraní `IMiddleware` nebo podle konvence middlewaru. Další informace najdete v tématu [zápis vlastního middlewaru ASP.NET Core](/aspnet/core/fundamentals/middleware/write).
+Middleware může být také definována jako třída, buď implementací `IMiddleware` rozhraní nebo podle konvence middlewaru. Další informace najdete v tématu [zápis vlastního middlewaru ASP.NET Core](/aspnet/core/fundamentals/middleware/write).
 
 >[!div class="step-by-step"]
->[Předchozí](data.md)
->[Další](config.md)
+>[Předchozí](data.md) 
+> [Další](config.md)

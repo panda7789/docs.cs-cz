@@ -1,19 +1,22 @@
 ---
 title: dotnet – nový příkaz
 description: Příkaz dotnet New vytvoří nové projekty .NET Core založené na zadané šabloně.
+no-loc:
+- Blazor
+- WebAssembly
 ms.date: 04/10/2020
-ms.openlocfilehash: 39301ad95761848b60b45cb5c18ede937f70c32c
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: ec41b3b79ed5eded7c9124d3e4d95c658ee39580
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84283972"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86173117"
 ---
 # <a name="dotnet-new"></a>dotnet new
 
 **Tento článek se týká:** ✔️ .net Core 2,0 SDK a novějších verzí
 
-## <a name="name"></a>Name
+## <a name="name"></a>Název
 
 `dotnet new`– Vytvoří nový projekt, konfigurační soubor nebo řešení na základě zadané šablony.
 
@@ -74,24 +77,24 @@ Příkaz volá [modul šablony](https://github.com/dotnet/templating) a vytvoř�
 | Stránka Razor                                   | [Page](#page)                   | Jazyk         | Web/ASP. NET                           | 2.0        |
 | ViewImports MVC                              | [viewimports](#namespace)       | Jazyk         | Web/ASP. NET                           | 2.0        |
 | ViewStart MVC                                | `viewstart`                     | Jazyk         | Web/ASP. NET                           | 2.0        |
-| Aplikace serveru Blazor                            | [blazorserver](#blazorserver)   | Jazyk         | Web/Blazor                            | 3.0        |
-| Aplikace WebAssembly v Blazor                       | `blazorwasm`                    | Jazyk         | Web/Blazor/WebAssembly                            | 3.1.300    |
+| BlazorServerová aplikace                            | [blazorserver](#blazorserver)   | Jazyk         | WebovémBlazor                            | 3.0        |
+| BlazorWebAssemblyAplikace                       | `blazorwasm`                    | Jazyk         | WebovémBlazor/WebAssembly                            | 3.1.300    |
 | ASP.NET Core prázdné                           | [webovém](#web)                     | [C#], F #     | Web/prázdné                             | 1.0        |
 | ASP.NET Core webová aplikace (model-zobrazení-kontroler) | [Návrhový](#web-options)             | [C#], F #     | Web/MVC                               | 1.0        |
 | ASP.NET Core webové aplikace                         | [WebApp, Razor](#web-options)   | Jazyk         | Web/MVC/Razor Pages                   | 2,2, 2,0   |
 | ASP.NET Core s úhlovým                    | [Angular](#spa)                 | Jazyk         | Web/MVC/SPA                           | 2.0        |
-| ASP.NET Core s reagují. js                   | [reaguje](#spa)                   | Jazyk         | Web/MVC/SPA                           | 2.0        |
-| ASP.NET Core s využitím reagují. js a Redux         | [reactredux](#reactredux)       | Jazyk         | Web/MVC/SPA                           | 2.0        |
+| ASP.NET Core s React.js                   | [reaguje](#spa)                   | Jazyk         | Web/MVC/SPA                           | 2.0        |
+| ASP.NET Core s React.js a Redux         | [reactredux](#reactredux)       | Jazyk         | Web/MVC/SPA                           | 2.0        |
 | Knihovna tříd Razor                          | [razorclasslib](#razorclasslib) | Jazyk         | Knihovna tříd web/Razor/Library/Razor | 2.1        |
 | Webové rozhraní API ASP.NET Core                         | [WebApi](#webapi)               | [C#], F #     | Web/WebAPI                            | 1.0        |
 | Služba ASP.NET Core gRPC                    | [grpc](#web-others)             | Jazyk         | Web/gRPC                              | 3.0        |
 | soubor dotnet gitignore                        | `gitignore`                     |              | Config                                | 3.0        |
-| soubor Global. JSON                             | [globaljson](#globaljson)       |              | Config                                | 2.0        |
+| global.jsv souboru                             | [globaljson](#globaljson)       |              | Config                                | 2.0        |
 | Konfigurace NuGet                                 | `nugetconfig`                   |              | Config                                | 1.0        |
 | Dotnet – místní nástroj soubor manifestu              | `tool-manifest`                 |              | Config                                | 3.0        |
 | Webová konfigurace                                   | `webconfig`                     |              | Config                                | 1.0        |
 | Soubor řešení                                | `sln`                           |              | Řešení                              | 1.0        |
-| Soubor vyrovnávací paměti protokolu                         | [proto](#namespace)             |              | Web/gRPC                              | 3.0        |
+| Soubor vyrovnávací paměti protokolu                         | [Proto](#namespace)             |              | Web/gRPC                              | 3.0        |
 
 ## <a name="options"></a>Možnosti
 
@@ -105,7 +108,7 @@ Příkaz volá [modul šablony](https://github.com/dotnet/templating) a vytvoř�
 
 - **`-h|--help`**
 
-  Vytiskne nápovědu k příkazu. Dá se vyvolat pro `dotnet new` samotný příkaz nebo pro libovolnou šablonu. Například, `dotnet new mvc --help`.
+  Vytiskne nápovědu k příkazu. Dá se vyvolat pro `dotnet new` samotný příkaz nebo pro libovolnou šablonu. Například `dotnet new mvc --help`.
 
 - **`-i|--install <PATH|NUGET_ID>`**
 
@@ -124,7 +127,7 @@ Příkaz volá [modul šablony](https://github.com/dotnet/templating) a vytvoř�
   Jazyk šablony, která se má vytvořit Přijatý jazyk se liší podle šablony (viz výchozí hodnoty v oddílu [argumenty](#arguments) ). Pro některé šablony není platná.
 
   > [!NOTE]
-  > Některá prostředí jsou interpretována `#` jako speciální znak. V těchto případech uveďte hodnotu parametru Language v uvozovkách. Například, `dotnet new console -lang "F#"`.
+  > Některá prostředí jsou interpretována `#` jako speciální znak. V těchto případech uveďte hodnotu parametru Language v uvozovkách. Například `dotnet new console -lang "F#"`.
 
 - **`-n|--name <OUTPUT_NAME>`**
 
@@ -247,7 +250,7 @@ Každá šablona projektu může mít k dispozici další možnosti. Základní 
 
 - **`--exclude-launch-settings`**
 
-  Vyloučí z vygenerované šablony *launchSettings. JSON* .
+  Vyloučí z vygenerované šablony *launchSettings.js* .
 
 - **`--no-restore`**
 
@@ -378,7 +381,7 @@ Každá šablona projektu může mít k dispozici další možnosti. Základní 
 
 - **`--exclude-launch-settings`**
 
-  Vyloučí z vygenerované šablony *launchSettings. JSON* .
+  Vyloučí z vygenerované šablony *launchSettings.js* .
 
 - **`--no-https`**
 
@@ -398,7 +401,7 @@ Každá šablona projektu může mít k dispozici další možnosti. Základní 
 
 - **`--exclude-launch-settings`**
 
-  Vyloučí z vygenerované šablony *launchSettings. JSON* .
+  Vyloučí z vygenerované šablony *launchSettings.js* .
 
 - **`-f|--framework <FRAMEWORK>`**
 
@@ -477,7 +480,7 @@ Každá šablona projektu může mít k dispozici další možnosti. Základní 
 
 - **`--exclude-launch-settings`**
 
-  Vyloučí z vygenerované šablony *launchSettings. JSON* .
+  Vyloučí z vygenerované šablony *launchSettings.js* .
 
 - **`--no-https`**
 
@@ -525,7 +528,7 @@ Každá šablona projektu může mít k dispozici další možnosti. Základní 
 
 - **`--exclude-launch-settings`**
 
-  Vyloučí z vygenerované šablony *launchSettings. JSON* .
+  Vyloučí z vygenerované šablony *launchSettings.js* .
 
 - **`--no-restore`**
 
@@ -557,7 +560,7 @@ Každá šablona projektu může mít k dispozici další možnosti. Základní 
 
 - **`--exclude-launch-settings`**
 
-  Vyloučí z vygenerované šablony *launchSettings. JSON* .
+  Vyloučí z vygenerované šablony *launchSettings.js* .
 
 - **`-f|--framework <FRAMEWORK>`**
 
@@ -634,7 +637,7 @@ Každá šablona projektu může mít k dispozici další možnosti. Základní 
 
 - **`--exclude-launch-settings`**
 
-  Vyloučí z vygenerované šablony *launchSettings. JSON* .
+  Vyloučí z vygenerované šablony *launchSettings.js* .
 
 - **`--no-https`**
 
@@ -666,7 +669,7 @@ Každá šablona projektu může mít k dispozici další možnosti. Základní 
 
 - **`--sdk-version <VERSION_NUMBER>`**
 
-  Určuje verzi .NET Core SDK, která se má použít v souboru *Global. JSON* .
+  Určuje verzi .NET Core SDK, která se má použít v souboru *global.json* .
 
 ***
 
@@ -732,7 +735,7 @@ Každá šablona projektu může mít k dispozici další možnosti. Základní 
   dotnet new -u
   ```
 
-- V aktuálním adresáři vytvořte *Global. JSON* s nastavením verze sady SDK na 3.1.101:
+- Vytvořit *global.js* v aktuálním adresáři nastavení verze sady SDK na 3.1.101:
 
   ```dotnetcli
   dotnet new globaljson --sdk-version 3.1.101

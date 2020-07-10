@@ -3,13 +3,16 @@ title: Volba mezi tradičními webovými aplikacemi a jednostránkovými aplikac
 description: Naučte se při sestavování webových aplikací zvolit mezi tradičními webovými aplikacemi a jednostránkové (Single Page Applications).
 author: ardalis
 ms.author: wiwagn
+no-loc:
+- Blazor
+- WebAssembly
 ms.date: 12/04/2019
-ms.openlocfilehash: 0aef42b78114a11c70456cb3122d3dcb5143f983
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: 4fe889fe86d96a5b2ffa5bd879d2ec1801a3cf20
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84662703"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174364"
 ---
 # <a name="choose-between-traditional-web-apps-and-single-page-apps-spas"></a>Volba mezi tradičními Web Apps a jednostránkové aplikacemi
 
@@ -38,21 +41,21 @@ Kromě toho architektura SPA vyžaduje větší architekturu a odbornosti zabezp
 
 Vylepšení uživatelského prostředí, které může přístup k zabezpečenému přístupu přes SPA udělat, je třeba zvážit na základě těchto doporučení.
 
-## <a name="blazor"></a>Blazor
+## Blazor
 
-ASP.NET Core 3,0 zavádí nový model pro vytváření bohatých, interaktivních a sestavitelního uživatelského rozhraní s názvem Blazor. Blazor na straně serveru umožňuje vývojářům vytvářet uživatelské rozhraní pomocí jazyků C# a Razor na serveru a pro interaktivní uživatelské rozhraní připojené k prohlížeči v reálném čase pomocí trvalého připojení ke službě Signal.
+ASP.NET Core 3,0 zavádí nový model pro vytváření bohatých, interaktivních a sestavování uživatelského rozhraní Blazor . Blazorna straně serveru můžou vývojáři vytvářet uživatelské rozhraní pomocí jazyků C# a Razor na serveru a uživatelského rozhraní, které se má interaktivně připojit k prohlížeči v reálném čase pomocí trvalého připojení k signalizaci.
 
-Blazor WebAssembly zavádí další možnost pro aplikace Blazor, která umožňuje jejich spuštění v prohlížeči pomocí webového sestavení. Vzhledem k tomu, že se jedná o reálné rozhraní .NET běžící na webovém sestavení, můžete znovu použít kód a knihovny z částí aplikace na straně serveru.
+BlazorWebAssemblyzavádí další možnost pro Blazor aplikace, která umožňuje spouštění v prohlížeči pomocí nástroje WebAssembly . Vzhledem k tomu, že se jedná o reálné rozhraní .NET běžící na WebAssembly , můžete znovu použít kód a knihovny z částí aplikace na straně serveru.
 
-Blazor poskytuje novou, třetí možnost, kterou je třeba vzít v úvahu při vyhodnocování, jestli se má sestavit čistě webová aplikace vydaná serverem nebo SPA. Pomocí Blazor můžete sestavovat bohatě, SPA jako chování na straně klienta a nemusíte přitom významně vyvíjet JavaScript. Aplikace Blazor můžou volat rozhraní API pro vyžádání dat nebo provádění operací na straně serveru.
+Blazorposkytuje novou, třetí možnost, kterou je třeba vzít v úvahu při vyhodnocování, zda se má sestavit čistě webová aplikace vydaná serverem nebo SPA. Pomocí nástroje můžete vytvořit bohatou a SPA, podobně jako chování na straně klienta Blazor , aniž by bylo potřeba mít významný vývoj v JavaScriptu. Blazoraplikace mohou volat rozhraní API pro vyžádání dat nebo provádění operací na straně serveru.
 
-Zvažte vytvoření webové aplikace pomocí Blazor v těchto případech:
+Zvažte vytvoření webové aplikace pomocí v těchto Blazor případech:
 
 - Vaše aplikace musí vystavovat bohatší uživatelské rozhraní.
 
 - Váš tým je pohodlnější při vývoji .NET, než JavaScript nebo vývoj TypeScript.
 
-Další informace o Blazor najdete v tématu Začínáme [s Blazor](https://blazor.net/docs/get-started.html).
+Další informace o najdete Blazor v tématu [Začínáme s Blazor ](https://blazor.net/docs/get-started.html).
 
 ## <a name="when-to-choose-traditional-web-apps"></a>Kdy zvolit tradiční webové aplikace
 
@@ -97,26 +100,26 @@ Psaní jednostránkové vyžaduje znalost pomocí JavaScriptu a/nebo TypeScript 
 
 Pokud už podporujete webové rozhraní API pro použití jinými klienty, může to vyžadovat menší úsilí k vytvoření implementace SPA, která tato rozhraní API využívá místo reprodukce logiky ve formuláři na straně serveru. Jednostránkové rozsáhlých použití webových rozhraní API k dotazování a aktualizaci dat, když uživatelé pracují s aplikací.
 
-## <a name="when-to-choose-blazor"></a>Kdy zvolit Blazor
+## <a name="when-to-choose-blazor"></a>Kdy zvolitBlazor
 
 Následuje podrobnější vysvětlení, kdy zvolit Blazor pro vaši webovou aplikaci.
 
 **Vaše aplikace musí vystavovat bohatší uživatelské rozhraní.**
 
-Podobně jako jednostránkové založené na JavaScriptu můžou aplikace Blazor podporovat bohatá chování klienta bez nutnosti opětovného načtení stránky. Tyto aplikace jsou lépe reagují na uživatele a načítají se pouze data (nebo HTML), která jsou nutná k reakci na danou interakci uživatele. Správně navržené aplikace Blazor na straně serveru můžou být nakonfigurované tak, aby se spouštěly jako aplikace Blazor na straně klienta s minimálními změnami, jakmile je tato funkce podporovaná.
+Podobně jako jednostránkové založené na JavaScriptu Blazor můžou aplikace podporovat bohatá chování klienta bez nutnosti opětovného načtení stránky. Tyto aplikace jsou lépe reagují na uživatele a načítají se pouze data (nebo HTML), která jsou nutná k reakci na danou interakci uživatele. Správně navržené aplikace na straně serveru Blazor můžou být nakonfigurované tak, aby se spouštěly jako aplikace na straně klienta Blazor s minimálními změnami, jakmile je tato funkce podporovaná.
 
 **Váš tým je pohodlnější při vývoji .NET, než JavaScript nebo vývoj TypeScript.**
 
-Mnoho vývojářů nabízí vyšší produktivitu díky .NET a Razor než s jazyky na straně klienta, jako je JavaScript nebo TypeScript. Vzhledem k tomu, že serverová strana aplikace je již vyvíjena pomocí technologie .NET, aplikace Blazor zajistí, že každý vývojář rozhraní .NET v týmu může pochopit a potenciálně sestavit chování pro front-end aplikace.
+Mnoho vývojářů nabízí vyšší produktivitu díky .NET a Razor než s jazyky na straně klienta, jako je JavaScript nebo TypeScript. Vzhledem k tomu, že serverová strana aplikace je již vyvíjena s rozhraním .NET, je pomocí nástroje Blazor zajištěno, že každý vývojář rozhraní .NET v týmu může pochopit a potenciálně sestavit chování front-endu aplikace.
 
 ## <a name="decision-table"></a>Tabulka rozhodnutí
 
-Následující rozhodovací tabulka shrnuje některé základní faktory, které je potřeba vzít v úvahu při volbě mezi tradiční webovou aplikací, ZABEZPEČENou nebo Blazor aplikací.
+Následující rozhodovací tabulka shrnuje některé základní faktory, které je potřeba vzít v úvahu při volbě mezi tradiční webovou aplikací, zabezpečeným ověřováním nebo Blazor aplikací.
 
-| **Jednotek**                                           | **Tradiční webová aplikace** | **Jednostránková aplikace** | **Aplikace Blazor**  |
+| **Faktor**                                           | **Tradiční webová aplikace** | **Jednostránková aplikace** | **BlazorAplikace**  |
 | ---------------------------------------------------- | ----------------------- | --------------------------- | --------------- |
 | Požadovaný tým se znalostí jazyka JavaScript a TypeScript | **Minimální**             | **Požadováno**                | **Minimální**     |
-| Podpora prohlížečů bez skriptování                   | **Doložen**           | **Nepodporováno**           | **Doložen**   |
+| Podpora prohlížečů bez skriptování                   | **Podporováno**           | **Nepodporováno**           | **Podporováno**   |
 | Minimální chování aplikace na straně klienta             | **Dobře hodící se**         | **Přehnaně důkladné**                | **Realizovat**      |
 | Bohatě komplexní požadavky na uživatelské rozhraní            | **Omezeně**             | **Dobře hodící se**             | **Dobře hodící se** |
 

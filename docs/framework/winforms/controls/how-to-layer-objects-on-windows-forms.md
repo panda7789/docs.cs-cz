@@ -1,5 +1,6 @@
 ---
 title: Uspořádání objektů ve vrstvách
+description: Naučte se, jak vrstvy objektů na model Windows Forms ovládací prvky a podřízené formuláře pro vytváření složitějších uživatelských rozhraní.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -15,12 +16,12 @@ ms.assetid: 1acc4281-2976-4715-86f4-bda68134baaf
 author: jillre
 ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: 1615b9c4df222edd95cda9bceae622ba6f1d8d78
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 6269b09c56963fefd500b9e1e6c9d7f51f9619cf
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76736336"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174507"
 ---
 # <a name="how-to-layer-objects-on-windows-forms"></a>Postupy: vrstvení objektů na model Windows Forms
 
@@ -34,9 +35,9 @@ Když vytváříte složité uživatelské rozhraní nebo pracujete s formulář
 
 ## <a name="to-layer-controls-programmatically"></a>Pro ovládací prvky vrstev programově
 
-Použijte metody <xref:System.Windows.Forms.Control.BringToFront%2A> a <xref:System.Windows.Forms.Control.SendToBack%2A> k manipulaci s pořadím z ovládacích prvků.
+Použijte <xref:System.Windows.Forms.Control.BringToFront%2A> metody a <xref:System.Windows.Forms.Control.SendToBack%2A> k manipulaci s pořadím z ovládacích prvků.
 
-Například pokud <xref:System.Windows.Forms.TextBox> ovládací prvek `txtFirstName`, je pod jiným ovládacím prvkem a chcete jej použít jako horní, použijte následující kód:
+Například pokud <xref:System.Windows.Forms.TextBox> ovládací prvek, `txtFirstName` , je pod jiným ovládacím prvkem a chcete jej použít nahoře, použijte následující kód:
 
 ```vb
 txtFirstName.BringToFront()
@@ -51,11 +52,11 @@ txtFirstName->BringToFront();
 ```
 
 > [!NOTE]
-> Model Windows Forms podporuje *omezení ovládacího prvku*. Ovládací prvek zahrnutí zahrnuje umístění řady ovládacích prvků v rámci obsahujícího ovládacího prvku, jako je například počet ovládacích prvků <xref:System.Windows.Forms.RadioButton> v rámci <xref:System.Windows.Forms.GroupBox> ovládacího prvku. Ovládací prvky lze následně rozvrstvit v rámci nadřazeného ovládacího prvku. Přesunutím skupinového pole se přesunou i ovládací prvky, protože jsou uvnitř ní obsažené.
+> Model Windows Forms podporuje *omezení ovládacího prvku*. Zahrnutí ovládacího prvku zahrnuje vložení řady ovládacích prvků v rámci obsahujícího ovládacího prvku, jako je například počet <xref:System.Windows.Forms.RadioButton> ovládacích prvků v rámci <xref:System.Windows.Forms.GroupBox> ovládacího prvku. Ovládací prvky lze následně rozvrstvit v rámci nadřazeného ovládacího prvku. Přesunutím skupinového pole se přesunou i ovládací prvky, protože jsou uvnitř ní obsažené.
 
 ## <a name="see-also"></a>Viz také
 
-- [Windows Forms – ovládací prvky](index.md)
+- [Ovládací prvky model Windows Forms](index.md)
 - [Popisování jednotlivých ovládacích prvků Windows Forms a zajišťování zástupců pro tyto prvky](labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)
 - [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)
 - [Ovládací prvky Windows Forms podle funkce](windows-forms-controls-by-function.md)

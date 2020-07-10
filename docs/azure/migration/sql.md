@@ -3,40 +3,40 @@ title: Migrace databáze SQL Serveru do Azure
 description: Naučte se migrovat databázi SQL Server z místního SQL Server do Azure.
 ms.topic: how-to
 ms.date: 05/27/2020
-ms.openlocfilehash: ed5d6ef9395dca14d8e0ecba82d3fc18cb3d629a
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 5f191cafbff3823d04e1dbd1fdf81e1157e20999
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241445"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174280"
 ---
 # <a name="migrate-a-sql-server-database-to-azure"></a>Migrace databáze SQL Serveru do Azure
 
 Tento článek poskytuje stručný přehled dvou možností migrace databáze SQL Server do Azure. Azure má tři primární možnosti migrace provozní databáze SQL Server. Tento článek se zaměřuje na tyto dvě možnosti:
 
-1. [SQL Server na virtuálních počítačích Azure](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-iaas-overview): instance SQL Server nainstalovaná a hostovaná na virtuálním počítači s Windows, který běží v Azure, označovaný také jako infrastruktura jako služba (IaaS).
-2. [Azure SQL Database](https://docs.microsoft.com/azure/sql-database/sql-database-technical-overview): plně spravovaná služba Azure SQL Database, která se označuje také jako platforma jako služba (PaaS).
+1. [SQL Server na virtuálních počítačích Azure](/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-iaas-overview): instance SQL Server nainstalovaná a hostovaná na virtuálním počítači s Windows, který běží v Azure, označovaný také jako infrastruktura jako služba (IaaS).
+2. [Azure SQL Database](/azure/sql-database/sql-database-technical-overview): plně spravovaná služba Azure SQL Database, která se označuje také jako platforma jako služba (PaaS).
 
-Oba přicházejí s využitím specialistů i nevýhody, které budete muset před migrací vyhodnotit. Třetí možností je [Azure SQL Database spravované instance](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance).
+Oba přicházejí s využitím specialistů i nevýhody, které budete muset před migrací vyhodnotit. Třetí možností je [Azure SQL Database spravované instance](/azure/sql-database/sql-database-managed-instance).
 
 ## <a name="get-started"></a>Začínáme
 
 Následující příručky k migraci budou užitečné v závislosti na používané službě:
 
-* [Migrace databáze SQL Serveru na SQL Server ve virtuálním počítači Azure](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-migrate-sql)
-* [Migrace databáze SQL Serveru do služby Azure SQL Database](https://docs.microsoft.com/azure/sql-database/sql-database-migrate-your-sql-server-database)
+* [Migrace databáze SQL Serveru na SQL Server ve virtuálním počítači Azure](/azure/virtual-machines/windows/sql/virtual-machines-windows-migrate-sql)
+* [Migrace databáze SQL Serveru do služby Azure SQL Database](/azure/sql-database/sql-database-migrate-your-sql-server-database)
 
 Následující odkazy na koncepční obsah vám navíc pomůžou lépe porozumět virtuálním počítačům:
 
-* [Vysoká dostupnost a zotavení po havárii pro SQL Server v Azure Virtual Machines](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-high-availability-dr)
-* [Osvědčené postupy z hlediska výkonu pro SQL Server na Azure Virtual Machines](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-performance)
-* [Modely aplikací a vývojové strategie pro SQL Server v Azure Virtual Machines](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-app-patterns-dev-strategies)
+* [Vysoká dostupnost a zotavení po havárii pro SQL Server v Azure Virtual Machines](/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-high-availability-dr)
+* [Osvědčené postupy z hlediska výkonu pro SQL Server na Azure Virtual Machines](/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-performance)
+* [Modely aplikací a vývojové strategie pro SQL Server v Azure Virtual Machines](/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-app-patterns-dev-strategies)
 
 Následující odkazy vám pomůžou pochopit Azure SQL Database lépe:
 
-* [Vytváření a Správa Azure SQL Databasech serverů a databází](https://docs.microsoft.com/azure/sql-database/sql-database-servers-databases)
-* [Jednotky transakcí databáze (DTU) a jednotky elastické databázové transakce (eDTU)](https://docs.microsoft.com/azure/sql-database/sql-database-what-is-a-dtu)
-* [Azure SQL Database omezení prostředků](https://docs.microsoft.com/azure/sql-database/sql-database-resource-limits)
+* [Vytváření a Správa Azure SQL Databasech serverů a databází](/azure/sql-database/sql-database-servers-databases)
+* [Jednotky transakcí databáze (DTU) a jednotky elastické databázové transakce (eDTU)](/azure/sql-database/sql-database-what-is-a-dtu)
+* [Azure SQL Database omezení prostředků](/azure/sql-database/sql-database-resource-limits)
 
 ## <a name="choosing-iaas-or-paas"></a>Výběr IaaS nebo PaaS
 
@@ -59,14 +59,14 @@ Následující tabulka popisuje rozdíly mezi jednotlivými službami v závislo
 | Scénář | SQL Server ve virtuálních počítačích Azure | Azure SQL Database |
 |----------|-------------------------|--------------------|
 | Migrace | Vyžaduje minimální změny v databázi. | Může vyžadovat změny v databázi, pokud používáte funkce, které nejsou k dispozici v Azure SQL, podle určení [Data Migration Assistant](https://www.microsoft.com/download/details.aspx?id=53595), nebo pokud máte jiné závislosti, jako jsou místně instalované spustitelné soubory.|
-| Správa dostupnosti, obnovení a upgradů | Dostupnost a obnovení jsou konfigurovány ručně. Upgrady je možné automatizovat pomocí [VM Scale Sets](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-upgrade). | Automaticky se spravuje. |
+| Správa dostupnosti, obnovení a upgradů | Dostupnost a obnovení jsou konfigurovány ručně. Upgrady je možné automatizovat pomocí [VM Scale Sets](/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-upgrade). | Automaticky se spravuje. |
 | Základní konfigurace operačního systému | Ruční konfigurace | Automaticky se spravuje. |
 | Správa velikosti databáze | Podporuje až 256 TB úložiště na instanci SQL Server. | Podporuje 8 TB úložiště před tím, než bude potřeba horizontální oddíl. |
-| Správa nákladů | Musíte spravovat licenční náklady na SQL Server, licenční náklady na Windows Server a náklady na virtuální počítače (na základě jader, paměti RAM a úložiště). | Pokud používáte elastický fond, musíte spravovat náklady na službu (na základě [eDTU nebo DTU](https://docs.microsoft.com/azure/sql-database/sql-database-what-is-a-dtu), úložiště a počtu databází). Je také nutné spravovat náklady na smlouvu SLA. |
+| Správa nákladů | Musíte spravovat licenční náklady na SQL Server, licenční náklady na Windows Server a náklady na virtuální počítače (na základě jader, paměti RAM a úložiště). | Pokud používáte elastický fond, musíte spravovat náklady na službu (na základě [eDTU nebo DTU](/azure/sql-database/sql-database-what-is-a-dtu), úložiště a počtu databází). Je také nutné spravovat náklady na smlouvu SLA. |
 
-Další informace o rozdílech mezi těmito dvěma postupy najdete v tématu [Volba správné možnosti nasazení v Azure SQL](https://docs.microsoft.com/azure/sql-database/sql-database-paas-vs-sql-server-iaas).
+Další informace o rozdílech mezi těmito dvěma postupy najdete v tématu [Volba správné možnosti nasazení v Azure SQL](/azure/sql-database/sql-database-paas-vs-sql-server-iaas).
 
-## <a name="faq"></a>Časté otázky
+## <a name="faq"></a>Nejčastější dotazy
 
 * **Můžu dál používat nástroje, jako je SQL Server Management Studio a SQL Server Reporting Services (SSRS) s SQL Server ve virtuálních počítačích Azure nebo Azure SQL Database?**
 
