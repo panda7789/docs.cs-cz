@@ -9,12 +9,12 @@ metadata:
   level: Beginner
   displayType: two-column
   interactive: csharp
-  ms.openlocfilehash: 7736a2a26b37d8fbfac98328f94ce3c9a25be181
-  ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
+  ms.openlocfilehash: a82fe645524e526d0373a4e4733c2fef9ca7c14f
+  ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/06/2020
-  ms.locfileid: "82860992"
+  ms.lasthandoff: 07/09/2020
+  ms.locfileid: "86174111"
 items:
 - durationInMinutes: 2
   content: >
@@ -34,7 +34,7 @@ items:
     ```
 
 
-    Při spuštění kódu zobrazí **výstup** řetězec, který obsahuje vaše jméno na přání. Řetězcový argument volání <xref:System.Console.WriteLine%2A> metody je *interpolovaná řetězcová výraz*. Jedná se o druh šablony, který umožňuje vytvořit jeden řetězec (označovaný jako *výsledný řetězec*) z řetězce obsahujícího vložený kód. Interpolované řetězcové výrazy jsou zvláště užitečné pro vkládání hodnot do řetězce nebo zřetězení (spojování dohromady) několika řetězců.
+    Při spuštění kódu zobrazí **výstup** řetězec, který obsahuje vaše jméno na přání. Řetězcový argument <xref:System.Console.WriteLine%2A> volání metody je *interpolovaná řetězcová výraz*. Jedná se o druh šablony, který umožňuje vytvořit jeden řetězec (označovaný jako *výsledný řetězec*) z řetězce obsahujícího vložený kód. Interpolované řetězcové výrazy jsou zvláště užitečné pro vkládání hodnot do řetězce nebo zřetězení (spojování dohromady) několika řetězců.
 
 
     Výše uvedený příklad obsahuje dva prvky, které musí každý interpolující řetězcový výraz obsahovat:
@@ -43,7 +43,7 @@ items:
     - Řetězcový literál, který začíná znakem `$` před počátečním znakem uvozovek. Mezi symbolem `$` a znakem uvozovek nesmí být žádné mezery. (Pokud se chcete podívat, co se stane, když ho zahrnete, vložte mezeru za `$` znak v interaktivním okně a spusťte aktualizovaný kód. Kompilátor jazyka C# si bude stěžovat na „neočekávaný znak $“.)
 
 
-    - Jeden nebo více *výrazů interpolace*. Výraz interpolace je označen levou a pravou závorkou (`{` a `}`). Do složených závorek můžete vložit libovolný výraz v C#, který vrací hodnotu (včetně hodnoty `null`).
+    - Jeden nebo více *výrazů interpolace*. Výraz interpolace je označen levou a pravou závorkou ( `{` a `}` ). Do složených závorek můžete vložit libovolný výraz v C#, který vrací hodnotu (včetně hodnoty `null`).
 
 
     Pojďme vyzkoušet několik příkladů interpolace řetězců s některými jinými datovými typy.
@@ -53,7 +53,7 @@ items:
     V předchozím kroku jste použili interpolaci řetězců pro vložení jednoho řetězce do jiného. Každý výraz interpolace, který je součástí interpolující řetězcového výrazu, může být libovolného datového typu, ale. Pojďme do interpolované řetězce zahrnout hodnoty různých výrazů typu datový typ.
 
 
-    V následujícím příkladu jsme nejdřív definovali [řazenou kolekci](../../tuples.md) členů, `Name`která `Price`obsahuje členy `perPackage` , a. V interaktivním okně spusťte následující kód:
+    V následujícím příkladu jsme nejdřív definovali [řazenou kolekci](../../language-reference/builtin-types/value-tuples.md) členů, která obsahuje `Name` `Price` členy, a `perPackage` . V interaktivním okně spusťte následující kód:
 
 
     ```csharp
@@ -67,13 +67,13 @@ items:
     ```
 
 
-    Všimněte si, že výraz `item.Price` interpolace v interpolované řetězci se překládá na text "1,99" ve výsledném řetězci. To je způsobeno tím, že když typ výsledku výrazu není řetězec, výsledek je přeložen na řetězec následujícím způsobem:
+    Všimněte si, že výraz interpolace `item.Price` v interpolované řetězci se překládá na text "1,99" ve výsledném řetězci. To je způsobeno tím, že když typ výsledku výrazu není řetězec, výsledek je přeložen na řetězec následujícím způsobem:
 
 
-    - Pokud je výraz interpolace vyhodnocen `null`, je použit prázdný řetězec ("" nebo <xref:System.String.Empty?displayProperty=nameWithType>).
+    - Pokud je výraz interpolace vyhodnocen `null` , je použit prázdný řetězec ("" nebo <xref:System.String.Empty?displayProperty=nameWithType> ).
 
 
-    - Pokud výraz interpolace není vyhodnocen `null`, obvykle je volána `ToString` metoda výsledného výrazu.
+    - Pokud výraz interpolace není vyhodnocen `null` , obvykle `ToString` je volána metoda výsledného výrazu.
 
 
     Ve výstupu z tohoto příkladu je datum příliš přesné (cena za lilek se nemění každou sekundu) a hodnota Price neindikuje jednotku měny. V dalším kroku se dozvíte, jak tyto problémy vyřešit kontrolou formátu řetězcové reprezentace výsledků výrazu.
@@ -125,7 +125,7 @@ items:
     Názvy položek jsou zarovnané vlevo a jejich množství jsou zarovnaná vpravo. Zarovnání zadáte přidáním čárky (",") po výrazu interpolace a určením *minimální* šířky pole. Pokud je zadaná hodnota kladné číslo, bude pole zarovnáno vpravo. Pokud se jedná o záporné číslo, bude pole zarovnané vlevo.
 
 
-    Zkuste odebrat záporné znaménka z kódu `{"Item",-25}` a `{item.Key,-25}` a spustit tento příklad znovu. V tuto chvíli jsou názvy položek zarovnané doprava.
+    Zkuste odebrat záporné znaménka z `{"Item",-25}` kódu a `{item.Key,-25}` a spustit tento příklad znovu. V tuto chvíli jsou názvy položek zarovnané doprava.
 
 
     Můžete zkombinovat specifikátor zarovnání a formátovací řetězec pro jedinou interpolaci výrazu. Chcete-li to provést, zadejte nejprve zarovnání následovaný dvojtečkou a řetězcem formátu. Vyzkoušejte následující kód, který zobrazí tři formátované řetězce s definovanými šířkami polí:
