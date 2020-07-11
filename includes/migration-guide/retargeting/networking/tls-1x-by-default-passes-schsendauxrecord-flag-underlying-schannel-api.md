@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: e7f690030a5cb5605645f1ca42a6f08dcdd214f5
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 207dba9327cfd6debd15c5573697f8950b6c2c95
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85615703"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86218144"
 ---
 ### <a name="tls-1x-by-default-passes-the-sch_send_aux_record-flag-to-the-underlying-schannel-api"></a>TLS 1. x ve výchozím nastavení předá příznak SCH_SEND_AUX_RECORD základnímu rozhraní SCHANNEL API.
 
@@ -14,7 +14,7 @@ Při použití TLS 1. x .NET Framework spoléhá na základní rozhraní Windows
 
 #### <a name="suggestion"></a>Návrh
 
-Pokud tato změna přeruší komunikaci s existujícím serverem, můžete zakázat odesílání příznaku [SCH_SEND_AUX_RECORD](https://docs.microsoft.com/windows/win32/api/schannel/ns-schannel-schannel_cred) a obnovit předchozí chování pro nerozdělení dat do samostatných záznamů přidáním následujícího přepínače do [<](~/docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) prvku v [<](~/docs/framework/configure-apps/file-schema/runtime/runtime-element.md) části konfiguračního souboru aplikace:
+Pokud tato změna přeruší komunikaci s existujícím serverem, můžete zakázat odesílání příznaku [SCH_SEND_AUX_RECORD](https://docs.microsoft.com/windows/win32/api/schannel/ns-schannel-schannel_cred) a obnovit předchozí chování pro nerozdělení dat do samostatných záznamů přidáním následujícího přepínače do [`<AppContextSwitchOverrides>`](~/docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) prvku v [`<runtime>`](~/docs/framework/configure-apps/file-schema/runtime/runtime-element.md) části konfiguračního souboru aplikace:
 
 ```xml
 <runtime>
@@ -25,11 +25,11 @@ Pokud tato změna přeruší komunikaci s existujícím serverem, můžete zaká
 > [!IMPORTANT]
 > Toto nastavení je k dispozici pouze pro zpětnou kompatibilitu. Jeho použití není jinak doporučeno.
 
-| Name    | Hodnota       |
+| Název    | Hodnota       |
 |:--------|:------------|
-| Rozsah   | Edge        |
+| Obor   | Edge        |
 | Verze | 4.6         |
-| Typ    | Změna cílení |
+| Type    | Změna cílení |
 
 #### <a name="affected-apis"></a>Ovlivněná rozhraní API
 

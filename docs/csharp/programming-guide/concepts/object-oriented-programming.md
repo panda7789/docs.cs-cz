@@ -2,17 +2,18 @@
 title: Objektově orientované programování (C#)
 ms.date: 05/13/2020
 ms.assetid: 89574786-65ef-4335-88bc-fbacd094f183
-ms.openlocfilehash: 98dd5147ab54375ec851ccd9b981a68098a53270
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 83140a9dbd16f60f04f50ba18c71099cdd862f15
+ms.sourcegitcommit: 67cf756b033c6173a1bbd1cbd5aef1fccac99e34
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241887"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86226631"
 ---
 # <a name="object-oriented-programming-c"></a>Objektově orientované programování (C#)
 
-Jazyk C# poskytuje úplnou podporu pro objektově orientované programování, včetně zapouzdření, dědičnosti a polymorfismu.
+Jazyk C# poskytuje úplnou podporu pro objektově orientované programování, včetně abstrakce, zapouzdření, dědičnosti a polymorfismu.
 
+- *Abstrakce* znamená skrývání zbytečných podrobností od spotřebitelů typu.
 - *Zapouzdření* znamená, že skupina souvisejících vlastností, metod a dalších členů je považována za jednu jednotku nebo objekt.
 - *Dědičnost* popisuje možnost vytvářet nové třídy na základě existující třídy.
 - *Polymorfismus* znamená, že můžete mít více tříd, které lze použít zaměnitelné, i když každá třída implementuje stejné vlastnosti nebo metody různými způsoby.
@@ -29,7 +30,7 @@ class SampleClass
 }
 ```
 
-Jazyk C# také poskytuje typy označované jako *struktury* , které jsou užitečné, pokud nepotřebujete podporu dědičnosti nebo polymorfismu.
+Jazyk C# také poskytuje typy označované jako *struktury* , které jsou užitečné, pokud nepotřebujete podporu dědičnosti nebo polymorfismu. Další informace naleznete v tématu [Výběr mezi třídou a strukturou](../../../standard/design-guidelines/choosing-between-class-and-struct.md).
 
 Definování struktury:
 
@@ -89,9 +90,9 @@ class SampleClass
 
 Většina vlastností má metody nebo postupy pro nastavení a získání hodnoty vlastnosti. Můžete však vytvořit vlastnosti jen pro čtení nebo jen pro zápis a omezit tak jejich úpravu nebo čtení. V jazyce C# můžete vynechat `get` `set` metodu nebo. Automaticky implementované vlastnosti však nemohou být pouze pro zápis. Automaticky implementované vlastnosti jen pro čtení lze nastavit v konstruktorech obsahující třídy.
 
-Další informace naleznete v tématu:
+Další informace najdete tady:
 
-- [get](../../language-reference/keywords/get.md)
+- [Čtěte](../../language-reference/keywords/get.md)
 - [stanovenými](../../language-reference/keywords/set.md)
 
 #### <a name="methods"></a>Metody
@@ -121,7 +122,7 @@ public int SampleMethod(int sampleParam) { }
 
 Ve většině případů deklarujete metodu v rámci definice třídy. Jazyk C# však podporuje také *metody rozšíření* , které umožňují přidat metody do existující třídy mimo skutečnou definici třídy.
 
-Další informace naleznete v tématu:
+Další informace najdete tady:
 
 - [Metody](../classes-and-structs/methods.md)
 - [Metody rozšíření](../classes-and-structs/extension-methods.md)
@@ -187,7 +188,7 @@ K dispozici jsou následující modifikátory přístupu:
 | Modifikátor C# | Definice |
 |--|--|
 | [public](../../language-reference/keywords/public.md) | Na daný typ nebo člen je možné přistupovat jakýkoli jiný kód ve stejném sestavení nebo jiném sestavení, které na něj odkazuje. |
-| [private](../../language-reference/keywords/private.md) | Typ nebo člen je k dispozici pouze pomocí kódu ve stejné třídě. |
+| [hlášen](../../language-reference/keywords/private.md) | Typ nebo člen je k dispozici pouze pomocí kódu ve stejné třídě. |
 | [protected](../../language-reference/keywords/protected.md) | Typ nebo člen je k dispozici pouze pomocí kódu ve stejné třídě nebo v odvozené třídě. |
 | [internal](../../language-reference/keywords/internal.md) | K typu nebo členu může být přistup libovolným kódem ve stejném sestavení, ale nikoli z jiného sestavení. |
 | [protected internal](../../language-reference/keywords/protected-internal.md) | K typu nebo členu může být přistup libovolným kódem ve stejném sestavení nebo libovolnou odvozenou třídou v jiném sestavení. |
@@ -223,7 +224,7 @@ var sampleObject = new SampleClass
 };
 ```
 
-Další informace naleznete v tématu:
+Další informace najdete tady:
 
 - [New – operátor](../../language-reference/operators/new-operator.md)
 - [Inicializátory objektu a kolekce](../classes-and-structs/object-and-collection-initializers.md)
@@ -295,7 +296,7 @@ Chcete-li určit, že třída může být použita pouze jako základní třída
 public abstract class B { }
 ```
 
-Další informace naleznete v tématu:
+Další informace najdete tady:
 
 - [sealed](../../language-reference/keywords/sealed.md)
 - [Výtah](../../language-reference/keywords/abstract.md)
@@ -308,7 +309,7 @@ Následující modifikátory slouží k řízení způsobu přepsání vlastnost
 
 | Modifikátor C# | Definice |
 |--|--|
-| [virtual](../../language-reference/keywords/virtual.md) | Umožňuje přepsat člena třídy v odvozené třídě. |
+| [VM](../../language-reference/keywords/virtual.md) | Umožňuje přepsat člena třídy v odvozené třídě. |
 | [override](../../language-reference/keywords/override.md) | Přepíše virtuální (overridabled) člen definovaný v základní třídě. |
 | [Výtah](../../language-reference/keywords/abstract.md) | Vyžaduje, aby byl člen třídy přepsán v odvozené třídě. |
 | [new – modifikátor](../../language-reference/keywords/new-modifier.md) | Skryje člena zděděného ze základní třídy. |
@@ -360,7 +361,7 @@ var sampleObject = new SampleGeneric<string>();
 sampleObject.Field = "Sample string";
 ```
 
-Další informace naleznete v tématu:
+Další informace najdete tady:
 
 - [Obecné typy v .NET](../../../standard/generics/index.md)
 - [Obecné typy – Průvodce programováním v C#](../generics/index.md)

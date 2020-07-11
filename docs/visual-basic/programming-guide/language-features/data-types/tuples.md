@@ -4,27 +4,27 @@ ms.date: 04/23/2017
 helpviewer_keywords:
 - tuples [Visual Basic]
 ms.assetid: 3e66cd1b-3432-4e1d-8c37-5ebacae8f53f
-ms.openlocfilehash: e0310f31d7becb1f79bb023a277bd565421b44fb
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 378ee4e7d3a3b106b719e5da819b09f336ff218e
+ms.sourcegitcommit: 67cf756b033c6173a1bbd1cbd5aef1fccac99e34
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74350503"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86226657"
 ---
 # <a name="tuples-visual-basic"></a>Řazené kolekce členů (Visual Basic)
 
-Počínaje Visual Basic 2017 Visual Basic jazyk nabízí integrovanou podporu pro řazené kolekce členů, které usnadňují vytváření řazených kolekcí členů a přístup k prvkům řazených kolekcí členů. Řazená kolekce členů je odlehčená datová struktura, která má určitý počet a sekvenci hodnot. Při vytváření instance řazené kolekce členů definujte číslo a datový typ každé hodnoty (nebo element). Například 2-Tuple (nebo dvojice) má dva prvky. První může být `Boolean` hodnota, zatímco druhá je `String`. Vzhledem k tomu, že řazené kolekce členů usnadňují ukládání více hodnot do jediného objektu, jsou často používány jako jednoduchý způsob, jak vrátit více hodnot z metody.
+Počínaje Visual Basic 2017 Visual Basic jazyk nabízí integrovanou podporu pro řazené kolekce členů, které usnadňují vytváření řazených kolekcí členů a přístup k prvkům řazených kolekcí členů. Řazená kolekce členů je odlehčená datová struktura, která má určitý počet a sekvenci hodnot. Při vytváření instance řazené kolekce členů definujte číslo a datový typ každé hodnoty (nebo element). Například 2-Tuple (nebo dvojice) má dva prvky. První může být `Boolean` hodnota, zatímco druhá je `String` . Vzhledem k tomu, že řazené kolekce členů usnadňují ukládání více hodnot do jediného objektu, jsou často používány jako jednoduchý způsob, jak vrátit více hodnot z metody.
 
 > [!IMPORTANT]
-> Podpora řazené kolekce členů vyžaduje typ <xref:System.ValueTuple>. Pokud není nainstalován .NET Framework 4,7, je nutné přidat balíček NuGet `System.ValueTuple`, který je k dispozici v galerii NuGet. Bez tohoto balíčku se může zobrazit chyba kompilace podobná "předdefinovaný typ ValueTuple (of,,,) není definován ani importován."
+> Podpora řazené kolekce členů vyžaduje <xref:System.ValueTuple> typ. Pokud není nainstalován .NET Framework 4,7, je nutné přidat balíček NuGet `System.ValueTuple` , který je k dispozici v galerii NuGet. Bez tohoto balíčku se může zobrazit chyba kompilace podobná "předdefinovaný typ ValueTuple (of,,,) není definován ani importován."
 
 ## <a name="instantiating-and-using-a-tuple"></a>Vytváření instancí a používání řazené kolekce členů
 
-Vytvořte instanci řazené kolekce členů uzavřením hodnot oddělených čárkami a závorkou. Každá z těchto hodnot se pak stala polem řazené kolekce členů. Například následující kód definuje Troji (nebo 3-Tuple) s `Date` jako první hodnotu, `String` jako druhou a `Boolean` jako třetí.
+Vytvořte instanci řazené kolekce členů uzavřením hodnot oddělených čárkami v závorkách. Každá z těchto hodnot se pak stala polem řazené kolekce členů. Například následující kód definuje Troji (nebo tři řazené kolekce členů) s `Date` jako první hodnotou, a `String` jako druhou, a `Boolean` jako třetí.
 
 [!code-vb[Instantiate](../../../../../samples/snippets/visualbasic/programming-guide/language-features/data-types/tuple1.vb#1)]
 
-Ve výchozím nastavení se název každého pole v rámci řazené kolekce členů skládá z řetězce `Item` společně s jednou pozicí pole v řazené kolekci členů. U této 3-řazené kolekce členů se pole `Date` `Item1`, `String` pole je `Item2`a `Boolean` pole je `Item3`. Následující příklad zobrazí hodnoty polí instance řazené kolekce členů v předchozím řádku kódu.
+Ve výchozím nastavení se název každého pole v řazené kolekci členů skládá z řetězce `Item` spolu s jednou pozicí pole v řazené kolekci členů. Pro toto 3 – řazené kolekce členů je pole pole a pole je `Date` `Item1` `String` `Item2` `Boolean` `Item3` . Následující příklad zobrazí hodnoty polí instance řazené kolekce členů v předchozím řádku kódu.
 
 [!code-vb[Instantiate](../../../../../samples/snippets/visualbasic/programming-guide/language-features/data-types/tuple1.vb#2)]
 
@@ -34,7 +34,7 @@ Pole Visual Basic řazené kolekce členů jsou pro čtení i zápis; Po vytvoř
 
 ## <a name="instantiating-and-using-a-named-tuple"></a>Vytváření instancí a používání pojmenované řazené kolekce členů
 
-Místo používání výchozích názvů pro pole řazené kolekce členů můžete vytvořit instanci *pojmenované řazené kolekce členů* přiřazením vlastních názvů prvkům řazené kolekce členů. K polím řazené kolekce členů lze následně přistupovat pomocí jejich přiřazených názvů *nebo* jejich výchozích názvů. Následující příklad vytvoří instanci stejné 3-řazené kolekce členů jako dříve, s tím rozdílem, že explicitně pojmenuje první pole `EventDate`, druhý `Name`a třetí `IsHoliday`. Pak zobrazí hodnoty polí, upraví je a zobrazí hodnoty polí znovu.
+Místo používání výchozích názvů pro pole řazené kolekce členů můžete vytvořit instanci *pojmenované řazené kolekce členů* přiřazením vlastních názvů prvkům řazené kolekce členů. K polím řazené kolekce členů lze následně přistupovat pomocí jejich přiřazených názvů *nebo* jejich výchozích názvů. Následující příklad vytvoří instanci stejné 3 – řazené kolekce členů jako dříve, s tím rozdílem, že explicitně pojmenuje první pole `EventDate` , druhý `Name` a třetí `IsHoliday` . Pak zobrazí hodnoty polí, upraví je a zobrazí hodnoty polí znovu.
 
 [!code-vb[Instantiate](../../../../../samples/snippets/visualbasic/programming-guide/language-features/data-types/tuple1.vb#4)]
 
@@ -42,7 +42,7 @@ Místo používání výchozích názvů pro pole řazené kolekce členů můž
 
 Počínaje Visual Basic 15,3 Visual Basic mohou odvodit názvy elementů řazené kolekce členů; nemusíte je explicitně přiřazovat. Odvozené názvy řazených kolekcí členů jsou užitečné při inicializaci řazené kolekce členů ze sady proměnných a chcete, aby název elementu řazené kolekce členů byl stejný jako název proměnné.
 
-Následující příklad vytvoří řazenou kolekci členů `stateInfo`, která obsahuje tři explicitně pojmenované elementy, `state`, `stateName`a `capital`. Všimněte si, že při pojmenovávání prvků příkaz inicializace řazené kolekce členů jednoduše přiřadí pojmenované prvky hodnoty identicky pojmenovaných proměnných.
+Následující příklad vytvoří `stateInfo` řazenou kolekci členů, která obsahuje tři explicitně pojmenované prvky, `state` , a `stateName` `capital` . Všimněte si, že při pojmenovávání prvků příkaz inicializace řazené kolekce členů jednoduše přiřadí pojmenované prvky hodnoty identicky pojmenovaných proměnných.
 
 [!code-vb[ExplicitlyNamed](../../../../../samples/snippets/visualbasic/programming-guide/language-features/data-types/named-tuples/program.vb#1)]
 
@@ -50,7 +50,7 @@ Vzhledem k tomu, že prvky a proměnné mají stejný název, kompilátor Visual
 
 [!code-vb[ExplicitlyNamed](../../../../../samples/snippets/visualbasic/programming-guide/language-features/data-types/named-tuples/program.vb#2)]
 
-Chcete-li povolit odvozené názvy elementů řazené kolekce členů, je nutné definovat verzi Visual Basic kompilátoru pro použití v souboru projektu Visual Basic (\*. vbproj):
+Chcete-li povolit odvozené názvy elementů řazené kolekce členů, je nutné definovat verzi Visual Basic kompilátoru pro použití v souboru projektu Visual Basic ( \* . vbproj):
 
 ```xml
 <PropertyGroup>
@@ -58,21 +58,21 @@ Chcete-li povolit odvozené názvy elementů řazené kolekce členů, je nutné
 </PropertyGroup>
 ```
 
-Číslo verze může být libovolná verze Visual Basic kompilátoru od 15,3. Namísto hardwarového kódování konkrétní verze kompilátoru můžete také zadat "nejnovější" jako hodnotu `LangVersion` ke kompilaci s nejnovější verzí Visual Basic kompilátoru nainstalovanou v systému.
+Číslo verze může být libovolná verze Visual Basic kompilátoru od 15,3. Namísto hardwarového kódování konkrétní verze kompilátoru můžete také zadat "nejnovější" jako hodnotu `LangVersion` pro zkompilování s nejnovější verzí Visual Basic kompilátoru nainstalovaného ve vašem systému.
 
 Další informace najdete v tématu [nastavení jazykové verze Visual Basic](../../../language-reference/configure-language-version.md).
 
-V některých případech kompilátor Visual Basic nemůže odvodit název prvku řazené kolekce členů z názvu kandidáta a pole řazené kolekce členů může být odkazováno pouze pomocí jeho výchozího názvu, například `Item1`, `Item2`atd. Mezi ně patří:
+V některých případech kompilátor Visual Basic nemůže odvodit název prvku řazené kolekce členů z názvu kandidáta a pole řazené kolekce členů může být odkazováno pouze pomocí jeho výchozího názvu, například `Item1` , atd `Item2` . Mezi ně patří:
 
-- Kandidátský název je stejný jako název člena řazené kolekce členů, například `Item3`, `Rest`nebo `ToString`.
+- Kandidátský název je stejný jako název člena řazené kolekce členů, jako je například `Item3` , `Rest` nebo `ToString` .
 
 - Název kandidáta je duplikován v řazené kolekci členů.
 
-Pokud se odvození názvu pole nepovede, Visual Basic negeneruje chybu kompilátoru, ani při běhu není vyvolána výjimka. Místo toho musí být pole řazené kolekce členů odkazována podle jejich předdefinovaných názvů, například `Item1` a `Item2`.
+Pokud se odvození názvu pole nepovede, Visual Basic negeneruje chybu kompilátoru, ani při běhu není vyvolána výjimka. Místo toho musí být pole řazené kolekce členů odkazována podle jejich předdefinovaných názvů, například `Item1` a `Item2` .
 
 ## <a name="tuples-versus-structures"></a>Řazené kolekce členů versus struktury
 
-Visual Basic řazená kolekce členů je hodnotový typ, který je instancí jednoho z obecných typů **System. ValueTuple** . Například `holiday` řazené kolekce členů definované v předchozím příkladu je instance <xref:System.ValueTuple%603> struktury. Je navržený jako odlehčený kontejner pro data. Vzhledem k tomu, že řazená kolekce členů je snazší vytvořit objekt s více datovými položkami, chybí některé funkce, které může mít vlastní struktura. Mezi ně patří:
+Visual Basic řazená kolekce členů je hodnotový typ, který je instancí jednoho z obecných typů **System. ValueTuple** . Například `holiday` řazená kolekce členů definovaná v předchozím příkladu je instance <xref:System.ValueTuple%603> struktury. Je navržený jako odlehčený kontejner pro data. Vzhledem k tomu, že řazená kolekce členů je snazší vytvořit objekt s více datovými položkami, chybí některé funkce, které může mít vlastní struktura. Mezi ně patří:
 
 - Vlastní členové. Nemůžete definovat vlastní vlastnosti, metody nebo události pro řazenou kolekci členů.
 
@@ -89,9 +89,9 @@ Visual Basic řazené kolekce členů dědí členy svého typu **ValueTuple** .
 | CompareTo | Porovná aktuální řazenou kolekci členů s jinou řazenou kolekci členů se stejným počtem prvků. |
 | Je rovno | Určuje, zda je aktuální řazená kolekce členů rovna jiné řazené kolekci členů nebo objektu. |
 | GetHashCode | Vypočítá kód hash aktuální instance. |
-| Metodu | Vrátí řetězcovou reprezentaci této řazené kolekce členů, která převezme `(Item1, Item2...)`formuláře, kde `Item1` a `Item2` reprezentují hodnoty polí řazené kolekce členů. |
+| ToString | Vrátí řetězcovou reprezentaci této řazené kolekce členů, která má formu `(Item1, Item2...)` , kde `Item1` a `Item2` představuje hodnoty polí řazené kolekce členů. |
 
-Kromě toho typy **ValueTuple** implementují rozhraní <xref:System.Collections.IStructuralComparable> a <xref:System.Collections.IStructuralEquatable>, která umožňují definovat porovnávače zákazníků.
+Kromě toho **ValueTuple** typy implementují <xref:System.Collections.IStructuralComparable> a <xref:System.Collections.IStructuralEquatable> rozhraní, které umožňují definovat porovnávače zákazníků.
 
 ## <a name="assignment-and-tuples"></a>Přiřazení a řazené kolekce členů
 
@@ -101,7 +101,7 @@ Visual Basic podporuje přiřazení mezi typy řazené kolekce členů, které m
 
 - Je definovaný rozšiřující (nebo implicitní) převod zdrojového typu na cílový typ.
 
-- `Option Strict` je `On`a je definována úzká (nebo explicitní) konverze zdrojového typu na cílový typ. Tento převod může vyvolat výjimku, pokud je zdrojová hodnota mimo rozsah cílového typu.
+- `Option Strict`je `On` a je definován zúžený (nebo explicitní) převod zdrojového typu na cílový typ. Tento převod může vyvolat výjimku, pokud je zdrojová hodnota mimo rozsah cílového typu.
 
 Jiné převody se nepovažují za přiřazení. Pojďme se podívat na typy přiřazení, která jsou povolená mezi typy řazené kolekce členů.
 
@@ -109,7 +109,7 @@ Vezměte v úvahu tyto proměnné, které se používají v následujících př
 
 [!code-vb[Assign](../../../../../samples/snippets/visualbasic/programming-guide/language-features/data-types/tuple3.vb#1)]
 
-První dvě proměnné, `unnamed` a `anonymous`, nemají pro pole k dispozici sémantické názvy. Jejich názvy polí jsou výchozí `Item1` a `Item2`. Poslední dvě proměnné `named` a `differentName` mají sémantické názvy polí. Všimněte si, že tyto dvě řazené kolekce členů mají pro pole různé názvy.
+První dvě proměnné a nemají `unnamed` `anonymous` pro pole k dispozici sémantické názvy. Názvy polí jsou výchozí `Item1` a `Item2` . Poslední dvě proměnné `named` a `differentName` mají sémantické názvy polí. Všimněte si, že tyto dvě řazené kolekce členů mají pro pole různé názvy.
 
 Všechny čtyři tyto řazené kolekce členů mají stejný počet polí (označované jako "aritou") a typy těchto polí jsou identické. Proto všechna tato přiřazení fungují:
 
@@ -117,7 +117,7 @@ Všechny čtyři tyto řazené kolekce členů mají stejný počet polí (ozna�
 
 Všimněte si, že názvy řazených kolekcí členů nejsou přiřazeny. Hodnoty polí jsou přiřazeny podle pořadí polí v řazené kolekci členů.
 
-Nakonec si všimněte, že je možné přiřadit `named` řazené kolekce členů k `conversion` řazené kolekci členů, i když je prvním polem `named` `Integer`a prvním polem `conversion` je `Long`. Toto přiřazení je úspěšné, protože převod `Integer` na `Long` je rozšiřující převod.
+Nakonec si všimněte, že `named` řazenou kolekci členů můžeme přiřadit k `conversion` řazené kolekci členů, a to i v případě, že první pole `named` je `Integer` a první pole `conversion` je `Long` . Toto přiřazení je úspěšné, protože převod `Integer` na, `Long` je rozšiřující převod.
 
 [!code-vb[Assign](../../../../../samples/snippets/visualbasic/programming-guide/language-features/data-types/tuple3.vb#3)]
 
@@ -141,11 +141,11 @@ Metoda může vracet pouze jednu hodnotu. Často se ale jako volání metody vra
 
 - Můžete použít řazenou kolekci členů, která poskytuje zjednodušené řešení pro načítání více návratových hodnot.
 
-Například metody **TryParse** v rozhraní .net vracejí `Boolean` hodnotu, která označuje, zda byla operace analýzy úspěšná. Výsledek operace analýzy je vrácen v proměnné předané pomocí odkazu na metodu. V normálním případě volání metody analýzy, jako je například <xref:System.Int32.TryParse%2A?displayProperty=nameWithType>, vypadá takto:
+Například metody **TryParse** v rozhraní .NET vrací `Boolean` hodnotu, která označuje, zda byla operace analýzy úspěšná. Výsledek operace analýzy je vrácen v proměnné předané pomocí odkazu na metodu. V normálním případě volání metody analýzy, například vypadá takto <xref:System.Int32.TryParse%2A?displayProperty=nameWithType> :
 
 [!code-vb[Return](../../../../../samples/snippets/visualbasic/programming-guide/language-features/data-types/tuple-returns.vb#1)]
 
-Pokud zabalíme volání metody <xref:System.Int32.TryParse%2A?displayProperty=nameWithType> v naší vlastní metodě, můžeme vrátit řazenou kolekci členů z operace analýzy. V následujícím příkladu `NumericLibrary.ParseInteger` volá metodu <xref:System.Int32.TryParse%2A?displayProperty=nameWithType> a vrací pojmenované řazené kolekce členů se dvěma prvky.
+Můžete vrátit řazenou kolekci členů z operace analýzy, pokud zabalíme volání <xref:System.Int32.TryParse%2A?displayProperty=nameWithType> metody v naší vlastní metodě. V následujícím příkladu `NumericLibrary.ParseInteger` volá <xref:System.Int32.TryParse%2A?displayProperty=nameWithType> metodu a vrátí pojmenované řazené kolekce členů se dvěma prvky.
 
 [!code-vb[Return](../../../../../samples/snippets/visualbasic/programming-guide/language-features/data-types/tuple-returns.vb#2)]
 
@@ -157,7 +157,7 @@ Pak můžete zavolat metodu s kódem podobným následujícímu:
 
 Visual Basic řazená kolekce členů je instancí jednoho z obecných typů **System. ValueTuple** , které byly představeny v .NET Framework 4,7. .NET Framework také obsahuje sadu obecných tříd **System. Tuple** . Tyto třídy se však liší od Visual Basicch řazených kolekcí členů a obecných typů **System. ValueTuple** mnoha různými způsoby:
 
-- Prvky tříd **řazené kolekce členů** jsou vlastnosti s názvem `Item1`, `Item2`a tak dále. V Visual Basic řazené kolekce členů a typy **ValueTuple** jsou prvky řazené kolekce členů pole.
+- Prvky tříd **řazené kolekce členů** jsou vlastnosti s názvem `Item1` , `Item2` a tak dále. V Visual Basic řazené kolekce členů a typy **ValueTuple** jsou prvky řazené kolekce členů pole.
 
 - K prvkům instance **řazené kolekce členů** nebo instanci **ValueTuple** nelze přiřadit smysluplné názvy. Visual Basic umožňuje přiřadit názvy, které komunikují význam polí.
 
@@ -165,12 +165,12 @@ Visual Basic řazená kolekce členů je instancí jednoho z obecných typů **S
 
 - Obecné typy **řazené kolekce členů** jsou odkazové typy. Použití těchto typů **řazené kolekce členů** znamená přidělení objektů. U aktivních cest to může mít měřitelný dopad na výkon vaší aplikace. Visual Basic řazené kolekce členů a typy **ValueTuple** jsou typy hodnot.
 
-Metody rozšíření ve třídě <xref:System.TupleExtensions> usnadňují konverzi mezi Visual Basic řazenými kolekcemi členů a objekty **řazené kolekce členů** .NET. Metoda **ToTuple** převádí Visual Basic řazené kolekce členů na objekt .NET **řazené** kolekce členů a metoda **ToValueTuple** převede objekt **řazené kolekce členů** .NET na Visual Basic řazené kolekce členů.
+Metody rozšíření ve třídě usnadňují <xref:System.TupleExtensions> konverzi mezi Visual Basicmi řazenými kolekcemi členů a objekty v **řazené kolekci členů** .NET. Metoda **ToTuple** převádí Visual Basic řazené kolekce členů na objekt .NET **řazené** kolekce členů a metoda **ToValueTuple** převede objekt **řazené kolekce členů** .NET na Visual Basic řazené kolekce členů.
 
 Následující příklad vytvoří řazenou kolekci členů, převede ji na objekt **řazené kolekce členů** .NET a převede ji zpět na Visual Basic řazené kolekce členů. Příklad následně Porovná tuto řazenou kolekci členů s původní verzí, aby se zajistilo, že jsou stejné.
 
 [!code-vb[Convert](../../../../../samples/snippets/visualbasic/programming-guide/language-features/data-types/tuple2.vb#1)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Referenční příručka jazyka Visual Basic](index.md)
+- [Reference jazyka Visual Basic](index.md)
