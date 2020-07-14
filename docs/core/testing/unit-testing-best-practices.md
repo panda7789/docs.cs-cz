@@ -4,12 +4,12 @@ description: Naučte se osvědčené postupy pro psaní testů jednotek, které 
 author: jpreese
 ms.author: wiwagn
 ms.date: 07/28/2018
-ms.openlocfilehash: 8a879c16e48dfde617f9cd20f58cab96039361f0
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: ffeaa1e11512cab64695c120f844594b8c5014a8
+ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85324478"
+ms.lasthandoff: 07/13/2020
+ms.locfileid: "86281105"
 ---
 # <a name="unit-testing-best-practices-with-net-core-and-net-standard"></a>Osvědčené postupy testování částí pomocí .NET Core a .NET Standard
 
@@ -22,21 +22,25 @@ Od [Jan Reese](https://reese.dev) se speciálním poděkováním [Roy Osherove](
 ## <a name="why-unit-test"></a>Proč testování částí?
 
 ### <a name="less-time-performing-functional-tests"></a>Méně času provádění funkčních testů
+
 Funkční testy jsou nákladné. Obvykle zahrnují otevření aplikace a provedení posloupnosti kroků (nebo někoho jiného), které je nutné provést, aby bylo možné ověřit očekávané chování. Tyto kroky nemusí být vždy známy testerovi, což znamená, že se budou muset obrátit na více znalostí v oblasti, aby bylo možné provést test. Testování může trvat několik sekund, než se u triviálních změn nebo minut pro větší změny. Nakonec je třeba tento proces opakovat pro každou změnu, kterou v systému provedete.
 
 Testování částí na druhé straně trvá milisekundy, můžete je spustit při stisknutí tlačítka a nemusíte nutně vyžadovat, aby byly v systému velké znalosti. Bez ohledu na to, zda test projde nebo se nezdařil, je až do nástroje Test Runner, nikoli z jednotlivce.
 
 ### <a name="protection-against-regression"></a>Ochrana před regresí
+
 Chyby regrese jsou chyby, které jsou představeny, když je provedena změna aplikace. Pro testery je běžné, že netestují pouze své nové funkce, ale také funkce, které existovaly předem, aby bylo možné ověřit, že dříve implementované funkce stále fungují podle očekávání.
 
 Při testování částí je možné znovu spustit celou sadu testů po každém sestavení nebo dokonce i po změně řádku kódu. Máte jistotu, že nový kód neruší existující funkce.
 
 ### <a name="executable-documentation"></a>Dokumentace ke spustitelnému souboru
+
 Nemusí vždy být zřejmé, co konkrétní metoda dělá nebo jak se chová podle určitého vstupu. Můžete se zeptat sami: jak se tato metoda chová, když ji předáte do prázdného řetězce? Platnost?
 
 Máte-li sadu dobře pojmenovaných testů jednotek, každý test by měl být schopný jasně vysvětlit očekávaný výstup pro daný vstup. Kromě toho by měl být schopný ověřit, zda skutečně funguje.
 
 ### <a name="less-coupled-code"></a>Méně spojený kód
+
 Když je kód pevně spojený, může být obtížné testování částí. Bez vytváření testů jednotek pro kód, který zapisujete, může být spojení neviditelné.
 
 Zápis testů pro váš kód bude přirozeně oddělit váš kód, protože by bylo obtížnější ho testovat jinak.
@@ -56,6 +60,7 @@ Vysoké procento pokrytí kódu je často spojeno s vyšší kvalitou kódu. Mě
 Vysoké procento pokrytí kódu není indikátorem úspěchu, ani to neznamená vysokou kvalitu kódu. Pouze představuje množství kódu, který je pokryt jednotkovým testováním. Další informace najdete v tématu [testování rozsahu pokrytí kódu](unit-testing-code-coverage.md).
 
 ## <a name="lets-speak-the-same-language"></a>Pojďme hovořit o stejný jazyk
+
 Tento pojem *je často* při komunikaci s testováním často nepoužit. Následující body definují nejběžnější typy *napodobenin* při psaní jednotkových testů:
 
 *Napodobeniny* – napodobenina je obecný termín, který lze použít k popisu buď zástupné procedury nebo objektu typu. Bez ohledu na to, zda se jedná o zástupnou proceduru nebo objekt, závisí na kontextu, ve kterém se používá. Jinak řečeno, napodobenina může být zástupná procedura nebo maketa.
@@ -111,6 +116,7 @@ Hlavním aspektem, který si zapamatujete o postupných objektech oproti zástup
 ## <a name="best-practices"></a>Osvědčené postupy
 
 ### <a name="naming-your-tests"></a>Pojmenovávání testů
+
 Název testu by měl sestávat ze tří částí:
 
 - Název testované metody.
@@ -124,12 +130,15 @@ Název testu by měl sestávat ze tří částí:
 Testy jsou více, než pouze zajištění, že váš kód funguje, ale také poskytují dokumentaci. Stejně jako při prohlížení sady jednotkových testů byste měli být schopni odvodit chování kódu bez ohledu na samotný kód. Kromě toho, když testy selžou, vidíte přesně ty scénáře, které nesplňují vaše očekávání.
 
 #### <a name="bad"></a>Chybně:
+
 [!code-csharp[BeforeNaming](../../../samples/snippets/core/testing/unit-testing-best-practices/csharp/before/StringCalculatorTests.cs#BeforeNaming)]
 
 #### <a name="better"></a>Zájmu
+
 [!code-csharp[AfterNamingAndMinimallyPassing](../../../samples/snippets/core/testing/unit-testing-best-practices/csharp/after/StringCalculatorTests.cs#AfterNamingAndMinimallyPassing)]
 
 ### <a name="arranging-your-tests"></a>Uspořádání testů
+
 **Uspořádat, ACT a Assert** je běžný vzor při testování částí. Jak název naznačuje, skládá se ze tří hlavních akcí:
 
 - *Uspořádejte* své objekty, vytvářejte je a nastavte je podle potřeby.
@@ -144,12 +153,15 @@ Testy jsou více, než pouze zajištění, že váš kód funguje, ale také pos
 Čitelnost je jedním z nejdůležitějších aspektů při psaní testu. Oddělení každé z těchto akcí v rámci testu jasně zvýrazní závislosti vyžadované pro volání vašeho kódu, způsob, jakým je váš kód volán a co se snažíte uplatnit. I když může být možné zkombinovat některé kroky a zmenšit velikost testu, primárním cílem je udělat co možná čitelnou zkoušku.
 
 #### <a name="bad"></a>Chybně:
+
 [!code-csharp[BeforeArranging](../../../samples/snippets/core/testing/unit-testing-best-practices/csharp/before/StringCalculatorTests.cs#BeforeArranging)]
 
 #### <a name="better"></a>Zájmu
+
 [!code-csharp[AfterArranging](../../../samples/snippets/core/testing/unit-testing-best-practices/csharp/after/StringCalculatorTests.cs#AfterArranging)]
 
 ### <a name="write-minimally-passing-tests"></a>Zápis s minimálním předáním testů
+
 Vstup, který se má použít v testu jednotek, by měl být nejjednodušší, aby bylo možné ověřit chování, které právě testujete.
 
 #### <a name="why"></a>Proč?
@@ -160,12 +172,15 @@ Vstup, který se má použít v testu jednotek, by měl být nejjednodušší, a
 Testy, které obsahují více informací, než je nutné k předání testu, mají větší šanci na zavedení chyb do testu a může udělat záměr méně jasného záměru testu. Při psaní testů se chcete zaměřit na chování. Nastavení zvláštních vlastností pro modely nebo použití nenulových hodnot v případě potřeby, pouze odčítání od toho, co se snažíte prokázat.
 
 #### <a name="bad"></a>Chybně:
+
 [!code-csharp[BeforeMinimallyPassing](../../../samples/snippets/core/testing/unit-testing-best-practices/csharp/before/StringCalculatorTests.cs#BeforeMinimallyPassing)]
 
 #### <a name="better"></a>Zájmu
+
 [!code-csharp[AfterNamingAndMinimallyPassing](../../../samples/snippets/core/testing/unit-testing-best-practices/csharp/after/StringCalculatorTests.cs#AfterNamingAndMinimallyPassing)]
 
 ### <a name="avoid-magic-strings"></a>Nepoužívejte řetězce Magic
+
 Při pojmenování proměnných v testování částí je důležité, pokud není důležitější, než proměnné pojmenování v produkčním kódu. Testy jednotek by neměly obsahovat řetězce Magic.
 
 #### <a name="why"></a>Proč?
@@ -179,12 +194,15 @@ Při pojmenování proměnných v testování částí je důležité, pokud nen
 > Při psaní testů byste se měli zaměřit na co nejvíc záměrů. V případě řetězců Magic je dobrým přístupem přiřadit tyto hodnoty konstantám.
 
 #### <a name="bad"></a>Chybně:
+
 [!code-csharp[BeforeMagicString](../../../samples/snippets/core/testing/unit-testing-best-practices/csharp/before/StringCalculatorTests.cs#BeforeMagicString)]
 
 #### <a name="better"></a>Zájmu
+
 [!code-csharp[AfterMagicString](../../../samples/snippets/core/testing/unit-testing-best-practices/csharp/after/StringCalculatorTests.cs#AfterMagicString)]
 
 ### <a name="avoid-logic-in-tests"></a>Vyhnout se logice v testech
+
 Při psaní testů jednotek vyhnout se ručnímu zřetězení řetězců a logickým podmínkám, jako například,,, `if` `while` `for` `switch` atd.
 
 #### <a name="why"></a>Proč?
@@ -198,12 +216,15 @@ Když zavedete logiku do sady testů, šance na to, že dojde k chybě, se výra
 > Pokud se logika v testu jeví jako nenevyhnutelná, zvažte rozdělení testu na dva nebo více různých testů.
 
 #### <a name="bad"></a>Chybně:
+
 [!code-csharp[LogicInTests](../../../samples/snippets/core/testing/unit-testing-best-practices/csharp/before/StringCalculatorTests.cs#LogicInTests)]
 
 #### <a name="better"></a>Zájmu
+
 [!code-csharp[AfterTestLogic](../../../samples/snippets/core/testing/unit-testing-best-practices/csharp/after/StringCalculatorTests.cs#AfterTestLogic)]
 
 ### <a name="prefer-helper-methods-to-setup-and-teardown"></a>Preferovat pomocné metody nastavení a rozboru
+
 Pokud pro testy požadujete podobný objekt nebo stav, preferovat pomocnou metodu než využití atributů Setup a rozboru, pokud existují.
 
 #### <a name="why"></a>Proč?
@@ -218,6 +239,7 @@ V rozhraních testování částí `Setup` je volána před každou a každou je
 > xUnit odebral SetUp i rozboru od verze 2. x
 
 #### <a name="bad"></a>Chybně:
+
 [!code-csharp[BeforeSetup](../../../samples/snippets/core/testing/unit-testing-best-practices/csharp/before/StringCalculatorTests.cs#BeforeSetup)]
 
 ```csharp
@@ -227,6 +249,7 @@ V rozhraních testování částí `Setup` je volána před každou a každou je
 [!code-csharp[BeforeHelperMethod](../../../samples/snippets/core/testing/unit-testing-best-practices/csharp/before/StringCalculatorTests.cs#BeforeHelperMethod)]
 
 #### <a name="better"></a>Zájmu
+
 [!code-csharp[AfterHelperMethod](../../../samples/snippets/core/testing/unit-testing-best-practices/csharp/after/StringCalculatorTests.cs#AfterHelperMethod)]
 
 ```csharp
@@ -236,6 +259,7 @@ V rozhraních testování částí `Setup` je volána před každou a každou je
 [!code-csharp[AfterSetup](../../../samples/snippets/core/testing/unit-testing-best-practices/csharp/after/StringCalculatorTests.cs#AfterSetup)]
 
 ### <a name="avoid-multiple-asserts"></a>Vyhněte se několika kontrolním výrazům
+
 Při psaní testů se pokuste zahrnout pouze jeden kontrolní výraz na test. Mezi běžné přístupy k použití pouze jednoho vyhodnocení patří:
 
 - Vytvořte samostatný test pro každý kontrolní výraz.
@@ -253,12 +277,15 @@ Při zavedení více kontrolních výrazů do testovacího případu není zaru�
 > Běžnou výjimkou z tohoto pravidla je při uplatnění na objekt. V tomto případě je všeobecně přijatelné mít více kontrolních výrazů proti každé vlastnosti, aby bylo zajištěno, že objekt je ve stavu, ve kterém očekáváte.
 
 #### <a name="bad"></a>Chybně:
+
 [!code-csharp[BeforeMultipleAsserts](../../../samples/snippets/core/testing/unit-testing-best-practices/csharp/before/StringCalculatorTests.cs#BeforeMultipleAsserts)]
 
 #### <a name="better"></a>Zájmu
+
 [!code-csharp[AfterMultipleAsserts](../../../samples/snippets/core/testing/unit-testing-best-practices/csharp/after/StringCalculatorTests.cs#AfterMultipleAsserts)]
 
 ### <a name="validate-private-methods-by-unit-testing-public-methods"></a>Ověřit soukromé metody pomocí veřejných metod testování částí
+
 Ve většině případů by nemělo být nutné testovat soukromou metodu. Soukromé metody jsou podrobné informace o implementaci. Tímto způsobem si můžete představit: soukromé metody nikdy neexistují v izolaci. V určitém okamžiku se jedná o veřejnou metodu, která volá soukromou metodu jako součást její implementace. To, co byste měli dbát, je konečný výsledek veřejné metody, která volá do privátního.
 
 Vezměte v úvahu následující případ:
@@ -281,7 +308,7 @@ První reakce může být začít psát test pro `TrimInput` , protože chcete z
 Skutečný test by měl být proveden proti veřejné metodě `ParseLogLine` , protože to je to, co byste měli v konečném případě zajímat.
 
 ```csharp
-public void ParseLogLine_ByDefault_ReturnsTrimmedResult()
+public void ParseLogLine_StartsAndEndsWithSpace_ReturnsTrimmedResult()
 {
     var parser = new Parser();
 
@@ -294,12 +321,13 @@ public void ParseLogLine_ByDefault_ReturnsTrimmedResult()
 S tímto pohledem, pokud vidíte soukromou metodu, vyhledejte veřejnou metodu a zapište testy proti této metodě. Vzhledem k tomu, že soukromá metoda vrátí očekávaný výsledek, neznamená to, že systém, který nakonec volá privátní metodu, používá výsledek správně.
 
 ### <a name="stub-static-references"></a>Statické odkazy na zástupné procedury
+
 Jedním ze zásad testování částí je, že musí mít plnou kontrolu nad testovaným systémem. To může být problematické, pokud výrobní kód zahrnuje volání statických odkazů (například `DateTime.Now` ). Vezměte v úvahu následující kód:
 
 ```csharp
 public int GetDiscountedPrice(int price)
 {
-    if(DateTime.Now.DayOfWeek == DayOfWeek.Tuesday)
+    if (DateTime.Now.DayOfWeek == DayOfWeek.Tuesday)
     {
         return price / 2;
     }
@@ -313,7 +341,7 @@ public int GetDiscountedPrice(int price)
 Jak může být tento kód testován jednotkou? Můžete vyzkoušet přístup jako
 
 ```csharp
-public void GetDiscountedPrice_ByDefault_ReturnsFullPrice()
+public void GetDiscountedPrice_NotTuesday_ReturnsFullPrice()
 {
     var priceCalculator = new PriceCalculator();
 
@@ -347,7 +375,7 @@ public interface IDateTimeProvider
 
 public int GetDiscountedPrice(int price, IDateTimeProvider dateTimeProvider)
 {
-    if(dateTimeProvider.DayOfWeek() == DayOfWeek.Tuesday)
+    if (dateTimeProvider.DayOfWeek() == DayOfWeek.Tuesday)
     {
         return price / 2;
     }
@@ -361,7 +389,7 @@ public int GetDiscountedPrice(int price, IDateTimeProvider dateTimeProvider)
 Vaše sada testů se teď bude
 
 ```csharp
-public void GetDiscountedPrice_ByDefault_ReturnsFullPrice()
+public void GetDiscountedPrice_NotTuesday_ReturnsFullPrice()
 {
     var priceCalculator = new PriceCalculator();
     var dateTimeProviderStub = new Mock<IDateTimeProvider>();

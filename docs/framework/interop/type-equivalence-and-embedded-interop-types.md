@@ -1,5 +1,6 @@
 ---
 title: Ekvivalenci typů a vložené typy spolupráce
+description: Pochopení typu rovnocennosti mezi typy .NET a členy se spravovaným sestavením a typy COM, které jsou vloženy do tohoto sestavení. Pro .NET 4 a novější.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - type equivalence
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - primary interop assemblies,not necessary in CLR version 4
 - NoPIA
 ms.assetid: 78892eba-2a58-4165-b4b1-0250ee2f41dc
-ms.openlocfilehash: ee9d2d94d62f262ef61edc66ce915e1227532d67
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 2d572133c42f01af7d50f6f771588f5173853f9a
+ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73126396"
+ms.lasthandoff: 07/13/2020
+ms.locfileid: "86282005"
 ---
 # <a name="type-equivalence-and-embedded-interop-types"></a>Ekvivalenci typů a vložené typy spolupráce
 
@@ -35,13 +36,13 @@ Ekvivalenci typu znamená, že objekt COM, který je předán z jednoho spravova
 
 ### <a name="type-identity"></a>Identita typu
 
-Pro dva typy jsou určeny stejné identity, když jejich obory a identity odpovídají jiným slovům, pokud mají každý z <xref:System.Runtime.InteropServices.TypeIdentifierAttribute> nich atribut a dva atributy mají odpovídající <xref:System.Runtime.InteropServices.TypeIdentifierAttribute.Scope%2A> a <xref:System.Runtime.InteropServices.TypeIdentifierAttribute.Identifier%2A> vlastnosti. Porovnání pro <xref:System.Runtime.InteropServices.TypeIdentifierAttribute.Scope%2A> rozlišuje velká a malá písmena.
+Pro dva typy jsou určeny stejné identity, když jejich obory a identity odpovídají jiným slovům, pokud mají každý z nich <xref:System.Runtime.InteropServices.TypeIdentifierAttribute> atribut a dva atributy mají odpovídající <xref:System.Runtime.InteropServices.TypeIdentifierAttribute.Scope%2A> a <xref:System.Runtime.InteropServices.TypeIdentifierAttribute.Identifier%2A> Vlastnosti. Porovnání pro <xref:System.Runtime.InteropServices.TypeIdentifierAttribute.Scope%2A> rozlišuje velká a malá písmena.
 
 Pokud typ nemá <xref:System.Runtime.InteropServices.TypeIdentifierAttribute> atribut, nebo pokud má <xref:System.Runtime.InteropServices.TypeIdentifierAttribute> atribut, který neurčuje rozsah a identifikátor, typ může být stále považován za rovnocenný, jak je znázorněno níže:
 
-- V rozhraních se místo vlastnosti používá <xref:System.Runtime.InteropServices.GuidAttribute> hodnota <xref:System.Runtime.InteropServices.TypeIdentifierAttribute.Scope%2A?displayProperty=nameWithType> , a <xref:System.Type.FullName%2A?displayProperty=nameWithType> proto se jako vlastnost používá název typu, včetně oboru názvů. <xref:System.Runtime.InteropServices.TypeIdentifierAttribute.Identifier%2A?displayProperty=nameWithType>
+- V rozhraních se místo vlastnosti používá hodnota, a proto se jako vlastnost používá <xref:System.Runtime.InteropServices.GuidAttribute> <xref:System.Runtime.InteropServices.TypeIdentifierAttribute.Scope%2A?displayProperty=nameWithType> <xref:System.Type.FullName%2A?displayProperty=nameWithType> název typu, včetně oboru názvů <xref:System.Runtime.InteropServices.TypeIdentifierAttribute.Identifier%2A?displayProperty=nameWithType> .
 
-- Pro struktury, <xref:System.Runtime.InteropServices.GuidAttribute> výčty a delegáty se místo <xref:System.Runtime.InteropServices.TypeIdentifierAttribute.Scope%2A> vlastnosti používá nadřazené sestavení a <xref:System.Type.FullName%2A?displayProperty=nameWithType> vlastnost je použita namísto <xref:System.Runtime.InteropServices.TypeIdentifierAttribute.Identifier%2A> vlastnosti.
+- Pro struktury, výčty a delegáty se <xref:System.Runtime.InteropServices.GuidAttribute> místo vlastnosti používá nadřazené sestavení <xref:System.Runtime.InteropServices.TypeIdentifierAttribute.Scope%2A> a <xref:System.Type.FullName%2A?displayProperty=nameWithType> vlastnost je použita namísto <xref:System.Runtime.InteropServices.TypeIdentifierAttribute.Identifier%2A> Vlastnosti.
 
 ### <a name="marking-com-types-for-type-equivalence"></a>Označení typů modelu COM pro ekvivalenci typů
 

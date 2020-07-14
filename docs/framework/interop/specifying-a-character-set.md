@@ -1,5 +1,6 @@
 ---
 title: Určení sady znaků
+description: Naučte se, jak zadat znakovou sadu, která používá kódování s úzkým kódováním (ANSI) nebo roztažitelné (Unicode). Můžete také zadat automatický výběr za běhu.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,15 +11,15 @@ helpviewer_keywords:
 - attribute fields in platform invoke, CharSet
 - CharSet field
 ms.assetid: a8347eb1-295f-46b9-8a78-63331f9ecc50
-ms.openlocfilehash: 0db1cd8d75b45f6d718168793c873e5867028269
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a4f18431d89343a77ccf2b920edac485e7dcfca3
+ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73125176"
+ms.lasthandoff: 07/13/2020
+ms.locfileid: "86282122"
 ---
 # <a name="specifying-a-character-set"></a>Určení sady znaků
-<xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=nameWithType> Pole řídí zařazování řetězců a určuje, jakým způsobem vyvolání platformy nalezne názvy funkcí v knihovně DLL. V tomto tématu jsou popsána obě chování.  
+<xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=nameWithType>Pole řídí zařazování řetězců a určuje, jakým způsobem vyvolání platformy nalezne názvy funkcí v knihovně DLL. V tomto tématu jsou popsána obě chování.  
   
  Některá rozhraní API exportují dvě verze funkcí, které přijímají argumenty pro řetězce: úzká (ANSI) a roztažitelné (Unicode). Rozhraní Windows API obsahuje například následující názvy vstupních bodů pro funkci **MessageBox** :  
   
@@ -31,7 +32,7 @@ ms.locfileid: "73125176"
      Poskytuje 2 bajtové formátování znaků znakové sady Unicode, které se odlišuje "W" připojením k názvu vstupního bodu. Volání **MessageBoxW** vždy zařazování řetězců ve formátu Unicode.  
   
 ## <a name="string-marshaling-and-name-matching"></a>Zařazování řetězců a shoda názvů  
- `CharSet` Pole přijímá následující hodnoty:  
+ `CharSet`Pole přijímá následující hodnoty:  
   
  <xref:System.Runtime.InteropServices.CharSet.Ansi>(výchozí hodnota)  
   
@@ -41,9 +42,9 @@ ms.locfileid: "73125176"
   
 - Shoda názvů  
   
-     Když je <xref:System.Runtime.InteropServices.DllImportAttribute.ExactSpelling?displayProperty=nameWithType> `true`pole ve výchozím nastavení v Visual Basic, vyvolá vyhledá platforma pouze zadaný název. Například pokud zadáte **MessageBox**, vyvolá volání metody **MessageBox** a dojde k chybě, když nemůže najít přesný pravopis.  
+     Když <xref:System.Runtime.InteropServices.DllImportAttribute.ExactSpelling?displayProperty=nameWithType> je pole ve `true` výchozím nastavení v Visual Basic, vyvolá vyhledá platforma pouze zadaný název. Například pokud zadáte **MessageBox**, vyvolá volání metody **MessageBox** a dojde k chybě, když nemůže najít přesný pravopis.  
   
-     Když je `ExactSpelling` `false`pole ve výchozím nastavení v jazyce C++ a C#, vyvolá volání metody jako první (MessageBox) nezměněný alias (**MessageBox**) a pak pozměněný název (**MessageBox**), pokud nebyl nalezen nezměněný alias. Všimněte si, že chování při shodě názvů ANSI se liší od chování při shodě názvů Unicode.  
+     Když `ExactSpelling` je pole `false` ve výchozím nastavení v jazyce C++ a C#, vyvolá volání metody jako první (MessageBox) nezměněný alias (**MessageBox**) a pak pozměněný název (**MessageBox**), pokud nebyl nalezen nezměněný alias. Všimněte si, že chování při shodě názvů ANSI se liší od chování při shodě názvů Unicode.  
   
  <xref:System.Runtime.InteropServices.CharSet.Unicode>  
   
@@ -53,9 +54,9 @@ ms.locfileid: "73125176"
   
 - Shoda názvů  
   
-     Když je `ExactSpelling` `true`pole ve výchozím nastavení v Visual Basic, vyvolá vyhledá platforma pouze zadaný název. Například pokud zadáte **MessageBox**, vyvolá volání metody **MessageBox** a dojde k chybě, pokud nemůže najít přesný pravopis.  
+     Když `ExactSpelling` je pole ve `true` výchozím nastavení v Visual Basic, vyvolá vyhledá platforma pouze zadaný název. Například pokud zadáte **MessageBox**, vyvolá volání metody **MessageBox** a dojde k chybě, pokud nemůže najít přesný pravopis.  
   
-     Když je `ExactSpelling` `false`pole ve výchozím nastavení v jazyce C++ a C#, vyvolá volání metody jako první pozměněný název (**MessageBoxW**) a pak nezměněný alias (**MessageBox**), pokud nebyl nalezen pozměněný název. Všimněte si, že chování při shodě názvů Unicode se liší od chování při shodě názvů ANSI.  
+     Když `ExactSpelling` je pole `false` ve výchozím nastavení v jazyce C++ a C#, vyvolá volání metody jako první pozměněný název (**MessageBoxW**) a pak nezměněný alias (**MessageBox**), pokud nebyl nalezen pozměněný název. Všimněte si, že chování při shodě názvů Unicode se liší od chování při shodě názvů ANSI.  
   
  <xref:System.Runtime.InteropServices.CharSet.Auto>  
   
@@ -89,7 +90,7 @@ End Class
 ```
   
 ## <a name="specifying-a-character-set-in-c-and-c"></a>Určení znakové sady v jazycích C# a C++  
- <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=nameWithType> Pole určuje základní znakovou sadu jako ANSI nebo Unicode. Znaková sada určuje, jak by měly být zařazeny řetězcové argumenty metody. K označení znakové sady použijte jednu z následujících forem:  
+ <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=nameWithType>Pole určuje základní znakovou sadu jako ANSI nebo Unicode. Znaková sada určuje, jak by měly být zařazeny řetězcové argumenty metody. K označení znakové sady použijte jednu z následujících forem:  
   
 ```csharp
 [DllImport("DllName", CharSet = CharSet.Ansi)]
@@ -103,7 +104,7 @@ End Class
 [DllImport("DllName", CharSet = CharSet::Auto)]
 ```
   
- Následující příklad ukazuje tři spravované definice funkce **MessageBox** s atributem pro určení znakové sady. V první definici po vynechání `CharSet` pole je ve výchozím nastavení znaková sada ANSI.  
+ Následující příklad ukazuje tři spravované definice funkce **MessageBox** s atributem pro určení znakové sady. V první definici po vynechání pole je ve `CharSet` výchozím nastavení znaková sada ANSI.  
   
 ```csharp  
 using System;

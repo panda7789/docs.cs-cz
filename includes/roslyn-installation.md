@@ -6,32 +6,32 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/15/2020
 ms.locfileid: "72526738"
 ---
-## <a name="installation-instructions---visual-studio-installer"></a>Pokyny k instalaci – Instalační služba sady Visual Studio
+## <a name="installation-instructions---visual-studio-installer"></a>Pokyny k instalaci – Instalační program pro Visual Studio
 
-Existují dva různé způsoby, jak najít **sdk platformy kompilátoru .NET** v **Instalační službě sady Visual Studio**:
+Existují dva různé způsoby, jak **.NET Compiler Platform sadu SDK** v **instalační program pro Visual Studio**najít:
 
-### <a name="install-using-the-visual-studio-installer---workloads-view"></a>Instalace pomocí instalačního programu sady Visual Studio – zobrazení úloh
+### <a name="install-using-the-visual-studio-installer---workloads-view"></a>Instalace pomocí zobrazení Instalační program pro Visual Studio-úlohy
 
-Sada SDK platformy kompilátoru .NET není automaticky vybrána jako součást vývojového zatížení rozšíření sady Visual Studio. Je nutné ji vybrat jako volitelnou součást.
+Sada .NET Compiler Platform SDK není automaticky vybraná jako součást úlohy vývoje rozšíření sady Visual Studio. Je nutné ji vybrat jako volitelnou součást.
 
-1. Spuštění **instalačního programu sady Visual Studio**
-1. Vybrat **změnit**
-1. Zkontrolujte zatížení **vývoje rozšíření Visual Studio.**
-1. Otevřete uzel **vývoje rozšíření Visual Studio** ve stromu souhrnu.
-1. Zaškrtněte políčko **u sady .NET Compiler Platform SDK**. Najdete ji jako poslední pod volitelnými součástmi.
+1. Spustit **instalační program pro Visual Studio**
+1. Vybrat **Upravit**
+1. Projděte si úlohu **vývoj rozšíření sady Visual Studio** .
+1. Ve stromové struktuře souhrnu otevřete uzel **vývoj rozšíření sady Visual Studio** .
+1. Zaškrtněte políčko pro **sadu .NET Compiler Platform SDK**. V rámci volitelných komponent najdete ho jako poslední.
 
-Volitelně budete také chtít, aby **editor DGML** zobrazoval grafy ve vizualizéru:
+Volitelně také budete chtít, aby **Editor DGML** zobrazoval grafy v Vizualizér:
 
-1. Otevřete uzel **jednotlivých komponent** ve stromu souhrnu.
-1. Zaškrtněte políčko **pro editor DGML**
+1. Ve stromové struktuře souhrnu otevřete uzel **jednotlivé komponenty** .
+1. Zaškrtněte políčko pro **Editor DGML** .
 
-### <a name="install-using-the-visual-studio-installer---individual-components-tab"></a>Instalace pomocí karty Instalační služba sady Visual Studio – jednotlivé součásti
+### <a name="install-using-the-visual-studio-installer---individual-components-tab"></a>Instalace pomocí karty Instalační program pro Visual Studio – jednotlivé komponenty
 
-1. Spuštění **instalačního programu sady Visual Studio**
-1. Vybrat **změnit**
-1. Výběr karty **Jednotlivé komponenty**
-1. Zaškrtněte políčko **u sady .NET Compiler Platform SDK**. Najdete ji v horní části **kompilátory, vytvářet nástroje a runtimes** části.
+1. Spustit **instalační program pro Visual Studio**
+1. Vybrat **Upravit**
+1. Výběr karty **jednotlivé součásti**
+1. Zaškrtněte políčko pro **sadu .NET Compiler Platform SDK**. Najdete ho nahoře v části **kompilátory, nástroje sestavení a moduly runtime** .
 
-Volitelně budete také chtít, aby **editor DGML** zobrazoval grafy ve vizualizéru:
+Volitelně také budete chtít, aby **Editor DGML** zobrazoval grafy v Vizualizér:
 
-1. Zaškrtněte políčko **pro editor DGML**. Najdete ji v části **Nástroje kódu.**
+1. Zaškrtněte políčko pro **Editor DGML**. Najdete ho v části **nástroje kódu** .

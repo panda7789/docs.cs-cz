@@ -1,5 +1,6 @@
 ---
 title: Zabezpečení a serializace
+description: Přečtěte si o zabezpečení a serializaci. Pomocí SecurityPermission se zadaným příznakem SerializationFormatter můžete zobrazit nebo upravit data instance objektu.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,23 +11,23 @@ helpviewer_keywords:
 - secure coding, serialization
 - security [.NET Framework], serialization
 ms.assetid: b921bc94-bd3a-4c91-9ede-2c8d4f78ea9a
-ms.openlocfilehash: 634388e3920e0b9dbee85aa3ea555471cee604ca
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 79952ceee4c8b771aaadd4fc97a547bc65136770
+ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79181119"
+ms.lasthandoff: 07/13/2020
+ms.locfileid: "86281261"
 ---
 # <a name="security-and-serialization"></a>Zabezpečení a serializace
-Vzhledem k tomu, že serializace může umožnit jinému kódu zobrazit nebo upravit data instance <xref:System.Security.Permissions.SecurityPermission> objektu, která by jinak byla nepřístupná, je vyžadováno zvláštní oprávnění kódu provádějícímserializaci: se zadaným příznakem. <xref:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter> Podle výchozích zásad Toto oprávnění nemá přístup k Internetu stáhnout nebo intranetu kód; Toto oprávnění je uděleno pouze kód v místním počítači.  
+Vzhledem k tomu, že serializace může ostatním kód dovolit zobrazit nebo upravit data instance objektů, která by jinak nebyla přístupná, je pro provádění serializace kódu vyžadováno speciální oprávnění: <xref:System.Security.Permissions.SecurityPermission> se <xref:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter> zadaným příznakem. Podle výchozích zásad Toto oprávnění nemá přístup k Internetu stáhnout nebo intranetu kód; Toto oprávnění je uděleno pouze kód v místním počítači.  
   
- Za normálních okolností jsou všechna pole instance objektu serializována, což znamená, že data jsou reprezentována v serializovaných datech pro instanci. Je možné pro kód, který může interpretovat formát k určení, jaké jsou hodnoty dat, nezávisle na usnadnění přístupu člena. Podobně deserializace extrahuje data z serializované reprezentace a nastaví stav objektu přímo, opět bez ohledu na pravidla usnadnění.  
+ Obvykle jsou všechna pole instance objektu serializována, což znamená, že data jsou reprezentována v serializovaných datech instance. Je možné, že kód, který může interpretovat formát pro určení hodnot dat, nezávisle na přístupnost člena. Podobně deserializace extrahuje data z serializované reprezentace a nastaví stav objektu přímo, a to bez ohledu na pravidla přístupnosti.  
   
- Jakýkoli objekt, který by mohl obsahovat data citlivá na zabezpečení, by měl být pokud možno neserializovatelný. Pokud musí být serializovatelný, pokuste se, aby určitá pole, která obsahuje citlivá data neserializovatelné. Pokud to nelze provést, uvědomte si, že tato data budou vystavena jakémukoli kódu, který má oprávnění k serializaci, a ujistěte se, že žádné škodlivé kódy mohou získat toto oprávnění.  
+ Libovolný objekt, který by mohl obsahovat data citlivá na zabezpečení, by měl být, pokud je to možné, neserializovatelné. Pokud musí být serializovatelný, zkuste nastavit konkrétní pole, která uchovávají citlivá data neserializovatelné. Pokud to není možné, mějte na paměti, že tato data budou vystavena kódu, který má oprávnění k serializaci, a ujistěte se, že žádný škodlivý kód nemůže získat toto oprávnění.  
   
- Rozhraní <xref:System.Runtime.Serialization.ISerializable> je určeno pouze pro infrastrukturu serializace. Však pokud není chráněn, může potenciálně uvolnit citlivé informace. Pokud zadáte vlastní serializaci implementací **ISerializable**, ujistěte se, že provést následující opatření:  
+ <xref:System.Runtime.Serialization.ISerializable>Rozhraní je určeno pro použití pouze infrastrukturou serializace. Pokud je ale nechráněný, může potenciálně vydávat citlivé informace. Pokud zadáte vlastní serializaci implementující rozhraní **ISerializable**, ujistěte se, že jste provedli následující opatření:  
   
-- Metoda <xref:System.Runtime.Serialization.ISerializable.GetObjectData%2A> by měla být explicitně zabezpečena buď požadavkem **SecurityPermission** s **SerializationFormatter** oprávnění zadané nebo ujistěte se, že žádné citlivé informace je uvolněna s výstupem metody. Například:  
+- <xref:System.Runtime.Serialization.ISerializable.GetObjectData%2A>Metoda by měla být explicitně zabezpečena tím, že **SecurityPermission** vyžaduje, aby došlo k zadání **SerializationFormatter** oprávnění, nebo aby se zajistilo, že nejsou uvolněny žádné citlivé informace s výstupem metody. Příklad:  
   
     ```vb  
     Public Overrides<SecurityPermissionAttribute(SecurityAction.Demand, SerializationFormatter := True)>  _  
@@ -43,7 +44,7 @@ Vzhledem k tomu, že serializace může umožnit jinému kódu zobrazit nebo upr
     }  
     ```  
   
-- Speciální konstruktor používaný pro serializaci by měl také provádět důkladné ověření vstupu a měl by být chráněn nebo soukromý, aby pomohl chránit před zneužitím škodlivým kódem. Měl by vynutit stejné kontroly zabezpečení a oprávnění potřebné k získání instance takové třídy jinými prostředky, jako je například explicitní vytvoření třídy nebo nepřímé vytvoření prostřednictvím nějakého druhu továrny.  
+- Speciální konstruktor, který se používá pro serializaci, by měl také provádět důkladné ověření vstupu a měl by být chráněný nebo soukromý, aby bylo možné chránit před zneužitím škodlivý kód. Měla by vyhovět stejným kontrolám zabezpečení a oprávněním, která jsou nutná k získání instance této třídy jakýmkoli jiným způsobem, například explicitním vytvořením třídy nebo jejím přímým vytvořením pomocí nějakého typu objektu pro vytváření.  
   
 ## <a name="see-also"></a>Viz také
 

@@ -4,12 +4,12 @@ description: V tomto kurzu se dozvíte, jak používat předem vyškolený model
 ms.date: 06/30/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 9c1e45f183bd5edc488e4f37bea648566d124c65
-ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
+ms.openlocfilehash: 9a2e7f72d59e31cfd7db5b89bfad55bccb063cea
+ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85803258"
+ms.lasthandoff: 07/13/2020
+ms.locfileid: "86281404"
 ---
 # <a name="tutorial-analyze-sentiment-of-movie-reviews-using-a-pre-trained-tensorflow-model-in-mlnet"></a>Kurz: analýza míněních recenzí filmů pomocí předem připraveného modelu TensorFlow v ML.NET
 
@@ -66,11 +66,11 @@ Zdrojový kód pro tento kurz najdete v úložišti [dotnet/Samples](https://git
 
 1. `using`Do horní části souboru *program.cs* přidejte následující dodatečné příkazy:
 
-   [!code-csharp[AddUsings](../../../samples/snippets/machine-learning/TextClassificationTF/csharp/Program.cs#AddUsings "Add necessary usings")]
+   [!code-csharp[AddUsings](./snippets/text-classification-tf/csharp/Program.cs#AddUsings "Add necessary usings")]
 
 1. Vytvořte dvě globální proměnné přímo nad `Main` metodu pro uchování cesty k souboru uloženého modelu a délku vektoru funkce.
 
-   [!code-csharp[DeclareGlobalVariables](../../../samples/snippets/machine-learning/TextClassificationTF/csharp/Program.cs#DeclareGlobalVariables "Declare global variables")]
+   [!code-csharp[DeclareGlobalVariables](./snippets/text-classification-tf/csharp/Program.cs#DeclareGlobalVariables "Declare global variables")]
 
     * `_modelPath`je cesta k souboru trained modelu.
     * `FeatureLength`je délka pole funkce celého čísla, které model očekává.
@@ -96,13 +96,13 @@ Velikost pole s proměnnou délkou se pak změní na pevně stanovenou délku 60
 
 1. Vytvořte třídu pro vstupní data za `Main` metodou:
 
-    [!code-csharp[MovieReviewClass](~/samples/snippets/machine-learning/TextClassificationTF/csharp/Program.cs#MovieReviewClass "Declare movie review type")]
+    [!code-csharp[MovieReviewClass](./snippets/text-classification-tf/csharp/Program.cs#MovieReviewClass "Declare movie review type")]
 
     Vstupní datová třída `MovieReview` obsahuje `string` komentář pro uživatele ( `ReviewText` ).
 
 1. Vytvořte třídu pro funkce s proměnlivou délkou za `Main` metodou:
 
-    [!code-csharp[VariableLengthFeatures](~/samples/snippets/machine-learning/TextClassificationTF/csharp/Program.cs#VariableLengthFeatures "Declare variable length features type")]
+    [!code-csharp[VariableLengthFeatures](./snippets/text-classification-tf/csharp/Program.cs#VariableLengthFeatures "Declare variable length features type")]
 
     `VariableLengthFeatures`Vlastnost má atribut [VectorType](xref:Microsoft.ML.Data.VectorTypeAttribute.%23ctor%2A) , který ho určí jako vektor.  Všechny prvky Vector musí být stejného typu. U datových sad s velkým počtem sloupců načítá více sloupců jako jeden vektor při použití transformace dat.
 
@@ -110,7 +110,7 @@ Velikost pole s proměnnou délkou se pak změní na pevně stanovenou délku 60
 
 1. Vytvořte třídu pro funkce s pevnou délkou za `Main` metodou:
 
-    [!code-csharp[FixedLengthFeatures](~/samples/snippets/machine-learning/TextClassificationTF/csharp/Program.cs#FixedLengthFeatures)]
+    [!code-csharp[FixedLengthFeatures](./snippets/text-classification-tf/csharp/Program.cs#FixedLengthFeatures)]
 
     Tato třída se používá v `ResizeFeatures` akci. Názvy vlastností (v tomto případě pouze jeden) se používají k označení toho, které sloupce v zobrazení DataView lze použít jako _výstup_ akce vlastního mapování.
 
@@ -118,7 +118,7 @@ Velikost pole s proměnnou délkou se pak změní na pevně stanovenou délku 60
 
 1. Vytvořte třídu pro předpověď za `Main` metodou:
 
-    [!code-csharp[Prediction](~/samples/snippets/machine-learning/TextClassificationTF/csharp/Program.cs#Prediction "Declare prediction class")]
+    [!code-csharp[Prediction](./snippets/text-classification-tf/csharp/Program.cs#Prediction "Declare prediction class")]
 
     `MovieReviewSentimentPrediction`je třídou předpovědi použitou po školení modelu. `MovieReviewSentimentPrediction`má jedno `float` pole ( `Prediction` ) a `VectorType` atribut.
 
@@ -128,7 +128,7 @@ Velikost pole s proměnnou délkou se pak změní na pevně stanovenou délku 60
 
 1. Nahraďte `Console.WriteLine("Hello World!")` řádek v `Main` metodě následujícím kódem pro deklaraci a inicializaci proměnné mlContext:
 
-   [!code-csharp[CreateMLContext](~/samples/snippets/machine-learning/TextClassificationTF/csharp/Program.cs#CreateMLContext "Create the ML Context")]
+   [!code-csharp[CreateMLContext](./snippets/text-classification-tf/csharp/Program.cs#CreateMLContext "Create the ML Context")]
 
 1. Vytvořte slovník pro kódování slov jako celé číslo pomocí [`LoadFromTextFile`](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile%2A) metody pro načtení mapování dat ze souboru, jak je vidět v následující tabulce:
 
@@ -142,21 +142,21 @@ Velikost pole s proměnnou délkou se pak změní na pevně stanovenou délku 60
 
     Přidejte následující kód pro vytvoření mapy vyhledávání:
 
-    [!code-csharp[CreateLookupMap](~/samples/snippets/machine-learning/TextClassificationTF/csharp/Program.cs#CreateLookupMap)]
+    [!code-csharp[CreateLookupMap](./snippets/text-classification-tf/csharp/Program.cs#CreateLookupMap)]
 
 1. Přidejte, `Action` Chcete-li změnit velikost pole celé číslo proměnné na celé číslo s pevnou velikostí s dalšími řádky kódu:
 
-   [!code-csharp[ResizeFeatures](~/samples/snippets/machine-learning/TextClassificationTF/csharp/Program.cs#ResizeFeatures)]
+   [!code-csharp[ResizeFeatures](./snippets/text-classification-tf/csharp/Program.cs#ResizeFeatures)]
 
 ## <a name="load-the-pre-trained-tensorflow-model"></a>Načtení předem připraveného modelu TensorFlow
 
 1. Přidejte kód pro načtení modelu TensorFlow:
 
-    [!code-csharp[LoadTensorFlowModel](~/samples/snippets/machine-learning/TextClassificationTF/csharp/Program.cs#LoadTensorFlowModel)]
+    [!code-csharp[LoadTensorFlowModel](./snippets/text-classification-tf/csharp/Program.cs#LoadTensorFlowModel)]
 
     Po načtení modelu můžete extrahovat jeho vstupní a výstupní schéma. Schémata se zobrazují jenom pro vás a jenom učení. Tento kód nepotřebujete, aby konečná aplikace fungovala:
 
-    [!code-csharp[GetModelSchema](~/samples/snippets/machine-learning/TextClassificationTF/csharp/Program.cs#GetModelSchema)]
+    [!code-csharp[GetModelSchema](./snippets/text-classification-tf/csharp/Program.cs#GetModelSchema)]
 
     Vstupní schéma je pole s pevnou délkou kódovaných slov typu Integer. Výstupní schéma je plovoucí pole pravděpodobnosti, které označuje, zda je mínění revize záporná nebo kladná. Tyto hodnoty se sčítají na 1, protože pravděpodobnost, že je kladné, je doplňkem pravděpodobnosti mínění negativní.
 
@@ -164,27 +164,27 @@ Velikost pole s proměnnou délkou se pak změní na pevně stanovenou délku 60
 
 1. Vytvořte kanál a rozdělte vstupní text na slova pomocí transformace [TokenizeIntoWords](xref:Microsoft.ML.TextCatalog.TokenizeIntoWords%2A) pro rozdělení textu na slova jako další řádek kódu:
 
-   [!code-csharp[TokenizeIntoWords](~/samples/snippets/machine-learning/TextClassificationTF/csharp/Program.cs#TokenizeIntoWords)]
+   [!code-csharp[TokenizeIntoWords](./snippets/text-classification-tf/csharp/Program.cs#TokenizeIntoWords)]
 
    Transformace [TokenizeIntoWords](xref:Microsoft.ML.TextCatalog.TokenizeIntoWords%2A) používá mezery k analýze textu nebo řetězce na slova. Vytvoří nový sloupec a rozdělí jednotlivé vstupní řetězce na vektor podřetězců na základě oddělovače definovaného uživatelem.
 
 1. Namapujte slova na celočíselné kódování pomocí vyhledávací tabulky, kterou jste deklarovali výše:
 
-    [!code-csharp[MapValue](~/samples/snippets/machine-learning/TextClassificationTF/csharp/Program.cs#MapValue)]
+    [!code-csharp[MapValue](./snippets/text-classification-tf/csharp/Program.cs#MapValue)]
 
 1. Změňte velikost celočíselných kódování proměnné na pevnou délku, kterou vyžaduje model:
 
-    [!code-csharp[CustomMapping](~/samples/snippets/machine-learning/TextClassificationTF/csharp/Program.cs#CustomMapping)]
+    [!code-csharp[CustomMapping](./snippets/text-classification-tf/csharp/Program.cs#CustomMapping)]
 
 1. Klasifikace vstupu pomocí načteného modelu TensorFlow:
 
-    [!code-csharp[ScoreTensorFlowModel](~/samples/snippets/machine-learning/TextClassificationTF/csharp/Program.cs#ScoreTensorFlowModel)]
+    [!code-csharp[ScoreTensorFlowModel](./snippets/text-classification-tf/csharp/Program.cs#ScoreTensorFlowModel)]
 
     Výstup modelu TensorFlow se zavolá `Prediction/Softmax` . Všimněte si, že název `Prediction/Softmax` je určený podle modelu TensorFlow. Tento název nemůžete změnit.
 
 1. Vytvoří nový sloupec pro předpověď výstupu:
 
-    [!code-csharp[SnippetCopyColumns](~/samples/snippets/machine-learning/TextClassificationTF/csharp/Program.cs#SnippetCopyColumns)]
+    [!code-csharp[SnippetCopyColumns](./snippets/text-classification-tf/csharp/Program.cs#SnippetCopyColumns)]
 
     Je nutné zkopírovat `Prediction/Softmax` sloupec do jednoho s názvem, který lze použít jako vlastnost ve třídě C#: `Prediction` . `/`Znak není povolen v názvu vlastnosti C#.
 
@@ -192,7 +192,7 @@ Velikost pole s proměnnou délkou se pak změní na pevně stanovenou délku 60
 
 1. Přidejte kód pro vytvoření modelu z kanálu:
 
-    [!code-csharp[SnippetCreateModel](~/samples/snippets/machine-learning/TextClassificationTF/csharp/Program.cs#SnippetCreateModel)]
+    [!code-csharp[SnippetCreateModel](./snippets/text-classification-tf/csharp/Program.cs#SnippetCreateModel)]
 
     Model ML.NET se vytvoří z řetězce odhady v kanálu voláním `Fit` metody. V takovém případě nebudeme pro vytvoření modelu vytvářet žádná data, protože model TensorFlow již byl dříve vyškolen. Dodáváme prázdný objekt zobrazení dat, který splňuje požadavky `Fit` metody.
 
@@ -209,7 +209,7 @@ Velikost pole s proměnnou délkou se pak změní na pevně stanovenou délku 60
 
 1. Přidejte následující kód k vytvoření `PredictionEngine` jako první řádek v `PredictSentiment()` metodě:
 
-    [!code-csharp[CreatePredictionEngine](~/samples/snippets/machine-learning/TextClassificationTF/csharp/Program.cs#CreatePredictionEngine)]
+    [!code-csharp[CreatePredictionEngine](./snippets/text-classification-tf/csharp/Program.cs#CreatePredictionEngine)]
 
     [PredictionEngine](xref:Microsoft.ML.PredictionEngine%602) je praktické rozhraní API, které umožňuje provádět předpovědi pro jednu instanci dat. [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602)není bezpečná pro přístup z více vláken. Je přijatelné pro použití v prostředích s jedním vláknem nebo prototypem. Pro zvýšení výkonu a bezpečnosti vláken v produkčních prostředích použijte `PredictionEnginePool` službu, která vytvoří [`ObjectPool`](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601) [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) objekty pro použití v celé aplikaci. V této příručce najdete informace o tom, jak [používat `PredictionEnginePool` ASP.NET Core webového rozhraní API](../how-to-guides/serve-model-web-api-ml-net.md#register-predictionenginepool-for-use-in-the-application).
 
@@ -218,25 +218,25 @@ Velikost pole s proměnnou délkou se pak změní na pevně stanovenou délku 60
 
 1. Přidejte komentář k otestování předpovědi vyškolených modelů v `Predict()` metodě vytvořením instance `MovieReview` :
 
-    [!code-csharp[CreateTestData](~/samples/snippets/machine-learning/TextClassificationTF/csharp/Program.cs#CreateTestData)]
+    [!code-csharp[CreateTestData](./snippets/text-classification-tf/csharp/Program.cs#CreateTestData)]
 
 1. Předání dat testovacích komentářů do do `Prediction Engine` přidejte další řádky kódu v `PredictSentiment()` metodě:
 
-    [!code-csharp[Predict](~/samples/snippets/machine-learning/TextClassificationTF/csharp/Program.cs#Predict)]
+    [!code-csharp[Predict](./snippets/text-classification-tf/csharp/Program.cs#Predict)]
 
 1. Funkce [prediktivní ()](xref:Microsoft.ML.PredictionEngine%602.Predict%2A) provede předpověď na jeden řádek dat:
 
     |Vlastnost| Hodnota|Typ|
     |-------------|-----------------------|------|
-    |Prediction (Předpověď)|[0,5459937, 0,454006255]|float []|
+    |Předpověď|[0,5459937, 0,454006255]|float []|
 
 1. Zobrazit předpovědi mínění pomocí následujícího kódu:
 
-    [!code-csharp[DisplayPredictions](~/samples/snippets/machine-learning/TextClassificationTF/csharp/Program.cs#DisplayPredictions)]
+    [!code-csharp[DisplayPredictions](./snippets/text-classification-tf/csharp/Program.cs#DisplayPredictions)]
 
 1. Na `PredictSentiment` konec metody přidejte volání `Main` :
 
-    [!code-csharp[CallPredictSentiment](~/samples/snippets/machine-learning/TextClassificationTF/csharp/Program.cs#CallPredictSentiment)]
+    [!code-csharp[CallPredictSentiment](./snippets/text-classification-tf/csharp/Program.cs#CallPredictSentiment)]
 
 ## <a name="results"></a>Výsledky
 
@@ -249,7 +249,7 @@ Number of classes: 2
 Is sentiment/review positive ? Yes
 ```
 
-Gratulujeme! Nyní jste úspěšně vytvořili model strojového učení pro klasifikaci a předpověď zpráv mínění opětovným použitím předem připraveného `TensorFlow` modelu v ml.NET.
+Blahopřejeme! Nyní jste úspěšně vytvořili model strojového učení pro klasifikaci a předpověď zpráv mínění opětovným použitím předem připraveného `TensorFlow` modelu v ml.NET.
 
 Zdrojový kód pro tento kurz najdete v úložišti [dotnet/Samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/TextClassificationTF) .
 

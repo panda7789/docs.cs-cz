@@ -6,18 +6,18 @@ helpviewer_keywords:
 - Windows Forms, getting started
 - Windows Forms, creating a new form
 ms.assetid: c725559c-803e-4725-80fa-96aba93de29a
-ms.openlocfilehash: f1ef899e46c804cb174814b0abbd9490ce6221d5
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: e9431ebad3fee4eaa1d39f4ac95a57a6d0313fc8
+ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85325954"
+ms.lasthandoff: 07/13/2020
+ms.locfileid: "86281716"
 ---
 # <a name="creating-a-new-windows-form"></a>Vytvoření nového formuláře Windows Form
 Toto téma obsahuje odkazy na témata, která popisují, jak vytvořit první model Windows Forms aplikaci. Témata v této části také představují některé základní slovníky a pokyny, které byste měli pochopit, když začnete vytvářet model Windows Forms aplikace. Chcete-li získat další informace o model Windows Formsch aplikacích, ovládací prvky, které můžete používat na nich, události a zpracování událostí, a jak zpracovat vstup od uživatele, přečtěte si související seznam témat.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Model Windows Forms souřadnice](windows-forms-coordinates.md).  
+ [Windows Forms – souřadnice](windows-forms-coordinates.md)  
  Popisuje souřadnice klienta a obrazovky.  
   
  [Postupy: Vytvoření aplikace Windows Forms z příkazového řádku](how-to-create-a-windows-forms-application-from-the-command-line.md)  

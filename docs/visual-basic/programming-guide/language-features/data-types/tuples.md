@@ -72,7 +72,7 @@ Pokud se odvození názvu pole nepovede, Visual Basic negeneruje chybu kompilát
 
 ## <a name="tuples-versus-structures"></a>Řazené kolekce členů versus struktury
 
-Visual Basic řazená kolekce členů je hodnotový typ, který je instancí jednoho z obecných typů **System. ValueTuple** . Například `holiday` řazená kolekce členů definovaná v předchozím příkladu je instance <xref:System.ValueTuple%603> struktury. Je navržený jako odlehčený kontejner pro data. Vzhledem k tomu, že řazená kolekce členů je snazší vytvořit objekt s více datovými položkami, chybí některé funkce, které může mít vlastní struktura. Mezi ně patří:
+Visual Basic řazená kolekce členů je hodnotový typ, který je instancí jednoho z obecných typů **System. ValueTuple** . Například `holiday` řazená kolekce členů definovaná v předchozím příkladu je instance <xref:System.ValueTuple%603> struktury. Je navržený jako odlehčený kontejner pro data. Vzhledem k tomu, že řazená kolekce členů je snazší vytvořit objekt s více datovými položkami, chybí některé funkce, které může mít vlastní struktura. Tady jsou některé z nich:
 
 - Vlastní členové. Nemůžete definovat vlastní vlastnosti, metody nebo události pro řazenou kolekci členů.
 

@@ -1,5 +1,6 @@
 ---
 title: Zprostředkovatel komunikace s objekty COM bez registrace
+description: K aktivaci komponenty bez použití registru Windows k ukládání informací o sestavení použijte zprostředkovatele komunikace COM bez registrace.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - assemblies [.NET Framework], interop
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - object activation
 - registration-free COM interop, about registration-free COM interop
 ms.assetid: 90f308b9-82dc-414a-bce1-77e0155e56bd
-ms.openlocfilehash: f73bb2ac9e1b942c08f83507589b534d7e67748d
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: c6a4dfc54152ade6136e4292bbd1c4522553d491
+ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73124964"
+ms.lasthandoff: 07/13/2020
+ms.locfileid: "86281599"
 ---
 # <a name="registration-free-com-interop"></a>Zprostředkovatel komunikace s objekty COM bez registrace
 Zprostředkovatel komunikace s objekty COM bez registrace aktivuje komponentu bez použití registru Windows k ukládání informací o sestavení. Místo registrace komponenty v počítači během nasazení vytvoříte v době návrhu soubory manifestu ve stylu Win32, které obsahují informace o vazbách a aktivaci. Tyto soubory manifestu, nikoli klíče registru, nasměrují aktivaci objektu.  
@@ -54,4 +55,4 @@ Zprostředkovatel komunikace s objekty COM bez registrace aktivuje komponentu be
   
 ## <a name="see-also"></a>Viz také
 
-- [Postupy: Konfigurace bezregistrační aktivace komponent využívajících rozhraní .NET Framework](configure-net-framework-based-com-components-for-reg.md)
+- [Postupy: Konfigurace komponent COM využívajících rozhraní .NET Framework pro aktivaci bez registrace](configure-net-framework-based-com-components-for-reg.md)

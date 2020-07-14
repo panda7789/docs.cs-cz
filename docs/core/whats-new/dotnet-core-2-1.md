@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.date: 10/10/2018
-ms.openlocfilehash: 3e6f3a921238a5897c7aa4b6034be979724b7167
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 94f3db14046ad5d63975d0ca44425abed5d52062
+ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84283439"
+ms.lasthandoff: 07/13/2020
+ms.locfileid: "86281534"
 ---
 # <a name="whats-new-in-net-core-21"></a>Co je nového v .NET Core 2.1
 
@@ -67,7 +67,7 @@ K dispozici je řada nástrojů, které byly k dispozici pouze pro jednotlivé p
 
 .NET Core 2,1 podporuje *globální nástroje* – tedy vlastní nástroje, které jsou k dispozici globálně z příkazového řádku. Model rozšiřitelnosti v předchozích verzích rozhraní .NET Core, které jsou k dispozici pro jednotlivé projekty, pouze pomocí nástroje `DotnetCliToolReference` .
 
-K instalaci globálního nástroje použijte příkaz [dotnet Tool Install](../tools/dotnet-tool-install.md) . Například:
+K instalaci globálního nástroje použijte příkaz [dotnet Tool Install](../tools/dotnet-tool-install.md) . Příklad:
 
 ```dotnetcli
 dotnet tool install -g dotnetsay
@@ -77,7 +77,7 @@ Po instalaci můžete nástroj spustit z příkazového řádku zadáním názvu
 
 ### <a name="tool-management-with-the-dotnet-tool-command"></a>Správa nástrojů pomocí `dotnet tool` příkazu
 
-V sadě .NET Core 2,1 SDK všechny operace nástrojů používají `dotnet tool` příkaz. K dispozici jsou následující možnosti:
+V sadě .NET Core 2,1 SDK všechny operace nástrojů používají `dotnet tool` příkaz. Dostupné jsou tyto možnosti:
 
 - [`dotnet tool install`](../tools/dotnet-tool-install.md)pro instalaci nástroje.
 
@@ -106,7 +106,7 @@ Toto nastavení můžete upravit některým ze tří způsobů:
 
 - Nastavte `DOTNET_ROLL_FORWARD_ON_NO_CANDIDATE_FX` proměnnou prostředí na požadovanou hodnotu.
 
-- Přidejte následující řádek s požadovanou hodnotou do souboru *. runtimeconfig. JSON* :
+- Přidejte následující řádek s požadovanou hodnotou do *.runtimeconfig.js* souboru:
 
    ```json
    "rollForwardOnNoCandidateFx" : 0
@@ -177,17 +177,17 @@ Bez těchto typů při předávání takových položek jako části pole nebo o
 
 V následujícím příkladu se používá <xref:System.Span%601> <xref:System.Memory%601> instance a k poskytnutí virtuálního zobrazení 10 prvků pole.
 
-[!code-csharp[Span\<T>](~/samples/snippets/core/whats-new/whats-new-in-21/csharp/program.cs)]
+[!code-csharp[Span\<T>](./snippets/dotnet-core-2-1/csharp/program.cs)]
 
-[!code-vb[Memory\<T>](~/samples/snippets/core/whats-new/whats-new-in-21/vb/program.vb)]
+[!code-vb[Memory\<T>](./snippets/dotnet-core-2-1/vb/program.vb)]
 
 ### <a name="brotli-compression"></a>Komprese Brotli
 
 .NET Core 2,1 přidává podporu pro kompresi a dekompresi Brotli. Brotli je univerzální bezeztrátová kompresní algoritmus, který je definovaný v [dokumentu RFC 7932](https://www.ietf.org/rfc/rfc7932.txt) a který podporuje většina webových prohlížečů a hlavních webových serverů. Můžete použít třídu založenou na datovém proudu <xref:System.IO.Compression.BrotliStream?displayProperty=nameWithType> nebo vysoce výkonné rozsahy <xref:System.IO.Compression.BrotliEncoder?displayProperty=nameWithType> a <xref:System.IO.Compression.BrotliDecoder?displayProperty=nameWithType> třídy. Následující příklad znázorňuje kompresi s <xref:System.IO.Compression.BrotliStream> třídou:
 
-[!code-csharp[Brotli compression](~/samples/snippets/core/whats-new/whats-new-in-21/csharp/brotli.cs#1)]
+[!code-csharp[Brotli compression](./snippets/dotnet-core-2-1/csharp/brotli.cs#1)]
 
-[!code-vb[Brotli compression](~/samples/snippets/core/whats-new/whats-new-in-21/vb/brotli.vb#1)]
+[!code-vb[Brotli compression](./snippets/dotnet-core-2-1/vb/brotli.vb#1)]
 
 <xref:System.IO.Compression.BrotliStream>Chování je stejné jako <xref:System.IO.Compression.DeflateStream> a <xref:System.IO.Compression.GZipStream> , což usnadňuje převod kódu, který volá tato rozhraní API na <xref:System.IO.Compression.BrotliStream> .
 

@@ -1,13 +1,14 @@
 ---
 title: Rozhraní MEF pro .NET pro aplikace pro Windows Store
+description: Projděte si obory názvů Managed Extensibility Framework (MEF), které obsahují typy pro vývoj rozšiřitelných aplikací pro Store ve Windows 8. x.
 ms.date: 03/30/2017
 ms.assetid: 7667770e-d163-4ad6-a303-085cf73db2f2
-ms.openlocfilehash: 3a4c2a2f7f6096794f9ea723eec56aa74f5c44c5
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: 764c42265ed7523d3581484cc9564b17e9a9b3bd
+ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74802176"
+ms.lasthandoff: 07/13/2020
+ms.locfileid: "86281235"
 ---
 # <a name="mef-for-net-for-windows-store-apps"></a>Rozhraní MEF pro .NET pro aplikace pro Windows Store
 <xref:System.Composition?displayProperty=nameWithType>a jeho podřízené obory názvů obsahují typy pro vývoj rozšiřitelných aplikací Windows 8. x Store pomocí Managed Extensibility Framework (MEF). Tyto obory názvů jsou součástí sady .NET pro sadu aplikací pro Windows 8. x Store pro operační systém Windows 8.  
