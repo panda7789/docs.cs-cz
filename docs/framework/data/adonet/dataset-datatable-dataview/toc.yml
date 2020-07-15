@@ -1,6 +1,8 @@
 - name: 'Datové sady, datové tabulky a datová zobrazení'
   href: index.md
   items:
+    - name: Doprovodné materiály k zabezpečení
+      href: security-guidance.md
     - name: Vytvoření datové sady
       href: creating-a-dataset.md
     - name: Přidání datové tabulky do datové sady
