@@ -1,15 +1,16 @@
 ---
 title: Řízení přihlašování rozhraní .NET Framework
+description: Použijte trasování událostí pro Windows (ETW) k řízení protokolování rozhraní .NET a zaznamenání událostí modulu CLR (Common Language Runtime). Používejte nástroje, jako je například logman, Tracerpt a Xperf.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - CLR ETW events, logging
 ms.assetid: ce13088e-3095-4f0e-9f6b-fad30bbd3d41
-ms.openlocfilehash: e7d7d6e60b2f582a579f5811225f4027c37c7876
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.openlocfilehash: 45d9244eb11b914fd203f24057e1b65c6bef18c2
+ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77504109"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86309583"
 ---
 # <a name="controlling-net-framework-logging"></a>Řízení přihlašování rozhraní .NET Framework
 
@@ -19,7 +20,7 @@ Pro zaznamenání událostí modulu Common Language Runtime (CLR) je možné pou
 
 - Nástroje [Xperf](/windows-hardware/test/wpt/xperf-command-line-reference) v sadě [nástrojů Windows Performance Toolkit](/windows-hardware/test/wpt/). Další informace o Xperf najdete na blogu o [výkonu Windows](https://docs.microsoft.com/archive/blogs/pigscanfly/).
 
-Pro zaznamenání informací události modulu CLR musí být v počítači nainstalován zprostředkovatel modulu CLR. Chcete-li ověřit, zda je nainstalován poskytovatel, zadejte `logman query providers` do příkazového řádku. Zobrazí se seznam zprostředkovatelů. Tento seznam by měl obsahovat následující záznam pro zprostředkovatele modulu CLR.
+Pro zaznamenání informací události modulu CLR musí být v počítači nainstalován zprostředkovatel modulu CLR. Chcete-li ověřit, zda je poskytovatel nainstalován, zadejte do `logman query providers` příkazového řádku příkaz. Zobrazí se seznam zprostředkovatelů. Tento seznam by měl obsahovat následující záznam pro zprostředkovatele modulu CLR.
 
 ```output
 Provider                                 GUID
@@ -27,7 +28,7 @@ Provider                                 GUID
 .NET Common Language Runtime    {E13C0D23-CCBC-4E12-931B-D9CC2EEE27E4}.
 ```
 
-Pokud zprostředkovatel CLR není uveden, můžete jej nainstalovat do systému Windows Vista a novějších operačních systémů pomocí nástroje příkazového řádku Windows [wevtutil](/windows-server/administration/windows-commands/wevtutil) . Otevřete okno příkazového řádku jako správce. Změňte adresář s výzvou na složku .NET Framework 4 (%WINDIR%\Microsoft.NET\Framework [64] \v4.\<.NET verze > \). Tato složka obsahuje soubor CLR-ETW.man. Pro instalaci zprostředkovatele modulu CLR zadejte v příkazovém řádku následující příkaz:
+Pokud zprostředkovatel CLR není uveden, můžete jej nainstalovat do systému Windows Vista a novějších operačních systémů pomocí nástroje příkazového řádku Windows [wevtutil](/windows-server/administration/windows-commands/wevtutil) . Otevřete okno příkazového řádku jako správce. Změna adresáře s výzvou na složku .NET Framework 4 (%WINDIR%\Microsoft.NET\Framework [64] \v4. \<.NET version> \ ). Tato složka obsahuje soubor CLR-ETW.man. Pro instalaci zprostředkovatele modulu CLR zadejte v příkazovém řádku následující příkaz:
 
 `wevtutil im CLR-ETW.man`
 
@@ -51,15 +52,15 @@ K zapnutí protokolování musí uživatel specifikovat tři věci:
 
      kde:
 
-    - Parametr `-p` identifikuje identifikátor GUID zprostředkovatele.
+    - `-p`Parametr identifikuje identifikátor GUID zprostředkovatele.
 
-    - `0x1CCBD` určuje kategorie událostí, které budou vyvolány.
+    - `0x1CCBD`Určuje kategorie událostí, které budou vyvolány.
 
-    - `0x5` nastaví úroveň protokolování (v tomto případě verbose (5)).
+    - `0x5`Nastaví úroveň protokolování (v tomto případě verbose (5)).
 
-    - Parametr `-ets` instruuje příkaz logman k odeslání příkazů do relací trasování událostí.
+    - `-ets`Parametr nastaví příkaz logman k odeslání příkazů do relací trasování událostí.
 
-    - Parametr `-ct perf` určuje, zda bude funkce `QueryPerformanceCounter` použita k zaznamenání časového razítka pro každou událost.
+    - `-ct perf`Parametr určuje, že `QueryPerformanceCounter` funkce bude použita k zaznamenání časového razítka pro každou událost.
 
 2. K ukončení protokolování událostí zadejte:
 

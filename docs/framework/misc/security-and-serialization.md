@@ -11,19 +11,20 @@ helpviewer_keywords:
 - secure coding, serialization
 - security [.NET Framework], serialization
 ms.assetid: b921bc94-bd3a-4c91-9ede-2c8d4f78ea9a
-ms.openlocfilehash: 79952ceee4c8b771aaadd4fc97a547bc65136770
-ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
+ms.openlocfilehash: f19641ad2154631b4eab5104252c12b73b9084fd
+ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/13/2020
-ms.locfileid: "86281261"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86309271"
 ---
 # <a name="security-and-serialization"></a>Zabezpečení a serializace
+
 Vzhledem k tomu, že serializace může ostatním kód dovolit zobrazit nebo upravit data instance objektů, která by jinak nebyla přístupná, je pro provádění serializace kódu vyžadováno speciální oprávnění: <xref:System.Security.Permissions.SecurityPermission> se <xref:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter> zadaným příznakem. Podle výchozích zásad Toto oprávnění nemá přístup k Internetu stáhnout nebo intranetu kód; Toto oprávnění je uděleno pouze kód v místním počítači.  
   
  Obvykle jsou všechna pole instance objektu serializována, což znamená, že data jsou reprezentována v serializovaných datech instance. Je možné, že kód, který může interpretovat formát pro určení hodnot dat, nezávisle na přístupnost člena. Podobně deserializace extrahuje data z serializované reprezentace a nastaví stav objektu přímo, a to bez ohledu na pravidla přístupnosti.  
   
- Libovolný objekt, který by mohl obsahovat data citlivá na zabezpečení, by měl být, pokud je to možné, neserializovatelné. Pokud musí být serializovatelný, zkuste nastavit konkrétní pole, která uchovávají citlivá data neserializovatelné. Pokud to není možné, mějte na paměti, že tato data budou vystavena kódu, který má oprávnění k serializaci, a ujistěte se, že žádný škodlivý kód nemůže získat toto oprávnění.  
+ Libovolný objekt, který by mohl obsahovat data citlivá na zabezpečení, by měl být, pokud je to možné, neserializovatelné. Pokud musí být serializovatelný, zkuste nastavit konkrétní pole, která uchovávají citlivá data neserializovatelné. Pokud tato pole nelze nastavit jako neserializovatelné, budou citlivá data vystavena jakémukoli kódu, který má oprávnění k serializaci. Ujistěte se, že toto oprávnění nelze získat bez škodlivého kódu.  
   
  <xref:System.Runtime.Serialization.ISerializable>Rozhraní je určeno pro použití pouze infrastrukturou serializace. Pokud je ale nechráněný, může potenciálně vydávat citlivé informace. Pokud zadáte vlastní serializaci implementující rozhraní **ISerializable**, ujistěte se, že jste provedli následující opatření:  
   

@@ -1,16 +1,17 @@
 ---
 title: .NET Framework – výkon
+description: Navrhněte a naplánujte výkon v aplikacích .NET. Pomocí nástrojů poskytovaných Microsoftem můžete měřit výkon aplikace a provádět vylepšení.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - performance [.NET Framework]
 - reliability [.NET Framework]
 ms.assetid: c1676cca-3f1a-41ec-b469-9029566074fc
-ms.openlocfilehash: 47d85ae63f0594b778523425631ff54f9f3ca32f
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.openlocfilehash: ee8260056bd87dfc66d96e394f9b93bb9427afd8
+ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77504087"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86309752"
 ---
 # <a name="net-framework-performance"></a>.NET Framework – výkon
 Pokud chcete vytvářet aplikace s skvělým výkonem, měli byste navrhovat a plánovat výkon stejně, jako byste navrhli jakoukoli jinou funkci aplikace. Pomocí nástrojů poskytovaných společností Microsoft můžete měřit výkon vaší aplikace a v případě potřeby provádět vylepšení využití paměti, propustnosti kódu a odezvy. Toto téma obsahuje seznam nástrojů pro analýzu výkonu, které poskytuje společnost Microsoft, a obsahuje odkazy na další témata, která se týkají výkonu pro konkrétní oblasti vývoje aplikací.  
@@ -41,18 +42,18 @@ Pokud chcete vytvářet aplikace s skvělým výkonem, měli byste navrhovat a p
 ## <a name="performance-by-app-type"></a>Výkon podle typu aplikace  
  Každý typ aplikace .NET Framework má své osvědčené postupy, požadavky a nástroje pro vyhodnocení výkonu. Následující tabulka obsahuje odkazy na témata týkající se výkonu pro konkrétní .NET Framework typy aplikací.  
   
-|Typ aplikace|Přečtěte si:|  
+|Typ aplikace|Seznamte se s |  
 |--------------|---------|  
-|.NET Framework aplikací pro všechny platformy|[Kolekce paměti a výkon](../../standard/garbage-collection/performance.md)<br /><br /> [Tipy pro zvýšení výkonu](performance-tips.md)|  
-|Aplikace pro Store Windows 8. x C++napsané C#v systémech, a Visual Basic|[Osvědčené postupy výkonu pro aplikace pro Windows C++Store C#využívající systémy, a Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/hh750313%28v=win.10%29)|  
+|.NET Framework aplikací pro všechny platformy|[Uvolňování paměti a výkon](../../standard/garbage-collection/performance.md)<br /><br /> [Tipy ke zvýšení výkonu](performance-tips.md)|  
+|Aplikace Windows 8. x pro Store napsané v jazyce C++, C# a Visual Basic|[Osvědčené postupy výkonu pro aplikace pro Windows Store využívající C++, C# a Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/hh750313%28v=win.10%29)|  
 |Windows Presentation Foundation (WPF)|[Sada Performance Suite WPF](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aa969767(v=vs.100))|  
 |ASP.NET|[Přehled výkonu ASP.NET](https://docs.microsoft.com/previous-versions/aspnet/cc668225(v=vs.100))|  
   
 ## <a name="related-topics"></a>Související témata  
   
-|Název|Popis|  
+|Nadpis|Popis|  
 |-----------|-----------------|  
 |[Ukládání do vyrovnávací paměti v aplikacích .NET Framework](caching-in-net-framework-applications.md)|Popisuje techniky ukládání dat do mezipaměti pro zlepšení výkonu aplikace.|  
 |[Opožděná inicializace](lazy-initialization.md)|Popisuje, jak inicializovat objekty podle potřeby pro zlepšení výkonu, zejména při spuštění aplikace.|  
 |[Spolehlivost](reliability.md)|Poskytuje informace o předcházení asynchronním výjimkám v prostředí serveru.|  
-|[Psaní velkých a pohotově reagujících aplikací .NET Framework](writing-large-responsive-apps.md)|Poskytuje tipy k výkonu shromážděné z přepisu kompilátorů C# a Visual Basic ve spravovaném kódu a obsahuje několik reálných příkladů C# z kompilátoru.|
+|[Psaní velkých a pohotově reagujících aplikací .NET Framework](writing-large-responsive-apps.md)|Poskytuje tipy ke zvýšení výkonu shromážděné před přepsáním kompilátorů C# a Visual Basic ve spravovaném kódu a obsahuje několik reálných příkladů z kompilátoru C#.|

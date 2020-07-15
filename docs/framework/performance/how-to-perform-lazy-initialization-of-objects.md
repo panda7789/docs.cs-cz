@@ -1,5 +1,6 @@
 ---
 title: 'Postupy: Provádění opožděné inicializace objektů'
+description: Podívejte se, jak provést opožděnou inicializaci objektů pomocí třídy System. opožděné <T> . Opožděná inicializace znamená, že objekty nejsou vytvořeny, pokud nejsou nikdy požadovány.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,18 +8,18 @@ dev_langs:
 helpviewer_keywords:
 - lazy initialization in .NET, how to perform
 ms.assetid: 8cd68620-dcc3-4f20-8835-c728a6820e71
-ms.openlocfilehash: d89d19a7a3edb57dcd6c0e37e6688701da8b3713
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: dbee0d8a5c3075ad7429feb92b87a566fdd35454
+ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79180605"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86309726"
 ---
 # <a name="how-to-perform-lazy-initialization-of-objects"></a>Postupy: Provádění opožděné inicializace objektů
-Třída <xref:System.Lazy%601?displayProperty=nameWithType> zjednodušuje práci opožděné inicializace a instanování objektů. Inicializací objektů opožděným způsobem se můžete vyhnout nutnosti jejich vytváření vůbec, pokud nejsou nikdy potřeba, nebo můžete odložit jejich inicializaci, dokud nejsou nejprve přístupné. Další informace naleznete [v tématu Opožděná inicializace](lazy-initialization.md).  
+<xref:System.Lazy%601?displayProperty=nameWithType>Třída zjednodušuje práci při opožděné inicializaci a vytváření instancí objektů. Inicializací objektů opožděným způsobem je možné se vyhnout nutnosti jejich vytváření vůbec, pokud nejsou zapotřebí, nebo můžete svou inicializaci odložit, dokud nebudou poprvé k dispozici. Další informace naleznete v tématu [opožděná inicializace](lazy-initialization.md).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak inicializovat hodnotu pomocí <xref:System.Lazy%601>. Předpokládejme, že opožděná proměnná nemusí být potřeba, `someCondition` v závislosti na některé jiné kód, který nastaví proměnnou true nebo false.  
+ Následující příklad ukazuje, jak inicializovat hodnotu pomocí <xref:System.Lazy%601> . Předpokládá, že opožděná proměnná nemusí být potřebná, v závislosti na jiném kódu, který nastaví `someCondition` proměnnou na hodnotu true nebo false.  
   
 ```vb  
 Dim someCondition As Boolean = False  
@@ -69,7 +70,7 @@ End Sub
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak <xref:System.Threading.ThreadLocal%601?displayProperty=nameWithType> použít třídu k inicializaci typu, který je viditelný pouze pro aktuální instanci objektu v aktuálním vlákně.  
+ Následující příklad ukazuje, jak použít <xref:System.Threading.ThreadLocal%601?displayProperty=nameWithType> třídu k inicializaci typu, který je viditelný pouze pro aktuální instanci objektu v aktuálním vlákně.  
   
  [!code-csharp[CDS#13](../../../samples/snippets/csharp/VS_Snippets_Misc/cds/cs/cds2.cs#13)]
  [!code-vb[CDS#13](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cds/vb/lazyhowto.vb#13)]  

@@ -11,14 +11,15 @@ helpviewer_keywords:
 - attribute fields in platform invoke, CharSet
 - CharSet field
 ms.assetid: a8347eb1-295f-46b9-8a78-63331f9ecc50
-ms.openlocfilehash: a4f18431d89343a77ccf2b920edac485e7dcfca3
-ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
+ms.openlocfilehash: 789753742d8714e481f038e323407cbab0499f6c
+ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/13/2020
-ms.locfileid: "86282122"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86309791"
 ---
-# <a name="specifying-a-character-set"></a>Určení sady znaků
+# <a name="specify-a-character-set"></a>Zadat znakovou sadu
+
 <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=nameWithType>Pole řídí zařazování řetězců a určuje, jakým způsobem vyvolání platformy nalezne názvy funkcí v knihovně DLL. V tomto tématu jsou popsána obě chování.  
   
  Některá rozhraní API exportují dvě verze funkcí, které přijímají argumenty pro řetězce: úzká (ANSI) a roztažitelné (Unicode). Rozhraní Windows API obsahuje například následující názvy vstupních bodů pro funkci **MessageBox** :  
@@ -62,11 +63,12 @@ ms.locfileid: "86282122"
   
 - Volání platformy se v době běhu volí mezi formáty ANSI a Unicode, a to na základě cílové platformy.  
   
-## <a name="specifying-a-character-set-in-visual-basic"></a>Určení znakové sady v Visual Basic  
- Následující příklad deklaruje funkci **MessageBox** třikrát, a to pokaždé, když se liší chování znakových sad. Můžete určit chování znakových sad v Visual Basic přidáním klíčového slova **ANSI**, **Unicode**nebo **auto** do příkazu deklarace.  
-  
- Vynecháte-li klíčové slovo sady znaků, jak je provedeno v prvním příkazu deklarace, je <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=nameWithType> pole standardně znakovou sadou ANSI. Druhý a třetí příkaz v příkladu explicitně specifikují znakovou sadu s klíčovým slovem.  
-  
+## <a name="specify-a-character-set-in-visual-basic"></a>Zadejte znakovou sadu v Visual Basic
+
+Můžete určit chování znakových sad v Visual Basic přidáním `Ansi` `Unicode` `Auto` klíčového slova, nebo do příkazu deklarace. Vynecháte-li klíčové slovo sady znaků, bude <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=nameWithType> pole standardně nastaveno na znakovou sadu ANSI.
+
+Následující příklad deklaruje funkci **MessageBox** třikrát, a to pokaždé, když se liší chování znakových sad. První příkaz vynechává klíčové slovo sady znaků, takže znaková sada je standardně ANSI. Druhý a třetí příkaz explicitně specifikují znakovou sadu s klíčovým slovem.
+
 ```vb
 Friend Class NativeMethods
     Friend Declare Function MessageBoxA Lib "user32.dll" (
@@ -89,8 +91,9 @@ Friend Class NativeMethods
 End Class
 ```
   
-## <a name="specifying-a-character-set-in-c-and-c"></a>Určení znakové sady v jazycích C# a C++  
- <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=nameWithType>Pole určuje základní znakovou sadu jako ANSI nebo Unicode. Znaková sada určuje, jak by měly být zařazeny řetězcové argumenty metody. K označení znakové sady použijte jednu z následujících forem:  
+## <a name="specify-a-character-set-in-c-and-c"></a>Určení znakové sady v jazycích C# a C++
+
+<xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=nameWithType>Pole určuje základní znakovou sadu jako ANSI nebo Unicode. Znaková sada určuje, jak by měly být zařazeny řetězcové argumenty metody. K označení znakové sady použijte jednu z následujících forem:  
   
 ```csharp
 [DllImport("DllName", CharSet = CharSet.Ansi)]

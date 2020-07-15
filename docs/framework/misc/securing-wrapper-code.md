@@ -8,12 +8,12 @@ helpviewer_keywords:
 - secure coding, wrapper code
 - code security, wrapper code
 ms.assetid: 1df6c516-5bba-48bd-b450-1070e04b7389
-ms.openlocfilehash: 64c5b2455882ca121a6eeb0c0bbcbc4d04ed88cd
-ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
+ms.openlocfilehash: 4338b3d0ab306501ea252407f386bdf89d191d6d
+ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/13/2020
-ms.locfileid: "86281443"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86309375"
 ---
 # <a name="securing-wrapper-code"></a>Zabezpečení kódu obálky
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
@@ -51,7 +51,7 @@ ms.locfileid: "86281443"
  Aby se zabránilo takovému bezpečnostnímu otvoru, modul CLR (Common Language Runtime) rozšiřuje kontrolu na úplný požadavek na procházení zásobníku na jakémkoli nepřímém volání metody, konstruktoru, vlastnosti nebo události chráněné **LinkDemand**. Tato ochrana má za následek nějaké náklady na výkon a mění sémantiku kontroly zabezpečení. úplný požadavek na procházení zásobníku může selhat, pokud by byla úspěšná i jedna úroveň kontroly.  
   
 ## <a name="assembly-loading-wrappers"></a>Sestavení – načítání obálek  
- Několik metod, které slouží k načtení spravovaného kódu, včetně <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> , načítají sestavení s legitimací volajícího. Pokud zabalíte některou z těchto metod, systém zabezpečení může použít udělení oprávnění vašeho kódu místo oprávnění volajícího na obálku pro načtení sestavení. Nepovolujte nedůvěryhodný kód pro načtení kódu, kterému je uděleno vyšší oprávnění než u volajícího pro vaši obálku.  
+ Několik metod, které slouží k načtení spravovaného kódu, včetně <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> , načítají sestavení s legitimací volajícího. Pokud zabalíte některou z těchto metod, systém zabezpečení může použít udělení oprávnění vašeho kódu místo oprávnění volajícího na obálku pro načtení sestavení. Nepovolujte nedůvěryhodný kód pro načtení kódu, kterému je udělenější oprávnění od volajícího k vaší obálce.  
   
  Jakýkoli kód, který má úplný vztah důvěryhodnosti nebo významně vyšší důvěryhodnost než potenciální volající (včetně volajícího na úrovni internetových oprávnění), může tímto způsobem oslabit zabezpečení. Má-li váš kód veřejnou metodu, která přebírá bajtové pole a předá jej **sestavení. Load**, čímž se vytvoří sestavení za jménem volajícího, může dojít k přerušení zabezpečení.  
   
@@ -66,7 +66,7 @@ ms.locfileid: "86281443"
 - <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType>  
   
 ## <a name="demand-vs-linkdemand"></a>Požadavek proti LinkDemand  
- Deklarativní zabezpečení nabízí dva druhy kontrol zabezpečení, které jsou podobné, ale provádějí velmi odlišné kontroly. Oba formuláře byste měli pochopit, protože nesprávná volba může mít za následek slabou bezpečnost nebo ztrátu výkonu.  
+ Deklarativní zabezpečení nabízí dva druhy kontrol zabezpečení, které jsou podobné, ale provádějí různé kontroly. Je vhodné porozumět oběma formám, protože nesprávná volba může vést ke slabému zabezpečení nebo ztrátě výkonu.  
   
  Deklarativní zabezpečení nabízí následující kontroly zabezpečení:  
   

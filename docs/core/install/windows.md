@@ -4,12 +4,12 @@ description: Seznamte se s verzemi Windows, na kterých můžete nainstalovat .N
 author: adegeo
 ms.author: adegeo
 ms.date: 06/22/2020
-ms.openlocfilehash: e26494de7e9246b241cb965d8d735a781aab5478
-ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
+ms.openlocfilehash: 97f67d00b3eb4dafc55256aea51f4295bb0ef06a
+ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85804493"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86308946"
 ---
 # <a name="install-net-core-on-windows"></a>Nainstalovat .NET Core v systému Windows
 
@@ -23,7 +23,8 @@ V tomto článku se dozvíte, jak nainstalovat .NET Core v systému Windows. .NE
 
 Nejnovější verze .NET Core je 3,1.
 
-[Stáhněte si .NET Core.](https://dotnet.microsoft.com/download/dotnet-core)
+> [!div class="button"]
+> [Stáhnout .NET Core](https://dotnet.microsoft.com/download/dotnet-core)
 
 ## <a name="supported-releases"></a>Podporované verze
 
@@ -71,13 +72,15 @@ Spustí aplikace .NET Core WPF a .NET Core model Windows Forms desktopové aplik
 *Modul runtime .NET Core*\
 Tento modul runtime je nejjednodušším modulem runtime a neobsahuje žádné další moduly runtime. Pro zajištění nejlepší kompatibility s aplikacemi .NET Core doporučujeme nainstalovat modul runtime *ASP.NET Core* a *modul runtime pro stolní počítače* .
 
-[Stáhněte si modul runtime .NET Core.](https://dotnet.microsoft.com/download/dotnet-core)
+> [!div class="button"]
+> [Stáhnout .NET Core Runtime](https://dotnet.microsoft.com/download/dotnet-core)
 
 ## <a name="sdk-information"></a>Informace o sadě SDK
 
 Sada SDK se používá k sestavování a publikování aplikací a knihoven .NET Core. Instalace sady SDK zahrnuje všechny tři [moduly runtime](#runtime-information): ASP.NET Core, Desktop a .NET Core.
 
-[Stáhněte si .NET Core SDK.](https://dotnet.microsoft.com/download/dotnet-core)
+> [!div class="button"]
+> [Stáhnout .NET Core SDK](https://dotnet.microsoft.com/download/dotnet-core)
 
 ## <a name="dependencies"></a>Závislosti
 
@@ -218,7 +221,8 @@ Pokud již máte nainstalováno Visual Studio, můžete si ověřit verzi pomoc�
 
 Visual Studio může nainstalovat nejnovější .NET Core SDK a modul runtime.
 
-- [Stáhněte si Visual Studio](https://www.visualstudio.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2019).
+> [!div class="button"]
+> [Stáhněte si Visual Studio](https://www.visualstudio.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2019).
 
 ### <a name="select-a-workload"></a>Vyberte úlohu.
 

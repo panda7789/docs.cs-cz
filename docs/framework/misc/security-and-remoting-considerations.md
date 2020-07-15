@@ -8,12 +8,12 @@ helpviewer_keywords:
 - security [.NET Framework], remoting
 - secure coding, remoting
 ms.assetid: 125d2ab8-55a4-4e5f-af36-a7d401a37ab0
-ms.openlocfilehash: 029f9863ebed94805675b629be7eb10963a7b689
-ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
+ms.openlocfilehash: 019773b19eaca2e4364fb79c40fdb923093d4e7e
+ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/13/2020
-ms.locfileid: "86281391"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86309362"
 ---
 # <a name="security-and-remoting-considerations"></a>Důležité informace o zabezpečení a vzdálené komunikaci
 Vzdálená komunikace umožňuje nastavit transparentní volání mezi doménami aplikace, procesy nebo počítači. Procházení zásobníku zabezpečení přístupu kódu ale nemůže mezi procesy nebo počítači překročit hranice (používá se mezi aplikačními doménami stejného procesu).  
@@ -34,7 +34,7 @@ Vzdálená komunikace umožňuje nastavit transparentní volání mezi doménami
   
  Doména aplikace může vynutit jinou aplikační doménu, aby načetla sestavení a kód, který je v něm obsažený, voláním proxy na objekt hostovaný v jiné doméně aplikace. Aby bylo možné získat proxy server mezi aplikačními aplikacemi, musí doména aplikace, která je hostitelem objektu, distribuovat jednu prostřednictvím parametru volání metody nebo návratové hodnoty. Nebo, pokud byla doména aplikace právě vytvořena, tvůrce má <xref:System.AppDomain> ve výchozím nastavení proxy objekt k objektu. Proto k tomu, aby nedošlo k narušení izolace kódu, by doména aplikace s vyšší úrovní důvěryhodnosti neměla distribuovat odkazy na objekty zařazování podle referencí (instance tříd odvozené z <xref:System.MarshalByRefObject> ) ve své doméně do domén aplikace s nižšími úrovněmi důvěryhodnosti.  
   
- Výchozí aplikační doména obvykle vytváří podřízené domény aplikace s objektem ovládacího prvku v každém z nich. Řídicí objekt spravuje novou doménu aplikace a občas bere objednávky z výchozí domény aplikace, ale nemůže ve skutečnosti kontaktovat doménu přímo. V některých případech výchozí doména aplikace volá svůj proxy do objektu Control. Nicméně mohou nastat případy, kdy je nutné, aby objekt ovládacího prvku volal zpět do výchozí domény aplikace. V těchto případech výchozí doména aplikace předá objekt zpětného volání zařazovacího odkazu do konstruktoru objektu ovládacího prvku. Je zodpovědností za objekt Control k ochraně tohoto proxy serveru. Pokud měl řídicí objekt umístit proxy na veřejné statické pole veřejné třídy nebo jinak veřejně vystavení proxy serveru, tím by se otevřel nebezpečný mechanismus pro jiný kód pro volání zpět do výchozí domény aplikace. Z tohoto důvodu jsou objekty ovládacího prvku vždy implicitně důvěryhodné, aby zůstaly proxy privátní.  
+ Výchozí aplikační doména obvykle vytváří podřízené domény aplikace s objektem ovládacího prvku v každém z nich. Řídicí objekt spravuje novou doménu aplikace a občas bere objednávky z výchozí domény aplikace, ale nemůže ve skutečnosti kontaktovat doménu přímo. V některých případech výchozí doména aplikace volá svůj proxy do objektu Control. Nicméně mohou nastat případy, kdy je nutné, aby objekt ovládacího prvku volal zpět do výchozí domény aplikace. V těchto případech výchozí doména aplikace předá objekt zpětného volání zařazovacího odkazu do konstruktoru objektu ovládacího prvku. Je zodpovědností za objekt Control k ochraně tohoto proxy serveru. Pokud řídicí objekt umístil proxy na veřejné statické pole veřejné třídy nebo jinak veřejně vystavený proxy serveru, bude otevřen nebezpečný mechanismus pro jiný kód pro volání zpět do výchozí domény aplikace. Z tohoto důvodu jsou objekty ovládacího prvku vždy implicitně důvěryhodné, aby zůstaly proxy privátní.  
   
 ## <a name="see-also"></a>Viz také
 

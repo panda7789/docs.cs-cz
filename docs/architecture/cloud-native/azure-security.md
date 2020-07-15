@@ -2,12 +2,12 @@
 title: Zabezpečení Azure pro Cloud – nativní aplikace
 description: Architekt cloudových nativních aplikací .NET pro Azure | Zabezpečení Azure pro nativní cloudové aplikace
 ms.date: 05/13/2020
-ms.openlocfilehash: a39b64477eb9e896c6603e5609ede653bfee1e07
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 223d9e77aca611697958981bf2ee3a630fb9fffb
+ms.sourcegitcommit: e7748001b1cee80ced691d8a76ca814c0b02dd9b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614250"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86374491"
 ---
 # <a name="azure-security-for-cloud-native-apps"></a>Zabezpečení Azure pro Cloud – nativní aplikace
 
@@ -66,7 +66,7 @@ Toto je dokonalý příklad zdánlivě nízké hodnoty, který se dá použít k
 
 .NET Framework je již poměrně zabezpečenou architekturou. Zabrání některému nástrah nespravovaného kódu, jako je například procházení konců polí. Práce se aktivně provádí za účelem opravy děr zabezpečení při jejich zjištění. K dispozici je i [Bounty program](https://www.microsoft.com/msrc/bounty) , který zaplatí výzkumným pracovníkům, aby vyhledal problémy v rámci rozhraní a nahlásil je místo jejich zneužití.
 
-Existuje mnoho způsobů, jak zvýšit zabezpečení kódu .NET. Následující pokyny, jako je například [pokyny k zabezpečenému kódování pro článek o rozhraní .NET](https://docs.microsoft.com/dotnet/standard/security/secure-coding-guidelines) , jsou přijatelné krok k zajištění zabezpečení kódu od základu. [OWASP prvních 10](https://owasp.org/www-project-top-ten/) je další nevýznamný průvodce pro sestavování zabezpečeného kódu.
+Existuje mnoho způsobů, jak zvýšit zabezpečení kódu .NET. Následující pokyny, jako je například [pokyny k zabezpečenému kódování pro článek o rozhraní .NET](../../standard/security/secure-coding-guidelines.md) , jsou přijatelné krok k zajištění zabezpečení kódu od základu. [OWASP prvních 10](https://owasp.org/www-project-top-ten/) je další nevýznamný průvodce pro sestavování zabezpečeného kódu.
 
 Proces sestavení je dobrým místem, kde můžete umístit nástroje pro kontrolu, aby se zjistily problémy ve zdrojovém kódu předtím, než se provedou v produkci. Většina každého projektu má závislosti na některých dalších balíčcích. Nástroj, který může kontrolovat zastaralé balíčky, zachytí problémy v noci. I při sestavování imagí Docker je vhodné zkontrolovat a ujistit se, že základní image nemá známá slabá místa. Další věc, kterou je třeba zkontrolovat, je, že nikdo nechtěně rezervoval přihlašovací údaje.
 

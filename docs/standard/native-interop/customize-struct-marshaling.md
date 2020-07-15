@@ -1,18 +1,18 @@
 ---
 title: Přizpůsobení zařazování struktury – .NET
-description: Naučte se, jak přizpůsobit, jak .NET zařazování vašich struktur do nativní reprezentace.
+description: Naučte se, jak přizpůsobit, jak .NET zařazování struktur do nativní reprezentace.
 ms.date: 01/18/2019
 dev_langs:
 - csharp
 - cpp
-ms.openlocfilehash: 8248ca589f41967a9112ba61c09599b337814de7
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: c82e0099c44b8033cad241d69bdd284243711a50
+ms.sourcegitcommit: e7748001b1cee80ced691d8a76ca814c0b02dd9b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84003890"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86374530"
 ---
-# <a name="customizing-structure-marshaling"></a>Přizpůsobení zařazování struktur
+# <a name="customize-structure-marshaling"></a>Přizpůsobení zařazování struktur
 
 Někdy výchozí pravidla zařazování pro struktury nejsou přesně to, co potřebujete. Moduly runtime .NET poskytují několik rozšiřovacích bodů pro přizpůsobení rozložení struktury a způsobu, jakým jsou pole zařazena.
 
@@ -264,7 +264,7 @@ struct BString
 };
 ```
 
-Při použití rozhraní API založeného na WinRT může být nutné zařadit řetězec jako `HSTRING` .  Pomocí <xref:System.Runtime.InteropServices.UnmanagedType.HString?displayProperty=nameWithType> hodnoty můžete zařadit řetězec jako `HSTRING` .
+Při použití rozhraní API založeného na WinRT může být nutné zařadit řetězec jako `HSTRING` . Pomocí <xref:System.Runtime.InteropServices.UnmanagedType.HString?displayProperty=nameWithType> hodnoty můžete zařadit řetězec jako `HSTRING` .
 
 ```csharp
 public struct HString
@@ -317,7 +317,7 @@ struct DefaultString
 
 ## <a name="customizing-decimal-field-marshaling"></a>Přizpůsobení zařazování desetinných polí
 
-Pokud pracujete v systému Windows, můžete se setkat s některými rozhraními API, která používají nativní [ `CY` nebo `CURRENCY` ](/windows/win32/api/wtypes/ns-wtypes-cy~r1) strukturu. Ve výchozím nastavení je `decimal` typ .NET zařazování do nativní [`DECIMAL`](/windows/win32/api/wtypes/ns-wtypes-decimal~r1) struktury. Můžete však použít <xref:System.Runtime.InteropServices.MarshalAsAttribute> s <xref:System.Runtime.InteropServices.UnmanagedType.Currency?displayProperty=nameWithType> hodnotou k instruování zařazovacího modulu, aby převedl `decimal` hodnotu na nativní `CY` hodnotu.
+Pokud pracujete v systému Windows, můžete se setkat s některými rozhraními API, která používají nativní [ `CY` nebo `CURRENCY` ](/windows/win32/api/wtypes/ns-wtypes-cy-r1) strukturu. Ve výchozím nastavení je `decimal` typ .NET zařazování do nativní [`DECIMAL`](/windows/win32/api/wtypes/ns-wtypes-decimal-r1) struktury. Můžete však použít <xref:System.Runtime.InteropServices.MarshalAsAttribute> s <xref:System.Runtime.InteropServices.UnmanagedType.Currency?displayProperty=nameWithType> hodnotou k instruování zařazovacího modulu, aby převedl `decimal` hodnotu na nativní `CY` hodnotu.
 
 ```csharp
 public struct Currency
@@ -334,7 +334,7 @@ struct Currency
 };
 ```
 
-## <a name="marshaling-systemobjects"></a>Zařazování `System.Object` s
+## <a name="marshal-systemobject"></a>Sdružení`System.Object`
 
 Ve Windows můžete zařadit `object` pole typu do nativního kódu. Tato pole můžete zařadit do jednoho ze tří typů:
 

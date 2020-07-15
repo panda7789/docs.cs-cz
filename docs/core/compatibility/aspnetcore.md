@@ -2,15 +2,15 @@
 title: ASP.NET Core přerušující změny
 titleSuffix: ''
 description: Zobrazí seznam nejnovějších změn v ASP.NET Core.
-ms.date: 07/10/2020
+ms.date: 07/13/2020
 author: scottaddie
 ms.author: scaddie
-ms.openlocfilehash: 1a3c8b04bc574822f1576ca0720ed7a01c303880
-ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
+ms.openlocfilehash: 75f33e7d6d76206ebe46b1a229ccb152d79ddc61
+ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/13/2020
-ms.locfileid: "86281677"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86309557"
 ---
 # <a name="aspnet-core-breaking-changes"></a>ASP.NET Core přerušující změny
 
@@ -71,6 +71,7 @@ Na této stránce jsou popsány následující přerušující se změny:
 - [MVC: typy se změnily na interní](#mvc-pubternal-types-changed-to-internal)
 - [MVC: překrytí kompatibility webového rozhraní API se odebralo.](#mvc-web-api-compatibility-shim-removed)
 - [Razor: kompilace za běhu byla přesunuta do balíčku](#razor-runtime-compilation-moved-to-a-package)
+- [Zabezpečení: aktualizace verzí balíčku NuGet IdentityModel](#security-identitymodel-nuget-package-versions-updated)
 - [Stav relace: odebrané zastaralé rozhraní API](#session-state-obsolete-apis-removed)
 - [Sdílené rozhraní: odebrání sestavení z Microsoft. AspNetCore. app](#shared-framework-assemblies-removed-from-microsoftaspnetcoreapp)
 - [Sdílené rozhraní: Microsoft. AspNetCore. All odebral](#shared-framework-removed-microsoftaspnetcoreall)
@@ -137,6 +138,10 @@ Na této stránce jsou popsány následující přerušující se změny:
 ***
 
 [!INCLUDE[Localization: ResourceManagerWithCultureStringLocalizer class and WithCulture interface member removed](~/includes/core-changes/aspnetcore/5.0/localization-members-removed.md)]
+
+***
+
+[!INCLUDE[Security: IdentityModel NuGet package versions updated](~/includes/core-changes/aspnetcore/5.0/security-identitymodel-nuget-package-versions-updated.md)]
 
 ***
 

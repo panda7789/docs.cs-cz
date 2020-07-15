@@ -11,23 +11,23 @@ helpviewer_keywords:
 - security [.NET Framework], method access
 - method access security
 ms.assetid: f7c2d6ec-3b18-4e0e-9991-acd97189d818
-ms.openlocfilehash: 287c3651be0272f1941fb2320640970d70a1bd0f
-ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
+ms.openlocfilehash: a7ef419cf3959cf7a3ffde874353dacd3815c81a
+ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/13/2020
-ms.locfileid: "86282044"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86309388"
 ---
 # <a name="securing-method-access"></a>Zabezpečení přístupu k metodě
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
   
  Některé metody nemusí být vhodné, aby bylo možné volat libovolný nedůvěryhodný kód. Tyto metody představují několik rizik: metoda může poskytovat nějaké omezené informace; může se stát, že se budou předávat nějaké informace; nemusí provádět kontrolu chyb u parametrů; nebo s chybnými parametry může být nefunkční nebo něco škodlivého. Měli byste si být vědomi těchto případů a provést akci, která vám pomůžou ochránit tuto metodu.  
   
- V některých případech možná budete muset omezit metody, které nejsou určené pro veřejné použití, ale pořád musí být veřejné. Například můžete mít rozhraní, které je třeba volat napříč vašimi vlastními knihovnami DLL, a proto musí být veřejné, ale nechcete zveřejnit ho veřejně, aby se zabránilo zákazníkům v jeho použití, nebo aby se zabránilo škodlivému kódu v zneužití vstupního bodu do vaší komponenty. Dalším běžným důvodem pro omezení metody, která není určená pro veřejné použití (ale musí být veřejná), je vyhnout se nutnosti dokumentovat a podporovat to, co by mohlo být velmi interní rozhraní.  
+ V některých případech možná budete muset omezit metody, které nejsou určené pro veřejné použití, ale pořád musí být veřejné. Například můžete mít rozhraní, které je třeba volat napříč vašimi vlastními knihovnami DLL, a proto musí být veřejné, ale nechcete zveřejnit ho veřejně, aby se zabránilo zákazníkům v jeho použití, nebo aby se zabránilo škodlivému kódu v zneužití vstupního bodu do vaší komponenty. Dalším běžným důvodem pro omezení metody, která není určená pro veřejné použití (ale musí být veřejná), je vyhnout se nutnosti dokumentovat a podporovat to, co by mohlo být interní rozhraní.  
   
  Spravovaný kód nabízí několik způsobů, jak omezit přístup k metodě:  
   
-- Omezte rozsah dostupnosti pro třídu, sestavení nebo odvozené třídy, pokud mohou být důvěryhodné. Toto je nejjednodušší způsob, jak omezit přístup k metodě. Všimněte si, že obecně odvozené třídy mohou být méně důvěryhodné než třída odvozená z, i když v některých případech sdílí identitu nadřazené třídy. Konkrétně neodvozujte důvěryhodnost z **chráněného**klíčového slova, které se nutně nepoužívá v kontextu zabezpečení.  
+- Omezte rozsah dostupnosti pro třídu, sestavení nebo odvozené třídy, pokud mohou být důvěryhodné. Toto je nejjednodušší způsob, jak omezit přístup k metodě. Obecně mohou být odvozené třídy méně důvěryhodné než třída odvozená z, i když v některých případech sdílí identitu nadřazené třídy. Konkrétně neodvozujte důvěryhodnost z klíčového slova `protected` , který není nutně použit v kontextu zabezpečení.  
   
 - Omezte přístup k metodě u volajících zadané identity – v podstatě všechny konkrétní [legitimace](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/7y5x1hcd%28v=vs.100%29) (silný název, vydavatel, zóna atd.) si můžete vybrat.  
   
@@ -56,7 +56,7 @@ public class Class1
 ```  
   
 ## <a name="excluding-classes-and-members-from-use-by-untrusted-code"></a>Vyloučení tříd a členů z použití nedůvěryhodným kódem  
- Použijte deklarace uvedené v této části, chcete-li zabránit konkrétním třídám a metodám, a také k vlastnostem a událostem, od použití částečně důvěryhodným kódem. Použitím těchto deklarací u třídy můžete použít ochranu na všechny metody, vlastnosti a události. Upozorňujeme však, že přístup k poli není ovlivněn deklarativním zabezpečením. Všimněte si také, že požadavky na propojení můžou chránit jenom před okamžitými volajícími a můžou se i nadále luring útoky.  
+ Použijte deklarace uvedené v této části, chcete-li zabránit konkrétním třídám a metodám, a také k vlastnostem a událostem, od použití částečně důvěryhodným kódem. Použitím těchto deklarací u třídy můžete použít ochranu na všechny metody, vlastnosti a události. Přístup k poli však není ovlivněn deklarativním zabezpečením. Všimněte si také, že požadavky na propojení můžou chránit jenom před okamžitými volajícími a můžou se i nadále luring útoky.  
   
 > [!NOTE]
 > Nový model transparentnosti se zavedl do .NET Framework 4. [Kód transparentní z hlediska zabezpečení, model úrovně 2,](security-transparent-code-level-2.md) identifikuje zabezpečený kód s <xref:System.Security.SecurityCriticalAttribute> atributem. Kód kritický pro zabezpečení vyžaduje, aby volající a dědice byly plně důvěryhodné. Sestavení, která jsou spuštěna pod pravidly zabezpečení přístupu kódu z dřívějších .NET Framework verzí, mohou volat sestavení úrovně 2. V takovém případě budou atributy kritické pro zabezpečení považovány za požadavky propojení pro úplný vztah důvěryhodnosti.  
@@ -237,7 +237,7 @@ class Implemented : ICanCastToMe
   
  V .NET Framework verzích 1,0 a 1,1 je nutné znát nuance typu přístupnost systému při potvrzení, že váš kód není k dispozici jiným sestavením. Metoda, která je deklarována jako **Virtual** a **interní** (přepisovatelných**přátel** v Visual Basic) může přepsat položku vtable nadřazené třídy a lze ji použít pouze v rámci stejného sestavení, protože je interní. Přístupnost pro přepsání je však určena klíčovým slovem **Virtual** a může být přepsána z jiného sestavení, pokud má kód přístup ke třídě samotné. Pokud možnost přepsání představuje problém, použijte k opravě deklarativní zabezpečení nebo odeberte klíčové slovo **Virtual** , pokud není nezbytně nutné.  
   
- Všimněte si, že i v případě, že kompilátor jazyka zabrání těmto přepsáním s chybou kompilace, je možné kód napsaný s jinými kompilátory přepsat.  
+ I v případě, že kompilátor jazyka zabraňuje těmto přepsáním s chybou kompilace, je možné kód napsaný s ostatními kompilátory přepsat.  
   
 ## <a name="see-also"></a>Viz také
 

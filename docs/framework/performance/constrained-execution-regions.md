@@ -1,16 +1,17 @@
 ---
 title: Oblasti omezeného provádění
+description: Začněte s omezenými oblastmi provádění (CER), které jsou součástí mechanismu pro vytváření spolehlivého spravovaného kódu.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - constrained execution regions
 - CERs
 ms.assetid: 99354547-39c1-4b0b-8553-938e8f8d1808
-ms.openlocfilehash: 3161f77399030c287649ee5757814963b6afb7cf
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: d928c9357af4a02e389d9ffd5df4ad0195edab06
+ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85247724"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86309609"
 ---
 # <a name="constrained-execution-regions"></a>Oblasti omezeného provádění
 Omezená oblast provádění (CER) je součástí mechanismu pro vytváření spolehlivého spravovaného kódu. CER definuje oblast, ve které je modul CLR (Common Language Runtime) omezený od vyvolání výjimek mimo pásmo, které by bránily v celém spuštění kódu v oblasti. V této oblasti je uživatelský kód omezen spouštěním kódu, který by způsobil vyvolání výjimek mimo pásmo. <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A>Metoda musí bezprostředně předcházet `try` bloku a značkám `catch` , `finally` a `fault` zablokovat jako omezené oblasti provádění. Po označení jako omezené oblasti musí kód volat pouze jiný kód se silnými kontrakty spolehlivosti a kód by neměl přidělit nebo vytvořit virtuální volání nepřipravených nebo nespolehlivých metod, pokud není kód připraven pro zpracování selhání. Rozhraní CLR zpoždění vlákna je přerušeno pro kód, který je spuštěn v CER.  

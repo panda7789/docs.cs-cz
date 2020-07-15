@@ -1,5 +1,6 @@
 ---
 title: Použití metody Assert
+description: Podívejte se, jak můžete použít metodu Assert k povolení kódu (a kódu volajícího) k tomu, aby váš kód měl oprávnění, ale ne jeho volajících.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -16,59 +17,59 @@ helpviewer_keywords:
 - permissions [.NET Framework], overriding security checks
 - permissions [.NET Framework], assertions
 ms.assetid: 1e40f4d3-fb7d-4f19-b334-b6076d469ea9
-ms.openlocfilehash: 92e49af78d42f360d5798a72d4e7b981295947e9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 096e0375a94c92a835cccb4d1b3297783b4120e9
+ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79181108"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86309804"
 ---
 # <a name="using-the-assert-method"></a>Použití metody Assert
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
   
- <xref:System.Security.CodeAccessPermission.Assert%2A>je metoda, která může být volána na <xref:System.Security.PermissionSet> třídy oprávnění přístupu kódu a na třídu. Assert můžete **použít** k povolení kódu (a příjem volajících) k provádění akcí, které váš kód má oprávnění k provedení, ale jeho volající nemusí mít oprávnění k tomu. Kontrolní výraz zabezpečení změní normální proces, který za běhu provádí během kontroly zabezpečení. Když uplatníte oprávnění, řekne systému zabezpečení, aby nekontroloval volající vašeho kódu pro uplatněné oprávnění.  
+ <xref:System.Security.CodeAccessPermission.Assert%2A>je metoda, která může být volána u tříd oprávnění přístupu kódu a <xref:System.Security.PermissionSet> třídy. Pomocí **výrazu Assert** můžete povolit váš kód (a volajícím) provádět akce, ke kterým má váš kód oprávnění, ale jeho volající nemusí mít oprávnění k tomu. Kontrolní výraz zabezpečení mění běžný proces, který modul runtime provede během kontroly zabezpečení. Pokud vyhodnotit oprávnění, sdělí systému zabezpečení, aby nekontroloval volající kód pro kontrolní oprávnění.  
   
 > [!CAUTION]
-> Kontrolní výrazy používejte opatrně, protože mohou otevřít bezpečnostní díry a ohrozit mechanismus běhu runtime pro vynucení bezpečnostních omezení.  
+> Používejte kontrolní výrazy pečlivě, protože mohou otevírat bezpečnostní otvory a podrušovat mechanismus modulu runtime pro vynucování omezení zabezpečení.  
   
- Kontrolní výrazy jsou užitečné v situacích, ve kterých knihovna volá do nespravovaného kódu nebo volání, které vyžaduje oprávnění, které zjevně nesouvisí s zamýšlené použití knihovny. Například všechny spravované kódy, které volají do nespravovaného kódu, musí mít **oprávnění Zabezpečení s** určeným příznakem **UnmanagedCode.** Kód, který nepochází z místního počítače, jako je například kód stažený z místní sítě intranet, nebude ve výchozím nastavení uděleno toto oprávnění. Proto aby kód, který je stažen z místnísítě intranet, aby bylo možné volat knihovnu, která používá nespravovaný kód, musí mít oprávnění uplatněné knihovnou. Některé knihovny mohou navíc volat volajícím, které nejsou viditelné a vyžadují zvláštní oprávnění.  
+ Kontrolní výrazy jsou užitečné v situacích, kdy knihovna volá do nespravovaného kódu nebo provádí volání vyžadující oprávnění, které není zjevně související s zamýšleným použitím knihovny. Například všechen spravovaný kód, který volá do nespravovaného kódu, musí mít **SecurityPermission** s určeným **příznakem** . Kód, který nepochází z místního počítače, jako je například kód stažený z místního intranetu, nebude toto oprávnění ve výchozím nastavení uděleno. Proto aby kód, který je stažen z místního intranetu, mohl volat knihovnu, která používá nespravovaný kód, musí mít oprávnění, které je pro knihovnu uplatněno. Kromě toho mohou některé knihovny vyvolat volání, která jsou nepřesná volajícím a vyžadují zvláštní oprávnění.  
   
- Kontrolní výrazy můžete také použít v situacích, ve kterých váš kód přistupuje k prostředku způsobem, který je zcela skrytý před volajícími. Předpokládejme například, že knihovna získává informace z databáze, ale v procesu také čte informace z registru počítače. Vzhledem k tomu, že vývojáři, kteří používají vaši knihovnu, nemají přístup k vašemu zdroji, nemají žádný způsob, jak zjistit, že jejich kód vyžaduje **Oprávnění registru,** aby mohli používat váš kód. V takovém případě, pokud se rozhodnete, že není rozumné nebo nutné vyžadovat, aby volající kódu měli oprávnění k přístupu do registru, můžete uplatnit oprávnění ke čtení registru. V takovém případě je vhodné pro knihovnu uplatnit oprávnění tak, aby volající bez **RegistryPermission** můžete použít knihovnu.  
+ Můžete také použít kontrolní výrazy v situacích, ve kterých váš kód přistupuje k prostředku způsobem, který je zcela skrytý od volajících. Předpokládejme například, že vaše knihovna získává informace z databáze, ale v procesu také čte informace z registru počítače. Vzhledem k tomu, že vývojáři, kteří používají vaši knihovnu, nemají přístup k vašemu zdroji, nemají žádný způsob, jak si poznáte, že jejich kód vyžaduje **RegistryPermission** , aby mohl váš kód použít. V takovém případě, pokud se rozhodnete, že není přiměřené nebo nutné vyžadovat, aby volající vašeho kódu měli oprávnění pro přístup do registru, můžete uplatnit oprávnění pro čtení registru. V této situaci je vhodné, aby knihovna mohla uplatnit oprávnění, aby volající bez **RegistryPermission** mohli použít knihovnu.  
   
- Kontrolní výraz ovlivňuje procházení zásobníku pouze v případě, že uplatněné oprávnění a oprávnění požadované volajícím navazujícím vysíláním jsou stejného typu a pokud je požadované oprávnění podmnožinou uplatněného oprávnění. Pokud například uplatníte **oprávnění FileIOPermission** ke čtení všech souborů na jednotce C a pro FileIOPermission je požadováno, aby **fileiOPermission** četl soubory v C:\Temp, kontrolní výraz může ovlivnit procházení zásobníku; pokud však požadavek byl pro **FileIOPermission** zapisovat na jednotku C, kontrolní výraz by mít žádný vliv.  
+ Kontrolní výraz ovlivňuje procházení zásobníku pouze v případě, že kontrolní oprávnění a oprávnění vyžádané volajícím jsou stejného typu a pokud je požadované oprávnění podmnožinou vyžádaného oprávnění. Například, pokud vyberete hodnotu **FileIOPermission** pro čtení všech souborů na jednotce C a pro datové jednotky **FileIOPermission** se provede požadavek na přečtení souborů v C:\Temp, může kontrolní výraz ovlivnit procházení zásobníku. Nicméně pokud byla poptávka pro **FileIOPermission** pro zápis do jednotky C, kontrolní výraz by neměl mít žádný vliv.  
   
- Chcete-li provést kontrolní výrazy, musí být vašemu <xref:System.Security.Permissions.SecurityPermission> kódu uděleno oprávnění, které uplatňujete, a to, které představuje právo provádět kontrolní výrazy. I když můžete uplatnit oprávnění, že váš kód nebyl udělen, kontrolní výraz by bylo zbytečné, protože kontrola zabezpečení by se nezdaří dříve, než kontrolní výraz může způsobit jeho úspěšné.  
+ Chcete-li provést kontrolní výrazy, váš kód musí mít udělené oprávnění a <xref:System.Security.Permissions.SecurityPermission> , které představuje právo k provedení kontrolního výrazu. I když byste mohli vyhodnotit oprávnění, že váš kód nebyl udělen, kontrolní výraz by byl bezúčelné, protože ověření zabezpečení by mohlo selhat předtím, než může kontrolní výraz způsobit jeho úspěch.  
   
- Následující obrázek znázorňuje, co se stane při použití **assert**. Předpokládejme, že následující příkazy jsou pravdivé o sestaveních A, B, C, E a F a dvou oprávnění, P1 a P1A:  
+ Následující ilustrace ukazuje, co se stane, když použijete **Assert**. Předpokládejme, že následující příkazy jsou pravdivé pro sestavení A, B, C, E a F a dvě oprávnění, P1 a P1A:  
   
-- P1A představuje právo číst soubory TXT na jednotce C.  
+- P1A představuje právo číst soubory. txt na jednotce C.  
   
-- P1 představuje právo číst všechny soubory na jednotce C.  
+- P1 představuje právo na čtení všech souborů na jednotce C.  
   
-- P1A a P1 jsou oba **typy FileIOPermission** a P1A je podmnožinou P1.  
+- P1A a P1 jsou oba typy **FileIOPermission** a je P1A podmnožinou P1.  
   
-- Sestavením E a F bylo uděleno oprávnění P1A.  
+- Sestavením E a F byla udělena oprávnění P1A.  
   
 - Sestavení C bylo uděleno oprávnění P1.  
   
-- Sestavení A a B nebyla udělena oprávnění P1 ani P1A.  
+- Sestavení A a B byla udělena oprávnění P1 ani P1A.  
   
-- Metoda A je obsažena v sestavě A, metoda B je obsažena v sestavě B a tak dále.  
+- Metoda A je obsažena v sestavení A, metoda B je obsažena v sestavení B a tak dále.  
   
  ![Diagram, který znázorňuje sestavení metody Assert.](./media/using-the-assert-method/assert-method-assemblies.gif)
   
- V tomto scénáři metoda A volá B, B volá C, C volání E a E volání F. Metoda C uplatňuje oprávnění ke čtení souborů na jednotce C (oprávnění P1) a metoda E vyžaduje oprávnění ke čtení souborů TXT na jednotce C (oprávnění P1A). Při požadavku v F je zjištěna v době běhu, procházení zásobníku se provádí ke kontrole oprávnění všech volajících F, počínaje E. E bylo uděleno oprávnění P1A, takže procházení zásobníku pokračuje zkoumat oprávnění C, kde je zjištěn kontrolní výraz C. Vzhledem k tomu, že požadované oprávnění (P1A) je podmnožinou uplatňovaného oprávnění (P1), procházení zásobníku se zastaví a kontrola zabezpečení se automaticky ustřídá. Nezáleží na tom, že sestavení A a B nebyla udělena oprávnění P1A. Uplatněním P1, metoda C zajišťuje, že jeho volající přístup k prostředku chráněnép1, i v případě, že volající mnebyla udělena oprávnění k přístupu k tomuto prostředku.  
+ V tomto scénáři volá metoda A volání B, B volání jazyka C, volání jazyka C E a E volá F. Metoda C kontrolní výrazy oprávnění ke čtení souborů na jednotce C (oprávnění P1) a metoda E požaduje oprávnění ke čtení souborů. txt na jednotce C (oprávnění P1A). V případě, že poptávka v F je zjištěna v době běhu, je provedeno procházení zásobníku pro kontrolu oprávnění všech volajících F, počínaje E. E byl uděleno oprávnění P1A, takže procházení zásobníku pokračuje v kontrole oprávnění jazyka C, kde je zjištěn kontrolní výraz C. Vzhledem k tomu, že vyžádané oprávnění (P1A) je podmnožinou vyžádaného oprávnění (P1), procházení zásobníku se zastaví a Automatická kontroly zabezpečení se nezdaří. Nezáleží na tom, že sestavení A a B nemají udělena oprávnění P1A. Vytvrzením P1, metoda C zaručí, že volající mají přístup k prostředku chráněnému P1, a to i v případě, že volajícímu nebylo uděleno oprávnění k přístupu k tomuto prostředku.  
   
- Pokud navrhujete knihovnu tříd a třída přistupuje k chráněnému prostředku, měli byste ve většině případů vytvořit požadavek zabezpečení vyžadující, aby volající třídy měli příslušná oprávnění. Pokud třída pak provede operaci, pro kterou víte, že většina jeho volajících nebude mít oprávnění, a pokud jste ochotni převzít odpovědnost za to, že tito volající volají váš kód, můžete uplatnit oprávnění voláním metody **Assert** na objektu oprávnění, který představuje operaci, kterou kód provádí. Použití **Assert** tímto způsobem umožňuje volajícím, které obvykle nemůže tak učinit volání kódu. Pokud tedy uplatňujete oprávnění, měli byste předem provést příslušné kontroly zabezpečení, abyste zabránili zneužití součásti.  
+ Pokud navrhujete knihovnu tříd a třída přistupuje k chráněnému prostředku, měli byste ve většině případů učinit požadavek zabezpečení vyžadující, aby volající třídy měly příslušné oprávnění. Pokud třída poté provede operaci, pro kterou víte, že většina volajících nebude mít oprávnění, a pokud jste ochotni vzít zodpovědnost za to, že volajícímu kódu budou volat, můžete uplatnit oprávnění voláním metody **Assert** na objekt oprávnění, který představuje operaci, kterou kód provádí. Použití **výrazu Assert** tímto způsobem umožňuje volajícím, které obvykle nemohou provést volání vašeho kódu. Proto pokud přiřadíte oprávnění, měli byste předem provést příslušné kontroly zabezpečení, aby nedošlo k nesprávnému použití vaší komponenty.  
   
- Předpokládejme například, že vaše vysoce důvěryhodná třída knihovny má metodu, která odstraňuje soubory. Přistupuje k souboru voláním nespravované funkce Win32. Volající vyvolá metodu **Delete** vašeho kódu a předá název souboru, který má být odstraněn, C:\Test.txt. V rámci **Delete** metoda vytvoří <xref:System.Security.Permissions.FileIOPermission> objekt představující přístup pro zápis do C:\Test.txt. (K odstranění souboru je nutný přístup pro zápis.) Váš kód pak vyvolá imperativní kontrolu zabezpečení voláním metody **Demand** objektu **FileIOPermission.** Pokud jeden z volajících v zásobníku volání nemá <xref:System.Security.SecurityException> toto oprávnění, je vyvolána. Pokud není vyvolána žádná výjimka, víte, že všichni volající mají právo na přístup k c:\Test.txt. Vzhledem k tomu, že se domníváte, že většina volajících <xref:System.Security.Permissions.SecurityPermission> nebude mít oprávnění k přístupu k nespravovanému kódu, váš kód pak vytvoří objekt, který představuje právo volat nespravovaný kód a volá metodu **Assert** objektu. Nakonec volá nespravovanou funkci Win32 k odstranění c:\Text.txt a vrátí ovládací prvek volajícímu.  
+ Předpokládejme například, že vaše vysoce důvěryhodná třída knihovny má metodu, která odstraňuje soubory. Přistupuje k souboru voláním nespravované funkce Win32. Volající vyvolá metodu **odstranění** kódu předáním názvu souboru, který má být odstraněn, C:\Test.txt. V rámci metody **Delete** váš kód vytvoří objekt, který <xref:System.Security.Permissions.FileIOPermission> představuje přístup pro zápis do C:\Test.txt. (K odstranění souboru se vyžaduje přístup pro zápis.) Váš kód poté vyvolá imperativní kontrolu zabezpečení voláním metody **Demand** objektu **FileIOPermission** . Pokud jedno z volajících v zásobníku volání nemá toto oprávnění, <xref:System.Security.SecurityException> je vyvolána výjimka. Pokud není vyvolána žádná výjimka, víte, že všichni volající mají právo na přístup k C:\Test.txt. Vzhledem k tomu, že většina vašich volajících nebude mít oprávnění pro přístup k nespravovanému kódu, váš kód pak vytvoří <xref:System.Security.Permissions.SecurityPermission> objekt, který představuje právo na volání nespravovaného kódu a volá metodu **Assert** objektu. Nakonec volá nespravovanou funkci Win32 k odstranění C:\Text.txt a vrátí řízení volajícímu.  
   
 > [!CAUTION]
-> Musíte si být jisti, že váš kód nepoužívá kontrolní výrazy v situacích, kdy váš kód může být použit jiným kódem pro přístup k prostředku, který je chráněn oprávněním, které uplatňujete. Například v kódu, který zapisuje do souboru, jehož jméno je určeno volajícím jako parametr, byste neuplatnili **FileIOPermission** pro zápis do souborů, protože váš kód by byl otevřen zneužití třetí stranou.  
+> Musíte mít jistotu, že váš kód nepoužívá kontrolní výrazy v situacích, kdy váš kód může být použit jiným kódem pro přístup k prostředku, který je chráněn oprávněním, které uplatňujete. Například v kódu, který zapisuje do souboru, jehož název je zadán volajícím jako parametr, neurčíte hodnotu **FileIOPermission** pro zápis do souborů, protože kód by byl otevřen pro zneužití třetí stranou.  
   
- Při použití imperativní syntaxe zabezpečení volání **Assert** metoda na více oprávnění ve stejné metodě způsobí, že výjimku zabezpečení, které mají být vyvolány. Místo toho byste měli vytvořit Objekt **PermissionSet,** předat mu jednotlivá oprávnění, která chcete vyvolat, a pak volat metodu **Assert** na objektu **PermissionSet.** Při použití deklarativní syntaxe zabezpečení můžete volat metodu **Assert** více než jednou.  
+ Při použití imperativní syntaxe zabezpečení volání metody **Assert** u více oprávnění ve stejné metodě způsobí vyvolání výjimky zabezpečení. Místo toho byste měli vytvořit objekt **PermissionSet** , předat jeho jednotlivá oprávnění, která chcete vyvolat, a pak zavolat metodu **Assert** na objekt **PermissionSet** . Metodu **Assert** můžete zavolat více než jednou, pokud použijete deklarativní syntaxi zabezpečení.  
   
- Následující příklad ukazuje deklarativní syntaxi pro přepsání kontrol zabezpečení pomocí metody **Assert.** Všimněte si, že syntaxe **FileIOPermissionAttribute** má dvě hodnoty: <xref:System.Security.Permissions.SecurityAction> výčet a umístění souboru nebo adresáře, ke kterému má být uděleno oprávnění. Volání **Assert** způsobí, že `C:\Log.txt` požadavky na přístup k úspěšné, i když volající nejsou kontrolovány oprávnění pro přístup k souboru.  
+ Následující příklad ukazuje deklarativní syntaxi pro přepsání kontrol zabezpečení pomocí metody **Assert** . Všimněte si, že syntaxe **FileIOPermissionAttribute** přebírá dvě hodnoty: <xref:System.Security.Permissions.SecurityAction> výčet a umístění souboru nebo adresáře, ke kterému má být uděleno oprávnění. Volání metody **Assert** způsobí, že požadavky pro přístup budou `C:\Log.txt` úspěšné, i když volajícím nejsou kontrolováni oprávnění k přístupu k souboru.  
   
 ```vb  
 Option Explicit  
@@ -117,7 +118,7 @@ namespace LogUtil
 }
 ```  
   
- Následující fragmenty kódu zobrazují imperativní syntaxi pro přepsání kontrol zabezpečení pomocí metody **Assert.** V tomto příkladu je deklarována instance objektu **FileIOPermission.** Jeho konstruktor je předán **FileIOPermissionAccess.AllAccess** definovat typ přístupu povoleno, následuje řetězec popisující umístění souboru. Jakmile je objekt **FileIOPermission** definován, stačí pouze volat **jeho** assert metodu přepsat kontrolu zabezpečení.  
+ Následující fragmenty kódu ukazují imperativní syntaxi pro přepsání kontrol zabezpečení pomocí metody **Assert** . V tomto příkladu je deklarována instance objektu **FileIOPermission** . Jeho konstruktoru je předán **FileIOPermissionAccess. AllAccess** , který definuje typ povoleného přístupu následovaný řetězcem, který popisuje umístění souboru. Po definování objektu **FileIOPermission** stačí volat jeho metodu **Assert** pro přepsání kontroly zabezpečení.  
   
 ```vb  
 Option Explicit  

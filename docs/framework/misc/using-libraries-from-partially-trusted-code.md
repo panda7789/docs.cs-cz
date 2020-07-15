@@ -1,5 +1,6 @@
 ---
 title: Používání knihoven z částečně důvěryhodného kódu
+description: Zjistěte, jak používat knihovny z částečně důvěryhodného kódu. Použijte atribut AllowPartiallyTrustedCallersAttribute pro volání sdílených spravovaných knihoven.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - security [.NET Framework], partially trusted code
@@ -9,45 +10,45 @@ helpviewer_keywords:
 - code access security, partially trusted code
 - APTCA
 ms.assetid: dd66cd4c-b087-415f-9c3e-94e3a1835f74
-ms.openlocfilehash: 61291a07639c3f92a05f78dff49f6b20f1aee77e
-ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
+ms.openlocfilehash: d2e015e381a3778bbab9977af20897ce9f1955c1
+ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/20/2020
-ms.locfileid: "81645719"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86309219"
 ---
 # <a name="using-libraries-from-partially-trusted-code"></a>Používání knihoven z částečně důvěryhodného kódu
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
   
 > [!NOTE]
-> Toto téma řeší chování sestavení se silným názvem a vztahuje se pouze na sestavení [úrovně 1.](security-transparent-code-level-1.md) [Transparentní kód zabezpečení,](security-transparent-code-level-2.md) sestavení úrovně 2 v rozhraní .NET Framework 4 nebo novější nejsou ovlivněny silnými názvy. Další informace o změnách v systému zabezpečení naleznete v [tématu Změny zabezpečení](https://docs.microsoft.com/previous-versions/dotnet/framework/security/security-changes).  
+> Toto téma řeší chování sestavení se silným názvem a vztahuje se pouze na sestavení [úrovně 1](security-transparent-code-level-1.md) . [Kód transparentní pro zabezpečení, sestavení úrovně 2](security-transparent-code-level-2.md) v .NET Framework 4 nebo novějších není ovlivněn silnými názvy. Další informace o změnách v systému zabezpečení najdete v tématu [změny zabezpečení](https://docs.microsoft.com/previous-versions/dotnet/framework/security/security-changes).  
   
- Aplikace, které obdrží méně než úplný vztah důvěryhodnosti od svého hostitele nebo izolovaného prostoru, nesmějí volat <xref:System.Security.AllowPartiallyTrustedCallersAttribute> sdílené spravované knihovny, pokud jim to zapisovatel knihovny výslovně nepovolí pomocí atributu. Proto je třeba, aby autoři aplikací věděli, že některé knihovny nebudou k dispozici z částečně důvěryhodného kontextu. Ve výchozím nastavení je veškerý kód, který se spouští v [izolovaném prostoru](how-to-run-partially-trusted-code-in-a-sandbox.md) s částečnou důvěryhodností a není v seznamu plně důvěryhodných sestavení, částečně důvěryhodný. Pokud neočekáváte, že váš kód bude spuštěn z částečně důvěryhodného kontextu nebo bude volán částečně důvěryhodným kódem, nemusíte se obávat informací v této části. Pokud však píšete kód, který musí pracovat s částečně důvěryhodným kódem nebo pracovat z částečně důvěryhodného kontextu, měli byste zvážit následující faktory:  
+ Aplikacím, které přijímají méně než úplný vztah důvěryhodnosti od svého hostitele nebo izolovaného prostoru (sandbox), není povoleno volat sdílené spravované knihovny, pokud modul pro zápis knihovny je výslovně nepovoluje prostřednictvím použití <xref:System.Security.AllowPartiallyTrustedCallersAttribute> atributu. Proto musí autoři aplikací vědět, že některé knihovny nebudou pro ně z částečně důvěryhodného kontextu k dispozici. Ve výchozím nastavení je částečně důvěryhodný všechen kód, který se spouští v [izolovaném prostoru (sandbox)](how-to-run-partially-trusted-code-in-a-sandbox.md) s částečným vztahem důvěryhodnosti a není v seznamu sestavení s úplným vztahem důvěryhodnosti. Neočekáváte-li, že se váš kód má spustit z částečně důvěryhodného kontextu nebo bude volán částečně důvěryhodným kódem, nemusíte mít obavy z informací v této části. Nicméně pokud píšete kód, který musí komunikovat s částečně důvěryhodným kódem nebo pracovat z částečně důvěryhodného kontextu, měli byste vzít v úvahu následující faktory:  
   
-- Knihovny musí být podepsány silným názvem, aby mohly být sdíleny více aplikacemi. Silné názvy umožňují, aby byl kód umístěn do globální mezipaměti sestavení nebo <xref:System.AppDomain>přidán do úplného seznamu izolovaného prostoru a umožňuje spotřebitelům ověřit, zda určitý kus mobilního kódu skutečně pochází od vás.  
+- Knihovny musí být podepsány se silným názvem, aby je bylo možné sdílet s více aplikacemi. Silné názvy umožňují, aby váš kód byl umístěn do globální mezipaměti sestavení (GAC) nebo přidaný do seznamu plně důvěryhodných izolovaného prostoru (sandboxing) <xref:System.AppDomain> a umožnil uživatelům ověření, že z vás skutečně pochází konkrétní mobilní kód.  
   
-- Ve výchozím nastavení sdílené knihovny [úrovně 1](security-transparent-code-level-1.md) se silným názvem provádějí implicitní [linkdemand](link-demands.md) pro úplnou důvěryhodnost automaticky, aniž by zapisovač knihovny musel něco dělat.  
+- Ve výchozím nastavení provádí sdílené knihovny se silným názvem [1](security-transparent-code-level-1.md) , které mají pro úplný vztah důvěryhodnosti automaticky implicitní [LinkDemand](link-demands.md) , a to bez toho, aby zapisovač knihovny musel dělat cokoli.  
   
-- Pokud volající nemá úplný vztah důvěryhodnosti, ale stále se pokusí volat <xref:System.Security.SecurityException> takovou knihovnu, runtime vyvolá a volající není povoleno odkazovat na knihovnu.  
+- Pokud volající nemá úplný vztah důvěryhodnosti, ale přesto se pokusí zavolat takovou knihovnu, modul runtime vyvolá výjimku <xref:System.Security.SecurityException> a volající není povolen odkaz na knihovnu.  
   
-- Chcete-li zakázat automatické **LinkDemand** a zabránit vyvolání výjimky, můžete umístit **AllowPartiallyTrustedCallersAttribute** atribut na rozsah sestavení sdílené knihovny. Tento atribut umožňuje volání knihoven z částečně důvěryhodného spravovaného kódu.  
+- Chcete-li zakázat automatický **LinkDemand** a zabránit vyvolání výjimky, můžete umístit atribut **AllowPartiallyTrustedCallersAttribute** do oboru sestavení sdílené knihovny. Tento atribut umožňuje volání knihoven z částečně důvěryhodného spravovaného kódu.  
   
-- Částečně důvěryhodný kód, kterému je udělen přístup ke knihovně s <xref:System.AppDomain>tímto atributem, stále podléhá dalším omezením definovaným programem .  
+- Částečně důvěryhodný kód, kterému je udělen přístup ke knihovně s tímto atributem, je nadále předmětem dalších omezení definovaných v <xref:System.AppDomain> .  
   
-- Neexistuje žádný programový způsob, jak částečně důvěryhodný kód volat knihovnu, která nemá **Atribut AllowPartiallyTrustedCallersAttribute.**  
+- Neexistuje žádný programový způsob pro částečně důvěryhodný kód pro volání knihovny, která nemá atribut **AllowPartiallyTrustedCallersAttribute** .  
   
- Knihovny, které jsou soukromé pro konkrétní aplikaci, nevyžadují silný název nebo atribut **AllowPartiallyTrustedCallersAttribute** a nelze na ně odkazovat potenciálně škodlivým kódem mimo aplikaci. Takový kód je chráněn proti úmyslnému nebo neúmyslnému zneužití částečně důvěryhodným mobilním kódem, aniž by vývojář musel dělat něco navíc.  
+ Knihovny, které jsou soukromé pro určitou aplikaci, nevyžadují silný název nebo atribut **AllowPartiallyTrustedCallersAttribute** a nemohou být odkazovány potenciálně škodlivým kódem mimo aplikaci. Takový kód je chráněn proti úmyslnému nebo neúmyslnému zneužití částečně důvěryhodným mobilním kódem, aniž by vývojář musel dělat něco dalšího.  
   
  Měli byste zvážit explicitní povolení použití částečně důvěryhodným kódem pro následující typy kódu:  
   
-- Kód, který byl pečlivě testován na slabá místa zabezpečení a je v souladu s pokyny popsanými v [pokynech pro bezpečné kódování](../../standard/security/secure-coding-guidelines.md).  
+- Kód, který byl usilovně testován na chyby zabezpečení a je v souladu s pokyny popsanými v [pokynech pro bezpečné kódování](../../standard/security/secure-coding-guidelines.md).  
   
-- Knihovny kódu se silným názvem, které jsou speciálně napsány pro částečně důvěryhodné scénáře.  
+- Knihovny kódu se silným názvem, které jsou speciálně určeny pro částečně důvěryhodné scénáře.  
   
-- Všechny součásti (částečně nebo plně důvěryhodné) podepsané silným názvem, který bude volán kódem staženým z Internetu.  
+- Všechny součásti (bez ohledu na to, zda jsou částečně nebo plně důvěryhodné) podepsané silným názvem, který bude volán kódem staženým z Internetu.  
   
 > [!NOTE]
-> Některé třídy v knihovně tříd rozhraní .NET Framework nemají atribut **AllowPartiallyTrustedCallersAttribute** a nelze je volat částečně důvěryhodným kódem.  
+> Některé třídy v knihovně tříd .NET Framework nemají atribut **AllowPartiallyTrustedCallersAttribute** a nemohou být volány částečně důvěryhodným kódem.  
   
 ## <a name="see-also"></a>Viz také
 

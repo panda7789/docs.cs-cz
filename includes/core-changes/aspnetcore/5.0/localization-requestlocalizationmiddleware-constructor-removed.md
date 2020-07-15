@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: b1d4b69b7a8ed68cd688dfd0249d5107b80e67c4
-ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
+ms.openlocfilehash: db941229e02064ee856829417d6762aa17b0b926
+ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/13/2020
-ms.locfileid: "86281334"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86309139"
 ---
 ### <a name="localization-obsolete-constructor-removed-in-request-localization-middleware"></a>Lokalizace: v middlewari pro lokalizaci požadavků byl odebrán zastaralý konstruktor.
 
@@ -12,7 +12,7 @@ ms.locfileid: "86281334"
 
 #### <a name="version-introduced"></a>Představená verze
 
-5.0
+5,0 Preview 8
 
 #### <a name="old-behavior"></a>Staré chování
 
@@ -32,7 +32,7 @@ Při ruční konstrukci instance třídy `RequestLocalizationMiddleware` předej
 
 #### <a name="category"></a>Kategorie
 
-ASP.NET Core
+Jádro ASP.NET
 
 #### <a name="affected-apis"></a>Ovlivněná rozhraní API
 

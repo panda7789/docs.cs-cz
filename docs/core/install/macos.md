@@ -4,12 +4,12 @@ description: Přečtěte si, na jaké verze macOS můžete .NET Core nainstalova
 author: adegeo
 ms.author: adegeo
 ms.date: 06/25/2020
-ms.openlocfilehash: bb1a0fa24e2f6e8850cbe59378793ff846f04ba9
-ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
+ms.openlocfilehash: 2900d98dbd30c51f689cdce37ea273ccc4f598b5
+ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85804490"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86308920"
 ---
 # <a name="install-net-core-on-macos"></a>Nainstalovat .NET Core na macOS
 
@@ -23,7 +23,8 @@ V tomto článku se dozvíte, jak nainstalovat .NET Core na macOS. .NET Core se 
 
 Nejnovější verze .NET Core je 3,1.
 
-[Stáhněte si .NET Core.](https://dotnet.microsoft.com/download/dotnet-core)
+> [!div class="button"]
+> [Stáhnout .NET Core](https://dotnet.microsoft.com/download/dotnet-core)
 
 ## <a name="supported-releases"></a>Podporované verze
 
@@ -59,13 +60,15 @@ Spustí aplikace ASP.NET Core. Zahrnuje modul runtime .NET Core.
 *Modul runtime .NET Core*\
 Tento modul runtime je nejjednodušším modulem runtime a neobsahuje žádné další moduly runtime. Pro zajištění nejlepší kompatibility s aplikacemi .NET Core důrazně doporučujeme nainstalovat *ASP.NET Core Runtime* .
 
-[Stáhněte si modul runtime .NET Core.](https://dotnet.microsoft.com/download/dotnet-core)
+> [!div class="button"]
+> [Stáhnout .NET Core Runtime](https://dotnet.microsoft.com/download/dotnet-core)
 
 ## <a name="sdk-information"></a>Informace o sadě SDK
 
 Sada SDK se používá k sestavování a publikování aplikací a knihoven .NET Core. Instalace sady SDK zahrnuje jak [běhové prostředí](#runtime-information): ASP.NET Core, tak .NET Core.
 
-[Stáhněte si .NET Core SDK.](https://dotnet.microsoft.com/download/dotnet-core)
+> [!div class="button"]
+> [Stáhnout .NET Core SDK](https://dotnet.microsoft.com/download/dotnet-core)
 
 ## <a name="dependencies"></a>Závislosti
 

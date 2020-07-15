@@ -10,15 +10,15 @@ helpviewer_keywords:
 - secure coding, exception handling
 - exception handling, security
 ms.assetid: 1f3da743-9742-47ff-96e6-d0dd1e9e1c19
-ms.openlocfilehash: 009e587c0458488db6c2aa92e13311ddc08a64b1
-ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
+ms.openlocfilehash: 73597f83d7236cd48a18a891c987b4f5d7e1723d
+ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/13/2020
-ms.locfileid: "86281992"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86309037"
 ---
 # <a name="securing-exception-handling"></a>Zabezpečení zpracování výjimek
-V Visual C++ a Visual Basic se výraz filtru podrobněji spouští před jakýmkoli příkazem **finally** . Blok **catch** přidružený k tomuto filtru se spustí po příkazu **finally** . Další informace najdete v tématu [použití uživatelem filtrovaných výjimek](../../standard/exceptions/using-user-filtered-exception-handlers.md). V této části se prohlíží vlivem na zabezpečení tohoto pořadí. Vezměte v úvahu následující příklad pseudokódu, který znázorňuje pořadí, ve kterém se spouštějí příkazy filtru a příkazy **finally** .  
+V Visual C++ a Visual Basic se výraz filtru podrobněji spouští před jakýmkoli `finally` příkazem. Blok **catch** přidružený k tomuto filtru se spustí po `finally` příkazu. Další informace najdete v tématu [použití uživatelem filtrovaných výjimek](../../standard/exceptions/using-user-filtered-exception-handlers.md). V této části se prohlíží vlivem na zabezpečení tohoto pořadí. Vezměte v úvahu následující příklad pseudokódu, který ukazuje pořadí, ve kterém se spouštějí příkazy filtru a `finally` příkazy.  
   
 ```cpp  
 void Main()
@@ -59,7 +59,7 @@ Finally
 Catch  
 ```  
   
- Filtr se spustí před příkazem **finally** , takže problémy se zabezpečením mohou být provedeny cokoli, co provede změnu stavu, kde může využít jiný kód. Příklad:  
+ Filtr se spustí před `finally` příkazem, takže problémy se zabezpečením mohou být provedeny cokoli, co provede změnu stavu, kde může využít jiný kód. Příklad:  
   
 ```cpp  
 try
@@ -78,7 +78,7 @@ finally
 }  
 ```  
   
- Tento pseudokódu umožňuje filtru zvýšit množství zásobníku tak, aby běžel libovolný kód. Další příklady operací, které by měly podobný účinek, jsou dočasné zosobnění jiné identity, nastavení interního příznaku, který obchází určitou kontrolu zabezpečení nebo změnu jazykové verze přidružené k vláknu. Doporučené řešení je zavedení obslužné rutiny výjimky pro izolaci změn kódu do stavu vlákna z bloků filtru volajících. Je však důležité, aby obslužná rutina výjimky byla správně zavedena, nebo tento problém nebude vyřešen. Následující příklad přepne jazykovou verzi uživatelského rozhraní, ale jakýkoli druh změny stavu vlákna může být podobně vystavený.  
+ Tento pseudokódu umožňuje filtru zvýšit množství zásobníku tak, aby běžel libovolný kód. Další příklady operací, které by měly podobný účinek, jsou dočasné zosobnění jiné identity, nastavení interního příznaku, který obchází určitou kontrolu zabezpečení nebo změnu jazykové verze přidružené k vláknu. Doporučené řešení je zavedení obslužné rutiny výjimky pro izolaci změn kódu do stavu vlákna z bloků filtru volajících. Je však důležité správně zavést obslužnou rutinu výjimky nebo tento problém nebude vyřešen. Následující příklad přepne jazykovou verzi uživatelského rozhraní, ale jakýkoli druh změny stavu vlákna může být podobně vystavený.  
   
 ```cpp  
 YourObject.YourMethod()  
@@ -135,9 +135,9 @@ YourObject.YourMethod()
 }  
 ```  
   
- Tím se problém nevyřeší, protože příkaz **finally** nebyl spuštěn před `FilterFunc` ovládacím prvkem Get.  
+ Tím se problém nevyřeší, protože `finally` příkaz nebyl spuštěn před tím, než `FilterFunc` získá ovládací prvek.  
   
- Následující příklad opravuje problém tím, že zajišťuje, že klauzule **finally** byla provedena před tím, než nabídka vyvolá výjimky v blocích filtru výjimky volajících.  
+ Následující příklad opravuje problém tím, že zajistí, že `finally` byla klauzule provedena před tím, než nabídka vyvolá výjimku v blocích filtru výjimky volajících.  
   
 ```cpp  
 YourObject.YourMethod()  

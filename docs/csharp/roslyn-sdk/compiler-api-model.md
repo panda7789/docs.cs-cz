@@ -1,14 +1,14 @@
 ---
 title: .NET Compiler Platform koncepty a objektový model sady SDK
 description: Tento přehled poskytuje pozadí, které potřebujete pro efektivní práci se sadou .NET Compiler SDK. Naučíte se vrstvy rozhraní API, hlavní typy a celkový objektový model.
-ms.date: 10/10/2017
+ms.date: 07/13/2020
 ms.custom: mvc
-ms.openlocfilehash: 529ce6fbdef22964251c8b22abbd5d8aadab633d
-ms.sourcegitcommit: fff146ba3fd1762c8c432d95c8b877825ae536fc
+ms.openlocfilehash: a65d282dd3c58279bbfd635c0386d50ce3f30055
+ms.sourcegitcommit: e7748001b1cee80ced691d8a76ca814c0b02dd9b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82975937"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86374465"
 ---
 # <a name="understand-the-net-compiler-platform-sdk-model"></a>Principy modelu .NET Compiler Platform SDK
 
@@ -30,13 +30,11 @@ V rámci každé z těchto fází sada SDK .NET Compiler Platform zpřístupňuj
 
 Každý kompilátor kombinuje tyto komponenty dohromady jako jeden celý celek.
 
-Tato rozhraní API jsou stejná jako ta, která používá aplikace Visual Studio. Například funkce navigace v kódu a formátování používají stromy syntaxe, Prohlížeč objektů a navigační funkce používají tabulku symbolů, refaktoringy, přejít k definici používá sémantický model a příkaz Upravit a pokračovat používá všechny z nich, včetně rozhraní Emit API.
+Tato rozhraní API jsou stejná jako ta, která používá aplikace Visual Studio. Například funkce pro sbalení a formátování kódu používají stromy syntaxe, **Prohlížeč objektů**a navigační funkce používají tabulku symbolů, refaktoringy, **Přejít k definici** používá sémantický model a příkaz **Upravit a pokračovat** používá všechny z nich, včetně rozhraní Emit API.
 
 ## <a name="api-layers"></a>Vrstvy API
 
-Sada SDK kompilátoru .NET se skládá ze dvou hlavních vrstev rozhraní API: rozhraní API pro kompilátor a rozhraní API pracovních prostorů.
-
-![vrstvy rozhraní API reprezentované rozhraními API kanálu kompilátoru](media/compiler-api-model/api-layers.png)
+Sada SDK kompilátoru .NET se skládá z několika vrstev rozhraní API: rozhraní API kompilátoru, rozhraní API pro diagnostiku, skriptovací rozhraní API a pracovní prostory.
 
 ### <a name="compiler-apis"></a>Rozhraní API kompilátoru
 
@@ -44,7 +42,7 @@ Vrstva kompilátoru obsahuje objektové modely, které odpovídají informacím 
 
 ### <a name="diagnostic-apis"></a>Rozhraní API pro diagnostiku
 
-V rámci analýzy může kompilátor vytvořit sadu diagnostiky, která pokrývá vše od syntaxe, sémantické a omezené Chyby přiřazení k různým upozorněním a informativní diagnostice. Vrstva rozhraní API kompilátoru zpřístupňuje diagnostiku prostřednictvím rozšiřitelného rozhraní API, které umožňuje připojit uživatelsky definované analyzátory do procesu kompilace. Umožňuje vytvářet uživatelsky definované diagnostiky, jako jsou ty, které vytvořily nástroje jako StyleCop nebo FxCop, a to společně s diagnostikou definovanou kompilátorem. Vytváření diagnostiky tímto způsobem má za následek integraci přirozeně s nástroji, jako je MSBuild a Visual Studio, které závisí na diagnostice pro prostředí, jako je například zastavení sestavení založeného na zásadách a zobrazení živých vlnovek v editoru a návrh oprav kódu.
+V rámci analýzy může kompilátor vytvořit sadu diagnostiky, která pokrývá vše od syntaxe, sémantické a omezené Chyby přiřazení k různým upozorněním a informativní diagnostice. Vrstva rozhraní API kompilátoru zpřístupňuje diagnostiku prostřednictvím rozšiřitelného rozhraní API, které umožňuje připojit uživatelsky definované analyzátory do procesu kompilace. Umožňuje vytvářet uživatelsky definované diagnostiky, jako jsou ty, které vytvořily nástroje jako StyleCop nebo FxCop, a to společně s diagnostikou definovanou kompilátorem. Vytváření diagnostiky tímto způsobem má za následek integraci přirozeně s nástroji, jako je MSBuild nebo Visual Studio, které závisí na diagnostice pro prostředí, jako je například zastavení sestavení založeného na zásadách a zobrazení živých vlnovek v editoru a návrh oprav kódu.
 
 ### <a name="scripting-apis"></a>Rozhraní API pro skriptování
 

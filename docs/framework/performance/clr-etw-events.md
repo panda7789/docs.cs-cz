@@ -1,17 +1,18 @@
 ---
 title: Události ETW CLR
+description: 'Viz články o událostech modulu CLR (Common Language Runtime) pro trasování událostí pro Windows (ETW). Existují dva Zprostředkovatelé událostí: poskytovatel modulu runtime a poskytovatel doběhu.'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - CLR ETW events
 - ETW, common language runtime
 - ETW, CLR events
 ms.assetid: ef2b31c3-7426-43e7-9924-92339b96556d
-ms.openlocfilehash: e879dcf385acbc522c0a3573cfa374550ea23333
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.openlocfilehash: 22a2f027462d67d5a933972a7420c5f0e38353e5
+ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77504134"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86309830"
 ---
 # <a name="clr-etw-events"></a>Události ETW CLR
 Témata v této části popisují události trasování událostí pro Windows (ETW). Každá událost má přidružené klíčové slovo a úroveň, které jsou popsány v tématu [klíčová slova ETW a úrovně CLR](clr-etw-keywords-and-levels.md) . CLR má dva poskytovatele pro události:  
@@ -41,10 +42,10 @@ Témata v této části popisují události trasování událostí pro Windows (
  [Události metod](method-etw-events.md)  
  Zachycuje informace o metodách CLR pro rozlišení symbolů.  
   
- [Události kolekce paměti](garbage-collection-etw-events.md)  
+ [Události uvolňování paměti](garbage-collection-etw-events.md)  
  Zachycuje informace týkající se uvolňování paměti, které vám pomůžou diagnostikovat a ladit.  
   
- [JIT – události trasování (CLR)](jit-tracing-etw-events.md)  
+ [Události trasování JIT](jit-tracing-etw-events.md)  
  Zachycuje informace o vkládání za běhu a volání funkce tail.  
   
  [Události interoperability](interop-etw-events.md)  
@@ -63,6 +64,6 @@ Témata v této části popisují události trasování událostí pro Windows (
 
 - [Vylepšení ladění a optimalizace výkonu pomocí ETW](https://docs.microsoft.com/archive/msdn-magazine/2007/april/event-tracing-improve-debugging-and-performance-tuning-with-etw)
 - [Řízení přihlašování rozhraní .NET Framework](controlling-logging.md)
-- [Poskytovatelé Trasování událostí pro Windows v CLR](clr-etw-providers.md)
-- [Klíčová slova a úrovně Trasování událostí pro Windows v CLR](clr-etw-keywords-and-levels.md)
+- [Poskytovatelé CLR ETW](clr-etw-providers.md)
+- [Klíčová slova a úrovně ETW CLR](clr-etw-keywords-and-levels.md)
 - [Události Trasování událostí pro Windows v CLR (Common Language Runtime)](etw-events-in-the-common-language-runtime.md)

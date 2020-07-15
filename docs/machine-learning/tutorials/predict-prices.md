@@ -4,12 +4,12 @@ description: V tomto kurzu se naučíte, jak vytvořit regresní model s využit
 ms.date: 06/30/2020
 ms.topic: tutorial
 ms.custom: mvc, title-hack-0516
-ms.openlocfilehash: 27054e28f9a4fa628f0d7348d45528b690d7da83
-ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
+ms.openlocfilehash: beb48c9252b83cd693c351d39882b7ac9d08d882
+ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/13/2020
-ms.locfileid: "86281768"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86309713"
 ---
 # <a name="tutorial-predict-prices-using-regression-with-mlnet"></a>Kurz: předpověď cen pomocí regrese s ML.NET
 
@@ -35,7 +35,7 @@ V tomto kurzu se naučíte:
 
 1. Vytvořte v projektu adresář s názvem *data* pro uložení sady dat a souborů modelu.
 
-1. Nainstalujte balíček NuGet **Microsoft.ml** :
+1. Nainstalujte balíček NuGet **Microsoft.ml** a **Microsoft. ml. FastTree** :
 
     [!INCLUDE [mlnet-current-nuget-version](../../../includes/mlnet-current-nuget-version.md)]
 
@@ -268,7 +268,7 @@ Chcete-li zobrazit předpovězené tarify zadané cesty, přidejte do metody ná
 
 Spusťte program, abyste viděli předpovězené taxislužby jízdné za váš testovací případ.
 
-Blahopřejeme! Teď jste úspěšně vytvořili model strojového učení pro předvídání tarifů taxislužby Trip, vyhodnotili jste jeho přesnost a použili ho k vytvoření předpovědi. Zdrojový kód pro tento kurz najdete v úložišti GitHub [/Samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/TaxiFarePrediction) GitHub.
+Blahopřejeme. Teď jste úspěšně vytvořili model strojového učení pro předvídání tarifů taxislužby Trip, vyhodnotili jste jeho přesnost a použili ho k vytvoření předpovědi. Zdrojový kód pro tento kurz najdete v úložišti GitHub [/Samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/TaxiFarePrediction) GitHub.
 
 ## <a name="next-steps"></a>Další kroky
 
