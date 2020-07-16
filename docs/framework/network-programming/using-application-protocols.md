@@ -1,5 +1,5 @@
 ---
-title: Použití aplikačních protokolů
+title: Používání aplikačních protokolů
 description: Přečtěte si o běžně používaných protokolech internetových aplikací, které .NET Framework podporuje, jako je HTTP, TCP a UDP, a implementace vlastních protokolů.
 ms.date: 03/30/2017
 helpviewer_keywords:
@@ -14,17 +14,18 @@ helpviewer_keywords:
 - receiving data, application protocols
 - requesting data from Internet, application protocols
 ms.assetid: 3aab4bcc-8397-4e1a-a1b6-bbd837a21430
-ms.openlocfilehash: 07c4a813d4e2c838fb236d2a7798f54a9ead3a6d
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: cd702085beff4ed6710eca83ac748a5915478387
+ms.sourcegitcommit: d4f7ba08f2a45a9dbef53be597eed6d4a9410f29
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502012"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86401962"
 ---
-# <a name="using-application-protocols"></a>Použití aplikačních protokolů
-.NET Framework podporuje běžně používané protokoly internetových aplikací. Tato část obsahuje informace o používání protokolů [http](http.md), TCP a UDP a také informace o použití rozhraní [Windows Sockets](sockets.md) k implementaci vlastních protokolů.  
-  
-## <a name="see-also"></a>Viz také:
+# <a name="using-application-protocols"></a>Používání aplikačních protokolů
+
+.NET Framework podporuje běžně používané protokoly internetových aplikací. Tato část obsahuje informace o používání protokolů [http](http.md), [TCP](using-tcp-services.md)a [UDP](using-udp-services.md) a také informace o použití rozhraní [Windows Sockets](sockets.md) k implementaci vlastních protokolů.
+
+## <a name="see-also"></a>Viz také
 
 - [Síťové programování v rozhraní .NET Framework](index.md)
 - [Ukázky programování sítě](network-programming-samples.md)

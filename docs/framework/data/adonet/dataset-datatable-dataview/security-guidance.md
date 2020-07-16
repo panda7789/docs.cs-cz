@@ -3,12 +3,12 @@ title: Doprovodné materiály k zabezpečení datových sad a DataTable
 ms.date: 07/14/2020
 dev_langs:
 - csharp
-ms.openlocfilehash: c6b32afeadccc3fd22d6611d282840233280440f
-ms.sourcegitcommit: e7748001b1cee80ced691d8a76ca814c0b02dd9b
+ms.openlocfilehash: f78b52ede4ec76599d761e5188f39c3e9dae2a4f
+ms.sourcegitcommit: 98548968e89739a37625e72ddbd535fe1e11121e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86382454"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86405289"
 ---
 # <a name="dataset-and-datatable-security-guidance"></a>Doprovodné materiály k zabezpečení datových sad a DataTable
 
@@ -195,7 +195,8 @@ Po povolení režimu auditu můžete použít _App.config_ pro připojení k `Tr
 
 Další informace o `TraceSource` a `TraceListener` najdete v dokumentu [Postupy: použití TraceSource a filtrů s naslouchacími procesy trasování](/dotnet/framework/debug-trace-profile/how-to-use-tracesource-and-filters-with-trace-listeners).
 
-**Poznámka**: spuštění aplikace v režimu auditování není dostupné v rozhraní .NET Core nebo .NET 5,0 a novějších.
+> [!NOTE]
+> Spuštění aplikace v režimu auditování není v rozhraní .NET Core nebo .NET 5,0 a novějších k dispozici.
 
 <a name="ratr"></a>
 
@@ -207,7 +208,7 @@ Pokud aplikace musí odebrat všechny omezující omezení typu `DataSet` a `Dat
 * Dostupné možnosti závisí na architektuře, na kterou aplikace cílí.
 
 > [!WARNING]
-> Odebrání všech omezení typu může do aplikace zavádět bezpečnostní otvor. Při použití tohoto mechanismu ověřte, že aplikace **nepoužívá** `DataSet` nebo `DataTable` čte nedůvěryhodný vstup. Další informace najdete v článku [CVE-2020-1147](https://portal.msrc.microsoft.com/security-guidance/advisory/CVE-2020-1147) a v následující části [s názvem bezpečnost s ohledem na nedůvěryhodný vstup](#swr).
+> Odebrání všech omezení typu může do aplikace zavádět bezpečnostní otvor. Při použití tohoto mechanismu ověřte, že aplikace **nepoužívá** `DataSet` nebo `DataTable` čte nedůvěryhodný vstup. Další informace najdete v článku [CVE-2020-1147](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2020-1147) a v následující části [s názvem bezpečnost s ohledem na nedůvěryhodný vstup](#swr).
 
 #### <a name="through-appcontext-configuration-net-framework-46---48-net-core-21-and-later-net-50-and-later"></a>Prostřednictvím konfigurace AppContext (.NET Framework 4,6-4,8, .NET Core 2,1 a novější, .NET 5,0 a novější)
 
@@ -463,7 +464,8 @@ public class MyClass
 
 Deserializace `DataSet` nebo `DataTable` tímto způsobem z nedůvěryhodného objektu BLOB JSON není bezpečná. Tento model je zranitelný vůči útokům DOS (Denial of Service). Takový útok může způsobit chybu aplikace nebo vykreslování, která neodpovídá.
 
-**Poznámka**: Společnost Microsoft nezaručuje ani nepodporuje implementaci knihoven třetích stran, jako je _Newtonsoft.Js_. Tyto informace jsou k dispozici pro úplnost a jsou přesné v době psaní tohoto zápisu.
+> [!NOTE]
+> Společnost Microsoft nezaručuje ani nepodporuje implementaci knihoven třetích stran, jako je _Newtonsoft.Js_. Tyto informace jsou k dispozici pro úplnost a jsou přesné v době psaní tohoto zápisu.
 
 ## <a name="deserialize-a-dataset-or-datatable-via-binaryformatter"></a>Deserializace datové sady nebo objektu DataTable prostřednictvím BinaryFormatter
 
