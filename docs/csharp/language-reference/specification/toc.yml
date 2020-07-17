@@ -1,4 +1,4 @@
-- name: 'Specifikace konceptu jazyka C# 6.0'
+- name: Specifikace konceptu jazyka C# 6.0
   items:
     - name: Úvod
       href: ../../../../_csharplang/spec/introduction.md
@@ -16,7 +16,7 @@
       href: ../../../../_csharplang/spec/expressions.md
     - name: Příkazy
       href: ../../../../_csharplang/spec/statements.md
-    - name: Obory názvů
+    - name: Jmenné prostory
       href: ../../../../_csharplang/spec/namespaces.md
     - name: Třídy
       href: ../../../../_csharplang/spec/classes.md

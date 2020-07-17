@@ -21,11 +21,11 @@
       href: metadata/
     - name: Profilace
       href: profiling/
-    - name: Vytváření silných názvů
+    - name: Silné názvy
       href: strong-naming/
     - name: WMI a čítače výkonu
       href: wmi/
-    - name: Pomocné funkce Tlbexp
+    - name: Podpůrné funkce Tlbexp
       href: tlbexp/
     - name: GUID_ManagedName – atribut
       href: guid-managedname-attribute.md

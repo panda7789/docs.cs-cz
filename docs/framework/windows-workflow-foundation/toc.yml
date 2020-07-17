@@ -136,7 +136,7 @@
               href: variables-and-arguments.md
             - name: Výrazy
               href: expressions.md
-            - name: 'Výrazy C#'
+            - name: Výrazy C#
               href: csharp-expressions.md
             - name: Vlastnosti versus Arguments
               href: properties-vs-arguments.md

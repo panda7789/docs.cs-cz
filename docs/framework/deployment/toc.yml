@@ -12,7 +12,7 @@
           href: reducing-system-restarts.md
         - name: 'Postupy: Získání procesu z instalačního programu .NET Framework 4.5'
           href: how-to-get-progress-from-the-dotnet-installer.md
-        - name: '.NET Framework – chyby inicializace: správa zkušeností uživatele'
+        - name: 'Chyby inicializace rozhraní .NET Framework: Správa zkušeností uživatele'
           href: initialization-errors-managing-the-user-experience.md
         - name: 'Postupy: Ladění problémů aktivace CLR'
           href: how-to-debug-clr-activation-issues.md
