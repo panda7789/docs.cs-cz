@@ -1,4 +1,4 @@
-- name: WMI a čítače výkonu
+- name: Rozhraní WMI a čítače výkonu
   href: index.md
   items:
     - name: Funkce BeginEnumeration
@@ -65,7 +65,7 @@
       href: inheritsfrom.md
     - name: Initialize
       href: initialize.md
-    - name: Další
+    - name: Next
       href: next.md
     - name: NextMethod
       href: nextmethod.md

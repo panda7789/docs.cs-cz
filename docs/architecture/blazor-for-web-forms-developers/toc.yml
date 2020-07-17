@@ -15,7 +15,7 @@
       href: components.md
     - name: 'Stránky, směrování a rozložení'
       href: pages-routing-layouts.md
-    - name: Správa stavu
+    - name: Řízení stavu
       href: state-management.md
     - name: Formuláře a ověřování
       href: forms-validation.md

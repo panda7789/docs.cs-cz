@@ -1,6 +1,6 @@
 - name: Nejnovější specifikace funkcí
   items:
-    - name: 'Návrhy specifikace C# 7.0'
+    - name: Návrhy specifikace C# 7.0
       items:
         - name: Porovnávání vzorů
           href: ../../../../_csharplang/proposals/csharp-7.0/pattern-matching.md
@@ -14,7 +14,7 @@
           href: ../../../../_csharplang/proposals/csharp-7.0/binary-literals.md
         - name: Oddělovače číslic
           href: ../../../../_csharplang/proposals/csharp-7.0/digit-separators.md
-    - name: 'Návrhy specifikace C# 7.1'
+    - name: Návrhy specifikace C# 7.1
       items:
         - name: Asynchronní metoda main
           href: ../../../../_csharplang/proposals/csharp-7.1/async-main.md
@@ -24,7 +24,7 @@
           href: ../../../../_csharplang/proposals/csharp-7.1/infer-tuple-names.md
         - name: Porovnávání vzorů s obecnými typy
           href: ../../../../_csharplang/proposals/csharp-7.1/generics-pattern-match.md
-    - name: 'Návrhy specifikace C# 7.2'
+    - name: Návrhy specifikace C# 7.2
       items:
         - name: Odkazy jen pro čtení
           href: ../../../../_csharplang/proposals/csharp-7.2/readonly-ref.md
@@ -38,7 +38,7 @@
           href: ../../../../_csharplang/proposals/csharp-7.2/conditional-ref.md
         - name: Úvodní oddělovač číslic
           href: ../../../../_csharplang/proposals/csharp-7.2/leading-separator.md
-    - name: 'Návrhy specifikace C# 7.3'
+    - name: Návrhy specifikace C# 7.3
       items:
         - name: Omezení obecného typu unmanaged
           href: ../../../../_csharplang/proposals/csharp-7.3/blittable.md
@@ -58,7 +58,7 @@
           href: ../../../../_csharplang/proposals/csharp-7.3/tuple-equality.md
         - name: Vylepšení kandidátů přetížení
           href: ../../../../_csharplang/proposals/csharp-7.3/improved-overload-candidates.md
-    - name: 'Návrhy specifikace C# 8.0'
+    - name: Návrhy specifikace C# 8.0
       items:
         - name: Odkazové typy s možnou hodnotou null – návrh
           href: ../../../../_csharplang/proposals/csharp-8.0/nullable-reference-types.md

@@ -5,9 +5,9 @@
       href: blockingcollection-overview.md
     - name: Kdy použít kolekci s bezpečnými vlákny
       href: when-to-use-a-thread-safe-collection.md
-    - name: 'Postupy: Přidávání odebírání jednotlivých položek v BlockingCollection'
+    - name: 'Postupy: Přidávání a odebírání jednotlivých položek v BlockingCollection'
       href: how-to-add-and-take-items.md
-    - name: 'Postupy: Použití příkazu ForEach k odebrání položek v kolekci BlockingCollection'
+    - name: 'Postupy: Použití příkazu ForEach k odebrání položek v BlockingCollection'
       href: how-to-use-foreach-to-remove.md
     - name: 'Postupy: Přidávání a odebírání položek v ConcurrentDictionary'
       href: how-to-add-and-remove-items.md
