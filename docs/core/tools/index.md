@@ -1,24 +1,24 @@
 ---
 title: Rozhraní příkazového řádku .NET Core
 titleSuffix: ''
-description: Přehled rozhraní .NET Core CLI a jeho funkcí.
+description: Přehled .NET Core CLI a jeho funkcí.
 ms.date: 02/13/2020
-ms.openlocfilehash: ac5988bacbef41326f2501a2cff6c3f5aa0be798
-ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
+ms.openlocfilehash: f92151c85b4816fef1859e84ad94945445db1854
+ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80110838"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86415964"
 ---
 # <a name="net-core-cli-overview"></a>Přehled rozhraní .NET Core CLI
 
-**Tento článek se týká:** ✔️ .NET Core 2.1 SDK a novější verze
+**Tento článek se týká:** ✔️ .net Core 2,1 SDK a novějších verzí
 
-Rozhraní příkazového řádku .NET Core (CLI) je nástroj pro různé platformy pro vývoj, vytváření, spouštění a publikování aplikací .NET Core.
+Rozhraní příkazového řádku .NET Core (CLI) je sada nástrojů pro různé platformy pro vývoj, sestavování, spouštění a publikování aplikací .NET Core.
 
-Rozhraní .NET Core CLI je součástí sady [.NET Core SDK](../sdk.md). Informace o instalaci sady .NET Core SDK naleznete [v tématu Instalace sady .NET Core SDK](../install/sdk.md).
+.NET Core CLI je součástí [.NET Core SDK](../sdk.md). Informace o tom, jak nainstalovat .NET Core SDK, najdete v tématu [instalace .NET Core](../install/windows.md).
 
-## <a name="cli-commands"></a>Příkazy příkazového příkazu
+## <a name="cli-commands"></a>Příkazy rozhraní CLI
 
 Ve výchozím nastavení jsou nainstalovány následující příkazy:
 
@@ -54,20 +54,20 @@ Ve výchozím nastavení jsou nainstalovány následující příkazy:
 - [`msbuild`](dotnet-msbuild.md)
 - [`dotnet install script`](dotnet-install-script.md)
 
-### <a name="tool-management-commands"></a>Příkazy pro správu nástrojů
+### <a name="tool-management-commands"></a>Příkazy správy nástrojů
 
 - [`tool install`](dotnet-tool-install.md)
 - [`tool list`](dotnet-tool-list.md)
 - [`tool update`](dotnet-tool-update.md)
-- [`tool restore`](global-tools.md#install-a-local-tool)K dispozici od .NET Core SDK 3.0.
-- [`tool run`](global-tools.md#invoke-a-local-tool)K dispozici od .NET Core SDK 3.0.
+- [`tool restore`](global-tools.md#install-a-local-tool)K dispozici od .NET Core SDK 3,0.
+- [`tool run`](global-tools.md#invoke-a-local-tool)K dispozici od .NET Core SDK 3,0.
 - [`tool uninstall`](dotnet-tool-uninstall.md)
 
-Nástroje jsou konzolové aplikace, které jsou nainstalovány z balíčků NuGet a jsou vyvolány z příkazového řádku. Můžete psát nástroje sami nebo instalovat nástroje napsané třetími stranami. Nástroje jsou také známé jako globální nástroje, nástroje pro cestu nástrojů a místní nástroje. Další informace naleznete v tématu [Přehled nástrojů .NET Core](global-tools.md).
+Nástroje jsou konzolové aplikace, které jsou nainstalovány z balíčků NuGet a jsou vyvolány z příkazového řádku. Můžete psát nástroje sami nebo instalovat nástroje napsané třetí stranou. Nástroje jsou také známé jako globální nástroje, nástroje pro cestu nástrojů a místní nástroje. Další informace najdete v tématu [Přehled nástrojů .NET Core](global-tools.md).
 
-## <a name="command-structure"></a>Struktura příkazů
+## <a name="command-structure"></a>Struktura příkazu
 
-Struktura příkazu příkazu příkazu se skládá z [ovladače ("dotnet")](#driver), [příkazu](#command)a případně [argumentů](#arguments) a [možností](#options)příkazu . Tento vzor se zobrazí ve většině operací rozhraní příkazového řádku, jako je například vytvoření nové konzolové aplikace a její spuštění z příkazového řádku, jak se následující příkazy zobrazují při spuštění z adresáře s názvem *my_app*:
+Struktura příkazu rozhraní příkazového řádku se skládá z [ovladače ("dotnet")](#driver), [příkazu](#command)a možných [argumentů](#arguments) příkazů a [možností](#options). Tento model se zobrazí ve většině operací CLI, jako je například vytvoření nové konzolové aplikace a její spuštění z příkazového řádku, protože následující příkazy se zobrazí při spuštění z adresáře s názvem *my_app*:
 
 ```dotnetcli
 dotnet new console
@@ -77,31 +77,31 @@ dotnet /build_output/my_app.dll
 
 ### <a name="driver"></a>Ovladač
 
-Ovladač má název [dotnet](dotnet.md) a má dvě odpovědnosti, buď spuštění [aplikace závislé na rozhraní](../deploying/index.md) nebo provádění příkazu.
+Ovladač má název [dotnet](dotnet.md) a má dvě zodpovědnosti, buď spuštění [aplikace závislé na rozhraní](../deploying/index.md) , nebo spuštění příkazu.
 
-Chcete-li spustit aplikaci závislou na rámci, zadejte aplikaci za ovladačem, `dotnet /path/to/my_app.dll`například . Při provádění příkazu ze složky, kde se nachází dll aplikace, jednoduše spustit `dotnet my_app.dll`. Pokud chcete použít určitou verzi rozhraní .NET Core `--fx-version <VERSION>` Runtime, použijte tuto možnost (viz odkaz na [příkaz dotnet).](dotnet.md)
+Chcete-li spustit aplikaci závislou na rozhraní, zadejte aplikaci za ovladačem, například `dotnet /path/to/my_app.dll` . Při provádění příkazu ze složky, kde se nachází knihovna DLL aplikace, stačí provést `dotnet my_app.dll` . Pokud chcete použít konkrétní verzi modulu runtime .NET Core, použijte `--fx-version <VERSION>` možnost (viz Referenční dokumentace [příkazu dotnet](dotnet.md) ).
 
-Když zadáte příkaz k ovladači, `dotnet.exe` spustí proces spuštění příkazu příkazu. Například:
+Když zadáte příkaz do ovladače, `dotnet.exe` spustí se proces spuštění příkazu CLI. Příklad:
 
 ```dotnetcli
 dotnet build
 ```
 
-Nejprve ovladač určuje verzi sady SDK, která má být používána. Pokud neexistuje žádný soubor [global.json,](global-json.md) použije se nejnovější verze sady SDK, která je k dispozici. To může být buď náhled nebo stabilní verze, v závislosti na tom, co je nejnovější v počítači.  Jakmile je určena verze sady SDK, provede příkaz.
+Nejdřív ovladač určuje verzi sady SDK, která se má použít. Pokud k souboru není [global.js](global-json.md) , použije se nejnovější verze sady SDK, která je k dispozici. To může být buď verze Preview, nebo stabilní, v závislosti na tom, co je v počítači nejnovější.  Po určení verze sady SDK se spustí příkaz.
 
 ### <a name="command"></a>Příkaz
 
-Příkaz provede akci. Například `dotnet build` vytvoří kód. `dotnet publish`zveřejňuje kód. Příkazy jsou implementovány jako konzolové aplikace pomocí konvence. `dotnet {command}`
+Příkaz provede akci. Například `dotnet build` sestavení kódu. `dotnet publish`publikuje kód. Příkazy jsou implementovány jako Konzolová aplikace pomocí `dotnet {command}` konvence.
 
-### <a name="arguments"></a>Argumenty
+### <a name="arguments"></a>Arguments
 
-Argumenty, které předáte na příkazovém řádku, jsou argumenty do volaný příkaz. Například při spuštění `dotnet publish my_app.csproj`argument `my_app.csproj` označuje projekt publikovat a je `publish` předán příkazu.
+Argumenty, které předáte na příkazovém řádku, jsou argumenty příkazu, který jste vyvolali. Například když spustíte `dotnet publish my_app.csproj` , `my_app.csproj` argument označuje projekt k publikování a je předán do `publish` příkazu.
 
 ### <a name="options"></a>Možnosti
 
-Možnosti, které předáte na příkazovém řádku, jsou možnosti vyvolaný příkaz. Například při spuštění `dotnet publish --output /build_output`, `--output` možnost a jeho hodnota `publish` jsou předány příkazu.
+Možnosti, které zadáte na příkazovém řádku, jsou možnosti vyvolání příkazu. Například když spustíte `dotnet publish --output /build_output` , `--output` možnost a její hodnota jsou předány do `publish` příkazu.
 
 ## <a name="see-also"></a>Viz také
 
-- [úložiště GitHub dotnet/sdk](https://github.com/dotnet/sdk/)
-- [Instalační příručka jádra rozhraní .NET](../install/sdk.md)
+- [dotnet/úložiště GitHub SDK](https://github.com/dotnet/sdk/)
+- [Průvodce instalací .NET Core](../install/windows.md)

@@ -4,12 +4,12 @@ description: Jak zvládnout notarization a problémy s certifikáty pomocí macO
 author: adegeo
 ms.author: adegeo
 ms.date: 02/14/2020
-ms.openlocfilehash: cd3886b2e772a182156d212aefb9705a3fb5e17c
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: 905a8b8a4a17836823b1c6574828acb08110d224
+ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85324621"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86415946"
 ---
 # <a name="macos-catalina-notarization-and-the-impact-on-net-core-downloads-and-projects"></a>macOS Catalina notarization a dopad na stažení a projekty .NET Core
 
@@ -93,5 +93,4 @@ Pokud chcete, aby vaše aplikace běžela na macOS Catalina (verze 10,15) nebo v
 ## <a name="next-steps"></a>Další kroky
 
 - [Závislosti a požadavky rozhraní .NET Core](dependencies.md).
-- [Nainstalujte .NET Core SDK](sdk.md).
-- [Instalace modulu runtime .NET Core](runtime.md)
+- [Nainstalujte modul runtime .NET Core a sadu SDK](macos.md).

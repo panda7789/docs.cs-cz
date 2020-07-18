@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 9edd6b71-0fa5-4649-ae1d-ac1c12541019
-ms.openlocfilehash: 2c8924ee3374489dded7e819ecde8e4d9da750bb
-ms.sourcegitcommit: e7748001b1cee80ced691d8a76ca814c0b02dd9b
+ms.openlocfilehash: e6dc32274cc3b0d7ec9d66a837a422c87fb2468b
+ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86374383"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86416209"
 ---
 # <a name="consume-a-dataset-from-an-xml-web-service"></a>Využití datové sady z webové služby XML
 
@@ -19,7 +19,7 @@ ms.locfileid: "86374383"
  Následující příklad ukazuje, jak vytvořit webovou službu XML a klienta, které používají **datovou sadu** pro přenos relačních dat (včetně upravených dat) a řešení všech aktualizací zpátky do původního zdroje dat.  
   
 > [!NOTE]
-> Přenosy `DataSet` nebo `DataTable` instance v rámci volání webové služby XML nejsou bezpečné, pokud vstup není důvěryhodný. Další informace najdete v tématu [doprovodné materiály k zabezpečení datových sad a DataTable](/dotnet/framework/data/adonet/dataset-datatable-dataview/security-guidance).
+> Přenosy `DataSet` nebo `DataTable` instance v rámci volání webové služby XML nejsou bezpečné, pokud vstup není důvěryhodný. Další informace najdete v tématu [doprovodné materiály k zabezpečení datových sad a DataTable](security-guidance.md).
 > Doporučujeme vám také při vytváření webové služby XML vždy vzít v úvahu důsledky zabezpečení. Informace o zabezpečení webové služby XML najdete v tématu [zabezpečení webových služeb XML vytvořených pomocí ASP.NET](/previous-versions/dotnet/netframework-4.0/w67h0dw7(v=vs.100)).  
   
 ## <a name="create-an-xml-web-service"></a>Vytvoření webové služby XML

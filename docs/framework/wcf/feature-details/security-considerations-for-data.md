@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a7eb98da-4a93-4692-8b59-9d670c79ffb2
-ms.openlocfilehash: 8cb7ee2ea2418602d944c3c08cec2b9279dca3b9
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 530bb54936f97f1d7460d63cfa316c760cbd449d
+ms.sourcegitcommit: 2543a78be6e246aa010a01decf58889de53d1636
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84601059"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "86441814"
 ---
 # <a name="security-considerations-for-data"></a>Důležité informace o zabezpečení pro data
 
@@ -284,7 +284,7 @@ Tato situace se může vyhnout tím, že se dozvíte o následujících bodech:
 
 <xref:System.Runtime.Serialization.NetDataContractSerializer>Je Serializační modul, který používá těsné spojení s typy. To je podobné jako <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> a <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter> . To znamená, že určuje, který typ instance se má vytvořit, čtením .NET Framework sestavení a názvu typu z příchozích dat. I když je součástí WCF, není k dispozici žádný způsob, jak se zapojit do tohoto stroje serializace; vlastní kód musí být napsán. `NetDataContractSerializer`Je primárně k dispozici pro usnadnění migrace z .NET Framework vzdálené komunikace do WCF. Další informace naleznete v příslušném oddílu [serializace a deserializace](serialization-and-deserialization.md).
 
-Vzhledem k tomu, že samotná zpráva může indikovat, že je možné načíst jakýkoli typ, <xref:System.Runtime.Serialization.NetDataContractSerializer> je mechanismus nezabezpečený a měl by být používán pouze s důvěryhodnými daty. Je možné ji zabezpečit zápisem zabezpečeného typu, který omezuje typ, který umožňuje načíst pouze bezpečné typy (pomocí <xref:System.Runtime.Serialization.NetDataContractSerializer.Binder%2A> Vlastnosti).
+Vzhledem k tomu, že samotná zpráva může indikovat, že je možné načíst jakýkoli typ, <xref:System.Runtime.Serialization.NetDataContractSerializer> je mechanismus nezabezpečený a měl by být používán pouze s důvěryhodnými daty. Další informace najdete v [příručce zabezpečení BinaryFormatter](/dotnet/standard/serialization/binaryformatter-security-guide).
 
 I když se používá s důvěryhodnými daty, může příchozí data nedostatečně určovat typ, který se má načíst, zejména pokud <xref:System.Runtime.Serialization.NetDataContractSerializer.AssemblyFormat%2A> je vlastnost nastavená na <xref:System.Runtime.Serialization.Formatters.FormatterAssemblyStyle.Simple> . Každý, kdo má přístup k adresáři aplikace nebo do globální mezipaměti sestavení (GAC), může nahradit škodlivý typ místo, který by měl načíst. Vždy zajistěte, aby zabezpečení adresáře aplikace a globální mezipaměti sestavení byla zajištěna správným nastavením oprávnění.
 
@@ -324,7 +324,7 @@ Všimněte si následujících otázek týkajících se hrozeb souvisejících s
 
 - <xref:System.Runtime.Serialization.DataContractSerializer>a <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> podporují serializaci privátních, chráněných, interních a veřejných členů v úplném vztahu důvěryhodnosti. V částečném vztahu důvěryhodnosti však lze serializovat pouze veřejné členy. <xref:System.Security.SecurityException>Výjimka je vyvolána, pokud se aplikace pokusí serializovat neveřejný člen.
 
-    Pro umožnění serializace interních nebo chráněných interních členů v částečném vztahu důvěryhodnosti použijte <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut Assembly. Tento atribut umožňuje sestavení deklarovat, že jeho interní členy jsou viditelné pro některé jiné sestavení. V tomto případě sestavení, které má serializovat své interní členy, deklaruje deklaraci, že jeho interní členy jsou viditelné pro System. Runtime. Serialization. dll.
+    Pro umožnění serializace interních nebo chráněných interních členů v částečném vztahu důvěryhodnosti použijte <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut Assembly. Tento atribut umožňuje sestavení deklarovat, že jeho interní členy jsou viditelné pro některé jiné sestavení. V tomto případě sestavení, které má serializovat své interní členy, deklaruje deklaraci, že jeho interní členové jsou System.Runtime.Serialization.dll.
 
     Výhodou tohoto přístupu je, že nevyžaduje cestu pro generování zvýšeného kódu.
 
@@ -354,7 +354,7 @@ Další aspekty týkající se správy stavu objektů jsou zmínky o:
 
 ## <a name="schema-import"></a>Import schématu
 
-Proces importu schématu pro generování typů se obvykle provádí pouze v době návrhu, například při použití nástroje pro vytvoření třídy klienta [(Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) ve webové službě. V pokročilejších scénářích ale můžete schéma zpracovat za běhu. Uvědomte si, že pokud to uděláte, můžete si vystavit rizika při odepření služby. Import některých schémat může trvat dlouhou dobu. Nikdy nepoužívejte <xref:System.Xml.Serialization.XmlSerializer> komponentu importu schématu v takových scénářích, pokud jsou schémata pravděpodobně přicházející z nedůvěryhodného zdroje.
+Proces importu schématu pro generování typů se obvykle provádí pouze v době návrhu, například při použití nástroje pro vytváření [metadat (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) ve webové službě k vygenerování klientské třídy. V pokročilejších scénářích ale můžete schéma zpracovat za běhu. Uvědomte si, že pokud to uděláte, můžete si vystavit rizika při odepření služby. Import některých schémat může trvat dlouhou dobu. Nikdy nepoužívejte <xref:System.Xml.Serialization.XmlSerializer> komponentu importu schématu v takových scénářích, pokud jsou schémata pravděpodobně přicházející z nedůvěryhodného zdroje.
 
 ## <a name="threats-specific-to-aspnet-ajax-integration"></a>Hrozby specifické pro integraci ASP.NET AJAX
 

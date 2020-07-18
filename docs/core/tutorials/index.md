@@ -4,12 +4,12 @@ description: Při vytváření aplikací a knihoven v počítačích Mac, Linux 
 author: richlander
 ms.date: 03/16/2017
 titleSuffix: ''
-ms.openlocfilehash: a685b7d8d6c849cfea061a997780b9cafeb6d938
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: c26d3e2e55723fed98f2013fe7131d2b06f910d2
+ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84283725"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86415939"
 ---
 # <a name="learn-net-core-and-the-net-core-sdk-tools-by-exploring-these-tutorials"></a>Prozkoumejte tyto kurzy a Naučte se .NET Core a nástroje pro .NET Core SDK.
 
@@ -42,7 +42,7 @@ Tyto kurzy vyberte, pokud chcete použít Visual Studio Code nebo jiný Editor k
 ## <a name="use-visual-studio-for-mac"></a>Použití sady Visual Studio pro Mac
 
 - [Vytvoření konzolové aplikace](using-on-mac-vs.md)
-- [Vytvoření knihovny s následným testem jednotek](using-on-mac-vs-full-solution.md)
+- [Vytvoření knihovny s následným testem jednotek](library-with-visual-studio-mac.md)
 - [Instalace a použití balíčku](/nuget/quickstart/install-and-use-a-package-in-visual-studio-mac)
 
 ## <a name="advanced-topics"></a>Pokročilá témata

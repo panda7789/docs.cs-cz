@@ -2,16 +2,16 @@
 title: Vytvoření .NET Standard knihovny tříd pomocí Visual Studio pro Mac
 description: Naučte se vytvářet .NET Standard knihovny tříd pomocí Visual Studio pro Mac.
 ms.date: 06/08/2020
-ms.openlocfilehash: 3a107fff2fd6aef5e06d9af3eac334fbf5688fa5
-ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
+ms.openlocfilehash: 8e1e4ca3bc1b12d889b847d80318f3d6cd1bbe46
+ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84713740"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86416006"
 ---
 # <a name="tutorial-create-a-net-standard-library-using-visual-studio-for-mac"></a>Kurz: Vytvoření knihovny .NET Standard pomocí Visual Studio pro Mac
 
-V tomto kurzu vytvoříte jednoduchou knihovnu tříd, která obsahuje jedinou metodu zpracování řetězce. Implementujete ho jako [metodu rozšíření](../../csharp/programming-guide/classes-and-structs/extension-methods.md) , takže ji můžete zavolat, jako kdyby byla členem <xref:System.String> třídy.
+V tomto kurzu vytvoříte knihovnu tříd, která obsahuje jedinou metodu zpracování řetězce. Implementujete ho jako [metodu rozšíření](../../csharp/programming-guide/classes-and-structs/extension-methods.md) , takže ji můžete zavolat, jako kdyby byla členem <xref:System.String> třídy.
 
 *Knihovna tříd* definuje typy a metody, které jsou volány aplikací. Knihovna tříd, která cílí na .NET Standard 2,1, může být použita aplikací, která cílí na jakoukoli implementaci rozhraní .NET, která podporuje .NET Standard verze 2,1. Po dokončení knihovny tříd ji můžete distribuovat jako součást třetí strany nebo jako součást balíčku s jednou nebo více aplikacemi.
 
@@ -21,9 +21,9 @@ V tomto kurzu vytvoříte jednoduchou knihovnu tříd, která obsahuje jedinou m
 > - V Visual Studio pro Mac vyberte v nabídce **nápovědu**  >  **nahlásit problém** nebo **nahlásit problém** z úvodní obrazovky, která otevře okno pro podání zprávy o chybě. Svou zpětnou vazbu sledujte na portálu [komunity vývojářů](https://developercommunity.visualstudio.com/spaces/41/index.html).
 > - Chcete-li vytvořit návrh, vyberte v nabídce **možnost**  >  **poskytnout návrh** nebo **Poskytněte návrh** z úvodní obrazovky, který vás přesměruje na [webovou stránku komunity vývojářů Visual Studio pro Mac](https://developercommunity.visualstudio.com/content/idea/post.html?space=41).
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
-* [Nainstalujte Visual Studio pro Mac verze 8,6 nebo novější](https://visualstudio.microsoft.com/vs/mac/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link). Vyberte možnost instalace .NET Core. Instalace Xamarin je volitelná pro vývoj v .NET Core. Další informace najdete v následujících materiálech:
+* [Nainstalujte Visual Studio pro Mac verze 8,6 nebo novější](https://visualstudio.microsoft.com/vs/mac/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link). Vyberte možnost instalace .NET Core. Instalace Xamarin je volitelná pro vývoj v .NET Core. Další informace naleznete v následujících zdrojích:
 
   * [Kurz: instalace Visual Studio pro Mac](/visualstudio/mac/installation).
   * [Podporované verze MacOS](../install/dependencies.md?pivots=os-macos)
@@ -39,7 +39,7 @@ V tomto kurzu vytvoříte jednoduchou knihovnu tříd, která obsahuje jedinou m
 
 1. V dialogovém okně **Nový projekt** pod uzlem **více platforem** vyberte možnost **knihovna**, vyberte šablonu **knihovny .NET Standard** a vyberte možnost **Další**.
 
-   :::image type="content" source="media/library-with-visual-studio-mac/visual-studio-mac-new-project.png" alt-text="Dialogové okno Nový projekt":::
+   :::image type="content" source="media/library-with-visual-studio-mac/visual-studio-mac-new-project.png" alt-text="Dialog Nový projekt":::
 
 1. V dialogovém okně **Konfigurovat novou knihovnu .NET Standard** zvolte .NET Standard 2,1 a vyberte **Další**.
 

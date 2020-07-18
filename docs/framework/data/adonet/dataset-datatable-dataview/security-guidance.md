@@ -3,12 +3,12 @@ title: Doprovodné materiály k zabezpečení datových sad a DataTable
 ms.date: 07/14/2020
 dev_langs:
 - csharp
-ms.openlocfilehash: f78b52ede4ec76599d761e5188f39c3e9dae2a4f
-ms.sourcegitcommit: 98548968e89739a37625e72ddbd535fe1e11121e
+ms.openlocfilehash: 2fbac625ae0049fc4c363977dc1d3fbcfb376025
+ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86405289"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86416197"
 ---
 # <a name="dataset-and-datatable-security-guidance"></a>Doprovodné materiály k zabezpečení datových sad a DataTable
 
@@ -193,7 +193,7 @@ Po povolení režimu auditu můžete použít _App.config_ pro připojení k `Tr
 </configuration>
 ```
 
-Další informace o `TraceSource` a `TraceListener` najdete v dokumentu [Postupy: použití TraceSource a filtrů s naslouchacími procesy trasování](/dotnet/framework/debug-trace-profile/how-to-use-tracesource-and-filters-with-trace-listeners).
+Další informace o `TraceSource` a `TraceListener` najdete v dokumentu [Postupy: použití TraceSource a filtrů s naslouchacími procesy trasování](../../../debug-trace-profile/how-to-use-tracesource-and-filters-with-trace-listeners.md).
 
 > [!NOTE]
 > Spuštění aplikace v režimu auditování není v rozhraní .NET Core nebo .NET 5,0 a novějších k dispozici.
@@ -236,7 +236,7 @@ V ASP.NET není `<AppContextSwitchOverrides>` element k dispozici. Místo toho l
 </configuration>
 ```
 
-Další informace naleznete v tématu [\<AppContextSwitchOverrides>](/dotnet/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element) elementu.
+Další informace naleznete v tématu [\<AppContextSwitchOverrides>](../../../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) elementu.
 
 V rozhraní .NET Core, .NET 5 a ASP.NET Core toto nastavení ovládá _runtimeconfig.jsna_, jak je znázorněno v následujícím kódu JSON:
 
@@ -308,7 +308,7 @@ DataSet customers = new DataSet();
 adapter.Fill(customers, "Customers");
 ```
 
-(Výše uvedená ukázka kódu je součástí většího vzorku, který byl nalezen při [naplnění datové sady z objektu DataAdapter](/dotnet/framework/data/adonet/populating-a-dataset-from-a-dataadapter).)
+(Výše uvedená ukázka kódu je součástí většího vzorku, který byl nalezen při [naplnění datové sady z objektu DataAdapter](../populating-a-dataset-from-a-dataadapter.md).)
 
 > Většina aplikací může zjednodušit a předpokládat, že je jejich databázová vrstva důvěryhodná. Nicméně, pokud jste [ve výrobním prostředí pro vaše](https://www.microsoft.com/securityengineering/sdl/threatmodeling) aplikace, váš model hrozeb může považovat za hranice důvěry mezi aplikací (klientem) a vrstvou databáze (serverem). Použití [vzájemného ověřování](/sql/relational-databases/native-client/features/service-principal-name-spn-support-in-client-connections) nebo [ověřování AAD](/azure/azure-sql/database/authentication-aad-overview) mezi klientem a serverem je jedním ze způsobů, jak pomoci vyřešit rizika spojená s tímto. Zbývající část této části popisuje možný výsledek připojení klienta k nedůvěryhodnému serveru.
 
@@ -487,4 +487,4 @@ Zvažte nahrazení objektového modelu, který chcete použít [Entity Framework
 * Přináší [různorodý ekosystém](/ef/core/providers/) zprostředkovatelů databází, aby bylo možné snadno projektovat databázové dotazy pomocí vašich entity Frameworkch objektových modelů.
 * Nabízí integrované ochrany při deserializaci dat z nedůvěryhodných zdrojů.
 
-Pro aplikace, které používají `.aspx` koncové body SOAP, zvažte změnu těchto koncových bodů tak, aby používaly [WCF](/dotnet/framework/wcf/). Služba WCF je plně vybavená náhrada za `.asmx` webové služby. Koncové body WCF [je možné zveřejnit prostřednictvím protokolu SOAP](/dotnet/framework/wcf/feature-details/how-to-expose-a-contract-to-soap-and-web-clients) kvůli kompatibilitě se stávajícími volajícími.
+Pro aplikace, které používají `.aspx` koncové body SOAP, zvažte změnu těchto koncových bodů tak, aby používaly [WCF](/dotnet/framework/wcf/). Služba WCF je plně vybavená náhrada za `.asmx` webové služby. Koncové body WCF [je možné zveřejnit prostřednictvím protokolu SOAP](../../../wcf/feature-details/how-to-expose-a-contract-to-soap-and-web-clients.md) kvůli kompatibilitě se stávajícími volajícími.

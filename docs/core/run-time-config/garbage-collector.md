@@ -1,14 +1,14 @@
 ---
 title: Nastavení konfigurace pro kolektor paměti
 description: Přečtěte si o nastaveních modulu runtime pro konfiguraci způsobu, jakým systém uvolňování paměti spravuje paměť pro aplikace .NET Core.
-ms.date: 01/09/2020
+ms.date: 07/10/2020
 ms.topic: reference
-ms.openlocfilehash: 0ce2f70204463c1525ef7d29de21ddf5384d0238
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: 6ae5b7447fb0df4978ea9dcaa5e76fcc7a6cc4ca
+ms.sourcegitcommit: 2543a78be6e246aa010a01decf58889de53d1636
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202096"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "86441401"
 ---
 # <a name="run-time-configuration-options-for-garbage-collection"></a>Možnosti konfigurace běhu pro uvolňování paměti
 
@@ -20,7 +20,7 @@ Nastavení jsou uspořádána do skupin na této stránce. Nastavení v rámci j
 >
 > - Tato nastavení je možné také dynamicky měnit v aplikaci jako spuštěnou, takže všechna nastavená nastavení běhu mohou být přepsána.
 > - Některá nastavení, jako je [úroveň latence](../../standard/garbage-collection/latency.md), obvykle nastavuje jenom rozhraní API v době návrhu. Tato nastavení jsou vynechána na této stránce.
-> - Pro hodnoty Number použijte Desítkový zápis pro nastavení v souboru *runtimeconfig. JSON* a hexadecimální zápis pro nastavení proměnné prostředí. U hexadecimálních hodnot je můžete zadat s předponou "0x" nebo bez ní.
+> - Pro hodnoty Number použijte Desítkový zápis pro nastavení v souboru *runtimeconfig.js* pro soubor a hexadecimální zápis pro nastavení proměnné prostředí. U hexadecimálních hodnot je můžete zadat s předponou "0x" nebo bez ní.
 
 ## <a name="flavors-of-garbage-collection"></a>Charakter uvolňování paměti
 
@@ -37,14 +37,14 @@ Pro výběr charakteru uvolňování paměti použijte následující nastavení
 
 | | Název nastavení | Hodnoty | Představená verze |
 | - | - | - | - |
-| **runtimeconfig. JSON** | `System.GC.Server` | `false`– pracovní stanice<br/>`true`– Server | .NET Core 1,0 |
+| **runtimeconfig.jsna** | `System.GC.Server` | `false`– pracovní stanice<br/>`true`– Server | .NET Core 1,0 |
 | **Vlastnost MSBuild** | `ServerGarbageCollection` | `false`– pracovní stanice<br/>`true`– Server | .NET Core 1,0 |
 | **Proměnná prostředí** | `COMPlus_gcServer` | `0`– pracovní stanice<br/>`1`– Server | .NET Core 1,0 |
-| **App. config pro .NET Framework** | [GCServer](../../framework/configure-apps/file-schema/runtime/gcserver-element.md) | `false`– pracovní stanice<br/>`true`– Server |  |
+| **app.config pro .NET Framework** | [GCServer](../../framework/configure-apps/file-schema/runtime/gcserver-element.md) | `false`– pracovní stanice<br/>`true`– Server |  |
 
 ### <a name="examples"></a>Příklady
 
-soubor *runtimeconfig. JSON* :
+*runtimeconfig.jsv* souboru:
 
 ```json
 {
@@ -76,14 +76,14 @@ Soubor projektu:
 
 | | Název nastavení | Hodnoty | Představená verze |
 | - | - | - | - |
-| **runtimeconfig. JSON** | `System.GC.Concurrent` | `true`– GC na pozadí<br/>`false`– nesouběžný GC | .NET Core 1,0 |
+| **runtimeconfig.jsna** | `System.GC.Concurrent` | `true`– GC na pozadí<br/>`false`– nesouběžný GC | .NET Core 1,0 |
 | **Vlastnost MSBuild** | `ConcurrentGarbageCollection` | `true`– GC na pozadí<br/>`false`– nesouběžný GC | .NET Core 1,0 |
 | **Proměnná prostředí** | `COMPlus_gcConcurrent` | `1`– GC na pozadí<br/>`0`– nesouběžný GC | .NET Core 1,0 |
-| **App. config pro .NET Framework** | [gcConcurrent](../../framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) | `true`– GC na pozadí<br/>`false`– nesouběžný GC |  |
+| **app.config pro .NET Framework** | [gcConcurrent](../../framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) | `true`– GC na pozadí<br/>`false`– nesouběžný GC |  |
 
 ### <a name="examples"></a>Příklady
 
-soubor *runtimeconfig. JSON* :
+*runtimeconfig.jsv* souboru:
 
 ```json
 {
@@ -123,9 +123,9 @@ Další informace o některých těchto nastaveních najdete v tématu [středn�
 
 | | Název nastavení | Hodnoty | Představená verze |
 | - | - | - | - |
-| **runtimeconfig. JSON** | `System.GC.HeapCount` | *desetinná hodnota* | .NET Core 3.0 |
+| **runtimeconfig.jsna** | `System.GC.HeapCount` | *desetinná hodnota* | .NET Core 3.0 |
 | **Proměnná prostředí** | `COMPlus_GCHeapCount` | *hexadecimální hodnota* | .NET Core 3.0 |
-| **App. config pro .NET Framework** | [GCHeapCount](../../framework/configure-apps/file-schema/runtime/gcheapcount-element.md) | *desetinná hodnota* | .NET Framework 4.6.2 |
+| **app.config pro .NET Framework** | [GCHeapCount](../../framework/configure-apps/file-schema/runtime/gcheapcount-element.md) | *desetinná hodnota* | .NET Framework 4.6.2 |
 
 Příklad:
 
@@ -140,7 +140,7 @@ Příklad:
 ```
 
 > [!TIP]
-> Pokud nastavujete možnost v *runtimeconfig. JSON*, zadejte desítkovou hodnotu. Pokud nastavujete možnost jako proměnnou prostředí, zadejte hexadecimální hodnotu. Například chcete-li omezit počet hald na 16, hodnoty by byly 16 pro soubor JSON a 0x10 nebo 10 pro proměnnou prostředí.
+> Pokud nastavujete možnost v *runtimeconfig.jszapnuto*, zadejte desítkovou hodnotu. Pokud nastavujete možnost jako proměnnou prostředí, zadejte hexadecimální hodnotu. Například chcete-li omezit počet hald na 16, hodnoty by byly 16 pro soubor JSON a 0x10 nebo 10 pro proměnnou prostředí.
 
 ### <a name="systemgcheapaffinitizemaskcomplus_gcheapaffinitizemask"></a>System. GC. HeapAffinitizeMask/COMPlus_GCHeapAffinitizeMask
 
@@ -151,9 +151,9 @@ Příklad:
 
 | | Název nastavení | Hodnoty | Představená verze |
 | - | - | - | - |
-| **runtimeconfig. JSON** | `System.GC.HeapAffinitizeMask` | *desetinná hodnota* | .NET Core 3.0 |
+| **runtimeconfig.jsna** | `System.GC.HeapAffinitizeMask` | *desetinná hodnota* | .NET Core 3.0 |
 | **Proměnná prostředí** | `COMPlus_GCHeapAffinitizeMask` | *hexadecimální hodnota* | .NET Core 3.0 |
-| **App. config pro .NET Framework** | [GCHeapAffinitizeMask](../../framework/configure-apps/file-schema/runtime/gcheapaffinitizemask-element.md) | *desetinná hodnota* | .NET Framework 4.6.2 |
+| **app.config pro .NET Framework** | [GCHeapAffinitizeMask](../../framework/configure-apps/file-schema/runtime/gcheapaffinitizemask-element.md) | *desetinná hodnota* | .NET Framework 4.6.2 |
 
 Příklad:
 
@@ -178,7 +178,7 @@ Příklad:
 
 | | Název nastavení | Hodnoty | Představená verze |
 | - | - | - | - |
-| **runtimeconfig. JSON** | `System.GC.GCHeapAffinitizeRanges` | Čárkami oddělený seznam čísel procesorů nebo rozsahů čísel procesorů.<br/>Příklad systému UNIX: "1-10, 12, 50-52, 70"<br/>Příklad Windows: "0:1-10, 0:12, 1:50-52, 1:70" | .NET Core 3.0 |
+| **runtimeconfig.jsna** | `System.GC.GCHeapAffinitizeRanges` | Čárkami oddělený seznam čísel procesorů nebo rozsahů čísel procesorů.<br/>Příklad systému UNIX: "1-10, 12, 50-52, 70"<br/>Příklad Windows: "0:1-10, 0:12, 1:50-52, 1:70" | .NET Core 3.0 |
 | **Proměnná prostředí** | `COMPlus_GCHeapAffinitizeRanges` | Čárkami oddělený seznam čísel procesorů nebo rozsahů čísel procesorů.<br/>Příklad systému UNIX: "1-10, 12, 50-52, 70"<br/>Příklad Windows: "0:1-10, 0:12, 1:50-52, 1:70" | .NET Core 3.0 |
 
 Příklad:
@@ -205,9 +205,9 @@ Příklad:
 
 | | Název nastavení | Hodnoty | Představená verze |
 | - | - | - | - |
-| **runtimeconfig. JSON** | – | – | – |
+| **runtimeconfig.jsna** | Nelze použít | Nelze použít | Nelze použít |
 | **Proměnná prostředí** | `COMPlus_GCCpuGroup` | `0`– zakázáno<br/>`1`– povoleno | .NET Core 1,0 |
-| **App. config pro .NET Framework** | [GCCpuGroup](../../framework/configure-apps/file-schema/runtime/gccpugroup-element.md) | `false`– zakázáno<br/>`true`– povoleno |  |
+| **app.config pro .NET Framework** | [GCCpuGroup](../../framework/configure-apps/file-schema/runtime/gccpugroup-element.md) | `false`– zakázáno<br/>`true`– povoleno |  |
 
 > [!NOTE]
 > Chcete-li nakonfigurovat modul CLR (Common Language Runtime) pro distribuci vláken z fondu vláken napříč všemi skupinami PROCESORů, povolte možnost [Thread_UseAllCpuGroups element](../../framework/configure-apps/file-schema/runtime/thread-useallcpugroups-element.md) . U aplikací .NET Core můžete tuto možnost povolit nastavením hodnoty `COMPlus_Thread_UseAllCpuGroups` proměnné prostředí na `1` .
@@ -220,9 +220,9 @@ Příklad:
 
 | | Název nastavení | Hodnoty | Představená verze |
 | - | - | - | - |
-| **runtimeconfig. JSON** | `System.GC.NoAffinitize` | `false`– spřažení<br/>`true`– spřažení | .NET Core 3.0 |
+| **runtimeconfig.jsna** | `System.GC.NoAffinitize` | `false`– spřažení<br/>`true`– spřažení | .NET Core 3.0 |
 | **Proměnná prostředí** | `COMPlus_GCNoAffinitize` | `0`– spřažení<br/>`1`– spřažení | .NET Core 3.0 |
-| **App. config pro .NET Framework** | [GCNoAffinitize](../../framework/configure-apps/file-schema/runtime/gcnoaffinitize-element.md) | `false`– spřažení<br/>`true`– spřažení | .NET Framework 4.6.2 |
+| **app.config pro .NET Framework** | [GCNoAffinitize](../../framework/configure-apps/file-schema/runtime/gcnoaffinitize-element.md) | `false`– spřažení<br/>`true`– spřažení | .NET Framework 4.6.2 |
 
 Příklad:
 
@@ -240,6 +240,7 @@ Příklad:
 
 - Určuje maximální velikost potvrzení (v bajtech) pro haldu uvolňování paměti a účetnictví GC.
 - Toto nastavení platí pouze pro 64 počítačů.
+- Toto nastavení se ignoruje, pokud jsou nakonfigurované [limity haldy pro jednotlivé objekty](#per-object-heap-limits) .
 - Výchozí hodnota, která se vztahuje pouze na určité případy, je větší než 20 MB nebo 75% limitu paměti v kontejneru. Výchozí hodnota platí v případě:
 
   - Proces je spuštěný v kontejneru, který má zadané omezení paměti.
@@ -247,7 +248,7 @@ Příklad:
 
 | | Název nastavení | Hodnoty | Představená verze |
 | - | - | - | - |
-| **runtimeconfig. JSON** | `System.GC.HeapHardLimit` | *desetinná hodnota* | .NET Core 3.0 |
+| **runtimeconfig.jsna** | `System.GC.HeapHardLimit` | *desetinná hodnota* | .NET Core 3.0 |
 | **Proměnná prostředí** | `COMPlus_GCHeapHardLimit` | *hexadecimální hodnota* | .NET Core 3.0 |
 
 Příklad:
@@ -263,7 +264,7 @@ Příklad:
 ```
 
 > [!TIP]
-> Pokud nastavujete možnost v *runtimeconfig. JSON*, zadejte desítkovou hodnotu. Pokud nastavujete možnost jako proměnnou prostředí, zadejte hexadecimální hodnotu. Chcete-li například určit pevný limit haldy 200 mebibytes (MiB), hodnoty by byly 209715200 pro soubor JSON a 0xC800000 nebo C800000 pro proměnnou prostředí.
+> Pokud nastavujete možnost v *runtimeconfig.jszapnuto*, zadejte desítkovou hodnotu. Pokud nastavujete možnost jako proměnnou prostředí, zadejte hexadecimální hodnotu. Chcete-li například určit pevný limit haldy 200 mebibytes (MiB), hodnoty by byly 209715200 pro soubor JSON a 0xC800000 nebo C800000 pro proměnnou prostředí.
 
 ### <a name="systemgcheaphardlimitpercentcomplus_gcheaphardlimitpercent"></a>System. GC. HeapHardLimitPercent/COMPlus_GCHeapHardLimitPercent
 
@@ -271,6 +272,7 @@ Příklad:
 - Pokud je nastavená taky možnost [System. GC. HeapHardLimit](#systemgcheaphardlimitcomplus_gcheaphardlimit) , toto nastavení se ignoruje.
 - Toto nastavení platí pouze pro 64 počítačů.
 - Pokud je proces spuštěný v kontejneru, který má zadanou mez paměti, vypočítá se procento jako procento tohoto limitu paměti.
+- Toto nastavení se ignoruje, pokud jsou nakonfigurované [limity haldy pro jednotlivé objekty](#per-object-heap-limits) .
 - Výchozí hodnota, která se vztahuje pouze na určité případy, je menší než 20 MB nebo 75% limitu paměti v kontejneru. Výchozí hodnota platí v případě:
 
   - Proces je spuštěný v kontejneru, který má zadané omezení paměti.
@@ -278,7 +280,7 @@ Příklad:
 
 | | Název nastavení | Hodnoty | Představená verze |
 | - | - | - | - |
-| **runtimeconfig. JSON** | `System.GC.HeapHardLimitPercent` | *desetinná hodnota* | .NET Core 3.0 |
+| **runtimeconfig.jsna** | `System.GC.HeapHardLimitPercent` | *desetinná hodnota* | .NET Core 3.0 |
 | **Proměnná prostředí** | `COMPlus_GCHeapHardLimitPercent` | *hexadecimální hodnota* | .NET Core 3.0 |
 
 Příklad:
@@ -294,7 +296,41 @@ Příklad:
 ```
 
 > [!TIP]
-> Pokud nastavujete možnost v *runtimeconfig. JSON*, zadejte desítkovou hodnotu. Pokud nastavujete možnost jako proměnnou prostředí, zadejte hexadecimální hodnotu. Chcete-li například omezit využití haldy na 30%, budou hodnoty 30 pro soubor JSON a 0x1E nebo 1E pro proměnnou prostředí.
+> Pokud nastavujete možnost v *runtimeconfig.jszapnuto*, zadejte desítkovou hodnotu. Pokud nastavujete možnost jako proměnnou prostředí, zadejte hexadecimální hodnotu. Chcete-li například omezit využití haldy na 30%, budou hodnoty 30 pro soubor JSON a 0x1E nebo 1E pro proměnnou prostředí.
+
+### <a name="per-object-heap-limits"></a>Omezení podle objektů a haldy
+
+Můžete určit možné využití haldy GC na bázi haldy pro jednotlivé objekty. Mezi různé haldy patří halda velkých objektů (LOH), halda malých objektů (SOH) a halda připnutých objektů (POH).
+
+#### <a name="complus_gcheaphardlimitsoh-complus_gcheaphardlimitloh-complus_gcheaphardlimitpoh"></a>COMPLUS_GCHeapHardLimitSOH, COMPLUS_GCHeapHardLimitLOH COMPLUS_GCHeapHardLimitPOH
+
+- Pokud zadáte hodnotu pro jakékoli `COMPLUS_GCHeapHardLimitSOH` nastavení, nebo, `COMPLUS_GCHeapHardLimitLOH` `COMPLUS_GCHeapHardLimitPOH` musíte zadat také hodnotu pro `COMPLUS_GCHeapHardLimitSOH` a `COMPLUS_GCHeapHardLimitLOH` . Pokud to neuděláte, modul runtime se nepodaří inicializovat.
+- Výchozí hodnota pro `COMPLUS_GCHeapHardLimitPOH` je 0. `COMPLUS_GCHeapHardLimitSOH`a `COMPLUS_GCHeapHardLimitLOH` nemají výchozí hodnoty.
+
+| | Název nastavení | Hodnoty | Představená verze |
+| - | - | - | - |
+| **Proměnná prostředí** | `COMPLUS_GCHeapHardLimitSOH` | *hexadecimální hodnota* | .NET 5,0 |
+| **Proměnná prostředí** | `COMPLUS_GCHeapHardLimitLOH` | *hexadecimální hodnota* | .NET 5,0 |
+| **Proměnná prostředí** | `COMPLUS_GCHeapHardLimitPOH` | *hexadecimální hodnota* | .NET 5,0 |
+
+> [!TIP]
+> Pokud nastavujete možnost jako proměnnou prostředí, zadejte hexadecimální hodnotu. Například pokud chcete zadat tvrdý limit haldy 200 mebibytes (MiB), hodnota by byla 0xC800000 nebo C800000.
+
+#### <a name="complus_gcheaphardlimitsohpercent-complus_gcheaphardlimitlohpercent-complus_gcheaphardlimitpohpercent"></a>COMPLUS_GCHeapHardLimitSOHPercent, COMPLUS_GCHeapHardLimitLOHPercent COMPLUS_GCHeapHardLimitPOHPercent
+
+- Pokud zadáte hodnotu pro jakékoli `COMPLUS_GCHeapHardLimitSOHPercent` nastavení, nebo, `COMPLUS_GCHeapHardLimitLOHPercent` `COMPLUS_GCHeapHardLimitPOHPercent` musíte zadat také hodnotu pro `COMPLUS_GCHeapHardLimitSOHPercent` a `COMPLUS_GCHeapHardLimitLOHPercent` . Pokud to neuděláte, modul runtime se nepodaří inicializovat.
+- Tato nastavení budou ignorována `COMPLUS_GCHeapHardLimitSOH` , pokud `COMPLUS_GCHeapHardLimitLOH` `COMPLUS_GCHeapHardLimitPOH` jsou zadány, a.
+- Hodnota 1 znamená, že GC používá pro haldu objektu 1% celkové fyzické paměti.
+- Každá hodnota musí být větší než 0 a menší než 100. Kromě toho součet tří procentuálních hodnot musí být menší než 100. V opačném případě se inicializace modulu runtime nezdaří.
+
+| | Název nastavení | Hodnoty | Představená verze |
+| - | - | - | - |
+| **Proměnná prostředí** | `COMPLUS_GCHeapHardLimitSOHPercent` | *hexadecimální hodnota* | .NET 5,0 |
+| **Proměnná prostředí** | `COMPLUS_GCHeapHardLimitLOHPercent` | *hexadecimální hodnota* | .NET 5,0 |
+| **Proměnná prostředí** | `COMPLUS_GCHeapHardLimitPOHPercent` | *hexadecimální hodnota* | .NET 5,0 |
+
+> [!TIP]
+> Pokud nastavujete možnost jako proměnnou prostředí, zadejte hexadecimální hodnotu. Chcete-li například omezit využití haldy na 30%, hodnota by byla 0x1E nebo 1E.
 
 ### <a name="systemgcretainvmcomplus_gcretainvm"></a>System. GC. RetainVM/COMPlus_GCRetainVM
 
@@ -303,13 +339,13 @@ Příklad:
 
 | | Název nastavení | Hodnoty | Představená verze |
 | - | - | - | - |
-| **runtimeconfig. JSON** | `System.GC.RetainVM` | `false`– vydání na operační systém<br/>`true`– Put do úsporného režimu | .NET Core 1,0 |
+| **runtimeconfig.jsna** | `System.GC.RetainVM` | `false`– vydání na operační systém<br/>`true`– Put do úsporného režimu | .NET Core 1,0 |
 | **Vlastnost MSBuild** | `RetainVMGarbageCollection` | `false`– vydání na operační systém<br/>`true`– Put do úsporného režimu | .NET Core 1,0 |
 | **Proměnná prostředí** | `COMPlus_GCRetainVM` | `0`– vydání na operační systém<br/>`1`– Put do úsporného režimu | .NET Core 1,0 |
 
 ### <a name="examples"></a>Příklady
 
-soubor *runtimeconfig. JSON* :
+*runtimeconfig.jsv* souboru:
 
 ```json
 {
@@ -343,7 +379,7 @@ Soubor projektu:
 
 | | Název nastavení | Hodnoty | Představená verze |
 | - | - | - | - |
-| **runtimeconfig. JSON** | – | – | – |
+| **runtimeconfig.jsna** | Nelze použít | Nelze použít | Nelze použít |
 | **Proměnná prostředí** | `COMPlus_GCLargePages` | `0`– zakázáno<br/>`1`– povoleno | .NET Core 3.0 |
 
 ## <a name="large-objects"></a>Velké objekty
@@ -356,9 +392,9 @@ Soubor projektu:
 
 | | Název nastavení | Hodnoty | Představená verze |
 | - | - | - | - |
-| **runtimeconfig. JSON** | – | – | – |
+| **runtimeconfig.jsna** | Nelze použít | Nelze použít | Nelze použít |
 | **Proměnná prostředí** | `COMPlus_gcAllowVeryLargeObjects` | `1`– povoleno<br/> `0`– zakázáno | .NET Core 1,0 |
-| **App. config pro .NET Framework** | [gcAllowVeryLargeObjects](../../framework/configure-apps/file-schema/runtime/gcallowverylargeobjects-element.md) | `1`– povoleno<br/> `0`– zakázáno | .NET Framework 4.5 |
+| **app.config pro .NET Framework** | [gcAllowVeryLargeObjects](../../framework/configure-apps/file-schema/runtime/gcallowverylargeobjects-element.md) | `1`– povoleno<br/> `0`– zakázáno | .NET Framework 4.5 |
 
 ## <a name="large-object-heap-threshold"></a>Prahová hodnota haldy velkých objektů
 
@@ -370,9 +406,9 @@ Soubor projektu:
 
 | | Název nastavení | Hodnoty | Představená verze |
 | - | - | - | - |
-| **runtimeconfig. JSON** | `System.GC.LOHThreshold` | *desetinná hodnota* | .NET Core 1,0 |
+| **runtimeconfig.jsna** | `System.GC.LOHThreshold` | *desetinná hodnota* | .NET Core 1,0 |
 | **Proměnná prostředí** | `COMPlus_GCLOHThreshold` | *hexadecimální hodnota* | .NET Core 1,0 |
-| **App. config pro .NET Framework** | [GCLOHThreshold](../../framework/configure-apps/file-schema/runtime/gclohthreshold-element.md) | *desetinná hodnota* |  .NET Framework 4.8 |
+| **app.config pro .NET Framework** | [GCLOHThreshold](../../framework/configure-apps/file-schema/runtime/gclohthreshold-element.md) | *desetinná hodnota* |  .NET Framework 4.8 |
 
 Příklad:
 
@@ -387,7 +423,7 @@ Příklad:
 ```
 
 > [!TIP]
-> Pokud nastavujete možnost v *runtimeconfig. JSON*, zadejte desítkovou hodnotu. Pokud nastavujete možnost jako proměnnou prostředí, zadejte hexadecimální hodnotu. Chcete-li například nastavit prahovou hodnotu 120 000 bajtů, budou hodnoty 120000 pro soubor JSON a 0x1D4C0 nebo 1D4C0 pro proměnnou prostředí.
+> Pokud nastavujete možnost v *runtimeconfig.jszapnuto*, zadejte desítkovou hodnotu. Pokud nastavujete možnost jako proměnnou prostředí, zadejte hexadecimální hodnotu. Chcete-li například nastavit prahovou hodnotu 120 000 bajtů, budou hodnoty 120000 pro soubor JSON a 0x1D4C0 nebo 1D4C0 pro proměnnou prostředí.
 
 ## <a name="standalone-gc"></a>Samostatná GC
 
@@ -398,5 +434,5 @@ Příklad:
 
 | | Název nastavení | Hodnoty | Představená verze |
 | - | - | - | - |
-| **runtimeconfig. JSON** | – | – | – |
+| **runtimeconfig.jsna** | Nelze použít | Nelze použít | Nelze použít |
 | **Proměnná prostředí** | `COMPlus_GCName` | *string_path* | .NET Core 2.0 |

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - configSections Element
 - <configSections> Element
 ms.assetid: 9f963c1b-dc3f-4220-a8b6-2dd7a5a8e039
-ms.openlocfilehash: 55116f1fe6fdffffea8f26d8a4de783c7305ada3
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 1e4bb7a7cfb0b140ca6d13c162708c3c30bd496d
+ms.sourcegitcommit: 2543a78be6e246aa010a01decf58889de53d1636
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79155346"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "86441684"
 ---
 # <a name="configsections-element-for-configuration"></a>\<configSections> – element pro \<configuration>
 
@@ -26,18 +26,16 @@ Obsahuje konfigurační oddíl a deklarace oboru názvů.
 
 ## <a name="parent-element"></a>Nadřazený element
 
-|     | Description |
+|     | Popis |
 | --- | ----------- |
 | [**\<configuration>**](configuration-element.md) | Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework. |
 
 ## <a name="child-elements"></a>Podřízené prvky
 
-|     | Description |
+|     | Popis |
 | --- | ----------- |
 | [**\<section>**](section-element.md) | Obsahuje deklaraci konfiguračního oddílu. |
 | [**\<sectionGroup>**](sectiongroup-element-for-configsections.md) | Definuje obor názvů pro konfigurační oddíly. |
-| [**\<remove>**](remove-element-for-configsections.md) | Odebere předdefinovanou sekci nebo skupinu oddílů. |
-| [**\<clear>**](clear-element-for-configsections.md) | Vymaže všechny dříve definované oddíly a skupiny oddílů. |
 
 ## <a name="remarks"></a>Poznámky
 
@@ -61,7 +59,7 @@ Následující příklad ukazuje, jak definovat konfigurační oddíl a definova
 
 ## <a name="configuration-file"></a>Konfigurační soubor
 
-Tento element lze použít v konfiguračním souboru aplikace, konfiguračním souboru počítače (*Machine. config*) a souborech *Web. config* , které nejsou na úrovni adresáře aplikace.
+Tento element lze použít v konfiguračním souboru aplikace, konfiguračním souboru počítače (*Machine.config*) a *Web.config* soubory, které nejsou na úrovni adresáře aplikace.
 
 ## <a name="see-also"></a>Viz také
 

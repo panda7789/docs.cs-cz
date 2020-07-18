@@ -2,15 +2,15 @@
 title: ASP.NET Core přerušující změny
 titleSuffix: ''
 description: Zobrazí seznam nejnovějších změn v ASP.NET Core.
-ms.date: 07/14/2020
+ms.date: 07/15/2020
 author: scottaddie
 ms.author: scaddie
-ms.openlocfilehash: b73492e0c2f60c2b214984d3987de1e9e6530847
-ms.sourcegitcommit: d4f7ba08f2a45a9dbef53be597eed6d4a9410f29
+ms.openlocfilehash: cea6771afdc05edc525e7d35f530f42e7b3bc1fa
+ms.sourcegitcommit: 2543a78be6e246aa010a01decf58889de53d1636
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86402001"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "86441944"
 ---
 # <a name="aspnet-core-breaking-changes"></a>ASP.NET Core přerušující změny
 
@@ -26,8 +26,10 @@ Na této stránce jsou popsány následující přerušující se změny:
 - [Autorizace: přetížení AddAuthorization se přesunulo do jiného sestavení.](#authorization-addauthorization-overload-moved-to-different-assembly)
 - [Autorizace: IAllowAnonymous se odebral z AuthorizationFilterContext. filters.](#authorization-iallowanonymous-removed-from-authorizationfiltercontextfilters)
 - [Autorizace: implementace IAuthorizationPolicyProvider vyžadují novou metodu.](#authorization-iauthorizationpolicyprovider-implementations-require-new-method)
+- [Autorizace: prostředek ve směrování koncového bodu je HttpContext](#authorization-resource-in-endpoint-routing-is-httpcontext)
 - [Azure: odebraly se balíčky Microsoft infixních integrací Azure.](#azure-microsoft-prefixed-azure-integration-packages-removed)
 - [Blazor: nevýznamné prázdné znaky oříznuté z komponent v době kompilace](#blazor-insignificant-whitespace-trimmed-from-components-at-compile-time)
+- [Blazor: Cílová architektura balíčků NuGet se změnila](#blazor-target-framework-of-nuget-packages-changed)
 - [Ukládání do mezipaměti: byla odebrána vlastnost CompactOnMemoryPressure](#caching-compactonmemorypressure-property-removed)
 - [Ukládání do mezipaměti: Microsoft. Extensions. Caching. SqlServer používá nový balíček SqlClient.](#caching-microsoftextensionscachingsqlserver-uses-new-sqlclient-package)
 - [Ukládání do mezipaměti: ResponseCaching typy "pubternal" se změnily na interní](#caching-responsecaching-pubternal-types-changed-to-internal)
@@ -91,11 +93,19 @@ Na této stránce jsou popsány následující přerušující se změny:
 
 ## <a name="aspnet-core-50"></a>ASP.NET Core 5,0
 
+[!INCLUDE[Authorization: Resource in endpoint routing is HttpContext](~/includes/core-changes/aspnetcore/5.0/authorization-resource-in-endpoint-routing.md)]
+
+***
+
 [!INCLUDE[Azure: Microsoft-prefixed Azure integration packages removed](~/includes/core-changes/aspnetcore/5.0/azure-integration-packages-removed.md)]
 
 ***
 
 [!INCLUDE[Blazor: Insignificant whitespace trimmed from components at compile time](~/includes/core-changes/aspnetcore/5.0/blazor-components-trim-insignificant-whitespace.md)]
+
+***
+
+[!INCLUDE[Blazor: Target framework of NuGet packages changed](~/includes/core-changes/aspnetcore/5.0/blazor-packages-target-framework-changed.md)]
 
 ***
 

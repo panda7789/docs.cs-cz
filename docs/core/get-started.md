@@ -5,12 +5,12 @@ author: adegeo
 ms.author: adegeo
 ms.date: 12/03/2019
 ms.custom: vs-dotnet
-ms.openlocfilehash: 5cfd9925f4ee93ef4ebe15ebf16febdfb98aaa9a
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: ddbee0764897b511cac0c4142354ba995d94a2b6
+ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85325016"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86416052"
 ---
 # <a name="get-started-with-net-core"></a>Začínáme s .NET Core
 
@@ -35,7 +35,7 @@ Měl by se zobrazit následující výstup:
 Hello World!
 ```
 
-Gratulujeme! Vytvořili jste jednoduchou aplikaci .NET Core. K vytvoření aplikace .NET Core můžete použít taky [Visual Studio Code](./tutorials/with-visual-studio-code.md), [Visual Studio](./tutorials/with-visual-studio.md) (jenom Windows) nebo [Visual Studio pro Mac](./tutorials/using-on-mac-vs.md) (jenom MacOS).
+Blahopřejeme! Vytvořili jste jednoduchou aplikaci .NET Core. K vytvoření aplikace .NET Core můžete použít taky [Visual Studio Code](./tutorials/with-visual-studio-code.md), [Visual Studio](./tutorials/with-visual-studio.md) (jenom Windows) nebo [Visual Studio pro Mac](./tutorials/using-on-mac-vs.md) (jenom MacOS).
 
 ## <a name="tutorials"></a>Kurzy
 
@@ -75,7 +75,7 @@ Začněte vyvíjet aplikace .NET Core pomocí následujících podrobných kurz�
 - [Začínáme s .NET Core v systému macOS pomocí sady Visual Studio Code](./tutorials/using-on-macos.md)
 - [Začínáme s .NET Core s využitím příkazového řádku](./tutorials/cli-create-console-app.md)
 - [Začínáme s .NET Core v systému macOS pomocí sady Visual Studio pro Mac](./tutorials/using-on-mac-vs.md)
-- [Sestavení kompletního řešení .NET Core na macOS pomocí Visual Studio pro Mac](./tutorials/using-on-mac-vs-full-solution.md)
+- [Sestavení knihovny .NET Standard v macOS pomocí Visual Studio pro Mac](tutorials/library-with-visual-studio-mac.md)
 
 |   |   |
 |---|---|

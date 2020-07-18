@@ -2,16 +2,16 @@
 title: dotnet-install scripts
 description: Přečtěte si o příkazu dotnet – instalace skriptů pro instalaci .NET Core SDK a sdíleného modulu runtime.
 ms.date: 04/30/2020
-ms.openlocfilehash: d03877d76212f7b22de0a1075cf50fc75bd104b6
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: cecfbb86c4a2863161d3df7c78201fa8057abfe5
+ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85324430"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86415927"
 ---
 # <a name="dotnet-install-scripts-reference"></a>dotnet – Reference k instalaci skriptů
 
-## <a name="name"></a>Název
+## <a name="name"></a>Name
 
 `dotnet-install.ps1` | `dotnet-install.sh`-Skript použitý k instalaci .NET Core SDK a sdíleného modulu runtime.
 
@@ -82,7 +82,7 @@ Ve výchozím nastavení stáhnou instalační skripty sadu SDK a nainstaluje ji
 
 Ve výchozím nastavení skript přidá umístění instalace do $PATH pro aktuální relaci. Přepsat toto výchozí chování zadáním `-NoPath|--no-path` argumentu. Skript nenastavuje `DOTNET_ROOT` proměnnou prostředí.
 
-Před spuštěním skriptu nainstalujte požadované [závislosti](../install/dependencies.md).
+Před spuštěním skriptu nainstalujte požadované [závislosti](../install/windows.md#dependencies).
 
 Konkrétní verzi můžete nainstalovat pomocí `-Version|--version` argumentu. Verze musí být zadána jako číslo verze se třemi částmi, například `2.1.0` . Pokud není zadaná verze, skript nainstaluje `latest` verzi.
 

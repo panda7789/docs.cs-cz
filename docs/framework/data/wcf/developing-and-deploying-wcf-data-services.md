@@ -7,12 +7,12 @@ helpviewer_keywords:
 - deploying [WCF Data Services
 - developing applications [WCF Data Services]
 ms.assetid: 6557c0e3-5aea-4f6e-bc14-77ad317a168b
-ms.openlocfilehash: 1dc9f3d261738a6dff0339c094c7aba5e32680ee
-ms.sourcegitcommit: 5988e9a29cedb8757320817deda3c08c6f44a6aa
+ms.openlocfilehash: 7519dce8ed17bc623173f30222296ffaa42b4341
+ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82200051"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86416075"
 ---
 # <a name="develop-and-deploy-wcf-data-services"></a>Vývoj a nasazení WCF Data Services
 
@@ -32,7 +32,7 @@ Když použijete WCF Data Services k vytvoření datové služby, která podporu
 
 3. **Konfigurace datové služby**
 
-     Ve výchozím nastavení WCF Data Services zakáže přístup k prostředkům, které jsou zpřístupněny kontejnerem entit. <xref:System.Data.Services.DataServiceConfiguration> Rozhraní umožňuje nakonfigurovat přístup k prostředkům a operacím služby, určit podporovanou verzi OData a definovat další chování v rámci služby, například chování dávkování nebo maximální počet entit, které mohou být vráceny v jednom kanálu odpovědí. Další informace najdete v tématu [konfigurace datové služby](configuring-the-data-service-wcf-data-services.md).
+     Ve výchozím nastavení WCF Data Services zakáže přístup k prostředkům, které jsou zpřístupněny kontejnerem entit. <xref:System.Data.Services.DataServiceConfiguration>Rozhraní umožňuje nakonfigurovat přístup k prostředkům a operacím služby, určit podporovanou verzi OData a definovat další chování v rámci služby, například chování dávkování nebo maximální počet entit, které mohou být vráceny v jednom kanálu odpovědí. Další informace najdete v tématu [konfigurace datové služby](configuring-the-data-service-wcf-data-services.md).
 
 Tento článek primárně popisuje vývoj a nasazení datových služeb pomocí sady Visual Studio. Informace o flexibilitě poskytované WCF Data Services pro vystavení dat jako kanálů OData najdete v tématu věnovaném [definování WCF Data Services](defining-wcf-data-services.md).
 
@@ -63,14 +63,14 @@ Při vývoji datové služby WCF jako aplikace ASP.NET nebo webu ASP.NET pomocí
 
     - Tento server nemůže zpracovávat datové proudy HTTP, které jsou ve výchozím nastavení odesílány klientem WCF Data Services při přístupu k velkým binárním datům z datové služby. Další informace najdete v tématu [poskytovatel streamování](streaming-provider-wcf-data-services.md).
 
-    - Tento server má problémy se zpracováním znaku tečky (`.`) v adrese URL, i když je tento znak podporován WCF Data Services v klíčových hodnotách.
+    - Tento server má problémy se zpracováním znaku tečky ( `.` ) v adrese URL, i když je tento znak podporován WCF Data Services v klíčových hodnotách.
 
     > [!TIP]
     > I když můžete k testování datových služeb během vývoje použít vývojový server sady Visual Studio, měli byste je po nasazení na webový server, na kterém je spuštěna služba IIS, znovu otestovat.
 
 3. **Vývojové prostředí Azure**
 
-     Nástroje Azure pro Visual Studio obsahují integrovanou sadu nástrojů pro vývoj služeb Azure v sadě Visual Studio. Pomocí těchto nástrojů můžete vyvíjet datovou službu, která se dá nasadit do Azure, a před nasazením otestovat datovou službu v místním počítači. Tyto nástroje použijte při používání sady Visual Studio k vývoji datových služeb, které běží na platformě Azure. Informace o instalaci nástrojů naleznete v tématu [nástroje Azure pro Visual Studio 2015](../../../azure/sdk/vs2015-install.md). Další informace o vývoji datových služeb, které běží na Azure, najdete v příspěvku [nasazení služby OData v Azure](https://docs.microsoft.com/archive/blogs/astoriateam/deploying-an-odata-service-in-windows-azure).
+     Nástroje Azure pro Visual Studio obsahují integrovanou sadu nástrojů pro vývoj služeb Azure v sadě Visual Studio. Pomocí těchto nástrojů můžete vyvíjet datovou službu, která se dá nasadit do Azure, a před nasazením otestovat datovou službu v místním počítači. Tyto nástroje použijte při používání sady Visual Studio k vývoji datových služeb, které běží na platformě Azure. Informace o instalaci nástrojů naleznete v tématu [nástroje Azure pro Visual Studio 2015](../../../azure/vs2015-install.md). Další informace o vývoji datových služeb, které běží na Azure, najdete v příspěvku [nasazení služby OData v Azure](https://docs.microsoft.com/archive/blogs/astoriateam/deploying-an-odata-service-in-windows-azure).
 
 ### <a name="development-tips"></a>Tipy pro vývoj
 
@@ -80,7 +80,7 @@ Při vývoji datové služby Vezměte v úvahu následující skutečnosti:
 
 - Program kontroly protokolu HTTP může být užitečný při ladění datové služby tím, že vám umožní zkontrolovat obsah zpráv požadavků a odpovědí. K inspekci požadavků HTTP a odpovědí z datové služby lze využít jakýkoli síťový analyzátor paketů, který zobrazuje surové pakety.
 
-- Při ladění datové služby může být vhodné získat více informací o chybě datové služby než při běžném provozu. Můžete získat další informace o <xref:System.Data.Services.DataServiceConfiguration.UseVerboseErrors%2A> chybě z datové služby nastavením vlastnosti v části <xref:System.Data.Services.DataServiceConfiguration> to `true` a nastavením <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A> vlastnosti <xref:System.ServiceModel.Description.ServiceDebugBehavior> atributu pro třídu datové služby na. `true` Další informace najdete v [WCF Data Services po ladění](https://docs.microsoft.com/archive/blogs/phaniraj/debugging-wcf-data-services). Můžete také povolit trasování ve WCF pro zobrazení výjimek vyvolaných ve vrstvě zasílání zpráv HTTP. Další informace najdete v tématu [Konfigurace trasování](../../wcf/diagnostics/tracing/configuring-tracing.md).
+- Při ladění datové služby může být vhodné získat více informací o chybě datové služby než při běžném provozu. Můžete získat další informace o chybě z datové služby nastavením <xref:System.Data.Services.DataServiceConfiguration.UseVerboseErrors%2A> vlastnosti v části <xref:System.Data.Services.DataServiceConfiguration> to `true` a nastavením <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A> vlastnosti atributu pro <xref:System.ServiceModel.Description.ServiceDebugBehavior> třídu datové služby na `true` . Další informace najdete v [WCF Data Services po ladění](https://docs.microsoft.com/archive/blogs/phaniraj/debugging-wcf-data-services). Můžete také povolit trasování ve WCF pro zobrazení výjimek vyvolaných ve vrstvě zasílání zpráv HTTP. Další informace najdete v tématu [Konfigurace trasování](../../wcf/diagnostics/tracing/configuring-tracing.md).
 
 - Datová služba je obvykle vyvinuta jako projekt aplikace ASP.NET, ale můžete také vytvořit datovou službu jako projekt ASP.NET webu v aplikaci Visual Studio. Informace o rozdílech mezi těmito dvěma typy projektů naleznete v tématu [projekty webových aplikací a webové projekty v aplikaci Visual Studio](https://docs.microsoft.com/previous-versions/aspnet/dd547590(v=vs.110)).
 
@@ -115,7 +115,7 @@ Služba WCF Data Service nabízí flexibilitu při výběru procesu, který je h
 
 - **Azure**
 
-     Datovou službu můžete nasadit do Azure pomocí [nástrojů Azure pro Visual Studio](../../../azure/sdk/vs2015-install.md). Další informace o nasazení datové služby do Azure najdete v tématu [nasazení služby OData v Azure](https://docs.microsoft.com/archive/blogs/astoriateam/deploying-an-odata-service-in-windows-azure).
+     Datovou službu můžete nasadit do Azure pomocí [nástrojů Azure pro Visual Studio](../../../azure/vs2015-install.md). Další informace o nasazení datové služby do Azure najdete v tématu [nasazení služby OData v Azure](https://docs.microsoft.com/archive/blogs/astoriateam/deploying-an-odata-service-in-windows-azure).
 
 ### <a name="deployment-considerations"></a>Důležité informace o nasazení
 

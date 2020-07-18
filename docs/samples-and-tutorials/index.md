@@ -4,12 +4,12 @@ description: Informace o ukázkách a kurzech pro .NET Core, ASP.NET Core a jazy
 author: BillWagner
 ms.author: wiwagn
 ms.date: 04/11/2017
-ms.openlocfilehash: 44ce0d740502686db1801db428a2f79c2250f8c0
-ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
+ms.openlocfilehash: 367b2cbea24ac0da634051bf815c319f3679f79b
+ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82507426"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86417332"
 ---
 # <a name="net-samples-and-tutorials"></a>Ukázky a kurzy .NET
 
@@ -17,7 +17,7 @@ Dokumentace k rozhraní .NET obsahuje sadu ukázek a kurzů, které vás seznám
 
 ## <a name="net-core"></a>.NET Core
 
-### <a name="samples"></a>ukázky
+### <a name="samples"></a>Ukázky
 
 **[Testování částí v .NET Core pomocí testu dotnet](../core/testing/unit-testing-with-dotnet-test.md)**
 
@@ -33,13 +33,13 @@ V této příručce se dozvíte, jak používat nástroje .NET Core CLI k vytvá
 
 Tato ukázka popisuje, jak psát knihovny pro .NET pomocí .NET Core CLI. Tyto nástroje poskytují efektivní a nízké prostředí, které funguje v jakémkoli podporovaném operačním systému. [Dokončená ukázka](https://github.com/dotnet/samples/tree/master/framework/libraries/frameworks-library) je k dispozici v úložišti dotnet/Samples na GitHubu.
 
-## <a name="aspnet-core"></a>Jádro ASP.NET
+## <a name="aspnet-core"></a>ASP.NET Core
 
 Přečtěte si [kurz ASP.NET Core](/aspnet/core/tutorials/). Mnoho článků v dokumentaci ASP.NET Core obsahuje odkazy na ukázky, které jsou pro ně napsané.
 
 ## <a name="c-language"></a>jazyk C#
 
-### <a name="samples"></a>ukázky
+### <a name="samples"></a>Ukázky
 
 **[Iterátory](../csharp/iterators.md)**
 
@@ -87,9 +87,9 @@ Tento kurz ukazuje spoustu funkcí jazyka LINQ a prvků jazyka, které ho podpor
 
 V tomto kurzu se dozvíte, jak vytvořit jednoduchou konzolovou aplikaci .NET Core pomocí Visual Studio pro Mac.
 
-**[Vytvoření kompletního řešení .NET Core v systému macOS pomocí sady Visual Studio pro Mac](../core/tutorials/using-on-mac-vs-full-solution.md)**
+**[Vytvoření knihovny .NET Standard v macOS pomocí Visual Studio pro Mac](../core/tutorials/library-with-visual-studio-mac.md)**
 
-V tomto kurzu se dozvíte, jak sestavit kompletní řešení .NET Core, které zahrnuje opakovaně použitelnou knihovnu a testování částí.
+V tomto kurzu se dozvíte, jak vytvořit knihovnu .NET Standard pomocí Visual Studio pro Mac.
 
 **[Vytvoření aplikace .NET Core, která podporuje moduly plug-in](../core/tutorials/creating-app-with-plugin-support.md)**
 

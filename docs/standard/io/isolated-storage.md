@@ -19,38 +19,19 @@ helpviewer_keywords:
 - data storage using isolated storage, options
 - isolation
 ms.assetid: aff939d7-9e49-46f2-a8cd-938d3020e94e
-ms.openlocfilehash: b9915faff2593cc51868c20e1a83a05ffca9f548
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: 0de0c7e9843ca8a97392733a68367b1dae8de232
+ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85325929"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86416387"
 ---
 # <a name="isolated-storage"></a>Izolované úložiště
-<a name="top"></a>Pro desktopové aplikace je izolované úložiště mechanismus pro ukládání dat, který poskytuje izolaci a bezpečnost definováním standardizovaných způsobů asociace kódu s uloženými daty. Standardizace poskytuje také další výhody. Správci mohou používat nástroje, které jsou navrženy pro manipulaci izolovaného úložiště, a nakonfigurovat kapacitu úložiště souborů, nastavit zásady zabezpečení a odstranit nepoužívaná data. Díky izolovanému úložišti váš kód pro zadání bezpečných umístění v systému souborů již nevyžaduje jedinečné cesty a data jsou chráněna před ostatními aplikacemi, které mají přístup pouze k izolovanému úložišti. Pevně zakódovaná informace, která označuje oblast umístění aplikace, není vyžadována.
+
+Pro desktopové aplikace je izolované úložiště mechanismus pro ukládání dat, který poskytuje izolaci a bezpečnost definováním standardizovaných způsobů asociace kódu s uloženými daty. Standardizace poskytuje také další výhody. Správci mohou používat nástroje, které jsou navrženy pro manipulaci izolovaného úložiště, a nakonfigurovat kapacitu úložiště souborů, nastavit zásady zabezpečení a odstranit nepoužívaná data. Díky izolovanému úložišti váš kód pro zadání bezpečných umístění v systému souborů již nevyžaduje jedinečné cesty a data jsou chráněna před ostatními aplikacemi, které mají přístup pouze k izolovanému úložišti. Pevně zakódovaná informace, která označuje oblast umístění aplikace, není vyžadována.
 
 > [!IMPORTANT]
 > Izolované úložiště není k dispozici pro aplikace Windows 8. x Store. Místo toho použijte aplikační datové třídy v `Windows.Storage` oborech názvů obsažených v rozhraní prostředí Windows Runtime API k ukládání místních dat a souborů. Další informace najdete v tématu [data aplikací](https://docs.microsoft.com/previous-versions/windows/apps/hh464917(v=win.10)) na stránce Windows Dev Center.
-
-Toto téma obsahuje následující oddíly:
-
-- [Datové přihrádky a úložiště dat](#data_compartments_and_stores)
-
-- [Kvóty pro izolované úložiště](#quotas)
-
-- [Bezpečný přístup](#secure_access)
-
-- [Povolené využití a rizika zabezpečení](#allowed_usage)
-
-- [Umístění izolovaného úložiště](#isolated_storage_locations)
-
-- [Vytváření, provádění výčtů a odstraňování izolovaného úložiště](#isolated_storage_tasks)
-
-- [Scénáře pro izolované úložiště](#scenarios_for_isolated_storage)
-
-- [Související témata](#related_topics)
-
-- [Reference](#reference)
 
 <a name="data_compartments_and_stores"></a>
 
@@ -114,11 +95,11 @@ __Tato část se vztahuje na následující architektury:__
 - .NET Core 2.1 +
 - .NET 5.0 +
 
-.NET Framework a .NET Core nabízejí [izolované úložiště](/dotnet/standard/io/isolated-storage) jako mechanismus pro zachování dat pro uživatele, aplikaci nebo komponentu. Toto je starší verze součásti, která je primárně navržena pro scénáře zabezpečení přístupu ke kódu.
+.NET Framework a .NET Core nabízejí izolované úložiště jako mechanismus pro zachování dat pro uživatele, aplikaci nebo komponentu. Toto je starší verze součásti, která je primárně navržena pro scénáře zabezpečení přístupu ke kódu.
 
 Různá rozhraní API a nástroje izolovaného úložiště se dají použít ke čtení dat napříč hranicemi důvěryhodnosti. Například čtení dat z oboru v rámci počítače může agregovat data z jiných, případně méně důvěryhodných uživatelských účtů v počítači. Komponenty nebo aplikace, které se čtou z oborů izolovaného úložiště v rámci počítače, by měly znát důsledky čtení těchto dat.
 
-### <a name="security-sensitive-apis-which-can-read-from-the-machine-wide-scope"></a>Rozhraní API citlivá na zabezpečení, která se dají číst z rozsahu v rámci počítače
+### <a name="security-sensitive-apis-that-can-read-from-the-machine-wide-scope"></a>Rozhraní API citlivá na zabezpečení, která se dají číst z rozsahu v rámci počítače
 
 Komponenty nebo aplikace, které volají některá z následujících rozhraní API načtených z oboru v rámci počítače:
 
@@ -129,7 +110,7 @@ Komponenty nebo aplikace, které volají některá z následujících rozhraní 
 * [IsolatedStorageFile. GetStore](/dotnet/api/system.io.isolatedstorage.isolatedstoragefile.getstore)– předání oboru, který obsahuje příznak IsolatedStorageScope. Machine
 * [IsolatedStorageFile. Remove](/dotnet/api/system.io.isolatedstorage.isolatedstoragefile.remove), předání oboru, který obsahuje `IsolatedStorageScope.Machine` příznak
 
-[Nástroj izolovaného úložiště](/dotnet/framework/tools/storeadm-exe-isolated-storage-tool) `storeadm.exe` je ovlivněn při volání s `/machine` přepínačem, jak je znázorněno v následujícím kódu:
+[Nástroj izolovaného úložiště](../../framework/tools/storeadm-exe-isolated-storage-tool.md) `storeadm.exe` je ovlivněn při volání s `/machine` přepínačem, jak je znázorněno v následujícím kódu:
 
 ```txt
 storeadm.exe /machine [any-other-switches]
@@ -252,7 +233,7 @@ Mnoho aplikací používá databáze k ukládání a izolaci dat. V tomto příp
 
 <a name="related_topics"></a>
 
-## <a name="related-topics"></a>Související témata
+## <a name="related-articles"></a>Související články
 
 |Nadpis|Popis|
 |-----------|-----------------|

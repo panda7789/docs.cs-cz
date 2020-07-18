@@ -1,50 +1,50 @@
 ---
 title: Průběžná integrace (CI) s .NET Core SDK a nástroji
-description: Zjistěte, jak používat sadku .NET Core SDK a její nástroje na serveru sestavení s průběžnou integrací.
+description: Naučte se používat .NET Core SDK a jeho nástroje na serveru sestavení s nepřetržitou integrací.
 ms.date: 05/18/2017
-ms.openlocfilehash: 6e23a21dd36422a095e56519c9aa28ce2549f7b2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ddccb477bc112157a155e2217e04c329e7ab51c5
+ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77451035"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86415995"
 ---
-# <a name="using-net-core-sdk-and-tools-in-continuous-integration-ci"></a>Použití sady .NET Core SDK a nástrojů v průběžné integraci (CI)
+# <a name="using-net-core-sdk-and-tools-in-continuous-integration-ci"></a>Používání .NET Core SDK a nástrojů v kontinuální integraci (CI)
 
-Tento dokument popisuje použití sady .NET Core SDK a jejích nástrojů na serveru sestavení. Sada nástrojů .NET Core funguje interaktivně, kde vývojář zadá příkazy na příkazovém řádku a automaticky, kde server průběžné integrace (CI) spustí skript sestavení. Příkazy, možnosti, vstupy a výstupy jsou stejné a jediné, co zadáte, jsou způsob, jak získat nástroje a systém pro sestavení aplikace. Tento dokument se zaměřuje na scénáře nástroje pořízení pro CI s doporučeními, jak navrhnout a strukturovat skripty sestavení.
+Tento dokument popisuje použití .NET Core SDK a jeho nástrojů na serveru sestavení. Sada nástrojů .NET Core funguje interaktivně, pokud vývojář zadá příkazy na příkazovém řádku a automaticky, kde server průběžné integrace (CI) spouští skript sestavení. Příkazy, možnosti, vstupy a výstupy jsou stejné a jediné, co zadáte, je způsob, jak získat nástroje a systém pro sestavení vaší aplikace. Tento dokument se zaměřuje na scénáře získání nástrojů pro CI s doporučeními, jak navrhovat a strukturovat skripty sestavení.
 
 ## <a name="installation-options-for-ci-build-servers"></a>Možnosti instalace pro servery sestavení CI
 
-### <a name="using-the-native-installers"></a>Použití nativních instalačních techniků
+### <a name="using-the-native-installers"></a>Použití nativních instalačních programů
 
-Nativní instalační programy jsou k dispozici pro macOS, Linux a Windows. Instalátory vyžadují přístup správce (sudo) k serveru sestavení. Výhodou použití nativního instalačního programu je, že nainstaluje všechny nativní závislosti potřebné ke spuštění nástrojů. Nativní instalační programy také poskytují celosystémovou instalaci sady SDK.
+Nativní instalační programy jsou k dispozici pro macOS, Linux a Windows. Instalační programy vyžadují přístup správce (sudo) k serveru sestavení. Výhodou použití nativního instalačního programu je instalace všech nativních závislostí potřebných ke spuštění nástrojů. Nativní instalační programy také poskytují instalaci sady SDK pro všechny systémy.
 
-Uživatelé macOS by měli používat instalační programy PKG. Na Linuxu je na výběr použití správce balíčků založených na zdroji, jako je apt-get pro Ubuntu nebo yum pro CentOS, nebo pomocí samotných balíčků, DEB nebo RPM. V systému Windows použijte instalační program MSI.
+macOS uživatelé by měli používat instalační programy PKG. V systému Linux existuje možnost použití Správce balíčků na základě informačního kanálu, jako je apt-get pro Ubuntu nebo Yumu pro CentOS, nebo použití samotných balíčků, DEB nebo ot./min.. Ve Windows použijte instalační program MSI.
 
-Nejnovější stabilní binární soubory se nacházejí v [souborech ke stažení .NET](https://dotnet.microsoft.com/download). Pokud chcete použít nejnovější (a potenciálně nestabilní) předběžné nástroje, použijte odkazy uvedené v [úložišti GitHub dotnet/core-sdk](https://github.com/dotnet/core-sdk#installers-and-binaries). Pro linuxové `tar.gz` distribuce jsou k `tarballs`dispozici archivy (známé také jako); K instalaci rozhraní .NET Core použijte instalační skripty v archivu.
+Nejnovější stabilní binární soubory najdete v části [soubory ke stažení pro .NET](https://dotnet.microsoft.com/download). Pokud chcete použít nejnovější (a potenciálně nestabilní) předběžné verze nástrojů, použijte odkazy, které jsou k dispozici v [úložišti GitHub/Core-SDK](https://github.com/dotnet/core-sdk#installers-and-binaries). V případě distribucí systému Linux `tar.gz` jsou k dispozici archivy (známé také jako `tarballs` ); pomocí instalačních skriptů v archivech nainstalujte rozhraní .NET Core.
 
-### <a name="using-the-installer-script"></a>Použití instalačního skriptu
+### <a name="using-the-installer-script"></a>Použití skriptu instalačního programu
 
-Použití instalačního skriptu umožňuje instalaci bez oprávnění správce na serveru sestavení a snadnou automatizaci pro získání nástrojů. Skript se postará o stažení nástrojů a jeho extrahování do výchozího nebo určeného umístění pro použití. Můžete také určit verzi nástroje, kterou chcete nainstalovat, a zda chcete nainstalovat celou sadu SDK nebo pouze sdílený běh ový čas.
+Použití skriptu instalačního programu umožňuje instalaci bez oprávnění správce na serveru sestavení a snadné automatizace pro získání nástrojů. Skript se postará o stažení nástrojů a jejich extrakci do výchozího nebo zadaného umístění, které se má použít. Můžete také zadat verzi nástrojů, které chcete nainstalovat, a zda chcete nainstalovat celou sadu SDK nebo pouze sdílený modul runtime.
 
-Instalační skript je automatizován pro spuštění na začátku sestavení pro načtení a instalaci požadované verze sady SDK. *Požadovaná verze* je bez ohledu na verzi sady SDK vaše projekty vyžadují k sestavení. Skript umožňuje nainstalovat sadu SDK v místním adresáři na serveru, spustit nástroje z nainstalovaného umístění a poté vyčistit (nebo nechat službu CI vyčistit) po sestavení. To poskytuje zapouzdření a izolace na celý proces sestavení. Odkaz na instalační skript se nachází v článku [dotnet-install.](dotnet-install-script.md)
+Skript instalačního programu je automatizovaný pro spuštění na začátku sestavení za účelem načtení a instalaci požadované verze sady SDK. *Požadovaná verze* je libovolná verze sady SDK, kterou vaše projekty vyžadují pro sestavení. Skript vám umožní nainstalovat sadu SDK do místního adresáře na serveru, spustit nástroje z nainstalovaného umístění a potom vyčistit (nebo nechat službu CI vyčistit) po sestavení. To zajišťuje zapouzdření a izolaci pro celý proces sestavení. Odkaz na instalační skript najdete v článku [dotnet-Install](dotnet-install-script.md) .
 
 > [!NOTE]
 > **Azure DevOps Services**
 >
-> Při použití instalačního skriptu se nativní závislosti neinstalují automaticky. Nativní závislosti je nutné nainstalovat, pokud je operační systém nemá. Další informace naleznete v tématu [.NET Core závislosti a požadavky](../install/dependencies.md).
+> Při použití skriptu instalačního programu nejsou nativní závislosti automaticky nainstalovány. Nativní závislosti je nutné nainstalovat, pokud je operační systém neobsahuje. Další informace najdete v tématu [závislosti a požadavky .NET Core](../install/windows.md#dependencies).
 
 ## <a name="ci-setup-examples"></a>Příklady nastavení CI
 
-Tato část popisuje ruční nastavení pomocí skriptu PowerShell nebo bash spolu s popisem několika řešení CI softwaru jako služby (SaaS). Řešení SaaS CI, na které se [vztahuje,](https://travis-ci.org/)jsou Travis CI , [AppVeyor](https://www.appveyor.com/)a [Azure Pipelines](https://docs.microsoft.com/azure/devops/pipelines/index).
+Tato část popisuje ruční instalaci pomocí skriptu PowerShellu nebo bash spolu s popisem několika řešení CI pro software jako služba (SaaS). Zahrnutá řešení SaaS CI jsou [TRAVIS CI](https://travis-ci.org/), [AppVeyor](https://www.appveyor.com/)a [Azure Pipelines](https://docs.microsoft.com/azure/devops/pipelines/index).
 
-### <a name="manual-setup"></a>Ruční nastavení
+### <a name="manual-setup"></a>Ruční instalace
 
-Každá služba SaaS má své vlastní metody pro vytváření a konfiguraci procesu sestavení. Pokud používáte jiné řešení SaaS než uvedené nebo vyžadují přizpůsobení nad rámec předběžné podpory, je nutné provést alespoň některé ruční konfigurace.
+Každá služba SaaS má své vlastní metody pro vytváření a konfiguraci procesu sestavení. Pokud používáte jiné řešení SaaS, než je uvedené v seznamu nebo vyžadovat přizpůsobení nad rámec předběžného použití, musíte provést alespoň nějakou ruční konfiguraci.
 
-Obecně platí ruční nastavení vyžaduje, abyste získali verzi nástrojů (nebo nejnovější noční sestavení nástrojů) a spusťte skript sestavení. Skript PowerShellu nebo bash můžete použít k orchestraci příkazů jádra .NET nebo použít soubor projektu, který nastiňuje proces sestavení. [Část orchestrace](#orchestrating-the-build) obsahuje další podrobnosti o těchto možnostech.
+Obecně platí, že ruční instalace vyžaduje, abyste získali verzi nástrojů (nebo nejnovější noční sestavení nástrojů) a spustili skript sestavení. Pomocí skriptu PowerShell nebo bash můžete orchestrovat příkazy .NET Core nebo použít soubor projektu, který popisuje proces sestavení. Další informace o těchto možnostech najdete v [části orchestrace](#orchestrating-the-build) .
 
-Po vytvoření skriptu, který provádí ruční nastavení serveru sestavení CI, použijte jej na počítači pro účely dev k sestavení kódu místně pro účely testování. Jakmile potvrdíte, že skript běží dobře místně, nasaďte jej na server sestavení CI. Relativně jednoduchý skript prostředí PowerShell ukazuje, jak získat sadku .NET Core SDK a nainstalovat ji na server sestavení systému Windows:
+Po vytvoření skriptu, který provede ruční instalaci serveru sestavení CI, ho použijte ve vývojovém počítači k místnímu sestavení kódu pro účely testování. Jakmile ověříte, že se skript spouští dobře místně, nasaďte ho do svého serveru sestavení CI. Poměrně jednoduchý skript PowerShellu ukazuje, jak získat .NET Core SDK a jak ho nainstalovat na server sestavení Windows.
 
 ```powershell
 $ErrorActionPreference="Stop"
@@ -91,7 +91,7 @@ $LocalDotnet = "$InstallDir/dotnet"
 # Run the build process now. Implement your build script here.
 ```
 
-Můžete zadat implementaci pro proces sestavení na konci skriptu. Skript získá nástroje a potom spustí proces sestavení. U počítačů se systémem UNIX provádí následující skript bash akce popsané ve skriptu prostředí PowerShell podobným způsobem:
+Implementaci pro proces sestavení zadáte na konci skriptu. Skript získá nástroje a pak provede proces sestavení. Pro počítače se systémem UNIX provede následující skript bash akce popsané ve skriptu prostředí PowerShell podobným způsobem:
 
 ```bash
 #!/bin/bash
@@ -120,15 +120,15 @@ LOCALDOTNET="$INSTALLDIR/dotnet"
 
 ### <a name="travis-ci"></a>Travis CI
 
-Můžete nakonfigurovat [Travis CI](https://travis-ci.org/) nainstalovat .NET Core `csharp` SDK `dotnet` pomocí jazyka a klíče. Další informace naleznete v oficiálních dokumentech Travis CI na [stavební C #, F# nebo Visual Basic Project](https://docs.travis-ci.com/user/languages/csharp/). Všimněte si, že při přístupu `language: csharp` k informacím Travis CI, že identifikátor jazyka spravované komunitou funguje pro všechny jazyky .NET, včetně F#, a Mono.
+[TRAVIS CI](https://travis-ci.org/) můžete nakonfigurovat pro instalaci .NET Core SDK pomocí `csharp` jazyka a `dotnet` klíče. Další informace najdete v oficiální dokumentaci k Travis CI o [vytváření projektů v jazyce C#, F # nebo Visual Basic](https://docs.travis-ci.com/user/languages/csharp/). Mějte na paměti, že při přístupu k informacím o Travis CI, které udržuje komunitní `language: csharp` identifikátor jazyka, funguje pro všechny jazyky .NET, včetně F # a mono.
 
-Travis CI spouští úlohy macOS i Linux v *matici sestavení*, kde zadáte kombinaci runtime, prostředí a vyloučení/inkluzí, které pokryjí kombinace sestavení pro vaši aplikaci. Další informace naleznete v [tématu Přizpůsobení sestavení](https://docs.travis-ci.com/user/customizing-the-build) článku v dokumentaci Travis CI. Nástroje založené na MSBuild zahrnují běhové časy LTS (1.0.x) a Current (1.1.x) v balíčku; takže instalací sady SDK obdržíte vše, co potřebujete k sestavení.
+Travis CI spouští úlohy macOS a Linux v *matrici sestavení*, kde zadáváte kombinaci modulu runtime, prostředí a vyloučení a zahrnutí, která budou zahrnovat vaše kombinace sestavení pro vaši aplikaci. Další informace naleznete v článku [přizpůsobení sestavení](https://docs.travis-ci.com/user/customizing-the-build) v dokumentaci k Travis CI. Nástroje založené na MSBuildu zahrnují do balíčku modul runtime LTS (1.0. x) a aktuální (1.1. x). instalace sady SDK proto obdržíte všechno, co potřebujete k sestavení.
 
 ### <a name="appveyor"></a>AppVeyor
 
-[AppVeyor](https://www.appveyor.com/) nainstaluje .NET Core 1.0.1 SDK s bitovou kopii pracovního procesu `Visual Studio 2017` sestavení. Další image sestavení s různými verzemi sady .NET Core SDK jsou k dispozici. Další informace naleznete [v příkladu appveyor.yml](https://github.com/dotnet/docs/blob/master/appveyor.yml) a v článku [Sestavení pracovních bitových kopií](https://www.appveyor.com/docs/build-environment/#build-worker-images) v dokumentech AppVeyor.
+[AppVeyor](https://www.appveyor.com/) nainstaluje sadu SDK .NET Core 1.0.1 pomocí `Visual Studio 2017` Image pracovního procesu sestavení. K dispozici jsou další image sestavení s různými verzemi .NET Core SDK. Další informace najdete v článku [příklad AppVeyor. yml](https://github.com/dotnet/docs/blob/master/appveyor.yml) a [Build Worker images](https://www.appveyor.com/docs/build-environment/#build-worker-images) v dokumentaci AppVeyor.
 
-Binární soubory sady .NET Core SDK se stahují a rozbalují v podadresáři `PATH` pomocí instalačního skriptu a pak jsou přidány do proměnné prostředí. Přidejte matici sestavení pro spuštění integračních testů s více verzemi sady .NET Core SDK:
+.NET Core SDK binární soubory byly staženy a extrahovány v podadresáři pomocí instalačního skriptu a poté přidány do `PATH` proměnné prostředí. Přidejte matrici sestavení pro spuštění testů integrace s více verzemi .NET Core SDK:
 
 ```yaml
 environment:
@@ -142,37 +142,37 @@ install:
 
 ### <a name="azure-devops-services"></a>Azure DevOps Services
 
-Nakonfigurujte služby Azure DevOps services pro vytváření projektů .NET Core pomocí jednoho z těchto přístupů:
+Nakonfigurujte Azure DevOps Services pro sestavení projektů .NET Core pomocí jednoho z těchto přístupů:
 
-1. Spusťte skript z [kroku ručního nastavení](#manual-setup) pomocí příkazů.
-1. Vytvořte sestavení složené z několika předdefinovaných úloh sestavení služby Azure DevOps Services, které jsou nakonfigurované pro použití nástrojů .NET Core.
+1. Spusťte skript z [kroku ruční instalace](#manual-setup) pomocí příkazů.
+1. Vytvořte sestavení složené z několika Azure DevOps Services integrovaných úloh sestavení, které jsou nakonfigurovány pro použití nástrojů .NET Core.
 
-Obě řešení jsou platná. Pomocí skriptu ručního nastavení řídíte verzi nástrojů, které obdržíte, protože je stáhnete jako součást sestavení. Sestavení je spuštěno ze skriptu, který je nutné vytvořit. Tento článek se vztahuje pouze na ruční možnost. Další informace o vytváření sestavení pomocí úloh sestavení služby Azure DevOps Services najdete v dokumentaci [k Azure Pipelines.](https://docs.microsoft.com/azure/devops/pipelines/index)
+Obě řešení jsou platná. Pomocí skriptu ručního nastavení můžete řídit verzi nástrojů, které obdržíte, protože je stáhnete jako součást sestavení. Sestavení je spuštěno ze skriptu, který je třeba vytvořit. Tento článek se týká pouze ručních možností. Další informace o vytváření sestavení pomocí Azure DevOps Services úloh sestavení naleznete v dokumentaci k [Azure Pipelines](https://docs.microsoft.com/azure/devops/pipelines/index) .
 
-Chcete-li použít skript ručního nastavení ve službě Azure DevOps Services, vytvořte novou definici sestavení a zadejte skript, který se má spustit pro krok sestavení. Toho se provádí pomocí uživatelského rozhraní služby Azure DevOps Services:
+Chcete-li použít skript ručního nastavení v Azure DevOps Services, vytvořte novou definici sestavení a zadejte skript, který bude spuštěn pro krok sestavení. K tomu je možné použít Azure DevOps Services uživatelské rozhraní:
 
-1. Začněte vytvořením nové definice sestavení. Jakmile se dostanete na obrazovku, která vám poskytuje možnost definovat, jaký druh sestavení chcete vytvořit, vyberte možnost **Prázdné.**
+1. Začněte vytvořením nové definice sestavení. Až se dostanete na obrazovku, která vám poskytne možnost definovat typ sestavení, který chcete vytvořit, vyberte **prázdnou** možnost.
 
    ![Výběr prázdné definice sestavení](./media/using-ci-with-cli/select-empty-build-definition.png)
 
-1. Po konfiguraci úložiště k sestavení, budete přesměrováni na definice sestavení. Vyberte **Přidat krok sestavení**:
+1. Po nakonfigurování úložiště, které se má sestavit, budete přesměrováni na definice sestavení. Vyberte **Přidat krok sestavení**:
 
    ![Přidání kroku sestavení](./media/using-ci-with-cli/add-build-step.png)
 
-1. Zobrazí se katalog **úkolů**. Katalog obsahuje úkoly, které používáte v sestavení. Vzhledem k tomu, že máte skript, vyberte tlačítko **Přidat** pro **PowerShell: Spuštění skriptu PowerShellu**.
+1. Zobrazuje se v **katalogu úloh**. Katalog obsahuje úlohy, které v sestavení používáte. Vzhledem k tomu, že máte skript, vyberte tlačítko **Přidat** pro **PowerShell: Spusťte powershellový skript**.
 
-   ![Přidání kroku skriptu prostředí PowerShell](./media/using-ci-with-cli/add-powershell-script.png)
+   ![Přidání kroku skriptu PowerShellu](./media/using-ci-with-cli/add-powershell-script.png)
 
 1. Nakonfigurujte krok sestavení. Přidejte skript z úložiště, které vytváříte:
 
-   ![Určení skriptu Prostředí PowerShell, který se má spustit](./media/using-ci-with-cli/powershell-script-path.png)
+   ![Určení skriptu prostředí PowerShell, který se má spustit](./media/using-ci-with-cli/powershell-script-path.png)
 
 ## <a name="orchestrating-the-build"></a>Orchestrace sestavení
 
-Většina tohoto dokumentu popisuje, jak získat nástroje .NET Core a konfigurovat různé služby CI bez poskytnutí informací o tom, jak organizovat nebo *skutečně sestavit*, váš kód s .NET Core. Možnosti, jak strukturovat proces sestavení, závisí na mnoha faktorech, které zde nelze obecně pokrýt. Další informace o orchestraci sestavení s každou technologií, prozkoumejte prostředky a ukázky uvedené v dokumentaci sady [Travis CI](https://travis-ci.org/), [AppVeyor](https://www.appveyor.com/)a [Azure pipelines](https://docs.microsoft.com/azure/devops/pipelines/index).
+Většina tohoto dokumentu popisuje, jak získat nástroje .NET Core a nakonfigurovat různé služby CI bez poskytování informací o tom, jak orchestrovat, nebo *ve skutečnosti sestavit*kód pomocí .NET Core. Volby, jak strukturovat proces sestavení, závisí na mnoha faktorech, které se tady nedají zakrýt obecným způsobem. Další informace o orchestraci vašich sestavení s každou technologií najdete v dokumentaci k prostředkům a ukázkám, které jsou k dispozici v dokumentaci sady [TRAVIS CI](https://travis-ci.org/), [AppVeyor](https://www.appveyor.com/)a [Azure Pipelines](https://docs.microsoft.com/azure/devops/pipelines/index).
 
-Dva obecné přístupy, které budete mít při strukturování procesu sestavení pro kód .NET Core pomocí nástrojů .NET Core používají msbuild přímo nebo pomocí příkazů příkazového řádku .NET Core. Jaký přístup byste měli vzít, je určen vaší úrovně pohodlí s přístupy a kompromisy ve složitosti. MSBuild poskytuje možnost vyjádřit proces sestavení jako úkoly a cíle, ale přichází s přidanou složitost učení MSBuild syntaxe souboru projektu. Použití nástrojů příkazového řádku .NET Core je možná jednodušší, ale vyžaduje, abyste `bash` zapisovali logiku orchestrace ve skriptovacím jazyce, jako je powershell nebo PowerShell.
+Dva obecné přístupy, které přiberete při vytváření struktury procesu sestavení pro kód .NET Core pomocí nástrojů .NET Core, používají přímo nástroj MSBuild nebo pomocí příkazů příkazového řádku .NET Core. Jaký přístup byste měli vzít v úvahu, závisí na vaší úrovni pohodlí s ohledem na složitost a kompromisy. Nástroj MSBuild poskytuje možnost vyjádřit svůj proces sestavení jako úkoly a cíle, ale obsahuje i zvýšení složitosti syntaxe souboru projektu MSBuild. Použití nástrojů příkazového řádku .NET Core je možná jednodušší, ale vyžaduje, abyste napsali logiku orchestrace ve skriptovacím jazyce, jako je například `bash` PowerShell.
 
 ## <a name="see-also"></a>Viz také
 
-- [.NET ke stažení - Linux](https://dotnet.microsoft.com/download?initial-os=linux)
+- [Soubory ke stažení pro .NET – Linux](https://dotnet.microsoft.com/download?initial-os=linux)

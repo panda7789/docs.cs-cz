@@ -1,43 +1,43 @@
 ---
-title: Main() Návratové hodnoty - Průvodce programováním Jazyka C#
+title: Návratové hodnoty Main () – Průvodce programováním v C#
 ms.date: 08/02/2017
 helpviewer_keywords:
 - Main method [C#], return values
 ms.assetid: c2f5a1d8-1676-4bea-bc7e-44a97e72d5bc
-ms.openlocfilehash: 7061b6c1988da9f6dfac115ee555a914531df863
-ms.sourcegitcommit: f87ad41b8e62622da126aa928f7640108c4eff98
+ms.openlocfilehash: a3e29903448c3eb5e0b7dda027677d1785a445e7
+ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "80805925"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86416294"
 ---
-# <a name="main-return-values-c-programming-guide"></a>Main() vrácené hodnoty (Průvodce programováním Jazyka C#)
+# <a name="main-return-values-c-programming-guide"></a>Návratové hodnoty Main () (Průvodce programováním v C#)
 
-Metoda `Main` může `void`vrátit :
+`Main`Metoda může vracet `void` :
 
  [!code-csharp[csProgGuideMain#12](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideMain/CS/Class3.cs#12)]
 
-Může také vrátit `int`:
+Může také vrátit `int` :
 
  [!code-csharp[csProgGuideMain#13](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideMain/CS/Class3.cs#13)]
 
-Pokud se návratová hodnota z `Main` `void` nepoužívá, vrácení umožňuje mírně jednodušší kód. Vrácení celého čísla však umožňuje programu sdělit informace o stavu jiným programům nebo skriptům, které vyvolávají spustitelný soubor. Vrácená hodnota `Main` z je považována za ukončovací kód procesu. Pokud `void` je `Main`vrácena z , ukončovací kód bude implicitně `0`. Následující příklad ukazuje, jak `Main` lze získat přístup k vrácené hodnotě z.
+Pokud se návratová hodnota `Main` nepoužívá, vrátí návrat `void` umožňuje mírně jednodušší kód. Vrácení celého čísla ale umožňuje programu sdělit informace o stavu jiným programům nebo skriptům, které vyvolávají spustitelný soubor. Návratová hodnota z `Main` je považována za ukončovací kód procesu. Pokud `void` je vrácen z `Main` , bude ukončovací kód implicitně `0` . Následující příklad ukazuje, jak lze získat pøístup k návratové hodnotě `Main` .
 
 ## <a name="example"></a>Příklad
 
-Tento příklad používá nástroje příkazového řádku [.NET Core.](../../../core/index.yml) Pokud nejste obeznámeni s nástroji příkazového řádku .NET Core, můžete se o nich dozvědět v tomto [článku s informacemi](../../../core/tutorials/cli-create-console-app.md)o začátku .
+V tomto příkladu se používají nástroje příkazového řádku [.NET Core](../../../core/index.yml) . Pokud si nejste obeznámeni s nástroji příkazového řádku .NET Core, můžete o nich získat informace v tomto [článku](../../../core/tutorials/with-visual-studio-code.md)Začínáme.
 
-Metodu `Main` v *program.cs* upravte takto:
+Upravte `Main` metodu v *program.cs* následujícím způsobem:
 
  [!code-csharp[csProgGuideMain#14](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideMain/CS/Class3.cs#14)]
 
-Při spuštění programu v systému Windows je `Main` jakákoli hodnota vrácená z funkce uložena v proměnné prostředí. Tuto proměnnou prostředí lze `ERRORLEVEL` načíst pomocí `$LastExitCode` dávkového souboru nebo z prostředí PowerShell.
+Když je program spuštěn ve Windows, všechny hodnoty vrácené `Main` funkcí jsou uloženy v proměnné prostředí. Tato proměnná prostředí se dá načíst pomocí `ERRORLEVEL` dávkového souboru nebo `$LastExitCode` z PowerShellu.
 
-Aplikaci můžete sestavit pomocí příkazu [dotnet CLI.](../../../core/tools/dotnet.md) `dotnet build`
+Aplikaci můžete vytvořit pomocí příkazu [DOTNET CLI](../../../core/tools/dotnet.md) `dotnet build` .
 
-Dále vytvořte skript Powershellu pro spuštění aplikace a zobrazení výsledku. Vložte následující kód do textového `test.ps1` souboru a uložte jej jako ve složce, která obsahuje projekt. Spusťte skript powershellu zadáním `test.ps1` na výzvu powershellu.
+Potom vytvořte powershellový skript, který spustí aplikaci a zobrazí výsledek. Vložte následující kód do textového souboru a uložte jej jako `test.ps1` ve složce, která obsahuje projekt. Spusťte skript prostředí PowerShell zadáním příkazu `test.ps1` do příkazového řádku PowerShellu.
 
-Vzhledem k tomu, že kód vrátí nulu, dávkový soubor bude hlásit úspěch. Pokud však změníte MainReturnValTest.cs vrátíte nenulovou hodnotu a potom program znovu zkompilujete, následné spuštění skriptu prostředí PowerShell nahlásí chybu.
+Vzhledem k tomu, že kód vrátí hodnotu nula, dávkový soubor ohlásí úspěch. Pokud ale změníte MainReturnValTest.cs a vrátíte nenulovou hodnotu a pak znovu zkompilujete program, při následném spuštění skriptu PowerShellu se nahlásí chyba.
 
 ```dotnetcli
 dotnet run
@@ -60,9 +60,9 @@ Execution succeeded
 Return value = 0
 ```
 
-## <a name="async-main-return-values"></a>Asynchronní hlavní vrácené hodnoty
+## <a name="async-main-return-values"></a>Asynchronní hlavní návratové hodnoty
 
-Asynchronní hlavní vrácené hodnoty přesunout často používaný kód `Main` potřebný pro volání asynchronní metody v kódu generovanékompilátorem. Dříve budete muset napsat tuto konstrukci volat asynchronní kód a ujistěte se, že program běžel, dokud asynchronní operace dokončena:
+Asynchronní hlavní návratové hodnoty přesunou často používaný kód, který je nezbytný pro volání asynchronních metod v `Main` kódu generovaném kompilátorem. Dříve museli jste napsat tuto konstrukci pro volání asynchronního kódu a zajistěte, aby byl program spuštěn až do dokončení asynchronní operace:
 
 ```csharp
 public static void Main()
@@ -77,7 +77,7 @@ private static async Task<int> AsyncConsoleWork()
 }
 ```
 
-Nyní může být nahrazen:
+Teď to může nahradit:
 
 [!code-csharp[AsyncMain](../../../../samples/snippets/csharp/main-arguments/program.cs#AsyncMain)]
 
@@ -85,19 +85,19 @@ Výhodou nové syntaxe je, že kompilátor vždy generuje správný kód.
 
 ## <a name="compiler-generated-code"></a>Kód generovaný kompilátorem
 
-Pokud vstupní bod aplikace `Task` `Task<int>`vrátí a , kompilátor vygeneruje nový vstupní bod, který volá metodu vstupního bodu deklarovanou v kódu aplikace. Za předpokladu, že `$GeneratedMain`je tento vstupní bod volán , kompilátor generuje následující kód pro tyto vstupní body:
+Když vstupní bod aplikace vrátí `Task` nebo `Task<int>` , kompilátor vygeneruje nový vstupní bod, který volá metodu vstupního bodu deklarovanou v kódu aplikace. Za předpokladu, že je volán tento vstupní bod `$GeneratedMain` , kompilátor generuje pro tyto vstupní body následující kód:
 
-- `static Task Main()`výsledkem je, že kompilátor vyzařuje ekvivalent`private static void $GeneratedMain() => Main().GetAwaiter().GetResult();`
-- `static Task Main(string[])`výsledkem je, že kompilátor vyzařuje ekvivalent`private static void $GeneratedMain(string[] args) => Main(args).GetAwaiter().GetResult();`
-- `static Task<int> Main()`výsledkem je, že kompilátor vyzařuje ekvivalent`private static int $GeneratedMain() => Main().GetAwaiter().GetResult();`
-- `static Task<int> Main(string[])`výsledkem je, že kompilátor vyzařuje ekvivalent`private static int $GeneratedMain(string[] args) => Main(args).GetAwaiter().GetResult();`
+- `static Task Main()`Výsledkem je, že kompilátor emituje ekvivalent`private static void $GeneratedMain() => Main().GetAwaiter().GetResult();`
+- `static Task Main(string[])`Výsledkem je, že kompilátor emituje ekvivalent`private static void $GeneratedMain(string[] args) => Main(args).GetAwaiter().GetResult();`
+- `static Task<int> Main()`Výsledkem je, že kompilátor emituje ekvivalent`private static int $GeneratedMain() => Main().GetAwaiter().GetResult();`
+- `static Task<int> Main(string[])`Výsledkem je, že kompilátor emituje ekvivalent`private static int $GeneratedMain(string[] args) => Main(args).GetAwaiter().GetResult();`
 
 > [!NOTE]
->Pokud jsou použity `async` příklady `Main` modifikátor u metody, kompilátor by generovat stejný kód.
+>Pokud příklady použili `async` Modifikátor `Main` metody, kompilátor vygeneruje stejný kód.
 
 ## <a name="see-also"></a>Viz také
 
-- [Programovací příručka jazyka C#](../index.md)
-- [Odkaz jazyka C#](../index.md)
-- [Hlavní() a Argumenty příkazového řádku](index.md)
+- [Průvodce programováním v C#](../index.md)
+- [Reference jazyka C#](../index.md)
+- [Argumenty Main () a příkazového řádku](index.md)
 - [Jak zobrazit argumenty příkazového řádku](./how-to-display-command-line-arguments.md)
