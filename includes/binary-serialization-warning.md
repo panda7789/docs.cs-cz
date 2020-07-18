@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 9af0bed8a779e1173f552e095f99ad7bf5123f14
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 7ccd309c14b73af16487850d1785ecf9b0bb2d97
+ms.sourcegitcommit: 2543a78be6e246aa010a01decf58889de53d1636
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "65639124"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "86459371"
 ---
 > [!WARNING]
-> <span data-ttu-id="b3552-101">Binární serializace může být nebezpečná.</span><span class="sxs-lookup"><span data-stu-id="b3552-101">Binary serialization can be dangerous.</span></span> <span data-ttu-id="b3552-102">Nikdy nepoužívejte serializaci dat z nedůvěryhodného zdroje a nepoužívejte data serializovaného přenosu dat do systémů, které nejsou pod vaší kontrolou.</span><span class="sxs-lookup"><span data-stu-id="b3552-102">Never deserialize data from an untrusted source and never round-trip serialized data to systems not under your control.</span></span>
+> <span data-ttu-id="ec57f-101">Binární serializace může být nebezpečná.</span><span class="sxs-lookup"><span data-stu-id="ec57f-101">Binary serialization can be dangerous.</span></span> <span data-ttu-id="ec57f-102">Další informace najdete v tématu [BinaryFormatter Security Guide](../docs/standard/serialization/binaryformatter-security-guide.md).</span><span class="sxs-lookup"><span data-stu-id="ec57f-102">For more information, see [BinaryFormatter security guide](../docs/standard/serialization/binaryformatter-security-guide.md).</span></span>
