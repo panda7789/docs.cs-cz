@@ -744,6 +744,8 @@
         - name: Přehled
           href: serialization/binary-serialization.md
           displayName: binary serialization
+        - name: Průvodce zabezpečením BinaryFormatter
+          href: serialization/binaryformatter-security-guide.md
         - name: Koncepty serializace
           href: serialization/serialization-concepts.md
         - name: Základní serializace
