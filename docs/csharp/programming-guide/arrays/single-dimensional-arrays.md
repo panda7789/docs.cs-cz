@@ -1,16 +1,17 @@
 ---
 title: Jednorozměrná pole – Průvodce programováním v C#
+description: Vytvořte jednorozměrné pole v jazyce C# pomocí operátoru new určujícího typ prvku pole a počet prvků.
 ms.date: 06/03/2020
 helpviewer_keywords:
 - single-dimensional arrays [C#]
 - arrays [C#], single-dimensional
 ms.assetid: 2cec1196-1de0-49d2-baf2-c607c33310e8
-ms.openlocfilehash: e189253eedc21fa2d51e16407f04b034610bb57b
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: ada01262d57cbfebc8bfa1a5fee0639a10db5a4b
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84410241"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86474589"
 ---
 # <a name="single-dimensional-arrays-c-programming-guide"></a>Jednorozměrná pole (Průvodce programováním v C#)
 

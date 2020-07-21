@@ -1,5 +1,6 @@
 ---
 title: Generování a kompilace zdrojového kódu z grafu modelu CodeDOM
+description: Vygenerujte a zkompilujte zdrojový kód z grafu CodeDOM v rozhraní .NET. Pro generování zdrojového kódu a kompilování sestavení použijte poskytovatele kódu CodeDOM.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -26,26 +27,26 @@ helpviewer_keywords:
 - compiling source code, multiple languages
 - CodeDOM, graphs
 ms.assetid: 6c864c8e-6dd3-4a65-ace0-36879d9a9c42
-ms.openlocfilehash: a8d3bf7363cb887834a1c251aead05c75e2e3fe8
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 85654fe961f01ad7b8fb886d59a3de9ab0efe7aa
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73130224"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86474043"
 ---
 # <a name="generating-and-compiling-source-code-from-a-codedom-graph"></a>Generování a kompilace zdrojového kódu z grafu modelu CodeDOM
-<xref:System.CodeDom.Compiler> Obor názvů poskytuje rozhraní pro generování zdrojového kódu z grafů objektů CodeDOM a pro správu kompilace s podporovanými kompilátory. Poskytovatel kódu může vytvořit zdrojový kód v konkrétním programovacím jazyce podle grafu CodeDOM. Třída, která je odvozena <xref:System.CodeDom.Compiler.CodeDomProvider> z, může obvykle poskytovat metody pro generování a kompilování kódu pro jazyk, který poskytovatel podporuje.  
+<xref:System.CodeDom.Compiler>Obor názvů poskytuje rozhraní pro generování zdrojového kódu z grafů objektů CodeDOM a pro správu kompilace s podporovanými kompilátory. Poskytovatel kódu může vytvořit zdrojový kód v konkrétním programovacím jazyce podle grafu CodeDOM. Třída, která je odvozena z, <xref:System.CodeDom.Compiler.CodeDomProvider> může obvykle poskytovat metody pro generování a kompilování kódu pro jazyk, který poskytovatel podporuje.  
   
 ## <a name="using-a-codedom-code-provider-to-generate-source-code"></a>Použití poskytovatele kódu CodeDOM ke generování zdrojového kódu  
  Chcete-li generovat zdrojový kód v konkrétním jazyce, potřebujete graf CodeDOM, který představuje strukturu zdrojového kódu, který má být vygenerován.  
   
- Následující příklad ukazuje, jak vytvořit instanci třídy <xref:Microsoft.CSharp.CSharpCodeProvider>:  
+ Následující příklad ukazuje, jak vytvořit instanci třídy <xref:Microsoft.CSharp.CSharpCodeProvider> :  
   
  [!code-cpp[CodeDomExample#21](../../../samples/snippets/cpp/VS_Snippets_CLR/CodeDomExample/CPP/source3.cpp#21)]
  [!code-csharp[CodeDomExample#21](../../../samples/snippets/csharp/VS_Snippets_CLR/CodeDomExample/CS/source3.cs#21)]
  [!code-vb[CodeDomExample#21](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CodeDomExample/VB/source3.vb#21)]  
   
- Graf pro generování kódu je obvykle obsažen v <xref:System.CodeDom.CodeCompileUnit>. Chcete-li vygenerovat kód pro **CodeCompileUnit** , který obsahuje graf CodeDOM, <xref:System.CodeDom.Compiler.CodeDomProvider.GenerateCodeFromCompileUnit%2A> zavolejte metodu poskytovatele kódu. Tato metoda má parametr pro <xref:System.IO.TextWriter> , který používá ke generování zdrojového kódu, takže je někdy nutné nejprve vytvořit modul **TextWriter** , do kterého lze zapisovat. Následující příklad ukazuje vygenerování kódu z **CodeCompileUnit** a zápis generovaného zdrojového kódu do souboru s názvem HelloWorld.cs.  
+ Graf pro generování kódu je obvykle obsažen v <xref:System.CodeDom.CodeCompileUnit> . Chcete-li vygenerovat kód pro **CodeCompileUnit** , který obsahuje graf CodeDOM, zavolejte <xref:System.CodeDom.Compiler.CodeDomProvider.GenerateCodeFromCompileUnit%2A> metodu poskytovatele kódu. Tato metoda má parametr pro <xref:System.IO.TextWriter> , který používá ke generování zdrojového kódu, takže je někdy nutné nejprve vytvořit modul **TextWriter** , do kterého lze zapisovat. Následující příklad ukazuje vygenerování kódu z **CodeCompileUnit** a zápis generovaného zdrojového kódu do souboru s názvem HelloWorld.cs.  
   
  [!code-cpp[CodeDomExample#22](../../../samples/snippets/cpp/VS_Snippets_CLR/CodeDomExample/CPP/source3.cpp#22)]
  [!code-csharp[CodeDomExample#22](../../../samples/snippets/csharp/VS_Snippets_CLR/CodeDomExample/CS/source3.cs#22)]
@@ -72,13 +73,13 @@ ms.locfileid: "73130224"
   
  Pokud váš projekt odkazuje na jakákoli sestavení, je nutné zadat názvy sestavení jako položky v <xref:System.Collections.Specialized.StringCollection> podobě <xref:System.CodeDom.Compiler.CompilerParameters.ReferencedAssemblies%2A> vlastnosti **CompilerParameters** , kterou použijete při volání kompilace.  
   
- Můžete zkompilovat sestavení, které je zapsáno do paměti, nikoli na disk nastavením <xref:System.CodeDom.Compiler.CompilerParameters.GenerateInMemory%2A> vlastnosti na **hodnotu true**. Když je sestavení generované v paměti, váš kód může získat odkaz na vygenerované sestavení z <xref:System.CodeDom.Compiler.CompilerResults.CompiledAssembly%2A> vlastnosti třídy. <xref:System.CodeDom.Compiler.CompilerResults> Pokud je sestavení zapisováno na disk, můžete získat cestu k generovanému sestavení z <xref:System.CodeDom.Compiler.CompilerResults.PathToAssembly%2A> vlastnosti **CompilerResults**.  
+ Můžete zkompilovat sestavení, které je zapsáno do paměti, nikoli na disk nastavením <xref:System.CodeDom.Compiler.CompilerParameters.GenerateInMemory%2A> vlastnosti na **hodnotu true**. Když je sestavení generované v paměti, váš kód může získat odkaz na vygenerované sestavení z <xref:System.CodeDom.Compiler.CompilerResults.CompiledAssembly%2A> vlastnosti třídy <xref:System.CodeDom.Compiler.CompilerResults> . Pokud je sestavení zapisováno na disk, můžete získat cestu k generovanému sestavení z <xref:System.CodeDom.Compiler.CompilerResults.PathToAssembly%2A> vlastnosti **CompilerResults**.  
   
- Chcete-li zadat vlastní řetězec argumentů příkazového řádku, který má být použit při volání procesu kompilace, nastavte řetězec ve <xref:System.CodeDom.Compiler.CompilerParameters.CompilerOptions%2A> vlastnosti.  
+ Chcete-li zadat vlastní řetězec argumentů příkazového řádku, který má být použit při volání procesu kompilace, nastavte řetězec ve <xref:System.CodeDom.Compiler.CompilerParameters.CompilerOptions%2A> Vlastnosti.  
   
- Pokud je k vyvolání procesu kompilátoru vyžadován token zabezpečení Win32, zadejte token do <xref:System.CodeDom.Compiler.CompilerParameters.UserToken%2A> vlastnosti.  
+ Pokud je k vyvolání procesu kompilátoru vyžadován token zabezpečení Win32, zadejte token do <xref:System.CodeDom.Compiler.CompilerParameters.UserToken%2A> Vlastnosti.  
   
- Chcete-li propojit soubor prostředků Win32 s kompilovaným sestavením, zadejte název souboru prostředků Win32 do <xref:System.CodeDom.Compiler.CompilerParameters.Win32Resource%2A> vlastnosti.  
+ Chcete-li propojit soubor prostředků Win32 s kompilovaným sestavením, zadejte název souboru prostředků Win32 do <xref:System.CodeDom.Compiler.CompilerParameters.Win32Resource%2A> Vlastnosti.  
   
  Chcete-li určit úroveň upozornění, při které má být kompilace zastavena, nastavte <xref:System.CodeDom.Compiler.CompilerParameters.WarningLevel%2A> vlastnost na celé číslo, které představuje úroveň upozornění, při které má být kompilace zastavena. Můžete také nakonfigurovat kompilátor pro zastavení kompilace, pokud jsou zjištěna upozornění, nastavením <xref:System.CodeDom.Compiler.CompilerParameters.TreatWarningsAsErrors%2A> vlastnosti na **hodnotu true**.  
   
@@ -95,5 +96,5 @@ ms.locfileid: "73130224"
 
 - <xref:System.CodeDom>
 - <xref:System.CodeDom.Compiler>
-- [Dynamické vytváření a kompilování zdrojového kódu](dynamic-source-code-generation-and-compilation.md)
+- [Generování a kompilace dynamického zdrojového kódu](dynamic-source-code-generation-and-compilation.md)
 - [Rychlá referenční příručka CodeDOM](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/f1dfsbhc(v=vs.100))

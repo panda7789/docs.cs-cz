@@ -1,16 +1,17 @@
 ---
 title: Události Trasování událostí pro Windows zabezpečení
+description: Seznamte se s událostmi ETW zabezpečení, které jsou vyvolány při ověřování silného názvu a ověřování technologií Authenticode v rozhraní .NET.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - security events [.NET Framework]
 - ETW, security events (CLR)
 ms.assetid: 0ed69f73-5c01-4514-bd63-979c6e38d41d
-ms.openlocfilehash: c443bda8cdc2c6b32760e9dcba8b81a29d81660b
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 2fd2d450223cd16a7791b8f6c67afe6bcb954eb3
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75715941"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86474212"
 ---
 # <a name="security-etw-events"></a>Události Trasování událostí pro Windows zabezpečení
 
@@ -21,7 +22,7 @@ Události zabezpečení jsou vyvolány během ověřování silných názvů a p
   
 |Klíčové slovo pro vyvolání události|Úroveň|  
 |-----------------------------------|-----------|  
-|`SecurityKeyword` (0x400)|Informační (4)|  
+|`SecurityKeyword`(0x400)|Informační (4)|  
   
  V následující tabulce jsou uvedeny informace o událostech.  
   
@@ -35,8 +36,8 @@ Události zabezpečení jsou vyvolány během ověřování silných názvů a p
 |Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
 |VerificationFlags|Win: UInt32|Příznaky ověřování.|  
-|Kód chyby|Win: UInt32|Kód chyby HResult.|  
-|FullyQualifiedAssemblyName|win:UnicodeString|Plně kvalifikovaný název sestavení.|  
+|ErrorCode|Win: UInt32|Kód chyby HResult.|  
+|FullyQualifiedAssemblyName|Win: UnicodeString|Plně kvalifikovaný název sestavení.|  
 |ClrInstanceID|Win: UInt16|Jedinečné ID pro instanci CLR nebo CoreCLR.|  
 
 ## <a name="authenticodeverificationstart_v1-and-authenticodeverificationstop_v1-events"></a>Události AuthenticodeVerificationStart_V1 a AuthenticodeVerificationStop_V1  
@@ -44,7 +45,7 @@ Události zabezpečení jsou vyvolány během ověřování silných názvů a p
   
 |Klíčové slovo pro vyvolání události|Úroveň|  
 |-----------------------------------|-----------|  
-|`SecurityKeyword` (0x400)|Informační (4)|  
+|`SecurityKeyword`(0x400)|Informační (4)|  
   
  V následující tabulce jsou uvedeny informace o událostech.  
   
@@ -58,10 +59,10 @@ Události zabezpečení jsou vyvolány během ověřování silných názvů a p
 |Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
 |VerificationFlags|Win: UInt32|Příznaky ověřování.|  
-|Kód chyby|Win: UInt32|Kód chyby HResult.|  
-|ModulePath nastavte|win:UnicodeString|Cesta k modulu|  
+|ErrorCode|Win: UInt32|Kód chyby HResult.|  
+|ModulePath nastavte|Win: UnicodeString|Cesta k modulu|  
 |ClrInstanceID|Win: UInt16|Jedinečné ID pro instanci CLR nebo CoreCLR.|  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Události Trasování událostí pro Windows v CLR](clr-etw-events.md)
+- [Události ETW CLR](clr-etw-events.md)

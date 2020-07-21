@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Visual C# compiler, options listed alphabetically
 - Visual C#, compiler options listed alphabetically
 ms.assetid: 43535ea0-ca47-4a15-b528-615087a86092
-ms.openlocfilehash: 9765d13191f862a2e92bb00aa66a92c3a64ac303
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: eb3a591ba7b58e187eb03e65a3da6dfb47c9475c
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84446936"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86473978"
 ---
 # <a name="c-compiler-options-listed-alphabetically"></a>Možnosti kompilátoru C# (abecední pořadí)
 
@@ -25,7 +25,7 @@ Následující možnosti kompilátoru jsou seřazené abecedně. Seznam kategori
 |-additionalfile|Názvy dalších souborů, které přímo neovlivňují generování kódu, ale mohou být využívány analyzátory pro vytváření chyb nebo upozornění.|
 |[-addmodule](addmodule-compiler-option.md)|Propojí zadané moduly s tímto sestavením.|
 |– Analyzátor|Spustit analyzátory z tohoto sestavení (krátký tvar:-a)|
-|[-appconfig](appconfig-compiler-option.md)|Určuje umístění souboru App. config v době vytváření vazby sestavení.|
+|[-appconfig](appconfig-compiler-option.md)|Určuje umístění app.config v době vytváření vazby sestavení.|
 |[-baseaddress](baseaddress-compiler-option.md)|Určuje základní adresu pro knihovnu, která má být sestavena.|
 |[-bugreport](bugreport-compiler-option.md)|Vytvoří soubor hlášení o chybě. Tento soubor se pošle spolu s případnými informacemi o chybách, pokud se použije s-errorreport: prompt nebo-errorreport: Send.|
 |[-checked](checked-compiler-option.md)|Způsobí, že kompilátor generuje kontroly přetečení.|
@@ -57,10 +57,10 @@ Následující možnosti kompilátoru jsou seřazené abecedně. Seznam kategori
 |ModuleName\<string>|Zadejte název zdrojového modulu.|
 |[-noconfig](noconfig-compiler-option.md)|Instruuje kompilátor, že nemá automaticky zahrnovat CSC. Soubor RSP.|
 |[-nologo](nologo-compiler-option.md)|Potlačí zprávu o autorských právech kompilátoru.|
-|[-nostdlib](nostdlib-compiler-option.md)|Instruuje kompilátor, aby odkazoval na standardní knihovnu (mscorlib. dll).|
+|[-nostdlib](nostdlib-compiler-option.md)|Instruuje kompilátor, aby odkazoval na standardní knihovnu (mscorlib.dll).|
 |[-nowarn](nowarn-compiler-option.md)|Zakáže konkrétní zprávy upozornění.|
 |[-nowin32manifest](nowin32manifest-compiler-option.md)|Instruuje kompilátor, aby nevložil manifest aplikace do spustitelného souboru.|
-|[-Nullable](nullable-compiler-option.md)|Určuje možnost kontextu s možnou hodnotou null.|
+|[-nullable](nullable-compiler-option.md)|Určuje možnost kontextu s možnou hodnotou null.|
 |[– optimalizovat](optimize-compiler-option.md)|Povolí nebo zakáže optimalizace.|
 |[-out](out-compiler-option.md)|Určuje název výstupního souboru (výchozí: základní název souboru s hlavní třídou nebo prvním souborem).|
 |– paralelní [+&#124;-]|Určuje, jestli se má použít souběžné sestavení (+).|
@@ -77,7 +77,7 @@ Následující možnosti kompilátoru jsou seřazené abecedně. Seznam kategori
 |[– prostředek](resource-compiler-option.md)|Vloží zadaný prostředek.|
 |RuleSet\<file>|Zadejte soubor RuleSet, který zakáže konkrétní diagnostiku.|
 |[-subsystemversion](subsystemversion-compiler-option.md)|Určuje minimální verzi subsystému, který může spustitelný soubor použít.|
-|[-target](target-compiler-option.md)|Určuje formát výstupního souboru pomocí jedné ze čtyř možností: [-target: appcontainerexe](target-appcontainerexe-compiler-option.md), [-target: exe](target-exe-compiler-option.md), [-target: Library](target-library-compiler-option.md), [-target: Module](target-module-compiler-option.md), [-target: winexe](target-winexe-compiler-option.md), [-target: winmdobj](target-winmdobj-compiler-option.md).|
+|[-target](target-compiler-option.md)|Určuje formát výstupního souboru pomocí jedné z následujících možností: [-target: appcontainerexe](target-appcontainerexe-compiler-option.md), [-target: exe](target-exe-compiler-option.md), [-target: Library](target-library-compiler-option.md), [-target: Module](target-module-compiler-option.md), [-target: winexe](target-winexe-compiler-option.md), [-target: winmdobj](target-winmdobj-compiler-option.md).|
 |[-unsafe](unsafe-compiler-option.md)|Umožňuje [nezabezpečený](../keywords/unsafe.md) kód.|
 |[-utf8output](utf8output-compiler-option.md)|Vytvoří výstup zpráv kompilátoru v kódování UTF-8.|
 |– verze|Zobrazte číslo verze kompilátoru a ukončete.|

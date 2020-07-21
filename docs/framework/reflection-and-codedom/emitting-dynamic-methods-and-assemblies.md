@@ -1,5 +1,6 @@
 ---
 title: Generování dynamických metod a sestavení
+description: Generuje dynamické metody a sestavení pomocí oboru názvů System. Reflection. Emit, který umožňuje kompilátoru nebo nástroji generovat metadata a kód jazyka MSIL za běhu.
 ms.date: 08/30/2017
 helpviewer_keywords:
 - reflection emit
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - metadata, emit interfaces
 - reflection emit, overview
 - assemblies [.NET Framework], emitting dynamic assemblies
-ms.openlocfilehash: fda5a20eb7798086ec10415889454b4a8beba5f3
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 76d2a83943d9df06cc66cf86c6869f18fac2a12c
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79180531"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86475044"
 ---
 # <a name="emitting-dynamic-methods-and-assemblies"></a>Generování dynamických metod a sestavení
 
@@ -49,7 +50,7 @@ Popisuje problémy se zabezpečením související s vytvářením dynamických 
 
 [Kolekční sestavení pro generování dynamického typu](collectible-assemblies.md) Zavádí kolekční sestavení, která jsou dynamická sestavení, která lze uvolnit bez uvolnění domény aplikace, ve které byly vytvořeny.
   
-## <a name="reference"></a>Referenční informace  
+## <a name="reference"></a>Odkaz  
 
 <xref:System.Reflection.Emit.OpCodes>  
 Zařadí do katalogu kódy instrukcí jazyka MSIL, které můžete použít k sestavení těla metody.  

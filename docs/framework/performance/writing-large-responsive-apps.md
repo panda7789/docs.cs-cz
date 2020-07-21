@@ -1,63 +1,64 @@
 ---
 title: Psaní velkých a pohotově reagujících aplikací .NET Framework
+description: Vytvářejte velké, reagující aplikace .NET nebo aplikace, které zpracovávají velké objemy dat, jako jsou například soubory nebo databáze.
 ms.date: 03/30/2017
 ms.assetid: 123457ac-4223-4273-bb58-3bc0e4957e9d
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 57f65feff5260cb83df5354f5d7ee1bad0babb3a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8b1c9ab25299fcbafca6aba7b13217713a941ce8
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79180585"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86475187"
 ---
 # <a name="writing-large-responsive-net-framework-apps"></a>Psaní velkých a pohotově reagujících aplikací .NET Framework
 
-Tento článek obsahuje tipy pro zlepšení výkonu velkých aplikací rozhraní .NET Framework nebo aplikací, které zpracovávají velké množství dat, jako jsou soubory nebo databáze. Tyto tipy pocházejí z přepisování kompilátorů jazyka C# a Visual Basic ve spravovaném kódu a tento článek obsahuje několik reálných příkladů z kompilátoru Jazyka C#.
+Tento článek poskytuje tipy pro zlepšení výkonu rozsáhlých aplikací .NET Framework, nebo aplikací, které zpracovávají velké objemy dat, jako jsou soubory nebo databáze. Tyto tipy přicházejí z přepisu kompilátorů C# a Visual Basic ve spravovaném kódu a tento článek obsahuje několik reálných příkladů z kompilátoru C#.
   
-Rozhraní .NET Framework je vysoce produktivní pro vytváření aplikací. Díky výkonným a bezpečným jazykům a bohaté sbírce knihoven je vytváření aplikací velmi plodné. Nicméně, s velkou produktivitou přichází odpovědnost. Měli byste použít všechny výkon rozhraní .NET Framework, ale být připraveni vyladit výkon kódu v případě potřeby.
+.NET Framework je vysoce produktivní pro vytváření aplikací. Výkonné a bezpečné jazyky a rozsáhlá kolekce knihoven usnadňují vytváření aplikací pro vysoce ovocné účely. Přináší ale odpovědnost za skvělou produktivitu. Měli byste použít veškerou sílu .NET Framework, ale v případě potřeby připravujte výkon svého kódu.
   
 ## <a name="why-the-new-compiler-performance-applies-to-your-app"></a>Proč se nový výkon kompilátoru vztahuje na vaši aplikaci  
- Tým .NET Compiler Platform ("Roslyn") přepsal kompilátory jazyka C# a Visual Basic ve spravovaném kódu, aby poskytoval nová rozhraní API pro modelování a analýzu kódu, vytváření nástrojů a povolení mnohem bohatších prostředí podporujících kód v sadě Visual Studio. Přepsání kompilátorů a vytváření prostředí sady Visual Studio na nových kompilátorech odhalilo užitečné přehledy výkonu, které jsou použitelné pro všechny velké aplikace rozhraní .NET Framework nebo pro jakoukoli aplikaci, která zpracovává velké množství dat. Nemusíte vědět o kompilátory využít přehledy a příklady z kompilátoru Jazyka C#.
+ Tým .NET Compiler Platform ("Roslyn") přepsal kompilátory jazyka C# a Visual Basic ve spravovaném kódu, aby poskytoval nová rozhraní API pro modelování a analýzu kódu, vytváření nástrojů a povolení mnohem rozsáhlejšího prostředí s kódováním kódu v aplikaci Visual Studio. Přepisování kompilátorů a sestavování prostředí sady Visual Studio na nových kompilátorech odhalilo užitečné přehledy výkonu, které platí pro všechny velké .NET Framework aplikace nebo aplikace, které zpracovávají velké množství dat. Nemusíte znát kompilátory, abyste mohli využívat přehledy a příklady z kompilátoru C#.
   
- Visual Studio používá rozhraní API kompilátoru k vytvoření všech funkcí Technologie IntelliSense, které uživatelé milují, jako je vybarvení identifikátorů a klíčových slov, seznamy dokončení syntaxe, klikyháky pro chyby, tipy parametrů, problémy s kódem a akce kódu. Visual Studio poskytuje tuto nápovědu, zatímco vývojáři přidávají a mění svůj kód a Visual Studio musí zůstat responzivní, zatímco kompilátor neustále modeluje kód, který vývojáři upravují.
+ Visual Studio používá rozhraní API kompilátoru k sestavení všech funkcí technologie IntelliSense, které uživatelé mají rádi, jako je například obarvení identifikátorů a klíčových slov, seznamy pro doplňování syntaxe, vlnovky pro chyby, tipy k parametrům, problémy s kódem a akce kódu. Visual Studio poskytuje tuto technickou podporu, zatímco vývojáři zadávají a mění kód a Visual Studio musí zůstat reagovat, zatímco kompilátor průběžně modeluje úpravy vývojářů kódu.
   
- Když vaši koncoví uživatelé interagují s vaší aplikací, očekávají, že bude reagovat. Psaní nebo zpracování příkazů by nikdy nemělo být blokováno. Nápověda by se měla rychle objevit nebo se vzdát, pokud uživatel pokračuje v psaní. Vaše aplikace by se měla vyhnout blokování vlákna uživatelského rozhraní s dlouhými výpočty, které dělají aplikaci pomalu.
+ Když koncoví uživatelé komunikují s vaší aplikací, očekávají, že budou reagovat. Psaní nebo zpracování příkazů by nikdy nemělo být blokované. V případě, že uživatel pokračuje v psaní, je nutné nápovědu rychle zobrazit nebo zadat. Vaše aplikace by se neměla blokovat vlákno uživatelského rozhraní s dlouhými výpočty, díky kterým se aplikace bude cítit pomalá.
   
- Další informace o kompilátorech Roslyn naleznete [v tématu .NET Compiler Platform SDK](../../csharp/roslyn-sdk/index.md).
+ Další informace o kompilátorech Roslyn naleznete v sadě [SDK pro .NET Compiler Platform](../../csharp/roslyn-sdk/index.md).
   
-## <a name="just-the-facts"></a>Jen fakta  
- Zvažte tato fakta při ladění výkonu a vytváření responzivních aplikací rozhraní .NET Framework.
+## <a name="just-the-facts"></a>Jenom fakta  
+ Při ladění výkonu a vytváření .NET Frameworkch aplikací s odezvou doporučujeme vzít v úvahu tato fakta.
   
-### <a name="fact-1-dont-prematurely-optimize"></a>Fakt 1: Neoptimalizujte předčasně  
- Psaní kódu, který je složitější, než je třeba, které mají být vzniknou náklady na údržbu, ladění a leštění. Zkušení programátoři mají intuitivní přehled o tom, jak řešit problémy s kódováním a psát efektivnější kód. Někdy však předčasně optimalizují svůj kód. Používají například tabulku hash, když by stačilo jednoduché pole, nebo používají složité ukládání do mezipaměti, které může unikat paměť namísto pouhého opětovného výpočtu hodnot. I když jste programátor zkušeností, měli byste otestovat výkon a analyzovat kód, když zjistíte problémy.
+### <a name="fact-1-dont-prematurely-optimize"></a>Fakt 1: nezralá optimalizace  
+ Psaní kódu, který je složitější než IT oddělení musí mít za následek údržbu, ladění a proleštění nákladů. Zkušení programátoři mají intuitivní podrobnější informace o řešení problémů s kódováním a psaní efektivnějšího kódu. Někdy ale předčasně optimalizují svůj kód. Například používají zatřiďovací tabulku, když by bylo stačit jednoduché pole, nebo použití složitého ukládání do mezipaměti, které by mohlo způsobit nevracení paměti místo pouhého přepočítání hodnot. I v případě, že jste programátorem zkušeností, měli byste otestovat výkon a analyzovat kód při hledání problémů.
   
-### <a name="fact-2-if-youre-not-measuring-youre-guessing"></a>Fakt 2: Pokud neměříte, hádáte  
- Profily a měření nelžou. Profily ukazují, zda je procesor plně načten nebo zda jste blokováni vstupně-diskem. Profily vám řeknou, jaký druh a kolik paměti přidělujete a zda procesor tráví spoustu času v [uvolňování paměti](../../standard/garbage-collection/index.md) (GC).
+### <a name="fact-2-if-youre-not-measuring-youre-guessing"></a>Fakt 2: Pokud se neměříte, odhaduje se  
+ Profily a měření neleží. V části profily se dozvíte, jestli je procesor plně načtený nebo jestli jste zablokovali v/v disku. V části profily se dozvíte, jaký typ a kolik paměti přidělujete a jestli váš procesor stráví spoustu času v [uvolňování paměti](../../standard/garbage-collection/index.md) (GC).
   
- Měli byste nastavit cíle výkonu pro klíčové zkušenosti zákazníků nebo scénáře ve vaší aplikaci a psát testy pro měření výkonu. Prozkoumejte neúspěšné testy pomocí vědecké metody: použijte profily, které vás provedou, předpokládají, jaký problém by mohl být, a otestujte hypotézu pomocí experimentu nebo změny kódu. Stanovit základní měření výkonu v průběhu času s pravidelným testováním, takže můžete izolovat změny, které způsobují regrese ve výkonu. Tím, že se přiblížíte k práci s výkonem přísným způsobem, vyhnete se plýtvání časem s aktualizacemi kódu, které nepotřebujete.
+ Měli byste nastavit cíle výkonu pro klíčové zkušenosti zákazníků a scénáře v aplikaci a zapsat testy pro měření výkonu. Prozkoumat neúspěšné testy pomocí vědecké metody: pomocí profilů vás povedete, vyslovují, co problém může být, a otestování své hypotézy pomocí experimentu nebo změny kódu. Pomocí pravidelného testování můžete stanovit základní měření výkonu směrného plánu, abyste mohli izolovat změny, které způsobují regrese ve výkonu. Tím, že se přiblížíte k výkonu v rámci striktního způsobu, se vyhnete plýtvání časem s aktualizacemi kódu, které nepotřebujete.
   
-### <a name="fact-3-good-tools-make-all-the-difference"></a>Fakt 3: Dobré nástroje, aby celý rozdíl  
- Dobré nástroje umožňují rychle přejít k podrobnostem o největších problémech s výkonem (procesor, paměť nebo disk) a pomoci vám najít kód, který způsobuje tato kritická místa. Společnost Microsoft dodává různé nástroje pro výkon, například [Visual Studio Profiler](/visualstudio/profiling/beginners-guide-to-performance-profiling) a [PerfView](https://www.microsoft.com/download/details.aspx?id=28567).
+### <a name="fact-3-good-tools-make-all-the-difference"></a>Fakt 3: dobré nástroje vedou ke všem rozdílům  
+ Kvalitní nástroje umožňují rychle přejít k největším problémům s výkonem (procesor, paměť nebo disk) a pomůžou vám najít kód, který způsobuje Tato kritická místa. Společnost Microsoft dodává řadu nástrojů pro výkon, jako je například [Visual Studio Profiler](/visualstudio/profiling/beginners-guide-to-performance-profiling) a [PerfView](https://www.microsoft.com/download/details.aspx?id=28567).
   
- PerfView je bezplatný a úžasně výkonný nástroj, který vám pomůže zaměřit se na hluboké problémy, jako je disk V/O, GC události a paměť. Můžete zachytit události sledování událostí související s [výkonem pro Windows](../wcf/samples/etw-tracing.md) (ETW) a snadno zobrazit na aplikaci, na proces, na zásobník a informace o vlákně. PerfView ukazuje, kolik a jaký druh paměti vaše aplikace přiděluje a které funkce nebo zásobníky volání přispívají, kolik přidělení paměti. Podrobnosti najdete v tématech s bohatou nápovědou, ukázkách a videích, které jsou součástí nástroje (například [kurzy PerfView](https://channel9.msdn.com/Series/PerfView-Tutorial) na kanálu 9).
+ PerfView je bezplatný a úžasné výkonný nástroj, který vám pomůže soustředit se na hloubkové problémy, jako jsou vstupně-výstupní operace disku, události GC a paměť. Můžete zachytit události trasování událostí souvisejících s výkonem [pro Windows](../wcf/samples/etw-tracing.md) (ETW) a snadno zobrazit jednotlivé aplikace, jednotlivé procesy, balíčky a informace o vláknech. PerfView ukazuje, kolik paměti a jaký typ paměti vaše aplikace přiděluje a které funkce nebo zásobníky volání přispívají k tomu, kolik je přidělení paměti. Podrobnosti najdete v tématech s bohatou nápovědu, ukázky a videa, která jsou součástí tohoto nástroje (například [kurzy PerfView](https://channel9.msdn.com/Series/PerfView-Tutorial) na Channel 9).
   
-### <a name="fact-4-its-all-about-allocations"></a>Fakt 4: Je to všechno o přidělení  
- Můžete si myslet, že vytváření responzivní aplikace rozhraní .NET Framework je o algoritmech, jako je například použití rychlého řazení namísto řazení bublin, ale to není tento případ. Největším faktorem při vytváření responzivní aplikace je přidělování paměti, zejména když je vaše aplikace velmi velká nebo zpracovává velké množství dat.
+### <a name="fact-4-its-all-about-allocations"></a>Fakt 4: vše o přiděleních  
+ Možná si myslíte, že sestavování reakce .NET Framework aplikace je vše o algoritmech, jako je například použití rychlého řazení místo řazení bublin, ale to není případ. Největší faktor v sestavování reakce aplikace přiděluje paměť, zejména v případě, že je vaše aplikace velmi rozsáhlá nebo zpracovává velké objemy dat.
   
- Téměř všechny práce na vytváření responzivních prostředí IDE s novými rozhraními API kompilátoru zahrnovaly předcházení přidělení a správu strategií ukládání do mezipaměti. PerfView trasování ukazují, že výkon nové c# a visual basic kompilátory je zřídka vázaný na procesor. Kompilátory mohou být vázány vstupně-výstupními moduly při čtení stovek tisíc nebo milionů řádků kódu, čtení metadat nebo vyzařování generovaného kódu. Zpoždění vlákna uživatelského rozhraní jsou téměř všechny z důvodu uvolňování paměti. .NET Framework GC je vysoce naladěn na výkon a provádí velkou část své práce souběžně při spuštění kódu aplikace. Jediné přidělení však může aktivovat kolekci nákladné [gen2,](../../standard/garbage-collection/fundamentals.md) zastavení všech vláken.
+ Skoro veškerá práce, která se má sestavit, reaguje prostředí IDE s novými rozhraními API kompilátoru, která se týkají zamezení přidělení a správě strategií ukládání do mezipaměti. Trasování PerfView ukazují, že výkon nových kompilátorů jazyka C# a Visual Basic je málo vázaný na procesor. Kompilátory můžou být vázané na vstupně-výstupní operace při čtení stovek tisíců nebo milionů řádků kódu, čtení metadat nebo generování generovaného kódu. Zpoždění vlákna uživatelského rozhraní jsou skoro všechny z důvodu uvolňování paměti. Uvolňování .NET Framework GC je vysoce vyladěné pro výkon a provádí většinu jeho práce současně, zatímco se spouští kód aplikace. Jedno přidělení ale může aktivovat nákladný [Gen2](../../standard/garbage-collection/fundamentals.md) kolekci, takže se zastaví všechna vlákna.
   
-## <a name="common-allocations-and-examples"></a>Společné příděly a příklady  
- Ukázkové výrazy v této části mají skryté přidělení, které se zobrazují malé. Pokud však velká aplikace spustí výrazy dostatečně krát, mohou způsobit stovky megabajtů, dokonce i gigabajtů přidělení. Například jednominutové testy, které simulovaly psaní vývojáře v editoru, přidělily gigabajty paměti a vedly tým výkonu k zaměření na scénáře psaní.
+## <a name="common-allocations-and-examples"></a>Běžné alokace a příklady  
+ Ukázkové výrazy v této části mají skryté alokace, které se jeví jako malé. Pokud ale velké aplikace vykoná výrazy dostatečně dlouho, může to způsobit stovky megabajtů, dokonce i gigabajtů. Například jednorázové testy, které simulují psaní vývojářů v editoru, přidělené gigabajty paměti a vedli výkonnostnímu týmu, aby se zaměřili na psaní scénářů.
   
 ### <a name="boxing"></a>Zabalení  
- [K zabalení](../../csharp/programming-guide/types/boxing-and-unboxing.md) dochází, když typy hodnot, které normálně žijí v zásobníku nebo v datových strukturách, jsou zabaleny do objektu. To znamená, že přidělíte objekt k uložení dat a potom vrátíte ukazatel na objekt. Rozhraní .NET Framework někdy krabice hodnoty z důvodu podpisu metody nebo typ umístění úložiště. Obtékání typu hodnoty v objektu způsobí přidělení paměti. Mnoho operací zabalení může do vaší aplikace přispívat megabajty nebo gigabajty přidělení, což znamená, že vaše aplikace způsobí více řadičů domény. Rozhraní .NET Framework a kompilátory jazyka vyhnout zabalení, pokud je to možné, ale někdy se to stane, když nejméně očekávat.
+ [Zabalení](../../csharp/programming-guide/types/boxing-and-unboxing.md) nastane, pokud jsou typy hodnot, které jsou normálně živé v zásobníku nebo v datových strukturách zabaleny do objektu. To znamená, že přidělíte objektu pro uchovávání dat a potom vrátíte ukazatel na objekt. .NET Framework jsou někdy hodnoty polí z důvodu signatury metody nebo typu umístění úložiště. Zabalením typu hodnoty v objektu dojde k přidělení paměti. Mnohé operace zabalení můžou do vaší aplikace přispívat megabajtů a gigabajty přidělení, což znamená, že vaše aplikace bude způsobit větší GC. .NET Framework a kompilátory jazyka zabraňují zabalení, je-li to možné, ale někdy k tomu dojde, pokud je k dispozici alespoň po očekávání.
   
- Chcete-li zobrazit zabalení v PerfView, otevřete trasování a podívejte se na GC Haldy Alloc zásobníky pod název procesu vaší aplikace (pamatujte, PerfView sestavy na všechny procesy). Pokud se zobrazí <xref:System.Int32?displayProperty=nameWithType> <xref:System.Char?displayProperty=nameWithType> typy jako a pod přidělení, jsou zabalení typy hodnot. Výběr jednoho z těchto typů se zobrazí zásobníky a funkce, ve kterých jsou zabaleny.
+ Chcete-li zobrazit zabalení v PerfView, otevřete trasování a podívejte se na alokační zásobníky haldy GC v názvu procesu vaší aplikace (Nezapomeňte, PerfView sestavy pro všechny procesy). Pokud se zobrazí typy jako <xref:System.Int32?displayProperty=nameWithType> a <xref:System.Char?displayProperty=nameWithType> v části přidělení, jsou typy hodnot zabalení. Když vyberete jeden z těchto typů, zobrazí se zásobníky a funkce, ve kterých jsou zabalené.
   
  **Příklad 1: metody řetězce a argumenty typu hodnoty**  
   
- Tento ukázkový kód ilustruje potenciálně zbytečné a nadměrné zabalení:  
+ Tento vzorový kód ilustruje potenciálně zbytečný a nadměrný zabalení:  
   
 ```csharp  
 public class Logger  
@@ -75,29 +76,29 @@ public class BoxingExample
 }  
 ```  
   
- Tento kód poskytuje funkce protokolování, takže `Log` aplikace může volat funkci často, možná milionkrát. Problém je, že `string.Format` volání řeší <xref:System.String.Format%28System.String%2CSystem.Object%2CSystem.Object%29> přetížení.
+ Tento kód poskytuje funkce protokolování, takže aplikace může `Log` často zavolat funkci, možná miliony časů. Problém je, že volání `string.Format` překládá na <xref:System.String.Format%28System.String%2CSystem.Object%2CSystem.Object%29> přetížení.
   
- Toto přetížení vyžaduje rozhraní .NET Framework zaokříznout `int` hodnoty do objektů předat volání této metody. Částečná oprava je `id.ToString()` `size.ToString()` volání a předání všech řetězců (které `string.Format` jsou objekty) volání. Volání `ToString()` přiděluje řetězec, ale toto přidělení se stane stejně uvnitř `string.Format`.
+ Toto přetížení vyžaduje, aby pole .NET Framework k zadání `int` hodnot do objektů, aby je bylo možné předat tomuto volání metody. Částečnou opravu je zavolat `id.ToString()` a `size.ToString()` předat všechny řetězce (které jsou objekty) `string.Format` volání. Volání `ToString()` přidělí řetězec, ale toto přidělení bude provedeno i v rámci `string.Format` .
   
- Můžete zvážit, že toto základní volání `string.Format` je pouze zřetězení řetězce, takže místo toho můžete napsat tento kód:  
+ Můžete zvážit, že toto základní volání `string.Format` je pouze zřetězení řetězců, takže můžete místo toho napsat tento kód:  
   
 ```csharp  
 var s = id.ToString() + ':' + size.ToString();  
 ```  
   
- Tento řádek kódu však zavádí přidělení zabalení, <xref:System.String.Concat%28System.Object%2CSystem.Object%2CSystem.Object%29>protože zkompiluje do . Rozhraní .NET Framework musí zaokřovat literál znaku, který vyvolá`Concat`  
+ Nicméně tento řádek kódu zavádí přidělení zabalení, protože se kompiluje do <xref:System.String.Concat%28System.Object%2CSystem.Object%2CSystem.Object%29> . .NET Framework musí být vyvolán znakový literál.`Concat`  
   
- **Opravit například 1**  
+ **Opravit příklad 1**  
   
- Kompletní oprava je jednoduchá. Stačí nahradit literál znaku literál řetězcem, který nevzniká žádné zabalení, protože řetězce jsou již objekty:  
+ Kompletní oprava je jednoduchá. Pouze nahraďte znakový literál řetězcovým literálem, který nevyvolává zabalení, protože řetězce jsou již objekty:  
   
 ```csharp  
 var s = id.ToString() + ":" + size.ToString();  
 ```  
   
- **Příklad 2: enum boxing**  
+ **Příklad 2: zabalení výčtu**  
   
- Tento příklad byl zodpovědný za obrovské množství přidělení v nové kompilátory jazyka C# a Visual Basic z důvodu časté hojné použití typů výčtu, zejména ve slovníku vyhledávací operace.
+ Tento příklad zodpovídá za obrovské množství přidělení v nových kompilátorech C# a Visual Basic z důvodu častého použití typů výčtu, zejména při operacích vyhledávání ve slovníku.
   
 ```csharp  
 public enum Color  
@@ -116,26 +117,26 @@ public class BoxingExample
 }  
 ```  
   
- Tento problém je velmi jemný. PerfView by to <xref:System.Enum.GetHashCode> hlásit jako zabalení, protože metoda boxy základní reprezentace typu výčtu, z důvodů implementace. Pokud se podíváte pozorně v PerfView, může se <xref:System.Enum.GetHashCode>zobrazit dvě přidělení zabalení pro každé volání . Kompilátor vloží jeden a rozhraní .NET Framework vloží druhou.
+ Tento problém je velice jemný. PerfView by tuto zprávu nahlásil jako <xref:System.Enum.GetHashCode> zabalení, protože v případě důvodů implementace jsou v polích metoda základní reprezentace typu výčtu. Pokud se podrobněji podíváte v PerfView, může se pro každé volání na. zobrazit dvě přidělení zabalení <xref:System.Enum.GetHashCode> . Kompilátor vloží jeden a .NET Framework vloží druhý.
   
- **Oprava například 2**  
+ **Oprava pro příklad 2**  
   
- Můžete snadno vyhnout obě přidělení obsazení majestátu před voláním <xref:System.Enum.GetHashCode>:  
+ Můžete snadno zabránit tomu, aby se obě přidělení přetypování do základní reprezentace před voláním <xref:System.Enum.GetHashCode> :  
   
 ```csharp  
 ((int)color).GetHashCode()  
 ```  
   
- Dalším běžným zdrojem zabalení na <xref:System.Enum.HasFlag%28System.Enum%29?displayProperty=nameWithType> typy výčtu je metoda. Argument předaný <xref:System.Enum.HasFlag%28System.Enum%29> musí být zabalen. Ve většině případů nahrazení <xref:System.Enum.HasFlag%28System.Enum%29?displayProperty=nameWithType> volání bitovým testem je jednodušší a bez přidělení.
+ Dalším běžným zdrojem zabalení pro výčtové typy je <xref:System.Enum.HasFlag%28System.Enum%29?displayProperty=nameWithType> metoda. Argument předaný do <xref:System.Enum.HasFlag%28System.Enum%29> musí být zabalen. Ve většině případů je nahrazení volání <xref:System.Enum.HasFlag%28System.Enum%29?displayProperty=nameWithType> s bitovým testem jednodušší a bez přidělení.
   
- Mějte na paměti první fakt výkonu (to znamená, nepředčasně optimalizovat) a nezačínejte přepisovat veškerý kód tímto způsobem. Uvědomte si tyto náklady na box, ale změnit kód pouze po profilování aplikace a hledání horkých míst.
+ Zajistěte si první fakt o výkonu (to znamená, že se předčasně neoptimalizují) a nespustí se tímto způsobem přepis veškerého kódu. Pamatujte na tyto náklady na zabalení, ale změňte kód pouze po profilaci aplikace a nalezení aktivních bodů.
   
 ### <a name="strings"></a>Řetězce  
- Řetězec manipulace jsou některé z největších viníků pro přidělení a často se zobrazí v PerfView v prvních pěti přidělení. Programy používají řetězce pro serializaci, JSON a REST API. Řetězce můžete použít jako programové konstanty pro spolupráci se systémy, když nelze použít typy výčtu. Pokud profilování ukazuje, že řetězce mají velký vliv <xref:System.String> na <xref:System.String.Format%2A>výkon, <xref:System.String.Split%2A> <xref:System.String.Join%2A>vyhledejte volání metod, jako jsou například , <xref:System.String.Substring%2A> <xref:System.String.Concat%2A>, , a tak dále. Použití, <xref:System.Text.StringBuilder> aby se zabránilo náklady na vytvoření jednoho řetězce z <xref:System.Text.StringBuilder> mnoha kusů pomáhá, ale i přidělení objektu se může stát kritickým bodem, který je třeba spravovat.
+ Manipulace s řetězci jsou některé z největších culprits pro přidělení a často se zobrazují v PerfView v horních pěti přiděleních. Programy používají řetězce pro serializaci, JSON a rozhraní REST API. Můžete použít řetězce jako programové konstanty pro spolupráci se systémy, když nemůžete použít typy výčtu. Když profilace znázorňuje, že řetězce mají vysoce ovlivněný výkon, hledejte volání metod, jako například,,, <xref:System.String> <xref:System.String.Format%2A> <xref:System.String.Concat%2A> <xref:System.String.Split%2A> <xref:System.String.Join%2A> , <xref:System.String.Substring%2A> a tak dále. Použití <xref:System.Text.StringBuilder> , aby se předešlo nákladům na vytvoření jednoho řetězce z mnoha kusů, ale i přidělení <xref:System.Text.StringBuilder> objektu se může stát kritickým bodem, který potřebujete spravovat.
   
- **Příklad 3: operace řetězce**  
+ **Příklad 3: operace s řetězci**  
   
- Kompilátor Jazyka C# měl tento kód, který zapisuje text formátovaného komentáře dokumentu XML:  
+ Kompilátor jazyka C# měl tento kód, který zapisuje text formátovaného komentáře XML dokumentu:  
   
 ```csharp  
 public void WriteFormattedDocComment(string text)  
@@ -162,19 +163,19 @@ public void WriteFormattedDocComment(string text)
     else { /* ... */ }  
 ```  
   
- Můžete vidět, že tento kód provádí mnoho manipulace s řetězci. Kód používá metody knihovny k rozdělení řádků do samostatných řetězců, `text` k oříznutí prázdného místa, ke kontrole, zda je argument emblém dokumentace XML, a k extrahování podřetězců z řádků.
+ Můžete vidět, že tento kód provede mnoho manipulace s řetězci. Kód používá metody knihovny pro rozdělení řádků do samostatných řetězců, pro oříznutí prázdných znaků, pro kontrolu, zda `text` je argument komentář k dokumentaci XML a extrahování podřetězců z řádků.
   
- Na prvním řádku `WriteFormattedDocComment`uvnitř `text.Split` volání přiděluje nové pole tří prvků jako argument pokaždé, když je volána. Kompilátor musí vyzařovat kód pro přidělení tohoto pole pokaždé. Důvodem je, že kompilátor <xref:System.String.Split%2A> neví, pokud ukládá pole někde, kde pole může být `WriteFormattedDocComment`změněn jiným kódem, což by ovlivnilo pozdější volání . Volání <xref:System.String.Split%2A> také přiděluje řetězec pro `text` každý řádek v a přiděluje další paměti k provedení operace.
+ Na prvním řádku uvnitř `WriteFormattedDocComment` , `text.Split` volání přidělí nové pole tří prvků jako argument pokaždé, když je volána. Kompilátor musí vygenerovat kód pro každé přidělení tohoto pole. Důvodem je, že kompilátor neví, zda je pole <xref:System.String.Split%2A> uloženo, kde může být pole upraveno jiným kódem, což by ovlivnilo pozdější volání `WriteFormattedDocComment` . Volání pro <xref:System.String.Split%2A> také přiděluje řetězec pro každý řádek v `text` a přiděluje další paměť k provedení operace.
   
- `WriteFormattedDocComment`má tři volání <xref:System.String.TrimStart%2A> metody. Dva jsou ve vnitřních smyčkách, které duplikují práci a přidělení. Aby toho nebylo málo, volání <xref:System.String.TrimStart%2A> metody bez argumentů přiděluje prázdné pole (pro `params` parametr) kromě výsledku řetězce.
+ `WriteFormattedDocComment`má tři volání <xref:System.String.TrimStart%2A> metody. Dva jsou ve vnitřních smyčkách, které duplikují práci a přidělení. Aby byly věci horší, volání <xref:System.String.TrimStart%2A> metody bez argumentů přidělí prázdné pole (pro `params` parametr) Kromě výsledku řetězce.
   
- Nakonec je volání <xref:System.String.Substring%2A> metody, která obvykle přiděluje nový řetězec.
+ Nakonec existuje volání <xref:System.String.Substring%2A> metody, která obvykle přiděluje nový řetězec.
   
- **Opravit například 3**  
+ **Oprava pro příklad 3**  
   
- Na rozdíl od předchozích příkladů malé úpravy nelze opravit tyto přidělení. Musíte ustoupit, podívat se na problém a přistupovat k němu jinak. Například si všimnete, že `WriteFormattedDocComment()` argument je řetězec, který má všechny informace, které metoda potřebuje, takže kód může provést více indexování namísto přidělení mnoho dílčích řetězců.
+ Na rozdíl od předchozích příkladů malé úpravy nemůžou tyto alokace opravit. Budete se muset vrátit zpátky, podívat se na problém a přistupovat k němu jinak. Například si všimnete, že argument `WriteFormattedDocComment()` je řetězec, který obsahuje všechny informace, které metoda potřebuje, takže kód by mohl provést větší indexování místo přidělení mnoha částečných řetězců.
   
- Výkonnostní tým kompilátoru řešil všechny tyto přidělení s kódem, jako je tento:  
+ Tým výkonu kompilátoru projedná všechna tato přidělení s kódem podobným tomuto:  
   
 ```csharp  
 private int IndexOfFirstNonWhiteSpaceChar(string text, int start) {  
@@ -196,11 +197,11 @@ private bool TrimmedStringStartsWith(string text, int start, string prefix) {
 // etc...
 ```  
   
- První verze `WriteFormattedDocComment()` přidělené pole, několik podřetězců a oříznuté podřetězec spolu `params` s prázdným polem. Také zkontroloval "///". Revidovaný kód používá pouze indexování a nepřiděluje nic. Najde první znak, který není prázdné místo a potom zkontroluje znak po znaku, aby zjistil, zda řetězec začíná "///". Nový kód `IndexOfFirstNonWhiteSpaceChar` používá <xref:System.String.TrimStart%2A> místo vrátit první index (po zadaném indexu start), kde dojde k neprázdné místo znaku. Oprava není dokončena, ale můžete vidět, jak použít podobné opravy pro úplné řešení. Použitím tohoto přístupu v celém kódu můžete `WriteFormattedDocComment()`odebrat všechna přidělení v aplikaci .
+ První verze `WriteFormattedDocComment()` přiděleného pole, několik podřetězců a oříznutý dílčí řetězec spolu s prázdným `params` polem. Také je zaškrtnuté políčko///. Revidovaný kód používá pouze indexování a přiděluje nic. Vyhledá první znak, který není prázdný, a poté zkontroluje znak podle znaku, aby bylo možné zjistit, zda řetězec začíná řetězcem "///". Nový kód používá `IndexOfFirstNonWhiteSpaceChar` místo <xref:System.String.TrimStart%2A> k vrácení prvního indexu (po zadaném počátečním indexu), kde se vyskytuje neprázdný znak. Oprava není dokončena, ale můžete si prohlédnout, jak použít podobné opravy pro kompletní řešení. Použitím tohoto přístupu v rámci kódu můžete odebrat všechna přidělení v `WriteFormattedDocComment()` .
   
  **Příklad 4: StringBuilder**  
   
- Tento příklad <xref:System.Text.StringBuilder> používá objekt. Následující funkce generuje úplný název typu pro obecné typy:  
+ V tomto příkladu se používá <xref:System.Text.StringBuilder> objekt. Následující funkce generuje úplný název typu pro obecné typy:  
   
 ```csharp  
 public class Example  
@@ -226,11 +227,11 @@ public class Example
 }  
 ```  
   
- Fokus je na řádku, <xref:System.Text.StringBuilder> který vytvoří novou instanci. Kód způsobí přidělení `sb.ToString()` a vnitřní přidělení <xref:System.Text.StringBuilder> v rámci implementace, ale nelze řídit tato přidělení, pokud chcete výsledek řetězce.
+ Fokus je na řádku, který vytvoří novou <xref:System.Text.StringBuilder> instanci. Kód způsobí přidělení `sb.ToString()` a interní přidělení v rámci <xref:System.Text.StringBuilder> implementace, ale nemůžete řídit tato přidělení, pokud chcete výsledek řetězce.
   
- **Oprava například 4**  
+ **Oprava – příklad 4**  
   
- Chcete-li `StringBuilder` opravit přidělení objektu, uvěnujte objekt do mezipaměti. Dokonce i ukládání do mezipaměti jedné instance, která by mohla dostat vyhodit může výrazně zlepšit výkon. Toto je nová implementace funkce, vynechání veškerý kód s výjimkou nové první a poslední řádky:  
+ Chcete-li opravit `StringBuilder` přidělení objektu, mezipaměť objektu. I když mezipaměť jedné instance, která může být vyvolána, může výrazně zvýšit výkon. Jedná se o novou implementaci funkce a vynechání veškerého kódu s výjimkou nového prvního a posledního řádku:  
   
 ```csharp  
 // Constructs a name like "MyType<T1, T2, T3>"  
@@ -242,7 +243,7 @@ public string GenerateFullTypeName(string name, int arity)
 }  
 ```  
   
- Klíčovými částmi `AcquireBuilder()` jsou `GetStringAndReleaseBuilder()` nové a funkce:  
+ Hlavní části jsou nové `AcquireBuilder()` `GetStringAndReleaseBuilder()` funkce a:  
   
 ```csharp  
 [ThreadStatic]  
@@ -268,20 +269,20 @@ private static string GetStringAndReleaseBuilder(StringBuilder sb)
 }  
 ```  
   
- Vzhledem k tomu, že nové kompilátory používají<xref:System.ThreadStaticAttribute> podproces, tyto <xref:System.Text.StringBuilder>implementace používají statické pole `ThreadStatic` podprocesu (atribut) k ukládání do mezipaměti a pravděpodobně můžete zprostit deklarace. Pole statické vlákno obsahuje jedinečnou hodnotu pro každé vlákno, které spustí tento kód.
+ Vzhledem k tomu, že nové kompilátory používají dělení na vlákna, tyto implementace používají pole s statickým vláknem ( <xref:System.ThreadStaticAttribute> atribut) pro ukládání do mezipaměti <xref:System.Text.StringBuilder> a pravděpodobně si můžete vzdání `ThreadStatic` deklarace. Pole static vlákna obsahuje jedinečnou hodnotu pro každé vlákno, které provádí tento kód.
   
- `AcquireBuilder()`vrátí instanci uloženou v mezipaměti, <xref:System.Text.StringBuilder> pokud existuje, po vymazání a nastavení pole nebo mezipaměti na hodnotu null. V `AcquireBuilder()` opačném případě vytvoří novou instanci a vrátí ji, přičemž pole nebo mezipaměti nastavena na hodnotu null.
+ `AcquireBuilder()`Vrátí instanci uloženou v mezipaměti <xref:System.Text.StringBuilder> , pokud ji vymažete a nastavíte pole nebo mezipaměť na hodnotu null. V opačném případě `AcquireBuilder()` vytvoří novou instanci a vrátí ji, aby pole nebo mezipaměť bylo nastaveno na hodnotu null.
   
- Po dokončení s <xref:System.Text.StringBuilder> , volání `GetStringAndReleaseBuilder()` získat výsledek řetězce, <xref:System.Text.StringBuilder> uložte instanci v poli nebo mezipaměti a potom vrátit výsledek. Je možné pro spuštění znovu zadat tento kód <xref:System.Text.StringBuilder> a vytvořit více objektů (i když to zřídka se stane). Kód uloží pouze poslední <xref:System.Text.StringBuilder> vydané instance pro pozdější použití. Tato jednoduchá strategie ukládání do mezipaměti výrazně snížila přidělení v nových kompilátorech. Části rozhraní .NET Framework a MSBuild ("MSBuild") používají podobnou techniku ke zlepšení výkonu.
+ Až budete hotovi <xref:System.Text.StringBuilder> , zavoláte, `GetStringAndReleaseBuilder()` abyste získali výsledek řetězce, uložili <xref:System.Text.StringBuilder> instanci v poli nebo mezipaměti a potom vrátí výsledek. Je možné, že spuštění tohoto kódu znovu zadáte a vytvoříte více <xref:System.Text.StringBuilder> objektů (i když se to zřídka stane). Kód uloží pouze poslední vydanou <xref:System.Text.StringBuilder> instanci pro pozdější použití. Tato jednoduchá strategie ukládání do mezipaměti významně snižuje přidělení v nových kompilátorech. Části .NET Framework a MSBuild ("MSBuild") používají podobnou techniku pro zlepšení výkonu.
   
- Tato jednoduchá strategie ukládání do mezipaměti dodržuje dobrý design mezipaměti, protože má velikostní čepici. Existuje však více kódu nyní než v originále, což znamená více nákladů na údržbu. Strategii ukládání do mezipaměti byste měli přijmout pouze v případě, že jste <xref:System.Text.StringBuilder> našli problém s výkonem a PerfView ukázalo, že přidělení jsou významným přispěvatelem.
+ Tato jednoduchá strategie ukládání do mezipaměti dodržuje dobrý návrh mezipaměti, protože má limit velikosti. Existuje však více kódů, než je původní, což znamená vyšší náklady na údržbu. Strategii ukládání do mezipaměti byste měli přijmout jenom v případě, že jste zjistili problém s výkonem a PerfView ukazuje, že <xref:System.Text.StringBuilder> přidělení jsou významným přispěvatelem.
   
-### <a name="linq-and-lambdas"></a>LINQ a lambdas  
-Jazykově integrovaný dotaz (LINQ), ve spojení s výrazy lambda, je příkladem funkce produktivity. Jeho použití však může mít významný vliv na výkon v průběhu času a může být nutné přepsat kód.
+### <a name="linq-and-lambdas"></a>LINQ a výrazy lambda  
+Jazykově integrovaný dotaz (LINQ), ve spojení s lambda výrazy, je příkladem funkce produktivita. Jeho použití ale může mít významný dopad na výkon v průběhu času a může se stát, že budete muset přepsat kód.
   
- **Příklad 5: Lambdas, Seznam\<T>\<a IEnumerable T>**  
+ **Příklad 5: výrazy lambda, seznamy \<T> a IEnumerable\<T>**  
   
- Tento příklad používá [linq a kód funkčního stylu](https://docs.microsoft.com/archive/blogs/charlie/anders-hejlsberg-on-linq-and-functional-programming) k nalezení symbolu v modelu kompilátoru, který je uveden v řetězci názvu:  
+ V tomto příkladu se používá [kód jazyka LINQ a funkčního stylu](https://docs.microsoft.com/archive/blogs/charlie/anders-hejlsberg-on-linq-and-functional-programming) k nalezení symbolu v modelu kompilátoru s daným názvem řetězec:  
   
 ```csharp  
 class Symbol {  
@@ -298,14 +299,14 @@ class Compiler {
 }  
 ```  
   
- Nový kompilátor a prostředí IDE `FindMatchingSymbol()` postavené na něm volání velmi často a existuje několik skrytých přidělení v této funkce jeden řádek kódu. Chcete-li zkontrolovat tyto přidělení, nejprve rozdělit funkci jeden řádek kódu do dvou řádků:  
+ Nový kompilátor a prostředí IDE, které jsou postaveny na `FindMatchingSymbol()` tomto volání, jsou velmi často a v jediném řádku kódu této funkce je několik skrytých přidělení. Chcete-li tyto alokace prostudovat, nejprve jednotlivé řádky této funkce rozdělte na dva řádky:  
   
 ```csharp  
 Func<Symbol, bool> predicate = s => s.Name == name;  
      return symbols.FirstOrDefault(predicate);  
 ```  
   
- V prvním řádku [lambda výraz](../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md) `s => s.Name == name` [zavře přes](https://docs.microsoft.com/archive/blogs/ericlippert/what-are-closures) `name`místní proměnné . To znamená, že kromě přidělení objektu pro [delegáta,](../../csharp/language-reference/builtin-types/reference-types.md#the-delegate-type) který `predicate` drží, kód přiděluje statickou `name`třídu pro uložení prostředí, které zachycuje hodnotu . Kompilátor generuje kód takto:  
+ V prvním řádku se [výraz lambda](../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md) `s => s.Name == name` [zavře nad](https://docs.microsoft.com/archive/blogs/ericlippert/what-are-closures) místní proměnnou `name` . To znamená, že kromě přidělení objektu [delegáta](../../csharp/language-reference/builtin-types/reference-types.md#the-delegate-type) , který `predicate` obsahuje, kód přiděluje statickou třídu pro uchování prostředí, které zachycuje hodnotu `name` . Kompilátor generuje kód podobný následujícímu:  
   
 ```csharp  
 // Compiler-generated class to hold environment state for lambda  
@@ -323,9 +324,9 @@ Lambda1Environment l = new Lambda1Environment() { capturedName = name };
 var predicate = new Func<Symbol, bool>(l.Evaluate);  
 ```  
   
- Dvě `new` přidělení (jeden pro třídu prostředí a jeden pro delegáta) jsou nyní explicitní.
+ Dvě `new` alokace (jedna pro třídu prostředí a jeden pro delegáta) jsou nyní explicitní.
   
- Nyní se podívejte `FirstOrDefault`na volání do . Tato metoda rozšíření <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> na typu vznikne přidělení příliš. Protože `FirstOrDefault` má <xref:System.Collections.Generic.IEnumerable%601> objekt jako svůj první argument, můžete rozšířit volání na následující kód (zjednodušený bit pro diskusi):  
+ Nyní se podívejte na volání `FirstOrDefault` . Tato metoda rozšíření u typu vychází z <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> přidělení. Vzhledem k tomu `FirstOrDefault` , že přebírá <xref:System.Collections.Generic.IEnumerable%601> objekt jako svůj první argument, můžete zavolat na následující kód (zjednodušený bit pro diskuzi):  
   
 ```csharp  
 // Expanded return symbols.FirstOrDefault(predicate) ...
@@ -339,13 +340,13 @@ var predicate = new Func<Symbol, bool>(l.Evaluate);
      return default(Symbol);  
 ```  
   
- Proměnná `symbols` má <xref:System.Collections.Generic.List%601>typ . Typ <xref:System.Collections.Generic.List%601> kolekce <xref:System.Collections.Generic.IEnumerable%601> implementuje a chytře definuje čítač (rozhraní),<xref:System.Collections.Generic.IEnumerator%601> který <xref:System.Collections.Generic.List%601> implementuje `struct`s . Použití struktury namísto třídy znamená, že se obvykle vyhnete přidělení haldy, což může ovlivnit výkon uvolňování paměti. Čítače výčtu se obvykle používají `foreach` s smyčkou jazyka, který používá strukturu čítače výčtu, jak je vrácena v zásobníku volání. Zvýšení ukazatele zásobníku volání, aby se uvolnilo místo pro objekt, nemá vliv na gc tak, jak přidělení haldy nemá.
+ `symbols`Proměnná má typ <xref:System.Collections.Generic.List%601> . <xref:System.Collections.Generic.List%601>Typ kolekce implementuje <xref:System.Collections.Generic.IEnumerable%601> a cleverly definuje enumerátor ( <xref:System.Collections.Generic.IEnumerator%601> rozhraní), který <xref:System.Collections.Generic.List%601> implementuje s `struct` . Použití struktury namísto třídy znamená, že se obvykle vyhnete jakémukoli přidělení haldy, což pak může ovlivnit výkon uvolňování paměti. Enumerátory se obvykle používají se `foreach` smyčkou jazyka, která používá strukturu výčtu, jak je vrácena v zásobníku volání. Zvýšení ukazatele zásobníku volání, aby uvolnil prostor pro objekt, nemá vliv na uvolňování paměti způsobem, jakým provádí přidělení haldy.
   
- V případě rozšířenévolání `FirstOrDefault` kód musí volat `GetEnumerator()` na <xref:System.Collections.Generic.IEnumerable%601>. Přiřazení `symbols` `enumerable` proměnné typu `IEnumerable<Symbol>` ztratí informace o tom, že <xref:System.Collections.Generic.List%601>skutečný objekt je . To znamená, že když kód načte `enumerable.GetEnumerator()`čítač s , rozhraní .NET Framework `enumerator` musí zaokřovat vrácenou strukturu a přiřadit ji proměnné.
+ V případě rozšířeného `FirstOrDefault` volání musí kód volat `GetEnumerator()` na <xref:System.Collections.Generic.IEnumerable%601> . Přiřazení `symbols` `enumerable` proměnné typu `IEnumerable<Symbol>` ztratí informace, které jsou aktuálním objektem <xref:System.Collections.Generic.List%601> . To znamená, že když kód načte enumerátor s `enumerable.GetEnumerator()` , .NET Framework musí zařadit vrácenou strukturu k `enumerator` proměnné.
   
- **Oprava například 5**  
+ **Oprava – příklad 5**  
   
- Oprava je přepsat `FindMatchingSymbol` takto, nahrazení jeho jeden řádek kódu se šesti řádky kódu, které jsou stále stručné, snadno čitelné a srozumitelné a snadno udržovatelné:  
+ Oprava má přepsat `FindMatchingSymbol` následujícím způsobem a nahradit tak jeden řádek kódu šestými řádky kódu, které jsou stále stručnější, snadno čitelné a srozumitelnější a snadno udržovatelnější:  
   
 ```csharp  
 public Symbol FindMatchingSymbol(string name)  
@@ -359,15 +360,15 @@ public Symbol FindMatchingSymbol(string name)
     }  
 ```  
   
- Tento kód nepoužívá linq rozšíření metody, lambdas nebo čítače výčtu a vznikne žádné přidělení. Neexistují žádné přidělení, protože kompilátor `symbols` může vidět, že kolekce je <xref:System.Collections.Generic.List%601> a může vázat výsledný čítač výčtu (struktura) na místní proměnnou se správným typem, aby se zabránilo zabalení. Původní verze této funkce byla skvělým příkladem expresivní výkon Jazyka C# a produktivitu rozhraní .NET Framework. Tato nová a efektivnější verze zachovává tyto vlastnosti bez přidání jakéhokoli složitého kódu pro údržbu.
+ Tento kód nepoužívá metody rozšíření LINQ, výrazy lambda nebo enumerátory a nevyvolává žádné přidělení. Neexistují žádné přidělení, protože kompilátor uvidí, že `symbols` kolekce je <xref:System.Collections.Generic.List%601> a může vytvořit vazby výsledného enumerátoru (struktury) na místní proměnnou se správným typem, aby nedošlo k zabalení. Původní verze této funkce byla skvělým příkladem exprese jazyka C# a produktivity .NET Framework. Tato nová a efektivnější verze zachovává tyto kvality bez přidání jakéhokoliv komplexního kódu, který se má zachovat.
   
-### <a name="async-method-caching"></a>Ukládání do mezipaměti asynchronní metody  
+### <a name="async-method-caching"></a>Ukládání asynchronní metody do mezipaměti  
 
 Následující příklad ukazuje běžný problém při pokusu o použití výsledků v mezipaměti v [asynchronní](../../csharp/programming-guide/concepts/async/index.md) metodě.
   
  **Příklad 6: ukládání do mezipaměti v asynchronních metodách**  
   
- Visual Studio IDE funkce postavené na nové kompilátory Jazyka C# a Visual Basic často načítat stromy syntaxe a kompilátory použít asynchronní při tom, aby Visual Studio reagovat. Zde je první verze kódu, který můžete napsat, abyste získali strom syntaxe:  
+ Funkce integrovaného vývojového prostředí sady Visual Studio, které jsou založené na nových kompilátorech C# a Visual Basic často načítají stromy syntaxe a kompilátory používají asynchronní použití při reakci sady Visual Studio. Zde je první verze kódu, který můžete napsat pro získání stromu syntaxe:  
   
 ```csharp  
 class SyntaxTree { /*...*/ }  
@@ -387,9 +388,9 @@ class Compilation { /*...*/
 }  
 ```  
   
- Můžete vidět, `GetSyntaxTreeAsync()` že volání konkretizuje `Parser`, analyzuje kód <xref:System.Threading.Tasks.Task> a `Task<SyntaxTree>`pak vrátí objekt, . Nákladné část je přidělení `Parser` instance a analýzy kódu. Funkce vrátí <xref:System.Threading.Tasks.Task> tak, aby volající můžete čekat na práci analýzy a uvolnit vlákno uživatelského rozhraní, které mají být citlivé na vstup uživatele.
+ Můžete vidět, že volání `GetSyntaxTreeAsync()` instance a `Parser` , analyzuje kód a potom vrátí <xref:System.Threading.Tasks.Task> objekt, `Task<SyntaxTree>` . Nákladná část přiděluje `Parser` instanci a analyzuje kód. Funkce vrátí <xref:System.Threading.Tasks.Task> , aby volající mohli očekávat, že analýza funguje, a uvolní vlákno uživatelského rozhraní, které bude reagovat na vstup uživatele.
   
- Několik funkcí sady Visual Studio se může pokusit získat stejný strom syntaxe, takže můžete napsat následující kód pro uložení výsledku analýzy do mezipaměti, abyste ušetřili čas a přidělení. Tento kód však vzniká přidělení:  
+ Několik funkcí sady Visual Studio se může pokusit získat stejný strom syntaxe, takže můžete napsat následující kód pro uložení výsledků analýzy do mezipaměti a ušetřit tak čas a přidělení. Tento kód ale při přidělení:  
   
 ```csharp  
 class Compilation { /*...*/  
@@ -409,11 +410,11 @@ class Compilation { /*...*/
 }  
 ```  
   
- Uvidíte, že nový kód s `SyntaxTree` ukládáním `cachedResult`do mezipaměti má pole s názvem . Pokud je toto `GetSyntaxTreeAsync()` pole null, provádí práci a ukládá výsledek do mezipaměti. `GetSyntaxTreeAsync()`vrátí `SyntaxTree` objekt. Problém je, že pokud `async` máte `Task<SyntaxTree>`funkci typu a vrátíte `SyntaxTree`hodnotu typu , kompilátor vydává kód pro `Task<SyntaxTree>.FromResult()`přidělení Task uchovávat výsledek (pomocí ). Úkol je označen jako dokončený a výsledek je okamžitě k dispozici. V kódu pro nové kompilátory objekty, <xref:System.Threading.Tasks.Task> které již byly dokončeny došlo tak často, že oprava těchto přidělení výrazně zlepšila odezvu.
+ Vidíte, že nový kód s ukládáním do mezipaměti má `SyntaxTree` pole s názvem `cachedResult` . Pokud je toto pole null, `GetSyntaxTreeAsync()` provede práci a uloží výsledek do mezipaměti. `GetSyntaxTreeAsync()`Vrátí `SyntaxTree` objekt. Problém je, že pokud máte `async` funkci typu `Task<SyntaxTree>` a vrátíte hodnotu typu `SyntaxTree` , kompilátor vygeneruje kód pro přidělení úkolu pro uchování výsledku (pomocí `Task<SyntaxTree>.FromResult()` ). Úkol je označený jako dokončený a výsledek je hned dostupný. V kódu pro nové kompilátory <xref:System.Threading.Tasks.Task> došlo k objektům, které již byly dokončeny, a to často, aby tato přidělení zvýšila odezvu na upozornění.
   
- **Oprava například 6**  
+ **Oprava pro příklad 6**  
   
- Chcete-li <xref:System.Threading.Tasks.Task> odebrat dokončené přidělení, můžete uložit objekt Task do mezipaměti s dokončeným výsledkem:  
+ Chcete-li odebrat dokončené <xref:System.Threading.Tasks.Task> přidělení, můžete uložit objekt úlohy do mezipaměti s dokončeným výsledkem:  
   
 ```csharp  
 class Compilation { /*...*/  
@@ -435,39 +436,39 @@ class Compilation { /*...*/
 }  
 ```  
   
- Tento kód změní `cachedResult` typ `Task<SyntaxTree>` do a `async` používá pomocnou funkci, `GetSyntaxTreeAsync()`která obsahuje původní kód z aplikace . `GetSyntaxTreeAsync()`Nyní používá [null coalescing](../../csharp/language-reference/operators/null-coalescing-operator.md) `cachedResult` operátor vrátit, pokud není null. Pokud `cachedResult` je null, pak `GetSyntaxTreeAsync()` volá `GetSyntaxTreeUncachedAsync()` a ukládá výsledek. Všimněte `GetSyntaxTreeAsync()` si, že nečeká `GetSyntaxTreeUncachedAsync()` volání jako kód by normálně. Nepoužíváte await znamená, že když `GetSyntaxTreeUncachedAsync()` vrátí svůj <xref:System.Threading.Tasks.Task> objekt, `GetSyntaxTreeAsync()` okamžitě vrátí <xref:System.Threading.Tasks.Task>. Nyní je výsledek uložený <xref:System.Threading.Tasks.Task>v mezipaměti , takže neexistují žádné přidělení vrátit výsledek mezipaměti.
+ Tento kód změní typ `cachedResult` na `Task<SyntaxTree>` a využívá `async` pomocnou funkci, která obsahuje původní kód z `GetSyntaxTreeAsync()` . `GetSyntaxTreeAsync()`Nyní pomocí [operátoru slučování null](../../csharp/language-reference/operators/null-coalescing-operator.md) vrátí, `cachedResult` Pokud není null. Pokud `cachedResult` je null, potom `GetSyntaxTreeAsync()` volání `GetSyntaxTreeUncachedAsync()` a uloží výsledek do mezipaměti. Všimněte si, že `GetSyntaxTreeAsync()` neočekává volání `GetSyntaxTreeUncachedAsync()` jako kód obvykle. Bez použití operátoru await znamená, že když `GetSyntaxTreeUncachedAsync()` vrátí svůj <xref:System.Threading.Tasks.Task> objekt, `GetSyntaxTreeAsync()` okamžitě vrátí <xref:System.Threading.Tasks.Task> . Výsledkem je, že v mezipaměti je výsledek <xref:System.Threading.Tasks.Task> , takže neexistují žádné alokace k vrácení výsledku v mezipaměti.
   
 ### <a name="additional-considerations"></a>Další aspekty  
- Tady je několik dalších bodů o potenciálních problémech ve velkých aplikacích nebo aplikacích, které zpracovávají velké množství dat.
+ Tady je několik dalších bodů, které se týkají potenciálních problémů ve velkých aplikacích nebo aplikacích, které zpracovávají velké množství dat.
   
  **Slovníky**  
   
- Slovníky se používají všudypřítomně v mnoha programech, a když slovníky jsou velmi pohodlné a ze své podstaty efektivní. Často se však používají nevhodně. V sadě Visual Studio a nové kompilátory analýza ukazuje, že mnoho slovníků obsahovaljeden prvek nebo byly prázdné. Prázdné <xref:System.Collections.Generic.Dictionary%602> má deset polí a zabírá 48 bajtů na haldě na x86 počítači. Slovníky jsou skvělé, když potřebujete mapování nebo asociativní strukturu dat s konstantní masovou vyhledávání. Pokud však máte jen několik prvků, ztrácíte spoustu místa pomocí slovníku. Místo toho, například, můžete iterativně `List<KeyValuePair\<K,V>>`podívat přes , stejně rychle. Pokud používáte slovník pouze k načtení dat a potom číst z něj (velmi běžný vzor), pomocí seřazené pole s N(log(N)) vyhledávání může být téměř stejně rychle, v závislosti na počtu prvků, které používáte.
+ Slovníky se v mnoha programech používají ubiquitously a i když jsou slovníky velmi pohodlné a v podstatě efektivní. Jsou ale často používány nevhodně. V aplikaci Visual Studio a nových kompilátorech ukazuje analýza mnoho slovníků obsahuje jeden element nebo byl prázdný. Prázdné <xref:System.Collections.Generic.Dictionary%602> pole má deset polí a zabírá 48 bajtů v haldě na počítači x86. Slovníky jsou skvělé, pokud potřebujete mapování nebo asociativní datovou strukturu s vyhledáváním v čase. Pokud ale máte jenom několik prvků, zařadíte spoustu místa pomocí slovníku. Místo toho můžete například iterativním způsobem prohledat `List<KeyValuePair\<K,V>>` , stejně jako rychle. Použijete-li slovník pouze k načtení s daty a pak ho z něj přečtete (velmi běžný vzor), může být v závislosti na počtu prvků, které používáte, možná skoro stejně rychlé.
   
  **Třídy vs. struktury**  
   
- Třídy a struktury svým způsobem poskytují klasický kompromis prostor/čas pro ladění aplikací. Třídy vynakládat 12 bajtů režie na x86 počítač i v případě, že nemají žádná pole, ale jsou levné předat, protože trvá pouze ukazatel odkazovat na instanci třídy. Struktury nevznikají žádné přidělení haldy, pokud nejsou v rámečku, ale při předání velkých struktur jako argumenty funkce nebo vrácené hodnoty, trvá čas procesoru atomicky zkopírovat všechny datové členy struktur. Dávejte pozor na opakované volání vlastností, které vracejí struktury, a ukládat hodnotu vlastnosti do mezipaměti v místní proměnné, aby se zabránilo nadměrnému kopírování dat.
+ V takovém případě třídy a struktury poskytují pro optimalizaci vašich aplikací klasický prostor a čas. Třídy účtují 12 bajtů režie na počítači x86 i v případě, že nemají žádná pole, ale mají nenákladné předávat, protože přebírají jenom ukazatel na odkazování na instanci třídy. Struktury neúčtují žádné přidělení haldy, pokud nejsou zabalené, ale pokud předáte velké struktury jako argumenty funkce nebo návratové hodnoty, bere čas procesoru k atomické kopírování všech datových členů struktur. Podívejte se na opakující se volání vlastností, které vracejí struktury, a do mezipaměti hodnoty vlastnosti v místní proměnné, aby nedocházelo k nadměrnému kopírování dat.
   
  **Caches**  
   
- Běžným trikem s výkonem je ukládání výsledků do mezipaměti. Mezipaměť bez omezení velikosti nebo zásady vyřazení však může být nevracení paměti. Při zpracování velkého množství dat, pokud podržíte velké množství paměti v mezipaměti, můžete způsobit uvolňování paměti přepsat výhody vyhledávání v mezipaměti.
+ Běžným zdvihem výkonu je ukládání výsledků do mezipaměti. Mezipaměť bez omezení velikosti nebo zásad odstraňování ale může být nevracení paměti. Při zpracování velkých objemů dat můžete v případě, že máte v mezipamětech na velké množství paměti, způsobit, že shromažďování paměti přepíše výhody hledání uložených v mezipaměti.
   
- V tomto článku jsme diskutovali o tom, jak byste měli být vědomi příznaků kritického místa výkonu, které mohou ovlivnit odezvu vaší aplikace, zejména pro velké systémy nebo systémy, které zpracovávají velké množství dat. Mezi běžné viníky patří boxování, manipulace s řetězci, LINQ a lambda, ukládání do mezipaměti v asynchronních metodách, ukládání do mezipaměti bez omezení velikosti nebo zásady vyřazení, nevhodné používání slovníků a předávání struktur. Mějte na paměti čtyři fakta pro ladění aplikací:  
+ V tomto článku jsme probrali, jak byste měli být vědomi kritických příznaků výkonu, které mohou ovlivnit rychlost odezvy vaší aplikace, zejména pro velké systémy nebo systémy, které zpracovávají velké množství dat. Mezi Běžné culprits patří zabalení, manipulace s řetězci, LINQ a lambda, ukládání do mezipaměti v asynchronních metodách, ukládání do mezipaměti bez omezení velikosti nebo zásad vyřazení, nevhodné použití slovníků a předávání okolo struktur. Mějte na paměti čtyři fakta pro optimalizaci vašich aplikací:  
   
-- Neoptimalizujte předčasně – buďte produktivní a vylaďte aplikaci, když naprvní místo najdete problémy.
+- Nezralá optimalizace – Buďte produktivní a optimalizujte svou aplikaci při navýšení problémů.
   
-- Profily nelžou - hádáte, pokud neměříte.
+- Profily neleží – Pokud se neměříte, budete odhadem.
   
-- Dobré nástroje, aby celý rozdíl - download PerfView a vyzkoušet.
+- Dobré nástroje provedou všechny rozdíly – Stáhněte si PerfView a vyzkoušejte si to.
   
-- Je to všechno o přidělení – to je místo, kde tým platformy kompilátoru strávil většinu svého času zlepšováním výkonu nových kompilátorů.
+- Je to vše o přidělení – to znamená, že tým platformy pro kompilátor vytrvalo většinu času, který zlepšuje výkon nových kompilátorů.
   
 ## <a name="see-also"></a>Viz také
 
-- [Video z prezentace tohoto tématu](https://channel9.msdn.com/Events/TechEd/NorthAmerica/2013/DEV-B333)
-- [Začátečníci Průvodce profilování výkonu](/visualstudio/profiling/beginners-guide-to-performance-profiling)
+- [Video o prezentaci tohoto tématu](https://channel9.msdn.com/Events/TechEd/NorthAmerica/2013/DEV-B333)
+- [Příručka pro začátečníky k profilaci výkonu](/visualstudio/profiling/beginners-guide-to-performance-profiling)
 - [Výkon](index.md)
 - [Tipy pro zvýšení výkonu rozhraní .NET](https://docs.microsoft.com/previous-versions/dotnet/articles/ms973839(v%3dmsdn.10))
-- [Kanál 9 PerfView výukové programy](https://channel9.msdn.com/Series/PerfView-Tutorial)
-- [Sada SDK platformy kompilátoru ROZHRANÍ .NET](../../csharp/roslyn-sdk/index.md)
-- [dotnet/roslyn repo na GitHubu](https://github.com/dotnet/roslyn)
+- [Kurzy PerfView pro Channel 9](https://channel9.msdn.com/Series/PerfView-Tutorial)
+- [Sada .NET Compiler Platform SDK](../../csharp/roslyn-sdk/index.md)
+- [dotnet/Roslyn úložiště na GitHubu](https://github.com/dotnet/roslyn)

@@ -1,5 +1,6 @@
 ---
-title: 'Zmírnění: Podpora dotykového ovládání a stylusu založené na ukazateli'
+title: 'Zmírnění rizika: dotykové ovládání pomocí ukazatele a Podpora stylusu'
+description: Přečtěte si o účincích povolení volitelného zásobníku WPF Touch/Stylus pro aplikace WPF, které cílí na .NET Framework 4,7.
 ms.date: 04/07/2017
 helpviewer_keywords:
 - retargeting changes
@@ -7,40 +8,40 @@ helpviewer_keywords:
 - WPF retargeting changes
 - WPF pointer-based touch and stylus stack
 ms.assetid: f99126b5-c396-48f9-8233-8f36b4c9e717
-ms.openlocfilehash: 023c38f66611bd0022699d3f62d90c3923585012
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d0c0effeaa727c615dddc3b92cdd34aafde65705
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "77094472"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86475421"
 ---
-# <a name="mitigation-pointer-based-touch-and-stylus-support"></a>Zmírnění: Podpora dotykového ovládání a stylusu založené na ukazateli
+# <a name="mitigation-pointer-based-touch-and-stylus-support"></a>Zmírnění rizika: dotykové ovládání pomocí ukazatele a Podpora stylusu
 
-WPF aplikace, které cílí na rozhraní .NET Framework 4.7 a běží v `WM_POINTER`systému Windows počínaje aktualizací Windows 10 Creators Update, mohou povolit volitelný zásobník dotykového a stylusu WPF založené na vlastnostech.
+Aplikace WPF, které cílí na .NET Framework 4,7 a jsou spuštěné ve Windows počínaje verzí Windows 10 Creators Update, můžou povolit volitelnou `WM_POINTER` sadu WPF Touch/stylusu.
 
 ## <a name="impact"></a>Dopad
 
-Vývojáři, kteří explicitně nepovolují podporu dotykového ovládání nebo pera založené na ukazateli, by neměli vidět žádnou změnu v chování dotykového a stylusu WPF.
+Vývojáři, kteří explicitně nepovolili podporu dotykového ovládání a stylusu na základě ukazatele, by se v chování WPF Touch/Stylus nezměnily.
 
-Následují aktuální známé problémy `WM_POINTER`s volitelným zásobníkem dotykového ovládání a pera:
+Tady jsou uvedené aktuální známé problémy s volitelným `WM_POINTER` tónovým nebo stylusem stackem:
 
-- Žádná podpora pro rukopis v reálném čase.
+- Žádná podpora pro psaní rukou v reálném čase.
 
-   Zatímco rukopis a stylus pluginy stále fungují, jsou zpracovány ve vlákně uživatelského rozhraní, což může vést ke špatnému výkonu.
+   I když rukopisné moduly plug-in a stylusy jsou stále funkční, jsou zpracovávány ve vlákně uživatelského rozhraní, což může vést k špatnému výkonu.
 
-- Změny chování v důsledku změn v propagaci z touch/stylus událostí na události myši.
+- Změny chování z důvodu změn v povýšení událostí dotykové/Stylus na události myši.
 
   - Manipulace se může chovat jinak.
 
-  - Přetažením nezobrazí odpovídající zpětnou vazbu pro dotykové ovládání. (To nemá vliv na vstup pera.)
+  - Přetažením nebudete mít k dispozici odpovídající zpětnou vazbu k dotykovému vstupu. (To nemá vliv na vstup stylusu.)
 
-  - Drag/Drop již nelze spustit při událostech dotykového/stylusu.
+  - Přetažení už nejde iniciovat na událostech Touch/stylusu.
 
-      To může potenciálně způsobit, že aplikace přestane reagovat, dokud není zjištěn vstup myši. Místo toho by vývojáři měli zahájit přetahování z událostí myši.
+      To může potenciálně způsobit, že aplikace přestane reagovat, dokud se nezjistí vstup z myši. Místo toho by vývojáři měli zahájit přetahování z událostí myši.
 
-## <a name="opting-in-to-wm_pointer-based-touchstylus-support"></a>Přihlášení k podpoře dotykového ovládání a stylusu na bázi WM_POINTER
+## <a name="opting-in-to-wm_pointer-based-touchstylus-support"></a>Když se přihlásíte k WM_POINTER dotyková Podpora stylusu nebo tužky
 
-Vývojáři, kteří chtějí povolit tento zásobník, mohou do souboru *app.config* své aplikace přidat následující.
+Vývojáři, kteří chtějí tuto sadu povolit, mohou do souboru *app.config* aplikace přidat následující:
 
 ```xml
 <configuration>
@@ -50,7 +51,7 @@ Vývojáři, kteří chtějí povolit tento zásobník, mohou do souboru *app.co
 </configuration>
 ```
 
-Odebrání této položky nebo `false` nastavení její hodnoty vypne tento volitelný zásobník.
+Odebráním této položky nebo nastavením její hodnoty `false` dojde k vypnutí tohoto volitelného zásobníku.
 
 ## <a name="see-also"></a>Viz také
 

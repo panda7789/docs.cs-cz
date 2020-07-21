@@ -1,5 +1,6 @@
 ---
 title: Průvodce programováním v C#
+description: Tyto prostředky použijte pro podrobné informace o funkcích a funkcích jazyka C#, které jsou přístupné pro C# prostřednictvím rozhraní .NET.
 ms.date: 05/02/2017
 f1_keywords:
 - cs.langref
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - Visual C#, programming concepts
 - C# language, concepts
 ms.assetid: ac0f23a2-6bf3-4077-be99-538ae5fd3bc5
-ms.openlocfilehash: df69d895dee51f1bad1fb6164fcb18996ee3eef4
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: e2127b91efb5a77497ce22e0f2934fab98f015af
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241653"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86473874"
 ---
 # <a name="c-programming-guide"></a>Průvodce programováním v C#
 
@@ -40,7 +41,7 @@ V této části najdete podrobné informace o funkcích a funkcích jazyka C#, k
   
  [Rozhraní](./interfaces/index.md)  
 
- [Delegáti](./delegates/index.md)  
+ [Delegáty](./delegates/index.md)  
 
  [Pole](./arrays/index.md)  
   
@@ -60,7 +61,7 @@ V této části najdete podrobné informace o funkcích a funkcích jazyka C#, k
   
  [Výrazy lambda](./statements-expressions-operators/lambda-expressions.md)  
   
- [Obory názvů](./namespaces/index.md)  
+ [Jmenné prostory](./namespaces/index.md)  
   
  [Nezabezpečený kód a ukazatele](./unsafe-code-pointers/index.md)  
   
@@ -76,11 +77,11 @@ V této části najdete podrobné informace o funkcích a funkcích jazyka C#, k
   
  [Kolekce](./concepts/collections.md)  
   
- [Výjimky a jejich zpracování](./exceptions/index.md)  
+ [Výjimky a zpracování výjimek](./exceptions/index.md)  
   
  [Systém souborů a registr (Průvodce programováním v C#)](./file-system/index.md)  
   
- [Interoperabilita](./interop/index.md)  
+ [Vzájemná funkční spolupráce](./interop/index.md)  
   
  [Reflexe](./concepts/reflection.md)  
   

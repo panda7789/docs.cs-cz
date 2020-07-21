@@ -1,17 +1,18 @@
 ---
 title: Metody rozšíření – Průvodce programováním v C#
+description: Metody rozšíření v jazyce C# umožňují přidávat metody do stávajících typů bez vytváření nového odvozeného typu, rekompilace nebo jiné změny původního typu.
 ms.date: 03/19/2020
 helpviewer_keywords:
 - methods [C#], adding to existing types
 - extension methods [C#]
 - methods [C#], extension
 ms.assetid: 175ce3ff-9bbf-4e64-8421-faeb81a0bb51
-ms.openlocfilehash: 0f9c0f053e531a44640084a35dc5d8e844ee0b46
-ms.sourcegitcommit: 1eae045421d9ea2bfc82aaccfa5b1ff1b8c9e0e4
+ms.openlocfilehash: e57447c89749451862bbb80047ed74135a0eb752
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84803179"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86474810"
 ---
 # <a name="extension-methods-c-programming-guide"></a>Metody rozšíření (Průvodce programováním v C#)
 

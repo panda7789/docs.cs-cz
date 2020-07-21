@@ -6,12 +6,12 @@ helpviewer_keywords:
 - compiler options [C#], listed by category
 - Visual C#, compiler options listed by category
 ms.assetid: 96437ecc-6502-4cd3-b070-e9386a298e83
-ms.openlocfilehash: 1e78b920eb6a1eae870a425b91711ac9d87b6530
-ms.sourcegitcommit: 1eae045421d9ea2bfc82aaccfa5b1ff1b8c9e0e4
+ms.openlocfilehash: f216534140b6e207ac110bb54b3e4f93a8ac6b70
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84811683"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86474017"
 ---
 # <a name="c-compiler-options-listed-by-category"></a>Možnosti kompilátoru C# uvedené podle kategorie
 
@@ -37,7 +37,7 @@ Následující možnosti kompilátoru jsou seřazené podle kategorie. Abecední
 |[-preferreduilang](preferreduilang-compiler-option.md)|Zadejte jazyk pro výstup kompilátoru.|
 |[-refout](refout-compiler-option.md)|Kromě primárního sestavení vygenerujte referenční sestavení.|
 |[-refonly](refonly-compiler-option.md)|Vygenerujte referenční sestavení namísto primárního sestavení.|
-|[-target](target-compiler-option.md)|Určuje formát výstupního souboru pomocí jedné z pěti možností: [-target: appcontainerexe](target-appcontainerexe-compiler-option.md), [-target: exe](target-exe-compiler-option.md), [-target: Library](target-library-compiler-option.md), [-target: Module](target-module-compiler-option.md), [-target: winexe](target-winexe-compiler-option.md)nebo [-target: winmdobj](target-winmdobj-compiler-option.md).|
+|[-target](target-compiler-option.md)|Určuje formát výstupního souboru pomocí jedné z následujících možností: [-target: appcontainerexe](target-appcontainerexe-compiler-option.md), [-target: exe](target-exe-compiler-option.md), [-target: Library](target-library-compiler-option.md), [-target: Module](target-module-compiler-option.md), [-target: winexe](target-winexe-compiler-option.md)nebo [-target: winmdobj](target-winmdobj-compiler-option.md).|
 |ModuleName\<string>|Zadejte název zdrojového modulu.|
 
 ## <a name="net-framework-assemblies"></a>.NET Framework sestavení
@@ -63,7 +63,7 @@ Následující možnosti kompilátoru jsou seřazené podle kategorie. Abecední
 |------------|-------------|
 |[-bugreport](bugreport-compiler-option.md)|Vytvoří soubor, který obsahuje informace, které usnadňují hlášení chyby.|
 |[-checked](checked-compiler-option.md)|Určuje, zda aritmetické aritmetické operace přetéká hranice datového typu způsobí výjimku v době běhu.|
-|[-debug](debug-compiler-option.md)|Instruuje kompilátor, aby vygeneroval ladicí informace.|
+|[– ladění](debug-compiler-option.md)|Instruuje kompilátor, aby vygeneroval ladicí informace.|
 |[-errorreport](errorreport-compiler-option.md)|Nastaví chování zasílání zpráv o chybách.|
 |[-fullpaths](fullpaths-compiler-option.md)|Určuje absolutní cestu k souboru ve výstupu kompilátoru.|
 |[-nowarn](nowarn-compiler-option.md)|Potlačí generování zadaných upozornění kompilátorem.|

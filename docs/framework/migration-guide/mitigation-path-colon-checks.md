@@ -1,28 +1,29 @@
 ---
-title: 'Zmírnění: Kontrola dvojtečky cesty'
+title: 'Zmírnění rizika: kontroly středních cest'
+description: Přečtěte si o změnách provedených v .NET Framework 4.6.2 pro podporu kontrol správné syntaxe oddělovače jednotek (dvojtečka).
 ms.date: 03/30/2017
 ms.assetid: a0bb52de-d279-419d-8f23-4b12d1a3f36e
-ms.openlocfilehash: c6e1106b6f5d8457417992941b9f28712d484442
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f32ee54f88bc4747fd0d8065b0dce06b151d1d9a
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79181249"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86475447"
 ---
-# <a name="mitigation-path-colon-checks"></a>Zmírnění: Kontrola dvojtečky cesty
-Počínaje aplikacemi, které cílí na rozhraní .NET Framework 4.6.2, byla provedena řada změn pro podporu dříve nepodporovaných cest (z hlediska délky i formátu). Zejména kontroly správné syntaxe oddělovače jednotky (dvojtečka) byly provedeny správnější.  
+# <a name="mitigation-path-colon-checks"></a>Zmírnění rizika: kontroly středních cest
+Počínaje aplikacemi, které cílí na .NET Framework 4.6.2, byl proveden určitý počet změn pro podporu dříve nepodporovaných cest (z hlediska délky i formátu). Konkrétně jsou zkontrolovány správné syntaxe oddělovače jednotek (dvojtečka).  
   
 ## <a name="impact"></a>Dopad  
- Tyto změny blokují některé <xref:System.IO.Path.GetDirectoryName%2A?displayProperty=nameWithType> <xref:System.IO.Path.GetPathRoot%2A?displayProperty=nameWithType> cesty URI a dříve podporované metody.  
+ Tyto změny blokují některé cesty identifikátorů URI, které <xref:System.IO.Path.GetDirectoryName%2A?displayProperty=nameWithType> <xref:System.IO.Path.GetPathRoot%2A?displayProperty=nameWithType> dříve podporovaly metody a.  
   
 ## <a name="mitigation"></a>Omezení rizik  
- Chcete-li obejít problém dříve přijatelné cesty, která <xref:System.IO.Path.GetDirectoryName%2A?displayProperty=nameWithType> <xref:System.IO.Path.GetPathRoot%2A?displayProperty=nameWithType> již není podporována a metody, můžete provést následující kroky:  
+ Chcete-li se vyhnout problému dříve přijatelné cesty, která již není podporována <xref:System.IO.Path.GetDirectoryName%2A?displayProperty=nameWithType> <xref:System.IO.Path.GetPathRoot%2A?displayProperty=nameWithType> metodami a, můžete provést následující:  
   
-- Ručně odeberte schéma z adresy URL. Můžete například `file://` odebrat z adresy URL.  
+- Ručně odeberte schéma z adresy URL. Například odeberte `file://` z adresy URL.  
   
-- Předajuridu uri konstruktoru <xref:System.Uri> a <xref:System.Uri.LocalPath%2A?displayProperty=nameWithType> načtěte hodnotu vlastnosti.  
+- Předejte identifikátor URI <xref:System.Uri> konstruktoru a načtěte hodnotu <xref:System.Uri.LocalPath%2A?displayProperty=nameWithType> Vlastnosti.  
   
-- Odhlásit se z nové normalizace `Switch.System.IO.UseLegacyPathHandling` <xref:System.AppContext> cesty `true`nastavením přepínače na .  
+- Odhlášení od nové normalizace cest nastavením `Switch.System.IO.UseLegacyPathHandling` <xref:System.AppContext> přepínače na `true` .  
   
     ```xml  
     <runtime>  

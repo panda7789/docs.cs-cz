@@ -1,13 +1,14 @@
 ---
 title: 'Zmírnění: Deserializace objektů mezi doménami aplikací'
+description: Přečtěte si, jak diagnostikovat a zmírnit problém, kdy se pokus o deserializaci objektů v logickém kontextu volání napříč doménami aplikace vyvolá výjimku.
 ms.date: 03/30/2017
 ms.assetid: 30c2d66c-04a8-41a5-ad31-646b937f61b5
-ms.openlocfilehash: e2d90a77cab699646bd31eaa162d1bd1744fd51b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 20ea0f2f0b49000b7d1993adb583a803d9f5be6c
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73457922"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86475239"
 ---
 # <a name="mitigation-deserialization-of-objects-across-app-domains"></a>Zmírnění: Deserializace objektů mezi doménami aplikací
 V některých případech, kdy aplikace používá dvě nebo více domén aplikace s různými základy cesty aplikace, vyvolá pokus o deserializaci objektů v rámci logického kontextu volání mezi doménami aplikace výjimku.  

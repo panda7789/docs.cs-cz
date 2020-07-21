@@ -1,44 +1,45 @@
 ---
-title: Konstanty – programovací průvodce C#
+title: Konstanty – Průvodce programováním v C#
+description: Konstanty v jazyce C# jsou hodnoty literálu v době kompilace, které se po zkompilování programu nemění. Konstanty mohou být pouze předdefinované typy jazyka C#.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - C# language, constants
 - constants [C#]
 ms.assetid: 1fb39621-1738-49b1-a1b3-8587f109123f
-ms.openlocfilehash: 85f6684617b893bdd85eb5b530aa2481941fbc5d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: dd42dcd62bb46898c20f14cdc893b8f5801894f2
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77093549"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86474979"
 ---
 # <a name="constants-c-programming-guide"></a>Konstanty (Průvodce programováním v C#)
-Konstanty jsou neměnné hodnoty, které jsou známy v době kompilace a nemění po dobu životnosti programu. Konstanty jsou deklarovány s modifikátorem [const.](../../language-reference/keywords/const.md) Pouze c# [předdefinované typy](../../language-reference/builtin-types/built-in-types.md) <xref:System.Object?displayProperty=nameWithType>(kromě) mohou `const`být deklarovány jako . Uživatelem definované typy, včetně tříd, struktur a polí, nemohou být `const`. Modifikátor [jen pro čtení](../../language-reference/keywords/readonly.md) použijte k vytvoření třídy, struktury nebo pole, která je inicializována jednou za běhu (například v konstruktoru) a poté nemůže být změněna.  
+Konstanty jsou neměnné hodnoty, které jsou známy v době kompilace a nemění se po dobu života programu. Konstanty jsou deklarovány s modifikátorem [const](../../language-reference/keywords/const.md) . Pouze [předdefinované typy](../../language-reference/builtin-types/built-in-types.md) jazyka C# (s výjimkou <xref:System.Object?displayProperty=nameWithType> ) mohou být deklarovány jako `const` . Uživatelsky definované typy, včetně tříd, struktur a polí, nemůžou být `const` . Použijte modifikátor [jen pro čtení](../../language-reference/keywords/readonly.md) k vytvoření třídy, struktury nebo pole, která je inicializována jednou za běhu (například v konstruktoru) a poté nelze změnit.  
   
- C# nepodporuje `const` metody, vlastnosti nebo události.  
+ Jazyk C# nepodporuje `const` metody, vlastnosti a události.  
   
- Typ výčtu umožňuje definovat pojmenované konstanty pro integrované předdefinované `uint` `long`typy (například `int`, , a tak dále). Další informace naleznete [v tématu výčet](../../language-reference/builtin-types/enum.md).  
+ Typ výčtu umožňuje definovat pojmenované konstanty pro integrální předdefinované typy (například,, `int` `uint` `long` a tak dále). Další informace naleznete v tématu [Enum](../../language-reference/builtin-types/enum.md).  
   
- Konstanty musí být inicializovány při jejich deklaraci. Například:  
+ Konstanty musí být inicializovány, jakmile jsou deklarovány. Příklad:  
   
  [!code-csharp[csProgGuideObjects#64](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#64)]  
   
- V tomto příkladu `months` konstanta je vždy 12 a nelze změnit ani třídy samotné. Ve skutečnosti když kompilátor narazí konstantní identifikátor ve zdrojovém `months`kódu Jazyka C# (například ), nahradí hodnotu literálu přímo do kódu zprostředkujícího jazyka (IL), který vytváří. Vzhledem k tomu, že neexistuje žádná `const` proměnná adresa přidružená k konstantě za běhu, pole nelze předat odkazem a nemohou se ve výrazu zobrazit jako hodnota l.  
+ V tomto příkladu je konstanta `months` vždy 12 a nemůže být změněna ani samotnou třídou. Ve skutečnosti, když kompilátor narazí na konstantní identifikátor ve zdrojovém kódu jazyka C# (například `months` ), nahradí hodnotu literálu přímo do kódu přestupného jazyka (IL), který vytvoří. Vzhledem k tomu, že v době běhu není přiřazena žádná proměnná adresa, nelze `const` pole předat odkazem a nelze ji ve výrazu použít jako l-value.  
   
 > [!NOTE]
-> Buďte opatrní, pokud odkazujete na konstantní hodnoty definované v jiném kódu, například v knihovnách DLL. Pokud nová verze dll definuje novou hodnotu pro konstantu, program bude stále obsahovat staré literál hodnotu, dokud je znovu zkompilován proti nové verzi.  
+> Buďte opatrní při odkazování na konstantní hodnoty definované v jiném kódu, jako jsou knihovny DLL. Pokud nová verze knihovny DLL definuje novou hodnotu pro konstantu, program bude stále obsahovat starou hodnotu literálu, dokud nebude znovu zkompilována s novou verzí.  
   
  Současně lze deklarovat více konstant stejného typu, například:  
   
  [!code-csharp[csProgGuideObjects#65](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#65)]  
   
- Výraz, který se používá k inicializaci konstanty může odkazovat na jinou konstantu, pokud nevytvoří cyklický odkaz. Například:  
+ Výraz, který se používá k inicializaci konstanty, může odkazovat na jinou konstantu, pokud nevytvoří cyklický odkaz. Příklad:  
   
  [!code-csharp[csProgGuideObjects#66](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#66)]  
   
- Konstanty mohou být označeny jako [veřejné](../../language-reference/keywords/public.md), [soukromé](../../language-reference/keywords/private.md), [chráněné](../../language-reference/keywords/protected.md), [interní](../../language-reference/keywords/internal.md), [chráněné vnitřní](../../language-reference/keywords/protected-internal.md) nebo soukromé [chráněné](../../language-reference/keywords/private-protected.md). Tyto modifikátory přístupu definují, jak mohou uživatelé třídy přistupovat k konstantě. Další informace naleznete [v tématu Access Modifiers](./access-modifiers.md).  
+ Konstanty je možné označit jako [veřejné](../../language-reference/keywords/public.md), [privátní](../../language-reference/keywords/private.md), [chráněné](../../language-reference/keywords/protected.md), [interní](../../language-reference/keywords/internal.md), [chráněné interní](../../language-reference/keywords/protected-internal.md) nebo [soukromé chráněné](../../language-reference/keywords/private-protected.md). Tyto modifikátory přístupu definují způsob, jakým uživatelé třídy mají přístup k konstantě. Další informace najdete v tématu [modifikátory přístupu](./access-modifiers.md).  
   
- Konstanty jsou přístupné, jako by byly [statická](../../language-reference/keywords/static.md) pole, protože hodnota konstanty je stejná pro všechny instance typu. Klíčové `static` slovo nelze použít k jejich deklarování. Výrazy, které nejsou ve třídě, která definuje konstantu, musí pro přístup k konstantě používat název třídy, tečku a název konstanty. Například:  
+ Konstanty jsou dostupné, jako by se jednalo o [statická](../../language-reference/keywords/static.md) pole, protože hodnota konstanty je stejná pro všechny instance daného typu. Klíčové slovo nepoužíváte `static` k jejich deklaraci. Výrazy, které nejsou ve třídě definující konstantu, musí používat název třídy, tečku a název konstanty pro přístup k konstantě. Příklad:  
   
  [!code-csharp[csProgGuideObjects#67](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#67)]  
   
@@ -47,9 +48,9 @@ Konstanty jsou neměnné hodnoty, které jsou známy v době kompilace a neměn�
   
 ## <a name="see-also"></a>Viz také
 
-- [Programovací příručka jazyka C#](../index.md)
-- [Třídy a struky](./index.md)
+- [Průvodce programováním v C#](../index.md)
+- [Třídy a struktury](./index.md)
 - [Vlastnosti](./properties.md)
 - [Typy](../types/index.md)
-- [Readonly](../../language-reference/keywords/readonly.md)
-- [Neměnnost v C# část první: Druhy neměnnosti](https://docs.microsoft.com/archive/blogs/ericlippert/immutability-in-c-part-one-kinds-of-immutability)
+- [readonly](../../language-reference/keywords/readonly.md)
+- [Neměnnosti v C# Part One: druhy neměnnosti](https://docs.microsoft.com/archive/blogs/ericlippert/immutability-in-c-part-one-kinds-of-immutability)

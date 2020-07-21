@@ -1,5 +1,6 @@
 ---
 title: Kompatibilita verzí v .NET Framework
+description: Přečtěte si o kompatibilitě mezi verzemi .NET Framework, včetně zpětné kompatibility a souběžného spouštění.
 ms.custom: updateeachrelease
 ms.date: 04/02/2019
 helpviewer_keywords:
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - .NET Framework, compatibility with earlier versions
 - .NET Framework versions, compatibility
 ms.assetid: 2f25e522-456a-48c3-8a53-e5f39275649f
-ms.openlocfilehash: c3bc92b89a46fc947b4d7e67644930374eeab2e4
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: dfdc5a977b69af8aa3a0d33ed8b833745cf6bf11
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82795999"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86475499"
 ---
 # <a name="version-compatibility"></a>Kompatibilita verzí
 
@@ -22,7 +23,7 @@ Zpětná kompatibilita znamená, že aplikace vyvinutá pro konkrétní verzi pl
 
 Ve výchozím nastavení je aplikace spuštěna ve verzi .NET Framework, pro kterou byla vytvořena. Pokud tato verze není k dispozici a konfigurační soubor aplikace nedefinuje podporované verze, může dojít k chybě inicializace .NET Framework. V takovém případě se pokus o spuštění aplikace nezdaří.
 
-Chcete-li definovat konkrétní verze, na kterých aplikace běží, přidejte do konfiguračního souboru aplikace jeden nebo více [ \<supportedRuntime>](../configure-apps/file-schema/startup/supportedruntime-element.md) prvků. Každý `<supportedRuntime>` prvek uvádí podporovanou verzi modulu runtime s prvním zadáním preferované verze a poslední určující nejnižší upřednostňovanou verzi.
+Chcete-li definovat konkrétní verze, na kterých aplikace běží, přidejte [\<supportedRuntime>](../configure-apps/file-schema/startup/supportedruntime-element.md) do konfiguračního souboru aplikace jeden nebo více prvků. Každý `<supportedRuntime>` prvek uvádí podporovanou verzi modulu runtime s prvním zadáním preferované verze a poslední určující nejnižší upřednostňovanou verzi.
 
 ```xml
 <configuration>
@@ -59,7 +60,7 @@ Pokud vaše aplikace nebo komponenta nefunguje podle očekávání na .NET Frame
 
 - Pokud znovu kompilujete existující zdrojový kód pro spuštění v .NET Framework 4,5 nebo jeho vydáních, nebo pokud vyvíjíte novou verzi aplikace nebo komponenty, která cílí na .NET Framework 4,5 nebo jeho vydání z existujícího základu zdrojového kódu, vyhledejte [v knihovně tříd, která je zastaralá](../whats-new/whats-obsolete.md) pro zastaralé typy a členy a použijte popsanou alternativní řešení. (Dříve zkompilovaný kód bude i nadále spuštěn proti typům a členům, které byly označeny jako zastaralé.)
 
-- Pokud zjistíte, že změna v .NET Framework 4,5 přerušila vaši aplikaci, zkontrolujte [schéma nastavení modulu runtime](../configure-apps/file-schema/runtime/index.md)a zejména [ \<prvek AppContextSwitchOverrides>](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md), abyste zjistili, zda můžete použít nastavení modulu runtime v konfiguračním souboru aplikace k obnovení předchozího chování.
+- Pokud zjistíte, že změna v .NET Framework 4,5 přerušila vaši aplikaci, zkontrolujte [schéma nastavení modulu runtime](../configure-apps/file-schema/runtime/index.md)a zejména [ \<AppContextSwitchOverrides> element](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md), abyste zjistili, zda můžete použít nastavení modulu runtime v konfiguračním souboru aplikace k obnovení předchozího chování.
 
 - Pokud jste popsali problém, který není dokumentován, otevřete problém na [webu komunity vývojářů pro .NET](https://developercommunity.visualstudio.com/spaces/61/index.html) nebo otevřete problém v [úložišti Microsoft/dotNET GitHub](https://github.com/microsoft/dotnet/issues).
 
