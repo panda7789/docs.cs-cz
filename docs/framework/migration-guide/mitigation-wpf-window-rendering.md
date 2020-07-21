@@ -1,29 +1,30 @@
 ---
 title: 'Omezení rizik: Vykreslování oken ve WPF'
+description: Přečtěte si o dopadu a zmírnění vykreslování oken WPF v .NET Framework 4,6, které běží v systému Windows 8 nebo novějším.
 ms.date: 03/30/2017
 ms.assetid: 28ed6bf8-141b-4b73-a4e3-44a99fae5084
-ms.openlocfilehash: 42d6abf1ba6ed7c17a5a5604e98b5ee46d0c3ac2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d624478d17a4076107438f71b0a86eeb6d9f3ea4
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73457765"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86475330"
 ---
-# <a name="mitigation-wpf-window-rendering"></a><span data-ttu-id="cce52-102">Omezení rizik: Vykreslování oken ve WPF</span><span class="sxs-lookup"><span data-stu-id="cce52-102">Mitigation: WPF Window Rendering</span></span>
+# <a name="mitigation-wpf-window-rendering"></a><span data-ttu-id="77d7a-103">Omezení rizik: Vykreslování oken ve WPF</span><span class="sxs-lookup"><span data-stu-id="77d7a-103">Mitigation: WPF Window Rendering</span></span>
 
-<span data-ttu-id="cce52-103">V rozhraní .NET Framework 4.6 spuštěné v systému Windows 8 a vyšší, celé okno je vykreslen bez oříznutí, když rozšiřuje mimo jeden displej ve scénáři více monitorů.</span><span class="sxs-lookup"><span data-stu-id="cce52-103">In the .NET Framework 4.6 running on Windows 8 and above, the entire window is rendered without clipping when it extends outside of single display in a multi-monitor scenario.</span></span>
+<span data-ttu-id="77d7a-104">V .NET Framework 4,6 spuštěném v systému Windows 8 a vyšším se celé okno vykreslí bez oříznutí, když se v případě více monitorů rozšíří mimo jeden displej.</span><span class="sxs-lookup"><span data-stu-id="77d7a-104">In the .NET Framework 4.6 running on Windows 8 and above, the entire window is rendered without clipping when it extends outside of single display in a multi-monitor scenario.</span></span>
 
-## <a name="impact"></a><span data-ttu-id="cce52-104">Dopad</span><span class="sxs-lookup"><span data-stu-id="cce52-104">Impact</span></span>
+## <a name="impact"></a><span data-ttu-id="77d7a-105">Dopad</span><span class="sxs-lookup"><span data-stu-id="77d7a-105">Impact</span></span>
 
-<span data-ttu-id="cce52-105">Obecně platí vykreslování celé okno přes více monitorů bez oříznutí je očekávané chování.</span><span class="sxs-lookup"><span data-stu-id="cce52-105">In general, rendering an entire window across multiple monitors without clipping is the expected behavior.</span></span> <span data-ttu-id="cce52-106">Však v systému Windows 7 a starší verze WPF okna jsou oříznuty, pokud přesahují jeden displej, protože vykreslování část okna na druhém monitoru má významný vliv na výkon.</span><span class="sxs-lookup"><span data-stu-id="cce52-106">However, on Windows 7 and earlier versions, WPF windows are clipped when they extend beyond a single display because rendering a portion of the window on the second monitor has a significant performance impact.</span></span>
+<span data-ttu-id="77d7a-106">Obecně platí, že vykreslování celého okna napříč několika monitory bez oříznutí je očekávané chování.</span><span class="sxs-lookup"><span data-stu-id="77d7a-106">In general, rendering an entire window across multiple monitors without clipping is the expected behavior.</span></span> <span data-ttu-id="77d7a-107">V systému Windows 7 a starších verzích se však okna WPF zobrazují, když přesahují rámec jednoho zobrazení, protože vykreslování části okna na druhém monitoru má významný dopad na výkon.</span><span class="sxs-lookup"><span data-stu-id="77d7a-107">However, on Windows 7 and earlier versions, WPF windows are clipped when they extend beyond a single display because rendering a portion of the window on the second monitor has a significant performance impact.</span></span>
 
-<span data-ttu-id="cce52-107">Přesný dopad vykreslování wpf oken napříč monitory v systému Windows 8 a vyšším není přesně kvantifikovatelný, protože závisí na velkém počtu faktorů.</span><span class="sxs-lookup"><span data-stu-id="cce52-107">The precise impact of rendering WPF windows across monitors on Windows 8 and above is not precisely quantifiable since it depends on a large number of factors.</span></span> <span data-ttu-id="cce52-108">V některých případech může stále mít nežádoucí dopad na výkon, zejména pro uživatele, kteří spouštějí aplikace náročné na grafiku a mají windows tažné monitory.</span><span class="sxs-lookup"><span data-stu-id="cce52-108">In some cases, it may still produce an undesirable impact on performance, particularly for users who run graphics-intensive applications and have windows straddling monitors.</span></span> <span data-ttu-id="cce52-109">V ostatních případech můžete jednoduše chtít konzistentní chování napříč verzemi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="cce52-109">In other cases, you may simply want a consistent behavior across .NET Framework versions.</span></span>
+<span data-ttu-id="77d7a-108">Přesný dopad vykreslování oken WPF napříč monitory ve Windows 8 a novějším není přesně kvantifikovaný, protože závisí na velkém počtu faktorů.</span><span class="sxs-lookup"><span data-stu-id="77d7a-108">The precise impact of rendering WPF windows across monitors on Windows 8 and above is not precisely quantifiable since it depends on a large number of factors.</span></span> <span data-ttu-id="77d7a-109">V některých případech může stále dodávat nežádoucí dopad na výkon, zejména pro uživatele, kteří spouštějí aplikace náročné na grafiku a mají monitory s podporou systému Windows.</span><span class="sxs-lookup"><span data-stu-id="77d7a-109">In some cases, it may still produce an undesirable impact on performance, particularly for users who run graphics-intensive applications and have windows straddling monitors.</span></span> <span data-ttu-id="77d7a-110">V jiných případech může být jednoduché chování v různých .NET Framework verzích.</span><span class="sxs-lookup"><span data-stu-id="77d7a-110">In other cases, you may simply want a consistent behavior across .NET Framework versions.</span></span>
 
-## <a name="mitigation"></a><span data-ttu-id="cce52-110">Omezení rizik</span><span class="sxs-lookup"><span data-stu-id="cce52-110">Mitigation</span></span>
+## <a name="mitigation"></a><span data-ttu-id="77d7a-111">Omezení rizik</span><span class="sxs-lookup"><span data-stu-id="77d7a-111">Mitigation</span></span>
 
-<span data-ttu-id="cce52-111">Tuto změnu můžete zakázat a vrátit se k předchozímu chování oříznutí okna WPF, pokud přesahuje jedno zobrazení.</span><span class="sxs-lookup"><span data-stu-id="cce52-111">You can disable this change and revert to the previous behavior of clipping a WPF window when it extends beyond a single display.</span></span> <span data-ttu-id="cce52-112">Toto lze provést dvěma způsoby:</span><span class="sxs-lookup"><span data-stu-id="cce52-112">There are two ways to do this:</span></span>
+<span data-ttu-id="77d7a-112">Tuto změnu můžete zakázat a vrátit se k předchozímu chování při vystřihování okna WPF, když se rozšíří nad rámec jednoho zobrazení.</span><span class="sxs-lookup"><span data-stu-id="77d7a-112">You can disable this change and revert to the previous behavior of clipping a WPF window when it extends beyond a single display.</span></span> <span data-ttu-id="77d7a-113">Toto lze provést dvěma způsoby:</span><span class="sxs-lookup"><span data-stu-id="77d7a-113">There are two ways to do this:</span></span>
 
-- <span data-ttu-id="cce52-113">Přidáním `<EnableMultiMonitorDisplayClipping>` prvku do `<appSettings>` části konfiguračního souboru aplikace můžete toto chování zakázat nebo povolit v aplikacích spuštěných ve Windows 8 nebo novějším.</span><span class="sxs-lookup"><span data-stu-id="cce52-113">By adding the `<EnableMultiMonitorDisplayClipping>` element to the `<appSettings>` section of your application configuration file, you can disable or enable this behavior on apps running on Windows 8 or later.</span></span> <span data-ttu-id="cce52-114">Například následující konfigurační část zakáže vykreslování bez oříznutí:</span><span class="sxs-lookup"><span data-stu-id="cce52-114">For example, the following configuration section disables rendering without clipping:</span></span>
+- <span data-ttu-id="77d7a-114">Přidáním `<EnableMultiMonitorDisplayClipping>` elementu do `<appSettings>` oddílu konfiguračního souboru aplikace můžete toto chování zakázat nebo povolit pro aplikace spuštěné v systému Windows 8 nebo novějším.</span><span class="sxs-lookup"><span data-stu-id="77d7a-114">By adding the `<EnableMultiMonitorDisplayClipping>` element to the `<appSettings>` section of your application configuration file, you can disable or enable this behavior on apps running on Windows 8 or later.</span></span> <span data-ttu-id="77d7a-115">Například následující konfigurační oddíl zakáže vykreslování bez omezení:</span><span class="sxs-lookup"><span data-stu-id="77d7a-115">For example, the following configuration section disables rendering without clipping:</span></span>
 
   ```xml
   <appSettings>
@@ -31,14 +32,14 @@ ms.locfileid: "73457765"
     </appSettings>
   ```
 
-  <span data-ttu-id="cce52-115">Nastavení `<EnableMultiMonitorDisplayClipping>` konfigurace může mít jednu ze dvou hodnot:</span><span class="sxs-lookup"><span data-stu-id="cce52-115">The `<EnableMultiMonitorDisplayClipping>` configuration setting can have either of two values:</span></span>
+  <span data-ttu-id="77d7a-116">`<EnableMultiMonitorDisplayClipping>`Nastavení konfigurace může mít jednu ze dvou hodnot:</span><span class="sxs-lookup"><span data-stu-id="77d7a-116">The `<EnableMultiMonitorDisplayClipping>` configuration setting can have either of two values:</span></span>
 
-  - <span data-ttu-id="cce52-116">`true`, aby oříznutí oken monitorovalo hranice během vykreslování.</span><span class="sxs-lookup"><span data-stu-id="cce52-116">`true`, to enable clipping of windows to monitor bounds during rendering.</span></span>
+  - <span data-ttu-id="77d7a-117">`true`, aby při vykreslování bylo umožněno oříznutí oken sledovat hranice.</span><span class="sxs-lookup"><span data-stu-id="77d7a-117">`true`, to enable clipping of windows to monitor bounds during rendering.</span></span>
 
-  - <span data-ttu-id="cce52-117">`false`, chcete-li zakázat oříznutí oken pro sledování hranic během vykreslování.</span><span class="sxs-lookup"><span data-stu-id="cce52-117">`false`, to disable clipping of windows to monitor bounds during rendering.</span></span>
+  - <span data-ttu-id="77d7a-118">`false`, chcete-li zakázat oříznutí oken ke sledování hranic během vykreslování.</span><span class="sxs-lookup"><span data-stu-id="77d7a-118">`false`, to disable clipping of windows to monitor bounds during rendering.</span></span>
 
-- <span data-ttu-id="cce52-118">Nastavením <xref:System.Windows.CoreCompatibilityPreferences.EnableMultiMonitorDisplayClipping%2A> vlastnosti `true` při spuštění aplikace.</span><span class="sxs-lookup"><span data-stu-id="cce52-118">By setting the <xref:System.Windows.CoreCompatibilityPreferences.EnableMultiMonitorDisplayClipping%2A> property to `true` at app startup.</span></span>
+- <span data-ttu-id="77d7a-119">Nastavením <xref:System.Windows.CoreCompatibilityPreferences.EnableMultiMonitorDisplayClipping%2A> vlastnosti na `true` při spuštění aplikace.</span><span class="sxs-lookup"><span data-stu-id="77d7a-119">By setting the <xref:System.Windows.CoreCompatibilityPreferences.EnableMultiMonitorDisplayClipping%2A> property to `true` at app startup.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="cce52-119">Viz také</span><span class="sxs-lookup"><span data-stu-id="cce52-119">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="77d7a-120">Viz také</span><span class="sxs-lookup"><span data-stu-id="77d7a-120">See also</span></span>
 
-- [<span data-ttu-id="cce52-120">Kompatibilita aplikací</span><span class="sxs-lookup"><span data-stu-id="cce52-120">Application compatibility</span></span>](application-compatibility.md)
+- [<span data-ttu-id="77d7a-121">Kompatibilita aplikací</span><span class="sxs-lookup"><span data-stu-id="77d7a-121">Application compatibility</span></span>](application-compatibility.md)

@@ -1,35 +1,36 @@
 ---
-title: 'Zmírnění: Vlastní implementace iMessageFilter.PreFilterMessageMessageMessage'
+title: 'Zmírnění: vlastní implementace IMessageFilter. PreFilterMessage'
+description: Přečtěte si o vlastních IMessageFilter. PreFilterMessage implementaci obsažených v aplikacích model Windows Forms, které cílí na .NET Framework 4.6.1 a novějších.
 ms.date: 03/30/2017
 ms.assetid: 9cf47c5b-0bb2-45df-9437-61cd7e7c2f4d
-ms.openlocfilehash: 7757e8d1fd0258ab2d972b7321082e4afa37f710
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5fe7500d3ed6ff293514495df150a747e7946dda
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79400118"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86475252"
 ---
-# <a name="mitigation-custom-imessagefilterprefiltermessage-implementations"></a><span data-ttu-id="a1c32-102">Zmírnění: Vlastní implementace iMessageFilter.PreFilterMessageMessageMessage</span><span class="sxs-lookup"><span data-stu-id="a1c32-102">Mitigation: Custom IMessageFilter.PreFilterMessage Implementations</span></span>
+# <a name="mitigation-custom-imessagefilterprefiltermessage-implementations"></a><span data-ttu-id="dbaaf-103">Zmírnění: vlastní implementace IMessageFilter. PreFilterMessage</span><span class="sxs-lookup"><span data-stu-id="dbaaf-103">Mitigation: Custom IMessageFilter.PreFilterMessage Implementations</span></span>
 
-<span data-ttu-id="a1c32-103">V aplikacích pro Windows Forms, které cílí na verze rozhraní .NET Framework <xref:System.Windows.Forms.IMessageFilter.PreFilterMessage%2A?displayProperty=nameWithType> počínaje rozhraním .NET Framework 4.6.1, může vlastní implementace bezpečně filtrovat zprávy při volání <xref:System.Windows.Forms.Application.FilterMessage%2A?displayProperty=nameWithType> metody, pokud je <xref:System.Windows.Forms.IMessageFilter.PreFilterMessage%2A?displayProperty=nameWithType> implementace:</span><span class="sxs-lookup"><span data-stu-id="a1c32-103">In Windows Forms apps that target versions of the .NET Framework starting with the .NET Framework 4.6.1, a custom <xref:System.Windows.Forms.IMessageFilter.PreFilterMessage%2A?displayProperty=nameWithType> implementation can safely filter messages when the <xref:System.Windows.Forms.Application.FilterMessage%2A?displayProperty=nameWithType> method is called if the <xref:System.Windows.Forms.IMessageFilter.PreFilterMessage%2A?displayProperty=nameWithType> implementation:</span></span>
+<span data-ttu-id="dbaaf-104">V model Windows Forms aplikace, které cílí na verze .NET Framework počínaje .NET Framework 4.6.1, <xref:System.Windows.Forms.IMessageFilter.PreFilterMessage%2A?displayProperty=nameWithType> může vlastní implementace bezpečně filtrovat zprávy při <xref:System.Windows.Forms.Application.FilterMessage%2A?displayProperty=nameWithType> volání metody, pokud <xref:System.Windows.Forms.IMessageFilter.PreFilterMessage%2A?displayProperty=nameWithType> implementace:</span><span class="sxs-lookup"><span data-stu-id="dbaaf-104">In Windows Forms apps that target versions of the .NET Framework starting with the .NET Framework 4.6.1, a custom <xref:System.Windows.Forms.IMessageFilter.PreFilterMessage%2A?displayProperty=nameWithType> implementation can safely filter messages when the <xref:System.Windows.Forms.Application.FilterMessage%2A?displayProperty=nameWithType> method is called if the <xref:System.Windows.Forms.IMessageFilter.PreFilterMessage%2A?displayProperty=nameWithType> implementation:</span></span>
 
-- <span data-ttu-id="a1c32-104">Má jeden nebo oba z následujících:</span><span class="sxs-lookup"><span data-stu-id="a1c32-104">Does one or both of the following:</span></span>
+- <span data-ttu-id="dbaaf-105">Provede jednu nebo obě následující akce:</span><span class="sxs-lookup"><span data-stu-id="dbaaf-105">Does one or both of the following:</span></span>
 
-  - <span data-ttu-id="a1c32-105">Přidá filtr zpráv voláním <xref:System.Windows.Forms.Application.AddMessageFilter%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="a1c32-105">Adds a message filter by calling the <xref:System.Windows.Forms.Application.AddMessageFilter%2A> method.</span></span>
+  - <span data-ttu-id="dbaaf-106">Přidá filtr zpráv voláním <xref:System.Windows.Forms.Application.AddMessageFilter%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="dbaaf-106">Adds a message filter by calling the <xref:System.Windows.Forms.Application.AddMessageFilter%2A> method.</span></span>
 
-  - <span data-ttu-id="a1c32-106">Odebere filtr zpráv voláním <xref:System.Windows.Forms.Application.RemoveMessageFilter%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="a1c32-106">Removes a message filter by calling the <xref:System.Windows.Forms.Application.RemoveMessageFilter%2A> method.</span></span> <span data-ttu-id="a1c32-107">Metoda.</span><span class="sxs-lookup"><span data-stu-id="a1c32-107">method.</span></span>
+  - <span data-ttu-id="dbaaf-107">Odebere filtr zpráv voláním <xref:System.Windows.Forms.Application.RemoveMessageFilter%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="dbaaf-107">Removes a message filter by calling the <xref:System.Windows.Forms.Application.RemoveMessageFilter%2A> method.</span></span> <span data-ttu-id="dbaaf-108">Metoda.</span><span class="sxs-lookup"><span data-stu-id="dbaaf-108">method.</span></span>
 
-- <span data-ttu-id="a1c32-108">**A** pumpuje zprávy <xref:System.Windows.Forms.Application.DoEvents%2A?displayProperty=nameWithType> voláním metody.</span><span class="sxs-lookup"><span data-stu-id="a1c32-108">**And** pumps messages by calling the <xref:System.Windows.Forms.Application.DoEvents%2A?displayProperty=nameWithType> method.</span></span>
+- <span data-ttu-id="dbaaf-109">**A** zprávy pumpy voláním <xref:System.Windows.Forms.Application.DoEvents%2A?displayProperty=nameWithType> metody.</span><span class="sxs-lookup"><span data-stu-id="dbaaf-109">**And** pumps messages by calling the <xref:System.Windows.Forms.Application.DoEvents%2A?displayProperty=nameWithType> method.</span></span>
 
-## <a name="impact"></a><span data-ttu-id="a1c32-109">Dopad</span><span class="sxs-lookup"><span data-stu-id="a1c32-109">Impact</span></span>
+## <a name="impact"></a><span data-ttu-id="dbaaf-110">Dopad</span><span class="sxs-lookup"><span data-stu-id="dbaaf-110">Impact</span></span>
 
-<span data-ttu-id="a1c32-110">Tato změna ovlivní pouze aplikace pro Windows Forms, které cílí na verze rozhraní .NET Framework počínaje rozhraním .NET Framework 4.6.1.</span><span class="sxs-lookup"><span data-stu-id="a1c32-110">This change only affects Windows Forms apps that target versions of the .NET Framework starting with the .NET Framework 4.6.1.</span></span>
+<span data-ttu-id="dbaaf-111">Tato změna má vliv pouze na aplikace model Windows Forms, které cílí na verze .NET Framework počínaje .NET Framework 4.6.1.</span><span class="sxs-lookup"><span data-stu-id="dbaaf-111">This change only affects Windows Forms apps that target versions of the .NET Framework starting with the .NET Framework 4.6.1.</span></span>
 
-<span data-ttu-id="a1c32-111">Pro aplikace pro Windows Forms, které cílí na předchozí verze rozhraní <xref:System.IndexOutOfRangeException> .NET <xref:System.Windows.Forms.Application.FilterMessage%2A?displayProperty=nameWithType> Framework, tyto implementace v některých případech vyvolat výjimku při volání metody</span><span class="sxs-lookup"><span data-stu-id="a1c32-111">For Windows Forms apps that target previous versions of the .NET Framework, such implementations in some cases throw an <xref:System.IndexOutOfRangeException> exception when the <xref:System.Windows.Forms.Application.FilterMessage%2A?displayProperty=nameWithType> method is called</span></span>
+<span data-ttu-id="dbaaf-112">Pro model Windows Forms aplikace cílené na předchozí verze .NET Framework taková implementace v některých případech vyvolá <xref:System.IndexOutOfRangeException> výjimku při <xref:System.Windows.Forms.Application.FilterMessage%2A?displayProperty=nameWithType> volání metody.</span><span class="sxs-lookup"><span data-stu-id="dbaaf-112">For Windows Forms apps that target previous versions of the .NET Framework, such implementations in some cases throw an <xref:System.IndexOutOfRangeException> exception when the <xref:System.Windows.Forms.Application.FilterMessage%2A?displayProperty=nameWithType> method is called</span></span>
 
-## <a name="mitigation"></a><span data-ttu-id="a1c32-112">Omezení rizik</span><span class="sxs-lookup"><span data-stu-id="a1c32-112">Mitigation</span></span>
+## <a name="mitigation"></a><span data-ttu-id="dbaaf-113">Omezení rizik</span><span class="sxs-lookup"><span data-stu-id="dbaaf-113">Mitigation</span></span>
 
-<span data-ttu-id="a1c32-113">Pokud je tato změna nežádoucí, aplikace, které cílí na rozhraní .NET Framework 4.6.1 nebo [ \<](../configure-apps/file-schema/runtime/runtime-element.md) novější verzi, se z ní mohou odhlásit přidáním následujícího nastavení konfigurace do části runtime>konfiguračního souboru aplikace:</span><span class="sxs-lookup"><span data-stu-id="a1c32-113">If this change is undesirable, apps that target the .NET Framework 4.6.1 or a later version can opt out of it by adding the following configuration setting to the [\<runtime>](../configure-apps/file-schema/runtime/runtime-element.md) section of the app’s configuration file:</span></span>
+<span data-ttu-id="dbaaf-114">Pokud je tato změna nežádoucí, můžou se aplikace, které cílí na .NET Framework 4.6.1 nebo novější verze, odhlásit, a to přidáním následujícího nastavení konfigurace do [\<runtime>](../configure-apps/file-schema/runtime/runtime-element.md) oddílu konfiguračního souboru aplikace:</span><span class="sxs-lookup"><span data-stu-id="dbaaf-114">If this change is undesirable, apps that target the .NET Framework 4.6.1 or a later version can opt out of it by adding the following configuration setting to the [\<runtime>](../configure-apps/file-schema/runtime/runtime-element.md) section of the app’s configuration file:</span></span>
 
 ```xml
 <runtime>
@@ -37,7 +38,7 @@ ms.locfileid: "79400118"
 </runtime>
 ```
 
-<span data-ttu-id="a1c32-114">Kromě toho se aplikace, které cílí na předchozí verze rozhraní .NET Framework, ale jsou spuštěny v rámci rozhraní .NET Framework [ \<](../configure-apps/file-schema/runtime/runtime-element.md) 4.6.1 nebo novější verze, mohou přihlásit k tomuto chování přidáním následujícího nastavení konfigurace do části konfigurace konfiguračního souboru aplikace>běhu:</span><span class="sxs-lookup"><span data-stu-id="a1c32-114">In addition, apps that target previous versions of the .NET Framework but are running under the .NET Framework 4.6.1 or a later version can opt in to this behavior by adding the following configuration setting to the [\<runtime>](../configure-apps/file-schema/runtime/runtime-element.md) section of the app’s configuration file:</span></span>
+<span data-ttu-id="dbaaf-115">Kromě toho aplikace, které cílí na předchozí verze .NET Framework, ale běží v .NET Framework 4.6.1 nebo novější verzi, se můžou k tomuto chování vyjádřit přidáním následujícího nastavení konfigurace do [\<runtime>](../configure-apps/file-schema/runtime/runtime-element.md) oddílu konfiguračního souboru aplikace:</span><span class="sxs-lookup"><span data-stu-id="dbaaf-115">In addition, apps that target previous versions of the .NET Framework but are running under the .NET Framework 4.6.1 or a later version can opt in to this behavior by adding the following configuration setting to the [\<runtime>](../configure-apps/file-schema/runtime/runtime-element.md) section of the app’s configuration file:</span></span>
 
 ```xml
 <runtime>
@@ -45,6 +46,6 @@ ms.locfileid: "79400118"
 </runtime>
 ```
 
-## <a name="see-also"></a><span data-ttu-id="a1c32-115">Viz také</span><span class="sxs-lookup"><span data-stu-id="a1c32-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="dbaaf-116">Viz také</span><span class="sxs-lookup"><span data-stu-id="dbaaf-116">See also</span></span>
 
-- [<span data-ttu-id="a1c32-116">Kompatibilita aplikací</span><span class="sxs-lookup"><span data-stu-id="a1c32-116">Application compatibility</span></span>](application-compatibility.md)
+- [<span data-ttu-id="dbaaf-117">Kompatibilita aplikací</span><span class="sxs-lookup"><span data-stu-id="dbaaf-117">Application compatibility</span></span>](application-compatibility.md)
