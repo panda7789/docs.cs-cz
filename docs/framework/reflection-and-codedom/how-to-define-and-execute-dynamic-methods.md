@@ -1,5 +1,6 @@
 ---
 title: 'Postupy: Definování a provádění dynamických metod'
+description: Viz jak definovat a spouštět dynamické metody v rozhraní .NET. Zobrazení příkladů jednoduché dynamické metody a dynamické metody svázané s instancí třídy.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - reflection emit, dynamic methods
 - dynamic methods
 ms.assetid: 07d08a99-62c5-4254-bce2-2a75e55a18ab
-ms.openlocfilehash: 7da9d0bea755b90f73077fcd56558ed66a80e2eb
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 7c68be91deb59ea9439e81561f50b7cc40766a45
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73130142"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86865109"
 ---
 # <a name="how-to-define-and-execute-dynamic-methods"></a>Postupy: Definování a provádění dynamických metod
 Následující postupy ukazují, jak definovat a spustit jednoduchou dynamickou metodu a dynamickou metodu svázanou s instancí třídy. Další informace o dynamických metodách naleznete v tématu <xref:System.Reflection.Emit.DynamicMethod> třídy a [reflexe emituje dynamické metody](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/sfk2s47t(v=vs.100)).  
@@ -27,26 +28,26 @@ Následující postupy ukazují, jak definovat a spustit jednoduchou dynamickou 
      [!code-csharp[DynamicMethodHowTo#2](../../../samples/snippets/csharp/VS_Snippets_CLR/DynamicMethodHowTo/cs/source.cs#2)]
      [!code-vb[DynamicMethodHowTo#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/DynamicMethodHowTo/vb/source.vb#2)]  
   
-2. Vytvořte pole, které určuje typy parametrů dynamické metody. V tomto příkladu je jediným parametrem `int` (`Integer` v Visual Basic), takže pole má pouze jeden prvek.  
+2. Vytvořte pole, které určuje typy parametrů dynamické metody. V tomto příkladu je jediným parametrem `int` ( `Integer` v Visual Basic), takže pole má pouze jeden prvek.  
   
      [!code-cpp[DynamicMethodHowTo#3](../../../samples/snippets/cpp/VS_Snippets_CLR/DynamicMethodHowTo/cpp/source.cpp#3)]
      [!code-csharp[DynamicMethodHowTo#3](../../../samples/snippets/csharp/VS_Snippets_CLR/DynamicMethodHowTo/cs/source.cs#3)]
      [!code-vb[DynamicMethodHowTo#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/DynamicMethodHowTo/vb/source.vb#3)]  
   
-3. Vytvořte <xref:System.Reflection.Emit.DynamicMethod>. V tomto příkladu je metoda pojmenována `SquareIt`.  
+3. Vytvořte <xref:System.Reflection.Emit.DynamicMethod> . V tomto příkladu je metoda pojmenována `SquareIt` .  
   
     > [!NOTE]
     > Není nutné poskytovat názvy dynamických metod a nemohou být vyvolány podle názvu. Více dynamických metod může mít stejný název. Název se ale zobrazí v zásobníkech volání a může být užitečný pro ladění.  
   
-     Typ návratové hodnoty je zadán jako `long`. Metoda je přidružena k modulu, který obsahuje `Example` třídu, která obsahuje vzorový kód. Je možné zadat libovolný načtený modul. Dynamická metoda funguje jako metoda na úrovni `static` modulu (`Shared` v Visual Basic).  
+     Typ návratové hodnoty je zadán jako `long` . Metoda je přidružena k modulu, který obsahuje `Example` třídu, která obsahuje vzorový kód. Je možné zadat libovolný načtený modul. Dynamická metoda funguje jako metoda na úrovni modulu `static` ( `Shared` v Visual Basic).  
   
      [!code-cpp[DynamicMethodHowTo#4](../../../samples/snippets/cpp/VS_Snippets_CLR/DynamicMethodHowTo/cpp/source.cpp#4)]
      [!code-csharp[DynamicMethodHowTo#4](../../../samples/snippets/csharp/VS_Snippets_CLR/DynamicMethodHowTo/cs/source.cs#4)]
      [!code-vb[DynamicMethodHowTo#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/DynamicMethodHowTo/vb/source.vb#4)]  
   
-4. Vygeneruje tělo metody. V tomto příkladu je <xref:System.Reflection.Emit.ILGenerator> objekt použit k VYGENEROVÁNÍ jazyka MSIL (Microsoft Intermediate Language). Alternativně lze <xref:System.Reflection.Emit.DynamicILInfo> objekt použít ve spojení s nespravovanými generátory kódu k vygenerování těla metody pro <xref:System.Reflection.Emit.DynamicMethod>.  
+4. Vygeneruje tělo metody. V tomto příkladu <xref:System.Reflection.Emit.ILGenerator> je objekt použit k vygenerování jazyka MSIL (Microsoft Intermediate Language). Alternativně <xref:System.Reflection.Emit.DynamicILInfo> lze objekt použít ve spojení s nespravovanými generátory kódu k vygenerování těla metody pro <xref:System.Reflection.Emit.DynamicMethod> .  
   
-     Jazyk MSIL v tomto příkladu načte argument, který je typu `int`, do zásobníku, převede ho na `long`, duplikuje `long`a vynásobí dvě čísla. Tím se v zásobníku ponechá čtvercový výsledek a všechny metody, které je potřeba provést, se vrátí.  
+     Jazyk MSIL v tomto příkladu načte argument, který je typu `int` , do zásobníku, převede ho na `long` , duplikuje `long` a vynásobí dvě čísla. Tím se v zásobníku ponechá čtvercový výsledek a všechny metody, které je potřeba provést, se vrátí.  
   
      [!code-cpp[DynamicMethodHowTo#5](../../../samples/snippets/cpp/VS_Snippets_CLR/DynamicMethodHowTo/cpp/source.cpp#5)]
      [!code-csharp[DynamicMethodHowTo#5](../../../samples/snippets/csharp/VS_Snippets_CLR/DynamicMethodHowTo/cs/source.cs#5)]
@@ -66,34 +67,34 @@ Následující postupy ukazují, jak definovat a spustit jednoduchou dynamickou 
      [!code-csharp[DynamicMethodHowTo#12](../../../samples/snippets/csharp/VS_Snippets_CLR/DynamicMethodHowTo/cs/source.cs#12)]
      [!code-vb[DynamicMethodHowTo#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR/DynamicMethodHowTo/vb/source.vb#12)]  
   
-2. Vytvořte pole, které určuje typy parametrů dynamické metody. Pokud je delegát představující metodu svázán s objektem, první parametr musí odpovídat typu, ke kterému je delegát vázán. V tomto příkladu jsou dva parametry typu `Example` a typu `int` (`Integer` v Visual Basic).  
+2. Vytvořte pole, které určuje typy parametrů dynamické metody. Pokud je delegát představující metodu svázán s objektem, první parametr musí odpovídat typu, ke kterému je delegát vázán. V tomto příkladu jsou dva parametry typu `Example` a typu `int` ( `Integer` v Visual Basic).  
   
      [!code-cpp[DynamicMethodHowTo#13](../../../samples/snippets/cpp/VS_Snippets_CLR/DynamicMethodHowTo/cpp/source.cpp#13)]
      [!code-csharp[DynamicMethodHowTo#13](../../../samples/snippets/csharp/VS_Snippets_CLR/DynamicMethodHowTo/cs/source.cs#13)]
      [!code-vb[DynamicMethodHowTo#13](../../../samples/snippets/visualbasic/VS_Snippets_CLR/DynamicMethodHowTo/vb/source.vb#13)]  
   
-3. Vytvořte <xref:System.Reflection.Emit.DynamicMethod>. V tomto příkladu metoda nemá žádný název. Typ návratové hodnoty je zadán jako `int` (`Integer` v Visual Basic). Metoda má přístup k soukromým a chráněným členům `Example` třídy.  
+3. Vytvořte <xref:System.Reflection.Emit.DynamicMethod> . V tomto příkladu metoda nemá žádný název. Typ návratové hodnoty je zadán jako `int` ( `Integer` v Visual Basic). Metoda má přístup k soukromým a chráněným členům `Example` třídy.  
   
      [!code-cpp[DynamicMethodHowTo#14](../../../samples/snippets/cpp/VS_Snippets_CLR/DynamicMethodHowTo/cpp/source.cpp#14)]
      [!code-csharp[DynamicMethodHowTo#14](../../../samples/snippets/csharp/VS_Snippets_CLR/DynamicMethodHowTo/cs/source.cs#14)]
      [!code-vb[DynamicMethodHowTo#14](../../../samples/snippets/visualbasic/VS_Snippets_CLR/DynamicMethodHowTo/vb/source.vb#14)]  
   
-4. Vygeneruje tělo metody. V tomto příkladu je <xref:System.Reflection.Emit.ILGenerator> objekt použit k VYGENEROVÁNÍ jazyka MSIL (Microsoft Intermediate Language). Alternativně lze <xref:System.Reflection.Emit.DynamicILInfo> objekt použít ve spojení s nespravovanými generátory kódu k vygenerování těla metody pro <xref:System.Reflection.Emit.DynamicMethod>.  
+4. Vygeneruje tělo metody. V tomto příkladu <xref:System.Reflection.Emit.ILGenerator> je objekt použit k vygenerování jazyka MSIL (Microsoft Intermediate Language). Alternativně <xref:System.Reflection.Emit.DynamicILInfo> lze objekt použít ve spojení s nespravovanými generátory kódu k vygenerování těla metody pro <xref:System.Reflection.Emit.DynamicMethod> .  
   
-     Jazyk MSIL v tomto příkladu načte první argument, který je instancí `Example` třídy, a použije jej k načtení hodnoty soukromého pole instance typu. `int` Načte se druhý argument a vynásobí se dvě čísla. Pokud je výsledek větší než `int`, hodnota se zkrátí a nejvýznamnější bity se zahodí. Metoda se vrátí s návratovou hodnotou v zásobníku.  
+     Jazyk MSIL v tomto příkladu načte první argument, který je instancí `Example` třídy, a použije jej k načtení hodnoty soukromého pole instance typu `int` . Načte se druhý argument a vynásobí se dvě čísla. Pokud je výsledek větší než `int` , hodnota se zkrátí a nejvýznamnější bity se zahodí. Metoda se vrátí s návratovou hodnotou v zásobníku.  
   
      [!code-cpp[DynamicMethodHowTo#15](../../../samples/snippets/cpp/VS_Snippets_CLR/DynamicMethodHowTo/cpp/source.cpp#15)]
      [!code-csharp[DynamicMethodHowTo#15](../../../samples/snippets/csharp/VS_Snippets_CLR/DynamicMethodHowTo/cs/source.cs#15)]
      [!code-vb[DynamicMethodHowTo#15](../../../samples/snippets/visualbasic/VS_Snippets_CLR/DynamicMethodHowTo/vb/source.vb#15)]  
   
-5. Vytvořte instanci delegáta (deklarovaná v kroku 1), která představuje dynamickou metodu voláním přetížení <xref:System.Reflection.Emit.DynamicMethod.CreateDelegate%28System.Type%2CSystem.Object%29> metody. Vytvořením delegáta dokončí metodu a všechny další pokusy o změnu metody – například přidávání dalších MSIL – jsou ignorovány.  
+5. Vytvořte instanci delegáta (deklarovaná v kroku 1), která představuje dynamickou metodu voláním <xref:System.Reflection.Emit.DynamicMethod.CreateDelegate%28System.Type%2CSystem.Object%29> přetížení metody. Vytvořením delegáta dokončí metodu a všechny další pokusy o změnu metody – například přidávání dalších MSIL – jsou ignorovány.  
   
     > [!NOTE]
-    > <xref:System.Reflection.Emit.DynamicMethod.CreateDelegate%2A> Metodu můžete zavolat víckrát, aby bylo možné vytvořit delegáty vázané na jiné instance cílového typu.  
+    > Metodu můžete zavolat víckrát, aby bylo možné <xref:System.Reflection.Emit.DynamicMethod.CreateDelegate%2A> vytvořit delegáty vázané na jiné instance cílového typu.  
   
-     Následující kód sváže metodu s novou instancí `Example` třídy, jejíž pole privátního testu je nastaveno na 42. To znamená, že pokaždé, když je delegát vyvolán `Example` , instance je předána prvnímu parametru metody.  
+     Následující kód sváže metodu s novou instancí `Example` třídy, jejíž pole privátního testu je nastaveno na 42. To znamená, že pokaždé, když je delegát vyvolán, instance `Example` je předána prvnímu parametru metody.  
   
-     Delegát `OneParameter` je použit, protože první parametr metody vždy obdrží instanci `Example`. Když je vyvolán delegát, je vyžadován pouze druhý parametr.  
+     Delegát `OneParameter` je použit, protože první parametr metody vždy obdrží instanci `Example` . Když je vyvolán delegát, je vyžadován pouze druhý parametr.  
   
      [!code-cpp[DynamicMethodHowTo#16](../../../samples/snippets/cpp/VS_Snippets_CLR/DynamicMethodHowTo/cpp/source.cpp#16)]
      [!code-csharp[DynamicMethodHowTo#16](../../../samples/snippets/csharp/VS_Snippets_CLR/DynamicMethodHowTo/cs/source.cs#16)]
@@ -104,7 +105,7 @@ Následující postupy ukazují, jak definovat a spustit jednoduchou dynamickou 
   
  Jednoduchá dynamická metoda přijímá jeden argument, 32 celé číslo a vrací 64-bit čtverce z daného celého čísla. K vyvolání metody je použit obecný delegát.  
   
- Druhá dynamická metoda má dva parametry typu `Example` a typu `int` (`Integer` v Visual Basic). Pokud byla dynamická metoda vytvořena, je svázána s instancí `Example`s použitím obecného delegáta, který má jeden argument typu. `int` Delegát nemá argument typu `Example` , protože první parametr metody vždy obdrží vázanou instanci. `Example` Když je vyvolán delegát, je zadán `int` pouze argument. Tato dynamická metoda přistupuje k soukromému poli `Example` třídy a vrátí součin privátního pole a `int` argumentu.  
+ Druhá dynamická metoda má dva parametry typu `Example` a typu `int` ( `Integer` v Visual Basic). Pokud byla dynamická metoda vytvořena, je svázána s instancí s `Example` použitím obecného delegáta, který má jeden argument typu `int` . Delegát nemá argument typu, `Example` protože první parametr metody vždy obdrží vázanou instanci `Example` . Když je vyvolán delegát, `int` je zadán pouze argument. Tato dynamická metoda přistupuje k soukromému poli `Example` třídy a vrátí součin privátního pole a `int` argumentu.  
   
  Příklad kódu definuje delegáty, které lze použít ke spuštění metod.  
   

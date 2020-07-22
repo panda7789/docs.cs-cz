@@ -1,5 +1,6 @@
 ---
 title: 'Postupy: Vytváření třídy pomocí modelu CodeDOM'
+description: Přečtěte si podrobný příklad, který vysvětluje, jak vytvořit třídu pomocí Code Document Object Model (CodeDOM).
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,21 +12,21 @@ helpviewer_keywords:
 - CodeDOM, creating classes
 - CodeDOM, graphs
 ms.assetid: 0ceb70fe-36e1-49bb-922b-e9f615c20a14
-ms.openlocfilehash: ff7c9d1593c8e75f9bcaeda6577c7cb941719749
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 3d7151d384402dba6fbb5da8fe54621346251f7b
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73130194"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86865304"
 ---
 # <a name="how-to-create-a-class-using-codedom"></a>Postupy: Vytváření třídy pomocí modelu CodeDOM
 Následující postupy ukazují, jak vytvořit a zkompilovat graf CodeDOM, který generuje třídu obsahující dvě pole, tři vlastnosti, metodu, konstruktor a vstupní bod.  
   
 1. Vytvořte konzolovou aplikaci, která bude používat kód CodeDOM k vygenerování zdrojového kódu pro třídu.  
   
-     V tomto příkladu je generována třída s `Sample`názvem a generovaný kód je třída s názvem `CodeDOMCreatedClass` v souboru s názvem SampleCode.  
+     V tomto příkladu je generována třída s názvem `Sample` a generovaný kód je třída s názvem `CodeDOMCreatedClass` v souboru s názvem SampleCode.  
   
-2. Ve třídě generování proveďte inicializaci grafu CodeDOM a použijte metody CodeDOM k definování členů, konstruktoru a vstupního bodu (`Main` metody) generované třídy.  
+2. Ve třídě generování proveďte inicializaci grafu CodeDOM a použijte metody CodeDOM k definování členů, konstruktoru a vstupního bodu ( `Main` metody) generované třídy.  
   
      V tomto příkladu vygenerovaná třída má dvě pole, tři vlastnosti, konstruktor, metodu a `Main` metodu.  
   
@@ -37,7 +38,7 @@ Následující postupy ukazují, jak vytvořit a zkompilovat graf CodeDOM, kter�
   
 ### <a name="to-create-the-application-that-will-execute-the-codedom-code"></a>Vytvoření aplikace, která spustí kód CodeDOM  
   
-- Vytvořte třídu konzolové aplikace, která bude obsahovat kód CodeDOM. Definujte globální pole, která mají být použita ve třídě pro odkaz na sestavení (<xref:System.CodeDom.CodeCompileUnit>) a třídu (<xref:System.CodeDom.CodeTypeDeclaration>), zadejte název generovaného zdrojového souboru a deklarujte `Main` metodu.  
+- Vytvořte třídu konzolové aplikace, která bude obsahovat kód CodeDOM. Definujte globální pole, která mají být použita ve třídě pro odkaz na sestavení ( <xref:System.CodeDom.CodeCompileUnit> ) a třídu ( <xref:System.CodeDom.CodeTypeDeclaration> ), zadejte název generovaného zdrojového souboru a deklarujte `Main` metodu.  
   
      [!code-csharp[CodeDOM Class Sample Main#1](../../../samples/snippets/csharp/VS_Snippets_CLR/CodeDOM Class Sample Main/CS/program.cs#1)]
      [!code-vb[CodeDOM Class Sample Main#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CodeDOM Class Sample Main/VB/program.vb#1)]  
@@ -114,7 +115,7 @@ The object:
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
   
-- Tento příklad kódu vyžaduje úspěšné `FullTrust` provedení sady oprávnění.  
+- Tento příklad kódu vyžaduje `FullTrust` úspěšné provedení sady oprávnění.  
   
 ## <a name="see-also"></a>Viz také
 

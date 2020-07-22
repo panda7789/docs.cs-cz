@@ -1,55 +1,56 @@
 ---
-title: Jak přepsat metodu ToString - Průvodce programováním jazyka C#
+title: Jak přepsat metodu ToString – Průvodce programováním v C#
+description: Přečtěte si, jak v jazyce C# přepsat metodu ToString. Každá třída nebo struktura dědí objekt a získá metodu ToString, která vrací řetězcovou reprezentaci tohoto objektu.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - ToString method, overriding in C#
 - inheritance [C#], overriding OnPaint and ToString
 ms.assetid: 8016db69-1f19-420c-8e17-98e8bebb7749
-ms.openlocfilehash: 7c7196df56821c134b31982d7956a75039e9f929
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 65b34b485d4b90173a4c956dd0ebaaa590a0c7c9
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75705571"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86865005"
 ---
-# <a name="how-to-override-the-tostring-method-c-programming-guide"></a>Jak přepsat metodu ToString (Průvodce programováním jazyka C#)
+# <a name="how-to-override-the-tostring-method-c-programming-guide"></a>Jak přepsat metodu ToString (Průvodce programováním v C#)
 
-Každá třída nebo struktura v jazyce <xref:System.Object> C# implicitně dědí třídu. Proto každý objekt v C# získá metodu, <xref:System.Object.ToString%2A> která vrátí řetězcovou reprezentaci tohoto objektu. Například všechny proměnné typu `int` mají `ToString` metodu, která jim umožňuje vrátit jejich obsah jako řetězec:  
+Každá třída nebo struktura v jazyce C# implicitně dědí <xref:System.Object> třídu. Proto každý objekt v jazyce C# získá <xref:System.Object.ToString%2A> metodu, která vrátí řetězcovou reprezentaci tohoto objektu. Například všechny proměnné typu `int` mají `ToString` metodu, která umožňuje, aby vrátila svůj obsah jako řetězec:  
   
  [!code-csharp[csProgGuideInheritance#37](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#37)]  
   
- Při vytváření vlastní třídy nebo struktury, měli <xref:System.Object.ToString%2A> byste přepsat metodu za účelem poskytnutí informací o typu klientského kódu.  
+ Při vytváření vlastní třídy nebo struktury byste měli přepsat <xref:System.Object.ToString%2A> metodu, aby poskytovala informace o typu pro klientský kód.  
   
- Informace o použití formátovacích řetězců a dalších typů `ToString` vlastního formátování s metodou naleznete v [tématu Typy formátování](../../../standard/base-types/formatting-types.md).  
+ Informace o tom, jak používat řetězce formátu a jiné typy vlastního formátování s `ToString` metodou, naleznete v tématu [Formatting Types](../../../standard/base-types/formatting-types.md).  
   
 > [!IMPORTANT]
-> Při rozhodování o tom, jaké informace poskytnout prostřednictvím této metody, zvažte, zda vaše třída nebo struktura bude někdy použit nedůvěryhodný kód. Dbejte na to, abyste neposkytovali žádné informace, které by mohly být zneužity škodlivým kódem.  
+> Pokud se rozhodnete, jaké informace chcete poskytnout prostřednictvím této metody, zvažte, zda bude vaše třída nebo struktura někdy používána nedůvěryhodným kódem. Buďte opatrní, abyste se ujistili, že neposkytnete žádné informace, které by mohly být zneužity škodlivým kódem.  
   
-Chcete-li `ToString` přepsat metodu ve třídě nebo struktuře:
+Přepsání `ToString` metody ve vaší třídě nebo struktuře:
   
-1. Deklarujte metodu `ToString` s následujícími modifikátory a návratovým typem:  
+1. Deklarujte `ToString` metodu s následujícími modifikátory a návratovým typem:  
   
     ```csharp  
     public override string ToString(){}  
     ```  
   
-2. Implementujte metodu tak, aby vrátí řetězec.  
+2. Implementujte metodu tak, aby vracela řetězec.  
   
      Následující příklad vrátí název třídy kromě dat specifických pro konkrétní instanci třídy.  
   
      [!code-csharp[csProgGuideInheritance#36](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#36)]  
   
-     Metodu můžete `ToString` otestovat, jak je znázorněno v následujícím příkladu kódu:  
+     Můžete testovat `ToString` metodu, jak je znázorněno v následujícím příkladu kódu:  
   
      [!code-csharp[csProgGuideInheritance#38](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#38)]  
   
 ## <a name="see-also"></a>Viz také
 
 - <xref:System.IFormattable>
-- [Programovací příručka jazyka C#](../index.md)
-- [Třídy a struky](./index.md)
+- [Průvodce programováním v C#](../index.md)
+- [Třídy a struktury](./index.md)
 - [Řetězce](../strings/index.md)
-- [Řetězec](../../language-reference/builtin-types/reference-types.md)
+- [řetezce](../../language-reference/builtin-types/reference-types.md)
 - [override](../../language-reference/keywords/override.md)
-- [virtual](../../language-reference/keywords/virtual.md)
+- [VM](../../language-reference/keywords/virtual.md)
 - [Typy formátování](../../../standard/base-types/formatting-types.md)

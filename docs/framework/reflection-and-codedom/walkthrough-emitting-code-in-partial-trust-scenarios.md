@@ -1,5 +1,6 @@
 ---
 title: 'Návod: Vytváření kódu ve scénářích s částečnou důvěryhodností'
+description: Podívejte se, jak vygenerovat kód ve scénářích s částečnou důvěryhodností. Vygenerování reflexe používá stejná rozhraní API, ale některé funkce vyžadují zvláštní oprávnění v částečně důvěryhodném kódu.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -14,19 +15,19 @@ helpviewer_keywords:
 - reflection emit, dynamic methods
 - dynamic methods
 ms.assetid: c45be261-2a9d-4c4e-9bd6-27f0931b7d25
-ms.openlocfilehash: fd420c9754494b95c55df403edec87743572db03
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 70adb3ce67b45459b18741948092a912f6173731
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73129995"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86865187"
 ---
 # <a name="walkthrough-emitting-code-in-partial-trust-scenarios"></a>Návod: Vytváření kódu ve scénářích s částečnou důvěryhodností
 
 Vygenerování reflexe používá stejnou sadu rozhraní API v plném nebo částečném vztahu důvěryhodnosti, ale některé funkce vyžadují zvláštní oprávnění v částečně důvěryhodném kódu. Kromě toho, vygenerování reflexe má funkci, anonymně hostované dynamické metody, která je navržena pro použití s částečnou důvěryhodností a sestaveními transparentními pro zabezpečení.
 
 > [!NOTE]
-> Před .NET Framework 3,5, vygeneruje se kód <xref:System.Security.Permissions.ReflectionPermission> vyžadovaný <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit?displayProperty=nameWithType> příznakem. Toto oprávnění je ve výchozím nastavení zahrnuté `FullTrust` v `Intranet` sadách a pojmenovaných oprávněních, `Internet` ale ne v sadě oprávnění. Proto by knihovna mohla být použita z částečné důvěryhodnosti pouze v případě, že má <xref:System.Security.SecurityCriticalAttribute> atribut a také spustil <xref:System.Security.PermissionSet.Assert%2A> metodu pro. <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit> Tyto knihovny vyžadují pečlivou kontrolu zabezpečení, protože chyby kódování můžou vést k bezpečnostním otvorům. .NET Framework 3,5 umožňuje, aby byl kód generován ve scénářích s částečnou důvěryhodností bez nutnosti vydávat požadavky na zabezpečení, protože generování kódu není podstatou privilegované operace. To znamená, že generovaný kód nemá žádná další oprávnění, než sestavení, které ho emituje. To umožňuje, aby knihovny, které generují kód <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit>, byly transparentní pro zabezpečení a odebraly nutnost vyhodnotit, aby při psaní zabezpečené knihovny nevyžadovaly důkladnou kontrolu zabezpečení.
+> Před .NET Framework 3,5, vygeneruje se kód vyžadovaný <xref:System.Security.Permissions.ReflectionPermission> <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit?displayProperty=nameWithType> příznakem. Toto oprávnění je ve výchozím nastavení zahrnuté `FullTrust` v `Intranet` sadách a pojmenovaných oprávněních, ale ne v `Internet` sadě oprávnění. Proto by knihovna mohla být použita z částečné důvěryhodnosti pouze v případě, že má <xref:System.Security.SecurityCriticalAttribute> atribut a také spustil <xref:System.Security.PermissionSet.Assert%2A> metodu pro <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit> . Tyto knihovny vyžadují pečlivou kontrolu zabezpečení, protože chyby kódování můžou vést k bezpečnostním otvorům. .NET Framework 3,5 umožňuje, aby byl kód generován ve scénářích s částečnou důvěryhodností bez nutnosti vydávat požadavky na zabezpečení, protože generování kódu není podstatou privilegované operace. To znamená, že generovaný kód nemá žádná další oprávnění, než sestavení, které ho emituje. To umožňuje, aby knihovny, které generují kód, byly transparentní pro zabezpečení a odebraly nutnost <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit> vyhodnotit, aby při psaní zabezpečené knihovny nevyžadovaly důkladnou kontrolu zabezpečení.
 
 Tento návod znázorňuje následující úlohy:
 
@@ -55,9 +56,9 @@ Následující dva postupy ukazují, jak nastavit umístění, ze kterých můž
 
 ### <a name="creating-sandboxed-application-domains"></a>Vytváření domén aplikací v izolovaném prostoru
 
-Chcete-li vytvořit doménu aplikace, ve které jsou sestavení spouštěna s částečným vztahem důvěryhodnosti, je nutné zadat sadu oprávnění, která mají být udělena <xref:System.AppDomain.CreateDomain%28System.String%2CSystem.Security.Policy.Evidence%2CSystem.AppDomainSetup%2CSystem.Security.PermissionSet%2CSystem.Security.Policy.StrongName%5B%5D%29?displayProperty=nameWithType> sestavení pomocí přetížení metody k vytvoření domény aplikace. Nejjednodušší způsob, jak zadat sadu udělení, je načíst pojmenovanou sadu oprávnění ze zásad zabezpečení.
+Chcete-li vytvořit doménu aplikace, ve které jsou sestavení spouštěna s částečným vztahem důvěryhodnosti, je nutné zadat sadu oprávnění, která mají být udělena sestavení pomocí <xref:System.AppDomain.CreateDomain%28System.String%2CSystem.Security.Policy.Evidence%2CSystem.AppDomainSetup%2CSystem.Security.PermissionSet%2CSystem.Security.Policy.StrongName%5B%5D%29?displayProperty=nameWithType> přetížení metody k vytvoření domény aplikace. Nejjednodušší způsob, jak zadat sadu udělení, je načíst pojmenovanou sadu oprávnění ze zásad zabezpečení.
 
-Následující postup vytvoří doménu aplikace v izolovaném prostoru, ve které běží váš kód s částečnou důvěryhodností, na testování scénářů, ve kterých emitující kód může přistupovat pouze k veřejným členům veřejných typů. Následující postup ukazuje, jak přidat <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess>, do testovacích scénářů, ve kterých emitující kód může přistupovat k NonPublic typům a členům v sestaveních, kterým jsou udělena stejná nebo menší oprávnění.
+Následující postup vytvoří doménu aplikace v izolovaném prostoru, ve které běží váš kód s částečnou důvěryhodností, na testování scénářů, ve kterých emitující kód může přistupovat pouze k veřejným členům veřejných typů. Následující postup ukazuje, jak přidat <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess> , do testovacích scénářů, ve kterých emitující kód může přistupovat k NonPublic typům a členům v sestaveních, kterým jsou udělena stejná nebo menší oprávnění.
 
 #### <a name="to-create-an-application-domain-with-partial-trust"></a>Vytvoření domény aplikace s částečnou důvěryhodností
 
@@ -79,11 +80,11 @@ Následující postup vytvoří doménu aplikace v izolovaném prostoru, ve kter
     [!code-csharp[HowToEmitCodeInPartialTrust#5](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEmitCodeInPartialTrust/cs/source.cs#5)]
     [!code-vb[HowToEmitCodeInPartialTrust#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEmitCodeInPartialTrust/vb/source.vb#5)]
 
-    Poslední parametr přetížení <xref:System.AppDomain.CreateDomain%28System.String%2CSystem.Security.Policy.Evidence%2CSystem.AppDomainSetup%2CSystem.Security.PermissionSet%2CSystem.Security.Policy.StrongName%5B%5D%29?displayProperty=nameWithType> metody umožňuje zadat sadu sestavení, kterým chcete udělit úplný vztah důvěryhodnosti, namísto sady udělení domény aplikace. Nemusíte určovat .NET Framework sestavení, která vaše aplikace používá, protože tato sestavení jsou v globální mezipaměti sestavení (GAC). Sestavení v globální mezipaměti sestavení (GAC) jsou vždy plně důvěryhodná. Tento parametr můžete použít k určení sestavení se silným názvem, která nejsou v globální mezipaměti sestavení (GAC).
+    Poslední parametr <xref:System.AppDomain.CreateDomain%28System.String%2CSystem.Security.Policy.Evidence%2CSystem.AppDomainSetup%2CSystem.Security.PermissionSet%2CSystem.Security.Policy.StrongName%5B%5D%29?displayProperty=nameWithType> přetížení metody umožňuje zadat sadu sestavení, kterým chcete udělit úplný vztah důvěryhodnosti, namísto sady udělení domény aplikace. Nemusíte určovat .NET Framework sestavení, která vaše aplikace používá, protože tato sestavení jsou v globální mezipaměti sestavení (GAC). Sestavení v globální mezipaměti sestavení (GAC) jsou vždy plně důvěryhodná. Tento parametr můžete použít k určení sestavení se silným názvem, která nejsou v globální mezipaměti sestavení (GAC).
 
 ### <a name="adding-restrictedmemberaccess-to-sandboxed-domains"></a>Přidání RestrictedMemberAccess k doménám v izolovaném prostoru
 
-Hostitelské aplikace mohou umožňovat anonymně hostovaným dynamickým metodám přístup k soukromým datům v sestaveních, která mají úroveň důvěryhodnosti rovnou nebo nižší než úroveň důvěryhodnosti sestavení, které kód emituje. Chcete-li povolit tuto omezenou schopnost přeskočit kontroly viditelnosti JIT (just-in-time), hostitelská aplikace <xref:System.Security.Permissions.ReflectionPermission> přidá objekt s <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> příznakem (RMA) do sady udělení.
+Hostitelské aplikace mohou umožňovat anonymně hostovaným dynamickým metodám přístup k soukromým datům v sestaveních, která mají úroveň důvěryhodnosti rovnou nebo nižší než úroveň důvěryhodnosti sestavení, které kód emituje. Chcete-li povolit tuto omezenou schopnost přeskočit kontroly viditelnosti JIT (just-in-time), hostitelská aplikace přidá <xref:System.Security.Permissions.ReflectionPermission> objekt s <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> příznakem (RMA) do sady udělení.
 
 Hostitel může například udělit internetovým aplikacím přístupová oprávnění k Internetu a RMA, aby mohla Internetová aplikace vygenerovat kód, který přistupuje k soukromým datům ve vlastních sestaveních. Vzhledem k tomu, že přístup je omezen na sestavení se stejnou nebo menší důvěryhodností, Internetová aplikace nemůže přistupovat ke členům plně důvěryhodných sestavení, jako jsou .NET Framework sestavení.
 
@@ -92,12 +93,12 @@ Hostitel může například udělit internetovým aplikacím přístupová oprá
 
 #### <a name="to-create-an-application-domain-with-partial-trust-plus-rma"></a>Vytvoření domény aplikace s částečnou důvěryhodností plus RMA
 
-1. Vytvořte nový <xref:System.Security.Permissions.ReflectionPermission> objekt s příznakem <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess> (RMA) a použijte <xref:System.Security.PermissionSet.SetPermission%2A?displayProperty=nameWithType> metodu k přidání oprávnění do sady udělení.
+1. Vytvořte nový <xref:System.Security.Permissions.ReflectionPermission> objekt s <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess> příznakem (RMA) a použijte <xref:System.Security.PermissionSet.SetPermission%2A?displayProperty=nameWithType> metodu k přidání oprávnění do sady udělení.
 
     [!code-csharp[HowToEmitCodeInPartialTrust#7](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEmitCodeInPartialTrust/cs/source.cs#7)]
     [!code-vb[HowToEmitCodeInPartialTrust#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEmitCodeInPartialTrust/vb/source.vb#7)]
 
-    <xref:System.Security.PermissionSet.AddPermission%2A> Metoda přidá oprávnění do sady udělení, pokud ještě není zahrnutá. Pokud je již oprávnění zahrnuto do sady udělení, zadané příznaky jsou přidány do stávajícího oprávnění.
+    <xref:System.Security.PermissionSet.AddPermission%2A>Metoda přidá oprávnění do sady udělení, pokud ještě není zahrnutá. Pokud je již oprávnění zahrnuto do sady udělení, zadané příznaky jsou přidány do stávajícího oprávnění.
 
     > [!NOTE]
     > RMA je funkce anonymně hostovaných dynamických metod. Když běžné dynamické metody přeskočí kontroly viditelnosti JIT, vygenerovaný kód vyžaduje úplný vztah důvěryhodnosti.
@@ -115,7 +116,7 @@ Následující postup vysvětluje, jak definovat třídu pomocí metod, které l
 
 #### <a name="to-define-and-execute-a-method-in-an-application-domain"></a>Definování a spuštění metody v doméně aplikace
 
-1. Definujte třídu, která je odvozena <xref:System.MarshalByRefObject>z. To umožňuje vytvářet instance třídy v jiných doménách aplikace a provádět volání metod napříč hranicemi aplikační domény. Třída v tomto příkladu je pojmenována `Worker`.
+1. Definujte třídu, která je odvozena z <xref:System.MarshalByRefObject> . To umožňuje vytvářet instance třídy v jiných doménách aplikace a provádět volání metod napříč hranicemi aplikační domény. Třída v tomto příkladu je pojmenována `Worker` .
 
     [!code-csharp[HowToEmitCodeInPartialTrust#10](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEmitCodeInPartialTrust/cs/source.cs#10)]
     [!code-vb[HowToEmitCodeInPartialTrust#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEmitCodeInPartialTrust/vb/source.vb#10)]
@@ -130,14 +131,14 @@ Následující postup vysvětluje, jak definovat třídu pomocí metod, které l
     [!code-csharp[HowToEmitCodeInPartialTrust#14](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEmitCodeInPartialTrust/cs/source.cs#14)]
     [!code-vb[HowToEmitCodeInPartialTrust#14](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEmitCodeInPartialTrust/vb/source.vb#14)]
 
-4. V hlavním programu vytvořte doménu aplikace izolovaného prostoru (sandbox), jak je popsáno v [prvním postupu](#Setting_up) v tomto návodu. Do sady `Internet` oprávnění není nutné přidávat žádná oprávnění, protože `SimpleEmitDemo` metoda používá pouze veřejné metody.
+4. V hlavním programu vytvořte doménu aplikace izolovaného prostoru (sandbox), jak je popsáno v [prvním postupu](#Setting_up) v tomto návodu. Do sady oprávnění není nutné přidávat žádná oprávnění `Internet` , protože `SimpleEmitDemo` Metoda používá pouze veřejné metody.
 
 5. V hlavním programu vytvořte instanci `Worker` třídy v doméně aplikace v izolovaném prostoru.
 
     [!code-csharp[HowToEmitCodeInPartialTrust#12](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEmitCodeInPartialTrust/cs/source.cs#12)]
     [!code-vb[HowToEmitCodeInPartialTrust#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEmitCodeInPartialTrust/vb/source.vb#12)]
 
-    <xref:System.AppDomain.CreateInstanceAndUnwrap%2A> Metoda vytvoří objekt v cílové doméně aplikace a vrátí proxy, který lze použít k volání vlastností a metod objektu.
+    <xref:System.AppDomain.CreateInstanceAndUnwrap%2A>Metoda vytvoří objekt v cílové doméně aplikace a vrátí proxy, který lze použít k volání vlastností a metod objektu.
 
     > [!NOTE]
     > Použijete-li tento kód v aplikaci Visual Studio, je nutné změnit název třídy tak, aby zahrnovala obor názvů. Ve výchozím nastavení je oborem názvů název projektu. Pokud je projekt například "PartialTrust", musí být název třídy "PartialTrust. Worker".
@@ -169,7 +170,7 @@ Aby se zabránilo zvýšení oprávnění, jsou informace zásobníku pro vydáv
 
   Pokud anonymně hostovaná dynamická metoda používá pouze veřejné typy a metody, nevyžaduje přístup k omezenému členu a není nutné přeskočí kontroly viditelnosti JIT.
 
-  K vygenerování dynamické metody nejsou potřeba žádná zvláštní oprávnění, ale generovaný kód vyžaduje oprávnění, která jsou vyžadovaná typy a metodami, které používá. Například pokud vygenerovaný kód volá metodu, která přistupuje k souboru, vyžaduje <xref:System.Security.Permissions.FileIOPermission>. Pokud úroveň vztahu důvěryhodnosti neobsahuje toto oprávnění, je vyvolána výjimka zabezpečení při spuštění generovaného kódu. Zde zobrazený kód emituje dynamickou metodu, která používá pouze <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> metodu. Proto lze kód spustit z částečně důvěryhodných umístění.
+  K vygenerování dynamické metody nejsou potřeba žádná zvláštní oprávnění, ale generovaný kód vyžaduje oprávnění, která jsou vyžadovaná typy a metodami, které používá. Například pokud vygenerovaný kód volá metodu, která přistupuje k souboru, vyžaduje <xref:System.Security.Permissions.FileIOPermission> . Pokud úroveň vztahu důvěryhodnosti neobsahuje toto oprávnění, je vyvolána výjimka zabezpečení při spuštění generovaného kódu. Zde zobrazený kód emituje dynamickou metodu, která používá pouze <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> metodu. Proto lze kód spustit z částečně důvěryhodných umístění.
 
 - Případně můžete vytvořit anonymně hostovanou dynamickou metodu s omezenou schopností přeskočit kontroly viditelnosti JIT pomocí <xref:System.Reflection.Emit.DynamicMethod.%23ctor%28System.String%2CSystem.Type%2CSystem.Type%5B%5D%2CSystem.Boolean%29> konstruktoru a zadáním `true` `restrictedSkipVisibility` parametru.
 
@@ -178,12 +179,12 @@ Aby se zabránilo zvýšení oprávnění, jsou informace zásobníku pro vydáv
 
   Omezení je, že anonymně hostovaná dynamická metoda má přístup k soukromým datům pouze v sestaveních s úrovní důvěryhodnosti, která se rovná nebo je menší než úroveň důvěryhodnosti vygenerovaného sestavení. Například pokud je dynamická metoda prováděna s důvěryhodností Internetu, může získat přístup k soukromým datům v jiných sestaveních, která jsou také vykonávána s důvěryhodností Internetu, ale nemůže získat přístup k soukromým datům .NET Framework sestavení. .NET Framework sestavení jsou nainstalována v globální mezipaměti sestavení (GAC) a jsou vždy plně důvěryhodná.
 
-  Anonymně hostované dynamické metody mohou použít tuto omezenou schopnost přeskočit kontroly viditelnosti JIT pouze v případě, že hostitelská <xref:System.Security.Permissions.ReflectionPermission> aplikace udělí <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> příznak. Požadavek na toto oprávnění je proveden při vyvolání metody.
+  Anonymně hostované dynamické metody mohou použít tuto omezenou schopnost přeskočit kontroly viditelnosti JIT pouze v případě, že hostitelská aplikace udělí <xref:System.Security.Permissions.ReflectionPermission> <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> příznak. Požadavek na toto oprávnění je proveden při vyvolání metody.
 
   > [!NOTE]
   > Informace zásobníku volání pro vydávané sestavení jsou zahrnuty, pokud je vytvořena dynamická metoda. Proto se požadavek provede proti oprávněním vysílat sestavení namísto sestavení, které vyvolá metodu. Tím se zabrání spuštění vygenerovaného kódu se zvýšenými oprávněními.
 
-  [Úplný příklad kódu](#Example) na konci tohoto návodu ukazuje použití a omezení přístupu ke členům s omezeným přístupem. Jeho `Worker` třída obsahuje metodu, která může vytvořit anonymně hostované dynamické metody s nebo bez omezené možnosti přeskočit kontroly viditelnosti a příklad ukazuje výsledek spuštění této metody v aplikačních doménách, které mají různé úrovně důvěryhodnosti.
+  [Úplný příklad kódu](#Example) na konci tohoto návodu ukazuje použití a omezení přístupu ke členům s omezeným přístupem. Jeho `Worker` Třída obsahuje metodu, která může vytvořit anonymně hostované dynamické metody s nebo bez omezené možnosti přeskočit kontroly viditelnosti a příklad ukazuje výsledek spuštění této metody v aplikačních doménách, které mají různé úrovně důvěryhodnosti.
 
   > [!NOTE]
   > Omezená schopnost přeskočit kontroly viditelnosti je funkce anonymně hostovaných dynamických metod. Když běžné dynamické metody přeskočí kontroly viditelnosti JIT, musí jim být udělen úplný vztah důvěryhodnosti.
@@ -196,30 +197,30 @@ Aby se zabránilo zvýšení oprávnění, jsou informace zásobníku pro vydáv
 
 Následující příklad kódu ukazuje použití <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess> příznaku k umožnění anonymně hostovaným dynamickým metodám přeskočit kontroly viditelnosti JIT, ale pouze v případě, že je cílový člen na stejné nebo nižší úrovni důvěryhodnosti než sestavení, které kód emituje.
 
-V příkladu je definována `Worker` třída, která může být zařazena mezi hranice aplikační domény. Třída má dvě `AccessPrivateMethod` přetížení metod, které generují a spouštějí dynamické metody. První přetížení emituje dynamickou metodu, která volá soukromou `PrivateMethod` metodu `Worker` třídy, a může vygenerovat dynamickou metodu s kontrolami viditelnosti JIT nebo bez nich. Druhé přetížení emituje dynamickou metodu, která přistupuje k `internal` vlastnosti (`Friend` vlastnost v Visual Basic) <xref:System.String> třídy.
+V příkladu je definována `Worker` třída, která může být zařazena mezi hranice aplikační domény. Třída má dvě `AccessPrivateMethod` přetížení metod, které generují a spouštějí dynamické metody. První přetížení emituje dynamickou metodu, která volá soukromou `PrivateMethod` metodu `Worker` třídy, a může vygenerovat dynamickou metodu s kontrolami viditelnosti JIT nebo bez nich. Druhé přetížení emituje dynamickou metodu, která přistupuje k `internal` vlastnosti ( `Friend` vlastnost v Visual Basic) <xref:System.String> třídy.
 
-V příkladu se používá pomocná metoda pro vytvoření sady udělení omezené na `Internet` oprávnění a poté vytvoří doménu aplikace pomocí přetížení <xref:System.AppDomain.CreateDomain%28System.String%2CSystem.Security.Policy.Evidence%2CSystem.AppDomainSetup%2CSystem.Security.PermissionSet%2CSystem.Security.Policy.StrongName%5B%5D%29?displayProperty=nameWithType> metody k určení toho, že veškerý kód, který se spustí v doméně, používá tuto sadu udělení. Příklad vytvoří instanci `Worker` třídy v aplikační doméně a spustí `AccessPrivateMethod` metodu dvakrát.
+V příkladu se používá pomocná metoda pro vytvoření sady udělení omezené na `Internet` oprávnění a poté vytvoří doménu aplikace pomocí <xref:System.AppDomain.CreateDomain%28System.String%2CSystem.Security.Policy.Evidence%2CSystem.AppDomainSetup%2CSystem.Security.PermissionSet%2CSystem.Security.Policy.StrongName%5B%5D%29?displayProperty=nameWithType> přetížení metody k určení toho, že veškerý kód, který se spustí v doméně, používá tuto sadu udělení. Příklad vytvoří instanci `Worker` třídy v aplikační doméně a spustí `AccessPrivateMethod` metodu dvakrát.
 
-- Při prvním spuštění `AccessPrivateMethod` metody se vynutily kontroly viditelnosti JIT. Dynamická metoda se při vyvolání nezdařila, protože kontroly viditelnosti JIT brání v přístupu k soukromé metodě.
+- Při prvním `AccessPrivateMethod` spuštění metody se vynutily kontroly viditelnosti JIT. Dynamická metoda se při vyvolání nezdařila, protože kontroly viditelnosti JIT brání v přístupu k soukromé metodě.
 
-- Při druhém spuštění `AccessPrivateMethod` metody se kontroly VIDITELNOSTi JIT přeskočí. Dynamická metoda je při kompilaci neúspěšná, protože sada `Internet` udělení neuděluje dostatečná oprávnění k přeskočení kontrol viditelnosti.
+- Při druhém `AccessPrivateMethod` spuštění metody se kontroly viditelnosti JIT přeskočí. Dynamická metoda je při kompilaci neúspěšná, protože `Internet` sada udělení neuděluje dostatečná oprávnění k přeskočení kontrol viditelnosti.
 
 Tento příklad přidá <xref:System.Security.Permissions.ReflectionPermission> <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> do sady udělení. Příklad potom vytvoří druhou doménu a určí, že veškerý kód, který se spustí v doméně, má oprávnění v nové sadě udělení. Příklad vytvoří instanci `Worker` třídy v nové aplikační doméně a provede obě přetížení `AccessPrivateMethod` metody.
 
 - První přetížení `AccessPrivateMethod` metody je provedeno a kontroly viditelnosti JIT se přeskočí. Dynamická metoda se zkompiluje a provede úspěšně, protože sestavení, které generuje kód, je stejné jako sestavení, které obsahuje soukromou metodu. Proto se úrovně důvěryhodnosti rovnají. Pokud aplikace, která obsahuje `Worker` třídu, obsahovala několik sestavení, stejný proces by byl úspěšný pro každé z těchto sestavení, protože by všechny byly na stejné úrovni vztahu důvěryhodnosti.
 
-- Druhé přetížení `AccessPrivateMethod` metody je provedeno a znovu se kontrolám VIDITELNOSTi JIT přeskočí. Tentokrát dynamická metoda při kompilaci dojde k chybě, protože se pokouší o přístup `internal` `FirstChar` k vlastnosti <xref:System.String> třídy. Sestavení, které obsahuje <xref:System.String> třídu, je plně důvěryhodné. Proto je na vyšší úrovni důvěryhodnosti než sestavení, které kód emituje.
+- Druhé přetížení `AccessPrivateMethod` metody je provedeno a znovu se kontrolám viditelnosti JIT přeskočí. Tentokrát dynamická metoda při kompilaci dojde k chybě, protože se pokouší o přístup k `internal` `FirstChar` vlastnosti <xref:System.String> třídy. Sestavení, které obsahuje <xref:System.String> třídu, je plně důvěryhodné. Proto je na vyšší úrovni důvěryhodnosti než sestavení, které kód emituje.
 
-Toto porovnání ukazuje, <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> jak umožňuje částečně důvěryhodnému kódu přeskočit kontroly viditelnosti pro jiný částečně důvěryhodný kód bez narušení zabezpečení důvěryhodného kódu.
+Toto porovnání ukazuje <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> , jak umožňuje částečně důvěryhodnému kódu přeskočit kontroly viditelnosti pro jiný částečně důvěryhodný kód bez narušení zabezpečení důvěryhodného kódu.
 
-### <a name="code"></a>kód
+### <a name="code"></a>Kód
 
 [!code-csharp[HowToEmitCodeInPartialTrust#1](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEmitCodeInPartialTrust/cs/source.cs#1)]
 [!code-vb[HowToEmitCodeInPartialTrust#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEmitCodeInPartialTrust/vb/source.vb#1)]
 
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu
 
-- Pokud tento příklad kódu sestavíte v aplikaci Visual Studio, je nutné změnit název třídy tak, aby zahrnoval obor názvů, když ho předáte <xref:System.AppDomain.CreateInstanceAndUnwrap%2A> do metody. Ve výchozím nastavení je oborem názvů název projektu. Pokud je projekt například "PartialTrust", musí být název třídy "PartialTrust. Worker".
+- Pokud tento příklad kódu sestavíte v aplikaci Visual Studio, je nutné změnit název třídy tak, aby zahrnoval obor názvů, když ho předáte do <xref:System.AppDomain.CreateInstanceAndUnwrap%2A> metody. Ve výchozím nastavení je oborem názvů název projektu. Pokud je projekt například "PartialTrust", musí být název třídy "PartialTrust. Worker".
 
 ## <a name="see-also"></a>Viz také
 

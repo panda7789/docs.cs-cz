@@ -11,12 +11,12 @@ helpviewer_keywords:
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: fe370b34d311816a815f3b2d419751ac7871f013
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 78a47b01cc8fba4cb45a686adad901784552c1c1
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "83703577"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86865330"
 ---
 # <a name="how-to-migrate-from-newtonsoftjson-to-systemtextjson"></a>Postup migrace z Newtonsoft.Json naSystem.Text.Json
 
@@ -73,13 +73,13 @@ V následující tabulce jsou uvedeny `Newtonsoft.Json` funkce a jejich `System.
 | Metoda `JsonConvert.PopulateObject`                   | ⚠️[Nepodporováno, alternativní řešení](#populate-existing-objects) |
 | `ObjectCreationHandling`globální nastavení               | ⚠️[Nepodporováno, alternativní řešení](#reuse-rather-than-replace-properties) |
 | Přidat do kolekcí bez setter                    | ⚠️[Nepodporováno, alternativní řešení](#add-to-collections-without-setters) |
-| `PreserveReferencesHandling`globální nastavení           | ❌ [Nepodporuje se](#preserve-object-references-and-handle-loops) |
-| `ReferenceLoopHandling`globální nastavení                | ❌ [Nepodporuje se](#preserve-object-references-and-handle-loops) |
-| Podpora `System.Runtime.Serialization` atributů | ❌ [Nepodporuje se](#systemruntimeserialization-attributes) |
-| `MissingMemberHandling`globální nastavení                | ❌ [Nepodporuje se](#missingmemberhandling) |
-| Povolení názvů vlastností bez uvozovek                   | ❌ [Nepodporuje se](#json-strings-property-names-and-string-values) |
-| Povolení jednoduchých uvozovek kolem řetězcových hodnot              | ❌ [Nepodporuje se](#json-strings-property-names-and-string-values) |
-| Povoluje neřetězcové hodnoty JSON pro vlastnosti řetězce.    | ❌ [Nepodporuje se](#non-string-values-for-string-properties) |
+| `PreserveReferencesHandling`globální nastavení           | ❌[Nepodporováno](#preserve-object-references-and-handle-loops) |
+| `ReferenceLoopHandling`globální nastavení                | ❌[Nepodporováno](#preserve-object-references-and-handle-loops) |
+| Podpora `System.Runtime.Serialization` atributů | ❌[Nepodporováno](#systemruntimeserialization-attributes) |
+| `MissingMemberHandling`globální nastavení                | ❌[Nepodporováno](#missingmemberhandling) |
+| Povolení názvů vlastností bez uvozovek                   | ❌[Nepodporováno](#json-strings-property-names-and-string-values) |
+| Povolení jednoduchých uvozovek kolem řetězcových hodnot              | ❌[Nepodporováno](#json-strings-property-names-and-string-values) |
+| Povoluje neřetězcové hodnoty JSON pro vlastnosti řetězce.    | ❌[Nepodporováno](#non-string-values-for-string-properties) |
 
 Nejedná se o vyčerpávající seznam `Newtonsoft.Json` funkcí. Seznam obsahuje mnoho scénářů, které byly vyžádány v rámci [problémů GitHubu](https://github.com/dotnet/runtime/issues?q=is%3Aopen+is%3Aissue+label%3Aarea-System.Text.Json) nebo [StackOverflow](https://stackoverflow.com/questions/tagged/system.text.json) příspěvky. Pokud implementujete alternativní řešení pro jeden z uvedených scénářů, který aktuálně neobsahuje vzorový kód, a pokud chcete své řešení sdílet, vyberte **tuto stránku** v části **Zpětná vazba** v dolní části této stránky. Tím se vytvoří problém v úložišti GitHub v této dokumentaci a seznam je uvedený v části **názory** na této stránce.
 
@@ -318,11 +318,27 @@ Aby deserializace selhala, pokud `Date` ve formátu JSON není žádná vlastnos
 
 [!code-csharp[](snippets/system-text-json-how-to/csharp/WeatherForecastRequiredPropertyConverter.cs)]
 
-Zaregistrujte tento vlastní převaděč [pomocí atributu ve třídě POCO](system-text-json-converters-how-to.md#registration-sample---jsonconverter-on-a-type) nebo [přidáním převaděče](system-text-json-converters-how-to.md#registration-sample---converters-collection) do <xref:System.Text.Json.JsonSerializerOptions.Converters> kolekce.
+Zaregistrujte tento vlastní převaděč [přidáním převaděče](system-text-json-converters-how-to.md#registration-sample---converters-collection) do <xref:System.Text.Json.JsonSerializerOptions.Converters?displayProperty=nameWithType> kolekce.
 
-Pokud budete postupovat podle tohoto vzoru, při rekurzivním volání nebo zadávejte do objektu Options <xref:System.Text.Json.JsonSerializer.Serialize%2A> <xref:System.Text.Json.JsonSerializer.Deserialize%2A> . Objekt Options obsahuje <xref:System.Text.Json.JsonSerializerOptions.Converters%2A> kolekci. Pokud ho předáte do `Serialize` nebo `Deserialize` , vlastní převaděč zavolá sám sebe a vytvoří nekonečnou smyčku, která způsobí výjimku přetečení zásobníku. Pokud výchozí možnosti nejsou proveditelné, vytvořte novou instanci možností s nastavením, které potřebujete. Tento přístup bude pomalý, protože každá nová instance mezipamětí nezávisle.
+Tento vzor rekurzivního volání převaděče vyžaduje, abyste zaregistrovali konvertor pomocí <xref:System.Text.Json.JsonSerializerOptions> , nikoli pomocí atributu. Pokud zaregistrujete převaděč pomocí atributu, vlastní převaděč rekurzivně volá sám sebe. Výsledkem je nekonečná smyčka, která končí výjimkou přetečení zásobníku.
 
-Předchozí kód převaděče je zjednodušený příklad. Pokud potřebujete zpracovat atributy (například [[JsonIgnore]](xref:System.Text.Json.Serialization.JsonIgnoreAttribute) nebo jiné možnosti (například vlastní kodéry), bude nutné další logiku. Kromě toho ukázkový kód nezpracovává vlastnosti, pro které je v konstruktoru nastavena výchozí hodnota. A tento přístup nerozlišuje mezi následujícími scénáři:
+Když zaregistrujete převaděč pomocí objektu Options, vyhněte se nekonečné smyčce tím, že při rekurzivním volání metody nebo zadáte do objektu <xref:System.Text.Json.JsonSerializer.Serialize%2A> Options <xref:System.Text.Json.JsonSerializer.Deserialize%2A> . Objekt Options obsahuje <xref:System.Text.Json.JsonSerializerOptions.Converters%2A> kolekci. Pokud ho předáte do `Serialize` nebo `Deserialize` , vlastní převaděč zavolá sám sebe a vytvoří nekonečnou smyčku, která způsobí výjimku přetečení zásobníku. Pokud výchozí možnosti nejsou proveditelné, vytvořte novou instanci možností s nastavením, které potřebujete. Tento přístup bude pomalý, protože každá nová instance mezipamětí nezávisle.
+
+Existuje alternativní vzor, který může použít `JsonConverterAttribute` registraci ve třídě k převodu. V tomto přístupu kód převaděče volá `Serialize` nebo `Deserialize` na třídu, která je odvozena od třídy, která má být převedena. Odvozená třída není `JsonConverterAttribute` pro ni použita. V následujícím příkladu této alternativy:
+
+* `WeatherForecastWithRequiredPropertyConverterAttribute`je třída, která se má deserializovat a která se na `JsonConverterAttribute` ni aplikuje.
+* `WeatherForecastWithoutRequiredPropertyConverterAttribute`je odvozená třída, která nemá atribut převaděče.
+* Kód v převaděči zavolá `Serialize` a na, aby nedošlo k `Deserialize` `WeatherForecastWithoutRequiredPropertyConverterAttribute` nekonečné smyčce. Pro tento přístup k serializaci jsou náklady na výkon z důvodu nadbytečného vytváření instancí objektů a kopírování hodnot vlastností.
+
+Tady jsou `WeatherForecast*` typy:
+
+[!code-csharp[](snippets/system-text-json-how-to/csharp/WeatherForecast.cs?name=SnippetWFWithReqPptyConverterAttr)]
+
+A tady je převaděč:
+
+[!code-csharp[](snippets/system-text-json-how-to/csharp/WeatherForecastRequiredPropertyConverterForAttributeRegistration.cs)]
+
+Pokud potřebujete zpracovat atributy, jako je například [[JsonIgnore]](xref:System.Text.Json.Serialization.JsonIgnoreAttribute) nebo jiné možnosti, jako jsou například vlastní kodéry, vyžaduje převaděč vyžadovaných vlastností další logiku. Kromě toho ukázkový kód nezpracovává vlastnosti, pro které je v konstruktoru nastavena výchozí hodnota. A tento přístup nerozlišuje mezi následujícími scénáři:
 
 * Ve formátu JSON chybí vlastnost.
 * Vlastnost pro typ, který nepovoluje hodnotu null, je přítomna ve formátu JSON, ale hodnota je výchozím typem pro typ, například nula pro `int` .
@@ -391,7 +407,7 @@ Zaregistrujte tento vlastní převaděč [pomocí atributu ve třídě](system-t
 Pokud používáte vlastní převaděč, který odpovídá předchozí ukázce:
 
 * `OnDeserializing`Kód nemá přístup k nové instanci POCO. Chcete-li pracovat s novou instancí POCO na začátku deserializace, vložte tento kód do konstruktoru POCO.
-* Při rekurzivním volání nebo není předávat do objektu `Serialize` Options `Deserialize` . Objekt Options obsahuje `Converters` kolekci. Pokud jej předáte do `Serialize` nebo `Deserialize` , bude použit převaděč, což vede k nekonečnou smyčku, která způsobí výjimku přetečení zásobníku.
+* Vyhněte se nekonečné smyčce tím, že zaregistrujete převaděč do objektu Options a nepředáte do objektu Options při rekurzivním volání `Serialize` nebo `Deserialize` . Další informace najdete v části [požadované vlastnosti](#required-properties) výše v tomto článku.
 
 ### <a name="public-and-non-public-fields"></a>Veřejná a neveřejná pole
 

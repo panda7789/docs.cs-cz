@@ -1,41 +1,42 @@
 ---
-title: Vrácení podmnožiny vlastností elementu v dotazu – Průvodce programováním jazyka C#
+title: Jak vracet podmnožiny vlastností elementu v dotazu – Průvodce programováním v C#
+description: Naučte se používat anonymní typ ve výrazu dotazu v jazyce C# pro vrácení některých vlastností každého zdrojového elementu.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - anonymous types [C#], for subsets of element properties
 ms.assetid: fabdf349-f443-4e3f-8368-6c471be1dd7b
-ms.openlocfilehash: 27a2626fc46307a7195040adf746d8d8757d2f82
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 882d94bc82527c14bd6c038f4bf574c2211b9089
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75714860"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86864368"
 ---
-# <a name="how-to-return-subsets-of-element-properties-in-a-query-c-programming-guide"></a>Vrácení podmnožiny vlastností elementu v dotazu (Průvodce programováním jazyka C#)
-Pokud platí obě tyto podmínky, použijte ve výrazu dotazu anonymní typ:  
+# <a name="how-to-return-subsets-of-element-properties-in-a-query-c-programming-guide"></a>Vrácení podmnožin vlastností elementu v dotazu (Průvodce programováním v C#)
+Použít anonymní typ ve výrazu dotazu, když platí obě tyto podmínky:  
   
-- Chcete vrátit pouze některé vlastnosti každého zdrojového prvku.  
+- Chcete vrátit pouze některé vlastnosti každého zdrojového elementu.  
   
-- Není třeba ukládat výsledky dotazu mimo rozsah metody, ve kterém je dotaz spuštěn.  
+- Výsledky dotazu není nutné ukládat mimo rozsah metody, ve které je dotaz proveden.  
   
- Pokud chcete vrátit pouze jednu vlastnost nebo pole z každého zdrojového prvku, `select` můžete použít operátor tečka v klauzuli. Chcete-li například `ID` vrátit `student`pouze každý `select` z nich , napište klauzuli takto:  
+ Pokud chcete pouze vrátit jednu vlastnost nebo pole z každého elementu zdroje, můžete pouze použít operátor tečka v `select` klauzuli. Například pro vrácení pouze `ID` každého z nich `student` zapište `select` klauzuli následujícím způsobem:  
   
 ```csharp  
 select student.ID;  
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak pomocí anonymního typu vrátit pouze podmnožinu vlastností každého zdrojového prvku, který odpovídá zadané podmínce.  
+ Následující příklad ukazuje, jak použít anonymní typ pro vrácení pouze podmnožiny vlastností každého zdrojového prvku, který odpovídá zadané podmínce.  
   
  [!code-csharp[csProgGuideLINQ#31](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideLINQ/CS/csRef30LangFeatures_2.cs#31)]  
   
- Všimněte si, že anonymní typ používá názvy zdrojového prvku pro jeho vlastnosti, pokud nejsou zadány žádné názvy. Chcete-li vlastnostem anonymního typu přidělit `select` nové názvy, napište příkaz takto:  
+ Všimněte si, že anonymní typ používá názvy zdrojového elementu pro jeho vlastnosti, pokud nejsou zadány žádné názvy. Chcete-li zadat nové názvy vlastností v anonymním typu, zapište `select` příkaz následujícím způsobem:  
   
 ```csharp  
 select new { First = student.FirstName, Last = student.LastName };  
 ```  
   
- Pokud se pokusíte v předchozím `Console.WriteLine` příkladu, pak příkaz musí také změnit:  
+ Pokud to zkusíte v předchozím příkladu, `Console.WriteLine` příkaz se musí také změnit:  
   
 ```csharp  
 Console.WriteLine(student.First + " " + student.Last);  
@@ -43,10 +44,10 @@ Console.WriteLine(student.First + " " + student.Last);
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
   
-Chcete-li spustit tento kód, zkopírujte a vložte `using` třídu do aplikace konzoly Jazyka C# se směrnicí pro System.Linq.
+Chcete-li spustit tento kód, zkopírujte a vložte třídu do konzolové aplikace v jazyce C# s `using` direktivou pro System. Linq.
   
 ## <a name="see-also"></a>Viz také
 
-- [Programovací příručka jazyka C#](../index.md)
+- [Průvodce programováním v C#](../index.md)
 - [Anonymní typy](./anonymous-types.md)
-- [LINQ v jazyce C#](../../linq/index.md)
+- [LINQ v jazyku C#](../../linq/index.md)

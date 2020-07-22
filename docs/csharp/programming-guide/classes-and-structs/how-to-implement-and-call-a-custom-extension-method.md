@@ -1,15 +1,16 @@
 ---
 title: Postup implementace a volání vlastní metody rozšíření – Průvodce programováním v C#
+description: Naučte se implementovat metody rozšíření pro libovolný typ .NET. Kód klienta může používat vaše metody přidáním odkazu na knihovnu DLL a přidáním direktivy using.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - extension methods [C#], implementing and calling
 ms.assetid: 7dab2a56-cf8e-4a47-a444-fe610a02772a
-ms.openlocfilehash: f9937c4b7c6e66af0ee3bc6f6d9ef3b3b1edd530
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 7856e78713648a42d1c961f50f7e83f2f7ef05b7
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241822"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86865057"
 ---
 # <a name="how-to-implement-and-call-a-custom-extension-method-c-programming-guide"></a>Postup implementace a volání vlastní metody rozšíření (Průvodce programováním v C#)
 Toto téma ukazuje, jak implementovat vlastní metody rozšíření pro libovolný typ rozhraní .NET. Kód klienta může použít vaše metody rozšíření přidáním odkazu na knihovnu DLL, který obsahuje, a přidáním direktivy [using](../../language-reference/keywords/using-directive.md) , která určuje obor názvů, ve kterém jsou definovány metody rozšíření.  
@@ -47,5 +48,5 @@ Toto téma ukazuje, jak implementovat vlastní metody rozšíření pro libovoln
 - [protected](../../language-reference/keywords/protected.md)
 - [internal](../../language-reference/keywords/internal.md)
 - [public](../../language-reference/keywords/public.md)
-- [this](../../language-reference/keywords/this.md)
+- [Tento](../../language-reference/keywords/this.md)
 - [hosting](../../language-reference/keywords/namespace.md)

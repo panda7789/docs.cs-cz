@@ -9,65 +9,65 @@ helpviewer_keywords:
 - templates [WPF], ComboBox
 - parts [WPF], ComboBox
 ms.assetid: b0662fa1-16d7-4320-b26b-c1804e565a44
-ms.openlocfilehash: 887698bdaebf7bc5ddac8997167589d9fbd3dd4d
-ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
+ms.openlocfilehash: af7f8a544af5e9892a8f3f059048bbfd113d2491
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74960373"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86865356"
 ---
 # <a name="combobox-styles-and-templates"></a>ComboBox – styly a šablony
-Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.Controls.ComboBox>. Výchozí <xref:System.Windows.Controls.ControlTemplate> můžete změnit tak, aby měl ovládací prvek jedinečný vzhled. Další informace najdete v tématu [Vytvoření šablony pro ovládací prvek](../../../desktop-wpf/themes/how-to-create-apply-template.md).  
+Toto téma popisuje styly a šablony pro <xref:System.Windows.Controls.ComboBox> ovládací prvek. Můžete změnit výchozí nastavení <xref:System.Windows.Controls.ControlTemplate> a dát ovládacímu prvku jedinečný vzhled. Další informace najdete v tématu [Vytvoření šablony pro ovládací prvek](../../../desktop-wpf/themes/how-to-create-apply-template.md).  
   
 ## <a name="combobox-parts"></a>Části pole se seznamem  
- V následující tabulce jsou uvedeny pojmenované části ovládacího prvku <xref:System.Windows.Controls.ComboBox>.  
+ V následující tabulce jsou uvedeny pojmenované části <xref:System.Windows.Controls.ComboBox> ovládacího prvku.  
   
-|Část|Type|Popis|  
+|Část|Typ|Popis|  
 |-|-|-|  
-|PART_EditableTextBox|<xref:System.Windows.Controls.TextBox>|Obsahuje text <xref:System.Windows.Controls.ComboBox>.|  
+|PART_EditableTextBox|<xref:System.Windows.Controls.TextBox>|Obsahuje text <xref:System.Windows.Controls.ComboBox> .|  
 |PART_Popup|<xref:System.Windows.Controls.Primitives.Popup>|Rozevírací seznam, který obsahuje položky v poli se seznamem.|  
   
- Když vytvoříte <xref:System.Windows.Controls.ControlTemplate> pro <xref:System.Windows.Controls.ComboBox>, šablona může v <xref:System.Windows.Controls.ScrollViewer>obsahovat <xref:System.Windows.Controls.ItemsPresenter>. (<xref:System.Windows.Controls.ItemsPresenter> zobrazuje každou položku v <xref:System.Windows.Controls.ComboBox>; <xref:System.Windows.Controls.ScrollViewer> umožňuje posouvání v rámci ovládacího prvku).  Pokud <xref:System.Windows.Controls.ItemsPresenter> není přímým podřízeným <xref:System.Windows.Controls.ScrollViewer>, je nutné zadat <xref:System.Windows.Controls.ItemsPresenter> název `ItemsPresenter`.  
+ Když vytvoříte <xref:System.Windows.Controls.ControlTemplate> pro <xref:System.Windows.Controls.ComboBox> , může vaše šablona obsahovat <xref:System.Windows.Controls.ItemsPresenter> v <xref:System.Windows.Controls.ScrollViewer> . ( <xref:System.Windows.Controls.ItemsPresenter> Zobrazí všechny položky v <xref:System.Windows.Controls.ComboBox> ; <xref:System.Windows.Controls.ScrollViewer> umožňuje posouvání v rámci ovládacího prvku).  Pokud <xref:System.Windows.Controls.ItemsPresenter> není přímým podřízeným prvku, je <xref:System.Windows.Controls.ScrollViewer> nutné zadat <xref:System.Windows.Controls.ItemsPresenter> název, `ItemsPresenter` .  
   
 ## <a name="combobox-states"></a>Stavy pole se seznamem  
- V následující tabulce je uveden seznam stavů pro ovládací prvek <xref:System.Windows.Controls.ComboBox>.  
+ V následující tabulce je uveden seznam stavů pro <xref:System.Windows.Controls.ComboBox> ovládací prvek.  
   
 |Název VisualState|Název VisualStateGroup|Popis|  
 |-|-|-|  
 |Normální|CommonStates|Výchozí stav.|  
 |Zakázáno|CommonStates|Ovládací prvek je zakázán.|  
-|MouseOver|CommonStates|Ukazatel myši se nachází nad ovládacím prvkem <xref:System.Windows.Controls.ComboBox>.|  
+|MouseOver|CommonStates|Ukazatel myši je nad <xref:System.Windows.Controls.ComboBox> ovládacím prvkem.|  
 |Focused|FocusStates|Ovládací prvek má fokus.|  
 |Bez fokusu|FocusStates|Ovládací prvek nemá fokus.|  
 |FocusedDropDown|FocusStates|Rozevírací seznam <xref:System.Windows.Controls.ComboBox> má fokus.|  
-|Platný|ValidationStates|Ovládací prvek používá třídu <xref:System.Windows.Controls.Validation> a vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `false`.|  
-|InvalidFocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` má ovládací prvek fokus.|  
-|InvalidUnfocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` má ovládací prvek fokus.|  
-|Možno|EditStates|Vlastnost <xref:System.Windows.Controls.ComboBox.IsEditable%2A> je `true`.|  
-|Nedá editovat|EditStates|Vlastnost <xref:System.Windows.Controls.ComboBox.IsEditable%2A> je `false`.|  
+|Platné|ValidationStates|Ovládací prvek používá <xref:System.Windows.Controls.Validation> třídu a <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojenou vlastnost je `false` .|  
+|InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType>Připojená vlastnost je `true` a ovládací prvek má fokus.|  
+|InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType>Připojená vlastnost je `true` a ovládací prvek nemá fokus.|  
+|Možno|EditStates|<xref:System.Windows.Controls.ComboBox.IsEditable%2A>Vlastnost je `true` .|  
+|Nedá editovat|EditStates|<xref:System.Windows.Controls.ComboBox.IsEditable%2A>Vlastnost je `false` .|  
   
 ## <a name="comboboxitem-parts"></a>ComboBoxItem části  
- Ovládací prvek <xref:System.Windows.Controls.ComboBoxItem> neobsahuje žádné pojmenované části.  
+ <xref:System.Windows.Controls.ComboBoxItem>Ovládací prvek nemá žádné pojmenované části.  
   
 ## <a name="comboboxitem-states"></a>ComboBoxItem stavy  
- V následující tabulce je uveden seznam stavů pro ovládací prvek <xref:System.Windows.Controls.ComboBoxItem>.  
+ V následující tabulce je uveden seznam stavů pro <xref:System.Windows.Controls.ComboBoxItem> ovládací prvek.  
   
 |Název VisualState|Název VisualStateGroup|Popis|  
 |-|-|-|  
 |Normální|CommonStates|Výchozí stav.|  
 |Zakázáno|CommonStates|Ovládací prvek je zakázán.|  
-|MouseOver|CommonStates|Ukazatel myši se nachází nad ovládacím prvkem <xref:System.Windows.Controls.ComboBoxItem>.|  
+|MouseOver|CommonStates|Ukazatel myši je nad <xref:System.Windows.Controls.ComboBoxItem> ovládacím prvkem.|  
 |Focused|FocusStates|Ovládací prvek má fokus.|  
 |Bez fokusu|FocusStates|Ovládací prvek nemá fokus.|  
-|Vybrané|SelectionStates|Položka je aktuálně vybrána.|  
+|Vybráno|SelectionStates|Položka je aktuálně vybrána.|  
 |Nevybrané|SelectionStates|Položka není vybrána.|  
 |SelectedUnfocused|SelectionStates|Položka je vybrána, ale nemá fokus.|  
-|Platný|ValidationStates|Ovládací prvek používá třídu <xref:System.Windows.Controls.Validation> a vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `false`.|  
-|InvalidFocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` má ovládací prvek fokus.|  
-|InvalidUnfocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` má ovládací prvek fokus.|  
+|Platné|ValidationStates|Ovládací prvek používá <xref:System.Windows.Controls.Validation> třídu a <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojenou vlastnost je `false` .|  
+|InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType>Připojená vlastnost je `true` a ovládací prvek má fokus.|  
+|InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType>Připojená vlastnost je `true` a ovládací prvek nemá fokus.|  
   
 ## <a name="combobox-controltemplate-example"></a>Příklad pole se seznamem ControlTemplate  
- Následující příklad ukazuje, jak definovat <xref:System.Windows.Controls.ControlTemplate> pro ovládací prvek <xref:System.Windows.Controls.ComboBox> a přidružené typy.  
+ Následující příklad ukazuje, jak definovat a <xref:System.Windows.Controls.ControlTemplate> pro <xref:System.Windows.Controls.ComboBox> ovládací prvek a přidružené typy.  
   
  [!code-xaml[ControlTemplateExamples#ComboBox](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/combobox.xaml#combobox)]  
   
@@ -77,7 +77,7 @@ Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.C
   
  Úplnou ukázku najdete v tématu [stylování s ControlTemplates Sample](https://github.com/Microsoft/WPF-Samples/tree/master/Styles%20&%20Templates/IntroToStylingAndTemplating).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.FrameworkElement.Style%2A>
 - <xref:System.Windows.Controls.ControlTemplate>

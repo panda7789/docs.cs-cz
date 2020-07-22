@@ -1,16 +1,17 @@
 ---
 title: Objekty – Průvodce programováním v C#
+description: Jazyk C# používá definici třídy nebo struktury k definování typů objektů. V objektově orientovaném jazyce, jako je C#, se program skládá z objektů, které projednají dynamicky.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - objects [C#], about objects
 - variables [C#]
 ms.assetid: af4a5230-fbf3-4eea-95e1-8b883c2f845c
-ms.openlocfilehash: a9411557e9177c8dbed45ec25984d574479da0de
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: b54db325c568dec702e4e50c3c265286662092fe
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241783"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86864758"
 ---
 # <a name="objects-c-programming-guide"></a>Objekty (Průvodce programováním v C#)
 Definice třídy nebo struktury je jako podrobný plán, který určuje, co může typ provádět. Objekt je v podstatě blok paměti, který byl přidělen a nakonfigurován podle podrobného plánu. Program může vytvořit mnoho objektů stejné třídy. Objekty se také nazývají instance a mohou být uloženy buď v pojmenované proměnné, nebo v poli nebo v kolekci. Kód klienta je kód, který používá tyto proměnné pro volání metod a přístup k veřejným vlastnostem objektu. V objektově orientovaném jazyce, jako je C#, typický program sestává z více objektů, které projednají dynamicky.  
@@ -61,7 +62,7 @@ Definice třídy nebo struktury je jako podrobný plán, který určuje, co mů�
 ## <a name="see-also"></a>Viz také
 
 - [Průvodce programováním v C#](../index.md)
-- [odkazy objektů](../../language-reference/builtin-types/reference-types.md)
+- [object](../../language-reference/builtin-types/reference-types.md)
 - [Dědičnost](./inheritance.md)
 - [Deník](../../language-reference/keywords/class.md)
 - [Typy struktur](../../language-reference/builtin-types/struct.md)

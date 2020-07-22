@@ -1,122 +1,123 @@
 ---
-title: Částečné třídy a metody – průvodce programováním jazyka C#
+title: Částečné třídy a metody – Průvodce programováním v C#
+description: Částečné třídy a metody v jazyce C# rozdělí definici třídy, struktury, rozhraní nebo metody přes dva nebo více zdrojových souborů.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - partial methods [C#]
 - partial classes [C#]
 - C# language, partial classes and methods
 ms.assetid: 804cecb7-62db-4f97-a99f-60975bd59fa1
-ms.openlocfilehash: 50b192d5a7416a982f41d0c3ac13e9c1bfe3397c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 792159786131654d6ee0363f7ab7b87ac50d32bb
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399817"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86864745"
 ---
 # <a name="partial-classes-and-methods-c-programming-guide"></a>Částečné třídy a metody (Průvodce programováním v C#)
 
-Je možné rozdělit definici [třídy](../../language-reference/keywords/class.md), [struktury](../../language-reference/builtin-types/struct.md), [rozhraní](../../language-reference/keywords/interface.md) nebo metody na dva nebo více zdrojových souborů. Každý zdrojový soubor obsahuje část definice typu nebo metody a všechny části jsou kombinovány při kompilaci aplikace.
+Je možné rozdělit definici [třídy](../../language-reference/keywords/class.md), [struktury](../../language-reference/builtin-types/struct.md), [rozhraní](../../language-reference/keywords/interface.md) nebo metody přes dva nebo více zdrojových souborů. Každý zdrojový soubor obsahuje oddíl definice typu nebo metody a všechny části jsou kombinovány při kompilaci aplikace.
 
 ## <a name="partial-classes"></a>Částečné třídy
 
-Existuje několik situací, kdy je žádoucí rozdělení definice třídy:
+Je žádoucí rozdělit definici třídy na několik situací:
 
-- Při práci na velkých projektech umožňuje rozprostření třídy přes samostatné soubory více programátorům pracovat na ní současně.
+- Při práci na rozsáhlých projektech umožňuje rozprostření třídy přes samostatné soubory současně pracovat s více programátory.
 
-- Při práci s automaticky generovaným zdrojem lze kód přidat do třídy bez nutnosti znovu vytvořit zdrojový soubor. Visual Studio používá tento přístup při vytváření formulářů Windows, obálkový kód webové služby a tak dále. Můžete vytvořit kód, který používá tyto třídy bez nutnosti upravovat soubor vytvořený visual studio.
+- Při práci s automaticky generovaným zdrojem lze kód přidat do třídy, aniž by bylo nutné znovu vytvořit zdrojový soubor. Visual Studio používá tento přístup při vytváření model Windows Forms, kódu obálky webové služby a tak dále. Můžete vytvořit kód, který používá tyto třídy, aniž byste museli upravovat soubor vytvořený v aplikaci Visual Studio.
 
-- Chcete-li rozdělit definici třídy, použijte modifikátor [částečného](../../language-reference/keywords/partial-type.md) klíčového slova, jak je znázorněno zde:
+- Chcete-li rozdělit definici třídy, použijte modifikátor klíčového slova [Partial](../../language-reference/keywords/partial-type.md) , jak je znázorněno zde:
 
   [!code-csharp[csProgGuideObjects#26](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#26)]
 
-Klíčové `partial` slovo označuje, že ostatní části třídy, struktury nebo rozhraní mohou být definovány v oboru názvů. Všechny části musí `partial` používat klíčové slovo. Všechny části musí být k dispozici v době kompilace tvořit konečný typ. Všechny součásti musí mít stejnou `public`přístupnost, například , `private`, a tak dále.
+`partial`Klíčové slovo označuje, že v oboru názvů lze definovat jiné části třídy, struktury nebo rozhraní. Všechny části musí používat `partial` klíčové slovo. Všechny části musí být k dispozici v době kompilace, aby bylo možné vytvořit konečný typ. Všechny části musí mít stejnou přístupnost, například `public` , `private` a tak dále.
 
-Pokud je kterákoli část deklarována jako abstraktní, je celý typ považován za abstraktní. Pokud je některá část prohlášena za uzavřenou, považuje se celý typ za zapečetěný. Pokud některá část deklaruje základní typ, pak celý typ dědí tuto třídu.
+Je-li kterákoli část deklarována jako abstraktní, pak je celý typ považován za abstraktní. Je-li kterákoli část deklarována jako zapečetěná, je celý typ považován za zapečetěný. Pokud jakákoli část deklaruje základní typ, pak celý typ zdědí tuto třídu.
 
-Všechny části, které určují základní třídu, musí souhlasit, ale části, které vynechou základní třídu, stále dědí základní typ. Části můžete určit různé základní rozhraní a konečný typ implementuje všechna rozhraní uvedená ve všech částečných deklaracích. Všechny členy třídy, struktury nebo rozhraní deklarované v částečné definici jsou k dispozici pro všechny ostatní části. Konečný typ je kombinací všech částí v době kompilace.
+Všechny části, které určují základní třídu, musí souhlasit, ale části, které vynechávají základní třídu, stále zdědí základní typ. Části mohou určovat odlišná základní rozhraní a konečný typ implementuje všechna rozhraní uvedená všemi částečnými deklaracemi. Všechny členy třídy, struktury nebo rozhraní deklarované v částečné definici jsou k dispozici pro všechny ostatní části. Konečný typ je kombinace všech částí v době kompilace.
 
 > [!NOTE]
-> Modifikátor `partial` není k dispozici v deklaracích delegáta nebo výčtu.
+> `partial`Modifikátor není k dispozici pro deklarace delegáta nebo výčtu.
 
-Následující příklad ukazuje, že vnořené typy mohou být částečné, i když typ, ve které jsou vnořené, není částečný sám.
+Následující příklad ukazuje, že vnořené typy mohou být částečné, i když typ, který je vnořen do, není částečně sám.
 
 [!code-csharp[csProgGuideObjects#25](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#25)]
 
-V době kompilace jsou sloučeny atributy definice částečného typu. Zvažte například následující prohlášení:
+V době kompilace jsou sloučeny atributy definicí částečného typu. Zvažte například následující deklarace:
 
 [!code-csharp[csProgGuideObjects#23](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#23)]
 
-Jsou rovnocenné následujícím prohlášením:
+Jsou ekvivalentem následujících deklarací:
 
 [!code-csharp[csProgGuideObjects#24](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#24)]
 
-Následující jsou sloučeny ze všech definic částečného typu:
+Následující jsou sloučeny ze všech definicí částečného typu:
 
-- XML – komentáře
+- Komentáře XML
 
 - rozhraní
 
-- atributy parametrů obecného typu
+- atributy parametru obecného typu
 
 - class – atributy
 
 - členy
 
-Zvažte například následující prohlášení:
+Zvažte například následující deklarace:
 
 [!code-csharp[csProgGuideObjects#21](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#21)]
 
-Jsou rovnocenné následujícím prohlášením:
+Jsou ekvivalentem následujících deklarací:
 
 [!code-csharp[csProgGuideObjects#22](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#22)]
 
 ### <a name="restrictions"></a>Omezení
 
-Při práci s částečnými definicemi tříd je třeba dodržovat několik pravidel:
+Při práci s definicemi částečné třídy je potřeba provést několik pravidel:
 
-- Všechny definice částečného typu, které mají být součástí `partial`stejného typu, musí být změněny pomocí . Například následující deklarace třídy generují chybu:
+- Všechny definice částečného typu, které by měly být součástí stejného typu, musí být upraveny pomocí `partial` . Například následující deklarace tříd generují chybu:
 
   [!code-csharp[csProgGuideObjects#20](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#20)]
 
-- `partial` Modifikátor se může objevit `class`pouze `struct`bezprostředně `interface`před klíčovými slovy , nebo .
+- `partial`Modifikátor se může objevit pouze bezprostředně před klíčovými slovy `class` , `struct` nebo `interface` .
 
 - Vnořené částečné typy jsou povoleny v definicích částečného typu, jak je znázorněno v následujícím příkladu:
 
   [!code-csharp[csProgGuideObjects#19](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#19)]
 
-- Všechny definice částečného typu, které mají být součástí stejného typu, musí být definovány ve stejném sestavení a ve stejném modulu (soubor .exe nebo .dll). Částečné definice nemohou mít více modulů.
+- Všechny definice částečného typu, které by měly být součástí stejného typu, musí být definovány ve stejném sestavení a stejném modulu (soubor. exe nebo. dll). Částečné definice nemůžou zahrnovat víc modulů.
 
-- Název třídy a parametry obecného typu musí odpovídat všem definicím částečného typu. Obecné typy mohou být částečné. Každá částečná deklarace musí používat stejné názvy parametrů ve stejném pořadí.
+- Název třídy a parametry obecného typu se musí shodovat se všemi definicemi částečného typu. Obecné typy mohou být částečné. Každá částečná deklarace musí používat stejné názvy parametrů ve stejném pořadí.
 
-- Následující klíčová slova v definici částečného typu jsou nepovinná, ale pokud jsou k dispozici v jedné definici částečného typu, nemohou být v konfliktu s klíčovými slovy zadanými v jiné částečné definici pro stejný typ:
+- Následující klíčová slova v definici částečného typu jsou volitelná, ale pokud jsou k dispozici v rámci jedné definice částečného typu, nemůže být v konfliktu s klíčovými slovy zadanými v jiné částečné definici pro stejný typ:
 
-  - [Veřejné](../../language-reference/keywords/public.md)
+  - [public](../../language-reference/keywords/public.md)
 
-  - [Soukromé](../../language-reference/keywords/private.md)
+  - [hlášen](../../language-reference/keywords/private.md)
 
   - [protected](../../language-reference/keywords/protected.md)
 
-  - [Vnitřní](../../language-reference/keywords/internal.md)
+  - [internal](../../language-reference/keywords/internal.md)
 
-  - [Abstraktní](../../language-reference/keywords/abstract.md)
+  - [Výtah](../../language-reference/keywords/abstract.md)
 
   - [sealed](../../language-reference/keywords/sealed.md)
 
   - base – třída
 
-  - [nový](../../language-reference/keywords/new-modifier.md) modifikátor (vnořené části)
+  - [Nový](../../language-reference/keywords/new-modifier.md) modifikátor (vnořené části)
 
   - obecná omezení
 
-Další informace naleznete [v tématu Omezení parametrů typu](../generics/constraints-on-type-parameters.md).
+Další informace najdete v tématu [omezení parametrů typu](../generics/constraints-on-type-parameters.md).
 
 ## <a name="example-1"></a>Příklad 1
 
 ### <a name="description"></a>Popis
 
-V následujícím příkladu jsou pole a konstruktor `Coords`třídy , deklarovány v `PrintCoords`jedné definici částečné třídy a člen , je deklarován v jiné definici částečné třídy.
+V následujícím příkladu jsou pole a konstruktor třídy `Coords` deklarovány v jedné definici částečné třídy a člen `PrintCoords` je deklarován v jiné definici částečné třídy.
 
-### <a name="code"></a>kód
+### <a name="code"></a>Kód
 
 [!code-csharp[csProgGuideObjects#17](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#17)]
 
@@ -124,21 +125,21 @@ V následujícím příkladu jsou pole a konstruktor `Coords`třídy , deklarov�
 
 ### <a name="description"></a>Popis
 
-Následující příklad ukazuje, že můžete také vyvinout částečné struktury a rozhraní.
+Následující příklad ukazuje, že můžete také vyvíjet částečné struktury a rozhraní.
 
-### <a name="code"></a>kód
+### <a name="code"></a>Kód
 
 [!code-csharp[csProgGuideObjects#18](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#18)]
 
 ## <a name="partial-methods"></a>Částečné metody
 
-Částečná třída nebo struktura může obsahovat částečnou metodu. Jedna část třídy obsahuje podpis metody. Volitelná implementace může být definována ve stejné nebo jiné části. Pokud implementace není zadána, pak metoda a všechna volání metody jsou odebrány v době kompilace.
+Částečná třída nebo struktura může obsahovat částečnou metodu. Jedna část třídy obsahuje signaturu metody. Volitelná implementace může být definována ve stejné části nebo jiné části. Pokud není implementována implementace, pak je metoda a všechna volání metody odebrána v době kompilace.
 
-Částečné metody umožňují implementátoru jedné části třídy definovat metodu, podobně jako událost. Implementátor druhé části třídy se může rozhodnout, zda metodu implementovat či nikoli. Pokud metoda není implementována, pak kompilátor odebere podpis metody a všechna volání metody. Volání metody, včetně všech výsledků, které by nastaly z vyhodnocení argumentů v volání, nemají žádný vliv v době běhu. Proto jakýkoli kód v částečné třídě můžete volně používat částečnou metodu, i v případě, že implementace není zadána. Žádné chyby kompilace nebo za běhu dojde, pokud je metoda volána, ale není implementována.
+Částečné metody umožňují, aby implementátor jednoho dílu třídy definoval metodu, podobně jako událost. Implementátor druhé části třídy se může rozhodnout, zda má být metoda implementována. Pokud není metoda implementována, kompilátor odstraní signaturu metody a všechna volání metody. Volání metody, včetně všech výsledků, které by byly provedeny z vyhodnocení argumentů v volání, nemají za běhu žádný vliv. Proto jakýkoli kód v částečné třídě může volně použít částečnou metodu, i když není zadaná implementace. Pokud je metoda volána, ale není implementována, nebudou výsledkem žádné chyby při kompilaci nebo běhové chyby.
 
-Částečné metody jsou užitečné zejména jako způsob přizpůsobení generovaného kódu. Umožňují název metody a podpis, které mají být vyhrazeny, tak, aby generovaný kód může volat metodu, ale vývojář se může rozhodnout, zda implementovat metodu. Podobně jako částečné třídy, částečné metody umožňují kód vytvořený generátorem kódu a kód vytvořený lidským vývojářem pro spolupráci bez nákladů za běhu.
+Částečné metody jsou obzvláště užitečné jako způsob přizpůsobení vygenerovaného kódu. Umožňují vyhradit název metody a signaturu, aby vygenerovaný kód mohl volat metodu, ale vývojář se může rozhodnout, zda metodu implementovat. Podobně jako u částečných tříd může částečná metoda povolit kód vytvořený generátorem kódu a kódem vytvořeným vývojářem pro lidskou spolupráci bez nákladů na spuštění.
 
-Deklarace částečné metody se skládá ze dvou částí: definice a implementace. Ty mohou být v samostatných částech částečné třídy nebo ve stejné části. Pokud neexistuje žádná deklarace implementace, pak kompilátor optimalizuje pryč definování deklarace a všechna volání metody.
+Deklarace částečné metody se skládá ze dvou částí: definice a implementace. Ty mohou být v samostatných částech částečné třídy nebo ve stejné části. Pokud není k dispozici žádná deklarace implementace, kompilátor optimalizuje jak definiční deklaraci, tak všechna volání metody.
 
 ```csharp
 // Definition in file1.cs
@@ -151,27 +152,27 @@ partial void onNameChanged()
 }
 ```
 
-- Deklarace částečné metody musí začínat kontextovým klíčovým slovem [partial](../../language-reference/keywords/partial-type.md) a metoda musí vrátit [void](../../language-reference/builtin-types/void.md).
+- Deklarace částečné metody musí začínat [částečným](../../language-reference/keywords/partial-type.md) klíčovým slovem kontextové a metoda musí vracet [typ void](../../language-reference/builtin-types/void.md).
 
-- Částečné metody mohou mít [v](../../language-reference/keywords/in-parameter-modifier.md) nebo [ref,](../../language-reference/keywords/ref.md) ale ne [out](../../language-reference/keywords/out-parameter-modifier.md) parametry.
+- Částečné metody mohou mít [v](../../language-reference/keywords/in-parameter-modifier.md) parametrech nebo [ref](../../language-reference/keywords/ref.md) , ale ne [výstupní](../../language-reference/keywords/out-parameter-modifier.md) parametry.
 
 - Částečné metody jsou implicitně [soukromé](../../language-reference/keywords/private.md), a proto nemohou být [virtuální](../../language-reference/keywords/virtual.md).
 
-- Částečné metody nemohou být [extern](../../language-reference/keywords/extern.md), protože přítomnost těla určuje, zda jsou definování nebo provádění.
+- Částečné metody nemůžou být [extern](../../language-reference/keywords/extern.md), protože přítomnost těla určuje, jestli se definuje nebo implementuje.
 
 - Částečné metody mohou mít [statické](../../language-reference/keywords/static.md) a [nebezpečné](../../language-reference/keywords/unsafe.md) modifikátory.
 
-- Částečné metody mohou být obecné. Omezení jsou umístěny na definování deklarace částečné metody a může být volitelně opakovat na prováděcí jeden. Názvy parametrů a parametrů typu nemusí být v prováděcí deklaraci stejné jako v definujícím prohlášení.
+- Částečné metody mohou být obecné. Omezení jsou uvedena v deklaraci částečné deklarace metody a mohou být volitelně opakována při implementaci jednoho z nich. Parametry a názvy parametrů typu nemusí být stejné v implementaci deklarace jako v rámci definujícího.
 
-- Můžete vytvořit [delegáta](../../language-reference/builtin-types/reference-types.md) na částečnou metodu, která byla definována a implementována, ale ne na částečnou metodu, která byla definována pouze.
+- Můžete vytvořit [delegáta](../../language-reference/builtin-types/reference-types.md) částečné metody, která je definována a implementována, ale nikoli částečnou metodu, která byla definována pouze.
 
 ## <a name="c-language-specification"></a>Specifikace jazyka C#
 
-Další informace naleznete v tématu [Partial types](~/_csharplang/spec/classes.md#partial-types) in the [C# Language Specification](/dotnet/csharp/language-reference/language-specification/introduction). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
+Další informace naleznete v tématu [částečné typy](~/_csharplang/spec/classes.md#partial-types) ve [specifikaci jazyka C#](/dotnet/csharp/language-reference/language-specification/introduction). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
 
 ## <a name="see-also"></a>Viz také
 
-- [Programovací příručka jazyka C#](../index.md)
+- [Průvodce programováním v C#](../index.md)
 - [Třídy](./classes.md)
 - [Typy struktur](../../language-reference/builtin-types/struct.md)
 - [Rozhraní](../interfaces/index.md)

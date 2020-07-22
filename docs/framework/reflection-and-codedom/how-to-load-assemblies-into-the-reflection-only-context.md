@@ -1,5 +1,6 @@
 ---
 title: 'Postupy: Načtení sestavení do kontextu pouze pro reflexi'
+description: Podívejte se na příklad načtení sestavení do kontextu pouze pro reflexi v rozhraní .NET. Prověřte sestavení kompilovaná pro jiné platformy nebo verze rozhraní .NET.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,12 +13,12 @@ helpviewer_keywords:
 - assemblies [.NET Framework], reflection-only loader context
 - reflection-only loader context
 ms.assetid: 9818b660-52f5-423d-a9af-e75163aa7068
-ms.openlocfilehash: cac6b3b3adf070ad6070e5c5941653f20dedd907
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 92f847f6c61ba39bf8621af6080baccfdabe514a
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73130107"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86865070"
 ---
 # <a name="how-to-load-assemblies-into-the-reflection-only-context"></a>Postupy: Načtení sestavení do kontextu pouze pro reflexi
 
@@ -25,16 +26,16 @@ Kontext zatížení pouze pro reflexi umožňuje kontrolovat sestavení kompilov
 
 ## <a name="to-load-an-assembly-into-the-reflection-only-load-context"></a>Načtení sestavení do kontextu načtení pouze pro reflexi
 
-1. K načtení <xref:System.Reflection.Assembly.ReflectionOnlyLoad%28System.String%29> sestavení podle jeho zobrazovaného názvu použijte přetížení metody, nebo <xref:System.Reflection.Assembly.ReflectionOnlyLoadFrom%2A> metodu pro načtení sestavení, které danou cestu zadala. Pokud je sestavení binární image, použijte přetížení <xref:System.Reflection.Assembly.ReflectionOnlyLoad%28System.Byte%5B%5D%29> metody.
+1. <xref:System.Reflection.Assembly.ReflectionOnlyLoad%28System.String%29>K načtení sestavení podle jeho zobrazovaného názvu použijte přetížení metody, nebo <xref:System.Reflection.Assembly.ReflectionOnlyLoadFrom%2A> metodu pro načtení sestavení, které danou cestu zadala. Pokud je sestavení binární image, použijte <xref:System.Reflection.Assembly.ReflectionOnlyLoad%28System.Byte%5B%5D%29> přetížení metody.
 
     > [!NOTE]
-    > Kontext pouze pro reflexi nelze použít pro načtení verze knihovny mscorlib. dll z verze .NET Framework kromě verze v kontextu spuštění.
+    > Kontext pouze pro reflexi nelze použít k načtení verze mscorlib.dll z verze .NET Framework jiné než verze v kontextu spuštění.
 
-2. Pokud sestavení obsahuje závislosti, <xref:System.Reflection.Assembly.ReflectionOnlyLoad%2A> metoda je nenačte. Pokud je potřebujete ověřit, musíte je načíst sami.
+2. Pokud sestavení obsahuje závislosti, <xref:System.Reflection.Assembly.ReflectionOnlyLoad%2A> Metoda je nenačte. Pokud je potřebujete ověřit, musíte je načíst sami.
 
-3. Určete, zda je sestavení načteno do kontextu pouze pro reflexi pomocí <xref:System.Reflection.Assembly.ReflectionOnly%2A> vlastnosti sestavení.
+3. Určete, zda je sestavení načteno do kontextu pouze pro reflexi pomocí vlastnosti sestavení <xref:System.Reflection.Assembly.ReflectionOnly%2A> .
 
-4. Pokud byly atributy použity na sestavení nebo na typy v sestavení, zkontrolujte tyto atributy pomocí <xref:System.Reflection.CustomAttributeData> třídy, aby se zajistilo, že není proveden žádný pokus o spuštění kódu v kontextu pouze pro reflexi. Použijte příslušné přetížení <xref:System.Reflection.CustomAttributeData.GetCustomAttributes%2A?displayProperty=nameWithType> metody pro získání <xref:System.Reflection.CustomAttributeData> objektů představujících atributy použité pro sestavení, člena, modul nebo parametr.
+4. Pokud byly atributy použity na sestavení nebo na typy v sestavení, zkontrolujte tyto atributy pomocí třídy, aby se <xref:System.Reflection.CustomAttributeData> zajistilo, že není proveden žádný pokus o spuštění kódu v kontextu pouze pro reflexi. Použijte příslušné přetížení <xref:System.Reflection.CustomAttributeData.GetCustomAttributes%2A?displayProperty=nameWithType> metody pro získání <xref:System.Reflection.CustomAttributeData> objektů představujících atributy použité pro sestavení, člena, modul nebo parametr.
 
     > [!NOTE]
     > Atributy použité pro sestavení nebo jejich obsah mohou být definovány v sestavení nebo mohou být definovány v jiném sestavení načteno do kontextu pouze pro reflexi. Neexistuje žádný způsob, jak sdělit předem, kde jsou definovány atributy.

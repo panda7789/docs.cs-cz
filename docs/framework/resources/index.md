@@ -1,5 +1,6 @@
 ---
 title: Prostředky v aplikacích .NET
+description: Pochopení prostředků v aplikacích .NET. Prostředek je jakákoli nespustitelná data, která jsou logicky nasazena s aplikací.
 ms.date: 07/25/2018
 helpviewer_keywords:
 - deploying applications [.NET Framework], resources
@@ -11,12 +12,12 @@ helpviewer_keywords:
 - packaging application resources
 - localizing resources
 ms.assetid: 8ad495d4-2941-40cf-bf64-e82e85825890
-ms.openlocfilehash: 0620cb16c3233f8ba2a665c9c4cb5f44bc5d5e84
-ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
+ms.openlocfilehash: 105325170389917bfb2022314791aa1ed5923db3
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/20/2020
-ms.locfileid: "81645682"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86865161"
 ---
 # <a name="resources-in-net-apps"></a>Prostředky v aplikacích .NET
 
@@ -28,7 +29,7 @@ Informace o prostředcích v ASP.NET najdete v tématu [Přehled prostředků we
 
 ## <a name="create-and-localize-resources"></a>Vytváření a lokalizace prostředků
 
-V nelokalizované aplikaci můžete použít soubory prostředků jako úložiště pro data aplikací, zejména pro řetězce, které by jinak byly pevně zakódované v několika umístěních ve zdrojovém kódu. Nejčastěji vytváříte prostředky jako textový soubor (. txt) nebo soubory XML (. resx) a pomocí nástroje [Resgen. exe (generátor souborů prostředků)](../tools/resgen-exe-resource-file-generator.md) je zkompilujete do binárních souborů. Resources. Tyto soubory pak mohou být vloženy do spustitelného souboru aplikace kompilátorem jazyka. Další informace o vytváření prostředků najdete v tématu [vytváření souborů prostředků](creating-resource-files-for-desktop-apps.md).
+V nelokalizované aplikaci můžete použít soubory prostředků jako úložiště pro data aplikací, zejména pro řetězce, které by jinak byly pevně zakódované v několika umístěních ve zdrojovém kódu. Nejčastěji vytvoříte prostředky jako textový soubor (. txt) nebo soubory XML (. resx) a pomocí [Resgen.exe (generátor zdrojových souborů)](../tools/resgen-exe-resource-file-generator.md) je zkompilujete do binárních souborů. Resources. Tyto soubory pak mohou být vloženy do spustitelného souboru aplikace kompilátorem jazyka. Další informace o vytváření prostředků najdete v tématu [vytváření souborů prostředků](creating-resource-files-for-desktop-apps.md).
 
 Prostředky vaší aplikace můžete také lokalizovat pro konkrétní jazykové verze. To umožňuje vytvářet lokalizované (přeložené) verze vašich aplikací. Když vyvíjíte aplikaci, která používá lokalizované prostředky, určíte jazykovou verzi, která slouží jako neutrální nebo záložní jazyková verze, jejíž prostředky jsou používány, pokud nejsou k dispozici žádné vhodné prostředky. Prostředky neutrální jazykové verze se obvykle ukládají ve spustitelném souboru aplikace. Zbývající prostředky pro jednotlivé lokalizované jazykové verze jsou uloženy v samostatných satelitních sestaveních. Další informace naleznete v tématu [Vytváření satelitních sestavení](creating-satellite-assemblies-for-desktop-apps.md).
 
@@ -44,23 +45,23 @@ Další informace najdete v článku o [balení a nasazení prostředků](packag
 
 V době běhu aplikace načte příslušné lokalizované prostředky na základě vlákna na základě jazykové verze určené <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType> vlastností. Hodnota této vlastnosti je odvozena takto:
 
-- Přímým přiřazením <xref:System.Globalization.CultureInfo> objektu, který představuje lokalizovanou jazykovou <xref:System.Threading.Thread.CurrentUICulture%2A?displayProperty=nameWithType> verzi vlastnosti.
+- Přímým přiřazením <xref:System.Globalization.CultureInfo> objektu, který představuje lokalizovanou jazykovou verzi <xref:System.Threading.Thread.CurrentUICulture%2A?displayProperty=nameWithType> Vlastnosti.
 
-- Pokud není jazyková verze explicitně přiřazena, načtením výchozí jazykové verze uživatelského rozhraní vlákna z <xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture%2A?displayProperty=nameWithType> vlastnosti.
+- Pokud není jazyková verze explicitně přiřazena, načtením výchozí jazykové verze uživatelského rozhraní vlákna z <xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture%2A?displayProperty=nameWithType> Vlastnosti.
 
-- Pokud výchozí jazyková verze uživatelského rozhraní vlákna není explicitně přiřazena, načtením jazykové verze pro aktuálního uživatele v místním počítači. Implementace rozhraní .NET spuštěné v systému Windows provede voláním funkce [`GetUserDefaultUILanguage`](/windows/desktop/api/winnls/nf-winnls-getuserdefaultuilanguage) Windows.
+- Pokud výchozí jazyková verze uživatelského rozhraní vlákna není explicitně přiřazena, načtením jazykové verze pro aktuálního uživatele v místním počítači. Implementace rozhraní .NET spuštěné v systému Windows provede voláním [`GetUserDefaultUILanguage`](/windows/desktop/api/winnls/nf-winnls-getuserdefaultuilanguage) funkce Windows.
 
-Další informace o nastavení aktuální jazykové verze uživatelského rozhraní naleznete na <xref:System.Globalization.CultureInfo> referenčních stránkách a <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType> .
+Další informace o nastavení aktuální jazykové verze uživatelského rozhraní naleznete na <xref:System.Globalization.CultureInfo> <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType> referenčních stránkách a.
 
 Pak můžete načíst prostředky pro aktuální jazykovou verzi uživatelského rozhraní nebo pro konkrétní jazykovou verzi pomocí <xref:System.Resources.ResourceManager?displayProperty=nameWithType> třídy. I když <xref:System.Resources.ResourceManager> je třída nejčastěji používána pro načítání prostředků, <xref:System.Resources?displayProperty=nameWithType> obor názvů obsahuje další typy, které lze použít k načtení prostředků. Mezi ně patří:
 
-- <xref:System.Resources.ResourceReader> Třída, která umožňuje vytvořit výčet prostředků vložených do sestavení nebo Uložit do samostatného binárního souboru. Resources. To je užitečné, pokud neznáte přesné názvy prostředků, které jsou k dispozici v době běhu.
+- <xref:System.Resources.ResourceReader>Třída, která umožňuje vytvořit výčet prostředků vložených do sestavení nebo Uložit do samostatného binárního souboru. Resources. To je užitečné, pokud neznáte přesné názvy prostředků, které jsou k dispozici v době běhu.
 
-- <xref:System.Resources.ResXResourceReader> Třída, která umožňuje načtení prostředků ze souboru XML (. resx).
+- <xref:System.Resources.ResXResourceReader>Třída, která umožňuje načtení prostředků ze souboru XML (. resx).
 
-- <xref:System.Resources.ResourceSet> Třída, která umožňuje načíst prostředky konkrétní jazykové verze bez pozorování náhradních pravidel. Prostředky mohou být uloženy v sestavení nebo samostatném binárním souboru. Resources. Můžete také vyvinout <xref:System.Resources.IResourceReader> implementaci, která umožňuje použít <xref:System.Resources.ResourceSet> třídu k načtení prostředků z jiného zdroje.
+- <xref:System.Resources.ResourceSet>Třída, která umožňuje načíst prostředky konkrétní jazykové verze bez pozorování náhradních pravidel. Prostředky mohou být uloženy v sestavení nebo samostatném binárním souboru. Resources. Můžete také vyvinout <xref:System.Resources.IResourceReader> implementaci, která umožňuje použít <xref:System.Resources.ResourceSet> třídu k načtení prostředků z jiného zdroje.
 
-- <xref:System.Resources.ResXResourceSet> Třída, která umožňuje načíst všechny položky v souboru prostředků XML do paměti.
+- <xref:System.Resources.ResXResourceSet>Třída, která umožňuje načíst všechny položky v souboru prostředků XML do paměti.
 
 ## <a name="see-also"></a>Viz také
 

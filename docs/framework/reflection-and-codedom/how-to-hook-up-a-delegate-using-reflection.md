@@ -1,5 +1,6 @@
 ---
 title: 'Postupy: Připojení delegáta pomocí reflexe'
+description: Podívejte se, jak připojit delegáta pomocí reflexe v rozhraní .NET. Připojení existující metody k události získáním potřebných typů prostřednictvím reflexe.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,34 +11,34 @@ helpviewer_keywords:
 - reflection, adding event-handler delegates
 - delegates [.NET Framework], adding event handlers with reflection
 ms.assetid: 076ee62d-a964-449e-a447-c31b33518b81
-ms.openlocfilehash: d748d9f8bdd0b4d831880548d4aceb1c77a0b0c4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b5d93efd278a53a4e6382f2321918e58ead55899
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79180508"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86865083"
 ---
 # <a name="how-to-hook-up-a-delegate-using-reflection"></a>Postupy: Připojení delegáta pomocí reflexe
-Použijete-li reflexi pro načtení a spuštění sestavení, nemůžete použít funkce `+=` jazyka, jako je operátor jazyka C# nebo [příkaz Visual Basic AddHandler](../../visual-basic/language-reference/statements/addhandler-statement.md) k zapojení událostí. Následující postupy ukazují, jak připojit existující metodu k události tím, že získá všechny nezbytné typy prostřednictvím reflexe a jak vytvořit dynamickou metodu pomocí generování reflexe a připojit ji k události.  
+Použijete-li reflexi pro načtení a spuštění sestavení, nemůžete použít funkce jazyka, jako je operátor jazyka C# `+=` nebo [příkaz Visual Basic AddHandler](../../visual-basic/language-reference/statements/addhandler-statement.md) k zapojení událostí. Následující postupy ukazují, jak připojit existující metodu k události tím, že získá všechny nezbytné typy prostřednictvím reflexe a jak vytvořit dynamickou metodu pomocí generování reflexe a připojit ji k události.  
   
 > [!NOTE]
 > Další způsob, jak připojit delegáta zpracování událostí, naleznete v příkladu kódu pro <xref:System.Reflection.EventInfo.AddEventHandler%2A> metodu <xref:System.Reflection.EventInfo> třídy.  
   
 ### <a name="to-hook-up-a-delegate-using-reflection"></a>Připojení delegáta pomocí reflexe  
   
-1. Načte sestavení, které obsahuje typ, který vyvolává události. Sestavení jsou obvykle načtena pomocí <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> metody. Chcete-li tento příklad jednoduché, je použit odvozený formulář v aktuálním sestavení, takže <xref:System.Reflection.Assembly.GetExecutingAssembly%2A> metoda slouží k načtení aktuálního sestavení.  
+1. Načte sestavení, které obsahuje typ, který vyvolává události. Sestavení jsou obvykle načtena pomocí <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> metody. Chcete-li tento příklad jednoduché, je použit odvozený formulář v aktuálním sestavení, takže <xref:System.Reflection.Assembly.GetExecutingAssembly%2A> Metoda slouží k načtení aktuálního sestavení.  
   
      [!code-cpp[HookUpDelegate#3](../../../samples/snippets/cpp/VS_Snippets_CLR/HookUpDelegate/cpp/source.cpp#3)]
      [!code-csharp[HookUpDelegate#3](../../../samples/snippets/csharp/VS_Snippets_CLR/HookUpDelegate/cs/source.cs#3)]
      [!code-vb[HookUpDelegate#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HookUpDelegate/vb/source.vb#3)]  
   
-2. Získání <xref:System.Type> objektu představujícího typ a vytvoření instance typu. <xref:System.Activator.CreateInstance%28System.Type%29> Metoda je použita v následujícím kódu, protože formulář obsahuje konstruktor bez parametrů. Existuje několik dalších přetížení <xref:System.Activator.CreateInstance%2A> metody, kterou můžete použít, pokud typ, který vytváříte, nemá konstruktor bez parametrů. Nová instance je uložena jako typ <xref:System.Object> pro zachování fiktivního, že pro sestavení není nic známé. (Reflexe umožňuje získat typy v sestavení, aniž byste museli znát jejich názvy předem.)  
+2. Získání <xref:System.Type> objektu představujícího typ a vytvoření instance typu. <xref:System.Activator.CreateInstance%28System.Type%29>Metoda je použita v následujícím kódu, protože formulář obsahuje konstruktor bez parametrů. Existuje několik dalších přetížení <xref:System.Activator.CreateInstance%2A> metody, kterou můžete použít, pokud typ, který vytváříte, nemá konstruktor bez parametrů. Nová instance je uložena jako typ <xref:System.Object> pro zachování fiktivního, že pro sestavení není nic známé. (Reflexe umožňuje získat typy v sestavení, aniž byste museli znát jejich názvy předem.)  
   
      [!code-cpp[HookUpDelegate#4](../../../samples/snippets/cpp/VS_Snippets_CLR/HookUpDelegate/cpp/source.cpp#4)]
      [!code-csharp[HookUpDelegate#4](../../../samples/snippets/csharp/VS_Snippets_CLR/HookUpDelegate/cs/source.cs#4)]
      [!code-vb[HookUpDelegate#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HookUpDelegate/vb/source.vb#4)]  
   
-3. Získat <xref:System.Reflection.EventInfo> objekt reprezentující událost a použít <xref:System.Reflection.EventInfo.EventHandlerType%2A> vlastnost k získání typu delegáta použitého ke zpracování události. V následujícím kódu je získána <xref:System.Reflection.EventInfo> pro <xref:System.Windows.Forms.Control.Click> událost.  
+3. Získat <xref:System.Reflection.EventInfo> objekt reprezentující událost a použít <xref:System.Reflection.EventInfo.EventHandlerType%2A> vlastnost k získání typu delegáta použitého ke zpracování události. V následujícím kódu <xref:System.Reflection.EventInfo> <xref:System.Windows.Forms.Control.Click> je získána pro událost.  
   
      [!code-cpp[HookUpDelegate#5](../../../samples/snippets/cpp/VS_Snippets_CLR/HookUpDelegate/cpp/source.cpp#5)]
      [!code-csharp[HookUpDelegate#5](../../../samples/snippets/csharp/VS_Snippets_CLR/HookUpDelegate/cs/source.cs#5)]
@@ -49,7 +50,7 @@ Použijete-li reflexi pro načtení a spuštění sestavení, nemůžete použí
      [!code-csharp[HookUpDelegate#6](../../../samples/snippets/csharp/VS_Snippets_CLR/HookUpDelegate/cs/source.cs#6)]
      [!code-vb[HookUpDelegate#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HookUpDelegate/vb/source.vb#6)]  
   
-5. Vytvořte instanci delegáta pomocí <xref:System.Delegate.CreateDelegate%2A> metody. Tato metoda je statická (`Shared` v Visual Basic), proto je nutné zadat typ delegáta. Použití přetížení <xref:System.Delegate.CreateDelegate%2A> , které přijímá, <xref:System.Reflection.MethodInfo> je doporučeno.  
+5. Vytvořte instanci delegáta pomocí <xref:System.Delegate.CreateDelegate%2A> metody. Tato metoda je statická ( `Shared` v Visual Basic), proto je nutné zadat typ delegáta. Použití přetížení <xref:System.Delegate.CreateDelegate%2A> , které přijímá, <xref:System.Reflection.MethodInfo> je doporučeno.  
   
      [!code-cpp[HookUpDelegate#7](../../../samples/snippets/cpp/VS_Snippets_CLR/HookUpDelegate/cpp/source.cpp#7)]
      [!code-csharp[HookUpDelegate#7](../../../samples/snippets/csharp/VS_Snippets_CLR/HookUpDelegate/cs/source.cs#7)]
@@ -70,9 +71,9 @@ Použijete-li reflexi pro načtení a spuštění sestavení, nemůžete použí
 <a name="procedureSection1"></a>
 ### <a name="to-generate-an-event-handler-at-run-time-by-using-a-dynamic-method"></a>Generování obslužné rutiny události v době běhu pomocí dynamické metody  
   
-1. Metody obslužné rutiny události mohou být generovány v době běhu pomocí zjednodušených dynamických metod a generování reflexe. Chcete-li vytvořit obslužnou rutinu události, budete potřebovat návratový typ a typy parametrů delegáta. Ty lze získat prozkoumáním `Invoke` metody delegáta. Následující kód používá metody `GetDelegateReturnType` a `GetDelegateParameterTypes` k získání těchto informací. Kód pro tyto metody lze nalézt v části příklad dále v tomto tématu.  
+1. Metody obslužné rutiny události mohou být generovány v době běhu pomocí zjednodušených dynamických metod a generování reflexe. Chcete-li vytvořit obslužnou rutinu události, budete potřebovat návratový typ a typy parametrů delegáta. Ty lze získat prozkoumáním metody delegáta `Invoke` . Následující kód používá `GetDelegateReturnType` `GetDelegateParameterTypes` metody a k získání těchto informací. Kód pro tyto metody lze nalézt v části příklad dále v tomto tématu.  
   
-     Není nutné pojmenovat <xref:System.Reflection.Emit.DynamicMethod>, aby bylo možné použít prázdný řetězec. V následujícím kódu poslední argument přidružuje dynamickou metodu k aktuálnímu typu, což dává delegátovi přístup ke všem veřejným a soukromým členům `Example` třídy.  
+     Není nutné pojmenovat <xref:System.Reflection.Emit.DynamicMethod> , aby bylo možné použít prázdný řetězec. V následujícím kódu poslední argument přidružuje dynamickou metodu k aktuálnímu typu, což dává delegátovi přístup ke všem veřejným a soukromým členům `Example` třídy.  
   
      [!code-cpp[HookUpDelegate#9](../../../samples/snippets/cpp/VS_Snippets_CLR/HookUpDelegate/cpp/source.cpp#9)]
      [!code-csharp[HookUpDelegate#9](../../../samples/snippets/csharp/VS_Snippets_CLR/HookUpDelegate/cs/source.cs#9)]
@@ -84,7 +85,7 @@ Použijete-li reflexi pro načtení a spuštění sestavení, nemůžete použí
      [!code-csharp[HookUpDelegate#10](../../../samples/snippets/csharp/VS_Snippets_CLR/HookUpDelegate/cs/source.cs#10)]
      [!code-vb[HookUpDelegate#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HookUpDelegate/vb/source.vb#10)]  
   
-3. Dokončete dynamickou metodu voláním <xref:System.Reflection.Emit.DynamicMethod.CreateDelegate%2A> její metody. Pomocí `add` přístupového objektu přidejte delegáta do seznamu vyvolání pro událost.  
+3. Dokončete dynamickou metodu voláním její <xref:System.Reflection.Emit.DynamicMethod.CreateDelegate%2A> metody. Pomocí `add` přístupového objektu přidejte delegáta do seznamu vyvolání pro událost.  
   
      [!code-cpp[HookUpDelegate#11](../../../samples/snippets/cpp/VS_Snippets_CLR/HookUpDelegate/cpp/source.cpp#11)]
      [!code-csharp[HookUpDelegate#11](../../../samples/snippets/csharp/VS_Snippets_CLR/HookUpDelegate/cs/source.cs#11)]

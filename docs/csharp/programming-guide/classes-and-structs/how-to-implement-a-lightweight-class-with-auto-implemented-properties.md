@@ -1,29 +1,30 @@
 ---
-title: Jak implementovat zjednodušenou třídu s automaticky implementovanými vlastnostmi - C# Programming Guide
+title: Jak implementovat odlehčenou třídu s automaticky implementovanými vlastnostmi – Průvodce programováním v C#
+description: Naučte se, jak vytvořit neměnné prosté třídy v jazyce C#, která zapouzdřuje automaticky implementované vlastnosti. Existují dva způsoby implementace.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - auto-implemented properties [C#]
 - properties [C#], auto-implemented
 ms.assetid: 1dc5a8ad-a4f7-4f32-8506-3fc6d8c8bfed
-ms.openlocfilehash: 6d121f6be768d41d22ea01d871662913b2daae2b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: de9034772bad1f28e27abe01595309dd84ddc3e7
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79170270"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86864563"
 ---
-# <a name="how-to-implement-a-lightweight-class-with-auto-implemented-properties-c-programming-guide"></a>Jak implementovat zjednodušenou třídu s automaticky implementovanými vlastnostmi (Průvodce programováním jazyka C#)
+# <a name="how-to-implement-a-lightweight-class-with-auto-implemented-properties-c-programming-guide"></a>Jak implementovat odlehčenou třídu s automaticky implementovanými vlastnostmi (Průvodce programováním v C#)
 
-Tento příklad ukazuje, jak vytvořit neměnné zjednodušené třídy, která slouží pouze k zapouzdření sadu automaticky implementované vlastnosti. Použijte tento druh konstrukce namísto struktury, když je nutné použít sémantiku typu odkazu.
+Tento příklad ukazuje, jak vytvořit neproměnlivou odlehčenou třídu, která slouží pouze k zapouzdření sady automaticky implementovaných vlastností. Použijte tento druh konstrukce namísto struktury, pokud je nutné použít sémantiku typu reference.
 
-Neměnnou vlastnost můžete vytvořit dvěma způsoby:
+Neměnné vlastnosti můžete vytvořit dvěma způsoby:
 
-- Můžete deklarovat [nastavit](../../language-reference/keywords/set.md) přistupující ho jako [soukromé](../../language-reference/keywords/private.md).  Vlastnost je pouze settable v rámci typu, ale je neměnné pro spotřebitele.
+- Přístupový objekt [set](../../language-reference/keywords/set.md) můžete deklarovat jako [soukromý](../../language-reference/keywords/private.md).  Vlastnost je nastavena pouze v rámci typu, ale je neměnná pro příjemce.
 
-  Při deklarování privátní `set` ho přistupujícího objektu nelze použít inicializační objekt inicializovat vlastnost. Je nutné použít konstruktor nebo metodu výroby.
-- Můžete deklarovat pouze [get](../../language-reference/keywords/get.md) přistupující objekt, který umožňuje vlastnost neměnné všude s výjimkou konstruktoru typu.
+  Při deklaraci privátního `set` přístupového objektu nemůžete k inicializaci vlastnosti použít inicializátor objektu. Je nutné použít konstruktor nebo metodu Factory.
+- Můžete deklarovat pouze přistupující objekt [Get](../../language-reference/keywords/get.md) , který způsobí, že vlastnost není proměnlivá všude s výjimkou v konstruktoru typu.
 
-Následující příklad ukazuje, jak se vlastnost s pouze get accessor liší než s get a private set.
+Následující příklad ukazuje, jak se vlastnost s přístupujícím objektem Get liší od typu s get a soukromou sadou.
 
 ```csharp
 class Contact
@@ -48,7 +49,7 @@ class Contact
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje dva způsoby implementace neměnné třídy, která má automaticky implementované vlastnosti. Každý způsob deklaruje jednu z vlastností s privátní `set` a jednu z vlastností s `get` pouze.  První třída používá konstruktor pouze k inicializaci vlastností a druhá třída používá statickou metodu factory, která volá konstruktor.
+Následující příklad ukazuje dva způsoby, jak implementovat neměnitelnou třídu, která má automaticky implementované vlastnosti. Každý způsob deklaruje jednu vlastnost s vlastností Private `set` a jedna z vlastností `get` pouze.  První třída používá konstruktor pouze k inicializaci vlastností a druhá třída používá statickou metodu objektu pro vytváření, která volá konstruktor.
 
 ```csharp
 // This class is immutable. After an object is created,
@@ -143,10 +144,10 @@ public class Program
 */
 ```
 
-Kompilátor vytvoří záložní pole pro každou automaticky implementovanou vlastnost. Pole nejsou přístupná přímo ze zdrojového kódu.
+Kompilátor vytvoří zálohovací pole pro každou automaticky implementovanou vlastnost. Pole nejsou k dispozici přímo ze zdrojového kódu.
 
 ## <a name="see-also"></a>Viz také
 
 - [Vlastnosti](./properties.md)
-- [Struct](../../language-reference/builtin-types/struct.md)
+- [nemají](../../language-reference/builtin-types/struct.md)
 - [Inicializátory objektu a kolekce](./object-and-collection-initializers.md)

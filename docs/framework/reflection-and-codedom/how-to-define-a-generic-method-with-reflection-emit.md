@@ -1,5 +1,6 @@
 ---
 title: 'Postupy: Definování obecné metody pomocí generování reflexe'
+description: Definování obecné metody pomocí generování reflexe. V jednom příkladu se vytvoří obecná metoda se dvěma parametry typu. Druhý příklad ukazuje, jak vygenerovat tělo metody.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - reflection emit, generic methods
 - generics [.NET Framework], dynamic types
 ms.assetid: 93892fa4-90b3-4ec4-b147-4bec9880de2b
-ms.openlocfilehash: d16f6728b01583fe3ffb8d892522f3892444c537
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 3b85fb480e5862daa3b2800f75392adbe92348f2
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73130175"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86865135"
 ---
 # <a name="how-to-define-a-generic-method-with-reflection-emit"></a>Postupy: Definování obecné metody pomocí generování reflexe
 
@@ -34,7 +35,7 @@ Třetí postup ukazuje, jak zavolat obecnou metodu.
     [!code-csharp[GenericMethodHowTo#20](../../../samples/snippets/csharp/VS_Snippets_CLR/GenericMethodHowTo/CS/source.cs#20)]
     [!code-vb[GenericMethodHowTo#20](../../../samples/snippets/visualbasic/VS_Snippets_CLR/GenericMethodHowTo/VB/source.vb#20)]
 
-2. Definujte dynamické sestavení a dynamický modul obsahující typ, ke kterému tato obecná metoda patří. V tomto případě má sestavení pouze jeden modul s názvem `DemoMethodBuilder1` a název tohoto modulu je stejný jako název sestavení s příponou souboru. V tomto příkladu je sestavení uloženo na disk a také spuštěno, takže je zadáno <xref:System.Reflection.Emit.AssemblyBuilderAccess.RunAndSave?displayProperty=nameWithType>. Nástroj [Ildasm. exe (IL Disassembler)](../tools/ildasm-exe-il-disassembler.md) můžete použít k prohlédnutí souboru DemoMethodBuilder1. dll a k jeho porovnání do jazyka MSIL (Microsoft Intermediate Language) pro metodu, která je znázorněna v kroku 1.
+2. Definujte dynamické sestavení a dynamický modul obsahující typ, ke kterému tato obecná metoda patří. V tomto případě má sestavení pouze jeden modul s názvem `DemoMethodBuilder1` a název tohoto modulu je stejný jako název sestavení s příponou souboru. V tomto příkladu je sestavení uloženo na disk a také spuštěno, takže je zadáno <xref:System.Reflection.Emit.AssemblyBuilderAccess.RunAndSave?displayProperty=nameWithType>. Pomocí [Ildasm.exe (IL Disassembler)](../tools/ildasm-exe-il-disassembler.md) můžete prozkoumávat DemoMethodBuilder1.dll a porovnat je s jazykem MSIL (Microsoft Intermediate Language) pro metodu, která je znázorněna v kroku 1.
 
     [!code-csharp[GenericMethodHowTo#2](../../../samples/snippets/csharp/VS_Snippets_CLR/GenericMethodHowTo/CS/source.cs#2)]
     [!code-vb[GenericMethodHowTo#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/GenericMethodHowTo/VB/source.vb#2)]
@@ -88,7 +89,7 @@ Třetí postup ukazuje, jak zavolat obecnou metodu.
 
 ### <a name="to-emit-the-method-body"></a>Vygenerování těla metody
 
-1. Získejte generátor kódu a deklarujte místní proměnné a popisky. Metoda <xref:System.Reflection.Emit.ILGenerator.DeclareLocal%2A> se používá při deklarování lokálních proměnných. `Factory` Metoda má `retVal` čtyři místní proměnné: pro uchování nového `TOutput` , který je vrácen metodou, `ic` pro uchování `TOutput` při přetypování do `ICollection(Of TInput)` (`ICollection<TInput>` v jazyce C#) `input` pro uchování vstupního pole `TInput` objektů a `index` pro iteraci v poli. Tato metoda má také dva popisky, jeden pro vstup do smyčky (`enterLoop`) a jeden pro začátek smyčky (`loopAgain`), definované pomocí metody <xref:System.Reflection.Emit.ILGenerator.DefineLabel%2A>.
+1. Získejte generátor kódu a deklarujte místní proměnné a popisky. Metoda <xref:System.Reflection.Emit.ILGenerator.DeclareLocal%2A> se používá při deklarování lokálních proměnných. `Factory`Metoda má čtyři místní proměnné: `retVal` pro uchování nového `TOutput` , který je vrácen metodou, `ic` pro uchování `TOutput` při přetypování do `ICollection(Of TInput)` ( `ICollection<TInput>` v jazyce C#) `input` pro uchování vstupního pole `TInput` objektů a `index` pro iteraci v poli. Tato metoda má také dva popisky, jeden pro vstup do smyčky (`enterLoop`) a jeden pro začátek smyčky (`loopAgain`), definované pomocí metody <xref:System.Reflection.Emit.ILGenerator.DefineLabel%2A>.
 
     První věc, kterou metoda provede, je načtení jejího argumentu pomocí operačního kódu <xref:System.Reflection.Emit.OpCodes.Ldarg_0> a jeho uložení do místní proměnné `input` pomocí operačního kódu <xref:System.Reflection.Emit.OpCodes.Stloc_S>.
 
@@ -154,7 +155,7 @@ Následující příklad kódu vytvoří neobecný typ `DemoType` s obecnou meto
 
 Tato metoda má jeden formální parametr, což je pole `TInput`. Metoda vrací instanci typu `TOutput`, která obsahuje všechny prvky vstupního pole. Parametr `TOutput` může být libovolný typ obecné kolekce, která implementuje obecné rozhraní <xref:System.Collections.Generic.ICollection%601>.
 
-Při spuštění kódu je dynamické sestavení uloženo jako DemoGenericMethod1. dll a lze jej prozkoumat pomocí programu [Ildasm. exe (IL Disassembler)](../tools/ildasm-exe-il-disassembler.md).
+Při spuštění kódu je dynamické sestavení uloženo jako DemoGenericMethod1.dll a lze jej prozkoumat pomocí [Ildasm.exe (IL Disassembler)](../tools/ildasm-exe-il-disassembler.md).
 
 > [!NOTE]
 > Vhodný způsob, jak se naučit generovat kód, je napsat program v jazyce Visual Basic, C# nebo Visual C++ provádějící úlohy, které chcete vygenerovat, a použít disassembler ke kontrole kódu produkovaného kompilátorem jazyka MSIL.

@@ -1,16 +1,17 @@
 ---
 title: Implicitně typované lokální proměnné – Průvodce programováním v C#
+description: Klíčové slovo var v jazyce C# instruuje kompilátor, aby odvodí typ proměnné z výrazu na pravé straně příkazu inicializace.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - implicitly-typed local variables [C#]
 - var [C#]
 ms.assetid: b9218fb2-ef5d-4814-8a8e-2bc29b0bbc9b
-ms.openlocfilehash: 842f73b7af9671157495df961f5db22702ae897e
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 6badb8588dedda80227ab38bee027cf2890c8672
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84240704"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86864212"
 ---
 # <a name="implicitly-typed-local-variables-c-programming-guide"></a>Implicitně typované lokální proměnné (Průvodce programováním v C#)
 
@@ -97,7 +98,7 @@ Použití `var` pomáhá zjednodušit váš kód, ale jeho použití by mělo b�
 - [Jak používat implicitně typované lokální proměnné a pole ve výrazu dotazu](how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression.md)
 - [Anonymní typy](anonymous-types.md)
 - [Inicializátory objektu a kolekce](object-and-collection-initializers.md)
-- [Proměnná](../../language-reference/keywords/var.md)
+- [var](../../language-reference/keywords/var.md)
 - [LINQ v jazyku C#](../../linq/index.md)
 - [LINQ (jazykově integrovaný dotaz)](../../linq/index.md)
 - [pro](../../language-reference/keywords/for.md)

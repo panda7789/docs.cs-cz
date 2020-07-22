@@ -10,12 +10,12 @@ helpviewer_keywords:
 - cross-references [C#]
 - see C# XML tag
 ms.assetid: 0200de01-7e2f-45c4-9094-829d61236383
-ms.openlocfilehash: 0f10feb0931c6d38c817fdecb925f68d439abb59
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 731e42a6d4d354b043a56dbe150bb03a693a9454
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287243"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86863783"
 ---
 # <a name="see-c-programming-guide"></a>\<see>(Průvodce programováním v C#)
 
@@ -33,7 +33,7 @@ ms.locfileid: "84287243"
 
 ## <a name="remarks"></a>Poznámky
 
-`<see>`Značka umožňuje zadat odkaz v rámci textu. Použijte [\<seealso>](./seealso.md) k označení, že text by měl být umístěn v části Viz také. Pomocí [atributu cref](./cref-attribute.md) můžete vytvořit interní hypertextové odkazy na stránky dokumentace pro prvky kódu.
+`<see>`Značka umožňuje zadat odkaz v rámci textu. Použijte [\<seealso>](./seealso.md) k označení, že text by měl být umístěn v části Viz také. Pomocí [atributu cref](./cref-attribute.md) můžete vytvořit interní hypertextové odkazy na stránky dokumentace pro prvky kódu. Také ``href`` je platný atribut, který bude fungovat jako hypertextový odkaz.
 
 Zkompilujte s [-doc](../../language-reference/compiler-options/doc-compiler-option.md) a zpracujte komentáře k dokumentaci do souboru.
 

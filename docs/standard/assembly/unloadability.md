@@ -1,108 +1,108 @@
 ---
 title: Jak se používá a ladí funkce zrušení načtení sestavení v .NET Core
-description: Zjistěte, jak používat sběratelské AssemblyLoadContext pro načítání a uvolňování spravovaných sestavení a jak ladit problémy bránící úspěchu uvolnění.
+description: Naučte se používat kolekční AssemblyLoadContext pro načítání a uvolňování spravovaných sestavení a jak ladit problémy zabraňující úspěšnému uvolnění.
 author: janvorli
 ms.author: janvorli
 ms.date: 02/05/2019
-ms.openlocfilehash: 267c2209556b66ab3541c9c79c99d7eceb2024da
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9d1f604816dcbd7a84a3692b3cfd24481532789a
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78159738"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86865343"
 ---
 # <a name="how-to-use-and-debug-assembly-unloadability-in-net-core"></a>Jak se používá a ladí funkce zrušení načtení sestavení v .NET Core
 
-Počínaje rozhraním .NET Core 3.0 je podporována možnost načíst a později uvolnit sadu sestavení. V rozhraní .NET Framework byly k tomuto účelu použity vlastní domény aplikací, ale .NET Core podporuje jenom jednu výchozí doménu aplikace.
+Počínaje rozhraním .NET Core 3,0 je podporována možnost načíst a později uvolnit sadu sestavení. V .NET Framework se pro tento účel používaly vlastní domény aplikací, ale .NET Core podporuje jenom jednu výchozí doménu aplikace.
 
-Rozhraní .NET Core 3.0 a novější <xref:System.Runtime.Loader.AssemblyLoadContext>verze podporují možnost uvolnění prostřednictvím . Sadu sestavení můžete načíst do sběratelské , `AssemblyLoadContext`spustit metody v nich nebo je `AssemblyLoadContext`pouze zkontrolovat pomocí odrazu a nakonec uvolnit . To uvolní sestavení naložené `AssemblyLoadContext`do .
+.NET Core 3,0 a novější verze podporují odinstalaci prostřednictvím <xref:System.Runtime.Loader.AssemblyLoadContext> . Můžete načíst sadu sestavení do kolekční `AssemblyLoadContext` , provést v nich metody nebo je pouze zkontrolovat pomocí reflexe a nakonec uvolnit `AssemblyLoadContext` . Tím se uvolní sestavení načtená do `AssemblyLoadContext` .
 
-Existuje jeden pozoruhodný rozdíl mezi uvolněnípomocí `AssemblyLoadContext` a používáním AppDomains. S AppDomains uvolnění je vynuceno. V době uvolnění jsou všechna vlákna spuštěná v cílové appdomain přerušena, spravované objekty COM vytvořené v cílové službě AppDomain jsou zničeny a tak dále. S `AssemblyLoadContext`, vykládka je "spolupráce". Volání <xref:System.Runtime.Loader.AssemblyLoadContext.Unload%2A?displayProperty=nameWithType> metody pouze iniciuje uvolnění. Vykládka končí po:
+Existuje jeden zajímavosti rozdíl mezi uvolňováním pomocí `AssemblyLoadContext` a používáním doménových aplikací. S objekty třídy AppDomains je uvolnění vynuceno. V době nenačtení jsou všechna vlákna spuštěná v cílové doméně AppDomain přerušena. spravované objekty COM vytvořené v cílové doméně AppDomain budou zničeny a tak dále. S `AssemblyLoadContext` , uvolnění je "kooperativní". Volání <xref:System.Runtime.Loader.AssemblyLoadContext.Unload%2A?displayProperty=nameWithType> metody pouze inicializuje uvolnění. Uvolnění se dokončí po:
 
-- Žádná vlákna mají metody z sestavení `AssemblyLoadContext` načtených do jejich zásobníků volání.
-- Žádný z typů ze sestavení načtených do `AssemblyLoadContext`instancí těchto typů a samotných sestavení není odkazován:
-  - Odkazy mimo písmeno `AssemblyLoadContext`a) s<xref:System.WeakReference> výjimkou <xref:System.WeakReference%601>slabých odkazů ( nebo ).
-  - Silné popisovače systému uvolňování paměti[(GCHandleType.Normal](xref:System.Runtime.InteropServices.GCHandleType.Normal) nebo [GCHandleType.Pinned)](xref:System.Runtime.InteropServices.GCHandleType.Pinned) `AssemblyLoadContext`z vnitřníi i vnější strany .
+- Žádná vlákna neobsahují metody ze sestavení načtených do v `AssemblyLoadContext` jejich zásobníkech volání.
+- Žádný z typů ze sestavení načtených do `AssemblyLoadContext` , instancí těchto typů a samotná sestavení jsou odkazována pomocí:
+  - Odkazy mimo `AssemblyLoadContext` , s výjimkou slabých odkazů ( <xref:System.WeakReference> nebo <xref:System.WeakReference%601> ).
+  - Silné popisovače uvolňování paměti (GC) ([GCHandleType. Normal](xref:System.Runtime.InteropServices.GCHandleType.Normal) nebo [GCHandleType. připnutý](xref:System.Runtime.InteropServices.GCHandleType.Pinned)) z uvnitř i vně `AssemblyLoadContext` .
 
-## <a name="use-collectible-assemblyloadcontext"></a>Použití sběratelského kontextu AssemblyLoadContext
+## <a name="use-collectible-assemblyloadcontext"></a>Použití kolekční AssemblyLoadContext
 
-Tato část obsahuje podrobný podrobný kurz, který ukazuje jednoduchý způsob, jak načíst `AssemblyLoadContext`aplikaci .NET Core do sběratelské položky , spustit vstupní bod a potom ji uvolnit. Kompletní ukázku najdete [https://github.com/dotnet/samples/tree/master/core/tutorials/Unloading](https://github.com/dotnet/samples/tree/master/core/tutorials/Unloading)na adrese .
+Tato část obsahuje podrobný návod, který ukazuje jednoduchý způsob, jak načíst aplikaci .NET Core do kolekční `AssemblyLoadContext` , spustit její vstupní bod a pak ji uvolnit. Úplnou ukázku najdete na adrese [https://github.com/dotnet/samples/tree/master/core/tutorials/Unloading](https://github.com/dotnet/samples/tree/master/core/tutorials/Unloading) .
 
-### <a name="create-a-collectible-assemblyloadcontext"></a>Vytvoření sběratelského kontextu AssemblyLoadContext
+### <a name="create-a-collectible-assemblyloadcontext"></a>Vytvoření kolekční AssemblyLoadContext
 
-Je třeba odvodit <xref:System.Runtime.Loader.AssemblyLoadContext> třídu <xref:System.Runtime.Loader.AssemblyLoadContext.Load%2A?displayProperty=nameWithType> z a přetížení jeho metody. Tato metoda řeší odkazy na všechna sestavení, která jsou závislosti `AssemblyLoadContext`sestavení načtendo tohoto .
+Musíte třídu odvodit z rozhraní <xref:System.Runtime.Loader.AssemblyLoadContext> a přepsat její <xref:System.Runtime.Loader.AssemblyLoadContext.Load%2A?displayProperty=nameWithType> metodu. Tato metoda překládá odkazy na všechna sestavení, která jsou závislá na sestaveních, která jsou v takovém načtena `AssemblyLoadContext` .
 
-Následující kód je příkladem nejjednodušší vlastní `AssemblyLoadContext`:
+Následující kód je příkladem nejjednoduššího vlastního `AssemblyLoadContext` :
 
 [!code-csharp[Simple custom AssemblyLoadContext](~/samples/snippets/standard/assembly/unloading/simple_example.cs#1)]
 
-Jak můžete vidět, `Load` metoda `null`vrátí . To znamená, že všechna sestavení závislostí jsou načtena do výchozího kontextu a nový kontext obsahuje pouze sestavení, která jsou do něj explicitně načtena.
+Jak vidíte, `Load` Metoda vrátí `null` . To znamená, že všechna sestavení závislostí jsou načtena do výchozího kontextu a nový kontext obsahuje pouze sestavení, která jsou do něj explicitně načtena.
 
-Pokud chcete načíst některé nebo všechny závislosti `AssemblyLoadContext` do příliš, `AssemblyDependencyResolver` můžete `Load` použít v metodě. Překládá `AssemblyDependencyResolver` názvy sestavení na absolutní cesty souboru sestavení. Překladač používá soubor *.deps.json* a soubory sestavení v adresáři hlavního sestavení načteného do kontextu.
+Pokud chcete některé nebo všechny závislosti načíst do `AssemblyLoadContext` , můžete použít `AssemblyDependencyResolver` v `Load` metodě. `AssemblyDependencyResolver`Přeloží názvy sestavení na absolutní cesty k souboru sestavení. Překladač používá *.deps.js* v souborech a sestaveních v adresáři hlavního sestavení načteného do kontextu.
 
 [!code-csharp[Advanced custom AssemblyLoadContext](~/samples/snippets/standard/assembly/unloading/complex_assemblyloadcontext.cs)]
 
-### <a name="use-a-custom-collectible-assemblyloadcontext"></a>Použití vlastního sběratelského objektu AssemblyLoadContext
+### <a name="use-a-custom-collectible-assemblyloadcontext"></a>Použít vlastní AssemblyLoadContext kolekční
 
-Tato část předpokládá, že `TestAssemblyLoadContext` se používá jednodušší verze programu.
+V této části se předpokládá, že se používá zjednodušená verze `TestAssemblyLoadContext` .
 
-Můžete vytvořit instanci `AssemblyLoadContext` vlastní a načíst sestavení do něj takto:
+Můžete vytvořit instanci vlastního `AssemblyLoadContext` a načíst sestavení do tohoto sestavení následujícím způsobem:
 
 [!code-csharp[Part 1](~/samples/snippets/standard/assembly/unloading/simple_example.cs#3)]
 
-Pro každou sestavu, na kterou odkazuje `TestAssemblyLoadContext.Load` načtené sestavení, `TestAssemblyLoadContext` je metoda volána tak, aby se mohla rozhodnout, odkud sestavení získá. V našem případě `null` se vrátí k označení, že by měla být načtena do výchozího kontextu z umístění, která runtime používá k načtení sestavení ve výchozím nastavení.
+Pro každé sestavení odkazované načteným sestavením `TestAssemblyLoadContext.Load` je metoda volána, aby bylo `TestAssemblyLoadContext` možné rozhodnout, odkud se má sestavení získat. V našem případě se vrátí `null` k indikaci, že by měl být načten do výchozího kontextu z umístění, která modul runtime používá k načtení sestavení ve výchozím nastavení.
 
-Nyní, když bylo načteno sestavení, můžete z něj spustit metodu. Spusťte metodu: `Main`
+Nyní, když bylo sestavení načteno, lze z něj spustit metodu. Spusťte `Main` metodu:
 
 [!code-csharp[Part 2](~/samples/snippets/standard/assembly/unloading/simple_example.cs#4)]
 
-Po `Main` vrátí metoda, můžete zahájit uvolnění `Unload` buď voláním `AssemblyLoadContext` metody na vlastní nebo zbavit `AssemblyLoadContext`odkazu, který máte na :
+Až se `Main` Metoda vrátí, můžete iniciovat uvolnění voláním `Unload` metody ve vlastním nebo odložení `AssemblyLoadContext` reference, kterou máte `AssemblyLoadContext` :
 
 [!code-csharp[Part 3](~/samples/snippets/standard/assembly/unloading/simple_example.cs#5)]
 
-To je dostačující k uvolnění testovacího sestavení. Pojďme vlastně dát to všechno do samostatné non-inlineable `TestAssemblyLoadContext`metoda `Assembly`zajistit, aby , , a `MethodInfo` `Assembly.EntryPoint`() nelze udržet naživu pomocí zásobníku slot odkazy (real- nebo JIT-představil místní). To by `TestAssemblyLoadContext` mohlo udržet naživu a zabránit vyložit.
+To je dostačující pro uvolnění testovacího sestavení. Pojďme to všechno využít k samostatné nestandardní metodě, aby se zajistilo, že se `TestAssemblyLoadContext` , `Assembly` a `MethodInfo` (a `Assembly.EntryPoint` ) nedají udržovat naživu pomocí odkazů na slot zásobníku (lokálních hodnot Real-nebo JIT). To může zůstat ponecháno `TestAssemblyLoadContext` a zabránit uvolnění.
 
-Také vrátit slabý odkaz `AssemblyLoadContext` na tak, aby můžete použít později ke zjištění dokončení uvolnění.
+Také vrátí slabý odkaz na, `AssemblyLoadContext` aby jej bylo možné použít později ke zjištění dokončení uvolnění.
 
 [!code-csharp[Part 4](~/samples/snippets/standard/assembly/unloading/simple_example.cs#2)]
 
-Nyní můžete spustit tuto funkci k načtení, spuštění a uvolnění sestavení.
+Nyní můžete tuto funkci spustit, chcete-li načíst, spustit a uvolnit sestavení.
 
 [!code-csharp[Part 5](~/samples/snippets/standard/assembly/unloading/simple_example.cs#6)]
 
-Uvolnění však není dokončena okamžitě. Jak již bylo zmíněno, spoléhá na uvolňování shromažďovat všechny objekty z testovacího sestavení. V mnoha případech není nutné čekat na dokončení uvolnění. Existují však případy, kdy je užitečné vědět, že uvolnění bylo dokončeno. Můžete například odstranit soubor sestavení, který byl načten `AssemblyLoadContext` do vlastní z disku. V takovém případě lze použít následující fragment kódu. Aktivuje uvolňování paměti a čeká na čekající finalizační metody ve `AssemblyLoadContext` `null`smyčce, dokud není nastaven slabý odkaz na vlastní , což znamená, že byl shromážděn cílový objekt. Ve většině případů je vyžadován pouze jeden průchod smyčkou. Však pro složitější případy, kde objekty `AssemblyLoadContext` vytvořené kód spuštěnv mají finalizační metody, může být zapotřebí další průchody.
+Uvolnění se ale okamžitě nedokončilo. Jak už jsme uvedli, spoléhá se na systém uvolňování paměti ke shromáždění všech objektů z testovacího sestavení. V mnoha případech není nutné čekat na dokončení uvolnění. Existují však případy, kdy je užitečné zjistit, že uvolnění bylo dokončeno. Například může být vhodné odstranit soubor sestavení, který byl načten do vlastního `AssemblyLoadContext` z disku. V takovém případě lze použít následující fragment kódu. Aktivuje uvolňování paměti a čeká na čekající finalizační metody ve smyčce, dokud není slabý odkaz na vlastní `AssemblyLoadContext` nastavený na hodnotu `null` , což značí, že byl cílový objekt shromážděn. Ve většině případů je zapotřebí pouze jeden průchod smyčkou. Nicméně pro složitější případy, kdy objekty vytvořené kódem spuštěným v nástroji `AssemblyLoadContext` mají finalizační metody, mohou být potřeba další průchody.
 
 [!code-csharp[Part 6](~/samples/snippets/standard/assembly/unloading/simple_example.cs#7)]
 
-### <a name="the-unloading-event"></a>Událost Uvolnění
+### <a name="the-unloading-event"></a>Událost uvolnění
 
-V některých případech může být nezbytné pro `AssemblyLoadContext` kód načtendo vlastní provést některé vyčištění při zahájení uvolnění. Může například potřebovat zastavit vlákna nebo vyčistit silné úchyty GC. Událost `Unloading` lze použít v takových případech. Obslužná rutina, která provádí nezbytné vyčištění může být připojen k této události.
+V některých případech může být nutné, aby kód byl načten do vlastního `AssemblyLoadContext` pro provedení nějakého vyčištění při zahájení uvolnění. Například může být nutné zastavit vlákna nebo vyčistit silné obslužné rutiny GC. `Unloading`V takových případech je možné událost použít. Obslužná rutina, která provede potřebné vyčištění, může být do této události zapojování.
 
-### <a name="troubleshoot-unloadability-issues"></a>Poradce při potížích s vyprodučností
+### <a name="troubleshoot-unloadability-issues"></a>Řešení potíží s nezátěží
 
-Vzhledem k kooperativní povaze vykládky, je snadné zapomenout na odkazy, které `AssemblyLoadContext` mohou být udržet věci ve sběratelství naživu a brání vykládce. Zde je přehled entit (některé z nich non-zřejmé), které mohou obsahovat odkazy:
+Z důvodu kooperativního charakteru uvolňování je snadné zapomenout odkazy, které by mohly udržet věci ve kolekční `AssemblyLoadContext` Alive a bránit uvolnění. Tady je souhrn entit (některé z nich není zřejmé), které můžou obsahovat odkazy:
 
-- Pravidelné odkazy držené mimo sběratelskou `AssemblyLoadContext` položku, které jsou uloženy v zásobníku slotu nebo registru procesoru (místní metoda, buď explicitně vytvořené uživatelským kódem nebo implicitně kompilátorem just-in-time (JIT), statickou proměnnou nebo silným popisovačem GC (připnutí) a přechodně odkazujícím na:
-  - Sestava naložená do `AssemblyLoadContext`sběratelského .
+- Regulární odkazy držené mimo kolekční `AssemblyLoadContext` , které jsou uložené v zásobníku zásobníku nebo v registru procesoru (místní metody, buď explicitně vytvořené kódem uživatele nebo implicitně pomocí kompilátoru JIT (just-in-time)), statické proměnné nebo silného (připnutí) popisovače GC a umožňují průjezdně ukazovat na:
+  - Sestavení načtené do kolekční `AssemblyLoadContext` .
   - Typ z takového sestavení.
   - Instance typu z takového sestavení.
-- Vlákna spuštěnkód ze sestavení načtendo `AssemblyLoadContext`sběratelské .
-- Instance vlastních nesběratelských `AssemblyLoadContext` typů vytvořených uvnitř `AssemblyLoadContext`sběratelského souboru .
-- Čekající <xref:System.Threading.RegisteredWaitHandle> instance s zpětná volání nastavená `AssemblyLoadContext`na metody ve vlastní .
+- Vlákna spouštějící kód ze sestavení načteného do kolekční `AssemblyLoadContext` .
+- Instance vlastních, nekolekčních `AssemblyLoadContext` typů vytvořených v kolekční `AssemblyLoadContext` .
+- Nedokončené <xref:System.Threading.RegisteredWaitHandle> instance s zpětnými voláními nastavenými na metody v vlastní `AssemblyLoadContext` .
 
 > [!TIP]
-> Odkazy na objekty, které jsou uloženy v zásobníku sloty `AssemblyLoadContext` nebo registrů procesorů a které by mohly zabránit uvolnění může dojít v následujících situacích:
+> Odkazy na objekty, které jsou uloženy v paticích zásobníku nebo v registrech procesorů a které by mohly zabránit uvolnění `AssemblyLoadContext` může nastat v následujících situacích:
 >
-> - Při volání funkce výsledky jsou předány přímo do jiné funkce, i když neexistuje žádná uživatelská vytvořená místní proměnná.
-> - Při kompilátoru JIT udržuje odkaz na objekt, který byl k dispozici v určitém okamžiku v metodě.
+> - Když jsou výsledky volání funkce předány přímo jiné funkci, i když není k dispozici místní proměnná vytvořená uživatelem.
+> - Když kompilátor JIT udržuje odkaz na objekt, který byl k dispozici v nějakém okamžiku v metodě.
 
-## <a name="debug-unloading-issues"></a>Ladění problémů s uvolněním
+## <a name="debug-unloading-issues"></a>Problémy při uvolňování ladění
 
-Ladění problémy s uvolněním může být únavné. Můžete se dostat do situací, kdy nevíte, `AssemblyLoadContext` co může být držení naživu, ale vyložit selže. Nejlepší zbraň na pomoc s tím je WinDbg (LLDB na Unix) s PLUGIN SOS. Musíte najít to, co `LoaderAllocator` drží majetek `AssemblyLoadContext` k určitému živu. Modul plug-in SOS umožňuje podívat se na objekty haldy GC, jejich hierarchie a kořeny.
+Problémy ladění s uvolněním můžou být zdlouhavé. Můžete se dostat do situací, kdy si nejste jisti, co může držet `AssemblyLoadContext` aktivní, ale uvolnění se nezdařilo. Nejlepší zbraně, která vám to umožňuje, je WinDbg (LLDB v UNIX) s modulem plug-in SOS. Potřebujete zjistit, co `LoaderAllocator` patří do konkrétního typu `AssemblyLoadContext` Alive. Modul plug-in SOS vám umožní podívat se na objekty haldy GC, jejich hierarchie a kořeny.
 
-Chcete-li načíst plugin do ladicího programu, zadejte do příkazového řádku ladicího programu následující příkaz:
+Chcete-li načíst modul plug-in do ladicího programu, zadejte následující příkaz v příkazovém řádku ladicího programu:
 
-V WinDbg (zdá se, windbg dělá, že automaticky při vloupání do .NET Core aplikace):
+V programu WinDbg (při přerušení do aplikace .NET Core se to jeví jako WinDbg):
 
 ```console
 .loadby sos coreclr
@@ -114,16 +114,16 @@ V LLDB:
 plugin load /path/to/libsosplugin.so
 ```
 
-Pojďme ladit ukázkový program, který má problémy s uvolněním. Zdrojový kód je uveden níže. Při spuštění pod WinDbg, program přejde do ladicího programu hned po pokusu o kontrolu úspěchu uvolnění. Pak můžete začít hledat viníky.
+Pojďme ladit ukázkový program, který obsahuje problémy s uvolněním. Zdrojový kód je uveden níže. Při spuštění v rámci programu WinDbg se program přeruší do ladicího programu hned po pokusu o kontrolu úspěšného načtení. Pak můžete začít hledat v culprits.
 
 > [!TIP]
-> Pokud ladíte pomocí LLDB na Unixu, příkazy SOS v `!` následujících příkladech nemají před sebou.
+> Pokud ladíte pomocí LLDB v systému UNIX, příkazy SOS v následujících příkladech nemají `!` před nimi žádné z nich.
 
 ```console
 !dumpheap -type LoaderAllocator
 ```
 
-Tento příkaz vypíše všechny objekty `LoaderAllocator` s názvem typu, které jsou v haldě GC. Zde naleznete příklad:
+Tento příkaz vypíše všechny objekty s názvem typu obsahujícím `LoaderAllocator` v haldě GC. Tady je příklad:
 
 ```console
          Address               MT     Size
@@ -137,17 +137,17 @@ Statistics:
 Total 2 objects
 ```
 
-V části "Statistika:" níže `MT` `MethodTable`zkontrolujte ( `System.Reflection.LoaderAllocator`), který patří do , což je objekt, na kterém nám záleží. Potom v seznamu na začátku najděte `MT` položku s odpovídající, že jeden a získat adresu samotného objektu. V našem případě je to "000002b78000ce40".
+V níže uvedené části "Statistika:" se podívejte na `MT` ( `MethodTable` ) patřící do `System.Reflection.LoaderAllocator` , což je objekt, o kterém se zajímá. Potom v seznamu na začátku Najděte položku s `MT` odpovídajícím záznamem a získejte adresu samotného objektu. V našem případě je to "000002b78000ce40".
 
-Nyní, když známe adresu `LoaderAllocator` objektu, můžeme použít jiný příkaz k nalezení jeho kořenů GC:
+Teď, když znáte adresu `LoaderAllocator` objektu, můžeme k vyhledání jeho kořenů GC použít jiný příkaz:
 
 ```console
 !gcroot -all 0x000002b78000ce40
 ```
 
-Tento příkaz vypíše řetězec odkazů na `LoaderAllocator` objekty, které vedou k instanci. Seznam začíná kořenem, což je entita, která udržuje naše `LoaderAllocator` naživu, a proto je jádrem problému. Kořen může být zásobníku slot, registr procesoru, popisovač GC nebo statické proměnné.
+Tento příkaz vypíše řetěz odkazů na objekty, které vedou k `LoaderAllocator` instanci. Seznam začíná kořenovým adresářem, který je entitou, která udržuje naši službu `LoaderAllocator` Alive, a proto je jádrem problému. Kořenem může být slot zásobníku, registr procesoru, popisovač GC nebo statická proměnná.
 
-Zde je příklad výstupu příkazu: `gcroot`
+Tady je příklad výstupu `gcroot` příkazu:
 
 ```console
 Thread 4ac:
@@ -174,21 +174,21 @@ HandleTable:
 Found 3 roots.
 ```
 
-Dalším krokem je zjistit, kde je kořen umístěn, abyste ho mohli opravit. Nejjednodušší případ je, když kořen je zásobníku slot nebo registr procesoru. V takovém případě `gcroot` zobrazí název funkce, jejíž rámec obsahuje kořen a vlákno provádění této funkce. Obtížný případ je, když kořen je statická proměnná nebo popisovač GC.
+Dalším krokem je zjistit, kde se nachází kořenový adresář, abyste ho mohli opravit. Nejjednodušším případem je, že kořen je slot zásobníku nebo registr procesoru. V takovém případě `gcroot` zobrazuje název funkce, jejíž rámec obsahuje kořen a vlákno, které tuto funkci spouští. Těžké velká písmena jsou v případě, že kořen je statická proměnná nebo popisovač GC.
 
-V předchozím příkladu je první kořen `System.Reflection.RuntimeMethodInfo` místní hosti typu `example.Program.Main(System.String[])` uloženého v rámci funkce na adrese `rbp-20` (`rbp` je registr procesoru `rbp` a -20 je šestnáctkový posun od tohoto registru).
+V předchozím příkladu je první kořen místní typ `System.Reflection.RuntimeMethodInfo` uložený v rámci funkce `example.Program.Main(System.String[])` na adrese `rbp-20` ( `rbp` je registr procesoru `rbp` a-20 je hexadecimální posun od tohoto registru).
 
-Druhý kořen je normální (silný), `GCHandle` který obsahuje odkaz `test.Test` na instanci třídy.
+Druhý kořen je normální (silný) `GCHandle` , který obsahuje odkaz na instanci `test.Test` třídy.
 
-Třetí kořen je připnutý `GCHandle`. Tenhle je vlastně statická proměnná, ale bohužel, neexistuje žádný způsob, jak říct. Statika pro typy odkazů jsou uloženy v poli spravovaného objektu v interních runtime strukturách.
+Třetí kořen je připnutý `GCHandle` . Toto je vlastně statická proměnná, ale bohužel neexistuje žádný způsob, jak říct. Statické objekty pro odkazové typy jsou uloženy v poli spravovaného objektu v interních strukturách modulu runtime.
 
-Jiný případ, který může `AssemblyLoadContext` zabránit uvolnění je, když vlákno má rámec metody `AssemblyLoadContext` ze sestavy načtendo jeho zásobníku. Můžete zkontrolovat, že dumpingem spravované zásobníky volání všech vláken:
+Další případ, který může zabránit uvolnění objektu, `AssemblyLoadContext` je, když vlákno má snímek metody ze sestavení načtené do `AssemblyLoadContext` zásobníku. Můžete kontrolovat, zda jsou vyvolány spravované zásobníky volání všech vláken:
 
 ```console
 ~*e !clrstack
 ```
 
-Příkaz znamená "použít pro všechna `!clrstack` vlákna příkaz". Následuje výstup tohoto příkazu pro příklad. Bohužel, LLDB na Unixu nemá žádný způsob, jak použít příkaz pro všechna vlákna, `clrstack` takže musíte ručně přepnout vlákna a opakovat příkaz. Ignorujte všechna vlákna, kde ladicí program říká "Nelze procházet spravované zásobníku".
+Příkaz znamená "použít u všech vláken `!clrstack` příkazu". Následuje výstup tohoto příkazu pro příklad. LLDB v systému UNIX bohužel nemá žádný způsob, jak použít příkaz pro všechna vlákna, takže musíte ručně přepnout vlákna a zopakovat `clrstack` příkaz. Ignorujte všechna vlákna, kde ladicí program říká, že se nepovedlo projít spravovanou sadu.
 
 ```console
 OS Thread Id: 0x6ba8 (0)
@@ -237,9 +237,9 @@ OS Thread Id: 0x60bc (7)
 
 ```
 
-Jak můžete vidět, poslední `test.Program.ThreadProc()`vlákno má . Toto je funkce ze sestavení `AssemblyLoadContext`načtendo , `AssemblyLoadContext` a tak udržuje naživu.
+Jak vidíte, poslední vlákno má `test.Program.ThreadProc()` . Toto je funkce ze sestavení načtených do `AssemblyLoadContext` , takže udržuje `AssemblyLoadContext` Alive.
 
-## <a name="example-source-with-unloadability-issues"></a>Příklad zdroje s problémy s vykládkou
+## <a name="example-source-with-unloadability-issues"></a>Příklad zdroje s problémy s načtením
 
 Následující kód se používá v předchozím příkladu ladění.
 
@@ -247,8 +247,8 @@ Následující kód se používá v předchozím příkladu ladění.
 
 [!code-csharp[Main testing program](~/samples/snippets/standard/assembly/unloading/unloadability_issues_example_main.cs)]
 
-## <a name="program-loaded-into-the-testassemblyloadcontext"></a>Program načtený do kontextu TestAssemblyLoadContext
+## <a name="program-loaded-into-the-testassemblyloadcontext"></a>Program byl načten do TestAssemblyLoadContext
 
-Následující kód představuje *test.dll* předán `ExecuteAndUnload` metodě v hlavním testovacím programu.
+Následující kód představuje *test.dll* předaný `ExecuteAndUnload` metodě v hlavním testovacím programu.
 
 [!code-csharp[Program loaded into the TestAssemblyLoadContext](~/samples/snippets/standard/assembly/unloading/unloadability_issues_example_test.cs)]
