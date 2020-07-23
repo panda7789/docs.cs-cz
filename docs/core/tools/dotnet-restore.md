@@ -2,22 +2,22 @@
 title: dotnet restore – příkaz
 description: Naučte se obnovit závislosti a nástroje specifické pro projekt pomocí příkazu dotnet restore.
 ms.date: 02/27/2020
-ms.openlocfilehash: 276fad896a6a8a647ed05a9de8c582d463d9ab8f
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 7b456e28505a07c03936c9006c8631848fd4672c
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84005311"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925473"
 ---
-# <a name="dotnet-restore"></a><span data-ttu-id="f081c-103">dotnet restore</span><span class="sxs-lookup"><span data-stu-id="f081c-103">dotnet restore</span></span>
+# <a name="dotnet-restore"></a><span data-ttu-id="ec610-103">dotnet restore</span><span class="sxs-lookup"><span data-stu-id="ec610-103">dotnet restore</span></span>
 
-<span data-ttu-id="f081c-104">**Tento článek se týká:** ✔️ .net Core 2,1 SDK a novějších verzí</span><span class="sxs-lookup"><span data-stu-id="f081c-104">**This article applies to:** ✔️ .NET Core 2.1 SDK and later versions</span></span>
+<span data-ttu-id="ec610-104">**Tento článek se týká:** ✔️ .net Core 2,1 SDK a novějších verzí</span><span class="sxs-lookup"><span data-stu-id="ec610-104">**This article applies to:** ✔️ .NET Core 2.1 SDK and later versions</span></span>
 
-## <a name="name"></a><span data-ttu-id="f081c-105">Name</span><span class="sxs-lookup"><span data-stu-id="f081c-105">Name</span></span>
+## <a name="name"></a><span data-ttu-id="ec610-105">Název</span><span class="sxs-lookup"><span data-stu-id="ec610-105">Name</span></span>
 
-<span data-ttu-id="f081c-106">`dotnet restore`– Obnoví závislosti a nástroje projektu.</span><span class="sxs-lookup"><span data-stu-id="f081c-106">`dotnet restore` - Restores the dependencies and tools of a project.</span></span>
+<span data-ttu-id="ec610-106">`dotnet restore`– Obnoví závislosti a nástroje projektu.</span><span class="sxs-lookup"><span data-stu-id="ec610-106">`dotnet restore` - Restores the dependencies and tools of a project.</span></span>
 
-## <a name="synopsis"></a><span data-ttu-id="f081c-107">Stručný obsah</span><span class="sxs-lookup"><span data-stu-id="f081c-107">Synopsis</span></span>
+## <a name="synopsis"></a><span data-ttu-id="ec610-107">Stručný obsah</span><span class="sxs-lookup"><span data-stu-id="ec610-107">Synopsis</span></span>
 
 ```dotnetcli
 dotnet restore [<ROOT>] [--configfile <FILE>] [--disable-parallel]
@@ -30,9 +30,9 @@ dotnet restore [<ROOT>] [--configfile <FILE>] [--disable-parallel]
 dotnet restore -h|--help
 ```
 
-## <a name="description"></a><span data-ttu-id="f081c-108">Description</span><span class="sxs-lookup"><span data-stu-id="f081c-108">Description</span></span>
+## <a name="description"></a><span data-ttu-id="ec610-108">Popis</span><span class="sxs-lookup"><span data-stu-id="ec610-108">Description</span></span>
 
-<span data-ttu-id="f081c-109">`dotnet restore`Příkaz používá NuGet k obnovení závislostí a také nástrojů specifických pro projekt, které jsou uvedeny v souboru projektu.</span><span class="sxs-lookup"><span data-stu-id="f081c-109">The `dotnet restore` command uses NuGet to restore dependencies as well as project-specific tools that are specified in the project file.</span></span>  <span data-ttu-id="f081c-110">Ve většině případů nemusíte explicitně používat `dotnet restore` příkaz, protože obnovení NuGet se v případě potřeby spouští implicitně, když spustíte následující příkazy:</span><span class="sxs-lookup"><span data-stu-id="f081c-110">In most cases, you don't need to explicitly use the `dotnet restore` command, since a NuGet restore is run implicitly if necessary when you run the following commands:</span></span>
+<span data-ttu-id="ec610-109">`dotnet restore`Příkaz používá NuGet k obnovení závislostí a také nástrojů specifických pro projekt, které jsou uvedeny v souboru projektu.</span><span class="sxs-lookup"><span data-stu-id="ec610-109">The `dotnet restore` command uses NuGet to restore dependencies as well as project-specific tools that are specified in the project file.</span></span>  <span data-ttu-id="ec610-110">Ve většině případů nemusíte explicitně používat `dotnet restore` příkaz, protože obnovení NuGet se v případě potřeby spouští implicitně, když spustíte následující příkazy:</span><span class="sxs-lookup"><span data-stu-id="ec610-110">In most cases, you don't need to explicitly use the `dotnet restore` command, since a NuGet restore is run implicitly if necessary when you run the following commands:</span></span>
 
 - [`dotnet new`](dotnet-new.md)
 - [`dotnet build`](dotnet-build.md)
@@ -42,144 +42,144 @@ dotnet restore -h|--help
 - [`dotnet publish`](dotnet-publish.md)
 - [`dotnet pack`](dotnet-pack.md)
 
-<span data-ttu-id="f081c-111">V některých případech může být nepraktické spustit implicitní obnovení NuGet pomocí těchto příkazů.</span><span class="sxs-lookup"><span data-stu-id="f081c-111">Sometimes, it might be inconvenient to run the implicit NuGet restore with these commands.</span></span> <span data-ttu-id="f081c-112">Například některé automatizované systémy, například systémy sestavení, musí volat `dotnet restore` explicitně k řízení, když dojde k obnovení, aby bylo možné řídit využití sítě.</span><span class="sxs-lookup"><span data-stu-id="f081c-112">For example, some automated systems, such as build systems, need to call `dotnet restore` explicitly to control when the restore occurs so that they can control network usage.</span></span> <span data-ttu-id="f081c-113">Chcete-li zabránit implicitnímu obnovení NuGet, můžete použít `--no-restore` příznak s některým z těchto příkazů k zakázání implicitního obnovení.</span><span class="sxs-lookup"><span data-stu-id="f081c-113">To prevent the implicit NuGet restore, you can use the `--no-restore` flag with any of these commands to disable implicit restore.</span></span>
+<span data-ttu-id="ec610-111">V některých případech může být nepraktické spustit implicitní obnovení NuGet pomocí těchto příkazů.</span><span class="sxs-lookup"><span data-stu-id="ec610-111">Sometimes, it might be inconvenient to run the implicit NuGet restore with these commands.</span></span> <span data-ttu-id="ec610-112">Například některé automatizované systémy, například systémy sestavení, musí volat `dotnet restore` explicitně k řízení, když dojde k obnovení, aby bylo možné řídit využití sítě.</span><span class="sxs-lookup"><span data-stu-id="ec610-112">For example, some automated systems, such as build systems, need to call `dotnet restore` explicitly to control when the restore occurs so that they can control network usage.</span></span> <span data-ttu-id="ec610-113">Chcete-li zabránit implicitnímu obnovení NuGet, můžete použít `--no-restore` příznak s některým z těchto příkazů k zakázání implicitního obnovení.</span><span class="sxs-lookup"><span data-stu-id="ec610-113">To prevent the implicit NuGet restore, you can use the `--no-restore` flag with any of these commands to disable implicit restore.</span></span>
 
-### <a name="specify-feeds"></a><span data-ttu-id="f081c-114">Zadat informační kanály</span><span class="sxs-lookup"><span data-stu-id="f081c-114">Specify feeds</span></span>
+### <a name="specify-feeds"></a><span data-ttu-id="ec610-114">Zadat informační kanály</span><span class="sxs-lookup"><span data-stu-id="ec610-114">Specify feeds</span></span>
 
-<span data-ttu-id="f081c-115">Pro obnovení závislostí potřebuje NuGet informační kanály, ve kterých se balíčky nacházejí.</span><span class="sxs-lookup"><span data-stu-id="f081c-115">To restore the dependencies, NuGet needs the feeds where the packages are located.</span></span> <span data-ttu-id="f081c-116">Informační kanály jsou obvykle poskytovány prostřednictvím konfiguračního souboru *NuGet. config* .</span><span class="sxs-lookup"><span data-stu-id="f081c-116">Feeds are usually provided via the *nuget.config* configuration file.</span></span> <span data-ttu-id="f081c-117">Výchozí konfigurační soubor se poskytne při instalaci .NET Core SDK.</span><span class="sxs-lookup"><span data-stu-id="f081c-117">A default configuration file is provided when the .NET Core SDK is installed.</span></span> <span data-ttu-id="f081c-118">Chcete-li zadat další informační kanály, proveďte jednu z následujících akcí:</span><span class="sxs-lookup"><span data-stu-id="f081c-118">To specify additional feeds, do one of the following:</span></span>
+<span data-ttu-id="ec610-115">Pro obnovení závislostí potřebuje NuGet informační kanály, ve kterých se balíčky nacházejí.</span><span class="sxs-lookup"><span data-stu-id="ec610-115">To restore the dependencies, NuGet needs the feeds where the packages are located.</span></span> <span data-ttu-id="ec610-116">Informační kanály jsou obvykle poskytovány prostřednictvím konfiguračního souboru *nuget.config* .</span><span class="sxs-lookup"><span data-stu-id="ec610-116">Feeds are usually provided via the *nuget.config* configuration file.</span></span> <span data-ttu-id="ec610-117">Výchozí konfigurační soubor se poskytne při instalaci .NET Core SDK.</span><span class="sxs-lookup"><span data-stu-id="ec610-117">A default configuration file is provided when the .NET Core SDK is installed.</span></span> <span data-ttu-id="ec610-118">Chcete-li zadat další informační kanály, proveďte jednu z následujících akcí:</span><span class="sxs-lookup"><span data-stu-id="ec610-118">To specify additional feeds, do one of the following:</span></span>
 
-- <span data-ttu-id="f081c-119">Vytvořte vlastní soubor *NuGet. config* v adresáři projektu.</span><span class="sxs-lookup"><span data-stu-id="f081c-119">Create your own *nuget.config* file in the project directory.</span></span> <span data-ttu-id="f081c-120">Další informace najdete v tématu [běžné konfigurace NuGet](/nuget/consume-packages/configuring-nuget-behavior) a [rozdíly v souboru NuGet. config](#nugetconfig-differences) dále v tomto článku.</span><span class="sxs-lookup"><span data-stu-id="f081c-120">For more information, see [Common NuGet configurations](/nuget/consume-packages/configuring-nuget-behavior) and [nuget.config differences](#nugetconfig-differences) later in this article.</span></span>
-- <span data-ttu-id="f081c-121">Použijte `dotnet nuget` příkazy, jako je [`dotnet nuget add source`](dotnet-nuget-add-source.md) .</span><span class="sxs-lookup"><span data-stu-id="f081c-121">Use `dotnet nuget` commands such as [`dotnet nuget add source`](dotnet-nuget-add-source.md).</span></span>
+- <span data-ttu-id="ec610-119">Vytvořte vlastní soubor *nuget.config* v adresáři projektu.</span><span class="sxs-lookup"><span data-stu-id="ec610-119">Create your own *nuget.config* file in the project directory.</span></span> <span data-ttu-id="ec610-120">Další informace najdete v tématu [běžné konfigurace NuGet](/nuget/consume-packages/configuring-nuget-behavior) a [nuget.config rozdíly](#nugetconfig-differences) dále v tomto článku.</span><span class="sxs-lookup"><span data-stu-id="ec610-120">For more information, see [Common NuGet configurations](/nuget/consume-packages/configuring-nuget-behavior) and [nuget.config differences](#nugetconfig-differences) later in this article.</span></span>
+- <span data-ttu-id="ec610-121">Použijte `dotnet nuget` příkazy, jako je [`dotnet nuget add source`](dotnet-nuget-add-source.md) .</span><span class="sxs-lookup"><span data-stu-id="ec610-121">Use `dotnet nuget` commands such as [`dotnet nuget add source`](dotnet-nuget-add-source.md).</span></span>
 
-<span data-ttu-id="f081c-122">Informační kanály *NuGet. config* můžete přepsat `-s` možností.</span><span class="sxs-lookup"><span data-stu-id="f081c-122">You can override the *nuget.config* feeds with the `-s` option.</span></span>
+<span data-ttu-id="ec610-122">Pomocí možnosti můžete přepsat *nuget.config* informační kanály `-s` .</span><span class="sxs-lookup"><span data-stu-id="ec610-122">You can override the *nuget.config* feeds with the `-s` option.</span></span>
 
-<span data-ttu-id="f081c-123">Informace o tom, jak používat ověřené informační kanály, najdete v tématu [využívání balíčků ze ověřených informačních kanálů](/nuget/consume-packages/consuming-packages-authenticated-feeds).</span><span class="sxs-lookup"><span data-stu-id="f081c-123">For information about how to use authenticated feeds, see [Consuming packages from authenticated feeds](/nuget/consume-packages/consuming-packages-authenticated-feeds).</span></span>
+<span data-ttu-id="ec610-123">Informace o tom, jak používat ověřené informační kanály, najdete v tématu [využívání balíčků ze ověřených informačních kanálů](/nuget/consume-packages/consuming-packages-authenticated-feeds).</span><span class="sxs-lookup"><span data-stu-id="ec610-123">For information about how to use authenticated feeds, see [Consuming packages from authenticated feeds](/nuget/consume-packages/consuming-packages-authenticated-feeds).</span></span>
 
-### <a name="global-packages-folder"></a><span data-ttu-id="f081c-124">Složka globálních balíčků</span><span class="sxs-lookup"><span data-stu-id="f081c-124">Global packages folder</span></span>
+### <a name="global-packages-folder"></a><span data-ttu-id="ec610-124">Složka globálních balíčků</span><span class="sxs-lookup"><span data-stu-id="ec610-124">Global packages folder</span></span>
 
-<span data-ttu-id="f081c-125">U závislostí můžete určit, kde se obnovené balíčky umístí během operace obnovení pomocí `--packages` argumentu.</span><span class="sxs-lookup"><span data-stu-id="f081c-125">For dependencies, you can specify where the restored packages are placed during the restore operation using the `--packages` argument.</span></span> <span data-ttu-id="f081c-126">Pokud není zadaný, použije se výchozí mezipaměť balíčků NuGet, která se nachází v `.nuget/packages` adresáři domovského adresáře uživatele ve všech operačních systémech.</span><span class="sxs-lookup"><span data-stu-id="f081c-126">If not specified, the default NuGet package cache is used, which is found in the `.nuget/packages` directory in the user's home directory on all operating systems.</span></span> <span data-ttu-id="f081c-127">Například */Home/user1* v systému Linux nebo *C:\Users\user1* ve Windows.</span><span class="sxs-lookup"><span data-stu-id="f081c-127">For example, */home/user1* on Linux or *C:\Users\user1* on Windows.</span></span>
+<span data-ttu-id="ec610-125">U závislostí můžete určit, kde se obnovené balíčky umístí během operace obnovení pomocí `--packages` argumentu.</span><span class="sxs-lookup"><span data-stu-id="ec610-125">For dependencies, you can specify where the restored packages are placed during the restore operation using the `--packages` argument.</span></span> <span data-ttu-id="ec610-126">Pokud není zadaný, použije se výchozí mezipaměť balíčků NuGet, která se nachází v `.nuget/packages` adresáři domovského adresáře uživatele ve všech operačních systémech.</span><span class="sxs-lookup"><span data-stu-id="ec610-126">If not specified, the default NuGet package cache is used, which is found in the `.nuget/packages` directory in the user's home directory on all operating systems.</span></span> <span data-ttu-id="ec610-127">Například */Home/user1* v systému Linux nebo *C:\Users\user1* ve Windows.</span><span class="sxs-lookup"><span data-stu-id="ec610-127">For example, */home/user1* on Linux or *C:\Users\user1* on Windows.</span></span>
 
-### <a name="project-specific-tooling"></a><span data-ttu-id="f081c-128">Nástroje specifické pro projekt</span><span class="sxs-lookup"><span data-stu-id="f081c-128">Project-specific tooling</span></span>
+### <a name="project-specific-tooling"></a><span data-ttu-id="ec610-128">Nástroje specifické pro projekt</span><span class="sxs-lookup"><span data-stu-id="ec610-128">Project-specific tooling</span></span>
 
-<span data-ttu-id="f081c-129">U nástrojů specifických pro projekt `dotnet restore` nejprve obnovte balíček, ve kterém je nástroj zabalen, a poté pokračuje v obnovování závislostí nástroje, jak je uvedeno v souboru projektu.</span><span class="sxs-lookup"><span data-stu-id="f081c-129">For project-specific tooling, `dotnet restore` first restores the package in which the tool is packed, and then proceeds to restore the tool's dependencies as specified in its project file.</span></span>
+<span data-ttu-id="ec610-129">U nástrojů specifických pro projekt `dotnet restore` nejprve obnovte balíček, ve kterém je nástroj zabalen, a poté pokračuje v obnovování závislostí nástroje, jak je uvedeno v souboru projektu.</span><span class="sxs-lookup"><span data-stu-id="ec610-129">For project-specific tooling, `dotnet restore` first restores the package in which the tool is packed, and then proceeds to restore the tool's dependencies as specified in its project file.</span></span>
 
-### <a name="nugetconfig-differences"></a><span data-ttu-id="f081c-130">rozdíly v NuGet. config</span><span class="sxs-lookup"><span data-stu-id="f081c-130">nuget.config differences</span></span>
+### <a name="nugetconfig-differences"></a><span data-ttu-id="ec610-130">nuget.config rozdíly</span><span class="sxs-lookup"><span data-stu-id="ec610-130">nuget.config differences</span></span>
 
-<span data-ttu-id="f081c-131">Chování `dotnet restore` příkazu je ovlivněno nastavením v souboru *NuGet. config* , pokud je k dispozici.</span><span class="sxs-lookup"><span data-stu-id="f081c-131">The behavior of the `dotnet restore` command is affected by the settings in the *nuget.config* file, if present.</span></span> <span data-ttu-id="f081c-132">Například nastavení `globalPackagesFolder` v *souboru NuGet. config* umístí obnovené balíčky NuGet do zadané složky.</span><span class="sxs-lookup"><span data-stu-id="f081c-132">For example, setting the `globalPackagesFolder` in *nuget.config* places the restored NuGet packages in the specified folder.</span></span> <span data-ttu-id="f081c-133">Toto je alternativa k zadání `--packages` možnosti `dotnet restore` příkazu.</span><span class="sxs-lookup"><span data-stu-id="f081c-133">This is an alternative to specifying the `--packages` option on the `dotnet restore` command.</span></span> <span data-ttu-id="f081c-134">Další informace najdete v referenčních informacích k [NuGet. config](/nuget/schema/nuget-config-file).</span><span class="sxs-lookup"><span data-stu-id="f081c-134">For more information, see the [nuget.config reference](/nuget/schema/nuget-config-file).</span></span>
+<span data-ttu-id="ec610-131">Chování `dotnet restore` příkazu je ovlivněno nastavením v souboru *nuget.config* , pokud je k dispozici.</span><span class="sxs-lookup"><span data-stu-id="ec610-131">The behavior of the `dotnet restore` command is affected by the settings in the *nuget.config* file, if present.</span></span> <span data-ttu-id="ec610-132">Například nastavení `globalPackagesFolder` v *nuget.config* umístí obnovené balíčky NuGet do zadané složky.</span><span class="sxs-lookup"><span data-stu-id="ec610-132">For example, setting the `globalPackagesFolder` in *nuget.config* places the restored NuGet packages in the specified folder.</span></span> <span data-ttu-id="ec610-133">Toto je alternativa k zadání `--packages` možnosti `dotnet restore` příkazu.</span><span class="sxs-lookup"><span data-stu-id="ec610-133">This is an alternative to specifying the `--packages` option on the `dotnet restore` command.</span></span> <span data-ttu-id="ec610-134">Další informace najdete v [referenčních](/nuget/schema/nuget-config-file)informacích onuget.config.</span><span class="sxs-lookup"><span data-stu-id="ec610-134">For more information, see the [nuget.config reference](/nuget/schema/nuget-config-file).</span></span>
 
-<span data-ttu-id="f081c-135">Existují tři specifická nastavení, která `dotnet restore` ignorují:</span><span class="sxs-lookup"><span data-stu-id="f081c-135">There are three specific settings that `dotnet restore` ignores:</span></span>
+<span data-ttu-id="ec610-135">Existují tři specifická nastavení, která `dotnet restore` ignorují:</span><span class="sxs-lookup"><span data-stu-id="ec610-135">There are three specific settings that `dotnet restore` ignores:</span></span>
 
-- [<span data-ttu-id="f081c-136">bindingRedirects</span><span class="sxs-lookup"><span data-stu-id="f081c-136">bindingRedirects</span></span>](/nuget/schema/nuget-config-file#bindingredirects-section)
+- [<span data-ttu-id="ec610-136">bindingRedirects</span><span class="sxs-lookup"><span data-stu-id="ec610-136">bindingRedirects</span></span>](/nuget/schema/nuget-config-file#bindingredirects-section)
 
-  <span data-ttu-id="f081c-137">Přesměrování vazby nefungují s `<PackageReference>` prvky a .NET Core podporuje pouze `<PackageReference>` prvky pro balíčky NuGet.</span><span class="sxs-lookup"><span data-stu-id="f081c-137">Binding redirects don't work with `<PackageReference>` elements and .NET Core only supports `<PackageReference>` elements for NuGet packages.</span></span>
+  <span data-ttu-id="ec610-137">Přesměrování vazby nefungují s `<PackageReference>` prvky a .NET Core podporuje pouze `<PackageReference>` prvky pro balíčky NuGet.</span><span class="sxs-lookup"><span data-stu-id="ec610-137">Binding redirects don't work with `<PackageReference>` elements and .NET Core only supports `<PackageReference>` elements for NuGet packages.</span></span>
 
-- [<span data-ttu-id="f081c-138">řešení</span><span class="sxs-lookup"><span data-stu-id="f081c-138">solution</span></span>](/nuget/schema/nuget-config-file#solution-section)
+- [<span data-ttu-id="ec610-138">řešení</span><span class="sxs-lookup"><span data-stu-id="ec610-138">solution</span></span>](/nuget/schema/nuget-config-file#solution-section)
 
-  <span data-ttu-id="f081c-139">Toto nastavení je specifické pro Visual Studio a neplatí pro .NET Core.</span><span class="sxs-lookup"><span data-stu-id="f081c-139">This setting is Visual Studio specific and doesn't apply to .NET Core.</span></span> <span data-ttu-id="f081c-140">.NET Core nepoužívá `packages.config` soubor a místo toho používá `<PackageReference>` elementy pro balíčky NuGet.</span><span class="sxs-lookup"><span data-stu-id="f081c-140">.NET Core doesn't use a `packages.config` file and instead uses `<PackageReference>` elements for NuGet packages.</span></span>
+  <span data-ttu-id="ec610-139">Toto nastavení je specifické pro Visual Studio a neplatí pro .NET Core.</span><span class="sxs-lookup"><span data-stu-id="ec610-139">This setting is Visual Studio specific and doesn't apply to .NET Core.</span></span> <span data-ttu-id="ec610-140">.NET Core nepoužívá `packages.config` soubor a místo toho používá `<PackageReference>` elementy pro balíčky NuGet.</span><span class="sxs-lookup"><span data-stu-id="ec610-140">.NET Core doesn't use a `packages.config` file and instead uses `<PackageReference>` elements for NuGet packages.</span></span>
 
-- [<span data-ttu-id="f081c-141">trustedSigners</span><span class="sxs-lookup"><span data-stu-id="f081c-141">trustedSigners</span></span>](/nuget/schema/nuget-config-file#trustedsigners-section)
+- [<span data-ttu-id="ec610-141">trustedSigners</span><span class="sxs-lookup"><span data-stu-id="ec610-141">trustedSigners</span></span>](/nuget/schema/nuget-config-file#trustedsigners-section)
 
-  <span data-ttu-id="f081c-142">Toto nastavení se nedá použít, protože [NuGet zatím nepodporuje ověřování](https://github.com/NuGet/Home/issues/7939) pro důvěryhodné balíčky v různých platformách.</span><span class="sxs-lookup"><span data-stu-id="f081c-142">This setting isn't applicable as [NuGet doesn't yet support cross-platform verification](https://github.com/NuGet/Home/issues/7939) of trusted packages.</span></span>
+  <span data-ttu-id="ec610-142">Toto nastavení se nedá použít, protože [NuGet zatím nepodporuje ověřování](https://github.com/NuGet/Home/issues/7939) pro důvěryhodné balíčky v různých platformách.</span><span class="sxs-lookup"><span data-stu-id="ec610-142">This setting isn't applicable as [NuGet doesn't yet support cross-platform verification](https://github.com/NuGet/Home/issues/7939) of trusted packages.</span></span>
 
-## <a name="arguments"></a><span data-ttu-id="f081c-143">Argumenty</span><span class="sxs-lookup"><span data-stu-id="f081c-143">Arguments</span></span>
+## <a name="arguments"></a><span data-ttu-id="ec610-143">Arguments</span><span class="sxs-lookup"><span data-stu-id="ec610-143">Arguments</span></span>
 
 - **`ROOT`**
 
-  <span data-ttu-id="f081c-144">Volitelná cesta k souboru projektu, který má být obnoven.</span><span class="sxs-lookup"><span data-stu-id="f081c-144">Optional path to the project file to restore.</span></span>
+  <span data-ttu-id="ec610-144">Volitelná cesta k souboru projektu, který má být obnoven.</span><span class="sxs-lookup"><span data-stu-id="ec610-144">Optional path to the project file to restore.</span></span>
 
-## <a name="options"></a><span data-ttu-id="f081c-145">Možnosti</span><span class="sxs-lookup"><span data-stu-id="f081c-145">Options</span></span>
+## <a name="options"></a><span data-ttu-id="ec610-145">Možnosti</span><span class="sxs-lookup"><span data-stu-id="ec610-145">Options</span></span>
 
 - **`--configfile <FILE>`**
 
-  <span data-ttu-id="f081c-146">Konfigurační soubor NuGet (*NuGet. config*), který se má použít pro operaci obnovení.</span><span class="sxs-lookup"><span data-stu-id="f081c-146">The NuGet configuration file (*nuget.config*) to use for the restore operation.</span></span>
+  <span data-ttu-id="ec610-146">Konfigurační soubor NuGet (*nuget.config*), který se má použít pro operaci obnovení.</span><span class="sxs-lookup"><span data-stu-id="ec610-146">The NuGet configuration file (*nuget.config*) to use for the restore operation.</span></span>
 
 - **`--disable-parallel`**
 
-  <span data-ttu-id="f081c-147">Zakáže obnovení více projektů paralelně.</span><span class="sxs-lookup"><span data-stu-id="f081c-147">Disables restoring multiple projects in parallel.</span></span>
+  <span data-ttu-id="ec610-147">Zakáže obnovení více projektů paralelně.</span><span class="sxs-lookup"><span data-stu-id="ec610-147">Disables restoring multiple projects in parallel.</span></span>
 
 - **`--force`**
 
-  <span data-ttu-id="f081c-148">Vynutí vyřešení všech závislostí i v případě, že bylo poslední obnovení úspěšné.</span><span class="sxs-lookup"><span data-stu-id="f081c-148">Forces all dependencies to be resolved even if the last restore was successful.</span></span> <span data-ttu-id="f081c-149">Zadání tohoto příznaku je stejné jako odstranění souboru *Project. assets. JSON* .</span><span class="sxs-lookup"><span data-stu-id="f081c-149">Specifying this flag is the same as deleting the *project.assets.json* file.</span></span>
+  <span data-ttu-id="ec610-148">Vynutí vyřešení všech závislostí i v případě, že bylo poslední obnovení úspěšné.</span><span class="sxs-lookup"><span data-stu-id="ec610-148">Forces all dependencies to be resolved even if the last restore was successful.</span></span> <span data-ttu-id="ec610-149">Zadání tohoto příznaku je stejné jako odstranění *project.assets.jsv* souboru.</span><span class="sxs-lookup"><span data-stu-id="ec610-149">Specifying this flag is the same as deleting the *project.assets.json* file.</span></span>
 
 - **`--force-evaluate`**
 
-  <span data-ttu-id="f081c-150">Vynutí obnovení, aby se znovu vyhodnotily všechny závislosti i v případě, že soubor zámku již existuje.</span><span class="sxs-lookup"><span data-stu-id="f081c-150">Forces restore to reevaluate all dependencies even if a lock file already exists.</span></span>
+  <span data-ttu-id="ec610-150">Vynutí obnovení, aby se znovu vyhodnotily všechny závislosti i v případě, že soubor zámku již existuje.</span><span class="sxs-lookup"><span data-stu-id="ec610-150">Forces restore to reevaluate all dependencies even if a lock file already exists.</span></span>
 
 - **`-h|--help`**
 
-  <span data-ttu-id="f081c-151">Vypíše krátkou nápovědu k příkazu.</span><span class="sxs-lookup"><span data-stu-id="f081c-151">Prints out a short help for the command.</span></span>
+  <span data-ttu-id="ec610-151">Vypíše krátkou nápovědu k příkazu.</span><span class="sxs-lookup"><span data-stu-id="ec610-151">Prints out a short help for the command.</span></span>
 
 - **`--ignore-failed-sources`**
 
-  <span data-ttu-id="f081c-152">Pouze upozornit na zdroje, které selhaly, pokud existují balíčky, které splňují požadavky na verzi.</span><span class="sxs-lookup"><span data-stu-id="f081c-152">Only warn about failed sources if there are packages meeting the version requirement.</span></span>
+  <span data-ttu-id="ec610-152">Pouze upozornit na zdroje, které selhaly, pokud existují balíčky, které splňují požadavky na verzi.</span><span class="sxs-lookup"><span data-stu-id="ec610-152">Only warn about failed sources if there are packages meeting the version requirement.</span></span>
 
 - **`--interactive`**
 
-  <span data-ttu-id="f081c-153">Umožňuje příkazu zastavit a počkat na vstup nebo akci uživatele (například k dokončení ověřování).</span><span class="sxs-lookup"><span data-stu-id="f081c-153">Allows the command to stop and wait for user input or action (for example to complete authentication).</span></span> <span data-ttu-id="f081c-154">Vzhledem k tomu, že .NET Core 2.1.400.</span><span class="sxs-lookup"><span data-stu-id="f081c-154">Since .NET Core 2.1.400.</span></span>
+  <span data-ttu-id="ec610-153">Umožňuje příkazu zastavit a počkat na vstup nebo akci uživatele (například k dokončení ověřování).</span><span class="sxs-lookup"><span data-stu-id="ec610-153">Allows the command to stop and wait for user input or action (for example to complete authentication).</span></span> <span data-ttu-id="ec610-154">Vzhledem k tomu, že .NET Core 2.1.400.</span><span class="sxs-lookup"><span data-stu-id="ec610-154">Since .NET Core 2.1.400.</span></span>
 
 - **`--lock-file-path <LOCK_FILE_PATH>`**
 
-  <span data-ttu-id="f081c-155">Výstupní umístění, kde je zapsán soubor zámku projektu.</span><span class="sxs-lookup"><span data-stu-id="f081c-155">Output location where project lock file is written.</span></span> <span data-ttu-id="f081c-156">Ve výchozím nastavení je to *PROJECT_ROOT \Packages.Lock.JSON*.</span><span class="sxs-lookup"><span data-stu-id="f081c-156">By default, this is *PROJECT_ROOT\packages.lock.json*.</span></span>
+  <span data-ttu-id="ec610-155">Výstupní umístění, kde je zapsán soubor zámku projektu.</span><span class="sxs-lookup"><span data-stu-id="ec610-155">Output location where project lock file is written.</span></span> <span data-ttu-id="ec610-156">Ve výchozím nastavení je to *PROJECT_ROOT\packages.lock.js*.</span><span class="sxs-lookup"><span data-stu-id="ec610-156">By default, this is *PROJECT_ROOT\packages.lock.json*.</span></span>
 
 - **`--locked-mode`**
 
-  <span data-ttu-id="f081c-157">Nepovolujte aktualizaci souboru zámku projektu.</span><span class="sxs-lookup"><span data-stu-id="f081c-157">Don't allow updating project lock file.</span></span>
+  <span data-ttu-id="ec610-157">Nepovolujte aktualizaci souboru zámku projektu.</span><span class="sxs-lookup"><span data-stu-id="ec610-157">Don't allow updating project lock file.</span></span>
 
 - **`--no-cache`**
 
-  <span data-ttu-id="f081c-158">Určuje, že nejsou požadavky HTTP cache.</span><span class="sxs-lookup"><span data-stu-id="f081c-158">Specifies to not cache HTTP requests.</span></span>
+  <span data-ttu-id="ec610-158">Určuje, že nejsou požadavky HTTP cache.</span><span class="sxs-lookup"><span data-stu-id="ec610-158">Specifies to not cache HTTP requests.</span></span>
 
 - **`--no-dependencies`**
 
-  <span data-ttu-id="f081c-159">Při obnovení projektu s odkazy z projektu na projekt (P2P) obnoví kořenový projekt a nikoli odkazy.</span><span class="sxs-lookup"><span data-stu-id="f081c-159">When restoring a project with project-to-project (P2P) references, restores the root project and not the references.</span></span>
+  <span data-ttu-id="ec610-159">Při obnovení projektu s odkazy z projektu na projekt (P2P) obnoví kořenový projekt a nikoli odkazy.</span><span class="sxs-lookup"><span data-stu-id="ec610-159">When restoring a project with project-to-project (P2P) references, restores the root project and not the references.</span></span>
 
 - **`--packages <PACKAGES_DIRECTORY>`**
 
-  <span data-ttu-id="f081c-160">Určuje adresář pro obnovené balíčky.</span><span class="sxs-lookup"><span data-stu-id="f081c-160">Specifies the directory for restored packages.</span></span>
+  <span data-ttu-id="ec610-160">Určuje adresář pro obnovené balíčky.</span><span class="sxs-lookup"><span data-stu-id="ec610-160">Specifies the directory for restored packages.</span></span>
 
 - **`-r|--runtime <RUNTIME_IDENTIFIER>`**
 
-  <span data-ttu-id="f081c-161">Určuje modul runtime pro obnovení balíčku.</span><span class="sxs-lookup"><span data-stu-id="f081c-161">Specifies a runtime for the package restore.</span></span> <span data-ttu-id="f081c-162">Slouží k obnovení balíčků pro moduly runtime, které nejsou explicitně uvedeny v `<RuntimeIdentifiers>` značce v souboru *. csproj* .</span><span class="sxs-lookup"><span data-stu-id="f081c-162">This is used to restore packages for runtimes not explicitly listed in the `<RuntimeIdentifiers>` tag in the *.csproj* file.</span></span> <span data-ttu-id="f081c-163">Seznam identifikátorů modulu runtime (identifikátorů RID) najdete v [katalogu RID](../rid-catalog.md).</span><span class="sxs-lookup"><span data-stu-id="f081c-163">For a list of Runtime Identifiers (RIDs), see the [RID catalog](../rid-catalog.md).</span></span> <span data-ttu-id="f081c-164">Zadáním této možnosti několikrát zadejte víc identifikátorů RID.</span><span class="sxs-lookup"><span data-stu-id="f081c-164">Provide multiple RIDs by specifying this option multiple times.</span></span>
+  <span data-ttu-id="ec610-161">Určuje modul runtime pro obnovení balíčku.</span><span class="sxs-lookup"><span data-stu-id="ec610-161">Specifies a runtime for the package restore.</span></span> <span data-ttu-id="ec610-162">Slouží k obnovení balíčků pro moduly runtime, které nejsou explicitně uvedeny v `<RuntimeIdentifiers>` značce v souboru *. csproj* .</span><span class="sxs-lookup"><span data-stu-id="ec610-162">This is used to restore packages for runtimes not explicitly listed in the `<RuntimeIdentifiers>` tag in the *.csproj* file.</span></span> <span data-ttu-id="ec610-163">Seznam identifikátorů modulu runtime (identifikátorů RID) najdete v [katalogu RID](../rid-catalog.md).</span><span class="sxs-lookup"><span data-stu-id="ec610-163">For a list of Runtime Identifiers (RIDs), see the [RID catalog](../rid-catalog.md).</span></span> <span data-ttu-id="ec610-164">Zadáním této možnosti několikrát zadejte víc identifikátorů RID.</span><span class="sxs-lookup"><span data-stu-id="ec610-164">Provide multiple RIDs by specifying this option multiple times.</span></span>
 
 - **`-s|--source <SOURCE>`**
 
-  <span data-ttu-id="f081c-165">Určuje identifikátor URI zdroje balíčku NuGet, který má být použit během operace obnovení.</span><span class="sxs-lookup"><span data-stu-id="f081c-165">Specifies the URI of the NuGet package source to use during the restore operation.</span></span> <span data-ttu-id="f081c-166">Toto nastavení přepíše všechny zdroje zadané v souborech *NuGet. config* .</span><span class="sxs-lookup"><span data-stu-id="f081c-166">This setting overrides all of the sources specified in the *nuget.config* files.</span></span> <span data-ttu-id="f081c-167">Více zdrojů lze zadat zadáním této možnosti několikrát.</span><span class="sxs-lookup"><span data-stu-id="f081c-167">Multiple sources can be provided by specifying this option multiple times.</span></span>
+  <span data-ttu-id="ec610-165">Určuje identifikátor URI zdroje balíčku NuGet, který má být použit během operace obnovení.</span><span class="sxs-lookup"><span data-stu-id="ec610-165">Specifies the URI of the NuGet package source to use during the restore operation.</span></span> <span data-ttu-id="ec610-166">Toto nastavení přepíše všechny zdroje zadané v *nuget.config* soubory.</span><span class="sxs-lookup"><span data-stu-id="ec610-166">This setting overrides all of the sources specified in the *nuget.config* files.</span></span> <span data-ttu-id="ec610-167">Více zdrojů lze zadat zadáním této možnosti několikrát.</span><span class="sxs-lookup"><span data-stu-id="ec610-167">Multiple sources can be provided by specifying this option multiple times.</span></span>
 
 - **`--use-lock-file`**
 
-  <span data-ttu-id="f081c-168">Povoluje vygenerování souboru zámku projektu a jeho použití s obnovením.</span><span class="sxs-lookup"><span data-stu-id="f081c-168">Enables project lock file to be generated and used with restore.</span></span>
+  <span data-ttu-id="ec610-168">Povoluje vygenerování souboru zámku projektu a jeho použití s obnovením.</span><span class="sxs-lookup"><span data-stu-id="ec610-168">Enables project lock file to be generated and used with restore.</span></span>
 
 - **`-v|--verbosity <LEVEL>`**
 
-  <span data-ttu-id="f081c-169">Nastaví úroveň podrobností příkazu.</span><span class="sxs-lookup"><span data-stu-id="f081c-169">Sets the verbosity level of the command.</span></span> <span data-ttu-id="f081c-170">Povolené hodnoty jsou `q[uiet]` , `m[inimal]` ,, a `n[ormal]` `d[etailed]` `diag[nostic]` .</span><span class="sxs-lookup"><span data-stu-id="f081c-170">Allowed values are `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, and `diag[nostic]`.</span></span> <span data-ttu-id="f081c-171">Výchozí hodnota je `minimal` .</span><span class="sxs-lookup"><span data-stu-id="f081c-171">Default value is `minimal`.</span></span>
+  <span data-ttu-id="ec610-169">Nastaví úroveň podrobností příkazu.</span><span class="sxs-lookup"><span data-stu-id="ec610-169">Sets the verbosity level of the command.</span></span> <span data-ttu-id="ec610-170">Povolené hodnoty jsou `q[uiet]` , `m[inimal]` ,, a `n[ormal]` `d[etailed]` `diag[nostic]` .</span><span class="sxs-lookup"><span data-stu-id="ec610-170">Allowed values are `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, and `diag[nostic]`.</span></span> <span data-ttu-id="ec610-171">Výchozí hodnota je `minimal` .</span><span class="sxs-lookup"><span data-stu-id="ec610-171">Default value is `minimal`.</span></span>
 
-## <a name="examples"></a><span data-ttu-id="f081c-172">Příklady</span><span class="sxs-lookup"><span data-stu-id="f081c-172">Examples</span></span>
+## <a name="examples"></a><span data-ttu-id="ec610-172">Příklady</span><span class="sxs-lookup"><span data-stu-id="ec610-172">Examples</span></span>
 
-- <span data-ttu-id="f081c-173">Obnovit závislosti a nástroje pro projekt v aktuálním adresáři:</span><span class="sxs-lookup"><span data-stu-id="f081c-173">Restore dependencies and tools for the project in the current directory:</span></span>
+- <span data-ttu-id="ec610-173">Obnovit závislosti a nástroje pro projekt v aktuálním adresáři:</span><span class="sxs-lookup"><span data-stu-id="ec610-173">Restore dependencies and tools for the project in the current directory:</span></span>
 
   ```dotnetcli
   dotnet restore
   ```
 
-- <span data-ttu-id="f081c-174">Obnovit závislosti a nástroje pro `app1` projekt nalezené v dané cestě:</span><span class="sxs-lookup"><span data-stu-id="f081c-174">Restore dependencies and tools for the `app1` project found in the   given path:</span></span>
+- <span data-ttu-id="ec610-174">Obnovit závislosti a nástroje pro `app1` projekt nalezené v dané cestě:</span><span class="sxs-lookup"><span data-stu-id="ec610-174">Restore dependencies and tools for the `app1` project found in the given path:</span></span>
 
   ```dotnetcli
-  dotnet restore ~/projects/app1/app1.csproj
+  dotnet restore ./projects/app1/app1.csproj
   ```
 
-- <span data-ttu-id="f081c-175">Obnovte závislosti a nástroje pro projekt v aktuálním adresáři pomocí cesty k souboru, který jste zadali jako zdroj:</span><span class="sxs-lookup"><span data-stu-id="f081c-175">Restore the dependencies and tools for the project in the current   directory using the file path provided as the source:</span></span>
+- <span data-ttu-id="ec610-175">Obnovte závislosti a nástroje pro projekt v aktuálním adresáři pomocí cesty k souboru, který jste zadali jako zdroj:</span><span class="sxs-lookup"><span data-stu-id="ec610-175">Restore the dependencies and tools for the project in the current   directory using the file path provided as the source:</span></span>
 
   ```dotnetcli
   dotnet restore -s c:\packages\mypackages
   ```
 
-- <span data-ttu-id="f081c-176">Obnovte závislosti a nástroje pro projekt v aktuálním adresáři pomocí dvou cest k souborům, které jsou k dispozici jako zdroje:</span><span class="sxs-lookup"><span data-stu-id="f081c-176">Restore the dependencies and tools for the project in the current   directory using the two file paths provided as sources:</span></span>
+- <span data-ttu-id="ec610-176">Obnovte závislosti a nástroje pro projekt v aktuálním adresáři pomocí dvou cest k souborům, které jsou k dispozici jako zdroje:</span><span class="sxs-lookup"><span data-stu-id="ec610-176">Restore the dependencies and tools for the project in the current   directory using the two file paths provided as sources:</span></span>
 
   ```dotnetcli
   dotnet restore -s c:\packages\mypackages -s c:\packages\myotherpackages
   ```
 
-- <span data-ttu-id="f081c-177">Obnoví závislosti a nástroje pro projekt v aktuálním adresáři se zobrazeným podrobným výstupem:</span><span class="sxs-lookup"><span data-stu-id="f081c-177">Restore dependencies and tools for the project in the current directory   showing detailed output:</span></span>
+- <span data-ttu-id="ec610-177">Obnoví závislosti a nástroje pro projekt v aktuálním adresáři se zobrazeným podrobným výstupem:</span><span class="sxs-lookup"><span data-stu-id="ec610-177">Restore dependencies and tools for the project in the current directory   showing detailed output:</span></span>
 
   ```dotnetcli
   dotnet restore --verbosity detailed

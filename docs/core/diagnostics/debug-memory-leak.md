@@ -1,72 +1,72 @@
 ---
 title: Ladění kurzu nevracení paměti
-description: Zjistěte, jak ladit nevracení paměti v .NET Core.
+description: Naučte se ladit nevracení paměti v .NET Core.
 ms.topic: tutorial
 ms.date: 04/20/2020
-ms.openlocfilehash: d47992bab9dab64cf7f88ff679eef407dd891b5a
-ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
+ms.openlocfilehash: ff684f9b9402cb8b7b648e792a1d37ddcc96b399
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82021357"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86924887"
 ---
-# <a name="tutorial-debug-a-memory-leak-in-net-core"></a><span data-ttu-id="6964b-103">Kurz: Ladění nevracení paměti v rozhraní .NET Core</span><span class="sxs-lookup"><span data-stu-id="6964b-103">Tutorial: Debug a memory leak in .NET Core</span></span>
+# <a name="debug-a-memory-leak-in-net-core"></a><span data-ttu-id="6ade8-103">Ladění nevracení paměti v .NET Core</span><span class="sxs-lookup"><span data-stu-id="6ade8-103">Debug a memory leak in .NET Core</span></span>
 
-<span data-ttu-id="6964b-104">**Tento článek se týká:** ✔️ .NET Core 3.0 SDK a novější verze</span><span class="sxs-lookup"><span data-stu-id="6964b-104">**This article applies to:** ✔️ .NET Core 3.0 SDK and later versions</span></span>
+<span data-ttu-id="6ade8-104">**Tento článek se týká:** ✔️ .net Core 3,1 SDK a novějších verzí</span><span class="sxs-lookup"><span data-stu-id="6ade8-104">**This article applies to:** ✔️ .NET Core 3.1 SDK and later versions</span></span>
 
-<span data-ttu-id="6964b-105">Tento kurz ukazuje nástroje pro analýzu nevracení paměti .NET Core.</span><span class="sxs-lookup"><span data-stu-id="6964b-105">This tutorial demonstrates the tools to analyze a .NET Core memory leak.</span></span>
+<span data-ttu-id="6ade8-105">Tento kurz demonstruje nástroje pro analýzu nevracení paměti .NET Core.</span><span class="sxs-lookup"><span data-stu-id="6ade8-105">This tutorial demonstrates the tools to analyze a .NET Core memory leak.</span></span>
 
-<span data-ttu-id="6964b-106">Tento kurz používá ukázkovou aplikaci, která je určena k úmyslnému úniku paměti.</span><span class="sxs-lookup"><span data-stu-id="6964b-106">This tutorial uses a sample app, which is designed to intentionally leak memory.</span></span> <span data-ttu-id="6964b-107">Vzorek je poskytován jako cvičení.</span><span class="sxs-lookup"><span data-stu-id="6964b-107">The sample is provided as an exercise.</span></span> <span data-ttu-id="6964b-108">Můžete analyzovat aplikaci, která je neúmyslně nevracení paměti příliš.</span><span class="sxs-lookup"><span data-stu-id="6964b-108">You can analyze an app that is unintentionally leaking memory too.</span></span>
+<span data-ttu-id="6ade8-106">V tomto kurzu se používá ukázková aplikace, která je navržená pro úmyslně nevracení paměti.</span><span class="sxs-lookup"><span data-stu-id="6ade8-106">This tutorial uses a sample app, which is designed to intentionally leak memory.</span></span> <span data-ttu-id="6ade8-107">Ukázka je poskytována jako cvičení.</span><span class="sxs-lookup"><span data-stu-id="6ade8-107">The sample is provided as an exercise.</span></span> <span data-ttu-id="6ade8-108">Můžete analyzovat aplikaci, která neúmyslně nevrací paměť.</span><span class="sxs-lookup"><span data-stu-id="6ade8-108">You can analyze an app that is unintentionally leaking memory too.</span></span>
 
-<span data-ttu-id="6964b-109">V tomto kurzu provedete následující:</span><span class="sxs-lookup"><span data-stu-id="6964b-109">In this tutorial, you will:</span></span>
+<span data-ttu-id="6ade8-109">V tomto kurzu provedete následující:</span><span class="sxs-lookup"><span data-stu-id="6ade8-109">In this tutorial, you will:</span></span>
 
 > [!div class="checklist"]
 >
-> - <span data-ttu-id="6964b-110">Zkontrolujte využití spravované paměti pomocí [čítačů dotnet](dotnet-counters.md).</span><span class="sxs-lookup"><span data-stu-id="6964b-110">Examine managed memory usage with [dotnet-counters](dotnet-counters.md).</span></span>
-> - <span data-ttu-id="6964b-111">Vygenerujte soubor s výpisem stavu paměti.</span><span class="sxs-lookup"><span data-stu-id="6964b-111">Generate a dump file.</span></span>
-> - <span data-ttu-id="6964b-112">Analyzujte využití paměti pomocí souboru s výpisem stavu paměti.</span><span class="sxs-lookup"><span data-stu-id="6964b-112">Analyze the memory usage using the dump file.</span></span>
+> - <span data-ttu-id="6ade8-110">Projděte si využití spravované paměti pomocí [čítače dotnet-Counters](dotnet-counters.md).</span><span class="sxs-lookup"><span data-stu-id="6ade8-110">Examine managed memory usage with [dotnet-counters](dotnet-counters.md).</span></span>
+> - <span data-ttu-id="6ade8-111">Vygenerujte soubor s výpisem paměti.</span><span class="sxs-lookup"><span data-stu-id="6ade8-111">Generate a dump file.</span></span>
+> - <span data-ttu-id="6ade8-112">Analyzujte využití paměti pomocí souboru s výpisem paměti.</span><span class="sxs-lookup"><span data-stu-id="6ade8-112">Analyze the memory usage using the dump file.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="6964b-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="6964b-113">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="6ade8-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="6ade8-113">Prerequisites</span></span>
 
-<span data-ttu-id="6964b-114">Kurz používá:</span><span class="sxs-lookup"><span data-stu-id="6964b-114">The tutorial uses:</span></span>
+<span data-ttu-id="6ade8-114">V tomto kurzu se používá:</span><span class="sxs-lookup"><span data-stu-id="6ade8-114">The tutorial uses:</span></span>
 
-- <span data-ttu-id="6964b-115">[Sada .NET Core 3.0 SDK](https://dotnet.microsoft.com/download/dotnet-core) nebo novější verze.</span><span class="sxs-lookup"><span data-stu-id="6964b-115">[.NET Core 3.0 SDK](https://dotnet.microsoft.com/download/dotnet-core) or a later version.</span></span>
-- <span data-ttu-id="6964b-116">[dotnet-trace](dotnet-trace.md) do seznamu procesů.</span><span class="sxs-lookup"><span data-stu-id="6964b-116">[dotnet-trace](dotnet-trace.md) to list processes.</span></span>
-- <span data-ttu-id="6964b-117">[dotnet-čítače](dotnet-counters.md) pro kontrolu využití spravované paměti.</span><span class="sxs-lookup"><span data-stu-id="6964b-117">[dotnet-counters](dotnet-counters.md) to check managed memory usage.</span></span>
-- <span data-ttu-id="6964b-118">[dotnet-dump](dotnet-dump.md) shromažďovat a analyzovat soubor s výpisem stavu paměti.</span><span class="sxs-lookup"><span data-stu-id="6964b-118">[dotnet-dump](dotnet-dump.md) to collect and analyze a dump file.</span></span>
-- <span data-ttu-id="6964b-119">[Ukázka ladění cílové](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios/) aplikace diagnostikovat.</span><span class="sxs-lookup"><span data-stu-id="6964b-119">A [sample debug target](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios/) app to diagnose.</span></span>
+- <span data-ttu-id="6ade8-115">[.NET Core 3,1 SDK](https://dotnet.microsoft.com/download/dotnet-core) nebo novější verze.</span><span class="sxs-lookup"><span data-stu-id="6ade8-115">[.NET Core 3.1 SDK](https://dotnet.microsoft.com/download/dotnet-core) or a later version.</span></span>
+- <span data-ttu-id="6ade8-116">[dotnet – trasování](dotnet-trace.md) pro výpis procesů</span><span class="sxs-lookup"><span data-stu-id="6ade8-116">[dotnet-trace](dotnet-trace.md) to list processes.</span></span>
+- <span data-ttu-id="6ade8-117">[dotnet – čítače](dotnet-counters.md) pro kontrolu využití spravované paměti</span><span class="sxs-lookup"><span data-stu-id="6ade8-117">[dotnet-counters](dotnet-counters.md) to check managed memory usage.</span></span>
+- <span data-ttu-id="6ade8-118">[dotnet – vypíše stav](dotnet-dump.md) pro shromáždění a analýzu souboru s výpisem paměti.</span><span class="sxs-lookup"><span data-stu-id="6ade8-118">[dotnet-dump](dotnet-dump.md) to collect and analyze a dump file.</span></span>
+- <span data-ttu-id="6ade8-119">[Ukázková cílová aplikace ladění](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios/) , která se má diagnostikovat</span><span class="sxs-lookup"><span data-stu-id="6ade8-119">A [sample debug target](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios/) app to diagnose.</span></span>
 
-<span data-ttu-id="6964b-120">Kurz předpokládá, že ukázka a nástroje jsou nainstalovány a připraveny k použití.</span><span class="sxs-lookup"><span data-stu-id="6964b-120">The tutorial assumes the sample and tools are installed and ready to use.</span></span>
+<span data-ttu-id="6ade8-120">V tomto kurzu se předpokládá, že je nainstalovaná ukázka a nástroje, které jsou připravené k použití.</span><span class="sxs-lookup"><span data-stu-id="6ade8-120">The tutorial assumes the sample and tools are installed and ready to use.</span></span>
 
-## <a name="examine-managed-memory-usage"></a><span data-ttu-id="6964b-121">Zkontrolujte využití spravované paměti</span><span class="sxs-lookup"><span data-stu-id="6964b-121">Examine managed memory usage</span></span>
+## <a name="examine-managed-memory-usage"></a><span data-ttu-id="6ade8-121">Prověření využití spravované paměti</span><span class="sxs-lookup"><span data-stu-id="6ade8-121">Examine managed memory usage</span></span>
 
-<span data-ttu-id="6964b-122">Než začnete shromažďovat diagnostická data, která nám pomáhají způsobit tento scénář, musíte se ujistit, že skutečně vidíte nevracení paměti (růst paměti).</span><span class="sxs-lookup"><span data-stu-id="6964b-122">Before you start collecting diagnostics data to help us root cause this scenario, you need to make sure you're actually seeing a memory leak (memory growth).</span></span> <span data-ttu-id="6964b-123">Můžete použít [nástroj dotnet-čítače](dotnet-counters.md) k potvrzení.</span><span class="sxs-lookup"><span data-stu-id="6964b-123">You can use the [dotnet-counters](dotnet-counters.md) tool to confirm that.</span></span>
+<span data-ttu-id="6ade8-122">Než začnete shromažďovat diagnostická data, která nám pomůžou hlavní příčinu tohoto scénáře, musíte se ujistit, že se skutečně zobrazuje nevracení paměti (nárůst paměti).</span><span class="sxs-lookup"><span data-stu-id="6ade8-122">Before you start collecting diagnostics data to help us root cause this scenario, you need to make sure you're actually seeing a memory leak (memory growth).</span></span> <span data-ttu-id="6ade8-123">K potvrzení můžete použít nástroj [dotnet-Counters](dotnet-counters.md) .</span><span class="sxs-lookup"><span data-stu-id="6ade8-123">You can use the [dotnet-counters](dotnet-counters.md) tool to confirm that.</span></span>
 
-<span data-ttu-id="6964b-124">Otevřete okno konzoly a přejděte do adresáře, do kterého jste stáhli a rozbalili [ukázkový ladicí cíl](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios/).</span><span class="sxs-lookup"><span data-stu-id="6964b-124">Open a console window and navigate to the directory where you downloaded and unzipped the [sample debug target](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios/).</span></span> <span data-ttu-id="6964b-125">Spusťte cíl:</span><span class="sxs-lookup"><span data-stu-id="6964b-125">Run the target:</span></span>
+<span data-ttu-id="6ade8-124">Otevřete okno konzoly a přejděte do adresáře, do kterého jste stáhli, a vraťte se do [ukázkového cíle ladění](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios/).</span><span class="sxs-lookup"><span data-stu-id="6ade8-124">Open a console window and navigate to the directory where you downloaded and unzipped the [sample debug target](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios/).</span></span> <span data-ttu-id="6ade8-125">Spusťte cíl:</span><span class="sxs-lookup"><span data-stu-id="6ade8-125">Run the target:</span></span>
 
 ```dotnetcli
 dotnet run
 ```
 
-<span data-ttu-id="6964b-126">Ze samostatné konzoly vyhledejte ID procesu pomocí nástroje [dotnet-trace:](dotnet-trace.md)</span><span class="sxs-lookup"><span data-stu-id="6964b-126">From a separate console, find the process ID using the [dotnet-trace](dotnet-trace.md) tool:</span></span>
+<span data-ttu-id="6ade8-126">V samostatné konzole Najděte ID procesu pomocí nástroje [dotnet-Trace](dotnet-trace.md) Tool:</span><span class="sxs-lookup"><span data-stu-id="6ade8-126">From a separate console, find the process ID using the [dotnet-trace](dotnet-trace.md) tool:</span></span>
 
 ```console
 dotnet-trace ps
 ```
 
-<span data-ttu-id="6964b-127">Výstup by měl být podobný:</span><span class="sxs-lookup"><span data-stu-id="6964b-127">The output should be similar to:</span></span>
+<span data-ttu-id="6ade8-127">Výstup by měl vypadat přibližně takto:</span><span class="sxs-lookup"><span data-stu-id="6ade8-127">The output should be similar to:</span></span>
 
 ```console
 4807 DiagnosticScena /home/user/git/samples/core/diagnostics/DiagnosticScenarios/bin/Debug/netcoreapp3.0/DiagnosticScenarios
 ```
 
-<span data-ttu-id="6964b-128">Nyní zkontrolujte využití spravované paměti pomocí nástroje [dotnet-counters.](dotnet-counters.md)</span><span class="sxs-lookup"><span data-stu-id="6964b-128">Now, check managed memory usage with the [dotnet-counters](dotnet-counters.md) tool.</span></span> <span data-ttu-id="6964b-129">Určuje `--refresh-interval` počet sekund mezi aktualizacemi:</span><span class="sxs-lookup"><span data-stu-id="6964b-129">The `--refresh-interval` specifies the number of seconds between refreshes:</span></span>
+<span data-ttu-id="6ade8-128">Teď pomocí nástroje [dotnet-Counters](dotnet-counters.md) ověřte využití spravované paměti.</span><span class="sxs-lookup"><span data-stu-id="6ade8-128">Now, check managed memory usage with the [dotnet-counters](dotnet-counters.md) tool.</span></span> <span data-ttu-id="6ade8-129">`--refresh-interval`Určuje počet sekund mezi aktualizacemi:</span><span class="sxs-lookup"><span data-stu-id="6ade8-129">The `--refresh-interval` specifies the number of seconds between refreshes:</span></span>
 
 ```console
 dotnet-counters monitor --refresh-interval 1 -p 4807
 ```
 
-<span data-ttu-id="6964b-130">Živý výstup by měl být podobný:</span><span class="sxs-lookup"><span data-stu-id="6964b-130">The live output should be similar to:</span></span>
+<span data-ttu-id="6ade8-130">Živý výstup by měl vypadat přibližně takto:</span><span class="sxs-lookup"><span data-stu-id="6ade8-130">The live output should be similar to:</span></span>
 
 ```console
 Press p to pause, r to resume, q to quit.
@@ -94,61 +94,61 @@ Press p to pause, r to resume, q to quit.
     Working Set (MB)                                  83
 ```
 
-<span data-ttu-id="6964b-131">Zaměření na tento řádek:</span><span class="sxs-lookup"><span data-stu-id="6964b-131">Focusing on this line:</span></span>
+<span data-ttu-id="6ade8-131">Zaměřit se na tento řádek:</span><span class="sxs-lookup"><span data-stu-id="6ade8-131">Focusing on this line:</span></span>
 
 ```console
     GC Heap Size (MB)                                  4
 ```
 
-<span data-ttu-id="6964b-132">Můžete vidět, že spravované haldy paměti je 4 MB hned po spuštění.</span><span class="sxs-lookup"><span data-stu-id="6964b-132">You can see that the managed heap memory is 4 MB right after startup.</span></span>
+<span data-ttu-id="6ade8-132">Můžete zjistit, že paměť spravované haldy je 4 MB, a to hned po spuštění.</span><span class="sxs-lookup"><span data-stu-id="6ade8-132">You can see that the managed heap memory is 4 MB right after startup.</span></span>
 
-<span data-ttu-id="6964b-133">Nyní stiskněte adresu `http://localhost:5000/api/diagscenario/memleak/20000`URL .</span><span class="sxs-lookup"><span data-stu-id="6964b-133">Now, hit the URL `http://localhost:5000/api/diagscenario/memleak/20000`.</span></span>
+<span data-ttu-id="6ade8-133">Teď stiskněte adresu URL `https://localhost:5001/api/diagscenario/memleak/20000` .</span><span class="sxs-lookup"><span data-stu-id="6ade8-133">Now, hit the URL `https://localhost:5001/api/diagscenario/memleak/20000`.</span></span>
 
-<span data-ttu-id="6964b-134">Všimněte si, že využití paměti se rozrostla na 30 MB.</span><span class="sxs-lookup"><span data-stu-id="6964b-134">Observe that the memory usage has grown to 30 MB.</span></span>
+<span data-ttu-id="6ade8-134">Pozor, aby využití paměti bylo nárůst na 30 MB.</span><span class="sxs-lookup"><span data-stu-id="6ade8-134">Observe that the memory usage has grown to 30 MB.</span></span>
 
 ```console
     GC Heap Size (MB)                                 30
 ```
 
-<span data-ttu-id="6964b-135">Sledováním využití paměti, můžete bezpečně říci, že paměť roste nebo nevracení.</span><span class="sxs-lookup"><span data-stu-id="6964b-135">By watching the memory usage, you can safely say that memory is growing or leaking.</span></span> <span data-ttu-id="6964b-136">Dalším krokem je shromáždit správná data pro analýzu paměti.</span><span class="sxs-lookup"><span data-stu-id="6964b-136">The next step is to collect the right data for memory analysis.</span></span>
+<span data-ttu-id="6ade8-135">Sledováním využití paměti můžete bezpečně vyslovit, že se paměť zvětšuje nebo nevrací.</span><span class="sxs-lookup"><span data-stu-id="6ade8-135">By watching the memory usage, you can safely say that memory is growing or leaking.</span></span> <span data-ttu-id="6ade8-136">Dalším krokem je shromáždění správných dat pro analýzu paměti.</span><span class="sxs-lookup"><span data-stu-id="6ade8-136">The next step is to collect the right data for memory analysis.</span></span>
 
-### <a name="generate-memory-dump"></a><span data-ttu-id="6964b-137">Generovat výpis stavu paměti</span><span class="sxs-lookup"><span data-stu-id="6964b-137">Generate memory dump</span></span>
+### <a name="generate-memory-dump"></a><span data-ttu-id="6ade8-137">Generovat výpis paměti</span><span class="sxs-lookup"><span data-stu-id="6ade8-137">Generate memory dump</span></span>
 
-<span data-ttu-id="6964b-138">Při analýze možných nevracení paměti potřebujete přístup k haldě paměti aplikace.</span><span class="sxs-lookup"><span data-stu-id="6964b-138">When analyzing possible memory leaks, you need access to the app's memory heap.</span></span> <span data-ttu-id="6964b-139">Pak můžete analyzovat obsah paměti.</span><span class="sxs-lookup"><span data-stu-id="6964b-139">Then you can analyze the memory contents.</span></span> <span data-ttu-id="6964b-140">Při pohledu na vztahy mezi objekty vytváříte teorie o tom, proč není paměť uvolněna.</span><span class="sxs-lookup"><span data-stu-id="6964b-140">Looking at relationships between objects, you create theories on why memory isn't being freed.</span></span> <span data-ttu-id="6964b-141">Běžný diagnostický zdroj dat je výpis stavu paměti v systému Windows nebo ekvivalentní výpis jádra v systému Linux.</span><span class="sxs-lookup"><span data-stu-id="6964b-141">A common diagnostics data source is a memory dump on Windows or the equivalent core dump on Linux.</span></span> <span data-ttu-id="6964b-142">Chcete-li generovat výpis aplikace .NET Core, můžete použít nástroj [dotnet-dump).](dotnet-dump.md)</span><span class="sxs-lookup"><span data-stu-id="6964b-142">To generate a dump of a .NET Core application, you can use the [dotnet-dump)](dotnet-dump.md) tool.</span></span>
+<span data-ttu-id="6ade8-138">Při analýze možné nevracení paměti potřebujete přístup k haldě paměti aplikace.</span><span class="sxs-lookup"><span data-stu-id="6ade8-138">When analyzing possible memory leaks, you need access to the app's memory heap.</span></span> <span data-ttu-id="6ade8-139">Pak můžete analyzovat obsah paměti.</span><span class="sxs-lookup"><span data-stu-id="6ade8-139">Then you can analyze the memory contents.</span></span> <span data-ttu-id="6ade8-140">Při prohlížení vztahů mezi objekty vytvoříte teorie, proč se paměť neuvolňuje.</span><span class="sxs-lookup"><span data-stu-id="6ade8-140">Looking at relationships between objects, you create theories on why memory isn't being freed.</span></span> <span data-ttu-id="6ade8-141">Běžný zdroj dat diagnostiky je výpis paměti ve Windows nebo ekvivalentní základní Výpis stavu systému Linux.</span><span class="sxs-lookup"><span data-stu-id="6ade8-141">A common diagnostics data source is a memory dump on Windows or the equivalent core dump on Linux.</span></span> <span data-ttu-id="6ade8-142">Chcete-li vygenerovat výpis paměti aplikace .NET Core, můžete použít nástroj [dotnet-dump)](dotnet-dump.md) .</span><span class="sxs-lookup"><span data-stu-id="6ade8-142">To generate a dump of a .NET Core application, you can use the [dotnet-dump)](dotnet-dump.md) tool.</span></span>
 
-<span data-ttu-id="6964b-143">Pomocí [dříve spuštěného ukázkového cíle ladění](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios/) vygenerujte výpis jádra Linuxu následujícím příkazem:</span><span class="sxs-lookup"><span data-stu-id="6964b-143">Using the [sample debug target](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios/) previously started, run the following command to generate a Linux core dump:</span></span>
+<span data-ttu-id="6ade8-143">Pomocí dříve spuštěného [ukázkového cíle ladění](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios/) spusťte následující příkaz, který vygeneruje výpis jádra pro Linux:</span><span class="sxs-lookup"><span data-stu-id="6ade8-143">Using the [sample debug target](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios/) previously started, run the following command to generate a Linux core dump:</span></span>
 
 ```dotnetcli
 dotnet-dump collect -p 4807
 ```
 
-<span data-ttu-id="6964b-144">Výsledkem je výpis jádra umístěný ve stejné složce.</span><span class="sxs-lookup"><span data-stu-id="6964b-144">The result is a core dump located in the same folder.</span></span>
+<span data-ttu-id="6ade8-144">Výsledkem je základní Výpis paměti umístěný ve stejné složce.</span><span class="sxs-lookup"><span data-stu-id="6ade8-144">The result is a core dump located in the same folder.</span></span>
 
 ```console
 Writing minidump with heap to ./core_20190430_185145
 Complete
 ```
 
-### <a name="restart-the-failed-process"></a><span data-ttu-id="6964b-145">Restartování neúspěšného procesu</span><span class="sxs-lookup"><span data-stu-id="6964b-145">Restart the failed process</span></span>
+### <a name="restart-the-failed-process"></a><span data-ttu-id="6ade8-145">Restartování neúspěšného procesu</span><span class="sxs-lookup"><span data-stu-id="6ade8-145">Restart the failed process</span></span>
 
-<span data-ttu-id="6964b-146">Jakmile je výpis shromážděn, měli byste mít dostatek informací k diagnostice neúspěšného procesu.</span><span class="sxs-lookup"><span data-stu-id="6964b-146">Once the dump is collected, you should have sufficient information to diagnose the failed process.</span></span> <span data-ttu-id="6964b-147">Pokud je neúspěšný proces spuštěn na produkčním serveru, je nyní ideální čas pro krátkodobou nápravu restartováním procesu.</span><span class="sxs-lookup"><span data-stu-id="6964b-147">If the failed process is running on a production server, now it's the ideal time for short-term remediation by restarting the process.</span></span>
+<span data-ttu-id="6ade8-146">Po shromáždění výpisu paměti by měly být k dispozici dostatečné informace pro diagnostiku neúspěšného procesu.</span><span class="sxs-lookup"><span data-stu-id="6ade8-146">Once the dump is collected, you should have sufficient information to diagnose the failed process.</span></span> <span data-ttu-id="6ade8-147">Pokud se neúspěšný proces na provozním serveru běží, je teď to ideální čas pro krátkodobou nápravu, protože proces se restartuje.</span><span class="sxs-lookup"><span data-stu-id="6ade8-147">If the failed process is running on a production server, now it's the ideal time for short-term remediation by restarting the process.</span></span>
 
-<span data-ttu-id="6964b-148">V tomto kurzu jste nyní hotovi s [cíl ladění ukázkové](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios/) a můžete jej zavřít.</span><span class="sxs-lookup"><span data-stu-id="6964b-148">In this tutorial, you're now done with the [Sample debug target](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios/) and you can close it.</span></span> <span data-ttu-id="6964b-149">Přejděte na terminál, který `Control-C`spustil server, a stiskněte klávesu .</span><span class="sxs-lookup"><span data-stu-id="6964b-149">Navigate to the terminal that started the server and press `Control-C`.</span></span>
+<span data-ttu-id="6ade8-148">V tomto kurzu jste teď hotovi s [ukázkovým cílem ladění](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios/) a můžete ho zavřít.</span><span class="sxs-lookup"><span data-stu-id="6ade8-148">In this tutorial, you're now done with the [Sample debug target](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios/) and you can close it.</span></span> <span data-ttu-id="6ade8-149">Přejděte do terminálu, který spustil server, a stiskněte klávesy <kbd>CTRL + C</kbd>.</span><span class="sxs-lookup"><span data-stu-id="6ade8-149">Navigate to the terminal that started the server, and press <kbd>Ctrl+C</kbd>.</span></span>
 
-### <a name="analyze-the-core-dump"></a><span data-ttu-id="6964b-150">Analýza výpisu jádra</span><span class="sxs-lookup"><span data-stu-id="6964b-150">Analyze the core dump</span></span>
+### <a name="analyze-the-core-dump"></a><span data-ttu-id="6ade8-150">Analyzovat základní Výpis paměti</span><span class="sxs-lookup"><span data-stu-id="6ade8-150">Analyze the core dump</span></span>
 
-<span data-ttu-id="6964b-151">Nyní, když máte generovaný výpis jádra, použijte nástroj [dotnet-dump](dotnet-dump.md) k analýze výpisu:</span><span class="sxs-lookup"><span data-stu-id="6964b-151">Now that you have a core dump generated, use the [dotnet-dump](dotnet-dump.md) tool to analyze the dump:</span></span>
+<span data-ttu-id="6ade8-151">Teď, když máte vygenerovaný základní Výpis, použijte k analýze výpisu nástroj [dotnet-dump](dotnet-dump.md) :</span><span class="sxs-lookup"><span data-stu-id="6ade8-151">Now that you have a core dump generated, use the [dotnet-dump](dotnet-dump.md) tool to analyze the dump:</span></span>
 
 ```dotnetcli
 dotnet-dump analyze core_20190430_185145
 ```
 
-<span data-ttu-id="6964b-152">Kde `core_20190430_185145` je název výpisu jádra, který chcete analyzovat.</span><span class="sxs-lookup"><span data-stu-id="6964b-152">Where `core_20190430_185145` is the name of the core dump you want to analyze.</span></span>
+<span data-ttu-id="6ade8-152">Kde `core_20190430_185145` je název základního výpisu, který chcete analyzovat.</span><span class="sxs-lookup"><span data-stu-id="6ade8-152">Where `core_20190430_185145` is the name of the core dump you want to analyze.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="6964b-153">Pokud se zobrazí chyba, která si stěžuje, že *libdl.so* nebyl a nebyl nalezen, bude pravděpodobně nutné nainstalovat balíček *libc6-dev.*</span><span class="sxs-lookup"><span data-stu-id="6964b-153">If you see an error complaining that *libdl.so* cannot be found, you may have to install the *libc6-dev* package.</span></span> <span data-ttu-id="6964b-154">Další informace naleznete [v tématu Požadavky pro .NET Core na Linuxu](../install/dependencies.md?pivots=os-linux).</span><span class="sxs-lookup"><span data-stu-id="6964b-154">For more information, see [Prerequisites for .NET Core on Linux](../install/dependencies.md?pivots=os-linux).</span></span>
+> <span data-ttu-id="6ade8-153">Pokud se zobrazí chyba s stížností, že se *libdl.so* nedá najít, možná budete muset nainstalovat balíček *libc6-dev* .</span><span class="sxs-lookup"><span data-stu-id="6ade8-153">If you see an error complaining that *libdl.so* cannot be found, you may have to install the *libc6-dev* package.</span></span> <span data-ttu-id="6ade8-154">Další informace najdete v tématu [předpoklady pro .NET Core v systému Linux](../install/dependencies.md?pivots=os-linux).</span><span class="sxs-lookup"><span data-stu-id="6ade8-154">For more information, see [Prerequisites for .NET Core on Linux](../install/dependencies.md?pivots=os-linux).</span></span>
 
-<span data-ttu-id="6964b-155">Zobrazí se výzva, kde můžete zadat příkazy SOS.</span><span class="sxs-lookup"><span data-stu-id="6964b-155">You'll be presented with a prompt where you can enter SOS commands.</span></span> <span data-ttu-id="6964b-156">Obvykle první věc, kterou chcete podívat na je celkový stav spravované haldy:</span><span class="sxs-lookup"><span data-stu-id="6964b-156">Commonly, the first thing you want to look at is the overall state of the managed heap:</span></span>
+<span data-ttu-id="6ade8-155">Zobrazí se výzva, kde můžete zadat SOS příkazy.</span><span class="sxs-lookup"><span data-stu-id="6ade8-155">You'll be presented with a prompt where you can enter SOS commands.</span></span> <span data-ttu-id="6ade8-156">Obvykle první věc, kterou chcete sledovat, je celkový stav spravované haldy:</span><span class="sxs-lookup"><span data-stu-id="6ade8-156">Commonly, the first thing you want to look at is the overall state of the managed heap:</span></span>
 
 ```console
 > dumpheap -stat
@@ -168,9 +168,9 @@ Statistics:
 Total 428516 objects
 ```
 
-<span data-ttu-id="6964b-157">Zde můžete vidět, že `String` většina objektů jsou buď nebo `Customer` objekty.</span><span class="sxs-lookup"><span data-stu-id="6964b-157">Here you can see that most objects are either `String` or `Customer` objects.</span></span>
+<span data-ttu-id="6ade8-157">Tady vidíte, že většinu objektů jsou `String` nebo `Customer` objekty.</span><span class="sxs-lookup"><span data-stu-id="6ade8-157">Here you can see that most objects are either `String` or `Customer` objects.</span></span>
 
-<span data-ttu-id="6964b-158">`dumpheap` Příkaz můžete použít znovu s tabulkou metody (MT) `String` k získání seznamu všech instancí:</span><span class="sxs-lookup"><span data-stu-id="6964b-158">You can use the `dumpheap` command again with the method table (MT) to get a list of all the `String` instances:</span></span>
+<span data-ttu-id="6ade8-158">Příkaz můžete použít `dumpheap` znovu s tabulkou metod (MT) a získat tak seznam všech `String` instancí:</span><span class="sxs-lookup"><span data-stu-id="6ade8-158">You can use the `dumpheap` command again with the method table (MT) to get a list of all the `String` instances:</span></span>
 
 ```console
 > dumpheap -mt 00007faddaa50f90
@@ -191,7 +191,7 @@ Statistics:
 Total 206770 objects
 ```
 
-<span data-ttu-id="6964b-159">Nyní můžete použít `gcroot` příkaz `System.String` na instanci vidět, jak a proč je objekt zakořeněný.</span><span class="sxs-lookup"><span data-stu-id="6964b-159">You can now use the `gcroot` command on a `System.String` instance to see how and why the object is rooted.</span></span> <span data-ttu-id="6964b-160">Buďte trpěliví, protože tento příkaz trvá několik minut s haldou 30 MB:</span><span class="sxs-lookup"><span data-stu-id="6964b-160">Be patient because this command takes several minutes with a 30-MB heap:</span></span>
+<span data-ttu-id="6ade8-159">Nyní můžete použít `gcroot` příkaz na `System.String` instanci, abyste viděli, jak a proč je objekt rootem.</span><span class="sxs-lookup"><span data-stu-id="6ade8-159">You can now use the `gcroot` command on a `System.String` instance to see how and why the object is rooted.</span></span> <span data-ttu-id="6ade8-160">Být pacient, protože tento příkaz trvá několik minut s haldou 30 MB:</span><span class="sxs-lookup"><span data-stu-id="6ade8-160">Be patient because this command takes several minutes with a 30-MB heap:</span></span>
 
 ```console
 > gcroot -all 00007f6ad09421f8
@@ -220,26 +220,26 @@ HandleTable:
 Found 2 roots.
 ```
 
-<span data-ttu-id="6964b-161">Můžete vidět, `String` že je přímo `Customer` držen objektem a `CustomerCache` nepřímo v držení objektu.</span><span class="sxs-lookup"><span data-stu-id="6964b-161">You can see that the `String` is directly held by the `Customer` object and indirectly held by a `CustomerCache` object.</span></span>
+<span data-ttu-id="6ade8-161">Můžete vidět, že `String` je přímo držen `Customer` objektem a nepřímo drženým `CustomerCache` objektem.</span><span class="sxs-lookup"><span data-stu-id="6ade8-161">You can see that the `String` is directly held by the `Customer` object and indirectly held by a `CustomerCache` object.</span></span>
 
-<span data-ttu-id="6964b-162">Můžete pokračovat dumping z objektů `String` vidět, že většina objektů sledovat podobný vzor.</span><span class="sxs-lookup"><span data-stu-id="6964b-162">You can continue dumping out objects to see that most `String` objects follow a similar pattern.</span></span> <span data-ttu-id="6964b-163">V tomto okamžiku šetření za předpokladu, dostatečné informace k identifikaci hlavní příčinu ve vašem kódu.</span><span class="sxs-lookup"><span data-stu-id="6964b-163">At this point, the investigation provided sufficient information to identify the root cause in your code.</span></span>
+<span data-ttu-id="6ade8-162">Můžete pokračovat v oddálení objektů a prohlédnout si, že většina `String` objektů dodržuje podobný vzor.</span><span class="sxs-lookup"><span data-stu-id="6ade8-162">You can continue dumping out objects to see that most `String` objects follow a similar pattern.</span></span> <span data-ttu-id="6ade8-163">V tomto okamžiku šetření poskytlo dostatečné informace pro identifikaci hlavní příčiny ve vašem kódu.</span><span class="sxs-lookup"><span data-stu-id="6ade8-163">At this point, the investigation provided sufficient information to identify the root cause in your code.</span></span>
 
-<span data-ttu-id="6964b-164">Tento obecný postup umožňuje identifikovat zdroj hlavní nevracení paměti.</span><span class="sxs-lookup"><span data-stu-id="6964b-164">This general procedure allows you to identify the source of major memory leaks.</span></span>
+<span data-ttu-id="6ade8-164">Tento obecný postup vám umožní identifikovat zdroj nevracení velkých pamětí.</span><span class="sxs-lookup"><span data-stu-id="6ade8-164">This general procedure allows you to identify the source of major memory leaks.</span></span>
 
-## <a name="clean-up-resources"></a><span data-ttu-id="6964b-165">Vyčištění prostředků</span><span class="sxs-lookup"><span data-stu-id="6964b-165">Clean up resources</span></span>
+## <a name="clean-up-resources"></a><span data-ttu-id="6ade8-165">Vyčištění prostředků</span><span class="sxs-lookup"><span data-stu-id="6ade8-165">Clean up resources</span></span>
 
-<span data-ttu-id="6964b-166">V tomto kurzu jste spustili ukázkový webový server.</span><span class="sxs-lookup"><span data-stu-id="6964b-166">In this tutorial, you started a sample web server.</span></span> <span data-ttu-id="6964b-167">Tento server měl být vypnut, jak je vysvětleno v části [Restartovat proces, který se nezdařil.](#restart-the-failed-process)</span><span class="sxs-lookup"><span data-stu-id="6964b-167">This server should have been shut down as explained in the [Restart the failed process](#restart-the-failed-process) section.</span></span>
+<span data-ttu-id="6ade8-166">V tomto kurzu jste spustili ukázkový webový server.</span><span class="sxs-lookup"><span data-stu-id="6ade8-166">In this tutorial, you started a sample web server.</span></span> <span data-ttu-id="6ade8-167">Tento server by měl být vypnutý, jak je vysvětleno v části [restartování procesu selhání](#restart-the-failed-process) .</span><span class="sxs-lookup"><span data-stu-id="6ade8-167">This server should have been shut down as explained in the [Restart the failed process](#restart-the-failed-process) section.</span></span>
 
-<span data-ttu-id="6964b-168">Můžete také odstranit soubor s výpisem stavu paměti, který byl vytvořen.</span><span class="sxs-lookup"><span data-stu-id="6964b-168">You can also delete the dump file that was created.</span></span>
+<span data-ttu-id="6ade8-168">Můžete také odstranit soubor s výpisem paměti, který byl vytvořen.</span><span class="sxs-lookup"><span data-stu-id="6ade8-168">You can also delete the dump file that was created.</span></span>
 
-## <a name="next-steps"></a><span data-ttu-id="6964b-169">Další kroky</span><span class="sxs-lookup"><span data-stu-id="6964b-169">Next steps</span></span>
+## <a name="see-also"></a><span data-ttu-id="6ade8-169">Viz také</span><span class="sxs-lookup"><span data-stu-id="6ade8-169">See also</span></span>
 
-<span data-ttu-id="6964b-170">Blahopřejeme k dokončení tohoto kurzu.</span><span class="sxs-lookup"><span data-stu-id="6964b-170">Congratulations on completing this tutorial.</span></span>
+- <span data-ttu-id="6ade8-170">[dotnet – trasování](dotnet-trace.md) pro výpis procesů</span><span class="sxs-lookup"><span data-stu-id="6ade8-170">[dotnet-trace](dotnet-trace.md) to list processes</span></span>
+- <span data-ttu-id="6ade8-171">[dotnet – čítače](dotnet-counters.md) pro kontrolu využití spravované paměti</span><span class="sxs-lookup"><span data-stu-id="6ade8-171">[dotnet-counters](dotnet-counters.md) to check managed memory usage</span></span>
+- <span data-ttu-id="6ade8-172">[dotnet – vystavení](dotnet-dump.md) pro shromáždění a analýzu souboru s výpisem paměti</span><span class="sxs-lookup"><span data-stu-id="6ade8-172">[dotnet-dump](dotnet-dump.md) to collect and analyze a dump file</span></span>
+- [<span data-ttu-id="6ade8-173">dotnet/Diagnostika</span><span class="sxs-lookup"><span data-stu-id="6ade8-173">dotnet/diagnostics</span></span>](https://github.com/dotnet/diagnostics/tree/master/documentation/tutorial)
 
-<span data-ttu-id="6964b-171">Stále zveřejňujeme další diagnostické kurzy.</span><span class="sxs-lookup"><span data-stu-id="6964b-171">We're still publishing more diagnostic tutorials.</span></span> <span data-ttu-id="6964b-172">Můžete si přečíst koncept verze v úložišti [dotnet/diagnostics.](https://github.com/dotnet/diagnostics/tree/master/documentation/tutorial)</span><span class="sxs-lookup"><span data-stu-id="6964b-172">You can read the draft versions on the [dotnet/diagnostics](https://github.com/dotnet/diagnostics/tree/master/documentation/tutorial) repository.</span></span>
+## <a name="next-steps"></a><span data-ttu-id="6ade8-174">Další kroky</span><span class="sxs-lookup"><span data-stu-id="6ade8-174">Next steps</span></span>
 
-<span data-ttu-id="6964b-173">Tento kurz se zabýval základy klíčových diagnostických nástrojů .NET.</span><span class="sxs-lookup"><span data-stu-id="6964b-173">This tutorial covered the basics of key .NET diagnostic tools.</span></span> <span data-ttu-id="6964b-174">Informace o pokročilém použití naleznete v následující referenční dokumentaci:</span><span class="sxs-lookup"><span data-stu-id="6964b-174">For advanced usage, see the following reference documentation:</span></span>
-
-* <span data-ttu-id="6964b-175">[dotnet-trace](dotnet-trace.md) do seznamu procesů.</span><span class="sxs-lookup"><span data-stu-id="6964b-175">[dotnet-trace](dotnet-trace.md) to list processes.</span></span>
-* <span data-ttu-id="6964b-176">[dotnet-čítače](dotnet-counters.md) pro kontrolu využití spravované paměti.</span><span class="sxs-lookup"><span data-stu-id="6964b-176">[dotnet-counters](dotnet-counters.md) to check managed memory usage.</span></span>
-* <span data-ttu-id="6964b-177">[dotnet-dump](dotnet-dump.md) shromažďovat a analyzovat soubor s výpisem stavu paměti.</span><span class="sxs-lookup"><span data-stu-id="6964b-177">[dotnet-dump](dotnet-dump.md) to collect and analyze a dump file.</span></span>
+> [!div class="nextstepaction"]
+> [<span data-ttu-id="6ade8-175">Ladění vysokého výkonu procesoru v .NET Core</span><span class="sxs-lookup"><span data-stu-id="6ade8-175">Debug high CPU in .NET Core</span></span>](debug-highcpu.md)
