@@ -1,5 +1,6 @@
 ---
 title: 'Postupy: Pokračování služby systému Windows (Visual Basic)'
+description: Přečtěte si, jak používat komponentu ServiceController k pokračování služby Windows (například služby Správce služby IIS) na místním počítači s Visual Basic.
 ms.date: 03/30/2017
 dev_langs:
 - vb
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - pausing Windows Service applications
 ms.assetid: e5d13760-4c83-4b0d-abef-39852677cd7a
 author: ghogen
-ms.openlocfilehash: a10e05b0460608a9e67ee4527adf80be3d47438e
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 2a04e330ea7dc37552053b2a7915909c011727f8
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71053642"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925784"
 ---
 # <a name="how-to-continue-a-windows-service-visual-basic"></a>Postupy: Pokračování služby systému Windows (Visual Basic)
 Tento příklad používá <xref:System.ServiceProcess.ServiceController> komponentu k pokračování služby Správce služby IIS v místním počítači.  
@@ -29,14 +30,14 @@ Tento příklad používá <xref:System.ServiceProcess.ServiceController> kompon
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
-- Odkaz na projekt System. ServiceProcess. dll.  
+- Odkaz na projekt System.serviceprocess.dll.  
   
 - Přístup ke členům <xref:System.ServiceProcess> oboru názvů. Přidejte `Imports` příkaz, pokud ve svém kódu plně nekvalifikujete názvy členů. Další informace naleznete v tématu [příkaz Imports (obor názvů a typ rozhraní .NET)](../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md).  
   
 ## <a name="robust-programming"></a>Robustní programování  
- <xref:System.ServiceProcess.ServiceController.MachineName%2A> Vlastnost <xref:System.ServiceProcess.ServiceController> třídy je ve výchozím nastavení místní počítač. Chcete-li odkazovat na služby systému Windows na jiném <xref:System.ServiceProcess.ServiceController.MachineName%2A> počítači, změňte vlastnost na název počítače.  
+ <xref:System.ServiceProcess.ServiceController.MachineName%2A>Vlastnost <xref:System.ServiceProcess.ServiceController> třídy je ve výchozím nastavení místní počítač. Chcete-li odkazovat na služby systému Windows na jiném počítači, změňte <xref:System.ServiceProcess.ServiceController.MachineName%2A> vlastnost na název počítače.  
   
- <xref:System.ServiceProcess.ServiceController.Continue%2A> Metodu nelze volat ve službě, dokud není <xref:System.ServiceProcess.ServiceControllerStatus.Paused>stav řadiče služby.  
+ Metodu nelze volat <xref:System.ServiceProcess.ServiceController.Continue%2A> ve službě, dokud není stav řadiče služby <xref:System.ServiceProcess.ServiceControllerStatus.Paused> .  
   
  Následující podmínky mohou způsobit výjimku:  
   

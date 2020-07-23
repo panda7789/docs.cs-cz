@@ -1,5 +1,6 @@
 ---
 title: Architektura programování aplikace služby
+description: Pochopení architektury programování aplikací služby. Aplikace služby systému Windows jsou založeny na třídě, která dědí z typu System. ServiceProcess. ServiceBase.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -15,26 +16,26 @@ helpviewer_keywords:
 - Windows Service applications, states
 ms.assetid: 83230026-d068-4174-97ff-e264c896eb2f
 author: ghogen
-ms.openlocfilehash: 1c197b487f1cb7596f507f663fe3f1fb83857cbd
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: c59ccc5a8b2f11fda9c4734487092c1aabb74908
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71053487"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925576"
 ---
 # <a name="service-application-programming-architecture"></a>Architektura programování aplikace služby
 Aplikace služby systému Windows jsou založeny na třídě, která dědí z <xref:System.ServiceProcess.ServiceBase?displayProperty=nameWithType> třídy. Přepíšete metody z této třídy a definujte jejich funkčnost, abyste zjistili, jak se vaše služba chová.  
   
  K hlavním třídám, které se podílejí na tvorbě služby, patří:  
   
-- <xref:System.ServiceProcess.ServiceBase?displayProperty=nameWithType>– Metody z <xref:System.ServiceProcess.ServiceBase> třídy přepíšete při vytváření služby a definováním kódu určíte, jak vaše služba funguje v této zděděné třídě.  
+- <xref:System.ServiceProcess.ServiceBase?displayProperty=nameWithType>– Metody z třídy přepíšete <xref:System.ServiceProcess.ServiceBase> při vytváření služby a definováním kódu určíte, jak vaše služba funguje v této zděděné třídě.  
   
 - <xref:System.ServiceProcess.ServiceProcessInstaller?displayProperty=nameWithType>a <xref:System.ServiceProcess.ServiceInstaller?displayProperty=nameWithType> – tyto třídy můžete použít k instalaci a odinstalaci služby.  
   
  Kromě toho třída s názvem <xref:System.ServiceProcess.ServiceController> lze použít k manipulaci s ní samotné služby. Tato třída se nezabývá vytvořením služby, ale je možné ji použít ke spuštění a zastavení služby, předání příkazů do ní a vrácení řady výčtů.  
   
 ## <a name="defining-your-services-behavior"></a>Definování chování vaší služby  
- Ve vaší třídě služby přepíšete funkce základní třídy, které určují, co se stane, když se ve Správci řízení služeb změní stav služby. <xref:System.ServiceProcess.ServiceBase> Třída zpřístupňuje následující metody, které lze přepsat pro přidání vlastního chování.  
+ Ve vaší třídě služby přepíšete funkce základní třídy, které určují, co se stane, když se ve Správci řízení služeb změní stav služby. <xref:System.ServiceProcess.ServiceBase>Třída zpřístupňuje následující metody, které lze přepsat pro přidání vlastního chování.  
   
 |Metoda|Přepsat na|  
 |------------|-----------------|  
@@ -51,22 +52,22 @@ Aplikace služby systému Windows jsou založeny na třídě, která dědí z <x
   
  Existuje několik dalších vlastností a metod, které mají zájem. Mezi ně patří:  
   
-- <xref:System.ServiceProcess.ServiceBase.Run%2A> Metoda <xref:System.ServiceProcess.ServiceBase> třídy. Toto je hlavní vstupní bod pro službu. Když vytvoříte službu pomocí šablony služby systému Windows, kód je vložen do `Main` metody vaší aplikace pro spuštění služby. Tento kód vypadá takto:  
+- <xref:System.ServiceProcess.ServiceBase.Run%2A>Metoda <xref:System.ServiceProcess.ServiceBase> třídy. Toto je hlavní vstupní bod pro službu. Když vytvoříte službu pomocí šablony služby systému Windows, kód je vložen do metody vaší aplikace `Main` pro spuštění služby. Tento kód vypadá takto:  
   
      [!code-csharp[VbRadconService#6](../../../samples/snippets/csharp/VS_Snippets_VBCSharp/VbRadconService/CS/MyNewService.cs#6)]
      [!code-vb[VbRadconService#6](../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRadconService/VB/MyNewService.vb#6)]  
   
     > [!NOTE]
-    > V těchto příkladech se používá pole <xref:System.ServiceProcess.ServiceBase>typu, do kterého lze přidat každou službu, kterou vaše aplikace obsahuje, a poté lze všechny služby spustit společně. Pokud ale vytváříte jenom jednu službu, můžete se rozhodnout nepoužívat pole a jednoduše deklarovat nový objekt, který dědí <xref:System.ServiceProcess.ServiceBase> a pak ho spustí. Příklad naleznete v tématu [How to: Write Services Programs](how-to-write-services-programmatically.md).  
+    > V těchto příkladech se používá pole typu <xref:System.ServiceProcess.ServiceBase> , do kterého lze přidat každou službu, kterou vaše aplikace obsahuje, a poté lze všechny služby spustit společně. Pokud ale vytváříte jenom jednu službu, můžete se rozhodnout nepoužívat pole a jednoduše deklarovat nový objekt, který dědí <xref:System.ServiceProcess.ServiceBase> a pak ho spustí. Příklad naleznete v tématu [How to: Write Services Programs](how-to-write-services-programmatically.md).  
   
-- Řada vlastností <xref:System.ServiceProcess.ServiceBase> třídy. Určují, jaké metody lze ve vaší službě volat. Například pokud je <xref:System.ServiceProcess.ServiceBase.CanStop%2A> vlastnost nastavena na `true`, lze volat <xref:System.ServiceProcess.ServiceBase.OnStop%2A> metodu ve vaší službě. Pokud je <xref:System.ServiceProcess.ServiceBase.CanPauseAndContinue%2A> vlastnost nastavena na `true`, lze volat <xref:System.ServiceProcess.ServiceBase.OnPause%2A> metody <xref:System.ServiceProcess.ServiceBase.OnContinue%2A> a. Když nastavíte jednu z těchto vlastností na `true`, měli byste přepsat a definovat zpracování pro související metody.  
+- Řada vlastností <xref:System.ServiceProcess.ServiceBase> třídy. Určují, jaké metody lze ve vaší službě volat. Například pokud <xref:System.ServiceProcess.ServiceBase.CanStop%2A> je vlastnost nastavena na `true` , <xref:System.ServiceProcess.ServiceBase.OnStop%2A> lze volat metodu ve vaší službě. Pokud <xref:System.ServiceProcess.ServiceBase.CanPauseAndContinue%2A> je vlastnost nastavena na `true` , <xref:System.ServiceProcess.ServiceBase.OnPause%2A> <xref:System.ServiceProcess.ServiceBase.OnContinue%2A> lze volat metody a. Když nastavíte jednu z těchto vlastností na `true` , měli byste přepsat a definovat zpracování pro související metody.  
   
     > [!NOTE]
-    > Vaše služba musí přinejmenším <xref:System.ServiceProcess.ServiceBase.OnStart%2A> přepsat a <xref:System.ServiceProcess.ServiceBase.OnStop%2A> být užitečná.  
+    > Vaše služba musí přinejmenším přepsat <xref:System.ServiceProcess.ServiceBase.OnStart%2A> a <xref:System.ServiceProcess.ServiceBase.OnStop%2A> být užitečná.  
   
  Můžete také použít komponentu s názvem <xref:System.ServiceProcess.ServiceController> ke komunikaci s a řízení chování existující služby.  
   
 ## <a name="see-also"></a>Viz také
 
-- [Úvod do aplikací služby systému Windows](introduction-to-windows-service-applications.md)
+- [Představení aplikací spouštěných jako služby systému Windows](introduction-to-windows-service-applications.md)
 - [Postupy: Vytváření služeb systému Windows](how-to-create-windows-services.md)

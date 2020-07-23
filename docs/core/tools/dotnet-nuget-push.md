@@ -3,18 +3,18 @@ title: dotnet – příkaz push NuGet
 description: Příkaz dotnet NuGet push odešle balíček na server a publikuje ho.
 author: karann-msft
 ms.date: 02/14/2020
-ms.openlocfilehash: 1e7831de4c041591b3602e405418f89f1d1d27d1
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: 608cd05d94dd6b5cdc53d582cfaa0407f011ff37
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82895460"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925511"
 ---
 # <a name="dotnet-nuget-push"></a>dotnet nuget push
 
 **Tento článek se týká:** ✔️ .NET Core 2. x SDK a novějších verzí
 
-## <a name="name"></a>Name
+## <a name="name"></a>Název
 
 `dotnet nuget push`– Odešle balíček na server a publikuje ho.
 
@@ -22,7 +22,7 @@ ms.locfileid: "82895460"
 
 ```dotnetcli
 dotnet nuget push [<ROOT>] [-d|--disable-buffering] [--force-english-output]
-    [--interactive] [-k|--api-key <API_KEY>] [-n|--no-symbols]
+    [--interactive] [-k|--api-key <API_KEY>] [-n|--no-symbols true]
     [--no-service-endpoint] [-s|--source <SOURCE>] [--skip-duplicate]
     [-sk|--symbol-api-key <API_KEY>] [-ss|--symbol-source <SOURCE>]
     [-t|--timeout <TIMEOUT>]
@@ -32,11 +32,11 @@ dotnet nuget push -h|--help
 
 ## <a name="description"></a>Popis
 
-`dotnet nuget push` Příkaz odešle balíček na server a publikuje ho. Příkaz push používá podrobnosti serveru a přihlašovacích údajů, které se našly v konfiguračním souboru NuGet systému nebo v řetězci konfiguračních souborů. Další informace o konfiguračních souborech najdete v tématu [Konfigurace chování NuGet](/nuget/consume-packages/configuring-nuget-behavior). Výchozí konfigurace NuGet se získá tak, že se načtou *%AppData%\NuGet\NuGet.config* (Windows) nebo *$Home/.local/share* (Linux/MacOS) a pak se načte jakákoli soubor *NuGet. config* nebo *. NuGet\NuGet.config* počínaje kořenovým adresářem jednotky a končí aktuálním adresářem.
+`dotnet nuget push`Příkaz odešle balíček na server a publikuje ho. Příkaz push používá podrobnosti serveru a přihlašovacích údajů, které se našly v konfiguračním souboru NuGet systému nebo v řetězci konfiguračních souborů. Další informace o konfiguračních souborech najdete v tématu [Konfigurace chování NuGet](/nuget/consume-packages/configuring-nuget-behavior). Výchozí konfigurace NuGet se získá načtením *% data% \NuGet\NuGet.config* (Windows) nebo *$Home/.local/share* (Linux/MacOS) a pak se načtou všechny *nuget.config* nebo *.nuget\nuget.config* od kořenového adresáře jednotky a končí v aktuálním adresáři.
 
-Příkaz vloží existující balíček. Nevytváří balíček. K vytvoření balíčku použijte [`dotnet pack`](dotnet-pack.md).
+Příkaz vloží existující balíček. Nevytváří balíček. K vytvoření balíčku použijte [`dotnet pack`](dotnet-pack.md) .
 
-## <a name="arguments"></a>Argumenty
+## <a name="arguments"></a>Arguments
 
 - **`ROOT`**
 
@@ -64,7 +64,7 @@ Příkaz vloží existující balíček. Nevytváří balíček. K vytvoření b
 
   Klíč rozhraní API pro server
 
-- **`-n|--no-symbols`**
+- **`-n|--no-symbols true`**
 
   Symboly nejsou nabízeny (i v případě, že jsou k dispozici).
 
@@ -74,7 +74,7 @@ Příkaz vloží existující balíček. Nevytváří balíček. K vytvoření b
 
 - **`-s|--source <SOURCE>`**
 
-  Určuje adresu URL serveru. Tato možnost je povinná, pokud `DefaultPushSource` konfigurační hodnota není nastavená v konfiguračním souboru NuGet.
+  Určuje adresu URL serveru. Tato možnost je povinná, pokud konfigurační `DefaultPushSource` hodnota není nastavená v konfiguračním souboru NuGet.
 
 - **`--skip-duplicate`**
 
@@ -106,7 +106,7 @@ Příkaz vloží existující balíček. Nevytváří balíček. K vytvoření b
   dotnet nuget push foo.nupkg -k 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -s https://api.nuget.org/v3/index.json
   ```
   
-  * Vložení *foo. nupkg* do vlastního zdroje `https://customsource`nabízených oznámení zadání klíče rozhraní API:
+  * Vložení *foo. nupkg* do vlastního zdroje nabízených oznámení `https://customsource` zadání klíče rozhraní API:
 
   ```dotnetcli
   dotnet nuget push foo.nupkg -k 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -s https://customsource/

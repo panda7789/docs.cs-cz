@@ -1,5 +1,6 @@
 ---
-title: Co je zastaralé v rozhraní .NET Framework
+title: Co je zastaralé v .NET Framework
+description: Podívejte se, jak knihovna tříd .NET označuje členy jako zastaralé. Pochopení atributu ObsoleteAttribute, jak zpracovávat zastaralé typy a členy a další.
 ms.custom: updateeachrelease
 ms.date: 04/02/2019
 helpviewer_keywords:
@@ -7,45 +8,45 @@ helpviewer_keywords:
 - what's obsolete [.NET Framework]
 - deprecated [.NET Framework]
 ms.assetid: d356a43a-73df-4ae2-a457-b9628074c7cd
-ms.openlocfilehash: 7cfebfde859a95495e9d2d5e42bd034ad5d55e61
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2f39f5ec614b669f3a0f63677cb6f8a6f9ed11cf
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79143132"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925797"
 ---
-# <a name="whats-obsolete-in-the-net-framework-class-library"></a>Co je zastaralé v knihovně tříd rozhraní .NET Framework
+# <a name="whats-obsolete-in-the-net-framework-class-library"></a>Zastaralé položky v knihovně tříd .NET Framework
 
-Rozhraní .NET se v průběhu času mění. Každá nová verze přidává nové typy a členy typu, které poskytují nové funkce. Stávající typy a jejich členové se také v průběhu času mění. Některé typy se například stávají méně důležitými, protože technologie, kterou podporují, je nahrazena novou technologií a některé metody jsou nahrazeny novějšími metodami, které jsou nějakým způsobem lepší.
+.NET se v průběhu času mění. Každá nová verze přidává nové typy a členy typu, které poskytují nové funkce. Existující typy a jejich členové se také mění v průběhu času. Některé typy jsou například méně důležité, protože technologie, kterou podporují, je nahrazena novou technologií a některé metody jsou nahrazené novějšími metodami, které jsou pro vás nějakým způsobem nadřazené.
 
-Rozhraní .NET Framework a soubor RUNTIME common language usilují o podporu zpětné kompatibility (povolení spuštění aplikací vyvinutých s jednou verzí rozhraní .NET Framework v další verzi rozhraní .NET Framework). To ztěžuje jednoduše odebrat typ nebo člen typu. Místo toho .NET označuje, že typ nebo člen typu by již neměly být používány označením jako zastaralé nebo zastaralé. Zavržení typu nebo člena zahrnuje jeho označení tak, aby vývojáři věděli, že zmizí a bude mít čas reagovat na jeho odebrání. Existující kód, který používá typ nebo člen však nadále spuštěna v nové verzi .NET.
+.NET Framework a modul CLR (Common Language Runtime) se snaží podporovat zpětnou kompatibilitu (což umožňuje aplikacím vyvinutým s jednou verzí .NET Framework běžet v další verzi .NET Framework). Díky tomu je obtížné jednoduše odebrat typ nebo člen typu. Místo toho rozhraní .NET označuje, že typ nebo člen typu by již neměl být použit tak, že ho označíte jako zastaralé nebo zastaralé. Zahození typu nebo členu zahrnuje označení IT, aby se vývojáři dozvěděli, že se o jeho odebrání projeví a mají čas na reakci. Stávající kód, který používá typ nebo člen, je však nadále spuštěn v nové verzi rozhraní .NET.
 
 > [!NOTE]
-> Termíny *zastaralé* a *zastaralé* mají stejný význam při použití na typy a členy rozhraní .NET.
+> *Zastaralé* a *zastaralé* výrazy mají stejný význam při použití na typy a členy .NET.
 
 ## <a name="the-obsoleteattribute-attribute"></a>Atribut ObsoleteAttribute
 
-Rozhraní .NET Framework označuje, že typ nebo člen <xref:System.ObsoleteAttribute> typu je zastaralý tím, že jej označíte atributem. Použití atributu na typ nebo člen znamená, že typ nebo člen budou odebrány v některé budoucí verzi rozhraní .NET Framework bez porušení zkompilovaný kód, který používá tento člen.
+.NET Framework označuje, že typ nebo člen typu je zastaralý tím, že ho označíte <xref:System.ObsoleteAttribute> atributem. Použití atributu na typ nebo člen označuje, že typ nebo člen bude v některé budoucí verzi .NET Framework odebrán, aniž by došlo k narušení zkompilovaného kódu, který používá daného člena.
 
-Kromě označení, že typ nebo člen typu <xref:System.ObsoleteAttribute> je zastaralý, definuje, jak kompilátor zpracovává zdrojový kód, který obsahuje tento typ nebo člen. Kompilátor může zkompilovat kód, ale vyzařuje varovnou zprávu, nebo může považovat použití typu nebo člena za chybu. V prvním případě může kód úspěšně zkompilovat, ale varovná zpráva označuje, že typ nebo člen je zastaralý. V druhém případě kompilace se nezdaří.
+Kromě toho, že je typ nebo člen typu zastaralý, <xref:System.ObsoleteAttribute> definuje způsob, jakým kompilátor zpracovává zdrojový kód, který obsahuje daný typ nebo člen. Kompilátor může kompilovat kód, ale generovat zprávu upozornění nebo může zacházet s používáním typu nebo členu jako chyby. V prvním případě může být kód úspěšně zkompilován, ale varovná zpráva označuje, že typ nebo člen je zastaralý. Ve druhém případě kompilace dojde k chybě.
 
-I v případě, že kompilace vytvoří <xref:System.ObsoleteAttribute> chybu namísto varovné zprávy, nemá vliv na chování za běhu. To znamená, že aplikace, které používají typ nebo člen a které byly úspěšně zkompilovány, budou vždy úspěšně spuštěny. Pouze pokus o překompilování aplikace, která používá typ nebo člen nezdaří.
+I v případě, že kompilace vytvoří chybu namísto zprávy upozornění, <xref:System.ObsoleteAttribute> nemá vliv na chování za běhu. To znamená, že aplikace, které používají typ nebo člena a které byly úspěšně kompilovány, budou vždy spouštěny úspěšně. Pouze pokus o rekompilaci aplikace, která používá typ nebo člen, se nezdaří.
 
-## <a name="how-to-handle-obsolete-types-and-members"></a>Jak zacházet se zastaralými typy a členy
+## <a name="how-to-handle-obsolete-types-and-members"></a>Postup zpracování zastaralých typů a členů
 
-Při upgradu a překompilovat existující kód, pomocí zastaralého typu nebo člen, který vytváří upozornění kompilátoru ve vaší aplikaci je naprosto přijatelné. Měli byste však zkontrolovat zprávu upozornění kompilátoru k určení, zda byste měli změnit kód aplikace. Pokud zpráva neukazuje na vhodnou alternativu, měli byste provést jednu z následujících akcí:
+Když upgradujete a znovu zkompilujete stávající kód pomocí zastaralého typu nebo členu, který vytvoří upozornění kompilátoru v aplikaci, je dokonale přijatelné. Měli byste ale zkontrolovat zprávu s upozorněním kompilátoru, abyste zjistili, jestli byste měli změnit kód aplikace. Pokud zpráva neodkazuje na vhodnou alternativu, měli byste provést jednu z následujících akcí:
 
-- Změňte kód odebráním použití typu nebo člena, pokud je to možné.
+- Pokud je to možné, změňte kód tak, že odeberete použití typu nebo členu.
 
      -nebo-
 
-- Projděte si dokumentaci pro tuto oblast technologie a zjistěte, jak reagovat na vyřazení.
+- Přečtěte si dokumentaci k této technologické oblasti a určete, jak reagovat na vyřazení.
 
-Můžete se rozhodnout, že existující kód nebudete znovu kompilovat s novější verzí rozhraní .NET Framework. Místo toho můžete zadat verzi rozhraní .NET Framework, proti které je spuštěn existující zkompilovaný kód. Předpokládejme například, že máte aplikaci s názvem app1.exe, která byla zkompilována proti rozhraní .NET Framework 3.5, ale chcete, aby aplikace běžela proti rozhraní .NET Framework 4.5. To vyžaduje následující kroky:
+Můžete se rozhodnout, že nebudete znovu kompilovat existující kód v novější verzi .NET Framework. Místo toho můžete určit verzi .NET Framework, na kterou se má existující zkompilovaný kód spouštět. Předpokládejme například, že máte aplikaci s názvem app1.exe, která byla zkompilována proti .NET Framework 3,5, ale chcete, aby aplikace běžela na .NET Framework 4,5. To vyžaduje následující kroky:
 
-1. Vytvořte konfigurační soubor pro hlavní spustitelný soubor a pojmenujte jej *appName*.exe.config, kde *appName* je název spustitelného souboru aplikace. Pro aplikaci s názvem *app1.exe* v našem příkladu byste vytvořili konfigurační soubor s názvem *app1.exe.config*.
+1. Vytvořte konfigurační soubor pro hlavní spustitelný soubor a pojmenujte jej *appname*.exe.config, kde *AppName* je název spustitelného souboru aplikace. Pro aplikaci s názvem *app1.exe* v našem příkladu byste vytvořili konfigurační soubor s názvem *app1.exe.config*.
 
-2. Přidejte do konfiguračního souboru následující.
+2. Do konfiguračního souboru přidejte následující.
 
     ```xml
     <configuration>
@@ -55,32 +56,32 @@ Můžete se rozhodnout, že existující kód nebudete znovu kompilovat s nověj
     </configuration>
     ```
 
-Chcete-li cílit na konkrétní verzi rozhraní .NET Framework, přiřaďte atributu jednu `version` z následujících hodnot řetězce:
+Chcete-li cílit na konkrétní verzi .NET Framework, přiřaďte k atributu jednu z následujících řetězcových hodnot `version` :
 
-|Verze rozhraní .NET Framework|`version`Řetězec|
+|Verze rozhraní .NET Framework|`version`řetezce|
 |-|-|
-|4.8|v4.0|
-|4.7 (včetně 4.7.1 a 4.7.2)|v4.0|
-|4.6 (včetně 4.6.1 a 4.6.2)|v4.0|
-|4.5 (včetně 4.5.1 a 4.5.2)|v4.0|
-|4|v4.0|
-|3,5|v2.0.50727|
-|2.0|v2.0.50727|
-|1.1|v1.1.4322|
-|1.0|v1.0.3705|
+|4,8|4.0|
+|4,7 (včetně 4.7.1 a 4.7.2)|4.0|
+|4,6 (včetně 4.6.1 a 4.6.2)|4.0|
+|4,5 (včetně 4.5.1 a 4.5.2)|4.0|
+|4|4.0|
+|3,5|v 2.0.50727|
+|2.0|v 2.0.50727|
+|1.1|v 1.1.4322|
+|1.0|v 1.0.3705|
 
-## <a name="obsolete-apis-for-net-framework-45-and-later-versions"></a>Zastaralá rozhraní API pro rozhraní .NET Framework 4.5 a novější verze
+## <a name="obsolete-apis-for-net-framework-45-and-later-versions"></a>Zastaralá rozhraní API pro .NET Framework 4,5 a novější verze
 
 - [Zastaralé typy](obsolete-types.md)
 - [Zastaralé členy](obsolete-members.md)
 
-## <a name="obsolete-apis-for-previous-versions"></a>Zastaralá úložiště API pro předchozí verze
+## <a name="obsolete-apis-for-previous-versions"></a>Zastaralá rozhraní API pro předchozí verze
 
-- [Zastaralé typy v rozhraní .NET Framework 4](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ee461503(v=vs.100))
-- [Zastaralé členy v rozhraní .NET Framework 4](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ee471421(v=vs.100))
-- [Seznam zastaralých rozhraní .NET Framework 3.5](https://docs.microsoft.com/previous-versions/cc835481(v=msdn.10))
-- [Seznam zastaralých rozhraní .NET Framework 2.0](https://docs.microsoft.com/previous-versions/aa497286(v=msdn.10))
+- [Zastaralé typy v .NET Framework 4](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ee461503(v=vs.100))
+- [Zastaralí členové ve .NET Framework 4](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ee471421(v=vs.100))
+- [Seznam zastaralých .NET Framework 3,5](https://docs.microsoft.com/previous-versions/cc835481(v=msdn.10))
+- [Seznam zastaralých .NET Framework 2,0](https://docs.microsoft.com/previous-versions/aa497286(v=msdn.10))
 
 ## <a name="see-also"></a>Viz také
 
-- [\<podporovaný modul> Modul runtime](../configure-apps/file-schema/startup/supportedruntime-element.md)
+- [\<supportedRuntime>Objekt](../configure-apps/file-schema/startup/supportedruntime-element.md)

@@ -1,5 +1,6 @@
 ---
-title: Novinky v rozhraní .NET Framework
+title: Co je nového v .NET Framework
+description: Podívejte se, co je nového v různých verzích .NET Framework. Přečtěte si přehled klíčových nových funkcí a vylepšení v každé verzi.
 ms.custom: updateeachrelease
 ms.date: 04/18/2019
 dev_langs:
@@ -8,12 +9,12 @@ dev_langs:
 helpviewer_keywords:
 - what's new [.NET Framework]
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
-ms.openlocfilehash: ee67e6577c5ad2486a483e3593e4d0a8ecbb0407
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 42f872bba87a88fc92a37879e815ee7068407cf7
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85244436"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925589"
 ---
 # <a name="whats-new-in-net-framework"></a>Co je nového v .NET Framework
 
@@ -153,7 +154,7 @@ Parametry a příklady dotazů:
 
 - OnThrottlePercentExceeded:`https://contoso:81/Service1?health&OnThrottlePercentExceeded= 70:350,95:500`
 
-  Určuje procento {1 – 100}, které aktivuje odpověď a kód odpovědi HTTP {200 – 599}. V tomto příkladu:
+  Určuje procento {1 – 100}, které aktivuje odpověď a kód odpovědi HTTP {200 – 599}. V tomto příkladu:
 
   - Pokud je procento větší než 95, vrátí se kód odpovědi HTTP 500.
 
@@ -350,7 +351,7 @@ Podpora dekomprese pomocí rozhraní Windows API je ve výchozím nastavení pov
 
 **Další rozhraní API pro shromažďování**
 
-.NET Framework 4.7.2 přidá mnoho nových rozhraní API k <xref:System.Collections.Generic.SortedSet%601> <xref:System.Collections.Generic.HashSet%601> typům a. Zde jsou některé z nich:
+.NET Framework 4.7.2 přidá mnoho nových rozhraní API k <xref:System.Collections.Generic.SortedSet%601> <xref:System.Collections.Generic.HashSet%601> typům a. Mezi ně patří:
 
 - `TryGetValue`metody, které přesahují vzor try použitý v jiných typech kolekcí těchto dvou typů. Existují tyto metody:
 
@@ -741,7 +742,7 @@ Počínaje .NET Framework 4,7 umožňuje WCF nakonfigurovat kromě protokolu SSL
 
 **Vylepšená spolehlivost aplikací WCF a serializace WCF**
 
-WCF zahrnuje řadu změn kódu, které eliminují konflikty časování, což zvyšuje výkon a spolehlivost možností serializace. Zde jsou některé z nich:
+WCF zahrnuje řadu změn kódu, které eliminují konflikty časování, což zvyšuje výkon a spolehlivost možností serializace. Mezi ně patří:
 
 - Lepší podpora pro kombinování asynchronního a synchronního kódu v voláních **Připojení SocketConnection bylo. BeginRead** a **Připojení SocketConnection bylo. Read**.
 - Lepší spolehlivost při přerušení připojení pomocí **SharedConnectionListener** a **DuplexChannelBinder**.
@@ -841,7 +842,7 @@ End Class
 
 Pak můžete vytvořit soubor prostředků, dataanotace. Localization. fr. resx, jehož klíč je řetězec chybové zprávy a jehož hodnota je lokalizovaná chybová zpráva. Soubor se musí nacházet ve `App.LocalResources` složce. Například následující je klíč a jeho hodnota v lokalizované chybové zprávě jazyka francouzštiny (FR):
 
-| Name                                 | Hodnota                                     |
+| Název                                 | Hodnota                                     |
 | ------------------------------------ | ----------------------------------------- |
 | Hodnocení musí být v rozmezí od 1 do 10. | La doit être tvoří meziplatformní 1 et 10. |
 
@@ -955,7 +956,7 @@ End Function
 
 Pro vyřešení tohoto .NET Framework 4.6.2 byly do základní třídy přidány následující tři metody, <xref:System.Security.Cryptography.ECDiffieHellman> které jasně reprezentují tyto KDF rutiny a jejich vstupy:
 
-|Metoda ECDiffieHellman|Description|
+|Metoda ECDiffieHellman|Popis|
 |----------------------------|-----------------|
 |<xref:System.Security.Cryptography.ECDiffieHellman.DeriveKeyFromHash%28System.Security.Cryptography.ECDiffieHellmanPublicKey%2CSystem.Security.Cryptography.HashAlgorithmName%2CSystem.Byte%5B%5D%2CSystem.Byte%5B%5D%29>|Odvozuje materiál klíče pomocí vzorce.<br /><br /> HASH (secretPrepend &#124;&#124; *x* &#124;&#124; secretAppend)<br /><br /> HASH (secretPrepend OrElse *×* OrElse secretAppend)<br /><br /> kde *x* je vypočtený výsledek algoritmu ES Diffie-Hellman.|
 |<xref:System.Security.Cryptography.ECDiffieHellman.DeriveKeyFromHmac%28System.Security.Cryptography.ECDiffieHellmanPublicKey%2CSystem.Security.Cryptography.HashAlgorithmName%2CSystem.Byte%5B%5D%2CSystem.Byte%5B%5D%2CSystem.Byte%5B%5D%29>|Odvozuje materiál klíče pomocí vzorce.<br /><br /> HMAC (hmacKey, secretPrepend &#124;&#124; *x* &#124;&#124; secretAppend)<br /><br /> HMAC (hmacKey; secretPrepend OrElse *x* OrElse secretAppend)<br /><br /> kde *x* je vypočtený výsledek algoritmu ES Diffie-Hellman.|
@@ -1308,7 +1309,7 @@ SqlClient nyní automaticky poskytuje rychlejší připojení ke skupině dostup
 
 Windows Presentation Foundation zahrnuje řadu vylepšení a změn.
 
-**Vyšší výkon**
+**Vylepšený výkon**
 
 Zpoždění při vyvolávání událostí dotyku bylo opraveno .NET Framework 4.6.1. Kromě toho psaní v <xref:System.Windows.Controls.RichTextBox> ovládacím prvku již během rychlého vstupu nespojuje vlákno vykreslování.
 
@@ -1794,12 +1795,12 @@ V případě Ngen soubory PDB může NGen vytvořit PDB, který obsahuje mapová
 
 - **Vylepšení profilace.** Následující nová nespravovaná rozhraní API pro profilaci poskytují robustnější profilaci:
 
-  - [COR_PRF_ASSEMBLY_REFERENCE_INFO – struktura](../unmanaged-api/profiling/cor-prf-assembly-reference-info-structure.md)
+  - [Struktura COR_PRF_ASSEMBLY_REFERENCE_INFO](../unmanaged-api/profiling/cor-prf-assembly-reference-info-structure.md)
   - [Výčet COR_PRF_HIGH_MONITOR](../unmanaged-api/profiling/cor-prf-high-monitor-enumeration.md)
-  - [Metoda GetAssemblyReferences](../unmanaged-api/profiling/icorprofilercallback6-getassemblyreferences-method.md)
-  - [Metoda GetEventMask2](../unmanaged-api/profiling/icorprofilerinfo5-geteventmask2-method.md)
-  - [Metoda SetEventMask2](../unmanaged-api/profiling/icorprofilerinfo5-seteventmask2-method.md)
-  - [Metoda AddAssemblyReference](../unmanaged-api/profiling/icorprofilerassemblyreferenceprovider-addassemblyreference-method.md)
+  - [GetAssemblyReferences – metoda](../unmanaged-api/profiling/icorprofilercallback6-getassemblyreferences-method.md)
+  - [GetEventMask2 – metoda](../unmanaged-api/profiling/icorprofilerinfo5-geteventmask2-method.md)
+  - [SetEventMask2 – metoda](../unmanaged-api/profiling/icorprofilerinfo5-seteventmask2-method.md)
+  - [AddAssemblyReference – metoda](../unmanaged-api/profiling/icorprofilerassemblyreferenceprovider-addassemblyreference-method.md)
 
   Předchozí `ICorProfiler` implementace podporovaly opožděné načítání závislých sestavení. Nové rozhraní API pro profilování vyžadují závislá sestavení, která jsou vložená profilerem tak, aby se spustitelný hned, místo aby se načetla po úplné inicializaci aplikace. Tato změna neovlivní uživatele existujících `ICorProfiler` rozhraní API.
 
@@ -1954,7 +1955,7 @@ V .NET Framework 4,5 byly do jazyků C# a Visual Basic přidány nové asynchron
 
 <a name="tools"></a>
 
-### <a name="tools"></a>nástroje
+### <a name="tools"></a>Nástroje
 
 V .NET Framework 4,5 vám generátor souborů prostředků (Resgen.exe) umožňuje vytvořit soubor. resw pro použití v aplikacích Windows 8. x Store ze souboru. Resources vloženého do sestavení .NET Framework. Další informace najdete v tématu [Resgen.exe (generátor zdrojového souboru)](../tools/resgen-exe-resource-file-generator.md).
 
@@ -1970,7 +1971,7 @@ Spravovaná optimalizace na základě profilu (Mpgo.exe) umožňuje zlepšit dob
 
 ### <a name="web"></a>Web
 
-ASP.NET 4,5 a 4.5.1 přidávají vazbu modelu pro webové formuláře, podporu WebSocket, asynchronní obslužné rutiny, vylepšení výkonu a mnoho dalších funkcí. Další informace najdete v následujících materiálech:
+ASP.NET 4,5 a 4.5.1 přidávají vazbu modelu pro webové formuláře, podporu WebSocket, asynchronní obslužné rutiny, vylepšení výkonu a mnoho dalších funkcí. Další informace naleznete v následujících zdrojích:
 
 - [ASP.NET 4,5 a Visual Studio 2012](https://docs.microsoft.com/previous-versions/aspnet/hh420390(v=vs.110))
 

@@ -1,5 +1,6 @@
 ---
 title: 'Postupy: Ladění aplikací spouštěných jako služby systému Windows'
+description: Pochopte, jak ladit aplikace služby systému Windows, které nejsou stejně jednoduché pro ladění jako jiné typy aplikací sady Visual Studio.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - debugging Windows Service applications
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - services, debugging
 ms.assetid: 63ab0800-0f05-4f1e-88e6-94c73fd920a2
 author: ghogen
-ms.openlocfilehash: 860f2ae22eb6510dc1f1a454ae3e51ccb366078b
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: fb58f2ff4f480347f0f233ecd9a619cf287cfdfd
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71053626"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925758"
 ---
 # <a name="how-to-debug-windows-service-applications"></a>Postupy: Ladění aplikací spouštěných jako služby systému Windows
 Služba musí být spuštěna v kontextu správce řízení služeb, nikoli v rámci sady Visual Studio. Z tohoto důvodu ladění služby není tak jednoduché jako ladění jiných typů aplikací sady Visual Studio. Chcete-li ladit službu, je nutné spustit službu a potom připojit ladicí program k procesu, ve kterém je spuštěna. Pak můžete ladit aplikaci pomocí všech standardních funkcí ladění sady Visual Studio.  
@@ -77,7 +78,7 @@ Služba musí být spuštěna v kontextu správce řízení služeb, nikoli v r�
   
 #### <a name="how-to-run-a-windows-service-as-a-console-application"></a>Postupy: spuštění služby systému Windows jako konzolové aplikace  
   
-1. Přidejte do služby metodu, která spouští metody <xref:System.ServiceProcess.ServiceBase.OnStart%2A> a: <xref:System.ServiceProcess.ServiceBase.OnStop%2A>  
+1. Přidejte do služby metodu, která spouští <xref:System.ServiceProcess.ServiceBase.OnStart%2A> <xref:System.ServiceProcess.ServiceBase.OnStop%2A> metody a:  
   
     ```csharp  
     internal void TestStartupAndStop(string[] args)  
@@ -115,7 +116,7 @@ Služba musí být spuštěna v kontextu správce řízení služeb, nikoli v r�
   
 ## <a name="see-also"></a>Viz také
 
-- [Úvod do aplikací služby systému Windows](introduction-to-windows-service-applications.md)
+- [Představení aplikací spouštěných jako služby systému Windows](introduction-to-windows-service-applications.md)
 - [Postupy: Instalace a odinstalace služeb](how-to-install-and-uninstall-services.md)
-- [Postupy: Spuštění služeb](how-to-start-services.md)
+- [Postupy: Spuštění služby](how-to-start-services.md)
 - [Ladění služby](/windows/desktop/Services/debugging-a-service)

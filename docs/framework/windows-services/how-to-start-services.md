@@ -1,28 +1,29 @@
 ---
-title: 'Postupy: Spuštění služeb'
+title: 'Postupy: Spuštění služby'
+description: Podívejte se na několik způsobů, jak spustit služby. Po instalaci služby je nutné ji spustit. Spouští se volání metody OnStart u třídy služby.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Windows Service applications, starting
 - services, starting
 ms.assetid: 9ea77955-2d96-4c3d-913c-14db7604cdad
 author: ghogen
-ms.openlocfilehash: 75fd3aba88bdffbe536ad5dab14996913d0a9d22
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 4a2f9b291e60b12b1465fbb6bbbd1604572359a7
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71053575"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925719"
 ---
-# <a name="how-to-start-services"></a>Postupy: Spuštění služeb
+# <a name="how-to-start-services"></a>Postupy: Spuštění služby
 
-Po instalaci služby je nutné ji spustit. Spouští se <xref:System.ServiceProcess.ServiceBase.OnStart%2A> volání metody třídy služby. <xref:System.ServiceProcess.ServiceBase.OnStart%2A> Metoda obvykle definuje užitečnou práci, kterou bude služba provádět. Po spuštění služby zůstane aktivní, dokud není ručně pozastavená nebo zastavená.
+Po instalaci služby je nutné ji spustit. Spouští se volání <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metody třídy služby. <xref:System.ServiceProcess.ServiceBase.OnStart%2A>Metoda obvykle definuje užitečnou práci, kterou bude služba provádět. Po spuštění služby zůstane aktivní, dokud není ručně pozastavená nebo zastavená.
 
 Služby je možné nastavit tak, aby se spouštěly automaticky nebo ručně. Služba, která se spustí automaticky, se spustí při restartování počítače, ve kterém je nainstalovaný, nebo nejdřív zapnutý. Uživatel musí spustit službu, která se spustí ručně.
 
 > [!NOTE]
 > Ve výchozím nastavení se služby vytvořené pomocí sady Visual Studio nastaví tak, aby se spouštěly ručně.
 
-Existuje několik způsobů, jak ručně spustit službu – od **Průzkumník serveru**, od **správce řízení služeb**nebo z kódu pomocí komponenty s názvem <xref:System.ServiceProcess.ServiceController>.
+Existuje několik způsobů, jak ručně spustit službu – od **Průzkumník serveru**, od **správce řízení služeb**nebo z kódu pomocí komponenty s názvem <xref:System.ServiceProcess.ServiceController> .
 
 Nastavením <xref:System.ServiceProcess.ServiceInstaller.StartType%2A> vlastnosti <xref:System.ServiceProcess.ServiceInstaller> třídy určíte, zda má být služba spuštěna ručně nebo automaticky.
 
@@ -40,12 +41,12 @@ Nastavením <xref:System.ServiceProcess.ServiceInstaller.StartType%2A> vlastnost
     |Když akce explicitního uživatele spustí službu|**Ruční**|
 
     > [!TIP]
-    > Pokud chcete zabránit tomu, aby se služba spustila vůbec, můžete <xref:System.ServiceProcess.ServiceInstaller.StartType%2A> vlastnost nastavit na **zakázáno**. To můžete provést, pokud budete Server několikrát restartovat a chcete ušetřit čas tím, že znemožníte službám, které by normálně začaly začít.
+    > Pokud chcete zabránit tomu, aby se služba spustila vůbec, můžete vlastnost nastavit <xref:System.ServiceProcess.ServiceInstaller.StartType%2A> na **zakázáno**. To můžete provést, pokud budete Server několikrát restartovat a chcete ušetřit čas tím, že znemožníte službám, které by normálně začaly začít.
 
     > [!NOTE]
     > Tyto a další vlastnosti se dají po instalaci služby změnit.
 
-    Existuje několik způsobů, jak můžete spustit službu, která má svůj <xref:System.ServiceProcess.ServiceInstaller.StartType%2A> proces nastavený na **ruční** – od **Průzkumník serveru**, od **správce řízení služeb systému Windows**nebo z kódu. Je důležité si uvědomit, že ne všechny tyto metody ve skutečnosti zahájí službu v kontextu **správce řízení služeb**; **Průzkumník serveru** a programové metody spuštění služby skutečně manipulují s řadičem.
+    Existuje několik způsobů, jak můžete spustit službu, která má svůj <xref:System.ServiceProcess.ServiceInstaller.StartType%2A> proces nastavený na **Ruční** – od **Průzkumník serveru**, od **správce řízení služeb systému Windows**nebo z kódu. Je důležité si uvědomit, že ne všechny tyto metody ve skutečnosti zahájí službu v kontextu **správce řízení služeb**; **Průzkumník serveru** a programové metody spuštění služby skutečně manipulují s řadičem.
 
 ### <a name="to-manually-start-a-service-from-server-explorer"></a>Ruční spuštění služby z Průzkumník serveru
 
@@ -80,6 +81,6 @@ Nastavením <xref:System.ServiceProcess.ServiceInstaller.StartType%2A> vlastnost
 
 ## <a name="see-also"></a>Viz také
 
-- [Úvod do aplikací služby systému Windows](introduction-to-windows-service-applications.md)
+- [Představení aplikací spouštěných jako služby systému Windows](introduction-to-windows-service-applications.md)
 - [Postupy: Vytváření služeb systému Windows](how-to-create-windows-services.md)
 - [Postupy: Přidání instalačních programů do aplikace služby](how-to-add-installers-to-your-service-application.md)

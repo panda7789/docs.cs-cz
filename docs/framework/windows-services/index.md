@@ -1,5 +1,6 @@
 ---
 title: Vývoj aplikací spouštěných jako služby systému Windows
+description: Viz odkazy na články, které vysvětlují, jak vyvíjet aplikace služby pro Windows pomocí sady Visual Studio nebo sady .NET SDK.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - ServiceInstaller class, Windows Service applications
@@ -11,12 +12,12 @@ helpviewer_keywords:
 - .NET applications, Windows applications
 ms.assetid: ba72d648-9553-4849-b829-069ad5ea014b
 author: ghogen
-ms.openlocfilehash: 61f969c22ac06bd6ed20ccfa9124db3bb35d0692
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ed02d523c21c51df2ed886843fdb71c075c93c30
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "71053545"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925693"
 ---
 # <a name="develop-windows-service-apps"></a>Vývoj aplikací služby systému Windows
 
@@ -25,9 +26,9 @@ Pomocí sady Visual Studio nebo sady .NET Framework SDK můžete snadno vytvář
 > [!NOTE]
 > V aplikaci Visual Studio můžete vytvořit službu ve spravovaném kódu v jazyce Visual C# nebo Visual Basic, která může v případě potřeby spolupracovat s existujícím kódem jazyka C++. Nebo můžete vytvořit službu systému Windows v nativním jazyce C++ pomocí [Průvodce projektem ATL](/cpp/atl/reference/atl-project-wizard).
 
-## <a name="in-this-section"></a>V tomto oddílu
+## <a name="in-this-section"></a>V této části
 
-[Úvod do aplikací služby systému Windows](introduction-to-windows-service-applications.md)
+[Představení aplikací spouštěných jako služby systému Windows](introduction-to-windows-service-applications.md)
 
 Poskytuje přehled aplikací služby systému Windows, životnosti služby a způsobu, jakým se aplikace služby liší od jiných běžných typů projektů.
 

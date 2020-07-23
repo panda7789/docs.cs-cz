@@ -1,13 +1,14 @@
 ---
 title: Úloha asynchronního programovacího modelu (klepnutím) s modifikátorem Async a operátoru Await (C#)
+description: Přečtěte si, kdy a jak používat asynchronní programování založené na úlohách, zjednodušený přístup k asynchronnímu programování v jazyce C#.
 ms.date: 05/22/2017
 ms.assetid: 9bcf896a-5826-4189-8c1a-3e35fa08243a
-ms.openlocfilehash: 90bee745a393ac35ac968e9f4f6b6c83ad8fbb46
-ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
+ms.openlocfilehash: ddda97e9c77473120ed32b0e224b07d7c4d71b1e
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84990070"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925134"
 ---
 # <a name="task-asynchronous-programming-model"></a>Model asynchronního programování úloh
 

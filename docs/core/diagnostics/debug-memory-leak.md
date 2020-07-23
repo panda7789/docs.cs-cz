@@ -1,72 +1,72 @@
 ---
 title: Ladění kurzu nevracení paměti
-description: Zjistěte, jak ladit nevracení paměti v .NET Core.
+description: Naučte se ladit nevracení paměti v .NET Core.
 ms.topic: tutorial
 ms.date: 04/20/2020
-ms.openlocfilehash: d47992bab9dab64cf7f88ff679eef407dd891b5a
-ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
+ms.openlocfilehash: ff684f9b9402cb8b7b648e792a1d37ddcc96b399
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82021357"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86924887"
 ---
-# <a name="tutorial-debug-a-memory-leak-in-net-core"></a>Kurz: Ladění nevracení paměti v rozhraní .NET Core
+# <a name="debug-a-memory-leak-in-net-core"></a>Ladění nevracení paměti v .NET Core
 
-**Tento článek se týká:** ✔️ .NET Core 3.0 SDK a novější verze
+**Tento článek se týká:** ✔️ .net Core 3,1 SDK a novějších verzí
 
-Tento kurz ukazuje nástroje pro analýzu nevracení paměti .NET Core.
+Tento kurz demonstruje nástroje pro analýzu nevracení paměti .NET Core.
 
-Tento kurz používá ukázkovou aplikaci, která je určena k úmyslnému úniku paměti. Vzorek je poskytován jako cvičení. Můžete analyzovat aplikaci, která je neúmyslně nevracení paměti příliš.
+V tomto kurzu se používá ukázková aplikace, která je navržená pro úmyslně nevracení paměti. Ukázka je poskytována jako cvičení. Můžete analyzovat aplikaci, která neúmyslně nevrací paměť.
 
 V tomto kurzu provedete následující:
 
 > [!div class="checklist"]
 >
-> - Zkontrolujte využití spravované paměti pomocí [čítačů dotnet](dotnet-counters.md).
-> - Vygenerujte soubor s výpisem stavu paměti.
-> - Analyzujte využití paměti pomocí souboru s výpisem stavu paměti.
+> - Projděte si využití spravované paměti pomocí [čítače dotnet-Counters](dotnet-counters.md).
+> - Vygenerujte soubor s výpisem paměti.
+> - Analyzujte využití paměti pomocí souboru s výpisem paměti.
 
 ## <a name="prerequisites"></a>Požadavky
 
-Kurz používá:
+V tomto kurzu se používá:
 
-- [Sada .NET Core 3.0 SDK](https://dotnet.microsoft.com/download/dotnet-core) nebo novější verze.
-- [dotnet-trace](dotnet-trace.md) do seznamu procesů.
-- [dotnet-čítače](dotnet-counters.md) pro kontrolu využití spravované paměti.
-- [dotnet-dump](dotnet-dump.md) shromažďovat a analyzovat soubor s výpisem stavu paměti.
-- [Ukázka ladění cílové](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios/) aplikace diagnostikovat.
+- [.NET Core 3,1 SDK](https://dotnet.microsoft.com/download/dotnet-core) nebo novější verze.
+- [dotnet – trasování](dotnet-trace.md) pro výpis procesů
+- [dotnet – čítače](dotnet-counters.md) pro kontrolu využití spravované paměti
+- [dotnet – vypíše stav](dotnet-dump.md) pro shromáždění a analýzu souboru s výpisem paměti.
+- [Ukázková cílová aplikace ladění](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios/) , která se má diagnostikovat
 
-Kurz předpokládá, že ukázka a nástroje jsou nainstalovány a připraveny k použití.
+V tomto kurzu se předpokládá, že je nainstalovaná ukázka a nástroje, které jsou připravené k použití.
 
-## <a name="examine-managed-memory-usage"></a>Zkontrolujte využití spravované paměti
+## <a name="examine-managed-memory-usage"></a>Prověření využití spravované paměti
 
-Než začnete shromažďovat diagnostická data, která nám pomáhají způsobit tento scénář, musíte se ujistit, že skutečně vidíte nevracení paměti (růst paměti). Můžete použít [nástroj dotnet-čítače](dotnet-counters.md) k potvrzení.
+Než začnete shromažďovat diagnostická data, která nám pomůžou hlavní příčinu tohoto scénáře, musíte se ujistit, že se skutečně zobrazuje nevracení paměti (nárůst paměti). K potvrzení můžete použít nástroj [dotnet-Counters](dotnet-counters.md) .
 
-Otevřete okno konzoly a přejděte do adresáře, do kterého jste stáhli a rozbalili [ukázkový ladicí cíl](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios/). Spusťte cíl:
+Otevřete okno konzoly a přejděte do adresáře, do kterého jste stáhli, a vraťte se do [ukázkového cíle ladění](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios/). Spusťte cíl:
 
 ```dotnetcli
 dotnet run
 ```
 
-Ze samostatné konzoly vyhledejte ID procesu pomocí nástroje [dotnet-trace:](dotnet-trace.md)
+V samostatné konzole Najděte ID procesu pomocí nástroje [dotnet-Trace](dotnet-trace.md) Tool:
 
 ```console
 dotnet-trace ps
 ```
 
-Výstup by měl být podobný:
+Výstup by měl vypadat přibližně takto:
 
 ```console
 4807 DiagnosticScena /home/user/git/samples/core/diagnostics/DiagnosticScenarios/bin/Debug/netcoreapp3.0/DiagnosticScenarios
 ```
 
-Nyní zkontrolujte využití spravované paměti pomocí nástroje [dotnet-counters.](dotnet-counters.md) Určuje `--refresh-interval` počet sekund mezi aktualizacemi:
+Teď pomocí nástroje [dotnet-Counters](dotnet-counters.md) ověřte využití spravované paměti. `--refresh-interval`Určuje počet sekund mezi aktualizacemi:
 
 ```console
 dotnet-counters monitor --refresh-interval 1 -p 4807
 ```
 
-Živý výstup by měl být podobný:
+Živý výstup by měl vypadat přibližně takto:
 
 ```console
 Press p to pause, r to resume, q to quit.
@@ -94,35 +94,35 @@ Press p to pause, r to resume, q to quit.
     Working Set (MB)                                  83
 ```
 
-Zaměření na tento řádek:
+Zaměřit se na tento řádek:
 
 ```console
     GC Heap Size (MB)                                  4
 ```
 
-Můžete vidět, že spravované haldy paměti je 4 MB hned po spuštění.
+Můžete zjistit, že paměť spravované haldy je 4 MB, a to hned po spuštění.
 
-Nyní stiskněte adresu `http://localhost:5000/api/diagscenario/memleak/20000`URL .
+Teď stiskněte adresu URL `https://localhost:5001/api/diagscenario/memleak/20000` .
 
-Všimněte si, že využití paměti se rozrostla na 30 MB.
+Pozor, aby využití paměti bylo nárůst na 30 MB.
 
 ```console
     GC Heap Size (MB)                                 30
 ```
 
-Sledováním využití paměti, můžete bezpečně říci, že paměť roste nebo nevracení. Dalším krokem je shromáždit správná data pro analýzu paměti.
+Sledováním využití paměti můžete bezpečně vyslovit, že se paměť zvětšuje nebo nevrací. Dalším krokem je shromáždění správných dat pro analýzu paměti.
 
-### <a name="generate-memory-dump"></a>Generovat výpis stavu paměti
+### <a name="generate-memory-dump"></a>Generovat výpis paměti
 
-Při analýze možných nevracení paměti potřebujete přístup k haldě paměti aplikace. Pak můžete analyzovat obsah paměti. Při pohledu na vztahy mezi objekty vytváříte teorie o tom, proč není paměť uvolněna. Běžný diagnostický zdroj dat je výpis stavu paměti v systému Windows nebo ekvivalentní výpis jádra v systému Linux. Chcete-li generovat výpis aplikace .NET Core, můžete použít nástroj [dotnet-dump).](dotnet-dump.md)
+Při analýze možné nevracení paměti potřebujete přístup k haldě paměti aplikace. Pak můžete analyzovat obsah paměti. Při prohlížení vztahů mezi objekty vytvoříte teorie, proč se paměť neuvolňuje. Běžný zdroj dat diagnostiky je výpis paměti ve Windows nebo ekvivalentní základní Výpis stavu systému Linux. Chcete-li vygenerovat výpis paměti aplikace .NET Core, můžete použít nástroj [dotnet-dump)](dotnet-dump.md) .
 
-Pomocí [dříve spuštěného ukázkového cíle ladění](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios/) vygenerujte výpis jádra Linuxu následujícím příkazem:
+Pomocí dříve spuštěného [ukázkového cíle ladění](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios/) spusťte následující příkaz, který vygeneruje výpis jádra pro Linux:
 
 ```dotnetcli
 dotnet-dump collect -p 4807
 ```
 
-Výsledkem je výpis jádra umístěný ve stejné složce.
+Výsledkem je základní Výpis paměti umístěný ve stejné složce.
 
 ```console
 Writing minidump with heap to ./core_20190430_185145
@@ -131,24 +131,24 @@ Complete
 
 ### <a name="restart-the-failed-process"></a>Restartování neúspěšného procesu
 
-Jakmile je výpis shromážděn, měli byste mít dostatek informací k diagnostice neúspěšného procesu. Pokud je neúspěšný proces spuštěn na produkčním serveru, je nyní ideální čas pro krátkodobou nápravu restartováním procesu.
+Po shromáždění výpisu paměti by měly být k dispozici dostatečné informace pro diagnostiku neúspěšného procesu. Pokud se neúspěšný proces na provozním serveru běží, je teď to ideální čas pro krátkodobou nápravu, protože proces se restartuje.
 
-V tomto kurzu jste nyní hotovi s [cíl ladění ukázkové](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios/) a můžete jej zavřít. Přejděte na terminál, který `Control-C`spustil server, a stiskněte klávesu .
+V tomto kurzu jste teď hotovi s [ukázkovým cílem ladění](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios/) a můžete ho zavřít. Přejděte do terminálu, který spustil server, a stiskněte klávesy <kbd>CTRL + C</kbd>.
 
-### <a name="analyze-the-core-dump"></a>Analýza výpisu jádra
+### <a name="analyze-the-core-dump"></a>Analyzovat základní Výpis paměti
 
-Nyní, když máte generovaný výpis jádra, použijte nástroj [dotnet-dump](dotnet-dump.md) k analýze výpisu:
+Teď, když máte vygenerovaný základní Výpis, použijte k analýze výpisu nástroj [dotnet-dump](dotnet-dump.md) :
 
 ```dotnetcli
 dotnet-dump analyze core_20190430_185145
 ```
 
-Kde `core_20190430_185145` je název výpisu jádra, který chcete analyzovat.
+Kde `core_20190430_185145` je název základního výpisu, který chcete analyzovat.
 
 > [!NOTE]
-> Pokud se zobrazí chyba, která si stěžuje, že *libdl.so* nebyl a nebyl nalezen, bude pravděpodobně nutné nainstalovat balíček *libc6-dev.* Další informace naleznete [v tématu Požadavky pro .NET Core na Linuxu](../install/dependencies.md?pivots=os-linux).
+> Pokud se zobrazí chyba s stížností, že se *libdl.so* nedá najít, možná budete muset nainstalovat balíček *libc6-dev* . Další informace najdete v tématu [předpoklady pro .NET Core v systému Linux](../install/dependencies.md?pivots=os-linux).
 
-Zobrazí se výzva, kde můžete zadat příkazy SOS. Obvykle první věc, kterou chcete podívat na je celkový stav spravované haldy:
+Zobrazí se výzva, kde můžete zadat SOS příkazy. Obvykle první věc, kterou chcete sledovat, je celkový stav spravované haldy:
 
 ```console
 > dumpheap -stat
@@ -168,9 +168,9 @@ Statistics:
 Total 428516 objects
 ```
 
-Zde můžete vidět, že `String` většina objektů jsou buď nebo `Customer` objekty.
+Tady vidíte, že většinu objektů jsou `String` nebo `Customer` objekty.
 
-`dumpheap` Příkaz můžete použít znovu s tabulkou metody (MT) `String` k získání seznamu všech instancí:
+Příkaz můžete použít `dumpheap` znovu s tabulkou metod (MT) a získat tak seznam všech `String` instancí:
 
 ```console
 > dumpheap -mt 00007faddaa50f90
@@ -191,7 +191,7 @@ Statistics:
 Total 206770 objects
 ```
 
-Nyní můžete použít `gcroot` příkaz `System.String` na instanci vidět, jak a proč je objekt zakořeněný. Buďte trpěliví, protože tento příkaz trvá několik minut s haldou 30 MB:
+Nyní můžete použít `gcroot` příkaz na `System.String` instanci, abyste viděli, jak a proč je objekt rootem. Být pacient, protože tento příkaz trvá několik minut s haldou 30 MB:
 
 ```console
 > gcroot -all 00007f6ad09421f8
@@ -220,26 +220,26 @@ HandleTable:
 Found 2 roots.
 ```
 
-Můžete vidět, `String` že je přímo `Customer` držen objektem a `CustomerCache` nepřímo v držení objektu.
+Můžete vidět, že `String` je přímo držen `Customer` objektem a nepřímo drženým `CustomerCache` objektem.
 
-Můžete pokračovat dumping z objektů `String` vidět, že většina objektů sledovat podobný vzor. V tomto okamžiku šetření za předpokladu, dostatečné informace k identifikaci hlavní příčinu ve vašem kódu.
+Můžete pokračovat v oddálení objektů a prohlédnout si, že většina `String` objektů dodržuje podobný vzor. V tomto okamžiku šetření poskytlo dostatečné informace pro identifikaci hlavní příčiny ve vašem kódu.
 
-Tento obecný postup umožňuje identifikovat zdroj hlavní nevracení paměti.
+Tento obecný postup vám umožní identifikovat zdroj nevracení velkých pamětí.
 
 ## <a name="clean-up-resources"></a>Vyčištění prostředků
 
-V tomto kurzu jste spustili ukázkový webový server. Tento server měl být vypnut, jak je vysvětleno v části [Restartovat proces, který se nezdařil.](#restart-the-failed-process)
+V tomto kurzu jste spustili ukázkový webový server. Tento server by měl být vypnutý, jak je vysvětleno v části [restartování procesu selhání](#restart-the-failed-process) .
 
-Můžete také odstranit soubor s výpisem stavu paměti, který byl vytvořen.
+Můžete také odstranit soubor s výpisem paměti, který byl vytvořen.
+
+## <a name="see-also"></a>Viz také
+
+- [dotnet – trasování](dotnet-trace.md) pro výpis procesů
+- [dotnet – čítače](dotnet-counters.md) pro kontrolu využití spravované paměti
+- [dotnet – vystavení](dotnet-dump.md) pro shromáždění a analýzu souboru s výpisem paměti
+- [dotnet/Diagnostika](https://github.com/dotnet/diagnostics/tree/master/documentation/tutorial)
 
 ## <a name="next-steps"></a>Další kroky
 
-Blahopřejeme k dokončení tohoto kurzu.
-
-Stále zveřejňujeme další diagnostické kurzy. Můžete si přečíst koncept verze v úložišti [dotnet/diagnostics.](https://github.com/dotnet/diagnostics/tree/master/documentation/tutorial)
-
-Tento kurz se zabýval základy klíčových diagnostických nástrojů .NET. Informace o pokročilém použití naleznete v následující referenční dokumentaci:
-
-* [dotnet-trace](dotnet-trace.md) do seznamu procesů.
-* [dotnet-čítače](dotnet-counters.md) pro kontrolu využití spravované paměti.
-* [dotnet-dump](dotnet-dump.md) shromažďovat a analyzovat soubor s výpisem stavu paměti.
+> [!div class="nextstepaction"]
+> [Ladění vysokého výkonu procesoru v .NET Core](debug-highcpu.md)

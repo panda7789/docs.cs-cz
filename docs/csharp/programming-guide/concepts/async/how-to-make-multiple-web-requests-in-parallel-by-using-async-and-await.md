@@ -1,13 +1,14 @@
 ---
 title: Jak zajistit paralelní více webových požadavků pomocí modifikátoru Async a operátoru Await (C#)
+description: Naučte se, jak oddělit vytváření úkolů pomocí operátoru await v jazyce C# namísto použití při vytvoření úkolu.
 ms.date: 07/20/2015
 ms.assetid: 19745899-f97a-4499-a7c7-e813d1447580
-ms.openlocfilehash: 0cfc1d6d1d59dc74fcf5990abb0a9d980a83d7b0
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 899dfd9165d199a67a5178bb351081ee544b231f
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241796"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925160"
 ---
 # <a name="how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await-c"></a>Jak zajistit paralelní více webových požadavků pomocí modifikátoru Async a operátoru Await (C#)
 V asynchronní metodě jsou úlohy spouštěny při jejich vytvoření. Operátor [await](../../../language-reference/operators/await.md) se aplikuje na úkol v místě v metodě, kde zpracování nemůže pokračovat, dokud se úloha nedokončí. Úkol se často očekává ihned po vytvoření, jak ukazuje následující příklad.  

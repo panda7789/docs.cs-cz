@@ -17,12 +17,12 @@ helpviewer_keywords:
 - Date data type, converting
 - local time conversions
 ms.assetid: b605ff97-0c45-4c24-833f-4c6a3e8be64c
-ms.openlocfilehash: cf55db7c22ad2495bdbeb3202fcefb89bae42d69
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: 86f2c982d7f87e83102933d1de73d6e13086dc87
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84768674"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86924900"
 ---
 # <a name="converting-between-datetime-and-datetimeoffset"></a>Převádění mezi DateTime a DateTimeOffset
 
@@ -105,7 +105,7 @@ Vlastnost můžete použít také <xref:System.DateTimeOffset.LocalDateTime%2A?d
 [!code-csharp[System.DateTimeOffset.Conceptual.Conversions#10](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/cs/Conversions.cs#10)]
 [!code-vb[System.DateTimeOffset.Conceptual.Conversions#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/vb/Conversions.vb#10)]
 
-Když načtete <xref:System.DateTime> hodnotu pomocí <xref:System.DateTimeOffset.LocalDateTime%2A?displayProperty=nameWithType> vlastnosti, `get` přistupující objekt vlastnosti nejprve PŘEVEDE <xref:System.DateTimeOffset> hodnotu na UTC a pak ji převede na místní čas voláním <xref:System.DateTimeOffset.ToLocalTime%2A> metody. To znamená, že můžete načíst hodnotu z <xref:System.DateTimeOffset.LocalDateTime%2A?displayProperty=nameWithType> vlastnosti a provést konverzi časového pásma ve stejnou dobu, jakou provádíte převod typu. Také to znamená, že pravidla úpravy v místním časovém pásmu jsou aplikována při provádění převodu. Následující kód ilustruje použití <xref:System.DateTimeOffset.LocalDateTime%2A?displayProperty=nameWithType> Vlastnosti k provedení jak typu, tak konverze časového pásma.
+Když načtete <xref:System.DateTime> hodnotu pomocí <xref:System.DateTimeOffset.LocalDateTime%2A?displayProperty=nameWithType> vlastnosti, `get` přistupující objekt vlastnosti nejprve PŘEVEDE <xref:System.DateTimeOffset> hodnotu na UTC a pak ji převede na místní čas voláním <xref:System.DateTimeOffset.ToLocalTime%2A> metody. To znamená, že můžete načíst hodnotu z <xref:System.DateTimeOffset.LocalDateTime%2A?displayProperty=nameWithType> vlastnosti a provést konverzi časového pásma ve stejnou dobu, jakou provádíte převod typu. Také to znamená, že pravidla úpravy v místním časovém pásmu jsou aplikována při provádění převodu. Následující kód ilustruje použití <xref:System.DateTimeOffset.LocalDateTime%2A?displayProperty=nameWithType> Vlastnosti k provedení jak typu, tak konverze časového pásma. Vzorový výstup je pro počítač nastavený na tichomořské časové pásmo (USA a Kanada). Datum listopadu je Tichomoří (běžný čas), což je UTC-8, zatímco datum června je letní čas, což je UTC-7.
 
 [!code-csharp[System.DateTimeOffset.Conceptual.Conversions#11](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/cs/Conversions.cs#11)]
 [!code-vb[System.DateTimeOffset.Conceptual.Conversions#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/vb/Conversions.vb#11)]

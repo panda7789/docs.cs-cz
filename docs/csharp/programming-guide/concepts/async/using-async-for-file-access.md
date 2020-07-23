@@ -1,13 +1,14 @@
 ---
 title: Použití Async pro přístup k souborům (C#)
+description: Naučte se používat funkci Async pro přístup k souborům v C#. Můžete volat na asynchronní metody bez použití zpětných volání nebo rozdělení kódu napříč metodami.
 ms.date: 07/20/2015
 ms.assetid: bb018fea-5313-4c80-ab3f-7c24b2145bd9
-ms.openlocfilehash: 8e0a62c2263ed3fd11eb4accb54978ef439ac010
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: eb67bd408fe37b99e6c5ffdc2550e8f95110d7eb
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396964"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925121"
 ---
 # <a name="using-async-for-file-access-c"></a>Použití Async pro přístup k souborům (C#)
 K přístupu k souborům můžete použít funkci Async. Pomocí asynchronní funkce můžete zavolat do asynchronních metod bez použití zpětných volání nebo rozdělení kódu napříč více metodami nebo lambda výrazy. Chcete-li synchronní asynchronní kód, stačí zavolat asynchronní metodu namísto synchronní metody a přidat k kódu několik klíčových slov.  
@@ -78,7 +79,7 @@ await theTask;
  První příkaz vrátí úlohu a způsobí, že se zpracování souboru spustí. Druhý příkaz s operátorem await způsobí, že metoda okamžitě ukončí a vrátí jiný úkol. Po dokončení zpracování souboru se spuštění vrátí do příkazu, který následuje za operátorem await. Další informace naleznete v tématu [řízení toku v asynchronních programech (C#)](./control-flow-in-async-programs.md).  
   
 ## <a name="reading-text"></a>Čtení textu  
- Následující příklad přečte text ze souboru. Text je uložen do vyrovnávací paměti a v tomto případě je umístěn do <xref:System.Text.StringBuilder> . Na rozdíl od předchozího příkladu vyhodnocení await vytvoří hodnotu. <xref:System.IO.Stream.ReadAsync%2A>Metoda vrací <xref:System.Threading.Tasks.Task> \< <xref:System.Int32>>, takže vyhodnocení metody await vytvoří `Int32` hodnotu ( `numRead` ) po dokončení operace. Další informace naleznete v tématu [Asynchronní návratové typy (C#)](./async-return-types.md).  
+ Následující příklad přečte text ze souboru. Text je uložen do vyrovnávací paměti a v tomto případě je umístěn do <xref:System.Text.StringBuilder> . Na rozdíl od předchozího příkladu vyhodnocení await vytvoří hodnotu. <xref:System.IO.Stream.ReadAsync%2A>Metoda vrací <xref:System.Threading.Tasks.Task> \<<xref:System.Int32>>, takže vyhodnocení metody await vytvoří `Int32` hodnotu ( `numRead` ) po dokončení operace. Další informace naleznete v tématu [Asynchronní návratové typy (C#)](./async-return-types.md).  
   
 ```csharp  
 public async Task ProcessReadAsync()  

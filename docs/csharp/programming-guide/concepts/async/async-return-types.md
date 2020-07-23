@@ -1,13 +1,14 @@
 ---
 title: Asynchronní návratové typy (C#)
+description: Přečtěte si o návratových typech, které asynchronní metody mohou mít v jazyce C# s příklady kódu pro každý typ a další prostředky.
 ms.date: 04/14/2020
 ms.assetid: ddb2539c-c898-48c1-ad92-245e4a996df8
-ms.openlocfilehash: c2584f1e285a7ab76eb43f9a211a8d2a51c2c55e
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: 954e449356819595a3a974a6dece5349e53ec88a
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83761873"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925381"
 ---
 # <a name="async-return-types-c"></a>Asynchronní návratové typy (C#)
 
@@ -21,7 +22,7 @@ Asynchronní metody mohou mít následující návratové typy:
 
 Další informace o asynchronních metodách naleznete v tématu [asynchronní programování s Async a await (C#)](./index.md).  
   
-## <a name="tasktresult-return-type"></a>\< \> Návratový typ Task TResult  
+## <a name="tasktresult-return-type"></a>\<TResult\>Návratový typ úlohy  
 <xref:System.Threading.Tasks.Task%601>Návratový typ se používá pro asynchronní metodu, která obsahuje příkaz [return](../../../language-reference/keywords/return.md) (C#), ve kterém je operand `TResult` .  
   
 V následujícím příkladu `GetLeisureHours` asynchronní metoda obsahuje `return` příkaz, který vrací celé číslo. Proto deklarace metody musí specifikovat návratový typ `Task<int>` .  <xref:System.Threading.Tasks.Task.FromResult%2A>Asynchronní metoda je zástupný symbol pro operaci, která vrací řetězec.
@@ -64,7 +65,7 @@ Následující příklad ukazuje chování obslužné rutiny asynchronní událo
 
 :::code language="csharp" source="./snippets/async-return-types/async-returns3.cs":::
 
-## <a name="generalized-async-return-types-and-valuetasktresult"></a>Generalizované asynchronní návratové typy a ValueTask \< TResult\>
+## <a name="generalized-async-return-types-and-valuetasktresult"></a>Generalizované asynchronní návratové typy a ValueTask\<TResult\>
 
 Počínaje jazykem C# 7,0 může asynchronní metoda vracet libovolný typ, který má přístupnou `GetAwaiter` metodu.
 
@@ -74,7 +75,7 @@ Rozhraní .NET poskytuje <xref:System.Threading.Tasks.ValueTask%601?displayPrope
   
 :::code language="csharp" source="./snippets/async-return-types/async-valuetask.cs":::
 
-## <a name="async-streams-with-iasyncenumerablet"></a>Asynchronní streamy s IAsyncEnumerable \< T\>
+## <a name="async-streams-with-iasyncenumerablet"></a>Asynchronní streamování pomocí IAsyncEnumerable\<T\>
 
 Počínaje jazykem C# 8,0 může asynchronní metoda vracet *asynchronní datový proud*reprezentovaný <xref:System.Collections.Generic.IAsyncEnumerable%601> . Asynchronní datový proud poskytuje způsob, jak vytvořit výčet položek čtených z datového proudu, když jsou prvky generovány v blocích s opakovanými asynchronními voláními. Následující příklad ukazuje asynchronní metodu, která generuje asynchronní datový proud:
 

@@ -1,12 +1,13 @@
 ---
 title: Atributy (C#)
+description: Naučte se, jak pomocí atributů přidružit metadata nebo deklarativní informace k kódu v jazyce C#. Atribut může být dotazován v době běhu pomocí reflexe.
 ms.date: 04/26/2018
-ms.openlocfilehash: 358285a39f72ad3ddf1b265e20b443308375d074
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 5c57838b649531d8e8fe89919771adf8830e7f54
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241575"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86924982"
 ---
 # <a name="attributes-c"></a>Atributy (C#)
 
@@ -115,7 +116,7 @@ Následující seznam obsahuje několik běžných použití atributů v kódu:
 
 ## <a name="related-sections"></a>Související oddíly
 
-Další informace naleznete v tématu:
+Další informace najdete tady:
 
 - [Vytváření vlastních atributů (C#)](creating-custom-attributes.md)  
 - [Přístup k atributům pomocí reflexe (C#)](accessing-attributes-by-using-reflection.md)  

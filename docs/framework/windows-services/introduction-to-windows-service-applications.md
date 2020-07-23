@@ -1,5 +1,6 @@
 ---
 title: Představení aplikací spouštěných jako služby systému Windows
+description: Přečtěte si Úvod k aplikacím služby systému Windows. Služby umožňují vytvářet dlouhodobě běžící spustitelné aplikace, které běží ve vlastních relacích systému Windows.
 ms.date: 03/30/2017
 f1_keywords:
 - ServiceController
@@ -22,12 +23,12 @@ helpviewer_keywords:
 - Windows Service applications, lifetime
 ms.assetid: 1b1b5e67-3ff3-40c0-8154-322cfd6ef0ae
 author: ghogen
-ms.openlocfilehash: 8ff1adaa025dc11417c3dcfdaf42ea203828be57
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 13bd1f42776ac76a43a83667465ac0ca277e3452
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71053525"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925667"
 ---
 # <a name="introduction-to-windows-service-applications"></a>Představení aplikací spouštěných jako služby systému Windows
 Služby Microsoft Windows, dříve označované jako služby NT, umožňují vytvářet dlouhotrvající spustitelné aplikace, které běží ve vlastních relacích systému Windows. Tyto služby mohou být automaticky spuštěny při spuštění počítače, lze pozastavit a restartovat a Nezobrazovat žádné uživatelské rozhraní. Tyto funkce umožňují služby, které jsou ideální pro použití na serveru, nebo kdykoli potřebujete dlouhodobě běžící funkce, které nebrání jiným uživatelům, kteří pracují na stejném počítači. Služby můžete také spustit v kontextu zabezpečení konkrétního uživatelského účtu, který se liší od přihlášeného uživatele nebo z výchozího účtu počítače. Další informace o službách a relacích systému Windows naleznete v dokumentaci k Windows SDK.  
@@ -36,7 +37,7 @@ Služby Microsoft Windows, dříve označované jako služby NT, umožňují vyt
   
  Vytvoříte službu jako projekt Microsoft Visual Studio, definujete kód v rámci něj, který určuje, jaké příkazy lze odeslat do služby a jaké akce by měly být provedeny při přijetí těchto příkazů. Mezi příkazy, které je možné odeslat do služby, patří spuštění, pozastavení, obnovení a zastavení služby. Můžete také provádět vlastní příkazy.  
   
- Po vytvoření a sestavení aplikace ji můžete nainstalovat spuštěním nástroje příkazového řádku InstallUtil. exe a předáním cesty ke spustitelnému souboru služby. Potom můžete pomocí **správce řízení služeb** spustit, zastavit, pozastavit, obnovit a nakonfigurovat službu. Mnohé z těchto stejných úloh můžete také provést v uzlu **služby** v **Průzkumník serveru** nebo pomocí <xref:System.ServiceProcess.ServiceController> třídy.  
+ Po vytvoření a sestavení aplikace ji můžete nainstalovat spuštěním nástroje příkazového řádku InstallUtil.exe a předáním cesty ke spustitelnému souboru služby. Potom můžete pomocí **správce řízení služeb** spustit, zastavit, pozastavit, obnovit a nakonfigurovat službu. Mnohé z těchto stejných úloh můžete také provést v uzlu **služby** v **Průzkumník serveru** nebo pomocí <xref:System.ServiceProcess.ServiceController> třídy.  
   
 ## <a name="service-applications-vs-other-visual-studio-applications"></a>Aplikace služby vs. ostatní aplikace sady Visual Studio  
  Aplikace služeb fungují jinak než mnoho dalších typů projektů v několika ohledech:  
@@ -45,7 +46,7 @@ Služby Microsoft Windows, dříve označované jako služby NT, umožňují vyt
   
 - Na rozdíl od některých typů projektů je nutné vytvořit instalační součásti pro aplikace služeb. Součásti instalace nainstalujte a zaregistrujte službu na serveru a vytvořte záznam pro vaši službu pomocí **správce řízení služeb**systému Windows. Další informace najdete v tématu [Postup: Přidání instalačních programů do aplikace služby](how-to-add-installers-to-your-service-application.md).  
   
-- `Main` Metoda aplikace služby musí vystavit příkaz run pro služby, které projekt obsahuje. `Run` Metoda načte služby do **správce řízení služeb** na příslušném serveru. Použijete-li šablonu projektu **služby systému Windows** , bude tato metoda vytvořena automaticky. Všimněte si, že načtení služby není stejné jako spuštění služby. Další informace najdete v části "doba platnosti služby" níže.  
+- `Main`Metoda aplikace služby musí vystavit příkaz run pro služby, které projekt obsahuje. `Run`Metoda načte služby do **správce řízení služeb** na příslušném serveru. Použijete-li šablonu projektu **služby systému Windows** , bude tato metoda vytvořena automaticky. Všimněte si, že načtení služby není stejné jako spuštění služby. Další informace najdete v části "doba platnosti služby" níže.  
   
 - Aplikace služby systému Windows běží v jiné stanici okna než interaktivní stanice přihlášeného uživatele. Stanice okna je zabezpečený objekt, který obsahuje schránku, sadu globálních atomů a skupinu objektů plochy. Vzhledem k tomu, že stanice služby Windows není interaktivní stanicí, nezobrazí se dialogová okna vyvolaná v rámci aplikace služby systému Windows a může dojít k tomu, že program přestane reagovat. Podobně by se chybové zprávy měly protokolovat v protokolu událostí systému Windows, nikoli v uživatelském rozhraní.  
   
@@ -58,19 +59,19 @@ Služby Microsoft Windows, dříve označované jako služby NT, umožňují vyt
 ## <a name="service-lifetime"></a>Doba života služby  
  Služba prochází několika interními stavy během své životnosti. Nejdřív se služba nainstaluje do systému, na kterém se spustí. Tento proces spustí instalační programy pro projekt služby a načte službu do **správce řízení služeb** pro tento počítač. **Správce řízení služeb** je centrální nástroj poskytovaný systémem Windows ke správě služeb.  
   
- Po načtení služby je nutné ji spustit. Spuštění služby umožňuje její zprovoznění začít pracovat. Službu můžete spustit ze **správce řízení služeb**, z **Průzkumník serveru**nebo z kódu voláním <xref:System.ServiceProcess.ServiceController.Start%2A> metody. <xref:System.ServiceProcess.ServiceController.Start%2A> Metoda předá zpracování do <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metody aplikace a zpracovává jakýkoli kód, který jste tam definovali.  
+ Po načtení služby je nutné ji spustit. Spuštění služby umožňuje její zprovoznění začít pracovat. Službu můžete spustit ze **správce řízení služeb**, z **Průzkumník serveru**nebo z kódu voláním <xref:System.ServiceProcess.ServiceController.Start%2A> metody. <xref:System.ServiceProcess.ServiceController.Start%2A>Metoda předá zpracování do <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metody aplikace a zpracovává jakýkoli kód, který jste tam definovali.  
   
- Běžící služba může existovat v tomto stavu po dobu neurčitou, dokud nebude zastavena nebo pozastavena nebo dokud se počítač nevypne. Služba může existovat v jednom ze tří základních stavů: <xref:System.ServiceProcess.ServiceControllerStatus.Running>, <xref:System.ServiceProcess.ServiceControllerStatus.Paused>nebo <xref:System.ServiceProcess.ServiceControllerStatus.Stopped>. Služba může také ohlásit stav příkazu, který čeká na vyřízení <xref:System.ServiceProcess.ServiceControllerStatus.ContinuePending>: <xref:System.ServiceProcess.ServiceControllerStatus.PausePending>, <xref:System.ServiceProcess.ServiceControllerStatus.StartPending>, nebo <xref:System.ServiceProcess.ServiceControllerStatus.StopPending>. Tyto stavy označují, že byl vydán příkaz, například příkaz pro pozastavení spuštěné služby, ale ještě nebyl proveden. Můžete zadat dotaz na <xref:System.ServiceProcess.ServiceController.Status%2A> , abyste zjistili, jaký stav služby je služba, nebo můžete <xref:System.ServiceProcess.ServiceController.WaitForStatus%2A> použít k provedení akce, když dojde k jakémukoli z těchto stavů.  
+ Běžící služba může existovat v tomto stavu po dobu neurčitou, dokud nebude zastavena nebo pozastavena nebo dokud se počítač nevypne. Služba může existovat v jednom ze tří základních stavů: <xref:System.ServiceProcess.ServiceControllerStatus.Running> , <xref:System.ServiceProcess.ServiceControllerStatus.Paused> nebo <xref:System.ServiceProcess.ServiceControllerStatus.Stopped> . Služba může také ohlásit stav příkazu, který čeká na vyřízení: <xref:System.ServiceProcess.ServiceControllerStatus.ContinuePending> , <xref:System.ServiceProcess.ServiceControllerStatus.PausePending> , <xref:System.ServiceProcess.ServiceControllerStatus.StartPending> nebo <xref:System.ServiceProcess.ServiceControllerStatus.StopPending> . Tyto stavy označují, že byl vydán příkaz, například příkaz pro pozastavení spuštěné služby, ale ještě nebyl proveden. Můžete zadat dotaz na, <xref:System.ServiceProcess.ServiceController.Status%2A> abyste zjistili, jaký stav služby je služba, nebo můžete použít <xref:System.ServiceProcess.ServiceController.WaitForStatus%2A> k provedení akce, když dojde k jakémukoli z těchto stavů.  
   
- Službu můžete pozastavit, zastavit nebo obnovit ze **správce řízení služeb**, z **Průzkumník serveru**nebo voláním metod v kódu. Každá z těchto akcí může volat přidruženou proceduru ve službě (<xref:System.ServiceProcess.ServiceBase.OnStop%2A>, <xref:System.ServiceProcess.ServiceBase.OnPause%2A>nebo <xref:System.ServiceProcess.ServiceBase.OnContinue%2A>), ve které můžete definovat další zpracování, které má být provedeno při změně stavu služby.  
+ Službu můžete pozastavit, zastavit nebo obnovit ze **správce řízení služeb**, z **Průzkumník serveru**nebo voláním metod v kódu. Každá z těchto akcí může volat přidruženou proceduru ve službě ( <xref:System.ServiceProcess.ServiceBase.OnStop%2A> , <xref:System.ServiceProcess.ServiceBase.OnPause%2A> nebo <xref:System.ServiceProcess.ServiceBase.OnContinue%2A> ), ve které můžete definovat další zpracování, které má být provedeno při změně stavu služby.  
   
 ## <a name="types-of-services"></a>Typy služeb  
- Existují dva typy služeb, které můžete vytvořit v aplikaci Visual Studio pomocí .NET Framework. Služby, které jsou jedinou službou v procesu, jsou přiřazeny typu <xref:System.ServiceProcess.ServiceType.Win32OwnProcess>. Typ <xref:System.ServiceProcess.ServiceType.Win32ShareProcess>se přiřadí službám, které sdílejí proces s jinou službou. Můžete načíst typ služby dotazem na <xref:System.ServiceProcess.ServiceController.ServiceType%2A> vlastnost.  
+ Existují dva typy služeb, které můžete vytvořit v aplikaci Visual Studio pomocí .NET Framework. Služby, které jsou jedinou službou v procesu, jsou přiřazeny typu <xref:System.ServiceProcess.ServiceType.Win32OwnProcess> . Typ se přiřadí službám, které sdílejí proces s jinou službou <xref:System.ServiceProcess.ServiceType.Win32ShareProcess> . Můžete načíst typ služby dotazem na <xref:System.ServiceProcess.ServiceController.ServiceType%2A> vlastnost.  
   
- Pokud se dotazovat na existující služby, které nebyly vytvořeny v aplikaci Visual Studio, můžete občas zobrazit další typy služeb. Další informace najdete v tématu <xref:System.ServiceProcess.ServiceType>.  
+ Pokud se dotazovat na existující služby, které nebyly vytvořeny v aplikaci Visual Studio, můžete občas zobrazit další typy služeb. Další informace najdete v tématu <xref:System.ServiceProcess.ServiceType> .  
   
 ## <a name="services-and-the-servicecontroller-component"></a>Služby a Komponenta ServiceController  
- <xref:System.ServiceProcess.ServiceController> Komponenta se používá pro připojení k instalované službě a manipulaci se svým stavem; pomocí <xref:System.ServiceProcess.ServiceController> komponenty můžete spustit a zastavit službu, pozastavit a pokračovat v jejím fungování a odesílat do služby vlastní příkazy. Při vytváření aplikace služby ale nemusíte používat <xref:System.ServiceProcess.ServiceController> komponentu. Ve většině případů by vaše <xref:System.ServiceProcess.ServiceController> komponenta měla existovat v samostatné aplikaci od aplikace služby systému Windows, která definuje vaši službu.  
+ <xref:System.ServiceProcess.ServiceController>Komponenta se používá pro připojení k instalované službě a manipulaci se svým stavem. pomocí <xref:System.ServiceProcess.ServiceController> komponenty můžete spustit a zastavit službu, pozastavit a pokračovat v jejím fungování a odesílat do služby vlastní příkazy. Při vytváření aplikace služby ale nemusíte používat <xref:System.ServiceProcess.ServiceController> komponentu. Ve většině případů <xref:System.ServiceProcess.ServiceController> by vaše komponenta měla existovat v samostatné aplikaci od aplikace služby systému Windows, která definuje vaši službu.  
   
  Další informace naleznete v tématu <xref:System.ServiceProcess.ServiceController>.  
   
@@ -82,11 +83,11 @@ Služby Microsoft Windows, dříve označované jako služby NT, umožňují vyt
   
 ## <a name="see-also"></a>Viz také
 
-- [Aplikace spouštěné jako služby systému Windows](index.md)
+- [Aplikace služby systému Windows](index.md)
 - [Architektura programování aplikace služby](service-application-programming-architecture.md)
 - [Postupy: Vytváření služeb systému Windows](how-to-create-windows-services.md)
 - [Postupy: Instalace a odinstalace služeb](how-to-install-and-uninstall-services.md)
-- [Postupy: Spuštění služeb](how-to-start-services.md)
-- [Postupy: Ladění aplikací služby systému Windows](how-to-debug-windows-service-applications.md)
+- [Postupy: Spuštění služby](how-to-start-services.md)
+- [Postupy: Ladění aplikací spouštěných jako služby systému Windows](how-to-debug-windows-service-applications.md)
 - [Návod: Vytvoření aplikace služby systému Windows v návrháři součástí](walkthrough-creating-a-windows-service-application-in-the-component-designer.md)
 - [Postupy: Přidání instalačních programů do aplikace služby](how-to-add-installers-to-your-service-application.md)

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, polymorphism
 - polymorphism [C#]
 ms.assetid: 086af969-29a5-4ce8-a993-0b7d53839dab
-ms.openlocfilehash: 2a1ca4c498c5885c7d34475405ac83c4cccecd6f
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 59b5f5d2d5a8f274845607aeca370c316670bd68
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86864121"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925446"
 ---
 # <a name="polymorphism-c-programming-guide"></a>Polymorfismus (Průvodce programováním v C#)
 
@@ -39,7 +39,7 @@ V jazyce C# je každý typ polymorfní, protože všechny typy, včetně uživat
 
 ### <a name="virtual-members"></a>Virtuální členové
 
-Když odvozená třída dědí ze základní třídy, získá všechny metody, pole, vlastnosti a události základní třídy. Návrhář odvozené třídy může lišit možnosti pro chování virtuálních metod:
+Když odvozená třída dědí ze základní třídy, získá všechny metody, pole, vlastnosti a události základní třídy. Návrhář odvozené třídy má různé možnosti pro chování virtuálních metod:
 
 - Odvozená třída může přepsat virtuální členy v základní třídě a definovat nové chování.
 - Odvozená třída dědí nejbližší metodu základní třídy bez přepsání, zachovává stávající chování, ale umožňuje dalším odvozeným třídám přepsat metodu.

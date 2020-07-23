@@ -1,5 +1,6 @@
 ---
 title: 'Postupy: instalace a odinstalace služeb systému Windows'
+description: Viz jak nainstalovat a odinstalovat služby systému Windows. Pokud vyvíjíte službu systému Windows s rozhraním .NET, můžete použít InstallUtil.exe nebo PowerShell.
 ms.date: 02/05/2019
 helpviewer_keywords:
 - Windows Service applications, deploying
@@ -12,16 +13,16 @@ helpviewer_keywords:
 - installutil.exe tool
 ms.assetid: c89c5169-f567-4305-9d62-db31a1de5481
 author: ghogen
-ms.openlocfilehash: 259b353edc269a77a51e790544018481a53af188
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 5597043bb1c5af05f5f3633cba6ee6e6de1c52c1
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84596355"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925602"
 ---
 # <a name="how-to-install-and-uninstall-windows-services"></a>Postupy: instalace a odinstalace služeb systému Windows
 
-Pokud vyvíjíte službu pro Windows s .NET Framework, můžete rychle nainstalovat aplikaci služby pomocí nástroje příkazového řádku [*Installutil. exe*](../tools/installutil-exe-installer-tool.md) nebo [PowerShellu](/powershell/scripting/overview). Vývojáři, kteří chtějí uvolnit službu systému Windows, kterou mohou uživatelé instalovat a odinstalovat, by měli používat program InstallShield. Další informace najdete v tématu [Vytvoření instalačního balíčku (Desktop Windows)](/visualstudio/deployment/deploying-applications-services-and-components#create-an-installer-package-windows-desktop).
+Pokud vyvíjíte službu pro Windows s .NET Framework, můžete rychle nainstalovat aplikaci služby pomocí nástroje příkazového řádku [*InstallUtil.exe*](../tools/installutil-exe-installer-tool.md) nebo [PowerShellu](/powershell/scripting/overview). Vývojáři, kteří chtějí uvolnit službu systému Windows, kterou mohou uživatelé instalovat a odinstalovat, by měli používat program InstallShield. Další informace najdete v tématu [Vytvoření instalačního balíčku (Desktop Windows)](/visualstudio/deployment/deploying-applications-services-and-components#create-an-installer-package-windows-desktop).
 
 > [!WARNING]
 > Pokud chcete odinstalovat službu z počítače, neprovádějte postup v tomto článku. Místo toho Zjistěte, který program nebo softwarový balíček službu nainstaloval, a pak zvolte možnost **aplikace** v nastavení pro odinstalaci tohoto programu. Všimněte si, že mnoho služeb je nedílnou součástí Windows. Pokud je odstraníte, může to způsobit nestabilitu systému.
@@ -33,7 +34,7 @@ Nemůžete spustit projekty služby Windows přímo z vývojového prostředí s
 > [!TIP]
 > Pomocí **Průzkumník serveru** můžete ověřit, že jste nainstalovali nebo odinstalovali vaši službu. Další informace najdete v tématu [Jak používat Průzkumník serveru v aplikaci Visual Studio](https://support.microsoft.com/help/316649/how-to-use-the-server-explorer-in-visual-studio-net-and-visual-studio).
 
-### <a name="install-your-service-manually-using-installutilexe-utility"></a>Ruční instalace služby pomocí nástroje InstallUtil. exe
+### <a name="install-your-service-manually-using-installutilexe-utility"></a>Ruční instalace služby pomocí nástroje InstallUtil.exe
 
 1. V nabídce **Start** vyberte adresář sady **Visual Studio \<*version*> ** a potom vyberte **Developer Command Prompt pro vs \<*version*> **.
 
@@ -41,25 +42,25 @@ Nemůžete spustit projekty služby Windows přímo z vývojového prostředí s
 
 2. Přejděte do adresáře, kde se nachází kompilovaný spustitelný soubor projektu.
 
-3. Spusťte *Installutil. exe* z příkazového řádku s spustitelným souborem vašeho projektu jako parametr:
+3. Spusťte *InstallUtil.exe* z příkazového řádku se spustitelným souborem projektu jako parametr:
 
     ```console
     installutil <yourproject>.exe
     ```
 
-     Pokud používáte Developer Command Prompt pro Visual Studio, musí být *Installutil. exe* v systémové cestě. V opačném případě ji můžete přidat do cesty nebo použít úplnou cestu k jejímu vyvolání. Tento nástroj se instaluje s .NET Framework v *%windir%\Microsoft.NET\Framework [64] \\<framework_version \> *.
+     Pokud používáte Developer Command Prompt pro Visual Studio, *InstallUtil.exe* by měla být v systémové cestě. V opačném případě ji můžete přidat do cesty nebo použít úplnou cestu k jejímu vyvolání. Tento nástroj se instaluje s .NET Framework v *%windir%\Microsoft.NET\Framework [64] \\<framework_version \> *.
 
-     Například:
+     Příklad:
      - Pro 32 verze .NET Framework 4 nebo 4,5 a novější, pokud je instalační adresář systému Windows *C:\Windows*, je výchozí cesta *C:\Windows\Microsoft.NET\Framework\v4.0.30319\InstallUtil.exe*.
-     - Pro 64-bitovou verzi .NET Framework 4 nebo 4,5 a novější je výchozí cesta *C:\Windows\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe*.
+     - Pro 64 verze .NET Framework 4 nebo 4,5 a novější je výchozí cesta *C:\Windows\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe*.
 
-### <a name="uninstall-your-service-manually-using-installutilexe-utility"></a>Ruční odinstalace služby pomocí nástroje InstallUtil. exe
+### <a name="uninstall-your-service-manually-using-installutilexe-utility"></a>Ruční odinstalace služby pomocí nástroje InstallUtil.exe
 
 1. V nabídce **Start** vyberte adresář sady **Visual Studio \<*version*> ** a potom vyberte **Developer Command Prompt pro vs \<*version*> **.
 
      Zobrazí se Developer Command Prompt pro Visual Studio.
 
-2. Spusťte *Installutil. exe* z příkazového řádku s výstupem vašeho projektu jako parametr:
+2. Spusťte *InstallUtil.exe* z příkazového řádku s výstupem projektu jako parametr:
 
     ```console
     installutil /u <yourproject>.exe

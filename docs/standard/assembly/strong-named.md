@@ -6,12 +6,12 @@ helpviewer_keywords:
 - strong-named assemblies, about strong-named assemblies
 - assemblies [.NET Framework], strong-named
 ms.assetid: d4a80263-f3e0-4d81-9b61-f0cbeae3797b
-ms.openlocfilehash: a2db0efcb57226a757796c311309ce8f749a398b
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 069e42af6f8d49363d0264c0f6167b4afa3acd61
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83378602"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925654"
 ---
 # <a name="strong-named-assemblies"></a>Sestavení se silným názvem
 
@@ -21,7 +21,7 @@ Silné pojmenovávání sestavení vytvoří jedinečnou identitu pro sestavení
 
 Silné pojmenované sestavení je generováno pomocí privátního klíče, který odpovídá veřejnému klíči distribuovanému se sestavením a samotným sestavením. Sestavení obsahuje manifest sestavení, který obsahuje názvy a hodnoty hash všech souborů, ze kterých se skládá sestavení. Sestavení se stejným silným názvem by měla být shodná.
 
-Sestavení se silným názvem můžete vytvořit pomocí sady Visual Studio nebo nástroje příkazového řádku. Další informace najdete v tématu [Postup: podepsání sestavení silným názvem](sign-strong-name.md) nebo [sn. exe (Nástroj pro silný název)](../../framework/tools/sn-exe-strong-name-tool.md).
+Sestavení se silným názvem můžete vytvořit pomocí sady Visual Studio nebo nástroje příkazového řádku. Další informace najdete v tématu [Postup: podepsání sestavení silným názvem](sign-strong-name.md) nebo [Sn.exe (Nástroj pro silný název)](../../framework/tools/sn-exe-strong-name-tool.md).
 
 Když je vytvořeno sestavení se silným názvem, obsahuje jednoduchý textový název sestavení, číslo verze, volitelné informace o jazykové verzi, digitální podpis a veřejný klíč, který odpovídá privátnímu klíči používanému k podepisování.
 
@@ -30,9 +30,7 @@ Když je vytvořeno sestavení se silným názvem, obsahuje jednoduchý textový
 
 ## <a name="why-strong-name-your-assemblies"></a>Proč je sestavení silným názvem?
 
-Když odkazujete na sestavení se silným názvem, můžete očekávat určité výhody, jako je například Správa verzí a ochrana názvů. V .NET Framework mohou být sestavení se silným názvem nainstalována do globální mezipaměti sestavení (GAC), která je nutná k povolení některých scénářů.
-
-Sestavení se silným názvem jsou užitečná v následujících situacích:
+Pro .NET Framework sestavení se silným názvem jsou užitečné v následujících scénářích:
 
 - Chcete povolit odkazování na vaše sestavení pomocí sestavení se silným názvem, nebo chcete udělit `friend` přístup k sestavením z jiných sestavení se silným názvem.
 
@@ -42,11 +40,13 @@ Sestavení se silným názvem jsou užitečná v následujících situacích:
 
 - Chcete centralizovat obsluhu pro vaši aplikaci pomocí zásad vydavatele, což znamená, že sestavení musí být nainstalováno v globální mezipaměti sestavení (GAC).
 
-Pokud jste Open Source vývojář a chcete mít výhody identity sestavení se silným názvem, zvažte vrácení privátního klíče přidruženého k sestavení do systému správy zdrojového kódu.
+Pro .NET Core sestavení se silným názvem neposkytují materiálové výhody.
+
+Pokud jste Open Source vývojář a chcete, aby výhody identity sestavení se silným názvem pro lepší kompatibilitu s .NET Framework, zvažte vrácení privátního klíče přidruženého k sestavení do systému správy zdrojového kódu.
 
 ## <a name="see-also"></a>Viz také
 
 - [Globální mezipaměť sestavení](../../framework/app-domains/gac.md)
 - [Postupy: podepsání sestavení silným názvem](sign-strong-name.md)
-- [SN. exe (Nástroj pro silný název)](../../framework/tools/sn-exe-strong-name-tool.md)
+- [Sn.exe (Nástroj pro silný název)](../../framework/tools/sn-exe-strong-name-tool.md)
 - [Vytváření a používání sestavení se silným názvem](create-use-strong-named.md)

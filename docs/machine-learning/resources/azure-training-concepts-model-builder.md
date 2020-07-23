@@ -5,12 +5,12 @@ ms.topic: reference
 ms.date: 06/01/2020
 ms.author: luquinta
 author: luisquintanilla
-ms.openlocfilehash: d9eb5560ef33f8f80dbe53e17087c606a8697378
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 8622b580b7925adfd7895317815021f57960e9ee
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289470"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86924575"
 ---
 # <a name="model-builder-azure-training-resources"></a>Školicí materiály Azure pro tvůrce modelů
 
@@ -56,7 +56,7 @@ Chcete-li vytvořit pracovní prostor Azure Machine Learning, jsou potřeba nás
 
 ## <a name="training"></a>Školení
 
-Školení v Azure je dostupné jenom pro scénář klasifikace imagí v Tvůrci modelů. Algoritmus používaný ke výukě těchto modelů je rozsáhlá neuronové síť založená na architektuře ResNet50. Školicí proces trvá určitou dobu a množství času se může lišit v závislosti na velikosti vybraného výpočetního prostředí i na množství dat. Při prvním školení modelu můžete očekávat trochu delší dobu školení, protože je potřeba zřídit prostředky. Průběh spuštění můžete sledovat výběrem odkazu monitorovat aktuální spuštění v Azure Portal v aplikaci Visual Studio.
+Školení v Azure je dostupné jenom pro scénář klasifikace imagí v Tvůrci modelů. Algoritmus používaný ke výukě těchto modelů je rozsáhlá neuronové síť založená na architektuře ResNet50. Školicí proces trvá určitou dobu a množství času se může lišit v závislosti na velikosti vybraného výpočetního prostředí i na množství dat. Průběh spuštění můžete sledovat výběrem odkazu monitorovat aktuální spuštění v Azure Portal v aplikaci Visual Studio.
 
 ## <a name="results"></a>Výsledky
 
@@ -66,8 +66,8 @@ Po dokončení školení se do řešení přidají dva projekty s následující
 - *Model*: .NET Standard aplikace v C#, která obsahuje datové modely definující schéma vstupních a výstupních dat modelu a také následující prostředky:
 
   - bestModel. Onnx: serializovaná verze modelu ve formátu Open neuronové Network Exchange (ONNX). ONNX je open source formát pro modely AI, který podporuje interoperabilitu mezi platformami, jako je ML.NET, PyTorch a TensorFlow.
-  - bestModelMap. JSON: seznam kategorií používaných při vytváření předpovědi k mapování výstupu modelu na textovou kategorii.
-  - MLModel. zip: serializovaná verze kanálu předpovědi ML.NET, která používá serializovanou verzi modelu *bestModel. Onnx* k vytvoření předpovědi a mapování výstupů pomocí `bestModelMap.json` souboru.
+  - bestModelMap.js: seznam kategorií, které se použijí při předpovědií výstupu modelu na kategorii textu.
+  - MLModel.zip: serializovaná verze kanálu předpovědi ML.NET, která používá serializovanou verzi modelu *bestModel. Onnx* , aby bylo možné předpovědi a mapovat výstupy pomocí `bestModelMap.json` souboru.
 
 ## <a name="use-the-machine-learning-model"></a>Použití modelu Machine Learning
 

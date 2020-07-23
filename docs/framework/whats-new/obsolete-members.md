@@ -1,5 +1,6 @@
 ---
 title: Zastaralé členy – .NET Framework
+description: Podívejte se na seznam členů typu, které jsou zastaralé v rozhraní .NET 4,5 a novějších verzích. Členy typu jsou seskupeny podle sestavení. Tady jsou vyloučeni členové zastaralých typů.
 ms.custom: updateeachrelease
 ms.date: 10/17/2017
 helpviewer_keywords:
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - members, obsolete in .NET Framework
 - obsolete members [.NET Framework]
 ms.assetid: 0ee25062-4071-4d3c-a552-87a75d3ecd34
-ms.openlocfilehash: 64bbcd099016dd3d11fea2eaba81ae4559ba6762
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.openlocfilehash: c0e320b8499fec0c56d2e3560bf6f64194f73dad
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81243073"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925823"
 ---
 # <a name="obsolete-members-in-net-framework"></a>Zastaralé členy v .NET Framework
 
@@ -186,7 +187,7 @@ V tomto článku nejsou uvedeny členy zastaralých typů. Seznam zastaralých t
 > |<xref:System.Threading.ThreadPool?displayProperty=nameWithType>|<xref:System.Threading.ThreadPool.BindHandle%28System.IntPtr%29>|<xref:System.Threading.ThreadPool.BindHandle%28System.IntPtr%29>se již nepoužívá. Místo toho použijte <xref:System.Threading.ThreadPool.BindHandle%28System.Runtime.InteropServices.SafeHandle%29?displayProperty=nameWithType>.|
 > |<xref:System.Threading.WaitHandle?displayProperty=nameWithType>|<xref:System.Threading.WaitHandle.Handle%2A>|<xref:System.Threading.WaitHandle.SafeWaitHandle%2A?displayProperty=nameWithType>Místo toho použijte vlastnost.|
 
-## <a name="presentationcoredll"></a>PresentationCore. dll
+## <a name="presentationcoredll"></a>PresentationCore.dll
 
 > [!div class="mx-tdBreakAll"]
 > |Typ|Člen|Zpráva|
@@ -226,7 +227,7 @@ V tomto článku nejsou uvedeny členy zastaralých typů. Seznam zastaralých t
 > |<xref:System.Windows.Media.Media3D.Viewport3DVisual?displayProperty=nameWithType>|<xref:System.Windows.Media.Media3D.Viewport3DVisual.BitmapEffect%2A>|Efekty rastrových obrázků jsou zastaralé a již nejsou funkční. Zvažte <xref:System.Windows.Media.Effects.Effect?displayProperty=nameWithType> místo toho použití, kde je to vhodné.|
 > |<xref:System.Windows.Media.Media3D.Viewport3DVisual?displayProperty=nameWithType>|<xref:System.Windows.Media.Media3D.Viewport3DVisual.BitmapEffectInput%2A>|Efekty rastrových obrázků jsou zastaralé a již nejsou funkční. Zvažte <xref:System.Windows.Media.Effects.Effect?displayProperty=nameWithType> místo toho použití, kde je to vhodné.|
 
-## <a name="presentationframeworkdll"></a>PresentationFramework. dll
+## <a name="presentationframeworkdll"></a>PresentationFramework.dll
 
 > [!div class="mx-tdBreakAll"]
 > |Typ|Člen|Zpráva|
@@ -236,7 +237,7 @@ V tomto článku nejsou uvedeny členy zastaralých typů. Seznam zastaralých t
 > |<xref:System.Windows.Data.CollectionView?displayProperty=nameWithType>|<xref:System.Windows.Data.CollectionView.OnBeginChangeLogging%2A>|Nahradil (a) <xref:System.Windows.Data.CollectionView.OnAllowsCrossThreadChangesChanged%2A?displayProperty=nameWithType> .|
 > |<xref:System.Windows.Data.ListCollectionView?displayProperty=nameWithType>|<xref:System.Windows.Data.ListCollectionView.OnBeginChangeLogging%2A>|Nahradil (a) <xref:System.Windows.Data.ListCollectionView.OnAllowsCrossThreadChangesChanged%2A?displayProperty=nameWithType> .|
 
-## <a name="systemactivitiesdll"></a>System. Activities. dll
+## <a name="systemactivitiesdll"></a>System.Activities.dll
 
 > [!div class="mx-tdBreakAll"]
 > |Typ|Člen|Zpráva|
@@ -244,7 +245,7 @@ V tomto článku nejsou uvedeny členy zastaralých typů. Seznam zastaralých t
 > |<xref:System.Activities.Debugger.XamlDebuggerXmlReader?displayProperty=nameWithType>|<xref:System.Activities.Debugger.XamlDebuggerXmlReader.%23ctor%28System.Xaml.XamlReader%2CSystem.Xaml.IXamlLineInfo%2CSystem.IO.TextReader%29>|První zastaralá v .NET Framework 4,5.<br /><br /> Nepoužívejte tento konstruktor. Použijte <xref:System.Activities.Debugger.XamlDebuggerXmlReader.%23ctor%28System.IO.TextReader%29> nebo <xref:System.Activities.Debugger.XamlDebuggerXmlReader.%23ctor%28System.IO.TextReader%2CSystem.Xaml.XamlSchemaContext%29> místo toho.|
 > |<xref:System.Activities.Debugger.XamlDebuggerXmlReader?displayProperty=nameWithType>|<xref:System.Activities.Debugger.XamlDebuggerXmlReader.%23ctor%28System.Xaml.XamlReader%2CSystem.IO.TextReader%29>|První zastaralá v .NET Framework 4,5.<br /><br /> Nepoužívejte tento konstruktor. Použijte <xref:System.Activities.Debugger.XamlDebuggerXmlReader.%23ctor%28System.IO.TextReader%29> nebo <xref:System.Activities.Debugger.XamlDebuggerXmlReader.%23ctor%28System.IO.TextReader%2CSystem.Xaml.XamlSchemaContext%29> místo toho.|
 
-## <a name="systemactivitiespresentationdll"></a>System. Activities. Presentation. dll
+## <a name="systemactivitiespresentationdll"></a>System.Activities.Presentation.dll
 
 > [!div class="mx-tdBreakAll"]
 > |Typ|Člen|Zpráva|
@@ -324,7 +325,7 @@ V tomto článku nejsou uvedeny členy zastaralých typů. Seznam zastaralých t
 > |<xref:System.Data.SqlClient.SqlConnectionStringBuilder?displayProperty=nameWithType>|<xref:System.Data.SqlClient.SqlConnectionStringBuilder.ConnectionReset%2A>|<xref:System.Data.SqlClient.SqlConnectionStringBuilder.ConnectionReset%2A>se již nepoužívá. <xref:System.Data.SqlClient.SqlConnection?displayProperty=nameWithType>bude ignorovat klíčové slovo "resetování připojení" a vždy resetovat připojení.|
 > |<xref:System.Data.SqlClient.SqlParameterCollection?displayProperty=nameWithType>|<xref:System.Data.SqlClient.SqlParameterCollection.Add%28System.String%2CSystem.Object%29>|<xref:System.Data.SqlClient.SqlParameterCollection.Add%28System.String%2CSystem.Object%29>se již nepoužívá. Použijte <xref:System.Data.SqlClient.SqlParameterCollection.AddWithValue%2A?displayProperty=nameWithType>.|
 
-## <a name="systemdataentitydll"></a>System. data. entity. dll
+## <a name="systemdataentitydll"></a>System.Data.Entity.dll
 
 > [!div class="mx-tdBreakAll"]
 > |Typ|Člen|Zpráva|
@@ -343,7 +344,7 @@ V tomto článku nejsou uvedeny členy zastaralých typů. Seznam zastaralých t
 > |<xref:System.Data.OracleClient.OracleParameter?displayProperty=nameWithType>|<xref:System.Data.OracleClient.OracleParameter.Scale%2A>|<xref:System.Data.OracleClient.OracleParameter.Scale%2A>se již nepoužívá. Třídy můžete použít <xref:System.Math?displayProperty=nameWithType> k explicitnímu nastavení měřítka desetinné čárky.|
 > |<xref:System.Data.OracleClient.OracleParameterCollection?displayProperty=nameWithType>|<xref:System.Data.OracleClient.OracleParameterCollection.Add%28System.String%2CSystem.Object%29>|<xref:System.Data.OracleClient.OracleParameterCollection.Add%28System.String%2CSystem.Object%29>se již nepoužívá. Použijte <xref:System.Data.OracleClient.OracleParameterCollection.AddWithValue%2A?displayProperty=nameWithType>.|
 
-## <a name="systemdesigndll"></a>System. Design. dll
+## <a name="systemdesigndll"></a>System.Design.dll
 
 > [!div class="mx-tdBreakAll"]
 > |Typ|Člen|Zpráva|
@@ -456,7 +457,7 @@ V tomto článku nejsou uvedeny členy zastaralých typů. Seznam zastaralých t
 > |<xref:System.Diagnostics.EventLogPermissionAccess?displayProperty=nameWithType>|<xref:System.Diagnostics.EventLogPermissionAccess.Instrument>|Tento člen je zastaralý. Místo toho použijte <xref:System.Diagnostics.EventLogPermissionAccess.Write?displayProperty=nameWithType>.|
 > |<xref:System.Diagnostics.InstanceDataCollection?displayProperty=nameWithType>|<xref:System.Diagnostics.InstanceDataCollection.%23ctor%2A>|Tento konstruktor je zastaralý. <xref:System.Diagnostics.InstanceDataCollectionCollection.Item%2A?displayProperty=nameWithType>Místo toho použijte k získání instance této kolekce.|
 > |<xref:System.Diagnostics.InstanceDataCollectionCollection?displayProperty=nameWithType>|<xref:System.Diagnostics.InstanceDataCollectionCollection.%23ctor%2A>|Tento konstruktor je zastaralý. <xref:System.Diagnostics.PerformanceCounterCategory.ReadCategory%2A?displayProperty=nameWithType>Místo toho použijte k získání instance této kolekce.|
-> |<xref:System.Diagnostics.PerformanceCounter?displayProperty=nameWithType>|<xref:System.Diagnostics.PerformanceCounter.DefaultFileMappingSize>|Toto pole je zastaralé a nepoužívá se. K nastavení velikosti mapování souborů použijte Machine. config nebo konfigurační soubor aplikace <xref:System.Diagnostics.PerformanceCounter?displayProperty=nameWithType> .|
+> |<xref:System.Diagnostics.PerformanceCounter?displayProperty=nameWithType>|<xref:System.Diagnostics.PerformanceCounter.DefaultFileMappingSize>|Toto pole je zastaralé a nepoužívá se. Pomocí machine.config nebo konfiguračního souboru aplikace nastavte velikost <xref:System.Diagnostics.PerformanceCounter?displayProperty=nameWithType> mapování souboru.|
 > |<xref:System.Diagnostics.PerformanceCounterCategory?displayProperty=nameWithType>|<xref:System.Diagnostics.PerformanceCounterCategory.Create%28System.String%2CSystem.String%2CSystem.Diagnostics.CounterCreationDataCollection%29>|Tato metoda je zastaralá. Místo toho použijte <xref:System.Diagnostics.PerformanceCounterCategory.Create%28System.String%2CSystem.String%2CSystem.Diagnostics.PerformanceCounterCategoryType%2CSystem.Diagnostics.CounterCreationDataCollection%29>.|
 > |<xref:System.Diagnostics.PerformanceCounterCategory?displayProperty=nameWithType>|<xref:System.Diagnostics.PerformanceCounterCategory.Create%28System.String%2CSystem.String%2CSystem.String%2CSystem.String%29>|Tato metoda je zastaralá. Místo toho použijte <xref:System.Diagnostics.PerformanceCounterCategory.Create%28System.String%2CSystem.String%2CSystem.Diagnostics.PerformanceCounterCategoryType%2CSystem.String%2CSystem.String%29>.|
 > |<xref:System.Diagnostics.PerformanceCounterManager?displayProperty=nameWithType>|<xref:System.Diagnostics.PerformanceCounterManager.System%23Diagnostics%23ICollectData%23CloseData%2A>|Tato třída je zastaralá. Místo toho použijte čítače výkonu přes <xref:System.Diagnostics.PerformanceCounter> třídu.|
@@ -508,7 +509,7 @@ V tomto článku nejsou uvedeny členy zastaralých typů. Seznam zastaralých t
 > |<xref:System.Net.WebSockets.WebSocket?displayProperty=nameWithType>|<xref:System.Net.WebSockets.WebSocket.IsApplicationTargeting45%2A>|První zastaralá v .NET Framework 4,5.<br /><br /> Tento člen je pouze pro interní použití a v budoucí verzi .NET Framework bude odstraněn. Nevolejte ho.|
 > |<xref:System.Security.Claims.DynamicRoleClaimProvider?displayProperty=nameWithType>|<xref:System.Security.Claims.DynamicRoleClaimProvider.AddDynamicRoleClaims%2A>|První zastaralá v .NET Framework 4,5.<br /><br /> Použití tohoto člena generuje chybu kompilátoru.<br /><br /> Slouží <xref:System.Security.Claims.ClaimsAuthenticationManager?displayProperty=nameWithType> k přidání deklarací identity do <xref:System.Security.Claims.ClaimsIdentity> .|
 
-## <a name="systemdrawingdll"></a>System. Drawing. dll
+## <a name="systemdrawingdll"></a>System.Drawing.dll
 
 > [!div class="mx-tdBreakAll"]
 > |Typ|Člen|Zpráva|
@@ -536,7 +537,7 @@ V tomto článku nejsou uvedeny členy zastaralých typů. Seznam zastaralých t
 > |<xref:System.ServiceModel.Dispatcher.ClientRuntimeCompatBase?displayProperty=nameWithType>|<xref:System.ServiceModel.Dispatcher.ClientRuntimeCompatBase.Operations%2A>|První zastaralá v .NET Framework 4,5.<br /><br /> Použití tohoto typu vygeneruje chybu kompilátoru.<br /><br /> Toto rozhraní API podporuje infrastrukturu .NET Framework a není určené pro použití přímo v kódu.|
 > |<xref:System.ServiceModel.Security.WindowsClientCredential?displayProperty=nameWithType>|<xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A>|Tato vlastnost je zastaralá a je udržována pouze pro zpětnou kompatibilitu. Zásada místního počítače se použije k určení, jestli se má použít protokol NTLM.|
 
-## <a name="systemservicemodeldiscoverydll"></a>System. ServiceModel. Discovery. dll
+## <a name="systemservicemodeldiscoverydll"></a>System.ServiceModel.Discovery.dll
 
 > [!div class="mx-tdBreakAll"]
 > |Typ|Člen|Zpráva|
@@ -544,26 +545,26 @@ V tomto článku nejsou uvedeny členy zastaralých typů. Seznam zastaralých t
 > |<xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint?displayProperty=nameWithType>|<xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint.TransportSettings%2A>|První zastaralá v .NET Framework 4,5.<br /><br /> <xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint.TransportSettings%2A>Vlastnost je zastaralá. Zvažte použití <xref:System.ServiceModel.Channels.UdpTransportBindingElement?displayProperty=nameWithType> pro nastavení vlastností přenosu.|
 > |<xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint?displayProperty=nameWithType>|<xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint.TransportSettings%2A>|První zastaralá v .NET Framework 4,5.<br /><br /> <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint.TransportSettings%2A>Vlastnost je zastaralá. Zvažte použití <xref:System.ServiceModel.Channels.UdpTransportBindingElement?displayProperty=nameWithType> pro nastavení vlastností přenosu.|
 
-## <a name="systemwebdatavisualizationdll"></a>System. Web. datavizuálů. dll
+## <a name="systemwebdatavisualizationdll"></a>System.Web.DataVisualization.dll
 
 > [!div class="mx-tdBreakAll"]
 > |Typ|Člen|Zpráva|
 > |----------|------------|-------------|
 > |<xref:System.Web.UI.DataVisualization.Charting.Chart?displayProperty=nameWithType>|<xref:System.Web.UI.DataVisualization.Charting.Chart.ViewStateData%2A>|<xref:System.Web.UI.DataVisualization.Charting.Chart.ViewStateData%2A>se již nepoužívá. <xref:System.Web.UI.Control.ViewState%2A?displayProperty=nameWithType>Místo toho Prozkoumejte.|
 
-## <a name="systemwebdll"></a>System. Web. dll
+## <a name="systemwebdll"></a>System.Web.dll
 
 > [!div class="mx-tdBreakAll"]
 > |Typ|Člen|Zpráva|
 > |----------|------------|-------------|
-> |<xref:System.Web.HttpContext?displayProperty=nameWithType>|<xref:System.Web.HttpContext.GetAppConfig%2A>|Doporučená alternativa je <xref:System.Web.Configuration.WebConfigurationManager.GetWebApplicationSection%2A?displayProperty=nameWithType> v System. Web. dll.|
-> |<xref:System.Web.HttpContext?displayProperty=nameWithType>|<xref:System.Web.HttpContext.GetConfig%2A>|Doporučená alternativa je <xref:System.Web.HttpContext.GetSection%2A?displayProperty=nameWithType> v System. Web. dll.|
+> |<xref:System.Web.HttpContext?displayProperty=nameWithType>|<xref:System.Web.HttpContext.GetAppConfig%2A>|Doporučená alternativa je <xref:System.Web.Configuration.WebConfigurationManager.GetWebApplicationSection%2A?displayProperty=nameWithType> System.Web.dll.|
+> |<xref:System.Web.HttpContext?displayProperty=nameWithType>|<xref:System.Web.HttpContext.GetConfig%2A>|Doporučená alternativa je <xref:System.Web.HttpContext.GetSection%2A?displayProperty=nameWithType> System.Web.dll.|
 > |<xref:System.Web.HttpUtility?displayProperty=nameWithType>|<xref:System.Web.HttpUtility.UrlEncodeUnicode%2A>|První zastaralá v .NET Framework 4,5.<br /><br /> Tato metoda vytváří výstup kompatibilní s nestandardními \- standardy \- a má problémy interoperability. Upřednostňovanou alternativou je <xref:System.Web.HttpUtility.UrlEncode%28System.String%29> .|
 > |<xref:System.Web.HttpUtility?displayProperty=nameWithType>|<xref:System.Web.HttpUtility.UrlEncodeUnicodeToBytes%2A>|První zastaralá v .NET Framework 4,5.<br /><br /> Tato metoda vytváří výstup kompatibilní s nestandardními \- standardy \- a má problémy interoperability. Upřednostňovanou alternativou je <xref:System.Web.HttpUtility.UrlEncodeToBytes%28System.String%29> .|
 > |<xref:System.Web.Configuration.AuthenticationMode?displayProperty=nameWithType>|<xref:System.Web.Configuration.AuthenticationMode.Passport>|Toto pole je zastaralé. Ověřovací produkt Passport již není podporován a byl nahrazen [účtem Microsoft](https://account.microsoft.com/account/Account?destrt=home-index).|
 > |<xref:System.Web.Configuration.AuthenticationSection?displayProperty=nameWithType>|<xref:System.Web.Configuration.AuthenticationSection.Passport%2A>|Tato vlastnost je zastaralá. Ověřovací produkt Passport již není podporován a byl nahrazen [účtem Microsoft](https://account.microsoft.com/account/Account?destrt=home-index).|
 > |<xref:System.Web.Configuration.HttpCapabilitiesBase?displayProperty=nameWithType>|<xref:System.Web.Configuration.HttpCapabilitiesBase.JavaScript%2A>|Doporučená alternativa je <xref:System.Web.Configuration.HttpCapabilitiesBase.EcmaScriptVersion%2A?displayProperty=nameWithType> vlastnost. <xref:System.Version.Major%2A?displayProperty=nameWithType>Hodnota verze větší než nebo rovna 1 znamená podporu JavaScriptu.|
-> |<xref:System.Web.Configuration.SystemWebSectionGroup?displayProperty=nameWithType>|<xref:System.Web.Configuration.SystemWebSectionGroup.MobileControls%2A>|System. Web. Mobile. dll je zastaralý.|
+> |<xref:System.Web.Configuration.SystemWebSectionGroup?displayProperty=nameWithType>|<xref:System.Web.Configuration.SystemWebSectionGroup.MobileControls%2A>|System.Web.Mobile.dll je zastaralá.|
 > |<xref:System.Web.Routing.UrlRoutingModule?displayProperty=nameWithType>|<xref:System.Web.Routing.UrlRoutingModule.PostMapRequestHandler%2A>|Tato metoda je zastaralá. Přepsat <xref:System.Web.Routing.UrlRoutingModule.Init%2A> metodu pro použití <xref:System.Web.Routing.UrlRoutingModule.PostMapRequestHandler%2A> události.|
 > |<xref:System.Web.Security.FormsAuthentication?displayProperty=nameWithType>|<xref:System.Web.Security.FormsAuthentication.Authenticate%2A>|První zastaralá v .NET Framework 4,5.<br /><br /> Doporučenou možností je používat <xref:System.Web.Security.Membership?displayProperty=nameWithType> rozhraní API, jako je například <xref:System.Web.Security.Membership.ValidateUser%2A?displayProperty=nameWithType> .|
 > |<xref:System.Web.Security.FormsAuthentication?displayProperty=nameWithType>|<xref:System.Web.Security.FormsAuthentication.HashPasswordForStoringInConfigFile%2A>|První zastaralá v .NET Framework 4,5.<br /><br /> Doporučenou možností je používat <xref:System.Web.Security.Membership?displayProperty=nameWithType> rozhraní API, jako je například <xref:System.Web.Security.Membership.CreateUser%2A?displayProperty=nameWithType> .|
@@ -586,14 +587,14 @@ V tomto článku nejsou uvedeny členy zastaralých typů. Seznam zastaralých t
 > |<xref:System.Web.UI.WebControls.GridView?displayProperty=nameWithType>|<xref:System.Web.UI.WebControls.GridView.CreateAutoGeneratedColumn%2A>|První zastaralá v .NET Framework 4,5.<br /><br /> Tato metoda je udržována z důvodu zpětné kompatibility. Toto rozhraní API se už nepoužívá.|
 > |<xref:System.Web.UI.WebControls.Xml?displayProperty=nameWithType>|<xref:System.Web.UI.WebControls.Xml.Document%2A>|Doporučená alternativa je <xref:System.Web.UI.WebControls.Xml.XPathNavigator%2A?displayProperty=nameWithType> vlastnost. Vytvořte <xref:System.Xml.XPath.XPathDocument?displayProperty=nameWithType> volání a a <xref:System.Xml.XPath.XPathDocument.CreateNavigator%2A?displayProperty=nameWithType> vytvořte <xref:System.Xml.XPath.XPathNavigator?displayProperty=nameWithType> .|
 
-## <a name="systemwebdynamicdatadll"></a>System. Web. DynamicData. dll
+## <a name="systemwebdynamicdatadll"></a>System.Web.DynamicData.dll
 
 > [!div class="mx-tdBreakAll"]
 > |Typ|Člen|Zpráva|
 > |----------|------------|-------------|
 > |<xref:System.Web.DynamicData.DynamicDataExtensions?displayProperty=nameWithType>|<xref:System.Web.DynamicData.DynamicDataExtensions.EnablePersistedSelection%2A>|Použijte `EnablePersistedSelection` vlastnost v ovládacím prvku datové vazby, jako je například <xref:System.Web.UI.WebControls.GridView?displayProperty=nameWithType> nebo <xref:System.Web.UI.WebControls.ListView?displayProperty=nameWithType> .|
 
-## <a name="systemwebextensionsdll"></a>System. Web. Extensions. dll
+## <a name="systemwebextensionsdll"></a>System.Web.Extensions.dll
 
 > [!div class="mx-tdBreakAll"]
 > |Typ|Člen|Zpráva|
@@ -615,7 +616,7 @@ V tomto článku nejsou uvedeny členy zastaralých typů. Seznam zastaralých t
 > |<xref:System.Web.Services.Discovery.DiscoveryClientProtocol?displayProperty=nameWithType>|<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.LoadExternals%2A>|Tato metoda bude z budoucí verze odebrána. Volání metody již není vyžadováno pro zjišťování prostředků.|
 > |<xref:System.Web.Services.Protocols.SoapHeaderAttribute?displayProperty=nameWithType>|<xref:System.Web.Services.Protocols.SoapHeaderAttribute.Required%2A>|Tato vlastnost bude z budoucí verze odebrána. Již není zajištěna přítomnost konkrétní hlavičky ve zprávě SOAP.|
 
-## <a name="systemwindowsformsdll"></a>System. Windows. Forms. dll
+## <a name="systemwindowsformsdll"></a>System.Windows.Forms.dll
 
 > [!div class="mx-tdBreakAll"]
 > |Typ|Člen|Zpráva|
@@ -632,7 +633,7 @@ V tomto článku nejsou uvedeny členy zastaralých typů. Seznam zastaralých t
 > |<xref:System.Windows.Forms.ListBox?displayProperty=nameWithType>|<xref:System.Windows.Forms.ListBox.AddItemsCore%2A>|Tato metoda je zastaralá. Nebude ničím nahrazen.|
 > |<xref:System.Windows.Forms.PrintPreviewDialog?displayProperty=nameWithType>|<xref:System.Windows.Forms.Form.AutoScaleBaseSize%2A>|Tato vlastnost je zastaralá. <xref:System.Windows.Forms.ContainerControl.AutoScaleDimensions%2A?displayProperty=nameWithType>Místo toho použijte vlastnost.|
 
-## <a name="systemxamldll"></a>System. XAML. dll
+## <a name="systemxamldll"></a>System.Xaml.dll
 
 > [!div class="mx-tdBreakAll"]
 > |Typ|Člen|Zpráva|
@@ -662,18 +663,18 @@ V tomto článku nejsou uvedeny členy zastaralých typů. Seznam zastaralých t
 > |<xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType>|<xref:System.Xml.Serialization.XmlSerializer.%23ctor%28System.Type%2CSystem.Xml.Serialization.XmlAttributeOverrides%2CSystem.Type%5B%5D%2CSystem.Xml.Serialization.XmlRootAttribute%2CSystem.String%2CSystem.String%2CSystem.Security.Policy.Evidence%29>|Tato metoda je zastaralá a v budoucí verzi .NET Framework bude odebrána. Použijte <xref:System.Xml.Serialization.XmlSerializer.%23ctor%2A> přetížení konstruktoru, které nepřijímá <xref:System.Security.Policy.Evidence?displayProperty=nameWithType> parametr.|
 > |<xref:System.Xml.Serialization.XmlSerializerFactory?displayProperty=nameWithType>|<xref:System.Xml.Serialization.XmlSerializerFactory.CreateSerializer%28System.Type%2CSystem.Xml.Serialization.XmlAttributeOverrides%2CSystem.Type%5B%5D%2CSystem.Xml.Serialization.XmlRootAttribute%2CSystem.String%2CSystem.String%2CSystem.Security.Policy.Evidence%29>|Tato metoda je zastaralá a v budoucí verzi .NET Framework bude odebrána. Použijte přetížení <xref:System.Xml.Serialization.XmlSerializerFactory.CreateSerializer%2A?displayProperty=nameWithType> , které nepřijímá <xref:System.Security.Policy.Evidence?displayProperty=nameWithType> parametr.|
 
-## <a name="iehostdll-and-ieexecexe"></a>IEHost. dll a IEExec. exe
+## <a name="iehostdll-and-ieexecexe"></a>IEHost.dll a IEExec.exe
 
-Sestavení IEHost. dll a IEExec. exe byla odebrána z .NET Framework. Všechny jejich typy a jejich členové jsou zastaralé a nejsou podporováni v .NET Framework 4,5 a novějším. Tato sestavení byla použita pro hostování model Windows Formsch ovládacích prvků a spouštění spustitelných souborů v aplikaci Internet Explorer. Mezi alternativy k této technologii patří ClickOnce, aplikace prohlížeče XAML (XBAP) a Microsoft Silverlight.
+Sestavení IEHost.dll a IEExec.exe byla odebrána z .NET Framework. Všechny jejich typy a jejich členové jsou zastaralé a nejsou podporováni v .NET Framework 4,5 a novějším. Tato sestavení byla použita pro hostování model Windows Formsch ovládacích prvků a spouštění spustitelných souborů v aplikaci Internet Explorer. Mezi alternativy k této technologii patří ClickOnce, aplikace prohlížeče XAML (XBAP) a Microsoft Silverlight.
 
-## <a name="isymwrapperdll"></a>ISymWrapper. dll
+## <a name="isymwrapperdll"></a>ISymWrapper.dll
 
 > [!div class="mx-tdBreakAll"]
 > |Typ|Člen|Zpráva|
 > |----------|------------|-------------|
 > |<xref:System.Diagnostics.SymbolStore.SymBinder?displayProperty=nameWithType>|<xref:System.Diagnostics.SymbolStore.SymBinder.GetReader%28System.Int32%2CSystem.String%2CSystem.String%29>|Doporučená alternativa je <xref:System.Diagnostics.SymbolStore.SymBinder.GetReader%28System.IntPtr%2CSystem.String%2CSystem.String%29?displayProperty=nameWithType> . <xref:System.Diagnostics.SymbolStore.ISymbolBinder1.GetReader%2A?displayProperty=nameWithType>převede ukazatel rozhraní pro import na <xref:System.IntPtr?displayProperty=nameWithType> místo a <xref:System.Int32?displayProperty=nameWithType> , takže funguje jak na 32, tak na 64 architektuře.|
 
-## <a name="microsoftbuildconversionv40dll"></a>Microsoft. Build. Conversion. v 4.0. dll
+## <a name="microsoftbuildconversionv40dll"></a>Microsoft.Build.Conversion.v4.0.dll
 
 > [!div class="mx-tdBreakAll"]
 > |Typ|Člen|Zpráva|
@@ -683,7 +684,7 @@ Sestavení IEHost. dll a IEExec. exe byla odebrána z .NET Framework. Všechny j
 > |<xref:Microsoft.Build.Conversion.ProjectFileConverter?displayProperty=nameWithType>|<xref:Microsoft.Build.Conversion.ProjectFileConverter.ConvertInMemory%28Microsoft.Build.BuildEngine.Engine%29>|<xref:Microsoft.Build.Conversion.ProjectFileConverter.ConvertInMemory?displayProperty=nameWithType>Místo toho použijte metodu bez parametrů.|
 > |<xref:Microsoft.Build.Conversion.ProjectFileConverter?displayProperty=nameWithType>|<xref:Microsoft.Build.Conversion.ProjectFileConverter.ConvertInMemory%28Microsoft.Build.BuildEngine.Engine%2CMicrosoft.Build.BuildEngine.ProjectLoadSettings%29>|<xref:Microsoft.Build.Conversion.ProjectFileConverter.ConvertInMemory?displayProperty=nameWithType>Místo toho použijte metodu bez parametrů.|
 
-## <a name="microsoftbuildenginedll"></a>Microsoft. Build. Engine. dll
+## <a name="microsoftbuildenginedll"></a>Microsoft.Build.Engine.dll
 
 > [!div class="mx-tdBreakAll"]
 > |Typ|Člen|Zpráva|
@@ -691,28 +692,28 @@ Sestavení IEHost. dll a IEExec. exe byla odebrána z .NET Framework. Všechny j
 > |<xref:Microsoft.Build.BuildEngine.Engine?displayProperty=nameWithType>|<xref:Microsoft.Build.BuildEngine.Engine.BinPath%2A>|Vyhněte se nastavení <xref:Microsoft.Build.BuildEngine.Engine.BinPath%2A> . Pokud jste předali místo .NET Framework umístění jako <xref:Microsoft.Build.BuildEngine.Engine.BinPath%2A> , není nutná žádná další akce. V opačném případě definujte sady nástrojů místo registru nebo konfiguračního souboru nebo přidáním prvků do modulu <xref:Microsoft.Build.BuildEngine.ToolsetCollection?displayProperty=nameWithType> , aby bylo možné použít vlastní <xref:Microsoft.Build.BuildEngine.Engine.BinPath%2A> .|
 > |<xref:Microsoft.Build.BuildEngine.Engine?displayProperty=nameWithType>|<xref:Microsoft.Build.BuildEngine.Engine.%23ctor%28System.String%29>|Pokud jste jednoduše předali v umístění .NET Framework jako <xref:Microsoft.Build.BuildEngine.Engine.BinPath%2A> , stačí změnit konstruktor bez parametrů <xref:Microsoft.Build.BuildEngine.Engine.%23ctor> . V opačném případě můžete definovat vlastní sady nástrojů v registru nebo konfiguračním souboru nebo přidat prvky do modulu <xref:Microsoft.Build.BuildEngine.ToolsetCollection?displayProperty=nameWithType> . Pak použijte <xref:Microsoft.Build.BuildEngine.Engine.%23ctor> <xref:Microsoft.Build.BuildEngine.Engine.%23ctor%28Microsoft.Build.BuildEngine.ToolsetDefinitionLocations%29> místo toho buď konstruktor nebo.|
 
-## <a name="microsoftbuildframeworkdll"></a>Microsoft. Build. Framework. dll
+## <a name="microsoftbuildframeworkdll"></a>Microsoft.Build.Framework.dll
 
 > [!div class="mx-tdBreakAll"]
 > |Typ|Člen|Zpráva|
 > |----------|------------|-------------|
 > |<xref:Microsoft.Build.Framework.XamlTypes.ContentType?displayProperty=nameWithType>|<xref:Microsoft.Build.Framework.XamlTypes.ContentType.ItemGroupName%2A>|První zastaralá v .NET Framework 4,5.<br /><br /> Použití tohoto člena generuje chybu kompilátoru.<br /><br /> <xref:Microsoft.Build.Framework.XamlTypes.ContentType.ItemType%2A?displayProperty=nameWithType>Místo toho použijte vlastnost.|
 
-## <a name="microsoftbuildutilitiesv40dll"></a>Microsoft. Build. Utilities. v 4.0. dll
+## <a name="microsoftbuildutilitiesv40dll"></a>Microsoft.Build.Utilities.v4.0.dll
 
 > [!div class="mx-tdBreakAll"]
 > |Typ|Člen|Zpráva|
 > |----------|------------|-------------|
 > |<xref:Microsoft.Build.Utilities.ToolTask?displayProperty=nameWithType>|<xref:Microsoft.Build.Utilities.ToolTask.EnvironmentOverride%2A>|Použijte <xref:Microsoft.Build.Utilities.ToolTask.EnvironmentVariables%2A?displayProperty=nameWithType> vlastnost.|
 
-## <a name="microsoftdataentitybuildtasksdll"></a>Microsoft. data. entity. Build. Tasks. dll
+## <a name="microsoftdataentitybuildtasksdll"></a>Microsoft.Data.Entity.Build.Tasks.dll
 
 > [!div class="mx-tdBreakAll"]
 > |Typ|Člen|Zpráva|
 > |----------|------------|-------------|
 > |`Microsoft.Data.Entity.Build.Tasks.EntityDeploy`|`EntityDataModelEmbeddedResources`|První zastaralá v .NET Framework 4,5.<br /><br /> Používá se pouze pro zpětnou kompatibilitu verze 3,5.|
 
-## <a name="microsoftvisualbasicdll"></a>Microsoft. VisualBasic. dll
+## <a name="microsoftvisualbasicdll"></a>Microsoft.VisualBasic.dll
 
 > [!div class="mx-tdBreakAll"]
 > |Typ|Člen|Zpráva|

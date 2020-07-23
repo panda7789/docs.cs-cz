@@ -1,21 +1,22 @@
 ---
-title: Jak vytvořit sjednocení C/C++ pomocí atributů (C#)
+title: Postup vytvoření sjednocení jazyka C/C++ pomocí atributů (C#)
+description: Naučte se používat atributy k přizpůsobení způsobu, jakým jsou struktury rozloženy v paměti v jazyce C#. Tento příklad implementuje ekvivalent sjednocení z C/C++.
 ms.date: 07/20/2015
 ms.assetid: 85f35e56-26e0-4d31-9f3a-89bd4005e71a
-ms.openlocfilehash: ff8ce560444581a28b257820573224f89a274cd9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 766a070105441630dfd8fecf7b9f68fa6818fe50
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74141570"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925069"
 ---
-# <a name="how-to-create-a-cc-union-by-using-attributes-c"></a>Jak vytvořit sjednocení C/C++ pomocí atributů (C#)
+# <a name="how-to-create-a-cc-union-by-using-attributes-c"></a>Postup vytvoření sjednocení jazyka C/C++ pomocí atributů (C#)
 
-Pomocí atributů můžete přizpůsobit způsob, jakým jsou struktury rozloženy v paměti. Můžete například vytvořit to, co je známé jako unie v `StructLayout(LayoutKind.Explicit)` `FieldOffset` jazyce C/C++ pomocí atributů a.
+Pomocí atributů můžete přizpůsobit, jak jsou struktury rozloženy v paměti. Můžete například vytvořit, co je v C/C++ známé jako sjednocení pomocí `StructLayout(LayoutKind.Explicit)` `FieldOffset` atributů a.
 
 ## <a name="example"></a>Příklad
 
-V tomto segmentu kódu všechna `TestUnion` pole začít ve stejném umístění v paměti.
+V tomto segmentu kódu všechna pole `TestUnion` začínají ve stejném umístění v paměti.
 
 ```csharp
 // Add a using directive for System.Runtime.InteropServices.
@@ -39,7 +40,7 @@ struct TestUnion
 
 ## <a name="example"></a>Příklad
 
-Následuje další příklad, kde pole začínají v různých explicitně nastavených umístěních.
+Následuje další příklad, kdy se pole spouštějí v různých explicitních nastaveních umístění.
 
 ```csharp
 // Add a using directive for System.Runtime.InteropServices.
@@ -67,13 +68,13 @@ struct TestExplicit
 }
 ```
 
-Dvě celá pole `i1` a `i2`, sdílejí stejná `lg`umístění paměti jako . Tento druh kontroly nad rozložení struktury je užitečné při použití vyvolání platformy.
+Dvě celočíselná pole `i1` a `i2` sdílejí stejná umístění v paměti jako `lg` . Tento druh řízení nad rozložením struktury je užitečný při volání platformy.
 
 ## <a name="see-also"></a>Viz také
 
 - <xref:System.Reflection>
 - <xref:System.Attribute>
-- [Programovací příručka jazyka C#](../../index.md)
+- [Průvodce programováním v C#](../../index.md)
 - [Atributy](../../../../standard/attributes/index.md)
 - [Reflexe (C#)](../reflection.md)
 - [Atributy (C#)](index.md)

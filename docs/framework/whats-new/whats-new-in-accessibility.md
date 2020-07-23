@@ -1,5 +1,6 @@
 ---
 title: Co je nového v přístupnosti v .NET Framework
+description: Podívejte se, co je nového v přístupnost .NET, počínaje .NET Framework 4.7.1. Funkce usnadnění umožňují, aby aplikace poskytovala správné prostředí pro uživatele s asistenčními technologiemi.
 ms.custom: updateeachrelease
 ms.date: 04/18/2019
 dev_langs:
@@ -7,12 +8,12 @@ dev_langs:
 - vb
 helpviewer_keywords:
 - what's new [.NET Framework]
-ms.openlocfilehash: 8a85614e441ba6e5782cbbbf5fe12432c053a101
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 593591ca340cc130a3a6d1daa015a849b8eca0f8
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85244150"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925836"
 ---
 # <a name="whats-new-in-accessibility-in-the-net-framework"></a>Co je nového v přístupnosti v .NET Framework
 
@@ -472,7 +473,7 @@ peer.RaiseAutomationEvent(AutomationEvents.LiveRegionChanged)
 
 **High contrast**
 
-Počínaje .NET Framework 4.7.1 se v různých ovládacích prvcích WPF provedla vylepšení vysokého kontrastu. Jsou nyní viditelné, když <xref:System.Windows.SystemParameters.HighContrast%2A> je motiv nastaven. Zde jsou některé z nich:
+Počínaje .NET Framework 4.7.1 se v různých ovládacích prvcích WPF provedla vylepšení vysokého kontrastu. Jsou nyní viditelné, když <xref:System.Windows.SystemParameters.HighContrast%2A> je motiv nastaven. Mezi ně patří:
 
 - <xref:System.Windows.Controls.Expander>nad
 
@@ -709,4 +710,4 @@ Změny přístupnosti v Návrhář postupu provádění zahrnují následující
 
 ## <a name="see-also"></a>Viz také
 
-- [Co je nového v .NET Framework](index.md)
+- [Novinky v rozhraní .NET Framework](index.md)
