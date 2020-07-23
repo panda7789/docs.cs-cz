@@ -304,6 +304,10 @@ items:
         items:
           - name: Ladění nevrácené paměti
             href: diagnostics/debug-memory-leak.md
+          - name: Ladění vysokého využití procesoru
+            href: diagnostics/debug-highcpu.md
+          - name: Ladění vzájemného zablokování
+            href: diagnostics/debug-deadlock.md
   - name: Další nástroje platformy .NET Core
     items:
       - name: Přehled
