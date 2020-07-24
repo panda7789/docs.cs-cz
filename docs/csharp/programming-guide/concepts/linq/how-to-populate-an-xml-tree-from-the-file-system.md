@@ -1,19 +1,20 @@
 ---
-title: Jak naplnit strom XML ze systému souborů (C#)
+title: Postup naplnění stromu XML ze systému souborů (C#)
+description: Naučte se naplnit strom XML ze systému souborů v jazyce C#. Tento příklad naplní XML a pak dotazuje strom, aby vypočítal celkovou velikost všech souborů.
 ms.date: 07/20/2015
 ms.assetid: 2aa2ccac-4a22-47ae-9107-3bb8df232576
-ms.openlocfilehash: beb44be1a787fa09b091aa48022dbb5b10c4632b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 676261656be7d306294c9912b75edcb51a31cccc
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75345785"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87104756"
 ---
-# <a name="how-to-populate-an-xml-tree-from-the-file-system-c"></a><span data-ttu-id="c3b94-102">Jak naplnit strom XML ze systému souborů (C#)</span><span class="sxs-lookup"><span data-stu-id="c3b94-102">How to populate an XML tree from the file system (C#)</span></span>
-<span data-ttu-id="c3b94-103">Běžné a užitečné aplikace stromů XML je jako hierarchické úložiště dat název/hodnota.</span><span class="sxs-lookup"><span data-stu-id="c3b94-103">A common and useful application of XML trees is as a hierarchical name/value data store.</span></span> <span data-ttu-id="c3b94-104">Strom XML můžete naplnit hierarchickými daty a potom jej zadat, transformovat a v případě potřeby jej serializovat.</span><span class="sxs-lookup"><span data-stu-id="c3b94-104">You can populate an XML tree with hierarchical data, and then query it, transform it, and if necessary, serialize it.</span></span> <span data-ttu-id="c3b94-105">V tomto scénáři použití mnoho sémantiku specifické xml, jako jsou například obory názvů a prázdné místo chování, nejsou důležité.</span><span class="sxs-lookup"><span data-stu-id="c3b94-105">In this usage scenario, many of the XML specific semantics, such as namespaces and white space behavior, are not important.</span></span> <span data-ttu-id="c3b94-106">Místo toho používáte strom XML jako malou hierarchickou databázi jednoho uživatele v paměti.</span><span class="sxs-lookup"><span data-stu-id="c3b94-106">Instead, you are using the XML tree as a small, in memory, single user hierarchical database.</span></span>  
+# <a name="how-to-populate-an-xml-tree-from-the-file-system-c"></a><span data-ttu-id="ac637-104">Postup naplnění stromu XML ze systému souborů (C#)</span><span class="sxs-lookup"><span data-stu-id="ac637-104">How to populate an XML tree from the file system (C#)</span></span>
+<span data-ttu-id="ac637-105">Společnou a užitečnou aplikací stromů XML je úložiště dat hierarchického názvu nebo hodnoty.</span><span class="sxs-lookup"><span data-stu-id="ac637-105">A common and useful application of XML trees is as a hierarchical name/value data store.</span></span> <span data-ttu-id="ac637-106">Můžete naplnit strom XML hierarchickými daty a pak je dotazovat, transformovat a v případě potřeby ho serializovat.</span><span class="sxs-lookup"><span data-stu-id="ac637-106">You can populate an XML tree with hierarchical data, and then query it, transform it, and if necessary, serialize it.</span></span> <span data-ttu-id="ac637-107">V tomto scénáři použití nejsou důležité mnohé z sémantiky specifické pro XML, jako jsou například obory názvů a prázdné znaky.</span><span class="sxs-lookup"><span data-stu-id="ac637-107">In this usage scenario, many of the XML specific semantics, such as namespaces and white space behavior, are not important.</span></span> <span data-ttu-id="ac637-108">Místo toho můžete strom XML používat jako malou databázi, hierarchickou databázi s jedním uživatelem.</span><span class="sxs-lookup"><span data-stu-id="ac637-108">Instead, you are using the XML tree as a small, in memory, single user hierarchical database.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="c3b94-107">Příklad</span><span class="sxs-lookup"><span data-stu-id="c3b94-107">Example</span></span>  
- <span data-ttu-id="c3b94-108">Následující příklad naplní strom XML z místního systému souborů pomocí rekurze.</span><span class="sxs-lookup"><span data-stu-id="c3b94-108">The following example populates an XML tree from the local file system using recursion.</span></span> <span data-ttu-id="c3b94-109">Potom dotazuje stromu, výpočet součtu velikostí všech souborů ve stromu.</span><span class="sxs-lookup"><span data-stu-id="c3b94-109">It then queries the tree, calculating the total of the sizes of all files in the tree.</span></span>  
+## <a name="example"></a><span data-ttu-id="ac637-109">Příklad</span><span class="sxs-lookup"><span data-stu-id="ac637-109">Example</span></span>  
+ <span data-ttu-id="ac637-110">Následující příklad naplní strom XML z místního systému souborů pomocí rekurze.</span><span class="sxs-lookup"><span data-stu-id="ac637-110">The following example populates an XML tree from the local file system using recursion.</span></span> <span data-ttu-id="ac637-111">Pak se dotazuje na strom a vypočítá celkový počet velikostí všech souborů ve stromu.</span><span class="sxs-lookup"><span data-stu-id="ac637-111">It then queries the tree, calculating the total of the sizes of all files in the tree.</span></span>  
   
 ```csharp  
 class Program  
@@ -46,7 +47,7 @@ class Program
 }  
 ```  
   
- <span data-ttu-id="c3b94-110">Tento příklad vytváří výstup podobný následujícímu:</span><span class="sxs-lookup"><span data-stu-id="c3b94-110">This example produces output similar to the following:</span></span>  
+ <span data-ttu-id="ac637-112">Tento příklad vytvoří výstup podobný následujícímu:</span><span class="sxs-lookup"><span data-stu-id="ac637-112">This example produces output similar to the following:</span></span>  
   
 ```xml  
 <Dir Name="Tmp">  

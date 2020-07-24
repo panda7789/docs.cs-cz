@@ -1,31 +1,32 @@
 ---
-title: Zřetězení (C#)
+title: Operace zřetězení (C#)
+description: Přečtěte si o zřetězení a standardní metody operátoru dotazu, které provádějí zřetězení ve LINQ v jazyce C#.
 ms.date: 07/20/2015
 ms.assetid: 890ee104-c590-457e-8a7f-b2b5da0fb417
-ms.openlocfilehash: f02e323e673e46f4e7ba4a6005c86b7f9050f8ef
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: aadfd2d9cf8b70130c0f67aa299e42982f144c38
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74141522"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87105508"
 ---
-# <a name="concatenation-operations-c"></a><span data-ttu-id="d5806-102">Zřetězení (C#)</span><span class="sxs-lookup"><span data-stu-id="d5806-102">Concatenation Operations (C#)</span></span>
-<span data-ttu-id="d5806-103">Zřetězení odkazuje na operaci připojení jedné sekvence k jiné.</span><span class="sxs-lookup"><span data-stu-id="d5806-103">Concatenation refers to the operation of appending one sequence to another.</span></span>  
+# <a name="concatenation-operations-c"></a><span data-ttu-id="10119-103">Operace zřetězení (C#)</span><span class="sxs-lookup"><span data-stu-id="10119-103">Concatenation Operations (C#)</span></span>
+<span data-ttu-id="10119-104">Zřetězení odkazuje na operaci připojení jedné sekvence k druhému.</span><span class="sxs-lookup"><span data-stu-id="10119-104">Concatenation refers to the operation of appending one sequence to another.</span></span>  
   
- <span data-ttu-id="d5806-104">Následující obrázek znázorňuje operaci zřetězení na dvou sekvencích znaků.</span><span class="sxs-lookup"><span data-stu-id="d5806-104">The following illustration depicts a concatenation operation on two sequences of characters.</span></span>  
+ <span data-ttu-id="10119-105">Následující ilustrace znázorňuje operaci zřetězení na dvou sekvencích znaků.</span><span class="sxs-lookup"><span data-stu-id="10119-105">The following illustration depicts a concatenation operation on two sequences of characters.</span></span>  
   
  ![Obrázek znázorňující zřetězení dvou sekvencí.](./media/concatenation-operations/concatenation-two-sequences.png)  
   
- <span data-ttu-id="d5806-106">Standardní metody operátoru dotazu, které provádějí zřetězení, jsou uvedeny v následující části.</span><span class="sxs-lookup"><span data-stu-id="d5806-106">The standard query operator methods that perform concatenation are listed in the following section.</span></span>  
+ <span data-ttu-id="10119-107">Standardní metody operátoru dotazu, které provádějí zřetězení, jsou uvedeny v následující části.</span><span class="sxs-lookup"><span data-stu-id="10119-107">The standard query operator methods that perform concatenation are listed in the following section.</span></span>  
   
-## <a name="methods"></a><span data-ttu-id="d5806-107">Metody</span><span class="sxs-lookup"><span data-stu-id="d5806-107">Methods</span></span>  
+## <a name="methods"></a><span data-ttu-id="10119-108">Metody</span><span class="sxs-lookup"><span data-stu-id="10119-108">Methods</span></span>  
   
-|<span data-ttu-id="d5806-108">Název metody</span><span class="sxs-lookup"><span data-stu-id="d5806-108">Method Name</span></span>|<span data-ttu-id="d5806-109">Popis</span><span class="sxs-lookup"><span data-stu-id="d5806-109">Description</span></span>|<span data-ttu-id="d5806-110">Syntaxe výrazu dotazu jazyka C#</span><span class="sxs-lookup"><span data-stu-id="d5806-110">C# Query Expression Syntax</span></span>|<span data-ttu-id="d5806-111">Další informace</span><span class="sxs-lookup"><span data-stu-id="d5806-111">More Information</span></span>|  
+|<span data-ttu-id="10119-109">Název metody</span><span class="sxs-lookup"><span data-stu-id="10119-109">Method Name</span></span>|<span data-ttu-id="10119-110">Popis</span><span class="sxs-lookup"><span data-stu-id="10119-110">Description</span></span>|<span data-ttu-id="10119-111">Syntaxe výrazu dotazu v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="10119-111">C# Query Expression Syntax</span></span>|<span data-ttu-id="10119-112">Další informace</span><span class="sxs-lookup"><span data-stu-id="10119-112">More Information</span></span>|  
 |-----------------|-----------------|---------------------------------|----------------------|  
-|<span data-ttu-id="d5806-112">Concat</span><span class="sxs-lookup"><span data-stu-id="d5806-112">Concat</span></span>|<span data-ttu-id="d5806-113">Zřetězí dvě sekvence a vytvoří jednu sekvenci.</span><span class="sxs-lookup"><span data-stu-id="d5806-113">Concatenates two sequences to form one sequence.</span></span>|<span data-ttu-id="d5806-114">Neužívá se.</span><span class="sxs-lookup"><span data-stu-id="d5806-114">Not applicable.</span></span>|<xref:System.Linq.Enumerable.Concat%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Concat%2A?displayProperty=nameWithType>|  
+|<span data-ttu-id="10119-113">Concat</span><span class="sxs-lookup"><span data-stu-id="10119-113">Concat</span></span>|<span data-ttu-id="10119-114">Zřetězí dvě sekvence, aby tvořily jednu sekvenci.</span><span class="sxs-lookup"><span data-stu-id="10119-114">Concatenates two sequences to form one sequence.</span></span>|<span data-ttu-id="10119-115">Neužívá se.</span><span class="sxs-lookup"><span data-stu-id="10119-115">Not applicable.</span></span>|<xref:System.Linq.Enumerable.Concat%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Concat%2A?displayProperty=nameWithType>|  
   
-## <a name="see-also"></a><span data-ttu-id="d5806-115">Viz také</span><span class="sxs-lookup"><span data-stu-id="d5806-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="10119-116">Viz také</span><span class="sxs-lookup"><span data-stu-id="10119-116">See also</span></span>
 
 - <xref:System.Linq>
-- [<span data-ttu-id="d5806-116">Standardní operátory dotazů – přehled (C#)</span><span class="sxs-lookup"><span data-stu-id="d5806-116">Standard Query Operators Overview (C#)</span></span>](./standard-query-operators-overview.md)
-- [<span data-ttu-id="d5806-117">Jak kombinovat a porovnávat kolekce řetězců (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="d5806-117">How to combine and compare string collections (LINQ) (C#)</span></span>](./how-to-combine-and-compare-string-collections-linq.md)
+- [<span data-ttu-id="10119-117">Přehled standardních operátorů dotazů (C#)</span><span class="sxs-lookup"><span data-stu-id="10119-117">Standard Query Operators Overview (C#)</span></span>](./standard-query-operators-overview.md)
+- [<span data-ttu-id="10119-118">Postup kombinování a porovnávání kolekcí řetězců (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="10119-118">How to combine and compare string collections (LINQ) (C#)</span></span>](./how-to-combine-and-compare-string-collections-linq.md)

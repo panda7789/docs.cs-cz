@@ -1,29 +1,30 @@
 ---
-title: Jak porovnat obsah dvou složek (LINQ) (C#)
+title: Postup porovnání obsahu dvou složek (LINQ) (C#)
+description: Tento příklad ukazuje tři způsoby, jak porovnat výpisy souborů pomocí dotazů LINQ v jazyce C#. Přizpůsobte tyto techniky pro porovnání sekvencí objektů libovolného typu.
 ms.date: 07/20/2015
 ms.assetid: c7c4870e-c500-4de3-afa4-2c8e07f510e6
-ms.openlocfilehash: 44dc97d6d48bed5e8b4d0376838e4dada2e8300c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3cdac57d3d746aa2290c51d1263a7d42dc3463e0
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79169399"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87105326"
 ---
-# <a name="how-to-compare-the-contents-of-two-folders-linq-c"></a><span data-ttu-id="e73d3-102">Jak porovnat obsah dvou složek (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="e73d3-102">How to compare the contents of two folders (LINQ) (C#)</span></span>
-<span data-ttu-id="e73d3-103">Tento příklad ukazuje tři způsoby porovnání dvou výpisů souborů:</span><span class="sxs-lookup"><span data-stu-id="e73d3-103">This example demonstrates three ways to compare two file listings:</span></span>  
+# <a name="how-to-compare-the-contents-of-two-folders-linq-c"></a><span data-ttu-id="d81d3-104">Postup porovnání obsahu dvou složek (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="d81d3-104">How to compare the contents of two folders (LINQ) (C#)</span></span>
+<span data-ttu-id="d81d3-105">Tento příklad ukazuje tři způsoby, jak porovnat dva seznamy souborů:</span><span class="sxs-lookup"><span data-stu-id="d81d3-105">This example demonstrates three ways to compare two file listings:</span></span>  
   
-- <span data-ttu-id="e73d3-104">Dotazem na logickou hodnotu, která určuje, zda jsou dva seznamy souborů identické.</span><span class="sxs-lookup"><span data-stu-id="e73d3-104">By querying for a Boolean value that specifies whether the two file lists are identical.</span></span>  
+- <span data-ttu-id="d81d3-106">Dotazování na logickou hodnotu, která určuje, zda jsou dva seznamy souborů identické.</span><span class="sxs-lookup"><span data-stu-id="d81d3-106">By querying for a Boolean value that specifies whether the two file lists are identical.</span></span>  
   
-- <span data-ttu-id="e73d3-105">Dotazem na průsečík načíst soubory, které jsou v obou složkách.</span><span class="sxs-lookup"><span data-stu-id="e73d3-105">By querying for the intersection to retrieve the files that are in both folders.</span></span>  
+- <span data-ttu-id="d81d3-107">Dotazem pro průnik pro načtení souborů, které jsou v obou složkách.</span><span class="sxs-lookup"><span data-stu-id="d81d3-107">By querying for the intersection to retrieve the files that are in both folders.</span></span>  
   
-- <span data-ttu-id="e73d3-106">Dotazem na rozdíl sady načíst soubory, které jsou v jedné složce, ale ne v druhé.</span><span class="sxs-lookup"><span data-stu-id="e73d3-106">By querying for the set difference to retrieve the files that are in one folder but not the other.</span></span>  
+- <span data-ttu-id="d81d3-108">Pomocí dotazu na nastavený rozdíl, který načte soubory, které jsou v jedné složce, ale ne na druhé.</span><span class="sxs-lookup"><span data-stu-id="d81d3-108">By querying for the set difference to retrieve the files that are in one folder but not the other.</span></span>  
   
     > [!NOTE]
-    > <span data-ttu-id="e73d3-107">Zde uvedené techniky lze upravit tak, aby porovnávaly sekvence objektů libovolného typu.</span><span class="sxs-lookup"><span data-stu-id="e73d3-107">The techniques shown here can be adapted to compare sequences of objects of any type.</span></span>  
+    > <span data-ttu-id="d81d3-109">Zde uvedené techniky lze přizpůsobit pro porovnání sekvencí objektů libovolného typu.</span><span class="sxs-lookup"><span data-stu-id="d81d3-109">The techniques shown here can be adapted to compare sequences of objects of any type.</span></span>  
   
- <span data-ttu-id="e73d3-108">Třída `FileComparer` zde zobrazena ukazuje, jak používat vlastní třídu porovnávání spolu s operátory standardní dotaz.</span><span class="sxs-lookup"><span data-stu-id="e73d3-108">The `FileComparer` class shown here demonstrates how to use a custom comparer class together with the Standard Query Operators.</span></span> <span data-ttu-id="e73d3-109">Třída není určena pro použití v reálných scénářích.</span><span class="sxs-lookup"><span data-stu-id="e73d3-109">The class is not intended for use in real-world scenarios.</span></span> <span data-ttu-id="e73d3-110">Pouze používá název a délku v bajtů každého souboru k určení, zda obsah každé složky jsou identické nebo ne.</span><span class="sxs-lookup"><span data-stu-id="e73d3-110">It just uses the name and length in bytes of each file to determine whether the contents of each folder are identical or not.</span></span> <span data-ttu-id="e73d3-111">V reálném scénáři byste měli upravit tento porovnávání provést přísnější kontrolu rovnosti.</span><span class="sxs-lookup"><span data-stu-id="e73d3-111">In a real-world scenario, you should modify this comparer to perform a more rigorous equality check.</span></span>  
+ <span data-ttu-id="d81d3-110">`FileComparer`Zde uvedená třída ukazuje, jak použít vlastní třídu porovnávače společně se standardními operátory dotazu.</span><span class="sxs-lookup"><span data-stu-id="d81d3-110">The `FileComparer` class shown here demonstrates how to use a custom comparer class together with the Standard Query Operators.</span></span> <span data-ttu-id="d81d3-111">Třída není určena pro použití ve scénářích reálného světa.</span><span class="sxs-lookup"><span data-stu-id="d81d3-111">The class is not intended for use in real-world scenarios.</span></span> <span data-ttu-id="d81d3-112">Používá pouze název a délku v bajtech jednotlivých souborů, aby bylo možné určit, zda obsah každé složky je identický nebo nikoli.</span><span class="sxs-lookup"><span data-stu-id="d81d3-112">It just uses the name and length in bytes of each file to determine whether the contents of each folder are identical or not.</span></span> <span data-ttu-id="d81d3-113">Ve scénáři reálného světa byste tuto porovnávací metodu měli upravit, aby prováděla přísnější kontrolu rovnosti.</span><span class="sxs-lookup"><span data-stu-id="d81d3-113">In a real-world scenario, you should modify this comparer to perform a more rigorous equality check.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="e73d3-112">Příklad</span><span class="sxs-lookup"><span data-stu-id="e73d3-112">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="d81d3-114">Příklad</span><span class="sxs-lookup"><span data-stu-id="d81d3-114">Example</span></span>  
   
 ```csharp  
 namespace QueryCompareTwoDirs  
@@ -125,10 +126,10 @@ namespace QueryCompareTwoDirs
 }  
 ```  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="e73d3-113">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="e73d3-113">Compiling the Code</span></span>  
- <span data-ttu-id="e73d3-114">Vytvořte projekt aplikace konzoly `using` Jazyka C# se direktivami pro obory názvů System.Linq a System.IO.</span><span class="sxs-lookup"><span data-stu-id="e73d3-114">Create a C# console application project, with `using` directives for the System.Linq and System.IO namespaces.</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="d81d3-115">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="d81d3-115">Compiling the Code</span></span>  
+ <span data-ttu-id="d81d3-116">Vytvořte projekt konzolové aplikace v jazyce C# se `using` direktivami pro obory názvů System. Linq a System.IO.</span><span class="sxs-lookup"><span data-stu-id="d81d3-116">Create a C# console application project, with `using` directives for the System.Linq and System.IO namespaces.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="e73d3-115">Viz také</span><span class="sxs-lookup"><span data-stu-id="e73d3-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="d81d3-117">Viz také</span><span class="sxs-lookup"><span data-stu-id="d81d3-117">See also</span></span>
 
-- [<span data-ttu-id="e73d3-116">LINQ na objekty (C#)</span><span class="sxs-lookup"><span data-stu-id="e73d3-116">LINQ to Objects (C#)</span></span>](./linq-to-objects.md)
-- [<span data-ttu-id="e73d3-117">Linq a souborové adresáře (C#)</span><span class="sxs-lookup"><span data-stu-id="e73d3-117">LINQ and File Directories (C#)</span></span>](./linq-and-file-directories.md)
+- [<span data-ttu-id="d81d3-118">LINQ to Objects (C#)</span><span class="sxs-lookup"><span data-stu-id="d81d3-118">LINQ to Objects (C#)</span></span>](./linq-to-objects.md)
+- [<span data-ttu-id="d81d3-119">LINQ a souborové adresáře (C#)</span><span class="sxs-lookup"><span data-stu-id="d81d3-119">LINQ and File Directories (C#)</span></span>](./linq-and-file-directories.md)

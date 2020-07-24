@@ -1,19 +1,20 @@
 ---
-title: Jak promítat objektový graf (C#)
+title: Postup vytvoření projektu grafu objektů (C#)
+description: Naučte se, jak projektovat, nebo naplnit graf objektů z XML v jazyce C#. Vzorový kód naplní graf objektů pomocí tříd z ukázkového souboru XML.
 ms.date: 07/20/2015
 ms.assetid: 293d15d5-3eaf-48de-9a02-3e13cb117b5b
-ms.openlocfilehash: eafb3d9064159c43fc98e0b241f0045465fca824
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5c2ea0e06d9a46a1b19236eae021a2a153fea1d4
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79168957"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87104621"
 ---
-# <a name="how-to-project-an-object-graph-c"></a><span data-ttu-id="9e9ec-102">Jak promítat objektový graf (C#)</span><span class="sxs-lookup"><span data-stu-id="9e9ec-102">How to project an object graph (C#)</span></span>
-<span data-ttu-id="9e9ec-103">Toto téma ukazuje, jak promítat nebo naplnit objektový graf z XML.</span><span class="sxs-lookup"><span data-stu-id="9e9ec-103">This topic illustrates how to project, or populate, an object graph from XML.</span></span>  
+# <a name="how-to-project-an-object-graph-c"></a><span data-ttu-id="ef0e9-104">Postup vytvoření projektu grafu objektů (C#)</span><span class="sxs-lookup"><span data-stu-id="ef0e9-104">How to project an object graph (C#)</span></span>
+<span data-ttu-id="ef0e9-105">Toto téma ukazuje, jak projektovat nebo naplnit objekt grafu z XML.</span><span class="sxs-lookup"><span data-stu-id="ef0e9-105">This topic illustrates how to project, or populate, an object graph from XML.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="9e9ec-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="9e9ec-104">Example</span></span>  
- <span data-ttu-id="9e9ec-105">Následující kód naplní objektový `Address`graf `PurchaseOrder`dokumentem XML , a `PurchaseOrderItem` [třídy z ukázkového souboru XML: Typická nákupní objednávka (LINQ to XML).](./sample-xml-file-typical-purchase-order-linq-to-xml-1.md)</span><span class="sxs-lookup"><span data-stu-id="9e9ec-105">The following code populates an object graph with the `Address`, `PurchaseOrder`, and `PurchaseOrderItem` classes from the [Sample XML File: Typical Purchase Order (LINQ to XML)](./sample-xml-file-typical-purchase-order-linq-to-xml-1.md) XML document.</span></span>  
+## <a name="example"></a><span data-ttu-id="ef0e9-106">Příklad</span><span class="sxs-lookup"><span data-stu-id="ef0e9-106">Example</span></span>  
+ <span data-ttu-id="ef0e9-107">Následující kód naplní graf objektů pomocí `Address` `PurchaseOrder` tříd, a `PurchaseOrderItem` z [ukázkového souboru XML: typický dokument XML s nákupní objednávkou (LINQ to XML)](./sample-xml-file-typical-purchase-order-linq-to-xml-1.md) .</span><span class="sxs-lookup"><span data-stu-id="ef0e9-107">The following code populates an object graph with the `Address`, `PurchaseOrder`, and `PurchaseOrderItem` classes from the [Sample XML File: Typical Purchase Order (LINQ to XML)](./sample-xml-file-typical-purchase-order-linq-to-xml-1.md) XML document.</span></span>  
   
 ```csharp  
 class Address  
@@ -214,9 +215,9 @@ class Program {
 }  
 ```  
   
- <span data-ttu-id="9e9ec-106">V tomto příkladu je výsledek dotazu LINQ `PurchaseOrderItem`vrácen jako . <xref:System.Collections.Generic.IEnumerable%601></span><span class="sxs-lookup"><span data-stu-id="9e9ec-106">In this example, the result of the LINQ query is returned as an <xref:System.Collections.Generic.IEnumerable%601> of `PurchaseOrderItem`.</span></span> <span data-ttu-id="9e9ec-107">Položky ve `PurchaseOrder` třídě jsou <xref:System.Collections.Generic.IEnumerable%601> `PurchaseOrderItem`typu .</span><span class="sxs-lookup"><span data-stu-id="9e9ec-107">The items in the `PurchaseOrder` class are of type <xref:System.Collections.Generic.IEnumerable%601> of `PurchaseOrderItem`.</span></span> <span data-ttu-id="9e9ec-108">Kód používá <xref:System.Linq.Enumerable.ToList%2A> metodu rozšíření <xref:System.Collections.Generic.List%601> k vytvoření kolekce z výsledků dotazu.</span><span class="sxs-lookup"><span data-stu-id="9e9ec-108">The code uses the <xref:System.Linq.Enumerable.ToList%2A> extension method to create a <xref:System.Collections.Generic.List%601> collection from the results of the query.</span></span>  
+ <span data-ttu-id="ef0e9-108">V tomto příkladu je výsledek dotazu LINQ vrácen jako <xref:System.Collections.Generic.IEnumerable%601> `PurchaseOrderItem` .</span><span class="sxs-lookup"><span data-stu-id="ef0e9-108">In this example, the result of the LINQ query is returned as an <xref:System.Collections.Generic.IEnumerable%601> of `PurchaseOrderItem`.</span></span> <span data-ttu-id="ef0e9-109">Položky ve `PurchaseOrder` třídě jsou typu <xref:System.Collections.Generic.IEnumerable%601> `PurchaseOrderItem` .</span><span class="sxs-lookup"><span data-stu-id="ef0e9-109">The items in the `PurchaseOrder` class are of type <xref:System.Collections.Generic.IEnumerable%601> of `PurchaseOrderItem`.</span></span> <span data-ttu-id="ef0e9-110">Kód používá <xref:System.Linq.Enumerable.ToList%2A> metodu rozšíření k vytvoření <xref:System.Collections.Generic.List%601> kolekce z výsledků dotazu.</span><span class="sxs-lookup"><span data-stu-id="ef0e9-110">The code uses the <xref:System.Linq.Enumerable.ToList%2A> extension method to create a <xref:System.Collections.Generic.List%601> collection from the results of the query.</span></span>  
   
- <span data-ttu-id="9e9ec-109">Příklad vytváří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="9e9ec-109">The example produces the following output:</span></span>  
+ <span data-ttu-id="ef0e9-111">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="ef0e9-111">The example produces the following output:</span></span>  
   
 ```output  
 PurchaseOrderNumber: 99503  
@@ -255,7 +256,7 @@ USPrice: 39.98
 ShipDate: 5/21/1999  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="9e9ec-110">Viz také</span><span class="sxs-lookup"><span data-stu-id="9e9ec-110">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ef0e9-112">Viz také</span><span class="sxs-lookup"><span data-stu-id="ef0e9-112">See also</span></span>
 
 - <xref:System.Linq.Enumerable.Select%2A>
 - <xref:System.Linq.Enumerable.ToList%2A>

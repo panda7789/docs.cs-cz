@@ -1,18 +1,19 @@
 ---
-title: Jak počítat výskyty slova v řetězci (LINQ) (C#)
+title: Jak spočítat výskyty slova v řetězci (LINQ) (C#)
+description: Tento příklad používá dotaz LINQ v jazyce C# k výpočtu výskytů zadaného slova v řetězci. Používá metodu Split k vytvoření pole slov.
 ms.date: 07/20/2015
 ms.assetid: f8e6f546-7c14-4aa1-8a75-e8d09f3b8ccd
-ms.openlocfilehash: 9c3ac2e0d44d52e437586a4d105a022f75c1dc54
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1621e776510e366aa779f1d45468be34b3dec373
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79169322"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87103364"
 ---
-# <a name="how-to-count-occurrences-of-a-word-in-a-string-linq-c"></a><span data-ttu-id="93cc2-102">Jak počítat výskyty slova v řetězci (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="93cc2-102">How to count occurrences of a word in a string (LINQ) (C#)</span></span>
-<span data-ttu-id="93cc2-103">Tento příklad ukazuje, jak pomocí dotazu LINQ počítat výskyty zadaného slova v řetězci.</span><span class="sxs-lookup"><span data-stu-id="93cc2-103">This example shows how to use a LINQ query to count the occurrences of a specified word in a string.</span></span> <span data-ttu-id="93cc2-104">Všimněte si, že k <xref:System.String.Split%2A> provedení count, nejprve metoda je volána k vytvoření pole slov.</span><span class="sxs-lookup"><span data-stu-id="93cc2-104">Note that to perform the count, first the <xref:System.String.Split%2A> method is called to create an array of words.</span></span> <span data-ttu-id="93cc2-105"><xref:System.String.Split%2A> Je náklady na výkon metody.</span><span class="sxs-lookup"><span data-stu-id="93cc2-105">There is a performance cost to the <xref:System.String.Split%2A> method.</span></span> <span data-ttu-id="93cc2-106">Pokud jedinou operací na řetězci je počítat slova, <xref:System.Text.RegularExpressions.Regex.Matches%2A> <xref:System.String.IndexOf%2A> měli byste zvážit použití metody nebo místo.</span><span class="sxs-lookup"><span data-stu-id="93cc2-106">If the only operation on the string is to count the words, you should consider using the <xref:System.Text.RegularExpressions.Regex.Matches%2A> or <xref:System.String.IndexOf%2A> methods instead.</span></span> <span data-ttu-id="93cc2-107">Pokud však výkon není kritický problém nebo jste již větu rozdělili, abyste nad ní mohli provádět jiné typy dotazů, má smysl použít linq k počítání slov nebo frází.</span><span class="sxs-lookup"><span data-stu-id="93cc2-107">However, if performance is not a critical issue, or you have already split the sentence in order to perform other types of queries over it, then it makes sense to use LINQ to count the words or phrases as well.</span></span>  
+# <a name="how-to-count-occurrences-of-a-word-in-a-string-linq-c"></a><span data-ttu-id="a5c57-104">Jak spočítat výskyty slova v řetězci (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="a5c57-104">How to count occurrences of a word in a string (LINQ) (C#)</span></span>
+<span data-ttu-id="a5c57-105">Tento příklad ukazuje, jak pomocí dotazu LINQ spočítat výskyty zadaného slova v řetězci.</span><span class="sxs-lookup"><span data-stu-id="a5c57-105">This example shows how to use a LINQ query to count the occurrences of a specified word in a string.</span></span> <span data-ttu-id="a5c57-106">Všimněte si, že k provedení tohoto počtu je nejprve <xref:System.String.Split%2A> volána metoda pro vytvoření pole slov.</span><span class="sxs-lookup"><span data-stu-id="a5c57-106">Note that to perform the count, first the <xref:System.String.Split%2A> method is called to create an array of words.</span></span> <span data-ttu-id="a5c57-107">K metodě se účtují náklady na výkon <xref:System.String.Split%2A> .</span><span class="sxs-lookup"><span data-stu-id="a5c57-107">There is a performance cost to the <xref:System.String.Split%2A> method.</span></span> <span data-ttu-id="a5c57-108">Pokud má jediná operace v řetězci spočítat slova, měli byste zvážit <xref:System.Text.RegularExpressions.Regex.Matches%2A> <xref:System.String.IndexOf%2A> místo toho použití metod nebo.</span><span class="sxs-lookup"><span data-stu-id="a5c57-108">If the only operation on the string is to count the words, you should consider using the <xref:System.Text.RegularExpressions.Regex.Matches%2A> or <xref:System.String.IndexOf%2A> methods instead.</span></span> <span data-ttu-id="a5c57-109">Pokud ale výkon není kritickým problémem nebo jste už tuto větu rozdělili, abyste mohli provádět další typy dotazů, je vhodné použít LINQ k počítání slov nebo frází.</span><span class="sxs-lookup"><span data-stu-id="a5c57-109">However, if performance is not a critical issue, or you have already split the sentence in order to perform other types of queries over it, then it makes sense to use LINQ to count the words or phrases as well.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="93cc2-108">Příklad</span><span class="sxs-lookup"><span data-stu-id="93cc2-108">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="a5c57-110">Příklad</span><span class="sxs-lookup"><span data-stu-id="a5c57-110">Example</span></span>  
   
 ```csharp  
 class CountWords  
@@ -54,9 +55,9 @@ class CountWords
 */  
 ```  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="93cc2-109">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="93cc2-109">Compiling the Code</span></span>  
- <span data-ttu-id="93cc2-110">Vytvořte projekt aplikace konzoly `using` Jazyka C# se direktivami pro obory názvů System.Linq a System.IO.</span><span class="sxs-lookup"><span data-stu-id="93cc2-110">Create a C# console application project, with `using` directives for the System.Linq and System.IO namespaces.</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="a5c57-111">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="a5c57-111">Compiling the Code</span></span>  
+ <span data-ttu-id="a5c57-112">Vytvořte projekt konzolové aplikace v jazyce C# se `using` direktivami pro obory názvů System. Linq a System.IO.</span><span class="sxs-lookup"><span data-stu-id="a5c57-112">Create a C# console application project, with `using` directives for the System.Linq and System.IO namespaces.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="93cc2-111">Viz také</span><span class="sxs-lookup"><span data-stu-id="93cc2-111">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a5c57-113">Viz také</span><span class="sxs-lookup"><span data-stu-id="a5c57-113">See also</span></span>
 
-- [<span data-ttu-id="93cc2-112">LINQ a řetězce (C#)</span><span class="sxs-lookup"><span data-stu-id="93cc2-112">LINQ and Strings (C#)</span></span>](./linq-and-strings.md)
+- [<span data-ttu-id="a5c57-114">LINQ a řetězce (C#)</span><span class="sxs-lookup"><span data-stu-id="a5c57-114">LINQ and Strings (C#)</span></span>](./linq-and-strings.md)

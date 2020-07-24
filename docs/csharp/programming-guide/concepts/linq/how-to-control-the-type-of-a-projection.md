@@ -1,21 +1,22 @@
 ---
-title: Jak řídit typ projekce (C#)
+title: Postup řízení typu projekce (C#)
+description: Přečtěte si o tom, jak řídit typ projekce v LINQ v jazyce C# a vytvořit kolekce jiných typů než IEnumerable <T> typu XElement.
 ms.date: 07/20/2015
 ms.assetid: e4db6b7e-4cc9-4c8f-af85-94acf32aa348
-ms.openlocfilehash: cb7c272fbe67c0700b5740691befc483993f4e29
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 32b019b5e1574e7160b4dce5fb0322caa3c1ca71
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74141351"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87103347"
 ---
-# <a name="how-to-control-the-type-of-a-projection-c"></a><span data-ttu-id="8bdf5-102">Jak řídit typ projekce (C#)</span><span class="sxs-lookup"><span data-stu-id="8bdf5-102">How to control the type of a projection (C#)</span></span>
-<span data-ttu-id="8bdf5-103">Projekce je proces přijímání jedné sady dat, filtrování, změny tvaru a dokonce i změny jejího typu.</span><span class="sxs-lookup"><span data-stu-id="8bdf5-103">Projection is the process of taking one set of data, filtering it, changing its shape, and even changing its type.</span></span> <span data-ttu-id="8bdf5-104">Většina výrazů dotazu provádí projekce.</span><span class="sxs-lookup"><span data-stu-id="8bdf5-104">Most query expressions perform projections.</span></span> <span data-ttu-id="8bdf5-105">Většina výrazů dotazu zobrazených <xref:System.Collections.Generic.IEnumerable%601> v <xref:System.Xml.Linq.XElement>této části vyhodnocuje do aplikace , ale můžete řídit typ projekce a vytvářet kolekce jiných typů.</span><span class="sxs-lookup"><span data-stu-id="8bdf5-105">Most of the query expressions shown in this section evaluate to <xref:System.Collections.Generic.IEnumerable%601> of <xref:System.Xml.Linq.XElement>, but you can control the type of the projection to create collections of other types.</span></span> <span data-ttu-id="8bdf5-106">Toto téma ukazuje, jak to udělat.</span><span class="sxs-lookup"><span data-stu-id="8bdf5-106">This topic shows how to do this.</span></span>  
+# <a name="how-to-control-the-type-of-a-projection-c"></a><span data-ttu-id="0e070-103">Postup řízení typu projekce (C#)</span><span class="sxs-lookup"><span data-stu-id="0e070-103">How to control the type of a projection (C#)</span></span>
+<span data-ttu-id="0e070-104">Projekcí je proces pořízení jedné sady dat, její filtrování, změna jejího tvaru a dokonce i změna jejího typu.</span><span class="sxs-lookup"><span data-stu-id="0e070-104">Projection is the process of taking one set of data, filtering it, changing its shape, and even changing its type.</span></span> <span data-ttu-id="0e070-105">Většina výrazů dotazů provádí projekce.</span><span class="sxs-lookup"><span data-stu-id="0e070-105">Most query expressions perform projections.</span></span> <span data-ttu-id="0e070-106">Většina výrazů dotazu zobrazených v této části je vyhodnocena jako <xref:System.Collections.Generic.IEnumerable%601> z <xref:System.Xml.Linq.XElement> , ale můžete řídit typ projekce pro vytváření kolekcí jiných typů.</span><span class="sxs-lookup"><span data-stu-id="0e070-106">Most of the query expressions shown in this section evaluate to <xref:System.Collections.Generic.IEnumerable%601> of <xref:System.Xml.Linq.XElement>, but you can control the type of the projection to create collections of other types.</span></span> <span data-ttu-id="0e070-107">V tomto tématu se dozvíte, jak to provést.</span><span class="sxs-lookup"><span data-stu-id="0e070-107">This topic shows how to do this.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="8bdf5-107">Příklad</span><span class="sxs-lookup"><span data-stu-id="8bdf5-107">Example</span></span>  
- <span data-ttu-id="8bdf5-108">Následující příklad definuje nový typ `Customer`.</span><span class="sxs-lookup"><span data-stu-id="8bdf5-108">The following example defines a new type, `Customer`.</span></span> <span data-ttu-id="8bdf5-109">Výraz dotazu pak konkretizovat nové `Customer` objekty v klauzuli. `Select`</span><span class="sxs-lookup"><span data-stu-id="8bdf5-109">The query expression then instantiates new `Customer` objects in the `Select` clause.</span></span> <span data-ttu-id="8bdf5-110">To způsobí, že typ výrazu `Customer`dotazu být <xref:System.Collections.Generic.IEnumerable%601> .</span><span class="sxs-lookup"><span data-stu-id="8bdf5-110">This causes the type of the query expression to be <xref:System.Collections.Generic.IEnumerable%601> of `Customer`.</span></span>  
+## <a name="example"></a><span data-ttu-id="0e070-108">Příklad</span><span class="sxs-lookup"><span data-stu-id="0e070-108">Example</span></span>  
+ <span data-ttu-id="0e070-109">Následující příklad definuje nový typ, `Customer` .</span><span class="sxs-lookup"><span data-stu-id="0e070-109">The following example defines a new type, `Customer`.</span></span> <span data-ttu-id="0e070-110">Výraz dotazu pak vytvoří instanci nových `Customer` objektů v `Select` klauzuli.</span><span class="sxs-lookup"><span data-stu-id="0e070-110">The query expression then instantiates new `Customer` objects in the `Select` clause.</span></span> <span data-ttu-id="0e070-111">To způsobí, že typ výrazu dotazu bude <xref:System.Collections.Generic.IEnumerable%601> `Customer` .</span><span class="sxs-lookup"><span data-stu-id="0e070-111">This causes the type of the query expression to be <xref:System.Collections.Generic.IEnumerable%601> of `Customer`.</span></span>  
   
- <span data-ttu-id="8bdf5-111">Tento příklad používá následující dokument XML: [Ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML).](./sample-xml-file-customers-and-orders-linq-to-xml-2.md)</span><span class="sxs-lookup"><span data-stu-id="8bdf5-111">This example uses the following XML document: [Sample XML File: Customers and Orders (LINQ to XML)](./sample-xml-file-customers-and-orders-linq-to-xml-2.md).</span></span>  
+ <span data-ttu-id="0e070-112">Tento příklad používá následující dokument XML: [ukázkový soubor XML: zákazníci a objednávky (LINQ to XML)](./sample-xml-file-customers-and-orders-linq-to-xml-2.md).</span><span class="sxs-lookup"><span data-stu-id="0e070-112">This example uses the following XML document: [Sample XML File: Customers and Orders (LINQ to XML)](./sample-xml-file-customers-and-orders-linq-to-xml-2.md).</span></span>  
   
 ```csharp  
 public class Customer  
@@ -60,7 +61,7 @@ class Program
 }  
 ```  
   
- <span data-ttu-id="8bdf5-112">Výsledkem tohoto kódu je následující výstup:</span><span class="sxs-lookup"><span data-stu-id="8bdf5-112">This code produces the following output:</span></span>  
+ <span data-ttu-id="0e070-113">Výsledkem tohoto kódu je následující výstup:</span><span class="sxs-lookup"><span data-stu-id="0e070-113">This code produces the following output:</span></span>  
   
 ```output  
 GREAL:Great Lakes Food Market:Howard Snyder  
@@ -69,6 +70,6 @@ LAZYK:Lazy K Kountry Store:John Steel
 LETSS:Let's Stop N Shop:Jaime Yorres  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="8bdf5-113">Viz také</span><span class="sxs-lookup"><span data-stu-id="8bdf5-113">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="0e070-114">Viz také</span><span class="sxs-lookup"><span data-stu-id="0e070-114">See also</span></span>
 
 - <xref:System.Linq.Enumerable.Select%2A>

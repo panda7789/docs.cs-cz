@@ -1,21 +1,22 @@
 ---
-title: Jak generovat XML ze souborů CSV (C#)
+title: Generování XML ze souborů CSV (C#)
+description: Naučte se používat LINQ a LINQ to XML v jazyce C# k vygenerování XML ze souboru. csv. Dotaz používá klauzuli let pro rozdělení řetězců do polí polí.
 ms.date: 07/20/2015
 ms.assetid: 57b9ccde-f983-4a21-ae61-70ecede30307
-ms.openlocfilehash: 643c05cb440165c4461c3e9c80e69701241ab8d1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2fc9954a51fc1f2979c6cce13805ed15cdb88741
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75635805"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87105172"
 ---
-# <a name="how-to-generate-xml-from-csv-files-c"></a><span data-ttu-id="c42f0-102">Jak generovat XML ze souborů CSV (C#)</span><span class="sxs-lookup"><span data-stu-id="c42f0-102">How to generate XML from CSV files (C#)</span></span>
-<span data-ttu-id="c42f0-103">Tento příklad ukazuje, jak používat jazykově integrovaný [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotaz (LINQ) a generovat soubor XML ze souboru csv (odděleného čárkou).</span><span class="sxs-lookup"><span data-stu-id="c42f0-103">This example shows how to use Language-Integrated Query (LINQ) and [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] to generate an XML file from a comma-separated value (CSV) file.</span></span>  
+# <a name="how-to-generate-xml-from-csv-files-c"></a><span data-ttu-id="37c7a-104">Generování XML ze souborů CSV (C#)</span><span class="sxs-lookup"><span data-stu-id="37c7a-104">How to generate XML from CSV files (C#)</span></span>
+<span data-ttu-id="37c7a-105">Tento příklad ukazuje, jak použít LINQ (Language-Integrated Query) a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] Generovat soubor XML ze souboru hodnot oddělených čárkami (CSV).</span><span class="sxs-lookup"><span data-stu-id="37c7a-105">This example shows how to use Language-Integrated Query (LINQ) and [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] to generate an XML file from a comma-separated value (CSV) file.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="c42f0-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="c42f0-104">Example</span></span>  
- <span data-ttu-id="c42f0-105">Následující kód provádí dotaz LINQ na pole řetězců.</span><span class="sxs-lookup"><span data-stu-id="c42f0-105">The following code performs a LINQ query on an array of strings.</span></span>  
+## <a name="example"></a><span data-ttu-id="37c7a-106">Příklad</span><span class="sxs-lookup"><span data-stu-id="37c7a-106">Example</span></span>  
+ <span data-ttu-id="37c7a-107">Následující kód provede dotaz LINQ na poli řetězců.</span><span class="sxs-lookup"><span data-stu-id="37c7a-107">The following code performs a LINQ query on an array of strings.</span></span>  
   
- <span data-ttu-id="c42f0-106">Dotaz používá `let` klauzuli k rozdělení každého řetězce do pole polí.</span><span class="sxs-lookup"><span data-stu-id="c42f0-106">The query uses the `let` clause to split each string into an array of fields.</span></span>  
+ <span data-ttu-id="37c7a-108">Dotaz používá `let` klauzuli pro rozdělení každého řetězce na pole polí.</span><span class="sxs-lookup"><span data-stu-id="37c7a-108">The query uses the `let` clause to split each string into an array of fields.</span></span>  
   
 ```csharp  
 // Create the text file.  
@@ -48,7 +49,7 @@ XElement cust = new XElement("Root",
 Console.WriteLine(cust);  
 ```  
   
- <span data-ttu-id="c42f0-107">Výsledkem tohoto kódu je následující výstup:</span><span class="sxs-lookup"><span data-stu-id="c42f0-107">This code produces the following output:</span></span>  
+ <span data-ttu-id="37c7a-109">Výsledkem tohoto kódu je následující výstup:</span><span class="sxs-lookup"><span data-stu-id="37c7a-109">This code produces the following output:</span></span>  
   
 ```xml  
 <Root>  

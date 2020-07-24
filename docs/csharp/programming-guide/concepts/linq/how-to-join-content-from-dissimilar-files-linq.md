@@ -1,21 +1,22 @@
 ---
-title: Jak se připojit k obsahu z odlišných souborů (LINQ) (C#)
+title: Postup připojení obsahu z nepodobných souborů (LINQ) (C#)
+description: Naučte se, jak spojit data ze dvou souborů s oddělovači pomocí LINQ v jazyce C#. Data sdílí společnou hodnotu, která se používá jako odpovídající klíč.
 ms.date: 06/27/2018
 ms.assetid: aa2d12a6-70a9-492f-a6db-b2b850d46811
-ms.openlocfilehash: efe11c31873f21841c28bd393b295eea117d1e46
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 136d10ff5c0bf5f4f18998b50eb7bbee218b00a9
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79169087"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87104978"
 ---
-# <a name="how-to-join-content-from-dissimilar-files-linq-c"></a><span data-ttu-id="fd2d4-102">Jak se připojit k obsahu z odlišných souborů (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="fd2d4-102">How to join content from dissimilar files (LINQ) (C#)</span></span>
+# <a name="how-to-join-content-from-dissimilar-files-linq-c"></a><span data-ttu-id="31827-104">Postup připojení obsahu z nepodobných souborů (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="31827-104">How to join content from dissimilar files (LINQ) (C#)</span></span>
 
-<span data-ttu-id="fd2d4-103">Tento příklad ukazuje, jak spojit data ze dvou souborů oddělených čárkami, které sdílejí společnou hodnotu, která se používá jako odpovídající klíč.</span><span class="sxs-lookup"><span data-stu-id="fd2d4-103">This example shows how to join data from two comma-delimited files that share a common value that is used as a matching key.</span></span> <span data-ttu-id="fd2d4-104">Tato technika může být užitečná, pokud máte kombinovat data ze dvou tabulek nebo z tabulky a ze souboru, který má jiný formát, do nového souboru.</span><span class="sxs-lookup"><span data-stu-id="fd2d4-104">This technique can be useful if you have to combine data from two spreadsheets, or from a spreadsheet and from a file that has another format, into a new file.</span></span> <span data-ttu-id="fd2d4-105">Příklad můžete upravit tak, aby pracoval s jakýmkoli druhem strukturovaného textu.</span><span class="sxs-lookup"><span data-stu-id="fd2d4-105">You can modify the example to work with any kind of structured text.</span></span>  
+<span data-ttu-id="31827-105">Tento příklad ukazuje, jak spojit data ze dvou souborů oddělených čárkami, které sdílejí společnou hodnotu, která se používá jako odpovídající klíč.</span><span class="sxs-lookup"><span data-stu-id="31827-105">This example shows how to join data from two comma-delimited files that share a common value that is used as a matching key.</span></span> <span data-ttu-id="31827-106">Tato technika může být užitečná, pokud potřebujete kombinovat data ze dvou tabulek nebo z tabulky a ze souboru, který má jiný formát, do nového souboru.</span><span class="sxs-lookup"><span data-stu-id="31827-106">This technique can be useful if you have to combine data from two spreadsheets, or from a spreadsheet and from a file that has another format, into a new file.</span></span> <span data-ttu-id="31827-107">Můžete upravit příklad pro práci s libovolným druhem strukturovaného textu.</span><span class="sxs-lookup"><span data-stu-id="31827-107">You can modify the example to work with any kind of structured text.</span></span>  
   
-## <a name="to-create-the-data-files"></a><span data-ttu-id="fd2d4-106">Vytvoření datových souborů</span><span class="sxs-lookup"><span data-stu-id="fd2d4-106">To create the data files</span></span>
+## <a name="to-create-the-data-files"></a><span data-ttu-id="31827-108">Vytvoření datových souborů</span><span class="sxs-lookup"><span data-stu-id="31827-108">To create the data files</span></span>
   
-1. <span data-ttu-id="fd2d4-107">Zkopírujte následující řádky do souboru s názvem *scores.csv* a uložte jej do složky projektu.</span><span class="sxs-lookup"><span data-stu-id="fd2d4-107">Copy the following lines into a file that is named *scores.csv* and save it to your project folder.</span></span> <span data-ttu-id="fd2d4-108">Soubor představuje data tabulky.</span><span class="sxs-lookup"><span data-stu-id="fd2d4-108">The file represents spreadsheet data.</span></span> <span data-ttu-id="fd2d4-109">Sloupec 1 je id studenta a sloupce 2 až 5 jsou výsledky testů.</span><span class="sxs-lookup"><span data-stu-id="fd2d4-109">Column 1 is the student's ID, and columns 2 through 5 are test scores.</span></span>  
+1. <span data-ttu-id="31827-109">Zkopírujte následující řádky do souboru s názvem *scores.csv* a uložte jej do složky projektu.</span><span class="sxs-lookup"><span data-stu-id="31827-109">Copy the following lines into a file that is named *scores.csv* and save it to your project folder.</span></span> <span data-ttu-id="31827-110">Soubor představuje data v tabulce.</span><span class="sxs-lookup"><span data-stu-id="31827-110">The file represents spreadsheet data.</span></span> <span data-ttu-id="31827-111">Sloupec 1 je ID studenta a sloupce 2 až 5 jsou skóre testů.</span><span class="sxs-lookup"><span data-stu-id="31827-111">Column 1 is the student's ID, and columns 2 through 5 are test scores.</span></span>  
   
     ```csv  
     111, 97, 92, 81, 60  
@@ -32,7 +33,7 @@ ms.locfileid: "79169087"
     122, 94, 92, 91, 91  
     ```  
   
-2. <span data-ttu-id="fd2d4-110">Zkopírujte následující řádky do souboru s názvem *names.csv* a uložte jej do složky projektu.</span><span class="sxs-lookup"><span data-stu-id="fd2d4-110">Copy the following lines into a file that is named *names.csv* and save it to your project folder.</span></span> <span data-ttu-id="fd2d4-111">Soubor představuje tabulku, která obsahuje příjmení, jméno a ID studenta.</span><span class="sxs-lookup"><span data-stu-id="fd2d4-111">The file represents a spreadsheet that contains the student's last name, first name, and student ID.</span></span>  
+2. <span data-ttu-id="31827-112">Zkopírujte následující řádky do souboru s názvem *names.csv* a uložte jej do složky projektu.</span><span class="sxs-lookup"><span data-stu-id="31827-112">Copy the following lines into a file that is named *names.csv* and save it to your project folder.</span></span> <span data-ttu-id="31827-113">Tento soubor představuje tabulku, která obsahuje příjmení, jméno a ID studenta.</span><span class="sxs-lookup"><span data-stu-id="31827-113">The file represents a spreadsheet that contains the student's last name, first name, and student ID.</span></span>  
   
     ```csv  
     Omelchenko,Svetlana,111  
@@ -49,7 +50,7 @@ ms.locfileid: "79169087"
     Tucker,Michael,122  
     ```  
   
-## <a name="example"></a><span data-ttu-id="fd2d4-112">Příklad</span><span class="sxs-lookup"><span data-stu-id="fd2d4-112">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="31827-114">Příklad</span><span class="sxs-lookup"><span data-stu-id="31827-114">Example</span></span>  
 
 ```csharp
 using System;
@@ -124,7 +125,7 @@ Tucker, 94, 92, 91, 91
  */  
 ```
 
-## <a name="see-also"></a><span data-ttu-id="fd2d4-113">Viz také</span><span class="sxs-lookup"><span data-stu-id="fd2d4-113">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="31827-115">Viz také</span><span class="sxs-lookup"><span data-stu-id="31827-115">See also</span></span>
 
-- [<span data-ttu-id="fd2d4-114">LINQ a řetězce (C#)</span><span class="sxs-lookup"><span data-stu-id="fd2d4-114">LINQ and Strings (C#)</span></span>](./linq-and-strings.md)
-- [<span data-ttu-id="fd2d4-115">Linq a souborové adresáře (C#)</span><span class="sxs-lookup"><span data-stu-id="fd2d4-115">LINQ and File Directories (C#)</span></span>](./linq-and-file-directories.md)
+- [<span data-ttu-id="31827-116">LINQ a řetězce (C#)</span><span class="sxs-lookup"><span data-stu-id="31827-116">LINQ and Strings (C#)</span></span>](./linq-and-strings.md)
+- [<span data-ttu-id="31827-117">LINQ a souborové adresáře (C#)</span><span class="sxs-lookup"><span data-stu-id="31827-117">LINQ and File Directories (C#)</span></span>](./linq-and-file-directories.md)

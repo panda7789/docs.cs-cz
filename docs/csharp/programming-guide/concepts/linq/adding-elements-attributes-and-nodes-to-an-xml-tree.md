@@ -1,38 +1,39 @@
 ---
-title: Přidání prvků, atributů a uzlů do stromu XML (C#)
+title: Přidání elementů, atributů a uzlů do stromu XML (C#)
+description: Další informace o metodách přidání obsahu, například prvků, atributů, komentářů, instrukcí pro zpracování a textu do existujícího stromu XML.
 ms.date: 07/20/2015
 ms.assetid: db911e4f-40aa-499a-9500-a9763bb6df56
-ms.openlocfilehash: 20d8d9d9c592f5f570d7c94298dcee41763c1f1f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 78a84401494e2d4280799632fa42dc95574e3e10
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79169572"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87105554"
 ---
-# <a name="adding-elements-attributes-and-nodes-to-an-xml-tree-c"></a><span data-ttu-id="6fe73-102">Přidání prvků, atributů a uzlů do stromu XML (C#)</span><span class="sxs-lookup"><span data-stu-id="6fe73-102">Adding Elements, Attributes, and Nodes to an XML Tree (C#)</span></span>
-<span data-ttu-id="6fe73-103">Do existujícího stromu XML můžete přidat obsah (prvky, atributy, komentáře, pokyny pro zpracování, text a CDATA).</span><span class="sxs-lookup"><span data-stu-id="6fe73-103">You can add content (elements, attributes, comments, processing instructions, text, and CDATA) to an existing XML tree.</span></span>  
+# <a name="adding-elements-attributes-and-nodes-to-an-xml-tree-c"></a><span data-ttu-id="8e1e5-103">Přidání elementů, atributů a uzlů do stromu XML (C#)</span><span class="sxs-lookup"><span data-stu-id="8e1e5-103">Adding Elements, Attributes, and Nodes to an XML Tree (C#)</span></span>
+<span data-ttu-id="8e1e5-104">Do existujícího stromu XML můžete přidat obsah (prvky, atributy, komentáře, instrukce pro zpracování, text a CDATA).</span><span class="sxs-lookup"><span data-stu-id="8e1e5-104">You can add content (elements, attributes, comments, processing instructions, text, and CDATA) to an existing XML tree.</span></span>  
   
-## <a name="methods-for-adding-content"></a><span data-ttu-id="6fe73-104">Metody přidávání obsahu</span><span class="sxs-lookup"><span data-stu-id="6fe73-104">Methods for Adding Content</span></span>  
- <span data-ttu-id="6fe73-105">Následující metody přidávají podřízený obsah do aplikace <xref:System.Xml.Linq.XElement> nebo <xref:System.Xml.Linq.XDocument>:</span><span class="sxs-lookup"><span data-stu-id="6fe73-105">The following methods add child content to an <xref:System.Xml.Linq.XElement> or an <xref:System.Xml.Linq.XDocument>:</span></span>  
+## <a name="methods-for-adding-content"></a><span data-ttu-id="8e1e5-105">Metody pro přidání obsahu</span><span class="sxs-lookup"><span data-stu-id="8e1e5-105">Methods for Adding Content</span></span>  
+ <span data-ttu-id="8e1e5-106">Následující metody přidají podřízený obsah do <xref:System.Xml.Linq.XElement> nebo <xref:System.Xml.Linq.XDocument> :</span><span class="sxs-lookup"><span data-stu-id="8e1e5-106">The following methods add child content to an <xref:System.Xml.Linq.XElement> or an <xref:System.Xml.Linq.XDocument>:</span></span>  
   
-|<span data-ttu-id="6fe73-106">Metoda</span><span class="sxs-lookup"><span data-stu-id="6fe73-106">Method</span></span>|<span data-ttu-id="6fe73-107">Popis</span><span class="sxs-lookup"><span data-stu-id="6fe73-107">Description</span></span>|  
+|<span data-ttu-id="8e1e5-107">Metoda</span><span class="sxs-lookup"><span data-stu-id="8e1e5-107">Method</span></span>|<span data-ttu-id="8e1e5-108">Popis</span><span class="sxs-lookup"><span data-stu-id="8e1e5-108">Description</span></span>|  
 |------------|-----------------|  
-|<xref:System.Xml.Linq.XContainer.Add%2A>|<span data-ttu-id="6fe73-108">Přidá obsah na konci podřízeného <xref:System.Xml.Linq.XContainer>obsahu .</span><span class="sxs-lookup"><span data-stu-id="6fe73-108">Adds content at the end of the child content of the <xref:System.Xml.Linq.XContainer>.</span></span>|  
-|<xref:System.Xml.Linq.XContainer.AddFirst%2A>|<span data-ttu-id="6fe73-109">Přidá obsah na začátku podřízeného obsahu . <xref:System.Xml.Linq.XContainer></span><span class="sxs-lookup"><span data-stu-id="6fe73-109">Adds content at the beginning of the child content of the <xref:System.Xml.Linq.XContainer>.</span></span>|  
+|<xref:System.Xml.Linq.XContainer.Add%2A>|<span data-ttu-id="8e1e5-109">Přidá obsah na konec podřízeného obsahu <xref:System.Xml.Linq.XContainer> .</span><span class="sxs-lookup"><span data-stu-id="8e1e5-109">Adds content at the end of the child content of the <xref:System.Xml.Linq.XContainer>.</span></span>|  
+|<xref:System.Xml.Linq.XContainer.AddFirst%2A>|<span data-ttu-id="8e1e5-110">Přidá obsah na začátek podřízeného obsahu <xref:System.Xml.Linq.XContainer> .</span><span class="sxs-lookup"><span data-stu-id="8e1e5-110">Adds content at the beginning of the child content of the <xref:System.Xml.Linq.XContainer>.</span></span>|  
   
- <span data-ttu-id="6fe73-110">Následující metody přidávají obsah jako <xref:System.Xml.Linq.XNode>uzly na stejné úrovni .</span><span class="sxs-lookup"><span data-stu-id="6fe73-110">The following methods add content as sibling nodes of an <xref:System.Xml.Linq.XNode>.</span></span> <span data-ttu-id="6fe73-111">Nejběžnější uzel, do kterého přidáte obsah <xref:System.Xml.Linq.XElement>na stejné úrovni, je , i když <xref:System.Xml.Linq.XText> můžete <xref:System.Xml.Linq.XComment>přidat platný obsah na stejné úrovni do jiných typů uzlů, jako jsou nebo .</span><span class="sxs-lookup"><span data-stu-id="6fe73-111">The most common node to which you add sibling content is <xref:System.Xml.Linq.XElement>, although you can add valid sibling content to other types of nodes such as <xref:System.Xml.Linq.XText> or <xref:System.Xml.Linq.XComment>.</span></span>  
+ <span data-ttu-id="8e1e5-111">Následující metody přidávají obsah jako uzly na stejné úrovni <xref:System.Xml.Linq.XNode> .</span><span class="sxs-lookup"><span data-stu-id="8e1e5-111">The following methods add content as sibling nodes of an <xref:System.Xml.Linq.XNode>.</span></span> <span data-ttu-id="8e1e5-112">Nejběžnější uzel, do kterého můžete přidat obsah na stejné úrovni <xref:System.Xml.Linq.XElement> , je, i když můžete přidat platný obsah na stejné úrovni k jiným typům uzlů, například <xref:System.Xml.Linq.XText> nebo <xref:System.Xml.Linq.XComment> .</span><span class="sxs-lookup"><span data-stu-id="8e1e5-112">The most common node to which you add sibling content is <xref:System.Xml.Linq.XElement>, although you can add valid sibling content to other types of nodes such as <xref:System.Xml.Linq.XText> or <xref:System.Xml.Linq.XComment>.</span></span>  
   
-|<span data-ttu-id="6fe73-112">Metoda</span><span class="sxs-lookup"><span data-stu-id="6fe73-112">Method</span></span>|<span data-ttu-id="6fe73-113">Popis</span><span class="sxs-lookup"><span data-stu-id="6fe73-113">Description</span></span>|  
+|<span data-ttu-id="8e1e5-113">Metoda</span><span class="sxs-lookup"><span data-stu-id="8e1e5-113">Method</span></span>|<span data-ttu-id="8e1e5-114">Popis</span><span class="sxs-lookup"><span data-stu-id="8e1e5-114">Description</span></span>|  
 |------------|-----------------|  
-|<xref:System.Xml.Linq.XNode.AddAfterSelf%2A>|<span data-ttu-id="6fe73-114">Přidá obsah <xref:System.Xml.Linq.XNode>za .</span><span class="sxs-lookup"><span data-stu-id="6fe73-114">Adds content after the <xref:System.Xml.Linq.XNode>.</span></span>|  
-|<xref:System.Xml.Linq.XNode.AddBeforeSelf%2A>|<span data-ttu-id="6fe73-115">Přidá obsah <xref:System.Xml.Linq.XNode>před .</span><span class="sxs-lookup"><span data-stu-id="6fe73-115">Adds content before the <xref:System.Xml.Linq.XNode>.</span></span>|  
+|<xref:System.Xml.Linq.XNode.AddAfterSelf%2A>|<span data-ttu-id="8e1e5-115">Přidá obsah za <xref:System.Xml.Linq.XNode> .</span><span class="sxs-lookup"><span data-stu-id="8e1e5-115">Adds content after the <xref:System.Xml.Linq.XNode>.</span></span>|  
+|<xref:System.Xml.Linq.XNode.AddBeforeSelf%2A>|<span data-ttu-id="8e1e5-116">Přidá obsah před <xref:System.Xml.Linq.XNode> .</span><span class="sxs-lookup"><span data-stu-id="8e1e5-116">Adds content before the <xref:System.Xml.Linq.XNode>.</span></span>|  
   
-## <a name="example"></a><span data-ttu-id="6fe73-116">Příklad</span><span class="sxs-lookup"><span data-stu-id="6fe73-116">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="8e1e5-117">Příklad</span><span class="sxs-lookup"><span data-stu-id="8e1e5-117">Example</span></span>  
   
-### <a name="description"></a><span data-ttu-id="6fe73-117">Popis</span><span class="sxs-lookup"><span data-stu-id="6fe73-117">Description</span></span>  
- <span data-ttu-id="6fe73-118">Následující příklad vytvoří dva stromy XML a potom upraví jeden ze stromů.</span><span class="sxs-lookup"><span data-stu-id="6fe73-118">The following example creates two XML trees, and then modifies one of the trees.</span></span>  
+### <a name="description"></a><span data-ttu-id="8e1e5-118">Popis</span><span class="sxs-lookup"><span data-stu-id="8e1e5-118">Description</span></span>  
+ <span data-ttu-id="8e1e5-119">Následující příklad vytvoří dvě stromy XML a pak upraví jednu z stromů.</span><span class="sxs-lookup"><span data-stu-id="8e1e5-119">The following example creates two XML trees, and then modifies one of the trees.</span></span>  
   
-### <a name="code"></a><span data-ttu-id="6fe73-119">kód</span><span class="sxs-lookup"><span data-stu-id="6fe73-119">Code</span></span>  
+### <a name="code"></a><span data-ttu-id="8e1e5-120">Kód</span><span class="sxs-lookup"><span data-stu-id="8e1e5-120">Code</span></span>  
   
 ```csharp  
 XElement srcTree = new XElement("Root",
@@ -61,8 +62,8 @@ xmlTree.Add(srcTree.Element("Child9"));
 Console.WriteLine(xmlTree);  
 ```  
   
-### <a name="comments"></a><span data-ttu-id="6fe73-120">Komentáře</span><span class="sxs-lookup"><span data-stu-id="6fe73-120">Comments</span></span>  
- <span data-ttu-id="6fe73-121">Výsledkem tohoto kódu je následující výstup:</span><span class="sxs-lookup"><span data-stu-id="6fe73-121">This code produces the following output:</span></span>  
+### <a name="comments"></a><span data-ttu-id="8e1e5-121">Komentáře</span><span class="sxs-lookup"><span data-stu-id="8e1e5-121">Comments</span></span>  
+ <span data-ttu-id="8e1e5-122">Výsledkem tohoto kódu je následující výstup:</span><span class="sxs-lookup"><span data-stu-id="8e1e5-122">This code produces the following output:</span></span>  
   
 ```xml  
 <Root>  
