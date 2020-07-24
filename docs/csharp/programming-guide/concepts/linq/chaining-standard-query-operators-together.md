@@ -1,29 +1,30 @@
 ---
-title: Zřetězení operátorů standardních dotazů dohromady (C#)
+title: Zřetězení standardních operátorů dotazu (C#)
+description: Tento příklad ukazuje, jak lze v jazyce C# také zřetězit standardní operátory dotazu. Dotaz nevyhodnotit mezilehlé výsledky.
 ms.date: 07/20/2015
 ms.assetid: 66f2b0a9-2c23-4735-988e-bbc9dfb55c7b
-ms.openlocfilehash: 37df654b2bfdcc135460e5ded2ceec1eca33b35a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 41a7e4c7910c783d07181fe16254b0cac6902794
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "70204206"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87104067"
 ---
-# <a name="chaining-standard-query-operators-together-c"></a>Zřetězení operátorů standardních dotazů dohromady (C#)
-Toto je poslední téma v [kurzu: Řetězení dotazy společně (C#).](./deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)  
+# <a name="chaining-standard-query-operators-together-c"></a>Zřetězení standardních operátorů dotazu (C#)
+Toto je poslední téma v [kurzu: zřetězení dotazů společně (C#)](./deferred-execution-and-lazy-evaluation-in-linq-to-xml.md) .  
   
- Standardní operátory dotazu lze také zřetězit dohromady. Například můžete interject <xref:System.Linq.Enumerable.Where%2A?displayProperty=nameWithType> operátor a také pracuje v líné způsobem. Nezhmotňují se žádné průběžné výsledky.  
+ Standardní operátory dotazu je také možné zřetězit dohromady. Například můžete interject <xref:System.Linq.Enumerable.Where%2A?displayProperty=nameWithType> operátor a funguje také opožděným způsobem. Žádné mezilehlé výsledky nejsou materializované.  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu je metoda `ConvertCollectionToUpperCase`volána před voláním <xref:System.Linq.Enumerable.Where%2A> . Metoda <xref:System.Linq.Enumerable.Where%2A> funguje téměř přesně stejným způsobem jako opožděné metody použité v `ConvertCollectionToUpperCase` předchozích příkladech v tomto kurzu a `AppendString`.  
+ V tomto příkladu <xref:System.Linq.Enumerable.Where%2A> je metoda volána před voláním `ConvertCollectionToUpperCase` . <xref:System.Linq.Enumerable.Where%2A>Metoda pracuje téměř přesně stejným způsobem jako opožděné metody používané v předchozích příkladech v tomto kurzu `ConvertCollectionToUpperCase` a `AppendString` .  
   
- Jeden rozdíl je, že <xref:System.Linq.Enumerable.Where%2A> v tomto případě metoda iterates prostřednictvím své zdrojové kolekce, určuje, že první položka neprojde predikáta a pak získá další položku, která přejde. Potom dává druhou položku.  
+ Jedním rozdílem je, že v tomto případě <xref:System.Linq.Enumerable.Where%2A> Metoda prochází ze své zdrojové kolekce, určuje, že první položka neprojde predikátem, a poté získá další položku, která je předána. Následně výsledkem bude druhá položka.  
   
- Základní myšlenka je však stejná: Zprostředkující kolekce se nezhmotňují, pokud nemusí být.  
+ Základní nápad je ale stejný: zprostředkující kolekce nejsou materializované, pokud je nemusíte.  
   
- Při použití výrazů dotazu jsou převedeny na volání standardních operátorů dotazů a platí stejné zásady.  
+ Pokud jsou výrazy dotazu použity, jsou převedeny na volání standardních operátorů dotazu a platí stejné zásady.  
   
- Všechny příklady v této části, které se dotazují na dokumenty Office Open XML, používají stejný princip. Odložené spuštění a opožděné vyhodnocení jsou některé základní koncepty, které je nutné pochopit efektivně používat LINQ (a LINQ na XML).  
+ Všechny příklady v této části, které se dotazují na dokumenty Office Open XML, používají stejný princip. Odložené provádění a opožděné hodnocení jsou některé ze základních konceptů, které je potřeba pochopit, abyste mohli efektivně používat LINQ (a LINQ to XML).  
   
 ```csharp  
 public static class LocalExtensions  
@@ -73,7 +74,7 @@ class Program
 }  
 ```  
   
- Tento příklad vytváří následující výstup:  
+ Tento příklad vytvoří následující výstup:  
   
 ```output  
 ToUpper: source >abc<  

@@ -1,27 +1,28 @@
 ---
-title: Jak najít předchozí na stejné úrovni (XPath-LINQ to XML) (C#)
+title: Jak najít předchozí položky na stejné úrovni (XPath-LINQ to XML) (C#)
+description: Tento příklad jazyka C# porovnává osu XPath předchozí stejné úrovně na LINQ to XML podřízenou osu XNode. ElementsBeforeSelf.
 ms.date: 07/20/2015
 ms.assetid: b281ff99-d08a-43d0-bea1-eff831b2f8ae
-ms.openlocfilehash: 08fc2073f76f37bd0381a05a7969d1c7748d6252
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4150c94fe1e30e7a72bb53b4c6c12481ee0bad19
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74141055"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87103466"
 ---
-# <a name="how-to-find-preceding-siblings-xpath-linq-to-xml-c"></a>Jak najít předchozí na stejné úrovni (XPath-LINQ to XML) (C#)
-Toto téma porovnává `preceding-sibling` osu [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] <xref:System.Xml.Linq.XNode.ElementsBeforeSelf%2A?displayProperty=nameWithType> XPath s podřízenou osou.  
+# <a name="how-to-find-preceding-siblings-xpath-linq-to-xml-c"></a>Jak najít předchozí položky na stejné úrovni (XPath-LINQ to XML) (C#)
+Toto téma porovnává `preceding-sibling` osu XPath s [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] podřízenou <xref:System.Xml.Linq.XNode.ElementsBeforeSelf%2A?displayProperty=nameWithType> osou.  
   
  Výraz XPath je:  
   
  `preceding-sibling::*`  
   
- Všimněte si, <xref:System.Xml.XPath.Extensions.XPathSelectElements%2A> že <xref:System.Xml.Linq.XNode.ElementsBeforeSelf%2A?displayProperty=nameWithType> výsledky obou a jsou v pořadí dokumentů.  
+ Všimněte si, že výsledky obou <xref:System.Xml.XPath.Extensions.XPathSelectElements%2A> a <xref:System.Xml.Linq.XNode.ElementsBeforeSelf%2A?displayProperty=nameWithType> jsou v pořadí dokumentů.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad najde `FullAddress` prvek a potom načte předchozí `preceding-sibling` prvky pomocí osy.  
+ Následující příklad vyhledá `FullAddress` prvek a potom načte předchozí prvky pomocí `preceding-sibling` osy.  
   
- Tento příklad používá následující dokument XML: [Ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML).](./sample-xml-file-customers-and-orders-linq-to-xml-2.md)  
+ Tento příklad používá následující dokument XML: [ukázkový soubor XML: zákazníci a objednávky (LINQ to XML)](./sample-xml-file-customers-and-orders-linq-to-xml-2.md).  
   
 ```csharp  
 XElement co = XElement.Load("CustomersOrders.xml");  
@@ -43,7 +44,7 @@ foreach (XElement el in list2)
     Console.WriteLine(el);  
 ```  
   
- Tento příklad vytváří následující výstup:  
+ Tento příklad vytvoří následující výstup:  
   
 ```output  
 Results are identical  

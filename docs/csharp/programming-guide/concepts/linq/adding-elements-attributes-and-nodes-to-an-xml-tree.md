@@ -1,38 +1,39 @@
 ---
-title: Přidání prvků, atributů a uzlů do stromu XML (C#)
+title: Přidání elementů, atributů a uzlů do stromu XML (C#)
+description: Další informace o metodách přidání obsahu, například prvků, atributů, komentářů, instrukcí pro zpracování a textu do existujícího stromu XML.
 ms.date: 07/20/2015
 ms.assetid: db911e4f-40aa-499a-9500-a9763bb6df56
-ms.openlocfilehash: 20d8d9d9c592f5f570d7c94298dcee41763c1f1f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 78a84401494e2d4280799632fa42dc95574e3e10
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79169572"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87105554"
 ---
-# <a name="adding-elements-attributes-and-nodes-to-an-xml-tree-c"></a>Přidání prvků, atributů a uzlů do stromu XML (C#)
-Do existujícího stromu XML můžete přidat obsah (prvky, atributy, komentáře, pokyny pro zpracování, text a CDATA).  
+# <a name="adding-elements-attributes-and-nodes-to-an-xml-tree-c"></a>Přidání elementů, atributů a uzlů do stromu XML (C#)
+Do existujícího stromu XML můžete přidat obsah (prvky, atributy, komentáře, instrukce pro zpracování, text a CDATA).  
   
-## <a name="methods-for-adding-content"></a>Metody přidávání obsahu  
- Následující metody přidávají podřízený obsah do aplikace <xref:System.Xml.Linq.XElement> nebo <xref:System.Xml.Linq.XDocument>:  
-  
-|Metoda|Popis|  
-|------------|-----------------|  
-|<xref:System.Xml.Linq.XContainer.Add%2A>|Přidá obsah na konci podřízeného <xref:System.Xml.Linq.XContainer>obsahu .|  
-|<xref:System.Xml.Linq.XContainer.AddFirst%2A>|Přidá obsah na začátku podřízeného obsahu . <xref:System.Xml.Linq.XContainer>|  
-  
- Následující metody přidávají obsah jako <xref:System.Xml.Linq.XNode>uzly na stejné úrovni . Nejběžnější uzel, do kterého přidáte obsah <xref:System.Xml.Linq.XElement>na stejné úrovni, je , i když <xref:System.Xml.Linq.XText> můžete <xref:System.Xml.Linq.XComment>přidat platný obsah na stejné úrovni do jiných typů uzlů, jako jsou nebo .  
+## <a name="methods-for-adding-content"></a>Metody pro přidání obsahu  
+ Následující metody přidají podřízený obsah do <xref:System.Xml.Linq.XElement> nebo <xref:System.Xml.Linq.XDocument> :  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|<xref:System.Xml.Linq.XNode.AddAfterSelf%2A>|Přidá obsah <xref:System.Xml.Linq.XNode>za .|  
-|<xref:System.Xml.Linq.XNode.AddBeforeSelf%2A>|Přidá obsah <xref:System.Xml.Linq.XNode>před .|  
+|<xref:System.Xml.Linq.XContainer.Add%2A>|Přidá obsah na konec podřízeného obsahu <xref:System.Xml.Linq.XContainer> .|  
+|<xref:System.Xml.Linq.XContainer.AddFirst%2A>|Přidá obsah na začátek podřízeného obsahu <xref:System.Xml.Linq.XContainer> .|  
+  
+ Následující metody přidávají obsah jako uzly na stejné úrovni <xref:System.Xml.Linq.XNode> . Nejběžnější uzel, do kterého můžete přidat obsah na stejné úrovni <xref:System.Xml.Linq.XElement> , je, i když můžete přidat platný obsah na stejné úrovni k jiným typům uzlů, například <xref:System.Xml.Linq.XText> nebo <xref:System.Xml.Linq.XComment> .  
+  
+|Metoda|Popis|  
+|------------|-----------------|  
+|<xref:System.Xml.Linq.XNode.AddAfterSelf%2A>|Přidá obsah za <xref:System.Xml.Linq.XNode> .|  
+|<xref:System.Xml.Linq.XNode.AddBeforeSelf%2A>|Přidá obsah před <xref:System.Xml.Linq.XNode> .|  
   
 ## <a name="example"></a>Příklad  
   
 ### <a name="description"></a>Popis  
- Následující příklad vytvoří dva stromy XML a potom upraví jeden ze stromů.  
+ Následující příklad vytvoří dvě stromy XML a pak upraví jednu z stromů.  
   
-### <a name="code"></a>kód  
+### <a name="code"></a>Kód  
   
 ```csharp  
 XElement srcTree = new XElement("Root",

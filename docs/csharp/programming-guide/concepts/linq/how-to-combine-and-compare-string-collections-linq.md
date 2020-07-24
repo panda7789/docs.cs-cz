@@ -1,16 +1,17 @@
 ---
-title: Jak kombinovat a porovnávat kolekce řetězců (LINQ) (C#)
+title: Postup kombinování a porovnávání kolekcí řetězců (LINQ) (C#)
+description: Tento příklad sloučí soubory, které obsahují řádky textu. Naučte se, jak provést jednoduché zřetězení, sjednocení a průnik na sadách řádků v LINQ v jazyce C#.
 ms.date: 07/20/2015
 ms.assetid: 25926e5b-fde2-4dc1-86a0-16ead7aa13d2
-ms.openlocfilehash: f73a31e109933a4b6dd0078934d89d3bb770de5c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bfbdb9a0a3d531b56578b242c91596d9e41b6cd6
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79169451"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87105361"
 ---
-# <a name="how-to-combine-and-compare-string-collections-linq-c"></a>Jak kombinovat a porovnávat kolekce řetězců (LINQ) (C#)
-Tento příklad ukazuje, jak sloučit soubory, které obsahují řádky textu a pak seřadit výsledky. Konkrétně ukazuje, jak provést jednoduché zřetězení, sjednocení a průsečík na dvě sady řádků textu.  
+# <a name="how-to-combine-and-compare-string-collections-linq-c"></a>Postup kombinování a porovnávání kolekcí řetězců (LINQ) (C#)
+Tento příklad ukazuje, jak sloučit soubory, které obsahují řádky textu a následně seřadit výsledky. Konkrétně ukazuje, jak provést jednoduché zřetězení, sjednocení a průnik dvou sad textových řádků.  
   
 ### <a name="to-set-up-the-project-and-the-text-files"></a>Nastavení projektu a textových souborů  
   
@@ -29,7 +30,7 @@ Tento příklad ukazuje, jak sloučit soubory, které obsahují řádky textu a 
     Garcia, Debra  
     ```  
   
-2. Zkopírujte tyto názvy do textového souboru s názvem names2.txt a uložte je do složky projektu. Všimněte si, že dva soubory mají některé názvy společné.  
+2. Zkopírujte tyto názvy do textového souboru s názvem names2.txt a uložte je do složky projektu. Všimněte si, že dva soubory mají některé běžné názvy.  
   
     ```text  
     Liu, Jinghao  
@@ -169,9 +170,9 @@ class MergeStrings
 ```  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Vytvořte projekt aplikace konzoly `using` Jazyka C# se direktivami pro obory názvů System.Linq a System.IO.  
+ Vytvořte projekt konzolové aplikace v jazyce C# se `using` direktivami pro obory názvů System. Linq a System.IO.  
   
 ## <a name="see-also"></a>Viz také
 
 - [LINQ a řetězce (C#)](./linq-and-strings.md)
-- [Linq a souborové adresáře (C#)](./linq-and-file-directories.md)
+- [LINQ a souborové adresáře (C#)](./linq-and-file-directories.md)

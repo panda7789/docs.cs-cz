@@ -1,19 +1,20 @@
 ---
-title: Jak dotazovat na celkový počet bajtů v sadě složek (LINQ) (C#)
+title: Postup dotazování na celkový počet bajtů v sadě složek (LINQ) (C#)
+description: Naučte se, jak pomocí LINQ v jazyce C# najít celkový počet bajtů použitých všemi soubory v zadané složce a jejích podsložkách.
 ms.date: 07/20/2015
 ms.assetid: a01bd1d4-133c-4ca2-aa4e-e93e81d6076c
-ms.openlocfilehash: c6bfe6bb6d76e7ce8ea8887eef85cd64f2a025df
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 964d92a55599d60388f7add937c7f7338f697817
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75344821"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87104287"
 ---
-# <a name="how-to-query-for-the-total-number-of-bytes-in-a-set-of-folders-linq-c"></a>Jak dotazovat na celkový počet bajtů v sadě složek (LINQ) (C#)
-Tento příklad ukazuje, jak načíst celkový počet bajtů používaných všemi soubory v zadané složce a všech podsložkách.  
+# <a name="how-to-query-for-the-total-number-of-bytes-in-a-set-of-folders-linq-c"></a>Postup dotazování na celkový počet bajtů v sadě složek (LINQ) (C#)
+Tento příklad ukazuje, jak načíst celkový počet bajtů použitých všemi soubory v zadané složce a všech jejích podsložkách.  
   
 ## <a name="example"></a>Příklad  
- Metoda <xref:System.Linq.Enumerable.Sum%2A> přidá hodnoty všech položek vybraných `select` v klauzuli. Tento dotaz můžete snadno upravit a načíst největší nebo nejmenší <xref:System.Linq.Enumerable.Min%2A> soubor <xref:System.Linq.Enumerable.Max%2A> v <xref:System.Linq.Enumerable.Sum%2A>zadaném adresářovém stromu voláním metody nebo namísto .  
+ <xref:System.Linq.Enumerable.Sum%2A>Metoda přidá hodnoty všech položek vybraných v `select` klauzuli. Tento dotaz můžete snadno upravit tak, aby získal největší nebo nejmenší soubor v zadaném stromu adresářů voláním <xref:System.Linq.Enumerable.Min%2A> <xref:System.Linq.Enumerable.Max%2A> metody nebo namísto <xref:System.Linq.Enumerable.Sum%2A> .  
   
 ```csharp  
 class QuerySize  
@@ -69,14 +70,14 @@ class QuerySize
 }  
 ```  
   
- Pokud máte pouze počítat počet bajtů v zadaném adresářovém stromu, můžete to provést efektivněji bez vytvoření dotazu LINQ, který vznikne režie vytváření kolekce seznamu jako zdroj dat. Užitečnost přístupu LINQ se zvyšuje s dotazem se stává složitější, nebo pokud máte spustit více dotazů proti stejnému zdroji dat.  
+ Pokud potřebujete pouze spočítat počet bajtů v zadaném stromové struktuře, můžete to udělat efektivněji bez vytvoření dotazu LINQ, což způsobí režii při vytváření kolekce seznamu jako zdroje dat. Užitečnost přístupu LINQ se zvyšuje, protože dotaz je složitější, nebo když je nutné spustit více dotazů proti stejnému zdroji dat.  
   
- Dotaz volá samostatnou metodu k získání délky souboru. Je to proto, aby bylo možné využívat možnou výjimku, která <xref:System.IO.FileInfo> bude vyvolána, pokud `GetFiles`byl soubor odstraněn v jiném vlákně po vytvoření objektu ve volání . I v <xref:System.IO.FileInfo> případě, že objekt již byl <xref:System.IO.FileInfo> vytvořen, může dojít <xref:System.IO.FileInfo.Length%2A> k výjimce, protože objekt se pokusí aktualizovat svou vlastnost s nejaktuálnější délkou při prvním přístupu k vlastnosti. Umístěním této operace v bloku try-catch mimo dotaz, kód se řídí pravidlem vyhnout se operacím v dotazech, které mohou způsobit vedlejší účinky. Obecně je třeba věnovat velkou pozornost při použití výjimky a ujistěte se, že aplikace není ponechána v neznámém stavu.  
+ Dotaz volá k samostatné metodě, aby získal délku souboru. Provede to za účelem využívání možné výjimky, která bude vyvolána, pokud byl soubor odstraněn v jiném vlákně poté, co <xref:System.IO.FileInfo> byl objekt vytvořen při volání `GetFiles` . I když <xref:System.IO.FileInfo> již byl objekt vytvořen, výjimka může nastat, protože se <xref:System.IO.FileInfo> objekt pokusí aktualizovat jeho <xref:System.IO.FileInfo.Length%2A> vlastnost s nejaktuálnější délkou při prvním otevření vlastnosti. Vložením této operace do bloku try-catch mimo dotaz kód sleduje pravidlo vyloučení operací v dotazech, které mohou způsobit vedlejší účinky. Obecně platí, že je potřeba věnovat velkou péči, když využijete výjimky, aby se zajistilo, že aplikace zůstane v neznámém stavu.  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
-Vytvořte projekt aplikace konzoly `using` Jazyka C# se direktivami pro obory názvů System.Linq a System.IO.
+Vytvořte projekt konzolové aplikace v jazyce C# se `using` direktivami pro obory názvů System. Linq a System.IO.
   
 ## <a name="see-also"></a>Viz také
 
-- [LINQ na objekty (C#)](./linq-to-objects.md)
-- [Linq a souborové adresáře (C#)](./linq-and-file-directories.md)
+- [LINQ to Objects (C#)](./linq-to-objects.md)
+- [LINQ a souborové adresáře (C#)](./linq-and-file-directories.md)

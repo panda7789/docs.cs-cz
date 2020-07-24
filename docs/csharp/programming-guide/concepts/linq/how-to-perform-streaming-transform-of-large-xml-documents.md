@@ -1,29 +1,30 @@
 ---
-title: Jak provést streamování transformace velkých dokumentů XML (C#)
+title: Jak provést transformaci velkých dokumentů XML pomocí streamování (C#)
+description: Naučte se, jak provést transformaci textu do XML v jazyce C# a vyhnout se nadměrnému využití paměti u některých souborů.
 ms.date: 07/20/2015
 ms.assetid: 5f16d1f8-5370-4b55-b0c8-e497df163037
-ms.openlocfilehash: 9eb2e832f798e550ef3b534b0c9a0e3416378b43
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e1ab2866079b2244dc764271d7ba63173349e2f3
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79169101"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87104867"
 ---
-# <a name="how-to-perform-streaming-transform-of-large-xml-documents-c"></a>Jak provést streamování transformace velkých dokumentů XML (C#)
-Někdy budete muset transformovat velké soubory XML a zapsat aplikaci tak, aby nároky na paměť aplikace je předvídatelné. Pokud se pokusíte naplnit strom XML velmi velkým souborem XML, bude využití paměti úměrné velikosti souboru (to znamená nadměrné). Proto byste měli místo toho použít techniku streamování.  
+# <a name="how-to-perform-streaming-transform-of-large-xml-documents-c"></a>Jak provést transformaci velkých dokumentů XML pomocí streamování (C#)
+Někdy je nutné transformovat velké soubory XML a napsat aplikaci tak, aby paměťové nároky aplikace byly předvídatelné. Pokud se pokusíte naplnit strom XML s velmi velkým souborem XML, využití paměti bude úměrné velikosti souboru (to znamená nadměrné). Proto byste měli místo toho použít metodu streamování.  
   
- Techniky streamování jsou nejvhodnější v situacích, kdy je třeba zpracovat zdrojový dokument pouze jednou a prvky můžete zpracovat v pořadí dokumentů. Některé standardní operátory <xref:System.Linq.Enumerable.OrderBy%2A>dotazů, například , iterate jejich zdroj, shromažďovat všechna data, seřadit a nakonec výnos první položku v pořadí. Všimněte si, že pokud použijete operátor dotazu, který zhmotní jeho zdroj před získávání první položky, nezachováte malé nároky na paměť pro vaši aplikaci.  
+ Techniky streamování se nejlépe aplikují v situacích, kdy potřebujete zpracovat zdrojový dokument jenom jednou, a můžete zpracovat elementy v pořadí dokumentů. Některé standardní operátory pro dotazování, jako <xref:System.Linq.Enumerable.OrderBy%2A> je například iterace zdroje, shromáždění všech dat, jejich řazení a nakonec vydávají první položku v sekvenci. Všimněte si, že pokud použijete operátor dotazu, který materializuje svůj zdroj před tím, než zadáte první položku, nebudete si u své aplikace uchovávat malý objem paměti.  
   
-I v případě, že použijete techniku popsanou v [jak streamovat fragmenty XML s přístupem k informacím záhlaví (C#),](./how-to-stream-xml-fragments-with-access-to-header-information.md)pokud se pokusíte sestavit strom XML, který obsahuje transformovaný dokument, využití paměti bude příliš velké.
+I v případě, že použijete techniku popsanou v tématu [postup streamování fragmentů XML s přístupem k informacím hlavičky (C#)](./how-to-stream-xml-fragments-with-access-to-header-information.md), pokud se pokusíte sestavit strom XML obsahující transformovaný dokument, využití paměti bude příliš Skvělé.
   
- Existují dva hlavní přístupy. Jedním z přístupů je použití <xref:System.Xml.Linq.XStreamingElement>odložených vlastností zpracování . Dalším přístupem je <xref:System.Xml.XmlWriter>vytvoření a použití [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] možností zápisu <xref:System.Xml.XmlWriter>prvků do rozhraní . Toto téma ukazuje oba přístupy.  
+ Existují dva hlavní přístupy. Jedním z možností je použít odložené charakteristiky zpracování <xref:System.Xml.Linq.XStreamingElement> . Dalším přístupem je vytvoření <xref:System.Xml.XmlWriter> a použití možností [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] pro zápis prvků do <xref:System.Xml.XmlWriter> . Toto téma ukazuje oba přístupy.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vychází z příkladu v [části Jak streamovat fragmenty XML s přístupem k informacím záhlaví (C#).](./how-to-stream-xml-fragments-with-access-to-header-information.md)
+ Následující příklad je sestaven na příkladu v tématu [jak streamovat fragmenty XML s přístupem k informacím hlavičky (C#)](./how-to-stream-xml-fragments-with-access-to-header-information.md).
   
- Tento příklad používá možnosti <xref:System.Xml.Linq.XStreamingElement> odložené spuštění k streamování výstupu. Tento příklad může transformovat velmi velký dokument při zachování malé nároky na paměť.  
+ V tomto příkladu se používá odložené možnosti spuštění <xref:System.Xml.Linq.XStreamingElement> pro streamování výstupu. Tento příklad může transformovat velmi velký dokument při zachování malých objemů paměti.  
   
- Všimněte si,`StreamCustomerItem`že vlastní osa ( ) je `Customer` `Name`specificky `Item` napsána tak, že očekává dokument, který má , , a prvky a že tyto prvky budou uspořádány jako v následujícím dokumentu Source.xml. Robustnější implementace by však byla připravena analyzovat neplatný dokument.  
+ Všimněte si, že vlastní osa ( `StreamCustomerItem` ) je specificky napsána tak, že očekává dokument, který obsahuje `Customer` `Name` prvky, a a `Item` že tyto prvky budou uspořádány jako v následujícím dokumentu Source.xml. Robustnější implementace by ale mohla být připravená analyzovat neplatný dokument.  
   
  Následuje zdrojový dokument Source.xml:  
   
@@ -189,15 +190,15 @@ static void Main(string[] args)
 ```  
   
 ## <a name="example"></a>Příklad  
-Následující příklad také vychází z příkladu v [části Jak streamovat fragmenty XML s přístupem k informacím záhlaví (C#).](./how-to-stream-xml-fragments-with-access-to-header-information.md)
+Následující příklad také sestavení je v příkladu v tématu [jak streamovat fragmenty XML s přístupem k informacím hlavičky (C#)](./how-to-stream-xml-fragments-with-access-to-header-information.md).
   
- Tento příklad používá [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] schopnost psát prvky do . <xref:System.Xml.XmlWriter> Tento příklad může transformovat velmi velký dokument při zachování malé nároky na paměť.  
+ Tento příklad používá schopnost [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] pro zápis prvků do <xref:System.Xml.XmlWriter> . Tento příklad může transformovat velmi velký dokument při zachování malých objemů paměti.  
   
- Všimněte si,`StreamCustomerItem`že vlastní osa ( ) je `Customer` `Name`specificky `Item` napsána tak, že očekává dokument, který má , , a prvky a že tyto prvky budou uspořádány jako v následujícím dokumentu Source.xml. Robustnější implementace by však buď ověřit zdrojový dokument s XSD, nebo by byla připravena analyzovat neplatný dokument.  
+ Všimněte si, že vlastní osa ( `StreamCustomerItem` ) je specificky napsána tak, že očekává dokument, který obsahuje `Customer` `Name` prvky, a a `Item` že tyto prvky budou uspořádány jako v následujícím dokumentu Source.xml. Robustnější implementace však buď ověří zdrojový dokument s XSD, nebo by bylo připraveno analyzovat neplatný dokument.  
   
- Tento příklad používá stejný zdrojový dokument Source.xml jako předchozí příklad v tomto tématu. Také produkuje přesně stejný výstup.  
+ Tento příklad používá stejný zdrojový dokument, Source.xml, jako předchozí příklad v tomto tématu. Vytvoří také přesně stejný výstup.  
   
- Použití <xref:System.Xml.Linq.XStreamingElement> pro streamování výstupního XML je <xref:System.Xml.XmlWriter>upřednostňováno před zápisem do .  
+ <xref:System.Xml.Linq.XStreamingElement>Při použití pro streamování je výstup XML preferovaný před zápisem do <xref:System.Xml.XmlWriter> .  
   
 ```csharp  
 static IEnumerable<XElement> StreamCustomerItem(string uri)  

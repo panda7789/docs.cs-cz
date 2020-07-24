@@ -1,25 +1,26 @@
 ---
-title: Jak najít kořenový prvek (XPath-LINQ do XML) (C#)
+title: Jak najít kořenový element (XPath-LINQ to XML) (C#)
+description: Tento příklad v jazyce C# porovnává XPath s LINQ to XML pro získání kořenového prvku pro ukázkový dokument XML.
 ms.date: 07/20/2015
 ms.assetid: 4fd824e0-4d39-429b-b092-f6a5c046ee6c
-ms.openlocfilehash: 1c5526f436b5b9d88ca359ef7e0fc04c5c3cf43c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 220899823210c5cd6e9834541ca87e4d8394b4ff
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75345952"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87105188"
 ---
-# <a name="how-to-find-the-root-element-xpath-linq-to-xml-c"></a>Jak najít kořenový prvek (XPath-LINQ do XML) (C#)
-Toto téma ukazuje, jak získat kořenový prvek s XPath a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].  
+# <a name="how-to-find-the-root-element-xpath-linq-to-xml-c"></a>Jak najít kořenový element (XPath-LINQ to XML) (C#)
+Toto téma ukazuje, jak získat kořenový prvek pomocí XPath a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] .  
   
  Výraz XPath je:  
   
  `/PurchaseOrders`  
   
 ## <a name="example"></a>Příklad  
- Tento příklad najde kořenový prvek.  
+ Tento příklad najde kořenový element.  
   
- Tento příklad používá následující dokument XML: [Ukázkový soubor XML: Více nákupních objednávek (LINQ to XML).](./sample-xml-file-multiple-purchase-orders-linq-to-xml.md)  
+ Tento příklad používá následující dokument XML: [ukázkový soubor XML: více nákupních objednávek (LINQ to XML)](./sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
   
 ```csharp  
 XDocument po = XDocument.Load("PurchaseOrders.xml");  
@@ -37,7 +38,7 @@ else
 Console.WriteLine(el1.Name);  
 ```  
   
- Tento příklad vytváří následující výstup:  
+ Tento příklad vytvoří následující výstup:  
   
 ```output  
 Results are identical  

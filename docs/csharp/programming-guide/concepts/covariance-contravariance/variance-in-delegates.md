@@ -1,13 +1,14 @@
 ---
 title: Variance v delegátech (C#)
+description: Zjistěte, jak podpora variance v .NET Framework umožňuje spárovat signatury metod s typy delegátů ve všech delegátech.
 ms.date: 07/20/2015
 ms.assetid: 19de89d2-8224-4406-8964-2965b732b890
-ms.openlocfilehash: 7370813179040f54e65adf3b568a1fd914223f1d
-ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
+ms.openlocfilehash: ef57a7fa7feaef98a47822e3f1c9242d0205932d
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84990041"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87105655"
 ---
 # <a name="variance-in-delegates-c"></a>Variance v delegátech (C#)
 .NET Framework 3,5 zavedl podporu variance pro porovnání signatur metod s typy delegátů ve všech delegátech v jazyce C#. To znamená, že můžete přiřadit delegáty nejen metody, které mají odpovídající signatury, ale také metody, které vracejí více odvozené typy (kovariance), nebo které přijímají parametry, které mají méně odvozené typy (kontravariance), než je určeno typem delegáta. To zahrnuje obecné i neobecné delegáty.  

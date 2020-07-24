@@ -1,21 +1,22 @@
 ---
-title: Jak řídit typ projekce (C#)
+title: Postup řízení typu projekce (C#)
+description: Přečtěte si o tom, jak řídit typ projekce v LINQ v jazyce C# a vytvořit kolekce jiných typů než IEnumerable <T> typu XElement.
 ms.date: 07/20/2015
 ms.assetid: e4db6b7e-4cc9-4c8f-af85-94acf32aa348
-ms.openlocfilehash: cb7c272fbe67c0700b5740691befc483993f4e29
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 32b019b5e1574e7160b4dce5fb0322caa3c1ca71
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74141351"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87103347"
 ---
-# <a name="how-to-control-the-type-of-a-projection-c"></a>Jak řídit typ projekce (C#)
-Projekce je proces přijímání jedné sady dat, filtrování, změny tvaru a dokonce i změny jejího typu. Většina výrazů dotazu provádí projekce. Většina výrazů dotazu zobrazených <xref:System.Collections.Generic.IEnumerable%601> v <xref:System.Xml.Linq.XElement>této části vyhodnocuje do aplikace , ale můžete řídit typ projekce a vytvářet kolekce jiných typů. Toto téma ukazuje, jak to udělat.  
+# <a name="how-to-control-the-type-of-a-projection-c"></a>Postup řízení typu projekce (C#)
+Projekcí je proces pořízení jedné sady dat, její filtrování, změna jejího tvaru a dokonce i změna jejího typu. Většina výrazů dotazů provádí projekce. Většina výrazů dotazu zobrazených v této části je vyhodnocena jako <xref:System.Collections.Generic.IEnumerable%601> z <xref:System.Xml.Linq.XElement> , ale můžete řídit typ projekce pro vytváření kolekcí jiných typů. V tomto tématu se dozvíte, jak to provést.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad definuje nový typ `Customer`. Výraz dotazu pak konkretizovat nové `Customer` objekty v klauzuli. `Select` To způsobí, že typ výrazu `Customer`dotazu být <xref:System.Collections.Generic.IEnumerable%601> .  
+ Následující příklad definuje nový typ, `Customer` . Výraz dotazu pak vytvoří instanci nových `Customer` objektů v `Select` klauzuli. To způsobí, že typ výrazu dotazu bude <xref:System.Collections.Generic.IEnumerable%601> `Customer` .  
   
- Tento příklad používá následující dokument XML: [Ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML).](./sample-xml-file-customers-and-orders-linq-to-xml-2.md)  
+ Tento příklad používá následující dokument XML: [ukázkový soubor XML: zákazníci a objednávky (LINQ to XML)](./sample-xml-file-customers-and-orders-linq-to-xml-2.md).  
   
 ```csharp  
 public class Customer  

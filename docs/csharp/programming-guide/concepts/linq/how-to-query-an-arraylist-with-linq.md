@@ -1,28 +1,29 @@
 ---
-title: Jak dotaz ArrayList s LINQ (C#)
+title: Postup dotazování objektu ArrayList pomocí LINQ (C#)
+description: Tento příklad používá LINQ k dotazování nad objektem ArrayList v jazyce C#. Musíte deklarovat typ proměnné rozsahu, aby odrážela typ objektů v kolekci.
 ms.date: 07/20/2015
 ms.assetid: 2bfb471c-6e9a-4e60-bd83-4a1778abde11
-ms.openlocfilehash: fa185ba3793b628b0d65e1f513a70ec68f6f2425
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5c251e17de062a4578f06fc1a40ea3ede9f3ab67
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79168931"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87104599"
 ---
-# <a name="how-to-query-an-arraylist-with-linq-c"></a>Jak dotaz ArrayList s LINQ (C#)
-Při použití LINQ dotaz <xref:System.Collections.IEnumerable> u neobecných kolekcí, jako je například <xref:System.Collections.ArrayList>, je nutné explicitně deklarovat typ proměnné rozsahu tak, aby odrážely konkrétní typ objektů v kolekci. Například pokud máte <xref:System.Collections.ArrayList> objekty, `Student` vaše [from klauzule](../../../language-reference/keywords/from-clause.md) by měla vypadat takto:  
+# <a name="how-to-query-an-arraylist-with-linq-c"></a>Postup dotazování objektu ArrayList pomocí LINQ (C#)
+Při použití LINQ k dotazování na neobecné kolekce, jako je například <xref:System.Collections.IEnumerable> <xref:System.Collections.ArrayList> , je nutné explicitně deklarovat typ proměnné rozsahu, aby odrážel konkrétní typ objektů v kolekci. Například pokud máte <xref:System.Collections.ArrayList> `Student` objekt, vaše [klauzule FROM](../../../language-reference/keywords/from-clause.md) by měla vypadat takto:  
   
 ```csharp
 var query = from Student s in arrList  
 //...
 ```  
   
- Zadáním typu proměnné rozsahu přetypujete každou <xref:System.Collections.ArrayList> položku `Student`v oblasti do .  
+ Zadáním typu proměnné rozsahu budete přetypování do každé položky v poli <xref:System.Collections.ArrayList> do `Student` .  
   
- Použití explicitně zadané proměnné rozsahu ve výrazu dotazu <xref:System.Linq.Enumerable.Cast%2A> je ekvivalentní volání metody. <xref:System.Linq.Enumerable.Cast%2A>vyvolá výjimku, pokud zadaný přetypový blok nelze provést. <xref:System.Linq.Enumerable.Cast%2A>a <xref:System.Linq.Enumerable.OfType%2A> jsou dvě standardní operátor dotazu metody, které pracují na neobecné <xref:System.Collections.IEnumerable> typy. Další informace naleznete [v tématu Type Relationships in LINQ Query Operations](./type-relationships-in-linq-query-operations.md).  
+ Použití explicitně typované proměnné rozsahu ve výrazu dotazu je ekvivalentní volání <xref:System.Linq.Enumerable.Cast%2A> metody. <xref:System.Linq.Enumerable.Cast%2A>vyvolá výjimku, pokud nelze provést zadané přetypování. <xref:System.Linq.Enumerable.Cast%2A>a <xref:System.Linq.Enumerable.OfType%2A> jsou dvě standardní metody operátoru dotazu, které pracují s neobecnými <xref:System.Collections.IEnumerable> typy. Další informace najdete v tématu [vztahy typů v operacích dotazu LINQ](./type-relationships-in-linq-query-operations.md).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje jednoduchý dotaz <xref:System.Collections.ArrayList>přes . Všimněte si, že tento příklad používá <xref:System.Collections.ArrayList.Add%2A> inicializátory objektů při volání kódu metodu, ale to není požadavek.  
+ Následující příklad ukazuje jednoduchý dotaz nad <xref:System.Collections.ArrayList> . Všimněte si, že tento příklad používá Inicializátory objektů, když kód volá <xref:System.Collections.ArrayList.Add%2A> metodu, ale to není požadavek.  
   
 ```csharp  
 using System;  
@@ -85,4 +86,4 @@ namespace NonGenericLINQ
   
 ## <a name="see-also"></a>Viz také
 
-- [LINQ na objekty (C#)](./linq-to-objects.md)
+- [LINQ to Objects (C#)](./linq-to-objects.md)

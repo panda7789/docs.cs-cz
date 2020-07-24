@@ -1,25 +1,26 @@
 ---
 title: Vytváření stromů XML v jazyce C# (LINQ to XML)
+description: Přečtěte si o vytváření stromů XML v jazyce C#, včetně vytváření prvků a použití konstruktorů XElement.
 ms.date: 08/31/2018
 ms.assetid: cc74234a-0bac-4327-9c8c-5a2ead15b595
-ms.openlocfilehash: 4794e4fe019b30d8f2acb3eb255bb77ba2f7f290
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3991f461c4c870a64320853ccd1d45026a8a6bf6
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79169542"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87105477"
 ---
 # <a name="creating-xml-trees-in-c-linq-to-xml"></a>Vytváření stromů XML v jazyce C# (LINQ to XML)
-Tato část obsahuje informace o vytváření stromů XML v jazyce C#.  
+Tato část poskytuje informace o vytváření stromů XML v jazyce C#.  
   
- Informace o použití výsledků dotazů LINQ jako <xref:System.Xml.Linq.XElement>obsahu pro , naleznete v tématu [funkční konstrukce (LINQ na XML) (C#)](./functional-construction-linq-to-xml.md).  
+ Informace o použití výsledků dotazů LINQ jako obsahu pro naleznete <xref:System.Xml.Linq.XElement> v tématu [funkční konstrukce (LINQ to XML) (C#)](./functional-construction-linq-to-xml.md).  
   
-## <a name="constructing-elements"></a>Vytváření prvků
- Podpisy <xref:System.Xml.Linq.XElement> a <xref:System.Xml.Linq.XAttribute> konstruktory umožňují předat obsah prvku nebo atributjako argumenty konstruktoru. Vzhledem k tomu, že jeden z konstruktorů má proměnný počet argumentů, můžete předat libovolný počet podřízených prvků. Samozřejmě, každý z těchto podřízených prvků může obsahovat své vlastní podřízené prvky. Pro libovolný prvek můžete přidat libovolný počet atributů.  
+## <a name="constructing-elements"></a>Vytváření elementů
+ Signatury <xref:System.Xml.Linq.XElement> <xref:System.Xml.Linq.XAttribute> konstruktorů a umožňují předat obsah elementu nebo atributu jako argumenty konstruktoru. Vzhledem k tomu, že jeden z konstruktorů přebírá proměnný počet argumentů, můžete předat libovolný počet podřízených elementů. Každý z těchto podřízených elementů samozřejmě může obsahovat vlastní podřízené prvky. Pro libovolný prvek můžete přidat libovolný počet atributů.  
   
- Při <xref:System.Xml.Linq.XNode> přidávání <xref:System.Xml.Linq.XElement>(včetně) nebo <xref:System.Xml.Linq.XAttribute> objektů, pokud nový obsah nemá nadřazený obsah, objekty jsou jednoduše připojeny ke stromu XML. Pokud je nový obsah již nadřazený a je součástí jiného stromu XML, nový obsah je klonován a nově klonovaný obsah je připojen ke stromu XML. Poslední příklad v tomto tématu ukazuje toto.  
+ Při přidávání <xref:System.Xml.Linq.XNode> (včetně <xref:System.Xml.Linq.XElement> ) nebo <xref:System.Xml.Linq.XAttribute> objektů, pokud nový obsah nemá žádný nadřazený objekt, jsou objekty jednoduše připojeny ke stromu XML. Pokud nový obsah již je nadřazený a je součástí jiného stromu XML, bude nový obsah naklonován a nově Klonovaný obsah je připojen ke stromu XML. Příklad ukazuje poslední příklad v tomto tématu.  
   
- Chcete-li `contacts` <xref:System.Xml.Linq.XElement>vytvořit , můžete použít následující kód:  
+ Chcete-li vytvořit `contacts` <xref:System.Xml.Linq.XElement> , můžete použít následující kód:  
   
 ```csharp  
 XElement contacts =  
@@ -37,40 +38,40 @@ XElement contacts =
     );  
 ```  
   
- Pokud je správně odsazeno, kód pro vytvoření <xref:System.Xml.Linq.XElement> objektů se velmi podobá struktuře podkladového XML.  
+ Pokud je znak správně odsazený, kód pro sestavování <xref:System.Xml.Linq.XElement> objektů se těsně podobá struktuře podkladového XML.  
   
-## <a name="xelement-constructors"></a>Konstruktory XElement  
- Třída <xref:System.Xml.Linq.XElement> používá následující konstruktory pro funkční konstrukci. Všimněte si, že existují <xref:System.Xml.Linq.XElement>některé další konstruktory pro , ale protože nejsou použity pro funkční konstrukce nejsou uvedeny zde.  
+## <a name="xelement-constructors"></a>XElement konstruktory  
+ <xref:System.Xml.Linq.XElement>Třída používá následující konstruktory pro konstrukci funkčnosti. Všimněte si, že existují další konstruktory pro <xref:System.Xml.Linq.XElement> , ale vzhledem k tomu, že nejsou používány pro funkční konstrukce, nejsou zde uvedeny.  
   
 |Konstruktor|Popis|  
 |-----------------|-----------------|  
-|`XElement(XName name, object content)`|Vytvoří <xref:System.Xml.Linq.XElement>. Parametr `name` určuje název prvku; `content` určuje obsah prvku.|  
-|`XElement(XName name)`|Vytvoří <xref:System.Xml.Linq.XElement> s <xref:System.Xml.Linq.XName> jeho inicializována na zadaný název.|  
-|`XElement(XName name, params object[] content)`|Vytvoří <xref:System.Xml.Linq.XElement> s <xref:System.Xml.Linq.XName> jeho inicializována na zadaný název. Atributy nebo podřízené prvky jsou vytvořeny z obsahu seznamu parametrů.|  
+|`XElement(XName name, object content)`|Vytvoří <xref:System.Xml.Linq.XElement> . `name`Parametr určuje název elementu; `content` určuje obsah elementu.|  
+|`XElement(XName name)`|Vytvoří <xref:System.Xml.Linq.XElement> s názvem, který <xref:System.Xml.Linq.XName> je inicializován na zadaný název.|  
+|`XElement(XName name, params object[] content)`|Vytvoří <xref:System.Xml.Linq.XElement> s názvem, který <xref:System.Xml.Linq.XName> je inicializován na zadaný název. Atributy nebo podřízené prvky jsou vytvořeny z obsahu seznamu parametrů.|  
   
- Parametr `content` je velmi flexibilní. Podporuje jakýkoli typ objektu, který je <xref:System.Xml.Linq.XElement>platný podřízený . Následující pravidla platí pro různé typy objektů předaných v tomto parametru:  
+ `content`Parametr je velice flexibilní. Podporuje jakýkoliv typ objektu, který je platným podřízeným prvku <xref:System.Xml.Linq.XElement> . Následující pravidla platí pro různé typy objektů předaných v tomto parametru:  
   
-- Řetězec je přidán jako textový obsah.  
+- Řetězec se přidá jako textový obsah.  
   
-- Je <xref:System.Xml.Linq.XElement> přidán jako podřízený prvek.  
+- <xref:System.Xml.Linq.XElement>Je přidán jako podřízený element.  
   
-- Je <xref:System.Xml.Linq.XAttribute> přidán jako atribut.  
+- <xref:System.Xml.Linq.XAttribute>Přidá se jako atribut.  
   
-- A <xref:System.Xml.Linq.XProcessingInstruction> <xref:System.Xml.Linq.XComment>, <xref:System.Xml.Linq.XText> , nebo je přidán jako podřízený obsah.  
+- <xref:System.Xml.Linq.XProcessingInstruction>, <xref:System.Xml.Linq.XComment> Nebo <xref:System.Xml.Linq.XText> se přidá jako podřízený obsah.  
   
-- Je <xref:System.Collections.IEnumerable> výčtu a tato pravidla jsou použity rekurzivně na výsledky.  
+- <xref:System.Collections.IEnumerable>Vytvoří se výčet a tato pravidla se rekurzivně aplikují na výsledky.  
   
-- Pro jakýkoli jiný `ToString` typ je volána jeho metoda a výsledek je přidán jako textový obsah.  
+- Pro jakýkoliv jiný typ je jeho `ToString` metoda volána a výsledek je přidán jako textový obsah.  
   
-### <a name="creating-an-xelement-with-content"></a>Vytvoření prvku XElement s obsahem  
- Můžete vytvořit, <xref:System.Xml.Linq.XElement> který obsahuje jednoduchý obsah s voláním jedné metody. Chcete-li to provést, zadejte obsah jako druhý parametr takto:  
+### <a name="creating-an-xelement-with-content"></a>Vytvoření XElement s obsahem  
+ Můžete vytvořit <xref:System.Xml.Linq.XElement> , který obsahuje jednoduchý obsah s jedinou voláním metody. Chcete-li to provést, zadejte jako druhý parametr obsah následujícím způsobem:  
   
 ```csharp  
 XElement n = new XElement("Customer", "Adventure Works");  
 Console.WriteLine(n);  
 ```  
   
- Tento příklad vytváří následující výstup:  
+ Tento příklad vytvoří následující výstup:  
   
 ```xml  
 <Customer>Adventure Works</Customer>  
@@ -83,15 +84,15 @@ XElement n = new XElement("Cost", 324.50);
 Console.WriteLine(n);  
 ```  
   
- Tento příklad vytváří následující výstup:  
+ Tento příklad vytvoří následující výstup:  
   
 ```xml  
 <Cost>324.5</Cost>  
 ```  
   
- Číslo s plovoucí desetinnou tácem je zabaleno a předáno konstruktoru. Zabalené číslo je převedeno na řetězec a použito jako obsah prvku.  
+ Číslo s plovoucí desetinnou čárkou je v krabici a předáno do konstruktoru. Zabalené číslo je převedeno na řetězec a použito jako obsah elementu.  
   
-### <a name="creating-an-xelement-with-a-child-element"></a>Vytvoření prvku XElement s podřízeným prvkem  
+### <a name="creating-an-xelement-with-a-child-element"></a>Vytvoření XElement s podřízeným elementem  
  Pokud předáte instanci <xref:System.Xml.Linq.XElement> třídy pro argument obsahu, konstruktor vytvoří prvek s podřízeným elementem:  
   
 ```csharp  
@@ -101,7 +102,7 @@ XElement shippingUnit = new XElement("ShippingUnit",
 Console.WriteLine(shippingUnit);  
 ```  
   
- Tento příklad vytváří následující výstup:  
+ Tento příklad vytvoří následující výstup:  
   
 ```xml  
 <ShippingUnit>  
@@ -109,8 +110,8 @@ Console.WriteLine(shippingUnit);
 </ShippingUnit>  
 ```  
   
-### <a name="creating-an-xelement-with-multiple-child-elements"></a>Vytvoření prvku XElement s více podřízenými prvky  
- Můžete předat několik <xref:System.Xml.Linq.XElement> objektů pro obsah. Každý z <xref:System.Xml.Linq.XElement> objektů je součástí jako podřízený prvek.  
+### <a name="creating-an-xelement-with-multiple-child-elements"></a>Vytvoření XElement s více podřízenými elementy  
+ Pro obsah můžete předat několik <xref:System.Xml.Linq.XElement> objektů. Každý <xref:System.Xml.Linq.XElement> objekt je zahrnut jako podřízený element.  
   
 ```csharp  
 XElement address = new XElement("Address",  
@@ -122,7 +123,7 @@ XElement address = new XElement("Address",
 Console.WriteLine(address);  
 ```  
   
- Tento příklad vytváří následující výstup:  
+ Tento příklad vytvoří následující výstup:  
   
 ```xml  
 <Address>  
@@ -133,7 +134,7 @@ Console.WriteLine(address);
 </Address>  
 ```  
   
- Rozšířením výše uvedeného příkladu můžete vytvořit celý strom XML takto:  
+ Rozšířením výše uvedeného příkladu můžete vytvořit celý strom XML následujícím způsobem:  
   
 ```csharp  
 XElement contacts =  
@@ -152,7 +153,7 @@ XElement contacts =
 Console.WriteLine(contacts);  
 ```  
   
- Tento příklad vytváří následující výstup:  
+ Tento příklad vytvoří následující výstup:  
   
 ```xml  
 <Contacts>  
@@ -169,8 +170,8 @@ Console.WriteLine(contacts);
 </Contacts>  
 ```  
 
-### <a name="creating-an-xelement-with-an-xattribute"></a>Vytvoření prvku XElement s atributem X
- Pokud předáte instanci <xref:System.Xml.Linq.XAttribute> třídy pro argument obsahu, konstruktor vytvoří prvek s atributem:
+### <a name="creating-an-xelement-with-an-xattribute"></a>Vytvoření XElement pomocí XAttribute
+ Pokud předáte instanci <xref:System.Xml.Linq.XAttribute> třídy pro argument obsahu, konstruktor vytvoří element s atributem:
 
 ```csharp  
 XElement phone = new XElement("Phone",  
@@ -179,30 +180,30 @@ XElement phone = new XElement("Phone",
 Console.WriteLine(phone);  
 ```  
   
- Tento příklad vytváří následující výstup:  
+ Tento příklad vytvoří následující výstup:  
   
 ```xml  
 <Phone Type="Home">555-555-5555</Phone>
 ```
 
 ### <a name="creating-an-empty-element"></a>Vytvoření prázdného prvku  
- Chcete-li <xref:System.Xml.Linq.XElement>vytvořit prázdný , nepředáte žádný obsah konstruktoru. Následující příklad vytvoří prázdný prvek:  
+ Chcete-li vytvořit prázdnou, nemusíte <xref:System.Xml.Linq.XElement> do konstruktoru předávat žádný obsah. Následující příklad vytvoří prázdný element:  
   
 ```csharp  
 XElement n = new XElement("Customer");  
 Console.WriteLine(n);  
 ```  
   
- Tento příklad vytváří následující výstup:  
+ Tento příklad vytvoří následující výstup:  
   
 ```xml  
 <Customer />  
 ```  
   
 ### <a name="attaching-vs-cloning"></a>Připojení vs. klonování  
- Jak již bylo zmíněno <xref:System.Xml.Linq.XElement>dříve, <xref:System.Xml.Linq.XAttribute> při přidávání <xref:System.Xml.Linq.XNode> (včetně) nebo objektů, pokud nový obsah nemá nadřazený obsah, objekty jsou jednoduše připojeny ke stromu XML. Pokud je nový obsah již nadřazený a je součástí jiného stromu XML, nový obsah je klonován a nově klonovaný obsah je připojen ke stromu XML.  
+ Jak bylo uvedeno dříve, při přidávání <xref:System.Xml.Linq.XNode> (včetně <xref:System.Xml.Linq.XElement> ) nebo <xref:System.Xml.Linq.XAttribute> objektů, pokud nový obsah nemá žádný nadřazený objekt, objekty jsou jednoduše připojeny ke stromu XML. Pokud je nový obsah již nadřazený a je součástí jiného stromu XML, bude nový obsah klonován a nově Klonovaný obsah je připojen ke stromu XML.  
 
-Následující příklad ukazuje chování při přidání nadřazeného prvku do stromu a při přidání prvku bez nadřazeného prvku do stromu.
+Následující příklad ukazuje chování při přidání nadřazeného elementu do stromu a při přidání elementu bez nadřazeného prvku do stromu.
 
 ```csharp  
 // Create a tree with a child element.  

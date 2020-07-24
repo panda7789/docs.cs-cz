@@ -1,16 +1,17 @@
 ---
-title: Jak dotazovat obsah textových souborů ve složce (LINQ) (C#)
+title: Postup dotazování obsahu textových souborů ve složce (LINQ) (C#)
+description: Naučte se používat LINQ v jazyce C# k dotazování všech souborů ve stromovém stromu, otevřít jednotlivé soubory a zkontrolovat její obsah.
 ms.date: 07/20/2015
 ms.assetid: f5b4dce7-1a34-4eb4-9bf1-60d5bdda264c
-ms.openlocfilehash: 998fddd3f59ee64df9adcee1acc720d82861c3d9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 216edc2ee6fc43fd06a3c89b1b6b73f693f752f8
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79168736"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87104260"
 ---
-# <a name="how-to-query-the-contents-of-text-files-in-a-folder-linq-c"></a>Jak dotazovat obsah textových souborů ve složce (LINQ) (C#)
-Tento příklad ukazuje, jak dotazovat přes všechny soubory v zadaném adresářovém stromu, otevřít každý soubor a zkontrolovat jeho obsah. Tento typ techniky lze použít k vytvoření indexy nebo reverzní indexy obsahu adresářového stromu. V tomto příkladu se provádí jednoduché vyhledávání řetězců. Složitější typy porovnávání vzorů však lze provádět s regulárním výrazem. Další informace naleznete v tématu [Jak kombinovat dotazy LINQ s regulárními výrazy (C#)](./how-to-combine-linq-queries-with-regular-expressions.md).  
+# <a name="how-to-query-the-contents-of-text-files-in-a-folder-linq-c"></a>Postup dotazování obsahu textových souborů ve složce (LINQ) (C#)
+Tento příklad ukazuje, jak se dotázat na všechny soubory v zadaném stromovém stromu, otevřít každý soubor a zkontrolovat jeho obsah. Tento typ techniky lze použít k vytvoření indexů nebo zpětných indexů obsahu stromu adresáře. V tomto příkladu je provedeno jednoduché vyhledávání řetězců. Složitější typy porovnávání vzorů však mohou být provedeny s regulárním výrazem. Další informace najdete v tématu [postup kombinování dotazů LINQ s regulárními výrazy (C#)](./how-to-combine-linq-queries-with-regular-expressions.md).  
   
 ## <a name="example"></a>Příklad  
   
@@ -71,9 +72,9 @@ class QueryContents
 ```  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
-Vytvořte projekt aplikace konzoly `using` Jazyka C# se direktivami pro obory názvů System.Linq a System.IO.
+Vytvořte projekt konzolové aplikace v jazyce C# se `using` direktivami pro obory názvů System. Linq a System.IO.
   
 ## <a name="see-also"></a>Viz také
 
-- [Linq a souborové adresáře (C#)](./linq-and-file-directories.md)
-- [LINQ na objekty (C#)](./linq-to-objects.md)
+- [LINQ a souborové adresáře (C#)](./linq-and-file-directories.md)
+- [LINQ to Objects (C#)](./linq-to-objects.md)

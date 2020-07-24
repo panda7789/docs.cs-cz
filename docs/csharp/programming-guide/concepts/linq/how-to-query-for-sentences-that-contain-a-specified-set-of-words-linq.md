@@ -1,16 +1,17 @@
 ---
-title: Jak dotaz na věty, které obsahují zadanou sadu slov (LINQ) (C#)
+title: Dotazování na věty, které obsahují zadanou sadu slov (LINQ) (C#)
+description: Naučte se používat LINQ v jazyce C# k nalezení vět v textovém souboru, které obsahují shody pro každou sadu slov, která by mohla být naplněna za běhu.
 ms.date: 07/20/2015
 ms.assetid: 0724b429-4b87-4d26-a7b1-409358f3fc20
-ms.openlocfilehash: df279f57d9965d796397cbcf7a0f3ba05bf9e5c1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c334c7948f19fb857709ff04a83e1dae56fc69da
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79168853"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87104520"
 ---
-# <a name="how-to-query-for-sentences-that-contain-a-specified-set-of-words-linq-c"></a>Jak dotaz na věty, které obsahují zadanou sadu slov (LINQ) (C#)
-Tento příklad ukazuje, jak najít věty v textovém souboru, které obsahují shody pro každou zadanou sadu slov. Přestože pole hledaných termínů je pevně zakódován v tomto příkladu, může být také naplněndynamicky za běhu. V tomto příkladu dotaz vrátí věty, které obsahují slova "Historicky", "data" a "integrované".  
+# <a name="how-to-query-for-sentences-that-contain-a-specified-set-of-words-linq-c"></a>Dotazování na věty, které obsahují zadanou sadu slov (LINQ) (C#)
+Tento příklad ukazuje, jak najít věty v textovém souboru, které obsahují shody pro každou zadanou sadu slov. I když je pole hledaných výrazů pevně zakódované v tomto příkladu, mohlo by být také dynamicky vyplněno za běhu. V tomto příkladu dotaz vrátí věty, které obsahují slova "historicky", "" data "a" integrovaná ".  
   
 ## <a name="example"></a>Příklad  
   
@@ -62,12 +63,12 @@ Historically, the world of data and the world of objects have not been well inte
 */  
 ```  
   
- Dotaz funguje tak, že nejprve rozdělí text na věty a potom rozdělí věty do pole řetězců, které drží každé slovo. Pro každé z těchto <xref:System.Linq.Enumerable.Distinct%2A> polí metoda odebere všechna duplicitní slova <xref:System.Linq.Enumerable.Intersect%2A> a pak dotaz `wordsToMatch` provede operaci na pole slov a pole. Pokud je počet průsečíku stejný jako `wordsToMatch` počet pole, všechna slova byla nalezena ve slovech a původní věta je vrácena.  
+ Dotaz funguje tak, že nejprve rozdělí text na věty a pak rozdělíte věty na pole řetězců, které obsahují jednotlivá slova. Pro každé z těchto polí <xref:System.Linq.Enumerable.Distinct%2A> Metoda odstraní všechna duplicitní slova a pak dotaz provede <xref:System.Linq.Enumerable.Intersect%2A> operaci na poli slov a v `wordsToMatch` poli. Pokud je počet průniku stejný jako počet `wordsToMatch` polí, všechna slova byla nalezena v slovech a původní věta je vrácena.  
   
- Ve volání <xref:System.String.Split%2A>na , interpunkční znaménka se používají jako oddělovače k jejich odstranění z řetězce. Pokud jste tak neučinili, například můžete mít řetězec "Historicky", který `wordsToMatch` by se neshoduje "Historicky" v poli. V závislosti na typech interpunkce, které se nacházejí ve zdrojovém textu, bude pravděpodobně pravděpodobně třeba použít další oddělovače.  
+ V volání do <xref:System.String.Split%2A> jsou interpunkční znaménka použita jako oddělovače, aby je bylo možné odebrat z řetězce. Pokud jste to nevytvořili, například byste mohli mít řetězec "historicky", který se neshoduje s "historicky" v poli `wordsToMatch` . Je možné, že budete muset použít další oddělovače v závislosti na typech interpunkčních znamének, které se nachází ve zdrojovém textu.  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
-Vytvořte projekt aplikace konzoly `using` Jazyka C# se direktivami pro obory názvů System.Linq a System.IO.
+Vytvořte projekt konzolové aplikace v jazyce C# se `using` direktivami pro obory názvů System. Linq a System.IO.
 
 ## <a name="see-also"></a>Viz také
 

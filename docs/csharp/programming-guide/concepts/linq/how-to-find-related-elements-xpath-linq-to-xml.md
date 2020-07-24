@@ -1,27 +1,28 @@
 ---
-title: Jak najít související prvky (XPath-LINQ do XML) (C#)
+title: Jak najít související prvky (XPath-LINQ to XML) (C#)
+description: Tento příklad v jazyce C# porovnává XPath s LINQ to XML pro získání prvku, který se vybírá na atribut, na který odkazuje hodnota jiného prvku.
 ms.date: 07/20/2015
 ms.assetid: 41b386ee-562d-4841-bd6b-e44a7eb69f26
-ms.openlocfilehash: f74c338019c0451ab5e3ac0d8da10392ae5601ed
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4423e7d719d39e71bcbcc9e88d052c6aff4ffb05
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79169230"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87105258"
 ---
-# <a name="how-to-find-related-elements-xpath-linq-to-xml-c"></a>Jak najít související prvky (XPath-LINQ do XML) (C#)
-Toto téma ukazuje, jak získat prvek výběru na atribut, který je označován hodnotou jiného prvku.  
+# <a name="how-to-find-related-elements-xpath-linq-to-xml-c"></a>Jak najít související prvky (XPath-LINQ to XML) (C#)
+Toto téma ukazuje, jak získat prvek pro výběr atributu, na který odkazuje hodnota jiného prvku.  
   
  Výraz XPath je:  
   
  `.//Customer[@CustomerID=/Root/Orders/Order[12]/CustomerID]`  
   
 ## <a name="example"></a>Příklad  
- Tento příklad vyhledá dvanáctý `Order` prvek a potom najde zákazníka pro tuto objednávku.  
+ Tento příklad vyhledá 12 `Order` . element pak vyhledá zákazníka pro tuto objednávku.  
   
- Všimněte si, že indexování do seznamu v rozhraní .NET je "nula" na základě. Indexování do kolekce uzlů v predikátu XPath je založen na jednom. Tento příklad odráží tento rozdíl.  
+ Všimněte si, že indexování do seznamu v rozhraní .NET je založené na nule. Indexování do kolekce uzlů v predikátu XPath je založené na "One". Tento příklad odráží tento rozdíl.  
   
- Tento příklad používá následující dokument XML: [Ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML).](./sample-xml-file-customers-and-orders-linq-to-xml-2.md)  
+ Tento příklad používá následující dokument XML: [ukázkový soubor XML: zákazníci a objednávky (LINQ to XML)](./sample-xml-file-customers-and-orders-linq-to-xml-2.md).  
   
 ```csharp  
 XDocument co = XDocument.Load("CustomersOrders.xml");  
@@ -64,7 +65,7 @@ else
 Console.WriteLine(customer1);  
 ```  
   
- Tento příklad vytváří následující výstup:  
+ Tento příklad vytvoří následující výstup:  
   
 ```output  
 Results are identical  

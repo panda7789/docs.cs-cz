@@ -1,28 +1,29 @@
 ---
 title: Jak naplnit kolekce objektů z více zdrojů (LINQ) (C#)
+description: Naučte se, jak sloučit data z různých zdrojů do sekvence nových typů pomocí LINQ v jazyce C#. Tyto příklady používají anonymní i pojmenované typy.
 ms.date: 06/12/2018
 ms.assetid: 8ad7d480-b46c-4ccc-8c57-76f2d04ccc6d
-ms.openlocfilehash: 3d841e5ca25afde94674af0fedc9a824c382be5b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9dc9f98ae09e0fe3437b5d2ccab32b3dbcd93714
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75345759"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87104721"
 ---
 # <a name="how-to-populate-object-collections-from-multiple-sources-linq-c"></a>Jak naplnit kolekce objektů z více zdrojů (LINQ) (C#)
 
-Tento příklad ukazuje, jak sloučit data z různých zdrojů do posloupnosti nových typů.
+Tento příklad ukazuje, jak sloučit data z různých zdrojů do sekvence nových typů.
 
 > [!NOTE]
-> Nepokoušejte se připojit data v paměti nebo data v systému souborů s daty, která je stále v databázi. Taková spojení mezi doménami mohou přinést nedefinované výsledky z důvodu různých způsobů, jak mohou být operace spojení definovány pro databázové dotazy a jiné typy zdrojů. Navíc existuje riziko, že taková operace může způsobit výjimku z důvodu nedostatku paměti, pokud je dostatečně velké množství dat v databázi. Chcete-li připojit data z databáze k `ToList` datům v paměti, nejprve volat nebo `ToArray` v databázovém dotazu a potom provést spojení na vrácené kolekci.
+> Nepokoušejte se připojit data v paměti nebo data v systému souborů s daty, která jsou stále v databázi. Takové spojení mezi doménami může vracet nedefinované výsledky z důvodu různých způsobů, kterými je možné definovat operace join pro databázové dotazy a jiné typy zdrojů. Kromě toho existuje riziko, že taková operace by mohla způsobit výjimku z důvodu nedostatku paměti, pokud je objem dat v databázi dostatečně velký. Chcete-li spojit data z databáze s daty v paměti, nejprve zavolejte `ToList` nebo `ToArray` v databázovém dotazu a potom proveďte spojení se vrácenou kolekcí.
 
 ## <a name="to-create-the-data-file"></a>Vytvoření datového souboru
 
-Zkopírujte soubory names.csv a scores.csv do složky projektu, jak je popsáno v části [Jak se připojit k obsahu z odlišných souborů (LINQ) (C#).](./how-to-join-content-from-dissimilar-files-linq.md)
+Zkopírujte soubory names.csv a scores.csv do složky projektu, jak je popsáno v tématu [Postup připojení obsahu z nepodobných souborů (LINQ) (C#)](./how-to-join-content-from-dissimilar-files-linq.md).
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje, jak použít `Student` pojmenovaný typ k ukládání sloučených dat ze dvou kolekcí řetězců v paměti, které simulují data tabulky ve formátu CSV. První kolekce řetězců představuje jména studentů a ID a druhá kolekce představuje ID studenta (v prvním sloupci) a čtyři výsledky zkoušky. ID se používá jako cizí klíč.
+Následující příklad ukazuje, jak použít pojmenovaný typ `Student` k ukládání sloučených dat ze dvou kolekcí v paměti řetězců, které simulují data tabulky ve formátu CSV. První kolekce řetězců představuje jména a ID studentů a druhá kolekce představuje ID studenta (v prvním sloupci) a čtyři skóre zkoušek. ID se používá jako cizí klíč.
 
 ```csharp
 using System;
@@ -107,9 +108,9 @@ class PopulateCollection
  */
 ```
 
-V [select](../../../language-reference/keywords/select-clause.md) klauzule inicializační objekt se používá `Student` k vytvoření instance každý nový objekt pomocí dat ze dvou zdrojů.
+V klauzuli [Select](../../../language-reference/keywords/select-clause.md) se inicializátor objektu používá k vytvoření instance každého nového `Student` objektu pomocí dat z těchto dvou zdrojů.
 
-Pokud není třeba ukládat výsledky dotazu, anonymní typy mohou být pohodlnější než pojmenované typy. Pojmenované typy jsou vyžadovány, pokud předáte výsledky dotazu mimo metodu, ve které je dotaz spuštěn. Následující příklad provede stejnou úlohu jako v předchozím příkladu, ale místo pojmenovaných typů používá anonymní typy:
+Pokud nepotřebujete ukládat výsledky dotazu, anonymní typy můžou být vhodnější než pojmenované typy. Pojmenované typy jsou požadovány, Pokud předáte výsledky dotazu mimo metodu, ve které je dotaz proveden. Následující příklad provádí stejný úkol jako předchozí příklad, ale používá anonymní typy namísto pojmenovaných typů:
 
 ```csharp
 // Merge the data sources by using an anonymous type.

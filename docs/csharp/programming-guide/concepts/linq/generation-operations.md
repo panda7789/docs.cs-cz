@@ -1,29 +1,30 @@
 ---
 title: Operace generování (C#)
+description: Generace vytvoří novou sekvenci hodnot. Přečtěte si o standardních metodách operátoru dotazu v LINQ v jazyce C#, které provádějí generování.
 ms.date: 07/20/2015
 ms.assetid: 1c421b3a-5954-448c-bcac-a27798d1858f
-ms.openlocfilehash: 9fe04c34752825d45ca5bcf33051a24b72243b51
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 90b7913d60ced82c854f514d3644425f6ddd2571
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "69594234"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87103643"
 ---
 # <a name="generation-operations-c"></a>Operace generování (C#)
-Generování odkazuje na vytvoření nové posloupnosti hodnot.  
+Generace odkazuje na vytvoření nové sekvence hodnot.  
   
- Standardní metody operátoru dotazu, které provádějí generování jsou uvedeny v následující části.  
+ Standardní metody operátoru dotazu, které provádějí generování, jsou uvedeny v následující části.  
   
 ## <a name="methods"></a>Metody  
   
-|Název metody|Popis|Syntaxe výrazu dotazu jazyka C#|Další informace|  
+|Název metody|Popis|Syntaxe výrazu dotazu v jazyce C#|Další informace|  
 |-----------------|-----------------|---------------------------------|----------------------|  
-|Defaultifempty|Nahradí prázdnou kolekci výchozí kolekcí singleton s hodnotou.|Neužívá se.|<xref:System.Linq.Enumerable.DefaultIfEmpty%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.DefaultIfEmpty%2A?displayProperty=nameWithType>|  
-|Prázdné|Vrátí prázdnou kolekci.|Neužívá se.|<xref:System.Linq.Enumerable.Empty%2A?displayProperty=nameWithType>|  
-|Rozsah|Generuje kolekci, která obsahuje posloupnost čísel.|Neužívá se.|<xref:System.Linq.Enumerable.Range%2A?displayProperty=nameWithType>|  
-|Repeat|Generuje kolekci, která obsahuje jednu opakovanou hodnotu.|Neužívá se.|<xref:System.Linq.Enumerable.Repeat%2A?displayProperty=nameWithType>|  
+|DefaultIfEmpty|Nahradí prázdnou kolekci výchozí oceněnou kolekcí typu singleton.|Neužívá se.|<xref:System.Linq.Enumerable.DefaultIfEmpty%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.DefaultIfEmpty%2A?displayProperty=nameWithType>|  
+|Obsahovat|Vrátí prázdnou kolekci.|Neužívá se.|<xref:System.Linq.Enumerable.Empty%2A?displayProperty=nameWithType>|  
+|Rozsah|Vygeneruje kolekci, která obsahuje posloupnost čísel.|Neužívá se.|<xref:System.Linq.Enumerable.Range%2A?displayProperty=nameWithType>|  
+|Repeat|Vygeneruje kolekci, která obsahuje jednu opakovanou hodnotu.|Neužívá se.|<xref:System.Linq.Enumerable.Repeat%2A?displayProperty=nameWithType>|  
   
 ## <a name="see-also"></a>Viz také
 
 - <xref:System.Linq>
-- [Standardní operátory dotazů – přehled (C#)](./standard-query-operators-overview.md)
+- [Přehled standardních operátorů dotazů (C#)](./standard-query-operators-overview.md)

@@ -1,19 +1,20 @@
 ---
-title: Jak naplnit strom XML ze systému souborů (C#)
+title: Postup naplnění stromu XML ze systému souborů (C#)
+description: Naučte se naplnit strom XML ze systému souborů v jazyce C#. Tento příklad naplní XML a pak dotazuje strom, aby vypočítal celkovou velikost všech souborů.
 ms.date: 07/20/2015
 ms.assetid: 2aa2ccac-4a22-47ae-9107-3bb8df232576
-ms.openlocfilehash: beb44be1a787fa09b091aa48022dbb5b10c4632b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 676261656be7d306294c9912b75edcb51a31cccc
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75345785"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87104756"
 ---
-# <a name="how-to-populate-an-xml-tree-from-the-file-system-c"></a>Jak naplnit strom XML ze systému souborů (C#)
-Běžné a užitečné aplikace stromů XML je jako hierarchické úložiště dat název/hodnota. Strom XML můžete naplnit hierarchickými daty a potom jej zadat, transformovat a v případě potřeby jej serializovat. V tomto scénáři použití mnoho sémantiku specifické xml, jako jsou například obory názvů a prázdné místo chování, nejsou důležité. Místo toho používáte strom XML jako malou hierarchickou databázi jednoho uživatele v paměti.  
+# <a name="how-to-populate-an-xml-tree-from-the-file-system-c"></a>Postup naplnění stromu XML ze systému souborů (C#)
+Společnou a užitečnou aplikací stromů XML je úložiště dat hierarchického názvu nebo hodnoty. Můžete naplnit strom XML hierarchickými daty a pak je dotazovat, transformovat a v případě potřeby ho serializovat. V tomto scénáři použití nejsou důležité mnohé z sémantiky specifické pro XML, jako jsou například obory názvů a prázdné znaky. Místo toho můžete strom XML používat jako malou databázi, hierarchickou databázi s jedním uživatelem.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad naplní strom XML z místního systému souborů pomocí rekurze. Potom dotazuje stromu, výpočet součtu velikostí všech souborů ve stromu.  
+ Následující příklad naplní strom XML z místního systému souborů pomocí rekurze. Pak se dotazuje na strom a vypočítá celkový počet velikostí všech souborů ve stromu.  
   
 ```csharp  
 class Program  
@@ -46,7 +47,7 @@ class Program
 }  
 ```  
   
- Tento příklad vytváří výstup podobný následujícímu:  
+ Tento příklad vytvoří výstup podobný následujícímu:  
   
 ```xml  
 <Dir Name="Tmp">  

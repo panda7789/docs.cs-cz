@@ -1,20 +1,21 @@
 ---
-title: Jak vypočítat hodnoty sloupců v textovém souboru CSV (LINQ) (C#)
+title: Jak vypočítat hodnoty sloupce v textovém souboru CSV (LINQ) (C#)
+description: Tento příklad ukazuje, jak provádět agregované výpočty pomocí LINQ v jazyce C#, jako je součet, průměr, minimum a maximum, ve sloupcích souboru. csv.
 ms.date: 07/20/2015
 ms.assetid: 4747f37a-a198-4df2-8efe-5b0731e0ea27
-ms.openlocfilehash: 458950d58b15dcd572329228d76d85881043e07a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9137779f9767c8a9531489f7894ba3e69eb1faee
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79169347"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87105318"
 ---
-# <a name="how-to-compute-column-values-in-a-csv-text-file-linq-c"></a>Jak vypočítat hodnoty sloupců v textovém souboru CSV (LINQ) (C#)
-Tento příklad ukazuje, jak provádět agregační výpočty, jako je Sum, Průměr, Min a Max ve sloupcích souboru .csv. Zde uvedené příklady zásad lze použít na jiné typy strukturovaného textu.  
+# <a name="how-to-compute-column-values-in-a-csv-text-file-linq-c"></a>Jak vypočítat hodnoty sloupce v textovém souboru CSV (LINQ) (C#)
+Tento příklad ukazuje, jak provádět agregované výpočty, jako je součet, průměr, minimum a maximum ve sloupcích souboru. csv. Příklady zásad, které jsou zde uvedeny, lze použít na jiné typy strukturovaného textu.  
   
 ## <a name="to-create-the-source-file"></a>Vytvoření zdrojového souboru  
   
-1. Zkopírujte následující řádky do souboru s názvem scores.csv a uložte jej do složky projektu. Předpokládejme, že první sloupec představuje ID studenta a následující sloupce představují skóre ze čtyř zkoušek.  
+1. Zkopírujte následující řádky do souboru s názvem scores.csv a uložte jej do složky projektu. Předpokládejme, že první sloupec představuje ID studenta, přičemž následující sloupce představují skóre ze čtyř zkoušek.  
   
     ```csv
     111, 97, 92, 81, 60  
@@ -156,12 +157,12 @@ class SumColumns
  */  
 ```  
   
- Dotaz funguje pomocí <xref:System.String.Split%2A> metody převést každý řádek textu do pole. Každý prvek pole představuje sloupec. Nakonec je text v každém sloupci převeden na jeho číselnou reprezentaci. Pokud je soubor soubor oddělený tabulátory, `Split` stačí `\t`aktualizovat argument v metodě na .  
+ Dotaz funguje pomocí <xref:System.String.Split%2A> metody pro převod každého řádku textu na pole. Každý prvek pole představuje sloupec. Nakonec se text v každém sloupci převede na jeho číselné vyjádření. Pokud je soubor soubor oddělený tabulátory, stačí aktualizovat argument v `Split` metodě na `\t` .  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Vytvořte projekt aplikace konzoly `using` Jazyka C# se direktivami pro obory názvů System.Linq a System.IO.  
+ Vytvořte projekt konzolové aplikace v jazyce C# se `using` direktivami pro obory názvů System. Linq a System.IO.  
   
 ## <a name="see-also"></a>Viz také
 
 - [LINQ a řetězce (C#)](./linq-and-strings.md)
-- [Linq a souborové adresáře (C#)](./linq-and-file-directories.md)
+- [LINQ a souborové adresáře (C#)](./linq-and-file-directories.md)

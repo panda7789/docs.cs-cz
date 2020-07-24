@@ -1,13 +1,14 @@
 ---
 title: Kovariance a kontravariance (C#)
+description: Přečtěte si o kovarianci a kontravariance a o tom, jak ovlivňují kompatibilitu přiřazení. Podívejte se na příklad kódu, který ukazuje rozdíly mezi nimi.
 ms.date: 07/20/2015
 ms.assetid: 066d9a3c-aab7-4ea6-826d-0b1a85399c74
-ms.openlocfilehash: 23633675059b9c295dda7ddf3d78754c0223f5f8
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 65c75029c27b6c9a5ddc96f01622b520e8698f55
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241367"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87105698"
 ---
 # <a name="covariance-and-contravariance-c"></a>Kovariance a kontravariance (C#)
 V jazyce C# umožňuje kovariance a kontravariance implicitní převod odkazů pro typy polí, typy delegátů a argumenty obecného typu. Kovariance zachovává kompatibilitu přiřazení a kontravariance ji obrátí.  

@@ -1,78 +1,79 @@
 ---
-title: Pojmy a terminologie (funkční transformace) (C#)
+title: Koncepty a terminologie (transformace funkcí) (C#)
+description: Funkce funkčního programování usnadňují transformaci XML. Přečtěte si o konceptech a terminologii čistě funkčních transformací v jazyce C#.
 ms.date: 07/20/2015
 ms.assetid: 03defb3a-7e17-4ab1-8efa-4dd66621e860
-ms.openlocfilehash: 3e2ecc4c2f70700ae92ee36b6f122059b922332e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ee972b376f0d0898b7681049b9641b43780ed353
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "70040631"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87103982"
 ---
-# <a name="concepts-and-terminology-functional-transformation-c"></a>Pojmy a terminologie (funkční transformace) (C#)
+# <a name="concepts-and-terminology-functional-transformation-c"></a>Koncepty a terminologie (transformace funkcí) (C#)
 
-Toto téma představuje pojmy a terminologii čistě funkčních transformací. Přístup k transformaci transformace dat dává kód, který je často rychlejší programovat, výraznější a snadněji ladit a udržovat než tradiční, imperativní programování.
+V tomto tématu se seznámíte s koncepty a terminologií čistě funkčních transformací. Přístup k funkcím transformace pro transformaci dat poskytuje kód, který je často rychlejší pro program, větší vyjádření a jednodušší ladění a udržování než tradiční, imperativní programování.
 
-Všimněte si, že témata v této části nejsou určeny k plně vysvětlit funkční programování. Místo toho tato témata identifikují některé funkce funkčního programování, které usnadňují transformaci XML z jednoho obrazce do druhého.
+Všimněte si, že témata v této části nejsou určena k úplnému vysvětlení funkčního programování. Místo toho tato témata identifikují některé funkce funkčního programování, které usnadňují transformaci XML z jednoho tvaru na druhý.
 
-## <a name="what-is-pure-functional-transformation"></a>Co je čistá funkční transformace?
+## <a name="what-is-pure-functional-transformation"></a>Co je čistě funkční transformace?
 
-V *čistě funkční transformaci*definuje sada funkcí nazývaná čisté *funkce*způsob transformace sady strukturovaných dat z původní podoby do jiné podoby. Slovo "čistý" označuje, že funkce jsou *kompozitelné*, což vyžaduje, aby byly:
+V *čistě funkční transformaci*sada funkcí s názvem *Pure Functions*definují, jak transformovat sadu strukturovaných dat z původního formuláře do jiného formuláře. Slovo "Pure" označuje, že funkce jsou *sestavitelované*, což vyžaduje:
 
-- *Samostatné*, takže mohou být volně uspořádány a uspořádány bez zapletení nebo vzájemné závislosti se zbytkem programu. Čisté transformace nemají žádné znalosti nebo vliv na jejich životní prostředí. To znamená, že funkce použité v transformaci nemají žádné *vedlejší účinky*.
+- *Samostatně obsažený*, aby bylo možné je volně seřadit a uspořádat bez entanglement nebo vzájemné závislosti se zbytkem programu. Čisté transformace nemají na svém prostředí žádné znalosti ani neplatí. To znamená, že funkce použité v transformaci nemají žádné *vedlejší účinky*.
 
-- *Bezstavový*, tak, aby provádění stejné funkce nebo konkrétní sadu funkcí na stejném vstupu bude vždy mít za následek stejný výstup. Čisté transformace nemají paměť na jejich předchozí použití.
+- *Bez stavu*, takže spuštění stejné funkce nebo konkrétní sady funkcí na stejném vstupu bude mít vždycky stejný výstup. Čisté transformace nemají žádnou paměť jejich předchozího použití.
 
 > [!IMPORTANT]
-> Ve zbytku tohoto kurzu termín "čistá funkce" se používá v obecném smyslu k označení programovací přístup a není konkrétní jazyk funkce.
+> Ve zbývající části tohoto kurzu se výraz "čistá funkce" používá v obecném smyslu k označení přístup k programování a nikoli konkrétní funkce jazyka.
 >
-> Všimněte si, že čisté funkce musí být implementovány jako metody v c#.
+> Všimněte si, že čisté funkce musí být implementovány jako metody v jazyce C#.
 >
-> Také byste neměli zaměňovat čisté funkce s čistě virtuální metody v jazyce C++. Ten označuje, že obsahující třída je abstraktní a že je zadáno žádné tělo metody.
+> Nepleťte si také čistě virtuální funkce s čistě virtuálními metodami v jazyce C++. Druhá označuje, že obsahující třídu je abstraktní a není dodána žádná část metody.
 
 ### <a name="functional-programming"></a>Funkční programování
 
 *Funkční programování* je programovací přístup, který přímo podporuje čistě funkční transformaci.
 
-V minulosti byly univerzální funkční programovací jazyky, jako jsou ML, Scheme, Haskell a F#, primárně zajímavé pro akademickou komunitu. Ačkoli to bylo vždy možné psát čistě funkční transformace v C#, obtížnost přitom není z něj atraktivní volbou pro většinu programátorů. V posledních verzích jazyka C# však nové jazykové konstrukce, jako jsou výrazy lambda a odvození typu, usnadňují a ines udělují funkcionaličtější programování.
+Historické programovací jazyky pro obecné účely, jako je ML, schéma, Haskell a F #, byly primárně důležité pro akademickou komunitu. I když je v jazyce C# vždycky možné zapisovat čistě funkční transformace, obtížnost by se tak neudělala zajímavou možností pro většinu programátorů. V posledních verzích C#, ale nové jazykové konstrukce, jako jsou výrazy lambda a odvození typu, umožňují, aby funkční programování bylo mnohem jednodušší a produktivnější.
 
-Další informace o funkčním programování naleznete v [tématu Funkční programování vs. imperativní programování (C#)](./functional-programming-vs-imperative-programming.md).
+Další informace o funkčním programování naleznete v tématu [funkční programování vs. imperativní programování (C#)](./functional-programming-vs-imperative-programming.md).
 
 #### <a name="domain-specific-fp-languages"></a>Jazyky FP specifické pro doménu
 
-Ačkoli obecné funkční programovací jazyky nebyly široce přijaty, specifické funkční programovací jazyky specifické pro danou doménu měly větší úspěch. Například kaskádové šablony stylů (CSS) se používají k určení vzhledu a chování mnoha webových stránek a šablony stylů Xml (Extensible Stylesheet Language Transformations) (XSLT) se používají ve velké míře při manipulaci s daty XML. Další informace o XSLT naleznete v tématu [Transformace XSLT](../../../../standard/data/xml/xslt-transformations.md).
+I když se všeobecně nepřijaly obecné funkční programovací jazyky, měly by lepší úspěšnost konkrétních programovacích jazyků specifických pro doménu. Například šablony stylů CSS (CSS) se používají k určení vzhledu a chování mnoha webových stránek a šablony stylů XSLT (Extensible Stylesheet Language Transformations) se v manipulaci s daty XML používají rozsáhle. Další informace o XSLT naleznete v tématu [transformace XSLT](../../../../standard/data/xml/xslt-transformations.md).
 
 ## <a name="terminology"></a>Terminologie
 
-Následující tabulka definuje některé termíny související s funkční transformace.
+Následující tabulka definuje některé z podmínek souvisejících s funkcemi transformace.
 
-funkce vyššího řádu (první třída) \
-Funkce, která může být považována za programový objekt. Například funkce vyššího řádu může být předána nebo vrácena z jiných funkcí. V jazyce C#c jsou delegáti a výrazy lambda funkce jazyka, které podporují funkce vyššího řádu. Chcete-li napsat funkci vyššího řádu, deklarujete jeden nebo více argumentů pro převzetí delegátů a při volání často používáte výrazy lambda. Mnoho standardních operátorů dotazů jsou funkce vyššího řádu.
+funkce vyššího řádu (první třídy) \
+Funkce, která může být považována za programový objekt. Například funkce vyššího pořadí může být předána nebo vrácena z jiných funkcí. V jazyce C # c jsou delegáti a výrazy lambda podporovány jazykové funkce, které podporují funkce vyššího řádu. Chcete-li napsat funkci s vyšším pořadím, deklarujete jeden nebo více argumentů pro převzetí delegátů a často používáte lambda výrazy při volání. Mnoho standardních operátorů dotazu je funkce vyššího řádu.
 
-Další informace naleznete [v tématu Přehled operátorů standardních dotazů (C#)](./standard-query-operators-overview.md).
+Další informace najdete v tématu [Přehled standardních operátorů dotazu (C#)](./standard-query-operators-overview.md).
 
-lambda výraz \
-V podstatě inline anonymní funkce, která lze použít všude tam, kde je očekáván typ delegáta. Toto je zjednodušená definice lambda výrazy, ale je vhodné pro účely tohoto kurzu.
+výraz lambda \
+V podstatě vložená anonymní funkce, kterou lze použít všude, kde se očekává typ delegáta. Toto je zjednodušená definice výrazů lambda, ale je vhodná pro účely tohoto kurzu.
 
-Další informace naleznete v tématu [Lambda Expressions](../../statements-expressions-operators/lambda-expressions.md).
+Další informace o naleznete v tématu [lambda Expressions](../../statements-expressions-operators/lambda-expressions.md).
 
-kolekce \
-Strukturovaná sada dat, obvykle jednotného typu. Chcete-li být kompatibilní s LINQ, <xref:System.Collections.IEnumerable> kolekce <xref:System.Linq.IQueryable> musí implementovat rozhraní nebo <xref:System.Collections.Generic.IEnumerator%601> rozhraní <xref:System.Linq.IQueryable%601>(nebo jeden z jejich obecných protějšků, nebo ).
+kolekce
+Strukturovaná sada dat, obvykle s jednotným typem. Aby bylo možné kompatibilitu s LINQ, kolekce musí implementovat <xref:System.Collections.IEnumerable> rozhraní nebo <xref:System.Linq.IQueryable> rozhraní (nebo jeden z jeho obecných protějšků <xref:System.Collections.Generic.IEnumerator%601> nebo <xref:System.Linq.IQueryable%601> ).
 
-řazené kolekce členů (anonymní typy) \
-Matematický koncept, n-tice je konečná posloupnost objektů, každý z určitého typu. Řazená kolekce členů se také označuje jako seřazený seznam. Anonymní typy jsou implementace jazyka tohoto konceptu, které umožňují deklarovat nepojmenovaný typ třídy a současně vytvořit instanci objektu tohoto typu.
+řazená kolekce členů (anonymní typy) \
+Matematický koncept, řazená kolekce členů je konečná sekvence objektů, z nichž každý konkrétní typ. Řazená kolekce členů je také známá jako uspořádaný seznam. Anonymní typy jsou implementací jazyka tohoto konceptu, která umožňuje deklaraci nepojmenovaného typu třídy a vytváření instancí objektu daného typu ve stejnou dobu.
 
-Další informace naleznete [v tématu Anonymní typy](../../classes-and-structs/anonymous-types.md).
+Další informace najdete v tématu [anonymní typy](../../classes-and-structs/anonymous-types.md).
 
-odvození typu (implicitní psaní) \
-Schopnost kompilátoru určit typ proměnné v nepřítomnosti deklarace explicitního typu.
+odvození typu (implicitní zadání) \
+Schopnost kompilátoru určit typ proměnné v absence explicitní deklarace typu.
 
-Další informace naleznete [v tématu Implicitně zadané místní proměnné](../../classes-and-structs/implicitly-typed-local-variables.md).
+Další informace naleznete v tématu [implicitně typované lokální proměnné](../../classes-and-structs/implicitly-typed-local-variables.md).
 
-odložené provedení a opožděné vyhodnocení \
-Zpoždění vyhodnocení výrazu, dokud jeho vyřešená hodnota je skutečně požadováno. Odložené spuštění je podporováno v kolekcích.
+odložené provádění a opožděné vyhodnocení \
+Zpoždění vyhodnocení výrazu, dokud není skutečně vyžadováno jeho vyřešená hodnota. Odložené provádění je v kolekcích podporováno.
 
-Další informace naleznete [v tématu Úvod do LINQ dotazy (C#)](./introduction-to-linq-queries.md) a [odložené spuštění a opožděné vyhodnocení v LINQ na XML (C#)](./deferred-execution-and-lazy-evaluation-in-linq-to-xml.md).
+Další informace naleznete v tématu [Úvod do dotazů LINQ (C#)](./introduction-to-linq-queries.md) a [odložené provádění a opožděné vyhodnocení v LINQ to XML (c#)](./deferred-execution-and-lazy-evaluation-in-linq-to-xml.md).
 
 Tyto jazykové funkce budou použity v ukázkách kódu v této části.
 

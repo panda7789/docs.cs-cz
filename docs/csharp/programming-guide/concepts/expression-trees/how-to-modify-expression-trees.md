@@ -1,22 +1,23 @@
 ---
-title: Jak upravit stromy výrazů (C#)
+title: Postup úpravy stromů výrazů (C#)
+description: Naučte se, jak upravit strom výrazu vytvořením kopie existujícího stromu výrazů a provedením požadovaných změn.
 ms.date: 07/20/2015
 ms.assetid: 9b0cd8c2-457e-4833-9e36-31e79545f442
-ms.openlocfilehash: e921c594497d02f5eb16cc60294e947e83636d7a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 45aea18e253811d4e5c60f23f7f8496d4358f64c
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "73969894"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87105604"
 ---
-# <a name="how-to-modify-expression-trees-c"></a>Jak upravit stromy výrazů (C#)
-Toto téma ukazuje, jak upravit strom výrazů. Stromy výrazů jsou neměnné, což znamená, že je nelze přímo změnit. Chcete-li změnit strom výrazů, musíte vytvořit kopii existujícího stromu výrazů a při vytváření kopie proveďte požadované změny. Třídu <xref:System.Linq.Expressions.ExpressionVisitor> můžete použít k procházení existujícího stromu výrazů a ke kopírování každého uzlu, který navštíví.  
+# <a name="how-to-modify-expression-trees-c"></a>Postup úpravy stromů výrazů (C#)
+V tomto tématu se dozvíte, jak upravit strom výrazu. Stromy výrazů jsou neměnné, což znamená, že je nelze upravovat přímo. Chcete-li změnit strom výrazu, je nutné vytvořit kopii existujícího stromu výrazů a při vytváření kopie provést požadované změny. Třídu můžete použít <xref:System.Linq.Expressions.ExpressionVisitor> k procházení existujícího stromu výrazů a ke zkopírování jednotlivých uzlů, které navštíví.  
   
-### <a name="to-modify-an-expression-tree"></a>Úprava stromu výrazů  
+### <a name="to-modify-an-expression-tree"></a>Úprava stromu výrazu  
   
-1. Vytvořte nový projekt **konzolové aplikace.**  
+1. Vytvořte nový projekt **konzolové aplikace** .  
   
-2. Přidejte `using` direktivu `System.Linq.Expressions` do souboru pro obor názvů.  
+2. Přidejte `using` do souboru pro obor názvů direktivu `System.Linq.Expressions` .  
   
 3. Přidejte `AndAlsoModifier` třídu do projektu.  
   
@@ -44,11 +45,11 @@ Toto téma ukazuje, jak upravit strom výrazů. Stromy výrazů jsou neměnné, 
     }  
     ```  
   
-     Tato třída dědí třídu <xref:System.Linq.Expressions.ExpressionVisitor> a je specializovaná `AND` na úpravu výrazů, které představují podmíněné operace. Změní tyto operace z `AND` podmíněné `OR`na podmíněné . Chcete-li to provést, <xref:System.Linq.Expressions.ExpressionVisitor.VisitBinary%2A> třída přepíše metodu `AND` základního typu, protože podmíněné výrazy jsou reprezentovány jako binární výrazy. V `VisitBinary` metodě, pokud výraz, který je `AND` předán představuje podmíněné operace, kód vytvoří `OR` nový výraz, `AND` který obsahuje podmíněný operátor namísto podmíněné operátor. Pokud výraz, který `VisitBinary` je předán nepředstavuje podmíněné `AND` operace, metoda odkládá na implementaci základní třídy. Metody základní třídy vytvářejí uzly, které jsou jako stromy výrazů, které jsou předány, ale uzly mají své dílčí stromy nahrazeny stromy výrazů, které jsou vytvářeny rekurzivně návštěvníkem.  
+     Tato třída dědí <xref:System.Linq.Expressions.ExpressionVisitor> třídu a je specializovaná na úpravu výrazů, které reprezentují podmíněné `AND` operace. Tyto operace mění z podmíněného `AND` na podmíněný `OR` . K tomu třída Přepisuje <xref:System.Linq.Expressions.ExpressionVisitor.VisitBinary%2A> metodu základního typu, protože podmíněné `AND` výrazy jsou reprezentovány jako binární výrazy. V `VisitBinary` metodě, pokud je výraz, který je předán, představuje podmíněnou `AND` operaci, kód vytvoří nový výraz, který obsahuje podmíněný `OR` operátor místo podmíněného `AND` operátoru. Pokud výraz, který je předán do `VisitBinary` , nepředstavuje podmíněnou `AND` operaci, metoda se odloží k implementaci základní třídy. Metody základní třídy konstrukce uzly, které jsou jako stromy výrazů, které jsou předány, ale uzly mají své dílčí stromy nahrazené stromy výrazů, které jsou vytvářeny rekurzivně návštěvníkem.  
   
-4. Přidejte `using` direktivu `System.Linq.Expressions` do souboru pro obor názvů.  
+4. Přidejte `using` do souboru pro obor názvů direktivu `System.Linq.Expressions` .  
   
-5. Přidejte kód `Main` do metody v souboru Program.cs vytvořit strom výrazů a předat jej metodě, která jej upraví.  
+5. Přidejte kód do `Main` metody v souboru program.cs pro vytvoření stromu výrazu a předejte ho metodě, která ho upraví.  
   
     ```csharp  
     Expression<Func<string, bool>> expr = name => name.Length > 10 && name.StartsWith("G");  
@@ -66,11 +67,11 @@ Toto téma ukazuje, jak upravit strom výrazů. Stromy výrazů jsou neměnné, 
     */  
     ```  
   
-     Kód vytvoří výraz, který `AND` obsahuje podmíněnou operaci. Potom vytvoří instanci `AndAlsoModifier` třídy a předá výraz metodě `Modify` této třídy. Původní i upravené stromy výrazů jsou výstupem pro zobrazení změny.  
+     Kód vytvoří výraz, který obsahuje podmíněnou `AND` operaci. Potom vytvoří instanci `AndAlsoModifier` třídy a předá výraz `Modify` metodě této třídy. Původní a upravené stromy výrazů jsou zobrazeny, aby se změna zobrazila.  
   
 6. Zkompilujte a spusťte aplikaci.  
   
 ## <a name="see-also"></a>Viz také
 
-- [Jak spustit stromy výrazů (C#)](./how-to-execute-expression-trees.md)
+- [Spuštění stromů výrazů (C#)](./how-to-execute-expression-trees.md)
 - [Stromy výrazů (C#)](./index.md)

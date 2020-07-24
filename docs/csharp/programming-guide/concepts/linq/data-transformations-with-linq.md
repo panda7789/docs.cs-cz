@@ -1,5 +1,6 @@
 ---
 title: Transformace dat pomocí LINQ (C#)
+description: Naučte se používat dotazy LINQ v jazyce C# k transformaci dat. Můžete upravit sekvenci pomocí řazení a seskupování a vytvořit nové typy pomocí klauzule SELECT.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - LINQ [C#], data transformations
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - data sources [LINQ in C#], data transformations
 - data transformations [LINQ in C#]
 ms.assetid: 674eae9e-bc72-4a88-aed3-802b45b25811
-ms.openlocfilehash: d20f5d826620ad8654ddf1e9471ecc894b2c0391
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 6844cf2aa589f7516a9e40bc604c5f907ec6d311
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84408520"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87104013"
 ---
 # <a name="data-transformations-with-linq-c"></a>Transformace dat pomocí LINQ (C#)
 Dotaz integrovaný na jazyku (LINQ) není pouze o načítání dat. Je to také výkonný nástroj pro transformaci dat. Pomocí dotazu LINQ můžete jako vstup použít zdrojovou sekvenci a upravit ji mnoha způsoby, abyste mohli vytvořit novou výstupní sekvenci. Samotnou sekvenci můžete změnit, aniž byste museli měnit prvky řazením a seskupením. Ale pravděpodobně nejúčinnější funkce dotazů LINQ je schopnost vytvářet nové typy. To je dosaženo v klauzuli [Select](../../../language-reference/keywords/select-clause.md) . Můžete například provádět následující úlohy:  
@@ -105,7 +106,7 @@ Dotaz integrovaný na jazyku (LINQ) není pouze o načítání dat. Je to také 
 
 - [LINQ (Language-Integrated Query) (C#)](./index.md)
 - [Technologie LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)
-- [LINQ to DataSet](../../../../framework/data/adonet/linq-to-dataset.md)
+- [LINQ na DataSet](../../../../framework/data/adonet/linq-to-dataset.md)
 - [LINQ to XML (C#)](./linq-to-xml-overview.md)
 - [Výrazy dotazů LINQ](../../../linq/index.md)
 - [select – klauzule (C#)](../../../language-reference/keywords/select-clause.md)

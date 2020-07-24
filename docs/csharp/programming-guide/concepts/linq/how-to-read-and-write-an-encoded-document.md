@@ -1,25 +1,26 @@
 ---
-title: Jak číst a psát kódovaný dokument (C#)
+title: Čtení a zápis kódovaného dokumentu (C#)
+description: Naučte se vytvořit kódovaný dokument XML v jazyce C# přidáním prvku XDeclaration do stromu XML a nastavením kódování na požadovaný název kódové stránky.
 ms.date: 07/20/2015
 ms.assetid: 84f64e71-39a6-42c6-ad68-f052bb158a03
-ms.openlocfilehash: fa28c26845a0c6019943e0532ea0692a6dffd5a9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ed02b7467f4de71455da516a6c894070337684e7
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75347666"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87104324"
 ---
-# <a name="how-to-read-and-write-an-encoded-document-c"></a>Jak číst a psát kódovaný dokument (C#)
-Chcete-li vytvořit kódovaný dokument XML, přidejte jej <xref:System.Xml.Linq.XDeclaration> do stromu XML a nastavíte kódování na požadovaný název znakové stránky.  
+# <a name="how-to-read-and-write-an-encoded-document-c"></a>Čtení a zápis kódovaného dokumentu (C#)
+Chcete-li vytvořit kódovaný dokument XML, přidejte <xref:System.Xml.Linq.XDeclaration> do stromu XML a nastavte kódování na požadovaný název kódové stránky.  
   
- Každá hodnota <xref:System.Text.Encoding.WebName%2A> vrácená je platná hodnota.  
+ Libovolná hodnota vrácená hodnotou <xref:System.Text.Encoding.WebName%2A> je platná hodnota.  
   
- Pokud čtete kódovaný dokument, <xref:System.Xml.Linq.XDeclaration.Encoding%2A> vlastnost bude nastavena na název znakové stránky.  
+ Při čtení kódovaného dokumentu <xref:System.Xml.Linq.XDeclaration.Encoding%2A> bude vlastnost nastavena na název kódové stránky.  
   
- Pokud nastavíte <xref:System.Xml.Linq.XDeclaration.Encoding%2A> platný název [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] znakové stránky, serializuje se zadaným kódováním.  
+ Nastavíte <xref:System.Xml.Linq.XDeclaration.Encoding%2A> -li na platný název kódové stránky, [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] bude serializace se zadaným kódováním.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří dva dokumenty, jeden s kódováním UTF-8 a jeden s kódováním UTF-16. Potom načte dokumenty a vytiskne kódování do konzoly.  
+ Následující příklad vytvoří dva dokumenty, jednu s kódováním UTF-8 a jednu s kódováním UTF-16. Poté načte dokumenty a vytiskne kódování do konzoly.  
   
 ```csharp  
 Console.WriteLine("Creating a document with utf-8 encoding");  
@@ -54,7 +55,7 @@ Console.WriteLine();
 Console.WriteLine("Encoding of loaded document is:{0}", newDoc16.Declaration.Encoding);  
 ```  
   
- Tento příklad vytváří následující výstup:  
+ Tento příklad vytvoří následující výstup:  
   
 ```output  
 Creating a document with utf-8 encoding  

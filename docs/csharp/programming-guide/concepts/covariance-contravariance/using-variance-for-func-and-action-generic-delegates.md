@@ -1,21 +1,22 @@
 ---
-title: Použití odchylky pro obecné delegáty aplikace Func a obecné akce (C#)
+title: Použití odchylky pro obecné delegáty Func a Action (C#)
+description: Přečtěte si, jak pomocí kovariance a kontravariance v obecných delegátech Func a Action získat větší flexibilitu v kódu.
 ms.date: 07/20/2015
 ms.assetid: 1826774f-2b7a-470f-b110-17cfdd6abdae
-ms.openlocfilehash: 17f55d594ad4364fd29c8f6e41bd6ad2445b0986
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d7174b0f734d10ab69d0936cb5ca4aa2f4fafdf7
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79169789"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87105705"
 ---
-# <a name="using-variance-for-func-and-action-generic-delegates-c"></a>Použití odchylky pro obecné delegáty aplikace Func a obecné akce (C#)
-Tyto příklady ukazují, jak používat kovariance a `Func` `Action` contravariance v a obecné delegáty povolit opakované použití metod a poskytují větší flexibilitu v kódu.  
+# <a name="using-variance-for-func-and-action-generic-delegates-c"></a>Použití odchylky pro obecné delegáty Func a Action (C#)
+Tyto příklady ukazují, jak použít kovarianci a kontravariance v `Func` `Action` obecných delegátech a umožnit opakované použití metod a zajištění větší flexibility v kódu.  
   
- Další informace o kovariance a kontravariance naleznete [v tématu Odchylka v delegátech (C#)](./variance-in-delegates.md).  
+ Další informace o kovarianci a kontravariance naleznete v tématu [Variance v delegátech (C#)](./variance-in-delegates.md).  
   
 ## <a name="using-delegates-with-covariant-type-parameters"></a>Použití delegátů s parametry kovariantního typu  
- Následující příklad ilustruje výhody podpory kovariance v `Func` obecných delegátech. Metoda `FindByTitle` přebírá parametr `String` typu a vrátí objekt `Employee` typu. Tuto metodu však můžete `Func<String, Person>` delegátovi přiřadit, protože `Employee` dědí `Person`.  
+ Následující příklad znázorňuje výhody kovariance v obecných `Func` delegátech. `FindByTitle`Metoda přebírá parametr `String` typu a vrací objekt `Employee` typu. Tuto metodu však můžete přiřadit `Func<String, Person>` delegátovi, protože `Employee` dědí `Person` .  
   
 ```csharp  
 // Simple hierarchy of classes.  
@@ -48,8 +49,8 @@ class Program
 }  
 ```  
   
-## <a name="using-delegates-with-contravariant-type-parameters"></a>Použití delegátů s parametry typu Contravariant  
- Následující příklad ilustruje výhody podpory contravariance v `Action` obecných delegátech. Metoda `AddToContacts` přebírá parametr `Person` typu. Tuto metodu však můžete `Action<Employee>` delegátovi přiřadit, protože `Employee` dědí `Person`.  
+## <a name="using-delegates-with-contravariant-type-parameters"></a>Použití delegátů s kontravariantními parametry typu  
+ Následující příklad znázorňuje výhody podpory aplikace kontravariance v obecných `Action` delegátech. `AddToContacts`Metoda přebírá parametr `Person` typu. Tuto metodu však můžete přiřadit `Action<Employee>` delegátovi, protože `Employee` dědí `Person` .  
   
 ```csharp  
 public class Person { }  

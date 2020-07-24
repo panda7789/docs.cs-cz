@@ -1,21 +1,22 @@
 ---
-title: Jak upravit dokument Office Open XML (C#)
+title: Postup úpravy dokumentu Office Open XML (C#)
+description: Naučte se, jak otevřít dokument XML pro Office Open, upravit ho a uložit. Tento příklad jazyka C# používá třídy nalezené v sestavení WindowsBase.
 ms.date: 07/20/2015
 ms.assetid: 467d489c-2b1b-453b-a757-8ac180e82a96
-ms.openlocfilehash: 620530b14513356dc9bb5d942e8db7691a03880d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1155851696a0a6ed651c5f84290a3879e73276db
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75345848"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87104828"
 ---
-# <a name="how-to-modify-an-office-open-xml-document-c"></a>Jak upravit dokument Office Open XML (C#)
-Toto téma představuje příklad, který otevře dokument Office Open XML, upraví ho a uloží.  
+# <a name="how-to-modify-an-office-open-xml-document-c"></a>Postup úpravy dokumentu Office Open XML (C#)
+Toto téma představuje příklad, který otevře dokument Office Open XML, upraví ho a uloží ho.  
   
- Další informace o office open xml najdete v [tématu Open XML SDK](https://github.com/OfficeDev/Open-XML-SDK) a [www.ericwhite.com](http://ericwhite.com/).  
+ Další informace o Office Open XML najdete v tématu [Open XML SDK](https://github.com/OfficeDev/Open-XML-SDK) a [www.ericwhite.com](http://ericwhite.com/).  
   
 ## <a name="example"></a>Příklad  
- Tento příklad vyhledá prvek prvního odstavce v dokumentu. Načte text z odstavce a odstraní všechny text běží v odstavci. Vytvoří nový text spustit, který se skládá z prvního odstavce textu, který byl převeden na velká písmena. Poté serializuje změněný XML do balíčku Open XML a zavře jej.  
+ Tento příklad vyhledá první element odstavce v dokumentu. Načte text z odstavce a pak odstraní veškerý text, který je v odstavci spuštěn. Vytvoří nový běh textu, který se skládá z textu prvního odstavce, který byl převeden na velká písmena. Poté rozbalí změněné XML do otevřeného balíčku XML a zavře ho.  
   
  Tento příklad používá třídy nalezené v sestavení WindowsBase. Používá typy v <xref:System.IO.Packaging?displayProperty=nameWithType> oboru názvů.  
   
@@ -139,9 +140,9 @@ class Program
 }  
 ```  
   
- Pokud otevřete `SampleDoc.docx` po spuštění tohoto programu, uvidíte, že tento program převedl první odstavec v dokumentu na velká písmena.  
+ Pokud `SampleDoc.docx` po spuštění tohoto programu otevřete aplikaci, vidíte, že tento program převedl první odstavec v dokumentu na velká písmena.  
   
- Při spuštění s ukázkovým dokumentem Open XML popsaným v [části Vytvoření dokumentu Open XML (C#) zdrojové kanceláře](./creating-the-source-office-open-xml-document.md)vytvoří tento příklad následující výstup:  
+ Při spuštění s ukázkovým otevřeným dokumentem XML popsaným v [tématu vytvoření zdrojového dokumentu XML pro Office (C#)](./creating-the-source-office-open-xml-document.md)tento příklad vytvoří následující výstup:  
   
 ```output  
 New first paragraph: >PARSING WORDPROCESSINGML WITH LINQ TO XML<  

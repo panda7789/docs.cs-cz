@@ -1,21 +1,22 @@
 ---
-title: Jak generovat XML ze souborů CSV (C#)
+title: Generování XML ze souborů CSV (C#)
+description: Naučte se používat LINQ a LINQ to XML v jazyce C# k vygenerování XML ze souboru. csv. Dotaz používá klauzuli let pro rozdělení řetězců do polí polí.
 ms.date: 07/20/2015
 ms.assetid: 57b9ccde-f983-4a21-ae61-70ecede30307
-ms.openlocfilehash: 643c05cb440165c4461c3e9c80e69701241ab8d1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2fc9954a51fc1f2979c6cce13805ed15cdb88741
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75635805"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87105172"
 ---
-# <a name="how-to-generate-xml-from-csv-files-c"></a>Jak generovat XML ze souborů CSV (C#)
-Tento příklad ukazuje, jak používat jazykově integrovaný [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotaz (LINQ) a generovat soubor XML ze souboru csv (odděleného čárkou).  
+# <a name="how-to-generate-xml-from-csv-files-c"></a>Generování XML ze souborů CSV (C#)
+Tento příklad ukazuje, jak použít LINQ (Language-Integrated Query) a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] Generovat soubor XML ze souboru hodnot oddělených čárkami (CSV).  
   
 ## <a name="example"></a>Příklad  
- Následující kód provádí dotaz LINQ na pole řetězců.  
+ Následující kód provede dotaz LINQ na poli řetězců.  
   
- Dotaz používá `let` klauzuli k rozdělení každého řetězce do pole polí.  
+ Dotaz používá `let` klauzuli pro rozdělení každého řetězce na pole polí.  
   
 ```csharp  
 // Create the text file.  

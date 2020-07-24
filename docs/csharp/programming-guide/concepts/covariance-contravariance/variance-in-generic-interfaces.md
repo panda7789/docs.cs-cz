@@ -1,13 +1,14 @@
 ---
 title: Variance v obecných rozhraních (C#)
+description: Zobrazit informace o podpoře odchylek pro Obecná rozhraní, včetně aktualizovaných informací pro existující rozhraní v .NET Framework 4 a 4,5.
 ms.date: 06/06/2019
 ms.assetid: 4828a8f9-48c0-4128-9749-7fcd6bf19a06
-ms.openlocfilehash: ea5d3d35bc9ee438263707efd16829b6217a1968
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 91218742c01eeb6e65ea26d9dc41ed7c98827377
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241328"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87105627"
 ---
 # <a name="variance-in-generic-interfaces-c"></a>Variance v obecných rozhraních (C#)
 

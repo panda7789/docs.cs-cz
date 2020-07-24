@@ -1,25 +1,26 @@
 ---
-title: Jak najít uzly na stejné úrovni (XPath-LINQ na XML) (C#)
+title: Jak najít uzly na stejné úrovni (XPath-LINQ to XML) (C#)
+description: Tento příklad jazyka C# porovnává XPath s LINQ to XML pro vyhledání všech položek na stejné úrovni uzlu, který má konkrétní název.
 ms.date: 07/20/2015
 ms.assetid: e2c73d10-a8ca-4e11-b5aa-d055de285874
-ms.openlocfilehash: c201dcea5e6d148ae0998eb27d4e42df5b15309f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2936fc4ad088580a9644f79f1797e679fe877e00
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79169204"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87105211"
 ---
-# <a name="how-to-find-sibling-nodes-xpath-linq-to-xml-c"></a>Jak najít uzly na stejné úrovni (XPath-LINQ na XML) (C#)
-Můžete chtít najít všechny na stejné úrovni uzlu, které mají určitý název. Výsledná kolekce může obsahovat kontextový uzel, pokud má uzel kontextu také konkrétní název.  
+# <a name="how-to-find-sibling-nodes-xpath-linq-to-xml-c"></a>Jak najít uzly na stejné úrovni (XPath-LINQ to XML) (C#)
+Možná budete chtít najít všechny uzly na stejné úrovni, které mají konkrétní název. Výsledná kolekce může zahrnovat kontextový uzel, pokud má uzel kontextu také konkrétní název.  
   
  Výraz XPath je:  
   
  `../Book`  
   
 ## <a name="example"></a>Příklad  
- Tento příklad nejprve `Book` vyhledá prvek a potom `Book`vyhledá všechny prvky na stejné úrovni s názvem . Výsledná kolekce obsahuje kontextový uzel.  
+ Tento příklad nejprve vyhledá `Book` prvek a poté vyhledá všechny prvky na stejné úrovni s názvem `Book` . Výsledná kolekce obsahuje kontextový uzel.  
   
- Tento příklad používá následující dokument XML: [Ukázkový soubor XML: Books (LINQ to XML).](./sample-xml-file-books-linq-to-xml.md)  
+ Tento příklad používá následující dokument XML: [ukázkový soubor XML: Books (LINQ to XML)](./sample-xml-file-books-linq-to-xml.md).  
   
 ```csharp  
 XDocument books = XDocument.Load("Books.xml");  
@@ -49,7 +50,7 @@ foreach (XElement el in list1)
     Console.WriteLine(el);  
 ```  
   
- Tento příklad vytváří následující výstup:  
+ Tento příklad vytvoří následující výstup:  
   
 ```output  
 Results are identical  

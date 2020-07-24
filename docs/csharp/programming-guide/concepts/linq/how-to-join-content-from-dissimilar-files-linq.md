@@ -1,21 +1,22 @@
 ---
-title: Jak se připojit k obsahu z odlišných souborů (LINQ) (C#)
+title: Postup připojení obsahu z nepodobných souborů (LINQ) (C#)
+description: Naučte se, jak spojit data ze dvou souborů s oddělovači pomocí LINQ v jazyce C#. Data sdílí společnou hodnotu, která se používá jako odpovídající klíč.
 ms.date: 06/27/2018
 ms.assetid: aa2d12a6-70a9-492f-a6db-b2b850d46811
-ms.openlocfilehash: efe11c31873f21841c28bd393b295eea117d1e46
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 136d10ff5c0bf5f4f18998b50eb7bbee218b00a9
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79169087"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87104978"
 ---
-# <a name="how-to-join-content-from-dissimilar-files-linq-c"></a>Jak se připojit k obsahu z odlišných souborů (LINQ) (C#)
+# <a name="how-to-join-content-from-dissimilar-files-linq-c"></a>Postup připojení obsahu z nepodobných souborů (LINQ) (C#)
 
-Tento příklad ukazuje, jak spojit data ze dvou souborů oddělených čárkami, které sdílejí společnou hodnotu, která se používá jako odpovídající klíč. Tato technika může být užitečná, pokud máte kombinovat data ze dvou tabulek nebo z tabulky a ze souboru, který má jiný formát, do nového souboru. Příklad můžete upravit tak, aby pracoval s jakýmkoli druhem strukturovaného textu.  
+Tento příklad ukazuje, jak spojit data ze dvou souborů oddělených čárkami, které sdílejí společnou hodnotu, která se používá jako odpovídající klíč. Tato technika může být užitečná, pokud potřebujete kombinovat data ze dvou tabulek nebo z tabulky a ze souboru, který má jiný formát, do nového souboru. Můžete upravit příklad pro práci s libovolným druhem strukturovaného textu.  
   
 ## <a name="to-create-the-data-files"></a>Vytvoření datových souborů
   
-1. Zkopírujte následující řádky do souboru s názvem *scores.csv* a uložte jej do složky projektu. Soubor představuje data tabulky. Sloupec 1 je id studenta a sloupce 2 až 5 jsou výsledky testů.  
+1. Zkopírujte následující řádky do souboru s názvem *scores.csv* a uložte jej do složky projektu. Soubor představuje data v tabulce. Sloupec 1 je ID studenta a sloupce 2 až 5 jsou skóre testů.  
   
     ```csv  
     111, 97, 92, 81, 60  
@@ -32,7 +33,7 @@ Tento příklad ukazuje, jak spojit data ze dvou souborů oddělených čárkami
     122, 94, 92, 91, 91  
     ```  
   
-2. Zkopírujte následující řádky do souboru s názvem *names.csv* a uložte jej do složky projektu. Soubor představuje tabulku, která obsahuje příjmení, jméno a ID studenta.  
+2. Zkopírujte následující řádky do souboru s názvem *names.csv* a uložte jej do složky projektu. Tento soubor představuje tabulku, která obsahuje příjmení, jméno a ID studenta.  
   
     ```csv  
     Omelchenko,Svetlana,111  
@@ -127,4 +128,4 @@ Tucker, 94, 92, 91, 91
 ## <a name="see-also"></a>Viz také
 
 - [LINQ a řetězce (C#)](./linq-and-strings.md)
-- [Linq a souborové adresáře (C#)](./linq-and-file-directories.md)
+- [LINQ a souborové adresáře (C#)](./linq-and-file-directories.md)

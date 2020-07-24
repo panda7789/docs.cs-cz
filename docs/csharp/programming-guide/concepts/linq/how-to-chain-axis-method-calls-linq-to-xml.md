@@ -1,23 +1,24 @@
 ---
-title: Jak zřetězit volání metod osy (LINQ to XML) (C#)
+title: Postup řetězení volání metody osy (LINQ to XML) (C#)
+description: Tyto LINQ to XML Příklady v jazyce C# ukazují volání dvou OS, aby bylo možné najít všechny prvky zadaného názvu v dané hloubkě stromu.
 ms.date: 07/20/2015
 ms.assetid: 067e6da2-ee32-486d-803c-e611b328e39a
-ms.openlocfilehash: 56fa5c9e8358883d838b68e99664240aa97f347f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f26efd2ca918fd36916eb4f01462af70066219a0
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79169464"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87105390"
 ---
-# <a name="how-to-chain-axis-method-calls-linq-to-xml-c"></a>Jak zřetězit volání metod osy (LINQ to XML) (C#)
-Běžný vzor, který budete používat v kódu je volání metody osy, pak volání jedné z os metody rozšíření.  
+# <a name="how-to-chain-axis-method-calls-linq-to-xml-c"></a>Postup řetězení volání metody osy (LINQ to XML) (C#)
+Běžným vzorem, který použijete v kódu, je zavolat metodu osy a pak zavolat jednu z OS rozšiřujících metod.  
   
- Existují dvě osy s `Elements` názvem, které vrátí <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType> kolekci <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType> prvků: metoda a metoda. Tyto dvě osy můžete zkombinovat a najít všechny prvky zadaného názvu v dané hloubce ve stromu.  
+ Existují dvě osy s názvem `Elements` , který vrací kolekci prvků: <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType> Metoda a <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType> metoda. Tyto dvě osy můžete kombinovat a vyhledat všechny prvky zadaného názvu v dané hloubce stromu.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType> <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType> používá a `Name` najít `Address` všechny prvky ve všech prvků ve všech `PurchaseOrder` prvků.  
+ Tento příklad používá <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType> a <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType> k nalezení všech prvků všech prvků ve `Name` `Address` všech `PurchaseOrder` prvcích.  
   
- Tento příklad používá následující dokument XML: [Ukázkový soubor XML: Více nákupních objednávek (LINQ to XML).](./sample-xml-file-multiple-purchase-orders-linq-to-xml.md)  
+ Tento příklad používá následující dokument XML: [ukázkový soubor XML: více nákupních objednávek (LINQ to XML)](./sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
   
 ```csharp  
 XElement purchaseOrders = XElement.Load("PurchaseOrders.xml");  
@@ -31,7 +32,7 @@ foreach (XElement e in names)
     Console.WriteLine(e);  
 ```  
   
- Tento příklad vytváří následující výstup:  
+ Tento příklad vytvoří následující výstup:  
   
 ```xml  
 <Name>Ellen Adams</Name>  
@@ -42,10 +43,10 @@ foreach (XElement e in names)
 <Name>Jessica Arnold</Name>  
 ```  
   
- To funguje, protože jedna z `Elements` implementací osy je jako metoda rozšíření na <xref:System.Collections.Generic.IEnumerable%601> . <xref:System.Xml.Linq.XContainer> <xref:System.Xml.Linq.XElement>odvozuje <xref:System.Xml.Linq.XContainer>z , takže <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType> můžete volat metodu na <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType> výsledky volání metody.  
+ To funguje, protože jedna z implementací `Elements` osy je jako metoda rozšíření na <xref:System.Collections.Generic.IEnumerable%601> <xref:System.Xml.Linq.XContainer> . <xref:System.Xml.Linq.XElement>je odvozen z <xref:System.Xml.Linq.XContainer> , takže můžete volat <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType> metodu pro výsledky volání <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType> metody.  
   
 ## <a name="example"></a>Příklad  
- Někdy chcete načíst všechny prvky v určité hloubce prvku, když může nebo nemusí být zasahující předkové. Například v následujícím dokumentu můžete chtít načíst `ConfigParameter` všechny prvky, `Customer` které jsou `ConfigParameter` podřízené prvku, `Root` ale ne, který je podřízený prvku.  
+ Někdy je vhodné načíst všechny prvky na konkrétní hloubku prvku, pokud může nebo nemusí být zasahovat do nadřazených prvků. Například v následujícím dokumentu můžete chtít načíst všechny `ConfigParameter` prvky, které jsou podřízené `Customer` prvku, ale nikoli `ConfigParameter` podřízený `Root` prvek elementu.  
   
 ```xml  
 <Root>  
@@ -69,7 +70,7 @@ foreach (XElement e in names)
 </Root>  
 ```  
   
- Chcete-li to provést, <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType> můžete použít osu takto:  
+ K tomu můžete použít <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType> osu následujícím způsobem:  
   
 ```csharp  
 XElement root = XElement.Load("Irregular.xml");  
@@ -80,7 +81,7 @@ foreach (XElement cp in configParameters)
     Console.WriteLine(cp);  
 ```  
   
- Tento příklad vytváří následující výstup:  
+ Tento příklad vytvoří následující výstup:  
   
 ```xml  
 <ConfigParameter>FirstConfigParameter</ConfigParameter>  
@@ -88,9 +89,9 @@ foreach (XElement cp in configParameters)
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje stejnou techniku pro XML, která je v oboru názvů. Další informace naleznete [v tématu Přehled oborů názvů (LINQ to XML) (C#)](namespaces-overview-linq-to-xml.md).  
+ Následující příklad ukazuje stejnou techniku pro XML, která je v oboru názvů. Další informace najdete v tématu [obory názvů Overview (LINQ to XML) (C#)](namespaces-overview-linq-to-xml.md).  
   
- Tento příklad používá následující dokument XML: [Ukázkový soubor XML: Více nákupních objednávek v oboru názvů](./sample-xml-file-multiple-purchase-orders-in-a-namespace.md).  
+ Tento příklad používá následující dokument XML: [ukázkový soubor XML: více nákupních objednávek v oboru názvů](./sample-xml-file-multiple-purchase-orders-in-a-namespace.md).  
   
 ```csharp  
 XNamespace aw = "http://www.adventure-works.com";  
@@ -105,7 +106,7 @@ foreach (XElement e in names)
     Console.WriteLine(e);  
 ```  
   
- Tento příklad vytváří následující výstup:  
+ Tento příklad vytvoří následující výstup:  
   
 ```xml  
 <aw:Name xmlns:aw="http://www.adventure-works.com">Ellen Adams</aw:Name>  
@@ -118,4 +119,4 @@ foreach (XElement e in names)
   
 ## <a name="see-also"></a>Viz také
 
-- [LINQ na osy XML (C#)](linq-to-xml-axes-overview.md)
+- [LINQ to XML osy (C#)](linq-to-xml-axes-overview.md)

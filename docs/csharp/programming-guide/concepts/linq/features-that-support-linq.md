@@ -1,15 +1,16 @@
 ---
 title: Funkce C# podporující LINQ
+description: Přečtěte si o funkcích jazyka C# pro použití s dotazy LINQ a v jiných kontextech. Tyto jazykové konstrukce byly představeny v C# 3,0.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - LINQ [C#], features supporting LINQ
 ms.assetid: 524b0078-ebfd-45a7-b390-f2ceb9d84797
-ms.openlocfilehash: 32ba8f5e60b3ed2efd813a8ae32e5f4009eb790d
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: f72b82180d794086dcea9f11a7a057dc26ab0b26
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202410"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87105423"
 ---
 # <a name="c-features-that-support-linq"></a>Funkce C# podporující LINQ
 
@@ -66,7 +67,7 @@ Zdroj dat může mít více vlastností ležící pod digestoří, než je `Cust
 var newLargeOrderCustomers = IncomingOrders.Where(x => x.OrderSize > 5).Select(y => new Customer { Name = y.Name, Phone = y.Phone });
 ```
 
-Další informace naleznete v tématu:
+Další informace najdete tady:
 
 - [Inicializátory objektu a kolekce](../../classes-and-structs/object-and-collection-initializers.md)
 
@@ -92,7 +93,7 @@ Další informace naleznete v tématu [metody rozšíření](../../classes-and-s
 
 Výraz lambda je vložená funkce, která používá operátor => pro oddělení vstupních parametrů z těla funkce a může být převedena v době kompilace na delegáta nebo strom výrazu. V programování LINQ dojde k vyvolání výrazů lambda při přímém volání metody do standardních operátorů dotazu.
 
-Další informace naleznete v tématu:
+Další informace najdete tady:
 
 - [Anonymní funkce](../../statements-expressions-operators/anonymous-functions.md)
 
