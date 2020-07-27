@@ -1,50 +1,51 @@
 ---
 title: Implementace vzoru ovládacích prvků transformace pro automatizaci uživatelského rozhraní
+description: Přečtěte si pokyny a konvence pro implementaci vzorového ovládacího prvku transformace v automatizaci uživatelského rozhraní. Znáte požadované členy pro rozhraní ITransformProvider.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - control patterns, Transform
 - Transform control pattern
 - UI Automation, Transform control pattern
 ms.assetid: 5f49d843-5845-4800-9d9c-56ce0d146844
-ms.openlocfilehash: 5643bc85972ea33cc31b1a83ecf7615dbb275bc2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: da11ce4cf9da10c0ebb990f9439b0bbe3621c561
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79180043"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87168218"
 ---
 # <a name="implementing-the-ui-automation-transform-control-pattern"></a>Implementace vzoru ovládacích prvků transformace pro automatizaci uživatelského rozhraní
 > [!NOTE]
-> Tato dokumentace je určena pro vývojáře rozhraní [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] .NET Framework, kteří chtějí používat spravované třídy definované v oboru <xref:System.Windows.Automation> názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]rozhraní [WINDOWS Automation API: Automatizace uživatelského rozhraní](/windows/win32/winauto/entry-uiauto-win32).  
+> Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o najdete [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] v tématu [rozhraní API služby Windows Automation: automatizace uživatelského rozhraní](/windows/win32/winauto/entry-uiauto-win32).  
   
- Toto téma představuje pokyny a <xref:System.Windows.Automation.Provider.ITransformProvider>konvence pro implementaci , včetně informací o vlastnostech, metodách a událostech. Odkazy na další odkazy jsou uvedeny na konci tématu.  
+ Toto téma obsahuje pokyny a konvence pro implementaci <xref:System.Windows.Automation.Provider.ITransformProvider> , včetně informací o vlastnostech, metodách a událostech. Odkazy na další odkazy jsou uvedeny na konci tématu.  
   
- Vzor <xref:System.Windows.Automation.TransformPattern> ovládacího prvku se používá k podpoře ovládacích prvků, které lze přesunout, změnit jejich velikost nebo otočit v rámci dvourozměrného prostoru. Příklady ovládacích prvků, které implementují tento vzor ovládacího prvku, naleznete [v tématu Mapování vzorů ovládacího prvku pro klienty automatizace uživatelského rozhraní](control-pattern-mapping-for-ui-automation-clients.md).  
+ <xref:System.Windows.Automation.TransformPattern>Vzor ovládacího prvku slouží k podpoře ovládacích prvků, které lze přesunout, změnit jeho velikost nebo otočit v dvojrozměrném prostoru. Příklady ovládacích prvků, které implementují tento vzor ovládacích prvků, naleznete v tématu [mapování vzoru ovládacího prvku pro klienty automatizace uživatelského rozhraní](control-pattern-mapping-for-ui-automation-clients.md).  
   
 <a name="Implementation_Guidelines_and_Conventions"></a>
-## <a name="implementation-guidelines-and-conventions"></a>Prováděcí pokyny a úmluvy  
- Při implementaci vzor ovládacího prvku transformace, poznamenejte si následující pokyny a konvence:  
+## <a name="implementation-guidelines-and-conventions"></a>Pokyny a konvence implementace  
+ Při implementaci vzorového ovládacího prvku transformace si všimněte následujících pokynů a konvencí:  
   
-- Podpora tohoto vzoru ovládacího prvku není omezena na objekty na ploše. Tento vzor ovládacího prvku musí být také podporovánpodřízenými objekty kontejneru, pokud podřízené objekty lze přesunout, změnit velikost nebo volně otáčet v rámci hranic kontejneru.  
+- Podpora tohoto vzoru ovládacího prvku není omezena na objekty na ploše. Tento vzor ovládacího prvku musí být také podporován podřízenými objekty kontejneru, pokud lze podřízené objekty přesunout, změnit jejich velikost nebo otáčet volně v rámci hranic kontejneru.  
   
-- Objekt nelze přesunout, změnit jejich velikost nebo otočit tak, aby jeho výsledné umístění obrazovky bylo zcela mimo souřadnice jeho kontejneru, a proto nepřístupné pro klávesnici nebo myš (například když je okno nejvyšší úrovně přesunuto mimo obrazovku nebo podřízený objekt se přesune mimo hranice výřezu kontejneru). V těchto případech je objekt umístěn co nejblíže k požadovaným souřadnicím obrazovky, jak je to možné s horní nebo levé souřadnice přepsány být v rámci hranice kontejneru.  
+- Objekt nelze přesunout, změnit jeho velikost nebo otočit tak, že jeho výsledná poloha obrazovky by byla zcela mimo souřadnice kontejneru, a proto nebude přístupná k klávesnici nebo myši (například při přesunutí okna nejvyšší úrovně mimo hranice zobrazení kontejneru), v případě, že se přesune okno na nejvyšší úrovni. V těchto případech je objekt umístěn co nejblíže požadovaným souřadnicím obrazovky nahoře nebo vlevo přepsané, aby byly v rámci hranic kontejneru.  
   
-- U systémů s více monitory je objekt přesunut, změnit jejich velikost nebo otočení zcela mimo kombinované souřadnice obrazovky plochy, objekt je umístěn na primárnímonitor co nejblíže požadovaným souřadnicím.  
+- U systémů s více monitory, pokud je objekt přesunutý, mění jeho velikost nebo se úplně otáčí mimo kombinaci souřadnic desktopové obrazovky, objekt se umístí na primární monitor co nejblíže požadovaným souřadnicím.  
   
-- Všechny parametry a hodnoty vlastností jsou absolutní a nezávislé na národním prostředí.  
+- Všechny parametry a hodnoty vlastností jsou absolutní a nezávisle na národním prostředí.  
   
 <a name="Required_Members_for_the_IValueProvider_Interface"></a>
-## <a name="required-members-for-itransformprovider"></a>Požadované členy pro ITransformProvider  
- Následující vlastnosti a metody jsou <xref:System.Windows.Automation.Provider.ITransformProvider>vyžadovány pro implementaci .  
+## <a name="required-members-for-itransformprovider"></a>Vyžadovaná členové pro ITransformProvider  
+ Pro implementaci jsou vyžadovány následující vlastnosti a metody <xref:System.Windows.Automation.Provider.ITransformProvider> .  
   
-|Požadované členy|Typ člena|Poznámky|  
+|Vyžadovaná členové|Typ člena|Poznámky|  
 |----------------------|-----------------|-----------|  
-|<xref:System.Windows.Automation.Provider.ITransformProvider.CanMove%2A>|Vlastnost|Žádný|  
-|<xref:System.Windows.Automation.Provider.ITransformProvider.CanResize%2A>|Vlastnost|Žádný|  
-|<xref:System.Windows.Automation.Provider.ITransformProvider.CanRotate%2A>|Vlastnost|Žádný|  
-|<xref:System.Windows.Automation.Provider.ITransformProvider.Move%2A>|Metoda|Žádný|  
-|<xref:System.Windows.Automation.Provider.ITransformProvider.Resize%2A>|Metoda|Žádný|  
-|<xref:System.Windows.Automation.Provider.ITransformProvider.Rotate%2A>|Metoda|Žádný|  
+|<xref:System.Windows.Automation.Provider.ITransformProvider.CanMove%2A>|Vlastnost|Žádné|  
+|<xref:System.Windows.Automation.Provider.ITransformProvider.CanResize%2A>|Vlastnost|Žádné|  
+|<xref:System.Windows.Automation.Provider.ITransformProvider.CanRotate%2A>|Vlastnost|Žádné|  
+|<xref:System.Windows.Automation.Provider.ITransformProvider.Move%2A>|Metoda|Žádné|  
+|<xref:System.Windows.Automation.Provider.ITransformProvider.Resize%2A>|Metoda|Žádné|  
+|<xref:System.Windows.Automation.Provider.ITransformProvider.Rotate%2A>|Metoda|Žádné|  
   
  Tento vzor ovládacího prvku nemá žádné přidružené události.  
   
@@ -54,9 +55,9 @@ ms.locfileid: "79180043"
   
 |Typ výjimky|Podmínka|  
 |--------------------|---------------|  
-|<xref:System.InvalidOperationException>|<xref:System.Windows.Automation.Provider.ITransformProvider.Move%2A><br /><br /> - Pokud <xref:System.Windows.Automation.TransformPatternIdentifiers.CanMoveProperty> je to nepravdivé.|  
-|<xref:System.InvalidOperationException>|<xref:System.Windows.Automation.Provider.ITransformProvider.Resize%2A><br /><br /> - Pokud <xref:System.Windows.Automation.TransformPatternIdentifiers.CanResizeProperty> je to nepravdivé.|  
-|<xref:System.InvalidOperationException>|<xref:System.Windows.Automation.Provider.ITransformProvider.Rotate%2A><br /><br /> - Pokud <xref:System.Windows.Automation.TransformPatternIdentifiers.CanRotateProperty> je to nepravdivé.|  
+|<xref:System.InvalidOperationException>|<xref:System.Windows.Automation.Provider.ITransformProvider.Move%2A><br /><br /> – Pokud <xref:System.Windows.Automation.TransformPatternIdentifiers.CanMoveProperty> je hodnota false.|  
+|<xref:System.InvalidOperationException>|<xref:System.Windows.Automation.Provider.ITransformProvider.Resize%2A><br /><br /> – Pokud <xref:System.Windows.Automation.TransformPatternIdentifiers.CanResizeProperty> je hodnota false.|  
+|<xref:System.InvalidOperationException>|<xref:System.Windows.Automation.Provider.ITransformProvider.Rotate%2A><br /><br /> – Pokud <xref:System.Windows.Automation.TransformPatternIdentifiers.CanRotateProperty> je hodnota false.|  
   
 ## <a name="see-also"></a>Viz také
 

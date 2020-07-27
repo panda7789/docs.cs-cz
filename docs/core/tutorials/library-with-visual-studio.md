@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: ef9c62b0378e1064d8cfd90a8c59aed74ea312b2
-ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
+ms.openlocfilehash: 69259b1d47a8e30945c578db10c6d697c81fa261
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84701562"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87164401"
 ---
 # <a name="tutorial-create-a-net-standard-library-using-visual-studio"></a>Kurz: Vytvoření knihovny .NET Standard pomocí sady Visual Studio
 
@@ -111,7 +111,7 @@ Zpočátku má nový projekt konzolové aplikace přístup ke knihovně tříd. 
 
    ![Místní nabídka projektu sady Visual Studio pro nastavení spouštěného projektu](media/library-with-visual-studio/set-startup-project-context-menu.png)
 
-1. Stisknutím klávesy <kbd>SHIFT</kbd> + <kbd>F5</kbd> zkompilujete a spustíte program bez ladění.
+1. Stisknutím klávesy <kbd>CTRL</kbd> + <kbd>F5</kbd> zkompilujete a spustíte program bez ladění.
 
    ![Panel nástrojů projekt sady Visual Studio zobrazující tlačítko ladění](media/library-with-visual-studio/visual-studio-project-toolbar.png)
 

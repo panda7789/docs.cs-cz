@@ -3,12 +3,12 @@ title: Slovníček k technologii .NET
 description: Zjistěte význam vybraných termínů používaných v dokumentaci .NET.
 ms.date: 01/22/2019
 ms.technology: dotnet-standard
-ms.openlocfilehash: 11ab0de4757a23c940ae04418a5a82ea79f71761
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 529b1d9142ddf7982a6712c355c10666f0414d73
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287451"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87163124"
 ---
 # <a name="net-glossary"></a>Slovníček k technologii .NET
 
@@ -140,8 +140,6 @@ Slova Library a [Framework](#framework) se často používají jako synonyma.
 
 Balíček NuGet, který nemá žádnou vlastní knihovnu, ale je jenom seznam závislostí. Zahrnuté balíčky mohou volitelně vytvořit rozhraní API pro cílovou architekturu.
 
-Viz [balíčky, metabalíčky a architektury](../core/packages.md) .
-
 ## <a name="mono"></a>Mono
 
 Mono je open source implementace .NET pro [různé platformy](#cross-platform) , která se používá hlavně v případě, že je potřeba malý modul runtime. Je to modul runtime, který vychází z aplikací Xamarin na zařízeních s Androidem, Mac, iOS, tvOS a watchOS a primárně se zaměřuje na aplikace, které vyžadují malé nároky.
@@ -174,7 +172,7 @@ Viz [.NET Core CLI](../core/tools/index.md).
 
 ## <a name="net-core-sdk"></a>Sada .NET Core SDK
 
-Sada knihoven a nástrojů, které vývojářům umožňují vytvářet aplikace a knihovny .NET Core. Zahrnuje [.NET Core CLI](#net-core-cli) pro sestavování aplikací, knihoven .NET Core a modulu runtime pro vytváření a spouštění aplikací a spustitelný soubor dotnet (*dotnet. exe*), který spouští příkazy rozhraní příkazového řádku a spouští aplikace.
+Sada knihoven a nástrojů, které vývojářům umožňují vytvářet aplikace a knihovny .NET Core. Zahrnuje [.NET Core CLI](#net-core-cli) pro vytváření aplikací, knihoven .NET Core a běhové prostředí pro sestavování a spouštění aplikací a spustitelný soubor dotnet (*dotnet.exe*), který spouští příkazy rozhraní příkazového řádku a spouští aplikace.
 
 Další informace najdete v tématu [přehled .NET Core SDK](../core/sdk.md).
 

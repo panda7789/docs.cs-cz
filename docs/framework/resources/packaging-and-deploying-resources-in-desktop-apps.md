@@ -1,5 +1,6 @@
 ---
 title: Balení a nasazení prostředků v aplikacích .NET
+description: Zabalení a nasazení prostředků v aplikacích .NET pomocí hlavního sestavení (centra) a satelitních sestavení (paprsků). Paprsek obsahuje lokalizované prostředky, ale žádný kód.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -26,12 +27,12 @@ helpviewer_keywords:
 - localizing resources
 - neutral cultures
 ms.assetid: b224d7c0-35f8-4e82-a705-dd76795e8d16
-ms.openlocfilehash: d64e3b5201e34541fdafa5724b0c7e8c3f6c0c0d
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.openlocfilehash: 7b06ca4444b75f0a7002323b32732dd4f855f692
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81243047"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87166187"
 ---
 # <a name="packaging-and-deploying-resources-in-net-apps"></a>Balení a nasazení prostředků v aplikacích .NET
 
@@ -64,14 +65,14 @@ Když zabalíte prostředky vaší aplikace, je nutné je pojmenovat pomocí kon
 
 Model hub a paprsk pro balení a nasazování prostředků používá záložní proces k vyhledání odpovídajících prostředků. Pokud aplikace požaduje lokalizovaný prostředek, který není k dispozici, modul CLR (Common Language Runtime) prohledá hierarchii kultur pro příslušný záložní prostředek, který nejlépe odpovídá žádosti application's uživatele, a vyvolá výjimku pouze jako poslední možnost. Pokud je v každé úrovni hierarchie nalezen odpovídající prostředek, modul runtime ho použije. Pokud se prostředek nenajde, hledání pokračuje na další úrovni.
 
-Chcete-li zlepšit výkon vyhledávání, <xref:System.Resources.NeutralResourcesLanguageAttribute> použijte atribut pro hlavní sestavení a předejte mu název neutrálního jazyka, který bude fungovat s vaším hlavním sestavením.
+Chcete-li zlepšit výkon vyhledávání, použijte <xref:System.Resources.NeutralResourcesLanguageAttribute> atribut pro hlavní sestavení a předejte mu název neutrálního jazyka, který bude fungovat s vaším hlavním sestavením.
 
 ### <a name="net-framework-resource-fallback-process"></a>Proces záložního prostředku .NET Framework
 
 Záložní proces .NET Framework prostředků zahrnuje následující kroky:
 
 > [!TIP]
-> Můžete použít [ \<relativeBindForResources>](../configure-apps/file-schema/runtime/relativebindforresources-element.md) konfiguračního prvku pro optimalizaci procesu záložního prostředku a procesu, pomocí kterého sondy modulu runtime pro sestavení prostředků. Další informace najdete v části [Optimalizace procesu pro použití náhradních prostředků](packaging-and-deploying-resources-in-desktop-apps.md#Optimizing) .
+> Můžete použít [\<relativeBindForResources>](../configure-apps/file-schema/runtime/relativebindforresources-element.md) prvek konfigurace k optimalizaci procesu záložního prostředku a procesu, pomocí kterého se sondy modulu runtime pro sestavení prostředků. Další informace najdete v části [Optimalizace procesu pro použití náhradních prostředků](packaging-and-deploying-resources-in-desktop-apps.md#Optimizing) .
 
 1. Modul runtime nejprve zkontroluje [globální mezipaměť sestavení](../app-domains/gac.md) (GAC) pro sestavení, které odpovídá požadované jazykové verzi vaší aplikace.
 
@@ -81,28 +82,28 @@ Záložní proces .NET Framework prostředků zahrnuje následující kroky:
 
 3. Modul runtime Next provede dotaz na Instalační služba systému Windows a určí, zda satelitní sestavení má být nainstalováno na vyžádání. Pokud ano, zpracuje instalaci, načte sestavení a vyhledá nebo dožádaný prostředek. Pokud nalezne prostředek v sestavení, použije ho. Pokud prostředek nenajde, pokračuje v hledání.
 
-4. Modul runtime vyvolává <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> událost, aby označovala, že není možné najít satelitní sestavení. Pokud se rozhodnete událost zpracovat, obslužná rutina události může vrátit odkaz na satelitní sestavení, jehož prostředky budou použity pro vyhledávání. V opačném případě se obslužná `null` rutina události vrátí a hledání pokračuje.
+4. Modul runtime vyvolává <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> událost, aby označovala, že není možné najít satelitní sestavení. Pokud se rozhodnete událost zpracovat, obslužná rutina události může vrátit odkaz na satelitní sestavení, jehož prostředky budou použity pro vyhledávání. V opačném případě se obslužná rutina události vrátí `null` a hledání pokračuje.
 
 5. Modul runtime Next znovu vyhledá globální mezipaměť sestavení (GAC), tentokrát pro nadřazené sestavení požadované jazykové verze. Pokud nadřazené sestavení existuje v globální mezipaměti sestavení (GAC), modul runtime vyhledá požadované prostředky v sestavení.
 
-     Nadřazená jazyková verze je definována jako vhodná záložní jazyková verze. Představte si rodiče jako náhradní kandidáty, protože poskytování jakýchkoli prostředků je vhodnější k vyvolání výjimky. Tento proces také umožňuje znovu použít prostředky. Konkrétní prostředek na nadřazené úrovni byste měli zahrnout pouze v případě, že podřízená jazyková verze nemusí lokalizovat požadovaný prostředek. Pokud například `en` zadáte satelitní sestavení pro (neutrální angličtinu), `en-GB` (anglicky jako mluvené slovo v Spojené království) a `en-US` (anglicky jako mluvené USA), by `en` satelit obsahovala obvyklou terminologii a `en-GB` `en-US` satelity by mohly poskytnout přepsání jenom pro ty, které se liší.
+     Nadřazená jazyková verze je definována jako vhodná záložní jazyková verze. Představte si rodiče jako náhradní kandidáty, protože poskytování jakýchkoli prostředků je vhodnější k vyvolání výjimky. Tento proces také umožňuje znovu použít prostředky. Konkrétní prostředek na nadřazené úrovni byste měli zahrnout pouze v případě, že podřízená jazyková verze nemusí lokalizovat požadovaný prostředek. Pokud například zadáte satelitní sestavení pro `en` (neutrální angličtinu), `en-GB` (anglicky jako mluvené slovo v Spojené království) a `en-US` (anglicky jako mluvené USA), `en` by satelit obsahovala obvyklou terminologii a `en-GB` `en-US` satelity by mohly poskytnout přepsání jenom pro ty, které se liší.
 
 6. Modul runtime dále kontroluje adresář aktuálně spuštěného sestavení, aby bylo možné zjistit, zda obsahuje nadřazený adresář. Pokud existuje nadřazený adresář, modul runtime v adresáři vyhledá platné satelitní sestavení pro nadřazenou jazykovou verzi. Pokud nalezne sestavení, modul runtime vyhledá požadované prostředky v sestavení. Pokud prostředek najde, použije ho. Pokud prostředek nenajde, pokračuje v hledání.
 
 7. Modul runtime Next provede dotaz na Instalační služba systému Windows a určí, jestli se má na vyžádání nainstalovat nadřazené satelitní sestavení. Pokud ano, zpracuje instalaci, načte sestavení a vyhledá nebo dožádaný prostředek. Pokud nalezne prostředek v sestavení, použije ho. Pokud prostředek nenajde, pokračuje v hledání.
 
-8. Modul runtime vyvolá <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> událost, která indikuje, že není schopen najít vhodný záložní prostředek. Pokud se rozhodnete událost zpracovat, obslužná rutina události může vrátit odkaz na satelitní sestavení, jehož prostředky budou použity pro vyhledávání. V opačném případě se obslužná `null` rutina události vrátí a hledání pokračuje.
+8. Modul runtime vyvolá <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> událost, která indikuje, že není schopen najít vhodný záložní prostředek. Pokud se rozhodnete událost zpracovat, obslužná rutina události může vrátit odkaz na satelitní sestavení, jehož prostředky budou použity pro vyhledávání. V opačném případě se obslužná rutina události vrátí `null` a hledání pokračuje.
 
-9. Modul runtime dále hledá nadřazená sestavení, jako v předchozích třech krocích, a to prostřednictvím mnoha potenciálních úrovní. Každá jazyková verze má pouze jeden nadřazený prvek, který je definován <xref:System.Globalization.CultureInfo.Parent%2A?displayProperty=nameWithType> vlastností, ale nadřazený objekt může mít svůj vlastní nadřazený objekt. Hledání nadřazených kultur se zastaví, když se vrátí <xref:System.Globalization.CultureInfo.Parent%2A> <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType>vlastnost jazykové verze; v případě záložního prostředku není neutrální jazyková verze považována za nadřazenou jazykovou verzi nebo jazykovou verzi, která může mít prostředky.
+9. Modul runtime dále hledá nadřazená sestavení, jako v předchozích třech krocích, a to prostřednictvím mnoha potenciálních úrovní. Každá jazyková verze má pouze jeden nadřazený prvek, který je definován <xref:System.Globalization.CultureInfo.Parent%2A?displayProperty=nameWithType> vlastností, ale nadřazený objekt může mít svůj vlastní nadřazený objekt. Hledání nadřazených kultur se zastaví, když se <xref:System.Globalization.CultureInfo.Parent%2A> vrátí vlastnost jazykové verze <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> ; u záložního prostředku není neutrální jazyková verze považována za nadřazenou jazykovou verzi nebo jazykovou verzi, která může mít prostředky.
 
 10. Pokud byla prohledána původně zadaná jazyková verze a všichni rodiče a prostředek stále nebyl nalezen, bude použit prostředek pro výchozí (záložní) jazykovou verzi. Prostředky pro výchozí jazykovou verzi jsou obvykle zahrnuty v sestavení Main aplikace. Můžete však zadat hodnotu <xref:System.Resources.UltimateResourceFallbackLocation.Satellite> pro <xref:System.Resources.NeutralResourcesLanguageAttribute.Location%2A> vlastnost <xref:System.Resources.NeutralResourcesLanguageAttribute> atributu k označení, že konečné záložní umístění pro prostředky je satelitní sestavení, nikoli hlavní sestavení.
 
     > [!NOTE]
     > Výchozí prostředek je jediný prostředek, který může být zkompilován s hlavním sestavením. Pokud nezadáte satelitní sestavení pomocí <xref:System.Resources.NeutralResourcesLanguageAttribute> atributu, jedná se o konečnou zálohu (konečnou nadřazenou položku). Proto doporučujeme, abyste vždy zahrnuli výchozí sadu prostředků do hlavního sestavení. To pomáhá zabránit vyvolání výjimek. Zahrnutím výchozího prostředku se souborem zadáte zálohu pro všechny prostředky a zajistěte, aby měl uživatel vždy k dispozici alespoň jeden prostředek, a to i v případě, že není konkrétní kultura.
 
-11. Nakonec, pokud modul runtime nenajde prostředek pro výchozí (záložní) jazykovou verzi, je vyvolána <xref:System.Resources.MissingManifestResourceException> výjimka <xref:System.Resources.MissingSatelliteAssemblyException> nebo, která označuje, že prostředek nebyl nalezen.
+11. Nakonec, pokud modul runtime nenajde prostředek pro výchozí (záložní) jazykovou verzi, <xref:System.Resources.MissingManifestResourceException> <xref:System.Resources.MissingSatelliteAssemblyException> je vyvolána výjimka nebo, která označuje, že prostředek nebyl nalezen.
 
-Předpokládejme například, že aplikace požaduje prostředek lokalizovaný pro španělštinu (Mexiko) ( `es-MX` jazyková verze). Modul runtime nejprve vyhledá globální mezipaměť sestavení (GAC) pro sestavení `es-MX`, které odpovídá, ale nenajde. Modul runtime pak vyhledá adresář aktuálně spuštěného sestavení pro `es-MX` adresář. V takovém případě modul runtime znovu vyhledá globální mezipaměť sestavení `es` (GAC) pro nadřazené sestavení, které odráží příslušnou záložní jazykovou verzi – v tomto případě (španělština). Pokud není nadřazené sestavení nalezeno, modul runtime vyhledá všechny potenciální úrovně nadřazených sestavení pro `es-MX` jazykovou verzi, dokud nenajde odpovídající prostředek. Pokud se prostředek nenajde, modul runtime použije prostředek pro výchozí jazykovou verzi.
+Předpokládejme například, že aplikace požaduje prostředek lokalizovaný pro španělštinu (Mexiko) ( `es-MX` jazyková verze). Modul runtime nejprve vyhledá globální mezipaměť sestavení (GAC) pro sestavení, které odpovídá `es-MX` , ale nenajde. Modul runtime pak vyhledá adresář aktuálně spuštěného sestavení pro `es-MX` adresář. V takovém případě modul runtime znovu vyhledá globální mezipaměť sestavení (GAC) pro nadřazené sestavení, které odráží příslušnou záložní jazykovou verzi – v tomto případě `es` (španělština). Pokud není nadřazené sestavení nalezeno, modul runtime vyhledá všechny potenciální úrovně nadřazených sestavení pro `es-MX` jazykovou verzi, dokud nenajde odpovídající prostředek. Pokud se prostředek nenajde, modul runtime použije prostředek pro výchozí jazykovou verzi.
 
 <a name="Optimizing"></a>
 
@@ -116,7 +117,7 @@ V následujících podmínkách můžete optimalizovat proces, podle kterého mo
 
 - Kód aplikace nezpracovává <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> událost.
 
-Optimalizujete sondu pro satelitní sestavení zahrnutím prvku [ \<relativeBindForResources>](../configure-apps/file-schema/runtime/relativebindforresources-element.md) a nastavením jeho `enabled` atributu do `true` konfiguračního souboru aplikace, jak je znázorněno v následujícím příkladu.
+Optimalizujete sondu pro satelitní sestavení zahrnutím [\<relativeBindForResources>](../configure-apps/file-schema/runtime/relativebindforresources-element.md) elementu a nastavením jeho `enabled` atributu do `true` konfiguračního souboru aplikace, jak je znázorněno v následujícím příkladu.
 
 ```xml
 <configuration>
@@ -126,13 +127,13 @@ Optimalizujete sondu pro satelitní sestavení zahrnutím prvku [ \<relativeBind
 </configuration>
 ```
 
-Optimalizovaná sonda pro satelitní sestavení je funkce výslovného souhlasu. To znamená, že modul runtime následuje po krocích popsaných v [procesu záložního prostředku](packaging-and-deploying-resources-in-desktop-apps.md#cpconpackagingdeployingresourcesanchor1) , pokud není v konfiguračním souboru aplikace přítomen prvek [ \<relativeBindForResources>](../configure-apps/file-schema/runtime/relativebindforresources-element.md) a `enabled` jeho atribut je nastaven `true`na hodnotu. Pokud se jedná o tento případ, proces zjišťování pro satelitní sestavení se upraví takto:
+Optimalizovaná sonda pro satelitní sestavení je funkce výslovného souhlasu. To znamená, že modul runtime následuje po krocích popsaných v [procesu záložního prostředku](packaging-and-deploying-resources-in-desktop-apps.md#cpconpackagingdeployingresourcesanchor1) , pokud [\<relativeBindForResources>](../configure-apps/file-schema/runtime/relativebindforresources-element.md) element není přítomen v konfiguračním souboru aplikace a jeho `enabled` atribut je nastaven na hodnotu `true` . Pokud se jedná o tento případ, proces zjišťování pro satelitní sestavení se upraví takto:
 
 - Modul runtime používá umístění nadřazeného sestavení kódu pro test satelitního sestavení. Pokud je nadřazené sestavení nainstalováno v globální mezipaměti sestavení (GAC), běhové testy v mezipaměti, ale ne v adresáři aplikace. Pokud je nadřazené sestavení nainstalováno v adresáři aplikace, sondy modulu runtime v adresáři aplikace, ale ne v globální mezipaměti sestavení (GAC).
 
 - Modul runtime nedotazuje Instalační služba systému Windows pro instalaci satelitních sestavení na vyžádání.
 
-- Pokud se sonda pro konkrétní sestavení prostředku nezdařila, modul runtime <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> událost nevyvolává.
+- Pokud se sonda pro konkrétní sestavení prostředku nezdařila, modul runtime událost nevyvolává <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> .
 
 ### <a name="net-core-resource-fallback-process"></a>Záložní proces prostředků .NET Core
 
@@ -142,63 +143,63 @@ Záložní proces prostředku .NET Core zahrnuje následující kroky:
      - Kontroluje adresář aktuálně spuštěného sestavení pro podadresář, který odpovídá požadované jazykové verzi. Pokud nalezne podadresář, vyhledá v podadresáři platné satelitní sestavení pro požadovanou jazykovou verzi a načte ji.
 
        > [!NOTE]
-       > V operačních systémech se systémy souborů s rozlišováním velkých a malých písmen (tj. Linux a macOS) má hledání v podadresářích s názvem jazykové verze rozlišovat velká a malá písmena. Název podadresáře musí přesně odpovídat velikosti písmen <xref:System.Globalization.CultureInfo.Name?displayProperty=nameWithType> (například `es` nebo `es-MX`).
+       > V operačních systémech se systémy souborů s rozlišováním velkých a malých písmen (tj. Linux a macOS) má hledání v podadresářích s názvem jazykové verze rozlišovat velká a malá písmena. Název podadresáře musí přesně odpovídat velikosti písmen <xref:System.Globalization.CultureInfo.Name?displayProperty=nameWithType> (například `es` nebo `es-MX` ).
 
        > [!NOTE]
-       > Pokud programátor odvozuje vlastní kontext načtení sestavení z <xref:System.Runtime.Loader.AssemblyLoadContext>, je tato situace složitá. Pokud je spuštěné sestavení načteno do vlastního kontextu, modul runtime načte satelitní sestavení do vlastního kontextu. Podrobnosti jsou pro tento dokument mimo rozsah. Viz <xref:System.Runtime.Loader.AssemblyLoadContext>.
+       > Pokud programátor odvozuje vlastní kontext načtení sestavení z <xref:System.Runtime.Loader.AssemblyLoadContext> , je tato situace složitá. Pokud je spuštěné sestavení načteno do vlastního kontextu, modul runtime načte satelitní sestavení do vlastního kontextu. Podrobnosti jsou pro tento dokument mimo rozsah. Viz <xref:System.Runtime.Loader.AssemblyLoadContext> .
 
-     - Pokud nebyla nalezena satelitní sestavení, <xref:System.Runtime.Loader.AssemblyLoadContext> vyvolá <xref:System.Runtime.Loader.AssemblyLoadContext.Resolving?displayProperty=nameWithType> událost, aby označovala, že není možné najít satelitní sestavení. Pokud se rozhodnete událost zpracovat, vaše obslužná rutina události může načíst a vrátit odkaz na satelitní sestavení.
+     - Pokud nebyla nalezena satelitní <xref:System.Runtime.Loader.AssemblyLoadContext> sestavení, vyvolá <xref:System.Runtime.Loader.AssemblyLoadContext.Resolving?displayProperty=nameWithType> událost, aby označovala, že není možné najít satelitní sestavení. Pokud se rozhodnete událost zpracovat, vaše obslužná rutina události může načíst a vrátit odkaz na satelitní sestavení.
      - Pokud satelitní sestavení ještě není nalezeno, AssemblyLoadContext způsobí, že doména AppDomain spustí <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> událost, aby označovala, že není možné najít satelitní sestavení. Pokud se rozhodnete událost zpracovat, vaše obslužná rutina události může načíst a vrátit odkaz na satelitní sestavení.
 
 2. Pokud je nalezeno satelitní sestavení, modul runtime ho vyhledá u požadovaného prostředku. Pokud nalezne prostředek v sestavení, použije ho. Pokud prostředek nenajde, pokračuje v hledání.
 
      > [!NOTE]
-     > Chcete-li najít prostředek v rámci satelitního sestavení, modul runtime vyhledá soubor prostředků požadovaný <xref:System.Resources.ResourceManager> pro aktuální. <xref:System.Globalization.CultureInfo.Name?displayProperty=nameWithType> V souboru prostředků vyhledá požadovaný název prostředku. Pokud buď není nalezen, bude prostředek považován za nenalezený.
+     > Chcete-li najít prostředek v rámci satelitního sestavení, modul runtime vyhledá soubor prostředků požadovaný <xref:System.Resources.ResourceManager> pro aktuální <xref:System.Globalization.CultureInfo.Name?displayProperty=nameWithType> . V souboru prostředků vyhledá požadovaný název prostředku. Pokud buď není nalezen, bude prostředek považován za nenalezený.
 
 3. Modul runtime Next prohledává sestavení nadřazené jazykové verze prostřednictvím mnoha potenciálních úrovní, pokaždé při opakování kroků 1 & 2.
 
-     Nadřazená jazyková verze je definována jako vhodná záložní jazyková verze. Představte si rodiče jako náhradní kandidáty, protože poskytování jakýchkoli prostředků je vhodnější k vyvolání výjimky. Tento proces také umožňuje znovu použít prostředky. Konkrétní prostředek na nadřazené úrovni byste měli zahrnout pouze v případě, že podřízená jazyková verze nemusí lokalizovat požadovaný prostředek. `en` Například pokud zadáte satelitní sestavení pro (neutrální angličtinu), `en-GB` (anglicky jako mluvené slovo ve Spojeném království) a `en-US` (anglicky jako mluvené USA), `en` satelit obsahuje obvyklou terminologii a `en-GB` `en-US` satelity poskytuje přepsání jenom pro ty, které se liší.
+     Nadřazená jazyková verze je definována jako vhodná záložní jazyková verze. Představte si rodiče jako náhradní kandidáty, protože poskytování jakýchkoli prostředků je vhodnější k vyvolání výjimky. Tento proces také umožňuje znovu použít prostředky. Konkrétní prostředek na nadřazené úrovni byste měli zahrnout pouze v případě, že podřízená jazyková verze nemusí lokalizovat požadovaný prostředek. Například pokud zadáte satelitní sestavení pro `en` (neutrální angličtinu), `en-GB` (anglicky jako mluvené slovo ve Spojeném království) a `en-US` (anglicky jako mluvené USA), `en` satelit obsahuje obvyklou terminologii a `en-GB` `en-US` satelity poskytuje přepsání jenom pro ty, které se liší.
 
-     Každá jazyková verze má pouze jeden nadřazený prvek, který je definován <xref:System.Globalization.CultureInfo.Parent%2A?displayProperty=nameWithType> vlastností, ale nadřazený objekt může mít svůj vlastní nadřazený objekt. Hledání nadřazených jazykových verzí se zastaví, když se <xref:System.Globalization.CultureInfo.Parent%2A> vrátí <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType>vlastnost jazykové verze. V případě záložního prostředku není neutrální jazyková verze považována za nadřazenou jazykovou verzi nebo jazykovou verzi, která může mít prostředky.
+     Každá jazyková verze má pouze jeden nadřazený prvek, který je definován <xref:System.Globalization.CultureInfo.Parent%2A?displayProperty=nameWithType> vlastností, ale nadřazený objekt může mít svůj vlastní nadřazený objekt. Hledání nadřazených jazykových verzí se zastaví, když se <xref:System.Globalization.CultureInfo.Parent%2A> vrátí vlastnost jazykové verze <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> . V případě záložního prostředku není neutrální jazyková verze považována za nadřazenou jazykovou verzi nebo jazykovou verzi, která může mít prostředky.
 
 4. Pokud byla prohledána původně zadaná jazyková verze a všichni rodiče a prostředek stále nebyl nalezen, bude použit prostředek pro výchozí (záložní) jazykovou verzi. Prostředky pro výchozí jazykovou verzi jsou obvykle zahrnuty v sestavení Main aplikace. Můžete však zadat hodnotu <xref:System.Resources.UltimateResourceFallbackLocation.Satellite?displayProperty.nameWithType> <xref:System.Resources.NeutralResourcesLanguageAttribute.Location%2A> vlastnosti, která označuje, že konečné záložní umístění pro prostředky je satelitní sestavení namísto hlavního sestavení.
 
     > [!NOTE]
     > Výchozí prostředek je jediný prostředek, který může být zkompilován s hlavním sestavením. Pokud nezadáte satelitní sestavení pomocí <xref:System.Resources.NeutralResourcesLanguageAttribute> atributu, jedná se o konečnou zálohu (konečnou nadřazenou položku). Proto doporučujeme, abyste vždy zahrnuli výchozí sadu prostředků do hlavního sestavení. To pomáhá zabránit vyvolání výjimek. Zahrnutím výchozího souboru prostředků zadáte zálohu pro všechny prostředky a zajistěte, aby byl uživatel vždy přítomen alespoň jeden prostředek, i když není konkrétní kultura.
 
-5. Nakonec, pokud modul runtime nenajde soubor prostředků pro výchozí (záložní) jazykovou verzi, je vyvolána <xref:System.Resources.MissingManifestResourceException> výjimka <xref:System.Resources.MissingSatelliteAssemblyException> nebo, která označuje, že prostředek nebyl nalezen. Pokud se soubor prostředků najde, ale požadovaný prostředek není přítomen, požadavek se vrátí `null`.
+5. Nakonec, pokud modul runtime nenajde soubor prostředků pro výchozí (záložní) jazykovou verzi, <xref:System.Resources.MissingManifestResourceException> <xref:System.Resources.MissingSatelliteAssemblyException> je vyvolána výjimka nebo, která označuje, že prostředek nebyl nalezen. Pokud se soubor prostředků najde, ale požadovaný prostředek není přítomen, požadavek se vrátí `null` .
 
 ### <a name="ultimate-fallback-to-satellite-assembly"></a>Ultimate Fallback do satelitního sestavení
 
 Volitelně můžete odebrat prostředky z hlavního sestavení a určit, že modul runtime má načíst konečné záložní prostředky ze satelitního sestavení, které odpovídá konkrétní jazykové verzi. Chcete-li řídit záložní proces, použijte <xref:System.Resources.NeutralResourcesLanguageAttribute.%23ctor%28System.String%2CSystem.Resources.UltimateResourceFallbackLocation%29> konstruktor a zadejte hodnotu <xref:System.Resources.UltimateResourceFallbackLocation> parametru, který určuje, zda má správce prostředků extrahovat záložní prostředky z hlavního sestavení nebo satelitního sestavení.
 
-Následující příklad .NET Framework používá <xref:System.Resources.NeutralResourcesLanguageAttribute> atribut k uložení záložních prostředků aplikace do satelitního sestavení pro jazyk francouzštiny (`fr`). V příkladu jsou dva textové soubory prostředků, které definují jeden řetězec řetězce s názvem `Greeting`. První, Resources. fr. txt obsahuje prostředek francouzského jazyka.
+Následující příklad .NET Framework používá <xref:System.Resources.NeutralResourcesLanguageAttribute> atribut k uložení záložních prostředků aplikace do satelitního sestavení pro jazyk francouzštiny ( `fr` ). V příkladu jsou dva textové soubory prostředků, které definují jeden řetězec řetězce s názvem `Greeting` . První, resources.fr.txt, obsahuje prostředek francouzského jazyka.
 
 ```text
 Greeting=Bon jour!
 ```
 
-Druhý, Resources, ru. txt, obsahuje prostředek ruského jazyka.
+Druhý, prostředky, ru.txt, obsahují prostředek ruského jazyka.
 
 ```text
 Greeting=Добрый день
 ```
 
-Tyto dva soubory jsou zkompilovány do souborů. Resources spuštěním [generátoru souboru prostředků (Resgen. exe)](../tools/resgen-exe-resource-file-generator.md) z příkazového řádku. Pro zdroj francouzského jazyka je tento příkaz:
+Tyto dva soubory jsou zkompilovány do souborů. Resources spuštěním [generátoru souboru prostředků (Resgen.exe)](../tools/resgen-exe-resource-file-generator.md) z příkazového řádku. Pro zdroj francouzského jazyka je tento příkaz:
 
-**Resgen. exe Resources. fr. txt**
+**resgen.exe resources.fr.txt**
 
 Pro prostředek ruského jazyka je tento příkaz:
 
-**Resgen. exe Resources. ru. txt**
+**resgen.exe resources.ru.txt**
 
-Soubory. Resources jsou vloženy do knihoven DLL spuštěním [linkeru sestavení (Al. exe)](../tools/al-exe-assembly-linker.md) z příkazového řádku pro zdroj francouzského jazyka následujícím způsobem:
+Soubory. Resources jsou vloženy do knihoven DLL spuštěním [linkeru sestavení (Al.exe)](../tools/al-exe-assembly-linker.md) z příkazového řádku pro zdroj francouzského jazyka následujícím způsobem:
 
-**Al/t: lib/embed: Resources. fr. Resources/Culture: fr/out: fr\Example1.resources.dll**
+**Al/t: lib/embed: Resources. fr. Resources/Culture: fr/out:fr\Example1.resources.dll**
 
 a pro prostředek ruského jazyka následujícím způsobem:
 
-**Al/t: lib/embed: Resources. ru. Resources/Culture: ru/out: ru\Example1.resources.dll**
+**Al/t: lib/embed: Resources. ru. Resources/Culture: ru/out:ru\Example1.resources.dll**
 
 Zdrojový kód aplikace se nachází v souboru s názvem Example1.cs nebo priklad1. vb. Obsahuje <xref:System.Resources.NeutralResourcesLanguageAttribute> atribut, který označuje, že výchozí prostředek aplikace je v podadresáři fr. Vytvoří instanci Správce prostředků, načte hodnotu `Greeting` prostředku a zobrazí ho do konzoly.
 

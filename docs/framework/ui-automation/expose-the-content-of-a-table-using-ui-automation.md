@@ -1,5 +1,6 @@
 ---
 title: Vystavení obsahu tabulky s použitím automatizace uživatelského rozhraní
+description: Podívejte se, jak vystavit obsah tabulky pomocí automatizace uživatelského rozhraní. Obsah a vnitřní vlastnosti každé buňky v rámci tabulkového ovládacího prvku jsou zpřístupněny.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,21 +10,21 @@ helpviewer_keywords:
 - UI Automation, exposing content of tables
 - exposing content of tables using UI Automation
 ms.assetid: ac3c5eaa-49c7-4653-b83e-532e2a2604a2
-ms.openlocfilehash: e1c1d43073ce47a45a78bcbeb1d4da368988ca3a
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: c6ceb05421547a7e84f612ed6da2bd7002bf095b
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74433632"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87168460"
 ---
 # <a name="expose-the-content-of-a-table-using-ui-automation"></a>Vystavení obsahu tabulky s použitím automatizace uživatelského rozhraní
 > [!NOTE]
-> Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované v oboru názvů <xref:System.Windows.Automation>. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]najdete v tématu [rozhraní API pro Windows Automation: automatizace uživatelského rozhraní](/windows/win32/winauto/entry-uiauto-win32).  
+> Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o najdete [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] v tématu [rozhraní API služby Windows Automation: automatizace uživatelského rozhraní](/windows/win32/winauto/entry-uiauto-win32).  
   
- V tomto tématu se dozvíte, jak lze [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] použít k vystavení obsahu a vnitřních vlastností každé buňky v rámci tabulkového ovládacího prvku.  
+ Toto téma ukazuje, jak [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] lze použít k vystavení obsahu a vnitřních vlastností každé buňky v rámci tabulkového ovládacího prvku.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu ukazuje, jak získat <xref:System.Windows.Automation.AutomationElement>, který představuje obsah buňky tabulky; také jsou získány vlastnosti buňky, jako jsou například indexy řádků a sloupců, řádky a sloupce a informace o záhlaví řádků a sloupců. V tomto příkladu se používá obslužná rutina události změny fokusu pro simulaci procházení klávesnice tabulkového ovládacího prvku, který implementuje [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]. Informace pro každou položku tabulky jsou zveřejněny na události změny fokusu.  
+ Následující příklad kódu ukazuje, jak získat <xref:System.Windows.Automation.AutomationElement> obsah buňky tabulky; vlastnosti buňky, jako jsou řádky a sloupce, jako jsou například indexy řádků a sloupců, rozsah řádků a sloupců a informace o záhlaví řádků a sloupců jsou také získány. V tomto příkladu se používá obslužná rutina události změny fokusu pro simulaci přecházení mezi ovládacími prvky tabulkového ovládacího prvku, který implementuje [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] . Informace pro každou položku tabulky jsou zveřejněny na události změny fokusu.  
   
 > [!NOTE]
 > Vzhledem k tomu, že se změny fokusu nacházejí v globálních událostech plochy, je nutné filtrovat události změny fokusu mimo tabulku. Související implementaci najdete v [ukázce TrackFocus](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms771428(v=vs.90)) .  
@@ -41,7 +42,7 @@ ms.locfileid: "74433632"
 [!code-csharp[UIATableItemPattern_snip#103](../../../samples/snippets/csharp/VS_Snippets_Wpf/UIATableItemPattern_snip/CSharp/UIATableItemPattern_snippets.cs#103)]
 [!code-vb[UIATableItemPattern_snip#103](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/UIATableItemPattern_snip/VisualBasic/UIATableItemPattern_snippets.vb#103)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přehled vzorů ovládacích prvků pro automatizaci uživatelského rozhraní](ui-automation-control-patterns-overview.md)
 - [Vzory ovládacích prvků automatizace uživatelského rozhraní pro klienty](ui-automation-control-patterns-for-clients.md)

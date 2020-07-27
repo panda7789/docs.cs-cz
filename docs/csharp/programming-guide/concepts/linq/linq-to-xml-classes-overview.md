@@ -1,59 +1,60 @@
 ---
-title: LinQ na XML třídy Přehled (C#)
+title: Přehled tříd LINQ to XML (C#)
+description: Tento článek shrnuje LINQ to XML třídy v jazyce C# v System.Xml. Obor názvů LINQ s krátkým popisem každého.
 ms.date: 07/20/2015
 ms.assetid: bf666100-5392-4968-97f4-f6b9d3287d7b
-ms.openlocfilehash: 55be666fc0db0becb12ec8b525e7fc443536e1df
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 34508f86792cdc7589569b8f12584ffc4379a5fb
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "69591882"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87165435"
 ---
-# <a name="linq-to-xml-classes-overview-c"></a>LinQ na XML třídy Přehled (C#)
-Toto téma obsahuje [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] seznam tříd <xref:System.Xml.Linq> v oboru názvů a krátký popis každého z nich.  
+# <a name="linq-to-xml-classes-overview-c"></a>Přehled tříd LINQ to XML (C#)
+Toto téma poskytuje seznam [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] tříd v <xref:System.Xml.Linq> oboru názvů a stručný popis každého z nich.  
   
-## <a name="linq-to-xml-classes"></a>Linq na xml třídy  
+## <a name="linq-to-xml-classes"></a>Třídy LINQ to XML  
   
-### <a name="xattribute-class"></a>Třída XAttribute  
- <xref:System.Xml.Linq.XAttribute>představuje atribut XML. Podrobné informace a příklady naleznete v [tématu Přehled třídy XAttribute (C#)](./xattribute-class-overview.md).  
+### <a name="xattribute-class"></a>XAttribute – třída  
+ <xref:System.Xml.Linq.XAttribute>představuje atribut XML. Podrobné informace a příklady naleznete v tématu [XAttribute Class Overview (C#)](./xattribute-class-overview.md).  
   
-### <a name="xcdata-class"></a>Třída XCData  
+### <a name="xcdata-class"></a>XCData – Třída  
  <xref:System.Xml.Linq.XCData>představuje textový uzel CDATA.  
   
-### <a name="xcomment-class"></a>Třída XComment  
+### <a name="xcomment-class"></a>XComment – třída  
  <xref:System.Xml.Linq.XComment>představuje komentář XML.  
   
-### <a name="xcontainer-class"></a>Třída XContainer  
- <xref:System.Xml.Linq.XContainer>je abstraktní základní třída pro všechny uzly, které mohou mít podřízené uzly. Následující třídy jsou <xref:System.Xml.Linq.XContainer> odvozeny z třídy:  
+### <a name="xcontainer-class"></a>XContainer – třída  
+ <xref:System.Xml.Linq.XContainer>je abstraktní základní třída pro všechny uzly, které mohou mít podřízené uzly. Následující třídy jsou odvozeny z <xref:System.Xml.Linq.XContainer> třídy:  
   
 - <xref:System.Xml.Linq.XElement>  
   
 - <xref:System.Xml.Linq.XDocument>  
   
-### <a name="xdeclaration-class"></a>Třída XDeclaration  
- <xref:System.Xml.Linq.XDeclaration>představuje deklaraci XML. Deklarace XML se používá k deklarování verze XML a kódování dokumentu. Deklarace XML navíc určuje, zda je dokument XML samostatný. Pokud je dokument samostatný, neexistují žádné externí deklarace značek, a to buď v externím DTD, nebo v entitě externího parametru, na kterou odkazuje z vnitřní podmnožiny.  
+### <a name="xdeclaration-class"></a>XDeclaration – třída  
+ <xref:System.Xml.Linq.XDeclaration>představuje deklaraci XML. Deklarace XML se používá k deklaraci verze XML a kódování dokumentu. Kromě toho deklarace XML určuje, zda je dokument XML samostatný. Pokud je dokument samostatný, neexistují žádná deklarace externích značek, ani externí deklarace DTD, nebo externí parametr entity, na kterou se odkazuje z vnitřní podmnožiny.  
   
-### <a name="xdocument-class"></a>Třída XDocument  
- <xref:System.Xml.Linq.XDocument>představuje dokument XML. Podrobné informace a příklady naleznete v [tématu Přehled třídxdocument (C#)](./xdocument-class-overview.md).  
+### <a name="xdocument-class"></a>XDocument – třída  
+ <xref:System.Xml.Linq.XDocument>představuje dokument XML. Podrobné informace a příklady naleznete v tématu [Přehled třídy XDocument (C#)](./xdocument-class-overview.md).  
   
-### <a name="xdocumenttype-class"></a>Třída XDocumentType  
+### <a name="xdocumenttype-class"></a>XDocumentType – třída  
  <xref:System.Xml.Linq.XDocumentType>představuje definici typu dokumentu XML (DTD).  
   
-### <a name="xelement-class"></a>Třída XElement  
- <xref:System.Xml.Linq.XElement>představuje element XML. Podrobné informace a příklady naleznete v [tématu Přehled třídy XElement (C#)](./xelement-class-overview.md).  
+### <a name="xelement-class"></a>XElement – třída  
+ <xref:System.Xml.Linq.XElement>představuje XML element. Podrobné informace a příklady naleznete v tématu [XElement Class Overview (C#)](./xelement-class-overview.md).  
   
-### <a name="xname-class"></a>Třída XName  
- <xref:System.Xml.Linq.XName>představuje názvy<xref:System.Xml.Linq.XElement>prvků ( )<xref:System.Xml.Linq.XAttribute>a atributy ( ). Podrobné informace a příklady naleznete v [tématu Přehled třídxdocument (C#)](./xdocument-class-overview.md).  
+### <a name="xname-class"></a>XName – třída  
+ <xref:System.Xml.Linq.XName>představuje názvy elementů ( <xref:System.Xml.Linq.XElement> ) a atributů ( <xref:System.Xml.Linq.XAttribute> ). Podrobné informace a příklady naleznete v tématu [Přehled třídy XDocument (C#)](./xdocument-class-overview.md).  
   
- [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]je navržen tak, aby názvy XML byly co nejjednodušší. Vzhledem ke své složitosti jsou názvy XML často považovány za pokročilé téma ve formátu XML. Pravděpodobně tato složitost nepochází z oborů názvů, které vývojáři pravidelně používají v programování, ale z předpon oboru názvů. Předpony oboru názvů mohou být užitečné ke snížení úhozů požadovaných při zadávání XML nebo k usnadnění čtení jazyka XML. Předpony jsou však často pouze zástupce pro použití úplného oboru názvů XML a ve většině případů nejsou vyžadovány. [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]zjednodušuje názvy XML překladem všech předpon do odpovídajícího oboru názvů XML. Předpony jsou k dispozici, pokud <xref:System.Xml.Linq.XElement.GetPrefixOfNamespace%2A> jsou požadovány, prostřednictvím metody.  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]je navržena tak, aby co nejjednodušší názvy XML. V důsledku jejich složitosti se názvy XML často považují za pokročilé téma v XML. Pravděpodobně, Tato složitost nepochází z oborů názvů, které vývojáři pravidelně používají při programování, ale z prefixů oboru názvů. Předpony oboru názvů mohou být užitečné ke zmenšování klávesových úhozů vyžadovaných při zadávání XML nebo ke snazšímu čtení XML. Předpony jsou však často pouze zástupci pro použití plného oboru názvů XML a ve většině případů nejsou požadovány. [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]zjednodušuje názvy XML tím, že překládá všechny předpony na jejich odpovídající obor názvů XML. Předpony jsou k dispozici, pokud jsou požadovány, prostřednictvím <xref:System.Xml.Linq.XElement.GetPrefixOfNamespace%2A> metody.  
   
- V případě potřeby je možné řídit předpony oboru názvů. V některých případech, pokud pracujete s jinými systémy XML, jako je například XSLT nebo XAML, je třeba řídit předpony oboru názvů. Pokud například máte výraz XPath, který používá předpony oboru názvů a je vložen do šablony stylů XSLT, musíte se ujistit, že dokument XML je serializován s předčíslími oboru názvů, které odpovídají těm, které jsou použity ve výrazu XPath.  
+ V případě potřeby je možné řídit předpony oboru názvů. V některých případech, pokud pracujete s jinými systémy XML, jako jsou XSLT nebo XAML, je nutné řídit předpony oboru názvů. Například pokud máte výraz XPath, který používá předpony oboru názvů a je vložen do šablony stylů XSLT, je nutné zajistit, aby byl dokument XML serializován s předponami oboru názvů, které odpovídají hodnotám používaným ve výrazu XPath.  
   
-### <a name="xnamespace-class"></a>Třída XNamespace  
- <xref:System.Xml.Linq.XNamespace>představuje obor názvů <xref:System.Xml.Linq.XElement> pro <xref:System.Xml.Linq.XAttribute>nebo . Obory názvů jsou <xref:System.Xml.Linq.XName>součástí aplikace .  
+### <a name="xnamespace-class"></a>XNamespace – třída  
+ <xref:System.Xml.Linq.XNamespace>představuje obor názvů pro <xref:System.Xml.Linq.XElement> nebo <xref:System.Xml.Linq.XAttribute> . Obory názvů jsou součástí <xref:System.Xml.Linq.XName> .  
   
-### <a name="xnode-class"></a>Třída XNode  
- <xref:System.Xml.Linq.XNode>je abstraktní třída, která představuje uzly stromu XML. Následující třídy jsou <xref:System.Xml.Linq.XNode> odvozeny z třídy:  
+### <a name="xnode-class"></a>XNode – třída  
+ <xref:System.Xml.Linq.XNode>je abstraktní třída, která představuje uzly stromu XML. Následující třídy jsou odvozeny z <xref:System.Xml.Linq.XNode> třídy:  
   
 - <xref:System.Xml.Linq.XText>  
   
@@ -65,26 +66,26 @@ Toto téma obsahuje [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] seznam
   
 - <xref:System.Xml.Linq.XDocumentType>  
   
-### <a name="xnodedocumentordercomparer-class"></a>Třída XNodeDocumentOrderComparer  
+### <a name="xnodedocumentordercomparer-class"></a>XNodeDocumentOrderComparer – Třída  
  <xref:System.Xml.Linq.XNodeDocumentOrderComparer>poskytuje funkce pro porovnání uzlů pro jejich pořadí dokumentů.  
   
-### <a name="xnodeequalitycomparer-class"></a>Třída XNodeEqualityComparer  
+### <a name="xnodeequalitycomparer-class"></a>XNodeEqualityComparer – třída  
  <xref:System.Xml.Linq.XNodeEqualityComparer>poskytuje funkce pro porovnání uzlů pro rovnost hodnot.  
   
-### <a name="xobject-class"></a>Třída XObject  
- <xref:System.Xml.Linq.XObject>je abstraktní základní <xref:System.Xml.Linq.XNode> třída <xref:System.Xml.Linq.XAttribute>a . Poskytuje funkce poznámky a události.  
+### <a name="xobject-class"></a>XObject – třída  
+ <xref:System.Xml.Linq.XObject>je abstraktní základní třída <xref:System.Xml.Linq.XNode> a <xref:System.Xml.Linq.XAttribute> . Poskytuje funkce pro anotace a události.  
   
-### <a name="xobjectchange-class"></a>Třída XObjectChange  
- <xref:System.Xml.Linq.XObjectChange>určuje typ události, když je událost <xref:System.Xml.Linq.XObject>vyvolána pro .  
+### <a name="xobjectchange-class"></a>XObjectChange – třída  
+ <xref:System.Xml.Linq.XObjectChange>Určuje typ události při vyvolání události pro <xref:System.Xml.Linq.XObject> .  
   
-### <a name="xobjectchangeeventargs-class"></a>Třída XObjectChangeEventArgs  
- <xref:System.Xml.Linq.XObjectChangeEventArgs>poskytuje data <xref:System.Xml.Linq.XObject.Changing> pro <xref:System.Xml.Linq.XObject.Changed> události a.  
+### <a name="xobjectchangeeventargs-class"></a>XObjectChangeEventArgs – třída  
+ <xref:System.Xml.Linq.XObjectChangeEventArgs>poskytuje data pro <xref:System.Xml.Linq.XObject.Changing> události a <xref:System.Xml.Linq.XObject.Changed> .  
   
-### <a name="xprocessinginstruction-class"></a>Třída XProcessingInstruction  
- <xref:System.Xml.Linq.XProcessingInstruction>představuje instrukce zpracování XML. Instrukce zpracování sděluje informace aplikaci, která zpracovává XML.  
+### <a name="xprocessinginstruction-class"></a>XProcessingInstruction – třída  
+ <xref:System.Xml.Linq.XProcessingInstruction>představuje instrukci pro zpracování XML. Instrukce pro zpracování sděluje informace aplikaci, která zpracovává XML.  
   
-### <a name="xtext-class"></a>Třída XText  
- <xref:System.Xml.Linq.XText>představuje textový uzel. Ve většině případů není třeba používat tuto třídu. Tato třída se používá především pro smíšený obsah.  
+### <a name="xtext-class"></a>XText – třída  
+ <xref:System.Xml.Linq.XText>představuje textový uzel. Ve většině případů tuto třídu nemusíte používat. Tato třída se primárně používá pro smíšený obsah.  
   
 ## <a name="see-also"></a>Viz také
 

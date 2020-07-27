@@ -1,104 +1,105 @@
 ---
-title: LINQ do zabezpečení XML (C#)
+title: LINQ to XML zabezpečení (C#)
+description: Přečtěte si o potížích se zabezpečením souvisejících s LINQ to XML, včetně některých pokynů pro zmírnění ohrožení zabezpečení.
 ms.date: 07/20/2015
 ms.assetid: ef2c0dc9-ecf9-4c17-b24e-144184ab725f
-ms.openlocfilehash: 5b7eb815b058cba008f1db2cf683c8934c19b743
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: dc9fd13f19dcf6d9cbbb2b0b7608009cc4da1108
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "73423374"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87165317"
 ---
-# <a name="linq-to-xml-security-c"></a>LINQ do zabezpečení XML (C#)
-Toto téma popisuje problémy se zabezpečením spojené s LINQ do XML. Kromě toho poskytuje některé pokyny pro zmírnění expozice zabezpečení.  
+# <a name="linq-to-xml-security-c"></a>LINQ to XML zabezpečení (C#)
+Toto téma popisuje problémy se zabezpečením související s LINQ to XML. Kromě toho poskytuje některé pokyny ke zmírnění ohrožení zabezpečení.  
   
 ## <a name="linq-to-xml-security-overview"></a>Přehled zabezpečení LINQ to XML  
- LINQ to XML je určen spíše pro pohodlí programování než pro serverové aplikace s přísnými požadavky na zabezpečení. Většina scénářů XML se skládá ze zpracování důvěryhodných dokumentů XML, nikoli ze zpracování nedůvěryhodných dokumentů XML, které jsou odeslány na server. LINQ na XML je optimalizován pro tyto scénáře.  
+ LINQ to XML je navrženější pro usnadnění programování než pro aplikace na straně serveru s přísnými požadavky na zabezpečení. Většina scénářů XML sestává z zpracování důvěryhodných dokumentů XML namísto zpracování nedůvěryhodných dokumentů XML, které jsou odeslány na server. LINQ to XML je pro tyto scénáře optimalizována.  
   
- Pokud je nutné zpracovat nedůvěryhodná data z neznámých zdrojů, společnost Microsoft doporučuje použít instanci <xref:System.Xml.XmlReader> třídy, která byla nakonfigurována k odfiltrování známých útoků xml odmítnutí služby (DoS).  
+ Pokud je nutné zpracovat nedůvěryhodná data z neznámých zdrojů, společnost Microsoft doporučuje použít instanci <xref:System.Xml.XmlReader> třídy, která byla konfigurována pro vyfiltrování známých útoků DOS (Denial of Service) typu XML.  
   
- Pokud jste nakonfigurovali útok <xref:System.Xml.XmlReader> na odmítnutí služby, můžete pomocí této čtečky naplnit linq do stromu XML a stále těžit z vylepšení produktivity programátora LINQ na XML. Mnoho zmírňujících technik zahrnuje vytváření čtenářů, které jsou nakonfigurovány ke zmírnění problému se zabezpečením, a vytvoření instance stromu XML prostřednictvím nakonfigurované čtečky.  
+ Pokud jste nakonfigurovali <xref:System.Xml.XmlReader> pro zmírnění útoků s cílem odepření služby, můžete pomocí tohoto čtecího zařízení naplnit LINQ to XML stromové struktuře a nadále využívat vylepšení aplikace LINQ to XML pro programátory. Mnoho technik zmírnění rizik zahrnuje vytváření čtecích zařízení, která jsou nakonfigurovaná pro zmírnění potíží se zabezpečením, a následné vytvoření instance stromu XML pomocí nakonfigurovaného čtecího modulu.  
   
- Jazyk XML je vnitřně zranitelný vůči útokům odmítnutí služby, protože dokumenty jsou neohraničené velikostí, hloubkou, velikostí názvu prvku a dalšími. Bez ohledu na součást, kterou používáte ke zpracování xml, měli byste být vždy připraveni recyklovat doménu aplikace, pokud používá nadměrné prostředky.  
+ KÓD XML je vnitřně zranitelný vůči útokům DOS (Denial of Service), protože jsou neohraničené velikosti, hloubky, velikosti názvu elementu a další. Bez ohledu na komponentu, kterou použijete ke zpracování XML, byste měli vždy být připraveni k recyklaci domény aplikace, pokud používá nadměrné prostředky.  
   
 ## <a name="mitigation-of-xml-xsd-xpath-and-xslt-attacks"></a>Zmírnění útoků XML, XSD, XPath a XSLT  
- LINQ na XML <xref:System.Xml.XmlReader> je <xref:System.Xml.XmlWriter>postaven na a . LINQ to XML podporuje XSD a XPath prostřednictvím rozšiřujících metod v <xref:System.Xml.Schema?displayProperty=nameWithType> oborech názvů a. <xref:System.Xml.XPath?displayProperty=nameWithType> Pomocí <xref:System.Xml.XmlReader>, <xref:System.Xml.XPath.XPathNavigator>a <xref:System.Xml.XmlWriter> třídy ve spojení s LINQ do XML, můžete vyvolat XSLT transformovat stromy XML.  
+ LINQ to XML je postaven na <xref:System.Xml.XmlReader> a <xref:System.Xml.XmlWriter> . LINQ to XML podporuje XSD a XPath prostřednictvím rozšiřujících metod v <xref:System.Xml.Schema?displayProperty=nameWithType> <xref:System.Xml.XPath?displayProperty=nameWithType> oborech názvů a. Pomocí <xref:System.Xml.XmlReader> tříd, <xref:System.Xml.XPath.XPathNavigator> a <xref:System.Xml.XmlWriter> ve spojení s LINQ to XML lze vyvolat XSLT pro transformaci stromů XML.  
   
- Pokud pracujete v méně zabezpečeném prostředí, existuje řada problémů se zabezpečením, které <xref:System.Xml?displayProperty=nameWithType>jsou <xref:System.Xml.Schema?displayProperty=nameWithType> <xref:System.Xml.XPath?displayProperty=nameWithType>spojeny <xref:System.Xml.Xsl?displayProperty=nameWithType>s jazykem XML a použitím tříd v oblasti , , a . Mezi tyto problémy patří mimo jiné následující:  
+ Pokud pracujete v méně zabezpečeném prostředí, je k dispozici řada problémů se zabezpečením, které jsou spojeny s XML a používání tříd v systémech <xref:System.Xml?displayProperty=nameWithType> , <xref:System.Xml.Schema?displayProperty=nameWithType> , a <xref:System.Xml.XPath?displayProperty=nameWithType> <xref:System.Xml.Xsl?displayProperty=nameWithType> . Mezi tyto problémy patří mimo jiné tyto problémy:  
   
-- XSD, XPath a XSLT jsou jazyky založené na řetězecích, ve kterých můžete určit operace, které spotřebovávají hodně času nebo paměti. Je odpovědností programátorů aplikací, kteří používají řetězce XSD, XPath nebo XSLT z nedůvěryhodných zdrojů, aby ověřili, že řetězce nejsou škodlivé, nebo aby monitorovali a zmírňovali možnost, že vyhodnocení těchto řetězců povede k nadměrnému systému spotřeby zdrojů.  
+- XSD, XPath a XSLT jsou jazyky založené na řetězci, ve kterých můžete zadat operace, které spotřebovávají spoustu času nebo paměti. Je odpovědností programátorů aplikací, kteří přijímají řetězce XSD, XPath nebo XSLT z nedůvěryhodných zdrojů, aby ověřili, že tyto řetězce nejsou škodlivé, nebo pokud chcete monitorovat a zmírnit riziko, že vyhodnocování těchto řetězců vede k nadměrné spotřebě systémových prostředků.  
   
-- Schémata XSD (včetně inline schémat) jsou ze své podstaty ohrožena útoky odmítnutí služby; schémata byste neměli přijímat z nedůvěryhodných zdrojů.  
+- Schémata XSD (včetně vložených schémat) jsou z vlastního podstaty zranitelná útokům DOS (Denial of Service). neměli byste přijímat schémata z nedůvěryhodných zdrojů.  
   
-- XSD a XSLT mohou obsahovat odkazy na jiné soubory a tyto odkazy mohou vést k útokům mezi zónami a mezi doménami.  
+- XSD a XSLT můžou zahrnovat odkazy na jiné soubory a takové odkazy můžou vést k útokům mezi zónami a mezi doménami.  
   
-- Externí entity v DTD mohou mít za následek útoky mezi zónami a mezi doménami.  
+- Externí entity v definicích DTD můžou vést k útokům mezi zónami a mezi doménami.  
   
-- DTD jsou náchylné k útokům odmítnutí služby.  
+- Specifikace DTD jsou zranitelné kvůli útokům DOS (Denial of Service).  
   
-- Výjimečně hluboké dokumenty XML mohou představovat problémy s odmítnutím služby. můžete chtít omezit hloubku dokumentů XML.  
+- Mimořádně hluboké dokumenty XML mohou představovat odepření problémů se službou. Možná budete chtít omezit hloubku dokumentů XML.  
   
-- Nepřijímejte podpůrné součásti, <xref:System.Xml.NameTable> <xref:System.Xml.XmlNamespaceManager>například <xref:System.Xml.XmlResolver> , a objekty, z nedůvěryhodných sestavení.  
+- Nepřijímejte podpůrné komponenty, jako jsou <xref:System.Xml.NameTable> , <xref:System.Xml.XmlNamespaceManager> a <xref:System.Xml.XmlResolver> objekty, z nedůvěryhodných sestavení.  
   
-- Čtení dat v blocích pro zmírnění útoků velkých dokumentů.  
+- Umožňuje číst data v blocích a zmírnit tak útoky na velké dokumenty.  
   
-- Bloky skriptů v šablonách stylů XSLT mohou vystavit řadu útoků.  
+- Bloky skriptu v šablonách stylů XSLT můžou vystavovat řadu útoků.  
   
-- Před vytvořením dynamických výrazů XPath pečlivě ověřte.  
+- Než začnete vytvářet dynamické výrazy XPath, ověřte pečlivě.  
   
-## <a name="linq-to-xml-security-issues"></a>Linq na problémy se zabezpečením XML  
- Problémy se zabezpečením v tomto tématu nejsou uvedeny v libovolném pořadí. Všechny otázky jsou důležité a měly by být podle potřeby řešeny.  
+## <a name="linq-to-xml-security-issues"></a>Problémy se zabezpečením LINQ to XML  
+ Problémy se zabezpečením v tomto tématu nejsou uvedeny v žádném konkrétním pořadí. Všechny problémy jsou důležité a měly by se řešit podle potřeby.  
   
- Úspěšné zvýšení oprávnění útoku dává škodlivé sestavení větší kontrolu nad jeho prostředí. Úspěšné zvýšení oprávnění útoku může mít za následek zpřístupnění dat, odmítnutí služby a další.  
+ Po úspěšném zvýšení oprávnění útoků získá škodlivější sestavení lepší kontrolu nad jeho prostředím. Úspěšné zvýšení úrovně oprávnění může mít za následek zveřejnění dat, odmítnutí služby a další.  
   
- Aplikace by neměly sdělovat údaje uživatelům, kteří nejsou oprávněni tyto údaje zobrazit.  
+ Aplikace by neměly vyzradit data uživatelům, kteří nemají oprávnění k zobrazení těchto dat.  
   
- Útoky odmítnutí služby způsobí, že analyzátor XML nebo LINQ na XML spotřebovávají nadměrné množství paměti nebo času procesoru. Útoky s cílem odepření služby jsou považovány za méně závažné než zvýšení oprávnění útoky nebo zpřístupnění útoků dat. Jsou však důležité ve scénáři, kde server potřebuje zpracovávat dokumenty XML z nedůvěryhodných zdrojů.  
+ Útoky na útok DOS způsobí, že analyzátor XML nebo LINQ to XML spotřebovat nadměrné množství paměti nebo času procesoru. Útoky DoS (Denial of Service) se považují za méně závažnou než zvýšení úrovně oprávnění nebo odhalení útoků s daty. Jsou však důležité v situaci, kdy server potřebuje zpracovat dokumenty XML z nedůvěryhodných zdrojů.  
   
-### <a name="exceptions-and-error-messages-might-reveal-data"></a>Výjimky a chybové zprávy mohou odhalit data  
- Popis chyby může odhalit data, jako jsou například transformovaná data, názvy souborů nebo podrobnosti implementace. Chybové zprávy by neměly být vystaveny volajícím, kteří nejsou důvěryhodní. Měli byste zachytit všechny chyby a hlásit chyby s vlastní mise.  
+### <a name="exceptions-and-error-messages-might-reveal-data"></a>Výjimky a chybové zprávy můžou odhalit data.  
+ Popis chyby může odhalit data, jako jsou transformovaná data, názvy souborů nebo podrobnosti implementace. Volajícím, kteří nejsou důvěryhodní, by neměly být vystavené chybové zprávy. Měli byste zachytit všechny chyby a ohlásit chyby s vlastními chybovými zprávami.  
   
-### <a name="do-not-call-codeaccesspermissionsassert-in-an-event-handler"></a>Nevolat CodeAccessPermissions.Assert v obslužné rutině události  
- Sestavení může mít menší nebo větší oprávnění. Sestavení, které má větší oprávnění, má větší kontrolu nad počítačem a jeho prostředími.  
+### <a name="do-not-call-codeaccesspermissionsassert-in-an-event-handler"></a>Nevolejte CodeAccessPermissions. Assert v obslužné rutině události  
+ Sestavení může mít méně nebo více oprávnění. Sestavení, které má větší oprávnění, má větší kontrolu nad počítačem a jeho prostředími.  
   
- Pokud kód v sestavení s <xref:System.Security.CodeAccessPermission.Assert%2A?displayProperty=nameWithType> většími oprávněními volá v obslužné rutině události a potom je strom XML předán škodlivému sestavení, které má omezená oprávnění, může škodlivé sestavení způsobit vyvolání události. Vzhledem k tomu, že událost spustí kód, který je v sestavení s většími oprávněními, škodlivé sestavení by pak pracovat se zvýšenými oprávněními.  
+ Pokud kód v sestavení s větším oprávněním volá <xref:System.Security.CodeAccessPermission.Assert%2A?displayProperty=nameWithType> v obslužné rutině události a poté je strom XML předán škodlivému sestavení, které má omezená oprávnění, může škodlivá sestavení způsobit vyvolání události. Vzhledem k tomu, že událost spouští kód, který je v sestavení s větším oprávněním, pak by škodlivá sestavení byla provozována se zvýšenými oprávněními.  
   
- Společnost Microsoft doporučuje nikdy <xref:System.Security.CodeAccessPermission.Assert%2A?displayProperty=nameWithType> volat obslužnou rutinu události.  
+ Společnost Microsoft doporučuje, abyste nikdy nevolali <xref:System.Security.CodeAccessPermission.Assert%2A?displayProperty=nameWithType> v obslužné rutině události.  
   
-### <a name="dtds-are-not-secure"></a>DTD nejsou zabezpečené  
- Entity v DTD nejsou ze své podstaty nejsou zabezpečené. Je možné, že škodlivý dokument XML, který obsahuje DTD, způsobí, že analyzátor použije veškerou paměť a čas procesoru, což způsobí útok odmítnutí služby. Proto v LINQ na XML je zpracování DTD ve výchozím nastavení vypnuto. Neměli byste přijímat DTD z nedůvěryhodných zdrojů.  
+### <a name="dtds-are-not-secure"></a>Soubory DTD nejsou zabezpečené  
+ Entity v definicích DTD jsou ze své podstaty nezabezpečené. V případě škodlivého dokumentu XML, který obsahuje DTD, je možné, že analyzátor bude používat veškerou paměť a čas procesoru, což by způsobilo útok na útok DoS (Denial of Service). Proto je v LINQ to XML zpracování DTD ve výchozím nastavení vypnuté. Nepřijímáte specifikace DTD z nedůvěryhodných zdrojů.  
   
- Jedním z příkladů přijetí DTD z nedůvěryhodných zdrojů je webová aplikace, která umožňuje webovým uživatelům nahrát soubor XML, který odkazuje na soubor DTD a DTD. Po ověření souboru může škodlivý DTD spustit útok odmítnutí služby na serveru. Dalším příkladem přijetí DTD z nedůvěryhodných zdrojů je odkaz na DTD na sdílené síťové složce, která také umožňuje anonymní přístup FTP.  
+ Jedním z příkladů přijetí souborů DTD z nedůvěryhodných zdrojů je webová aplikace, která umožňuje webovým uživatelům odeslat soubor XML, který odkazuje na DTD a soubor DTD. Po ověření souboru může škodlivá deklarace DTD na vašem serveru spustit útok na útok DoS (Denial of Service). Dalším příkladem přijetí souborů DTD z nedůvěryhodných zdrojů je odkazování na DTD v síťové sdílené složce, který taky povoluje anonymní přístup FTP.  
   
-### <a name="avoid-excessive-buffer-allocation"></a>Vyhněte se nadměrnému přidělení vyrovnávací paměti  
- Vývojáři aplikací by si měli být vědomi toho, že extrémně velké zdroje dat mohou vést k vyčerpání prostředků a útokům odmítnutí služby.  
+### <a name="avoid-excessive-buffer-allocation"></a>Vyhnout se nadměrnému přidělení vyrovnávací paměti  
+ Vývojáři aplikací by měli vědět, že extrémně velké zdroje dat můžou vést k vyčerpání prostředků a útokům na dostupnost služby.  
   
- Pokud uživatel se zlými úmysly odešle nebo odešle velmi velký dokument XML, může to způsobit, že LINQ do XML spotřebuje nadměrné systémové prostředky. To může představovat útok odmítnutí služby. Chcete-li tomu zabránit, <xref:System.Xml.XmlReaderSettings.MaxCharactersInDocument%2A?displayProperty=nameWithType> můžete nastavit vlastnost a vytvořit čtečku, která je pak omezena ve velikosti dokumentu, který může načíst. Potom pomocí čtečky k vytvoření stromu XML.  
+ Pokud uživatel se zlými úmysly odesílá nebo nahraje velmi velký dokument XML, může to způsobit, že LINQ to XML spotřebovat nadměrné systémové prostředky. To může znamenat útok na útok DoS (Denial of Service). Chcete-li tomu zabránit, můžete nastavit <xref:System.Xml.XmlReaderSettings.MaxCharactersInDocument%2A?displayProperty=nameWithType> vlastnost a vytvořit čtecí modul, který je pak omezen velikostí dokumentu, který může načíst. Pak pomocí čtecího zařízení vytvoříte strom XML.  
   
- Pokud například víte, že maximální očekávaná velikost dokumentů XML pocházejících z nedůvěryhodného zdroje bude <xref:System.Xml.XmlReaderSettings.MaxCharactersInDocument%2A?displayProperty=nameWithType> menší než 50 bajtů, nastavená na 100 000. To nezatíží vaše zpracování dokumentů XML a zároveň to zmírní hrozby odmítnutí služby, kde mohou být nahrány dokumenty, které by spotřebovávaly velké množství paměti.  
+ Pokud například víte, že maximální očekávaná velikost dokumentů XML přicházejících z nedůvěryhodného zdroje bude menší než 50 tis bajtů, nastavte <xref:System.Xml.XmlReaderSettings.MaxCharactersInDocument%2A?displayProperty=nameWithType> na 100 000. Encumber se tím, že se vaše zpracování dokumentů XML neprojeví a zároveň se tím sníží hrozby útoku DOS, kde mohou být nahrány dokumenty, které spotřebují velké objemy paměti.  
   
-### <a name="avoid-excess-entity-expansion"></a>Vyhněte se nadměrnému rozšíření entity  
- Jeden ze známých útoků odmítnutí služby při použití DTD je dokument, který způsobuje nadměrné rozšíření entity. Chcete-li tomu zabránit, <xref:System.Xml.XmlReaderSettings.MaxCharactersFromEntities%2A?displayProperty=nameWithType> můžete nastavit vlastnost a vytvořit čtečku, která je pak omezena v počtu znaků, které vyplývají z rozšíření entity. Potom pomocí čtečky k vytvoření stromu XML.  
+### <a name="avoid-excess-entity-expansion"></a>Vyhnout se nadměrnému rozšíření entit  
+ Jedním ze známých útoků DOS (Denial of Service) při použití DTD je dokument, který způsobuje nadměrné rozšíření entit. Chcete-li tomu zabránit, můžete nastavit <xref:System.Xml.XmlReaderSettings.MaxCharactersFromEntities%2A?displayProperty=nameWithType> vlastnost a vytvořit čtecí modul, který je poté omezen počtem znaků, které jsou výsledkem rozšíření entity. Pak pomocí čtecího zařízení vytvoříte strom XML.  
   
-### <a name="limit-the-depth-of-the-xml-hierarchy"></a>Omezení hloubky hierarchie XML  
- Jedním z možných útoku odmítnutí služby je při odeslání dokumentu, který má nadměrnou hloubku hierarchie. Chcete-li tomu zabránit, <xref:System.Xml.XmlReader> můžete zabalit ve vlastní třídě, která počítá hloubku prvků. Pokud hloubka překročí předem stanovenou přiměřenou úroveň, můžete ukončit zpracování škodlivého dokumentu.  
+### <a name="limit-the-depth-of-the-xml-hierarchy"></a>Omezit hloubku hierarchie XML  
+ Jedním z možných útoků DOS (Denial of Service) je odeslání dokumentu, který má nadměrnou hloubku hierarchie. Chcete-li tomu zabránit, můžete zabalit do <xref:System.Xml.XmlReader> vlastní třídy, která počítá hloubku prvků. Pokud hloubka překročí předem stanovenou rozumnou úroveň, můžete ukončit zpracování škodlivého dokumentu.  
   
-### <a name="protect-against-untrusted-xmlreader-or-xmlwriter-implementations"></a>Ochrana před nedůvěryhodnými implementacemi XmlReader nebo XmlWriter  
- Správci by měli ověřit, <xref:System.Xml.XmlReader> <xref:System.Xml.XmlWriter> zda všechny externě zadané nebo implementace mají silné názvy a byly registrovány v konfiguraci počítače. Tím zabráníte načtení škodlivého kódu maskovaného jako čtenář nebo zapisovatel.  
+### <a name="protect-against-untrusted-xmlreader-or-xmlwriter-implementations"></a>Chránit před nedůvěryhodnými implementacemi XmlReader nebo XmlWriter  
+ Správci by měli ověřit, že všechny externě dodávané <xref:System.Xml.XmlReader> nebo <xref:System.Xml.XmlWriter> implementace mají silné názvy a jsou zaregistrované v konfiguraci počítače. Tím se zabrání načtení škodlivého kódu jako čtecí modul nebo zapisovač.  
   
-### <a name="periodically-free-objects-that-reference-xname"></a>Pravidelně volné objekty, které odkazují na XName  
- Chcete-li chránit před určitými druhy útoků, programátoři <xref:System.Xml.Linq.XName> aplikací by měli pravidelně uvolnit všechny objekty, které odkazují na objekt v doméně aplikace.  
+### <a name="periodically-free-objects-that-reference-xname"></a>Periodické bezplatné objekty, které odkazují na XName  
+ Pro ochranu proti určitým druhům útoků by Programátori aplikací měli v pravidelných intervalech uvolnit všechny objekty, které odkazují na <xref:System.Xml.Linq.XName> objekt v doméně aplikace.  
   
-### <a name="protect-against-random-xml-names"></a>Chránit před náhodnými názvy XML  
- Aplikace, které přebírají data z <xref:System.Xml.XmlReader> nedůvěryhodných zdrojů, by měly zvážit použití souboru, který je zabalen do vlastního kódu, ke kontrole možnosti náhodných názvů XML a jmenných prostorů. Pokud jsou tyto náhodné názvy XML a obory názvů zjištěny, aplikace pak může ukončit zpracování škodlivého dokumentu.  
+### <a name="protect-against-random-xml-names"></a>Ochrana proti náhodným názvům XML  
+ Aplikace, které přijímají data z nedůvěryhodných zdrojů, by měly zvážit použití <xref:System.Xml.XmlReader> , který je zabalen do vlastního kódu, aby zkontroloval možnost náhodných názvů XML a oborů názvů. Pokud jsou zjištěny tyto náhodné názvy XML a obory názvů, může aplikace ukončit zpracování škodlivého dokumentu.  
   
- Počet názvů v libovolném oboru názvů (včetně názvů v žádném oboru názvů) můžete omezit na přiměřené omezení.  
+ Můžete chtít omezit počet názvů v libovolném daném oboru názvů (včetně názvů v žádném oboru názvů) na rozumný limit.  
   
-### <a name="annotations-are-accessible-by-software-components-that-share-a-linq-to-xml-tree"></a>Poznámky jsou přístupné softwarovým součástem, které sdílejí linq se stromem XML  
- Linq na XML lze použít k vytvoření kanálů zpracování, ve kterých různé součásti aplikace načítají, ověřují, dotazují, transformují, aktualizují a ukládají data XML předávaná mezi součástmi jako stromy XML. To může pomoci optimalizovat výkon, protože režie načítání a serializace objektů na text XML se provádí pouze na koncích kanálu. Vývojáři si však musí být vědomi toho, že všechny poznámky a obslužné rutiny událostí vytvořené jednou komponentou jsou přístupné ostatním součástem. To může vytvořit řadu chyb zabezpečení, pokud součásti mají různé úrovně důvěryhodnosti. Chcete-li vytvořit zabezpečené kanály mezi méně důvěryhodnými součástmi, je nutné serializovat linq na objekty XML na text XML před předáním dat nedůvěryhodné součásti.  
+### <a name="annotations-are-accessible-by-software-components-that-share-a-linq-to-xml-tree"></a>Poznámky jsou přístupné komponentami softwaru, které sdílejí strom LINQ to XML.  
+ LINQ to XML lze použít k sestavování zpracovávaných kanálů, ve kterých různé komponenty aplikace načítají, ověřují, dotazují, transformují, aktualizují a ukládají data XML, která jsou předána mezi komponentami jako stromy XML. To může přispět k optimalizaci výkonu, protože režie načítání a serializace objektů do textu XML je provedena pouze na koncích kanálu. Vývojáři si ale musí být vědomi, že všechny poznámky a obslužné rutiny událostí, které vytvořila jedna součást, jsou přístupné pro jiné komponenty. To může vytvořit několik ohrožení zabezpečení, pokud komponenty mají různé úrovně důvěryhodnosti. Chcete-li vytvářet zabezpečené kanály napříč méně důvěryhodnými komponentami, je nutné před předáním dat do nedůvěryhodné součásti serializovat objekty LINQ to XML do textu XML.  
   
- Některé zabezpečení poskytuje za běhu common jazyka (CLR). Například součást, která neobsahuje soukromou třídu, nemůže přistupovat k poznámkám, které tato třída zamísťuje. Poznámky však mohou být odstraněny součástmi, které je nemohou číst. Tohle by mohlo být použito jako znemanipulacní útok.  
+ Určité zabezpečení je zajištěno modulem CLR (Common Language Runtime). Například komponenta, která nezahrnuje soukromou třídu, nemůže přistupovat k poznámkám, které tato třída používá. Poznámky však lze odstranit komponentami, které je nemohou číst. Tento způsob se dá použít jako útok na manipulaci.  
   
 ## <a name="see-also"></a>Viz také
 
-- [Programovací příručka (LINQ to XML) (C#)](linq-to-xml-overview.md)
+- [Průvodce programováním (LINQ to XML) (C#)](linq-to-xml-overview.md)

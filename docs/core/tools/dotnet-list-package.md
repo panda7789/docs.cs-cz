@@ -2,18 +2,18 @@
 title: příkaz dotnet list Package
 description: Příkaz dotnet list Package nabízí pohodlný možnost zobrazit seznam odkazů na balíčky pro projekt nebo řešení.
 ms.date: 02/14/2020
-ms.openlocfilehash: 12d64600d178ea8cf490a0d6917e67bd3d8c6d21
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: 7157e56860936d10aa322854a589ae89e2bc0826
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463665"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87164750"
 ---
 # <a name="dotnet-list-package"></a>dotnet list package
 
 **Tento článek se týká:** ✔️ .net Core 2,2 SDK a novějších verzí
 
-## <a name="name"></a>Name
+## <a name="name"></a>Název
 
 `dotnet list package`– Obsahuje odkazy na balíčky pro projekt nebo řešení.
 
@@ -21,6 +21,7 @@ ms.locfileid: "81463665"
 
 ```dotnetcli
 dotnet list [<PROJECT>|<SOLUTION>] package [--config <SOURCE>]
+    [--deprecated]
     [--framework <FRAMEWORK>] [--highest-minor] [--highest-patch]
     [--include-prerelease] [--include-transitive] [--interactive]
     [--outdated] [--source <SOURCE>]
@@ -28,7 +29,7 @@ dotnet list [<PROJECT>|<SOLUTION>] package [--config <SOURCE>]
 dotnet list package -h|--help
 ```
 
-## <a name="description"></a>Description
+## <a name="description"></a>Popis
 
 `dotnet list package`Příkaz nabízí pohodlný možnost zobrazit seznam všech odkazů balíčků NuGet pro konkrétní projekt nebo řešení. Nejprve je třeba sestavit projekt, aby bylo možné pro tento příkaz zpracovat potřebné prostředky. Následující příklad ukazuje výstup `dotnet list package` příkazu pro projekt [SentimentAnalysis](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/SentimentAnalysis) :
 
@@ -78,6 +79,10 @@ Soubor projektu nebo řešení, na kterém chcete pracovat. Pokud není zadán, 
 
   Zdroje NuGet, které se mají použít při hledání novějších balíčků Vyžaduje `--outdated` možnost.
 
+- **`--deprecated`**
+
+  Zobrazí zastaralé balíčky.
+
 - **`--framework <FRAMEWORK>`**
 
   Zobrazí jenom balíčky, které platí pro zadanou [cílovou architekturu](../../standard/frameworks.md). Pokud chcete zadat více platforem, opakujte možnost několikrát. Například: `--framework netcoreapp2.2 --framework netstandard2.0`.
@@ -88,15 +93,15 @@ Soubor projektu nebo řešení, na kterém chcete pracovat. Pokud není zadán, 
 
 - **`--highest-minor`**
 
-  Při hledání novějších balíčků bere v úvahu jenom balíčky s porovnávacím číslem hlavní verze. Vyžaduje `--outdated` možnost.
+  Při hledání novějších balíčků bere v úvahu jenom balíčky s porovnávacím číslem hlavní verze. Vyžaduje `--outdated` parametr nebo `--deprecated` .
 
 - **`--highest-patch`**
 
-  Při hledání novějších balíčků bere v úvahu jenom balíčky s porovnávacími čísly hlavní verze a podverze. Vyžaduje `--outdated` možnost.
+  Při hledání novějších balíčků bere v úvahu jenom balíčky s porovnávacími čísly hlavní verze a podverze. Vyžaduje `--outdated` parametr nebo `--deprecated` .
 
 - **`--include-prerelease`**
 
-  Při hledání novějších balíčků bere v úvahu balíčky s předběžnou verzí. Vyžaduje `--outdated` možnost.
+  Při hledání novějších balíčků bere v úvahu balíčky s předběžnou verzí. Vyžaduje `--outdated` parametr nebo `--deprecated` .
 
 - **`--include-transitive`**
 
@@ -112,7 +117,7 @@ Soubor projektu nebo řešení, na kterém chcete pracovat. Pokud není zadán, 
 
 - **`-s|--source <SOURCE>`**
 
-  Zdroje NuGet, které se mají použít při hledání novějších balíčků Vyžaduje `--outdated` možnost.
+  Zdroje NuGet, které se mají použít při hledání novějších balíčků Vyžaduje `--outdated` parametr nebo `--deprecated` .
 
 ## <a name="examples"></a>Příklady
 

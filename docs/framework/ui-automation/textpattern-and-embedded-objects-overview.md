@@ -1,5 +1,6 @@
 ---
 title: TextPattern a vložené objekty – přehled
+description: Přečtěte si přehled způsobu, jakým automatizace uživatelského rozhraní zpřístupňuje vložené objekty nebo podřízené prvky v rámci textového dokumentu nebo kontejneru pomocí TextPattern a TextPatternRange.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - UI Automation, TextPattern class
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - accessing embedded objects
 - embedded objects, UI Automation
 ms.assetid: 93fdfbb9-0025-4b72-8ca0-0714adbb70d5
-ms.openlocfilehash: 7a3338a08d06320acdc2acb0647bc91541448d7d
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: 0a06fb72b280fc61faeb12f6f2c3a05d957ec7b9
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84201073"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87163554"
 ---
 # <a name="textpattern-and-embedded-objects-overview"></a>TextPattern a vložené objekty – přehled
 > [!NOTE]
@@ -121,7 +122,7 @@ Příklady přizpůsobení rozsahu textu pro Move () a ExpandToEnclosingUnit ()
 |<xref:System.Windows.Automation.Text.TextPatternRange.Move%2A>s parametry (TextUnit. Word, 1).|Přesune rozsah textu na hodnotu "is". Vzhledem k tomu, že pouze textové vložené objekty jsou považovány za součást textového streamu, obrázek v tomto příkladu nemá vliv na přesun nebo jeho návratovou hodnotu (1 v tomto případě).|  
   
 <a name="Table"></a>
-### <a name="table"></a>Table  
+### <a name="table"></a>Tabulka  
   
 ### <a name="table-used-for-examples"></a>Tabulka použitá pro příklady  
   

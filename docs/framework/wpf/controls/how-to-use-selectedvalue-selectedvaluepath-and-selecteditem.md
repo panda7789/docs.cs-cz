@@ -1,5 +1,6 @@
 ---
 title: 'Postupy: Použití SelectedValue, SelectedValuePath a SelectedItem'
+description: Naučte se používat vlastnosti SelectedValue a SelectedValuePath k určení hodnoty pro SelectedItem prvku TreeView Windows Presentation Foundation.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - TreeView control [WPF], SelectedValue properties
@@ -12,34 +13,34 @@ helpviewer_keywords:
 - Control class [WPF], SelectedValuePath properties
 - SelectedValue [WPF], SelectedItem properties
 ms.assetid: 2fc92ad4-f02c-4f89-bbe9-d4978a7af0db
-ms.openlocfilehash: d9f7a8f04f53b7d38a49dfef2c947dfa1c2d263d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ddac2455dee0bf69d25307340eddd5364e43e823
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61699133"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87166271"
 ---
 # <a name="how-to-use-selectedvalue-selectedvaluepath-and-selecteditem"></a>Postupy: Použití SelectedValue, SelectedValuePath a SelectedItem
-Tento příklad ukazuje způsob použití <xref:System.Windows.Controls.TreeView.SelectedValue%2A> a <xref:System.Windows.Controls.TreeView.SelectedValuePath%2A> vlastnosti, které chcete zadat hodnotu <xref:System.Windows.Controls.TreeView.SelectedItem%2A> z <xref:System.Windows.Controls.TreeView>.  
+Tento příklad ukazuje, jak použít <xref:System.Windows.Controls.TreeView.SelectedValue%2A> vlastnosti a <xref:System.Windows.Controls.TreeView.SelectedValuePath%2A> k určení hodnoty pro <xref:System.Windows.Controls.TreeView.SelectedItem%2A> <xref:System.Windows.Controls.TreeView> .  
   
 ## <a name="example"></a>Příklad  
- <xref:System.Windows.Controls.TreeView.SelectedValuePath%2A> Vlastnost poskytuje způsob, jak určit <xref:System.Windows.Controls.TreeView.SelectedValue%2A> pro <xref:System.Windows.Controls.TreeView.SelectedItem%2A> v <xref:System.Windows.Controls.TreeView>. <xref:System.Windows.Controls.TreeView.SelectedItem%2A> Představuje objekt <xref:System.Windows.Controls.ItemsControl.Items%2A> kolekce a <xref:System.Windows.Controls.TreeView> zobrazuje hodnotu jedné vlastnosti vybrané položky. <xref:System.Windows.Controls.TreeView.SelectedValuePath%2A> Vlastnost určuje cestu k vlastnosti, která se používá k určení hodnoty <xref:System.Windows.Controls.TreeView.SelectedValue%2A> vlastnost. Příklady v tomto tématu ilustrují tento koncept.  
+ <xref:System.Windows.Controls.TreeView.SelectedValuePath%2A>Vlastnost poskytuje způsob, jak zadat <xref:System.Windows.Controls.TreeView.SelectedValue%2A> pro <xref:System.Windows.Controls.TreeView.SelectedItem%2A> v <xref:System.Windows.Controls.TreeView> . <xref:System.Windows.Controls.TreeView.SelectedItem%2A>Představuje objekt v <xref:System.Windows.Controls.ItemsControl.Items%2A> kolekci a <xref:System.Windows.Controls.TreeView> zobrazí hodnotu jedné vlastnosti vybrané položky. <xref:System.Windows.Controls.TreeView.SelectedValuePath%2A>Vlastnost určuje cestu k vlastnosti, která se používá k určení hodnoty <xref:System.Windows.Controls.TreeView.SelectedValue%2A> Vlastnosti. Příklady v tomto tématu ilustrují tento koncept.  
   
  Následující příklad ukazuje <xref:System.Windows.Data.XmlDataProvider> , který obsahuje informace o zaměstnancích.  
   
  [!code-xaml[TreeViewSelectedValue#XMLDataProvider](~/samples/snippets/csharp/VS_Snippets_Wpf/TreeViewSelectedValue/CS/Window1.xaml#xmldataprovider)]  
   
- Následující příklad definuje <xref:System.Windows.HierarchicalDataTemplate> , který se zobrazí `EmployeeName` a `EmployeeWorkDay` z `Employee`. Všimněte si, že <xref:System.Windows.HierarchicalDataTemplate> neurčuje `EmployeeNumber` jako součást šablony.  
+ Následující příklad definuje <xref:System.Windows.HierarchicalDataTemplate> , který ukazuje `EmployeeName` a `EmployeeWorkDay` `Employee` . Všimněte si, že <xref:System.Windows.HierarchicalDataTemplate> neurčuje `EmployeeNumber` jako součást šablony.  
   
  [!code-xaml[TreeViewSelectedValue#HierarchicalDataTemplate](~/samples/snippets/csharp/VS_Snippets_Wpf/TreeViewSelectedValue/CS/Window1.xaml#hierarchicaldatatemplate)]  
   
- Následující příklad ukazuje <xref:System.Windows.Controls.TreeView> , která používá dříve definované <xref:System.Windows.HierarchicalDataTemplate> a nastaví se <xref:System.Windows.Controls.TreeView.SelectedValue%2A> vlastnost `EmployeeNumber`. Když vyberete `EmployeeName` v <xref:System.Windows.Controls.TreeView>, <xref:System.Windows.Controls.TreeView.SelectedItem%2A> vrátí vlastnost `EmployeeInfo` datová položka, která odpovídá vybrané `EmployeeName`. Ale protože <xref:System.Windows.Controls.TreeView.SelectedValuePath%2A> tohoto <xref:System.Windows.Controls.TreeView> je nastavena na `EmployeeNumber`, <xref:System.Windows.Controls.TreeView.SelectedValue%2A> je nastavena na `EmployeeNumber`.  
+ Následující příklad ukazuje <xref:System.Windows.Controls.TreeView> , který používá dříve definovaný <xref:System.Windows.HierarchicalDataTemplate> a který nastavuje <xref:System.Windows.Controls.TreeView.SelectedValue%2A> vlastnost na `EmployeeNumber` . Když vyberete `EmployeeName` v <xref:System.Windows.Controls.TreeView> , <xref:System.Windows.Controls.TreeView.SelectedItem%2A> vlastnost vrátí `EmployeeInfo` datovou položku, která odpovídá vybranému `EmployeeName` . Protože je však <xref:System.Windows.Controls.TreeView.SelectedValuePath%2A> <xref:System.Windows.Controls.TreeView> nastaveno na `EmployeeNumber` , <xref:System.Windows.Controls.TreeView.SelectedValue%2A> je nastavena na `EmployeeNumber` .  
   
  [!code-xaml[TreeViewSelectedValue#SelectedValuePath](~/samples/snippets/csharp/VS_Snippets_Wpf/TreeViewSelectedValue/CS/Window1.xaml#selectedvaluepath)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Controls.TreeView>
 - <xref:System.Windows.Controls.TreeViewItem>
 - [TreeView – přehled](treeview-overview.md)
-- [Témata s postupy](treeview-how-to-topics.md)
+- [– postupy](treeview-how-to-topics.md)

@@ -1,5 +1,6 @@
 ---
 title: TextBox – styly a šablony
+description: Přečtěte si o stylech a šablonách ovládacího prvku TextBox Windows Presentation Foundation. Upravte ControlTemplate tak, aby měl ovládací prvek jedinečný vzhled.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - ControlTemplate [WPF], TextBox
@@ -9,40 +10,40 @@ helpviewer_keywords:
 - templates [WPF], TextBox
 - TextBox [WPF], styles and templates
 ms.assetid: aa99130c-43a1-450f-9b46-c40ae0db0cca
-ms.openlocfilehash: 41e390c261836909240cc146a48729d48c4a410e
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 0e15fd40f5590ee46da49cc6c0d5fb30e051f7e4
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74283702"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87164731"
 ---
 # <a name="textbox-styles-and-templates"></a>TextBox – styly a šablony
-Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.Controls.TextBox>. Výchozí <xref:System.Windows.Controls.ControlTemplate> můžete změnit tak, aby měl ovládací prvek jedinečný vzhled. Další informace najdete v tématu [Vytvoření šablony pro ovládací prvek](../../../desktop-wpf/themes/how-to-create-apply-template.md).  
+Toto téma popisuje styly a šablony pro <xref:System.Windows.Controls.TextBox> ovládací prvek. Můžete změnit výchozí nastavení <xref:System.Windows.Controls.ControlTemplate> a dát ovládacímu prvku jedinečný vzhled. Další informace najdete v tématu [Vytvoření šablony pro ovládací prvek](../../../desktop-wpf/themes/how-to-create-apply-template.md).  
   
 ## <a name="textbox-parts"></a>Části textového pole  
- V následující tabulce jsou uvedeny pojmenované části ovládacího prvku <xref:System.Windows.Controls.TextBox>.  
+ V následující tabulce jsou uvedeny pojmenované části <xref:System.Windows.Controls.TextBox> ovládacího prvku.  
   
-|Částí|Typ|Popis|  
+|Část|Typ|Popis|  
 |-|-|-|  
-|PART_ContentHost|<xref:System.Windows.FrameworkElement>|Vizuální prvek, který může obsahovat <xref:System.Windows.FrameworkElement>. Text <xref:System.Windows.Controls.TextBox> se zobrazí v tomto elementu.|  
+|PART_ContentHost|<xref:System.Windows.FrameworkElement>|Vizuální prvek, který může obsahovat <xref:System.Windows.FrameworkElement> . Text <xref:System.Windows.Controls.TextBox> je zobrazen v tomto elementu.|  
   
 ## <a name="textbox-states"></a>Textové pole – stavy  
- V následující tabulce jsou uvedeny vizuální stavy pro ovládací prvek <xref:System.Windows.Controls.TextBox>.  
+ V následující tabulce jsou uvedeny vizuální stavy <xref:System.Windows.Controls.TextBox> ovládacího prvku.  
   
 |Název VisualState|Název VisualStateGroup|Popis|  
 |----------------------|---------------------------|-----------------|  
 |Normální|CommonStates|Výchozí stav.|  
 |MouseOver|CommonStates|Ukazatel myši je umístěn nad ovládacím prvkem.|  
 |Zakázáno|CommonStates|Ovládací prvek je zakázán.|  
-|ReadOnly|CommonStates|Uživatel nemůže měnit text v <xref:System.Windows.Controls.TextBox>.|  
-|Zaměřil|FocusStates|Ovládací prvek má fokus.|  
+|ReadOnly|CommonStates|Uživatel nemůže změnit text v <xref:System.Windows.Controls.TextBox> .|  
+|Focused|FocusStates|Ovládací prvek má fokus.|  
 |Bez fokusu|FocusStates|Ovládací prvek nemá fokus.|  
-|Platný|ValidationStates|Ovládací prvek používá třídu <xref:System.Windows.Controls.Validation> a vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `false`.|  
-|InvalidFocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` má ovládací prvek fokus.|  
-|InvalidUnfocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` má ovládací prvek fokus.|  
+|Platné|ValidationStates|Ovládací prvek používá <xref:System.Windows.Controls.Validation> třídu a <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojenou vlastnost je `false` .|  
+|InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType>Připojená vlastnost má `true` fokus na ovládací prvek.|  
+|InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType>Připojená vlastnost `true` má ovládací prvek nemá fokus.|  
   
 ## <a name="textbox-controltemplate-example"></a>Příklad textového ControlTemplateu  
- Následující příklad ukazuje, jak definovat <xref:System.Windows.Controls.ControlTemplate> pro ovládací prvek <xref:System.Windows.Controls.TextBox>.  
+ Následující příklad ukazuje, jak definovat <xref:System.Windows.Controls.ControlTemplate> pro <xref:System.Windows.Controls.TextBox> ovládací prvek.  
   
  [!code-xaml[ControlTemplateExamples#TextBox](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/textbox.xaml#textbox)]  
   
@@ -52,7 +53,7 @@ Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.C
   
  Úplnou ukázku najdete v tématu [stylování s ControlTemplates Sample](https://github.com/Microsoft/WPF-Samples/tree/master/Styles%20&%20Templates/IntroToStylingAndTemplating).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.FrameworkElement.Style%2A>
 - <xref:System.Windows.Controls.ControlTemplate>

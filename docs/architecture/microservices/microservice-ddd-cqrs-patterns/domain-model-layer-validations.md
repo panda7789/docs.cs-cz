@@ -2,12 +2,12 @@
 title: Návrh ověřování ve vrstvě doménového modelu
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Princip klíčových konceptů ověřování modelů domén
 ms.date: 10/08/2018
-ms.openlocfilehash: 94df2d6441581fbbae479da2524d6ffce2037d68
-ms.sourcegitcommit: 4ad2f8920251f3744240c3b42a443ffbe0a46577
+ms.openlocfilehash: f1e2d7430c642ad47f79cdd34d3a65e2cc70e239
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86100909"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87164272"
 ---
 # <a name="design-validations-in-the-domain-model-layer"></a>Ověřování návrhu ve vrstvě doménového modelu
 
@@ -15,9 +15,9 @@ V DDD lze ověřovací pravidla představit jako invariantní. Hlavní zodpověd
 
 Entity domény by měly být vždy platné entity. Existuje určitý počet invariant pro objekt, který by měl vždy true. Například objekt položky objednávky má vždy množství, které musí být kladné celé číslo a název článku a cenu. Proto vynucujeme invariantní je zodpovědností za entity domény (hlavně z agregačního kořene) a objekt entity by neměl být schopný existovat, aniž by byla platná. Invariantní pravidla jsou jednoduše vyjádřena jako kontrakty a výjimky nebo oznámení jsou vyvolány při jejich porušení.
 
-Důvodem je, že k mnoha chybám dochází, protože objekty jsou ve stavu, kdy by nikdy neměly být v. Následuje dobré vysvětlení z Greg Younga v [online diskuzi](https://jeffreypalermo.com/2009/05/the-fallacy-of-the-always-valid-entity/):
+Důvodem je, že k mnoha chybám dochází, protože objekty jsou ve stavu, kdy by nikdy neměly být v. Tato [Online diskuze](http://codebetter.com/gregyoung/2009/05/22/always-valid/) je dobrým vysvětlením z Greg Younga.
 
-Pojďme teď navrhnout SendUserCreationEmailService, který vezme v uživatelském profilu... Jak se můžeme racionalizovat, že v této službě není null? Provedeme to znovu? Nebo pravděpodobnější... nebotherte se jenom na to, abyste se mohli podívat a "Doufám na to nejlepší" – Doufáme, že si ho někdo obtěžovat před odesláním. Při použití TDD jedna z prvních testů, které bychom měli psát, je třeba, aby při odeslání zákazníka s názvem s hodnotou null, který by měl vyvolat chybu. Ale až začneme psát tyto typy testů znovu a znovu, uvědomujeme si... "Počkejte, pokud nikdy nepovolujeme, aby se název stala hodnotou null. nedostali jsme všechny tyto testy."
+Pojďme teď navrhnout SendUserCreationEmailService, který vezme v uživatelském profilu... Jak se můžeme racionalizovat, že v této službě není null? Provedeme to znovu? Nebo pravděpodobnější... nebotherte se jenom na to, abyste se mohli podívat a "Doufám na to nejlepší" – Doufáme, že si ho někdo obtěžovat před odesláním. Při použití TDD jedna z prvních testů, které bychom měli psát, je třeba, aby při odeslání zákazníka s názvem s hodnotou null, který by měl vyvolat chybu. Ale až začneme psát tyto typy testů znovu a znovu, uvědomujeme si... "Počkejte, pokud nikdy nepovolujeme, aby se název stala null, ale všechny tyto testy".
 
 ## <a name="implement-validations-in-the-domain-model-layer"></a>Implementace ověřování ve vrstvě doménového modelu
 

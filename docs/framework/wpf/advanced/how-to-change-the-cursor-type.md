@@ -1,5 +1,6 @@
 ---
 title: 'Postupy: Změna typu kurzoru'
+description: Změní kurzor ukazatele myši u prvku a pro aplikaci v Windows Presentation Foundation. Tento příklad se skládá z XAML a souboru kódu na pozadí.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,30 +9,30 @@ helpviewer_keywords:
 - mouse pointer [WPF], cursor type
 - cursor (mouse pointer)
 ms.assetid: 08c945a7-8ab0-4320-acf3-0b4955a344c2
-ms.openlocfilehash: 5c9e6931f6addb62a51e44b06a159d4e7b1e5f8a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ce0bc290948a0e52e85f76ceb62a330b49fd87ea
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61776672"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87165969"
 ---
 # <a name="how-to-change-the-cursor-type"></a>Postupy: Změna typu kurzoru
-Tento příklad ukazuje, jak změnit <xref:System.Windows.Input.Cursor> ukazatele myši pro konkrétní elementu a pro aplikaci.  
+Tento příklad ukazuje, jak změnit <xref:System.Windows.Input.Cursor> ukazatel myši pro určitý element a pro aplikaci.  
   
- Tento příklad se skládá z [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] soubor a soubor kódu.  
+ Tento příklad se skládá ze [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] souboru a souboru kódu na pozadí.  
   
 ## <a name="example"></a>Příklad  
- Vytvoření uživatelského rozhraní, která se skládá z <xref:System.Windows.Controls.ComboBox> vyberte požadovaný <xref:System.Windows.Input.Cursor>, dvojici <xref:System.Windows.Controls.RadioButton> objekty určují, jestli změna kurzor platí pro pouze jeden element nebo platí pro celou aplikaci a <xref:System.Windows.Controls.Border> což je element, který se použije nový ukazatel na.  
+ Uživatelské rozhraní je vytvořeno, což se skládá z a <xref:System.Windows.Controls.ComboBox> vybrat požadovanou <xref:System.Windows.Input.Cursor> dvojici <xref:System.Windows.Controls.RadioButton> objektů k určení, zda se Změna kurzoru vztahuje pouze na jeden prvek nebo platí pro celou aplikaci, a <xref:System.Windows.Controls.Border> prvek, který je prvkem, na který je nový kurzor aplikován.  
   
  [!code-xaml[cursors#ChangeCursorsXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/cursors/CSharp/Window1.xaml#changecursorsxaml)]  
   
- Následující kód vytvoří <xref:System.Windows.Controls.Primitives.Selector.SelectionChanged> obslužná rutina události, která je volána, když typ kurzoru se změní v <xref:System.Windows.Controls.ComboBox>.  Příkaz switch filtry na název kurzoru a nastaví <xref:System.Windows.FrameworkElement.Cursor%2A> vlastnost <xref:System.Windows.Controls.Border> který se nazývá *DisplayArea*.  
+ Následující kód vytvoří <xref:System.Windows.Controls.Primitives.Selector.SelectionChanged> obslužnou rutinu události, která je volána při změně typu kurzoru v <xref:System.Windows.Controls.ComboBox> .  Příkaz přepíná filtry na název kurzoru a nastavuje vlastnost s <xref:System.Windows.FrameworkElement.Cursor%2A> <xref:System.Windows.Controls.Border> názvem *DisplayArea*.  
   
- Pokud změna kurzoru je nastavená na "Celou aplikaci" <xref:System.Windows.Input.Mouse.OverrideCursor%2A> je nastavena na <xref:System.Windows.FrameworkElement.Cursor%2A> vlastnost <xref:System.Windows.Controls.Border> ovládacího prvku.  To přinutí kurzor, chcete-li změnit pro celou aplikaci.  
+ Pokud je Změna kurzoru nastavena na "celá aplikace", <xref:System.Windows.Input.Mouse.OverrideCursor%2A> vlastnost je nastavena na <xref:System.Windows.FrameworkElement.Cursor%2A> vlastnost <xref:System.Windows.Controls.Border> ovládacího prvku.  To vynutí změnu kurzoru pro celou aplikaci.  
   
  [!code-csharp[cursors#ChangeCursorsSample](~/samples/snippets/csharp/VS_Snippets_Wpf/cursors/CSharp/Window1.xaml.cs#changecursorssample)]
  [!code-vb[cursors#ChangeCursorsSample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/cursors/VisualBasic/Window1.xaml.vb#changecursorssample)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přehled vstupu](input-overview.md)

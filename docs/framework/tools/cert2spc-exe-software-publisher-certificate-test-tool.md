@@ -1,5 +1,6 @@
 ---
 title: Cert2spc.exe (nástroj pro testování certifikátu vydavatele softwaru)
+description: Použijte Cert2spc.exe Nástroj pro testování certifikátu vydavatele softwaru. Tento nástroj vytvoří certifikát vydavatele softwaru (SPC) z jednoho nebo více certifikátů X. 509.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - SPC
@@ -8,17 +9,17 @@ helpviewer_keywords:
 - Cert2spc.exe
 - certificates, Software Publisher's Certificate
 ms.assetid: be434d7d-9c0d-46e7-8392-58a9b542d11d
-ms.openlocfilehash: 809b7d0383f172a5fbcb2ac4ac3ffb96ff0b8e20
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2eb6339aa6f5d23a5b87986410cbeaac2dac2bec
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73129890"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87167321"
 ---
 # <a name="cert2spcexe-software-publisher-certificate-test-tool"></a>Cert2spc.exe (nástroj pro testování certifikátu vydavatele softwaru)
-Nástroj Software Publisher Certificate Test vytvoří certifikát Software Publisher's Certificate (SPC) z jednoho nebo více certifikátů X.509. Nástroj Cert2spc.exe slouží pouze k testování. Platný certifikát SPC lze získat od certifikačního úřadu, například VeriSign nebo Thawte. Další informace o vytváření certifikátů X.509 naleznete v [tématu Makecert.exe (Nástroj pro vytváření certifikátů).](/windows/desktop/SecCrypto/makecert)  
+Nástroj Software Publisher Certificate Test vytvoří certifikát Software Publisher's Certificate (SPC) z jednoho nebo více certifikátů X.509. Nástroj Cert2spc.exe slouží pouze k testování. Platný certifikát SPC lze získat od certifikačního úřadu, například VeriSign nebo Thawte. Další informace o vytváření certifikátů X. 509 najdete v tématu [Makecert.exe (Nástroj pro vytváření certifikátů)](/windows/desktop/SecCrypto/makecert).  
   
- Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li nástroj spustit, použijte příkazový řádek pro vývojáře pro sadu Visual Studio (nebo příkazový řádek sady Visual Studio v systému Windows 7). Další informace naleznete v [příkazových koncích](developer-command-prompt-for-vs.md).  
+ Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li spustit nástroj, použijte Developer Command Prompt pro Visual Studio (nebo příkazový řádek sady Visual Studio v systému Windows 7). Další informace najdete v tématu [výzvy k zadání příkazu](developer-command-prompt-for-vs.md).  
   
  V příkazovém řádku zadejte následující:  
   
@@ -41,13 +42,13 @@ cert2spc cert1.cer | crl1.crl [... certN.cer | crlN.crl] outputSPCfile.spc
 |**/?**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
   
 ## <a name="examples"></a>Příklady  
- Následující příkaz vytvoří spc `myCertificate.cer` z a `mySPCFile.spc`umístí jej do .  
+ Následující příkaz vytvoří SPC z `myCertificate.cer` a umístí ho do `mySPCFile.spc` .  
   
 ```console
 cert2spc myCertificate.cer mySPCFile.spc  
 ```  
   
- Následující příkaz vytvoří spc `oneCertificate.cer` `twoCertificate.cer`z a a `mySPCFile.spc`umístí jej do .  
+ Následující příkaz vytvoří SPC z a a `oneCertificate.cer` `twoCertificate.cer` umístí ho do `mySPCFile.spc` .  
   
 ```console
 cert2spc oneCertificate.cer twoCertificate.cer mySPCFile.spc  
@@ -56,5 +57,5 @@ cert2spc oneCertificate.cer twoCertificate.cer mySPCFile.spc
 ## <a name="see-also"></a>Viz také
 
 - [Nástroje](index.md)
-- [Makecert.exe (Nástroj pro vytváření certifikátů)](/windows/desktop/SecCrypto/makecert)
-- [Příkazové řádky](developer-command-prompt-for-vs.md)
+- [Makecert.exe (Nástroj pro vytvoření certifikátu)](/windows/desktop/SecCrypto/makecert)
+- [Výzvy příkazového řádku](developer-command-prompt-for-vs.md)

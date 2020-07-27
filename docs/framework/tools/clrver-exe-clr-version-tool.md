@@ -1,21 +1,22 @@
 ---
 title: Clrver.exe (nástroj verze CLR)
+description: Kontrola Clrver.exe, nástroje verze CLR. Tento nástroj oznamuje všechny nainstalované verze modulu CLR (Common Language Runtime) v počítači.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Clrver.exe
 - CLR Version tool
 ms.assetid: cbc2ee86-bdc8-4a65-a8f1-ba23bce3a699
-ms.openlocfilehash: bfc612ef5455e1b4a03d15fd99a8a1873d2c7c08
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e914034819418df00438c454e209e6c86779ba3c
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75715800"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87167280"
 ---
 # <a name="clrverexe-clr-version-tool"></a>Clrver.exe (nástroj verze CLR)
 Nástroj CLR Version (Clrver.exe) vypíše všechny verze modulu Common Language Runtime (CLR) nainstalované v počítači.  
   
- Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li nástroj spustit, použijte příkazový řádek pro vývojáře pro sadu Visual Studio (nebo příkazový řádek sady Visual Studio v systému Windows 7). Další informace naleznete v [příkazových koncích](developer-command-prompt-for-vs.md).  
+ Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li spustit nástroj, použijte Developer Command Prompt pro Visual Studio (nebo příkazový řádek sady Visual Studio v systému Windows 7). Další informace najdete v tématu [výzvy k zadání příkazu](developer-command-prompt-for-vs.md).  
   
  V příkazovém řádku zadejte následující:  
   
@@ -30,7 +31,7 @@ clrver [option]
 |Možnost|Popis|  
 |------------|-----------------|  
 |`-all`|Zobrazí všechny procesy v počítači využívající modul CLR.|  
-|*Pid*|Zobrazí verze modulu CLR využívané procesem se zadaným identifikátorem ID procesu (PID).|  
+|*PID*|Zobrazí verze modulu CLR využívané procesem se zadaným identifikátorem ID procesu (PID).|  
 |`-?`|Zobrazí syntaxi příkazu a možnosti nástroje.|  
   
 ## <a name="remarks"></a>Poznámky  
@@ -57,4 +58,4 @@ clrver [option]
 ## <a name="see-also"></a>Viz také
 
 - [Nástroje](index.md)
-- [Příkazové řádky](developer-command-prompt-for-vs.md)
+- [Výzvy příkazového řádku](developer-command-prompt-for-vs.md)

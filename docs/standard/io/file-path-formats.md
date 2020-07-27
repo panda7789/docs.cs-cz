@@ -10,12 +10,12 @@ helpviewer_keywords:
 - I/O, long paths
 - long paths
 - path formats, Windows
-ms.openlocfilehash: 2d3ede97b372dd8922a10a377f69155a12f88bda
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 5eb9d5127dffd2e80349352ad7a4b57f8848d56b
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84447131"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87165793"
 ---
 # <a name="file-path-formats-on-windows-systems"></a>Formáty cesty k souborům v systémech Windows
 
@@ -31,7 +31,7 @@ Standardní cesta systému DOS se může skládat ze tří součástí:
 
 Pokud jsou k dispozici všechny tři komponenty, je cesta absolutní. Pokud není zadán žádný svazek ani písmeno jednotky a název adresáře začíná [znakem oddělovače adresáře](<xref:System.IO.Path.DirectorySeparatorChar>), bude cesta relativní od kořene aktuální jednotky. V opačném případě je cesta relativní vzhledem k aktuálnímu adresáři. V následující tabulce jsou uvedeny některé možné cesty k adresářům a souborům.
 
-|Cesta  |Description  |
+|Cesta  |Popis  |
 | -- | -- |
 | `C:\Documents\Newsletters\Summer2018.pdf` | Absolutní cesta k souboru z kořene jednotky C: |
 | `\Program Files\Custom Utilities\StringFinder.exe` | Absolutní cesta z kořene aktuální jednotky. |
@@ -63,10 +63,10 @@ Cesty UNC (Universal Naming Convention), které se používají pro přístup k 
 
 Následuje několik příkladů cest UNC:
 
-|Cesta  |Description  |
+|Cesta  |Popis  |
 | -- | -- |
 | `\\system07\C$\` | Kořenový adresář jednotky C: na `system07` . |
-| `\\Server2\Share\Test\Foo.txt` | Soubor foo. txt v adresáři testu \\ \\ \\ svazku Server2 Shared.|
+| `\\Server2\Share\Test\Foo.txt` | Soubor Foo.txt v adresáři testu svazku s názvem \\ \\ Server2 \\ Shared.|
 
 Cesty UNC musí být vždy plně kvalifikované. Můžou zahrnovat relativní segmenty adresářů ( `.` a `..` ), ale musí být součástí plně kvalifikované cesty. Relativní cesty můžete použít jenom tak, že namapujete cestu UNC k písmenu jednotky.
 
@@ -96,7 +96,7 @@ Cesta k zařízení DOS se skládá z následujících součástí:
 
    První segment cesty zařízení systému DOS po určení svazku cesty zařízení, který identifikuje svazek nebo jednotku. (Například `\\?\C:\` a `\\.\BootPartition\` .)
 
-   Pro UNCs je k dispozici konkrétní odkaz, který se nazývá, nikoli překvapivě `UNC` . Příklad:
+   Pro UNCs je k dispozici konkrétní odkaz, který se nazývá, nikoli překvapivě `UNC` . Například:
 
   `\\.\UNC\Server\Share\Test\Foo.txt`
   `\\?\UNC\Server\Share\Test\Foo.txt`
@@ -124,7 +124,7 @@ Skoro všechny cesty předané rozhraním API systému Windows jsou normalizová
 
 Tato normalizace proběhne implicitně, ale můžete ji provést explicitně voláním <xref:System.IO.Path.GetFullPath%2A?displayProperty=nameWithType> metody, která zabalí volání [funkce GetFullPathName ()](/windows/desktop/api/fileapi/nf-fileapi-getfullpathnamea). [Funkci Windows GetFullPathName ()](/windows/desktop/api/fileapi/nf-fileapi-getfullpathnamea) můžete také volat přímo pomocí volání nespravovaného volání.
 
-### <a name="identifying-the-path"></a>Identifikace cesty
+### <a name="identify-the-path"></a>Identifikujte cestu
 
 Prvním krokem normalizace cesty je určení typu cesty. Cesty spadají do jedné z několika kategorií:
 
@@ -138,13 +138,13 @@ Prvním krokem normalizace cesty je určení typu cesty. Cesty spadají do jedn�
 
 Typ cesty určuje, zda je aktuální adresář použit nějakým způsobem. Také určuje, co je "kořen" cesty.
 
-### <a name="handling-legacy-devices"></a>Zpracování starších zařízení
+### <a name="handle-legacy-devices"></a>Zpracování starších zařízení
 
 Pokud se jedná o starší zařízení se systémem DOS, jako je `CON` , `COM1` , nebo `LPT1` se převede na cestu k zařízení pomocí předpřipraveného `\\.\` a vráceného.
 
 Cesta začínající starším názvem zařízení je vždy interpretována jako starší zařízení <xref:System.IO.Path.GetFullPath(System.String)?displayProperty=nameWithType> metodou. Například cesta zařízení DOS pro `CON.TXT` je `\\.\CON` a cesta k zařízení DOS pro `COM1.TXT\file1.txt` je `\\.\COM1` .
 
-### <a name="applying-the-current-directory"></a>Použití aktuálního adresáře
+### <a name="apply-the-current-directory"></a>Použít aktuální adresář
 
 Pokud cesta není plně kvalifikovaná, systém Windows použije pro něj aktuální adresář. UNCs a cesty zařízení nemají použit aktuální adresář. Ani celá jednotka s oddělovačem C: \\ .
 
@@ -157,11 +157,11 @@ Pokud cesta začíná jinou než oddělovačem, použije se aktuální jednotka 
 > [!IMPORTANT]
 > Relativní cesty jsou nebezpečné v aplikacích s více vlákny (tj. ve většině aplikací), protože aktuální adresář je nastavení pro jednotlivé procesy. V každém vlákně může aktuální adresář kdykoli změnit. Počínaje rozhraním .NET Core 2,1 můžete zavolat <xref:System.IO.Path.GetFullPath(System.String,System.String)?displayProperty=nameWithType> metodu a získat tak absolutní cestu z relativní cesty a základní cestu (aktuální adresář), pro kterou ji chcete vyřešit.
 
-### <a name="canonicalizing-separators"></a>Oddělovače kanonizace
+### <a name="canonicalize-separators"></a>Oddělovače kanonického tvaru
 
 Všechna lomítka ( `/` ) jsou převedena do standardního oddělovače systému Windows, zpětného lomítka ( `\` ). Pokud jsou k dispozici, řada lomítek, které následují dvě lomítka, jsou sbaleny do jednoho lomítka.
 
-### <a name="evaluating-relative-components"></a>Vyhodnocení relativních součástí
+### <a name="evaluate-relative-components"></a>Vyhodnotit relativní součásti
 
 Jak je cesta zpracována, `.` jsou vyhodnoceny všechny součásti nebo segmenty, které se skládají z jedné nebo dvě tečky (nebo `..` ):
 
@@ -171,7 +171,7 @@ Jak je cesta zpracována, `.` jsou vyhodnoceny všechny součásti nebo segmenty
 
    Nadřazené adresáře jsou odebrány pouze v případě, že nejsou za kořenem cesty. Kořen cesty závisí na typu cesty. Je to jednotka ( `C:\` ) pro cesty DOS, server/sdílená složka pro UNCS ( `\\Server\Share` ) a Předpona cesty zařízení pro cesty zařízení ( `\\?\` nebo `\\.\` ).
 
-### <a name="trimming-characters"></a>Ořezávání znaků
+### <a name="trim-characters"></a>Oříznout znaky
 
 Společně s odebranými oddělovači a relativními segmenty odebranými dříve byly některé další znaky během normalizace odebrány:
 
@@ -184,7 +184,7 @@ Společně s odebranými oddělovači a relativními segmenty odebranými dřív
    > [!IMPORTANT]
    > **Nikdy** byste neměli vytvořit adresář nebo název souboru s koncovým místem. Koncové mezery můžou ztížit nebo nemožné získat přístup k adresáři a aplikace se často nezdaří při pokusu o zpracování adresářů nebo souborů, jejichž názvy obsahují koncové mezery.
 
-## <a name="skipping-normalization"></a>Vynechává se normalizace.
+## <a name="skip-normalization"></a>Přeskočit normalizaci
 
 V normálním případě je jakákoli Cesta předaná do rozhraní API systému Windows (efektivně) předána [funkci GetFullPathName](/windows/desktop/api/fileapi/nf-fileapi-getfullpathnamea) a normalizována. Existuje jedna důležitá výjimka: cesta zařízení, která začíná otazníkem místo tečky. Pokud cesta začíná přesně s `\\?\` (Všimněte si použití kanonického zpětného lomítka), je normalizovaná.
 
@@ -217,9 +217,9 @@ Directory.Create("TeStDiReCtOrY");
 Directory.Create("TeStDiReCtOrY")
 ```
 
-vytvoří adresář s názvem TeStDiReCtOrY. Pokud přejmenujete adresář nebo soubor, aby se změnil jeho případ, název adresáře nebo souboru bude odpovídat velikosti řetězce použitého při jeho přejmenování. Například následující kód přejmenuje soubor s názvem test. txt na test. txt:
+vytvoří adresář s názvem TeStDiReCtOrY. Pokud přejmenujete adresář nebo soubor, aby se změnil jeho případ, název adresáře nebo souboru bude odpovídat velikosti řetězce použitého při jeho přejmenování. Například následující kód přejmenuje soubor s názvem test.txt na Test.txt:
 
 [!code-csharp[case-and-renaming](~/samples/snippets/standard/io/file-names/cs/rename.cs)]
 [!code-vb[case-and-renaming](~/samples/snippets/standard/io/file-names/vb/rename.vb)]
 
-Porovnávání názvů adresářů a souborů ale nerozlišuje velká a malá písmena. Pokud vyhledáte soubor s názvem test. txt, rozhraní API systému souborů .NET ignorují velikost písmen v porovnání. Test. txt, TEST. TXT, test. TXT a další kombinace velkých a malých písmen budou odpovídat "test. txt".
+Porovnávání názvů adresářů a souborů ale nerozlišuje velká a malá písmena. Pokud vyhledáte soubor s názvem "test.txt", rozhraní API systému souborů .NET ignorují velikost písmen v porovnání. "Test.txt", "TEST.TXT", "test.TXT" a jakékoli další kombinace velkých a malých písmen budou odpovídat "test.txt".

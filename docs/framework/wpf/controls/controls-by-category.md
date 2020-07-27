@@ -1,15 +1,16 @@
 ---
 title: Řízení podle kategorie
+description: Zkontrolujte ovládací prvky Windows Presentation Foundation seskupené do kategorií, které vám pomohou vybrat vhodný ovládací prvek porovnáním podobných ovládacích prvků.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - controls [WPF], listed by category
 ms.assetid: f8a1f78e-d9fa-4367-9ec6-f084577e83bb
-ms.openlocfilehash: 5958793015d409678b67cdc7eedcb4289f5e885c
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: 226e037dc26f817b96a5aa869565f08ee6ff6574
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75636208"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87166284"
 ---
 # <a name="controls-by-category"></a>Řízení podle kategorie
 Ovládací prvky Windows Presentation Foundation (WPF) lze logicky seskupovat do několika kategorií. Tyto kategorie lze použít k výběru vhodného ovládacího prvku pro váš scénář tím, že vám pomohou zjistit, které ovládací prvky mají podobné vzorce nebo funkce používání.  
@@ -56,7 +57,7 @@ Ovládací prvky Windows Presentation Foundation (WPF) lze logicky seskupovat do
 - <xref:System.Windows.Controls.WrapPanel>  
   
 ## <a name="buttons"></a>Tlačítka  
- Tlačítka jsou jedním z nejzákladnější základní ovládací prvky uživatelského rozhraní. Aplikace obvykle provádějí určitou úlohu v události <xref:System.Windows.Controls.Primitives.ButtonBase.Click>, když na ně uživatel klikne.  
+ Tlačítka jsou jedním z nejzákladnější základní ovládací prvky uživatelského rozhraní. Aplikace obvykle provádějí nějakou úlohu v <xref:System.Windows.Controls.Primitives.ButtonBase.Click> případě, kdy na ně uživatel klikne.  
   
 - <xref:System.Windows.Controls.Button>  
   
@@ -161,7 +162,7 @@ Ovládací prvky Windows Presentation Foundation (WPF) lze logicky seskupovat do
   
 - <xref:System.Windows.Controls.PasswordBox>  
   
-## <a name="media"></a>Médium  
+## <a name="media"></a>Média  
  WPF zahrnuje integrovanou podporu pro hostování zvukového a obrazového obsahu a také [kodeky] pro nejoblíbenější formáty obrázků.  
   
 - <xref:System.Windows.Controls.Image>  
@@ -177,6 +178,6 @@ Ovládací prvky Windows Presentation Foundation (WPF) lze logicky seskupovat do
   
 - <xref:System.Windows.Controls.InkPresenter>  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Knihovna ovládacích prvků](control-library.md)
