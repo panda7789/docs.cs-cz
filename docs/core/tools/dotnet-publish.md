@@ -2,18 +2,18 @@
 title: dotnet publish – příkaz
 description: Příkaz dotnet publish publikuje projekt nebo řešení .NET Core do adresáře.
 ms.date: 02/24/2020
-ms.openlocfilehash: 61cfcf06586f3ac66526de69a17b8aef3cf0c795
-ms.sourcegitcommit: 63bb83322814f5e5e5c5b69939b14a3139a6ca7e
+ms.openlocfilehash: 59fdbfa875dad13963ae198acc6a31b537279dfe
+ms.sourcegitcommit: c8c3e1c63a00b7d27f76f5e50ee6469e6bdc8987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85365580"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87251176"
 ---
 # <a name="dotnet-publish"></a>dotnet publish
 
 **Tento článek se týká:** ✔️ .net Core 2,1 SDK a novějších verzí
 
-## <a name="name"></a>Name
+## <a name="name"></a>Název
 
 `dotnet publish`-Publikuje aplikaci a její závislosti do složky pro nasazení do hostitelského systému.
 
@@ -32,7 +32,7 @@ dotnet publish [<PROJECT>|<SOLUTION>] [-c|--configuration <CONFIGURATION>]
 dotnet publish -h|--help
 ```
 
-## <a name="description"></a>Description
+## <a name="description"></a>Popis
 
 `dotnet publish`zkompiluje aplikaci, přečte prostřednictvím svých závislostí zadaných v souboru projektu a publikuje výslednou sadu souborů do adresáře. Výstup obsahuje následující prostředky:
 
@@ -54,10 +54,12 @@ dotnet publish -h|--help
 `dotnet publish`Příkaz přijímá možnosti nástroje MSBuild, jako je například `-p` pro nastavení vlastností a `-l` k definování protokolovacího nástroje. Můžete například nastavit vlastnost MSBuild pomocí formátu: `-p:<NAME>=<VALUE>` . Vlastnosti související s publikováním můžete také nastavit tak, že odkazujete na soubor *. pubxml* , například:
 
 ```dotnetcli
-dotnet publish -p:PublishProfile=Properties\PublishProfiles\FolderProfile.pubxml
+dotnet publish -p:PublishProfile=FolderProfile
 ```
 
-Další informace najdete v následujících materiálech:
+Předchozí příklad používá soubor *FolderProfile. pubxml* , který se nachází ve složce * \<project_folder> /Properties/PublishProfiles* . Pokud při nastavování vlastnosti určíte cestu a příponu souboru `PublishProfile` , budou ignorovány. Nástroj MSBuild ve výchozím nastavení vyhledává ve složce *Properties/PublishProfiles* a předpokládá příponu souboru *pubxml* . Chcete-li zadat cestu a název souboru včetně přípony, nastavte `PublishProfileFullPath` vlastnost namísto `PublishProfile` Vlastnosti.
+
+Další informace naleznete v následujících zdrojích:
 
 - [Referenční dokumentace pro použití nástroje MSBuild v příkazovém řádku](/visualstudio/msbuild/msbuild-command-line-reference)
 - [Publikační profily sady Visual Studio (. pubxml) pro nasazení aplikace ASP.NET Core](/aspnet/core/host-and-deploy/visual-studio-publish-profiles)

@@ -3,12 +3,12 @@ title: Vlastnosti nástroje MSBuild pro Microsoft. NET. SDK
 description: Referenční informace o vlastnostech a položkách MSBuild, které jsou srozumitelné pro .NET Core SDK.
 ms.date: 02/14/2020
 ms.topic: reference
-ms.openlocfilehash: cda56b3e23592a341d9fe672fc1f1530adcdab49
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 115c4f32e856dee64abe0c607b8ee595a65692e6
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83206113"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87164381"
 ---
 # <a name="msbuild-reference-for-net-core-sdk-projects"></a>Referenční dokumentace nástroje MSBuild pro projekty .NET Core SDK
 
@@ -25,7 +25,7 @@ Tato stránka je odkazem na vlastnosti a položky nástroje MSBuild, které lze 
 
 ### <a name="targetframework"></a>TargetFramework
 
-`TargetFramework`Vlastnost určuje cílovou verzi rozhraní .NET Framework pro aplikaci, která implicitně odkazuje na [Metapackage](../packages.md#metapackages). Seznam platných monikerů cílového rozhraní Framework naleznete v tématu [cílové architektury v projektech ve stylu sady SDK](../../standard/frameworks.md#supported-target-framework-versions).
+`TargetFramework`Vlastnost určuje cílovou verzi rozhraní .NET Framework pro aplikaci. Seznam platných monikerů cílového rozhraní Framework naleznete v tématu [cílové architektury v projektech ve stylu sady SDK](../../standard/frameworks.md#supported-target-framework-versions).
 
 ```xml
 <PropertyGroup>
@@ -55,7 +55,7 @@ Další informace naleznete v tématu [cílová rozhraní v projektech ve stylu 
 > [!NOTE]
 > Tato vlastnost se vztahuje pouze na projekty používající `netstandard1.x` . Neplatí pro projekty, které používají `netstandard2.x` .
 
-Vlastnost použijte `NetStandardImplicitPackageVersion` , pokud chcete zadat verzi rozhraní, která je nižší než verze [Metapackage](../packages.md#metapackages) . Soubor projektu v následujícím příkladu cílí, `netstandard1.3` ale používá 1.6.0 verzi `NETStandard.Library` .
+Vlastnost použijte `NetStandardImplicitPackageVersion` , pokud chcete zadat verzi rozhraní, která je nižší než verze Metapackage. Soubor projektu v následujícím příkladu cílí, `netstandard1.3` ale používá 1.6.0 verzi `NETStandard.Library` .
 
 ```xml
 <PropertyGroup>
@@ -292,7 +292,7 @@ Můžete nastavit `AssetTargetFallback` vlastnost na jednu nebo více [cílovýc
 
 ### <a name="packagereference"></a>PackageReference
 
-`PackageReference`Položka definuje odkaz na balíček NuGet. Například můžete chtít odkazovat na jeden balíček místo [Metapackage](../packages.md#metapackages).
+`PackageReference`Položka definuje odkaz na balíček NuGet.
 
 `Include`Atribut určuje ID balíčku. `Version`Atribut určuje verzi nebo rozsah verzí. Informace o tom, jak zadat minimální verzi, maximální verzi, rozsah nebo přesnou shodu, najdete v tématu [rozsahy verzí](/nuget/concepts/package-versioning#version-ranges). Do odkazu na projekt můžete také přidat následující metadata: `IncludeAssets` , `ExcludeAssets` a `PrivateAssets` .
 

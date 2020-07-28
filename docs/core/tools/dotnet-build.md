@@ -2,18 +2,18 @@
 title: dotnet – příkaz sestavení
 description: Příkaz dotnet Build vytvoří projekt a všechny jeho závislosti.
 ms.date: 02/14/2020
-ms.openlocfilehash: 5375df61dbf8e9b4db8772b0e2767e9bca0bb254
-ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
+ms.openlocfilehash: 6f33b449301f40949ff5dfe4077564344a9de8ec
+ms.sourcegitcommit: c8c3e1c63a00b7d27f76f5e50ee6469e6bdc8987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83840907"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87251163"
 ---
 # <a name="dotnet-build"></a>dotnet build
 
 **Tento článek se týká:** ✔️ .NET Core 2. x SDK a novějších verzí
 
-## <a name="name"></a>Name
+## <a name="name"></a>Název
 
 `dotnet build`– Sestavení projektu a všech jeho závislostí.
 
@@ -23,7 +23,7 @@ ms.locfileid: "83840907"
 dotnet build [<PROJECT>|<SOLUTION>] [-c|--configuration <CONFIGURATION>]
     [-f|--framework <FRAMEWORK>] [--force] [--interactive] [--no-dependencies]
     [--no-incremental] [--no-restore] [--nologo] [-o|--output <OUTPUT_DIRECTORY>]
-    [-r|--runtime <RUNTIME_IDENTIFIER>] [-s|--source <SOURCE>]
+    [-r|--runtime <RUNTIME_IDENTIFIER>] [--source <SOURCE>]
     [-v|--verbosity <LEVEL>] [--version-suffix <VERSION_SUFFIX>]
 
 dotnet build -h|--help
@@ -35,8 +35,8 @@ dotnet build -h|--help
 
 - Spustitelný soubor, který lze použít ke spuštění aplikace, pokud je typ projektu spustitelný soubor cílící na rozhraní .NET Core 3,0 nebo novější.
 - Soubory symbolů používané pro ladění s příponou *. pdb* .
-- Soubor *. DEPS. JSON* , který obsahuje závislosti aplikace nebo knihovny.
-- Soubor *. runtimeconfig. JSON* , který určuje sdílený modul runtime a jeho verzi pro aplikaci.
+- *.deps.jsv* souboru, ve kterém jsou uvedeny závislosti aplikace nebo knihovny.
+- *.runtimeconfig.jsv* souboru, který určuje sdílený modul runtime a jeho verzi pro aplikaci.
 - Další knihovny, na kterých projekt závisí (prostřednictvím odkazů na projekt nebo odkazů na balíček NuGet).
 
 U spustitelných projektů, které cílí na verze starší než .NET Core 3,0, se obvykle nekopírují závislosti knihoven z NuGet do výstupní složky.  Jsou vyřešeny ze složky globálních balíčků NuGet v době běhu. V takovém případě produkt `dotnet build` není připravený k přenosu na jiný počítač ke spuštění. Chcete-li vytvořit verzi aplikace, kterou lze nasadit, je nutné ji publikovat (například pomocí příkazu [dotnet Publish](dotnet-publish.md) ). Další informace najdete v tématu [nasazení aplikace .NET Core](../deploying/index.md).
@@ -45,7 +45,7 @@ Pro spustitelné projekty cílené na .NET Core 3,0 a novější se závislosti 
 
 ### <a name="implicit-restore"></a>Implicitní obnovení
 
-Sestavování vyžaduje soubor *Project. assets. JSON* , který obsahuje závislosti vaší aplikace. Soubor se vytvoří při [`dotnet restore`](dotnet-restore.md) spuštění. Bez zavedeného souboru prostředků nemůže nástroj překládat referenční sestavení, což má za následek chyby.
+Sestavování vyžaduje *project.assets.jsv* souboru, který obsahuje závislosti vaší aplikace. Soubor se vytvoří při [`dotnet restore`](dotnet-restore.md) spuštění. Bez zavedeného souboru prostředků nemůže nástroj překládat referenční sestavení, což má za následek chyby.
 
 [!INCLUDE[dotnet restore note + options](~/includes/dotnet-restore-note-options.md)]
 
@@ -69,7 +69,7 @@ Kromě možností `dotnet build` příkaz akceptuje možnosti nástroje MSBuild,
 
 Spuštění `dotnet build` je ekvivalentní se spuštěným `dotnet msbuild -restore` . výchozí podrobností výstupu se však liší.
 
-## <a name="arguments"></a>Argumenty
+## <a name="arguments"></a>Arguments
 
 `PROJECT | SOLUTION`
 
@@ -87,7 +87,7 @@ Soubor projektu nebo řešení, který se má sestavit Pokud není zadán soubor
 
 - **`--force`**
 
-  Vynutí vyřešení všech závislostí i v případě, že bylo poslední obnovení úspěšné. Zadání tohoto příznaku je stejné jako odstranění souboru *Project. assets. JSON* .
+  Vynutí vyřešení všech závislostí i v případě, že bylo poslední obnovení úspěšné. Zadání tohoto příznaku je stejné jako odstranění *project.assets.jsv* souboru.
 
 - **`-h|--help`**
 
@@ -121,7 +121,7 @@ Soubor projektu nebo řešení, který se má sestavit Pokud není zadán soubor
 
   Určuje cílový modul runtime. Seznam identifikátorů modulu runtime (identifikátorů RID) najdete v [katalogu RID](../rid-catalog.md).
 
-- **`-s|--source <SOURCE>`**
+- **`--source <SOURCE>`**
 
   Identifikátor URI zdroje balíčku NuGet, který má být použit během operace obnovení.
 

@@ -2,18 +2,18 @@
 title: dotnet – příkaz testu
 description: Příkaz dotnet test se používá ke spouštění testů jednotek v daném projektu.
 ms.date: 04/29/2020
-ms.openlocfilehash: 911d10917c2262c0bd32ef30d48da0f85ac39a39
-ms.sourcegitcommit: 1eae045421d9ea2bfc82aaccfa5b1ff1b8c9e0e4
+ms.openlocfilehash: 9b1e190579902dda71547b01f31dd5adcc22fe9c
+ms.sourcegitcommit: c8c3e1c63a00b7d27f76f5e50ee6469e6bdc8987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84803160"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87251189"
 ---
 # <a name="dotnet-test"></a>dotnet test
 
 **Tento článek se týká:** ✔️ .net Core 2,1 SDK a novějších verzí
 
-## <a name="name"></a>Name
+## <a name="name"></a>Název
 
 `dotnet test`– Testovací ovladač .NET, který se používá ke spouštění testů jednotek.
 
@@ -21,14 +21,17 @@ ms.locfileid: "84803160"
 
 ```dotnetcli
 dotnet test [<PROJECT> | <SOLUTION> | <DIRECTORY> | <DLL>]
-    [-a|--test-adapter-path <PATH_TO_ADAPTER>] [--blame]
+    [-a|--test-adapter-path <ADAPTER_PATH>] [--blame] [--blame-crash]
+    [--blame-crash-dump-type <DUMP_TYPE>] [--blame-crash-collect-always]
+    [--blame-hang] [--blame-hang-dump-type <DUMP_TYPE>]
+    [--blame-hang-timeout <TIMESPAN>]
     [-c|--configuration <CONFIGURATION>]
-    [--collect <DATA_COLLECTOR_FRIENDLY_NAME>]
-    [-d|--diag <PATH_TO_DIAGNOSTICS_FILE>] [-f|--framework <FRAMEWORK>]
+    [--collect <DATA_COLLECTOR_NAME>]
+    [-d|--diag <LOG_FILE>] [-f|--framework <FRAMEWORK>]
     [--filter <EXPRESSION>] [--interactive]
-    [-l|--logger <LOGGER_URI/FRIENDLY_NAME>] [--no-build]
+    [-l|--logger <LOGGER>] [--no-build]
     [--nologo] [--no-restore] [-o|--output <OUTPUT_DIRECTORY>]
-    [-r|--results-directory <PATH>] [--runtime <RUNTIME_IDENTIFIER>]
+    [-r|--results-directory <RESULTS_DIR>] [--runtime <RUNTIME_IDENTIFIER>]
     [-s|--settings <SETTINGS_FILE>] [-t|--list-tests]
     [-v|--verbosity <LEVEL>] [[--] <RunSettings arguments>]
 
@@ -64,7 +67,7 @@ Kde `Microsoft.NET.Test.Sdk` je testovací hostitel, `xunit` je testovací rozhr
 
 ## <a name="options"></a>Možnosti
 
-- **`-a|--test-adapter-path <PATH_TO_ADAPTER>`**
+- **`-a|--test-adapter-path <ADAPTER_PATH>`**
 
   Cesta k adresáři, ve kterém se mají hledat další testovací adaptéry Jsou zkontrolovány pouze soubory *DLL* s příponou `.TestAdapter.dll` . Pokud není zadán, bude prohledán adresář souboru Test *. dll* .
 
@@ -72,11 +75,42 @@ Kde `Microsoft.NET.Test.Sdk` je testovací hostitel, `xunit` je testovací rozhr
 
   Spustí testy v režimu viny. Tato možnost je užitečná při izolaci problematických testů, které způsobují selhání hostitele testu. Při zjištění chyby vytvoří soubor sekvence v `TestResults/<Guid>/<Guid>_Sequence.xml` , který zachytí pořadí testů, které byly spuštěny před selháním.
 
+- **`--blame-crash`**(K dispozici od verze .NET 5,0 Preview SDK)
+
+  Spustí testy v režimu viny a shromažďuje stav systému, když se testovací hostitel neočekávaně ukončí. Tato možnost je podporována pouze v systému Windows. Adresář, který obsahuje *procdump.exe* a *procdump64.exe* musí být v cestě nebo v proměnné prostředí PROCDUMP_PATH. [Stáhněte si nástroje](https://docs.microsoft.com/sysinternals/downloads/procdump). Implikuje `--blame` .
+
+- **`--blame-crash-dump-type <DUMP_TYPE>`**(K dispozici od verze .NET 5,0 Preview SDK)
+
+  Typ výpisu stavu systému, který se má shromáždit. Implikuje `--blame-crash` .
+
+- **`--blame-crash-collect-always`**(K dispozici od verze .NET 5,0 Preview SDK)
+
+  Shromažďuje výpis stavu systému podle očekávání a také neočekávaný konec testovacího hostitele.
+
+- **`--blame-hang`**(K dispozici od verze .NET 5,0 Preview SDK)
+
+  Spusťte testy v režimu viny a shromáždí výpis stavu zablokování, když test překročí daný časový limit.
+
+- **`--blame-hang-dump-type <DUMP_TYPE>`**(K dispozici od verze .NET 5,0 Preview SDK)
+
+  Typ výpisu stavu systému, který se má shromáždit. Mělo by to být `full` , `mini` , nebo `none` . Je `none` -li parametr zadán, je test hostitele ukončen po vypršení časového limitu, ale není shromažďován žádný výpis. Implikuje `--blame-hang` .
+
+- **`--blame-hang-timeout <TIMESPAN>`**(K dispozici od verze .NET 5,0 Preview SDK)
+
+  Časový limit pro testování, po kterém se aktivuje výpis stavu zablokování a proces testovacího hostitele se ukončí. Hodnota časového limitu je zadána v jednom z následujících formátů:
+  
+  - 1,5 h
+  - 90 miliónů
+  - 5400
+  - 5400000ms
+
+  Pokud se nepoužívá žádná jednotka (například 5400000), předpokládá se, že hodnota je v milisekundách. Při použití společně s testy řízenými daty závisí časový limit na použitém testovacím adaptéru. Pro xUnit a NUnit se po každém testovacím případu obnoví časový limit. Pro MSTest se používá časový limit pro všechny zjištěných testovacích případů. Tato možnost je podporovaná ve Windows s netcoreapp 2.1 a novějším a v systému Linux s netcoreapp 3.1 a novějším. macOS se nepodporuje.
+
 - **`-c|--configuration <CONFIGURATION>`**
 
   Definuje konfiguraci sestavení. Výchozí hodnota je `Debug` , ale konfigurace vašeho projektu může přepsat toto výchozí nastavení sady SDK.
 
-- **`--collect <DATA_COLLECTOR_FRIENDLY_NAME>`**
+- **`--collect <DATA_COLLECTOR_NAME>`**
 
   Povolí shromažďování dat pro testovací běh. Další informace najdete v tématu [monitorování a analýza testovacího běhu](https://aka.ms/vstest-collect).
   
@@ -84,7 +118,7 @@ Kde `Microsoft.NET.Test.Sdk` je testovací hostitel, `xunit` je testovací rozhr
 
   Ve Windows můžete pokrytí kódu shromažďovat pomocí `--collect "Code Coverage"` Možnosti. Tato možnost vygeneruje soubor *. pokrytí* , který lze otevřít v aplikaci Visual Studio 2019 Enterprise. Další informace najdete v tématu [Použití pokrytí kódu](/visualstudio/test/using-code-coverage-to-determine-how-much-code-is-being-tested) a [přizpůsobení analýzy pokrytí kódu](/visualstudio/test/customizing-code-coverage-analysis).
 
-- **`-d|--diag <PATH_TO_DIAGNOSTICS_FILE>`**
+- **`-d|--diag <LOG_FILE>`**
 
   Povolí diagnostický režim pro testovací platformu a zapisuje diagnostické zprávy do zadaného souboru a do souborů vedle sebe. Proces, který zaznamenává zprávy, určuje, které soubory jsou vytvořeny, například `*.host_<date>.txt` pro protokol testu hostitele a `*.datacollector_<date>.txt` protokol sběru dat.
 
@@ -104,7 +138,7 @@ Kde `Microsoft.NET.Test.Sdk` je testovací hostitel, `xunit` je testovací rozhr
 
   Umožňuje zastavení příkazu zastavit a počkat na vstup nebo akci uživatele. Například k dokončení ověřování. K dispozici od verze .NET Core 3,0 SDK.
 
-- **`-l|--logger <LOGGER_URI/FRIENDLY_NAME>`**
+- **`-l|--logger <LOGGER>`**
 
   Určuje protokolovací nástroj pro výsledky testů. Na rozdíl od MSBuild test dotnet nepřijímá zkratky: místo `-l "console;v=d"` použití `-l "console;verbosity=detailed"` .
 
@@ -124,7 +158,7 @@ Kde `Microsoft.NET.Test.Sdk` je testovací hostitel, `xunit` je testovací rozhr
 
   Adresář, ve kterém se mají najít binární soubory, které se mají spustit. Pokud není zadaný, použije se výchozí cesta `./bin/<configuration>/<framework>/` .  Pro projekty s více cílovými rozhraními (prostřednictvím `TargetFrameworks` Vlastnosti) musíte definovat i `--framework` při zadání této možnosti. `dotnet test`vždy spouští testy z výstupního adresáře. Můžete použít <xref:System.AppDomain.BaseDirectory%2A?displayProperty=nameWithType> pro využívání testovacích prostředků ve výstupním adresáři.
 
-- **`-r|--results-directory <PATH>`**
+- **`-r|--results-directory <RESULTS_DIR>`**
 
   Adresář, do kterého budou umístěny výsledky testů. Pokud zadaný adresář neexistuje, vytvoří se. Výchozí hodnota je `TestResults` v adresáři, který obsahuje soubor projektu.
 
@@ -134,14 +168,14 @@ Kde `Microsoft.NET.Test.Sdk` je testovací hostitel, `xunit` je testovací rozhr
 
 - **`-s|--settings <SETTINGS_FILE>`**
 
-  `.runsettings`Soubor, který se má použít pro spuštění testů. `TargetPlatform`Element (x86 | x64) nemá žádný vliv na `dotnet test` . Chcete-li spustit testy, které cílí na x86, nainstalujte verzi x86 rozhraní .NET Core. Bitová verze *dotnet.exe* , která se nachází na cestě, je to, co se použije ke spouštění testů. Další informace najdete v následujících materiálech:
+  `.runsettings`Soubor, který se má použít pro spuštění testů. `TargetPlatform`Element (x86 | x64) nemá žádný vliv na `dotnet test` . Chcete-li spustit testy, které cílí na x86, nainstalujte verzi x86 rozhraní .NET Core. Bitová verze *dotnet.exe* , která se nachází na cestě, je to, co se použije ke spouštění testů. Další informace naleznete v následujících zdrojích:
 
   - [Nakonfigurujte testy jednotek pomocí `.runsettings` souboru.](/visualstudio/test/configure-unit-tests-by-using-a-dot-runsettings-file)
   - [Konfigurace testovacího běhu](https://github.com/Microsoft/vstest-docs/blob/master/docs/configure.md)
 
 - **`-t|--list-tests`**
 
-  Vypíše všechny zjištěné testy v aktuálním projektu.
+  Vypíše zjištěné testy místo spuštění testů.
 
 - **`-v|--verbosity <LEVEL>`**
 
@@ -209,9 +243,9 @@ Kde `Microsoft.NET.Test.Sdk` je testovací hostitel, `xunit` je testovací rozhr
 
 | Testovací rozhraní | Podporované vlastnosti                                                                                      |
 | -------------- | --------------------------------------------------------------------------------------------------------- |
-| MSTest         | <ul><li>FullyQualifiedName</li><li>Name</li><li>NázevTřídy</li><li>Priorita</li><li>TestCategory</li></ul> |
+| MSTest         | <ul><li>FullyQualifiedName</li><li>Název</li><li>NázevTřídy</li><li>Priorita</li><li>TestCategory</li></ul> |
 | xUnit          | <ul><li>FullyQualifiedName</li><li>DisplayName</li><li>Traits</li></ul>                                   |
-| NUnit          | <ul><li>FullyQualifiedName</li><li>Name</li><li>TestCategory</li><li>Priorita</li></ul>                                   |
+| NUnit          | <ul><li>FullyQualifiedName</li><li>Název</li><li>TestCategory</li><li>Priorita</li></ul>                                   |
 
 `<operator>`Popisuje vztah mezi vlastností a hodnotou:
 
@@ -230,7 +264,7 @@ Výrazy se dají spojit s podmíněnými operátory:
 
 | Operátor            | Funkce |
 | ------------------- | -------- |
-| <code>&#124;</code> | OR       |
+| <code>&#124;</code> | NEBO       |
 | `&`                 | AND      |
 
 Výrazy můžete uzavřít do závorek při použití podmíněných operátorů (například `(Name~TestMethod1) | (Name~TestMethod2)` ).

@@ -1,134 +1,131 @@
 ---
-title: Knihovny portů do jádra .NET Core
-description: Zjistěte, jak portovat projekty knihovny z rozhraní .NET Framework do jádra .NET.
+title: Knihovny portů do .NET Core
+description: Naučte se, jak přenést projekty knihovny z .NET Framework do .NET Core.
 author: cartermp
 ms.date: 12/07/2018
-ms.openlocfilehash: 68fe36e543d949dc76bdb0c19ef3482936ad9e79
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ac9da2f850bf1e4e36367ad2154849a0c7efd535
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79398907"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87164289"
 ---
-# <a name="port-net-framework-libraries-to-net-core"></a>Port .NET Framework knihovny na .NET Core
+# <a name="port-net-framework-libraries-to-net-core"></a>Port .NET Framework knihovny do .NET Core
 
-Naučte se portovat kód knihovny Rozhraní .NET Framework do .NET Core, kde se spouští napříč platformami a rozšiřuje dosah aplikací, které ji používají.
+Naučte se, jak portovat kód .NET Framework knihovny do .NET Core, kde běží na různých platformách a rozšiřuje dosah aplikací, které ho používají.
 
 ## <a name="prerequisites"></a>Požadavky
 
-Tento článek předpokládá, že:
+V tomto článku se předpokládá, že máte následující:
 
-- Používají visual studio 2017 nebo novější. (.NET Core není podporována v dřívějších verzích Sady Visual Studio.)
-- Seznamte se s [doporučeným procesem přenosu](index.md).
-- Byly vyřešeny všechny problémy se [závislostmi třetích stran](third-party-deps.md).
+- Používáte Visual Studio 2017 nebo novější. (.NET Core není podporované v dřívějších verzích sady Visual Studio.)
+- Pochopení [doporučeného procesu přenosu](index.md).
+- Vyřešily se případné problémy se [závislostmi třetích stran](third-party-deps.md).
 
 Měli byste se také seznámit s obsahem následujících článků:
 
-[Standard .NET](../../standard/net-standard.md)\
-Tento článek popisuje formální specifikaci rozhraní API rozhraní .NET, které jsou určeny k dispozici na všech implementacích rozhraní .NET.
-
-[Balíčky, metabalíčky a rámce](../packages.md)\
-Tento článek popisuje, jak rozhraní .NET Core definuje a používá balíčky a jak balíčky podporují kód spuštěný na více implementacích rozhraní .NET.
+[.NET Standard](../../standard/net-standard.md)\
+Tento článek popisuje formální specifikaci rozhraní API .NET, která jsou určená k dispozici pro všechny implementace rozhraní .NET.
 
 [Vývoj knihoven pomocí nástrojů pro různé platformy](../tutorials/libraries.md)\
-Tento článek vysvětluje, jak psát knihovny pomocí rozhraní CLI jádra .NET.
+Tento článek vysvětluje, jak psát knihovny pomocí .NET Core CLI.
 
-[Dodatky k formátu *csproj* pro .NET Core](../tools/csproj.md)\
-Tento článek popisuje změny, které byly přidány do souboru projektu jako součást přesunutí *csproj* a MSBuild.
+[Přidání do formátu *csproj* pro .NET Core](../tools/csproj.md)\
+Tento článek popisuje změny, které byly přidány do souboru projektu v rámci přesunutí do *csproj* a MSBuild.
 
-[Přenos na jádro .NET – analýza závislostí třetích stran](third-party-deps.md)\
-Tento článek popisuje přenositelnost závislostí třetích stran a co dělat, když závislost balíčku NuGet nespustí na .NET Core.
+[Přenos do .NET Core – analýza závislostí třetích stran](third-party-deps.md)\
+Tento článek pojednává o přenositelnosti závislostí třetích stran a o tom, co dělat, když se závislost balíčku NuGet nespustí v .NET Core.
 
-## <a name="retarget-to-net-framework-472"></a>Přecílení na rozhraní .NET Framework 4.7.2
+## <a name="retarget-to-net-framework-472"></a>Změnit cílení na .NET Framework 4.7.2
 
-Pokud váš kód není cílení .NET Framework 4.7.2, doporučujeme znovu zacílit na rozhraní .NET Framework 4.7.2. Tím je zajištěna dostupnost nejnovějších alternativ rozhraní API pro případy, kdy standard .NET nepodporuje existující rozhraní API.
+Pokud váš kód necílí na .NET Framework 4.7.2, doporučujeme změnit cílení na .NET Framework 4.7.2. Tím se zajistí dostupnost nejnovějších alternativ rozhraní API pro případy, kdy .NET Standard nepodporuje existující rozhraní API.
 
-Pro každý z projektů, které chcete portovat, postupujte v sadě Visual Studio takto:
+Pro každý z projektů, které chcete přenést, proveďte následující kroky v aplikaci Visual Studio:
 
-1. Klikněte pravým tlačítkem myši na projekt a vyberte **příkaz Vlastnosti**.
-1. V rozevíracím souboru **Cílová architektura** vyberte **rozhraní .NET Framework 4.7.2**.
-1. Překompilujte projekt.
+1. Klikněte pravým tlačítkem na projekt a vyberte **vlastnosti**.
+1. V rozevíracím seznamu **cílové rozhraní** vyberte **.NET Framework 4.7.2**.
+1. Zkompilujte projekt znovu.
 
-Vzhledem k tomu, že vaše projekty nyní cíl .NET Framework 4.7.2, použijte tuto verzi rozhraní .NET Framework jako základ pro portování kódu.
+Vzhledem k tomu, že vaše projekty teď cílí na .NET Framework 4.7.2, použijte tuto verzi .NET Framework jako základ pro přenos kódu.
 
 ## <a name="determine-portability"></a>Určení přenositelnosti
 
-Dalším krokem je spuštění analyzátoru přenositelnosti rozhraní API (ApiPort) pro generování sestavy přenositelnosti pro analýzu.
+Dalším krokem je spuštění analyzátoru přenositelnosti rozhraní API (ApiPort), aby se vygenerovala sestava přenositelnosti pro analýzu.
 
-Ujistěte se, že rozumíte [analyzátoru portability rozhraní API (ApiPort)](../../standard/analyzers/portability-analyzer.md) a způsobu generování sestav přenositelnosti pro cílení na .NET Core. Jak to děláte, se pravděpodobně liší v závislosti na vašich potřebách a osobním vkusu. V následujících částech je podrobně popsáno několik různých přístupů. Můžete najít sami míchání kroky těchto přístupů v závislosti na tom, jak je strukturován váš kód.
+Ujistěte se, že rozumíte [analyzátoru přenositelnosti rozhraní API (ApiPort)](../../standard/analyzers/portability-analyzer.md) a jak generovat sestavy přenositelnosti pro cílení na .NET Core. Jak to můžete udělat, se může lišit podle vašich potřeb a osobního příchuti. Následující části podrobně popisují několik různých přístupů. V závislosti na tom, jak je váš kód strukturován, se můžete setkat s kombinací kroků těchto přístupů.
 
-### <a name="deal-primarily-with-the-compiler"></a>Zabývat se především kompilátorem
+### <a name="deal-primarily-with-the-compiler"></a>Primárně se zabývat kompilátorem
 
-Tento přístup funguje dobře pro malé projekty nebo projekty, které nepoužívají mnoho rozhraní API rozhraní .NET Framework. Přístup je jednoduchý:
+Tento přístup funguje dobře pro malé projekty nebo projekty, které nepoužívají mnoho .NET Framework rozhraní API. Přístup je jednoduchý:
 
-1. Volitelně spusťte Rozhraní ApiPort v projektu. Pokud provozujete ApiPort, získejte znalosti ze sestavy o problémech, které budete muset řešit.
+1. Volitelně můžete v projektu spustit ApiPort. Pokud spustíte ApiPort, získáte znalosti ze sestavy o problémech, které budete potřebovat řešit.
 1. Zkopírujte veškerý kód do nového projektu .NET Core.
-1. Při odkazování na sestavu přenositelnosti (pokud jsou generovány), vyřešit chyby kompilátoru, dokud se plně nezkompiluje projekt.
+1. Při odkazování na sestavu přenositelnosti (Pokud je vygenerováno) se vyřeší chyby kompilátoru, dokud se projekt zcela zkompiluje.
 
-I když je nestrukturovaný, tento přístup zaměřený na kód často řeší problémy rychle. Projekt, který obsahuje pouze datové modely může být ideálním kandidátem pro tento přístup.
+I když je nestrukturované, tento přístup zaměřený na kód často řeší problémy rychleji. Projekt, který obsahuje pouze datové modely, může být ideálním kandidátem pro tento přístup.
 
-### <a name="stay-on-the-net-framework-until-portability-issues-are-resolved"></a>Zůstaňte v rozhraní .NET Framework, dokud nebudou vyřešeny problémy s přenositelností
+### <a name="stay-on-the-net-framework-until-portability-issues-are-resolved"></a>Zůstat na .NET Framework dokud nebudou vyřešeny problémy s přenositelností
 
 Tento přístup může být nejlepší, pokud dáváte přednost kódu, který se zkompiluje během celého procesu. Přístup je následující:
 
-1. Spusťte Rozhraní ApiPort v projektu.
-1. Řešení problémů pomocí různých přenosných api.
-1. Vezměte na vědomí všechny oblasti, kde máte možnost používat přímou alternativu.
-1. Opakujte předchozí kroky pro všechny projekty, které přepojíte, dokud si nejste jisti, že každý z nich je připraven ke kopírování do nového projektu .NET Core.
+1. Spusťte ApiPort na projektu.
+1. Vyřešte problémy pomocí různých rozhraní API, která jsou přenosná.
+1. Poznamenejte si všechny oblasti, ve kterých se vám zabrání použití přímé alternativy.
+1. Předchozí kroky opakujte pro všechny projekty, které chcete přenést, dokud si nejste jisti, že jsou všechny připravené k zkopírování do nového projektu .NET Core.
 1. Zkopírujte kód do nového projektu .NET Core.
-1. Vypracujte všechny problémy, kde jste si všimli, že přímá alternativa neexistuje.
+1. Vypracujte všechny problémy, kde jste si poznamenali, že nějaká přímá alternativa neexistuje.
 
-Tento pečlivý přístup je strukturovanější než pouhé zpracování chyb kompilátoru, ale je stále relativně zaměřený na kód a má tu výhodu, že má vždy kód, který kompiluje. Způsob řešení určitých problémů, které nelze vyřešit pouhým použitím jiného rozhraní API, se značně liší. Možná zjistíte, že je třeba vypracovat komplexnější plán pro určité projekty, který je zahrnut v příštím přístupu.
+Tento pečlivý přístup je více strukturovaný než pouhá práce s kompilátorem, ale je stále poměrně zaměřený na kód a má výhodu vždy, co kompiluje kód. Způsob řešení některých problémů, které nebylo možné vyřešit pouhým použitím jiného rozhraní API, se výrazně liší. Může se stát, že budete potřebovat sestavit komplexnější plán pro určité projekty, který je popsaný v dalším postupu.
 
-### <a name="develop-a-comprehensive-plan-of-attack"></a>Vypracovat komplexní plán útoku
+### <a name="develop-a-comprehensive-plan-of-attack"></a>Vývoj komplexního plánu útoků
 
-Tento přístup může být nejvhodnější pro větší a složitější projekty, kde restrukturalizační kód nebo úplné přepsání určitých oblastí kódu může být nezbytné pro podporu .NET Core. Přístup je následující:
+Tento přístup může být nejvhodnější pro větší a složitější projekty, kde může být změna struktury kódu nebo zcela přepisování některých oblastí kódu nutná k podpoře .NET Core. Přístup je následující:
 
-1. Spusťte Rozhraní ApiPort v projektu.
-1. Zjistěte, kde se jednotlivé nepřenosné typy používají a jak to ovlivňuje celkovou přenositelnost.
-   - Pochopit povahu těchto typů. Jsou malé v počtu, ale často se používají? Jsou velké v počtu, ale používají se zřídka? Je jejich použití koncentrované, nebo je rozloženo v celém kódu?
-   - Je snadné izolovat kód, který není přenosný, takže se s ním můžete vypořádat efektivněji?
-   - Potřebujete refaktorovat svůj kód?
-   - Pro ty typy, které nejsou přenosné, existují alternativní api, která provádějí stejný úkol? Například pokud používáte třídu, <xref:System.Net.WebClient> můžete být schopni <xref:System.Net.Http.HttpClient> použít třídu místo.
-   - Existují různá přenosná rozhraní API, která mohou být k dispozici k provedení úkolu, i když se nejedná o náhradu za přetažení? Například pokud používáte <xref:System.Xml.Schema.XmlSchema> k analýzě XML, ale nevyžadují zjišťování schématu XML, můžete použít <xref:System.Xml.Linq> rozhraní API a implementovat analýzu sami na rozdíl od spoléhání se na rozhraní API.
-1. Pokud máte sestavení, která je obtížné portovat, stojí za to je prozatím ponechat v rozhraní .NET Framework? Zde je několik věcí, které je třeba zvážit:
-   - V knihovně mohou být některé funkce, které nejsou kompatibilní s jádrem .NET Core, protože příliš silně závisí na rozhraní .NET Framework nebo funkcích specifických pro systém Windows. Stojí za to nechat tuto funkci prozatím za sebou a uvolnit dočasnou verzi knihovny .NET Core s menšími funkcemi, dokud nebudou k dispozici prostředky pro přenos funkcí?
-   - Pomohl by refaktor?
-1. Je rozumné napsat vlastní implementaci nedostupného rozhraní API rozhraní .NET Framework?
-   Můžete zvážit kopírování, úpravy a použití kódu ze [zdroje odkazu rozhraní .NET Framework](https://github.com/Microsoft/referencesource). Referenční zdrojový kód je licencován pod [licencí MIT](https://github.com/Microsoft/referencesource/blob/master/LICENSE.txt), takže máte značnou svobodu používat zdroj jako základ pro svůj vlastní kód. Jen se ujistěte, že správně atribut Microsoft ve vašem kódu.
+1. Spusťte ApiPort na projektu.
+1. Zjistěte, kde se používá každý nepřenosný typ a jak ovlivňuje celkovou přenositelnost.
+   - Pochopte charakter těchto typů. Jsou malými čísly, ale často se používají? Jsou velké v čísle, ale používány zřídka? Je jejich použití zahuštěné nebo rozdělené do celého kódu?
+   - Je snadné izolovat kód, který není přenosný, abyste se mohli efektivněji zabývat?
+   - Potřebujete Refaktorovat kód?
+   - U typů, které nejsou přenosné, existují alternativní rozhraní API, která mají stejný úkol? Například pokud používáte <xref:System.Net.WebClient> třídu, je možné <xref:System.Net.Http.HttpClient> místo toho použít třídu.
+   - Jsou k dispozici různá přenosná rozhraní API k provedení úkolu, i když není náhrada odkládacího zařízení? Například pokud používáte <xref:System.Xml.Schema.XmlSchema> k analýze XML, ale nepotřebujete zjišťování schématu XML, můžete použít <xref:System.Xml.Linq> rozhraní API a implementovat analýzu sami, a to na rozdíl od rozhraní API.
+1. Pokud máte sestavení, která se obtížně portují, je vhodné je nechat .NET Framework pro teď? Tady je několik věcí, které je potřeba vzít v úvahu:
+   - Je možné, že máte v knihovně některé funkce, které jsou nekompatibilní s .NET Core, protože spoléhá na .NET Framework nebo specifické funkce systému Windows příliš mnoho. Stojí za to, aby se teď funkce zanechala a uvolnila dočasná verze .NET Core vaší knihovny s menšími funkcemi, dokud nebudou k dispozici prostředky pro přenos funkcí?
+   - Je refaktorovaná?
+1. Je rozumné napsat vlastní implementaci nedostupného .NET Framework rozhraní API?
+   Můžete zvážit kopírování, úpravy a používání kódu z [.NET Frameworkho zdroje odkazů](https://github.com/Microsoft/referencesource). Zdrojový kód odkazu je licencován v rámci [licence MIT](https://github.com/Microsoft/referencesource/blob/master/LICENSE.txt), takže máte významnou volnost v používání zdroje jako základu pro váš vlastní kód. Stačí se ujistit, že v kódu budete správně atribut Microsoft.
 1. Tento postup opakujte podle potřeby pro různé projekty.
 
-Fáze analýzy může nějakou dobu trvat v závislosti na velikosti základu kódu. Trávit čas v této fázi důkladně pochopit rozsah potřebných změn a vytvořit plán obvykle šetří čas v dlouhodobém horizontu, zejména pokud máte komplexní základ kódu.
+Fáze analýzy může určitou dobu trvat v závislosti na velikosti vašeho základu kódu. Doba útraty v této fázi k důkladnému pochopení rozsahu změn potřebných pro vývoj plánu obvykle šetří čas v dlouhodobém běhu, zejména v případě, že máte složitý základ kódu.
 
-Váš plán může zahrnovat provádění významných změn v základu kódu při stále cílení .NET Framework 4.7.2, což je strukturovanější verze předchozího přístupu. Způsob provádění plánu závisí na základu kódu.
+Váš plán by mohl zahrnovat významné změny v základu kódu a přitom stále cílit .NET Framework 4.7.2, takže tato verze je podrobněji sestavená. Způsob provádění plánu závisí na základu kódu.
 
 ### <a name="mixed-approach"></a>Smíšený přístup
 
-Je pravděpodobné, že budete míchat výše uvedené přístupy na základě projektu. Měli byste udělat to, co dává největší smysl pro vás a pro váš základ kódu.
+Je možné, že se výše uvedené přístupy budou kombinovat na základě jednotlivých projektů. Měli byste postupovat podle svých potřeb a základu kódu.
 
-## <a name="port-your-tests"></a>Port vaše testy
+## <a name="port-your-tests"></a>Portování testů
 
-Nejlepší způsob, jak zajistit, aby vše fungovalo, když jste portovali kód, je otestovat kód při přenosu do .NET Core. Chcete-li to provést, budete muset použít rozhraní pro testování, které vytváří a spouští testy pro .NET Core. V současné době máte tři možnosti:
+Nejlepším způsobem, jak zajistit, aby vše fungovalo, když jste svůj kód nastavili jako port, je testování kódu při jeho přenosu do .NET Core. K tomu je nutné použít testovací rozhraní, které sestaví a spustí testy pro .NET Core. V současné době máte tři možnosti:
 
-- [xJednotka](https://xunit.github.io/)
+- [xUnit](https://xunit.github.io/)
   - [Začínáme](https://xunit.github.io/docs/getting-started-dotnet-core.html)
-  - [Nástroj pro převod projektu MSTest na xUnit](https://github.com/dotnet/codeformatter/tree/master/src/XUnitConverter)
-- [NJednotka](https://nunit.org/)
+  - [Nástroj k převedení projektu MSTest na xUnit](https://github.com/dotnet/codeformatter/tree/master/src/XUnitConverter)
+- [NUnit](https://nunit.org/)
   - [Začínáme](https://github.com/nunit/docs/wiki/Installation)
-  - [Příspěvek na blogu o migraci z MSTestu na NUnit](https://www.florian-rappl.de/News/Page/275/convert-mstest-to-nunit)
+  - [Příspěvek na blogu o migraci z MSTest na NUnit](https://www.florian-rappl.de/News/Page/275/convert-mstest-to-nunit)
 - [MSTest](/visualstudio/test/unit-test-basics)
 
-## <a name="recommended-approach"></a>Doporučený přístup
+## <a name="recommended-approach"></a>Doporučený postup
 
-Nakonec přenos úsilí závisí do značné míry na tom, jak je strukturován kód rozhraní .NET Framework. Dobrým způsobem přenosu kódu je začít se *základnou* knihovny, což jsou základní součásti kódu. To může být datové modely nebo některé jiné základní třídy a metody, které vše ostatní používá přímo nebo nepřímo.
+V konečném důsledku je přenosová intenzita velmi závislá na způsobu strukturování kódu .NET Framework. Dobrým způsobem, jak portovat váš kód, je začít se základem vaší knihovny, což je *základní* komponenty kódu. Může se jednat o datové modely nebo jiné základní třídy a metody, které jinak používá přímo nebo nepřímo.
 
-1. Port testovací projekt, který testuje vrstvu knihovny, kterou právě portujete.
-1. Zkopírujte základnu knihovny do nového projektu .NET Core a vyberte verzi standardu .NET, kterou chcete podporovat.
-1. Proveďte všechny změny potřebné k získání kódu ke kompilaci. Hodně z toho může vyžadovat přidání nuget balíček závislostí do souboru *csproj.*
+1. Port testovacího projektu, který testuje vrstvu vaší knihovny, kterou právě napojujete.
+1. Zkopírujte základnu vaší knihovny do nového projektu .NET Core a vyberte verzi .NET Standard, kterou chcete podporovat.
+1. Proveďte potřebné změny k získání kódu pro zkompilování. Většina toho může vyžadovat přidání závislostí balíčku NuGet do souboru *csproj* .
 1. Spusťte testy a proveďte potřebné úpravy.
-1. Vyberte další vrstvu kódu, kterou chcete přenést, a opakujte předchozí kroky.
+1. Vyberte další vrstvu kódu pro přesměrování a opakujte předchozí kroky.
 
-Pokud začnete se základnou knihovny a přesunete se ven ze základny a podle potřeby otestujete každou vrstvu, přenos je systematický proces, při kterém jsou problémy izolovány na jednu vrstvu kódu najednou.
+Pokud začnete se základem knihovny a přesunete směrem ven od základny a otestujete každou vrstvu podle potřeby, přenos je systematický proces, ve kterém jsou problémy izolované na jednu vrstvu kódu současně.
 
 ## <a name="next-steps"></a>Další kroky
 
