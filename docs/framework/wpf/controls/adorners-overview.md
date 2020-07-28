@@ -1,5 +1,6 @@
 ---
 title: Přehled doplňků
+description: Přečtěte si o Windows Presentation Foundation doplňky, speciální typ prvku FrameworkElement, který poskytuje pomůcky pro uživatele, jako jsou funkční popisovače pro prvky.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,90 +8,90 @@ dev_langs:
 helpviewer_keywords:
 - adorners [WPF], about adorners
 ms.assetid: 33d4c5c2-2daf-4e45-ba9a-5b673e2b8280
-ms.openlocfilehash: b41c1f10f7e1b7c1799fd27270a3eeb9899ceeb6
-ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
+ms.openlocfilehash: 43d4af9f86c6ae72a61f86d1ca19405c2dcc6cc8
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80111176"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87167735"
 ---
 # <a name="adorners-overview"></a>Přehled doplňků
 
-Adorners jsou speciální <xref:System.Windows.FrameworkElement>typ , který slouží k poskytování vizuální podněty pro uživatele. Mezi další použití Adorners lze přidat funkční popisovače prvků nebo poskytnout informace o stavu ovládacího prvku.
+Doplňky jsou speciálním typem <xref:System.Windows.FrameworkElement> , který slouží k poskytování vizuálních pomůcek uživateli. Mimo jiné použití Doplňky lze použít k přidání funkčních obslužných rutin do prvků nebo k poskytnutí informací o stavu ovládacího prvku.
 
-## <a name="about-adorners"></a>O adorners
+## <a name="about-adorners"></a>O doplňkových Doplňkůch
 
-A <xref:System.Windows.Documents.Adorner> je <xref:System.Windows.FrameworkElement> vlastní, který <xref:System.Windows.UIElement>je vázán na . Adorners jsou vykresleny <xref:System.Windows.Documents.AdornerLayer>v , což je vykreslovací povrch, který je vždy nad objektem adorned element nebo kolekce adorned prvky. Vykreslování adorner <xref:System.Windows.UIElement> je nezávislý na vykreslování adorner je vázán. Adorner je obvykle umístěn vzhledem k prvku, ke kterému je vázán, pomocí standardní 2D souřadnice původu umístěného v levém horním rohu adorned elementu.
+<xref:System.Windows.Documents.Adorner>Je vlastní <xref:System.Windows.FrameworkElement> , který je svázán s <xref:System.Windows.UIElement> . Doplňky jsou vykresleny v <xref:System.Windows.Documents.AdornerLayer> , což je plocha vykreslování, která je vždy nad přívrchním prvkem nebo kolekcí doplňkových prvků. Vykreslování doplňku je nezávislé na vykreslování <xref:System.Windows.UIElement> , ke kterému je doplněk vázán. Doplněk je obvykle umístěn vzhledem k prvku, ke kterému je svázán, pomocí standardní 2D souřadnicového zdroje umístěný vlevo nahoře v pravém prvku.
 
-Běžné aplikace pro adorners patří:
+Mezi běžné aplikace pro doplňky patří:
 
-- Přidání funkčních <xref:System.Windows.UIElement> úchytů, které umožňují uživateli nějakým způsobem manipulovat s prvkem (změna velikosti, otočení, změna umístění atd.).
-- Poskytněte vizuální zpětnou vazbu k označení různých stavů nebo v reakci na různé události.
-- Překryvné vizuální <xref:System.Windows.UIElement>dekorace na .
-- Vizuálně maskovat nebo přepsat část <xref:System.Windows.UIElement>nebo celý .
+- Přidání funkčních popisovačů <xref:System.Windows.UIElement> , které uživateli umožňují manipulovat s prvkem nějakým způsobem (Změna velikosti, otočení, přemístění atd.).
+- Poskytněte vizuální zpětnou vazbu pro indikaci různých stavů nebo v reakci na různé události.
+- Překrytí vizuálních dekorace na <xref:System.Windows.UIElement> .
+- Vizuálně maskovat nebo potlačit část nebo vše <xref:System.Windows.UIElement> .
 
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]poskytuje základní rámec pro zdobení vizuálních prvků. V následující tabulce jsou uvedeny primární typy používané při ozdobení objektů a jejich účel. Následuje několik příkladů použití:
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]poskytuje základní rámec pro doplňky vizuálních prvků. V následující tabulce jsou uvedeny primární typy používané při příchodu objektů a jejich účel. Několik příkladů použití je následující:
 
 |||
 |-|-|
-|<xref:System.Windows.Documents.Adorner>|Abstraktní základní třídy, ze kterého zdědí všechny konkrétní adorner implementace.|
-|<xref:System.Windows.Documents.AdornerLayer>|Třída představující vykreslovací vrstvu pro adorner (y) jednoho nebo více ozdobných prvků.|
-|<xref:System.Windows.Documents.AdornerDecorator>|Třída, která umožňuje adorner vrstvy, které mají být spojeny s kolekcí prvků.|
+|<xref:System.Windows.Documents.Adorner>|Abstraktní základní třída, ze které všechny konkrétní implementace doplňků dědí.|
+|<xref:System.Windows.Documents.AdornerLayer>|Třída, která představuje vrstvu vykreslování pro doplňky jednoho nebo více prvků s přístupnými doplňky.|
+|<xref:System.Windows.Documents.AdornerDecorator>|Třída, která umožňuje přidružit vrstvu doplňků ke kolekci elementů.|
 
-## <a name="implementing-a-custom-adorner"></a>Implementace vlastní adorner
+## <a name="implementing-a-custom-adorner"></a>Implementace vlastního doplňku
 
-Adorners rámec poskytuje [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] je určena především pro podporu vytváření vlastní adorners. Vlastní adorner je vytvořen implementací třídy, <xref:System.Windows.Documents.Adorner> která dědí z abstraktní třídy.
+Doplňky, které poskytuje, [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] jsou určené hlavně pro podporu vytváření vlastních doplňků. Vlastní doplňky je vytvořeno implementací třídy, která dědí z abstraktní <xref:System.Windows.Documents.Adorner> třídy.
 
 > [!NOTE]
-> Nadřazený <xref:System.Windows.Documents.Adorner> <xref:System.Windows.Documents.AdornerLayer> je, který <xref:System.Windows.Documents.Adorner>vykreslí , není prvek zdobí.
+> Nadřazený objekt <xref:System.Windows.Documents.Adorner> je <xref:System.Windows.Documents.AdornerLayer> , který vykresluje <xref:System.Windows.Documents.Adorner> , nikoli element, který je v něm navýšený.
 
-Následující příklad ukazuje třídu, která implementuje jednoduchý adorner. Příklad adorner jednoduše zdobí rohy <xref:System.Windows.UIElement> s kruhy.
+Následující příklad ukazuje třídu, která implementuje jednoduché doplňky. Příkladem může být pouze sevýšení rohů <xref:System.Windows.UIElement> s kroužky.
 
 [!code-csharp[Adorners_SimpleCircleAdorner#_SimpleCircleAdornerBody](~/samples/snippets/csharp/VS_Snippets_Wpf/Adorners_SimpleCircleAdorner/CSharp/Window1.xaml.cs#_simplecircleadornerbody)]
 [!code-vb[Adorners_SimpleCircleAdorner#_SimpleCircleAdornerBody](~/samples/snippets/visualbasic/VS_Snippets_Wpf/Adorners_SimpleCircleAdorner/VisualBasic/Window1.xaml.vb#_simplecircleadornerbody)]
   
-Následující obrázek znázorňuje SimpleCircleAdorner aplikovaný na <xref:System.Windows.Controls.TextBox>:
+Následující obrázek ukazuje SimpleCircleAdorner použitou pro <xref:System.Windows.Controls.TextBox> :
 
-![Snímek obrazovky s ozdobným textovým polem](./media/adorners-overview/simplecircleadorner-textbox.png)
+![Snímek obrazovky se zobrazeným textovým polem](./media/adorners-overview/simplecircleadorner-textbox.png)
 
-## <a name="rendering-behavior-for-adorners"></a>Chování vykreslování pro adornery
+## <a name="rendering-behavior-for-adorners"></a>Chování vykreslování pro Doplňky
 
-Je důležité si uvědomit, že adorners neobsahují žádné vlastní vykreslování chování; zajištění, že adorner vykreslí je odpovědnost adorner implementer. Běžným způsobem implementace chování vykreslování je přepsat metodu <xref:System.Windows.UIElement.OnRender%2A> a použít jeden nebo více <xref:System.Windows.Media.DrawingContext> objektů k vykreslení vizuálů adorner podle potřeby (jak je znázorněno v příkladu výše).
+Je důležité si uvědomit, že doplňky neobsahují žádné podstatné chování při vykreslování; zajištění, že se nakreslí doplňková událost, je odpovědností dodatečně implementátor. Běžným způsobem, jak implementovat chování vykreslování, je přepsat <xref:System.Windows.UIElement.OnRender%2A> metodu a použít jeden nebo více <xref:System.Windows.Media.DrawingContext> objektů pro vykreslení vizuálů doplňku podle potřeby (jak je znázorněno v příkladu výše).
 
 > [!NOTE]
-> Vše, co je umístěno ve vrstvě adorner, je vykresleno nad ostatními styly, které jste nastavili. Jinými slovy adorners jsou vždy vizuálně na vrcholu a nelze přepsat pomocí pořadí vykreslovat.
+> Cokoli, co umístíte do doplňku, se vykreslí nad zbývajícími styly, které jste nastavili. Jinými slovy, doplňky jsou vždy vizuálně nahoře a nelze je přepsat pomocí pořadí vykreslování.
 
 ## <a name="events-and-hit-testing"></a>Události a testování přístupů
 
-Adorners přijímat vstupní události, <xref:System.Windows.FrameworkElement>stejně jako všechny ostatní .  Vzhledem k tomu, že adorner má vždy vyšší pořadí vykreslování <xref:System.Windows.UIElement.Drop> <xref:System.Windows.UIElement.MouseMove>než prvek, který zdobí, adorner obdrží vstupní události (například nebo ) které mohou být určeny pro základní adorned element.  Adorner můžete naslouchat pro určité vstupní události a předat je na základní adorned prvek re-raising události.
+Doplňky dostávají vstupní události stejně jako jiné <xref:System.Windows.FrameworkElement> .  Vzhledem k tomu, že má doplňková událost vždy vyšší pořadí z, než je prvek, který je prvkem, může doplněk přijímat vstupní události (například <xref:System.Windows.UIElement.Drop> nebo <xref:System.Windows.UIElement.MouseMove> ), které mohou být určeny pro základní prvek s právy.  Doplňková událost může naslouchat určitým vstupním událostem a předávat je základnímu prvku, který ho znovu vyvolal.
 
-Chcete-li povolit předávací přístupů testování <xref:System.Windows.UIElement.IsHitTestVisible%2A> prvků pod adorner, nastavte vlastnost test přístupů na **false** na adorner.  Další informace o testování přístupů naleznete [v tématu Testování přístupů ve vizuální vrstvě](../graphics-multimedia/hit-testing-in-the-visual-layer.md).
+Chcete-li povolit testování průchozího průchodu prvků v doplňku, nastavte vlastnost test přístupů <xref:System.Windows.UIElement.IsHitTestVisible%2A> na **hodnotu false** u doplňku.  Další informace o testování přístupů naleznete v tématu [testování přístupů ve vizuální vrstvě](../graphics-multimedia/hit-testing-in-the-visual-layer.md).
 
-## <a name="adorning-a-single-uielement"></a>Ozdobit jeden prvek uielement
+## <a name="adorning-a-single-uielement"></a>Navýšení jednoho prvku UIElement
 
-Chcete-li svázat adorner na konkrétní <xref:System.Windows.UIElement>, postupujte takto:
+Chcete-li navazovat Doplňky na konkrétní <xref:System.Windows.UIElement> , postupujte takto:
 
-1. Volání statické <xref:System.Windows.Documents.AdornerLayer.GetAdornerLayer%2A> metody získat <xref:System.Windows.Documents.AdornerLayer> objekt <xref:System.Windows.UIElement> pro být adorned. <xref:System.Windows.Documents.AdornerLayer.GetAdornerLayer%2A>prochází vizuální strom, počínaje zadanou <xref:System.Windows.UIElement>a vrátí první adorner vrstvu, kterou najde. (Pokud jsou nalezeny žádné adorner vrstvy, metoda vrátí null.)
+1. Zavolejte statickou metodu <xref:System.Windows.Documents.AdornerLayer.GetAdornerLayer%2A> pro získání <xref:System.Windows.Documents.AdornerLayer> objektu, který má být podrobnější <xref:System.Windows.UIElement> . <xref:System.Windows.Documents.AdornerLayer.GetAdornerLayer%2A>provede sestavování vizuálního stromu, počínaje zadaným <xref:System.Windows.UIElement> a vrátí první nalezenou vrstvu doplňku. (Pokud se nenaleznou žádné vrstvy doplňků, vrátí metoda hodnotu null.)
 
-2. Volání <xref:System.Windows.Documents.AdornerLayer.Add%2A> metody svázat adorner k <xref:System.Windows.UIElement>cíli .
+2. Voláním <xref:System.Windows.Documents.AdornerLayer.Add%2A> metody navázání doplňku k cíli <xref:System.Windows.UIElement> .
 
- Následující příklad váže SimpleCircleAdorner (viz výše) <xref:System.Windows.Controls.TextBox> s názvem *myTextBox*:
+ Následující příklad váže SimpleCircleAdorner (zobrazený výše) k <xref:System.Windows.Controls.TextBox> pojmenovanému *MyTextBox*:
 
  [!code-csharp[Adorners_SimpleCircleAdorner#_AdornSingleElement](~/samples/snippets/csharp/VS_Snippets_Wpf/Adorners_SimpleCircleAdorner/CSharp/Window1.xaml.cs#_adornsingleelement)]
  [!code-vb[Adorners_SimpleCircleAdorner#_AdornSingleElement](~/samples/snippets/visualbasic/VS_Snippets_Wpf/Adorners_SimpleCircleAdorner/VisualBasic/Window1.xaml.vb#_adornsingleelement)]
 
 > [!NOTE]
-> Použití [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] svázat adorner na jiný prvek není aktuálně podporována.
+> Použití [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] pro svázání doplňku s jiným prvkem není aktuálně podporováno.
 
-## <a name="adorning-the-children-of-a-panel"></a>Ozdobit děti panelu
+## <a name="adorning-the-children-of-a-panel"></a>Vylepšení podřízených objektů panelu
 
-Chcete-li svázat adorner <xref:System.Windows.Controls.Panel>s podřízenými objekty , postupujte takto:
+Chcete-li vytvořit navázání doplňku k podřízeným položkám <xref:System.Windows.Controls.Panel> , postupujte následovně:
 
-1. Volání `static` metody <xref:System.Windows.Documents.AdornerLayer.GetAdornerLayer%2A> najít adorner vrstvu pro prvek, jehož podřízené objekty mají být adorned.
+1. Zavolejte `static` metodu <xref:System.Windows.Documents.AdornerLayer.GetAdornerLayer%2A> pro nalezení doplňkové vrstvy pro element, jehož podřízené prvky mají být navrstveny.
 
-2. Výčet prostřednictvím podřízených nadřazený prvek a volání <xref:System.Windows.Documents.AdornerLayer.Add%2A> metody svázat adorner na každý podřízený prvek.
+2. Zobrazte výčet prostřednictvím podřízených objektů nadřazeného prvku a zavolejte <xref:System.Windows.Documents.AdornerLayer.Add%2A> metodu pro svázání doplňku s každým podřízeným elementem.
 
-Následující příklad váže SimpleCircleAdorner (viz výše) na <xref:System.Windows.Controls.StackPanel> podřízené s názvem *myStackPanel*:
+Následující příklad váže SimpleCircleAdorner (zobrazený výše) k podřízeným položkám <xref:System.Windows.Controls.StackPanel> pojmenovaného *myStackPanel*:
 
 [!code-csharp[Adorners_SimpleCircleAdorner#_AdornChildren](~/samples/snippets/csharp/VS_Snippets_Wpf/Adorners_SimpleCircleAdorner/CSharp/Window1.xaml.cs#_adornchildren)]
 [!code-vb[Adorners_SimpleCircleAdorner#_AdornChildren](~/samples/snippets/visualbasic/VS_Snippets_Wpf/Adorners_SimpleCircleAdorner/VisualBasic/Window1.xaml.vb#_adornchildren)]
@@ -98,7 +99,7 @@ Následující příklad váže SimpleCircleAdorner (viz výše) na <xref:System
 ## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Media.AdornerHitTestResult>
-- [Přehled objektů Shape a základního kreslení ve WPF](../graphics-multimedia/shapes-and-basic-drawing-in-wpf-overview.md)
-- [Malování pomocí obrázků, kreseb a vizuálních objektů](../graphics-multimedia/painting-with-images-drawings-and-visuals.md)
+- [Tvary a základní kresby v přehledu WPF](../graphics-multimedia/shapes-and-basic-drawing-in-wpf-overview.md)
+- [Kreslení pomocí obrázků, kreseb a vizuálních objektů](../graphics-multimedia/painting-with-images-drawings-and-visuals.md)
 - [Přehled vykreslovaných objektů](../graphics-multimedia/drawing-objects-overview.md)
-- [Témata s postupy](adorners-how-to-topics.md)
+- [– postupy](adorners-how-to-topics.md)

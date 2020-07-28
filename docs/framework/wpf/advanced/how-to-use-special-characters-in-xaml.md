@@ -1,5 +1,6 @@
 ---
 title: 'Postupy: Použití speciálních znaků v kódu XAML'
+description: Přečtěte si o syntaxi pro kódování speciálních znaků ve formátu Unicode UTF-8 v sadě Visual Studio pro použití v souborech XAML v Windows Presentation Foundation.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Unicode UTF-8 file format
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - typography [WPF], special characters
 - special characters [WPF]
 ms.assetid: a57776d1-f353-4794-afa0-bfa3c712ed1c
-ms.openlocfilehash: 59449637bb45f6b75462b6809c354af7972fc2e7
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: ac2388fd96aa26ddd99408ac9f847ce517958568
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73740839"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87168352"
 ---
 # <a name="how-to-use-special-characters-in-xaml"></a>Postupy: Použití speciálních znaků v kódu XAML
 Soubory značek, které jsou vytvořeny v sadě Visual Studio, jsou automaticky uloženy ve formátu Unicode UTF-8, což znamená, že většina speciálních znaků, jako jsou znaky akcentů, jsou správně kódovány. Nicméně existuje sada běžně používaných speciálních znaků, které jsou zpracovávány jinak. Tyto speciální znaky následují při kódování XML standardu W3C (konsorcium World Wide Web).  

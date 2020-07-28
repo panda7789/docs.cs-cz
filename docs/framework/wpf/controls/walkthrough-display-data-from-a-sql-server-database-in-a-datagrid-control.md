@@ -1,5 +1,6 @@
 ---
 title: 'Návod: Zobrazení dat z databáze SQL Serveru v ovládacím prvku DataGrid'
+description: Naučte se, jak získat data z databáze SQL Server a zobrazit ji v Windows Presentation Foundation ovládacím prvku DataGrid pomocí tohoto návodu.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - DataGrid [WPF], displaying data from SQL Server
 - controls [WPF], DataGrid
 ms.assetid: 6810b048-0a23-4f86-bfa5-97f92b3cfab4
-ms.openlocfilehash: 1398d8408a0b85d6603d638312e92ba35c5e77d3
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: cc41979c869021c9c363f3f68ce590d4702e068c
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84591030"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87167553"
 ---
 # <a name="walkthrough-display-data-from-a-sql-server-database-in-a-datagrid-control"></a>Návod: zobrazení dat z databáze SQL Server v ovládacím prvku DataGrid
 
@@ -23,7 +24,7 @@ V tomto návodu načtete data z databáze SQL Server a zobrazíte je v <xref:Sys
 
 K dokončení tohoto návodu budete potřebovat následující komponenty:
 
-- Visual Studio.
+- Visual Studio
 
 - Přístup ke spuštěné instanci SQL Server nebo SQL Server Express s připojenou ukázkovou databází AdventureWorks. Databázi AdventureWorks si můžete stáhnout z [GitHubu](https://github.com/Microsoft/sql-server-samples/releases).
 
@@ -47,7 +48,7 @@ K dokončení tohoto návodu budete potřebovat následující komponenty:
 
 6. Na obrazovce vybrat datové připojení zadejte připojení k databázi AdventureWorksLT2008. Další informace najdete v [dialogovém okně Výběr datového připojení](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399244(v=vs.100)).
 
-    Ujistěte se, že je název `AdventureWorksLT2008Entities` a že je zaškrtnuté políčko **Uložit nastavení připojení entity do souboru App. config** , a potom klikněte na **tlačítko Další**.
+    Ujistěte se, že je název `AdventureWorksLT2008Entities` a že je zaškrtnuté políčko **Uložit nastavení připojení entity v App.Config jako** , a pak klikněte na **Další**.
 
 7. Na obrazovce zvolte vaše databázové objekty rozbalte uzel tabulky a vyberte tabulky **produkt** a **ProductCategory** .
 
