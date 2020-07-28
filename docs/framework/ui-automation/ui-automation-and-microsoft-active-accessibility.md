@@ -1,5 +1,6 @@
 ---
 title: Automatizace uživatelského rozhraní a technologie Microsoft Active Accessibility
+description: Pochopte rozdíly mezi automatizací uživatelského rozhraní a Microsoft Active Accessibility, což je předchozí řešení pro usnadnění přístupu k aplikacím.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Active Accessibility
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - UI Automation, Microsoft Active Accessibility
 - Active Accessibility, UI Automation compared to
 ms.assetid: 87bee662-0a3e-4232-a421-20e7a5968321
-ms.openlocfilehash: 9aa975cf3c6e60fbcc759adbf5a991930bff36d6
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 0685a3f89a6578433641aaf78717f4ff377ff2f9
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144783"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87164061"
 ---
 # <a name="ui-automation-and-microsoft-active-accessibility"></a>Automatizace uživatelského rozhraní a technologie Microsoft Active Accessibility
 > [!NOTE]
@@ -80,7 +81,7 @@ Aktivní přístupnost je založená na modelu COM (Component Object Model) s po
 |ROLE_SYSTEM_DOCUMENT|Dokument|  
 |ROLE_SYSTEM_TEXT|Upravit|  
 |ROLE_SYSTEM_GROUPING|Skupina|  
-|ROLE_SYSTEM_LIST|Záhlaví|  
+|ROLE_SYSTEM_LIST|Hlavička|  
 |ROLE_SYSTEM_COLUMNHEADER|Položka záhlaví|  
 |ROLE_SYSTEM_LINK|Hypertextový odkaz|  
 |ROLE_SYSTEM_GRAPHIC|Image|  
@@ -100,7 +101,7 @@ Aktivní přístupnost je založená na modelu COM (Component Object Model) s po
 |ROLE_SYSTEM_STATUSBAR|Stavový řádek|  
 |ROLE_SYSTEM_PAGETABLIST|Karta|  
 |ROLE_SYSTEM_PAGETAB|Položka karty|  
-|ROLE_SYSTEM_TABLE|Table|  
+|ROLE_SYSTEM_TABLE|Tabulka|  
 |ROLE_SYSTEM_STATICTEXT|Text|  
 |ROLE_SYSTEM_INDICATOR|Jezdec|  
 |ROLE_SYSTEM_TITLEBAR|Záhlaví|  
@@ -251,4 +252,4 @@ Aktivní přístupnost je založená na modelu COM (Component Object Model) s po
   
 ## <a name="see-also"></a>Viz také
 
-- [Základy automatizace uživatelského rozhraní](index.md)
+- [Principy automatizace uživatelského rozhraní](index.md)

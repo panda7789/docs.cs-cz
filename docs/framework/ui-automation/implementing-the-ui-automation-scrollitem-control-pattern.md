@@ -1,41 +1,42 @@
 ---
 title: Implementace vzoru ovládacích prvků ScrollItem pro automatizaci uživatelského rozhraní
+description: Přečtěte si pokyny a konvence pro implementaci vzoru ovládacího prvku ovládacích prvků ScrollItem v automatizaci uživatelského rozhraní. Viz povinné členy pro rozhraní IScrollItemProvider.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - control patterns, Scroll Item
 - UI Automation, Scroll Item control pattern
 - Scroll Item control pattern
 ms.assetid: 903bab5c-80c1-44d7-bdc2-0a418893b987
-ms.openlocfilehash: 3a0647ab98dcb86306573a0e9826fa7232fa9ad0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a548eb25280d9a8feddc4633a1ba3e7dc022af36
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79180141"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87163576"
 ---
 # <a name="implementing-the-ui-automation-scrollitem-control-pattern"></a>Implementace vzoru ovládacích prvků ScrollItem pro automatizaci uživatelského rozhraní
 > [!NOTE]
-> Tato dokumentace je určena pro vývojáře rozhraní [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] .NET Framework, kteří chtějí používat spravované třídy definované v oboru <xref:System.Windows.Automation> názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]rozhraní [WINDOWS Automation API: Automatizace uživatelského rozhraní](/windows/win32/winauto/entry-uiauto-win32).  
+> Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o najdete [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] v tématu [rozhraní API služby Windows Automation: automatizace uživatelského rozhraní](/windows/win32/winauto/entry-uiauto-win32).  
   
- Toto téma představuje pokyny a konvence <xref:System.Windows.Automation.Provider.IScrollItemProvider>pro implementaci , včetně informací o vlastnostech, metodách a událostech. Odkazy na další odkazy jsou uvedeny na konci tématu.  
+ Toto téma obsahuje pokyny a konvence pro implementaci nástroje <xref:System.Windows.Automation.Provider.IScrollItemProvider> , včetně informací o vlastnostech, metodách a událostech. Odkazy na další odkazy jsou uvedeny na konci tématu.  
   
- Vzor <xref:System.Windows.Automation.ScrollItemPattern> ovládacího prvku se používá k podpoře <xref:System.Windows.Automation.Provider.IScrollProvider>jednotlivých podřízených ovládacích prvků kontejnerů, které implementují . Tento vzor ovládacího prvku funguje jako komunikační kanál mezi podřízeným ovládacím prvkem a jeho kontejnerem, aby bylo zajištěno, že kontejner může změnit aktuálně viditelný obsah (nebo oblast) v rámci svého výřezu a zobrazit podřízený ovládací prvek. Příklady ovládacích prvků, které implementují tento vzor ovládacího prvku, naleznete [v tématu Mapování vzorů ovládacího prvku pro klienty automatizace uživatelského rozhraní](control-pattern-mapping-for-ui-automation-clients.md).  
+ <xref:System.Windows.Automation.ScrollItemPattern>Vzor ovládacího prvku se používá pro podporu jednotlivých podřízených ovládacích prvků kontejnerů, které implementují <xref:System.Windows.Automation.Provider.IScrollProvider> . Tento model ovládacího prvku funguje jako komunikační kanál mezi podřízeným ovládacím prvkem a jeho kontejnerem, aby bylo zajištěno, že kontejner může měnit aktuálně viditelný obsah (nebo oblast) v jeho zobrazení, aby zobrazil podřízený ovládací prvek. Příklady ovládacích prvků, které implementují tento vzor ovládacích prvků, naleznete v tématu [mapování vzoru ovládacího prvku pro klienty automatizace uživatelského rozhraní](control-pattern-mapping-for-ui-automation-clients.md).  
   
 <a name="Implementation_Guidelines_and_Conventions"></a>
-## <a name="implementation-guidelines-and-conventions"></a>Prováděcí pokyny a úmluvy  
- Při implementaci vzor ovládacího prvku Scroll Item si poznamenejte následující pokyny a konvence:  
+## <a name="implementation-guidelines-and-conventions"></a>Pokyny a konvence implementace  
+ Při implementaci vzoru ovládacího prvku položka posouvání si všimněte následujících pokynů a konvencí:  
   
-- Položky obsažené v ovládacím prvku Window nebo Canvas nejsou nutné k implementaci rozhraní IScrollItemProvider. Jako alternativu však musí vystavit platné <xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>umístění pro . To umožní klientské aplikaci Automatizace <xref:System.Windows.Automation.ScrollPattern> uživatelského rozhraní používat metody vzor ovládacího prvku v kontejneru k zobrazení podřízené položky.  
+- K implementaci rozhraní IScrollItemProvider nejsou vyžadovány položky obsažené v ovládacím prvku okna nebo plátno. Jako alternativu však musí zveřejnit platné umístění pro <xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty> . Tím umožníte, aby klientská aplikace pro automatizaci uživatelského rozhraní používala <xref:System.Windows.Automation.ScrollPattern> metody vzoru ovládacího prvku na kontejneru, aby zobrazila podřízenou položku.  
   
 <a name="Required_Members_for_IScrollItemProvider"></a>
-## <a name="required-members-for-iscrollitemprovider"></a>Povinné členy pro iScrollItemProvider  
- Pro implementaci rozhraní IScrollProvider je vyžadována následující metoda.  
+## <a name="required-members-for-iscrollitemprovider"></a>Vyžadovaná členové pro IScrollItemProvider  
+ Následující metoda je vyžadována pro implementaci rozhraní IScrollProvider.  
   
-|Požadované členy|Typ člena|Poznámky|  
+|Vyžadovaná členové|Typ člena|Poznámky|  
 |----------------------|-----------------|-----------|  
-|<xref:System.Windows.Automation.Provider.IScrollItemProvider.ScrollIntoView%2A>|- Metoda|Žádný|  
+|<xref:System.Windows.Automation.Provider.IScrollItemProvider.ScrollIntoView%2A>|-Method|Žádné|  
   
- Tento vzor ovládacího prvku nemá žádné přidružené vlastnosti nebo události.  
+ Tento model řízení nemá žádné přidružené vlastnosti nebo události.  
   
 <a name="Exceptions"></a>
 ## <a name="exceptions"></a>Výjimky  
@@ -43,7 +44,7 @@ ms.locfileid: "79180141"
   
 |Typ výjimky|Podmínka|  
 |--------------------|---------------|  
-|<xref:System.InvalidOperationException>|Pokud položku nelze posouvat do zobrazení:<br /><br /> -   <xref:System.Windows.Automation.ScrollItemPattern.ScrollIntoView%2A>|  
+|<xref:System.InvalidOperationException>|Pokud se položka nedá posunout do zobrazení:<br /><br /> -   <xref:System.Windows.Automation.ScrollItemPattern.ScrollIntoView%2A>|  
   
 ## <a name="see-also"></a>Viz také
 
