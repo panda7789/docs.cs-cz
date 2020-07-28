@@ -6,4 +6,4 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/15/2019
 ms.locfileid: "65671327"
 ---
-<span data-ttu-id="a7d10-101">automatizace uživatelského rozhraní</span><span class="sxs-lookup"><span data-stu-id="a7d10-101">UI Automation</span></span>
+<span data-ttu-id="9716f-101">automatizace uživatelského rozhraní</span><span class="sxs-lookup"><span data-stu-id="9716f-101">UI Automation</span></span>
