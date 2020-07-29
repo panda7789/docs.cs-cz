@@ -3,12 +3,12 @@ title: Principy ověřování v knihovnách Azure pro .NET
 description: Vysvětluje různé způsoby ověřování pomocí sady Azure SDK pro .NET.
 ms.date: 06/19/2020
 ms.custom: azure-sdk-dotnet
-ms.openlocfilehash: 5ed29d5485dc7f59bcc757c8903116edf6bd5d7d
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: 727842b34faa37558220a3035ac5228fae196201
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86174946"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301616"
 ---
 # <a name="authenticate-with-the-azure-sdk-for-net"></a>Ověřování pomocí sady Azure SDK pro .NET
 
@@ -63,6 +63,15 @@ var azure = Microsoft.Azure.Management.Fluent.Azure
     .Configure()
     .Authenticate(credentials)
     .WithDefaultSubscription();
+```
+
+Doporučuje se explicitně zadat *SubscriptionId* z výstupu JSON do `Azure` objektu:
+
+```csharp
+var azure = Microsoft.Azure.Management.Fluent.Azure
+    .Configure()
+    .Authenticate(credentials)
+    .WithSubscription(subscriptionId);
 ```
 
 ### <a name="file-based-authentication"></a><a name="mgmt-file"></a>Ověřování na základě souborů
