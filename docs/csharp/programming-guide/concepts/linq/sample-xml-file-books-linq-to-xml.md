@@ -1,18 +1,19 @@
 ---
 title: 'Ukázkový soubor XML: Knihy (LINQ to XML)'
+description: Tento soubor XML se používá v různých příkladech v dokumentaci k LINQ to XML. Soubor obsahuje informace o knihách.
 ms.date: 07/20/2015
 ms.assetid: b75ab1a2-fb76-4df9-bd01-c45ec22a29ef
-ms.openlocfilehash: bcdc402fc32278a1cd3ddde52a0b102f0d939005
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e2ff47dada19c63e037d64db6c48783811bc9c8f
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79168269"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302578"
 ---
-# <a name="sample-xml-file-books-linq-to-xml"></a><span data-ttu-id="6f7a5-102">Ukázkový soubor XML: Knihy (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="6f7a5-102">Sample XML File: Books (LINQ to XML)</span></span>
-<span data-ttu-id="6f7a5-103">Následující soubor XML se používá v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] různých příkladech v dokumentaci.</span><span class="sxs-lookup"><span data-stu-id="6f7a5-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="6f7a5-104">Soubor obsahuje informace o knihách.</span><span class="sxs-lookup"><span data-stu-id="6f7a5-104">The file contains information about books.</span></span>  
+# <a name="sample-xml-file-books-linq-to-xml"></a><span data-ttu-id="ae43d-104">Ukázkový soubor XML: Knihy (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="ae43d-104">Sample XML File: Books (LINQ to XML)</span></span>
+<span data-ttu-id="ae43d-105">Následující soubor XML se v dokumentaci používá v různých příkladech [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="ae43d-105">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="ae43d-106">Soubor obsahuje informace o knihách.</span><span class="sxs-lookup"><span data-stu-id="ae43d-106">The file contains information about books.</span></span>  
   
-## <a name="booksxml"></a><span data-ttu-id="6f7a5-105">Books.xml</span><span class="sxs-lookup"><span data-stu-id="6f7a5-105">books.xml</span></span>  
+## <a name="booksxml"></a><span data-ttu-id="ae43d-107">books.xml</span><span class="sxs-lookup"><span data-stu-id="ae43d-107">books.xml</span></span>  
   
 ```xml  
 <?xml version="1.0"?>  

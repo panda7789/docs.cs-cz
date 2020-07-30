@@ -1,23 +1,24 @@
 ---
-title: Jak najít potomky podřízeného prvku (XPath-LINQ to XML) (C#)
+title: Jak najít následníky podřízeného elementu (XPath-LINQ to XML) (C#)
+description: Naučte se najít odvozené prvky podřízeného elementu s konkrétním názvem pomocí výrazu XPath.
 ms.date: 07/20/2015
 ms.assetid: 505b7512-bb8b-4f85-abbf-491f039c961e
-ms.openlocfilehash: fb3e20ce21c1f6d2a71f2f71b8acec7cecf0f3ed
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b8e110abc2e0df99c3fdf6d2846c7cbbc4736c1a
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74141091"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303254"
 ---
-# <a name="how-to-find-descendants-of-a-child-element-xpath-linq-to-xml-c"></a><span data-ttu-id="6bb2e-102">Jak najít potomky podřízeného prvku (XPath-LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="6bb2e-102">How to find descendants of a child element (XPath-LINQ to XML) (C#)</span></span>
-<span data-ttu-id="6bb2e-103">Toto téma ukazuje, jak získat potomek prvky podřízeného prvku s určitým názvem.</span><span class="sxs-lookup"><span data-stu-id="6bb2e-103">This topic shows how to get the descendant elements of a child element with a particular name.</span></span>  
+# <a name="how-to-find-descendants-of-a-child-element-xpath-linq-to-xml-c"></a><span data-ttu-id="4db76-103">Jak najít následníky podřízeného elementu (XPath-LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="4db76-103">How to find descendants of a child element (XPath-LINQ to XML) (C#)</span></span>
+<span data-ttu-id="4db76-104">Toto téma ukazuje, jak získat odvozené prvky podřízeného elementu s konkrétním názvem.</span><span class="sxs-lookup"><span data-stu-id="4db76-104">This topic shows how to get the descendant elements of a child element with a particular name.</span></span>  
   
- <span data-ttu-id="6bb2e-104">Výraz XPath je:</span><span class="sxs-lookup"><span data-stu-id="6bb2e-104">The XPath expression is:</span></span>  
+ <span data-ttu-id="4db76-105">Výraz XPath je:</span><span class="sxs-lookup"><span data-stu-id="4db76-105">The XPath expression is:</span></span>  
   
  `./Paragraph//Text/text()`  
   
-## <a name="example"></a><span data-ttu-id="6bb2e-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="6bb2e-105">Example</span></span>  
- <span data-ttu-id="6bb2e-106">Tento příklad simuluje problémy s extrahováním textu z reprezentace XML dokumentu pro zpracování textu.</span><span class="sxs-lookup"><span data-stu-id="6bb2e-106">This example simulates the problems of extracting text from an XML representation of a word processing document.</span></span> <span data-ttu-id="6bb2e-107">Nejprve vybere `Paragraph` všechny prvky a potom `Text` vybere všechny `Paragraph` potomek prvky každého prvku.</span><span class="sxs-lookup"><span data-stu-id="6bb2e-107">It first selects all `Paragraph` elements, and then it selects all `Text` descendant elements of each `Paragraph` element.</span></span> <span data-ttu-id="6bb2e-108">Tím nevyberete potomky `Text` `Comment` prvků prvku.</span><span class="sxs-lookup"><span data-stu-id="6bb2e-108">This doesn't select the descendant `Text` elements of the `Comment` element.</span></span>  
+## <a name="example"></a><span data-ttu-id="4db76-106">Příklad</span><span class="sxs-lookup"><span data-stu-id="4db76-106">Example</span></span>  
+ <span data-ttu-id="4db76-107">Tento příklad simuluje problémy extrakce textu z reprezentace XML dokumentu zpracování slova.</span><span class="sxs-lookup"><span data-stu-id="4db76-107">This example simulates the problems of extracting text from an XML representation of a word processing document.</span></span> <span data-ttu-id="4db76-108">Nejprve vybere všechny `Paragraph` prvky a potom vybere všechny `Text` následníky každého `Paragraph` prvku.</span><span class="sxs-lookup"><span data-stu-id="4db76-108">It first selects all `Paragraph` elements, and then it selects all `Text` descendant elements of each `Paragraph` element.</span></span> <span data-ttu-id="4db76-109">Tato možnost nevybere následníky `Text` `Comment` elementu.</span><span class="sxs-lookup"><span data-stu-id="4db76-109">This doesn't select the descendant `Text` elements of the `Comment` element.</span></span>  
   
 ```csharp  
 XElement root = XElement.Parse(  
@@ -68,7 +69,7 @@ else
 Console.WriteLine(str2);  
 ```  
   
- <span data-ttu-id="6bb2e-109">Tento příklad vytváří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="6bb2e-109">This example produces the following output:</span></span>  
+ <span data-ttu-id="4db76-110">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="4db76-110">This example produces the following output:</span></span>  
   
 ```output  
 Results are identical  

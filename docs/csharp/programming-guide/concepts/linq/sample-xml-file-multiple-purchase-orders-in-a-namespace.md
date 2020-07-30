@@ -1,18 +1,19 @@
 ---
-title: 'Ukázkový soubor XML: Více nákupních objednávek v oboru názvů2'
+title: 'Ukázkový soubor XML: více nákupních objednávek v Namespace2'
+description: Tento soubor XML se používá v různých příkladech v dokumentaci k LINQ to XML. Soubor obsahuje několik nákupních objednávek. KÓD XML je v oboru názvů.
 ms.date: 07/20/2015
 ms.assetid: 595024f2-374a-4615-acb5-64fa1600f377
-ms.openlocfilehash: f525f73854b52b8a4d70ff842c19d3bdda9c38d5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e2dd16d2ebe7e8e05d52df79b7d725b5acf0e6c9
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79168184"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302526"
 ---
-# <a name="sample-xml-file-multiple-purchase-orders-in-a-namespace"></a><span data-ttu-id="dee3c-102">Ukázkový soubor XML: Více nákupních objednávek v názvovém prostoru</span><span class="sxs-lookup"><span data-stu-id="dee3c-102">Sample XML File: Multiple Purchase Orders in a Namespace</span></span>
-<span data-ttu-id="dee3c-103">Následující soubor XML se používá v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] různých příkladech v dokumentaci.</span><span class="sxs-lookup"><span data-stu-id="dee3c-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="dee3c-104">Tento soubor obsahuje několik nákupních objednávek.</span><span class="sxs-lookup"><span data-stu-id="dee3c-104">This file contains several purchase orders.</span></span> <span data-ttu-id="dee3c-105">Kód XML je v oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="dee3c-105">The XML is in a namespace.</span></span>  
+# <a name="sample-xml-file-multiple-purchase-orders-in-a-namespace"></a><span data-ttu-id="24651-105">Ukázkový soubor XML: Více nákupních objednávek v názvovém prostoru</span><span class="sxs-lookup"><span data-stu-id="24651-105">Sample XML File: Multiple Purchase Orders in a Namespace</span></span>
+<span data-ttu-id="24651-106">Následující soubor XML se v dokumentaci používá v různých příkladech [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="24651-106">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="24651-107">Tento soubor obsahuje několik nákupních objednávek.</span><span class="sxs-lookup"><span data-stu-id="24651-107">This file contains several purchase orders.</span></span> <span data-ttu-id="24651-108">KÓD XML je v oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="24651-108">The XML is in a namespace.</span></span>  
   
-## <a name="purchaseordersinnamespacexml"></a><span data-ttu-id="dee3c-106">PurchaseOrdersInNamespace.xml</span><span class="sxs-lookup"><span data-stu-id="dee3c-106">PurchaseOrdersInNamespace.xml</span></span>  
+## <a name="purchaseordersinnamespacexml"></a><span data-ttu-id="24651-109">PurchaseOrdersInNamespace.xml</span><span class="sxs-lookup"><span data-stu-id="24651-109">PurchaseOrdersInNamespace.xml</span></span>  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  

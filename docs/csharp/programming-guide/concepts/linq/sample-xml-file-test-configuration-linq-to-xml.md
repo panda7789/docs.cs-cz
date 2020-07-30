@@ -1,18 +1,19 @@
 ---
 title: 'Ukázkový soubor XML: Testovací konfigurace (LINQ to XML)'
+description: Tento soubor XML se používá v různých příkladech v dokumentaci k LINQ to XML. Soubor je testovací konfigurační soubor.
 ms.date: 07/20/2015
 ms.assetid: 45bfb509-c1d4-4b4f-9690-1cb0c9816516
-ms.openlocfilehash: 713e0b69ea896d9f4198ae68f1a3a258d74f24f4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 14402a4d7988e767464a53a159bcb25661dc82f8
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "66487233"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302461"
 ---
-# <a name="sample-xml-file-test-configuration-linq-to-xml"></a><span data-ttu-id="f7e9d-102">Ukázkový soubor XML: Testovací konfigurace (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="f7e9d-102">Sample XML File: Test Configuration (LINQ to XML)</span></span>
-<span data-ttu-id="f7e9d-103">Následující soubor XML se používá v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] různých příkladech v dokumentaci.</span><span class="sxs-lookup"><span data-stu-id="f7e9d-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="f7e9d-104">Toto je testovací konfigurační soubor.</span><span class="sxs-lookup"><span data-stu-id="f7e9d-104">This is a test configuration file.</span></span>  
+# <a name="sample-xml-file-test-configuration-linq-to-xml"></a><span data-ttu-id="82af6-104">Ukázkový soubor XML: Testovací konfigurace (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="82af6-104">Sample XML File: Test Configuration (LINQ to XML)</span></span>
+<span data-ttu-id="82af6-105">Následující soubor XML se v dokumentaci používá v různých příkladech [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="82af6-105">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="82af6-106">Toto je konfigurační soubor testu.</span><span class="sxs-lookup"><span data-stu-id="82af6-106">This is a test configuration file.</span></span>  
   
-## <a name="testconfigxml"></a><span data-ttu-id="f7e9d-105">TestConfig.xml</span><span class="sxs-lookup"><span data-stu-id="f7e9d-105">TestConfig.xml</span></span>  
+## <a name="testconfigxml"></a><span data-ttu-id="82af6-107">TestConfig.xml</span><span class="sxs-lookup"><span data-stu-id="82af6-107">TestConfig.xml</span></span>  
   
 ```xml  
 <?xml version="1.0"?>  

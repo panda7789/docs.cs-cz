@@ -1,22 +1,23 @@
 ---
-title: Jak řadit nebo filtrovat textová data podle libovolného slova nebo pole (LINQ) (C#)
+title: Postup řazení nebo filtrování textových dat podle libovolného slova nebo pole (LINQ) (C#)
+description: Naučte se řadit nebo filtrovat textová data podle libovolného slova nebo pole. Podívejte se na příklad řazení řádků strukturovaného textu podle libovolného pole na řádku.
 ms.date: 07/20/2015
 ms.assetid: 7c04d42f-4a78-42c8-9ec8-57ef18fe13a9
-ms.openlocfilehash: e869d57c413d175c092cdc15a6fe54cab94e04b8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f27ce44f4b0b05bc9094b7e108af8f65170bb58a
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75347353"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301317"
 ---
-# <a name="how-to-sort-or-filter-text-data-by-any-word-or-field-linq-c"></a><span data-ttu-id="065b3-102">Jak řadit nebo filtrovat textová data podle libovolného slova nebo pole (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="065b3-102">How to sort or filter text data by any word or field (LINQ) (C#)</span></span>
-<span data-ttu-id="065b3-103">Následující příklad ukazuje, jak řadit řádky strukturovaného textu, například hodnoty oddělené čárkami, libovolným polem v řádku.</span><span class="sxs-lookup"><span data-stu-id="065b3-103">The following example shows how to sort lines of structured text, such as comma-separated values, by any field in the line.</span></span> <span data-ttu-id="065b3-104">Pole může být dynamicky zadáno za běhu.</span><span class="sxs-lookup"><span data-stu-id="065b3-104">The field may be dynamically specified at runtime.</span></span> <span data-ttu-id="065b3-105">Předpokládejme, že pole v scores.csv představují id číslo studenta, následované řadou čtyř výsledků testů.</span><span class="sxs-lookup"><span data-stu-id="065b3-105">Assume that the fields in scores.csv represent a student's ID number, followed by a series of four test scores.</span></span>  
+# <a name="how-to-sort-or-filter-text-data-by-any-word-or-field-linq-c"></a><span data-ttu-id="3419c-104">Postup řazení nebo filtrování textových dat podle libovolného slova nebo pole (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="3419c-104">How to sort or filter text data by any word or field (LINQ) (C#)</span></span>
+<span data-ttu-id="3419c-105">Následující příklad ukazuje, jak řadit řádky strukturovaného textu, například hodnoty oddělené čárkami, podle libovolného pole na řádku.</span><span class="sxs-lookup"><span data-stu-id="3419c-105">The following example shows how to sort lines of structured text, such as comma-separated values, by any field in the line.</span></span> <span data-ttu-id="3419c-106">Pole lze dynamicky určit za běhu.</span><span class="sxs-lookup"><span data-stu-id="3419c-106">The field may be dynamically specified at runtime.</span></span> <span data-ttu-id="3419c-107">Předpokládejte, že pole v scores.csv reprezentují ID studenta, následované řadou čtyř výsledků testů.</span><span class="sxs-lookup"><span data-stu-id="3419c-107">Assume that the fields in scores.csv represent a student's ID number, followed by a series of four test scores.</span></span>  
   
-### <a name="to-create-a-file-that-contains-data"></a><span data-ttu-id="065b3-106">Vytvoření souboru obsahujícího data</span><span class="sxs-lookup"><span data-stu-id="065b3-106">To create a file that contains data</span></span>  
+### <a name="to-create-a-file-that-contains-data"></a><span data-ttu-id="3419c-108">Vytvoření souboru, který obsahuje data</span><span class="sxs-lookup"><span data-stu-id="3419c-108">To create a file that contains data</span></span>  
   
-1. <span data-ttu-id="065b3-107">Zkopírujte data scores.csv z tématu [Jak se připojit k obsahu z odlišných souborů (LINQ) (C#)](./how-to-join-content-from-dissimilar-files-linq.md) a uložte je do složky řešení.</span><span class="sxs-lookup"><span data-stu-id="065b3-107">Copy the scores.csv data from the topic [How to join content from dissimilar files (LINQ) (C#)](./how-to-join-content-from-dissimilar-files-linq.md) and save it to your solution folder.</span></span>  
+1. <span data-ttu-id="3419c-109">Zkopírujte data scores.csv z tématu [Postup připojení obsahu z nepodobných souborů (LINQ) (C#)](./how-to-join-content-from-dissimilar-files-linq.md) a uložte je do složky řešení.</span><span class="sxs-lookup"><span data-stu-id="3419c-109">Copy the scores.csv data from the topic [How to join content from dissimilar files (LINQ) (C#)](./how-to-join-content-from-dissimilar-files-linq.md) and save it to your solution folder.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="065b3-108">Příklad</span><span class="sxs-lookup"><span data-stu-id="065b3-108">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="3419c-110">Příklad</span><span class="sxs-lookup"><span data-stu-id="3419c-110">Example</span></span>  
   
 ```csharp  
 public class SortLines  
@@ -72,12 +73,12 @@ public class SortLines
  */  
 ```  
   
- <span data-ttu-id="065b3-109">Tento příklad také ukazuje, jak vrátit proměnnou dotazu z metody.</span><span class="sxs-lookup"><span data-stu-id="065b3-109">This example also demonstrates how to return a query variable from a method.</span></span>  
+ <span data-ttu-id="3419c-111">Tento příklad také ukazuje, jak vrátit proměnnou dotazu z metody.</span><span class="sxs-lookup"><span data-stu-id="3419c-111">This example also demonstrates how to return a query variable from a method.</span></span>  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="065b3-110">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="065b3-110">Compiling the Code</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="3419c-112">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="3419c-112">Compiling the Code</span></span>  
 
-<span data-ttu-id="065b3-111">Vytvořte projekt aplikace konzoly `using` Jazyka C# se direktivami pro obory názvů System.Linq a System.IO.</span><span class="sxs-lookup"><span data-stu-id="065b3-111">Create a C# console application project, with `using` directives for the System.Linq and System.IO namespaces.</span></span>
+<span data-ttu-id="3419c-113">Vytvořte projekt konzolové aplikace v jazyce C# se `using` direktivami pro obory názvů System. Linq a System.IO.</span><span class="sxs-lookup"><span data-stu-id="3419c-113">Create a C# console application project, with `using` directives for the System.Linq and System.IO namespaces.</span></span>
   
-## <a name="see-also"></a><span data-ttu-id="065b3-112">Viz také</span><span class="sxs-lookup"><span data-stu-id="065b3-112">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="3419c-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="3419c-114">See also</span></span>
 
-- [<span data-ttu-id="065b3-113">LINQ a řetězce (C#)</span><span class="sxs-lookup"><span data-stu-id="065b3-113">LINQ and Strings (C#)</span></span>](./linq-and-strings.md)
+- [<span data-ttu-id="3419c-115">LINQ a řetězce (C#)</span><span class="sxs-lookup"><span data-stu-id="3419c-115">LINQ and Strings (C#)</span></span>](./linq-and-strings.md)

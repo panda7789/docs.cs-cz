@@ -1,18 +1,19 @@
 ---
 title: 'Ukázkový soubor XML: Numerická data (LINQ to XML)'
+description: Tento soubor XML se používá v různých příkladech v dokumentaci k LINQ to XML. Soubor obsahuje číselná data pro sčítání, průměrování a seskupování.
 ms.date: 07/20/2015
 ms.assetid: 365cae86-a166-46df-b56a-0209d9771c27
-ms.openlocfilehash: 921d2a42d0d553b08ecd291b3480d040dd379a96
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c3cc2c47425d2eabba7a0967d7ecc25a79291eb6
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79168100"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302487"
 ---
-# <a name="sample-xml-file-numerical-data-linq-to-xml"></a><span data-ttu-id="245f6-102">Ukázkový soubor XML: Numerická data (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="245f6-102">Sample XML File: Numerical Data (LINQ to XML)</span></span>
-<span data-ttu-id="245f6-103">Následující soubor XML se používá v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] různých příkladech v dokumentaci.</span><span class="sxs-lookup"><span data-stu-id="245f6-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="245f6-104">Tento soubor obsahuje číselná data pro sčítání, průměrování a seskupování.</span><span class="sxs-lookup"><span data-stu-id="245f6-104">This file contains numerical data for summing, averaging, and grouping.</span></span>  
+# <a name="sample-xml-file-numerical-data-linq-to-xml"></a><span data-ttu-id="dbf8f-104">Ukázkový soubor XML: Numerická data (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="dbf8f-104">Sample XML File: Numerical Data (LINQ to XML)</span></span>
+<span data-ttu-id="dbf8f-105">Následující soubor XML se v dokumentaci používá v různých příkladech [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="dbf8f-105">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="dbf8f-106">Tento soubor obsahuje číselná data pro sčítání, průměrování a seskupování.</span><span class="sxs-lookup"><span data-stu-id="dbf8f-106">This file contains numerical data for summing, averaging, and grouping.</span></span>  
   
-## <a name="dataxml"></a><span data-ttu-id="245f6-105">Soubor Data.xml</span><span class="sxs-lookup"><span data-stu-id="245f6-105">Data.xml</span></span>  
+## <a name="dataxml"></a><span data-ttu-id="dbf8f-107">Data.xml</span><span class="sxs-lookup"><span data-stu-id="dbf8f-107">Data.xml</span></span>  
   
 ```xml  
 <Root>  

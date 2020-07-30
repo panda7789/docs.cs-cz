@@ -1,18 +1,19 @@
 ---
-title: 'Ukázkový soubor XML: Konsolidované nákupní objednávky2'
+title: 'Ukázkový soubor XML: konsolidovaná nákupní Orders2'
+description: Tento soubor XML se používá v různých příkladech v dokumentaci k LINQ to XML. Soubor obsahuje nákupní objednávky s různými tvary od více společností.
 ms.date: 07/20/2015
 ms.assetid: 9d9698a5-95f2-4564-813b-ba536cdf3bfb
-ms.openlocfilehash: abd9a8f49cbd1308dfb1c043f310601decf64336
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 99cb9e09f9ea14420908aa7cd28f70ff6329baeb
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "66483791"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302565"
 ---
-# <a name="sample-xml-file-consolidated-purchase-orders"></a><span data-ttu-id="d7356-102">Ukázkový soubor XML: Konsolidované nákupní objednávky</span><span class="sxs-lookup"><span data-stu-id="d7356-102">Sample XML File: Consolidated Purchase Orders</span></span>
-<span data-ttu-id="d7356-103">Následující soubor XML se používá v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] různých příkladech v dokumentaci.</span><span class="sxs-lookup"><span data-stu-id="d7356-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="d7356-104">Tento soubor je sada nákupních objednávek s různými tvary od více společností.</span><span class="sxs-lookup"><span data-stu-id="d7356-104">This file is a set of purchase orders with different shapes from multiple companies.</span></span> <span data-ttu-id="d7356-105">Nákupní objednávky od každé společnosti jsou v samostatných oborech názvů.</span><span class="sxs-lookup"><span data-stu-id="d7356-105">Purchase orders from each company are in separate namespaces.</span></span>  
+# <a name="sample-xml-file-consolidated-purchase-orders"></a><span data-ttu-id="a5baf-104">Ukázkový soubor XML: Konsolidované nákupní objednávky</span><span class="sxs-lookup"><span data-stu-id="a5baf-104">Sample XML File: Consolidated Purchase Orders</span></span>
+<span data-ttu-id="a5baf-105">Následující soubor XML se v dokumentaci používá v různých příkladech [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="a5baf-105">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="a5baf-106">Tento soubor je sadou nákupních objednávek s různými tvary od více společností.</span><span class="sxs-lookup"><span data-stu-id="a5baf-106">This file is a set of purchase orders with different shapes from multiple companies.</span></span> <span data-ttu-id="a5baf-107">Nákupní objednávky od každé společnosti jsou v samostatných oborech názvů.</span><span class="sxs-lookup"><span data-stu-id="a5baf-107">Purchase orders from each company are in separate namespaces.</span></span>  
   
-## <a name="consolidatedpurchaseordersxml"></a><span data-ttu-id="d7356-106">ConsolidatedPurchaseOrders.xml</span><span class="sxs-lookup"><span data-stu-id="d7356-106">ConsolidatedPurchaseOrders.xml</span></span>  
+## <a name="consolidatedpurchaseordersxml"></a><span data-ttu-id="a5baf-108">ConsolidatedPurchaseOrders.xml</span><span class="sxs-lookup"><span data-stu-id="a5baf-108">ConsolidatedPurchaseOrders.xml</span></span>  
   
 ```xml  
 <?xml version="1.0"?>  
