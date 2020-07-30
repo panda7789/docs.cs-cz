@@ -1,19 +1,20 @@
 ---
-title: Serializace pomocí datacontractserializeru (C#)
+title: Postup serializace pomocí třídy DataContractSerializer (C#)
+description: Naučte se serializovat objekty pomocí DataContractSerializer. Podívejte se na příklad, který vytvoří objekty, zaserializace je do textových souborů a poté je deserializace.
 ms.date: 07/20/2015
 ms.assetid: 3320ecbf-cdbe-480e-979c-2c14bbef9988
-ms.openlocfilehash: 0b6d35a2f73ac512f05341f5aaffa61484657576
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b713f36cde594f7cd7011073345d33c6f46585e0
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79168697"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301525"
 ---
-# <a name="how-to-serialize-using-datacontractserializer-c"></a>Serializace pomocí datacontractserializeru (C#)
-Toto téma ukazuje příklad, který serializuje a <xref:System.Runtime.Serialization.DataContractSerializer>reserializuje pomocí .  
+# <a name="how-to-serialize-using-datacontractserializer-c"></a>Postup serializace pomocí třídy DataContractSerializer (C#)
+Toto téma ukazuje příklad, který serializace a deserializace používá <xref:System.Runtime.Serialization.DataContractSerializer> .  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří počet objektů, <xref:System.Xml.Linq.XElement> které obsahují objekty. Potom serializuje je do textových souborů a potom je z textových souborů reserializuje.  
+ Následující příklad vytvoří počet objektů, které obsahují <xref:System.Xml.Linq.XElement> objekty. Pak je rozkonstruuje do textových souborů a poté je deserializace z textových souborů.  
   
 ```csharp  
 using System;  
@@ -80,7 +81,7 @@ public class XElementNullContainer
 }  
 ```  
   
- Tento příklad vytváří následující výstup:  
+ Tento příklad vytvoří následující výstup:  
   
 ```output  
 Testing for type: System.Xml.Linq.XElement  

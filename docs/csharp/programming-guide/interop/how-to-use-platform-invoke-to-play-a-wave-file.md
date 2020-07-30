@@ -1,5 +1,6 @@
 ---
-title: Jak používat vyvolání platformy k přehrání souboru WAV - C# Programming Guide
+title: Jak použít vyvolání platformy k přehrání souboru WAV – Průvodce programováním v C#
+description: Tento příklad kódu v jazyce C# ukazuje, jak použít služby vyvolání platformy k přehrání zvukového souboru WAV v operačním systému Windows.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - platform invoke, sound files
@@ -7,22 +8,22 @@ helpviewer_keywords:
 - wav files
 - .wav files
 ms.assetid: f7f62f53-e026-4c40-b221-3a26adb0c2c5
-ms.openlocfilehash: 3ea90f0739ad45c31e4f25836c9de8e708dff2cc
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b30cb08e2dcde0eb85e8d88a690ae24bf7ae7f22
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75700819"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302981"
 ---
-# <a name="how-to-use-platform-invoke-to-play-a-wav-file-c-programming-guide"></a>Jak používat platformu vyvolat hrát soubor WAV (C# Programovací průvodce)
+# <a name="how-to-use-platform-invoke-to-play-a-wav-file-c-programming-guide"></a>Jak použít vyvolání platformy k přehrání souboru WAV (Průvodce programováním v C#)
 
-Následující příklad kódu Jazyka C# ukazuje, jak pomocí služby vyvolání platformy přehrát zvukový soubor WAV v operačním systému Windows.
+Následující příklad kódu jazyka C# ukazuje, jak použít služby vyvolání platformy k přehrání zvukového souboru WAV v operačním systému Windows.
 
 ## <a name="example"></a>Příklad
 
-Tento příklad <xref:System.Runtime.InteropServices.DllImportAttribute> kódu `winmm.dll`používá `PlaySound` k importu `Form1 PlaySound()`vstupního bodu metody jako . Příklad má jednoduchý formulář systému Windows s tlačítkem. Kliknutím na tlačítko se <xref:System.Windows.Forms.OpenFileDialog> otevře standardní dialogové okno systému Windows, abyste mohli otevřít soubor, který chcete přehrát. Pokud je vybrán soubor vlny, přehraje se pomocí `PlaySound()` metody knihovny *winmm.dll.* Další informace o této metodě naleznete [v tématu Použití funkce PlaySound s waveform-audio soubory](https://docs.microsoft.com/windows/desktop/multimedia/using-playsound-to-play-waveform-audio-files). Procházejte a vyberte soubor s příponou WAV a klepnutím na tlačítko **Otevřít** přehrajte soubor vlny pomocí vyvolání platformy. V textovém poli se zobrazí úplná cesta k vybranému souboru.
+Tento příklad kódu používá <xref:System.Runtime.InteropServices.DllImportAttribute> pro import `winmm.dll` `PlaySound` vstupního bodu metody jako `Form1 PlaySound()` . Příklad obsahuje jednoduchý formulář Windows s tlačítkem. Kliknutím na tlačítko otevřete standardní <xref:System.Windows.Forms.OpenFileDialog> dialogové okno systému Windows, abyste mohli otevřít soubor pro přehrávání. Když je vybrán soubor Wave, je přehrán pomocí `PlaySound()` metody knihovny *winmm.dll* . Další informace o této metodě najdete v tématu [použití funkce PlaySound se soubory zvuku Wave](https://docs.microsoft.com/windows/desktop/multimedia/using-playsound-to-play-waveform-audio-files). Procházejte a vyberte soubor s příponou. wav a potom klikněte na tlačítko **otevřít** a přehrání souboru Wave pomocí vyvolání platformy. Textové pole zobrazuje úplnou cestu k vybranému souboru.
 
-Dialogové okno **Otevřít soubory** je filtrováno tak, aby zobrazovalo pouze soubory, které mají příponu WAV, a to v nastavení filtru:
+Dialogové okno **otevřít soubory** je filtrováno tak, aby zobrazovalo pouze soubory s příponou. wav prostřednictvím nastavení filtru:
 
 [!code-csharp[csProgGuideInterop#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInterop/CS/WinSound.cs#5)]
 
@@ -30,19 +31,19 @@ Dialogové okno **Otevřít soubory** je filtrováno tak, aby zobrazovalo pouze 
 
 ## <a name="compiling-the-code"></a>Zkompilování kódu
 
-1. Vytvořte nový projekt aplikace C# Windows Forms Application v sadě Visual Studio a pojmenujte jej **WinSound**.
+1. V aplikaci Visual Studio vytvořte nový projekt C# model Windows Forms aplikace a pojmenujte ho **WinSound**.
 
-2. Zkopírujte výše uvedený kód a vložte jej přes obsah *Form1.cs* souboru.
+2. Zkopírujte kód výše a vložte ho do obsahu souboru *Form1.cs* .
 
-3. Zkopírujte následující kód a vložte jej do `InitializeComponent()` *Form1.Designer.cs* souboru, v metodě, za libovolný existující kód.
+3. Zkopírujte následující kód a vložte ho do souboru *Form1.Designer.cs* v `InitializeComponent()` metodě po jakémkoli existujícím kódu.
 
      [!code-csharp[csProgGuideInterop#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInterop/CS/WinSound.cs#4)]
 
 4. Zkompilujte a spusťte kód.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Programovací příručka jazyka C#](../index.md)
+- [Průvodce programováním v C#](../index.md)
 - [Přehled interoperability](interoperability-overview.md)
 - [Bližší pohled na vyvolání platformy](../../../framework/interop/consuming-unmanaged-dll-functions.md#a-closer-look-at-platform-invoke)
 - [Zařazování dat s voláním platformy](../../../framework/interop/marshaling-data-with-platform-invoke.md)

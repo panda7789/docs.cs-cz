@@ -1,16 +1,17 @@
 ---
 title: Příklad třídy COM – Průvodce programováním v C#
+description: Přečtěte si, jak vystavit třídu jako objekt modelu COM v jazyce C#. Tento příklad přidá kód do souboru. cs do projektu a nastaví registraci pro vlastnost Interop modelu COM.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - examples [C#], COM classes
 - COM, exposing Visual C# objects to
 ms.assetid: 6504dea9-ad1c-4993-a794-830fec5270af
-ms.openlocfilehash: 6051ff91d13a3cb3ca6229d813db34dd6a9f3af6
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 4ea66ba26595c5bae2e579d1cc85c4b0d58616df
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241848"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303033"
 ---
 # <a name="example-com-class-c-programming-guide"></a>Ukázka třídy COM (Průvodce programováním v C#)
 Následuje příklad třídy, kterou byste vystavili jako objekt modelu COM. Po umístění tohoto kódu do souboru. cs a jeho přidání do projektu nastavte vlastnost **Register pro zprostředkovatele komunikace s objekty COM** na **hodnotu true**. Další informace najdete v tématu [Postup: registrace komponenty pro zprostředkovatele komunikace s objekty COM](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/w29wacsy(v=vs.100)).
@@ -36,8 +37,8 @@ Následuje příklad třídy, kterou byste vystavili jako objekt modelu COM. Po 
 ## <a name="example"></a>Příklad  
  [!code-csharp[csProgGuideInterop#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInterop/CS/ExampleCOM.cs#8)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Průvodce programováním v C#](../index.md)
-- [Interoperabilita](./index.md)
+- [Vzájemná funkční spolupráce](./index.md)
 - [Stránka Sestavení, návrhář projektu (C#)](/visualstudio/ide/reference/build-page-project-designer-csharp)

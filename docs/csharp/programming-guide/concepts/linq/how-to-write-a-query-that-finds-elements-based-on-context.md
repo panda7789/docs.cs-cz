@@ -1,21 +1,22 @@
 ---
-title: Jak napsat dotaz, který vyhledá prvky na základě kontextu (C#)
+title: Jak napsat dotaz, který najde elementy na základě kontextu (C#)
+description: Přečtěte si, jak napsat dotaz, který najde elementy na základě kontextu. Podívejte se na příklady kódu a zobrazte další prostředky.
 ms.date: 07/20/2015
 ms.assetid: 3ff79ef0-fc8b-42fe-8cc0-10dc32b06b4e
-ms.openlocfilehash: 3fc131fdeb8dbf8871bfa455bc54eab0eeca7022
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 64f09a41c2c1d01b0be8f776461f9be9df9ecb5f
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75348369"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303189"
 ---
-# <a name="how-to-write-a-query-that-finds-elements-based-on-context-c"></a>Jak napsat dotaz, který vyhledá prvky na základě kontextu (C#)
-Někdy může být nutné napsat dotaz, který vybere prvky na základě jejich kontextu. Můžete chtít filtrovat na základě předchozínebo následující prvky na stejné úrovni. Můžete chtít filtrovat na základě podřízených nebo nadřazené prvky.  
+# <a name="how-to-write-a-query-that-finds-elements-based-on-context-c"></a>Jak napsat dotaz, který najde elementy na základě kontextu (C#)
+Někdy může být nutné napsat dotaz, který vybere prvky na základě jejich kontextu. Je možné, že budete chtít filtrovat na základě předchozích nebo následujících prvků na stejné úrovni. Je možné, že budete chtít filtrovat na základě podřízených nebo nadřazených prvků.  
   
- To lze provést zápisem dotazu a pomocí výsledků `where` dotazu v klauzuli. Pokud máte nejprve test proti null a potom otestovat hodnotu, je `let` vhodnější provést dotaz v `where` klauzuli a potom použít výsledky v klauzuli.  
+ To můžete provést vytvořením dotazu a použitím výsledků dotazu v `where` klauzuli. Pokud je třeba otestovat proti hodnotě null a potom otestovat hodnotu, je vhodnější provést dotaz v `let` klauzuli a potom použít výsledky v `where` klauzuli.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vybere `p` všechny prvky, které `ul` jsou bezprostředně následuje prvek.  
+ Následující příklad vybere všechny `p` prvky, které jsou bezprostředně následovány `ul` elementem.  
   
 ```csharp  
 XElement doc = XElement.Parse(@"<Root>  
@@ -56,7 +57,7 @@ id = 6
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje stejný dotaz pro jazyk XML, který je v oboru názvů. Další informace naleznete [v tématu Přehled oborů názvů (LINQ to XML) (C#)](namespaces-overview-linq-to-xml.md).  
+ Následující příklad ukazuje stejný dotaz pro XML, který je v oboru názvů. Další informace najdete v tématu [obory názvů Overview (LINQ to XML) (C#)](namespaces-overview-linq-to-xml.md).  
   
 ```csharp  
 XElement doc = XElement.Parse(@"<Root xmlns='http://www.adatum.com'>  
@@ -98,7 +99,7 @@ id = 3
 id = 6  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.Xml.Linq.XElement.Parse%2A>
 - <xref:System.Xml.Linq.XContainer.Descendants%2A>

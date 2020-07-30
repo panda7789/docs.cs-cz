@@ -1,19 +1,20 @@
 ---
-title: Jak pracovat se slovníky pomocí LINQ na XML (C#)
+title: Postup práce se slovníky pomocí LINQ to XML (C#)
+description: Naučte se pracovat se slovníky pomocí LINQ to XML. Viz příklady převod slovníků na XML a XML zpátky do jiných datových struktur.
 ms.date: 07/20/2015
 ms.assetid: 57bcefe3-8433-4d3b-935a-511c9bcbdfa8
-ms.openlocfilehash: 1a98293f208e80e969362fca27014ecd2e5c4183
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bdba7a2b3dfc16fab1e239ac804c317dfefb7d9e
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75347229"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302617"
 ---
-# <a name="how-to-work-with-dictionaries-using-linq-to-xml-c"></a>Jak pracovat se slovníky pomocí LINQ na XML (C#)
-Často je vhodné převést různé datové struktury na XML a XML zpět na jiné datové struktury. Toto téma ukazuje konkrétní implementaci tohoto obecného přístupu převodem a <xref:System.Collections.Generic.Dictionary%602> na XML a zpět.  
+# <a name="how-to-work-with-dictionaries-using-linq-to-xml-c"></a>Postup práce se slovníky pomocí LINQ to XML (C#)
+Je často vhodné převést odrůdy datových struktur do XML a vrátit se do jiných datových struktur. Toto téma ukazuje konkrétní implementaci tohoto obecného přístupu převodem <xref:System.Collections.Generic.Dictionary%602> na XML a zpět.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad používá formu funkční konstrukce, ve <xref:System.Xml.Linq.XElement> kterém dotaz promítá nové objekty a výsledná <xref:System.Xml.Linq.XElement> kolekce je předána jako argument konstruktoru kořenového objektu.  
+ V tomto příkladu se používá forma konstrukce funkčnosti, ve které se dotazuje na nové <xref:System.Xml.Linq.XElement> objekty a výsledná kolekce se předává jako argument konstruktoru kořenového <xref:System.Xml.Linq.XElement> objektu.  
   
 ```csharp  
 Dictionary<string, string> dict = new Dictionary<string, string>();  

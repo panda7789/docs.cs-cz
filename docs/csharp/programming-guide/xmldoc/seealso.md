@@ -1,5 +1,6 @@
 ---
 title: <seealso> – Průvodce programováním v C#
+description: Naučte se používat XML. <seealso> Inteligentní. Tato značka vám umožní určit text, který se může zobrazit v části Viz také.
 ms.date: 07/20/2015
 f1_keywords:
 - cref
@@ -12,12 +13,12 @@ helpviewer_keywords:
 - cross-references [C#], tags
 - <seealso> C# XML tag
 ms.assetid: 8e157f3f-f220-4fcf-9010-88905b080b18
-ms.openlocfilehash: 1b801ac1b5a0a59d97ccc35ec78930d99223e846
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: e8618ef352a4fa7f0fd4c88733c6568b0e12e376
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287217"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87380641"
 ---
 # <a name="seealso-c-programming-guide"></a>\<seealso>(Průvodce programováním v C#)
 
@@ -45,7 +46,7 @@ Zkompilujte s [-doc](../../language-reference/compiler-options/doc-compiler-opti
 
 Příklad použití naleznete v tématu [\<summary>](./summary.md) \<seealso> .
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Průvodce programováním v C#](../index.md)
 - [Doporučené značky pro komentáře dokumentace](./recommended-tags-for-documentation-comments.md)

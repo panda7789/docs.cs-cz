@@ -1,13 +1,14 @@
 ---
 title: Objektově orientované programování (C#)
+description: Jazyk C# poskytuje úplnou podporu pro objektově orientované programování, včetně abstrakce, zapouzdření, dědičnosti a polymorfismu.
 ms.date: 05/13/2020
 ms.assetid: 89574786-65ef-4335-88bc-fbacd094f183
-ms.openlocfilehash: 83140a9dbd16f60f04f50ba18c71099cdd862f15
-ms.sourcegitcommit: 67cf756b033c6173a1bbd1cbd5aef1fccac99e34
+ms.openlocfilehash: 0c5495aefad73a2916ad6e2bd2bf3701d0868f24
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86226631"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302812"
 ---
 # <a name="object-oriented-programming-c"></a>Objektově orientované programování (C#)
 
@@ -90,7 +91,7 @@ class SampleClass
 
 Většina vlastností má metody nebo postupy pro nastavení a získání hodnoty vlastnosti. Můžete však vytvořit vlastnosti jen pro čtení nebo jen pro zápis a omezit tak jejich úpravu nebo čtení. V jazyce C# můžete vynechat `get` `set` metodu nebo. Automaticky implementované vlastnosti však nemohou být pouze pro zápis. Automaticky implementované vlastnosti jen pro čtení lze nastavit v konstruktorech obsahující třídy.
 
-Další informace najdete tady:
+Další informace naleznete v tématu:
 
 - [Čtěte](../../language-reference/keywords/get.md)
 - [stanovenými](../../language-reference/keywords/set.md)
@@ -122,7 +123,7 @@ public int SampleMethod(int sampleParam) { }
 
 Ve většině případů deklarujete metodu v rámci definice třídy. Jazyk C# však podporuje také *metody rozšíření* , které umožňují přidat metody do existující třídy mimo skutečnou definici třídy.
 
-Další informace najdete tady:
+Další informace naleznete v tématu:
 
 - [Metody](../classes-and-structs/methods.md)
 - [Metody rozšíření](../classes-and-structs/extension-methods.md)
@@ -224,7 +225,7 @@ var sampleObject = new SampleClass
 };
 ```
 
-Další informace najdete tady:
+Další informace naleznete v tématu:
 
 - [New – operátor](../../language-reference/operators/new-operator.md)
 - [Inicializátory objektu a kolekce](../classes-and-structs/object-and-collection-initializers.md)
@@ -296,7 +297,7 @@ Chcete-li určit, že třída může být použita pouze jako základní třída
 public abstract class B { }
 ```
 
-Další informace najdete tady:
+Další informace naleznete v tématu:
 
 - [sealed](../../language-reference/keywords/sealed.md)
 - [Výtah](../../language-reference/keywords/abstract.md)
@@ -361,7 +362,7 @@ var sampleObject = new SampleGeneric<string>();
 sampleObject.Field = "Sample string";
 ```
 
-Další informace najdete tady:
+Další informace naleznete v tématu:
 
 - [Obecné typy v .NET](../../../standard/generics/index.md)
 - [Obecné typy – Průvodce programováním v C#](../generics/index.md)
@@ -401,6 +402,6 @@ class SampleClass
 
 Další informace najdete v článku Průvodce programováním u [delegátů](../delegates/index.md) a v článku referenční informace o jazyce na klíčovém slově [Delegate](../../language-reference/builtin-types/reference-types.md) .
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Průvodce programováním v C#](../index.md)

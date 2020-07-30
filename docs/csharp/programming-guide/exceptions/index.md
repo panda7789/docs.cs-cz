@@ -1,17 +1,18 @@
 ---
 title: Výjimky a zpracování výjimek – Průvodce programováním v C#
+description: Seznamte se s výjimkami a zpracování výjimek. Tyto funkce jazyka C# pomůžou pracovat s neočekávanými nebo mimořádnými situacemi, ke kterým dochází při spuštění programu.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - exception handling [C#]
 - exceptions [C#]
 - C# language, exceptions
 ms.assetid: 0001887f-4fa2-47e2-8034-2819477e2344
-ms.openlocfilehash: 0ba123fa9f9aacd0876f07bdf3ae7bb9159a6834
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 4be327be4e183d60e440358254aeb9c68fcf25ca
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241705"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303384"
 ---
 # <a name="exceptions-and-exception-handling-c-programming-guide"></a>Výjimky a jejich zpracování (Průvodce programováním v C#)
 
@@ -54,7 +55,7 @@ Další informace o zpracování výjimek a výjimek naleznete v následujícíc
 
 Další informace naleznete v tématu [výjimky](~/_csharplang/spec/exceptions.md) ve [specifikaci jazyka C#](/dotnet/csharp/language-reference/language-specification/introduction). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.SystemException>
 - [Průvodce programováním v C#](../index.md)

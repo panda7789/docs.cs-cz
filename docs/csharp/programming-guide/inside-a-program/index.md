@@ -1,26 +1,27 @@
 ---
 title: V programu jazyka C#
+description: Tyto prostředky použijte k pochopení obecné struktury programu v jazyce C#, včetně standardního příkladu Hello, World!
 ms.date: 07/20/2015
 helpviewer_keywords:
 - C# language, about C# program
 - Visual C#, program structure
 ms.assetid: 9551354b-33f0-4e11-bbf0-1a35e3702b22
-ms.openlocfilehash: a180dc30c7fab11e5b939682244dbb90eb7615eb
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ecf526d77fcf9df83fa832c57de0e1921d27e3f3
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "69589264"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303345"
 ---
 # <a name="inside-a-c-program"></a>V programu jazyka C#
 
-Část popisuje obecnou strukturu programu Jazyka C# a obsahuje standardní "Hello, World!" Příklad.
+Část popisuje obecnou strukturu programu v jazyce C# a obsahuje Standard "Hello, World!". případě.
 
-## <a name="in-this-section"></a>V tomto oddílu
+## <a name="in-this-section"></a>V této části
 
 - [Hello World! -- váš první program](hello-world-your-first-program.md)
 
-- [Obecná struktura programu v C#](general-structure-of-a-csharp-program.md)
+- [Obecná struktura programu v C#](general-structure-of-a-csharp-program.md)
 
 - [Názvy identifikátorů](identifier-names.md)
 
@@ -28,18 +29,18 @@ ms.locfileid: "69589264"
 
 ## <a name="related-sections"></a>Související oddíly
 
-- [Začínáme s C #](../../getting-started/index.md)
+- [Začínáme pomocí jazyka C #](../../getting-started/index.md)
 
-- [Programovací příručka jazyka C#](../index.md)
+- [Průvodce programováním v C#](../index.md)
 
-- [Odkaz jazyka C#](../../language-reference/index.md)
+- [Reference jazyka C#](../../language-reference/index.md)
 
-- [Ukázky a výukové programy](../../../samples-and-tutorials/index.md)
+- [Ukázky a kurzy](../../../samples-and-tutorials/index.md)
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Programovací příručka jazyka C#](../index.md)
+- [Průvodce programováním v C#](../index.md)

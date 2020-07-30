@@ -1,44 +1,45 @@
 ---
-title: Odebrání prvků, atributů a uzlů ze stromu XML (C#)
+title: Odebrání elementů, atributů a uzlů ze stromu XML (C#)
+description: Naučte se, jak odebrat prvky, atributy a uzly ze stromu XML. Podívejte se na seznam metod odebrání a příkladu kódu.
 ms.date: 07/20/2015
 ms.assetid: 07dd06d6-1117-4077-bf98-9120cf51176e
-ms.openlocfilehash: badaa6bab35367d62a73f56c5221cb7d6d4a45f7
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4e753c3d96c4cbc050b08076ca8bff8c17b2e252
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "69591256"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87300043"
 ---
-# <a name="removing-elements-attributes-and-nodes-from-an-xml-tree-c"></a>Odebrání prvků, atributů a uzlů ze stromu XML (C#)
+# <a name="removing-elements-attributes-and-nodes-from-an-xml-tree-c"></a>Odebrání elementů, atributů a uzlů ze stromu XML (C#)
 
-Můžete upravit strom XML, odebrat prvky, atributy a další typy uzlů.
+Můžete upravit strom XML, odebrat prvky, atributy a jiné typy uzlů.
 
-Odebrání jednoho prvku nebo jednoho atributu z dokumentu XML je jednoduché. Však při odebírání kolekce prvků nebo atributů, měli byste nejprve zhmotnit kolekci do seznamu a potom odstranit prvky nebo atributy ze seznamu. Nejlepším přístupem je použití <xref:System.Xml.Linq.Extensions.Remove%2A> metody rozšíření, která to udělá za vás.
+Odebrání jednoho prvku nebo jednoho atributu z dokumentu XML je jednoduché. Při odebírání kolekcí prvků nebo atributů byste však měli nejprve vyhodnotit kolekci do seznamu a poté prvky nebo atributy odstranit ze seznamu. Nejlepším řešením je použít <xref:System.Xml.Linq.Extensions.Remove%2A> metodu rozšíření, která to provede za vás.
 
-Hlavním důvodem je, že většina kolekcí, které načtete ze stromu XML, jsou výsledkem pomocí odloženého spuštění. Pokud je nejprve nezhmotníte do seznamu nebo pokud nepoužíváte metody rozšíření, je možné se setkat s určitou třídou chyb. Další informace naleznete [v tématu Smíšené deklarativní kód/imperativní kód chyby (LINQ do XML) (C#)](./mixed-declarative-code-imperative-code-bugs-linq-to-xml.md).
+Hlavním důvodem pro toto je to, že většina kolekcí, které načítáte ze stromu XML, je výsledkem použití odloženého provedení. Pokud je nebudete napřed vyhodnotit do seznamu, nebo pokud nepoužíváte rozšiřující metody, je možné narazit na určitou třídu chyb. Další informace naleznete v tématu [smíšený deklarativní kód/nepodmíněný kód chyby (LINQ to XML) (C#)](./mixed-declarative-code-imperative-code-bugs-linq-to-xml.md).
 
-Následující metody odeberou uzly a atributy ze stromu XML.
+Následující metody odstraňují uzly a atributy ze stromu XML.
 
 |Metoda|Popis|
 |------------|-----------------|
-|<xref:System.Xml.Linq.XAttribute.Remove%2A?displayProperty=nameWithType>|Odebere <xref:System.Xml.Linq.XAttribute> a z jeho nadřazené.|
-|<xref:System.Xml.Linq.XContainer.RemoveNodes%2A?displayProperty=nameWithType>|Odebere podřízené uzly z <xref:System.Xml.Linq.XContainer>.|
-|<xref:System.Xml.Linq.XElement.RemoveAll%2A?displayProperty=nameWithType>|Odebere obsah a atributy z . <xref:System.Xml.Linq.XElement>|
-|<xref:System.Xml.Linq.XElement.RemoveAttributes%2A?displayProperty=nameWithType>|Odebere atributy . <xref:System.Xml.Linq.XElement>|
-|<xref:System.Xml.Linq.XElement.SetAttributeValue%2A?displayProperty=nameWithType>|Pokud předáte `null` hodnotu, odebere atribut.|
-|<xref:System.Xml.Linq.XElement.SetElementValue%2A?displayProperty=nameWithType>|Pokud předáte `null` hodnotu, odebere podřízený prvek.|
-|<xref:System.Xml.Linq.XNode.Remove%2A?displayProperty=nameWithType>|Odebere <xref:System.Xml.Linq.XNode> a z jeho nadřazené.|
-|<xref:System.Xml.Linq.Extensions.Remove%2A?displayProperty=nameWithType>|Odebere každý atribut nebo prvek ve zdrojové kolekci z nadřazeného prvku.|
+|<xref:System.Xml.Linq.XAttribute.Remove%2A?displayProperty=nameWithType>|Odebere <xref:System.Xml.Linq.XAttribute> z jeho nadřazeného prvku.|
+|<xref:System.Xml.Linq.XContainer.RemoveNodes%2A?displayProperty=nameWithType>|Odebere podřízené uzly z <xref:System.Xml.Linq.XContainer> .|
+|<xref:System.Xml.Linq.XElement.RemoveAll%2A?displayProperty=nameWithType>|Odebere obsah a atributy z <xref:System.Xml.Linq.XElement> .|
+|<xref:System.Xml.Linq.XElement.RemoveAttributes%2A?displayProperty=nameWithType>|Odebere atributy <xref:System.Xml.Linq.XElement> .|
+|<xref:System.Xml.Linq.XElement.SetAttributeValue%2A?displayProperty=nameWithType>|Pokud předáte `null` hodnotu, pak atribut odeberte.|
+|<xref:System.Xml.Linq.XElement.SetElementValue%2A?displayProperty=nameWithType>|Pokud předáte `null` hodnotu, pak je podřízený element odebrán.|
+|<xref:System.Xml.Linq.XNode.Remove%2A?displayProperty=nameWithType>|Odebere <xref:System.Xml.Linq.XNode> z jeho nadřazeného prvku.|
+|<xref:System.Xml.Linq.Extensions.Remove%2A?displayProperty=nameWithType>|Odebere všechny atributy nebo elementy ve zdrojové kolekci z jejího nadřazeného prvku.|
 
 ## <a name="example"></a>Příklad
 
 ### <a name="description"></a>Popis
 
-Tento příklad ukazuje tři přístupy k odebrání prvků. Nejprve odebere jeden prvek. Za druhé načte kolekci prvků, materializes <xref:System.Linq.Enumerable.ToList%2A?displayProperty=nameWithType> je pomocí operátoru a odebere kolekci. Nakonec načte kolekci prvků a odebere <xref:System.Xml.Linq.Extensions.Remove%2A> je pomocí metody rozšíření.
+Tento příklad ukazuje tři přístupy k odebrání prvků. Nejprve odebere jeden prvek. Za druhé načte kolekci prvků, materializuje je pomocí <xref:System.Linq.Enumerable.ToList%2A?displayProperty=nameWithType> operátoru a kolekce odebere. Nakonec načte kolekci prvků a odebere je pomocí <xref:System.Xml.Linq.Extensions.Remove%2A> metody rozšíření.
 
-Další informace o <xref:System.Linq.Enumerable.ToList%2A> operátoru naleznete v [tématu Převod datových typů (C#)](./converting-data-types.md).
+Další informace o <xref:System.Linq.Enumerable.ToList%2A> operátoru naleznete v tématu [Převod datových typů (C#)](./converting-data-types.md).
 
-### <a name="code"></a>kód
+### <a name="code"></a>Kód
 
 ```csharp
 XElement root = XElement.Parse(@"<Root>
@@ -79,4 +80,4 @@ Výsledkem tohoto kódu je následující výstup:
 </Root>
 ```
 
-Všimněte si, že první prvek `Child1`vnouče byl odebrán z . Všechny prvky vnoučat byly `Child2` odebrány z a z `Child3`.
+Všimněte si, že byl odebrán první podřízený prvek z `Child1` . Všechny prvky podřízené byly odebrány z `Child2` a z `Child3` .
