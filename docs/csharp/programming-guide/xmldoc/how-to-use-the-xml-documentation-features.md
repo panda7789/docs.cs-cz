@@ -1,16 +1,17 @@
 ---
 title: Jak používat funkce dokumentace XML – Průvodce programováním v C#
+description: Naučte se používat funkce dokumentace XML. Podívejte se na příklady kódu a zobrazte další dostupné prostředky.
 ms.date: 06/01/2018
 helpviewer_keywords:
 - XML documentation [C#]
 - C# language, XML documentation features
 ms.assetid: 8f33917b-9577-4c9a-818a-640dbbb0b399
-ms.openlocfilehash: b7c5a8a895271f067505496c0d13f98b66a393d9
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 9ad2cfe62c70174eec9020ad4c8ce11608aca36d
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287360"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87380667"
 ---
 # <a name="how-to-use-the-xml-documentation-features"></a>Jak používat funkce dokumentace XML
 
@@ -112,7 +113,7 @@ Chcete-li zkompilovat příklad, zadejte následující příkaz:
 
 `csc XMLsample.cs /doc:XMLsample.xml`
 
-Tento příkaz vytvoří soubor XML *XMLsample. XML*, který můžete zobrazit v prohlížeči nebo pomocí `TYPE` příkazu.
+Tento příkaz vytvoří soubor XML *XMLsample.xml*, který můžete zobrazit v prohlížeči nebo pomocí `TYPE` příkazu.
 
 ## <a name="robust-programming"></a>Robustní programování
 
@@ -131,7 +132,7 @@ Dokumentace XML začíná na `///` . Když vytvoříte nový projekt, Průvodce 
     > [!NOTE]
     > Soubor XML neposkytuje úplné informace o typu a členech (například neobsahuje žádné informace o typu). Chcete-li získat úplné informace o typu nebo členu, použijte soubor dokumentace spolu s reflexí pro skutečný typ nebo člen.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Průvodce programováním v C#](../index.md)
 - [-doc (možnosti kompilátoru C#)](../../language-reference/compiler-options/doc-compiler-option.md)

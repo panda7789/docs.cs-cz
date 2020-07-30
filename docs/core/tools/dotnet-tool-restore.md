@@ -1,26 +1,26 @@
 ---
-title: dotnet nástroj obnovit, příkaz
-description: Příkaz obnovení nástroje dotnet nainstaluje do počítače místní nástroje .NET Core, které jsou v oboru pro aktuální adresář.
+title: dotnet – příkaz obnovení nástroje
+description: Příkaz pro obnovení nástroje dotnet se nainstaluje na váš počítač. místní nástroje .NET Core, které jsou v oboru pro aktuální adresář.
 ms.date: 02/14/2020
-ms.openlocfilehash: a518c2d45bbe9522bddfed4bbef61b30f1ad634b
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: ceef3274ec9d337f8c51009d5a8c27e808b14035
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463331"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302669"
 ---
 # <a name="dotnet-tool-restore"></a>dotnet tool restore
 
-**Tento článek se týká:** ✔️ .NET Core 3.0 SDK a novější verze
+**Tento článek se týká:** ✔️ .net Core 3,0 SDK a novějších verzí
 
 ## <a name="name"></a>Název
 
-`dotnet tool restore`- Nainstaluje do počítače místní nástroje .NET Core, které jsou v oboru pro aktuální adresář.
+`dotnet tool restore`– Nainstaluje na váš počítač místní nástroje .NET Core, které jsou v oboru pro aktuální adresář.
 
-## <a name="synopsis"></a>Synopse
+## <a name="synopsis"></a>Stručný obsah
 
 ```dotnetcli
-dotnet tool restore <PACKAGE_NAME>
+dotnet tool restore
     [--configfile <FILE>] [--add-source <SOURCE>]
     [tool-manifest <PATH_TO_MANIFEST_FILE>] [--disable-parallel]
     [--ignore-failed-sources] [--no-cache] [--interactive]
@@ -31,23 +31,17 @@ dotnet tool restore -h|--help
 
 ## <a name="description"></a>Popis
 
-Příkaz `dotnet tool restore` vyhledá soubor manifestu nástroje, který je v oboru pro aktuální adresář, a nainstaluje nástroje, které jsou v něm uvedeny. Informace o souborech manifestu naleznete [v tématu Instalace místního nástroje](global-tools.md#install-a-local-tool) a [Vyvolání místního nástroje](global-tools.md#invoke-a-local-tool).
-
-## <a name="arguments"></a>Argumenty
-
-- **`PACKAGE_NAME`**
-
-Název/ID balíčku NuGet, který obsahuje nástroj .NET Core k instalaci.
+`dotnet tool restore`Příkaz najde soubor manifestu nástroje, který je v oboru pro aktuální adresář a nainstaluje nástroje, které jsou uvedeny v něm. Informace o souborech manifestu najdete v tématech [instalace místního nástroje](global-tools.md#install-a-local-tool) a [vyvolání místního nástroje](global-tools.md#invoke-a-local-tool).
 
 ## <a name="options"></a>Možnosti
 
 - **`--configfile <FILE>`**
 
-  Soubor konfigurace NuGet (*nuget.config).*
+  Soubor konfigurace NuGet (*nuget.config*), který se má použít.
 
 - **`--add-source <SOURCE>`**
 
-  Přidá další zdroj balíčku NuGet pro použití během instalace.
+  Přidá další zdroj balíčku NuGet, který se použije při instalaci.
 
 - **`--tool-manifest <PATH>`**
 
@@ -55,27 +49,27 @@ Název/ID balíčku NuGet, který obsahuje nástroj .NET Core k instalaci.
 
 - **`--disable-parallel`**
 
-  Zabránit obnovení více projektů paralelně.
+  Zabránit v paralelním obnovení více projektů.
 
 - **`--ignore-failed-sources`**
 
-  Považovat selhání zdroje balíčku jako upozornění.
+  Považovat selhání zdroje balíčku za upozornění.
 
 - **`--no-cache`**
 
-  Neukládat do mezipaměti balíčky a požadavky http.
+  Neukládat balíčky a požadavky HTTP do mezipaměti.
 
 - **`--interactive`**
 
-  Umožňuje příkazu zastavit a čekat na vstup uživatele nebo akci (například k dokončení ověřování).
+  Umožňuje příkazu zastavit a počkat na vstup nebo akci uživatele (například k dokončení ověřování).
 
 - **`-h|--help`**
 
-  Vytiskne krátkou nápovědu pro příkaz.
+  Vypíše krátkou nápovědu k příkazu.
 
 - **`-v|--verbosity <LEVEL>`**
 
-  Nastaví úroveň podrobností příkazu. Povolené hodnoty `q[uiet]` `m[inimal]`jsou `n[ormal]` `d[etailed]`, `diag[nostic]`, , a .
+  Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]` , `m[inimal]` ,, a `n[ormal]` `d[etailed]` `diag[nostic]` .
 
 ## <a name="example"></a>Příklad
 
@@ -83,7 +77,7 @@ Název/ID balíčku NuGet, který obsahuje nástroj .NET Core k instalaci.
 
   Obnoví místní nástroje pro aktuální adresář.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Nástroje .NET Core](global-tools.md)
-- [Kurz: Instalace a použití místního nástroje .NET Core pomocí rozhraní CLI jádra .NET](local-tools-how-to-use.md)
+- [Kurz: instalace a použití místního nástroje .NET Core pomocí .NET Core CLI](local-tools-how-to-use.md)

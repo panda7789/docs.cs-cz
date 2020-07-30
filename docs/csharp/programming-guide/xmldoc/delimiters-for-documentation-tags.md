@@ -1,17 +1,18 @@
 ---
 title: Oddělovače pro dokumentační značky – Průvodce programováním v C#
+description: Seznamte se s oddělovači pro dokumentaci k dokumentaci. Oddělovače označují kompilátoru, kde komentář k dokumentaci začíná a končí.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - XML [C#], delimiters
 - /** */ delimiters for C# documentation tags
 - /// delimiter for C# documentation
 ms.assetid: 9b2bdd18-4f5c-4c0b-988e-fb992e0d233e
-ms.openlocfilehash: db8d43edc8b7cb0066fd3afcb75a1852603e86c4
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 3191e32b0ff2dbde004abaab0b699cd61fcbb150
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84594423"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381980"
 ---
 # <a name="delimiters-for-documentation-tags-c-programming-guide"></a>Oddělovače pro dokumentační značky (Průvodce programováním v C#)
 
@@ -82,7 +83,7 @@ Použití komentářů dokumentu XML vyžaduje oddělovače, které označují k
     ```
     <!-- markdownlint-enable MD010 -->
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Průvodce programováním v C#](../index.md)
 - [Komentáře dokumentace XML](./index.md)

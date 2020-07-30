@@ -3,12 +3,12 @@ title: Definování aplikací nativních pro cloud
 description: Přečtěte si o základních pilířích, které poskytují Bedrock pro nativní cloudové systémy.
 author: robvet
 ms.date: 05/13/2020
-ms.openlocfilehash: e8b07fe7758d90f6ba97b81d0efa9d2fb5058d49
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: f50c144d99fae0c4702965342fd76ec22e8bd8c8
+ms.sourcegitcommit: 32f0d6f4c01ddc6ca78767c3a30e3305f8cd032c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614165"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87427031"
 ---
 # <a name="defining-cloud-native"></a>Definování nativního cloudu
 
@@ -34,7 +34,7 @@ Zde jsou některé společnosti, které implementovaly tyto techniky. Vezměte v
 | :-------- | :-------- |
 | [Netflix](https://www.infoq.com/news/2013/06/netflix/) | Má 600 + služby v produkčním prostředí. Nasadí stovky časů za den. |
 | [Uber](https://eng.uber.com/micro-deploy/) | V produkčním prostředí má 1000 000 služeb. Každý týden nasadí několik tisíc časů. |
-| [WeChat](https://www.cs.columbia.edu/~ruigu/papers/socc18-final100.pdf) | Má 300 + služby v produkčním prostředí. Nasadí 1 000 dní. |
+| [WeChat](https://www.cs.columbia.edu/~ruigu/papers/socc18-final100.pdf) | Má 3000 + služby v produkčním prostředí. Nasadí 1 000 dní. |
 
 Jak vidíte, Netflix, Uber a WeChat zpřístupňují systémy, které se skládají ze stovek nezávislých mikroslužeb. Tento styl architektury umožňuje rychle reagovat na podmínky na trhu. Můžou okamžitě aktualizovat malé oblasti živé, složité aplikace a individuálně škálovat tyto oblasti podle potřeby.
 
@@ -74,7 +74,7 @@ Mnoho z nich je možné použít i u jakékoli webové aplikace, a proto si pro 
 
 V následující tabulce je zdůrazněna dvanáct-Factor metodologie:
 
-|    |  Jednotek | Vysvětlení  |
+|    |  Faktor | Vysvětlení  |
 | :-------- | :-------- | :-------- |
 | 1 | Základ kódu | Jediný základ kódu pro každou mikroslužbu uložený ve vlastním úložišti. Sledováno pomocí správy verzí, může být nasazeno do více prostředí (QA, fázování, produkce). |
 | 2 | Závislosti | Každá mikroslužba izoluje a zabalí vlastní závislosti, přechodu změny bez dopadu na celý systém. |
@@ -94,7 +94,7 @@ V knize, [mimo dvanáct-Factor App](https://content.pivotal.io/blog/beyond-the-
 |    |  Nový faktor | Vysvětlení  |
 | :-------- | :-------- | :-------- |
 | 13 | Přístup API-first | Udělejte všechno jako služba. Předpokládejme, že váš kód bude využit klientem front-end, bránou nebo jinou službou. |
-| 14 | Telemetrická data | Na pracovní stanici máte hlubokou viditelnost své aplikace a jejího chování. V cloudu to neuděláte. Ujistěte se, že váš návrh zahrnuje shromažďování dat monitorování, specifických pro doménu a stavu a systému. |
+| 14 | Telemetrie | Na pracovní stanici máte hlubokou viditelnost své aplikace a jejího chování. V cloudu to neuděláte. Ujistěte se, že váš návrh zahrnuje shromažďování dat monitorování, specifických pro doménu a stavu a systému. |
 | 15 | Ověřování/autorizace  | Implementujte identitu od začátku. Vezměte v úvahu funkce [RBAC (řízení přístupu na základě role)](https://docs.microsoft.com/azure/role-based-access-control/overview) , které jsou dostupné ve veřejných cloudech.  |
 
 V této kapitole a v celé knize budeme odkazovat na spoustu 12 dalších faktorů.
@@ -103,7 +103,7 @@ V této kapitole a v celé knize budeme odkazovat na spoustu 12 dalších faktor
 
 Kromě pokynů uvedených v rámci 12 rad metodologie existuje několik důležitých rozhodnutí o návrhu, která je nutné provést při vytváření distribuovaných systémů.
 
-*Communication*
+*Komunikace*
 
 Jak budou klientské aplikace front-endu komunikovat s back-end základními službami? Povolíte přímou komunikaci? Nebo je možné, že máte k dispozici služby back-endu s fasádou brány, která poskytuje flexibilitu, kontrolu a zabezpečení?
 
@@ -173,7 +173,7 @@ Mikroslužby se dají vytvořit s libovolnou moderní vývojovou platformou.
 
 Platforma Microsoft .NET Core je vynikající volbou. Bezplatný a Open Source má mnoho vestavěných funkcí, které zjednodušují vývoj mikroslužeb. .NET Core je platforma pro různé platformy. Aplikace se dají vytvářet a spouštět na Windows, macOS a nejvíc charakterech systému Linux.
 
-.NET Core je vysoce výkonné a má ve srovnání s Node. js a dalšími konkurenčními platformami velmi kvalitní skóre. [TechEmpower](https://www.techempower.com/) vede ke spárování rozsáhlé sady [srovnávacích testů výkonu](https://www.techempower.com/benchmarks/#section=data-r17&hw=ph&test=plaintext) v mnoha platformách a architekturách webových aplikací. .NET Core skóre v horních 10 – dobře nad Node. js a dalšími konkurenčními platformami.
+.NET Core je vysoce výkonné a v porovnání s Node.js a dalšími konkurenčními platformami je dobře hodnoceno. [TechEmpower](https://www.techempower.com/) vede ke spárování rozsáhlé sady [srovnávacích testů výkonu](https://www.techempower.com/benchmarks/#section=data-r17&hw=ph&test=plaintext) v mnoha platformách a architekturách webových aplikací. .NET Core se skóre v horních 10 – dobře výše Node.js a dalších konkurenčních platformách.
 
 .NET Core spravuje Microsoft a komunita .NET na GitHubu.
 
@@ -221,7 +221,7 @@ Obrázek 1-6 ukazuje úlohy správy, které poskytují orchestrace kontejnerů.
 
 V následující tabulce jsou popsány běžné úlohy orchestrace.
 
-|  Úlohy | Vysvětlení  |
+|  Úkoly | Vysvětlení  |
 | :-------- | :-------- |
 | Plánování | Automaticky zřídí instance kontejnerů.|
 | Spřažení/proti spřažení | Zřizování kontejnerů blízko sebe nebo daleko od sebe navzájem, což pomáhá zajistit dostupnost a výkon. |
@@ -276,7 +276,7 @@ Dodavatelé cloudu poskytují rozhraní API pro komunikaci se svými speciální
 
 Služby zálohování jsou popsané v podrobnostech v kapitolách 5, *nativních datových vzorcích pro Cloud*a v kapitole 4, *cloudové vzory komunikace*.
 
-## <a name="automation"></a>Automation
+## <a name="automation"></a>Automatizace
 
 Jak jste viděli, nativní systémy cloudu přiřadí mikroslužby, kontejnery a moderní návrh systému, aby dosáhly rychlosti a flexibility. Ale to je jenom část tohoto scénáře. Jak můžete zřídit cloudová prostředí, na kterých se tyto systémy spouštějí? Jak rychle nasazujete funkce a aktualizace aplikací? Jak vyplníte celý obrázek?
 
@@ -331,7 +331,7 @@ Azure Pipelines je cloudová služba, která kombinuje průběžnou integraci (C
 Kanál můžete definovat v kódu v souboru YAML vedle zbytku kódu pro vaši aplikaci.
 
 - Kanál se používá ve verzi kódu a řídí se stejnou strukturou větvení.
-- Pomocí revizí kódu v rámci žádostí o přijetí změn a zásad sestavení větví získáte ověření změn.
+- Ověření svých změn budete dostávat prostřednictvím revizí kódu v žádostech o přijetí změn a zásad sestavení větví.
 - Každá větev, kterou použijete, může přizpůsobit zásadu sestavení úpravou souboru Azure-Pipelines. yml.
 - Soubor kanálu je vrácen do správy verzí a lze jej prozkoumat, pokud dojde k potížím.
 

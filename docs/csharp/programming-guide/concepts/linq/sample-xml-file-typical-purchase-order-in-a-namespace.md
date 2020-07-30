@@ -1,18 +1,19 @@
 ---
 title: 'Ukázkový soubor XML: Typická nákupní objednávka v názvovém prostoru'
+description: Tento soubor XML se používá v různých příkladech v dokumentaci k LINQ to XML. Soubor je typickou nákupní objednávkou. KÓD XML je v oboru názvů.
 ms.date: 07/20/2015
 ms.assetid: 84dc3339-ea32-4ccc-9af6-ab38ddfecced
-ms.openlocfilehash: 001a12210c2252d9718425d0d4013bdbdf25b996
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 698fb8711ad86e2739f1d8485747d3c56eb71d46
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79167961"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302448"
 ---
 # <a name="sample-xml-file-typical-purchase-order-in-a-namespace"></a>Ukázkový soubor XML: Typická nákupní objednávka v názvovém prostoru
-Následující soubor XML se používá v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] různých příkladech v dokumentaci. Tento soubor je typická nákupní objednávka. Kód XML je v oboru názvů.  
+Následující soubor XML se v dokumentaci používá v různých příkladech [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] . Tento soubor je typickou nákupní objednávkou. KÓD XML je v oboru názvů.  
   
-## <a name="purchaseorderinnamespacexml"></a>Soubor PurchaseOrderInNamespace.xml  
+## <a name="purchaseorderinnamespacexml"></a>PurchaseOrderInNamespace.xml  
   
 ```xml  
 <?xml version="1.0"?>  

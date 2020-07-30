@@ -1,21 +1,22 @@
 ---
-title: Jak najít prvek s určitým podřízeným prvkem (C#)
+title: Jak najít element s konkrétním podřízeným elementem (C#)
+description: Naučte se najít element, který má konkrétní podřízený element. Podívejte se na příklady kódu a další zdroje informací.
 ms.date: 07/20/2015
 ms.assetid: 00cf5555-374e-4369-bf93-7bd2e7f21db3
-ms.openlocfilehash: 0536b1b92d4d7fc18b5d406bbcd24aefc6a840c6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1d02f3d3af0a3711a5361941727e2e0b6c8bbdc9
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74141146"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301707"
 ---
-# <a name="how-to-find-an-element-with-a-specific-child-element-c"></a>Jak najít prvek s určitým podřízeným prvkem (C#)
-Toto téma ukazuje, jak najít konkrétní prvek, který má podřízený prvek s určitou hodnotou.  
+# <a name="how-to-find-an-element-with-a-specific-child-element-c"></a>Jak najít element s konkrétním podřízeným elementem (C#)
+Toto téma ukazuje, jak najít konkrétní prvek, který má podřízený element s konkrétní hodnotou.  
   
 ## <a name="example"></a>Příklad  
- Příklad vyhledá `Test` prvek, který `CommandLine` má podřízený prvek s hodnotou "Examp2.EXE".  
+ Příklad vyhledá `Test` prvek, který má `CommandLine` podřízený element s hodnotou "Examp2.EXE".  
   
- Tento příklad používá následující dokument XML: [Ukázkový soubor XML: Test Configuration (LINQ to XML).](./sample-xml-file-test-configuration-linq-to-xml.md)  
+ Tento příklad používá následující dokument XML: [ukázkový soubor XML: testovací konfigurace (LINQ to XML)](./sample-xml-file-test-configuration-linq-to-xml.md).  
   
 ```csharp  
 XElement root = XElement.Load("TestConfig.xml");  
@@ -35,9 +36,9 @@ foreach (XElement el in tests)
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje stejný dotaz pro jazyk XML, který je v oboru názvů. Další informace naleznete [v tématu Přehled oborů názvů (LINQ to XML) (C#)](namespaces-overview-linq-to-xml.md).  
+ Následující příklad ukazuje stejný dotaz pro XML, který je v oboru názvů. Další informace najdete v tématu [obory názvů Overview (LINQ to XML) (C#)](namespaces-overview-linq-to-xml.md).  
   
- Tento příklad používá následující dokument XML: [Ukázkový soubor XML: Testovat konfiguraci v oboru názvů](./sample-xml-file-test-configuration-in-a-namespace1.md).  
+ Tento příklad používá následující dokument XML: [ukázkový soubor XML: konfigurace testu v oboru názvů](./sample-xml-file-test-configuration-in-a-namespace1.md).  
   
 ```csharp  
 XElement root = XElement.Load("TestConfigInNamespace.xml");  
@@ -57,9 +58,9 @@ foreach (XElement el in tests)
 0006  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.Xml.Linq.XElement.Attribute%2A>
 - <xref:System.Xml.Linq.XContainer.Elements%2A>
-- [Standardní operátory dotazů – přehled (C#)](./standard-query-operators-overview.md)
-- [Projekční operace (C#)](./projection-operations.md)
+- [Přehled standardních operátorů dotazů (C#)](./standard-query-operators-overview.md)
+- [Operace projekce (C#)](./projection-operations.md)

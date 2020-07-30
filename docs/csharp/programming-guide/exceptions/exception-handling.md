@@ -1,21 +1,22 @@
 ---
-title: Zpracování výjimek – průvodce programováním jazyka C#
+title: Zpracování výjimek – Průvodce programováním v C#
+description: Přečtěte si o zpracování výjimek. Podívejte se na příklady příkazů try-catch, try-finally a try-catch-finally.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - exception handling [C#], about exception handling
 - exceptions [C#], handling
 ms.assetid: b4e4ecf2-b907-4e58-891f-2563762258e9
-ms.openlocfilehash: ee1e5bd15183dad9ffe97824f9b194668e9d3b17
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8e55b44573c40f594e567fc5a4501689e66c7af4
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75705298"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302032"
 ---
 # <a name="exception-handling-c-programming-guide"></a>Zpracování výjimek (Průvodce programováním v C#)
-Try [try](../../language-reference/keywords/try-catch.md) blok je používán programátory Jazyka C# k oddílu kódu, který může být ovlivněn výjimkou. Přidružené [catch](../../language-reference/keywords/try-catch.md) bloky se používají ke zpracování všech výsledných výjimek. Finally [finally](../../language-reference/keywords/try-finally.md) blok obsahuje kód, který je spuštěn bez ohledu na `try` to, zda je vyvolána výjimka `try` v bloku, jako je například uvolnění prostředků, které jsou přiděleny v bloku. Blok `try` vyžaduje jeden nebo `catch` více přidružených bloků, `finally` blok nebo obojí.  
+Blok [Try](../../language-reference/keywords/try-catch.md) je používán programátory v jazyce C# k rozdělení kódu, který může být ovlivněn výjimkou. Přidružené bloky [catch](../../language-reference/keywords/try-catch.md) se používají ke zpracování všech výsledných výjimek. Blok [finally](../../language-reference/keywords/try-finally.md) obsahuje kód, který je spuštěn bez ohledu na to, zda je výjimka vyvolána v `try` bloku, například uvolnění prostředků, které jsou přiděleny v `try` bloku. `try`Blok vyžaduje jeden nebo více přidružených `catch` bloků, nebo `finally` blok nebo obojí.  
   
- Následující příklady ukazují `try-catch` příkaz, `try-finally` příkaz a `try-catch-finally` příkaz.  
+ Následující příklady znázorňují `try-catch` příkaz, `try-finally` příkaz a `try-catch-finally` příkaz.  
   
  [!code-csharp[csProgGuideExceptions#6](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideExceptions/CS/Exceptions.cs#6)]  
   
@@ -23,42 +24,42 @@ Try [try](../../language-reference/keywords/try-catch.md) blok je používán pr
   
  [!code-csharp[csProgGuideExceptions#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideExceptions/CS/Exceptions.cs#8)]  
   
- Blok `try` bez `catch` nebo `finally` bloku způsobí chybu kompilátoru.  
+ `try`Blok bez `catch` `finally` bloku nebo způsobí chybu kompilátoru.  
   
-## <a name="catch-blocks"></a>Úlovek bloky  
- Blok `catch` může určit typ výjimky catch. Specifikace typu se nazývá *filtr výjimek*. Typ výjimky by měl <xref:System.Exception>být odvozen z . Obecně <xref:System.Exception> nezadávejte jako filtr výjimek, pokud nevíte, jak zpracovat všechny `try` výjimky, které mohou být vyvolány v `catch` bloku, nebo jste zahrnuli příkaz [throw](../../language-reference/keywords/throw.md) na konci bloku.  
+## <a name="catch-blocks"></a>Bloky catch  
+ `catch`Blok může určovat typ výjimky, která má být zachycena. Specifikace typu se nazývá *filtr výjimek*. Typ výjimky by měl být odvozen z <xref:System.Exception> . Obecně nedávejte <xref:System.Exception> jako filtr výjimek, Pokud nevíte, jak zpracovat všechny výjimky, které mohou být vyvolány v `try` bloku nebo jste na konci bloku zahrnuli příkaz [throw](../../language-reference/keywords/throw.md) `catch` .  
   
- Více `catch` bloků s různými filtry výjimek lze zřetězit dohromady. Bloky `catch` jsou vyhodnocovány shora dolů `catch` v kódu, ale pouze jeden blok je spuštěn pro každou výjimku, která je vyvolána. První `catch` blok, který určuje přesný typ nebo základní třídu vyvolání výjimky je proveden. Pokud `catch` žádný blok určuje odpovídající filtr `catch` výjimek, je vybrán blok, který nemá filtr, pokud je v příkazu přítomen. Je důležité nejprve umístit `catch` bloky s nejkonkrétnějšími (to znamená nejvíce odvozenými) typy výjimek.  
+ Několik `catch` bloků s různými filtry výjimek lze zřetězit dohromady. `catch`Bloky jsou vyhodnocovány shora dolů ve vašem kódu, ale `catch` pro každou vyvolanou výjimku je spuštěn pouze jeden blok. `catch`Je proveden první blok, který určuje přesný typ nebo základní třídu vyvolané výjimky. Pokud žádný `catch` blok neurčuje odpovídající filtr výjimek, `catch` je vybrán blok, který nemá filtr, pokud je přítomný v příkazu. Je důležité umístit bloky s nejpřesnější `catch` (tj. nejvíce odvozené) typy výjimek.  
   
- Výjimky byste měli zachytit, pokud jsou splněny následující podmínky:  
+ Výjimky byste měli zachytit, pokud jsou splněné následující podmínky:  
   
-- Máte dobré znalosti o tom, proč může být vyvolána výjimka a můžete implementovat konkrétní obnovení, jako <xref:System.IO.FileNotFoundException> je například výzva uživateli zadat nový název souboru při zachycení objektu.  
+- Máte dobrý přehled o tom, proč může být výjimka vyvolána, a můžete implementovat konkrétní obnovení, jako je například zobrazení výzvy uživateli při zachycení objektu zadání nového názvu souboru <xref:System.IO.FileNotFoundException> .  
   
 - Můžete vytvořit a vyvolat novou, konkrétnější výjimku.  
   
      [!code-csharp[csProgGuideExceptions#9](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideExceptions/CS/Exceptions.cs#9)]  
   
-- Chcete částečně zpracovat výjimku před předáním pro další zpracování. V následujícím příkladu `catch` se blok používá k přidání položky do protokolu chyb před opětovným vyvoláním výjimky.  
+- Chcete výjimku částečně zpracovat před tím, než ji předáte pro další zpracování. V následujícím příkladu `catch` je blok použit k přidání položky do protokolu chyb před opakovanou vyvolání výjimky.  
   
      [!code-csharp[csProgGuideExceptions#10](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideExceptions/CS/Exceptions.cs#10)]  
   
-## <a name="finally-blocks"></a>Konečně bloky  
- Blok `finally` umožňuje vyčistit akce, které jsou `try` prováděny v bloku. Pokud je `finally` k dispozici, blok `try` provede poslední, `catch` po bloku a všechny odpovídající bloku. Blok `finally` vždy spustí, bez ohledu na to, `catch` zda je vyvolána výjimka nebo blok odpovídající typu výjimky je nalezen.  
+## <a name="finally-blocks"></a>Bloky finally  
+ `finally`Blok umožňuje vyčistit akce, které se provádí v `try` bloku. Je-li k dispozici, `finally` blok se spustí jako poslední, za `try` blok a libovolným odpovídajícím `catch` blokem. `finally`Vždy se spustí blok bez ohledu na to, zda je vyvolána výjimka, nebo `catch` je nalezen blok, který odpovídá typu výjimky.  
   
- Blok `finally` lze uvolnit prostředky, jako jsou datové proudy souborů, připojení k databázi a grafické popisovače bez čekání na uvolňování paměti v době runtime k dokončení objektů. Další informace najdete [v tématu použití příkazu.](../../language-reference/keywords/using-statement.md)  
+ `finally`Blok lze použít k uvolnění prostředků, například datových proudů, připojení k databázi a grafických popisovačů, aniž byste čekali na uvolňování paměti v modulu runtime k finalizaci objektů. Další informace najdete v tématu [použití příkazu Using](../../language-reference/keywords/using-statement.md) .  
   
- V následujícím příkladu `finally` se blok používá k zavření `try` souboru, který je otevřen v bloku. Všimněte si, že stav popisovače souboru je zaškrtnuta před zavřením souboru. Pokud `try` blok nemůže otevřít soubor, popisovač souboru má stále hodnotu `null` a `finally` blok se nepokouší jej zavřít. Případně pokud je soubor úspěšně otevřen `try` v bloku, `finally` blok zavře otevřený soubor.  
+ V následujícím příkladu `finally` je blok použit k zavření souboru, který je otevřen v `try` bloku. Všimněte si, že před zavřením souboru je zkontrolován stav popisovače souboru. Pokud `try` blok nemůže otevřít soubor, popisovač souboru má stále hodnotu `null` a `finally` blok se nepokusí zavřít. Případně, pokud je soubor v bloku otevřený úspěšně `try` , `finally` blok zavře otevřený soubor.  
   
  [!code-csharp[csProgGuideExceptions#11](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideExceptions/CS/Exceptions.cs#11)]  
   
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
 
-Další informace naleznete v [tématu](~/_csharplang/spec/statements.md#the-try-statement) [Exceptions](~/_csharplang/spec/exceptions.md) and The try statement in the [C# Language Specification](/dotnet/csharp/language-reference/language-specification/introduction). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
+Další informace naleznete v tématu [výjimky](~/_csharplang/spec/exceptions.md) a [příkaz try](~/_csharplang/spec/statements.md#the-try-statement) ve [specifikaci jazyka C#](/dotnet/csharp/language-reference/language-specification/introduction). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Odkaz jazyka C#](../../language-reference/index.md)
-- [Programovací příručka jazyka C#](../index.md)
+- [Reference jazyka C#](../../language-reference/index.md)
+- [Průvodce programováním v C#](../index.md)
 - [Výjimky a zpracování výjimek](./index.md)
 - [try-catch](../../language-reference/keywords/try-catch.md)
 - [try-finally](../../language-reference/keywords/try-finally.md)

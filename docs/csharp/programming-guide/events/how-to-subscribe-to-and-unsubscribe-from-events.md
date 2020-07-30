@@ -1,17 +1,18 @@
 ---
 title: Jak se přihlásit k odběru a zrušit odběr událostí – Průvodce programováním v C#
+description: Naučte se odebírat a odhlásit odběr událostí. Přihlaste se k odběru událostí pomocí integrovaného vývojového prostředí sady Visual Studio, programově nebo pomocí anonymní metody.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - event handlers [C#], creating
 - Code Editor, event handlers
 - events [C#], creating using the IDE
 ms.assetid: 6319f39f-282c-4173-8a62-6c4657cf51cd
-ms.openlocfilehash: d917ea097cf9253a65c1907efdca71a640df9497
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: f228cc2e4fd719f4d79c56d65aa45b2a3031cba7
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84240665"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302084"
 ---
 # <a name="how-to-subscribe-to-and-unsubscribe-from-events-c-programming-guide"></a>Jak Přihlásit odběr a zrušit odběr událostí (Průvodce programováním v C#)
 Přihlásíte se k odběru události, která je publikována jinou třídou, pokud chcete napsat vlastní kód, který je volán při vyvolání události. Například se můžete přihlásit k odběru události tlačítka, aby `click` se vaše aplikace vytvářely co nejužitečnější, když uživatel klikne na tlačítko.  
@@ -97,7 +98,7 @@ Přihlásíte se k odběru události, která je publikována jinou třídou, pok
   
      Když se zruší odběr všech předplatitelů z nějaké události, instance události ve třídě vydavatele je nastavená na `null` .  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Události](./index.md)
 - [událostí](../../language-reference/keywords/event.md)

@@ -1,13 +1,14 @@
 ---
 title: Čtení dat objektů ze souboru XML (C#)
+description: Tento příklad v jazyce C# čte data objektů, která byla dříve zapsána do souboru XML pomocí třídy XmlSerializer.
 ms.date: 07/20/2015
 ms.assetid: 6ad60d96-a4d9-48e6-a8b0-d7f6f803cafa
-ms.openlocfilehash: e2365d1260d3f6e239f294b2af3399c2fb659575
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 525a93812279756b3802d43d85bb5e61d8f7415e
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241874"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302786"
 ---
 # <a name="how-to-read-object-data-from-an-xml-file-c"></a>Čtení dat objektů ze souboru XML (C#)
 Tento příklad načte data objektů, která byla dříve zapsána do souboru XML pomocí <xref:System.Xml.Serialization.XmlSerializer> třídy.  
@@ -61,7 +62,7 @@ Nahraďte název souboru "c:\temp\SerializationOverview.xml" názvem souboru, kt
 ## <a name="net-security"></a>Zabezpečení .NET  
  Vždy ověřte vstupy a nikdy neserializovat data z nedůvěryhodného zdroje. Nově vytvořený objekt je spuštěn v místním počítači s oprávněním kódu, který jej deserializovat. Před použitím dat ve své aplikaci ověřte všechny vstupy.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.IO.StreamWriter>
 - [Zápis dat objektů do souboru XML (C#)](./how-to-write-object-data-to-an-xml-file.md)

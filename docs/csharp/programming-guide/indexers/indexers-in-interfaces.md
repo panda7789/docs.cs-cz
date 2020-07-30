@@ -1,16 +1,17 @@
 ---
 title: Indexery v rozhraních – Průvodce programováním v C#
+description: Indexery lze deklarovat v rozhraní v jazyce C#. Přečtěte si, jak se přístupové objekty indexerů rozhraní liší od přístupových objektů indexerů tříd.
 ms.date: 02/08/2020
 helpviewer_keywords:
 - indexers [C#], in interfaces
 - accessors [C#], indexers
 ms.assetid: e16b54bd-4a83-4f52-bd75-65819fca79e8
-ms.openlocfilehash: 9ce6e4f0e0533c2880c6241f44409435248a336a
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: ec77843bdf3181a543bd6c02cfb034b21ded1ae7
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287477"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303098"
 ---
 # <a name="indexers-in-interfaces-c-programming-guide"></a>Indexery v rozhraní (Průvodce programováním v C#)
 
@@ -61,7 +62,7 @@ string ICitizen.this[int index]
 
 implementuje indexer na `ICitizen` rozhraní.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Průvodce programováním v C#](../index.md)
 - [Indexery](./index.md)

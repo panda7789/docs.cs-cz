@@ -1,23 +1,24 @@
 ---
 title: Omezení parametrů typu – Průvodce programováním v C#
+description: Přečtěte si o omezeních parametrů typu. Omezení říká kompilátoru, jaké možnosti musí mít argument typu.
 ms.date: 04/12/2018
 helpviewer_keywords:
 - generics [C#], type constraints
 - type constraints [C#]
 - type parameters [C#], constraints
 - unbound type parameter [C#]
-ms.openlocfilehash: 4c4554c808ab15776f3217c257e0a60119ea2338
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 91807fa05ce49b8507ee6913ff2620452fcbfab5
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84368358"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301941"
 ---
 # <a name="constraints-on-type-parameters-c-programming-guide"></a>Omezení parametrů typu (Průvodce programováním v C#)
 
 Omezení informují kompilátor o možnostech, které musí mít argument typu. Bez omezení může být argumentem typu libovolný typ. Kompilátor může předpokládat pouze členy <xref:System.Object?displayProperty=nameWithType> , což je maximální základní třída pro libovolný typ rozhraní .NET. Další informace najdete v tématu [Proč použít omezení](#why-use-constraints). Pokud klientský kód používá typ, který nesplňuje omezení, kompilátor vyvolá chybu. Omezení jsou určena pomocí `where` klíčového slova kontextové. V následující tabulce jsou uvedeny sedm typů omezení:
 
-|Jedinečn|Description|
+|Jedinečn|Popis|
 |----------------|-----------------|
 |`where T : struct`|Argument typu musí být typ hodnoty, která není null. Informace o typech hodnot s možnou hodnotou null naleznete v tématu [hodnoty s možnou hodnotou null](../../language-reference/builtin-types/nullable-value-types.md). Vzhledem k tomu, že všechny typy hodnot mají přístupný konstruktor bez parametrů, `struct` omezení implikuje `new()` omezení a nelze je kombinovat s `new()` omezením. Omezení nelze kombinovat `struct` s `unmanaged` omezením.|
 |`where T : class`|Argument typu musí být typ odkazu. Toto omezení platí také pro libovolnou třídu, rozhraní, delegáta nebo typ pole. V kontextu s možnou hodnotou null v jazyce C# 8,0 nebo vyšší `T` musí být odkazový typ, který není null. |
@@ -121,7 +122,7 @@ Můžete ji použít, jak je znázorněno v následujícím příkladu, pro vytv
 
 [!code-csharp[using the enum constrained method](snippets/GenericWhereConstraints.cs#20)]
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.Collections.Generic>
 - [Průvodce programováním v C#](../index.md)

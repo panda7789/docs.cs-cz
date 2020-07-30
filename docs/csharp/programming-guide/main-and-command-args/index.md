@@ -1,5 +1,6 @@
 ---
 title: Main () a argumenty příkazového řádku – Průvodce programováním v C#
+description: Přečtěte si o Main () a argumentech příkazového řádku. Metoda Main je vstupním bodem spustitelného programu.
 ms.date: 08/02/2017
 f1_keywords:
 - CS5001
@@ -12,12 +13,12 @@ helpviewer_keywords:
 - command line [C#], arguments
 - command-line arguments [C#], Main method
 ms.assetid: 73a17231-cf96-44ea-aa8a-54807c6fb1f4
-ms.openlocfilehash: 723884dd448232777ae2cfeac5bfcf5ea24363b0
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 95ec9d3dfebe4721d4b1822939f925aa37b9e9c4
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84007738"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87382071"
 ---
 # <a name="main-and-command-line-arguments-c-programming-guide"></a>Argumenty Main () a příkazového řádku (Průvodce programováním v C#)
 
@@ -56,7 +57,7 @@ Sčítání `async` a `Task` `Task<int>` návratové typy zjednodušují kód pr
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Sestavování pomocí programu csc.exe v příkazovém řádku](../../language-reference/compiler-options/command-line-building-with-csc-exe.md)
 - [Průvodce programováním v C#](../index.md)

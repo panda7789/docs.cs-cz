@@ -1,15 +1,16 @@
 ---
 title: Typy ukazatelů – Průvodce programováním v C#
+description: Seznamte se s typy ukazatelů. Podívejte se na příklady různých ukazatelů, příklady kódu a zobrazte další dostupné prostředky.
 ms.date: 04/20/2018
 helpviewer_keywords:
 - unsafe code [C#], pointers
 - pointers [C#]
-ms.openlocfilehash: 492b37460c05ffbc82e020facb354be22706f8d3
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 9c62a31f9a4a090fe56fb10ac45fe2f93f1b036e
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84396256"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87382032"
 ---
 # <a name="pointer-types-c-programming-guide"></a>Typy ukazatelů (Průvodce programováním v C#)
 
@@ -35,7 +36,7 @@ Ukazatel nemůže odkazovat na odkaz nebo na [strukturu](../../language-referenc
 
 Hodnota proměnné ukazatele typu `myType*` je adresa proměnné typu `myType` . Následují příklady deklarace typu ukazatele:
 
-|Příklad|Description|
+|Příklad|Popis|
 |-------------|-----------------|
 |`int* p`|`p`je ukazatel na celé číslo.|
 |`int** p`|`p`je ukazatel na ukazatel na celé číslo.|
@@ -81,7 +82,7 @@ Další informace o operátorech souvisejících s ukazateli naleznete v tématu
 
 Další informace naleznete v části [typy ukazatelů](~/_csharplang/spec/unsafe-code.md#pointer-types) v tématu [specifikace jazyka C#](~/_csharplang/spec/introduction.md).
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Průvodce programováním v C#](../index.md)
 - [Nezabezpečený kód a ukazatele](index.md)

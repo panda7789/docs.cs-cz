@@ -1,19 +1,20 @@
 ---
-title: Jak filtrovat volitelný prvek (C#)
+title: Postup filtrování volitelného prvku (C#)
+description: Naučte se filtrovat volitelný prvek, i když si nejste jistí, že existuje v dokumentu XML.
 ms.date: 07/20/2015
 ms.assetid: f99e2f93-fca5-403f-8a0c-770761d4905a
-ms.openlocfilehash: c9f844619cbb3d7a66ca66989baa900e0fd7bc2f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a1cd93b70ea2c077437b58bd341f51f15f014871
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74141250"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302864"
 ---
-# <a name="how-to-filter-on-an-optional-element-c"></a>Jak filtrovat volitelný prvek (C#)
-Někdy chcete filtrovat prvek, i když si nejste jisti, že existuje v dokumentu XML. Hledání by měla být provedena tak, aby pokud konkrétní prvek nemá podřízený prvek, nespustíte výjimku nulového odkazu filtrováním pro něj. V následujícím příkladu `Child5` prvek nemá `Type` podřízený prvek, ale dotaz se stále provádí správně.  
+# <a name="how-to-filter-on-an-optional-element-c"></a>Postup filtrování volitelného prvku (C#)
+Někdy je vhodné vyfiltrovat element, i když si nejste jistí, že existuje v dokumentu XML. Hledání by mělo být provedeno, aby v případě, že konkrétní prvek nemá podřízený element, neaktivovali výjimku odkazu s hodnotou null filtrováním. V následujícím příkladu `Child5` element nemá `Type` podřízený element, ale dotaz se stále provede správně.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad <xref:System.Xml.Linq.Extensions.Elements%2A> používá metodu rozšíření.  
+ V tomto příkladu se používá <xref:System.Xml.Linq.Extensions.Elements%2A> metoda rozšíření.  
   
 ```csharp  
 XElement root = XElement.Parse(@"<Root>  
@@ -54,7 +55,7 @@ Child Four Text
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje stejný dotaz pro jazyk XML, který je v oboru názvů. Další informace naleznete [v tématu Přehled oborů názvů (LINQ to XML) (C#)](namespaces-overview-linq-to-xml.md).  
+ Následující příklad ukazuje stejný dotaz pro XML, který je v oboru názvů. Další informace najdete v tématu [obory názvů Overview (LINQ to XML) (C#)](namespaces-overview-linq-to-xml.md).  
   
 ```csharp  
 XElement root = XElement.Parse(@"<Root xmlns='http://www.adatum.com'>  
@@ -95,10 +96,10 @@ Child Two Text
 Child Four Text  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.Xml.Linq.XElement.Attribute%2A?displayProperty=nameWithType>
 - <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType>
 - <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType>
-- [Standardní operátory dotazů – přehled (C#)](./standard-query-operators-overview.md)
-- [Projekční operace (C#)](./projection-operations.md)
+- [Přehled standardních operátorů dotazů (C#)](./standard-query-operators-overview.md)
+- [Operace projekce (C#)](./projection-operations.md)

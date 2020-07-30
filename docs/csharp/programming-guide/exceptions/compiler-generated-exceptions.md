@@ -1,15 +1,16 @@
 ---
 title: Výjimky generované kompilátorem – Průvodce programováním v C#
+description: Přečtěte si o výjimkách generovaných kompilátorem. Projděte si seznam automaticky vyvolaných výjimek a jejich chybové stavy.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - exceptions [C#], compiler-generated
 ms.assetid: 53b52f97-b366-4ed7-b05b-9eb78096b7f9
-ms.openlocfilehash: 1d2d561df3e496893657b050fa93b44c56542d97
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 1def83f72e83976ac672ec35169b4950a20ef54e
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84240727"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302058"
 ---
 # <a name="compiler-generated-exceptions-c-programming-guide"></a>Výjimky generované kompilátorem (Průvodce programováním v C#)
 
@@ -28,10 +29,10 @@ Některé výjimky jsou vyvolány automaticky modulem runtime .NET, pokud zákla
 |<xref:System.StackOverflowException>|Vyvoláno při vyčerpání zásobníku spouštění pomocí příliš velkého počtu volání metod, které čekají na zpracování; obvykle označuje velmi hlubokou nebo nekonečnou rekurzi.|  
 |<xref:System.TypeInitializationException>|Vyvolána, když statický konstruktor vyvolá výjimku a neexistuje žádná kompatibilní `catch` klauzule pro zachycení.|  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Průvodce programováním v C#](../index.md)
-- [Výjimky a jejich zpracování](./index.md)
+- [Výjimky a zpracování výjimek](./index.md)
 - [Zpracování výjimek](./exception-handling.md)
 - [try-catch](../../language-reference/keywords/try-catch.md)
 - [try-finally](../../language-reference/keywords/try-finally.md)

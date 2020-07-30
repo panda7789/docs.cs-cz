@@ -1,12 +1,13 @@
 ---
 title: 'Návod: uchování objektu pomocí jazyka C #'
+description: Tento příklad vytvoří základní objekt výpůjčky v jazyce C# a uchová jeho data do souboru a pak vytvoří nový objekt s daty ze souboru.
 ms.date: 04/26/2018
-ms.openlocfilehash: bbe239008629d687084af7e28a75fa68560ca0ab
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: 9f165addc5b9b0d056936458e8529ec1912c417b
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82796064"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302760"
 ---
 # <a name="walkthrough-persisting-an-object-using-c"></a>Návod: uchování objektu pomocí jazyka C\#
 
@@ -20,7 +21,7 @@ V tomto návodu vytvoříte základní objekt a zachová `Loan` jeho data do sou
 > [!IMPORTANT]
 > Tento příklad ukládá data v binárním souboru formátu. Tyto formáty by se neměly používat pro citlivá data, jako jsou hesla nebo informace o kreditních kartách.
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 - Pro sestavení a spuštění nainstalujte [.NET Core SDK](https://dotnet.microsoft.com/download).
 
@@ -99,7 +100,7 @@ Dále je nutné přidat kód k serializaci třídy do souboru. Za existující k
 
 V tuto chvíli můžete znovu sestavit a spustit aplikaci. Při prvním spuštění si všimněte, že úrokové sazby začínají na 7,5 a pak se změní na 7,1. Ukončete aplikaci a pak ji znovu spusťte. Nyní aplikace vytiskne zprávu, že si uložil uložený soubor, a úrokovou sazbu je 7,1 ještě před kódem, který ho změnil.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Serializace (C#)](index.md)
 - [Průvodce programováním v C#](../../index.md)

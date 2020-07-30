@@ -1,15 +1,16 @@
 ---
 title: Postup vyvolání událostí třídy Base v odvozených třídách – Průvodce programováním v C#
+description: Přečtěte si, jak vyvolávat události třídy Base v odvozených třídách. Podívejte se na příklad kódu a zobrazte další dostupné prostředky.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - events [C#], in derived classes
 ms.assetid: 2d20556a-0aad-46fc-845e-f85d86ea617a
-ms.openlocfilehash: e2d2dfc2809a4de1756bfc362880eebc79076b94
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: b0b0a16a1fd165e437fc79ccacb20d406f5cff63
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84240625"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302097"
 ---
 # <a name="how-to-raise-base-class-events-in-derived-classes-c-programming-guide"></a>Postup vyvolání událostí třídy Base v odvozených třídách (Průvodce programováním v C#)
 Následující jednoduchý příklad ukazuje standardní způsob, jak deklarovat události v základní třídě tak, aby mohly být také vyvolány z odvozených tříd. Tento model se používá rozsáhle v model Windows Forms třídy v knihovnách tříd .NET.  
@@ -22,7 +23,7 @@ Následující jednoduchý příklad ukazuje standardní způsob, jak deklarovat
 ## <a name="example"></a>Příklad  
  [!code-csharp[csProgGuideEvents#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideEvents/CS/Events.cs#1)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Průvodce programováním v C#](../index.md)
 - [Události](./index.md)

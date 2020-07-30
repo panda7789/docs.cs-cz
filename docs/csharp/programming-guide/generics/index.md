@@ -1,16 +1,17 @@
 ---
 title: Obecné typy – Průvodce programováním v C#
+description: Seznamte se s obecnými typy. Obecné typy maximalizují opětovné použití kódu, bezpečnost typů a výkon a jsou běžně používány pro vytváření tříd kolekcí.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - C# language, generics
 - generics [C#]
 ms.assetid: 75ea8509-a4ea-4e7a-a2b3-cf72482e9282
-ms.openlocfilehash: a3ed3aa412c7d9c9d6b705dba80b527057c647fa
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: beef9c20e3ac62505bc7a4584b404637935de1dc
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241666"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87299393"
 ---
 # <a name="generics-c-programming-guide"></a>Obecné typy (Průvodce programováním v C#)
 
@@ -59,7 +60,7 @@ Následující příklad kódu ukazuje, jak klientský kód používá obecnou `
 
 Další informace najdete v tématu [Specifikace jazyka C#](~/_csharplang/spec/types.md#constructed-types).
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.Collections.Generic>
 - [Průvodce programováním v C#](../index.md)

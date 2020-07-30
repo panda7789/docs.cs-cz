@@ -1,5 +1,6 @@
 ---
 title: Typy – Průvodce programováním v C#
+description: Seznamte se s typy v programování v jazyce C#, jako jsou například předdefinované typy, vlastní typy, hodnoty a typy odkazů.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - value types [C#]
@@ -11,12 +12,12 @@ helpviewer_keywords:
 - C# language, types
 - strong typing [C#]
 ms.assetid: f782d7cc-035e-4500-b1b1-36a9881130ad
-ms.openlocfilehash: fa0aa09b591f9b91a82113343a3655b2240ef490
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: 5a9eb3747a6b4da316bca3f1d450c1ea0f774ada
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84201217"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87382045"
 ---
 # <a name="types-c-programming-guide"></a>Typy (Průvodce programováním v C#)
 
@@ -199,7 +200,7 @@ Další informace najdete v následujících tématech:
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Reference jazyka C#](../../language-reference/index.md)
 - [Průvodce programováním v C#](../index.md)

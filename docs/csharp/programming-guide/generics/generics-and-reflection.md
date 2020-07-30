@@ -1,16 +1,17 @@
 ---
 title: Obecné typy a reflexe – Průvodce programováním v C#
+description: Další informace o použití reflexe k získání informací o obecných typech. Zobrazit seznamy podmínek a ujednání pro obecný odraz.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - generics [C#], reflection
 - reflection [C#], generic types
 ms.assetid: 162fd9b4-dd5b-4abb-8c9b-e44e21e2f451
-ms.openlocfilehash: 672a0bebdc60eff00acf9b1bdbecc25052f7bc16
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 6e4387fe7e78cd0e970531ae42f323efa8f181db
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241679"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87299302"
 ---
 # <a name="generics-and-reflection-c-programming-guide"></a>Obecné typy a reflexe (Průvodce programováním v C#)
 Vzhledem k tomu, že modul CLR (Common Language Runtime) má přístup k informacím o obecném typu za běhu, můžete pomocí reflexe získat informace o obecných typech stejným způsobem jako u neobecných typů. Další informace naleznete v tématu [Obecné typy v době běhu](./generics-in-the-run-time.md).  
@@ -44,7 +45,7 @@ Vzhledem k tomu, že modul CLR (Common Language Runtime) má přístup k informa
 |<xref:System.Reflection.MethodBase.IsGenericMethodDefinition%2A>|Vrátí hodnotu true, pokud aktuální <xref:System.Reflection.MethodInfo> představuje definici obecné metody.|  
 |<xref:System.Reflection.MethodInfo.MakeGenericMethod%2A>|Nahradí prvky pole typů pro parametry typu aktuální definice obecné metody a vrátí <xref:System.Reflection.MethodInfo> objekt představující výslednou vytvořenou metodu.|  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Průvodce programováním v C#](../index.md)
 - [Obecné typy](./index.md)

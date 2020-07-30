@@ -11,14 +11,14 @@ helpviewer_keywords:
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: 78a47b01cc8fba4cb45a686adad901784552c1c1
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: fbd3c8062892f106ec17d0fef86d5ad7f1207d20
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86865330"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303475"
 ---
-# <a name="how-to-migrate-from-newtonsoftjson-to-systemtextjson"></a>Postup migrace z Newtonsoft.Json naSystem.Text.Json
+# <a name="how-to-migrate-from-no-locnewtonsoftjson-to-no-locsystemtextjson"></a>Postup migrace z Newtonsoft.Json naSystem.Text.Json
 
 V tomto článku se dozvíte, jak migrovat z [Newtonsoft.Json](https://www.newtonsoft.com/json) na <xref:System.Text.Json> .
 
@@ -34,7 +34,7 @@ V tomto článku se dozvíte, jak migrovat z [Newtonsoft.Json](https://www.newto
 
 Většina tohoto článku je o tom, jak používat <xref:System.Text.Json.JsonSerializer> rozhraní API, ale obsahuje také pokyny k použití funkce <xref:System.Text.Json.JsonDocument> (která představuje model DOM (Document Object Model) nebo DOM), <xref:System.Text.Json.Utf8JsonReader> a <xref:System.Text.Json.Utf8JsonWriter> typů.
 
-## <a name="table-of-differences-between-newtonsoftjson-and-systemtextjson"></a>Tabulka rozdílů mezi Newtonsoft.Json aSystem.Text.Json
+## <a name="table-of-differences-between-no-locnewtonsoftjson-and-no-locsystemtextjson"></a>Tabulka rozdílů mezi Newtonsoft.Json aSystem.Text.Json
 
 V následující tabulce jsou uvedeny `Newtonsoft.Json` funkce a jejich `System.Text.Json` ekvivalenty. Ekvivalenty spadají do následujících kategorií:
 
@@ -83,7 +83,7 @@ V následující tabulce jsou uvedeny `Newtonsoft.Json` funkce a jejich `System.
 
 Nejedná se o vyčerpávající seznam `Newtonsoft.Json` funkcí. Seznam obsahuje mnoho scénářů, které byly vyžádány v rámci [problémů GitHubu](https://github.com/dotnet/runtime/issues?q=is%3Aopen+is%3Aissue+label%3Aarea-System.Text.Json) nebo [StackOverflow](https://stackoverflow.com/questions/tagged/system.text.json) příspěvky. Pokud implementujete alternativní řešení pro jeden z uvedených scénářů, který aktuálně neobsahuje vzorový kód, a pokud chcete své řešení sdílet, vyberte **tuto stránku** v části **Zpětná vazba** v dolní části této stránky. Tím se vytvoří problém v úložišti GitHub v této dokumentaci a seznam je uvedený v části **názory** na této stránce.
 
-## <a name="differences-in-default-jsonserializer-behavior-compared-to-newtonsoftjson"></a>Rozdíly ve výchozím chování JsonSerializer ve srovnání sNewtonsoft.Json
+## <a name="differences-in-default-jsonserializer-behavior-compared-to-no-locnewtonsoftjson"></a>Rozdíly ve výchozím chování JsonSerializer ve srovnání sNewtonsoft.Json
 
 <xref:System.Text.Json>ve výchozím nastavení je striktní a zabrání jakémukoli odhadu nebo výkladu jménem volajícího a zdůraznění deterministické chování. Knihovna je záměrně navržena tak, aby způsobila výkon a zabezpečení. `Newtonsoft.Json`je flexibilní ve výchozím nastavení. Tento základní rozdíl v návrhu je za mnoho z následujících specifických rozdílů ve výchozím chování.
 
@@ -402,12 +402,14 @@ V nástroji <xref:System.Text.Json> můžete simulovat zpětná volání vytvoř
 
 [!code-csharp[](snippets/system-text-json-how-to/csharp/WeatherForecastCallbacksConverter.cs)]
 
-Zaregistrujte tento vlastní převaděč [pomocí atributu ve třídě](system-text-json-converters-how-to.md#registration-sample---jsonconverter-on-a-type) nebo [přidáním převaděče](system-text-json-converters-how-to.md#registration-sample---converters-collection) do <xref:System.Text.Json.JsonSerializerOptions.Converters> kolekce.
+Zaregistrujte tento vlastní převaděč [přidáním převaděče](system-text-json-converters-how-to.md#registration-sample---converters-collection) do <xref:System.Text.Json.JsonSerializerOptions.Converters> kolekce.
 
 Pokud používáte vlastní převaděč, který odpovídá předchozí ukázce:
 
 * `OnDeserializing`Kód nemá přístup k nové instanci POCO. Chcete-li pracovat s novou instancí POCO na začátku deserializace, vložte tento kód do konstruktoru POCO.
-* Vyhněte se nekonečné smyčce tím, že zaregistrujete převaděč do objektu Options a nepředáte do objektu Options při rekurzivním volání `Serialize` nebo `Deserialize` . Další informace najdete v části [požadované vlastnosti](#required-properties) výše v tomto článku.
+* Vyhněte se nekonečné smyčce tím, že zaregistrujete převaděč do objektu Options a nepředáte do objektu Options při rekurzivním volání `Serialize` nebo `Deserialize` .
+
+Další informace o vlastních převaděčích, které rekurzivně volají `Serialize` nebo `Deserialize` naleznete v části [požadované vlastnosti](#required-properties) výše v tomto článku.
 
 ### <a name="public-and-non-public-fields"></a>Veřejná a neveřejná pole
 

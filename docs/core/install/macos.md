@@ -4,12 +4,12 @@ description: Přečtěte si, na jaké verze macOS můžete .NET Core nainstalova
 author: adegeo
 ms.author: adegeo
 ms.date: 06/25/2020
-ms.openlocfilehash: 2900d98dbd30c51f689cdce37ea273ccc4f598b5
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: 951e9b6a64d55274729e233b4a2d7728c75d05d4
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86308920"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302929"
 ---
 # <a name="install-net-core-on-macos"></a>Nainstalovat .NET Core na macOS
 
@@ -200,7 +200,7 @@ Další informace o použití .NET Core v kontejneru Docker najdete v tématu [�
 
 - [Jak zjistit, zda je rozhraní .NET Core již nainstalováno](how-to-detect-installed-versions.md?pivots=os-macos).
 - [Práce s MacOS Catalina notarization](macos-notarization-issues.md).
-- [Kurz: Začínáme s MacOS](../tutorials/using-on-mac-vs.md).
+- [Kurz: Začínáme s MacOS](../tutorials/with-visual-studio-mac.md).
 - [Kurz: vytvoření nové aplikace pomocí Visual Studio Code](../tutorials/with-visual-studio-code.md).
 - [Kurz: kontejnerizace aplikace .NET Core](../docker/build-container.md)
 

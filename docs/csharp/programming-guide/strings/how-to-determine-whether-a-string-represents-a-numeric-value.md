@@ -1,17 +1,18 @@
 ---
 title: Jak zjistit, zda řetězec představuje číselnou hodnotu – Průvodce programováním v C#
+description: Zjistěte, jak zjistit, zda je řetězec platnou reprezentací zadaného číselného typu. Podívejte se na příklady kódu a zobrazte další prostředky.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - numeric strings [C#]
 - validating numeric input [C#]
 - strings [C#], numeric
 ms.assetid: a4e84e10-ea0a-489f-a868-503dded9d85f
-ms.openlocfilehash: 37437460ea4c6ca216f2844d63af3688ccc984c6
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: c248c6c54de493ab06a833fc525252fa812d60da
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241718"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381746"
 ---
 # <a name="how-to-determine-whether-a-string-represents-a-numeric-value-c-programming-guide"></a>Jak zjistit, zda řetězec představuje číselnou hodnotu (Průvodce programováním v C#)
 Chcete-li zjistit, zda je řetězec platnou reprezentací zadaného číselného typu, použijte statickou `TryParse` metodu, která je implementována všemi primitivními číselnými typy a také podle typů, jako jsou <xref:System.DateTime> a <xref:System.Net.IPAddress> . Následující příklad ukazuje, jak určit, zda je "108" platný [int](../../language-reference/builtin-types/integral-numeric-types.md).  
@@ -38,7 +39,7 @@ bool result = int.TryParse(s, out i); //i now = 108
 ## <a name="net-security"></a>Zabezpečení .NET  
  Vždy použijte `TryParse` metody nebo `Parse` k ověření vstupu uživatele z ovládacích prvků, jako jsou textová pole a pole se seznamem.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Jak převést pole bajtů na celé číslo](../types/how-to-convert-a-byte-array-to-an-int.md)
 - [Jak převést řetězec na číslo](../types/how-to-convert-a-string-to-a-number.md)

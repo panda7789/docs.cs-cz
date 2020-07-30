@@ -1,17 +1,18 @@
 ---
 title: Postup vytvoření klíče v registru – Průvodce programováním v C#
+description: Naučte se vytvořit klíč v registru. Podívejte se na příklad kódu, kompilování instrukcí a další dostupné prostředky.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - registry, adding keys and values [C#]
 - registry keys, creating [C#]
 - keys, creating in registry
 ms.assetid: 8fa475b0-e01f-483a-9327-fd03488fdf5d
-ms.openlocfilehash: 9e340083ffca118337dc9a53bdf20808cd1b15cb
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 6db076bc22e098c285b74a8c10e8b5f456c2c55e
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241627"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87299978"
 ---
 # <a name="how-to-create-a-key-in-the-registry-c-programming-guide"></a>Postup vytvoření klíče v registru (Průvodce programováním v C#)
 Tento příklad přidá dvojici hodnot "Name" a "Isabella" do registru aktuálního uživatele v klíči "Names".  
@@ -55,7 +56,7 @@ key.Close();
   
  Není bezpečné ukládat tajné klíče, jako jsou hesla, v registru jako prostý text, a to i v případě, že je klíč registru chráněný pomocí seznamů řízení přístupu (ACL).  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.IO?displayProperty=nameWithType>
 - [Průvodce programováním v C#](../index.md)

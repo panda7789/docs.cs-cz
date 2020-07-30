@@ -1,5 +1,6 @@
 ---
 title: <permission> – Průvodce programováním v C#
+description: Další informace o XML <permission> Inteligentní. Tato značka vám umožní zdokumentovat přístup člena, zatímco třída PermissionSet vám umožní určit přístup ke členu.
 ms.date: 07/20/2015
 f1_keywords:
 - permission
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - <permission> C# XML tag
 - permission C# XML tag
 ms.assetid: 769e93fe-8404-443f-bf99-577aa42b6a49
-ms.openlocfilehash: bb7172042f0b472d03c3fa2d9dbd0d4d4265076b
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 38c87505b8b2973875e474ffd296dc02b7fb9de6
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287269"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381720"
 ---
 # <a name="permission-c-programming-guide"></a>\<permission>(Průvodce programováním v C#)
 
@@ -45,7 +46,7 @@ Zkompilujte s [-doc](../../language-reference/compiler-options/doc-compiler-opti
 
 [!code-csharp[csProgGuideDocComments#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDocComments/CS/DocComments.cs#8)]
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Průvodce programováním v C#](../index.md)
 - [Doporučené značky pro komentáře dokumentace](./recommended-tags-for-documentation-comments.md)

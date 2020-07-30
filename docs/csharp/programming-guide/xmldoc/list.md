@@ -1,5 +1,6 @@
 ---
 title: <list> – Průvodce programováním v C#
+description: Další informace o XML <list> Inteligentní. Tato značka slouží k vytváření tabulek a definic, odrážek nebo číslovaných seznamů pomocí bloků Item.
 ms.date: 07/20/2015
 f1_keywords:
 - list
@@ -12,12 +13,12 @@ helpviewer_keywords:
 - <item> C# XML tag
 - <list> C# XML tag
 ms.assetid: c9620b1b-c2e6-43f1-ab88-8ab47308ffec
-ms.openlocfilehash: 78eec992671dab1aa59717a007a8e3a2662f6e87
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 361c2e6f343554a9b8519c3b2e41219b209e682d
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287334"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381863"
 ---
 # <a name="list-c-programming-guide"></a>\<list>(Průvodce programováním v C#)
 
@@ -60,7 +61,7 @@ Zkompilujte s [-doc](../../language-reference/compiler-options/doc-compiler-opti
 
 [!code-csharp[csProgGuideDocComments#6](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDocComments/CS/DocComments.cs#6)]
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Průvodce programováním v C#](../index.md)
 - [Doporučené značky pro komentáře dokumentace](./recommended-tags-for-documentation-comments.md)

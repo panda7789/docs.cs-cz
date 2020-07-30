@@ -1,18 +1,19 @@
 ---
 title: 'Ukázkový soubor XML: Numerická data (LINQ to XML)'
+description: Tento soubor XML se používá v různých příkladech v dokumentaci k LINQ to XML. Soubor obsahuje číselná data pro sčítání, průměrování a seskupování.
 ms.date: 07/20/2015
 ms.assetid: 365cae86-a166-46df-b56a-0209d9771c27
-ms.openlocfilehash: 921d2a42d0d553b08ecd291b3480d040dd379a96
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c3cc2c47425d2eabba7a0967d7ecc25a79291eb6
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79168100"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302487"
 ---
 # <a name="sample-xml-file-numerical-data-linq-to-xml"></a>Ukázkový soubor XML: Numerická data (LINQ to XML)
-Následující soubor XML se používá v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] různých příkladech v dokumentaci. Tento soubor obsahuje číselná data pro sčítání, průměrování a seskupování.  
+Následující soubor XML se v dokumentaci používá v různých příkladech [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] . Tento soubor obsahuje číselná data pro sčítání, průměrování a seskupování.  
   
-## <a name="dataxml"></a>Soubor Data.xml  
+## <a name="dataxml"></a>Data.xml  
   
 ```xml  
 <Root>  

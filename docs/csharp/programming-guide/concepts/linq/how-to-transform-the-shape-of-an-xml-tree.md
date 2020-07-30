@@ -1,29 +1,30 @@
 ---
-title: Transformace tvaru stromu XML (C#)
+title: Jak transformovat tvar stromu XML (C#)
+description: Přečtěte si, jak transformovat tvar stromu XML. Tvar stromu XML odkazuje na jeho element a názvy atributů a jeho vlastnosti hierarchie.
 ms.date: 07/20/2015
 ms.assetid: 93c5d426-dea2-4709-a991-60204de42e8f
-ms.openlocfilehash: 91f91ed6fea5371fae2ce67a413f4825f37af6c3
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4fa3cc18f235d061ae1778c177c4ac9b626f4b71
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75347308"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302643"
 ---
-# <a name="how-to-transform-the-shape-of-an-xml-tree-c"></a>Transformace tvaru stromu XML (C#)
-*Obrazec* dokumentu XML odkazuje na jeho názvy prvků, názvy atributů a charakteristiky jeho hierarchie.  
+# <a name="how-to-transform-the-shape-of-an-xml-tree-c"></a>Jak transformovat tvar stromu XML (C#)
+*Tvar* dokumentu XML odkazuje na jeho názvy elementů, názvy atributů a charakteristiky jeho hierarchie.  
   
- Někdy budete muset změnit tvar dokumentu XML. Může být například pravděpodobně možné odeslat existující dokument XML do jiného systému, který vyžaduje různé názvy prvků a atributů. Můžete projít dokument, odstranění a přejmenování prvků podle potřeby, ale pomocí funkční konstrukce má za následek čitelnější a udržovatelný kód. Další informace o funkční konstrukci naleznete v [tématu Funkční konstrukce (LINQ to XML) (C#)](./functional-construction-linq-to-xml.md).  
+ Někdy budete muset změnit tvar dokumentu XML. Například může být nutné odeslat existující dokument XML do jiného systému, který vyžaduje různé názvy elementů a atributů. Můžete procházet dokumentem, odstraňovat a předávat prvky podle potřeby, ale použití funkční konstrukce má za následek čitelnější a udržovatelný kód. Další informace o konstrukci funkčnosti najdete v tématu [funkční konstrukce (LINQ to XML) (C#)](./functional-construction-linq-to-xml.md).  
   
- První příklad změní uspořádání dokumentu XML. Přesune složité prvky z jednoho umístění ve stromu do jiného.  
+ První příklad změní organizaci dokumentu XML. Přesouvá komplexní prvky z jednoho umístění ve stromové struktuře do jiného.  
   
- Druhý příklad v tomto tématu vytvoří dokument XML s jiným obrazcem než zdrojový dokument. Změní velikost písmen názvů prvků, přejmenuje některé prvky a ponechá některé prvky ze zdrojového stromu z transformovaného stromu.  
+ Druhý příklad v tomto tématu vytvoří dokument XML s jiným tvarem, než zdrojový dokument. Změní velká a malá písmena názvů prvků, přejmenuje některé prvky a ponechá některé prvky ze zdrojového stromu z transformované stromové struktury.  
   
 ## <a name="example"></a>Příklad  
- Následující kód změní obrazec souboru XML pomocí vložených výrazů dotazu.  
+ Následující kód změní tvar souboru XML pomocí vložených výrazů dotazů.  
   
- Zdrojový dokument XML v tomto `Customers` příkladu `Root` obsahuje prvek pod elementem, který obsahuje všechny zákazníky. Obsahuje také `Orders` prvek pod `Root` element, který obsahuje všechny objednávky. Tento příklad vytvoří nový strom XML, ve kterém jsou `Orders` objednávky `Customer` pro každého zákazníka obsaženy v elementu v rámci prvku. Původní dokument také `CustomerID` obsahuje prvek `Order` v elementu; tento prvek bude odebrán z přetvarovaného dokumentu.  
+ Zdrojový dokument XML v tomto příkladu obsahuje `Customers` element pod `Root` prvkem, který obsahuje všechny zákazníky. Obsahuje také `Orders` element pod `Root` prvkem, který obsahuje všechny objednávky. Tento příklad vytvoří nový strom XML, ve kterém jsou objednávky pro každého zákazníka obsaženy v `Orders` elementu v rámci `Customer` elementu. Původní dokument také obsahuje `CustomerID` element v `Order` elementu; tento prvek bude odebrán z dokumentu, ve kterém se nachází.  
   
- Tento příklad používá následující dokument XML: [Ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML).](./sample-xml-file-customers-and-orders-linq-to-xml-2.md)  
+ Tento příklad používá následující dokument XML: [ukázkový soubor XML: zákazníci a objednávky (LINQ to XML)](./sample-xml-file-customers-and-orders-linq-to-xml-2.md).  
   
 ```csharp  
 XElement co = XElement.Load("CustomersOrders.xml");  
@@ -86,11 +87,11 @@ Console.WriteLine(newCustOrd);
 ```  
   
 ## <a name="example"></a>Příklad  
- Tento příklad přejmenuje některé prvky a převede některé atributy na elementy.  
+ Tento příklad přejmenuje některé prvky a převede některé atributy na prvky.  
   
- Volání `ConvertAddress`kódu , který vrací <xref:System.Xml.Linq.XElement> seznam objektů. Argument metody je dotaz, který určuje `Address` komplexní prvek, `Type` kde má `"Shipping"`atribut hodnotu .  
+ Kód volá `ConvertAddress` , který vrátí seznam <xref:System.Xml.Linq.XElement> objektů. Argumentem metody je dotaz, který určuje `Address` komplexní prvek, kde `Type` atribut má hodnotu `"Shipping"` .  
   
- Tento příklad používá následující dokument XML: [Ukázkový soubor XML: Typický nákupní objednávka (LINQ to XML).](./sample-xml-file-typical-purchase-order-linq-to-xml-1.md)  
+ Tento příklad používá následující dokument XML: [vzorový soubor XML: typická nákupní objednávka (LINQ to XML)](./sample-xml-file-typical-purchase-order-linq-to-xml-1.md).  
   
 ```csharp  
 static IEnumerable<XElement> ConvertAddress(XElement add)  

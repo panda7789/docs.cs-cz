@@ -1,5 +1,6 @@
 ---
 title: <returns> – Průvodce programováním v C#
+description: Další informace o XML <returns> Inteligentní. Tato značka se používá v komentáři pro deklaraci metody k popisu návratové hodnoty.
 ms.date: 07/20/2015
 f1_keywords:
 - returns
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - <returns> C# XML tag
 - returns C# XML tag
 ms.assetid: bb2d9958-62fc-47c7-9511-6311171f119f
-ms.openlocfilehash: 7bc950a8d89a3ac2b5c3b7a68e05c7778e97f85c
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: e461d46df619a351048ae7942e59847d39e490f9
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287230"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381395"
 ---
 # <a name="returns-c-programming-guide"></a>\<returns>(Průvodce programováním v C#)
 
@@ -39,7 +40,7 @@ Zkompilujte s [-doc](../../language-reference/compiler-options/doc-compiler-opti
 
 [!code-csharp[csProgGuideDocComments#10](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDocComments/CS/DocComments.cs#10)]
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Průvodce programováním v C#](../index.md)
 - [Doporučené značky pro komentáře dokumentace](./recommended-tags-for-documentation-comments.md)

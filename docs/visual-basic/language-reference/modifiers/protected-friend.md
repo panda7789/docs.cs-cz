@@ -1,15 +1,17 @@
 ---
 title: Protected Friend
 ms.date: 05/10/2018
+f1_keywords:
+- vb.ProtectedFriend
 helpviewer_keywords:
 - Protected Friend keyword [Visual Basic]
 - Protected Friend keyword [Visual Basic], syntax
-ms.openlocfilehash: 202d4f4a3a05a64ab1d74621268f28f6b55e8952
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 27fc993ca0b94d406261d5e6275de8cd619eb6a8
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84404833"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303449"
 ---
 # <a name="protected-friend-visual-basic"></a>Chráněný přítel (Visual Basic)
 
@@ -22,12 +24,12 @@ ms.locfileid: "84404833"
 
 **Kontext deklarace** Můžete použít `Protected Friend` pouze na úrovni třídy. To znamená, že kontext deklarace pro `Protected` prvek musí být třída a nemůže se jednat o zdrojový soubor, obor názvů, rozhraní, modul, strukturu nebo proceduru.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Republik](public.md)
 - [Proti](protected.md)
 - [Friend](friend.md)
-- [Hlášen](private.md)
+- [Soukromá](private.md)
 - [Soukromé chráněné](./private-protected.md)
 - [Úrovně přístupu v Visual Basic](../../programming-guide/language-features/declared-elements/access-levels.md)
 - [Procedury](../../programming-guide/language-features/procedures/index.md)

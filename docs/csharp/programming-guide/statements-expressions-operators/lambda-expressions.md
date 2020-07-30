@@ -1,5 +1,6 @@
 ---
 title: Výrazy lambda – Průvodce programováním v C#
+description: Přečtěte si o výrazech lambda. Existují výrazy lambda výrazů, které mají výraz jako jeho tělo, nebo výrazy lambda, které mají blok příkazu jako svůj text.
 ms.date: 07/29/2019
 helpviewer_keywords:
 - lambda expressions [C#]
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - expression lambda [C#]
 - expressions [C#], lambda
 ms.assetid: 57e3ba27-9a82-4067-aca7-5ca446b7bf93
-ms.openlocfilehash: ffda4ad93451d6991aeb20ed01511f16fd3e512b
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: 902a3f63967b371c940693464408ff39534917f9
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86174150"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87380706"
 ---
 # <a name="lambda-expressions-c-programming-guide"></a>Výrazy lambda (Průvodce programováním v C#)
 
@@ -225,7 +226,7 @@ Další informace naleznete v části [výrazy anonymní funkce](~/_csharplang/s
 
 [Delegáti, události a výrazy lambda](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff518994%28v=orm.10%29) v [C# 3,0 kuchařka, třetí edice: více než 250 řešení pro c# 3,0 programátory](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff518995%28v=orm.10%29)  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Průvodce programováním v C#](../index.md)
 - [LINQ (jazykově integrovaný dotaz)](../concepts/linq/index.md)

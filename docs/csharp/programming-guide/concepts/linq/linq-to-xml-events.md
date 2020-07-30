@@ -1,42 +1,43 @@
 ---
-title: LinQ na xml události (C#)
+title: Události LINQ to XML (C#)
+description: Přidejte LINQ to XML události v C# do instance libovolné XObject. Obslužná rutina události přijímá události při změně stromu XML pro tento XObject.
 ms.date: 07/20/2015
 ms.assetid: ce7de951-cba7-4870-9962-733eb01cd680
-ms.openlocfilehash: 8e0cb4519dd0fc2bed443d9a62b9a2545d10e161
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 576b0a5d0472bddd66e01d3bef8f3affa1c9458b
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "70253177"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87165423"
 ---
-# <a name="linq-to-xml-events-c"></a>LinQ na xml události (C#)
-[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]události umožňují upozornění při změně stromu XML.  
+# <a name="linq-to-xml-events-c"></a>Události LINQ to XML (C#)
+[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]události umožňují být upozorňovány při změně stromu XML.  
   
- Události můžete přidat do instance <xref:System.Xml.Linq.XObject>libovolné aplikace . Obslužná rutina události pak <xref:System.Xml.Linq.XObject> obdrží události pro změny, které a všechny jeho potomci. Můžete například přidat obslužnou rutinu události do kořenového adresáře stromu a zpracovat všechny změny stromu z této obslužné rutiny události.  
+ Události můžete přidat do instance libovolné <xref:System.Xml.Linq.XObject> . Obslužná rutina události poté obdrží události pro úpravy tohoto <xref:System.Xml.Linq.XObject> a kteréhokoli z jeho potomků. Například můžete přidat obslužnou rutinu události do kořenového adresáře stromu a zpracovat všechny změny stromu z této obslužné rutiny události.  
   
- Příklady [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] událostí naleznete <xref:System.Xml.Linq.XObject.Changing> v <xref:System.Xml.Linq.XObject.Changed>tématu a .  
+ Příklady [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] událostí naleznete v tématech <xref:System.Xml.Linq.XObject.Changing> a <xref:System.Xml.Linq.XObject.Changed> .  
   
 ## <a name="types-and-events"></a>Typy a události  
- Při práci s událostmi se používají následující typy:  
+ Při práci s událostmi můžete použít následující typy:  
   
 |Typ|Popis|  
 |----------|-----------------|  
-|<xref:System.Xml.Linq.XObjectChange>|Určuje typ události, když je událost <xref:System.Xml.Linq.XObject>vyvolána pro .|  
-|<xref:System.Xml.Linq.XObjectChangeEventArgs>|Poskytuje data <xref:System.Xml.Linq.XObject.Changing> pro <xref:System.Xml.Linq.XObject.Changed> události a.|  
+|<xref:System.Xml.Linq.XObjectChange>|Určuje typ události při vyvolání události pro <xref:System.Xml.Linq.XObject> .|  
+|<xref:System.Xml.Linq.XObjectChangeEventArgs>|Poskytuje data pro <xref:System.Xml.Linq.XObject.Changing> události a <xref:System.Xml.Linq.XObject.Changed> .|  
   
  Při úpravě stromu XML jsou vyvolány následující události:  
   
 |Událost|Popis|  
 |-----------|-----------------|  
-|<xref:System.Xml.Linq.XObject.Changing>|Vyskytuje se <xref:System.Xml.Linq.XObject> těsně před tím, než se toto nebo některý z jeho potomků změní.|  
-|<xref:System.Xml.Linq.XObject.Changed>|Vyvolá se <xref:System.Xml.Linq.XObject> při změně nebo změně některého z jeho potomků.|  
+|<xref:System.Xml.Linq.XObject.Changing>|Nastane těsně před tím, než <xref:System.Xml.Linq.XObject> se tato nebo kterákoli z jeho potomků změní.|  
+|<xref:System.Xml.Linq.XObject.Changed>|Vyvolá se v případě, že došlo ke změně <xref:System.Xml.Linq.XObject> nebo některému z jeho potomků.|  
   
 ## <a name="example"></a>Příklad  
   
 ### <a name="description"></a>Popis  
- Události jsou užitečné, pokud chcete zachovat některé souhrnné informace ve stromu XML. Můžete například chtít udržovat součet faktury, který je součtem řádkových položek faktury. Tento příklad používá události k udržení součtu všech podřízených prvků pod komplexníprvek `Items`.  
+ Události jsou užitečné, pokud chcete zachovat některé agregované informace ve stromu XML. Například můžete chtít zachovat celkovou částku faktury, která je součtem položek řádků faktury. V tomto příkladu se používají události pro udržování celkového počtu všech podřízených elementů v rámci komplexního prvku `Items` .  
   
-### <a name="code"></a>kód  
+### <a name="code"></a>Kód  
   
 ```csharp  
 XElement root = new XElement("Root",  

@@ -1,16 +1,17 @@
 ---
 title: Použití typu dynamické Průvodce programováním v C#
+description: Naučte se používat dynamický typ. Dynamický typ je statický typ, ale dynamické objekty nepoužívají kontrolu statického typu.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - dynamic [C#], about dynamic type
 - dynamic type [C#]
 ms.assetid: 3828989d-c967-4a51-b948-857ebc8fdf26
-ms.openlocfilehash: 24d48605e560038d70f1818611f339a94ecc2bba
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 9904f0452feca388704067b1fd5432f74d0df86b
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241965"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381577"
 ---
 # <a name="using-type-dynamic-c-programming-guide"></a>Použití typu Dynamic (Průvodce programováním v C#)
 
@@ -75,7 +76,7 @@ Mnoho metod modelu COM umožňuje variace typů argumentů a návratového typu 
 
 |Nadpis|Popis|
 |-----------|-----------------|
-|[dynamic](../../language-reference/builtin-types/reference-types.md)|Popisuje použití `dynamic` klíčového slova.|
+|[dynamické](../../language-reference/builtin-types/reference-types.md)|Popisuje použití `dynamic` klíčového slova.|
 |[Přehled dynamického jazykového modulu runtime](../../../framework/reflection-and-codedom/dynamic-language-runtime-overview.md)|Poskytuje přehled o DLR, což je běhové prostředí, které přidává sadu služeb pro dynamické jazyky do modulu CLR (Common Language Runtime).|
 |[Návod: vytváření a používání dynamických objektů](walkthrough-creating-and-using-dynamic-objects.md)|Poskytuje podrobné pokyny pro vytvoření vlastního dynamického objektu a pro vytvoření projektu, který přistupuje k `IronPython` knihovně.|
 |[Jak získat přístup k objektům interoperability Office pomocí funkcí jazyka C#](../interop/how-to-access-office-onterop-objects.md)|Ukazuje, jak vytvořit projekt, který používá pojmenované a nepovinné argumenty, `dynamic` typ a další vylepšení, která usnadňují přístup k objektům rozhraní Office API.|

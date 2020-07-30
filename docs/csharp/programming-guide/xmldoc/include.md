@@ -1,5 +1,6 @@
 ---
 title: <include> – Průvodce programováním v C#
+description: Další informace o XML <include> Inteligentní. Tato značka vám umožní odkazovat na komentáře v jiném souboru, které popisují typy a členy ve zdrojovém kódu.
 ms.date: 07/20/2015
 f1_keywords:
 - include
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - <include> C# XML tag
 - include C# XML tag
 ms.assetid: a8a70302-6196-4643-bd09-ef33f411f18f
-ms.openlocfilehash: bf41019c775fed25afe4bdb9453a8e52f44856b5
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 15a99444d464594cc91a7c8805c564c703c3b608
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287347"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381902"
 ---
 # <a name="include-c-programming-guide"></a>\<include>(Průvodce programováním v C#)
 
@@ -53,7 +54,7 @@ Toto je příklad vícesouborového typu. Následuje první soubor, který použ
 
 [!code-csharp[csProgGuideDocComments#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDocComments/CS/DocComments.cs#5)]
 
-Druhý soubor *xml_include_tag. doc*obsahuje následující komentáře k dokumentaci.
+Druhý soubor, *xml_include_tag.doc*, obsahuje následující dokumentační komentáře.
 
 ```xml
 <MyDocs>
@@ -75,7 +76,7 @@ The summary for this other type.
 
 ## <a name="program-output"></a>Výstup programu
 
-Následující výstup je generován při kompilaci třídy test a Test2 pomocí následujícího příkazového řádku: `-doc:DocFileName.xml.` v aplikaci Visual Studio zadáte možnost komentáře k dokumentu XML v podokně sestavení Návrháře projektu. Když kompilátor jazyka C# uvidí `<include>` značku, vyhledá komentáře k dokumentaci v souboru *xml_include_tag. doc* namísto aktuálního zdrojového souboru. Kompilátor pak vygeneruje *DocFileName. XML*a jedná se o soubor, který je využíván nástroji dokumentace, jako je [DocFX](https://dotnet.github.io/docfx/) a [Sandcastle](https://github.com/EWSoftware/SHFB) , k vytvoření konečné dokumentace.  
+Následující výstup je generován při kompilaci třídy test a Test2 pomocí následujícího příkazového řádku: `-doc:DocFileName.xml.` v aplikaci Visual Studio zadáte možnost komentáře k dokumentu XML v podokně sestavení Návrháře projektu. Když kompilátor jazyka C# uvidí `<include>` značku, vyhledá v *xml_include_tag.doc* komentáře k dokumentaci místo aktuálního zdrojového souboru. Kompilátor potom vygeneruje *DocFileName.xml*a jedná se o soubor, který je využíván nástroji dokumentace, jako je [Sandcastle](https://github.com/EWSoftware/SHFB) , k vytvoření konečné dokumentace.  
   
 ```xml
 <?xml version="1.0"?>
@@ -98,7 +99,7 @@ The summary for this other type.
 </doc>
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Průvodce programováním v C#](../index.md)
 - [Doporučené značky pro dokumentační komentáře](./recommended-tags-for-documentation-comments.md)

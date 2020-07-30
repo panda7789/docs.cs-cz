@@ -1,16 +1,17 @@
 ---
-title: 'Ukázkový soubor XML: Více nákupních objednávek v oboru názvů2'
+title: 'Ukázkový soubor XML: více nákupních objednávek v Namespace2'
+description: Tento soubor XML se používá v různých příkladech v dokumentaci k LINQ to XML. Soubor obsahuje několik nákupních objednávek. KÓD XML je v oboru názvů.
 ms.date: 07/20/2015
 ms.assetid: 595024f2-374a-4615-acb5-64fa1600f377
-ms.openlocfilehash: f525f73854b52b8a4d70ff842c19d3bdda9c38d5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e2dd16d2ebe7e8e05d52df79b7d725b5acf0e6c9
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79168184"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302526"
 ---
 # <a name="sample-xml-file-multiple-purchase-orders-in-a-namespace"></a>Ukázkový soubor XML: Více nákupních objednávek v názvovém prostoru
-Následující soubor XML se používá v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] různých příkladech v dokumentaci. Tento soubor obsahuje několik nákupních objednávek. Kód XML je v oboru názvů.  
+Následující soubor XML se v dokumentaci používá v různých příkladech [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] . Tento soubor obsahuje několik nákupních objednávek. KÓD XML je v oboru názvů.  
   
 ## <a name="purchaseordersinnamespacexml"></a>PurchaseOrdersInNamespace.xml  
   

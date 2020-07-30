@@ -1,19 +1,20 @@
 ---
-title: Jak najít potomky s určitým názvem prvku (C#)
+title: Jak najít následníky s konkrétním názvem elementu (C#)
+description: Naučte se najít všechny následníky s určitým názvem pomocí osy následníků. Podívejte se na příklady kódu a další zdroje informací.
 ms.date: 07/20/2015
 ms.assetid: f684da20-bee9-47f5-9607-7e3fd7e67470
-ms.openlocfilehash: b3200a2fdf75dbf52079a2b3d27aa1a88d313406
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 96ebf2d10a9ed5e07aab2870142f9869903ad442
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74141078"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303241"
 ---
-# <a name="how-to-find-descendants-with-a-specific-element-name-c"></a>Jak najít potomky s určitým názvem prvku (C#)
-Někdy chcete najít všechny potomky s určitým názvem. Můžete napsat kód iterát přes všechny potomky, ale je <xref:System.Xml.Linq.XContainer.Descendants%2A> jednodušší použít osu.  
+# <a name="how-to-find-descendants-with-a-specific-element-name-c"></a>Jak najít následníky s konkrétním názvem elementu (C#)
+Někdy budete chtít najít všechny následníky s určitým názvem. Můžete napsat kód pro iterování všemi následníky, ale je snazší použít <xref:System.Xml.Linq.XContainer.Descendants%2A> osu.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak najít potomky na základě názvu prvku.  
+ Následující příklad ukazuje, jak najít následníky na základě názvu elementu.  
   
 ```csharp  
 XElement root = XElement.Parse(@"<root>  
@@ -52,7 +53,7 @@ Some text that is broken up into multiple segments.
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje stejný dotaz pro jazyk XML, který je v oboru názvů. Další informace naleznete [v tématu Přehled oborů názvů (LINQ to XML) (C#)](namespaces-overview-linq-to-xml.md).  
+ Následující příklad ukazuje stejný dotaz pro XML, který je v oboru názvů. Další informace najdete v tématu [obory názvů Overview (LINQ to XML) (C#)](namespaces-overview-linq-to-xml.md).  
   
 ```csharp  
 XElement root = XElement.Parse(@"<root xmlns='http://www.adatum.com'>  
@@ -91,6 +92,6 @@ Console.WriteLine(str);
 Some text that is broken up into multiple segments.  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.Xml.Linq.XContainer.Descendants%2A>

@@ -1,16 +1,17 @@
 ---
 title: Řetězce – Průvodce programováním v C#
+description: Seznamte se s řetězci v programování v jazyce C#. Podívejte se na informace o deklarování a inicializaci řetězců, neměnnosti objektů řetězců a řetězcových řídicích sekvencích.
 ms.date: 06/27/2019
 helpviewer_keywords:
 - C# language, strings
 - strings [C#]
 ms.assetid: 21580405-cb25-4541-89d5-037846a38b07
-ms.openlocfilehash: 7bf5cba51a2e72d3a648f795f018220a452e51f5
-ms.sourcegitcommit: 67cf756b033c6173a1bbd1cbd5aef1fccac99e34
+ms.openlocfilehash: 8e833bdeefcce2f12c839738b43778df8e54fa5b
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86226592"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381603"
 ---
 # <a name="strings-c-programming-guide"></a>Řetězce (Průvodce programováním v C#)
 Řetězec je objekt typu, <xref:System.String> jehož hodnota je text. Interně je text uložen jako sekvenční kolekce objektů jen pro čtení <xref:System.Char> . Na konci řetězce jazyka C# není ukončovací znak null; řetězec jazyka C# proto může obsahovat libovolný počet vložených znaků null (' \ 0 '). <xref:System.String.Length%2A>Vlastnost řetězce představuje počet `Char` objektů, které obsahuje, nikoli počet znaků Unicode. Pro přístup k jednotlivým bodům kódu Unicode v řetězci použijte <xref:System.Globalization.StringInfo> objekt.  

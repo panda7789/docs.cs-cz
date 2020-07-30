@@ -1,67 +1,68 @@
 ---
-title: C# Kódovací konvence – průvodce programováním jazyka C#
+title: Konvence kódování v c# – Průvodce programováním v C#
+description: Přečtěte si o konvencích kódování v jazyce C#. Konvence kódování vytvářejí konzistentní vzhled kódu a usnadňují kopírování, změny a údržbu kódu.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - coding conventions, C#
 - Visual C#, coding conventions
 - C# language, coding conventions
 ms.assetid: f4f60de9-d49b-4fb6-bab1-20e19ea24710
-ms.openlocfilehash: 77b173a420f26834855e0bdca3c8d04406ac65d4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 772aebff0b8c7aebe7c7d5c7634cd2931f4570b1
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399733"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301850"
 ---
 # <a name="c-coding-conventions-c-programming-guide"></a>Převody kódování C# (Průvodce programováním v C#)
 
-Kódovací konvence slouží následujícím účelům:  
+Konvence kódování slouží k následujícím účelům:  
   
-- Vytvářejí konzistentní vzhled kódu, takže čtenáři se mohou soustředit na obsah, nikoli na rozložení.  
+- Vytvářejí konzistentní vzhled kódu, aby se čtenáři mohli soustředit na obsah, nikoli na rozložení.  
   
-- Umožňují čtenářům pochopit kód rychleji tím, že předpoklady na základě předchozích zkušeností.  
+- Umožňují čtenářům lépe pochopit kód tím, že se na základě předchozích zkušeností vydávají předpoklady.  
   
-- Usnadňují kopírování, změnu a údržbu kódu.  
+- Usnadňují kopírování, změny a údržbu kódu.  
   
-- Předváděte osvědčené postupy jazyka C#.  
+- Ukazují osvědčené postupy jazyka C#.  
 
-Pokyny v tomto článku používají společnost Microsoft k vývoji ukázek a dokumentace.  
+Pokyny v tomto článku používá společnost Microsoft k vývoji ukázek a dokumentace.  
   
 ## <a name="naming-conventions"></a>Konvence vytváření názvů  
   
-- V krátkých příkladech, které nezahrnují [použití direktiv](../../language-reference/keywords/using-directive.md), použijte kvalifikace oboru názvů. Pokud víte, že obor názvů je importován ve výchozím nastavení v projektu, není třeba plně kvalifikovat názvy z tohoto oboru názvů. Kvalifikované názvy mohou být přerušeny po tečka (.), pokud jsou příliš dlouhé pro jeden řádek, jak je znázorněno v následujícím příkladu.  
+- V krátkých příkladech, které neobsahují [direktivy using](../../language-reference/keywords/using-directive.md), použijte kvalifikaci oboru názvů. Pokud víte, že je ve výchozím nastavení v projektu importován obor názvů, nemusíte plně kvalifikovat názvy z tohoto oboru názvů. Kvalifikované názvy mohou být porušeny za tečku (.), pokud jsou příliš dlouhé pro jeden řádek, jak je znázorněno v následujícím příkladu.  
   
      [!code-csharp[csProgGuideCodingConventions#1](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#1)]  
   
-- Není třeba měnit názvy objektů, které byly vytvořeny pomocí nástrojů aplikace Visual Studio návrháře, aby byly vhodné pro jiné pokyny.  
+- Nemusíte měnit názvy objektů, které byly vytvořeny pomocí nástrojů návrháře sady Visual Studio, aby vyhovovaly jiným pokynům.  
   
 ## <a name="layout-conventions"></a>Konvence rozložení  
 
-Dobré rozložení používá formátování ke zdůraznění struktury kódu a k usnadnění čtení kódu. Příklady a ukázky společnosti Microsoft odpovídají následujícím konvencím:  
+Dobrá rozložení používá formátování k zdůraznění struktury kódu a k usnadnění čtení kódu. Příklady a ukázky společnosti Microsoft splňují následující konvence:  
   
-- Použijte výchozí nastavení Editoru kódu (inteligentní odsazení, čtyřmístné odsazení, karty uložené jako mezery). Další informace naleznete v [tématu Možnosti, Textový editor, C#, Formátování](/visualstudio/ide/reference/options-text-editor-csharp-formatting).  
+- Použijte výchozí nastavení editoru kódu (inteligentní odrážky, odsazení čtyř znaků, tabulátory uložené jako mezery). Další informace naleznete v tématu [Možnosti, textový editor, C#, formátování](/visualstudio/ide/reference/options-text-editor-csharp-formatting).  
   
-- Napište pouze jeden příkaz na řádek.  
+- Zapsat pouze jeden příkaz na řádek.  
   
-- Napište pouze jednu deklaraci na řádek.  
+- Zapsat pouze jednu deklaraci na řádek.  
   
-- Pokud řádky pokračování nejsou odsazeny automaticky, odsaďte je o jednu zarážku tabulátoru (čtyři mezery).  
+- Pokud nejsou řádky pro pokračování automaticky odsazeny, odsadíte je o jednu zarážku tabulátoru (čtyři mezery).  
   
 - Přidejte alespoň jeden prázdný řádek mezi definice metody a definice vlastností.  
   
-- Pomocí závorek můžete klauzule ve výrazu zdánlivě zjevit, jak je znázorněno v následujícím kódu.  
+- Použijte závorky k vytvoření klauzulí ve výrazu, jak je znázorněno v následujícím kódu.  
   
      [!code-csharp[csProgGuideCodingConventions#2](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#2)]  
   
 ## <a name="commenting-conventions"></a>Konvence při psaní komentářů  
   
-- Umístěte komentář na samostatný řádek, nikoli na konec řádku kódu.  
+- Komentář umístěte na samostatný řádek, nikoli na konci řádku kódu.  
   
-- Začněte text komentáře s velkými písmeny.  
+- Začněte text komentáře velkým písmenem.  
   
-- Ukončit text komentáře tečkou  
+- Konec textu komentáře s tečkou  
   
-- Vložte jednu mezeru mezi oddělovač poznámek (//) a text komentáře, jak je znázorněno v následujícím příkladu.  
+- Vložte jednu mezeru mezi oddělovač komentáře (//) a text komentáře, jak je znázorněno v následujícím příkladu.  
   
      [!code-csharp[csProgGuideCodingConventions#3](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#3)]  
   
@@ -69,62 +70,62 @@ Dobré rozložení používá formátování ke zdůraznění struktury kódu a 
   
 ## <a name="language-guidelines"></a>Pokyny pro jazyk  
 
-Následující části popisují postupy, které tým C# následuje připravit příklady kódu a ukázky.  
+Následující části popisují postupy, které tým C# sleduje pro přípravu příkladů kódu a ukázek.  
   
 ### <a name="string-data-type"></a>Datový typ String  
   
-- Pomocí [interpolace řetězců](../../language-reference/tokens/interpolated.md) zřetězete krátké řetězce, jak je znázorněno v následujícím kódu.  
+- Použijte [interpolaci řetězce](../../language-reference/tokens/interpolated.md) k zřetězení krátkých řetězců, jak je znázorněno v následujícím kódu.  
   
      [!code-csharp[csProgGuideCodingConventions#6](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#6)]  
   
-- Chcete-li připojit řetězce ve smyčkách, zejména při práci <xref:System.Text.StringBuilder> s velkým množstvím textu, použijte objekt.  
+- Pro připojení řetězců ve smyčkách, zejména při práci s velkým množstvím textu, použijte <xref:System.Text.StringBuilder> objekt.  
   
      [!code-csharp[csProgGuideCodingConventions#7](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#7)]  
   
 ### <a name="implicitly-typed-local-variables"></a>Implicitně typované lokální proměnné  
   
-- [Implicitní psaní](../classes-and-structs/implicitly-typed-local-variables.md) pro místní proměnné, pokud je typ proměnné zřejmý z pravé strany přiřazení nebo pokud přesný typ není důležitý.  
+- Použijte [implicitní psaní](../classes-and-structs/implicitly-typed-local-variables.md) pro lokální proměnné, pokud je typ proměnné zjevný z pravé strany přiřazení, nebo pokud přesný typ není důležitý.  
   
      [!code-csharp[csProgGuideCodingConventions#8](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#8)]  
   
-- Nepoužívejte [var,](../../language-reference/keywords/var.md) pokud typ není zřejmý z pravé strany přiřazení.  
+- Nepoužívejte [var](../../language-reference/keywords/var.md) v případě, že typ není na pravé straně přiřazení zřejmý.  
   
      [!code-csharp[csProgGuideCodingConventions#9](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#9)]  
   
-- Nespoléhejte na název proměnné k určení typu proměnné. Možná to není správné.  
+- Nespoléhá na název proměnné, abyste určili typ proměnné. Nemusí být správné.  
   
      [!code-csharp[csProgGuideCodingConventions#10](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#10)]  
   
-- Vyhněte `var` se použití místo [dynamického](../../language-reference/builtin-types/reference-types.md).  
+- Nepoužívejte `var` místo [dynamického](../../language-reference/builtin-types/reference-types.md)použití.  
   
-- Implicitní psaní slouží k určení typu proměnné smyčky v [pro](../../language-reference/keywords/for.md) smyčky.  
+- Pomocí implicitního zápisu určete typ proměnné smyčky v [pro smyčky for](../../language-reference/keywords/for.md) .  
   
-     Následující příklad používá implicitní `for` psaní v příkazu.  
+     Následující příklad používá implicitní zadání v `for` příkazu.  
   
      [!code-csharp[csProgGuideCodingConventions#7](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#7)]  
 
-- Nepoužívejte implicitní psaní k určení typu proměnné smyčky v [foreach](../../language-reference/keywords/foreach-in.md) smyčky.
+- Nepoužívejte implicitní typování k určení typu proměnné smyčky ve smyčce [foreach](../../language-reference/keywords/foreach-in.md) .
 
-     Následující příklad používá explicitní psaní `foreach` v příkazu.
+     Následující příklad používá explicitní psaní do `foreach` příkazu.
 
      [!code-csharp[csProgGuideCodingConventions#12](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#12)]
 
      > [!NOTE]
-     > Dávejte pozor, abyste omylem nezměnili typ prvku iterable kolekce. Například je snadné přepnout <xref:System.Linq.IQueryable?displayProperty=nameWithType> <xref:System.Collections.IEnumerable?displayProperty=nameWithType> z `foreach` v příkazu, který změní provádění dotazu.
+     > Buďte opatrní, aby nedošlo k náhodné změně typu prvku kolekce ITER. Například je snadné přepnout z <xref:System.Linq.IQueryable?displayProperty=nameWithType> na <xref:System.Collections.IEnumerable?displayProperty=nameWithType> `foreach` příkaz v příkazu, který změní spuštění dotazu.
 
 ### <a name="unsigned-data-type"></a>Nepodepsaný datový typ  
   
-Obecně používejte `int` spíše než nepodepsané typy. Použití `int` je běžné v celém c#, a je snazší komunikovat `int`s jinými knihovnami při použití .  
+Obecně použijte `int` místo typů bez znaménka. Použití `int` je běžné v jazyce C# a při použití nástroje je snazší pracovat s ostatními knihovnami `int` .  
   
 ### <a name="arrays"></a>Pole  
   
-Při inicializaci polí na řádku deklarace použijte stručnou syntaxi.  
+Použijte stručnou syntaxi při inicializaci polí na řádku deklarace.  
   
 [!code-csharp[csProgGuideCodingConventions#13](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#13)]  
   
-### <a name="delegates"></a>Delegáty  
+### <a name="delegates"></a>Delegáti  
   
-Pomocí stručné syntaxe můžete vytvářet instance typu delegáta.  
+K vytvoření instancí typu delegáta použijte stručnou syntaxi.  
   
 [!code-csharp[csProgGuideCodingConventions#14](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#14)]  
   
@@ -132,37 +133,37 @@ Pomocí stručné syntaxe můžete vytvářet instance typu delegáta.
   
 ### <a name="try-catch-and-using-statements-in-exception-handling"></a>Zpracování výjimek s použitím příkazů try-catch a using  
   
-- Pro většinu zpracování výjimek použijte příkaz [try-catch.](../../language-reference/keywords/try-catch.md)  
+- Použijte příkaz [try-catch](../../language-reference/keywords/try-catch.md) pro většinu zpracování výjimek.  
   
      [!code-csharp[csProgGuideCodingConventions#16](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#16)]  
   
-- Zjednodušte kód pomocí [příkazu](../../language-reference/keywords/using-statement.md)C# using . Pokud máte [příkaz try-finally,](../../language-reference/keywords/try-finally.md) ve kterém `finally` je jediným kódem <xref:System.IDisposable.Dispose%2A> v bloku `using` volání metody, použijte příkaz.  
+- Zjednodušte svůj kód pomocí příkazu jazyka C# [using](../../language-reference/keywords/using-statement.md). Máte-li příkaz [try-finally](../../language-reference/keywords/try-finally.md) , ve kterém jediný kód v `finally` bloku je voláním <xref:System.IDisposable.Dispose%2A> metody, použijte `using` místo toho příkaz.  
   
      [!code-csharp[csProgGuideCodingConventions#17](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#17)]  
   
-### <a name="-and-124124-operators"></a>&& a &#124;&#124; operátory  
+### <a name="-and-124124-operators"></a>Operátory && a &#124;&#124;   
   
-Chcete-li se vyhnout výjimkám a zvýšit [&&](../../language-reference/operators/boolean-logical-operators.md#conditional-logical-and-operator-) výkon [&](../../language-reference/operators/boolean-logical-operators.md#logical-and-operator-) přeskočením zbytečných porovnání, použijte místo a [&#124;&#124;](../../language-reference/operators/boolean-logical-operators.md#conditional-logical-or-operator-) místo [&#124;](../../language-reference/operators/boolean-logical-operators.md#logical-or-operator-) při provádění porovnání, jak je znázorněno v následujícím příkladu.  
+Aby nedocházelo k výjimkám a zvýšili výkon přeskočením zbytečných porovnání, použijte [&&](../../language-reference/operators/boolean-logical-operators.md#conditional-logical-and-operator-) místo [&](../../language-reference/operators/boolean-logical-operators.md#logical-and-operator-) a [&#124;&#124;](../../language-reference/operators/boolean-logical-operators.md#conditional-logical-or-operator-) namísto [&#124;](../../language-reference/operators/boolean-logical-operators.md#logical-or-operator-) při porovnávání, jak je znázorněno v následujícím příkladu.  
   
 [!code-csharp[csProgGuideCodingConventions#18](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#18)]  
   
 ### <a name="new-operator"></a>Operátor new  
   
-- Použijte stručnou formu instance objektu s implicitním psaním, jak je znázorněno v následujícím prohlášení.  
+- Použijte stručnou formu instance objektu s implicitním zadáním, jak je znázorněno v následující deklaraci.  
   
      [!code-csharp[csProgGuideCodingConventions#19](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#19)]  
   
-     Předchozí řádek je ekvivalentní následující prohlášení.  
+     Předchozí řádek je ekvivalentní následující deklaraci.  
   
      [!code-csharp[csProgGuideCodingConventions#20](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#20)]  
   
-- Ke zjednodušení vytváření objektů použijte inicializátory objektů.  
+- K zjednodušení vytvoření objektu použijte Inicializátory objektů.  
   
      [!code-csharp[csProgGuideCodingConventions#21](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#21)]  
   
 ### <a name="event-handling"></a>Zpracování událostí  
   
-Pokud definujete obslužnou rutinu události, kterou není nutné později odebrat, použijte výraz lambda.  
+Pokud definujete obslužnou rutinu události, kterou nemusíte později odebrat, použijte výraz lambda.  
   
 [!code-csharp[csProgGuideCodingConventions#22](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#22)]  
   
@@ -170,41 +171,41 @@ Pokud definujete obslužnou rutinu události, kterou není nutné později odebr
   
 ### <a name="static-members"></a>Statické členy  
   
-Volání [statických](../../language-reference/keywords/static.md) členů pomocí názvu třídy: *ClassName.StaticMember*. Tento postup umožňuje kód čitelnější tím, že statický přístup jasné.  Nekvalifikujte statický člen definovaný v základní třídě s názvem odvozené třídy.  Zatímco tento kód zkompiluje, čitelnost kódu je zavádějící a kód může přerušit v budoucnu, pokud přidáte statický člen se stejným názvem do odvozené třídy.  
+Volejte [statické](../../language-reference/keywords/static.md) členy pomocí názvu třídy: *ClassName. StaticMember*. Tento postup usnadňuje čitelnost kódu tím, že provádí jasné zrušení statického přístupu.  Nekvalifikovat statický člen definovaný v základní třídě s názvem odvozené třídy.  Při kompilaci kódu je čitelnost kódu zavádějící a kód může být v budoucnu přerušen, pokud přidáte statický člen se stejným názvem do odvozené třídy.  
   
 ### <a name="linq-queries"></a>Dotazy LINQ  
   
-- Pro proměnné dotazu použijte smysluplné názvy. Následující příklad `seattleCustomers` používá pro zákazníky, kteří se nacházejí v Seattlu.  
+- Pro proměnné dotazů použijte smysluplné názvy. Následující příklad používá `seattleCustomers` pro zákazníky, kteří se nacházejí v Seattlu.  
   
      [!code-csharp[csProgGuideCodingConventions#25](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#25)]  
   
-- Pomocí aliasů se ujistěte, že názvy vlastností anonymních typů jsou správně velkými písmeny pomocí pascalu.  
+- Použijte aliasy k zajištění správného kapitálu názvů vlastností anonymních typů pomocí malých a velkých písmen Pascal.  
   
      [!code-csharp[csProgGuideCodingConventions#26](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#26)]  
   
-- Přejmenujte vlastnosti, pokud by názvy vlastností ve výsledku byly nejednoznačné. Například pokud dotaz vrátí jméno zákazníka a ID distributora, `ID` namísto jejich ponechání jako `Name` `Name` a ve výsledku, `ID` přejmenujte je, aby bylo jasné, že je jméno zákazníka a je ID distributora.  
+- Přejmenujte vlastnosti, pokud by názvy vlastností ve výsledku byly dvojznačné. Například pokud váš dotaz vrátí název zákazníka a ID distributora, místo jejich odeslání jako `Name` a `ID` ve výsledku, přejmenujte je tak, aby se vyjasnilo jako `Name` jméno zákazníka, a `ID` je ID distributora.  
   
      [!code-csharp[csProgGuideCodingConventions#27](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#27)]  
   
-- Použijte implicitní psaní v deklaraci proměnných dotazu a proměnných rozsahu.  
+- V deklaraci proměnných dotazu a proměnných rozsahu použijte implicitní zadání.  
   
      [!code-csharp[csProgGuideCodingConventions#25](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#25)]  
   
-- Zarovnejte klauzule dotazu pod klauzulí [from,](../../language-reference/keywords/from-clause.md) jak je znázorněno v předchozích příkladech.  
+- Zarovnat klauzule dotazu pod klauzulí [from](../../language-reference/keywords/from-clause.md) , jak je znázorněno v předchozích příkladech.  
   
-- Použijte [kde](../../language-reference/keywords/where-clause.md) klauzule před jiné klauzule dotazu k zajištění, že novější klauzule dotazu pracovat na redukované, filtrované sadu dat.  
+- Pomocí klauzulí [WHERE](../../language-reference/keywords/where-clause.md) před jinými klauzulemi dotazu zajistěte, aby pozdější klauzule dotazu pracovaly na omezené a filtrované sadě dat.  
   
      [!code-csharp[csProgGuideCodingConventions#29](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#29)]  
   
-- Použijte `from` více klauzulí namísto [join](../../language-reference/keywords/join-clause.md) klauzule pro přístup k vnitřní kolekce. Například kolekce `Student` objektů může obsahovat kolekci výsledků testu. Při spuštění následujícího dotazu vrátí každé skóre, které je starší 90, spolu s příjmením studenta, který obdržel skóre.  
+- `from`Pro přístup k vnitřním kolekcím použijte místo klauzule [Join](../../language-reference/keywords/join-clause.md) více klauzulí. Například kolekce `Student` objektů může obsahovat kolekci hodnocení testů. Při spuštění následujícího dotazu vrátí všechny skóre, které je více než 90, spolu s posledním názvem studenta, který skóre přijal.  
   
      [!code-csharp[csProgGuideCodingConventions#30](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#30)]  
   
 ## <a name="security"></a>Zabezpečení  
 
-Postupujte podle pokynů v [pokynech pro bezpečné kódování](../../../standard/security/secure-coding-guidelines.md).  
+Postupujte podle pokynů v části [zásady bezpečného kódování](../../../standard/security/secure-coding-guidelines.md).  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Visual Basic – konvence kódování](../../../visual-basic/programming-guide/program-structure/coding-conventions.md)
 - [Pokyny pro zabezpečené kódování](../../../standard/security/secure-coding-guidelines.md)

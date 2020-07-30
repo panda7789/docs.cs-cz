@@ -1,16 +1,17 @@
 ---
 title: Postup iterace prostřednictvím adresářového stromu – Průvodce programováním v C#
+description: Naučte se iterovat v adresářovém stromu. Přístup ke každému souboru v každém vnořeném podadresáři v zadané kořenové složce.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - iterating through folders [C#]
 - file iteration [C#]
 ms.assetid: c4be4a75-6b1b-46a7-9d38-bab353091ed7
-ms.openlocfilehash: 24a6225527becb0b896017616e2661ab8247c74c
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: c49a9d1eaea9d4d8967b105d753f2a611d80e795
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241601"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301980"
 ---
 # <a name="how-to-iterate-through-a-directory-tree-c-programming-guide"></a>Postup iterace v adresářovém stromu (Průvodce programováním v C#)
 Fráze "iterace stromu adresářů" znamená přístup ke každému souboru v každém vnořeném podadresáři v zadané kořenové složce, a to v jakékoli hloubce. Nemusíte nutně otevírat jednotlivé soubory. Můžete jednoduše načíst název souboru nebo podadresáře jako `string` , nebo můžete načíst další informace ve formě <xref:System.IO.FileInfo?displayProperty=nameWithType> <xref:System.IO.DirectoryInfo?displayProperty=nameWithType> objektu nebo.  
@@ -56,7 +57,7 @@ root.GetDirectories("*.*", System.IO.SearchOption.AllDirectories);
 ## <a name="robust-programming"></a>Robustní programování  
  Robustní kód pro iteraci souborů musí brát v úvahu mnoho složitých operací systému souborů. Další informace o systému souborů systému Windows najdete v tématu [Přehled systému souborů NTFS](/windows-server/storage/file-server/ntfs-overview).  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.IO>
 - [LINQ a souborové adresáře](../concepts/linq/linq-and-file-directories.md)

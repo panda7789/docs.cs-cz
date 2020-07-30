@@ -1,16 +1,17 @@
 ---
 title: Vyrovnávací paměti pevné velikosti – Průvodce programováním v C#
+description: Přečtěte si o vyrovnávacích pamětech pevné velikosti. Vyrovnávací paměti pevné velikosti se používají k zápisu metod, které spolupracují se zdroji dat z jiných jazyků.
 ms.date: 04/23/2020
 helpviewer_keywords:
 - fixed size buffers [C#]
 - unsafe buffers [C#]
 - unsafe code [C#], fixed size buffers
-ms.openlocfilehash: 932ff3d57995ce47c4b74e8e888a479f0d09d0ed
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 1d4f5068121cdc98976954f2d99f4ac020c3b2a8
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84397425"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381239"
 ---
 # <a name="fixed-size-buffers-c-programming-guide"></a>Vyrovnávací paměti pevné velikosti (Průvodce programováním v C#)
 
@@ -72,9 +73,9 @@ Vyrovnávací paměti pevné velikosti se od standardních polí liší následu
 - Jsou to vždycky vektory nebo jednorozměrná pole.
 - Deklarace by měla obsahovat délku, například `fixed char id[8]` . Nemůžete použít `fixed char id[]` .
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Průvodce programováním v C#](../index.md)
 - [Nezabezpečený kód a ukazatele](index.md)
 - [fixed – příkaz](../../language-reference/keywords/fixed-statement.md)
-- [Interoperabilita](../interop/index.md)
+- [Vzájemná funkční spolupráce](../interop/index.md)

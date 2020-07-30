@@ -1,5 +1,6 @@
 ---
 title: Postup převodu řetězce na číslo – Průvodce programováním v C#
+description: Přečtěte si, jak převést řetězec na číslo v C# voláním metod třídy Parse, TryParse nebo Convert.
 ms.date: 02/11/2019
 helpviewer_keywords:
 - conversions [C#]
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - converting strings to int [C#]
 - strings [C#], converting to int
 ms.assetid: 467b9979-86ee-4afd-b734-30299cda91e3
-ms.openlocfilehash: f1d4a0f36292acafad409bf666f861b7637cd644
-ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
+ms.openlocfilehash: 8c46117579a5b787e5d9f3f317296d33bdd1cce1
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83442199"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381967"
 ---
 # <a name="how-to-convert-a-string-to-a-number-c-programming-guide"></a>Jak převést řetězec na číslo (Průvodce programováním v C#)
 
@@ -54,7 +55,7 @@ V následující tabulce jsou uvedeny některé z metod <xref:System.Convert> t�
   
 [!code-csharp[Parsing with Convert methods](~/samples/snippets/csharp/programming-guide/string-to-number/convert/program.cs)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Typy](./index.md)
 - [Jak určit, jestli řetězec představuje číselnou hodnotu](../strings/how-to-determine-whether-a-string-represents-a-numeric-value.md)

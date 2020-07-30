@@ -1,21 +1,22 @@
 ---
-title: Jak vytvořit strom z XmlReader (C#)
+title: Postup vytvoření stromu ze třídy XmlReader (C#)
+description: Naučte se vytvořit strom XML přímo z objektu XmlReader. Podívejte se na příklad, který ukazuje, jak vytvořit objekt T:System.Xml.XmlReader.
 ms.date: 07/20/2015
 ms.assetid: 60951c9c-7087-406c-b5bb-c60e58609b21
-ms.openlocfilehash: 9ead6352112d9e1b56bd70699c90133e432f96b3
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3801177e664d142652d38748d44eaf3f274239dd
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79169269"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302656"
 ---
-# <a name="how-to-create-a-tree-from-an-xmlreader-c"></a>Jak vytvořit strom z XmlReader (C#)
-Toto téma ukazuje, jak vytvořit <xref:System.Xml.XmlReader>strom XML přímo z aplikace . Chcete-li <xref:System.Xml.Linq.XElement> vytvořit <xref:System.Xml.XmlReader>z , <xref:System.Xml.XmlReader> musíte umístit na uzel prvku. Přeskočí <xref:System.Xml.XmlReader> komentáře a pokyny pro <xref:System.Xml.XmlReader> zpracování, ale pokud je umístěn na textovém uzlu, bude vyvolána chyba. Chcete-li se těmto <xref:System.Xml.XmlReader> chybám vyhnout, vždy umístěte prvek <xref:System.Xml.XmlReader>před vytvořením stromu XML z .  
+# <a name="how-to-create-a-tree-from-an-xmlreader-c"></a>Postup vytvoření stromu ze třídy XmlReader (C#)
+Toto téma ukazuje, jak vytvořit strom XML přímo z <xref:System.Xml.XmlReader> . Chcete-li vytvořit <xref:System.Xml.Linq.XElement> z <xref:System.Xml.XmlReader> , je nutné umístit <xref:System.Xml.XmlReader> na uzel elementu. <xref:System.Xml.XmlReader>Přeskočí komentáře a pokyny pro zpracování, ale pokud <xref:System.Xml.XmlReader> je umístěn v textovém uzlu, bude vyvolána chyba. Chcete-li předejít těmto chybám, vždy umístěte <xref:System.Xml.XmlReader> element na prvek před vytvořením stromu XML z <xref:System.Xml.XmlReader> .  
   
 ## <a name="example"></a>Příklad  
- Tento příklad používá následující dokument XML: [Ukázkový soubor XML: Books (LINQ to XML).](./sample-xml-file-books-linq-to-xml.md)  
+ Tento příklad používá následující dokument XML: [ukázkový soubor XML: Books (LINQ to XML)](./sample-xml-file-books-linq-to-xml.md).  
   
- Následující kód vytvoří `T:System.Xml.XmlReader` objekt a potom přečte uzly, dokud nenajde uzel prvního prvku. Potom načte <xref:System.Xml.Linq.XElement> objekt.  
+ Následující kód vytvoří `T:System.Xml.XmlReader` objekt a poté přečte uzly, dokud nenajde první uzel elementu. Poté načte <xref:System.Xml.Linq.XElement> objekt.  
   
 ```csharp  
 XmlReader r = XmlReader.Create("books.xml");  
@@ -25,7 +26,7 @@ XElement e = XElement.Load(r);
 Console.WriteLine(e);  
 ```  
   
- Tento příklad vytváří následující výstup:  
+ Tento příklad vytvoří následující výstup:  
   
 ```xml  
 <Catalog>  
@@ -51,6 +52,6 @@ Console.WriteLine(e);
 </Catalog>  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Analýza XML (C#)](how-to-parse-a-string.md)

@@ -1,16 +1,17 @@
 ---
 title: 'Ukázkový soubor XML: Testovací konfigurace (LINQ to XML)'
+description: Tento soubor XML se používá v různých příkladech v dokumentaci k LINQ to XML. Soubor je testovací konfigurační soubor.
 ms.date: 07/20/2015
 ms.assetid: 45bfb509-c1d4-4b4f-9690-1cb0c9816516
-ms.openlocfilehash: 713e0b69ea896d9f4198ae68f1a3a258d74f24f4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 14402a4d7988e767464a53a159bcb25661dc82f8
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "66487233"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302461"
 ---
 # <a name="sample-xml-file-test-configuration-linq-to-xml"></a>Ukázkový soubor XML: Testovací konfigurace (LINQ to XML)
-Následující soubor XML se používá v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] různých příkladech v dokumentaci. Toto je testovací konfigurační soubor.  
+Následující soubor XML se v dokumentaci používá v různých příkladech [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] . Toto je konfigurační soubor testu.  
   
 ## <a name="testconfigxml"></a>TestConfig.xml  
   

@@ -1,22 +1,22 @@
 ---
-title: porovnání Project. JSON a csproj
-description: Viz mapování mezi elementy Project. JSON a csproj.
+title: Porovnání project.jsa csproj
+description: Podívejte se na mapování mezi project.jsa prvky csproj.
 author: natemcmaster
 ms.date: 03/13/2017
-ms.openlocfilehash: a997b48f645ed58d15610a68aee7c67411f9763f
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: c8638bc30ba09d8e8d464159aded60dcde4b8dc0
+ms.sourcegitcommit: 32f0d6f4c01ddc6ca78767c3a30e3305f8cd032c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83205835"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87427018"
 ---
-# <a name="a-mapping-between-projectjson-and-csproj-properties"></a>Mapování mezi vlastnostmi Project. JSON a csproj
+# <a name="a-mapping-between-projectjson-and-csproj-properties"></a>Mapování mezi project.jsa vlastnostmi csproj
 
 Od [Tomáš McMaster](https://github.com/natemcmaster)
 
-Během vývoje nástrojů .NET Core byly provedeny důležité změny návrhu, aby už nepodporovaly soubory *Project. JSON* , a místo toho můžete přesunout projekty .NET Core do formátu MSBuild/csproj.
+Během vývoje nástrojů .NET Core byly provedeny důležité změny návrhu, aby již nepodporovaly *project.js* se soubory a místo toho byly projekty .NET Core přesunuty do formátu MSBuild/csproj.
 
-Tento článek ukazuje, jak jsou nastavení v *Project. JSON* zastoupena ve formátu MSBuild/csproj, abyste se mohli naučit používat nový formát a pochopit změny provedené nástroji pro migraci při upgradu projektu na nejnovější verzi nástroje.
+Tento článek ukazuje, jak se v *project.js* ve formátu MSBuild/csproj reprezentují nastavení v, abyste se mohli dozvědět, jak používat nový formát a pochopit změny provedené nástroji pro migraci při upgradu projektu na nejnovější verzi nástrojů.
 
 ## <a name="the-csproj-format"></a>Formát csproj
 
@@ -49,7 +49,7 @@ Ve výchozím nastavení určuje název souboru projektu také hodnotu `<Assembl
 </PropertyGroup>
 ```
 
-`<AssemblyName>`Bude mít jinou hodnotu, než `<PackageId>` kdyby `buildOptions\outputName` byla vlastnost definována v Project. JSON.
+`<AssemblyName>`Bude mít jinou hodnotu, než `<PackageId>` Když `buildOptions\outputName` byla vlastnost definována v project.js.
 Další informace najdete v tématu [Další běžné možnosti sestavení](#other-common-build-options).
 
 ### <a name="version"></a>verze
@@ -332,7 +332,7 @@ V hodnotě csproj není žádný ekvivalent.
 
 ### <a name="standalone-apps-self-contained-deployment"></a>Samostatné aplikace (samostatně zahrnuté nasazení)
 
-V aplikaci Project. JSON definování `runtimes` oddílu znamená, že aplikace byla při sestavování a publikování samostatná.
+V project.jsna, definování `runtimes` oddílu znamená, že aplikace byla při sestavování a publikování samostatná.
 V nástroji MSBuild jsou všechny projekty *přenosné* během sestavení, ale mohou být publikovány jako samostatné.
 
 `dotnet publish --framework netcoreapp1.0 --runtime osx.10.11-x64`
@@ -475,7 +475,7 @@ Viz také [soubory](#files).
   <!-- summary is not migrated from project.json, but you can use the <Description> property for that if needed. -->
   <PackageTags>machine learning;framework</PackageTags>
   <PackageReleaseNotes>Version 0.9.12-beta</PackageReleaseNotes>
-  <PackageIconUrl>http://numl.net/images/ico.png</PackageIconUrl>
+  <PackageIcon>ico.png</PackageIcon>
   <PackageProjectUrl>http://numl.net</PackageProjectUrl>
   <PackageLicenseUrl>https://raw.githubusercontent.com/sethjuarez/numl/master/LICENSE.md</PackageLicenseUrl>
   <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
@@ -485,7 +485,7 @@ Viz také [soubory](#files).
 </PropertyGroup>
 ```
 
-Neexistuje žádný ekvivalent pro `owners` element v MSBuild. Pro `summary` můžete použít `<Description>` vlastnost MSBuild. Hodnota `summary` není migrována automaticky do této vlastnosti, protože tato vlastnost je mapována na [`description`](#other-common-root-level-options) element.
+Neexistuje žádný ekvivalent pro `owners` element v MSBuild. Pro `summary` můžete použít `<Description>` vlastnost MSBuild. Hodnota `summary` není migrována automaticky do této vlastnosti, protože tato vlastnost je mapována na [`description`](#other-common-root-level-options) element.  [PackageIconUrl je zastaralé](/nuget/reference/msbuild-targets#packageiconurl) namísto PackageIcon.
 
 ## <a name="scripts"></a>skripty
 
@@ -527,7 +527,7 @@ Jejich ekvivalenty v nástroji MSBuild jsou [cíle](/visualstudio/msbuild/msbuil
 }
 ```
 
-Všechna nastavení v této skupině, s výjimkou `System.GC.Server` vlastnosti, jsou umístěna do souboru s názvem *runtimeconfig. template. JSON* ve složce projektu s možnostmi, které byly během procesu migrace vyvolány na kořenový objekt:
+Všechna nastavení v této skupině, s výjimkou `System.GC.Server` vlastnosti, jsou umístěna do souboru s názvem *runtimeconfig.template.js* ve složce projektu, s možnostmi, které byly během procesu migrace vyvolány na kořenový objekt:
 
 ```json
 {
@@ -573,7 +573,7 @@ Další informace najdete v tématu [zahrnutí souborů obsahu](/nuget/schema/nu
 
 ## <a name="files"></a>files
 
-V *aplikaci Project. JSON*bylo možné sestavení a sadu rozšířit, aby se daly kompilovat a vkládat z různých složek.
+V *project.jsna*je možné sestavení a sadu rozšířit, aby se daly kompilovat a vkládat z různých složek.
 V nástroji MSBuild to je prováděno pomocí [položek](/visualstudio/msbuild/common-msbuild-project-items). Následující příklad je běžným převodem:
 
 ```json
@@ -671,6 +671,6 @@ Další informace najdete v tématu [zahrnutí obsahu do balíčku](/nuget/schem
 </ItemGroup>
 ```
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Podrobný přehled změn v rozhraní příkazového řádku](cli-msbuild-architecture.md)

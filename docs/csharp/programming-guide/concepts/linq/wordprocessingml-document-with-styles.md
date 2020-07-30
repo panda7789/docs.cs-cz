@@ -1,27 +1,28 @@
 ---
-title: WordprocessingML Dokument se styly3
+title: Dokument WordprocessingML se styly
+description: Tento příklad dokumentu WordprocessingML obsahuje odstavce, které jsou formátovány pomocí stylů. Přečtěte si o částech dokumentu, které se týkají stylů.
 ms.date: 07/20/2015
 ms.assetid: 40e35de6-ac93-4bba-88ab-a018cbe93873
-ms.openlocfilehash: 10697744680276a40fb7a175e4c04920c9e3c243
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b799c1bee95d7d638e6a3210b4876ff036e088eb
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79167865"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302201"
 ---
 # <a name="wordprocessingml-document-with-styles"></a>Dokument WordprocessingML se styly
-Složitější wordprocessingML dokumenty mají odstavce, které jsou formátovány styly.  
+Složitější dokumenty WordprocessingML mají odstavce formátované pomocí stylů.  
   
- Několik poznámek o složení dokumentů WordprocessingML je užitečné. WordprocessingML dokumenty jsou uloženy v balíčcích. Balíčky mají více částí (části mají explicitní význam při použití v kontextu balíčků; v podstatě, části jsou soubory, které jsou zip dohromady, aby obsahovaly balíček). Pokud dokument obsahuje odstavce formátované styly, bude existovat část dokumentu, která obsahuje odstavce, na které jsou použity styly. K dispozici bude také část stylu, která obsahuje styly, které jsou odkazovány v dokumentu.  
+ Několik poznámek o strukturu dokumentů WordprocessingML je užitečné. Dokumenty WordprocessingML jsou uložené v balíčcích. Balíčky mají více částí (při použití v kontextu balíčků mají explicitní význam. součásti jsou v podstatě soubory, které jsou metodou ZIP, aby se balíček mohl skládat). Pokud dokument obsahuje odstavce, které jsou formátovány styly, bude součástí dokumentu část obsahující odstavce s použitými styly. Bude také součástí stylu, který obsahuje styly, na které odkazuje dokument.  
   
- Při přístupu k balíčkům je důležité, abyste tak učinili prostřednictvím vztahů mezi částmi, nikoli pomocí libovolné cesty. Tento problém je nad rámec manipulace s obsahem v kurzu dokumentu WordprocessingML, ale příklad programy, které jsou zahrnuty v tomto kurzu ukazují správný přístup.  
+ Při přístupu k balíčkům je důležité, abyste procházeli prostřednictvím vztahů mezi částmi místo použití libovolné cesty. Tento problém je mimo rozsah manipulace s obsahem v WordprocessingML dokumentu. Příklady programů, které jsou součástí tohoto kurzu, ukazují správný přístup.  
   
 ## <a name="a-document-that-uses-styles"></a>Dokument, který používá styly  
- Příklad WordML prezentovaný v [tématu Shape of WordprocessingML Documents (C#)](./shape-of-wordprocessingml-documents.md) je velmi jednoduchý. Následující dokument je složitější: Obsahuje odstavce, které jsou formátovány styly. Nejjednodušší způsob, jak zobrazit xml, který tvoří dokument Office Open XML, je spustit [příklad, který vypisuje části dokumentů Office Open XML (C#)](./example-that-outputs-office-open-xml-document-parts.md).  
+ WordML příklad prezentovaný ve [tvaru tématu WordprocessingML Documents (C#)](./shape-of-wordprocessingml-documents.md) je velmi jednoduchý. Následující dokument je složitější: obsahuje odstavce, které jsou formátovány pomocí stylů. Nejjednodušší způsob, jak zobrazit kód XML, který vytváří dokument Office Open XML, je spustit [příklad, který vypisuje výstupy dokumentů Office Open XML (C#)](./example-that-outputs-office-open-xml-document-parts.md).  
   
- V následujícím dokumentu má první odstavec styl `Heading1`. Existuje několik odstavců, které mají výchozí styl. Existuje také řada odstavců, které `Code`mají styl . Z důvodu této relativní složitosti se jedná o zajímavější dokument, který se má analyzovat s linq na XML.  
+ V následujícím dokumentu má první odstavec styl `Heading1` . Existuje řada odstavců, které mají výchozí styl. K dispozici je také řada odstavců, které mají styl `Code` . Z důvodu této relativní složitosti je to zajímavější dokument k analýze pomocí LINQ to XML.  
   
- V těchto odstavcích s nevýchozími styly mají `w:pPr`elementy odstavce podřízený `w:pStyle`prvek s názvem , který má zase podřízený prvek . Tento prvek má `w:val`atribut , , který obsahuje název stylu. Pokud má odstavec výchozí styl, znamená to, že `w:p.Pr` element odstavce nemá podřízený prvek.  
+ V těchto odstavcích s nevýchozími styly mají elementy odstavce podřízený element s názvem `w:pPr` , který zase má podřízený element `w:pStyle` . Tento element má atribut, `w:val` , který obsahuje název stylu. Pokud má odstavec výchozí styl, znamená to, že element Paragraph nemá `w:p.Pr` podřízený element.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  

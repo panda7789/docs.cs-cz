@@ -1,12 +1,13 @@
 ---
 title: Serializace (C#)
+description: Serializace převede objekt na datový proud bajtů pro uložení objektu nebo odeslání do paměti, databáze nebo souboru.
 ms.date: 01/02/2020
-ms.openlocfilehash: b2532ccf281fdfaa951d56675066f1e239f9f480
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: b2b3105887ad6f000fcba895452a483881ae5a09
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241978"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302773"
 ---
 # <a name="serialization-c"></a>Serializace (C#)
 
@@ -77,7 +78,7 @@ Serializace návrháře je speciální forma serializace, která zahrnuje druh t
 
 ## <a name="related-topics-and-examples"></a><a name="BKMK_RelatedTopics"></a>Související témata a příklady  
 
-[Přehled System. text. JSON](../../../../standard/serialization/system-text-json-overview.md) Ukazuje, jak získat `System.Text.Json` knihovnu.
+[System.Text.Jspřehled](../../../../standard/serialization/system-text-json-overview.md) Ukazuje, jak získat `System.Text.Json` knihovnu.
 
 [Postup serializace a deserializace JSON v rozhraní .NET](../../../../standard/serialization/system-text-json-how-to.md).
 Ukazuje, jak číst a zapisovat data objektů do a z JSON pomocí <xref:System.Text.Json.JsonSerializer> třídy.

@@ -1,15 +1,16 @@
 ---
 title: Použití indexerů – Průvodce programováním v C#
+description: Naučte se deklarovat a používat indexer pro třídu, strukturu nebo rozhraní v jazyce C#. Tento článek obsahuje příklad kódu.
 ms.date: 07/15/2020
 helpviewer_keywords:
 - indexers [C#], about indexers
 ms.assetid: df70e1a2-3ce3-4aba-ad80-4b2f3538699f
-ms.openlocfilehash: e742e4dd5ea92ec3baf37c915e024e713022b7b6
-ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
+ms.openlocfilehash: a8a9e05c1d2e44841177a924c6ff51c6c9e6a05a
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86416232"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301863"
 ---
 # <a name="using-indexers-c-programming-guide"></a>Použití indexerů (Průvodce programováním v C#)
 
@@ -93,7 +94,7 @@ Existují dva hlavní způsoby, jak lze zlepšit zabezpečení a spolehlivost in
 
 - Nastavte přístupnost přístupových objektů [Get](../../language-reference/keywords/get.md) a [set](../../language-reference/keywords/set.md) jako omezujících oprávnění, která jsou přiměřená. To je důležité pro `set` přistupující objekt, zejména. Další informace najdete v tématu [Omezení přístupnosti přístupového objektu](../classes-and-structs/restricting-accessor-accessibility.md).
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Průvodce programováním v C#](../index.md)
 - [Indexery](./index.md)

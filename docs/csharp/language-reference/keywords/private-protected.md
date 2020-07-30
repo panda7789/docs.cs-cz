@@ -1,24 +1,26 @@
 ---
-title: privátní chráněné - C# Reference
+title: Private Protected – reference jazyka C#
 ms.date: 11/15/2017
+f1_keywords:
+- privateprotected_CSharpKeyword
 author: sputier
-ms.openlocfilehash: 03fa90582d096919f2e6546fae2fde28e486fe41
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: 94ef55d7e13841f81b036f52659b215e22a3a0d7
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463045"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301798"
 ---
-# <a name="private-protected-c-reference"></a>privátní chráněné (C# Reference)
+# <a name="private-protected-c-reference"></a>Private Protected (Referenční dokumentace jazyka C#)
 
-Kombinace `private protected` klíčových slov je modifikátor přístupu členů. Soukromý chráněný člen je přístupný typy odvozené z obsahující třídy, ale pouze v rámci jeho obsahující sestavení. Porovnání `private protected` s ostatními modifikátory přístupu naleznete v [tématu Úrovně usnadnění přístupu](accessibility-levels.md).
+`private protected`Kombinace klíčového slova je modifikátor přístupu ke členu. Soukromý chráněný člen je přístupný z typů odvozených z obsahující třídy, ale pouze v rámci nadřazeného sestavení. Porovnání `private protected` s dalšími modifikátory přístupu najdete v tématu [úrovně usnadnění](accessibility-levels.md).
 
 > [!NOTE]
-> Modifikátor `private protected` přístupu je platný v c# verze 7.2 a novější.
+> `private protected`Modifikátor přístupu je platný v jazyce C# verze 7,2 a novějším.
 
 ## <a name="example"></a>Příklad
 
-Soukromý chráněný člen základní třídy je přístupný z odvozených typů v jeho obsahující sestavení pouze v případě, že statický typ proměnné je odvozený typ třídy. Zvažte například následující segment kódu:
+Soukromý chráněný člen základní třídy je přístupný z odvozených typů v jeho obsahujícím sestavení pouze v případě, že statický typ proměnné je odvozený typ třídy. Zvažte například následující segment kódu:
 
 ```csharp
 public class BaseClass
@@ -56,28 +58,28 @@ class DerivedClass2 : BaseClass
 }
 ```
 
-Tento příklad obsahuje `Assembly1.cs` dva `Assembly2.cs`soubory a .
-První soubor obsahuje třídu `BaseClass`public base a typ z `DerivedClass1`něj odvozený . `BaseClass`vlastní soukromý chráněný člen `myValue`, `DerivedClass1` který se pokusí o přístup dvěma způsoby. První pokus o `myValue` přístup prostřednictvím instance `BaseClass` způsobí chybu. Pokus o jeho použití jako zděděného člena v aplikaci však `DerivedClass1` bude úspěšný.
+Tento příklad obsahuje dva soubory, `Assembly1.cs` a `Assembly2.cs` .
+První soubor obsahuje veřejnou základní třídu, `BaseClass` a typ, který je z něj odvozený `DerivedClass1` . `BaseClass`vlastní soukromý chráněný člen, `myValue` , který se `DerivedClass1` snaží získat přístup dvěma způsoby. Při prvním pokusu o přístup `myValue` prostřednictvím instance `BaseClass` se vytvoří chyba. Pokus o jeho použití jako zděděný člen v nástroji bude ale `DerivedClass1` úspěšný.
 
-V druhém souboru pokus `myValue` o přístup jako `DerivedClass2` zděděný člen způsobí chybu, protože je přístupný pouze odvozené typy v Assembly1.
+Ve druhém souboru dojde k chybě pokusu o přístup `myValue` jako zděděný člen `DerivedClass2` , protože je přístupný pouze pro odvozené typy v Assembly1.
 
-Pokud `Assembly1.cs` obsahuje <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> tento `Assembly2`název , `DerivedClass1` odvozené třídy bude mít přístup k členům `private protected` deklarované v `BaseClass`. `InternalsVisibleTo`zviditelní `private protected` členy odvozených tříd v jiných sestaveních.
+Pokud `Assembly1.cs` obsahuje <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> název `Assembly2` , odvozená třída `DerivedClass1` bude mít přístup ke `private protected` členům deklarovaným v `BaseClass` . `InternalsVisibleTo`zpřístupňuje `private protected` členy na odvozených třídách v jiných sestaveních.
 
-Členy struktury nelze `private protected` zdědit, protože strukturu nelze zdědit.
+Členy struktury nemůžou být `private protected` zděděné, protože strukturu nejde zdědit.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Odkaz jazyka C#](../index.md)
-- [Programovací příručka jazyka C#](../../programming-guide/index.md)
-- [C# Klíčová slova](index.md)
+- [Reference jazyka C#](../index.md)
+- [Průvodce programováním v C#](../../programming-guide/index.md)
+- [Klíčová slova jazyka C#](index.md)
 - [Modifikátory přístupu](access-modifiers.md)
 - [Úrovně přístupnosti](accessibility-levels.md)
 - [Modifikátory](index.md)
 - [public](public.md)
-- [private](private.md)
+- [hlášen](private.md)
 - [internal](internal.md)
-- [Obavy o zabezpečení interních virtuálních klíčových slov](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/heyd8kky(v=vs.100))
+- [Problémy se zabezpečením pro interní virtuální klíčová slova](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/heyd8kky(v=vs.100))

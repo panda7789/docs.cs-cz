@@ -1,5 +1,6 @@
 ---
 title: Používání oborů názvů – Průvodce programováním v C#
+description: Naučte se používat obory názvů v programování v jazyce C#, jako je přístup k oborům názvů, aliasům oboru názvů a používání oborů názvů k řízení oboru.
 ms.date: 07/20/2015
 f1_keywords:
 - cs.names
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - fully qualified names [C#]
 - namespaces [C#], how to use
 ms.assetid: 1fe8bf39-addc-438a-bd9e-86410e32381d
-ms.openlocfilehash: 71d97f7c1c0c3ece0cdce3de4318d8a9d65baed3
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 86892f50e059c16ee9c133d7ba9f2716e11a8e56
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241926"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381694"
 ---
 # <a name="using-namespaces-c-programming-guide"></a>Používání oborů názvů (Průvodce programováním v C#)
 
@@ -90,10 +91,10 @@ Obory názvů se silně používají v rámci programů C# dvěma způsoby. Za p
   
  To funguje, ale pokud `Alias` by byl následně zaveden typ s názvem, `Alias.` měl by se místo toho vytvořit vazba na tento typ. Pomocí `Alias::Exception` této vlastnosti je zajištěno, že `Alias` se jako alias oboru názvů považuje označení pro typ.  
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Průvodce programováním v C#](../index.md)
-- [Obory názvů](./index.md)
+- [Jmenné prostory](./index.md)
 - [Výraz přístupu členů](../../language-reference/operators/member-access-operators.md#member-access-expression-)
 - [:: – operátor](../../language-reference/operators/namespace-alias-qualifier.md)
 - [externí alias](../../language-reference/keywords/extern-alias.md)

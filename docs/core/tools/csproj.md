@@ -2,12 +2,12 @@
 title: Přidání do formátu csproj pro .NET Core
 description: Přečtěte si o rozdílech mezi existujícími a soubory .NET Core csproj.
 ms.date: 04/08/2019
-ms.openlocfilehash: ea57b66d9a2e5cb69fe82e9a4bcf68625af546fd
-ms.sourcegitcommit: c8c3e1c63a00b7d27f76f5e50ee6469e6bdc8987
+ms.openlocfilehash: a0cbead27e52af3114d9c44fd19c966e665a2850
+ms.sourcegitcommit: 32f0d6f4c01ddc6ca78767c3a30e3305f8cd032c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87251202"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87427005"
 ---
 # <a name="additions-to-the-csproj-format-for-net-core"></a>Přidání do formátu csproj pro .NET Core
 
@@ -342,9 +342,9 @@ Je potřeba zajistit, aby byl soubor s licencí zabalený tak, že ho do projekt
 
 Adresa URL licence, která se vztahuje na balíček. (_nepoužívá se od verze Visual Studio 15.9.4, .NET SDK 2.1.502 a 2.2.101_)
 
-### <a name="packageiconurl"></a>PackageIconUrl
+### <a name="packageicon"></a>PackageIcon
 
-Adresa URL obrázku 64 × 64 s průhledným pozadím, který se má použít jako ikona balíčku v zobrazení uživatelského rozhraní.
+Cesta k obrázku v balíčku, který se má použít jako ikona balíčku Přečtěte si další informace o [ `icon` metadatech](/nuget/reference/nuspec#icon). [PackageIconUrl je zastaralé](/nuget/reference/msbuild-targets#packageiconurl) namísto PackageIcon.
 
 ### <a name="packagereleasenotes"></a>PackageReleaseNotes
 

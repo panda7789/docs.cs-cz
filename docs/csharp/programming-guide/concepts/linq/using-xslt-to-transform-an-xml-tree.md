@@ -1,16 +1,17 @@
 ---
-title: Použití xslt k transformaci stromu XML (C#)
+title: Transformace stromu XML pomocí XSLT (C#)
+description: Naučte se používat transformaci XSLT k transformaci stromu XML v jazyce C# vyvoláním transformace XSLT na instance XmlReader a XmlWriter.
 ms.date: 07/20/2015
 ms.assetid: 373a2699-d4c5-471b-9bda-c1f0ab73b477
-ms.openlocfilehash: 7ebcfbd6be86fdd5e12bfc48a0fe80a084c6f9b5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bce92136850aeef52e5b17cd7bc658b85fe70604
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74140912"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302266"
 ---
-# <a name="using-xslt-to-transform-an-xml-tree-c"></a>Použití xslt k transformaci stromu XML (C#)
-Můžete vytvořit strom XML, <xref:System.Xml.XmlReader> vytvořit ze stromu XML, vytvořit nový <xref:System.Xml.XmlWriter> dokument a vytvořit dokument, který bude zapisovat do nového dokumentu. Potom můžete vyvolat XSLT transformace, <xref:System.Xml.XmlReader> předávání <xref:System.Xml.XmlWriter> a transformace. Po úspěšném dokončení transformace je nový strom XML naplněn výsledky transformace.  
+# <a name="using-xslt-to-transform-an-xml-tree-c"></a>Transformace stromu XML pomocí XSLT (C#)
+Můžete vytvořit strom XML, vytvořit <xref:System.Xml.XmlReader> z stromu XML, vytvořit nový dokument a vytvořit <xref:System.Xml.XmlWriter> , který bude zapisovat do nového dokumentu. Pak můžete vyvolat transformaci XSLT, předáním <xref:System.Xml.XmlReader> a <xref:System.Xml.XmlWriter> k transformaci. Po úspěšném dokončení transformace se nový strom XML naplní výsledky transformace.  
   
 ## <a name="example"></a>Příklad  
   
@@ -58,7 +59,7 @@ string result = newDocument.ToString();
 Console.WriteLine(result);
 ```  
   
- Tento příklad vytváří následující výstup:  
+ Tento příklad vytvoří následující výstup:  
   
 ```xml  
 <Root>  
@@ -67,7 +68,7 @@ Console.WriteLine(result);
 </Root>  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.Xml.Linq.XContainer.CreateWriter%2A?displayProperty=nameWithType>
 - <xref:System.Xml.Linq.XNode.CreateReader%2A?displayProperty=nameWithType>

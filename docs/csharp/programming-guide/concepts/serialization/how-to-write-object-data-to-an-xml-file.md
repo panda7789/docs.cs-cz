@@ -1,13 +1,14 @@
 ---
 title: Zápis dat objektů do souboru XML (C#)
+description: Tento příklad jazyka C# zapíše objekt z třídy do souboru XML pomocí třídy XmlSerializer. Přečtěte si, jak zkompilovat kód.
 ms.date: 07/20/2015
 ms.assetid: 7681eb98-703d-4005-a369-26a7bca0f894
-ms.openlocfilehash: 6f18ae194d2ed70f633665a29772622319ea9493
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: c88a85f8bc65a195f404dab6aa39675bac7e4f84
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241991"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303124"
 ---
 # <a name="how-to-write-object-data-to-an-xml-file-c"></a>Zápis dat objektů do souboru XML (C#)
 Tento příklad zapíše objekt z třídy do souboru XML pomocí <xref:System.Xml.Serialization.XmlSerializer> třídy.  
@@ -61,7 +62,7 @@ public class XMLWrite
 ## <a name="net-security"></a>Zabezpečení .NET  
  Tento příklad vytvoří nový soubor, pokud soubor ještě neexistuje. Pokud aplikace potřebuje vytvořit soubor, tato aplikace potřebuje `Create` ke složce přístup. Pokud soubor již existuje, aplikace potřebuje `Write` přístup pouze k menšímu oprávnění. Je-li to možné, je bezpečnější vytvořit soubor během nasazení a udělit `Read` přístup pouze k jedinému souboru, nikoli ke `Create` složce.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.IO.StreamWriter>
 - [Čtení dat objektů ze souboru XML (C#)](./how-to-read-object-data-from-an-xml-file.md)

@@ -1,13 +1,14 @@
 ---
 title: Přehled standardních operátorů dotazů (C#)
+description: Standardní operátory dotazů LINQ poskytují možnosti dotazování, včetně filtrování, projekce, agregace a řazení v jazyce C#.
 ms.date: 07/20/2015
 ms.assetid: 812fa119-5f65-4139-b4fa-55dccd8dc3ac
-ms.openlocfilehash: 095a0b7a7a8265f235d28a4634ea82cdcd7a60c0
-ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
+ms.openlocfilehash: 8a399f52881e10f8d94263843b5992101f96a5ea
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84990014"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302318"
 ---
 # <a name="standard-query-operators-overview-c"></a>Přehled standardních operátorů dotazů (C#)
 *Standardní operátory dotazu* jsou metody, které tvoří vzor LINQ. Většina těchto metod pracuje na sekvencích, kde sekvence je objekt, jehož typ implementuje <xref:System.Collections.Generic.IEnumerable%601> rozhraní nebo <xref:System.Linq.IQueryable%601> rozhraní. Standardní operátory dotazu poskytují možnosti dotazování, včetně filtrování, projekce, agregace, řazení a dalších.  
@@ -103,7 +104,7 @@ foreach (var obj in query)
   
  [Agregační operace (C#)](./aggregation-operations.md)  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.Linq.Enumerable>
 - <xref:System.Linq.Queryable>

@@ -1,5 +1,6 @@
 ---
-title: Příkazy, výrazy a operátory – průvodce programováním jazyka C#
+title: Příkazy, výrazy a operátory – Průvodce programováním v C#
+description: Do programování v jazyce C# zaveďte sami sebe základní prvky příkazů, výrazů a operátorů.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - expressions [C#]
@@ -9,16 +10,16 @@ helpviewer_keywords:
 - C# language, expressions
 - statements [C#]
 ms.assetid: 20f8469d-5a6a-4084-ad90-0856b7e97e45
-ms.openlocfilehash: b339158848dac30f8c87a372b44574f6114a6aed
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 08692cbe583feb534315b637492adedb1254bc38
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75698635"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381616"
 ---
 # <a name="statements-expressions-and-operators-c-programming-guide"></a>Příkazy, výrazy a operátory (Průvodce programováním v C#)
 
-Kód Jazyka C#, který obsahuje aplikaci, se skládá z příkazů tvořených klíčovými slovy, výrazy a operátory. Tato část obsahuje informace týkající se těchto základních prvků programu Jazyka C#.
+Kód jazyka C#, který se skládá z aplikace, se skládá z příkazů tvořících klíčová slova, výrazy a operátory. Tato část obsahuje informace týkající se těchto základních prvků programu v jazyce C#.
 
  Další informace naleznete v tématu:
 
@@ -36,7 +37,7 @@ Kód Jazyka C#, který obsahuje aplikaci, se skládá z příkazů tvořených k
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Programovací příručka jazyka C#](../index.md)
+- [Průvodce programováním v C#](../index.md)
 - [Přetypování a převody typů](../types/casting-and-type-conversions.md)

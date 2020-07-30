@@ -1,5 +1,5 @@
 ---
-title: extern alias - C# Reference
+title: extern alias – reference jazyka C#
 ms.date: 07/20/2015
 f1_keywords:
 - alias_CSharpKeyword
@@ -8,42 +8,64 @@ helpviewer_keywords:
 - aliases [C#], extern keyword
 - aliases, extern keyword
 ms.assetid: f487bf4f-c943-4fca-851b-e540c83d9027
-ms.openlocfilehash: 86202333484933d7449b0c4d8c5a3f1a63cd7775
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 891e56b064f8a327abe28293223a85b9d95e8fd3
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75713551"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301811"
 ---
 # <a name="extern-alias-c-reference"></a>externí alias (Referenční dokumentace jazyka C#)
-Je možné, že budete muset odkazovat na dvě verze sestavení, které mají stejné plně kvalifikované názvy typů. Například může být možné použít dvě nebo více verzí sestavení ve stejné aplikaci. Pomocí aliasu externího sestavení mohou být obory názvů z každého sestavení zabaleny do oborů názvů kořenové úrovně pojmenovaných aliasem, což umožňuje jejich použití ve stejném souboru.  
+Možná budete muset odkazovat na dvě verze sestavení, které mají stejné názvy plně kvalifikovaného typu. Například může být nutné použít dvě nebo více verzí sestavení ve stejné aplikaci. Pomocí externího aliasu sestavení lze obory názvů z každého sestavení zabalit do oborů názvů kořenové úrovně s názvem alias, což umožňuje jejich použití ve stejném souboru.  
   
 > [!NOTE]
-> Klíčové slovo [extern](./extern.md) se také používá jako modifikátor metody, deklarující metodu napsanou v nespravovaném kódu.  
+> Klíčové slovo [extern](./extern.md) se používá také jako modifikátor metody a deklaruje metodu napsanou v nespravovaném kódu.  
   
- Chcete-li odkazovat na dvě sestavení se stejnými plně kvalifikovanými názvy typů, musí být na příkazovém řádku zadán alias takto:  
+ Chcete-li odkazovat na dvě sestavení se stejnými názvy plně kvalifikovaného typu, je nutné zadat alias na příkazovém řádku následujícím způsobem:  
   
  `/r:GridV1=grid.dll`  
   
  `/r:GridV2=grid20.dll`  
   
- Tím se vytvoří `GridV1` externí `GridV2`aliasy a . Chcete-li použít tyto aliasy z programu, `extern` odkazovat na ně pomocí klíčového slova. Například:  
+ Tím se vytvoří externí aliasy `GridV1` a `GridV2` . Chcete-li tyto aliasy použít v rámci programu, odkažte je pomocí `extern` klíčového slova. Příklad:  
   
  `extern alias GridV1;`  
   
  `extern alias GridV2;`  
   
- Každá deklarace aliasu extern zavádí další obor názvů na kořenové úrovni, který paraleluje (ale neleží uvnitř) globálního oboru názvů. Typy z každého sestavení tedy mohou být odkazovány bez nejednoznačnosti pomocí jejich plně kvalifikovaný název, zakořeněné v příslušném alias oboru názvů.  
+ Každá deklarace extern alias zavádí další obor názvů na úrovni root, který je souběžně (ale neleží v rámci) globálního oboru názvů. Typy z každého sestavení lze tedy odkazovat bez nejednoznačnosti pomocí jejich plně kvalifikovaného názvu, který je rootem v příslušném oboru názvů alias.  
   
- V předchozím `GridV1::Grid` příkladu by bylo `grid.dll`řízení `GridV2::Grid` mřížky z , `grid20.dll`a bude řídicí mřížky z .  
+ V předchozím příkladu by byl `GridV1::Grid` ovládací prvek mřížky z `grid.dll` a `GridV2::Grid` by byl ovládací prvek mřížky z `grid20.dll` .  
   
+## <a name="using-visual-studio"></a>Pomocí sady Visual Studio
+
+Pokud používáte aplikaci Visual Studio, mohou být aliasy poskytovány podobným způsobem.
+
+Přidejte odkaz na *grid.dll* a *grid20.dll* do projektu v aplikaci Visual Studio. Otevřete kartu vlastnost a změňte aliasy z Global na GridV1 a GridV2.
+
+Používat tyto aliasy stejným způsobem jako výše
+
+```csharp
+ extern alias GridV1;  
+  
+ extern alias GridV2;  
+```
+
+Nyní můžete vytvořit alias pro obor názvů nebo typ *pomocí direktivy alias*. Další informace najdete v tématu [použití direktivy](using-directive.md).
+
+```csharp
+using Class1V1 = GridV1::Namespace.Class1;
+
+using Class1V2 = GridV2::Namespace.Class1;
+```
+
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Odkaz jazyka C#](../index.md)
-- [Programovací příručka jazyka C#](../../programming-guide/index.md)
-- [C# Klíčová slova](./index.md)
-- [:: Operátor](../operators/namespace-alias-qualifier.md)
-- [-reference (Možnosti kompilátoru Jazyka C#)](../compiler-options/reference-compiler-option.md)
+- [Reference jazyka C#](../index.md)
+- [Průvodce programováním v C#](../../programming-guide/index.md)
+- [Klíčová slova jazyka C#](./index.md)
+- [:: – Operátor](../operators/namespace-alias-qualifier.md)
+- [-Reference (možnosti kompilátoru C#)](../compiler-options/reference-compiler-option.md)

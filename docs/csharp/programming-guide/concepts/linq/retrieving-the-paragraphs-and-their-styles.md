@@ -1,45 +1,46 @@
 ---
 title: Načítání odstavců a jejich stylů (C#)
+description: Naučte se napsat dotaz, který načte odstavce a pak určí styl každého odstavce.
 ms.date: 07/20/2015
 ms.assetid: c2f767f8-57b1-4b4b-af04-89ffb1f7067d
-ms.openlocfilehash: 47127b6f1d6bfaa0d8d93333882a0d0b59f1bae6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 94d01a13485f70bc9d9cef55b5f390c3b30d7f14
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79168294"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303397"
 ---
 # <a name="retrieving-the-paragraphs-and-their-styles-c"></a>Načítání odstavců a jejich stylů (C#)
-V tomto příkladu napíšeme dotaz, který načte uzly odstavce z dokumentu Wordprocessing ML. Také identifikuje styl každého odstavce.  
+V tomto příkladu zapíšeme dotaz, který načte uzly odstavců z dokumentu WordprocessingML. Určuje také styl každého odstavce.  
   
- Tento dotaz vychází z dotazu v předchozím příkladu [Hledání výchozího odstavcového stylu (C#),](./finding-the-default-paragraph-style.md)který načte výchozí styl ze seznamu stylů. Tyto informace jsou vyžadovány tak, aby dotaz mohl identifikovat styl odstavců, které nemají explicitně nastavený styl. Odstavcové styly `w:pPr` jsou nastaveny prostřednictvím prvku; Pokud odstavec tento prvek neobsahuje, je formátován s výchozím stylem.  
+ Tento dotaz sestaví na dotazu v předchozím příkladu a hledá [výchozí styl odstavce (C#)](./finding-the-default-paragraph-style.md), který načte výchozí styl ze seznamu stylů. Tyto informace jsou požadovány, aby dotaz mohl identifikovat styl odstavců, které nemají explicitně nastaven styl. Odstavcové styly se nastavují prostřednictvím `w:pPr` elementu; Pokud odstavec tento prvek neobsahuje, naformátuje se s výchozím stylem.  
   
- Toto téma vysvětluje význam některých částí dotazu a potom zobrazí dotaz jako součást úplného, pracovního příkladu.  
+ Toto téma vysvětluje význam některých částí dotazu a pak zobrazuje dotaz jako součást kompletního a funkčního příkladu.  
   
 ## <a name="example"></a>Příklad  
- Zdroj dotazu pro načtení všech odstavců v dokumentu a jejich styly je následující:  
+ Zdroj dotazu pro načtení všech odstavců v dokumentu a jejich stylů je následující:  
   
 ```csharp  
 xDoc.Root.Element(w + "body").Descendants(w + "p")  
 ```  
   
- Tento výraz je podobný zdroji dotazu v předchozím příkladu [Hledání výchozího odstavcového stylu (C#).](./finding-the-default-paragraph-style.md) Hlavní rozdíl spočá, že používá osu <xref:System.Xml.Linq.XContainer.Descendants%2A> namísto osy. <xref:System.Xml.Linq.XContainer.Elements%2A> Dotaz používá <xref:System.Xml.Linq.XContainer.Descendants%2A> osu, protože v dokumentech, které mají oddíly, odstavce nebudou přímými podřízenými prvky těla; spíše odstavce budou v hierarchii o dvě úrovně níže. Pomocí <xref:System.Xml.Linq.XContainer.Descendants%2A> osy bude kód fungovat, zda dokument používá oddíly.  
+ Tento výraz je podobný zdroji dotazu v předchozím příkladu, který [najde výchozí styl odstavce (C#)](./finding-the-default-paragraph-style.md). Hlavní rozdíl spočívá v tom, že <xref:System.Xml.Linq.XContainer.Descendants%2A> místo osy používá osu <xref:System.Xml.Linq.XContainer.Elements%2A> . Dotaz používá osu, <xref:System.Xml.Linq.XContainer.Descendants%2A> protože v dokumentech, které mají oddíly, nebudou odstavce přímo podřízeny elementu těla. místo toho budou v hierarchii tyto odstavce dvě. Pomocí <xref:System.Xml.Linq.XContainer.Descendants%2A> osy bude kód pracovat na tom, zda dokument používá oddíly.  
   
 ## <a name="example"></a>Příklad  
- Dotaz používá `let` klauzuli k určení prvku, který obsahuje uzel stylu. Pokud není žádný prvek, `styleNode` pak `null`je nastavena na :  
+ Dotaz používá `let` klauzuli k určení prvku, který obsahuje uzel Style. Pokud není žádný element, pak `styleNode` je nastaven na `null` :  
   
 ```csharp  
 let styleNode = para.Elements(w + "pPr").Elements(w + "pStyle").FirstOrDefault()  
 ```  
   
- `let` Klauzule nejprve <xref:System.Xml.Linq.XContainer.Elements%2A> používá osu `pPr`najít všechny <xref:System.Xml.Linq.Extensions.Elements%2A> prvky s názvem `pStyle`, pak používá <xref:System.Linq.Enumerable.FirstOrDefault%2A> metodu rozšíření najít všechny podřízené prvky s názvem a nakonec používá operátor standardní dotaz převést kolekci na singleton. Pokud je kolekce `styleNode` prázdná, `null`je nastavena na . To to je užitečné idiom `pStyle` hledat uzel potomka. Všimněte si, že pokud `pPr` podřízený uzel neexistuje, kód neselže ani nepodaří vyvoláním výjimky; místo `styleNode` , je `null`nastavena na , `let` což je požadované chování této klauzule.  
+ `let`Klauzule nejprve používá <xref:System.Xml.Linq.XContainer.Elements%2A> osu k vyhledání všech prvků s názvem `pPr` a poté používá <xref:System.Xml.Linq.Extensions.Elements%2A> metodu rozšíření k vyhledání všech podřízených elementů s názvem `pStyle` a nakonec používá <xref:System.Linq.Enumerable.FirstOrDefault%2A> standardní operátor dotazu k převedení kolekce na typ singleton. Je-li kolekce prázdná, `styleNode` je nastavena na hodnotu `null` . Toto je užitečná idiom pro vyhledání `pStyle` podřízeného uzlu. Všimněte si, že pokud `pPr` neexistuje podřízený uzel, kód selže ani selže vyvoláním výjimky; namísto toho `styleNode` je nastavena na `null` , což je požadované chování této `let` klauzule.  
   
- Dotaz projekty kolekce anonymního typu se `StyleName` `ParagraphNode`dvěma členy a .  
+ Dotaz projektuje kolekci anonymního typu se dvěma členy `StyleName` a `ParagraphNode` .  
   
 ## <a name="example"></a>Příklad  
- Tento příklad zpracuje dokument WordprocessingML, načtení odstavcových uzlů z dokumentu WordprocessingML. Také identifikuje styl každého odstavce. Tento příklad vychází z předchozích příkladů v tomto kurzu. Nový dotaz je volán v komentářích v níže uvedeném kódu.  
+ Tento příklad zpracovává dokument WordprocessingML a načítá uzly odstavců z dokumentu WordprocessingML. Určuje také styl každého odstavce. Tento příklad sestaví na předchozích příkladech v tomto kurzu. Nový dotaz se zavolá v komentářích v následujícím kódu.  
   
- Pokyny pro vytvoření zdrojového dokumentu pro tento příklad naleznete v [části Vytvoření dokumentu Open XML (C#) zdrojové sady Office](./creating-the-source-office-open-xml-document.md).  
+ Pokyny pro vytvoření zdrojového dokumentu pro tento příklad najdete v [tématu vytvoření zdrojového dokumentu XML pro Office (C#)](./creating-the-source-office-open-xml-document.md).  
   
  Tento příklad používá třídy nalezené v sestavení WindowsBase. Používá typy v <xref:System.IO.Packaging?displayProperty=nameWithType> oboru názvů.  
   
@@ -109,7 +110,7 @@ foreach (var p in paragraphs)
     Console.WriteLine("StyleName:{0}", p.StyleName);  
 ```  
   
- Tento příklad vytvoří následující výstup při použití na dokument popsaný v [části Vytvoření dokumentu Open XML (C#) zdrojové kanceláře](./creating-the-source-office-open-xml-document.md).  
+ Tento příklad vytvoří následující výstup při použití v dokumentu popsaném v [tématu vytvoření zdrojového dokumentu XML pro Office (C#)](./creating-the-source-office-open-xml-document.md).  
   
 ```output  
 StyleName:Heading1  
@@ -130,8 +131,8 @@ StyleName:Code
 ```  
   
 ## <a name="next-steps"></a>Další kroky  
- V dalším tématu [Načítání textu odstavců (C#)](./retrieving-the-text-of-the-paragraphs.md)vytvoříte dotaz pro načtení textu odstavců.  
+ V dalším tématu [načtení textu odstavců (C#)](./retrieving-the-text-of-the-paragraphs.md)vytvoříte dotaz pro načtení textu odstavců.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Kurz: Manipulace s obsahem v dokumentu WordprocessingML (C#)](./shape-of-wordprocessingml-documents.md)
+- [Kurz: manipulace s obsahem v dokumentu WordprocessingML (C#)](./shape-of-wordprocessingml-documents.md)

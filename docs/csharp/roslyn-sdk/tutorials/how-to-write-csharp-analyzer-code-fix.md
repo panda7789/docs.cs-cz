@@ -3,12 +3,12 @@ title: 'Kurz: vytvoření prvního analyzátoru a opravy kódu'
 description: V tomto kurzu najdete podrobné pokyny k sestavení analyzátoru a opravy kódu pomocí sady .NET Compiler SDK (rozhraní Roslyn API).
 ms.date: 08/01/2018
 ms.custom: mvc
-ms.openlocfilehash: c70fcacc6cb30969e5c69ffd0954ac52e637a915
-ms.sourcegitcommit: 4ad2f8920251f3744240c3b42a443ffbe0a46577
+ms.openlocfilehash: e79907f364939462b7d0d5814c4752be23bcfdf3
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86100935"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381590"
 ---
 # <a name="tutorial-write-your-first-analyzer-and-code-fix"></a>Kurz: vytvoření prvního analyzátoru a opravy kódu
 
@@ -16,7 +16,7 @@ Sada .NET Compiler Platform SDK poskytuje nástroje, které potřebujete k vytv�
 
 V tomto kurzu se seznámíte s vytvořením **analyzátoru** a s doprovodnou **opravou kódu** pomocí rozhraní API Roslyn. Analyzátor je způsob, jak provádět analýzu zdrojového kódu a nahlásit problém uživateli. V případě potřeby může analyzátor také poskytnout opravu kódu, která představuje úpravu zdrojového kódu uživatele. V tomto kurzu se vytvoří analyzátor, který najde deklarace místních proměnných, které by se daly deklarovat pomocí `const` modifikátoru, ale ne. Oprava doprovodného kódu upraví tyto deklarace a přidá `const` modifikátor.
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 > [!NOTE]
 > Aktuální šablona sady Visual Studio **Analyzer s opravou kódu (.NET Standard)** obsahuje známou chybu a měla by být opravena ve verzi Visual Studio 2019 verze 16,7. Projekty v šabloně nebudou zkompilovány, pokud nejsou provedeny následující změny:
@@ -504,7 +504,7 @@ else if (variableType.IsReferenceType && constantValue.Value != null)
 }
 ```
 
-Chcete-li nahradit klíčové slovo var správným názvem typu, je nutné ve svém poskytovateli opravy kódu napsat trochu větší kód. Vraťte se na **CodeFixProvider.cs**. Kód, který přidáte, provede následující kroky:
+Chcete-li nahradit `var` klíčové slovo se správným názvem typu, je nutné ve svém poskytovateli opravy kódu napsat trochu větší kód. Vraťte se na **CodeFixProvider.cs**. Kód, který přidáte, provede následující kroky:
 
 - Ověřte, zda je deklarace deklarace `var` , a pokud je:
 - Vytvoří nový typ pro odvozený typ.
@@ -522,12 +522,12 @@ Tyto zvuky jako velké množství kódu. Není to. Nahraďte řádek, který dek
 using Microsoft.CodeAnalysis.Simplification;
 ```
 
-Spusťte testy a všechny by měly být passované. Congratulate se tak, že spustíte kompletní analyzátor. Stisknutím <kbd>kombinace kláves CTRL + F5</kbd> spusťte projekt analyzátoru v druhé instanci sady Visual Studio s načteným rozšířením Roslyn Preview.
+Spusťte testy a všechny by měly být passované. Congratulate se tak, že spustíte kompletní analyzátor. Stisknutím klávesy <kbd>CTRL</kbd> + <kbd>F5</kbd> spusťte projekt analyzátoru v druhé instanci sady Visual Studio s načteným rozšířením Roslyn Preview.
 
 - Ve druhé instanci sady Visual Studio vytvořte nový projekt konzolové aplikace v jazyce C# a přidejte `int x = "abc";` ho do metody Main. Děkujeme, že při první opravě chyby by se pro tuto místní proměnnou proměnné nemělo hlásit žádné upozornění (i když dojde k chybě kompilátoru, jak se očekávalo).
 - Dále přidejte `object s = "abc";` do metody Main. Z důvodu druhé opravy chyby by se nemělo hlásit žádné upozornění.
 - Nakonec přidejte další místní proměnnou, která používá `var` klíčové slovo. Uvidíte, že se nahlásí upozornění a na levé straně se zobrazí návrh.
-- Přesuňte kurzor editoru na podtržení vlnovkou a stiskněte <kbd>kombinaci kláves CTRL +</kbd>. pro zobrazení navrhované opravy kódu. Po výběru opravy kódu si všimněte, že klíčové slovo var se nyní zpracovává správně.
+- Přesuňte kurzor editoru na podtržení vlnovkou a stiskněte klávesu <kbd>CTRL</kbd> + <kbd>.</kbd>. pro zobrazení navrhované opravy kódu. Po výběru opravy kódu si všimněte, že `var` klíčové slovo se nyní zpracovává správně.
 
 Nakonec přidejte následující kód:
 
@@ -539,7 +539,7 @@ int k = i + j;
 
 Po těchto změnách získáte červené vlnovky pouze první dvě proměnné. Přidejte `const` do obou a a zobrazí se `i` `j` nové upozornění, protože se `k` teď může jednat o `const` .
 
-Gratulujeme! Vytvořili jste první rozšíření .NET Compiler Platform, které provádí průběžnou analýzu kódu k detekci problému a nabízí rychlou opravu pro její opravu. Na cestě jste se naučili mnoho rozhraní API kódu, která jsou součástí sady .NET Compiler Platform SDK (rozhraní API Roslyn). Práci s [dokončenou ukázkou](https://github.com/dotnet/samples/tree/master/csharp/roslyn-sdk/Tutorials/MakeConst) najdete v našem úložišti GitHub Samples.
+Blahopřejeme! Vytvořili jste první rozšíření .NET Compiler Platform, které provádí průběžnou analýzu kódu k detekci problému a nabízí rychlou opravu pro její opravu. Na cestě jste se naučili mnoho rozhraní API kódu, která jsou součástí sady .NET Compiler Platform SDK (rozhraní API Roslyn). Práci s [dokončenou ukázkou](https://github.com/dotnet/samples/tree/master/csharp/roslyn-sdk/Tutorials/MakeConst) najdete v našem úložišti GitHub Samples.
 
 ## <a name="other-resources"></a>Další prostředky
 

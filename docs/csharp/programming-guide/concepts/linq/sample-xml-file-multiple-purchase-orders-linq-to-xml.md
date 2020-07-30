@@ -1,16 +1,17 @@
 ---
 title: 'Ukázkový soubor XML: Více nákupních objednávek (LINQ to XML)'
+description: Tento soubor XML se používá v různých příkladech v dokumentaci k LINQ to XML. Soubor obsahuje několik nákupních objednávek.
 ms.date: 07/20/2015
 ms.assetid: 2d29fcaa-60df-43d4-8ccc-6cdba7c013e9
-ms.openlocfilehash: d73887308c07b161887716ccf2194eeb3918ff51
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8902b262e838c385581fc221d210f2b7ec11cd47
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79168138"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302513"
 ---
 # <a name="sample-xml-file-multiple-purchase-orders-linq-to-xml"></a>Ukázkový soubor XML: Více nákupních objednávek (LINQ to XML)
-Následující soubor XML se používá v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] různých příkladech v dokumentaci. Tento soubor obsahuje několik nákupních objednávek.  
+Následující soubor XML se v dokumentaci používá v různých příkladech [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] . Tento soubor obsahuje několik nákupních objednávek.  
   
 ## <a name="purchaseordersxml"></a>PurchaseOrders.xml  
   

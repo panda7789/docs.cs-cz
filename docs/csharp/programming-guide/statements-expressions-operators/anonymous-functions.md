@@ -1,17 +1,18 @@
 ---
 title: Anonymní funkce – Průvodce programováním v C#
+description: Přečtěte si o anonymních funkcích. Můžete použít výraz lambda nebo anonymní metodu pro vytvoření anonymní funkce.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - lambda expressions [C#], as anonymous functions
 - anonymous functions [C#]
 - anonymous methods [C#]
 ms.assetid: 6ce3f04d-0c71-4728-9127-634c7e9a8365
-ms.openlocfilehash: c99aaf4f35d2d294a9f07de54129bb3b4fbfbfde
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: ae8bda3c68542637b1430587ca4a537980c028bc
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241900"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381668"
 ---
 # <a name="anonymous-functions-c-programming-guide"></a>Anonymní funkce (Průvodce programováním v C#)
 
@@ -31,7 +32,7 @@ Můžete použít [výraz lambda](lambda-expressions.md) nebo [anonymní metodu]
 
 Další informace naleznete v části [výrazy anonymní funkce](~/_csharplang/spec/expressions.md#anonymous-function-expressions) [specifikace jazyka C#](~/_csharplang/spec/introduction.md).
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Příkazy, výrazy a operátory](./index.md)
 - [Výrazy lambda](./lambda-expressions.md)

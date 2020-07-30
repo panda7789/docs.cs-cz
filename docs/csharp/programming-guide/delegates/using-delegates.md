@@ -1,15 +1,16 @@
 ---
 title: Použití delegátů – Průvodce programováním v C#
+description: Naučte se používat delegáty. Delegáti jsou objektově orientovaný, typově bezpečný a zabezpečený typ, který bezpečně zapouzdřuje metodu.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - delegates [C#], how to use
 ms.assetid: 99a2fc27-a32e-4a34-921c-e65497520eec
-ms.openlocfilehash: 9a81ee5ccdc2697ca435d40be27568b651977f96
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: a9b625b8c0785ed2f446be27c11dc76108bc4bce
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241588"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302149"
 ---
 # <a name="using-delegates-c-programming-guide"></a>Použití delegátů (Průvodce programováním v C#)
 
@@ -67,7 +68,7 @@ Porovnání delegátů dvou různých typů přiřazených v době kompilace zp�
 
 [!code-csharp[csProgGuideDelegates#30](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDelegates/CS/Delegates.cs#30)]
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Průvodce programováním v C#](../index.md)
 - [Delegáti](./index.md)

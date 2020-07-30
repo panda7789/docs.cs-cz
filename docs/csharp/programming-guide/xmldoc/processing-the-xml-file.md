@@ -1,16 +1,17 @@
 ---
 title: Zpracování souboru XML – Průvodce programováním v C#
+description: Přečtěte si o zpracování souboru XML v programování v jazyce C#. Podívejte se na příklady kódu a zobrazte další dostupné prostředky.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - XML processing [C#]
 - XML [C#], processing
 ms.assetid: 60c71193-9dac-4cd3-98c5-100bd0edcc42
-ms.openlocfilehash: 1e3d96f9398f2c08ed715111f01987e2d1948439
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 6f8a278ed842cd9c4176f3efff423ee048f7e9b9
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287256"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381538"
 ---
 # <a name="process-the-xml-file-c-programming-guide"></a>Zpracování souboru XML (Průvodce programováním v C#)
 
@@ -72,7 +73,7 @@ Kompilátor při generování řetězců ID sleduje následující pravidla:
 
 - U operátorů převodu ( `op_Implicit` a `op_Explicit` ) je návratová hodnota metody kódována jako znak ~ následovaný návratovým typem.
 
-- Pro obecné typy je název typu následován zpětným voláním a pak číslem, které označuje počet parametrů obecného typu. Například:
+- Pro obecné typy je název typu následován zpětným voláním a pak číslem, které označuje počet parametrů obecného typu. Příklad:
 
      ``<member name="T:SampleClass`2">``je značka pro typ, který je definován jako `public class SampleClass<T, U>` .
 
@@ -84,7 +85,7 @@ Následující příklady ukazují, jak jsou generovány řetězce ID pro tříd
 
 [!code-csharp[csProgGuidePointers#21](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuidePointers/CS/Pointers.cs#21)]
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Průvodce programováním v C#](../index.md)
 - [-doc (možnosti kompilátoru C#)](../../language-reference/compiler-options/doc-compiler-option.md)

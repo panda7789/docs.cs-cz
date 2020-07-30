@@ -1,17 +1,18 @@
 ---
-title: Jak najít atribut nadřazeného (XPath-LINQ na XML) (C#)
+title: Jak najít atribut nadřazené položky (XPath-LINQ to XML) (C#)
+description: Přečtěte si, jak najít atribut nadřazeného elementu. Podívejte se na příklad kódu, který používá ukázkový dokument XML.
 ms.date: 07/20/2015
 ms.assetid: dbef9d89-a5c4-431f-80cc-7a2ebf323f86
-ms.openlocfilehash: bfe7554a5c767adde5e7170c8e1ea0537155f6df
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 03344bb66f617970d9598c91366eb7d69514397a
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74141172"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303293"
 ---
-# <a name="how-to-find-an-attribute-of-the-parent-xpath-linq-to-xml-c"></a>Jak najít atribut nadřazeného (XPath-LINQ na XML) (C#)
+# <a name="how-to-find-an-attribute-of-the-parent-xpath-linq-to-xml-c"></a>Jak najít atribut nadřazené položky (XPath-LINQ to XML) (C#)
 
-Toto téma ukazuje, jak přejít na nadřazený prvek a najít jeho atribut.
+Toto téma ukazuje, jak přejít na nadřazený prvek a najít atribut.
 
 Výraz XPath je:
 
@@ -19,9 +20,9 @@ Výraz XPath je:
 
 ## <a name="example"></a>Příklad
 
-Tento příklad nejprve `Author` najde prvek. Potom najde `id` atribut nadřazeného prvku.
+Tento příklad nejprve vyhledá `Author` prvek. Pak najde `id` atribut nadřazeného elementu.
 
-Tento příklad používá následující dokument XML: [Ukázkový soubor XML: Books (LINQ to XML).](./sample-xml-file-books-linq-to-xml.md)
+Tento příklad používá následující dokument XML: [ukázkový soubor XML: Books (LINQ to XML)](./sample-xml-file-books-linq-to-xml.md).
 
 ```csharp
 XDocument books = XDocument.Load("Books.xml");
@@ -48,7 +49,7 @@ else
 Console.WriteLine(att1);
 ```
 
-Tento příklad vytváří následující výstup:
+Tento příklad vytvoří následující výstup:
 
 ```output
 Results are identical

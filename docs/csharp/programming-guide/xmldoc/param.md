@@ -1,5 +1,6 @@
 ---
 title: <param> – Průvodce programováním v C#
+description: Další informace o XML <param> Inteligentní. Tato značka se používá v komentáři pro deklaraci metody k popisu jednoho z parametrů pro metodu.
 ms.date: 07/20/2015
 f1_keywords:
 - param
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - <param> C# XML tag
 - param C# XML tag
 ms.assetid: 46d329b1-5b84-4537-9e17-73ca97313e4e
-ms.openlocfilehash: 396ed716c246091a674268020261069f36dd2be8
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: a9e3b2e86528afcbe1330788e248f0143efb5c1b
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287321"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381551"
 ---
 # <a name="param-c-programming-guide"></a>\<param>(Průvodce programováním v C#)
 
@@ -45,7 +46,7 @@ Zkompilujte s [-doc](../../language-reference/compiler-options/doc-compiler-opti
 
 [!code-csharp[csProgGuideDocComments#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDocComments/CS/DocComments.cs#1)]
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Průvodce programováním v C#](../index.md)
 - [Doporučené značky pro komentáře dokumentace](./recommended-tags-for-documentation-comments.md)

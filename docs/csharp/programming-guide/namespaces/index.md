@@ -1,55 +1,56 @@
 ---
-title: Obory názvů – programovací příručka jazyka C#
+title: Obory názvů – Průvodce programováním v C#
+description: Přečtěte si o oborech názvů v programování v jazyce C#. Podívejte se na Přehled vlastností oboru názvů a Prohlédněte si další zdroje informací.
 ms.date: 08/21/2018
 helpviewer_keywords:
 - C# language, namespaces
 - namespaces [C#]
 ms.assetid: b1c4ab46-3fad-4ffa-9deb-dd50a2d8c65a
-ms.openlocfilehash: 21452e259596c9ab10b3d653ec1d8fb90fad131d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: fca2c641520bd9cd19a48bff2119a6f09c3713ea
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75937617"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87382097"
 ---
 # <a name="namespaces-c-programming-guide"></a>Obory názvů (Průvodce programováním v C#)
 
-Obory názvů jsou v programování jazyka C# silně používány dvěma způsoby. Nejprve rozhraní .NET používá obory názvů k uspořádání mnoha tříd takto:  
+Obory názvů se silně využívají v programování v jazyce C# dvěma způsoby. Rozhraní .NET nejprve používá obory názvů k uspořádání svých mnoha tříd, a to takto:  
 
 [!code-csharp[csProgGuide#22](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuide/CS/progGuide.cs#22)]
 
-<xref:System>je obor názvů <xref:System.Console> a je třídou v tomto oboru názvů. Klíčové `using` slovo lze použít tak, aby není vyžadován oúplný název, jako v následujícím příkladu:
+<xref:System>je obor názvů a <xref:System.Console> je třída v tomto oboru názvů. `using`Klíčové slovo lze použít, aby nebylo vyžadováno celé jméno, jako v následujícím příkladu:
 
 [!code-csharp[csProgGuide#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuide/CS/using.cs#1)]
 
 [!code-csharp[csProgGuide#25](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuide/CS/progGuide.cs#25)]
 
-Další informace naleznete v [směrnici o používání .](../../language-reference/keywords/using-directive.md)
+Další informace naleznete v [direktivě using](../../language-reference/keywords/using-directive.md).
 
-Za druhé deklarování vlastní chodů názvů vám může pomoci řídit rozsah názvů tříd a metod ve větších programovacích projektech. Pomocí klíčového slova [oboru názvů](../../language-reference/keywords/namespace.md) deklarujte obor názvů, jako v následujícím příkladu:
+Za druhé deklarujete vlastní obory názvů, které vám pomohou řídit obor názvů tříd a metod ve větších programovacích projektech. Použijte klíčové slovo [Namespace](../../language-reference/keywords/namespace.md) k deklarování oboru názvů, jak je uvedeno v následujícím příkladu:
 
 [!code-csharp[csProgGuideNamespaces#6](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideNamespaces/CS/Namespaces.cs#6)]
 
-Název oboru názvů musí být platný [název identifikátoru](../inside-a-program/identifier-names.md)jazyka C# .
+Název oboru názvů musí být platný [název identifikátoru](../inside-a-program/identifier-names.md)C#.
 
-## <a name="namespaces-overview"></a>Obory názvů – přehled
+## <a name="namespaces-overview"></a>Přehled oborů názvů
 
 Obory názvů mají následující vlastnosti:
 
 - Organizují velké projekty kódu.
-- Jsou vymezeny pomocí `.` operátoru.
-- Směrnice `using` odstraňuje požadavek zadat název oboru názvů pro každou třídu.
-- Obor `global` názvů je "kořenový" `global::System` obor názvů: bude <xref:System> vždy odkazovat na obor názvů .NET.
+- Jsou odděleny pomocí `.` operátoru.
+- `using`Direktiva obviates požadavek na zadání názvu oboru názvů pro každou třídu.
+- `global`Obor názvů je "kořenový" obor názvů: `global::System` bude vždycky odkazovat na <xref:System> obor názvů .NET.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
-Další informace naleznete v části [Namespaces](~/_csharplang/spec/namespaces.md) ve [specifikaci jazyka C#](~/_csharplang/spec/introduction.md).
+Další informace najdete v části [obory názvů](~/_csharplang/spec/namespaces.md) [specifikace jazyka C#](~/_csharplang/spec/introduction.md).
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Programovací příručka jazyka C#](../index.md)
-- [Použití oborů názvů](using-namespaces.md)
+- [Průvodce programováním v C#](../index.md)
+- [Používání oborů názvů](using-namespaces.md)
 - [Jak používat obor názvů My](how-to-use-the-my-namespace.md)
 - [Názvy identifikátorů](../inside-a-program/identifier-names.md)
 - [using – direktiva](../../language-reference/keywords/using-directive.md)
-- [:: Operátor](../../language-reference/operators/namespace-alias-qualifier.md)
+- [:: – Operátor](../../language-reference/operators/namespace-alias-qualifier.md)

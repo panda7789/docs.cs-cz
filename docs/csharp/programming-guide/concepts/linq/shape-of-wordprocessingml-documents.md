@@ -1,24 +1,25 @@
 ---
 title: Tvar dokumentů WordprocessingML (C#)
+description: Přečtěte si o formátu dokumentu WordprocessingML. Několik příkladů C# používá WordprocessingML dokument.
 ms.date: 07/20/2015
 ms.assetid: 3791b5e0-c502-469b-bb75-a7bf6fdd0a94
-ms.openlocfilehash: 58c028fed465f45fdcf8f63f2119eb8e8b201e32
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4a7716d775a634c5ad3719714be68fce67d5cbfe
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76732670"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302344"
 ---
 # <a name="shape-of-wordprocessingml-documents-c"></a>Tvar dokumentů WordprocessingML (C#)
-Toto téma představuje obrazec XML dokumentu WordprocessingML.  
+Toto téma představuje tvar XML dokumentu WordprocessingML.  
   
-## <a name="microsoft-office-formats"></a>Formáty microsoft office  
- Nativní formát souboru pro systém Microsoft Office 2007 je Office Open XML (běžně nazývaný Open XML). Open XML je formát založený na xml, který standardec ecma a v současné době prochází procesem norem ISO-IEC. Značkovací jazyk pro soubory zpracování textu v otevřeném XML se nazývá WordprocessingML. Tento kurz používá wordprocessingML zdrojové soubory jako vstup pro příklady.  
+## <a name="microsoft-office-formats"></a>Formáty systém Microsoft Office  
+ Nativní formát souboru pro 2007 systém Microsoft Office je Office Open XML (obvykle se označuje jako Open XML). Open XML je formát založený na jazyce XML, který Standard ECMA používá a právě prochází procesem standardů ISO-IEC. Jazyk značek pro soubory pro zpracování textu v jazyce Open XML se nazývá WordprocessingML. Tento kurz používá jako vstup pro příklady zdrojové soubory WordprocessingML.  
   
- Pokud používáte sadu Microsoft Office 2003, můžete dokumenty uložit ve formátu Office Open XML, pokud jste nainstalovali sadu Microsoft Office Compatibility Pack pro formáty souborů aplikace Word, Excel a PowerPoint 2007.  
+ Pokud používáte systém Microsoft Office 2003, můžete dokumenty ukládat ve formátu Office Open XML, pokud jste nainstalovali sadu systém Microsoft Office Compatibility Pack pro formáty souborů Word, Excel a PowerPoint 2007.  
   
-## <a name="the-shape-of-wordprocessingml-documents"></a>Obrazec wordprocessingml dokumentů  
- První věc, kterou pochopit, je tvar wordprocessingML dokumentů. WordprocessingML dokument obsahuje element těla (s názvem), `w:body`který obsahuje odstavce dokumentu. Každý odstavec obsahuje jeden nebo `w:r`více spuštění textu (s názvem ). Každé spuštění textu obsahuje jeden nebo `w:t`více textových částí (s názvem).  
+## <a name="the-shape-of-wordprocessingml-documents"></a>Tvar dokumentů WordprocessingML  
+ První věc, kterou je třeba pochopit, je tvar dokumentů WordprocessingML. WordprocessingML dokument obsahuje element tělo (pojmenovaný `w:body` ), který obsahuje odstavce v dokumentu. Každý odstavec obsahuje jedno nebo více textových běhů (s názvem `w:r` ). Každý běh textu obsahuje jednu nebo více textových částí (s názvem `w:t` ).  
   
  Následuje velmi jednoduchý dokument WordprocessingML:  
   
@@ -51,9 +52,9 @@ xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml">
 </w:document>  
 ```  
   
- Tento dokument obsahuje dva odstavce. Oba obsahují jeden text spustit a každý text spustit obsahuje jeden text kus.  
+ Tento dokument obsahuje dva odstavce. Oba obsahují jeden textový běh a každý spuštěný text obsahuje jeden textový kámen.  
   
- Nejjednodušší způsob, jak zobrazit obsah dokumentu WordprocessingML ve formuláři XML, je vytvořit jej pomocí aplikace Microsoft Word, uložit jej a spustit následující program, který vytiskne xml do konzoly.  
+ Nejjednodušší způsob, jak zobrazit obsah dokumentu WordprocessingML ve formátu XML, je vytvořit ho pomocí Microsoft Wordu, uložit ho a pak spustit následující program, který vytiskne XML do konzoly.  
   
  Tento příklad používá třídy nalezené v sestavení WindowsBase. Používá typy v <xref:System.IO.Packaging?displayProperty=nameWithType> oboru názvů.  
   
@@ -89,11 +90,11 @@ using (Package wdPackage = Package.Open("SampleDoc.docx", FileMode.Open, FileAcc
   
 ## <a name="external-resources"></a>Externí zdroje
 
-- [Představujeme office (2007) Formáty souborů Open XML](https://docs.microsoft.com/previous-versions/office/developer/office-2007/aa338205%28v=office.12%29)
-- [Přehled wordprocessingml](https://docs.microsoft.com/previous-versions/office/developer/office-2003/aa212812%28v=office.11%29)
+- [Představení formátů souborů XML sady Office (2007)](https://docs.microsoft.com/previous-versions/office/developer/office-2007/aa338205%28v=office.12%29)
+- [Přehled WordprocessingML](https://docs.microsoft.com/previous-versions/office/developer/office-2003/aa212812%28v=office.11%29)
 - [Anatomie souboru WordProcessingML](http://officeopenxml.com/anatomyofOOXML.php)
-- [Úvod do wordprocessingml](https://ericwhite.com/blog/introduction-to-wordprocessingml-series/)
+- [Úvod do WordprocessingML](https://ericwhite.com/blog/introduction-to-wordprocessingml-series/)
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Kurz: Manipulace s obsahem v dokumentu WordprocessingML (C#)](./shape-of-wordprocessingml-documents.md)
+- [Kurz: manipulace s obsahem v dokumentu WordprocessingML (C#)](./shape-of-wordprocessingml-documents.md)

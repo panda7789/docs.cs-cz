@@ -1,32 +1,33 @@
 ---
-title: Zachování prázdného místa při serializaci3
+title: Zachování mezer při Serializing3
+description: Naučte se ovládat prázdné znaky při serializaci stromu XML pomocí metod v třídách XElement a XDocument.
 ms.date: 07/20/2015
 ms.assetid: 0c4f8b98-483b-4cf8-86be-fa146eef90dc
-ms.openlocfilehash: 6d357d40c13a66a152b3c8bb5f61e3a3374c4055
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 01e68671e2fde1a2b5b1d0bc429841077ba0205f
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "66484074"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303410"
 ---
 # <a name="preserving-white-space-while-serializing"></a>Zachování prázdných znaků při serializaci
-Toto téma popisuje, jak řídit prázdné místo při serializaci stromu XML.  
+Toto téma popisuje, jak ovládat prázdné znaky při serializaci stromu XML.  
   
- Běžným scénářem je čtení odsazeného xml, vytvoření stromu XML v paměti bez neložených uzl (tj. nezachování prázdného místa), provedení některých operací v xml a následné uložení XML s odsazením. Při serializaci xml s formátováním se zachová pouze významné prázdné místo ve stromu XML. Toto je výchozí [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]chování pro aplikace .  
+ Běžným scénářem je čtení odsazeného XML, vytvoření stromu XML ve formátu paměti bez prázdných textových uzlů (tj. Neuchování prázdných znaků), provedení některých operací v XML a následné uložení XML s odsazením. Při serializaci XML s formátováním je zachováno pouze významné prázdné znaky ve stromu XML. Toto je výchozí chování pro [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] .  
   
- Dalším běžným scénářem je čtení a úprava xml, který již byl záměrně odsazen. Možná nebudete chtít změnit toto odsazení v žádném případě. Chcete-li [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]to provést v aplikace , zachovejte prázdné místo při načtení nebo analýzě xml a zakázat formátování při serializaci XML.  
+ Dalším běžným scénářem je číst a upravovat kód XML, který již byl záměrně odsazen. Toto odsazení nebudete chtít nijak měnit. Chcete-li to provést v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] , zachováte prázdné místo při načítání nebo analýze XML a při serializaci kódu XML zakážete formátování.  
   
-## <a name="white-space-behavior-of-methods-that-serialize-xml-trees"></a>Prázdné místo Chování metod, které serializovat stromy XML  
- Následující metody v <xref:System.Xml.Linq.XElement> <xref:System.Xml.Linq.XDocument> a třídy serializovat strom XML. Strom XML můžete serializovat do souboru, stromu <xref:System.IO.TextReader>NEBO . <xref:System.Xml.XmlReader> Metoda `ToString` serializuje řetězec.  
+## <a name="white-space-behavior-of-methods-that-serialize-xml-trees"></a>Chování metod, které serializovat stromy XML, v prázdném prostoru  
+ Následující metody v <xref:System.Xml.Linq.XElement> <xref:System.Xml.Linq.XDocument> třídách a SERIALIZOVAT strom XML. Strom XML lze serializovat do souboru, <xref:System.IO.TextReader> nebo <xref:System.Xml.XmlReader> . `ToString`Metoda je serializována do řetězce.  
   
 - <xref:System.Xml.Linq.XElement.Save%2A?displayProperty=nameWithType>  
   
 - <xref:System.Xml.Linq.XDocument.Save%2A?displayProperty=nameWithType>  
   
-- [XElement.ToString()](xref:System.Xml.Linq.XNode.ToString%2A?displayProperty=nameWithType)
+- [XElement. ToString ()](xref:System.Xml.Linq.XNode.ToString%2A?displayProperty=nameWithType)
   
-- [XDocument.ToString()](xref:System.Xml.Linq.XNode.ToString%2A?displayProperty=nameWithType)
+- [XDocument. ToString ()](xref:System.Xml.Linq.XNode.ToString%2A?displayProperty=nameWithType)
   
- Pokud metoda nebere <xref:System.Xml.Linq.SaveOptions> jako argument, pak metoda bude formátovat (odsazení) serializované XML. V tomto případě jsou zahozeny všechny nevýznamné prázdné místo ve stromu XML.  
+ Pokud metoda nepřijímá <xref:System.Xml.Linq.SaveOptions> jako argument, pak metoda naformátuje (odsadí) serializovaný kód XML. V tomto případě je zahozeno veškeré nevýznamné prázdné znaky ve stromu XML.  
   
- Pokud metoda trvá <xref:System.Xml.Linq.SaveOptions> jako argument, můžete určit, že metoda není formátovat (odsazení) serializovanéXML. V tomto případě je zachováno všechny prázdné místo ve stromu XML.  
+ Pokud metoda převezme <xref:System.Xml.Linq.SaveOptions> jako argument, můžete určit, že metoda nebude formátovat (odsazovat) serializovaného XML. V tomto případě je zachováno veškeré prázdné znaky ve stromu XML.  
