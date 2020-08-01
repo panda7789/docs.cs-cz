@@ -2,12 +2,12 @@
 title: 'Rekurzivní funkce: Klíčové slovo rec'
 description: Zjistěte, jak se klíčové slovo REC používá s klíčovým slovem let k definování rekurzivní funkce.
 ms.date: 05/16/2016
-ms.openlocfilehash: c9a3b7dc27f4ed86948a08b7783d7e8e8b60e57f
-ms.sourcegitcommit: 32f0d6f4c01ddc6ca78767c3a30e3305f8cd032c
+ms.openlocfilehash: c2374f90b4585327c6f5208a3d6bca75a23d0cbb
+ms.sourcegitcommit: 7499bdb428d63ed0e19e97f54d3d576c41598659
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87426973"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87455660"
 ---
 # <a name="recursive-functions-the-rec-keyword"></a>Rekurzivní funkce: Klíčové slovo rec
 
@@ -43,7 +43,7 @@ Metody jsou implicitně rekurzivní v rámci typu; není nutné přidávat `rec`
 
 ## <a name="tail-recursion"></a>Koncová rekurze
 
-U některých rekurzivních funkcí je nutné Refaktorovat více "čisté" definice na hodnotu, která je [argumentem rekurzivně](https://cs.stackexchange.com/questions/6230/what-is-tail-recursion). Tím zabráníte reunecessarym recompute. Například může přepsat předchozí generátor čísel Fibonacci takto:
+U některých rekurzivních funkcí je nutné Refaktorovat více "čisté" definice na hodnotu, která je [argumentem rekurzivně](https://cs.stackexchange.com/questions/6230/what-is-tail-recursion). To brání zbytečnému přepočítání. Například může přepsat předchozí generátor čísel Fibonacci takto:
 
 ```fsharp
 let fib n =
@@ -76,6 +76,6 @@ Následující příklad ukazuje dvě vzájemně rekurzivní funkce.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet4002.fs)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Functions](index.md)

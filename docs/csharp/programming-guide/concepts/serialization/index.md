@@ -2,12 +2,12 @@
 title: Serializace (C#)
 description: Serializace převede objekt na datový proud bajtů pro uložení objektu nebo odeslání do paměti, databáze nebo souboru.
 ms.date: 01/02/2020
-ms.openlocfilehash: b2b3105887ad6f000fcba895452a483881ae5a09
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 29625648b19c97556c107997ef9ecd3f0f971cbf
+ms.sourcegitcommit: 7499bdb428d63ed0e19e97f54d3d576c41598659
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87302773"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87455743"
 ---
 # <a name="serialization-c"></a>Serializace (C#)
 
@@ -45,6 +45,8 @@ Serializace JSON serializace veřejné vlastnosti objektu do řetězce, bajtové
 <xref:System.Runtime.Serialization>Obor názvů obsahuje třídy pro binární a serializaci a deserializaci kódu XML.
 
 Binární serializace používá binární kódování pro vytváření kompaktní serializace pro použití, jako je úložiště nebo síťové datové proudy založené na soketu. V binární serializaci jsou serializováni všichni členové, dokonce i členové, kteří jsou jen pro čtení, a výkon je vylepšen.
+
+[!INCLUDE [binary-serialization-warning](~/includes/binary-serialization-warning.md)]
 
 Serializace XML serializace veřejné pole a vlastnosti objektu nebo parametry a návratové hodnoty metod do datového proudu XML, který odpovídá konkrétnímu dokumentu XSD (XML Schema Definition Language). Serializace XML má za následek třídy silného typu s veřejnými vlastnostmi a poli, které jsou převedeny na XML. <xref:System.Xml.Serialization>obsahuje třídy pro serializaci a deserializaci kódu XML. Můžete použít atributy na třídy a členy třídy pro řízení způsobu, jakým <xref:System.Xml.Serialization.XmlSerializer> serializace nebo deserializace instance třídy.
 

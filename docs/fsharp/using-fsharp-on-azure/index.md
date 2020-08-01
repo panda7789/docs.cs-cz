@@ -2,13 +2,13 @@
 title: Použití jazyka F# v Azure
 description: 'Průvodce používáním služeb Azure s F #'
 author: sylvanc
-ms.date: 09/22/2016
-ms.openlocfilehash: f074ac192f6dedbadf8132430cf27dc5865e6371
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.date: 07/29/2020
+ms.openlocfilehash: ebf94d724db2c503f27581bf1352bf4fa90f5e2a
+ms.sourcegitcommit: 7499bdb428d63ed0e19e97f54d3d576c41598659
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84501817"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87455709"
 ---
 # <a name="using-f-on-azure"></a>Použití jazyka F# v Azure
 
@@ -55,12 +55,14 @@ Azure Storage lze také použít ve spojení s Azure Functions prostřednictvím
 * [Příklad webového rozhraní API v jazyce F #](https://github.com/fsprojects/azure-webapi-example)
 * [Hostování F # ve webové aplikaci v Azure](https://github.com/isaacabraham/fsharp-demonstrator)
 
-## <a name="using-apache-spark-with-f-with-azure-hdinsight"></a>Použití Apache Spark s F # s Azure HDInsight
+## <a name="using-apache-spark-with-f-on-azure-hdinsight-or-azure-databricks"></a>Použití Apache Spark s F # v Azure HDInsight nebo Azure Databricks
 
-[Apache Spark pro Azure HDInsight](https://azure.microsoft.com/services/hdinsight/apache-spark/) je open source platforma pro zpracování, která spouští rozsáhlé aplikace pro analýzu dat. Azure přináší Apache Spark snadný a nákladově efektivní nasazení. Vývoj aplikace Spark v jazyce F # pomocí [Mobius](https://github.com/Microsoft/Mobius), rozhraní .NET API pro Spark.
+[Apache Spark pro Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/spark/apache-spark-overview) je open source platforma pro zpracování, která spouští rozsáhlé aplikace pro analýzu dat. [Azure Databricks](https://docs.microsoft.com/azure/databricks/scenarios/what-is-azure-databricks) je analytická platforma založená na Apache Spark optimalizovaná pro platformu Microsoft Azure cloudové služby. Azure přináší Apache Spark snadný a nákladově efektivní nasazení. Vývoj aplikace Spark v jazyce F # pomocí [rozhraní .NET pro Apache Spark](../../spark/what-is-apache-spark-dotnet.md), sady vazeb .net pro Apache Spark.
 
-* [Implementace aplikací Spark v F # pomocí Mobius](https://github.com/Microsoft/Mobius/blob/master/notes/spark-fsharp-mobius.md)
-* [Příklady aplikací v jazyce F # Spark využívajících Mobius](https://github.com/Microsoft/Mobius/tree/master/examples/fsharp)
+* [Ukázky rozhraní .NET pro Apache Spark F #](https://github.com/dotnet/spark/tree/master/examples/Microsoft.Spark.FSharp.Examples)
+* [Instalace interaktivních poznámkových bloků .NET Interactive Jupyter ve službě Azure HDInsight](../../spark/how-to-guides/hdinsight-notebook-installation.md)
+* [Odesílání úloh Apache Spark do Azure HDInsight](../../spark/how-to-guides/hdinsight-deploy-methods.md)
+* [Odeslat Apache Spark úlohy do Azure Databricks](../../spark/how-to-guides/databricks-deploy-methods.md)
 
 ## <a name="using-azure-cosmos-db-with-f"></a>Použití Azure Cosmos DB s F\#
 

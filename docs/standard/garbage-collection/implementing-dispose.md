@@ -10,16 +10,16 @@ helpviewer_keywords:
 - Dispose method
 - garbage collection, Dispose method
 ms.assetid: eb4e1af0-3b48-4fbc-ad4e-fc2f64138bf9
-ms.openlocfilehash: c8b4b9a79577776bc049ef77e222d63374178708
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 4f0cc9b88947d60638057ca83adb7f2e141c5d14
+ms.sourcegitcommit: 7499bdb428d63ed0e19e97f54d3d576c41598659
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84447170"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87455736"
 ---
 # <a name="implement-a-dispose-method"></a>Implementace metody Dispose
 
-Implementace <xref:System.IDisposable.Dispose%2A> metody je primárně určena pro uvolňování nespravovaných prostředků používaných vaším kódem. Při práci se členy instance, které jsou <xref:System.IDisposable> implementace, je běžné volání kaskády <xref:System.IDisposable.Dispose%2A> . K dispozici jsou další důvody pro implementaci <xref:System.IDisposable.Dispose%2A> , jako je například vrácení dříve provedených změn. Například uvolnění paměti, která byla přidělena, odebrání položky z kolekce, která byla přidána, signalizace vydání zámku, který byl získán a tak dále.
+Implementace <xref:System.IDisposable.Dispose%2A> metody je primárně určena pro uvolňování nespravovaných prostředků. Při práci se členy instance, které jsou <xref:System.IDisposable> implementace, je běžné volání kaskády <xref:System.IDisposable.Dispose%2A> . K dispozici jsou další důvody pro implementaci <xref:System.IDisposable.Dispose%2A> , například k uvolnění přidělené paměti, odebrání položky, která byla přidána do kolekce, nebo k signalizaci vydání zámku, který byl získán.
 
 [Systém uvolňování paměti .NET](index.md) nepřiřazuje ani neuvolní nespravovanou paměť. Vzor pro likvidaci objektu, který je označován jako vzor Dispose, ukládá pořadí pro životnost objektu. Vzor Dispose se používá pro objekty, které implementují <xref:System.IDisposable> rozhraní a je běžné při interakci s popisovači souborů a kanálů, obslužnými rutinami registru, obslužnými rutinami čekání nebo ukazateli na bloky nespravované paměti. Důvodem je to, že systém uvolňování paměti nemůže uvolnit nespravované objekty.
 

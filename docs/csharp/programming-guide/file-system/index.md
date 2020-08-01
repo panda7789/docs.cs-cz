@@ -20,7 +20,7 @@ Následující články ukazují, jak používat C# a .NET k provádění různ�
 
 ## <a name="in-this-section"></a>V této části
 
-|**Název**|**Popis**|
+|**Název**|**Description**|
 |---------------|---------------------|
 |[Jak iterovat přes adresářový strom](how-to-iterate-through-a-directory-tree.md)|Ukazuje, jak ručně iterovat prostřednictvím stromu adresářů.|
 |[Jak získat informace o souborech, složkách a jednotkách](how-to-get-information-about-files-folders-and-drives.md)|Ukazuje, jak načítat informace, jako jsou časy a velikost vytvoření, informace o souborech, složkách a jednotkách.|

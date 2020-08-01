@@ -2,12 +2,12 @@
 title: Přerušující změny knihovny základních tříd
 description: Obsahuje seznam nejnovějších změn v základních knihovnách .NET.
 ms.date: 07/27/2020
-ms.openlocfilehash: d34cd2e7ba1122b11921eefaee2ed55ba0c8df8d
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: c80270eab723d922734431ed2087dc8c17e706f7
+ms.sourcegitcommit: 7499bdb428d63ed0e19e97f54d3d576c41598659
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87302994"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87455757"
 ---
 # <a name="core-net-libraries-breaking-changes"></a>Základní knihovny .NET – přerušující změny
 
@@ -17,6 +17,7 @@ Na této stránce jsou popsány následující přerušující se změny:
 
 | Zásadní změna | Představená verze |
 | - | :-: |
+| [Cesty kódu UTF-7 jsou zastaralé.](#utf-7-code-paths-are-obsolete) | 5.0 |
 | [Vector \<T> vždy vyvolá NotSupportedException pro nepodporované typy](#vectort-always-throws-notsupportedexception-for-unsupported-types) | 5.0 |
 | [Výchozí ActivityIdFormat je W3C.](#default-activityidformat-is-w3c) | 5.0 |
 | [Změna chování pro Vector2. lerp a Vector4. lerp](#behavior-change-for-vector2lerp-and-vector4lerp) | 5.0 |
@@ -46,6 +47,10 @@ Na této stránce jsou popsány následující přerušující se změny:
 | [Process. StartInfo vyvolá InvalidOperationException pro procesy, které jste nespustili.](#processstartinfo-throws-invalidoperationexception-for-processes-you-didnt-start) | 1.0 |
 
 ## <a name="net-50"></a>.NET 5,0
+
+[!INCLUDE [utf-7-code-paths-obsolete](../../../includes/core-changes/corefx/5.0/utf-7-code-paths-obsolete.md)]
+
+***
 
 [!INCLUDE [vectort-throws-notsupportedexception](../../../includes/core-changes/corefx/5.0/vectort-throws-notsupportedexception.md)]
 

@@ -3,12 +3,12 @@ title: " Nástroje .NET Core"
 description: Jak nainstalovat, používat, aktualizovat a odebrat nástroje .NET Core Zahrnuje globální nástroje, nástroje nástroje pro cestu a místní nástroje.
 author: KathleenDollard
 ms.date: 02/12/2020
-ms.openlocfilehash: 583dbb461543d1efb7328d55f6ecce4a99afcaca
-ms.sourcegitcommit: 67cf756b033c6173a1bbd1cbd5aef1fccac99e34
+ms.openlocfilehash: 75bdedcbc3ebe9c23477795415076d160ab9a642
+ms.sourcegitcommit: 7499bdb428d63ed0e19e97f54d3d576c41598659
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86226605"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87455726"
 ---
 # <a name="how-to-manage-net-core-tools"></a>Správa nástrojů .NET Core
 
@@ -37,11 +37,11 @@ Nástroj .NET Core je speciální balíček NuGet, který obsahuje konzolovou ap
 
 V současné době .NET Core nemá funkci pro hledání v nástroji. Tady je několik způsobů, jak najít nástroje:
 
+* Prohledejte web [NuGet](https://www.nuget.org) pomocí filtru typu balíčku .NET nástroje. Další informace najdete v tématu [vyhledání a výběr balíčků](/nuget/consume-packages/finding-and-choosing-packages).
 * Podívejte se na seznam nástrojů v úložišti GitHub [natemcmaster/dotnet-Tools](https://github.com/natemcmaster/dotnet-tools) .
 * Pomocí [ToolGet](https://www.toolget.net/) můžete vyhledat nástroje .NET.
 * Podívejte se na zdrojový kód pro nástroje vytvořené týmem ASP.NET Core v [adresáři Tools úložiště GitHubu pro dotnet/aspnetcore](https://github.com/dotnet/aspnetcore/tree/master/src/Tools).
 * Seznamte se s diagnostickými nástroji na [diagnostických nástrojích rozhraní .NET Core dotnet](../diagnostics/index.md#net-core-dotnet-diagnostic-global-tools).
-* Prohledejte web [NuGet](https://www.nuget.org) . Web NuGet ale ještě nemá funkci, která vám umožní hledat jenom balíčky nástrojů.
 
 ## <a name="check-the-author-and-statistics"></a>Kontrolovat autora a statistiky
 
