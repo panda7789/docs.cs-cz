@@ -1,5 +1,6 @@
 ---
 title: Storeadm.exe (nástroj izolovaného úložiště)
+description: Přečtěte si o Storeadm.exe, nástroji izolované úložiště. Tento nástroj vypíše nebo odebere všechna existující úložiště pro aktuálního uživatele.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Storeadm.exe
@@ -8,17 +9,17 @@ helpviewer_keywords:
 - stores, current user
 - removing stores
 ms.assetid: b81202b8-d91d-4b23-9c53-4a112f74a44a
-ms.openlocfilehash: 46e846eaf92835fb2a9130b85ed20749934ca5a1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 153fc2b4b5a955fd5ed768d1492f053595363e6e
+ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75715716"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87517006"
 ---
 # <a name="storeadmexe-isolated-storage-tool"></a>Storeadm.exe (nástroj izolovaného úložiště)
 Nástroj izolované úložiště vypíše seznam všech existujících úložišť pro aktuálního uživatele nebo všechna existující úložiště odebere.  
   
- Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li nástroj spustit, použijte příkazový řádek pro vývojáře pro sadu Visual Studio (nebo příkazový řádek sady Visual Studio v systému Windows 7). Další informace naleznete v [příkazových koncích](developer-command-prompt-for-vs.md).  
+ Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li spustit nástroj, použijte Developer Command Prompt pro Visual Studio (nebo příkazový řádek sady Visual Studio v systému Windows 7). Další informace najdete v tématu [výzvy k zadání příkazu](developer-command-prompt-for-vs.md).  
   
  V příkazovém řádku zadejte následující:  
   
@@ -32,34 +33,34 @@ storeadm [/list][/machine][/remove][/roaming][/quiet]
   
 |Možnost|Popis|  
 |------------|-----------------|  
-|**/h**[**elp**]|Zobrazí syntaxi příkazu a možnosti nástroje.|  
-|**/seznam**|Zobrazí všechna existující úložiště pro aktuálního uživatele. Jedná se o úložiště pro všechny aplikace nebo sestavení spuštěná tímto uživatelem.|  
-|**/stroj**|Vybere úložiště počítače. Tuto možnost použijte s parametrem **/list** nebo **/remove** a určete, že akce by se měla vztahovat na úložiště počítače.<br /><br /> Novinky v rozhraní .NET Framework 2.0|  
-|**/tichý**|Nastaví tichý režim; potlačí informační výstup tak, aby se zobrazovaly pouze chybové zprávy.|  
-|**/odebrat**|Permanentně odstraní všechna existující úložiště pro aktuálního uživatele.|  
-|**/roaming**|Vybere roamingové úložiště. Tuto možnost použijte s možnostmi **/list** nebo **/remove** a určete, že akce by se měla vztahovat na cestovní úložiště.|  
+|**/h**[**ELP**]|Zobrazí syntaxi příkazu a možnosti nástroje.|  
+|**/list**|Zobrazí všechna existující úložiště pro aktuálního uživatele. Jedná se o úložiště pro všechny aplikace nebo sestavení spuštěná tímto uživatelem.|  
+|**/Machine**|Vybere úložiště počítače. Tuto možnost použijte spolu s možností **/list** nebo **/Remove** a určete tak, že se akce má vztahovat na úložiště počítače.<br /><br /> Novinky v rozhraní .NET Framework 2.0|  
+|**parametr**|Nastaví tichý režim; potlačí informační výstup tak, aby se zobrazovaly pouze chybové zprávy.|  
+|**/Remove**|Permanentně odstraní všechna existující úložiště pro aktuálního uživatele.|  
+|**/roaming**|Vybere roamingové úložiště. Tuto možnost použijte spolu s možnostmi **/list** nebo **/Remove** k určení, že by akce měla platit pro roamingové úložiště.|  
 |**/?**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
   
 ## <a name="remarks"></a>Poznámky  
  Jestliže spustíte nástroj Storeadm.exe z příkazového řádku bez zadání jakýchkoli možností, zobrazí se syntaxe a možnosti pro tento nástroj.  
   
- Možnosti **/list** a **/remove** se obvykle používají jeden po druhém; pokud jsou však zadány dvě nebo více možností, budou provedeny v pořadí, ve kterém se zobrazí na příkazovém řádku.  
+ Možnosti **/list** a **/Remove** jsou obvykle používány po jednom. Pokud jsou však zadány dvě nebo více možností, budou provedeny v pořadí, ve kterém se zobrazí na příkazovém řádku.  
   
  Aplikace mají možnost ukládat do jednoho nebo dvou úložišť pro uživatele nebo do úložiště počítače:  
   
-- Místní úložiště existuje v umístění, které je zaručeno, že nebude roaming (v systému Windows 2000 a novější) i v případě, že je pro uživatele povolen datový roaming uživatele.  
+- Místní úložiště existuje v umístění, ve kterém se garantuje roaming (ve Windows 2000 a novějším), a to i v případě, že je pro uživatele povolen roaming dat uživatele.  
   
-- Úložiště roamingu existuje v umístění, které se může přemísťovat, ale může tak učinit pouze v případě, že je pro uživatele povolen roaming prostřednictvím správy systému Windows NT.  
+- Roamingové úložiště existuje v umístění, které se může přenášet, ale může to udělat jenom v případě, že je pro uživatele povolený roaming prostřednictvím správy systému Windows NT.  
   
 - Úložiště počítače je společné pro všechny uživatele počítače a je uloženo ve společném adresáři v daném počítači.  
   
     > [!NOTE]
     > Úložiště počítače je v rozhraní .NET Framework verze 2.0 novinkou.  
   
- To, zda je roaming skutečně povolen pro určitého uživatele, nemá vliv na správu nástroje Storeadm.exe. Při spuštění nástroje bez jakýchkoli možností se použijí všechny akce na místní úložiště. Spuštění nástroje s parametrem **/roaming** použije všechny akce pro úložiště, které je možné přejít. Spuštění nástroje s parametrem **/machine** použije všechny akce pro úložiště počítače.  
+ To, zda je roaming skutečně povolen pro určitého uživatele, nemá vliv na správu nástroje Storeadm.exe. Při spuštění nástroje bez jakýchkoli možností se použijí všechny akce na místní úložiště. Spuštění nástroje s možností **/roaming** aplikuje všechny akce do úložiště, které je možné přenášet na roaming. Spuštění nástroje s možností **/Machine** použije všechny akce na úložiště počítače.  
   
 ## <a name="see-also"></a>Viz také
 
 - [Nástroje](index.md)
 - [Izolované úložiště](../../standard/io/isolated-storage.md)
-- [Příkazové řádky](developer-command-prompt-for-vs.md)
+- [Výzvy příkazového řádku](developer-command-prompt-for-vs.md)

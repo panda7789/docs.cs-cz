@@ -2,12 +2,12 @@
 title: dotnet – nástroj trasování – .NET Core
 description: Instalace a použití nástroje příkazového řádku dotnet-Trace.
 ms.date: 11/21/2019
-ms.openlocfilehash: 6dd968dc49522229dca02c0dc6f3de898026dd82
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: 25178a0e59ce9edb69d15ee761c1b9e56aa5eb3a
+ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86924848"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87517305"
 ---
 # <a name="dotnet-trace-performance-analysis-utility"></a>dotnet – Nástroj pro analýzu výkonu trasování
 
@@ -27,7 +27,7 @@ dotnet tool install --global dotnet-trace
 dotnet-trace [-h, --help] [--version] <command>
 ```
 
-## <a name="description"></a>Popis
+## <a name="description"></a>Description
 
 `dotnet-trace`Nástroj:
 
@@ -38,13 +38,13 @@ dotnet-trace [-h, --help] [--version] <command>
 
 ## <a name="options"></a>Možnosti
 
-- **`--version`**
-
-  Zobrazuje verzi nástroje dotnet-Trace.
-
 - **`-h|--help`**
 
   Zobrazí pomocníka s příkazovým řádkem.
+
+- **`--version`**
+
+  Zobrazuje verzi nástroje dotnet-Trace.
 
 ## <a name="commands"></a>Příkazy
 
@@ -62,23 +62,45 @@ Shromažďuje diagnostické trasování ze spuštěného procesu.
 ### <a name="synopsis"></a>Stručný obsah
 
 ```console
-dotnet-trace collect [-h|--help] [-p|--process-id] [--buffersize <size>] [-o|--output]
-    [--providers] [--profile <profile-name>] [--format]
+dotnet-trace collect [--buffersize <size>] [--clreventlevel <clreventlevel>] [--clrevents <clrevents>]
+    [--format <Chromium|NetTrace|Speedscope>] [-h|--help]
+    [-n, --name <name>]  [-o|--output <trace-file-path>] [-p|--process-id <pid>]
+    [--profile <profile-name>] [--providers <list-of-comma-separated-providers>]
 ```
 
 ### <a name="options"></a>Možnosti
-
-- **`-p|--process-id <PID>`**
-
-  Proces, ze kterého má být trasování shromážděno.
 
 - **`--buffersize <size>`**
 
   Nastaví velikost cyklické vyrovnávací paměti v paměti (v megabajtech). Výchozí 256 MB.
 
+- **`--clreventlevel <clreventlevel>`**
+
+  Podrobnosti událostí CLR, které se mají vygenerovat
+
+- **`--clrevents <clrevents>`**
+
+  Seznam událostí modulu runtime CLR k vygenerování
+
+- **`--format {Chromium|NetTrace|Speedscope}`**
+
+  Nastaví výstupní formát pro převod trasovacího souboru. Výchozí formát je `NetTrace`.
+
+- **`-n, --name <name>`**
+
+  Název procesu, ze kterého se má shromáždit trasování.
+
 - **`-o|--output <trace-file-path>`**
 
   Výstupní cesta pro shromážděná data trasování. Pokud není zadaný, použije se výchozí hodnota `trace.nettrace` .
+
+- **`-p|--process-id <PID>`**
+
+  ID procesu, ze kterého se má shromáždit trasování
+
+- **`--profile <profile-name>`**
+
+  Pojmenovaná předem definovaná sada konfigurací zprostředkovatele, která umožňuje stručně zadat běžné scénáře trasování.
 
 - **`--providers <list-of-comma-separated-providers>`**
 
@@ -90,14 +112,6 @@ dotnet-trace collect [-h|--help] [-p|--process-id] [--buffersize <size>] [-o|--o
   - `Provider`má formát: `KnownProviderName[:Flags[:Level][:KeyValueArgs]]` .
   - `KeyValueArgs`má formát: `[key1=value1][;key2=value2]` .
 
-- **`--profile <profile-name>`**
-
-  Pojmenovaná předem definovaná sada konfigurací zprostředkovatele, která umožňuje stručně zadat běžné scénáře trasování.
-
-- **`--format {NetTrace|Speedscope}`**
-
-  Nastaví výstupní formát pro převod trasovacího souboru. Výchozí formát je `NetTrace`.
-
 ## <a name="dotnet-trace-convert"></a>dotnet – trasovat převod
 
 Převede `nettrace` trasování na alternativní formáty pro použití s alternativními nástroji pro analýzu trasování.
@@ -105,7 +119,7 @@ Převede `nettrace` trasování na alternativní formáty pro použití s altern
 ### <a name="synopsis"></a>Stručný obsah
 
 ```console
-dotnet-trace convert [<input-filename>] [-h|--help] [--format] [-o|--output]
+dotnet-trace convert [<input-filename>] [--format <Chromium|NetTrace|Speedscope>] [-h|--help] [-o|--output <output-filename>]
 ```
 
 ### <a name="arguments"></a>Arguments
@@ -116,7 +130,7 @@ dotnet-trace convert [<input-filename>] [-h|--help] [--format] [-o|--output]
 
 ### <a name="options"></a>Možnosti
 
-- **`--format <NetTrace|Speedscope>`**
+- **`--format <Chromium|NetTrace|Speedscope>`**
 
   Nastaví výstupní formát pro převod trasovacího souboru.
 
@@ -126,7 +140,7 @@ dotnet-trace convert [<input-filename>] [-h|--help] [--format] [-o|--output]
 
 ## <a name="dotnet-trace-ps"></a>dotnet – trasování PS
 
-Obsahuje seznam procesů dotnet, ke kterým lze připojit.
+ Zobrazuje seznam procesů dotnet, ze kterých lze shromažďovat trasování.
 
 ### <a name="synopsis"></a>Stručný obsah
 

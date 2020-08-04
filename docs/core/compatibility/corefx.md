@@ -2,12 +2,12 @@
 title: Přerušující změny knihovny základních tříd
 description: Obsahuje seznam nejnovějších změn v základních knihovnách .NET.
 ms.date: 07/27/2020
-ms.openlocfilehash: c80270eab723d922734431ed2087dc8c17e706f7
-ms.sourcegitcommit: 7499bdb428d63ed0e19e97f54d3d576c41598659
+ms.openlocfilehash: 558aa1d76831cd15e2028c17d2b0b2e82f64ef9a
+ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87455757"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87517321"
 ---
 # <a name="core-net-libraries-breaking-changes"></a>Základní knihovny .NET – přerušující změny
 
@@ -17,6 +17,7 @@ Na této stránce jsou popsány následující přerušující se změny:
 
 | Zásadní změna | Představená verze |
 | - | :-: |
+| [Metody serializace BinaryFormatter jsou zastaralé a zakázané v aplikacích ASP.NET](#binaryformatter-serialization-methods-are-obsolete-and-prohibited-in-aspnet-apps) | 5.0 |
 | [Cesty kódu UTF-7 jsou zastaralé.](#utf-7-code-paths-are-obsolete) | 5.0 |
 | [Vector \<T> vždy vyvolá NotSupportedException pro nepodporované typy](#vectort-always-throws-notsupportedexception-for-unsupported-types) | 5.0 |
 | [Výchozí ActivityIdFormat je W3C.](#default-activityidformat-is-w3c) | 5.0 |
@@ -32,7 +33,6 @@ Na této stránce jsou popsány následující přerušující se změny:
 | [Výměna chybně formátovaných sekvencí UTF-8 se řídí pokyny pro kódování Unicode](#replacing-ill-formed-utf-8-byte-sequences-follows-unicode-guidelines) | 3.0 |
 | [TypeDescriptionProviderAttribute přesunuté do jiného sestavení](#typedescriptionproviderattribute-moved-to-another-assembly) | 3.0 |
 | [ZipArchiveEntry už nezpracovává archivy s nekonzistentními velikostmi záznamů.](#ziparchiveentry-no-longer-handles-archives-with-inconsistent-entry-sizes) | 3.0 |
-| [Typ výjimky serializátoru JSON se změnil z JsonException na NotSupportedException.](#json-serializer-exception-type-changed-from-jsonexception-to-notsupportedexception) | 3.0 |
 | [Změna v sémantikě (String) null v Utf8JsonWriter](#change-in-semantics-of-stringnull-in-utf8jsonwriter) | 3.0 |
 | [Metody JsonEncodedText. Encode mají další argument JavaScriptEncoder.](#jsonencodedtextencode-methods-have-an-additional-javascriptencoder-argument) | 3.0 |
 | [Změnil se podpis JsonFactoryConverter. CreateConverter.](#jsonfactoryconvertercreateconverter-signature-changed) | 3.0 |
@@ -47,6 +47,10 @@ Na této stránce jsou popsány následující přerušující se změny:
 | [Process. StartInfo vyvolá InvalidOperationException pro procesy, které jste nespustili.](#processstartinfo-throws-invalidoperationexception-for-processes-you-didnt-start) | 1.0 |
 
 ## <a name="net-50"></a>.NET 5,0
+
+[!INCLUDE [binaryformatter-serialization-obsolete](../../../includes/core-changes/corefx/5.0/binaryformatter-serialization-obsolete.md)]
+
+***
 
 [!INCLUDE [utf-7-code-paths-obsolete](../../../includes/core-changes/corefx/5.0/utf-7-code-paths-obsolete.md)]
 
@@ -107,10 +111,6 @@ Na této stránce jsou popsány následující přerušující se změny:
 ***
 
 [!INCLUDE[ZipArchiveEntry no longer handles archives with inconsistent entry sizes](~/includes/core-changes/corefx/3.0/ziparchiveentry-and-inconsistent-entry-sizes.md)]
-
-***
-
-[!INCLUDE[JSON serializer exception type changed from JsonException to NotSupportedException](~/includes/core-changes/corefx/3.0/serializer-throws-notsupportedexception.md)]
 
 ***
 

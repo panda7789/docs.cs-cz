@@ -3,12 +3,12 @@ title: Použití jazyka F# v Azure
 description: 'Průvodce používáním služeb Azure s F #'
 author: sylvanc
 ms.date: 07/29/2020
-ms.openlocfilehash: ebf94d724db2c503f27581bf1352bf4fa90f5e2a
-ms.sourcegitcommit: 7499bdb428d63ed0e19e97f54d3d576c41598659
+ms.openlocfilehash: 24ef3fd14a4d0173935fac3e67aadf86110fa6d8
+ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87455709"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87517370"
 ---
 # <a name="using-f-on-azure"></a>Použití jazyka F# v Azure
 
@@ -113,7 +113,7 @@ Webhooky se dají implementovat v F # a hostovat v Azure pomocí [funkce Azure v
 
 Virtuální počítače Azure můžou být programově nasazené a spravované ze skriptů F # pomocí balíčků Microsoft. Azure. Management a rozhraní API. Příklad najdete v tématu [Začínáme s knihovnami pro správu rozhraní .NET](https://msdn.microsoft.com/library/dn722415.aspx) a [pomocí Azure Resource Manager](/azure/azure-resource-manager/resource-manager-deployment-model).
 
-Stejně tak mohou být také nasazeny další prostředky Azure a spravovány ze skriptů F # pomocí stejných komponent. Můžete například vytvořit účty úložiště, nasadit Azure Cloud Services, vytvářet Azure Cosmos DB instance a spravovat centra Azure nakonfigurovaná programově ze skriptů F #.
+Stejně tak mohou být také nasazeny další prostředky Azure a spravovány ze skriptů F # pomocí stejných komponent. Můžete například vytvořit účty úložiště, nasadit Azure Cloud Services, vytvářet Azure Cosmos DB instance a spravovat službu Azure Notification Hubs programově ze skriptů F #.
 
 Použití skriptů F # pro nasazení a správu prostředků není normálně nutné. Například prostředky Azure mohou být nasazeny přímo z popisů šablon JSON, které lze parametrizovaně. Viz [šablony Azure Resource Manager](/azure/azure-resource-manager/resource-manager-template-best-practices) , včetně příkladů, jako jsou například [šablony pro rychlý Start Azure](https://azure.microsoft.com/resources/templates/).
 

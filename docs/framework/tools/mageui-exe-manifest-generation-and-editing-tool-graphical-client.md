@@ -1,81 +1,82 @@
 ---
 title: MageUI.exe (generování manifestu a nástroj pro úpravy, grafický klient)
+description: Prozkoumejte MageUI.exe, Manifest Generation and Editing Tool a grafického klienta. Vytvářejte, upravujte a podepište manifesty nasazení a aplikací pomocí tohoto nástroje grafického uživatelského rozhraní (GUI).
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Manifest Generation and Editing tool
 - MageUI.exe
 ms.assetid: f9e130a6-8117-49c4-839c-c988f641dc14
-ms.openlocfilehash: 7d09e1283be8ec75df89957e91f0d8411c125b3b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1ff7c10a478f0f0f53d7b00f34b228b9070f798d
+ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74714458"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87516720"
 ---
 # <a name="mageuiexe-manifest-generation-and-editing-tool-graphical-client"></a>MageUI.exe (generování manifestu a nástroj pro úpravy, grafický klient)
 
-Nástroj MageUI.exe podporuje stejné funkce jako nástroj příkazového řádku Mage.exe, ale používá uživatelské rozhraní (UI) založené na systému Windows. Pomocí tohoto nástroje je možné vytvářet, upravovat a podepisovat manifesty nasazení a aplikací. Nové manifesty, které jsou vytvořeny pomocí mageUI.exe cíl .NET Framework 4 profil klienta. Pro straší verze rozhraní .NET Framework byste měli použít starší verze nástroje MageUI.exe. Při přidávání nebo odebírání sestavení z manifestu nebo opětovném podepsání existujících manifestů mageUI.exe neaktualizuje manifest na cílový profil klienta rozhraní .NET Framework 4. Další informace naleznete v [tématu Mage.exe (Nástroj pro generování a úpravy manifestu).](mage-exe-manifest-generation-and-editing-tool.md)
+Nástroj MageUI.exe podporuje stejné funkce jako nástroj příkazového řádku Mage.exe, ale používá uživatelské rozhraní (UI) založené na systému Windows. Pomocí tohoto nástroje je možné vytvářet, upravovat a podepisovat manifesty nasazení a aplikací. Nové manifesty vytvořené pomocí MageUI.exe cílí na profil klienta .NET Framework 4. Pro straší verze rozhraní .NET Framework byste měli použít starší verze nástroje MageUI.exe. Když přidáváte nebo odebíráte sestavení z manifestu nebo znovu podepíšete existující manifesty, MageUI.exe neaktualizuje manifest na cílovou .NET Framework 4 profil klienta. Další informace najdete v tématu [Mage.exe (Manifest Generation and Editing Tool)](mage-exe-manifest-generation-and-editing-tool.md).
 
- Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li nástroj spustit, použijte příkazový řádek pro vývojáře pro sadu Visual Studio (nebo příkazový řádek sady Visual Studio v systému Windows 7). Další informace naleznete v [příkazových koncích](developer-command-prompt-for-vs.md).
+ Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li spustit nástroj, použijte Developer Command Prompt pro Visual Studio (nebo příkazový řádek sady Visual Studio v systému Windows 7). Další informace najdete v tématu [výzvy k zadání příkazu](developer-command-prompt-for-vs.md).
 
- Dvě verze Mage.exe a MageUI.exe jsou součástí sady Visual Studio. Chcete-li zobrazit informace o verzi, spusťte soubor MageUI.exe, vyberte **nápovědu**a vyberte **možnost O .** Tato dokumentace popisuje verzi 4.0.x.x nástrojů Mage.exe a MageUI.exe.
+ Součástí sady Visual Studio jsou dvě verze Mage.exe a MageUI.exe. Chcete-li zobrazit informace o verzi, spusťte MageUI.exe, vyberte možnost **nápovědu**a vyberte možnost **o produktu**. Tato dokumentace popisuje verzi 4.0.x.x nástrojů Mage.exe a MageUI.exe.
 
 > [!NOTE]
-> MageUI.exe nepodporuje [prvek compatibleFrameworks](/visualstudio/deployment/compatibleframeworks-element-clickonce-deployment) při ukládání manifestu aplikace, který již byl podepsán certifikátem pomocí souboru MageUI.exe. Místo toho je nutné použít [mage.exe](mage-exe-manifest-generation-and-editing-tool.md).  
+> MageUI.exe nepodporuje element [compatibleFrameworks](/visualstudio/deployment/compatibleframeworks-element-clickonce-deployment) při ukládání manifestu aplikace, který již byl podepsán pomocí certifikátu pomocí MageUI.exe. Místo toho je nutné použít [Mage.exe](mage-exe-manifest-generation-and-editing-tool.md).  
   
 ## <a name="uielement-list"></a>Seznam prvků uživatelského rozhraní  
  Následující tabulka obsahuje dostupné položky nabídek a panelu nástrojů.  
   
-|Příkaz|Nabídka|Zástupce|Popis|  
+|Příkaz|Nabídka|Zástupce|Description|  
 |-------------|----------|--------------|-----------------|  
-|**Manifest aplikace**|**Soubor, Nový**||Vytvoří nový manifest aplikace.|  
-|**Manifest nasazení**|**Soubor, Nový**||Vytvoří nový manifest nasazení.|  
+|**Manifest aplikace**|**Soubor, nový**||Vytvoří nový manifest aplikace.|  
+|**Manifest nasazení**|**Soubor, nový**||Vytvoří nový manifest nasazení.|  
 |**Otevřít**|**Soubor**|CTRL+O|Otevře existující manifest nasazení, manifest aplikace nebo důvěryhodnou licenci v režimu úprav.|  
 |**Zavřít**|**Soubor**|CTRL+F4|Zavře otevřený soubor.<br /><br /> Upravíte-li soubor před jeho uzavřením, požádá nástroj MageUI.exe o opětovné podepsání souboru veřejným klíčem, párem klíčů nebo uloženým certifikátem.|  
 |**Uložit**|**Soubor**|CTRL+S|Uloží soubor, na který je aktuálně zaměřen uživatelský vstup, na disk.|  
 |**Uložit jako**|**Soubor**||Uloží soubor na disk a umožní zadat název souboru nebo jeho umístění.|  
 |**Uložit vše**|**Soubor**||Uloží změny pro všechny soubory otevřené v rámci nástroje MageUI.exe.|  
-|**Předvolby**|**Soubor**||Otevře dialogové okno **Předvolby.** Další informace naleznete v následující části.|  
+|**Předvolby**|**Soubor**||Otevře dialogové okno **Předvolby** . Další informace naleznete v následující části.|  
 |**Ukončit**|**Soubor**|ALT+F4|Ukončí nástroj MageUI.exe.|  
 |**Vyjmout**|**Upravit**|CTRL+X|Odstraní aktuálně vybraný text z aplikace a uloží jej do schránky.|  
 |**Kopírovat**|**Upravit**|CTRL+C|Zkopíruje aktuálně vybraný text do schránky.|  
 |**Vložit**|**Upravit**|CTRL+V|Vloží text ze schránky do aktuálního textového prvku.|  
-|**Odstranit**|**Upravit**||Odstraní prvek aktuálně vybraný v seznamu, například licenci důvěryhodnosti na kartě **Manifest nasazení.**|  
+|**Odstranit**|**Upravit**||Odstraní aktuálně vybraný prvek v seznamu, jako je například licence Trust na kartě **manifest nasazení** .|  
 |**Zavřít vše**|**Okno**||Zavře všechny soubory otevřené v nástroji MageUI.exe. Pokud je zapotřebí některé ze souborů uložit, vyzve nástroj MageUI.exe k jejich uložení. Nástroj MageUI.exe také vyžaduje výběr podepsaného klíče pro každý nepodepsaný nebo změněný soubor.|  
 |**O aplikaci**|**Nápověda**||Zobrazuje verzi a informace o autorských právech nástroje MageUI.exe.|  
   
 ## <a name="preferences-dialog-box"></a>Dialogové okno Předvolby  
  Dialogové okno **Předvolby** obsahuje následující prvky.  
   
-|Prvek uživatelského rozhraní (UI)|Popis|  
+|Prvek uživatelského rozhraní (UI)|Description|  
 |----------------|-----------------|  
-|**Přihlásit se k uložení**|Při uložení změn vyžaduje podepsání souboru.|  
-|**Použití výchozího podpisový certifikát**|Používá klíč zadaný do textového pole **Soubor certifikátu** k podepsání všech souborů. Tím se eliminuje podpisová výzva, která se obvykle zobrazí při uložení souboru a je vybrána možnost **Přihlásit se při uložení.** Pomocí tlačítka tři tečky (**...**) vedle textového pole **Soubor certifikátu** vyberte soubor klíče.|  
+|**Přihlášení – uložit**|Při uložení změn vyžaduje podepsání souboru.|  
+|**Použít výchozí podpisový certifikát**|Pro podepsání všech souborů používá klíč zadaný v textovém poli **soubor certifikátu** . Tím se eliminuje výzva k podepisování, která se obvykle zobrazuje při uložení souboru a když se **přihlásí možnost Uložit** . Chcete-li vybrat soubor klíče, použijte tlačítko se třemi tečkami (**...**) vedle textového pole **soubor certifikátu** .|  
 |Algoritmus Digest|Určí algoritmus, jímž budou generovány přehledy závislostí. Hodnotou musí být „sha256RSA“ nebo „sha1RSA“. Použije SHA1 jako výchozí. Tato hodnota je použita v aplikaci i v manifestech nasazení. Pokud uživatel při ukládání manifestu zadá certifikát, použije se algoritmus v tomto certifikátu k vygenerování přehledu závislostí.|  
   
 ## <a name="signing-options-dialog-box"></a>Dialogové okno Možnosti podpisu  
- Dialogové okno **Možnosti podepisování** se zobrazí při prvním uložení licence manifestu nebo licence důvěryhodnosti nebo při změně licence manifestu nebo licence důvěryhodnosti. Zobrazí se pouze v případě, že je vybraná volba **Přihlásit se při uložení** v dialogovém okně **Předvolby.** Při podepisování manifestu, který určuje hodnotu v textovém poli **IDENTIFIKÁTOR URI časového razítka,** musíte být připojeni k Internetu.  
+ Dialogové okno **možnosti podepisování** se zobrazí, když uložíte manifest nebo důvěryhodnou licenci poprvé nebo když změníte manifest nebo důvěryhodnou licenci. Zobrazí se pouze v případě, že je vybrána možnost **přihlášení při uložení** v dialogovém okně **Předvolby** . Při podepisování manifestu, který určuje hodnotu v textovém poli **identifikátor URI časového razítka** , musíte být připojeni k Internetu.  
   
  Toto dialogové okno obsahuje následující prvky.  
   
-|Prvek uživatelského rozhraní (UI)|Popis|  
+|Prvek uživatelského rozhraní (UI)|Description|  
 |----------------|-----------------|  
-|**Podepsat pomocí souboru certifikátu**|Podepíše manifest digitálním certifikátem uloženým v systému souborů.|  
+|**Podepsat souborem certifikátu**|Podepíše manifest digitálním certifikátem uloženým v systému souborů.|  
 |**Soubor**|Poskytuje prostor pro zadání cesty k souboru .pfx představujícímu certifikát.|  
-|**...**|Otevře dialogové okno **Zvolit soubor** pro výběr existujícího souboru .pfx.|  
-|**Nový**|Vytvoří nový soubor .pfx, který nelze ověřit skrze certifikační autoritu (CA). Další informace o typech certifikátů používaných k podepisování nasazení ClickOnce naleznete v [tématu Přehled nasazení důvěryhodných aplikací](/visualstudio/deployment/trusted-application-deployment-overview).|  
+|**...**|Otevře dialogové okno **zvolit soubor** pro výběr existujícího souboru. pfx.|  
+|**Nový**|Vytvoří nový soubor .pfx, který nelze ověřit skrze certifikační autoritu (CA). Další informace o typech certifikátů používaných k podepisování nasazení ClickOnce naleznete v tématu [Přehled nasazení důvěryhodných aplikací](/visualstudio/deployment/trusted-application-deployment-overview).|  
 |**Heslo**|Poskytuje prostor pro zadání hesla použitého k podepisování certifikátů. Pokud není použito, může být ponecháno prázdné.|  
-|**Podepisovat s uloženým certifikátem**|Zobrazí seznam s vlastním výběrem digitálních certifikátů uložených v úložišti certifikátů počítače.|  
-|**Identifikátor URI pro časové razítko**|Zobrazí adresu Uniform Resource Locator (URI) služby digitálního časového razítka. Vytvoření časového razítka v manifestu umožňuje vyhnout se nutnosti znovu manifesty podepisovat v případě, že digitální certifikát vyprší ještě před nasazením další verze aplikace. Další informace naleznete v tématech [Členové programu kořenového certifikátu systému Windows](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn265983(v=ws.11)) a [ClickOnce a Authenticode](/visualstudio/deployment/clickonce-and-authenticode).|  
+|**Podepsat uloženým certifikátem**|Zobrazí seznam s vlastním výběrem digitálních certifikátů uložených v úložišti certifikátů počítače.|  
+|**Identifikátor URI pro časové razítko**|Zobrazí adresu Uniform Resource Locator (URI) služby digitálního časového razítka. Vytvoření časového razítka v manifestu umožňuje vyhnout se nutnosti znovu manifesty podepisovat v případě, že digitální certifikát vyprší ještě před nasazením další verze aplikace. Další informace naleznete v tématu [Členové programu kořenového certifikátu systému Windows](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn265983(v=ws.11)) a [ClickOnce a technologie Authenticode](/visualstudio/deployment/clickonce-and-authenticode).|  
 |**Nepodepisovat**|Umožňuje uložit manifest bez přidání podpisu z digitálního certifikátu.|  
   
 ## <a name="tab-and-panel-descriptions"></a>Popisy karet a panelů  
  Dokument se při otevření pomocí nástroje MageUI.exe zobrazí na vlastní kartě. Každá karta obsahuje sadu panelů vlastností. Panely obsahují seskupenou podmnožinu dat dokumentu.  
   
-### <a name="application-manifest-tab"></a>Karta Manifest aplikace  
- Na kartě **Manifest aplikace** se zobrazí obsah manifestu aplikace. Manifest aplikace popisuje všechny soubory, které jsou součástí nasazení, a oprávnění potřebná pro spuštění aplikace v klientovi.  
+### <a name="application-manifest-tab"></a>Karta manifest aplikace  
+ Karta **manifest aplikace** zobrazuje obsah manifestu aplikace. Manifest aplikace popisuje všechny soubory, které jsou součástí nasazení, a oprávnění potřebná ke spuštění aplikace na klientovi.  
   
- Karta **Manifest aplikace** obsahuje následující karty.  
+ Karta **manifest aplikace** obsahuje následující karty.  
   
 |Prvek uživatelského rozhraní (UI)|Popis|  
 |----------------|-----------------|  
@@ -83,115 +84,115 @@ Nástroj MageUI.exe podporuje stejné funkce jako nástroj příkazového řádk
 |**Popis**|Určuje informace o vydavateli, produktu a podpoře.|  
 |**Možnosti aplikace**|Určuje, zda se jedná o aplikaci prohlížeče a zda je tento manifest zdrojem informací o důvěryhodnosti.|  
 |**Soubory**|Určuje všechny soubory, které tvoří toto nasazení.|  
-|**Je vyžadována oprávnění.**|Určuje minimální sadu oprávnění požadovanou aplikací ke spuštění v klientovi.|  
+|**Požadovaná oprávnění**|Určuje minimální sadu oprávnění, kterou aplikace vyžaduje ke spuštění na klientovi.|  
   
-### <a name="name-tab"></a>Karta Název  
- Karta **Název** se zobrazí při prvním vytvoření nebo otevření manifestu aplikace. Jednoznačně identifikuje nasazení a volitelně určuje platnou cílovou platformu.  
+### <a name="name-tab"></a>Karta název  
+ Karta **název** se zobrazí při prvním vytvoření nebo otevření manifestu aplikace. Jednoznačně identifikuje nasazení a volitelně určuje platnou cílovou platformu.  
   
 |Prvek uživatelského rozhraní (UI)|Popis|  
 |----------------|-----------------|  
-|**Název**|Povinná hodnota. Název manifestu aplikace. Obvykle stejný jako název souboru.|  
-|**Verze**|Povinná hodnota. Číslo verze nasazení ve formuláři *N.N.N.N*. Je vyžadováno pouze první hlavní číslo sestavení. Například pro verzi 1.0 aplikace by platné `1` `1.0`hodnoty `1.0.0`zahrnovaly , , a `1.0.0.0`.|  
-|**Procesor**|Nepovinný parametr. Architektura počítače, na kterém lze spustit toto nasazení. Výchozí hodnota `msil`je nebo Microsoft Intermediate Language, což je výchozí formát všech spravovaných sestavení. Toto pole změňte, pokud jste předkompilovali sestavení v aplikaci pro konkrétní architekturu. Další informace o předkompilaci naleznete v [tématu Ngen.exe (Native Image Generator)](ngen-exe-native-image-generator.md).|  
-|**Kultury**|Nepovinný parametr. Dvoudílný kód země a oblasti ISO, ve kterém je tato aplikace spuštěna. Výchozí formát je `neutral`.|  
-|**Token veřejného klíče**|Nepovinný parametr. Veřejný klíč, se kterým byl podepsán manifest této aplikace. Pokud se jedná o nový nebo nepodepsaný `Unsigned`manifest, bude toto pole zobrazeno jako .|  
+|**Název**|Povinná hodnota. Název manifestu aplikace. Obvykle je stejný jako název souboru.|  
+|**Verze**|Povinná hodnota. Číslo verze nasazení ve formátu n. n. *n*. n. Vyžaduje se pouze první hlavní číslo buildu. Například pro verzi 1,0 aplikace, platné hodnoty by zahrnovaly `1` , `1.0` , `1.0.0` a `1.0.0.0` .|  
+|**Procesor**|Nepovinný parametr. Architektura počítače, na které se dá toto nasazení spustit Výchozí hodnota je `msil` , nebo převodní jazyk Microsoft, což je výchozí formát všech spravovaných sestavení. Toto pole změňte, pokud jste předem zkompilováni sestavení v aplikaci pro konkrétní architekturu. Další informace o předběžné kompilaci naleznete v tématu [Ngen.exe (generátor nativních imagí)](ngen-exe-native-image-generator.md).|  
+|**Kultura**|Nepovinný parametr. Kód země a oblasti ve dvou částech, ve kterých se tato aplikace spouští. Výchozí formát je `neutral`.|  
+|**Token veřejného klíče**|Nepovinný parametr. Veřejný klíč, se kterým byl podepsán tento manifest aplikace. Pokud se jedná o nový nebo nepodepsaný manifest, toto pole se zobrazí jako `Unsigned` .|  
   
 ### <a name="description-tab"></a>Karta Popis  
- Tyto informace jsou obvykle k dispozici v manifestu nasazení. Tato pole lze změnit pouze v případě, že je na kartě Možnosti aplikace zaškrtnuto políčko **Použít informace o důvěryhodnosti manifestu** **aplikace.**  
+ Tyto informace jsou obvykle k dispozici v manifestu nasazení. Tato pole lze změnit pouze v případě, že je na kartě **Možnosti aplikace** zaškrtnuto políčko **použít informace o důvěryhodnosti manifestu aplikace** .  
   
-|Prvek uživatelského rozhraní (UI)|Popis|  
+|Prvek uživatelského rozhraní (UI)|Description|  
 |----------------|-----------------|  
-|**Vydavatel**|Jméno osoby nebo organizace odpovědné za aplikaci. Tato hodnota se používá jako název složky nabídky Start.|  
-|**Produktu**|Úplný název produktu. Pokud jste vybrali **možnost Instalovat místně** pro prvek Typ **aplikace** na kartě **Možnosti nasazení** manifestu nasazení, bude tento název uveden v odkazu nabídky **Start** a v části Přidat **nebo odebrat programy** pro tuto aplikaci.|  
+|**Publisher**|Jméno osoby nebo organizace zodpovědné za aplikaci. Tato hodnota se používá jako název složky nabídky Start.|  
+|**Product** (Produkt)|Úplný název produktu Pokud jste vybrali možnost **instalovat místně** pro prvek **Typ aplikace** na kartě **Možnosti nasazení** manifestu nasazení, bude tento název zobrazen v odkazu nabídky **Start** a v části **Přidat nebo odebrat programy** pro tuto aplikaci.|  
 |**Umístění podpory**|Adresa URL, ze které mohou zákazníci získat nápovědu a podporu pro aplikaci.|  
   
 ### <a name="application-options-tab"></a>Karta Možnosti aplikace  
   
-|Prvek uživatelského rozhraní (UI)|Popis|  
+|Prvek uživatelského rozhraní (UI)|Description|  
 |----------------|-----------------|  
-|**Aplikace prohlížeče Windows Presentation Foundation**|Určuje, zda se jedná o aplikaci WPF, která se spouští v prohlížeči jako aplikace prohlížeče XAML (XBAP).|  
-|**Použít informace o důvěryhodnosti manifestu aplikace**|Určuje, zda tento manifest obsahuje informace o důvěryhodnosti.|  
+|**Aplikace Windows Presentation Foundation Browser**|Určuje, zda se jedná o aplikaci WPF, která běží v prohlížeči jako aplikace prohlížeče XAML (XBAP).|  
+|**Použití informací o důvěryhodnosti manifestu aplikace**|Určuje, zda tento manifest obsahuje informace o důvěryhodnosti.|  
   
-### <a name="files-tab"></a>Karta Soubory  
+### <a name="files-tab"></a>Karta soubory  
   
-|Prvek uživatelského rozhraní (UI)|Popis|  
+|Prvek uživatelského rozhraní (UI)|Description|  
 |----------------|-----------------|  
-|**Adresář aplikace**|Adresář, ve kterém jsou umístěny soubory aplikace. Pomocí tlačítka elipsy (**...**) vyberte adresář.|  
-|**Naplnění**|Přidá všechny soubory v adresáři aplikace a podadresáře do manifestu aplikace. Pokud program MageUI.exe najde v adresáři jeden spustitelný soubor, automaticky jej označí jako vstupní bod, což je soubor, který byl poprvé spuštěn při spuštění aplikace ClickOnce v klientovi.|  
-|**Soubory aplikací**|Zobrazí seznam všech souborů v aplikaci. Každý soubor má tři upravitelné atributy, popsané níže.|  
-|**Typ souboru**|Typ souboru může být jedna ze čtyř hodnot:<br /><br /> - Žádné.<br />- Vstupní bod. Primární spustitelný soubor aplikace. Jako vstupní bod lze označit pouze jeden spustitelný soubor.<br />- Datový soubor. Soubor, například soubor XML, který do aplikace dodává data.<br />- Soubor ikon. Ikona aplikace, například na ploše nebo v rohu okna aplikace.|  
-|**Volitelné**|Soubory označené jako volitelné nejsou staženy při počáteční instalaci nebo aktualizaci, ale mohou být staženy za běhu pomocí rozhraní API System.Deployment On-Demand. Další informace naleznete [v tématu Návod: Stahování sestavení na vyžádání pomocí rozhraní API pro nasazení ClickOnce pomocí návrháře](/visualstudio/deployment/walkthrough-downloading-assemblies-on-demand-with-the-clickonce-deployment-api-using-the-designer).|  
-|**Skupiny**|Popisek pro sadu volitelných souborů. Popisek skupiny můžete použít na sadu souborů a pomocí rozhraní API na vyžádání stáhnout dávku souborů s jedním voláním rozhraní API.|  
+|**Adresář aplikace**|Adresář, ve kterém jsou umístěny soubory aplikace K výběru adresáře použijte tlačítko se třemi tečkami (**...**).|  
+|**Fulltext**|Přidá všechny soubory v adresáři aplikace a podadresářích do manifestu aplikace. Pokud MageUI.exe najde v adresáři jeden spustitelný soubor, automaticky ho označí jako vstupní bod, což je soubor, který se poprvé spustí při spuštění aplikace ClickOnce na klientovi.|  
+|**Soubory aplikace**|Zobrazí seznam všech souborů v aplikaci. Každý soubor má tři upravitelné atributy, které jsou popsány níže.|  
+|**Typ souboru**|Typ souboru může být jedna ze čtyř hodnot:<br /><br /> NTato.<br />– Vstupní bod. Primární spustitelný soubor aplikace. Pouze jeden spustitelný soubor může být označen jako vstupní bod.<br />-Datový soubor. Soubor, jako je například soubor XML, který dodává data do aplikace.<br />– Ikona souboru. Ikona aplikace, například, se zobrazí na ploše nebo v rohu okna aplikace.|  
+|**Volitelné**|Soubory označené jako volitelné se nestáhnou při počáteční instalaci nebo aktualizaci, ale můžou se stáhnout za běhu pomocí rozhraní API System. Deployment na vyžádání. Další informace naleznete v tématu [Návod: stahování sestavení na vyžádání pomocí rozhraní API nasazení ClickOnce pomocí návrháře](/visualstudio/deployment/walkthrough-downloading-assemblies-on-demand-with-the-clickonce-deployment-api-using-the-designer).|  
+|**Skupina**|Popisek pro sadu volitelných souborů. Můžete použít popisek skupiny pro sadu souborů a pomocí rozhraní API na vyžádání stáhnout dávku souborů s jedním voláním rozhraní API.|  
   
-### <a name="permissions-required-tab"></a>Karta Požadovaná oprávnění  
- Pokud potřebujete aplikaci udělit větší přístup k místnímu počítači, než je ve výchozím nastavení uděleno, použijte kartu **Požadovaná oprávnění.** Další informace naleznete [v tématu Zabezpečení aplikací ClickOnce](/visualstudio/deployment/securing-clickonce-applications).  
+### <a name="permissions-required-tab"></a>Karta požadovaná oprávnění  
+ Kartu **požadovaná oprávnění** použijte v případě, že potřebujete udělit aplikaci větší přístup k místnímu počítači, než který je ve výchozím nastavení povolený. Další informace najdete v tématu [zabezpečení aplikací ClickOnce](/visualstudio/deployment/securing-clickonce-applications).  
   
-|Prvek uživatelského rozhraní (UI)|Popis|  
+|Prvek uživatelského rozhraní (UI)|Description|  
 |----------------|-----------------|  
-|**Typ sady oprávnění**|Minimální sada oprávnění vyžadovaná touto aplikací ke spuštění na straně klienta. Popis těchto sad oprávnění a oprávnění, která nepožadují nebo nepožadují, naleznete [v tématu Pojmenované sady oprávnění](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/4652tyx7(v=vs.100)).|  
-|**Podrobnosti**|Jazyk XML vytvořený pro manifest aplikace představuje sadu oprávnění. Pokud dobře neporozumíte formátu XML manifestu aplikace, neměli byste tento jazyk XML upravovat ručně. Další informace naleznete v tématu [ClickOnce Application Manifest](/visualstudio/deployment/clickonce-application-manifest).|  
+|**Typ sady oprávnění**|Minimální sada oprávnění, kterou tato aplikace vyžaduje ke spuštění na klientovi. Popis těchto sad oprávnění a oprávnění, která dělají nebo nepožadují, najdete v tématu [pojmenované sady oprávnění](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/4652tyx7(v=vs.100)).|  
+|**Podrobnosti**|KÓD XML vytvořený pro manifest aplikace, který představuje sadu oprávnění Pokud nemáte dobrý význam formátu XML manifestu aplikace, neměli byste tento kód XML upravovat ručně. Další informace naleznete v tématu [manifest aplikace ClickOnce](/visualstudio/deployment/clickonce-application-manifest).|  
   
-### <a name="deployment-manifest-tab"></a>Karta Manifest nasazení  
- Karta **Manifest nasazení** obsahuje následující karty.  
+### <a name="deployment-manifest-tab"></a>Karta manifest nasazení  
+ Karta **manifest nasazení** obsahuje následující karty.  
   
 |Prvek uživatelského rozhraní (UI)|Popis|  
 |----------------|-----------------|  
 |**Název**|Určuje identifikační informace o tomto nasazení.|  
 |**Popis**|Určuje informace o vydavateli, produktu a podpoře.|  
 |**Možnosti nasazení**|Určuje další informace o nasazení, jako je například typ aplikace a počáteční umístění.|  
-|**Možnosti aktualizace**|Určuje, jak často by měl ClickOnce kontrolovat aktualizace aplikací.|  
+|**Možnosti aktualizace**|Určuje, jak často má ClickOnce kontrolovat aktualizace aplikací.|  
 |**Odkaz na aplikaci**|Určuje manifest aplikace pro toto nasazení.|  
   
-### <a name="name-tab"></a>Karta Název  
- Karta **Název** se zobrazí při prvním vytvoření nebo otevření manifestu nasazení. Jednoznačně identifikuje nasazení a volitelně určuje platnou cílovou platformu.  
+### <a name="name-tab"></a>Karta název  
+ Karta **název** se zobrazí při prvním vytvoření nebo otevření manifestu nasazení. Jednoznačně identifikuje nasazení a volitelně určuje platnou cílovou platformu.  
   
 |Prvek uživatelského rozhraní (UI)|Popis|  
 |----------------|-----------------|  
-|**Název**|Povinná hodnota. Název manifestu nasazení. Obvykle stejný jako název souboru.|  
-|**Verze**|Povinná hodnota. Číslo verze nasazení ve formuláři *N.N.N.N*. Je vyžadováno pouze první hlavní číslo sestavení. Například pro verzi 1.0 aplikace by platné `1` `1.0`hodnoty `1.0.0`zahrnovaly , , a `1.0.0.0`.|  
-|**Procesor**|Nepovinný parametr. Architektura počítače, na kterém lze spustit toto nasazení. Výchozí hodnota `msil`je , nebo Microsoft Intermediate Language, výchozí formát všech spravovaných sestavení. Toto pole změňte, pokud jste zkompilovali sestavení v aplikaci pro určitou architekturu.|  
-|**Kultury**|Nepovinný parametr. Dvoudílný kód země nebo oblasti ISO, ve kterém je tato aplikace spuštěna. Výchozí formát je `neutral`.|  
-|**Token veřejného klíče**|Nepovinný parametr. Veřejný klíč, se kterým byl podepsán tento manifest nasazení. Pokud se jedná o nový nebo nepodepsaný `Unsigned`manifest, bude toto pole zobrazeno jako .|  
+|**Název**|Povinná hodnota. Název manifestu nasazení. Obvykle je stejný jako název souboru.|  
+|**Verze**|Povinná hodnota. Číslo verze nasazení ve formátu n. n. *n*. n. Vyžaduje se pouze první hlavní číslo buildu. Například pro verzi 1,0 aplikace, platné hodnoty by zahrnovaly `1` , `1.0` , `1.0.0` a `1.0.0.0` .|  
+|**Procesor**|Nepovinný parametr. Architektura počítače, na které se dá toto nasazení spustit Výchozí hodnota je `msil` , nebo Microsoft Intermediate Language, výchozí formát všech spravovaných sestavení. Toto pole změňte, pokud jste v aplikaci zkompilováni sestavení pro konkrétní architekturu.|  
+|**Kultura**|Nepovinný parametr. Kód země/oblasti ve dvou částech, ve kterém se tato aplikace spouští. Výchozí formát je `neutral`.|  
+|**Token veřejného klíče**|Nepovinný parametr. Veřejný klíč, se kterým byl podepsán tento manifest nasazení. Pokud se jedná o nový nebo nepodepsaný manifest, toto pole se zobrazí jako `Unsigned` .|  
   
 ### <a name="description-tab"></a>Karta Popis  
   
-|Prvek uživatelského rozhraní (UI)|Popis|  
+|Prvek uživatelského rozhraní (UI)|Description|  
 |----------------|-----------------|  
-|**Vydavatel**|Povinná hodnota. Jméno osoby nebo organizace odpovědné za aplikaci. Tato hodnota se používá jako název složky nabídky Start.|  
-|**Produktu**|Povinná hodnota. Úplný název produktu. Pokud jste na kartě **Možnosti nasazení** vybrali **instalovat místně** pro prvek **Typ aplikace,** bude tento název uveden v odkazu **Nabídky Start** a v **polích Přidat nebo odebrat programy** pro tuto aplikaci.|  
+|**Publisher**|Povinná hodnota. Jméno osoby nebo organizace zodpovědné za aplikaci. Tato hodnota se používá jako název složky nabídky Start.|  
+|**Product** (Produkt)|Povinná hodnota. Úplný název produktu Pokud jste vybrali možnost **instalovat místně** pro prvek **Typ aplikace** na kartě **Možnosti nasazení** , bude tento název zobrazen v odkazu nabídky **Start** a v části **Přidat nebo odebrat programy** pro tuto aplikaci.|  
 |**Umístění podpory**|Nepovinný parametr. Adresa URL, ze které mohou zákazníci získat nápovědu a podporu pro aplikaci.|  
   
 ### <a name="deployment-options-tab"></a>Karta Možnosti nasazení  
   
-|Prvek uživatelského rozhraní (UI)|Popis|  
+|Prvek uživatelského rozhraní (UI)|Description|  
 |----------------|-----------------|  
-|**Typ aplikace**|Nepovinný parametr. Určuje, zda se tato aplikace nainstaluje do klientského počítače (**Install Local ),** bude spuštěna online ( pouze**online**), nebo zda se jedná o aplikaci WPF, která se spouští v prohlížeči (**WPF Browser Application**). Výchozí nastavení je **Instalovat místně**.|  
-|**Počáteční umístění**|Nepovinný parametr. Adresa URL, ze které by měla být aplikace skutečně spuštěna. Užitečné při nasazování aplikace z disku CD-ROM, který by se měl aktualizovat z webu.|  
-|**Zahrnout počáteční umístění (ProviderURL) do manifestu**|Nepovinný parametr. Určuje adresu URL, na které technologie ClickOnce vyhledá aktualizace aplikace.|  
-|**Automatické spuštění aplikace po instalaci**|Povinná hodnota. Určuje, že aplikace ClickOnce by měla být spuštěna ihned po počáteční instalaci z adresy URL. Výchozí je políčko je zaškrtnuto.|  
-|**Povolit předání parametrů adresy URL aplikaci**|Povinná hodnota. Umožňuje přenos dat parametrů do aplikace ClickOnce prostřednictvím řetězce dotazu připojeného k adrese URL manifestu nasazení. Výchozí nastavení je políčko není zaškrtnuto.|  
-|**Použít příponu .deploy file extension**|Povinná hodnota. Pokud je tato možnost vybrána, musí mít všechny soubory v manifestu aplikace příponu .deploy. Výchozí nastavení je políčko není zaškrtnuto.|  
+|**Typ aplikace**|Nepovinný parametr. Určuje, jestli se tato aplikace nainstaluje do klientského počítače (**místně se nainstaluje**), běží online (**jenom online**), nebo je aplikace WPF, která běží v prohlížeči (**aplikace prohlížeče WPF**). Výchozí nastavení se **instaluje místně**.|  
+|**Počáteční umístění**|Nepovinný parametr. Adresa URL, ze které má být aplikace skutečně spuštěna. Užitečné při nasazování aplikace z disku CD, který by se měl aktualizovat z webu.|  
+|**Zahrnout počáteční umístění (ProviderURL) v manifestu**|Nepovinný parametr. Určuje adresu URL, na které technologie ClickOnce vyhledá aktualizace aplikace.|  
+|**Automaticky spouštět aplikaci po instalaci**|Povinná hodnota. Určuje, že aplikace ClickOnce by se měla spustit hned po počáteční instalaci z adresy URL. Ve výchozím nastavení je zaškrtnuté políčko.|  
+|**Povolení parametrů adresy URL, které se mají předat aplikaci**|Povinná hodnota. Povoluje přenos parametrů dat do aplikace ClickOnce prostřednictvím řetězce dotazu, který je připojený k adrese URL manifestu nasazení. Výchozím nastavením je zaškrtnutí políčka zrušeno.|  
+|**Použít příponu souboru. deploy**|Povinná hodnota. Pokud je tato možnost vybrána, všechny soubory v manifestu aplikace musí mít příponu. deploy. Výchozím nastavením je zaškrtnutí políčka zrušeno.|  
   
-### <a name="update-options-tab"></a>Karta Aktualizovat možnosti  
- Karta **Možnosti aktualizace** obsahuje pouze zde uvedené možnosti, pokud je pole **Výběr typu aplikace** na kartě **Název** nastaveno na možnost **Instalovat místně**.  
+### <a name="update-options-tab"></a>Karta Možnosti aktualizace  
+ Karta **Možnosti aktualizace** obsahuje jenom zde uvedené možnosti, když je pole pro výběr **typu aplikace** na kartě **název** nastavené na **místní instalaci**.  
   
-|Prvek uživatelského rozhraní (UI)|Popis|  
+|Prvek uživatelského rozhraní (UI)|Description|  
 |----------------|-----------------|  
-|**Tato aplikace by měla vyhledat aktualizace**|Určuje, zda má funkce ClickOnce vyhledat aktualizace aplikací. Pokud toto políčko není zaškrtnuto, aplikace nebude kontrolovat aktualizace, pokud jej aktualizovat <xref:System.Deployment.Application> programově pomocí api v oboru názvů.|  
-|**Zvolte, kdy má aplikace vyhledat aktualizace**|Obsahuje dvě možnosti pro kontrolu aktualizací:<br /><br /> -   **Před spuštěním aplikace**. Kontrola aktualizace se provádí před spuštěním aplikace.<br />-   **Po spuštění aplikace**. Kontrola aktualizace začíná, jakmile je inicializována hlavní forma aplikace, a spustí se při příštím spuštění aplikace.|  
-|**Frekvence kontroly aktualizace**|Určuje, jak často by měl ClickOnce vyhledat aktualizace:<br /><br /> -   **Zkontrolujte při každém spuštění aplikace**. ClickOnce provede kontrolu aktualizace pokaždé, když uživatel otevře aplikaci.<br />-   **Kontrola každé**: Vyberte časový interval a jednotku (hodiny, dny nebo týdny), která musí uplynout před kontrolou aktualizací.|  
-|**Zadejte minimální požadovanou verzi pro tuto aplikaci.**|Nepovinný parametr. Určuje, že určitá verze aplikace je požadovanou instalací, která uživatelům brání v práci s dřívější verzí.|  
-|**Verze**|Povinné, pokud je **zaškrtnuto políčko Zadat minimální požadovanou verzi pro tuto aplikaci.** Zadané číslo verze musí být ve tvaru *N.N.N.N*. Je vyžadováno pouze první hlavní číslo sestavení. Například pro verzi 1.0 aplikace by platné `1` `1.0`hodnoty `1.0.0`zahrnovaly , , a `1.0.0.0`.|  
+|**Tato aplikace by měla vyhledávat aktualizace**|Určuje, zda má ClickOnce vyhledat aktualizace aplikace. Pokud toto políčko není zaškrtnuté, aplikace nebude kontrolovat aktualizace, pokud ji neaktualizujete programově pomocí rozhraní API v <xref:System.Deployment.Application> oboru názvů.|  
+|**Vyberte, kdy má aplikace vyhledat aktualizace.**|Poskytuje dvě možnosti pro kontroly aktualizací:<br /><br /> -   **Před spuštěním aplikace**. Tato aktualizace je provedena před spuštěním aplikace.<br />-   **Po spuštění aplikace**. Po inicializaci hlavní formy aplikace se spustí Tato aktualizace a spustí se při příštím spuštění aplikace.|  
+|**Aktualizace frekvence kontroly**|Určuje, jak často by měla technologie ClickOnce vyhledávat aktualizace:<br /><br /> -   **Kontrolovat při každém spuštění aplikace**. ClickOnce provede kontrolu aktualizace pokaždé, když uživatel otevře aplikaci.<br />-   **Zaškrtněte políčko každých**: vyberte časový interval a jednotku (hodiny, dny nebo týdny), které musí uplynout před kontrolou aktualizací.|  
+|**Zadat minimální požadovanou verzi této aplikace**|Nepovinný parametr. Určuje, že konkrétní verze aplikace je požadovaná instalace, která uživatelům brání v práci se starší verzí.|  
+|**Verze**|Povinné, pokud je zaškrtnuté políčko **pro tuto aplikaci zadat minimální požadovanou verzi** . Zadané číslo verze musí být ve formátu *n. n. n*. n. Vyžaduje se pouze první hlavní číslo buildu. Například pro verzi 1,0 aplikace, platné hodnoty by zahrnovaly `1` , `1.0` , `1.0.0` a `1.0.0.0` .|  
   
-### <a name="application-reference-tab"></a>Karta Odkaz na aplikaci  
- Karta **Odkaz na aplikaci** obsahuje stejná pole jako karta **Název** popsaná dříve v tomto tématu. Jedinou výjimkou je následující pole.  
+### <a name="application-reference-tab"></a>Karta odkaz na aplikaci  
+ Karta **odkaz na aplikaci** obsahuje stejná pole jako na kartě **název** popsané dříve v tomto tématu. Jedinou výjimkou je následující pole.  
   
-|Prvek uživatelského rozhraní (UI)|Popis|  
+|Prvek uživatelského rozhraní (UI)|Description|  
 |----------------|-----------------|  
-|**Vybrat manifest**|Umožňuje zvolit manifest aplikace. Všechna ostatní pole na této stránce se naplní, když zvolíte manifest aplikace.|  
+|**Vybrat manifest**|Umožňuje zvolit manifest aplikace. Všechna ostatní pole na této stránce budou naplněna při výběru manifestu aplikace.|  
   
 ## <a name="see-also"></a>Viz také
 
-- [ClickOnce Zabezpečení a nasazení](/visualstudio/deployment/clickonce-security-and-deployment)
+- [ClickOnce – zabezpečení a nasazení](/visualstudio/deployment/clickonce-security-and-deployment)
 - [Návod: Ruční nasazení aplikace ClickOnce](/visualstudio/deployment/walkthrough-manually-deploying-a-clickonce-application)
 - [Mage.exe (Manifest Generation and Editing Tool)](mage-exe-manifest-generation-and-editing-tool.md)

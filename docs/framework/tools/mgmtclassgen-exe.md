@@ -1,5 +1,6 @@
 ---
 title: Mgmtclassgen.exe (spravovaný generátor tříd se silnými typy)
+description: Pochopení Mgmtclassgen.exe generátoru třídy pro správu silného typu. Tento nástroj vám umožní rychle vygenerovat spravovanou třídu s časnou vazbou pro třídu WMI.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,24 +12,24 @@ helpviewer_keywords:
 - Mgmtclassgen.exe
 - early-bound managed classes
 ms.assetid: 02ce6699-49b5-4a0b-b0d5-1003c491232e
-ms.openlocfilehash: d6de28694a1fdcd22cc2baa8cff66387c601414c
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: 89facd4369dad6168e46febd3e34d7f7c235faf0
+ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84201867"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87517292"
 ---
 # <a name="mgmtclassgenexe-management-strongly-typed-class-generator"></a>Mgmtclassgen.exe (spravovaný generátor tříd se silnými typy)
 Nástroj Management Strongly Typed Class Generator umožňuje rychle generovat spravovanou třídu s časnou vazbou pro zadanou třídu Windows Management Instrumentation (WMI). Vygenerovaná třída usnadňuje psaní kódu pro přístup k instanci třídy WMI.  
   
-## <a name="syntax"></a>Syntaxe  
+## <a name="syntax"></a>Syntax  
   
 ```console  
 mgmtclassgen
 WMIClass [options]
 ```  
   
-|Argument|Popis|  
+|Argument|Description|  
 |--------------|-----------------|  
 |*WMIClass*|Třída WMI, pro kterou chcete generovat spravovanou třídu s časnou vazbou.|  
   
@@ -44,7 +45,7 @@ WMIClass [options]
 |**/?**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
   
 ## <a name="remarks"></a>Poznámky  
- Mgmtclassgen. exe používá <xref:System.Management.ManagementClass.GetStronglyTypedClassCode%2A?displayProperty=nameWithType> metodu. Proto můžete použít libovolného zprostředkovatele vlastního kódu k vygenerování kódu v jiných spravovaných jazycích než C#, Visual Basic a JScript.  
+ Mgmtclassgen.exe používá <xref:System.Management.ManagementClass.GetStronglyTypedClassCode%2A?displayProperty=nameWithType> metodu. Proto můžete použít libovolného zprostředkovatele vlastního kódu k vygenerování kódu v jiných spravovaných jazycích než C#, Visual Basic a JScript.  
   
  Vygenerované třídy jsou svázány se schématem, pro které byly vygenerovány. Pokud se změní podkladové schéma, musíte znovu vygenerovat třídu, jestliže chcete, aby se změny projevily ve schématu.  
   
@@ -60,8 +61,8 @@ WMIClass [options]
 |SIM_UINT32|**UInt32**|  
 |CIM_SINT64|**Int64**|  
 |CIM_UINT64|**UInt64**|  
-|CIM_REAL32|**Single**|  
-|CIM_REAL64|**Klepat**|  
+|CIM_REAL32|**Jeden**|  
+|CIM_REAL64|**dvojité**|  
 |CIM_BOOLEAN|**Logická hodnota**|  
 |CIM_String|**Řetězec**|  
 |CIM_DATETIME|**Datum a čas** nebo **časový** rozsah|  
