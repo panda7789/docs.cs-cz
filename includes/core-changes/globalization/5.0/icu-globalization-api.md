@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 49041ce906ab0bb8b9482b79c44302465c4ca788
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: 74c3d3247912dcd638a9379d54e682967c5e400b
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83702303"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302702"
 ---
 ### <a name="globalization-apis-use-icu-libraries-on-windows"></a>Rozhraní API globalizace používají knihovny ICU ve Windows
 
@@ -27,7 +27,7 @@ Tato změna byla představena ze dvou důvodů:
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-V rámci vývojáře není vyžadována žádná akce. Nicméně pokud chcete i nadále používat rozhraní API globalizace NLS, můžete nastavit přepínač za [běhu](../../../../docs/core/run-time-config/globalization.md#nls) pro vrácení tohoto chování.
+V rámci vývojáře není vyžadována žádná akce. Nicméně pokud chcete i nadále používat rozhraní API globalizace NLS, můžete nastavit přepínač za [běhu](../../../../docs/core/run-time-config/globalization.md#nls) pro vrácení tohoto chování. Další informace o dostupných přepínačích naleznete v článku [globalizace a ICU v .NET](/dotnet/standard/globalization-localization/globalization-icu) .
 
 #### <a name="category"></a>Kategorie
 
@@ -43,7 +43,7 @@ Globalizace
 
 #### Affected APIs
 
-- `T:System.Span%601`
+- ``T:System.Span`1``
 - `T:System.String`
 - `N:System.Globalization`
 
