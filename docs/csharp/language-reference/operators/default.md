@@ -1,53 +1,53 @@
 ---
-title: výchozí výrazy hodnot – odkaz jazyka C#
-description: Použití výrazů výchozí hodnoty k získání výchozí hodnoty typu
+title: výrazy výchozích hodnot – reference jazyka C#
+description: Použití výchozích hodnotových výrazů k získání výchozí hodnoty typu
 ms.date: 03/13/2020
 f1_keywords:
 - default_CSharpKeyword
 - default
 helpviewer_keywords:
 - default keyword [C#]
-ms.openlocfilehash: 2adfd8d24066e9dad50c3c18407d3ade71b4b68e
-ms.sourcegitcommit: 2514f4e3655081dcfe1b22470c0c28500f952c42
+ms.openlocfilehash: c07eb8e50dc2ec3413882fa841d2f896b28d2e8d
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/18/2020
-ms.locfileid: "79507175"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87556706"
 ---
-# <a name="default-value-expressions-c-reference"></a><span data-ttu-id="0be2e-103">výchozí výrazy hodnot (odkaz C#</span><span class="sxs-lookup"><span data-stu-id="0be2e-103">default value expressions (C# reference)</span></span>
+# <a name="default-value-expressions-c-reference"></a><span data-ttu-id="54182-103">výrazy výchozích hodnot (Referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="54182-103">default value expressions (C# reference)</span></span>
 
-<span data-ttu-id="0be2e-104">Výchozí hodnota výrazu vytváří [výchozí hodnotu](../builtin-types/default-values.md) typu.</span><span class="sxs-lookup"><span data-stu-id="0be2e-104">A default value expression produces the [default value](../builtin-types/default-values.md) of a type.</span></span> <span data-ttu-id="0be2e-105">Existují dva druhy výchozích výrazů hodnoty: [volání výchozího operátora](#default-operator) a [výchozí literál](#default-literal).</span><span class="sxs-lookup"><span data-stu-id="0be2e-105">There are two kinds of default value expressions: the [default operator](#default-operator) call and a [default literal](#default-literal).</span></span>
+<span data-ttu-id="54182-104">Výchozí hodnota výrazu vytvoří [výchozí hodnotu](../builtin-types/default-values.md) typu.</span><span class="sxs-lookup"><span data-stu-id="54182-104">A default value expression produces the [default value](../builtin-types/default-values.md) of a type.</span></span> <span data-ttu-id="54182-105">Existují dva druhy výchozích hodnot výrazů: [výchozí volání operátoru](#default-operator) a [výchozí literál](#default-literal).</span><span class="sxs-lookup"><span data-stu-id="54182-105">There are two kinds of default value expressions: the [default operator](#default-operator) call and a [default literal](#default-literal).</span></span>
 
-<span data-ttu-id="0be2e-106">`default` Klíčové slovo můžete také použít jako výchozí popisek případu v rámci [ `switch` příkazu](../keywords/switch.md).</span><span class="sxs-lookup"><span data-stu-id="0be2e-106">You also use the `default` keyword as the default case label within a [`switch` statement](../keywords/switch.md).</span></span>
+<span data-ttu-id="54182-106">Klíčové slovo se používá také `default` jako výchozí popisek Case v rámci [ `switch` příkazu](../keywords/switch.md).</span><span class="sxs-lookup"><span data-stu-id="54182-106">You also use the `default` keyword as the default case label within a [`switch` statement](../keywords/switch.md).</span></span>
 
-## <a name="default-operator"></a><span data-ttu-id="0be2e-107">default – operátor</span><span class="sxs-lookup"><span data-stu-id="0be2e-107">default operator</span></span>
+## <a name="default-operator"></a><span data-ttu-id="54182-107">default – operátor</span><span class="sxs-lookup"><span data-stu-id="54182-107">default operator</span></span>
 
-<span data-ttu-id="0be2e-108">Argument pro `default` operátor musí být název typu nebo parametr typu, jak ukazuje následující příklad:</span><span class="sxs-lookup"><span data-stu-id="0be2e-108">The argument to the `default` operator must be the name of a type or a type parameter, as the following example shows:</span></span>
+<span data-ttu-id="54182-108">Argument `default` operátoru musí být název typu nebo parametr typu, jak ukazuje následující příklad:</span><span class="sxs-lookup"><span data-stu-id="54182-108">The argument to the `default` operator must be the name of a type or a type parameter, as the following example shows:</span></span>
 
 [!code-csharp-interactive[default of T](snippets/DefaultOperator.cs#WithOperand)]
 
-## <a name="default-literal"></a><span data-ttu-id="0be2e-109">výchozí literál</span><span class="sxs-lookup"><span data-stu-id="0be2e-109">default literal</span></span>
+## <a name="default-literal"></a><span data-ttu-id="54182-109">výchozí literál</span><span class="sxs-lookup"><span data-stu-id="54182-109">default literal</span></span>
 
-<span data-ttu-id="0be2e-110">Počínaje C# 7.1, můžete `default` použít literál k vytvoření výchozí hodnoty typu, když kompilátor může odvodit typ výrazu.</span><span class="sxs-lookup"><span data-stu-id="0be2e-110">Beginning with C# 7.1, you can use the `default` literal to produce the default value of a type when the compiler can infer the expression type.</span></span> <span data-ttu-id="0be2e-111">Výraz `default` literálu vytváří stejnou hodnotu jako výraz, `default(T)` kde `T` je odvozený typ.</span><span class="sxs-lookup"><span data-stu-id="0be2e-111">The `default` literal expression produces the same value as the `default(T)` expression where `T` is the inferred type.</span></span> <span data-ttu-id="0be2e-112">Literál `default` můžete použít v některém z následujících případů:</span><span class="sxs-lookup"><span data-stu-id="0be2e-112">You can use the `default` literal in any of the following cases:</span></span>
+<span data-ttu-id="54182-110">Počínaje jazykem C# 7,1 můžete použít `default` literál pro vytvoření výchozí hodnoty typu, když kompilátor může odvodit typ výrazu.</span><span class="sxs-lookup"><span data-stu-id="54182-110">Beginning with C# 7.1, you can use the `default` literal to produce the default value of a type when the compiler can infer the expression type.</span></span> <span data-ttu-id="54182-111">`default`Literálový výraz vytvoří stejnou hodnotu jako výraz, `default(T)` ve kterém `T` je odvozený typ.</span><span class="sxs-lookup"><span data-stu-id="54182-111">The `default` literal expression produces the same value as the `default(T)` expression where `T` is the inferred type.</span></span> <span data-ttu-id="54182-112">Literál můžete použít `default` v některém z následujících případů:</span><span class="sxs-lookup"><span data-stu-id="54182-112">You can use the `default` literal in any of the following cases:</span></span>
 
-- <span data-ttu-id="0be2e-113">Při přiřazení nebo inicializaci proměnné.</span><span class="sxs-lookup"><span data-stu-id="0be2e-113">In the assignment or initialization of a variable.</span></span>
-- <span data-ttu-id="0be2e-114">V deklaraci výchozí hodnoty pro [parametr volitelné metody](../../methods.md#optional-parameters-and-arguments).</span><span class="sxs-lookup"><span data-stu-id="0be2e-114">In the declaration of the default value for an [optional method parameter](../../methods.md#optional-parameters-and-arguments).</span></span>
-- <span data-ttu-id="0be2e-115">V volání metody poskytnout hodnotu argument.</span><span class="sxs-lookup"><span data-stu-id="0be2e-115">In a method call to provide an argument value.</span></span>
-- <span data-ttu-id="0be2e-116">V [ `return` příkazu](../keywords/return.md) nebo jako výraz v [členu s výrazem](../../programming-guide/statements-expressions-operators/expression-bodied-members.md).</span><span class="sxs-lookup"><span data-stu-id="0be2e-116">In a [`return` statement](../keywords/return.md) or as an expression in an [expression-bodied member](../../programming-guide/statements-expressions-operators/expression-bodied-members.md).</span></span>
+- <span data-ttu-id="54182-113">V přiřazení nebo inicializaci proměnné.</span><span class="sxs-lookup"><span data-stu-id="54182-113">In the assignment or initialization of a variable.</span></span>
+- <span data-ttu-id="54182-114">V deklaraci výchozí hodnoty pro [volitelný parametr metody](../../methods.md#optional-parameters-and-arguments).</span><span class="sxs-lookup"><span data-stu-id="54182-114">In the declaration of the default value for an [optional method parameter](../../methods.md#optional-parameters-and-arguments).</span></span>
+- <span data-ttu-id="54182-115">V volání metody pro poskytnutí hodnoty argumentu.</span><span class="sxs-lookup"><span data-stu-id="54182-115">In a method call to provide an argument value.</span></span>
+- <span data-ttu-id="54182-116">V [ `return` příkazu](../keywords/return.md) nebo jako výraz v [členu Expression-těle](../../programming-guide/statements-expressions-operators/expression-bodied-members.md).</span><span class="sxs-lookup"><span data-stu-id="54182-116">In a [`return` statement](../keywords/return.md) or as an expression in an [expression-bodied member](../../programming-guide/statements-expressions-operators/expression-bodied-members.md).</span></span>
 
-<span data-ttu-id="0be2e-117">Následující příklad ukazuje použití `default` literálu:</span><span class="sxs-lookup"><span data-stu-id="0be2e-117">The following example shows the usage of the `default` literal:</span></span>
+<span data-ttu-id="54182-117">Následující příklad ukazuje použití `default` literálu:</span><span class="sxs-lookup"><span data-stu-id="54182-117">The following example shows the usage of the `default` literal:</span></span>
 
 [!code-csharp-interactive[default literal](snippets/DefaultOperator.cs#DefaultLiteral)]
 
-## <a name="c-language-specification"></a><span data-ttu-id="0be2e-118">specifikace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="0be2e-118">C# language specification</span></span>
+## <a name="c-language-specification"></a><span data-ttu-id="54182-118">specifikace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="54182-118">C# language specification</span></span>
 
-<span data-ttu-id="0be2e-119">Další informace naleznete v části [Výchozí výrazy hodnot](~/_csharplang/spec/expressions.md#default-value-expressions) [ve specifikaci jazyka C#](~/_csharplang/spec/introduction.md).</span><span class="sxs-lookup"><span data-stu-id="0be2e-119">For more information, see the [Default value expressions](~/_csharplang/spec/expressions.md#default-value-expressions) section of the [C# language specification](~/_csharplang/spec/introduction.md).</span></span>
+<span data-ttu-id="54182-119">Další informace naleznete v oddílu [výchozí hodnoty Expressions](~/_csharplang/spec/expressions.md#default-value-expressions) [specifikace jazyka C#](~/_csharplang/spec/introduction.md).</span><span class="sxs-lookup"><span data-stu-id="54182-119">For more information, see the [Default value expressions](~/_csharplang/spec/expressions.md#default-value-expressions) section of the [C# language specification](~/_csharplang/spec/introduction.md).</span></span>
 
-<span data-ttu-id="0be2e-120">Další informace o `default` literálu naleznete v [poznámce k návrhu funkce](~/_csharplang/proposals/csharp-7.1/target-typed-default.md).</span><span class="sxs-lookup"><span data-stu-id="0be2e-120">For more information about the `default` literal, see the [feature proposal note](~/_csharplang/proposals/csharp-7.1/target-typed-default.md).</span></span>
+<span data-ttu-id="54182-120">Další informace o `default` literálu naleznete v [poznámkách k návrhu funkcí](~/_csharplang/proposals/csharp-7.1/target-typed-default.md).</span><span class="sxs-lookup"><span data-stu-id="54182-120">For more information about the `default` literal, see the [feature proposal note](~/_csharplang/proposals/csharp-7.1/target-typed-default.md).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="0be2e-121">Viz také</span><span class="sxs-lookup"><span data-stu-id="0be2e-121">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="54182-121">Viz také</span><span class="sxs-lookup"><span data-stu-id="54182-121">See also</span></span>
 
-- [<span data-ttu-id="0be2e-122">Referenční dokumentace k jazyku C#</span><span class="sxs-lookup"><span data-stu-id="0be2e-122">C# reference</span></span>](../index.md)
-- [<span data-ttu-id="0be2e-123">Operátory jazyka C#</span><span class="sxs-lookup"><span data-stu-id="0be2e-123">C# operators</span></span>](index.md)
-- [<span data-ttu-id="0be2e-124">Výchozí hodnoty typů jazyka C#</span><span class="sxs-lookup"><span data-stu-id="0be2e-124">Default values of C# types</span></span>](../builtin-types/default-values.md)
-- [<span data-ttu-id="0be2e-125">Obecné typy v .NET</span><span class="sxs-lookup"><span data-stu-id="0be2e-125">Generics in .NET</span></span>](../../../standard/generics/index.md)
+- [<span data-ttu-id="54182-122">Referenční dokumentace k jazyku C#</span><span class="sxs-lookup"><span data-stu-id="54182-122">C# reference</span></span>](../index.md)
+- [<span data-ttu-id="54182-123">Operátory a výrazy v C#</span><span class="sxs-lookup"><span data-stu-id="54182-123">C# operators and expressions</span></span>](index.md)
+- [<span data-ttu-id="54182-124">Výchozí hodnoty typů C#</span><span class="sxs-lookup"><span data-stu-id="54182-124">Default values of C# types</span></span>](../builtin-types/default-values.md)
+- [<span data-ttu-id="54182-125">Obecné typy v .NET</span><span class="sxs-lookup"><span data-stu-id="54182-125">Generics in .NET</span></span>](../../../standard/generics/index.md)
