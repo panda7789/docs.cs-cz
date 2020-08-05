@@ -1,27 +1,33 @@
 ---
 title: 'Postupy: Vytvoření objektu WindowsPrincipal'
-ms.date: 03/30/2017
+ms.date: 07/15/2020
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - WindowsPrincipal objects, creating
-- security [.NET Framework], creating a WindowsPrincipal object
-- security [.NET Framework], principals
+- security [.NET], creating a WindowsPrincipal object
+- security [.NET], principals
 - principal objects, creating
 ms.assetid: 56eb10ca-e61d-4ed2-af7a-555fc4c25a25
-ms.openlocfilehash: 6064c98c4e1e5153f4e0de4849de196228972a89
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: d99d63dc766f37e7cc30888d2e77657595f909af
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84284426"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87557031"
 ---
 # <a name="how-to-create-a-windowsprincipal-object"></a>Postupy: Vytvoření objektu WindowsPrincipal
+
+> [!NOTE]
+> Tento článek se týká systému Windows.
+>
+> Informace o ASP.NET Core najdete v tématu [ASP.NET Core Security](/aspnet/core/security/).
+
 Existují dva způsoby, jak vytvořit <xref:System.Security.Principal.WindowsPrincipal> objekt, v závislosti na tom, zda kód musí opakovaně provádět ověřování na základě rolí, nebo musí být proveden pouze jednou.  
   
- Pokud kód musí opakovaně provádět ověřování na základě rolí, pak první z následujících postupů vytvoří méně režijních nákladů. Pokud kód potřebuje provést ověřování na základě role pouze jednou, můžete vytvořit <xref:System.Security.Principal.WindowsPrincipal> objekt pomocí druhého z následujících postupů.  
+Pokud kód musí opakovaně provádět ověřování na základě rolí, pak první z následujících postupů vytvoří méně režijních nákladů. Pokud kód potřebuje provést ověřování na základě role pouze jednou, můžete vytvořit <xref:System.Security.Principal.WindowsPrincipal> objekt pomocí druhého z následujících postupů.  
   
 ### <a name="to-create-a-windowsprincipal-object-for-repeated-validation"></a>Vytvoření objektu WindowsPrincipal pro opakované ověření  
   
@@ -78,3 +84,4 @@ Existují dva způsoby, jak vytvořit <xref:System.Security.Principal.WindowsPri
 ## <a name="see-also"></a>Viz také
 
 - [Objekty zabezpečení a identity](principal-and-identity-objects.md)
+- [ASP.NET Core zabezpečení](https://docs.microsoft.com/aspnet/core/security/)

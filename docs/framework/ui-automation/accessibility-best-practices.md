@@ -6,38 +6,39 @@ helpviewer_keywords:
 - best practices for accessibility
 - accessibility, best practices for
 ms.assetid: e6d5cd98-21a3-4b01-999c-fb953556d0e6
-ms.openlocfilehash: 725bb0c60972e2d0dc6089b4370dd7e3e436e444
-ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
+ms.openlocfilehash: 2980881bbcd34ca82f6cca7723cf976e0890f463
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517058"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87557083"
 ---
-# <a name="accessibility-best-practices"></a>Usnadnění – doporučené postupy
+# <a name="accessibility-best-practices"></a>Osvědčené postupy pro usnadnění
+
 > [!NOTE]
-> Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o najdete [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] v tématu [rozhraní API služby Windows Automation: automatizace uživatelského rozhraní](/windows/win32/winauto/entry-uiauto-win32).  
+> Tento článek je určený pro .NET Framework vývojářů, kteří chtějí používat spravované třídy pro automatizaci uživatelského rozhraní definované v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o automatizaci uživatelského rozhraní najdete v tématu [rozhraní API pro Windows Automation: automatizace uživatelského rozhraní](/windows/win32/winauto/entry-uiauto-win32).  
   
- Implementace následujících osvědčených postupů v ovládacích prvcích nebo aplikacích vylepší přístupnost uživatelům, kteří používají zařízení s podporou technologie Assist. Mnohé z těchto osvědčených postupů se zaměřují na dobrý [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] Návrh. Jednotlivé osvědčené postupy zahrnují informace o implementaci [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] ovládacích prvků nebo aplikací. V mnoha případech je práce, která splňuje tyto osvědčené postupy, již obsažena v [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] ovládacích prvcích.  
+ Implementace následujících osvědčených postupů v ovládacích prvcích nebo aplikacích vylepší přístupnost uživatelům, kteří používají zařízení s podporou technologie Assist. Mnohé z těchto osvědčených postupů se zaměřují na dobrý návrh uživatelského rozhraní. Každý osvědčený postup zahrnuje informace o implementaci pro ovládací prvky a aplikace Windows Presentation Foundation (WPF). V mnoha případech je práce, která by splňovala tyto osvědčené postupy, již obsažena v ovládacích prvcích WPF.  
   
 <a name="Programmatic_Access"></a>
 ## <a name="programmatic-access"></a>Programový přístup  
- Programový přístup vyžaduje, abyste zajistili, že všechny [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] prvky jsou označené, že jsou vystavené hodnoty vlastností a jsou vyvolány vhodné události. Pro standardní [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] ovládací prvky je většina této práce prováděna prostřednictvím <xref:System.Windows.Automation.Peers.AutomationPeer> . Vlastní ovládací prvky vyžadují další práci, aby bylo zajištěno, že je programový přístup správně implementován.  
+ Programový přístup zahrnuje jistotu, že všechny prvky uživatelského rozhraní jsou označeny, jsou vystaveny hodnoty vlastností a jsou vyvolány vhodné události. Pro standardní ovládací prvky WPF je většina této práce prováděna prostřednictvím <xref:System.Windows.Automation.Peers.AutomationPeer> . Vlastní ovládací prvky vyžadují další práci, aby bylo zajištěno, že je programový přístup správně implementován.  
   
 <a name="Enable_Programmatic_Access_to_all_UI_Elements_and_Text"></a>
 ### <a name="enable-programmatic-access-to-all-ui-elements-and-text"></a>Povolit programový přístup ke všem prvkům uživatelského rozhraní a textu  
- Prvky uživatelského rozhraní (UI) by měly povolit programový přístup. Pokud [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] je standardním [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] ovládacím prvkem, je podpora pro programový přístup k dispozici v ovládacím prvku. Pokud je ovládací prvek vlastní ovládací prvek – ovládací prvek, který byl podtřídou ze společného ovládacího prvku nebo ovládacího prvku, který byl podtřídou z ovládacího prvku – potom je nutné ověřit <xref:System.Windows.Automation.Peers.AutomationPeer> implementaci pro oblasti, které mohou být potřeba upravit.  
+ Prvky uživatelského rozhraní (UI) by měly povolit programový přístup. Pokud je uživatelské rozhraní standardním ovládacím prvkem WPF, je podpora pro programový přístup k dispozici v ovládacím prvku. Pokud je ovládací prvek vlastní ovládací prvek – ovládací prvek, který byl podtřídou ze společného ovládacího prvku nebo ovládacího prvku, který byl podtřídou z ovládacího prvku – potom je nutné ověřit <xref:System.Windows.Automation.Peers.AutomationPeer> implementaci pro oblasti, které mohou být potřeba upravit.  
   
- Pomocí tohoto osvědčeného postupu umožníte dodavatelům asistenční technologie identifikovat a manipulovat prvky vašeho produktu [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] .  
+ Pomocí tohoto osvědčeného postupu umožníte dodavatelům asistenční technologie identifikovat a manipulovat prvky uživatelského rozhraní vašeho produktu.  
   
 <a name="Place_Names__Titles_and_Descriptions_on_UI_Objects_"></a>
 ### <a name="place-names-titles-and-descriptions-on-ui-objects-frames-and-pages"></a>Vložení názvů, názvů a popisů do objektů uživatelského rozhraní, rámců a stránek  
- Technologie pro usnadnění, zejména čtečky obrazovky, používají název k pochopení umístění rámce, objektu nebo stránky v navigačním schématu. Proto musí být název velmi popisný. Například název webové stránky "Webová stránka společnosti Microsoft" je nepoužitý v případě, že uživatel přešel do určité oblasti. Popisný název je zásadní pro uživatele, kteří jsou nevidomí a jsou závislé na obrazovkách obrazovky. Podobně pro [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] ovládací prvky <xref:System.Windows.Automation.AutomationProperties.NameProperty> a <xref:System.Windows.Automation.AutomationProperties.HelpTextProperty> jsou důležité pro zařízení s technologií usnadnění.  
+ Technologie pro usnadnění, zejména čtečky obrazovky, používají název k pochopení umístění rámce, objektu nebo stránky v navigačním schématu. Proto musí být název popisný. Například název webové stránky "Webová stránka společnosti Microsoft" je nepoužitý v případě, že uživatel přešel do určité oblasti. Popisný název je zásadní pro uživatele, kteří jsou nevidomí a jsou závislé na obrazovkách obrazovky. Podobně pro ovládací prvky WPF <xref:System.Windows.Automation.AutomationProperties.NameProperty> a <xref:System.Windows.Automation.AutomationProperties.HelpTextProperty> jsou důležité pro zařízení s asistenčními technologiemi.  
   
- Pomocí tohoto osvědčeného postupu lze technologiím usnadnění identifikovat a manipulovat [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] v ukázkových ovládacích prvcích a aplikacích.  
+ Následující osvědčené postupy umožňují technologiím pro usnadnění identifikovat a manipulovat s uživatelským rozhraním v ukázkových ovládacích prvcích a aplikacích.  
   
 <a name="Ensure_Programmatic_Events_are_Triggered_by_all_UI"></a>
 ### <a name="ensure-programmatic-events-are-triggered-by-all-ui-activities"></a>Zajistěte, aby se programové události aktivovaly všemi aktivitami uživatelského rozhraní.  
- Pomocí tohoto osvědčeného postupu mohou technologie pro usnadnění naslouchat změnám v [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] nástroji a upozornit uživatele na tyto změny.  
+ Pomocí tohoto osvědčeného postupu mohou technologie pro usnadnění naslouchat změnám v uživatelském rozhraní a upozorňovat uživatele na tyto změny.  
   
 <a name="User_Settings"></a>
 ## <a name="user-settings"></a>User Settings  
@@ -61,13 +62,13 @@ ms.locfileid: "87517058"
   
 <a name="Support_High_Contrast_and_all_System_Display_Attributes"></a>
 ### <a name="support-high-contrast-and-all-system-display-attributes"></a>Podpora Vysoký kontrast a všech atributů systémových zobrazení  
- Aplikace by neměly rušit nebo zakázat nastavení kontrastu na úrovni systému, výběr barev nebo jiná nastavení a atributy zobrazení na úrovni systému. Nastavení pro systém, které přijala uživatel, vylepší přístupnost aplikací, takže by tyto aplikace neměly být vypnuté ani zakázané aplikacemi. K zajištění správného kontrastu by měla být použita barva v jejich správné kombinaci v popředí na pozadí. Nesouvisející barvy by neměly být smíšené a barvy by neměly být obrácené.  
+ Aplikace by neměly rušit nebo zakázat nastavení kontrastu na úrovni systému, výběr barev nebo jiná nastavení a atributy zobrazení na úrovni systému. Nastavení pro systém, které přijala uživatel, vylepší přístupnost aplikací, takže by tyto aplikace neměly být vypnuté ani zakázané aplikacemi. K zajištění správného kontrastu by měla být použita barva v jejich správné kombinaci v popředí na pozadí. Nekombinovat nesouvisející barvy a nevracet barvy.  
   
  Mnoho uživatelů vyžaduje určité kombinace s vysokým kontrastem, jako je bílý text na černém pozadí. Vykreslení těchto obrácených, jako černý text na bílém pozadí způsobí, že se pozadí doplní přes popředí a může pro některé uživatele ztížit čtení.  
   
 <a name="Ensure_all_UI_Correctly_Scales_by_any_DPI_Setting"></a>
 ### <a name="ensure-all-ui-correctly-scales-by-any-dpi-setting"></a>Ujistěte se, že se všechna uživatelská rozhraní správně škálují podle nastavení DPI.  
- Zajistěte, aby vše bylo [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] možné správně škálovat podle nastavení bodů na palec (dpi). Také zajistěte, aby se [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] prvky vešly na obrazovku 1024 x 768 a 120 bodů na palec (dpi).  
+ Ujistěte se, že se všechny uživatelské rozhraní můžou správně škálovat podle nastavení bodů na palec (dpi). Také se ujistěte, že prvky uživatelského rozhraní se vejdou na obrazovku 1024 x 768 a 120 bodů na palec (dpi).  
   
 <a name="Navigation"></a>
 ## <a name="navigation"></a>Navigace  
@@ -75,7 +76,7 @@ ms.locfileid: "87517058"
   
 <a name="Provide_Keyboard_Interface_for_all_UI_Elements"></a>
 ### <a name="provide-keyboard-interface-for-all-ui-elements"></a>Zadání rozhraní klávesnice pro všechny prvky uživatelského rozhraní  
- Tabulátory zarážky, zejména při pečlivém naplánování, poskytují uživatelům jiný způsob, jak přejít na [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] .  
+ Tabulátory zarážky, zejména při pečlivém naplánování, poskytují uživatelům jiný způsob navigace v uživatelském rozhraní.  
   
  Aplikace by měly poskytovat následující rozhraní klávesnice:  
   
@@ -85,7 +86,7 @@ ms.locfileid: "87517058"
   
 <a name="Show_the_Keyboard_Focus"></a>
 ### <a name="show-the-keyboard-focus"></a>Zobrazení fokusu klávesnice  
- Uživatelé musí znát, který objekt má fokus klávesnice, aby mohl předpokládat účinek jejich klávesových úhozů. Chcete-li zvýraznit fokus klávesnice, použijte barvy, písma nebo grafiku, například obdélníky nebo zvětšení. Chcete-li audibly zvýraznit fokus klávesnice, změňte hlasitost, sklon nebo tónovou kvalitu.  
+ Uživatelé musí znát, který objekt má fokus klávesnice, aby mohl předpokládat účinek jejich klávesových úhozů. Chcete-li zvýraznit fokus klávesnice, použijte barvy, písma nebo grafiku, například obdélníky nebo zvětšení. Pokud chcete audibly zvýraznit fokus klávesnice, změňte jeho kvalitu, sklon nebo tónovou kvalitu.  
   
  Aby nedocházelo k nejasnostem, aplikace by měly skrýt všechny indikátory fokusu vizuálů a tmavé volby, které se nacházejí v neaktivních oknech (nebo podoknech)  
   
@@ -99,7 +100,7 @@ ms.locfileid: "87517058"
   
 <a name="Support_Navigation_Standards_and_Powerful_Navigation"></a>
 ### <a name="support-navigation-standards-and-powerful-navigation-schemes"></a>Podpora navigačních standardů a výkonných navigačních schémat  
- Různé aspekty navigace na klávesnici poskytují různým způsobům, jak uživatelům přejít na [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] .  
+ Různé aspekty navigace na klávesnici poskytují různým způsobům, jak uživatelům přejít na uživatelské rozhraní.  
   
  Aplikace by měly poskytovat následující rozhraní klávesnice:  
   
@@ -111,17 +112,17 @@ ms.locfileid: "87517058"
   
 <a name="Do_not_let_Mouse_Location_Interfere_with_Keyboard"></a>
 ### <a name="do-not-let-mouse-location-interfere-with-keyboard-navigation"></a>Neumožnit umístění myši v konfliktu s navigací klávesnice  
- Umístění myši by nemělo být v konfliktu s navigací klávesnice. Pokud je například myš umístěná někde došlo a uživatel přejde pomocí klávesnice, neměli byste kliknout na tlačítko myši, pokud ho uživatel iniciuje.  
+ Umístění myši by nemělo být v konfliktu s navigací klávesnice. Pokud je například myš umístěná na nějakém místě a uživatel přejde pomocí klávesnice, neměli byste kliknout na tlačítko myši, pokud ho iniciuje uživatel.  
   
 <a name="Multimodal_Interface"></a>
 ## <a name="multimodal-interface"></a>Rozhraní Multimodal  
- Osvědčené postupy v této části zajišťují, že aplikace [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] zahrnuje alternativy pro vizuální prvky.  
+ Osvědčené postupy v této části zajišťují, že uživatelské rozhraní aplikace zahrnuje alternativy pro vizuální prvky.  
   
 <a name="Provide_User_Selectable_Equivalents_for_Non_Text"></a>
 ### <a name="provide-user-selectable-equivalents-for-non-text-elements"></a>Poskytněte uživatelem vybrané ekvivalenty pro prvky, které nejsou textové  
  Pro každý netextový prvek poskytněte uživatelsky vybraný ekvivalent pro text, přepisy nebo popisy zvuku, jako je například alternativní text, popisky nebo vizuální zpětná vazba.  
   
- Netextové prvky pokrývají široké spektrum [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] prvků, včetně obrázků, oblastí rozvržení obrázků, animací, apletů, rámců, skriptů, grafických tlačítek, zvuků, samostatných zvukových souborů a videa. Netextové prvky jsou důležité, pokud obsahují vizuální informace, řeč nebo obecné zvukové informace, ke kterým uživatel potřebuje mít přístup, aby bylo možné pochopit obsah [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] .  
+ Netextové prvky se týkají široké škály prvků uživatelského rozhraní, jako jsou obrázky, oblasti rozvržení obrázků, animace, aplety, snímky, skripty, grafická tlačítka, zvuky, samostatné zvukové soubory a video. Netextové prvky jsou důležité, pokud obsahují vizuální informace, řeč nebo obecné zvukové informace, ke kterým uživatel potřebuje mít přístup, aby bylo možné pochopit obsah uživatelského rozhraní.  
   
 <a name="Use_Color_but_also_Provide_Alternatives_to_Color"></a>
 ### <a name="use-color-but-also-provide-alternatives-to-color"></a>Použití barev, ale také k zadání alternativ barev  
@@ -129,7 +130,7 @@ ms.locfileid: "87517058"
   
 <a name="Use_Standard_Input_APIs_with_Devices_Independent"></a>
 ### <a name="use-standard-input-apis-with-device-independent-calls"></a>Použití standardních vstupních rozhraní API u volání nezávislých na zařízení  
- Volání nezávislá na zařízení zajišťují rovnost funkcí klávesnice a myši a zároveň poskytují technologii pro usnadnění s potřebnými informacemi o [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] .  
+ Volání nezávislá na zařízení zajišťují rovnost funkcí klávesnice a myši a zároveň poskytují technologii pro usnadnění s potřebnými informacemi o uživatelském rozhraní.  
   
 ## <a name="see-also"></a>Viz také
 

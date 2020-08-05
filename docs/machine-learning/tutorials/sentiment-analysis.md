@@ -4,12 +4,12 @@ description: V tomto kurzu se dozvíte, jak vytvořit konzolovou aplikaci .NET C
 ms.date: 06/30/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: de8ea511b3d421e391b182a6de079b854d3f2390
-ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
+ms.openlocfilehash: da972d793570a8dd6b906762640bd6bfe5531a5b
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/13/2020
-ms.locfileid: "86281750"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87557161"
 ---
 # <a name="tutorial-analyze-sentiment-of-website-comments-with-binary-classification-in-mlnet"></a>Kurz: analýza mínění komentářů k webu pomocí binární klasifikace v ML.NET
 
@@ -28,7 +28,7 @@ V tomto kurzu se naučíte:
 
 Zdrojový kód pro tento kurz najdete v úložišti [dotnet/Samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/SentimentAnalysis) .
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 - [Visual Studio 2017 verze 15,6 nebo novější](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) s nainstalovanou úlohou vývoj .NET Core pro různé platformy
 
@@ -212,7 +212,7 @@ Metoda [přizpůsobení () nasadí](xref:Microsoft.ML.Trainers.MatrixFactorizati
 
 ## <a name="evaluate-the-model"></a>Vyhodnocení modelu
 
-Po vyzkoušení modelu použijte data testu a ověřte výkon modelu.
+Po vyzkoušení modelu pomocí vašich testovacích dat ověřte výkon modelu.
 
 1. Vytvořte `Evaluate()` metodu, hned po `BuildAndTrainModel()` , s následujícím kódem:
 
@@ -376,7 +376,7 @@ Press any key to continue . . .
 
 ```
 
-Blahopřejeme! Teď jste úspěšně vytvořili model strojového učení pro klasifikaci a předpověď zpráv mínění.
+Gratulujeme! Teď jste úspěšně vytvořili model strojového učení pro klasifikaci a předpověď zpráv mínění.
 
 Sestavování úspěšných modelů je iterativní proces. Tento model má počáteční nižší kvalitu, protože kurz používá pro zajištění rychlého školení modelů malé datové sady. Pokud nejste spokojeni s kvalitou modelu, můžete se pokusit ho zlepšit poskytnutím větších školicích datových sad nebo výběrem různých školicích algoritmů s různými [parametry Hyper-](../resources/glossary.md#hyperparameter) v pro každý algoritmus.
 

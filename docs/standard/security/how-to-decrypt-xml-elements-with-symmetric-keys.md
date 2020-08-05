@@ -1,6 +1,6 @@
 ---
 title: 'Postupy: Dešifrování elementů XML pomocí symetrických klíčů'
-ms.date: 03/30/2017
+ms.date: 07/14/2020
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
@@ -8,20 +8,20 @@ dev_langs:
 helpviewer_keywords:
 - symmetric keys
 - System.Security.Cryptography.EncryptedXml class
-- System.Security.Cryptography.RijndaelManaged class
+- System.Security.Cryptography.Aes class
 - XML encryption
-- Rijndael
 - decryption
 ms.assetid: 6038aff0-f92c-4e29-a618-d793410410d8
-ms.openlocfilehash: bb34332d345ee7bcb9037dc7bdf0deebbe70c3c9
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 8c9f75442e04b76369b5b2c5c1b266ce2a511a63
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84277424"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87555744"
 ---
 # <a name="how-to-decrypt-xml-elements-with-symmetric-keys"></a>Postupy: Dešifrování elementů XML pomocí symetrických klíčů
-Třídy v <xref:System.Security.Cryptography.Xml> oboru názvů můžete použít k zašifrování elementu v dokumentu XML.  Šifrování XML umožňuje ukládat nebo přenášet citlivé XML, aniž byste se museli starat o data, která se dají snadno přečíst.  Tento příklad kódu dešifruje XML element pomocí algoritmu standard AES (Advanced Encryption Standard) (AES), označovaného také jako Rijndael.  
+
+Třídy v <xref:System.Security.Cryptography.Xml> oboru názvů můžete použít k zašifrování elementu v dokumentu XML.  Šifrování XML umožňuje ukládat nebo přenášet citlivé XML, aniž byste se museli starat o data, která se dají snadno přečíst.  Tento příklad kódu dešifruje XML element pomocí algoritmu standard AES (Advanced Encryption Standard) (AES).
   
  Informace o tom, jak zašifrovat XML element pomocí tohoto postupu, naleznete v tématu [How to: ENCRYPT XML Elements with Symetrick Keys](how-to-encrypt-xml-elements-with-symmetric-keys.md).  
   
@@ -70,16 +70,23 @@ Třídy v <xref:System.Security.Cryptography.Xml> oboru názvů můžete použí
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
   
-- Chcete-li tento příklad zkompilovat, je nutné zahrnout odkaz na `System.Security.dll` .  
+- V projektu, který cílí na .NET Framework, zahrňte odkaz na `System.Security.dll` .
+
+- V projektu, který cílí na .NET Core nebo .NET 5, nainstalujte balíček NuGet [System.Security.Cryptography.Xml](https://www.nuget.org/packages/System.Security.Cryptography.Xml).
   
 - Zahrňte následující obory názvů: <xref:System.Xml> , <xref:System.Security.Cryptography> a <xref:System.Security.Cryptography.Xml> .  
   
-## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
- Nikdy neukládejte kryptografický klíč ve formátu prostého textu ani nepřenáší klíč mezi počítači ve formátu prostého textu.  
+## <a name="net-security"></a>Zabezpečení .NET
   
- Po dokončení používání symetrického kryptografického klíče jej vymažte z paměti nastavením každého bajtu na hodnotu nula nebo voláním <xref:System.Security.Cryptography.SymmetricAlgorithm.Clear%2A> metody spravované kryptografické třídy.  
+Nikdy neukládejte kryptografický klíč ve formátu prostého textu ani nepřenáší klíč mezi počítači ve formátu prostého textu.  
+  
+Po dokončení používání symetrického kryptografického klíče jej vymažte z paměti nastavením každého bajtu na hodnotu nula nebo voláním <xref:System.Security.Cryptography.SymmetricAlgorithm.Clear%2A> metody spravované kryptografické třídy.  
   
 ## <a name="see-also"></a>Viz také
 
+- [Kryptografický model](cryptography-model.md)
+- [Šifrovací služby](cryptographic-services.md)
+- [Kryptografie pro různé platformy](cross-platform-cryptography.md)
 - <xref:System.Security.Cryptography.Xml>
 - [Postupy: Šifrování elementů XML pomocí symetrických klíčů](how-to-encrypt-xml-elements-with-symmetric-keys.md)
+- [Ochrana dat ASP.NET Core](/aspnet/core/security/data-protection/introduction)

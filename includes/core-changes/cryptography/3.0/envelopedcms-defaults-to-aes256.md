@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: d23c6cc9f8ee9c912ce5c9509d157692d1a18f90
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: e0cdcce9b8c7d591925b08635e3354dadaf22b7b
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83721302"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87556021"
 ---
 ### <a name="envelopedcms-defaults-to-aes-256-encryption"></a>EnvelopedCms ve výchozím nastavení šifrování AES-256
 
@@ -12,11 +12,11 @@ Výchozí symetrický šifrovací algoritmus používaný nástrojem `EnvelopedC
 
 #### <a name="change-description"></a>Popis změny
 
-V .NET Core Preview 7 a starších verzích, když <xref:System.Security.Cryptography.Pkcs.EnvelopedCms> se používá k šifrování dat bez určení symetrického šifrovacího algoritmu prostřednictvím přetížení konstruktoru, se data šifrují pomocí algoritmu TripleDES/3DES/3DEA/DES3-Ede.
+V předchozích verzích, kdy <xref:System.Security.Cryptography.Pkcs.EnvelopedCms> se používá k šifrování dat bez určení symetrického šifrovacího algoritmu prostřednictvím přetížení konstruktoru, jsou data zašifrovaná pomocí algoritmu TripleDES/3DES/3DEA/DES3-Ede.
 
-Počínaje rozhraním .NET Core 3,0 Preview 8 (přes 4.6.0 verze balíčku [System. Security. Cryptography. PKCS](https://www.nuget.org/packages/System.Security.Cryptography.Pkcs/) ) se výchozí algoritmus změnil na AES-256 pro modernizaci algoritmu a pro zlepšení zabezpečení výchozích možností. Pokud má certifikát příjemce zprávy (jiný než EC) veřejný klíč Diffie-Hellman, může operace šifrování selhat a <xref:System.Security.Cryptography.CryptographicException> v důsledku omezení v základní platformě.
+Počínaje .NET Core 3,0 (přes 4.6.0 verze balíčku [System. Security. Cryptography. PKCS](https://www.nuget.org/packages/System.Security.Cryptography.Pkcs/) ) se výchozí algoritmus změnil na AES-256 pro modernizaci algoritmu a pro zlepšení zabezpečení výchozích možností. Pokud má certifikát příjemce zprávy (jiný než EC) veřejný klíč Diffie-Hellman, může operace šifrování selhat a <xref:System.Security.Cryptography.CryptographicException> v důsledku omezení v základní platformě.
 
-V následujícím ukázkovém kódu jsou data při použití v rozhraní .NET Core 3,0 Preview 7 nebo starší zašifrovaná pomocí TripleDES. Pokud používáte .NET Core 3,0 Preview 8 nebo novější, je zašifrovaný pomocí AES-256.
+V následujícím ukázkovém kódu jsou data při použití v rozhraní .NET Core 2,2 nebo starší zašifrovaná pomocí TripleDES. Pokud používáte .NET Core 3,0 nebo novější, je šifrovaný pomocí AES-256.
 
 ```csharp
 EnvelopedCms cms = new EnvelopedCms(content);
@@ -26,7 +26,7 @@ return cms.Encode();
 
 #### <a name="version-introduced"></a>Představená verze
 
-3,0 Preview 8
+3.0
 
 #### <a name="recommended-action"></a>Doporučená akce
 

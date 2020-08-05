@@ -1,6 +1,7 @@
 ---
-title: Operátory jazyka c# – referenční dokumentace jazyka C#
-ms.date: 04/28/2020
+title: Operátory a výrazy jazyka c# – reference jazyka C#
+description: Další informace o operátorech a výrazech jazyka C#, prioritě operátorů a operátoru asociativita
+ms.date: 08/04/2020
 f1_keywords:
 - cs.operators
 helpviewer_keywords:
@@ -9,18 +10,52 @@ helpviewer_keywords:
 - operator associativity [C#]
 - expressions [C#]
 ms.assetid: 0301e31f-22ad-49af-ac3c-d5eae7f0ac43
-ms.openlocfilehash: 96bb97690f8954cce2cc75cad921e21985972798
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 19b5683a7cd334e1203c57fa90d275b659eac873
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87301772"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87556550"
 ---
-# <a name="c-operators-c-reference"></a>Operátory jazyka c# (Referenční dokumentace jazyka C#)
+# <a name="c-operators-and-expressions-c-reference"></a>Operátory a výrazy jazyka c# (Referenční dokumentace jazyka C#)
 
-Jazyk C# poskytuje řadu operátorů podporovaných integrovanými typy. Například [aritmetické operátory](arithmetic-operators.md) provádějí aritmetické operace s numerickými operandy a logické [logické operátory](boolean-logical-operators.md) provádějí logické operace s [logickými operandy](../builtin-types/bool.md) . Některé operátory mohou být [přetíženy](operator-overloading.md). S přetížením operátorů můžete určit chování operátoru pro operandy uživatelsky definovaného typu.
+Jazyk C# poskytuje řadu operátorů. Mnohé z nich jsou podporovány [integrovanými typy](../builtin-types/built-in-types.md) a umožňují provádět základní operace s hodnotami těchto typů. Tyto operátory zahrnují následující skupiny:
 
-Ve [výrazu](../../programming-guide/statements-expressions-operators/expressions.md), priority operátoru a asociativita určují pořadí, ve kterém jsou operace prováděny. Pomocí závorek můžete změnit pořadí vyhodnocování stanovené prioritou operátoru a asociativita.
+- [Aritmetické operátory](arithmetic-operators.md) , které provádějí aritmetické operace s číselnými operandy
+- [Operátory porovnání](comparison-operators.md) , které porovnávají číselné operandy
+- Logické [logické operátory](boolean-logical-operators.md) , které provádějí logické operace s [`bool`](../builtin-types/bool.md) operandy
+- [Operátory bitových a posunutí](bitwise-and-shift-operators.md) , které provádějí operace bitového nebo posunutí s operandy integrálních typů
+- [Operátory rovnosti](equality-operators.md) , které kontrolují, jestli jsou jejich operandy stejné
+
+Obvykle můžete tyto operátory [přetížit](operator-overloading.md) , to znamená, určit chování operátoru pro operandy uživatelsky definovaného typu.
+
+Nejjednodušší výrazy jazyka C# jsou literály (například [celočíselné](../builtin-types/integral-numeric-types.md#integer-literals) a [reálné](../builtin-types/floating-point-numeric-types.md#real-literals) číslo) a názvy proměnných. Můžete je kombinovat do složitých výrazů pomocí operátorů. [Priorita](#operator-precedence) operátorů a [asociativita](#operator-associativity) určují pořadí, ve kterém se provádí operace ve výrazu. Pomocí závorek můžete změnit pořadí vyhodnocování stanovené prioritou operátoru a asociativita.
+
+V následujícím kódu jsou příklady výrazů na pravé straně přiřazení:
+
+[!code-csharp[expression examples](snippets/Overview.cs#Expressions)]
+
+Výraz obvykle generuje výsledek a může být zahrnut do jiného výrazu. [`void`](../builtin-types/void.md)Volání metody je příklad výrazu, který neprodukuje výsledek. Dá se použít jenom jako [příkaz](../../programming-guide/statements-expressions-operators/statements.md), jak ukazuje následující příklad:
+
+```csharp
+Console.WriteLine("Hello, world!");
+```
+
+Tady jsou některé další druhy výrazů, které poskytuje jazyk C#:
+
+- [Interpolované řetězcové výrazy](../tokens/interpolated.md) , které poskytují pohodlný Syntax pro vytváření formátovaných řetězců:
+
+  [!code-csharp-interactive[interpolated string](snippets/Overview.cs#InterpolatedString)]
+
+- [Výrazy lambda](../../programming-guide/statements-expressions-operators/lambda-expressions.md) , které umožňují vytváření anonymních funkcí:
+
+  [!code-csharp-interactive[lambda expression](snippets/Overview.cs#Lambda)]
+
+- [Výrazy dotazů](../keywords/query-keywords.md) , které umožňují použití možností dotazů přímo v jazyce C#:
+
+  [!code-csharp-interactive[query expression](snippets/Overview.cs#Query)]
+
+[Definici těla výrazu](../../programming-guide/statements-expressions-operators/expression-bodied-members.md) můžete použít k poskytnutí stručné definice metody, konstruktoru, vlastnosti, indexeru nebo finalizační metody.
 
 ## <a name="operator-precedence"></a>Priorita operátorů
 
@@ -90,9 +125,13 @@ Obvykle jsou vyhodnocovány všechny operandy operátoru. Některé operátory v
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
-Další informace naleznete v části [operátory](~/_csharplang/spec/expressions.md#operators) v tématu [specifikace jazyka C#](~/_csharplang/spec/introduction.md).
+Další informace naleznete v následujících oddílech [specifikace jazyka C#](~/_csharplang/spec/introduction.md):
 
-## <a name="see-also"></a>Viz také:
+- [Výrazy](~/_csharplang/spec/expressions.md)
+- [Operátory](~/_csharplang/spec/expressions.md#operators)
+
+## <a name="see-also"></a>Viz také
 
 - [Referenční dokumentace k jazyku C#](../index.md)
-- [Výrazy](../../programming-guide/statements-expressions-operators/expressions.md)
+- [Přetěžování operátoru](operator-overloading.md)
+- [Stromy výrazů](../../programming-guide/concepts/expression-trees/index.md)

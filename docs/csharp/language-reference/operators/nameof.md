@@ -7,16 +7,16 @@ f1_keywords:
 helpviewer_keywords:
 - nameof expression [C#]
 ms.assetid: 33601bf3-cc2c-4496-846d-f9679bccf2a7
-ms.openlocfilehash: d71acf0cf7d5cdcfa5310455af2120fa1f82d567
-ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
+ms.openlocfilehash: 1bd8800a553eb9b3363da8a3b5f230caecddf223
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82135916"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87556407"
 ---
 # <a name="nameof-expression-c-reference"></a>nameof – výraz (Referenční dokumentace jazyka C#)
 
-`nameof` Výraz vytvoří název proměnné, typu nebo členu jako řetězcové konstanty:
+`nameof`Výraz vytvoří název proměnné, typu nebo členu jako řetězcové konstanty:
 
 [!code-csharp-interactive[nameof expression](snippets/NameOfOperator.cs#Examples)]
 
@@ -26,13 +26,13 @@ V případě [doslovnéch identifikátorů](../tokens/verbatim.md)není `@` znak
 
 [!code-csharp-interactive[nameof verbatim](snippets/NameOfOperator.cs#Verbatim)]
 
-`nameof` Výraz je vyhodnocen v době kompilace a nemá žádný vliv na dobu běhu.
+`nameof`Výraz je vyhodnocen v době kompilace a nemá žádný vliv na dobu běhu.
 
-`nameof` Výraz lze použít k zajištění udržovatelnosti kódu kontroly argumentu:
+Výraz lze použít `nameof` k zajištění udržovatelnosti kódu kontroly argumentu:
 
 [!code-csharp[nameof and argument check](snippets/NameOfOperator.cs#ExceptionMessage)]
 
-`nameof` Výraz je k dispozici v C# 6 a novějším.
+`nameof`Výraz je k dispozici v C# 6 a novějším.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
@@ -41,4 +41,4 @@ Další informace naleznete v části [Expressions nameof](~/_csharplang/spec/ex
 ## <a name="see-also"></a>Viz také
 
 - [Referenční dokumentace k jazyku C#](../index.md)
-- [Operátory jazyka C#](index.md)
+- [Operátory a výrazy v C#](index.md)

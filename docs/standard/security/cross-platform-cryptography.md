@@ -6,12 +6,12 @@ ms.technology: dotnet-standard
 helpviewer_keywords:
 - cryptography, cross-platform
 - encryption, cross-platform
-ms.openlocfilehash: 793a9bc55e5bd660374abd2ae81899e63ce3f36a
-ms.sourcegitcommit: b6a1869f97a37f11a68c90afde1a520a6887dcbc
+ms.openlocfilehash: 61fd49e53761deac278b770003eb97241b6c2be9
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85854004"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87557148"
 ---
 # <a name="cross-platform-cryptography-in-net-core-and-net-5"></a>Kryptografie pro různé platformy v .NET Core a .NET 5
 
@@ -365,7 +365,9 @@ macOS nepodporuje použití offline seznamů CRL, takže `X509RevocationMode.Off
 
 macOS nepodporuje stahování iniciované uživatelem u seznamu CRL (seznam odvolaných certifikátů)/protokolu OCSP (Online Certificate Status Protocol)/AIA (přístup k informacím autority), takže `X509ChainPolicy.UrlRetrievalTimeout` se ignoruje.
 
-## <a name="additional-resources"></a>Další zdroje
+## <a name="additional-resources"></a>Další zdroje informací
 
 * [Kryptografický model .NET](cryptography-model.md)
 * [Kryptografické služby .NET](cryptographic-services.md)
+* [Ohrožení zabezpečení časování u symetrického dešifrování pomocí odsazení v režimu CBC](vulnerabilities-cbc-mode.md)
+* [Ochrana dat ASP.NET Core](/aspnet/core/security/data-protection/introduction)

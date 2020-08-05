@@ -1,28 +1,34 @@
 ---
 title: Zosobnění a návrat
-ms.date: 03/30/2017
+ms.date: 07/15/2020
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - WindowsIdentity objects, impersonating
-- security [.NET Framework], impersonating Windows accounts
+- security [.NET], impersonating Windows accounts
 - impersonating Windows accounts
 ms.assetid: b93d402c-6c28-4f50-b2bc-d9607dc3e470
-ms.openlocfilehash: dbfd71830ace1eb8af9f55f06c9ce35c32d592bb
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 7eecc7d6cb3fa4cc1c1bd971d36f9d3ca47a7144
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288014"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87555670"
 ---
 # <a name="impersonating-and-reverting"></a>Zosobnění a návrat
+
+> [!NOTE]
+> Tento článek se týká systému Windows.
+>
+> Informace o ASP.NET Core najdete v tématu [ASP.NET Core Security](/aspnet/core/security/).
+
 Někdy může být nutné získat token účtu systému Windows k zosobnění účtu systému Windows. Například vaše aplikace založená na ASP.NET může muset v různých časech jednat jménem několika uživatelů. Vaše aplikace může přijmout token, který představuje správce z Internetová informační služba (IIS), zosobnit tohoto uživatele, provést operaci a vrátit se k předchozí identitě. V dalším kroku může přijmout token ze služby IIS, který představuje uživatele s menšími právy, provede nějakou operaci a vrátí se znovu.  
   
  V situacích, kdy musí vaše aplikace zosobnit účet systému Windows, který nebyl připojen k aktuálnímu vláknu službou IIS, je nutné načíst token tohoto účtu a použít ho k aktivaci účtu. Můžete to provést provedením následujících úloh:  
   
-1. Načtěte token účtu pro konkrétního uživatele voláním nespravované metody **LogonUser** . Tato metoda není v .NET Framework základní knihovny tříd, ale je umístěna v nespravované knihovně **advapi32. dll**. Přístup k metodám v nespravovaném kódu je pokročilá operace a překračuje rozsah této diskuze. Další informace najdete v tématu [spolupráce s nespravovaným kódem](../../framework/interop/index.md). Další informace o metodě **LogonUser** a **advapi32. dll**naleznete v dokumentaci k sadě SDK platformy.  
+1. Načtěte token účtu pro konkrétního uživatele voláním nespravované metody **LogonUser** . Tato metoda není v knihovně tříd .NET Base, ale je umístěna v nespravovaném **advapi32.dll**. Přístup k metodám v nespravovaném kódu je pokročilá operace a překračuje rozsah této diskuze. Další informace najdete v tématu [spolupráce s nespravovaným kódem](../../framework/interop/index.md). Další informace o metodě **LogonUser** a **advapi32.dll**naleznete v dokumentaci k sadě SDK platformy.  
   
 2. Vytvořte novou instanci třídy **WindowsIdentity** a předejte token. Následující kód demonstruje toto volání, kde `hToken` představuje token systému Windows.  
   
@@ -64,3 +70,4 @@ Někdy může být nutné získat token účtu systému Windows k zosobnění ú
 - <xref:System.Security.Principal.WindowsImpersonationContext>
 - [Objekty zabezpečení a identity](principal-and-identity-objects.md)
 - [Spolupráce s nespravovaným kódem](../../framework/interop/index.md)
+- [ASP.NET Core zabezpečení](/aspnet/core/security/)

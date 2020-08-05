@@ -1,6 +1,6 @@
 ---
-title: Operátory testování typů a výraz přetypování – odkaz Jazyka C#
-description: Další informace o operátory Jazyka C#, které můžete použít ke kontrole typu výsledku výrazu a převést jej na jiný typ v případě potřeby.
+title: Operátory testování typů a přetypování – reference jazyka C#
+description: Seznamte se s operátory jazyka C#, které lze použít ke kontrole typu výsledku výrazu a v případě potřeby jej převést na jiný typ.
 ms.date: 06/21/2019
 author: pkulikov
 f1_keywords:
@@ -18,141 +18,141 @@ helpviewer_keywords:
 - cast expression [C#]
 - () operator [C#]
 - typeof operator [C#]
-ms.openlocfilehash: bc293c359af5744eebc63c0d0f94b4cebe3d450a
-ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
+ms.openlocfilehash: 7c1c65c61a2214792dcd26efd4be1a9d7f2c07ca
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "82021244"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87555497"
 ---
-# <a name="type-testing-operators-and-cast-expression-c-reference"></a>Operátory testování typů a výraz přetypování (odkaz C#
+# <a name="type-testing-operators-and-cast-expression-c-reference"></a>Operátory testování typů a výraz přetypování (Referenční dokumentace jazyka C#)
 
-K provedení kontroly typu nebo převodu typu můžete použít následující operátory a výrazy:
+Pomocí následujících operátorů a výrazů můžete provést kontrolu typu nebo převod typu:
 
-- [je operátor](#is-operator): kontrola, zda je typ runtime výrazu kompatibilní s daným typem
-- [jako operátor](#as-operator): explicitně převést výraz na daný typ, pokud je jeho typ runtime kompatibilní s tímto typem
-- [výraz přetypování](#cast-expression): provedení explicitního převodu
-- [typeof operátor](#typeof-operator): <xref:System.Type?displayProperty=nameWithType> získat instanci pro typ
+- [is – operátor](#is-operator): Pokud chcete zjistit, jestli je běhový typ výrazu kompatibilní s daným typem
+- [as – operátor](#as-operator)pro explicitní převod výrazu na daný typ, pokud je jeho typ modulu runtime kompatibilní s daným typem
+- [výraz cast](#cast-expression): k provedení explicitního převodu
+- [typeof – operátor](#typeof-operator): pro získání <xref:System.Type?displayProperty=nameWithType> instance pro typ
 
-## <a name="is-operator"></a>je operátor
+## <a name="is-operator"></a>is – operátor
 
-Operátor `is` zkontroluje, zda je typ runtime výsledku výrazu kompatibilní s daným typem. Počínaje C# 7.0, `is` operátor také testuje výsledek výrazu proti vzoru.
+`is`Operátor zkontroluje, zda je typ modulu runtime výsledku výrazu kompatibilní s daným typem. Počínaje jazykem C# 7,0 `is` operátor také testuje výsledek výrazu proti vzorci.
 
-Výraz s operátorem `is` typ-testing má následující formulář
+Výraz s `is` operátorem testování typu má následující formu.
 
 ```csharp
 E is T
 ```
 
-kde `E` je výraz, který `T` vrací hodnotu a je název typu nebo typu parametr. `E`nemůže být anonymní metoda nebo lambda výraz.
+kde `E` je výraz, který vrací hodnotu a `T` je názvem typu nebo parametrem typu. `E`nemůže být anonymní metoda nebo výraz lambda.
 
-Výraz `E is T` vrátí, `true` pokud `E` výsledek je non-null a lze `T` převést na typ odkaz převodu, zabalení převodu nebo unboxing převodu; v opačném `false`případě vrátí . Operátor `is` nebere v úvahu uživatelem definované převody.
+`E is T`Výraz vrátí `true` , pokud výsledek `E` není null a lze jej převést na typ `T` pomocí převodu odkazu, převodu zabalení nebo převodu rozbalení. v opačném případě vrátí `false` . `is`Operátor nebere v úvahu uživatelsky definované převody.
 
-Následující příklad ukazuje, `is` že `true` operátor vrátí, pokud typ runtime výsledku výrazu pochází z daného typu, to znamená, že existuje převod odkazu mezi typy:
+Následující příklad ukazuje, že `is` operátor vrátí, `true` Pokud typ modulu runtime výsledku výrazu je odvozen z daného typu, to znamená, že existuje převod odkazu mezi typy:
 
 [!code-csharp[is with reference conversion](snippets/TypeTestingAndConversionOperators.cs#IsWithReferenceConversion)]
 
-Následující příklad ukazuje, `is` že operátor bere v úvahu převody zabalení a rozbalení, ale nebere v úvahu [číselné převody](../builtin-types/numeric-conversions.md):
+Následující příklad ukazuje, že `is` operátor vezme v úvahu převody zabalení a rozbalení, ale nebere v úvahu [číselné převody](../builtin-types/numeric-conversions.md):
 
 [!code-csharp-interactive[is with int](snippets/TypeTestingAndConversionOperators.cs#IsWithInt)]
 
-Informace o převodech jazyka C# naleznete v kapitole [Převody](~/_csharplang/spec/conversions.md) [ve specifikaci jazyka C#](~/_csharplang/spec/introduction.md).
+Informace o převodech jazyka C# naleznete v kapitole [převody](~/_csharplang/spec/conversions.md) [specifikace jazyka c#](~/_csharplang/spec/introduction.md).
 
-### <a name="type-testing-with-pattern-matching"></a>Testování typů s porovnáváním vzorů
+### <a name="type-testing-with-pattern-matching"></a>Testování typu s porovnáváním vzorů
 
-Počínaje C# 7.0, `is` operátor také testuje výsledek výrazu proti vzoru. Zejména podporuje vzor typu v následujícím formuláři:
+Počínaje jazykem C# 7,0 `is` operátor také testuje výsledek výrazu proti vzorci. Konkrétně podporuje vzor typu v následujícím tvaru:
 
 ```csharp
 E is T v
 ```
 
-kde `E` je výraz, který `T` vrací hodnotu, je název typu `v` nebo parametru typu `T`a je novou místní proměnnou typu . `E` Pokud je výsledek nenulové a lze jej `T` převést na převod odkazu, zabalení nebo rozbalení, `E is T v` výraz vrátí `true` a převedená hodnota výsledku `E` je přiřazena proměnné `v`.
+kde `E` je výraz, který vrací hodnotu, `T` je název typu nebo parametr typu a `v` je nová lokální proměnná typu `T` . Pokud výsledek `E` je jiný než null a lze jej převést na `T` odkaz, zabalení nebo rozbalení, `E is T v` výraz se vrátí `true` a převedená hodnota výsledku `E` je přiřazena proměnné `v` .
 
-Následující příklad ukazuje použití operátoru `is` se vzorem typu:
+Následující příklad ukazuje použití `is` operátoru se vzorem typu:
 
 [!code-csharp-interactive[is with type pattern](snippets/TypeTestingAndConversionOperators.cs#IsTypePattern)]
 
-Další informace o vzoru typu a dalších podporovaných vzorech naleznete v [tématu Pattern matching with is](../keywords/is.md#pattern-matching-with-is).
+Další informace o vzoru typu a dalších podporovaných vzorech naleznete v tématu [porovnávání vzorů s](../keywords/is.md#pattern-matching-with-is)parametrem is.
 
 ## <a name="as-operator"></a>Operátor as
 
-Operátor `as` explicitně převede výsledek výrazu na daný odkaz nebo typ hodnoty s hodnotou, kterou lze hodnotit s hodnotou s hodnotou s možnou hodnotou. Pokud převod není možný, `as` operátor `null`vrátí . Na rozdíl od `as` [výrazu přetypování](#cast-expression)operátor nikdy vyvolá výjimku.
+`as`Operátor explicitně převede výsledek výrazu na daný odkaz nebo typ hodnoty s možnou hodnotou null. Pokud převod není možný, `as` vrátí operátor `null` . Na rozdíl od [výrazu přetypování](#cast-expression) `as` operátor nikdy nevyvolá výjimku.
 
-Vyjádření formuláře
+Výraz formuláře
 
 ```csharp
 E as T
 ```
 
-kde `E` je výraz, který `T` vrací hodnotu a je název typu nebo parametru typu, vytváří stejný výsledek jako
+kde `E` je výraz, který vrací hodnotu a `T` je názvem typu nebo parametrem typu, vytvoří stejný výsledek jako
 
 ```csharp
 E is T ? (T)(E) : (T)null
 ```
 
-kromě `E` toho, že se vyhodnocuje pouze jednou.
+s výjimkou, že `E` je vyhodnocena pouze jednou.
 
-Operátor `as` považuje pouze odkaz, null, zabalení a unboxing převody. `as` Operátor nelze použít k provedení převodu definovaného uživatelem. Chcete-li to provést, použijte [výraz přetypování](#cast-expression).
+`as`Operátor zohledňuje pouze odkazy, převody s možnou hodnotou null, zabalení a rozbalení. Operátor nelze použít `as` k provedení převodu definovaného uživatelem. K tomu použijte [výraz cast](#cast-expression).
 
-Následující příklad ukazuje použití operátoru: `as`
+Následující příklad ukazuje použití `as` operátoru:
 
 [!code-csharp-interactive[as operator](snippets/TypeTestingAndConversionOperators.cs#AsOperator)]
 
 > [!NOTE]
-> Jak ukazuje předchozí příklad, je třeba porovnat `as` výsledek `null` výrazu s ke kontrole, zda je převod úspěšný. Počínaje C# 7.0, můžete použít [operátor is](#type-testing-with-pattern-matching) jak k testování, pokud je převod úspěšný, a pokud je úspěšný, přiřadit jeho výsledek nové proměnné.
+> Jak ukazuje předchozí příklad, je nutné porovnat výsledek `as` výrazu s `null` a zjistit, zda převod proběhl úspěšně. Počínaje jazykem C# 7,0 můžete použít [operátor is](#type-testing-with-pattern-matching) pro testování, zda je převod úspěšný, a pokud je úspěšný, přiřaďte výsledek k nové proměnné.
 
-## <a name="cast-expression"></a>Výraz přetypování
+## <a name="cast-expression"></a>Výraz cast
 
-Výraz přetypování `(T)E` formuláře provádí explicitní převod výsledku `E` `T`výrazu na typ . Pokud neexistuje žádný explicitní převod `E` z `T`typu typu na typ , dojde k chybě v době kompilace. V době běhu explicitní převod nemusí být úspěšné a výraz přetypování může vyvolat výjimku.
+Výraz přetypování formuláře `(T)E` provádí explicitní převod výsledku výrazu `E` na typ `T` . Pokud neexistuje žádný explicitní převod z typu `E` na typ `T` , dojde k chybě při kompilaci. V době spuštění explicitní převod nemusí být úspěšný a výraz přetypování může vyvolat výjimku.
 
 Následující příklad ukazuje explicitní číselné a referenční převody:
 
 [!code-csharp-interactive[cast expression](snippets/TypeTestingAndConversionOperators.cs#Cast)]
 
-Informace o podporovaných explicitních konverzích naleznete v části [Explicitní převody](~/_csharplang/spec/conversions.md#explicit-conversions) [ve specifikaci jazyka C#](~/_csharplang/spec/introduction.md). Informace o tom, jak definovat vlastní explicitní nebo implicitní převod typu, naleznete v [tématu Uživatelem definované operátory převodu](user-defined-conversion-operators.md).
+Informace o podporovaných explicitních převodech naleznete v části [explicitní převody](~/_csharplang/spec/conversions.md#explicit-conversions) [specifikace jazyka C#](~/_csharplang/spec/introduction.md). Informace o tom, jak definovat vlastní explicitní nebo implicitní převod typu, naleznete v části [uživatelsky definované operátory převodu](user-defined-conversion-operators.md).
 
-### <a name="other-usages-of-"></a>Ostatní použití ()
+### <a name="other-usages-of-"></a>Další použití pro ()
 
-Závorky můžete také použít k [volání metody nebo vyvolání delegáta](member-access-operators.md#invocation-expression-).
+K [volání metody nebo vyvolání delegáta](member-access-operators.md#invocation-expression-)můžete také použít kulaté závorky.
 
-Jiné použití závorek je upravit pořadí, ve kterém chcete vyhodnotit operace ve výrazu. Další informace naleznete v tématu [C# operátory](index.md).
+Jiné použití závorek je upravit pořadí, ve kterém se mají vyhodnocovat operace ve výrazu. Další informace naleznete v tématu [operátory jazyka C#](index.md).
 
 ## <a name="typeof-operator"></a>typeof – operátor
 
-Operátor `typeof` získá instanci <xref:System.Type?displayProperty=nameWithType> pro typ. Argument pro `typeof` operátor musí být název typu nebo parametr typu, jak ukazuje následující příklad:
+`typeof`Operátor získá <xref:System.Type?displayProperty=nameWithType> instanci pro typ. Argument `typeof` operátoru musí být název typu nebo parametr typu, jak ukazuje následující příklad:
 
 [!code-csharp-interactive[typeof operator](snippets/TypeTestingAndConversionOperators.cs#TypeOf)]
 
-Můžete také použít `typeof` operátor s nevázanými obecnými typy. Název nevázaného obecného typu musí obsahovat příslušný počet čárek, což je o jeden menší než počet parametrů typu. Následující příklad ukazuje použití `typeof` operátoru s nevázaným obecným typem:
+Operátor můžete také použít `typeof` s nevázanými obecnými typy. Název nevázaného obecného typu musí obsahovat odpovídající počet čárek, což je jedna hodnota, která je menší než počet parametrů typu. Následující příklad ukazuje použití `typeof` operátoru s nevázaným obecným typem:
 
 [!code-csharp-interactive[typeof unbound generic](snippets/TypeTestingAndConversionOperators.cs#TypeOfUnboundGeneric)]
 
-Výraz nemůže být argumentem `typeof` operátoru. Chcete-li <xref:System.Type?displayProperty=nameWithType> získat instanci pro typ runtime <xref:System.Object.GetType%2A?displayProperty=nameWithType> výsledku výrazu, použijte metodu.
+Výraz nemůže být argumentem `typeof` operátoru. Chcete-li získat <xref:System.Type?displayProperty=nameWithType> instanci pro běhový typ výsledku výrazu, použijte <xref:System.Object.GetType%2A?displayProperty=nameWithType> metodu.
 
-### <a name="type-testing-with-the-typeof-operator"></a>Typové zkoušky `typeof` s obsluhou
+### <a name="type-testing-with-the-typeof-operator"></a>Testování typu pomocí `typeof` operátoru
 
-Pomocí `typeof` operátoru zkontrolujte, zda typ runtime výsledku výrazu přesně odpovídá danému typu. Následující příklad ukazuje rozdíl mezi kontrolou typu `typeof` provedenou s operátorem a [operátorem is](#is-operator):
+Použijte `typeof` operátor ke kontrole, zda typ modulu runtime výsledku výrazu přesně odpovídá danému typu. Následující příklad ukazuje rozdíl mezi kontrolou typu provedenými s `typeof` operátorem a [operátorem is](#is-operator):
 
 [!code-csharp[typeof vs is](snippets/TypeTestingAndConversionOperators.cs#TypeCheckWithTypeOf)]
 
-## <a name="operator-overloadability"></a>Přetížení obsluhy
+## <a name="operator-overloadability"></a>Přetížení operátoru
 
-V `is` `as`, `typeof` , a operátory nelze přetíženy.
+`is`Operátory, `as` a `typeof` nemohou být přetíženy.
 
-Uživatelem definovaný typ nemůže `()` přetížit operátor, ale může definovat převody vlastního typu, které lze provést výrazem přetypování. Další informace naleznete v [tématu User-defined operátory převodu](user-defined-conversion-operators.md).
+Uživatelsky definovaný typ nemůže přetížit `()` operátor, ale může definovat vlastní převody typů, které mohou být provedeny výrazem přetypování. Další informace naleznete v tématu [uživatelsky definované operátory převodu](user-defined-conversion-operators.md).
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
-Další informace naleznete v následujících částech [specifikace jazyka C#](~/_csharplang/spec/introduction.md):
+Další informace naleznete v následujících oddílech [specifikace jazyka C#](~/_csharplang/spec/introduction.md):
 
 - [Operátor is](~/_csharplang/spec/expressions.md#the-is-operator)
-- [Jako operátor](~/_csharplang/spec/expressions.md#the-as-operator)
-- [Výrazy obsazení](~/_csharplang/spec/expressions.md#cast-expressions)
-- [Typ operátoru](~/_csharplang/spec/expressions.md#the-typeof-operator)
+- [Operátor as](~/_csharplang/spec/expressions.md#the-as-operator)
+- [Výrazy cast](~/_csharplang/spec/expressions.md#cast-expressions)
+- [Operátor typeof](~/_csharplang/spec/expressions.md#the-typeof-operator)
 
 ## <a name="see-also"></a>Viz také
 
 - [Referenční dokumentace k jazyku C#](../index.md)
-- [Operátory jazyka C#](index.md)
-- [Jak bezpečně obsazení pomocí porovnávání vzorů a je a jako operátory](../../how-to/safely-cast-using-pattern-matching-is-and-as-operators.md)
+- [Operátory a výrazy v C#](index.md)
+- [Jak bezpečně přetypovat pomocí porovnávání vzorů a operátorů is a as](../../how-to/safely-cast-using-pattern-matching-is-and-as-operators.md)
 - [Obecné typy v .NET](../../../standard/generics/index.md)

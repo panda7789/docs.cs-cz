@@ -1,7 +1,7 @@
 ---
 title: 'Postupy: Podepisování dokumentů XML digitálními podpisy'
-description: Naučte se podepisovat dokumenty XML digitálními podpisy. Použijte třídy v oboru názvů System. Security. Cryptography. XML v rozhraní .NET.
-ms.date: 03/30/2017
+description: Naučte se podepisovat dokumenty XML digitálními podpisy. Použijte třídy v oboru názvů System.Security.Cryptography.Xml v rozhraní .NET.
+ms.date: 07/14/2020
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
@@ -10,24 +10,28 @@ helpviewer_keywords:
 - signatures, XML signing
 - System.Security.Cryptography.SignedXml class
 - digital signatures, XML signing
-- System.Security.Cryptography.RSACryptoServiceProvider class
+- System.Security.Cryptography.RSA class
 - XML digital signatures
 - XML signing
 - signing XML
 ms.assetid: 99692ac1-d8c9-42d7-b1bf-2737b01037e4
-ms.openlocfilehash: 97bd23182ed54b899b76dbf43e179fe0c94b011d
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: e1457fd659ab63489bd4cfafd7731a4b098a2791
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84598564"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87557070"
 ---
 # <a name="how-to-sign-xml-documents-with-digital-signatures"></a>Postupy: Podepisování dokumentů XML digitálními podpisy
+
 Třídy v <xref:System.Security.Cryptography.Xml> oboru názvů můžete použít k podepsání dokumentu XML nebo části dokumentu XML s digitálním podpisem.  Digitální podpisy XML (XMLDSIG) umožňují ověřit, že data nebyla po podepsání změněna.  Další informace o standardu XMLDSIG najdete v tématu [syntaxe a zpracování signatur XML](https://www.w3.org/TR/xmldsig-core/)doporučení pro konsorcium World Wide Web (W3C).  
   
- Příklad kódu v tomto postupu ukazuje, jak digitálně podepsat celý dokument XML a připojit podpis k dokumentu v `Signature` prvku <>.  Příklad vytvoří podpisový klíč RSA, přidá klíč do zabezpečeného kontejneru klíčů a potom použije klíč k digitálnímu podepsání dokumentu XML.  Klíč lze poté načíst pro ověření digitálního podpisu XML nebo lze použít k podepsání jiného dokumentu XML.  
+> [!NOTE]
+> Kód v tomto článku se vztahuje na systém Windows.
+
+Příklad kódu v tomto postupu ukazuje, jak digitálně podepsat celý dokument XML a připojit podpis k dokumentu v `Signature` prvku <>.  Příklad vytvoří podpisový klíč RSA, přidá klíč do zabezpečeného kontejneru klíčů a potom použije klíč k digitálnímu podepsání dokumentu XML.  Klíč lze poté načíst pro ověření digitálního podpisu XML nebo lze použít k podepsání jiného dokumentu XML.  
   
- Informace o tom, jak ověřit digitální podpis XML, který byl vytvořen pomocí tohoto postupu, naleznete v tématu [How to: Verify Digital Signatures XML Documents](how-to-verify-the-digital-signatures-of-xml-documents.md).  
+Informace o tom, jak ověřit digitální podpis XML, který byl vytvořen pomocí tohoto postupu, naleznete v tématu [How to: Verify Digital Signatures XML Documents](how-to-verify-the-digital-signatures-of-xml-documents.md).  
   
 ### <a name="to-digitally-sign-an-xml-document"></a>Chcete-li digitálně podepsat dokument XML  
   
@@ -108,16 +112,23 @@ Třídy v <xref:System.Security.Cryptography.Xml> oboru názvů můžete použí
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
   
-- Chcete-li tento příklad zkompilovat, je nutné zahrnout odkaz na `System.Security.dll` .  
+- V projektu, který cílí na .NET Framework, zahrňte odkaz na `System.Security.dll` .
+
+- V projektu, který cílí na .NET Core nebo .NET 5, nainstalujte balíček NuGet [System.Security.Cryptography.Xml](https://www.nuget.org/packages/System.Security.Cryptography.Xml).
   
 - Zahrňte následující obory názvů: <xref:System.Xml> , <xref:System.Security.Cryptography> a <xref:System.Security.Cryptography.Xml> .  
   
-## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
- Nikdy Neukládat ani nepřenášet privátní klíč dvojice asymetrických klíčů ve formátu prostého textu.  Další informace o symetrických a asymetrických kryptografických klíčích najdete v tématu [generování klíčů pro šifrování a dešifrování](generating-keys-for-encryption-and-decryption.md).  
+## <a name="net-security"></a>Zabezpečení .NET
+
+Nikdy Neukládat ani nepřenášet privátní klíč dvojice asymetrických klíčů ve formátu prostého textu.  Další informace o symetrických a asymetrických kryptografických klíčích najdete v tématu [generování klíčů pro šifrování a dešifrování](generating-keys-for-encryption-and-decryption.md).  
   
- Nikdy nevkládat privátní klíč přímo do zdrojového kódu.  Vložené klíče lze snadno přečíst ze sestavení pomocí nástroje [Ildasm. exe (IL Disassembler)](../../framework/tools/ildasm-exe-il-disassembler.md) nebo otevřením sestavení v textovém editoru, jako je Poznámkový blok.  
+Nikdy nevkládat privátní klíč přímo do zdrojového kódu.  Vložené klíče lze snadno přečíst ze sestavení pomocí [Ildasm.exe (IL Disassembler)](../../framework/tools/ildasm-exe-il-disassembler.md) nebo otevřením sestavení v textovém editoru, jako je Poznámkový blok.  
   
 ## <a name="see-also"></a>Viz také
 
+- [Kryptografický model](cryptography-model.md)
+- [Šifrovací služby](cryptographic-services.md)
+- [Kryptografie pro různé platformy](cross-platform-cryptography.md)
 - <xref:System.Security.Cryptography.Xml>
 - [Postupy: Ověření digitálních podpisů dokumentů XML](how-to-verify-the-digital-signatures-of-xml-documents.md)
+- [Ochrana dat ASP.NET Core](/aspnet/core/security/data-protection/introduction)

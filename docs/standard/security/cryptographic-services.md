@@ -1,46 +1,44 @@
 ---
 title: Šifrovací služby
-description: Přečtěte si přehled metod šifrování a postupů podporovaných rozhraním .NET, jako jsou manifesty ClickOnce, Suite B, podpora kryptografické služby nové generace (CNG) &.
-ms.date: 03/30/2017
+description: Přehled metod šifrování a postupů, které podporuje .NET.
+ms.date: 07/14/2020
 ms.technology: dotnet-standard
 helpviewer_keywords:
-- cryptography [.NET Framework]
+- cryptography [.NET]
 - pattern of derived class inheritance
 - digital signatures
 - asymmetric cryptographic algorithms
 - digital signatures, public-key systems
 - public keys
-- decryption [.NET Framework]
+- decryption [.NET]
 - private keys
 - MAC algorithms
 - cryptographic algorithms
 - private keys, overview
-- encryption [.NET Framework]
-- security [.NET Framework], encryption
+- encryption [.NET]
+- security [.NET], encryption
 - cryptographic services
 - symmetric cryptographic algorithms
 - hash
 - message authentication codes
 - derived class inheritance
-- cryptography [.NET Framework], about
+- cryptography [.NET], about
 - random number generation
 ms.assetid: f96284bc-7b73-44b5-ac59-fac613ad09f8
-ms.openlocfilehash: 701dce82669395743c884a613512bfadc06c91b3
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 4cd4e493e0e7d159b2749dac78b9a560e20fd75c
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84596329"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87557018"
 ---
 # <a name="cryptographic-services"></a>Šifrovací služby
 
 Veřejné sítě, jako je Internet, neposkytují způsob zabezpečené komunikace mezi entitami. Komunikace přes tyto sítě je náchylná ke čtení nebo dokonce úpravám neoprávněnými třetími stranami. Kryptografie pomáhá chránit data před zobrazením, poskytuje způsoby, jak zjistit, zda byla data upravena, a pomáhá zajistit zabezpečený způsob komunikace v jiném nezabezpečeném kanálu. Data mohou být například šifrována pomocí kryptografického algoritmu, přenášena v zašifrovaném stavu a později dešifrována zamýšlenou stranou. Pokud třetí strana zachytí zašifrovaná data, bude obtížné je dešifrovat.
 
-V .NET Framework třídy v <xref:System.Security.Cryptography?displayProperty=nameWithType> oboru názvů spravují mnoho podrobností kryptografie za vás. Některé jsou obálky pro nespravované rozhraní CryptoAPI (Microsoft Cryptography API), zatímco jiné jsou čistě spravované implementace. Pro použití těchto tříd nemusíte být odborníkem na kryptografii. Když vytváříte novou instanci jedné z tříd šifrovacího algoritmu, klíče se generují automaticky pro snadné použití a výchozí vlastnosti jsou co nejbezpečnější a bezpečné.
+V rozhraní .NET třídy v <xref:System.Security.Cryptography> oboru názvů spravují mnoho podrobností kryptografie za vás. Některé jsou obálky pro implementace operačních systémů, zatímco jiné jsou čistě spravované implementace. Pro použití těchto tříd nemusíte být odborníkem na kryptografii. Když vytváříte novou instanci jedné z tříd šifrovacího algoritmu, klíče se generují automaticky pro snadné použití a výchozí vlastnosti jsou co nejbezpečnější a bezpečné.
 
-Tento přehled obsahuje souhrn metod a postupů šifrování podporovaných .NET Framework, včetně manifestů ClickOnce, Suite B a podpory kryptografie nové generace (CNG) představené v .NET Framework 3,5.
-
-Další informace o kryptografii a o službách, součástech a nástrojích společnosti Microsoft, které vám umožní přidat kryptografické zabezpečení do aplikací, naleznete v části vývoj Win32 a COM, zabezpečení této dokumentace.
+V tomto přehledu najdete stručný přehled metod šifrování a postupů, které podporuje .NET, včetně manifestů ClickOnce.
 
 ## <a name="cryptographic-primitives"></a>Kryptografické primitivy
 
@@ -85,19 +83,11 @@ Nevýhodou šifrování tajného klíče je to, že se obě strany dohodly na kl
 
 Za předpokladu, že Alice a Bob jsou dvě strany, které chtějí komunikovat přes nezabezpečený kanál, můžou použít šifrování tajného klíče takto: Alice a Bob souhlasí, že používají jeden konkrétní algoritmus (například AES) s určitým klíčem a IV. Alice vytvoří zprávu a vytvoří síťový datový proud (například pojmenovaný kanál nebo síťový e-mail), na který se má zpráva poslat. V dalším kroku šifruje text pomocí klíče a IV a pošle šifrovanou zprávu a IV k Bobovi přes intranet. Bob obdrží zašifrovaný text a dešifruje ho pomocí IV a dřív souhlasil na klíči. Pokud je přenos zachycen, zachytávací modul nemůže obnovit původní zprávu, protože neznají klíč. V tomto scénáři musí být klíč v tajnosti. Ve scénáři reálného světa buď Alice, nebo Bob vygeneruje tajný klíč a pomocí šifrování veřejného klíče (asymetrického klíče) přenáší tajný klíč (symetrický) na druhou stranu. Další informace o šifrování veřejného klíče najdete v další části.
 
-.NET Framework poskytuje následující třídy, které implementují šifrovací algoritmy tajného klíče:
+Rozhraní .NET poskytuje následující třídy, které implementují šifrovací algoritmy tajného klíče:
 
-- <xref:System.Security.Cryptography.AesManaged>(zavedeno v .NET Framework 3,5).
+- <xref:System.Security.Cryptography.Aes>
 
-- <xref:System.Security.Cryptography.DESCryptoServiceProvider>.
-
-- <xref:System.Security.Cryptography.HMACSHA1>(To je technicky klíč tajného klíče, protože představuje ověřovací kód zprávy vypočtený pomocí kryptografické funkce hash kombinované s tajným klíčem. Viz [hodnoty hash](#hash-values)dále v tomto tématu.)
-
-- <xref:System.Security.Cryptography.RC2CryptoServiceProvider>.
-
-- <xref:System.Security.Cryptography.RijndaelManaged>.
-
-- <xref:System.Security.Cryptography.TripleDESCryptoServiceProvider>.
+- <xref:System.Security.Cryptography.HMACSHA256><xref:System.Security.Cryptography.HMACSHA384>a <xref:System.Security.Cryptography.HMACSHA512> . (Jedná se o technicky algoritmy tajného klíče, protože představují kódy ověřování zpráv, které se počítají pomocí kryptografické funkce hash kombinované s tajným klíčem. Viz [hodnoty hash](#hash-values)dále v tomto článku.)
 
 ## <a name="public-key-encryption"></a>Šifrování veřejného klíče
 
@@ -123,23 +113,17 @@ Následující seznam obsahuje porovnání kryptografických algoritmů veřejn�
 
 - Algoritmy veřejného klíče jsou ve srovnání s algoritmy tajného klíče velmi pomalé a nejsou navržené k šifrování velkých objemů dat. Algoritmy veřejného klíče jsou užitečné jenom pro přenos velmi malých objemů dat. Šifrování pomocí veřejného klíče se obvykle používá k šifrování klíče a IV pro použití algoritmem tajného klíče. Po přesunu klíče a IV se pro zbytek relace použije šifrování tajného klíče.
 
-.NET Framework poskytuje následující třídy, které implementují šifrovací algoritmy veřejného klíče:
+Rozhraní .NET poskytuje následující třídy, které implementují algoritmy veřejného klíče:
 
-- <xref:System.Security.Cryptography.DSACryptoServiceProvider>
+- <xref:System.Security.Cryptography.RSA>
 
-- <xref:System.Security.Cryptography.RSACryptoServiceProvider>
+- <xref:System.Security.Cryptography.ECDsa>
 
-- <xref:System.Security.Cryptography.ECDiffieHellman>(základní třída)
+- <xref:System.Security.Cryptography.ECDiffieHellman>
 
-- <xref:System.Security.Cryptography.ECDiffieHellmanCng>
+- <xref:System.Security.Cryptography.DSA>
 
-- <xref:System.Security.Cryptography.ECDiffieHellmanCngPublicKey>(základní třída)
-
-- <xref:System.Security.Cryptography.ECDiffieHellmanKeyDerivationFunction>(základní třída)
-
-- <xref:System.Security.Cryptography.ECDsaCng>
-
-RSA umožňuje šifrování i podepisování, ale DSA se dá použít jenom pro podepisování a Diffie-Hellman se dá použít jenom pro generování klíče. Obecně platí, že algoritmy veřejného klíče jsou více omezené při jejich použití než algoritmy privátního klíče.
+RSA umožňuje šifrování i podepisování, ale DSA se dá použít jenom k podepisování. DSA není tak bezpečné jako RSA a doporučujeme RSA. Algoritmus Diffie-Hellman lze použít pouze pro generování klíče. Obecně platí, že algoritmy veřejného klíče jsou více omezené při jejich použití než algoritmy privátního klíče.
 
 ## <a name="digital-signatures"></a>Digitální podpisy
 
@@ -150,15 +134,13 @@ Chcete-li použít kryptografii veřejného klíče k digitálnímu podpisu zpr�
 > [!NOTE]
 > Podpis může být ověřený kýmkoli, protože veřejný klíč odesílatele je běžnou znalostí a obvykle je zahrnutý ve formátu digitálního podpisu. Tato metoda nezachovává tajnost zprávy; zpráva, která má být tajná, musí být také zašifrovaná.
 
-.NET Framework poskytuje následující třídy, které implementují algoritmy digitálního podpisu:
+Rozhraní .NET poskytuje následující třídy, které implementují algoritmy digitálního podpisu:
 
-- <xref:System.Security.Cryptography.DSACryptoServiceProvider>
+- <xref:System.Security.Cryptography.RSA>
 
-- <xref:System.Security.Cryptography.RSACryptoServiceProvider>
+- <xref:System.Security.Cryptography.ECDsa>
 
-- <xref:System.Security.Cryptography.ECDsa>(základní třída)
-
-- <xref:System.Security.Cryptography.ECDsaCng>
+- <xref:System.Security.Cryptography.DSA>
 
 ## <a name="hash-values"></a>Hodnoty hash
 
@@ -184,38 +166,21 @@ Dvě strany (Alice a Bob) můžou použít funkci hash k zajištění integrity 
 
 Žádná z předchozích metod nebrání někomu v čtení zpráv Alice, protože jsou přenášeny ve formátu prostého textu. Úplné zabezpečení obvykle vyžaduje digitální podpisy (podepisování zpráv) a šifrování.
 
-.NET Framework poskytuje následující třídy, které implementují algoritmy hash:
+Rozhraní .NET poskytuje následující třídy, které implementují algoritmy hash:
 
-- <xref:System.Security.Cryptography.HMACSHA1>.
+- <xref:System.Security.Cryptography.SHA256>.
 
-- <xref:System.Security.Cryptography.MACTripleDES>.
+- <xref:System.Security.Cryptography.SHA384>.
 
-- <xref:System.Security.Cryptography.MD5CryptoServiceProvider>.
+- <xref:System.Security.Cryptography.SHA512>.
 
-- <xref:System.Security.Cryptography.RIPEMD160>.
-
-- <xref:System.Security.Cryptography.SHA1Managed>.
-
-- <xref:System.Security.Cryptography.SHA256Managed>.
-
-- <xref:System.Security.Cryptography.SHA384Managed>.
-
-- <xref:System.Security.Cryptography.SHA512Managed>.
-
-- Varianty HMAC všech algoritmů SHA (Secure Hash Algorithm), MD5 (Message Digest 5) a RIPEMD-160.
-
-- Implementace CryptoServiceProvider (obálky spravovaného kódu) všech algoritmů SHA.
-
-- Implementace kryptografie nové generace (CNG) pro všechny algoritmy MD5 a SHA.
-
-> [!NOTE]
-> Chyby návrhu MD5 byly zjištěny v 1996 a místo toho byly doporučeny SHA-1. V 2004 byly zjištěny další chyby a algoritmus MD5 již není považován za zabezpečený. Algoritmus SHA-1 byl také zjištěn jako nezabezpečený a místo toho se doporučuje SHA-2.
+Rozhraní .NET také poskytuje <xref:System.Security.Cryptography.MD5> a <xref:System.Security.Cryptography.SHA1> . Ale algoritmy MD5 a SHA-1 se zjistily jako nezabezpečené a místo toho se doporučuje použít SHA-2. SHA-2 zahrnuje SHA256, SHA384 a SHA512.
 
 ## <a name="random-number-generation"></a>Náhodné generování čísel
 
 Generování náhodného čísla je celé řady kryptografických operací. Například kryptografické klíče musí být co nejnáhodný, aby bylo možné je znovu rekládat. Generátory náhodných náhodných čísel musí generovat výstup, který je výpočetně nevhodný pro předpověď pravděpodobnosti, která je lepší než jedna polovina. Proto jakákoli metoda předpovědi dalšího výstupního bitu nesmí vylepšit více než náhodné odhadování. Třídy v .NET Framework používají generátory náhodných čísel ke generování kryptografických klíčů.
 
-<xref:System.Security.Cryptography.RNGCryptoServiceProvider>Třída je implementací algoritmu generátoru náhodných čísel.
+<xref:System.Security.Cryptography.RandomNumberGenerator>Třída je implementací algoritmu generátoru náhodných čísel.
 
 ## <a name="clickonce-manifests"></a>Manifesty ClickOnce
 
@@ -237,25 +202,9 @@ V .NET Framework 3,5 následující kryptografické třídy umožňují získat 
 
 - <xref:System.Security.Cryptography.X509Certificates.TrustStatus>poskytuje jednoduchý způsob, jak ověřit, zda je podpis Authenticode důvěryhodný.
 
-## <a name="suite-b-support"></a>Podpora Suite B
-
-.NET Framework 3,5 podporuje Suite B sadu kryptografických algoritmů publikovaných národním bezpečnostním úřadem (National Security Agency). Další informace o Suite B najdete v [listu faktu Suite B kryptografie](https://www.nsa.gov/what-we-do/information-assurance/).
-
-K dispozici jsou tyto algoritmy:
-
-- Algoritmus standard AES (Advanced Encryption Standard) (AES) s velikostí klíčů 128, 192, a 256 bitů pro šifrování.
-
-- Algoritmy SHA-1, SHA-256, SHA-384 a SHA-512 pro algoritmus hash. (Poslední tři jsou obecně seskupené dohromady a označují se jako SHA-2.)
-
-- Algoritmus ECDSA (s eliptickou křivkou digitálního podpisu), který při podepisování používá křivky 256 bitů, 384 bitů a 521-bit. Dokumentace k bezpečnostnímu orgánu konkrétně definuje tyto křivky a volá je P-256, P-384 a P-521. Tento algoritmus je poskytován <xref:System.Security.Cryptography.ECDsaCng> třídou. Umožňuje vám podepsat privátní klíč a ověřit podpis pomocí veřejného klíče.
-
-- Algoritmus ECDH s eliptickou křivkou (ECDH), který používá křivky 256 bitů, 384 bitů a 521-bit pro výměnu klíčů a tajnou adresu. Tento algoritmus je poskytován <xref:System.Security.Cryptography.ECDiffieHellmanCng> třídou.
-
-Obálka spravovaného kódu pro implementace standardu FIPS (Federal Information Processing Standard) s certifikací AES, SHA-256, SHA-384 a SHA-512 jsou k dispozici v <xref:System.Security.Cryptography.AesCryptoServiceProvider> nových <xref:System.Security.Cryptography.SHA256CryptoServiceProvider> <xref:System.Security.Cryptography.SHA384CryptoServiceProvider> třídách,, a <xref:System.Security.Cryptography.SHA512CryptoServiceProvider> .
-
 ## <a name="cryptography-next-generation-cng-classes"></a>Třídy kryptografie nové generace (CNG)
 
-Třídy kryptografie nové generace (CNG) poskytují spravovanou obálku kolem nativních funkcí CNG. (CNG je náhradou pro rozhraní CryptoAPI.) Tyto třídy mají v rámci svých názvů "CNG". Základem základních tříd CNG je <xref:System.Security.Cryptography.CngKey> Třída kontejnerů klíčů, která vyabstrakce úložiště a použití klíčů CNG. Tato třída umožňuje bezpečně uložit dvojici klíčů nebo veřejný klíč a odkazovat na ni pomocí jednoduchého názvu řetězce. Třída podpisu založená na eliptické křivce <xref:System.Security.Cryptography.ECDsaCng> a <xref:System.Security.Cryptography.ECDiffieHellmanCng> Třída šifrování může používat <xref:System.Security.Cryptography.CngKey> objekty.
+V .NET Framework 3,5 a novějších verzích poskytují třídy kryptografických služeb nové generace (CNG) spravovanou obálku kolem nativních funkcí CNG. (CNG je náhradou pro rozhraní CryptoAPI.) Tyto třídy mají v rámci svých názvů "CNG". Základem základních tříd CNG je <xref:System.Security.Cryptography.CngKey> Třída kontejnerů klíčů, která vyabstrakce úložiště a použití klíčů CNG. Tato třída umožňuje bezpečně uložit dvojici klíčů nebo veřejný klíč a odkazovat na ni pomocí jednoduchého názvu řetězce. Třída podpisu založená na eliptické křivce <xref:System.Security.Cryptography.ECDsaCng> a <xref:System.Security.Cryptography.ECDiffieHellmanCng> Třída šifrování může používat <xref:System.Security.Cryptography.CngKey> objekty.
 
 <xref:System.Security.Cryptography.CngKey>Třída se používá pro celou řadu dalších operací, včetně otevírání, vytváření, odstraňování a exportování klíčů. Poskytuje také přístup k základnímu popisovači klíče, který se použije při přímém volání nativních funkcí.
 
@@ -267,10 +216,9 @@ Třídy kryptografie nové generace (CNG) poskytují spravovanou obálku kolem n
 
 - <xref:System.Security.Cryptography.CngProperty>uchovává často používané vlastnosti klíče.
 
-## <a name="related-topics"></a>Související témata
+## <a name="see-also"></a>Viz také
 
-|Nadpis|Popis|
-|-----------|-----------------|
-|[Kryptografický model](cryptography-model.md)|Popisuje, jak je kryptografie implementována v knihovně základní třídy.|
-|[Návod: Vytvoření šifrovací aplikace](walkthrough-creating-a-cryptographic-application.md)|Ukazuje základní úlohy šifrování a dešifrování.|
-|[Konfigurace šifrovacích tříd](../../framework/configure-apps/configure-cryptography-classes.md)|Popisuje způsob mapování názvů algoritmů na kryptografické třídy a mapování identifikátorů objektů na kryptografický algoritmus.|
+- [Kryptografický model](cryptography-model.md) – popisuje, jak je kryptografie implementována v knihovně základní třídy.
+- [Kryptografie pro různé platformy](cross-platform-cryptography.md)
+- [Ohrožení zabezpečení časování u symetrického dešifrování pomocí odsazení v režimu CBC](vulnerabilities-cbc-mode.md)
+- [Ochrana dat ASP.NET Core](/aspnet/core/security/data-protection/introduction)

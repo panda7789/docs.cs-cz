@@ -876,8 +876,6 @@
           href: programming-guide/statements-expressions-operators/index.md
         - name: Příkazy
           href: programming-guide/statements-expressions-operators/statements.md
-        - name: Výrazy
-          href: programming-guide/statements-expressions-operators/expressions.md
         - name: Členové tvoření výrazy
           href: programming-guide/statements-expressions-operators/expression-bodied-members.md
         - name: Anonymní funkce
@@ -1561,7 +1559,7 @@
       items:
         - name: Přehled
           href: language-reference/operators/index.md
-          displayName: 'operator precedence, operator associativity'
+          displayName: 'operator precedence, operator associativity, expressions'
         - name: Aritmetické operátory
           href: language-reference/operators/arithmetic-operators.md
           displayName: '++, --, +, -, *, /, %, +=, -=, *=, /=, %=, checked, unchecked'

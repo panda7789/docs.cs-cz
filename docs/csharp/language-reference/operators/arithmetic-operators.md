@@ -27,12 +27,12 @@ helpviewer_keywords:
 - + operator [C#]
 - subtraction operator [C#]
 - '- operator [C#]'
-ms.openlocfilehash: d004ab466bc053ed286d85bcbee2766d8a087286
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 03bf7f246884fc8cd0095f0dd1375389a95e1ef0
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83207242"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87555471"
 ---
 # <a name="arithmetic-operators-c-reference"></a>Aritmetické operátory (Referenční dokumentace jazyka C#)
 
@@ -253,8 +253,8 @@ Další informace naleznete v následujících oddílech [specifikace jazyka C#]
 
 - [Operátory přírůstku a snížení přípony](~/_csharplang/spec/expressions.md#postfix-increment-and-decrement-operators)
 - [Operátory inkrementace a dekrementace předpony](~/_csharplang/spec/expressions.md#prefix-increment-and-decrement-operators)
-- [Jednočlenný operátor plus](~/_csharplang/spec/expressions.md#unary-plus-operator)
-- [Unární operátor minus](~/_csharplang/spec/expressions.md#unary-minus-operator)
+- [Unární operátor plus](~/_csharplang/spec/expressions.md#unary-plus-operator)
+- [Operátor unární minus](~/_csharplang/spec/expressions.md#unary-minus-operator)
 - [Operátor násobení](~/_csharplang/spec/expressions.md#multiplication-operator)
 - [Operátor dělení](~/_csharplang/spec/expressions.md#division-operator)
 - [Operátor zbývající](~/_csharplang/spec/expressions.md#remainder-operator)
@@ -267,7 +267,7 @@ Další informace naleznete v následujících oddílech [specifikace jazyka C#]
 ## <a name="see-also"></a>Viz také
 
 - [Referenční dokumentace k jazyku C#](../index.md)
-- [Operátory jazyka C#](index.md)
+- [Operátory a výrazy v C#](index.md)
 - <xref:System.Math?displayProperty=nameWithType>
 - <xref:System.MathF?displayProperty=nameWithType>
 - [Číslovky v technologii .NET](../../../standard/numerics.md)

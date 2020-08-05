@@ -1,39 +1,39 @@
 ---
-title: true a false operátory - C# odkaz
+title: operátory true a false – Referenční dokumentace jazyka C#
 ms.date: 12/10/2018
 helpviewer_keywords:
 - false operator [C#]
 - true operator [C#]
 ms.assetid: 81a888fd-011e-4589-b242-6c261fea505e
-ms.openlocfilehash: 5ccd08a348478902bbbac36e99acf7ffc1fc814b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: efba2c1c921d867725db90a1879cc9dee1a22b4e
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78846213"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87555518"
 ---
-# <a name="true-and-false-operators-c-reference"></a>true a false operátory (C# odkaz)
+# <a name="true-and-false-operators-c-reference"></a>operátory true a false (Referenční dokumentace jazyka C#)
 
-Operátor `true` vrátí [bool](../builtin-types/bool.md) `true` hodnotu označující, že jeho operand je určitě true. Operátor `false` vrátí `bool` hodnotu `true` označující, že jeho operand je rozhodně false. A `true` `false` operátory se nezaručují, aby se vzájemně doplňovaly. To znamená, `true` že `false` i operátor `bool` `false` může vrátit hodnotu pro stejný operand. Pokud typ definuje jeden ze dvou operátorů, musí také definovat jiný operátor.
+`true`Operátor vrátí hodnotu [bool](../builtin-types/bool.md) `true` pro indikaci, že jeho operand je jednoznačně true. `false`Operátor vrátí `bool` hodnotu `true` pro indikaci, že jeho operand je jednoznačně false. `true`Operátory and nejsou `false` zaručené doplňují sebe. To znamená, že `true` operátor i `false` může vracet `bool` hodnotu `false` pro stejný operand. Pokud typ definuje jeden ze dvou operátorů, musí také definovat jiný operátor.
 
 > [!TIP]
-> Použijte `bool?` typ, pokud potřebujete podporovat logiku se třemi hodnotami (například při práci s databázemi, které podporují tříhodnotný logický typ). C# poskytuje `&` `|` a operátory, které podporují `bool?` logiku se třemi hodnotami s operandy. Další informace naleznete v části [Nullable Boolean logické operátory](boolean-logical-operators.md#nullable-boolean-logical-operators) článku [logické operátory logické.](boolean-logical-operators.md)
+> Použijte `bool?` typ, pokud potřebujete podporovat logiku se třemi hodnotami (například při práci s databázemi, které podporují logický typ se třemi hodnotami). Jazyk C# poskytuje `&` `|` operátory a, které podporují logiku se třemi hodnotami s `bool?` operandy. Další informace naleznete v části s [možnou hodnotou null logických operátorů](boolean-logical-operators.md#nullable-boolean-logical-operators) v článku [Boolean Logical Operators](boolean-logical-operators.md) .
 
 ## <a name="boolean-expressions"></a>Logické výrazy
 
-Typ s `true` definovaným operátorem může být typem výsledku výsledku řídícího podmíněného výrazu v [příkazech if](../keywords/if-else.md), [do](../keywords/do.md), [while](../keywords/while.md)a [for](../keywords/for.md) a v [podmíněném operátoru `?:` ](conditional-operator.md). Další informace naleznete v části [Logické výrazy](~/_csharplang/spec/expressions.md#boolean-expressions) ve [specifikaci jazyka C#](~/_csharplang/spec/introduction.md).
+Typ s definovaným `true` operátorem může být typ výsledku řídicího podmíněného výrazu v příkazech [if](../keywords/if-else.md), [do](../keywords/do.md), [while](../keywords/while.md)a [for](../keywords/for.md) a v [podmíněných operátorech `?:` ](conditional-operator.md). Další informace naleznete v části [booleovské výrazy](~/_csharplang/spec/expressions.md#boolean-expressions) ve [specifikaci jazyka C#](~/_csharplang/spec/introduction.md).
 
-## <a name="user-defined-conditional-logical-operators"></a>Uživatelem definované podmíněné logické operátory
+## <a name="user-defined-conditional-logical-operators"></a>Podmíněné logické operátory definované uživatelem
 
-Pokud typ s `true` definovaným operátorem `false` a operátory určitým způsobem [přetíží](operator-overloading.md) [logický operátor](boolean-logical-operators.md#logical-or-operator-) `|` OR nebo [logický operátor](boolean-logical-operators.md#logical-and-operator-) `&` AND, může být pro operandy tohoto typu vyhodnocen [podmíněný logický operátor](boolean-logical-operators.md#conditional-logical-or-operator-) `||` OR nebo [podmíněný logický operátor](boolean-logical-operators.md#conditional-logical-and-operator-) `&&`AND . Další informace naleznete v části [Uživatelem definované podmíněné logické operátory](~/_csharplang/spec/expressions.md#user-defined-conditional-logical-operators) [specifikace jazyka C#](~/_csharplang/spec/introduction.md).
+Pokud typ s definovanými `true` a `false` operátory [přetěžuje](operator-overloading.md) [logický operátor OR](boolean-logical-operators.md#logical-or-operator-) `|` nebo [logického](boolean-logical-operators.md#logical-and-operator-) operátoru and, `&` lze pro operandy daného typu vyhodnotit [podmíněný logický operátor](boolean-logical-operators.md#conditional-logical-or-operator-) or `||` nebo [podmíněný logický operátor and](boolean-logical-operators.md#conditional-logical-and-operator-) `&&` (v uvedeném pořadí). Další informace naleznete v části [Podmíněné logické operátory definované uživatelem](~/_csharplang/spec/expressions.md#user-defined-conditional-logical-operators) v tématu [specifikace jazyka C#](~/_csharplang/spec/introduction.md).
 
 ## <a name="example"></a>Příklad
 
-Následující příklad představuje typ, který `true` `false` definuje oba a operátory. Typ také přetíží logický `&` operátor AND takovým `&&` způsobem, že operátor může být také vyhodnocen pro operandy tohoto typu.
+Následující příklad představuje typ, který definuje `true` `false` operátory and. Typ také přetěžuje logický operátor AND tak `&` , že `&&` operátor lze také vyhodnotit pro operandy daného typu.
 
 [!code-csharp[true and false operators example](snippets/TrueFalseOperators.cs)]
 
-Všimněte si chování zkratování `&&` operátora. Když `GetFuelLaunchStatus` metoda `LaunchStatus.Red`vrátí , pravý operand `&&` operátoru není vyhodnocen. To proto, že `LaunchStatus.Red` je rozhodně nepravdivé. Výsledek logického operátoru and pak nezávisí na hodnotě pravostranného operandu. Výstup příkladu je následující:
+Všimněte si chování operátoru při krátkém obvodu `&&` . Když se `GetFuelLaunchStatus` Metoda vrátí `LaunchStatus.Red` , není `&&` vyhodnocen pravý operand operátoru. Důvodem je, že `LaunchStatus.Red` je jednoznačně false. Pak výsledek logické hodnoty a není závislý na hodnotě operandu na pravé straně. Výstup příkladu je následující:
 
 ```console
 Getting fuel launch status...
@@ -43,4 +43,4 @@ Wait!
 ## <a name="see-also"></a>Viz také
 
 - [Referenční dokumentace k jazyku C#](../index.md)
-- [Operátory jazyka C#](index.md)
+- [Operátory a výrazy v C#](index.md)

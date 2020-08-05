@@ -1,6 +1,6 @@
 ---
 title: 'Postupy: Vytváření objektů GenericPrincipal a GenericIdentity'
-ms.date: 03/30/2017
+ms.date: 07/15/2020
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
@@ -11,14 +11,19 @@ helpviewer_keywords:
 - Creating GenericPrincipal Objects
 - GenericIdentity Objects
 ms.assetid: 465694cf-258b-4747-9dae-35b01a5bcdbb
-ms.openlocfilehash: 10a71185db3359cda1c3bf7a12f5698929c98296
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 903d636938c47850951330d7936d95470441607e
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290860"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87557213"
 ---
 # <a name="how-to-create-genericprincipal-and-genericidentity-objects"></a>Postupy: Vytváření objektů GenericPrincipal a GenericIdentity
+
+> [!NOTE]
+> Tento článek se týká systému Windows.
+>
+> Informace o ASP.NET Core najdete v tématu [Přehled zabezpečení ASP.NET Core](https://docs.microsoft.com/aspnet/core/security/).
 
 <xref:System.Security.Principal.GenericIdentity>Třídu můžete ve spojení s <xref:System.Security.Principal.GenericPrincipal> třídou použít k vytvoření autorizačního schématu, které existuje nezávisle na doméně systému Windows.
 

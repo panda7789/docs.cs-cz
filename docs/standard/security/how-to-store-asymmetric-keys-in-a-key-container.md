@@ -7,25 +7,28 @@ dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
-- cryptography [.NET Framework], asymmetric keys
+- cryptography [.NET], asymmetric keys
 - storing asymmetric keys
 - keys, asymmetric
 - encryption keys
 - keys, storing in key containers
-- asymmetric keys [.NET Framework]
-- encryption [.NET Framework], asymmetric keys
+- asymmetric keys [.NET]
+- encryption [.NET], asymmetric keys
 - decryption keys
 ms.assetid: 0dbcbd8d-0dcf-40e9-9f0c-e3f162d35ccc
-ms.openlocfilehash: a0fbde37491043cc1aab71e9733087bf410b997d
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: aa6fad815338cbd6316deca7be0a23286630fa56
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84769025"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87556290"
 ---
 # <a name="store-asymmetric-keys-in-a-key-container"></a>Uložení asymetrických klíčů v kontejneru klíčů
 
 Asymetrické soukromé klíče by nikdy neměly být uloženy doslovně nebo ve formátu prostého textu v místním počítači. Pokud potřebujete uložit privátní klíč, použijte kontejner klíčů. Další informace o kontejnerech klíčů najdete v tématu [Principy kontejnerů klíčů RSA na úrovni počítače a na úrovni uživatele](https://docs.microsoft.com/previous-versions/aspnet/f5cs0acs(v=vs.100)).
+
+> [!NOTE]
+> Kód v tomto článku se vztahuje na systém Windows.
 
 ## <a name="create-an-asymmetric-key-and-save-it-in-a-key-container"></a>Vytvoření asymetrického klíče a jeho uložení do kontejneru klíčů
 
@@ -244,7 +247,10 @@ Key deleted.
 
 ## <a name="see-also"></a>Viz také
 
+- [Kryptografický model](cryptography-model.md)
+- [Šifrovací služby](cryptographic-services.md)
+- [Kryptografie pro různé platformy](cross-platform-cryptography.md)
 - [Generování klíčů pro šifrování a dešifrování](generating-keys-for-encryption-and-decryption.md)
 - [Šifrování dat](encrypting-data.md)
 - [Dešifrování dat](decrypting-data.md)
-- [Kryptografické služby](cryptographic-services.md)
+- [Ochrana dat ASP.NET Core](/aspnet/core/security/data-protection/introduction)

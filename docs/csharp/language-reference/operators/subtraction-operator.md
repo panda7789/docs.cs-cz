@@ -1,5 +1,5 @@
 ---
-title: '- a -= operátory - odkaz C#'
+title: '- and-= Operators-reference jazyka C#'
 ms.date: 05/27/2019
 f1_keywords:
 - -_CSharpKeyword
@@ -12,44 +12,44 @@ helpviewer_keywords:
 - event unsubscription [C#]
 - -= operator [C#]
 ms.assetid: 4de7a4fa-c69d-48e6-aff1-3130af970b2d
-ms.openlocfilehash: 2017aade92e8d7ad2af7101a107122fa8d7b9e27
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0475e1be74af0b367785443224cd2e737d2f7301
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78847648"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87555590"
 ---
-# <a name="--and---operators-c-reference"></a>- a -= operátory (odkaz C#)
+# <a name="--and---operators-c-reference"></a>-and-= – operátory (Referenční dokumentace jazyka C#)
 
-A `-` `-=` operátory jsou podporovány integrované [integrální](../builtin-types/integral-numeric-types.md) a [plovoucí desetinnou desetinnou](../builtin-types/floating-point-numeric-types.md) desetinnou a [delegací](../builtin-types/reference-types.md#the-delegate-type) typů.
+`-`Operátory a `-=` jsou podporovány integrovanými čísly [integrálu](../builtin-types/integral-numeric-types.md) a typy s [plovoucí desetinnou](../builtin-types/floating-point-numeric-types.md) čárkou a typy [delegátů](../builtin-types/reference-types.md#the-delegate-type) .
 
-Informace o operátoru `-` aritmetiky naleznete [unary plus a minus operátory](arithmetic-operators.md#unary-plus-and-minus-operators) a [odčítání operátor -](arithmetic-operators.md#subtraction-operator--) části [aritmetické operátory](arithmetic-operators.md) článku.
+Informace o aritmetickém `-` operátoru naleznete v tématu [unární operátory plus a minus](arithmetic-operators.md#unary-plus-and-minus-operators) a [operátor odčítání –](arithmetic-operators.md#subtraction-operator--) oddíly v článku [aritmetické operátory](arithmetic-operators.md) .
 
 ## <a name="delegate-removal"></a>Odebrání delegáta
 
-Pro operandy stejného typu `-` [delegáta](../builtin-types/reference-types.md#the-delegate-type) operátor vrátí instanci delegáta, která je vypočtena takto:
+Pro operandy stejného typu [delegáta](../builtin-types/reference-types.md#the-delegate-type) `-` vrátí operátor instanci delegáta, která je vypočítána takto:
 
-- Pokud oba operandy jsou non-null a vvolací seznam pravé operand je správné souvislé podseznam seznamu vyvolání levé operand, výsledkem operace je nový seznam vyvolání, který je získán odebráním pravé operand položky ze seznamu vyvolání levého operandu. Pokud seznam pravého operandu odpovídá více sousedícím podseznamům v seznamu levostranných operandů, bude odebrán pouze odpovídající podseznam vpravo. Pokud má za následek odebrání prázdný `null`seznam, výsledek je .
+- Pokud jsou oba operandy nenulové a seznam vyvolání pravého operandu je správným souvislým podseznamem seznamu vyvolání na levém operandu, výsledkem operace je nový seznam vyvolání, který se získá odebráním položek operandu na pravé straně ze seznamu vyvolání operandu na levé straně. Pokud se v seznamu operandů na pravé straně shoduje více sousedících podseznamů v seznamu operandů na levé straně, bude odebrán pouze odpovídající podseznam. Pokud je výsledkem odebrání prázdný seznam, výsledek je `null` .
 
   [!code-csharp-interactive[delegate removal](snippets/SubtractionOperator.cs#DelegateRemoval)]
 
-- Pokud seznam vyvolání pravého operandu není řádným souvislým dílčím seznamem seznamu vyvolání levého operandu, je výsledkem operace levostranný operand. Například odebrání delegáta, který není součástí delegáta vícesměrového vysílání, neprovede nic a výsledkem je nezměněný delegát vícesměrového vysílání.
+- Pokud seznam volání na pravé straně operand není správným souvislým podseznamem seznamu vyvolání na levém operandu, výsledkem operace je operand na levé straně. Například odebrání delegáta, který není součástí delegáta vícesměrového vysílání, neprovede žádnou akci a dojde ke změně nezměněného delegáta vícesměrového vysílání.
 
   [!code-csharp-interactive[delegate removal with no effect](snippets/SubtractionOperator.cs#DelegateRemovalNoChange)]
 
-  Předchozí příklad také ukazuje, že během delegáta odstranění delegáta instance jsou porovnány. Například delegáti, které jsou vyrobeny z vyhodnocení identické [lambda výrazy](../../programming-guide/statements-expressions-operators/lambda-expressions.md) nejsou stejné. Další informace o rovnosti delegátů naleznete v části [Operátory rovnosti delegátů](~/_csharplang/spec/expressions.md#delegate-equality-operators) [ve specifikaci jazyka C#](~/_csharplang/spec/introduction.md).
+  Předchozí příklad také ukazuje, že během porovnání instancí delegáta pro odebrání delegáta. Například delegáty vytvořené z vyhodnocení identických [výrazů lambda](../../programming-guide/statements-expressions-operators/lambda-expressions.md) nejsou stejné. Další informace o rovnosti delegátů naleznete v části [operátory rovnosti delegátů](~/_csharplang/spec/expressions.md#delegate-equality-operators) ve [specifikaci jazyka C#](~/_csharplang/spec/introduction.md).
 
-- Pokud je `null`levostranný operand , je `null`výsledkem operace . Pokud je `null`pravostranný operand , výsledkem operace je levostranný operand.
+- Pokud je operand na levé straně `null` , výsledkem operace je `null` . Pokud je operand na pravé straně `null` , výsledkem operace je operand na levé straně.
 
   [!code-csharp-interactive[delegate removal and null](snippets/SubtractionOperator.cs#DelegateRemovalAndNull)]
 
-Chcete-li kombinovat [ `+` ](addition-operator.md#delegate-combination)delegáty, použijte operátor .
+Chcete-li kombinovat delegáty, použijte [ `+` operátor](addition-operator.md#delegate-combination).
 
-Další informace o typech delegátů naleznete v tématu [Delegáti](../../programming-guide/delegates/index.md).
+Další informace o typech delegátů naleznete v tématu [Delegates](../../programming-guide/delegates/index.md).
 
-## <a name="subtraction-assignment-operator--"></a>Operátor přiřazení odčítání -=
+## <a name="subtraction-assignment-operator--"></a>Operátor přiřazení odčítání-=
 
-Výraz používající `-=` operátor, například
+Výraz, který používá `-=` operátor, například
 
 ```csharp
 x -= y
@@ -61,26 +61,26 @@ je ekvivalentem
 x = x - y
 ```
 
-kromě `x` toho, že se vyhodnocuje pouze jednou.
+s výjimkou, že `x` je vyhodnocena pouze jednou.
 
-Následující příklad ukazuje použití operátoru: `-=`
+Následující příklad ukazuje použití `-=` operátoru:
 
 [!code-csharp-interactive[-= examples](snippets/SubtractionOperator.cs#SubtractAndAssign)]
 
-Operátor můžete `-=` také použít k určení metody obslužné rutiny události, která má být odebrána při odhlášení z [odběru události](../keywords/event.md). Další informace naleznete v tématu [Jak se přihlásit k odběru a odhlásit z odběru událostí](../../programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md).
+Operátor můžete také použít `-=` k určení metody obslužné rutiny události, která se má odebrat, když zrušíte odběr [události](../keywords/event.md). Další informace najdete v tématu [jak se přihlásit k odběru událostí a odhlásit se z](../../programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md)nich.
 
-## <a name="operator-overloadability"></a>Přetížení obsluhy
+## <a name="operator-overloadability"></a>Přetížení operátoru
 
-Uživatelem definovaný typ může `-` [přetížit](operator-overloading.md) operátor. Když binární `-` operátor je přetížený, `-=` operátor je také implicitně přetížené. Uživatelem definovaný typ nemůže `-=` explicitně přetížit operátor.
+Uživatelsky definovaný typ může [přetížit](operator-overloading.md) `-` operátor. Při přetížení binárního `-` operátoru `-=` je operátor také implicitně přetížený. Uživatelsky definovaný typ nemůže explicitně přetížit `-=` operátor.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
-Další informace naleznete [unary minus operátor](~/_csharplang/spec/expressions.md#unary-minus-operator) a [odčítání operátor](~/_csharplang/spec/expressions.md#subtraction-operator) části [c# specifikace jazyka](~/_csharplang/spec/introduction.md).
+Další informace naleznete v částech [unární operátor minus](~/_csharplang/spec/expressions.md#unary-minus-operator) a [odčítání](~/_csharplang/spec/expressions.md#subtraction-operator) v tématu [specifikace jazyka C#](~/_csharplang/spec/introduction.md).
 
 ## <a name="see-also"></a>Viz také
 
 - [Referenční dokumentace k jazyku C#](../index.md)
-- [Operátory jazyka C#](index.md)
-- [Akce](../../programming-guide/events/index.md)
+- [Operátory a výrazy v C#](index.md)
+- [Události](../../programming-guide/events/index.md)
 - [Aritmetické operátory](arithmetic-operators.md)
-- [+ a += operátory](addition-operator.md)
+- [+ a + = – operátory](addition-operator.md)

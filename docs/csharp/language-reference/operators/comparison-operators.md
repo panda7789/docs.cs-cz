@@ -19,12 +19,12 @@ helpviewer_keywords:
 - <= operator [C#]
 - greater than or equal to operator [C#]
 - '>= operator [C#]'
-ms.openlocfilehash: eda039d950e4be13d9c041c8bb95b6ea773b83f6
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: d57f96b9c80bdc5f40169180b40326ffed91cf10
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83207231"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87555366"
 ---
 # <a name="comparison-operators-c-reference"></a>Operátory porovnání (Referenční dokumentace jazyka C#)
 
@@ -76,6 +76,6 @@ Další informace naleznete v části [relační operátory and type-Testing](~/
 ## <a name="see-also"></a>Viz také
 
 - [Referenční dokumentace k jazyku C#](../index.md)
-- [Operátory jazyka C#](index.md)
+- [Operátory a výrazy v C#](index.md)
 - <xref:System.IComparable%601?displayProperty=nameWithType>
 - [Operátory rovnosti](equality-operators.md)

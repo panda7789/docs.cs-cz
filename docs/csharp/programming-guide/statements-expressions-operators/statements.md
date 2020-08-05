@@ -6,12 +6,12 @@ helpviewer_keywords:
 - statements [C#], about statements
 - C# language, statements
 ms.assetid: 901bcde7-87de-4e15-833c-f9cfd40c8ce3
-ms.openlocfilehash: b941e46f959167f78f1366a3863aca4240810013
-ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
+ms.openlocfilehash: 3f8ac88525c44f9572f4f647145ad251537aba57
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87381759"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87556745"
 ---
 # <a name="statements-c-programming-guide"></a>Příkazy (Průvodce programováním v C#)
 
@@ -28,10 +28,10 @@ V následující tabulce jsou uvedeny různé typy příkazů v jazyce C# a jeji
 |Kategorie|Klíčová slova a poznámky jazyka C#|
 |--------------|---------------------------|
 |[Příkazy deklarace](#declaration-statements)|Příkaz deklarace zavádí novou proměnnou nebo konstantu. Deklarace proměnné může volitelně přiřadit hodnotu proměnné. V deklaraci konstanty je vyžadováno přiřazení.|
-|[Příkazy výrazu](expressions.md)|Příkazy výrazů, které počítají hodnotu, musí ukládat hodnotu v proměnné. Další informace naleznete v tématu [Expression Statements](#expression-statements).|
+|[Příkazy výrazu](#expression-statements)|Příkazy výrazů, které počítají hodnotu, musí ukládat hodnotu v proměnné.|
 |Příkazy výběru|Příkazy výběru umožňují vytvořit větev do různých oddílů kódu v závislosti na jedné nebo více zadaných podmínkách. Další informace najdete v následujících tématech: <ul><li>[if](../../language-reference/keywords/if-else.md)</li><li>jinak ([else](../../language-reference/keywords/if-else.md))</li><li>[přepnutí](../../language-reference/keywords/switch.md)</li><li>[tom](../../language-reference/keywords/switch.md)</li></ul>|
-|Příkazy iterace|Příkazy iterace umožňují cyklicky procházet kolekcemi, jako jsou pole, nebo provádět stejnou sadu příkazů opakovaně, dokud není splněna zadaná podmínka. Další informace najdete v následujících tématech: <ul><li>[do](../../language-reference/keywords/do.md)</li><li>[pro](../../language-reference/keywords/for.md)</li><li>[foreach](../../language-reference/keywords/foreach-in.md)</li><li>[in](../../language-reference/keywords/foreach-in.md)</li><li>[while](../../language-reference/keywords/while.md)</li></ul>|
-|Jump – příkazy|Příkazy skoku přenášejí řízení na jiný oddíl kódu. Další informace najdete v následujících tématech: <ul><li>[break](../../language-reference/keywords/break.md)</li><li>[pokraeovat](../../language-reference/keywords/continue.md)</li><li>[default](../../language-reference/keywords/switch.md)</li><li>[goto](../../language-reference/keywords/goto.md)</li><li>[return](../../language-reference/keywords/return.md)</li><li>[yield](../../language-reference/keywords/yield.md)</li></ul>|
+|Příkazy iterace|Příkazy iterace umožňují cyklicky procházet kolekcemi, jako jsou pole, nebo provádět stejnou sadu příkazů opakovaně, dokud není splněna zadaná podmínka. Další informace najdete v následujících tématech: <ul><li>[do](../../language-reference/keywords/do.md)</li><li>[pro](../../language-reference/keywords/for.md)</li><li>[foreach](../../language-reference/keywords/foreach-in.md)</li><li>[pro](../../language-reference/keywords/foreach-in.md)</li><li>[while](../../language-reference/keywords/while.md)</li></ul>|
+|Jump – příkazy|Příkazy skoku přenášejí řízení na jiný oddíl kódu. Další informace najdete v následujících tématech: <ul><li>[rozdělován](../../language-reference/keywords/break.md)</li><li>[pokraeovat](../../language-reference/keywords/continue.md)</li><li>[výchozí](../../language-reference/keywords/switch.md)</li><li>[goto](../../language-reference/keywords/goto.md)</li><li>[return](../../language-reference/keywords/return.md)</li><li>[yield](../../language-reference/keywords/yield.md)</li></ul>|
 |Příkazy zpracování výjimek|Příkazy zpracování výjimek umožňují bezproblémové obnovení z mimořádných podmínek, ke kterým dojde v době běhu. Další informace najdete v následujících tématech: <ul><li>[throw](../../language-reference/keywords/throw.md)</li><li>[try-catch](../../language-reference/keywords/try-catch.md)</li><li>[try-finally](../../language-reference/keywords/try-finally.md)</li><li>[try-catch-finally](../../language-reference/keywords/try-catch-finally.md)</li></ul>|
 |[Zaškrtnuto a nezaškrtnuto](../../language-reference/keywords/checked-and-unchecked.md)|Zaškrtnuté a nezaškrtnuté příkazy umožňují určit, jestli numerické operace můžou způsobit přetečení, pokud je výsledek uložený v proměnné, která je moc malá pro uložení výsledné hodnoty. Další informace naleznete v tématu [checked](../../language-reference/keywords/checked.md) a [unchecked](../../language-reference/keywords/unchecked.md).|
 |`await`Příkaz|Pokud označíte metodu pomocí modifikátoru [Async](../../language-reference/keywords/async.md) , můžete použít operátor [await](../../language-reference/operators/await.md) v metodě. Když ovládací prvek dosáhne `await` výrazu v asynchronní metodě, ovládací prvek se vrátí volajícímu a průběh v metodě je pozastaven, dokud není dokončen očekávaný úkol. Po dokončení úlohy může provádění pokračovat v metodě.<br /><br /> Jednoduchý příklad naleznete v části [metody](../classes-and-structs/methods.md)"asynchronní metody". Další informace naleznete v tématu [asynchronní programování s Async a await](../concepts/async/index.md).|
@@ -89,8 +89,8 @@ Pokud kompilátor určí, že tok řízení nemůže nikdy dosáhnout konkrétn�
 
 Další informace naleznete v části [příkazy](~/_csharplang/spec/statements.md) [specifikace jazyka C#](~/_csharplang/spec/introduction.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Průvodce programováním v C#](../index.md)
-- [Klíčová slova příkazu](../../language-reference/keywords/statement-keywords.md)  
-- [Výrazy](expressions.md)  
+- [Klíčová slova příkazu](../../language-reference/keywords/statement-keywords.md)
+- [Operátory a výrazy v C#](../../language-reference/operators/index.md)

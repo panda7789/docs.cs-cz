@@ -15,12 +15,12 @@ helpviewer_keywords:
 - cheat sheet
 - .NET Framework regular expressions, language elements
 ms.assetid: 930653a6-95d2-4697-9d5a-52d11bb6fd4c
-ms.openlocfilehash: a2fc2c56eeb29f5e89dc0b9f94636408ff10700f
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 4788c84be76a5cc9a9a6327fcd054e08db4d1872
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84446363"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87556797"
 ---
 # <a name="regular-expression-language---quick-reference"></a>Jazyk regulárních výrazů – stručná referenční dokumentace
 
@@ -37,7 +37,7 @@ Tyto informace jsme také poskytli ve dvou formátech, které si můžete stáhn
 
 Znak zpětného lomítka ( \\ ) v regulárním výrazu označuje, že následující znak je buď speciální znak (jak je uvedeno v následující tabulce), nebo by měl být interpretován doslova. Další informace naleznete v tématu [znakové řídicí znaky](character-escapes-in-regular-expressions.md).
 
-|Řídicí znak|Description|Vzor|Shody|
+|Řídicí znak|Popis|Vzor|Shody|
 |-----------------------|-----------------|-------------|-------------|
 |`\a`|Odpovídá znaku bell \u0007.|`\a`|`"\u0007"` v `"Error!" + '\u0007'`|
 |`\b`|Ve třídě znaků odpovídá znaku Backspace \u0008.|`[\b]{3,}`|`"\b\b\b\b"` v `"\b\b\b\b"`|
@@ -57,7 +57,7 @@ Znak zpětného lomítka ( \\ ) v regulárním výrazu označuje, že následuj�
 
 Třída znaků odpovídá jakémukoli znaku z množiny znaků. Třídy znaků obsahují prvky jazyka uvedené v následující tabulce. Další informace naleznete v tématu [třídy znaků](character-classes-in-regular-expressions.md).
 
-|Třída znaků|Description|Vzor|Shody|
+|Třída znaků|Popis|Vzor|Shody|
 |---------------------|-----------------|-------------|-------------|
 |`[`*character_group*`]`|Odpovídá jakémukoli jednomu znaku v *character_group*. Ve výchozím nastavení shoda rozlišuje velká a malá písmena.|`[ae]`|`"a"` v `"gray"`<br /><br /> `"a"`, `"e"` v`"lane"`|
 |`[^`*character_group*`]`|Negace: odpovídá jakémukoli jednomu znaku, který není v *character_group*. Ve výchozím nastavení znaky v *character_group* rozlišují velká a malá písmena.|`[^aei]`|`"r"`, `"g"` ,, `"n"` v`"reign"`|
@@ -76,7 +76,7 @@ Třída znaků odpovídá jakémukoli znaku z množiny znaků. Třídy znaků o
 
 Kotvy neboli atomické kontrolní výrazy s nulovou šířkou způsobí, že porovnávání je úspěšné nebo neúspěšné v závislosti na aktuální pozici v řetězci, ale nezpůsobí, aby nástroj postupoval dále v řetězci nebo spotřebovával znaky. Metaznaky uvedené v následující tabulce jsou kotvy. Další informace naleznete v tématu [kotvy](anchors-in-regular-expressions.md).
 
-|Kontrolní výraz|Description|Vzor|Shody|
+|Kontrolní výraz|Popis|Vzor|Shody|
 |---------------|-----------------|-------------|-------------|
 |`^`|Ve výchozím nastavení musí shoda začít na začátku řetězce; v víceřádkovém režimu musí začít na začátku řádku.|`^\d{3}`|`"901"` v `"901-333-"`|
 |`$`|Ve výchozím nastavení se shoda musí vyskytovat na konci řetězce nebo před koncem `\n` řetězce; v víceřádkovém režimu se musí vyskytovat před koncem řádku nebo před `\n` koncem řádku.|`-\d{3}$`|`"-333"` v `"-901-333"`|
@@ -91,11 +91,11 @@ Kotvy neboli atomické kontrolní výrazy s nulovou šířkou způsobí, že po
 
 Seskupovací konstrukce vymezují dílčí výrazy regulárních výrazů a obvykle zachytávají podřetězce vstupního řetězce. Seskupovací konstrukce obsahují prvky jazyka uvedené v následující tabulce. Další informace naleznete v tématu [seskupovací konstrukce](grouping-constructs-in-regular-expressions.md).
 
-|Seskupovací konstrukce|Description|Vzor|Shody|
+|Seskupovací konstrukce|Popis|Vzor|Shody|
 |------------------------|-----------------|-------------|-------------|
 |`(`dílčí *výraz*`)`|Zachycuje porovnané dílčí výrazy a přiřazuje jim řadové číslovky od jedné.|`(\w)\1`|`"ee"` v `"deep"`|
-|`(?<`*název* `>` dílčí *výraz*`)`|Zachycuje porovnaný dílčí výraz do pojmenované skupiny.|`(?<double>\w)\k<double>`|`"ee"` v `"deep"`|
-|`(?<`*název1* `-` *název2* `>` dílčí *výraz*`)`|Určuje definici vyrovnávací skupiny. Další informace naleznete v části "definice vyrovnávací skupiny" v tématu [seskupovací konstrukce](grouping-constructs-in-regular-expressions.md).|`(((?'Open'\()[^\(\)]*)+((?'Close-Open'\))[^\(\)]*)+)*(?(Open)(?!))$`|`"((1-3)*(3-1))"` v `"3+2^((1-3)*(3-1))"`|
+|`(?<`*název* `>` dílčí *výraz*`)`<br /> – nebo – <br />`(?'`*název* `'` dílčí *výraz*`)`|Zachycuje porovnaný dílčí výraz do pojmenované skupiny.|`(?<double>\w)\k<double>`|`"ee"` v `"deep"`|
+|`(?<`*název1* `-` *název2* `>` dílčí *výraz*`)` <br /> – nebo – <br /> `(?'`*název1* `-` *název2* `'` dílčí *výraz*`)`|Určuje definici vyrovnávací skupiny. Další informace naleznete v části "definice vyrovnávací skupiny" v tématu [seskupovací konstrukce](grouping-constructs-in-regular-expressions.md).|`(((?'Open'\()[^\(\)]*)+((?'Close-Open'\))[^\(\)]*)+)*(?(Open)(?!))$`|`"((1-3)*(3-1))"` v `"3+2^((1-3)*(3-1))"`|
 |`(?:`dílčí *výraz*`)`|Definuje skupinu bez zachytávání.|`Write(?:Line)?`|`"WriteLine"` v `"Console.WriteLine()"`<br /><br /> `"Write"` v `"Console.Write(value)"`|
 |`(?imnsx-imnsx:`dílčí *výraz*`)`|Použije nebo zakáže zadané možnosti v rámci dílčího *výrazu*. Další informace najdete v tématu [Možnosti regulárních výrazů](regular-expression-options.md).|`A\d{2}(?i:\w+)\b`|`"A12xl"`, `"A12XL"` v`"A12xl A12XL a12xl"`|
 |`(?=`dílčí *výraz*`)`|Kontrolní výraz pozitivního dopředného vyhledávání s nulovou šířkou.|`\w+(?=\.)`|`"is"`, `"ran"` a `"out"` v`"He is. The dog ran. The sun is out."`|
@@ -108,7 +108,7 @@ Seskupovací konstrukce vymezují dílčí výrazy regulárních výrazů a obv
 
 Kvantifikátor určuje, kolik instancí předchozího prvku (kterým může být znak, skupina nebo třída znaků) musí být přítomných ve vstupním řetězci, aby došlo ke shodě. Kvantifikátory zahrnují prvky jazyka uvedené v následující tabulce. Další informace najdete v tématu [kvantifikátory](quantifiers-in-regular-expressions.md).
 
-|Kvantifikátor|Description|Vzor|Shody|
+|Kvantifikátor|Popis|Vzor|Shody|
 |----------------|-----------------|-------------|-------------|
 |`*`|Porovná předchozí prvek nulakrát nebo vícekrát.|`\d*\.\d`|`".0"`, `"19.9"`, `"219.9"`|
 |`+`|Porovná předchozí prvek jednou nebo vícekrát.|`"be+"`|`"bee"`v `"been"` , `"be"` v`"bent"`|
@@ -127,16 +127,16 @@ Kvantifikátor určuje, kolik instancí předchozího prvku (kterým může být
 
 Zpětné odkazy umožňují dříve porovnaným dílčím výrazům, aby byly identifikovány následně ve stejném pořadí v daném regulárním výrazu. V následující tabulce jsou uvedeny konstrukce zpětných odkazů podporované regulárními výrazy v rozhraní .NET. Další informace naleznete v tématu [konstrukce zpětných odkazů](backreference-constructs-in-regular-expressions.md).
 
-|Konstrukce zpětných odkazů|Description|Vzor|Shody|
+|Konstrukce zpětných odkazů|Popis|Vzor|Shody|
 |-----------------------------|-----------------|-------------|-------------|
-|`\`*číslo*|Zpětný odkaz. Odpovídá hodnotě číslovaného dílčího výrazu.|`(\w)\1`|`"ee"` v `"seek"`|
+|`\` *číslo*|Zpětný odkaz. Odpovídá hodnotě číslovaného dílčího výrazu.|`(\w)\1`|`"ee"` v `"seek"`|
 |`\k<`*název*`>`|Pojmenovaný zpětný odkaz. Odpovídá hodnotě číslovaného výrazu.|`(?<char>\w)\k<char>`|`"ee"` v `"seek"`|
 
 ## <a name="alternation-constructs"></a>Konstrukce alternace
 
 Konstrukce alternace upravují regulární výraz, aby došlo ke shodě typu buď/anebo. Tyto konstrukce obsahují prvky jazyka uvedené v následující tabulce. Další informace naleznete v tématu [konstrukce alternace](alternation-constructs-in-regular-expressions.md).
 
-|Konstrukce alternace|Description|Vzor|Shody|
+|Konstrukce alternace|Popis|Vzor|Shody|
 |---------------------------|-----------------|-------------|-------------|
 |<code>&#124;</code>|Odpovídá jakémukoli jednomu prvku oddělenému znakem svislé čáry ( <code>&#124;</code> ).|<code>th(e&#124;is&#124;at)</code>|`"the"`, `"this"` v`"this is the day."`|
 |`(?(`*výraz* `)` *Ano* <code>&#124;</code> *ne*`)`|Odpovídá hodnotě *Ano* , pokud se vzor regulárního výrazu určeného *výrazem* shoduje; v opačném případě se shoduje s *nevolitelnou* částí. *výraz* je interpretován jako kontrolní výraz s nulovou šířkou.|<code>(?(A)A\d{2}\b&#124;\b\d{3}\b)</code>|`"A10"`, `"910"` v`"A10 C103 910"`|
@@ -146,9 +146,9 @@ Konstrukce alternace upravují regulární výraz, aby došlo ke shodě typu bu�
 
 Náhrady jsou prvky jazyka regulárních výrazů, které jsou podporovány ve vzorech pro nahrazení. Další informace naleznete v tématu [nahrazování](substitutions-in-regular-expressions.md). Metaznaky uvedené v následující tabulce jsou atomické kontrolní výrazy s nulovou šířkou.
 
-|Znak|Description|Vzor|Vzor pro nahrazování|Vstupní řetězec|Výsledný řetězec|
+|Znak|Popis|Vzor|Vzor pro nahrazování|Vstupní řetězec|Výsledný řetězec|
 |---------------|-----------------|-------------|-------------------------|------------------|-------------------|
-|`$`*číslo*|Nahradí podřetězec odpovídající *číslu*skupiny.|`\b(\w+)(\s)(\w+)\b`|`$3$2$1`|`"one two"`|`"two one"`|
+|`$` *číslo*|Nahradí podřetězec odpovídající *číslu*skupiny.|`\b(\w+)(\s)(\w+)\b`|`$3$2$1`|`"one two"`|`"two one"`|
 |`${`*název*`}`|Nahradí podřetězec odpovídající pojmenované skupině *Name*.|`\b(?<word1>\w+)(\s)(?<word2>\w+)\b`|`${word2} ${word1}`|`"one two"`|`"two one"`|
 |`$$`|Nahradí literál "$".|`\b(\d+)\s?USD`|`$$$1`|`"103 USD"`|`"$103"`|
 |`$&`|Nahradí kopii celé shody.|`\$?\d*\.?\d+`|`**$&**`|`"$1.30"`|`"**$1.30**"`|
@@ -168,7 +168,7 @@ Vloženou možnost můžete zadat dvěma způsoby:
 
 Modul regulárních výrazů .NET podporuje následující vložené možnosti:
 
-|Možnost|Description|Vzor|Shody|
+|Možnost|Popis|Vzor|Shody|
 |------------|-----------------|-------------|-------------|
 |`i`|Použije porovnávání, které nerozlišuje velká a malá písmena.|`\b(?i)a(?-i)a\w+\b`|`"aardvark"`, `"aaaAuto"` v`"aardvark AAAuto aaaAuto Adam breakfast"`|
 |`m`|Použije víceřádkový režim. `^`a `$` odpovídají začátku a konci řádku místo začátku a konce řetězce.|Příklad naleznete v části "víceřádkový režim" v tématu [Možnosti regulárních výrazů](regular-expression-options.md).||

@@ -4,18 +4,18 @@ ms.date: 06/25/2019
 helpviewer_keywords:
 - new operator keyword [C#]
 ms.assetid: a212b697-a79b-4105-9923-1f7b108036e8
-ms.openlocfilehash: ed18c42cd28412a967c94a65c2a92b0b75097b52
-ms.sourcegitcommit: 5988e9a29cedb8757320817deda3c08c6f44a6aa
+ms.openlocfilehash: 1e1abb95d8b0b956e391b05ddc5a0a8a20d01a63
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82199726"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87555302"
 ---
 # <a name="new-operator-c-reference"></a>New – operátor (Referenční dokumentace jazyka C#)
 
-`new` Operátor vytvoří novou instanci typu.
+`new`Operátor vytvoří novou instanci typu.
 
-`new` Klíčové slovo lze použít také jako [Modifikátor deklarace člena](../keywords/new-modifier.md) nebo [omezení obecného typu](../keywords/new-constraint.md).
+Klíčové slovo lze použít také `new` jako [Modifikátor deklarace člena](../keywords/new-modifier.md) nebo [omezení obecného typu](../keywords/new-constraint.md).
 
 ## <a name="constructor-invocation"></a>Vyvolání konstruktoru
 
@@ -29,7 +29,7 @@ Můžete použít [inicializátor objektu nebo kolekce](../../programming-guide/
 
 ## <a name="array-creation"></a>Vytvoření pole
 
-`new` Operátor můžete také použít k vytvoření instance pole, jak ukazuje následující příklad:
+Operátor můžete také použít `new` k vytvoření instance pole, jak ukazuje následující příklad:
 
 [!code-csharp-interactive[create array](snippets/NewOperator.cs#Array)]
 
@@ -41,7 +41,7 @@ Další informace o polích naleznete v tématu [Arrays](../../programming-guide
 
 ## <a name="instantiation-of-anonymous-types"></a>Vytváření instancí anonymních typů
 
-Chcete-li vytvořit instanci [anonymního typu](../../programming-guide/classes-and-structs/anonymous-types.md), použijte syntaxi `new` inicializátoru operátoru a objektu:
+Chcete-li vytvořit instanci [anonymního typu](../../programming-guide/classes-and-structs/anonymous-types.md), použijte `new` syntaxi inicializátoru operátoru a objektu:
 
 [!code-csharp-interactive[anonymous type](snippets/NewOperator.cs#AnonymousType)]
 
@@ -49,7 +49,7 @@ Chcete-li vytvořit instanci [anonymního typu](../../programming-guide/classes-
 
 Nemusíte zničit dřívější vytvořené instance typu. Instance obou typů odkaz i hodnota jsou zničeny automaticky. Instance typů hodnot jsou zničeny ihned po zničení kontextu, který je obsahuje. Instance typů odkazů jsou zničeny systémem [uvolňování paměti](../../../standard/garbage-collection/index.md) v některém nespecifikovaném čase po odebrání posledního odkazu na ně.
 
-U instancí typu, které obsahují nespravované prostředky, například popisovač souboru, se doporučuje použít deterministické vyčištění, aby bylo zajištěno, že prostředky, které obsahují, budou zveřejněny co nejdříve. Další informace najdete v tématu Reference <xref:System.IDisposable?displayProperty=nameWithType> k rozhraní API a v článku o [příkazu Using](../keywords/using-statement.md) .
+U instancí typu, které obsahují nespravované prostředky, například popisovač souboru, se doporučuje použít deterministické vyčištění, aby bylo zajištěno, že prostředky, které obsahují, budou zveřejněny co nejdříve. Další informace najdete v tématu <xref:System.IDisposable?displayProperty=nameWithType> Reference k rozhraní API a v článku o [příkazu Using](../keywords/using-statement.md) .
 
 ## <a name="operator-overloadability"></a>Přetížení operátoru
 
@@ -62,5 +62,5 @@ Další informace naleznete v části [New operator](~/_csharplang/spec/expressi
 ## <a name="see-also"></a>Viz také
 
 - [Referenční dokumentace k jazyku C#](../index.md)
-- [Operátory jazyka C#](index.md)
+- [Operátory a výrazy v C#](index.md)
 - [Inicializátory objektu a kolekce](../../programming-guide/classes-and-structs/object-and-collection-initializers.md)

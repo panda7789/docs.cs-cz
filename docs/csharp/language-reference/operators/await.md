@@ -7,12 +7,12 @@ helpviewer_keywords:
 - await keyword [C#]
 - await [C#]
 ms.assetid: 50725c24-ac76-4ca7-bca1-dd57642ffedb
-ms.openlocfilehash: 76c6b24c1cd061585c7a6964d30bc81cc5fc5975
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: f4b0ef501a30d3dffc1346c805ce0161ca4cac90
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86308842"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87555432"
 ---
 # <a name="await-operator-c-reference"></a>await – operátor (Referenční dokumentace jazyka C#)
 
@@ -54,7 +54,7 @@ Další informace naleznete v oddílu [await Expressions](~/_csharplang/spec/exp
 ## <a name="see-also"></a>Viz také
 
 - [Referenční dokumentace k jazyku C#](../index.md)
-- [Operátory jazyka C#](index.md)
+- [Operátory a výrazy v C#](index.md)
 - [async](../keywords/async.md)
 - [Model asynchronního programování úloh](../../programming-guide/concepts/async/task-asynchronous-programming-model.md)
 - [Asynchronní programování](../../async.md)

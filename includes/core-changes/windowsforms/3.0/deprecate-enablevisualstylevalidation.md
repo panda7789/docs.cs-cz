@@ -1,24 +1,24 @@
 ---
-ms.openlocfilehash: 97e38685777c7c418c0ccd91f4c433501ecf3aaa
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: 196a26bd235e5e2556baa7fac979b3316ff81e1f
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83721334"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87556152"
 ---
 ### <a name="enablevisualstylevalidation-compatibility-switch-not-supported"></a>Přepínač kompatibility EnableVisualStyleValidation se nepodporuje.
 
-`Switch.System.Windows.Forms.EnableVisualStyleValidation`V model Windows Forms .NET Core 3,0 není podporován přepínač kompatibility.
+`Switch.System.Windows.Forms.EnableVisualStyleValidation`Přepínač kompatibility není podporován v model Windows Forms v rozhraní .NET Core nebo .net 5,0 a novějším.
 
 #### <a name="change-description"></a>Popis změny
 
 V .NET Framework `Switch.System.Windows.Forms.EnableVisualStyleValidation` přepínač kompatibility povolil aplikaci, aby odhlásila ověření vizuálních stylů zadaných v číselném tvaru.
 
-V rozhraní .NET Core není `Switch.System.Windows.Forms.EnableVisualStyleValidation` přepínač podporován.
+V rozhraní .NET Core a .NET 5,0 a novějším není `Switch.System.Windows.Forms.EnableVisualStyleValidation` přepínač podporován.
 
 #### <a name="version-introduced"></a>Představená verze
 
-3,0 Preview 9
+3.0
 
 #### <a name="recommended-action"></a>Doporučená akce
 

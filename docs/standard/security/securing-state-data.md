@@ -4,19 +4,20 @@ description: Deklaruje stavová data jako privátní nebo interní proměnné pr
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
-- security [.NET Framework], state data
+- security [.NET], state data
 - code security, state data
 - secure coding, state data
 - state data security
 ms.assetid: 12671309-2877-43fe-a3df-6863507e712d
-ms.openlocfilehash: b7fcb520fe6fa28cc098c4e1cbb56ce7da759c11
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 73bd0ace28e5b9661cc86d6749ceef9aa4c9ac92
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291042"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87557122"
 ---
 # <a name="securing-state-data"></a>Zabezpečení stavových dat
+
 Aplikace, které zpracovávají citlivá data nebo mohou učinit jakékoli rozhodnutí o zabezpečení, musí uchovávat tato data pod svým vlastním ovládacím prvkem a nemohou jiným potenciálně škodlivému kódu přistupovat přímo k datům. Nejlepším způsobem, jak chránit data v paměti, je deklarovat data jako privátní nebo interní (s oborem omezeným na stejné sestavení). I tato data však podléhají přístupu, na které byste měli vědět:  
   
 - Pomocí mechanismů reflexe, vysoce důvěryhodného kódu, který může odkazovat na váš objekt, mohou získat a nastavit soukromé členy.  
@@ -30,3 +31,4 @@ Aplikace, které zpracovávají citlivá data nebo mohou učinit jakékoli rozho
 ## <a name="see-also"></a>Viz také
 
 - [Pokyny pro zabezpečené kódování](secure-coding-guidelines.md)
+- [ASP.NET Core zabezpečení](/aspnet/core/security/)

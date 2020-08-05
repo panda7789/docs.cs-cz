@@ -44,6 +44,8 @@
       href: msbuild.md
     - name: Síťové služby
       href: networking.md
+    - name: Serializace
+      href: serialization.md
     - name: Visual Basic
       href: visualbasic.md
     - name: Windows Forms

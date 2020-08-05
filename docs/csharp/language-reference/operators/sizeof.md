@@ -1,5 +1,5 @@
 ---
-title: sizeof operátor - c# odkaz
+title: sizeof – operátor – reference jazyka C#
 ms.date: 07/25/2019
 f1_keywords:
 - sizeof_CSharpKeyword
@@ -7,20 +7,20 @@ f1_keywords:
 helpviewer_keywords:
 - sizeof keyword [C#]
 ms.assetid: c548592c-677c-4f40-a4ce-e613f7529141
-ms.openlocfilehash: a9e80ecb3288479a2ca81b43c9d088809ed5f2f0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 84dc67be95fa65f6c46dab02af2ee7bc08d2ec31
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78847284"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87555224"
 ---
-# <a name="sizeof-operator-c-reference"></a>sizeof operátor (odkaz C# )
+# <a name="sizeof-operator-c-reference"></a>sizeof – operátor (Referenční dokumentace jazyka C#)
 
-Operátor `sizeof` vrátí počet bajtů obsazených proměnnou daného typu. Argument emitovaný `sizeof` operátorem musí být název [nespravovaného typu](../builtin-types/unmanaged-types.md) nebo parametr typu, který je [omezen](../../programming-guide/generics/constraints-on-type-parameters.md#unmanaged-constraint) na nespravovaný typ.
+`sizeof`Operátor vrátí počet bajtů obsazených proměnnou daného typu. Argument `sizeof` operátoru musí být název [nespravovaného typu](../builtin-types/unmanaged-types.md) nebo parametr typu, který je [omezený](../../programming-guide/generics/constraints-on-type-parameters.md#unmanaged-constraint) na nespravovaný typ.
 
-Operátor `sizeof` vyžaduje [nebezpečný](../keywords/unsafe.md) kontext. Výrazy uvedené v následující tabulce jsou však vyhodnocovány v době kompilace na odpovídající konstantní hodnoty a nevyžadují nebezpečný kontext:
+`sizeof`Operátor vyžaduje [nezabezpečený](../keywords/unsafe.md) kontext. Výrazy uvedené v následující tabulce jsou však vyhodnocovány v době kompilace do odpovídajících konstantních hodnot a nevyžadují nezabezpečený kontext:
 
-|Expression|Konstantní hodnota|
+|Výraz|Hodnota konstanty|
 |---------|---------------|
 |`sizeof(sbyte)`|1|
 |`sizeof(byte)`|1|
@@ -36,22 +36,22 @@ Operátor `sizeof` vyžaduje [nebezpečný](../keywords/unsafe.md) kontext. Výr
 |`sizeof(decimal)`|16|
 |`sizeof(bool)`|1|
 
-Také není nutné použít nebezpečný kontext, pokud operand `sizeof` operátoru je název typu [výčtu.](../builtin-types/enum.md)
+Nemusíte také používat nezabezpečený kontext, pokud je operandem `sizeof` operátoru název typu [výčtu](../builtin-types/enum.md) .
 
-Následující příklad ukazuje použití operátoru: `sizeof`
+Následující příklad ukazuje použití `sizeof` operátoru:
 
 [!code-csharp[sizeof examples](snippets/SizeOfOperator.cs)]
 
-Operátor `sizeof` vrátí počet bajtů, které by byly přiděleny za běhu společného jazyka ve spravované paměti. Pro [typy struktury](../builtin-types/struct.md) tato hodnota zahrnuje všechny odsazení, jak ukazuje předchozí příklad. Výsledek operátoru `sizeof` se může lišit od <xref:System.Runtime.InteropServices.Marshal.SizeOf%2A?displayProperty=nameWithType> výsledku metody, která vrací velikost typu v *nespravované* paměti.
+`sizeof`Operátor vrátí počet bajtů, které by byly přiděleny modulem CLR (Common Language Runtime) ve spravované paměti. U typů [struktury](../builtin-types/struct.md) tato hodnota zahrnuje jakékoli odsazení, jak ukazuje předchozí příklad. Výsledek `sizeof` operátoru se může lišit od výsledku <xref:System.Runtime.InteropServices.Marshal.SizeOf%2A?displayProperty=nameWithType> metody, která vrací velikost typu v *nespravované* paměti.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
-Další informace naleznete v části [sizeof operator](~/_csharplang/spec/unsafe-code.md#the-sizeof-operator) [specifikace jazyka C#](~/_csharplang/spec/introduction.md).
+Další informace naleznete v části [operátor sizeof](~/_csharplang/spec/unsafe-code.md#the-sizeof-operator) v tématu [specifikace jazyka C#](~/_csharplang/spec/introduction.md).
 
 ## <a name="see-also"></a>Viz také
 
 - [Referenční dokumentace k jazyku C#](../index.md)
-- [Operátory jazyka C#](index.md)
+- [Operátory a výrazy v C#](index.md)
 - [Operátory související s ukazatelem](pointer-related-operators.md)
 - [Typy ukazatelů](../../programming-guide/unsafe-code-pointers/pointer-types.md)
 - [Typy související s Memory a Span](../../../standard/memory-and-spans/index.md)

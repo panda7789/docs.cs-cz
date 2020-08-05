@@ -1,7 +1,7 @@
 ---
-title: Bezpečné kódování pro rozhraní .NET
-description: Návrhový kód pro práci s . NET vynucená oprávnění a další vynucení, které pomáhají zabránit škodlivému kódu v přístupu k datům nebo provádění jiných akcí.
-ms.date: 06/28/2018
+title: Pokyny k zabezpečenému kódování pro .NET
+description: Navrhněte kód pro práci s. Vynuceně vynucovat oprávnění a jiné vynucování, které pomůžou zabránit škodlivému kódu v přístupu k datům nebo provádět jiné akce.
+ms.date: 07/15/2020
 helpviewer_keywords:
 - managed wrapper to native code implementation
 - secure coding
@@ -15,75 +15,74 @@ helpviewer_keywords:
 - security-neutral code
 - security [.NET], coding guidelines
 ms.assetid: 4f882d94-262b-4494-b0a6-ba9ba1f5f177
-ms.openlocfilehash: 05f7e039ecdc0cd33baa015872924fb9e1f078aa
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a05e0cec2814be88ac835d05601d5cf5f66383c3
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79187731"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87555953"
 ---
-# <a name="secure-coding-guidelines"></a>Bezpečné kódování pokyny
+# <a name="secure-coding-guidelines"></a>Pokyny pro zabezpečené kódování
 
-Zabezpečení založené na důkazech a zabezpečení přístupu kódu poskytují velmi výkonné, explicitní mechanismy pro implementaci zabezpečení. Většina kódu aplikace můžete jednoduše použít infrastrukturu implementovanou rozhraním .NET. V některých případech je vyžadováno další zabezpečení specifické pro aplikaci, vytvořené rozšířením systému zabezpečení nebo pomocí nových metod ad hoc.
+Většina kódu aplikace může jednoduše použít infrastrukturu implementovanou rozhraním .NET. V některých případech je potřeba další zabezpečení specifické pro aplikace, které je postavené buď rozšířením systému zabezpečení, nebo pomocí nových ad hoc metod.
 
-Pomocí .NET vynucená oprávnění a další vynucení ve vašem kódu, měli byste vytvořit bariéry zabránit škodlivý kód z přístupu k informacím, které nechcete, aby měl nebo provádět jiné nežádoucí akce. Kromě toho je nutné najít rovnováhu mezi zabezpečení a použitelnosti ve všech očekávaných scénářích pomocí důvěryhodného kódu.
+Pomocí vynuceného oprávnění .NET a dalšího vynucování ve vašem kódu byste měli nasazovat bariéry, aby nedocházelo ke škodlivému kódu v přístupu k informacím, které nechcete mít nebo by prováděly jiné nežádoucí akce. Navíc je nutné přeškrtnout rovnováhu mezi zabezpečením a použitelností ve všech očekávaných scénářích pomocí důvěryhodného kódu.
 
 Tento přehled popisuje různé způsoby, jak kód může být navržen pro práci se systémem zabezpečení.
 
 ## <a name="securing-resource-access"></a>Zabezpečení přístupu k prostředkům
 
-Při navrhování a psaní kódu je třeba chránit a omezit přístup, který má kód k prostředkům, zejména při použití nebo vyvolání kódu neznámého původu. Takže mějte na paměti následující techniky, abyste zajistili, že váš kód je bezpečný:
+Při navrhování a psaní kódu musíte chránit a omezit přístup k prostředkům, zejména při použití nebo vyvolání kódu neznámého původu. Mějte proto na paměti následující postupy, abyste zajistili, že je váš kód zabezpečený:
 
 - Nepoužívejte zabezpečení přístupu kódu (CAS).
 
-- Nepoužívejte částečný důvěryhodný kód.
+- Nepoužívejte částečně důvěryhodný kód.
 
 - Nepoužívejte atribut [AllowPartiallyTrustedCaller](xref:System.Security.AllowPartiallyTrustedCallersAttribute) (APTCA).
 
-- Nepoužívejte vzdálené komunikace .NET.
+- Nepoužívejte vzdálenou komunikaci rozhraní .NET.
 
-- Nepoužívejte distribuovaný model s komponentami (DCOM).
+- Nepoužívejte model DCOM (Distributed Component Object Model).
 
-- Nepoužívejte binární formatters.
+- Nepoužívejte binární formátovací moduly.
 
-Zabezpečení přístupu kódu a transparentní kód zabezpečení nejsou podporovány jako hranice zabezpečení s částečně důvěryhodným kódem. Kód neznámého původu nedoporučujeme načítat ani spouštět, pokud nejsou nastavená alternativní bezpečnostní opatření. Alternativními bezpečnostními opatřeními jsou:
+Zabezpečení přístupu kódu a kód transparentní z hlediska zabezpečení nejsou podporovány jako hranice zabezpečení s částečně důvěryhodným kódem. Kód neznámého původu nedoporučujeme načítat ani spouštět, pokud nejsou nastavená alternativní bezpečnostní opatření. Alternativní bezpečnostní opatření:
 
 - Virtualizace
 
-- Kontejnery aplikací
+- AppContainers
 
-- Uživatelé operačního systému (OS) a oprávnění
+- Uživatelé a oprávnění operačního systému (OS)
 
-- Hyper-V kontejnery
+- Kontejnery Hyper-V
 
-## <a name="security-neutral-code"></a>Neutrální kód zabezpečení
+## <a name="security-neutral-code"></a>Neutrální kód pro zabezpečení
 
-Bezpečnostní neutrální kód neprovádí nic explicitního se systémem zabezpečení. Běží s bez ohledu na oprávnění, která obdrží. Přestože aplikace, kterým se nepodaří zachytit výjimky zabezpečení spojené s chráněnými operacemi (například pomocí souborů, sítí a tak dále), mohou mít za následek neošetřenou výjimku, neutrální kód zabezpečení stále využívá technologie zabezpečení v rozhraní .NET .
+Kód neutrální z hlediska zabezpečení nijak nedělá explicitně se systémem zabezpečení. Spouští se bez jakýchkoli oprávnění, která obdrží. Přestože aplikace, které nedokázaly zachytit výjimky zabezpečení přidružené k chráněným operacím (například použití souborů, sítě atd.), mohou způsobit neošetřenou výjimku, kód neutrální od zabezpečení stále využívá technologie zabezpečení v rozhraní .NET.
 
-Neutrální knihovna se zabezpečením má zvláštní vlastnosti, kterým byste měli rozumět. Předpokládejme, že vaše knihovna poskytuje prvky rozhraní API, které používají soubory nebo volají nespravovaný kód. Pokud váš kód nemá odpovídající oprávnění, nespustí se podle popisu. Však i v případě, že kód má oprávnění, jakýkoli kód aplikace, který jej volá, musí mít stejné oprávnění, aby mohl pracovat. Pokud volající kód nemá správná oprávnění, <xref:System.Security.SecurityException> zobrazí se v důsledku procházení zásobníku zabezpečení přístupu kódu.
+Knihovna neutrální od zabezpečení má zvláštní charakteristiky, které byste měli pochopit. Předpokládejme, že vaše knihovna poskytuje prvky rozhraní API, které používají soubory, nebo volání nespravovaného kódu. Pokud váš kód nemá odpovídající oprávnění, nebude spuštěn, jak je popsáno. Nicméně i v případě, že má kód oprávnění, musí mít jakýkoli kód aplikace, který ji volá, stejné oprávnění, aby fungoval. Pokud volající kód nemá správné oprávnění, <xref:System.Security.SecurityException> zobrazí se jako výsledek procházení zásobníku zabezpečení přístupu kódu.
 
-## <a name="application-code-that-isnt-a-reusable-component"></a>Kód aplikace, který není opakovaně použitelnou součástí
+## <a name="application-code-that-isnt-a-reusable-component"></a>Kód aplikace, který není opakovaně použitelná součást
 
-Pokud je váš kód součástí aplikace, která nebude volána jiným kódem, zabezpečení je jednoduché a speciální kódování nemusí být vyžadováno. Nezapomeňte však, že škodlivý kód může volat váš kód. Zatímco zabezpečení přístupu kódu může zastavit škodlivý kód v přístupu k prostředkům, takový kód může stále číst hodnoty polí nebo vlastností, které mohou obsahovat citlivé informace.
+Pokud je váš kód součástí aplikace, která nebude volána jiným kódem, zabezpečení je jednoduché a speciální kódování nemusí být vyžadováno. Nezapomeňte však, že škodlivý kód může zavolat váš kód. I když zabezpečení přístupu kódu může zabránit škodlivému kódu v přístupu k prostředkům, může takový kód pořád číst hodnoty polí nebo vlastností, které mohou obsahovat citlivé informace.
 
-Navíc pokud váš kód přijímá vstup uživatele z Internetu nebo jiných nespolehlivých zdrojů, musíte být opatrní škodlivý vstup.
+Kromě toho, pokud kód akceptuje vstup uživatele z Internetu nebo jiných nespolehlivých zdrojů, musíte mít pozor na škodlivý vstup.
 
-## <a name="managed-wrapper-to-native-code-implementation"></a>Spravovaná obálka implementace nativního kódu
+## <a name="managed-wrapper-to-native-code-implementation"></a>Spravovaná obálka s implementací nativního kódu
 
-Obvykle v tomto scénáři některé užitečné funkce je implementována v nativním kódu, který chcete zpřístupnit spravovaného kódu. Spravované obálky jsou snadno psát pomocí platformy invoke nebo COM interop. Pokud to však uděláte, volající obálky musí mít nespravovaná práva kódu, aby bylo možné uspět. Podle výchozích zásad to znamená, že kód stažený z intranetu nebo Internetu nebude fungovat s obálkami.
+Obvykle v tomto scénáři jsou některé užitečné funkce implementovány v nativním kódu, který chcete zpřístupnit spravovanému kódu. Spravované obálky lze snadno psát pomocí volání platforem nebo zprostředkovatele komunikace s objekty COM. Nicméně pokud to uděláte, volající na vašich obálkách musí mít oprávnění nespravovaného kódu, aby bylo úspěšné. V části výchozí zásady to znamená, že kód stažený z intranetu nebo z Internetu nebude fungovat s obálkami.
 
-Místo toho, aby nespravovaný kód práva pro všechny aplikace, které používají tyto obálky, je lepší dát tato práva pouze na obálku kód. Pokud základní funkce nezveřejňuje žádné prostředky a implementace je také bezpečné, obálka potřebuje pouze uplatnit svá práva, která umožňuje jakýkoli kód pro volání prostřednictvím. Pokud jsou zapojeny prostředky, kódování zabezpečení by měla být stejná jako případ kódu knihovny popsané v další části. Vzhledem k tomu, že obálka potenciálně vystavuje volající těmto prostředkům, je nutné pečlivé ověření bezpečnosti nativního kódu a je odpovědností obálky.
+Místo poskytování nespravovaných oprávnění kódu pro všechny aplikace, které používají tyto obálky, je lepší poskytnout tato práva pouze kódu obálky. Pokud základní funkce zveřejňuje žádné prostředky a implementace je také bezpečná, Obálka musí vyhodnotit její práva, což umožní jakémukoli volání prostřednictvím kódu. V případě, že se jedná o prostředky, musí být kódování zabezpečení stejné jako v případě kódu knihovny popsané v další části. Vzhledem k tomu, že obálka potenciálně vystavuje volajícím tyto prostředky, pečlivé ověření bezpečnosti nativního kódu je nezbytné a je odpovědností obálky.
 
-## <a name="library-code-that-exposes-protected-resources"></a>Kód knihovny, který zpřístupňuje chráněné prostředky
+## <a name="library-code-that-exposes-protected-resources"></a>Kód knihovny, který zveřejňuje chráněné prostředky
 
-Následující přístup je nejsilnější a proto potenciálně nebezpečné (pokud se provádí nesprávně) pro kódování zabezpečení: knihovna slouží jako rozhraní pro jiný kód pro přístup k určité prostředky, které nejsou jinak k dispozici, stejně jako třídy .NET vynutit oprávnění pro prostředky, které používají. Všude tam, kde zpřístupníte prostředek, musí váš kód nejprve požadovat oprávnění odpovídající prostředku (to znamená, že musí provést kontrolu zabezpečení) a pak obvykle uplatnit svá práva k provedení skutečné operace.
+Následující přístup je nejužitečnější, tedy potenciálně nebezpečný (Pokud je to správně proveden) pro kódování zabezpečení: vaše knihovna slouží jako rozhraní pro jiný kód pro přístup k určitým prostředkům, které nejsou jinak dostupné, stejně jako třídy .NET vynutila oprávnění pro prostředky, které používají. Bez ohledu na to, jaký stav vystavíte, musí váš kód nejdřív vyžadovat oprávnění odpovídající prostředku (to znamená, že musí provést kontrolu zabezpečení) a pak obvykle vyhodnotit jeho práva k provedení skutečné operace.
 
-## <a name="related-topics"></a>Související témata
+## <a name="see-also"></a>Viz také
 
-|Nadpis|Popis|
-|-----------|-----------------|
-|[Zabezpečení stavových dat](securing-state-data.md)|Popisuje, jak chránit soukromé členy.|
-|[Zabezpečení a uživatelský vstup](security-and-user-input.md)|Popisuje problémy se zabezpečením aplikací, které přijímají vstup uživatele.|
-|[Zabezpečení a konflikty časování](security-and-race-conditions.md)|Popisuje, jak se vyhnout sporech v kódu.|
-|[Zabezpečení a průběžné vytváření kódu](security-and-on-the-fly-code-generation.md)|Popisuje problémy se zabezpečením aplikací, které generují dynamický kód.|
-|[Zabezpečení na základě rolí](role-based-security.md)|Podrobně popisuje zabezpečení založené na rolích rozhraní .NET a poskytuje pokyny pro jeho použití v kódu.|
+- [Zabezpečení stavových dat](securing-state-data.md)
+- [Zabezpečení a uživatelský vstup](security-and-user-input.md)
+- [Zabezpečení a konflikty časování](security-and-race-conditions.md)
+- [Zabezpečení a průběžné vytváření kódu](security-and-on-the-fly-code-generation.md)
+- [Zabezpečení na základě rolí](role-based-security.md)
+- [ASP.NET Core zabezpečení](/aspnet/core/security/)

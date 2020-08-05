@@ -1,18 +1,18 @@
 ---
-ms.openlocfilehash: c9720f51e40ada4cd2cf6997ba7006a232893553
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: d3bfeda8309af83d8e4199999ed91263a17caeea
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83702467"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87556161"
 ---
 ### <a name="removed-status-bar-controls"></a>Odebrané ovládací prvky stavového řádku
 
-Od verze .NET 5,0 Preview 1 nejsou již některé ovládací prvky model Windows Forms k dispozici.
+Od rozhraní .NET 5,0 nejsou již některé ovládací prvky model Windows Forms k dispozici.
 
 #### <a name="change-description"></a>Popis změny
 
-Od verze .NET 5,0 Preview 1 nejsou již některé ovládací prvky model Windows Forms související se stavovým řádkem k dispozici. Náhradní ovládací prvky, které mají lepší návrh a podporu, byly zavedeny v .NET Framework 2,0. Zastaralé ovládací prvky byly předtím odebrány z nástrojů návrháře, ale byly stále k dispozici pro použití. Nyní byly zcela odebrány.
+Od rozhraní .NET 5,0 nejsou již některé ovládací prvky model Windows Forms související se stavovým řádkem k dispozici. Náhradní ovládací prvky, které mají lepší návrh a podporu, byly zavedeny v .NET Framework 2,0. Zastaralé ovládací prvky byly předtím odebrány z nástrojů návrháře, ale byly stále k dispozici pro použití. Nyní byly zcela odebrány.
 
 Následující typy již nejsou k dispozici:
 

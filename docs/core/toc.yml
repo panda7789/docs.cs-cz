@@ -479,7 +479,5 @@ items:
     href: native-interop/expose-components-to-com.md
   - name: Hostování .NET Core z nativního kódu
     href: tutorials/netcore-hosting.md
-  - name: 'Balíčky, metabalíčky a architektury'
-    href: packages.md
   - name: Kontinuální integrace
     href: tools/using-ci-with-cli.md

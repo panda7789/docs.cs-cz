@@ -32,12 +32,12 @@ helpviewer_keywords:
 - conditional OR operator [C#]
 - short-circuiting OR operator [C#]
 - '|| operator [C#]'
-ms.openlocfilehash: a19c804c624153ef608885bc6493537302275765
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: cdabae0a4dbdcc3b1289bca7f1c42cb0a26b440f
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85618191"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87555406"
 ---
 # <a name="boolean-logical-operators-c-reference"></a>Logické logické operátory (Referenční dokumentace jazyka C#)
 
@@ -198,8 +198,8 @@ Další informace naleznete v následujících oddílech [specifikace jazyka C#]
 - [Podmíněné logické operátory](~/_csharplang/spec/expressions.md#conditional-logical-operators)
 - [Složené přiřazení](~/_csharplang/spec/expressions.md#compound-assignment)
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Referenční dokumentace k jazyku C#](../index.md)
-- [Operátory jazyka C#](index.md)
+- [Operátory a výrazy v C#](index.md)
 - [Bitové operátory a operátory bitového posunu](bitwise-and-shift-operators.md)
