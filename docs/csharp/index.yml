@@ -1,35 +1,35 @@
 ### YamlMime:Landing
 title: Dokumentace k jazyku C#
-summary: Zjistěte, jak napsat libovolnou aplikaci pomocí programovacího jazyka C# na platformě .NET.
+summary: Naučte se, jak napsat libovolnou aplikaci pomocí programovacího jazyka C# na platformě .NET.
 metadata:
-  title: C# docs - začínáme, výukové programy, reference.
-  description: Naučte se c# programování - pro začínající vývojáře, vývojáři nové C#, a zkušené vývojáře C# / .NET
+  title: Dokumentace k jazyku C# – začínáme, kurzy, referenční dokumentace
+  description: Naučte se programovat v jazyce C# – pro začínající vývojáře, pro vývojáře, kteří s jazykem C# začínají, i pro zkušené vývojáře jazyka C# / .NET
   ms.topic: landing-page
   ms.date: 11/19/2019
   ms.openlocfilehash: a0de519e518cac70bac831cf689042e104cd1389
-  ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
-  ms.translationtype: MT
+  ms.sourcegitcommit: 09bad6ec0cbf18be7cd7f62e77286d305a18b607
+  ms.translationtype: HT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 04/23/2020
+  ms.lasthandoff: 08/05/2020
   ms.locfileid: "82102720"
 landingContent:
-- title: 'Naučte se programovat v C #'
+- title: Naučte se programovat v jazyce C#
   linkLists:
   - linkListType: get-started
     links:
-    - text: Online, interaktivní Hello world Online, interaktivní Hello world Online, interaktivní Hello world Online,
+    - text: Online, interaktivní Hello World
       url: tutorials/intro-to-csharp/hello-world.yml
-    - text: 'Matematika a čísla v C #'
+    - text: Matematika a čísla v jazyce C#
       url: tutorials/intro-to-csharp/numbers-in-csharp.yml
-    - text: Úvodní výukové programy
+    - text: Úvodní kurzy
       url: tutorials/intro-to-csharp/index.md
-    - text: Vytváření aplikací Jazyka C# pomocí Sady Visual Studio
+    - text: Vytváření aplikací v jazyce C# pomocí sady Visual Studio
       url: https://docs.microsoft.com/visualstudio/get-started/csharp/tutorial-console
   - linkListType: video
     links:
-    - text: Co je C#?
+    - text: Co je jazyk C#?
       url: https://channel9.msdn.com/Series/CSharp-101/What-is-C/player
-    - text: Série videí C# 101
+    - text: Řada videí C# 101
       url: https://aka.ms/dotnet3-csharp
   - linkListType: download
     links:
@@ -39,7 +39,7 @@ landingContent:
   linkLists:
   - linkListType: overview
     links:
-    - text: 'Prohlídka C #'
+    - text: Prohlídka jazyka C#
       url: tour-of-csharp/index.md
     - text: V programu jazyka C#
       url: programming-guide/inside-a-program/index.md
@@ -47,27 +47,27 @@ landingContent:
       url: programming-guide/main-and-command-args/index.md
   - linkListType: concept
     links:
-    - text: Systém typu C# a .NET
+    - text: Systém typů C# a .NET
       url: programming-guide/types/index.md
     - text: LINQ (Language Integrated Query)
       url: linq/index.md
-    - text: asynchronní a čekají
+    - text: async a await
       url: programming-guide/concepts/async/index.md
   - linkListType: tutorial
     links:
     - text: Objektově orientovaná dědičnost
       url: tutorials/inheritance.md
-    - text: Použití linq k dotazování dat
+    - text: Používání jazyka LINQ k dotazování dat
       url: tutorials/working-with-linq.md
-    - text: Formátování textu pomocí interpolace řetězců
+    - text: Formátování textu pomocí interpolace řetězce
       url: tutorials/string-interpolation.md
-    - text: Procházet všechny výukové programy
+    - text: Procházet všechny kurzy
       url: tutorials/index.md
-- title: Nové funkce v C# 8.0
+- title: Nové funkce v jazyce C# 8.0
   linkLists:
   - linkListType: whats-new
     links:
-    - text: Co je nového v C# 8.0
+    - text: Co je nového v jazyce C# 8.0
       url: whats-new/csharp-8.md
   - linkListType: overview
     links:
@@ -77,27 +77,27 @@ landingContent:
       url: nullable-references.md
   - linkListType: concept
     links:
-    - text: Zvolte strategii migrace s možnou hodnotou null
+    - text: Volba strategie migrace s možnou hodnotou null
       url: nullable-migration-strategies.md
   - linkListType: tutorial
     links:
-    - text: Využívat a generovat asynchronní proudy
+    - text: Využívání a generování asynchronních streamů
       url: tutorials/generate-consume-asynchronous-stream.md
-    - text: Vývoj s typy odkazů s možnou hodnotou null
+    - text: Vývoj s odkazovými typy s možnou hodnotou null
       url: tutorials/nullable-reference-types.md
-    - text: Upgrade existujícího kódu na použití typů odkazů s možnou hodnotou null
+    - text: Upgrade existujícího kódu tak, aby používal odkazové typy s možnou hodnotou null
       url: tutorials/upgrade-to-nullable-references.md
-    - text: Použití porovnávání vzorů pro výraznější algoritmy
+    - text: Používání porovnávání vzorů pro expresivnější algoritmy
       url: tutorials/pattern-matching.md
-    - text: Bezpečně verze rozhraní s výchozími členy rozhraní
+    - text: Bezpečná aktualizace rozhraní pomocí výchozích členů rozhraní
       url: tutorials/default-interface-methods-versions.md
-    - text: Kombinace funkcí s výchozími členy rozhraní
+    - text: Kombinování funkcí pomocí výchozích členů rozhraní
       url: tutorials/mixins-with-default-interface-methods.md
     - text: Práce s podmnožinami pomocí rozsahů a indexů
       url: tutorials/ranges-indexes.md
   - linkListType: reference
     links:
-    - text: Přerušení změn v kompilátoru jazyka C#
+    - text: Změny způsobující chybu v kompilátoru C#
       url: whats-new/breaking-changes.md
 - title: Referenční dokumentace jazyka C#
   linkLists:

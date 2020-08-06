@@ -1,6 +1,8 @@
 ---
 title: Zarovnání více ovládacích prvků
 ms.date: 03/30/2017
+f1_keywords:
+- Designer_Microsoft.VisualStudio.Windows.Forms.Design.DocumentDesigner
 helpviewer_keywords:
 - forms [Windows Forms], aligning controls
 - Windows Forms, aligning controls
@@ -10,12 +12,12 @@ ms.assetid: b7175656-f532-49e9-b0b1-177d1b40af3e
 author: jillre
 ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: 5593c20e0e00e646949bf7357ecd126cbd1271f4
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 4bde1926b89fe553ec9eda29ca5dfc1f3373af52
+ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76747195"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87855618"
 ---
 # <a name="how-to-align-multiple-controls-on-windows-forms"></a>Postupy: Zarovnání více ovládacích prvků ve Windows Forms
 
@@ -31,11 +33,11 @@ Pro standardizaci rozložení uživatelského rozhraní (UI) aplikace založené
 
 ## <a name="see-also"></a>Viz také
 
-- [Windows Forms – ovládací prvky](index.md)
-- [Postupy: Přidávání ovládacích prvků do Windows Forms](how-to-add-controls-to-windows-forms.md)
+- [Ovládací prvky model Windows Forms](index.md)
+- [Postupy: Přidávání ovládacích prvků do formulářů Windows](how-to-add-controls-to-windows-forms.md)
 - [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)
 - [Ovládací prvky Windows Forms podle funkce](windows-forms-controls-by-function.md)
 - [Návod: Uspořádání ovládacích prvků ve Windows Forms pomocí zarovnávacích čar](walkthrough-arranging-controls-on-windows-forms-using-snaplines.md)
-- [Postupy: Uspořádání ovládacích prvků na Windows Forms s použitím ovládacího prvku TableLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md)
-- [Postupy: Uspořádání ovládacích prvků na formuláři Windows Forms s použitím ovládacího prvku FlowLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel.md)
+- [Návod: Uspořádání ovládacích prvků ve Windows Forms s použitím ovládacího prvku TableLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md)
+- [Návod: Uspořádání ovládacích prvků na formuláři Windows Forms s použitím ovládacího prvku FlowLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel.md)
 - [Postupy: Přiřazení existujících ovládacích prvků jinému nadřazenému prvku](how-to-reassign-existing-controls-to-a-different-parent.md)

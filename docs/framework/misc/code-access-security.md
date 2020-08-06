@@ -16,14 +16,15 @@ helpviewer_keywords:
 - user authentication, code access security
 - code access security
 ms.assetid: 859af632-c80d-4736-8d6f-1e01b09ce127
-ms.openlocfilehash: 3c125e6c57ce7da459c03fc7d51fc9311fdc8e3b
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: 49d55ffde3dcb88720f47af6f9702013d8a7f1ee
+ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86309011"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87855865"
 ---
 # <a name="code-access-security"></a>Zabezpečení přístupu kódu
+
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
   
  Dnešní vysoce připojené počítačové systémy se často zveřejňují pro kód pocházející z různých, případně neznámých zdrojů. Kód může být připojen k e-mailu, obsažený v dokumentech nebo stažen prostřednictvím Internetu. Mnoho uživatelů počítačů bohužel sami účinky škodlivého mobilního kódu, včetně virů a červů, což může poškodit nebo zničit data a náklady a peníze.  

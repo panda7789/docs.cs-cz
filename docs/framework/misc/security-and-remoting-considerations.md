@@ -8,14 +8,17 @@ helpviewer_keywords:
 - security [.NET Framework], remoting
 - secure coding, remoting
 ms.assetid: 125d2ab8-55a4-4e5f-af36-a7d401a37ab0
-ms.openlocfilehash: 019773b19eaca2e4364fb79c40fdb923093d4e7e
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: 3a272b2a8f164aad07413a069e68a2146d0df6a7
+ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86309362"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87855709"
 ---
 # <a name="security-and-remoting-considerations"></a>Důležité informace o zabezpečení a vzdálené komunikaci
+
+[!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]
+
 Vzdálená komunikace umožňuje nastavit transparentní volání mezi doménami aplikace, procesy nebo počítači. Procházení zásobníku zabezpečení přístupu kódu ale nemůže mezi procesy nebo počítači překročit hranice (používá se mezi aplikačními doménami stejného procesu).  
   
  Jakákoliv třída, která je vzdáleně (odvozená od <xref:System.MarshalByRefObject> třídy), musí převzít zodpovědnost za zabezpečení. Kód by měl být použit pouze v uzavřených prostředích, kde může být volající kód implicitně důvěryhodný, nebo by volání vzdálené komunikace měla být navržena tak, aby nepředmětoval chráněný kód na vnější položku, která by mohla být použita škodlivě.  

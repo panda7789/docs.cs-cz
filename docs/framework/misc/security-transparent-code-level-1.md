@@ -1,5 +1,5 @@
 ---
-title: Kód transparentní pro zabezpečení, úroveň 1
+title: Transparentní kód pro zabezpečení, úroveň 1
 description: Seznamte se s příklady transparentnosti úrovně 1, atributy transparentnosti a transparentnost zabezpečení.
 ms.date: 03/30/2017
 helpviewer_keywords:
@@ -10,14 +10,15 @@ helpviewer_keywords:
 - security-transparent code
 - security [.NET Framework], security-transparent code
 ms.assetid: 5fd8f46d-3961-46a7-84af-2eb1f48e75cf
-ms.openlocfilehash: c44fe3339f3bf24d266fa97487868ce090d51bb1
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: 75cf38412f3ba21832c5e63898b10bcf681f5904
+ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86309091"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87855696"
 ---
-# <a name="security-transparent-code-level-1"></a>Kód transparentní pro zabezpečení, úroveň 1
+# <a name="security-transparent-code-level-1"></a>Transparentní kód pro zabezpečení, úroveň 1
+
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
   
  Transparentnost pomáhá vývojářům psát bezpečnější .NET Framework knihovny, které zpřístupňují funkce částečně důvěryhodnému kódu. Transparentnost první úrovně byla představena v .NET Framework verze 2,0 a byla primárně používána pouze v rámci společnosti Microsoft. Počínaje .NET Framework 4 můžete použít [transparentnost úrovně 2](security-transparent-code-level-2.md). Transparentnost první úrovně ale byla zachovaná, takže můžete identifikovat starší kód, který musí běžet s předchozími pravidly zabezpečení.  

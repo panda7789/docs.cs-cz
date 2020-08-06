@@ -10,14 +10,17 @@ helpviewer_keywords:
 - secure coding, exception handling
 - exception handling, security
 ms.assetid: 1f3da743-9742-47ff-96e6-d0dd1e9e1c19
-ms.openlocfilehash: 73597f83d7236cd48a18a891c987b4f5d7e1723d
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: c7643bb34da0cbcbd267fc90e6294bc0b565985e
+ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86309037"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87855774"
 ---
 # <a name="securing-exception-handling"></a>Zabezpečení zpracování výjimek
+
+[!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]
+
 V Visual C++ a Visual Basic se výraz filtru podrobněji spouští před jakýmkoli `finally` příkazem. Blok **catch** přidružený k tomuto filtru se spustí po `finally` příkazu. Další informace najdete v tématu [použití uživatelem filtrovaných výjimek](../../standard/exceptions/using-user-filtered-exception-handlers.md). V této části se prohlíží vlivem na zabezpečení tohoto pořadí. Vezměte v úvahu následující příklad pseudokódu, který ukazuje pořadí, ve kterém se spouštějí příkazy filtru a `finally` příkazy.  
   
 ```cpp  

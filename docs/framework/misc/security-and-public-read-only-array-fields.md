@@ -5,14 +5,17 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - security [.NET Framework], public read-only array fields
 ms.assetid: 3df28dee-2a9f-40ff-9852-bfdbe59c27f3
-ms.openlocfilehash: 0a6a82c2c88fe61bd34c0accb831f018cf8702fc
-ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
+ms.openlocfilehash: 5e499f8052306cd1ad063c9f44a2a0f1d0b365ef
+ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/13/2020
-ms.locfileid: "86281430"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87855735"
 ---
 # <a name="security-and-public-read-only-array-fields"></a>Zabezpečené a veřejné položky pole určené pouze pro čtení
+
+[!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]
+
 Nikdy nepoužívejte pole veřejné pole jen pro čtení ze spravovaných knihoven k definování chování hranic nebo zabezpečení vašich aplikací, protože pole veřejné pole jen pro čtení lze upravovat.  
   
 ## <a name="remarks"></a>Poznámky  

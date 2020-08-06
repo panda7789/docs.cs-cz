@@ -11,14 +11,15 @@ helpviewer_keywords:
 - security [.NET Framework], method access
 - method access security
 ms.assetid: f7c2d6ec-3b18-4e0e-9991-acd97189d818
-ms.openlocfilehash: a7ef419cf3959cf7a3ffde874353dacd3815c81a
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: 88868ab29fc37854959a044b9c0fed5bd8c82d77
+ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86309388"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87855761"
 ---
 # <a name="securing-method-access"></a>Zabezpečení přístupu k metodě
+
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
   
  Některé metody nemusí být vhodné, aby bylo možné volat libovolný nedůvěryhodný kód. Tyto metody představují několik rizik: metoda může poskytovat nějaké omezené informace; může se stát, že se budou předávat nějaké informace; nemusí provádět kontrolu chyb u parametrů; nebo s chybnými parametry může být nefunkční nebo něco škodlivého. Měli byste si být vědomi těchto případů a provést akci, která vám pomůžou ochránit tuto metodu.  
