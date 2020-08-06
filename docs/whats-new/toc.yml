@@ -4,6 +4,8 @@ expanded: true
 items:
   - name: 2020
     items:
+      - name: Červenec
+        href: 2020-07.md
       - name: Červen
         href: 2020-06.md
       - name: Květen
@@ -14,5 +16,3 @@ items:
         href: dotnet-2020-03.md
       - name: Únor
         href: dotnet-2020-02.md
-      - name: January (Leden)
-        href: dotnet-2020-01.md
