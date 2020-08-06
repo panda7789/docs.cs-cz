@@ -1,23 +1,23 @@
 ### YamlMime:Landing
-title: dokumentace ML.NET
-summary: Naučte se používat open source ML.NET k vytváření vlastních modelů strojového učení a jejich integraci do aplikací. Kurzy, příklady kódu a další vám ukáží, jak na to.
+title: Dokumentace k ML.NET
+summary: Naučte se používat Open Source ML.NET k vytváření vlastních modelů strojového učení a jejich integraci do aplikací. V kurzech, příkladech kódu a dalších vám ukážeme, jak.
 metadata:
-  title: dokumentace ML.NET – výukové programy, referenční příručka rozhraní API
-  description: Naučte se používat open source ML.NET k vytváření vlastních modelů strojového učení a jejich integraci do aplikací. Kurzy, příklady kódu a další vám ukáží, jak na to.
+  title: Dokumentace k ML.NET – kurzy, Reference k rozhraní API
+  description: Naučte se používat Open Source ML.NET k vytváření vlastních modelů strojového učení a jejich integraci do aplikací. V kurzech, příkladech kódu a dalších vám ukážeme, jak.
   ms.prod: dotnet-ml
   ms.topic: landing-page
   ms.collection: collection
   author: natke
   ms.author: nakersha
   ms.date: 10/30/2019
-  ms.openlocfilehash: 05d357af2088321524841bfc05f94f816f1bc306
-  ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+  ms.openlocfilehash: da93d48dc36123f8821be37c8c0546b84ab29712
+  ms.sourcegitcommit: 09bad6ec0cbf18be7cd7f62e77286d305a18b607
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 03/15/2020
-  ms.locfileid: "73423941"
+  ms.lasthandoff: 08/05/2020
+  ms.locfileid: "87795486"
 landingContent:
-- title: ML.NET Základy
+- title: Základy ML.NET
   linkLists:
   - linkListType: overview
     links:
@@ -31,41 +31,41 @@ landingContent:
     links:
     - text: Úlohy strojového učení & algoritmy
       url: resources/tasks.md
-    - text: Jak si vybrat algoritmus
+    - text: Jak vybrat algoritmus
       url: how-to-choose-an-ml-net-algorithm.md
 - title: 10minutový úvodní kurz
   linkLists:
   - linkListType: quickstart
     links:
-    - text: Nastavení tvůrce modelů v sadě Visual Studio
-      url: how-to-guides/install-model-builder.md
-    - text: Začínáme s rozhraním API ML.NET
+    - text: Začínáme s rozhraním API ML.NET (Code-First)
       url: https://dotnet.microsoft.com/learn/ml-dotnet/get-started-tutorial/intro
-    - text: Instalace cli na Mac OS, Windows nebo Linux
+    - text: Nastavení tvůrce modelů v sadě Visual Studio (malý kód)
+      url: how-to-guides/install-model-builder.md
+    - text: Instalace rozhraní příkazového řádku na macOS, Windows nebo Linux (malý kód)
       url: how-to-guides/install-ml-net-cli.md
 - title: Kurzy
   linkLists:
   - linkListType: tutorial
     links:
-    - text: Analyzovat náladu komentářů na webu (Tvůrce modelů)
+    - text: Analýza komentáře webu mínění (Tvůrce modelů)
       url: tutorials/sentiment-analysis-model-builder.md
-    - text: Předvídání cen (Tvůrce modelů)
+    - text: Předpověď ceny (Tvůrce modelů)
       url: tutorials/predict-prices-with-model-builder.md
-    - text: Kategorizovat porušení stavu (Tvůrce modelů & SQL Server)
+    - text: Kategorizace porušení stavu (Tvůrce modelů & SQL Server)
       url: tutorials/health-violation-classification-model-builder.md
-    - text: Kategorizace problémů s podporou (ROZHRANÍ API)
+    - text: Kategorizace problémů podpory (API)
       url: tutorials/github-issue-classification.md
-    - text: Klasifikujte bitové kopie pomocí rozhraní API pro klasifikaci obrázků (API)
+    - text: Klasifikace imagí pomocí rozhraní API pro klasifikaci imagí (API)
       url: tutorials/image-classification-api-transfer-learning.md
-    - text: Klasifikovat obrazy pomocí kompozice modelu (API)
+    - text: Klasifikace imagí pomocí kompozice modelů (API)
       url: tutorials/image-classification.md
-    - text: Detekce objektů v obrazech (API)
+    - text: Detekovat objekty v obrázcích (rozhraní API)
       url: tutorials/object-detection-onnx.md
-    - text: Detekce anomálií v prodeji produktů (API)
+    - text: Detekovat anomálie v prodeji produktů (API)
       url: tutorials/sales-anomaly-detection.md
-    - text: Předpověď poptávky po půjčovne kol (API & SQL Server)
+    - text: Poptávka po pronájmu kolace (API & SQL Server)
       url: tutorials/time-series-demand-forecasting.md
-    - text: Vytvoření doporučujecí film (API)
+    - text: Sestavení doporučení pro film (API)
       url: tutorials/movie-recommendation.md
 - title: Návody
   linkLists:
@@ -73,21 +73,21 @@ landingContent:
     links:
     - text: Načtení dat z různých zdrojů
       url: how-to-guides/load-data-ml-net.md
-    - text: Příprava dat pro sestavení modelu
+    - text: Příprava dat pro vytvoření modelu
       url: how-to-guides/prepare-data-ml-net.md
-    - text: Vlak & vyhodnotit model
+    - text: Analýza & vyhodnocení modelu
       url: how-to-guides/train-machine-learning-model-ml-net.md
-    - text: Předvídací předpovědi pomocí trénovaného modelu
+    - text: Vytvoření předpovědi s poučeným modelem
       url: how-to-guides/machine-learning-model-predictions-ml-net.md
-    - text: Uložení & zatížení trénovaného modelu
+    - text: Uložení & načtení trained model
       url: how-to-guides/save-load-machine-learning-models-ml-net.md
-    - text: Přeškolení modelu
+    - text: Přeučení modelu
       url: how-to-guides/retrain-model-ml-net.md
-- title: Referenční informace
+- title: Reference
   linkLists:
   - linkListType: reference
     links:
     - text: Referenční dokumentace k rozhraní ML.NET API
       url: https://docs.microsoft.com/dotnet/api/?view=ml-dotnet
-    - text: ML.NET vzorků
+    - text: Ukázky ML.NET
       url: https://github.com/dotnet/machinelearning-samples

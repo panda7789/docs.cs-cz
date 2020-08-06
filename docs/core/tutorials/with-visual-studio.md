@@ -6,18 +6,18 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: 3c8fc7c4702b786c05e14397dc36d994c77e114d
-ms.sourcegitcommit: 1eae045421d9ea2bfc82aaccfa5b1ff1b8c9e0e4
+ms.openlocfilehash: fbe0b3491260e787c08b98b320b19408f2c897eb
+ms.sourcegitcommit: 09bad6ec0cbf18be7cd7f62e77286d305a18b607
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84811658"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87795382"
 ---
 # <a name="tutorial-create-a-net-core-console-application-using-visual-studio"></a>Kurz: Vytvoření konzolové aplikace .NET Core pomocí sady Visual Studio
 
 V tomto kurzu se dozvíte, jak vytvořit a spustit konzolovou aplikaci .NET Core v aplikaci Visual Studio 2019.
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 - [Visual Studio 2019 verze 16,6 nebo novější](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) s nainstalovanou úlohou **vývoje .NET Core pro různé platformy** . Sada .NET Core 3,1 SDK se automaticky nainstaluje při výběru této úlohy.
 
@@ -79,7 +79,7 @@ Pokud jazyk, který chcete použít, není zobrazen, změňte selektor jazyka v 
 
 ## <a name="run-the-app"></a>Spuštění aplikace
 
-1. Stisknutím klávesy <kbd>SHIFT</kbd> + <kbd>F5</kbd> spustíte program bez ladění.
+1. Stisknutím klávesy <kbd>CTRL</kbd> + <kbd>F5</kbd> spusťte program bez ladění.
 
    Otevře se okno konzoly s textem "Hello World!". vytištěno na obrazovce a některé informace o ladění sady Visual Studio.
 
@@ -102,7 +102,7 @@ Vylepšete aplikaci, aby se uživateli zobrazila výzva k zadání názvu a zobr
 
    Znak dolaru ( `$` ) před řetězcem umožňuje do složených závorek v řetězci vkládat výrazy, jako jsou názvy proměnných. Hodnota výrazu je vložena do řetězce místo výrazu. Tato syntaxe je označována jako [interpolované řetězce](../../csharp/language-reference/tokens/interpolated.md).
 
-1. Stisknutím klávesy <kbd>SHIFT</kbd> + <kbd>F5</kbd> spustíte program bez ladění.
+1. Stisknutím klávesy <kbd>CTRL</kbd> + <kbd>F5</kbd> spusťte program bez ladění.
 
 1. Zadáním názvu a stisknutím klávesy <kbd>ENTER</kbd> odpovězte na výzvu.
 
