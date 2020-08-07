@@ -1,28 +1,29 @@
 ---
-title: void - odkaz C#
+title: void – reference jazyka C#
 ms.date: 02/11/2020
 f1_keywords:
 - void_CSharpKeyword
 - void
+- (void)
 helpviewer_keywords:
 - void keyword [C#]
 ms.assetid: 0d2d8a95-fe20-4fbd-bf5d-c1e54bce71d4
-ms.openlocfilehash: c6c1c28e3d7a53a1dcadcf50d8d7f42c8c8aeee4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: faf1cea4d02ba042cd9fee1cfa6d18168c49dd61
+ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78846205"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87854981"
 ---
-# <a name="void-c-reference"></a>void (odkaz C#)
+# <a name="void-c-reference"></a>void (Referenční dokumentace jazyka C#)
 
-Jako návratový typ metody (nebo [místní funkce)](../../programming-guide/classes-and-structs/local-functions.md)určit, že metoda nevrátí hodnotu. [method](../../programming-guide/classes-and-structs/methods.md) `void`
+Použijete `void` jako návratový typ [metody](../../programming-guide/classes-and-structs/methods.md) (nebo [místní funkce](../../programming-guide/classes-and-structs/local-functions.md)), chcete-li určit, že metoda nevrací hodnotu.
 
 [!code-csharp[void method](snippets/VoidType.cs#VoidExample)]
 
-Jako referenční `void` typ můžete také deklarovat ukazatel na neznámý typ. Další informace naleznete v tématu [Pointer types](../../programming-guide/unsafe-code-pointers/pointer-types.md).
+Můžete také použít `void` jako referenční typ k deklaraci ukazatele na neznámý typ. Další informace naleznete v tématu [typy ukazatelů](../../programming-guide/unsafe-code-pointers/pointer-types.md).
 
-Jako typ `void` proměnné nelze použít.
+Nelze použít `void` jako typ proměnné.
 
 ## <a name="see-also"></a>Viz také
 

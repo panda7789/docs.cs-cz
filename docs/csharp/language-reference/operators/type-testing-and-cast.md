@@ -8,6 +8,8 @@ f1_keywords:
 - as_CSharpKeyword
 - ()_CSharpKeyword
 - typeof_CSharpKeyword
+- as
+- typeof
 helpviewer_keywords:
 - type-testing operators [C#]
 - conversion operators [C#]
@@ -18,12 +20,12 @@ helpviewer_keywords:
 - cast expression [C#]
 - () operator [C#]
 - typeof operator [C#]
-ms.openlocfilehash: 7c1c65c61a2214792dcd26efd4be1a9d7f2c07ca
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: 328a40f0213cbb55f86e16625507c1a5a5d775fb
+ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87555497"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87855826"
 ---
 # <a name="type-testing-operators-and-cast-expression-c-reference"></a>Operátory testování typů a výraz přetypování (Referenční dokumentace jazyka C#)
 
