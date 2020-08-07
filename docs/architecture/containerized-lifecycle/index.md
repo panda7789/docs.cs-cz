@@ -1,31 +1,89 @@
 ---
-title: Úvod ke kontejnerům a Dockeru
-description: Získejte přehled o hlavních výhodách používání Dockeru na vysoké úrovni.
-ms.date: 02/15/2019
-ms.openlocfilehash: 9ac08a64cd2465b4b88a266c1ec0925f37680bf9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+title: Životní cyklus kontejnerizované aplikace Dockeru s platformou a nástroji Microsoft
+description: Získejte podrobný přehled procesu vývoje a nasazení pro vývoj a nasazování kontejnerových aplikací s využitím Docker a platformy a nástrojů Microsoftu.
+ms.date: 07/30/2020
+ms.openlocfilehash: d8055315b25f73d7b0b355026ab6b2c4767f9d89
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73738132"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87915169"
 ---
-# <a name="introduction-to-containers-and-docker"></a><span data-ttu-id="94db1-103">Úvod do kontejnerů a Dockeru</span><span class="sxs-lookup"><span data-stu-id="94db1-103">Introduction to containers and Docker</span></span>
+# <a name="containerized-docker-application-lifecycle-with-microsoft-platform-and-tools"></a><span data-ttu-id="e4313-103">Životní cyklus kontejnerizované aplikace Dockeru s platformou a nástroji Microsoft</span><span class="sxs-lookup"><span data-stu-id="e4313-103">Containerized Docker Application Lifecycle with Microsoft Platform and Tools</span></span>
 
-<span data-ttu-id="94db1-104">*Kontejnerizace je přístup k vývoji softwaru, ve kterém aplikace nebo služby, její závislosti a jeho konfigurace (abstrahované jako soubory manifestu nasazení) jsou zabaleny společně jako image kontejneru. Potom můžete otestovat kontejnerizované aplikace jako celek a nasadit jako instance image kontejneru do hostitelského operačního systému (OS).*</span><span class="sxs-lookup"><span data-stu-id="94db1-104">*Containerization is an approach to software development in which an application or service, its dependencies, and its configuration (abstracted as deployment manifest files) are packaged together as a container image. You then can test the containerized application as a unit and deploy it as a container image instance to the host operating system (OS).*</span></span>
+![Titulní kniha](./media/devops-book-cover-large-we.png)
 
-<span data-ttu-id="94db1-105">Stejně jako přepravní kontejnery umožňují přepravu zboží lodí, vlakem nebo nákladním vozidlem bez ohledu na náklad uvnitř, softwarové kontejnery fungují jako standardní jednotka nasazení softwaru, která může obsahovat různé kódy a závislosti.</span><span class="sxs-lookup"><span data-stu-id="94db1-105">Just as shipping containers allow goods to be transported by ship, train, or truck regardless of the cargo inside, software containers act as a standard unit of software deployment that can contain different code and dependencies.</span></span> <span data-ttu-id="94db1-106">Kontejnerizace softwaru tímto způsobem umožňuje vývojářům a odborníkům v oblasti IT nasadit je napříč prostředími s malou nebo žádnou úpravou.</span><span class="sxs-lookup"><span data-stu-id="94db1-106">Containerizing software this way enables developers and IT professionals to deploy them across environments with little or no modification.</span></span>
+<span data-ttu-id="e4313-105">**Edice verze 3.1** – aktualizace na ASP.NET Core 3,1</span><span class="sxs-lookup"><span data-stu-id="e4313-105">**EDITION v3.1** - Updated to ASP.NET Core 3.1</span></span>
 
-<span data-ttu-id="94db1-107">Kontejnery také izolovat aplikace od sebe navzájem na sdíleném osu.</span><span class="sxs-lookup"><span data-stu-id="94db1-107">Containers also isolate applications from each other on a shared OS.</span></span> <span data-ttu-id="94db1-108">Kontejnerizované aplikace běží na hostiteli kontejneru, který zase běží na operačním systému (Linux nebo Windows).</span><span class="sxs-lookup"><span data-stu-id="94db1-108">Containerized applications run on top of a container host that in turn runs on the OS (Linux or Windows).</span></span> <span data-ttu-id="94db1-109">Kontejnery mají proto mnohem menší nároky než image virtuálního počítače (VM).</span><span class="sxs-lookup"><span data-stu-id="94db1-109">Containers therefore have a much smaller footprint than virtual machine (VM) images.</span></span>
+<span data-ttu-id="e4313-106">Tato příručka je obecným přehledem pro vývoj a nasazování kontejnerových ASP.NET Core aplikací pomocí Docker s využitím platformy a nástrojů Microsoftu.</span><span class="sxs-lookup"><span data-stu-id="e4313-106">This guide is a general overview for developing and deploying containerized ASP.NET Core applications with Docker, using the Microsoft platform and tools.</span></span> <span data-ttu-id="e4313-107">Příručka obsahuje základní Úvod do Azure DevOps, implementaci kanálů CI/CD a také Azure Container Registry (ACR) a služby Azure Kubernetes Services AKS pro nasazení.</span><span class="sxs-lookup"><span data-stu-id="e4313-107">The guide includes a high-level introduction to Azure DevOps, for implementing CI/CD pipelines, as well as Azure Container Registry (ACR), and Azure Kubernetes Services AKS for deployment.</span></span>
 
-<span data-ttu-id="94db1-110">Každý kontejner může spustit celou webovou aplikaci nebo službu, jak je znázorněno na obrázku 1-1.</span><span class="sxs-lookup"><span data-stu-id="94db1-110">Each container can run a whole web application or a service, as shown in Figure 1-1.</span></span> <span data-ttu-id="94db1-111">V tomto příkladu je hostitel Dockeru hostitel kontejneru a App1, App2, Svc1 a Svc2 jsou kontejnerizované aplikace nebo služby.</span><span class="sxs-lookup"><span data-stu-id="94db1-111">In this example, Docker host is a container host, and App1, App2, Svc1, and Svc2 are containerized applications or services.</span></span>
+<span data-ttu-id="e4313-108">Podrobnosti o nízké úrovni, které souvisejí s vývojem, najdete v části [mikroslužby .NET: architektura pro kontejnerové aplikace .NET](https://docs.microsoft.com/dotnet/architecture/microservices/) a v referenčních aplikacích [eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers)souvisejících s odkazem.</span><span class="sxs-lookup"><span data-stu-id="e4313-108">For low-level, development-related details you can see the [.NET Microservices: Architecture for Containerized .NET Applications](https://docs.microsoft.com/dotnet/architecture/microservices/) guide and it related reference application [eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers).</span></span>
 
-![Diagram znázorňující čtyři kontejnery spuštěné ve virtuálním provozu nebo na serveru.](./media/index/multiple-containers-single-host.png)
+## <a name="send-us-your-feedback"></a><span data-ttu-id="e4313-109">Pošlete nám svůj názor.</span><span class="sxs-lookup"><span data-stu-id="e4313-109">Send us your feedback!</span></span>
 
-<span data-ttu-id="94db1-113">**Obrázek 1-1**.</span><span class="sxs-lookup"><span data-stu-id="94db1-113">**Figure 1-1**.</span></span> <span data-ttu-id="94db1-114">Více kontejnerů spuštěné na hostiteli kontejneru</span><span class="sxs-lookup"><span data-stu-id="94db1-114">Multiple containers running on a container host</span></span>
+<span data-ttu-id="e4313-110">Tento průvodce jsme napsali a pomohli vám pochopit architekturu kontejnerových aplikací a mikroslužeb v .NET.</span><span class="sxs-lookup"><span data-stu-id="e4313-110">We wrote this guide to help you understand the architecture of containerized applications and microservices in .NET.</span></span> <span data-ttu-id="e4313-111">Bude vyvíjena příručka a související referenční aplikace, takže jsme Vítejte na vašem názoru.</span><span class="sxs-lookup"><span data-stu-id="e4313-111">The guide and related reference application will be evolving, so we welcome your feedback!</span></span> <span data-ttu-id="e4313-112">Pokud máte komentáře o tom, jak tento průvodce můžete zlepšit, pošlete nám svůj názor na <https://aka.ms/ebookfeedback> .</span><span class="sxs-lookup"><span data-stu-id="e4313-112">If you have comments about how this guide can be improved, submit feedback at <https://aka.ms/ebookfeedback>.</span></span>
 
-<span data-ttu-id="94db1-115">Další výhodou, kterou můžete odvodit z kontejnerizace je škálovatelnost.</span><span class="sxs-lookup"><span data-stu-id="94db1-115">Another benefit you can derive from containerization is scalability.</span></span> <span data-ttu-id="94db1-116">Můžete rychle horizontální navýšení kapacity vytvořením nových kontejnerů pro krátkodobé úkoly.</span><span class="sxs-lookup"><span data-stu-id="94db1-116">You can scale out quickly by creating new containers for short-term tasks.</span></span> <span data-ttu-id="94db1-117">Z hlediska aplikace je vytváření instancí bitové kopie (vytvoření kontejneru) podobné vytvoření procesu, jako je služba nebo webová aplikace.</span><span class="sxs-lookup"><span data-stu-id="94db1-117">From an application point of view, instantiating an image (creating a container) is similar to instantiating a process like a service or web app.</span></span> <span data-ttu-id="94db1-118">Z důvodu spolehlivosti však při spuštění více instancí stejné bitové kopie na více hostitelských serverech obvykle chcete, aby každý kontejner (instance bitové kopie) běžel na jiném hostitelském serveru nebo virtuálním počítači v různých doménách selhání.</span><span class="sxs-lookup"><span data-stu-id="94db1-118">For reliability, however, when you run multiple instances of the same image across multiple host servers, you typically want each container (image instance) to run in a different host server or VM in different fault domains.</span></span>
+## <a name="credits"></a><span data-ttu-id="e4313-113">Kredity</span><span class="sxs-lookup"><span data-stu-id="e4313-113">Credits</span></span>
 
-<span data-ttu-id="94db1-119">Stručně řečeno, kontejnery nabízejí výhody izolace, přenositelnost, flexibilitu, škálovatelnost a řízení v celém pracovním postupu životního cyklu aplikace.</span><span class="sxs-lookup"><span data-stu-id="94db1-119">In short, containers offer the benefits of isolation, portability, agility, scalability, and control across the entire application lifecycle workflow.</span></span> <span data-ttu-id="94db1-120">Nejdůležitější výhodou je izolace prostředí mezi Dev a Ops.</span><span class="sxs-lookup"><span data-stu-id="94db1-120">The most important benefit is the environment isolation provided between Dev and Ops.</span></span>
+<span data-ttu-id="e4313-114">Autor:</span><span class="sxs-lookup"><span data-stu-id="e4313-114">Author:</span></span>
+
+> <span data-ttu-id="e4313-115">**Cesar de la Torre**, SR. PM, produktový tým .NET, Microsoft Corp.</span><span class="sxs-lookup"><span data-stu-id="e4313-115">**Cesar de la Torre**, Sr. PM, .NET product team, Microsoft Corp.</span></span>
+
+<span data-ttu-id="e4313-116">Editor získání:</span><span class="sxs-lookup"><span data-stu-id="e4313-116">Acquisitions Editor:</span></span>
+
+> <span data-ttu-id="e4313-117">**Janine**</span><span class="sxs-lookup"><span data-stu-id="e4313-117">**Janine Patrick**</span></span>
+
+<span data-ttu-id="e4313-118">Vývojový Editor:</span><span class="sxs-lookup"><span data-stu-id="e4313-118">Developmental Editor:</span></span>
+
+> <span data-ttu-id="e4313-119">**Bob Russell**, Solutions Professional v Microsoftu</span><span class="sxs-lookup"><span data-stu-id="e4313-119">**Bob Russell**, Solutions Professional at Microsoft</span></span>
+>
+> [<span data-ttu-id="e4313-120">**Osmičkové publikování, Inc.**</span><span class="sxs-lookup"><span data-stu-id="e4313-120">**Octal Publishing, Inc.**</span></span>](http://www.octalpub.com/)
+
+<span data-ttu-id="e4313-121">Redakční produkce:</span><span class="sxs-lookup"><span data-stu-id="e4313-121">Editorial Production:</span></span>
+
+> [<span data-ttu-id="e4313-122">Dianne Russell</span><span class="sxs-lookup"><span data-stu-id="e4313-122">Dianne Russell</span></span>](http://www.octalpub.com/)
+>
+> <span data-ttu-id="e4313-123">**Osmičkové publikování, Inc.**</span><span class="sxs-lookup"><span data-stu-id="e4313-123">**Octal Publishing, Inc.**</span></span>
+
+<span data-ttu-id="e4313-124">Copyeditor:</span><span class="sxs-lookup"><span data-stu-id="e4313-124">Copyeditor:</span></span>
+
+> <span data-ttu-id="e4313-125">**Bob Russell**, Solutions Professional v Microsoftu</span><span class="sxs-lookup"><span data-stu-id="e4313-125">**Bob Russell**, Solutions Professional at Microsoft</span></span>
+
+<span data-ttu-id="e4313-126">Účastníci a kontroloři:</span><span class="sxs-lookup"><span data-stu-id="e4313-126">Participants and reviewers:</span></span>
+
+> <span data-ttu-id="e4313-127">**Nish Anil**, SR. Program Manager, .NET Team, Microsoft</span><span class="sxs-lookup"><span data-stu-id="e4313-127">**Nish Anil**, Sr. Program Manager, .NET team, Microsoft</span></span>
+>
+> <span data-ttu-id="e4313-128">**Miguel Veloso**, inženýr pro vývoj softwaru v jednoduchých konceptech</span><span class="sxs-lookup"><span data-stu-id="e4313-128">**Miguel Veloso**, Software Development Engineer at Plain Concepts</span></span>
+>
+> <span data-ttu-id="e4313-129">**Sumit Ghosh**, hlavní konzultant na Neudesic</span><span class="sxs-lookup"><span data-stu-id="e4313-129">**Sumit Ghosh**, Principal Consultant at Neudesic</span></span>
+
+## <a name="copyright"></a><span data-ttu-id="e4313-130">Copyright</span><span class="sxs-lookup"><span data-stu-id="e4313-130">Copyright</span></span>
+
+<span data-ttu-id="e4313-131">PUBLIKOVAL(A)</span><span class="sxs-lookup"><span data-stu-id="e4313-131">PUBLISHED BY</span></span>
+
+<span data-ttu-id="e4313-132">Microsoft Developer divize, .NET a Visual Studio Product teams</span><span class="sxs-lookup"><span data-stu-id="e4313-132">Microsoft Developer Division, .NET and Visual Studio product teams</span></span>
+
+<span data-ttu-id="e4313-133">Divize společnosti Microsoft Corporation</span><span class="sxs-lookup"><span data-stu-id="e4313-133">A division of Microsoft Corporation</span></span>
+
+<span data-ttu-id="e4313-134">One Microsoft Way</span><span class="sxs-lookup"><span data-stu-id="e4313-134">One Microsoft Way</span></span>
+
+<span data-ttu-id="e4313-135">Redmond, Washington 98052-6399</span><span class="sxs-lookup"><span data-stu-id="e4313-135">Redmond, Washington 98052-6399</span></span>
+
+<span data-ttu-id="e4313-136">Copyright &copy; 2020 od společnosti Microsoft Corporation</span><span class="sxs-lookup"><span data-stu-id="e4313-136">Copyright &copy; 2020 by Microsoft Corporation</span></span>
+
+<span data-ttu-id="e4313-137">All rights reserved.</span><span class="sxs-lookup"><span data-stu-id="e4313-137">All rights reserved.</span></span> <span data-ttu-id="e4313-138">Žádná část obsahu této knihy se nedá reprodukovat ani přenést v jakékoli formě nebo jakýmkoli způsobem bez písemného svolení vydavatele.</span><span class="sxs-lookup"><span data-stu-id="e4313-138">No part of the contents of this book may be reproduced or transmitted in any form or by any means without the written permission of the publisher.</span></span>
+
+<span data-ttu-id="e4313-139">Tato kniha je k dispozici "tak jak jsou" a vyjadřuje zobrazení a stanoviska autora.</span><span class="sxs-lookup"><span data-stu-id="e4313-139">This book is provided "as-is" and expresses the author's views and opinions.</span></span> <span data-ttu-id="e4313-140">Zobrazení, názory a informace vyjádřené v této knize, včetně adres URL a dalších odkazů na internetové weby, se mohou změnit bez předchozího upozornění.</span><span class="sxs-lookup"><span data-stu-id="e4313-140">The views, opinions and information expressed in this book, including URL and other Internet website references, may change without notice.</span></span>
+
+<span data-ttu-id="e4313-141">Některé zde uvedené příklady slouží pouze k znázornění a jsou smyšlené.</span><span class="sxs-lookup"><span data-stu-id="e4313-141">Some examples depicted herein are provided for illustration only and are fictitious.</span></span> <span data-ttu-id="e4313-142">Neměli byste z nich vyvozovat žádné skutečné vztahy či spojení.</span><span class="sxs-lookup"><span data-stu-id="e4313-142">No real association or connection is intended or should be inferred.</span></span>
+
+<span data-ttu-id="e4313-143">Microsoft a ochranné známky uvedené na <https://www.microsoft.com> webové stránce ochranné známky jsou ochranné známky skupiny společností Microsoft.</span><span class="sxs-lookup"><span data-stu-id="e4313-143">Microsoft and the trademarks listed at <https://www.microsoft.com> on the "Trademarks" webpage are trademarks of the Microsoft group of companies.</span></span>
+
+<span data-ttu-id="e4313-144">Mac a macOS jsou ochranné známky společnosti Apple Inc.</span><span class="sxs-lookup"><span data-stu-id="e4313-144">Mac and macOS are trademarks of Apple Inc.</span></span>
+
+<span data-ttu-id="e4313-145">Logo Docker Whale je registrovaná ochranná známka společnosti Docker, Inc., kterou používá oprávnění.</span><span class="sxs-lookup"><span data-stu-id="e4313-145">The Docker whale logo is a registered trademark of Docker, Inc. Used by permission.</span></span>
+
+<span data-ttu-id="e4313-146">Všechny ostatní značky a loga jsou majetkem příslušných vlastníků.</span><span class="sxs-lookup"><span data-stu-id="e4313-146">All other marks and logos are property of their respective owners.</span></span>
 
 >[!div class="step-by-step"]
->[<span data-ttu-id="94db1-121">Další</span><span class="sxs-lookup"><span data-stu-id="94db1-121">Next</span></span>](what-is-docker.md)
+>[<span data-ttu-id="e4313-147">Další</span><span class="sxs-lookup"><span data-stu-id="e4313-147">Next</span></span>](introduction-to-containers-and-docker.md)

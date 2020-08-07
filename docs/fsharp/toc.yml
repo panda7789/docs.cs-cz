@@ -1,21 +1,21 @@
-- name: 'Dokumentace k F#'
+- name: Dokumentace k F#
   href: index.yml
-- name: 'Co je F#'
+- name: Co je F#
   href: what-is-fsharp.md
 - name: Začínáme
   href: get-started/index.md
   items:
-    - name: 'Instalace F#'
+    - name: Instalace F#
       href: get-started/install-fsharp.md
-    - name: 'F# v sadě Visual Studio'
+    - name: F# v sadě Visual Studio
       href: get-started/get-started-visual-studio.md
-    - name: 'F# v sadě Visual Studio Code'
+    - name: F# v sadě Visual Studio Code
       href: get-started/get-started-vscode.md
-    - name: 'F# s rozhraním příkazového řádku .NET Core'
+    - name: F# s rozhraním příkazového řádku .NET Core
       href: get-started/get-started-command-line.md
-    - name: 'F# v sadě Visual Studio pro Mac'
+    - name: F# v sadě Visual Studio pro Mac
       href: get-started/get-started-with-visual-studio-for-mac.md
-- name: 'Prohlídka jazyka F#'
+- name: Prohlídka jazyka F#
   href: tour.md
 - name: Kurzy
   items:
@@ -37,17 +37,17 @@
           href: tutorials/type-providers/type-provider-security.md
         - name: Řešení potíží se zprostředkovateli typů
           href: tutorials/type-providers/troubleshooting-type-providers.md
-    - name: 'F# Interactive'
+    - name: F# Interactive
       href: tutorials/fsharp-interactive/index.md
-- name: 'Co je nového v jazyce F#'
+- name: Co je nového v jazyce F#
   items:
-    - name: 'F# 4.7'
+    - name: F# 4.7
       href: whats-new/fsharp-47.md
-    - name: 'F# 4.6'
+    - name: F# 4.6
       href: whats-new/fsharp-46.md
-    - name: 'F# 4.5'
+    - name: F# 4.5
       href: whats-new/fsharp-45.md
-- name: 'Referenční dokumentace jazyka F#'
+- name: Referenční dokumentace jazyka F#
   href: language-reference/index.md
   items:
     - name: Referenční dokumentace klíčových slov
@@ -87,7 +87,7 @@
           href: language-reference/values/null-values.md
     - name: Literály
       href: language-reference/literals.md
-    - name: 'Typy F#'
+    - name: Typy F#
       href: language-reference/fsharp-types.md
     - name: Odvození typu
       href: language-reference/type-inference.md
@@ -99,7 +99,7 @@
       href: language-reference/strings.md
     - name: N-tice
       href: language-reference/tuples.md
-    - name: 'Typy kolekcí F#'
+    - name: Typy kolekcí F#
       href: language-reference/fsharp-collection-types.md
     - name: Seznamy
       href: language-reference/lists.md
@@ -226,6 +226,8 @@
       href: language-reference/signature-files.md
     - name: Měrné jednotky
       href: language-reference/units-of-measure.md
+    - name: Formátování prostého textu
+      href: language-reference/plaintext-formatting.md
     - name: dokumentace XML
       href: language-reference/xml-documentation.md
     - name: Výrazy Lazy
@@ -248,7 +250,7 @@
       href: language-reference/compiler-directives.md
     - name: Možnosti kompilátoru
       href: language-reference/compiler-options.md
-    - name: 'Interaktivní možnosti F#'
+    - name: Interaktivní možnosti F#
       href: language-reference/fsharp-interactive-options.md
     - name: 'Identifikátory zdrojového řádku, souboru a cesty'
       href: language-reference/source-line-file-path-identifiers.md
@@ -258,25 +260,25 @@
       href: language-reference/verbose-syntax.md
     - name: Chyby a upozornění kompilátoru
       href: language-reference/compiler-messages/index.md
-- name: 'Příručka stylu jazyka F#'
+- name: Příručka stylu jazyka F#
   href: style-guide/index.md
   items:
-    - name: 'Pravidla formátování kódu F#'
+    - name: Pravidla formátování kódu F#
       href: style-guide/formatting.md
-    - name: 'Zásady kódování jazyka F#'
+    - name: Zásady kódování jazyka F#
       href: style-guide/conventions.md
-    - name: 'Pravidla návrhu komponent jazyka F#'
+    - name: Pravidla návrhu komponent jazyka F#
       href: style-guide/component-design-guidelines.md
-- name: 'Použití jazyka F# v Azure'
+- name: Použití jazyka F# v Azure
   href: using-fsharp-on-azure/index.md
   items:
-    - name: 'Začínáme se službou Azure Blob Storage s využitím F#'
+    - name: Začínáme se službou Azure Blob Storage s využitím F#
       href: using-fsharp-on-azure/blob-storage.md
-    - name: 'Začínáme se službou Azure File Storage s využitím F#'
+    - name: Začínáme se službou Azure File Storage s využitím F#
       href: using-fsharp-on-azure/file-storage.md
-    - name: 'Začínáme se službou Azure Queue Storage s využitím F#'
+    - name: Začínáme se službou Azure Queue Storage s využitím F#
       href: using-fsharp-on-azure/queue-storage.md
-    - name: 'Začínáme se službou Azure Table Storage s využitím F#'
+    - name: Začínáme se službou Azure Table Storage s využitím F#
       href: using-fsharp-on-azure/table-storage.md
-    - name: 'Správa balíčků pro závislosti Azure F#'
+    - name: Správa balíčků pro závislosti Azure F#
       href: using-fsharp-on-azure/package-management.md
