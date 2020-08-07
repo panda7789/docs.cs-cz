@@ -38,8 +38,6 @@
           href: cryptographic-signatures.md
         - name: Zajištění integrity dat pomocí hodnot hash
           href: ensuring-data-integrity-with-hash-codes.md
-        - name: Vytváření šifrovacích schémat
-          href: creating-a-cryptographic-scheme.md
         - name: 'Postupy: Šifrování elementů XML pomocí symetrických klíčů'
           href: how-to-encrypt-xml-elements-with-symmetric-keys.md
         - name: 'Postupy: Dešifrování elementů XML pomocí symetrických klíčů'
