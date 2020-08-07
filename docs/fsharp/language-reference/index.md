@@ -2,20 +2,20 @@
 title: Referenční dokumentace jazyka
 description: 'Najde informace o funkcích jazyka F # z tohoto odkazu na jazykové tokeny, koncepty, typy, výrazy a témata konstrukce podporovaná kompilátorem.'
 ms.date: 05/16/2016
-ms.openlocfilehash: e8a6c7ef83c4e2d292cc6a12a59e420708240a39
-ms.sourcegitcommit: 09bad6ec0cbf18be7cd7f62e77286d305a18b607
+ms.openlocfilehash: 43272c6684c8fc763e8f99611901f35695f48981
+ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87795473"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87854955"
 ---
 # <a name="f-language-reference"></a>Referenční dokumentace jazyka F#
 
-Tato část je odkaz na jazyk F #, víceúrovňové programovací jazyk, který cílí na .NET. Jazyk F # podporuje funkční, objektově orientované a imperativní programovací modely.
+Tato část je referenční informace k jazyku F #, víceúrovňovému programovacímu jazyku, který cílí na .NET. Jazyk F # podporuje funkční, objektově orientované a imperativní modely programování.
 
 ## <a name="f-tokens"></a>Tokeny F #
 
-V následující tabulce jsou uvedena referenční témata, která poskytují tabulky klíčová slova, symboly a literály používané jako tokeny v jazyce F #.
+V následující tabulce jsou uvedeny referenční články, které poskytují tabulky klíčových slov, symbolů a literálů, které jsou používány jako tokeny v jazyce F #.
 
 |Nadpis|Popis|
 |-----|-----------|
@@ -39,7 +39,7 @@ V následující tabulce jsou uvedena referenční témata k dispozici, která p
 |[Přetížení operátoru](operator-overloading.md)|Popisuje, jak přetížit aritmetické operátory v typu třídy nebo záznamu a na globální úrovni.|
 |[Přetypování a převody](casting-and-conversions.md)|Popisuje podporu pro převody typu v F #.|
 |[Access Control](access-control.md)|Popisuje řízení přístupu v F #. Řízení přístupu znamená deklaraci toho, co klienti mohou používat určité programové prvky, jako jsou typy, metody, funkce a tak dále.|
-|[Porovnávání vzorů](pattern-matching.md)|Popisuje vzory, které jsou pravidla pro transformaci vstupních dat, která se používají v celém jazyce F # k extrakci porovnání dat se vzorem, rozložení dat na části prvků nebo extrakci informací z dat různými způsoby.|
+|[Porovnávání vzorů](pattern-matching.md)|Popisuje vzory, které jsou pravidla pro transformaci vstupních dat a používají se v celém jazyce F #. Můžete porovnat data se vzorem, rozložit data na části prvků nebo extrahovat informace z dat různými způsoby.|
 |[Aktivní vzory](active-patterns.md)|Popisuje aktivní vzory. Aktivní vzory umožňují definovat pojmenované oddíly, které rozdělují vstupní data. Můžete použít aktivní vzory a rozložit data vlastním způsobem pro každý oddíl.|
 |[Kontrolní výrazy](assertions.md)|Popisuje `assert` výraz, což je funkce ladění, kterou můžete použít k otestování výrazu. Po selhání v režimu ladění vygeneruje kontrolní výraz dialogové okno systémové chyby.|
 |[Zpracování výjimek](./exception-handling/index.md)|Obsahuje informace o podpoře zpracování výjimek v jazyce F #.|
@@ -49,7 +49,7 @@ V následující tabulce jsou uvedena referenční témata k dispozici, která p
 |[Moduly](modules.md)|Popisuje moduly. Modul jazyka F # je seskupení kódu F #, jako jsou hodnoty, typy a hodnoty funkcí v programu F #. Seskupení kódu v modulech pomáhá udržet související kód dohromady a pomáhá vyhnout se konfliktům názvů v programu.|
 |[Deklarace importu: `open` klíčové slovo](import-declarations-the-open-keyword.md)|Popisuje `open` , jak funguje. Deklarace importu určuje modul nebo obor názvů, jehož prvky můžete odkazovat bez použití plně kvalifikovaného názvu.|
 |[Signatury](signature-files.md)|Popisuje signatury a soubory signatur. Podpisový soubor obsahuje informace o veřejných podpisech sady prvků programu F #, jako jsou typy, obory názvů a moduly. Dá se použít k určení přístupnosti těchto prvků programu.|
-|[Dokumentace XML](xml-documentation.md)|Popisuje podporu pro generování souborů dokumentace pro komentáře dokumentu XML, označované také jako komentáře se třemi lomítky. Můžete získat dokumentaci z komentářů kódu v F # stejně jako v jiných jazycích .NET.|
+|[Dokumentace XML](xml-documentation.md)|Popisuje podporu pro generování souborů dokumentace pro komentáře dokumentu XML, označované také jako komentáře se třemi lomítky. Můžete získat dokumentaci z komentářů kódu v F # jako v jiných jazycích .NET.|
 |[Podrobná syntaxe](verbose-syntax.md)|Popisuje syntaxi pro konstrukce F #, pokud není povolena zjednodušená syntaxe. Podrobná syntaxe je označena `#light "off"` direktivou v horní části souboru kódu.|
 |[Formátování prostého textu](plaintext-formatting.md)|Naučte se používat sprintf – a jiné formátování prostého textu v aplikacích a skriptech F #.|
 
@@ -67,10 +67,10 @@ Následující tabulka uvádí referenční témata k dispozici, která popisuj�
 |[Typy kolekcí F#](fsharp-collection-types.md)|Přehled typů kolekce funkcí F #, včetně typů pro pole, seznamy, posloupnosti (seq), mapy a sady.|
 |[Seznamy](lists.md)|Popisuje seznamy. Seznam v jazyce F # je seřazená, neproměnlivá řada prvků všech stejného typu.|
 |[Možnosti](options.md)|Popisuje typ možnosti. Možnost v jazyce F # se používá v případě, že hodnota může nebo nemusí existovat. Možnost má podkladový typ a může buď obsahovat hodnotu tohoto typu, nebo nemusí mít hodnotu.|
-|[Sekvence](sequences.md)|Popisuje sekvence. Sekvence je logická řada prvků všech jednoho typu. Jednotlivé prvky sekvence jsou vypočítány pouze v případě potřeby, takže reprezentace může být menší než počet prvků literálu.|
+|[Sekvence](sequences.md)|Popisuje sekvence. Sekvence je logická řada prvků všech jednoho typu. Jednotlivé prvky sekvence jsou vypočítány pouze v případě potřeby, takže reprezentace může být menší než počet znaků, který označuje.|
 |[Pole](arrays.md)|Popisuje pole. Pole mají pevnou velikost, s nulovým základem, proměnlivé sekvence po sobě jdoucích datových prvků, a to vše stejného typu.|
 |[Záznamy](records.md)|Popisuje záznamy. Záznamy reprezentují jednoduché agregované hodnoty pojmenovaných hodnot, volitelně s členy.|
-|[Rozlišovaná sjednocení](discriminated-unions.md)|Popisuje rozlišené sjednocení, které poskytuje podporu pro hodnoty, které mohou být jedním z různých pojmenovaných případů, z nichž každá má možné různé hodnoty a typy.|
+|[Rozlišovaná sjednocení](discriminated-unions.md)|Popisuje rozlišené sjednocení, které poskytují podporu pro hodnoty, které mohou být jedním z různých jmenovaných případů, z nichž každá má možné různé hodnoty a typy.|
 |[Výčty](enumerations.md)|Popisuje výčty typů, které mají definovanou sadu pojmenovaných hodnot. Můžete je použít místo literálů, aby bylo možné čitelnější a udržovatelnější kód.|
 |[Referenční buňky](reference-cells.md)|Popisuje referenční buňky, což jsou umístění úložiště, která umožňují vytvořit proměnlivé proměnné s referenční sémantikou.|
 |[Zkratky typů](type-abbreviations.md)|Popisuje zkratky typu, což jsou alternativní názvy pro typy.|
@@ -97,7 +97,7 @@ V následující tabulce jsou uvedena témata, která popisují výrazy jazyka F
 |[Smyčky: `while...do` výraz](loops-while-do-expression.md)|Popisuje `while...do` výraz, který se používá k provedení iterativního spuštění (smyčky), zatímco zadaná podmínka testu je pravdivá.|
 |[Objektové výrazy](object-expressions.md)|Popisuje výrazy objektu, které jsou výrazy, které vytvářejí nové instance dynamicky vytvořeného typu anonymního objektu, který je založen na stávajícím základním typu, rozhraní nebo sadě rozhraní.|
 |[Výrazy Lazy](lazy-expressions.md)|Popisuje opožděné výrazy, které jsou výpočty, které nejsou vyhodnocovány okamžitě, ale jsou vyhodnoceny, když je výsledek skutečně požadován.|
-|[Výpočetní výrazy](computation-expressions.md)|Popisuje výrazy výpočtů v jazyce F #, které poskytují praktickou syntaxi pro zápis výpočtů, které mohou být seřazeny a kombinovány pomocí konstrukcí a vazeb toku řízení. Dají se použít k poskytnutí pohodlné syntaxe pro *monádami*, funkce programování, která se dá použít ke správě dat, řízení a vedlejších účinků ve funkčních programech. Jeden typ výpočetního výrazu, asynchronní pracovní postup, poskytuje podporu pro asynchronní a paralelní výpočty. Další informace najdete v tématu [asynchronní pracovní postupy](asynchronous-workflows.md).|
+|[Výpočetní výrazy](computation-expressions.md)|Popisuje výrazy výpočtů v jazyce F #, které poskytují praktickou syntaxi pro zápis výpočtů, které mohou být seřazeny a kombinovány pomocí konstrukcí a vazeb toku řízení. Dají se použít k poskytnutí pohodlné syntaxe pro *monádami*, funkce programování, která se dá použít ke správě dat, řízení a vedlejších účinků v funkčních programech. Jeden typ výpočetního výrazu, asynchronní pracovní postup, poskytuje podporu pro asynchronní a paralelní výpočty. Další informace najdete v tématu [asynchronní pracovní postupy](asynchronous-workflows.md).|
 |[Asynchronní pracovní postupy](asynchronous-workflows.md)|Popisuje asynchronní pracovní postupy, funkce jazyka, která umožňuje psát asynchronní kód způsobem, který je velmi blízko způsobu, jakým byste mohli přirozeně psát synchronní kód.|
 |[Uvozovky kódu](code-quotations.md)|Popisuje citace kódu, funkci jazyka, která umožňuje vygenerovat a pracovat s výrazy kódu jazyka F # programově.|
 |[Výrazy dotazu](query-expressions.md)|Popisuje výrazy dotazu, funkci jazyka, která implementuje LINQ pro F # a umožňuje zapisovat dotazy na zdroj dat nebo vyčíslitelné kolekce.|
@@ -110,4 +110,4 @@ V následující tabulce jsou uvedena témata, která popisují speciální kons
 |-----|-----------|
 |[Možnosti kompilátoru](compiler-options.md)|Popisuje možnosti příkazového řádku pro kompilátor F #.|
 |[Direktivy kompilátoru](compiler-directives.md)|Popisuje direktivy procesoru a direktivy kompilátoru.|
-|[Identifikátory zdrojového řádku, souboru a cesty](source-line-file-path-identifiers.md)|Popisuje identifikátory `__LINE__` `__SOURCE_DIRECTORY__` a `__SOURCE_FILE__` , což jsou předdefinované hodnoty, které vám umožňují přístup ke zdrojovému číslu řádku, adresáři a názvu souboru ve vašem kódu.|
+|[Identifikátory zdrojového řádku, souboru a cesty](source-line-file-path-identifiers.md)|Popisuje identifikátory `__LINE__` , `__SOURCE_DIRECTORY__` a `__SOURCE_FILE__` , což jsou předdefinované hodnoty, které vám umožňují přístup ke zdrojovému číslu řádku, adresáři a názvu souboru ve vašem kódu.|

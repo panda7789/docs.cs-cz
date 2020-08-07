@@ -1,20 +1,20 @@
 ---
 title: Seznamy
-description: Přečtěte F# si o seznamech, seřazené, neměnné řadě prvků stejného typu.
+description: 'Přečtěte si o seznamech F #, seřazené a neměnných řadách prvků stejného typu.'
 ms.date: 05/16/2016
-ms.openlocfilehash: 72f1779d7d077da0f1f4804df93fa4ac11f9b2e3
-ms.sourcegitcommit: a2d0e1f66367367065bc8dc0dde488ab536da73f
+ms.openlocfilehash: 236ae77813a3448f159228c5c58d9fe3d024fbd8
+ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71082913"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87854968"
 ---
 # <a name="lists"></a>Seznamy
 
-> [!NOTE]
-> Odkazy na reference k rozhraní API v tomto článku vás převezmou na MSDN.  Reference k rozhraní docs.microsoft.com API není dokončená.
+Seznam v jazyce F # je seřazená, neproměnlivá řada prvků stejného typu. K provádění základních operací na seznamech použijte funkce v [modulu seznam](https://msdn.microsoft.com/library/a2264ba3-2d45-40dd-9040-4f7aa2ad9788).
 
-Seznam v F# je seřazená, neproměnlivá řada prvků stejného typu. K provádění základních operací na seznamech použijte funkce v [modulu seznam](https://msdn.microsoft.com/library/a2264ba3-2d45-40dd-9040-4f7aa2ad9788).
+> [!NOTE]
+> Reference k rozhraní docs.microsoft.com API pro F # není dokončená. Pokud narazíte na nefunkční odkazy, místo toho použijte [dokumentaci základní knihovny F #](https://fsharp.github.io/fsharp-core-docs/) .
 
 ## <a name="creating-and-initializing-lists"></a>Vytváření a inicializace seznamů
 
@@ -26,11 +26,11 @@ Můžete také umístit zalomení řádků mezi prvky, v takovém případě jso
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet13011.fs)]
 
-V normálním případě musí být všechny prvky seznamu stejného typu. Výjimkou je, že seznam, ve kterém jsou prvky určeny jako základní typ, může mít elementy, které jsou odvozeny typy. Proto je možné, že následující podmínky jsou `Button` přijatelné `CheckBox` , protože `Control`a jsou odvozeny z.
+V normálním případě musí být všechny prvky seznamu stejného typu. Výjimkou je, že seznam, ve kterém jsou prvky určeny jako základní typ, může mít elementy, které jsou odvozeny typy. Proto je možné, že následující podmínky jsou přijatelné, protože `Button` a `CheckBox` jsou odvozeny z `Control` .
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet13012.fs)]
 
-Můžete také definovat prvky seznamu pomocí rozsahu, který je určen pomocí celých čísel oddělených operátorem Range`..`(), jak je znázorněno v následujícím kódu.
+Můžete také definovat prvky seznamu pomocí rozsahu, který je určen pomocí celých čísel oddělených operátorem Range ( `..` ), jak je znázorněno v následujícím kódu.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1302.fs)]
 
@@ -44,19 +44,19 @@ Můžete také použít výraz pořadí k vytvoření seznamu. Další informace
 
 ## <a name="operators-for-working-with-lists"></a>Operátory pro práci se seznamy
 
-Prvky můžete k seznamu připojit pomocí `::` operátoru (nevýhody). V případě `list1` `list2` , následující kód vytvoří jako `[100; 2; 3; 4]`. `[2; 3; 4]`
+Prvky můžete k seznamu připojit pomocí `::` operátoru (nevýhody). `list1`V případě `[2; 3; 4]` , následující kód vytvoří `list2` jako `[100; 2; 3; 4]` .
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1305.fs)]
 
-Seznamy, které mají kompatibilní typy, lze zřetězit pomocí `@` operátoru, jak je uvedeno v následujícím kódu. Pokud `list1` je `[2; 3; 4]` a ,tento`list2` kód vytvoří`list3` jako .`[2; 3; 4; 100; 2; 3; 4]` `[100; 2; 3; 4]`
+Seznamy, které mají kompatibilní typy, lze zřetězit pomocí `@` operátoru, jak je uvedeno v následujícím kódu. Pokud `list1` je `[2; 3; 4]` a `list2` `[100; 2; 3; 4]` , tento kód vytvoří `list3` jako `[2; 3; 4; 100; 2; 3; 4]` .
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1306.fs)]
 
 Funkce pro provádění operací v seznamech jsou k dispozici v [modulu seznam](https://msdn.microsoft.com/library/a2264ba3-2d45-40dd-9040-4f7aa2ad9788).
 
-Vzhledem k tomu F# , že seznamy v nástroji jsou neměnné, všechny úpravy operací generují nové seznamy místo úprav existujících seznamů.
+Vzhledem k tomu, že seznamy v jazyce F # jsou neměnné, všechny úpravy operací generují nové seznamy místo úprav existujících seznamů.
 
-Seznamy v F# aplikaci jsou implementovány jako jednotlivě propojené seznamy, což znamená, že operace, které mají přístup pouze k hlavnímu seznamu, mají hodnotu o (1) a přístup k prvkům je o (*n*).
+Seznamy v jazyce F # jsou implementovány jako jednotlivě propojené seznamy, což znamená, že operace, které mají přístup pouze k hlavičce seznamu, mají hodnotu O (1) a přístup k prvkům je O (*n*).
 
 ## <a name="properties"></a>Vlastnosti
 
@@ -65,11 +65,11 @@ Typ seznamu podporuje následující vlastnosti:
 |Vlastnost|Typ|Popis|
 |--------|----|-----------|
 |[Záhlaví](https://msdn.microsoft.com/library/5f9414fd-6bdb-470a-8b72-40016db30740)|`'T`|První prvek.|
-|[prázdný](https://msdn.microsoft.com/library/44406ecb-1918-4d32-b32a-ca1f69840386)|`'T list`|Statická vlastnost, která vrací prázdný seznam příslušného typu.|
+|[Obsahovat](https://msdn.microsoft.com/library/44406ecb-1918-4d32-b32a-ca1f69840386)|`'T list`|Statická vlastnost, která vrací prázdný seznam příslušného typu.|
 |[IsEmpty](https://msdn.microsoft.com/library/3ba087b2-2fc2-406d-b10a-cff6a19322da)|`bool`|`true`Pokud seznam neobsahuje žádné prvky.|
 |[Položka](https://msdn.microsoft.com/library/bdb2553a-0e54-4ff8-baed-ab1aac8f5dae)|`'T`|Prvek na zadaném indexu (založený na nule).|
-|[Časový](https://msdn.microsoft.com/library/25f715c8-9daa-4c4d-a6c7-26772f9dab4d)|`int`|Počet elementů.|
-|[Kompatibilní](https://msdn.microsoft.com/library/2a6f8eb9-dc32-41aa-8b62-2baffaface91)|`'T list`|Seznam bez prvního prvku|
+|[Délka](https://msdn.microsoft.com/library/25f715c8-9daa-4c4d-a6c7-26772f9dab4d)|`int`|Počet elementů.|
+|[Koncová část](https://msdn.microsoft.com/library/2a6f8eb9-dc32-41aa-8b62-2baffaface91)|`'T list`|Seznam bez prvního prvku|
 
 Níže jsou uvedeny některé příklady použití těchto vlastností.
 
@@ -83,7 +83,7 @@ Programování se seznamy vám umožňuje provádět komplexní operace s malým
 
 Seznamy jsou jedinečně uzpůsobeny rekurzivním programovacím technikům. Zvažte operaci, která musí být provedena u každého prvku seznamu. To lze provést rekurzivně na začátku seznamu a následným předáním konce seznamu, který je menší seznam, který se skládá z původního seznamu bez prvního prvku, zpět na další úroveň rekurze.
 
-Chcete-li zapsat takovou rekurzivní funkci, použijte operátor nevýhody (`::`) v porovnávání vzorů, což umožňuje oddělit záhlaví seznamu od konce.
+Chcete-li zapsat takovou rekurzivní funkci, použijte operátor nevýhody ( `::` ) v porovnávání vzorů, což umožňuje oddělit záhlaví seznamu od konce.
 
 Následující příklad kódu ukazuje, jak použít porovnávání vzorů pro implementaci rekurzivní funkce, která provádí operace na seznamu.
 
@@ -112,9 +112,9 @@ Primes Up To 100:
 
 Funkce [list... Empty](https://msdn.microsoft.com/library/a7941d44-9e92-427c-b806-c378f4558107) určuje, zda má seznam nějaké prvky.
 
-Funkce [list. Exists](https://msdn.microsoft.com/library/15a3ebd5-98f0-44c0-8220-7dedec3e68a8) používá logický test na prvky seznamu a vrací `true` , pokud některý prvek splňuje podmínky testu. [List. exists2 –](https://msdn.microsoft.com/library/7532b39e-3f4f-4534-a60b-d7721dc6fa7e) je podobný, ale pracuje na po sobě jdoucích dvojic prvků ve dvou seznamech.
+Funkce [list. Exists](https://msdn.microsoft.com/library/15a3ebd5-98f0-44c0-8220-7dedec3e68a8) používá logický test na prvky seznamu a vrací, `true` Pokud některý prvek splňuje podmínky testu. [List. exists2 –](https://msdn.microsoft.com/library/7532b39e-3f4f-4534-a60b-d7721dc6fa7e) je podobný, ale pracuje na po sobě jdoucích dvojic prvků ve dvou seznamech.
 
-Následující kód demonstruje použití `List.exists`.
+Následující kód demonstruje použití `List.exists` .
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lists/snippet1.fs)]
 
@@ -124,7 +124,7 @@ Výstup je následující:
 For list [0; 1; 2; 3], contains zero is true
 ```
 
-Následující příklad ukazuje použití `List.exists2`.
+Následující příklad ukazuje použití `List.exists2` .
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lists/snippet2.fs)]
 
@@ -158,11 +158,11 @@ false
 
 ### <a name="sort-operations-on-lists"></a>Seřadit operace v seznamech
 
-Seznam. [Sort](https://msdn.microsoft.com/library/17f1030e-aa7e-41dd-94ea-72cb6c04fd3d), [list. sortBy](https://msdn.microsoft.com/library/955bfc5f-ad9c-4f2d-a7ab-91e43eb21359)a [list. sortWith –](https://msdn.microsoft.com/library/1d806a54-9166-4198-906d-15101f7916c7) Functions Sort lists. Funkce řazení určuje, které z těchto tří funkcí použít. `List.sort`používá výchozí obecné porovnání. Obecné porovnání používá pro porovnání hodnot globální operátory založené na funkci Generic Compare. Funguje efektivně s širokou škálou typů prvků, jako jsou jednoduché číselné typy, řazené kolekce členů, záznamy, rozlišené sjednocení, seznamy, pole a jakýkoli typ, který `System.IComparable`implementuje. Pro typy, které `System.IComparable`implementují obecné porovnání, `System.IComparable.CompareTo()` používá funkci. Obecné porovnání funguje také s řetězci, ale používá pořadí řazení nezávislé na jazykové verzi. Obecné porovnání by nemělo být použito pro nepodporované typy, jako například typy funkcí. Také výkon výchozího obecného porovnání je nejvhodnější pro malé strukturované typy; u větších strukturovaných typů, které je třeba porovnat a seřadit často, zvažte `System.IComparable` implementaci a poskytování efektivní implementace `System.IComparable.CompareTo()` metody.
+Seznam. [Sort](https://msdn.microsoft.com/library/17f1030e-aa7e-41dd-94ea-72cb6c04fd3d), [list. sortBy](https://msdn.microsoft.com/library/955bfc5f-ad9c-4f2d-a7ab-91e43eb21359)a [list. sortWith –](https://msdn.microsoft.com/library/1d806a54-9166-4198-906d-15101f7916c7) Functions Sort lists. Funkce řazení určuje, které z těchto tří funkcí použít. `List.sort`používá výchozí obecné porovnání. Obecné porovnání používá pro porovnání hodnot globální operátory založené na funkci Generic Compare. Funguje efektivně s širokou škálou typů prvků, jako jsou jednoduché číselné typy, řazené kolekce členů, záznamy, rozlišené sjednocení, seznamy, pole a jakýkoli typ, který implementuje `System.IComparable` . Pro typy, které implementují `System.IComparable` Obecné porovnání, používá `System.IComparable.CompareTo()` funkci. Obecné porovnání funguje také s řetězci, ale používá pořadí řazení nezávislé na jazykové verzi. Obecné porovnání by nemělo být použito pro nepodporované typy, jako například typy funkcí. Také výkon výchozího obecného porovnání je nejvhodnější pro malé strukturované typy; u větších strukturovaných typů, které je třeba porovnat a seřadit často, zvažte implementaci `System.IComparable` a poskytování efektivní implementace `System.IComparable.CompareTo()` metody.
 
 `List.sortBy`převezme funkci, která vrací hodnotu, která se používá jako kritérium řazení, a `List.sortWith` jako argument použije funkci porovnání. Tyto dvě funkce jsou užitečné, když pracujete s typy, které nepodporují porovnání, nebo když porovnání vyžaduje složitější sémantiku porovnání, jako v případě řetězců zohledňujících jazykovou verzi.
 
-Následující příklad ukazuje použití `List.sort`.
+Následující příklad ukazuje použití `List.sort` .
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lists/snippet5.fs)]
 
@@ -172,7 +172,7 @@ Výstup je následující:
 [-2; 1; 4; 5; 8]
 ```
 
-Následující příklad ukazuje použití `List.sortBy`.
+Následující příklad ukazuje použití `List.sortBy` .
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lists/snippet6.fs)]
 
@@ -182,7 +182,7 @@ Výstup je následující:
 [1; -2; 4; 5; 8]
 ```
 
-Další příklad ukazuje použití `List.sortWith`. V tomto příkladu se vlastní srovnávací funkce `compareWidgets` používá k prvnímu porovnání jednoho pole vlastního typu a poté další, pokud jsou hodnoty prvního pole stejné.
+Další příklad ukazuje použití `List.sortWith` . V tomto příkladu se vlastní srovnávací funkce `compareWidgets` používá k prvnímu porovnání jednoho pole vlastního typu a poté další, pokud jsou hodnoty prvního pole stejné.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lists/snippet7.fs)]
 
@@ -201,13 +201,13 @@ Rev = 1;}]
 
 Pro seznamy se podporuje celá řada operací hledání. Nejjednodušší, [list. Find](https://msdn.microsoft.com/library/0594593e-9c75-44c1-8f5a-a37b2e561c06), umožňuje najít první prvek, který odpovídá dané podmínce.
 
-Následující příklad kódu ukazuje použití `List.find` nástroje k nalezení prvního čísla, které je v seznamu dělitele 5.
+Následující příklad kódu ukazuje použití nástroje `List.find` k nalezení prvního čísla, které je v seznamu dělitele 5.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lists/snippet8.fs)]
 
 Výsledek je 5.
 
-Pokud elementy musí být transformovány jako první, zavolejte [list. vyskl](https://msdn.microsoft.com/library/0430b515-7fe4-49a1-a616-d2286d8b08b2), který převezme funkci, která vrací možnost a vyhledá první hodnotu možnosti, která je `Some(x)`. Místo vrácení elementu `List.pick` vrátí výsledek `x`. Pokud se nenajde žádný vyhovující prvek, `List.pick` vyvolá `System.Collections.Generic.KeyNotFoundException`. Následující kód ukazuje použití `List.pick`.
+Pokud elementy musí být transformovány jako první, zavolejte [list. vyskl](https://msdn.microsoft.com/library/0430b515-7fe4-49a1-a616-d2286d8b08b2), který převezme funkci, která vrací možnost a vyhledá první hodnotu možnosti, která je `Some(x)` . Místo vrácení elementu `List.pick` vrátí výsledek `x` . Pokud se nenajde žádný vyhovující prvek, `List.pick` vyvolá `System.Collections.Generic.KeyNotFoundException` . Následující kód ukazuje použití `List.pick` .
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lists/snippet9.fs)]
 
@@ -217,7 +217,7 @@ Výstup je následující:
 "b"
 ```
 
-Jiná skupina operací hledání, [list. tryFind –](https://msdn.microsoft.com/library/37f4532e-9fd0-4802-8bbd-e1aa2380287d) a související funkce, vrací hodnotu možnosti. Funkce vrátí první prvek seznamu, který splňuje podmínku, pokud takový prvek existuje, ale hodnota `None` možnosti, pokud není. `List.tryFind` Seznam variací [. tryFindIndex –](https://msdn.microsoft.com/library/5e31968c-c3d3-43d2-859a-0526825895ec) vrátí index elementu, pokud je nalezen, spíše než samotný element. Tyto funkce jsou znázorněny v následujícím kódu.
+Jiná skupina operací hledání, [list. tryFind –](https://msdn.microsoft.com/library/37f4532e-9fd0-4802-8bbd-e1aa2380287d) a související funkce, vrací hodnotu možnosti. `List.tryFind`Funkce vrátí první prvek seznamu, který splňuje podmínku, pokud takový prvek existuje, ale hodnota možnosti, `None` Pokud není. Seznam variací [. tryFindIndex –](https://msdn.microsoft.com/library/5e31968c-c3d3-43d2-859a-0526825895ec) vrátí index elementu, pokud je nalezen, spíše než samotný element. Tyto funkce jsou znázorněny v následujícím kódu.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lists/snippet10.fs)]
 
@@ -232,21 +232,21 @@ The first even value is at position 8.
 
 Do [modulu seznamu](https://msdn.microsoft.com/library/a2264ba3-2d45-40dd-9040-4f7aa2ad9788)jsou integrovány běžné aritmetické operace, jako je součet a průměr. Pro práci se [seznamem. Sum](https://msdn.microsoft.com/library/54d47fe3-5ecf-4883-beb5-e915342a17f9)musí typ elementu seznamu podporovat `+` operátor a mít nulovou hodnotu. Všechny integrované aritmetické typy tyto podmínky vyhoví. Pro práci se [seznamem. Average](https://msdn.microsoft.com/library/2b9a627b-106d-4548-8c4c-ab5058b8f8e1)musí typ elementu podporovat dělení bez zbytku, který vylučuje celočíselné typy, ale umožňuje použití typů s plovoucí desetinnou čárkou. Funkce [list. sumBy –](https://msdn.microsoft.com/library/b7623389-0fe1-4762-9c67-51079903ab7d) a [list. averageBy –](https://msdn.microsoft.com/library/936cc9ec-62af-464d-8726-7999c2f48403) přebírají funkci jako parametr a výsledky této funkce se používají k výpočtu hodnot součtu nebo průměru.
 
-Následující kód demonstruje použití `List.sum`, `List.sumBy`, a `List.average`.
+Následující kód demonstruje použití `List.sum` , `List.sumBy` , a `List.average` .
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lists/snippet11.fs)]
 
-Výstup je `1.000000`.
+Výstup je `1.000000` .
 
-Následující kód ukazuje použití `List.averageBy`.
+Následující kód ukazuje použití `List.averageBy` .
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lists/snippet12.fs)]
 
-Výstup je `5.5`.
+Výstup je `5.5` .
 
 ### <a name="lists-and-tuples"></a>Seznamy a řazené kolekce členů
 
-Seznamy, které obsahují řazené kolekce členů, mohou být manipulovány funkcemi zip a deextrahování. Tyto funkce kombinují dva seznamy jednotlivých hodnot do jednoho seznamu řazených kolekcí členů nebo oddělují jeden seznam řazených kolekcí členů do dvou seznamů s jednou hodnotou. Nejjednodušší funkce [list. zip](https://msdn.microsoft.com/library/3028d790-8f48-4c94-bf08-b058bec3689c) přebírá dva seznamy jednoho prvku a vytváří jeden seznam párů řazených kolekcí členů. Jiná verze, [list. zip3 –](https://msdn.microsoft.com/library/003cc28e-0de3-4d99-89ed-cb19028e3c5b), používá tři seznamy jednoho prvku a vytváří jeden seznam řazených kolekcí členů, které mají tři prvky. Následující příklad kódu ukazuje použití `List.zip`.
+Seznamy, které obsahují řazené kolekce členů, mohou být manipulovány funkcemi zip a deextrahování. Tyto funkce kombinují dva seznamy jednotlivých hodnot do jednoho seznamu řazených kolekcí členů nebo oddělují jeden seznam řazených kolekcí členů do dvou seznamů s jednou hodnotou. Nejjednodušší funkce [List.zip](https://msdn.microsoft.com/library/3028d790-8f48-4c94-bf08-b058bec3689c) přebírá dva seznamy jednoho prvku a vytváří jeden seznam párů řazených kolekcí členů. Jiná verze, [List.zip3](https://msdn.microsoft.com/library/003cc28e-0de3-4d99-89ed-cb19028e3c5b), používá tři seznamy jednoho prvku a vytváří jeden seznam řazených kolekcí členů, které mají tři prvky. Následující příklad kódu ukazuje použití `List.zip` .
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lists/snippet13.fs)]
 
@@ -256,7 +256,7 @@ Výstup je následující:
 [(1, -1); (2, -2); (3; -3)]
 ```
 
-Následující příklad kódu ukazuje použití `List.zip3`.
+Následující příklad kódu ukazuje použití `List.zip3` .
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lists/snippet14.fs)]
 
@@ -266,7 +266,7 @@ Výstup je následující:
 [(1, -1, 0); (2, -2, 0); (3, -3, 0)]
 ```
 
-Příslušné deunzip3 –ované verze, [list.](https://msdn.microsoft.com/library/639db80c-41b5-45bb-a6b4-1eaa04d61d21) rozbalení a [list.](https://msdn.microsoft.com/library/43078c77-32ec-4342-85b3-c31ccf984db4), převezmou seznamy řazených kolekcí členů a návratové seznamy v řazené kolekci členů, kde první seznam obsahuje všechny prvky, které byly první v každé řazené kolekci členů, a druhý seznam obsahuje druhý prvek každého z nich. řazená kolekce členů atd.
+Příslušné rozbalení, [seznam.](https://msdn.microsoft.com/library/639db80c-41b5-45bb-a6b4-1eaa04d61d21) rozbalení a [Výpis. unzip3 –](https://msdn.microsoft.com/library/43078c77-32ec-4342-85b3-c31ccf984db4), převezmou seznamy řazených kolekcí členů a návratové seznamy v řazené kolekci členů, kde první seznam obsahuje všechny prvky, které byly první v každé řazené kolekci členů, a druhý seznam obsahuje druhý prvek každé řazené kolekce členů a tak dále.
 
 Následující příklad kódu ukazuje použití [seznamu. dekomprimovat](https://msdn.microsoft.com/library/639db80c-41b5-45bb-a6b4-1eaa04d61d21).
 
@@ -291,7 +291,7 @@ Výstup je následující:
 
 ### <a name="operating-on-list-elements"></a>Provoz na prvcích seznamu
 
-F#podporuje různé operace na prvcích seznamu. Nejjednodušší je [list. ITER](https://msdn.microsoft.com/library/f778d075-81a9-4994-af60-cddcc53a201f), který umožňuje zavolat funkci na každý prvek seznamu. Mezi variace patří [list. iter2 –](https://msdn.microsoft.com/library/ea3b7761-916c-4016-9bd8-651124c98b40), který umožňuje provést operaci na prvcích dvou seznamů, [list. ITERA](https://msdn.microsoft.com/library/6dd21ae6-5c00-41cd-8306-821e513d8f60), `List.iter` což se znamená, že index každého prvku je předán jako argument funkci, která je volána pro každý element a [list. iteri2 –](https://msdn.microsoft.com/library/9658d740-9be5-4bf7-b663-c8ab2b3e196c), což je kombinace funkcí `List.iter2` a. `List.iteri` Následující příklad kódu znázorňuje tyto funkce.
+Jazyk F # podporuje různé operace na prvcích seznamu. Nejjednodušší je [list. ITER](https://msdn.microsoft.com/library/f778d075-81a9-4994-af60-cddcc53a201f), který umožňuje zavolat funkci na každý prvek seznamu. Variace zahrnují [list. iter2 –](https://msdn.microsoft.com/library/ea3b7761-916c-4016-9bd8-651124c98b40), který umožňuje provést operaci na prvcích dvou seznamů, [list. iteri](https://msdn.microsoft.com/library/6dd21ae6-5c00-41cd-8306-821e513d8f60), což se znamená `List.iter` , že index každého prvku je předán jako argument funkci, která je volána pro každý prvek, a [list. iteri2 –](https://msdn.microsoft.com/library/9658d740-9be5-4bf7-b663-c8ab2b3e196c), což je kombinace funkcí `List.iter2` a `List.iteri` . Následující příklad kódu znázorňuje tyto funkce.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lists/snippet17.fs)]
 
@@ -312,7 +312,7 @@ List.iteri2: element 1 of list1 is 2; element 1 of list2 is 5
 List.iteri2: element 2 of list1 is 3; element 2 of list2 is 6
 ```
 
-Další často používanou funkcí, která transformuje prvky seznamu, je [list. map](https://msdn.microsoft.com/library/c6b49c99-d4f3-4ba3-b1d0-85a312683dc6), který umožňuje použít funkci na každý prvek seznamu a umístit všechny výsledky do nového seznamu. [List. MAP2 –](https://msdn.microsoft.com/library/5f48cce7-6eaf-4e54-8996-2b04d3c31e57) a [list. map3 –](https://msdn.microsoft.com/library/dd9fb190-6980-4537-be96-5645a64908f8) jsou variace, které přijímají více seznamů. Můžete také použít [seznam. MAPI](https://msdn.microsoft.com/library/284b9234-3d26-409b-b328-ac79638d9e14) a [list. mapi2 –](https://msdn.microsoft.com/library/680643af-233c-40a3-82f2-43d5af27ec49), pokud kromě prvku musí být funkce předána index každého prvku. Jediný rozdíl mezi `List.mapi2` a `List.mapi` je to, `List.mapi2` že funguje se dvěma seznamy. Následující příklad ukazuje [list. map](https://msdn.microsoft.com/library/c6b49c99-d4f3-4ba3-b1d0-85a312683dc6).
+Další často používanou funkcí, která transformuje prvky seznamu, je [list. map](https://msdn.microsoft.com/library/c6b49c99-d4f3-4ba3-b1d0-85a312683dc6), který umožňuje použít funkci na každý prvek seznamu a umístit všechny výsledky do nového seznamu. [List. MAP2 –](https://msdn.microsoft.com/library/5f48cce7-6eaf-4e54-8996-2b04d3c31e57) a [list. map3 –](https://msdn.microsoft.com/library/dd9fb190-6980-4537-be96-5645a64908f8) jsou variace, které přijímají více seznamů. Můžete také použít [seznam. MAPI](https://msdn.microsoft.com/library/284b9234-3d26-409b-b328-ac79638d9e14) a [list. mapi2 –](https://msdn.microsoft.com/library/680643af-233c-40a3-82f2-43d5af27ec49), pokud kromě prvku musí být funkce předána index každého prvku. Jediný rozdíl mezi `List.mapi2` a `List.mapi` je to, že `List.mapi2` funguje se dvěma seznamy. Následující příklad ukazuje [list. map](https://msdn.microsoft.com/library/c6b49c99-d4f3-4ba3-b1d0-85a312683dc6).
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lists/snippet18.fs)]
 
@@ -322,7 +322,7 @@ Výstup je následující:
 [2; 3; 4]
 ```
 
-Následující příklad ukazuje použití `List.map2`.
+Následující příklad ukazuje použití `List.map2` .
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lists/snippet19.fs)]
 
@@ -332,7 +332,7 @@ Výstup je následující:
 [5; 7; 9]
 ```
 
-Následující příklad ukazuje použití `List.map3`.
+Následující příklad ukazuje použití `List.map3` .
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lists/snippet20.fs)]
 
@@ -342,7 +342,7 @@ Výstup je následující:
 [7; 10; 13]
 ```
 
-Následující příklad ukazuje použití `List.mapi`.
+Následující příklad ukazuje použití `List.mapi` .
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lists/snippet21.fs)]
 
@@ -352,7 +352,7 @@ Výstup je následující:
 [1; 3; 5]
 ```
 
-Následující příklad ukazuje použití `List.mapi2`.
+Následující příklad ukazuje použití `List.mapi2` .
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lists/snippet22.fs)]
 
@@ -362,7 +362,7 @@ Výstup je následující:
 [0; 7; 18]
 ```
 
-[List. Collect](https://msdn.microsoft.com/library/cd08bbc7-a3b9-40ab-8c20-4e85ec84664f) se podobá `List.map`, s tím rozdílem, že každý prvek vytvoří seznam a všechny tyto seznamy jsou zřetězené do konečného seznamu. V následujícím kódu každý prvek seznamu generuje tři čísla. Všechny jsou shromažďovány v jednom seznamu.
+[List. Collect](https://msdn.microsoft.com/library/cd08bbc7-a3b9-40ab-8c20-4e85ec84664f) se podobá `List.map` , s tím rozdílem, že každý prvek vytvoří seznam a všechny tyto seznamy jsou zřetězené do konečného seznamu. V následujícím kódu každý prvek seznamu generuje tři čísla. Všechny jsou shromažďovány v jednom seznamu.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lists/snippet23.fs)]
 
@@ -376,9 +376,9 @@ Můžete také použít [seznam. Filter](https://msdn.microsoft.com/library/11a8
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lists/snippet24.fs)]
 
-Výsledný seznam je `[2; 4; 6]`.
+Výsledný seznam je `[2; 4; 6]` .
 
-Kombinace map a filtrů, [list. Volba](https://msdn.microsoft.com/library/2e21d3fb-ce35-4824-8a57-c4404616093d) umožňuje transformovat a vybírat prvky současně. `List.choose`použije funkci, která vrátí možnost na každý prvek seznamu a vrátí nový seznam výsledků pro prvky, pokud funkce vrátí hodnotu `Some`možnosti.
+Kombinace map a filtrů, [list. Volba](https://msdn.microsoft.com/library/2e21d3fb-ce35-4824-8a57-c4404616093d) umožňuje transformovat a vybírat prvky současně. `List.choose`použije funkci, která vrátí možnost na každý prvek seznamu a vrátí nový seznam výsledků pro prvky, pokud funkce vrátí hodnotu možnosti `Some` .
 
 Následující kód demonstruje použití `List.choose` pro výběr slov se velkými písmeny ze seznamu slov.
 
@@ -410,17 +410,17 @@ Seznam je proprocházený. Akumulovaná `acc` je hodnota, která se předává s
 
 Verze těchto funkcí, které mají číslice v názvu funkce, fungují ve více než jednom seznamu. Například [list. fold2 –](https://msdn.microsoft.com/library/6cfcd043-a65d-4423-805a-2ab234cb5343) provádí výpočty na dvou seznamech.
 
-Následující příklad ukazuje použití `List.fold2`.
+Následující příklad ukazuje použití `List.fold2` .
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lists/snippet28.fs)]
 
-`List.fold`a [list. Scan](https://msdn.microsoft.com/library/21f636db-885c-4a72-970e-e3841f33a1b8) se liší v `List.fold` , který vrací konečnou hodnotu nadbytečného parametru, `List.scan` ale vrátí seznam mezilehlých hodnot (spolu s konečnou hodnotou) nadbytečného parametru.
+`List.fold`a [list. Scan](https://msdn.microsoft.com/library/21f636db-885c-4a72-970e-e3841f33a1b8) se liší v, který `List.fold` vrací konečnou hodnotu nadbytečného parametru, ale `List.scan` vrátí seznam mezilehlých hodnot (spolu s konečnou hodnotou) nadbytečného parametru.
 
-Každá z těchto funkcí obsahuje opačnou variaci, například [list. foldBack –](https://msdn.microsoft.com/library/b9a58e66-efe1-445f-a90c-ac9ffb9d40c7), která se liší v pořadí, ve kterém je seznam procházen, a pořadí argumentů. A mít také variace, [list. fold2 –](https://msdn.microsoft.com/library/6cfcd043-a65d-4423-805a-2ab234cb5343) a [list. foldBack2 –](https://msdn.microsoft.com/library/56371d3e-5271-4183-9e8c-15a02eda9aa2), které přebírají dva seznamy stejné délky. `List.foldBack` `List.fold` Funkce, která se spustí u každého prvku, může k provedení určité akce použít odpovídající prvky obou seznamů. Typy prvků dvou seznamů mohou být rozdílné, jako v následujícím příkladu, ve kterém jeden seznam obsahuje částky transakcí pro bankovní účet a druhý seznam obsahuje typ transakce: vklad nebo disstoupit.
+Každá z těchto funkcí obsahuje opačnou variaci, například [list. foldBack –](https://msdn.microsoft.com/library/b9a58e66-efe1-445f-a90c-ac9ffb9d40c7), která se liší v pořadí, ve kterém je seznam procházen, a pořadí argumentů. `List.fold`A mít také `List.foldBack` variace, [list. fold2 –](https://msdn.microsoft.com/library/6cfcd043-a65d-4423-805a-2ab234cb5343) a [list. foldBack2 –](https://msdn.microsoft.com/library/56371d3e-5271-4183-9e8c-15a02eda9aa2), které přebírají dva seznamy stejné délky. Funkce, která se spustí u každého prvku, může k provedení určité akce použít odpovídající prvky obou seznamů. Typy prvků dvou seznamů mohou být rozdílné, jako v následujícím příkladu, ve kterém jeden seznam obsahuje částky transakcí pro bankovní účet a druhý seznam obsahuje typ transakce: vklad nebo disstoupit.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lists/snippet29.fs)]
 
-Pro výpočet, jako je suma `List.fold` , `List.foldBack` a mít stejný účinek, protože výsledek není závislý na pořadí procházení. V následujícím příkladu `List.foldBack` se používá pro přidání prvků v seznamu.
+Pro výpočet, jako je suma, `List.fold` a `List.foldBack` mít stejný účinek, protože výsledek není závislý na pořadí procházení. V následujícím příkladu `List.foldBack` se používá pro přidání prvků v seznamu.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lists/snippet30.fs)]
 
@@ -428,7 +428,7 @@ Následující příklad vrátí na příklad bankovního účtu. Tentokrát se 
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lists/snippet34.fs)]
 
-Seznam funkcí [. snížení](https://msdn.microsoft.com/library/048e1f95-691b-49cb-bb99-fb85f68f3d8b) je poněkud podobné `List.fold` a `List.scan`, s výjimkou toho, že místo předání samostatného hromadění, `List.reduce` přebírá funkci, která přijímá dva argumenty typu elementu namísto pouze jednoho a jednoho z nich. argumenty slouží jako akumulátor, což znamená, že ukládá mezilehlé výsledky výpočtu. `List.reduce`začíná při práci na prvních dvou prvcích seznamu a poté používá výsledek operace spolu s dalším prvkem. Vzhledem k tomu, že není k dispozici samostatný akumulátor, který má `List.reduce` svůj vlastní typ, lze použít `List.fold` místo pouze v případě, že je typ akumulátoru a typ elementu stejného typu. Následující kód demonstruje použití `List.reduce`. `List.reduce`vyvolá výjimku, pokud zadaný seznam neobsahuje žádné elementy.
+Seznam funkcí [. zmenšení](https://msdn.microsoft.com/library/048e1f95-691b-49cb-bb99-fb85f68f3d8b) je trochu podobné `List.fold` a `List.scan` , s výjimkou toho, že místo předání samostatného hromadění, `List.reduce` přebírá funkci, která přijímá dva argumenty typu elementu namísto pouze jednoho a jeden z těchto argumentů funguje jako akumulátor, což znamená, že ukládá mezivýsledek výpočtu. `List.reduce`začíná při práci na prvních dvou prvcích seznamu a poté používá výsledek operace spolu s dalším prvkem. Vzhledem k tomu, že není k dispozici samostatný akumulátor, který má svůj vlastní typ, `List.reduce` lze použít místo pouze v případě, že je `List.fold` typ akumulátoru a typ elementu stejného typu. Následující kód demonstruje použití `List.reduce` . `List.reduce`vyvolá výjimku, pokud zadaný seznam neobsahuje žádné elementy.
 
 V následujícím kódu je první volání lambda výrazu uděleno argumenty 2 a 4 a vrátí hodnotu 6 a další volání je uděleno argumenty 6 a 10, takže výsledek je 16.
 
@@ -436,15 +436,15 @@ V následujícím kódu je první volání lambda výrazu uděleno argumenty 2 a
 
 ### <a name="converting-between-lists-and-other-collection-types"></a>Převod mezi seznamy a jinými typy kolekcí
 
-`List` Modul poskytuje funkce pro převod do a z obou sekvencí a polí. Pro převod na nebo z sekvence použijte [list. toSeq –](https://msdn.microsoft.com/library/7024be4b-ee70-43cc-8d0a-e6564a4ff7c0) nebo [list. ofSeq –](https://msdn.microsoft.com/library/74ab9289-4a59-4433-92eb-3f662d7f7db0). Pro převod na nebo z pole použijte [list. ToArray –](https://msdn.microsoft.com/library/ac87dd82-a0cd-40b3-b1fa-dd3168134547) nebo [list. ofArray –](https://msdn.microsoft.com/library/f4bddc26-8c8f-4307-a6d7-a49dceb97032).
+`List`Modul poskytuje funkce pro převod do a z obou sekvencí a polí. Pro převod na nebo z sekvence použijte [list. toSeq –](https://msdn.microsoft.com/library/7024be4b-ee70-43cc-8d0a-e6564a4ff7c0) nebo [list. ofSeq –](https://msdn.microsoft.com/library/74ab9289-4a59-4433-92eb-3f662d7f7db0). Pro převod na nebo z pole použijte [list. ToArray –](https://msdn.microsoft.com/library/ac87dd82-a0cd-40b3-b1fa-dd3168134547) nebo [list. ofArray –](https://msdn.microsoft.com/library/f4bddc26-8c8f-4307-a6d7-a49dceb97032).
 
 ### <a name="additional-operations"></a>Další operace
 
 Další informace o dalších operacích v seznamech naleznete v tématu věnovaném [modulům Reference Library Collections. list](https://msdn.microsoft.com/visualfsharpdocs/conceptual/collections.list-module-%5bfsharp%5d).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Referenční dokumentace jazyka F#](index.md)
+- [Referenční dokumentace jazyka F #](index.md)
 - [Typy F#](fsharp-types.md)
 - [Sekvence](sequences.md)
 - [Pole](arrays.md)

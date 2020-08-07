@@ -2,21 +2,20 @@
 title: Výrazy dotazu
 description: 'Přečtěte si o podpoře výrazů dotazů pro LINQ v programovacím jazyce F #.'
 ms.date: 05/16/2016
-ms.openlocfilehash: bbd15352aa89bd1891b409177921a675784a0227
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: c6f33a58bc959745a5f83bdcfe378a4dbbe577c5
+ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83419184"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87855033"
 ---
-# <a name="query-expressions"></a>Výrazy dotazu
-
-> [!NOTE]
-> Odkazy na reference k rozhraní API v tomto článku vás převezmou na MSDN.  Reference k rozhraní docs.microsoft.com API není dokončená.
+# <a name="query-expressions"></a>Výrazy dotazů
 
 Výrazy dotazů umožňují dotazování zdroje dat a vložení dat do požadovaného formuláře. Výrazy dotazů poskytují podporu pro LINQ v F #.
+> [!NOTE]
+> Reference k rozhraní docs.microsoft.com API pro F # není dokončená. Pokud narazíte na nefunkční odkazy, místo toho použijte [dokumentaci základní knihovny F #](https://fsharp.github.io/fsharp-core-docs/) .
 
-## <a name="syntax"></a>Syntaxe
+## <a name="syntax"></a>Syntax
 
 ```fsharp
 query { expression }

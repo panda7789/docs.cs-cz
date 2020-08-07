@@ -2,12 +2,12 @@
 title: Formátování prostého textu
 description: 'Naučte se používat printf a jiné formátování prostého textu v aplikacích a skriptech F #.'
 ms.date: 07/22/2020
-ms.openlocfilehash: a0f2c52431be894c4f74dd2940345a518f620589
-ms.sourcegitcommit: 09bad6ec0cbf18be7cd7f62e77286d305a18b607
+ms.openlocfilehash: 6b14633e074961757d0f0cd258d1b1667f5fd8ee
+ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87795744"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87854916"
 ---
 # <a name="plain-text-formatting"></a>Formátování prostého textu
 
@@ -81,15 +81,15 @@ Specifikace formátu pro `printf` formáty jsou řetězce se `%` značkami, kter
 | `%f`               | základní typ s plovoucí desetinnou čárkou | Formátováno jako podepsaná hodnota, která má formu `[-]dddd.dddd` , kde `dddd` je jedna nebo více desítkových číslic. Počet číslic před desetinnou čárkou závisí na velikosti čísla a počet číslic po desetinné čárkě závisí na požadované přesnosti. |
 | `%g`, `%G` | základní typ s plovoucí desetinnou čárkou |  Formátováno pomocí formátu jako hodnota, která je vytištěna v `%f` nebo `%e` Format, podle toho, která je pro danou hodnotu a přesnost kompaktnější. |
 | `%M` | `System.Decimal`hodnota  |    Formátování pomocí `"G"` specifikátoru formátu pro`System.Decimal.ToString(format)` |
-| `%O` | libovolná hodnota  |   Formátováno zabalením objektu a valling jeho `System.Object.ToString()` metody. |
+| `%O` | libovolná hodnota  |   Formátováno zabalením objektu a voláním jeho `System.Object.ToString()` metody |
 | `%A` | libovolná hodnota  |   Formátování pomocí [strukturovaného formátu prostého textu](plaintext-formatting.md) s výchozím nastavením rozložení |
-| `%a` | libovolná hodnota  |   Vyžaduje dva argumenty – funkce formátování přijímá kontextový parametr a hodnotu a určitou hodnotu pro tisk. |
-| `%t` | libovolná hodnota  |   Vyžaduje jeden argument, funkce formátování přijímá kontextový parametr, který buď výstup, nebo vrátí příslušný text. |
+| `%a` | libovolná hodnota  |   Vyžaduje dva argumenty: funkce formátování přijímající kontextový parametr a hodnotu a určitou hodnotu pro tisk. |
+| `%t` | libovolná hodnota  |   Vyžaduje jeden argument: funkce formátování přijímá kontextový parametr, který buď výstup, nebo vrátí příslušný text. |
 
 Základní celočíselné typy jsou `byte` (), (), (), (), (), (), (), (), (), `System.Byte` `sbyte` `System.SByte` `int16` `System.Int16` `uint16` () `System.UInt16` `int32` `System.Int32` `uint32` `System.UInt32` `int64` `System.Int64` `uint64` `System.UInt64` `nativeint` `System.IntPtr` a `unativeint` ( `System.UIntPtr` ).
 Základní typy s plovoucí desetinnou čárkou jsou `float` ( `System.Double` ) a `float32` ( `System.Single` ).
 
-Volitelná šířka je celé číslo označující minimální šířku výsledku. Například `%6d` vytiskne celé číslo s předponou mezer, aby bylo možné vyplnit alespoň 6 znaků. Pokud je Width `*` , pak je proveden další celočíselný argument pro určení odpovídající šířky.
+Volitelná šířka je celé číslo označující minimální šířku výsledku. Například `%6d` vytiskne celé číslo s předponou mezer, aby vyplnila alespoň šest znaků. Pokud je Width `*` , pak je proveden další celočíselný argument pro určení odpovídající šířky.
 
 Platné příznaky:
 
@@ -161,7 +161,7 @@ Culture 2: 12/31/1999 12:00:00 AM
 
 ### <a name="structured-values"></a>Strukturované hodnoty
 
-Při formátování prostého textu pomocí `%A` specifikátoru se pro seznamy F # a n-tice použije blokové odsazení. Je zobrazen v předchozím příkladu.
+Při formátování prostého textu pomocí `%A` specifikátoru se pro seznamy F # a n-tice použije blokové odsazení. Zobrazuje se v předchozím příkladu.
 Také se používá struktura polí včetně multidimenzionálních polí.  Jednorozměrná pole se zobrazují se `[| ... |]` syntaxí. Příklad:
 
 ```fsharp
@@ -200,12 +200,12 @@ uslyší
 [|(1, 1); (2, 4); (3, 9); (4, 16); (5, 25)|]
 ```
 
-Zadání šířky tisku 0 způsobí, že se nepoužívá žádná šířka tisku. Výsledkem bude jeden řádek textu s výjimkou případů, kdy vložené řetězce ve výstupu samotné obsahují linebreaks.  Například
+Zadání šířky tisku 0 způsobí, že se nepoužívá žádná šířka tisku. Výsledkem bude jeden řádek textu s výjimkou případů, kdy vložené řetězce ve výstupu obsahují zalomení řádků.  Například
 
 ```fsharp
 printfn "%0A" [| for i in 1 .. 5 -> (i, i*i) |]
 
-printfn "%0A" [| for i in 1 .. 5 -> "abc\ndef |]
+printfn "%0A" [| for i in 1 .. 5 -> "abc\ndef" |]
 ```
 
 uslyší
@@ -318,7 +318,7 @@ uslyší
 
 Opožděné hodnoty jsou vytištěny jako `Value is not created` nebo ekvivalentní text, pokud hodnota ještě nebyla vyhodnocena.
 
-Hodnoty null jsou vytištěny, `null` dokud není statický typ hodnoty určen jako typ sjednocení, kde `null` je povolený represenation.
+Hodnoty null jsou vytištěny, s `null` výjimkou případů, kdy je statický typ hodnoty určen jako typ sjednocení, kde `null` je povolená reprezentace.
 
 Hodnoty funkcí F # jsou vytištěny jako název vnitřně generovaného uzavření, například `<fun:it@43-7>` .
 

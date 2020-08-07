@@ -2,16 +2,16 @@
 title: Interaktivní možnosti
 description: Přečtěte si o možnostech příkazového řádku, které podporuje F# Interactive, fsi.exe.
 ms.date: 07/22/2020
-ms.openlocfilehash: f9932cac24fad187c332306968fb13981912e80a
-ms.sourcegitcommit: 09bad6ec0cbf18be7cd7f62e77286d305a18b607
+ms.openlocfilehash: abddd1fd990be18ede139ab26ffe80513ba6e0dd
+ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87795460"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87855345"
 ---
 # <a name="f-interactive-options"></a>Možnosti F# Interactive
 
-Tento článek popisuje možnosti příkazového řádku, které podporuje F# Interactive, `fsi.exe` . F# Interactive přijímá mnoho z stejných možností příkazového řádku jako kompilátor F #, ale také přijímá některé další možnosti.
+Tento článek popisuje možnosti příkazového řádku, které podporuje F# Interactive, `fsi.exe` . F# Interactive přijímá mnoho ze stejných možností příkazového řádku jako kompilátor F #, ale také přijímá některé další možnosti.
 
 ## <a name="use-f-interactive-for-scripting"></a>Použití F# Interactive pro skriptování
 
@@ -25,13 +25,13 @@ Přípona souboru pro soubory skriptu F # je `.fsx` .
 
 ## <a name="table-of-f-interactive-options"></a>Tabulka možností F# Interactive
 
-Následující tabulka shrnuje možnosti podporované nástrojem F# Interactive. Tyto možnosti lze nastavit na příkazovém řádku nebo v integrovaném vývojovém prostředí sady Visual Studio. Chcete-li nastavit tyto možnosti v integrovaném vývojovém prostředí sady Visual Studio, otevřete nabídku **nástroje** , vyberte možnost **Možnosti...**, poté rozbalte uzel **nástroje F #** a vyberte možnost **F# Interactive**.
+Následující tabulka shrnuje možnosti podporované nástrojem F# Interactive. Tyto možnosti lze nastavit na příkazovém řádku nebo v integrovaném vývojovém prostředí sady Visual Studio. Chcete-li nastavit tyto možnosti v integrovaném vývojovém prostředí sady Visual Studio, otevřete nabídku **nástroje** , vyberte možnost **Možnosti**, rozbalte uzel **nástroje F #** a vyberte možnost **F# Interactive**.
 
 Kde se zobrazí seznamy v argumentech možností F# Interactive, prvky seznamu jsou odděleny středníky ( `;` ).
 
 |Možnost|Popis|
 |------|-----------|
-|**--**|Slouží k pokynu F# Interactive, aby považovala zbývající argumenty jako argumenty příkazového řádku do programu nebo skriptu jazyka F #, ke kterému můžete přistupovat v kódu pomocí seznamu **FSI. CommandLineArgs –**.|
+|**--**|Slouží k pokynu F# Interactive, aby považovala zbývající argumenty za argumenty příkazového řádku pro program nebo skript jazyka F #, ke kterému můžete přistupovat v kódu pomocí seznamu **FSI. CommandLineArgs –**.|
 |**--zaškrtnuto**[ **+**&#124;**-** ]|Stejné jako možnost kompilátoru **fsc.exe** . Další informace naleznete v tématu [Možnosti kompilátoru](compiler-options.md).|
 |**--codepage: &lt; int&gt;**|Stejné jako možnost kompilátoru **fsc.exe** . Další informace naleznete v tématu [Možnosti kompilátoru](compiler-options.md).|
 |**--consolecolors**[ **+**&#124;**-** ]|Vypíše upozornění a chybové zprávy barevně.|
@@ -56,7 +56,7 @@ Kde se zobrazí seznamy v argumentech možností F# Interactive, prvky seznamu j
 |**--ReadLine**[ **+**&#124;**-** ]|Povolí nebo zakáže dokončování tabulátorů v interaktivním režimu.|
 |**--Reference: &lt; filename&gt;**<br /><br />**-r: &lt; název souboru&gt;**|Stejné jako možnost kompilátoru **fsc.exe** . Další informace naleznete v tématu [Možnosti kompilátoru](compiler-options.md).|
 |**--volání funkce tail**[ **+**&#124;**-** ]|Povolí nebo zakáže použití instrukcí Tail IL, což způsobí, že se rámec zásobníku znovu použije pro rekurzivní funkce tail. Tato možnost je ve výchozím nastavení povolená.|
-|**--targetprofile: &lt; String&gt;**|Určuje profil cílového rozhraní tohoto sestavení. Platné hodnoty jsou mscorlib, Netcore nebo netstandard.  Výchozí hodnota je mscorlib.|
+|**--targetprofile: &lt; String&gt;**|Určuje profil cílového rozhraní tohoto sestavení. Platné hodnoty jsou `mscorlib` , `netcore` nebo `netstandard` . Výchozí formát je `mscorlib`.|
 |**--použít: &lt; filename&gt;**|Říká Překladači použití daného souboru při spuštění jako počáteční vstup.|
 |**--Utf8Output –**|Stejné jako možnost kompilátoru fsc.exe. Další informace naleznete v tématu [Možnosti kompilátoru](compiler-options.md).|
 |**--Warn: &lt; úroveň upozornění&gt;**|Stejné jako možnost kompilátoru **fsc.exe** . Další informace naleznete v tématu [Možnosti kompilátoru](compiler-options.md).|
