@@ -1,13 +1,13 @@
 ---
 title: Orchestrace mikroslužeb a vícekontejnerových aplikací pro vysokou škálovatelnost a dostupnost
 description: Reálné provozní aplikace musí být nasazeny a spravovány pomocí orchestrace, které zpracovávají stav, zatížení a životní cyklus všech kontejnerů.
-ms.date: 02/15/2019
-ms.openlocfilehash: 459a445258a8d66834814f7b084fd969d005ff45
-ms.sourcegitcommit: e7748001b1cee80ced691d8a76ca814c0b02dd9b
+ms.date: 08/06/2020
+ms.openlocfilehash: 61c66e1f3835df543cbc9ba23d9c098ad52c90cd
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86374478"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87915471"
 ---
 # <a name="orchestrating-microservices-and-multi-container-applications-for-high-scalability-and-availability"></a>Orchestrace mikroslužeb a vícekontejnerových aplikací pro vysokou škálovatelnost a dostupnost
 
@@ -62,7 +62,7 @@ Obrázek 4-7 ukazuje strukturu clusteru Kubernetes, kde hlavní uzel (VM) ovlád
 
 ## <a name="development-environment-for-kubernetes"></a>Vývojové prostředí pro Kubernetes
 
-Ve vývojovém prostředí, které [Docker oznámilo v červenci 2018](https://blog.docker.com/2018/07/kubernetes-is-now-available-in-docker-desktop-stable-channel/), se Kubernetes dá spustit taky na jednom vývojovém počítači (Windows 10 nebo MacOS). stačí jenom nainstalovat [Docker Desktop](https://www.docker.com/community-edition). Později můžete nasadit do cloudu (AKS) pro další testy integrace, jak je znázorněno na obrázku 4-8.
+Ve vývojovém prostředí, které [Docker oznámilo v červenci 2018](https://blog.docker.com/2018/07/kubernetes-is-now-available-in-docker-desktop-stable-channel/), se Kubernetes dá spustit taky na jednom vývojovém počítači (Windows 10 nebo MacOS). stačí jenom nainstalovat [Docker Desktop](https://www.docker.com/products/docker-desktop). Později můžete nasadit do cloudu (AKS) pro další testy integrace, jak je znázorněno na obrázku 4-8.
 
 ![Diagram znázorňující Kubernetes na vývojovém počítači, který se pak nasadí do AKS.](./media/orchestrate-high-scalability-availability/kubernetes-development-environment.png)
 

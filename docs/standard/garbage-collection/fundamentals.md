@@ -11,12 +11,12 @@ helpviewer_keywords:
 - garbage collection, workstation
 - garbage collection, managed heap
 ms.assetid: 67c5a20d-1be1-4ea7-8a9a-92b0b08658d2
-ms.openlocfilehash: 438188b6d694bdeab772c43ef92e5621c68facff
-ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
+ms.openlocfilehash: 322e079a1be556efb536b24e216e480c1950bd8c
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84990216"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87917023"
 ---
 # <a name="fundamentals-of-garbage-collection"></a>Základní informace o uvolňování paměti
 
@@ -53,7 +53,7 @@ Následující seznam shrnuje důležité koncepty paměti CLR.
   | State | Popis |
   |---------|---------|
   | Free | Blok paměti neobsahuje žádné odkazy a je k dispozici pro přidělení. |
-  | Vyhrazeno | Blok paměti je k dispozici pro vaše použití a nelze jej použít pro žádnou jinou žádost o přidělení. Do tohoto bloku paměti však nelze ukládat data, dokud není potvrzeno. |
+  | Vyhrazené | Blok paměti je k dispozici pro vaše použití a nelze jej použít pro žádnou jinou žádost o přidělení. Do tohoto bloku paměti však nelze ukládat data, dokud není potvrzeno. |
   | Committed | Blok paměti je přiřazený k fyzickému úložišti. |
 
 - Virtuální adresní prostor se může fragmentovat. To znamená, že v adresním prostoru jsou k dispozici bezplatné bloky, označované také jako díry. Po vyžádání přidělení virtuální paměti musí správce virtuální paměti najít jeden bezplatný blok, který je dostatečně velký pro splnění této žádosti o přidělení. I v případě, že máte 2 GB volného místa, přidělení, které vyžaduje 2 GB, bude neúspěšné, pokud všechny volné místo nejsou v jednom bloku adres.
@@ -186,7 +186,7 @@ Uvolňování paměti má následující fáze:
   Obvykle se nekomprimuje halda pro velké objekty (LOH), protože kopírování velkých objektů ukládá snížení výkonu. V rozhraní .NET Core a v .NET Framework 4.5.1 a novějších verzích ale můžete použít <xref:System.Runtime.GCSettings.LargeObjectHeapCompactionMode%2A?displayProperty=nameWithType> vlastnost k komprimaci haldy velkých objektů na vyžádání. Kromě toho se LOH automaticky zkomprimuje, když se nastaví pevný limit zadáním těchto znaků:
 
   - Omezení paměti pro kontejner.
-  - [GCHeapHardLimit](../../core/run-time-config/garbage-collector.md#systemgcheaphardlimitcomplus_gcheaphardlimit) nebo [GCHeapHardLimitPercent](../../core/run-time-config/garbage-collector.md#systemgcheaphardlimitpercentcomplus_gcheaphardlimitpercent) možnosti konfigurace modulu runtime.
+  - [GCHeapHardLimit](../../core/run-time-config/garbage-collector.md#heap-limit) nebo [GCHeapHardLimitPercent](../../core/run-time-config/garbage-collector.md#heap-limit-percent) možnosti konfigurace modulu runtime.
 
 Systém uvolňování paměti používá následující informace k určení, zda jsou objekty živé:
 

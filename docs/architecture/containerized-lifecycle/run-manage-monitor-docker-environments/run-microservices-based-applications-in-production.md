@@ -1,36 +1,36 @@
 ---
 title: Spuštění složených aplikací a aplikací založených na mikroslužbách v produkčních prostředích
-description: Seznamte se s klíčovými součástmi pro spouštění aplikací založených na kontejnerech ve výrobě
-ms.date: 02/15/2019
-ms.openlocfilehash: 69df3d39a00b91cbe59c96e5fcab841a60943bcc
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+description: Získejte informace o klíčových součástech, které spouští aplikace založené na kontejnerech v produkčním prostředí.
+ms.date: 08/06/2020
+ms.openlocfilehash: a045804e2e40dcf401a697d3e58b13f05ca61b94
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "70295463"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87915049"
 ---
 # <a name="run-composed-and-microservices-based-applications-in-production-environments"></a>Spuštění složených aplikací a aplikací založených na mikroslužbách v produkčních prostředích
 
-Aplikace složené z více mikroslužeb je třeba nasadit do clusterů orchestrator, aby se zjednodušila složitost nasazení a z hlediska IT bylo životaschopné. Bez clusteru orchestrator by bylo obtížné nasadit a škálovat komplexní aplikace mikroslužeb.
+Aplikace, které se skládají z více mikroslužeb, je potřeba nasadit do clusterů Orchestrator, aby se zjednodušila složitost nasazení a zajistila její životaschopnost z jejího pohledu. Bez clusteru Orchestrator by bylo obtížné nasazovat a škálovat komplexní aplikace mikroslužeb.
 
-## <a name="introduction-to-orchestrators-schedulers-and-container-clusters"></a>Úvod do orchestrátorů, plánovačů a clusterů kontejnerů
+## <a name="introduction-to-orchestrators-schedulers-and-container-clusters"></a>Seznámení s orchestrací, plánovači a clustery kontejnerů
 
-Dříve v této e-knihy, *clustery* a *plánovače* byly zavedeny jako součást diskuse o softwarové architektury a vývoje. Kubernetes a Service Fabric jsou příklady clusterů Docker. Oba tyto orchestrátory lze spustit jako součást infrastruktury poskytované službou Microsoft Azure Kubernetes Service.
+Dříve v této elektronické knize byly *clustery* a *schedulery* představené jako součást diskuse o softwarových architekturách a vývoji. Kubernetes a Service Fabric jsou příklady clusterů Docker. Oba tyto orchestrace můžou běžet jako součást infrastruktury poskytované službou Microsoft Azure Kubernetes.
 
-Při škálování aplikací napříč více hostitelských systémů, schopnost spravovat každý hostitelský systém a abstraktní pryč složitost podkladové platformy se stává atraktivní. To je přesně to, co orchestrátory a plánovače poskytují. Podívejme se na ně krátce zde:
+Když se aplikace škálují napříč více hostitelskými systémy, možnost spravovat jednotlivé hostitelské systémy a oddělit složitost základní platformy se budou atraktivní. To je přesně to, jaké Orchestrace a plánovače poskytují. Pojďme se na ně podívat v krátkém umístění:
 
-- **Plánovače**."Plánování" odkazuje na schopnost správce načíst soubor služby do hostitelského systému, který stanoví, jak spustit konkrétní kontejner. Spouštění kontejnerů v clusteru Dockeru bývá označováno jako plánování. Přestože plánování odkazuje na konkrétní akt načítání definice služby, v obecnějším smyslu plánovače jsou zodpovědné za připojení do hostitelského systému init pro správu služeb v jakékoli potřebné kapacity.
+- **Schedulery**."Plánování" odkazuje na schopnost správce načíst soubor služby do hostitelského systému, který stanoví, jak spustit konkrétní kontejner. Spouštění kontejnerů v clusteru Docker je v úmyslu známé jako plánování. I když plánování odkazuje na konkrétní akt načtení definice služby, v obecnější smyslu jsou schedulery zodpovědné za zapojení do inicializačního systému hostitele za účelem správy služeb v jakékoli potřebné kapacitě.
 
-   Plánovač clusteru má více cílů: efektivní využití prostředků clusteru, efektivní práce s omezeními umístění dodanými uživateli, rychlé plánování aplikací tak, aby je nenechávaly v čekajícím stavu, s určitou mírou "spravedlnosti", odolností vůči chybám a být vždy k dispozici.
+   Plánovač clusteru má několik cílů: efektivní využívání prostředků clusteru, práci s uživatelskými omezeními pro umístění a rychlé plánování aplikací, které neopouští stav v nevyřízeném stavu, který je odolný vůči chybám a který je vždy k dispozici.
 
-- **Orchestrátory**.Platformy rozšiřují možnosti správy životního cyklu na složité úlohy s více kontejnery nasazené v clusteru hostitelů. Abstrakcí hostitelské infrastruktury poskytují nástroje orchestrace uživatelům způsob, jak považovat celý cluster za jeden cíl nasazení.
+- **Orchestrace**.Platformy rozšíří možnosti správy životního cyklu do složitých úloh s více kontejnery nasazených na cluster hostitelů. Díky abstrakci hostitelské infrastruktury poskytují nástroje Orchestration uživatelům způsob, jak zacházet s celým clusterem jako s jedním cílem nasazení.
 
-   Proces orchestrace zahrnuje nástroje a platformu, která může automatizovat všechny aspekty správy aplikací od počátečního umístění nebo nasazení na kontejner; přesouvání kontejnerů do různých hostitelů v závislosti na stavu nebo výkonu hostitele; správa verzí a postupné aktualizace a funkce monitorování stavu, které podporují škálování a převzetí služeb při selhání; a mnoho dalších.
+   Proces orchestrace zahrnuje nástroje a platformu, které mohou automatizovat všechny aspekty správy aplikací z počátečního umístění nebo nasazení na kontejner. Přesunutí kontejnerů do různých hostitelů v závislosti na stavu nebo výkonu hostitele; Správa verzí a průběžné aktualizace a funkce monitorování stavu, které podporují škálování a převzetí služeb při selhání; a spousta dalších.
 
-   Orchestrace je obecný termín, který odkazuje na plánování kontejnerů, správu clusteru a případně zřizování dalších hostitelů.
+   Orchestrace je rozsáhlý pojem, který odkazuje na plánování kontejneru, správu clusterů a případně zřizování dalších hostitelů.
 
-Funkce poskytované orchestrátory a plánovači jsou složité pro vývoj a vytváření od začátku, proto byste obvykle chtěli použít orchestrační řešení nabízená dodavateli.
+Možnosti poskytované orchestrací a plánovači jsou složité pro vývoj a vytváření zcela od začátku, proto byste obvykle chtěli použít řešení orchestrace nabízená dodavateli.
 
 >[!div class="step-by-step"]
->[Předchozí](index.md)
->[další](manage-production-docker-environments.md)
+>[Předchozí](index.md) 
+> [Další](manage-production-docker-environments.md)

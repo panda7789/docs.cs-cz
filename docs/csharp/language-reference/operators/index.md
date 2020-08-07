@@ -10,12 +10,12 @@ helpviewer_keywords:
 - operator associativity [C#]
 - expressions [C#]
 ms.assetid: 0301e31f-22ad-49af-ac3c-d5eae7f0ac43
-ms.openlocfilehash: 19b5683a7cd334e1203c57fa90d275b659eac873
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: 9ada39a2144e5565a76a25df0f83424710ad939f
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87556550"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916820"
 ---
 # <a name="c-operators-and-expressions-c-reference"></a>Operátory a výrazy jazyka c# (Referenční dokumentace jazyka C#)
 
@@ -33,7 +33,7 @@ Nejjednodušší výrazy jazyka C# jsou literály (například [celočíselné](
 
 V následujícím kódu jsou příklady výrazů na pravé straně přiřazení:
 
-[!code-csharp[expression examples](snippets/Overview.cs#Expressions)]
+[!code-csharp[expression examples](snippets/shared/Overview.cs#Expressions)]
 
 Výraz obvykle generuje výsledek a může být zahrnut do jiného výrazu. [`void`](../builtin-types/void.md)Volání metody je příklad výrazu, který neprodukuje výsledek. Dá se použít jenom jako [příkaz](../../programming-guide/statements-expressions-operators/statements.md), jak ukazuje následující příklad:
 
@@ -45,15 +45,15 @@ Tady jsou některé další druhy výrazů, které poskytuje jazyk C#:
 
 - [Interpolované řetězcové výrazy](../tokens/interpolated.md) , které poskytují pohodlný Syntax pro vytváření formátovaných řetězců:
 
-  [!code-csharp-interactive[interpolated string](snippets/Overview.cs#InterpolatedString)]
+  [!code-csharp-interactive[interpolated string](snippets/shared/Overview.cs#InterpolatedString)]
 
 - [Výrazy lambda](../../programming-guide/statements-expressions-operators/lambda-expressions.md) , které umožňují vytváření anonymních funkcí:
 
-  [!code-csharp-interactive[lambda expression](snippets/Overview.cs#Lambda)]
+  [!code-csharp-interactive[lambda expression](snippets/shared/Overview.cs#Lambda)]
 
 - [Výrazy dotazů](../keywords/query-keywords.md) , které umožňují použití možností dotazů přímo v jazyce C#:
 
-  [!code-csharp-interactive[query expression](snippets/Overview.cs#Query)]
+  [!code-csharp-interactive[query expression](snippets/shared/Overview.cs#Query)]
 
 [Definici těla výrazu](../../programming-guide/statements-expressions-operators/expression-bodied-members.md) můžete použít k poskytnutí stručné definice metody, konstruktoru, vlastnosti, indexeru nebo finalizační metody.
 
@@ -80,7 +80,7 @@ V následující tabulce jsou uvedeny operátory jazyka C# začínající nejvy�
 | [x. y](member-access-operators.md#member-access-expression-), [f (x)](member-access-operators.md#invocation-expression-), [&#91;i&#93;](member-access-operators.md#indexer-operator-), [`x?.y`](member-access-operators.md#null-conditional-operators--and-) , [`x?[y]`](member-access-operators.md#null-conditional-operators--and-) , [x + +](arithmetic-operators.md#increment-operator-), [x--](arithmetic-operators.md#decrement-operator---), [x!](null-forgiving.md), [New](new-operator.md), [typeof](type-testing-and-cast.md#typeof-operator), [checked](../keywords/checked.md), [unchecked](../keywords/unchecked.md), [Default](default.md), [nameof](nameof.md), [Delegate](delegate-operator.md), [sizeof](sizeof.md), [stackalloc](stackalloc.md), [x->y](pointer-related-operators.md#pointer-member-access-operator--) | Primární |
 | [+ x](arithmetic-operators.md#unary-plus-and-minus-operators), [-x](arithmetic-operators.md#unary-plus-and-minus-operators), [ \! x](boolean-logical-operators.md#logical-negation-operator-), [~ x](bitwise-and-shift-operators.md#bitwise-complement-operator-), [+ + x](arithmetic-operators.md#increment-operator-), [--x](arithmetic-operators.md#decrement-operator---), [^ x](member-access-operators.md#index-from-end-operator-), [(T) x](type-testing-and-cast.md#cast-expression), [await](await.md), [&x](pointer-related-operators.md#address-of-operator-), [* x](pointer-related-operators.md#pointer-indirection-operator-), [true a false](true-false-operators.md) | Unární |
 | [x.. požadované](member-access-operators.md#range-operator-) | Rozsah |
-| [přepnutí](switch-expression.md) | `switch`vyjádření |
+| [switch](switch-expression.md) | `switch`vyjádření |
 | [x * y](arithmetic-operators.md#multiplication-operator-), [x/y](arithmetic-operators.md#division-operator-), [x% y](arithmetic-operators.md#remainder-operator-) | Multiplikativní|
 | [x + y](arithmetic-operators.md#addition-operator-), [x – y](arithmetic-operators.md#subtraction-operator--) | Aditivní |
 | [x \<\<  y](bitwise-and-shift-operators.md#left-shift-operator-), [x >> y](bitwise-and-shift-operators.md#right-shift-operator-) | Posouvá |

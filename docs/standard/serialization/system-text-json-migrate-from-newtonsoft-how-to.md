@@ -11,12 +11,12 @@ helpviewer_keywords:
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: fbd3c8062892f106ec17d0fef86d5ad7f1207d20
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 4390f46492ada4b15d187be4c43a4f7865f64a80
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87303475"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916972"
 ---
 # <a name="how-to-migrate-from-no-locnewtonsoftjson-to-no-locsystemtextjson"></a>Postup migrace z Newtonsoft.Json naSystem.Text.Json
 
@@ -91,7 +91,7 @@ Nejedná se o vyčerpávající seznam `Newtonsoft.Json` funkcí. Seznam obsahuj
 
 Během deserializace se `Newtonsoft.Json` ve výchozím nastavení nerozlišuje velká a malá písmena. Ve <xref:System.Text.Json> výchozím nastavení se rozlišují velká a malá písmena, což dává lepší výkon, protože se jedná o přesnou shodu. Informace o tom, jak rozlišovat velká a malá písmena, naleznete v tématu [porovnávání vlastností](system-text-json-how-to.md#case-insensitive-property-matching)bez rozlišování velkých a malých písmen.
 
-Pokud nepoužíváte `System.Text.Json` nepřímo pomocí ASP.NET Core, nemusíte nic dělat, abyste získali chování jako `Newtonsoft.Json` . ASP.NET Core určuje nastavení pro [názvy vlastností ve stylu CamelCase-střev](system-text-json-how-to.md#use-camel-case-for-all-json-property-names) a porovnávání bez rozlišení velkých a malých písmen při použití `System.Text.Json` .
+Pokud nepoužíváte `System.Text.Json` nepřímo pomocí ASP.NET Core, nemusíte nic dělat, abyste získali chování jako `Newtonsoft.Json` . ASP.NET Core určuje nastavení pro [názvy vlastností ve stylu CamelCase-střev](system-text-json-how-to.md#use-camel-case-for-all-json-property-names) a porovnávání bez rozlišení velkých a malých písmen při použití `System.Text.Json` . Výchozí hodnoty jsou nastaveny ve [třídě JsonOptions](https://github.com/dotnet/aspnetcore/blob/1f56888ea03f6a113587a6c4ac4d8b2ded326ffa/src/Mvc/Mvc.Core/src/JsonOptions.cs#L22-L28).
 
 ### <a name="minimal-character-escaping"></a>Minimální znaková řídicí znaky
 
@@ -128,6 +128,8 @@ Další informace o registraci vlastního převaděče najdete v tématu [regist
 ### <a name="maximum-depth"></a>Maximální hloubka
 
 `Newtonsoft.Json`ve výchozím nastavení nemá maximální limit hloubky. Pro <xref:System.Text.Json> výchozí omezení 64 a je možné ho nakonfigurovat nastavením <xref:System.Text.Json.JsonSerializerOptions.MaxDepth?displayProperty=nameWithType> .
+
+Pokud používáte nepřímo pomocí `System.Text.Json` ASP.NET Core, výchozí limit maximální hloubky je 32. Výchozí hodnota je stejná jako u vazby modelu a je nastavena ve [třídě JsonOptions](https://github.com/dotnet/aspnetcore/blob/1f56888ea03f6a113587a6c4ac4d8b2ded326ffa/src/Mvc/Mvc.Core/src/JsonOptions.cs#L17-L20).
 
 ### <a name="json-strings-property-names-and-string-values"></a>Řetězce JSON (názvy vlastností a řetězcové hodnoty)
 

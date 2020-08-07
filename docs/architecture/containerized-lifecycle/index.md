@@ -1,31 +1,89 @@
 ---
-title: Úvod ke kontejnerům a Dockeru
-description: Získejte přehled o hlavních výhodách používání Dockeru na vysoké úrovni.
-ms.date: 02/15/2019
-ms.openlocfilehash: 9ac08a64cd2465b4b88a266c1ec0925f37680bf9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+title: Životní cyklus kontejnerizované aplikace Dockeru s platformou a nástroji Microsoft
+description: Získejte podrobný přehled procesu vývoje a nasazení pro vývoj a nasazování kontejnerových aplikací s využitím Docker a platformy a nástrojů Microsoftu.
+ms.date: 07/30/2020
+ms.openlocfilehash: d8055315b25f73d7b0b355026ab6b2c4767f9d89
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73738132"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87915169"
 ---
-# <a name="introduction-to-containers-and-docker"></a>Úvod do kontejnerů a Dockeru
+# <a name="containerized-docker-application-lifecycle-with-microsoft-platform-and-tools"></a>Životní cyklus kontejnerizované aplikace Dockeru s platformou a nástroji Microsoft
 
-*Kontejnerizace je přístup k vývoji softwaru, ve kterém aplikace nebo služby, její závislosti a jeho konfigurace (abstrahované jako soubory manifestu nasazení) jsou zabaleny společně jako image kontejneru. Potom můžete otestovat kontejnerizované aplikace jako celek a nasadit jako instance image kontejneru do hostitelského operačního systému (OS).*
+![Titulní kniha](./media/devops-book-cover-large-we.png)
 
-Stejně jako přepravní kontejnery umožňují přepravu zboží lodí, vlakem nebo nákladním vozidlem bez ohledu na náklad uvnitř, softwarové kontejnery fungují jako standardní jednotka nasazení softwaru, která může obsahovat různé kódy a závislosti. Kontejnerizace softwaru tímto způsobem umožňuje vývojářům a odborníkům v oblasti IT nasadit je napříč prostředími s malou nebo žádnou úpravou.
+**Edice verze 3.1** – aktualizace na ASP.NET Core 3,1
 
-Kontejnery také izolovat aplikace od sebe navzájem na sdíleném osu. Kontejnerizované aplikace běží na hostiteli kontejneru, který zase běží na operačním systému (Linux nebo Windows). Kontejnery mají proto mnohem menší nároky než image virtuálního počítače (VM).
+Tato příručka je obecným přehledem pro vývoj a nasazování kontejnerových ASP.NET Core aplikací pomocí Docker s využitím platformy a nástrojů Microsoftu. Příručka obsahuje základní Úvod do Azure DevOps, implementaci kanálů CI/CD a také Azure Container Registry (ACR) a služby Azure Kubernetes Services AKS pro nasazení.
 
-Každý kontejner může spustit celou webovou aplikaci nebo službu, jak je znázorněno na obrázku 1-1. V tomto příkladu je hostitel Dockeru hostitel kontejneru a App1, App2, Svc1 a Svc2 jsou kontejnerizované aplikace nebo služby.
+Podrobnosti o nízké úrovni, které souvisejí s vývojem, najdete v části [mikroslužby .NET: architektura pro kontejnerové aplikace .NET](https://docs.microsoft.com/dotnet/architecture/microservices/) a v referenčních aplikacích [eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers)souvisejících s odkazem.
 
-![Diagram znázorňující čtyři kontejnery spuštěné ve virtuálním provozu nebo na serveru.](./media/index/multiple-containers-single-host.png)
+## <a name="send-us-your-feedback"></a>Pošlete nám svůj názor.
 
-**Obrázek 1-1**. Více kontejnerů spuštěné na hostiteli kontejneru
+Tento průvodce jsme napsali a pomohli vám pochopit architekturu kontejnerových aplikací a mikroslužeb v .NET. Bude vyvíjena příručka a související referenční aplikace, takže jsme Vítejte na vašem názoru. Pokud máte komentáře o tom, jak tento průvodce můžete zlepšit, pošlete nám svůj názor na <https://aka.ms/ebookfeedback> .
 
-Další výhodou, kterou můžete odvodit z kontejnerizace je škálovatelnost. Můžete rychle horizontální navýšení kapacity vytvořením nových kontejnerů pro krátkodobé úkoly. Z hlediska aplikace je vytváření instancí bitové kopie (vytvoření kontejneru) podobné vytvoření procesu, jako je služba nebo webová aplikace. Z důvodu spolehlivosti však při spuštění více instancí stejné bitové kopie na více hostitelských serverech obvykle chcete, aby každý kontejner (instance bitové kopie) běžel na jiném hostitelském serveru nebo virtuálním počítači v různých doménách selhání.
+## <a name="credits"></a>Kredity
 
-Stručně řečeno, kontejnery nabízejí výhody izolace, přenositelnost, flexibilitu, škálovatelnost a řízení v celém pracovním postupu životního cyklu aplikace. Nejdůležitější výhodou je izolace prostředí mezi Dev a Ops.
+Autor:
+
+> **Cesar de la Torre**, SR. PM, produktový tým .NET, Microsoft Corp.
+
+Editor získání:
+
+> **Janine**
+
+Vývojový Editor:
+
+> **Bob Russell**, Solutions Professional v Microsoftu
+>
+> [**Osmičkové publikování, Inc.**](http://www.octalpub.com/)
+
+Redakční produkce:
+
+> [Dianne Russell](http://www.octalpub.com/)
+>
+> **Osmičkové publikování, Inc.**
+
+Copyeditor:
+
+> **Bob Russell**, Solutions Professional v Microsoftu
+
+Účastníci a kontroloři:
+
+> **Nish Anil**, SR. Program Manager, .NET Team, Microsoft
+>
+> **Miguel Veloso**, inženýr pro vývoj softwaru v jednoduchých konceptech
+>
+> **Sumit Ghosh**, hlavní konzultant na Neudesic
+
+## <a name="copyright"></a>Copyright
+
+PUBLIKOVAL(A)
+
+Microsoft Developer divize, .NET a Visual Studio Product teams
+
+Divize společnosti Microsoft Corporation
+
+One Microsoft Way
+
+Redmond, Washington 98052-6399
+
+Copyright &copy; 2020 od společnosti Microsoft Corporation
+
+All rights reserved. Žádná část obsahu této knihy se nedá reprodukovat ani přenést v jakékoli formě nebo jakýmkoli způsobem bez písemného svolení vydavatele.
+
+Tato kniha je k dispozici "tak jak jsou" a vyjadřuje zobrazení a stanoviska autora. Zobrazení, názory a informace vyjádřené v této knize, včetně adres URL a dalších odkazů na internetové weby, se mohou změnit bez předchozího upozornění.
+
+Některé zde uvedené příklady slouží pouze k znázornění a jsou smyšlené. Neměli byste z nich vyvozovat žádné skutečné vztahy či spojení.
+
+Microsoft a ochranné známky uvedené na <https://www.microsoft.com> webové stránce ochranné známky jsou ochranné známky skupiny společností Microsoft.
+
+Mac a macOS jsou ochranné známky společnosti Apple Inc.
+
+Logo Docker Whale je registrovaná ochranná známka společnosti Docker, Inc., kterou používá oprávnění.
+
+Všechny ostatní značky a loga jsou majetkem příslušných vlastníků.
 
 >[!div class="step-by-step"]
->[Další](what-is-docker.md)
+>[Další](introduction-to-containers-and-docker.md)

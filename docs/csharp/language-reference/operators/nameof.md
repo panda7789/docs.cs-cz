@@ -7,30 +7,30 @@ f1_keywords:
 helpviewer_keywords:
 - nameof expression [C#]
 ms.assetid: 33601bf3-cc2c-4496-846d-f9679bccf2a7
-ms.openlocfilehash: 1bd8800a553eb9b3363da8a3b5f230caecddf223
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: b00c5f6f97d27290fb3773dcbb422bf9fb4c425b
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87556407"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916779"
 ---
 # <a name="nameof-expression-c-reference"></a>nameof – výraz (Referenční dokumentace jazyka C#)
 
 `nameof`Výraz vytvoří název proměnné, typu nebo členu jako řetězcové konstanty:
 
-[!code-csharp-interactive[nameof expression](snippets/NameOfOperator.cs#Examples)]
+[!code-csharp-interactive[nameof expression](snippets/shared/NameOfOperator.cs#Examples)]
 
 Jak ukazuje předchozí příklad, v případě typu a oboru názvů není vytvořen název obvykle [plně kvalifikovaný](~/_csharplang/spec/basic-concepts.md#fully-qualified-names).
 
 V případě [doslovnéch identifikátorů](../tokens/verbatim.md)není `@` znak součástí názvu, jak ukazuje následující příklad:
 
-[!code-csharp-interactive[nameof verbatim](snippets/NameOfOperator.cs#Verbatim)]
+[!code-csharp-interactive[nameof verbatim](snippets/shared/NameOfOperator.cs#Verbatim)]
 
 `nameof`Výraz je vyhodnocen v době kompilace a nemá žádný vliv na dobu běhu.
 
 Výraz lze použít `nameof` k zajištění udržovatelnosti kódu kontroly argumentu:
 
-[!code-csharp[nameof and argument check](snippets/NameOfOperator.cs#ExceptionMessage)]
+[!code-csharp[nameof and argument check](snippets/shared/NameOfOperator.cs#ExceptionMessage)]
 
 `nameof`Výraz je k dispozici v C# 6 a novějším.
 

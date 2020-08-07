@@ -5,12 +5,12 @@ f1_keywords:
 - stackalloc_CSharpKeyword
 helpviewer_keywords:
 - stackalloc expression [C#]
-ms.openlocfilehash: 32ac85f678912cb7e5f506244265b1bf57d0b4aa
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: 4f20f3262b77cc2fe16480e53d13960e68d230b5
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87555603"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916672"
 ---
 # <a name="stackalloc-expression-c-reference"></a>stackalloc – výraz (Referenční dokumentace jazyka C#)
 
@@ -20,24 +20,24 @@ Výsledek výrazu můžete přiřadit `stackalloc` proměnné jednoho z následu
 
 - Počínaje jazykem C# 7,2 <xref:System.Span%601?displayProperty=nameWithType> nebo <xref:System.ReadOnlySpan%601?displayProperty=nameWithType> , jak ukazuje následující příklad:
 
-  [!code-csharp[stackalloc span](snippets/StackallocOperator.cs#AssignToSpan)]
+  [!code-csharp[stackalloc span](snippets/shared/StackallocOperator.cs#AssignToSpan)]
 
   Nemusíte používat [nezabezpečený](../keywords/unsafe.md) kontext, když přiřadíte blok paměti přidělené zásobníku <xref:System.Span%601> k <xref:System.ReadOnlySpan%601> proměnné nebo.
 
   Při práci s těmito typy můžete použít `stackalloc` výraz ve výrazech [podmíněného](conditional-operator.md) nebo přiřazení, jak ukazuje následující příklad:
 
-  [!code-csharp[stackalloc expression](snippets/StackallocOperator.cs#AsExpression)]
+  [!code-csharp[stackalloc expression](snippets/shared/StackallocOperator.cs#AsExpression)]
 
   Počínaje jazykem C# 8,0 můžete použít `stackalloc` výraz uvnitř jiných výrazů vždy <xref:System.Span%601> <xref:System.ReadOnlySpan%601> , když je povolena proměnná nebo, jak je uvedeno v následujícím příkladu:
 
-  [!code-csharp[stackalloc in nested expressions](snippets/StackallocOperator.cs#Nested)]
+  [!code-csharp[stackalloc in nested expressions](snippets/shared/StackallocOperator.cs#Nested)]
 
   > [!NOTE]
   > <xref:System.Span%601> <xref:System.ReadOnlySpan%601> Pokud je to možné, doporučujeme používat typy nebo pro práci s přidělenou pamětí zásobníku.
 
 - [Typ ukazatele](../../programming-guide/unsafe-code-pointers/pointer-types.md), jak ukazuje následující příklad:
 
-  [!code-csharp[stackalloc pointer](snippets/StackallocOperator.cs#AssignToPointer)]
+  [!code-csharp[stackalloc pointer](snippets/shared/StackallocOperator.cs#AssignToPointer)]
 
   Jak ukazuje předchozí příklad, je nutné použít `unsafe` kontext při práci s typy ukazatelů.
 
@@ -47,7 +47,7 @@ Velikost paměti, která je k dispozici v zásobníku, je omezená. Pokud přid�
 
 - Omezte velikost paměti, kterou přidělíte `stackalloc` :
 
-  [!code-csharp[limit stackalloc](snippets/StackallocOperator.cs#LimitStackalloc)]
+  [!code-csharp[limit stackalloc](snippets/shared/StackallocOperator.cs#LimitStackalloc)]
 
   Vzhledem k tomu, že množství paměti dostupné v zásobníku závisí na prostředí, ve kterém je kód spuštěný, je při definování skutečné mezní hodnoty konzervativní.
 
@@ -57,7 +57,7 @@ Obsah nově přidělené paměti není definován. Měli byste ji inicializovat 
 
 Počínaje jazykem C# 7,3 můžete použít syntaxi inicializátoru pole k definování obsahu nově přidělené paměti. Následující příklad ukazuje různé způsoby, jak to provést:
 
-[!code-csharp[stackalloc initialization](snippets/StackallocOperator.cs#StackallocInit)]
+[!code-csharp[stackalloc initialization](snippets/shared/StackallocOperator.cs#StackallocInit)]
 
 Ve výrazu `stackalloc T[E]` `T` musí být [nespravovaný typ](../builtin-types/unmanaged-types.md) a `E` musí se vyhodnotit jako nezáporná hodnota typu [int](../builtin-types/integral-numeric-types.md) .
 

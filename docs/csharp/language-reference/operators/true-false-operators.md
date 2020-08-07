@@ -5,12 +5,12 @@ helpviewer_keywords:
 - false operator [C#]
 - true operator [C#]
 ms.assetid: 81a888fd-011e-4589-b242-6c261fea505e
-ms.openlocfilehash: efba2c1c921d867725db90a1879cc9dee1a22b4e
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: 15342c3d9cd66195639e38265875a7ed4008dd51
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87555518"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916623"
 ---
 # <a name="true-and-false-operators-c-reference"></a>operátory true a false (Referenční dokumentace jazyka C#)
 
@@ -31,7 +31,7 @@ Pokud typ s definovanými `true` a `false` operátory [přetěžuje](operator-ov
 
 Následující příklad představuje typ, který definuje `true` `false` operátory and. Typ také přetěžuje logický operátor AND tak `&` , že `&&` operátor lze také vyhodnotit pro operandy daného typu.
 
-[!code-csharp[true and false operators example](snippets/TrueFalseOperators.cs)]
+[!code-csharp[true and false operators example](snippets/shared/TrueFalseOperators.cs)]
 
 Všimněte si chování operátoru při krátkém obvodu `&&` . Když se `GetFuelLaunchStatus` Metoda vrátí `LaunchStatus.Red` , není `&&` vyhodnocen pravý operand operátoru. Důvodem je, že `LaunchStatus.Red` je jednoznačně false. Pak výsledek logické hodnoty a není závislý na hodnotě operandu na pravé straně. Výstup příkladu je následující:
 

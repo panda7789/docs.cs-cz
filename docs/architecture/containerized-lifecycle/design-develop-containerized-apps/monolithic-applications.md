@@ -1,82 +1,82 @@
 ---
 title: Monolitické aplikace
-description: Seznamte se s základními koncepty pro kontejnerizaci monolitických aplikací.
-ms.date: 02/15/2019
-ms.openlocfilehash: 3c186f6a300588816916886927f93e0c06ebd6bc
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+description: Seznamte se se základními koncepty pro aplikace uzavření monolitické.
+ms.date: 08/06/2020
+ms.openlocfilehash: f188a2ff576436d9378030e0a858ffb8110dad17
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80988983"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87915448"
 ---
 # <a name="monolithic-applications"></a>Monolitické aplikace
 
-V tomto scénáři vytváříte jednu a monolitickou webovou aplikaci nebo službu a nasazujete ji jako kontejner. V rámci aplikace struktura nemusí být monolitické; může obsahovat několik knihoven, komponent nebo dokonce vrstev (aplikační vrstva, doménová vrstva, vrstva přístupu k datům atd.). Externě je to jeden kontejner, jako je jeden proces, jedna webová aplikace nebo jedna služba.
+V tomto scénáři vytváříte jednu a monolitické webovou aplikaci nebo službu a nasazujete ji jako kontejner. V rámci aplikace struktura nemusí být monolitické; může zahrnovat několik knihoven, komponent nebo dokonce vrstev (aplikační vrstva, vrstva domény, vrstva přístupu k datům atd.). Externě je to jeden kontejner, například jeden proces, jedna webová aplikace nebo jedna služba.
 
-Chcete-li spravovat tento model, nasadit jeden kontejner reprezentovat aplikaci. Chcete-li jej škálovat, stačí přidat několik dalších kopií s vyvažovačem zatížení vpředu. Jednoduchost pochází ze správy jednoho nasazení v jednom kontejneru nebo virtuálním počítači (VM).
+Chcete-li spravovat tento model, nasadíte jeden kontejner, který bude představovat aplikaci. Pokud ho chcete škálovat, stačí přidat několik dalších kopií s nástrojem pro vyrovnávání zatížení předem. Jednoduchost pochází ze správy jediného nasazení v jednom kontejneru nebo virtuálním počítači (VM).
 
-Následující jistiny, že kontejner dělá pouze jednu věc a dělá to v jednom procesu, monolitický vzor je v konfliktu. Do každého kontejneru můžete zahrnout více součástí/knihoven nebo vnitřních vrstev, jak je znázorněno na obrázku 4-1.
+Po objektu zabezpečení, který má kontejner pouze jedna věc, a provede ho v jednom procesu, je vzor monolitické v konfliktu. V rámci každého kontejneru můžete zahrnout více komponent, knihoven nebo vnitřních vrstev, jak je znázorněno na obrázku 4-1.
 
-![Diagram znázorňující monolitickou aplikaci, která se škáluje klonováním aplikace.](./media/monolithic-applications/monolithic-application-architecture-example.png)
+![Diagram znázorňující aplikaci monolitické, která se škáluje klonováním aplikace](./media/monolithic-applications/monolithic-application-architecture-example.png)
 
-**Obrázek 4-1.** Příklad architektury monolitických aplikací
+**Obrázek 4-1.** Příklad architektury aplikace monolitické
 
-Monolitická aplikace má všechny nebo většinu svých funkcí v rámci jednoho procesu nebo kontejneru a je komponentována ve vnitřních vrstvách nebo knihovnách. Nevýhodou tohoto přístupu přichází, pokud nebo když aplikace roste, vyžadující škálování. Pokud se celá aplikace škálovat, to není opravdu problém. Ve většině případů však několik částí aplikace jsou body sytiče, které vyžadují škálování, zatímco jiné součásti se používají méně.
+Aplikace monolitické má celou nebo většinu funkcí v rámci jednoho procesu nebo kontejneru a je součástí vnitřních vrstev nebo knihoven. Nevýhodou na tento přístup přichází, pokud nebo když aplikace roste a vyžaduje škálování. Pokud se celá aplikace škáluje, není ve skutečnosti problém. Ve většině případů je však několik částí aplikace sytičmi body, které vyžadují škálování, zatímco jiné součásti jsou používány méně.
 
-Pomocí typického příkladu elektronického obchodování pravděpodobně budete potřebovat škálování komponenty informací o produktu. Mnohem více zákazníků procházet produkty, než je zakoupit. Více zákazníků používá svůj košík než kanál plateb. Méně zákazníků přidává komentáře nebo si prohlíží historii nákupů. A pravděpodobně máte jen hrstku zaměstnanců v jedné oblasti, kteří potřebují spravovat obsah a marketingové kampaně. Změnou měřítka monolitického návrhu je veškerý kód nasazen vícekrát.
+Pomocí typického příkladu elektronického obchodování budete pravděpodobně potřebovat škálovat součást informací o produktu. Mnoho dalších zákazníků prochází produkty, než je koupí. Další zákazníci používají svůj koš, než používá platební kanál. Méně zákazníkům přidávají komentáře nebo zobrazují historii jejich nákupu. A máte pravděpodobně pouze několik zaměstnance v jedné oblasti, které potřebují spravovat obsah a marketingové kampaně. Změnou měřítka návrhu monolitické je celý kód nasazen několikrát.
 
-Kromě problému "scale-everything" vyžadují změny jedné součásti úplné opětovné testování celé aplikace a také úplné opětovné nasazení všech instancí.
+Kromě problému "škálování na vše" se změny jedné součásti vyžadují kompletní opětovné testování celé aplikace a také úplné opětovné nasazení všech instancí.
 
-Monolitický přístup je běžný a mnoho organizací se vyvíjí s touto architektonickou metodou. Mnozí mají dost dobré výsledky, zatímco jiní se setkávají s limity. Mnozí navrhli své aplikace v tomto modelu, protože nástroje a infrastruktura byly příliš obtížné vytvořit SOA a neviděli potřebu – dokud aplikace nerostla.
+Přístup k monolitické je společný a mnoho organizací vyvíjí s touto architekturou. Spousta lidí má dobré výsledky, zatímco ostatní mají omezení. Mnoho z nich navrhlo své aplikace v tomto modelu, protože nástroje a infrastruktura byly příliš obtížné sestavovat SOAs a neviděli nutnost, dokud se aplikace vypnula.
 
-Z hlediska infrastruktury může každý server spouštět mnoho aplikací v rámci stejného hostitele a mít přijatelný poměr efektivity využití prostředků, jak je znázorněno na obrázku 4-2.
+Z hlediska infrastruktury může každý server spouštět mnoho aplikací v rámci stejného hostitele a mít přijatelný poměr efektivity v používání prostředků, jak je znázorněno na obrázku 4-2.
 
 ![Diagram znázorňující jednoho hostitele s více aplikacemi v samostatných kontejnerech.](./media/monolithic-applications/host-with-multiple-apps-containers.png)
 
-**Obrázek 4-2.** Hostitel s více aplikacemi a kontejnery
+**Obrázek 4-2.** Hostitel, na kterém běží víc aplikací nebo kontejnerů
 
-Nakonec z hlediska dostupnosti monolitické aplikace musí být nasazeny jako celek; to znamená, že v případě, že musíte *zastavit a spustit*, všechny funkce a všichni uživatelé budou ovlivněny během okna nasazení. V určitých situacích použití Azure a kontejnerů můžete minimalizovat tyto situace a snížit pravděpodobnost prostojů vaší aplikace, jak můžete vidět na obrázku 4-3.
+Z perspektivy dostupnosti musí být aplikace monolitické nasazené jako celek; To znamená, že v případě, že je třeba *zastavit a spustit*, budou všechny funkce a všichni uživatelé ovlivněni během okna nasazení. V některých situacích může použití Azure a kontejnerů minimalizovat tyto situace a snížit pravděpodobnost výpadku aplikace, jak vidíte na obrázku 4-3.
 
-Monolitické aplikace v Azure můžete nasadit pomocí vyhrazených virtuálních počítačů pro každou instanci. Pomocí [škálovacích sad virtuálních počítačích Azure](https://docs.microsoft.com/azure/virtual-machine-scale-sets/)můžete snadno škálovat virtuální počítače.
+V Azure můžete nasazovat aplikace monolitické pomocí vyhrazených virtuálních počítačů pro každou instanci. Pomocí [Azure VM Scale Sets](https://docs.microsoft.com/azure/virtual-machine-scale-sets/)můžete virtuální počítače snadno škálovat.
 
-Pomocí azure [app services](https://azure.microsoft.com/services/app-service/) můžete taky spouštět monolitické aplikace a snadno škálovat instance, aniž byste museli spravovat virtuální počítače. Azure App Services můžete spustit jednotlivé instance kontejnerů Dockeru, také zjednodušení nasazení.
+[Azure App Services](https://azure.microsoft.com/services/app-service/) můžete použít také ke spouštění aplikací monolitické a ke snadnému škálování instancí bez nutnosti správy virtuálních počítačů. Azure App Services může spouštět jednotlivé instance kontejnerů Docker a zjednodušit tak nasazení.
 
-Můžete nasadit více virtuálních počítačů jako hostitele Dockeru a spustit libovolný počet kontejnerů na virtuální počítač. Potom pomocí Azure Balancer, jak je znázorněno na obrázku 4-3, můžete spravovat škálování.
+Můžete nasadit více virtuálních počítačů jako hostitele Docker a spustit libovolný počet kontejnerů na virtuální počítač. Pak pomocí Azure Load Balancer, jak je znázorněno na obrázku 4-3, můžete spravovat škálování.
 
-![Diagram znázorňující monolitickou aplikaci, která se škáluje na různé hostitele.](./media/monolithic-applications/multiple-hosts-from-single-docker-container.png)
+![Diagram znázorňující monolitické aplikaci škálované na různé hostitele.](./media/monolithic-applications/multiple-hosts-from-single-docker-container.png)
 
-**Obrázek 4-3**. Více hostitelů škálování z jedné aplikace Dockeru
+**Obrázek 4-3**. Víc hostitelů škáluje jednu aplikaci Docker
 
-Nasazení samotných hostitelů můžete spravovat pomocí tradičních technik nasazení.
+Nasazení hostitelů můžete spravovat pomocí tradičních technik nasazení.
 
-Kontejnery Dockeru můžete spravovat z příkazového `docker run` `docker-compose up`řádku pomocí příkazů jako a , a můžete je také automatizovat v kanálech průběžného doručování (CD) a nasadit je na hostitele Dockeru ze služby Azure DevOps Services, například.
+Kontejnery Docker můžete spravovat z příkazového řádku pomocí příkazů `docker run` , jako jsou a `docker-compose up` , a můžete je také automatizovat v kanálech pro průběžné doručování (CD) a nasazovat je do hostitelů Docker z Azure DevOps Services, například.
 
-## <a name="monolithic-application-deployed-as-a-container"></a>Monolitická aplikace nasazená jako kontejner
+## <a name="monolithic-application-deployed-as-a-container"></a>Aplikace monolitické nasazená jako kontejner
 
-Použití kontejnerů ke správě monolitických nasazení přináší výhody. Škálování instance kontejnerů je mnohem rychlejší a jednodušší než nasazení dalších virtuálních mandů.
+Existují výhody použití kontejnerů ke správě nasazení monolitické. Škálování instancí kontejnerů je mnohem rychlejší a jednodušší než nasazení dalších virtuálních počítačů.
 
-Nasazení aktualizací jako inamů Dockeru je mnohem rychlejší a efektivní v síti. Kontejnery Dockeru se obvykle spouštějí během několika sekund, což urychluje zavádění. Stržení kontejneru Dockeru je stejně `docker stop` snadné jako vyvolání příkazu, obvykle dokončení za méně než sekundu.
+Nasazování aktualizací jako imagí Docker je mnohem rychlejší a efektivně v síti. Kontejnery Docker obvykle začínají během sekund a urychlují uvádění. Trhlina kontejneru Docker je stejně snadné jako vyvolání `docker stop` příkazu, obvykle je dokončená za méně než sekundu.
 
-Vzhledem k tomu, že kontejnery jsou ze své podstaty neměnné, podle návrhu se nikdy nemusíte starat o poškozené virtuální počítače, protože skript aktualizace zapomněl účet pro některé konkrétní konfigurace nebo soubor vlevo na disku.
+Vzhledem k tomu, že kontejnery jsou z vlastního podstaty neměnné, nemusíte se o poškozených virtuálních počítačích starat, protože se pro určitou konkrétní konfiguraci nebo soubory, které jsou ponechány na disku, zazapomněl skript pro aktualizaci
 
-I když monolitické aplikace mohou těžit z Dockeru, dotýkáme se pouze tipů výhod. Větší výhody správy kontejnerů pocházejí z nasazení s orchestrátory kontejnerů, které spravují různé instance a životní cyklus každé instance kontejneru. Rozdělení monolitické aplikace do subsystémů, které lze škálovat, vyvíjet a nasazovat jednotlivě, je vstupním bodem do sféry mikroslužeb.
+I když aplikace monolitické můžou využívat Docker, zajímáme jenom tipy k výhodám. Větší výhody správy kontejnerů přináší nasazení s orchestrací kontejnerů, které spravují různé instance a životní cyklus každé instance kontejneru. Rozdělení aplikace monolitické do subsystémů, které je možné škálovat, vyvíjet a nasadit samostatně, je vstupním bodem ve sféře mikroslužeb.
 
-Chcete-li se dozvědět o tom, jak "zvednout a posunout" monolitické aplikace s kontejnery a jak můžete modernizovat aplikace, přečtěte si tento další průvodce Microsoft, [Modernizovat stávající aplikace .NET s Azure cloud a Windows Containers](../../modernize-with-azure-containers/index.md), které si můžete stáhnout také ve formátu PDF z <https://aka.ms/LiftAndShiftWithContainersEbook>.
+Další informace o tom, jak namonolitické aplikace pomocí kontejnerů a jak modernizovat vaše aplikace, si můžete přečíst v této další příručce k Microsoftu, [modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows](../../modernize-with-azure-containers/index.md), které můžete také stáhnout jako PDF z <https://aka.ms/LiftAndShiftWithContainersEbook> .
 
-## <a name="publish-a-single-docker-container-app-to-azure-app-service"></a>Publikování jedné aplikace kontejneru Dockeru do služby Azure App Service
+## <a name="publish-a-single-docker-container-app-to-azure-app-service"></a>Publikování jedné aplikace kontejneru Docker pro Azure App Service
 
-Buď proto, že chcete získat rychlé ověření kontejneru nasazeného do Azure, nebo proto, že aplikace je jednoduše aplikace s jedním kontejnerem, Azure App Services poskytuje skvělý způsob, jak poskytovat škálovatelné služby s jedním kontejnerem.
+Vzhledem k tomu, že chcete získat rychlé ověření kontejneru nasazeného do Azure nebo protože aplikace je jednoduše aplikace s jedním kontejnerem, Azure App Services poskytuje skvělý způsob, jak zajistit škálovatelné služby s jedním kontejnerem.
 
-Používání služby Azure App Service je intuitivní a můžete rychle začít pracovat, protože poskytuje skvělou integraci Gitu, která umožňuje vzít váš kód, sestavit ho v Microsoft Visual Studiu a přímo ho nasadit do Azure. Ale tradičně (bez Dockeru), pokud potřebujete další možnosti, architektury nebo závislosti, které nejsou podporované ve službách App Services, musíte na to počkat, dokud tým Azure neaktualizuje tyto závislosti ve službě App Service nebo přejde na jiné služby, jako je Service Fabric, Cloud Services nebo dokonce prosté virtuální počítače, pro které máte další kontrolu a můžete nainstalovat požadovanou komponentu nebo architekturu pro vaši aplikaci.
+Použití Azure App Service je intuitivní a můžete rychle začít pracovat, protože poskytuje skvělou integraci Git, jak si svůj kód sestavit, vytvořit ho v Microsoft Visual Studio a přímo ho nasadit do Azure. Ale tradičně (bez Docker), pokud jste potřebovali jiné funkce, architektury nebo závislosti, které nejsou podporované v App Services, je potřeba počkat, dokud tým Azure tyto závislosti v App Service nepřevede na jiné služby, jako je Service Fabric, Cloud Services nebo dokonce i jednoduché, pro které máte další kontrolu a můžete pro svou aplikaci nainstalovat požadovanou součást nebo architekturu.
 
-Teď, jak je znázorněno na obrázku 4-4, při použití Visual Studia 2017, podpora kontejnerů ve službě Azure App Service vám dává možnost zahrnout vše, co chcete v prostředí aplikace. Pokud jste do aplikace přidali závislost, protože ji spouštěte v kontejneru, získáte možnost zahrnutí těchto závislostí do image Dockerfile nebo Dockeru.
+Jak je znázorněno na obrázku 4-4, při použití sady Visual Studio 2017 vám podpora kontejnerů v Azure App Service dává možnost zahrnout cokoli, co chcete v prostředí aplikace. Pokud jste do své aplikace přidali závislost, protože ji spouštíte v kontejneru, získáte možnost zahrnout tyto závislosti do souboru Dockerfile nebo Docker image.
 
-![Snímek obrazovky s dialogem Vytvořit službu aplikace zobrazujícího registr kontejnerů](./media/monolithic-applications/publish-azure-app-service-container.png)
+![Snímek obrazovky dialogového okna pro vytvoření App Service zobrazující Container Registry](./media/monolithic-applications/publish-azure-app-service-container.png)
 
-**Obrázek 4-4**. Publikování kontejneru do služby Azure App Service z aplikací a kontejnerů Visual Studia
+**Obrázek 4-4**. Publikování kontejneru do Azure App Service z aplikací nebo kontejnerů sady Visual Studio
 
-Obrázek 4-4 také ukazuje, že tok publikování tlačí image prostřednictvím registru kontejnerů, což může být Registr kontejnerů Azure (registr v blízkosti vašich nasazení v Azure a zabezpečené skupinami a účty Služby Azure Active Directory) nebo jakýkoli jiný registr Docker, jako je Docker Hub nebo místní registry.
+Obrázek 4-4 také ukazuje, že tok publikování nabízí obrázek prostřednictvím Container Registry, což může být Azure Container Registry (registr v blízkosti nasazení v Azure a zabezpečeného Azure Active Directorymi skupinami a účty) nebo jakýmkoli jiným registrem Docker, jako je Docker Hub nebo místní registry.
 
 >[!div class="step-by-step"]
->[Předchozí](common-container-design-principles.md)
->[další](state-and-data-in-docker-applications.md)
+>[Předchozí](common-container-design-principles.md) 
+> [Další](state-and-data-in-docker-applications.md)

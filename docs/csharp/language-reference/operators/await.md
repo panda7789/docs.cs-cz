@@ -7,12 +7,12 @@ helpviewer_keywords:
 - await keyword [C#]
 - await [C#]
 ms.assetid: 50725c24-ac76-4ca7-bca1-dd57642ffedb
-ms.openlocfilehash: f4b0ef501a30d3dffc1346c805ce0161ca4cac90
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: 20fc492e45b2d248602de59682e752026d421e06
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87555432"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916925"
 ---
 # <a name="await-operator-c-reference"></a>await – operátor (Referenční dokumentace jazyka C#)
 
@@ -20,7 +20,7 @@ ms.locfileid: "87555432"
 
 V následujícím příkladu <xref:System.Net.Http.HttpClient.GetByteArrayAsync%2A?displayProperty=nameWithType> Metoda vrátí `Task<byte[]>` instanci, která představuje asynchronní operaci, která při dokončení vytvoří pole bajtů. Dokud se operace nedokončí, `await` operátor tuto metodu pozastaví `DownloadDocsMainPageAsync` . Při `DownloadDocsMainPageAsync` pozastavení je ovládací prvek vrácen do `Main` metody, která je volajícím `DownloadDocsMainPageAsync` . `Main`Metoda se spustí, dokud nepotřebuje výsledek asynchronní operace prováděné `DownloadDocsMainPageAsync` metodou. Když <xref:System.Net.Http.HttpClient.GetByteArrayAsync%2A> získá všechny bajty, `DownloadDocsMainPageAsync` vyhodnotí se zbytek metody. Poté `Main` je vyhodnocena zbývající část metody.
 
-[!code-csharp[await example](snippets/AwaitOperator.cs)]
+[!code-csharp[await example](snippets/shared/AwaitOperator.cs)]
 
 Předchozí příklad používá [asynchronní `Main` metodu](../../programming-guide/main-and-command-args/index.md), která je možná od verze C# 7,1. Další informace naleznete v oddílu [await v části Metoda Main](#await-operator-in-the-main-method) .
 

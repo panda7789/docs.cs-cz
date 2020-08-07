@@ -1,13 +1,13 @@
 ---
 title: Vývojové prostředí pro aplikace Dockeru
 description: Získejte informace o nejdůležitějších možnostech vývojářských nástrojů, které podporují životní cyklus vývojového prostředí Docker.
-ms.date: 04/16/2020
-ms.openlocfilehash: b1df16db88fa85f794407c989f5428030c4cddf7
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.date: 08/06/2020
+ms.openlocfilehash: 07b42b2bd05ab16ba0fbf61863b050ee2c9e242b
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83394891"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916025"
 ---
 # <a name="development-environment-for-docker-apps"></a>Vývojové prostředí pro aplikace Dockeru
 
@@ -26,7 +26,7 @@ Pokud dáváte přednost zjednodušenému editoru pro různé platformy, který 
 
 ### <a name="visual-studio-with-docker-tools-windows-development-machine"></a>Visual Studio s nástroji Docker (vývojový počítač s Windows)
 
-Doporučujeme používat Visual Studio 2019 s povolenými integrovanými nástroji Docker. Se sadou Visual Studio můžete vyvíjet, spouštět a ověřovat aplikace přímo ve zvoleném prostředí Docker. Stiskněte klávesu F5, chcete-li ladit aplikaci (jeden kontejner nebo více kontejnerů) přímo v hostiteli Docker, nebo stiskněte klávesy CTRL + F5 pro úpravu a aktualizaci aplikace bez nutnosti opětovného sestavení kontejneru. Je to nejjednodušší a nejúčinnější volba pro vývojáře v systému Windows k vytvoření kontejnerů Docker pro Linux nebo Windows.
+Doporučuje se používat Visual Studio 2019 s integrovanými nástroji Docker, které jsou povolené. Se sadou Visual Studio můžete vyvíjet, spouštět a ověřovat aplikace přímo ve zvoleném prostředí Docker. Stiskněte klávesu F5, chcete-li ladit aplikaci (jeden kontejner nebo více kontejnerů) přímo v hostiteli Docker, nebo stiskněte klávesy CTRL + F5 pro úpravu a aktualizaci aplikace bez nutnosti opětovného sestavení kontejneru. Je to nejjednodušší a nejúčinnější volba pro vývojáře v systému Windows k vytvoření kontejnerů Docker pro Linux nebo Windows.
 
 ### <a name="visual-studio-for-mac-mac-development-machine"></a>Visual Studio pro Mac (počítač pro vývoj Mac)
 

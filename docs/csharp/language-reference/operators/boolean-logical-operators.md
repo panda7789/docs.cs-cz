@@ -35,12 +35,12 @@ helpviewer_keywords:
 - conditional OR operator [C#]
 - short-circuiting OR operator [C#]
 - '|| operator [C#]'
-ms.openlocfilehash: 2a67542e25ddb258602b4005a71b565cf6522917
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.openlocfilehash: 00b1523029ed6562fda6947415029cd3b7a9b405
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87855137"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916888"
 ---
 # <a name="boolean-logical-operators-c-reference"></a>Logické logické operátory (Referenční dokumentace jazyka C#)
 
@@ -56,7 +56,7 @@ Pro operandy [integrálních číselných typů](../builtin-types/integral-numer
 
 Unární operátor prefixu `!` vypočítá logickou negaci svého operandu. To znamená, že je `true` -li operand vyhodnocen `false` , a `false` , pokud je operand vyhodnocen jako `true` :
 
-[!code-csharp-interactive[logical negation](snippets/BooleanLogicalOperators.cs#Negation)]
+[!code-csharp-interactive[logical negation](snippets/shared/BooleanLogicalOperators.cs#Negation)]
 
 Počínaje jazykem C# 8,0, unární příponový `!` operátor je [operátor null-striktní](null-forgiving.md).
 
@@ -68,7 +68,7 @@ Počínaje jazykem C# 8,0, unární příponový `!` operátor je [operátor nul
 
 V následujícím příkladu je pravý operand `&` operátoru volání metody, která je provedena bez ohledu na hodnotu operandu na levé straně:
 
-[!code-csharp-interactive[logical AND](snippets/BooleanLogicalOperators.cs#And)]
+[!code-csharp-interactive[logical AND](snippets/shared/BooleanLogicalOperators.cs#And)]
 
 [Podmíněný logický operátor and](#conditional-logical-and-operator-) `&&` také VYPOČÍTÁ logickou a jeho operandy, ale nevyhodnotí pravý operand, pokud je levý operand vyhodnocen jako `false` .
 
@@ -78,7 +78,7 @@ Pro operandy [integrálních číselných typů](../builtin-types/integral-numer
 
 `^`Operátor vypočítá logickou výlučnou nebo, označovanou také jako logická XOR, z operandů. Výsledkem `x ^ y` je `true` , pokud je `x` vyhodnocena jako `true` a `y` `false` `x` `false` `y` `true` vyhodnocena jako nebo vyhodnocena jako a vyhodnocena jako. V opačném případě je výsledkem `false` . To znamená, že pro `bool` operandy `^` vypočítá operátor stejný výsledek jako [operátor nerovnosti](equality-operators.md#inequality-operator-) `!=` .
 
-[!code-csharp-interactive[logical exclusive OR](snippets/BooleanLogicalOperators.cs#Xor)]
+[!code-csharp-interactive[logical exclusive OR](snippets/shared/BooleanLogicalOperators.cs#Xor)]
 
 Pro operandy [integrálních číselných typů](../builtin-types/integral-numeric-types.md) `^` operátor vypočítá [BITOVÝ logický typ Exclusive nebo](bitwise-and-shift-operators.md#logical-exclusive-or-operator-) jeho operandů.
 
@@ -90,7 +90,7 @@ Pro operandy [integrálních číselných typů](../builtin-types/integral-numer
 
 V následujícím příkladu je pravý operand `|` operátoru volání metody, která je provedena bez ohledu na hodnotu operandu na levé straně:
 
-[!code-csharp-interactive[logical OR](snippets/BooleanLogicalOperators.cs#Or)]
+[!code-csharp-interactive[logical OR](snippets/shared/BooleanLogicalOperators.cs#Or)]
 
 [Podmíněný logický operátor OR](#conditional-logical-or-operator-) `||` také vypočítá logické nebo jeho operandy, ale nevyhodnotí operand pravého operandu, je-li operand na levé straně vyhodnocen `true` .
 
@@ -102,7 +102,7 @@ Podmíněný logický operátor AND `&&` , označovaný také jako "" krátkodob
 
 V následujícím příkladu je pravý operand `&&` operátoru volání metody, které není provedeno, je-li operand na levé straně vyhodnocen jako `false` :
 
-[!code-csharp-interactive[conditional logical AND](snippets/BooleanLogicalOperators.cs#ConditionalAnd)]
+[!code-csharp-interactive[conditional logical AND](snippets/shared/BooleanLogicalOperators.cs#ConditionalAnd)]
 
 [Logický operátor and](#logical-and-operator-) `&` také VYPOČÍTÁ logickou a jeho operandy, ale vždy vyhodnotí oba operandy.
 
@@ -112,7 +112,7 @@ Podmíněný logický operátor OR `||` , označovaný také jako "" krátkodob�
 
 V následujícím příkladu je pravý operand `||` operátoru volání metody, které není provedeno, je-li operand na levé straně vyhodnocen jako `true` :
 
-[!code-csharp-interactive[conditional logical OR](snippets/BooleanLogicalOperators.cs#ConditionalOr)]
+[!code-csharp-interactive[conditional logical OR](snippets/shared/BooleanLogicalOperators.cs#ConditionalOr)]
 
 [Logický operátor OR](#logical-or-operator-) `|` také vypočítá logické nebo jeho operandy, ale vždy vyhodnotí oba operandy.
 
@@ -142,7 +142,7 @@ Chování těchto operátorů se liší od typického chování operátoru s typ
 
 Operátory a lze také použít `!` `^` s `bool?` operandy, jak ukazuje následující příklad:
 
-[!code-csharp-interactive[lifted negation and xor](snippets/BooleanLogicalOperators.cs#WithNullableBoolean)]
+[!code-csharp-interactive[lifted negation and xor](snippets/shared/BooleanLogicalOperators.cs#WithNullableBoolean)]
 
 Podmíněné logické operátory `&&` a `||` nepodporují `bool?` operandy.
 
@@ -164,7 +164,7 @@ s výjimkou, že `x` je vyhodnocena pouze jednou.
 
 `&`Operátory, `|` a `^` podporují složené přiřazení, jak ukazuje následující příklad:
 
-[!code-csharp-interactive[compound assignment](snippets/BooleanLogicalOperators.cs#CompoundAssignment)]
+[!code-csharp-interactive[compound assignment](snippets/shared/BooleanLogicalOperators.cs#CompoundAssignment)]
 
 > [!NOTE]
 > Podmíněné logické operátory `&&` a `||` nepodporují složené přiřazení.
@@ -182,7 +182,7 @@ Následující seznam uvádí logické operátory od nejvyšší priority k nejn
 
 Pomocí závorek `()` můžete změnit pořadí vyhodnocování stanovené předností operátorů:
 
-[!code-csharp-interactive[operator precedence](snippets/BooleanLogicalOperators.cs#Precedence)]
+[!code-csharp-interactive[operator precedence](snippets/shared/BooleanLogicalOperators.cs#Precedence)]
 
 Úplný seznam operátorů jazyka C# seřazených podle priority úrovně naleznete v části [Priorita operátorů](index.md#operator-precedence) v článku [operátory jazyka c#](index.md) .
 

@@ -1,13 +1,13 @@
 ---
 title: Kontejnery jako základ pro spolupráci DevOps
 description: Pochopte klíčovou roli kontejnerů, abyste zjednodušili DevOps.
-ms.date: 04/16/2020
-ms.openlocfilehash: 83bebc92a242a5ac2906d9997b7b278f87f0db96
-ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
+ms.date: 08/06/2020
+ms.openlocfilehash: af28c1add8b2e6befbd2f3e6ae9fe707ccc5b106
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82507338"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916015"
 ---
 # <a name="containers-as-the-foundation-for-devops-collaboration"></a>Kontejnery jako základ pro spolupráci DevOps
 
@@ -27,25 +27,25 @@ V rámci pilíře na pravé straně provozní týmy spravují nasazené aplikace
 
 Tyto dva týmy spolupracují na základní platformě (Docker Containers), která poskytuje oddělení obav jako kontrakt, a přitom významně vylepšuje spolupráci dvou týmů v životním cyklu aplikace. Vývojáři vlastní obsah kontejneru, jeho operační prostředí a mezizávislosti kontejneru, zatímco týmy provozu přebírají sestavené image společně s manifestem a spouštějí je v systému orchestrace.
 
-## <a name="challenges-in-application-life-cycle-when-using-docker"></a>Problémy v životním cyklu aplikace při použití Docker.
+## <a name="challenges-in-the-application-life-cycle-when-using-docker"></a>Problémy v životním cyklu aplikace při použití Docker.
 
 Existuje mnoho důvodů, které zvýší počet kontejnerových aplikací v nadcházejících letech. jedním z těchto důvodů je vytváření aplikací založených na mikroslužbách.
 
-Během posledních 15 let bylo použití webových služeb základem tisíců aplikací a pravděpodobně po několika letech se stejnou situaci podíváme na aplikace založené na mikroslužbách běžící na kontejnerech Docker.
+Během posledních 15 let bylo použití webových služeb základem tisíců aplikací a pravděpodobně po několika letech se stejnou situaci týkají aplikací založených na mikroslužbách spuštěných v kontejnerech Docker.
 
 Také je třeba uvést, že můžete také použít kontejnery Docker pro aplikace monolitické a stále získáte většinu výhod Docker. Kontejnery necílí jenom na mikroslužby.
 
 Použití kontejnerů Docker a mikroslužeb způsobuje nové problémy v procesu vývoje vaší organizace. Proto potřebujete plnou strategii pro udržení mnoha kontejnerů a mikroslužeb spuštěných v produkčních systémech. Nakonec budou mít podnikové aplikace stovky nebo tisíce kontejnerů/instancí spuštěných v produkčním prostředí.
 
-Tyto problémy vytvářejí nové požadavky při použití nástrojů DevOps, takže budete muset definovat nové procesy ve svých aktivitách DevOps a najít odpovědi na tento typ otázek:
+Tyto výzvy vytvářejí nové požadavky při použití nástrojů DevOps, takže budete muset definovat nové procesy ve svých aktivitách DevOps a vyhledat odpovědi na následující typy otázek:
 
-- Které nástroje je možné použít pro vývoj pro CI/CD, správu a provoz?
+- Jaké nástroje můžu použít pro vývoj, CI/CD, správu a operace?
 
 - Jak může IT společnost spravovat chyby v kontejnerech při spuštění v produkčním prostředí?
 
 - Jak můžeme změnit části našeho softwaru v produkčním prostředí s minimálním výpadkem?
 
-- Jak můžu škálovat a jak můžeme monitorovat Náš produkční systém?
+- Jak můžu škálovat a monitorovat Náš produkční systém?
 
 - Jak můžeme do našeho kanálu vydaných verzí zahrnout testování a nasazení kontejnerů?
 
@@ -63,9 +63,9 @@ Obrázek 2-2 představuje podrobnější pracovní postup pro životní cyklus a
 
 Vše začíná vývojářem, který spustí psaní kódu v pracovním postupu s vnitřní smyčkou. Fáze Inner smyčky je tam, kde vývojáři definují všechno, co se stane před vložením kódu do úložiště kódu (například do systému správy zdrojového kódu, jako je git). Po potvrzení úložiště spustí průběžnou integraci (CI) a zbytek pracovního postupu.
 
-Vnitřní smyčka v podstatě sestává z typických kroků, jako je "kód", "Run", "test" a "ladění" a navíc před spuštěním aplikace v místním prostředí. Toto je proces vývojáře pro spuštění a testování aplikace jako kontejneru Docker. Pracovní postup vnitřní smyčky bude vysvětlen v následujících částech.
+Vnitřní smyčka se skládá z typických kroků, jako je "kód", "běh", "test" a "ladění" a další kroky, které jsou potřeba hned před tím, než aplikaci spustíte místně. Toto je proces vývojáře pro spuštění a testování aplikace jako kontejneru Docker. Pracovní postup vnitřní smyčky bude vysvětlen v následujících částech.
 
-Krok zpět na pohled na koncový postup od začátku až do konce pracovního postupu je DevOps pracovní postup více než technologie nebo sada nástrojů: Jedná se o místo, který vyžaduje kulturní vývoj. Jedná se o osoby, procesy a příslušné nástroje, díky kterým je životní cyklus aplikace rychlejší a předvídatelný. Podniky, které přijmou kontejnerový pracovní postup obvykle přestrukturují své organizace tak, aby představovali lidi a procesy, které odpovídají zadanému pracovnímu postupu.
+Když se vrátíte zpět k zobrazení kompletního pracovního postupu, pracovní postup DevOps je více než technologie nebo sada nástrojů, jedná se o místo, který vyžaduje kulturní vývoj. Jedná se o osoby, procesy a příslušné nástroje, díky kterým je životní cyklus aplikace rychlejší a předvídatelný. Podniky, které přijmou kontejnerový pracovní postup obvykle přestrukturují své organizace tak, aby představovali lidi a procesy, které odpovídají zadanému pracovnímu postupu.
 
 Praktické DevOps může přispět k tomu, že týmy rychleji reagují na konkurenční tlak tím, že nahrazuje ruční procesy náchylné k chybám díky automatizaci, což vede k lepší sledovatelnosti a k opakovaným pracovním postupům. Organizace také mohou spravovat prostředí efektivněji a realizovat úspory nákladů pomocí kombinace místních a cloudových prostředků a také úzce integrovaných nástrojů.
 
@@ -92,5 +92,5 @@ Tady jsou některé z nejdůležitějších výhod poskytovaných plným pracovn
 - Zapojte se do technologie Plug and Play a spoustu vašich stávajících investic do DevOps, včetně investic do Open Source.
 
 >[!div class="step-by-step"]
->[Předchozí](index.md)
->[Další](../Microsoft-platform-tools-containerized-apps/index.md)
+>[Předchozí](index.md) 
+> [Další](../Microsoft-platform-tools-containerized-apps/index.md)

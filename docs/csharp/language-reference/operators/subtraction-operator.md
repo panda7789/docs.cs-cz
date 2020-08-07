@@ -12,12 +12,12 @@ helpviewer_keywords:
 - event unsubscription [C#]
 - -= operator [C#]
 ms.assetid: 4de7a4fa-c69d-48e6-aff1-3130af970b2d
-ms.openlocfilehash: 0475e1be74af0b367785443224cd2e737d2f7301
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: a00957c8d36a96b5ee23b9e5a309b6139b33fd36
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87555590"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916690"
 ---
 # <a name="--and---operators-c-reference"></a>-and-= – operátory (Referenční dokumentace jazyka C#)
 
@@ -31,17 +31,17 @@ Pro operandy stejného typu [delegáta](../builtin-types/reference-types.md#the-
 
 - Pokud jsou oba operandy nenulové a seznam vyvolání pravého operandu je správným souvislým podseznamem seznamu vyvolání na levém operandu, výsledkem operace je nový seznam vyvolání, který se získá odebráním položek operandu na pravé straně ze seznamu vyvolání operandu na levé straně. Pokud se v seznamu operandů na pravé straně shoduje více sousedících podseznamů v seznamu operandů na levé straně, bude odebrán pouze odpovídající podseznam. Pokud je výsledkem odebrání prázdný seznam, výsledek je `null` .
 
-  [!code-csharp-interactive[delegate removal](snippets/SubtractionOperator.cs#DelegateRemoval)]
+  [!code-csharp-interactive[delegate removal](snippets/shared/SubtractionOperator.cs#DelegateRemoval)]
 
 - Pokud seznam volání na pravé straně operand není správným souvislým podseznamem seznamu vyvolání na levém operandu, výsledkem operace je operand na levé straně. Například odebrání delegáta, který není součástí delegáta vícesměrového vysílání, neprovede žádnou akci a dojde ke změně nezměněného delegáta vícesměrového vysílání.
 
-  [!code-csharp-interactive[delegate removal with no effect](snippets/SubtractionOperator.cs#DelegateRemovalNoChange)]
+  [!code-csharp-interactive[delegate removal with no effect](snippets/shared/SubtractionOperator.cs#DelegateRemovalNoChange)]
 
   Předchozí příklad také ukazuje, že během porovnání instancí delegáta pro odebrání delegáta. Například delegáty vytvořené z vyhodnocení identických [výrazů lambda](../../programming-guide/statements-expressions-operators/lambda-expressions.md) nejsou stejné. Další informace o rovnosti delegátů naleznete v části [operátory rovnosti delegátů](~/_csharplang/spec/expressions.md#delegate-equality-operators) ve [specifikaci jazyka C#](~/_csharplang/spec/introduction.md).
 
 - Pokud je operand na levé straně `null` , výsledkem operace je `null` . Pokud je operand na pravé straně `null` , výsledkem operace je operand na levé straně.
 
-  [!code-csharp-interactive[delegate removal and null](snippets/SubtractionOperator.cs#DelegateRemovalAndNull)]
+  [!code-csharp-interactive[delegate removal and null](snippets/shared/SubtractionOperator.cs#DelegateRemovalAndNull)]
 
 Chcete-li kombinovat delegáty, použijte [ `+` operátor](addition-operator.md#delegate-combination).
 
@@ -65,7 +65,7 @@ s výjimkou, že `x` je vyhodnocena pouze jednou.
 
 Následující příklad ukazuje použití `-=` operátoru:
 
-[!code-csharp-interactive[-= examples](snippets/SubtractionOperator.cs#SubtractAndAssign)]
+[!code-csharp-interactive[-= examples](snippets/shared/SubtractionOperator.cs#SubtractAndAssign)]
 
 Operátor můžete také použít `-=` k určení metody obslužné rutiny události, která se má odebrat, když zrušíte odběr [události](../keywords/event.md). Další informace najdete v tématu [jak se přihlásit k odběru událostí a odhlásit se z](../../programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md)nich.
 

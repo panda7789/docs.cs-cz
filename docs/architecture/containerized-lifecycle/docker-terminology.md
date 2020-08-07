@@ -1,13 +1,13 @@
 ---
 title: Terminologie Dockeru
 description: Naučte se určitou základní terminologii, která se při práci s Docker používá každý den.
-ms.date: 04/16/2020
-ms.openlocfilehash: 34e50596eca21ec5b5505493414056814455d745
-ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
+ms.date: 08/06/2020
+ms.openlocfilehash: b47639a2995c3a0a30ea7111c16bbea21f1048ba
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82507322"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87915196"
 ---
 # <a name="docker-terminology"></a>Terminologie Dockeru
 
@@ -29,7 +29,7 @@ docker build
 
 **Tag**: Značka nebo popisek, který můžete použít na obrázky, aby bylo možné identifikovat různé Image nebo verze stejné Image (v závislosti na číslu verze nebo cílovém prostředí).
 
-**Sestavení s více fázemi**: je funkce od docker 17,05 nebo vyšší, která pomáhá snižovat velikost finálních imagí. V několika větách s více fázemi sestavení můžete použít například velkou základní image, která obsahuje sadu SDK pro kompilaci a publikování aplikace a následné použití složky pro publikování s malým počtem základních imagí pouze pro modul runtime, k vytvoření mnohem menší konečné bitové kopie.
+**Sestavení s více fázemi**: je funkce od docker 17,05 nebo vyšší, která pomáhá snižovat velikost finálních imagí. Například Velká základní bitová kopie, která obsahuje sadu SDK, lze použít pro kompilaci a publikování a pak pro hostování aplikace lze použít pouze základní bitovou kopii pouze za běhu.
 
 **Úložiště (úložiště)**: kolekce souvisejících imagí Docker označená značkou, která označuje verzi image. Některá úložiště obsahují několik variant určitého obrázku, jako je například Image obsahující sady SDK (těžší), image obsahující pouze běhové moduly (světlejší) atd. Tyto varianty lze označit pomocí značek. Jedno úložiště může obsahovat varianty platformy, jako je například bitová kopie systému Linux a bitová kopie systému Windows.
 
@@ -41,7 +41,7 @@ docker build
 
 **Azure Container Registry**: veřejný prostředek pro práci s imagemi Docker a jejími součástmi v Azure. To poskytuje registr, který je blízko nasazení v Azure, a poskytuje vám kontrolu nad přístupem, což umožňuje používat vaše Azure Active Directory skupiny a oprávnění.
 
-**Docker Trusted Registry (DTR)**: služba Docker Registry (z Docker), která se dá nainstalovat místně, aby byla v datacentru a síti organizace. Je vhodný pro privátní image, které by se měly spravovat v rámci podniku. Docker Trusted Registry je součástí produktu Docker Datacenter. Další informace najdete v tématu [Docker Trusted Registry (DTR)](https://docs.docker.com/docker-trusted-registry/overview/).
+**Docker Trusted Registry (DTR)**: služba Docker Registry (z Docker), která se dá nainstalovat místně, aby byla v datacentru a síti organizace. Je vhodný pro privátní image, které by se měly spravovat v rámci podniku. Docker Trusted Registry je součástí produktu Docker Datacenter. Další informace najdete v tématu [Docker Trusted Registry (DTR)](https://www.docker.com/sites/default/files/Docker%20Trusted%20Registry.pdf).
 
 **Docker Community Edition (CE)**: vývojové nástroje pro Windows a MacOS pro místní vytváření, spouštění a testování kontejnerů. Docker CE for Windows poskytuje vývojová prostředí pro kontejnery Linux i Windows. Hostitel Docker pro Linux ve Windows je založený na virtuálním počítači [Hyper-V](https://www.microsoft.com/cloud-platform/server-virtualization) . Hostitel pro kontejnery Windows je přímo založený na systému Windows. Docker CE pro Mac je založený na architektuře Apple hypervisoru a [hypervisoru xhyve](https://github.com/mist64/xhyve), která poskytuje virtuální počítač hostitele Docker hosta na Mac OS X. Docker CE for Windows a pro Mac nahrazuje sadu nástrojů Docker, která byla založená na Oracle VirtualBox.
 
@@ -54,5 +54,5 @@ docker build
 **Orchestrator**: nástroj, který zjednodušuje správu clusterů a hostitelů Docker. Orchestrace umožňují spravovat jejich image, kontejnery a hostitele prostřednictvím rozhraní příkazového řádku (CLI) nebo grafického uživatelského rozhraní. Můžete spravovat sítě kontejnerů, konfigurace, Vyrovnávání zatížení, zjišťování služeb, vysokou dostupnost, konfiguraci hostitele Docker a další. Produkt Orchestrator zodpovídá za spouštění, distribuci, škálování a retušovaní úloh napříč kolekcí uzlů. Produkty Orchestrator jsou obvykle stejné produkty, které poskytují infrastrukturu clusteru, jako je Kubernetes a Azure Service Fabric, mimo jiné nabídky na trhu.
 
 >[!div class="step-by-step"]
->[Předchozí](what-is-docker.md)
->[Další](docker-containers-images-and-registries.md)
+>[Předchozí](what-is-docker.md) 
+> [Další](docker-containers-images-and-registries.md)

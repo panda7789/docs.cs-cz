@@ -5,18 +5,18 @@ ms.date: 04/21/2020
 helpviewer_keywords:
 - garbage collection, background
 - background garbage collection
-ms.openlocfilehash: 780503288d3474cd99a595bdbd52c3a5abba5308
-ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
+ms.openlocfilehash: bf88c14b2aeed94a548b6116749fa8669576afe1
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84990227"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87917004"
 ---
 # <a name="background-garbage-collection"></a>Uvolňování paměti na pozadí
 
 V uvolňování paměti na pozadí (GC) jsou dočasné generace (0 a 1) shromažďovány podle potřeby, zatímco probíhá shromažďování 2. generace. Uvolňování paměti na pozadí se provádí v jednom nebo více vyhrazených vláknech v závislosti na tom, zda se jedná o pozadí nebo server GC, a vztahuje se pouze na kolekce 2. generace.
 
-Uvolňování paměti na pozadí je ve výchozím nastavení povolené. Dá se zapnout nebo vypnout s nastavením konfigurace [gcConcurrent](../../framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) v aplikacích .NET Framework nebo v nastavení [System. GC. souběžné](../../core/run-time-config/garbage-collector.md#systemgcconcurrentcomplus_gcconcurrent) v aplikacích .NET Core.
+Uvolňování paměti na pozadí je ve výchozím nastavení povolené. Dá se zapnout nebo vypnout pomocí nastavení konfigurace [gcConcurrent](../../framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) v aplikacích .NET Framework nebo nastavení [System. GC. souběžnosti](../../core/run-time-config/garbage-collector.md#background-gc) v aplikacích .NET Core a .NET 5 a novějších.
 
 > [!NOTE]
 > Uvolňování paměti na pozadí nahrazuje [souběžné uvolňování paměti](#concurrent-garbage-collection) a je k dispozici v .NET Framework 4 a novějších verzích. V .NET Framework 4 se podporuje jenom pro uvolňování paměti *pracovní stanice* . Počínaje .NET Framework 4,5 se uvolňování paměti na pozadí dá použít jak pro *pracovní stanice* , tak pro uvolňování paměti *serveru* .

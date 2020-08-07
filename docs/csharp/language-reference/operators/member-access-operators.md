@@ -32,12 +32,12 @@ helpviewer_keywords:
 - hat operator [C#]
 - .. operator [C#]
 - range operator [C#]
-ms.openlocfilehash: 242442e9b0ad41a4945c66421bb537cb6cb9b6c0
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: 688a1fcff84a6e8f2fa31533a2bc459bf8c8717a
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87556472"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916794"
 ---
 # <a name="member-access-operators-and-expressions-c-reference"></a>Operátory a výrazy přístupu členů (Referenční dokumentace jazyka C#)
 
@@ -56,17 +56,17 @@ Token použijete `.` pro přístup ke členu oboru názvů nebo typu, jak ukazuj
 
 - Použijte `.` pro přístup k vnořenému oboru názvů v rámci oboru názvů, jak ukazuje následující příklad [ `using` direktivy](../keywords/using-directive.md) :
 
-  [!code-csharp[nested namespaces](snippets/MemberAccessOperators.cs#NestedNamespace)]
+  [!code-csharp[nested namespaces](snippets/shared/MemberAccessOperators.cs#NestedNamespace)]
 
 - Slouží `.` k vytvoření *kvalifikovaného názvu* pro přístup k typu v rámci oboru názvů, jak ukazuje následující kód:
 
-  [!code-csharp[qualified name](snippets/MemberAccessOperators.cs#QualifiedName)]
+  [!code-csharp[qualified name](snippets/shared/MemberAccessOperators.cs#QualifiedName)]
 
   Použijte [ `using` směrnici](../keywords/using-directive.md) pro použití kvalifikovaných názvů jako nepovinné.
 
 - Použijte `.` pro přístup ke [členům typu](../../programming-guide/classes-and-structs/index.md#members), statické a nestatické, jak ukazuje následující kód:
 
-  [!code-csharp-interactive[type members](snippets/MemberAccessOperators.cs#TypeMemberAccess)]
+  [!code-csharp-interactive[type members](snippets/shared/MemberAccessOperators.cs#TypeMemberAccess)]
 
 Můžete také použít `.` pro přístup k [metodě rozšíření](../../programming-guide/classes-and-structs/extension-methods.md).
 
@@ -78,7 +78,7 @@ Hranaté závorky se `[]` obvykle používají pro přístup k objektům Array, 
 
 Následující příklad ukazuje, jak získat přístup k prvkům pole:
 
-[!code-csharp-interactive[array access](snippets/MemberAccessOperators.cs#Arrays)]
+[!code-csharp-interactive[array access](snippets/shared/MemberAccessOperators.cs#Arrays)]
 
 Pokud je index pole mimo hranice odpovídající dimenze pole, <xref:System.IndexOutOfRangeException> je vyvolána výjimka.
 
@@ -90,7 +90,7 @@ Další informace o polích naleznete v tématu [Arrays](../../programming-guide
 
 Následující příklad používá <xref:System.Collections.Generic.Dictionary%602> typ .NET k demonstraci přístupu indexeru:
 
-[!code-csharp-interactive[indexer access](snippets/MemberAccessOperators.cs#Indexers)]
+[!code-csharp-interactive[indexer access](snippets/shared/MemberAccessOperators.cs#Indexers)]
 
 Indexery umožňují indexovat instance uživatelsky definovaného typu podobným způsobem jako indexování pole. Na rozdíl od indexů pole, který musí být celé číslo, lze parametry indexeru deklarovat jako libovolný typ.
 
@@ -126,13 +126,13 @@ A?.B?[C];
 
 Následující příklad ukazuje použití `?.` `?[]` operátorů a:
 
-[!code-csharp-interactive[null-conditional operators](snippets/MemberAccessOperators.cs#NullConditional)]
+[!code-csharp-interactive[null-conditional operators](snippets/shared/MemberAccessOperators.cs#NullConditional)]
 
 Předchozí příklad také používá [operátor `??` slučování null](null-coalescing-operator.md) k určení alternativního výrazu pro vyhodnocení pro případ, že je výsledkem operace podmíněného zpracování hodnoty null `null` .
 
 Pokud `a.x` nebo `a[x]` je typ hodnoty, která není null `T` , `a?.x` nebo `a?[x]` je odpovídající [typ hodnoty s možnou hodnotou null](../builtin-types/nullable-value-types.md) `T?` . Pokud potřebujete výraz typu `T` , použijte operátor slučování null `??` na podmíněný výraz s hodnotou null, jak ukazuje následující příklad:
 
-[!code-csharp-interactive[null-conditional with null-coalescing](snippets/MemberAccessOperators.cs#NullConditionalWithNullCoalescing)]
+[!code-csharp-interactive[null-conditional with null-coalescing](snippets/shared/MemberAccessOperators.cs#NullConditionalWithNullCoalescing)]
 
 V předchozím příkladu, pokud operátor nepoužíváte `??` , se `numbers?.Length < 2` vyhodnotí jako, pokud `false` `numbers` je `null` .
 
@@ -167,7 +167,7 @@ Použijte závorky, `()` , pro volání [metody](../../programming-guide/classes
 
 Následující příklad ukazuje, jak zavolat metodu s argumenty nebo bez argumentů a vyvolat delegáta:
 
-[!code-csharp-interactive[invocation with ()](snippets/MemberAccessOperators.cs#Invocation)]
+[!code-csharp-interactive[invocation with ()](snippets/shared/MemberAccessOperators.cs#Invocation)]
 
 Při vyvolání [konstruktoru](../../programming-guide/classes-and-structs/constructors.md) s operátorem můžete také použít závorky [`new`](new-operator.md) .
 
@@ -181,7 +181,7 @@ Pomocí závorek můžete také upravit pořadí, ve kterém se mají vyhodnocov
 
 K dispozici v C# 8,0 a novějším, `^` operátor označuje pozici elementu na konci sekvence. Pro sekvenci délky `length` `^n` odkazuje na prvek s posunem `length - n` od začátku sekvence. Například odkazuje na `^1` Poslední prvek sekvence a `^length` odkazuje na první prvek sekvence.
 
-[!code-csharp[index from end](snippets/MemberAccessOperators.cs#IndexFromEnd)]
+[!code-csharp[index from end](snippets/shared/MemberAccessOperators.cs#IndexFromEnd)]
 
 Jak ukazuje předchozí příklad, výraz `^e` je <xref:System.Index?displayProperty=nameWithType> typu. Ve výrazu je `^e` výsledek `e` nutné implicitně převést na `int` .
 
@@ -191,7 +191,7 @@ Můžete také použít `^` operátor s [operátorem Range](#range-operator-) a 
 
 K dispozici v C# 8,0 a novějších `..` operátor určuje začátek a konec rozsahu indexů jako své operandy. Levý operand je *Celková* začátek rozsahu. Pravý operand je *výhradním* koncem rozsahu. Jedním z operandů může být index od začátku nebo po konci sekvence, jak ukazuje následující příklad:
 
-[!code-csharp[range examples](snippets/MemberAccessOperators.cs#Ranges)]
+[!code-csharp[range examples](snippets/shared/MemberAccessOperators.cs#Ranges)]
 
 Jak ukazuje předchozí příklad, výraz `a..b` je <xref:System.Range?displayProperty=nameWithType> typu. Ve výrazu `a..b` jsou výsledky `a` a `b` musí být implicitně převoditelné na `int` nebo <xref:System.Index> .
 
@@ -201,7 +201,7 @@ Pokud chcete získat rozsah otevřeného a koncového výrazu, můžete vynechat
 - `..b`je ekvivalentem`0..b`
 - `..`je ekvivalentem`0..^0`
 
-[!code-csharp[ranges with omitted operands](snippets/MemberAccessOperators.cs#RangesOptional)]
+[!code-csharp[ranges with omitted operands](snippets/shared/MemberAccessOperators.cs#RangesOptional)]
 
 Další informace najdete v tématu [indexy a rozsahy](../../tutorials/ranges-indexes.md).
 

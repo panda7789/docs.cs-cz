@@ -6,12 +6,12 @@ no-loc:
 - Blazor
 - Blazor WebAssembly
 ms.date: 05/13/2020
-ms.openlocfilehash: 6b41363008405032f4233448f134a8a602dbd26a
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: 4a0c88472d2b19efb2ff0f58395003b1b6409131
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86173156"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87914894"
 ---
 # <a name="grpc"></a>gRPC
 
@@ -31,10 +31,11 @@ gRPC nabízí komplexní podporu napříč nejoblíbenějšími vývojovými zá
 
 gRPC používá pro svůj transportní protokol HTTP/2. I když je kompatibilní s HTTP 1,1, funkce HTTP/2 nabízí mnoho pokročilých možností:
 
-- Binární protokol pro přenos dat na rozdíl od HTTP 1,1, který odesílá data jako nešifrovaný text.
+- Protokol binárních rámců pro přenos dat na rozdíl od HTTP 1,1, který je založený na textu.
 - Podpora multiplexování pro posílání více paralelních požadavků přes stejné připojení – HTTP 1,1 omezuje zpracování na jednu zprávu požadavku nebo odpovědi.
 - Obousměrná plně duplexní komunikace pro posílání požadavků klientů a odpovědí serveru současně.
 - Integrované streamování umožňující požadavky a odpovědi na asynchronní streamování velkých datových sad.
+- Komprese hlaviček, která snižuje využití sítě.
 
 gRPC je odlehčená a vysoce výkonná. Může to být až 8x rychlejší než serializace JSON se zprávami menšími 60-80%. Ve službě Microsoft [Windows Communication Foundation (WCF)](https://docs.microsoft.com/dotnet/framework/wcf/whats-wcf) agilním výkon gRPC překračuje rychlost a efektivitu vysoce optimalizovaných [vazeb NetTcp](https://docs.microsoft.com/dotnet/api/system.servicemodel.nettcpbinding?view=netframework-4.8). Na rozdíl od NetTCP, který upřednostňuje Microsoft Stack, gRPC je mezi platformami.
 
@@ -84,7 +85,7 @@ Upřednostnit gRPC pro následující scénáře:
 - Komunikace Point-to-Point – gRPC může nabízet zprávy v reálném čase bez cyklického dotazování a má vynikající podporu pro obousměrné streamování.
 - Omezená prostředí sítě – binární zprávy gRPC jsou vždycky menší než ekvivalentní textová zpráva JSON.
 
-V době psaní tohoto zápisu se gRPC primárně používá pro back-end služby. Většina moderních prohlížečů nemůže poskytnout úroveň ovládacího prvku HTTP/2, která je nutná k podpoře klienta front-endu gRPC. V takovém případě je k dispozici [první iniciativa](https://devblogs.microsoft.com/aspnet/grpc-web-experiment/) , která umožňuje gRPC komunikaci z aplikací založených na prohlížeči vytvořených pomocí JavaScriptu nebo Blazor WebAssembly technologií. [GRPC-web pro .NET](https://github.com/grpc/grpc/blob/master/doc/PROTOCOL-WEB.md) umožňuje aplikaci ASP.NET Core gRPC podporovat funkce gRPC v prohlížečových aplikacích:
+V době psaní tohoto zápisu se gRPC primárně používá pro back-end služby. Moderní prohlížeče nemůžou poskytovat úroveň ovládacího prvku HTTP/2, která je nutná k podpoře klienta front-endu gRPC. V takovém případě je k dispozici podpora [gRPC-web s rozhraním .NET](https://devblogs.microsoft.com/aspnet/grpc-web-for-net-now-available/) , která umožňuje komunikaci gRPC z aplikací založených na prohlížeči vytvořených pomocí JavaScriptu nebo Blazor WebAssembly technologií. [gRPC-web](https://github.com/grpc/grpc/blob/master/doc/PROTOCOL-WEB.md) umožňuje aplikaci v aplikaci ASP.NET Core gRPC podporovat funkce gRPC v prohlížečových aplikacích:
 
 - Silně typované, klienti vygenerované kódem
 - Kompaktní zprávy Protobuf

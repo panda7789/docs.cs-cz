@@ -31,12 +31,12 @@ helpviewer_keywords:
 - ^ operator [C#]
 - bitwise logical OR operator [C#]
 - '| operator [C#]'
-ms.openlocfilehash: 40cca0ed906765e3a55356f8de0f280cf03a9d14
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.openlocfilehash: 99181855fdf8e937676e44e8b347510f9405aa3d
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87855189"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916907"
 ---
 # <a name="bitwise-and-shift-operators-c-reference"></a>Bitové operátory and Shift (Referenční dokumentace jazyka C#)
 
@@ -56,7 +56,7 @@ Operace bitového a posunutí nikdy nezpůsobí přetečení a vytvářejí stej
 
 `~`Operátor vytvoří bitový doplněk svého operandu převrácením každého bitu:
 
-[!code-csharp-interactive[bitwise NOT](snippets/BitwiseAndShiftOperators.cs#BitwiseComplement)]
+[!code-csharp-interactive[bitwise NOT](snippets/shared/BitwiseAndShiftOperators.cs#BitwiseComplement)]
 
 Můžete také použít `~` symbol k deklaraci finalizační metody. Další informace naleznete v tématu [finalizační metody](../../programming-guide/classes-and-structs/destructors.md).
 
@@ -66,11 +66,11 @@ Můžete také použít `~` symbol k deklaraci finalizační metody. Další inf
 
 Operace Left posunutí zahodí horních bitů, které jsou mimo rozsah výsledného typu, a nastavuje prázdné bitové pozice v dolním pořadí na nulu, jak ukazuje následující příklad:
 
-[!code-csharp-interactive[left shift](snippets/BitwiseAndShiftOperators.cs#LeftShift)]
+[!code-csharp-interactive[left shift](snippets/shared/BitwiseAndShiftOperators.cs#LeftShift)]
 
 Protože operátory posunutí jsou definovány pouze pro `int` typy, `uint` , a `long` `ulong` , výsledek operace vždy obsahuje alespoň 32 bitů. Pokud je levý operand jiného integrálního typu ( `sbyte` , `byte` ,, `short` `ushort` nebo `char` ), jeho hodnota je převedena na `int` typ, jak ukazuje následující příklad:
 
-[!code-csharp-interactive[left shift with promotion](snippets/BitwiseAndShiftOperators.cs#LeftShiftPromoted)]
+[!code-csharp-interactive[left shift with promotion](snippets/shared/BitwiseAndShiftOperators.cs#LeftShiftPromoted)]
 
 Informace o tom, jak operátor na pravé straně `<<` operátoru definuje počet posunutí, naleznete v oddílu posunutí [operátorů Shift](#shift-count-of-the-shift-operators) .
 
@@ -80,17 +80,17 @@ Informace o tom, jak operátor na pravé straně `<<` operátoru definuje počet
 
 Operace pravého posunutí zahodí bity nízkého řádu, jak ukazuje následující příklad:
 
-[!code-csharp-interactive[right shift](snippets/BitwiseAndShiftOperators.cs#RightShift)]
+[!code-csharp-interactive[right shift](snippets/shared/BitwiseAndShiftOperators.cs#RightShift)]
 
 Horní pořadí prázdných bitových pozic je nastaveno na základě typu levého operandu následujícím způsobem:
 
 - Pokud je levý operand typu `int` nebo `long` , operátor pravého posunutí provede *aritmetický* posun: hodnota nejvýznamnějšího bitu (bit znaménka) levého operandu je rozšířena na horní pořadí prázdných bitových pozic. To znamená, že horní pozice prázdných pozic je nastavena na hodnotu nula, je-li operand na levé straně nezáporný a je-li záporná, nastavte na jeden.
 
-  [!code-csharp-interactive[arithmetic right shift](snippets/BitwiseAndShiftOperators.cs#ArithmeticRightShift)]
+  [!code-csharp-interactive[arithmetic right shift](snippets/shared/BitwiseAndShiftOperators.cs#ArithmeticRightShift)]
 
 - Pokud je levý operand typu `uint` nebo `ulong` , operátor pravého posunutí provede *logický* posun: horní pořadí prázdných bitových pozic je vždy nastaveno na hodnotu nula.
 
-  [!code-csharp-interactive[logical right shift](snippets/BitwiseAndShiftOperators.cs#LogicalRightShift)]
+  [!code-csharp-interactive[logical right shift](snippets/shared/BitwiseAndShiftOperators.cs#LogicalRightShift)]
 
 Informace o tom, jak operátor na pravé straně `>>` operátoru definuje počet posunutí, naleznete v oddílu posunutí [operátorů Shift](#shift-count-of-the-shift-operators) .
 
@@ -98,7 +98,7 @@ Informace o tom, jak operátor na pravé straně `>>` operátoru definuje počet
 
 `&`Operátor vypočítá bitovou logickou logickou a jeho operandy:
 
-[!code-csharp-interactive[bitwise AND](snippets/BitwiseAndShiftOperators.cs#BitwiseAnd)]
+[!code-csharp-interactive[bitwise AND](snippets/shared/BitwiseAndShiftOperators.cs#BitwiseAnd)]
 
 Pro `bool` operandy `&` operátor vypočítá [logickou a](boolean-logical-operators.md#logical-and-operator-) jeho operandy. Unární `&` operátor je [operátor address-of](pointer-related-operators.md#address-of-operator-).
 
@@ -106,7 +106,7 @@ Pro `bool` operandy `&` operátor vypočítá [logickou a](boolean-logical-opera
 
 `^`Operátor Vypočítá bitový logický operátor OR, označovaný také jako bitový logický operátor XOR, z jeho operandů:
 
-[!code-csharp-interactive[bitwise XOR](snippets/BitwiseAndShiftOperators.cs#BitwiseXor)]
+[!code-csharp-interactive[bitwise XOR](snippets/shared/BitwiseAndShiftOperators.cs#BitwiseXor)]
 
 U `bool` operandů `^` operátor vypočítá [logickou výlučnou nebo](boolean-logical-operators.md#logical-exclusive-or-operator-) jeho operandy.
 
@@ -114,7 +114,7 @@ U `bool` operandů `^` operátor vypočítá [logickou výlučnou nebo](boolean-
 
 `|`Operátor vypočítá bitovou logickou nebo jeho operandy:
 
-[!code-csharp-interactive[bitwise OR](snippets/BitwiseAndShiftOperators.cs#BitwiseOr)]
+[!code-csharp-interactive[bitwise OR](snippets/shared/BitwiseAndShiftOperators.cs#BitwiseOr)]
 
 Pro `bool` operandy `|` operátor vypočítá [logickou nebo](boolean-logical-operators.md#logical-or-operator-) jeho operandy.
 
@@ -136,11 +136,11 @@ s výjimkou, že `x` je vyhodnocena pouze jednou.
 
 Následující příklad ukazuje použití složeného přiřazení s bitovým operátorem and Shift:
 
-[!code-csharp-interactive[compound assignment](snippets/BitwiseAndShiftOperators.cs#CompoundAssignment)]
+[!code-csharp-interactive[compound assignment](snippets/shared/BitwiseAndShiftOperators.cs#CompoundAssignment)]
 
 Z důvodu [numerických propagačních akcí](~/_csharplang/spec/expressions.md#numeric-promotions) `op` nemusí být výsledek operace implicitně převoditelný na typ `T` `x` . V takovém případě, pokud `op` je předdefinovaný operátor a výsledek operace je explicitně převoditelné na typ `T` `x` , je složený výraz přiřazení formuláře `x op= y` ekvivalentní s `x = (T)(x op y)` tím rozdílem, že `x` je pouze vyhodnocen pouze jednou. Následující příklad ukazuje toto chování:
 
-[!code-csharp-interactive[compound assignment with cast](snippets/BitwiseAndShiftOperators.cs#CompoundAssignmentWithCast)]
+[!code-csharp-interactive[compound assignment with cast](snippets/shared/BitwiseAndShiftOperators.cs#CompoundAssignmentWithCast)]
 
 ## <a name="operator-precedence"></a>Priorita operátorů
 
@@ -154,7 +154,7 @@ Následující seznam řadí operátory bitových operátorů and Shift počína
 
 Pomocí závorek `()` můžete změnit pořadí vyhodnocování stanovené předností operátorů:
 
-[!code-csharp-interactive[operator precedence](snippets/BitwiseAndShiftOperators.cs#Precedence)]
+[!code-csharp-interactive[operator precedence](snippets/shared/BitwiseAndShiftOperators.cs#Precedence)]
 
 Úplný seznam operátorů jazyka C# seřazených podle priority úrovně naleznete v části [Priorita operátorů](index.md#operator-precedence) v článku [operátory jazyka c#](index.md) .
 
@@ -170,7 +170,7 @@ Pro `x << count` výrazy a se `x >> count` skutečný počet posunutí závisí 
 
 Následující příklad ukazuje toto chování:
 
-[!code-csharp-interactive[shift count example](snippets/BitwiseAndShiftOperators.cs#ShiftCount)]
+[!code-csharp-interactive[shift count example](snippets/shared/BitwiseAndShiftOperators.cs#ShiftCount)]
 
 > [!NOTE]
 > Jak ukazuje předchozí příklad, výsledek operace posunutí může být nenulový, i když hodnota operandu na pravé straně je větší než počet bitů v operandu na levé straně.

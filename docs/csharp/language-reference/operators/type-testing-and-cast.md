@@ -20,12 +20,12 @@ helpviewer_keywords:
 - cast expression [C#]
 - () operator [C#]
 - typeof operator [C#]
-ms.openlocfilehash: 328a40f0213cbb55f86e16625507c1a5a5d775fb
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.openlocfilehash: 0bf0c3b1cea667456780ff56deb43467fd3bbffd
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87855826"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916641"
 ---
 # <a name="type-testing-operators-and-cast-expression-c-reference"></a>Operátory testování typů a výraz přetypování (Referenční dokumentace jazyka C#)
 
@@ -52,11 +52,11 @@ kde `E` je výraz, který vrací hodnotu a `T` je názvem typu nebo parametrem t
 
 Následující příklad ukazuje, že `is` operátor vrátí, `true` Pokud typ modulu runtime výsledku výrazu je odvozen z daného typu, to znamená, že existuje převod odkazu mezi typy:
 
-[!code-csharp[is with reference conversion](snippets/TypeTestingAndConversionOperators.cs#IsWithReferenceConversion)]
+[!code-csharp[is with reference conversion](snippets/shared/TypeTestingAndConversionOperators.cs#IsWithReferenceConversion)]
 
 Následující příklad ukazuje, že `is` operátor vezme v úvahu převody zabalení a rozbalení, ale nebere v úvahu [číselné převody](../builtin-types/numeric-conversions.md):
 
-[!code-csharp-interactive[is with int](snippets/TypeTestingAndConversionOperators.cs#IsWithInt)]
+[!code-csharp-interactive[is with int](snippets/shared/TypeTestingAndConversionOperators.cs#IsWithInt)]
 
 Informace o převodech jazyka C# naleznete v kapitole [převody](~/_csharplang/spec/conversions.md) [specifikace jazyka c#](~/_csharplang/spec/introduction.md).
 
@@ -72,7 +72,7 @@ kde `E` je výraz, který vrací hodnotu, `T` je název typu nebo parametr typu 
 
 Následující příklad ukazuje použití `is` operátoru se vzorem typu:
 
-[!code-csharp-interactive[is with type pattern](snippets/TypeTestingAndConversionOperators.cs#IsTypePattern)]
+[!code-csharp-interactive[is with type pattern](snippets/shared/TypeTestingAndConversionOperators.cs#IsTypePattern)]
 
 Další informace o vzoru typu a dalších podporovaných vzorech naleznete v tématu [porovnávání vzorů s](../keywords/is.md#pattern-matching-with-is)parametrem is.
 
@@ -98,7 +98,7 @@ s výjimkou, že `E` je vyhodnocena pouze jednou.
 
 Následující příklad ukazuje použití `as` operátoru:
 
-[!code-csharp-interactive[as operator](snippets/TypeTestingAndConversionOperators.cs#AsOperator)]
+[!code-csharp-interactive[as operator](snippets/shared/TypeTestingAndConversionOperators.cs#AsOperator)]
 
 > [!NOTE]
 > Jak ukazuje předchozí příklad, je nutné porovnat výsledek `as` výrazu s `null` a zjistit, zda převod proběhl úspěšně. Počínaje jazykem C# 7,0 můžete použít [operátor is](#type-testing-with-pattern-matching) pro testování, zda je převod úspěšný, a pokud je úspěšný, přiřaďte výsledek k nové proměnné.
@@ -109,7 +109,7 @@ Výraz přetypování formuláře `(T)E` provádí explicitní převod výsledku
 
 Následující příklad ukazuje explicitní číselné a referenční převody:
 
-[!code-csharp-interactive[cast expression](snippets/TypeTestingAndConversionOperators.cs#Cast)]
+[!code-csharp-interactive[cast expression](snippets/shared/TypeTestingAndConversionOperators.cs#Cast)]
 
 Informace o podporovaných explicitních převodech naleznete v části [explicitní převody](~/_csharplang/spec/conversions.md#explicit-conversions) [specifikace jazyka C#](~/_csharplang/spec/introduction.md). Informace o tom, jak definovat vlastní explicitní nebo implicitní převod typu, naleznete v části [uživatelsky definované operátory převodu](user-defined-conversion-operators.md).
 
@@ -123,11 +123,11 @@ Jiné použití závorek je upravit pořadí, ve kterém se mají vyhodnocovat o
 
 `typeof`Operátor získá <xref:System.Type?displayProperty=nameWithType> instanci pro typ. Argument `typeof` operátoru musí být název typu nebo parametr typu, jak ukazuje následující příklad:
 
-[!code-csharp-interactive[typeof operator](snippets/TypeTestingAndConversionOperators.cs#TypeOf)]
+[!code-csharp-interactive[typeof operator](snippets/shared/TypeTestingAndConversionOperators.cs#TypeOf)]
 
 Operátor můžete také použít `typeof` s nevázanými obecnými typy. Název nevázaného obecného typu musí obsahovat odpovídající počet čárek, což je jedna hodnota, která je menší než počet parametrů typu. Následující příklad ukazuje použití `typeof` operátoru s nevázaným obecným typem:
 
-[!code-csharp-interactive[typeof unbound generic](snippets/TypeTestingAndConversionOperators.cs#TypeOfUnboundGeneric)]
+[!code-csharp-interactive[typeof unbound generic](snippets/shared/TypeTestingAndConversionOperators.cs#TypeOfUnboundGeneric)]
 
 Výraz nemůže být argumentem `typeof` operátoru. Chcete-li získat <xref:System.Type?displayProperty=nameWithType> instanci pro běhový typ výsledku výrazu, použijte <xref:System.Object.GetType%2A?displayProperty=nameWithType> metodu.
 
@@ -135,7 +135,7 @@ Výraz nemůže být argumentem `typeof` operátoru. Chcete-li získat <xref:Sys
 
 Použijte `typeof` operátor ke kontrole, zda typ modulu runtime výsledku výrazu přesně odpovídá danému typu. Následující příklad ukazuje rozdíl mezi kontrolou typu provedenými s `typeof` operátorem a [operátorem is](#is-operator):
 
-[!code-csharp[typeof vs is](snippets/TypeTestingAndConversionOperators.cs#TypeCheckWithTypeOf)]
+[!code-csharp[typeof vs is](snippets/shared/TypeTestingAndConversionOperators.cs#TypeCheckWithTypeOf)]
 
 ## <a name="operator-overloadability"></a>Přetížení operátoru
 

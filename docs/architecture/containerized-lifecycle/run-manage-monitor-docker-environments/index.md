@@ -1,24 +1,24 @@
 ---
-title: Spuštění, správa a monitorování produkčních prostředí Dockeru
+title: Spouštění, Správa a monitorování produkčních prostředí Docker
 description: Životní cyklus kontejnerizované aplikace Dockeru s platformou a nástroji Microsoft
-ms.date: 02/15/2019
-ms.openlocfilehash: 900c361d5604f7fdaf41613287aa48c5381a9af7
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.date: 08/06/2020
+ms.openlocfilehash: 013918a5b3f0b9dc6c60416af186dc3e51a29a98
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "70295627"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87914916"
 ---
-# <a name="run-manage-and-monitor-docker-production-environments"></a>Spuštění, správa a monitorování produkčních prostředí Dockeru
+# <a name="run-manage-and-monitor-docker-production-environments"></a>Spouštění, Správa a monitorování produkčních prostředí Docker
 
-Vize: Podnikové aplikace musí běžet s vysokou dostupností a vysokou škálovatelností. It operace musí být schopny spravovat a monitorovat prostředí a samotné aplikace.
+Vize: podnikové aplikace musí běžet s vysokou dostupností a vysokou škálovatelností; Operace IT musí být schopné spravovat a monitorovat prostředí a aplikace samotné.
 
-Tento poslední pilíř v životním cyklu kontejnerizovaných aplikací Dockeru je zaměřen na to, jak můžete spouštět, spravovat a monitorovat vaše aplikace v škálovatelných produkčních prostředích s vysokou dostupností (HA).
+Tento poslední pilíř v životním cyklu aplikací kontejnerového Docker je na střed, jak můžete spouštět, spravovat a monitorovat vaše aplikace ve škálovatelných a vysoce dostupných produkčních prostředích.
 
-Způsob, jakým spouštěte kontejnerizované aplikace v produkčním prostředí (architektura infrastruktury a technologie platformy), je velmi související a je založen na zvolené architektuře a vývojových platformách popsaných v kapitole 1 této e-knihy.
+Způsob, jakým spustíte své kontejnerové aplikace v produkčním prostředí (architektura infrastruktury a technologie platforem), je velmi velký a založený na zvolené architektuře a vývojových platformách popsaných v kapitole 1 této elektronické knihy.
 
-Tato kapitola zkoumá konkrétní produkty a technologie od společnosti Microsoft a dalších dodavatelů, které můžete použít k efektivnímu spuštění škálovatelných distribuovaných aplikací HA a jak je můžete spravovat a sledovat z hlediska IT.
+Tato kapitola prověřuje konkrétní produkty a technologie od společnosti Microsoft a dalších dodavatelů, které můžete použít k efektivnímu spouštění škálovatelných a distribuovaných aplikací s vysokou dostupností a o tom, jak je můžete spravovat a monitorovat z perspektivy IT.
 
 >[!div class="step-by-step"]
->[Předchozí](../docker-devops-workflow/create-ci-cd-pipelines-azure-devops-services-aspnetcore-kubernetes.md)
->[další](run-microservices-based-applications-in-production.md)
+>[Předchozí](../docker-devops-workflow/create-ci-cd-pipelines-azure-devops-services-aspnetcore-kubernetes.md) 
+> [Další](run-microservices-based-applications-in-production.md)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 - inequality operator [C#]
 - not equals operator [C#]
 - '!= operator [C#]'
-ms.openlocfilehash: 1b87f7f6c1b22550e3df554572225b3fce6a1b56
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: 47e550226cdef31c82b30348d779207200f32b90
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87556615"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916823"
 ---
 # <a name="equality-operators-c-reference"></a>Operátory rovnosti (Referenční dokumentace jazyka C#)
 
@@ -34,7 +34,7 @@ Operátor rovnosti `==` `true` se vrátí, pokud jsou jeho operandy stejné, `fa
 
 Operandy [předdefinovaných hodnotových typů](../builtin-types/value-types.md#built-in-value-types) jsou stejné, pokud se jejich hodnoty rovnají:
 
-[!code-csharp-interactive[value types equality](snippets/EqualityOperators.cs#ValueTypesEquality)]
+[!code-csharp-interactive[value types equality](snippets/shared/EqualityOperators.cs#ValueTypesEquality)]
 
 > [!NOTE]
 > Pro `==` operátory, [ `<` , `>` , `<=` a `>=` ](comparison-operators.md) , pokud některý z operandů není číslo ( <xref:System.Double.NaN?displayProperty=nameWithType> nebo <xref:System.Single.NaN?displayProperty=nameWithType> ), výsledek operace je `false` . To znamená, že `NaN` hodnota není větší než, menší nebo rovna žádné jiné `double` hodnotě (nebo `float` ), včetně `NaN` . Další informace a příklady naleznete v tématu <xref:System.Double.NaN?displayProperty=nameWithType> nebo v <xref:System.Single.NaN?displayProperty=nameWithType> referenčním článku.
@@ -49,7 +49,7 @@ Počínaje jazykem C# 7,3 `==` `!=` jsou operátory a podporovány v [řazených
 
 Ve výchozím nastavení jsou dva operandy typu odkazu stejné, pokud odkazují na stejný objekt:
 
-[!code-csharp[reference type equality](snippets/EqualityOperators.cs#ReferenceTypesEquality)]
+[!code-csharp[reference type equality](snippets/shared/EqualityOperators.cs#ReferenceTypesEquality)]
 
 Jak ukazuje příklad, uživatelsky definované typy odkazů podporují `==` operátor ve výchozím nastavení. Typ odkazu však může přetížit `==` operátor. Pokud typ odkazu přetěžuje `==` operátor, použijte <xref:System.Object.ReferenceEquals%2A?displayProperty=nameWithType> metodu ke kontrole, zda dva odkazy tohoto typu odkazují na stejný objekt.
 
@@ -57,7 +57,7 @@ Jak ukazuje příklad, uživatelsky definované typy odkazů podporují `==` ope
 
 Dva [řetězcové](../builtin-types/reference-types.md#the-string-type) operandy jsou stejné, pokud jsou oba, `null` nebo obě řetězcové instance mají stejnou délku a mají stejné znaky v každé pozici znaku:
 
-[!code-csharp-interactive[string equality](snippets/EqualityOperators.cs#StringEquality)]
+[!code-csharp-interactive[string equality](snippets/shared/EqualityOperators.cs#StringEquality)]
 
 To je ordinální porovnání rozlišující malá a velká písmena. Další informace o porovnání řetězců naleznete v tématu [jak porovnat řetězce v jazyce C#](../../how-to/compare-strings.md).
 
@@ -65,13 +65,13 @@ To je ordinální porovnání rozlišující malá a velká písmena. Další in
 
 Dva operandy [delegáta](../../programming-guide/delegates/index.md) stejného typu modulu runtime jsou stejné, pokud jsou oba `null` seznamy volání stejné délky a mají stejné položky na každé pozici:
 
-[!code-csharp-interactive[delegate equality](snippets/EqualityOperators.cs#DelegateEquality)]
+[!code-csharp-interactive[delegate equality](snippets/shared/EqualityOperators.cs#DelegateEquality)]
 
 Další informace naleznete v části [operátory rovnosti delegátů](~/_csharplang/spec/expressions.md#delegate-equality-operators) [specifikace jazyka C#](~/_csharplang/spec/introduction.md).
 
 Delegáty vytvořené z vyhodnocení sémanticky identických [výrazů lambda](../../programming-guide/statements-expressions-operators/lambda-expressions.md) nejsou stejné, jak ukazuje následující příklad:
 
-[!code-csharp-interactive[from identical lambdas](snippets/EqualityOperators.cs#IdenticalLambdas)]
+[!code-csharp-interactive[from identical lambdas](snippets/shared/EqualityOperators.cs#IdenticalLambdas)]
 
 ## <a name="inequality-operator-"></a>Operátor nerovnosti! =
 
@@ -79,7 +79,7 @@ Operátor nerovnosti `!=` vrátí `true` , pokud jeho operandy nejsou stejné, `
 
 Následující příklad ukazuje použití `!=` operátoru:
 
-[!code-csharp-interactive[non-equality examples](snippets/EqualityOperators.cs#NonEquality)]
+[!code-csharp-interactive[non-equality examples](snippets/shared/EqualityOperators.cs#NonEquality)]
 
 ## <a name="operator-overloadability"></a>Přetížení operátoru
 
@@ -97,4 +97,4 @@ Další informace naleznete v části [relační operátory and type-Testing](~/
 - <xref:System.Object.Equals%2A?displayProperty=nameWithType>
 - <xref:System.Object.ReferenceEquals%2A?displayProperty=nameWithType>
 - [Porovnání rovnosti](../../programming-guide/statements-expressions-operators/equality-comparisons.md)
-- [Operátory porovnávání](comparison-operators.md)
+- [Operátory porovnání](comparison-operators.md)

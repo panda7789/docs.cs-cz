@@ -7,12 +7,12 @@ helpviewer_keywords:
 - garbage collection, server
 - workstation garbage collection
 - server garbage collection
-ms.openlocfilehash: 5ff2b1fe2f997913e071f35ec5abb167ed757608
-ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
+ms.openlocfilehash: 640b5f42c1f841c2537284e4721e827248e3d300
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84306692"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87917006"
 ---
 # <a name="workstation-and-server-garbage-collection"></a>Uvolnění paměti pracovní stanice a serveru
 
@@ -40,7 +40,7 @@ Následují požadavky na vlákna a výkon pro uvolňování paměti pracovních
 
 - Kolekce probíhá na uživatelském vlákně, které aktivovalo uvolňování paměti a zůstává ve stejné prioritě. Vzhledem k tomu, že se uživatelské vlákna obvykle spouští s normální prioritou, musí být systém uvolňování paměti (který běží na normální prioritní vlákně) s ostatními vlákny pro čas procesoru. (Vlákna, která spouštějí nativní kód, nejsou pozastavena buď na serveru, nebo v uvolnění paměti pracovní stanice.)
 
-- Uvolňování paměti pracovní stanice se vždycky používá v počítači, který má jenom jeden procesor, bez ohledu na [nastavení konfigurace](../../core/run-time-config/garbage-collector.md#systemgcservercomplus_gcserver).
+- Uvolňování paměti pracovní stanice se vždycky používá v počítači, který má jenom jeden procesor, bez ohledu na [nastavení konfigurace](../../core/run-time-config/garbage-collector.md#workstation-vs-server).
 
 ### <a name="server-gc"></a>Uvolňování paměti serveru
 

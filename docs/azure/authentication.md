@@ -3,18 +3,18 @@ title: Principy ověřování v knihovnách Azure pro .NET
 description: Vysvětluje různé způsoby ověřování pomocí sady Azure SDK pro .NET.
 ms.date: 06/19/2020
 ms.custom: azure-sdk-dotnet
-ms.openlocfilehash: 727842b34faa37558220a3035ac5228fae196201
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: e588499a789fc5e7da7eb51009f97090ca75e562
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87301616"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916614"
 ---
 # <a name="authenticate-with-the-azure-sdk-for-net"></a>Ověřování pomocí sady Azure SDK pro .NET
 
 ## <a name="recommended-azureidentity"></a>Doporučené: Azure. identity
 
-Nejnovější balíčky v sadě Azure SDK pro .NET používají pro ověření, že se používá společný ověřovací balíček `Azure.Identity` . Použití `Azure.Identity` se doporučuje u jiných ověřovacích mechanismů popsaných dále v tomto dokumentu. Balíčky podporující přihlašovací údaje, které poskytují, `Azure.Identity` mají identifikátory balíčků počínaje *Azure.* [Další informace najdete v tématu nejnovější verze sady Azure SDK pro .NET](https://azure.github.io/azure-sdk/releases/latest/index.html#net).
+Nejnovější balíčky v sadě Azure SDK pro .NET používají pro ověření, že se používá společný ověřovací balíček `Azure.Identity` . Použití `Azure.Identity` se doporučuje u jiných ověřovacích mechanismů popsaných dále v tomto dokumentu. Balíčky podporující přihlašovací údaje, které poskytuje, `Azure.Identity` jsou postavené na začátku `Azure.Core` a mají identifikátory balíčků počínaje *Azure.* [Prohlédněte si seznam balíčků](packages.md) pro inventarizaci balíčků, které používají `Azure.Core` .
 
 Podrobné pokyny k použití `Azure.Identity` v projektu najdete v dokumentaci ke [službě Azure identity Client pro .NET](/dotnet/api/overview/azure/identity-readme).
 

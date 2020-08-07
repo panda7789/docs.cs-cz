@@ -29,12 +29,12 @@ helpviewer_keywords:
 - + operator [C#]
 - subtraction operator [C#]
 - '- operator [C#]'
-ms.openlocfilehash: 4ddd71e41ff70d4287f474cc91255a5aae51b132
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.openlocfilehash: f5da9c4433ffcf3e6a110bbb1543343289240778
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87855241"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916964"
 ---
 # <a name="arithmetic-operators-c-reference"></a>Aritmetické operátory (Referenční dokumentace jazyka C#)
 
@@ -57,13 +57,13 @@ Operátor přírůstku je podporován ve dvou formách: operátor přírůstku p
 
 Výsledek `x++` je hodnota `x` *před* operací, jak ukazuje následující příklad:
 
-[!code-csharp-interactive[postfix increment](snippets/ArithmeticOperators.cs#PostfixIncrement)]
+[!code-csharp-interactive[postfix increment](snippets/shared/ArithmeticOperators.cs#PostfixIncrement)]
 
 ### <a name="prefix-increment-operator"></a>Operátor přírůstku předpony
 
 Výsledek `++x` je hodnota `x` *po* operaci, jak ukazuje následující příklad:
 
-[!code-csharp-interactive[prefix increment](snippets/ArithmeticOperators.cs#PrefixIncrement)]
+[!code-csharp-interactive[prefix increment](snippets/shared/ArithmeticOperators.cs#PrefixIncrement)]
 
 ## <a name="decrement-operator---"></a>Operátor snížení--
 
@@ -75,19 +75,19 @@ Operátor snížení je podporován ve dvou formách: operátor snížení pří
 
 Výsledek `x--` je hodnota `x` *před* operací, jak ukazuje následující příklad:
 
-[!code-csharp-interactive[postfix decrement](snippets/ArithmeticOperators.cs#PostfixDecrement)]
+[!code-csharp-interactive[postfix decrement](snippets/shared/ArithmeticOperators.cs#PostfixDecrement)]
 
 ### <a name="prefix-decrement-operator"></a>Operátor snížení předpony
 
 Výsledek `--x` je hodnota `x` *po* operaci, jak ukazuje následující příklad:
 
-[!code-csharp-interactive[prefix decrement](snippets/ArithmeticOperators.cs#PrefixDecrement)]
+[!code-csharp-interactive[prefix decrement](snippets/shared/ArithmeticOperators.cs#PrefixDecrement)]
 
 ## <a name="unary-plus-and-minus-operators"></a>Unární operátory plus a mínus
 
 Unární `+` operátor vrátí hodnotu jeho operandu. Unární `-` operátor vypočítá číselnou negaci svého operandu.
 
-[!code-csharp-interactive[unary plus and minus](snippets/ArithmeticOperators.cs#UnaryPlusAndMinus)]
+[!code-csharp-interactive[unary plus and minus](snippets/shared/ArithmeticOperators.cs#UnaryPlusAndMinus)]
 
 Typ [ulong](../builtin-types/integral-numeric-types.md) nepodporuje unární `-` operátor.
 
@@ -95,7 +95,7 @@ Typ [ulong](../builtin-types/integral-numeric-types.md) nepodporuje unární `-`
 
 Operátor násobení `*` Vypočítá součin jeho operandů:
 
-[!code-csharp-interactive[multiplication operator](snippets/ArithmeticOperators.cs#Multiplication)]
+[!code-csharp-interactive[multiplication operator](snippets/shared/ArithmeticOperators.cs#Multiplication)]
 
 Unární `*` operátor je [operátor dereference ukazatele](pointer-related-operators.md#pointer-indirection-operator-).
 
@@ -107,17 +107,17 @@ Operátor dělení `/` rozdělí svůj operand na levou stranu operandu na prav�
 
 U operandů typu Integer `/` je výsledkem operátoru typ Integer a rovná se podíl dvou operandů zaokrouhlených směrem k nule:
 
-[!code-csharp-interactive[integer division](snippets/ArithmeticOperators.cs#IntegerDivision)]
+[!code-csharp-interactive[integer division](snippets/shared/ArithmeticOperators.cs#IntegerDivision)]
 
 Chcete-li získat podíl dvou operandů jako číslo s plovoucí desetinnou čárkou, použijte operátor `float` , `double` nebo `decimal` :
 
-[!code-csharp-interactive[integer as floating-point division](snippets/ArithmeticOperators.cs#IntegerAsFloatingPointDivision)]
+[!code-csharp-interactive[integer as floating-point division](snippets/shared/ArithmeticOperators.cs#IntegerAsFloatingPointDivision)]
 
 ### <a name="floating-point-division"></a>Dělení plovoucí desetinné čárky
 
 Pro `float` typy, `double` a `decimal` `/` je výsledkem operátoru podíl dvou operandů:
 
-[!code-csharp-interactive[floating-point division](snippets/ArithmeticOperators.cs#FloatingPointDivision)]
+[!code-csharp-interactive[floating-point division](snippets/shared/ArithmeticOperators.cs#FloatingPointDivision)]
 
 Pokud je jeden z operandů `decimal` , jiný operand nemůže být `float` ani `double` , protože ani `float` `double` není implicitně převoditelné na `decimal` . Je nutné explicitně převést `float` operand nebo na `double` `decimal` typ. Další informace o převodech mezi číselnými typy naleznete v tématu [vestavěné číselné převody](../builtin-types/numeric-conversions.md).
 
@@ -129,7 +129,7 @@ Operátor zbytek `%` vypočítá zbytek po dělení jeho levého operandu pomoc�
 
 U operandů typu Integer `a % b` je výsledkem hodnota hodnotu vytvořenou hodnotou `a - (a / b) * b` . Znaménko nenulového zbytku je stejné jako u levého operandu, jak ukazuje následující příklad:
 
-[!code-csharp-interactive[integer remainder](snippets/ArithmeticOperators.cs#IntegerRemainder)]
+[!code-csharp-interactive[integer remainder](snippets/shared/ArithmeticOperators.cs#IntegerRemainder)]
 
 Použijte <xref:System.Math.DivRem%2A?displayProperty=nameWithType> metodu pro výpočet celočíselného dělení i zbývajících výsledků.
 
@@ -149,13 +149,13 @@ U `decimal` operandů je operátor zbytku `%` ekvivalentní k [operátoru zbýva
 
 Následující příklad ukazuje chování operátoru zbytek s operandy s plovoucí desetinnou čárkou:
 
-[!code-csharp-interactive[floating-point remainder](snippets/ArithmeticOperators.cs#FloatingPointRemainder)]
+[!code-csharp-interactive[floating-point remainder](snippets/shared/ArithmeticOperators.cs#FloatingPointRemainder)]
 
 ## <a name="addition-operator-"></a>Operátor sčítání +
 
 Operátor sčítání `+` vypočítá součet jeho operandů:
 
-[!code-csharp-interactive[addition operator](snippets/ArithmeticOperators.cs#Addition)]
+[!code-csharp-interactive[addition operator](snippets/shared/ArithmeticOperators.cs#Addition)]
 
 Můžete také použít `+` operátor pro kombinaci řetězení řetězců a delegátů. Další informace naleznete v článku [ `+` `+=` operátory a](addition-operator.md) .
 
@@ -163,7 +163,7 @@ Můžete také použít `+` operátor pro kombinaci řetězení řetězců a del
 
 Operátor odčítání `-` odečte svůj pravý operand od jeho levého operandu:
 
-[!code-csharp-interactive[subtraction operator](snippets/ArithmeticOperators.cs#Subtraction)]
+[!code-csharp-interactive[subtraction operator](snippets/shared/ArithmeticOperators.cs#Subtraction)]
 
 `-`K odebrání delegáta můžete také použít operátora. Další informace naleznete v článku [ `-` `-=` operátory a](subtraction-operator.md) .
 
@@ -185,11 +185,11 @@ s výjimkou, že `x` je vyhodnocena pouze jednou.
 
 Následující příklad ukazuje použití složeného přiřazení s aritmetickými operátory:
 
-[!code-csharp-interactive[compound assignment](snippets/ArithmeticOperators.cs#CompoundAssignment)]
+[!code-csharp-interactive[compound assignment](snippets/shared/ArithmeticOperators.cs#CompoundAssignment)]
 
 Z důvodu [numerických propagačních akcí](~/_csharplang/spec/expressions.md#numeric-promotions) `op` nemusí být výsledek operace implicitně převoditelný na typ `T` `x` . V takovém případě, pokud `op` je předdefinovaný operátor a výsledek operace je explicitně převoditelné na typ `T` `x` , je složený výraz přiřazení formuláře `x op= y` ekvivalentní s `x = (T)(x op y)` tím rozdílem, že `x` je pouze vyhodnocen pouze jednou. Následující příklad ukazuje toto chování:
 
-[!code-csharp-interactive[compound assignment with cast](snippets/ArithmeticOperators.cs#CompoundAssignmentWithCast)]
+[!code-csharp-interactive[compound assignment with cast](snippets/shared/ArithmeticOperators.cs#CompoundAssignmentWithCast)]
 
 Pomocí `+=` operátorů a můžete také `-=` Přihlásit odběr a zrušit odběr [události](../keywords/event.md)v uvedeném pořadí. Další informace najdete v tématu [jak se přihlásit k odběru událostí a odhlásit se z](../../programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md)nich.
 
@@ -206,7 +206,7 @@ Binární aritmetické operátory jsou asociativní zleva. To znamená, že oper
 
 Pomocí závorek `()` můžete změnit pořadí vyhodnocování stanovené prioritou operátoru a asociativita.
 
-[!code-csharp-interactive[precedence and associativity](snippets/ArithmeticOperators.cs#PrecedenceAndAssociativity)]
+[!code-csharp-interactive[precedence and associativity](snippets/shared/ArithmeticOperators.cs#PrecedenceAndAssociativity)]
 
 Úplný seznam operátorů jazyka C# seřazených podle priority úrovně naleznete v části [Priorita operátorů](index.md#operator-precedence) v článku [operátory jazyka c#](index.md) .
 
@@ -225,7 +225,7 @@ V případě celočíselného přetečení aritmetického přetečení, které m
 
 Spolu s [zaškrtnutými a nekontrolovanými](../keywords/checked-and-unchecked.md) příkazy lze pomocí `checked` `unchecked` operátorů a řídit kontext kontroly přetečení, ve kterém je výraz vyhodnocen:
 
-[!code-csharp-interactive[checked and unchecked](snippets/ArithmeticOperators.cs#CheckedUnchecked)]
+[!code-csharp-interactive[checked and unchecked](snippets/shared/ArithmeticOperators.cs#CheckedUnchecked)]
 
 Ve výchozím nastavení se aritmetické operace vyskytují v nekontrolovaném *kontextu.*
 
@@ -233,7 +233,7 @@ Ve výchozím nastavení se aritmetické operace vyskytují v nekontrolovaném *
 
 Aritmetické operace s `float` `double` typy a nikdy nevyvolávají výjimku. Výsledkem aritmetických operací s těmito typy může být jedna z speciálních hodnot, které reprezentují nekonečno a nikoli-a-číslo:
 
-[!code-csharp-interactive[double non-finite values](snippets/ArithmeticOperators.cs#FloatingPointOverflow)]
+[!code-csharp-interactive[double non-finite values](snippets/shared/ArithmeticOperators.cs#FloatingPointOverflow)]
 
 U operandů `decimal` typu aritmetické přetečení vždy vyvolá výjimku <xref:System.OverflowException> a dělení nulou vždy vyvolá <xref:System.DivideByZeroException> .
 
@@ -241,7 +241,7 @@ U operandů `decimal` typu aritmetické přetečení vždy vyvolá výjimku <xre
 
 Z důvodu obecného omezení reprezentace reálných čísel s plovoucí desetinnou čárkou a aritmetických operací s plovoucí desetinnou čárkou mohou být při výpočtech s typy s plovoucí desetinnou čárkou zjištěny chyby zaokrouhlení. To znamená, že získaný výsledek výrazu se může lišit od očekávaného matematického výsledku. Následující příklad ukazuje několik takových případů:
 
-[!code-csharp-interactive[round-off errors](snippets/ArithmeticOperators.cs#RoundOffErrors)]
+[!code-csharp-interactive[round-off errors](snippets/shared/ArithmeticOperators.cs#RoundOffErrors)]
 
 Další informace najdete v tématu poznámky na referenčních stránkách [System. Double](/dotnet/api/system.double#remarks), [System. Single](/dotnet/api/system.single#remarks)nebo [System. Decimal](/dotnet/api/system.decimal#remarks) .
 
