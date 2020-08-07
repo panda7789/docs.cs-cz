@@ -4,15 +4,16 @@ description: Přečtěte si, jak přetížit operátor jazyka C# a které operá
 ms.date: 07/05/2019
 f1_keywords:
 - operator_CSharpKeyword
+- operator
 helpviewer_keywords:
 - operator keyword [C#]
 - operator overloading [C#]
-ms.openlocfilehash: 2a27dc887671edc3f3f465ca757e7bf83262e915
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: 8b15d8d3abdfc9318baaba60ee0d6d1bb18fcf27
+ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87555172"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87855072"
 ---
 # <a name="operator-overloading-c-reference"></a>Overloads – operátor (Referenční dokumentace jazyka C#)
 
