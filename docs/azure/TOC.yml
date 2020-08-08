@@ -11,6 +11,8 @@
       href: authentication.md
     - name: protokolování
       href: logging.md
+    - name: Balíčky
+      href: packages.md
     - name: Příklad sady SDK
       href: /samples/dotnet/samples/azure-identity-resource-management-storage/
 - name: Migrace do Azure
