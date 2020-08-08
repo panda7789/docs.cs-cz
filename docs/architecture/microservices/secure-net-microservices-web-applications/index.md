@@ -2,17 +2,17 @@
 title: Zabezpečení mikroslužeb a webových aplikací .NET
 description: Zabezpečení u mikroslužeb a webových aplikací .NET – Získejte informace o možnostech ověřování v ASP.NET Core webových aplikacích.
 author: mjrousos
-ms.date: 01/30/2020
-ms.openlocfilehash: 2b503b326d1869ae095f9b177c04389bda9fe46c
-ms.sourcegitcommit: 4ad2f8920251f3744240c3b42a443ffbe0a46577
+ms.date: 08/07/2020
+ms.openlocfilehash: 9ce62039374f2256cd9adbddbb850aa4135af9f4
+ms.sourcegitcommit: 1e6439ec4d5889fc08cf3bfb4dac2b91931eb827
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86100779"
+ms.lasthandoff: 08/08/2020
+ms.locfileid: "88024612"
 ---
 # <a name="make-secure-net-microservices-and-web-applications"></a>Zajištění zabezpečených mikroslužeb a webových aplikací .NET
 
-K dispozici je mnoho aspektů zabezpečení v mikroslužbách a webových aplikacích, které může toto téma snadno provést několik knih, jako je tato, v této části se zaměříme na ověřování, autorizaci a tajné klíče aplikací.
+K dispozici je mnoho aspektů zabezpečení v mikroslužbách a webových aplikacích, které může toto téma snadno provést několik knih, jako je tato, v této části se zaměříte na ověřování, autorizaci a tajné klíče aplikací.
 
 ## <a name="implement-authentication-in-net-microservices-and-web-applications"></a>Implementace ověřování v mikroslužbách a webových aplikacích .NET
 
@@ -174,7 +174,7 @@ public void ConfigureServices(IServiceCollection services)
 {
     var identityUrl = Configuration.GetValue<string>("IdentityUrl");
     var callBackUrl = Configuration.GetValue<string>("CallBackUrl");
-    var sessionCookieLifetime = configuration.GetValue("SessionCookieLifetimeMinutes", 60);
+    var sessionCookieLifetime = Configuration.GetValue("SessionCookieLifetimeMinutes", 60);
 
     // Add Authentication services
 

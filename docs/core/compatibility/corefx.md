@@ -2,12 +2,12 @@
 title: Přerušující změny knihovny základních tříd
 description: Obsahuje seznam nejnovějších změn v základních knihovnách .NET.
 ms.date: 07/27/2020
-ms.openlocfilehash: d474d5547245e57206d669531b74b5be31c98ca0
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: 0667d975ce5bba5692fe5d179341235bd3c61790
+ms.sourcegitcommit: 1e6439ec4d5889fc08cf3bfb4dac2b91931eb827
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87556322"
+ms.lasthandoff: 08/08/2020
+ms.locfileid: "88024694"
 ---
 # <a name="core-net-libraries-breaking-changes"></a>Základní knihovny .NET – přerušující změny
 
@@ -17,6 +17,7 @@ Na této stránce jsou popsány následující přerušující se změny:
 
 | Zásadní změna | Představená verze |
 | - | :-: |
+| [IntPtr a UIntPtr implementují IFormattable](#intptr-and-uintptr-implement-iformattable) | 5.0 |
 | [PrincipalPermissionAttribute je zastaralá jako chyba.](#principalpermissionattribute-is-obsolete-as-error) | 5.0 |
 | [Metody serializace BinaryFormatter jsou zastaralé a zakázané v aplikacích ASP.NET](#binaryformatter-serialization-methods-are-obsolete-and-prohibited-in-aspnet-apps) | 5.0 |
 | [Cesty kódu UTF-7 jsou zastaralé.](#utf-7-code-paths-are-obsolete) | 5.0 |
@@ -44,6 +45,10 @@ Na této stránce jsou popsány následující přerušující se změny:
 | [Process. StartInfo vyvolá InvalidOperationException pro procesy, které jste nespustili.](#processstartinfo-throws-invalidoperationexception-for-processes-you-didnt-start) | 1.0 |
 
 ## <a name="net-50"></a>.NET 5,0
+
+[!INCLUDE [intptr-uintptr-implement-iformattable](../../../includes/core-changes/corefx/5.0/intptr-uintptr-implement-iformattable.md)]
+
+***
 
 [!INCLUDE [principalpermissionattribute-obsolete](../../../includes/core-changes/corefx/5.0/principalpermissionattribute-obsolete.md)]
 

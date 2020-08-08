@@ -2,12 +2,12 @@
 title: dotnet-install scripts
 description: Přečtěte si o příkazu dotnet – instalace skriptů pro instalaci .NET Core SDK a sdíleného modulu runtime.
 ms.date: 04/30/2020
-ms.openlocfilehash: cecfbb86c4a2863161d3df7c78201fa8057abfe5
-ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
+ms.openlocfilehash: c3aa6549a0b521db7fc19c6ff44665e3c4ba0c5f
+ms.sourcegitcommit: 1e6439ec4d5889fc08cf3bfb4dac2b91931eb827
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86415927"
+ms.lasthandoff: 08/08/2020
+ms.locfileid: "88024651"
 ---
 # <a name="dotnet-install-scripts-reference"></a>dotnet – Reference k instalaci skriptů
 
@@ -23,7 +23,7 @@ Windows:
 dotnet-install.ps1 [-Architecture <ARCHITECTURE>] [-AzureFeed]
     [-Channel <CHANNEL>] [-DryRun] [-FeedCredential]
     [-InstallDir <DIRECTORY>] [-JSonFile <JSONFILE>]
-    [-NoCdn] [-NoPath] [-ProxyAddress]
+    [-NoCdn] [-NoPath] [-ProxyAddress] [-ProxyBypassList <LIST_OF_URLS>]
     [-ProxyUseDefaultCredentials] [-Runtime <RUNTIME>]
     [-SkipNonVersionedFiles] [-UncachedFeed] [-Verbose]
     [-Version <VERSION>]
@@ -140,6 +140,10 @@ Instalační skripty neaktualizují registr ve Windows. Stačí stáhnout binár
 - **`-ProxyAddress`**
 
   Pokud je tato nastavení nastavena, instalační program při vytváření webových požadavků používá proxy server. (Platí jenom pro Windows.)
+
+- **`-ProxyBypassList <LIST_OF_URLS>`**
+
+  Pokud je nastaveno `ProxyAddress` na, poskytuje seznam adres URL oddělených čárkami, které budou proxy obcházet. (Platí jenom pro Windows.)
 
 - **`ProxyUseDefaultCredentials`**
 

@@ -9,12 +9,12 @@ dev_langs:
 helpviewer_keywords:
 - tasks, continuations
 ms.assetid: 0b45e9a2-de28-46ce-8212-1817280ed42d
-ms.openlocfilehash: 53457f7f99d96c288b002f58c9db36f431ba863a
-ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
+ms.openlocfilehash: 132518b9d8d22efecfcf3ed14e8b5969aa768cd4
+ms.sourcegitcommit: 1e6439ec4d5889fc08cf3bfb4dac2b91931eb827
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87381304"
+ms.lasthandoff: 08/08/2020
+ms.locfileid: "88024586"
 ---
 # <a name="chaining-tasks-using-continuation-tasks"></a>Řetězení úloh pomocí úloh pokračování
 
@@ -145,7 +145,7 @@ Někdy možná budete muset zřetězit pokračování, které vrací <xref:Syste
 Následující příklad ukazuje, jak používat pokračování, která zabalí další funkce vracející úkoly. Každé pokračování lze rozbalením a vystavit vnitřní úkol, který byl zabalen.
 
 :::code language="csharp" source="snippets/cs/unwrap.cs":::
-:::code language="csharp" source="snippets/vb/unwrap.vb":::
+:::code language="vb" source="snippets/vb/unwrap.vb":::
 
 Další informace o použití naleznete <xref:System.Threading.Tasks.TaskExtensions.Unwrap%2A> v tématu [How to: Unwrap a vnořená úloha](how-to-unwrap-a-nested-task.md).
 
@@ -175,6 +175,6 @@ Další informace naleznete v tématu [zpracování výjimek](exception-handling
 
 - Pokud je pokračování připojená podřízená úloha, která byla vytvořena pomocí <xref:System.Threading.Tasks.TaskContinuationOptions.AttachedToParent?displayProperty=nameWithType> Možnosti, jejich výjimky budou rozšířeny nadřazeným objektem zpět do volajícího vlákna, jako je případ v jakémkoli jiném připojeném podřízeném prvku. Další informace najdete v tématu [připojené a odpojené podřízené úlohy](attached-and-detached-child-tasks.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Task Parallel Library (TPL)](task-parallel-library-tpl.md)
