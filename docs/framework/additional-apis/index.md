@@ -1,7 +1,7 @@
 ---
 title: Další knihovny tříd a rozhraní API
 description: Prozkoumejte další knihovny tříd a rozhraní API v .NET, včetně projektů OOB (out-of-band), knihoven specifických pro platformu a privátních rozhraní API.
-ms.date: 06/12/2020
+ms.date: 08/11/2020
 helpviewer_keywords:
 - Additional class libraries
 - Additional managed libraries
@@ -9,12 +9,12 @@ helpviewer_keywords:
 - out-of-band releases
 ms.assetid: cf2d9006-b631-4e5d-81cd-20aab78c60f1
 ms.topic: conceptual
-ms.openlocfilehash: 0b888d2f0e80685ba993682b2f3067cf8aee15bc
-ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
+ms.openlocfilehash: c6404df5d4f0be381bc0a9c1924fcf82cf078306
+ms.sourcegitcommit: 70d6a7e4f7187cbfa332f0f8be76566f7828cfcd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84989741"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88075472"
 ---
 # <a name="additional-class-libraries-and-apis"></a>Další knihovny tříd a rozhraní API
 
@@ -24,7 +24,7 @@ Tento článek obsahuje seznam .NET Framework rozhraní API, které byly buď vy
 
 Pro zlepšení vývoje pro různé platformy a zavedení nových funkcí v brzkém případě některé .NET Framework funkce byly vydány mimo pásmo (OOB).
 
-| Project | Popis |  
+| Projekt | Popis |  
 | ------- | ----------- |  
 | <xref:System.Collections.Immutable> | Poskytuje kolekce, které jsou vláknem bezpečné a zaručují, aby nikdy neměnily obsah. |
 | <xref:System.Net.Http.WinHttpHandler> | Poskytuje obslužnou rutinu zpráv pro <xref:System.Net.Http.HttpClient> založenou na rozhraní WinHTTP systému Windows. |
@@ -35,7 +35,7 @@ Pro zlepšení vývoje pro různé platformy a zavedení nových funkcí v brzk�
 
 Některé knihovny cílí na konkrétní platformy. <xref:System.Text.CodePagesEncodingProvider>Třída například zpřístupňuje kódování znakové stránky aplikacím UWP vyvinutým pomocí .NET Framework.
   
-| Project | Popis |  
+| Projekt | Popis |  
 | ------- | ----------- |  
 | <xref:System.Text.CodePagesEncodingProvider> | Rozšiřuje <xref:System.Text.EncodingProvider> třídu tak, aby byly k dispozici kódování znakové stránky aplikacím, které cílí na Univerzální platforma Windows. |  
   
@@ -87,6 +87,7 @@ Tato rozhraní API podporují infrastrukturu produktů a nejsou zamýšlená ani
 * [System .NET. WebHeaderCollection. AddInternal – metoda](system.net.webheadercollection.addinternal.md)
 * [System. ServiceModel. Channels. Message. BodyToString – metoda](system.servicemodel.channels.message.bodytostring.md)
 * [System. ServiceModel. Channels. Message. WriteStartHeaders – metoda](system.servicemodel.channels.message.writestartheaders.md)
+* [System. Web. Compilation. ControlBuilderInterceptor – Třída](controlbuilderinterceptor-class.md)
 * [Pole System. Windows. Diagnostics. VisualDiagnostics. s \_ isDebuggerCheckDisabledForTestPurposes](s-isdebuggercheckdisabledfortestpurposes-field.md)
 * [System. Windows. Forms. Design. DataMemberFieldEditor – třída](datamemberfieldeditor-class.md)
 * [System. Windows. Forms. Design. DataMemberListEditor – třída](datamemberlisteditor-class.md)
