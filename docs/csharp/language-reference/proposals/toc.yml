@@ -82,3 +82,35 @@
           href: ../../../../_csharplang/proposals/csharp-8.0/readonly-instance-members.md
         - name: Vnoření stackalloc
           href: ../../../../_csharplang/proposals/csharp-8.0/nested-stackalloc.md
+    - name: Návrh specifikace C# 9.0
+      items:
+        - name: Záznamy
+          href: ../../../../_csharplang/proposals/csharp-9.0/records.md
+        - name: Příkazy nejvyšší úrovně
+          href: ../../../../_csharplang/proposals/csharp-9.0/top-level-statements.md
+        - name: Vylepšení porovnávání vzorů
+          href: ../../../../_csharplang/proposals/csharp-9.0/patterns3.md
+        - name: Metody setter jenom pro inicializaci
+          href: ../../../../_csharplang/proposals/csharp-9.0/init.md
+        - name: Nové výrazy typů určených podle cíle
+          href: ../../../../_csharplang/proposals/csharp-9.0/target-typed-new.md
+        - name: Inicializátory modulů
+          href: ../../../../_csharplang/proposals/csharp-9.0/module-initializers.md
+        - name: Rozšíření částečných metod
+          href: ../../../../_csharplang/proposals/csharp-9.0/extending-partial-methods.md
+        - name: Statické anonymní funkce
+          href: ../../../../_csharplang/proposals/csharp-9.0/static-anonymous-functions.md
+        - name: Logické výrazy typů určených podle cíle
+          href: ../../../../_csharplang/proposals/csharp-9.0/target-typed-conditional-expression.md
+        - name: Kovariantní návratové typy
+          href: ../../../../_csharplang/proposals/csharp-9.0/covariant-returns.md
+        - name: Lambda – zahození parametrů
+          href: ../../../../_csharplang/proposals/csharp-9.0/lambda-discard-parameters.md
+        - name: Atributy u místních funkcí
+          href: ../../../../_csharplang/proposals/csharp-9.0/local-function-attributes.md
+        - name: Celá čísla s nativní velikostí
+          href: ../../../../_csharplang/proposals/csharp-9.0/native-integers.md
+        - name: Ukazatelé funkcí
+          href: ../../../../_csharplang/proposals/csharp-9.0/function-pointers.md
+        - name: Potlačení generování příznaku localsinit
+          href: ../../../../_csharplang/proposals/csharp-9.0/skip-localsinit.md

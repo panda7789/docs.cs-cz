@@ -1829,7 +1829,7 @@
       href: language-reference/compiler-messages/index.md
     - name: Specifikace konceptu jazyka C# 6.0
       href: language-reference/specification/
-    - name: C# 7.0 – 8.0 – návrhy
+    - name: C# 7.0 – 9.0 – návrhy
       href: language-reference/proposals/
 - name: Postupy
   href: walkthroughs.md
