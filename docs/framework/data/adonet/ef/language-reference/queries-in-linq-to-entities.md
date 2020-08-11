@@ -3,12 +3,12 @@ title: Dotazy v technologii LINQ to Entities
 description: Přečtěte si, jak LINQ nabízí jednoduchý a konzistentní model pro práci s daty napříč různými druhy datových zdrojů a formátů pomocí programovacích objektů.
 ms.date: 03/30/2017
 ms.assetid: c015a609-29eb-4e95-abb1-2ca721c6e2ad
-ms.openlocfilehash: 048fd56fc687dd715292fb3bb09405130de09779
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: eaf44cf6c995be335c6127f42d7aaec0dd98527c
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286815"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063728"
 ---
 # <a name="queries-in-linq-to-entities"></a>Dotazy v technologii LINQ to Entities
 Dotaz je výraz, který načítá data ze zdroje dat. Dotazy jsou obvykle vyjádřené ve specializovaném dotazovacím jazyce, jako je SQL pro relační databáze a XQuery pro XML. Proto se vývojářům musel naučit nový dotazovací jazyk pro každý typ zdroje dat nebo formátu dat, který dotazuje. LINQ (Language-Integrated Query) nabízí jednodušší a konzistentní model pro práci s daty napříč různými druhy datových zdrojů a formátů. V dotazu LINQ vždy pracujete s programováním objektů.  
@@ -44,7 +44,7 @@ Dotaz je výraz, který načítá data ze zdroje dat. Dotazy jsou obvykle vyjád
 - [Příklady syntaxe výrazů dotazů: Navigace v relacích](query-expression-syntax-examples-navigating-relationships.md)  
   
 ### <a name="method-based-query-syntax"></a>Syntaxe dotazů založená na metodách  
- Dalším způsobem, jak vytvářet dotazy LINQ to Entities, je použití dotazů založených na metodách. Syntaxe dotazu založená na metodách je sekvence volání přímých metod operátorů LINQ a předávání výrazů lambda jako parametrů. Další informace naleznete v tématu [lambda výrazy](../../../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md). Příklady, které ukazují, jak použít syntaxi založenou na metodách, najdete v následujících tématech:  
+ Dalším způsobem, jak vytvářet dotazy LINQ to Entities, je použití dotazů založených na metodách. Syntaxe dotazu založená na metodách je sekvence volání přímých metod operátorů LINQ a předávání výrazů lambda jako parametrů. Další informace naleznete v tématu [lambda výrazy](../../../../../csharp/language-reference/operators/lambda-expressions.md). Příklady, které ukazují, jak použít syntaxi založenou na metodách, najdete v následujících tématech:  
   
 - [Příklady syntaxe dotazů založených na volání metody: Projekce](method-based-query-syntax-examples-projection.md)  
   

@@ -3,12 +3,12 @@ title: Vytváření pracovních postupů, aktivit a výrazů pomocí imperativn�
 description: Definice pracovního postupu v rámci Workflow Foundation je stromem nakonfigurovaných objektů aktivit. Pomocí kódu můžete vytvářet definice pracovních postupů, aktivity a výrazy.
 ms.date: 03/30/2017
 ms.assetid: cefc9cfc-2882-4eb9-8c94-7a6da957f2b2
-ms.openlocfilehash: d8b4cb8b85d3ea3759d58e15df823a72146772e8
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: d169049c47c154858a2e653b5f286fa6b66ba44d
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83421550"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063793"
 ---
 # <a name="authoring-workflows-activities-and-expressions-using-imperative-code"></a>Vytváření pracovních postupů, aktivit a výrazů pomocí imperativního kódu
 Definice pracovního postupu je stromem nakonfigurovaných objektů aktivity. Tento strom aktivit lze definovat mnoha způsoby, například ruční úpravou kódu XAML nebo pomocí Návrhář postupu provádění k vytvoření XAML. Použití XAML však není požadavkem. Definice pracovních postupů je také možné vytvářet programově. Toto téma poskytuje přehled o vytváření definic, aktivit a výrazů pracovního postupu pomocí kódu. Příklady práce s pracovními postupy XAML pomocí kódu naleznete v tématu [serializace pracovních postupů a aktivit do a z jazyka XAML](serializing-workflows-and-activities-to-and-from-xaml.md).  
@@ -62,7 +62,7 @@ new Assign<int>
   
  [!code-csharp[CFX_WorkflowApplicationExample#52](~/samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#52)]  
   
- Další informace o výrazech lambda naleznete v tématu [lambda Expressions (C# Programming Guide)](../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md) nebo [lambda výrazy (Visual Basic)](../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).  
+ Další informace o výrazech lambda naleznete v tématu [lambda Expressions (Referenční dokumentace jazyka C#)](../../csharp/language-reference/operators/lambda-expressions.md) nebo [lambda výrazy (Visual Basic)](../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).  
   
  Výrazy lambda nelze serializovat do formátu XAML. Je-li proveden pokus o serializaci pracovního postupu s výrazy lambda, <xref:System.Activities.Expressions.LambdaSerializationException> je vyvolána následující zpráva: "Tento pracovní postup obsahuje lambda výrazy zadané v kódu. Tyto výrazy nejsou serializovatelný v jazyce XAML. Aby bylo možné vytvořit serializovatelný pracovní postup v jazyce XAML, buď použijte VisualBasicValue/VisualBasicReference nebo ExpressionServices. Convert (lambda). Tato akce převede výrazy lambda na aktivity výrazu. " Chcete-li tento výraz kompatibilní s jazykem XAML, použijte <xref:System.Activities.Expressions.ExpressionServices> a <xref:System.Activities.Expressions.ExpressionServices.Convert%2A> , jak je znázorněno v následujícím příkladu.  
   

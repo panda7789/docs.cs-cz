@@ -2,12 +2,12 @@
 title: EventCounters v .NET Core
 description: V tomto článku se dozvíte, co EventCounters, jak je implementovat a jak se mají využívat.
 ms.date: 08/07/2020
-ms.openlocfilehash: 68868ff8b4e1393fc3b23af2bc8eef239ac56975
-ms.sourcegitcommit: 1e6439ec4d5889fc08cf3bfb4dac2b91931eb827
+ms.openlocfilehash: fc2f945e3de732a81b9ce3fd82eff10e455cae87
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/08/2020
-ms.locfileid: "88024998"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88062961"
 ---
 # <a name="eventcounters-in-net-core"></a>EventCounters v .NET Core
 
@@ -177,7 +177,9 @@ EventCounters je možné spotřebovat pomocí Azure Monitor, konkrétně Applica
 
 #### <a name="dotnet-monitor"></a>dotnet – monitorování
 
-`dotnet-monitor`Je experimentální nástroj, který usnadňuje získání přístupu k diagnostickým informacím v procesu .NET. Další informace najdete v tématu [Úvod do příkazu dotnet-monitor, experimentální nástroj](https://devblogs.microsoft.com/dotnet/introducing-dotnet-monitor).
+Tento `dotnet-monitor` Nástroj je experimentální nástroj, který usnadňuje získání přístupu k diagnostickým informacím v procesu .NET. Tento nástroj slouží jako nadmnožina všech diagnostických nástrojů. Kromě trasování může monitorovat metriky, shromažďovat výpisy paměti a shromažďovat výpisy stavu GC. Je distribuován jak jako nástroj rozhraní příkazového řádku, tak jako image Docker. Zpřístupňuje REST API a ke shromažďování diagnostických artefaktů dochází prostřednictvím volání REST.
+
+Další informace najdete v tématu [Úvod do příkazu dotnet-monitor, experimentální nástroj](https://devblogs.microsoft.com/dotnet/introducing-dotnet-monitor).
 
 ### <a name="consume-in-proc"></a>Využití v proc
 

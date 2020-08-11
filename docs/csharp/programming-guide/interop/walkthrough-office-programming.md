@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Office programming [C#]
 - Office programming [Visual Basic]
 ms.assetid: 519cff31-f80b-4f0e-a56b-26358d0f8c51
-ms.openlocfilehash: bf4725f3f636bb208450cb9b5c58766d84947f86
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 76f0e2eccb5d1a59d9aaa3eed11b25dd2dd9cac3
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87302942"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063000"
 ---
 # <a name="walkthrough-office-programming-c-and-visual-basic"></a>Návod: Programování pro Office (C# a Visual Basic)
 
@@ -25,7 +25,7 @@ Oba jazyky umožňují vkládání informací o typu, což umožňuje nasazení 
 
 Tento názorný postup ukazuje tyto funkce v kontextu programování v systému Office, ale mnoho z těchto funkcí je užitečné také při obecném programování. V tomto návodu použijete k vytvoření excelového sešitu aplikaci doplňku Excel. V dalším kroku vytvoříte dokument aplikace Word, který obsahuje odkaz na sešit. Nakonec uvidíte, jak povolit a zakázat závislost PIA.
 
-## <a name="prerequisites"></a>Předpoklady
+## <a name="prerequisites"></a>Požadavky
 
 Abyste mohli dokončit tento postup, musíte mít v počítači nainstalovanou aplikaci systém Microsoft Office Excel a systém Microsoft Office Word.
 
@@ -125,7 +125,7 @@ Abyste mohli dokončit tento postup, musíte mít v počítači nainstalovanou a
 
 ### <a name="to-invoke-displayinexcel"></a>Pro vyvolání DisplayInExcel
 
-1. Na konec metody přidejte následující kód `ThisAddIn_StartUp` . Volání `DisplayInExcel` obsahující dva argumenty. První argument je název seznamu účtů, které se mají zpracovat. Druhý argument je víceřádkový výraz lambda definující způsob zpracování dat. `ID`Hodnoty a `balance` pro každý účet se zobrazí v sousedících buňkách a řádek se zobrazí červeně, pokud je zůstatek menší než nula. Další informace naleznete v tématu [lambda výrazy](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).
+1. Na konec metody přidejte následující kód `ThisAddIn_StartUp` . Volání `DisplayInExcel` obsahující dva argumenty. První argument je název seznamu účtů, které se mají zpracovat. Druhý argument je víceřádkový výraz lambda definující způsob zpracování dat. `ID`Hodnoty a `balance` pro každý účet se zobrazí v sousedících buňkách a řádek se zobrazí červeně, pokud je zůstatek menší než nula. Další informace naleznete v tématu [lambda výrazy](../../language-reference/operators/lambda-expressions.md).
 
      [!code-csharp[csOfficeWalkthrough#9](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csofficewalkthrough/cs/thisaddin.cs#9)]
 
@@ -190,7 +190,7 @@ Abyste mohli dokončit tento postup, musíte mít v počítači nainstalovanou a
 
 8. V aplikaci Visual Studio klikněte na možnost **Vyčistit řešení** v nabídce **sestavení** a vyčistěte dokončený projekt.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Automaticky implementované vlastnosti (Visual Basic)](../../../visual-basic/programming-guide/language-features/procedures/auto-implemented-properties.md)
 - [Automaticky implementované vlastnosti (C#)](../classes-and-structs/auto-implemented-properties.md)
@@ -200,10 +200,10 @@ Abyste mohli dokončit tento postup, musíte mít v počítači nainstalovanou a
 - [Předávání argumentů podle pozice a názvu](../../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-position-and-by-name.md)
 - [Pojmenované a nepovinné argumenty](../classes-and-structs/named-and-optional-arguments.md)
 - [Počáteční a pozdní vazba](../../../visual-basic/programming-guide/language-features/early-late-binding/index.md)
-- [dynamické](../../language-reference/builtin-types/reference-types.md)
+- [dynamic](../../language-reference/builtin-types/reference-types.md)
 - [Použití typu dynamic](../types/using-type-dynamic.md)
 - [Lambda – výrazy (Visual Basic)](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)
-- [Výrazy lambda (C#)](../statements-expressions-operators/lambda-expressions.md)
+- [Výrazy lambda (C#)](../../language-reference/operators/lambda-expressions.md)
 - [Jak použít indexované vlastnosti při programování interoperability COM](./how-to-use-indexed-properties-in-com-interop-rogramming.md)
 - [Návod: Vložení informací o typu ze sestavení sady Microsoft Office v sadě Visual Studio](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/ee317478(v%3dvs.120))
 - [Návod: Vložení typů ze spravovaných sestavení](../../../standard/assembly/embed-types-visual-studio.md)

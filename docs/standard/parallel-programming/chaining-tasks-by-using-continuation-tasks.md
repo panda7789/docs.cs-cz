@@ -9,12 +9,12 @@ dev_langs:
 helpviewer_keywords:
 - tasks, continuations
 ms.assetid: 0b45e9a2-de28-46ce-8212-1817280ed42d
-ms.openlocfilehash: 132518b9d8d22efecfcf3ed14e8b5969aa768cd4
-ms.sourcegitcommit: 1e6439ec4d5889fc08cf3bfb4dac2b91931eb827
+ms.openlocfilehash: d42d244e644bf3ee1f45b25a71d60bbb2ef8e590
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/08/2020
-ms.locfileid: "88024586"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063832"
 ---
 # <a name="chaining-tasks-using-continuation-tasks"></a>Řetězení úloh pomocí úloh pokračování
 
@@ -52,7 +52,7 @@ Můžete vytvořit pokračování, které se provede po dokončení jeho předch
 
 Můžete také vytvořit pokračování, které se spustí, když se dokončí kterákoli nebo celá skupina úkolů. Chcete-li provést pokračování po dokončení všech předchozích úloh, zavoláte statickou `Shared` metodu (v Visual Basic) <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> nebo metodu instance <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAll%2A?displayProperty=nameWithType> . Chcete-li provést pokračování po dokončení kteréhokoliv z předchozích úloh, zavoláte statickou metodu ( `Shared` v Visual Basic) <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> nebo <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAny%2A?displayProperty=nameWithType> metodu instance.
 
-Všimněte si, že volání <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> přetížení neblokují volající vlákno. Nicméně obvykle zavoláte <xref:System.Threading.Tasks.Task.WhenAll%28System.Collections.Generic.IEnumerable%7BSystem.Threading.Tasks.Task%7D%29?displayProperty=nameWithType> metodu a, <xref:System.Threading.Tasks.Task.WhenAll%28System.Threading.Tasks.Task%5B%5D%29?displayProperty=nameWithType> která načte vrácenou <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> vlastnost, která zablokuje volající vlákno.
+Volání <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> přetížení neblokují volající vlákno. Nicméně obvykle zavoláte <xref:System.Threading.Tasks.Task.WhenAll%28System.Collections.Generic.IEnumerable%7BSystem.Threading.Tasks.Task%7D%29?displayProperty=nameWithType> metodu a, <xref:System.Threading.Tasks.Task.WhenAll%28System.Threading.Tasks.Task%5B%5D%29?displayProperty=nameWithType> která načte vrácenou <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> vlastnost, která zablokuje volající vlákno.
 
 Následující příklad volá <xref:System.Threading.Tasks.Task.WhenAll%28System.Collections.Generic.IEnumerable%7BSystem.Threading.Tasks.Task%7D%29?displayProperty=nameWithType> metodu pro vytvoření úlohy pokračování, která odráží výsledky jeho 10 předchozích úloh. Každý předchozí úkol napředá hodnotu indexu, která je v rozsahu od 1 do 10. Pokud se předchůdce úspěšně dokončí (jejich <xref:System.Threading.Tasks.Task.Status%2A?displayProperty=nameWithType> vlastnost je <xref:System.Threading.Tasks.TaskStatus.RanToCompletion?displayProperty=nameWithType> ), <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> vlastnost pokračování je pole <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> hodnot vrácených jednotlivými předchůdci. Tento příklad je přidá k výpočtu součtu čtverců pro všechna čísla od 1 do 10.
 
@@ -88,7 +88,7 @@ Pokud chcete pokračovat v běhu i v případě, že předchůdce nebyl úspěš
 
 <xref:System.Threading.Tasks.Task.Status%2A?displayProperty=nameWithType>Vlastnost pokračování je nastavena <xref:System.Threading.Tasks.TaskStatus.Canceled?displayProperty=nameWithType> v následujících situacích:
 
-- Vyvolá <xref:System.OperationCanceledException> výjimku v reakci na žádost o zrušení. Stejně jako u jakékoli úlohy, pokud výjimka obsahuje stejný token, který byl předán pokračování, je považována za potvrzení kooperativního zrušení.
+- Vyvolá <xref:System.OperationCanceledException> výjimku v reakci na žádost o zrušení. Stejně jako u jakékoli úlohy, pokud výjimka obsahuje stejný token, který byl předán pokračování, je považována za potvrzení o spolupráci.
 - Pokračování je úspěšné, <xref:System.Threading.CancellationToken?displayProperty=nameWithType> jehož <xref:System.Threading.CancellationToken.IsCancellationRequested%2A> vlastnost je `true` . V takovém případě se pokračování nespustí a přejde do <xref:System.Threading.Tasks.TaskStatus.Canceled?displayProperty=nameWithType> stavu.
 - Pokračování se nikdy nespustí, protože podmínka nastavená podle jeho <xref:System.Threading.Tasks.TaskContinuationOptions> argumentu nebyla splněna. Například pokud předchůdce přejde do <xref:System.Threading.Tasks.TaskStatus.Faulted?displayProperty=nameWithType> stavu, jeho pokračování, které bylo předáno, se <xref:System.Threading.Tasks.TaskContinuationOptions.NotOnFaulted?displayProperty=nameWithType> nespustí, ale převede do <xref:System.Threading.Tasks.TaskStatus.Canceled> stavu.
 

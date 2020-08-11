@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - delegates [C#], declaring and instantiating
 ms.assetid: 61c4895f-f785-48f8-8bfe-db73b411c4ae
-ms.openlocfilehash: 8d4c8424b07a9bccc9112ca9e635a78b9e1a3366
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: b741b3bc9c03faaa5fa2c01bd8f70d4be9b099c2
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87300212"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063663"
 ---
 # <a name="how-to-declare-instantiate-and-use-a-delegate-c-programming-guide"></a>Postup deklarace, vytvoření instance a použití delegáta (Průvodce programováním v C#)
 V C# 1,0 a novějších lze delegáty deklarovat, jak je znázorněno v následujícím příkladu.  
@@ -31,7 +31,7 @@ V C# 1,0 a novějších lze delegáty deklarovat, jak je znázorněno v následu
   
  [!code-csharp[csProgGuideDelegates#31](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDelegates/CS/Delegates.cs#31)]  
   
- Další informace naleznete v tématu [lambda výrazy](../statements-expressions-operators/lambda-expressions.md).  
+ Další informace naleznete v tématu [lambda výrazy](../../language-reference/operators/lambda-expressions.md).  
   
  Následující příklad znázorňuje deklarování, vytváření instancí a použití delegáta. `BookDB`Třída zapouzdřuje databázi Bookstore, která udržuje databázi knih. Zpřístupňuje metodu, `ProcessPaperbackBooks` která najde všechny tištěné verze knihy v databázi a zavolá delegáta pro každý z nich. `delegate`Typ, který se používá, se nazývá `ProcessBookDelegate` . `Test`Třída používá tuto třídu k tisku názvů a průměrné ceny tištěné verze knih.  
   
@@ -72,8 +72,8 @@ V C# 1,0 a novějších lze delegáty deklarovat, jak je znázorněno v následu
   
      Delegát může být buď volán synchronně, jako v tomto příkladu, nebo asynchronně pomocí `BeginInvoke` `EndInvoke` metod a.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Průvodce programováním v C#](../index.md)
 - [Události](../events/index.md)
-- [Delegáti](./index.md)
+- [Delegáty](./index.md)

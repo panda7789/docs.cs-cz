@@ -7,12 +7,12 @@ helpviewer_keywords:
 - await keyword [C#]
 - await [C#]
 ms.assetid: 50725c24-ac76-4ca7-bca1-dd57642ffedb
-ms.openlocfilehash: 20fc492e45b2d248602de59682e752026d421e06
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: 1941174d7e8d1676d11a13fa3ee6c7b84fe3952c
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87916925"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063234"
 ---
 # <a name="await-operator-c-reference"></a>await – operátor (Referenční dokumentace jazyka C#)
 
@@ -27,7 +27,7 @@ Předchozí příklad používá [asynchronní `Main` metodu](../../programming-
 > [!NOTE]
 > Úvod do asynchronního programování naleznete v tématu [asynchronní programování s modifikátorem Async a operátoru await](../../programming-guide/concepts/async/index.md). Asynchronní programování pomocí `async` a `await` sleduje [asynchronní vzor založený na úlohách](../../../standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md).
 
-Operátor lze použít `await` pouze v metodě, [lambda výrazu](../../programming-guide/statements-expressions-operators/lambda-expressions.md)nebo [anonymní metodě](delegate-operator.md) , která je upravena pomocí klíčového slova [Async](../keywords/async.md) . V rámci asynchronní metody nemůžete použít `await` operátor v těle synchronní funkce uvnitř bloku [příkazu Lock](../keywords/lock-statement.md)a v [nezabezpečeném](../keywords/unsafe.md) kontextu.
+Operátor lze použít `await` pouze v metodě, [lambda výrazu](lambda-expressions.md)nebo [anonymní metodě](delegate-operator.md) , která je upravena pomocí klíčového slova [Async](../keywords/async.md) . V rámci asynchronní metody nemůžete použít `await` operátor v těle synchronní funkce uvnitř bloku [příkazu Lock](../keywords/lock-statement.md)a v [nezabezpečeném](../keywords/unsafe.md) kontextu.
 
 Operandem `await` operátoru je obvykle jeden z následujících typů .NET: <xref:System.Threading.Tasks.Task> , <xref:System.Threading.Tasks.Task%601> , <xref:System.Threading.Tasks.ValueTask> nebo <xref:System.Threading.Tasks.ValueTask%601> . Nicméně libovolný výraz await může být operandem `await` operátoru. Další informace naleznete v části [await Expressions](~/_csharplang/spec/expressions.md#awaitable-expressions) (očekávané výrazy) v tématu [specifikace jazyka C#](~/_csharplang/spec/introduction.md).
 

@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - LINQ [C#], features supporting LINQ
 ms.assetid: 524b0078-ebfd-45a7-b390-f2ceb9d84797
-ms.openlocfilehash: f72b82180d794086dcea9f11a7a057dc26ab0b26
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: 13254c69193e04ffcf11e3e23f1deb460063a6c1
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87105423"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063689"
 ---
 # <a name="c-features-that-support-linq"></a>Funkce C# podporující LINQ
 
@@ -67,7 +67,7 @@ Zdroj dat může mít více vlastností ležící pod digestoří, než je `Cust
 var newLargeOrderCustomers = IncomingOrders.Where(x => x.OrderSize > 5).Select(y => new Customer { Name = y.Name, Phone = y.Phone });
 ```
 
-Další informace najdete tady:
+Další informace:
 
 - [Inicializátory objektu a kolekce](../../classes-and-structs/object-and-collection-initializers.md)
 
@@ -93,11 +93,11 @@ Další informace naleznete v tématu [metody rozšíření](../../classes-and-s
 
 Výraz lambda je vložená funkce, která používá operátor => pro oddělení vstupních parametrů z těla funkce a může být převedena v době kompilace na delegáta nebo strom výrazu. V programování LINQ dojde k vyvolání výrazů lambda při přímém volání metody do standardních operátorů dotazu.
 
-Další informace najdete tady:
+Další informace:
 
 - [Anonymní funkce](../../statements-expressions-operators/anonymous-functions.md)
 
-- [Výrazy lambda](../../statements-expressions-operators/lambda-expressions.md)
+- [Výrazy lambda](../../../language-reference/operators/lambda-expressions.md)
 
 - [Stromy výrazů (C#)](../expression-trees/index.md)
 

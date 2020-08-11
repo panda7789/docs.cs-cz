@@ -1,5 +1,5 @@
 ---
-title: throw - C# Reference
+title: throw – reference jazyka C#
 ms.date: 03/02/2015
 f1_keywords:
 - throw
@@ -9,12 +9,12 @@ helpviewer_keywords:
 - throw expression [C#]
 - throw keyword [C#]
 ms.assetid: 5ac4feef-4b1a-4c61-aeb4-61d549e5dd42
-ms.openlocfilehash: 04d3138e3390627355b4b2d4e25c6b00248cec1a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7ed84e04dae54283e4b5f03be0600c4dbf95b4b4
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399334"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063117"
 ---
 # <a name="throw-c-reference"></a>throw (Referenční dokumentace jazyka C#)
 
@@ -28,36 +28,36 @@ Syntaxe `throw` je:
 throw [e];
 ```
 
-kde `e` je instancí třídy <xref:System.Exception?displayProperty=nameWithType>odvozené z . Následující příklad používá `throw` příkaz k <xref:System.IndexOutOfRangeException> vyvolání, pokud argument `GetNumber` předaný metodě s názvem neodpovídá platnému indexu vnitřního pole.
+kde `e` je instance třídy odvozené z <xref:System.Exception?displayProperty=nameWithType> . Následující příklad používá `throw` příkaz k vyvolání příkazu, <xref:System.IndexOutOfRangeException> Pokud argument předaný metodě s názvem neodpovídá `GetNumber` platnému indexu interního pole.
 
 [!code-csharp[csrefKeyword#1](~/samples/snippets/csharp/language-reference/keywords/throw/throw-1.cs#1)]
 
-Metoda volající pak `try-catch` použít `try-catch-finally` nebo blok pro zpracování vyvolána výjimku. Následující příklad zpracovává výjimku vyváděnou `GetNumber` metodou.
+Volající metody pak používají `try-catch` `try-catch-finally` blok nebo pro zpracování vyvolané výjimky. Následující příklad zpracovává výjimku vyvolanou `GetNumber` metodou.
 
 [!code-csharp[csrefKeyword#2](~/samples/snippets/csharp/language-reference/keywords/throw/throw-1.cs#2)]
 
 ## <a name="re-throwing-an-exception"></a>Opětovné vyvolání výjimky
 
-`throw`lze také použít `catch` v bloku znovu vyvolat výjimku `catch` zpracovány v bloku.  V tomto `throw` případě nebere výjimku operand. Je nejužitečnější, když metoda předá argument z volajícího na jinou metodu knihovny a metoda knihovny vyvolá výjimku, která musí být předána volajícímu. Například následující příklad znovu vyvolá, <xref:System.NullReferenceException> který je vyvolán při pokusu o načtení prvního znaku neinicializovaného řetězce.
+`throw`lze také použít v `catch` bloku k opětovnému vyvolání výjimky zpracované v `catch` bloku.  V tomto případě `throw` nebere v úvahu operand výjimky. Je nejužitečnější, pokud metoda předává argumentu od volajícího k některé jiné metodě knihovny a metoda knihovny vyvolá výjimku, která musí být předána volajícímu. Například následující příklad znovu vyvolá výjimku <xref:System.NullReferenceException> , která je vyvolána při pokusu o načtení prvního znaku neinicializovaného řetězce.
 
 [!code-csharp[csrefKeyword#3](~/samples/snippets/csharp/language-reference/keywords/throw/throw-3.cs#3)]
 
 > [!IMPORTANT]
-> `throw e` Syntaxi v `catch` bloku můžete také použít k vytvoření instance nové výjimky, kterou předáte volajícímu. V tomto případě trasování zásobníku původní výjimku, <xref:System.Exception.StackTrace> která je k dispozici z vlastnosti, není zachována.
+> Můžete také použít `throw e` syntaxi v `catch` bloku pro vytvoření instance nové výjimky, kterou předáte volajícímu. V tomto případě není zachováno trasování zásobníku původní výjimky, která je k dispozici z <xref:System.Exception.StackTrace> Vlastnosti.
 
-## <a name="the-throw-expression"></a>Výraz `throw`
+## <a name="the-throw-expression"></a>`throw`Výraz
 
-Počínaje C# 7.0, `throw` lze použít jako výraz, stejně jako příkaz. To umožňuje výjimku vyvolat v kontextech, které byly dříve nepodporované. Mezi ně patří:
+Počínaje jazykem C# 7,0 `throw` lze použít jako výraz i příkaz. To umožňuje vyvolání výjimky v kontextech, které byly dříve nepodporované. Tady jsou některé z nich:
 
-- [podmíněný operátor](../operators/conditional-operator.md). Následující příklad používá `throw` výraz k <xref:System.ArgumentException> vyvolání metody, pokud je metoda předána prázdnému řetězci. Před C# 7.0, tato logika `if` / `else` by se musel zobrazit v příkazu.
+- [podmíněný operátor](../operators/conditional-operator.md). Následující příklad používá `throw` výraz k vyvolání, <xref:System.ArgumentException> Pokud je metoda předána prázdnému poli řetězce. Před C# 7,0 se tato logika musí objevit v `if` / `else` příkazu.
 
    [!code-csharp[csrefKeyword#4](~/samples/snippets/csharp/language-reference/keywords/throw/conditional.cs#1)]
 
-- [operátor null-coalescing](../operators/null-coalescing-operator.md). V následujícím příkladu `throw` se výraz používá s operátorem null-coalescing k vyvolání `null`výjimky, pokud je řetězec přiřazený vlastnosti `Name` .
+- [operátor slučování s hodnotou null](../operators/null-coalescing-operator.md). V následujícím příkladu `throw` se výraz používá s operátorem pro sjednocení s hodnotou null, který vyvolá výjimku, pokud je řetězec přiřazený `Name` vlastnosti `null` .
 
    [!code-csharp[csrefKeyword#5](~/samples/snippets/csharp/language-reference/keywords/throw/coalescing.cs#1)]
 
-- výraz-tělesně [lambda](../../programming-guide/statements-expressions-operators/lambda-expressions.md) nebo metoda. Následující příklad ilustruje metodu s výrazem, <xref:System.InvalidCastException> která vyvolá, <xref:System.DateTime> protože převod na hodnotu není podporován.
+- výraz [lambda](../operators/lambda-expressions.md) nebo metoda těle. Následující příklad znázorňuje metodu těle výrazu, která vyvolá výjimku, <xref:System.InvalidCastException> protože převod na <xref:System.DateTime> hodnotu není podporován.
 
    [!code-csharp[csrefKeyword#6](~/samples/snippets/csharp/language-reference/keywords/throw/exp-bodied.cs#1)]
 
@@ -67,8 +67,8 @@ Počínaje C# 7.0, `throw` lze použít jako výraz, stejně jako příkaz. To u
 
 ## <a name="see-also"></a>Viz také
 
-- [Odkaz jazyka C#](../index.md)
-- [Programovací příručka jazyka C#](../../programming-guide/index.md)
+- [Reference jazyka C#](../index.md)
+- [Průvodce programováním v C#](../../programming-guide/index.md)
 - [try-catch](try-catch.md)
-- [C# Klíčová slova](index.md)
+- [Klíčová slova jazyka C#](index.md)
 - [Postupy: Explicitní generování výjimek](../../../standard/exceptions/how-to-explicitly-throw-exceptions.md)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 - quantifiers
 - lazy quantifiers
 ms.assetid: 36b81212-6511-49ed-a8f1-ff080415312f
-ms.openlocfilehash: 2fc47a834f8f5b18021aa4f321345b8d7e4e8459
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: 3ffdd481ac001b4e1bd229c6f5fa0bf285b508b2
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84662885"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063806"
 ---
 # <a name="quantifiers-in-regular-expressions"></a>Kvantifikátory v regulárních výrazech
 Kvantifikátory určují, kolik instancí znaku, skupiny nebo třídy znaků musí být přítomné ve vstupu pro nalezení shody.  V následující tabulce jsou uvedeny kvantifikátory podporované rozhraním .NET.  
@@ -48,7 +48,7 @@ Kvantifikátory určují, kolik instancí znaku, skupiny nebo třídy znaků mus
 ### <a name="match-zero-or-more-times-"></a>Porovná nula nebo více časů: *  
  `*`Kvantifikátor odpovídá předchozímu prvku nula nebo vícekrát. Je ekvivalentní k `{0,}` kvantifikátoru. `*`je hladový kvantifikátor, jehož opožděný ekvivalent je `*?` .  
   
- Následující příklad ilustruje tento regulární výraz. Z devíti číslic ve vstupním řetězci, pět se shoduje se vzorem a čtyřmi ( `95` ,, `929` `9219` a `9919` ) ne.  
+ Následující příklad ilustruje tento regulární výraz. Devět skupin číslic ve vstupním řetězci, pět odpovídá vzoru a čtyři ( `95` , `929` , `9219` a) nezpůsobí `9919` .  
   
  [!code-csharp[RegularExpressions.Quantifiers#1](../../../samples/snippets/csharp/VS_Snippets_CLR/RegularExpressions.Quantifiers/cs/Quantifiers1.cs#1)]
  [!code-vb[RegularExpressions.Quantifiers#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/RegularExpressions.Quantifiers/vb/Quantifiers1.vb#1)]  

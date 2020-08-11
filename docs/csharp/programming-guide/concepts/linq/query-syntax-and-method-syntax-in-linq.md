@@ -6,12 +6,12 @@ helpviewer_keywords:
 - LINQ [C#], query syntax vs. method syntax
 - queries [LINQ in C#], syntax comparisons
 ms.assetid: eedd6dd9-fec2-428c-9581-5b8783810ded
-ms.openlocfilehash: 1765a15347aeedb9cc5fa6784abdfad6fafe4016
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 46b0e44182d22158aa5fa54a0f44bae70aa8ddd9
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87300758"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063039"
 ---
 # <a name="query-syntax-and-method-syntax-in-linq-c"></a>Syntaxe využívající dotazy a syntaxe využívající metody v jazyce LINQ (C#)
 Většina dotazů v dokumentaci k úvodnímu jazyku (LINQ) je zapsána pomocí syntaxe deklarativního dotazu LINQ. Nicméně syntaxe dotazu musí být přeložena do volání metody pro modul CLR (Common Language Runtime) .NET, když je kód zkompilován. Tyto volání metod vyvolávají standardní operátory dotazu, které mají názvy jako `Where` , `Select` , `GroupBy` , `Join` , `Max` a `Average` . Můžete je volat přímo pomocí syntaxe metody namísto syntaxe dotazu.  
@@ -38,7 +38,7 @@ Většina dotazů v dokumentaci k úvodnímu jazyku (LINQ) je zapsána pomocí s
 ## <a name="lambda-expressions"></a>Lambda – výrazy  
  V předchozím příkladu si všimněte, že podmíněný výraz ( `num % 2 == 0` ) je předán jako do vloženého argumentu `Where` metody: `Where(num => num % 2 == 0).` Tento vložený výraz se nazývá výraz lambda. Je pohodlný způsob, jak napsat kód, který by jinak musel být napsán ve složitější formě jako anonymní metoda nebo jako obecný delegát nebo strom výrazu. V jazyce C# `=>` je operátor lambda, který je čten jako "Přejít na". Na `num` levé straně operátoru je vstupní proměnná, která odpovídá `num` výrazu dotazu. Kompilátor může odvodit typ `num` , protože ví, že `numbers` se jedná o obecný <xref:System.Collections.Generic.IEnumerable%601> typ. Tělo lambda je pouze stejné jako výraz v syntaxi dotazu nebo v jakémkoli jiném výrazu jazyka C# nebo příkazu; může zahrnovat volání metod a další komplexní logiku. "Návratovou hodnotou" je pouze výsledek výrazu.  
   
- Chcete-li začít používat LINQ, nemusíte často používat výrazy lambda. Nicméně některé dotazy lze vyjádřit pouze v syntaxi metody a některé z nich vyžadují výrazy lambda. Po podrobnějším seznámení s výrazy lambda zjistíte, že jsou výkonným a flexibilním nástrojem v sadě LINQ Toolbox. Další informace naleznete v tématu [lambda výrazy](../../statements-expressions-operators/lambda-expressions.md).  
+ Chcete-li začít používat LINQ, nemusíte často používat výrazy lambda. Nicméně některé dotazy lze vyjádřit pouze v syntaxi metody a některé z nich vyžadují výrazy lambda. Po podrobnějším seznámení s výrazy lambda zjistíte, že jsou výkonným a flexibilním nástrojem v sadě LINQ Toolbox. Další informace naleznete v tématu [lambda výrazy](../../../language-reference/operators/lambda-expressions.md).  
   
 ## <a name="composability-of-queries"></a>Skládání dotazů  
  V předchozím příkladu kódu si všimněte, že `OrderBy` Metoda je vyvolána pomocí operátoru tečka v volání `Where` . `Where`Vytvoří filtrovanou sekvenci a potom `Orderby` v této sekvenci funguje tak, že ji seřadí. Vzhledem k tomu, že dotazy vrátí `IEnumerable` , je vytvoříte v syntaxi metody zřetězením volání metody dohromady. To je to, co kompilátor provede na pozadí při psaní dotazů pomocí syntaxe dotazů. A protože proměnná dotazu neukládá výsledky dotazu, můžete ji upravit nebo použít jako základ pro nový dotaz kdykoli, a to i po provedení.  

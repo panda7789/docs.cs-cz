@@ -4,12 +4,12 @@ description: Naučte se používat integrované iterátory C# a vytvářet vlast
 ms.date: 06/20/2016
 ms.technology: csharp-advanced-concepts
 ms.assetid: 5cf36f45-f91a-4fca-a0b7-87f233e108e9
-ms.openlocfilehash: efa755c2243c18fb51b653abccb2bfc702bbc055
-ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
+ms.openlocfilehash: c2a1dfe38b6a65e382e140541c71e94bb0fc76aa
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82507374"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88062480"
 ---
 # <a name="iterators"></a>Iterátory
 
@@ -37,9 +37,9 @@ foreach (var item in collection)
 }
 ```
 
-A to je vše. Chcete-li iterovat všechny obsahy kolekce, je `foreach` příkaz vše, co potřebujete. `foreach` Příkaz není Magic, i když. Spoléhá se na dvě Obecná rozhraní definovaná v knihovně .NET Core, aby bylo možné vygenerovat kód potřebný k iteraci kolekce: `IEnumerable<T>` a `IEnumerator<T>`. Tento mechanismus je podrobněji vysvětlen níže.
+A to je vše. Chcete-li iterovat všechny obsahy kolekce, `foreach` je příkaz vše, co potřebujete. `foreach`Příkaz není Magic, i když. Spoléhá se na dvě Obecná rozhraní definovaná v knihovně .NET Core, aby bylo možné vygenerovat kód potřebný k iteraci kolekce: `IEnumerable<T>` a `IEnumerator<T>` . Tento mechanismus je podrobněji vysvětlen níže.
 
-Obě tato rozhraní mají také neobecné protějšky: `IEnumerable` a. `IEnumerator` [Obecné](programming-guide/generics/index.md) verze jsou upřednostňovány pro moderní kód.
+Obě tato rozhraní mají také neobecné protějšky: `IEnumerable` a `IEnumerator` . [Obecné](programming-guide/generics/index.md) verze jsou upřednostňovány pro moderní kód.
 
 ## <a name="enumeration-sources-with-iterator-methods"></a>Výčtové zdroje s metodami iterátoru
 
@@ -63,7 +63,7 @@ public IEnumerable<int> GetSingleDigitNumbers()
 }
 ```
 
-Výše uvedený kód ukazuje různé `yield return` příkazy k zdůraznění faktu, že můžete použít více `yield return` diskrétních příkazů v metodě iterátoru.
+Výše uvedený kód ukazuje různé `yield return` příkazy k zdůraznění faktu, že můžete použít více diskrétních `yield return` příkazů v metodě iterátoru.
 Můžete (a často) použít jiné jazykové konstrukce pro zjednodušení kódu metody iterátoru. Následující definice metody vytváří přesně stejnou sekvenci čísel:
 
 ```csharp
@@ -75,7 +75,7 @@ public IEnumerable<int> GetSingleDigitNumbers()
 }
 ```
 
-Nemusíte se rozhodnout ani jedno z nich. K splnění potřeb vaší metody `yield return` můžete mít tolik příkazů, kolik je potřeba:
+Nemusíte se rozhodnout ani jedno z nich. `yield return`K splnění potřeb vaší metody můžete mít tolik příkazů, kolik je potřeba:
 
 ```csharp
 public IEnumerable<int> GetSingleDigitNumbers()
@@ -106,7 +106,7 @@ public static IEnumerable<T> Sample(this IEnumerable<T> sourceSequence, int inte
 }
 ```
 
-Existují jedna důležitá omezení pro metody iterátoru: ve stejné metodě nemůžete mít `return` příkaz `yield return` a příkaz. Následující kroky nebudou zkompilovány:
+Existují jedna důležitá omezení pro metody iterátoru: ve stejné metodě nemůžete mít `return` příkaz a `yield return` příkaz. Následující kroky nebudou zkompilovány:
 
 ```csharp
 public IEnumerable<int> GetSingleDigitNumbers()
@@ -123,7 +123,7 @@ public IEnumerable<int> GetSingleDigitNumbers()
 }
 ```
 
-Toto omezení se obvykle nejedná o problém. Můžete zvolit buď pomocí `yield return` celé metody, nebo oddělit původní metodu do více metod, některé pomocí `return`a některé z nich. `yield return`
+Toto omezení se obvykle nejedná o problém. Můžete zvolit buď pomocí `yield return` celé metody, nebo oddělit původní metodu do více metod, některé pomocí `return` a některé z nich `yield return` .
 
 Poslední metodu můžete upravit mírně a použít `yield return` všude:
 
@@ -142,7 +142,7 @@ public IEnumerable<int> GetSingleDigitNumbers()
 }
 ```
 
-V některých případech je správná odpověď rozdělením metody iterátoru do dvou různých metod. Ten, který `return`používá, a druhý, který `yield return`používá. Vezměte v úvahu situaci, kdy byste mohli chtít vrátit prázdnou kolekci, nebo prvních 5 lichých čísel na základě argumentu Boolean. Můžete napsat tyto dvě metody:
+V některých případech je správná odpověď rozdělením metody iterátoru do dvou různých metod. Ten, který používá `return` , a druhý, který používá `yield return` . Vezměte v úvahu situaci, kdy byste mohli chtít vrátit prázdnou kolekci, nebo prvních 5 lichých čísel na základě argumentu Boolean. Můžete napsat tyto dvě metody:
 
 ```csharp
 public IEnumerable<int> GetSingleDigitOddNumbers(bool getCollection)
@@ -165,11 +165,11 @@ private IEnumerable<int> IteratorMethod()
 }
 ```
 
-Podívejte se na výše uvedené metody. První používá příkaz standardní `return` k vrácení prázdné kolekce nebo iterátoru vytvořeného druhou metodou. Druhá metoda používá `yield return` příkaz k vytvoření požadované sekvence.
+Podívejte se na výše uvedené metody. První používá `return` příkaz standardní k vrácení prázdné kolekce nebo iterátoru vytvořeného druhou metodou. Druhá metoda používá `yield return` příkaz k vytvoření požadované sekvence.
 
 ## <a name="deeper-dive-into-foreach"></a>Hlubší podrobně`foreach`
 
-Příkaz `foreach` se rozšíří na standardní idiom, který používá rozhraní `IEnumerable<T>` a `IEnumerator<T>` k iteraci napříč všemi prvky kolekce. Také minimalizuje chyby, které vývojáři vytvářejí při nesprávné správě prostředků.
+`foreach`Příkaz se rozšíří na standardní idiom, který používá `IEnumerable<T>` `IEnumerator<T>` rozhraní a k iteraci napříč všemi prvky kolekce. Také minimalizuje chyby, které vývojáři vytvářejí při nesprávné správě prostředků.
 
 Kompilátor transformuje `foreach` smyčku zobrazenou v prvním příkladu na něco podobného této konstrukci:
 
@@ -195,7 +195,7 @@ while (enumerator.MoveNext())
 }
 ```
 
-Tato změna byla změněna, protože předchozí chování může vést k nejemnému a obtížnému Diagnostikování chyb týkajících se výrazů lambda. Další informace o výrazech lambda naleznete v tématu [lambda Expressions](./programming-guide/statements-expressions-operators/lambda-expressions.md).
+Tato změna byla změněna, protože předchozí chování může vést k nejemnému a obtížnému Diagnostikování chyb týkajících se výrazů lambda. Další informace o výrazech lambda naleznete v tématu [lambda Expressions](language-reference/operators/lambda-expressions.md).
 
 Přesný kód generovaný kompilátorem je poněkud složitější a zpracovává situace, kde objekt vrácený `GetEnumerator()` implementací `IDisposable` rozhraní. Úplné rozšíření generuje podobný kód jako tento:
 
@@ -216,7 +216,7 @@ Přesný kód generovaný kompilátorem je poněkud složitější a zpracováv�
 }
 ```
 
-Způsob, jakým je uvolněn enumerátor, závisí na charakteristikách typu `enumerator`. V obecném případě je `finally` klauzule rozšířena na:
+Způsob, jakým je uvolněn enumerátor, závisí na charakteristikách typu `enumerator` . V obecném případě je `finally` klauzule rozšířena na:
 
 ```csharp
 finally
@@ -225,7 +225,7 @@ finally
 }
 ```
 
-Nicméně `enumerator` Pokud typ je zapečetěný typ a neexistuje žádný implicitní převod z `enumerator` typu na `IDisposable`, `finally` klauzule se rozšíří do prázdného bloku:
+Nicméně pokud typ `enumerator` je zapečetěný typ a neexistuje žádný implicitní převod z typu `enumerator` na `IDisposable` , `finally` klauzule se rozšíří do prázdného bloku:
 
 ```csharp
 finally
@@ -233,7 +233,7 @@ finally
 }
 ```
 
-Pokud existuje implicitní převod z `enumerator` typu na `IDisposable`, a `enumerator` je typ hodnoty, která není null, `finally` klauzule se rozšíří na:
+Pokud existuje implicitní převod z typu `enumerator` na `IDisposable` , a `enumerator` je typ hodnoty, která není null, `finally` klauzule se rozšíří na:
 
 ```csharp
 finally
@@ -242,4 +242,4 @@ finally
 }
 ```
 
-Naštěstí, nemusíte si pamatovat všechny tyto podrobnosti. `foreach` Příkaz zpracuje všechny tyto drobné odlišnosti za vás. Kompilátor vygeneruje správný kód pro některý z těchto konstrukcí.
+Naštěstí, nemusíte si pamatovat všechny tyto podrobnosti. `foreach`Příkaz zpracuje všechny tyto drobné odlišnosti za vás. Kompilátor vygeneruje správný kód pro některý z těchto konstrukcí.

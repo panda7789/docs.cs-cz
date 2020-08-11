@@ -1,29 +1,29 @@
 ---
 title: Vytvoření .NET Standard knihovny tříd pomocí sady Visual Studio
 description: Naučte se vytvářet .NET Standard knihovny tříd pomocí sady Visual Studio.
-ms.date: 06/08/2020
+ms.date: 08/07/2020
 dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: 69259b1d47a8e30945c578db10c6d697c81fa261
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: 07cc1bd7b9892f7cbee7a82998093718cd311b92
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87164401"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88062662"
 ---
 # <a name="tutorial-create-a-net-standard-library-using-visual-studio"></a>Kurz: Vytvoření knihovny .NET Standard pomocí sady Visual Studio
 
-V tomto kurzu vytvoříte jednoduchou knihovnu nástrojů, která obsahuje jedinou metodu pro zpracování řetězců. Implementujete ho jako [metodu rozšíření](../../csharp/programming-guide/classes-and-structs/extension-methods.md) , takže ji můžete zavolat, jako kdyby byla členem <xref:System.String> třídy.
+V tomto kurzu vytvoříte jednoduchou knihovnu tříd, která obsahuje jedinou metodu zpracování řetězce.
 
-*Knihovna tříd* definuje typy a metody, které jsou volány aplikací. Knihovna tříd, která cílí na .NET Standard 2,0, umožňuje, aby byla vaše knihovna volána jakoukoli implementací .NET, která podporuje tuto verzi .NET Standard. Po dokončení knihovny tříd ji můžete distribuovat jako součást třetí strany nebo jako součást balíčku s jednou nebo více aplikacemi.
+*Knihovna tříd* definuje typy a metody, které jsou volány aplikací. Knihovna tříd, která cílí na .NET Standard 2,0, umožňuje, aby byla vaše knihovna volána jakoukoli implementací .NET, která podporuje tuto verzi .NET Standard.
+
+Po dokončení knihovny tříd ji můžete distribuovat jako balíček NuGet nebo jako součást, která je součástí aplikace, která ji používá.
 
 ## <a name="prerequisites"></a>Požadavky
 
 - [Visual Studio 2019 verze 16,6 nebo novější](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) s nainstalovanou úlohou **vývoje .NET Core pro různé platformy** . Sada .NET Core 3,1 SDK se automaticky nainstaluje při výběru této úlohy.
-
-  Další informace najdete v části [instalace pomocí sady Visual Studio](../install/sdk.md?pivots=os-windows#install-with-visual-studio) v článku [instalace .NET Core SDK](../install/sdk.md?pivots=os-windows) .
 
 ## <a name="create-a-solution"></a>Vytvoření řešení
 
@@ -67,6 +67,8 @@ Vytvoření prázdného řešení:
    :::code language="vb" source="./snippets/library-with-visual-studio/vb/StringLibrary/Class1.vb":::
 
    Knihovna tříd, `UtilityLibraries.StringLibrary` , obsahuje metodu s názvem `StartsWithUpper` . Tato metoda vrací <xref:System.Boolean> hodnotu, která označuje, zda aktuální instance řetězce začíná velkým znakem. Standard Unicode rozlišuje velká písmena od malých písmen. <xref:System.Char.IsUpper(System.Char)?displayProperty=nameWithType>Metoda vrátí, `true` zda je znak velkými písmeny.
+
+   `StartsWithUpper`je implementován jako [metoda rozšíření](../../csharp/programming-guide/classes-and-structs/extension-methods.md) , takže ji můžete volat, jako kdyby byla členem <xref:System.String> třídy.
 
 1. Na panelu nabídek vyberte **sestavit**  >  **sestavení řešení** a ověřte, že se projekt zkompiluje bez chyby.
 
@@ -126,7 +128,17 @@ Zpočátku má nový projekt konzolové aplikace přístup ke knihovně tříd. 
 
 ## <a name="next-steps"></a>Další kroky
 
-V tomto kurzu jste vytvořili řešení, přidali projekt knihovny a Přidali jste projekt konzolové aplikace, který používá knihovnu. V dalším kurzu přidáte do řešení projekt testování částí.
+V tomto kurzu jste vytvořili knihovnu tříd. V dalším kurzu se dozvíte, jak jednotkové testování knihovny tříd.
 
 > [!div class="nextstepaction"]
-> [Testování knihovny .NET Standard pomocí .NET Core pomocí sady Visual Studio](testing-library-with-visual-studio.md)
+> [Testování částí .NET Standard knihovny pomocí sady Visual Studio](testing-library-with-visual-studio.md)
+
+Nebo můžete přeskočit automatizované testování částí a zjistit, jak knihovnu nasdílet vytvořením balíčku NuGet:
+
+> [!div class="nextstepaction"]
+> [Vytvoření a publikování balíčku pomocí sady Visual Studio](/nuget/quickstart/create-and-publish-a-package-using-visual-studio)
+
+Nebo se dozvíte, jak publikovat konzolovou aplikaci. Pokud publikujete konzolovou aplikaci z řešení, které jste vytvořili v tomto kurzu, do knihovny tříd přejdete jako soubor *. dll* .
+
+> [!div class="nextstepaction"]
+> [Publikování konzolové aplikace .NET Core pomocí sady Visual Studio](publishing-with-visual-studio.md)

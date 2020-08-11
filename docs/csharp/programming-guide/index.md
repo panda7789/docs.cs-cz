@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Visual C#, programming concepts
 - C# language, concepts
 ms.assetid: ac0f23a2-6bf3-4077-be99-538ae5fd3bc5
-ms.openlocfilehash: e2127b91efb5a77497ce22e0f2934fab98f015af
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: 6db16a86e949fb50254c301f5e5ac0904a6072a4
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86473874"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063596"
 ---
 # <a name="c-programming-guide"></a>Průvodce programováním v C#
 
@@ -37,7 +37,7 @@ V této části najdete podrobné informace o funkcích a funkcích jazyka C#, k
 
  [Typy](./types/index.md)  
 
- [Třídy a struktury](./classes-and-structs/index.md)  
+ [Třídy a struktury](./classes-and-structs/index.md)  
   
  [Rozhraní](./interfaces/index.md)  
 
@@ -59,8 +59,6 @@ V této části najdete podrobné informace o funkcích a funkcích jazyka C#, k
   
  [Výrazy dotazů LINQ](../linq/index.md)  
   
- [Výrazy lambda](./statements-expressions-operators/lambda-expressions.md)  
-  
  [Jmenné prostory](./namespaces/index.md)  
   
  [Nezabezpečený kód a ukazatele](./unsafe-code-pointers/index.md)  
@@ -77,7 +75,7 @@ V této části najdete podrobné informace o funkcích a funkcích jazyka C#, k
   
  [Kolekce](./concepts/collections.md)  
   
- [Výjimky a zpracování výjimek](./exceptions/index.md)  
+ [Výjimky a jejich zpracování](./exceptions/index.md)  
   
  [Systém souborů a registr (Průvodce programováním v C#)](./file-system/index.md)  
   

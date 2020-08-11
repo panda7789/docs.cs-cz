@@ -290,6 +290,8 @@ items:
         href: diagnostics/index.md
       - name: Spravované ladicí programy
         href: diagnostics/managed-debuggers.md
+      - name: EventCounters
+        href: diagnostics/event-counters.md
       - name: Protokolování a trasování
         href: diagnostics/logging-tracing.md
       - name: Globální nástroje .NET Core CLI
@@ -302,6 +304,8 @@ items:
             href: diagnostics/dotnet-trace.md
       - name: Kurzy diagnostiky .NET Core
         items:
+          - name: Získání metrik výkonu pomocí EventCounters
+            href: diagnostics/event-counter-perf.md
           - name: Ladění nevrácené paměti
             href: diagnostics/debug-memory-leak.md
           - name: Ladění vysokého využití procesoru

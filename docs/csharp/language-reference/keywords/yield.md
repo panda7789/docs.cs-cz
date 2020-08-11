@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - yield keyword [C#]
 ms.assetid: 1089194f-9e53-46a2-8642-53ccbe9d414d
-ms.openlocfilehash: d3fe4cf92ca17457bd541f092f5d146ba6c1c095
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: ec1058d1590d64fa8d8786b3118ecf9733c55d6f
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82794413"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063143"
 ---
 # <a name="yield-c-reference"></a>yield (Referenční dokumentace jazyka C#)
 
@@ -47,7 +47,7 @@ Deklarace iterátoru musí splňovat následující požadavky:
 
 Nemůžete zahrnout `yield return` `yield break` příkaz ani do:
 
-- [Lambda výrazy](../../programming-guide/statements-expressions-operators/lambda-expressions.md) a [anonymní metody](../operators/delegate-operator.md).
+- [Lambda výrazy](../operators/lambda-expressions.md) a [anonymní metody](../operators/delegate-operator.md).
 
 - Metody, které obsahují nebezpečné bloky. Další informace najdete v tématu [unsafe](unsafe.md).
 

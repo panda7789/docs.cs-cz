@@ -7,12 +7,12 @@ helpviewer_keywords:
 - lambda operator [C#]
 - => operator [C#]
 - lambda expressions [C#], => operator
-ms.openlocfilehash: b72b058c1709e7a643a70233cc3289d5d9165ca4
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: 30e1a3546f83a0a1ba5b1363238878868e94ab93
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87916801"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063130"
 ---
 # <a name="-operator-c-reference"></a>=> – operátor (Referenční dokumentace jazyka C#)
 
@@ -20,7 +20,7 @@ ms.locfileid: "87916801"
 
 ## <a name="lambda-operator"></a>Lambda – operátor
 
-Ve [výrazech lambda](../../programming-guide/statements-expressions-operators/lambda-expressions.md)operátor lambda `=>` odděluje vstupní parametry na levé straně těla výrazu lambda na pravé straně.
+Ve [výrazech lambda](lambda-expressions.md)operátor lambda `=>` odděluje vstupní parametry na levé straně těla výrazu lambda na pravé straně.
 
 Následující příklad používá funkci [LINQ](../../programming-guide/concepts/linq/index.md) s syntaxí Method k předvedení použití výrazů lambda:
 
@@ -34,7 +34,7 @@ Následující příklad ukazuje, jak definovat výraz lambda bez vstupních par
 
 [!code-csharp-interactive[without input variables](snippets/shared/LambdaOperator.cs#WithoutInput)]
 
-Další informace naleznete v tématu [lambda výrazy](../../programming-guide/statements-expressions-operators/lambda-expressions.md).
+Další informace naleznete v tématu [lambda výrazy](lambda-expressions.md).
 
 ## <a name="expression-body-definition"></a>Definice těla výrazu
 

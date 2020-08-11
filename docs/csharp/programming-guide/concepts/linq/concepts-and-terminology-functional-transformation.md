@@ -3,12 +3,12 @@ title: Koncepty a terminologie (transformace funkcí) (C#)
 description: Funkce funkčního programování usnadňují transformaci XML. Přečtěte si o konceptech a terminologii čistě funkčních transformací v jazyce C#.
 ms.date: 07/20/2015
 ms.assetid: 03defb3a-7e17-4ab1-8efa-4dd66621e860
-ms.openlocfilehash: ee972b376f0d0898b7681049b9641b43780ed353
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: ca05a914f6156730e773d1effebfc72626b16507
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87103982"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063273"
 ---
 # <a name="concepts-and-terminology-functional-transformation-c"></a>Koncepty a terminologie (transformace funkcí) (C#)
 
@@ -55,7 +55,7 @@ Další informace najdete v tématu [Přehled standardních operátorů dotazu (
 výraz lambda \
 V podstatě vložená anonymní funkce, kterou lze použít všude, kde se očekává typ delegáta. Toto je zjednodušená definice výrazů lambda, ale je vhodná pro účely tohoto kurzu.
 
-Další informace o naleznete v tématu [lambda Expressions](../../statements-expressions-operators/lambda-expressions.md).
+Další informace o naleznete v tématu [lambda Expressions](../../../language-reference/operators/lambda-expressions.md).
 
 kolekce
 Strukturovaná sada dat, obvykle s jednotným typem. Aby bylo možné kompatibilitu s LINQ, kolekce musí implementovat <xref:System.Collections.IEnumerable> rozhraní nebo <xref:System.Linq.IQueryable> rozhraní (nebo jeden z jeho obecných protějšků <xref:System.Collections.Generic.IEnumerator%601> nebo <xref:System.Linq.IQueryable%601> ).

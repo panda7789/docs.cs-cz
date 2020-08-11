@@ -1,28 +1,29 @@
 ---
 title: global.json – přehled
-description: Naučte se používat soubor Global. JSON k nastavení verze .NET Core SDK při spouštění příkazů .NET Core CLI.
+description: Naučte se používat global.jsv souboru k nastavení verze .NET Core SDK při spouštění .NET Core CLIch příkazů.
+ms.topic: how-to
 ms.date: 05/01/2020
 ms.custom: updateeachrelease
-ms.openlocfilehash: 5078bc03056c23bccf02e027441de72c69072c7d
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: a9558090b1ef48f376334fbc826f6265a58908da
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202034"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88062792"
 ---
 # <a name="globaljson-overview"></a>global.json – přehled
 
 **Tento článek se týká:** ✔️ .net Core 2,0 SDK a novějších verzí
 
-Soubor *Global. JSON* umožňuje definovat, která verze .NET Core SDK se používá při spuštění příkazů .NET Core CLI. Výběr .NET Core SDK je nezávislý na určení modulu runtime, který cílí na projekt. Verze .NET Core SDK označuje, které verze .NET Core CLI se používají.
+*global.jsv* souboru umožňuje definovat, která verze .NET Core SDK se používá při spuštění .NET Core CLI příkazů. Výběr .NET Core SDK je nezávislý na určení modulu runtime, který cílí na projekt. Verze .NET Core SDK označuje, které verze .NET Core CLI se používají.
 
-Obecně platí, že chcete použít nejnovější verzi nástrojů SDK, takže není potřeba žádný soubor *Global. JSON* . V některých pokročilých scénářích můžete chtít řídit verzi nástrojů sady SDK a tento článek vysvětluje, jak to provést.
+Obecně platí, že chcete použít nejnovější verzi nástrojů SDK, takže není potřeba žádné *global.jsv* souboru. V některých pokročilých scénářích můžete chtít řídit verzi nástrojů sady SDK a tento článek vysvětluje, jak to provést.
 
 Další informace o určení modulu runtime místo toho naleznete v tématu [cílová rozhraní](../../standard/frameworks.md).
 
-.NET Core SDK vyhledá soubor *Global. JSON* v aktuálním pracovním adresáři (to není nutně stejný jako adresář projektu) nebo v jednom z jeho nadřazených adresářů.
+.NET Core SDK vyhledá *global.jsv* souboru v aktuálním pracovním adresáři (což není nutně stejné jako adresář projektu) nebo jeden z jeho nadřazených adresářů.
 
-## <a name="globaljson-schema"></a>Global. JSON – schéma
+## <a name="globaljson-schema"></a>global.jsve schématu
 
 ### <a name="sdk"></a>SDK
 
@@ -147,13 +148,13 @@ Následující příklad ukazuje, jak použít nejvyšší verzi opravy nainstal
 }
 ```
 
-## <a name="globaljson-and-the-net-core-cli"></a>Global. JSON a .NET Core CLI
+## <a name="globaljson-and-the-net-core-cli"></a>global.jsa .NET Core CLI
 
-Je užitečné zjistit, které verze sady SDK jsou nainstalovány na vašem počítači, aby je bylo možné nastavit v *globálním souboru. JSON* . Další informace o tom, jak to provést, najdete v tématu [Jak ověřit, že je rozhraní .NET Core již nainstalováno](../install/how-to-detect-installed-versions.md#check-sdk-versions).
+Je užitečné zjistit, které verze SDK jsou nainstalovány na vašem počítači, abyste je nastavili v *global.jsv* souboru. Další informace o tom, jak to provést, najdete v tématu [Jak ověřit, že je rozhraní .NET Core již nainstalováno](../install/how-to-detect-installed-versions.md#check-sdk-versions).
 
 Pokud chcete na svém počítači nainstalovat další .NET Core SDK verze, navštivte stránku [Stáhnout .NET Core](https://dotnet.microsoft.com/download/dotnet-core) .
 
-Nový soubor *Global. JSON* můžete v aktuálním adresáři vytvořit spuštěním příkazu [dotnet New](dotnet-new.md) , podobně jako v následujícím příkladu:
+Můžete vytvořit nový *global.js* v souboru v aktuálním adresáři spuštěním příkazu [dotnet New](dotnet-new.md) , podobně jako v následujícím příkladu:
 
 ```dotnetcli
 dotnet new globaljson --sdk-version 3.0.100
@@ -168,11 +169,11 @@ dotnet new globaljson --sdk-version 3.0.100
 
 Počínaje rozhraním .NET Core 3,0 se při určování používané verze sady SDK použijí následující pravidla:
 
-- Pokud není nalezen žádný soubor *Global. JSON* , nebo soubor *Global. JSON* neurčuje verzi sady SDK ani `allowPrerelease` hodnotu, použije se nejvyšší nainstalovaná verze sady SDK (ekvivalentní k `rollForward` nastavení `latestMajor` ). Informace o tom, zda jsou verze předprodejních sad zvažovány, závisí na způsobu `dotnet` jejich vyvolání.
+- Pokud se *v* souboru nenajde žádnáglobal.jsnebo pokud *global.js* neurčí verzi sady SDK ani `allowPrerelease` hodnotu, použije se nejvyšší nainstalovaná verze sady SDK (ekvivalent nastavení `rollForward` `latestMajor` ). Informace o tom, zda jsou verze předprodejních sad zvažovány, závisí na způsobu `dotnet` jejich vyvolání.
   - Pokud nejste **v aplikaci** Visual Studio, předprodejní verze se považují za.
   - Pokud jste v aplikaci Visual Studio, použije se požadovaný stav předprodejní verze. To znamená, že pokud používáte verzi Preview sady Visual Studio nebo jste nastavili verze Preview pro **použití .NET Core SDK** (v části **nástroje**  >  **Možnosti**  >  **prostředí**  >  **verze Preview**), jsou předprodejní verze zváženy. v opačném případě jsou zváženy pouze verze Release.
-- Pokud je nalezen soubor *Global. JSON* , který neurčuje verzi sady SDK, ale Určuje `allowPrerelease` hodnotu, použije se nejvyšší nainstalovaná verze sady SDK (ekvivalent nastavení `rollForward` na `latestMajor` ). Bez ohledu na to, zda může být verze sady SDK nebo předběžná verze nejnovější, závisí na hodnotě `allowPrerelease` . `true`označuje, že předprodejní verze jsou zváženy; `false`indikuje, že se považují jenom verze Release.
-- Pokud je nalezen soubor *Global. JSON* a určuje verzi sady SDK:
+- Pokud je nalezen *global.jsv* souboru, který neurčuje verzi sady SDK, ale určí `allowPrerelease` hodnotu, použije se nejvyšší nainstalovaná verze sady SDK (ekvivalent nastavení `rollForward` `latestMajor` ). Bez ohledu na to, zda může být verze sady SDK nebo předběžná verze nejnovější, závisí na hodnotě `allowPrerelease` . `true`označuje, že předprodejní verze jsou zváženy; `false`indikuje, že se považují jenom verze Release.
+- Pokud je nalezen *global.jspro* soubor a určuje verzi sady SDK:
 
   - Pokud `rollFoward` není nastavená žádná hodnota, použije se `latestPatch` jako výchozí `rollForward` zásada. V opačném případě Ověřte všechny hodnoty a jejich chování v části [dopředné obnovení](#rollforward) .
   - Bez ohledu na to, jestli jsou předprodejní verze zvážené a jaké je výchozí chování, když není `allowPrerelease` nastavené, je popsané v části [allowPrerelease](#allowprerelease) .
@@ -181,8 +182,8 @@ Počínaje rozhraním .NET Core 3,0 se při určování používané verze sady 
 
 V sadě .NET Core 2. x SDK se při určování používané verze sady SDK použijí následující pravidla:
 
-- Pokud nebyl nalezen soubor *Global. JSON* nebo soubor *Global. JSON* neurčuje verzi sady SDK, bude použita nejnovější nainstalovaná verze sady SDK. Nejnovější verze sady SDK může být verze nebo předběžná verze – nejvyšší číslo verze služby WINS.
-- Pokud *Global. JSON* určí verzi sady SDK:
+- Pokud se *v* souboru nenajdeglobal.jsnebo *global.js* neurčí verzi sady SDK, použije se nejnovější nainstalovaná verze sady SDK. Nejnovější verze sady SDK může být verze nebo předběžná verze – nejvyšší číslo verze služby WINS.
+- Pokud *global.json* , zadejte verzi sady SDK:
   - Pokud je v počítači nalezena zadaná verze sady SDK, je použita tato přesná verze.
   - Pokud se zadaná verze sady SDK v tomto počítači nenajde, použije se nejnovější nainstalovaná **verze opravy** SDK této verze. Nejnovější nainstalovaná **verze opravy** sady SDK může být buď verze, nebo předprodejní verze – nejvyšší číslo verze služby WINS. V .NET Core 2,1 a novějších **verzích opravy** nižší, než je zadaná **verze opravy** , se v výběru sady SDK ignorují.
   - Pokud není nalezena zadaná verze sady SDK a příslušná **verze opravy** sady SDK, je vyvolána chyba.
@@ -195,7 +196,7 @@ Verze sady SDK se skládá z následujících částí:
 
 **Verze opravy** je definována posledními dvěma číslicemi ( `yz` ) v poslední části čísla ( `xyz` ) pro sadu SDK verze 2.1.100 a vyšší. Pokud například zadáte `2.1.300` jako verzi sady SDK, výběr sady SDK vyhledá, `2.1.399` ale `2.1.400` nepovažuje se za verzi opravy pro `2.1.300` .
 
-.NET Core SDK verze `2.1.100` prostřednictvím `2.1.201` byly vydány během přechodu mezi schématy čísel verzí a nesprávně nezpracovávají `xyz` zápis. Důrazně doporučujeme, pokud zadáte tyto verze v souboru *Global. JSON* , abyste zajistili, že zadané verze jsou na cílových počítačích.
+.NET Core SDK verze `2.1.100` prostřednictvím `2.1.201` byly vydány během přechodu mezi schématy čísel verzí a nesprávně nezpracovávají `xyz` zápis. Důrazně doporučujeme, pokud zadáte tyto verze v souboru *global.json* , abyste zajistili, že zadané verze jsou na cílových počítačích.
 
 ---
 
@@ -203,15 +204,15 @@ Verze sady SDK se skládá z následujících částí:
 
 * Následující upozornění indikuje, že projekt byl zkompilován pomocí předprodejní verze .NET Core SDK:
 
-  > Pracujete s verzí Preview .NET Core SDK. Verzi sady SDK můžete definovat prostřednictvím globálního souboru. JSON v aktuálním projektu. Další informace najdete na adrese <https://go.microsoft.com/fwlink/?linkid=869452> .
+  > Pracujete s verzí Preview .NET Core SDK. Verzi sady SDK můžete definovat pomocí global.jsv souboru v aktuálním projektu. Další informace najdete na adrese <https://go.microsoft.com/fwlink/?linkid=869452> .
 
-  Verze .NET Core SDK mají historii a závazek vysoké kvality. Pokud ale nechcete použít předběžnou verzi, Projděte si různé strategie, které můžete použít se sadou .NET Core 3,0 SDK nebo novější verzí v části [allowPrerelease](#allowprerelease) . Pro počítače, které nikdy nemají nainstalovanou sadu .NET Core 3,0 nebo novější modul runtime nebo sadu SDK, je třeba vytvořit soubor *Global. JSON* a zadat přesnou verzi, kterou chcete použít.
+  Verze .NET Core SDK mají historii a závazek vysoké kvality. Pokud ale nechcete použít předběžnou verzi, Projděte si různé strategie, které můžete použít se sadou .NET Core 3,0 SDK nebo novější verzí v části [allowPrerelease](#allowprerelease) . Pro počítače, které nikdy nemají nainstalovanou sadu .NET Core 3,0 nebo novější modul runtime nebo sadu SDK, je třeba vytvořit *global.jsv* souboru a zadat přesnou verzi, kterou chcete použít.
 
 * Následující upozornění indikuje, že projekt cílí na EF Core 1,0 nebo 1,1, což není kompatibilní s .NET Core 2,1 SDK a novějšími verzemi:
 
   > Spouštěcí projekt {startupProject} cílí na rozhraní Framework. NETCoreApp verze {targetFrameworkVersion}. Tato verze nástrojů příkazového řádku Entity Framework Core .NET podporuje pouze verzi 2,0 nebo vyšší. Informace o použití starších verzí nástrojů naleznete v tématu <https://go.microsoft.com/fwlink/?linkid=871254> .
 
-  Počínaje sadou .NET Core 2,1 SDK (verze 2.1.300) se `dotnet ef` příkaz vloží do sady SDK. Pro zkompilování projektu nainstalujte sadu .NET Core 2,0 SDK (verze 2.1.201) nebo starší na svém počítači a definujte požadovanou verzi sady SDK pomocí souboru *Global. JSON* . Další informace o příkazu naleznete `dotnet ef` v tématu [EF Core nástroje příkazového řádku .NET](/ef/core/miscellaneous/cli/dotnet).
+  Počínaje sadou .NET Core 2,1 SDK (verze 2.1.300) se `dotnet ef` příkaz vloží do sady SDK. Pro zkompilování projektu nainstalujte sadu .NET Core 2,0 SDK (verze 2.1.201) nebo starší na svém počítači a definujte požadovanou verzi sady SDK pomocí *global.jsv* souboru. Další informace o příkazu naleznete `dotnet ef` v tématu [EF Core nástroje příkazového řádku .NET](/ef/core/miscellaneous/cli/dotnet).
 
 ## <a name="see-also"></a>Viz také
 

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - extension methods [C#]
 - methods [C#], extension
 ms.assetid: 175ce3ff-9bbf-4e64-8421-faeb81a0bb51
-ms.openlocfilehash: e57447c89749451862bbb80047ed74135a0eb752
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: 116087ac1aab57f2869b05f436801c7861c56eca
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86474810"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063702"
 ---
 # <a name="extension-methods-c-programming-guide"></a>Metody rozšíření (Průvodce programováním v C#)
 
@@ -22,7 +22,7 @@ Nejběžnější metody rozšíření jsou operátory dotazů LINQ Standard, kte
 
 ### <a name="orderby-example"></a>Příklad OrderBy
 
-Následující příklad ukazuje, jak zavolat standardní metodu operátoru dotazu `OrderBy` na pole celých čísel. Výraz v závorkách je výraz lambda. Mnoho standardních operátorů dotazů přijímá výrazy lambda jako parametry, ale to není vyžadováno pro metody rozšíření. Další informace naleznete v tématu [lambda výrazy](../statements-expressions-operators/lambda-expressions.md).
+Následující příklad ukazuje, jak zavolat standardní metodu operátoru dotazu `OrderBy` na pole celých čísel. Výraz v závorkách je výraz lambda. Mnoho standardních operátorů dotazů přijímá výrazy lambda jako parametry, ale to není vyžadováno pro metody rozšíření. Další informace naleznete v tématu [lambda výrazy](../../language-reference/operators/lambda-expressions.md).
 
 [!code-csharp[csProgGuideExtensionMethods#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideExtensionMethods/cs/extensionmethods.cs#3)]
 
@@ -121,7 +121,7 @@ Chcete-li zamezit zvýšení čísla verze sestavení, neměli byste pro impleme
 
 - [Průvodce programováním v C#](../index.md)
 - [Ukázky paralelního programování (zahrnuje mnoho ukázkových metod rozšíření)](/samples/browse/?products=dotnet-core%2Cdotnet-standard&term=parallel)
-- [Výrazy lambda](../statements-expressions-operators/lambda-expressions.md)
+- [Výrazy lambda](../../language-reference/operators/lambda-expressions.md)
 - [Přehled standardních operátorů dotazu](../concepts/linq/standard-query-operators-overview.md)
 - [Pravidla převodu pro parametry instance a jejich dopad](https://docs.microsoft.com/archive/blogs/sreekarc/conversion-rules-for-instance-parameters-and-their-impact)
 - [Interoperabilita metod rozšíření mezi jazyky](https://docs.microsoft.com/archive/blogs/sreekarc/extension-methods-interoperability-between-languages)

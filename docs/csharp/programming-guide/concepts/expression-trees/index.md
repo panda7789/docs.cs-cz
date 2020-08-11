@@ -3,12 +3,12 @@ title: Stromy výrazů (C#)
 description: Přečtěte si o stromech výrazů. Podívejte se, jak zkompilovat a spustit kód reprezentovaný těmito datovými strukturami, kde každý uzel je výraz.
 ms.date: 07/20/2015
 ms.assetid: 7d0ac21a-6d90-4e2e-8903-528cb78615b7
-ms.openlocfilehash: 2fa8577dd945650edebf84459de10c0c3bd04225
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: a5c84673f0b45b92be18b955a6d1e7268bb73c26
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87105574"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063312"
 ---
 # <a name="expression-trees-c"></a>Stromy výrazů (C#)
 Stromy výrazů reprezentují kód v datové struktuře podobné stromu, kde každý uzel je výraz, například volání metody nebo binární operace, jako je například `x < y` .  
@@ -22,7 +22,7 @@ Stromy výrazů reprezentují kód v datové struktuře podobné stromu, kde ka�
 ## <a name="creating-expression-trees-from-lambda-expressions"></a>Vytváření stromů výrazů ze výrazů lambda  
  Když je výraz lambda přiřazen proměnné typu <xref:System.Linq.Expressions.Expression%601> , kompilátor generuje kód pro sestavení stromu výrazu, který reprezentuje lambda výraz.  
   
- Kompilátor jazyka C# může generovat stromy výrazů pouze z výrazů lambda výrazů (nebo jednoduchých výrazů lambda). Nelze analyzovat výrazy lambda příkazů (nebo víceřádkové výrazy lambda). Další informace o výrazech lambda v jazyce C# naleznete v tématu [lambda Expressions](../../statements-expressions-operators/lambda-expressions.md).  
+ Kompilátor jazyka C# může generovat stromy výrazů pouze z výrazů lambda výrazů (nebo jednoduchých výrazů lambda). Nelze analyzovat výrazy lambda příkazů (nebo víceřádkové výrazy lambda). Další informace o výrazech lambda v jazyce C# naleznete v tématu [lambda Expressions](../../../language-reference/operators/lambda-expressions.md).  
   
  Následující příklady kódu ukazují, jak má kompilátor jazyka C# vytvořit strom výrazu, který představuje výraz lambda `num => num < 5` .  
   
@@ -153,6 +153,6 @@ Console.WriteLine(expr.Compile()(4));
 - <xref:System.Linq.Expressions>
 - [Spuštění stromů výrazů (C#)](./how-to-execute-expression-trees.md)
 - [Postup úpravy stromů výrazů (C#)](./how-to-modify-expression-trees.md)
-- [Výrazy lambda](../../statements-expressions-operators/lambda-expressions.md)
+- [Výrazy lambda](../../../language-reference/operators/lambda-expressions.md)
 - [Přehled dynamického jazykového modulu runtime](../../../../framework/reflection-and-codedom/dynamic-language-runtime-overview.md)
 - [Koncepty programování (C#)](../index.md)

@@ -4,12 +4,12 @@ description: Místní funkce v jazyce C# jsou soukromé metody, které jsou vno�
 ms.date: 06/14/2017
 helpviewer_keywords:
 - local functions [C#]
-ms.openlocfilehash: 9987d6d5ad57c1dceb3a4bffbae22a81c240c794
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 854ec7ab4a4cc637c0a5ad03e0344d2f1f7679d2
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86864524"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063299"
 ---
 # <a name="local-functions-c-programming-guide"></a>Místní funkce (Průvodce programováním v C#)
 
@@ -78,7 +78,7 @@ Stejně jako u metody iterátoru můžeme kód z tohoto příkladu Refaktorovat,
 
 ## <a name="local-functions-vs-lambda-expressions"></a>Lokální funkce vs. výrazy lambda
 
-Na první pohled jsou místní funkce a [výrazy lambda](../statements-expressions-operators/lambda-expressions.md) velmi podobné. V mnoha případech je volba mezi používáním výrazů lambda a místními funkcemi v oblasti stylu a osobní preference. Existují však reálné rozdíly v tom, kde můžete použít jednu nebo druhou, o které byste měli vědět.
+Na první pohled jsou místní funkce a [výrazy lambda](../../language-reference/operators/lambda-expressions.md) velmi podobné. V mnoha případech je volba mezi používáním výrazů lambda a místními funkcemi v oblasti stylu a osobní preference. Existují však reálné rozdíly v tom, kde můžete použít jednu nebo druhou, o které byste měli vědět.
 
 Pojďme se podívat na rozdíly mezi implementací algoritmu faktoriál lokální funkce a výrazu lambda. První verze pomocí místní funkce:
 

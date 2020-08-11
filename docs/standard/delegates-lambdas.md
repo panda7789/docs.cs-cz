@@ -6,12 +6,12 @@ ms.author: wiwagn
 ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: fe2e4b4c-6483-4106-a4b4-a33e2e306591
-ms.openlocfilehash: 184c9f61fd8456b22e8ecb262c131793160b49b0
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 1307599a3832be5f48cd62a7b8c1be7f76a3d4a5
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85244007"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063741"
 ---
 # <a name="delegates-and-lambdas"></a>Delegáty a výrazy lambda
 
@@ -157,6 +157,6 @@ public MainWindow()
 
 ## <a name="further-reading-and-resources"></a>Další materiály a materiály pro čtení
 
-* [Delegáti](../csharp/programming-guide/delegates/index.md)
+* [Delegáty](../csharp/programming-guide/delegates/index.md)
 * [Anonymní funkce](../csharp/programming-guide/statements-expressions-operators/anonymous-functions.md)
-* [Výrazy lambda](../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)
+* [Výrazy lambda](../csharp/language-reference/operators/lambda-expressions.md)
