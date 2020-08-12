@@ -2,12 +2,12 @@
 title: Formátování prostého textu
 description: 'Naučte se používat printf a jiné formátování prostého textu v aplikacích a skriptech F #.'
 ms.date: 07/22/2020
-ms.openlocfilehash: 6b14633e074961757d0f0cd258d1b1667f5fd8ee
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.openlocfilehash: 90a861736dae69dfbc199a19e24f587c42404737
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87854916"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063780"
 ---
 # <a name="plain-text-formatting"></a>Formátování prostého textu
 
@@ -85,6 +85,7 @@ Specifikace formátu pro `printf` formáty jsou řetězce se `%` značkami, kter
 | `%A` | libovolná hodnota  |   Formátování pomocí [strukturovaného formátu prostého textu](plaintext-formatting.md) s výchozím nastavením rozložení |
 | `%a` | libovolná hodnota  |   Vyžaduje dva argumenty: funkce formátování přijímající kontextový parametr a hodnotu a určitou hodnotu pro tisk. |
 | `%t` | libovolná hodnota  |   Vyžaduje jeden argument: funkce formátování přijímá kontextový parametr, který buď výstup, nebo vrátí příslušný text. |
+| `%%` | (žádná)  |   Nevyžaduje žádné argumenty a tiskne znak v podobě jednoduchého procenta:`%` |
 
 Základní celočíselné typy jsou `byte` (), (), (), (), (), (), (), (), (), `System.Byte` `sbyte` `System.SByte` `int16` `System.Int16` `uint16` () `System.UInt16` `int32` `System.Int32` `uint32` `System.UInt32` `int64` `System.Int64` `uint64` `System.UInt64` `nativeint` `System.IntPtr` a `unativeint` ( `System.UIntPtr` ).
 Základní typy s plovoucí desetinnou čárkou jsou `float` ( `System.Double` ) a `float32` ( `System.Single` ).
@@ -324,7 +325,7 @@ Hodnoty funkcí F # jsou vytištěny jako název vnitřně generovaného uzavře
 
 ### <a name="customize-plain-text-formatting-with-structuredformatdisplay"></a>Přizpůsobení formátování prostého textu pomocí`StructuredFormatDisplay`
 
-Při použití `%A` specifikátoru `StructuredFormatDisplay` je respektována přítomnost atributu v deklaracích typů.  Dá se použít k zadání náhradního textu a vlastnosti k zobrazení hodnoty. Příklad:
+Při použití `%A` specifikátoru `StructuredFormatDisplay` je respektována přítomnost atributu v deklaracích typů.  Dá se použít k zadání náhradního textu a vlastnosti k zobrazení hodnoty. Například:
 
 ```fsharp
 [<StructuredFormatDisplay("Counts({Clicks})")>]
