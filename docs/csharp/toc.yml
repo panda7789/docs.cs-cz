@@ -72,24 +72,12 @@
   items:
     - name: Úvod
       href: tour-of-csharp/index.md
-    - name: Struktura programu
-      href: tour-of-csharp/program-structure.md
-    - name: Typy a proměnné
-      href: tour-of-csharp/types-and-variables.md
-    - name: Výrazy
-      href: tour-of-csharp/expressions.md
-    - name: Příkazy
-      href: tour-of-csharp/statements.md
-    - name: Třídy a objekty
-      href: tour-of-csharp/classes-and-objects.md
-    - name: Pole
-      href: tour-of-csharp/arrays.md
-    - name: Rozhraní
-      href: tour-of-csharp/interfaces.md
-    - name: Delegáty
-      href: tour-of-csharp/delegates.md
-    - name: Atributy
-      href: tour-of-csharp/attributes.md
+    - name: Typy
+      href: tour-of-csharp/types.md
+    - name: Stavební bloky programu
+      href: tour-of-csharp/program-building-blocks.md
+    - name: Hlavní jazykové oblasti
+      href: tour-of-csharp/features.md
 - name: Co je nového v jazyce C#
   items:
     - name: C# 8.0
@@ -133,8 +121,6 @@
       href: programming-guide/interfaces/index.md
     - name: Metody
       href: methods.md
-    - name: Lambda – výrazy
-      href: programming-guide/statements-expressions-operators/lambda-expressions.md
     - name: Vlastnosti
       href: properties.md
     - name: Indexery
@@ -882,8 +868,6 @@
           items:
             - name: Přehled
               href: programming-guide/statements-expressions-operators/anonymous-functions.md
-            - name: Výrazy lambda
-              href: programming-guide/statements-expressions-operators/lambda-expressions.md
             - name: "Jak používat výrazy lambda v\_dotazu"
               href: programming-guide/statements-expressions-operators/how-to-use-lambda-expressions-in-a-query.md
         - name: Rovnost a porovnání rovnosti
@@ -1590,6 +1574,9 @@
         - name: Operátory přiřazení
           href: language-reference/operators/assignment-operator.md
           displayName: '=, ref, compound'
+        - name: Výrazy lambda
+          href: language-reference/operators/lambda-expressions.md
+          displayName: anonymous functions
         - name: + a += – operátory
           href: language-reference/operators/addition-operator.md
           displayName: 'string concatenation, delegate combination, event subscription'
