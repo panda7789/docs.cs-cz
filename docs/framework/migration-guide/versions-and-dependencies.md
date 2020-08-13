@@ -6,12 +6,12 @@ ms.date: 01/17/2020
 helpviewer_keywords:
 - versions, .NET Framework
 ms.assetid: f75a72de-e2f2-4a7a-9574-3f278684ea90
-ms.openlocfilehash: df44786dfd0a384ae2498a94d14b029612450fee
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: df7acc788943e9655dbbb03ffaaa88ff22b81ad2
+ms.sourcegitcommit: d337df55f83325918cbbd095eb573400bea49064
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86475473"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88187910"
 ---
 # <a name="net-framework-versions-and-dependencies"></a>.NET Framework verze a závislosti
 
@@ -31,8 +31,9 @@ Modul CLR je identifikován vlastním číslem verze. Číslo verze .NET Framewo
 
 Následující tabulky shrnují .NET Framework historii verzí a korelují jednotlivé verze se sadou Visual Studio, Windows a Windows serverem. Visual Studio podporuje cílení na více verzí, takže nejste omezeni na verzi .NET Framework, která je uvedena v seznamu.
 
-- Ikona značky zaškrtnutí ✔️ označuje verze operačního systému, na kterých je .NET Framework nainstalované, ale musí být povolené [v Ovládacích panelech](../install/dotnet-35-windows-10.md) (pro Windows) nebo prostřednictvím Správce serveru (pro Windows Server).
+- Ikona značky zaškrtnutí ✔️ označuje verze operačního systému, na kterých je .NET Framework ve výchozím nastavení nainstalován.
 - Ikona znaménka plus ➕ označuje verze operačního systému, na kterých .NET Framework instalovat, ale mohou být nainstalovány.
+- Hvězdička **\*** označuje verze operačních systémů, na kterých .NET Framework (zda musí být předinstalována nebo ne) povoleno [v Ovládacích panelech nebo v](../install/dotnet-35-windows-10.md) systému Windows Server prostřednictvím Správce serveru.
 
 | | |
 | - | - |

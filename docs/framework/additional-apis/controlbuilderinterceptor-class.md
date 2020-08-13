@@ -1,5 +1,5 @@
 ---
-title: ControlBuilderInterceptor – Třída
+title: ControlBuilderInterceptor – třída
 ms.date: 08/11/2020
 api_name:
 - System.Web.Compilation.ControlBuilderInterceptor
@@ -9,18 +9,18 @@ api_type:
 - Assembly
 topic_type:
 - apiref
-ms.openlocfilehash: 312d977f832d262b1bebc6638280b67b133babdf
-ms.sourcegitcommit: 70d6a7e4f7187cbfa332f0f8be76566f7828cfcd
+ms.openlocfilehash: 0cd7409deb9cb84783cfa70600999fa4b2a2d2e2
+ms.sourcegitcommit: d337df55f83325918cbbd095eb573400bea49064
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88084393"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88187982"
 ---
-# <a name="controlbuilderinterceptor-class"></a>ControlBuilderInterceptor – Třída
+# <a name="controlbuilderinterceptor-class"></a>ControlBuilderInterceptor – třída
 
 `ControlBuilderInterceptor`Třída umožňuje proces kompilace přizpůsobit nebo řídit.
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>Syntaxe
 
 ```csharp
 internal class ControlBuilderInterceptor
@@ -57,8 +57,9 @@ Zaregistrujte typ zachytávací pomocí `aspnet:20ControlBuilderInterceptor` kl�
          value="Fabrikam.Interceptor, Fabrikam, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2b3831f2f2b744f7" />
   </appSettings>
 </configuration>
+```
 
-To retrieve the assembly-qualified name of a type, use the <xref:System.Type.AssemblyQualifiedName?displayProperty=nameWithType> property, as demonstrated in the following code.
+Chcete-li načíst název kvalifikovaný pro sestavení typu, použijte <xref:System.Type.AssemblyQualifiedName?displayProperty=nameWithType> vlastnost, jak je znázorněno v následujícím kódu.
 
 ```csharp
 string assemblyQualifiedName = typeof(Fabrikam.Interceptor).AssemblyQualifiedName;

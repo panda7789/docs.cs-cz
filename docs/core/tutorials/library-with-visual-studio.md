@@ -5,13 +5,13 @@ ms.date: 08/07/2020
 dev_langs:
 - csharp
 - vb
-ms.custom: contperfq1
-ms.openlocfilehash: 5bd853c62a44d2160bd222d76adcd2dc34d42efc
-ms.sourcegitcommit: 70d6a7e4f7187cbfa332f0f8be76566f7828cfcd
+ms.custom: vs-dotnet,contperfq1
+ms.openlocfilehash: 595e93d8d8d22478c6770ddd4f70a0214653f5b9
+ms.sourcegitcommit: d337df55f83325918cbbd095eb573400bea49064
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88075485"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88187951"
 ---
 # <a name="tutorial-create-a-net-standard-library-using-visual-studio"></a>Kurz: Vytvoření knihovny .NET Standard pomocí sady Visual Studio
 
@@ -61,14 +61,14 @@ Vytvoření prázdného řešení:
 
    Pro každý projekt Visual Basic automaticky vytvoří obor názvů, který odpovídá názvu projektu. V tomto kurzu definujete obor názvů nejvyšší úrovně pomocí [`namespace`](../../visual-basic/language-reference/statements/namespace-statement.md) klíčového slova v souboru kódu.
 
-1. Nahraďte kód v okně Code pro *Class1.cs* nebo *Class1. vb* následujícím kódem a uložte soubor. Pokud jazyk, který chcete použít, není zobrazen, změňte selektor jazyka v horní části stránky.
+1. Nahraďte kód v okně Code pro *Class1.cs*  nebo *Class1. vb* následujícím kódem a uložte soubor. Pokud jazyk, který chcete použít, není zobrazen, změňte selektor jazyka v horní části stránky.
 
    :::code language="csharp" source="./snippets/library-with-visual-studio/csharp/StringLibrary/Class1.cs":::
    :::code language="vb" source="./snippets/library-with-visual-studio/vb/StringLibrary/Class1.vb":::
 
    Knihovna tříd, `UtilityLibraries.StringLibrary` , obsahuje metodu s názvem `StartsWithUpper` . Tato metoda vrací <xref:System.Boolean> hodnotu, která označuje, zda aktuální instance řetězce začíná velkým znakem. Standard Unicode rozlišuje velká písmena od malých písmen. <xref:System.Char.IsUpper(System.Char)?displayProperty=nameWithType>Metoda vrátí, `true` zda je znak velkými písmeny.
 
-   `StartsWithUpper`je implementován jako [metoda rozšíření](../../csharp/programming-guide/classes-and-structs/extension-methods.md) , takže ji můžete volat, jako kdyby byla členem <xref:System.String> třídy.
+   `StartsWithUpper` je implementován jako [metoda rozšíření](../../csharp/programming-guide/classes-and-structs/extension-methods.md) , takže ji můžete volat, jako kdyby byla členem <xref:System.String> třídy.
 
 1. Na panelu nabídek vyberte **sestavit**  >  **sestavení řešení** a ověřte, že se projekt zkompiluje bez chyby.
 

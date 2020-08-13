@@ -4,12 +4,12 @@ titleSuffix: ''
 description: Přečtěte si o sadách SDK projektu .NET Core.
 ms.date: 02/02/2020
 ms.topic: conceptual
-ms.openlocfilehash: 9db62ab7774e3dd71412fa346d78ae0c62a2f81f
-ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
+ms.openlocfilehash: 873c06007307c5892c4828f987486b4dd98dc9ae
+ms.sourcegitcommit: d337df55f83325918cbbd095eb573400bea49064
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85803038"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88187911"
 ---
 # <a name="net-core-project-sdks"></a>Sady SDK pro projekty .NET Core
 
@@ -22,7 +22,7 @@ Pro .NET Core jsou k dispozici následující sady SDK:
 | ID | Popis | úložiště|
 | - | - | - |
 | `Microsoft.NET.Sdk` | .NET Core SDK | <https://github.com/dotnet/sdk> |
-| `Microsoft.NET.Sdk.Web` | [Sada Web SDK](/aspnet/core/razor-pages/web-sdk) pro .NET Core | <https://github.com/aspnet/websdk> |
+| `Microsoft.NET.Sdk.Web` | [Sada Web SDK](/aspnet/core/razor-pages/web-sdk) pro .NET Core | <https://github.com/dotnet/sdk> |
 | `Microsoft.NET.Sdk.Razor` | [Sada SDK](/aspnet/core/razor-pages/sdk) .NET Core Razor |
 | `Microsoft.NET.Sdk.Worker` | Sada SDK služby .NET Core Worker |
 | `Microsoft.NET.Sdk.WindowsDesktop` | WinForms a sada WPF SDK pro .NET Core |
@@ -77,7 +77,7 @@ Odkazování na sadu SDK jedním z těchto způsobů značně zjednodušuje soub
 
 Úplný rozbalený projekt se zobrazí po zobrazení nástroje MSBuild po sadě SDK a jeho cílech pomocí `dotnet msbuild -preprocess` příkazu. Přepínač [předběžného zpracování](/visualstudio/msbuild/msbuild-command-line-reference#preprocess) [`dotnet msbuild`](../tools/dotnet-msbuild.md) příkazu ukazuje, které soubory jsou importovány, jejich zdroje a jejich příspěvky na sestavení bez skutečného sestavení projektu.
 
-Pokud má projekt více cílových rozhraní, zaměřte výsledky příkazu pouze na jednu architekturu zadáním jako vlastnost MSBuild. Příklad:
+Pokud má projekt více cílových rozhraní, zaměřte výsledky příkazu pouze na jednu architekturu zadáním jako vlastnost MSBuild. Například:
 
 `dotnet msbuild -property:TargetFramework=netcoreapp2.0 -preprocess:output.xml`
 
@@ -91,7 +91,7 @@ Následující tabulka ukazuje, které prvky a které [globy](https://en.wikiped
 |-------------------|-------------------------------------------|---------------------------------------------------------------|--------------------------|
 | Sestavení           | \*\*/\*cs (nebo jiné jazykové rozšíření) | \*\*/\*uživatelský  \*\*/\*.\* Souhrn  \*\*/\*. SLN  \*\*/\*. vssscc  | –                      |
 | EmbeddedResource  | \*\*/\*. resx                              | \*\*/\*uživatelský \*\*/\*.\* Souhrn \*\*/\*. SLN \*\*/\*. vssscc     | –                      |
-| Žádná              | \*\*/\*                                   | \*\*/\*uživatelský \*\*/\*.\* Souhrn \*\*/\*. SLN \*\*/\*. vssscc     | \*\*/\*cs \*\*/\*. RESX |
+| Žádné              | \*\*/\*                                   | \*\*/\*uživatelský \*\*/\*.\* Souhrn \*\*/\*. SLN \*\*/\*. vssscc     | \*\*/\*cs \*\*/\*. RESX |
 
 > [!NOTE]
 > `./bin`Složky a `./obj` , které jsou reprezentovány `$(BaseOutputPath)` vlastnostmi a nástroje `$(BaseIntermediateOutputPath)` MSBuild, jsou ve výchozím nastavení vyloučeny z globy. Vyloučení jsou reprezentovány vlastností `$(DefaultItemExcludes)` .
@@ -174,7 +174,7 @@ Chcete-li využívat vlastní cíl v projektu, přidejte `PackageReference` prve
 
 Můžete nakonfigurovat, jak se má používat vlastní cíl. Vzhledem k tomu, že se jedná o cíl MSBuild, může záviset na daném cíli, spustit po jiném cíli nebo být ručně vyvolán pomocí `dotnet msbuild -t:<target-name>` příkazu. Chcete-li však zajistit lepší činnost koncového uživatele, můžete kombinovat nástroje pro jednotlivé projekty a vlastní cíle. V tomto scénáři akceptuje Nástroj pro každý projekt jakékoli parametry, které jsou potřeba, a překládá se na požadované [`dotnet msbuild`](../tools/dotnet-msbuild.md) vyvolání, které provádí cíl. Ukázku tohoto druhu součinnosti si můžete prohlédnout v úložišti [ukázek MVP 2016 Hackathon](https://github.com/dotnet/MVPSummitHackathon2016) v [`dotnet-packer`](https://github.com/dotnet/MVPSummitHackathon2016/tree/master/dotnet-packer) projektu.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Instalace .NET Core](../install/index.yml)
 - [Jak používat sady SDK projektů MSBuild](/visualstudio/msbuild/how-to-use-project-sdk)

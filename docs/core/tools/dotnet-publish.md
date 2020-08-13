@@ -2,12 +2,12 @@
 title: dotnet publish – příkaz
 description: Příkaz dotnet publish publikuje projekt nebo řešení .NET Core do adresáře.
 ms.date: 02/24/2020
-ms.openlocfilehash: 59fdbfa875dad13963ae198acc6a31b537279dfe
-ms.sourcegitcommit: c8c3e1c63a00b7d27f76f5e50ee6469e6bdc8987
+ms.openlocfilehash: 4ff49452e4d941b3e06ad511507b1dc429ab459f
+ms.sourcegitcommit: d337df55f83325918cbbd095eb573400bea49064
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87251176"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88187969"
 ---
 # <a name="dotnet-publish"></a>dotnet publish
 
@@ -15,7 +15,7 @@ ms.locfileid: "87251176"
 
 ## <a name="name"></a>Název
 
-`dotnet publish`-Publikuje aplikaci a její závislosti do složky pro nasazení do hostitelského systému.
+`dotnet publish` -Publikuje aplikaci a její závislosti do složky pro nasazení do hostitelského systému.
 
 ## <a name="synopsis"></a>Stručný obsah
 
@@ -34,7 +34,7 @@ dotnet publish -h|--help
 
 ## <a name="description"></a>Popis
 
-`dotnet publish`zkompiluje aplikaci, přečte prostřednictvím svých závislostí zadaných v souboru projektu a publikuje výslednou sadu souborů do adresáře. Výstup obsahuje následující prostředky:
+`dotnet publish` zkompiluje aplikaci, přečte prostřednictvím svých závislostí zadaných v souboru projektu a publikuje výslednou sadu souborů do adresáře. Výstup obsahuje následující prostředky:
 
 - Kód zprostředkujícího jazyka (IL) v sestavení s příponou *DLL* .
 - *.deps.jsv* souboru, který obsahuje všechny závislosti projektu.
@@ -51,7 +51,9 @@ dotnet publish -h|--help
 
 `dotnet publish`Příkaz volá MSBuild, který vyvolá `Publish` cíl. Všechny parametry předané do `dotnet publish` jsou předány do nástroje MSBuild. `-c`Parametry a se `-o` mapují do `Configuration` vlastností a v `PublishDir` uvedeném pořadí.
 
-`dotnet publish`Příkaz přijímá možnosti nástroje MSBuild, jako je například `-p` pro nastavení vlastností a `-l` k definování protokolovacího nástroje. Můžete například nastavit vlastnost MSBuild pomocí formátu: `-p:<NAME>=<VALUE>` . Vlastnosti související s publikováním můžete také nastavit tak, že odkazujete na soubor *. pubxml* , například:
+`dotnet publish`Příkaz přijímá možnosti nástroje MSBuild, jako je například `-p` pro nastavení vlastností a `-l` k definování protokolovacího nástroje. Můžete například nastavit vlastnost MSBuild pomocí formátu: `-p:<NAME>=<VALUE>` .
+
+Vlastnosti související s publikováním můžete také nastavit tak, že odkazujete na soubor *. pubxml* (k dispozici od verze .net Core 3,1 SDK). Například:
 
 ```dotnetcli
 dotnet publish -p:PublishProfile=FolderProfile
@@ -71,9 +73,9 @@ Další informace naleznete v následujících zdrojích:
 
   Projekt nebo řešení, které se má publikovat
   
-  * `PROJECT`je cesta a název souboru projektu [jazyka c#](csproj.md), f # nebo Visual Basic nebo cesta k adresáři, který obsahuje soubor projektu jazyka C#, f # nebo Visual Basic. Pokud adresář není zadaný, použije se ve výchozím nastavení aktuální adresář.
+  * `PROJECT` je cesta a název souboru projektu [jazyka c#](csproj.md), f # nebo Visual Basic nebo cesta k adresáři, který obsahuje soubor projektu jazyka C#, f # nebo Visual Basic. Pokud adresář není zadaný, použije se ve výchozím nastavení aktuální adresář.
 
-  * `SOLUTION`je cesta a název souboru řešení (*. sln* rozšíření) nebo cesta k adresáři, který obsahuje soubor řešení. Pokud adresář není zadaný, použije se ve výchozím nastavení aktuální adresář. K dispozici od verze .NET Core 3,0 SDK.
+  * `SOLUTION` je cesta a název souboru řešení (*. sln* rozšíření) nebo cesta k adresáři, který obsahuje soubor řešení. Pokud adresář není zadaný, použije se ve výchozím nastavení aktuální adresář. K dispozici od verze .NET Core 3,0 SDK.
 
 ## <a name="options"></a>Možnosti
 
