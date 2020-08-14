@@ -1,18 +1,18 @@
 ---
-ms.openlocfilehash: c5204e8c80cb737338b053c39083c0cc43786447
-ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
+ms.openlocfilehash: 7cb146d19486618a4cee9976abe2220ea4b72790
+ms.sourcegitcommit: d337df55f83325918cbbd095eb573400bea49064
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517322"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88203971"
 ---
 ### <a name="binaryformatter-serialization-methods-are-obsolete-and-prohibited-in-aspnet-apps"></a>Metody serializace BinaryFormatter jsou zastaralé a zakázané v aplikacích ASP.NET
 
-`Serialize`a `Deserialize` metody <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> , a <xref:System.Runtime.Serialization.Formatter> <xref:System.Runtime.Serialization.IFormatter> jsou nyní zastaralé. Kromě toho <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> je serializace ve výchozím nastavení zakázána pro aplikace ASP.NET.
+`Serialize` a `Deserialize` metody <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> , a <xref:System.Runtime.Serialization.Formatter> <xref:System.Runtime.Serialization.IFormatter> jsou nyní zastaralé. Kromě toho <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> je serializace ve výchozím nastavení zakázána pro aplikace ASP.NET.
 
 #### <a name="change-description"></a>Popis změny
 
-V důsledku [chyb zabezpečení](../../../../docs/standard/serialization/binaryformatter-security-guide.md#binaryformatter-security-vulnerabilities) v nástroji <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> jsou nyní zastaralé následující metody. Kromě toho v ASP.NET 5,0 a novějších aplikacích vyvolá <xref:System.NotSupportedException> , pokud webová aplikace nemá opětovné povolení <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> funkcí.
+V důsledku [chyb zabezpečení](../../../../docs/standard/serialization/binaryformatter-security-guide.md#binaryformatter-security-vulnerabilities) v nástroji <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> jsou nyní zastaralé následující metody. Kromě toho se v ASP.NET Core 5,0 a novějších aplikacích vyvolá <xref:System.NotSupportedException> , pokud webová aplikace nemá opětovné povolení <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> funkcí.
 
 - <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Serialize%2A?displayProperty=nameWithType>
 - <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize%2A?displayProperty=nameWithType>
