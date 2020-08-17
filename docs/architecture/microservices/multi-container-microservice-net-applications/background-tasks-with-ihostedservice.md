@@ -1,51 +1,51 @@
 ---
-title: Implementace úloh na pozadí v mikroslužbách pomocí služby IHostedService a třídy BackgroundService
-description: Architektura mikroslužeb .NET pro kontejnerizované aplikace .NET | Seznamte se s novými možnostmi použití služeb IHostedService a BackgroundService k implementaci úloh na pozadí v mikroslužbách .NET Core.
-ms.date: 01/30/2020
-ms.openlocfilehash: fd26d0444312d3525ad95b2273f28a6ceaa27911
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+title: Implementace úloh na pozadí v mikroslužbách pomocí IHostedService a třídy BackgroundService
+description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Seznamte se s novými možnostmi použití IHostedService a BackgroundService k implementaci úloh na pozadí v mikroslužbách .NET Core.
+ms.date: 08/14/2020
+ms.openlocfilehash: 4ab215f2196cd2e66b116465c3a582a9846c8066
+ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80988333"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88267994"
 ---
-# <a name="implement-background-tasks-in-microservices-with-ihostedservice-and-the-backgroundservice-class"></a>Implementace úloh na pozadí v mikroslužbách pomocí služby IHostedService a třídy BackgroundService
+# <a name="implement-background-tasks-in-microservices-with-ihostedservice-and-the-backgroundservice-class"></a>Implementace úloh na pozadí v mikroslužbách pomocí IHostedService a třídy BackgroundService
 
-Úlohy na pozadí a naplánované úlohy jsou něco, co budete muset implementovat, nakonec v aplikaci založené na mikroslužbách nebo v jakémkoli druhu aplikace. Rozdíl při použití architektury mikroslužeb je, že můžete implementovat jeden proces mikroslužeb nebo kontejner pro hostování těchto úloh na pozadí, takže můžete škálovat dolů nebo nahoru podle potřeby, nebo můžete dokonce ujistěte se, že spustí jednu instanci tohoto procesu mikroslužeb/kontejneru.
+Úlohy na pozadí a naplánované úlohy můžou být potřebné k použití v libovolné aplikaci, bez ohledu na to, jestli se řídí vzorem architektury mikroslužeb. Rozdíl při použití architektury mikroslužeb je, že můžete implementovat úlohu na pozadí v samostatném procesu nebo kontejneru pro hostování, abyste je mohli škálovat podle potřeby.
 
-Z obecného hlediska v .NET Core jsme nazvali tyto typy úkolů *hostované služby*, protože se jedná o služby nebo logiku, kterou hostujete v rámci hostitele/aplikace/mikroslužby. Všimněte si, že v tomto případě hostované služby jednoduše znamená třídu s logikou úlohy na pozadí.
+Z obecného bodu zobrazení se v .NET Core říkáme tento typ úkolů *hostovaných službami*, protože se jedná o služby/logiku, které hostuje v rámci hostitele/aplikace nebo mikroslužby. Všimněte si, že v tomto případě hostovaná služba jednoduše znamená třídu s logikou úlohy na pozadí.
 
-Vzhledem k tomu, že rozhraní .NET <xref:Microsoft.Extensions.Hosting.IHostedService> Core 2.0, rozhraní poskytuje nové rozhraní s názvem pomáhá snadno implementovat hostované služby. Základní myšlenkou je, že můžete zaregistrovat více úloh na pozadí (hostované služby), které běží na pozadí, zatímco váš webový hostitel nebo hostitel běží, jak je znázorněno na obrázku 6-26.
+Vzhledem k tomu, že rozhraní .NET Core 2,0, rozhraní poskytuje nové rozhraní s názvem, <xref:Microsoft.Extensions.Hosting.IHostedService> které vám pomůže snadno implementovat hostované služby. Základní nápad je, že můžete registrovat více úloh na pozadí (hostované služby), které běží na pozadí, když je spuštěný webový hostitel nebo hostitel, jak je znázorněno na obrázku 6-26.
 
-![Diagram porovnávající ASP.NET Core IWebHost a .NET Core IHost.](./media/background-tasks-with-ihostedservice/ihosted-service-webhost-vs-host.png)
+![Diagram porovnávání ASP.NET Core IWebHost a .NET Core IHost.](./media/background-tasks-with-ihostedservice/ihosted-service-webhost-vs-host.png)
 
-**Obrázek 6-26**. Použití služby IHostedService ve službě WebHost vs. hostitel
+**Obrázek 6-26**. Použití IHostedService na Webhostu vs. hostiteli
 
-ASP.NET podpora core 1.x `IWebHost` a 2.x pro procesy na pozadí ve webových aplikacích. .NET Core 2.1 a `IHost` novější verze podporují procesy na pozadí s jednoduchými konzolovými aplikacemi. Všimněte si `WebHost` rozdílu mezi a `Host`.
+ASP.NET Core 1. x a 2. x podpora `IWebHost` procesů na pozadí ve webových aplikacích. .NET Core 2,1 a novější verze podporují `IHost` procesy na pozadí pomocí jednoduchých konzolových aplikací. Všimněte si rozdílů mezi `WebHost` a `Host` .
 
-A `WebHost` (implementace základní `IWebHost`třídy ) v ASP.NET Core 2.0 je artefakt infrastruktury, který slouží k poskytování funkcí serveru HTTP pro váš proces, například při implementaci webové aplikace MVC nebo služby webového rozhraní API. Poskytuje všechny nové infrastruktury dobra v ASP.NET Core, což vám umožní používat vkládání závislostí, vložit middlewares v kanálu požadavku a podobně. Používá `WebHost` tyto velmi `IHostedServices` stejné pro úlohy na pozadí.
+A `WebHost` (implementace základní třídy `IWebHost` ) v ASP.NET Core 2,0 je artefakt infrastruktury, který používáte k poskytování funkcí serveru http vašemu procesu, například při implementaci webové aplikace MVC nebo služby webového rozhraní API. Poskytuje veškerou novou užitečnost infrastruktury v ASP.NET Core, což vám umožní používat vkládání závislostí, vkládat middleware do kanálu požadavků a podobně. Tato pole `WebHost` používá velmi stejné `IHostedServices` pro úlohy na pozadí.
 
-A `Host` (implementace základní `IHost`třídy) byla zavedena v rozhraní .NET Core 2.1. V podstatě, `Host` a umožňuje mít podobnou infrastrukturu, než to, co máte s `WebHost` (vkládání závislostí, hostované služby, atd.), ale v tomto případě, stačí mít jednoduchý a lehčí proces jako hostitel, s ničím souvisejícím s MVC, Web API nebo HTTP server funkce.
+A `Host` (implementace základní třídy `IHost` ) byla představena v rozhraní .net Core 2,1. `Host`V podstatě vám umožní mít podobnou infrastrukturu, než jakou máte s `WebHost` (vkládáním závislostí, hostovanými službami atd.), ale v takovém případě budete chtít mít jenom jednoduchý a světlejší proces jako hostitel, a to bez ohledu na funkce MVC, webové rozhraní API nebo server http.
 
-Proto můžete zvolit a buď vytvořit specializovaný hostitelský proces s `IHost` pro zpracování hostované služby a nic `IHostedServices`jiného, jako mikroslužby `WebHost`vyrobené pouze pro hostování , nebo můžete alternativně rozšířit existující ASP.NET Core , jako je například existující ASP.NET Core Web API nebo MVC aplikace.
+Proto si můžete vybrat a buď vytvořit specializovaný hostitelský proces s `IHost` cílem zpracovat hostované služby a nic jiného, což je mikroslužba vytvořená jenom pro hostování `IHostedServices` , nebo můžete alternativně roztáhnout existující ASP.NET Core, jako je `WebHost` třeba existující ASP.NET Core webového rozhraní API nebo aplikace MVC.
 
-Každý přístup má klady a zápory v závislosti na vaší firmě a potřebách škálovatelnosti. Pointa je v podstatě, že pokud vaše pozadí`IWebHost`úkoly `IHost`nemají nic společného s HTTP ( ) měli byste použít .
+Každý přístup má v závislosti na potřebách vaší firmy a škálovatelnosti své specialisty a nevýhody. Dolní řádek je v podstatě, aby v případě, že vaše úlohy na pozadí neobsahují žádnou akci s protokolem HTTP ( `IWebHost` ), byste měli použít `IHost` .
 
-## <a name="registering-hosted-services-in-your-webhost-or-host"></a>Registrace hostovaných služeb ve vašem WebHost nebo Host
+## <a name="registering-hosted-services-in-your-webhost-or-host"></a>Registrace hostovaných služeb ve vašem Webhostu nebo hostiteli
 
-Pojďme přejít dále `IHostedService` na rozhraní, protože jeho `WebHost` použití je `Host`docela podobné v nebo v .
+Pojďme přejít podrobněji na `IHostedService` rozhraní, protože jeho použití je poměrně podobné v `WebHost` nebo v `Host` .
 
-SignalR je jedním z příkladů artefaktu pomocí hostovaných služeb, ale můžete jej také použít pro mnohem jednodušší věci, jako jsou:
+Návěstí je jedním z příkladů artefaktu, který používá hostované služby, ale můžete ho použít i mnohem jednodušším způsobem:
 
-- Úloha na pozadí dotazování databáze hledá změny.
-- Naplánovaná úloha pravidelně aktualizuje některé mezipaměti.
-- Implementace QueueBackgroundWorkItem, která umožňuje úlohu, která má být provedena na podprocesu na pozadí.
-- Zpracování zpráv z fronty zpráv na pozadí webové aplikace při `ILogger`sdílení běžných služeb, jako je například .
-- Úloha na `Task.Run()`pozadí byla zahájena pomocí souboru .
+- Úloha na pozadí s dotazem, který hledá změny v databázi
+- Naplánovaná aktualizace některých mezipamětí v pravidelných intervalech.
+- Implementace QueueBackgroundWorkItem, která umožňuje spuštění úlohy ve vlákně na pozadí.
+- Zpracování zpráv z fronty zpráv na pozadí webové aplikace při sdílení běžných služeb, jako je `ILogger` .
+- Úloha na pozadí začala s `Task.Run()` .
 
-V podstatě můžete převést některé z těchto akcí `IHostedService`na úlohu na pozadí, která implementuje .
+V podstatě můžete všechny tyto akce přesměrovat na úlohu na pozadí, která implementuje `IHostedService` .
 
-Způsob, jakým přidáte `IHostedServices` jeden `WebHost` nebo `Host` více do vašeho nebo <xref:Microsoft.Extensions.DependencyInjection.ServiceCollectionHostedServiceExtensions.AddHostedService%2A>  je jejich registrací prostřednictvím metody rozšíření v ASP.NET Core `WebHost` (nebo `Host` v rozhraní .NET Core 2.1 a vyšší). V podstatě musíte zaregistrovat hostované služby v rámci známé `ConfigureServices()` metody `Startup` třídy, jako v následujícím kódu z typického ASP.NET WebHost.
+Způsob, jakým můžete přidat jeden nebo více `IHostedServices` do svých nebo více aplikací, můžete `WebHost` `Host` zaregistrovat pomocí <xref:Microsoft.Extensions.DependencyInjection.ServiceCollectionHostedServiceExtensions.AddHostedService%2A>   metody rozšíření v ASP.NET Core `WebHost` (nebo v `Host` rozhraní .NET Core 2,1 a vyšší). V podstatě je nutné zaregistrovat hostované služby v rámci známé `ConfigureServices()` metody `Startup` třídy, jako v následujícím kódu z typického webhostu ASP.NET.
 
 ```csharp
 public IServiceProvider ConfigureServices(IServiceCollection services)
@@ -60,51 +60,29 @@ public IServiceProvider ConfigureServices(IServiceCollection services)
 }
 ```
 
-V tomto kódu `GracePeriodManagerService` hostované služby je skutečný kód z objednávání obchodní mikroslužby v eShopOnContainers, zatímco další dva jsou jen dva další ukázky.
+V tomto kódu `GracePeriodManagerService` je hostovaná služba skutečný kód z objednávání firemní mikroslužeb v eShopOnContainers, zatímco ostatní dva jsou jenom dvě další ukázky.
 
-Spuštění `IHostedService` úlohy na pozadí je koordinováno s životností aplikace (hostitele nebo mikroslužby, když na to přijde). Zaregistrujete úkoly při spuštění aplikace a máte možnost provést některé řádné akce nebo vyčištění při ukončení aplikace.
+`IHostedService`Provádění úlohy na pozadí je koordinováno s životností aplikace (hostitel nebo mikroslužba pro tuto skutečnost). Při spuštění aplikace zaregistrujete úlohy a máte příležitost provést některé řádné akce nebo vyčistit při vypínání aplikace.
 
-Bez `IHostedService`použití můžete vždy spustit vlákno na pozadí pro spuštění libovolné úlohy. Rozdíl je právě v době vypnutí aplikace, kdy by toto vlákno bylo jednoduše ukončeno, aniž by mělo možnost spustit řádné akce čištění.
+Bez použití `IHostedService` můžete vlákno na pozadí vždy spustit, aby se spouštěla libovolná úloha. Rozdíl je přesně v době vypnutí aplikace, kdy by bylo vlákno jednoduše ukončeno, aniž by bylo možné spustit bezproblémové čisticí akce.
 
 ## <a name="the-ihostedservice-interface"></a>Rozhraní IHostedService
 
-Při registraci `IHostedService`, .NET Core `StartAsync()` `StopAsync()` bude volat `IHostedService` a metody vašeho typu během spuštění a zastavení aplikace v uvedeném pořadí. Konkrétně start je volána po `IApplicationLifetime.ApplicationStarted` spuštění serveru a je spuštěn.
+Při registraci `IHostedService` rozhraní .NET Core zavolá `StartAsync()` `StopAsync()` metody a vašeho `IHostedService` typu během spuštění a zastavení aplikace. Další podrobnosti najdete v tématu [rozhraní IHostedService](https://docs.microsoft.com/aspnet/core/fundamentals/host/hosted-services?view=aspnetcore-3.1&tabs=visual-studio#ihostedservice-interface) .
 
-Jak `IHostedService` je definováno v .NET Core, vypadá takto.
+Jak můžete předplatit, můžete vytvořit více implementací IHostedService a zaregistrovat je v `ConfigureService()` metodě do kontejneru di, jak je uvedeno výše. Všechny tyto hostované služby se spustí a zastaví společně s aplikací nebo mikroslužbou.
 
-```csharp
-namespace Microsoft.Extensions.Hosting
-{
-    //
-    // Summary:
-    //     Defines methods for objects that are managed by the host.
-    public interface IHostedService
-    {
-        //
-        // Summary:
-        // Triggered when the application host is ready to start the service.
-        Task StartAsync(CancellationToken cancellationToken);
-        //
-        // Summary:
-        // Triggered when the application host is performing a graceful shutdown.
-        Task StopAsync(CancellationToken cancellationToken);
-    }
-}
-```
+Jako vývojář zodpovídáte za zpracování akce zastavení vašich služeb, když `StopAsync()` hostitel spustí metodu.
 
-Jak si dokážete představit, můžete vytvořit více implementací IHostedService a zaregistrovat je metodou `ConfigureService()` do kontejneru DI, jak je znázorněno dříve. Všechny tyto hostované služby budou spuštěny a zastaveny spolu s aplikací nebo mikroslužbou.
+## <a name="implementing-ihostedservice-with-a-custom-hosted-service-class-deriving-from-the-backgroundservice-base-class"></a>Implementace IHostedService s vlastní třídou hostované služby odvozenou od základní třídy BackgroundService
 
-Jako vývojář jste zodpovědní za zpracování akce zastavení `StopAsync()` vašich služeb při spuštění metody hostitelem.
+Můžete pokračovat a vytvořit vlastní třídu hostované služby od začátku a implementovat `IHostedService` , jak potřebujete při použití .NET Core 2,0.
 
-## <a name="implementing-ihostedservice-with-a-custom-hosted-service-class-deriving-from-the-backgroundservice-base-class"></a>Implementace služby IHostedService s vlastní třídou hostované služby odvozenou ze základní třídy BackgroundService
-
-Můžete pokračovat a vytvořit vlastní třídu hostované služby od začátku a implementovat `IHostedService`, jak je potřeba udělat při použití rozhraní .NET Core 2.0.
-
-Však vzhledem k tomu, že většina úloh na pozadí bude mít podobné potřeby s ohledem na `BackgroundService` správu tokenů zrušení a další typické operace, je pohodlné abstraktní základní třídy můžete odvodit z, pojmenovaný (k dispozici od .NET Core 2.1).
+Vzhledem k tomu, že většina úloh na pozadí bude mít podobné požadavky v souvislosti se správou tokenů zrušení a dalšími typickými operacemi, existuje praktická abstraktní základní třída, kterou můžete odvodit z, s názvem `BackgroundService` (k dispozici od rozhraní .NET Core 2,1).
 
 Tato třída poskytuje hlavní práci potřebnou k nastavení úlohy na pozadí.
 
-Další kód je abstraktní Základní třída BackgroundService, jak je implementována v .NET Core.
+Dalším kódem je abstraktní základní třída BackgroundService, jak je implementováno v .NET Core.
 
 ```csharp
 // Copyright (c) .NET Foundation. Licensed under the Apache License, Version 2.0.
@@ -164,7 +142,7 @@ public abstract class BackgroundService : IHostedService, IDisposable
 }
 ```
 
-Při odvození z předchozí abstraktní základní třídy, díky této zděděné `ExecuteAsync()` implementaci, stačí implementovat metodu ve vlastní třídě hostované služby, jako v následujícím zjednodušeném kódu z eShopOnContainers, který je dotazování databáze a publikování integračních událostí do sběrnice událostí v případě potřeby.
+Při odvozování od předchozí abstraktní základní třídy díky této zděděné implementaci stačí implementovat `ExecuteAsync()` metodu ve vlastní třídě hostované služby, jako v následujícím zjednodušeném kódu z eShopOnContainers, který v případě potřeby dotazuje databázi a publikuje události integrace do sběrnice událostí.
 
 ```csharp
 public class GracePeriodManagerService : BackgroundService
@@ -206,13 +184,13 @@ public class GracePeriodManagerService : BackgroundService
 }
 ```
 
-V tomto konkrétním případě pro eShopOnContainers je provádění aplikační metody, která je dotazování databázové tabulky hledá objednávky s určitým stavem a při použití změn, je publikování událostí integrace prostřednictvím sběrnice událostí (pod ním může být pomocí RabbitMQ nebo Azure Service Bus).
+V tomto konkrétním případě pro eShopOnContainers je spuštěná metoda aplikace, která se dotazuje na databázovou tabulku a hledá objednávky s určitým stavem a při použití změn publikování událostí integrace prostřednictvím sběrnice událostí (pod ní může použít RabbitMQ nebo Azure Service Bus).
 
-Samozřejmě, můžete spustit jakýkoli jiný obchodní pozadí úkol, místo toho.
+Samozřejmě můžete místo toho spustit jakoukoli jinou úlohu na pozadí firmy.
 
-Ve výchozím nastavení je token zrušení nastaven s časovým limitem 5 `WebHost` sekund, `UseShutdownTimeout` i `IWebHostBuilder`když tuto hodnotu můžete změnit při vytváření rozšíření . To znamená, že naše služba by měla být zrušena do 5 sekund, jinak bude náhle zabita.
+Ve výchozím nastavení je token zrušení nastaven s časovým limitem 5 sekund, i když můžete tuto hodnotu změnit při sestavování `WebHost` pomocí `UseShutdownTimeout` rozšíření `IWebHostBuilder` . To znamená, že se očekává, že se naše služba zruší do 5 sekund, jinak se ukončí.
 
-Následující kód by se mění, že čas na 10 sekund.
+Následující kód se změní na tento čas na 10 sekund.
 
 ```csharp
 WebHost.CreateDefaultBuilder(args)
@@ -220,35 +198,35 @@ WebHost.CreateDefaultBuilder(args)
     ...
 ```
 
-### <a name="summary-class-diagram"></a>Souhrnný diagram třídy
+### <a name="summary-class-diagram"></a>Diagram třídy souhrnu
 
-Následující obrázek znázorňuje vizuální souhrn tříd a rozhraní zapojených při implementaci IHostedServices.
+Následující obrázek ukazuje vizuální souhrn tříd a rozhraní zapojených při implementaci IHostedServices.
 
-![Diagram znázorňující, že IWebHost a IHost mohou hostit mnoho služeb.](./media/background-tasks-with-ihostedservice/class-diagram-custom-ihostedservice.png)
+![Diagram znázorňující, že IWebHost a IHost můžou hostovat spoustu služeb.](./media/background-tasks-with-ihostedservice/class-diagram-custom-ihostedservice.png)
 
-**Obrázek 6-27**. Diagram tříd znázorňující více tříd a rozhraní souvisejících se službou IHostedService
+**Obrázek 6-27**. Diagram tříd znázorňující více tříd a rozhraní souvisejících s IHostedService
 
-Diagram tříd: IWebHost a IHost mohou hostovat mnoho služeb, které dědí z BackgroundService, která implementuje IHostedService.
+Diagram tříd: IWebHost a IHost mohou hostovat mnoho služeb, které dědí z BackgroundService, které implementuje IHostedService.
 
-### <a name="deployment-considerations-and-takeaways"></a>Důležité informace o nasazení a s sebou
+### <a name="deployment-considerations-and-takeaways"></a>Požadavky na nasazení a poznatky
 
-Je důležité si uvědomit, že způsob `WebHost` nasazení ASP.NET `Host` core nebo .NET Core může mít vliv na konečné řešení. Pokud například nasadíte službu `WebHost` IIS nebo běžnou službu Azure App Service, můžete hostitele vypnout z důvodu recyklace fondu aplikací. Ale pokud nasazujete hostitele jako kontejner do orchestrátoru, jako je Kubernetes, můžete řídit jistý počet živých instancí hostitele. Kromě toho můžete zvážit další přístupy v cloudu speciálně pro tyto scénáře, jako jsou funkce Azure. A konečně, pokud potřebujete službu, která má být spuštěna po celou dobu a nasazuje te na systém Windows Server, můžete použít službu Systému Windows.
+Je důležité si uvědomit, že způsob nasazení ASP.NET Core `WebHost` nebo .NET Core `Host` může mít dopad na konečné řešení. Pokud například nasadíte `WebHost` službu do služby IIS nebo běžný Azure App Service, může být hostitel vypnutý kvůli recyklaci fondu aplikací. Pokud ale hostitele nasazujete jako kontejner do nástroje Orchestrator jako Kubernetes, můžete řídit zaručený počet živých instancí hostitele. Kromě toho můžete zvážit další přístupy v cloudu, zejména pro tyto scénáře, například Azure Functions. Nakonec, pokud potřebujete, aby služba běžela po celou dobu a nasadila na Windows Server, můžete použít službu systému Windows.
 
-Ale i `WebHost` pro nasazené do fondu aplikací existují scénáře, jako je repopulating nebo vyprázdnění mezipaměti aplikace v paměti, které by byly stále použitelné.
+Ale dokonce i pro `WebHost` nasazení do fondu aplikací existují scénáře, jako je přeplnění nebo vyprázdnění mezipaměti v paměti aplikace, kterou by bylo možné dál použít.
 
-Rozhraní `IHostedService` poskytuje pohodlný způsob, jak spustit úlohy na pozadí ve webové aplikaci ASP.NET Core (v rozhraní .NET Core 2.0 `IHost`a novějších verzích) nebo v libovolném procesu/hostiteli (počínaje rozhraním .NET Core 2.1 s). Jeho hlavní výhodou je příležitost, kterou získáte s elegantním zrušením k vyčištění kódu vašich úloh na pozadí, když se hostitel sám vypíná.
+`IHostedService`Rozhraní poskytuje pohodlný způsob, jak spustit úlohy na pozadí ve webové aplikaci ASP.NET Core (v .NET core 2,0 a novějších verzích) nebo v jakémkoli procesu nebo hostiteli (počínaje rozhraním .NET core 2,1 s `IHost` ). Hlavní výhodou je příležitost, kterou obdržíte s řádným zrušením pro vyčištění kódu úloh na pozadí při vypínání hostitele samotného.
 
 ## <a name="additional-resources"></a>Další zdroje
 
-- **Vytvoření naplánované úlohy v ASP.NET Jádrem/Standardem 2.0** \
+- **Sestavení naplánované úlohy v ASP.NET Core/Standard 2,0** \
   <https://blog.maartenballiauw.be/post/2017/08/01/building-a-scheduled-cache-updater-in-aspnet-core-2.html>
 
-- **Implementace služby IHostedService v ASP.NET Jádra 2.0** \
+- **Implementace IHostedService v ASP.NET Core 2,0** \
   <https://www.stevejgordon.co.uk/asp-net-core-2-ihostedservice>
 
-- **Ukázka generického hostitele pomocí ASP.NET Core 2.1** \
+- **Ukázka GenericHost s využitím ASP.NET Core 2,1** \
   <https://github.com/aspnet/Hosting/tree/release/2.1/samples/GenericHostSample>
 
 > [!div class="step-by-step"]
-> [Předchozí](test-aspnet-core-services-web-apps.md)
-> [další](implement-api-gateways-with-ocelot.md)
+> [Předchozí](test-aspnet-core-services-web-apps.md) 
+>  [Další](implement-api-gateways-with-ocelot.md)

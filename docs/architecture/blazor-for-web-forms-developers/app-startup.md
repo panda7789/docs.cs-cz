@@ -4,16 +4,14 @@ description: Naučte se definovat logiku spouštění vaší aplikace.
 author: csharpfritz
 ms.author: jefritz
 ms.date: 02/25/2020
-ms.openlocfilehash: 3d460750c36f64b8ad343755bd63b47af5c310d9
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: ea2ea458011d8351a834aa12db02e5d2bac2dc65
+ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87914877"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88267695"
 ---
 # <a name="app-startup"></a>Spuštění aplikace
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Aplikace napsané pro ASP.NET mají typicky `global.asax.cs` soubor, který definuje `Application_Start` událost, která řídí, které služby jsou nakonfigurovány a zpřístupněny pro vykreslování HTML i pro zpracování .NET. V této kapitole najdete informace o tom, jak se trochu liší od ASP.NET Core a Blazor serveru.
 
@@ -21,10 +19,10 @@ Aplikace napsané pro ASP.NET mají typicky `global.asax.cs` soubor, který defi
 
 Výchozí metoda webových formulářů `Application_Start` vzrostla za několik let a zpracovává mnoho úloh konfigurace.  Nový projekt webových formulářů s výchozí šablonou v aplikaci Visual Studio 2019 teď obsahuje následující logiku konfigurace:
 
-- `RouteConfig`– Směrování adres URL aplikace
-- `BundleConfig`– Sdružování CSS a JavaScriptu a minifikace
+- `RouteConfig` – Směrování adres URL aplikace
+- `BundleConfig` – Sdružování CSS a JavaScriptu a minifikace
 
-Každý z těchto jednotlivých souborů se nachází ve `App_Start` složce a spouští se pouze jednou na začátku naší aplikace.  `RouteConfig`ve výchozí šabloně projektu přidá `FriendlyUrlSettings` webové formuláře, které umožní adresám URL aplikace vynechat `.ASPX` příponu souboru.  Výchozí šablona obsahuje také direktivu, která poskytuje trvalé stavové kódy přesměrování HTTP (HTTP 301) pro `.ASPX` stránky popisné adresy URL s názvem souboru, který toto rozšíření vynechává.
+Každý z těchto jednotlivých souborů se nachází ve `App_Start` složce a spouští se pouze jednou na začátku naší aplikace.  `RouteConfig` ve výchozí šabloně projektu přidá `FriendlyUrlSettings` webové formuláře, které umožní adresám URL aplikace vynechat `.ASPX` příponu souboru.  Výchozí šablona obsahuje také direktivu, která poskytuje trvalé stavové kódy přesměrování HTTP (HTTP 301) pro `.ASPX` stránky popisné adresy URL s názvem souboru, který toto rozšíření vynechává.
 
 Pomocí ASP.NET Core a Blazor jsou tyto metody buď zjednodušené, konsoliduje do `Startup` třídy, nebo jsou z hlediska běžných webových technologií eliminovány.
 

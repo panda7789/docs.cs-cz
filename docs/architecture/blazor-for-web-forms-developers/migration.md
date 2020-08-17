@@ -1,5 +1,5 @@
 ---
-title: Migrace z webových formulářů ASP.NET naBlazor
+title: Migrace z webových formulářů ASP.NET na Blazor
 description: Naučte se, jak získat přístup k migraci existující aplikace webových formulářů ASP.NET do Blazor .
 author: twsouthwick
 ms.author: tasou
@@ -7,16 +7,14 @@ no-loc:
 - Blazor
 - WebAssembly
 ms.date: 09/19/2019
-ms.openlocfilehash: 464d2f535acd3b9774fe240b4feeda1875f98022
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: ca3d8747b02602c89aec187ea0826e658fb0cbc4
+ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86173143"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88267799"
 ---
-# <a name="migrate-from-aspnet-web-forms-to-blazor"></a>Migrace z webových formulářů ASP.NET naBlazor
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
+# <a name="migrate-from-aspnet-web-forms-to-no-locblazor"></a>Migrace z webových formulářů ASP.NET na Blazor
 
 Migrace základu kódu z webových formulářů ASP.NET na Blazor je časově náročná úloha, která vyžaduje plánování. Tato kapitola popisuje proces. Něco, co usnadňuje přechod, je zajistit, že aplikace dodržuje *N-vrstvou* architekturu a v takovém případě je model aplikace (v tomto případě webový formulář) oddělený od obchodní logiky. Tato logická oddělení vrstev umožňuje vymazat to, co je potřeba přesunout do .NET Core a Blazor .
 
@@ -24,8 +22,8 @@ V tomto příkladu se používá aplikace eShop, která je dostupná na [GitHubu
 
 Proč by se měla migrovat pracovní aplikace na Blazor ? Mnohokrát není potřeba. Webové formuláře ASP.NET budou v mnoha letech i nadále podporovány. Mnohé z funkcí, které nabízí, ale Blazor podporují jenom migrované aplikace. Mezi tyto funkce patří:
 
-- Vylepšení výkonu v rozhraní, jako je například`Span<T>`
-- Možnost spuštění jakoWebAssembly
+- Vylepšení výkonu v rozhraní, jako je například `Span<T>`
+- Možnost spuštění jako WebAssembly
 - Podpora více platforem pro Linux a macOS
 - Nasazení místního nasazení aplikace nebo sdíleného rozhraní, aniž by to ovlivnilo jiné aplikace
 
@@ -525,7 +523,7 @@ Při převodu na Blazor se stránka webových formulářů převede na následuj
 
 Všimněte si, že kód a značky jsou ve stejném souboru. Všechny požadované služby jsou zpřístupněny s `@inject` atributem. Na základě `@page` této direktivy lze na této stránce přejít v `Catalog/Details/{id}` trase. Hodnota `{id}` zástupného symbolu trasy byla omezena na celé číslo. Jak je popsáno v části [Směrování](pages-routing-layouts.md) na rozdíl od webových formulářů, komponenta Razor explicitně uvádí svou trasu a všechny zahrnuté parametry. Mnoho ovládacích prvků webových formulářů nemůže mít přesnou protějšek v Blazor . Často se jedná o ekvivalentní fragment kódu HTML, který bude sloužit ke stejnému účelu. Například `<asp:Label />` ovládací prvek lze nahradit `<label>` elementem jazyka HTML.
 
-### <a name="model-validation-in-blazor"></a>Ověřování modelu vBlazor
+### <a name="model-validation-in-no-locblazor"></a>Ověřování modelu v Blazor
 
 Pokud váš kód webového formuláře zahrnuje ověřování, můžete přenést většinu z toho, co máte, s méně než nedostatečnými změnami. Výhodou pro spuštění v Blazor je, že stejnou logiku ověřování můžete spustit bez nutnosti vlastního JavaScriptu. Datové poznámky umožňují snadné ověřování modelu.
 

@@ -6,16 +6,14 @@ ms.author: jefritz
 no-loc:
 - Blazor
 ms.date: 04/26/2020
-ms.openlocfilehash: 4bf9bee21ce1db828dbe0aeb156d5e15cae4f703
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: 8bd326e6952708b2099c3a575d6811990335df17
+ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86173301"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88267591"
 ---
 # <a name="work-with-data"></a>Práce s daty
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Přístup k datům je páteř aplikace ASP.NET Web Forms. Pokud vytváříte formuláře pro web, co se stane s těmito daty? S webovými formuláři byly k dispozici různé techniky přístupu k datům, které byste mohli použít k interakci s databází:
 
@@ -57,8 +55,8 @@ public class Product
 Produkt má primární klíč a tři další pole, která by se vytvořila v naší databázi:  
 
 - EF identifikuje `Id` vlastnost jako primární klíč podle konvence.
-- `Name`budou uloženy ve sloupci nakonfigurovaném pro textové úložiště. `[Required]`Atribut upravení touto vlastností přidá `not null` omezení, které pomůže vynutilit toto deklarované chování vlastnosti.
-- `Description`uloží se do sloupce nakonfigurovaného pro textové úložiště a maximální povolená délka je 4000 znaků, jak je Určuje `[MaxLength]` atributem. Schéma databáze bude nakonfigurován se sloupcem s názvem s `MaxLength` použitím datového typu `varchar(4000)` .
+- `Name` budou uloženy ve sloupci nakonfigurovaném pro textové úložiště. `[Required]`Atribut upravení touto vlastností přidá `not null` omezení, které pomůže vynutilit toto deklarované chování vlastnosti.
+- `Description` uloží se do sloupce nakonfigurovaného pro textové úložiště a maximální povolená délka je 4000 znaků, jak je Určuje `[MaxLength]` atributem. Schéma databáze bude nakonfigurován se sloupcem s názvem s `MaxLength` použitím datového typu `varchar(4000)` .
 - `Price`Vlastnost bude uložena jako měna. `[Range]`Atribut vygeneruje vhodná omezení, aby nedocházelo k ukládání dat mimo minimální a maximální deklarované hodnoty.
 
 Musíme tuto `Product` třídu přidat do třídy kontextu databáze definující operace připojení a překladu s naší databází.

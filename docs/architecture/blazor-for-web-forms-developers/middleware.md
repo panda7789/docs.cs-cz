@@ -6,16 +6,14 @@ ms.author: daroth
 no-loc:
 - Blazor
 ms.date: 10/11/2019
-ms.openlocfilehash: ff2b3fd41316a1c8c20a0eed9a585e5fd2733af3
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: 639755dd78892df1b70ea5245a9584e575fbf691
+ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86173182"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88267877"
 ---
 # <a name="modules-handlers-and-middleware"></a>Moduly, obslužné rutiny a middleware
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Aplikace ASP.NET Core je postavená na řadě *middlewaru*. Middleware jsou obslužné rutiny, které jsou uspořádány do kanálu pro zpracování požadavků a odpovědí. V aplikaci webového formuláře obslužné rutiny a moduly HTTP vyřeší podobné problémy. V ASP.NET Core jsou moduly, obslužné rutiny, *Global.asax.cs*a životní cyklus aplikace nahrazeny middlewarem. V této kapitole se dozvíte, jaký middleware v kontextu Blazor aplikace.
 

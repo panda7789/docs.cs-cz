@@ -1,5 +1,5 @@
 ---
-title: -publicsign (C# Možnosti kompilátoru)
+title: -publicsign (možnosti kompilátoru C#)
 ms.date: 05/15/2018
 f1_keywords:
 - /publicsign
@@ -7,16 +7,16 @@ helpviewer_keywords:
 - -publicsign compiler option [C#]
 - publicsign compiler option [C#]
 - /publicsign compiler option [C#]
-ms.openlocfilehash: de7d9c98b0f279b52bc93711c5b986a2b2e57215
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2655e0216a412053e052ab2ec2fcc8c68ea4f968
+ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "61662527"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88268046"
 ---
-# <a name="-publicsign-c-compiler-options"></a>-publicsign (C# Možnosti kompilátoru)
+# <a name="-publicsign-c-compiler-options"></a>-publicsign (možnosti kompilátoru C#)
 
-Tato možnost způsobí, že kompilátor použít veřejný klíč, ale ve skutečnosti nepodepisuje sestavení. Možnost **-publicsign** také nastaví bit v sestavení, který říká, že soubor je skutečně podepsán.
+Tato možnost způsobí, že kompilátor použije veřejný klíč, ale ve skutečnosti nepodepíše sestavení. Možnost **-publicsign** také nastavuje bitovou kopii v sestavení, která oznamuje modulu runtime, že soubor je skutečně podepsán.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -26,25 +26,28 @@ Tato možnost způsobí, že kompilátor použít veřejný klíč, ale ve skute
 
 ## <a name="arguments"></a>Argumenty
 
-Žádné.
+Žádné
 
 ## <a name="remarks"></a>Poznámky
 
-Možnost **-publicsign** vyžaduje použití [-keyfile](keyfile-compiler-option.md) nebo [-keycontainer](keycontainer-compiler-option.md). Možnosti **keyfile** nebo **keycontainer** určují veřejný klíč.
+Možnost **-publicsign** vyžaduje použití souboru [-keyfile](keyfile-compiler-option.md) nebo [-klíče obsahujícího](keycontainer-compiler-option.md). **Možnosti souboru** **keyfile nebo klíče** určují veřejný klíč.
 
 Možnosti **-publicsign** a **-delaysign** se vzájemně vylučují.
 
-Někdy se nazývá "falešné znamení" nebo "znak OSS", veřejné podepisování zahrnuje veřejný klíč ve výstupním sestavení a nastaví příznak "podepsáno", ale ve skutečnosti nepodepisuje sestavení pomocí soukromého klíče. To je užitečné pro projekty s otevřeným zdrojovým kódem, kde uživatelé chtějí vytvářet sestavení, která jsou kompatibilní s vydanými "plně podepsanými" sestaveními, ale nemají přístup k soukromému klíči používanému k podepisování sestavení. Vzhledem k tomu, že téměř žádní spotřebitelé skutečně potřebují zkontrolovat, zda je sestavení plně podepsáno, jsou tato veřejně vytvořená sestavení použitelná téměř ve všech scénářích, kde by bylo použito plně podepsané sestavení.
+Při veřejném zápisu se někdy označuje jako "falešné znaménko" nebo "znak OSS", ale veřejný podpis zahrnuje veřejný klíč ve výstupním sestavení a nastavuje příznak "signed", ale ve skutečnosti nepodepisuje sestavení pomocí privátního klíče. To je užitečné pro open source projekty, kde lidé chtějí sestavovat sestavení, která jsou kompatibilní s vydanými sestaveními "plně podepsaný", ale nemají přístup k privátnímu klíči, který se používá k podepsání sestavení. Vzhledem k tomu, že téměř žádní spotřebitelé nepotřebují ověřit, jestli je sestavení plně podepsané, tato veřejně vytvořená sestavení jsou použitelná v téměř každém scénáři, kde se používá plně podepsaný certifikát.
 
-### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Nastavení tohoto parametru kompilátoru ve vývojovém prostředí Visual Studio
+### <a name="to-set-this-compiler-option-in-a-csproj-file"></a>Nastavení této možnosti kompilátoru v souboru csproj
 
-1. Otevřete stránku **Vlastnosti** projektu.
-1. Upravte pouze vlastnost **znaménko Zpoždění.**
+Otevřete soubor. csproj pro projekt a přidejte následující element:
 
-## <a name="see-also"></a>Viz také
+```xml
+<PublicSign>true</PublicSign>
+```
 
-- [C# Compiler -delaysign, volba](delaysign-compiler-option.md)
-- [C# Kompilátor -keyfile, volba](keyfile-compiler-option.md)
-- [C# Kompilátor -keycontainer, možnost](keycontainer-compiler-option.md)
-- [Možnosti kompilátoru jazyka C#](index.md)
+## <a name="see-also"></a>Viz také:
+
+- [Kompilátor C# – možnost delaysign](delaysign-compiler-option.md)
+- [C# – možnost kompilátoru – parametr keyfile](keyfile-compiler-option.md)
+- [Kompilátor C# – možnost obsahuje](keycontainer-compiler-option.md)
+- [Možnosti kompilátoru C#](index.md)
 - [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

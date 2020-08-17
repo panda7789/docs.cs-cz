@@ -4,16 +4,14 @@ description: Naučte se různé přístupy ke správě stavu ve webových formul
 author: csharpfritz
 ms.author: jefritz
 ms.date: 05/15/2020
-ms.openlocfilehash: bac2f00330113725f09259ca31bdf857a8769f24
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 2ca811f886c6a245ac16c2bd66a68ff16e5bfc44
+ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88062337"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88267721"
 ---
 # <a name="state-management"></a>Řízení stavu
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Správa stavu je klíčovým konceptem aplikací webových formulářů, které usnadňují funkce zobrazení stav, stav relace, stav aplikace a zpětné odeslání. Tyto stavové funkce rozhraní pomáhající za účelem skrytí správy stavu požadované pro aplikaci a umožnění vývojářům aplikací soustředit se na poskytování jejich funkcí. Při ASP.NET Core a Blazor byly některé z těchto funkcí přemístěné a některé z nich byly zcela odebrány. Tato kapitola si přečte, jak udržovat stav a doručovat stejné funkce s novými funkcemi v Blazor.
 
@@ -84,8 +82,8 @@ app.AddSingleton<MyApplicationState>();
 
 Data aplikací můžete také uložit na straně klienta na zařízení uživatele, která jsou k dispozici později. Existují dvě funkce prohlížeče, které umožňují trvalá data v různých oborech prohlížeče uživatele:
 
-- `localStorage`– vymezen pro celý prohlížeč uživatele. Pokud je stránka znovu načtena, prohlížeč je zavřen a znovu otevřen nebo je otevřena jiná karta se stejnou adresou URL, a `localStorage` to v prohlížeči.
-- `sessionStorage`-vymezeno na aktuální kartu prohlížeče uživatele. Pokud se karta znovu načte, stav přetrvává. Pokud však uživatel otevře jinou kartu pro aplikaci nebo zavře a znovu otevře prohlížeč, dojde ke ztrátě stavu.
+- `localStorage` – vymezen pro celý prohlížeč uživatele. Pokud je stránka znovu načtena, prohlížeč je zavřen a znovu otevřen nebo je otevřena jiná karta se stejnou adresou URL, a `localStorage` to v prohlížeči.
+- `sessionStorage` -vymezeno na aktuální kartu prohlížeče uživatele. Pokud se karta znovu načte, stav přetrvává. Pokud však uživatel otevře jinou kartu pro aplikaci nebo zavře a znovu otevře prohlížeč, dojde ke ztrátě stavu.
 
 Můžete napsat nějaký vlastní kód JavaScriptu pro interakci s těmito funkcemi, nebo můžete použít několik balíčků NuGet, které tuto funkci poskytují. Jedním z těchto balíčků je [Microsoft. AspNetCore. ProtectedBrowserStorage](https://www.nuget.org/packages/Microsoft.AspNetCore.ProtectedBrowserStorage).
 

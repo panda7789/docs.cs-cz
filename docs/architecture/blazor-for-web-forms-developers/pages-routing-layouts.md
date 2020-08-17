@@ -6,22 +6,20 @@ ms.author: daroth
 no-loc:
 - Blazor
 ms.date: 09/19/2019
-ms.openlocfilehash: fc1f6f9420c7149b6e67123f2f68bef75667aa0c
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: 714ba0be7c2014895a75250a47e6ce448863eb6c
+ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86173104"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88267786"
 ---
 # <a name="pages-routing-and-layouts"></a>Stránky, směrování a rozložení
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Aplikace webových formulářů ASP.NET se skládají ze stránek definovaných v souborech *. aspx* . Adresa každé stránky je založena na své fyzické cestě k souboru v projektu. Když prohlížeč odešle požadavek na stránku, obsah stránky se dynamicky vykresluje na serveru. Účty vykreslování pro značky HTML stránky a její serverové ovládací prvky.
 
 BlazorKaždá stránka v aplikaci je součástí, která je obvykle definovaná v souboru *. Razor* s jednou nebo více zadanými trasami. Směrování většinou probíhá na straně klienta bez nutnosti zahrnutí konkrétního požadavku serveru. Prohlížeč nejprve vytvoří požadavek na kořenovou adresu aplikace. Kořenová `Router` komponenta v Blazor aplikaci pak zpracovává zachycení požadavků na navigaci a jejich správné součásti.
 
-Blazorpodporuje také *přímý odkazování*. K přímému propojení dojde, když prohlížeč odešle požadavek na konkrétní trasu jinou než na kořen aplikace. Požadavky na přímé odkazy odeslané na server jsou směrovány do Blazor aplikace, která pak směruje požadavek na správnou součást klienta.
+Blazor podporuje také *přímý odkazování*. K přímému propojení dojde, když prohlížeč odešle požadavek na konkrétní trasu jinou než na kořen aplikace. Požadavky na přímé odkazy odeslané na server jsou směrovány do Blazor aplikace, která pak směruje požadavek na správnou součást klienta.
 
 Jednoduchá stránka ve webových formulářích ASP.NET může obsahovat následující kód:
 
@@ -94,7 +92,7 @@ Chcete-li vytvořit stránku v Blazor , vytvořte komponentu a přidejte `@page`
 
 Parametr šablony trasy je povinný. Na rozdíl od webových formulářů ASP.NET Blazor *není* trasa k součásti odvozená od umístění souboru (i když to může být funkce přidaná v budoucnu).
 
-Syntaxe šablony směrování je stejná základní syntaxe, která se používá pro směrování ve webových formulářích ASP.NET. Parametry směrování jsou zadány v šabloně pomocí složených závorek. Blazorvytvoří vazby hodnot směrování k parametrům komponenty se stejným názvem (bez rozlišení velkých a malých písmen).
+Syntaxe šablony směrování je stejná základní syntaxe, která se používá pro směrování ve webových formulářích ASP.NET. Parametry směrování jsou zadány v šabloně pomocí složených závorek. Blazor vytvoří vazby hodnot směrování k parametrům komponenty se stejným názvem (bez rozlišení velkých a malých písmen).
 
 ```razor
 @page "/product/{id}"
@@ -147,7 +145,7 @@ Směrování v nástroji Blazor je zpracováván `Router` komponentou. `Router`K
 
 ## <a name="navigation"></a>Navigace
 
-Ve webových formulářích ASP.NET můžete aktivovat navigaci na jinou stránku tak, že v prohlížeči vrátíte odezvu přesměrování. Zde je příklad:
+Ve webových formulářích ASP.NET můžete aktivovat navigaci na jinou stránku tak, že v prohlížeči vrátíte odezvu přesměrování. Příklad:
 
 ```csharp
 protected void NavigateButton_Click(object sender, EventArgs e)
@@ -156,9 +154,9 @@ protected void NavigateButton_Click(object sender, EventArgs e)
 }
 ```
 
-Vrácení odpovědi přesměrování není obvykle možné v Blazor . Blazornepoužívá model požadavek-odpověď. Pomocí JavaScriptu můžete ale aktivovat navigace v prohlížeči přímo.
+Vrácení odpovědi přesměrování není obvykle možné v Blazor . Blazor nepoužívá model požadavek-odpověď. Pomocí JavaScriptu můžete ale aktivovat navigace v prohlížeči přímo.
 
-Blazorposkytuje `NavigationManager` službu, která se dá použít k těmto akcím:
+Blazor poskytuje `NavigationManager` službu, která se dá použít k těmto akcím:
 
 - Získat aktuální adresu prohlížeče
 - Získat základní adresu

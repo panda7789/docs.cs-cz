@@ -1,20 +1,21 @@
 ---
-title: Přerušení změn v kompilátoru jazyka C#
-description: Najít všechny narušující změny v kompilátoru Jazyka C#, který používáte.
+title: Změny způsobující chybu v kompilátoru C#
+description: Vyhledejte jakékoli zásadní změny v kompilátoru jazyka C#, který používáte.
+ms.topic: troubleshooting
 ms.date: 12/12/2019
-ms.openlocfilehash: 1b1f5d57c5fa6e86878d8aa59f602a92f59288d9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 539282441a407e348f214981e4117c357effa682
+ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75444331"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88267968"
 ---
-# <a name="learn-about-any-breaking-changes-in-the-c-compiler"></a>Informace o všech narušující změny v kompilátoru Jazyka C#
+# <a name="learn-about-any-breaking-changes-in-the-c-compiler"></a>Další informace o všech nejnovějších změnách v kompilátoru jazyka C#
 
-Tým [Roslyn](https://github.com/dotnet/roslyn) udržuje seznam narušující změny v kompilátorech jazyka C# a Visual Basic. Informace o těchto změnách najdete na těchto odkazech na jejich úložišti GitHub:
+Tým [Roslyn](https://github.com/dotnet/roslyn) udržuje seznam konců změn v kompilátorech C# a Visual Basic. Informace o těchto změnách najdete na těchto odkazech na svém úložišti GitHub:
 
-- [Nejnovější změny v aktualizaci VS2019 1 a dále ve srovnání s VS2019](https://github.com/dotnet/roslyn/blob/master/docs/compilers/CSharp/Compiler%20Breaking%20Changes%20-%20post%20VS2019.md)
-- [Nejnovější změny od VS2017 (C# 7)](https://github.com/dotnet/roslyn/blob/master/docs/compilers/CSharp/Compiler%20Breaking%20Changes%20-%20post%20VS2017.md)
-- [Nejnovější změny v Roslyn 3.0 (VS2019) z Roslyn 2.* (VS2017)](https://github.com/dotnet/roslyn/blob/master/docs/compilers/CSharp/Compiler%20Breaking%20Changes%20-%20VS2019.md)
-- [Nejnovější změny v Roslyn 2.0 (VS2017) z Roslyn 1.* (VS2015) a nativní kompilátor C# (VS2013 a předchozí).](https://github.com/dotnet/roslyn/blob/master/docs/compilers/CSharp/Compiler%20Breaking%20Changes%20-%20VS2017.md)
-- [Nejnovější změny v Roslyn 1.0 (VS2015) z nativního kompilátoru Jazyka C# (VS2013 a předchozí).](https://github.com/dotnet/roslyn/blob/master/docs/compilers/CSharp/Compiler%20Breaking%20Changes%20-%20VS2015.md)
+- [Přerušující změny v VS2019 Update 1 a vyšší než VS2019](https://github.com/dotnet/roslyn/blob/master/docs/compilers/CSharp/Compiler%20Breaking%20Changes%20-%20post%20VS2019.md)
+- [Přerušující změny od VS2017 (C# 7)](https://github.com/dotnet/roslyn/blob/master/docs/compilers/CSharp/Compiler%20Breaking%20Changes%20-%20post%20VS2017.md)
+- [Průlomové změny v Roslyn 3,0 (VS2019) z Roslyn 2. * (VS2017)](https://github.com/dotnet/roslyn/blob/master/docs/compilers/CSharp/Compiler%20Breaking%20Changes%20-%20VS2019.md)
+- [Zásadní změny v Roslyn 2,0 (VS2017) z Roslyn 1. * (VS2015) a nativní kompilátor jazyka C# (VS2013 a předchozí).](https://github.com/dotnet/roslyn/blob/master/docs/compilers/CSharp/Compiler%20Breaking%20Changes%20-%20VS2017.md)
+- [Průlomové změny v Roslyn 1,0 (VS2015) z nativního kompilátoru C# (VS2013 a předchozí).](https://github.com/dotnet/roslyn/blob/master/docs/compilers/CSharp/Compiler%20Breaking%20Changes%20-%20VS2015.md)

@@ -6,18 +6,16 @@ ms.author: jefritz
 no-loc:
 - Blazor
 ms.date: 04/01/2020
-ms.openlocfilehash: a13f663c2c6908ba906e42cb939c3b8707b8cccd
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: 6154b4f8c7a5bff42e603b12d5ef85468b80224e
+ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86173312"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88267500"
 ---
 # <a name="app-configuration"></a>Konfigurace aplikací
 
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
-
-Hlavní způsob, jak načíst konfiguraci aplikace ve webových formulářích, je s položkami v *web.configm* souboru &mdash; buď na serveru, nebo v souvisejícím konfiguračním souboru, na který odkazuje *web.config*. Statický objekt můžete použít `ConfigurationManager` k interakci s nastavením aplikace, připojovacími řetězci úložiště dat a dalšími poskytovateli rozšířených konfigurací, které jsou přidány do aplikace. Je typický vidět interakce s konfigurací aplikace, jak je vidět v následujícím kódu:
+Hlavní způsob, jak načíst konfiguraci aplikace ve webových formulářích, je s položkami v *web.configm * souboru &mdash; buď na serveru, nebo v souvisejícím konfiguračním souboru, na který odkazuje *web.config*. Statický objekt můžete použít `ConfigurationManager` k interakci s nastavením aplikace, připojovacími řetězci úložiště dat a dalšími poskytovateli rozšířených konfigurací, které jsou přidány do aplikace. Je typický vidět interakce s konfigurací aplikace, jak je vidět v následujícím kódu:
 
 ```csharp
 var configurationValue = ConfigurationManager.AppSettings["ConfigurationSettingName"];

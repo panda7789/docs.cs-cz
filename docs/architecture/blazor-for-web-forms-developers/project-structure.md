@@ -7,16 +7,14 @@ no-loc:
 - Blazor
 - WebAssembly
 ms.date: 09/11/2019
-ms.openlocfilehash: 473b708a9b58fa88844bc6f79a898943d5a7db71
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: 225ebbdd5e23516ae7d5465371e95c73c440c82b
+ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86173039"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88267773"
 ---
-# <a name="project-structure-for-blazor-apps"></a>Struktura projektu pro Blazor aplikace
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
+# <a name="project-structure-for-no-locblazor-apps"></a>Struktura projektu pro Blazor aplikace
 
 Navzdory jejich významným rozdílům struktury projektů ASP.NET webové formuláře a Blazor sdílejí mnoho podobných konceptů. Tady se podíváme na strukturu Blazor projektu a porovnejte ji s projektem webových formulářů ASP.NET.
 
@@ -24,7 +22,7 @@ Pokud chcete vytvořit svoji první Blazor aplikaci, postupujte podle pokynů v 
 
 ## <a name="project-file"></a>Soubor projektu
 
-BlazorServerové aplikace jsou projekty .NET Core. Soubor projektu pro Blazor serverovou aplikaci je co nejjednodušší, protože může získat:
+Blazor Serverové aplikace jsou projekty .NET Core. Soubor projektu pro Blazor serverovou aplikaci je co nejjednodušší, protože může získat:
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk.Web">
@@ -95,7 +93,7 @@ public class Program
 
 BlazorWebAssemblyaplikace také definují vstupní bod v *program.cs*. Kód vypadá trochu jinak. Kód je podobný v tom, že nastavuje hostitele aplikace tak, aby poskytoval stejné služby na úrovni hostitele pro aplikaci. WebAssemblyHostitel aplikace ale nenastaví Server http, protože se spustí přímo v prohlížeči.
 
-Blazoraplikace mají `Startup` třídu namísto souboru *Global. asax* k definování spouštěcí logiky pro aplikaci. `Startup`Třída se používá ke konfiguraci aplikace a všech služeb specifických pro aplikace. V Blazor serverové aplikaci se `Startup` Třída používá k nastavení koncového bodu pro připojení v reálném čase používané Blazor mezi klientskými prohlížeči a serverem. V Blazor WebAssembly aplikaci `Startup` Třída definuje kořenové součásti aplikace a tam, kde by měly být vykresleny. Podíváme se na `Startup` třídu v části [spuštění aplikace](./app-startup.md) .
+Blazor aplikace mají `Startup` třídu namísto souboru *Global. asax* k definování spouštěcí logiky pro aplikaci. `Startup`Třída se používá ke konfiguraci aplikace a všech služeb specifických pro aplikace. V Blazor serverové aplikaci se `Startup` Třída používá k nastavení koncového bodu pro připojení v reálném čase používané Blazor mezi klientskými prohlížeči a serverem. V Blazor WebAssembly aplikaci `Startup` Třída definuje kořenové součásti aplikace a tam, kde by měly být vykresleny. Podíváme se na `Startup` třídu v části [spuštění aplikace](./app-startup.md) .
 
 ## <a name="static-files"></a>Statické soubory
 
@@ -103,7 +101,7 @@ Na rozdíl od projektů webových formulářů ASP.NET ne všechny soubory v Bla
 
 ## <a name="configuration"></a>Konfigurace
 
-Konfigurace v aplikacích webových formulářů ASP.NET se obvykle zpracovává pomocí jednoho nebo více *web.config* souborů. Blazoraplikace obvykle nemají *web.config* soubory. V takovém případě se soubor používá pouze ke konfiguraci nastavení specifických pro službu IIS, pokud je hostována službou IIS. Místo toho Blazor serverové aplikace používají abstrakce konfigurace ASP.NET Core ( Blazor WebAssembly aplikace momentálně nepodporují stejné konfigurační abstrakce, ale může se jednat o funkci přidanou v budoucnu). Výchozí Blazor Serverová aplikace například ukládá některá nastavení v *appsettings.js*.
+Konfigurace v aplikacích webových formulářů ASP.NET se obvykle zpracovává pomocí jednoho nebo více *web.config* souborů. Blazor aplikace obvykle nemají *web.config* soubory. V takovém případě se soubor používá pouze ke konfiguraci nastavení specifických pro službu IIS, pokud je hostována službou IIS. Místo toho Blazor serverové aplikace používají abstrakce konfigurace ASP.NET Core ( Blazor WebAssembly aplikace momentálně nepodporují stejné konfigurační abstrakce, ale může se jednat o funkci přidanou v budoucnu). Výchozí Blazor Serverová aplikace například ukládá některá nastavení v *appsettings.js*.
 
 ```json
 {
@@ -140,9 +138,9 @@ Soubory *_Imports. Razor* nejsou soubory komponenty Razor. Místo toho definují
 @using BlazorApp1.Shared
 ```
 
-## <a name="pages"></a>Pages (Stránky)
+## <a name="pages"></a>Stránky
 
-Kde jsou stránky v Blazor aplikacích? Blazornedefinuje samostatnou příponu souboru pro adresovatelné stránky, například soubory *. aspx* v aplikacích webových formulářů ASP.NET. Místo toho jsou stránky definovány přiřazením tras k součástem. Trasa je obvykle přiřazena pomocí `@page` direktivy Razor. Například komponenta, která se `Counter` vytvořila v souboru *Pages/Counter. Razor* , definuje následující trasu:
+Kde jsou stránky v Blazor aplikacích? Blazor nedefinuje samostatnou příponu souboru pro adresovatelné stránky, například soubory *. aspx* v aplikacích webových formulářů ASP.NET. Místo toho jsou stránky definovány přiřazením tras k součástem. Trasa je obvykle přiřazena pomocí `@page` direktivy Razor. Například komponenta, která se `Counter` vytvořila v souboru *Pages/Counter. Razor* , definuje následující trasu:
 
 ```razor
 @page "/counter"
@@ -154,11 +152,11 @@ Trasy součástí nejsou aktuálně odvozeny z umístění souboru komponenty, j
 
 Podrobněji podíváme se na téma směrování v Blazor části [stránky, směrování a rozložení](./pages-routing-layouts.md) .
 
-## <a name="layout"></a>Rozložení
+## <a name="layout"></a>Layout
 
 V aplikacích ASP.NET Web Forms se běžné rozložení stránky zpracovává pomocí stránek předlohy (*site. Master*). V Blazor aplikacích se rozložení stránky zpracovává pomocí součástí rozložení (*Shared/MainLayout. Razor*). Komponenty rozložení budou podrobněji popsány v části [Stránka, směrování a rozložení](./pages-routing-layouts.md) .
 
-## <a name="bootstrap-blazor"></a>BootstrapBlazor
+## <a name="bootstrap-no-locblazor"></a>Bootstrap Blazor
 
 Aby bylo možné spustit zavádění Blazor , musí aplikace:
 
@@ -243,7 +241,7 @@ Při Blazor sestavení projektu jsou všechny komponenty a soubory kódu Razor z
 
 ## <a name="run-the-app"></a>Spuštění aplikace
 
-Pokud chcete spustit Blazor aplikaci serveru, stiskněte `F5` v aplikaci Visual Studio. Blazoraplikace nepodporují kompilaci za běhu. Chcete-li zobrazit výsledky kódu a změny kódu komponenty, sestavte a znovu spusťte aplikaci pomocí připojeného ladicího programu. Pokud spustíte program bez připojeného ladicího programu ( `Ctrl+F5` ), Visual Studio sleduje změny souborů a restartuje aplikaci, jakmile budou provedeny změny. Prohlížeč se aktualizuje ručně, protože se udělaly změny.
+Pokud chcete spustit Blazor aplikaci serveru, stiskněte `F5` v aplikaci Visual Studio. Blazor aplikace nepodporují kompilaci za běhu. Chcete-li zobrazit výsledky kódu a změny kódu komponenty, sestavte a znovu spusťte aplikaci pomocí připojeného ladicího programu. Pokud spustíte program bez připojeného ladicího programu ( `Ctrl+F5` ), Visual Studio sleduje změny souborů a restartuje aplikaci, jakmile budou provedeny změny. Prohlížeč se aktualizuje ručně, protože se udělaly změny.
 
 Pokud chcete Blazor WebAssembly aplikaci spustit, vyberte jeden z následujících přístupů:
 

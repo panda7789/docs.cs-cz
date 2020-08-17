@@ -7,22 +7,20 @@ no-loc:
 - Blazor
 - Blazor WebAssembly
 ms.date: 09/19/2019
-ms.openlocfilehash: 1a99719f59415872510aef051d1f3c73daf53e15
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: d2dce23996e996a736b04c9cdd1ccf3b549ff3ff
+ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86173273"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88267552"
 ---
 # <a name="forms-and-validation"></a>Formuláře a ověřování
 
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
-
 Rozhraní Web Forms v ASP.NET zahrnuje sadu ověřovacích ovládacích prvků serveru, které zpracovávají ověřování vstupu uživatele do formuláře ( `RequiredFieldValidator` ,, `CompareValidator` `RangeValidator` a tak dále). Rozhraní Web Forms v ASP.NET také podporuje vazby modelu a ověřování modelu na základě datových poznámek ( `[Required]` ,, `[StringLength]` `[Range]` a tak dále). Logiku ověřování lze vyhovět na serveru i na klientovi pomocí nenáročného ověřování založeného na jazyce JavaScript. `ValidationSummary`Serverový ovládací prvek slouží k zobrazení souhrnu chyb ověřování pro uživatele.
 
-Blazorpodporuje sdílení logiky ověřování mezi klientem i serverem. ASP.NET poskytuje předem připravené JavaScriptové implementace mnoha běžných ověření serveru. V mnoha případech vývojář stále musí psát JavaScript, aby plně implementoval svou logiku ověřování specifickou pro danou aplikaci. Na serveru i klientovi lze použít stejné typy modelů, datové poznámky a logiku ověřování.
+Blazor podporuje sdílení logiky ověřování mezi klientem i serverem. ASP.NET poskytuje předem připravené JavaScriptové implementace mnoha běžných ověření serveru. V mnoha případech vývojář stále musí psát JavaScript, aby plně implementoval svou logiku ověřování specifickou pro danou aplikaci. Na serveru i klientovi lze použít stejné typy modelů, datové poznámky a logiku ověřování.
 
-Blazorposkytuje sadu vstupních komponent. Vstupní komponenty zpracovávají vazby dat polí na model a ověřují vstup uživatele při odeslání formuláře.
+Blazor poskytuje sadu vstupních komponent. Vstupní komponenty zpracovávají vazby dat polí na model a ověřují vstup uživatele při odeslání formuláře.
 
 |Vstupní komponenta|Vykreslený HTML element    |
 |---------------|-------------------------|
@@ -128,7 +126,7 @@ Následující komponenta ukazuje vytvoření formuláře v Blazor závislosti n
 
 Po odeslání formuláře se data vázaná na model neuložila do žádného úložiště dat, jako je databáze. V Blazor WebAssembly aplikaci je třeba data odeslat na server. Například pomocí požadavku HTTP POST. V Blazor serverové aplikaci jsou již data na serveru, ale musí být trvalá. Manipulace s přístupem k datům v Blazor aplikacích je předmětem části [řešení problémů s daty](data.md) .
 
-## <a name="additional-resources"></a>Další zdroje informací
+## <a name="additional-resources"></a>Další zdroje
 
 Další informace o [formulářích a ověřování](/aspnet/core/blazor/forms-validation) v Blazor aplikacích najdete v Blazor dokumentaci.
 

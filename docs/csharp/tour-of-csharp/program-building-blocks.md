@@ -2,12 +2,12 @@
 title: Stavební kameny programů v jazyce C# "
 description: Přečtěte si o členech, výrazech a příkazech jazyka C#. Typy obsahují členy, které zapisujete. Tyto členy jsou sestaveny z příkazů a výrazů.
 ms.date: 08/06/2020
-ms.openlocfilehash: de9f634db129ea2ec6f692cabb657f9fe41b2f9c
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 142fe7b5a3424a8925638bfb4e4437392347f4c6
+ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88068529"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88268137"
 ---
 # <a name="program-building-blocks"></a>Stavební bloky programu
 
@@ -30,7 +30,7 @@ Následující seznam obsahuje přehled druhů členů, které třída může ob
 - **Finalizační metody**: akce provedené před trvalým zahozením instancí třídy
 - **Typy**: vnořené typy deklarované třídou
 
-## <a name="accessibility"></a>Usnadnění
+## <a name="accessibility"></a>Přístupnost
 
 Každý člen třídy má přidruženou přístupnost, která řídí oblasti textu programu, které mají přístup ke členu. Existuje šest možných forem usnadnění přístupu. Modifikátory přístupu jsou shrnuty níže.
 
@@ -41,7 +41,7 @@ Každý člen třídy má přidruženou přístupnost, která řídí oblasti te
 - `protected internal`: Přístup je omezen na tuto třídu, třídy odvozené z této třídy nebo třídy v rámci stejného sestavení.
 - `private protected`: Přístup je omezen na tuto třídu nebo třídy odvozené z tohoto typu v rámci stejného sestavení.
 
-## <a name="fields"></a>Pole
+## <a name="fields"></a>Fields (Pole)
 
 *Pole* je proměnná, která je přidružena ke třídě nebo s instancí třídy.
 
@@ -209,7 +209,7 @@ Přístupové objekty vlastnosti mohou být virtuální. Pokud deklarace vlastno
 
 `MyList<T>`Třída deklaruje jeden indexer pro čtení a zápis, který přebírá `int` parametr. Indexer umožňuje indexovat `MyList<T>` instance s `int` hodnotami. Příklad:
 
-:::code language="csharp" source="./snippets/shared/ClassesObjects.cs" ID="ListAddition":::
+:::code language="csharp" source="./snippets/shared/ClassesObjects.cs" ID="ListAccess":::
 
 Indexery mohou být přetíženy. Třída může deklarovat více indexerů za předpokladu, že počet nebo typy jejich parametrů se liší.
 
@@ -284,21 +284,21 @@ Následující seznam uvádí typy příkazů, které lze použít:
 * Místní deklarace proměnné
 * Deklarace místní konstanty
 * Příkaz výrazu.
-* `if`vydá.
-* `switch`vydá.
-* `while`vydá.
-* `do`vydá.
-* `for`vydá.
-* `foreach`vydá.
-* `break`vydá.
-* `continue`vydá.
-* `goto`vydá.
-* `return`vydá.
-* `yield`vydá.
-* `throw`příkazy a `try` příkazy.
+* `if` vydá.
+* `switch` vydá.
+* `while` vydá.
+* `do` vydá.
+* `for` vydá.
+* `foreach` vydá.
+* `break` vydá.
+* `continue` vydá.
+* `goto` vydá.
+* `return` vydá.
+* `yield` vydá.
+* `throw` příkazy a `try` příkazy.
 * `checked``unchecked`příkazy a.
-* `lock`vydá.
-* `using`vydá.
+* `lock` vydá.
+* `using` vydá.
 
 >[!div class="step-by-step"]
 >[Předchozí](types.md) 
