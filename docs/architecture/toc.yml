@@ -5,22 +5,19 @@
   items:
     - name: Navrhování moderních webových aplikací pomocí ASP.NET Core a Microsoft Azure
       href: modern-web-apps-azure/
+    - name: Navrhování aplikací .NET nativních pro cloud pro Azure
+      href: cloud-native/
     - name: gRPC ASP.NET Core pro vývojáře WCF
       href: grpc-for-wcf-developers/
-    - name: Modernizace stávajících aplikací .NET pomocí cloudu Azure a kontejnerů Windows
-      href: modernize-with-azure-containers/
+    - name: Blazor pro vývojáře ASP.NET Web Forms
+      href: blazor-for-web-forms-developers/
     - name: Životní cyklus kontejnerizovaných aplikací Dockeru s platformou a nástroji Microsoft
       href: containerized-lifecycle/
+    - name: Modernizace stávajících aplikací .NET pomocí cloudu Azure a kontejnerů Windows
+      href: modernize-with-azure-containers/
+    - name: Modernizace desktopových aplikací ve Windows 10 s .NET Core 3.1
+      href: modernize-desktop/
     - name: 'Mikroslužby .NET: Architektura pro kontejnerizované aplikace .NET'
       href: microservices/
     - name: 'Bezserverové aplikace: Architektura, vzory a implementace v Azure'
       href: serverless/
-    - name: Navrhování aplikací .NET nativních pro cloud pro Azure
-      href: cloud-native/
-    - name: Modernizace desktopových aplikací ve Windows 10 s .NET Core 3.1
-      href: modernize-desktop/
-- name: Náhled elektronických knih
-  expanded: true
-  items:
-    - name: Blazor pro vývojáře ASP.NET Web Forms
-      href: blazor-for-web-forms-developers/
