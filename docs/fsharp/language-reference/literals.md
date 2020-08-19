@@ -1,20 +1,17 @@
 ---
 title: Literály
 description: 'Seznamte se s typy literálů v programovacím jazyce F #.'
-ms.date: 06/28/2019
-ms.openlocfilehash: 98d609a1cf0beb00c0dd4d45ea343aaa2280b62e
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.date: 08/15/2020
+ms.openlocfilehash: 15f73db3c36f7c60ab1eeba96c63a28ebc6d7f01
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87855020"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88559151"
 ---
 # <a name="literals"></a>Literály
 
 Tento článek obsahuje tabulku, která ukazuje, jak zadat typ literálu v jazyce F #.
-
-> [!NOTE]
-> Reference k rozhraní docs.microsoft.com API pro F # není dokončená. Pokud narazíte na nefunkční odkazy, místo toho použijte [dokumentaci základní knihovny F #](https://fsharp.github.io/fsharp-core-docs/) .
 
 ## <a name="literal-types"></a>Typy literálů
 
@@ -34,19 +31,19 @@ V následující tabulce jsou uvedeny typy literálů v jazyce F #. Znaky, kter�
 |UInt64|nepodepsané 64 – přirozené číslo v bitech|UL|`86UL`|
 |Single, float32|32-bitové číslo s plovoucí desetinnou čárkou|F nebo f|`4.14F` nebo `4.14f`|
 |||znaky|`0x00000000lf`|
-|Plovák klepat|64-bitové číslo s plovoucí desetinnou čárkou|žádné|`4.14`nebo `2.3E+32` nebo`2.3e+32`|
+|Plovák klepat|64-bitové číslo s plovoucí desetinnou čárkou|žádné|`4.14` nebo `2.3E+32` nebo `2.3e+32`|
 |||ZNAKY|`0x0000000000000000LF`|
 |bigint|celé číslo není omezeno na 64-bitovou reprezentaci|I|`9999999999999999999999999999I`|
 |decimal|desetinné číslo reprezentované jako pevný bod nebo racionální číslo|M nebo m|`0.7833M` nebo `0.7833m`|
 |Char|znak Unicode|žádné|`'a'` nebo `'\u0061'`|
-|Řetězec|Řetězec Unicode|žádné|`"text\n"`<br /><br />– nebo –<br /><br />`@"c:\filename"`<br /><br />– nebo –<br /><br />`"""<book title="Paradise Lost">"""`<br /><br />– nebo –<br /><br />`"string1" + "string2"`<br /><br />Viz také [řetězce](Strings.md).|
+|Řetězec|Řetězec Unicode|žádné|`"text\n"`<br /><br />nebo<br /><br />`@"c:\filename"`<br /><br />nebo<br /><br />`"""<book title="Paradise Lost">"""`<br /><br />nebo<br /><br />`"string1" + "string2"`<br /><br />Viz také [řetězce](Strings.md).|
 |byte|Znak ASCII|B|`'a'B`|
 |Byte []|Řetězec ASCII|B|`"text"B`|
-|Řetězec nebo Byte []|řetězec doslovného řetězce|@ prefix|`@"\\server\share"`Sady<br /><br />`@"\\server\share"B`Abecední|
+|Řetězec nebo Byte []|řetězec doslovného řetězce|@ prefix|`@"\\server\share"` Sady<br /><br />`@"\\server\share"B` Abecední|
 
 ## <a name="named-literals"></a>Pojmenované literály
 
-Hodnoty, které mají být konstanty, mohou být označeny atributem [Literal](https://msdn.microsoft.com/library/465f36ce-d146-41c0-b425-679c509cd285) . Tento atribut má vliv, který způsobí, že se hodnota zkompiluje jako konstanta.
+Hodnoty, které mají být konstanty, mohou být označeny atributem [Literal](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-literalattribute.html) . Tento atribut má vliv, který způsobí, že se hodnota zkompiluje jako konstanta.
 
 V výrazech porovnávání se vzorem se identifikátory začínající malým písmenem vždy považují za proměnné, které mají být vázány, nikoli jako literály, takže při definování literálů byste obecně měli použít počáteční velká písmena.
 
@@ -93,7 +90,3 @@ let valueAsBits = 0b1101_1110_1010_1101_1011_1110_1110_1111
 
 let exampleSSN = 123_456_7890
 ```
-
-## <a name="see-also"></a>Viz také
-
-- [Core. LiteralAttribute – – třída](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.literalattribute-class-%5bfsharp%5d)

@@ -1,13 +1,13 @@
 ---
 title: Interaktivní možnosti
 description: Přečtěte si o možnostech příkazového řádku, které podporuje F# Interactive, fsi.exe.
-ms.date: 07/22/2020
-ms.openlocfilehash: abddd1fd990be18ede139ab26ffe80513ba6e0dd
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.date: 08/15/2020
+ms.openlocfilehash: da2251c1d2e57090ed926e501cebf3c53ac58052
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87855345"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88558605"
 ---
 # <a name="f-interactive-options"></a>Možnosti F# Interactive
 
@@ -44,7 +44,7 @@ Kde se zobrazí seznamy v argumentech možností F# Interactive, prvky seznamu j
 |**--GUI**[ **+**&#124;**-** ]|Povolí nebo zakáže smyčku události model Windows Forms. Výchozí hodnota je povolena.|
 |**--Help**<br /><br />**-?**|Slouží k zobrazení syntaxe příkazového řádku a stručný popis jednotlivých možností.|
 |**--lib: &lt; Folder-list&gt;**<br /><br />**-I: &lt; seznam složek&gt;**|Stejné jako možnost kompilátoru **fsc.exe** . Další informace naleznete v tématu [Možnosti kompilátoru](compiler-options.md).|
-|**--Load: &lt; filename&gt;**|Zkompiluje daný zdrojový kód při spuštění a načte zkompilované konstrukce F # do relace. Pokud cílový zdroj obsahuje direktivy skriptování, například **#use** nebo **#load**, je nutné místo **--Load** nebo **#load**použít **--Use** nebo **#use** .|
+|**--Load: &lt; filename&gt;**|Zkompiluje daný zdrojový kód při spuštění a načte zkompilované konstrukce F # do relace.|
 |**--mlcompatibility**|Stejné jako možnost kompilátoru **fsc.exe** . Další informace naleznete v tématu [Možnosti kompilátoru](compiler-options.md).|
 |**--nerozhraní**|Stejné jako možnost kompilátoru **fsc.exe** . Další informace najdete v tématu [Možnosti kompilátoru](compiler-options.md) .|
 |**--logo**|Stejné jako možnost kompilátoru **fsc.exe** . Další informace naleznete v tématu [Možnosti kompilátoru](compiler-options.md).|
@@ -97,7 +97,7 @@ fsi.ShowIEnumerable <- false // Control whether sequence values are expanded by 
 fsi.ShowDeclarationValues <- false // Control whether values are shown for declaration outputs
 ```
 
-### <a name="customize-with-addprinter-and-addprinttransformer"></a>Přizpůsobení pomocí `AddPrinter` a`AddPrintTransformer`
+### <a name="customize-with-addprinter-and-addprinttransformer"></a>Přizpůsobení pomocí `AddPrinter` a `AddPrintTransformer`
 
 Tisk v F# Interactive výstupech lze přizpůsobit pomocí `fsi.AddPrinter` a `fsi.AddPrintTransformer` .
 První funkce poskytuje text, který nahradí tisk objektu. Druhá funkce vrátí náhradní objekt, který se zobrazí místo toho. Zvažte například následující kód F #:
@@ -126,7 +126,7 @@ val newYearsDay1999 : DateAndLabel = { Date = 1999-01-01T00:00:00
                                        Label = "New Year" }
 ```
 
-`fsi.AddPrintTransformer`dá se použít k poskytnutí náhradního objektu pro tisk:
+`fsi.AddPrintTransformer` dá se použít k poskytnutí náhradního objektu pro tisk:
 
 ```fsharp
 type MyList(values: int list) =

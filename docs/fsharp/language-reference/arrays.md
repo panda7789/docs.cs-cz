@@ -1,20 +1,17 @@
 ---
 title: Pole
 description: 'Naučte se vytvářet a používat pole v programovacím jazyce F #.'
-ms.date: 05/16/2016
-ms.openlocfilehash: f95ca3274e098fda044973a48205cb591ec30b27
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.date: 08/13/2020
+ms.openlocfilehash: 93d524046ff93a7f1b04e72d580d9d0e1360ba0b
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87855605"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88558878"
 ---
 # <a name="arrays"></a>Pole
 
 Pole jsou pevná velikost, založená na nule, proměnlivé kolekce po sobě jdoucích datových prvků, které jsou všechny stejného typu.
-
-> [!NOTE]
-> Reference k rozhraní docs.microsoft.com API pro F # není dokončená. Pokud narazíte na nefunkční odkazy, místo toho použijte [dokumentaci základní knihovny F #](https://fsharp.github.io/fsharp-core-docs/) .
 
 ## <a name="create-arrays"></a>Vytváření polí
 
@@ -59,11 +56,11 @@ Při použití notace řezu se vytvoří nová kopie pole.
 
 Typ všech polí jazyka F # je .NET Framework typ <xref:System.Array?displayProperty=nameWithType> . Proto pole jazyka F # podporují všechny funkce, které jsou k dispozici v <xref:System.Array?displayProperty=nameWithType> .
 
-Modul knihovny [`Microsoft.FSharp.Collections.Array`](https://msdn.microsoft.com/library/0cda8040-9396-40dd-8dcd-cf48542165a1) podporuje operace na jednorozměrném poli. Moduly `Array2D` , `Array3D` a `Array4D` obsahují funkce, které podporují operace s poli dvou, tří a čtyř dimenzí v uvedeném pořadí. Pomocí můžete vytvořit pole s pořadím větším než čtyři <xref:System.Array?displayProperty=nameWithType> .
+[ `Array` Modul](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html) podporuje operace pro jednorozměrné pole. Moduly `Array2D` , `Array3D` a `Array4D` obsahují funkce, které podporují operace s poli dvou, tří a čtyř dimenzí v uvedeném pořadí. Pomocí můžete vytvořit pole s pořadím větším než čtyři <xref:System.Array?displayProperty=nameWithType> .
 
 ### <a name="simple-functions"></a>Jednoduché funkce
 
-[`Array.get`](https://msdn.microsoft.com/library/dd93e85d-7e80-4d76-8de0-b6d45bcf07bc)Získá element. [`Array.length`](https://msdn.microsoft.com/library/0d775b6a-4a8f-4bd1-83e5-843b3251725f)poskytuje délku pole. [`Array.set`](https://msdn.microsoft.com/library/847edc0d-4dc5-4a39-98c7-d4320c60e790)Nastaví element na zadanou hodnotu. Následující příklad kódu ukazuje použití těchto funkcí.
+[`Array.get`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#get) Získá element. [`Array.length`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#length) poskytuje délku pole. [`Array.set`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#set) Nastaví element na zadanou hodnotu. Následující příklad kódu ukazuje použití těchto funkcí.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/arrays/snippet9.fs)]
 
@@ -75,7 +72,7 @@ Výstup je následující.
 
 ### <a name="functions-that-create-arrays"></a>Funkce, které vytvářejí pole
 
-Několik funkcí vytváří pole bez nutnosti existujícího pole. [`Array.empty`](https://msdn.microsoft.com/library/c3694b92-1c16-4c54-9bf2-fe398fadce32)Vytvoří nové pole, které neobsahuje žádné prvky. [`Array.create`](https://msdn.microsoft.com/library/e848c8d6-1142-4080-9727-8dacc26066be)Vytvoří pole zadané velikosti a nastaví všechny prvky na zadané hodnoty. [`Array.init`](https://msdn.microsoft.com/library/ee898089-63b0-40aa-910c-5ae7e32f6665)Vytvoří pole s ohledem na dimenzi a funkci pro generování prvků. [`Array.zeroCreate`](https://msdn.microsoft.com/library/fa5b8e7a-1b5b-411c-8622-b58d7a14d3b2)Vytvoří pole, ve kterém jsou všechny prvky inicializovány na nulovou hodnotu pro typ pole. Následující kód znázorňuje tyto funkce.
+Několik funkcí vytváří pole bez nutnosti existujícího pole. [`Array.empty`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#empty) Vytvoří nové pole, které neobsahuje žádné prvky. [`Array.create`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#create) Vytvoří pole zadané velikosti a nastaví všechny prvky na zadané hodnoty. [`Array.init`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#init) Vytvoří pole s ohledem na dimenzi a funkci pro generování prvků. [`Array.zeroCreate`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#zeroCreate) Vytvoří pole, ve kterém jsou všechny prvky inicializovány na nulovou hodnotu pro typ pole. Následující kód znázorňuje tyto funkce.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/arrays/snippet91.fs)]
 
@@ -87,7 +84,7 @@ Area of floats set to 5.0: [|5.0; 5.0; 5.0; 5.0; 5.0; 5.0; 5.0; 5.0; 5.0; 5.0|]
 Array of squares: [|0; 1; 4; 9; 16; 25; 36; 49; 64; 81|]
 ```
 
-[`Array.copy`](https://msdn.microsoft.com/library/9d0202f1-1ea0-475e-9d66-4f8ccc3c5b5f)Vytvoří nové pole, které obsahuje prvky, které jsou zkopírovány z existujícího pole. Všimněte si, že kopie je bez podstruktury, což znamená, že pokud je typ elementu odkazový typ, zkopíruje se pouze odkaz, nikoli podkladový objekt. Následující příklad kódu to dokládá.
+[`Array.copy`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#copy) Vytvoří nové pole, které obsahuje prvky, které jsou zkopírovány z existujícího pole. Všimněte si, že kopie je bez podstruktury, což znamená, že pokud je typ elementu odkazový typ, zkopíruje se pouze odkaz, nikoli podkladový objekt. Následující příklad kódu to dokládá.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/arrays/snippet11.fs)]
 
@@ -100,7 +97,7 @@ Výstup předcházejícího kódu je následující:
 
 Řetězec `Test1` se zobrazí pouze v prvním poli, protože operace vytvoření nového elementu přepíše odkaz v, `firstArray` ale nemá vliv na původní odkaz na prázdný řetězec, který je stále přítomen v `secondArray` . Řetězec `Test2` se zobrazí v obou polích, protože `Insert` operace s <xref:System.Text.StringBuilder?displayProperty=nameWithType> typem ovlivňuje podkladový <xref:System.Text.StringBuilder?displayProperty=nameWithType> objekt, na který je odkazováno v obou polích.
 
-[`Array.sub`](https://msdn.microsoft.com/library/40fb12ba-41d7-4ef0-b33a-56727deeef9d)vygeneruje nové pole z dílčího rozsahu pole. Dílčí rozsah můžete zadat zadáním počátečního indexu a délky. Následující kód demonstruje použití `Array.sub` .
+[`Array.sub`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#sub) vygeneruje nové pole z dílčího rozsahu pole. Dílčí rozsah můžete zadat zadáním počátečního indexu a délky. Následující kód demonstruje použití `Array.sub` .
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/arrays/snippet12.fs)]
 
@@ -110,7 +107,7 @@ Výstup ukazuje, že podpole začíná na elementu 5 a obsahuje 10 prvků.
 [|5; 6; 7; 8; 9; 10; 11; 12; 13; 14|]
 ```
 
-[`Array.append`](https://msdn.microsoft.com/library/08836310-5036-4474-b9a2-2c73e2293911)Vytvoří nové pole kombinováním dvou existujících polí.
+[`Array.append`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#append) Vytvoří nové pole kombinováním dvou existujících polí.
 
 Následující kód demonstruje **pole Array. Append**.
 
@@ -122,7 +119,7 @@ Výstup předcházejícího kódu je následující.
 [|1; 2; 3; 4; 5; 6|]
 ```
 
-[`Array.choose`](https://msdn.microsoft.com/library/f5c8a5e2-637f-44d4-b35c-be96a6618b09)vybere prvky pole, které mají být zahrnuty do nového pole. Následující kód demonstruje `Array.choose` . Všimněte si, že typ elementu pole nemusí odpovídat typu hodnoty vrácené v typu možnosti. V tomto příkladu je typ prvku `int` a možnost je výsledkem polynomické funkce, `elem*elem - 1` jako číslo s plovoucí desetinnou čárkou.
+[`Array.choose`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#choose) vybere prvky pole, které mají být zahrnuty do nového pole. Následující kód demonstruje `Array.choose` . Všimněte si, že typ elementu pole nemusí odpovídat typu hodnoty vrácené v typu možnosti. V tomto příkladu je typ prvku `int` a možnost je výsledkem polynomické funkce, `elem*elem - 1` jako číslo s plovoucí desetinnou čárkou.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/arrays/snippet14.fs)]
 
@@ -132,7 +129,7 @@ Výstup předcházejícího kódu je následující.
 [|3.0; 15.0; 35.0; 63.0; 99.0|]
 ```
 
-[`Array.collect`](https://msdn.microsoft.com/library/c3b60c3b-9455-48c9-bc2b-e88f0434342a)Spustí zadanou funkci u každého prvku pole existujícího pole a poté shromáždí prvky vygenerované funkcí a zkombinuje je do nového pole. Následující kód demonstruje `Array.collect` .
+[`Array.collect`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#collect) Spustí zadanou funkci u každého prvku pole existujícího pole a poté shromáždí prvky vygenerované funkcí a zkombinuje je do nového pole. Následující kód demonstruje `Array.collect` .
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/arrays/snippet15.fs)]
 
@@ -142,7 +139,7 @@ Výstup předcházejícího kódu je následující.
 [|0; 1; 0; 1; 2; 3; 4; 5; 0; 1; 2; 3; 4; 5; 6; 7; 8; 9; 10|]
 ```
 
-[`Array.concat`](https://msdn.microsoft.com/library/f7219b79-1ec8-4a25-96b1-edbedb358302)vezme sekvenci polí a zkombinuje je do jednoho pole. Následující kód demonstruje `Array.concat` .
+[`Array.concat`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#concat) vezme sekvenci polí a zkombinuje je do jednoho pole. Následující kód demonstruje `Array.concat` .
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/arrays/snippet16.fs)]
 
@@ -153,7 +150,7 @@ Výstup předcházejícího kódu je následující.
 (3, 2, 6); (3, 3, 9)|]
 ```
 
-[`Array.filter`](https://msdn.microsoft.com/library/b885b214-47fc-4639-9664-b8c183a39ede)používá funkci logické podmínky a generuje nové pole, které obsahuje pouze prvky ze vstupního pole, pro které je podmínka pravdivá. Následující kód demonstruje `Array.filter` .
+[`Array.filter`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#filter) používá funkci logické podmínky a generuje nové pole, které obsahuje pouze prvky ze vstupního pole, pro které je podmínka pravdivá. Následující kód demonstruje `Array.filter` .
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/arrays/snippet17.fs)]
 
@@ -163,7 +160,7 @@ Výstup předcházejícího kódu je následující.
 [|2; 4; 6; 8; 10|]
 ```
 
-[`Array.rev`](https://msdn.microsoft.com/library/1bbf822c-763b-4794-af21-97d2e48ef709)vygeneruje nové pole obrácením pořadí existujícího pole. Následující kód demonstruje `Array.rev` .
+[`Array.rev`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#rev) vygeneruje nové pole obrácením pořadí existujícího pole. Následující kód demonstruje `Array.rev` .
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/arrays/snippet18.fs)]
 
@@ -185,11 +182,11 @@ Výstup je
 
 ### <a name="multidimensional-arrays"></a>Multidimenzionální pole
 
-Multidimenzionální pole lze vytvořit, ale neexistuje žádná syntaxe pro zápis literálu multidimenzionálního pole. Operátor lze použít [`array2D`](https://msdn.microsoft.com/library/1d52503d-2990-49fc-8fd3-6b0e508aa236) k vytvoření pole z sekvence sekvencí prvků pole. Sekvence mohou být literály pole nebo seznamu. Například následující kód vytvoří dvourozměrné pole.
+Multidimenzionální pole lze vytvořit, ale neexistuje žádná syntaxe pro zápis literálu multidimenzionálního pole. Operátor lze použít [`array2D`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-array2dmodule.html) k vytvoření pole z sekvence sekvencí prvků pole. Sekvence mohou být literály pole nebo seznamu. Například následující kód vytvoří dvourozměrné pole.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/arrays/snippet20.fs)]
 
-Funkci lze také použít [`Array2D.init`](https://msdn.microsoft.com/library/9de07e95-bc21-4927-b5b4-08fdec882c7b) k inicializaci polí dvou dimenzí a podobné funkce jsou k dispozici pro pole tří a čtyř dimenzí. Tyto funkce přebírají funkci, která se používá k vytvoření prvků. Chcete-li vytvořit dvourozměrné pole obsahující prvky nastavené na počáteční hodnotu namísto určení funkce, použijte [`Array2D.create`](https://msdn.microsoft.com/library/36c9d980-b241-4a20-bc64-bcfa0205d804) funkci, která je také k dispozici pro pole až do čtyř dimenzí. Následující příklad kódu ukazuje, jak vytvořit pole polí obsahující požadované prvky a poté používá `Array2D.init` ke generování požadovaného dvojrozměrného pole.
+Funkci lze také použít [`Array2D.init`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-array2dmodule.html#init) k inicializaci polí dvou dimenzí a podobné funkce jsou k dispozici pro pole tří a čtyř dimenzí. Tyto funkce přebírají funkci, která se používá k vytvoření prvků. Chcete-li vytvořit dvourozměrné pole obsahující prvky nastavené na počáteční hodnotu namísto určení funkce, použijte [`Array2D.create`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-array2dmodule.html#create) funkci, která je také k dispozici pro pole až do čtyř dimenzí. Následující příklad kódu ukazuje, jak vytvořit pole polí obsahující požadované prvky a poté používá `Array2D.init` ke generování požadovaného dvojrozměrného pole.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/arrays/snippet21.fs)]
 
@@ -199,7 +196,7 @@ Indexace pole a syntaxe průřezu se podporují pro pole až do pořadí 4. Při
 
 Typ dvojrozměrného pole je zapsán jako `<type>[,]` (například `int[,]` , `double[,]` ) a typ trojrozměrného pole je zapsán jako `<type>[,,]` a tak dále pro pole vyšších dimenzí.
 
-Pro multidimenzionální pole je k dispozici také pouze podmnožina funkcí dostupných pro jednorozměrné pole. Další informace naleznete v tématech [`Collections.Array Module`](https://msdn.microsoft.com/visualfsharpdocs/conceptual/collections.array-module-%5bfsharp%5d) , [`Collections.Array2D Module`](https://msdn.microsoft.com/visualfsharpdocs/conceptual/collections.array2d-module-%5bfsharp%5d) , [`Collections.Array3D Module`](https://msdn.microsoft.com/visualfsharpdocs/conceptual/collections.array3d-module-%5bfsharp%5d) a [`Collections.Array4D Module`](https://msdn.microsoft.com/visualfsharpdocs/conceptual/collections.array4d-module-%5bfsharp%5d) .
+Pro multidimenzionální pole je k dispozici také pouze podmnožina funkcí dostupných pro jednorozměrné pole.
 
 ### <a name="array-slicing-and-multidimensional-arrays"></a>Řezy pole a multidimenzionální pole
 
@@ -219,7 +216,7 @@ matrix.[*, 1..3]
 matrix.[1..3, 1..3]
 ```
 
-Od jazyka F # 3,1 můžete rozložit multidimenzionální pole na podpole stejné nebo nižší dimenze. Můžete například získat vektor z matice zadáním jednoho řádku nebo sloupce.
+Multidimenzionální pole lze rozložit na podpole stejné nebo nižší dimenze. Můžete například získat vektor z matice zadáním jednoho řádku nebo sloupce.
 
 ```fsharp
 // Get row 3 from a matrix as a vector:
@@ -300,7 +297,7 @@ module test =
 
 ### <a name="boolean-functions-on-arrays"></a>Logické funkce pro pole
 
-Funkce [`Array.exists`](https://msdn.microsoft.com/library/8e47ad6c-c065-4876-8cb4-ec960ec3e5c9) a [`Array.exists2`](https://msdn.microsoft.com/library/2e384a6a-f99d-4e23-b677-250ffbc1dd8e) testovací prvky buď v jednom nebo dvou polích, v uvedeném pořadí. Tyto funkce přebírají funkci testu a vrátí `true` , pokud existuje element (nebo pár prvků pro `Array.exists2` ), který splňuje podmínky.
+Funkce [`Array.exists`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#exists) a [`Array.exists2`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#exists2) testovací prvky buď v jednom nebo dvou polích, v uvedeném pořadí. Tyto funkce přebírají funkci testu a vrátí `true` , pokud existuje element (nebo pár prvků pro `Array.exists2` ), který splňuje podmínky.
 
 Následující kód demonstruje použití `Array.exists` a `Array.exists2` . V těchto příkladech jsou vytvořeny nové funkce použitím pouze jednoho z argumentů, v těchto případech argument funkce.
 
@@ -315,7 +312,7 @@ false
 true
 ```
 
-Podobně funkce [`Array.forall`](https://msdn.microsoft.com/library/d88f2cd0-fa7f-45cf-ac15-31eae9086cc4) testuje pole k určení, zda každý prvek splňuje logickou podmínku. Variace má [`Array.forall2`](https://msdn.microsoft.com/library/c68f61a1-030c-4024-b705-c4768b6c96b9) stejnou věc pomocí logické funkce, která zahrnuje prvky dvou polí stejné délky. Následující kód ilustruje použití těchto funkcí.
+Podobně funkce [`Array.forall`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#forall) testuje pole k určení, zda každý prvek splňuje logickou podmínku. Variace má [`Array.forall2`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#forall2) stejnou věc pomocí logické funkce, která zahrnuje prvky dvou polí stejné délky. Následující kód ilustruje použití těchto funkcí.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/arrays/snippet24.fs)]
 
@@ -330,7 +327,7 @@ false
 
 ### <a name="search-arrays"></a>Hledat pole
 
-[`Array.find`](https://msdn.microsoft.com/library/db6d920a-de19-4520-85a4-d83de77c1b33)převezme logickou funkci a vrátí první prvek, pro který funkce vrací `true` , nebo vyvolá, <xref:System.Collections.Generic.KeyNotFoundException?displayProperty=nameWithType> Pokud není nalezen žádný element, který by splňoval podmínky. [`Array.findIndex`](https://msdn.microsoft.com/library/5ae3a8f9-7b8f-44ea-a740-d5700f4d899f)je jako `Array.find` , s tím rozdílem, že vrátí index elementu namísto samotného prvku.
+[`Array.find`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#find) převezme logickou funkci a vrátí první prvek, pro který funkce vrací `true` , nebo vyvolá, <xref:System.Collections.Generic.KeyNotFoundException?displayProperty=nameWithType> Pokud není nalezen žádný element, který by splňoval podmínky. [`Array.findIndex`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#findIndex) je jako `Array.find` , s tím rozdílem, že vrátí index elementu namísto samotného prvku.
 
 Následující kód používá `Array.find` a `Array.findIndex` k vyhledání čísla, které je dokonalým čtvercem a dokonalým datovou krychlí.
 
@@ -342,7 +339,7 @@ Výstup je následující.
 The first element that is both a square and a cube is 64 and its index is 62.
 ```
 
-[`Array.tryFind`](https://msdn.microsoft.com/library/7bd65f6c-df77-454c-ac3a-6f7baecec9d9)je jako `Array.find` , s tím rozdílem, že jeho výsledek je typ možnosti a vrátí, `None` Pokud není nalezen žádný element. `Array.tryFind`by měl být použit místo toho, `Array.find` když nevíte, zda je shodný prvek v poli. Podobně [`Array.tryFindIndex`](https://msdn.microsoft.com/library/da82f7fe-95e9-4fd5-a924-cd3c9d10618a) je podobný jako [`Array.findIndex`](https://msdn.microsoft.com/library/5ae3a8f9-7b8f-44ea-a740-d5700f4d899f) s tím rozdílem, že typ možnosti je vrácená hodnota. Pokud není nalezen žádný element, možnost je `None` .
+[`Array.tryFind`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#tryFind) je jako `Array.find` , s tím rozdílem, že jeho výsledek je typ možnosti a vrátí, `None` Pokud není nalezen žádný element. `Array.tryFind` by měl být použit místo toho, `Array.find` když nevíte, zda je shodný prvek v poli. Podobně [`Array.tryFindIndex`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#tryFindIndex) je podobný jako `Array.findIndex` s tím rozdílem, že typ možnosti je vrácená hodnota. Pokud není nalezen žádný element, možnost je `None` .
 
 Následující kód demonstruje použití `Array.tryFind` . Tento kód závisí na předchozím kódu.
 
@@ -356,7 +353,7 @@ Found an element: 729
 Failed to find a matching element.
 ```
 
-Použijte [`Array.tryPick`](https://msdn.microsoft.com/library/72d45f85-037b-43a9-97fd-17239f72713e) v případě, že potřebujete transformovat prvek společně s jeho hledáním. Výsledkem je první prvek, pro který funkce vrací transformovaný prvek jako hodnotu možnosti, nebo `None` Pokud žádný takový prvek nenajde.
+Použijte [`Array.tryPick`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#tryPick) v případě, že potřebujete transformovat prvek společně s jeho hledáním. Výsledkem je první prvek, pro který funkce vrací transformovaný prvek jako hodnotu možnosti, nebo `None` Pokud žádný takový prvek nenajde.
 
 Následující kód ukazuje použití `Array.tryPick` . V tomto případě namísto lambda výrazu je definováno několik místních pomocných funkcí pro zjednodušení kódu.
 
@@ -374,23 +371,23 @@ Did not find an element that is both a perfect square and a perfect cube.
 
 ### <a name="perform-computations-on-arrays"></a>Provádění výpočtů u polí
 
-[`Array.average`](https://msdn.microsoft.com/library/7029f2b9-91ea-41cb-be1b-466a5a0db20e)Funkce vrátí průměr každého prvku v poli. Je omezen na typy prvků, které podporují přesné dělení podle typu Integer, což zahrnuje typy plovoucí desetinné čárky, ale ne celočíselné typy. [`Array.averageBy`](https://msdn.microsoft.com/library/e9d64609-06a3-48f0-bc07-226ab0f85c54)Funkce vrátí průměr výsledků volání funkce na každém elementu. Pro pole integrálního typu můžete použít `Array.averageBy` a mít funkci převést každý prvek na typ s plovoucí desetinnou čárkou pro výpočet.
+[`Array.average`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#average)Funkce vrátí průměr každého prvku v poli. Je omezen na typy prvků, které podporují přesné dělení podle typu Integer, což zahrnuje typy plovoucí desetinné čárky, ale ne celočíselné typy. [`Array.averageBy`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#averageBy)Funkce vrátí průměr výsledků volání funkce na každém elementu. Pro pole integrálního typu můžete použít `Array.averageBy` a mít funkci převést každý prvek na typ s plovoucí desetinnou čárkou pro výpočet.
 
-Použijte [`Array.max`](https://msdn.microsoft.com/library/f03fbda0-fce6-40e2-a85d-79c9d81f710b) nebo [`Array.min`](https://msdn.microsoft.com/library/d6b3da5f-bac0-4355-9846-4b72d95bc3fd) k získání maximálního nebo minimálního prvku, pokud jej typ elementu podporuje. Podobně [`Array.maxBy`](https://msdn.microsoft.com/library/18dbe7c5-482e-4766-8e01-12a76f847045) a [`Array.minBy`](https://msdn.microsoft.com/library/24091583-be78-4cc9-9fab-de6d7506af4f) umožněte, aby byla funkce provedena jako první, možná pro transformaci na typ, který podporuje porovnání.
+Použijte [`Array.max`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#max) nebo [`Array.min`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#min) k získání maximálního nebo minimálního prvku, pokud jej typ elementu podporuje. Podobně [`Array.maxBy`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#maxBy) a [`Array.minBy`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#minBy) umožněte, aby byla funkce provedena jako první, možná pro transformaci na typ, který podporuje porovnání.
 
-[`Array.sum`](https://msdn.microsoft.com/library/4ffdb8c8-cd94-4b0b-9e5c-a7c9c17963c2)Přidá prvky pole a [`Array.sumBy`](https://msdn.microsoft.com/library/41698ba6-1adc-4169-8cc5-7a0e3f8de56b) zavolá funkci na každý prvek a výsledky společně přidávají.
+[`Array.sum`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#sum) Přidá prvky pole a [`Array.sumBy`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#sumBy) zavolá funkci na každý prvek a výsledky společně přidávají.
 
-Chcete-li spustit funkci pro každý prvek v poli bez uložení vrácených hodnot, použijte [`Array.iter`](https://msdn.microsoft.com/library/94eba0f1-ecd7-459f-b89f-ed2a2923e516) . Pro funkci, která zahrnuje dvě pole stejné délky, použijte [`Array.iter2`](https://msdn.microsoft.com/library/018aa9b9-f186-4142-be8a-a62462794fdc) . Pokud také potřebujete zachovat pole výsledků funkce, použijte [`Array.map`](https://msdn.microsoft.com/library/38cbe824-0480-47be-85fd-df3afdd97a45) nebo [`Array.map2`](https://msdn.microsoft.com/library/bb7aafe8-4a1f-45b9-92fc-1af9eafbea5c) , který pracuje na dvou polích najednou.
+Chcete-li spustit funkci pro každý prvek v poli bez uložení vrácených hodnot, použijte [`Array.iter`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#iter) . Pro funkci, která zahrnuje dvě pole stejné délky, použijte [`Array.iter2`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#iter2) . Pokud také potřebujete zachovat pole výsledků funkce, použijte [`Array.map`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#map) nebo [`Array.map2`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#map2) , který pracuje na dvou polích najednou.
 
-Variace [`Array.iteri`](https://msdn.microsoft.com/library/8bbe2ed4-ada7-4906-ac3e-cb09f9db6486) a [`Array.iteri2`](https://msdn.microsoft.com/library/c041b91f-6080-45b7-867b-2ed983a90405) umožňují, aby index elementu byl součástí výpočtu; totéž platí pro [`Array.mapi`](https://msdn.microsoft.com/library/f7e45994-b0a1-49e6-8fb5-5641cea8fde4) a [`Array.mapi2`](https://msdn.microsoft.com/library/5edb33d2-47da-44e1-9290-40c00c47d5b0) .
+Variace [`Array.iteri`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#iteri) a [`Array.iteri2`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#iteri2) umožňují, aby index elementu byl součástí výpočtu; totéž platí pro [`Array.mapi`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#mapi) a [`Array.mapi2`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#mapi2) .
 
-Funkce [`Array.fold`](https://msdn.microsoft.com/library/5ed9dd3b-3694-4567-94d0-fd9a24474e09) ,,,, [`Array.foldBack`](https://msdn.microsoft.com/library/1121a453-dead-4711-a0ca-cc147752989c) [`Array.reduce`](https://msdn.microsoft.com/library/fd62a985-89fe-4f49-a9d4-0c808ac6749d) [`Array.reduceBack`](https://msdn.microsoft.com/library/4fdd4cbe-2238-4c5c-b286-597a7e9036f9) [`Array.scan`](https://msdn.microsoft.com/library/f6893608-9146-450d-9ebb-a0016803fbb0) a [`Array.scanBack`](https://msdn.microsoft.com/library/7610f406-7a5c-41db-a0ca-8e2a2a4826ad) spouštějí algoritmy, které zahrnují všechny prvky pole. Podobně variace [`Array.fold2`](https://msdn.microsoft.com/library/5c845087-d041-476e-8cc4-53ae6849ef79) a [`Array.foldBack2`](https://msdn.microsoft.com/library/aa51b405-df20-4c51-9998-a6530f7db862) provádění výpočtů na dvou polích.
+Funkce [`Array.fold`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#fold) ,,,, [`Array.foldBack`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#foldBack) [`Array.reduce`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#reduce) [`Array.reduceBack`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#reduceBack) [`Array.scan`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#scan) a [`Array.scanBack`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#scanBack) spouštějí algoritmy, které zahrnují všechny prvky pole. Podobně variace [`Array.fold2`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#fold2) a [`Array.foldBack2`](foldBack2) provádění výpočtů na dvou polích.
 
-Tyto funkce pro provádění výpočtů odpovídají funkcím stejného názvu v [modulu seznamu](https://msdn.microsoft.com/library/a2264ba3-2d45-40dd-9040-4f7aa2ad9788). Příklady použití najdete v tématu [seznam](lists.md).
+Tyto funkce pro provádění výpočtů odpovídají funkcím stejného názvu v [modulu seznamu](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-listmodule.html). Příklady použití najdete v tématu [seznam](lists.md).
 
 ### <a name="modify-arrays"></a>Upravit pole
 
-[`Array.set`](https://msdn.microsoft.com/library/847edc0d-4dc5-4a39-98c7-d4320c60e790)Nastaví element na zadanou hodnotu. [`Array.fill`](https://msdn.microsoft.com/library/c83c9886-81d9-44f9-a195-61c7b87f7df2)nastaví v poli rozsah prvků na zadanou hodnotu. Následující kód poskytuje příklad `Array.fill` .
+[`Array.set`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#set) Nastaví element na zadanou hodnotu. [`Array.fill`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#fill) nastaví v poli rozsah prvků na zadanou hodnotu. Následující kód poskytuje příklad `Array.fill` .
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/arrays/snippet28.fs)]
 
@@ -400,23 +397,23 @@ Výstup je následující.
 [|1; 2; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 23; 24; 25|]
 ```
 
-Můžete použít [`Array.blit`](https://msdn.microsoft.com/library/675e13e4-7fb9-4e0d-a5be-a112830de667) ke kopírování dílčí části jednoho pole do jiného pole.
+Můžete použít [`Array.blit`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#blit) ke kopírování dílčí části jednoho pole do jiného pole.
 
 ### <a name="convert-to-and-from-other-types"></a>Převod na jiné typy a z nich
 
-[`Array.ofList`](https://msdn.microsoft.com/library/e7225239-f561-45a4-b0b5-69a1cdcae78b)Vytvoří pole ze seznamu. [`Array.ofSeq`](https://msdn.microsoft.com/library/6bedf5e0-4b22-46da-b09c-6aa09eff220c)Vytvoří pole z sekvence. [`Array.toList`](https://msdn.microsoft.com/library/4deff724-0be4-4688-92e7-9d67a1097786)a [`Array.toSeq`](https://msdn.microsoft.com/library/ac28dbab-406c-4fe0-ab08-c1ce5e247af4) převeďte je na tyto typy kolekcí z typu pole.
+[`Array.ofList`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#ofList) Vytvoří pole ze seznamu. [`Array.ofSeq`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#ofSeq) Vytvoří pole z sekvence. [`Array.toList`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#toList) a [`Array.toSeq`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#toSeq) převeďte je na tyto typy kolekcí z typu pole.
 
 ### <a name="sort-arrays"></a>Seřadit pole
 
-Slouží [`Array.sort`](https://msdn.microsoft.com/library/c6679075-e7eb-463c-9be5-c89be140c312) k řazení pole pomocí generické funkce porovnání. Použijte [`Array.sortBy`](https://msdn.microsoft.com/library/144498dc-091d-4575-a229-c0bcbd61426b) k určení funkce, která generuje hodnotu, která je označována jako *klíč*, k seřazení pomocí generické funkce porovnání na klíč. Použijte, [`Array.sortWith`](https://msdn.microsoft.com/library/699d3638-4244-4f42-8496-45f53d43ce95) Pokud chcete zadat vlastní srovnávací funkci. `Array.sort`, `Array.sortBy` a `Array.sortWith` vrátí seřazené pole jako nové pole. Variace [`Array.sortInPlace`](https://msdn.microsoft.com/library/36f39947-8a88-4823-9e9b-e9d838d292e0) , [`Array.sortInPlaceBy`](https://msdn.microsoft.com/library/7fb9d2dd-d461-4c67-8b43-b5c59fc12c3f) a [`Array.sortInPlaceWith`](https://msdn.microsoft.com/library/454f9e11-972d-47a6-a854-8031cb0c7b0b) mění existující pole místo vrácení nového.
+Slouží [`Array.sort`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#sort) k řazení pole pomocí generické funkce porovnání. Použijte [`Array.sortBy`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#sortBy) k určení funkce, která generuje hodnotu, která je označována jako *klíč*, k seřazení pomocí generické funkce porovnání na klíč. Použijte, [`Array.sortWith`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#sortWith) Pokud chcete zadat vlastní srovnávací funkci. `Array.sort`, `Array.sortBy` a `Array.sortWith` vrátí seřazené pole jako nové pole. Variace [`Array.sortInPlace`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#sortInPlace) , [`Array.sortInPlaceBy`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#sortInPlaceBy) a [`Array.sortInPlaceWith`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#sortInPlaceWith) mění existující pole místo vrácení nového.
 
 ### <a name="arrays-and-tuples"></a>Pole a řazené kolekce členů
 
-Funkce [`Array.zip`](https://msdn.microsoft.com/library/23e086b8-b266-4db2-8b68-e88e6a8e2187) a [`Array.unzip`](https://msdn.microsoft.com/library/a529b47c-2e2b-4f79-ad44-c578432d2f48) převádí pole párů řazené kolekce členů na řazené kolekce členů a naopak. [`Array.zip3`](https://msdn.microsoft.com/library/1745744a-d2ca-4c3e-b825-3f15d9f4000d)a [`Array.unzip3`](https://msdn.microsoft.com/library/bc3e6db0-f334-444f-8c30-813942880677) jsou podobné s tím rozdílem, že pracují s řazenými kolekcemi členů tří prvků nebo řazenými kolekcemi členů tří polí.
+Funkce [`Array.zip`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#zip) a [`Array.unzip`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#unzip) převádí pole párů řazené kolekce členů na řazené kolekce členů a naopak. [`Array.zip3`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#zip3) a [`Array.unzip3`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#unzip3) jsou podobné s tím rozdílem, že pracují s řazenými kolekcemi členů tří prvků nebo řazenými kolekcemi členů tří polí.
 
 ## <a name="parallel-computations-on-arrays"></a>Paralelní výpočty u polí
 
-Modul [`Array.Parallel`](https://msdn.microsoft.com/library/60f30b77-5af4-4050-9a5c-bcdb3f5cbb09) obsahuje funkce pro provádění paralelních výpočtů v polích. Tento modul není dostupný v aplikacích, které cílí na verze .NET Framework před verzí 4.
+Modul [`Array.Parallel`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule-parallel.html) obsahuje funkce pro provádění paralelních výpočtů v polích. Tento modul není dostupný v aplikacích, které cílí na verze .NET Framework před verzí 4.
 
 ## <a name="see-also"></a>Viz také
 

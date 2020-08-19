@@ -1,19 +1,19 @@
 ---
 title: Přetížení operátoru
-description: Naučte se přetížit aritmetické operátory v typu třídy nebo záznamu a na globální úrovni v F#.
-ms.date: 05/16/2016
-ms.openlocfilehash: d902a06193481ed87131b3336cd8a2ff54b811b4
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+description: 'Naučte se přetížit aritmetické operátory v typu třídy nebo záznamu a na globální úrovni v F #.'
+ms.date: 08/15/2020
+ms.openlocfilehash: fb86ceb95101fcc1f157ec9ba17a9d8145b11a91
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71216844"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88557578"
 ---
 # <a name="operator-overloading"></a>Přetížení operátoru
 
 Toto téma popisuje, jak přetěžovat aritmetické operátory ve třídě nebo v typu záznamu a na globální úrovni.
 
-## <a name="syntax"></a>Syntaxe
+## <a name="syntax"></a>Syntax
 
 ```fsharp
 // Overloading an operator as a class or record member.
@@ -25,9 +25,9 @@ let [inline] (operator-symbols) parameter-list = function-body
 
 ## <a name="remarks"></a>Poznámky
 
-V předchozí syntaxi je *symbol operátoru* `+`jedna z `-` `*` `/`,,,, a tak dále. `=` *Seznam parametrů* určuje operandy v pořadí, v jakém jsou uvedeny v obvyklé syntaxi daného operátoru. *Tělo metody* vytvoří výslednou hodnotu.
+V předchozí syntaxi je *symbol operátoru* jedna z `+` , `-` , `*` ,, `/` `=` a tak dále. *Seznam parametrů* určuje operandy v pořadí, v jakém jsou uvedeny v obvyklé syntaxi daného operátoru. *Tělo metody* vytvoří výslednou hodnotu.
 
-Přetížení operátoru musí být statické. Přetížení operátoru pro unární operátory `+` , jako například a `-`, musí používat vlnovku (`~`) v *symbol operátoru* k označení, že operátor je unární operátor a nikoli binární operátor, jak je znázorněno v následujícím příkladu. změny.
+Přetížení operátoru musí být statické. Přetížení operátoru pro unární operátory, jako například `+` a `-` , musí použít vlnovku ( `~` ) v *symbol operátoru* k označení, že operátor je unární operátor a nikoli binární operátor, jak je znázorněno v následující deklaraci.
 
 ```fsharp
 static member (~-) (v : Vector)
@@ -39,15 +39,15 @@ Následující kód ukazuje třídu Vector, která má pouze dva operátory, jed
 
 ## <a name="creating-new-operators"></a>Vytvoření nových operátorů
 
-Přetížit lze všechny standardní operátory, avšak můžete také vytvořit nové operátory mimo sekvence určitých znaků. Povolené znaky operátoru `!`jsou `%`, `&`, `*`, `+`,, `-`, ,`/`,,, ,`>` `=` `<` `.` `?` ,`@`, `^` ,a`~`. `|` Znak `~` má zvláštní význam, který vytváří z operátoru unární operátor a není součástí sekvence znaků operátoru. Ne všechny operátory lze vytvořit unární.
+Přetížit lze všechny standardní operátory, avšak můžete také vytvořit nové operátory mimo sekvence určitých znaků. Povolené znaky operátoru jsou `!` , `%` ,, `&` `*` , `+` , `-` , `.` , `/` , `<` , `=` , `>` , `?` , `@` ,, a `^` `|` `~` . Znak `~` má zvláštní význam, který vytváří z operátoru unární operátor a není součástí sekvence znaků operátoru. Ne všechny operátory lze vytvořit unární.
 
 V závislosti na přesné posloupnosti znaků bude mít operátor určitou přednost a asociativitu. Asociativita může být buď zleva doprava, nebo zprava doleva a používá se při zobrazení sekvence operátorů stejné úrovně priority bez použití závorek.
 
 Znak operátoru `.` neovlivňuje prioritu, takže pokud je například třeba definovat vlastní verzi násobení, která má stejnou prioritu a asociativitu operátorů jako obyčejné násobení, je možné vytvořit operátory, jako například `.*`.
 
-Jenom operátory `?` a `?<-` můžou začínat `?`na.
+Jenom operátory `?` a `?<-` můžou začínat na `?` .
 
-Tabulka, která zobrazuje prioritu všech operátorů v, F# je k dispozici v [odkazu symbol a operátor](./symbol-and-operator-reference/index.md).
+Tabulka, která ukazuje prioritu všech operátorů v jazyce F #, lze nalézt v [odkazu symbol a operátor](./symbol-and-operator-reference/index.md).
 
 ## <a name="overloaded-operator-names"></a>Názvy přetíženého operátoru
 
@@ -95,7 +95,9 @@ Následující tabulka uvádí standardní operátory a jejich odpovídající v
 |`..`|`op_Range`|
 |`.. ..`|`op_RangeStep`|
 
-Další kombinace znaků operátoru, které zde nejsou uvedeny, lze použít jako operátory a mohou mít názvy, jež jsou vytvořeny zřetězením názvů jednotlivých znaků z následující tabulky. Například +! bude `op_PlusBang`.
+Všimněte si, že `not` operátor v jazyce F # negeneruje, `op_Inequality` protože se nejedná o symbolický operátor. Jedná se o funkci, která generuje IL, který je v logickém výrazu negace.
+
+Další kombinace znaků operátoru, které zde nejsou uvedeny, lze použít jako operátory a mohou mít názvy, jež jsou vytvořeny zřetězením názvů jednotlivých znaků z následující tabulky. Například +! bude `op_PlusBang` .
 
 |Znak operátoru|Name|
 |------------------|----|
@@ -133,7 +135,7 @@ Následující kód ukazuje použití přetěžování pro implementaci typu zlo
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet4002.fs)]
 
-**Výstup:**
+**Výkonem**
 
 ```console
 3/4 + 1/2 = 5/4
@@ -145,7 +147,7 @@ Následující kód ukazuje použití přetěžování pro implementaci typu zlo
 
 ## <a name="operators-at-the-global-level"></a>Operátory na globální úrovni
 
-Je také možné definovat operátory na globální úrovni. Následující kód definuje operátor `+?`.
+Je také možné definovat operátory na globální úrovni. Následující kód definuje operátor `+?` .
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet4003.fs)]
 
@@ -155,6 +157,6 @@ Vzhledem k tomu, že pravidla oboru jazyka F# nařizují, že nově definované 
 
 U globálních operátorů, které mnohdy představují malé funkce, jež jsou nejlépe začlenitelné do volaného kódu, se často používá klíčové slovo `inline`. Vložení funkcí operátoru umožňuje operátorům pracovat se staticky řešenými typy parametrů za účelem vytvoření staticky řešeného generického kódu. Další informace najdete v tématu [vložené funkce](./functions/inline-functions.md) a [staticky vyřešené parametry typu](./generics/statically-resolved-type-parameters.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Členové](./members/index.md)

@@ -1,19 +1,19 @@
 ---
 title: Záznamy
-description: Přečtěte F# si, jak záznamy reprezentují jednoduché agregované hodnoty pojmenovaných hodnot, volitelně s členy.
-ms.date: 06/09/2019
-ms.openlocfilehash: 874c5fa30a36f2778f7a43266316deb8c59d1d72
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+description: 'Přečtěte si, jak záznamy F # reprezentují jednoduché agregované hodnoty pojmenovaných hodnot, volitelně s členy.'
+ms.date: 08/15/2020
+ms.openlocfilehash: 182b2e83c3940c866197052af102787a96e49c54
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71216785"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88559047"
 ---
 # <a name="records"></a>Záznamy
 
 Záznamy reprezentují jednoduché agregované hodnoty pojmenovaných hodnot, volitelně s členy. Můžou být buď struktury, nebo typy odkazů.  Ve výchozím nastavení jsou odkazové typy.
 
-## <a name="syntax"></a>Syntaxe
+## <a name="syntax"></a>Syntax
 
 ```fsharp
 [ attributes ]
@@ -26,7 +26,7 @@ type [accessibility-modifier] typename =
 
 ## <a name="remarks"></a>Poznámky
 
-V předchozí syntaxi je *TypeName* názvem typu záznamu, *Label1* a *Label2* jsou názvy hodnot, označované jako *popisky*a *typ1* a *typ2* jsou typy těchto hodnot. *Member-list* je volitelný seznam členů pro daný typ.  `[<Struct>]` Atribut můžete použít k vytvoření záznamu struktury namísto záznamu, který je odkazovým typem.
+V předchozí syntaxi je *TypeName* názvem typu záznamu, *Label1* a *Label2* jsou názvy hodnot, označované jako *popisky*a *typ1* a *typ2* jsou typy těchto hodnot. *Member-list* je volitelný seznam členů pro daný typ.  Atribut můžete použít `[<Struct>]` k vytvoření záznamu struktury namísto záznamu, který je odkazovým typem.
 
 Dále je uvedeno několik příkladů.
 
@@ -34,7 +34,7 @@ Dále je uvedeno několik příkladů.
 
 Když je každý popisek na samostatném řádku, je středník volitelný.
 
-Můžete nastavit hodnoty ve výrazech známých jako *výrazy záznamu*. Kompilátor odvodí typ z použitých popisků (pokud jsou popisky dostatečně odlišné od jiných typů záznamů). Složené závorky ({}) uzavírají výraz záznamu. Následující kód ukazuje výraz záznamu, který inicializuje záznam se třemi elementy float s popisky `x` `y` a `z`.
+Můžete nastavit hodnoty ve výrazech známých jako *výrazy záznamu*. Kompilátor odvodí typ z použitých popisků (pokud jsou popisky dostatečně odlišné od jiných typů záznamů). Složené závorky ({}) uzavírají výraz záznamu. Následující kód ukazuje výraz záznamu, který inicializuje záznam se třemi elementy float s popisky `x` `y` a `z` .
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1907.fs)]
 
@@ -42,7 +42,7 @@ Nepoužívejte zkrácený tvar, pokud může existovat jiný typ, který má tak
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1903.fs)]
 
-Popisky posledního deklarovaného typu mají přednost před dříve deklarovaným typem, takže v předchozím příkladu `mypoint3D` je odvozeno. `Point3D` Typ záznamu lze explicitně zadat, jak je uvedeno v následujícím kódu.
+Popisky posledního deklarovaného typu mají přednost před dříve deklarovaným typem, takže v předchozím příkladu `mypoint3D` je odvozeno `Point3D` . Typ záznamu lze explicitně zadat, jak je uvedeno v následujícím kódu.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1908.fs)]
 
@@ -94,9 +94,9 @@ let rr3 = { defaultRecord1 with Field2 = 42 }
 
 Při vytváření záznamu můžete chtít, aby byl závislý na jiném typu, který chcete později definovat. Jedná se o chybu kompilace, pokud nedefinujete typy záznamů, které se mají vzájemně rekurzivně.
 
-Definování vzájemně rekurzivních záznamů se provádí `and` pomocí klíčového slova. To umožňuje propojit 2 nebo více typů záznamů dohromady.
+Definování vzájemně rekurzivních záznamů se provádí pomocí `and` klíčového slova. To umožňuje propojit 2 nebo více typů záznamů dohromady.
 
-Například následující kód definuje `Person` typ a `Address` jako vzájemně rekurzivní:
+Například následující kód definuje `Person` `Address` typ a jako vzájemně rekurzivní:
 
 ```fsharp
 // Create a Person type and use the Address type that is not defined
@@ -112,7 +112,7 @@ and Address =
     Occupant: Person }
 ```
 
-Pokud jste definovali předchozí příklad bez `and` klíčového slova, pak nebylo zkompilováno. `and` Klíčové slovo je vyžadováno pro vzájemně rekurzivní definice.
+Pokud jste definovali předchozí příklad bez `and` klíčového slova, pak nebylo zkompilováno. `and`Klíčové slovo je vyžadováno pro vzájemně rekurzivní definice.
 
 ## <a name="pattern-matching-with-records"></a>Porovnávání vzorů se záznamy
 
@@ -126,6 +126,39 @@ Výstup tohoto kódu je následující.
 Point is at the origin.
 Point is on the x-axis. Value is 100.000000.
 Point is at (10.000000, 0.000000, -1.000000).
+```
+
+## <a name="records-and-members"></a>Záznamy a členové
+
+Můžete určit členy v záznamech, podobně jako u tříd. Pro pole není podporována žádná podpora. Běžným přístupem je definování `Default` statického člena pro snadné vytváření záznamů:
+
+```fsharp
+type Person =
+  { Name: string
+    Age: int
+    Address: string }
+
+    static member Default =
+        { Name = "Phillip"
+          Age = 12
+          Address = "123 happy fun street" }
+
+let defaultPerson = Person.Default
+```
+
+Použijete-li samotný identifikátor, tento identifikátor odkazuje na instanci záznamu, jehož člen je označován:
+
+```fsharp
+type Person =
+  { Name: string
+    Age: int
+    Address: string }
+
+    member this.WeirdToString() =
+        this.Name + this.Address + string this.Age
+
+let p = { Name = "a"; Age = 12; Address = "abc123 }
+let weirdString = p.WeirdToString()
 ```
 
 ## <a name="differences-between-records-and-classes"></a>Rozdíly mezi záznamy a třídami
@@ -146,10 +179,10 @@ Pokud píšete stejný kód s třídami, objekty obou tříd by byly neshodné, 
 
 Pokud potřebujete referenční rovnost záznamů, přidejte atribut `[<ReferenceEquality>]` nad záznam.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Typy F#](fsharp-types.md)
 - [Třídy](classes.md)
-- [Referenční dokumentace jazyka F#](index.md)
+- [Referenční dokumentace jazyka F #](index.md)
 - [Rovnost odkazů](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.referenceequalityattribute-class-%5bfsharp%5d)
 - [Porovnávání vzorů](pattern-matching.md)

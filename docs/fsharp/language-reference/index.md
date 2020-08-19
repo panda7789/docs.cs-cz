@@ -1,17 +1,21 @@
 ---
 title: Referenční dokumentace jazyka
 description: 'Najde informace o funkcích jazyka F # z tohoto odkazu na jazykové tokeny, koncepty, typy, výrazy a témata konstrukce podporovaná kompilátorem.'
-ms.date: 05/16/2016
-ms.openlocfilehash: 43272c6684c8fc763e8f99611901f35695f48981
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.date: 08/13/2020
+ms.openlocfilehash: 02711489c214c1fcdb2da80f30bff63d67769c17
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87854955"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88558150"
 ---
 # <a name="f-language-reference"></a>Referenční dokumentace jazyka F#
 
 Tato část je referenční informace k jazyku F #, víceúrovňovému programovacímu jazyku, který cílí na .NET. Jazyk F # podporuje funkční, objektově orientované a imperativní modely programování.
+
+## <a name="f-core-library-api-reference"></a>Reference k rozhraní API základní knihovny F #
+
+[Referenční informace k rozhraní API základní knihovny f # (FSharp. Core)](https://fsharp.github.io/fsharp-core-docs/) jsou reference pro všechny základní obory názvů, moduly, typy a funkce jazyka f #.
 
 ## <a name="f-tokens"></a>Tokeny F #
 
@@ -40,7 +44,7 @@ V následující tabulce jsou uvedena referenční témata k dispozici, která p
 |[Přetypování a převody](casting-and-conversions.md)|Popisuje podporu pro převody typu v F #.|
 |[Access Control](access-control.md)|Popisuje řízení přístupu v F #. Řízení přístupu znamená deklaraci toho, co klienti mohou používat určité programové prvky, jako jsou typy, metody, funkce a tak dále.|
 |[Porovnávání vzorů](pattern-matching.md)|Popisuje vzory, které jsou pravidla pro transformaci vstupních dat a používají se v celém jazyce F #. Můžete porovnat data se vzorem, rozložit data na části prvků nebo extrahovat informace z dat různými způsoby.|
-|[Aktivní vzory](active-patterns.md)|Popisuje aktivní vzory. Aktivní vzory umožňují definovat pojmenované oddíly, které rozdělují vstupní data. Můžete použít aktivní vzory a rozložit data vlastním způsobem pro každý oddíl.|
+|[Aktivní vzorky](active-patterns.md)|Popisuje aktivní vzory. Aktivní vzory umožňují definovat pojmenované oddíly, které rozdělují vstupní data. Můžete použít aktivní vzory a rozložit data vlastním způsobem pro každý oddíl.|
 |[Kontrolní výrazy](assertions.md)|Popisuje `assert` výraz, což je funkce ladění, kterou můžete použít k otestování výrazu. Po selhání v režimu ladění vygeneruje kontrolní výraz dialogové okno systémové chyby.|
 |[Zpracování výjimek](./exception-handling/index.md)|Obsahuje informace o podpoře zpracování výjimek v jazyce F #.|
 |[atribut](attributes.md)|Popisuje atributy, které povolují použití metadat pro programovací konstrukci.|
@@ -49,7 +53,7 @@ V následující tabulce jsou uvedena referenční témata k dispozici, která p
 |[Moduly](modules.md)|Popisuje moduly. Modul jazyka F # je seskupení kódu F #, jako jsou hodnoty, typy a hodnoty funkcí v programu F #. Seskupení kódu v modulech pomáhá udržet související kód dohromady a pomáhá vyhnout se konfliktům názvů v programu.|
 |[Deklarace importu: `open` klíčové slovo](import-declarations-the-open-keyword.md)|Popisuje `open` , jak funguje. Deklarace importu určuje modul nebo obor názvů, jehož prvky můžete odkazovat bez použití plně kvalifikovaného názvu.|
 |[Signatury](signature-files.md)|Popisuje signatury a soubory signatur. Podpisový soubor obsahuje informace o veřejných podpisech sady prvků programu F #, jako jsou typy, obory názvů a moduly. Dá se použít k určení přístupnosti těchto prvků programu.|
-|[Dokumentace XML](xml-documentation.md)|Popisuje podporu pro generování souborů dokumentace pro komentáře dokumentu XML, označované také jako komentáře se třemi lomítky. Můžete získat dokumentaci z komentářů kódu v F # jako v jiných jazycích .NET.|
+|[dokumentace XML](xml-documentation.md)|Popisuje podporu pro generování souborů dokumentace pro komentáře dokumentu XML, označované také jako komentáře se třemi lomítky. Můžete získat dokumentaci z komentářů kódu v F # jako v jiných jazycích .NET.|
 |[Podrobná syntaxe](verbose-syntax.md)|Popisuje syntaxi pro konstrukce F #, pokud není povolena zjednodušená syntaxe. Podrobná syntaxe je označena `#light "off"` direktivou v horní části souboru kódu.|
 |[Formátování prostého textu](plaintext-formatting.md)|Naučte se používat sprintf – a jiné formátování prostého textu v aplikacích a skriptech F #.|
 
@@ -62,7 +66,7 @@ Následující tabulka uvádí referenční témata k dispozici, která popisuj�
 |[hodnota](./values/index.md)|Popisuje hodnoty, což jsou neměnné množství, které má určitý typ; hodnoty mohou být integrální nebo plovoucí desetinné čárky, znaky nebo text, seznamy, sekvence, pole, řazené kolekce členů, rozlišené sjednocení, záznamy, typy tříd nebo hodnoty funkcí.|
 |[Základní typy](basic-types.md)|Popisuje základní typy, které se používají v jazyce F #. Poskytuje také odpovídající typy rozhraní .NET a minimální a maximální hodnoty pro každý typ.|
 |[Typ jednotky](unit-type.md)|Popisuje `unit` typ, který je typ, který označuje absenci konkrétní hodnoty; `unit` typ má pouze jednu hodnotu, která funguje jako zástupný symbol, pokud žádná jiná hodnota neexistuje nebo je vyžadována.|
-|[Řetězce](strings.md)|Popisuje řetězce v jazyce F #. `string`Typ představuje neměnný text jako posloupnost znaků Unicode. `string`je alias pro `System.String` v .NET Framework.|
+|[Řetězce](strings.md)|Popisuje řetězce v jazyce F #. `string`Typ představuje neměnný text jako posloupnost znaků Unicode. `string` je alias pro `System.String` v .NET Framework.|
 |[N-tice](tuples.md)|Popisuje řazené kolekce členů, které jsou seskupeními nepojmenovaných, ale seřazené hodnoty možných různých typů.|
 |[Typy kolekcí F#](fsharp-collection-types.md)|Přehled typů kolekce funkcí F #, včetně typů pro pole, seznamy, posloupnosti (seq), mapy a sady.|
 |[Seznamy](lists.md)|Popisuje seznamy. Seznam v jazyce F # je seřazená, neproměnlivá řada prvků všech stejného typu.|
@@ -80,7 +84,7 @@ Následující tabulka uvádí referenční témata k dispozici, která popisuj�
 |[Abstraktní třídy](abstract-classes.md)|Popisuje abstraktní třídy, které jsou třídy, které ponechávají některé nebo všechny členy neimplementované, takže implementace mohou být poskytnuty odvozenými třídami.|
 |[Rozšíření typů](type-extensions.md)|Popisuje rozšíření typu, která umožňují přidat nové členy do dříve definovaného typu objektu.|
 |[Flexibilní typy](flexible-types.md)|Popisuje flexibilní typy. Flexibilní anotace typu je indikaci, že parametr, proměnná nebo hodnota má typ, který je kompatibilní se zadaným typem, kde kompatibilita je určena pozicí v objektově orientované hierarchii tříd nebo rozhraní.|
-|[Delegáty](delegates.md)|Popisuje delegáty, které reprezentují volání funkce jako objekt.|
+|[Delegáti](delegates.md)|Popisuje delegáty, které reprezentují volání funkce jako objekt.|
 |[Měrné jednotky](units-of-measure.md)|Popisuje měrné jednotky. Hodnoty s plovoucí desetinnou čárkou v jazyce F # můžou mít přidružené měrné jednotky, které se obvykle používají k označení délky, objemu, hmotnosti a tak dále.|
 |[Zprostředkovatelé typů](../tutorials/type-providers/index.md)|Popisuje typ a obsahuje odkazy na návody k používání předdefinovaných poskytovatelů typů pro přístup k databázím a webovým službám.|
 
@@ -90,7 +94,7 @@ V následující tabulce jsou uvedena témata, která popisují výrazy jazyka F
 
 |Nadpis|Popis|
 |-----|-----------|
-|[Podmíněné výrazy:`if...then...else`](conditional-expressions-if-then-else.md)|Popisuje `if...then...else` výraz, který spouští různé větve kódu a také je vyhodnocen na jinou hodnotu v závislosti na daném logickém výrazu.|
+|[Podmíněné výrazy: `if...then...else`](conditional-expressions-if-then-else.md)|Popisuje `if...then...else` výraz, který spouští různé větve kódu a také je vyhodnocen na jinou hodnotu v závislosti na daném logickém výrazu.|
 |[Výrazy shody](match-expressions.md)|Popisuje `match` výraz, který poskytuje řízení větvení, které je založeno na porovnání výrazu se sadou vzorů.|
 |[Smyčky: `for...to` výraz](loops-for-to-expression.md)|Popisuje `for...to` výraz, který se používá k iterování smyčky v rámci rozsahu hodnot proměnné smyčky.|
 |[Smyčky: `for...in` výraz](loops-for-in-expression.md)|Popisuje `for...in` výraz, konstrukci smyčky, která se používá k iterování přes shody vzoru ve vyčíslitelné kolekci, jako je například výraz rozsahu, sekvence, seznam, pole nebo jiná konstrukce, která podporuje výčet.|

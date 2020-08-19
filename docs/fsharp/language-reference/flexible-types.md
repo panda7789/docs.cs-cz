@@ -1,19 +1,19 @@
 ---
 title: Flexibilní typy
-description: Naučte se používat F# anotaci flexibilního typu, která indikuje, že parametr, proměnná nebo hodnota má typ, který je kompatibilní se zadaným typem.
-ms.date: 05/16/2016
-ms.openlocfilehash: bf05f78f163d1f9c73c667df60925b66a5315627
-ms.sourcegitcommit: a2d0e1f66367367065bc8dc0dde488ab536da73f
+description: 'Naučte se používat anotaci typu F # flexibilní typ, která indikuje, že parametr, proměnná nebo hodnota má typ, který je kompatibilní se zadaným typem.'
+ms.date: 08/15/2020
+ms.openlocfilehash: 44241ad082cd7f3de9e0cc6a48b8a8946e7b33d3
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71083068"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88557747"
 ---
 # <a name="flexible-types"></a>Flexibilní typy
 
 *Flexibilní anotace typu* indikuje, že parametr, proměnná nebo hodnota má typ, který je kompatibilní se zadaným typem, kde kompatibilita je určena pozicí v objektově orientované hierarchii tříd nebo rozhraní. Flexibilní typy jsou užitečné, konkrétně když automatický převod na typy vyšší v hierarchii typů neprobíhá, ale přesto chcete povolit funkci pro práci s jakýmkoli typem v hierarchii nebo libovolným typem, který implementuje rozhraní.
 
-## <a name="syntax"></a>Syntaxe
+## <a name="syntax"></a>Syntax
 
 ```fsharp
 #type
@@ -37,7 +37,7 @@ Vezměte v úvahu následující dvě funkce, z nichž jeden vrací sekvenci, dr
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet4101.fs)]
 
-Dalším příkladem je použití funkce knihovny [Seq. Concat](https://msdn.microsoft.com/library/2eeb69a9-fc2f-4b7d-8dee-101fa2b00712) :
+Dalším příkladem je použití funkce knihovny [Seq. Concat](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-seqmodule.html#concat) :
 
 ```fsharp
 val concat: sequences:seq<#seq<'T>> -> seq<'T>
@@ -65,9 +65,9 @@ seq [1; 2; 3; 4; ...]
 seq [1; 2; 3; 4; ...]
 ```
 
-V F#, stejně jako v jiných objektově orientovaných jazycích, existují kontexty, ve kterých jsou odvozeny typy nebo typy, které implementují rozhraní, automaticky převedeny na základní typ nebo typ rozhraní. K těmto automatickým převodům dochází v přímých argumentech, ale ne v případě, že je typ na podřízené pozici, jako součást složitějšího typu, jako je návratový typ typu funkce nebo jako argument typu. Proto je flexibilní typ Notation užitečný hlavně v případě, že typ, na který jej aplikujete, je součástí složitějšího typu.
+V jazyce F #, stejně jako v jiných objektově orientovaných jazycích, existují kontexty, ve kterých jsou odvozeny typy nebo typy, které implementují rozhraní, automaticky převedeny na základní typ nebo typ rozhraní. K těmto automatickým převodům dochází v přímých argumentech, ale ne v případě, že je typ na podřízené pozici, jako součást složitějšího typu, jako je návratový typ typu funkce nebo jako argument typu. Proto je flexibilní typ Notation užitečný hlavně v případě, že typ, na který jej aplikujete, je součástí složitějšího typu.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Referenční dokumentace jazyka F#](index.md)
+- [Referenční dokumentace jazyka F #](index.md)
 - [Obecné typy](./generics/index.md)

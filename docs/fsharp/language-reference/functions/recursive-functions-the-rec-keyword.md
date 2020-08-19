@@ -1,45 +1,61 @@
 ---
 title: 'Rekurzivní funkce: Klíčové slovo rec'
 description: Zjistěte, jak se klíčové slovo REC používá s klíčovým slovem let k definování rekurzivní funkce.
-ms.date: 05/16/2016
-ms.openlocfilehash: c2374f90b4585327c6f5208a3d6bca75a23d0cbb
-ms.sourcegitcommit: 7499bdb428d63ed0e19e97f54d3d576c41598659
+ms.date: 08/12/2020
+ms.openlocfilehash: 389357bd13cef39b1d07972c1a3167320b61612b
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87455660"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88558709"
 ---
 # <a name="recursive-functions-the-rec-keyword"></a>Rekurzivní funkce: Klíčové slovo rec
 
 `rec`Klíčové slovo se používá společně s `let` klíčovým slovem k definování rekurzivní funkce.
 
-## <a name="syntax"></a>Syntaxe
+## <a name="syntax"></a>Syntax
 
 ```fsharp
 // Recursive function:
 let rec function-nameparameter-list =
-function-body
+    function-body
 
 // Mutually recursive functions:
 let rec function1-nameparameter-list =
-function1-body
+    function1-body
+
 and function2-nameparameter-list =
-function2-body
+    function2-body
 ...
 ```
 
 ## <a name="remarks"></a>Poznámky
 
-Rekurzivní funkce, funkce, které volají samy sebe, jsou identifikovány explicitně v jazyce F #. Tím se identifikátorem, které je definováno v oboru funkce.
+Rekurzivní funkce – funkce, které volají samy – jsou identifikovány explicitně v jazyce F # s `rec` klíčovým slovem. `rec`Klíčové slovo vytvoří název vazby, která je `let` k dispozici v těle.
 
-Následující kód ilustruje rekurzivní funkci, která vypočítá n- *n*<sup>tý</sup> Fibonacci číslo pomocí matematické definice.
+Následující příklad ukazuje rekurzivní funkci, která vypočítá *n*-<sup>tý</sup> Fibonacci číslo pomocí matematické definice.
 
-[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet4001.fs)]
+```fsharp
+let fib n =
+    match n with
+    | 0 | 1 -> 1
+    | n -> fib (n-1) + fib (n-2)
+```
 
 > [!NOTE]
 > V praxi není kód podobný předchozí ukázce ideální, protože unecessarily přepočítá hodnoty, které již byly vypočítány. Důvodem je to, že není rekurzivní, což je vysvětleno dále v tomto článku.
 
-Metody jsou implicitně rekurzivní v rámci typu; není nutné přidávat `rec` klíčové slovo. Umožňuje, aby vazby v rámci tříd nebyly implicitně rekurzivní.
+Metody jsou implicitně rekurzivní v rámci typu, který je definován v, což znamená, že není nutné přidávat `rec` klíčové slovo. Příklad:
+
+```fsharp
+type MyClass() =
+    member this.Fib(n) =
+        match n with
+        | 0 | 1 -> 1
+        | n -> this.Fib(n-1) + this.Fib(n-2)
+```
+
+Umožňuje, aby vazby v rámci tříd nebyly implicitně rekurzivní, ale. Všechny `let` funkce svázané s `rec` klíčovým slovem vyžadují klíčové slovo.
 
 ## <a name="tail-recursion"></a>Koncová rekurze
 
@@ -75,6 +91,14 @@ Funkce jsou někdy *vzájemně rekurzivní*, což znamená, že volání tvoří
 Následující příklad ukazuje dvě vzájemně rekurzivní funkce.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet4002.fs)]
+
+## <a name="recursive-values"></a>Rekurzivní hodnoty
+
+Můžete také definovat `let` hodnotu vazby, která má být rekurzivní. Tato situace se někdy provádí pro protokolování. V F # 5 a `nameof` funkci to můžete udělat:
+
+```fsharp
+let rec nameDoubles = nameof nameDoubles + nameof nameDoubles
+```
 
 ## <a name="see-also"></a>Viz také
 

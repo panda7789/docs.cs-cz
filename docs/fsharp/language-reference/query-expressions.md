@@ -1,19 +1,17 @@
 ---
 title: Výrazy dotazu
 description: 'Přečtěte si o podpoře výrazů dotazů pro LINQ v programovacím jazyce F #.'
-ms.date: 05/16/2016
-ms.openlocfilehash: c6f33a58bc959745a5f83bdcfe378a4dbbe577c5
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.date: 08/15/2020
+ms.openlocfilehash: afcc6e92818b1648a210ad9cfc3f1dcfa46037b5
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87855033"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88559060"
 ---
 # <a name="query-expressions"></a>Výrazy dotazů
 
 Výrazy dotazů umožňují dotazování zdroje dat a vložení dat do požadovaného formuláře. Výrazy dotazů poskytují podporu pro LINQ v F #.
-> [!NOTE]
-> Reference k rozhraní docs.microsoft.com API pro F # není dokončená. Pokud narazíte na nefunkční odkazy, místo toho použijte [dokumentaci základní knihovny F #](https://fsharp.github.io/fsharp-core-docs/) .
 
 ## <a name="syntax"></a>Syntax
 
@@ -45,9 +43,9 @@ query1
 |> Seq.iter (fun customer -> printfn "Company: %s Contact: %s" customer.CompanyName customer.ContactName)
 ```
 
-V předchozím příkladu kódu je výraz dotazu ve složených závorkách. Význam kódu ve výrazu je, vrátí každého zákazníka v tabulce Customers v databázi ve výsledcích dotazu. Výrazy dotazů vracejí typ, který implementuje <xref:System.Linq.IQueryable%601> a <xref:System.Collections.Generic.IEnumerable%601> , a, aby bylo možné je iterovat pomocí [modulu SEQ](https://msdn.microsoft.com/library/54e8f059-ca52-4632-9ae9-49685ee9b684) , jak ukazuje příklad.
+V předchozím příkladu kódu je výraz dotazu ve složených závorkách. Význam kódu ve výrazu je, vrátí každého zákazníka v tabulce Customers v databázi ve výsledcích dotazu. Výrazy dotazů vracejí typ, který implementuje <xref:System.Linq.IQueryable%601> a <xref:System.Collections.Generic.IEnumerable%601> , a, aby bylo možné je iterovat pomocí [modulu SEQ](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-seqmodule.html) , jak ukazuje příklad.
 
-Každý typ výrazu výpočtu je sestaven z třídy tvůrce. Třída tvůrce pro výraz výpočtu dotazu je `QueryBuilder` . Další informace naleznete v tématu [výrazy výpočtu](computation-expressions.md) a [Třída LINQ. QueryBuilder](https://msdn.microsoft.com/visualfsharpdocs/conceptual/linq.querybuilder-class-%5bfsharp%5d).
+Každý typ výrazu výpočtu je sestaven z třídy tvůrce. Třída tvůrce pro výraz výpočtu dotazu je `QueryBuilder` . Další informace naleznete v tématu [výrazy výpočtu](computation-expressions.md) a [Třída QueryBuilder](hhttps://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querybuilder.html).
 
 ## <a name="query-operators"></a>Operátory dotazů
 
@@ -55,7 +53,7 @@ Operátory dotazů umožňují zadat podrobnosti dotazu, například kritéria p
 
 Ve výrazech dotazů jsou povoleny pouze výrazy, které lze přeložit na SQL. Například při použití operátoru dotazu nejsou ve výrazech povoleny žádné volání funkcí `where` .
 
-Tabulka 1 zobrazuje dostupné operátory dotazů. Dále v tomto tématu viz tabulka2, který porovnává dotazy SQL a ekvivalentní výrazy dotazů jazyka F #. Některé operátory dotazů nejsou podporovány některými poskytovateli typů. Konkrétně poskytovatel typu OData je omezen v operátorech dotazu, které podporuje z důvodu omezení v OData. Další informace najdete v tématu [Poskytovatel typu ODataService (F #)](https://msdn.microsoft.com/library/bac609dd-9d12-4bf9-a662-24bdf4faa43e).
+Tabulka 1 zobrazuje dostupné operátory dotazů. Dále v tomto tématu viz tabulka2, který porovnává dotazy SQL a ekvivalentní výrazy dotazů jazyka F #. Některé operátory dotazů nejsou podporovány některými poskytovateli typů. Konkrétně poskytovatel typu OData je omezen v operátorech dotazu, které podporuje z důvodu omezení v OData.
 
 Tato tabulka předpokládá databázi v následujícím tvaru:
 
@@ -682,7 +680,7 @@ query {
 </code></pre>
 
 </td></tr><tr><td>
-<code>IN</code>sada zadaných hodnot<br/>
+<code>IN</code> sada zadaných hodnot<br/>
 
 <pre><code class="lang-sql">SELECT *
 FROM Student
@@ -723,7 +721,7 @@ query {
 </code></pre>
 
 </td></tr><tr><td>
-<code>LIKE</code>se sadou porovnávání vzorů.<br/>
+<code>LIKE</code> se sadou porovnávání vzorů.<br/>
 
 <pre><code class="lang-sql">-- '[abc]%' matches strings where the first character is
 -- 'a', 'b', 'c', 'A', 'B', or 'C'
@@ -740,7 +738,7 @@ WHERE Student.Name LIKE '[abc]%'
 </code></pre>
 
 </td></tr><tr><td>
-<code>LIKE</code>s nastaveným vzorem vyloučení.<br/>
+<code>LIKE</code> s nastaveným vzorem vyloučení.<br/>
 
 <pre><code class="lang-sql">-- '[^abc]%' matches strings where the first character is
 -- not 'a', 'b', 'c', 'A', 'B', or 'C'
@@ -759,7 +757,7 @@ query {
 </code></pre>
 
 </td></tr><tr><td>
-<code>LIKE</code>v jednom poli, ale vyberte jiné pole.<br/>
+<code>LIKE</code> v jednom poli, ale vyberte jiné pole.<br/>
 
 <pre><code class="lang-sql">SELECT StudentID AS ID FROM Student
 WHERE Student.Name LIKE '[^abc]%'
@@ -809,7 +807,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><code>LEFT JOIN</code>se dvěma tabulkami.<br/>
+</td></tr><tr><td><code>LEFT JOIN</code> se dvěma tabulkami.<br/>
 
 <pre><code class="lang-sql">SELECT * FROM Student
 LEFT JOIN CourseSelection
@@ -828,7 +826,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><code>JOIN</code>řetězce<code>COUNT</code><br/>
+</td></tr><tr><td><code>JOIN</code> řetězce <code>COUNT</code><br/>
 
 <pre><code class="lang-sql">SELECT COUNT( * ) FROM Student
 JOIN CourseSelection
@@ -911,7 +909,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><code>OR</code>s řazením<br/>
+</td></tr><tr><td><code>OR</code> s řazením<br/>
 
 <pre><code class="lang-sql">SELECT * FROM Student
 WHERE Student.Age = 12 OR Student.Age = 13
@@ -951,7 +949,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><code>UNION</code>dvou dotazů.<br/>
+</td></tr><tr><td><code>UNION</code> dvou dotazů.<br/>
 
 <!-- markdownlint-capture -->
 <!-- markdownlint-disable no-space-in-emphasis -->
@@ -1006,7 +1004,7 @@ let query2 =
 query1.Intersect(query2)
 </code></pre>
 
-</td></tr><tr><td><code>CASE</code>pomocné.<br/>
+</td></tr><tr><td><code>CASE</code> pomocné.<br/>
 
 <pre><code class="lang-sql">SELECT student.StudentID,
 CASE Student.Age
@@ -2439,5 +2437,5 @@ end
 ## <a name="see-also"></a>Viz také
 
 - [Referenční dokumentace jazyka F #](index.md)
-- [LINQ. QueryBuilder – třída](https://msdn.microsoft.com/visualfsharpdocs/conceptual/linq.querybuilder-class-%5bfsharp%5d)
+- [QueryBuilder – třída](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querybuilder.html)
 - [Výpočetní výrazy](Computation-Expressions.md)

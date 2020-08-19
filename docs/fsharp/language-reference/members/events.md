@@ -1,20 +1,17 @@
 ---
 title: Události
 description: 'Přečtěte si, jak události F # umožňují přidružit volání funkcí k akcím uživatele, které jsou důležité při programování v grafickém uživatelském rozhraní.'
-ms.date: 05/16/2016
-ms.openlocfilehash: 682686ba58d0f7a56e7da2585e6507ccd0156a44
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.date: 08/15/2020
+ms.openlocfilehash: 42783255412d56c6ff6729694c31d0868ed99633
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87854929"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88559190"
 ---
 # <a name="events"></a>Události
 
 Události umožňují přiřadit funkce volání a akce uživatele a jsou důležité pro programování grafického uživatelského rozhraní. Události je možné spouštět také pomocí aplikací nebo operačního systému.
-
-> [!NOTE]
-> Reference k rozhraní docs.microsoft.com API pro F # není dokončená. Pokud narazíte na nefunkční odkazy, místo toho použijte [dokumentaci základní knihovny F #](https://fsharp.github.io/fsharp-core-docs/) .
 
 ## <a name="handling-events"></a>Zpracování událostí
 
@@ -28,9 +25,9 @@ Typ `Add` metody je `('a -> unit) -> unit` . Proto metoda obslužné rutiny udá
 
 ## <a name="creating-custom-events"></a>Vytváření vlastních událostí
 
-Události f # jsou reprezentovány třídou [Event](https://msdn.microsoft.com/library/f3b47c8a-4ee5-4ce8-9a72-ad305a17c4b9) jazyka f #, která implementuje rozhraní [IEvent](https://msdn.microsoft.com/library/8dbca0df-f8a1-40bd-8d50-aa26f6a8b862) . `IEvent`je to rozhraní, které kombinuje funkce dvou dalších rozhraní `System.IObservable<'T>` a [IDelegateEvent](https://msdn.microsoft.com/library/3d849465-6b8e-4fc5-b36c-2941d734268a). Proto `Event` mají ekvivalentní funkce delegátů v jiných jazycích a další funkce z `IObservable` , což znamená, že události jazyka f # podporují filtrování událostí a používají funkce první třídy jazyka f # a lambda výrazy jako obslužné rutiny událostí. Tato funkce je k dispozici v [modulu Event](https://msdn.microsoft.com/library/8b883baa-a460-4840-9baa-de8260351bc7).
+Události f # jsou reprezentovány typem [události](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpevent-1.html) jazyka f #, který implementuje rozhraní [IEvent](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-ievent-1.html) . `IEvent` je to rozhraní, které kombinuje funkce dvou dalších rozhraní `System.IObservable<'T>` a [IDelegateEvent](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-idelegateevent-1.html). Proto `Event` mají ekvivalentní funkce delegátů v jiných jazycích a další funkce z `IObservable` , což znamená, že události jazyka f # podporují filtrování událostí a používají funkce první třídy jazyka f # a lambda výrazy jako obslužné rutiny událostí. Tato funkce je k dispozici v [modulu Event](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-eventmodule.html).
 
-Chcete-li vytvořit událost pro třídu, která funguje stejně jako jakákoli jiná událost .NET Framework, přidejte do třídy `let` vazbu, která definuje `Event` jako pole ve třídě. Můžete zadat požadovaný typ argumentu události jako typ argumentu, nebo jej ponechat prázdný a odvodit odpovídající typ pomocí kompilátoru. Musíte také definovat člen události, který zpřístupňuje událost jako událost typu CLI. Tento člen by měl mít atribut [CLIEvent](https://msdn.microsoft.com/library/d359f1dd-ffa5-42fb-8808-b4c8131a0333) . Je deklarován jako vlastnost a její implementace je pouze voláním vlastnosti [publikovat](https://msdn.microsoft.com/library/b0fdaad5-25e5-43d0-9c0c-ce37c4aeb68e) události. Uživatelé vaší třídy mohou použít `Add` metodu publikované události pro přidání obslužné rutiny. Argumentem `Add` metody může být výraz lambda. Můžete použít `Trigger` vlastnost události k vyvolání události a předání argumentů funkci obslužné rutiny. Následující příklad kódu to dokládá. V tomto příkladu je odvozeným argumentem typu události řazená kolekce, která představuje argumenty pro výraz lambda.
+Chcete-li vytvořit událost pro třídu, která funguje stejně jako jakákoli jiná událost .NET Framework, přidejte do třídy `let` vazbu, která definuje `Event` jako pole ve třídě. Můžete zadat požadovaný typ argumentu události jako typ argumentu, nebo jej ponechat prázdný a odvodit odpovídající typ pomocí kompilátoru. Musíte také definovat člen události, který zpřístupňuje událost jako událost typu CLI. Tento člen by měl mít atribut [CLIEvent](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-clieventattribute.html) . Je deklarován jako vlastnost a její implementace je pouze voláním vlastnosti [publikovat](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpevent-1.html#Publish) události. Uživatelé vaší třídy mohou použít `Add` metodu publikované události pro přidání obslužné rutiny. Argumentem `Add` metody může být výraz lambda. Můžete použít `Trigger` vlastnost události k vyvolání události a předání argumentů funkci obslužné rutiny. Následující příklad kódu to dokládá. V tomto příkladu je odvozeným argumentem typu události řazená kolekce, která představuje argumenty pro výraz lambda.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet3605.fs)]
 
@@ -53,13 +50,13 @@ Given a value: Event occurred.
 
 ## <a name="processing-event-streams"></a>Zpracování datových proudů události
 
-Místo pouhého přidání obslužné rutiny události pro událost pomocí funkce [Event. Add](https://msdn.microsoft.com/library/10670d3b-8d47-4f6e-b8df-ebc6f64ef4fd) můžete použít funkce v `Event` modulu ke zpracování datových proudů událostí v vysoce přizpůsobených způsobech. K tomu je třeba použít přesměrování přesměrování ( `|>` ) spolu s událostí jako první hodnotu v řadě volání funkce a `Event` modul funguje jako následné volání funkce.
+Místo pouhého přidání obslužné rutiny události pro událost pomocí funkce [Event. Add](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-eventmodule.html#add) můžete použít funkce v `Event` modulu ke zpracování datových proudů událostí v vysoce přizpůsobených způsobech. K tomu je třeba použít přesměrování přesměrování ( `|>` ) spolu s událostí jako první hodnotu v řadě volání funkce a `Event` modul funguje jako následné volání funkce.
 
 Následující příklad kódu ukazuje, jak lze nastavit událost, pro kterou je ovladač událostí volán pouze za určitých podmínek.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet3604.fs)]
 
-[Pozorovatelný modul](https://msdn.microsoft.com/library/16b8610b-b30a-4df7-aa99-d9d352276227) obsahuje podobné funkce, které fungují na pozorovatelných objektech. Pozorovatelné objekty jsou podobné událostem, aktivně se však k událostem přihlašují pouze tehdy, jsou-li samy přihlašovány.
+[Pozorovatelný modul](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-observablemodule.html) obsahuje podobné funkce, které fungují na pozorovatelných objektech. Pozorovatelné objekty jsou podobné událostem, aktivně se však k událostem přihlašují pouze tehdy, jsou-li samy přihlašovány.
 
 ## <a name="implementing-an-interface-event"></a>Implementace události rozhraní
 
@@ -179,6 +176,3 @@ Application.Run(appForm)
 - [Členové](index.md)
 - [Zpracování a generování událostí](../../../standard/events/index.md)
 - [Výrazy lambda: `fun` klíčové slovo](../functions/lambda-expressions-the-fun-keyword.md)
-- [Control. Event – modul](https://msdn.microsoft.com/visualfsharpdocs/conceptual/control.event-module-%5bfsharp%5d)
-- [Control. Event&#60; ne&#62; třídy](https://msdn.microsoft.com/visualfsharpdocs/conceptual/control.event%5b%27t%5d-class-%5bfsharp%5d)
-- [Control. Event&#60; Delegate, args&#62; class](https://msdn.microsoft.com/visualfsharpdocs/conceptual/control.event%5b%27delegate%2c%27args%5d-class-%5bfsharp%5d)

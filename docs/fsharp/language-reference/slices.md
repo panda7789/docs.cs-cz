@@ -1,25 +1,25 @@
 ---
 title: Řezy
-description: Naučte se, jak používat řezy F# pro existující datové typy a jak definovat vlastní řezy pro jiné datové typy.
+description: 'Naučte se, jak používat řezy pro existující datové typy F # a jak definovat vlastní řezy pro jiné datové typy.'
 ms.date: 12/23/2019
-ms.openlocfilehash: 928005f2c63ffe099bb64e11ed29bb625e0a54c6
-ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
+ms.openlocfilehash: d3ddb2c247c36a85842f565f051372c5f2c9a9e9
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76980376"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88559008"
 ---
 # <a name="slices"></a>Řezy
 
-V F#je řez podmnožinou libovolného datového typu, který má metodu `GetSlice` v definici nebo v [rozšíření typu](type-extensions.md)v rámci oboru. Nejčastěji se používá u F# polí a seznamů. Tento článek vysvětluje, jak vzít řezy z existujících F# typů a jak definovat vlastní řezy.
+V jazyce F # je řez podmnožinou libovolného datového typu, který má `GetSlice` metodu v definici nebo v [rozšíření typu](type-extensions.md)v rámci oboru. Nejčastěji se používá u polí a seznamů F #. Tento článek vysvětluje, jak vzít řezy z existujících typů F # a jak definovat vlastní řezy.
 
 Řezy se podobají [indexerům](./members/indexed-properties.md), ale místo toho, aby vydávaly jedinou hodnotu z podkladové datové struktury, poskytují více.
 
-F#v současné době má vnitřní podporu pro vytváření řezů řetězců, seznamů, polí a 2D polí.
+Jazyk F # v současné době má vnitřní podporu pro vytváření řezů řetězců, seznamů, polí a 2D polí.
 
-## <a name="basic-slicing-with-f-lists-and-arrays"></a>Základní řezy se F# seznamy a poli
+## <a name="basic-slicing-with-f-lists-and-arrays"></a>Základní průřezy pomocí seznamů a polí F #
 
-Nejběžnější typy dat, které jsou rozdělené, jsou F# seznamy a pole. Následující příklad ukazuje, jak to provést se seznamy:
+Nejběžnější typy dat, které jsou rozdělené, jsou seznamy a pole F #. Následující příklad ukazuje, jak to provést se seznamy:
 
 ```fsharp
 // Generate a list of 100 integers
@@ -59,7 +59,7 @@ printfn "Unbounded end slice: %A" unboundedEnd
 
 ## <a name="slicing-multidimensional-arrays"></a>Vytváření řezů multidimenzionálních polí
 
-F#podporuje multidimenzionální pole v F# základní knihovně. Stejně jako u jednorozměrného pole mohou být také užitečné řezy multidimenzionálních polí. Zavedení dalších dimenzí však vyžaduje mírně odlišnou syntaxi, takže můžete pořizovat řezy konkrétních řádků a sloupců.
+Jazyk f # podporuje multidimenzionální pole v knihovně F # Core. Stejně jako u jednorozměrného pole mohou být také užitečné řezy multidimenzionálních polí. Zavedení dalších dimenzí však vyžaduje mírně odlišnou syntaxi, takže můžete pořizovat řezy konkrétních řádků a sloupců.
 
 Následující příklady ukazují, jak vytvořit řezy 2D pole:
 
@@ -89,13 +89,13 @@ let twoByTwo = A.[0..1,0..1]
 printfn "%A" twoByTwo
 ```
 
-F# Základní knihovna aktuálně nedefinuje `GetSlice` pro 3D pole. Pokud chcete rozdělit 3D pole nebo jiná pole více dimenzí, definujte `GetSlice` člena sami.
+Základní knihovna F # není aktuálně definována `GetSlice` pro 3D pole. Pokud chcete rozdělit 3D pole nebo jiná pole více dimenzí, definujte `GetSlice` člena sami.
 
 ## <a name="defining-slices-for-other-data-structures"></a>Definování řezů pro jiné datové struktury
 
-F# Základní knihovna definuje řezy pro omezené sady typů. Pokud chcete definovat řezy pro více datových typů, můžete tak učinit buď v samotné definici typu, nebo v rozšíření typu.
+Základní knihovna jazyka F # definuje řezy pro omezené sady typů. Pokud chcete definovat řezy pro více datových typů, můžete tak učinit buď v samotné definici typu, nebo v rozšíření typu.
 
-Tady je příklad, jak můžete definovat řezy pro třídu <xref:System.ArraySegment%601>, abyste umožnili pohodlné manipulaci s daty:
+Tady je příklad, jak můžete definovat řezy pro <xref:System.ArraySegment%601> třídu, aby bylo možné pohodlné manipulaci s daty:
 
 ```fsharp
 open System
@@ -110,23 +110,19 @@ let arr = ArraySegment [| 1 .. 10 |]
 let slice = arr.[2..5] //[ 3; 4; 5]
 ```
 
-### <a name="use-inlining-to-avoid-boxing-if-it-is-necessary"></a>Použít vkládání k zamezení zabalení, pokud je to nezbytné
-
-Pokud definujete řezy pro typ, který je ve skutečnosti strukturou, doporučujeme, abyste `inline` `GetSlice` člen. F# Kompilátor optimalizuje volitelné argumenty a vyloučí případné přidělení haldy jako výsledek vytváření řezů. To je důležité pro vytváření řezů, jako je například <xref:System.Span%601>, které nelze přidělit haldě.
+Další příklad s použitím <xref:System.Span%601> <xref:System.ReadOnlySpan%601> typů a:
 
 ```fsharp
 open System
 
 type ReadOnlySpan<'T> with
-    // Note the 'inline' in the member definition
-    member inline sp.GetSlice(startIdx, endIdx) =
+    member sp.GetSlice(startIdx, endIdx) =
         let s = defaultArg startIdx 0
         let e = defaultArg endIdx sp.Length
         sp.Slice(s, e - s)
 
 type Span<'T> with
-    // Note the 'inline' in the member definition
-    member inline sp.GetSlice(startIdx, endIdx) =
+    member sp.GetSlice(startIdx, endIdx) =
         let s = defaultArg startIdx 0
         let e = defaultArg endIdx sp.Length
         sp.Slice(s, e - s)
@@ -142,9 +138,9 @@ printSpan sp.[0..3] // [|1; 2; 3|]
 printSpan sp.[1..3] // |2; 3|]
 ```
 
-## <a name="built-in-f-slices-are-end-inclusive"></a>Předdefinované řezy jsou F# na konci včetně.
+## <a name="built-in-f-slices-are-end-inclusive"></a>Předdefinované řezy F # jsou na konci (včetně).
 
-Všechny vnitřní řezy v F# nástroji jsou na konci včetně. To znamená, že horní mez je obsažena v řezu. V daném řezu pomocí počátečního `x` indexu a ukončení `y`indexu bude výsledný řez obsahovat hodnotu *YTH* .
+Všechny vnitřní řezy v F # jsou na konci včetně. To znamená, že horní mez je obsažena v řezu. Pro daný řez s počáteční index `x` a koncovým indexem `y` bude výsledný řez obsahovat hodnotu *YTH* .
 
 ```fsharp
 // Define a new list
@@ -153,6 +149,6 @@ let xs = [1 .. 10]
 printfn "%A" xs.[2..5] // Includes the 5th index
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Indexované vlastnosti](./members/indexed-properties.md)
