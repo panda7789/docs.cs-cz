@@ -2,14 +2,15 @@
 title: Přístup ke službám WCF pomocí klientské aplikace pro Windows Store
 ms.date: 03/30/2017
 ms.assetid: e2002ef4-5dee-4a54-9d87-03b33d35fc52
-ms.openlocfilehash: ff6638936f476bd8fe75a065d3e61e96790cb7f4
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: ed13a88e3a534cd586d9386396802d7457de56e7
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597693"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88558969"
 ---
-# <a name="accessing-wcf-services-with-a-windows-store-client-app"></a>Přístup ke službám WCF pomocí klientské aplikace pro Windows Store
+# <a name="access-wcf-services-with-a-windows-store-client-app"></a>Přístup ke službám WCF pomocí klientské aplikace pro Windows Store
+
 Systém Windows 8 zavádí nový typ aplikace s názvem aplikace pro Windows Store. Tyto aplikace jsou navržené kolem rozhraní dotykové obrazovky. .NET Framework 4,5 umožňuje aplikacím pro Windows Store volat služby WCF.  
   
 ## <a name="wcf-support-in-windows-store-applications"></a>Podpora WCF v aplikacích pro Windows Store  
@@ -122,7 +123,7 @@ V aplikacích pro Windows Store jsou podporovány následující typy přihlašo
   
 1. Žádné  
   
-2. Basic  
+2. Základní  
   
 3. Otisk  
   
@@ -176,9 +177,5 @@ void async SomeMethod()
   
 ## <a name="see-also"></a>Viz také
 
-- [Blog WCF v aplikacích pro Windows Store](https://docs.microsoft.com/archive/blogs/piyushjo/wcf-in-windows-8-metro-styled-apps-absolutely-supported)
-- [Klienti a zabezpečení WCF Windows Store](https://docs.microsoft.com/archive/blogs/piyushjo/calling-a-wcf-service-from-a-metro-application-adding-security)
-- [Aplikace pro Windows Store a volání mezi počítači](https://docs.microsoft.com/archive/blogs/piyushjo/calling-a-wcf-service-from-a-metro-application-cross-machine-scenario)
-- [Volání služby WCF nasazené v Azure z aplikace pro Windows Store](https://docs.microsoft.com/archive/blogs/piyushjo/calling-a-wcf-service-from-a-metro-application-cross-machine-scenario)
 - [Programování zabezpečení WCF](programming-wcf-security.md)
 - [Vazby](../bindings.md)

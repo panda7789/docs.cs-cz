@@ -24,12 +24,12 @@ helpviewer_keywords:
 - compiling satellite assemblies
 - re-signing assemblies
 ms.assetid: 8d5c6044-2919-41d2-8321-274706b295ac
-ms.openlocfilehash: be6603f3a593d9756d55204024214660b2220af3
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: 3e515028919518cb93cdbec3417eef061a512832
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87166218"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88558410"
 ---
 # <a name="creating-satellite-assemblies-for-desktop-apps"></a>Vytváření satelitních sestavení pro aplikace klasické pracovní plochy
 
@@ -95,8 +95,13 @@ Následuje jednoduchý příklad "Hello World", který zobrazuje okno se zprávo
 
 2. Chcete-li označit, že angličtina (EN) je výchozí jazyková verze aplikace, přidejte následující <xref:System.Resources.NeutralResourcesLanguageAttribute?displayProperty=nameWithType> atribut do souboru AssemblyInfo aplikace nebo do hlavního souboru zdrojového kódu, který bude zkompilován do hlavního sestavení aplikace.
 
-    [!code-csharp[Conceptual.Resources.Locating#2](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.locating/cs/assemblyinfo.cs#2)]
-    [!code-vb[Conceptual.Resources.Locating#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.locating/vb/assemblyinfo.vb#2)]  
+    ```csharp
+    [assembly: NeutralResourcesLanguageAttribute("en")]
+    ```
+
+    ```vb
+    <Assembly: NeutralResourcesLanguageAttribute("en")>
+    ```
   
 3. Přidejte podporu pro další jazykové verze (EN-US, fr-FR a ru-RU) do aplikace následujícím způsobem:  
   
@@ -120,7 +125,7 @@ Následuje jednoduchý příklad "Hello World", který zobrazuje okno se zprávo
 5. Zkompilujte následující zdrojový kód spolu s prostředky pro výchozí jazykovou verzi do hlavního sestavení aplikace:
 
     > [!IMPORTANT]
-    > Pokud používáte příkazový řádek místo sady Visual Studio k vytvoření příkladu, měli byste změnit volání <xref:System.Resources.ResourceManager> konstruktoru třídy na následující:`ResourceManager rm = new ResourceManager("Greetings", typeof(Example).Assembly);`
+    > Pokud používáte příkazový řádek místo sady Visual Studio k vytvoření příkladu, měli byste změnit volání <xref:System.Resources.ResourceManager> konstruktoru třídy na následující: `ResourceManager rm = new ResourceManager("Greetings", typeof(Example).Assembly);`
 
     [!code-csharp[Conceptual.Resources.Locating#1](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.locating/cs/program.cs#1)]
     [!code-vb[Conceptual.Resources.Locating#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.locating/vb/module1.vb#1)]

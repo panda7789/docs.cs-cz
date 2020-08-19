@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, constants
 - constants [C#]
 ms.assetid: 1fb39621-1738-49b1-a1b3-8587f109123f
-ms.openlocfilehash: dd42dcd62bb46898c20f14cdc893b8f5801894f2
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: 1252e214be03f8a180fadb7667ee59f36a862040
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86474979"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88558423"
 ---
 # <a name="constants-c-programming-guide"></a>Konstanty (Průvodce programováním v C#)
 Konstanty jsou neměnné hodnoty, které jsou známy v době kompilace a nemění se po dobu života programu. Konstanty jsou deklarovány s modifikátorem [const](../../language-reference/keywords/const.md) . Pouze [předdefinované typy](../../language-reference/builtin-types/built-in-types.md) jazyka C# (s výjimkou <xref:System.Object?displayProperty=nameWithType> ) mohou být deklarovány jako `const` . Uživatelsky definované typy, včetně tříd, struktur a polí, nemůžou být `const` . Použijte modifikátor [jen pro čtení](../../language-reference/keywords/readonly.md) k vytvoření třídy, struktury nebo pole, která je inicializována jednou za běhu (například v konstruktoru) a poté nelze změnit.  
@@ -24,7 +24,7 @@ Konstanty jsou neměnné hodnoty, které jsou známy v době kompilace a neměn�
   
  [!code-csharp[csProgGuideObjects#64](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#64)]  
   
- V tomto příkladu je konstanta `months` vždy 12 a nemůže být změněna ani samotnou třídou. Ve skutečnosti, když kompilátor narazí na konstantní identifikátor ve zdrojovém kódu jazyka C# (například `months` ), nahradí hodnotu literálu přímo do kódu přestupného jazyka (IL), který vytvoří. Vzhledem k tomu, že v době běhu není přiřazena žádná proměnná adresa, nelze `const` pole předat odkazem a nelze ji ve výrazu použít jako l-value.  
+ V tomto příkladu je konstanta `Months` vždy 12 a nemůže být změněna ani samotnou třídou. Ve skutečnosti, když kompilátor narazí na konstantní identifikátor ve zdrojovém kódu jazyka C# (například `Months` ), nahradí hodnotu literálu přímo do kódu přestupného jazyka (IL), který vytvoří. Vzhledem k tomu, že v době běhu není přiřazena žádná proměnná adresa, nelze `const` pole předat odkazem a nelze ji ve výrazu použít jako l-value.  
   
 > [!NOTE]
 > Buďte opatrní při odkazování na konstantní hodnoty definované v jiném kódu, jako jsou knihovny DLL. Pokud nová verze knihovny DLL definuje novou hodnotu pro konstantu, program bude stále obsahovat starou hodnotu literálu, dokud nebude znovu zkompilována s novou verzí.  
@@ -49,7 +49,7 @@ Konstanty jsou neměnné hodnoty, které jsou známy v době kompilace a neměn�
 ## <a name="see-also"></a>Viz také
 
 - [Průvodce programováním v C#](../index.md)
-- [Třídy a struktury](./index.md)
+- [Třídy a struktury](./index.md)
 - [Vlastnosti](./properties.md)
 - [Typy](../types/index.md)
 - [readonly](../../language-reference/keywords/readonly.md)

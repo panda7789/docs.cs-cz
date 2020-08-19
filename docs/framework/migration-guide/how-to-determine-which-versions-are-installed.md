@@ -5,17 +5,16 @@ ms.date: 02/03/2020
 dev_langs:
 - csharp
 - vb
-ms.custom: updateeachrelease
 helpviewer_keywords:
 - versions, determining for .NET Framework
 - .NET Framework, determining version
 ms.assetid: 40a67826-e4df-4f59-a651-d9eb0fdc755d
-ms.openlocfilehash: 122441e9238fd91199aed255b0125f69081c0a8c
-ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
+ms.openlocfilehash: 1591aacf5496852609ae571a52aaea2d5c09a15b
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84990147"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88558553"
 ---
 # <a name="how-to-determine-which-net-framework-versions-are-installed"></a>Postupy: určení, které verze .NET Framework jsou nainstalovány
 
@@ -132,13 +131,13 @@ Každá verze .NET Framework od 1,1 do 4,0 je uvedena jako podklíč v **HKEY_LO
 
 | Verze frameworku  | Podklíč registru | Hodnota |
 | ------------------ | --------------- | ----- |
-| 1.0                | **HKLM \\ software \\ Microsoft \\ . \\Zásady NETFramework \\ v 1.0 \\ 3705**     | **Nainstalovat** REG_SZ se rovná`1` |
-| 1.1                | **HKLM \\ software \\ Microsoft \\ .NET Framework Setup \\ NDP \\ v 1.1.4322**   | **Nainstalovat** REG_DWORD se rovná`1` |
-| 2.0                | **HKLM \\ software \\ Microsoft \\ NET Framework Setup \\ NDP \\ v 2.0.50727**  | **Nainstalovat** REG_DWORD se rovná`1` |
-| 3.0                | **HKLM \\ software \\ Microsoft \\ .NET Framework Setup \\ NDP \\ v 3.0 – \\ instalace** | **InstallSuccess** REG_DWORD se rovná`1` |
-| 3,5                | **HKLM \\ software \\ Microsoft \\ .NET Framework Setup \\ NDP \\ v 3.5**        | **Nainstalovat** REG_DWORD se rovná`1` |
-| Profil klienta 4,0 | **HKLM \\ software \\ Microsoft \\ .NET Framework Setup \\ NDP \\ v4 \\ Client**  | **Nainstalovat** REG_DWORD se rovná`1` |
-| úplný profil 4,0   | **HKLM \\ software \\ Microsoft \\ .NET Framework Setup \\ NDP \\ v4 \\ Full**    | **Nainstalovat** REG_DWORD se rovná`1` |
+| 1.0                | **HKLM \\ software \\ Microsoft \\ . \\Zásady NETFramework \\ v 1.0 \\ 3705**     | **Nainstalovat** REG_SZ se rovná `1` |
+| 1.1                | **HKLM \\ software \\ Microsoft \\ .NET Framework Setup \\ NDP \\ v 1.1.4322**   | **Nainstalovat** REG_DWORD se rovná `1` |
+| 2.0                | **HKLM \\ software \\ Microsoft \\ NET Framework Setup \\ NDP \\ v 2.0.50727**  | **Nainstalovat** REG_DWORD se rovná `1` |
+| 3.0                | **HKLM \\ software \\ Microsoft \\ .NET Framework Setup \\ NDP \\ v 3.0 – \\ instalace** | **InstallSuccess** REG_DWORD se rovná `1` |
+| 3,5                | **HKLM \\ software \\ Microsoft \\ .NET Framework Setup \\ NDP \\ v 3.5**        | **Nainstalovat** REG_DWORD se rovná `1` |
+| Profil klienta 4,0 | **HKLM \\ software \\ Microsoft \\ .NET Framework Setup \\ NDP \\ v4 \\ Client**  | **Nainstalovat** REG_DWORD se rovná `1` |
+| úplný profil 4,0   | **HKLM \\ software \\ Microsoft \\ .NET Framework Setup \\ NDP \\ v4 \\ Full**    | **Nainstalovat** REG_DWORD se rovná `1` |
 
 > [!IMPORTANT]
 > Pokud aplikace, kterou používáte, je 32 a běží v 64 bitovém systému Windows, cesty registru se budou lišit od dříve uvedených. 64 registr je k dispozici v podklíči **HKEY_LOCAL_MACHINE \\ software \\ Wow6432Node \\ ** . Například podklíč registru pro .NET Framework 3,5 je **HKEY_LOCAL_MACHINE \\ software \\ Wow6432Node \\ Microsoft \\ NET Framework Setup \\ NDP \\ v 3.5**.

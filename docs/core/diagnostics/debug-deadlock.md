@@ -3,12 +3,12 @@ title: Ladění zablokování – .NET Core
 description: Kurz, který vás provede laděním problému se zámkem v .NET Core.
 ms.topic: tutorial
 ms.date: 07/20/2020
-ms.openlocfilehash: 247521176297254180d794d4d4fc850f30e343b0
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: 6f060e1ae801eb4eacbbd1fb67110f827c37f597
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86926396"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88557877"
 ---
 # <a name="debug-a-deadlock-in-net-core"></a>Ladění zablokování v .NET Core
 
@@ -51,7 +51,7 @@ dotnet-trace ps
 
 Poznamenejte si ID procesu z výstupu příkazu. Naše ID procesu bylo `4807` , ale bude se lišit. Přejděte na následující adresu URL, která je koncovým bodem rozhraní API na ukázkovém webu:
 
-[https://localhost:5001/api/diagscenario/deadlock](https://localhost:5001/api/diagscenario/deadlock)
+`https://localhost:5001/api/diagscenario/deadlock`
 
 Požadavek rozhraní API na web přestane reagovat a nebude reagovat. Nechte žádost běžet asi 10-15 sekund. Pak vytvořte základní Výpis pomocí následujícího příkazu:
 

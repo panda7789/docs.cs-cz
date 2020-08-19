@@ -2,12 +2,12 @@
 title: 'Definování typů a jejich členů – prohlídka jazyka C #'
 description: Stavební bloky programů jsou typy. Naučte se vytvářet třídy, struktury, rozhraní a další funkce v jazyce C#.
 ms.date: 08/06/2020
-ms.openlocfilehash: 69d6f0fe1e11f287fb5e385761fc210a61929d10
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: efd353fe8c1e6a57952bcb2586a05ad38ecd52b9
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88068525"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88559112"
 ---
 # <a name="types-and-members"></a>Typy a členové
 
@@ -97,7 +97,7 @@ Následující příklad ukazuje deklarace obou předchozích výčtů:
 
 ## <a name="nullable-types"></a>Typy nullable
 
-Proměnné libovolného typu mohou být deklarovány jako ***nenulové nebo*** ***null***. Proměnná s možnou hodnotou null může obsahovat další `null` hodnotu, což značí, že žádná hodnota neexistuje. Typy hodnot s možnou hodnotou null (struktury nebo výčty) jsou reprezentovány <xref:System.Nullable%601?displayProperty=nameWithType> . Typy odkazů, které nejsou null a povolující hodnotu null, jsou reprezentované podkladovým typem odkazu. Rozlišení je reprezentované metadaty, které načte kompilátor a některé knihovny. Kompilátor poskytuje upozornění, když jsou odkazy na hodnotu null překážené bez prvotní kontroly jejich hodnoty `null` . Kompilátor také poskytuje upozornění, pokud jsou odkazy, které nejsou null, přiřazeny k hodnotě, která může být `null` . Následující příklad deklaruje ***hodnotu null int***a inicializuje ji na `null` . Potom nastaví hodnotu na `5` . Ukazuje stejný koncept s ***připouštějící řetězec s možnou hodnotou null***. Další informace naleznete v tématu [typy hodnot](../language-reference/builtin-types/nullable-value-types.md) s možnou hodnotou null a [odkazy s možnou hodnotou null](../nullable-references.md).
+Proměnné libovolného typu mohou být deklarovány jako ***nenulové nebo*** ***null***. Proměnná s možnou hodnotou null může obsahovat další `null` hodnotu, což značí, že žádná hodnota neexistuje. Typy hodnot s možnou hodnotou null (struktury nebo výčty) jsou reprezentovány <xref:System.Nullable%601?displayProperty=nameWithType> . Typy odkazů, které nejsou null a povolující hodnotu null, jsou reprezentované podkladovým typem odkazu. Rozlišení je reprezentované metadaty, které načte kompilátor a některé knihovny. Kompilátor poskytuje upozornění, když jsou odkazy na hodnotu null překážené bez prvotní kontroly jejich hodnoty `null` . Kompilátor také poskytuje upozornění, pokud jsou odkazy, které nejsou null, přiřazeny hodnotě, která může být `null` . Následující příklad deklaruje ***hodnotu null int***a inicializuje ji na `null` . Potom nastaví hodnotu na `5` . Ukazuje stejný koncept s ***připouštějící řetězec s možnou hodnotou null***. Další informace naleznete v tématu [typy hodnot](../language-reference/builtin-types/nullable-value-types.md) s možnou hodnotou null a [odkazy s možnou hodnotou null](../nullable-references.md).
 
 :::code language="csharp" source="./snippets/shared/Types.cs" ID="DeclareNullable":::
 

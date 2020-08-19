@@ -3,12 +3,12 @@ title: Přehled diagnostických nástrojů – .NET Core
 description: Přehled nástrojů a technik, které jsou k dispozici pro diagnostiku aplikací .NET Core.
 ms.date: 07/16/2020
 ms.topic: overview
-ms.openlocfilehash: dc64c03ee9c8cee6a5b3c5cc089b4a1a2c27f84a
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: ae3b9a1961f331c9cdea786bd5fe06b7bfa10927
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86924779"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88558111"
 ---
 # <a name="what-diagnostic-tools-are-available-in-net-core"></a>Jaké diagnostické nástroje jsou k dispozici v .NET Core?
 
@@ -24,7 +24,7 @@ Tento článek vám pomůže najít různé nástroje, které potřebujete.
 
 [Protokolování a trasování](logging-tracing.md) jsou související techniky. Odkazují na instrumentaci kódu k vytváření souborů protokolu. Soubory zaznamenávají podrobnosti o tom, co program dělá. Pomocí těchto podrobností lze diagnostikovat nejsložitější problémy. V kombinaci s časovými razítky jsou tyto techniky také cenné při vyšetřování výkonu.
 
-## <a name="unit-testing"></a>Testování částí
+## <a name="unit-testing"></a>Testování jednotek
 
 [Testování částí](../testing/index.md) je klíčovou součástí kontinuální integrace a nasazování vysoce kvalitního softwaru. Testy jednotek jsou navržené tak, aby vám při přerušení nějakého upozornění poskytovala včasné varování.
 
@@ -37,6 +37,10 @@ Tento článek vám pomůže najít různé nástroje, které potřebujete.
 ### <a name="dotnet-dump"></a>dotnet-dump
 
 Nástroj [dotnet-dump](dotnet-dump.md) je způsob, jak shromažďovat a analyzovat základní výpisy paměti Windows a Linux bez nativního ladicího programu.
+
+### <a name="dotnet-gcdump"></a>dotnet – gcdump
+
+Nástroj [dotnet-gcdump](dotnet-gcdump.md) je způsob, jak shromáždit výpisy paměti GC (uvolňování paměti) živých procesů .NET.
 
 ### <a name="dotnet-trace"></a>dotnet-trace
 
@@ -52,6 +56,6 @@ Nástroj [dotnet-dump](dotnet-dump.md) je způsob, jak shromažďovat a analyzov
 
 [Kurz: ladění vysokého využití procesoru](debug-highcpu.md) vás provede šetřením vysokého využití procesoru. K potvrzení vysokého využití procesoru používá nástroj [dotnet-Counters](dotnet-counters.md) . Pak vás provede pomocí [trasování pro nástroj Performance Analysis ( `dotnet-trace` )](dotnet-trace.md) nebo Linux, `perf` který shromáždí a zobrazí profil využití procesoru.
 
-### <a name="debug-deadlock"></a>Ladění – zablokování
+### <a name="debug-deadlock"></a>Ladění vzájemného zablokování
 
 [Kurz: zablokování ladění](debug-deadlock.md) ukazuje, jak používat nástroj [dotnet-dump](dotnet-dump.md) k prozkoumání vláken a zámků.

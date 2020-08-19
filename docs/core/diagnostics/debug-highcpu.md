@@ -3,12 +3,12 @@ title: Ladění vysokého využití procesoru – .NET Core
 description: Kurz vás provede laděním vysokého využití procesoru v .NET Core.
 ms.topic: tutorial
 ms.date: 07/20/2020
-ms.openlocfilehash: e69585d0eb6f04bf37d0c023a1956be62c2a1cf3
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: 93076bbce3baf3a219b25c927d2aba3d2d57456f
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86926395"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88557799"
 ---
 # <a name="debug-high-cpu-usage-in-net-core"></a>Ladění vysokého využití procesoru v .NET Core
 
@@ -85,7 +85,7 @@ Press p to pause, r to resume, q to quit.
 
 Po spuštění webové aplikace, která je spuštěná ihned po spuštění, se procesor nespotřebovává vůbec a oznamuje se na adrese `0%` . Přejděte do `api/diagscenario/highcpu` trasy s `60000` parametrem Route:
 
-[https://localhost:5001/api/diagscenario/highcpu/60000](https://localhost:5001/api/diagscenario/highcpu/60000)
+`https://localhost:5001/api/diagscenario/highcpu/60000`
 
 Teď znovu spusťte příkaz [dotnet-Counters](dotnet-counters.md) . Chcete-li monitorovat pouze `cpu-usage` , zadejte `System.Runtime[cpu-usage]` jako součást příkazu.
 
@@ -127,7 +127,7 @@ export COMPlus_PerfMapEnabled=1
 dotnet run
 ```
 
-Vykonání vysokého koncového bodu rozhraní API procesoru ( <https://localhost:5001/api/diagscenario/highcpu/60000> ). I když je spuštěný v rámci žádosti o 1 minutu, spusťte `perf` příkaz s ID procesu:
+Vyzkoušejte znovu koncový bod rozhraní API procesoru ( `https://localhost:5001/api/diagscenario/highcpu/60000` ). I když je spuštěný v rámci žádosti o 1 minutu, spusťte `perf` příkaz s ID procesu:
 
 ```bash
 sudo perf record -p 2266 -g
@@ -152,7 +152,7 @@ Tento příkaz vygeneruje `flamegraph.svg` , který můžete zobrazit v prohlí�
 
 ### <a name="windows"></a>[Windows](#tab/windows)
 
-Ve Windows můžete použít nástroj [dotnet-Trace](dotnet-trace.md) jako profiler. Pomocí předchozího [ukázkového cíle ladění](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios)Vyzkoušejte <https://localhost:5001/api/diagscenario/highcpu/60000> znovu koncový bod CPU (). I když je spuštěný v rámci žádosti o 1 minutu, použijte `collect` příkaz následujícím způsobem:
+Ve Windows můžete použít nástroj [dotnet-Trace](dotnet-trace.md) jako profiler. Pomocí předchozího [ukázkového cíle ladění](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios)vykonáte znovu vysoký koncový bod procesoru ( `https://localhost:5001/api/diagscenario/highcpu/60000` ). I když je spuštěný v rámci žádosti o 1 minutu, použijte `collect` příkaz následujícím způsobem:
 
 ```dotnetcli
 dotnet-trace collect -p 22884 --providers Microsoft-DotNETCore-SampleProfiler

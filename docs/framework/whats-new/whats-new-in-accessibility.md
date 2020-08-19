@@ -1,19 +1,18 @@
 ---
 title: Co je nového v přístupnosti v .NET Framework
 description: Podívejte se, co je nového v přístupnost .NET, počínaje .NET Framework 4.7.1. Funkce usnadnění umožňují, aby aplikace poskytovala správné prostředí pro uživatele s asistenčními technologiemi.
-ms.custom: updateeachrelease
 ms.date: 04/18/2019
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - what's new [.NET Framework]
-ms.openlocfilehash: 593591ca340cc130a3a6d1daa015a849b8eca0f8
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: df9188c4f7c2af77f5dc87309880a41724254c5c
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86925836"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88558956"
 ---
 # <a name="whats-new-in-accessibility-in-the-net-framework"></a>Co je nového v přístupnosti v .NET Framework
 
@@ -194,7 +193,7 @@ Můžete zkombinovat použití `SelectionBrush` `SelectionTextBrush` vlastností
 
 **Podpora pro vlastnost UIAutomation ControllerFor**
 
-Vlastnost UIAutomation `ControllerFor` vrací pole prvků automatizace, které jsou manipulovány prvkem automatizace, který tuto vlastnost podporuje. Tato vlastnost se běžně používá pro usnadnění přístupu k automatickým návrhům. `ControllerFor`se používá v případě, že prvek automatizace ovlivňuje jeden nebo více segmentů uživatelského rozhraní aplikace nebo plochy. V opačném případě je těžké přidružit dopad operace řízení k prvkům uživatelského rozhraní. Tato funkce přidává možnost pro ovládací prvky pro poskytnutí hodnoty `ControllerFor` Vlastnosti.
+Vlastnost UIAutomation `ControllerFor` vrací pole prvků automatizace, které jsou manipulovány prvkem automatizace, který tuto vlastnost podporuje. Tato vlastnost se běžně používá pro usnadnění přístupu k automatickým návrhům. `ControllerFor` se používá v případě, že prvek automatizace ovlivňuje jeden nebo více segmentů uživatelského rozhraní aplikace nebo plochy. V opačném případě je těžké přidružit dopad operace řízení k prvkům uživatelského rozhraní. Tato funkce přidává možnost pro ovládací prvky pro poskytnutí hodnoty `ControllerFor` Vlastnosti.
 
 .NET Framework 4,8 přidá novou virtuální metodu <xref:System.Windows.Automation.Peers.AutomationPeer.GetControlledPeersCore?displayProperty=nameWithType?displayProperty=nameWithType> . Chcete-li zadat hodnotu `ControllerFor` vlastnosti, jednoduše přepište tuto metodu a vraťte se `List<AutomationPeer>` k ovládacím prvkům, které jsou zpracovávány tímto <xref:System.Windows.Automation.Peers.AutomationPeer> způsobem:
 
@@ -473,11 +472,11 @@ peer.RaiseAutomationEvent(AutomationEvents.LiveRegionChanged)
 
 **High contrast**
 
-Počínaje .NET Framework 4.7.1 se v různých ovládacích prvcích WPF provedla vylepšení vysokého kontrastu. Jsou nyní viditelné, když <xref:System.Windows.SystemParameters.HighContrast%2A> je motiv nastaven. Mezi ně patří:
+Počínaje .NET Framework 4.7.1 se v různých ovládacích prvcích WPF provedla vylepšení vysokého kontrastu. Jsou nyní viditelné, když <xref:System.Windows.SystemParameters.HighContrast%2A> je motiv nastaven. Tady jsou některé z nich:
 
-- <xref:System.Windows.Controls.Expander>nad
+- <xref:System.Windows.Controls.Expander> nad
 
-  Vizuál fokusu pro <xref:System.Windows.Controls.Expander> ovládací prvek je nyní viditelný. Vizuály klávesnice pro <xref:System.Windows.Controls.ComboBox> <xref:System.Windows.Controls.ListBox> <xref:System.Windows.Controls.RadioButton> ovládací prvky, a jsou viditelné také. Příklad:
+  Vizuál fokusu pro  <xref:System.Windows.Controls.Expander> ovládací prvek je nyní viditelný. Vizuály klávesnice pro <xref:System.Windows.Controls.ComboBox> <xref:System.Windows.Controls.ListBox> <xref:System.Windows.Controls.RadioButton> ovládací prvky, a jsou viditelné také. Příklad:
 
   Před:
 
@@ -487,7 +486,7 @@ Počínaje .NET Framework 4.7.1 se v různých ovládacích prvcích WPF provedl
 
   ![Snímek obrazovky ovládacího prvku rozšíření se fokusem ukazující tečkovou čáru kolem textu ovládacího prvku](./media/whats-new-in-accessibility/expander-control-after.png)
 
-- <xref:System.Windows.Controls.CheckBox>a <xref:System.Windows.Controls.RadioButton> ovládací prvky
+- <xref:System.Windows.Controls.CheckBox> a <xref:System.Windows.Controls.RadioButton> ovládací prvky
 
   Text v <xref:System.Windows.Controls.CheckBox> <xref:System.Windows.Controls.RadioButton> ovládacích prvcích a se teď snáze zobrazuje, když je vybraný v motivech s vysokým kontrastem. Příklad:
 
@@ -499,7 +498,7 @@ Počínaje .NET Framework 4.7.1 se v různých ovládacích prvcích WPF provedl
 
   ![Snímek obrazovky s přepínači a zaškrtávacím tlačítky s lepší viditelností textu u motivů s vysokým kontrastem](./media/whats-new-in-accessibility/high-contrast-radio-button-after.png)
 
-- <xref:System.Windows.Controls.ComboBox>nad
+- <xref:System.Windows.Controls.ComboBox> nad
 
   Počínaje .NET Framework 4.7.1 je ohraničení zakázaného <xref:System.Windows.Controls.ComboBox> ovládacího prvku stejné barvy jako zakázaný text. Příklad:
 
@@ -531,7 +530,7 @@ Počínaje .NET Framework 4.7.1 se v různých ovládacích prvcích WPF provedl
 
   ![Snímek obrazovky ovládacího prvku polem, který zobrazuje šipku rozevíracího seznamu.](./media/whats-new-in-accessibility/combo-box-style-key-after.png)
 
-- <xref:System.Windows.Controls.DataGrid>nad
+- <xref:System.Windows.Controls.DataGrid> nad
 
   Počínaje .NET Framework 4.7.1, šipka indikátoru řazení v <xref:System.Windows.Controls.DataGrid> ovládacích prvcích teď používá správné barvy motivu. Příklad:
 

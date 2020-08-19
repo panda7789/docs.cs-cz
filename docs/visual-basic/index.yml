@@ -7,12 +7,12 @@ metadata:
   ms.topic: landing-page
   ms.date: 08/13/2020
   ms.custom: contperfq1
-  ms.openlocfilehash: 507ee5cfc579a75231bf49b1db0d28ec32927ecd
-  ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
+  ms.openlocfilehash: dff262ba8646427baa0021dbe4b3f859d22459cd
+  ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 08/17/2020
-  ms.locfileid: "88268150"
+  ms.lasthandoff: 08/18/2020
+  ms.locfileid: "88559203"
 landingContent:
 - title: Začínáme
   linkLists:
@@ -22,10 +22,10 @@ landingContent:
       url: https://dotnet.microsoft.com/download
   - linkListType: get-started
     links:
-    - text: Vytvoření aplikace "Hello World"
-      url: ../core/tutorials/vb-with-visual-studio.md
-    - text: Sestavení knihovny tříd
-      url: ../core/tutorials/vb-library-with-visual-studio.md
+    - text: Vytvoření konzolové aplikace .NET Core pomocí sady Visual Studio
+      url: ../core/tutorials/with-visual-studio.md
+    - text: Vytvoření knihovny .NET Standard pomocí sady Visual Studio
+      url: ../core/tutorials/library-with-visual-studio.md
     - text: Postupy
       url: walkthroughs.md
     - text: Další zdroje

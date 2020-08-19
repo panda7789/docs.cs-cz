@@ -1,19 +1,18 @@
 ---
 title: Co je zastaralé v .NET Framework
 description: Podívejte se, jak knihovna tříd .NET označuje členy jako zastaralé. Pochopení atributu ObsoleteAttribute, jak zpracovávat zastaralé typy a členy a další.
-ms.custom: updateeachrelease
 ms.date: 04/02/2019
 helpviewer_keywords:
 - obsolete [.NET Framework]
 - what's obsolete [.NET Framework]
 - deprecated [.NET Framework]
 ms.assetid: d356a43a-73df-4ae2-a457-b9628074c7cd
-ms.openlocfilehash: 2f39f5ec614b669f3a0f63677cb6f8a6f9ed11cf
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: 188d9184476e58fb679421467cd68e2ea8a8a101
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86925797"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88558865"
 ---
 # <a name="whats-obsolete-in-the-net-framework-class-library"></a>Zastaralé položky v knihovně tříd .NET Framework
 
@@ -58,7 +57,7 @@ Můžete se rozhodnout, že nebudete znovu kompilovat existující kód v nověj
 
 Chcete-li cílit na konkrétní verzi .NET Framework, přiřaďte k atributu jednu z následujících řetězcových hodnot `version` :
 
-|Verze rozhraní .NET Framework|`version`řetezce|
+|Verze rozhraní .NET Framework|`version` řetezce|
 |-|-|
 |4,8|4.0|
 |4,7 (včetně 4.7.1 a 4.7.2)|4.0|
@@ -84,4 +83,4 @@ Chcete-li cílit na konkrétní verzi .NET Framework, přiřaďte k atributu jed
 
 ## <a name="see-also"></a>Viz také
 
-- [\<supportedRuntime>Objekt](../configure-apps/file-schema/startup/supportedruntime-element.md)
+- [\<supportedRuntime> Objekt](../configure-apps/file-schema/startup/supportedruntime-element.md)

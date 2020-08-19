@@ -9,12 +9,12 @@ helpviewer_keywords:
 - expression lambda [C#]
 - expressions [C#], lambda
 ms.assetid: 57e3ba27-9a82-4067-aca7-5ca446b7bf93
-ms.openlocfilehash: e2eae276d644413dcfff10c109ad10291fbb1386
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 3dd793ec000999935bff6b54b1b00e49211bd5ec
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88068517"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88558358"
 ---
 # <a name="lambda-expressions-c-reference"></a>Lambda – výrazy (Referenční dokumentace jazyka C#)
 
@@ -156,7 +156,7 @@ Další informace o řazených kolekcích členů jazyka C# naleznete v tématu 
 
 ## <a name="lambdas-with-the-standard-query-operators"></a>Výrazy lambda se standardními operátory dotazu
 
-LINQ to Objects, mimo jiné implementace, má vstupní parametr, jehož typ je jeden z řad <xref:System.Func%601> generických delegátů. Tito Delegáti používají parametry typu pro definování počtu a typu vstupních parametrů a návratový typ delegáta. `Func`Delegáti jsou velmi užiteční pro zapouzdření uživatelsky definovaných výrazů, které jsou aplikovány na každý prvek v sadě zdrojových dat. Zvažte například <xref:System.Func%602> typ delegáta:  
+LINQ to Objects, mimo jiné implementace, má vstupní parametr, jehož typ je jeden z řad <xref:System.Func%601> generických delegátů. Tito Delegáti používají parametry typu pro definování počtu a typu vstupních parametrů a návratový typ delegáta. `Func` Delegáti jsou velmi užiteční pro zapouzdření uživatelsky definovaných výrazů, které jsou aplikovány na každý prvek v sadě zdrojových dat. Zvažte například <xref:System.Func%602> typ delegáta:  
 
 ```csharp
 public delegate TResult Func<in T, out TResult>(T arg)
@@ -234,4 +234,3 @@ Další informace naleznete v části [výrazy anonymní funkce](~/_csharplang/s
 - [Stromy výrazů](../../programming-guide/concepts/expression-trees/index.md)
 - [Lokální funkce vs. výrazy lambda](../../programming-guide/classes-and-structs/local-functions.md#local-functions-vs-lambda-expressions)
 - [Ukázky pro Visual Studio 2008 C# (viz ukázky souborů dotazů LINQ a program XQuery)](https://code.msdn.microsoft.com/Visual-Studio-2008-C-d295cdba)
-- [Rekurzivní výrazy lambda](https://docs.microsoft.com/archive/blogs/madst/recursive-lambda-expressions)

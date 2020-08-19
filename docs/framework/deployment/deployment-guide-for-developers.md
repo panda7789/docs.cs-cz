@@ -1,18 +1,17 @@
 ---
 title: Průvodce nasazením .NET Framework pro vývojáře
 description: Přečtěte si příručku pro nasazení rozhraní .NET pro vývojáře. Tyto informace použijte, pokud chcete nainstalovat libovolnou verzi rozhraní .NET z verze 4,5 do 4,8 s vašimi aplikacemi.
-ms.custom: updateeachrelease
 ms.date: 01/17/2020
 helpviewer_keywords:
 - developer's guide, deploying .NET Framework
 - deployment [.NET Framework], developer's guide
 ms.assetid: 094d043e-33c4-40ba-a503-e0b20b55f4cf
-ms.openlocfilehash: 95c2cacc062bbe05ce0bc5c3e832bfe3006cf412
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 47946121334fe45132a7469894f30081045e3a68
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85622663"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88558826"
 ---
 # <a name="net-framework-deployment-guide-for-developers"></a>Průvodce nasazením .NET Framework pro vývojáře
 Toto téma poskytuje informace pro vývojáře, kteří chtějí nainstalovat jakoukoli verzi .NET Framework z .NET Framework 4,5 na [!INCLUDE[net_current](../../../includes/net-current-version.md)] s jejich aplikacemi.
@@ -66,14 +65,14 @@ Až budete připraveni k publikování aplikace na webový server nebo jiné cen
 
 ||Webová instalační služba|Offline instalační program|
 |-|-------------------|-----------------------|
-|Vyžaduje se připojení k Internetu?|Ano|Ne|
+|Vyžaduje se připojení k Internetu?|Ano|No|
 |Velikost stahování|Menší (zahrnuje instalační program jenom pro cílovou platformu) *|Větší|
 |Jazykové sady|Zahrnuté * *|Musí se [instalovat samostatně](#chain_langpack), pokud nepoužijete balíček, který cílí na všechny operační systémy.|
 |Metoda nasazení|Podporuje všechny metody:<br /><br />- [ClickOnce](#clickonce-deployment)<br />- [InstallAware](#installaware-deployment)<br />- [Instalací](#installshield-deployment)<br />- [Instalační služba systému Windows XML (WiX)](#wix)<br />- [Ruční instalace](#installing_manually)<br />- [Vlastní nastavení (zřetězení)](#chaining)|Podporuje všechny metody:<br /><br /> - [ClickOnce](#clickonce-deployment)<br />- [InstallAware](#installaware-deployment)<br />- [Instalací](#installshield-deployment)<br />- [Instalační služba systému Windows XML (WiX)](#wix)<br />- [Ruční instalace](#installing_manually)<br />- [Vlastní nastavení (zřetězení)](#chaining)|
 
-\*Instalační program v režimu offline je větší, protože obsahuje komponenty pro všechny cílové platformy. Po dokončení instalace operační systém Windows ukládá pouze instalační službu, která byla použita. Pokud je po instalaci odstraněn instalační program v režimu offline, je místo na disku stejné jako používané webovým instalačním programem. Pokud nástroj, který použijete (například [InstallAware](#installaware-deployment) nebo [InstallShield](#installshield-deployment)) k vytvoření instalačního programu vaší aplikace, poskytuje složku instalačního souboru, která se odebere po instalaci, můžete automaticky odstranit instalační program offline tím, že ho umístíte do složky pro instalaci.
+\* Instalační program v režimu offline je větší, protože obsahuje komponenty pro všechny cílové platformy. Po dokončení instalace operační systém Windows ukládá pouze instalační službu, která byla použita. Pokud je po instalaci odstraněn instalační program v režimu offline, je místo na disku stejné jako používané webovým instalačním programem. Pokud nástroj, který použijete (například [InstallAware](#installaware-deployment) nebo [InstallShield](#installshield-deployment)) k vytvoření instalačního programu vaší aplikace, poskytuje složku instalačního souboru, která se odebere po instalaci, můžete automaticky odstranit instalační program offline tím, že ho umístíte do složky pro instalaci.
 
-\*\*Pokud používáte webovou Instalační službu s vlastním instalačním programem, můžete použít výchozí nastavení jazyka na základě nastavení MUI (Multilingual User Interface) uživatele nebo zadat jinou jazykovou sadu pomocí `/LCID` Možnosti na příkazovém řádku. Příklady najdete v části [řetězení pomocí výchozího uživatelského rozhraní .NET Framework](#chaining_default) .
+\*\* Pokud používáte webovou Instalační službu s vlastním instalačním programem, můžete použít výchozí nastavení jazyka na základě nastavení MUI (Multilingual User Interface) uživatele nebo zadat jinou jazykovou sadu pomocí `/LCID` Možnosti na příkazovém řádku. Příklady najdete v části [řetězení pomocí výchozího uživatelského rozhraní .NET Framework](#chaining_default) .
 
 ## <a name="deployment-methods"></a>Metody nasazení
 
@@ -228,7 +227,7 @@ Pokud máte vlastní instalační balíček, můžete chtít spustit tichou inst
 Instalační program .NET Framework zapisuje klíče registru po úspěšném dokončení instalace. Můžete otestovat, jestli je nainstalovaná .NET Framework 4,5 nebo novější, kontrolou `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full` složky v registru pro `DWORD` hodnotu s názvem `Release` . (Všimněte si, že ".NET Framework Setup" nezačíná tečkou.) Existence tohoto klíče indikuje, že na tomto počítači je nainstalovaná .NET Framework 4,5 nebo novější verze. Hodnota označuje, `Release` která verze .NET Framework je nainstalována.
 
 > [!IMPORTANT]
-> Při pokusu o zjištění, zda je k dispozici konkrétní verze, byste měli zjistit hodnotu, která je **větší nebo rovna** hodnotě klíčového slova verze.
+> Při pokusu o zjištění, zda je k dispozici konkrétní verze, byste měli zjistit hodnotu, která je  **větší nebo rovna** hodnotě klíčového slova verze.
 
 [!INCLUDE[Release key values note](~/includes/version-keys-note.md)]
 
@@ -262,7 +261,7 @@ Chcete-li například zjistit, zda je nainstalována úplná japonská jazyková
 | | |
 |-|-|
 | Klíč | HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full\1041 |
-| Name | Vydaná verze |
+| Name | Vydat |
 | Typ | DWORD |
 
 Pokud chcete zjistit, jestli je nainstalovaná konečná verze jazykové sady pro konkrétní verzi .NET Framework od 4,5 do 4.7.2, zkontrolujte hodnotu klíče verze DWORD popsanou v předchozí části a zjistěte [.NET Framework](#detect_net).
@@ -337,7 +336,7 @@ Počínaje systémem Windows 8 můžete odinstalovat .NET Framework 4,5 nebo nov
 > [!IMPORTANT]
 > V systémech Windows 7 a starších operačních systémech odinstalování .NET Framework 4.5.1, 4.5.2, 4,6, 4.6.1, 4.6.2, 4,7, 4.7.1, 4.7.2 nebo 4,8 neobnoví .NET Framework 4,5 soubory a odinstaluje .NET Framework 4,5 neobnoví .NET Framework 4 soubory. Pokud se chcete vrátit na starší verzi, je nutné ji znovu nainstalovat a všechny její aktualizace.
 
-## <a name="appendix"></a>Příloha
+## <a name="appendix"></a>Přílohy
 
 ### <a name="command-line-options"></a>Možnosti příkazového řádku
 
@@ -348,7 +347,7 @@ V následující tabulce jsou uvedeny možnosti, které můžete zahrnout při z
 |**/CEIPConsent**|Přepíše výchozí chování a pošle anonymní zpětnou vazbu Microsoftu, aby vylepšil budoucí prostředí nasazení. Tuto možnost lze použít pouze v případě, že instalační program vyzve k zadání souhlasu a pokud uživatel udělí oprávnění k odeslání anonymní zpětné vazby společnosti Microsoft.|
 |**/chainingpackage**`packageName`|Určuje název spustitelného souboru, který provádí řetězení. Tyto informace se odesílají společnosti Microsoft jako anonymní zpětná vazba, která pomáhá zlepšovat budoucí prostředí nasazení.<br /><br /> Pokud název balíčku obsahuje mezery, použijte dvojité uvozovky jako oddělovače. Příklad: **/chainingpackage "Lucerne Publishing"**. Příklad zřetězení balíčku najdete v tématu [získávání informací o průběhu z instalačního balíčku](https://docs.microsoft.com/previous-versions/cc825975(v=vs.100)).|
 |**/LCID**  `LCID`<br /><br /> kde `LCID` Určuje identifikátor národního prostředí (viz [podporované jazyky](#supported-languages))|Nainstaluje jazykovou sadu určenou `LCID` v a vynutí zobrazení uživatelského rozhraní v tomto jazyce, není-li nastaven tichý režim.<br /><br /> Pro webovou Instalační službu tento řetěz možností – nainstaluje jazykový balíček z webu. **Poznámka:**  Tuto možnost použijte pouze s webovým instalačním programem.|
-|**/log** `file` &#124;`folder`|Určuje umístění souboru protokolu. Výchozím nastavením je dočasná složka pro daný proces a výchozí název souboru je založen na balíčku. Je-li Přípona souboru. txt, je vytvořen textový protokol. Pokud zadáte jiné rozšíření nebo žádné rozšíření, vytvoří se protokol HTML.|
+|**/log** `file` &#124; `folder`|Určuje umístění souboru protokolu. Výchozím nastavením je dočasná složka pro daný proces a výchozí název souboru je založen na balíčku. Je-li Přípona souboru. txt, je vytvořen textový protokol. Pokud zadáte jiné rozšíření nebo žádné rozšíření, vytvoří se protokol HTML.|
 |**/msioptions**|Určuje možnosti, které se mají předat pro položky. msi a. msp; například: `/msioptions "PROPERTY1='Value'"` .|
 |**/norestart**|Zabraňuje automatickému restartování instalačního programu. Použijete-li tuto možnost, musí zřetězená aplikace zachytit návratový kód a zpracovat restartování (viz část [získání informací o průběhu z instalačního balíčku](https://docs.microsoft.com/previous-versions/cc825975(v=vs.100))).|
 |**/passive**|Nastaví pasivní režim. Zobrazí indikátor průběhu, který indikuje, že instalace probíhá, ale nezobrazuje žádné výzvy ani chybové zprávy pro uživatele. V tomto režimu, při zřetězení instalačního programu, musí zřetězení balíčku zpracovat [návratové kódy](#return-codes).|
@@ -391,7 +390,7 @@ V následující tabulce jsou uvedeny .NET Framework jazykové sady, které jsou
 |2070|Portugalština – Portugalsko|pt-PT|
 |3082|Španělština – Španělsko (moderní řazení)|Ano|
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Příručka nasazení pro administrátory](guide-for-administrators.md)
 - [Požadavky na systém](../get-started/system-requirements.md)

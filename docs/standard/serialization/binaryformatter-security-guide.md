@@ -4,12 +4,12 @@ description: Tento článek popisuje bezpečnostní rizika vyplývající z typu
 ms.date: 07/11/2020
 ms.author: levib
 author: GrabYourPitchforks
-ms.openlocfilehash: f6a54b34bbf1e19212fe37aadb448a1722fe9ff0
-ms.sourcegitcommit: 2543a78be6e246aa010a01decf58889de53d1636
+ms.openlocfilehash: ac01fe78c9577563641a8b06a232ed614ed8520a
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86444762"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88558839"
 ---
 # <a name="binaryformatter-security-guide"></a>Průvodce zabezpečením BinaryFormatter
 
@@ -22,7 +22,7 @@ Tento článek se týká následujících implementací rozhraní .NET:
 ## <a name="background"></a>Pozadí
 
 > [!WARNING]
-> <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>Typ je nebezpečný a nedoporučuje ***not*** se pro zpracování dat. Aplikace by se měly přestat používat `BinaryFormatter` co nejdříve, a to i v případě, že se domnívají, že data, která zpracovávají, budou důvěryhodná. `BinaryFormatter`je nezabezpečené, nelze nastavit jako zabezpečené.
+> <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>Typ je nebezpečný a nedoporučuje ***not*** se pro zpracování dat. Aplikace by se měly přestat používat `BinaryFormatter` co nejdříve, a to i v případě, že se domnívají, že data, která zpracovávají, budou důvěryhodná. `BinaryFormatter` je nezabezpečené, nelze nastavit jako zabezpečené.
 
 Tento článek platí také pro následující typy:
 
@@ -33,7 +33,7 @@ Tento článek platí také pro následující typy:
 
 Chyby zabezpečení deserializace jsou kategorie hrozby, kde jsou datové části žádosti zpracovávány nezabezpečeně. Útočník, který tato ohrožení zabezpečení úspěšně zneužije proti aplikaci, může způsobit odepření služby (DoS), zpřístupnění informací nebo vzdálené spuštění kódu uvnitř cílové aplikace. Tato kategorie rizika konzistentně zajišťuje [OWASP 10](https://owasp.org/www-project-top-ten/). Cíle zahrnují aplikace napsané v [různých jazycích](https://owasp.org/www-community/vulnerabilities/Deserialization_of_untrusted_data), včetně C/C++, Java a C#.
 
-V rozhraní .NET je největším cílem rizika aplikace, které používají <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> typ k deserializaci dat. `BinaryFormatter`se v celém ekosystému .NET široce používá z důvodu jeho výkonu a jeho snadného použití. Stejný výkon ale poskytuje útočníkům možnost ovlivnit tok řízení v rámci cílové aplikace. Úspěšné útoky můžou vést k tomu, že útočník může spustit kód v kontextu cílového procesu.
+V rozhraní .NET je největším cílem rizika aplikace, které používají <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> typ k deserializaci dat. `BinaryFormatter` se v celém ekosystému .NET široce používá z důvodu jeho výkonu a jeho snadného použití. Stejný výkon ale poskytuje útočníkům možnost ovlivnit tok řízení v rámci cílové aplikace. Úspěšné útoky můžou vést k tomu, že útočník může spustit kód v kontextu cílového procesu.
 
 Jako jednodušší analogie předpokládáme, že volání `BinaryFormatter.Deserialize` přes datovou část je ekvivalent interpretace této datové části jako samostatného spustitelného souboru a jeho spuštění.
 
@@ -42,9 +42,9 @@ Jako jednodušší analogie předpokládáme, že volání `BinaryFormatter.Dese
 > [!WARNING]
 > `BinaryFormatter.Deserialize`Metoda není __nikdy__ bezpečná při použití s nedůvěryhodným vstupem. Důrazně doporučujeme, aby spotřebitelé místo toho měli možnost použít některou z alternativ uvedených dále v tomto článku.
 
-`BinaryFormatter`byl implementován před tím, že chyby zabezpečení deserializace byly dobře srozumitelnější kategorie hrozeb. V důsledku toho kód nedodržuje moderní osvědčené postupy. `Deserialize`Metodu lze použít jako vektor pro útočníky k provádění útoků DOS na využívání aplikací. Tyto útoky mohou způsobit, že aplikace nereaguje nebo má za následek neočekávané ukončení procesu. U této kategorie útoku se nedá zmírnit `SerializationBinder` ani žádný jiný `BinaryFormatter` konfigurační přepínač. Rozhraní .NET považuje toto chování za ***záměrné*** a nevydá aktualizaci kódu pro úpravu chování.
+`BinaryFormatter` byl implementován před tím, že chyby zabezpečení deserializace byly dobře srozumitelnější kategorie hrozeb. V důsledku toho kód nedodržuje moderní osvědčené postupy. `Deserialize`Metodu lze použít jako vektor pro útočníky k provádění útoků DOS na využívání aplikací. Tyto útoky mohou způsobit, že aplikace nereaguje nebo má za následek neočekávané ukončení procesu. U této kategorie útoku se nedá zmírnit `SerializationBinder` ani žádný jiný `BinaryFormatter` konfigurační přepínač. Rozhraní .NET považuje toto chování za ***záměrné*** a nevydá aktualizaci kódu pro úpravu chování.
 
-`BinaryFormatter.Deserialize`může být zranitelná vůči jiným kategoriím útoku, jako je například zpřístupnění informací nebo vzdálené spuštění kódu. Používání funkcí, jako je vlastní, <xref:System.Runtime.Serialization.SerializationBinder> může být nedostatečné pro správné zmírnění těchto rizik. Existuje možnost, že bude zjištěna nová chyba zabezpečení, pro kterou rozhraní .NET nemůže prakticky publikovat aktualizaci zabezpečení. Spotřebitelé by měli vyhodnotit své jednotlivé scénáře a vzít v úvahu potenciální ozáření těchto rizik.
+`BinaryFormatter.Deserialize` může být zranitelná vůči jiným kategoriím útoku, jako je například zpřístupnění informací nebo vzdálené spuštění kódu. Používání funkcí, jako je vlastní, <xref:System.Runtime.Serialization.SerializationBinder> může být nedostatečné pro správné zmírnění těchto rizik. Existuje možnost, že bude zjištěna nová chyba zabezpečení, pro kterou rozhraní .NET nemůže prakticky publikovat aktualizaci zabezpečení. Spotřebitelé by měli vyhodnotit své jednotlivé scénáře a vzít v úvahu potenciální ozáření těchto rizik.
 
 Zákazníkům doporučujeme, aby `BinaryFormatter` na svých aplikacích prováděli jednotlivá posouzení rizik. Je výlučným zodpovědností spotřebitele, aby bylo možné určit, jestli se má využít `BinaryFormatter` . Spotřebitelé by měli vyhodnotit zabezpečení, technickou, pověst, právní a zákonné požadavky na používání `BinaryFormatter` .
 
@@ -52,8 +52,8 @@ Zákazníkům doporučujeme, aby `BinaryFormatter` na svých aplikacích provád
 
 .NET nabízí několik integrovaných serializátorů v krabicích, které můžou bezpečně zpracovávat nedůvěryhodná data:
 
-* <xref:System.Xml.Serialization.XmlSerializer>a <xref:System.Runtime.Serialization.DataContractSerializer> k serializaci grafů objektů do a z XML. Nepleťte si `DataContractSerializer` s <xref:System.Runtime.Serialization.NetDataContractSerializer> .
-* <xref:System.IO.BinaryReader>a <xref:System.IO.BinaryWriter> pro XML a JSON.
+* <xref:System.Xml.Serialization.XmlSerializer> a <xref:System.Runtime.Serialization.DataContractSerializer> k serializaci grafů objektů do a z XML. Nepleťte si `DataContractSerializer` s  <xref:System.Runtime.Serialization.NetDataContractSerializer> .
+* <xref:System.IO.BinaryReader> a <xref:System.IO.BinaryWriter> pro XML a JSON.
 * <xref:System.Text.Json>Rozhraní API k serializaci grafů objektů do formátu JSON.
 
 ## <a name="dangerous-alternatives"></a>Nebezpečné alternativy
@@ -87,7 +87,6 @@ __Vezměte v úvahu aplikaci, která se pohybuje od stolního modelu instalace d
 ## <a name="further-resources"></a>Další zdroje informací
 
 * [YSoSerial.NET](https://github.com/pwntester/ysoserial.net) se na to, jakým způsobem aplikace nežádoucí osoby útoku využívají `BinaryFormatter` .
-* [Modelování hrozeb](/securityengineering/sdl/threatmodeling) pro informace o aplikacích a službách pro modelování hrozeb.
 * Obecné základní informace o slabých číslech zabezpečení:
   * [OWASP Top 10-A8:2017 – nezabezpečená deserializace](https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A8-Insecure_Deserialization)
   * [CWE-502: deserializace nedůvěryhodných dat](https://cwe.mitre.org/data/definitions/502.html)

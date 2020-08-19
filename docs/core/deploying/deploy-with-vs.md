@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: 7a4ffd5b1b58e6ea7fd46c676e139b77a126aa2b
-ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
+ms.openlocfilehash: 23d67761838f17e833a4a478e2355e908a2e35ca
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85803024"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88557903"
 ---
 # <a name="deploy-net-core-apps-with-visual-studio"></a>Nasazení aplikací .NET Core pomocí sady Visual Studio
 
@@ -77,7 +77,7 @@ Nasazení rozhraní závislého na rozhraní s jednou nebo více závislostmi t�
 
 Nasazení závislé na rozhraní se závislostmi třetích stran je stejně přenosné jako závislosti svých třetích stran. Pokud například knihovna třetí strany podporuje jenom macOS, aplikace není přenosná na systémy Windows. K tomu dojde v případě, že závislost třetí strany závisí na nativním kódu. Dobrým příkladem je [Kestrel Server](/aspnet/core/fundamentals/servers/kestrel), který vyžaduje nativní závislost na [libuv](https://github.com/libuv/libuv). Pokud je vytvořen FDD pro aplikaci s tímto druhem závislosti třetí strany, publikovaný výstup obsahuje složku pro každý [identifikátor modulu runtime (RID)](../rid-catalog.md) , který nativní závislost podporuje (a který existuje v jeho balíčku NuGet).
 
-## <a name="self-contained-deployment-without-third-party-dependencies"></a><a name="simpleSelf"></a>Samostatné nasazení bez závislostí třetích stran
+## <a name="self-contained-deployment-without-third-party-dependencies"></a><a name="simpleSelf"></a> Samostatné nasazení bez závislostí třetích stran
 
 Nasazení samostatného nasazení bez závislostí třetích stran zahrnuje vytvoření projektu, úpravu souboru *csproj* , sestavování, testování a publikování aplikace. Jednoduchý příklad napsaný v jazyce C# znázorňuje proces. Začněte tím, že vytvoříte, zakódujete a otestujete projekt stejně jako nasazení závislé na rozhraní:
 
@@ -309,7 +309,7 @@ Při nasazení aplikace jsou také součástí souborů aplikace všechny závis
 
 Samostatné nasazení můžete nasadit jenom pomocí knihovny třetích stran na platformy podporované touto knihovnou. To se podobá tomu, že se závislosti třetích stran s nativními závislostmi v nasazení závislém na rozhraní, kde nativní závislosti neexistují na cílové platformě, pokud se tam dříve nenainstalovaly.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Nasazení aplikace .NET Core](index.md)
 - [Katalog identifikátorů runtime .NET Core (RID)](../rid-catalog.md)
