@@ -2,22 +2,19 @@
 title: Aktivační procedury CLR
 ms.date: 03/30/2017
 ms.assetid: defe379c-30c7-487f-9abd-9c5e12ff49be
-ms.openlocfilehash: d4d203968207885f7dddc423d68adb445a5a0943
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 1f454dd59b8e3df90f53ca89d0953c14c40364c3
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70794300"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88559073"
 ---
-# <a name="clr-triggers"></a>Aktivační procedury CLR
+# <a name="clr-triggers"></a>Triggery CLR
+
 Trigger je speciální typ uložené procedury, která se automaticky spustí, když se spustí událost jazyka. Z důvodu Microsoft SQL Server integrace s .NET Framework Common Language Runtime (CLR) můžete k vytváření triggerů CLR použít libovolný .NET Framework jazyk.  
   
- Podrobnější informace najdete v [dokumentaci SQL Server](/sql) pro verzi SQL Server, kterou používáte.
+Další informace naleznete v tématu [Create CLR Triggers](/sql/relational-databases/triggers/create-clr-triggers).
   
- **Dokumentace k SQL Server**
-  
-1. [Aktivační procedury CLR](/sql/database-engine/dev-guide/clr-triggers)
-  
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přehled ADO.NET](../ado-net-overview.md)

@@ -4,12 +4,12 @@ ms.date: 04/23/2017
 helpviewer_keywords:
 - tuples [Visual Basic]
 ms.assetid: 3e66cd1b-3432-4e1d-8c37-5ebacae8f53f
-ms.openlocfilehash: 378ee4e7d3a3b106b719e5da819b09f336ff218e
-ms.sourcegitcommit: 67cf756b033c6173a1bbd1cbd5aef1fccac99e34
+ms.openlocfilehash: b169a1c13b3f20d7b5e2a1386cfb28a9cc093dcd
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86226657"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88559086"
 ---
 # <a name="tuples-visual-basic"></a>Řazené kolekce členů (Visual Basic)
 
@@ -84,14 +84,14 @@ Pokud jsou vlastní členové, ověřování vlastností a polí nebo neměnnost
 
 Visual Basic řazené kolekce členů dědí členy svého typu **ValueTuple** . Kromě polí patří mezi ně tyto metody:
 
-| Člen | Popis |
+| Metoda | Popis |
 | ---|---|
 | CompareTo | Porovná aktuální řazenou kolekci členů s jinou řazenou kolekci členů se stejným počtem prvků. |
 | Je rovno | Určuje, zda je aktuální řazená kolekce členů rovna jiné řazené kolekci členů nebo objektu. |
 | GetHashCode | Vypočítá kód hash aktuální instance. |
 | ToString | Vrátí řetězcovou reprezentaci této řazené kolekce členů, která má formu `(Item1, Item2...)` , kde `Item1` a `Item2` představuje hodnoty polí řazené kolekce členů. |
 
-Kromě toho **ValueTuple** typy implementují <xref:System.Collections.IStructuralComparable> a <xref:System.Collections.IStructuralEquatable> rozhraní, které umožňují definovat porovnávače zákazníků.
+Kromě toho **ValueTuple** typy implementují <xref:System.Collections.IStructuralComparable> a <xref:System.Collections.IStructuralEquatable> rozhraní, které umožňují definovat vlastní porovnávače.
 
 ## <a name="assignment-and-tuples"></a>Přiřazení a řazené kolekce členů
 
@@ -101,7 +101,7 @@ Visual Basic podporuje přiřazení mezi typy řazené kolekce členů, které m
 
 - Je definovaný rozšiřující (nebo implicitní) převod zdrojového typu na cílový typ.
 
-- `Option Strict`je `On` a je definován zúžený (nebo explicitní) převod zdrojového typu na cílový typ. Tento převod může vyvolat výjimku, pokud je zdrojová hodnota mimo rozsah cílového typu.
+- `Option Strict` je `On` a je definován zúžený (nebo explicitní) převod zdrojového typu na cílový typ. Tento převod může vyvolat výjimku, pokud je zdrojová hodnota mimo rozsah cílového typu.
 
 Jiné převody se nepovažují za přiřazení. Pojďme se podívat na typy přiřazení, která jsou povolená mezi typy řazené kolekce členů.
 

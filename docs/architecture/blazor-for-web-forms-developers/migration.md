@@ -7,12 +7,12 @@ no-loc:
 - Blazor
 - WebAssembly
 ms.date: 09/19/2019
-ms.openlocfilehash: ca3d8747b02602c89aec187ea0826e658fb0cbc4
-ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
+ms.openlocfilehash: ba6dbfdf9a4fa9973dfe84cf5d58f1300f5d0cb4
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88267799"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88557539"
 ---
 # <a name="migrate-from-aspnet-web-forms-to-no-locblazor"></a>Migrace z webových formulářů ASP.NET na Blazor
 
@@ -559,10 +559,6 @@ V je Blazor ekvivalentní označení k dispozici v souboru *Create. Razor* :
 ```
 
 `EditForm`Kontext zahrnuje podporu ověřování a může být zabalen kolem vstupu. Poznámky k datům představují běžný způsob, jak přidat ověřování. Taková podpora ověřování se dá přidat prostřednictvím `DataAnnotationsValidator` součásti. Další informace o tomto mechanismu najdete v tématu [ASP.NET Core Blazor Forms a ověřování](/aspnet/core/blazor/forms-validation).
-
-## <a name="migrate-built-in-web-forms-controls"></a>Migrace vestavěných ovládacích prvků webových formulářů
-
-*Tento obsah už brzy bude.*
 
 ## <a name="migrate-configuration"></a>Migrace konfigurace
 

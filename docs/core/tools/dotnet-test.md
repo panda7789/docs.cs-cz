@@ -2,20 +2,20 @@
 title: dotnet – příkaz testu
 description: Příkaz dotnet test se používá ke spouštění testů jednotek v daném projektu.
 ms.date: 04/29/2020
-ms.openlocfilehash: 9b1e190579902dda71547b01f31dd5adcc22fe9c
-ms.sourcegitcommit: c8c3e1c63a00b7d27f76f5e50ee6469e6bdc8987
+ms.openlocfilehash: e5c0ec3423cf98895b49596633c81861bbcf4878
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87251189"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88557838"
 ---
 # <a name="dotnet-test"></a>dotnet test
 
 **Tento článek se týká:** ✔️ .net Core 2,1 SDK a novějších verzí
 
-## <a name="name"></a>Název
+## <a name="name"></a>Name
 
-`dotnet test`– Testovací ovladač .NET, který se používá ke spouštění testů jednotek.
+`dotnet test` – Testovací ovladač .NET, který se používá ke spouštění testů jednotek.
 
 ## <a name="synopsis"></a>Stručný obsah
 
@@ -75,27 +75,27 @@ Kde `Microsoft.NET.Test.Sdk` je testovací hostitel, `xunit` je testovací rozhr
 
   Spustí testy v režimu viny. Tato možnost je užitečná při izolaci problematických testů, které způsobují selhání hostitele testu. Při zjištění chyby vytvoří soubor sekvence v `TestResults/<Guid>/<Guid>_Sequence.xml` , který zachytí pořadí testů, které byly spuštěny před selháním.
 
-- **`--blame-crash`**(K dispozici od verze .NET 5,0 Preview SDK)
+- **`--blame-crash`** (K dispozici od verze .NET 5,0 Preview SDK)
 
   Spustí testy v režimu viny a shromažďuje stav systému, když se testovací hostitel neočekávaně ukončí. Tato možnost je podporována pouze v systému Windows. Adresář, který obsahuje *procdump.exe* a *procdump64.exe* musí být v cestě nebo v proměnné prostředí PROCDUMP_PATH. [Stáhněte si nástroje](https://docs.microsoft.com/sysinternals/downloads/procdump). Implikuje `--blame` .
 
-- **`--blame-crash-dump-type <DUMP_TYPE>`**(K dispozici od verze .NET 5,0 Preview SDK)
+- **`--blame-crash-dump-type <DUMP_TYPE>`** (K dispozici od verze .NET 5,0 Preview SDK)
 
   Typ výpisu stavu systému, který se má shromáždit. Implikuje `--blame-crash` .
 
-- **`--blame-crash-collect-always`**(K dispozici od verze .NET 5,0 Preview SDK)
+- **`--blame-crash-collect-always`** (K dispozici od verze .NET 5,0 Preview SDK)
 
   Shromažďuje výpis stavu systému podle očekávání a také neočekávaný konec testovacího hostitele.
 
-- **`--blame-hang`**(K dispozici od verze .NET 5,0 Preview SDK)
+- **`--blame-hang`** (K dispozici od verze .NET 5,0 Preview SDK)
 
   Spusťte testy v režimu viny a shromáždí výpis stavu zablokování, když test překročí daný časový limit.
 
-- **`--blame-hang-dump-type <DUMP_TYPE>`**(K dispozici od verze .NET 5,0 Preview SDK)
+- **`--blame-hang-dump-type <DUMP_TYPE>`** (K dispozici od verze .NET 5,0 Preview SDK)
 
   Typ výpisu stavu systému, který se má shromáždit. Mělo by to být `full` , `mini` , nebo `none` . Je `none` -li parametr zadán, je test hostitele ukončen po vypršení časového limitu, ale není shromažďován žádný výpis. Implikuje `--blame-hang` .
 
-- **`--blame-hang-timeout <TIMESPAN>`**(K dispozici od verze .NET 5,0 Preview SDK)
+- **`--blame-hang-timeout <TIMESPAN>`** (K dispozici od verze .NET 5,0 Preview SDK)
 
   Časový limit pro testování, po kterém se aktivuje výpis stavu zablokování a proces testovacího hostitele se ukončí. Hodnota časového limitu je zadána v jednom z následujících formátů:
   
@@ -156,7 +156,7 @@ Kde `Microsoft.NET.Test.Sdk` je testovací hostitel, `xunit` je testovací rozhr
 
 - **`-o|--output <OUTPUT_DIRECTORY>`**
 
-  Adresář, ve kterém se mají najít binární soubory, které se mají spustit. Pokud není zadaný, použije se výchozí cesta `./bin/<configuration>/<framework>/` .  Pro projekty s více cílovými rozhraními (prostřednictvím `TargetFrameworks` Vlastnosti) musíte definovat i `--framework` při zadání této možnosti. `dotnet test`vždy spouští testy z výstupního adresáře. Můžete použít <xref:System.AppDomain.BaseDirectory%2A?displayProperty=nameWithType> pro využívání testovacích prostředků ve výstupním adresáři.
+  Adresář, ve kterém se mají najít binární soubory, které se mají spustit. Pokud není zadaný, použije se výchozí cesta `./bin/<configuration>/<framework>/` .  Pro projekty s více cílovými rozhraními (prostřednictvím `TargetFrameworks` Vlastnosti) musíte definovat i `--framework` při zadání této možnosti. `dotnet test` vždy spouští testy z výstupního adresáře. Můžete použít <xref:System.AppDomain.BaseDirectory%2A?displayProperty=nameWithType> pro využívání testovacích prostředků ve výstupním adresáři.
 
 - **`-r|--results-directory <RESULTS_DIR>`**
 
@@ -237,15 +237,15 @@ Kde `Microsoft.NET.Test.Sdk` je testovací hostitel, `xunit` je testovací rozhr
 
 `--filter <EXPRESSION>`
 
-`<Expression>`má formát `<property><operator><value>[|&<Expression>]` .
+`<Expression>` má formát `<property><operator><value>[|&<Expression>]` .
 
-`<property>`je atributem `Test Case` . Níže jsou uvedené vlastnosti podporované oblíbenými rozhraními pro testování částí:
+`<property>` je atributem `Test Case` . Níže jsou uvedené vlastnosti podporované oblíbenými rozhraními pro testování částí:
 
 | Testovací rozhraní | Podporované vlastnosti                                                                                      |
 | -------------- | --------------------------------------------------------------------------------------------------------- |
-| MSTest         | <ul><li>FullyQualifiedName</li><li>Název</li><li>NázevTřídy</li><li>Priorita</li><li>TestCategory</li></ul> |
+| MSTest         | <ul><li>FullyQualifiedName</li><li>Name</li><li>NázevTřídy</li><li>Priorita</li><li>TestCategory</li></ul> |
 | xUnit          | <ul><li>FullyQualifiedName</li><li>DisplayName</li><li>Traits</li></ul>                                   |
-| NUnit          | <ul><li>FullyQualifiedName</li><li>Název</li><li>TestCategory</li><li>Priorita</li></ul>                                   |
+| NUnit          | <ul><li>FullyQualifiedName</li><li>Name</li><li>TestCategory</li><li>Priorita</li></ul>                                   |
 
 `<operator>`Popisuje vztah mezi vlastností a hodnotou:
 
@@ -256,7 +256,7 @@ Kde `Microsoft.NET.Test.Sdk` je testovací hostitel, `xunit` je testovací rozhr
 | `~`      | Contains        |
 | `!~`     | Neobsahuje    |
 
-`<value>`je řetězec. U všech hledání se nerozlišují malá a velká písmena.
+`<value>` je řetězec. U všech hledání se nerozlišují malá a velká písmena.
 
 Výraz bez objektu `<operator>` je automaticky považován za `contains` `FullyQualifiedName` vlastnost on (například `dotnet test --filter xyz` je stejný jako `dotnet test --filter FullyQualifiedName~xyz` ).
 

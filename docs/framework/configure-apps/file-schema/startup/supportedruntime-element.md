@@ -1,7 +1,6 @@
 ---
-title: <supportedRuntime>konfigurační element – .NET
+title: <supportedRuntime> konfigurační element – .NET
 ms.date: 04/02/2019
-ms.custom: updateeachrelease
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#supportedRuntime
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/startup/supportedRuntime
@@ -9,12 +8,12 @@ helpviewer_keywords:
 - supportedRuntime element
 - <supportedRuntime> element
 ms.assetid: 1ae16e23-afbe-4de4-b413-bc457f37b69f
-ms.openlocfilehash: ecbe73593e5b8b87909499f6fff7e865e29b1ec8
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: cc221c71b68c21b61b5fa27e0972b9e9156dbc3b
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "82796038"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88558670"
 ---
 # <a name="supportedruntime-element"></a>\<supportedRuntime> – element
 
@@ -24,7 +23,7 @@ Určuje, která verze modulu Common Language Runtime a volitelně .NET Framework
 &nbsp;&nbsp;[\<startup>](startup-element.md)  
 &nbsp;&nbsp;&nbsp;&nbsp;**\<supportedRuntime>**  
 
-## <a name="syntax"></a>Syntaxe
+## <a name="syntax"></a>Syntax
 
 ```xml
 <supportedRuntime version="runtime version" sku="sku id"/>
@@ -68,7 +67,7 @@ Doporučujeme aplikaci otestovat se všemi verzemi .NET Framework, na kterých b
 |3,5|"v 2.0.50727"|
 |4.0 – 4.8|"v 4.0"|
 
-## <a name="sku-id-values"></a><a name="sku"></a>hodnoty "ID SKU"
+## <a name="sku-id-values"></a><a name="sku"></a> hodnoty "ID SKU"
 
 `sku`Atribut používá moniker cílového rozhraní (TFM) k označení verze .NET Framework, na kterou aplikace cílí a kterou vyžaduje spuštění. V následující tabulce jsou uvedeny platné hodnoty, které atribut podporuje `sku` , počínaje .NET Framework 4.
 
@@ -85,7 +84,7 @@ Doporučujeme aplikaci otestovat se všemi verzemi .NET Framework, na kterých b
 |4.5|". NETFramework, verze = v 4.5|
 |4.5.1|". NETFramework, verze = v 4.5.1|
 |4.5.2|". NETFramework, verze = v 4.5.2 "|
-|4.6|". NETFramework, verze = v 4.6 "|
+|4,6|". NETFramework, verze = v 4.6 "|
 |4.6.1|". NETFramework, verze = v 4.6.1|
 |4.6.2|". NETFramework, verze = v 4.6.2 "|
 |4,7|". NETFramework, verze = v 4.7|

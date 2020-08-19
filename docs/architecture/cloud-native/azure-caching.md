@@ -3,12 +3,12 @@ title: Ukládání do mezipaměti v nativní cloudové aplikaci
 description: Přečtěte si o strategiích ukládání do mezipaměti v cloudové nativní aplikaci.
 author: robvet
 ms.date: 05/17/2020
-ms.openlocfilehash: a109db59d7b2005ea97922eef07ae4869e4894a7
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: a33f143499b5f9545493bc4bc757cc3d152f7aa9
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614289"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88557513"
 ---
 # <a name="caching-in-a-cloud-native-app"></a>Ukládání do mezipaměti v nativní aplikaci cloudu
 
@@ -28,7 +28,7 @@ I když by mikroslužby měly být bezstavové, distribuovaná mezipaměť můž
 
 Zvažte také ukládání do mezipaměti, aby se předešlo opakovaným výpočtům. Pokud operace transformuje data nebo provede složitý výpočet, uloží výsledek pro následné požadavky do mezipaměti.
 
-## <a name="caching-architecture"></a>Architektura pro ukládání do mezipaměti
+## <a name="caching-architecture"></a>Architektura mezipaměti
 
 Nativní cloudové aplikace obvykle implementují distribuovanou architekturu ukládání do mezipaměti. Mezipaměť je hostována jako cloudová [Služba](./definition.md#backing-services), která je oddělená od mikroslužeb. Obrázek 5-15 ukazuje architekturu.
 
@@ -57,7 +57,7 @@ Mezipaměť Azure pro Redis je větší než server mezipaměti Simple cache. M�
   
 V případě pokročilých scénářů lze kopii dat uložených v mezipaměti [zachovat na disku](https://docs.microsoft.com/azure/azure-cache-for-redis/cache-how-to-premium-persistence). Pokud závažná událost zakáže primární i mezipaměť repliky, mezipaměť se znovu vytvoří z posledního snímku.
 
-Azure Redis Cache je k dispozici v rámci několika předdefinovaných konfigurací a cenových úrovní.  [Úroveň Premium](https://docs.microsoft.com/azure/azure-cache-for-redis/cache-premium-tier-intro) nabízí mnoho funkcí na podnikové úrovni, jako je clustering, trvalost dat, geografická replikace a izolace virtuální sítě.
+Azure Redis Cache je k dispozici v rámci několika předdefinovaných konfigurací a cenových úrovní. [Úroveň Premium](https://docs.microsoft.com/azure/azure-cache-for-redis/cache-overview#service-tiers) nabízí mnoho funkcí na podnikové úrovni, jako je clustering, trvalost dat, geografická replikace a izolace virtuální sítě.
 
 >[!div class="step-by-step"]
 >[Předchozí](relational-vs-nosql-data.md) 

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: d85fb8df7afdc5f4c3faecebcd24d11677798bc9
-ms.sourcegitcommit: 63bb83322814f5e5e5c5b69939b14a3139a6ca7e
+ms.openlocfilehash: a635e2ed6a735b5234c92fd8f5ffa1685fe9373e
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85365609"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88558169"
 ---
 ### <a name="microsoftdotnetplatformabstractions-package-removed"></a>Balíček Microsoft. DotNet. PlatformAbstractions se odebral.
 
@@ -28,7 +28,7 @@ Scénáře, které knihovna povoluje, <xref:Microsoft.DotNet.PlatformAbstraction
 
 - Pokud starší verze nevyhovují vašim požadavkům, nahraďte použití `PlatformAbstractions` rozhraní API doporučenými nahrazeními.
 
-  | `PlatformAbstractions`API | Doporučená náhrada |
+  | `PlatformAbstractions` API | Doporučená náhrada |
   |-|-|
   | `ApplicationEnvironment.ApplicationBasePath` | <xref:System.AppContext.BaseDirectory?displayProperty=nameWithType> |
   | <xref:Microsoft.DotNet.PlatformAbstractions.HashCodeCombiner> | <xref:System.HashCode?displayProperty=nameWithType> |
@@ -39,7 +39,7 @@ Scénáře, které knihovna povoluje, <xref:Microsoft.DotNet.PlatformAbstraction
   | `RuntimeEnvironment.OperatingSystemVersion` | <xref:System.Runtime.InteropServices.RuntimeInformation.OSDescription?displayProperty=nameWithType> a <xref:System.Environment.OSVersion?displayProperty=nameWithType> |
 
   > [!NOTE]
-  > Většina případů použití pro `RuntimeEnvironment.OperatingSystem` a `RuntimeEnvironment.OperatingSystemVersion` se zobrazuje pro účely zobrazení, například zobrazení pro uživatele, protokolování a telemetrie. V závislosti na verzi operačního systému (OS) se nedoporučuje provádět rozhodnutí za běhu. <xref:System.Environment.OSVersion?displayProperty=nameWithType>nyní vrátí správnou verzi operačních systémů Windows a macOS. U většiny distribucí systému UNIX, co se považuje za "verzi operačního systému", ale není tak jasné. Může to být třeba verze jádra operačního systému Linux, nebo se může jednat o verzi distribuce. Pro většinu platforem UNIX <xref:System.Environment.OSVersion?displayProperty=nameWithType> a <xref:System.Runtime.InteropServices.RuntimeInformation.OSDescription?displayProperty=nameWithType> vrátí verzi, kterou vrátí `uname` . Chcete-li získat název a informace o verzi pro Linux distribuce, je doporučeným přístupem čtení souboru */etc/OS-Release* .
+  > Většina případů použití pro `RuntimeEnvironment.OperatingSystem` a `RuntimeEnvironment.OperatingSystemVersion` se zobrazuje pro účely zobrazení, například zobrazení pro uživatele, protokolování a telemetrie. V závislosti na verzi operačního systému (OS) se nedoporučuje provádět rozhodnutí za běhu. <xref:System.Environment.OSVersion?displayProperty=nameWithType> nyní [vrátí správnou verzi](../../../../docs/core/compatibility/corefx.md#environmentosversion-returns-the-correct-operating-system-version) operačních systémů Windows a MacOS. U většiny distribucí systému UNIX, co se považuje za "verzi operačního systému", ale není tak jasné. Může to být třeba verze jádra operačního systému Linux, nebo se může jednat o verzi distribuce. Pro většinu platforem UNIX <xref:System.Environment.OSVersion?displayProperty=nameWithType> a <xref:System.Runtime.InteropServices.RuntimeInformation.OSDescription?displayProperty=nameWithType> vrátí verzi, kterou vrátí `uname` . Chcete-li získat název a informace o verzi pro Linux distribuce, je doporučeným přístupem čtení souboru */etc/OS-Release* .
 
 #### <a name="category"></a>Kategorie
 

@@ -1,18 +1,17 @@
 ---
 title: Začínáme s .NET Framework
 description: Začněte s .NET, což je běhové prostředí modulu runtime, které spravuje aplikace. Obsahuje modul CLR (Common Language Runtime) a rozsáhlou knihovnu tříd.
-ms.custom: updateeachrelease
 ms.date: 04/02/2019
 helpviewer_keywords:
 - .NET Framework, getting started
 - getting started [.NET Framework]
 ms.assetid: c693fd34-88fe-4d90-b332-19eeadf3b7e7
-ms.openlocfilehash: b6ad74d2984443a3b8345c2261996e7ab30acdff
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 1d6b1fccd9751180ee096531a34b2afb60547072
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85621649"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88557318"
 ---
 # <a name="get-started-with-net-framework"></a>Začínáme s .NET Framework
 
@@ -84,7 +83,7 @@ Další informace o vývoji aplikací, které cílí na .NET Framework, najdete 
 | [Dokumentace k .NET Core](../../core/index.yml) | Poskytuje koncepční referenční dokumentaci rozhraní API pro .NET Core. |
 | [.NET Standard](../../standard/net-standard.md) | Popisuje .NET Standard, specifikaci s verzí, kterou jednotlivé implementace rozhraní .NET podporují, aby bylo zaručeno, že konzistentní sada rozhraní API je k dispozici na různých platformách.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Průvodce rozhraním .NET Framework](../index.yml)
 - [Co je nového](../whats-new/index.md)

@@ -1,7 +1,6 @@
 ---
 title: Co je nového v .NET Framework
 description: Podívejte se, co je nového v různých verzích .NET Framework. Přečtěte si přehled klíčových nových funkcí a vylepšení v každé verzi.
-ms.custom: updateeachrelease
 ms.date: 04/18/2019
 dev_langs:
 - csharp
@@ -9,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - what's new [.NET Framework]
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
-ms.openlocfilehash: 42f872bba87a88fc92a37879e815ee7068407cf7
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: 3eba676a4134415f0e2981d5094c0b0f6a1651be
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86925589"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88559021"
 ---
 # <a name="whats-new-in-net-framework"></a>Co je nového v .NET Framework
 
@@ -139,20 +138,20 @@ Existují dva způsoby, jak vystavit koncový bod stavu a publikovat informace o
 
 Na stav služby se dá zadat dotaz pomocí parametrů dotazu `OnServiceFailure` , jako jsou,, a `OnDispatcherFailure` `OnListenerFailure` `OnThrottlePercentExceeded` ), a pro každý parametr dotazu je možné zadat kód odpovědi HTTP. Pokud je pro parametr dotazu vynechání kódu odpovědi HTTP, ve výchozím nastavení se používá kód odpovědi HTTP 503. Příklad:
 
-- OnServiceFailure:`https://contoso:81/Service1?health&OnServiceFailure=450`
+- OnServiceFailure: `https://contoso:81/Service1?health&OnServiceFailure=450`
 
   Kód stavu odpovědi HTTP 450 je vrácen, když je [Třída ServiceHost. State](xref:System.ServiceModel.Channels.CommunicationObject.State) je větší než <xref:System.ServiceModel.CommunicationState.Opened?displayProperty=nameWithType> .
 Parametry a příklady dotazů:
 
-- OnDispatcherFailure:`https://contoso:81/Service1?health&OnDispatcherFailure=455`
+- OnDispatcherFailure: `https://contoso:81/Service1?health&OnDispatcherFailure=455`
 
   Stavový kód odpovědi HTTP 455 se vrátí, pokud je stav některého z přeslaných kanálů větší než <xref:System.ServiceModel.CommunicationState.Opened?displayProperty=nameWithType> .
 
-- OnListenerFailure:`https://contoso:81/Service1?health&OnListenerFailure=465`
+- OnListenerFailure: `https://contoso:81/Service1?health&OnListenerFailure=465`
 
   Stavový kód odpovědi HTTP 465 se vrátí, pokud je stav jakéhokoli naslouchacího procesu kanálu větší než <xref:System.ServiceModel.CommunicationState.Opened?displayProperty=nameWithType> .
 
-- OnThrottlePercentExceeded:`https://contoso:81/Service1?health&OnThrottlePercentExceeded= 70:350,95:500`
+- OnThrottlePercentExceeded: `https://contoso:81/Service1?health&OnThrottlePercentExceeded= 70:350,95:500`
 
   Určuje procento {1 – 100}, které aktivuje odpověď a kód odpovědi HTTP {200 – 599}. V tomto příkladu:
 
@@ -325,7 +324,7 @@ Další informace a příklady kódu naleznete v tématu "programové vytvářen
 
 **Noví členové SignerInfo**
 
-Počínaje .NET Framework 4.7.2 <xref:System.Security.Cryptography.Pkcs.SignerInfo> Třída zveřejňuje Další informace o podpisu. Můžete načíst hodnotu <xref:System.Security.Cryptography.Pkcs.SignerInfo.SignatureAlgorithm?displayProperty=fullName> vlastnosti a určit tak algoritmus podpisu, který používá podepisující osoba. <xref:System.Security.Cryptography.Pkcs.SignerInfo.GetSignature%2A?displayProperty=nameWithType>dá se zavolat, aby se získala kopie kryptografického podpisu pro tohoto podepsaného.
+Počínaje .NET Framework 4.7.2 <xref:System.Security.Cryptography.Pkcs.SignerInfo> Třída zveřejňuje Další informace o podpisu. Můžete načíst hodnotu <xref:System.Security.Cryptography.Pkcs.SignerInfo.SignatureAlgorithm?displayProperty=fullName> vlastnosti a určit tak algoritmus podpisu, který používá podepisující osoba. <xref:System.Security.Cryptography.Pkcs.SignerInfo.GetSignature%2A?displayProperty=nameWithType> dá se zavolat, aby se získala kopie kryptografického podpisu pro tohoto podepsaného.
 
 **Otevření zabaleného datového proudu po odstranění CryptoStream**
 
@@ -351,14 +350,14 @@ Podpora dekomprese pomocí rozhraní Windows API je ve výchozím nastavení pov
 
 **Další rozhraní API pro shromažďování**
 
-.NET Framework 4.7.2 přidá mnoho nových rozhraní API k <xref:System.Collections.Generic.SortedSet%601> <xref:System.Collections.Generic.HashSet%601> typům a. Mezi ně patří:
+.NET Framework 4.7.2 přidá mnoho nových rozhraní API k <xref:System.Collections.Generic.SortedSet%601> <xref:System.Collections.Generic.HashSet%601> typům a. Tady jsou některé z nich:
 
-- `TryGetValue`metody, které přesahují vzor try použitý v jiných typech kolekcí těchto dvou typů. Existují tyto metody:
+- `TryGetValue` metody, které přesahují vzor try použitý v jiných typech kolekcí těchto dvou typů. Existují tyto metody:
 
   - [Public \<T> bool HashSet – TryGetValue (T equalValue; out T actualValue)](xref:System.Collections.Generic.SortedSet%601.TryGetValue%2A)
   - [Public \<T> bool SortedSet TryGetValue (T equalValue; out T actualValue)](xref:System.Collections.Generic.SortedSet%601.TryGetValue%2A)
 
-- `Enumerable.To*`metody rozšíření, které převádějí kolekci na <xref:System.Collections.Generic.HashSet%601> :
+- `Enumerable.To*` metody rozšíření, které převádějí kolekci na <xref:System.Collections.Generic.HashSet%601> :
 
   - [veřejný statický HashSet – \<TSource> ToHashSet \<TSource> (Tento \<TSource> zdroj IEnumerable)](xref:System.Linq.Enumerable.ToHashSet%2A)
   - [public static HashSet – \<TSource> ToHashSet \<TSource> (this IEnumerable \<TSource> source, IEqualityComparer \<TSource> Comparer)](xref:System.Linq.Enumerable.ToHashSet%2A)
@@ -742,7 +741,7 @@ Počínaje .NET Framework 4,7 umožňuje WCF nakonfigurovat kromě protokolu SSL
 
 **Vylepšená spolehlivost aplikací WCF a serializace WCF**
 
-WCF zahrnuje řadu změn kódu, které eliminují konflikty časování, což zvyšuje výkon a spolehlivost možností serializace. Mezi ně patří:
+WCF zahrnuje řadu změn kódu, které eliminují konflikty časování, což zvyšuje výkon a spolehlivost možností serializace. Tady jsou některé z nich:
 
 - Lepší podpora pro kombinování asynchronního a synchronního kódu v voláních **Připojení SocketConnection bylo. BeginRead** a **Připojení SocketConnection bylo. Read**.
 - Lepší spolehlivost při přerušení připojení pomocí **SharedConnectionListener** a **DuplexChannelBinder**.
@@ -842,7 +841,7 @@ End Class
 
 Pak můžete vytvořit soubor prostředků, dataanotace. Localization. fr. resx, jehož klíč je řetězec chybové zprávy a jehož hodnota je lokalizovaná chybová zpráva. Soubor se musí nacházet ve `App.LocalResources` složce. Například následující je klíč a jeho hodnota v lokalizované chybové zprávě jazyka francouzštiny (FR):
 
-| Název                                 | Hodnota                                     |
+| Name                                 | Hodnota                                     |
 | ------------------------------------ | ----------------------------------------- |
 | Hodnocení musí být v rozmezí od 1 do 10. | La doit être tvoří meziplatformní 1 et 10. |
 
@@ -880,7 +879,7 @@ End Interface
 
 - 18 nových metod <xref:System.Web.HttpCachePolicy?displayProperty=nameWithType> třídy. Mezi ně patří <xref:System.Web.HttpCachePolicy.GetCacheability%2A> ,,,, <xref:System.Web.HttpCachePolicy.GetCacheExtensions%2A> <xref:System.Web.HttpCachePolicy.GetETag%2A> <xref:System.Web.HttpCachePolicy.GetETagFromFileDependencies%2A> <xref:System.Web.HttpCachePolicy.GetMaxAge%2A> , <xref:System.Web.HttpCachePolicy.GetMaxAge%2A> , <xref:System.Web.HttpCachePolicy.GetNoStore%2A> , <xref:System.Web.HttpCachePolicy.GetNoTransforms%2A> , <xref:System.Web.HttpCachePolicy.GetOmitVaryStar%2A> , <xref:System.Web.HttpCachePolicy.GetProxyMaxAge%2A> , <xref:System.Web.HttpCachePolicy.GetRevalidation%2A> , <xref:System.Web.HttpCachePolicy.GetUtcLastModified%2A> ,, a <xref:System.Web.HttpCachePolicy.GetVaryByCustom%2A> <xref:System.Web.HttpCachePolicy.HasSlidingExpiration%2A> <xref:System.Web.HttpCachePolicy.IsValidUntilExpires%2A> .
 
-- 2 nové metody ve <xref:System.Web.HttpCacheVaryByContentEncodings?displayProperty=nameWithType> třídě: <xref:System.Web.HttpCacheVaryByContentEncodings.GetContentEncodings%2A> a <xref:System.Web.HttpCacheVaryByContentEncodings.SetContentEncodings%2A> .
+- 2 nové metody ve <xref:System.Web.HttpCacheVaryByContentEncodings?displayProperty=nameWithType> třídě:  <xref:System.Web.HttpCacheVaryByContentEncodings.GetContentEncodings%2A> a <xref:System.Web.HttpCacheVaryByContentEncodings.SetContentEncodings%2A> .
 
 - 2 nové metody ve <xref:System.Web.HttpCacheVaryByHeaders?displayProperty=nameWithType> třídě: <xref:System.Web.HttpCacheVaryByHeaders.GetHeaders%2A> a <xref:System.Web.HttpCacheVaryByHeaders.SetHeaders%2A> .
 
@@ -954,7 +953,7 @@ End Function
 
 .NET Framework 3,5 přidali podporu pro klíčovou smlouvu Diffie-Hellman s eliptickou křivkou se třemi různými rutinami funkce odvození klíče (KDF). Vstupy pro rutiny a samotné rutiny byly nakonfigurovány prostřednictvím vlastností <xref:System.Security.Cryptography.ECDiffieHellmanCng> objektu. Ale vzhledem k tomu, že ne všechny rutiny čtou všechna vstupní vlastnost, existovala v minulosti pro vás rozsáhlá místnost pro nejasnost.
 
-Pro vyřešení tohoto .NET Framework 4.6.2 byly do základní třídy přidány následující tři metody, <xref:System.Security.Cryptography.ECDiffieHellman> které jasně reprezentují tyto KDF rutiny a jejich vstupy:
+Pro vyřešení tohoto .NET Framework 4.6.2 byly do základní třídy přidány následující tři metody,  <xref:System.Security.Cryptography.ECDiffieHellman> které jasně reprezentují tyto KDF rutiny a jejich vstupy:
 
 |Metoda ECDiffieHellman|Popis|
 |----------------------------|-----------------|
@@ -1011,7 +1010,7 @@ End Function
 
 Konstanty identifikátoru URI jsou všechny vystavené na <xref:System.Security.Cryptography.Xml.SignedXml> :
 
-|Pole SignedXml|Trvalé|
+|Pole SignedXml|Konstanta|
 |---------------------|--------------|
 |<xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigSHA256Url>|"http://www.w3.org/2001/04/xmlenc#sha256"|
 |<xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigRSASHA256Url>|"http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"|
@@ -1104,7 +1103,7 @@ Zákazníci mohou použít nastavení konfigurace aplikace k určení, zda <xref
 </runtime>
 ```
 
-Když je tato funkce povolená, <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> objekt <xref:System.TimeZoneInfo> místo <xref:System.TimeZone> typu použije k deserializaci dat data a času typ. <xref:System.TimeZoneInfo>podporuje více pravidel úprav, což umožňuje pracovat s historickými daty časových pásem;   <xref:System.TimeZone>není.
+Když je tato funkce povolená, <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> objekt <xref:System.TimeZoneInfo> místo <xref:System.TimeZone> typu použije k deserializaci dat data a času typ. <xref:System.TimeZoneInfo> podporuje více pravidel úprav, což umožňuje pracovat s historickými daty časových pásem;   <xref:System.TimeZone> není.
 
 Další informace o <xref:System.TimeZoneInfo> úpravách struktury a časových pásem najdete v tématu [Přehled časových pásem](../../standard/datetime/time-zone-overview.md).
 
@@ -1151,7 +1150,7 @@ Aplikace, která používá <xref:System.Windows.Data.CollectionView> objekt k s
 
 Aby bylo možné podporovat řazení skupin, nové <xref:System.ComponentModel.GroupDescription.SortDescriptions%2A?displayProperty=nameWithType> a <xref:System.ComponentModel.GroupDescription.CustomSort%2A?displayProperty=nameWithType> vlastnosti popisují způsob řazení kolekce skupin vytvořených <xref:System.ComponentModel.GroupDescription> objektem. To je analogické jako způsob, jakým identicky pojmenované <xref:System.Windows.Data.ListCollectionView> vlastnosti popisují způsob řazení datových položek.
 
-Dvě nové statické vlastnosti <xref:System.Windows.Data.PropertyGroupDescription> třídy <xref:System.Windows.Data.PropertyGroupDescription.CompareNameAscending%2A> a <xref:System.Windows.Data.PropertyGroupDescription.CompareNameDescending%2A> lze použít v nejběžnějších případech.
+Dvě nové statické vlastnosti <xref:System.Windows.Data.PropertyGroupDescription> třídy  <xref:System.Windows.Data.PropertyGroupDescription.CompareNameAscending%2A> a <xref:System.Windows.Data.PropertyGroupDescription.CompareNameDescending%2A> lze použít v nejběžnějších případech.
 
 Například následující XAML seskupuje data podle stáří, řadí věkové skupiny ve vzestupném pořadí a seskupuje položky v rámci každé věkové skupiny podle příjmení.
 
@@ -1199,7 +1198,7 @@ V .NET Framework 4.6.2 bylo programovací model Windows Workflow Foundation vyle
 
 Počínaje .NET Framework 4,5 podporuje WF výrazy jazyka C# v návrháři sady Visual Studio i v pracovních postupech kódu. Rehostovaná Návrhář postupu provádění je klíčovou funkcí WF, která umožňuje, aby se Návrhář postupu provádění v aplikaci mimo Visual Studio (například v WPF).  Programovací model Windows Workflow Foundation poskytuje možnost podporovat výrazy jazyka C# a IntelliSense v Návrhář postupu provádění hostitele. Další informace najdete na [blogu programovací model Windows Workflow Foundation](https://docs.microsoft.com/archive/blogs/workflowteam/building-c-expressions-support-and-intellisense-in-the-rehosted-workflow-designer).
 
-`Availability of IntelliSense when a customer rebuilds a workflow project from Visual Studio`Ve verzích .NET Framework před 4.6.2 se IntelliSense Návrháře WF při opětovném sestavení projektu pracovního postupu ze sady Visual Studio přeruší. I když je sestavení projektu úspěšné, typy pracovních postupů nejsou v Návrháři nalezeny a upozornění z IntelliSense pro chybějící typy pracovních postupů se zobrazí v okně **Seznam chyb** . .NET Framework 4.6.2 řeší tento problém a zpřístupňuje IntelliSense.
+`Availability of IntelliSense when a customer rebuilds a workflow project from Visual Studio` Ve verzích .NET Framework před 4.6.2 se IntelliSense Návrháře WF při opětovném sestavení projektu pracovního postupu ze sady Visual Studio přeruší. I když je sestavení projektu úspěšné, typy pracovních postupů nejsou v Návrháři nalezeny a upozornění z IntelliSense pro chybějící typy pracovních postupů se zobrazí v okně **Seznam chyb** . .NET Framework 4.6.2 řeší tento problém a zpřístupňuje IntelliSense.
 
 **Aplikace pracovního postupu V1 se sledováním pracovních postupů zapnuto v režimu FIPS**
 
@@ -1239,7 +1238,7 @@ Převedená aplikace klasické pracovní plochy získala identitu aplikace podob
 
 *Rozhraní API pro nespravované ladění* bylo vylepšeno v .NET Framework 4.6.2, aby bylo možné provést další analýzu při <xref:System.NullReferenceException> vyvolání, aby bylo možné určit, která proměnná v jednom řádku zdrojového kódu je `null` .   Pro podporu tohoto scénáře byla do nespravovaného ladicího rozhraní API přidána následující rozhraní API.
 
-- Rozhraní [ICorDebugCode4](../unmanaged-api/debugging/icordebugcode4-interface.md), [ICorDebugVariableHome](../unmanaged-api/debugging/icordebugvariablehome-interface.md)a [ICorDebugVariableHomeEnum](../unmanaged-api/debugging/icordebugvariablehomeenum-interface.md) , která zveřejňují nativní domy spravovaných proměnných. To umožňuje ladicím programům provádět některé analýzy toku kódu <xref:System.NullReferenceException> , když dojde k chybě a chcete-li pracovat zpět k určení spravované proměnné, která odpovídá nativnímu umístění, které bylo `null` .
+- Rozhraní [ICorDebugCode4](../unmanaged-api/debugging/icordebugcode4-interface.md), [ICorDebugVariableHome](../unmanaged-api/debugging/icordebugvariablehome-interface.md)a [ICorDebugVariableHomeEnum](../unmanaged-api/debugging/icordebugvariablehomeenum-interface.md) , která zveřejňují nativní domy spravovaných proměnných. To umožňuje ladicím programům provádět některé analýzy toku kódu  <xref:System.NullReferenceException> , když dojde k chybě a chcete-li pracovat zpět k určení spravované proměnné, která odpovídá nativnímu umístění, které bylo `null` .
 
 - Metoda [ICorDebugType2:: GetTypeId.](../unmanaged-api/debugging/icordebugtype2-gettypeid-method.md) poskytuje mapování pro ICorDebugType pro [COR_TYPEID](../unmanaged-api/debugging/cor-typeid-structure.md), což ladicímu programu umožňuje získat [COR_TYPEID](../unmanaged-api/debugging/cor-typeid-structure.md) bez instance ICorDebugType. Existující rozhraní API na [COR_TYPEID](../unmanaged-api/debugging/cor-typeid-structure.md) lze použít k určení rozložení třídy typu.
 
@@ -1635,7 +1634,7 @@ V případě Ngen soubory PDB může NGen vytvořit PDB, který obsahuje mapová
     <add key="EnableMultiMonitorDisplayClipping" value="true"/>
     ```
 
-    Do se přidala podpora pro automatické načtení správného kurzoru na základě nastavení DPI <xref:System.Windows.Input.Cursor?displayProperty=nameWithType> .
+    Do se přidala podpora pro automatické načtení správného kurzoru na základě nastavení DPI  <xref:System.Windows.Input.Cursor?displayProperty=nameWithType> .
 
   - **Dotykové ovládání je lepší**
 
@@ -1817,7 +1816,7 @@ V případě Ngen soubory PDB může NGen vytvořit PDB, který obsahuje mapová
 
 - **Zvýšení úrovně transakce a její převedení na trvalý zařazení**
 
-  <xref:System.Transactions.Transaction.PromoteAndEnlistDurable%2A?displayProperty=nameWithType>je nové rozhraní API přidané do .NET Framework 4.5.2 a 4,6:
+  <xref:System.Transactions.Transaction.PromoteAndEnlistDurable%2A?displayProperty=nameWithType> je nové rozhraní API přidané do .NET Framework 4.5.2 a 4,6:
 
   ```csharp
   [System.Security.Permissions.PermissionSetAttribute(System.Security.Permissions.SecurityAction.LinkDemand, Name = "FullTrust")]
@@ -1955,7 +1954,7 @@ V .NET Framework 4,5 byly do jazyků C# a Visual Basic přidány nové asynchron
 
 <a name="tools"></a>
 
-### <a name="tools"></a>Nástroje
+### <a name="tools"></a>nástroje
 
 V .NET Framework 4,5 vám generátor souborů prostředků (Resgen.exe) umožňuje vytvořit soubor. resw pro použití v aplikacích Windows 8. x Store ze souboru. Resources vloženého do sestavení .NET Framework. Další informace najdete v tématu [Resgen.exe (generátor zdrojového souboru)](../tools/resgen-exe-resource-file-generator.md).
 
@@ -1977,7 +1976,7 @@ ASP.NET 4,5 a 4.5.1 přidávají vazbu modelu pro webové formuláře, podporu W
 
 - [ASP.NET a webové nástroje pro Visual Studio 2013 – poznámky k verzi](/aspnet/visual-studio/overview/2013/release-notes)
 
-### <a name="networking"></a>Sítě<a name="networking"></a>
+### <a name="networking"></a>Sítě <a name="networking"></a>
 
 .NET Framework 4,5 poskytuje nové programovací rozhraní pro aplikace HTTP. Další informace najdete v tématu nové <xref:System.Net.Http?displayProperty=nameWithType> <xref:System.Net.Http.Headers?displayProperty=nameWithType> obory názvů a.
 
@@ -2049,7 +2048,7 @@ V .NET Framework 4,5 byly přidány následující funkce, které zjednodušují
 
 - Popisy editoru XML.
 
-- <xref:System.ServiceModel.ChannelFactory>Podpora ukládání do mezipaměti.
+- <xref:System.ServiceModel.ChannelFactory> Podpora ukládání do mezipaměti.
 
 - Podpora komprese binárního kodéru
 
@@ -2105,7 +2104,7 @@ V .NET Framework 4,5 byly do programovací model Windows Workflow Foundation (WF
 
 - Vylepšení správy verzí:
 
-  - Nová <xref:System.Activities.WorkflowIdentity> třída, která poskytuje mapování mezi trvalou instancí pracovního postupu a její definicí pracovního postupu.
+  - Nová  <xref:System.Activities.WorkflowIdentity> třída, která poskytuje mapování mezi trvalou instancí pracovního postupu a její definicí pracovního postupu.
 
   - Souběžné spouštění více verzí pracovních postupů ve stejném hostiteli, včetně <xref:System.ServiceModel.Activities.WorkflowServiceHost> .
 
@@ -2121,7 +2120,7 @@ Další informace najdete v tématu [co je nového v programovací model Windows
 
 Aplikace pro Store ve Windows 8. x jsou navržené pro konkrétní faktory a využívají sílu operačního systému Windows. K dispozici je podmnožina .NET Framework 4,5 nebo 4.5.1 pro sestavování aplikací Windows 8. x Store pro Windows pomocí jazyka C# nebo Visual Basic. Tato podmnožina se nazývá .NET pro aplikace Windows 8. x Store a je popsána v [přehledu](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140)).
 
-### <a name="portable-class-libraries"></a>Přenositelné knihovny tříd<a name="portable"></a>
+### <a name="portable-class-libraries"></a>Přenositelné knihovny tříd <a name="portable"></a>
 
 Přenosná knihovna tříd projektu v aplikaci Visual Studio 2012 (a novějších verzích) umožňuje psát a sestavovat spravovaná sestavení, která fungují na více .NET Framework platformách. Pomocí přenositelného projektu knihovny tříd zvolíte platformy (například Windows Phone a .NET pro aplikace pro Windows 8. x Store) k cíli. Dostupné typy a členy v projektu jsou automaticky omezeny na společné typy a členy napříč těmito platformami. Další informace naleznete v tématu [Přenosná knihovna tříd](../../standard/cross-platform/cross-platform-development-with-the-portable-class-library.md).
 
@@ -2130,6 +2129,6 @@ Přenosná knihovna tříd projektu v aplikaci Visual Studio 2012 (a novějšíc
 - [Rozhraní .NET Framework a nesvázaná vydání](../get-started/the-net-framework-and-out-of-band-releases.md)
 - [Co je nového v přístupnosti v .NET Framework](whats-new-in-accessibility.md)
 - [Co je nového v aplikaci Visual Studio 2017](/visualstudio/ide/whats-new-visual-studio-2017)
-- [Novinky v sadě Visual Studio 2019](/visualstudio/ide/whats-new-visual-studio-2019)
+- [Co je nového v aplikaci Visual Studio 2019](/visualstudio/ide/whats-new-visual-studio-2019)
 - [ASP.NET](/aspnet)
 - [Co je nového v jazyce C++ v aplikaci Visual Studio](/cpp/what-s-new-for-visual-cpp-in-visual-studio)

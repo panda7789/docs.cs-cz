@@ -2,12 +2,12 @@
 title: Zabezpečení Azure pro Cloud – nativní aplikace
 description: Architekt cloudových nativních aplikací .NET pro Azure | Zabezpečení Azure pro nativní cloudové aplikace
 ms.date: 05/13/2020
-ms.openlocfilehash: 223d9e77aca611697958981bf2ee3a630fb9fffb
-ms.sourcegitcommit: e7748001b1cee80ced691d8a76ca814c0b02dd9b
+ms.openlocfilehash: 996c7075b252466a3b3374f1e75e64315fdd6fc7
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86374491"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88557643"
 ---
 # <a name="azure-security-for-cloud-native-apps"></a>Zabezpečení Azure pro Cloud – nativní aplikace
 
@@ -201,7 +201,7 @@ kubectl apply -f ./secret.yaml
 
 Tyto tajné kódy pak mohou být připojeny do svazků nebo vystaveny kontejnerovým procesům prostřednictvím proměnných prostředí. [32bitový](https://12factor.net/) přístup k aplikacím při sestavování aplikací navrhuje použití nejnižšího společného jmenovatele k přenosu nastavení do aplikace. Proměnné prostředí jsou nejnižší společný jmenovatel, protože jsou podporované bez ohledu na operační systém nebo aplikaci.
 
-Alternativou k používání integrovaných tajných klíčů Kubernetes je přístup k tajným klíčům v Azure Key Vault v rámci Kubernetes. Nejjednodušší způsob, jak to provést, je přiřadit roli RBAC kontejneru, který hledá tajné kódy. Aplikace pak může používat rozhraní Azure Key Vault API pro přístup k tajným klíčům. Tento přístup ale vyžaduje úpravy kódu a nedodržuje vzor použití proměnných prostředí. Místo toho je možné vkládat hodnoty do kontejneru pomocí [Azure Key Vaultho](https://mrdevops.io/introducing-azure-key-vault-to-kubernetes-931f82364354)rozhraní pro vkládání. Tento přístup je ve skutečnosti bezpečnější než používání tajných klíčů Kubernetes přímo, protože k nim mají přístup uživatelé v clusteru.
+Alternativou k používání integrovaných tajných klíčů Kubernetes je přístup k tajným klíčům v Azure Key Vault v rámci Kubernetes. Nejjednodušší způsob, jak to provést, je přiřadit roli RBAC kontejneru, který hledá tajné kódy. Aplikace pak může používat rozhraní Azure Key Vault API pro přístup k tajným klíčům. Tento přístup ale vyžaduje úpravy kódu a nedodržuje vzor použití proměnných prostředí. Místo toho je možné vložit hodnoty do kontejneru. Tento přístup je ve skutečnosti bezpečnější než používání tajných klíčů Kubernetes přímo, protože k nim mají přístup uživatelé v clusteru.
 
 ## <a name="encryption-in-transit-and-at-rest"></a>Šifrování při přenosu a v klidovém provozu
 
