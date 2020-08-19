@@ -1,13 +1,13 @@
 ---
 title: Implementace aplikační vrstvy mikroslužby pomocí webového rozhraní API
 description: Seznamte se s vkládáním závislostí a vzorci a jejich podrobnostmi o implementaci v aplikační vrstvě webového rozhraní API.
-ms.date: 01/30/2020
-ms.openlocfilehash: c6e82b610a528b688cb4334bdec01700abbd2a62
-ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
+ms.date: 08/17/2020
+ms.openlocfilehash: 72395acafb403a4e34858eb2b982ec83b9f3cee1
+ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84306926"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88608114"
 ---
 # <a name="implement-the-microservice-application-layer-using-the-web-api"></a>Implementace aplikační vrstvy mikroslužeb pomocí webového rozhraní API
 
@@ -27,53 +27,59 @@ ASP.NET Core obsahuje jednoduchý [integrovaný kontejner IOC](https://docs.micr
 
 Obvykle chcete vložit závislosti, které implementují objekty infrastruktury. Typickou závislostí pro vkládání je úložiště. Mohli byste ale vložit jakoukoli další závislost infrastruktury, kterou můžete mít. Pro jednodušší implementace můžete přímo vložit objekt vzorce pracovní jednotky (objekt EF DbContext), protože DBContext je také implementace objektů trvalé infrastruktury.
 
-V následujícím příkladu uvidíte, jak .NET Core vkládá požadované objekty úložiště prostřednictvím konstruktoru. Třída je obslužná rutina příkazu, kterou si pokryjeme v další části.
+V následujícím příkladu uvidíte, jak .NET Core vkládá požadované objekty úložiště prostřednictvím konstruktoru. Třída je obslužná rutina příkazu, která bude zahrnuta v další části.
 
 ```csharp
 public class CreateOrderCommandHandler
-    : IAsyncRequestHandler<CreateOrderCommand, bool>
+        : IRequestHandler<CreateOrderCommand, bool>
 {
     private readonly IOrderRepository _orderRepository;
     private readonly IIdentityService _identityService;
     private readonly IMediator _mediator;
+    private readonly IOrderingIntegrationEventService _orderingIntegrationEventService;
+    private readonly ILogger<CreateOrderCommandHandler> _logger;
 
     // Using DI to inject infrastructure persistence Repositories
     public CreateOrderCommandHandler(IMediator mediator,
-                                     IOrderRepository orderRepository,
-                                     IIdentityService identityService)
+        IOrderingIntegrationEventService orderingIntegrationEventService,
+        IOrderRepository orderRepository,
+        IIdentityService identityService,
+        ILogger<CreateOrderCommandHandler> logger)
     {
-        _orderRepository = orderRepository ??
-                          throw new ArgumentNullException(nameof(orderRepository));
-        _identityService = identityService ??
-                          throw new ArgumentNullException(nameof(identityService));
-        _mediator = mediator ??
-                                 throw new ArgumentNullException(nameof(mediator));
+        _orderRepository = orderRepository ?? throw new ArgumentNullException(nameof(orderRepository));
+        _identityService = identityService ?? throw new ArgumentNullException(nameof(identityService));
+        _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
+        _orderingIntegrationEventService = orderingIntegrationEventService ?? throw new ArgumentNullException(nameof(orderingIntegrationEventService));
+        _logger = logger ?? throw new ArgumentNullException(nameof(logger));
     }
 
-    public async Task<bool> Handle(CreateOrderCommand message)
+    public async Task<bool> Handle(CreateOrderCommand message, CancellationToken cancellationToken)
     {
-        // Create the Order AggregateRoot
-        // Add child entities and value objects through the Order aggregate root
-        // methods and constructor so validations, invariants, and business logic
+        // Add Integration event to clean the basket
+        var orderStartedIntegrationEvent = new OrderStartedIntegrationEvent(message.UserId);
+        await _orderingIntegrationEventService.AddAndSaveEventAsync(orderStartedIntegrationEvent);
+
+        // Add/Update the Buyer AggregateRoot
+        // DDD patterns comment: Add child entities and value-objects through the Order Aggregate-Root
+        // methods and constructor so validations, invariants and business logic
         // make sure that consistency is preserved across the whole aggregate
-        var address = new Address(message.Street, message.City, message.State,
-                                  message.Country, message.ZipCode);
-        var order = new Order(message.UserId, address, message.CardTypeId,
-                              message.CardNumber, message.CardSecurityNumber,
-                              message.CardHolderName, message.CardExpiration);
+        var address = new Address(message.Street, message.City, message.State, message.Country, message.ZipCode);
+        var order = new Order(message.UserId, message.UserName, address, message.CardTypeId, message.CardNumber, message.CardSecurityNumber, message.CardHolderName, message.CardExpiration);
 
         foreach (var item in message.OrderItems)
         {
-            order.AddOrderItem(item.ProductId, item.ProductName, item.UnitPrice,
-                               item.Discount, item.PictureUrl, item.Units);
+            order.AddOrderItem(item.ProductId, item.ProductName, item.UnitPrice, item.Discount, item.PictureUrl, item.Units);
         }
+
+        _logger.LogInformation("----- Creating Order - Order: {@Order}", order);
 
         _orderRepository.Add(order);
 
         return await _orderRepository.UnitOfWork
-            .SaveEntitiesAsync();
+            .SaveEntitiesAsync(cancellationToken);
     }
 }
+
 ```
 
 Třída používá vložená úložiště ke spuštění transakce a uchování změn stavu. Nezáleží na tom, zda je tato třída obslužná rutina příkazu, metoda ASP.NET Core webového rozhraní API nebo [DDD aplikační službu](https://lostechies.com/jimmybogard/2008/08/21/services-in-domain-driven-design/). Je to nakonec jednoduchá třída, která používá úložiště, entity domény a další koordinaci aplikací podobným způsobem jako obslužná rutina příkazu. Vkládání závislostí funguje stejným způsobem pro všechny uvedené třídy, jako v příkladu pomocí příkazu DI založeného na konstruktoru.
@@ -112,7 +118,7 @@ Při použití funkce DI v .NET Core můžete chtít skenovat sestavení a autom
 - **Matthew krále. Registrace služeb pomocí Scrutor** \
   <https://www.mking.net/blog/registering-services-with-scrutor>
 
-- **Kristian Hellang. Scrutor.** úložiště GitHub. \
+- **Kristian Hellang. Scrutor.** Úložiště GitHub. \
   <https://github.com/khellang/Scrutor>
 
 #### <a name="use-autofac-as-an-ioc-container"></a>Použití Autofac jako kontejneru IoC
@@ -208,42 +214,58 @@ Příkaz je implementován se třídou, která obsahuje datová pole nebo kolekc
 Následující příklad ukazuje zjednodušenou `CreateOrderCommand` třídu. Toto je neproměnlivý příkaz, který se používá při řazení mikroslužby v eShopOnContainers.
 
 ```csharp
-// DDD and CQRS patterns comment
-// Note that we recommend that you implement immutable commands
-// In this case, immutability is achieved by having all the setters as private
-// plus being able to update the data just once, when creating the object
-// through the constructor.
-// References on immutable commands:
-// https://cqrs.nu/Faq
+// DDD and CQRS patterns comment: Note that it is recommended to implement immutable Commands
+// In this case, its immutability is achieved by having all the setters as private
+// plus only being able to update the data just once, when creating the object through its constructor.
+// References on Immutable Commands:
+// http://cqrs.nu/Faq
 // https://docs.spine3.org/motivation/immutability.html
 // http://blog.gauffin.org/2012/06/griffin-container-introducing-command-support/
 // https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/how-to-implement-a-lightweight-class-with-auto-implemented-properties
+
 [DataContract]
 public class CreateOrderCommand
-    :IAsyncRequest<bool>
+    : IRequest<bool>
 {
     [DataMember]
     private readonly List<OrderItemDTO> _orderItems;
+
+    [DataMember]
+    public string UserId { get; private set; }
+
+    [DataMember]
+    public string UserName { get; private set; }
+
     [DataMember]
     public string City { get; private set; }
+
     [DataMember]
     public string Street { get; private set; }
+
     [DataMember]
     public string State { get; private set; }
+
     [DataMember]
     public string Country { get; private set; }
+
     [DataMember]
     public string ZipCode { get; private set; }
+
     [DataMember]
     public string CardNumber { get; private set; }
+
     [DataMember]
     public string CardHolderName { get; private set; }
+
     [DataMember]
     public DateTime CardExpiration { get; private set; }
+
     [DataMember]
     public string CardSecurityNumber { get; private set; }
+
     [DataMember]
     public int CardTypeId { get; private set; }
+
     [DataMember]
     public IEnumerable<OrderItemDTO> OrderItems => _orderItems;
 
@@ -252,13 +274,13 @@ public class CreateOrderCommand
         _orderItems = new List<OrderItemDTO>();
     }
 
-    public CreateOrderCommand(List<BasketItem> basketItems, string city,
-        string street,
-        string state, string country, string zipcode,
+    public CreateOrderCommand(List<BasketItem> basketItems, string userId, string userName, string city, string street, string state, string country, string zipcode,
         string cardNumber, string cardHolderName, DateTime cardExpiration,
         string cardSecurityNumber, int cardTypeId) : this()
     {
-        _orderItems = MapToOrderItems(basketItems);
+        _orderItems = basketItems.ToOrderItemsDTO().ToList();
+        UserId = userId;
+        UserName = userName;
         City = city;
         Street = street;
         State = state;
@@ -266,18 +288,25 @@ public class CreateOrderCommand
         ZipCode = zipcode;
         CardNumber = cardNumber;
         CardHolderName = cardHolderName;
+        CardExpiration = cardExpiration;
         CardSecurityNumber = cardSecurityNumber;
         CardTypeId = cardTypeId;
         CardExpiration = cardExpiration;
     }
 
+
     public class OrderItemDTO
     {
         public int ProductId { get; set; }
+
         public string ProductName { get; set; }
+
         public decimal UnitPrice { get; set; }
+
         public decimal Discount { get; set; }
+
         public int Units { get; set; }
+
         public string PictureUrl { get; set; }
     }
 }
@@ -296,7 +325,7 @@ Mnoho tříd příkazu může být jednoduché, což vyžaduje pouze několik po
 ```csharp
 [DataContract]
 public class UpdateOrderStatusCommand
-    :IAsyncRequest<bool>
+    :IRequest<bool>
 {
     [DataMember]
     public string Status { get; private set; }
@@ -309,7 +338,7 @@ public class UpdateOrderStatusCommand
 }
 ```
 
-Někteří vývojáři zavedou své objekty žádosti o uživatelské rozhraní oddělené od jejich příkazu DTO, ale to je pouze preference. Je zdlouhavé oddělení, které není mnohem přidané hodnoty, a objekty jsou téměř přesně stejný tvar. Například v eShopOnContainers se některé příkazy přidávají přímo ze strany klienta.
+Někteří vývojáři zavedou své objekty žádosti o uživatelské rozhraní oddělené od jejich příkazu DTO, ale to je pouze preference. Je zdlouhavé oddělení, které není mnohem další hodnotou, a objekty jsou téměř přesně stejný tvar. Například v eShopOnContainers se některé příkazy přidávají přímo z na straně klienta.
 
 ### <a name="the-command-handler-class"></a>Třída obslužné rutiny příkazu
 
@@ -337,51 +366,56 @@ Důležitým bodem je, že při zpracování příkazu by měla být veškerá l
 
 Pokud obslužné rutiny příkazu mají složitý, s příliš velkým množstvím logiky, může to být zápach kódu. Přečtěte si je, a pokud najdete logiku domény, refaktorujte kód pro přesun tohoto chování domény do metod doménových objektů (agregovaná kořenová a podřízená entita).
 
-Jako příklad třídy obslužné rutiny příkazu, následující kód ukazuje stejnou `CreateOrderCommandHandler` třídu, kterou jste viděli na začátku této kapitoly. V tomto případě chceme zvýraznit metodu popisovače a operace s objekty nebo agregacemi doménového modelu.
+Jako příklad třídy obslužné rutiny příkazu, následující kód ukazuje stejnou `CreateOrderCommandHandler` třídu, kterou jste viděli na začátku této kapitoly. V tomto případě také zvýrazní metodu popisovače a operace s objekty nebo agregacemi doménového modelu.
 
 ```csharp
 public class CreateOrderCommandHandler
-    : IAsyncRequestHandler<CreateOrderCommand, bool>
+        : IRequestHandler<CreateOrderCommand, bool>
 {
     private readonly IOrderRepository _orderRepository;
     private readonly IIdentityService _identityService;
     private readonly IMediator _mediator;
+    private readonly IOrderingIntegrationEventService _orderingIntegrationEventService;
+    private readonly ILogger<CreateOrderCommandHandler> _logger;
 
     // Using DI to inject infrastructure persistence Repositories
     public CreateOrderCommandHandler(IMediator mediator,
-                                     IOrderRepository orderRepository,
-                                     IIdentityService identityService)
+        IOrderingIntegrationEventService orderingIntegrationEventService,
+        IOrderRepository orderRepository,
+        IIdentityService identityService,
+        ILogger<CreateOrderCommandHandler> logger)
     {
-        _orderRepository = orderRepository ??
-                          throw new ArgumentNullException(nameof(orderRepository));
-        _identityService = identityService ??
-                          throw new ArgumentNullException(nameof(identityService));
-        _mediator = mediator ??
-                                 throw new ArgumentNullException(nameof(mediator));
+        _orderRepository = orderRepository ?? throw new ArgumentNullException(nameof(orderRepository));
+        _identityService = identityService ?? throw new ArgumentNullException(nameof(identityService));
+        _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
+        _orderingIntegrationEventService = orderingIntegrationEventService ?? throw new ArgumentNullException(nameof(orderingIntegrationEventService));
+        _logger = logger ?? throw new ArgumentNullException(nameof(logger));
     }
 
-    public async Task<bool> Handle(CreateOrderCommand message)
+    public async Task<bool> Handle(CreateOrderCommand message, CancellationToken cancellationToken)
     {
-        // Create the Order AggregateRoot
-        // Add child entities and value objects through the Order aggregate root
-        // methods and constructor so validations, invariants, and business logic
+        // Add Integration event to clean the basket
+        var orderStartedIntegrationEvent = new OrderStartedIntegrationEvent(message.UserId);
+        await _orderingIntegrationEventService.AddAndSaveEventAsync(orderStartedIntegrationEvent);
+
+        // Add/Update the Buyer AggregateRoot
+        // DDD patterns comment: Add child entities and value-objects through the Order Aggregate-Root
+        // methods and constructor so validations, invariants and business logic
         // make sure that consistency is preserved across the whole aggregate
-        var address = new Address(message.Street, message.City, message.State,
-                                  message.Country, message.ZipCode);
-        var order = new Order(message.UserId, address, message.CardTypeId,
-                              message.CardNumber, message.CardSecurityNumber,
-                              message.CardHolderName, message.CardExpiration);
+        var address = new Address(message.Street, message.City, message.State, message.Country, message.ZipCode);
+        var order = new Order(message.UserId, message.UserName, address, message.CardTypeId, message.CardNumber, message.CardSecurityNumber, message.CardHolderName, message.CardExpiration);
 
         foreach (var item in message.OrderItems)
         {
-            order.AddOrderItem(item.ProductId, item.ProductName, item.UnitPrice,
-                               item.Discount, item.PictureUrl, item.Units);
+            order.AddOrderItem(item.ProductId, item.ProductName, item.UnitPrice, item.Discount, item.PictureUrl, item.Units);
         }
+
+        _logger.LogInformation("----- Creating Order - Order: {@Order}", order);
 
         _orderRepository.Add(order);
 
         return await _orderRepository.UnitOfWork
-            .SaveEntitiesAsync();
+            .SaveEntitiesAsync(cancellationToken);
     }
 }
 ```
@@ -437,7 +471,7 @@ Zprostředkovatel je objekt, který zapouzdřuje "How" tohoto procesu: koordinuj
 
 Dekoratéry a chování jsou podobné [programování orientovanému na orientaci (AOP)](https://en.wikipedia.org/wiki/Aspect-oriented_programming), které se používá jenom pro konkrétní kanál procesu spravovaný komponentou prostředníka. Aspekty v AOP, které implementují obavy mezi průřezy, se uplatňují na základě *aspektů Weavers* vložených v době kompilace nebo na základě zachycení volání objektů. Typické přístupy k AOP jsou někdy označovány jako "jako Magic", protože není snadné zjistit, jak AOP funguje. Při řešení vážných problémů nebo chyb může být AOP obtížné ho ladit. Na druhé straně jsou tyto dekoratéry/chování explicitní a použité pouze v kontextu prostředníka, takže ladění je mnohem více předvídatelné a snadné.
 
-Například v eShopOnContainers objednávání mikroslužby jsme implementovali dvě vzorová chování, třídu [LogBehavior](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/Behaviors/LoggingBehavior.cs) a třídu [ValidatorBehavior](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/Behaviors/ValidatorBehavior.cs) . Implementaci chování je vysvětleno v další části zobrazením, jak eShopOnContainers používá [chování](https://github.com/jbogard/MediatR/wiki/Behaviors) [MediatR 3](https://www.nuget.org/packages/MediatR/3.0.0) .
+Například v eShopOnContainers řazení mikroslužeb má implementaci dvou vzorových chování, třídu [LogBehavior](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/Behaviors/LoggingBehavior.cs) a třídu [ValidatorBehavior](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/Behaviors/ValidatorBehavior.cs) . Implementaci chování je vysvětleno v další části zobrazením, jak eShopOnContainers používá [chování](https://github.com/jbogard/MediatR/wiki/Behaviors) [MediatR](https://www.nuget.org/packages/MediatR) .
 
 ### <a name="use-message-queues-out-of-proc-in-the-commands-pipeline"></a>Použití front zpráv (out-of-proc) v kanálu příkazu
 
@@ -445,7 +479,7 @@ Další možností je použít asynchronní zprávy založené na zprostředkova
 
 ![Diagram znázorňující tok dat pomocí fronty zpráv HA](./media/microservice-application-layer-implementation-web-api/add-ha-message-queue.png)
 
-**Obrázek 7-26**. Použití front zpráv (mimo procesy a komunikace mezi procesy) pomocí příkazů CQRS
+**Obrázek 7-26**. Použití front zpráv (mimo proces a komunikace mezi procesy) pomocí příkazů CQRS
 
 Kanál příkazu může být také zpracován frontou zpráv vysoké dostupnosti pro doručení příkazů příslušné obslužné rutině. Použití front zpráv k přijetí příkazů může dále zkomplikovat kanál příkazu, protože pravděpodobně budete muset kanál rozdělit do dvou procesů, které jsou připojeny prostřednictvím externí fronty zpráv. Stále byste měli použít, pokud potřebujete mít lepší škálovatelnost a výkon na základě asynchronního zasílání zpráv. Vezměte v úvahu, že v případě obrázku 7-26 tento kontroler pouze odešle příkaz do fronty a vrátí. Potom obslužné rutiny příkazu zpracovávají zprávy vlastním tempem. To je skvělé výhody front: fronta zpráv může fungovat jako vyrovnávací paměť v případech, kdy je potřeba škálovatelnost technologie Hyper-v případě potřeby, jako jsou například akcie nebo jakýkoli jiný scénář s velkým objemem příchozích dat.
 
@@ -455,13 +489,13 @@ Proto schopnost reagovat na klienta po ověření zprávy příkazu, která byla
 
 Kromě toho asynchronní příkazy jsou jednosměrné příkazy, které v mnoha případech nemusí být potřeba, jak je vysvětleno v následujícím zajímavém Exchangi mezi Burtsev Alexey a Greg Youngem v [online konverzaci](https://groups.google.com/forum/#!msg/dddcqrs/xhJHVxDx2pM/WP9qP8ifYCwJ):
 
-> \[Burtsev Alexey \] hledáme spoustu kódu, kde lidé používají zpracování asynchronních příkazů nebo jednosměrné zasílání zpráv bez jakéhokoli důvodu (neprovádí žádnou dlouhou operaci) (neprovádí se žádné dlouhé operace, neprovádí externí asynchronní kód, ale dokonce i hranice mezi aplikacemi nepoužívají sběrnici zpráv). Proč zavádějí tuto zbytečný složitost? A ve skutečnosti jsem neviděl příklad kódu CQRS s blokujícími obslužnými rutinami příkazů, i když bude ve většině případů fungovat přesně dobře.
+> \[Burtsev Alexey \] hledáme spoustu kódu, kde lidé používají asynchronní zpracování příkazů nebo jednosměrné příkazy pro zasílání zpráv bez jakéhokoli důvodu (neprovádí žádnou dlouhou operaci). neprovádí ale externí asynchronní kód, nejedná se dokonce o hranice mezi aplikacemi a pomocí sběrnice zpráv. Proč zavádějí tuto zbytečný složitost? A ve skutečnosti jsem neviděl příklad kódu CQRS s blokujícími obslužnými rutinami příkazů, i když bude ve většině případů fungovat přesně dobře.
 >
 > \[Greg Young. \] \[ .. \] asynchronní příkaz neexistuje; jedná se o skutečnou jinou událost. Pokud je potřeba přijmout, co pošlete, a vyvolat událost, Pokud nesouhlasíte, už Neoznamujeme, že se něco nestane, ale nejedná se \[ o příkaz \] . Je to vám řekněte mi, že se něco udělalo. Vypadá to jako mírně rozdíl v prvním, ale má mnoho aspektů.
 
 Asynchronní příkazy významně zvyšují složitost systému, protože neexistuje žádný jednoduchý způsob, jak označovat selhání. Proto nejsou asynchronní příkazy jiné doporučovány než při vyžadování požadavků na škálování nebo ve zvláštních případech při komunikaci interních mikroslužeb prostřednictvím zasílání zpráv. V těchto případech je třeba navrhnout samostatné vytváření sestav a systém obnovení pro selhání.
 
-V počáteční verzi eShopOnContainers jsme se rozhodli používat synchronní zpracování příkazů spouštěné z požadavků HTTP a řízených vzorem pro povýšení. To umožňuje snadno vrátit úspěch nebo neúspěch procesu, jako v implementaci [CreateOrderCommandHandler](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.API/Application/Commands/CreateOrderCommandHandler.cs) .
+V počáteční verzi eShopOnContainers bylo rozhodnuto použít synchronní zpracování příkazů spouštěné z požadavků HTTP a řízených vzorem pojmenování. To umožňuje snadno vrátit úspěch nebo neúspěch procesu, jako v implementaci [CreateOrderCommandHandler](https://github.com/dotnet-architecture/eShopOnContainers/blob/netcore1.1/src/Services/Ordering/Ordering.API/Application/Commands/CreateOrderCommandHandler.cs) .
 
 V každém případě by to mělo být rozhodnutí založené na obchodních požadavcích vaší aplikace nebo mikroslužeb.
 
@@ -550,26 +584,39 @@ Pak CommandHandler – pro IdentifiedCommand s názvem [IdentifiedCommandHandler
 
 ```csharp
 // IdentifiedCommandHandler.cs
-public class IdentifiedCommandHandler<T, R> :
-                                   IAsyncRequestHandler<IdentifiedCommand<T, R>, R>
-                                   where T : IRequest<R>
+public class IdentifiedCommandHandler<T, R> : IRequestHandler<IdentifiedCommand<T, R>, R>
+        where T : IRequest<R>
 {
     private readonly IMediator _mediator;
     private readonly IRequestManager _requestManager;
+    private readonly ILogger<IdentifiedCommandHandler<T, R>> _logger;
 
-    public IdentifiedCommandHandler(IMediator mediator,
-                                    IRequestManager requestManager)
+    public IdentifiedCommandHandler(
+        IMediator mediator,
+        IRequestManager requestManager,
+        ILogger<IdentifiedCommandHandler<T, R>> logger)
     {
         _mediator = mediator;
         _requestManager = requestManager;
+        _logger = logger ?? throw new System.ArgumentNullException(nameof(logger));
     }
 
+    /// <summary>
+    /// Creates the result value to return if a previous request was found
+    /// </summary>
+    /// <returns></returns>
     protected virtual R CreateResultForDuplicateRequest()
     {
         return default(R);
     }
 
-    public async Task<R> Handle(IdentifiedCommand<T, R> message)
+    /// <summary>
+    /// This method handles the command. It just ensures that no other request exists with the same ID, and if this is the case
+    /// just enqueues the original inner command.
+    /// </summary>
+    /// <param name="message">IdentifiedCommand which contains both original command & request ID</param>
+    /// <returns>Return value of inner command or default value if request same ID was found</returns>
+    public async Task<R> Handle(IdentifiedCommand<T, R> message, CancellationToken cancellationToken)
     {
         var alreadyExists = await _requestManager.ExistAsync(message.Id);
         if (alreadyExists)
@@ -579,12 +626,60 @@ public class IdentifiedCommandHandler<T, R> :
         else
         {
             await _requestManager.CreateRequestForCommandAsync<T>(message.Id);
+            try
+            {
+                var command = message.Command;
+                var commandName = command.GetGenericTypeName();
+                var idProperty = string.Empty;
+                var commandId = string.Empty;
 
-            // Send the embedded business command to mediator
-            // so it runs its related CommandHandler
-            var result = await _mediator.Send(message.Command);
+                switch (command)
+                {
+                    case CreateOrderCommand createOrderCommand:
+                        idProperty = nameof(createOrderCommand.UserId);
+                        commandId = createOrderCommand.UserId;
+                        break;
 
-            return result;
+                    case CancelOrderCommand cancelOrderCommand:
+                        idProperty = nameof(cancelOrderCommand.OrderNumber);
+                        commandId = $"{cancelOrderCommand.OrderNumber}";
+                        break;
+
+                    case ShipOrderCommand shipOrderCommand:
+                        idProperty = nameof(shipOrderCommand.OrderNumber);
+                        commandId = $"{shipOrderCommand.OrderNumber}";
+                        break;
+
+                    default:
+                        idProperty = "Id?";
+                        commandId = "n/a";
+                        break;
+                }
+
+                _logger.LogInformation(
+                    "----- Sending command: {CommandName} - {IdProperty}: {CommandId} ({@Command})",
+                    commandName,
+                    idProperty,
+                    commandId,
+                    command);
+
+                // Send the embeded business command to mediator so it runs its related CommandHandler
+                var result = await _mediator.Send(command, cancellationToken);
+
+                _logger.LogInformation(
+                    "----- Command result: {@Result} - {CommandName} - {IdProperty}: {CommandId} ({@Command})",
+                    result,
+                    commandName,
+                    idProperty,
+                    commandId,
+                    command);
+
+                return result;
+            }
+            catch
+            {
+                return default(R);
+            }
         }
     }
 }
@@ -597,44 +692,52 @@ Při tomto postupu bude probíhat odkazování a spuštění obslužné rutiny o
 ```csharp
 // CreateOrderCommandHandler.cs
 public class CreateOrderCommandHandler
-                                   : IAsyncRequestHandler<CreateOrderCommand, bool>
+        : IRequestHandler<CreateOrderCommand, bool>
 {
     private readonly IOrderRepository _orderRepository;
     private readonly IIdentityService _identityService;
     private readonly IMediator _mediator;
+    private readonly IOrderingIntegrationEventService _orderingIntegrationEventService;
+    private readonly ILogger<CreateOrderCommandHandler> _logger;
 
     // Using DI to inject infrastructure persistence Repositories
     public CreateOrderCommandHandler(IMediator mediator,
-                                     IOrderRepository orderRepository,
-                                     IIdentityService identityService)
+        IOrderingIntegrationEventService orderingIntegrationEventService,
+        IOrderRepository orderRepository,
+        IIdentityService identityService,
+        ILogger<CreateOrderCommandHandler> logger)
     {
-        _orderRepository = orderRepository ??
-                          throw new ArgumentNullException(nameof(orderRepository));
-        _identityService = identityService ??
-                          throw new ArgumentNullException(nameof(identityService));
-        _mediator = mediator ??
-                                 throw new ArgumentNullException(nameof(mediator));
+        _orderRepository = orderRepository ?? throw new ArgumentNullException(nameof(orderRepository));
+        _identityService = identityService ?? throw new ArgumentNullException(nameof(identityService));
+        _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
+        _orderingIntegrationEventService = orderingIntegrationEventService ?? throw new ArgumentNullException(nameof(orderingIntegrationEventService));
+        _logger = logger ?? throw new ArgumentNullException(nameof(logger));
     }
 
-    public async Task<bool> Handle(CreateOrderCommand message)
+    public async Task<bool> Handle(CreateOrderCommand message, CancellationToken cancellationToken)
     {
+        // Add Integration event to clean the basket
+        var orderStartedIntegrationEvent = new OrderStartedIntegrationEvent(message.UserId);
+        await _orderingIntegrationEventService.AddAndSaveEventAsync(orderStartedIntegrationEvent);
+
         // Add/Update the Buyer AggregateRoot
-        var address = new Address(message.Street, message.City, message.State,
-                                  message.Country, message.ZipCode);
-        var order = new Order(message.UserId, address, message.CardTypeId,
-                              message.CardNumber, message.CardSecurityNumber,
-                              message.CardHolderName, message.CardExpiration);
+        // DDD patterns comment: Add child entities and value-objects through the Order Aggregate-Root
+        // methods and constructor so validations, invariants and business logic
+        // make sure that consistency is preserved across the whole aggregate
+        var address = new Address(message.Street, message.City, message.State, message.Country, message.ZipCode);
+        var order = new Order(message.UserId, message.UserName, address, message.CardTypeId, message.CardNumber, message.CardSecurityNumber, message.CardHolderName, message.CardExpiration);
 
         foreach (var item in message.OrderItems)
         {
-            order.AddOrderItem(item.ProductId, item.ProductName, item.UnitPrice,
-                               item.Discount, item.PictureUrl, item.Units);
+            order.AddOrderItem(item.ProductId, item.ProductName, item.UnitPrice, item.Discount, item.PictureUrl, item.Units);
         }
+
+        _logger.LogInformation("----- Creating Order - Order: {@Order}", order);
 
         _orderRepository.Add(order);
 
         return await _orderRepository.UnitOfWork
-            .SaveEntitiesAsync();
+            .SaveEntitiesAsync(cancellationToken);
     }
 }
 ```
@@ -653,11 +756,10 @@ public class MediatorModule : Autofac.Module
         builder.RegisterAssemblyTypes(typeof(IMediator).GetTypeInfo().Assembly)
             .AsImplementedInterfaces();
 
-        // Register all the Command classes (they implement IAsyncRequestHandler)
+        // Register all the Command classes (they implement IRequestHandler)
         // in assembly holding the Commands
-        builder.RegisterAssemblyTypes(
-                              typeof(CreateOrderCommand).GetTypeInfo().Assembly).
-                                   AsClosedTypesOf(typeof(IAsyncRequestHandler<,>));
+        builder.RegisterAssemblyTypes(typeof(CreateOrderCommand).GetTypeInfo().Assembly)
+                .AsClosedTypesOf(typeof(IRequestHandler<,>));
         // Other types registration
         //...
     }
@@ -666,11 +768,11 @@ public class MediatorModule : Autofac.Module
 
 V takovém případě se s MediatR stane "Magic".
 
-Vzhledem k tomu, že každá obslužná rutina příkazu implementuje obecné `IAsyncRequestHandler<T>` rozhraní při registraci sestavení, registruje kód se `RegisteredAssemblyTypes` všemi typy označenými jako `IAsyncRequestHandler` `CommandHandlers` v souvislosti s jejich s `Commands` , díky vztahu uvedenému ve `CommandHandler` třídě, jako v následujícím příkladu:
+Jelikož obslužná rutina příkazu implementuje obecné `IRequestHandler<T>` rozhraní, při registraci sestavení pomocí `RegisteredAssemblyTypes` metody všechny typy označené jako `IRequestHandler` také jsou zaregistrovány spolu s jejich `Commands` . Například:
 
 ```csharp
 public class CreateOrderCommandHandler
-  : IAsyncRequestHandler<CreateOrderCommand, bool>
+  : IRequestHandler<CreateOrderCommand, bool>
 {
 ```
 
@@ -688,11 +790,11 @@ public class MediatorModule : Autofac.Module
         builder.RegisterAssemblyTypes(typeof(IMediator).GetTypeInfo().Assembly)
             .AsImplementedInterfaces();
 
-        // Register all the Command classes (they implement IAsyncRequestHandler)
+        // Register all the Command classes (they implement IRequestHandler)
         // in assembly holding the Commands
         builder.RegisterAssemblyTypes(
                               typeof(CreateOrderCommand).GetTypeInfo().Assembly).
-                                   AsClosedTypesOf(typeof(IAsyncRequestHandler<,>));
+                                   AsClosedTypesOf(typeof(IRequestHandler<,>));
         // Other types registration
         //...
         builder.RegisterGeneric(typeof(LoggingBehavior<,>)).
@@ -758,9 +860,9 @@ public class ValidatorBehavior<TRequest, TResponse>
 }
 ```
 
-Chování vyvolalo výjimku, pokud se ověření nepovede, ale můžete také vrátit výsledný objekt, který obsahuje výsledek příkazu, pokud byl úspěšný, nebo ověřovací zprávy v případě, že nedošlo k chybě. To by pravděpodobně bylo snazší zobrazit výsledky ověřování uživateli.
+Zde chování vyvolává výjimku, pokud se ověření nepovede, ale můžete také vrátit výsledný objekt, který obsahuje výsledek příkazu, pokud byl úspěšný, nebo ověřovací zprávy v případě, že nedošlo k chybě. To by pravděpodobně bylo snazší zobrazit výsledky ověřování uživateli.
 
-V závislosti na knihovně [FluentValidation](https://github.com/JeremySkinner/FluentValidation) jsme vytvořili ověřování pro data předaná pomocí CreateOrderCommand, jak je uvedeno v následujícím kódu:
+Pak na základě knihovny [FluentValidation](https://github.com/JeremySkinner/FluentValidation) vytvoříte ověření pro data předaná pomocí CreateOrderCommand, jak je uvedeno v následujícím kódu:
 
 ```csharp
 public class CreateOrderCommandValidator : AbstractValidator<CreateOrderCommand>
@@ -811,7 +913,7 @@ Podobným způsobem můžete implementovat jiné chování pro další aspekty n
 
 ##### <a name="mediatr-jimmy-bogard"></a>MediatR (Jimmy Bogard)
 
-- **MediatR.** úložiště GitHub. \
+- **MediatR.** Úložiště GitHub. \
   <https://github.com/jbogard/MediatR>
 
 - **CQRS s MediatR a automapper** \
@@ -837,7 +939,7 @@ Podobným způsobem můžete implementovat jiné chování pro další aspekty n
 
 ##### <a name="fluent-validation"></a>Ověření Fluent
 
-- **Jeremy Skinner. FluentValidation.** úložiště GitHub. \
+- **Jeremy Skinner. FluentValidation.** Úložiště GitHub. \
   <https://github.com/JeremySkinner/FluentValidation>
 
 > [!div class="step-by-step"]

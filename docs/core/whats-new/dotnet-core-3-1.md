@@ -6,12 +6,12 @@ dev_langs:
 author: adegeo
 ms.author: adegeo
 ms.date: 12/04/2019
-ms.openlocfilehash: 2373b21e92c6ca68aac33684a9bd0912a2e642b3
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: 42d4f7e8800bf2d13d584084f8a41bad2ada534f
+ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85324272"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88608128"
 ---
 # <a name="whats-new-in-net-core-31"></a>Co je nového v .NET Core 3.1
 
@@ -29,7 +29,7 @@ Další informace o této verzi najdete v tématu [oznámení .NET Core 3,1](htt
 
 .NET Core 3,1 je LTS verze s podporou Microsoftu pro následující tři roky. Důrazně doporučujeme přesunout své aplikace do .NET Core 3,1. Aktuální životní cyklus dalších hlavních vydání je následující:
 
-| Vydaná verze | Poznámka |
+| Vydat | Poznámka |
 | ------- | ---- |
 | .NET Core 3.0 | Konec životnosti 3. března 2020.     |
 | .NET Core 2.2 | Konec životnosti 23. prosince 2019. |
@@ -45,7 +45,7 @@ Od notarized .NET Core SDK 3,1 pro macOS je nastavení appHost ve výchozím nas
 
 Když je povolené nastavení appHost, .NET Core při sestavování nebo publikování generuje nativní spustitelný soubor strojového souboru. Vaše aplikace běží v kontextu appHost při spuštění ze zdrojového kódu pomocí `dotnet run` příkazu nebo spuštěním spustitelného souboru stroj-O přímo.
 
-Bez appHost je jediným způsobem, jak může uživatel spustit aplikaci [závislou na modulu runtime](../deploying/index.md#publish-runtime-dependent) , použití `dotnet <filename.dll>` příkazu. AppHost se vždy vytvoří při publikování [vlastní](../deploying/index.md#publish-self-contained)aplikace.
+Bez appHost je jediným způsobem, jak může uživatel spustit aplikaci [závislou na rozhraní](../deploying/index.md#publish-framework-dependent) , používat `dotnet <filename.dll>` příkaz. AppHost se vždy vytvoří při publikování [vlastní](../deploying/index.md#publish-self-contained)aplikace.
 
 Můžete buď nakonfigurovat appHost na úrovni projektu, nebo přepnout appHost pro konkrétní `dotnet` příkaz s `-p:UseAppHost` parametrem:
 

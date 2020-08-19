@@ -4,12 +4,12 @@ description: Přečtěte si, jak rozhraní .NET Core automaticky najde a zvolí 
 author: adegeo
 ms.author: adegeo
 ms.date: 03/24/2020
-ms.openlocfilehash: faaa638905bb3c8e9cd4c09af83979d90698df3d
-ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
+ms.openlocfilehash: 82b5522601b0ed5d3f4faf6e6c6c970ba285b11f
+ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85803115"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88608195"
 ---
 # <a name="select-the-net-core-version-to-use"></a>Vyberte verzi .NET Core, kterou chcete použít.
 
@@ -38,7 +38,7 @@ Můžete využít výhod nejnovějších funkcí sady SDK a vylepšení při zam
 
 Ve výjimečných případech možná budete muset použít starší verzi sady SDK. Tuto verzi zadáte v [ *global.js* souboru](../tools/global-json.md). Zásada použít nejnovější znamená, že k určení .NET Core SDK verze starší než nejnovější nainstalovaná verze používáte jenom *global.js* .
 
-*global.jsna* může být umístěn kdekoli v hierarchii souborů. Rozhraní příkazového řádku vyhledá u prvního *global.js* směrem nahoru z adresáře projektu. Můžete řídit, které projekty, *na kterýchglobal.jsna* platit, na základě jejího umístění v systému souborů. Rozhraní .NET CLI vyhledává *global.jsv* souboru iterativním procházením cesty směrem nahoru od aktuálního pracovního adresáře. Prvníglobal.jsnalezené *v* souboru určuje použitou verzi. Pokud je nainstalována tato verze sady SDK, je použita tato verze. Pokud sada SDK zadaná v *global.js* není nalezena, rozhraní .NET CLI používá pro výběr kompatibilní sady SDK [pravidla pro porovnání](../tools/global-json.md#matching-rules) , nebo se nepovede, pokud se nenajde žádná.
+*global.jsna* může být umístěn kdekoli v hierarchii souborů. Rozhraní příkazového řádku vyhledá u prvního *global.js* směrem nahoru z adresáře projektu. Můžete řídit, které projekty, * na kterýchglobal.jsna* platit, na základě jejího umístění v systému souborů. Rozhraní .NET CLI vyhledává *global.jsv* souboru iterativním procházením cesty směrem nahoru od aktuálního pracovního adresáře. Prvníglobal.jsnalezené * v* souboru určuje použitou verzi. Pokud je nainstalována tato verze sady SDK, je použita tato verze. Pokud sada SDK zadaná v *global.js* není nalezena, rozhraní .NET CLI používá pro výběr kompatibilní sady SDK [pravidla pro porovnání](../tools/global-json.md#matching-rules) , nebo se nepovede, pokud se nenajde žádná.
 
 Následující příklad ukazuje *global.js* syntaxe:
 
@@ -52,9 +52,9 @@ Následující příklad ukazuje *global.js* syntaxe:
 
 Postup pro výběr verze sady SDK:
 
-1. `dotnet`vyhledává *global.jsv* souboru iterativním zpětným procházením cesty směrem nahoru od aktuálního pracovního adresáře.
-1. `dotnet`používá sadu SDK určenou v prvním *global.js* , kterou najdete.
-1. `dotnet`Pokud se nenajde žádná *global.js* , použije se nejnovější nainstalovaná sada SDK.
+1. `dotnet` vyhledává *global.jsv* souboru iterativním zpětným procházením cesty směrem nahoru od aktuálního pracovního adresáře.
+1. `dotnet` používá sadu SDK určenou v prvním *global.js* , kterou najdete.
+1. `dotnet` Pokud se nenajde žádná *global.js* , použije se nejnovější nainstalovaná sada SDK.
 
 Další informace o výběru verze sady SDK najdete v části [pravidla pro hledání](../tools/global-json.md#matching-rules) v článku o *global.js*.
 
@@ -78,7 +78,7 @@ Daná sada SDK podporuje pevnou sadu rozhraní omezené do cílové architektury
 
 ## <a name="framework-dependent-apps-roll-forward"></a>Aplikace závislé na architektuře – předávají změny
 
-Spouštíte-li aplikaci ze zdroje s nástrojem, [`dotnet run`](../tools/dotnet-run.md) z [**nasazení závislého**](../deploying/index.md#publish-runtime-dependent) na rozhraní s nástrojem [`dotnet myapp.dll`](../tools/dotnet.md#description) nebo z [**spustitelného souboru závislého na rozhraní**](../deploying/index.md#publish-runtime-dependent) `myapp.exe` , `dotnet` je spustitelný soubor **hostitelem** aplikace.
+Spouštíte-li aplikaci ze zdroje s nástrojem, [`dotnet run`](../tools/dotnet-run.md) z [**nasazení závislého**](../deploying/index.md#publish-framework-dependent) na rozhraní s nástrojem [`dotnet myapp.dll`](../tools/dotnet.md#description) nebo z [**spustitelného souboru závislého na rozhraní**](../deploying/index.md#publish-framework-dependent) `myapp.exe` , `dotnet` je spustitelný soubor **hostitelem** aplikace.
 
 Hostitel zvolí nejnovější verzi opravy nainstalovanou v počítači. Například pokud jste zadali `netcoreapp3.0` v souboru projektu a `3.0.2` je nainstalován nejnovější modul runtime .NET, `3.0.2` je použit modul runtime.
 
@@ -87,9 +87,9 @@ Pokud `3.0.*` se nenajde žádná přijatelná verze, `3.*` použije se nová ve
 Několik příkladů použití ukazuje chování, pokud cílíte na 3,0:
 
 - je určena ✔️ 3,0. 3.0.3 je nejvyšší nainstalovaná verze opravy. 3.0.3 se používá.
-- ❌je zadáno 3,0. Nejsou nainstalovány žádné 3,0. * verzí. 2.1.1 je nejvyšší instalovaný modul runtime. Zobrazí se chybová zpráva.
+- ❌ je zadáno 3,0. Nejsou nainstalovány žádné 3,0. * verzí. 2.1.1 je nejvyšší instalovaný modul runtime. Zobrazí se chybová zpráva.
 - je určena ✔️ 3,0. Nejsou nainstalovány žádné 3,0. * verzí. 3.1.0 je nejvyšší nainstalovaná verze modulu runtime. 3.1.0 se používá.
-- ❌je zadáno 2,0. Nejsou nainstalovány žádné 2. verze x. 3.0.0 je nejvyšší instalovaný modul runtime. Zobrazí se chybová zpráva.
+- ❌ je zadáno 2,0. Nejsou nainstalovány žádné 2. verze x. 3.0.0 je nejvyšší instalovaný modul runtime. Zobrazí se chybová zpráva.
 
 Dílčí verze s přesměrováním obsahuje jeden vedlejší dopad, který může mít vliv na koncové uživatele. Představte si následující scénář:
 
@@ -105,7 +105,7 @@ Aplikaci můžete publikovat jako [**samostatně uzavřenou distribuci**](../dep
 
 Proces publikování vybere nejnovější verzi opravy dané rodiny modulu runtime. Například `dotnet publish` vybere .NET Core 3.0.3, pokud se jedná o nejnovější verzi opravy v rodině runtime .NET Core 3,0. Cílová architektura (včetně nejnovějších nainstalovaných oprav zabezpečení) je zabalená spolu s aplikací.
 
-Jedná se o chybu, pokud není splněna minimální verze určená pro aplikaci. `dotnet publish`váže se k nejnovější verzi opravy modulu runtime (v rámci dané hlavní skupiny. podverze). `dotnet publish`nepodporují sémantiku předávaného při přeposílání `dotnet run` . Další informace o opravách a samostatných nasazeních najdete v článku o [výběru oprav pro modul runtime](../deploying/runtime-patch-selection.md) v tématu nasazení aplikací .NET Core.
+Jedná se o chybu, pokud není splněna minimální verze určená pro aplikaci. `dotnet publish` váže se k nejnovější verzi opravy modulu runtime (v rámci dané hlavní skupiny. podverze). `dotnet publish` nepodporují sémantiku předávaného při přeposílání `dotnet run` . Další informace o opravách a samostatných nasazeních najdete v článku o [výběru oprav pro modul runtime](../deploying/runtime-patch-selection.md) v tématu nasazení aplikací .NET Core.
 
 Samostatně obsažená nasazení mohou vyžadovat konkrétní verzi opravy. Můžete přepsat minimální verzi opravy modulu runtime (na vyšší nebo nižší verze) v souboru projektu, jak je znázorněno v následujícím příkladu:
 
@@ -115,7 +115,7 @@ Samostatně obsažená nasazení mohou vyžadovat konkrétní verzi opravy. Mů�
 
 `RuntimeFrameworkVersion`Element přepíše výchozí zásadu verze. Pro samostatně obsažená nasazení `RuntimeFrameworkVersion` určuje aplikace *přesnou* verzi rozhraní Runtime. U aplikací závislých na rozhraní `RuntimeFrameworkVersion` Určuje *minimální* požadovanou verzi rozhraní Runtime.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Stáhněte a nainstalujte .NET Core](../install/index.yml).
 - [Jak odebrat modul runtime .NET Core a sadu SDK](../install/remove-runtime-sdk-versions.md).

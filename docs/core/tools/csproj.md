@@ -3,12 +3,12 @@ title: Přidání do formátu csproj pro .NET Core
 description: Přečtěte si o rozdílech mezi existujícími a soubory .NET Core csproj.
 ms.topic: reference
 ms.date: 04/08/2019
-ms.openlocfilehash: 4f45362fbb3df053b95156b8e633903f011a85ad
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 82174b2976abda2337a4a9b5a5a5e1f60a1094fb
+ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88062870"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88608335"
 ---
 # <a name="additions-to-the-csproj-format-for-net-core"></a>Přidání do formátu csproj pro .NET Core
 
@@ -16,7 +16,7 @@ Tento dokument popisuje změny, které byly přidány do souborů projektu jako 
 
 ## <a name="implicit-package-references"></a>Odkazy na implicitní balíčky
 
-Na metabalíčky se implicitně odkazuje na základě cílových rozhraní, která jsou určená v `<TargetFramework>` vlastnosti nebo `<TargetFrameworks>` souboru projektu. `<TargetFrameworks>`se ignoruje `<TargetFramework>` , pokud je zadaný, nezávisle na pořadí.
+Na metabalíčky se implicitně odkazuje na základě cílových rozhraní, která jsou určená v `<TargetFramework>` vlastnosti nebo `<TargetFrameworks>` souboru projektu. `<TargetFrameworks>` se ignoruje `<TargetFramework>` , pokud je zadaný, nezávisle na pořadí.
 
 ```xml
  <PropertyGroup>
@@ -56,7 +56,7 @@ Při odkazování na `Microsoft.AspNetCore.App` balíčky nebo nezadávejte `Mic
 
 > Známý problém: sada .NET Core 2,1 SDK podporuje pouze tuto syntaxi pouze v případě, že projekt používá také Microsoft. NET. SDK. Web. To je vyřešeno v sadě .NET Core 2,2 SDK.
 
-Tyto odkazy na ASP.NET Core metabalíčky mají mírně odlišné chování z většiny běžných balíčků NuGet. [Nasazení aplikací závislých na rozhraních](../deploying/index.md#publish-runtime-dependent) , která používají tyto metabalíčky, automaticky využívají ASP.NET Core sdílené rozhraní. Při použití metabalíčky se s aplikací nasadí **žádné** prostředky z odkazovaného ASP.NET Core balíčků NuGet – ASP.NET Core sdílené rozhraní obsahuje tyto prostředky. Prostředky ve sdíleném rozhraní jsou optimalizované pro cílovou platformu pro zlepšení času spuštění aplikace. Další informace o sdílených rozhraních naleznete v tématu [distribuční balíček .NET Core](../distribution-packaging.md).
+Tyto odkazy na ASP.NET Core metabalíčky mají mírně odlišné chování z většiny běžných balíčků NuGet. [Nasazení aplikací závislých na rozhraních](../deploying/index.md#publish-framework-dependent) , která používají tyto metabalíčky, automaticky využívají ASP.NET Core sdílené rozhraní. Při použití metabalíčky se s aplikací nasadí **žádné** prostředky z odkazovaného ASP.NET Core balíčků NuGet – ASP.NET Core sdílené rozhraní obsahuje tyto prostředky. Prostředky ve sdíleném rozhraní jsou optimalizované pro cílovou platformu pro zlepšení času spuštění aplikace. Další informace o sdílených rozhraních naleznete v tématu [distribuční balíček .NET Core](../distribution-packaging.md).
 
 *Je* -li zadána verze, je zpracována jako *minimální* verze ASP.NET Core sdílené architektury pro nasazení závislá na rozhraních a jako *Přesná* verze pro samostatně nasazená nasazení. To může mít následující důsledky:
 
@@ -96,7 +96,7 @@ Nastavením této vlastnosti na `false` zakážete implicitní zahrnutí a vrát
 
 Tato změna neupravuje hlavní mechanismy ostatních zahrnutí. Nicméně pokud chcete určit, například některé soubory, které mají být publikovány s vaší aplikací, můžete stále používat známé mechanismy v souboru *csproj* pro tento prvek (například `<Content>` element).
 
-`<EnableDefaultCompileItems>`zakáže jenom `Compile` globy, ale neovlivní jiné globy, jako je implicitní `None` glob, které platí i pro \* položky. cs. Z tohoto důvodu **Průzkumník řešení** nadále zobrazovat \* položky cs jako součást projektu zahrnuté jako `None` položky. Podobným způsobem můžete nastavit `<EnableDefaultNoneItems>` na hodnotu false, chcete-li zakázat implicitní `None` glob, například:
+`<EnableDefaultCompileItems>` zakáže jenom `Compile` globy, ale neovlivní jiné globy, jako je implicitní `None` glob, které platí i pro \* položky. cs. Z tohoto důvodu **Průzkumník řešení** nadále zobrazovat \* položky cs jako součást projektu zahrnuté jako `None` položky. Podobným způsobem můžete nastavit `<EnableDefaultNoneItems>` na hodnotu false, chcete-li zakázat implicitní `None` glob, například:
 
 ```xml
 <PropertyGroup>
@@ -126,11 +126,11 @@ Pokud má projekt více cílových rozhraní, výsledky příkazu by měly být 
 
 ### <a name="sdk-attribute"></a>Atribut sady SDK
 
-Kořenový `<Project>` element souboru *. csproj* má nový atribut s názvem `Sdk` . `Sdk`Určuje sadu SDK, kterou bude projekt používat. Sada SDK, jak popisuje [dokument vrstvení](cli-msbuild-architecture.md) , je sada [úloh](/visualstudio/msbuild/msbuild-tasks) a [cílů](/visualstudio/msbuild/msbuild-targets) nástroje MSBuild, které mohou sestavovat kód .NET Core. Pro .NET Core jsou k dispozici následující sady SDK:
+Kořenový `<Project>` element souboru *. csproj* má nový atribut s názvem `Sdk` . `Sdk` Určuje sadu SDK, kterou bude projekt používat. Sada SDK, jak popisuje [dokument vrstvení](cli-msbuild-architecture.md) , je sada [úloh](/visualstudio/msbuild/msbuild-tasks) a [cílů](/visualstudio/msbuild/msbuild-targets) nástroje MSBuild, které mohou sestavovat kód .NET Core. Pro .NET Core jsou k dispozici následující sady SDK:
 
-1. .NET Core SDK s ID`Microsoft.NET.Sdk`
-2. Sada Web SDK .NET Core s ID`Microsoft.NET.Sdk.Web`
-3. Sada SDK knihovny tříd .NET Core Razor s ID`Microsoft.NET.Sdk.Razor`
+1. .NET Core SDK s ID `Microsoft.NET.Sdk`
+2. Sada Web SDK .NET Core s ID `Microsoft.NET.Sdk.Web`
+3. Sada SDK knihovny tříd .NET Core Razor s ID `Microsoft.NET.Sdk.Razor`
 4. Služba pracovních procesů .NET Core s ID `Microsoft.NET.Sdk.Worker` (od .NET core 3,0)
 5. WinForms rozhraní .NET Core a WPF s ID `Microsoft.NET.Sdk.WindowsDesktop` (od .NET core 3,0)
 
@@ -150,28 +150,28 @@ Požadovaný `Version` atribut určuje verzi balíčku, který má být obnoven.
 
 #### <a name="includeassets-excludeassets-and-privateassets"></a>IncludeAssets, ExcludeAssets a PrivateAssets
 
-`IncludeAssets`atribut určuje, které prostředky patřící k balíčku určenému parametr `<PackageReference>` by měly být spotřebovány. Ve výchozím nastavení jsou zahrnuty všechny prostředky balíčku.
+`IncludeAssets` atribut určuje, které prostředky patřící k balíčku určenému parametr `<PackageReference>` by měly být spotřebovány. Ve výchozím nastavení jsou zahrnuty všechny prostředky balíčku.
 
-`ExcludeAssets`atribut určuje, které prostředky patřící do balíčku určeného `<PackageReference>` by neměly být spotřebovány.
+`ExcludeAssets` atribut určuje, které prostředky patřící do balíčku určeného `<PackageReference>` by neměly být spotřebovány.
 
-`PrivateAssets`atribut určuje, které prostředky patřící do balíčku určeného `<PackageReference>` by měly být spotřebovány, ale nikoli do dalšího projektu. V `Analyzers` případě, že `Build` `ContentFiles` Tento atribut není k dispozici, jsou prostředky a majetky soukromé ve výchozím nastavení.
+`PrivateAssets` atribut určuje, které prostředky patřící do balíčku určeného `<PackageReference>` by měly být spotřebovány, ale nikoli do dalšího projektu. V `Analyzers` případě, že `Build` `ContentFiles` Tento atribut není k dispozici, jsou prostředky a majetky soukromé ve výchozím nastavení.
 
 > [!NOTE]
 > `PrivateAssets`je ekvivalentní *project.js* / elementu*xproj* `SuppressParent` .
 
 Tyto atributy mohou obsahovat jednu nebo více z následujících položek oddělených středníkem, `;` Pokud je uvedena více než jedna:
 
-- `Compile`– obsah složky *lib* je k dispozici pro zkompilování.
-- `Runtime`– obsah *běhové* složky se distribuuje.
-- `ContentFiles`– používá se obsah složky *contentFiles* .
-- `Build`– jsou použity props/targets ve složce *sestavení* .
-- `Native`– obsah z nativních assetů se zkopíruje do *výstupní* složky pro modul runtime.
-- `Analyzers`– Analyzátory se používají.
+- `Compile` – obsah složky *lib* je k dispozici pro zkompilování.
+- `Runtime` – obsah *běhové* složky se distribuuje.
+- `ContentFiles` – používá se obsah složky *contentFiles* .
+- `Build` – jsou použity props/targets ve složce *sestavení* .
+- `Native` – obsah z nativních assetů se zkopíruje do *výstupní* složky pro modul runtime.
+- `Analyzers` – Analyzátory se používají.
 
 Atribut může případně obsahovat:
 
-- `None`– žádný z prostředků se nepoužívá.
-- `All`– používají se všechny prostředky.
+- `None` – žádný z prostředků se nepoužívá.
+- `All` – používají se všechny prostředky.
 
 ### <a name="dotnetclitoolreference"></a>DotNetCliToolReference
 
@@ -185,7 +185,7 @@ Všimněte si, že `DotNetCliToolReference` se [teď zastaralá](https://github.
 
 #### <a name="version"></a>Verze
 
-`Version`Určuje verzi balíčku, který se má obnovit. Atribut respektuje pravidla schématu [správy verzí NuGet](/nuget/create-packages/dependency-versions#version-ranges) . Výchozí chování je minimální verze (včetně shody). Zadání `Version="1.2.3"` je například ekvivalentní zápisu NuGet `[1.2.3, )` a znamená, že vyřešený balíček bude mít verzi 1.2.3, je-li k dispozici nebo více než jinak.
+`Version` Určuje verzi balíčku, který se má obnovit. Atribut respektuje pravidla schématu [správy verzí NuGet](/nuget/create-packages/dependency-versions#version-ranges) . Výchozí chování je minimální verze (včetně shody). Zadání `Version="1.2.3"` je například ekvivalentní zápisu NuGet `[1.2.3, )` a znamená, že vyřešený balíček bude mít verzi 1.2.3, je-li k dispozici nebo více než jinak.
 
 ### <a name="runtimeidentifiers"></a>RuntimeIdentifiers
 
@@ -204,7 +204,7 @@ Identifikátorů RID umožňuje publikování samostatně obsažených nasazení
 <RuntimeIdentifier>ubuntu.16.04-x64</RuntimeIdentifier>
 ```
 
-Použijte `<RuntimeIdentifiers>` (plural) místo toho, pokud potřebujete publikovat pro více modulů runtime. `<RuntimeIdentifier>`může poskytovat rychlejší sestavení, je-li vyžadován pouze jeden modul runtime.
+Použijte `<RuntimeIdentifiers>` (plural) místo toho, pokud potřebujete publikovat pro více modulů runtime. `<RuntimeIdentifier>` může poskytovat rychlejší sestavení, je-li vyžadován pouze jeden modul runtime.
 
 ### <a name="packagetargetfallback"></a>PackageTargetFallback
 
@@ -267,7 +267,7 @@ Určuje verzi, kterou výsledný balíček bude mít. Akceptuje všechny formy �
 
 Určuje název výsledného balíčku. Pokud tento parametr nezadáte, použije se ve `pack` výchozím nastavení `AssemblyName` jako název balíčku název adresáře nebo.
 
-### <a name="title"></a>Nadpis
+### <a name="title"></a>Title
 
 Popisný název balíčku, který se obvykle používá v uživatelském rozhraní, se zobrazuje jako v nuget.org a správce balíčků v aplikaci Visual Studio. Pokud není zadaný, použije se místo toho ID balíčku.
 
@@ -385,7 +385,7 @@ Určuje typ úložiště. Výchozí hodnota je "git".
 Určuje název zdrojové větve v úložišti. Když je projekt zabalen do balíčku NuGet, přidá se do metadat balíčku.
 
 ### <a name="repositorycommit"></a>RepositoryCommit
-Volitelné potvrzení změn úložiště nebo sada změn, které označují, na který zdroj byl balíček vytvořen. `RepositoryUrl`musí být také zadáno pro zahrnutí této vlastnosti. Když je projekt zabalen v balíčku NuGet, toto potvrzení nebo sada změn se přidá do metadat balíčku.
+Volitelné potvrzení změn úložiště nebo sada změn, které označují, na který zdroj byl balíček vytvořen. `RepositoryUrl` musí být také zadáno pro zahrnutí této vlastnosti. Když je projekt zabalen v balíčku NuGet, toto potvrzení nebo sada změn se přidá do metadat balíčku.
 
 ### <a name="nopackageanalysis"></a>NoPackageAnalysis
 
@@ -450,10 +450,10 @@ Jak je znázorněno v následující tabulce, každý atribut má vlastnost, kte
 Poznámky:
 
 - `AssemblyVersion``FileVersion`ve výchozím nastavení je to, že se má přebírat hodnota `$(Version)` bez přípony. Například pokud `$(Version)` je `1.2.3-beta.4` , pak hodnota by byla `1.2.3` .
-- `InformationalVersion`Výchozí hodnota je `$(Version)` .
-- `InformationalVersion`má `$(SourceRevisionId)` připojení, pokud je vlastnost přítomna. Dá se zakázat pomocí `IncludeSourceRevisionInInformationalVersion` .
-- `Copyright`a `Description` vlastnosti se také používají pro metadata NuGet.
-- `Configuration`je sdílen se všemi procesy sestavení a nastavena prostřednictvím `--configuration` parametru `dotnet` příkazů.
+- `InformationalVersion` Výchozí hodnota je `$(Version)` .
+- `InformationalVersion` má `$(SourceRevisionId)` připojení, pokud je vlastnost přítomna. Dá se zakázat pomocí `IncludeSourceRevisionInInformationalVersion` .
+- `Copyright` a `Description` vlastnosti se také používají pro metadata NuGet.
+- `Configuration` je sdílen se všemi procesy sestavení a nastavena prostřednictvím `--configuration` parametru `dotnet` příkazů.
 
 ### <a name="generateassemblyinfo"></a>GenerateAssemblyInfo
 

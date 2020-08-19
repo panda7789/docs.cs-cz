@@ -4,12 +4,12 @@ description: Tento článek popisuje bezpečnostní rizika vyplývající z typu
 ms.date: 07/11/2020
 ms.author: levib
 author: GrabYourPitchforks
-ms.openlocfilehash: ac01fe78c9577563641a8b06a232ed614ed8520a
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: 2c76a81650e5b83677f6c4df64770bd1ef5f775e
+ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88558839"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88607933"
 ---
 # <a name="binaryformatter-security-guide"></a>Průvodce zabezpečením BinaryFormatter
 
@@ -22,7 +22,7 @@ Tento článek se týká následujících implementací rozhraní .NET:
 ## <a name="background"></a>Pozadí
 
 > [!WARNING]
-> <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>Typ je nebezpečný a nedoporučuje ***not*** se pro zpracování dat. Aplikace by se měly přestat používat `BinaryFormatter` co nejdříve, a to i v případě, že se domnívají, že data, která zpracovávají, budou důvěryhodná. `BinaryFormatter` je nezabezpečené, nelze nastavit jako zabezpečené.
+> <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>Typ je nebezpečný a nedoporučuje ***not*** se pro zpracování dat. Aplikace by se měly přestat používat `BinaryFormatter` co nejdříve, a to i v případě, že se domnívají, že data, která zpracovávají, budou důvěryhodná. `BinaryFormatter` je nezabezpečená a nelze ji nastavit jako zabezpečenou.
 
 Tento článek platí také pro následující typy:
 

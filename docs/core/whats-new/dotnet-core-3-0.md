@@ -6,12 +6,12 @@ dev_langs:
 author: adegeo
 ms.author: adegeo
 ms.date: 01/27/2020
-ms.openlocfilehash: 9f553e9af16be0891f208832c5daa444a1b736e2
-ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
+ms.openlocfilehash: bf712e88d96a5c2c80c3ff50283d44e9c7717abb
+ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/13/2020
-ms.locfileid: "86281508"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88608208"
 ---
 # <a name="whats-new-in-net-core-30"></a>Co je nového v .NET Core 3.0
 
@@ -54,7 +54,7 @@ Pokud používáte Visual Studio, budete potřebovat [Visual studio 2019](https:
 
 ### <a name="default-executables"></a>Výchozí spustitelné soubory
 
-.NET Core teď ve výchozím nastavení vytváří [spustitelné soubory závislé na modulu runtime](../deploying/index.md#publish-runtime-dependent) . Toto chování je nové u aplikací, které používají globálně nainstalovanou verzi .NET Core. Dříve mohli pouze [samostatně nasazená nasazení](../deploying/index.md#publish-self-contained) vyvolat spustitelný soubor.
+.NET Core teď ve výchozím nastavení vytváří [spustitelné soubory závislé na rozhraní](../deploying/index.md#publish-framework-dependent) . Toto chování je nové u aplikací, které používají globálně nainstalovanou verzi .NET Core. Dříve mohli pouze [samostatně nasazená nasazení](../deploying/index.md#publish-self-contained) vyvolat spustitelný soubor.
 
 Během `dotnet build` nebo se `dotnet publish` vytvoří spustitelný soubor (známý jako **appHost**), který odpovídá prostředí a platformě sady SDK, kterou používáte. Pomocí těchto spustitelných souborů můžete očekávat stejné věci jako jiné nativní spustitelné soubory, jako například:
 
@@ -69,7 +69,7 @@ Od notarized .NET Core SDK 3,0 pro macOS je nastavení pro vytvoření výchozí
 
 Když je povolené nastavení appHost, .NET Core při sestavování nebo publikování generuje nativní spustitelný soubor strojového souboru. Vaše aplikace běží v kontextu appHost při spuštění ze zdrojového kódu pomocí `dotnet run` příkazu nebo spuštěním spustitelného souboru stroj-O přímo.
 
-Bez appHost je jediným způsobem, jak může uživatel spustit aplikaci [závislou na modulu runtime](../deploying/index.md#publish-runtime-dependent) , použití `dotnet <filename.dll>` příkazu. AppHost se vždy vytvoří při publikování [vlastní](../deploying/index.md#publish-self-contained)aplikace.
+Bez appHost je jediným způsobem, jak může uživatel spustit aplikaci [závislou na rozhraní](../deploying/index.md#publish-framework-dependent) , používat `dotnet <filename.dll>` příkaz. AppHost se vždy vytvoří při publikování [vlastní](../deploying/index.md#publish-self-contained)aplikace.
 
 Můžete buď nakonfigurovat appHost na úrovni projektu, nebo přepnout appHost pro konkrétní `dotnet` příkaz s `-p:UseAppHost` parametrem:
 
@@ -212,10 +212,10 @@ Výjimky pro cílení na více platforem:
 
 .NET Core 3,0 zavádí funkci pro výslovný souhlas, která umožňuje aplikaci přejít na nejnovější hlavní verzi .NET Core. Kromě toho bylo přidáno nové nastavení, které řídí, jak se ve vaší aplikaci aplikuje posunutí. Dá se nakonfigurovat následujícími způsoby:
 
-- Vlastnost souboru projektu:`RollForward`
-- Vlastnost konfiguračního souboru run-time:`rollForward`
-- Proměnná prostředí:`DOTNET_ROLL_FORWARD`
-- Argument příkazového řádku:`--roll-forward`
+- Vlastnost souboru projektu: `RollForward`
+- Vlastnost konfiguračního souboru run-time: `rollForward`
+- Proměnná prostředí: `DOTNET_ROLL_FORWARD`
+- Argument příkazového řádku: `--roll-forward`
 
 Je nutné zadat jednu z následujících hodnot. Pokud je nastavení vynecháno, je výchozí hodnota **podverze** .
 
@@ -249,9 +249,9 @@ Existují některé operace, jako je propojování a publikování stránek Razo
 > [!WARNING]
 > Pokud jste si vyzkoušeli místní nástroje v rozhraní .NET Core 3,0 Preview 1, jako je třeba spuštění `dotnet tool restore` nebo `dotnet tool install` , odstraňte složku mezipaměti místních nástrojů. V opačném případě místní nástroje nebudou fungovat v novější verzi. Tato složka je umístěna v umístění:
 >
-> V macOS, Linux:`rm -r $HOME/.dotnet/toolResolverCache`
+> V macOS, Linux: `rm -r $HOME/.dotnet/toolResolverCache`
 >
-> Ve Windows:`rmdir /s %USERPROFILE%\.dotnet\toolResolverCache`
+> Ve Windows: `rmdir /s %USERPROFILE%\.dotnet\toolResolverCache`
 
 Místní nástroje spoléhají na název souboru manifestu `dotnet-tools.json` v aktuálním adresáři. Tento soubor manifestu definuje nástroje, které jsou k dispozici v této složce a níže. Můžete distribuovat soubor manifestu s vaším kódem, aby bylo zajištěno, že kdokoli, kdo spolupracuje s vaším kódem, může obnovit a použít stejné nástroje.
 
@@ -481,10 +481,10 @@ Mezi aktualizace pro analýzu a formátování patří:
 
 <xref:System.Math?displayProperty=nameWithType>Mezi nová rozhraní API patří:
 
-- <xref:System.Math.BitIncrement(System.Double)>ani<xref:System.Math.BitDecrement(System.Double)>\
+- <xref:System.Math.BitIncrement(System.Double)> ani <xref:System.Math.BitDecrement(System.Double)>\
 Odpovídá `nextUp` `nextDown` operacím IEEE a. Vrátí nejmenší číslo s plovoucí desetinnou čárkou, které porovná větší nebo menší než vstup (v uvedeném pořadí). Například `Math.BitIncrement(0.0)` vrátí `double.Epsilon` .
 
-- <xref:System.Math.MaxMagnitude(System.Double,System.Double)>ani<xref:System.Math.MinMagnitude(System.Double,System.Double)>\
+- <xref:System.Math.MaxMagnitude(System.Double,System.Double)> ani <xref:System.Math.MinMagnitude(System.Double,System.Double)>\
 Odpovídá `maxNumMag` `minNumMag` operacím IEEE a, vrací hodnotu, která je větší nebo menší v rozsahu dvou vstupů (v uvedeném pořadí). Například `Math.MaxMagnitude(2.0, -3.0)` vrátí `-3.0` .
 
 - <xref:System.Math.ILogB(System.Double)>\
@@ -539,7 +539,7 @@ System.Console.WriteLine($"RuntimeInformation.FrameworkDescription: {System.Runt
 
 ### <a name="fast-built-in-json-support"></a>Rychlá integrovaná podpora JSON
 
-Uživatelé rozhraní .NET mají z velké části [Newtonsoft.Jsna](https://www.newtonsoft.com/json) a dalších oblíbených knihovnách JSON, které budou mít i nadále dobré možnosti. `Newtonsoft.Json`používá řetězce .NET jako základní datový typ, který je v digestoři UTF-16.
+Uživatelé rozhraní .NET mají z velké části [Newtonsoft.Jsna](https://www.newtonsoft.com/json) a dalších oblíbených knihovnách JSON, které budou mít i nadále dobré možnosti. `Newtonsoft.Json` používá řetězce .NET jako základní datový typ, který je v digestoři UTF-16.
 
 Nová integrovaná podpora JSON je vysoce výkonná, nízká alokace a funguje s textem JSON kódovaným ve formátu UTF-8. Další informace o <xref:System.Text.Json> oboru názvů a typech naleznete v následujících článcích:
 

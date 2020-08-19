@@ -2,18 +2,18 @@
 title: dotnet publish – příkaz
 description: Příkaz dotnet publish publikuje projekt nebo řešení .NET Core do adresáře.
 ms.date: 02/24/2020
-ms.openlocfilehash: 4ff49452e4d941b3e06ad511507b1dc429ab459f
-ms.sourcegitcommit: d337df55f83325918cbbd095eb573400bea49064
+ms.openlocfilehash: 64a68c97e01bbf962616b31210889eb23d3734f1
+ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88187969"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88608286"
 ---
 # <a name="dotnet-publish"></a>dotnet publish
 
 **Tento článek se týká:** ✔️ .net Core 2,1 SDK a novějších verzí
 
-## <a name="name"></a>Název
+## <a name="name"></a>Name
 
 `dotnet publish` -Publikuje aplikaci a její závislosti do složky pro nasazení do hostitelského systému.
 
@@ -53,7 +53,7 @@ dotnet publish -h|--help
 
 `dotnet publish`Příkaz přijímá možnosti nástroje MSBuild, jako je například `-p` pro nastavení vlastností a `-l` k definování protokolovacího nástroje. Můžete například nastavit vlastnost MSBuild pomocí formátu: `-p:<NAME>=<VALUE>` .
 
-Vlastnosti související s publikováním můžete také nastavit tak, že odkazujete na soubor *. pubxml* (k dispozici od verze .net Core 3,1 SDK). Například:
+Vlastnosti související s publikováním můžete také nastavit tak, že odkazujete na soubor *. pubxml* (k dispozici od verze .net Core 3,1 SDK). Příklad:
 
 ```dotnetcli
 dotnet publish -p:PublishProfile=FolderProfile
@@ -123,7 +123,7 @@ Další informace naleznete v následujících zdrojích:
 
   Určuje cestu k výstupnímu adresáři.
   
-  Pokud není zadaný, použije se výchozí hodnota *[project_file_folder]./bin/[Configuration]/[Framework]/Publish/* pro spustitelný soubor závislý na modulu runtime a binární soubory pro více platforem. Pro samostatně uložený spustitelný soubor má výchozí nastavení *[project_file_folder]/bin/[Configuration]/[Framework]/[runtime]/Publish/* .
+  Pokud není zadaný, použije se výchozí hodnota *[project_file_folder]./bin/[Configuration]/[Framework]/Publish/* pro spustitelný soubor závislý na rozhraní a binární soubory pro více platforem. Pro samostatně uložený spustitelný soubor má výchozí nastavení *[project_file_folder]/bin/[Configuration]/[Framework]/[runtime]/Publish/* .
 
   Je-li výstupní složka ve webovém projektu ve složce projektu, `dotnet publish` výsledkem úspěchu příkazů jsou vnořené výstupní složky. Pokud je například složka projektu *MyProject*a výstupní složka pro publikování je *MyProject/Published*a `dotnet publish` dvakrát spustíte, druhý příkaz spustí do *MyProject/Publish/* Publish a Publishing soubory obsahu, jako jsou soubory *. config* a *. JSON* . Chcete-li se vyhnout vnořování publikačních složek, zadejte složku pro publikování, která není **přímo** ve složce projektu, nebo vylučte složku pro publikování z projektu. Chcete-li vyloučit složku pro publikování s názvem *publishoutput*, přidejte následující element do `PropertyGroup` elementu v souboru *. csproj* :
 
@@ -187,13 +187,13 @@ Další informace naleznete v následujících zdrojích:
 
 ## <a name="examples"></a>Příklady
 
-- Vytvořte [binární soubor pro více platforem závislý na modulu runtime](../deploying/index.md#produce-a-cross-platform-binary) pro projekt v aktuálním adresáři:
+- Vytvořte [binární soubor pro více platforem závislý na rozhraní](../deploying/index.md#produce-a-cross-platform-binary) pro projekt v aktuálním adresáři:
 
   ```dotnetcli
   dotnet publish
   ```
 
-  Od .NET Core 3,0 SDK tento příklad také vytvoří [spustitelný soubor závislý na modulu runtime](../deploying/index.md#publish-runtime-dependent) pro aktuální platformu.
+  Počínaje verzí .NET Core 3,0 SDK tento příklad také vytvoří [spustitelný soubor závislý na rozhraní](../deploying/index.md#publish-framework-dependent) pro aktuální platformu.
 
 - Vytvoření [samostatného spustitelného souboru](../deploying/index.md#publish-self-contained) pro projekt v aktuálním adresáři pro konkrétní modul runtime:
 
@@ -203,7 +203,7 @@ Další informace naleznete v následujících zdrojích:
 
   Identifikátor RID musí být v souboru projektu.
 
-- Vytvořte [spustitelný soubor závislý na modulu runtime](../deploying/index.md#publish-runtime-dependent) pro projekt v aktuálním adresáři pro konkrétní platformu:
+- Vytvořte [spustitelný soubor závislý na rozhraní](../deploying/index.md#publish-framework-dependent) pro projekt v aktuálním adresáři pro konkrétní platformu:
 
   ```dotnetcli
   dotnet publish --runtime osx.10.11-x64 --self-contained false

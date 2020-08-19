@@ -3,12 +3,12 @@ title: Doprovodné materiály k zabezpečení datových sad a DataTable
 ms.date: 07/14/2020
 dev_langs:
 - csharp
-ms.openlocfilehash: 2fbac625ae0049fc4c363977dc1d3fbcfb376025
-ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
+ms.openlocfilehash: f0fa43c467cc7866e69115acb5f807e6487fda7a
+ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86416197"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88608532"
 ---
 # <a name="dataset-and-datatable-security-guidance"></a>Doprovodné materiály k zabezpečení datových sad a DataTable
 
@@ -29,7 +29,7 @@ Na všech podporovaných verzích .NET Framework, .NET Core a .NET `DataSet` a `
 * Primitivní a primitivní ekvivalenty: `bool` ,,,, `char` `sbyte` `byte` `short` , `ushort` , `int` , `uint` , `long` ,,,, `ulong` `float` `double` `decimal` `DateTime` `DateTimeOffset` `TimeSpan` `string` `Guid` `SqlBinary` `SqlBoolean` `SqlByte` `SqlBytes` `SqlChars` `SqlDateTime` `SqlDecimal` `SqlDouble` `SqlGuid` `SqlInt16` `SqlInt32` `SqlInt64` `SqlMoney` `SqlSingle` `SqlString` ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, a.
 * Běžně používané neprimitivní prvky: `Type` , a `Uri` `BigInteger` .
 * Běžně používané typy _System. Drawing_ : `Color` , `Point` , `PointF` , `Rectangle` , `RectangleF` , a `Size` `SizeF` .
-* `Enum`druhy.
+* `Enum` druhy.
 * Pole a seznamy výše uvedených typů.
 
 Pokud příchozí XML data obsahují objekt, jehož typ není v tomto seznamu:
@@ -252,7 +252,7 @@ V rozhraní .NET Core, .NET 5 a ASP.NET Core toto nastavení ovládá _runtimeco
 
 Další informace naleznete v tématu ["nastavení konfigurace runtime .NET Core"](/dotnet/core/run-time-config/).
 
-`AllowArbitraryDataSetTypeInstantiation`lze také nastavit programově prostřednictvím [AppContext. SetSwitch](/dotnet/api/system.appcontext.setswitch) namísto použití konfiguračního souboru, jak je znázorněno v následujícím kódu:
+`AllowArbitraryDataSetTypeInstantiation` lze také nastavit programově prostřednictvím [AppContext. SetSwitch](/dotnet/api/system.appcontext.setswitch) namísto použití konfiguračního souboru, jak je znázorněno v následujícím kódu:
 
 ```cs
 // Warning: setting the following switch can introduce a security problem.
@@ -289,7 +289,7 @@ Nicméně `DataSet` a `DataTable` ukládají výchozí omezení pro typy, které
 * `DataSet.ReadXml`Metoda nebo `DataTable.ReadXml` se používá ke čtení souboru XML obsahujícího informace o sloupci a řádku.
 * `DataSet`Instance nebo `DataTable` je serializována jako součást webových služeb ASP.NET (SOAP) nebo z koncového bodu WCF.
 * Serializátor, jako je například, `XmlSerializer` slouží k deserializaci `DataSet` `DataTable` instance nebo z datového proudu XML.
-* Serializátor, jako je například, `JsonConvert` slouží k deserializaci `DataSet` `DataTable` instance nebo z datového proudu JSON. `JsonConvert`je metoda v oblíbenýchNewtonsoft.Jstřetích stran [v](https://www.newtonsoft.com/json) knihovně.
+* Serializátor, jako je například, `JsonConvert` slouží k deserializaci `DataSet` `DataTable` instance nebo z datového proudu JSON. `JsonConvert` je metoda v oblíbenýchNewtonsoft.Jstřetích stran [ v](https://www.newtonsoft.com/json) knihovně.
 * Serializátor, jako je například, `BinaryFormatter` se používá k deserializaci `DataSet` `DataTable` instance nebo z nezpracovaného bajtového datového proudu.
 
 Tento dokument popisuje bezpečnostní požadavky pro předchozí scénáře.
@@ -488,3 +488,28 @@ Zvažte nahrazení objektového modelu, který chcete použít [Entity Framework
 * Nabízí integrované ochrany při deserializaci dat z nedůvěryhodných zdrojů.
 
 Pro aplikace, které používají `.aspx` koncové body SOAP, zvažte změnu těchto koncových bodů tak, aby používaly [WCF](/dotnet/framework/wcf/). Služba WCF je plně vybavená náhrada za `.asmx` webové služby. Koncové body WCF [je možné zveřejnit prostřednictvím protokolu SOAP](../../../wcf/feature-details/how-to-expose-a-contract-to-soap-and-web-clients.md) kvůli kompatibilitě se stávajícími volajícími.
+
+## <a name="code-analyzers"></a>Analyzátory kódu
+
+Pravidla zabezpečení analyzátoru kódu, která se spouštějí při kompilaci zdrojového kódu, mohou pomáhat najít ohrožení zabezpečení související s tímto problémem zabezpečení v jazyce C# a Visual Basic kódu. Microsoft. CodeAnalysis. FxCopAnalyzers je balíček NuGet analyzátorů kódu, který je distribuován v [NuGet.org](https://www.nuget.org/).
+
+Přehled analyzátorů kódu najdete v tématu [Přehled analyzátorů zdrojového kódu](https://docs.microsoft.com/visualstudio/code-quality/roslyn-analyzers-overview).
+
+Povolte následující pravidla Microsoft. CodeAnalysis. FxCopAnalyzers:
+
+- [CA2350](https://docs.microsoft.com/visualstudio/code-quality/ca2350): Nepoužívejte DataTable. ReadXml () s nedůvěryhodnými daty
+- [CA2351](https://docs.microsoft.com/visualstudio/code-quality/ca2351): Nepoužívejte DataSet. ReadXml () s nedůvěryhodnými daty
+- [CA2352](https://docs.microsoft.com/visualstudio/code-quality/ca2352): nebezpečná datová sada nebo DataTable v serializovatelným typu může být zranitelná vůči útokům na vzdálené spuštění kódu.
+- [CA2353](https://docs.microsoft.com/visualstudio/code-quality/ca2353): nebezpečná datová sada nebo DataTable v serializovatelným typu
+- [CA2354](https://docs.microsoft.com/visualstudio/code-quality/ca2354): nebezpečná datová sada nebo DataTable v deserializovaném objektovém grafu může být zranitelná vůči útokům na vzdálené spuštění kódu.
+- [CA2355](https://docs.microsoft.com/visualstudio/code-quality/ca2355): v grafu deserializovatelných objektů se našel nezabezpečená datová sada nebo typ DataTable.
+- [CA2356](https://docs.microsoft.com/visualstudio/code-quality/ca2356): nebezpečná datová sada nebo typ DataTable ve webovém deserializaci objektu grafu
+- [CA2361](https://docs.microsoft.com/visualstudio/code-quality/ca2361): Ujistěte se, že automaticky vygenerovaná třída obsahující DataSet. ReadXml () se nepoužívá s nedůvěryhodnými daty.
+- [CA2362](https://docs.microsoft.com/visualstudio/code-quality/ca2362): nebezpečná datová sada nebo DataTable v automaticky generovaném serializovatelným typu může být zranitelná proti útokům na vzdálené spuštění kódu.
+
+Další informace o konfiguraci pravidel najdete v tématu [použití analyzátorů kódu](https://docs.microsoft.com/visualstudio/code-quality/use-roslyn-analyzers).
+
+Nová pravidla zabezpečení jsou k dispozici v následujících balíčcích NuGet:
+
+- Microsoft. CodeAnalysis. FxCopAnalyzers 3.3.0: pro Visual Studio 2019 verze 16,3 nebo novější
+- Microsoft. CodeAnalysis. FxCopAnalyzers 2.9.11: pro Visual Studio 2017 verze 15,9 nebo novější

@@ -4,16 +4,16 @@ description: Přehled systému .NET Core System. Runtime. Loader. AssemblyLoadCo
 ms.date: 08/09/2019
 author: sdmaclea
 ms.author: stmaclea
-ms.openlocfilehash: 1e347c716c2d739a1bd03be056b57fdbda6c678f
-ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
+ms.openlocfilehash: 13ce4c7de5f6ce1b76b2e61db810c0f19717540f
+ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82859510"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88608425"
 ---
 # <a name="default-probing"></a>Výchozí zjišťování
 
-<xref:System.Runtime.Loader.AssemblyLoadContext.Default%2A?displayProperty=nameWithType> Instance zodpovídá za vyhledání závislostí sestavení. Tento článek popisuje logiku <xref:System.Runtime.Loader.AssemblyLoadContext.Default%2A?displayProperty=nameWithType> probingu instance.
+<xref:System.Runtime.Loader.AssemblyLoadContext.Default%2A?displayProperty=nameWithType>Instance zodpovídá za vyhledání závislostí sestavení. Tento článek popisuje <xref:System.Runtime.Loader.AssemblyLoadContext.Default%2A?displayProperty=nameWithType> logiku probingu instance.
 
 ## <a name="host-configured-probing-properties"></a>Vlastnosti služby probingu konfigurované pro hostitele
 
@@ -31,16 +31,18 @@ Každá vlastnost probingu je volitelná. Pokud je tato vlastnost k dispozici, j
 
 ### <a name="how-are-the-properties-populated"></a>Jak se naplní vlastnosti?
 
-Existují dva hlavní scénáře pro naplnění vlastností v závislosti na tom, zda existuje soubor * \<MyApp>. DEPS. JSON* .
+Existují dva hlavní scénáře pro vyplnění vlastností v závislosti na tom, zda * \<myapp>.deps.js* soubor existuje.
 
-- Pokud se nachází soubor * \*. DEPS. JSON* , analyzuje se, aby se naplnily vlastnosti probingu.
-- Pokud soubor * \*. DEPS. JSON* neexistuje, předpokládá se, že adresář aplikace obsahuje všechny závislosti. Obsah adresáře slouží k naplnění vlastností probingu.
+- Když se * \*.deps.jsv* souboru nachází, analyzuje se, aby se naplnily vlastnosti probingu.
+- Pokud * \*.deps.jsv* souboru neexistuje, předpokládá se, že adresář aplikace obsahuje všechny závislosti. Obsah adresáře slouží k naplnění vlastností probingu.
 
-Navíc se analyzují soubory * \*. DEPS. JSON* pro všechny odkazované architektury.
+Kromě toho * \*.deps.js* soubory pro všechny odkazované architektury se podobně analyzují.
 
-Nakonec můžete k přidání `ADDITIONAL_DEPS` dalších závislostí použít proměnnou prostředí.
+Nakonec `ADDITIONAL_DEPS` můžete k přidání dalších závislostí použít proměnnou prostředí.  `dotnet.exe` obsahuje také `--additional-deps` volitelný parametr pro nastavení této hodnoty při spuštění aplikace.
 
-Ve `APP_PATHS` výchozím `APP_NI_PATHS` nastavení nejsou naplněny vlastnosti a a pro většinu aplikací jsou vynechány.
+`APP_PATHS` `APP_NI_PATHS` Ve výchozím nastavení nejsou naplněny vlastnosti a a pro většinu aplikací jsou vynechány.
+
+K seznamu všech * \*.deps.js* souborů, které aplikace používá, se dá dostat prostřednictvím `System.AppContext.GetData("APP_CONTEXT_DEPS_FILES")` .
 
 ### <a name="how-do-i-see-the-probing-properties-from-managed-code"></a>Návody zobrazit vlastnosti zjišťování ze spravovaného kódu?
 
@@ -53,25 +55,25 @@ Hostitel modulu runtime .NET Core bude výstupem užitečných zpráv trasován�
 |Proměnná prostředí        |Popis  |
 |----------------------------|---------|
 |`COREHOST_TRACE=1`          |Povolí trasování.|
-|`COREHOST_TRACEFILE=<path>` |Vykreslí místo výchozího `stderr`umístění cestu k souboru.|
+|`COREHOST_TRACEFILE=<path>` |Vykreslí místo výchozího umístění cestu k souboru `stderr` .|
 |`COREHOST_TRACE_VERBOSITY`  |Nastaví podrobnost z hodnoty 1 (nejnižší) na 4 (nejvyšší).|
 
 ## <a name="managed-assembly-default-probing"></a>Výchozí zjišťování spravovaného sestavení
 
-Když zjistíte, že <xref:System.Runtime.Loader.AssemblyLoadContext.Default%2A?displayProperty=nameWithType> zjišťování má spravované sestavení, vypadá v pořadí:
+Když zjistíte, že zjišťování má spravované sestavení, <xref:System.Runtime.Loader.AssemblyLoadContext.Default%2A?displayProperty=nameWithType> vypadá v pořadí:
 
 - Soubory, které <xref:System.Reflection.AssemblyName.Name?displayProperty=nameWithType> odpovídají `TRUSTED_PLATFORM_ASSEMBLIES` (po odebrání přípon souborů).
-- Soubory sestavení nativní bitové kopie `APP_NI_PATHS` v nástroji s běžnými příponami souborů.
+- Soubory sestavení nativní bitové kopie v `APP_NI_PATHS` nástroji s běžnými příponami souborů.
 - Soubory sestavení v `APP_PATHS` nástroji s běžnými příponami souborů.
 
 ## <a name="satellite-resource-assembly-probing"></a>Satelitní zjišťování sestavení (prostředků)
 
 Chcete-li najít satelitní sestavení pro konkrétní jazykovou verzi, Sestavte sadu cest k souborům.
 
-Pro každou cestu v `PLATFORM_RESOURCE_ROOTS` a potom `APP_PATHS`přidejte <xref:System.Globalization.CultureInfo.Name?displayProperty=nameWithType> řetězec, oddělovač adresáře, <xref:System.Reflection.AssemblyName.Name?displayProperty=nameWithType> řetězec a příponu. dll.
+Pro každou cestu v `PLATFORM_RESOURCE_ROOTS` a potom `APP_PATHS` přidejte <xref:System.Globalization.CultureInfo.Name?displayProperty=nameWithType> řetězec, oddělovač adresáře, <xref:System.Reflection.AssemblyName.Name?displayProperty=nameWithType> řetězec a příponu. dll.
 
 Pokud existuje libovolný vyhovující soubor, pokuste se ho načíst a vrátit.
 
 ## <a name="unmanaged-native-library-probing"></a>Nespravované (nativní) knihovny Bingu
 
-Když zjistíte, že `NATIVE_DLL_SEARCH_DIRECTORIES` zjišťování nespravované knihovny najde, prohledávají se hledání vyhovující knihovny.
+Když zjistíte, že zjišťování nespravované knihovny najde, `NATIVE_DLL_SEARCH_DIRECTORIES` prohledávají se hledání vyhovující knihovny.

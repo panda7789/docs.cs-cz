@@ -9,12 +9,12 @@ dev_langs:
 helpviewer_keywords:
 - parallelism, task
 ms.assetid: 458b5e69-5210-45e5-bc44-3888f86abd6f
-ms.openlocfilehash: f7cb42c8982cb6a704b39730a4f7aa0ce781d506
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 57261602c456a6dcf90c03aa044e7d1c0c8c1c6a
+ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84446376"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88608019"
 ---
 # <a name="task-based-asynchronous-programming"></a>Asynchronní programování založené na úlohách
 
@@ -66,7 +66,7 @@ Tuto metodu můžete také použít <xref:System.Threading.Tasks.TaskFactory.Sta
 [!code-csharp[TPL_TaskIntro#3](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_taskintro/cs/asyncstate.cs#23)]
 [!code-vb[TPL_TaskIntro#3](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_taskintro/vb/asyncstate.vb#23)]
 
-<xref:System.Threading.Tasks.Task>a <xref:System.Threading.Tasks.Task%601> každá z nich zveřejňuje statickou <xref:System.Threading.Tasks.Task.Factory%2A> vlastnost, která vrátí výchozí instanci <xref:System.Threading.Tasks.TaskFactory> , aby bylo možné volat metodu jako `Task.Factory.StartNew()` . V následujícím příkladu, protože jsou úkoly typu <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType> , mají každý z nich veřejnou <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> vlastnost, která obsahuje výsledek výpočtu. Úlohy běží asynchronně a mohou být dokončeny v libovolném pořadí. <xref:System.Threading.Tasks.Task%601.Result%2A>Je-li vlastnost přístupná před dokončením výpočtu, vlastnost zablokuje volající vlákno, dokud není k dispozici hodnota.
+<xref:System.Threading.Tasks.Task> a <xref:System.Threading.Tasks.Task%601> každá z nich zveřejňuje statickou <xref:System.Threading.Tasks.Task.Factory%2A> vlastnost, která vrátí výchozí instanci <xref:System.Threading.Tasks.TaskFactory> , aby bylo možné volat metodu jako `Task.Factory.StartNew()` . V následujícím příkladu, protože jsou úkoly typu <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType> , mají každý z nich veřejnou <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> vlastnost, která obsahuje výsledek výpočtu. Úlohy běží asynchronně a mohou být dokončeny v libovolném pořadí. <xref:System.Threading.Tasks.Task%601.Result%2A>Je-li vlastnost přístupná před dokončením výpočtu, vlastnost zablokuje volající vlákno, dokud není k dispozici hodnota.
 
 [!code-csharp[TPL_TaskIntro#4](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_taskintro/cs/result1.cs#4)]
 [!code-vb[TPL_TaskIntro#4](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_taskintro/vb/result1.vb#4)]
@@ -96,7 +96,7 @@ Každý úkol obdrží celočíselný identifikátor ID, který ji jednoznačně
 
 Většina rozhraní API, které vytváří úlohy, poskytuje přetížení, která přijímají <xref:System.Threading.Tasks.TaskCreationOptions> parametr. Zadáním jedné z těchto možností lze dát pokyn plánovači úloh, jak naplánovat úlohy ve fondu vláken. V následující tabulce jsou uvedeny různé možnosti pro vytváření úloh.
 
-|<xref:System.Threading.Tasks.TaskCreationOptions>hodnota parametru|Description|
+|<xref:System.Threading.Tasks.TaskCreationOptions> hodnota parametru|Popis|
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------|
 |<xref:System.Threading.Tasks.TaskCreationOptions.None>|Výchozí hodnota, pokud není zadána jiná. Plánovač používá k plánování úlohy své výchozí heuristické metody.|
 |<xref:System.Threading.Tasks.TaskCreationOptions.PreferFairness>|Určuje, že úlohy by měly být naplánovány tak, aby se úlohy vytvořené dříve pravděpodobně prováděly dříve a později vytvořené úlohy aby se s větší pravděpodobností prováděly později.|
@@ -134,7 +134,7 @@ Další informace o asynchronních úlohách a jazykové verzi naleznete v čás
 
 <xref:System.Threading.Tasks.Task.ContinueWith%2A?displayProperty=nameWithType>Metody a <xref:System.Threading.Tasks.Task%601.ContinueWith%2A?displayProperty=nameWithType> umožňují zadat úlohu, která se spustí po dokončení *předchozí úlohy* . Delegátem úlohy pokračování je předán odkaz na předchozí úlohu, aby mohl prověřit stav předchozí úlohy a načtením hodnoty <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> vlastnosti může použít výstup předchůdce jako vstup pro pokračování.
 
-V následujícím příkladu `getData` je úloha spuštěna voláním <xref:System.Threading.Tasks.TaskFactory.StartNew%60%601%28System.Func%7B%60%600%7D%29?displayProperty=nameWithType> metody. `processData`Úkol se spustí automaticky po `getData` dokončení a `displayData` po dokončení se spustí `processData` . `getData`Vytvoří celočíselné pole, které je přístupné pro `processData` úkol prostřednictvím `getData` <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> vlastnosti úkolu. `processData`Úkol zpracuje toto pole a vrátí výsledek, jehož typ je odvozen z návratového typu výrazu lambda, který je předán <xref:System.Threading.Tasks.Task%601.ContinueWith%60%601%28System.Func%7BSystem.Threading.Tasks.Task%7B%600%7D%2C%60%600%7D%29?displayProperty=nameWithType> metodě. `displayData`Úloha se spustí automaticky po `processData` dokončení a <xref:System.Tuple%603> objekt vrácený `processData` výrazem lambda je přístupný pro `displayData` úkol prostřednictvím `processData` <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> vlastnosti úkolu. `displayData`Úloha vezme výsledek `processData` úlohy a vytvoří výsledek, jehož typ je odvozen podobným způsobem a který je zpřístupněn programu ve <xref:System.Threading.Tasks.Task%601.Result%2A> Vlastnosti.
+V následujícím příkladu `getData` je úloha spuštěna voláním <xref:System.Threading.Tasks.TaskFactory.StartNew%60%601%28System.Func%7B%60%600%7D%29?displayProperty=nameWithType> metody. `processData`Úkol se spustí automaticky po `getData` dokončení a `displayData` po dokončení se spustí `processData` . `getData` Vytvoří celočíselné pole, které je přístupné pro `processData` úkol prostřednictvím `getData` <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> vlastnosti úkolu. `processData`Úkol zpracuje toto pole a vrátí výsledek, jehož typ je odvozen z návratového typu výrazu lambda, který je předán <xref:System.Threading.Tasks.Task%601.ContinueWith%60%601%28System.Func%7BSystem.Threading.Tasks.Task%7B%600%7D%2C%60%600%7D%29?displayProperty=nameWithType> metodě. `displayData`Úloha se spustí automaticky po `processData` dokončení a <xref:System.Tuple%603> objekt vrácený `processData` výrazem lambda je přístupný pro `displayData` úkol prostřednictvím `processData` <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> vlastnosti úkolu. `displayData`Úloha vezme výsledek `processData` úlohy a vytvoří výsledek, jehož typ je odvozen podobným způsobem a který je zpřístupněn programu ve <xref:System.Threading.Tasks.Task%601.Result%2A> Vlastnosti.
 
 [!code-csharp[TPL_TaskIntro#5](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_taskintro/cs/continuations1.cs#5)]
 [!code-vb[TPL_TaskIntro#5](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_taskintro/vb/continuations1.vb#5)]
@@ -187,7 +187,7 @@ Příklad zobrazující zpracování výjimek naleznete v tématu [zpracování 
 
 Některá přetížení umožňují určit časový limit a jiné přijímají <xref:System.Threading.CancellationToken> jako vstupní parametr další, aby bylo možné samotné čekání zrušit buď programově, nebo jako odpověď na uživatelský vstup.
 
-Při čekání na úlohu se implicitně čeká na všechny podřízené položky této úlohy, které byly vytvořeny pomocí <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent?displayProperty=nameWithType> Možnosti. <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType>Vrátí hodnotu okamžitě, pokud úloha již byla dokončena. Jakékoli výjimky vyvolané úlohou budou vyvolány <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> metodou, a to i v případě, že <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> byla metoda volána po dokončení úlohy.
+Při čekání na úlohu se implicitně čeká na všechny podřízené položky této úlohy, které byly vytvořeny pomocí <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent?displayProperty=nameWithType> Možnosti. <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> Vrátí hodnotu okamžitě, pokud úloha již byla dokončena. Jakékoli výjimky vyvolané úlohou budou vyvolány <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> metodou, a to i v případě, že <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> byla metoda volána po dokončení úlohy.
 
 ## <a name="composing-tasks"></a>Vytváření úloh
 
@@ -269,7 +269,7 @@ TPL má několik nových veřejných typů, které jsou použitelné jak v situa
 
 Doporučujeme Nedědit z <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> nebo <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType> . Místo toho doporučujeme použít <xref:System.Threading.Tasks.Task.AsyncState%2A> vlastnost k přidružení dalších dat nebo stavu k <xref:System.Threading.Tasks.Task> <xref:System.Threading.Tasks.Task%601> objektu nebo. Můžete také použít rozšiřující metody k rozšíření funkčnosti <xref:System.Threading.Tasks.Task> <xref:System.Threading.Tasks.Task%601> tříd a. Další informace o metodách rozšíření naleznete v tématu [metody rozšíření](../../csharp/programming-guide/classes-and-structs/extension-methods.md) a [metody rozšíření](../../visual-basic/programming-guide/language-features/procedures/extension-methods.md).
 
-Pokud je nutné dědit z <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601> , nelze použít <xref:System.Threading.Tasks.Task.Run%2A> třídy, nebo <xref:System.Threading.Tasks.TaskFactory?displayProperty=nameWithType> , <xref:System.Threading.Tasks.TaskFactory%601?displayProperty=nameWithType> nebo <xref:System.Threading.Tasks.TaskCompletionSource%601?displayProperty=nameWithType> k vytvoření instancí vlastního typu úkolu, protože tyto mechanismy vytváří pouze <xref:System.Threading.Tasks.Task> <xref:System.Threading.Tasks.Task%601> objekty a. Kromě toho nemůžete použít mechanismy pokračování úloh, které jsou k dispozici pomocí <xref:System.Threading.Tasks.Task> , <xref:System.Threading.Tasks.Task%601> , <xref:System.Threading.Tasks.TaskFactory> a <xref:System.Threading.Tasks.TaskFactory%601> k vytvoření instancí vlastního typu úkolu, protože tyto mechanismy také vytvářejí pouze <xref:System.Threading.Tasks.Task> <xref:System.Threading.Tasks.Task%601> objekty a.
+Pokud je nutné dědit z <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601> , nelze použít <xref:System.Threading.Tasks.Task.Run%2A> třídy, nebo <xref:System.Threading.Tasks.TaskFactory?displayProperty=nameWithType> , <xref:System.Threading.Tasks.TaskFactory%601?displayProperty=nameWithType> nebo <xref:System.Threading.Tasks.TaskCompletionSource%601?displayProperty=nameWithType> k vytvoření instancí vlastního typu úkolu, protože tyto mechanismy vytváří pouze <xref:System.Threading.Tasks.Task> <xref:System.Threading.Tasks.Task%601> objekty a. Kromě toho nemůžete použít mechanismy pokračování úloh, které jsou k dispozici pomocí <xref:System.Threading.Tasks.Task> , <xref:System.Threading.Tasks.Task%601> , <xref:System.Threading.Tasks.TaskFactory> a  <xref:System.Threading.Tasks.TaskFactory%601> k vytvoření instancí vlastního typu úkolu, protože tyto mechanismy také vytvářejí pouze <xref:System.Threading.Tasks.Task>  <xref:System.Threading.Tasks.Task%601> objekty a.
 
 ## <a name="related-topics"></a>Související témata
 

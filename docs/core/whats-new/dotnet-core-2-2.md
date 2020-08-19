@@ -1,34 +1,34 @@
 ---
 title: Co je nového v .NET Core 2.2
-description: Další informace o nových funkcích v rozhraní .NET Core 2.2.
+description: Přečtěte si o nových funkcích, které najdete v .NET Core 2,2.
 dev_langs:
 - csharp
 - vb
 ms.date: 12/04/2018
-ms.openlocfilehash: 64cb561acd72ff5d4a11fcae7ce59eaad750f74e
-ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
+ms.openlocfilehash: 656ef9aa2745c935c37b69ae5a54b8d126700e55
+ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/20/2020
-ms.locfileid: "81644362"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88608302"
 ---
 # <a name="whats-new-in-net-core-22"></a>Co je nového v .NET Core 2.2
 
-.NET Core 2.2 zahrnuje vylepšení v nasazení aplikací, zpracování událostí pro runtime služby, ověřování do databází Azure SQL, výkon kompilátoru JIT a vkládání kódu před spuštěním `Main` metody.
+.NET Core 2,2 obsahuje vylepšení při nasazení aplikace, zpracování událostí pro služby runtime, ověřování pro databáze SQL Azure, výkon kompilátoru JIT a vkládání kódu před provedením `Main` metody.
 
 ## <a name="new-deployment-mode"></a>Nový režim nasazení
 
-Počínaje rozhraním .NET Core 2.2 můžete nasadit [spustitelné soubory závislé na rozhraní](../deploying/index.md#publish-runtime-dependent), což jsou soubory **EXE** namísto souborů **DLL.** Funkčně podobné nasazení závislé na rozhraní, spustitelné soubory závislé na rámci (FDE) stále spoléhají na přítomnost sdílené verze rozhraní .NET Core pro celý systém ke spuštění. Vaše aplikace obsahuje pouze váš kód a všechny závislosti třetích stran. Na rozdíl od nasazení závislých na rámci jsou FTE specifické pro platformu.
+Počínaje rozhraním .NET Core 2,2 můžete nasadit [spustitelné soubory závislé na rozhraních](../deploying/index.md#publish-framework-dependent), které jsou soubory **. exe** namísto souborů **. dll** . Funguje podobně jako u nasazení závislých na rozhraních, v závislosti na architektuře (FDE) se pořád spoléhá na přítomnost sdílené systémové verze .NET Core, která se má spustit. Vaše aplikace obsahuje jenom váš kód a všechny závislosti třetích stran. Na rozdíl od nasazení závislých na rozhraních FDEs jsou specifické pro platformu.
 
-Tento nový režim nasazení má výraznou výhodu v budování spustitelného souboru namísto knihovny, což znamená, že aplikaci můžete spustit přímo bez vyvolání. `dotnet`
+Tento nový režim nasazení má odlišnou výhodu při vytváření spustitelného souboru místo knihovny, což znamená, že můžete svou aplikaci spustit přímo bez vyvolání jako `dotnet` první.
 
 ## <a name="core"></a>Jádro
 
-**Zpracování událostí ve službách runtime**
+**Zpracování událostí ve službách za běhu**
 
-Často můžete chtít sledovat použití služeb runtime vaší aplikace, jako je například GC, JIT a ThreadPool, abyste pochopili, jak ovlivňují vaši aplikaci.V systémech Windows se to obvykle provádí sledováním událostí ETW aktuálního procesu.I když to i nadále funguje dobře, není vždy možné používat ETW, pokud používáte v prostředí s nízkými oprávněními nebo na Linuxu nebo macOS.
+Chcete-li pochopit, jak ovlivňují vaši aplikaci, může být často vhodné monitorovat použití služeb runtime, jako je například GC, JIT, a nevlákenná vlákna.V systémech Windows to se obvykle provádí monitorováním událostí ETW aktuálního procesu.I když to bude i nadále fungovat dobře, není vždy možné používat trasování událostí pro Windows, pokud pracujete v prostředí s nízkým oprávněním nebo v systému Linux nebo macOS.
 
-Počínaje .NET Core 2.2, CoreCLR události lze <xref:System.Diagnostics.Tracing.EventListener?displayProperty=nameWithType> nyní spotřebovávat pomocí třídy. Tyto události popisují chování těchto runtime služeb jako GC, JIT, ThreadPool a interop. Jedná se o stejné události, které jsou vystaveny jako součást poskytovatele CoreCLR ETW.To umožňuje aplikacím využívat tyto události nebo použít mechanismus přenosu k jejich odeslání do služby agregace telemetrie. Můžete vidět, jak se přihlásit k odběru událostí v následující ukázce kódu:
+Počínaje rozhraním .NET Core 2,2 mohou být události CoreCLR nyní spotřebovány pomocí <xref:System.Diagnostics.Tracing.EventListener?displayProperty=nameWithType> třídy. Tyto události popisují chování takových služeb za běhu jako GC, JIT, fondu a spolupráci. Jedná se o stejné události, které jsou přístupné jako součást zprostředkovatele ETW CoreCLR.Díky tomu můžou aplikace tyto události spotřebovat nebo použít transportní mechanismus k jejich posílání do agregační služby telemetrie. Můžete se podívat, jak se přihlásit k odběru událostí v následující ukázce kódu:
 
 ```csharp
 internal sealed class SimpleEventListener : EventListener
@@ -58,7 +58,7 @@ internal sealed class SimpleEventListener : EventListener
 }
 ```
 
-Kromě toho .NET Core 2.2 přidá následující <xref:System.Diagnostics.Tracing.EventWrittenEventArgs> dvě vlastnosti třídy poskytnout další informace o událostech ETW:
+Kromě toho .NET Core 2,2 přidá do třídy následující dvě vlastnosti, <xref:System.Diagnostics.Tracing.EventWrittenEventArgs> které poskytují další informace o událostech ETW:
 
 - <xref:System.Diagnostics.Tracing.EventWrittenEventArgs.OSThreadId?displayProperty=nameWithType>
 
@@ -66,36 +66,36 @@ Kromě toho .NET Core 2.2 přidá následující <xref:System.Diagnostics.Tracin
 
 ## <a name="data"></a>Data
 
-**Ověřování AAD do databází Azure SQL s vlastností SqlConnection.AccessToken**
+**Ověřování AAD pro databáze SQL Azure s vlastností SqlConnection. AccessToken**
 
-Počínaje rozhraním .NET Core 2.2 lze přístupový token vydaný službou Azure Active Directory použít k ověření do databáze Azure SQL. Pro podporu přístupových <xref:System.Data.SqlClient.SqlConnection.AccessToken> tokenů byla vlastnost <xref:System.Data.SqlClient.SqlConnection> přidána do třídy. Chcete-li využít výhod ověřování AAD, stáhněte si verzi 4.6 balíčku System.Data.SqlClient NuGet. Chcete-li tuto funkci použít, můžete získat hodnotu přístupového tokenu pomocí [knihovny ověřování služby Active Directory pro rozhraní .NET](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet) obsažené v balíčku [`Microsoft.IdentityModel.Clients.ActiveDirectory`](https://www.nuget.org/packages/Microsoft.IdentityModel.Clients.ActiveDirectory/) NuGet.
+Počínaje rozhraním .NET Core 2,2 je možné k ověřování ve službě Azure SQL Database použít přístupový token vydaný Azure Active Directory. Pro podporu přístupových tokenů byla <xref:System.Data.SqlClient.SqlConnection.AccessToken> vlastnost přidána do <xref:System.Data.SqlClient.SqlConnection> třídy. Pokud chcete využít výhod ověřování AAD, Stáhněte si balíček NuGet System. data. SqlClient verze 4,6. Aby bylo možné funkci používat, můžete získat hodnotu přístupového tokenu pomocí [Active Directory Authentication Library pro .NET](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet) obsažené v [`Microsoft.IdentityModel.Clients.ActiveDirectory`](https://www.nuget.org/packages/Microsoft.IdentityModel.Clients.ActiveDirectory/) balíčku NuGet.
 
 ## <a name="jit-compiler-improvements"></a>Vylepšení kompilátoru JIT
 
-**Vrstvená kompilace zůstává funkcí opt-in**
+**Vrstvená kompilace zůstává funkcí výslovných přihlášení.**
 
-V rozhraní .NET Core 2.1 implementoval kompilátor JIT novou technologii kompilátoru, *vrstvenou kompilaci*jako funkci opt-in. Cílem vrstvené kompilace je lepší výkon. Jedním z důležitých úkolů prováděných kompilátorem JIT je optimalizace spuštění kódu. Pro málo používané cesty kódu však kompilátor může strávit více času optimalizací kódu než modul runtime, který stráví prováděním neoptimalizovaného kódu. Vrstvená kompilace zavádí dvě fáze kompilace JIT:
+V .NET Core 2,1 kompilátor JIT implementoval novou technologii kompilátoru, *vrstvenou kompilaci*, jako funkci opt-in. Cílem vrstvené kompilace je zlepšení výkonu. Jedním z důležitých úloh prováděných kompilátorem JIT je optimalizace provádění kódu. Pro málo používané cesty kódu však může kompilátor strávit více času optimalizací kódu, než modul runtime zpracovává neoptimalizovaný kód. Vrstvená kompilace přináší dvě fáze kompilace JIT:
 
 - **První vrstva**, která generuje kód co nejrychleji.
 
-- **Druhá vrstva**, která generuje optimalizovaný kód pro ty metody, které jsou často spouštěny. Druhá vrstva kompilace se provádí paralelně pro zvýšení výkonu.
+- **Druhá vrstva**, která generuje optimalizovaný kód pro tyto metody, které jsou spouštěny často. Druhá vrstva kompilace se paralelně provádí za účelem zvýšení výkonu.
 
-Informace o zlepšení výkonu, které může být výsledkem vrstvené kompilace, naleznete [v tématu Oznámení .NET Core 2.2 Náhled 2](https://devblogs.microsoft.com/dotnet/announcing-net-core-2-2-preview-2/).
+Informace o vylepšení výkonu, které může být výsledkem vrstvené kompilace, najdete v tématu [oznamujeme rozhraní .NET Core 2,2 Preview 2](https://devblogs.microsoft.com/dotnet/announcing-net-core-2-2-preview-2/).
 
-V rozhraní .NET Core 2.2 Preview 2 byla ve výchozím nastavení povolena vrstvená kompilace. Rozhodli jsme se však, že stále nejsme připraveni povolit vrstvené kompilace ve výchozím nastavení. Takže v rozhraní .NET Core 2.2 je vrstvená kompilace i nadále funkcí opt-in. Informace o přihlášení k vrstvené kompilaci najdete v tématu [Vylepšení kompilátoru Jit](dotnet-core-2-1.md#jit-compiler-improvements) v [tématu Co je nového v rozhraní .NET Core 2.1](dotnet-core-2-1.md).
+Ve výchozím nastavení je v .NET Core 2,2 Preview 2 zapnutá vrstvená kompilace. Rozhodli jsme se však, že ve výchozím nastavení není stále připraveno povolit vrstvenou kompilaci. Takže v .NET Core 2,2 se vrstvená kompilace bude i nadále jednat o funkci výslovného souhlasu. Informace o tom, jak se na vrstvenou kompilaci rozvrstvit, najdete v tématu [vylepšení kompilátoru JIT](dotnet-core-2-1.md#jit-compiler-improvements) v tématu [co je nového v .NET Core 2,1](dotnet-core-2-1.md).
 
 ## <a name="runtime"></a>Modul runtime
 
-**Vkládání kódu před spuštěním Hlavní metody**
+**Vložení kódu před provedením metody Main**
 
-Počínaje rozhraním .NET Core 2.2 můžete použít spouštěcí hák k vložení kódu před spuštěním metody Main aplikace. Spouštěcí háčky umožňují hostiteli přizpůsobit chování aplikací po jejich nasazení bez nutnosti překompilovat nebo změnit aplikaci.
+Počínaje .NET Core 2,2 můžete použít spouštěcí zavěšení pro vložení kódu před spuštěním metody Main aplikace. Spouštěcí háky umožňují hostiteli přizpůsobit chování aplikací poté, co byly nasazeny, aniž by museli aplikaci znovu kompilovat nebo měnit.
 
-Očekáváme, že poskytovatelé hostingu definovat vlastní konfiguraci a zásady, včetně nastavení, <xref:System.Runtime.Loader.AssemblyLoadContext?displayProperty=nameWithType> které potenciálně ovlivňují chování zatížení hlavnívstupní bod, jako je například chování. Háček lze nastavit trasování nebo vkládání telemetrie, nastavit zpětná volání pro zpracování nebo definovat jiné chování závislé na prostředí. Háček je oddělen od vstupního bodu, takže uživatelský kód není nutné měnit.
+Očekáváme, že poskytovatelé hostingu definují vlastní konfiguraci a zásady, včetně nastavení, která mohou mít vliv na chování při načítání hlavního vstupního bodu, jako je například  <xref:System.Runtime.Loader.AssemblyLoadContext?displayProperty=nameWithType>   chování. Zavěšení lze použít k nastavení trasování nebo injektáže telemetrie, k nastavení zpětných volání pro zpracování nebo k definování jiného chování závislého na prostředí. Zavěšení je oddělené od vstupního bodu, aby se kód uživatele nemuselo upravovat.
 
-Další informace naleznete [v tématu Háček pro spuštění hostitele.](https://github.com/dotnet/core-setup/blob/master/Documentation/design-docs/host-startup-hook.md)
+Další informace najdete v tématu [spouštěcí zavěšení hostitele](https://github.com/dotnet/core-setup/blob/master/Documentation/design-docs/host-startup-hook.md) .
 
 ## <a name="see-also"></a>Viz také
 
 - [Co je nového v .NET Core 3.1](dotnet-core-3-1.md)
-- [Co je nového v ASP.NET Core 2.2](/aspnet/core/release-notes/aspnetcore-2.2)
-- [Nové funkce v EF Core 2.2](/ef/core/what-is-new/ef-core-2.2)
+- [Co je nového v ASP.NET Core 2,2](/aspnet/core/release-notes/aspnetcore-2.2)
+- [Nové funkce v EF Core 2,2](/ef/core/what-is-new/ef-core-2.2)

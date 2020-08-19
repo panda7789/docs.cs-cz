@@ -3,16 +3,16 @@ title: Zabezpečení mikroslužeb a webových aplikací .NET
 description: Zabezpečení u mikroslužeb a webových aplikací .NET – Získejte informace o možnostech ověřování v ASP.NET Core webových aplikacích.
 author: mjrousos
 ms.date: 08/07/2020
-ms.openlocfilehash: 9ce62039374f2256cd9adbddbb850aa4135af9f4
-ms.sourcegitcommit: 1e6439ec4d5889fc08cf3bfb4dac2b91931eb827
+ms.openlocfilehash: 1dcdb5d2987360ac583fa700a387d977f498d1d9
+ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/08/2020
-ms.locfileid: "88024612"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88608098"
 ---
 # <a name="make-secure-net-microservices-and-web-applications"></a>Zajištění zabezpečených mikroslužeb a webových aplikací .NET
 
-K dispozici je mnoho aspektů zabezpečení v mikroslužbách a webových aplikacích, které může toto téma snadno provést několik knih, jako je tato, v této části se zaměříte na ověřování, autorizaci a tajné klíče aplikací.
+K dispozici je mnoho aspektů zabezpečení v mikroslužbách a webových aplikacích, které mohou v tématu snadno získat několik knih, jako je tato. V této části se proto zaměříme na ověřování, autorizaci a tajné klíče aplikací.
 
 ## <a name="implement-authentication-in-net-microservices-and-web-applications"></a>Implementace ověřování v mikroslužbách a webových aplikacích .NET
 
@@ -293,9 +293,9 @@ public void ConfigureServices(IServiceCollection services)
 
 Parametry v tomto použití jsou:
 
-- `Audience`představuje přijímač příchozího tokenu nebo prostředku, ke kterému token uděluje přístup. Pokud hodnota zadaná v tomto parametru neodpovídá parametru v tokenu, token se odmítne.
+- `Audience` představuje přijímač příchozího tokenu nebo prostředku, ke kterému token uděluje přístup. Pokud hodnota zadaná v tomto parametru neodpovídá parametru v tokenu, token se odmítne.
 
-- `Authority`je adresa ověřovacího serveru pro vydávání tokenů. Middleware pro ověření nosiče JWT pomocí tohoto identifikátoru URI získá veřejný klíč, který lze použít k ověření podpisu tokenu. Middleware také potvrdí, že `iss` parametr v tokenu odpovídá tomuto identifikátoru URI.
+- `Authority` je adresa ověřovacího serveru pro vydávání tokenů. Middleware pro ověření nosiče JWT pomocí tohoto identifikátoru URI získá veřejný klíč, který lze použít k ověření podpisu tokenu. Middleware také potvrdí, že `iss` parametr v tokenu odpovídá tomuto identifikátoru URI.
 
 Další parametr, `RequireHttpsMetadata` , je užitečný pro účely testování. Tento parametr nastavíte na hodnotu false, abyste mohli testovat v prostředích, kde nemáte certifikáty. V reálných nasazeních by se tokeny JWT nosiče měly vždycky předávat jenom přes HTTPS.
 
