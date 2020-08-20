@@ -8,7 +8,7 @@ ms.locfileid: "82507072"
 ---
 ### <a name="signalr-messagepack-hub-protocol-options-type-changed"></a>Signal: typ možností protokolu centra MessagePack se změnil.
 
-Typ možností protokolu centra ASP.NET Core Signal MessagePack se změnil z `IList<MessagePack.IFormatterResolver>` na `MessagePackSerializerOptions` typ knihovny [MessagePack](https://www.nuget.org/packages/MessagePack) .
+Typ možností protokolu centra ASP.NET Core Signal MessagePack se změnil z `IList<MessagePack.IFormatterResolver>` na typ knihovny [MessagePack](https://www.nuget.org/packages/MessagePack) `MessagePackSerializerOptions` .
 
 Diskuzi o této změně najdete v tématu [dotnet/aspnetcore # 20506](https://github.com/dotnet/aspnetcore/issues/20506).
 
@@ -73,11 +73,11 @@ Tato změna je součástí přechodu na MessagePack v2. x, která byla oznámena
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Tato zásadní změna má vliv na uživatele, kteří konfigurují <xref:Microsoft.AspNetCore.SignalR.MessagePackHubProtocolOptions>hodnoty na. Pokud používáte protokol služby ASP.NET Core Signal MessagePack a upravujete možnosti, aktualizujte své využití tak, aby používalo nové rozhraní API možností, jak je uvedeno výše.
+Tato zásadní změna má vliv na uživatele, kteří konfigurují hodnoty na <xref:Microsoft.AspNetCore.SignalR.MessagePackHubProtocolOptions> . Pokud používáte protokol služby ASP.NET Core Signal MessagePack a upravujete možnosti, aktualizujte své využití tak, aby používalo nové rozhraní API možností, jak je uvedeno výše.
 
 #### <a name="category"></a>Kategorie
 
-Jádro ASP.NET
+ASP.NET Core
 
 #### <a name="affected-apis"></a>Ovlivněná rozhraní API
 

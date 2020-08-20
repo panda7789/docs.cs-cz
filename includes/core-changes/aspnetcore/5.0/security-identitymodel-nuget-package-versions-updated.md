@@ -37,7 +37,7 @@ Aktualizace balíčku nezavádí ve ASP.NET Core veřejné změny rozhraní API.
 
 #### <a name="category"></a>Kategorie
 
-Jádro ASP.NET
+ASP.NET Core
 
 #### <a name="affected-apis"></a>Ovlivněná rozhraní API
 

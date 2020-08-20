@@ -22,7 +22,7 @@ Následující rozhraní API `public` :
 
 - `Microsoft.Extensions.Localization.Internal.AssemblyWrapper`
 - `Microsoft.Extensions.Localization.Internal.IResourceStringProvider`
-- `Microsoft.Extensions.Localization.ResourceManagerStringLocalizer`přetížení konstruktoru přijímají některý z následujících typů parametrů:
+- `Microsoft.Extensions.Localization.ResourceManagerStringLocalizer` přetížení konstruktoru přijímají některý z následujících typů parametrů:
   - `AssemblyWrapper`
   - `IResourceStringProvider`
 
@@ -30,9 +30,9 @@ Následující rozhraní API `public` :
 
 Následující seznam popisuje změny:
 
-- `Microsoft.Extensions.Localization.Internal.AssemblyWrapper`stalo `Microsoft.Extensions.Localization.AssemblyWrapper` a je nyní `internal` .
-- `Microsoft.Extensions.Localization.Internal.IResourceStringProvider`stalo `Microsoft.Extensions.Localization.Internal.IResourceStringProvider` a je nyní `internal` .
-- `Microsoft.Extensions.Localization.ResourceManagerStringLocalizer`přetížení konstruktoru, který přijímá některý z následujících typů parametrů, jsou nyní `internal` :
+- `Microsoft.Extensions.Localization.Internal.AssemblyWrapper` stalo `Microsoft.Extensions.Localization.AssemblyWrapper` a je nyní `internal` .
+- `Microsoft.Extensions.Localization.Internal.IResourceStringProvider` stalo `Microsoft.Extensions.Localization.Internal.IResourceStringProvider` a je nyní `internal` .
+- `Microsoft.Extensions.Localization.ResourceManagerStringLocalizer` přetížení konstruktoru, který přijímá některý z následujících typů parametrů, jsou nyní `internal` :
   - `AssemblyWrapper`
   - `IResourceStringProvider`
 

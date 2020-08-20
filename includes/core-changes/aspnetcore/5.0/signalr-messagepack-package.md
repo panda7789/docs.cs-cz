@@ -6,36 +6,36 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/27/2020
 ms.locfileid: "80345226"
 ---
-### <a name="signalr-messagepack-hub-protocol-moved-to-messagepack-2x-package"></a>SignalR: MessagePack Hub Protocol byl přesunut na balíček MessagePack 2.x
+### <a name="signalr-messagepack-hub-protocol-moved-to-messagepack-2x-package"></a>Signal: protokol centra MessagePack se přesunul do balíčku MessagePack 2. x.
 
-ASP.NET Základní SignalR [MessagePack Hub Protocol](/aspnet/core/signalr/messagepackhubprotocol) používá [MessagePack NuGet balíček](https://www.nuget.org/packages/MessagePack) pro serializaci MessagePack. ASP.NET Core 5.0 upgraduje balíček z 1.x na nejnovější verzi balíčku 2.x.
+[Protokol MessagePack hub](/aspnet/core/signalr/messagepackhubprotocol) používá [MessagePack balíček NuGet](https://www.nuget.org/packages/MessagePack) pro serializaci MessagePack. ASP.NET Core ASP.NET Core 5,0 upgraduje balíček z 1. x na nejnovější verzi balíčku 2. x.
 
-Diskuse o tomto problému naleznete [v tématu dotnet/aspnetcore#18692](https://github.com/dotnet/aspnetcore/issues/18692).
+Diskuzi o tomto problému najdete v tématu [dotnet/aspnetcore # 18692](https://github.com/dotnet/aspnetcore/issues/18692).
 
-#### <a name="version-introduced"></a>Zavedená verze
+#### <a name="version-introduced"></a>Představená verze
 
-5.0 Náhled 1
+5,0 Preview 1
 
 #### <a name="old-behavior"></a>Staré chování
 
-ASP.NET Core SignalR používá MessagePack 1.x balíček serializovat a rekonstruovat MessagePack zprávy.
+ASP.NET Core Signal používá balíček MessagePack 1. x k serializaci a deserializaci zpráv MessagePack.
 
 #### <a name="new-behavior"></a>Nové chování
 
-ASP.NET Core SignalR používá messagepack 2.x balíček serializovat a rekonstruovat MessagePack zprávy.
+ASP.NET Core Signal používá k serializaci a deserializaci MessagePack zpráv balíček MessagePack 2. x.
 
 #### <a name="reason-for-change"></a>Důvod změny
 
-Nejnovější vylepšení balíčku MessagePack 2.x přidat užitečné funkce.
+Nejnovější vylepšení v balíčku MessagePack 2. x přidávají užitečné funkce.
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Tato změna porušení platí, pokud:
+Tato změna se projeví v těchto případech:
 
-* Nastavení nebo konfigurace <xref:Microsoft.AspNetCore.SignalR.MessagePackHubProtocolOptions>hodnot v počítači .
-* Použití MessagePack API přímo a pomocí ASP.NET Základní SignalR MessagePack Hub Protocol ve stejném projektu. Namísto předchozí verze bude načtena novější verze.
+* Nastavení nebo konfigurace hodnot na <xref:Microsoft.AspNetCore.SignalR.MessagePackHubProtocolOptions> .
+* Pomocí rozhraní API MessagePack přímo a pomocí protokolu MessagePack (ASP.NET Core Signaler hub) ve stejném projektu. Místo předchozí verze se načte novější verze.
 
-Pokyny k migraci od autorů balíčku naleznete [v tématu Migrace z MessagePack v1.x na MessagePack v2.x](https://github.com/neuecc/MessagePack-CSharp/blob/master/doc/migration.md). Některé aspekty serializace zpráv a deserializace jsou ovlivněny. Konkrétně existují [změny chování, jak DateTime hodnoty serializovat](https://github.com/neuecc/MessagePack-CSharp/blob/master/doc/migration.md#behavioral-changes).
+Pokyny k migraci pro autory balíčku najdete v tématu [migrace z MessagePack v1. x na MessagePack v2. x](https://github.com/neuecc/MessagePack-CSharp/blob/master/doc/migration.md). Jsou ovlivněny některé aspekty serializace a deserializace zprávy. Konkrétně existují [změny chování při serializaci hodnot data a času](https://github.com/neuecc/MessagePack-CSharp/blob/master/doc/migration.md#behavioral-changes).
 
 #### <a name="category"></a>Kategorie
 

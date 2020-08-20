@@ -8,7 +8,7 @@ ms.locfileid: "87302703"
 ---
 ### <a name="vectort-always-throws-notsupportedexception-for-unsupported-types"></a>Vector \<T> vždy vyvolá NotSupportedException pro nepodporované typy
 
-<xref:System.Numerics.Vector%601?displayProperty=nameWithType>nyní vždy vyvolá výjimku <xref:System.NotSupportedException> pro nepodporované parametry typu.
+<xref:System.Numerics.Vector%601?displayProperty=nameWithType> nyní vždy vyvolá výjimku <xref:System.NotSupportedException> pro nepodporované parametry typu.
 
 #### <a name="change-description"></a>Popis změny
 
@@ -47,7 +47,7 @@ Knihovny Core .NET
 
 #### <a name="affected-apis"></a>Ovlivněná rozhraní API
 
-- <xref:System.Numerics.Vector%601?displayProperty=fullName>a všechny její členy
+- <xref:System.Numerics.Vector%601?displayProperty=fullName> a všechny její členy
 
 <!--
 

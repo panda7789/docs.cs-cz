@@ -14,7 +14,7 @@ V důsledku toho <xref:System.Text.Encoding.UTF7?displayProperty=nameWithType> <
 
 #### <a name="change-description"></a>Popis změny
 
-Dřív jste mohli vytvořit instanci kódování UTF-7 pomocí <xref:System.Text.Encoding.GetEncoding%2A?displayProperty=nameWithType> rozhraní API. Zde je příklad:
+Dřív jste mohli vytvořit instanci kódování UTF-7 pomocí <xref:System.Text.Encoding.GetEncoding%2A?displayProperty=nameWithType> rozhraní API. Příklad:
 
 ```csharp
 Encoding enc1 = Encoding.GetEncoding("utf-7"); // By name.

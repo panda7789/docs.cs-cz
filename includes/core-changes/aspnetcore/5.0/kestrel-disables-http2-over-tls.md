@@ -15,7 +15,7 @@ Pokud chcete povolit protokol HTTP/2 přes TLS (Transport Layer Security) ve Win
 
 V takovém případě se chování Kestrel při konfiguraci HTTP/2 přes TLS změnilo na:
 
-- Přejít na `Http1` nižší úroveň a zaprotokolovat zprávu na `Information` úrovni, když je [ListenOptions. HttpProtocols](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.httpprotocols) nastaveno na `Http1AndHttp2` . `Http1AndHttp2`je výchozí hodnota pro `ListenOptions.HttpProtocols` .
+- Přejít na `Http1` nižší úroveň a zaprotokolovat zprávu na `Information` úrovni, když je [ListenOptions. HttpProtocols](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.httpprotocols) nastaveno na `Http1AndHttp2` . `Http1AndHttp2` je výchozí hodnota pro `ListenOptions.HttpProtocols` .
 - Vyvolat výjimku, `NotSupportedException` Pokud `ListenOptions.HttpProtocols` je nastavena na `Http2` .
 
 Diskuzi najdete v tématu problém [dotnet/aspnetcore # 23068](https://github.com/dotnet/aspnetcore/issues/23068).
@@ -30,10 +30,10 @@ Následující tabulka popisuje chování při konfiguraci HTTP/2 přes TLS.
 
 | Protokoly | Windows 7,<br />Windows Server 2008 R2,<br />nebo starší | Systém Windows 8,<br />Windows Server 2012 | Windows 8.1<br />Windows Server 2012 R2 | Windows 10,<br />Windows Server 2016,<br />nebo novější |
 |---------------|-----------------------------------------------|--------------------------------|-------------------------------------|------------------------------------------|
-| `Http2`         | Vyvolá`NotSupportedException`                   | Chyba při ověřování TLS     | Chyba při ověřování TLS&ast;     | Bez chyby |
-| `Http1AndHttp2` | Downgradovat na`Http1`                    | Downgradovat na`Http1`     | Chyba při ověřování TLS&ast;     | Bez chyby |
+| `Http2`         | Vyvolá `NotSupportedException`                   | Chyba při ověřování TLS     | Chyba při ověřování TLS &ast;     | Bez chyby |
+| `Http1AndHttp2` | Downgradovat na `Http1`                    | Downgradovat na `Http1`     | Chyba při ověřování TLS &ast;     | Bez chyby |
 
-&ast;Nakonfigurujte kompatibilní šifrovací sady pro povolení těchto scénářů.
+&ast; Nakonfigurujte kompatibilní šifrovací sady pro povolení těchto scénářů.
 
 #### <a name="new-behavior"></a>Nové chování
 
@@ -41,10 +41,10 @@ Následující tabulka popisuje chování při konfiguraci HTTP/2 přes TLS.
 
 | Protokoly | Windows 7,<br />Windows Server 2008 R2,<br />nebo starší | Systém Windows 8,<br />Windows Server 2012 | Windows 8.1<br />Windows Server 2012 R2 | Windows 10,<br />Windows Server 2016,<br />nebo novější |
 |---------------|-----------------------------------------------|--------------------------------|-------------------------------------|------------------------------------------|
-| `Http2`         | Vyvolá`NotSupportedException`                   | Vyvolá`NotSupportedException`     | Throw `NotSupportedException`&ast;&ast;     | Bez chyby |
-| `Http1AndHttp2` | Downgradovat na`Http1`                    | Downgradovat na`Http1`     | Downgradovat na `Http1`&ast;&ast;     | Bez chyby |
+| `Http2`         | Vyvolá `NotSupportedException`                   | Vyvolá `NotSupportedException`     | Throw `NotSupportedException`&ast;&ast;     | Bez chyby |
+| `Http1AndHttp2` | Downgradovat na `Http1`                    | Downgradovat na `Http1`     | Downgradovat na `Http1`&ast;&ast;     | Bez chyby |
 
-&ast;&ast;Nakonfigurujte kompatibilní šifrovací sady a nastavte kontext aplikace na přepínač `Microsoft.AspNetCore.Server.Kestrel.EnableWindows81Http2` , `true` aby bylo možné tyto scénáře povolit.
+&ast;&ast; Nakonfigurujte kompatibilní šifrovací sady a nastavte kontext aplikace na přepínač `Microsoft.AspNetCore.Server.Kestrel.EnableWindows81Http2` , `true` aby bylo možné tyto scénáře povolit.
 
 #### <a name="reason-for-change"></a>Důvod změny
 

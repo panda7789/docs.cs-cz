@@ -33,7 +33,7 @@ Windows Forms
 
 Následující tabulka uvádí ovlivněné metody a parametry:
 
-| Metoda | Název parametru | Podmínka | Přidaná verze |
+| Metoda | Název parametru | Stav | Přidaná verze |
 |-|-|-|-|
 | <xref:System.Windows.Forms.TabControl.GetToolTipText(System.Object)?displayProperty=fullName> | `item` | Argument není typu <xref:System.Windows.Forms.TabPage> . | Preview 1 |
 | <xref:System.Windows.Forms.DataFormats.GetFormat(System.String)?displayProperty=fullName> | `format` | Argument je `null` , <xref:System.String.Empty?displayProperty=nameWithType> nebo mezera. | Preview 5 |

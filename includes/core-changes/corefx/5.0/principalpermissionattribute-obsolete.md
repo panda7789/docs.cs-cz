@@ -12,7 +12,7 @@ ms.locfileid: "87556324"
 
 #### <a name="change-description"></a>Popis změny
 
-Na .NET Framework a .NET Core můžete přidávat poznámky k metodám s <xref:System.Security.Permissions.PrincipalPermissionAttribute> atributem. Zde je příklad:
+Na .NET Framework a .NET Core můžete přidávat poznámky k metodám s <xref:System.Security.Permissions.PrincipalPermissionAttribute> atributem. Příklad:
 
 ```csharp
 [PrincipalPermission(SecurityAction.Demand, Role = "Administrators")]

@@ -27,7 +27,7 @@ Kestrel vyžaduje, aby připojení ve výchozím nastavení používala TLS 1,1 
 
 #### <a name="new-behavior"></a>Nové chování
 
-Kestrel umožňuje operačnímu systému zvolit nejlepší protokol, který se má použít, a zablokovat nezabezpečené protokoly. <xref:Microsoft.AspNetCore.Server.Kestrel.Https.HttpsConnectionAdapterOptions.SslProtocols%2A?displayProperty=nameWithType>Teď je ve výchozím nastavení `SslProtocols.None` místo `SslProtocols.Tls12 | SslProtocols.Tls11` .
+Kestrel umožňuje operačnímu systému zvolit nejlepší protokol, který se má použít, a zablokovat nezabezpečené protokoly. <xref:Microsoft.AspNetCore.Server.Kestrel.Https.HttpsConnectionAdapterOptions.SslProtocols%2A?displayProperty=nameWithType> Teď je ve výchozím nastavení `SslProtocols.None` místo `SslProtocols.Tls12 | SslProtocols.Tls11` .
 
 #### <a name="reason-for-change"></a>Důvod změny
 

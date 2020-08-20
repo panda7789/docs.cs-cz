@@ -6,31 +6,31 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/26/2020
 ms.locfileid: "80291646"
 ---
-### <a name="signalr-usesignalr-and-useconnections-methods-removed"></a>SignalR: UseSignalR a UseConnections metody odebrány
+### <a name="signalr-usesignalr-and-useconnections-methods-removed"></a>Signál: metody UseSignalR a UseConnections se odebraly.
 
-V ASP.NET Core 3.0 přijal signalr směrování koncových bodů. V rámci této změny <xref:Microsoft.AspNetCore.Builder.SignalRAppBuilderExtensions.UseSignalR%2A> <xref:Microsoft.AspNetCore.Builder.ConnectionsAppBuilderExtensions.UseConnections%2A>byly a některé související metody označeny jako zastaralé. V ASP.NET Core 5.0 byly tyto zastaralé metody odstraněny. Úplný seznam metod naleznete [v tématu Ovlivněná api](#affected-apis).
+V ASP.NET Core 3,0 vydaný signál přijal směrování koncového bodu. V rámci této změny <xref:Microsoft.AspNetCore.Builder.SignalRAppBuilderExtensions.UseSignalR%2A> <xref:Microsoft.AspNetCore.Builder.ConnectionsAppBuilderExtensions.UseConnections%2A> byly, a některé související metody označeny jako zastaralé. V ASP.NET Core 5,0 byly odebrány zastaralé metody. Úplný seznam metod najdete v tématu [ovlivněná rozhraní API](#affected-apis).
 
-Diskuse o tomto problému naleznete [v tématu dotnet/aspnetcore#20082](https://github.com/dotnet/aspnetcore/issues/20082).
+Diskuzi o tomto problému najdete v tématu [dotnet/aspnetcore # 20082](https://github.com/dotnet/aspnetcore/issues/20082).
 
-#### <a name="version-introduced"></a>Zavedená verze
+#### <a name="version-introduced"></a>Představená verze
 
-5.0 Náhled 3
+5,0 Preview 3
 
 #### <a name="old-behavior"></a>Staré chování
 
-Rozbočovače SignalR a obslužné rutiny připojení mohou být registrovány v kanálu middlewaru `UseSignalR` pomocí metod nebo. `UseConnections`
+Centra a obslužné rutiny připojení můžou být v kanálu middleware registrovány pomocí `UseSignalR` `UseConnections` metod nebo.
 
 #### <a name="new-behavior"></a>Nové chování
 
-Rozbočovače SignalR a obslužné rutiny připojení by měly být registrovány <xref:Microsoft.AspNetCore.Builder.EndpointRoutingApplicationBuilderExtensions.UseEndpoints%2A> v rámci metody <xref:Microsoft.AspNetCore.SignalR.HubRouteBuilder.MapHub%2A> a <xref:Microsoft.AspNetCore.Http.Connections.ConnectionsRouteBuilder.MapConnectionHandler%2A> rozšíření na <xref:Microsoft.AspNetCore.Routing.IEndpointRouteBuilder>.
+Centra signálů a obslužné rutiny připojení by měly být zaregistrované v rámci <xref:Microsoft.AspNetCore.Builder.EndpointRoutingApplicationBuilderExtensions.UseEndpoints%2A> použití <xref:Microsoft.AspNetCore.SignalR.HubRouteBuilder.MapHub%2A> <xref:Microsoft.AspNetCore.Http.Connections.ConnectionsRouteBuilder.MapConnectionHandler%2A> rozšiřujících metod a <xref:Microsoft.AspNetCore.Routing.IEndpointRouteBuilder> .
 
 #### <a name="reason-for-change"></a>Důvod změny
 
-Staré metody měly vlastní logiku směrování, která nekomunikovala s jinými součástmi směrování v ASP.NET Jádra. V ASP.NET Core 3.0 byl zaveden nový univerzální směrovací systém, nazývaný směrování koncových bodů. Směrování koncového bodu povoleno SignalR pro interakci s ostatními součástmi směrování. Přechod na tento model umožňuje uživatelům realizovat všechny výhody směrování koncových bodů. V důsledku toho byly staré metody odstraněny.
+Staré metody měly vlastní logiku směrování, která nespolupracovala s ostatními součástmi směrování v ASP.NET Core. V ASP.NET Core 3,0 byla představena nová služba směrování pro obecné účely, která se nazývá směrování koncového bodu. Signál s povoleným směrováním koncových bodů pro interakci s ostatními součástmi směrování. Přepnutím na tento model umožníte uživatelům realizovat všechny výhody směrování koncových bodů. Proto byly staré metody odebrány.
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Odeberte `UseSignalR` kód, který volá nebo `UseConnections` z `Startup.Configure` metody projektu. Nahraďte jej `MapHub` `MapConnectionHandler`voláním nebo , v těle `UseEndpoints`volání . Například:
+Odeberte kód, který volá `UseSignalR` nebo `UseConnections` z metody vašeho projektu `Startup.Configure` . Nahraďte je voláním `MapHub` nebo `MapConnectionHandler` v rámci těla volání `UseEndpoints` . Příklad:
 
 **Starý kód:**
 
@@ -50,7 +50,7 @@ app.UseEndpoints(endpoints =>
 });
 ```
 
-Obecně platí, `MapHub` že `MapConnectionHandler` vaše předchozí hovory a hovory `UseSignalR` `UseConnections` mohou `UseEndpoints` být převedeny přímo z těla a s malou-k-žádné změny potřebné.
+Obecně platí, že vaše předchozí `MapHub` a `MapConnectionHandler` volání lze přenést přímo z těla `UseSignalR` a `UseConnections` na `UseEndpoints` s nepotřebnou změnou.
 
 #### <a name="category"></a>Kategorie
 

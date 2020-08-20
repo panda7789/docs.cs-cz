@@ -32,7 +32,7 @@ Při ruční konstrukci instance třídy `RequestLocalizationMiddleware` předej
 
 #### <a name="category"></a>Kategorie
 
-Jádro ASP.NET
+ASP.NET Core
 
 #### <a name="affected-apis"></a>Ovlivněná rozhraní API
 

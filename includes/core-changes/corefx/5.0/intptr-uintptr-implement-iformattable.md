@@ -8,7 +8,7 @@ ms.locfileid: "88024693"
 ---
 ### <a name="intptr-and-uintptr-implement-iformattable"></a>IntPtr a UIntPtr implementují IFormattable
 
-<xref:System.IntPtr>a <xref:System.UIntPtr> teď je implementovaná <xref:System.IFormattable> . Funkce, které kontrolují <xref:System.IFormattable> podporu, mohou nyní vracet různé výsledky pro tyto typy, protože mohou předat specifikátor formátu a jazykovou verzi.
+<xref:System.IntPtr> a <xref:System.UIntPtr> teď je implementovaná <xref:System.IFormattable> . Funkce, které kontrolují <xref:System.IFormattable> podporu, mohou nyní vracet různé výsledky pro tyto typy, protože mohou předat specifikátor formátu a jazykovou verzi.
 
 #### <a name="change-description"></a>Popis změny
 
@@ -20,7 +20,7 @@ Tato změna má vliv na scénáře jako interpolované řetězce a <xref:System.
 
 #### <a name="reason-for-change"></a>Důvod změny
 
-<xref:System.IntPtr>a <xref:System.UIntPtr> teď mají jazykovou podporu v jazyce C# `nint` prostřednictvím `nuint` klíčových slov a. Typy zálohování byly aktualizovány tak, aby poskytovaly téměř paritu (Pokud je to možné) s funkcemi, které jsou vystaveny jinými primitivními typy, jako například <xref:System.Int32?displayProperty=nameWithType> .
+<xref:System.IntPtr> a <xref:System.UIntPtr> teď mají jazykovou podporu v jazyce C# `nint` prostřednictvím `nuint` klíčových slov a. Typy zálohování byly aktualizovány tak, aby poskytovaly téměř paritu (Pokud je to možné) s funkcemi, které jsou vystaveny jinými primitivními typy, jako například <xref:System.Int32?displayProperty=nameWithType> .
 
 #### <a name="version-introduced"></a>Představená verze
 

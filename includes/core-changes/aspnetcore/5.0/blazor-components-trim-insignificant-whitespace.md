@@ -74,7 +74,7 @@ Ve většině případů není nutná žádná akce, protože aplikace se obvykl
 
 #### <a name="category"></a>Kategorie
 
-Výsledek akce
+ASP.NET Core
 
 #### <a name="affected-apis"></a>Ovlivněná rozhraní API
 

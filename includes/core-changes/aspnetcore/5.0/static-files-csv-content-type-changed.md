@@ -6,31 +6,31 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/30/2020
 ms.locfileid: "80391179"
 ---
-### <a name="static-files-csv-content-type-changed-to-standards-compliant"></a>Statické soubory: Typ obsahu CSV byl změněn na standardy
+### <a name="static-files-csv-content-type-changed-to-standards-compliant"></a>Statické soubory: typ obsahu CSV se změnil na vyhovující standardům.
 
-V ASP.NET jádrem Core `Content-Type` 5.0 se výchozí hodnota hlavičky odpovědi, kterou [middleware statického souboru](/aspnet/core/fundamentals/static-files) používá pro soubory *.csv,* změnila na hodnotu `text/csv`kompatibilní se standardy .
+V ASP.NET Core 5,0 se výchozí `Content-Type` hodnota hlavičky odpovědi, kterou [middleware](/aspnet/core/fundamentals/static-files) pro soubory *. csv* používá, změnila na hodnotu kompatibilní se standardy `text/csv` .
 
-Diskuse o tomto problému naleznete [v tématu dotnet/aspnetcore#17385](https://github.com/dotnet/AspNetCore/issues/17385).
+Diskuzi o tomto problému najdete v tématu [dotnet/aspnetcore # 17385](https://github.com/dotnet/AspNetCore/issues/17385).
 
-#### <a name="version-introduced"></a>Zavedená verze
+#### <a name="version-introduced"></a>Představená verze
 
-5.0 Náhled 1
+5,0 Preview 1
 
 #### <a name="old-behavior"></a>Staré chování
 
-Byla `Content-Type` použita hodnota `application/octet-stream` záhlaví.
+`Content-Type` `application/octet-stream` Byla použita hodnota hlavičky.
 
 #### <a name="new-behavior"></a>Nové chování
 
-Použije `Content-Type` se `text/csv` hodnota záhlaví.
+`Content-Type`Hodnota hlavičky `text/csv` se používá.
 
 #### <a name="reason-for-change"></a>Důvod změny
 
-Shoda se standardem [RFC 7111.](https://tools.ietf.org/html/rfc7111#section-5.1)
+Dodržování předpisů [RFC 7111](https://tools.ietf.org/html/rfc7111#section-5.1) Standard.
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Pokud tato změna ovlivní vaši aplikaci, můžete přizpůsobit mapování typu přípona souboru na MIME. Chcete-li se `application/octet-stream` vrátit k typu <xref:Microsoft.AspNetCore.Builder.StaticFileExtensions.UseStaticFiles%2A> MIME, upravte volání metody v `Startup.Configure`. Například:
+Pokud tato změna ovlivní vaši aplikaci, můžete přizpůsobit mapování typu Přípona souboru na MIME. Chcete-li se vrátit k `application/octet-stream` typu MIME, upravte <xref:Microsoft.AspNetCore.Builder.StaticFileExtensions.UseStaticFiles%2A> volání metody v `Startup.Configure` . Příklad:
 
 ```csharp
 var provider = new FileExtensionContentTypeProvider();
@@ -42,7 +42,7 @@ app.UseStaticFiles(new StaticFileOptions
 });
 ```
 
-Další informace o přizpůsobení mapování naleznete v tématu [FileExtensionContentTypeProvider](/aspnet/core/fundamentals/static-files#fileextensioncontenttypeprovider).
+Další informace o přizpůsobení mapování najdete v tématu [FileExtensionContentTypeProvider](/aspnet/core/fundamentals/static-files#fileextensioncontenttypeprovider).
 
 #### <a name="category"></a>Kategorie
 

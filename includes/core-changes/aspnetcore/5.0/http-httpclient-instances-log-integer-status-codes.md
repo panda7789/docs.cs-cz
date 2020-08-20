@@ -8,7 +8,7 @@ ms.locfileid: "82728272"
 ---
 ### <a name="http-httpclient-instances-created-by-ihttpclientfactory-log-integer-status-codes"></a>HTTP: HttpClient instance vytvořené pomocí kódů IHttpClientFactory pro celočíselné hodnoty log status
 
-<xref:System.Net.Http.HttpClient>instance vytvořené <xref:System.Net.Http.IHttpClientFactory> protokolem stavových kódů HTTP jako celé číslo namísto názvů stavových kódů.
+<xref:System.Net.Http.HttpClient> instance vytvořené <xref:System.Net.Http.IHttpClientFactory> protokolem stavových kódů HTTP jako celé číslo namísto názvů stavových kódů.
 
 #### <a name="version-introduced"></a>Představená verze
 

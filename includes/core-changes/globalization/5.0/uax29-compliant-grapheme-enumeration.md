@@ -16,8 +16,8 @@ Kromě toho <xref:Microsoft.VisualBasic.Strings.StrReverse%2A?displayProperty=fu
 
 Cluster [grapheme](https://www.unicode.org/glossary/#grapheme) nebo [Extended grapheme](https://www.unicode.org/glossary/#extended_grapheme_cluster) je jedním uživatelem vnímaným znakem, který může být tvořen více body kódu Unicode. Například řetězec obsahující thajské znak "kam" ( :::no-loc text="กำ"::: ) se skládá z následujících dvou znaků:
 
-- :::no-loc text="ก":::(= ' \u0e01 ') THAJSKÉ ZNAKY KO KAI
-- :::no-loc text=" ำ":::(= ' \u0e33 ') KHMERSKÝ ZNAK SARA AM
+- :::no-loc text="ก"::: (= ' \u0e01 ') THAJSKÉ ZNAKY KO KAI
+- :::no-loc text=" ำ"::: (= ' \u0e33 ') KHMERSKÝ ZNAK SARA AM
 
 Při zobrazení uživateli operační systém kombinuje dva znaky, aby tvořily jeden znak zobrazení (neboli grapheme) "kam" nebo :::no-loc text="กำ"::: . Emoji může také obsahovat více znaků, které jsou kombinovány pro zobrazení podobným způsobem.
 
