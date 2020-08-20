@@ -1,13 +1,14 @@
 ---
 title: Jazyková verze jazyka c# – Průvodce jazyka C#
 description: Přečtěte si informace o tom, jak je jazyková verze jazyka C# určena na základě vašeho projektu a z důvodů na základě této volby. Přečtěte si, jak přepsat výchozí nastavení ručně.
+ms.custom: updateeachrelease
 ms.date: 05/20/2020
-ms.openlocfilehash: bbe5b12e378cf47b7c9b2c8576088e949e526a9a
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: a27f3210f399f1bed190c18d778cf3824772d576
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83803010"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656848"
 ---
 # <a name="c-language-versioning"></a>Správa verzí jazyka C#
 

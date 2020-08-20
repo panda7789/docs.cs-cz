@@ -2,12 +2,12 @@
 title: Prohlídka Průvodce C# – C#
 description: Novinka v jazyce C#? Seznamte se se základy jazyka.
 ms.date: 08/06/2020
-ms.openlocfilehash: 42c4ff59a520a1b99bbb2fb01d79d8902e16bdd5
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 9fa292e8e85832d831f36cf0f21512aa0cf32580
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88063546"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656225"
 ---
 # <a name="a-tour-of-the-c-language"></a>Prohlídka jazyka C#
 
@@ -15,7 +15,7 @@ C# (vyslovit "viz Sharp") je moderní, objektově orientovaný programovací jaz
 
 C# je objektově orientovaný programovací jazyk ***orientovaný na součásti*** . Jazyk c# poskytuje jazykové konstrukce pro přímou podporu těchto konceptů, což C# přirozený jazyk pro vytváření a používání softwarových komponent. Vzhledem k tomu, že v jazyce C# byly přidány funkce pro podporu nových úloh a vznikajících postupů pro návrh softwaru.
 
-Několik funkcí C# pomáhá při konstrukci robustních a odolných aplikací. [***Uvolňování***](../../standard/garbage-collection/index.md) paměti automaticky uvolňuje paměť, kterou zabírá nedosažitelné nepoužívané objekty. [***Zpracování výjimek***](../programming-guide/exceptions/index.md) poskytuje strukturovaný a rozšiřitelný přístup k detekci a obnovení chyb. [***Výrazy lambda***](../programming-guide/statements-expressions-operators/lambda-expressions.md) podporují funkční programovací techniky. [***Syntaxe dotazu***](../linq/index.md) vytváří společný vzor pro práci s daty z libovolného zdroje. Jazyková podpora pro [***asynchronní operace***](../programming-guide/concepts/async/index.md) poskytuje syntaxi pro vytváření distribuovaných systémů. [***Porovnávání vzorů***](..//pattern-matching.md) poskytuje syntaxi pro snadné oddělení dat z algoritmů v moderních distribuovaných systémech. Jazyk C# má [***sjednocený systém typů***](../programming-guide/types/index.md). Všechny typy C#, včetně primitivních typů, jako jsou `int` a `double` , dědí z jednoho kořenového `object` typu. Všechny typy sdílejí sadu běžných operací. Hodnoty libovolného typu mohou být uloženy, přepravovány a provozovány konzistentním způsobem. Jazyk C# navíc podporuje uživatelsky definované typy odkazů i typy hodnot. Jazyk C# umožňuje dynamické přidělování objektů a vloženého úložiště lehkých struktur.
+Několik funkcí C# pomáhá při konstrukci robustních a odolných aplikací. [***Uvolňování***](../../standard/garbage-collection/index.md) paměti automaticky uvolňuje paměť, kterou zabírá nedosažitelné nepoužívané objekty. [***Zpracování výjimek***](../programming-guide/exceptions/index.md) poskytuje strukturovaný a rozšiřitelný přístup k detekci a obnovení chyb. [***Výrazy lambda***](../language-reference/operators/lambda-expressions.md) podporují funkční programovací techniky. [***Syntaxe dotazu***](../linq/index.md) vytváří společný vzor pro práci s daty z libovolného zdroje. Jazyková podpora pro [***asynchronní operace***](../programming-guide/concepts/async/index.md) poskytuje syntaxi pro vytváření distribuovaných systémů. [***Porovnávání vzorů***](..//pattern-matching.md) poskytuje syntaxi pro snadné oddělení dat z algoritmů v moderních distribuovaných systémech. Jazyk C# má [***sjednocený systém typů***](../programming-guide/types/index.md). Všechny typy C#, včetně primitivních typů, jako jsou `int` a `double` , dědí z jednoho kořenového `object` typu. Všechny typy sdílejí sadu běžných operací. Hodnoty libovolného typu mohou být uloženy, přepravovány a provozovány konzistentním způsobem. Jazyk C# navíc podporuje uživatelsky definované typy odkazů i typy hodnot. Jazyk C# umožňuje dynamické přidělování objektů a vloženého úložiště lehkých struktur.
 
 Jazyk C# zvýrazňuje ***správu verzí*** , aby bylo zajištěno, že programy a knihovny se budou v průběhu času vyvíjejí kompatibilním způsobem. Aspekty návrhu jazyka C#, které byly přímo ovlivněny aspekty správy verzí, zahrnují samostatné `virtual` a `override` modifikátory, pravidla pro řešení přetížení metod a podporu explicitních deklarací členů rozhraní.
 
@@ -43,31 +43,31 @@ Následující přehled poskytuje přehled systému typů jazyka C#.
 
 - [Typy hodnot](../language-reference/builtin-types/value-types.md)
   - [Jednoduché typy](../language-reference/builtin-types/value-types.md#built-in-value-types)
-    - [Podepsané integrály](../language-reference/builtin-types/integral-numeric-types.md): `sbyte` , `short` , `int` ,`long`
-    - [Unsigned integrál](../language-reference/builtin-types/integral-numeric-types.md): `byte` , `ushort` , `uint` ,`ulong`
-    - [Znaky Unicode](/dotnet/standard/base-types/character-encoding-introduction): `char` , které představují jednotku kódu UTF-16
-    - [Binární bod IEEE s plovoucí desetinnou](../language-reference/builtin-types/floating-point-numeric-types.md)čárkou: `float` ,`double`
-    - [Desetinná čárka s vysokou přesností](../language-reference/builtin-types/floating-point-numeric-types.md):`decimal`
-    - Boolean: `bool` , která představuje logické hodnoty – hodnoty, které jsou buď `true` nebo`false`
+    - [Podepsané integrály](../language-reference/builtin-types/integral-numeric-types.md): `sbyte` , `short` , `int` , `long`
+    - [Unsigned integrál](../language-reference/builtin-types/integral-numeric-types.md): `byte` , `ushort` , `uint` , `ulong`
+    - [Znaky Unicode](../../standard/base-types/character-encoding-introduction.md): `char` , které představují jednotku kódu UTF-16
+    - [Binární bod IEEE s plovoucí desetinnou](../language-reference/builtin-types/floating-point-numeric-types.md)čárkou: `float` , `double`
+    - [Desetinná čárka s vysokou přesností](../language-reference/builtin-types/floating-point-numeric-types.md): `decimal`
+    - Boolean: `bool` , která představuje logické hodnoty – hodnoty, které jsou buď `true` nebo `false`
   - [Výčtové typy](../language-reference/builtin-types/enum.md)
     - Uživatelem definované typy formuláře `enum E {...}` . `enum`Typ je odlišný typ s pojmenovanými konstantami. Každý `enum` typ má nadřízený typ, který musí být jedním z osmi integrálních typů. Sada hodnot `enum` typu je stejná jako sada hodnot základního typu.
   - [Typy struktury](../language-reference/builtin-types/struct.md)
-    - Uživatelem definované typy formuláře`struct S {...}`
+    - Uživatelem definované typy formuláře `struct S {...}`
   - [Typy hodnot s povolenou hodnotou Null](../language-reference/builtin-types/nullable-value-types.md)
     - Rozšíření všech ostatních typů hodnot s `null` hodnotou
-  - [Typy hodnot řazené kolekce členů](../tuples.md)
-    - Uživatelem definované typy formuláře`(T1, T2, ...)`
+  - [Typy hodnot řazené kolekce členů](../language-reference/builtin-types/value-tuples.md)
+    - Uživatelem definované typy formuláře `(T1, T2, ...)`
 - [Odkazové typy](../language-reference/keywords/reference-types.md)
   - [Typy tříd](../language-reference/keywords/class.md)
-    - Nejvyšší základní třída všech ostatních typů:`object`
-    - [Řetězce Unicode](/dotnet/standard/base-types/character-encoding-introduction): `string` , které představují posloupnost jednotek kódu UTF-16
-    - Uživatelem definované typy formuláře`class C {...}`
+    - Nejvyšší základní třída všech ostatních typů: `object`
+    - [Řetězce Unicode](../../standard/base-types/character-encoding-introduction.md): `string` , které představují posloupnost jednotek kódu UTF-16
+    - Uživatelem definované typy formuláře `class C {...}`
   - [Typy rozhraní](../language-reference/keywords/interface.md)
-    - Uživatelem definované typy formuláře`interface I {...}`
+    - Uživatelem definované typy formuláře `interface I {...}`
   - [Typy polí](../programming-guide/arrays/index.md)
-    - Jednoduché a multidimenzionální a zubaté, například, `int[]` `int[,]` a`int[][]`
-  - [Typy delegátů](../language-reference/keywords/delegate.md)
-    - Uživatelem definované typy formuláře`delegate int D(...)`
+    - Jednoduché a multidimenzionální a zubaté, například, `int[]` `int[,]` a `int[][]`
+  - [Typy delegátů](../language-reference/builtin-types/reference-types.md#the-delegate-type)
+    - Uživatelem definované typy formuláře `delegate int D(...)`
 
 Programy v jazyce C# používají *deklarace typů* k vytváření nových typů. Deklarace typu Určuje název a členy nového typu. Pět kategorií typů v jazyce C# je uživatelsky definované: typy tříd, typy struktury, typy rozhraní, výčtové typy a typy delegátů.
 

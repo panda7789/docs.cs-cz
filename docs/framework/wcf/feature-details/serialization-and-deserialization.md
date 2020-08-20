@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 3d71814c-bda7-424b-85b7-15084ff9377a
-ms.openlocfilehash: b770543eb09ed2edc1a028561e0cf41e74fab1cc
-ms.sourcegitcommit: 2543a78be6e246aa010a01decf58889de53d1636
+ms.openlocfilehash: a861ee38963f77bffe23bbca19a6f895289e372d
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86444492"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656811"
 ---
 # <a name="serialization-and-deserialization"></a>Serializace a deserializace
 Windows Communication Foundation (WCF) obsahuje nový modul serializace, <xref:System.Runtime.Serialization.DataContractSerializer> . <xref:System.Runtime.Serialization.DataContractSerializer>Překládá mezi objekty .NET Framework a XML v obou směrech. Toto téma vysvětluje, jak serializátor funguje.  
@@ -20,9 +20,9 @@ Windows Communication Foundation (WCF) obsahuje nový modul serializace, <xref:S
   
  Při deserializaci kódu XML serializátor používá <xref:System.Xml.XmlReader> <xref:System.Xml.XmlWriter> třídy a. Podporuje také <xref:System.Xml.XmlDictionaryReader> třídy a, <xref:System.Xml.XmlDictionaryWriter> které jim umožňují vydávat optimalizované XML v některých případech, například při použití binárního formátu XML služby WCF.  
   
- WCF zahrnuje i doprovodný serializátor <xref:System.Runtime.Serialization.NetDataContractSerializer> . <xref:System.Runtime.Serialization.NetDataContractSerializer>:
+ WCF zahrnuje i doprovodný serializátor <xref:System.Runtime.Serialization.NetDataContractSerializer> . Pomocná rutina <xref:System.Runtime.Serialization.NetDataContractSerializer>:
 
-* Není ***zabezpečené.*** Další informace najdete v [příručce zabezpečení BinaryFormatter](/dotnet/standard/serialization/binaryformatter-security-guide).
+* Není ***zabezpečené.*** Další informace najdete v [příručce zabezpečení BinaryFormatter](../../../standard/serialization/binaryformatter-security-guide.md).
 * Je podobný jako <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter> serializátory a, protože také generuje .NET Framework názvy typů jako součást serializovaných dat.
 * Se používá, pokud jsou stejné typy sdíleny na serializaci a na konci serializace.
 
@@ -267,7 +267,7 @@ Windows Communication Foundation (WCF) obsahuje nový modul serializace, <xref:S
   
  Všimněte si také, že `NetDataContractSerializer` nevýstupuje úplný .NET Framework typ a název sestavení pro každý uzel v grafu objektů. Vypisuje tyto informace pouze tam, kde je dvojznačný. To znamená výstup na úrovni kořenového objektu a pro všechny polymorfní případy.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.Runtime.Serialization.DataContractSerializer>
 - <xref:System.Runtime.Serialization.NetDataContractSerializer>

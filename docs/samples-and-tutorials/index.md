@@ -3,21 +3,21 @@ title: Ukázky a kurzy .NET
 description: Informace o ukázkách a kurzech pro .NET Core, ASP.NET Core a jazyk C#, které vám pomůžou naučit se o .NET.
 author: BillWagner
 ms.author: wiwagn
-ms.date: 04/11/2017
-ms.openlocfilehash: 367b2cbea24ac0da634051bf815c319f3679f79b
-ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
+ms.date: 08/19/2020
+ms.openlocfilehash: 587365aae1c2069c3e94ad0452da9c31dc6e89f0
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86417332"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656954"
 ---
 # <a name="net-samples-and-tutorials"></a>Ukázky a kurzy .NET
 
-Dokumentace k rozhraní .NET obsahuje sadu ukázek a kurzů, které vás seznámí s .NET. Toto téma popisuje, jak najít, zobrazit a stáhnout ukázky a kurzy pro .NET Core, ASP.NET Core a C#. Vyhledejte prostředky, které se naučí programovací jazyk F # na [webu f # Foundation](https://fsharp.org/learn.html). Pokud vás zajímá zkoumání C# pomocí online editoru kódu, začněte s [tímto interaktivním kurzem](https://dotnet.microsoft.com/learn/dotnet/in-browser-tutorial/1) a pokračujte v [interaktivním kurzu C#](../csharp/tutorials/intro-to-csharp/index.md). Pokyny k zobrazení a stažení ukázkového kódu naleznete v části [Ukázka zobrazení a stažení ukázek](#viewing-and-downloading-samples) .
+Dokumentace k rozhraní .NET obsahuje sadu ukázek a kurzů, které vás seznámí s .NET. Tento článek popisuje, jak najít, zobrazit a stáhnout ukázky a kurzy pro .NET Core, ASP.NET Core a C#. Vyhledejte prostředky, které se naučí programovací jazyk F # na [webu f # Foundation](https://fsharp.org/learn/). Pokud vás zajímá zkoumání C# pomocí online editoru kódu, začněte s [tímto interaktivním kurzem](https://dotnet.microsoft.com/learn/dotnet/in-browser-tutorial/1) a pokračujte v [interaktivním kurzu C#](../csharp/tutorials/intro-to-csharp/index.md). Pokyny k zobrazení a stažení ukázkového kódu naleznete v části [Ukázka zobrazení a stažení ukázek](#view-and-download-samples) .
 
 ## <a name="net-core"></a>.NET Core
 
-### <a name="samples"></a>Ukázky
+### <a name="samples"></a>ukázky
 
 **[Testování částí v .NET Core pomocí testu dotnet](../core/testing/unit-testing-with-dotnet-test.md)**
 
@@ -25,9 +25,9 @@ V této příručce se dozvíte, jak vytvořit webovou aplikaci ASP.NET Core a s
 
 ### <a name="tutorials"></a>Kurzy
 
-**[Psaní konzolových aplikací .NET Core pomocí .NET Core CLI: podrobný průvodce](../core/tutorials/cli-create-console-app.md)**
+**[Kurz: Vytvoření konzolové aplikace .NET Core pomocí Visual Studio Code](../core/tutorials/with-visual-studio-code.md)**
 
-V této příručce se dozvíte, jak používat nástroje .NET Core CLI k vytváření konzolových aplikací pro různé platformy. Začíná základní konzolovou aplikací a nakonec zahrnuje více projektů, včetně testování. Pomocí těchto funkcí můžete postupně sestavovat své znalosti. [Dokončená ukázka](https://github.com/dotnet/samples/tree/master/core/console-apps) je k dispozici v úložišti dotnet/Samples na GitHubu.
+V tomto kurzu se dozvíte, jak vytvořit a spustit konzolovou aplikaci .NET Core pomocí Visual Studio Code a .NET Core CLI. Úkoly projektu, jako je vytváření, kompilování a spuštění projektu, jsou prováděny pomocí .NET Core CLI.
 
 **[Psaní knihoven pomocí nástrojů pro různé platformy](../core/tutorials/libraries.md)**
 
@@ -39,7 +39,7 @@ Přečtěte si [kurz ASP.NET Core](/aspnet/core/tutorials/). Mnoho článků v d
 
 ## <a name="c-language"></a>jazyk C#
 
-### <a name="samples"></a>Ukázky
+### <a name="samples"></a>ukázky
 
 **[Iterátory](../csharp/iterators.md)**
 
@@ -83,7 +83,7 @@ Tento kurz ukazuje webovou komunikaci, serializaci JSON a objektově orientovan�
 
 Tento kurz ukazuje spoustu funkcí jazyka LINQ a prvků jazyka, které ho podporují. [Dokončená ukázka](https://github.com/dotnet/samples/tree/master/csharp/getting-started/console-linq) je k dispozici v úložišti dotnet/Samples na GitHubu.
 
-**[Začínáme s .NET Core v macOS pomocí Visual Studio pro Mac](../core/tutorials/using-on-mac-vs.md)**
+**[Kurz: Vytvoření konzolové aplikace .NET Core pomocí Visual Studio pro Mac](../core/tutorials/with-visual-studio-mac.md)**
 
 V tomto kurzu se dozvíte, jak vytvořit jednoduchou konzolovou aplikaci .NET Core pomocí Visual Studio pro Mac.
 
@@ -101,13 +101,13 @@ V tomto kurzu se dozvíte, jak vytvořit jednoduchou aplikaci v .NET Core, kter�
 
 Tento kurz ukazuje, jak nasadit existující aplikaci ASP.NET MVC v kontejneru Windows Docker. [Dokončená ukázka](https://github.com/dotnet/samples/tree/master/framework/docker/MVCRandomAnswerGenerator) je k dispozici v úložišti dotnet/Samples na GitHubu.
 
-## <a name="viewing-and-downloading-samples"></a>Zobrazení a stažení ukázek
+## <a name="view-and-download-samples"></a>Zobrazit a stáhnout ukázky
 
 Mnoho témat zobrazuje zdrojový kód a ukázky, které jsou k dispozici pro zobrazení nebo stažení z GitHubu. Ukázku můžete zobrazit pouze pomocí ukázkového odkazu. Chcete-li stáhnout kód, postupujte podle těchto pokynů:
 
 1. Stáhněte si úložiště obsahující ukázkový kód pomocí jednoho z následujících postupů:
    * Stáhněte si soubor ZIP úložiště do místního systému. Dekomprimace komprimovaného archivu.
-   * [Rozvětvení](https://help.github.com/articles/fork-a-repo/) úložiště a [klonování](https://help.github.com/articles/cloning-a-repository/) rozvětvení do místního systému. Rozvětvení a klonování vám umožní dělat příspěvky do dokumentace tím, že se potvrdily změny do rozvětvení a pak se vytvoří žádost o přijetí změn pro oficiální úložiště docs. Další informace najdete v [příručce k dokumentaci k rozhraní .NET](https://docs.microsoft.com/contribute/dotnet/dotnet-contribute) a v [příručce k ASP.NET Core docs](https://github.com/aspnet/AspNetCore.Docs/blob/master/CONTRIBUTING.md).
+   * [Rozvětvení](https://help.github.com/articles/fork-a-repo/) úložiště a [klonování](https://help.github.com/articles/cloning-a-repository/) rozvětvení do místního systému. Rozvětvení a klonování vám umožní dělat příspěvky do dokumentace tím, že se potvrdily změny do rozvětvení a pak se vytvoří žádost o přijetí změn pro oficiální úložiště docs. Další informace najdete v [příručce k dokumentaci k rozhraní .NET](https://docs.microsoft.com/contribute/dotnet/dotnet-contribute) a v [příručce k ASP.NET Core docs](https://github.com/dotnet/AspNetCore.Docs/blob/master/CONTRIBUTING.md).
    * Naklonujte úložiště místně. Pokud naklonujte úložiště docs přímo do místního systému, nebudete moci provádět potvrzení přímo proti oficiálnímu úložišti, takže nebudete moci získat příspěvek k dokumentaci později. Použijte postup rozvětvení a klonování, který byl dříve popsán, pokud chcete zachovat příležitost přispět k dokumentaci později.
 1. Přejděte do složek úložiště do umístění ukázky. Relativní cesta k umístění ukázky se zobrazí v adresním řádku prohlížeče, když přejdete na odkaz na ukázku.
 1. Chcete-li spustit ukázku, máte několik možností:

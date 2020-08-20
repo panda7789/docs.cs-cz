@@ -4,12 +4,12 @@ description: Naučte se hostovat modul runtime .NET Core z nativního kódu pro 
 author: mjrousos
 ms.topic: how-to
 ms.date: 12/21/2018
-ms.openlocfilehash: 2324b61bcffb686a455fcfd154284a2b78aa746b
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 3b24ade694e25040d77e411bead3f454e9d5cdef
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84283491"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656173"
 ---
 # <a name="write-a-custom-net-core-host-to-control-the-net-runtime-from-your-native-code"></a>Zápis vlastního hostitele .NET Core pro řízení modulu .NET runtime z vašeho nativního kódu
 
@@ -19,7 +19,7 @@ Hostování modulu runtime .NET Core je pokročilý scénář a ve většině p�
 
 Tento článek obsahuje přehled kroků nezbytných ke spuštění modulu runtime .NET Core z nativního kódu a spuštění spravovaného kódu.
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 Vzhledem k tomu, že hostitelé jsou nativní aplikace, tento kurz popisuje vytvoření aplikace v jazyce C++ pro hostování .NET Core. Budete potřebovat vývojové prostředí C++ (například, které poskytuje [Visual Studio](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs)).
 
@@ -34,7 +34,7 @@ Existují tři různá rozhraní API, která lze použít k hostování .NET Cor
 
 ## <a name="sample-hosts"></a>Ukázkové hostitele
 
-[Příklady hostitelů](https://github.com/dotnet/samples/tree/master/core/hosting) , které demonstrují kroky popsané v následujících kurzech, jsou k dispozici v úložišti GitHub/Samples GitHub. Komentáře v ukázkách jasně přiřazují očíslované kroky z těchto kurzů s tím, kde jsou provedeny v ukázce. Pokyny ke stažení najdete v tématu [ukázky a kurzy](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
+[Příklady hostitelů](https://github.com/dotnet/samples/tree/master/core/hosting) , které demonstrují kroky popsané v následujících kurzech, jsou k dispozici v úložišti GitHub/Samples GitHub. Komentáře v ukázkách jasně přiřazují očíslované kroky z těchto kurzů s tím, kde jsou provedeny v ukázce. Pokyny ke stažení najdete v tématu [ukázky a kurzy](../../samples-and-tutorials/index.md#view-and-download-samples).
 
 Mějte na paměti, že Ukázkoví hostitelé se mají použít ke studijním účelům, takže mají světlou kontrolu chyb a jsou navržené pro zdůraznění čitelnosti v průběhu efektivity.
 
@@ -88,7 +88,7 @@ Hostitel spolupracujícího s platformou [UNIX](https://github.com/dotnet/runtim
 
 ### <a name="step-1---find-and-load-coreclr"></a>Krok 1 – vyhledání a načtení CoreCLR
 
-Rozhraní API modulu runtime .NET Core jsou v *CoreCLR. dll* (ve Windows), v *Libcoreclr.so* (na platformě Linux) nebo v *Libcoreclr. DYLIB* (na MacOS). Prvním krokem pro hostování .NET Core je načtení knihovny CoreCLR. Někteří hostitelé prohledají různé cesty nebo používají vstupní parametry k nalezení knihovny, zatímco jiné vědí, že ji načítají z určité cesty (vedle hostitele, například nebo z umístění v rámci počítače).
+Rozhraní API modulu runtime .NET Core jsou v *coreclr.dll* (ve Windows), v *Libcoreclr.so* (na platformě Linux) nebo v *Libcoreclr. DYLIB* (v MacOS). Prvním krokem pro hostování .NET Core je načtení knihovny CoreCLR. Někteří hostitelé prohledají různé cesty nebo používají vstupní parametry k nalezení knihovny, zatímco jiné vědí, že ji načítají z určité cesty (vedle hostitele, například nebo z umístění v rámci počítače).
 
 Po nalezení se knihovna načte pomocí `LoadLibraryEx` (ve Windows) nebo `dlopen` (na Linux/MacOS).
 
@@ -114,11 +114,11 @@ Než začnete s modulem runtime, je nutné připravit některé vlastnosti k ur�
 
 Mezi běžné vlastnosti patří:
 
-* `TRUSTED_PLATFORM_ASSEMBLIES`Toto je seznam cest sestavení (oddělených znakem '; ' ve Windows a ': ' v systému Linux), který bude moci modul runtime ve výchozím nastavení vyřešit. Někteří hostitelé mají pevně kódované manifesty se seznamem sestavení, která lze načíst. Ostatní budou do tohoto seznamu vkládat všechny knihovny v určitých umístěních (například vedle *CoreCLR. dll*).
-* `APP_PATHS`Toto je seznam cest k testům pro sestavení, pokud jej nelze najít v seznamu důvěryhodných platforem sestavení (TPA). Vzhledem k tomu, že hostitel má větší kontrolu nad tím, která sestavení jsou načtena pomocí seznamu TPA, je osvědčeným postupem pro hostitele k určení, která sestavení chtějí načíst a jejich seznam explicitně. Pokud je tato vlastnost potřebná ke zjišťování v době běhu, může tuto situaci povolit.
-* `APP_NI_PATHS`Tento seznam je podobný APP_PATHS s tím rozdílem, že se jedná o cesty, které budou zjišťovány pro nativní bitové kopie.
-* `NATIVE_DLL_SEARCH_DIRECTORIES`Tato vlastnost je seznam cest, které by měl zavaděč při hledání nativních knihoven volaných prostřednictvím volání nespravovaného testu otestovat.
-* `PLATFORM_RESOURCE_ROOTS`Tento seznam obsahuje cesty ke sondám pro satelitní sestavení prostředků (v podadresářích specifických pro jazykovou verzi).
+* `TRUSTED_PLATFORM_ASSEMBLIES` Toto je seznam cest sestavení (oddělených znakem '; ' ve Windows a ': ' v systému Linux), který bude moci modul runtime ve výchozím nastavení vyřešit. Někteří hostitelé mají pevně kódované manifesty se seznamem sestavení, která lze načíst. Ostatní budou do tohoto seznamu vkládat všechny knihovny v určitých umístěních (například vedle *coreclr.dll*).
+* `APP_PATHS` Toto je seznam cest k testům pro sestavení, pokud jej nelze najít v seznamu důvěryhodných platforem sestavení (TPA). Vzhledem k tomu, že hostitel má větší kontrolu nad tím, která sestavení jsou načtena pomocí seznamu TPA, je osvědčeným postupem pro hostitele k určení, která sestavení chtějí načíst a jejich seznam explicitně. Pokud je tato vlastnost potřebná ke zjišťování v době běhu, může tuto situaci povolit.
+* `APP_NI_PATHS` Tento seznam je podobný APP_PATHS s tím rozdílem, že se jedná o cesty, které budou zjišťovány pro nativní bitové kopie.
+* `NATIVE_DLL_SEARCH_DIRECTORIES` Tato vlastnost je seznam cest, které by měl zavaděč při hledání nativních knihoven volaných prostřednictvím volání nespravovaného testu otestovat.
+* `PLATFORM_RESOURCE_ROOTS` Tento seznam obsahuje cesty ke sondám pro satelitní sestavení prostředků (v podadresářích specifických pro jazykovou verzi).
 
 V tomto ukázkovém hostiteli je seznam TPA vytvořený pouhým seznamem všech knihoven v aktuálním adresáři:
 
@@ -177,11 +177,11 @@ Po odkazování na potřebné hlavičky (například[Mscoree. h](https://github.
 [!code-cpp[NetCoreHost#1](~/samples/snippets/core/tutorials/netcore-hosting/csharp/HostWithMscoree/host.cpp#1)]
 
 ### <a name="step-2---find-and-load-coreclr"></a>Krok 2 – vyhledání a načtení CoreCLR
-Rozhraní API modulu runtime .NET Core jsou v *CoreCLR. dll* (ve Windows). Chcete-li získat naše hostující rozhraní ( `ICLRRuntimeHost4` ), je nutné najít a načíst *CoreCLR. dll*. Pro definování konvence, jak bude vyhledána *Knihovna CoreCLR. dll*, je k dis na hostitele. Někteří hostitelé očekávají, že se soubor nachází v dobře známém umístění v rámci počítače (například *%ProgramFiles%\dotnet\shared\Microsoft.NETCore.App\2.1.6*). Ostatní očekávají, že *CoreCLR. dll* se načte z umístění vedle samotného hostitele nebo aplikace, která se má hostovat. I když ostatní můžou najít knihovnu v proměnné prostředí.
+Rozhraní API modulu runtime .NET Core jsou v *CoreCLR.dll* (ve Windows). Chcete-li získat naše hostující rozhraní ( `ICLRRuntimeHost4` ), je nutné najít a načíst *CoreCLR.dll*. Pro definování konvence, jak vyhledá *CoreCLR.dll*, je na hostiteli. Někteří hostitelé očekávají, že se soubor nachází v dobře známém umístění v rámci počítače (například *%ProgramFiles%\dotnet\shared\Microsoft.NETCore.App\2.1.6*). Ostatní můžou očekávat, že *CoreCLR.dll* se načtou z umístění vedle samotného hostitele nebo aplikace, která se má hostovat. I když ostatní můžou najít knihovnu v proměnné prostředí.
 
 V systému Linux nebo macOS je základní běhová knihovna *libcoreclr.so* nebo *libcoreclr. DYLIB*, v uvedeném pořadí.
 
-Náš Ukázkový hostitel sonduje několik běžných umístění pro *CoreCLR. dll*. Po nalezení se musí načíst přes `LoadLibrary` (nebo `dlopen` na Linux/MacOS).
+Náš Ukázkový hostitel sonduje několik běžných umístění pro *CoreCLR.dll*. Po nalezení se musí načíst přes `LoadLibrary` (nebo `dlopen` na Linux/MacOS).
 
 [!code-cpp[NetCoreHost#2](~/samples/snippets/core/tutorials/netcore-hosting/csharp/HostWithMscoree/host.cpp#2)]
 
@@ -212,11 +212,11 @@ Až se rozhodnete, které příznaky AppDomain se mají použít, musí být def
 
 Mezi běžné vlastnosti AppDomain patří:
 
-* `TRUSTED_PLATFORM_ASSEMBLIES`Toto je seznam cest sestavení (oddělený systémem `;` Windows a `:` na platformě Linux/MacOS), ve kterých by měla doména AppDomain upřednostňovat načítání a poskytovat úplný vztah důvěryhodnosti (dokonce i v částečně důvěryhodných doménách). Tento seznam má obsahovat sestavení architektury a jiné důvěryhodné moduly, podobně jako globální mezipaměť sestavení (GAC) v .NET Frameworkch scénářích. Někteří hostitelé vloží do tohoto seznamu všechny knihovny v *CoreCLR. dll* , ostatní mají pevně kódované manifesty, které uvádějí důvěryhodná sestavení pro jejich účely.
-* `APP_PATHS`Toto je seznam cest k testům pro sestavení, pokud jej nelze najít v seznamu důvěryhodných platforem sestavení (TPA). Vzhledem k tomu, že hostitel má větší kontrolu nad tím, která sestavení jsou načtena pomocí seznamu TPA, je osvědčeným postupem pro hostitele k určení, která sestavení chtějí načíst a jejich seznam explicitně. Pokud je tato vlastnost potřebná ke zjišťování v době běhu, může tuto situaci povolit.
-* `APP_NI_PATHS`Tento seznam je velmi podobný APP_PATHS s tím rozdílem, že se jedná o cesty, které budou zjišťovány pro nativní bitové kopie.
-* `NATIVE_DLL_SEARCH_DIRECTORIES`Tato vlastnost je seznam cest, které by měl zavaděč při hledání nativních knihoven DLL volaných prostřednictvím volání nespravovaného testu otestovat.
-* `PLATFORM_RESOURCE_ROOTS`Tento seznam obsahuje cesty ke sondám pro satelitní sestavení prostředků (v podadresářích specifických pro jazykovou verzi).
+* `TRUSTED_PLATFORM_ASSEMBLIES` Toto je seznam cest sestavení (oddělený systémem `;` Windows a `:` na platformě Linux/MacOS), ve kterých by měla doména AppDomain upřednostňovat načítání a poskytovat úplný vztah důvěryhodnosti (dokonce i v částečně důvěryhodných doménách). Tento seznam má obsahovat sestavení architektury a jiné důvěryhodné moduly, podobně jako globální mezipaměť sestavení (GAC) v .NET Frameworkch scénářích. Někteří hostitelé vloží do tohoto seznamu všechny knihovny *coreclr.dll* , ostatní mají pevně kódované manifesty, které uvádějí důvěryhodná sestavení pro jejich účely.
+* `APP_PATHS` Toto je seznam cest k testům pro sestavení, pokud jej nelze najít v seznamu důvěryhodných platforem sestavení (TPA). Vzhledem k tomu, že hostitel má větší kontrolu nad tím, která sestavení jsou načtena pomocí seznamu TPA, je osvědčeným postupem pro hostitele k určení, která sestavení chtějí načíst a jejich seznam explicitně. Pokud je tato vlastnost potřebná ke zjišťování v době běhu, může tuto situaci povolit.
+* `APP_NI_PATHS` Tento seznam je velmi podobný APP_PATHS s tím rozdílem, že se jedná o cesty, které budou zjišťovány pro nativní bitové kopie.
+* `NATIVE_DLL_SEARCH_DIRECTORIES` Tato vlastnost je seznam cest, které by měl zavaděč při hledání nativních knihoven DLL volaných prostřednictvím volání nespravovaného testu otestovat.
+* `PLATFORM_RESOURCE_ROOTS` Tento seznam obsahuje cesty ke sondám pro satelitní sestavení prostředků (v podadresářích specifických pro jazykovou verzi).
 
 V našem [jednoduchém ukázkovém hostiteli](https://github.com/dotnet/samples/tree/master/core/hosting/HostWithMscoree)se tyto vlastnosti nastavují takto:
 
@@ -256,6 +256,6 @@ CoreCLR nepodporuje vykládku. Uvolněte knihovnu CoreCLR.
 ## <a name="conclusion"></a>Závěr
 Po sestavení hostitele je možné ho otestovat spuštěním z příkazového řádku a předávat všechny argumenty, které hostitel očekává (jako je spravovaná aplikace pro spuštění ukázkového hostitele mscoree). Při zadávání aplikace .NET Core pro spuštění hostitele nezapomeňte použít knihovnu DLL, která je vytvořena pomocí `dotnet build` . Spustitelné soubory (soubory. exe) vytvořené `dotnet publish` pro samostatné aplikace jsou ve skutečnosti výchozím hostitelem .NET Core (aby bylo možné aplikaci spustit přímo z příkazového řádku v hlavní scénářích); kód uživatele je zkompilován do knihovny DLL se stejným názvem.
 
-Pokud co nejdříve nefunguje, poklikejte na to, že *CoreCLR. dll* je k dispozici v umístění očekávaném hostitelem, že všechny nezbytné knihovny rozhraní jsou v seznamu TPA a že CoreCLR bitová verze (32-bit nebo 64) odpovídá způsobu sestavení hostitele.
+Pokud co nejdříve nefunguje, pokontrolujte, že *coreclr.dll* je k dispozici v umístění očekávaném hostitelem, že všechny nezbytné knihovny rozhraní jsou v seznamu TPA a že CoreCLR bitová verze (32-bit nebo 64) odpovídá způsobu sestavení hostitele.
 
 Hostování modulu runtime .NET Core je pokročilý scénář, který nevyžaduje mnoho vývojářů, ale pro uživatele, kteří potřebují spustit spravovaný kód z nativního procesu nebo kteří potřebují větší kontrolu nad chováním modulu runtime .NET Core, může být velmi užitečné.

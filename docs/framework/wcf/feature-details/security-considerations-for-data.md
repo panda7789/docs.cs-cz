@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a7eb98da-4a93-4692-8b59-9d670c79ffb2
-ms.openlocfilehash: 530bb54936f97f1d7460d63cfa316c760cbd449d
-ms.sourcegitcommit: 2543a78be6e246aa010a01decf58889de53d1636
+ms.openlocfilehash: 8b54aea1409f2b4c0a3d39d215922ba62c2a3563
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86441814"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656967"
 ---
 # <a name="security-considerations-for-data"></a>Důležité informace o zabezpečení pro data
 
@@ -70,7 +70,7 @@ Model zabezpečení kolem velkých zpráv závisí na tom, jestli se streamován
 
 Všimněte si také, že `MaxReceivedMessageSize` není umístěn horní mez pro paměť na základě zpráv, ale omezuje ho v rámci konstantního faktoru. Pokud je například `MaxReceivedMessageSize` přijata a pak deserializovat zpráva o velikosti 1 MB a potom deserializace, je nutné, aby objekt obsahoval další paměť, která má za následek celkovou spotřebu paměti po 1 MB. Z tohoto důvodu Vyhněte se vytváření serializovatelných typů, které by mohly mít za následek značnou spotřebu paměti bez množství příchozích dat. Například u kontraktu dat "MyContract" s 50mi volitelnými poli datových členů a dalšími 100 soukromými poli může být vytvořena instance XML konstrukce " \<MyContract/> ". Výsledkem tohoto XML je paměť, která je k dispozici pro pole 150. Všimněte si, že datové členy jsou ve výchozím nastavení volitelné. Pokud je takový typ součástí pole, je problém složený.
 
-`MaxReceivedMessageSize`samotný není dostatek, aby nedocházelo k útokům DOS (Denial-of-Service). Například deserializátor může být vynuceně deserializovat graf hluboko vnořeného objektu (objekt, který obsahuje jiný objekt, který obsahuje ještě jiný objekt, a tak dále) příchozí zprávou. <xref:System.Runtime.Serialization.DataContractSerializer>Metody a volají jak <xref:System.Xml.Serialization.XmlSerializer> vnořeným způsobem pro deserializaci takových grafů. Hluboká vnořování volání metod může způsobit neobnovení <xref:System.StackOverflowException> . Tato hrozba se snižuje tím, že nastaví <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement.MaxDepth%2A> kvótu pro omezení úrovně vnoření XML, jak je popsáno v části "používání XML bezpečně" dále v tématu.
+`MaxReceivedMessageSize` samotný není dostatek, aby nedocházelo k útokům DOS (Denial-of-Service). Například deserializátor může být vynuceně deserializovat graf hluboko vnořeného objektu (objekt, který obsahuje jiný objekt, který obsahuje ještě jiný objekt, a tak dále) příchozí zprávou. <xref:System.Runtime.Serialization.DataContractSerializer>Metody a volají jak <xref:System.Xml.Serialization.XmlSerializer> vnořeným způsobem pro deserializaci takových grafů. Hluboká vnořování volání metod může způsobit neobnovení <xref:System.StackOverflowException> . Tato hrozba se snižuje tím, že nastaví <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement.MaxDepth%2A> kvótu pro omezení úrovně vnoření XML, jak je popsáno v části "používání XML bezpečně" dále v tématu.
 
 Nastavení dalších kvót na `MaxReceivedMessageSize` je obzvláště důležité při použití binárního kódování XML. Použití binárního kódování je poměrně stejné jako komprese: malá skupina bajtů v příchozí zprávě může představovat velké množství dat. To znamená, že i zpráva přizpůsobující se do `MaxReceivedMessageSize` limitu může zabírat mnohem více paměti v plně rozbaleném formátu. Chcete-li zmírnit takové hrozby specifické pro XML, musí být všechny kvóty čtečky XML nastaveny správně, jak je popsáno v části "používání XML bezpečně" dále v tomto tématu.
 
@@ -90,7 +90,7 @@ Kodér zpráv MTOM má také `MaxBufferSize` nastavení. Při použití standard
 
 ## <a name="xml-based-streaming-attacks"></a>Útoky streamování založené na XML
 
-`MaxBufferSize`samotný není dostačující pro zajištění, že se WCF nedá vynutit do vyrovnávací paměti, když se očekává streamování. Například čtečky XML WCF vždy ukládají do vyrovnávací paměti celou počáteční značku XML elementu při počátečním čtení nového prvku. To se provádí tak, že se správně zpracovávají obory názvů a atributy. Pokud `MaxReceivedMessageSize` je nakonfigurován tak, aby byl velký (například pokud chcete povolit scénář přímého streamování velkých souborů), může být vytvořena škodlivá zpráva, kde je celá tělo zprávy velkým počátečním tagem elementu XML. Pokus o jeho čtení má za následek <xref:System.OutOfMemoryException> . Toto je jeden z mnoha možných útoků DOS založených na jazyce XML, které je možné zmírnit pomocí kvót čtečky XML, popsané v části "používání XML bezpečně" dále v tomto tématu. Při streamování je obzvláště důležité nastavit všechny tyto kvóty.
+`MaxBufferSize` samotný není dostačující pro zajištění, že se WCF nedá vynutit do vyrovnávací paměti, když se očekává streamování. Například čtečky XML WCF vždy ukládají do vyrovnávací paměti celou počáteční značku XML elementu při počátečním čtení nového prvku. To se provádí tak, že se správně zpracovávají obory názvů a atributy. Pokud `MaxReceivedMessageSize` je nakonfigurován tak, aby byl velký (například pokud chcete povolit scénář přímého streamování velkých souborů), může být vytvořena škodlivá zpráva, kde je celá tělo zprávy velkým počátečním tagem elementu XML. Pokus o jeho čtení má za následek <xref:System.OutOfMemoryException> . Toto je jeden z mnoha možných útoků DOS založených na jazyce XML, které je možné zmírnit pomocí kvót čtečky XML, popsané v části "používání XML bezpečně" dále v tomto tématu. Při streamování je obzvláště důležité nastavit všechny tyto kvóty.
 
 ### <a name="mixing-streaming-and-buffering-programming-models"></a>Kombinování streamování a programovacích modelů do vyrovnávací paměti
 
@@ -139,17 +139,17 @@ Zabezpečené čtečky XML mají pět konfigurovatelných kvót. Ty se obvykle k
 
 #### <a name="maxbytesperread"></a>MaxBytesPerRead
 
-Tato kvóta omezuje počet bajtů, které jsou čteny v rámci jedné `Read` operace při čtení počáteční značky elementu a jejích atributů. (V nestreamované případech se název elementu sám nepočítá s kvótou.) <xref:System.Xml.XmlDictionaryReaderQuotas.MaxBytesPerRead%2A>je důležité z následujících důvodů:
+Tato kvóta omezuje počet bajtů, které jsou čteny v rámci jedné `Read` operace při čtení počáteční značky elementu a jejích atributů. (V nestreamované případech se název elementu sám nepočítá s kvótou.) <xref:System.Xml.XmlDictionaryReaderQuotas.MaxBytesPerRead%2A> je důležité z následujících důvodů:
 
 - Název elementu a jeho atributy jsou při čtení vždy uloženy do vyrovnávací paměti. Proto je důležité nastavit tuto kvótu správně v režimu streamování, aby se zabránilo nadměrnému ukládání do vyrovnávací paměti, když se očekává streamování. `MaxDepth`Informace o skutečném objemu ukládání do vyrovnávací paměti najdete v části kvóta.
 
-- Příliš mnoho atributů XML může použít neúměrný čas zpracování, protože názvy atributů musí být zkontrolovány pro jedinečnost. `MaxBytesPerRead`snižuje riziko této hrozby.
+- Příliš mnoho atributů XML může použít neúměrný čas zpracování, protože názvy atributů musí být zkontrolovány pro jedinečnost. `MaxBytesPerRead` snižuje riziko této hrozby.
 
 #### <a name="maxdepth"></a>MaxDepth
 
-Tato kvóta omezuje maximální hloubku vnořování prvků XML. Například dokument " \<A> \<B> \<C/> \</B> \</A> " má vnořenou hloubku tři. <xref:System.Xml.XmlDictionaryReaderQuotas.MaxDepth%2A>je důležité z následujících důvodů:
+Tato kvóta omezuje maximální hloubku vnořování prvků XML. Například dokument " \<A> \<B> \<C/> \</B> \</A> " má vnořenou hloubku tři. <xref:System.Xml.XmlDictionaryReaderQuotas.MaxDepth%2A> je důležité z následujících důvodů:
 
-- `MaxDepth`spolupracuje s `MaxBytesPerRead` : čtenář vždycky uchovává data v paměti pro aktuální prvek a všechny jeho nadřazené prvky, takže maximální spotřeba paměti čtecího zařízení je úměrná produktu těchto dvou nastavení.
+- `MaxDepth` spolupracuje s `MaxBytesPerRead` : čtenář vždycky uchovává data v paměti pro aktuální prvek a všechny jeho nadřazené prvky, takže maximální spotřeba paměti čtecího zařízení je úměrná produktu těchto dvou nastavení.
 
 - Při deserializaci diagramu hluboko vnořeného objektu je pro deserializaci nucen přístup k celému zásobníku a vyvolat neobnovitelné <xref:System.StackOverflowException> . Mezi vnořenými a vnořenými objekty XML existuje přímá korelace pro <xref:System.Runtime.Serialization.DataContractSerializer> a <xref:System.Xml.Serialization.XmlSerializer> . `MaxDepth`Tuto hrozbu můžete zmírnit pomocí této hrozby.
 
@@ -189,12 +189,12 @@ Při použití binárního kódování společně s rozhraním <xref:System.Runt
 
 Následující tabulka shrnuje doprovodné materiály k kvótám.
 
-|Podmínka|Důležité kvóty k nastavení|
+|Stav|Důležité kvóty k nastavení|
 |---------------|-----------------------------|
-|Bez streamování nebo streamování malých zpráv, textu nebo kódování MTOM|`MaxReceivedMessageSize`, `MaxBytesPerRead` a`MaxDepth`|
-|Bez streamování nebo streamování malých zpráv, binární kódování|`MaxReceivedMessageSize`, `MaxSessionSize` a všechny`ReaderQuotas`|
-|Streamování velkých zpráv, textu nebo kódování MTOM|`MaxBufferSize`a vše`ReaderQuotas`|
-|Streamování velkých zpráv, binární kódování|`MaxBufferSize`, `MaxSessionSize` a všechny`ReaderQuotas`|
+|Bez streamování nebo streamování malých zpráv, textu nebo kódování MTOM|`MaxReceivedMessageSize`, `MaxBytesPerRead` a `MaxDepth`|
+|Bez streamování nebo streamování malých zpráv, binární kódování|`MaxReceivedMessageSize`, `MaxSessionSize` a všechny `ReaderQuotas`|
+|Streamování velkých zpráv, textu nebo kódování MTOM|`MaxBufferSize` a vše `ReaderQuotas`|
+|Streamování velkých zpráv, binární kódování|`MaxBufferSize`, `MaxSessionSize` a všechny `ReaderQuotas`|
 
 - Časové limity na úrovni přenosu musí být vždycky nastavené a nikdy nepoužívají synchronní čtení a zápisy, když se streamování používá, bez ohledu na to, jestli jsou streamované velké nebo malé zprávy.
 
@@ -224,11 +224,11 @@ Načítání nezamýšleného typu může mít významné důsledky, zda je typ 
 
 Navíc <xref:System.Runtime.Serialization.DataContractSerializer> podporuje polymorfismus. Datový člen může být deklarován jako <xref:System.Object> , ale příchozí data mohou obsahovat `Customer` instanci. To je možné pouze v případě, že byl `Customer` typ pro deserializaci vytvořen pomocí jednoho z těchto mechanismů:
 
-- <xref:System.Runtime.Serialization.KnownTypeAttribute>atribut aplikovaný na typ.
+- <xref:System.Runtime.Serialization.KnownTypeAttribute> atribut aplikovaný na typ.
 
-- `KnownTypeAttribute`atribut určující metodu, která vrátí seznam typů.
+- `KnownTypeAttribute` atribut určující metodu, která vrátí seznam typů.
 
-- `ServiceKnownTypeAttribute`přidělen.
+- `ServiceKnownTypeAttribute` přidělen.
 
 - `KnownTypes`Konfigurační oddíl.
 
@@ -238,7 +238,7 @@ Každý z těchto mechanismů zvyšuje plochu tím, že zavádí více typů, kt
 
 Jakmile je známý typ v oboru, lze jej načíst kdykoli a instance typu lze vytvořit, i když je ve skutečnosti kontrakt nepoužívá. Předpokládejme například, že typ "MyDangerousType" se přidá do seznamu známých typů pomocí jednoho z mechanismů uvedených výše. To znamená, že:
 
-- `MyDangerousType`je načten a jeho konstruktor třídy je spuštěn.
+- `MyDangerousType` je načten a jeho konstruktor třídy je spuštěn.
 
 - I při deserializaci kontraktu dat s řetězcovým datovým členem může škodlivá zpráva přesto způsobit `MyDangerousType` vytvoření instance. Kód v, jako je například `MyDangerousType` setter vlastností, lze spustit. Po dokončení se deserializátor pokusí přiřadit tuto instanci k řetězcovému datovému členu a selže s výjimkou.
 
@@ -284,7 +284,7 @@ Tato situace se může vyhnout tím, že se dozvíte o následujících bodech:
 
 <xref:System.Runtime.Serialization.NetDataContractSerializer>Je Serializační modul, který používá těsné spojení s typy. To je podobné jako <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> a <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter> . To znamená, že určuje, který typ instance se má vytvořit, čtením .NET Framework sestavení a názvu typu z příchozích dat. I když je součástí WCF, není k dispozici žádný způsob, jak se zapojit do tohoto stroje serializace; vlastní kód musí být napsán. `NetDataContractSerializer`Je primárně k dispozici pro usnadnění migrace z .NET Framework vzdálené komunikace do WCF. Další informace naleznete v příslušném oddílu [serializace a deserializace](serialization-and-deserialization.md).
 
-Vzhledem k tomu, že samotná zpráva může indikovat, že je možné načíst jakýkoli typ, <xref:System.Runtime.Serialization.NetDataContractSerializer> je mechanismus nezabezpečený a měl by být používán pouze s důvěryhodnými daty. Další informace najdete v [příručce zabezpečení BinaryFormatter](/dotnet/standard/serialization/binaryformatter-security-guide).
+Vzhledem k tomu, že samotná zpráva může indikovat, že je možné načíst jakýkoli typ, <xref:System.Runtime.Serialization.NetDataContractSerializer> je mechanismus nezabezpečený a měl by být používán pouze s důvěryhodnými daty. Další informace najdete v [příručce zabezpečení BinaryFormatter](../../../standard/serialization/binaryformatter-security-guide.md).
 
 I když se používá s důvěryhodnými daty, může příchozí data nedostatečně určovat typ, který se má načíst, zejména pokud <xref:System.Runtime.Serialization.NetDataContractSerializer.AssemblyFormat%2A> je vlastnost nastavená na <xref:System.Runtime.Serialization.Formatters.FormatterAssemblyStyle.Simple> . Každý, kdo má přístup k adresáři aplikace nebo do globální mezipaměti sestavení (GAC), může nahradit škodlivý typ místo, který by měl načíst. Vždy zajistěte, aby zabezpečení adresáře aplikace a globální mezipaměti sestavení byla zajištěna správným nastavením oprávnění.
 
@@ -322,7 +322,7 @@ Všimněte si následujících otázek týkajících se hrozeb souvisejících s
 
 - Skutečnost, že <xref:System.Runtime.Serialization.ExtensionDataObject> typ nemá žádné veřejné členy, neznamená, že data v rámci tohoto typu jsou zabezpečená. Například pokud provádíte deserializaci z privilegovaných zdrojů dat do objektu, ve kterém jsou uložena nějaká data, částečně důvěryhodný kód může číst data v objektu `ExtensionDataObject` pomocí serializace objektu. Zvažte nastavení <xref:System.Runtime.Serialization.DataContractSerializer.IgnoreExtensionDataObject%2A> na `true` Při deserializaci z privilegovaného zdroje dat do objektu, který je později předán částečně důvěryhodnému kódu.
 
-- <xref:System.Runtime.Serialization.DataContractSerializer>a <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> podporují serializaci privátních, chráněných, interních a veřejných členů v úplném vztahu důvěryhodnosti. V částečném vztahu důvěryhodnosti však lze serializovat pouze veřejné členy. <xref:System.Security.SecurityException>Výjimka je vyvolána, pokud se aplikace pokusí serializovat neveřejný člen.
+- <xref:System.Runtime.Serialization.DataContractSerializer> a <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> podporují serializaci privátních, chráněných, interních a veřejných členů v úplném vztahu důvěryhodnosti. V částečném vztahu důvěryhodnosti však lze serializovat pouze veřejné členy. <xref:System.Security.SecurityException>Výjimka je vyvolána, pokud se aplikace pokusí serializovat neveřejný člen.
 
     Pro umožnění serializace interních nebo chráněných interních členů v částečném vztahu důvěryhodnosti použijte <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut Assembly. Tento atribut umožňuje sestavení deklarovat, že jeho interní členy jsou viditelné pro některé jiné sestavení. V tomto případě sestavení, které má serializovat své interní členy, deklaruje deklaraci, že jeho interní členové jsou System.Runtime.Serialization.dll.
 
@@ -382,7 +382,7 @@ WCF je flexibilní a přizpůsobitelný systém. Většina obsahu tohoto tématu
 
 - Obecně platí, že při použití libovolné komponenty, která přijímá kvótu, je potřeba pochopit její vliv na zabezpečení a nastavit ji na bezpečnou hodnotu.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.Runtime.Serialization.DataContractSerializer>
 - <xref:System.Xml.XmlDictionaryReader>
