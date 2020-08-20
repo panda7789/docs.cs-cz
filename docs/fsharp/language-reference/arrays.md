@@ -2,12 +2,12 @@
 title: Pole
 description: 'Naučte se vytvářet a používat pole v programovacím jazyce F #.'
 ms.date: 08/13/2020
-ms.openlocfilehash: 93d524046ff93a7f1b04e72d580d9d0e1360ba0b
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: 37f781ccd2c7bc2ca2c7b93bda53bbb3ea93b504
+ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88558878"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88608502"
 ---
 # <a name="arrays"></a>Pole
 
@@ -381,7 +381,7 @@ Chcete-li spustit funkci pro každý prvek v poli bez uložení vrácených hodn
 
 Variace [`Array.iteri`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#iteri) a [`Array.iteri2`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#iteri2) umožňují, aby index elementu byl součástí výpočtu; totéž platí pro [`Array.mapi`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#mapi) a [`Array.mapi2`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#mapi2) .
 
-Funkce [`Array.fold`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#fold) ,,,, [`Array.foldBack`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#foldBack) [`Array.reduce`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#reduce) [`Array.reduceBack`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#reduceBack) [`Array.scan`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#scan) a [`Array.scanBack`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#scanBack) spouštějí algoritmy, které zahrnují všechny prvky pole. Podobně variace [`Array.fold2`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#fold2) a [`Array.foldBack2`](foldBack2) provádění výpočtů na dvou polích.
+Funkce [`Array.fold`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#fold) ,,,, [`Array.foldBack`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#foldBack) [`Array.reduce`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#reduce) [`Array.reduceBack`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#reduceBack) [`Array.scan`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#scan) a [`Array.scanBack`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#scanBack) spouštějí algoritmy, které zahrnují všechny prvky pole. Podobně variace [`Array.fold2`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#fold2) a [`Array.foldBack2`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#foldBack2) provádění výpočtů na dvou polích.
 
 Tyto funkce pro provádění výpočtů odpovídají funkcím stejného názvu v [modulu seznamu](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-listmodule.html). Příklady použití najdete v tématu [seznam](lists.md).
 
@@ -415,7 +415,7 @@ Funkce [`Array.zip`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-
 
 Modul [`Array.Parallel`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule-parallel.html) obsahuje funkce pro provádění paralelních výpočtů v polích. Tento modul není dostupný v aplikacích, které cílí na verze .NET Framework před verzí 4.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Referenční dokumentace jazyka F #](index.md)
 - [Typy F#](fsharp-types.md)

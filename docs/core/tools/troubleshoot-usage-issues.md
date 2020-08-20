@@ -158,6 +158,6 @@ Instalace nástroje vyžaduje přístup k informačnímu kanálu NuGet, který o
 
 Běžným důvodem selhání je, že název nástroje není správný. K tomu může dojít z důvodu neúspěšného zadání, nebo proto, že se nástroj přesunul nebo byl zastaralý. V případě nástrojů na NuGet.org je třeba, abyste si ověřili, že je správný název, hledání nástroje na NuGet.org a zkopírování instalačního příkazu.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 * [Nástroje .NET Core](global-tools.md)
