@@ -4,12 +4,12 @@ description: Naučte se používat integrované iterátory C# a vytvářet vlast
 ms.date: 06/20/2016
 ms.technology: csharp-advanced-concepts
 ms.assetid: 5cf36f45-f91a-4fca-a0b7-87f233e108e9
-ms.openlocfilehash: c2a1dfe38b6a65e382e140541c71e94bb0fc76aa
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: ee72331cb85ba1a03d48e2f58526ad432c7fe6d4
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88062480"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656095"
 ---
 # <a name="iterators"></a>Iterátory
 
@@ -24,7 +24,7 @@ Také vytvoříte iterátor metody, které jsou metody, které vytvoří iterát
 
 Jazyk C# poskytuje funkce pro oba tyto scénáře. Tento článek obsahuje přehled těchto funkcí.
 
-V tomto kurzu se používá několik kroků. Po každém kroku můžete spustit aplikaci a zobrazit průběh. Můžete také [Zobrazit nebo stáhnout dokončenou ukázku](https://github.com/dotnet/samples/blob/master/csharp/iterators) pro toto téma. Pokyny ke stažení najdete v tématu [ukázky a kurzy](../samples-and-tutorials/index.md#viewing-and-downloading-samples).
+V tomto kurzu se používá několik kroků. Po každém kroku můžete spustit aplikaci a zobrazit průběh. Můžete také [Zobrazit nebo stáhnout dokončenou ukázku](https://github.com/dotnet/samples/blob/master/csharp/iterators) pro toto téma. Pokyny ke stažení najdete v tématu [ukázky a kurzy](../samples-and-tutorials/index.md#view-and-download-samples).
 
 ## <a name="iterating-with-foreach"></a>Iterace pomocí příkazu foreach
 
@@ -167,7 +167,7 @@ private IEnumerable<int> IteratorMethod()
 
 Podívejte se na výše uvedené metody. První používá `return` příkaz standardní k vrácení prázdné kolekce nebo iterátoru vytvořeného druhou metodou. Druhá metoda používá `yield return` příkaz k vytvoření požadované sekvence.
 
-## <a name="deeper-dive-into-foreach"></a>Hlubší podrobně`foreach`
+## <a name="deeper-dive-into-foreach"></a>Hlubší podrobně `foreach`
 
 `foreach`Příkaz se rozšíří na standardní idiom, který používá `IEnumerable<T>` `IEnumerator<T>` rozhraní a k iteraci napříč všemi prvky kolekce. Také minimalizuje chyby, které vývojáři vytvářejí při nesprávné správě prostředků.
 

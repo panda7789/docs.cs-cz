@@ -75,6 +75,8 @@
           href: how-to-guides/load-data-model-builder.md
         - name: Instalace nástroje Model Builder
           href: how-to-guides/install-model-builder.md
+        - name: Instalace GPU v Model Builderu
+          href: how-to-guides/install-gpu-model-builder.md
         - name: Instalace rozhraní příkazového řádku
           href: how-to-guides/install-ml-net-cli.md
         - name: Použití rozhraní API pro automatizované strojové učení

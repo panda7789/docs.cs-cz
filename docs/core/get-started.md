@@ -5,12 +5,12 @@ author: adegeo
 ms.author: adegeo
 ms.date: 12/03/2019
 ms.custom: vs-dotnet
-ms.openlocfilehash: ddbee0764897b511cac0c4142354ba995d94a2b6
-ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
+ms.openlocfilehash: 56eebc0fc5bad6f57d93358cbbef389d6355d66b
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86416052"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656687"
 ---
 # <a name="get-started-with-net-core"></a>Začínáme s .NET Core
 
@@ -22,7 +22,7 @@ Pokud si nejste jistí, co je .NET Core nebo jak souvisí s dalšími technologi
 
 Nejprve Stáhněte a nainstalujte [.NET Core SDK](https://dotnet.microsoft.com/download) do počítače.
 
-Pak otevřete terminál, jako je například **PowerShell**, **příkazový řádek**nebo **bash**. Zadáním následujících `dotnet` příkazů vytvořte a spusťte aplikaci v jazyce C#:
+Pak otevřete terminál, jako je například **PowerShell**, **příkazový řádek**nebo **bash**. Zadejte následující `dotnet` příkazy pro vytvoření a spuštění aplikace v jazyce C#:
 
 ```dotnetcli
 dotnet new console --output sample1
@@ -35,7 +35,7 @@ Měl by se zobrazit následující výstup:
 Hello World!
 ```
 
-Blahopřejeme! Vytvořili jste jednoduchou aplikaci .NET Core. K vytvoření aplikace .NET Core můžete použít taky [Visual Studio Code](./tutorials/with-visual-studio-code.md), [Visual Studio](./tutorials/with-visual-studio.md) (jenom Windows) nebo [Visual Studio pro Mac](./tutorials/using-on-mac-vs.md) (jenom MacOS).
+Congratulations! Vytvořili jste jednoduchou aplikaci .NET Core. K vytvoření aplikace .NET Core můžete použít taky [Visual Studio Code](./tutorials/with-visual-studio-code.md), [Visual Studio](./tutorials/with-visual-studio.md) (jenom Windows) nebo [Visual Studio pro Mac](tutorials/with-visual-studio-mac.md) (jenom MacOS).
 
 ## <a name="tutorials"></a>Kurzy
 
@@ -47,7 +47,7 @@ Začněte vyvíjet aplikace .NET Core pomocí následujících podrobných kurz�
 
 - [Vytvoření první konzolové aplikace .NET Core v aplikaci Visual Studio 2019](./tutorials/with-visual-studio.md)
 - [Sestavení knihovny tříd pomocí .NET Standard v aplikaci Visual Studio](./tutorials/library-with-visual-studio.md)
-- [Začínáme s .NET Core s využitím .NET Core CLI](./tutorials/cli-create-console-app.md)
+- [Kurz: Vytvoření konzolové aplikace .NET Core pomocí Visual Studio Code](tutorials/with-visual-studio-code.md)
 
 |   |   |
 |---|---|
@@ -60,7 +60,7 @@ Seznam podporovaných verzí Windows najdete v článku [závislosti a požadavk
 
 Začněte vyvíjet aplikace .NET Core pomocí následujících podrobných kurzů:
 
-- [Začínáme s .NET Core pomocí příkazového řádku](./tutorials/cli-create-console-app.md)
+- [Kurz: Vytvoření konzolové aplikace .NET Core pomocí Visual Studio Code](tutorials/with-visual-studio-code.md)
 
 |   |   |
 |---|---|
@@ -72,9 +72,8 @@ Seznam podporovaných distribuce a verzí pro Linux najdete v článku [závislo
 
 Začněte vyvíjet aplikace .NET Core pomocí následujících podrobných kurzů:
 
-- [Začínáme s .NET Core v systému macOS pomocí sady Visual Studio Code](./tutorials/using-on-macos.md)
-- [Začínáme s .NET Core s využitím příkazového řádku](./tutorials/cli-create-console-app.md)
-- [Začínáme s .NET Core v systému macOS pomocí sady Visual Studio pro Mac](./tutorials/using-on-mac-vs.md)
+- [Kurz: Vytvoření konzolové aplikace .NET Core pomocí Visual Studio Code](tutorials/with-visual-studio-code.md)
+- [Kurz: Vytvoření konzolové aplikace .NET Core pomocí Visual Studio pro Mac](tutorials/with-visual-studio-mac.md)
 - [Sestavení knihovny .NET Standard v macOS pomocí Visual Studio pro Mac](tutorials/library-with-visual-studio-mac.md)
 
 |   |   |

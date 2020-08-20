@@ -1,32 +1,32 @@
 ---
-title: Oříznutí samostatných aplikací
-description: Přečtěte si, jak oříznout samostatné aplikace, aby se zmenšila jejich velikost. .NET Core sdružuje runtime s aplikací, která je publikována samostatně a obecně obsahuje více runtime pak je nezbytné.
+title: Oříznout samostatně obsažené aplikace
+description: Naučte se oříznout samostatné aplikace a zmenšit jejich velikost. .NET Core obsahuje modul runtime s aplikací, která je publikovaná samostatně a obecně zahrnuje více prostředí runtime, a je to nezbytné.
 author: jamshedd
 ms.author: jamshedd
 ms.date: 04/03/2020
-ms.openlocfilehash: bb8ac88c5e16b7fd20a7670e4ad76dbe4b44da1b
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.openlocfilehash: 2bb0f03994468bbad3096ebf0b141bc1f47b867e
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81242900"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656713"
 ---
 # <a name="trim-self-contained-deployments-and-executables"></a>Odebrání nechtěných součástí a zachování pouze samostatně nasaditelných součástí a spustitelných souborů
 
-Při publikování samostatné aplikace je runtime .NET Core dodáván společně s aplikací. Toto sdružování přidá značné množství obsahu do vaší balené aplikace. Pokud jde o nasazení aplikace, velikost je často důležitým faktorem. Zachování velikosti aplikace balíčku co nejmenší je obvykle cílem pro vývojáře aplikací.
+[Model nasazení závislý na rozhraní](index.md#publish-framework-dependent) byl nejaktivnějším modelem nasazení od okamžiku spuštění .NET. V tomto scénáři vývojář aplikace sady sestaví pouze aplikace a sestavení třetích stran s očekáváním, že v klientském počítači budou k dispozici knihovny .NET runtime a rozhraní. Tento model nasazení se v .NET Core i nadále považuje za dominantní, ale existují scénáře, kdy model závislý na rozhraní není optimální. Alternativou je publikování [samostatné aplikace](index.md#publish-self-contained), kde se modul runtime .NET Core a rozhraní seskupí spolu s aplikacemi a sestaveními třetích stran.
 
-V závislosti na složitosti aplikace je ke spuštění aplikace vyžadována pouze podmnožina runtime. Tyto nepoužívané části runtime jsou zbytečné a lze je oříznout z balené aplikace.
+Model nasazení Trim – samostatně zahrnutý je specializovaná verze modelu nasazení, která je optimalizována pro snížení velikosti nasazení. Minimalizace velikosti nasazení je zásadním požadavkem pro některé scénáře na straně klienta, jako jsou Blazor aplikace. V závislosti na složitosti aplikace jsou pro spuštění aplikace požadovány pouze podmnožina sestavení rozhraní. Tyto nepoužívané části knihovny jsou zbytečné a je možné je z zabalených aplikací oříznout. Nicméně existuje riziko, že analýza času sestavení aplikace může způsobit selhání za běhu, protože není schopná spolehlivě analyzovat různé problematické vzorce kódu (v podstatě na střed, na kterém je reflexe použito). Vzhledem k tomu, že spolehlivost nejde zaručit, tento model nasazení se nabízí jako funkce ve verzi Preview. Modul analýzy času sestavení poskytuje upozornění vývojářům vzorů kódu, které jsou problematické, a očekává se, že tyto vzory kódu budou opraveny. Pokud je to možné, doporučujeme, abyste přesunuli všechny závislosti na reflexi modulu runtime v aplikaci na čas sestavení pomocí kódu, který splňuje stejné požadavky.
 
-Funkce oříznutí funguje tak, že zkoumá binární soubory aplikace, aby zjistila a vytvořila graf požadovaných sestav za běhu. Zbývající sestavení za běhu, na která se neodkazuje, jsou vyloučena.
+Režim ořezávání pro aplikace lze konfigurovat prostřednictvím TrimMode a ve výchozím nastavení ( `copyused` ) pro sestavení sady prostředků, které se používají v aplikaci. Blazor aplikace WebAssembly budou používat účinnější režim ( `link` ), který ořízne nepoužitý kód v rámci sestavení. Upozornění analýzy střihu poskytují informace o vzorech kódu, u kterých není možné provést úplnou analýzu závislostí. Tato upozornění se ve výchozím nastavení potlačí a dají se zapnout nastavením příznaku `SuppressTrimAnalysisWarnings` na false. Další informace o dostupných možnostech ořezávání najdete na [stránce ILLinker](https://github.com/mono/linker/blob/master/docs/illink-options.md).
 
 > [!NOTE]
-> Oříznutí je experimentální funkce v rozhraní .NET Core 3.1 a je k dispozici _pouze_ pro aplikace, které jsou publikovány samostatně.
+> Ořezávání je experimentální funkce v rozhraní .NET Core 3,1, 5,0 a je dostupná _pouze_ pro aplikace, které jsou publikovány samostatně.
 
-## <a name="prevent-assemblies-from-being-trimmed"></a>Zabránit oříznutí sestav
+## <a name="prevent-assemblies-from-being-trimmed"></a>Zabránit oříznutí sestavení
 
-Existují scénáře, ve kterých funkce oříznutí se nezdaří rozpoznat odkazy. Například při odrazu se používá v sestavení za běhu, buď aplikace nebo knihovny, která je odkazována vaší aplikací, sestavení není přímo odkazuje. Oříznutí není vědoma těchto nepřímých odkazů a by vyloučit knihovnu z publikované složky.
+Existují scénáře, ve kterých funkce ořezávání nedokáže detekovat odkazy. Například pokud se reflexe používá v sestavení modulu runtime, buď vaší aplikací, nebo knihovnou, na kterou odkazuje vaše aplikace, sestavení není přímo odkazováno. Ořezávání neví o těchto nepřímých odkazech a vyloučí knihovnu z publikované složky.
 
-Pokud kód nepřímo odkazuje na sestavení prostřednictvím reflexe, můžete zabránit oříznutí `<TrimmerRootAssembly>` sestavení s nastavením. Následující příklad ukazuje, jak zabránit `System.Security` oříznutí sestavení nazývaného sestavení:
+Pokud kód nepřímo odkazuje na sestavení prostřednictvím reflexe, můžete zabránit oříznutí sestavení s `<TrimmerRootAssembly>` nastavením. Následující příklad ukazuje, jak zabránit oříznutí sestavení nazývaného `System.Security` sestavení:
 
 ```xml
 <ItemGroup>
@@ -34,57 +34,69 @@ Pokud kód nepřímo odkazuje na sestavení prostřednictvím reflexe, můžete 
 </ItemGroup>
 ```
 
-## <a name="trim-your-app---cli"></a>Oříznutí aplikace – CLI
+## <a name="trim-your-app---cli"></a>Stříhání aplikace – CLI
 
-Ořízněte aplikaci pomocí příkazu [dotnet publish.](../tools/dotnet-publish.md) Při publikování aplikace nastavte následující tři nastavení:
+Aplikaci ořízněte pomocí příkazu [dotnet Publish](../tools/dotnet-publish.md) . Při publikování aplikace nastavte následující tři nastavení:
 
-- Publikovat jako samostatné:`--self-contained true`
-- Zakázat publikování na jednom souboru:`-p:PublishSingleFile=false`
-- Povolit oříznutí:`p:PublishTrimmed=true`
+- Publikovat jako samostatnou: `--self-contained true`
+- Povolit oříznutí: `p:PublishTrimmed=true`
 
-Následující příklad publikuje aplikaci pro Windows 10 jako samostatnou a ořízne výstup.
+Následující příklad publikuje aplikaci pro Windows jako samostatně obsaženou a ořízne výstup.
 
-```dotnetcli
-dotnet publish -c Release -r win10-x64 --self-contained true -p:PublishSingleFile=false -p:PublishTrimmed=true
+```xml
+<ItemGroup>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <SelfContained>true</SelfContained>
+    <PublishTrimmed>true</PublishTrimmed>
+</ItemGroup>
 ```
 
-Další informace naleznete v [tématu Publish .NET Core apps with .NET Core CLI](deploy-with-cli.md).
+V následujícím příkladu je publikována aplikace v agresivním režimu střihu, kdy se nepoužívaný kód se sestaveními bude oříznout a jsou povolena upozornění ořezávání.
 
-## <a name="trim-your-app---visual-studio"></a>Oříznutí aplikace – Visual Studio
+```xml
+<ItemGroup>
+    <TrimMode>link</TrimMode>
+    <SuppressTrimAnalysisWarnings>false</SuppressTrimAnalysisWarnings>
+</ItemGroup>
+```
 
-Visual Studio vytvoří opakovaně použitelné publikování profily, které řídí, jak je vaše aplikace publikována.
+Další informace najdete v tématu [publikování aplikací .NET Core pomocí .NET Core CLI](deploy-with-cli.md).
 
-01. V podokně **Průzkumník řešení** klikněte pravým tlačítkem myši na projekt, který chcete publikovat. Vyberte **Publikovat...**.
+## <a name="trim-your-app---visual-studio"></a>Střih aplikace – Visual Studio
 
-    :::image type="content" source="media/trim-self-contained/visual-studio-solution-explorer.png" alt-text="Průzkumník řešení s nabídkou po kliknutí pravým tlačítkem myši zvýrazňující možnost Publikovat.":::
+Visual Studio vytvoří opakovaně použitelné publikační profily, které určují, jak je vaše aplikace publikovaná.
 
-    Pokud ještě nemáte profil publikování, postupujte podle pokynů k jeho vytvoření a zvolte typ cíle **složky.**
+01. V podokně **Průzkumník řešení** klikněte pravým tlačítkem myši na projekt, který chcete publikovat. Vybrat **publikování...**.
 
-01. Zvolte **Upravit**.
+    :::image type="content" source="media/trim-self-contained/visual-studio-solution-explorer.png" alt-text="Průzkumník řešení pomocí nabídky po kliknutí pravým tlačítkem myši zvýraznění možnosti Publikovat.":::
 
-    :::image type="content" source="media/trim-self-contained/visual-studio-publish-edit-settings.png" alt-text="Visual studio publikuje profil pomocí tlačítka upravit.":::
+    Pokud ještě nemáte profil publikování, postupujte podle pokynů, abyste ho vytvořili, a vyberte cílový typ **složky** .
 
-01. V dialogovém okně **Nastavení profilu** nastavte následující volby:
+01. Klikněte na tlačítko **Upravit**.
 
-    - Nastavte **režim nasazení** na samostatný **.**
-    - Nastavte **cílový čas runtime** na platformu, na kterou chcete publikovat.
-    - Vyberte **Oříznout nepoužité sestavy (v náhledu).**
+    :::image type="content" source="media/trim-self-contained/visual-studio-publish-edit-settings.png" alt-text="Publikovat profil sady Visual Studio s tlačítkem Upravit":::
 
-    Zvolte **Uložit,** chcete-li uložit nastavení a vrátit se do dialogového okna **Publikovat.**
+01. V dialogovém okně **nastavení profilu** nastavte následující možnosti:
 
-    :::image type="content" source="media/trim-self-contained/visual-studio-publish-properties.png" alt-text="Dialogové okno nastavení profilu se zvýrazněným režimem nasazení, cílovým časem běhu a oříznutím nepoužívaných sestav.":::
+    - Nastavte **režim nasazení** na **samostatné**.
+    - Nastavte **cílový modul runtime** na platformu, do které chcete publikovat.
+    - Vyberte **oříznout nepoužívaná sestavení (ve verzi Preview)**.
 
-01. Zvolte **Publikovat,** chcete-li aplikaci publikovat oříznutou.
+    Kliknutím na **Uložit** uložte nastavení a vraťte se do dialogového okna pro **publikování** .
 
-Další informace najdete [v tématu Publikování aplikací .NET Core pomocí sady Visual Studio](deploy-with-vs.md).
+    :::image type="content" source="media/trim-self-contained/visual-studio-publish-properties.png" alt-text="Dialogové okno nastavení profilu s vybraným režimem nasazení, cílovým modulem runtime a oříznout nepoužité možnosti sestavení":::
 
-## <a name="trim-your-app---visual-studio-for-mac"></a>Oříznutí aplikace – Visual Studio pro Mac
+01. Kliknutím na **publikovat** publikujte aplikaci oříznutou.
 
-Visual Studio pro Mac neposkytuje možnosti, jak aplikaci během publikování oříznout. Budete muset publikovat ručně podle pokynů v části [Oříznout aplikaci – CLI.](#trim-your-app---cli) Další informace naleznete v [tématu Publish .NET Core apps with .NET Core CLI](deploy-with-cli.md).
+Další informace najdete v tématu [publikování aplikací .NET Core pomocí sady Visual Studio](deploy-with-vs.md).
 
-## <a name="see-also"></a>Viz také
+## <a name="trim-your-app---visual-studio-for-mac"></a>Stříhání aplikace – Visual Studio pro Mac
 
-- [Nasazení základní aplikace .NET](index.md).
-- [Publikování aplikací .NET Core pomocí rozhraní CLI jádra .NET](deploy-with-cli.md).
-- [Publikujte aplikace .NET Core pomocí sady Visual Studio](deploy-with-vs.md).
-- [dotnet publish , příkaz](../tools/dotnet-publish.md).
+Visual Studio pro Mac neposkytuje možnosti pro oříznutí vaší aplikace během publikování. Podle pokynů v oddílu [vystřihování rozhraní CLI aplikace](#trim-your-app---cli) budete muset publikovat ručně. Další informace najdete v tématu [publikování aplikací .NET Core pomocí .NET Core CLI](deploy-with-cli.md).
+
+## <a name="see-also"></a>Viz také:
+
+- [Nasazení aplikace .NET Core](index.md)
+- [Publikování aplikací .NET Core pomocí .NET Core CLI](deploy-with-cli.md).
+- [Publikování aplikací .NET Core pomocí sady Visual Studio](deploy-with-vs.md)
+- [dotnet Publish příkaz](../tools/dotnet-publish.md).

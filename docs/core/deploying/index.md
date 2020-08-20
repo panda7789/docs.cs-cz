@@ -2,12 +2,12 @@
 title: Publikování aplikace
 description: Přečtěte si o způsobech publikování aplikace .NET Core. .NET Core může publikovat aplikace pro konkrétní platformy nebo pro různé platformy. Aplikaci můžete publikovat jako samostatnou nebo jako závislou na rozhraní. Každý režim má vliv na to, jak uživatel spouští vaši aplikaci.
 ms.date: 04/01/2020
-ms.openlocfilehash: 57889271ce2f210c0838a54bb793aeb3be5c7272
-ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
+ms.openlocfilehash: f343e184a7ccca66aaf94533b2d0262478f873f4
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88608405"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656583"
 ---
 # <a name="net-core-application-publishing-overview"></a>Přehled publikování aplikace .NET Core
 
@@ -131,8 +131,11 @@ Vzhledem k tomu, že vaše aplikace zahrnuje modul runtime .NET Core a všechny 
   > [!TIP]
   > Velikost nasazení v systémech Linux můžete zmenšit přibližně o 28 MB pomocí [*režimu invariantování globalizace*](https://github.com/dotnet/runtime/blob/master/docs/design/features/globalization-invariant-mode.md).NET Core. To vynutí, aby vaše aplikace považovala všechny kultury jako [invariantní jazykovou verzi](xref:System.Globalization.CultureInfo.InvariantCulture?displayProperty=nameWithType).
 
+  > [!TIP]
+  > Je k dispozici [funkce oříznutí verze Preview](trim-self-contained.md) , která může dále snižovat velikost nasazení.
+
 - **Těžší aktualizace verze .NET Core**\
-Modul runtime .NET Core (distribuovaný s vaší aplikací) se dá upgradovat jenom vydáním nové verze vaší aplikace. Zodpovídáte za poskytnutí aktualizované verze vaší aplikace pro opravy zabezpečení modulu runtime .NET Core.
+Modul runtime .NET Core (distribuovaný s vaší aplikací) se dá upgradovat jenom vydáním nové verze vaší aplikace. .NET Core ale aktualizuje důležité opravy zabezpečení podle potřeby v knihovně rozhraní v počítači, ve kterém je vaše aplikace spuštěná. Zodpovídáte za koncové ověření tohoto scénáře opravy zabezpečení.
 
 ### <a name="examples"></a>Příklady
 
@@ -148,7 +151,7 @@ Publikujte samostatně obsaženou aplikaci. Je vytvořen spustitelný soubor sys
 dotnet publish -r win-x64
 ```
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Nasazení aplikací .NET Core pomocí .NET Core CLI.](deploy-with-cli.md)
 - [Nasazení aplikací .NET Core pomocí sady Visual Studio.](deploy-with-vs.md)

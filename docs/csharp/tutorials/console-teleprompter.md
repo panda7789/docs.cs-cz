@@ -4,12 +4,12 @@ description: V tomto kurzu se naučíte řadou funkcí v .NET Core a v jazyce C#
 ms.date: 03/06/2017
 ms.technology: csharp-fundamentals
 ms.assetid: 883cd93d-50ce-4144-b7c9-2df28d9c11a0
-ms.openlocfilehash: 06affa01b67edeea09088834cf131adb55650bbb
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: dbe64fe0a01ddab9e7a3ad0a9118b3fe59fba8aa
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82794660"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656980"
 ---
 # <a name="console-app"></a>Konzolová aplikace
 
@@ -25,7 +25,7 @@ Vytvoříte aplikaci, která přečte textový soubor, a vrátí obsah tohoto te
 
 V tomto kurzu máte spoustu funkcí. Pojďme je sestavit jednou po jednom.
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 - Nastavte počítač tak, aby běžel .NET Core. Pokyny k instalaci najdete na stránce [soubory ke stažení pro .NET Core](https://dotnet.microsoft.com/download) . Tuto aplikaci můžete spustit na Windows, Linux, macOS nebo v kontejneru Docker.
 
@@ -55,7 +55,7 @@ namespace TeleprompterConsole
 
 ## <a name="reading-and-echoing-the-file"></a>Čtení a vracení souboru se souborem
 
-První funkcí, kterou je třeba přidat, je možnost číst textový soubor a zobrazit celý tento text v konzole. Nejprve přidáme textový soubor. Zkopírujte soubor [sampleQuotes. txt](https://github.com/dotnet/samples/raw/master/csharp/getting-started/console-teleprompter/sampleQuotes.txt) z úložiště GitHub pro tuto [ukázku](https://github.com/dotnet/samples/tree/master/csharp/getting-started/console-teleprompter) do adresáře projektu. Tato akce bude sloužit jako skript pro vaši aplikaci. Pokud chcete získat informace o tom, jak stáhnout ukázkovou aplikaci pro toto téma, přečtěte si pokyny v tématu [ukázky a kurzy](../../samples-and-tutorials/index.md#viewing-and-downloading-samples) .
+První funkcí, kterou je třeba přidat, je možnost číst textový soubor a zobrazit celý tento text v konzole. Nejprve přidáme textový soubor. Zkopírujte soubor [sampleQuotes.txt](https://github.com/dotnet/samples/raw/master/csharp/getting-started/console-teleprompter/sampleQuotes.txt) z úložiště GitHub pro tuto [ukázku](https://github.com/dotnet/samples/tree/master/csharp/getting-started/console-teleprompter) do adresáře projektu. Tato akce bude sloužit jako skript pro vaši aplikaci. Pokud chcete získat informace o tom, jak stáhnout ukázkovou aplikaci pro toto téma, přečtěte si pokyny v tématu [ukázky a kurzy](../../samples-and-tutorials/index.md#view-and-download-samples) .
 
 Dále do třídy přidejte následující metodu `Program` (hned pod `Main` metodu):
 
@@ -86,7 +86,7 @@ Tato metoda je speciální typ metody jazyka C# s názvem *Metoda iterátoru*. M
 
 Existují dva další prvky syntaxe jazyka C#, které mohou být pro vás nové. [`using`](../language-reference/keywords/using-statement.md)Příkaz v této metodě spravuje čištění prostředků. Proměnná, která je inicializována v `using` příkazu ( `reader` v tomto příkladu), musí implementovat <xref:System.IDisposable> rozhraní. Toto rozhraní definuje jedinou metodu, `Dispose` která by měla být volána, když má být prostředek uvolněn. Kompilátor vygeneruje toto volání, když provádění dosáhne uzavírací závorce `using` příkazu. Kód generovaný kompilátorem zajišťuje uvolnění prostředku i v případě, že je vyvolána výjimka z kódu v bloku definovaném příkazem using.
 
-`reader`Proměnná je definována pomocí `var` klíčového slova. [`var`](../language-reference/keywords/var.md)definuje *implicitní typovou lokální proměnnou*. To znamená, že typ proměnné je určen typem pro čas kompilace objektu přiřazeného k proměnné. Zde je návratová hodnota z <xref:System.IO.File.OpenText(System.String)> metody, což je <xref:System.IO.StreamReader> objekt.
+`reader`Proměnná je definována pomocí `var` klíčového slova. [`var`](../language-reference/keywords/var.md) definuje *implicitní typovou lokální proměnnou*. To znamená, že typ proměnné je určen typem pro čas kompilace objektu přiřazeného k proměnné. Zde je návratová hodnota z <xref:System.IO.File.OpenText(System.String)> metody, což je <xref:System.IO.StreamReader> objekt.
 
 Teď naplníme kód, abychom si mohli přečíst soubor v `Main` metodě:
 

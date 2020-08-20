@@ -7,13 +7,14 @@ helpviewer_keywords:
 - /langversion compiler option [C#]
 - -langversion compiler option [C#]
 - langversion compiler option [C#]
+ms.custom: updateeachrelease
 ms.assetid: 3fb00b05-a0ff-4782-b313-13a4c0f62d94
-ms.openlocfilehash: 408b2fb1f19f872db675321601ebc1b0c921044b
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: fd05802008a20267fea54f14bae4c8deb0e21c65
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83802950"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656203"
 ---
 # <a name="-langversion-c-compiler-options"></a>-langversion – (možnosti kompilátoru C#)
 
@@ -25,7 +26,7 @@ Způsobí, že kompilátor přijme pouze syntaxi, která je obsažena ve zvolen�
 -langversion:option
 ```
 
-## <a name="arguments"></a>Arguments
+## <a name="arguments"></a>Argumenty
 
 `option`
 
@@ -86,7 +87,7 @@ V následující tabulce je uveden minimální počet verzí sady SDK s kompilá
 | C# 2       | Microsoft Visual Studio/Build Tools 2005 nebo .NET Framework 2,0 kompilátor      |
 | C# 1.0/1.2 | Microsoft Visual Studio/Build Tools .NET 2002 nebo kompilátor .NET Framework 1,0 |
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Možnosti kompilátoru C#](index.md)
 - [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

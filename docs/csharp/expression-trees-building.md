@@ -1,34 +1,34 @@
 ---
-title: Vytváření stromů výrazů
-description: Další informace o technikách pro vytváření stromů výrazů.
+title: Sestavování stromů výrazů
+description: Přečtěte si o technikách vytváření stromů výrazů.
 ms.date: 06/20/2016
 ms.technology: csharp-advanced-concepts
 ms.assetid: 542754a9-7f40-4293-b299-b9f80241902c
-ms.openlocfilehash: c93eb16ebf2ff66dc0162afb6841f2cadfce174e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c153ca2c75738571c81057364390f489d2decb05
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79146044"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656147"
 ---
-# <a name="building-expression-trees"></a>Vytváření stromů výrazů
+# <a name="building-expression-trees"></a>Sestavování stromů výrazů
 
-[Předchozí -- Interpretace výrazů](expression-trees-interpreting.md)
+[Předchozí--interpretující výrazy](expression-trees-interpreting.md)
 
-Všechny stromy výrazů, které jste dosud viděli, byly vytvořeny kompilátorem Jazyka C#. Jediné, co jste museli udělat, bylo vytvořit výraz lambda, `Expression<Func<T>>` který byl přiřazen proměnné zadané jako nebo nějaký podobný typ. To není jediný způsob, jak vytvořit strom výrazů. Pro mnoho scénářů můžete zjistit, že je třeba vytvořit výraz v paměti za běhu.
+Všechny stromy výrazů, které jste viděli zatím, byly vytvořeny kompilátorem jazyka C#. Vše, co jste museli udělat, byl vytvořit lambda výraz, který byl přiřazen proměnné typu jako `Expression<Func<T>>` nebo podobný podobnému typu. To není jediný způsob, jak vytvořit strom výrazu. V mnoha scénářích se můžete setkat s tím, že je potřeba vytvořit výraz v paměti za běhu.
 
-Vytváření stromů výrazů je komplikováno skutečností, že tyto stromy výrazů jsou neměnné. Být neměnný znamená, že musíte postavit strom od listů až ke kořeni. Api, která budete používat k vytváření stromů výrazů, odrážejí tuto skutečnost: Metody, které použijete k sestavení uzlu, berou všechny jeho podřízené položky jako argumenty. Pojďme si projít několik příkladů, které vám ukáží techniky.
+Sestavování stromů výrazů je komplikované skutečností, že tyto stromy výrazů jsou neměnné. Neměnné znamená, že je nutné vytvořit strom ze všech listů až po kořen. Rozhraní API, která použijete k sestavení stromů výrazů, odráží tuto skutečnost: metody, které použijete k sestavení uzlu, přebírají všechny své podřízené položky jako argumenty. Podívejme se na několik příkladů a ukážeme vám techniky.
 
 ## <a name="creating-nodes"></a>Vytváření uzlů
 
-Začněme poměrně jednoduše znovu. Budeme používat výraz sčítání jsem pracoval s v těchto částech:
+Pojďme začít poměrně znovu. Použijeme výraz sčítání, se kterým pracujete v těchto částech:
 
 ```csharp
 Expression<Func<int>> sum = () => 1 + 2;
 ```
 
-Chcete-li vytvořit tento strom výrazu, musíte vytvořit uzly listu.
-Uzly listů jsou konstanty, takže `Expression.Constant` můžete použít metodu k vytvoření uzlů:
+Chcete-li vytvořit tento strom výrazů, je nutné vytvořit listové uzly.
+Uzly listu jsou konstanty, takže můžete použít `Expression.Constant` metodu k vytvoření uzlů:
 
 ```csharp
 var one = Expression.Constant(1, typeof(int));
@@ -47,10 +47,10 @@ Jakmile máte výraz sčítání, můžete vytvořit výraz lambda:
 var lambda = Expression.Lambda(addition);
 ```
 
-Toto je velmi jednoduchý lambda výraz, protože neobsahuje žádné argumenty.
-Dále v této části uvidíte, jak mapovat argumenty na parametry a vytvářet složitější výrazy.
+Toto je velmi jednoduchý výraz lambda, protože neobsahuje žádné argumenty.
+Později v této části se dozvíte, jak namapovat argumenty na parametry a sestavovat složitější výrazy.
 
-Pro výrazy, které jsou stejně jednoduché jako tento, můžete kombinovat všechna volání do jednoho příkazu:
+Pro výrazy, které jsou stejně jednoduché jako tyto, můžete zkombinovat všechna volání do jednoho příkazu:
 
 ```csharp
 var lambda = Expression.Lambda(
@@ -61,25 +61,25 @@ var lambda = Expression.Lambda(
 );
 ```
 
-## <a name="building-a-tree"></a>Budování stromu
+## <a name="building-a-tree"></a>Sestavování stromu
 
-To jsou základy vytváření stromu výrazů v paměti. Složitější stromy obecně znamenají více typů uzlů a více uzlů ve stromu. Pojďme projít ještě jeden příklad a ukázat další dva typy uzlů, které budete obvykle stavět při vytváření stromů výrazů: uzly argumentů a uzly volání metody.
+To je základy vytváření stromu výrazů v paměti. Složitější stromy obecně znamenají více typů uzlů a další uzly ve stromové struktuře. Pojďme spustit více než jeden příklad a zobrazit dva další typy uzlů, které obvykle sestavíte při vytváření stromů výrazů: uzly argumentů a uzly volání metody.
 
-Vytvořme strom výrazů pro vytvoření tohoto výrazu:
+Pojďme sestavit strom výrazu pro vytvoření tohoto výrazu:
 
 ```csharp
 Expression<Func<double, double, double>> distanceCalc =
     (x, y) => Math.Sqrt(x * x + y * y);
 ```
 
-Začnete vytvořením výrazů parametrů `x` `y`pro a:
+Začnete vytvořením výrazů parametrů pro `x` a `y` :
 
 ```csharp
 var xParameter = Expression.Parameter(typeof(double), "x");
 var yParameter = Expression.Parameter(typeof(double), "y");
 ```
 
-Vytvoření výrazů násobení a sčítání se řídí vzorem, který jste již viděli:
+Vytváření výrazů násobení a sčítání se řídí vzorem, který jste už viděli:
 
 ```csharp
 var xSquared = Expression.Multiply(xParameter, xParameter);
@@ -87,14 +87,14 @@ var ySquared = Expression.Multiply(yParameter, yParameter);
 var sum = Expression.Add(xSquared, ySquared);
 ```
 
-Dále je třeba vytvořit výraz volání metody `Math.Sqrt`pro volání .
+Dále musíte vytvořit výraz volání metody pro volání `Math.Sqrt` .
 
 ```csharp
 var sqrtMethod = typeof(Math).GetMethod("Sqrt", new[] { typeof(double) });
 var distance = Expression.Call(sqrtMethod, sum);
 ```
 
-A nakonec vložíte volání metody do výrazu lambda a ujistěte se, že definujete argumenty výrazu lambda:
+A nakonec vložte volání metody do výrazu lambda a nezapomeňte definovat argumenty pro výraz lambda:
 
 ```csharp
 var distanceLambda = Expression.Lambda(
@@ -103,17 +103,17 @@ var distanceLambda = Expression.Lambda(
     yParameter);
 ```
 
-V tomto složitějším příkladu se zobrazí několik dalších technik, které budete často potřebovat k vytvoření stromů výrazů.
+V tomto složitějším příkladu vidíte několik dalších technik, které často budete potřebovat k vytváření stromů výrazů.
 
-Nejprve je třeba vytvořit objekty, které představují parametry nebo místní proměnné před jejich použitím. Jakmile tyto objekty vytvoříte, můžete je použít ve stromu výrazů, kdekoli potřebujete.
+Nejprve musíte vytvořit objekty, které reprezentují parametry nebo lokální proměnné, než je použijete. Jakmile tyto objekty vytvoříte, můžete je ve stromové struktuře výrazu použít všude, kde potřebujete.
 
-Za druhé je třeba použít podmnožinu reflexe `MethodInfo` API k vytvoření objektu tak, že můžete vytvořit strom výrazpro přístup k této metodě. Musíte se omezit na podmnožinu rozhraní API reflexe, které jsou k dispozici na platformě .NET Core. Opět platí, že tyto techniky se rozšíří na jiné stromy výrazů.
+Za druhé, je nutné použít podmnožinu rozhraní API reflexe k vytvoření `MethodInfo` objektu, abyste mohli vytvořit strom výrazu pro přístup k této metodě. Musíte se omezit na podmnožinu rozhraní API pro reflexi, která jsou k dispozici na platformě .NET Core. Tyto techniky se znovu rozšíří do dalších stromů výrazů.
 
-## <a name="building-code-in-depth"></a>Stavební kód do hloubky
+## <a name="building-code-in-depth"></a>Sestavování kódu v Hloubkě
 
-Nejste omezeni v tom, co můžete vytvořit pomocí těchto api. Složitější strom výrazů, který chcete vytvořit, je však obtížnější kód spravovat a číst.
+Nejste omezeni tím, co můžete pomocí těchto rozhraní API sestavit. Avšak Složitější strom výrazů, který chcete sestavit, je obtížnější kód spravovat a číst.
 
-Pojďme vytvořit strom výrazů, který je ekvivalentem tohoto kódu:
+Pojďme sestavit strom výrazu, který je ekvivalentem tohoto kódu:
 
 ```csharp
 Func<int, int> factorialFunc = (n) =>
@@ -128,7 +128,7 @@ Func<int, int> factorialFunc = (n) =>
 };
 ```
 
-Všimněte si výše, že jsem nevytvořil strom výrazů, ale jednoduše delegát. Pomocí `Expression` třídy nelze vytvořit příkaz lambdas. Zde je kód, který je nutný k vytvoření stejné funkce. Je to složité tím, že neexistuje rozhraní API `while` pro vytvoření smyčky, místo toho je třeba vytvořit smyčku, která obsahuje podmíněný test a cíl popisku, který se z smyčky vymyká.
+Všimněte si, že se strom výrazů nesestavil, ale stačí ho jednoduše delegovat. Pomocí `Expression` třídy nelze sestavit výrazy lambda příkazů. Zde je kód, který je vyžadován pro sestavení stejné funkce. Je to komplikované, že není k dispozici rozhraní API k vytvoření `while` smyčky, místo toho je nutné vytvořit smyčku, která obsahuje podmíněný test, a cíl popisku k přerušení smyčky.
 
 ```csharp
 var nArgument = Expression.Parameter(typeof(int), "n");
@@ -162,14 +162,14 @@ BlockExpression body = Expression.Block(
 );
 ```
 
-Kód pro vytvoření stromu výrazů pro faktoriální funkci je o něco delší, komplikovanější a je prošpikovaný popisky a příkazy break a dalšími prvky, kterým bychom se chtěli vyhnout v našich každodenních úkolech kódování.
+Kód pro sestavování stromu výrazů pro funkci faktoriál je poměrně složitý a složitější a je riddled pomocí popisků a příkazů Break a dalších prvků, které bychom se chtěli vyhnout při každodenních úlohách kódování.
 
-V této části jsem také aktualizoval kód návštěvníka, aby navštívil každý uzel v tomto stromu výrazů a napsal informace o uzlech, které jsou vytvořeny v této ukázce. [Ukázkový kód](https://github.com/dotnet/samples/tree/master/csharp/expression-trees) můžete zobrazit nebo stáhnout v úložišti GitHub dotnet/docs. Experimentujte sami sestavením a spuštěním vzorků. Pokyny ke stažení naleznete v [tématu Ukázky a výukové programy](../samples-and-tutorials/index.md#viewing-and-downloading-samples).
+V této části jsem také aktualizovali kód návštěvníka k návštěvě všech uzlů v tomto stromu výrazů a zapisuje informace o uzlech, které jsou vytvořeny v této ukázce. [Vzorový kód můžete zobrazit nebo stáhnout](https://github.com/dotnet/samples/tree/master/csharp/expression-trees) v úložišti GitHub/docs. Experimentujte sami vytvořením a spuštěním ukázek. Pokyny ke stažení najdete v tématu [ukázky a kurzy](../samples-and-tutorials/index.md#view-and-download-samples).
 
-## <a name="examining-the-apis"></a>Zkoumání api
+## <a name="examining-the-apis"></a>Zkoumání rozhraní API
 
-Rozhraní API stromu výrazů jsou některé z obtížnější navigaci v .NET Core, ale to je v pořádku. Jejich účelem je poměrně složitý podnik: psaní kódu, který generuje kód za běhu. Jsou nutně složité poskytnout rovnováhu mezi podporou všech řídicích struktur, které jsou k dispozici v jazyce C# a udržování plochy rozhraní API tak malé, jak je rozumné. Toto vyvážení znamená, že mnoho řídicích struktur jsou reprezentovány ne jejich C# konstrukce, ale konstrukce, které představují základní logiku, kterou kompilátor generuje z těchto vyšší úrovně konstrukce.
+Rozhraní API stromu výrazů jsou trochu obtížnější navigovat v .NET Core, ale to je dobré. Jejich účelem je spíše složitý závazek: psaní kódu, který generuje kód za běhu. Jsou nutně komplikované, aby poskytovaly rovnováhu mezi podporou všech řídicích struktur dostupných v jazyce C# a udržení oblasti povrchu rozhraní API co nejmenších. Toto vyvážení znamená, že mnoho řídicích struktur je reprezentovaných konstrukcemi jazyka C#, ale konstrukcemi, které představují základní logiku, kterou kompilátor generuje z těchto konstrukcí vyšší úrovně.
 
-Také v tomto okamžiku existují výrazy Jazyka C#, `Expression` které nelze sestavit přímo pomocí metod třídy. Obecně se jedná o nejnovější operátory a výrazy přidané v C# 5 a C# 6. (Například `async` výrazy nelze sestavit a `?.` nový operátor nelze přímo vytvořit.)
+V tuto chvíli také existují výrazy jazyka C#, které nelze sestavit přímo pomocí `Expression` metod třídy. Obecně platí, že se jedná o nejnovější operátory a výrazy přidané v jazyce C# 5 a C# 6. (Například `async` výrazy nelze sestavit a `?.` operátor New nelze vytvořit přímo.)
 
-[Další -- Překlad výrazů](expression-trees-translating.md)
+[Další--překládání výrazů](expression-trees-translating.md)

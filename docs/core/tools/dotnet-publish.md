@@ -2,18 +2,18 @@
 title: dotnet publish – příkaz
 description: Příkaz dotnet publish publikuje projekt nebo řešení .NET Core do adresáře.
 ms.date: 02/24/2020
-ms.openlocfilehash: 64a68c97e01bbf962616b31210889eb23d3734f1
-ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
+ms.openlocfilehash: 45bf8504fd882286041794d27ecb56464fc8d13d
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88608286"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656662"
 ---
 # <a name="dotnet-publish"></a>dotnet publish
 
 **Tento článek se týká:** ✔️ .net Core 2,1 SDK a novějších verzí
 
-## <a name="name"></a>Name
+## <a name="name"></a>Název
 
 `dotnet publish` -Publikuje aplikaci a její závislosti do složky pro nasazení do hostitelského systému.
 
@@ -159,7 +159,7 @@ Další informace naleznete v následujících zdrojích:
 
 - **`-p:PublishTrimmed=true`**
 
-  Ořízne nepoužívané knihovny, aby se snížila velikost nasazení aplikace při publikování samostatného spustitelného souboru. Další informace najdete v tématu [stříhání samostatných nasazení a spustitelných souborů](../deploying/trim-self-contained.md). K dispozici od verze .NET Core 3,0 SDK.
+  Ořízne nepoužívané knihovny, aby se snížila velikost nasazení aplikace při publikování samostatného spustitelného souboru. Další informace najdete v tématu [stříhání samostatných nasazení a spustitelných souborů](../deploying/trim-self-contained.md). K dispozici vzhledem k tomu, že sada SDK .NET Core 3,0 jako funkce Preview
 
   Tuto možnost doporučujeme zadat v profilu publikování, nikoli na příkazovém řádku. Další informace najdete v tématu [MSBuild](#msbuild).
 
@@ -229,12 +229,12 @@ Další informace naleznete v následujících zdrojích:
   dotnet publish --no-dependencies
   ```
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Přehled publikování aplikace .NET Core](../deploying/index.md)
 - [Publikování aplikací .NET Core pomocí .NET Core CLI](../deploying/deploy-with-cli.md)
 - [Cílové architektury](../../standard/frameworks.md)
-- [Katalog identifikátoru runtime (RID)](../rid-catalog.md)
+- [Katalog RID (Runtime Identifier)](../rid-catalog.md)
 - [Práce s macOS Catalina notarization](../install/macos-notarization-issues.md)
 - [Adresářová struktura publikované aplikace](/aspnet/core/hosting/directory-structure)
 - [Referenční dokumentace pro použití nástroje MSBuild v příkazovém řádku](/visualstudio/msbuild/msbuild-command-line-reference)

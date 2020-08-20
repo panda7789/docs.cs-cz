@@ -2,12 +2,12 @@
 title: Příklad migrace na .NET Core 3.1
 description: Ukazuje, jak migrovat ukázkové aplikace, které cílí na .NET Framework .NET Core 3,1.
 ms.date: 05/12/2020
-ms.openlocfilehash: 5e8b1219cf4bd89ada5b71a60ef27eaabb94997c
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 6a0311e9aaeb25ac39f3394d3a62e17046fe03d8
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144268"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656764"
 ---
 # <a name="example-of-migrating-to-net-core-31"></a>Příklad migrace na .NET Core 3.1
 
@@ -31,11 +31,11 @@ Proces migrace se skládá ze čtyř sekvenčních kroků:
 
 ### <a name="preparation"></a>Příprava
 
-#### <a name="migrate-packagesconfig-file"></a>Migrovat soubor Packages. config
+#### <a name="migrate-packagesconfig-file"></a>Migrovat soubor packages.config
 
-V aplikaci .NET Framework jsou všechny odkazy na externí balíčky deklarovány v souboru *Packages. config* . V rozhraní .NET Core již není nutné používat soubor *Packages. config* . Místo toho použijte vlastnost [PackageReference](../../core/project-sdk/msbuild-props.md#packagereference) v souboru projektu k určení balíčků NuGet pro vaši aplikaci.
+V .NET Framework aplikaci jsou všechny odkazy na externí balíčky deklarované v souboru *packages.config* . V rozhraní .NET Core již není nutné používat soubor *packages.config* . Místo toho použijte vlastnost [PackageReference](../../core/project-sdk/msbuild-props.md#packagereference) v souboru projektu k určení balíčků NuGet pro vaši aplikaci.
 
-Takže je potřeba přejít z jednoho formátu do druhého. Aktualizaci můžete provést ručně a přebírat závislosti obsažené v souboru *Packages. config* a migrovat je do souboru projektu ve `PackageReference` formátu. Nebo můžete nechat aplikaci Visual Studio pracovat za vás: klikněte pravým tlačítkem na soubor *Packages. config* a vyberte možnost **migrovat balíčky. config na PackageReference** .
+Takže je potřeba přejít z jednoho formátu do druhého. Aktualizaci můžete provést ručně a přitom přebírat závislosti obsažené v souboru *packages.config* a migrovat je do souboru projektu ve `PackageReference` formátu. Nebo můžete nechat aplikaci Visual Studio pracovat za vás: klikněte pravým tlačítkem na soubor *packages.config* a vyberte možnost **migrovat packages.config na PackageReference** .
 
 #### <a name="verify-every-dependency-compatibility-in-net-core"></a>Ověřit všechny kompatibility závislostí v .NET Core
 
@@ -79,13 +79,13 @@ Atributy se generují automaticky v projektech .NET Core. Pokud projekt obsahuje
 </Project>
 ```
 
-#### <a name="resources"></a>Prostředky
+#### <a name="resources"></a>Zdroje a prostředky
 
 Integrované prostředky jsou zahrnuté automaticky, ale prostředky nejsou, takže je potřeba migrovat prostředky do nového souboru projektu.
 
 #### <a name="package-references"></a>Odkazy na balíčky
 
-Pomocí možnosti **migrovat balíčky. config na PackageReference** můžete snadno přesunout odkazy na externí balíčky do nového formátu, jak je uvedeno výše.
+Pomocí možnosti **migrovat packages.config do PackageReference** můžete snadno přesunout odkazy na externí balíčky do nového formátu, jak je uvedeno výše.
 
 #### <a name="update-package-references"></a>Aktualizovat odkazy na balíček
 
@@ -129,7 +129,7 @@ Po sestavení vaší aplikace bez chyb můžete spustit poslední krok migrace o
 
 V tomto posledním kroku můžete najít několik různých problémů v závislosti na složitosti vaší aplikace a závislostech a rozhraních API, které používáte.
 
-Pokud například použijete konfigurační soubory (*App. config*), může dojít k chybám v době běhu, jako jsou konfigurační oddíly, které nejsou k dispozici. `Microsoft.Extensions.Configuration`Tato chyba by se měla opravit pomocí balíčku NuGet.
+Pokud například použijete konfigurační soubory (*app.config*), může dojít k chybám za běhu, jako jsou konfigurační oddíly, které nejsou k dispozici. `Microsoft.Extensions.Configuration`Tato chyba by se měla opravit pomocí balíčku NuGet.
 
 Dalším důvodem pro chyby je použití `BeginInvoke` metod a, `EndInvoke` protože nejsou podporované v .NET Core. Nepodporují se v .NET Core, protože mají závislost na vzdálené komunikaci, která v .NET Core neexistuje. Chcete-li tento problém vyřešit, zkuste použít `await` klíčové slovo (je-li k dispozici) nebo <xref:System.Threading.Tasks.Task.Run%2A?displayProperty=nameWithType> metodu.
 
@@ -195,7 +195,7 @@ Vyberte tlačítko **Dokončit** . Po chvíli se zobrazí generovaný kód.
 Měli byste vidět tři automaticky generované soubory:
 
 1. *Začínáme*: odkaz na GitHub, který poskytuje některé informace o WCF.
-2. *Připojenou službu. JSON*: parametry konfigurace pro připojení ke službě.
+2. *ConnectedService.js*: parametry konfigurace pro připojení ke službě.
 3. *Reference.cs*: skutečný kód klienta WCF.
 
 ![Snímek obrazovky okna Průzkumník řešení se třemi automaticky generovanými soubory](./media/example-migration-core/autogenerated-files.png)
@@ -233,7 +233,7 @@ V takovém případě odstraňte veškerý obsah souboru *. csproj* a nahraďte 
     <PropertyGroup>
         <OutputType>WinExe</OutputType>
         <TargetFramework>netcoreapp3.1</TargetFramework>
-        <UseWPF>true</UseWPF>
+        <UseWpf>true</UseWpf>
         <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     </PropertyGroup>
 </Project>

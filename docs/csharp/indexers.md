@@ -4,12 +4,12 @@ description: Přečtěte si o indexerech v jazyce C# a způsobu implementace ind
 ms.date: 06/20/2016
 ms.technology: csharp-fundamentals
 ms.assetid: 0e9496da-e766-45a9-b92b-91820d4a350e
-ms.openlocfilehash: e9b1cb18157982f068f1c1e4546e637f2bd707cb
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: 1369740404c500d8b44b4706959bf4640c26aa2d
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83394702"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656108"
 ---
 # <a name="indexers"></a>Indexery
 
@@ -46,7 +46,7 @@ Přítomnost argumentů odkazujících na položku v sadě položek rozlišuje i
 *Indexery* byste definovali v typu, když jeho model rozhraní API nějaké kolekce, kde definujete argumenty této kolekce. Indexery mohou nebo nemusí být mapovány přímo na typy kolekce, které jsou součástí rozhraní .NET Core Framework. Váš typ může kromě modelování kolekce obsahovat i další zodpovědnosti.
 Indexery umožňují poskytovat rozhraní API, které odpovídá abstrakci typu, bez vystavení vnitřních podrobností o tom, jak se hodnoty pro tuto abstrakci ukládají nebo vypočítávají.
 
-Pojďme si projít některé z běžných scénářů použití *indexerů*. K [ukázkové složce pro indexery](https://github.com/dotnet/samples/tree/master/csharp/indexers)můžete získat přístup. Pokyny ke stažení najdete v tématu [ukázky a kurzy](../samples-and-tutorials/index.md#viewing-and-downloading-samples).
+Pojďme si projít některé z běžných scénářů použití *indexerů*. K [ukázkové složce pro indexery](https://github.com/dotnet/samples/tree/master/csharp/indexers)můžete získat přístup. Pokyny ke stažení najdete v tématu [ukázky a kurzy](../samples-and-tutorials/index.md#view-and-download-samples).
 
 ### <a name="arrays-and-vectors"></a>Pole a vektory
 

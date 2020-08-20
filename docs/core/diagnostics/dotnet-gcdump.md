@@ -2,12 +2,12 @@
 title: dotnet – gcdump – .NET Core
 description: Instalace a použití nástroje příkazového řádku dotnet-gcdump.
 ms.date: 07/26/2020
-ms.openlocfilehash: 10e4c7e9e3a1df5d0eb58e68d38c0af091aeedc1
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: a7b19f4d7487677b975621e7267a17894dae2e3a
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88575679"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656648"
 ---
 # <a name="heap-analysis-tool-dotnet-gcdump"></a>Nástroj pro analýzu haldy (dotnet – gcdump)
 
@@ -29,7 +29,7 @@ dotnet-gcdump [-h|--help] [--version] <command>
 
 ## <a name="description"></a>Popis
 
-`dotnet-gcdump`Globální nástroj je způsob, jak shromažďovat výpisy GC (uvolňování paměti) pro živé procesy .NET. Používá technologii EventPipe, což je alternativa k ETW v systému Windows, která je jiná pro různé platformy. Výpisy paměti GC se vytvářejí aktivací GC v cílovém procesu, zapnutím zvláštních událostí a obnovením grafu kořenových adresářů objektů z datového proudu událostí. Díky tomu můžou být výpisy paměti GC shromažďovány, když je proces spuštěný, s minimální režií. Tyto výpisy jsou užitečné pro několik scénářů:
+`dotnet-gcdump`Globální nástroj je způsob, jak shromažďovat výpisy GC (uvolňování paměti) pro živé procesy .NET. Používá technologii EventPipe, což je alternativa k ETW v systému Windows, která je jiná pro různé platformy. Výpisy paměti GC se vytvářejí aktivací GC v cílovém procesu, zapnutím zvláštních událostí a obnovením grafu kořenových adresářů objektů z datového proudu událostí. Tento proces umožňuje shromáždit výpisy paměti GC, pokud je proces spuštěný a s minimální režií. Tyto výpisy jsou užitečné pro několik scénářů:
 
 - Porovnání počtu objektů v haldě v několika okamžicích v čase.
 - Analyzují se kořeny objektů (zodpovězené otázky, jako je například "co stále obsahuje odkaz na tento typ?").

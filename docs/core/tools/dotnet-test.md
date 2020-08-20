@@ -2,18 +2,18 @@
 title: dotnet – příkaz testu
 description: Příkaz dotnet test se používá ke spouštění testů jednotek v daném projektu.
 ms.date: 04/29/2020
-ms.openlocfilehash: e5c0ec3423cf98895b49596633c81861bbcf4878
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: d67521084330b206afca89baf59228b99ca799a1
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88557838"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656752"
 ---
 # <a name="dotnet-test"></a>dotnet test
 
 **Tento článek se týká:** ✔️ .net Core 2,1 SDK a novějších verzí
 
-## <a name="name"></a>Name
+## <a name="name"></a>Název
 
 `dotnet test` – Testovací ovladač .NET, který se používá ke spouštění testů jednotek.
 
@@ -104,7 +104,7 @@ Kde `Microsoft.NET.Test.Sdk` je testovací hostitel, `xunit` je testovací rozhr
   - 5400
   - 5400000ms
 
-  Pokud se nepoužívá žádná jednotka (například 5400000), předpokládá se, že hodnota je v milisekundách. Při použití společně s testy řízenými daty závisí časový limit na použitém testovacím adaptéru. Pro xUnit a NUnit se po každém testovacím případu obnoví časový limit. Pro MSTest se používá časový limit pro všechny zjištěných testovacích případů. Tato možnost je podporovaná ve Windows s netcoreapp 2.1 a novějším a v systému Linux s netcoreapp 3.1 a novějším. macOS se nepodporuje.
+  Pokud se nepoužívá žádná jednotka (například 5400000), předpokládá se, že hodnota je v milisekundách. Při použití společně s testy řízenými daty závisí časový limit na použitém testovacím adaptéru. Pro xUnit a NUnit se po každém testovacím případu obnoví časový limit. Pro MSTest se používá časový limit pro všechny testovací případy. Tato možnost je podporovaná ve Windows s netcoreapp 2.1 a novějším a v systému Linux s netcoreapp 3.1 a novějším. macOS se nepodporuje.
 
 - **`-c|--configuration <CONFIGURATION>`**
 
@@ -243,9 +243,9 @@ Kde `Microsoft.NET.Test.Sdk` je testovací hostitel, `xunit` je testovací rozhr
 
 | Testovací rozhraní | Podporované vlastnosti                                                                                      |
 | -------------- | --------------------------------------------------------------------------------------------------------- |
-| MSTest         | <ul><li>FullyQualifiedName</li><li>Name</li><li>NázevTřídy</li><li>Priorita</li><li>TestCategory</li></ul> |
+| MSTest         | <ul><li>FullyQualifiedName</li><li>Název</li><li>NázevTřídy</li><li>Priorita</li><li>TestCategory</li></ul> |
 | xUnit          | <ul><li>FullyQualifiedName</li><li>DisplayName</li><li>Traits</li></ul>                                   |
-| NUnit          | <ul><li>FullyQualifiedName</li><li>Name</li><li>TestCategory</li><li>Priorita</li></ul>                                   |
+| NUnit          | <ul><li>FullyQualifiedName</li><li>Název</li><li>TestCategory</li><li>Priorita</li></ul>                                   |
 
 `<operator>`Popisuje vztah mezi vlastností a hodnotou:
 
@@ -271,7 +271,7 @@ Výrazy můžete uzavřít do závorek při použití podmíněných operátorů
 
 Další informace a příklady použití selektivního filtrování testů jednotek naleznete v tématu [spuštění selektivních testů jednotek](../testing/selective-unit-tests.md).
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Architektury a cíle](../../standard/frameworks.md)
 - [Katalog identifikátorů runtime .NET Core (RID)](../rid-catalog.md)

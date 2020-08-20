@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: 23d67761838f17e833a4a478e2355e908a2e35ca
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: 73eee58a3d11f2f898a6d57cb282ccf4e802cdca
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88557903"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656596"
 ---
 # <a name="deploy-net-core-apps-with-visual-studio"></a>Nasazení aplikací .NET Core pomocí sady Visual Studio
 
@@ -309,7 +309,7 @@ Při nasazení aplikace jsou také součástí souborů aplikace všechny závis
 
 Samostatné nasazení můžete nasadit jenom pomocí knihovny třetích stran na platformy podporované touto knihovnou. To se podobá tomu, že se závislosti třetích stran s nativními závislostmi v nasazení závislém na rozhraní, kde nativní závislosti neexistují na cílové platformě, pokud se tam dříve nenainstalovaly.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Nasazení aplikace .NET Core](index.md)
 - [Katalog identifikátorů runtime .NET Core (RID)](../rid-catalog.md)
