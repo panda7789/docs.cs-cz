@@ -18,7 +18,7 @@ Tento kurz vás provede interaktivním vytvořením ukázkového řešení, kter
 
 [!INCLUDE [testing an ASP.NET Core project from .NET Core](../../../includes/core-testing-note-aspnet.md)]
 
-## <a name="prerequisites"></a>Předpoklady
+## <a name="prerequisites"></a>Požadavky
 
 - [.NET Core 2,1 SDK](https://dotnet.microsoft.com/download) nebo novější verze.
 - Textový editor nebo editor kódu podle vašeho výběru.

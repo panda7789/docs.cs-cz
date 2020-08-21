@@ -6,4 +6,4 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/14/2020
 ms.locfileid: "70373811"
 ---
-Tento článek pojednává o testování projektu .NET Core. Pokud testujete **projekt ASP.NET Core,** přečtěte si informace [o testech integrace v ASP.NET Core](/aspnet/core/test/integration-tests#test-app-prerequisites).
+Tento článek se týká testování projektu .NET Core. Pokud testujete projekt **ASP.NET Core** , přečtěte si téma [testy integrace v ASP.NET Core](/aspnet/core/test/integration-tests#test-app-prerequisites).
