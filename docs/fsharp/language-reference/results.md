@@ -1,19 +1,19 @@
 ---
 title: Výsledky
-description: Naučte se používat F# typ Result, který vám umožní napsat kód odolný proti chybám.
-ms.date: 04/24/2017
-ms.openlocfilehash: 187aa26ccbaac7e0ec998756377bb7b0489eb1ab
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+description: 'Naučte se používat typ výsledek F #, který vám umožní napsat kód odolný proti chybám.'
+ms.date: 08/13/2020
+ms.openlocfilehash: d69e6ddc37bcf5cb5fc28644d59a11a822b83faa
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424853"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656915"
 ---
 # <a name="results"></a>Výsledky
 
-Počínaje F# 4,1 je k dispozici typ `Result<'T,'TFailure>`, který můžete použít pro zápis kódu odolného vůči chybám, který se může skládat.
+`Result<'T,'TFailure>`Typ umožňuje napsat kód odolný proti chybám, který může být složen.
 
-## <a name="syntax"></a>Syntaxe
+## <a name="syntax"></a>Syntax
 
 ```fsharp
 // The definition of Result in FSharp.Core
@@ -27,9 +27,11 @@ type Result<'T,'TError> =
 
 ## <a name="remarks"></a>Poznámky
 
-Všimněte si, že typ výsledku je [struktura s rozlišeným sjednocením](discriminated-unions.md#struct-discriminated-unions), což je další funkce F# představená v 4,1.  Tady se vztahují strukturální sémantiky rovnosti.
+Prohlédněte si [`Result`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-resultmodule.html) modul pro integrovaný kombinátory pro `Result` . textový.
 
-Typ `Result` se obvykle používá při zpracování chyb monadic, což je často označováno jako [programování orientované na železnici](https://swlaschin.gitbooks.io/fsharpforfunandprofit/content/posts/recipe-part2.html) v rámci F# komunity.  Tento přístup ukazuje následující triviální příklad.
+Všimněte si, že typ výsledku je [struktura s rozlišeným sjednocením](discriminated-unions.md#struct-discriminated-unions). Tady se vztahují strukturální sémantiky rovnosti.
+
+`Result`Typ se obvykle používá při zpracování chyb monadic, což se často označuje jako [železniční programování](https://swlaschin.gitbooks.io/fsharpforfunandprofit/content/posts/recipe-part2.html) v rámci komunity F #.  Tento přístup ukazuje následující triviální příklad.
 
 ```fsharp
 // Define a simple type which has fields that can be validated
@@ -80,7 +82,7 @@ let test() =
 test()
 ```
 
-Jak vidíte, je poměrně snadné zřetězit různé funkce ověřování, pokud je vynutíte, aby vracely `Result`.  To umožňuje přerušit funkčnost, jako je to v malých částech, které jsou sestavené tak, jak je potřebujete.  To má také přidanou hodnotu *vynucení* použití [porovnávání se vzorem](pattern-matching.md) na konci kulatého obhodnocení, které v nástroji vynucuje vyšší stupeň správnosti programu.
+Jak vidíte, je poměrně snadné zřetězit se k různým funkcím ověřování, pokud je vynutíte, aby vracely `Result` .  To umožňuje přerušit funkčnost, jako je to v malých částech, které jsou sestavené tak, jak je potřebujete.  To má také přidanou hodnotu *vynucení* použití [porovnávání se vzorem](pattern-matching.md) na konci kulatého obhodnocení, které v nástroji vynucuje vyšší stupeň správnosti programu.
 
 ## <a name="see-also"></a>Viz také:
 

@@ -2,12 +2,12 @@
 title: Typy kolekcí
 description: 'Přečtěte si o typech kolekcí F # a o tom, jak se liší od kolekcí typu .NET.'
 ms.date: 08/14/2020
-ms.openlocfilehash: 197ba754d632051b5a0bf9c8364d45a1fb932f48
-ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
+ms.openlocfilehash: 394f6bbaf58e7e8607abc3a0c20bbc2b1c9c3c8d
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88267279"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656902"
 ---
 # <a name="f-collection-types"></a>Typy kolekcí F#
 
@@ -21,11 +21,11 @@ V následující tabulce jsou uvedeny typy kolekcí F #.
 
 |Typ|Popis|Související odkazy|
 |----|-----------|-------------|
-|[Seznam](https://msdn.microsoft.com/library/c627b668-477b-4409-91ed-06d7f1b3e4a7)|Seřazená, neproměnlivá řada prvků stejného typu. Implementováno jako propojený seznam.|[Seznamy](lists.md)<br /><br />[Seznam modulů](https://msdn.microsoft.com/library/a2264ba3-2d45-40dd-9040-4f7aa2ad9788)|
-|[Skupin](https://msdn.microsoft.com/library/0cda8040-9396-40dd-8dcd-cf48542165a1)|Pevná velikost, která je založená na nule, proměnlivá kolekce po sobě jdoucích datových prvků, které jsou všechny stejného typu.|[Pole](arrays.md)<br /><br />[Modul pole](https://msdn.microsoft.com/library/0cda8040-9396-40dd-8dcd-cf48542165a1)<br /><br />[Přidaný modul](https://msdn.microsoft.com/library/ae1a9746-7817-4430-bcdb-a79c2411bbd3)<br /><br />[Modul Array3D](https://msdn.microsoft.com/library/c8355e2d-add8-48a4-8aa6-1c57ae74c560)|
-|[SEQ](https://msdn.microsoft.com/library/2f0c87c6-8a0d-4d33-92a6-10d1d037ce75)|Logická řada prvků, které jsou všechny jednoho typu. Sekvence jsou zvláště užitečné v případě, že máte rozsáhlou uspořádanou kolekci dat, ale nemusí nutně očekávat použití všech prvků. Jednotlivé prvky sekvence jsou vypočítány pouze jako povinné, takže sekvence může být využívána lépe než seznam, pokud nejsou použity všechny prvky. Sekvence jsou reprezentovány `seq<'T>` typem, který je aliasem pro `IEnumerable<T>` . Proto může být jakýkoli typ .NET Framework, který implementuje, `System.Collections.Generic.IEnumerable<'T>` použit jako sekvence.|[Sekvence](sequences.md)<br /><br />[SEQ – modul](https://msdn.microsoft.com/library/54e8f059-ca52-4632-9ae9-49685ee9b684)|
-|[Mapa](https://msdn.microsoft.com/library/975316ea-55e3-4987-9994-90897ad45664)|Neproměnlivý slovník prvků. K prvkům se používá klíč.|[Mapový modul](https://msdn.microsoft.com/library/bfe61ead-f16c-416f-af98-56dbcbe23e4f)|
-|[Set](https://msdn.microsoft.com/library/50cebdce-0cd7-4c5c-8ebc-f3a9e90b38d8)|Neproměnlivá sada, která je založena na binárních stromech, kde porovnání je funkce strukturálního porovnání F #, která potenciálně používá implementace `System.IComparable` rozhraní u klíčových hodnot.|[Nastavit modul](https://msdn.microsoft.com/library/61efa732-d55d-4c32-993f-628e2f98e6a0)|
+|[Seznam](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharplist-1.html)|Seřazená, neproměnlivá řada prvků stejného typu. Implementováno jako propojený seznam.|[Seznamy](lists.md)<br /><br />[Seznam modulů](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-listmodule.html)|
+|[Skupin](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-array-1.html)|Pevná velikost, která je založená na nule, proměnlivá kolekce po sobě jdoucích datových prvků, které jsou všechny stejného typu.|[Pole](arrays.md)<br /><br />[Modul pole](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html)<br /><br />[Přidaný modul](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-array2dmodule.html)<br /><br />[Modul Array3D](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-array3dmodule.html)|
+|[SEQ](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-seq-1.html)|Logická řada prvků, které jsou všechny jednoho typu. Sekvence jsou zvláště užitečné v případě, že máte rozsáhlou uspořádanou kolekci dat, ale nemusí nutně očekávat použití všech prvků. Jednotlivé prvky sekvence jsou vypočítány pouze jako povinné, takže sekvence může být využívána lépe než seznam, pokud nejsou použity všechny prvky. Sekvence jsou reprezentovány `seq<'T>` typem, který je aliasem pro `IEnumerable<T>` . Proto může být jakýkoli typ .NET Framework, který implementuje, `System.Collections.Generic.IEnumerable<'T>` použit jako sekvence.|[Sekvence](sequences.md)<br /><br />[SEQ – modul](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-seqmodule.html)|
+|[Mapa](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html)|Neproměnlivý slovník prvků. K prvkům se používá klíč.|[Mapový modul](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-mapmodule.html)|
+|[Set](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html)|Neproměnlivá sada, která je založena na binárních stromech, kde porovnání je funkce strukturálního porovnání F #, která potenciálně používá implementace `System.IComparable` rozhraní u klíčových hodnot.|[Nastavit modul](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-setmodule.html)|
 
 ### <a name="table-of-functions"></a>Tabulka funkcí
 
