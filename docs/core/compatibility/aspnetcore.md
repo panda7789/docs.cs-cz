@@ -5,12 +5,12 @@ description: Zobrazí seznam nejnovějších změn v ASP.NET Core.
 ms.date: 07/17/2020
 author: scottaddie
 ms.author: scaddie
-ms.openlocfilehash: 7a07df5194d5dc220b61d55a4457d90881ac9ddf
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: 1506e0aa27778d44497252231028689259f48896
+ms.sourcegitcommit: ef86c24c418439b8bb5e3e7d64bbdbe5e11c3e9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86474823"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88720238"
 ---
 # <a name="aspnet-core-breaking-changes"></a>ASP.NET Core přerušující změny
 
@@ -28,6 +28,7 @@ Na této stránce jsou popsány následující přerušující se změny:
 - [Autorizace: implementace IAuthorizationPolicyProvider vyžadují novou metodu.](#authorization-iauthorizationpolicyprovider-implementations-require-new-method)
 - [Autorizace: prostředek ve směrování koncového bodu je HttpContext](#authorization-resource-in-endpoint-routing-is-httpcontext)
 - [Azure: odebraly se balíčky Microsoft infixních integrací Azure.](#azure-microsoft-prefixed-azure-integration-packages-removed)
+- [Metody serializace BinaryFormatter jsou zastaralé a zakázané v aplikacích ASP.NET](#binaryformatter-serialization-methods-are-obsolete-and-prohibited-in-aspnet-apps)
 - [Blazor: nevýznamné prázdné znaky oříznuté z komponent v době kompilace](#blazor-insignificant-whitespace-trimmed-from-components-at-compile-time)
 - [Blazor: Cílová architektura balíčků NuGet se změnila](#blazor-target-framework-of-nuget-packages-changed)
 - [Ukládání do mezipaměti: byla odebrána vlastnost CompactOnMemoryPressure](#caching-compactonmemorypressure-property-removed)
@@ -99,6 +100,10 @@ Na této stránce jsou popsány následující přerušující se změny:
 ***
 
 [!INCLUDE[Azure: Microsoft-prefixed Azure integration packages removed](~/includes/core-changes/aspnetcore/5.0/azure-integration-packages-removed.md)]
+
+***
+
+[!INCLUDE [binaryformatter-serialization-obsolete](../../../includes/core-changes/corefx/5.0/binaryformatter-serialization-obsolete.md)]
 
 ***
 

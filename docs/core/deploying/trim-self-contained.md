@@ -4,18 +4,18 @@ description: Naučte se oříznout samostatné aplikace a zmenšit jejich veliko
 author: jamshedd
 ms.author: jamshedd
 ms.date: 04/03/2020
-ms.openlocfilehash: 2bb0f03994468bbad3096ebf0b141bc1f47b867e
-ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
+ms.openlocfilehash: 0fde409e9e5911213855ab206368d302b73eebb3
+ms.sourcegitcommit: ef86c24c418439b8bb5e3e7d64bbdbe5e11c3e9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88656713"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88720121"
 ---
 # <a name="trim-self-contained-deployments-and-executables"></a>Odebrání nechtěných součástí a zachování pouze samostatně nasaditelných součástí a spustitelných souborů
 
 [Model nasazení závislý na rozhraní](index.md#publish-framework-dependent) byl nejaktivnějším modelem nasazení od okamžiku spuštění .NET. V tomto scénáři vývojář aplikace sady sestaví pouze aplikace a sestavení třetích stran s očekáváním, že v klientském počítači budou k dispozici knihovny .NET runtime a rozhraní. Tento model nasazení se v .NET Core i nadále považuje za dominantní, ale existují scénáře, kdy model závislý na rozhraní není optimální. Alternativou je publikování [samostatné aplikace](index.md#publish-self-contained), kde se modul runtime .NET Core a rozhraní seskupí spolu s aplikacemi a sestaveními třetích stran.
 
-Model nasazení Trim – samostatně zahrnutý je specializovaná verze modelu nasazení, která je optimalizována pro snížení velikosti nasazení. Minimalizace velikosti nasazení je zásadním požadavkem pro některé scénáře na straně klienta, jako jsou Blazor aplikace. V závislosti na složitosti aplikace jsou pro spuštění aplikace požadovány pouze podmnožina sestavení rozhraní. Tyto nepoužívané části knihovny jsou zbytečné a je možné je z zabalených aplikací oříznout. Nicméně existuje riziko, že analýza času sestavení aplikace může způsobit selhání za běhu, protože není schopná spolehlivě analyzovat různé problematické vzorce kódu (v podstatě na střed, na kterém je reflexe použito). Vzhledem k tomu, že spolehlivost nejde zaručit, tento model nasazení se nabízí jako funkce ve verzi Preview. Modul analýzy času sestavení poskytuje upozornění vývojářům vzorů kódu, které jsou problematické, a očekává se, že tyto vzory kódu budou opraveny. Pokud je to možné, doporučujeme, abyste přesunuli všechny závislosti na reflexi modulu runtime v aplikaci na čas sestavení pomocí kódu, který splňuje stejné požadavky.
+Model nasazení Trim – samostatně zahrnutý je specializovaná verze modelu nasazení, která je optimalizována pro snížení velikosti nasazení. Minimalizace velikosti nasazení je zásadním požadavkem pro některé scénáře na straně klienta, jako jsou Blazor aplikace. V závislosti na složitosti aplikace je pro spuštění aplikace nutná pouze podmnožina sestavení rozhraní. Tyto nepoužívané části knihovny jsou zbytečné a je možné je z zabalených aplikací oříznout. Nicméně existuje riziko, že analýza času sestavení aplikace může způsobit selhání za běhu, protože není schopná spolehlivě analyzovat různé problematické vzorce kódu (v podstatě na střed, na kterém je reflexe použito). Vzhledem k tomu, že spolehlivost nejde zaručit, tento model nasazení se nabízí jako funkce ve verzi Preview. Modul analýzy času sestavení poskytuje upozornění vývojářům vzorů kódu, které jsou problematické, a očekává se, že tyto vzory kódu budou opraveny. Pokud je to možné, doporučujeme, abyste přesunuli všechny závislosti na reflexi modulu runtime v aplikaci na čas sestavení pomocí kódu, který splňuje stejné požadavky.
 
 Režim ořezávání pro aplikace lze konfigurovat prostřednictvím TrimMode a ve výchozím nastavení ( `copyused` ) pro sestavení sady prostředků, které se používají v aplikaci. Blazor aplikace WebAssembly budou používat účinnější režim ( `link` ), který ořízne nepoužitý kód v rámci sestavení. Upozornění analýzy střihu poskytují informace o vzorech kódu, u kterých není možné provést úplnou analýzu závislostí. Tato upozornění se ve výchozím nastavení potlačí a dají se zapnout nastavením příznaku `SuppressTrimAnalysisWarnings` na false. Další informace o dostupných možnostech ořezávání najdete na [stránce ILLinker](https://github.com/mono/linker/blob/master/docs/illink-options.md).
 
@@ -51,7 +51,7 @@ Následující příklad publikuje aplikaci pro Windows jako samostatně obsaže
 </ItemGroup>
 ```
 
-V následujícím příkladu je publikována aplikace v agresivním režimu střihu, kdy se nepoužívaný kód se sestaveními bude oříznout a jsou povolena upozornění ořezávání.
+Následující příklad publikuje aplikaci v agresivním režimu střihu, kdy se nepoužívaný kód v sestaveních ořízne a jsou povolena upozornění ořezávání.
 
 ```xml
 <ItemGroup>
@@ -94,7 +94,7 @@ Další informace najdete v tématu [publikování aplikací .NET Core pomocí s
 
 Visual Studio pro Mac neposkytuje možnosti pro oříznutí vaší aplikace během publikování. Podle pokynů v oddílu [vystřihování rozhraní CLI aplikace](#trim-your-app---cli) budete muset publikovat ručně. Další informace najdete v tématu [publikování aplikací .NET Core pomocí .NET Core CLI](deploy-with-cli.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Nasazení aplikace .NET Core](index.md)
 - [Publikování aplikací .NET Core pomocí .NET Core CLI](deploy-with-cli.md).

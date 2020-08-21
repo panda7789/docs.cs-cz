@@ -1,6 +1,6 @@
 ---
 title: Asynchronní programování založené na úlohách – .NET
-description: V tomto článku se dozvíte o asynchronním programování založeném na úlohách prostřednictvím TAsk Parallel Library (TPL) v rozhraní .NET.
+description: V tomto článku se dozvíte o asynchronním programování založeném na úlohách prostřednictvím Task Parallel Library (TPL) v rozhraní .NET.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -9,12 +9,12 @@ dev_langs:
 helpviewer_keywords:
 - parallelism, task
 ms.assetid: 458b5e69-5210-45e5-bc44-3888f86abd6f
-ms.openlocfilehash: 57261602c456a6dcf90c03aa044e7d1c0c8c1c6a
-ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
+ms.openlocfilehash: 968da880fc7e0e811f5e8712ccb43726426a019e
+ms.sourcegitcommit: ef86c24c418439b8bb5e3e7d64bbdbe5e11c3e9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88608019"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88720160"
 ---
 # <a name="task-based-asynchronous-programming"></a>Asynchronní programování založené na úlohách
 

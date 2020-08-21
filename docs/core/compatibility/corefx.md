@@ -2,12 +2,12 @@
 title: Přerušující změny knihovny základních tříd
 description: Obsahuje seznam nejnovějších změn v základních knihovnách .NET.
 ms.date: 07/27/2020
-ms.openlocfilehash: 9190fc2fc8dddc4fb4be8409915cf24c92a97daf
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: e0ebc054e0abccfe934b505a727060653fe313cd
+ms.sourcegitcommit: ef86c24c418439b8bb5e3e7d64bbdbe5e11c3e9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88558171"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88720185"
 ---
 # <a name="core-net-libraries-breaking-changes"></a>Základní knihovny .NET – přerušující změny
 
@@ -17,36 +17,51 @@ Na této stránce jsou popsány následující přerušující se změny:
 
 | Zásadní změna | Představená verze |
 | - | :-: |
-| [Environment. OSVersion vrátí správnou verzi operačního systému.](#environmentosversion-returns-the-correct-operating-system-version) | 5.0 |
-| [Složitost LINQ OrderBy. First {OrDefault} se zvýšila.](#complexity-of-linq-orderbyfirstordefault-increased) | 5.0 |
-| [IntPtr a UIntPtr implementují IFormattable](#intptr-and-uintptr-implement-iformattable) | 5.0 |
-| [PrincipalPermissionAttribute je zastaralá jako chyba.](#principalpermissionattribute-is-obsolete-as-error) | 5.0 |
-| [Metody serializace BinaryFormatter jsou zastaralé a zakázané v aplikacích ASP.NET](#binaryformatter-serialization-methods-are-obsolete-and-prohibited-in-aspnet-apps) | 5.0 |
-| [Cesty kódu UTF-7 jsou zastaralé.](#utf-7-code-paths-are-obsolete) | 5.0 |
-| [Vector \<T> vždy vyvolá NotSupportedException pro nepodporované typy](#vectort-always-throws-notsupportedexception-for-unsupported-types) | 5.0 |
-| [Výchozí ActivityIdFormat je W3C.](#default-activityidformat-is-w3c) | 5.0 |
-| [Změna chování pro Vector2. lerp a Vector4. lerp](#behavior-change-for-vector2lerp-and-vector4lerp) | 5.0 |
-| [Metody SSE a SSE2 CompareGreaterThan správně zpracovávají vstupy NaN.](#sse-and-sse2-comparegreaterthan-methods-properly-handle-nan-inputs) | 5.0 |
-| [Sada CounterSet. provedení operace CreateCounterSetInstance nyní vyvolá chybu InvalidOperationException, pokud již instance existuje.](#countersetcreatecountersetinstance-now-throws-invalidoperationexception-if-instance-already-exists) | 5.0 |
-| [Balíček Microsoft. DotNet. PlatformAbstractions se odebral.](#microsoftdotnetplatformabstractions-package-removed) | 5.0 |
-| [Rozhraní API, která verze sestav nyní hlásí produkt a nikoli verzi souboru](#apis-that-report-version-now-report-product-and-not-file-version) | 3.0 |
-| [Vlastní instance EncoderFallbackBuffer se nemůžou vrátit rekurzivně.](#custom-encoderfallbackbuffer-instances-cannot-fall-back-recursively) | 3.0 |
-| [Změny chování při formátování a analýze plovoucí desetinné čárky](#floating-point-formatting-and-parsing-behavior-changed) | 3.0 |
-| [Operace analýzy s plovoucí desetinnou čárkou již nejsou úspěšné nebo vyvolávají výjimku OverflowException](#floating-point-parsing-operations-no-longer-fail-or-throw-an-overflowexception) | 3.0 |
-| [InvalidAsynchronousStateException – přesunuté do jiného sestavení](#invalidasynchronousstateexception-moved-to-another-assembly) | 3.0 |
-| [Výměna chybně formátovaných sekvencí UTF-8 se řídí pokyny pro kódování Unicode](#replacing-ill-formed-utf-8-byte-sequences-follows-unicode-guidelines) | 3.0 |
-| [TypeDescriptionProviderAttribute přesunuté do jiného sestavení](#typedescriptionproviderattribute-moved-to-another-assembly) | 3.0 |
-| [ZipArchiveEntry už nezpracovává archivy s nekonzistentními velikostmi záznamů.](#ziparchiveentry-no-longer-handles-archives-with-inconsistent-entry-sizes) | 3.0 |
-| [Parametr FieldInfo. SetValue vyvolá výjimku pro statická pole pouze pro init.](#fieldinfosetvalue-throws-exception-for-static-init-only-fields) | 3.0 |
+| [Názvy parametrů se změnily v referenčních sestaveních.](#parameter-names-changed-in-reference-assemblies) | 5,0 |
+| [Cesty URI bez znaků, které nejsou ASCII, se v systému UNIX analyzují správně](#uri-paths-with-non-ascii-characters-parse-correctly-on-unix) | 5,0 |
+| [Rozpoznání identifikátoru URI cest UNC v systému UNIX](#uri-recognition-of-unc-paths-on-unix) | 5,0 |
+| [Environment. OSVersion vrátí správnou verzi operačního systému.](#environmentosversion-returns-the-correct-operating-system-version) | 5,0 |
+| [Složitost LINQ OrderBy. First {OrDefault} se zvýšila.](#complexity-of-linq-orderbyfirstordefault-increased) | 5,0 |
+| [IntPtr a UIntPtr implementují IFormattable](#intptr-and-uintptr-implement-iformattable) | 5,0 |
+| [PrincipalPermissionAttribute je zastaralá jako chyba.](#principalpermissionattribute-is-obsolete-as-error) | 5,0 |
+| [Metody serializace BinaryFormatter jsou zastaralé a zakázané v aplikacích ASP.NET](#binaryformatter-serialization-methods-are-obsolete-and-prohibited-in-aspnet-apps) | 5,0 |
+| [Cesty kódu UTF-7 jsou zastaralé.](#utf-7-code-paths-are-obsolete) | 5,0 |
+| [Vector \<T> vždy vyvolá NotSupportedException pro nepodporované typy](#vectort-always-throws-notsupportedexception-for-unsupported-types) | 5,0 |
+| [Výchozí ActivityIdFormat je W3C.](#default-activityidformat-is-w3c) | 5,0 |
+| [Změna chování pro Vector2. lerp a Vector4. lerp](#behavior-change-for-vector2lerp-and-vector4lerp) | 5,0 |
+| [Metody SSE a SSE2 CompareGreaterThan správně zpracovávají vstupy NaN.](#sse-and-sse2-comparegreaterthan-methods-properly-handle-nan-inputs) | 5,0 |
+| [Sada CounterSet. provedení operace CreateCounterSetInstance nyní vyvolá chybu InvalidOperationException, pokud již instance existuje.](#countersetcreatecountersetinstance-now-throws-invalidoperationexception-if-instance-already-exists) | 5,0 |
+| [Balíček Microsoft. DotNet. PlatformAbstractions se odebral.](#microsoftdotnetplatformabstractions-package-removed) | 5,0 |
+| [Rozhraní API, která verze sestav nyní hlásí produkt a nikoli verzi souboru](#apis-that-report-version-now-report-product-and-not-file-version) | 3,0 |
+| [Vlastní instance EncoderFallbackBuffer se nemůžou vrátit rekurzivně.](#custom-encoderfallbackbuffer-instances-cannot-fall-back-recursively) | 3,0 |
+| [Změny chování při formátování a analýze plovoucí desetinné čárky](#floating-point-formatting-and-parsing-behavior-changed) | 3,0 |
+| [Operace analýzy s plovoucí desetinnou čárkou již nejsou úspěšné nebo vyvolávají výjimku OverflowException](#floating-point-parsing-operations-no-longer-fail-or-throw-an-overflowexception) | 3,0 |
+| [InvalidAsynchronousStateException – přesunuté do jiného sestavení](#invalidasynchronousstateexception-moved-to-another-assembly) | 3,0 |
+| [Výměna chybně formátovaných sekvencí UTF-8 se řídí pokyny pro kódování Unicode](#replacing-ill-formed-utf-8-byte-sequences-follows-unicode-guidelines) | 3,0 |
+| [TypeDescriptionProviderAttribute přesunuté do jiného sestavení](#typedescriptionproviderattribute-moved-to-another-assembly) | 3,0 |
+| [ZipArchiveEntry už nezpracovává archivy s nekonzistentními velikostmi záznamů.](#ziparchiveentry-no-longer-handles-archives-with-inconsistent-entry-sizes) | 3,0 |
+| [Parametr FieldInfo. SetValue vyvolá výjimku pro statická pole pouze pro init.](#fieldinfosetvalue-throws-exception-for-static-init-only-fields) | 3,0 |
 | [Soukromá pole přidaná k předdefinovaným typům struktury](#private-fields-added-to-built-in-struct-types) | 2.1 |
 | [Změna výchozí hodnoty UseShellExecute objektu Process](#change-in-default-value-of-useshellexecute) | 2.1 |
 | [Verze OpenSSL v macOS](#openssl-versions-on-macos) | 2.1 |
-| [UnauthorizedAccessException vyvolaná atributy SystemInfo.](#unauthorizedaccessexception-thrown-by-filesysteminfoattributes) | 1.0 |
-| [Manipulace s poškozenými výjimkami stavu procesu není podporována.](#handling-corrupted-state-exceptions-is-not-supported) | 1.0 |
-| [Vlastnosti objekt UriBuilder protokolu už neobsahují úvodní znaky.](#uribuilder-properties-no-longer-prepend-leading-characters) | 1.0 |
-| [Process. StartInfo vyvolá InvalidOperationException pro procesy, které jste nespustili.](#processstartinfo-throws-invalidoperationexception-for-processes-you-didnt-start) | 1.0 |
+| [UnauthorizedAccessException vyvolaná atributy SystemInfo.](#unauthorizedaccessexception-thrown-by-filesysteminfoattributes) | 1,0 |
+| [Manipulace s poškozenými výjimkami stavu procesu není podporována.](#handling-corrupted-state-exceptions-is-not-supported) | 1,0 |
+| [Vlastnosti objekt UriBuilder protokolu už neobsahují úvodní znaky.](#uribuilder-properties-no-longer-prepend-leading-characters) | 1,0 |
+| [Process. StartInfo vyvolá InvalidOperationException pro procesy, které jste nespustili.](#processstartinfo-throws-invalidoperationexception-for-processes-you-didnt-start) | 1,0 |
 
 ## <a name="net-50"></a>.NET 5,0
+
+[!INCLUDE [reference-assembly-parameter-names](../../../includes/core-changes/corefx/5.0/reference-assembly-parameter-names.md)]
+
+***
+
+[!INCLUDE [non-ascii-chars-in-uri-parsed-correctly](../../../includes/core-changes/corefx/5.0/non-ascii-chars-in-uri-parsed-correctly.md)]
+
+***
+
+[!INCLUDE [unc-path-recognition-unix](../../../includes/core-changes/corefx/5.0/unc-path-recognition-unix.md)]
+
+***
 
 [!INCLUDE [environment-osversion-returns-correct-version](../../../includes/core-changes/corefx/5.0/environment-osversion-returns-correct-version.md)]
 

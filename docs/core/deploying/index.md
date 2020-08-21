@@ -2,12 +2,12 @@
 title: Publikování aplikace
 description: Přečtěte si o způsobech publikování aplikace .NET Core. .NET Core může publikovat aplikace pro konkrétní platformy nebo pro různé platformy. Aplikaci můžete publikovat jako samostatnou nebo jako závislou na rozhraní. Každý režim má vliv na to, jak uživatel spouští vaši aplikaci.
 ms.date: 04/01/2020
-ms.openlocfilehash: f343e184a7ccca66aaf94533b2d0262478f873f4
-ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
+ms.openlocfilehash: ece5e46162fd4a8de0b996ba239e89cceca4dbca
+ms.sourcegitcommit: ef86c24c418439b8bb5e3e7d64bbdbe5e11c3e9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88656583"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88720108"
 ---
 # <a name="net-core-application-publishing-overview"></a>Přehled publikování aplikace .NET Core
 
@@ -151,7 +151,7 @@ Publikujte samostatně obsaženou aplikaci. Je vytvořen spustitelný soubor sys
 dotnet publish -r win-x64
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Nasazení aplikací .NET Core pomocí .NET Core CLI.](deploy-with-cli.md)
 - [Nasazení aplikací .NET Core pomocí sady Visual Studio.](deploy-with-vs.md)
