@@ -2,12 +2,12 @@
 title: Pravidla formátování kódu F#
 description: 'Přečtěte si pokyny pro formátování kódu F #.'
 ms.date: 11/04/2019
-ms.openlocfilehash: fe8da6070e1c92bb5205e9cb408b8ac75372b061
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: dc871b0a8461ed93550ab02cc2c66b143285a3e3
+ms.sourcegitcommit: ef86c24c418439b8bb5e3e7d64bbdbe5e11c3e9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88558306"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88720147"
 ---
 # <a name="f-code-formatting-guidelines"></a>Pravidla formátování kódu F#
 
@@ -936,3 +936,47 @@ let MyUrl = "www.mywebsitethatiamworkingwith.com"
 ```
 
 Vyhněte se umístění atributu na stejný řádek jako hodnota.
+
+## <a name="formatting-computation-expression-operations"></a>Formátování operací výpočetního výrazu
+
+Při vytváření vlastních operací pro [výpočetní výrazy](../language-reference/computation-expressions.md) se doporučuje používat CamelCase pojmenování:
+
+```fsharp
+type MathBuilder () =
+    member _.Yield _ = 0
+
+    [<CustomOperation("addOne")>]
+    member _.AddOne (state: int) =
+        state + 1
+
+    [<CustomOperation("subtractOne")>]
+    member _.SubtractOne (state: int) =
+        state - 1
+
+    [<CustomOperation("divideBy")>]
+    member _.DivideBy (state: int, divisor: int) =
+        state / divisor
+
+    [<CustomOperation("multiplyBy")>]
+    member _.MultiplyBy (state: int, factor: int) =
+        state * factor
+
+let math = MathBuilder()
+
+// 10
+let myNumber =
+    math {
+        addOne
+        addOne
+        addOne
+
+        subtractOne
+
+        divideBy 2
+
+        multiplyBy 10
+    }
+```
+
+Použitá konvence vytváření názvů by nakonec měla být řízena doménou, ve které se modeluje.
+Pokud je idiomatickou použít jinou konvenci, měla by se místo toho použít tato konvence.
