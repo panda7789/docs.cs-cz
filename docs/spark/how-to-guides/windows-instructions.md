@@ -4,56 +4,56 @@ description: Naučte se, jak sestavit rozhraní .NET pro Apache Spark aplikaci v
 ms.date: 06/25/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 6d52e5be8c8e528880eece5a9b46fb08933c1eb3
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: d4755ff94ffc1f678bc078e382e353c203caba87
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85617662"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88812247"
 ---
-# <a name="learn-how-to-build-your-net-for-apache-spark-application-on-windows"></a><span data-ttu-id="cde0c-103">Informace o tom, jak sestavit rozhraní .NET pro Apache Spark aplikaci v systému Windows</span><span class="sxs-lookup"><span data-stu-id="cde0c-103">Learn how to build your .NET for Apache Spark application on Windows</span></span>
+# <a name="learn-how-to-build-your-net-for-apache-spark-application-on-windows"></a><span data-ttu-id="dff1b-103">Informace o tom, jak sestavit rozhraní .NET pro Apache Spark aplikaci v systému Windows</span><span class="sxs-lookup"><span data-stu-id="dff1b-103">Learn how to build your .NET for Apache Spark application on Windows</span></span>
 
-<span data-ttu-id="cde0c-104">V tomto článku se naučíte, jak sestavit rozhraní .NET pro Apache Spark aplikace ve Windows.</span><span class="sxs-lookup"><span data-stu-id="cde0c-104">This article teaches you how to build your .NET for Apache Spark applications on Windows.</span></span>
+<span data-ttu-id="dff1b-104">V tomto článku se naučíte, jak sestavit rozhraní .NET pro Apache Spark aplikace ve Windows.</span><span class="sxs-lookup"><span data-stu-id="dff1b-104">This article teaches you how to build your .NET for Apache Spark applications on Windows.</span></span>
 
 [!INCLUDE [spark-preview-note](../../../includes/spark-preview-note.md)]
 
-## <a name="prerequisites"></a><span data-ttu-id="cde0c-105">Požadavky</span><span class="sxs-lookup"><span data-stu-id="cde0c-105">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="dff1b-105">Předpoklady</span><span class="sxs-lookup"><span data-stu-id="dff1b-105">Prerequisites</span></span>
 
-<span data-ttu-id="cde0c-106">Pokud již máte všechny následující požadavky, přejděte k postupu [sestavení](#build) .</span><span class="sxs-lookup"><span data-stu-id="cde0c-106">If you already have all of the following prerequisites, skip to the [build](#build) steps.</span></span>
+<span data-ttu-id="dff1b-106">Pokud již máte všechny následující požadavky, přejděte k postupu [sestavení](#build) .</span><span class="sxs-lookup"><span data-stu-id="dff1b-106">If you already have all of the following prerequisites, skip to the [build](#build) steps.</span></span>
 
-  1. <span data-ttu-id="cde0c-107">Stažení a instalace **[.NET Core SDK](https://dotnet.microsoft.com/download/dotnet-core/2.1)** – instalace sady SDK přidá `dotnet` Sada nástrojů do vaší cesty.</span><span class="sxs-lookup"><span data-stu-id="cde0c-107">Download and install the **[.NET Core SDK](https://dotnet.microsoft.com/download/dotnet-core/2.1)** - installing the SDK will add the `dotnet` toolchain to your path.</span></span> <span data-ttu-id="cde0c-108">Podporují se .NET Core 2,1, 2,2 a 3,1.</span><span class="sxs-lookup"><span data-stu-id="cde0c-108">.NET Core 2.1, 2.2 and 3.1 are supported.</span></span>
-  2. <span data-ttu-id="cde0c-109">Nainstalujte **[Visual Studio 2019](https://www.visualstudio.com/downloads/)** (verze 16,3 nebo novější).</span><span class="sxs-lookup"><span data-stu-id="cde0c-109">Install **[Visual Studio 2019](https://www.visualstudio.com/downloads/)** (Version 16.3 or later).</span></span> <span data-ttu-id="cde0c-110">Verze komunity je zcela zadarmo.</span><span class="sxs-lookup"><span data-stu-id="cde0c-110">The Community version is completely free.</span></span> <span data-ttu-id="cde0c-111">Při konfiguraci instalace zahrňte tyto komponenty minimálně:</span><span class="sxs-lookup"><span data-stu-id="cde0c-111">When configuring your installation, include these components at minimum:</span></span>
-     * <span data-ttu-id="cde0c-112">Vývoj pro desktopy .NET</span><span class="sxs-lookup"><span data-stu-id="cde0c-112">.NET desktop development</span></span>
-       * <span data-ttu-id="cde0c-113">Všechny požadované součásti</span><span class="sxs-lookup"><span data-stu-id="cde0c-113">All Required Components</span></span>
-         * <span data-ttu-id="cde0c-114">Vývojové nástroje .NET Framework 4.6.1</span><span class="sxs-lookup"><span data-stu-id="cde0c-114">.NET Framework 4.6.1 Development Tools</span></span>
-     * <span data-ttu-id="cde0c-115">Vývoj aplikací pro různé platformy pomocí rozhraní .NET Core</span><span class="sxs-lookup"><span data-stu-id="cde0c-115">.NET Core cross-platform development</span></span>
-       * <span data-ttu-id="cde0c-116">Všechny požadované součásti</span><span class="sxs-lookup"><span data-stu-id="cde0c-116">All Required Components</span></span>
-  3. <span data-ttu-id="cde0c-117">Nainstalujte **[Java 1,8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)**.</span><span class="sxs-lookup"><span data-stu-id="cde0c-117">Install **[Java 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)**.</span></span>
-     - <span data-ttu-id="cde0c-118">Vyberte odpovídající verzi pro váš operační systém.</span><span class="sxs-lookup"><span data-stu-id="cde0c-118">Select the appropriate version for your operating system.</span></span> <span data-ttu-id="cde0c-119">Například *jdk-8u201-windows-x64.exe* pro počítač se systémem Windows x64.</span><span class="sxs-lookup"><span data-stu-id="cde0c-119">For example, *jdk-8u201-windows-x64.exe* for Windows x64 machine.</span></span>
-     - <span data-ttu-id="cde0c-120">Nainstalujte pomocí instalačního programu a ověřte, že je možné spustit `java` z příkazového řádku.</span><span class="sxs-lookup"><span data-stu-id="cde0c-120">Install using the installer and verify you are able to run `java` from your command line.</span></span>
-  4. <span data-ttu-id="cde0c-121">Nainstalujte **[Apache Maven 3.6.0 +](https://maven.apache.org/download.cgi)**.</span><span class="sxs-lookup"><span data-stu-id="cde0c-121">Install **[Apache Maven 3.6.0+](https://maven.apache.org/download.cgi)**.</span></span>
-     - <span data-ttu-id="cde0c-122">Stáhněte si [Apache Maven 3.6.0](http://mirror.metrocast.net/apache/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.zip).</span><span class="sxs-lookup"><span data-stu-id="cde0c-122">Download [Apache Maven 3.6.0](http://mirror.metrocast.net/apache/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.zip).</span></span>
-     - <span data-ttu-id="cde0c-123">Extrahuje do místního adresáře.</span><span class="sxs-lookup"><span data-stu-id="cde0c-123">Extract to a local directory.</span></span> <span data-ttu-id="cde0c-124">Například \* C:\bin\apache-Maven-3.6.0 \* .</span><span class="sxs-lookup"><span data-stu-id="cde0c-124">For example, \*C:\bin\apache-maven-3.6.0\*.</span></span>
-     - <span data-ttu-id="cde0c-125">Přidejte Apache Maven do [proměnné prostředí PATH](https://www.java.com/en/download/help/path.xml).</span><span class="sxs-lookup"><span data-stu-id="cde0c-125">Add Apache Maven to your [PATH environment variable](https://www.java.com/en/download/help/path.xml).</span></span> <span data-ttu-id="cde0c-126">Například *C:\bin\apache-Maven-3.6.0\Bin*.</span><span class="sxs-lookup"><span data-stu-id="cde0c-126">For example, *C:\bin\apache-maven-3.6.0\bin*.</span></span>
-     - <span data-ttu-id="cde0c-127">Ověřte, že je možné spustit `mvn` z příkazového řádku.</span><span class="sxs-lookup"><span data-stu-id="cde0c-127">Verify you are able to run `mvn` from your command-line.</span></span>
-  5. <span data-ttu-id="cde0c-128">Nainstalujte **[Apache Spark 2.3 +](https://spark.apache.org/downloads.html)**.</span><span class="sxs-lookup"><span data-stu-id="cde0c-128">Install **[Apache Spark 2.3+](https://spark.apache.org/downloads.html)**.</span></span>
-     - <span data-ttu-id="cde0c-129">Stáhněte si [Apache Spark 2.3 +](https://spark.apache.org/downloads.html) a extrahujte ji do místní složky (například *C:\bin\spark-2.3.2-bin-hadoop2.7 \* ) pomocí [7-zip](https://www.7-zip.org/). (Podporované verze Sparku jsou 2,3.*, 2.4.0, 2.4.1, 2.4.3 a 2.4.4)</span><span class="sxs-lookup"><span data-stu-id="cde0c-129">Download [Apache Spark 2.3+](https://spark.apache.org/downloads.html) and extract it into a local folder (for example, *C:\bin\spark-2.3.2-bin-hadoop2.7\*) using [7-zip](https://www.7-zip.org/). (The supported spark versions are 2.3.*, 2.4.0, 2.4.1, 2.4.3 and 2.4.4)</span></span>
-     - <span data-ttu-id="cde0c-130">Přidejte [novou proměnnou prostředí](https://www.java.com/en/download/help/path.xml) `SPARK_HOME` .</span><span class="sxs-lookup"><span data-stu-id="cde0c-130">Add a [new environment variable](https://www.java.com/en/download/help/path.xml) `SPARK_HOME`.</span></span> <span data-ttu-id="cde0c-131">Například \* C:\bin\spark-2.3.2-bin-hadoop2.7 \* .</span><span class="sxs-lookup"><span data-stu-id="cde0c-131">For example, \*C:\bin\spark-2.3.2-bin-hadoop2.7\*.</span></span>
+  1. <span data-ttu-id="dff1b-107">Stažení a instalace **[.NET Core SDK](https://dotnet.microsoft.com/download/dotnet-core/2.1)** – instalace sady SDK přidá `dotnet` Sada nástrojů do vaší cesty.</span><span class="sxs-lookup"><span data-stu-id="dff1b-107">Download and install the **[.NET Core SDK](https://dotnet.microsoft.com/download/dotnet-core/2.1)** - installing the SDK will add the `dotnet` toolchain to your path.</span></span> <span data-ttu-id="dff1b-108">Podporují se .NET Core 2,1, 2,2 a 3,1.</span><span class="sxs-lookup"><span data-stu-id="dff1b-108">.NET Core 2.1, 2.2 and 3.1 are supported.</span></span>
+  2. <span data-ttu-id="dff1b-109">Nainstalujte **[Visual Studio 2019](https://www.visualstudio.com/downloads/)** (verze 16,3 nebo novější).</span><span class="sxs-lookup"><span data-stu-id="dff1b-109">Install **[Visual Studio 2019](https://www.visualstudio.com/downloads/)** (Version 16.3 or later).</span></span> <span data-ttu-id="dff1b-110">Verze komunity je zcela zadarmo.</span><span class="sxs-lookup"><span data-stu-id="dff1b-110">The Community version is completely free.</span></span> <span data-ttu-id="dff1b-111">Při konfiguraci instalace zahrňte tyto komponenty minimálně:</span><span class="sxs-lookup"><span data-stu-id="dff1b-111">When configuring your installation, include these components at minimum:</span></span>
+     * <span data-ttu-id="dff1b-112">Vývoj pro desktopy .NET</span><span class="sxs-lookup"><span data-stu-id="dff1b-112">.NET desktop development</span></span>
+       * <span data-ttu-id="dff1b-113">Všechny požadované součásti</span><span class="sxs-lookup"><span data-stu-id="dff1b-113">All Required Components</span></span>
+         * <span data-ttu-id="dff1b-114">Vývojové nástroje .NET Framework 4.6.1</span><span class="sxs-lookup"><span data-stu-id="dff1b-114">.NET Framework 4.6.1 Development Tools</span></span>
+     * <span data-ttu-id="dff1b-115">Vývoj multiplatformních aplikací pomocí rozhraní .NET Core</span><span class="sxs-lookup"><span data-stu-id="dff1b-115">.NET Core cross-platform development</span></span>
+       * <span data-ttu-id="dff1b-116">Všechny požadované součásti</span><span class="sxs-lookup"><span data-stu-id="dff1b-116">All Required Components</span></span>
+  3. <span data-ttu-id="dff1b-117">Nainstalujte **[Java 1,8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)**.</span><span class="sxs-lookup"><span data-stu-id="dff1b-117">Install **[Java 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)**.</span></span>
+     - <span data-ttu-id="dff1b-118">Vyberte odpovídající verzi pro váš operační systém.</span><span class="sxs-lookup"><span data-stu-id="dff1b-118">Select the appropriate version for your operating system.</span></span> <span data-ttu-id="dff1b-119">Například *jdk-8u201-windows-x64.exe* pro počítač se systémem Windows x64.</span><span class="sxs-lookup"><span data-stu-id="dff1b-119">For example, *jdk-8u201-windows-x64.exe* for Windows x64 machine.</span></span>
+     - <span data-ttu-id="dff1b-120">Nainstalujte pomocí instalačního programu a ověřte, že je možné spustit `java` z příkazového řádku.</span><span class="sxs-lookup"><span data-stu-id="dff1b-120">Install using the installer and verify you are able to run `java` from your command line.</span></span>
+  4. <span data-ttu-id="dff1b-121">Nainstalujte **[Apache Maven 3.6.0 +](https://maven.apache.org/download.cgi)**.</span><span class="sxs-lookup"><span data-stu-id="dff1b-121">Install **[Apache Maven 3.6.0+](https://maven.apache.org/download.cgi)**.</span></span>
+     - <span data-ttu-id="dff1b-122">Stáhněte si [Apache Maven 3.6.0](http://mirror.metrocast.net/apache/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.zip).</span><span class="sxs-lookup"><span data-stu-id="dff1b-122">Download [Apache Maven 3.6.0](http://mirror.metrocast.net/apache/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.zip).</span></span>
+     - <span data-ttu-id="dff1b-123">Extrahuje do místního adresáře.</span><span class="sxs-lookup"><span data-stu-id="dff1b-123">Extract to a local directory.</span></span> <span data-ttu-id="dff1b-124">Například \* C:\bin\apache-Maven-3.6.0 \* .</span><span class="sxs-lookup"><span data-stu-id="dff1b-124">For example, \*C:\bin\apache-maven-3.6.0\*.</span></span>
+     - <span data-ttu-id="dff1b-125">Přidejte Apache Maven do [proměnné prostředí PATH](https://www.java.com/en/download/help/path.xml).</span><span class="sxs-lookup"><span data-stu-id="dff1b-125">Add Apache Maven to your [PATH environment variable](https://www.java.com/en/download/help/path.xml).</span></span> <span data-ttu-id="dff1b-126">Například *C:\bin\apache-Maven-3.6.0\Bin*.</span><span class="sxs-lookup"><span data-stu-id="dff1b-126">For example, *C:\bin\apache-maven-3.6.0\bin*.</span></span>
+     - <span data-ttu-id="dff1b-127">Ověřte, že je možné spustit `mvn` z příkazového řádku.</span><span class="sxs-lookup"><span data-stu-id="dff1b-127">Verify you are able to run `mvn` from your command-line.</span></span>
+  5. <span data-ttu-id="dff1b-128">Nainstalujte **[Apache Spark 2.3 +](https://spark.apache.org/downloads.html)**.</span><span class="sxs-lookup"><span data-stu-id="dff1b-128">Install **[Apache Spark 2.3+](https://spark.apache.org/downloads.html)**.</span></span>
+     - <span data-ttu-id="dff1b-129">Stáhněte si [Apache Spark 2.3 +](https://spark.apache.org/downloads.html) a extrahujte ji do místní složky (například *C:\bin\spark-2.3.2-bin-hadoop2.7 \* ) pomocí [7-zip](https://www.7-zip.org/). (Podporované verze Sparku jsou 2,3.*, 2.4.0, 2.4.1, 2.4.3 a 2.4.4)</span><span class="sxs-lookup"><span data-stu-id="dff1b-129">Download [Apache Spark 2.3+](https://spark.apache.org/downloads.html) and extract it into a local folder (for example, *C:\bin\spark-2.3.2-bin-hadoop2.7\*) using [7-zip](https://www.7-zip.org/). (The supported spark versions are 2.3.*, 2.4.0, 2.4.1, 2.4.3 and 2.4.4)</span></span>
+     - <span data-ttu-id="dff1b-130">Přidejte [novou proměnnou prostředí](https://www.java.com/en/download/help/path.xml) `SPARK_HOME` .</span><span class="sxs-lookup"><span data-stu-id="dff1b-130">Add a [new environment variable](https://www.java.com/en/download/help/path.xml) `SPARK_HOME`.</span></span> <span data-ttu-id="dff1b-131">Například \* C:\bin\spark-2.3.2-bin-hadoop2.7 \* .</span><span class="sxs-lookup"><span data-stu-id="dff1b-131">For example, \*C:\bin\spark-2.3.2-bin-hadoop2.7\*.</span></span>
 
        ```powershell
        set SPARK_HOME=C:\bin\spark-2.3.2-bin-hadoop2.7\
        ```
 
-     - <span data-ttu-id="cde0c-132">Přidejte Apache Spark do [proměnné prostředí PATH](https://www.java.com/en/download/help/path.xml).</span><span class="sxs-lookup"><span data-stu-id="cde0c-132">Add Apache Spark to your [PATH environment variable](https://www.java.com/en/download/help/path.xml).</span></span> <span data-ttu-id="cde0c-133">Například *C:\bin\spark-2.3.2-bin-hadoop2.7\bin*.</span><span class="sxs-lookup"><span data-stu-id="cde0c-133">For example, *C:\bin\spark-2.3.2-bin-hadoop2.7\bin*.</span></span>
+     - <span data-ttu-id="dff1b-132">Přidejte Apache Spark do [proměnné prostředí PATH](https://www.java.com/en/download/help/path.xml).</span><span class="sxs-lookup"><span data-stu-id="dff1b-132">Add Apache Spark to your [PATH environment variable](https://www.java.com/en/download/help/path.xml).</span></span> <span data-ttu-id="dff1b-133">Například *C:\bin\spark-2.3.2-bin-hadoop2.7\bin*.</span><span class="sxs-lookup"><span data-stu-id="dff1b-133">For example, *C:\bin\spark-2.3.2-bin-hadoop2.7\bin*.</span></span>
 
        ```powershell
        set PATH=%SPARK_HOME%\bin;%PATH%
        ```
 
-     - <span data-ttu-id="cde0c-134">Ověřte, že je možné spustit `spark-shell` z příkazového řádku.</span><span class="sxs-lookup"><span data-stu-id="cde0c-134">Verify you are able to run `spark-shell` from your command-line.</span></span>
-        <span data-ttu-id="cde0c-135">Ukázkový výstup konzoly:</span><span class="sxs-lookup"><span data-stu-id="cde0c-135">Sample console output:</span></span>
+     - <span data-ttu-id="dff1b-134">Ověřte, že je možné spustit `spark-shell` z příkazového řádku.</span><span class="sxs-lookup"><span data-stu-id="dff1b-134">Verify you are able to run `spark-shell` from your command-line.</span></span>
+        <span data-ttu-id="dff1b-135">Ukázkový výstup konzoly:</span><span class="sxs-lookup"><span data-stu-id="dff1b-135">Sample console output:</span></span>
 
-        ```
+        ```output
         Welcome to
               ____              __
              / __/__  ___ _____/ /__
@@ -71,57 +71,57 @@ ms.locfileid: "85617662"
 
         </details>
 
-  6. <span data-ttu-id="cde0c-136">Nainstalujte **[WinUtils](https://github.com/steveloughran/winutils)**.</span><span class="sxs-lookup"><span data-stu-id="cde0c-136">Install **[WinUtils](https://github.com/steveloughran/winutils)**.</span></span>
-     - <span data-ttu-id="cde0c-137">Stáhněte si `winutils.exe` binární soubor z [úložiště WinUtils](https://github.com/steveloughran/winutils).</span><span class="sxs-lookup"><span data-stu-id="cde0c-137">Download `winutils.exe` binary from [WinUtils repository](https://github.com/steveloughran/winutils).</span></span> <span data-ttu-id="cde0c-138">Měli byste vybrat verzi Hadoop, se kterou byla distribuce Sparku zkompilována.</span><span class="sxs-lookup"><span data-stu-id="cde0c-138">You should select the version of Hadoop the Spark distribution was compiled with.</span></span> <span data-ttu-id="cde0c-139">Pro exammple použijte Hadoop-2.7.1 pro Spark 2.3.2.</span><span class="sxs-lookup"><span data-stu-id="cde0c-139">For exammple, use hadoop-2.7.1 for Spark 2.3.2.</span></span>
-     - <span data-ttu-id="cde0c-140">Uložte `winutils.exe` binární soubor do adresáře podle vašeho výběru.</span><span class="sxs-lookup"><span data-stu-id="cde0c-140">Save `winutils.exe` binary to a directory of your choice.</span></span> <span data-ttu-id="cde0c-141">Například *C:\hadoop\bin*.</span><span class="sxs-lookup"><span data-stu-id="cde0c-141">For example, *C:\hadoop\bin*.</span></span>
-     - <span data-ttu-id="cde0c-142">Nastavte `HADOOP_HOME` , aby odrážel adresář s winutils.exe (bez bin).</span><span class="sxs-lookup"><span data-stu-id="cde0c-142">Set `HADOOP_HOME` to reflect the directory with winutils.exe (without bin).</span></span> <span data-ttu-id="cde0c-143">Například při použití příkazového řádku:</span><span class="sxs-lookup"><span data-stu-id="cde0c-143">For instance, using command-line:</span></span>
+  6. <span data-ttu-id="dff1b-136">Nainstalujte **[WinUtils](https://github.com/steveloughran/winutils)**.</span><span class="sxs-lookup"><span data-stu-id="dff1b-136">Install **[WinUtils](https://github.com/steveloughran/winutils)**.</span></span>
+     - <span data-ttu-id="dff1b-137">Stáhněte si `winutils.exe` binární soubor z [úložiště WinUtils](https://github.com/steveloughran/winutils).</span><span class="sxs-lookup"><span data-stu-id="dff1b-137">Download `winutils.exe` binary from [WinUtils repository](https://github.com/steveloughran/winutils).</span></span> <span data-ttu-id="dff1b-138">Měli byste vybrat verzi Hadoop, se kterou byla distribuce Sparku zkompilována.</span><span class="sxs-lookup"><span data-stu-id="dff1b-138">You should select the version of Hadoop the Spark distribution was compiled with.</span></span> <span data-ttu-id="dff1b-139">Pro exammple použijte Hadoop-2.7.1 pro Spark 2.3.2.</span><span class="sxs-lookup"><span data-stu-id="dff1b-139">For exammple, use hadoop-2.7.1 for Spark 2.3.2.</span></span>
+     - <span data-ttu-id="dff1b-140">Uložte `winutils.exe` binární soubor do adresáře podle vašeho výběru.</span><span class="sxs-lookup"><span data-stu-id="dff1b-140">Save `winutils.exe` binary to a directory of your choice.</span></span> <span data-ttu-id="dff1b-141">Například *C:\hadoop\bin*.</span><span class="sxs-lookup"><span data-stu-id="dff1b-141">For example, *C:\hadoop\bin*.</span></span>
+     - <span data-ttu-id="dff1b-142">Nastavte `HADOOP_HOME` , aby odrážel adresář s winutils.exe (bez bin).</span><span class="sxs-lookup"><span data-stu-id="dff1b-142">Set `HADOOP_HOME` to reflect the directory with winutils.exe (without bin).</span></span> <span data-ttu-id="dff1b-143">Například při použití příkazového řádku:</span><span class="sxs-lookup"><span data-stu-id="dff1b-143">For instance, using command-line:</span></span>
 
        ```powershell
        set HADOOP_HOME=C:\hadoop
        ```
 
-     - <span data-ttu-id="cde0c-144">Nastavte proměnnou prostředí PATH, která se má zahrnout `%HADOOP_HOME%\bin` .</span><span class="sxs-lookup"><span data-stu-id="cde0c-144">Set PATH environment variable to include `%HADOOP_HOME%\bin`.</span></span> <span data-ttu-id="cde0c-145">Například pomocí příkazového řádku:</span><span class="sxs-lookup"><span data-stu-id="cde0c-145">For instance, using command line:</span></span>
+     - <span data-ttu-id="dff1b-144">Nastavte proměnnou prostředí PATH, která se má zahrnout `%HADOOP_HOME%\bin` .</span><span class="sxs-lookup"><span data-stu-id="dff1b-144">Set PATH environment variable to include `%HADOOP_HOME%\bin`.</span></span> <span data-ttu-id="dff1b-145">Například pomocí příkazového řádku:</span><span class="sxs-lookup"><span data-stu-id="dff1b-145">For instance, using command line:</span></span>
 
        ```powershell
        set PATH=%HADOOP_HOME%\bin;%PATH%
        ```
 
-<span data-ttu-id="cde0c-146">`dotnet` `java` `mvn` `spark-shell` Než přejdete k další části, ujistěte se, že jste z příkazového řádku mohli spustit, nebo.</span><span class="sxs-lookup"><span data-stu-id="cde0c-146">Make sure you are able to run `dotnet`, `java`, `mvn`, `spark-shell` from your command line before you move to the next section.</span></span> <span data-ttu-id="cde0c-147">Máte lepší možnost?</span><span class="sxs-lookup"><span data-stu-id="cde0c-147">Feel there is a better way?</span></span> <span data-ttu-id="cde0c-148">[Otevřete problém](https://github.com/dotnet/spark/issues) a nebojte se přispět.</span><span class="sxs-lookup"><span data-stu-id="cde0c-148">[Open an issue](https://github.com/dotnet/spark/issues) and feel free to contribute.</span></span>
+<span data-ttu-id="dff1b-146">`dotnet` `java` `mvn` `spark-shell` Než přejdete k další části, ujistěte se, že jste z příkazového řádku mohli spustit, nebo.</span><span class="sxs-lookup"><span data-stu-id="dff1b-146">Make sure you are able to run `dotnet`, `java`, `mvn`, `spark-shell` from your command line before you move to the next section.</span></span> <span data-ttu-id="dff1b-147">Máte lepší možnost?</span><span class="sxs-lookup"><span data-stu-id="dff1b-147">Feel there is a better way?</span></span> <span data-ttu-id="dff1b-148">[Otevřete problém](https://github.com/dotnet/spark/issues) a nebojte se přispět.</span><span class="sxs-lookup"><span data-stu-id="dff1b-148">[Open an issue](https://github.com/dotnet/spark/issues) and feel free to contribute.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="cde0c-149">Je-li kterákoli z proměnných prostředí aktualizována, může být vyžadována nová instance příkazového řádku.</span><span class="sxs-lookup"><span data-stu-id="cde0c-149">A new instance of the command line may be required if any environment variables were updated.</span></span>
+> <span data-ttu-id="dff1b-149">Je-li kterákoli z proměnných prostředí aktualizována, může být vyžadována nová instance příkazového řádku.</span><span class="sxs-lookup"><span data-stu-id="dff1b-149">A new instance of the command line may be required if any environment variables were updated.</span></span>
 
-## <a name="build"></a><span data-ttu-id="cde0c-150">Sestavení</span><span class="sxs-lookup"><span data-stu-id="cde0c-150">Build</span></span>
+## <a name="build"></a><span data-ttu-id="dff1b-150">Sestavení</span><span class="sxs-lookup"><span data-stu-id="dff1b-150">Build</span></span>
 
-<span data-ttu-id="cde0c-151">Ve zbývající části tohoto průvodce budete muset naklonovat rozhraní .NET pro Apache Spark úložiště do svého počítače.</span><span class="sxs-lookup"><span data-stu-id="cde0c-151">For the remainder of this guide, you will need to have cloned the .NET for Apache Spark repository into your machine.</span></span> <span data-ttu-id="cde0c-152">Můžete zvolit libovolné umístění klonovaného úložiště.</span><span class="sxs-lookup"><span data-stu-id="cde0c-152">You can choose any location for the cloned repository.</span></span> <span data-ttu-id="cde0c-153">Například \* C:\github\dotnet-Spark \* .</span><span class="sxs-lookup"><span data-stu-id="cde0c-153">For example, \*C:\github\dotnet-spark\*.</span></span>
+<span data-ttu-id="dff1b-151">Ve zbývající části tohoto průvodce budete muset naklonovat rozhraní .NET pro Apache Spark úložiště do svého počítače.</span><span class="sxs-lookup"><span data-stu-id="dff1b-151">For the remainder of this guide, you will need to have cloned the .NET for Apache Spark repository into your machine.</span></span> <span data-ttu-id="dff1b-152">Můžete zvolit libovolné umístění klonovaného úložiště.</span><span class="sxs-lookup"><span data-stu-id="dff1b-152">You can choose any location for the cloned repository.</span></span> <span data-ttu-id="dff1b-153">Například \* C:\github\dotnet-Spark \* .</span><span class="sxs-lookup"><span data-stu-id="dff1b-153">For example, \*C:\github\dotnet-spark\*.</span></span>
 
 ```bash
 git clone https://github.com/dotnet/spark.git C:\github\dotnet-spark
 ```
 
-### <a name="build-net-for-apache-spark-scala-extensions-layer"></a><span data-ttu-id="cde0c-154">Sestavit vrstvu rozšíření .NET pro Apache Spark Scala</span><span class="sxs-lookup"><span data-stu-id="cde0c-154">Build .NET for Apache Spark Scala extensions layer</span></span>
+### <a name="build-net-for-apache-spark-scala-extensions-layer"></a><span data-ttu-id="dff1b-154">Sestavit vrstvu rozšíření .NET pro Apache Spark Scala</span><span class="sxs-lookup"><span data-stu-id="dff1b-154">Build .NET for Apache Spark Scala extensions layer</span></span>
 
-<span data-ttu-id="cde0c-155">Při odeslání aplikace .NET má rozhraní .NET pro Apache Spark potřebnou logiku napsanou v Scala, která informuje Apache Spark jak zpracovat vaše požadavky (například požádat o vytvoření nové relace Sparku, požádat o přenos dat ze strany .NET na stranu JVM atd.).</span><span class="sxs-lookup"><span data-stu-id="cde0c-155">When you submit a .NET application, .NET for Apache Spark has the necessary logic written in Scala that informs Apache Spark how to handle your requests (for example, request to create a new Spark Session, request to transfer data from .NET side to JVM side etc.).</span></span> <span data-ttu-id="cde0c-156">Tuto logiku najdete ve [zdrojovém kódu .NET pro Spark Scala](https://github.com/dotnet/spark/tree/master/src/scala).</span><span class="sxs-lookup"><span data-stu-id="cde0c-156">This logic can be found in the [.NET for Spark Scala Source Code](https://github.com/dotnet/spark/tree/master/src/scala).</span></span>
+<span data-ttu-id="dff1b-155">Při odeslání aplikace .NET má rozhraní .NET pro Apache Spark potřebnou logiku napsanou v Scala, která informuje Apache Spark jak zpracovat vaše požadavky (například požádat o vytvoření nové relace Sparku, požádat o přenos dat ze strany .NET na stranu JVM atd.).</span><span class="sxs-lookup"><span data-stu-id="dff1b-155">When you submit a .NET application, .NET for Apache Spark has the necessary logic written in Scala that informs Apache Spark how to handle your requests (for example, request to create a new Spark Session, request to transfer data from .NET side to JVM side etc.).</span></span> <span data-ttu-id="dff1b-156">Tuto logiku najdete ve [zdrojovém kódu .NET pro Spark Scala](https://github.com/dotnet/spark/tree/master/src/scala).</span><span class="sxs-lookup"><span data-stu-id="dff1b-156">This logic can be found in the [.NET for Spark Scala Source Code](https://github.com/dotnet/spark/tree/master/src/scala).</span></span>
 
-<span data-ttu-id="cde0c-157">Bez ohledu na to, jestli používáte .NET Framework nebo .NET Core, budete muset sestavit vrstvu rozšíření .NET for Apache Spark Scala:</span><span class="sxs-lookup"><span data-stu-id="cde0c-157">Regardless of whether you are using .NET Framework or .NET Core, you will need to build the .NET for Apache Spark Scala extension layer:</span></span>
+<span data-ttu-id="dff1b-157">Bez ohledu na to, jestli používáte .NET Framework nebo .NET Core, budete muset sestavit vrstvu rozšíření .NET for Apache Spark Scala:</span><span class="sxs-lookup"><span data-stu-id="dff1b-157">Regardless of whether you are using .NET Framework or .NET Core, you will need to build the .NET for Apache Spark Scala extension layer:</span></span>
 
 ```powershell
 cd src\scala
 mvn clean package
 ```
 
-<span data-ttu-id="cde0c-158">Měli byste vidět jar vytvořené pro podporované verze Sparku:</span><span class="sxs-lookup"><span data-stu-id="cde0c-158">You should see JARs created for the supported Spark versions:</span></span>
+<span data-ttu-id="dff1b-158">Měli byste vidět jar vytvořené pro podporované verze Sparku:</span><span class="sxs-lookup"><span data-stu-id="dff1b-158">You should see JARs created for the supported Spark versions:</span></span>
 
 * `microsoft-spark-2.3.x\target\microsoft-spark-2.3.x-<version>.jar`
 * `microsoft-spark-2.4.x\target\microsoft-spark-2.4.x-<version>.jar`
 
-### <a name="build-the-net-for-spark-sample-applications"></a><span data-ttu-id="cde0c-159">Sestavení ukázkových aplikací .NET pro Spark</span><span class="sxs-lookup"><span data-stu-id="cde0c-159">Build the .NET for Spark sample applications</span></span>
+### <a name="build-the-net-for-spark-sample-applications"></a><span data-ttu-id="dff1b-159">Sestavení ukázkových aplikací .NET pro Spark</span><span class="sxs-lookup"><span data-stu-id="dff1b-159">Build the .NET for Spark sample applications</span></span>
 
-<span data-ttu-id="cde0c-160">V této části je vysvětlen postup sestavení [ukázkových aplikací](https://github.com/dotnet/spark/tree/master/examples) pro rozhraní .net pro Apache Spark.</span><span class="sxs-lookup"><span data-stu-id="cde0c-160">This section explains how to build the [sample applications](https://github.com/dotnet/spark/tree/master/examples) for .NET for Apache Spark.</span></span> <span data-ttu-id="cde0c-161">Tyto kroky vám pomůžou pochopit celkový proces vytváření jakékoli aplikace .NET pro Spark.</span><span class="sxs-lookup"><span data-stu-id="cde0c-161">These steps will help in understanding the overall building process for any .NET for Spark application.</span></span>
+<span data-ttu-id="dff1b-160">V této části je vysvětlen postup sestavení [ukázkových aplikací](https://github.com/dotnet/spark/tree/master/examples) pro rozhraní .net pro Apache Spark.</span><span class="sxs-lookup"><span data-stu-id="dff1b-160">This section explains how to build the [sample applications](https://github.com/dotnet/spark/tree/master/examples) for .NET for Apache Spark.</span></span> <span data-ttu-id="dff1b-161">Tyto kroky vám pomůžou pochopit celkový proces vytváření jakékoli aplikace .NET pro Spark.</span><span class="sxs-lookup"><span data-stu-id="dff1b-161">These steps will help in understanding the overall building process for any .NET for Spark application.</span></span>
 
-#### <a name="using-visual-studio-for-net-framework"></a><span data-ttu-id="cde0c-162">Používání sady Visual Studio pro .NET Framework</span><span class="sxs-lookup"><span data-stu-id="cde0c-162">Using Visual Studio for .NET Framework</span></span>
+#### <a name="using-visual-studio-for-net-framework"></a><span data-ttu-id="dff1b-162">Používání sady Visual Studio pro .NET Framework</span><span class="sxs-lookup"><span data-stu-id="dff1b-162">Using Visual Studio for .NET Framework</span></span>
 
-  1. <span data-ttu-id="cde0c-163">Otevřete `src\csharp\Microsoft.Spark.sln` v aplikaci Visual Studio a sestavte `Microsoft.Spark.CSharp.Examples` projekt ve `examples` složce (tím se vytvoří také projekt vazby rozhraní .NET).</span><span class="sxs-lookup"><span data-stu-id="cde0c-163">Open `src\csharp\Microsoft.Spark.sln` in Visual Studio and build the `Microsoft.Spark.CSharp.Examples` project under the `examples` folder (this will in turn build the .NET bindings project as well).</span></span> <span data-ttu-id="cde0c-164">Pokud chcete, můžete napsat vlastní kód v `Microsoft.Spark.Examples` projektu (' input_file.json ' v tomto příkladu je soubor JSON s daty, se kterými chcete vytvořit datový rámec):</span><span class="sxs-lookup"><span data-stu-id="cde0c-164">If you want, you can write your own code in the `Microsoft.Spark.Examples` project (the 'input_file.json' in this example is a json file with the data you want to create the dataframe with):</span></span>
+  1. <span data-ttu-id="dff1b-163">Otevřete `src\csharp\Microsoft.Spark.sln` v aplikaci Visual Studio a sestavte `Microsoft.Spark.CSharp.Examples` projekt ve `examples` složce (tím se vytvoří také projekt vazby rozhraní .NET).</span><span class="sxs-lookup"><span data-stu-id="dff1b-163">Open `src\csharp\Microsoft.Spark.sln` in Visual Studio and build the `Microsoft.Spark.CSharp.Examples` project under the `examples` folder (this will in turn build the .NET bindings project as well).</span></span> <span data-ttu-id="dff1b-164">Pokud chcete, můžete napsat vlastní kód v `Microsoft.Spark.Examples` projektu (' input_file.json ' v tomto příkladu je soubor JSON s daty, se kterými chcete vytvořit datový rámec):</span><span class="sxs-lookup"><span data-stu-id="dff1b-164">If you want, you can write your own code in the `Microsoft.Spark.Examples` project (the 'input_file.json' in this example is a json file with the data you want to create the dataframe with):</span></span>
   
       ```csharp
         // Instantiate a session
@@ -140,8 +140,8 @@ mvn clean package
         df.Filter(df["age"] > 21).Show();
       ```
 
-     <span data-ttu-id="cde0c-165">Po úspěšném sestavení se zobrazí příslušné binární soubory, které byly vytvořeny ve výstupním adresáři.</span><span class="sxs-lookup"><span data-stu-id="cde0c-165">Once the build is successful, you will see the appropriate binaries produced in the output directory.</span></span>
-     <span data-ttu-id="cde0c-166">Ukázkový výstup konzoly:</span><span class="sxs-lookup"><span data-stu-id="cde0c-166">Sample console output:</span></span>
+     <span data-ttu-id="dff1b-165">Po úspěšném sestavení se zobrazí příslušné binární soubory, které byly vytvořeny ve výstupním adresáři.</span><span class="sxs-lookup"><span data-stu-id="dff1b-165">Once the build is successful, you will see the appropriate binaries produced in the output directory.</span></span>
+     <span data-ttu-id="dff1b-166">Ukázkový výstup konzoly:</span><span class="sxs-lookup"><span data-stu-id="dff1b-166">Sample console output:</span></span>
 
       ```powershell
             Directory: C:\github\dotnet-spark\artifacts\bin\Microsoft.Spark.CSharp.Examples\Debug\net461
@@ -163,19 +163,19 @@ mvn clean package
         ------------------------------------------- More framework files -------------------------------------
       ```
 
-#### <a name="using-net-core-cli-for-net-core"></a><span data-ttu-id="cde0c-167">Použití .NET Core CLI pro .NET Core</span><span class="sxs-lookup"><span data-stu-id="cde0c-167">Using .NET Core CLI for .NET Core</span></span>
+#### <a name="using-net-core-cli-for-net-core"></a><span data-ttu-id="dff1b-167">Použití .NET Core CLI pro .NET Core</span><span class="sxs-lookup"><span data-stu-id="dff1b-167">Using .NET Core CLI for .NET Core</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="cde0c-168">V současné době pracujeme na automatizaci sestavení .NET Core pro Spark .NET.</span><span class="sxs-lookup"><span data-stu-id="cde0c-168">We are currently working on automating .NET Core builds for Spark .NET.</span></span> <span data-ttu-id="cde0c-169">Dokud pak nebudeme mít v provedení některých kroků k trpělivost.</span><span class="sxs-lookup"><span data-stu-id="cde0c-169">Until then, we appreciate your patience in performing some of the steps manually.</span></span>
+> <span data-ttu-id="dff1b-168">V současné době pracujeme na automatizaci sestavení .NET Core pro Spark .NET.</span><span class="sxs-lookup"><span data-stu-id="dff1b-168">We are currently working on automating .NET Core builds for Spark .NET.</span></span> <span data-ttu-id="dff1b-169">Dokud pak nebudeme mít v provedení některých kroků k trpělivost.</span><span class="sxs-lookup"><span data-stu-id="dff1b-169">Until then, we appreciate your patience in performing some of the steps manually.</span></span>
 
-  1. <span data-ttu-id="cde0c-170">Sestavte pracovní proces:</span><span class="sxs-lookup"><span data-stu-id="cde0c-170">Build the worker:</span></span>
+  1. <span data-ttu-id="dff1b-170">Sestavte pracovní proces:</span><span class="sxs-lookup"><span data-stu-id="dff1b-170">Build the worker:</span></span>
 
       ```powershell
       cd C:\github\dotnet-spark\src\csharp\Microsoft.Spark.Worker\
       dotnet publish -f netcoreapp2.1 -r win10-x64
       ```
 
-      <span data-ttu-id="cde0c-171">Ukázkový výstup konzoly:</span><span class="sxs-lookup"><span data-stu-id="cde0c-171">Sample console output:</span></span>
+      <span data-ttu-id="dff1b-171">Ukázkový výstup konzoly:</span><span class="sxs-lookup"><span data-stu-id="dff1b-171">Sample console output:</span></span>
 
       ```powershell
       PS C:\github\dotnet-spark\src\csharp\Microsoft.Spark.Worker> dotnet publish -f netcoreapp2.1 -r win10-x64
@@ -189,14 +189,14 @@ mvn clean package
         Microsoft.Spark.Worker -> C:\github\dotnet-spark\artifacts\bin\Microsoft.Spark.Worker\Debug\netcoreapp2.1\win10-x64\publish\
       ```
 
-  2. <span data-ttu-id="cde0c-172">Sestavte ukázky:</span><span class="sxs-lookup"><span data-stu-id="cde0c-172">Build the samples:</span></span>
+  2. <span data-ttu-id="dff1b-172">Sestavte ukázky:</span><span class="sxs-lookup"><span data-stu-id="dff1b-172">Build the samples:</span></span>
 
       ```powershell
       cd C:\github\dotnet-spark\examples\Microsoft.Spark.CSharp.Examples\
       dotnet publish -f netcoreapp2.1 -r win10-x64
       ```
 
-      <span data-ttu-id="cde0c-173">Ukázkový výstup konzoly:</span><span class="sxs-lookup"><span data-stu-id="cde0c-173">Sample console output:</span></span>
+      <span data-ttu-id="dff1b-173">Ukázkový výstup konzoly:</span><span class="sxs-lookup"><span data-stu-id="dff1b-173">Sample console output:</span></span>
 
       ```powershell
       PS C:\github\dotnet-spark\examples\Microsoft.Spark.CSharp.Examples> dotnet publish -f netcoreapp2.1 -r win10-x64
@@ -210,23 +210,23 @@ mvn clean package
         Microsoft.Spark.CSharp.Examples -> C:\github\dotnet-spark\artifacts\bin\Microsoft.Spark.CSharp.Examples\Debug\netcoreapp2.1\win10-x64\publish\
       ```
 
-## <a name="run-the-net-for-spark-sample-applications"></a><span data-ttu-id="cde0c-174">Spuštění ukázkových aplikací .NET pro Spark</span><span class="sxs-lookup"><span data-stu-id="cde0c-174">Run the .NET for Spark sample applications</span></span>
+## <a name="run-the-net-for-spark-sample-applications"></a><span data-ttu-id="dff1b-174">Spuštění ukázkových aplikací .NET pro Spark</span><span class="sxs-lookup"><span data-stu-id="dff1b-174">Run the .NET for Spark sample applications</span></span>
 
-<span data-ttu-id="cde0c-175">Po sestavování vzorků se jejich spuštění bude provádět `spark-submit` bez ohledu na to, zda cílíte .NET Framework nebo .NET Core.</span><span class="sxs-lookup"><span data-stu-id="cde0c-175">Once you build the samples, running them will be through `spark-submit` regardless of whether you are targeting .NET Framework or .NET Core.</span></span> <span data-ttu-id="cde0c-176">Ujistěte se, že jste postupovali s částí [požadavky](#prerequisites) a nainstalovali Apache Spark.</span><span class="sxs-lookup"><span data-stu-id="cde0c-176">Make sure you have followed the [prerequisites](#prerequisites) section and installed Apache Spark.</span></span>
+<span data-ttu-id="dff1b-175">Po sestavování vzorků se jejich spuštění bude provádět `spark-submit` bez ohledu na to, zda cílíte .NET Framework nebo .NET Core.</span><span class="sxs-lookup"><span data-stu-id="dff1b-175">Once you build the samples, running them will be through `spark-submit` regardless of whether you are targeting .NET Framework or .NET Core.</span></span> <span data-ttu-id="dff1b-176">Ujistěte se, že jste postupovali s částí [požadavky](#prerequisites) a nainstalovali Apache Spark.</span><span class="sxs-lookup"><span data-stu-id="dff1b-176">Make sure you have followed the [prerequisites](#prerequisites) section and installed Apache Spark.</span></span>
 
-  1. <span data-ttu-id="cde0c-177">Nastavte `DOTNET_WORKER_DIR` `PATH` proměnnou prostředí nebo tak, aby zahrnovala cestu, kde byl `Microsoft.Spark.Worker` binární soubor vygenerovaný (například *C:\github\dotnet\spark\artifacts\bin\Microsoft.spark.Worker\Debug\net461* pro .NET Framework, *C:\github\dotnet-spark\artifacts\bin\Microsoft.spark.Worker\Debug\netcoreapp2.1\win10-x64\publish* pro .NET Core):</span><span class="sxs-lookup"><span data-stu-id="cde0c-177">Set the `DOTNET_WORKER_DIR` or `PATH` environment variable to include the path where the `Microsoft.Spark.Worker` binary has been generated (for example, *C:\github\dotnet\spark\artifacts\bin\Microsoft.Spark.Worker\Debug\net461* for .NET Framework, *C:\github\dotnet-spark\artifacts\bin\Microsoft.Spark.Worker\Debug\netcoreapp2.1\win10-x64\publish* for .NET Core):</span></span>
+  1. <span data-ttu-id="dff1b-177">Nastavte `DOTNET_WORKER_DIR` `PATH` proměnnou prostředí nebo tak, aby zahrnovala cestu, kde byl `Microsoft.Spark.Worker` binární soubor vygenerovaný (například *C:\github\dotnet\spark\artifacts\bin\Microsoft.spark.Worker\Debug\net461* pro .NET Framework, *C:\github\dotnet-spark\artifacts\bin\Microsoft.spark.Worker\Debug\netcoreapp2.1\win10-x64\publish* pro .NET Core):</span><span class="sxs-lookup"><span data-stu-id="dff1b-177">Set the `DOTNET_WORKER_DIR` or `PATH` environment variable to include the path where the `Microsoft.Spark.Worker` binary has been generated (for example, *C:\github\dotnet\spark\artifacts\bin\Microsoft.Spark.Worker\Debug\net461* for .NET Framework, *C:\github\dotnet-spark\artifacts\bin\Microsoft.Spark.Worker\Debug\netcoreapp2.1\win10-x64\publish* for .NET Core):</span></span>
 
       ```powershell
       set DOTNET_WORKER_DIR=C:\github\dotnet-spark\artifacts\bin\Microsoft.Spark.Worker\Debug\netcoreapp2.1\win10-x64\publish
       ```
   
-  2. <span data-ttu-id="cde0c-178">Otevřete PowerShell a vyhledejte adresář, ve kterém byl vygenerován binární soubor aplikace (například *C:\github\dotnet\spark\artifacts\bin\Microsoft.spark.CSharp.Examples\Debug\net461* pro .NET Framework, *C:\github\dotnet-spark\artifacts\bin\Microsoft.spark.CSharp.Examples\Debug\netcoreapp2.1\win10-x64\publish* pro .NET Core):</span><span class="sxs-lookup"><span data-stu-id="cde0c-178">Open Powershell and go to the directory where your app binary has been generated (for example, *C:\github\dotnet\spark\artifacts\bin\Microsoft.Spark.CSharp.Examples\Debug\net461* for .NET Framework, *C:\github\dotnet-spark\artifacts\bin\Microsoft.Spark.CSharp.Examples\Debug\netcoreapp2.1\win10-x64\publish* for .NET Core):</span></span>
+  2. <span data-ttu-id="dff1b-178">Otevřete PowerShell a vyhledejte adresář, ve kterém byl vygenerován binární soubor aplikace (například *C:\github\dotnet\spark\artifacts\bin\Microsoft.spark.CSharp.Examples\Debug\net461* pro .NET Framework, *C:\github\dotnet-spark\artifacts\bin\Microsoft.spark.CSharp.Examples\Debug\netcoreapp2.1\win10-x64\publish* pro .NET Core):</span><span class="sxs-lookup"><span data-stu-id="dff1b-178">Open Powershell and go to the directory where your app binary has been generated (for example, *C:\github\dotnet\spark\artifacts\bin\Microsoft.Spark.CSharp.Examples\Debug\net461* for .NET Framework, *C:\github\dotnet-spark\artifacts\bin\Microsoft.Spark.CSharp.Examples\Debug\netcoreapp2.1\win10-x64\publish* for .NET Core):</span></span>
 
       ```powershell
       cd C:\github\dotnet-spark\artifacts\bin\Microsoft.Spark.CSharp.Examples\Debug\netcoreapp2.1\win10-x64\publish
       ```
 
-  3. <span data-ttu-id="cde0c-179">Spuštění aplikace se řídí základní strukturou:</span><span class="sxs-lookup"><span data-stu-id="cde0c-179">Running your app follows the basic structure:</span></span>
+  3. <span data-ttu-id="dff1b-179">Spuštění aplikace se řídí základní strukturou:</span><span class="sxs-lookup"><span data-stu-id="dff1b-179">Running your app follows the basic structure:</span></span>
 
      ```powershell
      spark-submit.cmd `
@@ -237,9 +237,9 @@ mvn clean package
        <path-to-your-app-exe> <argument(s)-to-your-app>
      ```
 
-     <span data-ttu-id="cde0c-180">Tady je několik příkladů, které můžete spustit:</span><span class="sxs-lookup"><span data-stu-id="cde0c-180">Here are some examples you can run:</span></span>
+     <span data-ttu-id="dff1b-180">Tady je několik příkladů, které můžete spustit:</span><span class="sxs-lookup"><span data-stu-id="dff1b-180">Here are some examples you can run:</span></span>
 
-     - <span data-ttu-id="cde0c-181">**[Microsoft.Spark.Examples.Sql.Batch. Basic](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Batch/Basic.cs)**</span><span class="sxs-lookup"><span data-stu-id="cde0c-181">**[Microsoft.Spark.Examples.Sql.Batch.Basic](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Batch/Basic.cs)**</span></span>
+     - <span data-ttu-id="dff1b-181">**[Microsoft.Spark.Examples.Sql.Batch. Basic](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Batch/Basic.cs)**</span><span class="sxs-lookup"><span data-stu-id="dff1b-181">**[Microsoft.Spark.Examples.Sql.Batch.Basic](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Batch/Basic.cs)**</span></span>
 
          ```powershell
          spark-submit.cmd `
@@ -249,7 +249,7 @@ mvn clean package
          Microsoft.Spark.CSharp.Examples.exe Sql.Batch.Basic %SPARK_HOME%\examples\src\main\resources\people.json
          ```
 
-     - <span data-ttu-id="cde0c-182">**[Microsoft. spark. Examples. SQL. Streaming. StructuredNetworkWordCount](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Streaming/StructuredNetworkWordCount.cs)**</span><span class="sxs-lookup"><span data-stu-id="cde0c-182">**[Microsoft.Spark.Examples.Sql.Streaming.StructuredNetworkWordCount](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Streaming/StructuredNetworkWordCount.cs)**</span></span>
+     - <span data-ttu-id="dff1b-182">**[Microsoft. spark. Examples. SQL. Streaming. StructuredNetworkWordCount](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Streaming/StructuredNetworkWordCount.cs)**</span><span class="sxs-lookup"><span data-stu-id="dff1b-182">**[Microsoft.Spark.Examples.Sql.Streaming.StructuredNetworkWordCount](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Streaming/StructuredNetworkWordCount.cs)**</span></span>
 
          ```powershell
          spark-submit.cmd `
@@ -259,7 +259,7 @@ mvn clean package
          Microsoft.Spark.CSharp.Examples.exe Sql.Streaming.StructuredNetworkWordCount localhost 9999
          ```
 
-     - <span data-ttu-id="cde0c-183">**[Microsoft. spark. Examples. SQL. Streaming. StructuredKafkaWordCount (přístup k Maven)](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Streaming/StructuredKafkaWordCount.cs)**</span><span class="sxs-lookup"><span data-stu-id="cde0c-183">**[Microsoft.Spark.Examples.Sql.Streaming.StructuredKafkaWordCount (maven accessible)](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Streaming/StructuredKafkaWordCount.cs)**</span></span>
+     - <span data-ttu-id="dff1b-183">**[Microsoft. spark. Examples. SQL. Streaming. StructuredKafkaWordCount (přístup k Maven)](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Streaming/StructuredKafkaWordCount.cs)**</span><span class="sxs-lookup"><span data-stu-id="dff1b-183">**[Microsoft.Spark.Examples.Sql.Streaming.StructuredKafkaWordCount (maven accessible)](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Streaming/StructuredKafkaWordCount.cs)**</span></span>
 
          ```powershell
          spark-submit.cmd `
@@ -270,7 +270,7 @@ mvn clean package
          Microsoft.Spark.CSharp.Examples.exe Sql.Streaming.StructuredKafkaWordCount localhost:9092 subscribe test
          ```
 
-     - <span data-ttu-id="cde0c-184">**[Microsoft. spark. Examples. SQL. Streamed. StructuredKafkaWordCount (poskytnutý jar)](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Streaming/StructuredKafkaWordCount.cs)**</span><span class="sxs-lookup"><span data-stu-id="cde0c-184">**[Microsoft.Spark.Examples.Sql.Streaming.StructuredKafkaWordCount (jars provided)](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Streaming/StructuredKafkaWordCount.cs)**</span></span>
+     - <span data-ttu-id="dff1b-184">**[Microsoft. spark. Examples. SQL. Streamed. StructuredKafkaWordCount (poskytnutý jar)](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Streaming/StructuredKafkaWordCount.cs)**</span><span class="sxs-lookup"><span data-stu-id="dff1b-184">**[Microsoft.Spark.Examples.Sql.Streaming.StructuredKafkaWordCount (jars provided)](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Streaming/StructuredKafkaWordCount.cs)**</span></span>
 
          ```powershell
          spark-submit.cmd
