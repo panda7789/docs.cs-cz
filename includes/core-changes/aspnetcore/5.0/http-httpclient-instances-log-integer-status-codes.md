@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 44d33fb28e66e590e4604c6dd2c73616e4c5e943
-ms.sourcegitcommit: 7370aa8203b6036cea1520021b5511d0fd994574
+ms.openlocfilehash: 47f42305f4106f5e05e555a859f13c41bb950519
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82728272"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88811258"
 ---
 ### <a name="http-httpclient-instances-created-by-ihttpclientfactory-log-integer-status-codes"></a>HTTP: HttpClient instance vytvořené pomocí kódů IHttpClientFactory pro celočíselné hodnoty log status
 
@@ -18,7 +18,7 @@ ms.locfileid: "82728272"
 
 Protokolování používá textové popisy stavových kódů HTTP. Vezměte v úvahu následující zprávy protokolu:
 
-```
+```output
 Received HTTP response after 56.0044ms - OK
 End processing HTTP request after 70.0862ms - OK
 ```
@@ -27,7 +27,7 @@ End processing HTTP request after 70.0862ms - OK
 
 Protokolování používá celočíselné hodnoty stavových kódů HTTP. Vezměte v úvahu následující zprávy protokolu:
 
-```
+```output
 Received HTTP response after 56.0044ms - 200
 End processing HTTP request after 70.0862ms - 200
 ```

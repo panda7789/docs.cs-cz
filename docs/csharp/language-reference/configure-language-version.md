@@ -3,12 +3,12 @@ title: Jazyková verze jazyka c# – Průvodce jazyka C#
 description: Přečtěte si informace o tom, jak je jazyková verze jazyka C# určena na základě vašeho projektu a z důvodů na základě této volby. Přečtěte si, jak přepsat výchozí nastavení ručně.
 ms.custom: updateeachrelease
 ms.date: 05/20/2020
-ms.openlocfilehash: a27f3210f399f1bed190c18d778cf3824772d576
-ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
+ms.openlocfilehash: 24797c564890b034683d2989010bc694aabc423c
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88656848"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88811948"
 ---
 # <a name="c-language-versioning"></a>Správa verzí jazyka C#
 
@@ -32,11 +32,14 @@ Kompilátor určuje výchozí hodnotu na základě těchto pravidel:
 | .NET Core        | 3.x     | C# 8.0                      |
 | .NET Core        | 2.x     | C# 7.3                      |
 | .NET Standard    | 2.1     | C# 8.0                      |
-| .NET Standard    | 2.0     | C# 7.3                      |
+| .NET Standard    | 2,0     | C# 7.3                      |
 | .NET Standard    | verze     | C# 7.3                      |
 | .NET Framework   | Vše     | C# 7.3                      |
 
 Když se váš projekt zaměřuje na architekturu verze Preview, která má odpovídající jazykovou verzi Preview, bude použit jazyk verze Preview. Nejnovější funkce v rámci této verze Preview můžete používat v jakémkoli prostředí, aniž by to ovlivnilo projekty, které cílí na vydanou verzi .NET Core.
+
+> [!TIP]
+> Pokud chcete zjistit, jakou jazykovou verzi aktuálně používáte, vložte `#error version` (rozlišuje velká a malá písmena) do kódu. Tím kompilátor vyprodukuje diagnostiku CS8304 se zprávou obsahující verzi kompilátoru, která je použita, a aktuální vybranou jazykovou verzí.
 
 ## <a name="override-a-default"></a>Přepsat výchozí
 

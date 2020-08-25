@@ -6,12 +6,12 @@ helpviewer_keywords:
 - methods [C#]
 - C# language, methods
 ms.assetid: cc738f07-e8cd-4683-9585-9f40c0667c37
-ms.openlocfilehash: db35b48d4d7e70a54b38342e79fa2881b3857bd7
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 7b411283822360f3057b0d4f4e60ebade4fe45bc
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86864147"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88810934"
 ---
 # <a name="methods-c-programming-guide"></a>Metody (Průvodce programováním v C#)
 
@@ -24,7 +24,7 @@ Metoda je blok kódu, který obsahuje řadu příkazů. Program způsobí, že b
 
 Metody jsou deklarovány ve [třídě](../../language-reference/keywords/class.md), [struktuře](../../language-reference/builtin-types/struct.md)nebo [rozhraní](../interfaces/index.md) zadáním úrovně přístupu, jako jsou `public` nebo, volitelné modifikátory, jako je například `private` `abstract` nebo `sealed` , návratová hodnota, název metody a všechny parametry metody. Tyto části jsou společně signaturou metody.
 
-> [!NOTE]
+> [!IMPORTANT]
 > Návratový typ metody není součástí signatury metody pro účely přetěžování metody. Je však součástí signatury metody při určování kompatibility mezi delegátem a metodou, na kterou odkazuje.
 
 Parametry metody jsou uzavřeny v závorkách a jsou odděleny čárkami. Prázdné kulaté závorky označují, že metoda nepožaduje žádné parametry. Tato třída obsahuje čtyři metody:
@@ -127,15 +127,15 @@ Pokud označíte metodu pomocí modifikátoru [Async](../../language-reference/k
 
 Asynchronní metoda může mít návratový typ <xref:System.Threading.Tasks.Task%601> , <xref:System.Threading.Tasks.Task> nebo void. Typ vrácené hodnoty void slouží hlavně k definování obslužných rutin událostí, kde je požadován návratový typ void. Asynchronní metoda, která vrací typ void, nemůže být očekávána a volající metody vracející typ void nemůže zachytit výjimky, které metoda vyvolá.
 
-V následujícím příkladu `DelayAsync` je asynchronní metoda, která má návratový typ <xref:System.Threading.Tasks.Task%601> . `DelayAsync`obsahuje `return` příkaz, který vrací celé číslo. Proto deklarace metody `DelayAsync` musí mít návratový typ `Task<int>` . Vzhledem k tomu, že návratový typ je `Task<int>` , vyhodnocení `await` výrazu v `DoSomethingAsync` vytvoří celé číslo, jak ukazuje následující příkaz: `int result = await delayTask` .
+V následujícím příkladu `DelayAsync` je asynchronní metoda, která má návratový typ <xref:System.Threading.Tasks.Task%601> . `DelayAsync` obsahuje `return` příkaz, který vrací celé číslo. Proto deklarace metody `DelayAsync` musí mít návratový typ `Task<int>` . Vzhledem k tomu, že návratový typ je `Task<int>` , vyhodnocení `await` výrazu v `DoSomethingAsync` vytvoří celé číslo, jak ukazuje následující příkaz: `int result = await delayTask` .
 
-`startButton_Click`Metoda je příkladem asynchronní metody, která má návratový typ void. Vzhledem k tomu `DoSomethingAsync` , že se jedná o asynchronní metodu, musí být úloha volání metody `DoSomethingAsync` očekávána, jak ukazuje následující příkaz: `await DoSomethingAsync();` . `startButton_Click`Metoda musí být definována s `async` modifikátorem, protože metoda má `await` výraz.
+`Main`Metoda je příkladem asynchronní metody, která má návratový typ <xref:System.Threading.Tasks.Task> . Odkazuje na `DoSomethingAsync` metodu a protože je vyjádřena jediným řádkem, může vynechat `async` `await` klíčová slova a. Vzhledem k tomu `DoSomethingAsync` , že se jedná o asynchronní metodu, musí být úloha volání metody `DoSomethingAsync` očekávána, jak ukazuje následující příkaz: `await DoSomethingAsync();` .
 
-[!code-csharp[csAsyncMethod#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csasyncmethod/cs/mainwindow.xaml.cs#2)]
+:::code language="csharp" source="snippets/classes-and-structs/methods/Program.cs":::
 
 Asynchronní metoda nemůže deklarovat všechny parametry [ref](../../language-reference/keywords/ref.md) nebo [out](../../language-reference/keywords/out-parameter-modifier.md) , ale může volat metody, které mají tyto parametry.
 
-Další informace o asynchronních metodách naleznete v tématu [asynchronní programování s Async a await](../concepts/async/index.md), [řízení toku v asynchronních programech](../concepts/async/control-flow-in-async-programs.md)a [Asynchronní návratové typy](../concepts/async/async-return-types.md).
+Další informace o asynchronních metodách naleznete v tématu [asynchronní programování s asynchronními a await](../concepts/async/index.md) a [asynchronními návratovými typy](../concepts/async/async-return-types.md).
 
 ## <a name="expression-body-definitions"></a>Definice textu výrazu
 
@@ -169,7 +169,7 @@ Další informace najdete v tématu [iterátory](../concepts/iterators.md).
 ## <a name="see-also"></a>Viz také
 
 - [Průvodce programováním v C#](../index.md)
-- [Třídy a struktury](index.md)
+- [Třídy a struktury](index.md)
 - [Modifikátory přístupu](access-modifiers.md)
 - [Statické třídy a jejich členové](static-classes-and-static-class-members.md)
 - [Dědičnost](inheritance.md)

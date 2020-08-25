@@ -2,15 +2,15 @@
 title: ASP.NET Core přerušující změny
 titleSuffix: ''
 description: Zobrazí seznam nejnovějších změn v ASP.NET Core.
-ms.date: 07/17/2020
+ms.date: 08/20/2020
 author: scottaddie
 ms.author: scaddie
-ms.openlocfilehash: 1506e0aa27778d44497252231028689259f48896
-ms.sourcegitcommit: ef86c24c418439b8bb5e3e7d64bbdbe5e11c3e9c
+ms.openlocfilehash: 4f37bf73c13379bce006c9a3b51302c09562cc44
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88720238"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88811256"
 ---
 # <a name="aspnet-core-breaking-changes"></a>ASP.NET Core přerušující změny
 
@@ -69,6 +69,7 @@ Na této stránce jsou popsány následující přerušující se změny:
 - [Lokalizace: v middlewari pro lokalizaci požadavků byl odebrán zastaralý konstruktor.](#localization-obsolete-constructor-removed-in-request-localization-middleware)
 - [Lokalizace: odebral se člen rozhraní třídy ResourceManagerWithCultureStringLocalizer a WithCulture.](#localization-resourcemanagerwithculturestringlocalizer-class-and-withculture-interface-member-removed)
 - [Protokolování: DebugLogger třída provedla interní](#logging-debuglogger-class-made-internal)
+- [Middleware: chybová stránka databáze je označena jako zastaralá.](#middleware-database-error-page-marked-as-obsolete)
 - [MVC: byla odebrána asynchronní přípona akce řadiče.](#mvc-async-suffix-trimmed-from-controller-action-names)
 - [MVC: JsonResult se přesunula do Microsoft. AspNetCore. Mvc. Core.](#mvc-jsonresult-moved-to-microsoftaspnetcoremvccore)
 - [MVC: zastaralý nástroj předkompilace](#mvc-precompilation-tool-deprecated)
@@ -159,6 +160,10 @@ Na této stránce jsou popsány následující přerušující se změny:
 ***
 
 [!INCLUDE[Localization: ResourceManagerWithCultureStringLocalizer class and WithCulture interface member removed](~/includes/core-changes/aspnetcore/5.0/localization-members-removed.md)]
+
+***
+
+[!INCLUDE[Middleware: Database error page marked as obsolete](~/includes/core-changes/aspnetcore/5.0/middleware-database-error-page-obsolete.md)]
 
 ***
 

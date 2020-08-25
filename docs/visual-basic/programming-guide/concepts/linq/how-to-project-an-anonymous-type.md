@@ -2,19 +2,19 @@
 title: 'Postupy: Projektování anonymního typu'
 ms.date: 07/20/2015
 ms.assetid: 30b42987-0e0e-4b2b-adb1-5255ddfbcd7b
-ms.openlocfilehash: 459602eb7ede0bd055e00d3c7620cb95ec5408ff
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: c486fbd7ee8ae917cd0ccf57e2b04e472784b11d
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84396477"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88810557"
 ---
 # <a name="how-to-project-an-anonymous-type-visual-basic"></a>Postupy: projektování anonymního typu (Visual Basic)
 V některých případech můžete chtít vytvořit dotaz na nový typ, i když víte, že tento typ budete používat jenom krátce. Je to mnoho dalších práce pro vytvoření nového typu pouze k použití v projekci. Efektivnější přístup v tomto případě je projekt na anonymní typ. Anonymní typy umožňují definovat třídu a pak deklarovat a inicializovat objekt této třídy, aniž by bylo nutné zadat název třídy.  
   
  Anonymní typy jsou implementace matematického konceptu *řazené kolekce členů*v jazyce C#. Matematická pojem řazené kolekce členů pochází z sekvence Single, Double, Triple, čtyřnásobná, quintuple, n-Tuple. Odkazuje na konečnou sekvenci objektů, každého konkrétního typu. Někdy se označuje jako seznam párů název/hodnota. Například obsah adresy v [ukázkovém souboru XML: typický dokument XML s nákupní objednávkou (LINQ to XML)](sample-xml-file-typical-purchase-order-linq-to-xml.md) může být vyjádřen následujícím způsobem:  
   
-```  
+```
 Name: Ellen Adams  
 Street: 123 Maple Street  
 City: Mill Valley  

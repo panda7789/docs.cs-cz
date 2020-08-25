@@ -4,12 +4,12 @@ description: Naučte se používat nástroj Analyzátor přenositelnosti .NET k 
 ms.date: 09/13/2019
 ms.technology: dotnet-standard
 ms.assetid: 0375250f-5704-4993-a6d5-e21c499cea1e
-ms.openlocfilehash: d2a9551565e9ef0a2ed76960c869829fc2e86a1f
-ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
+ms.openlocfilehash: d8b5fcf8b6c3230e41585261de747edb9105aa31
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84903607"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88811805"
 ---
 # <a name="the-net-portability-analyzer"></a>Analyzátor přenositelnosti .NET
 
@@ -39,7 +39,7 @@ Užitečným krokem při analýze řešení s mnoha projekty by bylo vizualizova
 
 K načtení můžete použít následující příkaz:
 
-```
+```console
 ApiPort.exe analyze -r DGML -f [directory or file]
 ```
 
@@ -54,8 +54,8 @@ Chcete-li analyzovat celý projekt v aplikaci Visual Studio, klikněte pravým t
 
 Můžete také použít [konzolovou aplikaci ApiPort](https://aka.ms/apiportdownload).
 
-- Chcete-li analyzovat aktuální adresář, zadejte následující příkaz:`ApiPort.exe analyze -f .`
-- Chcete-li analyzovat konkrétní seznam souborů. dll, zadejte následující příkaz:`ApiPort.exe analyze -f first.dll -f second.dll -f third.dll`
+- Chcete-li analyzovat aktuální adresář, zadejte následující příkaz: `ApiPort.exe analyze -f .`
+- Chcete-li analyzovat konkrétní seznam souborů. dll, zadejte následující příkaz: `ApiPort.exe analyze -f first.dll -f second.dll -f third.dll`
 - Spusťte `ApiPort.exe -?` , abyste získali další nápovědu.
 
 Doporučujeme, abyste zahrnuli všechny související soubory exe a DLL, které vlastníte a chcete portovat, a vyloučíte soubory, na kterých vaše aplikace závisí, ale nevlastníte a nemůžete port. Tím získáte nejvíc relevantní sestavu přenositelnosti.

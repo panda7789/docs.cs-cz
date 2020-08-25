@@ -2,12 +2,12 @@
 title: Vytvoření .NET Standard knihovny tříd pomocí Visual Studio Code
 description: Naučte se vytvářet .NET Standard knihovny tříd pomocí Visual Studio Code.
 ms.date: 06/08/2020
-ms.openlocfilehash: 714b5cf2125f1d296adc4a4dc7d1b6c9420417ed
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: 146dfd49e448494cce0c844282bc0394a8739ac9
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86308881"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88810856"
 ---
 # <a name="tutorial-create-a-net-standard-library-using-visual-studio-code"></a>Kurz: Vytvoření knihovny .NET Standard pomocí Visual Studio Code
 
@@ -15,7 +15,7 @@ V tomto kurzu vytvoříte jednoduchou knihovnu nástrojů, která obsahuje jedin
 
 *Knihovna tříd* definuje typy a metody, které jsou volány aplikací. Knihovna tříd, která cílí na .NET Standard 2,0, umožňuje, aby byla vaše knihovna volána jakoukoli implementací .NET, která podporuje tuto verzi .NET Standard. Po dokončení knihovny tříd ji můžete distribuovat jako součást třetí strany nebo jako součást balíčku s jednou nebo více aplikacemi.
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 1. [Visual Studio Code](https://code.visualstudio.com/) s nainstalovaným [rozšířením C#](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp) . Informace o tom, jak nainstalovat rozšíření na Visual Studio Code, najdete v tématu [rozšíření vs Code Marketplace](https://code.visualstudio.com/docs/editor/extension-gallery).
 2. [.NET Core 3,1 SDK nebo novější](https://dotnet.microsoft.com/download)
@@ -24,7 +24,7 @@ V tomto kurzu vytvoříte jednoduchou knihovnu nástrojů, která obsahuje jedin
 
 Začněte vytvořením prázdného řešení pro vložení projektu knihovny tříd do. Řešení slouží jako kontejner pro jeden nebo více projektů. Do stejného řešení přidáte další související projekty.
 
-1. Spusťte Visual Studio Code.
+1. Spuštění nástroje Visual Studio Code
 
 1. V hlavní nabídce vyberte **soubor**  >  **Otevřít složku** (**otevřít...** v MacOS).
 
@@ -42,7 +42,7 @@ Začněte vytvořením prázdného řešení pro vložení projektu knihovny tř
 
    Výstup terminálu vypadá jako v následujícím příkladu:
 
-   ```
+   ```output
    The template "Solution File" was created successfully.
    ```
 
@@ -58,7 +58,7 @@ Přidejte do řešení nový projekt knihovny tříd .NET Standard s názvem "St
 
    Výstup terminálu vypadá jako v následujícím příkladu:
 
-   ```
+   ```output
    The template "Class library" was created successfully.
    Processing post-creation actions...
    Running 'dotnet restore' on StringLibrary\StringLibrary.csproj...
@@ -75,7 +75,7 @@ Přidejte do řešení nový projekt knihovny tříd .NET Standard s názvem "St
 
    Výstup terminálu vypadá jako v následujícím příkladu:
 
-   ```
+   ```output
    Project `StringLibrary\StringLibrary.csproj` added to the solution.
    ```
 
@@ -109,7 +109,7 @@ Přidejte do řešení nový projekt knihovny tříd .NET Standard s názvem "St
 
    Výstup terminálu vypadá jako v následujícím příkladu:
 
-   ```
+   ```output
    Microsoft (R) Build Engine version 16.6.0 for .NET Core
    Copyright (C) Microsoft Corporation. All rights reserved.
      Determining projects to restore...
@@ -134,7 +134,7 @@ Přidejte konzolovou aplikaci, která používá knihovnu tříd. Aplikace vyzve
 
    Výstup terminálu vypadá jako v následujícím příkladu:
 
-   ```
+   ```output
    The template "Console Application" was created successfully.
    Processing post-creation actions...
    Running 'dotnet restore' on ShowCase\ShowCase.csproj...  
@@ -151,7 +151,7 @@ Přidejte konzolovou aplikaci, která používá knihovnu tříd. Aplikace vyzve
 
    Výstup terminálu vypadá jako v následujícím příkladu:
 
-   ```
+   ```output
    Project `ShowCase\ShowCase.csproj` added to the solution.
    ```
 
@@ -177,7 +177,7 @@ Zpočátku má nový projekt konzolové aplikace přístup ke knihovně tříd. 
 
    Výstup terminálu vypadá jako v následujícím příkladu:
 
-   ```
+   ```output
    Reference `..\StringLibrary\StringLibrary.csproj` added to the project.
    ```
 
@@ -193,7 +193,7 @@ Zpočátku má nový projekt konzolové aplikace přístup ke knihovně tříd. 
 
    Výstup terminálu vypadá jako v následujícím příkladu:
 
-   ```
+   ```output
    Press <Enter> only to exit; otherwise, enter a string and press <Enter>:
 
    A string that starts with an uppercase letter

@@ -2,18 +2,18 @@
 title: Publikování konzolové aplikace .NET Core pomocí Visual Studio pro Mac
 description: Publikování vytvoří sadu souborů, které jsou nutné ke spuštění aplikace .NET Core.
 ms.date: 06/08/2020
-ms.openlocfilehash: 67762481d3a56b8473e643f71b8df909b6e54fc6
-ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
+ms.openlocfilehash: 38b656ac919dfb8b710a97c5d7fc63479e3fa367
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84713663"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88811402"
 ---
 # <a name="tutorial-publish-a-net-core-console-application-using-visual-studio-for-mac"></a>Kurz: publikování konzolové aplikace .NET Core pomocí Visual Studio pro Mac
 
 V tomto kurzu se dozvíte, jak publikovat konzolovou aplikaci, aby ji ostatní uživatelé mohli spustit. Publikování vytvoří sadu souborů, které jsou nutné ke spuštění vaší aplikace. Chcete-li nasadit soubory, zkopírujte je do cílového počítače.
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 - Tento kurz spolupracuje s konzolovou aplikací, kterou vytvoříte v části [Vytvoření konzolové aplikace .NET Core v Visual Studio pro Mac](with-visual-studio-mac.md).
 
@@ -67,9 +67,9 @@ Jak ukazuje předchozí obrázek, publikovaný výstup obsahuje následující s
 
 ## <a name="run-the-published-app"></a>Spuštění publikované aplikace
 
-1. Otevřete terminál a přejděte do složky pro *publikování* . Provedete to tak, že zadáte `cd` a pak vložíte cestu, kterou jste zkopírovali dříve. Například:
+1. Otevřete terminál a přejděte do složky pro *publikování* . Provedete to tak, že zadáte `cd` a pak vložíte cestu, kterou jste zkopírovali dříve. Příklad:
 
-   ```
+   ```console
    cd ~/Projects/HelloWorld/HelloWorld/bin/Release/netcoreapp3.1/publish/
    ```
 

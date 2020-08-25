@@ -3,12 +3,12 @@ title: Doprovodné materiály k zabezpečení datových sad a DataTable
 ms.date: 07/14/2020
 dev_langs:
 - csharp
-ms.openlocfilehash: f0fa43c467cc7866e69115acb5f807e6487fda7a
-ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
+ms.openlocfilehash: 24c8a830f8638bc2d9dd20c2384c8230a682d817
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88608532"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88812234"
 ---
 # <a name="dataset-and-datatable-security-guidance"></a>Doprovodné materiály k zabezpečení datových sad a DataTable
 
@@ -34,7 +34,14 @@ Na všech podporovaných verzích .NET Framework, .NET Core a .NET `DataSet` a `
 
 Pokud příchozí XML data obsahují objekt, jehož typ není v tomto seznamu:
 
-* Je vyvolána výjimka.
+* V následující zprávě a trasování zásobníku je vyvolána výjimka.  
+Chybová zpráva:  
+System. InvalidOperationException: type \<Type Name\> , Version = \<n.n.n.n\> , Culture = \<culture\> , PublicKeyToken = není \<token value\> tady povolený. Další podrobnosti najdete v tématu [https://go.microsoft.com/fwlink/?linkid=2132227](https://go.microsoft.com/fwlink/?linkid=2132227) .  
+Trasování zásobníku:  
+v System. data. TypeLimiter. EnsureTypeIsAllowed (typ typu, TypeLimiter capturedLimiter)  
+v System. data. DataColumn. UpdateColumnType (typ typu, StorageType typeCode)  
+v System. data. DataColumn. set_DataType (hodnota typu)  
+
 * Operace deserializace se nezdařila.
 
 Při načítání kódu XML do existující `DataSet` `DataTable` instance nebo je také nutné vzít v úvahu existující definice sloupců. Pokud tabulka již obsahuje definici sloupce vlastního typu, tento typ je dočasně přidán do seznamu povolených po dobu trvání operace deserializace XML.

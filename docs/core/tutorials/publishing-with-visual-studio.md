@@ -6,18 +6,18 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: 44646a307d230db395b55b9dec5acfd168605940
-ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
+ms.openlocfilehash: afbffa5dc8a620836ec1433a095face46c32df90
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84701281"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88811312"
 ---
 # <a name="tutorial-publish-a-net-core-console-application-using-visual-studio"></a>Kurz: publikování konzolové aplikace .NET Core pomocí sady Visual Studio
 
 V tomto kurzu se dozvíte, jak publikovat konzolovou aplikaci, aby ji ostatní uživatelé mohli spustit. Publikování vytvoří sadu souborů, které jsou nutné ke spuštění vaší aplikace. Chcete-li nasadit soubory, zkopírujte je do cílového počítače.
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 - Tento kurz spolupracuje s konzolovou aplikací, kterou vytvoříte v části [Vytvoření konzolové aplikace .NET Core v sadě Visual Studio 2019](with-visual-studio.md).
 
@@ -85,9 +85,9 @@ V následujících krocích se podíváte na soubory vytvořené procesem publik
 
 1. V **Průzkumník řešení**klikněte pravým tlačítkem myši na složku pro *publikování* a vyberte možnost **Kopírovat úplnou cestu**.
 
-1. Otevřete příkazový řádek a přejděte do složky pro *publikování* . Provedete to tak, že zadáte `cd` a pak vložíte úplnou cestu. Například:
+1. Otevřete příkazový řádek a přejděte do složky pro *publikování* . Provedete to tak, že zadáte `cd` a pak vložíte úplnou cestu. Příklad:
 
-   ```
+   ```console
    cd C:\Projects\HelloWorld\bin\Release\netcoreapp3.1\publish\
    ```
 

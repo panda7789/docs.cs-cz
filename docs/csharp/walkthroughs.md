@@ -7,12 +7,12 @@ helpviewer_keywords:
 - walkthroughs [Visual Studio], Visual C#
 - Visual C#, walkthroughs
 ms.assetid: 2d07b972-ef69-4676-9aef-e1784728e1ff
-ms.openlocfilehash: 746fe35e6d6d4a75f363ccb82ae8dc6106854d8d
-ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
+ms.openlocfilehash: d7e367f3b4e9a6d88d2a13ca8727d2e2884bb97c
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87381889"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88810596"
 ---
 # <a name="c-walkthroughs"></a>Návody jazyka C#
 
@@ -22,7 +22,7 @@ Návody poskytují podrobné pokyny pro běžné scénáře, díky kterým je do
 
 ## <a name="in-this-section"></a>V této části
 
-- [Přístup k webu pomocí modifikátoru Async a operátoru await](./programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)\
+- [Zpracování asynchronních úloh po dokončení](./programming-guide/concepts/async/start-multiple-async-tasks-and-process-them-as-they-complete.md)\
   Ukazuje, jak vytvořit asynchronní řešení pomocí modifikátoru [Async](./language-reference/keywords/async.md) a [operátoru await](./language-reference/operators/await.md).
 
 - [Vytvoření prostředí Windows Runtime komponenty v jazyce C# nebo Visual Basic a její volání z JavaScriptu](/windows/uwp/winrt-components/walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript)\
@@ -72,7 +72,7 @@ Návody poskytují podrobné pokyny pro běžné scénáře, díky kterým je do
 - [Ukázky a návody pro nasazení](/visualstudio/deployment/clickonce-deployment-samples-and-walkthroughs)\
   Poskytuje podrobný příklad běžných scénářů nasazení.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Průvodce programováním v C#](./programming-guide/index.md)
 - [Ukázky sady Visual Studio](/visualstudio/ide/visual-studio-ide)

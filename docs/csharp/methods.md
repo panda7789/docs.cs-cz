@@ -4,14 +4,14 @@ description: Přehled metod, parametrů metod a návratových hodnot metody
 ms.technology: csharp-fundamentals
 ms.date: 05/21/2018
 ms.assetid: 577a8527-1081-4b36-9b9e-0685b6553c6e
-ms.openlocfilehash: 09a287b3d74e1b8dbdaf4a53cb207dfe1fad8a0c
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 8c33bcb9dd4052589222c2cb1b375d94d6792ba2
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88063351"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88810570"
 ---
-# <a name="methods"></a>Metody
+# <a name="methods-in-c"></a>Metody v (C#)
 
 Metoda je blok kódu, který obsahuje řadu příkazů. Program způsobí, že budou příkazy provedeny voláním metody a zadáním požadovaných argumentů metody. V jazyce C# je každé spuštění instrukcí provedeno v kontextu metody. `Main`Metoda je vstupním bodem pro každou aplikaci jazyka C# a je volána modulem CLR (Common Language Runtime) při spuštění programu.
 
@@ -32,7 +32,7 @@ Metody jsou deklarovány v `class` nebo `struct` zadáním:
 
 Tyto části dohromady tvoří signaturu metody.
 
-> [!NOTE]
+> [!IMPORTANT]
 > Návratový typ metody není součástí signatury metody pro účely přetěžování metody. Je však součástí signatury metody při určování kompatibility mezi delegátem a metodou, na kterou odkazuje.
 
 Následující příklad definuje třídu s názvem `Motorcycle` , která obsahuje pět metod:
@@ -149,7 +149,7 @@ Následující příklad definuje metodu, `ExampleMethod` která má jeden poža
 
 [!code-csharp[csSnippets.Methods#21](../../samples/snippets/csharp/concepts/methods/optional1.cs#21)]
 
-Pokud je metoda s více volitelnými argumenty vyvolána pomocí pozičních argumentů, volající musí zadat argument pro všechny volitelné parametry od prvního do posledního, pro který je zadán argument. V případě `ExampleMethod` metody, například pokud volající zadá argument pro `description` parametr, musí také dodat jednu pro `optionalInt` parametr. `opt.ExampleMethod(2, 2, "Addition of 2 and 2");`je platné volání metody; `opt.ExampleMethod(2, , "Addition of 2 and 0");`vygeneruje chybu kompilátoru "chybí argument".
+Pokud je metoda s více volitelnými argumenty vyvolána pomocí pozičních argumentů, volající musí zadat argument pro všechny volitelné parametry od prvního do posledního, pro který je zadán argument. V případě  `ExampleMethod` metody, například pokud volající zadá argument pro `description` parametr, musí také dodat jednu pro `optionalInt` parametr. `opt.ExampleMethod(2, 2, "Addition of 2 and 2");` je platné volání metody; `opt.ExampleMethod(2, , "Addition of 2 and 0");` vygeneruje chybu kompilátoru "chybí argument".
 
 Pokud je metoda volána pomocí pojmenovaných argumentů nebo kombinace pozičních a pojmenovaných argumentů, volající může vynechat všechny argumenty, které následují jako poslední poziční argument ve volání metody.
 
@@ -249,11 +249,11 @@ Asynchronní metoda může mít návratový typ <xref:System.Threading.Tasks.Tas
 
 V následujícím příkladu `DelayAsync` je asynchronní metoda, která má návratový příkaz, který vrací celé číslo. Vzhledem k tomu, že se jedná o asynchronní metodu, její deklarace metody musí mít návratový typ `Task<int>` . Vzhledem k tomu, že návratový typ je `Task<int>` , vyhodnocení `await` výrazu v `DoSomethingAsync` vytvoří celé číslo, jak ukazuje následující `int result = await delayTask` příkaz.
 
-[!code-csharp[csSnippets.Methods#102](../../samples/snippets/csharp/concepts/methods/async1.cs#102)]
+:::code language="csharp" source="programming-guide/classes-and-structs/snippets/classes-and-structs/methods/Program.cs":::
 
 Asynchronní metoda nemůže deklarovat jakýkoli parametr [in](language-reference/keywords/in-parameter-modifier.md), [ref](language-reference/keywords/ref.md)nebo [out](language-reference/keywords/out-parameter-modifier.md) , ale může volat metody, které mají tyto parametry.
 
- Další informace o asynchronních metodách naleznete v tématu [asynchronní programování s Async a await](async.md), [řízení toku v asynchronních programech](programming-guide/concepts/async/control-flow-in-async-programs.md)a [Asynchronní návratové typy](programming-guide/concepts/async/async-return-types.md).
+ Další informace o asynchronních metodách naleznete v tématu [asynchronní programování s asynchronními a await](async.md) a [asynchronními návratovými typy](programming-guide/concepts/async/async-return-types.md).
 
 <a name="expr"></a>
 
@@ -291,5 +291,5 @@ Další informace najdete v tématu [iterátory](programming-guide/concepts/iter
 - [params](language-reference/keywords/params.md)
 - [mimo](language-reference/keywords/out-parameter-modifier.md)
 - [ref](language-reference/keywords/ref.md)
-- [in](language-reference/keywords/in-parameter-modifier.md)
+- [pro](language-reference/keywords/in-parameter-modifier.md)
 - [Předávání parametrů](programming-guide/classes-and-structs/passing-parameters.md)

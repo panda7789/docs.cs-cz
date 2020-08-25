@@ -1,527 +1,205 @@
 ---
-title: Zrušení asynchronní úlohy nebo seznamu úloh (C#)
-description: Pomocí těchto příkladů přidáte tlačítko, které před dokončením zruší asynchronní aplikaci. Tato aplikace v jazyce C# stahuje obsah jednoho nebo více webů.
-ms.date: 07/20/2015
+title: Zrušení seznamu úkolů (C#)
+description: Naučte se používat tokeny zrušení k signalizaci žádosti o zrušení seznamu úkolů.
+ms.date: 08/19/2020
+ms.topic: tutorial
 ms.assetid: eec32dbb-70ea-4c88-bd27-fa2e34546914
-ms.openlocfilehash: 21bdbc3bc7c3b752fab160429d71356fb87d9976
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: 000b6a89a9240344508a5ae6b248572c8a2177dc
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86925343"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88811480"
 ---
-# <a name="cancel-an-async-task-or-a-list-of-tasks-c"></a>Zrušení asynchronní úlohy nebo seznamu úloh (C#)
+# <a name="cancel-a-list-of-tasks-c"></a>Zrušení seznamu úkolů (C#)
 
-Můžete nastavit tlačítko, které můžete použít k zrušení asynchronní aplikace, pokud nechcete čekat na jeho dokončení. Podle příkladů v tomto tématu můžete přidat tlačítko zrušení do aplikace, která stáhne obsah jednoho webu nebo seznamu webů.
+Můžete zrušit asynchronní konzolovou aplikaci, pokud nechcete čekat na její dokončení. Podle následujícího příkladu v tomto tématu můžete přidat zrušení do aplikace, která stáhne obsah seznamu webů. Přiřazením <xref:System.Threading.CancellationTokenSource> instance ke každému úkolu můžete zrušit mnoho úloh. Pokud vyberete klávesu <kbd>ENTER</kbd> , zrušíte všechny úlohy, které ještě nebyly dokončeny.
 
-V příkladech se používá uživatelské rozhraní, které popisuje ladění [asynchronní aplikace (C#)](./fine-tuning-your-async-application.md) .
+Tento kurz zahrnuje:
 
-> [!NOTE]
-> Chcete-li spustit příklady, je nutné mít v počítači nainstalován systém Visual Studio 2012 nebo novější a .NET Framework 4,5 nebo novější.
+> [!div class="checklist"]
+>
+> - Vytvoření konzolové aplikace .NET
+> - Zápis asynchronní aplikace, která podporuje zrušení
+> - Demonstrace zrušení signalizace
 
-## <a name="cancel-a-task"></a>Zrušení úlohy
+## <a name="prerequisites"></a>Předpoklady
 
-První příklad přidruží tlačítko **Zrušit** k jedné úloze stažení. Pokud zvolíte tlačítko, zatímco aplikace stahuje obsah, stahování se zruší.
+V tomto kurzu budete potřebovat následující:
 
-### <a name="download-the-example"></a>Stažení příkladu
+- [.NET 5,0 nebo novější SDK](https://dotnet.microsoft.com/download/dotnet/5.0)
+- Integrované vývojové prostředí (IDE)
+  - [Doporučujeme Visual Studio, Visual Studio Code nebo Visual Studio pro Mac](https://visualstudio.microsoft.com)
 
-Z Async Sample si můžete stáhnout dokončený projekt Windows Presentation Foundation (WPF) [: jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) a pak postupujte podle těchto kroků.
+### <a name="create-example-application"></a>Vytvořit ukázkovou aplikaci
 
-1. Dekomprimovat soubor, který jste stáhli, a potom spusťte Visual Studio.
+Vytvořte novou konzolovou aplikaci .NET Core. Můžete ho vytvořit pomocí příkazu [dotnet New Console](../../../../core/tools/dotnet-new.md#console) nebo ze sady [Visual Studio](/visualstudio/install/install-visual-studio). Otevřete soubor *program.cs* ve svém oblíbeném editoru kódu.
 
-2. Na panelu nabídek vyberte **soubor**  >  **otevřít**  >  **projekt/řešení**.
+### <a name="replace-using-statements"></a>Nahradit příkazy using
 
-3. V dialogovém okně **Otevřít projekt** otevřete složku, která obsahuje ukázkový kód, který jste dekomprimujei, a poté otevřete soubor řešení (. sln) pro AsyncFineTuningCS.
-
-4. V **Průzkumník řešení**otevřete místní nabídku pro projekt **CancelATask** a pak zvolte **nastavit jako projekt po spuštění**.
-
-5. Zvolte klávesu **F5** ke spuštění projektu (nebo stiskněte klávesovou **zkratku** + **F5** pro spuštění projektu bez ladění).
-
-> [!TIP]
-> Pokud nechcete stáhnout projekt, můžete si prohlédnout soubory MainWindow.xaml.cs na konci tohoto tématu.
-
-### <a name="build-the-example"></a>Sestavení příkladu
- Následující změny přidají tlačítko **Storno** do aplikace, která stáhne Web. Pokud nechcete stáhnout nebo sestavit příklad, můžete si prohlédnout konečný produkt v části "kompletní příklady" na konci tohoto tématu. Hvězdičky označují změny v kódu.
-
- Pokud chcete sestavit příklad sami, postupujte podle pokynů v části "stažení příkladu", ale jako **spouštěný projekt** vyberte **StarterCode** namísto **CancelATask**.
-
- Pak přidejte následující změny do souboru MainWindow.xaml.cs tohoto projektu.
-
-1. Deklarujte `CancellationTokenSource` proměnnou, `cts` , která je v oboru pro všechny metody, které k ní přistupují.
-
-    ```csharp
-    public partial class MainWindow : Window
-    {
-        // ***Declare a System.Threading.CancellationTokenSource.
-        CancellationTokenSource cts;
-    ```
-
-2. Přidejte následující obslužnou rutinu události pro tlačítko **Storno** . Obslužná rutina události používá <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=nameWithType> metodu k oznamování `cts` , když uživatel požaduje zrušení.
-
-    ```csharp
-    // ***Add an event handler for the Cancel button.
-    private void cancelButton_Click(object sender, RoutedEventArgs e)
-    {
-        if (cts != null)
-        {
-            cts.Cancel();
-        }
-    }
-    ```
-
-3. Proveďte následující změny v obslužné rutině události pro tlačítko **Start** `startButton_Click` .
-
-    - Vytvořte instanci `CancellationTokenSource` , `cts` .
-
-        ```csharp
-        // ***Instantiate the CancellationTokenSource.
-        cts = new CancellationTokenSource();
-        ```
-
-    - V volání metody `AccessTheWebAsync` , která stahuje obsah zadaného webu, odešlete <xref:System.Threading.CancellationTokenSource.Token%2A?displayProperty=nameWithType> vlastnost `cts` jako argument. Tato `Token` vlastnost šíří zprávu, pokud je požadováno zrušení. Přidejte blok catch, který zobrazí zprávu, pokud se uživatel rozhodne zrušit operaci stahování. Následující kód ukazuje změny.
-
-        ```csharp
-        try
-        {
-            // ***Send a token to carry the message if cancellation is requested.
-            int contentLength = await AccessTheWebAsync(cts.Token);
-            resultsTextBox.Text += $"\r\nLength of the downloaded string: {contentLength}.\r\n";
-        }
-        // *** If cancellation is requested, an OperationCanceledException results.
-        catch (OperationCanceledException)
-        {
-            resultsTextBox.Text += "\r\nDownload canceled.\r\n";
-        }
-        catch (Exception)
-        {
-            resultsTextBox.Text += "\r\nDownload failed.\r\n";
-        }
-        ```
-
-4. V `AccessTheWebAsync` použijte <xref:System.Net.Http.HttpClient.GetAsync%28System.String%2CSystem.Threading.CancellationToken%29?displayProperty=nameWithType> přetížení `GetAsync` metody v <xref:System.Net.Http.HttpClient> typu ke stažení obsahu webu. Pass – `ct` <xref:System.Threading.CancellationToken> parametr `AccessTheWebAsync` jako druhý argument. Pokud uživatel klikne na tlačítko **Storno** , tento token zprávu přenese.
-
-     Následující kód ukazuje změny v `AccessTheWebAsync` .
-
-    ```csharp
-    // ***Provide a parameter for the CancellationToken.
-    async Task<int> AccessTheWebAsync(CancellationToken ct)
-    {
-        HttpClient client = new HttpClient();
-
-        resultsTextBox.Text += "\r\nReady to download.\r\n";
-
-        // You might need to slow things down to have a chance to cancel.
-        await Task.Delay(250);
-
-        // GetAsync returns a Task<HttpResponseMessage>.
-        // ***The ct argument carries the message if the Cancel button is chosen.
-        HttpResponseMessage response = await client.GetAsync("https://msdn.microsoft.com/library/dd470362.aspx", ct);
-
-        // Retrieve the website contents from the HttpResponseMessage.
-        byte[] urlContents = await response.Content.ReadAsByteArrayAsync();
-
-        // The result of the method is the length of the downloaded website.
-        return urlContents.Length;
-    }
-    ```
-
-5. Pokud program nerušíte, vytvoří se následující výstup.
-
-    ```text
-    Ready to download.
-    Length of the downloaded string: 158125.
-    ```
-
-     Pokud zvolíte tlačítko **Storno** před tím, než program dokončí stahování obsahu, program vytvoří následující výstup.
-
-    ```text
-    Ready to download.
-    Download canceled.
-    ```
-
-## <a name="cancel-a-list-of-tasks"></a>Zrušení seznamu úloh
-
-Předchozí příklad můžete roztáhnout tak, aby bylo možné zrušit mnoho úloh přiřazením stejné `CancellationTokenSource` instance ke každému úkolu. Pokud zvolíte tlačítko **Zrušit** , zrušíte tím všechny úlohy, které ještě nebyly dokončeny.
-
-### <a name="download-the-example"></a>Stažení příkladu
-
-Z Async Sample si můžete stáhnout dokončený projekt Windows Presentation Foundation (WPF) [: jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) a pak postupujte podle těchto kroků.
-
-1. Dekomprimovat soubor, který jste stáhli, a potom spusťte Visual Studio.
-
-2. Na panelu nabídek vyberte **soubor**  >  **otevřít**  >  **projekt/řešení**.
-
-3. V dialogovém okně **Otevřít projekt** otevřete složku, která obsahuje ukázkový kód, který jste dekomprimujei, a poté otevřete soubor řešení (. sln) pro AsyncFineTuningCS.
-
-4. V **Průzkumník řešení**otevřete místní nabídku pro projekt **CancelAListOfTasks** a pak zvolte **nastavit jako projekt po spuštění**.
-
-5. Kliknutím na klávesu **F5** spusťte projekt.
-
-     Vyberte klávesy **CTRL** + **F5** pro spuštění projektu bez ladění.
-
-Pokud nechcete stáhnout projekt, můžete si prohlédnout soubory MainWindow.xaml.cs na konci tohoto tématu.
-
-### <a name="build-the-example"></a>Sestavení příkladu
-
-Chcete-li tento příklad roztáhnout sami, postupujte podle pokynů v části "stažení příkladu", ale jako **spouštěný projekt**vyberte **CancelATask** . Do tohoto projektu přidejte následující změny. Hvězdičky označují změny v programu.
-
-1. Přidejte metodu pro vytvoření seznamu webových adres.
-
-    ```csharp
-    // ***Add a method that creates a list of web addresses.
-    private List<string> SetUpURLList()
-    {
-        List<string> urls = new List<string>
-        {
-            "https://msdn.microsoft.com",
-            "https://msdn.microsoft.com/library/hh290138.aspx",
-            "https://msdn.microsoft.com/library/hh290140.aspx",
-            "https://msdn.microsoft.com/library/dd470362.aspx",
-            "https://msdn.microsoft.com/library/aa578028.aspx",
-            "https://msdn.microsoft.com/library/ms404677.aspx",
-            "https://msdn.microsoft.com/library/ff730837.aspx"
-        };
-        return urls;
-    }
-    ```
-
-2. Zavolejte metodu v `AccessTheWebAsync` .
-
-    ```csharp
-    // ***Call SetUpURLList to make a list of web addresses.
-    List<string> urlList = SetUpURLList();
-    ```
-
-3. Přidejte následující smyčku do `AccessTheWebAsync` pro zpracování každé webové adresy v seznamu.
-
-    ```csharp
-    // ***Add a loop to process the list of web addresses.
-    foreach (var url in urlList)
-    {
-        // GetAsync returns a Task<HttpResponseMessage>.
-        // Argument ct carries the message if the Cancel button is chosen.
-        // ***Note that the Cancel button can cancel all remaining downloads.
-        HttpResponseMessage response = await client.GetAsync(url, ct);
-
-        // Retrieve the website contents from the HttpResponseMessage.
-        byte[] urlContents = await response.Content.ReadAsByteArrayAsync();
-
-        resultsTextBox.Text +=
-            $"\r\nLength of the downloaded string: {urlContents.Length}.\r\n";
-    }
-    ```
-
-4. Vzhledem `AccessTheWebAsync` k tomu, že se zobrazí délka, metoda nemusí vracet cokoli. Odeberte příkaz return a změňte návratový typ metody na <xref:System.Threading.Tasks.Task> místo <xref:System.Threading.Tasks.Task%601> .
-
-    ```csharp
-    async Task AccessTheWebAsync(CancellationToken ct)
-    ```
-
-     Volejte metodu z pomocí `startButton_Click` příkazu namísto výrazu.
-
-    ```csharp
-    await AccessTheWebAsync(cts.Token);
-    ```
-
-5. Pokud program nerušíte, vytvoří se následující výstup.
-
-    ```text
-    Length of the downloaded string: 35939.
-
-    Length of the downloaded string: 237682.
-
-    Length of the downloaded string: 128607.
-
-    Length of the downloaded string: 158124.
-
-    Length of the downloaded string: 204890.
-
-    Length of the downloaded string: 175488.
-
-    Length of the downloaded string: 145790.
-
-    Downloads complete.
-    ```
-
-     Pokud zvolíte tlačítko **Zrušit** před dokončením stahování, bude výstup obsahovat délky stahování, která byla dokončena před zrušením.
-
-    ```text
-    Length of the downloaded string: 35939.
-
-    Length of the downloaded string: 237682.
-
-    Length of the downloaded string: 128607.
-
-    Downloads canceled.
-    ```
-
-## <a name="complete-examples"></a>Kompletní příklady
-
-Následující části obsahují kód pro každý z předchozích příkladů. Všimněte si, že je nutné přidat odkaz pro <xref:System.Net.Http> .
-
-Projekty si můžete stáhnout z [Async Sample: jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea).
-
-### <a name="example---cancel-a-task"></a>Příklad – zrušení úlohy
-
-Následující kód je úplný soubor MainWindow.xaml.cs pro příklad, který zruší jeden úkol.
+Nahraďte existující příkazy using těmito deklaracemi:
 
 ```csharp
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
-// Add a using directive and a reference for System.Net.Http.
+using System.Diagnostics;
 using System.Net.Http;
-
-// Add the following using directive for System.Threading.
-
 using System.Threading;
-namespace CancelATask
-{
-    public partial class MainWindow : Window
-    {
-        // ***Declare a System.Threading.CancellationTokenSource.
-        CancellationTokenSource cts;
-
-        public MainWindow()
-        {
-            InitializeComponent();
-        }
-
-        private async void startButton_Click(object sender, RoutedEventArgs e)
-        {
-            // ***Instantiate the CancellationTokenSource.
-            cts = new CancellationTokenSource();
-
-            resultsTextBox.Clear();
-
-            try
-            {
-                // ***Send a token to carry the message if cancellation is requested.
-                int contentLength = await AccessTheWebAsync(cts.Token);
-                resultsTextBox.Text +=
-                    $"\r\nLength of the downloaded string: {contentLength}.\r\n";
-            }
-            // *** If cancellation is requested, an OperationCanceledException results.
-            catch (OperationCanceledException)
-            {
-                resultsTextBox.Text += "\r\nDownload canceled.\r\n";
-            }
-            catch (Exception)
-            {
-                resultsTextBox.Text += "\r\nDownload failed.\r\n";
-            }
-
-            // ***Set the CancellationTokenSource to null when the download is complete.
-            cts = null;
-        }
-
-        // ***Add an event handler for the Cancel button.
-        private void cancelButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (cts != null)
-            {
-                cts.Cancel();
-            }
-        }
-
-        // ***Provide a parameter for the CancellationToken.
-        async Task<int> AccessTheWebAsync(CancellationToken ct)
-        {
-            HttpClient client = new HttpClient();
-
-            resultsTextBox.Text += "\r\nReady to download.\r\n";
-
-            // You might need to slow things down to have a chance to cancel.
-            await Task.Delay(250);
-
-            // GetAsync returns a Task<HttpResponseMessage>.
-            // ***The ct argument carries the message if the Cancel button is chosen.
-            HttpResponseMessage response = await client.GetAsync("https://msdn.microsoft.com/library/dd470362.aspx", ct);
-
-            // Retrieve the website contents from the HttpResponseMessage.
-            byte[] urlContents = await response.Content.ReadAsByteArrayAsync();
-
-            // The result of the method is the length of the downloaded website.
-            return urlContents.Length;
-        }
-    }
-
-    // Output for a successful download:
-
-    // Ready to download.
-
-    // Length of the downloaded string: 158125.
-
-    // Or, if you cancel:
-
-    // Ready to download.
-
-    // Download canceled.
-}
+using System.Threading.Tasks;
 ```
 
-### <a name="example---cancel-a-list-of-tasks"></a>Příklad – zrušení seznamu úloh
+## <a name="add-fields"></a>Přidat pole
 
-Následující kód je úplný soubor MainWindow.xaml.cs pro příklad, který zruší seznam úkolů.
+Do `Program` definice třídy přidejte tato tři pole:
 
 ```csharp
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+static readonly CancellationTokenSource s_cts = new CancellationTokenSource();
 
-// Add a using directive and a reference for System.Net.Http.
-using System.Net.Http;
-
-// Add the following using directive for System.Threading.
-using System.Threading;
-
-namespace CancelAListOfTasks
+static readonly HttpClient s_client = new HttpClient
 {
-    public partial class MainWindow : Window
+    MaxResponseContentBufferSize = 1_000_000
+};
+
+static readonly IEnumerable<string> s_urlList = new string[]
+{
+    "https://docs.microsoft.com",
+    "https://docs.microsoft.com/aspnet/core",
+    "https://docs.microsoft.com/azure",
+    "https://docs.microsoft.com/azure/devops",
+    "https://docs.microsoft.com/dotnet",
+    "https://docs.microsoft.com/dynamics365",
+    "https://docs.microsoft.com/education",
+    "https://docs.microsoft.com/enterprise-mobility-security",
+    "https://docs.microsoft.com/gaming",
+    "https://docs.microsoft.com/graph",
+    "https://docs.microsoft.com/microsoft-365",
+    "https://docs.microsoft.com/office",
+    "https://docs.microsoft.com/powershell",
+    "https://docs.microsoft.com/sql",
+    "https://docs.microsoft.com/surface",
+    "https://docs.microsoft.com/system-center",
+    "https://docs.microsoft.com/visualstudio",
+    "https://docs.microsoft.com/windows",
+    "https://docs.microsoft.com/xamarin"
+};
+```
+
+<xref:System.Threading.CancellationTokenSource>Slouží k signalizaci požadovaného zrušení na <xref:System.Threading.CancellationToken> . `HttpClient`Zpřístupňuje možnost odesílat požadavky HTTP a přijímat odpovědi HTTP. `s_urlList`Obsahuje všechny adresy URL, které aplikace plánuje zpracovat.
+
+## <a name="update-application-entry-point"></a>Aktualizovat vstupní bod aplikace
+
+Hlavní vstupní bod do konzolové aplikace je `Main` metoda. Existující metodu nahraďte následujícím způsobem:
+
+```csharp
+static async Task Main()
+{
+    Console.WriteLine("Application started.");
+    Console.WriteLine("Press the ENTER key to cancel...\n");
+
+    Task cancelTask = Task.Run(() =>
     {
-        // Declare a System.Threading.CancellationTokenSource.
-        CancellationTokenSource cts;
-
-        public MainWindow()
+        while (Console.ReadKey().Key != ConsoleKey.Enter)
         {
-            InitializeComponent();
+            Console.WriteLine("Press the ENTER key to cancel...");
         }
 
-        private async void startButton_Click(object sender, RoutedEventArgs e)
-        {
-            // Instantiate the CancellationTokenSource.
-            cts = new CancellationTokenSource();
+        Console.WriteLine("\nENTER key pressed: cancelling downloads.\n");
+        s_cts.Cancel();
+    });
 
-            resultsTextBox.Clear();
+    Task sumPageSizesTask = SumPageSizesAsync();
 
-            try
-            {
-                await AccessTheWebAsync(cts.Token);
-                // ***Small change in the display lines.
-                resultsTextBox.Text += "\r\nDownloads complete.";
-            }
-            catch (OperationCanceledException)
-            {
-                resultsTextBox.Text += "\r\nDownloads canceled.";
-            }
-            catch (Exception)
-            {
-                resultsTextBox.Text += "\r\nDownloads failed.";
-            }
+    await Task.WhenAny(new[] { cancelTask, sumPageSizesTask });
 
-            // Set the CancellationTokenSource to null when the download is complete.
-            cts = null;
-        }
-
-        // Add an event handler for the Cancel button.
-        private void cancelButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (cts != null)
-            {
-                cts.Cancel();
-            }
-        }
-
-        // Provide a parameter for the CancellationToken.
-        // ***Change the return type to Task because the method has no return statement.
-        async Task AccessTheWebAsync(CancellationToken ct)
-        {
-            // Declare an HttpClient object.
-            HttpClient client = new HttpClient();
-
-            // ***Call SetUpURLList to make a list of web addresses.
-            List<string> urlList = SetUpURLList();
-
-            // ***Add a loop to process the list of web addresses.
-            foreach (var url in urlList)
-            {
-                // GetAsync returns a Task<HttpResponseMessage>.
-                // Argument ct carries the message if the Cancel button is chosen.
-                // ***Note that the Cancel button can cancel all remaining downloads.
-                HttpResponseMessage response = await client.GetAsync(url, ct);
-
-                // Retrieve the website contents from the HttpResponseMessage.
-                byte[] urlContents = await response.Content.ReadAsByteArrayAsync();
-
-                resultsTextBox.Text +=
-                    $"\r\nLength of the downloaded string: {urlContents.Length}.\r\n";
-            }
-        }
-
-        // ***Add a method that creates a list of web addresses.
-        private List<string> SetUpURLList()
-        {
-            List<string> urls = new List<string>
-            {
-                "https://msdn.microsoft.com",
-                "https://msdn.microsoft.com/library/hh290138.aspx",
-                "https://msdn.microsoft.com/library/hh290140.aspx",
-                "https://msdn.microsoft.com/library/dd470362.aspx",
-                "https://msdn.microsoft.com/library/aa578028.aspx",
-                "https://msdn.microsoft.com/library/ms404677.aspx",
-                "https://msdn.microsoft.com/library/ff730837.aspx"
-            };
-            return urls;
-        }
-    }
-
-    // Output if you do not choose to cancel:
-
-    //Length of the downloaded string: 35939.
-
-    //Length of the downloaded string: 237682.
-
-    //Length of the downloaded string: 128607.
-
-    //Length of the downloaded string: 158124.
-
-    //Length of the downloaded string: 204890.
-
-    //Length of the downloaded string: 175488.
-
-    //Length of the downloaded string: 145790.
-
-    //Downloads complete.
-
-    // Sample output if you choose to cancel:
-
-    //Length of the downloaded string: 35939.
-
-    //Length of the downloaded string: 237682.
-
-    //Length of the downloaded string: 128607.
-
-    //Downloads canceled.
+    Console.WriteLine("Application ending.");
 }
 ```
+
+Aktualizovaná `Main` Metoda je nyní považována za [asynchronní hlavní](../../../whats-new/csharp-7-1.md#async-main), což umožňuje asynchronní vstupní bod do spustitelného souboru. Zapisuje do konzoly několik pokynů a pak deklaruje <xref:System.Threading.Tasks.Task> instanci nazvanou `cancelTask` , která načte tahy kláves konzoly. Při stisknutí klávesy <kbd>ENTER</kbd> se <xref:System.Threading.CancellationTokenSource.Cancel?displayProperty=nameWithType> provede volání. Tato akce zruší zrušení signálu. Dále `sumPageSizesTask` je proměnná přiřazena z `SumPageSizesAsync` metody. Oba úkoly jsou následně předány do <xref:System.Threading.Tasks.Task.WhenAny(System.Threading.Tasks.Task[])?displayProperty=nameWithType> , což bude pokračovat po dokončení kterékoli ze dvou úloh.
+
+## <a name="create-the-asynchronous-sum-page-sizes-method"></a>Vytvořit metodu asynchronní velikosti stránek součtu
+
+Pod `Main` metodu přidejte `SumPageSizesAsync` metodu:
+
+```csharp
+static async Task SumPageSizesAsync()
+{
+    var stopwatch = Stopwatch.StartNew();
+
+    int total = 0;
+    foreach (string url in s_urlList)
+    {
+        int contentLength = await ProcessUrlAsync(url, s_client, s_cts.Token);
+        total += contentLength;
+    }
+
+    stopwatch.Stop();
+
+    Console.WriteLine($"\nTotal bytes returned:  {total:#,#}");
+    Console.WriteLine($"Elapsed time:          {stopwatch.Elapsed}\n");
+}
+```
+
+Metoda začíná vytvořením instance a spuštěním <xref:System.Diagnostics.Stopwatch> . Pak projde každou adresu URL v `s_urlList` voláních a `ProcessUrlAsync` . Při každé iteraci se `s_cts.Token` předává do `ProcessUrlAsync` metody a kód vrátí <xref:System.Threading.Tasks.Task%601> , kde `TResult` je celé číslo:
+
+```csharp
+int total = 0;
+foreach (string url in s_urlList)
+{
+    int contentLength = await ProcessUrlAsync(url, s_client, s_cts.Token);
+    total += contentLength;
+}
+```
+
+## <a name="add-process-method"></a>Přidat metodu procesu
+
+Do metody přidejte následující `ProcessUrlAsync` metodu `SumPageSizesAsync` :
+
+```csharp
+static async Task<int> ProcessUrlAsync(string url, HttpClient client, CancellationToken token)
+{
+    HttpResponseMessage response = await client.GetAsync(url, token);
+    byte[] content = await response.Content.ReadAsByteArrayAsync(token);
+    Console.WriteLine($"{url,-60} {content.Length,10:#,#}");
+
+    return content.Length;
+}
+```
+
+Pro všechny zadané adresy URL metoda použije `client` poskytnutou instanci k získání odpovědi jako `byte[]` . <xref:System.Threading.CancellationToken>Instance je předána do <xref:System.Net.Http.HttpClient.GetAsync(System.String,System.Threading.CancellationToken)?displayProperty=nameWithType> metod a <xref:System.Net.Http.HttpContent.ReadAsByteArrayAsync(System.Threading.CancellationToken)?displayProperty=nameWithType> . `token`Slouží k registraci k požadovanému zrušení. Délka se vrátí po zápisu adresy URL a délky do konzoly.
+
+### <a name="example-application-output"></a>Příklad výstupu aplikace
+
+```console
+Application started.
+Press the ENTER key to cancel...
+
+https://docs.microsoft.com                                       37,357
+https://docs.microsoft.com/aspnet/core                           85,589
+https://docs.microsoft.com/azure                                398,939
+https://docs.microsoft.com/azure/devops                          73,663
+https://docs.microsoft.com/dotnet                                67,452
+https://docs.microsoft.com/dynamics365                           48,582
+https://docs.microsoft.com/education                             22,924
+
+ENTER key pressed: cancelling downloads.
+
+Application ending.
+```
+
+## <a name="complete-example"></a>Kompletní příklad
+
+Následující kód je úplný text souboru *program.cs* pro příklad.
+
+:::code language="csharp" source="snippets/cancel-tasks/cancel-tasks/Program.cs":::
 
 ## <a name="see-also"></a>Viz také
 
-- <xref:System.Threading.CancellationTokenSource>
 - <xref:System.Threading.CancellationToken>
-- [Asynchronní programování s modifikátorem Async a operátoru Await (C#)](./index.md)
-- [Vyladění aplikace s modifikátorem Async (C#)](./fine-tuning-your-async-application.md)
-- [Asynchronní vzorek: jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)
+- <xref:System.Threading.CancellationTokenSource>
+- [Asynchronní programování s modifikátorem Async a operátoru Await (C#)](index.md)
+
+## <a name="next-steps"></a>Další kroky
+
+> [!div class="nextstepaction"]
+> [Zrušení asynchronních úloh po určitém časovém intervalu (C#)](cancel-async-tasks-after-a-period-of-time.md)

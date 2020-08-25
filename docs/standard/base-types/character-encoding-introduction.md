@@ -10,12 +10,12 @@ dev_langs:
 - csharp
 helpviewer_keywords:
 - encoding, understanding
-ms.openlocfilehash: a5d838176bf4437a295ebe6c2cea8b1fe0eeeb61
-ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
+ms.openlocfilehash: d1f9878c7e7c07944a943c0b05e557ceaa5d1b2f
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88656290"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88812117"
 ---
 # <a name="character-encoding-in-net"></a>Kódování znaků v rozhraní .NET
 
@@ -89,7 +89,7 @@ V předchozím příkladu každý char Acter s výjimkou místa je reprezentová
 
 Jedna Emoji Unicode je také zastoupena dvěma `char` s, jak je vidět v následujícím příkladu, který ukazuje Ox Emoji:
 
-```
+```output
 "🐂".Length = 2
 s[0] = '�' ('\ud83d')
 s[1] = '�' ('\udc02')
@@ -109,7 +109,7 @@ Tady jsou některé příklady přiřazení bodů kódu s odkazy na sadu Unicode
 
 |Decimal|Soustavy       |Příklad|Popis|
 |------:|----------|-------|-----------|
-|10     | `U+000A` |–| [ČÁROVÝ KANÁL](https://www.unicode.org/charts/PDF/U0000.pdf) |
+|10     | `U+000A` |Není k dispozici| [ČÁROVÝ KANÁL](https://www.unicode.org/charts/PDF/U0000.pdf) |
 |65     | `U+0061` | pro | [MALÉ PÍSMENO LATINKY A](https://www.unicode.org/charts/PDF/U0000.pdf) |
 |562    | `U+0232` | Ȳ | [VELKÉ PÍSMENO LATINKY Y S POMLČKOU](https://www.unicode.org/charts/PDF/U0180.pdf) |
 |68 675 | `U+10C43`| 𐱃 | [STARÉ ORKHONOVÉ DOPISY V](https://www.unicode.org/charts/PDF/U10C00.pdf) |
@@ -384,7 +384,7 @@ string asString = encoding.GetString(utf8Bytes); // will throw if 'utf8Bytes' is
 
 Informace o použití vestavěných `Encoding` tříd naleznete v tématu [How to use char Acter Encoding Classes in .NET](character-encoding.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.String>
 - <xref:System.Char>

@@ -1,14 +1,14 @@
 ---
-ms.openlocfilehash: 1356f3eee5e2d8090d7d96aafc07a19507a1aff1
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: 96c2a32dd7cca91e965601d715bbd4625bba439a
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83721037"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88811255"
 ---
 ### <a name="mvc-jsonresult-moved-to-microsoftaspnetcoremvccore"></a>MVC: JsonResult se přesunula do Microsoft. AspNetCore. Mvc. Core.
 
-`JsonResult`byl přesunut do `Microsoft.AspNetCore.Mvc.Core` sestavení. Tento typ se používá pro definování v [Microsoft. AspNetCore. Mvc. formátovací modul. JSON](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.Formatters.Json). Byl přidán atribut na úrovni sestavení [[TypeForwardedTo]](xref:System.Runtime.CompilerServices.TypeForwardedToAttribute) k `Microsoft.AspNetCore.Mvc.Formatters.Json` tomuto problému pro většinu uživatelů. V aplikacích, které používají knihovny třetích stran, může dojít k problémům.
+`JsonResult` byl přesunut do `Microsoft.AspNetCore.Mvc.Core` sestavení. Tento typ se používá pro definování v [Microsoft.AspNetCore.Mvc.Formatters.Js](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.Formatters.Json). Byl přidán atribut na úrovni sestavení [[TypeForwardedTo]](xref:System.Runtime.CompilerServices.TypeForwardedToAttribute) k `Microsoft.AspNetCore.Mvc.Formatters.Json` tomuto problému pro většinu uživatelů. V aplikacích, které používají knihovny třetích stran, může dojít k problémům.
 
 #### <a name="version-introduced"></a>Představená verze
 
@@ -22,7 +22,7 @@ Aplikace, která používá sestavení knihovny založené na 2,2, se úspěšn�
 
 V aplikaci, která používá knihovnu založenou na 2,2, se kompilace nezdařila. K dispozici je chyba obsahující variaci následujícího textu:
 
-```
+```output
 The type 'JsonResult' exists in both 'Microsoft.AspNetCore.Mvc.Core, Version=3.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' and 'Microsoft.AspNetCore.Mvc.Formatters.Json, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'
 ```
 
@@ -38,7 +38,7 @@ Knihovny zkompilované proti verzi 2,2 nástroje `Microsoft.AspNetCore.Mvc.Forma
 
 #### <a name="category"></a>Kategorie
 
-Jádro ASP.NET
+ASP.NET Core
 
 #### <a name="affected-apis"></a>Ovlivněná rozhraní API
 

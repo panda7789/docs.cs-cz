@@ -2,12 +2,12 @@
 title: Publikování konzolové aplikace .NET Core pomocí Visual Studio Code
 description: Publikování vytvoří sadu souborů, které jsou nutné ke spuštění aplikace .NET Core.
 ms.date: 07/04/2020
-ms.openlocfilehash: 8fd9975e8a88704b9dea45b40127c8dc03f7d09f
-ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
+ms.openlocfilehash: 04dfbae85f196ca4c8f8eb593637a801aa9773f2
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86051880"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88811389"
 ---
 # <a name="tutorial-publish-a-net-core-console-application-using-visual-studio-code"></a>Kurz: publikování konzolové aplikace .NET Core pomocí Visual Studio Code
 
@@ -15,13 +15,13 @@ V tomto kurzu se dozvíte, jak publikovat konzolovou aplikaci, aby ji ostatní u
 
 .NET Core CLI slouží k publikování aplikace, takže můžete postupovat podle tohoto kurzu s jiným editorem kódu, než Visual Studio Code, pokud dáváte přednost.
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 - Tento kurz spolupracuje s konzolovou aplikací, kterou vytvoříte v části [Vytvoření konzolové aplikace .NET Core v Visual Studio Code](with-visual-studio-code.md).
 
 ## <a name="publish-the-app"></a>Publikování aplikace
 
-1. Spusťte Visual Studio Code.
+1. Spuštění nástroje Visual Studio Code
 
 1. Otevřete složku projektu *HelloWorld* , kterou jste vytvořili v [části Vytvoření konzolové aplikace .net Core v Visual Studio Code](with-visual-studio-code.md).
 
@@ -39,7 +39,7 @@ V tomto kurzu se dozvíte, jak publikovat konzolovou aplikaci, aby ji ostatní u
 
    Výstup příkazu je podobný následujícímu příkladu:
 
-   ```
+   ```output
    Microsoft (R) Build Engine version 16.6.0+5ff7b0c9e for .NET Core
    Copyright (C) Microsoft Corporation. All rights reserved.
 
@@ -97,7 +97,7 @@ V následujících krocích se podíváte na soubory vytvořené procesem publik
 
    1. Do příkazového řádku zadejte název a stiskněte libovolnou klávesu pro ukončení.
 
-1. Na libovolné platformě spusťte aplikaci pomocí [`dotnet`](../tools/dotnet.md) příkazu:
+1. Na libovolné platformě spusťte aplikaci pomocí  [`dotnet`](../tools/dotnet.md) příkazu:
 
    1. Zadejte `dotnet HelloWorld.dll` a stiskněte klávesu <kbd>ENTER</kbd>.
 

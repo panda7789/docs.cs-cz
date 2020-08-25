@@ -10,12 +10,12 @@ helpviewer_keywords:
 - catch keyword [C#]
 - try-catch statement [C#]
 ms.assetid: cb5503c7-bfa1-4610-8fc2-ddcd2e84c438
-ms.openlocfilehash: 4715a27a94ac86c5e4955c0e8be95c6ee4a28507
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: bb81ddbe631fedfcfe247c6e62580de679ad972f
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85619699"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88812299"
 ---
 # <a name="try-catch-c-reference"></a>try-catch (Referenční dokumentace jazyka C#)
 
@@ -129,11 +129,11 @@ Další informace o catch naleznete v tématu [try-catch-finally](try-catch-fina
 
 ## <a name="exceptions-in-async-methods"></a>Výjimky v asynchronních metodách
 
-Asynchronní metoda je označena modifikátorem [Async](async.md) a obvykle obsahuje jeden nebo více výrazů nebo příkazů await. Výraz Await aplikuje operátor [await](../operators/await.md) na <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601> .
+Asynchronní metoda je označena modifikátorem  [Async](async.md) a obvykle obsahuje jeden nebo více výrazů nebo příkazů await. Výraz Await aplikuje operátor [await](../operators/await.md) na <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601> .
 
-Když ovládací prvek dosáhne `await` v asynchronní metodě, je průběh metody pozastaven, dokud se nedokončí dokončená úloha. Po dokončení úlohy může provádění pokračovat v metodě. Další informace naleznete v tématu [asynchronní programování pomocí asynchronního a operátoru await](../../programming-guide/concepts/async/index.md) a [řízení toku v asynchronních programech](../../programming-guide/concepts/async/control-flow-in-async-programs.md).
+Když ovládací prvek dosáhne `await` v asynchronní metodě, je průběh metody pozastaven, dokud se nedokončí dokončená úloha. Po dokončení úlohy může provádění pokračovat v metodě. Další informace naleznete v tématu [asynchronní programování s Async a await](../../programming-guide/concepts/async/index.md).
 
-Dokončený úkol, ke kterému `await` je použito, může být v chybovém stavu z důvodu neošetřené výjimky v metodě, která vrací úlohu. Čekání na úkol vyvolá výjimku. Úloha může také končit ve zrušeném stavu, pokud asynchronní proces, který je vrátí, je zrušen. Čekání na zrušený úkol vyvolá výjimku `OperationCanceledException` . Další informace o tom, jak zrušit asynchronní proces, naleznete v tématu [jemné ladění asynchronní aplikace](../../programming-guide/concepts/async/fine-tuning-your-async-application.md).
+Dokončený úkol, ke kterému `await` je použito, může být v chybovém stavu z důvodu neošetřené výjimky v metodě, která vrací úlohu. Čekání na úkol vyvolá výjimku. Úloha může také končit ve zrušeném stavu, pokud asynchronní proces, který je vrátí, je zrušen. Čekání na zrušený úkol vyvolá výjimku `OperationCanceledException` .
 
 Chcete-li zachytit výjimku, očekávat úlohu v `try` bloku a zachytit výjimku v přidruženém `catch` bloku. Příklad naleznete v části [příklad asynchronní metody](#async-method-example) .
 
@@ -177,7 +177,7 @@ Každá ze tří úkolů způsobuje výjimku. `catch`Blok prochází výjimky, k
 
 Další informace naleznete v oddílu [Try příkazu](~/_csharplang/spec/statements.md#the-try-statement) [specifikace jazyka C#](~/_csharplang/spec/introduction.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Reference jazyka C#](../index.md)
 - [Průvodce programováním v C#](../../programming-guide/index.md)

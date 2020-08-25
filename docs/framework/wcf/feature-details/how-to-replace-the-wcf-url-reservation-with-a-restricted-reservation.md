@@ -2,12 +2,12 @@
 title: 'Postupy: Nahrazení rezervace adresy URL služby WCF omezenou rezervací'
 ms.date: 03/30/2017
 ms.assetid: 2754d223-79fc-4e2b-a6ce-989889f2abfa
-ms.openlocfilehash: 780a2c7fe240ed624ff106e8157661f8b76b32bd
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: a7025636bb1ca2ef250d7d25634bda961f2db09d
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202362"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88811610"
 ---
 # <a name="how-to-replace-the-wcf-url-reservation-with-a-restricted-reservation"></a>Postupy: Nahrazení rezervace adresy URL služby WCF omezenou rezervací
 
@@ -17,7 +17,7 @@ Rezervace adresy URL umožňuje omezit, kdo může přijímat zprávy z adresy U
   
 V systému Windows Vista nebo Windows Server 2008 můžete zadáním příkazu Zobrazit všechny rezervace adres URL protokolu HTTP z příkazového řádku se zvýšenými oprávněními `netsh http show urlacl` . Následující příklad ukazuje, co se má podobat rezervaci adresy URL WCF:
 
-```
+```output
 Reserved URL : http://+:80/Temporary_Listen_Addresses/  
         User: \Everyone  
             Listen: Yes  

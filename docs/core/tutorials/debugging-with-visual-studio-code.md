@@ -2,18 +2,18 @@
 title: Ladění konzolové aplikace .NET Core pomocí Visual Studio Code
 description: Naučte se ladit konzolovou aplikaci .NET Core pomocí Visual Studio Code.
 ms.date: 05/26/2020
-ms.openlocfilehash: 40e9b114df1bd12fb05bfb773781d6009d087a06
-ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
+ms.openlocfilehash: 84c7b64ad7708cf2def084593cd7f96eb0ad82e5
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84702124"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88810661"
 ---
 # <a name="tutorial-debug-a-net-core-console-application-using-visual-studio-code"></a>Kurz: ladění konzolové aplikace .NET Core pomocí Visual Studio Code
 
 Tento kurz zavádí ladicí nástroje, které jsou k dispozici v Visual Studio Code pro práci s aplikacemi .NET Core.
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 - Tento kurz spolupracuje s konzolovou aplikací, kterou vytvoříte v části [Vytvoření konzolové aplikace .NET Core v Visual Studio Code](with-visual-studio-code.md).
 
@@ -25,7 +25,7 @@ V konfiguraci ladění program kompiluje s úplnými symbolickými informacemi o
 
 Ve výchozím nastavení Visual Studio Code spuštění nastavení používá konfiguraci sestavení ladění, takže je nemusíte před laděním měnit.
 
-1. Spusťte Visual Studio Code.
+1. Spuštění nástroje Visual Studio Code
 
 1. Otevřete složku projektu, který jste vytvořili v [části Vytvoření konzolové aplikace .NET Core v Visual Studio Code](with-visual-studio-code.md).
 
@@ -51,13 +51,13 @@ Zarážka je umístěna po `Console.ReadLine` volání metody. **Konzola laděn�
 
    Z:
 
-   ```
+   ```json
    "console": "internalConsole",
    ```
 
    Do:
 
-   ```
+   ```json
    "console": "integratedTerminal",
    ```
 

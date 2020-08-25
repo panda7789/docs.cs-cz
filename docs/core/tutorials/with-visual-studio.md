@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: fbe0b3491260e787c08b98b320b19408f2c897eb
-ms.sourcegitcommit: 09bad6ec0cbf18be7cd7f62e77286d305a18b607
+ms.openlocfilehash: c732728a98eb993762e4fbb9e4b0f5229fdde181
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87795382"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88811841"
 ---
 # <a name="tutorial-create-a-net-core-console-application-using-visual-studio"></a>Kurz: Vytvoření konzolové aplikace .NET Core pomocí sady Visual Studio
 
@@ -73,7 +73,7 @@ Module Program
 End Module
 ```
 
-`Main`je vstupním bodem aplikace, metodou, která je automaticky volána modulem runtime při spuštění aplikace. Jakékoli argumenty příkazového řádku, které jsou zadány při spuštění aplikace, jsou k dispozici v poli *args* .
+`Main` je vstupním bodem aplikace, metodou, která je automaticky volána modulem runtime při spuštění aplikace. Jakékoli argumenty příkazového řádku, které jsou zadány při spuštění aplikace, jsou k dispozici v poli *args* .
 
 Pokud jazyk, který chcete použít, není zobrazen, změňte selektor jazyka v horní části stránky.
 
@@ -96,7 +96,7 @@ Vylepšete aplikaci, aby se uživateli zobrazila výzva k zadání názvu a zobr
    :::code language="csharp" source="./snippets/with-visual-studio/csharp/Program.cs" id="MainMethod":::
    :::code language="vb" source="./snippets/with-visual-studio/vb/Program.vb" id="MainMethod":::
 
-   Tento kód zobrazí "" Jaké je vaše jméno? " v okně konzoly a počkejte, dokud uživatel nezadá řetězec následovaný klávesou <kbd>ENTER</kbd> . Tento řetězec je uložen v proměnné s názvem `name` . Načte také hodnotu <xref:System.DateTime.Now?displayProperty=nameWithType> vlastnosti, která obsahuje aktuální místní čas a přiřadí ji k proměnné s názvem `date` ( `currentDate` v Visual Basic). Nakonec tyto hodnoty zobrazí v okně konzoly.
+   Tento kód zobrazí příkazový řádek v okně konzoly a počká, dokud uživatel nezadá řetězec následovaný klávesou <kbd>ENTER</kbd> . Tento řetězec je uložen v proměnné s názvem `name` . Načte také hodnotu <xref:System.DateTime.Now?displayProperty=nameWithType> vlastnosti, která obsahuje aktuální místní čas a přiřadí ji k proměnné s názvem `date` ( `currentDate` v Visual Basic). V okně konzoly se zobrazí tyto hodnoty. Nakonec se zobrazí výzva v okně konzoly a volá <xref:System.Console.ReadKey(System.Boolean)?displayProperty=nameWithType> metodu, která čeká na vstup uživatele.
 
    `\n`( `vbCrLf` V Visual Basic) představuje znak nového řádku.
 

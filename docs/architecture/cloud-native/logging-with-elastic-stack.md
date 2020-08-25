@@ -2,12 +2,12 @@
 title: Protokolování pomocí řešení Elastic Stack
 description: Protokolování pomocí elastického zásobníku, Logstash a Kibana
 ms.date: 05/13/2020
-ms.openlocfilehash: e886141fa691b75b882b5d67eae4ceb242e8089f
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 32d9d0dae175d8d45d48b56d17f133b4cc432363
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83613847"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88811168"
 ---
 # <a name="logging-with-elastic-stack"></a>Protokolování pomocí řešení Elastic Stack
 
@@ -81,7 +81,7 @@ Protokolované zprávy, které byly vytvořené tak, aby obsahovaly parametry ne
 
 Dotaz, který vyhledává prvních 10 navštívených stránek `jill@example.com` , se zobrazí na obrázku 7-9.
 
-```
+```json
 "query": {
     "match": {
       "user": "jill@example.com"
@@ -111,7 +111,7 @@ Možnost s menší režií je použití jednoho z mnoha kontejnerů Docker, na k
 
 Další možností je [nedávno ohlášená nabídka Elk jako služba](https://devops.com/logz-io-unveils-azure-open-source-elk-monitoring-solution/).
 
-## <a name="references"></a>Odkazy
+## <a name="references"></a>Reference
 
 - [Instalace elastického zásobníku v Azure](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-elasticsearch)
 

@@ -4,12 +4,12 @@ description: V tomto kurzu se naučíte, jak kontejnerizace aplikaci .NET Core p
 ms.date: 04/27/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: c5e6648539af45f3ce615bfc183e6f95a62b085a
-ms.sourcegitcommit: 5988e9a29cedb8757320817deda3c08c6f44a6aa
+ms.openlocfilehash: 99bbc67096d98622ca5c0dc83d8b1be44a9995e5
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82200025"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88810544"
 ---
 # <a name="tutorial-containerize-a-net-core-app"></a>Kurz: kontejnerizace aplikace .NET Core
 
@@ -29,7 +29,7 @@ Porozumíte sestavení kontejneru Docker a nasazování úloh pro aplikaci .NET 
 > [!NOTE]
 > Tento kurz **není** pro aplikace ASP.NET Core. Pokud používáte ASP.NET Core, přečtěte si kurz týkající se [kontejnerizace ASP.NET Core aplikace](/aspnet/core/host-and-deploy/docker/building-net-docker-images) .
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 Nainstalujte následující požadavky:
 
@@ -61,7 +61,7 @@ docker-working
             └──project.nuget.cache
 ```
 
-`dotnet new` Příkaz vytvoří novou složku s názvem *App* a vygeneruje konzolovou aplikaci "Hello World". Změňte adresáře a přejděte do složky *aplikace* z relace terminálu. Aplikaci spustíte `dotnet run` pomocí příkazu. Aplikace se spustí a vytiskne `Hello World!` se pod příkazem:
+`dotnet new`Příkaz vytvoří novou složku s názvem *App* a vygeneruje konzolovou aplikaci "Hello World". Změňte adresáře a přejděte do složky *aplikace* z relace terminálu. `dotnet run`Aplikaci spustíte pomocí příkazu. Aplikace se spustí a vytiskne se `Hello World!` pod příkazem:
 
 ```dotnetcli
 dotnet run
@@ -73,7 +73,7 @@ Výchozí šablona vytvoří aplikaci, která se tiskne do terminálu a následn
 > [!TIP]
 > Pokud používáte Visual Studio Code, v předchozí relaci terminálu zadejte následující příkaz:
 >
-> ```
+> ```console
 > code .
 > ```
 >
@@ -120,7 +120,7 @@ namespace NetCore.Docker
 }
 ```
 
-Uložte soubor a otestujte program znovu pomocí `dotnet run`. Mějte na paměti, že tato aplikace bude běžet po neomezenou dobu. K zastavení použijte příkaz zrušit <kbd>CTRL + C</kbd> . Následuje příklad výstupu:
+Uložte soubor a otestujte program znovu pomocí `dotnet run` . Mějte na paměti, že tato aplikace bude běžet po neomezenou dobu. K zastavení použijte příkaz zrušit <kbd>CTRL + C</kbd> . Následuje příklad výstupu:
 
 ```dotnetcli
 dotnet run
@@ -144,11 +144,11 @@ Před přidáním aplikace .NET Core do image Docker je třeba nejdřív publiko
 dotnet publish -c Release
 ```
 
-Tento příkaz zkompiluje vaši aplikaci do složky pro *publikování* . Cesta ke složce pro *publikování* z pracovní složky by měla být`.\App\bin\Release\netcoreapp3.1\publish\`
+Tento příkaz zkompiluje vaši aplikaci do složky pro *publikování* . Cesta ke složce pro *publikování* z pracovní složky by měla být `.\App\bin\Release\netcoreapp3.1\publish\`
 
 #### <a name="windows"></a>[Windows](#tab/windows)
 
-Ve složce *aplikace* Získejte výpis adresáře složky pro publikování, abyste ověřili, že byl vytvořen soubor *Netcore. Docker. dll* .
+Ve složce *aplikace* Získejte výpis adresáře složky pro publikování, aby bylo možné ověřit, zda byl soubor *NetCore.Docker.dll* vytvořen.
 
 ```powershell
 dir .\bin\Release\netcoreapp3.1\publish\
@@ -166,7 +166,7 @@ Mode                LastWriteTime         Length Name
 
 #### <a name="linux"></a>[Linux](#tab/linux)
 
-Pomocí `ls` příkazu Získejte výpis adresáře a ověřte, zda byl vytvořen soubor *Netcore. Docker. dll* .
+Pomocí `ls` příkazu Získejte výpis adresáře a ověřte, zda byl soubor *NetCore.Docker.dll* vytvořen.
 
 ```bash
 me@DESKTOP:/docker-working/app$ ls bin/Release/netcoreapp3.1/publish
@@ -186,9 +186,9 @@ FROM mcr.microsoft.com/dotnet/core/aspnet:3.1
 ```
 
 > [!NOTE]
-> Bitová kopie ASP.NET Core Runtime se tady používá záměrně, i když `mcr.microsoft.com/dotnet/core/runtime:3.1` se image mohla použít.
+> Bitová kopie ASP.NET Core Runtime se tady používá záměrně, i když se `mcr.microsoft.com/dotnet/core/runtime:3.1` Image mohla použít.
 
-`FROM` Klíčové slovo vyžaduje plně kvalifikovaný název Image kontejneru Docker. Microsoft Container Registry (MCR, mcr.microsoft.com) je syndikátní služby Docker Hub, která hostuje veřejně přístupné kontejnery. `dotnet/core` Segment je úložiště kontejneru, kde jako `aspnet` segment je název Image kontejneru. Obrázek je označený jako `3.1`, který se používá pro správu verzí. Proto `mcr.microsoft.com/dotnet/core/aspnet:3.1` je modul runtime .net Core 3,1. Ujistěte se, že si vyžádáte verzi modulu runtime, která odpovídá modulu runtime, který cílí na vaši sadu SDK. Například aplikace vytvořená v předchozím oddílu používala sadu .NET Core 3,1 SDK a základní image, na kterou odkazuje *souboru Dockerfile* , jsou označené **3,1**.
+`FROM`Klíčové slovo vyžaduje plně kvalifikovaný název Image kontejneru Docker. Microsoft Container Registry (MCR, mcr.microsoft.com) je syndikátní služby Docker Hub, která hostuje veřejně přístupné kontejnery. `dotnet/core`Segment je úložiště kontejneru, kde jako `aspnet` segment je název Image kontejneru. Obrázek je označený jako `3.1` , který se používá pro správu verzí. Proto `mcr.microsoft.com/dotnet/core/aspnet:3.1` je modul runtime .NET Core 3,1. Ujistěte se, že si vyžádáte verzi modulu runtime, která odpovídá modulu runtime, který cílí na vaši sadu SDK. Například aplikace vytvořená v předchozím oddílu používala sadu .NET Core 3,1 SDK a základní image, na kterou odkazuje *souboru Dockerfile* , jsou označené **3,1**.
 
 Uložte soubor *souboru Dockerfile* . Adresářová struktura pracovní složky by měla vypadat takto. Některé soubory hlubší úrovně a složky byly vynechány, aby bylo možné ušetřit místo v tomto článku:
 
@@ -217,7 +217,7 @@ Z terminálu spusťte následující příkaz:
 docker build -t counter-image -f Dockerfile .
 ```
 
-Docker zpracuje každý řádek v *souboru Dockerfile*. `.` V `docker build` příkazu dá Docker pokyn k použití aktuální složky k vyhledání *souboru Dockerfile*. Tento příkaz sestaví image a vytvoří místní úložiště s názvem **Counter-image** , která odkazuje na tuto image. Po dokončení tohoto příkazu spusťte `docker images` příkaz a zobrazí se seznam nainstalovaných imagí:
+Docker zpracuje každý řádek v *souboru Dockerfile*. `.`V příkazu dá `docker build` Docker pokyn k použití aktuální složky k vyhledání *souboru Dockerfile*. Tento příkaz sestaví image a vytvoří místní úložiště s názvem **Counter-image** , která odkazuje na tuto image. Po dokončení tohoto příkazu spusťte příkaz `docker images` a zobrazí se seznam nainstalovaných imagí:
 
 ```Docker
 docker images
@@ -234,13 +234,13 @@ WORKDIR /App
 ENTRYPOINT ["dotnet", "NetCore.Docker.dll"]
 ```
 
-`COPY` Příkaz vyzve Docker ke zkopírování zadané složky ve vašem počítači do složky v kontejneru. V tomto příkladu je složka pro *publikování* zkopírována do složky s názvem *App* v kontejneru.
+`COPY`Příkaz vyzve Docker ke zkopírování zadané složky ve vašem počítači do složky v kontejneru. V tomto příkladu je složka pro *publikování* zkopírována do složky s názvem *App* v kontejneru.
 
-`WORKDIR` Příkaz změní **aktuální adresář** uvnitř kontejneru do *aplikace*.
+`WORKDIR`Příkaz změní **aktuální adresář** uvnitř kontejneru do *aplikace*.
 
-Následující příkaz `ENTRYPOINT`instruuje Docker ke konfiguraci kontejneru tak, aby běžel jako spustitelný soubor. Po spuštění kontejneru se `ENTRYPOINT` příkaz spustí. Po ukončení tohoto příkazu se kontejner automaticky zastaví.
+Následující příkaz `ENTRYPOINT` instruuje Docker ke konfiguraci kontejneru tak, aby běžel jako spustitelný soubor. Po spuštění kontejneru se `ENTRYPOINT` příkaz spustí. Po ukončení tohoto příkazu se kontejner automaticky zastaví.
 
-V terminálu spusťte `docker build -t counter-image -f Dockerfile .` příkaz a po jeho dokončení spusťte `docker images`příkaz.
+V terminálu spusťte `docker build -t counter-image -f Dockerfile .` příkaz a po jeho dokončení spusťte příkaz `docker images` .
 
 ```Docker
 docker build -t counter-image -f Dockerfile .
@@ -277,7 +277,7 @@ docker create --name core-counter counter-image
 0f281cb3af994fba5d962cc7d482828484ea14ead6bfe386a35e5088c0058851
 ```
 
-Výše `docker create` uvedený příkaz vytvoří kontejner založený na obrázku **čítače-obrázek** . Výstup tohoto příkazu ukazuje **ID kontejneru** (bude se lišit) vytvořeného kontejneru. Chcete-li zobrazit seznam *všech* kontejnerů, použijte `docker ps -a` příkaz:
+`docker create`Výše uvedený příkaz vytvoří kontejner založený na obrázku **čítače-obrázek** . Výstup tohoto příkazu ukazuje **ID kontejneru** (bude se lišit) vytvořeného kontejneru. Chcete-li zobrazit seznam *všech* kontejnerů, použijte `docker ps -a` příkaz:
 
 ```Docker
 docker ps -a
@@ -287,7 +287,7 @@ CONTAINER ID    IMAGE            COMMAND                   CREATED           STA
 
 ### <a name="manage-the-container"></a>Správa kontejneru
 
-Kontejner byl vytvořen s konkrétním názvem `core-counter`, tento název se používá ke správě kontejneru. Následující příklad používá `docker start` příkaz ke spuštění kontejneru a poté používá `docker ps` příkaz k zobrazení pouze kontejnerů, které jsou spuštěny:
+Kontejner byl vytvořen s konkrétním názvem `core-counter` , tento název se používá ke správě kontejneru. Následující příklad používá `docker start` příkaz ke spuštění kontejneru a poté používá `docker ps` příkaz k zobrazení pouze kontejnerů, které jsou spuštěny:
 
 ```Docker
 docker start core-counter
@@ -310,7 +310,7 @@ CONTAINER ID    IMAGE    COMMAND    CREATED    STATUS    PORTS    NAMES
 
 ### <a name="connect-to-a-container"></a>Připojit ke kontejneru
 
-Po spuštění kontejneru se k němu můžete připojit a zobrazit výstup. Použijte příkazy `docker start` a `docker attach` ke spuštění kontejneru a k prohlížení výstupního datového proudu. V tomto příkladu se k odpojení od běžícího kontejneru používá <kbd>Klávesová zkratka CTRL + C</kbd> . Tato klávesová zkratka ukončí proces v kontejneru, pokud není uvedeno jinak, což by zastavilo kontejner. `--sig-proxy=false` Parametr zajistí, že <kbd>CTRL + C</kbd> nebude proces v kontejneru zastavit.
+Po spuštění kontejneru se k němu můžete připojit a zobrazit výstup. Použijte `docker start` příkazy a `docker attach` ke spuštění kontejneru a k prohlížení výstupního datového proudu. V tomto příkladu se k odpojení od běžícího kontejneru používá <kbd>Klávesová zkratka CTRL + C</kbd> . Tato klávesová zkratka ukončí proces v kontejneru, pokud není uvedeno jinak, což by zastavilo kontejner. `--sig-proxy=false`Parametr zajistí, že <kbd>CTRL + C</kbd> nebude proces v kontejneru zastavit.
 
 Po odpojení od kontejneru znovu připojte, abyste ověřili, že pořád běží a počítá se.
 
@@ -355,7 +355,7 @@ CONTAINER ID    IMAGE    COMMAND    CREATED    STATUS    PORTS    NAMES
 
 ### <a name="single-run"></a>Jeden běh
 
-Docker poskytuje `docker run` příkaz pro vytvoření a spuštění kontejneru jako jediného příkazu. Tento příkaz eliminuje nutnost spuštění `docker create` a pak. `docker start` Tento příkaz lze také nastavit tak, aby při zastavení kontejneru automaticky odstranil kontejner. Například použijte `docker run -it --rm` k provedení dvou věcí, nejdřív, automatické použití aktuálního terminálu k připojení ke kontejneru a po dokončení kontejneru ho odeberte:
+Docker poskytuje `docker run` příkaz pro vytvoření a spuštění kontejneru jako jediného příkazu. Tento příkaz eliminuje nutnost spuštění `docker create` a pak `docker start` . Tento příkaz lze také nastavit tak, aby při zastavení kontejneru automaticky odstranil kontejner. Například použijte `docker run -it --rm` k provedení dvou věcí, nejdřív, automatické použití aktuálního terminálu k připojení ke kontejneru a po dokončení kontejneru ho odeberte:
 
 ```Docker
 docker run -it --rm counter-image
@@ -376,7 +376,7 @@ Counter: 2
 Counter: 3
 ```
 
-V `docker run -it`systému, příkaz <kbd>CTRL + C</kbd> zastaví proces, který je spuštěn v kontejneru, který zase zastaví kontejner. Vzhledem k `--rm` tomu, že byl zadán parametr, kontejner je automaticky odstraněn při zastavení procesu. Ověřte, že neexistuje:
+V systému `docker run -it` , příkaz <kbd>CTRL + C</kbd> zastaví proces, který je spuštěn v kontejneru, který zase zastaví kontejner. Vzhledem k tomu `--rm` , že byl zadán parametr, kontejner je automaticky odstraněn při zastavení procesu. Ověřte, že neexistuje:
 
 ```Docker
 docker ps -a
@@ -385,11 +385,11 @@ CONTAINER ID    IMAGE    COMMAND    CREATED    STATUS    PORTS    NAMES
 
 ### <a name="change-the-entrypoint"></a>Změnit vstupní bod
 
-`docker run` Příkaz také umožňuje upravit `ENTRYPOINT` příkaz z *souboru Dockerfile* a spustit něco jiného, ale pouze pro tento kontejner. Například použijte následující příkaz ke spuštění `bash` nebo. `cmd.exe` V případě potřeby upravte příkaz.
+`docker run`Příkaz také umožňuje upravit `ENTRYPOINT` příkaz z *souboru Dockerfile* a spustit něco jiného, ale pouze pro tento kontejner. Například použijte následující příkaz ke spuštění `bash` nebo `cmd.exe` . V případě potřeby upravte příkaz.
 
 #### <a name="windows"></a>[Windows](#tab/windows)
 
-V tomto příkladu `ENTRYPOINT` se změní na `cmd.exe`. Stisknutím <kbd>kombinace kláves CTRL + C</kbd> ukončíte proces a zastavíte kontejner.
+V tomto příkladu `ENTRYPOINT` se změní na `cmd.exe` . Stisknutím <kbd>kombinace kláves CTRL + C</kbd> ukončíte proces a zastavíte kontejner.
 
 ```Docker
 docker run -it --rm --entrypoint "cmd.exe" counter-image
@@ -416,7 +416,7 @@ C:\>^C
 
 #### <a name="linux"></a>[Linux](#tab/linux)
 
-V tomto příkladu `ENTRYPOINT` se změní na `bash`. `exit` Příkaz se spustí, který ukončí proces a zastaví kontejner.
+V tomto příkladu `ENTRYPOINT` se změní na `bash` . `exit`Příkaz se spustí, který ukončí proces a zastaví kontejner.
 
 ```bash
 docker run -it --rm --entrypoint "bash" counter-image

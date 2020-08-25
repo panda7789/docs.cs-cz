@@ -4,12 +4,12 @@ description: Naučte se, jak sestavit rozhraní .NET pro Apache Spark aplikaci v
 ms.date: 06/25/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 6d52e5be8c8e528880eece5a9b46fb08933c1eb3
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: d4755ff94ffc1f678bc078e382e353c203caba87
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85617662"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88812247"
 ---
 # <a name="learn-how-to-build-your-net-for-apache-spark-application-on-windows"></a>Informace o tom, jak sestavit rozhraní .NET pro Apache Spark aplikaci v systému Windows
 
@@ -17,7 +17,7 @@ V tomto článku se naučíte, jak sestavit rozhraní .NET pro Apache Spark apli
 
 [!INCLUDE [spark-preview-note](../../../includes/spark-preview-note.md)]
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 Pokud již máte všechny následující požadavky, přejděte k postupu [sestavení](#build) .
 
@@ -26,7 +26,7 @@ Pokud již máte všechny následující požadavky, přejděte k postupu [sesta
      * Vývoj pro desktopy .NET
        * Všechny požadované součásti
          * Vývojové nástroje .NET Framework 4.6.1
-     * Vývoj aplikací pro různé platformy pomocí rozhraní .NET Core
+     * Vývoj multiplatformních aplikací pomocí rozhraní .NET Core
        * Všechny požadované součásti
   3. Nainstalujte **[Java 1,8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)**.
      - Vyberte odpovídající verzi pro váš operační systém. Například *jdk-8u201-windows-x64.exe* pro počítač se systémem Windows x64.
@@ -53,7 +53,7 @@ Pokud již máte všechny následující požadavky, přejděte k postupu [sesta
      - Ověřte, že je možné spustit `spark-shell` z příkazového řádku.
         Ukázkový výstup konzoly:
 
-        ```
+        ```output
         Welcome to
               ____              __
              / __/__  ___ _____/ /__

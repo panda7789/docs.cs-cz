@@ -3,12 +3,12 @@ title: Přidání do formátu csproj pro .NET Core
 description: Přečtěte si o rozdílech mezi existujícími a soubory .NET Core csproj.
 ms.topic: reference
 ms.date: 04/08/2019
-ms.openlocfilehash: 82174b2976abda2337a4a9b5a5a5e1f60a1094fb
-ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
+ms.openlocfilehash: 7760dc095fa894b1f356c939eb030e675f58a876
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88608335"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88810882"
 ---
 # <a name="additions-to-the-csproj-format-for-net-core"></a>Přidání do formátu csproj pro .NET Core
 
@@ -20,13 +20,13 @@ Na metabalíčky se implicitně odkazuje na základě cílových rozhraní, kter
 
 ```xml
  <PropertyGroup>
-   <TargetFramework>netcoreapp2.1</TargetFramework>
+   <TargetFramework>netcoreapp3.1</TargetFramework>
  </PropertyGroup>
  ```
 
  ```xml
  <PropertyGroup>
-   <TargetFrameworks>netcoreapp2.1;net462</TargetFrameworks>
+   <TargetFrameworks>netcoreapp3.1;net462</TargetFrameworks>
  </PropertyGroup>
  ```
 
@@ -73,8 +73,8 @@ Následující tabulka ukazuje, který prvek a které [globy](https://en.wikiped
 
 | Prvek           | Zahrnout glob                              | Vyloučit glob                                                  | Odebrat glob              |
 |-------------------|-------------------------------------------|---------------------------------------------------------------|----------------------------|
-| Sestavení           | \*\*/\*cs (nebo jiné jazykové rozšíření) | \*\*/\*uživatelský  \*\*/\*.\* Souhrn  \*\*/\*. SLN  \*\*/\*. vssscc  | –                      |
-| EmbeddedResource  | \*\*/\*. resx                              | \*\*/\*uživatelský \*\*/\*.\* Souhrn \*\*/\*. SLN \*\*/\*. vssscc     | –                      |
+| Sestavení           | \*\*/\*cs (nebo jiné jazykové rozšíření) | \*\*/\*uživatelský  \*\*/\*.\* Souhrn  \*\*/\*. SLN  \*\*/\*. vssscc  | Není k dispozici                      |
+| EmbeddedResource  | \*\*/\*. resx                              | \*\*/\*uživatelský \*\*/\*.\* Souhrn \*\*/\*. SLN \*\*/\*. vssscc     | Není k dispozici                      |
 | Žádné              | \*\*/\*                                   | \*\*/\*uživatelský \*\*/\*.\* Souhrn \*\*/\*. SLN \*\*/\*. vssscc     | \*\*/\*cs \*\*/\*. RESX   |
 
 > [!NOTE]
@@ -116,11 +116,15 @@ Chcete-li zakázat **všechny implicitní globy**, můžete nastavit `<EnableDef
 
 I když tyto změny csproj značně zjednodušují soubory projektu, je možné, že budete chtít zobrazit plně rozbalený projekt jako nástroj MSBuild, jakmile bude sada SDK a její cíle zahrnuté. Projekt předzpracování pomocí [ `/pp` přepínače](/visualstudio/msbuild/msbuild-command-line-reference#preprocess) [`dotnet msbuild`](dotnet-msbuild.md) příkazu, který ukazuje, které soubory jsou importovány, jejich zdroje a jejich příspěvky na sestavení bez skutečného sestavení projektu:
 
-`dotnet msbuild -pp:fullproject.xml`
+```dotnetcli
+dotnet msbuild -pp:fullproject.xml
+```
 
 Pokud má projekt více cílových rozhraní, výsledky příkazu by měly být zaměřené jenom na jeden z nich zadáním jako vlastnost MSBuild:
 
-`dotnet msbuild -p:TargetFramework=netcoreapp2.0 -pp:fullproject.xml`
+```dotnetcli
+dotnet msbuild -p:TargetFramework=netcoreapp3.1 -pp:fullproject.xml
+```
 
 ## <a name="additions"></a>Rozšíření
 
@@ -218,10 +222,10 @@ Následující příklad poskytuje záložní hodnoty pro všechny cíle v proje
 </PackageTargetFallback >
 ```
 
-Následující příklad určuje pouze zálohy pro `netcoreapp2.1` cíl:
+Následující příklad určuje pouze zálohy pro `netcoreapp3.1` cíl:
 
 ```xml
-<PackageTargetFallback Condition="'$(TargetFramework)'=='netcoreapp2.1'">
+<PackageTargetFallback Condition="'$(TargetFramework)'=='netcoreapp3.1'">
     $(PackageTargetFallback);portable-net45+win8+wpa81+wp8
 </PackageTargetFallback >
 ```
@@ -267,7 +271,7 @@ Určuje verzi, kterou výsledný balíček bude mít. Akceptuje všechny formy �
 
 Určuje název výsledného balíčku. Pokud tento parametr nezadáte, použije se ve `pack` výchozím nastavení `AssemblyName` jako název balíčku název adresáře nebo.
 
-### <a name="title"></a>Title
+### <a name="title"></a>Nadpis
 
 Popisný název balíčku, který se obvykle používá v uživatelském rozhraní, se zobrazuje jako v nuget.org a správce balíčků v aplikaci Visual Studio. Pokud není zadaný, použije se místo toho ID balíčku.
 

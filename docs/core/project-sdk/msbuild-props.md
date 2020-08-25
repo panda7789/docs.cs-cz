@@ -3,12 +3,13 @@ title: Vlastnosti nástroje MSBuild pro Microsoft. NET. SDK
 description: Referenční informace o vlastnostech a položkách MSBuild, které jsou srozumitelné pro .NET Core SDK.
 ms.date: 02/14/2020
 ms.topic: reference
-ms.openlocfilehash: 7980369b87d606d3876fe043e929a65da1d0d92b
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.custom: updateeachrelease
+ms.openlocfilehash: 39cbd18121d2b8659b2f5270f39624798f4ebbdc
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87916255"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88810519"
 ---
 # <a name="msbuild-reference-for-net-core-sdk-projects"></a>Referenční dokumentace nástroje MSBuild pro projekty .NET Core SDK
 
@@ -97,10 +98,10 @@ Můžete zadat vlastnosti, například, `PackageId` , `PackageVersion` `PackageI
 
 ### <a name="runtimeidentifiers"></a>RuntimeIdentifiers
 
-`RuntimeIdentifiers`Vlastnost umožňuje určit seznam [identifikátorů modulu runtime (identifikátorů RID)](../rid-catalog.md) oddělených středníky pro projekt. Tuto vlastnost použijte v případě, že potřebujete publikovat více modulů runtime. `RuntimeIdentifiers`se používá v čase obnovení, aby se zajistilo, že jsou správné prostředky v grafu.
+`RuntimeIdentifiers`Vlastnost umožňuje určit seznam [identifikátorů modulu runtime (identifikátorů RID)](../rid-catalog.md) oddělených středníky pro projekt. Tuto vlastnost použijte v případě, že potřebujete publikovat více modulů runtime. `RuntimeIdentifiers` se používá v čase obnovení, aby se zajistilo, že jsou správné prostředky v grafu.
 
 > [!TIP]
-> `RuntimeIdentifier`(jednotné) může poskytovat rychlejší sestavení, pokud je potřeba jenom jeden modul runtime.
+> `RuntimeIdentifier` (jednotné) může poskytovat rychlejší sestavení, pokud je potřeba jenom jeden modul runtime.
 
 ```xml
 <PropertyGroup>
@@ -165,6 +166,50 @@ Ve výchozím nastavení je v novém projektu .NET Core Tato vlastnost nastavena
 ```
 
 Další informace najdete v tématu [Správa verzí jazyka C#](../../csharp/language-reference/configure-language-version.md#override-a-default).
+
+## <a name="code-analysis-properties"></a>Vlastnosti analýzy kódu
+
+### <a name="analysislevel"></a>AnalysisLevel
+
+`AnalysisLevel`Vlastnost umožňuje určit úroveň analýzy kódu. Například pokud chcete mít přístup k analyzátorům kódu ve verzi Preview, nastavte `AnalysisLevel` na `preview` . Výchozí hodnota je `latest`.
+
+```xml
+<PropertyGroup>
+  <AnalysisLevel>preview</AnalysisLevel>
+</PropertyGroup>
+```
+
+V následující tabulce jsou uvedeny dostupné možnosti.
+
+| Hodnota | Význam |
+|-|-|
+| `latest` | Použijí se nejnovější analyzátory kódu, které byly vydány. Tato možnost je výchozí. |
+| `preview` | Používají se nejnovější analyzátory kódu, a to i v případě, že jsou ve verzi Preview. |
+| `5.0` | Použije se sada pravidel, která byla povolena pro vydání .NET 5,0, i v případě, že jsou k dispozici novější pravidla. |
+| `5` | Použije se sada pravidel, která byla povolena pro vydání .NET 5,0, i v případě, že jsou k dispozici novější pravidla. |
+
+### <a name="codeanalysistreatwarningsaserrors"></a>CodeAnalysisTreatWarningsAsErrors
+
+`CodeAnalysisTreatWarningsAsErrors`Vlastnost umožňuje nakonfigurovat, zda by měla být upozornění analýzy kódu zpracována jako upozornění a přerušeno sestavení. Použijete-li `-warnaserror` příznak při sestavování projektů, jsou upozornění [analýzy kódu .NET](../../fundamentals/productivity/code-analysis.md) také považována za chyby. Pokud chcete, aby upozornění kompilátoru byla považována za chyby, můžete `CodeAnalysisTreatWarningsAsErrors` vlastnost MSBuild nastavit na `false` v souboru projektu.
+
+```xml
+<PropertyGroup>
+  <CodeAnalysisTreatWarningsAsErrors>false</CodeAnalysisTreatWarningsAsErrors>
+</PropertyGroup>
+```
+
+### <a name="enablenetanalyzers"></a>EnableNETAnalyzers
+
+[Analýza kódu .NET](../../fundamentals/productivity/code-analysis.md) je ve výchozím nastavení povolená pro projekty, které cílí na .NET 5,0 nebo novější. Můžete povolit analýzu kódu .NET pro projekty, které jsou cíleny na starší verze rozhraní .NET, nastavením `EnableNETAnalyzers` vlastnosti na hodnotu true. Chcete-li zakázat analýzu kódu v jakémkoli projektu, nastavte tuto vlastnost na `false` .
+
+```xml
+<PropertyGroup>
+  <EnableNETAnalyzers>true</EnableNETAnalyzers>
+</PropertyGroup>
+```
+
+> [!TIP]
+> Další způsob, jak povolit analýzu kódu .NET v projektech, které cílí na verze .NET starší než .NET 5,0, je nastavit vlastnost [AnalysisLevel](#analysislevel) na hodnotu `latest` .
 
 ## <a name="run-time-configuration-properties"></a>Vlastnosti konfigurace runtime
 

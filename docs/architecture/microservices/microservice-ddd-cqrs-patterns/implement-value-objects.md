@@ -1,43 +1,43 @@
 ---
 title: Implementace objektů hodnot
-description: Architektura mikroslužeb .NET pro kontejnerizované aplikace .NET | Získejte do podrobností a možností implementovat objekty hodnoty pomocí nových funkcí entity framework.
-ms.date: 01/30/2020
-ms.openlocfilehash: 4a8a92a8dabcf09654ecd0e5dea2a7df25d7abf7
-ms.sourcegitcommit: f87ad41b8e62622da126aa928f7640108c4eff98
+description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Získejte informace a možnosti pro implementaci objektů hodnot pomocí nových funkcí Entity Framework.
+ms.date: 08/21/2020
+ms.openlocfilehash: 02eed7baaa364c62aa2df599f1d8b0e700dd215f
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "80805734"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88811116"
 ---
-# <a name="implement-value-objects"></a>Implementace hodnotových objektů
+# <a name="implement-value-objects"></a>Implementace objektů hodnot
 
-Jak je popsáno v předchozích částech o entitách a agregaci, identita je zásadní pro entity. Existuje však mnoho objektů a datových položek v systému, které nevyžadují sledování identity a identity, jako jsou například objekty hodnot.
+Jak je popsáno výše v části informace o entitách a agregacích, je identita pro entity zásadní. V systému je však mnoho objektů a datových položek, které nevyžadují sledování identity a identity, jako jsou například objekty hodnot.
 
-Objekt hodnoty může odkazovat na jiné entity. Například v aplikaci, která generuje trasu, která popisuje, jak se dostat z jednoho bodu do druhého, by tato trasa byla hodnotovým objektem. Jednalo by se o snímek bodů na konkrétní trase, ale tato navrhovaná trasa by neměla identitu, i když interně by se mohla vztahovat na subjekty, jako je Město, Silnice atd.
+Objekt hodnoty může odkazovat na jiné entity. Například v aplikaci, která generuje trasu, která popisuje, jak získat z jednoho bodu do druhého, by tento postup představoval objekt hodnoty. Může to být snímek bodů na konkrétní trase, ale tato navrhovaná trasa by nemusela mít identitu, i když interně by se mohla vztahovat na entity jako City, Road atd.
 
-Obrázek 7-13 znázorňuje objekt hodnoty Adresa v rámci agregace Pořadí.
+Obrázek 7-13 ukazuje objekt hodnoty adresy v rámci agregace pořadí.
 
-![Diagram znázorňující hodnotu adresy-objekt uvnitř agregace pořadí.](./media/implement-value-objects/value-object-within-aggregate.png)
+![Diagram znázorňující hodnotu adresa – objekt uvnitř agregace objednávky](./media/implement-value-objects/value-object-within-aggregate.png)
 
-**Obrázek 7-13**. Objekt hodnoty adresy v rámci agregace Objednávka
+**Obrázek 7-13**. Hodnota objektu adresy v rámci agregace objednávky
 
-Jak je znázorněno na obrázku 7-13, entita se obvykle skládá z více atributů. Entita `Order` může být například modelována jako entita s identitou a tvořena interně sadou atributů, jako je OrderId, OrderDate, OrderItems atd. Ale adresa, která je jednoduše komplexní hodnota složená z země nebo oblasti, ulice, města atd.
+Jak je znázorněno na obrázku 7-13, entita se obvykle skládá z více atributů. `Order`Entita může být například modelována jako entita s identitou a složená interně ze sady atributů, jako je například ČísloObjednávky, DatumObjednávky, OrderItems atd. Ale adresa, která je prostě složitou hodnotu složenou ze země/oblasti, ulice, města atd. a nemá v této doméně žádnou identitu, musí být modelována a zpracována jako objekt hodnoty.
 
-## <a name="important-characteristics-of-value-objects"></a>Důležité vlastnosti hodnotových objektů
+## <a name="important-characteristics-of-value-objects"></a>Důležité vlastnosti objektů hodnot
 
-Existují dvě hlavní charakteristiky pro hodnotové objekty:
+Existují dvě hlavní vlastnosti pro objekty hodnot:
 
 - Nemají žádnou identitu.
 
 - Jsou neměnné.
 
-První charakteristika byla již diskutována. Neměnnost je důležitým požadavkem. Hodnoty objektu hodnoty musí být neměnné, jakmile je objekt vytvořen. Proto při vytvoření objektu je nutné zadat požadované hodnoty, ale nesmíte povolit jejich změny během životnosti objektu.
+První charakterizace již byla diskutována. Neměnnosti je důležitým požadavkem. Hodnoty objektu hodnoty musí být po vytvoření objektu neměnné. Proto je-li objekt vytvořen, je nutné zadat požadované hodnoty, ale je nutné, aby se během životnosti objektu nepovolily měnit.
 
-Hodnotové objekty vám umožní provádět určité triky pro výkon, díky své neměnné povaze. To platí zejména v systémech, kde mohou existovat tisíce instancí objektu hodnoty, z nichž mnohé mají stejné hodnoty. Jejich neměnná povaha umožňuje jejich opětovné použití; mohou být zaměnitelné objekty, protože jejich hodnoty jsou stejné a nemají žádnou identitu. Tento typ optimalizace může někdy dělat rozdíl mezi softwarem, který běží pomalu a software s dobrým výkonem. Samozřejmě všechny tyto případy závisí na prostředí aplikace a kontextu nasazení.
+Objekty hodnot umožňují provádět určité štychy pro výkon, a to díky jejich neměnnému charakteru. To je obzvláště pravdivé v systémech, kde může existovat tisíce instancí objektů hodnot, mnoho z nich má stejné hodnoty. Jejich neproměnlivá povaha umožňuje jejich použití znovu; můžou se jednat o objekty, které mají být zaměnitelné, protože jejich hodnoty jsou stejné a nemají žádnou identitu. Tento typ optimalizace může někdy způsobit rozdíl mezi softwarem, který běží pomalu, a softwarem s dobrým výkonem. Všechny tyto případy jsou samozřejmě závislé na prostředí aplikace a kontextu nasazení.
 
-## <a name="value-object-implementation-in-c"></a>Implementace objektu hodnoty v C\#
+## <a name="value-object-implementation-in-c"></a>Implementace objektu hodnoty v jazyce C\#
 
-Pokud jde o implementaci, můžete mít základní třídu objektu hodnoty, která má základní metody nástroje, jako je rovnost, na základě porovnání mezi všemi atributy (protože objekt hodnoty nesmí být založen na identitě) a dalšízákladní charakteristiky. Následující příklad ukazuje základní třídu objektu hodnoty použitou v objednávání mikroslužby z eShopOnContainers.
+V souvislosti s implementací můžete mít základní třídu objektu hodnoty, která má základní obslužné metody, jako je rovnost, na základě porovnání všech atributů (vzhledem k tomu, že objekt hodnoty nesmí být založen na identitě) a další základní charakteristiky. Následující příklad ukazuje základní třídu hodnotového objektu použitou při řazení mikroslužby z eShopOnContainers.
 
 ```csharp
 public abstract class ValueObject
@@ -56,7 +56,7 @@ public abstract class ValueObject
         return !(EqualOperator(left, right));
     }
 
-    protected abstract IEnumerable<object> GetAtomicValues();
+    protected abstract IEnumerable<object> GetEqualityComponents();
 
     public override bool Equals(object obj)
     {
@@ -65,37 +65,22 @@ public abstract class ValueObject
             return false;
         }
 
-        ValueObject other = (ValueObject)obj;
-        IEnumerator<object> thisValues = GetAtomicValues().GetEnumerator();
-        IEnumerator<object> otherValues = other.GetAtomicValues().GetEnumerator();
-        while (thisValues.MoveNext() && otherValues.MoveNext())
-        {
-            if (ReferenceEquals(thisValues.Current, null) ^
-                ReferenceEquals(otherValues.Current, null))
-            {
-                return false;
-            }
+        var other = (ValueObject)obj;
 
-            if (thisValues.Current != null &&
-                !thisValues.Current.Equals(otherValues.Current))
-            {
-                return false;
-            }
-        }
-        return !thisValues.MoveNext() && !otherValues.MoveNext();
+        return this.GetEqualityComponents().SequenceEqual(other.GetEqualityComponents());
     }
 
     public override int GetHashCode()
     {
-        return GetAtomicValues()
-         .Select(x => x != null ? x.GetHashCode() : 0)
-         .Aggregate((x, y) => x ^ y);
+        return GetEqualityComponents()
+            .Select(x => x != null ? x.GetHashCode() : 0)
+            .Aggregate((x, y) => x ^ y);
     }
     // Other utility methods
 }
 ```
 
-Tuto třídu můžete použít při implementaci objektu skutečné hodnoty, stejně jako u objektu hodnoty Adresa zobrazeném v následujícím příkladu:
+Tuto třídu můžete použít při implementaci vlastního objektu Value, stejně jako objekt hodnoty adresy zobrazený v následujícím příkladu:
 
 ```csharp
 public class Address : ValueObject
@@ -106,7 +91,7 @@ public class Address : ValueObject
     public String Country { get; private set; }
     public String ZipCode { get; private set; }
 
-    private Address() { }
+    public Address() { }
 
     public Address(string street, string city, string state, string country, string zipcode)
     {
@@ -117,7 +102,7 @@ public class Address : ValueObject
         ZipCode = zipcode;
     }
 
-    protected override IEnumerable<object> GetAtomicValues()
+    protected override IEnumerable<object> GetEqualityComponents()
     {
         // Using a yield return statement to return each element one at a time
         yield return Street;
@@ -129,21 +114,21 @@ public class Address : ValueObject
 }
 ```
 
-Můžete vidět, jak tato implementace objektu hodnoty Address nemá žádnou identitu a proto žádné pole ID, ani na Address třídy ani na ValueObject třídy.
+Můžete zjistit, jak tato implementace objektu hodnoty nemá žádnou identitu, a proto žádné pole ID není ani na třídě Address ani na třídě ValueObject.
 
-Bez ID pole ve třídě, které mají být použity entity Framework (EF) nebylo možné až EF Core 2.0, což výrazně pomáhá implementovat lepší hodnotu objekty bez ID. To je přesně vysvětlení další části.
+Neexistence pole ID ve třídě, která má být použita Entity Framework (EF), nebylo možné, dokud EF Core 2,0, což významně pomáhá implementovat lépe vícehodnotové objekty bez ID. To je přesně vysvětlení další části.
 
-To by mohlo být argumentoval, že hodnota objekty, je neměnný, by měl být jen pro čtení (to znamená, že mají vlastnosti pouze pro získání), a to je opravdu pravda. Však hodnoty objekty jsou obvykle serializovány a rekonstruovat projít fronty zpráv a je jen pro čtení zastaví deserializer z přiřazení hodnot, takže jsme jen tak nechat jako `private set`, což je jen pro čtení dost být praktické.
+Může být namítáno, že objekty hodnot, které jsou neměnné, by měly být jen pro čtení (to znamená, že mají vlastnosti jen pro získání) a které jsou skutečně pravdivé. Objekty hodnot jsou však obvykle serializovány a deserializovány, aby procházely přes fronty zpráv a byly jen pro čtení, které zabrání deserializaci v přiřazení hodnot, takže je stačí jen pro to, aby bylo jen `private set` pro čtení praktické.
 
-## <a name="how-to-persist-value-objects-in-the-database-with-ef-core-20-and-later"></a>Jak zachovat hodnotové objekty v databázi s EF Core 2.0 a novější
+## <a name="how-to-persist-value-objects-in-the-database-with-ef-core-20-and-later"></a>Jak zachovat objekty hodnot v databázi pomocí EF Core 2,0 a novějších
 
-Právě jste viděli, jak definovat objekt hodnoty v modelu domény. Ale jak můžete skutečně zachovat do databáze pomocí entity framework core, protože obvykle cílí na entity s identitou?
+Právě jste viděli, jak v doménovém modelu definovat objekt hodnoty. Ale jak je můžete ve skutečnosti uchovávat v databázi pomocí Entity Framework Core, protože obvykle cílí na entity s identitou?
 
-### <a name="background-and-older-approaches-using-ef-core-11"></a>Souvislosti a starší přístupy využívající EF Core 1.1
+### <a name="background-and-older-approaches-using-ef-core-11"></a>Pozadí a starší přístupy pomocí EF Core 1,1
 
-Jako pozadí omezení při použití EF Core 1.0 a 1.1 bylo, že nelze použít [složité typy,](xref:System.ComponentModel.DataAnnotations.Schema.ComplexTypeAttribute) jak je definováno v EF 6.x v tradiční rozhraní .NET Framework. Proto pokud používáte EF Core 1.0 nebo 1.1, je třeba uložit objekt hodnoty jako entitu EF s polem ID. Pak, takže to vypadalo spíše jako objekt hodnoty bez identity, můžete skrýt jeho ID, takže si můžete jasně, že identita objektu hodnoty není důležité v modelu domény. Toto ID můžete skrýt pomocí ID jako [vlastnosti stín](https://docs.microsoft.com/ef/core/modeling/shadow-properties ). Vzhledem k tomu, že konfigurace pro skrytí ID v modelu je nastavena na úrovni infrastruktury EF, by bylo trochu transparentní pro model domény.
+Jako pozadí omezení při použití EF Core 1,0 a 1,1 bylo, že nemůžete použít [komplexní typy](xref:System.ComponentModel.DataAnnotations.Schema.ComplexTypeAttribute) definované v EF 6. x v tradičním .NET Framework. Proto pokud používáte EF Core 1,0 nebo 1,1, je třeba uložit objekt hodnoty jako entitu EF s polem ID. Proto, aby vypadala podobně jako objekt hodnoty bez identity, mohli byste skrýt jeho ID, aby bylo jasné, že identita objektu value není v doménovém modelu důležitá. Toto ID můžete skrýt pomocí ID jako [vlastnosti Shadow](https://docs.microsoft.com/ef/core/modeling/shadow-properties ). Vzhledem k tomu, že konfigurace pro skrývání ID v modelu je nastavená na úrovni infrastruktury EF, bude to pro váš doménový model transparentní.
 
-V počáteční verzi eShopOnContainers (.NET Core 1.1) skryté ID potřebné infrastruktury EF Core bylo implementováno následujícím způsobem na úrovni DbContext pomocí fluent api v projektu infrastruktury. Proto ID byla skryta z hlediska modelu domény, ale stále k dispozici v infrastruktuře.
+V počáteční verzi eShopOnContainers (.NET Core 1,1) se skryté ID, které potřebuje infrastruktura EF Core, implementovalo následujícím způsobem na úrovni DbContext, pomocí rozhraní Fluent API v projektu infrastruktury. Z tohoto důvodu bylo ID z hlediska doménového modelu skryté, ale stále přítomné v infrastruktuře.
 
 ```csharp
 // Old approach with EF Core 1.1
@@ -158,35 +143,35 @@ void ConfigureAddress(EntityTypeBuilder<Address> addressConfiguration)
 }
 ```
 
-Trvalost tohoto objektu hodnoty do databáze však byla provedena jako normální entita v jiné tabulce.
+Trvalost tohoto objektu Value do databáze se ale prováděla jako regulární entita v jiné tabulce.
 
-S EF Core 2.0 a novější, existují nové a lepší způsoby, jak zachovat hodnoty objektů.
+V EF Core 2,0 a novějších existují nové a lepší způsoby, jak zachovat objekty hodnot.
 
-## <a name="persist-value-objects-as-owned-entity-types-in-ef-core-20-and-later"></a>Zachovat objekty hodnoty jako typy vlastněných entit v EF Core 2.0 a novějším
+## <a name="persist-value-objects-as-owned-entity-types-in-ef-core-20-and-later"></a>Zachovat objekty hodnot jako vlastněné typy entit v EF Core 2,0 a novějších verzích
 
-I s některými mezerami mezi vzorem objektu kanonické hodnoty v DDD a typem vlastněné entity v EF Core je aktuálně nejlepším způsobem, jak zachovat hodnotové objekty s EF Core 2.0 a novějším. Omezení naleznete na konci této části.
+I s některými mezerami mezi vzorem objektu kanonické hodnoty v DDD a vlastněnou entitou typu v EF Core je aktuálně nejlepším způsobem, jak zachovat objekty hodnot pomocí EF Core 2,0 a novějších. Na konci této části můžete vidět omezení.
 
-Funkce typu vlastněné entity byla přidána do EF Core od verze 2.0.
+Do EF Core od verze 2,0 byla přidána funkce typu vlastněné entity.
 
-Typ vlastní entity umožňuje mapovat typy, které nemají vlastní identitu explicitně definovanou v modelu domény a používají se jako vlastnosti, jako je například objekt hodnoty, v rámci libovolné entity. Vlastněný typ entity sdílí stejný typ CLR s jiným typem entity (to znamená, že je to pouze běžná třída). Entita obsahující definující navigaci je entita vlastníka. Při dotazování vlastníka jsou ve výchozím nastavení zahrnuty vlastněné typy.
+Vlastněný typ entity umožňuje mapovat typy, které nemají vlastní identitu explicitně definované v doménovém modelu a jsou používány jako vlastnosti, jako je například objekt hodnoty, v rámci kterékoli z entit. Vlastněný typ entity sdílí stejný typ CLR s jiným typem entity (to znamená pouze regulární třída). Entita obsahující definici navigace je entitou vlastníka. Při dotazování vlastníka jsou ve výchozím nastavení zahrnuty vlastní typy.
 
-Jen při pohledu na model domény, vlastněný typ vypadá, že nemá žádnou identitu. Však pod kryty, vlastněné typy mají identitu, ale vlastnost navigace vlastníka je součástí této identity.
+Podobně jako při prohlížení doménového modelu vypadá vlastněný typ, který nemá žádnou identitu. Nicméně v rámci pokrývání mají vlastněné typy identitu, ale vlastnost navigace vlastníka je součástí této identity.
 
-Identita instancí vlastněných typů není zcela vlastní. Skládá se ze tří složek:
+Identita instancí vlastněných typů není zcela vlastní. Skládá se ze tří součástí:
 
-- Totožnost vlastníka
+- Identita vlastníka
 
-- Vlastnost navigace směřující k nim
+- Navigační vlastnost, na kterou se odkazuje
 
-- V případě kolekcí vlastněných typů, nezávislá komponenta (podporována v EF Core 2.2 a novější).
+- V případě kolekcí vlastněných typů, nezávislé komponenty (podporované v EF Core 2,2 a novější).
 
-Například v modelu objednávací domény v eShopOnContainers jako součást entity Order je objekt hodnoty Adresa implementován jako typ vlastněné entity v rámci entity vlastníka, což je entita Objednávka. Adresa je typ bez vlastnosti identity definované v modelu domény. Používá se jako vlastnost typu Objednávka k určení dodací adresy pro konkrétní objednávku.
+Například v modelu domény řazení na eShopOnContainers jako součást entity Order je objekt hodnoty adresy implementován jako vlastněný typ entity v rámci entity Owner, která je objednávka. `Address` je typ bez vlastnosti identity definované v doménovém modelu. Slouží jako vlastnost typu objednávky k určení dodací adresy pro konkrétní objednávku.
 
-Podle konvence je vytvořen stínový primární klíč pro vlastněný typ a bude mapován na stejnou tabulku jako vlastník pomocí rozdělení tabulky. To umožňuje použít vlastněné typy podobně jako složité typy se používají v EF6 v tradiční rozhraní .NET Framework.
+Podle konvence se vytvoří stínový primární klíč pro vlastní typ a bude namapován na stejnou tabulku jako vlastník pomocí rozdělení tabulky. To umožňuje použít vlastněné typy podobně jako složité typy používané v EF6 v tradičním .NET Framework.
 
-Je důležité si uvědomit, že vlastněné typy nejsou nikdy zjištěny podle konvence v EF Core, takže je nutné deklarovat explicitně.
+Je důležité si uvědomit, že vlastní typy nejsou nikdy zjištěny v konvenci v EF Core, takže je musíte deklarovat explicitně.
 
-V eShopOnContainers, v souboru `OnModelCreating()` OrderingContext.cs v rámci metody, jsou použity více konfigurací infrastruktury. Jeden z nich souvisí s entitou Objednávka.
+V eShopOnContainers je v souboru OrderingContext.cs v rámci `OnModelCreating()` metody použito více konfigurací infrastruktury. Jedna z nich se vztahuje k entitě Order.
 
 ```csharp
 // Part of the OrderingContext.cs class at the Ordering.Infrastructure project
@@ -201,7 +186,7 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 }
 ```
 
-V následujícím kódu je pro entitu Objednávka definována infrastruktura trvalosti:
+V následujícím kódu je pro entitu pro objednávku definována infrastruktura trvalosti:
 
 ```csharp
 // Part of the OrderEntityTypeConfiguration.cs class
@@ -224,11 +209,11 @@ public void Configure(EntityTypeBuilder<Order> orderConfiguration)
 }
 ```
 
-V předchozím kódu `orderConfiguration.OwnsOne(o => o.Address)` metoda určuje, `Address` že vlastnost je vlastněnou entitou `Order` typu.
+V předchozím kódu `orderConfiguration.OwnsOne(o => o.Address)` Metoda určuje, že `Address` vlastnost je vlastněná entitou `Order` typu.
 
-Ve výchozím nastavení ef základní konvence název sloupce databáze pro `EntityProperty_OwnedEntityProperty`vlastnosti typu vlastní entity jako . `Address` Proto se v `Orders` tabulce s názvy `Address_Street` `Address_City` (a tak dále `State`pro `Country`, `ZipCode`a ).
+Ve výchozím nastavení EF Core konvence pojmenují sloupce databáze pro vlastnosti typu vlastněné entity jako `EntityProperty_OwnedEntityProperty` . Proto se vnitřní vlastnosti nástroje `Address` zobrazí v `Orders` tabulce s názvy `Address_Street` `Address_City` (a tak dále pro `State` , a `Country` `ZipCode` ).
 
-Můžete připojit plynulou metodu `Property().HasColumnName()` přejmenovat tyto sloupce. V případě, `Address` kdy je veřejná vlastnost, mapování by bylo následující:
+`Property().HasColumnName()`K přejmenování těchto sloupců můžete připojit metodu Fluent. V případě `Address` veřejné vlastnosti by mapování vypadalo takto:
 
 ```csharp
 orderConfiguration.OwnsOne(p => p.Address)
@@ -238,7 +223,7 @@ orderConfiguration.OwnsOne(p => p.Address)
                             .Property(p=>p.City).HasColumnName("ShippingCity");
 ```
 
-Je možné zřetězit `OwnsOne` metodu plynulým mapováním. V následujícím `OrderDetails` hypotetickém `BillingAddress` příkladu vlastní `ShippingAddress` `Address` a , které jsou oba typy. Potom `OrderDetails` je vlastněn typem. `Order`
+Je možné řetězit `OwnsOne` metodu v mapování Fluent. V následujícím hypotetickém příkladu `OrderDetails` vlastní `BillingAddress` a `ShippingAddress` , které jsou oba `Address` typy. Pak `OrderDetails` vlastní `Order` typ.
 
 ```csharp
 orderConfiguration.OwnsOne(p => p.OrderDetails, cb =>
@@ -267,70 +252,70 @@ public class Address
 }
 ```
 
-### <a name="additional-details-on-owned-entity-types"></a>Další podrobnosti o typech vlastněných entit
+### <a name="additional-details-on-owned-entity-types"></a>Další podrobnosti o vlastněných typech entit
 
-- Vlastní typy jsou definovány při konfiguraci navigační vlastnost i pro určitý typ pomocí OwnsOne fluent API.
+- Vlastněné typy jsou definovány při konfiguraci navigační vlastnosti na konkrétní typ pomocí rozhraní OwnsOne Fluent API.
 
-- Definice vlastněného typu v našem modelu metadat je složena z: typ vlastníka, navigační vlastnost a typ CLR vlastněného typu.
+- Definice vlastněného typu v našem modelu metadat je složená z: typ vlastníka, navigační vlastnost a typ CLR vlastněných typů.
 
-- Identita (klíč) instance vlastněného typu v našem zásobníku je složený z identity typu vlastníka a definice vlastněného typu.
+- Identita (klíč) instance vlastního typu v našem zásobníku je složena z identity typu vlastníka a definice vlastněného typu.
 
 #### <a name="owned-entities-capabilities"></a>Možnosti vlastněných entit
 
-- Vlastněné typy mohou odkazovat na jiné entity, buď vlastněné (vnořené vlastněné typy) nebo nevlastněné (vlastnosti navigace s pravidelným odkazem na jiné entity).
+- Vlastněné typy mohou odkazovat na jiné entity, buď vlastněné (vnořené vlastněné typy), nebo nevlastní (standardní referenční vlastnosti navigace jiným entitám).
 
-- Můžete mapovat stejný typ CLR jako různé vlastněné typy ve stejné entitě vlastníka prostřednictvím samostatných navigačních vlastností.
+- Stejný typ CLR můžete mapovat jako jiné vlastněné typy ve stejné entitě Owner prostřednictvím samostatných vlastností navigace.
 
-- Rozdělení tabulky je nastaveno podle konvence, ale můžete se odhlásit mapováním vlastněného typu na jinou tabulku pomocí ToTable.
+- Rozdělení tabulky se nastavuje podle konvence, ale můžete si ji vyfiltrovat tak, že namapujete vlastněný typ na jinou tabulku pomocí ToTable.
 
-- Eager načítání se provádí automaticky na vlastněné typy, to `.Include()` znamená, že není nutné volat na dotaz.
+- Načítání Eager se provádí automaticky na vlastněných typech, to znamená, že není nutné volat `.Include()` dotaz.
 
-- Lze konfigurovat s `[Owned]`atributem , pomocí EF Core 2.1 a novější.
+- Lze nakonfigurovat s atributem `[Owned]` pomocí EF Core 2,1 a novějším.
 
-- Zvládne kolekce vlastněných typů (pomocí verze 2.2 a novější).
+- Může zpracovávat kolekce vlastněných typů (pomocí verze 2,2 a novější).
 
-#### <a name="owned-entities-limitations"></a>Omezení vlastněných subjektů
+#### <a name="owned-entities-limitations"></a>Omezení entit vlastněných společností
 
-- Nelze vytvořit `DbSet<T>` typ vlastněného (záměrně).
+- Nemůžete vytvořit `DbSet<T>` vlastní typ (podle návrhu).
 
-- Nelze volat `ModelBuilder.Entity<T>()` na vlastněné typy (aktuálně záměrné).
+- Nemůžete volat `ModelBuilder.Entity<T>()` na vlastněné typy (aktuálně podle návrhu).
 
-- Žádná podpora pro volitelné (to znamená, nullable) vlastněné typy, které jsou mapovány s vlastníkem ve stejné tabulce (to znamená pomocí rozdělení tabulky). Důvodem je, že mapování se provádí pro každou vlastnost, nemáme samostatný sentinel pro komplexní hodnotu null jako celek.
+- Není podporována podpora volitelného typu (to znamená Nullable), který je namapován s vlastníkem ve stejné tabulce (tj. pomocí rozdělení tabulky). Důvodem je to, že mapování je provedeno pro každou vlastnost, neexistuje žádná samostatná ověřovací hodnota pro hodnotu null Complex jako celek.
 
-- Žádná podpora mapování dědičnosti pro vlastněné typy, ale měli byste být schopni mapovat dva typy listů stejné hierarchie dědičnosti jako různé vlastněné typy. EF Core nebude důvod o tom, že jsou součástí stejné hierarchie.
+- Žádná podpora mapování dědění pro vlastní typy, ale měli byste být schopni mapovat dva typy listů stejných hierarchií dědičnosti jako jiné vlastněné typy. EF Core nebude mít důvod k tomu, že jsou součástí stejné hierarchie.
 
-#### <a name="main-differences-with-ef6s-complex-types"></a>Hlavní rozdíly s komplexními typy EF6
+#### <a name="main-differences-with-ef6s-complex-types"></a>Hlavní rozdíly s EF6's komplexními typy
 
-- Rozdělení tabulky je volitelné, to znamená, že mohou být volitelně mapovány na samostatnou tabulku a stále vlastněné typy.
+- Rozdělení tabulky je volitelné, to znamená, že mohou být případně mapovány na samostatnou tabulku a stále mají vlastní typy.
 
-- Mohou odkazovat na jiné entity (to znamená, že mohou působit jako závislá strana na vztazích s jinými nevlastněnými typy).
+- Můžou odkazovat na jiné entity (to znamená, že můžou fungovat jako závislá strana na vztazích s jinými nevlastními typy).
 
 ## <a name="additional-resources"></a>Další zdroje
 
-- **Martin Fowler. Vzor ValueObject** \
+- **Martin Fowlera. Vzor ValueObject** \
   <https://martinfowler.com/bliki/ValueObject.html>
 
-- **Eric Evans. Návrh řízený doménou: Řešení složitosti v srdci softwaru.** (Kniha; obsahuje diskusi o hodnotových objektech) \
+- **Eric Evans. Návrh založený na doméně: řešení složitosti na srdce softwaru.** (Kniha; obsahuje diskuzi o objektech hodnot) \
   <https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/>
 
-- **Vaughn Vernon, to je můj zástupce. Implementace návrhu řízeného doménou.** (Kniha; obsahuje diskusi o hodnotových objektech) \
+- **Vaughn Vernon. Implementace návrhu založeného na doméně.** (Kniha; obsahuje diskuzi o objektech hodnot) \
   <https://www.amazon.com/Implementing-Domain-Driven-Design-Vaughn-Vernon/dp/0321834577/>
 
-- **Typy vlastněných entit** \
+- **Vlastněné typy entit** \
   <https://docs.microsoft.com/ef/core/modeling/owned-entities>
 
 - **Vlastnosti stínu** \
   <https://docs.microsoft.com/ef/core/modeling/shadow-properties>
 
-- **Komplexní typy a/nebo hodnotové objekty**. Diskuse v úložišti EF Core GitHub (karta Problémy) \
+- **Komplexní typy a/nebo hodnotové objekty**. Diskuze v úložišti GitHubu EF Core (karta problémy) \
   <https://github.com/dotnet/efcore/issues/246>
 
-- **ValueObject.cs.** Třída objektu základní hodnoty v eShopOnContainers. \
+- **ValueObject.cs.** Třída objektů základní hodnoty v eShopOnContainers \
   <https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.Domain/SeedWork/ValueObject.cs>
 
-- **Třída adres.** Ukázková třída objektu hodnoty v eShopOnContainers. \
+- **Adresa třídy.** Ukázková hodnota třídy objektu v eShopOnContainers. \
   <https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.Domain/AggregatesModel/OrderAggregate/Address.cs>
 
 > [!div class="step-by-step"]
-> [Předchozí](seedwork-domain-model-base-classes-interfaces.md)
-> [další](enumeration-classes-over-enum-types.md)
+> [Předchozí](seedwork-domain-model-base-classes-interfaces.md) 
+>  [Další](enumeration-classes-over-enum-types.md)

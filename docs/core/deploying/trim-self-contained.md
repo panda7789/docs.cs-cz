@@ -4,12 +4,12 @@ description: Naučte se oříznout samostatné aplikace a zmenšit jejich veliko
 author: jamshedd
 ms.author: jamshedd
 ms.date: 04/03/2020
-ms.openlocfilehash: 0fde409e9e5911213855ab206368d302b73eebb3
-ms.sourcegitcommit: ef86c24c418439b8bb5e3e7d64bbdbe5e11c3e9c
+ms.openlocfilehash: e3eb161b14f206723ad034af0a4a6ba8cd575578
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88720121"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88810609"
 ---
 # <a name="trim-self-contained-deployments-and-executables"></a>Odebrání nechtěných součástí a zachování pouze samostatně nasaditelných součástí a spustitelných souborů
 
@@ -36,28 +36,29 @@ Pokud kód nepřímo odkazuje na sestavení prostřednictvím reflexe, můžete 
 
 ## <a name="trim-your-app---cli"></a>Stříhání aplikace – CLI
 
-Aplikaci ořízněte pomocí příkazu [dotnet Publish](../tools/dotnet-publish.md) . Při publikování aplikace nastavte následující tři nastavení:
+Aplikaci ořízněte pomocí příkazu [dotnet Publish](../tools/dotnet-publish.md) . Při publikování aplikace nastavte následující vlastnosti:
 
-- Publikovat jako samostatnou: `--self-contained true`
-- Povolit oříznutí: `p:PublishTrimmed=true`
+- Publikovat jako samostatně uzavřenou aplikaci pro konkrétní modul runtime: `-r win-x64`
+- Povolit oříznutí: `/p:PublishTrimmed=true`
 
 Následující příklad publikuje aplikaci pro Windows jako samostatně obsaženou a ořízne výstup.
 
 ```xml
-<ItemGroup>
+<PropertyGroup>
     <RuntimeIdentifier>win-x64</RuntimeIdentifier>
-    <SelfContained>true</SelfContained>
     <PublishTrimmed>true</PublishTrimmed>
-</ItemGroup>
+</PropertyGroup>
 ```
 
 Následující příklad publikuje aplikaci v agresivním režimu střihu, kdy se nepoužívaný kód v sestaveních ořízne a jsou povolena upozornění ořezávání.
 
 ```xml
-<ItemGroup>
+<PropertyGroup>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <PublishTrimmed>true</PublishTrimmed>
     <TrimMode>link</TrimMode>
     <SuppressTrimAnalysisWarnings>false</SuppressTrimAnalysisWarnings>
-</ItemGroup>
+</PropertyGroup>
 ```
 
 Další informace najdete v tématu [publikování aplikací .NET Core pomocí .NET Core CLI](deploy-with-cli.md).

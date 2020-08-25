@@ -2,18 +2,18 @@
 title: Otestování .NET Standard knihovny tříd pomocí .NET Core s využitím Visual Studio Code
 description: Vytvoří projekt testu jednotek pro knihovnu tříd .NET Core. Ověřte, zda knihovna tříd .NET Core pracuje správně s testy jednotek.
 ms.date: 06/08/2020
-ms.openlocfilehash: a61fd952eea2dec0d5a9f351d3f3d01c738e8fad
-ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
+ms.openlocfilehash: b5f394b5dea2bf0b4af6e8b119df3fa0ec113dd3
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84701030"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88811714"
 ---
 # <a name="tutorial-test-a-net-standard-class-library-with-net-core-using-visual-studio-code"></a>Kurz: testování .NET Standard knihovny tříd pomocí .NET Core pomocí Visual Studio Code
 
 V tomto kurzu se dozvíte, jak automatizovat testování částí přidáním testovacího projektu do řešení.
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 - Tento kurz spolupracuje s řešením, které vytvoříte v části [Vytvoření knihovny .NET Standard v Visual Studio Code](library-with-visual-studio-code.md).
 
@@ -21,7 +21,7 @@ V tomto kurzu se dozvíte, jak automatizovat testování částí přidáním te
 
 Testy jednotek poskytují automatizované softwarové testování během vývoje a publikování. Testovací rozhraní, které používáte v tomto kurzu, je MSTest. [MSTest](https://github.com/Microsoft/testfx-docs) je jedna ze tří testovacích rozhraní, ze kterých si můžete vybrat. Ostatní jsou [xUnit](https://xunit.net/) a [nUnit](https://nunit.org/).
 
-1. Spusťte Visual Studio Code.
+1. Spuštění nástroje Visual Studio Code
 
 1. Otevřete `ClassLibraryProjects` řešení, které jste vytvořili v části [vytvoření knihovny .NET Standard v aplikaci Visual Studio](library-with-visual-studio.md).
 
@@ -75,7 +75,7 @@ Aby projekt testu spolupracoval s `StringLibrary` třídou, přidejte do projekt
 
 ## <a name="add-and-run-unit-test-methods"></a>Přidat a spustit metody testování částí
 
-Když aplikace Visual Studio spustí test jednotky, provede každou metodu, která je označena <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute> atributem ve třídě, která je označena <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute> atributem. Testovací metoda končí při nalezení prvního selhání nebo po úspěšném dokončení všech testů obsažených v metodě.
+Když aplikace Visual Studio spustí test jednotky, provede každou metodu, která je označena <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute> atributem ve třídě, která je označena  <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute> atributem. Testovací metoda končí při nalezení prvního selhání nebo po úspěšném dokončení všech testů obsažených v metodě.
 
 Nejběžnější testy volají členy <xref:Microsoft.VisualStudio.TestTools.UnitTesting.Assert> třídy. Mnoho metod Assert zahrnuje nejméně dva parametry, jeden z nich je očekávaný výsledek testu a druhý z nich je skutečný výsledek testu. `Assert`V následující tabulce jsou uvedeny některé často volané metody třídy:
 
@@ -112,7 +112,7 @@ Postup vytvoření testovacích metod:
 
    Výstup terminálu ukazuje, že všechny testy byly úspěšné.
 
-   ```
+   ```output
    Starting test execution, please wait...
 
    A total of 1 test files matched the specified pattern.
@@ -142,7 +142,7 @@ Pokud pracujete s vývojem řízeným testováním (TDD), napíšete nejprve tes
 
    Výstup terminálu ukazuje, že jeden test se nezdařil, a obsahuje chybovou zprávu pro neúspěšný test: Assert. NEPRAVDA. Očekávané pro ' error ': false; skutečnost: true ". Z důvodu chyby nejsou v poli Po otestování "Error" žádné řetězce.
 
-   ```
+   ```output
    Starting test execution, please wait...
 
    A total of 1 test files matched the specified pattern.

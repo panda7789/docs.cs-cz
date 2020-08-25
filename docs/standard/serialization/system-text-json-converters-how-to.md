@@ -10,12 +10,12 @@ helpviewer_keywords:
 - serialization
 - objects, serializing
 - converters
-ms.openlocfilehash: abda23ea538c2c0da6ada4f359ce745602dca45d
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: e0b769d7bb6b336d226cd48de1932524c4d7e74d
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "84279760"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88811064"
 ---
 # <a name="how-to-write-custom-converters-for-json-serialization-marshalling-in-net"></a>Zápis vlastních převaděčů pro serializaci JSON (zařazování) v .NET
 
@@ -93,7 +93,7 @@ Model továrny je vyžadován pro otevřené generické typy, protože kód pro 
 
 Pokud potřebujete vyvolat výjimku v kódu pro zpracování chyb, zvažte vyvolání <xref:System.Text.Json.JsonException> bez zprávy. Tento typ výjimky automaticky vytvoří zprávu, která obsahuje cestu k části JSON, která způsobila chybu. Například příkaz `throw new JsonException();` vytvoří chybovou zprávu jako v následujícím příkladu:
 
-```
+```output
 Unhandled exception. System.Text.Json.JsonException:
 The JSON value could not be converted to System.Object.
 Path: $.Date | LineNumber: 1 | BytePositionInLine: 37.
@@ -165,9 +165,9 @@ Tady je vlastní převaděč pro předchozí strukturu:
 
 Při serializaci nebo deserializaci se pro každý prvek JSON v uvedeném pořadí vybere konvertor, který je uvedený z nejvyšší priority na nejnižší:
 
-* `[JsonConverter]`použito pro vlastnost.
+* `[JsonConverter]` použito pro vlastnost.
 * Převaděč přidaný do `Converters` kolekce.
-* `[JsonConverter]`použito pro vlastní typ hodnoty nebo POCO.
+* `[JsonConverter]` použito pro vlastní typ hodnoty nebo POCO.
 
 Pokud je v kolekci zaregistrováno více vlastních převaděčů pro typ `Converters` , je použit první převaděč, který vrací hodnotu true pro `CanConvert` .
 
@@ -190,12 +190,12 @@ Odvození typu může být nepřesné. Pokud deserializátor analyzuje číslo J
 
 Pro scénáře, které vyžadují odvození typu, následující kód ukazuje vlastní převaděč pro `object` Vlastnosti. Kód převede:
 
-* `true`a `false` na`Boolean`
-* Čísla bez desetinné čárky`long`
-* Čísla s desetinným čárkou`double`
-* Data do`DateTime`
-* Řetězce na`string`
-* Všechno ostatní k`JsonElement`
+* `true` a `false` na `Boolean`
+* Čísla bez desetinné čárky `long`
+* Čísla s desetinným čárkou `double`
+* Data do `DateTime`
+* Řetězce na `string`
+* Všechno ostatní k `JsonElement`
 
 [!code-csharp[](snippets/system-text-json-how-to/csharp/ObjectToInferredTypesConverter.cs)]
 
@@ -325,10 +325,10 @@ Pokud potřebujete vytvořit převaděč, který upraví chování existujícíh
 ## <a name="additional-resources"></a>Další zdroje
 
 * [Zdrojový kód pro předdefinované převaděče](https://github.com/dotnet/runtime/tree/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/src/System/Text/Json/Serialization/Converters)
-* [Podpora DateTime a DateTimeOffset vSystem.Text.Json](../datetime/system-text-json-support.md)
-* [System.Text.JsonPřehled](system-text-json-overview.md)
-* [Jak používatSystem.Text.Json](system-text-json-how-to.md)
-* [Postup migrace zNewtonsoft.Json](system-text-json-migrate-from-newtonsoft-how-to.md)
-* [System.Text.JsonReference k rozhraní API](xref:System.Text.Json)
+* [Podpora DateTime a DateTimeOffset v System.Text.Json](../datetime/system-text-json-support.md)
+* [System.Text.Json Přehled](system-text-json-overview.md)
+* [Jak používat System.Text.Json](system-text-json-how-to.md)
+* [Postup migrace z Newtonsoft.Json](system-text-json-migrate-from-newtonsoft-how-to.md)
+* [System.Text.Json Reference k rozhraní API](xref:System.Text.Json)
 * [System.Text.Json. Reference k rozhraní API serializace](xref:System.Text.Json.Serialization)
 <!-- * [System.Text.Json roadmap](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/roadmap/README.md)-->

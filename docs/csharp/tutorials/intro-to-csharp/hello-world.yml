@@ -12,12 +12,12 @@ metadata:
   displayType: two-column
   interactive: csharp
   ms.custom: mvc
-  ms.openlocfilehash: 17d33b25867f75419a0e65ab0d75950bad13af57
-  ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
+  ms.openlocfilehash: 72198287028c73f0e518d7bcfd0b694bb267e132
+  ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 08/17/2020
-  ms.locfileid: "88267396"
+  ms.lasthandoff: 08/25/2020
+  ms.locfileid: "88812273"
 items:
 - durationInMinutes: 1
   content: >
@@ -52,7 +52,7 @@ items:
     > Toto cvičení vám pomůže seznámit se se strukturou kódu v C#.
 
 
-    Váš první program se omezuje na zobrazení jedné určité zprávy. S využitím **proměnných** ale můžete napsat i užitečnější programy. **Proměnná** je symbol, pomocí kterého můžete spustit stejný kód s různými hodnotami. Pojďme si to vyzkoušet! Nahraďte kód, který jste napsali v interaktivním okně, následujícím kódem:
+    Váš první program se omezuje na zobrazení jedné určité zprávy. S využitím *proměnných* ale můžete napsat i užitečnější programy. *Proměnná* je symbol, pomocí kterého můžete spustit stejný kód s různými hodnotami. Pojďme si to vyzkoušet! Nahraďte kód, který jste napsali v interaktivním okně, následujícím kódem:
 
 
     ```csharp
@@ -64,7 +64,7 @@ items:
     ```
 
 
-    První řádek deklaruje proměnnou `aFriend` a přiřazuje jí hodnotu „Bill“. Druhý řádek jméno zobrazí.
+    První řádek deklaruje proměnnou, `aFriend` a přiřadí jí hodnotu "fakturovat". Druhý řádek jméno zobrazí.
 
 
     Každé deklarované proměnné můžete přiřadit víc hodnot. Jméno můžete změnit na jméno některého ze svých přátel. Do interaktivního okna přidejte za kód, který jste do něj už zadali, následující dva řádky:
@@ -149,11 +149,11 @@ items:
 
     > [!TIP]
 
-    > Teď je vhodná chvíle, abyste si to vyzkoušeli sami. Naučili jste se, že metoda `Console.WriteLine()` napíše na obrazovku text. Dozvěděli jste se, jak deklarovat proměnné a řetězit řetězce. Teď můžete v interaktivním okně experimentovat. Okno obsahuje funkci s názvem **IntelliSense** , která dává návrhy na to, co můžete dělat. Zadejte `.` za `d` v `firstFriend` . Zobrazí se seznam návrhů pro vlastnosti a metody, které můžete použít.
+    > Teď je vhodná chvíle, abyste si to vyzkoušeli sami. Naučili jste se, že metoda `Console.WriteLine()` napíše na obrazovku text. Dozvěděli jste se, jak deklarovat proměnné a řetězit řetězce. Teď můžete v interaktivním okně experimentovat. Okno obsahuje funkci s názvem *IntelliSense* , která dává návrhy na to, co můžete dělat. Zadejte `.` za `d` v `firstFriend` . Zobrazí se seznam návrhů pro vlastnosti a metody, které můžete použít.
 - title: Další úkony s řetězci
   durationInMinutes: 5
   content: >
-    Použili jste **metodu** <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> pro tisk zpráv. **Metoda** je blok kódu, který implementuje určitou akci. Má určitý název, abyste k ní mohli získat přístup.
+    Použili jste *metodu* <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> pro tisk zpráv. *Metoda* je blok kódu, který implementuje určitou akci. Má určitý název, abyste k ní mohli získat přístup.
 
 
     Předpokládejme, že vaše řetězce mají na začátku nebo na konci mezery, které nechcete zobrazit. Chcete **oříznout** mezery z řetězců.
@@ -234,7 +234,7 @@ items:
     ```
 
 
-    Metoda <xref:System.String.Contains%2A> vrátí **logickou** hodnotu, která udává, jestli metoda našla hledaný řetězec. **Logická** hodnota uloží hodnotu `true` nebo `false`. Když se zobrazí jako textový výstup, jsou velkými písmeny: `True` a v `False` uvedeném pořadí. Další informace o **logických** hodnotách se dozvíte v některé z pozdějších lekcí.
+    Metoda <xref:System.String.Contains%2A> vrátí *logickou* hodnotu, která udává, jestli metoda našla hledaný řetězec. *Logická* hodnota uloží hodnotu `true` nebo `false`. Když se zobrazí jako textový výstup, jsou velkými písmeny: `True` a v `False` uvedeném pořadí. Další informace o *logických* hodnotách se dozvíte v některé z pozdějších lekcí.
 
 
     ***Úkol***

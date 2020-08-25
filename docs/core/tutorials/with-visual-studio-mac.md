@@ -2,12 +2,12 @@
 title: Vytvoření konzolové aplikace .NET Core pomocí Visual Studio pro Mac
 description: Naučte se vytvořit konzolovou aplikaci .NET Core pomocí Visual Studio pro Mac.
 ms.date: 06/02/2020
-ms.openlocfilehash: 9cab838eaab2c59d8a0270267514f57acb7c60fb
-ms.sourcegitcommit: 1eae045421d9ea2bfc82aaccfa5b1ff1b8c9e0e4
+ms.openlocfilehash: e0b18837bf8bef5be5f20b84341bde8526b9f7a2
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84811673"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88811870"
 ---
 # <a name="tutorial-create-a-net-core-console-application-using-visual-studio-for-mac"></a>Kurz: Vytvoření konzolové aplikace .NET Core pomocí Visual Studio pro Mac
 
@@ -19,9 +19,9 @@ V tomto kurzu se dozvíte, jak vytvořit a spustit konzolovou aplikaci .NET Core
 > * V Visual Studio pro Mac vyberte v nabídce **nápovědu**  >  **nahlásit problém** nebo **nahlásit problém** z úvodní obrazovky. tím otevřete okno pro podání zprávy o chybě. Svou zpětnou vazbu sledujte na portálu [komunity vývojářů](https://developercommunity.visualstudio.com/spaces/8/index.html).
 > * Chcete-li vytvořit návrh, **vyberte v**  >  nabídce možnost**poskytnout návrh** z nabídky nebo **Poskytněte návrh** z úvodní obrazovky, který vás převezme na [webovou stránku komunity vývojářů Visual Studio pro Mac](https://developercommunity.visualstudio.com/content/idea/post.html?space=41).
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
-* [Visual Studio pro Mac verze 8,6 nebo novější](https://visualstudio.microsoft.com/vs/mac/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link). Vyberte možnost instalace .NET Core. Instalace Xamarin je volitelná pro vývoj v .NET Core. Další informace najdete v následujících materiálech:
+* [Visual Studio pro Mac verze 8,6 nebo novější](https://visualstudio.microsoft.com/vs/mac/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link). Vyberte možnost instalace .NET Core. Instalace Xamarin je volitelná pro vývoj v .NET Core. Další informace naleznete v následujících zdrojích:
 
   * [Kurz: instalace Visual Studio pro Mac](/visualstudio/mac/installation).
   * [Podporované verze MacOS](../install/dependencies.md?pivots=os-macos)
@@ -68,7 +68,7 @@ namespace HelloWorld
 }
 ```
 
-`Main`je vstupním bodem aplikace, metodou, která je automaticky volána modulem runtime při spuštění aplikace. Jakékoli argumenty příkazového řádku, které jsou zadány při spuštění aplikace, jsou k dispozici v `args` poli.
+`Main` je vstupním bodem aplikace, metodou, která je automaticky volána modulem runtime při spuštění aplikace. Jakékoli argumenty příkazového řádku, které jsou zadány při spuštění aplikace, jsou k dispozici v `args` poli.
 
 ## <a name="run-the-app"></a>Spuštění aplikace
 
@@ -86,7 +86,7 @@ Vylepšete aplikaci, aby se uživateli zobrazila výzva k zadání názvu a zobr
 
    :::code language="csharp" source="./snippets/with-visual-studio/csharp/Program.cs" id="MainMethod":::
 
-   Tento kód zobrazí "" Jaké je vaše jméno? " v okně konzoly a počkejte, dokud uživatel nezadá řetězec následovaný klávesou <kbd>ENTER</kbd> . Tento řetězec je uložen v proměnné s názvem `name` . Načítá také hodnotu <xref:System.DateTime.Now?displayProperty=nameWithType> vlastnosti, která obsahuje aktuální místní čas a přiřadí ji k proměnné s názvem `date` . Nakonec tyto hodnoty zobrazí v okně konzoly.
+   Tento kód zobrazí příkazový řádek v okně konzoly a počká, dokud uživatel nezadá řetězec následovaný klávesou <kbd>ENTER</kbd> . Tento řetězec je uložen v proměnné s názvem `name` . Načítá také hodnotu <xref:System.DateTime.Now?displayProperty=nameWithType> vlastnosti, která obsahuje aktuální místní čas a přiřadí ji k proměnné s názvem `date` . V okně konzoly se zobrazí tyto hodnoty. Nakonec se zobrazí výzva v okně konzoly a volá <xref:System.Console.ReadKey(System.Boolean)?displayProperty=nameWithType> metodu, která čeká na vstup uživatele.
 
    `\n`Představuje znak nového řádku.
 
