@@ -77,38 +77,17 @@
               href: sqlclient-for-ef-types.md
             - name: Známé problémy v SqlClient pro Entity Framework
               href: known-issues-in-sqlclient-for-entity-framework.md
-    - name: Zápis zprostředkovatele dat Entity Framework
-      href: writing-an-ef-data-provider.md
+    - name: Důležité informace o vývoji a nasazení
+      href: development-and-deployment-considerations.md
       items:
-        - name: Generování SQL
-          href: sql-generation.md
-          items:
-            - name: Tvar stromu příkazů
-              href: the-shape-of-the-command-trees.md
-            - name: Generování SQL ze stromů příkazů – osvědčené postupy
-              href: generating-sql-from-command-trees-best-practices.md
-            - name: Generování SQL ve zprostředkovateli ukázek
-              href: sql-generation-in-the-sample-provider.md
-              items:
-                - name: Architektura a návrh
-                  href: architecture-and-design.md
-                - name: 'Návod: Generování SQL'
-                  href: walkthrough-sql-generation.md
-        - name: Úpravy generování SQL
-          href: modification-sql-generation.md
-        - name: Specifikace manifestu zprostředkovatele
-          href: provider-manifest-specification.md
-- name: Důležité informace o vývoji a nasazení
-  href: development-and-deployment-considerations.md
-  items:
-    - name: Důležité informace o zabezpečení
-      href: security-considerations.md
-    - name: Faktory ovlivňující výkon
-      href: performance-considerations.md
-    - name: Důležité informace o migraci
-      href: migration-considerations.md
-    - name: "Důležité informace o\_nasazení"
-      href: deployment-considerations.md
+        - name: Důležité informace o zabezpečení
+          href: security-considerations.md
+        - name: Faktory ovlivňující výkon
+          href: performance-considerations.md
+        - name: Důležité informace o migraci
+          href: migration-considerations.md
+        - name: "Důležité informace o\_nasazení"
+          href: deployment-considerations.md
 - name: Prostředky Entity Framework
   href: resources.md
 - name: Terminologie Entity Framework
