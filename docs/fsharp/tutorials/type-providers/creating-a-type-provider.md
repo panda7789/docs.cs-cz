@@ -2,12 +2,12 @@
 title: 'Kurz: vytvoření poskytovatele typu'
 description: 'Naučte se vytvářet vlastní poskytovatele typu F # v F # 3,0 prozkoumáním několika poskytovatelů jednoduchých typů pro ilustraci základních konceptů.'
 ms.date: 11/04/2019
-ms.openlocfilehash: 67ebd91007ff814370573ebc1a65b2c7a8399f7d
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: 71225614ed983a76d35c214faa87bbad0fbb7d24
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202134"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88810869"
 ---
 # <a name="tutorial-create-a-type-provider"></a>Kurz: vytvoření poskytovatele typu
 
@@ -175,9 +175,9 @@ V této části se seznámíte s hlavními částmi implementace poskytovatele t
 type SampleTypeProvider(config: TypeProviderConfig) as this =
 ```
 
-Tento typ musí být veřejný a musí být označen atributem [TypeProvider](https://msdn.microsoft.com/library/bdf7b036-7490-4ace-b79f-c5f1b1b37947) , aby kompilátor rozpoznal poskytovatele typu, když se na sestavení, které obsahuje daný typ, odkazuje v případě samostatného projektu F #. Parametr *Konfigurace* je nepovinný, a pokud je k dispozici, obsahuje kontextové informace o konfiguraci pro instanci zprostředkovatele typu, kterou vytvoří kompilátor F #.
+Tento typ musí být veřejný a musí být označen atributem [TypeProvider](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices-typeproviderattribute.html) , aby kompilátor rozpoznal poskytovatele typu, když se na sestavení, které obsahuje daný typ, odkazuje v případě samostatného projektu F #. Parametr *Konfigurace* je nepovinný, a pokud je k dispozici, obsahuje kontextové informace o konfiguraci pro instanci zprostředkovatele typu, kterou vytvoří kompilátor F #.
 
-Dále implementujete rozhraní [ITypeProvider](https://msdn.microsoft.com/library/2c2b0571-843d-4a7d-95d4-0a7510ed5e2f) . V takovém případě použijete `TypeProviderForNamespaces` typ z `ProvidedTypes` rozhraní API jako základní typ. Tento typ pomocníka může poskytnout konečnou kolekci oborů názvů eagerly, z nichž každá z nich přímo obsahuje konečný počet pevných eagerly poskytovaných typů. V tomto kontextu zprostředkovatel *eagerly* generuje typy i v případě, že nejsou požadovány nebo použity.
+Dále implementujete rozhraní [ITypeProvider](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices-itypeprovider.html) . V takovém případě použijete `TypeProviderForNamespaces` typ z `ProvidedTypes` rozhraní API jako základní typ. Tento typ pomocníka může poskytnout konečnou kolekci oborů názvů eagerly, z nichž každá z nich přímo obsahuje konečný počet pevných eagerly poskytovaných typů. V tomto kontextu zprostředkovatel *eagerly* generuje typy i v případě, že nejsou požadovány nebo použity.
 
 ```fsharp
 inherit TypeProviderForNamespaces(config)
@@ -236,7 +236,7 @@ let t = ProvidedTypeDefinition(thisAssembly, namespaceName,
 
 Všimněte si, že byste měli mít na paměti následující body:
 
-- Tento poskytnutý typ se vymaže.  Vzhledem k tomu, že označíte, že základní typ je `obj` , instance se zobrazí jako hodnoty typu [obj](https://msdn.microsoft.com/library/dcf2430f-702b-40e5-a0a1-97518bf137f7) v kompilovaném kódu.
+- Tento poskytnutý typ se vymaže.  Vzhledem k tomu, že označíte, že základní typ je `obj` , instance se zobrazí jako hodnoty typu [obj](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html) v kompilovaném kódu.
 
 - Pokud zadáte nevnořený typ, je nutné zadat sestavení a obor názvů. U vymazaných typů by sestavení mělo být samotné sestavení poskytovatele typu.
 
@@ -255,7 +255,7 @@ let staticProp = ProvidedProperty(propertyName = "StaticProperty",
                                   getterCode = (fun args -> <@@ "Hello!" @@>))
 ```
 
-Získání této vlastnosti se vždy vyhodnotí jako řetězec "Hello!". `GetterCode`Pro vlastnost používá uvozovku F #, která představuje kód, který kompilátor hostitele generuje pro získání vlastnosti. Další informace o nabídkách naleznete v tématu [Code quotes (F #)](https://msdn.microsoft.com/library/6f055397-a1f0-4f9a-927c-f0d7c6951155).
+Získání této vlastnosti se vždy vyhodnotí jako řetězec "Hello!". `GetterCode`Pro vlastnost používá uvozovku F #, která představuje kód, který kompilátor hostitele generuje pro získání vlastnosti. Další informace o nabídkách naleznete v tématu [Code quotes (F #)](../../language-reference/code-quotations.md).
 
 Přidejte do vlastnosti dokumentaci XML.
 
@@ -282,7 +282,7 @@ let ctor = ProvidedConstructor(parameters = [ ],
 new Type10()
 ```
 
-Instance poskytnutého typu bude vytvořena pomocí podkladových dat "data objektů". Kód v uvozovkách obsahuje převod na [obj](https://msdn.microsoft.com/library/dcf2430f-702b-40e5-a0a1-97518bf137f7) , protože tento typ je vymazání tohoto poskytnutého typu (jak jste určili při deklaraci poskytnutého typu).
+Instance poskytnutého typu bude vytvořena pomocí podkladových dat "data objektů". Kód v uvozovkách obsahuje převod na [obj](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html) , protože tento typ je vymazání tohoto poskytnutého typu (jak jste určili při deklaraci poskytnutého typu).
 
 Přidejte do konstruktoru dokumentaci XML a přidejte poskytnutý konstruktor k poskytnutému typu:
 
@@ -750,7 +750,7 @@ V této části se dozvíte, jak poskytnout typ, který lze použít k získán�
 
 - Názvy hlaviček jsou buď menší než jednotka, nebo mají formát "název (jednotka)" a neobsahují čárky.
 
-- Jednotky jsou všechny jednotky systému, které jsou mezinárodní (SI), jako modul [Microsoft. FSharp. data. UnitSystems. si. UnitNames Module (F #)](https://msdn.microsoft.com/library/3cb43485-11f5-4aa7-a779-558f19d4013b) , který definuje.
+- Jednotky jsou všechny jednotky systému (jednotky v systému), které definuje modul [FSharp. data. UnitSystems. si UnitNames Module (F #)](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-data-unitsystems-si-unitnames.html) .
 
 - Jednotky jsou všechny jednoduché (například měřič), nikoli složené (například měřič za sekundu).
 
@@ -877,7 +877,7 @@ Všimněte si následujících bodů implementace:
 
 - Přetížené konstruktory umožňují načíst buď původní soubor, nebo jeden, který má stejné schéma. Tento model je běžný při psaní poskytovatele typu pro místní nebo vzdálené zdroje dat. Tento model umožňuje použít jako šablonu pro vzdálená data místní soubor.
 
-- Můžete použít hodnotu [TypeProviderConfig](https://msdn.microsoft.com/library/1cda7b9a-3d07-475d-9315-d65e1c97eb44) , která je předána konstruktoru poskytovatele typu k překladu relativních názvů souborů.
+- Můžete použít hodnotu [TypeProviderConfig](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices-typeproviderconfig.html) , která je předána konstruktoru poskytovatele typu k překladu relativních názvů souborů.
 
 - Můžete použít `AddDefinitionLocation` metodu k definování umístění poskytovaných vlastností. Proto pokud použijete `Go To Definition` na poskytnutou vlastnost, soubor CSV se otevře v aplikaci Visual Studio.
 
@@ -901,7 +901,7 @@ let function1 () =
     obj1.InstanceProperty
 ```
 
-Tady je obrázek výsledného kódu, který se dekompiluje pomocí programu Ildasm. exe:
+Tady je obrázek výsledného kódu, který je dekompilovaný pomocí ildasm.exe:
 
 ```il
 .class public abstract auto ansi sealed Module1
@@ -976,7 +976,7 @@ Následující části popisují vzory návrhu, které můžete použít při vy
 
 #### <a name="the-getconnection-design-pattern"></a>Vzor návrhu GetConnection
 
-Většina poskytovatelů typů by měla být napsána tak, aby používala `GetConnection` vzor, který používají poskytovatelé typů v FSharp. data. TypeProviders. dll, jak ukazuje následující příklad:
+Většina poskytovatelů typů by měla být napsána tak, aby používala `GetConnection` vzor, který používají poskytovatelé typů v FSharp.Data.TypeProviders.dll, jak ukazuje následující příklad:
 
 ```fsharp
 #r "Fabrikam.Data.WebDataStore.dll"
@@ -1054,7 +1054,7 @@ Každé instanci poskytovatele typu lze předávat `TypeProviderConfig` hodnotu 
 
 ### <a name="invalidation"></a>Zneplatnění
 
-Poskytovatelé můžou vyvolávat neplatné signály, které upozorňují na službu jazyka F #, že se předpoklady schématu změnily. Pokud dojde k neplatnosti, typecheck se provede, pokud je poskytovatel hostován v aplikaci Visual Studio. Tento signál bude ignorován, pokud je poskytovatel hostován v F# Interactive nebo kompilátorem jazyka F # (FSC. exe).
+Poskytovatelé můžou vyvolávat neplatné signály, které upozorňují na službu jazyka F #, že se předpoklady schématu změnily. Pokud dojde k neplatnosti, typecheck se provede, pokud je poskytovatel hostován v aplikaci Visual Studio. Tento signál bude ignorován, pokud je poskytovatel hostován v F# Interactive nebo kompilátorem jazyka F # (fsc.exe).
 
 ### <a name="caching-schema-information"></a>Ukládání informací o schématu do mezipaměti
 
@@ -1086,7 +1086,7 @@ type Service = ODataService<"http://services.odata.org/Northwind/Northwind.svc/"
 
 Pomocný kód ProvidedTypes-0,2, který je součástí verze F # 3,0, má pouze omezené podpory pro poskytování generovaných typů. Následující příkazy musí být pro definici generovaného typu pravdivé:
 
-- `isErased`musí být nastaven na hodnotu `false` .
+- `isErased` musí být nastaven na hodnotu `false` .
 
 - Vygenerovaný typ musí být přidán do nově vytvořeného typu `ProvidedAssembly()` , který představuje kontejner pro vygenerované fragmenty kódu.
 
@@ -1118,17 +1118,17 @@ Následující tipy mohou být užitečné během procesu vývoje:
 
 Můžete vyvíjet poskytovatele typu v jedné instanci a otestovat poskytovatele v druhé, protože testovací prostředí IDE povede zámek na soubor. dll, který brání opětovnému sestavení poskytovatele typu. Proto je nutné zavřít druhou instanci sady Visual Studio, když je poskytovatel sestaven v první instanci a poté po sestavení poskytovatele znovu otevřít druhou instanci.
 
-### <a name="debug-type-providers-by-using-invocations-of-fscexe"></a>Poskytovatelé typu ladění pomocí volání FSC. exe
+### <a name="debug-type-providers-by-using-invocations-of-fscexe"></a>Poskytovatelé typu ladění pomocí volání fsc.exe
 
 Zprostředkovatele typů můžete vyvolat pomocí následujících nástrojů:
 
-- FSC. exe (kompilátor příkazového řádku jazyka F #)
+- fsc.exe (kompilátor příkazového řádku jazyka F #)
 
-- FSI. exe (kompilátor F# Interactive)
+- fsi.exe (kompilátor F# Interactive)
 
-- devenv. exe (Visual Studio)
+- devenv.exe (Visual Studio)
 
-Můžete často ladit poskytovatele typu, a to pomocí FSC. exe v souboru testovacího skriptu (například Script. FSX). Ladicí program můžete spustit z příkazového řádku.
+Můžete často ladit poskytovatele typu, a to pomocí fsc.exe v souboru testovacího skriptu (například Script. FSX). Ladicí program můžete spustit z příkazového řádku.
 
 ```console
 devenv /debugexe fsc.exe script.fsx

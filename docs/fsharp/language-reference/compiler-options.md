@@ -2,12 +2,12 @@
 title: Možnosti kompilátoru
 description: 'Použijte možnosti příkazového řádku kompilátoru jazyka F # k řízení kompilace vašich aplikací a knihoven F #.'
 ms.date: 08/15/2020
-ms.openlocfilehash: 7f7b7dac2060213cd7d783669cb4de2b96a88968
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: c10808e97d31bd3bdb469fc2a8e57a4650170dec
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88557357"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88812143"
 ---
 # <a name="compiler-options"></a>Možnosti kompilátoru
 
@@ -52,7 +52,7 @@ V následující tabulce jsou uvedeny možnosti kompilátoru seřazené podle ab
 |`--pdb:pdb-filename`|Pojmenuje výstupní soubor Debug PDB (program Database). Tato možnost platí i v případě `--debug` , že je také povolena.<br /><br />Tato možnost kompilátoru je ekvivalentní možnosti kompilátoru jazyka C# se stejným názvem. Další informace naleznete v tématu [&#47;pdb &#40;C&#35; možnosti kompilátoru&#41;](../../csharp/language-reference/compiler-options/pdb-compiler-option.md).|
 |`--platform:platform-name`|Určuje, že generovaný kód bude spuštěn pouze na zadané platformě ( `x86` , `Itanium` nebo `x64` ), nebo pokud je zvolen název platformy, `anycpu` Určuje, že generovaný kód může běžet na libovolné platformě.<br /><br />Tato možnost kompilátoru je ekvivalentní možnosti kompilátoru jazyka C# se stejným názvem. Další informace naleznete v tématu [&#47;platform &#40;C&#35; možnosti kompilátoru&#41;](../../csharp/language-reference/compiler-options/platform-compiler-option.md).|
 |`--preferreduilang:lang`| Určuje preferovaný název jazykové verze jazyka (například  `es-ES` , `ja-JP` ). |
-|`--quotations-debug`|Určuje, že se mají vygenerovat dodatečné informace o ladění pro výrazy, které jsou odvozeny z literálů uvozovek F # a reflektované definice. Informace o ladění jsou přidány do vlastních atributů uzlu stromu výrazu F #. Viz [citace kódu](code-quotations.md) a [expr. CustomAttributes –](https://msdn.microsoft.com/visualfsharpdocs/conceptual/expr.customattributes-property-%5bfsharp%5d).|
+|`--quotations-debug`|Určuje, že se mají vygenerovat dodatečné informace o ladění pro výrazy, které jsou odvozeny z literálů uvozovek F # a reflektované definice. Informace o ladění jsou přidány do vlastních atributů uzlu stromu výrazu F #. Viz [citace kódu](code-quotations.md) a [expr. CustomAttributes –](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html#CustomAttributes).|
 |`--reference:assembly-filename`<br /><br />`-r:assembly-filename`|Zpřístupňuje kód z sestavení F # nebo .NET Framework k kompilovanému kódu.<br /><br />Tato možnost kompilátoru je ekvivalentní možnosti kompilátoru jazyka C# se stejným názvem. Další informace naleznete v tématu [&#47;reference &#40;C&#35; možnosti kompilátoru&#41;](../../csharp/language-reference/compiler-options/reference-compiler-option.md).|
 |`--resource:resource-filename`|Vloží spravovaný soubor prostředků do generovaného sestavení.<br /><br />Tato možnost kompilátoru je ekvivalentní možnosti kompilátoru jazyka C# se stejným názvem. Další informace naleznete v tématu [&#47;&#40;prostředků C&#35; možnosti kompilátoru&#41;](../../csharp/language-reference/compiler-options/resource-compiler-option.md).|
 |`--sig:signature-filename`|Vygeneruje soubor signatury založený na generovaném sestavení. Další informace o souborech signatur najdete v tématu [signatury](signature-files.md).|

@@ -368,6 +368,13 @@ items:
         href: run-time-config/networking.md
       - name: Nastavení dělení na vlákna
         href: run-time-config/threading.md
+  - name: Analýza kódu
+    items:
+      - name: Přehled
+        href: ../fundamentals/productivity/code-analysis.md
+        displayName: 'code analysis, analyzers'
+      - name: Konfigurace pravidel
+        href: ../fundamentals/productivity/configure-code-analysis-rules.md
   - name: Migrace
     items:
       - name: .NET Core 2.0 na 2.1

@@ -1,20 +1,17 @@
 ---
 title: Řetězce
 description: 'Přečtěte si, jak typ řetězce F # představuje neměnný text jako posloupnost znaků Unicode.'
-ms.date: 07/05/2019
-ms.openlocfilehash: 67a6506b4b8c479da1022c069a7f53402f904b4d
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.date: 08/15/2020
+ms.openlocfilehash: f6ec36feeb197bf785c702e7b626cf5cf80696ab
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87855410"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88812208"
 ---
 # <a name="strings"></a>Řetězce
 
-`string`Typ představuje neproměnlivý text jako posloupnost znaků Unicode. `string`je alias pro `System.String` v rozhraní .NET.
-
-> [!NOTE]
-> Reference k rozhraní docs.microsoft.com API pro F # není dokončená. Pokud narazíte na nefunkční odkazy, místo toho použijte [dokumentaci základní knihovny F #](https://fsharp.github.io/fsharp-core-docs/) .
+`string`Typ představuje neproměnlivý text jako posloupnost znaků Unicode. `string` je alias pro `System.String` v rozhraní .NET.
 
 ## <a name="remarks"></a>Poznámky
 
@@ -32,10 +29,10 @@ ms.locfileid: "87855410"
 |Zpětné lomítko|`\\`|
 |Znak uvozovek|`\"`|
 |Apostrof|`\'`|
-|znak Unicode|`\DDD`(kde `D` označuje desítkovou číslici; rozsah 000-255; například `\231` = "ç")|
-|znak Unicode|`\xHH`(kde `H` označuje hexadecimální číslo; rozsah 00-FF; například `\xE7` = "ç")|
-|znak Unicode|`\uHHHH`(UTF-16) (kde `H` označuje šestnáctkovou číslici; rozsah 0000-FFFF;  například `\u00E7` = "ç")|
-|znak Unicode|`\U00HHHHHH`(UTF-32) (kde `H` označuje hexadecimální číslici, rozsah 000000-10FFFF;  například `\U0001F47D` = " 👽 ")|
+|znak Unicode|`\DDD` (kde `D` označuje desítkovou číslici; rozsah 000-255; například `\231` = "ç")|
+|znak Unicode|`\xHH` (kde `H` označuje hexadecimální číslo; rozsah 00-FF; například `\xE7` = "ç")|
+|znak Unicode|`\uHHHH` (UTF-16) (kde `H` označuje šestnáctkovou číslici; rozsah 0000-FFFF;  například `\u00E7` = "ç")|
+|znak Unicode|`\U00HHHHHH` (UTF-32) (kde `H` označuje hexadecimální číslici, rozsah 000000-10FFFF;  například `\U0001F47D` = " 👽 ")|
 
 > [!IMPORTANT]
 > `\DDD`Řídicí sekvence je Desítkový zápis, nikoli osmičkový zápis podobně jako ve většině ostatních jazyků. Proto číslice `8` a `9` jsou platné a sekvence `\032` představuje mezeru (U + 0020), zatímco stejný bod kódu v osmičkové notaci by byl `\040` .
@@ -69,7 +66,7 @@ K jednotlivým znakům v řetězci můžete přistupovat pomocí syntaxe typu po
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1002.fs)]
 
-Výstup je `b` .
+Výstup je `b`.
 
 Nebo můžete extrahovat podřetězce pomocí syntaxe řezu pole, jak je znázorněno v následujícím kódu.
 
@@ -102,7 +99,7 @@ Pomocí `Chars` vlastnosti `System.String` můžete k jednotlivým znakům v ře
 
 ## <a name="string-module"></a>Řetězec – modul
 
-Další funkce pro zpracování řetězců je obsažena v `String` modulu v `FSharp.Core` oboru názvů. Další informace najdete v tématu [modul Core. String](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.string-module-%5bfsharp%5d).
+Další funkce pro zpracování řetězců je obsažena v `String` modulu v `FSharp.Core` oboru názvů. Další informace naleznete v tématu [String Module](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-stringmodule.html).
 
 ## <a name="see-also"></a>Viz také
 

@@ -1,13 +1,13 @@
 ---
 title: Funkce první třídy
-description: Přečtěte si o funkcích první třídy a o tom, jak jsou důležité pro F#funkční programování v.
+description: 'Přečtěte si o funkcích první třídy a o tom, jak jsou důležité pro funkční programování v F #.'
 ms.date: 10/29/2018
-ms.openlocfilehash: 4681d32abd59cc4aade6f4cb2d062e7888bcfbbc
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 1dc8eae1655187282f05bf4e9501ecc8a17deba8
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68629723"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88810908"
 ---
 # <a name="first-class-functions"></a>Funkce první třídy
 
@@ -23,15 +23,15 @@ Typická opatření stavu první kategorie zahrnují:
 
 - Můžete vrátit funkci ze volání funkce?
 
-Poslední dvě míry definují, co se říká operacemi s *vyšším pořadím* nebo *funkcí vyššího řádu*. Funkce vyššího řádu přijímají funkce jako argumenty a vrací funkce jako hodnotu volání funkce. Tyto operace podporují stěžejní části funkčního programování, jako jsou funkce mapování a skládání funkcí.
+Poslední dvě míry definují, co se říká *operacemi s vyšším pořadím* nebo *funkcí vyššího řádu*. Funkce vyššího řádu přijímají funkce jako argumenty a vrací funkce jako hodnotu volání funkce. Tyto operace podporují stěžejní části funkčního programování, jako jsou funkce mapování a skládání funkcí.
 
 ## <a name="give-the-value-a-name"></a>Přiřazení názvu hodnotě
 
-Pokud je funkce hodnotou první kategorie, je třeba ji pojmenovat, stejně jako lze pojmenovat celá čísla, řetězce a další předdefinované typy. Na to je podle literatury o funkčním programování odkazováno jako na vázání identifikátoru na hodnotu. F#`let <identifier> = <value>` [ používá`let` vazby](../language-reference/functions/let-bindings.md) k vytvoření vazby názvů k hodnotám:. Následující kód ukazuje dva příklady.
+Pokud je funkce hodnotou první kategorie, je třeba ji pojmenovat, stejně jako lze pojmenovat celá čísla, řetězce a další předdefinované typy. Na to je podle literatury o funkčním programování odkazováno jako na vázání identifikátoru na hodnotu. Jazyk F # používá [ `let` vazby](../language-reference/functions/let-bindings.md) k vytvoření vazby názvů k hodnotám: `let <identifier> = <value>` . Následující kód ukazuje dva příklady.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/contour/snippet20.fs)]
 
-Funkci lze pojmenovat stejně snadno. Následující příklad definuje `squareIt` funkci s názvem navázáním identifikátoru `squareIt` na [výraz](../language-reference/functions/lambda-expressions-the-fun-keyword.md) `fun n -> n * n`lambda. Funkce `squareIt` má jeden parametr `n` a vrací druhou mocninu tohoto parametru.
+Funkci lze pojmenovat stejně snadno. Následující příklad definuje funkci s názvem `squareIt` navázáním identifikátoru `squareIt` na [výraz lambda](../language-reference/functions/lambda-expressions-the-fun-keyword.md) `fun n -> n * n` . Funkce `squareIt` má jeden parametr `n` a vrací druhou mocninu tohoto parametru.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/contour/snippet21.fs)]
 
@@ -69,7 +69,7 @@ V následujícím příkladu má funkce `applyIt` dva parametry, `op` a `arg`. P
 
 Možnost odeslat funkci jako argument do jiné funkce je základem společných abstrakcí ve funkčních programovacích jazycích, jako jsou například operace mapování nebo filtrování. Například operace mapování je funkce vyššího řádu, která zachytává výpočet sdílený funkcemi, jež prochází seznamem, u každého prvku provedou nějakou operaci a poté vrátí seznam výsledků. Může být například třeba zvýšit každý prvek v seznamu celých čísel o jedna, každý prvek umocnit na druhou nebo převést každý prvek seznamu řetězců na velká písmena. Rekurzivní proces, který prochází seznam a vytváří seznam výsledků k vrácení, je část výpočtu náchylná k chybám. Tato část je zachycena ve funkci mapování. Jediné, co je třeba napsat pro konkrétní aplikaci, je funkce, kterou chcete použít na každý jednotlivý prvek seznamu (sčítání, umocňování, změna velikosti písmen). Tato funkce je předána jako argument funkci mapování, stejně jako je v předchozím příkladu prvek `squareIt` předán do funkce `applyIt`.
 
-F#poskytuje metody mapování pro většinu typů kolekcí, včetně [seznamů](../language-reference/lists.md), [polí](../language-reference/arrays.md)a [sekvencí](../language-reference/sequences.md). Následující příklady používají seznamy. Syntaxe je `List.map <the function> <the list>`.
+Jazyk F # poskytuje metody mapování pro většinu typů kolekcí, včetně [seznamů](../language-reference/lists.md), [polí](../language-reference/arrays.md)a [sekvencí](../language-reference/sequences.md). Následující příklady používají seznamy. Syntaxe je `List.map <the function> <the list>`.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/contour/snippet28.fs)]
 
@@ -91,7 +91,7 @@ Následující volání funkce, deklarované na jednom řádku, vrací logickou 
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/contour/snippet31.fs)]
 
-Schopnost vracet funkci jako hodnotu volání funkce je druhým charakteristickým znakem funkcí vyššího řádu. V následujícím příkladu je `checkFor` definováno jako funkce, která převezme jeden argument, `item`, a jako hodnotu vrátí novou funkci. Vrácená funkce převezme seznam jako argument `lst` a v argumentu `item` vyhledá prvek `lst`. Pokud je prvek `item` nalezen, funkce vrací hodnotu `true`. Pokud není prvek `item` nalezen, funkce vrací hodnotu `false`. Jak je uvedeno v předchozí části, následující kód používá pro hledání v seznamu funkci seznamu, [seznam. existuje](https://msdn.microsoft.com/library/15a3ebd5-98f0-44c0-8220-7dedec3e68a8).
+Schopnost vracet funkci jako hodnotu volání funkce je druhým charakteristickým znakem funkcí vyššího řádu. V následujícím příkladu je `checkFor` definováno jako funkce, která převezme jeden argument, `item`, a jako hodnotu vrátí novou funkci. Vrácená funkce převezme seznam jako argument `lst` a v argumentu `item` vyhledá prvek `lst`. Pokud je prvek `item` nalezen, funkce vrací hodnotu `true`. Pokud není prvek `item` nalezen, funkce vrací hodnotu `false`. Jak je uvedeno v předchozí části, následující kód používá pro hledání v seznamu funkci seznamu, [seznam. existuje](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-listmodule.html#exists).
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/contour/snippet32.fs)]
 
@@ -123,7 +123,7 @@ Následující kód volá funkci `makeGame` předávající hodnotu `7` do argum
 
 ## <a name="curried-functions"></a>Curryfikované funkce
 
-Mnohé z příkladů v předchozí části lze zapsat výstižnější tím, že využijete implicitní *procesu curryfikace* v F# deklaracích funkcí. Curryfikace je proces, jenž transformuje funkci, která má více než jeden parametr do řady vložených funkcí, z nichž každá má jeden parametr. V jazyce F# jsou funkce, které mají více než jeden parametr, ze své podstaty curryfikovány. Například funkci `compose` z předchozí části lze zapsat pomocí následujícího stručného stylu se třemi parametry.
+Mnohé z příkladů v předchozí části lze zapsat výstižnější tím, že využijete implicitní *procesu curryfikace* v deklaracích funkcí jazyka F #. Curryfikace je proces, jenž transformuje funkci, která má více než jeden parametr do řady vložených funkcí, z nichž každá má jeden parametr. V jazyce F# jsou funkce, které mají více než jeden parametr, ze své podstaty curryfikovány. Například funkci `compose` z předchozí části lze zapsat pomocí následujícího stručného stylu se třemi parametry.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/contour/snippet38.fs)]
 
@@ -176,7 +176,7 @@ Příklady v předchozích částech ukazují, že funkce jazyka F# splňují kr
 - Funkci lze vrátit jako hodnotu volání funkce.
 [!code-fsharp[Main](~/samples/snippets/fsharp/contour/snippet32.fs)]
 
-Další informace o F#najdete v referenčních [ F# ](../language-reference/index.md)informacích k jazyku.
+Další informace o jazyce F # naleznete v tématu [Referenční dokumentace jazyka f #](../language-reference/index.md).
 
 ## <a name="example"></a>Příklad
 
@@ -188,10 +188,10 @@ Následující kód obsahuje všechny příklady v tomto tématu.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/contour/snippet47.fs)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Seznamy](../language-reference/lists.md)
 - [Řazené kolekce členů](../language-reference/tuples.md)
-- [Funkce](../language-reference/functions/index.md)
-- [`let`Vazeb](../language-reference/functions/let-bindings.md)
-- [Výrazy lambda: Klíčové slovo `fun`](../language-reference/functions/lambda-expressions-the-fun-keyword.md)
+- [Functions](../language-reference/functions/index.md)
+- [`let` Vazeb](../language-reference/functions/let-bindings.md)
+- [Výrazy lambda: `fun` klíčové slovo](../language-reference/functions/lambda-expressions-the-fun-keyword.md)

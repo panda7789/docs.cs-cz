@@ -2,12 +2,12 @@
 title: Interaktivní možnosti
 description: Přečtěte si o možnostech příkazového řádku, které podporuje F# Interactive, fsi.exe.
 ms.date: 08/15/2020
-ms.openlocfilehash: da2251c1d2e57090ed926e501cebf3c53ac58052
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: adc8dc86f14366720e1acbf35115d4e318a76aef
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88558605"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88810529"
 ---
 # <a name="f-interactive-options"></a>Možnosti F# Interactive
 
@@ -52,7 +52,7 @@ Kde se zobrazí seznamy v argumentech možností F# Interactive, prvky seznamu j
 |**--optimize**[ **+**&#124;**-** ]|Stejné jako možnost kompilátoru **fsc.exe** . Další informace naleznete v tématu [Možnosti kompilátoru](compiler-options.md).|
 |**--preferreduilang –: &lt; lang&gt;**| Určuje preferovaný název jazykové verze jazyka (například ES-ES, ja-JP). |
 |**--quiet**|Potlačí výstup F# Interactive do datového proudu **stdout** .|
-|**--quotes – ladění**|Určuje, že se mají vygenerovat dodatečné informace o ladění pro výrazy, které jsou odvozeny z literálů uvozovek F # a reflektované definice. Informace o ladění jsou přidány do vlastních atributů uzlu stromu výrazu F #. Viz [citace kódu](code-quotations.md) a [expr. CustomAttributes –](https://msdn.microsoft.com/library/eb89943f-5f5b-474e-b125-030ca412edb3).|
+|**--quotes – ladění**|Určuje, že se mají vygenerovat dodatečné informace o ladění pro výrazy, které jsou odvozeny z literálů uvozovek F # a reflektované definice. Informace o ladění jsou přidány do vlastních atributů uzlu stromu výrazu F #. Viz [citace kódu](code-quotations.md) a [expr. CustomAttributes –](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html#CustomAttributes).|
 |**--ReadLine**[ **+**&#124;**-** ]|Povolí nebo zakáže dokončování tabulátorů v interaktivním režimu.|
 |**--Reference: &lt; filename&gt;**<br /><br />**-r: &lt; název souboru&gt;**|Stejné jako možnost kompilátoru **fsc.exe** . Další informace naleznete v tématu [Možnosti kompilátoru](compiler-options.md).|
 |**--volání funkce tail**[ **+**&#124;**-** ]|Povolí nebo zakáže použití instrukcí Tail IL, což způsobí, že se rámec zásobníku znovu použije pro rekurzivní funkce tail. Tato možnost je ve výchozím nastavení povolená.|

@@ -1,15 +1,15 @@
 ---
 title: Výpočetní výrazy
 description: 'Naučte se vytvářet praktické syntaxe pro zápis výpočtů v F #, která se dají sekvencovat a kombinovat pomocí konstrukcí a vazeb toku řízení.'
-ms.date: 11/04/2019
+ms.date: 08/15/2020
 f1_keywords:
 - let!_FS
-ms.openlocfilehash: 32638e9493fb2c6b7aae30d044a0cda2a97f2178
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.openlocfilehash: 1649d8c57ea9e025d40ef6d39d92b96795964150
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87855358"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88812156"
 ---
 # <a name="computation-expressions"></a>Výpočetní výrazy
 
@@ -81,7 +81,7 @@ let doThingsAsync url =
 
 Pokud svážete volání výrazu výpočtu s `let` , nebudete mít výsledek výrazu výpočtu. Místo toho budete mít vazbu na hodnotu *nerealizovaného* volání tohoto výrazu výpočtu. Slouží `let!` k vytvoření vazby na výsledek.
 
-`let!`je definována `Bind(x, f)` členem na typu tvůrce.
+`let!` je definována `Bind(x, f)` členem na typu tvůrce.
 
 ### `do!`
 
@@ -97,7 +97,7 @@ let doThingsAsync data url =
 
 Pro [asynchronní pracovní postup](asynchronous-workflows.md)je tento typ `Async<unit>` . Pro jiné výpočetní výrazy je typ pravděpodobně `CExpType<unit>` .
 
-`do!`je definována `Bind(x, f)` členem na typu tvůrce, kde `f` vytvoří `unit` .
+`do!` je definována `Bind(x, f)` členem na typu tvůrce, kde `f` vytvoří `unit` .
 
 ### `yield`
 
@@ -144,7 +144,7 @@ let weekdays includeWeekend =
 
 Stejně jako u [klíčového slova yield v jazyce C#](../../csharp/language-reference/keywords/yield.md)je každý prvek ve výrazu výpočtu vrácen zpět při iteraci.
 
-`yield`je definována `Yield(x)` členem na typu tvůrce, kde `x` je položka, která má být vrácena.
+`yield` je definována `Yield(x)` členem na typu tvůrce, kde `x` je položka, která má být vrácena.
 
 ### `yield!`
 
@@ -172,7 +172,7 @@ printfn "%A" squaresAndCubes // Prints - 1; 4; 9; 1; 8; 27
 
 Při vyhodnocování je výsledkem výrazu výpočtu, který má za `yield!` následek, že jeho položky budou vracet jeden po jedné a sloučí výsledek.
 
-`yield!`je definována `YieldFrom(x)` členem na typu tvůrce, kde `x` je kolekce hodnot.
+`yield!` je definována `YieldFrom(x)` členem na typu tvůrce, kde `x` je kolekce hodnot.
 
 Na rozdíl od `yield` , `yield!` je nutné explicitně zadat. Jeho chování není ve výrazech výpočtu implicitní.
 
@@ -191,7 +191,7 @@ let req = // 'req' is of type is 'Async<data>'
 let result = Async.RunSynchronously req
 ```
 
-`return`je definována `Return(x)` členem na typu tvůrce, kde `x` je položka, která má být zabalena.
+`return` je definována `Return(x)` členem na typu tvůrce, kde `x` je položka, která má být zabalena.
 
 ### `return!`
 
@@ -207,7 +207,7 @@ let req = // 'req' is of type is 'Async<data>'
 let result = Async.RunSynchronously req
 ```
 
-`return!`je definována `ReturnFrom(x)` členem na typu tvůrce, kde `x` je jiný výraz výpočtu.
+`return!` je definována `ReturnFrom(x)` členem na typu tvůrce, kde `x` je jiný výraz výpočtu.
 
 ### `match!`
 
@@ -410,20 +410,20 @@ comp |> step |> step
 comp |> step |> step |> step |> step
 ```
 
-Výraz výpočtu má základní typ, který vrací výraz. Nadřízený typ může představovat vypočítaný výsledek nebo zpožděné výpočty, které lze provést, nebo může poskytnout způsob, jak iterovat v některém typu kolekce. V předchozím příkladu byl **nakonec**základní typ. Pro výraz sekvence je základní typ <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> . Pro výraz dotazu je základní typ <xref:System.Linq.IQueryable?displayProperty=nameWithType> . Pro asynchronní pracovní postup je základní typ [`Async`](https://msdn.microsoft.com/library/03eb4d12-a01a-4565-a077-5e83f17cf6f7) . `Async`Objekt představuje práci, která má být provedena k výpočtu výsledku. Například zavoláte [`Async.RunSynchronously`](https://msdn.microsoft.com/library/0a6663a9-50f2-4d38-8bf3-cefd1a51fd6b) k provedení výpočtu a vrátí výsledek.
+Výraz výpočtu má základní typ, který vrací výraz. Nadřízený typ může představovat vypočítaný výsledek nebo zpožděné výpočty, které lze provést, nebo může poskytnout způsob, jak iterovat v některém typu kolekce. V předchozím příkladu byl **nakonec**základní typ. Pro výraz sekvence je základní typ <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> . Pro výraz dotazu je základní typ <xref:System.Linq.IQueryable?displayProperty=nameWithType> . Pro asynchronní pracovní postup je základní typ [`Async`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html) . `Async`Objekt představuje práci, která má být provedena k výpočtu výsledku. Například zavoláte [`Async.RunSynchronously`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync.html#RunSynchronously) k provedení výpočtu a vrátí výsledek.
 
 ## <a name="custom-operations"></a>Vlastní operace
 
-Můžete definovat vlastní operaci na výpočetním výrazu a použít vlastní operaci jako operátor ve výrazu výpočtu. Do výrazu dotazu můžete například zahrnout operátor dotazu. Při definování vlastní operace je nutné definovat yield a metody ve výrazu výpočtu. Chcete-li definovat vlastní operaci, vložte ji do třídy tvůrce pro výraz výpočtu a pak použijte [`CustomOperationAttribute`](https://msdn.microsoft.com/library/199f3927-79df-484b-ba66-85f58cc49b19) . Tento atribut přebírá řetězec jako argument, což je název, který se má použít ve vlastní operaci. Tento název se nachází v rozsahu na začátku počáteční složené závorky výrazu výpočtu. Proto byste neměli používat identifikátory, které mají stejný název jako vlastní operace v tomto bloku. Vyhněte se například použití identifikátorů, jako jsou `all` nebo `last` ve výrazech dotazů.
+Můžete definovat vlastní operaci na výpočetním výrazu a použít vlastní operaci jako operátor ve výrazu výpočtu. Do výrazu dotazu můžete například zahrnout operátor dotazu. Při definování vlastní operace je nutné definovat yield a metody ve výrazu výpočtu. Chcete-li definovat vlastní operaci, vložte ji do třídy tvůrce pro výraz výpočtu a pak použijte [`CustomOperationAttribute`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-customoperationattribute.html) . Tento atribut přebírá řetězec jako argument, což je název, který se má použít ve vlastní operaci. Tento název se nachází v rozsahu na začátku počáteční složené závorky výrazu výpočtu. Proto byste neměli používat identifikátory, které mají stejný název jako vlastní operace v tomto bloku. Vyhněte se například použití identifikátorů, jako jsou `all` nebo `last` ve výrazech dotazů.
 
 ### <a name="extending-existing-builders-with-new-custom-operations"></a>Rozšíření stávajících tvůrců s novými vlastními operacemi
 
 Pokud již máte třídu tvůrce, její vlastní operace lze rozšířit mimo tuto třídu tvůrce. V modulech musí být deklarována rozšíření. Obory názvů nemůžou obsahovat členy rozšíření kromě stejného souboru a stejné skupiny deklarací oboru názvů, kde je definovaný typ.
 
-Následující příklad ukazuje rozšíření existující `Microsoft.FSharp.Linq.QueryBuilder` třídy.
+Následující příklad ukazuje rozšíření existující `FSharp.Linq.QueryBuilder` třídy.
 
 ```fsharp
-type Microsoft.FSharp.Linq.QueryBuilder with
+type FSharp.Linq.QueryBuilder with
 
     [<CustomOperation("existsNot")>]
     member _.ExistsNot (source: QuerySource<'T, 'Q>, predicate) =
@@ -434,5 +434,5 @@ type Microsoft.FSharp.Linq.QueryBuilder with
 
 - [Referenční dokumentace jazyka F #](index.md)
 - [Asynchronní pracovní postupy](asynchronous-workflows.md)
-- [Sekvence](https://msdn.microsoft.com/library/6b773b6b-9c9a-4af8-bd9e-d96585c166db)
+- [Sekvence](sequences.md)
 - [Výrazy dotazu](query-expressions.md)
