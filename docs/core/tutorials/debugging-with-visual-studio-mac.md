@@ -2,12 +2,12 @@
 title: Ladění konzolové aplikace .NET Core pomocí Visual Studio pro Mac
 description: Naučte se ladit konzolovou aplikaci .NET Core pomocí sady Visual Studio Mac.
 ms.date: 06/08/2020
-ms.openlocfilehash: 7e2a25266fab40b5ef1d0a38b8bbf06a6843746b
-ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
+ms.openlocfilehash: 79936fb99d0bc37c1234eb8f227eb5415ae48b93
+ms.sourcegitcommit: b9122d1af21898eaba81e990c70fef46fef74a8d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86416022"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88867565"
 ---
 # <a name="tutorial-debug-a-net-core-console-application-using-visual-studio-for-mac"></a>Kurz: ladění konzolové aplikace .NET Core pomocí Visual Studio pro Mac
 
@@ -15,7 +15,7 @@ V tomto kurzu se seznámíte s ladicími nástroji dostupnými v Visual Studio p
 
 ## <a name="prerequisites"></a>Předpoklady
 
-- Tento kurz spolupracuje s konzolovou aplikací, kterou vytvoříte v části [Vytvoření konzolové aplikace .NET Core v Visual Studio pro Mac](with-visual-studio-mac.md).
+- Tento kurz spolupracuje s konzolovou aplikací, kterou vytvoříte v části [Vytvoření konzolové aplikace .NET Core pomocí Visual Studio pro Mac](with-visual-studio-mac.md).
 
 ## <a name="use-debug-build-configuration"></a>Použít konfiguraci sestavení pro ladění
 
@@ -27,7 +27,7 @@ Ve výchozím nastavení používá Visual Studio konfiguraci sestavení laděn�
 
 1. Spusťte Visual Studio pro Mac.
 
-1. Otevřete projekt, který jste vytvořili v [části Vytvoření konzolové aplikace .NET Core v Visual Studio pro Mac](with-visual-studio-mac.md).
+1. Otevřete projekt, který jste vytvořili v [části Vytvoření konzolové aplikace .NET Core pomocí Visual Studio pro Mac](with-visual-studio-mac.md).
 
    Aktuální konfigurace sestavení se zobrazí na panelu nástrojů. Následující obrázek na panelu nástrojů ukazuje, že je aplikace Visual Studio nakonfigurována pro zkompilování ladicí verze aplikace:
 

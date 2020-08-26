@@ -2,12 +2,12 @@
 title: Vytvoření konzolové aplikace .NET Core pomocí Visual Studio pro Mac
 description: Naučte se vytvořit konzolovou aplikaci .NET Core pomocí Visual Studio pro Mac.
 ms.date: 06/02/2020
-ms.openlocfilehash: e0b18837bf8bef5be5f20b84341bde8526b9f7a2
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 8ffcb05ad85f53180ca1aaefbd2dfc7496946142
+ms.sourcegitcommit: b9122d1af21898eaba81e990c70fef46fef74a8d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811870"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88867656"
 ---
 # <a name="tutorial-create-a-net-core-console-application-using-visual-studio-for-mac"></a>Kurz: Vytvoření konzolové aplikace .NET Core pomocí Visual Studio pro Mac
 
@@ -105,4 +105,4 @@ Vylepšete aplikaci, aby se uživateli zobrazila výzva k zadání názvu a zobr
 V tomto kurzu jste vytvořili konzolovou aplikaci .NET Core. V dalším kurzu ladění aplikace.
 
 > [!div class="nextstepaction"]
-> [Ladění konzolové aplikace .NET Core v aplikaci Visual Studio](debugging-with-visual-studio-mac.md)
+> [Ladění konzolové aplikace .NET Core pomocí Visual Studio pro Mac](debugging-with-visual-studio-mac.md)

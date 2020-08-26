@@ -5,18 +5,24 @@ description: Zobrazí seznam nejnovějších změn v ASP.NET Core.
 ms.date: 08/20/2020
 author: scottaddie
 ms.author: scaddie
-ms.openlocfilehash: 4f37bf73c13379bce006c9a3b51302c09562cc44
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 8b37ae5c5eea9e192a269092fccf435ab4877e61
+ms.sourcegitcommit: b9122d1af21898eaba81e990c70fef46fef74a8d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811256"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88867669"
 ---
 # <a name="aspnet-core-breaking-changes"></a>ASP.NET Core přerušující změny
 
 ASP.NET Core poskytuje funkce pro vývoj webových aplikací, které používá .NET Core.
 
-Na této stránce jsou popsány následující přerušující se změny:
+Pro zásadní změny konkrétní verze vyberte jeden z následujících odkazů:
+
+* [ASP.NET Core 5,0](#aspnet-core-50)
+* [ASP.NET Core 3,1](#aspnet-core-31)
+* [ASP.NET Core 3,0](#aspnet-core-30)
+
+Na této stránce jsou popsány následující přerušující změny ASP.NET Core 3,0, 3,1 a 5,0:
 
 - [Odebrání zastaralých rozhraní API pro antipadělání, CORS, diagnostiku, MVC a směrování](#obsolete-antiforgery-cors-diagnostics-mvc-and-routing-apis-removed)
 - [Ověřování: Google + zastaralá](#authentication-google-deprecated-and-replaced)

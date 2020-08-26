@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: afbffa5dc8a620836ec1433a095face46c32df90
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: e0033d52ab54259ce5e4ccf2a25bf4e3d4f244de
+ms.sourcegitcommit: b9122d1af21898eaba81e990c70fef46fef74a8d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811312"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88867552"
 ---
 # <a name="tutorial-publish-a-net-core-console-application-using-visual-studio"></a>Kurz: publikování konzolové aplikace .NET Core pomocí sady Visual Studio
 
@@ -19,13 +19,13 @@ V tomto kurzu se dozvíte, jak publikovat konzolovou aplikaci, aby ji ostatní u
 
 ## <a name="prerequisites"></a>Předpoklady
 
-- Tento kurz spolupracuje s konzolovou aplikací, kterou vytvoříte v části [Vytvoření konzolové aplikace .NET Core v sadě Visual Studio 2019](with-visual-studio.md).
+- Tento kurz spolupracuje s konzolovou aplikací, kterou vytvoříte v části [Vytvoření konzolové aplikace .NET Core pomocí sady Visual Studio](with-visual-studio.md).
 
 ## <a name="publish-the-app"></a>Publikování aplikace
 
 1. Spusťte Visual Studio.
 
-1. Otevřete projekt *HelloWorld* , který jste vytvořili v [části Vytvoření konzolové aplikace .NET Core v aplikaci Visual Studio](with-visual-studio.md).
+1. Otevřete projekt *HelloWorld* , který jste vytvořili v [části Vytvoření konzolové aplikace .NET Core pomocí sady Visual Studio](with-visual-studio.md).
 
 1. Ujistěte se, že aplikace Visual Studio používá konfiguraci sestavení pro vydání. V případě potřeby změňte nastavení konfigurace sestavení na panelu nástrojů z části **ladit** na **verzi**.
 
@@ -112,4 +112,4 @@ V následujících krocích se podíváte na soubory vytvořené procesem publik
 V tomto kurzu jste publikovali konzolovou aplikaci. V dalším kurzu vytvoříte knihovnu tříd.
 
 > [!div class="nextstepaction"]
-> [Vytvoření knihovny .NET Standard v sadě Visual Studio](library-with-visual-studio.md)
+> [Vytvoření knihovny .NET Standard pomocí sady Visual Studio](library-with-visual-studio.md)

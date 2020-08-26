@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: c732728a98eb993762e4fbb9e4b0f5229fdde181
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 4cd18aca4396f902268d59867760424d65ddcf6d
+ms.sourcegitcommit: b9122d1af21898eaba81e990c70fef46fef74a8d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811841"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88867630"
 ---
 # <a name="tutorial-create-a-net-core-console-application-using-visual-studio"></a>Kurz: Vytvoření konzolové aplikace .NET Core pomocí sady Visual Studio
 
@@ -115,4 +115,4 @@ Vylepšete aplikaci, aby se uživateli zobrazila výzva k zadání názvu a zobr
 V tomto kurzu jste vytvořili konzolovou aplikaci .NET Core. V dalším kurzu ladění aplikace.
 
 > [!div class="nextstepaction"]
-> [Ladění konzolové aplikace .NET Core v aplikaci Visual Studio](debugging-with-visual-studio.md)
+> [Ladění aplikace konzoly .NET Core pomocí sady Visual Studio](debugging-with-visual-studio.md)

@@ -2,12 +2,12 @@
 title: Ladění konzolové aplikace .NET Core pomocí Visual Studio Code
 description: Naučte se ladit konzolovou aplikaci .NET Core pomocí Visual Studio Code.
 ms.date: 05/26/2020
-ms.openlocfilehash: 84c7b64ad7708cf2def084593cd7f96eb0ad82e5
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: e2be9324a77d0360247a225bbd93224d379bda0d
+ms.sourcegitcommit: b9122d1af21898eaba81e990c70fef46fef74a8d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88810661"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88867578"
 ---
 # <a name="tutorial-debug-a-net-core-console-application-using-visual-studio-code"></a>Kurz: ladění konzolové aplikace .NET Core pomocí Visual Studio Code
 
@@ -15,7 +15,7 @@ Tento kurz zavádí ladicí nástroje, které jsou k dispozici v Visual Studio C
 
 ## <a name="prerequisites"></a>Předpoklady
 
-- Tento kurz spolupracuje s konzolovou aplikací, kterou vytvoříte v části [Vytvoření konzolové aplikace .NET Core v Visual Studio Code](with-visual-studio-code.md).
+- Tento kurz spolupracuje s konzolovou aplikací, kterou vytvoříte v části [Vytvoření konzolové aplikace .NET Core pomocí Visual Studio Code](with-visual-studio-code.md).
 
 ## <a name="use-debug-build-configuration"></a>Použít konfiguraci sestavení pro ladění
 
@@ -27,7 +27,7 @@ Ve výchozím nastavení Visual Studio Code spuštění nastavení používá ko
 
 1. Spuštění nástroje Visual Studio Code
 
-1. Otevřete složku projektu, který jste vytvořili v [části Vytvoření konzolové aplikace .NET Core v Visual Studio Code](with-visual-studio-code.md).
+1. Otevřete složku projektu, který jste vytvořili v [části Vytvoření konzolové aplikace .NET Core pomocí Visual Studio Code](with-visual-studio-code.md).
 
 ## <a name="set-a-breakpoint"></a>Nastavení zarážky
 
@@ -173,7 +173,7 @@ Visual Studio Code také umožňuje krokovat řádek po řádku programu a monit
 
 1. Vyberte možnost **Spustit**  >  **Krok do** nebo stiskněte klávesu <kbd>F11</kbd>.
 
-   Visual Studio Code spustí `Console.WriteLine` pro příkazový řádek název a zvýrazní další řádek provádění. Další řádek je `Console.ReadLine` pro `name` . Okno **proměnné** se nezměnilo a karta **terminálu** zobrazuje "Co je vaše jméno?" výzv.
+   Visual Studio Code spustí `Console.WriteLine` pro příkazový řádek název a zvýrazní další řádek provádění. Další řádek je `Console.ReadLine` pro `name` . Okno **proměnné** se nezměnilo a karta **terminálu** zobrazuje "Co je vaše jméno?" prompt.
 
 1. Vyberte možnost **Spustit**  >  **Krok do** nebo stiskněte klávesu <kbd>F11</kbd>.
 

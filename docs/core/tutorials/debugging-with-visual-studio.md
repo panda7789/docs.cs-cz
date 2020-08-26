@@ -6,20 +6,20 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: 743603cb037406948190c7090ca3527bfc40db18
-ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
+ms.openlocfilehash: 0555c6b4185da088333503c1e744da2dd7b4f2e4
+ms.sourcegitcommit: b9122d1af21898eaba81e990c70fef46fef74a8d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84702064"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88867591"
 ---
 # <a name="tutorial-debug-a-net-core-console-application-using-visual-studio"></a>Kurz: ladění konzolové aplikace .NET Core pomocí sady Visual Studio
 
 V tomto kurzu se seznámíte s ladicími nástroji dostupnými v aplikaci Visual Studio.
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
-- Tento kurz spolupracuje s konzolovou aplikací, kterou vytvoříte v části [Vytvoření konzolové aplikace .NET Core v sadě Visual Studio 2019](with-visual-studio.md).
+- Tento kurz spolupracuje s konzolovou aplikací, kterou vytvoříte v části [Vytvoření konzolové aplikace .NET Core pomocí sady Visual Studio](with-visual-studio.md).
 
 ## <a name="use-debug-build-configuration"></a>Použít konfiguraci sestavení pro ladění
 
@@ -31,7 +31,7 @@ V konfiguraci ladění program kompiluje s úplnými symbolickými informacemi o
 
 1. Spusťte Visual Studio.
 
-1. Otevřete projekt, který jste vytvořili v [části Vytvoření konzolové aplikace .NET Core v aplikaci Visual Studio 2019](with-visual-studio.md).
+1. Otevřete projekt, který jste vytvořili v [části Vytvoření konzolové aplikace .NET Core pomocí sady Visual Studio](with-visual-studio.md).
 
    Aktuální konfigurace sestavení se zobrazí na panelu nástrojů. Následující obrázek na panelu nástrojů ukazuje, že je aplikace Visual Studio nakonfigurována pro zkompilování ladicí verze aplikace:
 

@@ -2,12 +2,12 @@
 title: Publikování konzolové aplikace .NET Core pomocí Visual Studio Code
 description: Publikování vytvoří sadu souborů, které jsou nutné ke spuštění aplikace .NET Core.
 ms.date: 07/04/2020
-ms.openlocfilehash: 04dfbae85f196ca4c8f8eb593637a801aa9773f2
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: a84e66126806e2ab45c14527df1b931fa9980468
+ms.sourcegitcommit: b9122d1af21898eaba81e990c70fef46fef74a8d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811389"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88867643"
 ---
 # <a name="tutorial-publish-a-net-core-console-application-using-visual-studio-code"></a>Kurz: publikování konzolové aplikace .NET Core pomocí Visual Studio Code
 
@@ -17,13 +17,13 @@ V tomto kurzu se dozvíte, jak publikovat konzolovou aplikaci, aby ji ostatní u
 
 ## <a name="prerequisites"></a>Předpoklady
 
-- Tento kurz spolupracuje s konzolovou aplikací, kterou vytvoříte v části [Vytvoření konzolové aplikace .NET Core v Visual Studio Code](with-visual-studio-code.md).
+- Tento kurz spolupracuje s konzolovou aplikací, kterou vytvoříte v části [Vytvoření konzolové aplikace .NET Core pomocí Visual Studio Code](with-visual-studio-code.md).
 
 ## <a name="publish-the-app"></a>Publikování aplikace
 
 1. Spuštění nástroje Visual Studio Code
 
-1. Otevřete složku projektu *HelloWorld* , kterou jste vytvořili v [části Vytvoření konzolové aplikace .net Core v Visual Studio Code](with-visual-studio-code.md).
+1. Otevřete složku projektu *HelloWorld* , kterou jste vytvořili v [části Vytvoření konzolové aplikace .net Core pomocí Visual Studio Code](with-visual-studio-code.md).
 
 1. V hlavní nabídce vyberte **Zobrazit**  >  **terminál** .
 
@@ -112,4 +112,4 @@ V následujících krocích se podíváte na soubory vytvořené procesem publik
 V tomto kurzu jste publikovali konzolovou aplikaci. V dalším kurzu vytvoříte knihovnu tříd.
 
 > [!div class="nextstepaction"]
-> [Vytvoření knihovny .NET Standard v Visual Studio Code](library-with-visual-studio-code.md)
+> [Vytvoření knihovny .NET Standard pomocí Visual Studio Code](library-with-visual-studio-code.md)

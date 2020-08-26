@@ -2,12 +2,12 @@
 title: Publikování konzolové aplikace .NET Core pomocí Visual Studio pro Mac
 description: Publikování vytvoří sadu souborů, které jsou nutné ke spuštění aplikace .NET Core.
 ms.date: 06/08/2020
-ms.openlocfilehash: 38b656ac919dfb8b710a97c5d7fc63479e3fa367
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: ec6b867f145ffdea491187de3745149f2cebd8dd
+ms.sourcegitcommit: b9122d1af21898eaba81e990c70fef46fef74a8d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811402"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88867539"
 ---
 # <a name="tutorial-publish-a-net-core-console-application-using-visual-studio-for-mac"></a>Kurz: publikování konzolové aplikace .NET Core pomocí Visual Studio pro Mac
 
@@ -15,13 +15,13 @@ V tomto kurzu se dozvíte, jak publikovat konzolovou aplikaci, aby ji ostatní u
 
 ## <a name="prerequisites"></a>Předpoklady
 
-- Tento kurz spolupracuje s konzolovou aplikací, kterou vytvoříte v části [Vytvoření konzolové aplikace .NET Core v Visual Studio pro Mac](with-visual-studio-mac.md).
+- Tento kurz spolupracuje s konzolovou aplikací, kterou vytvoříte v části [Vytvoření konzolové aplikace .NET Core pomocí Visual Studio pro Mac](with-visual-studio-mac.md).
 
 ## <a name="publish-the-app"></a>Publikování aplikace
 
 1. Spusťte Visual Studio pro Mac.
 
-1. Otevřete projekt HelloWorld, který jste vytvořili v [části Vytvoření konzolové aplikace .NET Core v Visual Studio pro Mac](with-visual-studio-mac.md).
+1. Otevřete projekt HelloWorld, který jste vytvořili v [části Vytvoření konzolové aplikace .NET Core pomocí Visual Studio pro Mac](with-visual-studio-mac.md).
 
 1. Ujistěte se, že Visual Studio sestavuje prodejní verzi vaší aplikace. V případě potřeby změňte nastavení konfigurace sestavení na panelu nástrojů z části **ladit** na **verzi**.
 
@@ -88,4 +88,4 @@ Jak ukazuje předchozí obrázek, publikovaný výstup obsahuje následující s
 V tomto kurzu jste publikovali konzolovou aplikaci. V dalším kurzu vytvoříte knihovnu tříd.
 
 > [!div class="nextstepaction"]
-> [Vytvoření knihovny .NET Standard v aplikaci Visual Studio pro Mac](library-with-visual-studio-mac.md)
+> [Vytvoření knihovny .NET Standard pomocí Visual Studio pro Mac](library-with-visual-studio-mac.md)
