@@ -1,30 +1,21 @@
 ---
-title: Interaktivní referenční dokumentace F# (fsi.exe)
-description: 'Přečtěte si, jak se F# Interactive (fsi.exe) používá ke interaktivnímu spouštění kódu F # v konzole nebo ke spouštění skriptů F #.'
-ms.date: 05/16/2016
+title: F# Interactive (dotnet) – referenční informace
+description: 'Přečtěte si, jak F# Interactive (dotnet FSI) se používá ke interaktivnímu spouštění kódu F # v konzole nebo ke spouštění skriptů F #.'
+ms.date: 08/20/2020
 f1_keywords:
 - VS.ToolsOptionsPages.F#_Tools.F#_Interactive
-ms.openlocfilehash: 8bb1563ad34e65101fb9f09d6e347278e4b0de78
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.openlocfilehash: 760b096c8a3ee0d495b893ab66fa6f9007cdbbf9
+ms.sourcegitcommit: b9122d1af21898eaba81e990c70fef46fef74a8d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87854942"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88867617"
 ---
 # <a name="interactive-programming-with-f"></a>Interaktivní programování s použitím F\#
 
-> [!NOTE]
-> V tomto článku se aktuálně popisuje prostředí jenom pro Windows.
+F# Interactive (dotnet FSI) se používá ke interaktivnímu spuštění kódu F # v konzole nebo ke spouštění skriptů F #. Jinými slovy, interaktivní jazyk F# provede operace REPL (čtení, vyhodnocení, smyčka tisku) pro jazyk F#.
 
-Program F# Interactive (fsi.exe) se používá pro interaktivní spuštění kódu jazyka F# v konzole nebo pro spuštění skriptů jazyka F#. Jinými slovy, interaktivní jazyk F# provede operace REPL (čtení, vyhodnocení, smyčka tisku) pro jazyk F#.
-
-Chcete-li spustit jazyk F# Interactive z konzoly, spusťte program fsi.exe. Najdete fsi.exe v:
-
-```console
-C:\Program Files (x86)\Microsoft Visual Studio\2019\<sku>\Common7\IDE\CommonExtensions\Microsoft\FSharp
-```
-
-kde `sku` je buď `Community` , `Professional` nebo `Enterprise` .
+Chcete-li spustit F# Interactive z konzoly, spusťte příkaz `dotnet fsi` . Najdete ho `dotnet fsi` v libovolné sadě .NET SDK.
 
 Informace o dostupných možnostech příkazového řádku naleznete v tématu [F# Interactive Options](../../language-reference/fsharp-interactive-options.md).
 
@@ -44,7 +35,7 @@ Argumenty příkazového řádku (možnosti) jazyka F# Interactive lze řídit �
 
 ## <a name="scripting-with-f"></a>Skriptování s F\#
 
-Skripty používají příponu souboru **. fsx** nebo **. fsscript**. Namísto kompilování zdrojového kódu a pozdějšího spuštění zkompilovaného sestavení můžete pouze spustit **fsi.exe** a zadat název souboru skriptu zdrojového kódu f # a f # Interactive přečte kód a provede ho v reálném čase.
+Skripty používají příponu souboru **. fsx** nebo **. fsscript**. Namísto kompilování zdrojového kódu a pozdějšího spuštění zkompilovaného sestavení můžete pouze spustit **dotnet FSI** a zadat název souboru skriptu zdrojového kódu f # a jazyk f # Interactive přečte kód a provede jej v reálném čase.
 
 ## <a name="differences-between-the-interactive-scripting-and-compiled-environments"></a>Rozdíly mezi interaktivním, skriptovacím a zkompilovaným prostředím
 
@@ -94,9 +85,39 @@ test
 90
 ```
 
+## <a name="package-management-in-f-interactive"></a>Správa balíčků v F# Interactive
+
+[!NOTE] Správa balíčků je k dispozici jako funkce ve verzi Preview ve verzích `dotnet fsi` dodaných v sadě .NET SDK a v vyšších verzích sady .NET SDK a `3.1.300` také ve všech `5.*` verzích sady .NET SDK. Pokud ho chcete v této verzi Preview povolit, spusťte `dotnet fsi` s `--langversion:preview` argumentem.
+
+Syntaxi pro odkazování na `#r` knihovnu DLL v F# Interactive lze také použít pro odkazování na balíček NuGet pomocí následující syntaxe:
+
+```fsharp
+#r "nuget: <package name>
+```
+
+Například pro odkazování na `FSharp.Data` balíček použijte následující `#r` odkaz:
+
+```fsharp
+#r "nuget: FSharp.Data"
+```
+
+Po spuštění tohoto řádku se do `FSharp.Data` mezipaměti NuGet stáhne nejnovější verze balíčku, na kterou se odkazuje v aktuální F# Interactive relaci.
+
+Kromě názvu balíčku lze na konkrétní verze balíčku odkazovat pomocí krátké syntaxe:
+
+```fsharp
+#r "nuget: FSharp.Data, 3.3.2"
+```
+
+nebo podrobnějším způsobem:
+
+```fsharp
+#r "nuget: FSharp.Data, Version=3.3.2"
+```
+
 ## <a name="related-articles"></a>Související články
 
 |Nadpis|Popis|
 |-----|-----------|
-|[Možnosti F# Interactive](../../language-reference/fsharp-interactive-options.md)|Popisuje syntaxi a možnosti příkazového řádku pro F# Interactive fsi.exe.|
+|[Interaktivní možnosti F#](../../language-reference/fsharp-interactive-options.md)|Popisuje syntaxi a možnosti příkazového řádku pro F# Interactive fsi.exe.|
 |[Odkaz na knihovnu F# Interactive](https://msdn.microsoft.com/visualfsharpdocs/conceptual/fsharp-interactive-library-reference)|Popisuje funkce knihovny, které jsou k dispozici při spuštění kódu v jazyce F# Interactive.|
