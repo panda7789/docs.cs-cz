@@ -3,12 +3,12 @@ title: Slovníček k technologii .NET
 description: Zjistěte význam vybraných termínů používaných v dokumentaci .NET.
 ms.date: 01/22/2019
 ms.technology: dotnet-standard
-ms.openlocfilehash: c984a29208d8680de3c04f6b4d16c6f41afedc71
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 59e338de99510759e3e7acfd782915ed6dc5d988
+ms.sourcegitcommit: 60dc0a11ebdd77f969f41891d5cca06335cda6a7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88812338"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88957570"
 ---
 # <a name="net-glossary"></a>Slovníček k technologii .NET
 
@@ -30,7 +30,7 @@ Někdy ASP.NET je zastřešující termín, který odkazuje na implementace ASP.
 
 Další informace najdete v [dokumentaci k ASP.NET](/aspnet/#pivot=aspnet).
 
-## <a name="aspnet-core"></a>ASP.NET Core
+## <a name="aspnet-core"></a>Jádro ASP.NET
 
 Vysoce výkonná a open source implementace ASP.NET pro více platforem.
 
@@ -48,13 +48,13 @@ Základní knihovna tříd. Označují se také jako *knihovny rozhraní*.
 
 Sada knihoven, které tvoří systém. \* (a do omezeného rozsahu Microsoft. \* ) obsažené. BCL je pro obecné účely rozhraní nižší úrovně, které používá aplikační architektury vyšší úrovně, například ASP.NET Core, sestavení.
 
-Zdrojový kód BCL pro [.NET 5 a novější verze (včetně .NET Core 2.1-3.1)](#net-5-and-later-versions) je obsažen v [úložišti modulu .NET runtime](https://github.com/dotnet/runtime). Většina rozhraní BCL API pro tuto novější implementaci rozhraní .NET je také k dispozici v .NET Framework, takže si tento zdrojový kód můžete představit jako rozvětvení zdrojového kódu .NET Framework BCL.
+Zdrojový kód BCL pro [.NET 5 (a .NET Core) a novější verze](#net-5-and-later-versions) je obsažen v [úložišti modulu .NET runtime](https://github.com/dotnet/runtime). Většina rozhraní BCL API pro tuto novější implementaci rozhraní .NET je také k dispozici v .NET Framework, takže si tento zdrojový kód můžete představit jako rozvětvení zdrojového kódu .NET Framework BCL.
 
 ## <a name="clr"></a>CLR
 
 Modul CLR (Common Language Runtime)
 
-Přesný význam závisí na kontextu. Modul CLR (Common Language Runtime) obvykle odkazuje na modul runtime [.NET Framework](#net-framework) nebo modul runtime [rozhraní .NET 5 a novějších verzí (včetně .NET Core 2.1-3.1)](#net-5-and-later-versions).
+Přesný význam závisí na kontextu. Modul CLR (Common Language Runtime) obvykle odkazuje na modul runtime [.NET Framework](#net-framework) nebo modul runtime [rozhraní .NET 5 (a .NET Core) a novějších verzí](#net-5-and-later-versions).
 
 Modul CLR zpracovává přidělování a správu paměti. CLR je také virtuálním počítačem, který nespouští pouze aplikace, ale také generuje a kompiluje kód průběžně pomocí kompilátoru [JIT](#jit) .
 
@@ -66,7 +66,7 @@ Viz také [modul runtime](#runtime).
 
 ## <a name="core-clr"></a>Core CLR
 
-Modul CLR (Common Language Runtime [) pro rozhraní .NET 5 a novější verze (včetně .NET Core 2.1-3.1)](#net-5-and-later-versions).
+Modul CLR (Common Language Runtime [) pro .NET 5 (a .NET Core) a novější verze](#net-5-and-later-versions).
 
 Viz [CLR](#clr)
 
@@ -126,7 +126,7 @@ Podobně jako [AOT](#aot)tento kompilátor překládá [Il](#il) na strojový k�
 Implementace rozhraní .NET zahrnuje:
 
 - Jeden nebo více modulů runtime. Příklady: [CLR](#clr), [CoreRT](#corert).
-- Knihovna tříd, která implementuje verzi .NET Standard a může obsahovat další rozhraní API. Příklady: [BCLs](#bcl) pro [.NET Framework](#net-framework) a [.NET 5 a novější verze (včetně .NET Core 2.1-3.1)](#net-5-and-later-versions).
+- Knihovna tříd, která implementuje verzi .NET Standard a může obsahovat další rozhraní API. Příklady: [BCLs](#bcl) pro [.NET Framework](#net-framework) a [.NET 5 (a .NET Core) a novější verze](#net-5-and-later-versions).
 - Volitelně jeden nebo více aplikačních architektur. Příklady: [ASP.NET](#aspnet), model Windows Forms a WPF jsou součástí .NET Framework a .NET 5.
 - Volitelně vývojové nástroje. Některé vývojové nástroje se sdílejí mezi více implementacemi.
 
@@ -173,7 +173,7 @@ Viz [.NET](../core/index.yml).
 
 ## <a name="net-cli"></a>ROZHRANÍ .NET CLI
 
-Sada nástrojů pro více platforem pro vývoj aplikací a knihoven pro [rozhraní .NET 5 a novější verze (včetně .NET Core 2.1-3.1)](#net-5-and-later-versions). Označuje se také jako .NET Core CLI.
+Sada nástrojů pro více platforem pro vývoj aplikací a knihoven pro [.NET 5 (a .NET Core) a novější verze](#net-5-and-later-versions). Označuje se také jako .NET Core CLI.
 
 Viz [rozhraní .NET CLI](../core/tools/index.md).
 
@@ -199,7 +199,7 @@ Viz [Úvod do .NET Native a CoreRT](https://github.com/dotnet/corert/blob/master
 
 ## <a name="net-sdk"></a>.NET SDK
 
-Sada knihoven a nástrojů, které vývojářům umožňují vytvářet aplikace a knihovny .NET pro [rozhraní .NET 5 a novější verze (včetně .NET Core 2.1-3.1)](#net-5-and-later-versions). Označuje se také jako .NET Core SDK.
+Sada knihoven a nástrojů, které vývojářům umožňují vytvářet aplikace a knihovny .NET pro [rozhraní .NET 5 (a .NET Core) a novější verze](#net-5-and-later-versions). Označuje se také jako .NET Core SDK.
 
 Zahrnuje [rozhraní .NET CLI](#net-cli) pro vytváření aplikací, knihovny .NET a běhové prostředí pro sestavování a spouštění aplikací a spustitelný soubor dotnet (*dotnet.exe*), který spouští příkazy rozhraní příkazového řádku a spouští aplikace.
 
@@ -252,7 +252,7 @@ Slovo "runtime" má v následujících kontextech jiný význam:
 
   "Modul runtime" zde znamená [CLR](#clr) společně s knihovnou [BCL](#bcl) (architektury Framework), které si můžete stáhnout a nainstalovat na počítač, abyste mohli na počítači spouštět aplikace [závislé na architektuře](../core/deploying/index.md#publish-framework-dependent) .
 
-* [Identifikátor modulu runtime (RID)](../core/rid-catalog.md) pro [rozhraní .NET 5 a novější verze (včetně .NET Core 2.1-3.1)](#net-5-and-later-versions).
+* [Identifikátor modulu runtime (RID)](../core/rid-catalog.md) pro [rozhraní .NET 5 (a .NET Core) a novější verze](#net-5-and-later-versions).
 
   "Za běhu" se rozumí platforma operačního systému a architektura procesoru, na které běží aplikace .NET, například: `linux-x64` .
 
@@ -290,7 +290,7 @@ Viz [cílová rozhraní](frameworks.md).
 
 Univerzální platforma Windows.
 
-Implementace .NET, která se používá k vytváření moderních, dotykové aplikace a softwaru Windows pro Internet věcí (IoT). Je navržený tak, aby sjednotí různé typy zařízení, na které můžete chtít cílit, včetně počítačů, tabletů, telefonů a i konzoly Xbox. UWP nabízí spoustu služeb, jako je centralizované úložiště aplikací, spouštěcí prostředí (kontejneru AppContainer) a sada rozhraní API systému Windows, které se mají použít místo Win32 (WinRT). Aplikace můžou být napsané v jazyce C++, C#, Visual Basic a JavaScriptu. Při použití jazyka C# a Visual Basic rozhraní API .NET poskytuje rozhraní .NET 5 a novější verze (včetně .NET Core 2.1-3.1).
+Implementace .NET, která se používá k vytváření moderních, dotykové aplikace a softwaru Windows pro Internet věcí (IoT). Je navržený tak, aby sjednotí různé typy zařízení, na které můžete chtít cílit, včetně počítačů, tabletů, telefonů a i konzoly Xbox. UWP nabízí spoustu služeb, jako je centralizované úložiště aplikací, spouštěcí prostředí (kontejneru AppContainer) a sada rozhraní API systému Windows, které se mají použít místo Win32 (WinRT). Aplikace můžou být napsané v jazyce C++, C#, Visual Basic a JavaScriptu. Při použití C# a Visual Basic jsou rozhraní API .NET k dispozici v rozhraní .NET 5 (a .NET Core) a novějších verzích.
 
 ## <a name="see-also"></a>Viz také
 

@@ -3,7 +3,6 @@ title: Main () a argumenty příkazového řádku – Průvodce programováním 
 description: Přečtěte si o Main () a argumentech příkazového řádku. Metoda Main je vstupním bodem spustitelného programu.
 ms.date: 08/02/2017
 f1_keywords:
-- CS5001
 - main_CSharpKeyword
 - Main
 helpviewer_keywords:
@@ -13,12 +12,12 @@ helpviewer_keywords:
 - command line [C#], arguments
 - command-line arguments [C#], Main method
 ms.assetid: 73a17231-cf96-44ea-aa8a-54807c6fb1f4
-ms.openlocfilehash: 95ec9d3dfebe4721d4b1822939f925aa37b9e9c4
-ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
+ms.openlocfilehash: 611b0c8818f8f800cf1cf5c0f6b2789882939b7b
+ms.sourcegitcommit: 60dc0a11ebdd77f969f41891d5cca06335cda6a7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87382071"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88957535"
 ---
 # <a name="main-and-command-line-arguments-c-programming-guide"></a>Argumenty Main () a příkazového řádku (Průvodce programováním v C#)
 
@@ -31,8 +30,8 @@ V programu v jazyce C# může být pouze jeden vstupní bod. Pokud máte více n
 ## <a name="overview"></a>Přehled
 
 - `Main`Metoda je vstupním bodem spustitelného programu; je místo, kde se ovládací prvek program spouští a končí.
-- `Main`je deklarován uvnitř třídy nebo struktury. `Main`musí být [statický](../../language-reference/keywords/static.md) a nemusí být [veřejný](../../language-reference/keywords/public.md). (V předchozím příkladu obdrží výchozí přístup [Private](../../language-reference/keywords/private.md).) Nadřazené třídy nebo struktury není nutné provádět staticky.
-- `Main`může mít buď `void` , `int` nebo, počínaje jazykem C# 7,1, `Task` nebo `Task<int>` návratový typ.
+- `Main` je deklarován uvnitř třídy nebo struktury. `Main` musí být [statický](../../language-reference/keywords/static.md) a nemusí být [veřejný](../../language-reference/keywords/public.md). (V předchozím příkladu obdrží výchozí přístup [Private](../../language-reference/keywords/private.md).) Nadřazené třídy nebo struktury není nutné provádět staticky.
+- `Main` může mít buď `void` , `int` nebo, počínaje jazykem C# 7,1, `Task` nebo `Task<int>` návratový typ.
 - Pokud a pouze pokud `Main` vrátí `Task` nebo `Task<int>` , deklaraci `Main` může obsahovat [`async`](../../language-reference/keywords/async.md) modifikátor. Všimněte si, že to konkrétně vylučuje `async void Main` metodu.
 - `Main`Metoda může být deklarována s `string[]` parametrem, který obsahuje argumenty příkazového řádku nebo bez něj. Při použití sady Visual Studio k vytváření aplikací pro Windows můžete zadat parametr ručně nebo jinak použít <xref:System.Environment.GetCommandLineArgs> metodu k získání [argumentů příkazového řádku](command-line-arguments.md). Parametry jsou čteny jako argumenty příkazového řádku s nulovým indexem. Na rozdíl od jazyka C a C++ se název programu nepovažuje za první argument příkazového řádku v `args` poli, ale je prvním prvkem <xref:System.Environment.GetCommandLineArgs> metody.
 
@@ -57,7 +56,7 @@ Sčítání `async` a `Task` `Task<int>` návratové typy zjednodušují kód pr
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Sestavování pomocí programu csc.exe v příkazovém řádku](../../language-reference/compiler-options/command-line-building-with-csc-exe.md)
 - [Průvodce programováním v C#](../index.md)

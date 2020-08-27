@@ -2,15 +2,15 @@
 title: ASP.NET Core přerušující změny
 titleSuffix: ''
 description: Zobrazí seznam nejnovějších změn v ASP.NET Core.
-ms.date: 08/20/2020
+ms.date: 08/25/2020
 author: scottaddie
 ms.author: scaddie
-ms.openlocfilehash: 8b37ae5c5eea9e192a269092fccf435ab4877e61
-ms.sourcegitcommit: b9122d1af21898eaba81e990c70fef46fef74a8d
+ms.openlocfilehash: 443494291f4ec58aecd7c8d8ed42cb4086e64095
+ms.sourcegitcommit: 60dc0a11ebdd77f969f41891d5cca06335cda6a7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88867669"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88957727"
 ---
 # <a name="aspnet-core-breaking-changes"></a>ASP.NET Core přerušující změny
 
@@ -81,6 +81,7 @@ Na této stránce jsou popsány následující přerušující změny ASP.NET Co
 - [MVC: zastaralý nástroj předkompilace](#mvc-precompilation-tool-deprecated)
 - [MVC: typy se změnily na interní](#mvc-pubternal-types-changed-to-internal)
 - [MVC: překrytí kompatibility webového rozhraní API se odebralo.](#mvc-web-api-compatibility-shim-removed)
+- [Razor: rozhraní API RazorTemplateEngine bylo odebráno](#razor-razortemplateengine-api-removed)
 - [Razor: kompilace za běhu byla přesunuta do balíčku](#razor-runtime-compilation-moved-to-a-package)
 - [Zabezpečení: odebrání kódování názvu souboru cookie](#security-cookie-name-encoding-removed)
 - [Zabezpečení: aktualizace verzí balíčku NuGet IdentityModel](#security-identitymodel-nuget-package-versions-updated)
@@ -354,6 +355,10 @@ Na této stránce jsou popsány následující přerušující změny ASP.NET Co
 ***
 
 [!INCLUDE[MVC: Web API compatibility shim removed](~/includes/core-changes/aspnetcore/3.0/mvc-webapi-compat-shim-removed.md)]
+
+***
+
+[!INCLUDE[Razor: RazorTemplatEengine API removed](~/includes/core-changes/aspnetcore/3.0/razor-razortemplateengine-api-removed.md)]
 
 ***
 

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - application resources, creating files
 - resource files, creating
 ms.assetid: 6c5ad891-66a0-4e7a-adcf-f41863ba6d8d
-ms.openlocfilehash: 4730a14e499c75176d7ba7c8378626070d5211e9
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 2e71dc177a0358370c7eecde03d9388cced60b75
+ms.sourcegitcommit: 60dc0a11ebdd77f969f41891d5cca06335cda6a7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86865174"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88957434"
 ---
 # <a name="create-resource-files-for-net-apps"></a>Vytváření souborů prostředků pro aplikace .NET
 
@@ -206,5 +206,5 @@ V době kompilace Visual Studio nejprve převede soubory RESX v projektu na bin�
 ## <a name="see-also"></a>Viz také
 
 - <xref:System.Resources>
-- [Prostředky v aplikacích klasické pracovní plochy](index.md)
+- [Prostředky v aplikacích .NET](index.md)
 - [Zabalení a nasazení prostředků](packaging-and-deploying-resources-in-desktop-apps.md)

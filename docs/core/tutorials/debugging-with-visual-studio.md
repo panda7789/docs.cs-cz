@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: 0555c6b4185da088333503c1e744da2dd7b4f2e4
-ms.sourcegitcommit: b9122d1af21898eaba81e990c70fef46fef74a8d
+ms.openlocfilehash: 4e408d5bd0976d88f368615860ac373142d0fe1e
+ms.sourcegitcommit: 60dc0a11ebdd77f969f41891d5cca06335cda6a7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88867591"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88957222"
 ---
 # <a name="tutorial-debug-a-net-core-console-application-using-visual-studio"></a>Kurz: ladění konzolové aplikace .NET Core pomocí sady Visual Studio
 
@@ -27,7 +27,7 @@ V tomto kurzu se seznámíte s ladicími nástroji dostupnými v aplikaci Visual
 
 V konfiguraci ladění program kompiluje s úplnými symbolickými informacemi o ladění a bez optimalizace. Optimalizace komplikuje ladění, protože vztah mezi zdrojovým kódem a vygenerovanými pokyny je složitější. Konfigurace pro vydání programu neobsahuje žádné symbolické ladicí informace a je plně optimalizována.
 
- Ve výchozím nastavení Visual Studio Code používá konfiguraci sestavení ladění, takže je nemusíte před laděním měnit.
+ Ve výchozím nastavení používá Visual Studio konfiguraci sestavení ladění, takže je nemusíte před laděním měnit.
 
 1. Spusťte Visual Studio.
 
@@ -41,7 +41,7 @@ V konfiguraci ladění program kompiluje s úplnými symbolickými informacemi o
 
 *Zarážka* dočasně přerušuje provádění aplikace před provedením řádku se zarážkou.
 
-1. Nastavte *zarážku* na řádku, který zobrazuje název, datum a čas kliknutím na levý okraj okna Code (kód) na řádku. Levý okraj je nalevo od čísel řádků.  Další způsob, jak nastavit zarážku, je umístěním kurzoru do řádku kódu a následným výběrem možnosti **ladit**  >  **Přepnout zarážku** z řádku nabídek.
+1. Nastavte *zarážku* na řádku, který zobrazuje název, datum a čas kliknutím na levý okraj okna Code (kód) na řádku. Levý okraj je nalevo od čísel řádků.  Další způsoby, jak nastavit zarážku, je umístěním kurzoru do řádku kódu a následným stisknutím klávesy <kbd>F9</kbd> nebo zvolením možnosti **ladit**  >  **Přepnout zarážku** z řádku nabídek.
 
    Jak ukazuje následující obrázek, sada Visual Studio označuje řádek, na kterém je zarážka nastavena, zvýrazněním a zobrazením červené tečky na levém okraji.
 
@@ -127,7 +127,7 @@ Program zobrazí řetězec, který uživatel zadá. Co se stane, když uživatel
 
 1. Stisknutím libovolné klávesy zavřete okno konzoly a zastavte ladění.
 
-1. Vymažte zarážku kliknutím na tečku na levém okraji okna Code (kód). Dalším způsobem, jak zrušit zarážku, je vybrat možnost **ladění > přepínat zarážku** , zatímco je vybraný řádek kódu.
+1. Vymažte zarážku kliknutím na tečku na levém okraji okna Code (kód). Další způsoby, jak zarážku vymazat, jsou stisknutí klávesy <kbd>F9</kbd> nebo výběrem možnosti **ladění > přepínací zarážku** , když je vybraný řádek kódu.
 
 ## <a name="step-through-a-program"></a>Krokovat program
 
