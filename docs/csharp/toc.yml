@@ -299,38 +299,25 @@
         - name: Přehled
           displayName: programming concepts
           href: programming-guide/concepts/index.md
-        - name: Asynchronní programování pomocí modifikátoru Async a operátoru Await
+        - name: Asynchronní programování
+          displayName: 'async, await, asynchronous programming, task, cancellation'
           items:
             - name: Přehled
               displayName: asynchronous programming
               href: programming-guide/concepts/async/index.md
             - name: Model asynchronního programování úloh
               href: programming-guide/concepts/async/task-asynchronous-programming-model.md
-            - name: 'Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await'
-              href: programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md
-            - name: Jak rozšířit návod modifikátoru Async pomocí metody Task.WhenAll
-              href: programming-guide/concepts/async/how-to-extend-the-async-walkthrough-by-using-task-whenall.md
-            - name: Jak paralelně provádět vícenásobné webové dotazy pomocí modifikátoru Async a operátoru Await
-              href: programming-guide/concepts/async/how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md
             - name: Asynchronní návratové typy
               href: programming-guide/concepts/async/async-return-types.md
-            - name: Řízení toku v asynchronních programech
-              href: programming-guide/concepts/async/control-flow-in-async-programs.md
-            - name: Zrušení úloh a zpracování dokončených úloh
+            - name: Zrušení úloh
               items:
-                - name: Přehled
-                  href: programming-guide/concepts/async/fine-tuning-your-async-application.md
-                - name: Zrušení asynchronní úlohy nebo seznamu úloh
+                - name: Zrušení seznamu úloh
                   href: programming-guide/concepts/async/cancel-an-async-task-or-a-list-of-tasks.md
-                - name: "Zrušení úloh s\_modifikátorem Async po uplynutí časového intervalu"
+                - name: Zrušení úloh po uplynutí časového intervalu
                   href: programming-guide/concepts/async/cancel-async-tasks-after-a-period-of-time.md
-                - name: "Zrušení zbývajících úloh s\_modifikátorem Async po dokončení jedné z\_nich"
-                  href: programming-guide/concepts/async/cancel-remaining-async-tasks-after-one-is-complete.md
-                - name: Zahájení více úloh s modifikátorem Async a jejich zpracování po dokončení
-                  href: programming-guide/concepts/async/start-multiple-async-tasks-and-process-them-as-they-complete.md
-            - name: "Podpora vícenásobného přístupu v\_aplikacích s\_modifikátorem Async"
-              href: programming-guide/concepts/async/handling-reentrancy-in-async-apps.md
-            - name: Použití modifikátoru Async pro přístup k souborům
+            - name: Zpracování asynchronních úloh po dokončení
+              href: programming-guide/concepts/async/start-multiple-async-tasks-and-process-them-as-they-complete.md
+            - name: Asynchronní přístup k souborům
               href: programming-guide/concepts/async/using-async-for-file-access.md
         - name: Atributy
           items:
