@@ -9,14 +9,14 @@ helpviewer_keywords:
 - <include> C# XML tag
 - include C# XML tag
 ms.assetid: a8a70302-6196-4643-bd09-ef33f411f18f
-ms.openlocfilehash: 15a99444d464594cc91a7c8805c564c703c3b608
-ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
+ms.openlocfilehash: d2de8fea17850685668766bc4ec6e64b1be77cce
+ms.sourcegitcommit: 2560a355c76b0a04cba0d34da870df9ad94ceca3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87381902"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89053188"
 ---
-# <a name="include-c-programming-guide"></a>\<include>(Průvodce programováním v C#)
+# <a name="include-c-programming-guide"></a>\<include> (Průvodce programováním v C#)
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -36,11 +36,11 @@ ms.locfileid: "87381902"
 
 - `name`
 
-  Specifikátor názvu ve značce, který předchází komentářům; `name`bude mít `id` .
+  Specifikátor názvu ve značce, který předchází komentářům; `name` bude mít `id` .
 
 - `id`
 
-ID značky, která předchází komentář. ID uzavřete do dvojitých uvozovek ("").
+  ID značky, která předchází komentář. ID uzavřete do dvojitých uvozovek ("").
 
 ## <a name="remarks"></a>Poznámky
 
@@ -99,7 +99,7 @@ The summary for this other type.
 </doc>
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Průvodce programováním v C#](../index.md)
 - [Doporučené značky pro dokumentační komentáře](./recommended-tags-for-documentation-comments.md)

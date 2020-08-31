@@ -2,12 +2,12 @@
 title: Zásady kódování jazyka F#
 description: 'Seznamte se s obecnými pokyny a idiomy při psaní kódu F #.'
 ms.date: 01/15/2020
-ms.openlocfilehash: 47e9183ce22689a050878cf10d7a9bcf3b929ec6
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 748a9c26794f46dcc67fdcfcf21f41847a462a19
+ms.sourcegitcommit: 2560a355c76b0a04cba0d34da870df9ad94ceca3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84143525"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89053008"
 ---
 # <a name="f-coding-conventions"></a>Zásady kódování jazyka F#
 
@@ -46,7 +46,7 @@ type MyClass() =
     ...
 ```
 
-### <a name="carefully-apply-autoopen"></a>Pečlivě použít`[<AutoOpen>]`
+### <a name="carefully-apply-autoopen"></a>Pečlivě použít `[<AutoOpen>]`
 
 `[<AutoOpen>]`Konstrukce může znehodnotit rozsah toho, co je k dispozici volajícím a odpověď na místo, kde je něco z něj "Magic". Nejedná se o dobrou věc. Výjimkou z tohoto pravidla je samotné základní knihovna F # (i když je tento fakt také bitová kontroverzním).
 
@@ -108,34 +108,19 @@ open System.IO
 open System.Reflection
 open System.Text
 
-open Microsoft.FSharp.Compiler
-open Microsoft.FSharp.Compiler.AbstractIL
-open Microsoft.FSharp.Compiler.AbstractIL.Diagnostics
-open Microsoft.FSharp.Compiler.AbstractIL.IL
-open Microsoft.FSharp.Compiler.AbstractIL.ILBinaryReader
-open Microsoft.FSharp.Compiler.AbstractIL.Internal
-open Microsoft.FSharp.Compiler.AbstractIL.Internal.Library
+open FSharp.Compiler
+open FSharp.Compiler.AbstractIL
+open FSharp.Compiler.AbstractIL.Diagnostics
+open FSharp.Compiler.AbstractIL.IL
+open FSharp.Compiler.AbstractIL.ILBinaryReader
+open FSharp.Compiler.AbstractIL.Internal
+open FSharp.Compiler.AbstractIL.Internal.Library
 
-open Microsoft.FSharp.Compiler.AccessibilityLogic
-open Microsoft.FSharp.Compiler.Ast
-open Microsoft.FSharp.Compiler.CompileOps
-open Microsoft.FSharp.Compiler.CompileOptions
-open Microsoft.FSharp.Compiler.Driver
-open Microsoft.FSharp.Compiler.ErrorLogger
-open Microsoft.FSharp.Compiler.Infos
-open Microsoft.FSharp.Compiler.InfoReader
-open Microsoft.FSharp.Compiler.Lexhelp
-open Microsoft.FSharp.Compiler.Layout
-open Microsoft.FSharp.Compiler.Lib
-open Microsoft.FSharp.Compiler.NameResolution
-open Microsoft.FSharp.Compiler.PrettyNaming
-open Microsoft.FSharp.Compiler.Parser
-open Microsoft.FSharp.Compiler.Range
-open Microsoft.FSharp.Compiler.Tast
-open Microsoft.FSharp.Compiler.Tastops
-open Microsoft.FSharp.Compiler.TcGlobals
-open Microsoft.FSharp.Compiler.TypeChecker
-open Microsoft.FSharp.Compiler.SourceCodeServices.SymbolHelpers
+open FSharp.Compiler.AccessibilityLogic
+open FSharp.Compiler.Ast
+open FSharp.Compiler.CompileOps
+open FSharp.Compiler.CompileOptions
+open FSharp.Compiler.Driver
 
 open Internal.Utilities
 open Internal.Utilities.Collections
@@ -224,7 +209,7 @@ Nejprve doporučujeme, abyste si přečetli [pokyny pro návrh výjimek](../../s
 
 Hlavní konstrukce dostupné v F # pro účely vyvolání výjimek by měly být považovány za následující pořadí:
 
-| Funkce | Syntaxe | Účel |
+| Funkce | Syntax | Účel |
 |----------|--------|---------|
 | `nullArg` | `nullArg "argumentName"` | Vyvolává `System.ArgumentNullException` se zadaným názvem argumentu. |
 | `invalidArg` | `invalidArg "argumentName" "message"` | Vyvolá a `System.ArgumentException` se zadaným názvem a zprávou argumentu. |
@@ -237,7 +222,7 @@ Použijte `nullArg` `invalidArg` a `invalidOp` jako mechanismus, který chcete v
 
 `failwith`Funkce a `failwithf` by měly být obecně zabráněno, protože vyvolávají základní `Exception` typ, nikoli specifickou výjimku. Podle pokynů pro [Návrh výjimek](../../standard/design-guidelines/exceptions.md)chcete vyvolat konkrétnější výjimky, když můžete.
 
-### <a name="using-exception-handling-syntax"></a>Použití syntaxe pro zpracování výjimek
+### <a name="use-exception-handling-syntax"></a>Použití syntaxe pro zpracování výjimek
 
 Jazyk F # podporuje vzory výjimek prostřednictvím `try...with` syntaxe:
 
@@ -365,7 +350,7 @@ MySolution.sln
 |_/API.fsproj
 ```
 
-`ImplementationLogic.fsproj`může vystavit kód jako:
+`ImplementationLogic.fsproj` může vystavit kód jako:
 
 ```fsharp
 module Transactions =
@@ -443,18 +428,18 @@ Kromě toho automatické generalizace není vždy Boon pro uživatele, kteří j
 
 ## <a name="performance"></a>Výkon
 
-### <a name="prefer-structs-for-small-data-types"></a>Preferovat struktury pro malé datové typy
+### <a name="consider-structs-for-small-types-with-high-allocation-rates"></a>Zvažte struktury pro malé typy s vysokými sazbami přidělení.
 
 Použití struktur (označovaných také jako typy hodnot) může často vést k vyššímu výkonu pro určitý kód, protože obvykle brání přidělení objektů. Nicméně struktury nejsou vždy tlačítko "Přejít rychleji": Pokud velikost dat ve struktuře překročí 16 bajtů, může kopírování dat často vést k většímu množství času procesoru než při použití typu odkazu.
 
 Pokud chcete zjistit, jestli byste měli použít strukturu, vezměte v úvahu následující podmínky:
 
 - Pokud velikost dat je 16 bajtů nebo menší.
-- Pokud pravděpodobně máte mnoho z těchto datových typů, které jsou rezidentem v paměti v běžícím programu.
+- Pokud pravděpodobně máte mnoho instancí těchto typů rezidentní v paměti v běžícím programu.
 
 Pokud se použije první podmínka, měli byste obecně použít strukturu. Pokud platí obě, měli byste téměř vždy používat strukturu. Můžou nastat případy, kdy platí předchozí podmínky, ale použití struktury není lepší nebo horší než použití typu odkazu, ale je pravděpodobné, že budou výjimečné. Při provádění změn, jako je to třeba, i když nefungují na předpokladu nebo Intuition, je důležité vždy změřit.
 
-#### <a name="prefer-struct-tuples-when-grouping-small-value-types"></a>Preferovat řazené kolekce členů struktur při seskupování malých hodnotových typů
+#### <a name="consider-struct-tuples-when-grouping-small-value-types-with-high-allocation-rates"></a>Vzít v úvahu řazené kolekce členů struktur při seskupování malých hodnotových typů s vysokými sazbami přidělení
 
 Vezměte v úvahu tyto dvě funkce:
 
@@ -486,7 +471,7 @@ Při srovnávacích testech těchto funkcí se statistickým nástrojem pro srov
 
 Tyto výsledky ale neplatí vždy v případě vlastního kódu. Pokud označíte funkci jako `inline` , kód, který používá řazené kolekce členů, může získat některé další optimalizace, jinak by kód, který by měl být přidělen, mohl být pouze optimalizován. Měli byste vždycky měřit výsledky vždy, když je dotčen výkon, a nikdy nefungovat na základě předpokladů nebo Intuition.
 
-#### <a name="prefer-struct-records-when-the-data-type-is-small"></a>Preferovat záznamy struktury, když je datový typ malý
+#### <a name="consider-struct-records-when-the-type-is-small-and-has-high-allocation-rates"></a>Zvažte záznamy struktury, pokud je typ malý a má vysoké sazby přidělení.
 
 Pravidlo popsaných povýšení pro [typy záznamů F #](../language-reference/records.md)je také uloženo. Vezměte v úvahu následující datové typy a funkce, které je zpracovávají:
 
@@ -521,7 +506,7 @@ To se podobá předchozímu kódu řazené kolekce členů, ale tentokrát v př
 
 Při srovnávacích testech těchto funkcí se statistickým nástrojem pro srovnávací testy, jako je [BenchmarkDotNet](https://benchmarkdotnet.org/), zjistíte, že se bude `processStructPoint` spouštět téměř 60% rychleji a na spravované haldě se nic nealokuje.
 
-#### <a name="prefer-struct-discriminated-unions-when-the-data-type-is-small"></a>Preferovat struktury rozlišené sjednocení, když je datový typ malý
+#### <a name="consider-struct-discriminated-unions-when-the-data-type-is-small-with-high-allocation-rates"></a>Zvažte možnost struktury rozlišených sjednocení, když je datový typ malý s vysokými sazbami přidělení.
 
 Předchozí poznámky o výkonu s řazenými kolekcemi členů struktury a záznamy jsou také uloženy pro [rozlišené sjednocení F #](../language-reference/discriminated-unions.md). Uvažujte následující kód:
 
@@ -616,7 +601,7 @@ type Closure1Table() =
         | (false, _) -> false
 ```
 
-`Closure1Table`zapouzdřuje základní datovou strukturu založenou na mutacích, a proto nenutí volající, aby zachoval základní datovou strukturu. Třídy představují účinný způsob, jak zapouzdřit data a rutiny, které jsou založené na mutacích bez odhalení podrobností volajícím.
+`Closure1Table` zapouzdřuje základní datovou strukturu založenou na mutacích, a proto nenutí volající, aby zachoval základní datovou strukturu. Třídy představují účinný způsob, jak zapouzdřit data a rutiny, které jsou založené na mutacích bez odhalení podrobností volajícím.
 
 #### <a name="prefer-let-mutable-to-reference-cells"></a>Preferovat `let mutable` odkazování na buňky
 
@@ -670,7 +655,7 @@ Jazyk F # má úplnou podporu pro objekty a koncepty orientované na objekt (ó)
 * Zapouzdřená proměnlivá data
 * Operátory na typech
 * Automatické vlastnosti
-* Implementace `IDisposable` a`IEnumerable`
+* Implementace `IDisposable` a `IEnumerable`
 * Rozšíření typů
 * Události
 * Struktury
@@ -680,7 +665,7 @@ Jazyk F # má úplnou podporu pro objekty a koncepty orientované na objekt (ó)
 **Obecně se vyhnete těmto funkcím, pokud je nemusíte používat:**
 
 * Hierarchie typů založené na dědičnosti a dědičnost implementace
-* Hodnoty null a`Unchecked.defaultof<_>`
+* Hodnoty null a `Unchecked.defaultof<_>`
 
 ### <a name="prefer-composition-over-inheritance"></a>Preferovat kompozici před děděním
 
@@ -740,7 +725,7 @@ type BufferSize = int
 
 To může být matoucí v několika ohledech:
 
-* `BufferSize`není abstrakce; je to pouze jiný název pro celé číslo.
+* `BufferSize` není abstrakce; je to pouze jiný název pro celé číslo.
 * Pokud `BufferSize` je zveřejněné ve veřejném rozhraní API, může být snadno neinterpretované na více než jen jednou `int` . Obecně platí, že doménové typy mají více atributů a nejsou primitivní typy jako `int` . Tato zkratka je v rozporu s tímto předpokladem.
 * PascalCase (velká a malá písmena `BufferSize` ) znamená, že tento typ obsahuje více dat.
 * Tento alias nenabízí větší přehlednost v porovnání s poskytnutím pojmenovaného argumentu funkce.

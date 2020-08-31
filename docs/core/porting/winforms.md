@@ -4,12 +4,12 @@ description: Naučíte se, jak portovat .NET Framework model Windows Forms aplik
 author: Thraka
 ms.author: adegeo
 ms.date: 01/24/2020
-ms.openlocfilehash: efa73428c816eddc00c62c2275d3457c92284388
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 71bd5740e1ea380fdde86328a5aed71fded64765
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83206138"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89118543"
 ---
 # <a name="how-to-port-a-windows-forms-desktop-app-to-net-core"></a>Postup při portování model Windows Forms desktopové aplikace do .NET Core
 
@@ -17,27 +17,27 @@ Tento článek popisuje, jak přenést model Windows Forms desktopové aplikace 
 
 V tomto článku se k identifikaci typů souborů používaných k migraci používají různé názvy. Při migraci projektu budou soubory pojmenovány jinak, takže je bude možné navzájem narovnávat na ty, které jsou uvedeny níže:
 
-| File | Popis |
+| Soubor | Popis |
 | ---- | ----------- |
 | **MyApp. sln** | Název souboru řešení |
 | **MyForms. csproj** | Název projektu .NET Framework model Windows Forms na port. |
 | **MyFormsCore. csproj** | Název nového projektu .NET Core, který vytvoříte. |
-| **MyAppCore. exe** | Spustitelný soubor aplikace model Windows Forms .NET Core. |
+| **MyAppCore.exe** | Spustitelný soubor aplikace model Windows Forms .NET Core. |
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
-- [Visual Studio 2019 16,5 Preview 1](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=community&ch=pre&rel=16) nebo novější pro každou práci návrháře, kterou chcete provést. Doporučujeme, abyste aktualizovali na nejnovější [verzi Preview sady Visual Studio](https://visualstudio.microsoft.com/vs/preview/).
+- [Visual Studio 2019 verze 16,5 nebo novější](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=community&rel=16) pro každou práci návrháře, kterou chcete provést. Doporučujeme, abyste aktualizovali na [nejnovější verzi sady Visual Studio](https://visualstudio.microsoft.com/vs/).
 
   Nainstalujte následující úlohy sady Visual Studio:
   
   - Vývoj pro desktopy .NET
-  - Vývoj aplikací pro různé platformy pomocí rozhraní .NET Core
+  - Vývoj multiplatformních aplikací pomocí rozhraní .NET Core
 
 - Pracovní model Windows Forms projekt v řešení, které sestaví a spouští bez problémů.
 - Projekt kódovaný v jazyce C#.
 
 > [!NOTE]
-> Projekty .NET Core 3,0 jsou podporovány pouze v systému **Visual Studio 2019** nebo novějším. Počínaje **verzí Visual Studio 2019 verze 16,5 Preview 1**je také podporován modul .net Core model Windows Forms Designer.
+> Projekty .NET Core model Windows Forms jsou podporovány v aplikaci Visual Studio 2019 a novějších verzích. Rozhraní .NET Core model Windows Forms Designer se podporuje počínaje verzí Visual Studio 2019 verze 16,5.
 >
 > Pokud chcete návrháře povolit, v nabídce **nástroje**  >  **Možnosti**  >  **prostředí**  >  **verze Preview** a zaškrtněte políčko **použít náhled model Windows Forms Designer pro aplikace .NET Core** .
 
@@ -162,7 +162,7 @@ Alternativně můžete vytvořit `<Compile>` `<EmbeddedResource>` položku nebo 
 
 Přidejte každý balíček NuGet, na který odkazuje .NET Framework projekt, do projektu .NET Core.
 
-Pravděpodobně vaše aplikace .NET Framework model Windows Forms má soubor **Packages. config** , který obsahuje seznam všech balíčků NuGet, na které odkazuje váš projekt. Můžete se podívat na tento seznam a určit, které balíčky NuGet se mají přidat do projektu .NET Core. Pokud například projekt .NET Framework odkazoval na `MetroFramework` `MetroFramework.Design` balíčky NuGet, a, `MetroFramework.Fonts` přidejte do projektu každý z nich pomocí sady Visual Studio nebo .NET Core CLI z adresáře **SolutionFolder –** :
+Model Windows Forms aplikace .NET Framework má pravděpodobně **packages.config** soubor, který obsahuje seznam všech balíčků NuGet, na které odkazuje váš projekt. Můžete se podívat na tento seznam a určit, které balíčky NuGet se mají přidat do projektu .NET Core. Pokud například projekt .NET Framework odkazoval na `MetroFramework` `MetroFramework.Design` balíčky NuGet, a, `MetroFramework.Fonts` přidejte do projektu každý z nich pomocí sady Visual Studio nebo .NET Core CLI z adresáře **SolutionFolder –** :
 
 ```dotnetcli
 dotnet add .\MyFormsAppCore\MyFormsCore.csproj package MetroFramework
@@ -186,12 +186,12 @@ Pokud máte projekt knihovny ovládacích prvků model Windows Forms pro port, s
 
 Pomocí příkladu předchozího kroku umožníte rozbalení projektů a souborů, se kterými pracujete.
 
-| File | Popis |
+| Soubor | Popis |
 | ---- | ----------- |
 | **MyApp. sln** | Název souboru řešení |
 | **MyControls. csproj** | Název .NET Framework model Windows Forms řídí projekt na port. |
 | **MyControlsCore. csproj** | Název nového projektu knihovny .NET Core, který vytvoříte. |
-| **MyCoreControls. dll** | Knihovna ovládacích prvků model Windows Forms .NET Core |
+| **MyCoreControls.dll** | Knihovna ovládacích prvků model Windows Forms .NET Core |
 
 ```
 SolutionFolder

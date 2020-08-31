@@ -4,12 +4,12 @@ description: Naučte se oříznout samostatné aplikace a zmenšit jejich veliko
 author: jamshedd
 ms.author: jamshedd
 ms.date: 04/03/2020
-ms.openlocfilehash: 47bccf25b6f6a1b65742bb5e3f5f299932659c3c
-ms.sourcegitcommit: 60dc0a11ebdd77f969f41891d5cca06335cda6a7
+ms.openlocfilehash: 7a4731e2cbaa3835e6aa6ba558dfa8cd03828e01
+ms.sourcegitcommit: 2560a355c76b0a04cba0d34da870df9ad94ceca3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88957550"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89053104"
 ---
 # <a name="trim-self-contained-deployments-and-executables"></a>Odebrání nechtěných součástí a zachování pouze samostatně nasaditelných součástí a spustitelných souborů
 
@@ -21,7 +21,7 @@ Nicméně existuje riziko, že analýza času sestavení aplikace může způsob
 
 Modul analýzy času sestavení poskytuje upozornění vývojářům vzorů kódu, které jsou problemmatic k zjištění, který jiný kód je vyžadován. Kód lze opatřit poznámkami pomocí atributů a sdělit tak oříznutí, které další mají zahrnout. Mnoho vzorů reflexe lze nahradit generováním kódu při sestavení pomocí [zdrojových generátorů](https://github.com/dotnet/roslyn/blob/master/docs/features/source-generators.md).
 
-Režim ořezávání pro aplikace je nakonfigurován s `TrimMode` nastavením. Výchozí hodnota je `copyused` a sady odkazují na sestavení s aplikací. `link`Hodnota se používá s Blazor aplikacemi WebAssembly a ořízne nepoužitý kód v rámci sestavení. Upozornění analýzy střihu poskytují informace o vzorech kódu, u kterých není možné provést úplnou analýzu závislostí. Tato upozornění se ve výchozím nastavení potlačí a dají se zapnout nastavením příznaku `SuppressTrimAnalysisWarnings` na `false` . Další informace o dostupných možnostech ořezávání najdete na [stránce ILLinker](https://github.com/mono/linker/blob/master/docs/illink-options.md).
+Režim ořezávání pro aplikace je nakonfigurován s `TrimMode` nastavením. Výchozí hodnota je `copyused` a sady odkazují na sestavení s aplikací. `link`Hodnota se používá s Blazor aplikacemi WebAssembly a ořízne nepoužitý kód v rámci sestavení. Upozornění analýzy střihu poskytují informace o vzorech kódu, u kterých není možné provést úplnou analýzu závislostí. Tato upozornění se ve výchozím nastavení potlačí a dají se zapnout nastavením příznaku `SuppressTrimAnalysisWarnings` na `false` . Další informace o dostupných možnostech ořezávání najdete v tématu [Možnosti ořezávání](trimming-options.md).
 
 > [!NOTE]
 > Ořezávání je experimentální funkce v rozhraní .NET Core 3,1, 5,0 a je dostupná _pouze_ pro aplikace, které jsou publikovány samostatně.

@@ -25,16 +25,16 @@ Zvolí sadu SDK nebo modul runtime. Platné možnosti jsou:
 Verze sady SDK nebo modulu runtime, která má být nainstalována. V tomto článku se vždycky dostanou pokyny pro nejnovější podporovanou verzi. Platné možnosti jsou všechny vydané verze, například:
 
   - 3.1
-  - 3.0
+  - 3,0
   - 2.1
 
   Je možné, že sada SDK/modul runtime, kterou se pokoušíte stáhnout, není k dispozici pro distribuci systému Linux. Seznam podporovaných distribucí najdete v tématu [závislosti a požadavky .NET Core](../linux.md).
 
 ### <a name="examples"></a>Příklady
 
-- Instalace modulu runtime ASP.NET Core 3,1:`aspnetcore-runtime-3.1`
-- Nainstalujte modul runtime .NET Core 2,1:`dotnet-runtime-2.1`
-- Nainstalujte sadu .NET Core 3,1 SDK:`dotnet-sdk-3.1`
+- Instalace modulu runtime ASP.NET Core 3,1: `aspnetcore-runtime-3.1`
+- Nainstalujte modul runtime .NET Core 2,1: `dotnet-runtime-2.1`
+- Nainstalujte sadu .NET Core 3,1 SDK: `dotnet-sdk-3.1`
 
 ### <a name="package-missing"></a>Chybějící balíček
 

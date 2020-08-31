@@ -4,12 +4,12 @@ description: Naučte se používat tokeny zrušení k signalizaci žádosti o zr
 ms.date: 08/19/2020
 ms.topic: tutorial
 ms.assetid: eec32dbb-70ea-4c88-bd27-fa2e34546914
-ms.openlocfilehash: 000b6a89a9240344508a5ae6b248572c8a2177dc
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 30bef5d1a5082fbd3757377dbedb8f9b9d17e218
+ms.sourcegitcommit: 2560a355c76b0a04cba0d34da870df9ad94ceca3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811480"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89053090"
 ---
 # <a name="cancel-a-list-of-tasks-c"></a>Zrušení seznamu úkolů (C#)
 
@@ -23,7 +23,7 @@ Tento kurz zahrnuje:
 > - Zápis asynchronní aplikace, která podporuje zrušení
 > - Demonstrace zrušení signalizace
 
-## <a name="prerequisites"></a>Předpoklady
+## <a name="prerequisites"></a>Požadavky
 
 V tomto kurzu budete potřebovat následující:
 
@@ -33,7 +33,7 @@ V tomto kurzu budete potřebovat následující:
 
 ### <a name="create-example-application"></a>Vytvořit ukázkovou aplikaci
 
-Vytvořte novou konzolovou aplikaci .NET Core. Můžete ho vytvořit pomocí příkazu [dotnet New Console](../../../../core/tools/dotnet-new.md#console) nebo ze sady [Visual Studio](/visualstudio/install/install-visual-studio). Otevřete soubor *program.cs* ve svém oblíbeném editoru kódu.
+Vytvořte novou konzolovou aplikaci .NET Core. Můžete ho vytvořit pomocí [`dotnet new console`](../../../../core/tools/dotnet-new.md#console) příkazu nebo ze sady [Visual Studio](/visualstudio/install/install-visual-studio). Otevřete soubor *program.cs* ve svém oblíbeném editoru kódu.
 
 ### <a name="replace-using-statements"></a>Nahradit příkazy using
 

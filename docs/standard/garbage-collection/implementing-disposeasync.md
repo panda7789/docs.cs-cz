@@ -1,27 +1,27 @@
 ---
 title: Implementace metody DisposeAsync
-description: ''
+description: Naučte se implementovat metody DisposeAsync a DisposeAsyncCore pro provádění asynchronního vyčištění prostředků.
 author: IEvangelist
 ms.author: dapine
-ms.date: 06/02/2020
+ms.date: 08/25/2020
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
 helpviewer_keywords:
 - DisposeAsync method
 - garbage collection, DisposeAsync method
-ms.openlocfilehash: 0f6370d37703509681dd9fb818af8e7e2f3a1085
-ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
+ms.openlocfilehash: 268cea7584040ad92e2da75e5e03112480cda93c
+ms.sourcegitcommit: 2560a355c76b0a04cba0d34da870df9ad94ceca3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88608082"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89053175"
 ---
 # <a name="implement-a-disposeasync-method"></a>Implementace metody DisposeAsync
 
 <xref:System.IAsyncDisposable?displayProperty=nameWithType>Rozhraní bylo zavedeno jako součást C# 8,0. Metodu implementujete <xref:System.IAsyncDisposable.DisposeAsync?displayProperty=nameWithType> , pokud potřebujete provést čištění prostředků stejným způsobem jako při [implementaci metody Dispose](implementing-dispose.md). Jedna z klíčových rozdílů však je, že tato implementace umožňuje operace asynchronního vyčištění. <xref:System.IAsyncDisposable.DisposeAsync>Vrátí hodnotu <xref:System.Threading.Tasks.ValueTask> , která představuje asynchronní operaci Dispose.
 
-To je obvyklé, že při implementaci <xref:System.IAsyncDisposable> rozhraní budou třídy také implementovat <xref:System.IDisposable> rozhraní. Dobrým vzorem implementace <xref:System.IAsyncDisposable> rozhraní je připravit se buď na synchronní, nebo na asynchronní vyřazení. Všechny pokyny pro implementaci vzoru Dispose se vztahují na asynchronní implementaci. V tomto článku se předpokládá, že už jste obeznámení s tím, jak [implementovat metodu Dispose](implementing-dispose.md).
+Je typický při implementaci <xref:System.IAsyncDisposable> rozhraní, které třídy implementuje také <xref:System.IDisposable> rozhraní. Dobrým vzorem implementace <xref:System.IAsyncDisposable> rozhraní je připravit se buď na synchronní, nebo na asynchronní vyřazení. Všechny doprovodné materiály k implementaci vzoru Dispose platí také pro asynchronní implementaci. V tomto článku se předpokládá, že už jste obeznámení s tím, jak [implementovat metodu Dispose](implementing-dispose.md).
 
 ## <a name="disposeasync-and-disposeasynccore"></a>DisposeAsync () a DisposeAsyncCore ()
 
@@ -30,17 +30,15 @@ To je obvyklé, že při implementaci <xref:System.IAsyncDisposable> rozhraní b
 - `public` <xref:System.IAsyncDisposable.DisposeAsync?displayProperty=nameWithType> Implementace, která nemá žádné parametry.
 - `protected virtual ValueTask DisposeAsyncCore()`Metoda, jejíž signatura je:
 
-```csharp
-protected virtual ValueTask DisposeAsyncCore()
-{
-}
-```
-
-`DisposeAsyncCore()`Metoda je `virtual` tak, že odvozené třídy mohou definovat další vyčištění v jejich přepsání.
+  ```csharp
+  protected virtual ValueTask DisposeAsyncCore()
+  {
+  }
+  ```
 
 ### <a name="the-disposeasync-method"></a>Metoda DisposeAsync ()
 
-`public`Metoda bez parametrů `DisposeAsync()` je volána implicitně v `await using` příkazu a jejím účelem je uvolnit nespravované prostředky, provést obecné vyčištění a označit, že finalizační metoda, pokud existuje, nemusí podepisovat spustit. Uvolnění paměti přidružené ke spravovanému objektu je vždy doména [uvolňování paměti](index.md). Z tohoto důvodu má standardní implementaci:
+`public`Metoda bez parametrů `DisposeAsync()` je volána implicitně v `await using` příkazu a jejím účelem je uvolnit nespravované prostředky, provést obecné vyčištění a označit, že finalizační metoda, pokud existuje, není nutné spustit. Uvolnění paměti přidružené ke spravovanému objektu je vždy doména [uvolňování paměti](index.md). Z tohoto důvodu má standardní implementaci:
 
 ```csharp
 public async ValueTask DisposeAsync()
@@ -57,6 +55,13 @@ public async ValueTask DisposeAsync()
 
 > [!NOTE]
 > Jedním z hlavních rozdílů v asynchronním vzoru Dispose v porovnání se vzorem Dispose je, že volání <xref:System.IAsyncDisposable.DisposeAsync> `Dispose(bool)` metody přetížení je zadáno `false` jako argument. Při implementaci <xref:System.IDisposable.Dispose?displayProperty=nameWithType> metody se ale `true` místo toho předává. To pomáhá zajistit funkční ekvivalenci se synchronním vzorem Dispose a dále zajistí, že se stále vyvolají cesty kódu finalizační metody. Jinými slovy, `DisposeAsyncCore()` Metoda vyřadí spravované prostředky asynchronně, takže je nechcete odstraňovat i synchronně. Proto zavolejte `Dispose(false)` místo `Dispose(true)` .
+
+### <a name="the-disposeasynccore-method"></a>Metoda DisposeAsyncCore ()
+
+`DisposeAsyncCore()`Metoda je určena k provedení asynchronního vyčištění spravovaných prostředků nebo pro kaskádová volání `DisposeAsync()` . Zapouzdřuje společné operace asynchronního čištění, pokud podtřídou dědí základní třídu, která je implementací <xref:System.IAsyncDisposable> . `DisposeAsyncCore()`Metoda je `virtual` tak, že odvozené třídy mohou definovat další vyčištění v jejich přepsání.
+
+> [!TIP]
+> Pokud implementace <xref:System.IAsyncDisposable> je `sealed` , `DisposeAsyncCore()` metoda není potřebná a asynchronní vyčištění lze provést přímo v <xref:System.IAsyncDisposable.DisposeAsync?displayProperty=nameWithType> metodě.
 
 ## <a name="implement-the-async-dispose-pattern"></a>Implementace vzorce asynchronního Dispose
 

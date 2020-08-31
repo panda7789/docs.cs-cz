@@ -7,4 +7,4 @@ ms.lasthandoff: 06/09/2020
 ms.locfileid: "84602934"
 ---
 
-❌Upozorňujeme, že tato verze Ubuntu už není podporovaná.
+❌ Upozorňujeme, že tato verze Ubuntu už není podporovaná.

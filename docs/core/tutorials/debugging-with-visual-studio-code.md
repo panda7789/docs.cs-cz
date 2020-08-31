@@ -2,18 +2,18 @@
 title: Ladění konzolové aplikace .NET Core pomocí Visual Studio Code
 description: Naučte se ladit konzolovou aplikaci .NET Core pomocí Visual Studio Code.
 ms.date: 05/26/2020
-ms.openlocfilehash: e2be9324a77d0360247a225bbd93224d379bda0d
-ms.sourcegitcommit: b9122d1af21898eaba81e990c70fef46fef74a8d
+ms.openlocfilehash: 8e84747256551b633a5bf74b72723ba8d2840d52
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88867578"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89118296"
 ---
 # <a name="tutorial-debug-a-net-core-console-application-using-visual-studio-code"></a>Kurz: ladění konzolové aplikace .NET Core pomocí Visual Studio Code
 
 Tento kurz zavádí ladicí nástroje, které jsou k dispozici v Visual Studio Code pro práci s aplikacemi .NET Core.
 
-## <a name="prerequisites"></a>Předpoklady
+## <a name="prerequisites"></a>Požadavky
 
 - Tento kurz spolupracuje s konzolovou aplikací, kterou vytvoříte v části [Vytvoření konzolové aplikace .NET Core pomocí Visual Studio Code](with-visual-studio-code.md).
 
@@ -35,7 +35,7 @@ Ve výchozím nastavení Visual Studio Code spuštění nastavení používá ko
 
 1. Otevřete soubor *program.cs* .
 
-1. Nastavte *zarážku* na řádku, který zobrazuje název, datum a čas kliknutím na levý okraj okna Code (kód). Levý okraj je nalevo od čísel řádků. Další způsoby, jak nastavit zarážku, jsou stisknuté klávesou <kbd>F9</kbd> nebo výběrem možnosti **Spustit**  >  **přepínací zarážku** z nabídky, když je vybraná řádka kódu.
+1. Nastavte *zarážku* na řádku, který zobrazuje název, datum a čas kliknutím na levý okraj okna Code (kód). Levý okraj je nalevo od čísel řádků. Další způsoby, jak nastavit zarážku, jsou stisknutím klávesy <kbd>F9</kbd> nebo výběrem možnosti **Spustit**  >  **přepínací zarážku** z nabídky, zatímco je vybrána řádka kódu.
 
    Visual Studio Code určuje čáru, na které je zarážka nastavena, zobrazením červené tečky na levém okraji.
 
@@ -69,7 +69,7 @@ Zarážka je umístěna po `Console.ReadLine` volání metody. **Konzola laděn�
 
    :::image type="content" source="media/debugging-with-visual-studio-code/select-debug-pane.png" alt-text="Otevřete kartu ladění v Visual Studio Code":::
 
-1. V horní části podokna vyberte zelenou šipku a vedle položku **.NET Core Launch (konzola)**. Jiný způsob, jak spustit program v režimu ladění, je výběrem možnosti **Spustit**  >  **ladění** z nabídky.
+1. V horní části podokna vyberte zelenou šipku a vedle položku **.NET Core Launch (konzola)**. Další způsoby spuštění programu v režimu ladění jsou stisknutí klávesy <kbd>F5</kbd> nebo výběrem možnosti **Spustit**  >  **ladění** z nabídky.
 
    :::image type="content" source="media/debugging-with-visual-studio-code/start-debugging.png" alt-text="Spustit ladění":::
 
@@ -133,7 +133,7 @@ Program zobrazí řetězec, který uživatel zadá. Co se stane, když uživatel
 
 1. Na kartě **terminál** po zobrazení výzvy k zadání názvu stiskněte klávesu <kbd>ENTER</kbd> .
 
-   Vzhledem k tomu, že podmínka, kterou jste zadali ( `name` je `null` nebo <xref:System.String.Empty?displayProperty=nameWithType> ) je splněná, spuštění programu se zastaví, když dosáhne zarážky a předtím, než se `Console.WriteLine` Metoda spustí.
+   Vzhledem k tomu, že podmínka, kterou jste zadali ( `name` je `null` nebo <xref:System.String.Empty?displayProperty=nameWithType> ), byla splněna, spuštění programu se zastaví, když dosáhne zarážky a předtím, než se `Console.WriteLine` Metoda spustí.
 
    Okno **proměnné** ukazuje, že hodnota `name` proměnné je `""` nebo <xref:System.String.Empty?displayProperty=nameWithType> .
 
@@ -215,7 +215,7 @@ Chcete-li vytvořit a otestovat verzi pro vydání konzolové aplikace, otevřet
 dotnet run --configuration Release
 ```
 
-## <a name="additional-resources"></a>Další zdroje
+## <a name="additional-resources"></a>Další materiály a zdroje informací
 
 * [Ladění v Visual Studio Code](https://code.visualstudio.com/docs/editor/debugging)
 

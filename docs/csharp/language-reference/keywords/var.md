@@ -1,5 +1,5 @@
 ---
-title: var - C# Odkaz
+title: var – reference jazyka C#
 ms.date: 07/20/2015
 f1_keywords:
 - var
@@ -7,32 +7,35 @@ f1_keywords:
 helpviewer_keywords:
 - var keyword [C#]
 ms.assetid: 0777850a-2691-4e3e-927f-0c850f5efe15
-ms.openlocfilehash: ff8348a725f43fa8789c73fa58549da26126369c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d944cde932b5c1f5ef1439ee46a1447e107e6ac9
+ms.sourcegitcommit: 2560a355c76b0a04cba0d34da870df9ad94ceca3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75712881"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89053072"
 ---
 # <a name="var-c-reference"></a>var (Referenční dokumentace jazyka C#)
 
-Počínaje Visual C# 3.0 proměnné, které jsou deklarovány v `var`oboru metody může mít implicitní "typ" . Implicitně zadaný místní proměnná je silně zadaný, stejně jako kdybyste deklarovali typ sami, ale kompilátor určuje typ. Následující dvě prohlášení `i` jsou funkčně rovnocenná:
+Počínaje jazykem Visual C# 3,0 proměnné, které jsou deklarovány v oboru metody, mohou mít implicitní "typ" `var` . Implicitní typ lokální proměnné je silného typu, jako by byl typ deklarovaný sami, ale kompilátor určí typ. Následující dvě deklarace `i` jsou funkčně ekvivalentní:
 
 ```csharp
 var i = 10; // Implicitly typed.
 int i = 10; // Explicitly typed.
 ```
 
-Další informace naleznete [v tématu Implicitně zadané místní proměnné](../../programming-guide/classes-and-structs/implicitly-typed-local-variables.md) a vztahy typu v [operacích dotazů LINQ](../../programming-guide/concepts/linq/type-relationships-in-linq-query-operations.md).
+Další informace naleznete v tématu [implicitně typované lokální proměnné](../../programming-guide/classes-and-structs/implicitly-typed-local-variables.md) a [vztahy typů v operacích dotazu LINQ](../../programming-guide/concepts/linq/type-relationships-in-linq-query-operations.md).
+
+> [!IMPORTANT]
+> Při `var` použití s povolenými typy odkazů s možnou hodnotou null vždy implikuje typ odkazu s možnou hodnotou null i v případě, že typ výrazu nemá hodnotu null.
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje dva výrazy dotazu. V prvním výrazu `var` je použití povoleno, ale není vyžadováno, protože typ výsledku `IEnumerable<string>`dotazu lze explicitně uvést jako . Však ve druhém `var` výrazu umožňuje výsledek je kolekce anonymní chod a název tohoto typu není přístupný s výjimkou kompilátoru samotného. Použití `var` eliminuje požadavek na vytvoření nové třídy pro výsledek. Všimněte si, že `foreach` v `item` příkladu #2 musí být implicitně zadána také proměnná iterace.
+Následující příklad ukazuje dva výrazy dotazu. V prvním výrazu je použití `var` povoleno, ale není vyžadováno, protože typ výsledku dotazu lze explicitně uvést jako `IEnumerable<string>` . Ve druhém výrazu však může `var` být výsledkem kolekce anonymních typů a název tohoto typu není přístupný s výjimkou samotného kompilátoru. Použití `var` eliminuje požadavek na vytvoření nové třídy pro výsledek. Všimněte si, že v příkladu #2 `foreach` musí být proměnná iterace `item` také implicitně typu.
 
 [!code-csharp[csrefKeywordsTypes#18](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsTypes/CS/keywordsTypes.cs#18)]
 
 ## <a name="see-also"></a>Viz také
 
-- [Odkaz jazyka C#](../index.md)
-- [Programovací příručka jazyka C#](../../programming-guide/index.md)
+- [Reference jazyka C#](../index.md)
+- [Průvodce programováním v C#](../../programming-guide/index.md)
 - [Implicitně typované lokální proměnné](../../programming-guide/classes-and-structs/implicitly-typed-local-variables.md)

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - struct type [C#]
 - structure type [C#]
 ms.assetid: ff3dd9b7-dc93-4720-8855-ef5558f65c7c
-ms.openlocfilehash: 515b8d9adc1359581625f0d822e254d2c1df3b58
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 8f99af5accdecf1892a67a88c221e866bfddcbb2
+ms.sourcegitcommit: 2560a355c76b0a04cba0d34da870df9ad94ceca3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88062493"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89053041"
 ---
 # <a name="structure-types-c-reference"></a>Typy struktury (Referenční dokumentace jazyka C#)
 
@@ -27,7 +27,7 @@ Pro návrh malých typů orientovaných na data, které poskytují pouze malé n
 
 Vzhledem k tomu, že typy struktury mají sémantiku hodnot, doporučujeme definovat *neměnné* typy struktury.
 
-## <a name="readonly-struct"></a>`readonly`nemají
+## <a name="readonly-struct"></a>`readonly` nemají
 
 Počínaje jazykem C# 7,2 použijete `readonly` Modifikátor k deklaraci, že typ struktury je neměnný:
 
@@ -38,14 +38,14 @@ Všechna data členů `readonly` struktury musí být jen pro čtení, jak je zn
 - Jakákoli deklarace pole musí mít [ `readonly` Modifikátor](../keywords/readonly.md) .
 - Jakákoli vlastnost, včetně automaticky implementovaných, musí být jen pro čtení.
 
-To zaručuje, že žádný člen `readonly` struktury nemění stav struktury.
+To zaručuje, že žádný člen `readonly` struktury nemění stav struktury. V jazyce C# 8,0 a novějším to znamená, že další členy instance s výjimkou konstruktorů jsou implicitně [`readonly`](#readonly-instance-members) .
 
 > [!NOTE]
 > V rámci `readonly` struktury může být datový člen proměnlivého typu odkazu stále v jeho vlastním stavu. Například nelze nahradit <xref:System.Collections.Generic.List%601> instanci, ale do ní můžete přidat nové prvky.
 
-## <a name="readonly-instance-members"></a>`readonly`členy instance
+## <a name="readonly-instance-members"></a>`readonly` členy instance
 
-Počínaje jazykem C# 8,0 můžete také použít `readonly` Modifikátor k deklaraci, že člen instance neupravuje stav struktury. Pokud nemůžete deklarovat typ celé struktury jako `readonly` , použijte `readonly` Modifikátor k označení členů instance, které nemění stav struktury. Ve `readonly` struktuře je každý člen instance implicitně `readonly` .
+Počínaje jazykem C# 8,0 můžete také použít `readonly` Modifikátor k deklaraci, že člen instance neupravuje stav struktury. Pokud nemůžete deklarovat typ celé struktury jako `readonly` , použijte `readonly` Modifikátor k označení členů instance, které nemění stav struktury.
 
 V rámci `readonly` člena instance nelze přiřadit pole instance struktury. `readonly`Člen však může volat `readonly` nečlen. V takovém případě kompilátor vytvoří kopii instance struktury a zavolá do `readonly` této kopie nečlen. V důsledku toho se původní instance struktury nezmění.
 
@@ -102,7 +102,7 @@ V případě [předdefinovaných hodnotových typů](value-types.md#built-in-val
 
 Pokud předáte proměnnou typu struktury do metody jako argument nebo vrátíte hodnotu typu struktury z metody, je zkopírována celá instance typu struktury. To může mít vliv na výkon vašeho kódu ve scénářích s vysokým výkonem, které zahrnují typy velkých struktur. Kopírování hodnot se můžete vyhnout předáním proměnné typu struktury odkazem. Použijte [`ref`](../keywords/ref.md#passing-an-argument-by-reference) [`out`](../keywords/out-parameter-modifier.md) [`in`](../keywords/in-parameter-modifier.md) modifikátory parametrů metody, nebo, aby označovaly, že argument musí být předán odkazem. Pomocí [funkce ref](../../programming-guide/classes-and-structs/ref-returns.md) Return můžete vrátit výsledek metody odkazem. Další informace najdete v tématu [Zápis bezpečného a efektivního kódu v jazyce C#](../../write-safe-efficient-code.md).
 
-## <a name="ref-struct"></a>`ref`nemají
+## <a name="ref-struct"></a>`ref` nemají
 
 Počínaje jazykem C# 7,2 můžete použít `ref` Modifikátor v deklaraci typu struktury. Instance `ref` typu struktury jsou přiděleny v zásobníku a nemohou uniknout do spravované haldy. Aby bylo zajištěno, že kompilátor omezuje využití `ref` typů struktury následujícím způsobem:
 

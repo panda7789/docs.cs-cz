@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet,contperfq1
-ms.openlocfilehash: 595e93d8d8d22478c6770ddd4f70a0214653f5b9
-ms.sourcegitcommit: d337df55f83325918cbbd095eb573400bea49064
+ms.openlocfilehash: 45a44dcd73e1abcc8dfd75cd54da5a2310f027c4
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88187951"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89118257"
 ---
 # <a name="tutorial-create-a-net-standard-library-using-visual-studio"></a>Kurz: Vytvoření knihovny .NET Standard pomocí sady Visual Studio
 
@@ -70,7 +70,7 @@ Vytvoření prázdného řešení:
 
    `StartsWithUpper` je implementován jako [metoda rozšíření](../../csharp/programming-guide/classes-and-structs/extension-methods.md) , takže ji můžete volat, jako kdyby byla členem <xref:System.String> třídy.
 
-1. Na panelu nabídek vyberte **sestavit**  >  **sestavení řešení** a ověřte, že se projekt zkompiluje bez chyby.
+1. Na panelu nabídek vyberte **sestavení**  >  **Build Build** nebo stiskněte <kbd>CTRL</kbd> + <kbd>+ SHIFT</kbd> + <kbd>B</kbd> a ověřte, že se projekt zkompiluje bez chyby.
 
 ## <a name="add-a-console-app-to-the-solution"></a>Přidání konzolové aplikace do řešení
 
@@ -121,7 +121,7 @@ Zpočátku má nový projekt konzolové aplikace přístup ke knihovně tříd. 
 
    :::image type="content" source="media/library-with-visual-studio/run-showcase.png" alt-text="Okno konzoly s předvedením":::
 
-## <a name="additional-resources"></a>Další zdroje
+## <a name="additional-resources"></a>Další materiály a zdroje informací
 
 * [Vývoj knihoven pomocí .NET Core CLI](libraries.md)
 * [.NET Standard verze a podporované platformy](../../standard/net-standard.md).
