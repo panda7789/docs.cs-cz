@@ -7,4 +7,4 @@ ms.lasthandoff: 06/09/2020
 ms.locfileid: "84602934"
 ---
 
-<span data-ttu-id="4040c-101">❌Upozorňujeme, že tato verze Ubuntu už není podporovaná.</span><span class="sxs-lookup"><span data-stu-id="4040c-101">❌ Please note that this version of Ubuntu is no longer supported.</span></span>
+<span data-ttu-id="f96b0-101">❌ Upozorňujeme, že tato verze Ubuntu už není podporovaná.</span><span class="sxs-lookup"><span data-stu-id="f96b0-101">❌ Please note that this version of Ubuntu is no longer supported.</span></span>

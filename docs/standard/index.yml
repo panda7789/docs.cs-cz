@@ -6,12 +6,12 @@ metadata:
   description: Přečtěte si o .NET, open source vývojářské platformě pro vytváření mnoha různých typů aplikací.
   ms.topic: landing-page
   ms.date: 04/22/2020
-  ms.openlocfilehash: 67fa6bb8c14ef3fad05b4874553a9ce75f811833
-  ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
+  ms.openlocfilehash: 37908d252d6dfcef92ce642f6f7c6f7e12f551f1
+  ms.sourcegitcommit: 2560a355c76b0a04cba0d34da870df9ad94ceca3
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 04/24/2020
-  ms.locfileid: "82135812"
+  ms.lasthandoff: 08/28/2020
+  ms.locfileid: "89053209"
 landingContent:
 - title: Přečtěte si o .NET
   linkLists:
@@ -53,7 +53,7 @@ landingContent:
     links:
     - text: 'Serializace a deserializace JSON pomocí jazyka C #'
       url: serialization/system-text-json-how-to.md
-    - text: Migrace ze Newtonsoft. JSON na System. text. JSON
+    - text: Migrace z Newtonsoft.Jsna do System.Text.Js
       url: serialization/system-text-json-migrate-from-newtonsoft-how-to.md
     - text: Zápis vlastních převaděčů pro serializaci JSON
       url: serialization/system-text-json-converters-how-to.md
@@ -141,6 +141,8 @@ landingContent:
       url: garbage-collection/fundamentals.md
     - text: Implementace metody Dispose
       url: garbage-collection/implementing-dispose.md
+    - text: Implementace metody DisposeAsync
+      url: garbage-collection/implementing-disposeasync.md
 - title: Další informace o paralelním programování
   linkLists:
   - linkListType: overview
