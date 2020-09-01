@@ -1,5 +1,6 @@
 ---
-title: interní – odkaz jazyka C#
+description: Reference interního jazyka C#
+title: Reference interního jazyka C#
 ms.date: 07/20/2015
 f1_keywords:
 - internal_CSharpKeyword
@@ -7,17 +8,17 @@ f1_keywords:
 helpviewer_keywords:
 - internal keyword [C#]
 ms.assetid: 6ee0785c-d7c8-49b8-bb72-0a4dfbcb6461
-ms.openlocfilehash: e5a5ca18828b689241abbb6d80c5adc51efb073c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 14722d66a65eb5f96118acf017dc877e657b2dd9
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79173598"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89134572"
 ---
 # <a name="internal-c-reference"></a>internal (Referenční dokumentace jazyka C#)
-Klíčové `internal` slovo je [modifikátor přístupu](./access-modifiers.md) pro typy a členy typu.
+`internal`Klíčové slovo je [modifikátor přístupu](./access-modifiers.md) pro typy a členy typů.
   
- > Tato stránka `internal` se týká přístupu. Klíčové `internal` slovo je také [`protected internal`](./protected-internal.md) součástí modifikátoru přístupu.
+ > Tato stránka se zabývá `internal` přístupem. `internal`Klíčové slovo je také součástí [`protected internal`](./protected-internal.md) modifikátoru přístupu.
   
 Interní typy nebo členy jsou přístupné pouze v rámci souborů ve stejném sestavení, jako v tomto příkladu:  
   
@@ -29,16 +30,16 @@ public class BaseClass
 }  
 ```  
 
- Porovnání s `internal` ostatními modifikátory přístupu naleznete v [tématu Úrovně přístupnosti](./accessibility-levels.md) a [Modifikátory přístupu](../../programming-guide/classes-and-structs/access-modifiers.md).  
+ Porovnání `internal` s dalšími modifikátory přístupu najdete v tématu [úrovně přístupnosti](./accessibility-levels.md) a [modifikátory přístupu](../../programming-guide/classes-and-structs/access-modifiers.md).  
   
- Další informace o sestaveních naleznete [v tématu Sestavení v rozhraní .NET](../../../standard/assembly/index.md).  
+ Další informace o sestaveních naleznete [v tématu sestavení v rozhraní .NET](../../../standard/assembly/index.md).  
   
- Běžné použití interního přístupu je ve vývoji založeném na součástech, protože umožňuje skupině součástí spolupracovat soukromým způsobem, aniž by byla vystavena zbytku kódu aplikace. Například rámec pro vytváření grafických uživatelských rozhraní může poskytnout `Control` a `Form` třídy, které spolupracují pomocí členů s interním přístupem. Vzhledem k tomu, že tyto členy jsou interní, nejsou vystaveny kódu, který používá rozhraní.  
+ Běžné použití interního přístupu je v rámci vývoje založeného na komponentách, protože umožňuje skupině komponent, aby spolupracovaly soukromě, aniž by bylo zveřejněno pro zbytek kódu aplikace. Například architektura pro sestavování grafického uživatelského rozhraní může poskytovat `Control` a `Form` třídy, které spolupracují pomocí členů s interním přístupem. Vzhledem k tomu, že jsou tyto členy interní, nejsou vystaveny kódu, který používá rozhraní.  
   
- Je chyba odkazovat na typ nebo člen s internípřístup mimo sestavení, ve kterém byl definován.  
+ Jedná se o chybu, která odkazuje na typ nebo člen s vnitřním přístupem mimo sestavení, ve kterém byla definována.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad obsahuje `Assembly1.cs` dva `Assembly1_a.cs`soubory a . První soubor obsahuje vnitřní základní `BaseClass`třídu . V druhém souboru dojde k vytvoření `BaseClass` instance.  
+ Tento příklad obsahuje dva soubory, `Assembly1.cs` a `Assembly1_a.cs` . První soubor obsahuje interní základní třídu `BaseClass` . Při pokusu o vytvoření instance v druhém souboru `BaseClass` dojde k chybě.  
   
 ```csharp  
 // Assembly1.cs  
@@ -62,7 +63,7 @@ class TestAccess
 ```  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu použijte stejné soubory, které jste použili `BaseClass` `public`v příkladu 1, a změňte úroveň usnadnění na . Změňte také úroveň usnadnění `intM` `internal`přístupu člena na . V takovém případě můžete vytvořit instanci třídy, ale nelze získat přístup k interní člen.  
+ V tomto příkladu použijte stejné soubory, které jste použili v příkladu 1, a změňte úroveň přístupnosti `BaseClass` na `public` . Změňte také úroveň přístupnosti člena `intM` na `internal` . V takovém případě můžete vytvořit instanci třídy, ale nemůžete získat přístup k internímu členu.  
   
 ```csharp  
 // Assembly2.cs  
@@ -88,16 +89,16 @@ public class TestAccess
   
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
 
-For more information, see [Declared accessibility](~/_csharplang/spec/basic-concepts.md#declared-accessibility) in the [C# Language Specification](/dotnet/csharp/language-reference/language-specification/introduction). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
+Další informace najdete v tématu [deklarovaná přístupnost](~/_csharplang/spec/basic-concepts.md#declared-accessibility) ve [specifikaci jazyka C#](/dotnet/csharp/language-reference/language-specification/introduction). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
   
 ## <a name="see-also"></a>Viz také
 
-- [Odkaz jazyka C#](../index.md)
-- [Programovací příručka jazyka C#](../../programming-guide/index.md)
-- [C# Klíčová slova](./index.md)
+- [Reference jazyka C#](../index.md)
+- [Průvodce programováním v C#](../../programming-guide/index.md)
+- [Klíčová slova jazyka C#](./index.md)
 - [Modifikátory přístupu](./access-modifiers.md)
 - [Úrovně přístupnosti](./accessibility-levels.md)
 - [Modifikátory](index.md)
-- [Veřejné](./public.md)
-- [Soukromé](./private.md)
+- [public](./public.md)
+- [private](./private.md)
 - [protected](./protected.md)

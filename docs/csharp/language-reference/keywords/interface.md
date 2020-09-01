@@ -1,4 +1,5 @@
 ---
+description: ':::no-loc text=interface::: (Referenční dokumentace jazyka C#)'
 title: rozhraní – reference jazyka C#
 ms.date: 01/17/2020
 f1_keywords:
@@ -6,14 +7,14 @@ f1_keywords:
 helpviewer_keywords:
 - interface keyword [C#]
 ms.assetid: 7da38e81-4f99-4bc5-b07d-c986b687eeba
-ms.openlocfilehash: 869f1398ae0af3c7379655aa018a9f4aacb934d7
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 24f95e828522f467c519c0c8a7ba9410aa97af4e
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85243968"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89134585"
 ---
-# <a name="no-loc-textinterface-c-reference"></a>:::no-loc text="interface":::(Referenční dokumentace jazyka C#)
+# <a name="no-loc-textinterface-c-reference"></a>:::no-loc text="interface"::: (Referenční dokumentace jazyka C#)
 
 Rozhraní definuje kontrakt. Jakýkoli [`class`](class.md) nebo [`struct`](../builtin-types/struct.md) , který implementuje daný kontrakt, musí poskytnout implementaci členů definovaných v rozhraní. Počínaje jazykem C# 8,0 může rozhraní definovat výchozí implementaci pro členy. Může také definovat členy, aby [`static`](static.md) poskytovaly jednu implementaci pro běžné funkce.
 
