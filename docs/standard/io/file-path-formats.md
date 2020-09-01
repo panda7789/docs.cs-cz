@@ -10,12 +10,12 @@ helpviewer_keywords:
 - I/O, long paths
 - long paths
 - path formats, Windows
-ms.openlocfilehash: 5eb9d5127dffd2e80349352ad7a4b57f8848d56b
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: 8cbb687b0c7cfb69d3f3807c083f1c25e9d39594
+ms.sourcegitcommit: e0803b8975d3eb12e735a5d07637020dd6dac5ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87165793"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89271786"
 ---
 # <a name="file-path-formats-on-windows-systems"></a>Formáty cesty k souborům v systémech Windows
 
@@ -33,19 +33,19 @@ Pokud jsou k dispozici všechny tři komponenty, je cesta absolutní. Pokud nen�
 
 |Cesta  |Popis  |
 | -- | -- |
-| `C:\Documents\Newsletters\Summer2018.pdf` | Absolutní cesta k souboru z kořene jednotky C: |
+| `C:\Documents\Newsletters\Summer2018.pdf` | Absolutní cesta k souboru z kořene jednotky `C:` . |
 | `\Program Files\Custom Utilities\StringFinder.exe` | Absolutní cesta z kořene aktuální jednotky. |
 | `2018\January.xlsx` | Relativní cesta k souboru v podadresáři aktuálního adresáře. |
 | `..\Publications\TravelBrochure.pdf` | Relativní cesta k souboru v adresáři, který je partnerským uzlem aktuálního adresáře. |
-| `C:\Projects\apilibrary\apilibrary.sln` | Absolutní cesta k souboru z kořene jednotky C: |
-| `C:Projects\apilibrary\apilibrary.sln` | Relativní cesta z aktuálního adresáře jednotky C:. |
+| `C:\Projects\apilibrary\apilibrary.sln` | Absolutní cesta k souboru z kořene jednotky `C:` . |
+| `C:Projects\apilibrary\apilibrary.sln` | Relativní cesta z aktuálního adresáře `C:` jednotky. |
 
 > [!IMPORTANT]
-> Všimněte si rozdílu mezi posledními dvěma cestami. Oba určují volitelné specifikátory svazku (C: v obou případech), ale první začíná kořenem zadaného svazku, zatímco druhý ne. V důsledku toho je první absolutní cesta z kořenového adresáře jednotky C:, zatímco druhá je relativní cesta z aktuálního adresáře jednotky C:. Použití druhého formuláře, pokud je první záměr, je běžným zdrojem chyb, které obsahují cesty k souborům Windows.
+> Všimněte si rozdílu mezi posledními dvěma cestami. Oba určují volitelné specifikátory svazku ( `C:` v obou případech), ale první začíná kořenem zadaného svazku, zatímco druhý ne. V důsledku toho je první absolutní cesta z kořenového adresáře jednotky `C:` , zatímco druhá je relativní cesta z aktuálního adresáře jednotky `C:` . Použití druhého formuláře, pokud je první záměr, je běžným zdrojem chyb, které obsahují cesty k souborům Windows.
 
 Můžete určit, zda je cesta k souboru plně kvalifikovaná (to znamená, že cesta je nezávislá na aktuálním adresáři a nemění se, když se změní aktuální adresář) voláním <xref:System.IO.Path.IsPathFullyQualified%2A?displayProperty=nameWthType> metody. Všimněte si, že taková cesta může zahrnovat relativní segmenty adresářů ( `.` a `..` ) a pořád musí být plně kvalifikované, pokud se přeložená cesta vždy odkazuje na stejné umístění.
 
-Následující příklad znázorňuje rozdíl mezi absolutními a relativními cestami. Předpokládá, že adresář D:\FY2018\ existuje a že jste nastavili žádný aktuální adresář pro D:\. před spuštěním příkladu z příkazového řádku.
+Následující příklad znázorňuje rozdíl mezi absolutními a relativními cestami. Předpokládá, že adresář `D:\FY2018\` existuje a že jste před spuštěním tohoto příkladu nestavili žádný aktuální adresář pro `D:\` z příkazového řádku.
 
 [!code-csharp[absolute-and-relative-paths](~/samples/snippets/standard/io/file-names/cs/paths.cs)]
 [!code-vb[absolute-and-relative-paths](~/samples/snippets/standard/io/file-names/vb/paths.vb)]
@@ -56,8 +56,8 @@ Následující příklad znázorňuje rozdíl mezi absolutními a relativními c
 
 Cesty UNC (Universal Naming Convention), které se používají pro přístup k síťovým prostředkům, mají následující formát:
 
-- Název serveru nebo hostitele, který je v rámci \\ \\ . Název serveru může být název počítače pro rozhraní NetBIOS nebo adresa IP nebo plně kvalifikovaného názvu domény (IPv4 a i taky 6 – podporované).
-- Název sdílené složky, který je oddělený od názvu hostitele \\ . Společně se název serveru a sdílené složky skládá ze svazku.
+- Název serveru nebo hostitele, který je v rámci `\\` . Název serveru může být název počítače pro rozhraní NetBIOS nebo adresa IP nebo plně kvalifikovaného názvu domény (IPv4 a i taky 6 – podporované).
+- Název sdílené složky, který je oddělený od názvu hostitele `\` . Společně se název serveru a sdílené složky skládá ze svazku.
 - Název adresáře. [Znak oddělovače adresáře](<xref:System.IO.Path.DirectorySeparatorChar>) odděluje podadresáře v rámci hierarchie vnořeného adresáře.
 - Nepovinný název souboru. [Znak oddělovače adresáře](<xref:System.IO.Path.DirectorySeparatorChar>) odděluje cestu k souboru a název souboru.
 
@@ -65,8 +65,8 @@ Následuje několik příkladů cest UNC:
 
 |Cesta  |Popis  |
 | -- | -- |
-| `\\system07\C$\` | Kořenový adresář jednotky C: na `system07` . |
-| `\\Server2\Share\Test\Foo.txt` | Soubor Foo.txt v adresáři testu svazku s názvem \\ \\ Server2 \\ Shared.|
+| `\\system07\C$\` | Kořenový adresář `C:` jednotky `system07` . |
+| `\\Server2\Share\Test\Foo.txt` | `Foo.txt`Soubor v adresáři testu `\\Server2\Share` svazku.|
 
 Cesty UNC musí být vždy plně kvalifikované. Můžou zahrnovat relativní segmenty adresářů ( `.` a `..` ), ale musí být součástí plně kvalifikované cesty. Relativní cesty můžete použít jenom tak, že namapujete cestu UNC k písmenu jednotky.
 
@@ -96,12 +96,12 @@ Cesta k zařízení DOS se skládá z následujících součástí:
 
    První segment cesty zařízení systému DOS po určení svazku cesty zařízení, který identifikuje svazek nebo jednotku. (Například `\\?\C:\` a `\\.\BootPartition\` .)
 
-   Pro UNCs je k dispozici konkrétní odkaz, který se nazývá, nikoli překvapivě `UNC` . Například:
+   Pro UNCs je k dispozici konkrétní odkaz, který se nazývá, nikoli překvapivě `UNC` . Příklad:
 
   `\\.\UNC\Server\Share\Test\Foo.txt`
   `\\?\UNC\Server\Share\Test\Foo.txt`
 
-    V případě UNCs zařízení tvoří část server/sdílení svazku svazek. Například v nástroji `\\?\server1\e:\utilities\\filecomparer\` je část Server/sdílená složka server1\utilities.. To je důležité při volání metody, jako je například <xref:System.IO.Path.GetFullPath(System.String,System.String)?displayProperty=nameWithType> s relativními segmenty adresářů; není nikdy možné přejít na předchozí svazek.
+    V případě UNCs zařízení tvoří část server/sdílení svazku svazek. Například v nástroji `\\?\server1\e:\utilities\\filecomparer\` je část serveru nebo sdílené složky `server1\utilities` . To je důležité při volání metody, jako je například <xref:System.IO.Path.GetFullPath(System.String,System.String)?displayProperty=nameWithType> s relativními segmenty adresářů; není nikdy možné přejít na předchozí svazek.
 
 Cesty zařízení DOS jsou plně kvalifikované podle definice. Relativní segmenty adresářů ( `.` a `..` ) nejsou povoleny. Aktuální adresáře nikdy nevstoupí do jejich použití.
 
@@ -122,7 +122,7 @@ Skoro všechny cesty předané rozhraním API systému Windows jsou normalizová
 - Vyhodnotí relativní součásti adresáře ( `.` pro aktuální adresář a `..` pro nadřazený adresář).
 - Ořízne určité znaky.
 
-Tato normalizace proběhne implicitně, ale můžete ji provést explicitně voláním <xref:System.IO.Path.GetFullPath%2A?displayProperty=nameWithType> metody, která zabalí volání [funkce GetFullPathName ()](/windows/desktop/api/fileapi/nf-fileapi-getfullpathnamea). [Funkci Windows GetFullPathName ()](/windows/desktop/api/fileapi/nf-fileapi-getfullpathnamea) můžete také volat přímo pomocí volání nespravovaného volání.
+Tato normalizace proběhne implicitně, ale můžete ji provést explicitně voláním <xref:System.IO.Path.GetFullPath%2A?displayProperty=nameWithType> metody, která zabalí volání  [funkce GetFullPathName ()](/windows/desktop/api/fileapi/nf-fileapi-getfullpathnamea). [Funkci Windows GetFullPathName ()](/windows/desktop/api/fileapi/nf-fileapi-getfullpathnamea) můžete také volat přímo pomocí volání nespravovaného volání.
 
 ### <a name="identify-the-path"></a>Identifikujte cestu
 
@@ -146,7 +146,7 @@ Cesta začínající starším názvem zařízení je vždy interpretována jako
 
 ### <a name="apply-the-current-directory"></a>Použít aktuální adresář
 
-Pokud cesta není plně kvalifikovaná, systém Windows použije pro něj aktuální adresář. UNCs a cesty zařízení nemají použit aktuální adresář. Ani celá jednotka s oddělovačem C: \\ .
+Pokud cesta není plně kvalifikovaná, systém Windows použije pro něj aktuální adresář. UNCs a cesty zařízení nemají použit aktuální adresář. Ani celá jednotka s oddělovačem `C:\` .
 
 Pokud cesta začíná jediným oddělovačem komponent, použije se jednotka z aktuálního adresáře. Například pokud je cesta k souboru `\utilities` a aktuální adresář je `C:\temp\` , normalizace vytvoří `C:\utilities` .
 

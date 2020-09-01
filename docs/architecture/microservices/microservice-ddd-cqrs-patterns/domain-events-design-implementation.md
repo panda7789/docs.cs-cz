@@ -2,12 +2,12 @@
 title: Události domény. návrh a implementace
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Získejte podrobné zobrazení událostí domény, klíčový koncept k navázání komunikace mezi agregacemi.
 ms.date: 10/08/2018
-ms.openlocfilehash: 630bd0a0b060431e565df98faa77f452e2045fa2
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 0cc2072408e110d94b47bd47a9c337a604d4c1a3
+ms.sourcegitcommit: e0803b8975d3eb12e735a5d07637020dd6dac5ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144302"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89271773"
 ---
 # <a name="domain-events-design-and-implementation"></a>Doménové události: Návrh a implementace
 
@@ -130,7 +130,7 @@ Je důležité zdůraznit, že pokud byly události domény zpracovány asynchro
 
 Další otázkou je postup, jak vyvolat událost domény, aby dosáhla souvisejících obslužných rutin událostí. Můžete použít více přístupů.
 
-UDI Dahan původně navržen (například v několika souvisejících příspěvcích, například v případě [událostí domény – Vezměte 2](http://udidahan.com/2008/08/25/domain-events-take-2/)) pomocí statické třídy pro správu a vyvolávání událostí. To může zahrnovat statickou třídu s názvem DomainEvents, která by mohla vyvolat události domény hned po jejím volání, a to pomocí syntaxe jako `DomainEvents.Raise(Event myEvent)` . Jimmy Bogard zapsal Blogový příspěvek ([posilováním domény](https://lostechies.com/jimmybogard/2010/04/08/strengthening-your-domain-domain-events/)domén), která doporučuje podobný přístup.
+UDI Dahan původně navržen (například v několika souvisejících příspěvcích, například v případě [událostí domény – Vezměte 2](https://udidahan.com/2008/08/25/domain-events-take-2/)) pomocí statické třídy pro správu a vyvolávání událostí. To může zahrnovat statickou třídu s názvem DomainEvents, která by mohla vyvolat události domény hned po jejím volání, a to pomocí syntaxe jako `DomainEvents.Raise(Event myEvent)` . Jimmy Bogard zapsal Blogový příspěvek ([posilováním domény](https://lostechies.com/jimmybogard/2010/04/08/strengthening-your-domain-domain-events/)domén), která doporučuje podobný přístup.
 
 Nicméně pokud je třída událostí domény statická, také odesílá obslužné rutiny okamžitě. Díky tomu je testování a ladění obtížnější, protože obslužné rutiny událostí s logikou vedlejších účinků jsou spouštěny ihned po vyvolání události. Při testování a ladění se chcete zaměřit na a co se děje v aktuálních agregačních třídách; nechcete náhle přesměrovat na jiné obslužné rutiny událostí pro vedlejší účinky související s jinými agregacemi nebo logikou aplikace. To je důvod, proč se vyvinuly další přístupy, jak je vysvětleno v další části.
 
@@ -344,7 +344,7 @@ Jak je uvedeno, pomocí událostí domény explicitně implementujte vedlejší 
 
 Referenční aplikace používá [MediatR](https://github.com/jbogard/MediatR) k synchronnímu šíření událostí domény napříč agregacemi v rámci jedné transakce. Můžete ale použít i některé implementace AMQP, jako je [RabbitMQ](https://www.rabbitmq.com/) nebo [Azure Service Bus](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-messaging-overview) k asynchronnímu šíření událostí domény, a to pomocí konečné konzistence, ale jak je uvedeno výše, musíte vzít v úvahu potřebu kompenzačních akcí v případě selhání.
 
-## <a name="additional-resources"></a>Další zdroje
+## <a name="additional-resources"></a>Další zdroje informací
 
 - **Greg Young. Co je doménová událost?** \
   <https://cqrs.files.wordpress.com/2010/11/cqrs_documents.pdf#page=25>

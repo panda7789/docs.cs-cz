@@ -2,12 +2,12 @@
 title: Kroky ve vývoji DevOps vnější smyčky pro aplikaci Dockeru
 description: Přečtěte si postup pro "vnější smyčku" pracovního postupu DevOps.
 ms.date: 08/06/2020
-ms.openlocfilehash: 5515c204b09cecba323540572c6769c65c6c93ab
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: 82a45c8669812580623811e18cc55f55f45cb6d3
+ms.sourcegitcommit: e0803b8975d3eb12e735a5d07637020dd6dac5ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87915276"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89271904"
 ---
 # <a name="steps-in-the-outer-loop-devops-workflow-for-a-docker-application"></a>Kroky ve vývoji DevOps vnější smyčky pro aplikaci Dockeru
 
@@ -94,7 +94,7 @@ Pomocí těchto úloh Visual Studio Team Services, hostitele nebo virtuálního 
 >   <https://docs.microsoft.com/archive/blogs/stevelasker/building-net-core-linux-docker-images-with-visual-studio-team-services>
 >
 > - Sestavování počítače se systémem Linux Visual Studio Team Service s podporou Docker: \
->   <http://donovanbrown.com/post/2016/06/03/Building-a-Linux-Based-Visual-Studio-Team-Service-Build-Machine-with-Docker-Support>
+>   <https://www.donovanbrown.com/post/Building-a-Linux-Based-Visual-Studio-Team-Service-Build-Machine-with-Docker-Support>
 
 ### <a name="integrate-test-and-validate-multi-container-docker-applications"></a>Integrace, testování a ověřování aplikací Docker pro více kontejnerů
 
@@ -196,7 +196,7 @@ Obrázek 5-11 ukazuje, jak můžete upravit úlohu nasazení na Kubernetes s odd
 
 **Obrázek 5-11**. Nasazení definice úlohy Docker nasazení do služby ACS DC/OS
 
-> [! INFORMACE] Pokud chcete získat další informace o kanálu CD pomocí Azure DevOps Services a Docker, navštivte<https://azure.microsoft.com/services/devops/pipelines>
+> [! INFORMACE] Pokud chcete získat další informace o kanálu CD pomocí Azure DevOps Services a Docker, navštivte <https://azure.microsoft.com/services/devops/pipelines>
 
 ## <a name="step-5-run-and-manage"></a>Krok 5: spuštění a Správa
 

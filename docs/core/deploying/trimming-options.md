@@ -4,12 +4,12 @@ description: Naučte se řídit oříznutí aplikací, které jsou v ní obsaže
 author: sbomer
 ms.author: svbomer
 ms.date: 08/25/2020
-ms.openlocfilehash: 5597d4cdb9e8e96dcec6545e039d43295ca991bd
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: d6081a24cc18e424b55d40e152f519c680f11aa0
+ms.sourcegitcommit: e0803b8975d3eb12e735a5d07637020dd6dac5ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89142255"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89271877"
 ---
 # <a name="trimming-options"></a>Možnosti ořezávání
 
@@ -25,7 +25,7 @@ Při použití nástroje `Microsoft.NET.Sdk` bude provedeno ořezávání sestav
 
 ## <a name="trimming-granularity"></a>Rozřezání členitosti
 
-Následující nastavení členitosti určují, jak se zruší agresivní nevyužité IL. To lze nastavit jako vlastnost nebo jako metadata v [jednotlivých sestaveních](#Trimmed-assemblies).
+Následující nastavení členitosti určují, jak se zruší agresivní nevyužité IL. To lze nastavit jako vlastnost nebo jako metadata v [jednotlivých sestaveních](#trimmed-assemblies).
 
 - `<TrimMode>copyused</TrimMode>`
 
@@ -60,7 +60,7 @@ Nepřidávejte nebo Neodstraňujte položky do/z `ManagedAssemblyToLink` , proto
 
 - `<TrimMode>copyused</TrimMode>` nebo `<TrimMode>link</TrimMode>`
 
-  Řídí [členitost ořezávání](#Trimming-granularity) tohoto sestavení. Má přednost před globálním `TrimMode` . Nastavení `TrimMode` v sestavení implikuje `<IsTrimmable>true</IsTrimmable>` .
+  Řídí [členitost ořezávání](#trimming-granularity) tohoto sestavení. Má přednost před globálním `TrimMode` . Nastavení `TrimMode` v sestavení implikuje `<IsTrimmable>true</IsTrimmable>` .
 
 ## <a name="root-assemblies"></a>Kořenová sestavení
 
@@ -106,7 +106,7 @@ Bude obsahovat upozornění na celou aplikaci, včetně vlastního kódu, kódu 
 
 ## <a name="warning-versions"></a>Verze upozornění
 
-Trim analýza ctí [`AnalysisLevel`](../project-sdk/msbuild-props.md#AnalysisLevel) vlastnost, která řídí verzi upozornění analýzy v rámci sady SDK. Existuje další vlastnost, která řídí verzi upozornění analýzy střihně nezávisle (podobně jako `WarningLevel` u kompilátoru):
+Trim analýza ctí [`AnalysisLevel`](../project-sdk/msbuild-props.md#analysislevel) vlastnost, která řídí verzi upozornění analýzy v rámci sady SDK. Existuje další vlastnost, která řídí verzi upozornění analýzy střihně nezávisle (podobně jako `WarningLevel` u kompilátoru):
 
 - `<ILLinkWarningLevel>5</ILLinkWarningLevel>`
 

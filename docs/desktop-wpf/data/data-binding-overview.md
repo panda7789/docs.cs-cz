@@ -7,12 +7,12 @@ ms.author: adegeo
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: 829c93e97990b87e6e568614236de9708ef080d9
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: 3c9615d7d79b5da1c180bb505f5f37b99aeae775
+ms.sourcegitcommit: e0803b8975d3eb12e735a5d07637020dd6dac5ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85325753"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89271994"
 ---
 # <a name="data-binding-overview-in-wpf"></a>Přehled datových vazeb v subsystému WPF
 
@@ -91,11 +91,11 @@ Tento obrázek znázorňuje různé typy toku dat:
 
 ![Tok dat datových vazeb](./media/data-binding-overview/databinding-dataflow.png "DataBinding_DataFlow")
 
-- <xref:System.Windows.Data.BindingMode.OneWay>vazba způsobí, že změny vlastnosti source automaticky aktualizují cílovou vlastnost, ale změny vlastnosti target nejsou rozšířeny zpět do vlastnosti source. Tento typ vazby je vhodný v případě, že ovládací prvek, který je svázán, je implicitně určen jen pro čtení. Například můžete vytvořit vazbu ke zdroji, jako je burzovní, nebo možná vaše cílová vlastnost nemá žádné řídicí rozhraní pro provádění změn, jako je například barva pozadí vázaného na data tabulky. Pokud nepotřebujete monitorovat změny vlastnosti target, <xref:System.Windows.Data.BindingMode.OneWay> Vyhněte se režii v režimu vytváření vazeb pomocí režimu vazby <xref:System.Windows.Data.BindingMode.TwoWay> .
+- <xref:System.Windows.Data.BindingMode.OneWay> vazba způsobí, že změny vlastnosti source automaticky aktualizují cílovou vlastnost, ale změny vlastnosti target nejsou rozšířeny zpět do vlastnosti source. Tento typ vazby je vhodný v případě, že ovládací prvek, který je svázán, je implicitně určen jen pro čtení. Například můžete vytvořit vazbu ke zdroji, jako je burzovní, nebo možná vaše cílová vlastnost nemá žádné řídicí rozhraní pro provádění změn, jako je například barva pozadí vázaného na data tabulky. Pokud nepotřebujete monitorovat změny vlastnosti target, <xref:System.Windows.Data.BindingMode.OneWay> Vyhněte se režii v režimu vytváření vazeb pomocí režimu vazby <xref:System.Windows.Data.BindingMode.TwoWay> .
 
-- <xref:System.Windows.Data.BindingMode.TwoWay>Při vytvoření vazby dojde ke změně vlastnosti source nebo vlastnosti target na hodnotu automaticky aktualizovat druhou. Tento typ vazby je vhodný pro upravitelné formuláře nebo jiné plně interaktivní scénáře uživatelského rozhraní. Většina vlastností je výchozím nastavením pro <xref:System.Windows.Data.BindingMode.OneWay> vazbu, ale některé vlastnosti závislosti (obvykle vlastnosti ovládacích prvků upravitelných uživatelem, jako je <xref:System.Windows.Controls.TextBox.Text?displayProperty=nameWithType> zaškrtávací políčko a [zaškrtávací políčko-zaškrtnuto](xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked) jako výchozí pro <xref:System.Windows.Data.BindingMode.TwoWay> vazbu. Programový způsob, jak určit, zda je vlastnost závislosti svázána jednosměrná nebo obousměrná ve výchozím nastavení, má získat metadata vlastnosti pomocí <xref:System.Windows.DependencyProperty.GetMetadata%2A?displayProperty=nameWithType> a poté ověřit logickou hodnotu <xref:System.Windows.FrameworkPropertyMetadata.BindsTwoWayByDefault%2A?displayProperty=nameWithType> Vlastnosti.
+- <xref:System.Windows.Data.BindingMode.TwoWay> Při vytvoření vazby dojde ke změně vlastnosti source nebo vlastnosti target na hodnotu automaticky aktualizovat druhou. Tento typ vazby je vhodný pro upravitelné formuláře nebo jiné plně interaktivní scénáře uživatelského rozhraní. Většina vlastností je výchozím nastavením pro <xref:System.Windows.Data.BindingMode.OneWay> vazbu, ale některé vlastnosti závislosti (obvykle vlastnosti ovládacích prvků upravitelných uživatelem, jako je <xref:System.Windows.Controls.TextBox.Text?displayProperty=nameWithType> zaškrtávací políčko a  [zaškrtávací políčko-zaškrtnuto](xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked) jako výchozí pro <xref:System.Windows.Data.BindingMode.TwoWay> vazbu. Programový způsob, jak určit, zda je vlastnost závislosti svázána jednosměrná nebo obousměrná ve výchozím nastavení, má získat metadata vlastnosti pomocí <xref:System.Windows.DependencyProperty.GetMetadata%2A?displayProperty=nameWithType> a poté ověřit logickou hodnotu <xref:System.Windows.FrameworkPropertyMetadata.BindsTwoWayByDefault%2A?displayProperty=nameWithType> Vlastnosti.
 
-- <xref:System.Windows.Data.BindingMode.OneWayToSource>je opakem <xref:System.Windows.Data.BindingMode.OneWay> vazby. při změně vlastnosti target aktualizuje vlastnost source. Jedním z příkladů scénářů je, že pokud potřebujete znovu vyhodnotit zdrojovou hodnotu z uživatelského rozhraní.
+- <xref:System.Windows.Data.BindingMode.OneWayToSource> je opakem <xref:System.Windows.Data.BindingMode.OneWay> vazby. při změně vlastnosti target aktualizuje vlastnost source. Jedním z příkladů scénářů je, že pokud potřebujete znovu vyhodnotit zdrojovou hodnotu z uživatelského rozhraní.
 
 - Není znázorněno na obrázku je <xref:System.Windows.Data.BindingMode.OneTime> vazba, což způsobí, že vlastnost source inicializuje cílovou vlastnost, ale nerozšíří následné změny. Pokud se změní kontext dat nebo se objekt v kontextu dat změní, změna se *neprojeví* ve vlastnosti target. Tento typ vazby je vhodný, pokud je snímek aktuálního stavu vhodný nebo že jsou data skutečně statická. Tento typ vazby je vhodný také v případě, že chcete inicializovat cílovou vlastnost s určitou hodnotou ze zdrojové vlastnosti a datový kontext není známý předem. Tento režim je v podstatě jednodušší formou <xref:System.Windows.Data.BindingMode.OneWay> vazby, která poskytuje lepší výkon v případech, kdy se zdrojová hodnota nemění.
 
@@ -113,7 +113,7 @@ Je však aktualizována zdrojová hodnota při úpravách textu nebo po dokonče
 
 Pokud `UpdateSourceTrigger` je hodnota <xref:System.Windows.Data.UpdateSourceTrigger.PropertyChanged?displayProperty=nameWithType> , pak hodnota, na kterou se odkazuje šipka vpravo u <xref:System.Windows.Data.BindingMode.TwoWay> nebo vazby, <xref:System.Windows.Data.BindingMode.OneWayToSource> se aktualizuje ihned po změně vlastnosti target. Pokud `UpdateSourceTrigger` je však hodnota <xref:System.Windows.Data.UpdateSourceTrigger.LostFocus> , pak je tato hodnota aktualizována pouze s novou hodnotou, pokud cílová vlastnost ztratí fokus.
 
-Podobně jako u <xref:System.Windows.Data.Binding.Mode%2A> vlastnosti mají různé vlastnosti závislosti jiné výchozí <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A> hodnoty. Výchozí hodnota pro většinu vlastností závislosti je <xref:System.Windows.Data.UpdateSourceTrigger.PropertyChanged> , zatímco `TextBox.Text` vlastnost má výchozí hodnotu <xref:System.Windows.Data.UpdateSourceTrigger.LostFocus> . `PropertyChanged`znamená, že se zdrojové aktualizace většinou vyskytují vždy, když se změní cílová vlastnost. Rychlé změny jsou pro zaškrtávací políčka a další jednoduché ovládací prvky jemné. Nicméně pro textová pole, která se aktualizují po každém stisku klávesy, může snížit výkon a odepřít uživateli normální možnost Backspace a opravit chyby před potvrzením nové hodnoty.
+Podobně jako u <xref:System.Windows.Data.Binding.Mode%2A> vlastnosti mají různé vlastnosti závislosti jiné výchozí <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A> hodnoty. Výchozí hodnota pro většinu vlastností závislosti je <xref:System.Windows.Data.UpdateSourceTrigger.PropertyChanged> , zatímco `TextBox.Text` vlastnost má výchozí hodnotu <xref:System.Windows.Data.UpdateSourceTrigger.LostFocus> . `PropertyChanged` znamená, že se zdrojové aktualizace většinou vyskytují vždy, když se změní cílová vlastnost. Rychlé změny jsou pro zaškrtávací políčka a další jednoduché ovládací prvky jemné. Nicméně pro textová pole, která se aktualizují po každém stisku klávesy, může snížit výkon a odepřít uživateli normální možnost Backspace a opravit chyby před potvrzením nové hodnoty.
 
 <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A>Informace o tom, jak najít výchozí hodnotu vlastnosti závislosti, najdete na stránce vlastností.
 
@@ -121,7 +121,7 @@ Následující tabulka uvádí ukázkový scénář pro každou <xref:System.Win
 
 | Hodnota UpdateSourceTrigger | Když je zdrojová hodnota aktualizována | Ukázkový scénář pro textové pole |
 | ------------------------- | ---------------------------------- | ---------------------------- |
-| `LostFocus`(výchozí pro <xref:System.Windows.Controls.TextBox.Text%2A?displayProperty=nameWithType> ) | Když ovládací prvek TextBox ztratí fokus. | Textové pole, které je přidruženo k logice ověřování (viz [ověření dat](#data-validation) níže). |
+| `LostFocus` (výchozí pro <xref:System.Windows.Controls.TextBox.Text%2A?displayProperty=nameWithType> ) | Když ovládací prvek TextBox ztratí fokus. | Textové pole, které je přidruženo k logice ověřování (viz [ověření dat](#data-validation) níže). |
 | `PropertyChanged` | Při psaní do <xref:System.Windows.Controls.TextBox> . | Ovládací prvky TextBox v okně chatovací místnosti |
 | `Explicit` | Při volání aplikace <xref:System.Windows.Data.BindingExpression.UpdateSource%2A> . | Ovládací prvky TextBox ve upravitelném formuláři (aktualizuje zdrojové hodnoty pouze v případě, že uživatel klikne na tlačítko Odeslat). |
 
@@ -173,12 +173,12 @@ Možná budete muset použít vlastní logiku, aby data byla smysluplná na vlas
 
 Než začnete používat další funkce a použití datových vazeb, je vhodné začlenit <xref:System.Windows.Data.BindingExpression> třídu. Jak jste viděli v předchozích částech, <xref:System.Windows.Data.Binding> Třída je třída vysoké úrovně pro deklaraci vazby. poskytuje mnoho vlastností, které umožňují určit charakteristiky vazby. Související třída <xref:System.Windows.Data.BindingExpression> je základní objekt, který udržuje spojení mezi zdrojem a cílem. Vazba obsahuje všechny informace, které lze sdílet mezi několika výrazy vazby. <xref:System.Windows.Data.BindingExpression>Je výraz instance, který nelze sdílet a obsahuje všechny informace o instanci <xref:System.Windows.Data.Binding> .
 
-Vezměte v úvahu následující příklad, kde `myDataObject` je instance `MyData` třídy, `myBinding` je zdrojový <xref:System.Windows.Data.Binding> objekt a `MyData` je definována třída, která obsahuje řetězcovou vlastnost s názvem `MyDataProperty` . Tento příklad váže textový obsah `myText` instance <xref:System.Windows.Controls.TextBlock> a na `MyDataProperty` .
+Vezměte v úvahu následující příklad, kde `myDataObject` je instance `MyData` třídy, `myBinding` je zdrojový <xref:System.Windows.Data.Binding> objekt a `MyData` je definována třída, která obsahuje řetězcovou vlastnost s názvem `ColorName` . Tento příklad váže textový obsah `myText` instance <xref:System.Windows.Controls.TextBlock> a na `ColorName` .
 
 [!code-csharp[CodeOnlyBinding](~/samples/snippets/desktop-guide/wpf/data-binding-overview/csharp/ManualBinding.cs#CodeOnlyBinding)]
 [!code-vb[CodeOnlyBinding](~/samples/snippets/desktop-guide/wpf/data-binding-overview/vb/ManualBinding.vb#CodeOnlyBinding)]
 
-Stejný objekt *myBinding* můžete použít k vytvoření dalších vazeb. Například můžete použít objekt *myBinding* k navázání textového obsahu zaškrtávacího políčka na *MyDataProperty*. V takovém případě budou k dispozici dvě instance <xref:System.Windows.Data.BindingExpression> sdílení objektu *myBinding* .
+Stejný objekt *myBinding* můžete použít k vytvoření dalších vazeb. Například můžete použít objekt *myBinding* k navázání textového obsahu zaškrtávacího políčka na hodnotu *Color*. V takovém případě budou k dispozici dvě instance <xref:System.Windows.Data.BindingExpression> sdílení objektu *myBinding* .
 
 <xref:System.Windows.Data.BindingExpression>Objekt je vrácen voláním <xref:System.Windows.Data.BindingOperations.GetBindingExpression%2A> objektu vázaného na data. Následující články ukazují některé z použití <xref:System.Windows.Data.BindingExpression> třídy:
 
@@ -261,7 +261,7 @@ V následující tabulce jsou uvedeny typy dat zobrazení, které jsou vytvořen
 
 | Typ zdrojové kolekce                    | Typ zobrazení kolekce | Poznámky |
 | ----------------------------------------- | -------------------- | ----- |
-| <xref:System.Collections.IEnumerable>     | Interní typ založený na<xref:System.Windows.Data.CollectionView> | Položky nelze seskupit. |
+| <xref:System.Collections.IEnumerable>     | Interní typ založený na <xref:System.Windows.Data.CollectionView> | Položky nelze seskupit. |
 | <xref:System.Collections.IList>           | <xref:System.Windows.Data.ListCollectionView> | Způsobem. |
 | <xref:System.ComponentModel.IBindingList> | <xref:System.Windows.Data.BindingListCollectionView> | |
 
