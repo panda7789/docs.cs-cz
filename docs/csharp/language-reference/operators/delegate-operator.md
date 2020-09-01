@@ -1,15 +1,16 @@
 ---
+description: Delegate – operátor – reference jazyka C#
 title: Delegate – operátor – reference jazyka C#
 ms.date: 07/18/2019
 helpviewer_keywords:
 - delegate [C#]
 - anonymous method [C#]
-ms.openlocfilehash: 33c438b88f1e993f4648786da9b20b91961b7ee1
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 1dfaaf40c0f5a19534adef3be7e3c917bc95c4a8
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88062987"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89122248"
 ---
 # <a name="delegate-operator-c-reference"></a>Delegate – operátor (Referenční dokumentace jazyka C#)
 
