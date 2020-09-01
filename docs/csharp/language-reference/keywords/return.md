@@ -1,5 +1,6 @@
 ---
-title: příkaz return - odkaz jazyka C#
+description: Return – příkaz – reference jazyka C#
+title: Return – příkaz – reference jazyka C#
 ms.date: 07/20/2015
 f1_keywords:
 - return_CSharpKeyword
@@ -8,22 +9,22 @@ helpviewer_keywords:
 - return statement [C#]
 - return keyword [C#]
 ms.assetid: 6da6e152-5b58-4448-8f3f-470dd0617ecd
-ms.openlocfilehash: 116bad7a1f9f61311d287c575b52547d63c9e1c0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 486db846304c0972942ff58f3d5b276083681abe
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75713128"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89136995"
 ---
 # <a name="return-c-reference"></a>return (Referenční dokumentace jazyka C#)
 
-Příkaz `return` ukončí provádění metody, ve kterém se zobrazí a vrátí ovládací prvek volající metody. Může také vrátit volitelnou hodnotu. Pokud je metoda `void` typu, `return` příkaz lze vynechat.
+`return`Příkaz ukončí provádění metody, ve které se vyskytuje, a vrátí řízení volající metodě. Může také vracet volitelnou hodnotu. Pokud je metoda `void` typu, je `return` možné příkaz vynechat.
 
- Pokud návrat ový příkaz `try` je `finally` uvnitř bloku, blok, pokud existuje, bude proveden před ovládací prvek vrátí do volající metody.
+ Pokud je příkaz return uvnitř bloku, `try` `finally` blok, pokud existuje, bude proveden před tím, než se ovládací prvek vrátí volající metodě.
 
 ## <a name="example"></a>Příklad
 
- V následujícím příkladu `CalculateArea()` vrátí metoda `area` místní `double` proměnnou jako hodnotu.
+ V následujícím příkladu metoda `CalculateArea()` vrátí místní proměnnou `area` jako `double` hodnotu.
 
 [!code-csharp[csrefKeywordsJump#6](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsJump/CS/csrefKeywordsJump.cs#6)]  
 
@@ -33,7 +34,7 @@ Příkaz `return` ukončí provádění metody, ve kterém se zobrazí a vrátí
 
 ## <a name="see-also"></a>Viz také
 
-- [Odkaz jazyka C#](../index.md)
-- [Programovací příručka jazyka C#](../../programming-guide/index.md)
-- [C# Klíčová slova](index.md)
-- [return – příkaz](/cpp/cpp/return-statement-cpp)
+- [Reference jazyka C#](../index.md)
+- [Průvodce programováním v C#](../../programming-guide/index.md)
+- [Klíčová slova jazyka C#](index.md)
+- [Return – příkaz](/cpp/cpp/return-statement-cpp)

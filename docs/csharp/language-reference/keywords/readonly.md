@@ -1,4 +1,5 @@
 ---
+description: ReadOnly – klíčové slovo – Reference jazyka C#
 title: ReadOnly – klíčové slovo – Reference jazyka C#
 ms.date: 04/14/2020
 f1_keywords:
@@ -7,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - readonly keyword [C#]
 ms.assetid: 2f8081f6-0de2-4903-898d-99696c48d2f4
-ms.openlocfilehash: 66a096e8831f72a2216e8ba5dd9866046504624f
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: b1bab5af18216fcef2162179493dbbb59e3470cf
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84368618"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89137172"
 ---
 # <a name="readonly-c-reference"></a>readonly – modifikátor (Referenční dokumentace jazyka C#)
 
@@ -22,7 +23,7 @@ ms.locfileid: "84368618"
   
   `readonly`Po ukončení konstruktoru nelze pole přiřadit. Toto pravidlo má různé dopady na typy hodnot a typy odkazů:
   
-  - Vzhledem k tomu, že typy hodnot přímo obsahují svá data, pole, které je `readonly` hodnotový typ, je neměnné.
+  - Vzhledem k tomu, že typy hodnot přímo obsahují svá data, pole, které je  `readonly` hodnotový typ, je neměnné.
   - Vzhledem k tomu, že typy odkazů obsahují odkaz na jejich data, pole, které je `readonly` odkazový typ, musí vždy odkazovat na stejný objekt. Tento objekt není neměnný. `readonly`Modifikátor zabraňuje tomu, aby bylo pole nahrazeno jinou instancí typu odkazu. Modifikátor však nebrání v úpravě dat instance pole v rámci pole jen pro čtení.
 
   > [!WARNING]
@@ -32,7 +33,7 @@ ms.locfileid: "84368618"
 - V deklaraci člena instance v rámci typu struktury `readonly` označuje, že člen instance neupravuje stav struktury. Další informace naleznete v oddílu [ `readonly` instance členů](../builtin-types/struct.md#readonly-instance-members) článku [typy struktury](../builtin-types/struct.md) .
 - V [ `ref readonly` metodě se vrátí](#ref-readonly-return-example) `readonly` modifikátor, že metoda vrátí odkaz a zápisy nejsou pro tento odkaz povoleny.
 
-`readonly struct` `ref readonly` Kontexty a byly přidány v C# 7,2. `readonly`Členy struktury se přidaly v C# 8,0.
+`readonly struct` `ref readonly` Kontexty a byly přidány v C# 7,2. `readonly` Členy struktury se přidaly v C# 8,0.
 
 ## <a name="readonly-field-example"></a>Příklad pole jen pro čtení
 

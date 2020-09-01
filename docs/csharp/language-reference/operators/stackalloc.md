@@ -1,16 +1,17 @@
 ---
+description: Výraz stackalloc – Referenční dokumentace jazyka C#
 title: Výraz stackalloc – Referenční dokumentace jazyka C#
 ms.date: 03/13/2020
 f1_keywords:
 - stackalloc_CSharpKeyword
 helpviewer_keywords:
 - stackalloc expression [C#]
-ms.openlocfilehash: 4f20f3262b77cc2fe16480e53d13960e68d230b5
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: 72d91cf9aa67957ed8e1cad5b2c4a1f3b6382c1f
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87916672"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89136847"
 ---
 # <a name="stackalloc-expression-c-reference"></a>stackalloc – výraz (Referenční dokumentace jazyka C#)
 

@@ -1,19 +1,20 @@
 ---
+description: Omezení používání úrovní dostupnosti – reference jazyka C#
 title: Omezení používání úrovní dostupnosti – reference jazyka C#
 ms.date: 07/20/2015
 helpviewer_keywords:
 - access modifiers [C#], accessibility level restrictions
 ms.assetid: 987e2f22-46bf-4fea-80ee-270b9cd01045
-ms.openlocfilehash: 8082dbd7398b6634b68f1dd2887cd55d6798a5d9
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: 542e463e41c70f2e8aed5c20dc1294e296a88518
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82795154"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89136992"
 ---
 # <a name="restrictions-on-using-accessibility-levels-c-reference"></a>Omezení používání úrovní přístupnosti (Referenční dokumentace jazyka C#)
 
-Při zadání typu v deklaraci ověřte, zda je úroveň přístupnosti typu závislá na úrovni přístupnosti člena nebo jiného typu. Například Přímá základní třída musí být alespoň tak přístupná jako odvozená třída. Následující deklarace způsobují chybu kompilátoru, protože základní třída `BaseClass` je méně dostupná než: `MyClass`
+Při zadání typu v deklaraci ověřte, zda je úroveň přístupnosti typu závislá na úrovni přístupnosti člena nebo jiného typu. Například Přímá základní třída musí být alespoň tak přístupná jako odvozená třída. Následující deklarace způsobují chybu kompilátoru, protože základní třída `BaseClass` je méně dostupná než `MyClass` :
 
 ```csharp
 class BaseClass {...}
@@ -26,7 +27,7 @@ Následující tabulka shrnuje omezení deklarované úrovně přístupnosti.
 |-------------|-------------|
 |[Třídy](../../programming-guide/classes-and-structs/classes.md)|Přímá základní třída typu třídy musí být alespoň tak přístupná jako typ třídy samotné.|
 |[Rozhraní](../../programming-guide/interfaces/index.md)|Explicitní základní rozhraní typu rozhraní musí být alespoň tak přístupná jako typ rozhraní.|
-|[Delegáty](../../programming-guide/delegates/index.md)|Návratový typ a typy parametrů typu delegáta musí být k dispozici alespoň jako typ delegáta.|
+|[Delegáti](../../programming-guide/delegates/index.md)|Návratový typ a typy parametrů typu delegáta musí být k dispozici alespoň jako typ delegáta.|
 |[Konstanty](../../programming-guide/classes-and-structs/constants.md)|Typ konstanty musí být alespoň tak přístupný jako konstanta sama.|
 |[Pole](../../programming-guide/classes-and-structs/fields.md)|Typ pole musí být alespoň tak přístupný jako pole samotné.|
 |[Metody](../../programming-guide/classes-and-structs/methods.md)|Návratový typ a typy parametrů metody musí být k dispozici alespoň jako metoda samotná.|
