@@ -1,4 +1,5 @@
 ---
+description: 'Další informace o typu struktury v jazyce C #'
 title: Typy struktur – reference jazyka C#
 ms.date: 04/21/2020
 f1_keywords:
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - struct type [C#]
 - structure type [C#]
 ms.assetid: ff3dd9b7-dc93-4720-8855-ef5558f65c7c
-ms.openlocfilehash: 8f99af5accdecf1892a67a88c221e866bfddcbb2
-ms.sourcegitcommit: 2560a355c76b0a04cba0d34da870df9ad94ceca3
+ms.openlocfilehash: 7f3940ce487b9e382150234f317cf1dba34bb060
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89053041"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89132726"
 ---
 # <a name="structure-types-c-reference"></a>Typy struktury (Referenční dokumentace jazyka C#)
 

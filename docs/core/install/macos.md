@@ -4,12 +4,12 @@ description: Přečtěte si, na jaké verze macOS můžete .NET Core nainstalova
 author: adegeo
 ms.author: adegeo
 ms.date: 06/25/2020
-ms.openlocfilehash: 951e9b6a64d55274729e233b4a2d7728c75d05d4
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 19d5ca77b0308533c8f228be70c61daf1b7f82d9
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87302929"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89132752"
 ---
 # <a name="install-net-core-on-macos"></a>Nainstalovat .NET Core na macOS
 
@@ -38,7 +38,7 @@ Následující tabulka uvádí seznam aktuálně podporovaných vydání .NET Co
 | macOS 10,15 "Catalina"    | ✔️ 2,1 ([poznámky k verzi][release-notes-21]) | ✔️ 3,1 ([poznámky k verzi][release-notes-31]) | ✔️ 5,0 Preview ([poznámky k verzi][release-notes-50]) |
 | macOS 10,14 "Mojave"      | ✔️ 2,1 ([poznámky k verzi][release-notes-21]) | ✔️ 3,1 ([poznámky k verzi][release-notes-31]) | ✔️ 5,0 Preview ([poznámky k verzi][release-notes-50]) |
 | macOS 10,13 "High Sierra" | ✔️ 2,1 ([poznámky k verzi][release-notes-21]) | ✔️ 3,1 ([poznámky k verzi][release-notes-31]) | ✔️ 5,0 Preview ([poznámky k verzi][release-notes-50]) |
-| macOS 10,12 "Sierra"      | ✔️ 2,1 ([poznámky k verzi][release-notes-21]) | ❌3,1 ([poznámky k verzi][release-notes-31]) | ❌5,0 Preview ([poznámky k verzi][release-notes-50]) |
+| macOS 10,12 "Sierra"      | ✔️ 2,1 ([poznámky k verzi][release-notes-21]) | ❌ 3,1 ([poznámky k verzi][release-notes-31]) | ❌ 5,0 Preview ([poznámky k verzi][release-notes-50]) |
 
 ## <a name="unsupported-releases"></a>Nepodporované verze
 
@@ -80,7 +80,7 @@ Rozhraní .NET Core je podporované v následujících verzích macOS:
 | Verze .NET Core | macOS                 | Architektury |     |
 | ----------------- | --------------------- | --------------| --- |
 | 3.1               | Velký Sierra (10.13 +)  | x64 | [Další informace](https://github.com/dotnet/core/blob/master/release-notes/3.1/3.1-supported-os.md) |
-| 3.0               | Velký Sierra (10.13 +)  | x64 | [Další informace](https://github.com/dotnet/core/blob/master/release-notes/3.0/3.0-supported-os.md) |
+| 3,0               | Velký Sierra (10.13 +)  | x64 | [Další informace](https://github.com/dotnet/core/blob/master/release-notes/3.0/3.0-supported-os.md) |
 | 2,2               | Sierra (10.12 +)       | x64 | [Další informace](https://github.com/dotnet/core/blob/master/release-notes/2.2/2.2-supported-os.md) |
 | 2.1               | Sierra (10.12 +)       | x64 | [Další informace](https://github.com/dotnet/core/blob/master/release-notes/2.1/2.1-supported-os.md) |
 
@@ -159,7 +159,7 @@ Tento přístup umožňuje nainstalovat různé verze do samostatných umístěn
 
 ## <a name="install-with-visual-studio-for-mac"></a>Instalace pomocí Visual Studio pro Mac
 
-Visual Studio pro Mac nainstaluje .NET Core SDK při výběru úlohy **.NET Core** . Chcete-li začít s vývojem .NET Core v macOS, přečtěte si téma [instalace sady Visual Studio 2019 for Mac](/visualstudio/mac/installation). Pro nejnovější vydání .NET Core 3,1 je nutné použít Visual Studio pro Mac 8,4 Preview.
+Visual Studio pro Mac nainstaluje .NET Core SDK při výběru úlohy **.NET Core** . Chcete-li začít s vývojem .NET Core v macOS, přečtěte si téma [instalace sady Visual Studio 2019 for Mac](/visualstudio/mac/installation). Pro nejnovější vydání .NET Core 3,1 je nutné použít Visual Studio pro Mac 8,4.
 
 [![macOS Visual Studio 2019 for Mac s funkcí úlohy .NET Core](media/install-sdk/mac-install-selection.png)](media/install-sdk/mac-install-selection.png#lightbox)
 

@@ -1,20 +1,21 @@
 ---
-title: '#elif - C# Reference'
+description: '#Reference elif-C#'
+title: '#Reference elif-C#'
 ms.date: 07/20/2015
 f1_keywords:
 - '#elif'
 helpviewer_keywords:
 - '#elif directive [C#]'
 ms.assetid: 731d78df-08e0-4d51-b8c8-f193c27de13f
-ms.openlocfilehash: c78818f40b76414d289af6c704ff019b63befe37
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3aa9082b392b352091b9fde74a85f9dd155ad7b1
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75712569"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89132284"
 ---
 # <a name="elif-c-reference"></a>#elif (referenční dokumentace jazyka C#)
-Výraz `#elif` umožňuje vytvořit složenou podmíněnou direktivu. Výraz `#elif` bude vyhodnocen, pokud předchozí [#if](./preprocessor-if.md) ani žádné `#elif` předchozí, volitelné `true`výrazy direktivy vyhodnotí . Je-li výraz `#elif` vyhodnocen jako `true`, vyhodnotí kompilátor kód mezi výrazem `#elif` a další podmíněnou direktivou. Například:  
+Výraz `#elif` umožňuje vytvořit složenou podmíněnou direktivu. `#elif`Výraz bude vyhodnocen, pokud ani předchozí [#if](./preprocessor-if.md) ani žádné předchozí, nepovinné `#elif` výrazy direktivy vyhodnoceny na `true` . Je-li výraz `#elif` vyhodnocen jako `true`, vyhodnotí kompilátor kód mezi výrazem `#elif` a další podmíněnou direktivou. Příklad:  
   
 ```csharp
 #define VC7  
@@ -36,12 +37,12 @@ Výraz `#elif` umožňuje vytvořit složenou podmíněnou direktivu. Výraz `#e
 #if  
 ```  
   
- Použití `#elif` je jednodušší, `#if` protože každý vyžaduje `#elif` [#endif](./preprocessor-endif.md), zatímco `#endif`lze použít bez odpovídající .  
+ Použití `#elif` je jednodušší, protože každý `#if` vyžaduje [#endif](./preprocessor-endif.md), zatímco `#elif` lze použít bez odpovídajícího `#endif` .  
   
- Příklad použití [viz #if](./preprocessor-if.md) `#elif`.  
+ Příklad použití naleznete v tématu [#if](./preprocessor-if.md) `#elif` .  
   
 ## <a name="see-also"></a>Viz také
 
-- [Odkaz jazyka C#](../index.md)
-- [Programovací příručka jazyka C#](../../programming-guide/index.md)
-- [Direktivy preprocesoru jazyka C#](./index.md)
+- [Reference jazyka C#](../index.md)
+- [Průvodce programováním v C#](../../programming-guide/index.md)
+- [C# – direktivy preprocesoru](./index.md)

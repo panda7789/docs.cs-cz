@@ -4,12 +4,12 @@ description: Ukazuje různé způsoby, jak nainstalovat .NET Core SDK a modul ru
 author: adegeo
 ms.author: adegeo
 ms.date: 06/04/2020
-ms.openlocfilehash: c590bd89b718a5cd31dae9f83049eac910cb4049
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 9694dac719024264edee849044f048970b63b7b7
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86863888"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89132937"
 ---
 # <a name="install-net-core-sdk-or-net-core-runtime-on-ubuntu"></a>Instalace .NET Core SDK nebo modulu runtime .NET Core v Ubuntu
 
@@ -31,19 +31,19 @@ Následující tabulka uvádí seznam aktuálně podporovaných vydání .NET Co
 |--------------------------|---------------|---------------|----------------|
 | ✔️ [20,04 (LTS)](#2004-) | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 Preview |
 | ❌[19,10](#1910-)       | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 Preview |
-| ❌[19,04](#1904-)       | ✔️ 2,1        | ✔️ 3,1        | ❌5,0 Preview |
-| ❌[18,10](#1810-)       | ✔️ 2,1        | ❌3,1        | ❌5,0 Preview |
+| ❌[19,04](#1904-)       | ✔️ 2,1        | ✔️ 3,1        | ❌ 5,0 Preview |
+| ❌[18,10](#1810-)       | ✔️ 2,1        | ❌ 3,1        | ❌ 5,0 Preview |
 | ✔️ [18,04 (LTS)](#1804-) | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 Preview |
-| ❌[17,10](#1710-)       | ✔️ 2,1        | ❌3,1        | ❌5,0 Preview |
-| ❌[17,04](#1704-)       | ✔️ 2,1        | ❌3,1        | ❌5,0 Preview |
-| ❌[16,10](#1610-)       | ❌2,1        | ❌3,1        | ❌5,0 Preview |
+| ❌[17,10](#1710-)       | ✔️ 2,1        | ❌ 3,1        | ❌ 5,0 Preview |
+| ❌[17,04](#1704-)       | ✔️ 2,1        | ❌ 3,1        | ❌ 5,0 Preview |
+| ❌ [16,10](#1610-)       | ❌ 2,1        | ❌ 3,1        | ❌ 5,0 Preview |
 | ✔️ [16,04 (LTS)](#1604-) | ✔️ 2,1        | ✔️ 3,1        | ✔️ 5,0 Preview |
 
 Následující verze rozhraní .NET Core již nejsou podporovány. Soubory ke stažení pro tyto soubory zůstanou publikované:
 
-- 3.0
+- 3,0
 - 2,2
-- 2.0
+- 2,0
 
 ## <a name="how-to-install-other-versions"></a>Jak nainstalovat další verze
 
@@ -60,7 +60,7 @@ sudo dpkg -i packages-microsoft-prod.deb
 
 [!INCLUDE [linux-apt-install-31](includes/linux-install-31-apt.md)]
 
-## <a name="1910-"></a>19,10❌
+## <a name="1910-"></a>19,10 ❌
 
 [!INCLUDE [linux-not-supported](includes/linux-not-supported-ubuntu.md)]
 
@@ -73,7 +73,7 @@ sudo dpkg -i packages-microsoft-prod.deb
 
 [!INCLUDE [linux-apt-install-31](includes/linux-install-31-apt.md)]
 
-## <a name="1904-"></a>19,04❌
+## <a name="1904-"></a>19,04 ❌
 
 [!INCLUDE [linux-not-supported](includes/linux-not-supported-ubuntu.md)]
 
@@ -86,7 +86,7 @@ sudo dpkg -i packages-microsoft-prod.deb
 
 [!INCLUDE [linux-apt-install-31](includes/linux-install-31-apt.md)]
 
-## <a name="1810-"></a>18,10❌
+## <a name="1810-"></a>18,10 ❌
 
 [!INCLUDE [linux-not-supported](includes/linux-not-supported-ubuntu.md)]
 
@@ -110,7 +110,7 @@ sudo dpkg -i packages-microsoft-prod.deb
 
 [!INCLUDE [linux-apt-install-31](includes/linux-install-31-apt.md)]
 
-## <a name="1710-"></a>17,10❌
+## <a name="1710-"></a>17,10 ❌
 
 [!INCLUDE [linux-not-supported](includes/linux-not-supported-ubuntu.md)]
 
@@ -123,7 +123,7 @@ sudo dpkg -i packages-microsoft-prod.deb
 
 [!INCLUDE [linux-apt-install-21](includes/linux-install-21-apt.md)]
 
-## <a name="1704-"></a>17,04❌
+## <a name="1704-"></a>17,04 ❌
 
 [!INCLUDE [linux-not-supported](includes/linux-not-supported-ubuntu.md)]
 
@@ -136,7 +136,7 @@ sudo dpkg -i packages-microsoft-prod.deb
 
 [!INCLUDE [linux-apt-install-21](includes/linux-install-21-apt.md)]
 
-## <a name="1610-"></a>16,10❌
+## <a name="1610-"></a>16,10 ❌
 
 [!INCLUDE [linux-not-supported](includes/linux-not-supported-ubuntu.md)]
 
@@ -173,7 +173,7 @@ sudo apt-get upgrade
 
 V této části najdete informace o běžných chybách, ke kterým může dojít při použití APT k instalaci .NET Core.
 
-### <a name="unable-to-locate"></a>Nejde najít.
+### <a name="unable-to-locate--some-packages-could-not-be-installed"></a>Nepovedlo se najít některé balíčky, které se \\ nedaly nainstalovat.
 
 [!INCLUDE [package-manager-failed-to-find-deb](includes/package-manager-failed-to-find-deb.md)]
 
