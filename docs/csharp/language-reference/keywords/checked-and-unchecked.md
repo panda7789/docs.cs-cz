@@ -1,5 +1,6 @@
 ---
-title: Zaškrtnuto a nezaškrtnuto - odkaz jazyka C#
+description: Zaškrtnuté a nezaškrtnuté – referenční informace jazyka C#
+title: Zaškrtnuté a nezaškrtnuté – referenční informace jazyka C#
 ms.date: 05/15/2018
 helpviewer_keywords:
 - operators [C#], checked and unchecked
@@ -9,35 +10,35 @@ helpviewer_keywords:
 - unchecked statement [C#]
 - statements [C#], checked and unchecked
 ms.assetid: a84bc877-2c7f-4396-8735-1ce97c42f35e
-ms.openlocfilehash: 8ee4c481a30dce30029fbe8cc26f4798b523a7ed
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a8d6a26e28062da682689bf64a9e38ea5fd158b2
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79173637"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89138264"
 ---
 # <a name="checked-and-unchecked-c-reference"></a>Zaškrtnuto a nezaškrtnuto (Referenční dokumentace jazyka C#)
-Příkazy jazyka C# lze spustit v zadávaného nebo nekontrolovaném kontextu. V kontrolovaném kontextu aritmetické přetečení vyvolá výjimku. V nekontrolovaném kontextu je aritmetické přetečení ignorováno a výsledek je zkrácen zahozením všech bitů vyššího řádu, které se nevejdou do cílového typu.  
+Příkazy jazyka C# mohou být provedeny buď v kontrolovaném, nebo nezaškrtnutém kontextu. V kontrolovaném kontextu přetečení aritmetického přetečení vyvolá výjimku. V nekontrolovaném kontextu se aritmetické přetečení ignoruje a výsledek se zkrátí tak, že zahodí jakékoli bity s vysokým pořadím, které se nevejdou do cílového typu.  
   
-- [zaškrtnuto](checked.md) Zadejte kontrolovaný kontext.  
+- [zaškrtnuté políčko](checked.md) Zadejte kontrolovaný kontext.  
   
-- [nezaškrtnuté políčko](unchecked.md) Zadejte nezaškrtnutý kontext.  
+- [nezaškrtnuto](unchecked.md) Zadejte nezaškrtnutý kontext.  
   
- Kontrola přetečení ovlivňuje následující operace:  
+ Kontrola přetečení má vliv na následující operace:  
   
-- Výrazy používající následující předdefinované operátory na integrálních typech:  
+- Výrazy s použitím následujících předdefinovaných operátorů pro celočíselné typy:  
   
-     `++`, `--`, `-`unární `-` `*`, `+`, ,`/`  
+     `++`, `--` , unární `-` , `+` , `-` , `*` , `/`  
   
-- Explicitní číselné převody mezi `float` integrální typy nebo z nebo `double` integrální typu.  
+- Explicitní číselné převody mezi celočíselnými typy nebo z `float` nebo `double` na celočíselný typ.  
   
- Pokud ani `checked` `unchecked` není zadán, výchozí kontext pro nekonstantní výrazy (výrazy, které jsou vyhodnocovány za běhu) je definován hodnotou [-checked](../compiler-options/checked-compiler-option.md) kompilátoru možnost. Ve výchozím nastavení je hodnota této možnosti unset a aritmetické operace jsou prováděny v nekontrolovaném kontextu.
+ Pokud ani `checked` `unchecked` není zadán, výchozí kontext pro nekonstantní výrazy (výrazy, které jsou vyhodnocovány za běhu), je definována hodnotou možnosti kompilátoru [-checked](../compiler-options/checked-compiler-option.md) . Ve výchozím nastavení je hodnota této možnosti nastavená na hodnotu zrušit a aritmetické operace jsou spouštěny v nekontrolovaném kontextu.
 
- Pro konstantní výrazy (výrazy, které lze plně vyhodnotit v době kompilace), výchozí kontext je vždy kontrolována. Pokud konstantní výraz je explicitně umístěn v nekontrolovaném kontextu, přetečení, ke kterým dochází během vyhodnocení výrazu v době kompilace způsobit chyby kompilace.
+ V případě konstantních výrazů (výrazy, které mohou být plně vyhodnocovány v době kompilace) je výchozí kontext vždy zaškrtnuto. Pokud není konstantní výraz explicitně umístěn v nekontrolovaném kontextu, přetečení, ke kterým dojde během kompilace výrazu, způsobují chyby při kompilaci.
   
 ## <a name="see-also"></a>Viz také
 
-- [Odkaz jazyka C#](../index.md)
-- [Programovací příručka jazyka C#](../../programming-guide/index.md)
-- [C# Klíčová slova](index.md)
+- [Reference jazyka C#](../index.md)
+- [Průvodce programováním v C#](../../programming-guide/index.md)
+- [Klíčová slova jazyka C#](index.md)
 - [Klíčová slova příkazů](statement-keywords.md)

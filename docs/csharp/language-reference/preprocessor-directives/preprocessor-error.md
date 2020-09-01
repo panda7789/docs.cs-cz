@@ -1,4 +1,5 @@
 ---
+description: '#chyba – Referenční dokumentace jazyka C#'
 title: '#chyba – Referenční dokumentace jazyka C#'
 ms.date: 08/24/2020
 f1_keywords:
@@ -6,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - '#error directive [C#]'
 ms.assetid: f2a7f3af-4cf9-4111-b369-70204d24b26b
-ms.openlocfilehash: cc1e0640886e3f3c1c74a54f64961a56c8b030e4
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 76325901c5e39f340545b186a0aa9546cd853ff8
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88812364"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89138095"
 ---
 # <a name="error-c-reference"></a>#error (referenční dokumentace jazyka C#)
 

@@ -1,5 +1,6 @@
 ---
-title: výchozí – odkaz jazyka C#
+description: Default – reference jazyka C#
+title: Default – reference jazyka C#
 ms.date: 08/04/2017
 f1_keywords:
 - default
@@ -7,22 +8,22 @@ f1_keywords:
 helpviewer_keywords:
 - default keyword [C#]
 ms.assetid: 14c48aaa-7d35-4058-a1a4-f53353050579
-ms.openlocfilehash: d133b0a6db1105e2cbad569ce96ceafa711b23ac
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 51735b818ba05b7d83c7a391136ef97e9b903021
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75713618"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89138238"
 ---
 # <a name="default-c-reference"></a>default (Referenční dokumentace jazyka C#)
 
-Klíčové `default` slovo lze použít dvěma způsoby:
+`default`Klíčové slovo lze použít dvěma způsoby:
 
-- Chcete-li zadat výchozí popisek v [ `switch` příkazu](switch.md).
-- Jako [výchozí operátor nebo literál](../operators/default.md) k vytvoření výchozí hodnoty typu.
+- K určení výchozího popisku v [ `switch` příkazu](switch.md).
+- Jako [výchozí operátor nebo literál](../operators/default.md) pro vytvoření výchozí hodnoty typu.
 
 ## <a name="see-also"></a>Viz také
 
-- [Odkaz jazyka C#](../index.md)
-- [Programovací příručka jazyka C#](../../programming-guide/index.md)
-- [C# Klíčová slova](index.md)
+- [Reference jazyka C#](../index.md)
+- [Průvodce programováním v C#](../../programming-guide/index.md)
+- [Klíčová slova jazyka C#](index.md)

@@ -1,46 +1,47 @@
 ---
-title: -target:winmdobj (Možnosti kompilátoru Jazyka C#)
+description: '-target: winmdobj (možnosti kompilátoru C#)'
+title: '-target: winmdobj (možnosti kompilátoru C#)'
 ms.date: 07/20/2015
 ms.assetid: 1819a045-659d-498a-9457-c466e902986f
-ms.openlocfilehash: 85ae9a3f5e9b038c0c56935ec5af2b9b09d19f20
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 66a4bddb34832705ad4779829e561afd9442be8f
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74204495"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89139083"
 ---
-# <a name="-targetwinmdobj-c-compiler-options"></a>-target:winmdobj (Možnosti kompilátoru Jazyka C#)
-Pokud použijete možnost kompilátoru **-target:winmdobj,** kompilátor vytvoří zprostředkující soubor .winmdobj, který můžete převést na binární soubor prostředí Windows Runtime (.winmd). Soubor .winmd pak mohou být spotřebovány programy JavaScript a C++ kromě spravovaných jazykových programů.  
+# <a name="-targetwinmdobj-c-compiler-options"></a>-target: winmdobj (možnosti kompilátoru C#)
+Použijete-li možnost kompilátoru **-target: winmdobj** , kompilátor vytvoří zprostředkující soubor. winmdobj, který lze převést na soubor prostředí Windows Runtime binárního souboru (. winmd). Soubor. winmd pak může používat programy JavaScript a C++ kromě spravovaných jazykových programů.  
   
-## <a name="syntax"></a>Syntaxe  
+## <a name="syntax"></a>Syntax  
   
 ```console  
 -target:winmdobj  
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- **Winmdobj** nastavení signály kompilátoru, že je vyžadován zprostředkující modul. V reakci na to Visual Studio zkompiluje knihovnu tříd C# jako soubor .winmdobj. Soubor .winmdobj pak může být <xref:Microsoft.Build.Tasks.WinMDExp> podáván prostřednictvím nástroje pro export k vytvoření souboru metadat systému Windows (.winmd). Soubor .winmd obsahuje kód z původní knihovny i metadata WinMD, která je používána javascriptem nebo c++ a prostředím Windows Runtime.  
+ Nastavení **winmdobj** signalizuje kompilátoru, že je vyžadován zprostředkující modul. V reakci Visual Studio zkompiluje knihovnu tříd C# jako soubor. winmdobj. Soubor. winmdobj lze následně dodávat prostřednictvím <xref:Microsoft.Build.Tasks.WinMDExp> Nástroje pro export a vytvořit tak soubor metadat Windows (. winmd). Soubor. winmd obsahuje kód z původní knihovny i metadata WinMD, která jsou používána v jazyce JavaScript nebo C++ a prostředí Windows Runtime.  
   
- Výstup souboru, který je kompilován pomocí možnosti kompilátoru **-target:winmdobj,** je navržen tak, aby byl použit pouze jako vstup pro nástroj pro export WimMDExp; samotný soubor .winmdobj není přímo odkazován.  
+ Výstup souboru, který je zkompilován pomocí volby kompilátoru **-target: winmdobj** , je navržen tak, aby se pro nástroj pro export WimMDExp používal jenom jako vstup. na samotný soubor. winmdobj se neodkazuje přímo.  
   
- Pokud nepoužijete možnost [-out,](./out-compiler-option.md) název výstupního souboru převezme název prvního vstupního souboru. [Main](../../programming-guide/main-and-command-args/index.md) metoda není vyžadována.  
+ Pokud nepoužijete možnost [-out](./out-compiler-option.md) , název výstupního souboru vezme název prvního vstupního souboru. Metoda [Main](../../programming-guide/main-and-command-args/index.md) se nevyžaduje.  
   
- Pokud zadáte možnost -target:winmdobj na příkazovém řádku, všechny soubory až do další **možnosti -out** nebo [-target:module](./target-module-compiler-option.md) se použijí k vytvoření programu systému Windows.  
+ Zadáte-li možnost-target: winmdobj na příkazovém řádku, budou pro vytvoření programu systému Windows použity všechny soubory, dokud nebude použita možnost Další **-mimo** [cíl: modul](./target-module-compiler-option.md) .  
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-ide-for-a-windows-store-app"></a>Nastavení této možnosti kompilátoru v integrovaném vývojovém prostředí sady Visual Studio pro aplikaci pro Windows Store  
   
-1. V **Průzkumníku řešení**otevřete místní nabídku projektu a pak zvolte **Vlastnosti**.  
+1. V **Průzkumník řešení**otevřete místní nabídku pro projekt a poté zvolte možnost **vlastnosti**.  
   
-2. Zvolte kartu **Aplikace.**  
+2. Vyberte kartu **aplikace** .  
   
-3. V seznamu **Typ výstupu** zvolte **Soubor WinMD**.  
+3. V seznamu **Typ výstupu** vyberte **soubor winmd**.  
   
-     Možnost **Soubor WinMD** je dostupná jenom pro šablony aplikací pro Windows 8.x Store.  
+     Možnost **soubor winmd** je k dispozici pouze pro šablony aplikací Windows 8. x Store.  
   
- Informace o tom, jak nastavit tuto možnost <xref:VSLangProj80.ProjectProperties3.OutputType%2A>kompilátoru programově, naleznete v tématu .  
+ Informace o tom, jak nastavit tuto možnost kompilátoru programově, najdete v tématu <xref:VSLangProj80.ProjectProperties3.OutputType%2A> .  
   
 ## <a name="example"></a>Příklad  
- Následující příkaz se `filename.cs` zkompiluje do zprostředkujícího souboru .winmdobj.  
+ Následující příkaz se zkompiluje `filename.cs` do zprostředkujícího souboru. winmdobj.  
   
 ```console  
 csc -target:winmdobj filename.cs  
@@ -48,5 +49,5 @@ csc -target:winmdobj filename.cs
   
 ## <a name="see-also"></a>Viz také
 
-- [-target (Možnosti kompilátoru Jazyka C#)](./target-compiler-option.md)
-- [Možnosti kompilátoru jazyka C#](./index.md)
+- [-Target (možnosti kompilátoru C#)](./target-compiler-option.md)
+- [Možnosti kompilátoru C#](./index.md)

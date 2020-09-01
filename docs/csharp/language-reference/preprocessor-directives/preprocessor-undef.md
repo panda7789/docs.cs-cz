@@ -1,22 +1,23 @@
 ---
-title: '#undef - C# Odkaz'
+description: '#undef – Referenční dokumentace jazyka C#'
+title: '#undef – Referenční dokumentace jazyka C#'
 ms.date: 06/30/2018
 f1_keywords:
 - '#undef'
 helpviewer_keywords:
 - '#undef directive [C#]'
 ms.assetid: 686c92d2-7194-4be4-b2f4-80091712d513
-ms.openlocfilehash: 21923412aa178c3b86e94a54bd911130e48e4deb
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 97f99ab4230585e61fed0e057552b78c7a4c2bb5
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75712439"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89137861"
 ---
 # <a name="undef-c-reference"></a>#undef (referenční dokumentace jazyka C#)
-`#undef`umožňuje zrušit definici symbolu, takže pomocí symbolu jako výrazu v direktivě [#if](./preprocessor-if.md) bude výraz vyhodnocen na `false`.  
+`#undef` umožňuje zrušit definici symbolu, například pomocí symbolu jako výrazu v direktivě [#if](./preprocessor-if.md) . výraz se vyhodnotí jako `false` .  
   
- Symbol lze definovat buď pomocí [#define](./preprocessor-define.md) direktivy nebo [-define](../compiler-options/define-compiler-option.md) kompilátoru. Směrnice `#undef` musí být uvedeny v souboru před použitím všechny příkazy, které nejsou také direktivy.  
+ Symbol lze definovat buď pomocí direktivy [#define](./preprocessor-define.md) , nebo pomocí možnosti kompilátoru [-define](../compiler-options/define-compiler-option.md) . `#undef`Direktiva musí být uvedena v souboru předtím, než použijete příkazy, které nejsou zároveň direktivami.  
   
 ## <a name="example"></a>Příklad  
 
@@ -42,6 +43,6 @@ class MyClass
 
 ## <a name="see-also"></a>Viz také
 
-- [Odkaz jazyka C#](../index.md)
-- [Programovací příručka jazyka C#](../../programming-guide/index.md)
-- [Direktivy preprocesoru jazyka C#](./index.md)
+- [Reference jazyka C#](../index.md)
+- [Průvodce programováním v C#](../../programming-guide/index.md)
+- [C# – direktivy preprocesoru](./index.md)

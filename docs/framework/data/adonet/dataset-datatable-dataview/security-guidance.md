@@ -3,12 +3,12 @@ title: Doprovodné materiály k zabezpečení datových sad a DataTable
 ms.date: 07/14/2020
 dev_langs:
 - csharp
-ms.openlocfilehash: 24c8a830f8638bc2d9dd20c2384c8230a682d817
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 4fe8a062c762cc70d33243e3443aa9bf55635f98
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88812234"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89137614"
 ---
 # <a name="dataset-and-datatable-security-guidance"></a>Doprovodné materiály k zabezpečení datových sad a DataTable
 
@@ -45,6 +45,9 @@ v System. data. DataColumn. set_DataType (hodnota typu)
 * Operace deserializace se nezdařila.
 
 Při načítání kódu XML do existující `DataSet` `DataTable` instance nebo je také nutné vzít v úvahu existující definice sloupců. Pokud tabulka již obsahuje definici sloupce vlastního typu, tento typ je dočasně přidán do seznamu povolených po dobu trvání operace deserializace XML.
+
+> [!NOTE]
+> Po přidání sloupců do nástroje nebude `DataTable` `ReadXml` ze souboru XML Přečtěte schéma a pokud se schéma neshoduje, nebude se v záznamech číst, takže budete muset přidat všechny sloupce sami, abyste mohli tuto metodu použít.
 
 ```cs
 XmlReader xmlReader = GetXmlReader();

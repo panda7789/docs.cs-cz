@@ -1,5 +1,6 @@
 ---
-title: '@ - C# Odkaz'
+description: Reference pro @-C#
+title: Reference pro @-C#
 ms.date: 02/09/2017
 f1_keywords:
 - '@_CSharpKeyword'
@@ -8,35 +9,35 @@ helpviewer_keywords:
 - '@ special character [C#]'
 - '@ language element [C#]'
 ms.assetid: 89bc7e53-85f5-478a-866d-1cca003c4e8c
-ms.openlocfilehash: b37f77273e767a5e5292e7707933892f57811d2a
-ms.sourcegitcommit: e48a54ebe62e874500a7043f6ee0b77a744d55b4
+ms.openlocfilehash: 7d78b28479ed6128321207073dc94976710f10b6
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80291764"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89138901"
 ---
-# <a name="-c-reference"></a>@ (Odkaz na C#)
+# <a name="-c-reference"></a>@ (Referenční dokumentace jazyka C#)
 
-Speciální `@` znak slouží jako doslovný identifikátor. Může být použit následujícími způsoby:
+`@`Speciální znak slouží jako doslovné identifikátor. Dá se použít následujícími způsoby:
 
-1. Chcete-li povolit c# klíčová slova, která mají být použita jako identifikátory. Znak `@` předponuje element kódu, který kompilátor interpretuje jako identifikátor, nikoli klíčové slovo Jazyka C#. Následující příklad používá `@` znak k definování `for` identifikátoru s `for` názvem, který používá ve smyčce.
+1. Aby bylo možné použít klíčová slova jazyka C# jako identifikátory. `@`Znak prefixuje prvek kódu, který kompilátor interpretuje jako identifikátor spíše než klíčové slovo jazyka C#. Následující příklad používá `@` znak k definování identifikátoru s názvem `for` , který používá ve `for` smyčce.
 
    [!code-csharp[verbatim1](../../../../samples/snippets/csharp/language-reference/keywords/verbatim1.cs#1)]
 
-1. Chcete-li označit, že literál řetězce má být interpretován doslovně. Znak `@` v této instanci definuje *doslovný řetězec literál*. Jednoduché sekvence escape (například `"\\"` pro zpětné lomítko), šestnáctkové sekvence `"\x0041"` escape (například pro velké A) a `"\u0041"` sekvence escape Unicode (například pro velké A) jsou interpretovány doslova. Pouze uvozovky`""`escape sekvence ( ) není interpretován doslovně; vytvoří jednu dvojitou uvozovku. Navíc v případě doslovné [interpolované řetězce](interpolated.md) složená závorka escape sekvence (`{{` a `}}`) nejsou interpretovány doslovně; vytvářejí znaky s jednou závorkou. Následující příklad definuje dvě identické cesty k souborům, jednu pomocí literálu normálního řetězce a druhou pomocí doslovného literálu řetězce. Toto je jeden z více běžných použití doslovných řetězcových literál.
+1. Pro indikaci, že řetězcový literál má být interpretován jako doslovné. `@`Znak v této instanci definuje *doslovné řetězcový literál*. Jednoduché řídicí sekvence (například pro `"\\"` zpětné lomítko), šestnáctkové řídicí sekvence (například `"\x0041"` pro velké písmeno a) a řídicí sekvence Unicode (například `"\u0041"` pro velké písmeno a) jsou interpretovány doslova. Pouze řídicí sekvence uvozovky ( `""` ) nejsou interpretovány doslova; vytvoří jeden znak dvojité uvozovky. Kromě toho nejsou v případě doslovnéch znakových sekvencí (a) kulaté závorky [řetězcové](interpolated.md) závorky `{{` `}}` interpretovány doslova; vytvoří jednoduché znaky složené závorky. Následující příklad definuje dvě totožné cesty k souboru, jeden pomocí regulárního řetězcového literálu a druhý pomocí doslovného řetězcového literálu. Toto je jedno z častých použití doslovnéch řetězcových literálů.
 
    [!code-csharp[verbatim2](../../../../samples/snippets/csharp/language-reference/keywords/verbatim1.cs#2)]
 
-   Následující příklad ilustruje účinek definování normálního řetězcového literálu a doslovného literálu řetězce, které obsahují identické sekvence znaků.
+   Následující příklad znázorňuje účinek definování regulárního řetězcového literálu a doslovného řetězcového literálu, který obsahuje identické sekvence znaků.
 
    [!code-csharp[verbatim3](../../../../samples/snippets/csharp/language-reference/keywords/verbatim1.cs#3)]
 
-1. Chcete-li povolit kompilátoru rozlišovat mezi atributy v případech konfliktu názvů. Atribut je třída, která <xref:System.Attribute>je odvozena od . Jeho název typu obvykle zahrnuje atribut přípony **,** i když kompilátor nevynucuje tuto konvenci. Atribut pak může být odkazován v kódu buď jeho `[InfoAttribute]` úplný název typu (například nebo jeho zkrácený název `[Info]`(například). Konflikt pojmenování však dochází, pokud dva zkrácené názvy typů atributů jsou identické a jeden název typu obsahuje příponu **Attribute,** ale druhý ne. Například následující kód se nezdaří kompilovat, `Info` protože `InfoAttribute` kompilátor `Example` nelze určit, zda je atribut nebo použit a třída. Další informace naleznete v [tématu CS1614.](../compiler-messages/cs1614.md)
+1. Aby kompilátor mohl v případě konfliktu pojmenování rozlišovat mezi atributy. Atribut je třída, která je odvozena z <xref:System.Attribute> . Název jeho typu obvykle obsahuje **atribut**přípony, i když kompilátor vynutil tuto konvenci. Atribut pak může být odkazován v kódu buď jeho úplným názvem typu (například `[InfoAttribute]` nebo jeho zkráceným názvem (například `[Info]` ). Konflikt pojmenování nastane, pokud jsou dva zkrácené názvy typů atributů identické a jeden název typu zahrnuje příponu **atributu** , ale druhá ne. Například následující kód se nepodaří zkompilovat, protože kompilátor nemůže určit, zda `Info` `InfoAttribute` je atribut nebo použit pro `Example` třídu. Další informace najdete v tématu [CS1614](../compiler-messages/cs1614.md) .
 
    [!code-csharp[verbatim4](../../../../samples/snippets/csharp/language-reference/keywords/verbatim2.cs#1)]
 
 ## <a name="see-also"></a>Viz také
 
-- [Odkaz jazyka C#](../index.md)
-- [Programovací příručka jazyka C#](../../programming-guide/index.md)
-- [Speciální znaky v jazyce C#](./index.md)
+- [Reference jazyka C#](../index.md)
+- [Průvodce programováním v C#](../../programming-guide/index.md)
+- [Speciální znaky jazyka C#](./index.md)
