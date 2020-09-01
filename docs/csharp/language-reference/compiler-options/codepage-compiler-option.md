@@ -1,5 +1,6 @@
 ---
-title: -codepage (C# Možnosti kompilátoru)
+description: -codepage (možnosti kompilátoru C#)
+title: -codepage (možnosti kompilátoru C#)
 ms.date: 07/20/2015
 f1_keywords:
 - /codepage
@@ -8,15 +9,15 @@ helpviewer_keywords:
 - codepage compiler option [C#]
 - -codepage compiler option [C#]
 ms.assetid: 75942989-b69a-4308-90a0-840c73d2c478
-ms.openlocfilehash: 3352e7fc446ace391540360a3b6b36d604ca5f13
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4c812314ed9c1abcd7d2f34b2281140175621312
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79173754"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89125953"
 ---
-# <a name="-codepage-c-compiler-options"></a>-codepage (C# Možnosti kompilátoru)
-Tato možnost určuje, kterou znakovou stránku použít během kompilace, pokud požadovaná stránka není aktuální výchozí znakovou stránkou systému.  
+# <a name="-codepage-c-compiler-options"></a>-codepage (možnosti kompilátoru C#)
+Tato možnost určuje, která znaková stránka se má použít při kompilaci, pokud požadovaná stránka není aktuální výchozí znakovou stránkou pro systém.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -26,16 +27,16 @@ Tato možnost určuje, kterou znakovou stránku použít během kompilace, pokud
   
 ## <a name="arguments"></a>Argumenty  
  `id`  
- Id znakové stránky, která má být používána pro všechny soubory zdrojového kódu v kompilaci.  
+ ID kódové stránky, která se má použít pro všechny soubory zdrojového kódu v kompilaci  
   
 ## <a name="remarks"></a>Poznámky  
- Kompilátor se nejprve pokusí interpretovat všechny zdrojové soubory jako UTF-8. Pokud jsou soubory zdrojového kódu v jiném kódování než UTF-8 a používají jiné znaky než 7bitové znaky ASCII, použijte možnost **-codepage** k určení, která znaková stránka má být použita. **-codepage** se vztahuje na všechny soubory zdrojového kódu ve vaší kompilaci.  
+ Kompilátor se nejprve pokusí interpretovat všechny zdrojové soubory jako UTF-8. Pokud jsou soubory zdrojového kódu v kódování jiné než UTF-8 a používají jiné znaky než 7 bitů znaků ASCII, použijte možnost **-codepage** a určete, která znaková stránka má být použita. **-znaková stránka** se vztahuje na všechny soubory zdrojového kódu ve vaší kompilaci.  
 
- Informace o tom, jak zjistit, které znakové stránky jsou ve vašem systému podporované, najdete v tématu [GetCPInfo.](/windows/desktop/api/winnls/nf-winnls-getcpinfo)  
+ V tématu [GetCPInfo](/windows/desktop/api/winnls/nf-winnls-getcpinfo) najdete informace o tom, jak najít znakové stránky, které jsou v systému podporovány.  
   
- Tato možnost kompilátoru není k dispozici v sadě Visual Studio a nelze ji programově změnit.  
+ Tato možnost kompilátoru není v aplikaci Visual Studio k dispozici a nelze ji změnit programově.  
   
 ## <a name="see-also"></a>Viz také
 
-- [Možnosti kompilátoru jazyka C#](./index.md)
+- [Možnosti kompilátoru C#](./index.md)
 - [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

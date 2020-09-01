@@ -1,4 +1,4 @@
-- name: 'Chyby kompilátoru jazyka C#'
+- name: Zprávy kompilátoru C#
   href: index.md
   items:
     - name: Chyba kompilátoru CS0001
@@ -273,3 +273,5 @@
       href: cs1591.md
     - name: Upozornění kompilátoru (úroveň 4) CS1610
       href: cs1610.md
+    - name: Upozornění kompilátoru (úroveň 5) CS8892
+      href: cs8892.md

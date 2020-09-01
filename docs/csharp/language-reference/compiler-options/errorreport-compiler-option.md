@@ -1,5 +1,6 @@
 ---
-title: -errorreport (Možnosti kompilátoru Jazyka C#)
+description: -errorreport (možnosti kompilátoru C#)
+title: -errorreport (možnosti kompilátoru C#)
 ms.date: 07/20/2015
 f1_keywords:
 - /errorreport
@@ -8,18 +9,18 @@ helpviewer_keywords:
 - errorreport compiler option [C#]
 - /errorreport compiler option [C#]
 ms.assetid: bd0e7493-b79d-4369-9c3f-ba26ebdfbedf
-ms.openlocfilehash: 52b58aac5e82d4228dfda9c4d77c1d1c5de3e0cd
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5b3143f4da81ac693626778263c277e3a484c45e
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "70253882"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89125719"
 ---
-# <a name="-errorreport-c-compiler-options"></a>-errorreport (Možnosti kompilátoru Jazyka C#)
-Tato možnost poskytuje pohodlný způsob, jak nahlásit chybu interního kompilátoru jazyka C# společnosti Microsoft.
+# <a name="-errorreport-c-compiler-options"></a>-errorreport (možnosti kompilátoru C#)
+Tato možnost nabízí pohodlný způsob, jak ohlásit vnitřní chybu kompilátoru v jazyce C# společnosti Microsoft.
 
 > [!NOTE]
-> V systémech Windows Vista a Windows Server 2008 nastavení zasílání zpráv o chybách, která provedete pro aplikaci Visual Studio, nepřepíší nastavení provedená prostřednictvím systému Windows Error Reporting (WER). Nastavení WER má vždy přednost před nastavením zasílání zpráv o chybách sady Visual Studio.
+> V systémech Windows Vista a Windows Server 2008 nastavení zasílání zpráv o chybách, která uděláte pro Visual Studio, nepřepisují nastavení vytvořená prostřednictvím služby Zasílání zpráv o chybách systému Windows (WER). Nastavení funkce WER vždycky mají přednost před nastavením zasílání zpráv o chybách sady Visual Studio.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -29,33 +30,33 @@ Tato možnost poskytuje pohodlný způsob, jak nahlásit chybu interního kompil
 
 ## <a name="arguments"></a>Argumenty
  **žádný**  
- Zprávy o interních chybách kompilátoru nebudou shromažďovány ani odesílány společnosti Microsoft.
+ Zprávy o vnitřních chybách kompilátoru nebudou shromažďovány ani odesílány společnosti Microsoft.
 
- **výzva** Zobrazí výzvu k odeslání sestavy, když se zobrazí vnitřní chyba kompilátoru. **výzva** je výchozí při kompilaci aplikace ve vývojovém prostředí.
+ **Zobrazit výzvu** Vyzve vás k odeslání sestavy, když dojde k vnitřní chybě kompilátoru. při kompilaci aplikace ve vývojovém prostředí se **zobrazí dotaz** na výchozí hodnotu.
 
- **fronta** Zařadí zprávu o chybě do fronty. Při přihlášení pomocí pověření pro správu můžete hlásit všechny chyby od posledního přihlášení. Nebudete vyzváni k odesílání zpráv o selhání více než jednou za tři dny. **fronta** je výchozí při kompilaci aplikace na příkazovém řádku.
+ **fronta** Zařadí do fronty zprávu o chybách. Když se přihlásíte s přihlašovacími údaji správce, můžete nahlásit všechny chyby od posledního přihlášení. Nebudete vyzváni k odeslání zpráv o selhání více než jednou za tři dny. při kompilaci aplikace na příkazovém řádku je **fronta** výchozí.
 
- **odeslat** Automaticky odesílá zprávy o interních chybách kompilátoru společnosti Microsoft. Chcete-li tuto možnost povolit, musíte nejprve souhlasit se zásadami shromažďování dat společnosti Microsoft. Při prvním zadání **-errorreport:send** v počítači vás zpráva kompilátoru přejde na web, který obsahuje zásady shromažďování dat společnosti Microsoft.
+ **Odeslat** Automaticky odesílá zprávy o vnitřních chybách kompilátoru společnosti Microsoft. Pokud chcete povolit tuto možnost, musíte nejdřív souhlasit se zásadou pro shromažďování dat Microsoftu. Při prvním zadání **– errorreport: Send** v počítači, zpráva kompilátoru vás bude odkazovat na web, který obsahuje zásadu shromažďování dat společnosti Microsoft.
 
 ## <a name="remarks"></a>Poznámky
- Vnitřní chyba kompilátoru (ICE) je výsledkem, když kompilátor nemůže zpracovat soubor zdrojového kódu. Dojde-li ICE, kompilátor nevytváří výstupní soubor nebo užitečnou diagnostiku, kterou můžete použít k opravě kódu.
+ Vnitřní chyba kompilátoru (ICE) má za následek, že kompilátor nemůže zpracovat soubor zdrojového kódu. Když dojde k ICE, kompilátor nevytvoří výstupní soubor nebo žádnou užitečnou diagnostiku, kterou můžete použít k opravě kódu.
 
- V předchozích verzích, když jste obdrželi ICE, byli jste vyzváni, abyste se obrátili na služby odborné pomoci společnosti Microsoft a nahlásili problém. Pomocí **-errorreport**můžete poskytnout ice informace týmu Visual C#. Vaše zprávy o chybách mohou pomoci zlepšit budoucí verze kompilátoru.
+ Pokud jste v předchozích verzích obdrželi ICE, doporučujeme kontaktovat oddělení služeb technické podpory společnosti Microsoft, aby nahlásila problém. Pomocí **-errorreport**můžete poskytnout informace o Ice týmu Visual C#. Vaše zprávy o chybách mohou pomoci vylepšit budoucí verze kompilátoru.
 
- Možnost uživatele odesílat sestavy závisí na oprávněních zásad počítače a uživatele.
+ Schopnost uživatele odesílat sestavy závisí na oprávněních pro počítače a uživatele.
 
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Nastavení tohoto parametru kompilátoru ve vývojovém prostředí Visual Studio
 
-1. Otevřete stránku **Vlastnosti** projektu. Další informace naleznete v [tématu Build Page, Project Designer (C#)](/visualstudio/ide/reference/build-page-project-designer-csharp).
+1. Otevřete stránku **vlastností** projektu. Další informace naleznete v tématu [Stránka sestavení, Návrhář projektu (C#)](/visualstudio/ide/reference/build-page-project-designer-csharp).
 
-2. Klikněte na stránku vlastností **Sestavení.**
+2. Klikněte na stránku vlastností **Build (sestavit** ).
 
-3. Klepněte na tlačítko **Upřesnit.**
+3. Klikněte na tlačítko **Upřesnit** .
 
-4. Upravte vlastnost **Interní zasílání zpráv o chybách kompilátoru.**
+4. Upravte vlastnost **interního zasílání zpráv o chybách kompilátoru** .
 
- Informace o tom, jak nastavit tuto možnost <xref:VSLangProj80.CSharpProjectConfigurationProperties3.ErrorReport%2A>kompilátoru programově, naleznete v tématu .
+ Informace o tom, jak nastavit tuto možnost kompilátoru programově, najdete v tématu <xref:VSLangProj80.CSharpProjectConfigurationProperties3.ErrorReport%2A> .
 
 ## <a name="see-also"></a>Viz také
 
-- [Možnosti kompilátoru jazyka C#](./index.md)
+- [Možnosti kompilátoru C#](./index.md)

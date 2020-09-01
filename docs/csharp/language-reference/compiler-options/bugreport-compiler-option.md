@@ -1,5 +1,6 @@
 ---
-title: -bugreport (C# Možnosti kompilátoru)
+description: -bugreport – (možnosti kompilátoru C#)
+title: -bugreport – (možnosti kompilátoru C#)
 ms.date: 07/20/2015
 f1_keywords:
 - /bugreport
@@ -8,14 +9,14 @@ helpviewer_keywords:
 - -bugreport compiler option [C#]
 - bugreport compiler option [C#]
 ms.assetid: f39665e3-4f6f-4357-88a2-3274c7bec0c1
-ms.openlocfilehash: 0989678be070910c410d71717fe66679e1b70557
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2c358b2dda400f6077ffb5ba1dfc8e6e1127fa52
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "69603078"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89125992"
 ---
-# <a name="-bugreport-c-compiler-options"></a>-bugreport (C# Možnosti kompilátoru)
+# <a name="-bugreport-c-compiler-options"></a>-bugreport – (možnosti kompilátoru C#)
 Určuje, že informace o ladění by měly být umístěny do souboru pro pozdější analýzu.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -26,35 +27,35 @@ Určuje, že informace o ladění by měly být umístěny do souboru pro pozdě
   
 ## <a name="arguments"></a>Argumenty  
  `file`  
- Název souboru, který má obsahovat hlášení o chybě.  
+ Název souboru, který má obsahovat zprávu o chybě.  
   
 ## <a name="remarks"></a>Poznámky  
- Možnost **-bugreport** určuje, že následující informace `file`by měly být umístěny v :  
+ Možnost **-bugreport –** určuje, že se mají umístit následující informace `file` :  
   
 - Kopie všech souborů zdrojového kódu v kompilaci.  
   
 - Seznam možností kompilátoru použitých v kompilaci.  
   
-- Informace o verzi kompilátoru, běhu a operačním systému.  
+- Informace o verzi kompilátoru, době běhu a operačním systému.  
   
-- Odkazovaná sestavení a moduly uložené jako šestnáctkové číslice s výjimkou sestavení, která jsou dodávána s rozhraním .NET Framework a SadM SDK.  
+- Odkazovaná sestavení a moduly uložené jako šestnáctkové číslice, s výjimkou sestavení, která jsou dodávána s .NET Framework a sadou SDK.  
   
 - Výstup kompilátoru, pokud existuje.  
   
-- Popis problému, ke kterému budete vyzváni.  
+- Popis problému, ke kterému se zobrazí výzva.  
   
-- Popis toho, jak si myslíte, že by měl být problém opraven, k jakému budete vyzváni.  
+- Popis toho, jak si myslíte problém, by měl být opravený, na který se zobrazí výzva.  
   
- Pokud je tato možnost použita s **-errorreport:prompt** nebo **-errorreport:send**, budou informace v souboru odeslány společnosti Microsoft Corporation.  
+ Pokud se tato možnost používá s parametrem **-errorreport: prompt** nebo **-errorreport: Send**, informace v souboru se odešlou společnosti Microsoft Corporation.  
   
- Vzhledem k tomu, že kopie `file`všech souborů zdrojového kódu bude umístěna do aplikace , můžete chtít reprodukovat podezřelou vadu kódu v co nejkratším možném programu.  
+ Vzhledem k tomu, že se kopie všech souborů zdrojového kódu umístí do `file` , může být vhodné reprodukce podezřelého kódu reprodukována v co nejkratším možném programu.  
   
- Tato možnost kompilátoru není k dispozici v sadě Visual Studio a nelze ji programově změnit.  
+ Tato možnost kompilátoru není v aplikaci Visual Studio k dispozici a nelze ji změnit programově.  
   
- Všimněte si, že obsah generovaného souboru vystavit zdrojový kód, který by mohl mít za následek neúmyslné zpřístupnění informací.  
+ Všimněte si, že obsah generovaného souboru zveřejňuje zdrojový kód, který by mohl vést k neúmyslnému zpřístupnění informací.  
   
 ## <a name="see-also"></a>Viz také
 
-- [Možnosti kompilátoru jazyka C#](./index.md)
-- [-errorreport (Možnosti kompilátoru Jazyka C#)](./errorreport-compiler-option.md)
+- [Možnosti kompilátoru C#](./index.md)
+- [-errorreport (možnosti kompilátoru C#)](./errorreport-compiler-option.md)
 - [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

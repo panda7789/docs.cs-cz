@@ -1,5 +1,6 @@
 ---
-title: -highentropyva (C# Možnosti kompilátoru)
+description: -HIGHENTROPYVA (možnosti kompilátoru C#)
+title: -HIGHENTROPYVA (možnosti kompilátoru C#)
 ms.date: 07/20/2015
 f1_keywords:
 - /highentropyva
@@ -8,15 +9,15 @@ helpviewer_keywords:
 - -highentropyva compiler option [C#]
 - highentropyva compiler option [C#]
 ms.assetid: eaf409b3-384e-49dd-9417-62453658f421
-ms.openlocfilehash: b710bb829f6a7591159d2f2e6bacc670d21c42d1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2c2e2780693a89072c4bb55b318be94089bf3ced
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "69606855"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89125654"
 ---
-# <a name="-highentropyva-c-compiler-options"></a>-highentropyva (C# Možnosti kompilátoru)
-Možnost kompilátoru **-highentropyva** informuje jádro systému Windows, zda určitý spustitelný soubor podporuje randomizaci rozložení adresního prostoru vysoké entropie (ASLR).  
+# <a name="-highentropyva-c-compiler-options"></a>-HIGHENTROPYVA (možnosti kompilátoru C#)
+Možnost kompilátoru **-HIGHENTROPYVA** přikáže jádru systému Windows, zda určitý spustitelný soubor podporuje náhodné vygenerování rozložení adresního prostoru (ASLR) vysoké entropie.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -25,10 +26,10 @@ Možnost kompilátoru **-highentropyva** informuje jádro systému Windows, zda 
 ```  
   
 ## <a name="arguments"></a>Argumenty  
- `+`&#124;`-`  
- Tato možnost určuje, že 64bitový spustitelný soubor nebo spustitelný soubor, který je označen možností kompilátoru [-platform:anycpu,](./platform-compiler-option.md) podporuje virtuální adresní prostor s vysokou entropie. Tato možnost je ve výchozím nastavení zakázána. Použijte **-highentropyva+** nebo **-highentropyva,** abyste ji povolili.  
+ `+` &#124; `-`  
+ Tato možnost určuje, že 64 spustitelný soubor nebo spustitelný soubor, který je označený pomocí možnosti kompilátoru [-Platform: anycpu](./platform-compiler-option.md) , podporuje virtuální adresní prostor s vysokou entropií. Možnost je ve výchozím nastavení zakázána. K povolení použijte **-HIGHENTROPYVA +** nebo **-HIGHENTROPYVA** .  
   
 ## <a name="remarks"></a>Poznámky  
- Možnost **-highentropyva** umožňuje kompatibilním verzím jádra Systému Windows používat vyšší stupně entropie při randomizaci rozložení adresního prostoru procesu jako součásti ASLR. Použití vyšších stupňů entropie znamená, že větší počet adres lze přidělit do oblastí paměti, jako jsou zásobníky a hromady. V důsledku toho je obtížnější odhadnout umístění určité oblasti paměti.  
+ Možnost **-HIGHENTROPYVA** umožňuje kompatibilní verze jádra Windows pro použití vyšších stupňů entropie při náhodném rozložení adresního prostoru procesu jako součást ASLR. Použití vyšších stupňů entropie znamená, že větší počet adres může být přidělen do oblastí paměti, jako jsou zásobníky a haldy. V důsledku toho je obtížné odhadnout umístění konkrétní oblasti paměti.  
   
- Když je zadána možnost kompilátoru **-highentropyva,** cílový spustitelný soubor a všechny moduly, na kterých závisí, musí být schopny zpracovat hodnoty ukazatele, které jsou větší než 4 gigabajty (GB), pokud jsou spuštěny jako 64bitový proces.
+ Je-li zadána možnost kompilátoru **-HIGHENTROPYVA** , musí být cílový spustitelný soubor a všechny moduly, na kterých závisí, schopny zpracovat hodnoty ukazatele, které jsou větší než 4 gigabajty (GB), pokud jsou spuštěny jako 64 proces.

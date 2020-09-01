@@ -1,4 +1,5 @@
 ---
+description: Možnosti kompilátoru C# (abecední pořadí)
 title: Možnosti kompilátoru C# (abecední pořadí)
 ms.date: 06/04/2020
 helpviewer_keywords:
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - Visual C# compiler, options listed alphabetically
 - Visual C#, compiler options listed alphabetically
 ms.assetid: 43535ea0-ca47-4a15-b528-615087a86092
-ms.openlocfilehash: eb3a591ba7b58e187eb03e65a3da6dfb47c9475c
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: 6e1351eb9989abeaadebcb755ea9268fcff40a11
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86473978"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89125329"
 ---
 # <a name="c-compiler-options-listed-alphabetically"></a>Možnosti kompilátoru C# (abecední pořadí)
 
@@ -31,7 +32,7 @@ Následující možnosti kompilátoru jsou seřazené abecedně. Seznam kategori
 |[-checked](checked-compiler-option.md)|Způsobí, že kompilátor generuje kontroly přetečení.|
 |-checksumalgorithm:\<alg>|Určuje algoritmus pro výpočet kontrolního součtu zdrojového souboru uloženého v souboru PDB.  Podporované hodnoty jsou: SHA256 (default) nebo SHA1.<br>Microsoft doporučuje SHA256 z důvodu kolizí problémů se SHA1. |
 |[-codepage](codepage-compiler-option.md)|Určuje znakovou stránku, která má být použita při otevírání zdrojových souborů.|
-|[– ladění](debug-compiler-option.md)|Vygeneruje ladicí informace.|
+|[-debug](debug-compiler-option.md)|Vygeneruje ladicí informace.|
 |[-define](define-compiler-option.md)|Definuje symboly podmíněné kompilace.|
 |[-delaysign](delaysign-compiler-option.md)|Odloží sestavení pouze pomocí veřejné části klíče silného názvu.|
 |[-deterministic](deterministic-compiler-option.md)|Způsobí, že kompilátor výstupuje sestavení, jehož binární obsah je identický v rámci kompilací, pokud jsou vstupy identické.|
@@ -77,7 +78,7 @@ Následující možnosti kompilátoru jsou seřazené abecedně. Seznam kategori
 |[– prostředek](resource-compiler-option.md)|Vloží zadaný prostředek.|
 |RuleSet\<file>|Zadejte soubor RuleSet, který zakáže konkrétní diagnostiku.|
 |[-subsystemversion](subsystemversion-compiler-option.md)|Určuje minimální verzi subsystému, který může spustitelný soubor použít.|
-|[-target](target-compiler-option.md)|Určuje formát výstupního souboru pomocí jedné z následujících možností: [-target: appcontainerexe](target-appcontainerexe-compiler-option.md), [-target: exe](target-exe-compiler-option.md), [-target: Library](target-library-compiler-option.md), [-target: Module](target-module-compiler-option.md), [-target: winexe](target-winexe-compiler-option.md), [-target: winmdobj](target-winmdobj-compiler-option.md).|
+|[-target](target-compiler-option.md)|Určuje formát výstupního souboru pomocí jedné z následujících možností: [-target: appcontainerexe](target-appcontainerexe-compiler-option.md), [-target: exe](target-exe-compiler-option.md), [-target: Library](target-library-compiler-option.md), [-target: Module](target-module-compiler-option.md), [-target: winexe](target-winexe-compiler-option.md),  [-target: winmdobj](target-winmdobj-compiler-option.md).|
 |[-unsafe](unsafe-compiler-option.md)|Umožňuje [nezabezpečený](../keywords/unsafe.md) kód.|
 |[-utf8output](utf8output-compiler-option.md)|Vytvoří výstup zpráv kompilátoru v kódování UTF-8.|
 |– verze|Zobrazte číslo verze kompilátoru a ukončete.|
@@ -92,4 +93,4 @@ Následující možnosti kompilátoru jsou seřazené abecedně. Seznam kategori
 - [Možnosti kompilátoru C#](index.md)
 - [Možnosti kompilátoru C# uvedené podle kategorie](listed-by-category.md)
 - [Jak nastavit proměnné prostředí pro příkazový řádek sady Visual Studio](how-to-set-environment-variables-for-the-visual-studio-command-line.md)
-- [\<compiler>Objekt](../../../framework/configure-apps/file-schema/compiler/compiler-element.md)
+- [\<compiler> Objekt](../../../framework/configure-apps/file-schema/compiler/compiler-element.md)

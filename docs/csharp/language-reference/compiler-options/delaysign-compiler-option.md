@@ -1,5 +1,6 @@
 ---
-title: -delaysign (C# Možnosti kompilátoru)
+description: -delaysign (možnosti kompilátoru C#)
+title: -delaysign (možnosti kompilátoru C#)
 ms.date: 05/15/2018
 f1_keywords:
 - /delaysign
@@ -8,16 +9,16 @@ helpviewer_keywords:
 - delaysign compiler option [C#]
 - /delaysign compiler option [C#]
 ms.assetid: bcb058eb-2933-4e7f-b356-5c941db4de75
-ms.openlocfilehash: 9fdc02c22d9d8c8a709155e43a17ebf0d86dfd69
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5512ebeca4672f5d69852ab07c3f3fa40c305327
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "70970446"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89125836"
 ---
-# <a name="-delaysign-c-compiler-options"></a>-delaysign (C# Možnosti kompilátoru)
+# <a name="-delaysign-c-compiler-options"></a>-delaysign (možnosti kompilátoru C#)
 
-Tato možnost způsobí, že kompilátor rezervovat místo ve výstupním souboru tak, aby digitální podpis lze přidat později.
+Tato možnost způsobí, že kompilátor vyhradí místo ve výstupním souboru, aby bylo možné přidat digitální podpis později.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -27,31 +28,31 @@ Tato možnost způsobí, že kompilátor rezervovat místo ve výstupním soubor
 
 ## <a name="arguments"></a>Argumenty
 
-`+`&#124;`-`
+`+` &#124; `-`
 
-Použijte **-delaysign-** pokud chcete plně podepsané sestavení. Použijte **-delaysign+,** pokud chcete umístit veřejný klíč pouze do sestavení. Výchozí hodnota je **-delaysign-**.
+Použijte **-delaysign –** Pokud chcete sestavení plně podepsaného. Použijte **-delaysign +** , pokud chcete umístit pouze veřejný klíč do sestavení. Výchozí hodnota je **-delaysign-**.
 
 ## <a name="remarks"></a>Poznámky
 
-Možnost **-delaysign** nemá žádný vliv, pokud není použita s [-keyfile](./keyfile-compiler-option.md) nebo [-keycontainer](./keycontainer-compiler-option.md).
+Možnost **-delaysign** nemá žádný vliv, pokud se nepoužívá s parametrem [-keyfile](./keyfile-compiler-option.md) nebo [-](./keycontainer-compiler-option.md).
 
 Možnosti **-delaysign** a **-publicsign** se vzájemně vylučují.
 
-Když požadujete plně podepsané sestavení, kompilátor zařazuje soubor, který obsahuje manifest (metadata sestavení) a podepisuje, že hash s privátní klíč. Tato operace vytvoří digitální podpis, který je uložen v souboru, který obsahuje manifest. Při podepsání sestavení kompilátor nevypočítá a uloží podpis, ale rezervuje místo v souboru, takže podpis lze přidat později.
+Když vyžádáte plně podepsané sestavení, kompilátor vyhodnotí hodnotu hash souboru obsahujícího manifest (metadata sestavení) a podepíše tuto hodnotu hash privátním klíčem. Tato operace vytvoří digitální podpis, který je uložený v souboru, který obsahuje manifest. Když je sestavení podepsáno opožděně, kompilátor nevypočítá a uloží podpis, ale rezervuje místo v souboru, aby se podpis mohl přidat později.
 
-Například pomocí **-delaysign+** umožňuje tester umístit sestavení do globální mezipaměti. Po testování můžete plně podepsat sestavení umístěním soukromého klíče v sestavení pomocí nástroje [Linker sestavení.](../../../framework/tools/al-exe-assembly-linker.md)
+Například použití možnosti **-delaysign +** umožní testerovi vložit sestavení do globální mezipaměti. Po otestování můžete sestavení plně podepsat umístěním privátního klíče do sestavení pomocí nástroje [Assembly Linker](../../../framework/tools/al-exe-assembly-linker.md) .
 
-Další informace naleznete [v tématu Vytváření a používání sestavení se silným názvem](../../../standard/assembly/create-use-strong-named.md) a [zpožděné podepisování sestavení](../../../standard/assembly/delay-sign.md).
+Další informace naleznete v tématu [vytváření a používání sestavení se silným názvem](../../../standard/assembly/create-use-strong-named.md) a [Zpožděné podepisování sestavení](../../../standard/assembly/delay-sign.md).
 
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Nastavení tohoto parametru kompilátoru ve vývojovém prostředí Visual Studio
 
-1. Otevřete stránku **Vlastnosti** projektu.
-1. Upravte pouze vlastnost **znaménko Zpoždění.**
+1. Otevřete stránku **vlastností** projektu.
+1. Upravte vlastnost **pouze pro Zpožděné podepsání** .
 
-Informace o tom, jak nastavit tuto možnost <xref:VSLangProj80.ProjectProperties3.DelaySign%2A>kompilátoru programově, naleznete v tématu .
+Informace o tom, jak nastavit tuto možnost kompilátoru programově, najdete v tématu <xref:VSLangProj80.ProjectProperties3.DelaySign%2A> .
 
 ## <a name="see-also"></a>Viz také
 
-- [Možnost C# -publicsign](publicsign-compiler-option.md)
-- [Možnosti kompilátoru jazyka C#](index.md)
+- [C# – možnost publicsign](publicsign-compiler-option.md)
+- [Možnosti kompilátoru C#](index.md)
 - [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

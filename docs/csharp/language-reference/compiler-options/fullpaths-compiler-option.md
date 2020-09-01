@@ -1,5 +1,6 @@
 ---
-title: -fullpaths (C# Možnosti kompilátoru)
+description: -fullpaths – (možnosti kompilátoru C#)
+title: -fullpaths – (možnosti kompilátoru C#)
 ms.date: 07/20/2015
 f1_keywords:
 - /fullpaths
@@ -10,27 +11,27 @@ helpviewer_keywords:
 - full paths [C#]
 - -fullpaths compiler option [C#]
 ms.assetid: d2a5f857-cbb2-430b-879c-d648aaf0b8c4
-ms.openlocfilehash: 3bb4027f1c479bbaedda889d72712acb587b5713
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2f1200c78e8dc22d6e04e2ee6a42906433708c31
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "69606864"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89125693"
 ---
-# <a name="-fullpaths-c-compiler-options"></a>-fullpaths (C# Možnosti kompilátoru)
-Možnost **-fullpaths** způsobí, že kompilátor určí úplnou cestu k souboru při výpisu chyb kompilace a upozornění.  
+# <a name="-fullpaths-c-compiler-options"></a>-fullpaths – (možnosti kompilátoru C#)
+Možnost **-fullpaths –** způsobí, že kompilátor při výpisu chyb a upozornění kompilace určí úplnou cestu k souboru.  
   
-## <a name="syntax"></a>Syntaxe  
+## <a name="syntax"></a>Syntax  
   
 ```console  
 -fullpaths  
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Ve výchozím nastavení chyby a upozornění, které vyplývají z kompilace, určují název souboru, ve kterém byla chyba nalezena. Volba **-fullpaths** způsobí, že kompilátor určí úplnou cestu k souboru.  
+ Ve výchozím nastavení chyby a varování vyplývající z kompilace určují název souboru, ve kterém byla nalezena chyba. Možnost **-fullpaths –** způsobí, že kompilátor určí úplnou cestu k souboru.  
   
- Tato možnost kompilátoru není k dispozici v sadě Visual Studio a nelze ji programově změnit.  
+ Tato možnost kompilátoru není v aplikaci Visual Studio k dispozici a nelze ji změnit programově.  
   
 ## <a name="see-also"></a>Viz také
 
-- [Možnosti kompilátoru jazyka C#](./index.md)
+- [Možnosti kompilátoru C#](./index.md)
