@@ -1,5 +1,6 @@
 ---
-title: -preferreduilang (Možnosti kompilátoru Jazyka C#)
+description: -preferreduilang – (možnosti kompilátoru C#)
+title: -preferreduilang – (možnosti kompilátoru C#)
 ms.date: 07/20/2015
 f1_keywords:
 - /preferreduilang
@@ -8,15 +9,15 @@ helpviewer_keywords:
 - /preferreduilang compiler option [C#]
 - -preferreduilang compiler option [C#]
 ms.assetid: 68b2462f-6778-48d7-8052-62805fe8e02c
-ms.openlocfilehash: 7ebafcf446c9033c93e0c5fa5e11ea2930bd2e1e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f68652e910651ab5c4184376d9eb7729303382d9
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "69602556"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89124848"
 ---
-# <a name="-preferreduilang-c-compiler-options"></a>-preferreduilang (Možnosti kompilátoru Jazyka C#)
-Pomocí možnosti `-preferreduilang` kompilátoru můžete určit jazyk, ve kterém kompilátor Jazyka C# zobrazuje výstup, například chybové zprávy.  
+# <a name="-preferreduilang-c-compiler-options"></a>-preferreduilang – (možnosti kompilátoru C#)
+Pomocí `-preferreduilang` Možnosti kompilátoru lze určit jazyk, ve kterém kompilátor jazyka C# zobrazuje výstup, například chybové zprávy.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -26,10 +27,10 @@ Pomocí možnosti `-preferreduilang` kompilátoru můžete určit jazyk, ve kter
   
 ## <a name="arguments"></a>Argumenty  
  `language`  
- [Název jazyka,](/windows/desktop/Intl/language-names) který se má použít pro výstup kompilátoru.  
+ [Název jazyka](/windows/desktop/Intl/language-names) jazyka, který má být použit pro výstup kompilátoru.  
   
 ## <a name="remarks"></a>Poznámky  
- Pomocí možnosti `-preferreduilang` kompilátoru můžete určit jazyk, který má kompilátor Jazyka C# použít pro chybové zprávy a další výstup příkazového řádku. Pokud jazyková sada pro jazyk není nainstalována, místo toho se použije nastavení jazyka operačního systému a není hlášena žádná chyba.  
+ Pomocí `-preferreduilang` Možnosti kompilátoru můžete určit jazyk, který má kompilátor C# použít pro chybové zprávy a další výstup z příkazového řádku. Pokud není nainstalovaná jazyková sada pro jazyk, místo toho se použije jazykové nastavení operačního systému a neohlásí se žádná chyba.  
   
 ```csharp  
 csc.exe -preferreduilang:ja-JP  
@@ -39,4 +40,4 @@ csc.exe -preferreduilang:ja-JP
   
 ## <a name="see-also"></a>Viz také
 
-- [Možnosti kompilátoru jazyka C#](./index.md)
+- [Možnosti kompilátoru C#](./index.md)

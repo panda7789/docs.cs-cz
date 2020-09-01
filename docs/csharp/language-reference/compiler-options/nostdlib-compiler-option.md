@@ -1,5 +1,6 @@
 ---
-title: -nostdlib (C# Možnosti kompilátoru)
+description: -nostdlib (možnosti kompilátoru C#)
+title: -nostdlib (možnosti kompilátoru C#)
 ms.date: 12/20/2019
 f1_keywords:
 - /nostdlib
@@ -8,18 +9,18 @@ helpviewer_keywords:
 - -nostdlib compiler option [C#]
 - /nostdlib compiler option [C#]
 ms.assetid: ec197989-fa49-4725-a455-e06b551eb65f
-ms.openlocfilehash: ad8a2b5fc87dd7beee86d96331cf3961315be533
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 214918b32f1f1276eb936e66daba3d372a1e9228
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75345080"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89125095"
 ---
-# <a name="-nostdlib-c-compiler-options"></a>-nostdlib (C# Možnosti kompilátoru)
+# <a name="-nostdlib-c-compiler-options"></a>-nostdlib (možnosti kompilátoru C#)
 
-**-nostdlib** zabraňuje importu souboru mscorlib.dll, který definuje celý obor názvů System.
+**-nostdlib** zabraňuje importu mscorlib.dll, který definuje celý obor názvů System.
 
-## <a name="syntax"></a>Syntaxe
+## <a name="syntax"></a>Syntax
 
 ```console
 -nostdlib[+ | -]
@@ -27,27 +28,27 @@ ms.locfileid: "75345080"
 
 ## <a name="remarks"></a>Poznámky
 
-Tuto možnost použijte, pokud chcete definovat nebo vytvořit vlastní systémový obor názvů a objekty.
+Tuto možnost použijte, pokud chcete definovat nebo vytvořit vlastní obor názvů a objekty systému.
 
-Pokud nezadáte **-nostdlib**, bude do programu importován soubor mscorlib.dll (stejně jako zadání **-nostdlib-**). Zadání **-nostdlib** je stejné jako zadání **-nostdlib+**.
+Pokud nezadáte **-nostdlib**, mscorlib.dll se do programu importuje (totéž jako určení **-nostdlib-**). Zadání **-nostdlib** je stejné jako zadání **-nostdlib +**.
 
 ### <a name="to-set-this-compiler-option-in-visual-studio"></a>Nastavení této možnosti kompilátoru v sadě Visual Studio
 
 > [!NOTE]
-> Následující pokyny platí pouze pro Visual Studio 2015 (a starší verze). Neodkazují na vlastnost sestavení **mscorlib.dll** neexistuje v novějších verzích sady Visual Studio.
+> Následující pokyny platí pouze pro Visual Studio 2015 (a starší verze). Vlastnost do **Not reference mscorlib.dll** Build neexistuje v novějších verzích sady Visual Studio.
 
-1. Otevřete stránku **Vlastnosti** projektu.
+1. Otevřete stránku **vlastností** projektu.
 
-2. Klikněte na stránku **Vlastnosti sestavení.**
+2. Klikněte na stránku vlastností **sestavení** .
 
-3. Klepněte na tlačítko **Upřesnit.**
+3. Klikněte na tlačítko **Upřesnit** .
 
-4. Upravte vlastnost **Neodkazovat na soubor mscorlib.dll.**
+4. Upravte vlastnost **do not reference mscorlib.dll** .
 
 ### <a name="to-set-this-compiler-option-programmatically"></a>Programové nastavení tohoto parametru kompilátoru
 
-Informace o tom, jak nastavit tuto možnost <xref:VSLangProj80.CSharpProjectConfigurationProperties3.NoStdLib%2A>kompilátoru programově, naleznete v tématu .
+Informace o tom, jak nastavit tuto možnost kompilátoru programově, najdete v tématu <xref:VSLangProj80.CSharpProjectConfigurationProperties3.NoStdLib%2A> .
 
 ## <a name="see-also"></a>Viz také
 
-- [Možnosti kompilátoru jazyka C#](./index.md)
+- [Možnosti kompilátoru C#](./index.md)

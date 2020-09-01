@@ -1,5 +1,6 @@
 ---
-title: -platforma (Možnosti kompilátoru Jazyka C#)
+description: -Platform (možnosti kompilátoru C#)
+title: -Platform (možnosti kompilátoru C#)
 ms.date: 07/20/2015
 f1_keywords:
 - /platform
@@ -8,16 +9,16 @@ helpviewer_keywords:
 - -platform compiler option [C#]
 - /platform compiler option [C#]
 ms.assetid: c290ff5e-47f4-4a85-9bb3-9c2525b0be04
-ms.openlocfilehash: 5150e871d75c3c34dab10f10cdac3d8322d7a834
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e2e4fc37418243ff6998d19165250b895c0a4fa1
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "70849877"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89124861"
 ---
-# <a name="-platform-c-compiler-options"></a>-platforma (Možnosti kompilátoru Jazyka C#)
+# <a name="-platform-c-compiler-options"></a>-Platform (možnosti kompilátoru C#)
 
-Určuje, která verze clr (Common Language Runtime) může spustit sestavení.
+Určuje, která verze modulu CLR (Common Language Runtime) může spustit sestavení.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -32,50 +33,50 @@ anycpu (výchozí), anycpu32bitpreferred, ARM, x64, x86 nebo Itanium.
 
 ## <a name="remarks"></a>Poznámky
 
-- **anycpu** (výchozí) zkompiluje sestavení spustit na libovolné platformě. Aplikace běží jako 64bitový proces, kdykoli je to možné, a přejde zpět na 32bitový, pokud je k dispozici pouze tento režim.
+- **anycpu** (výchozí) zkompiluje sestavení tak, aby běželo na libovolné platformě. Vaše aplikace běží jako 64 proces, kdykoli je to možné, a vrátí se do 32-bit, pokud je k dispozici pouze tento režim.
 
-- **anycpu32bitpreferred** zkompiluje sestavení spustit na libovolné platformě. Aplikace běží v 32bitovém režimu v systémech, které podporují 64bitové i 32bitové aplikace. Tuto možnost můžete zadat pouze pro projekty, které cílí na rozhraní .NET Framework 4.5.
+- **anycpu32bitpreferred** zkompiluje vaše sestavení tak, aby běželo na libovolné platformě. Vaše aplikace běží v 32ovém režimu v systémech, které podporují 64 i 32-bit aplikací. Tuto možnost lze zadat pouze pro projekty, které cílí na .NET Framework 4,5.
 
-- **ARM** zkompiluje sestavení ke spuštění v počítači, který má procesor Advanced RISC Machine (ARM).
+- **ARM** zkompiluje vaše sestavení tak, aby běželo na počítači, který má procesor Advanced RISC Machine (ARM).
 
-- **ARM64** zkompiluje sestavení ke spuštění 64bitové CLR v počítači, který má procesor Advanced RISC Machine (ARM), který podporuje instrukční sadu A64.
+- **ARM64** zkompiluje sestavení tak, aby běželo 64 CLR na počítači, který má procesor Advanced RISC Machine (ARM), který podporuje instrukční sadu A64.
 
-- **x64** zkompiluje sestavení, které má být spuštěno 64bitovým clr v počítači, který podporuje instrukční sadu AMD64 nebo EM64T.
+- **x64** kompiluje vaše sestavení tak, aby bylo spuštěno pomocí 64 CLR v počítači, který podporuje INSTRUKČNÍ sady amd64 nebo EM64T.
 
-- **x86** zkompiluje sestavení, které bude spuštěno 32bitovým kódem CLR kompatibilním s x86.
+- **x86** zkompiluje vaše sestavení tak, aby se spouštělo pomocí 32 CLR kompatibilního s platformou x86.
 
-- **Itanium** zkompiluje sestavení, které bude spuštěno 64bitovým CLR v počítači s procesorem Itanium.
+- **Procesory Itanium** zkompiluje vaše sestavení tak, aby bylo spuštěno pomocí 64 CLR v počítači s procesorem Itanium.
 
-V 64bitovém operačním systému Windows:
+V 64 operačním systému Windows:
 
-- Sestavení zkompilovaná s **-platform:x86** se provádějí na 32bitovém CLR běžícím pod WOW64.
+- Sestavení kompilována s **platformou: x86** se spustí v 32 CLR spuštěném v WOW64.
 
-- DLL zkompilované s **-platform:anycpu** spustí na stejném CLR jako proces, do kterého je načten.
+- Knihovna DLL kompilovaná s **platformou-Platform: anycpu** se spouští na stejném CLR jako proces, do kterého je načtený.
 
-- Spustitelné soubory, které jsou kompilovány s **-platform:anycpu** spustit na 64bitclr.
+- Spustitelné soubory, které jsou kompilovány s **platformou-Platform: anycpu** , se spustí v 64 modulu CLR.
 
-- Spustitelné soubory zkompilované s **-platform:anycpu32bitpreferred** provést na 32bitCLR.
+- Spustitelné soubory kompilované s **platformou: anycpu32bitpreferred** se spustí na 32 CLR.
 
-**Anycpu32bitpreferred** nastavení je platné pouze pro spustitelný soubor (. EXE) a vyžaduje rozhraní .NET Framework 4.5.
+Nastavení **anycpu32bitpreferred** je platné pouze pro spustitelný soubor (. Soubory EXE) a vyžaduje .NET Framework 4,5.
 
-Další informace o vývoji aplikace pro spuštění v 64bitovém operačním systému Windows naleznete v [64bitových aplikacích](../../../framework/64-bit-apps.md).
+Další informace o vývoji aplikace pro spuštění v operačním systému Windows 64 naleznete v tématu [64-bitové aplikace](../../../framework/64-bit-apps.md).
 
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Nastavení tohoto parametru kompilátoru ve vývojovém prostředí Visual Studio
 
-1. Otevřete stránku **Vlastnosti** projektu.
+1. Otevřete stránku **vlastností** projektu.
 
-2. Klikněte na stránku vlastností **Sestavení.**
+2. Klikněte na stránku vlastností **Build (sestavit** ).
 
-3. Upravte vlastnost **Target platformy** a u projektů, které cílí na rozhraní .NET Framework 4.5, zaškrtněte nebo zrušte zaškrtnutí políčka **Preferovat 32bitový.**
+3. Upravte vlastnost **target platformy** a pro projekty, které cílí na .NET Framework 4,5 zaškrtněte políčko **preferovat 32-bit** nebo zrušte jeho zaškrtnutí.
 
 > [!NOTE]
-> `-platform`není k dispozici ve vývojovém prostředí v jazyce Visual C# Express.
+> `-platform` není k dispozici ve vývojovém prostředí v jazyce Visual C# Express.
 
-Informace o tom, jak nastavit tuto možnost <xref:VSLangProj80.CSharpProjectConfigurationProperties3.PlatformTarget%2A>kompilátoru programově, naleznete v tématu .
+Informace o tom, jak nastavit tuto možnost kompilátoru programově, najdete v tématu <xref:VSLangProj80.CSharpProjectConfigurationProperties3.PlatformTarget%2A> .
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje, jak pomocí **-platforma** možnost určit, že aplikace by měla být spuštěna 64bitový CLR na 64bitový operační systém Windows.
+Následující příklad ukazuje, jak použít možnost **-Platform** k určení toho, že by aplikace měla běžet 64 modul CLR na 64 operačním systému Windows.
 
 ```console
 csc -platform:anycpu filename.cs
@@ -83,5 +84,5 @@ csc -platform:anycpu filename.cs
 
 ## <a name="see-also"></a>Viz také
 
-- [Možnosti kompilátoru jazyka C#](index.md)
+- [Možnosti kompilátoru C#](index.md)
 - [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

@@ -1,4 +1,5 @@
 ---
+description: -publicsign (možnosti kompilátoru C#)
 title: -publicsign (možnosti kompilátoru C#)
 ms.date: 05/15/2018
 f1_keywords:
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - -publicsign compiler option [C#]
 - publicsign compiler option [C#]
 - /publicsign compiler option [C#]
-ms.openlocfilehash: 2655e0216a412053e052ab2ec2fcc8c68ea4f968
-ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
+ms.openlocfilehash: 525912c7f50aa6b51e602be7b9258f1f5907daac
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88268046"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89124809"
 ---
 # <a name="-publicsign-c-compiler-options"></a>-publicsign (možnosti kompilátoru C#)
 
@@ -44,7 +45,7 @@ Otevřete soubor. csproj pro projekt a přidejte následující element:
 <PublicSign>true</PublicSign>
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Kompilátor C# – možnost delaysign](delaysign-compiler-option.md)
 - [C# – možnost kompilátoru – parametr keyfile](keyfile-compiler-option.md)
