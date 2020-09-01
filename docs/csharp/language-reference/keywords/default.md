@@ -1,5 +1,6 @@
 ---
-title: výchozí – odkaz jazyka C#
+description: Default – reference jazyka C#
+title: Default – reference jazyka C#
 ms.date: 08/04/2017
 f1_keywords:
 - default
@@ -7,22 +8,22 @@ f1_keywords:
 helpviewer_keywords:
 - default keyword [C#]
 ms.assetid: 14c48aaa-7d35-4058-a1a4-f53353050579
-ms.openlocfilehash: d133b0a6db1105e2cbad569ce96ceafa711b23ac
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 51735b818ba05b7d83c7a391136ef97e9b903021
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75713618"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89138238"
 ---
-# <a name="default-c-reference"></a><span data-ttu-id="14af5-102">default (Referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="14af5-102">default (C# Reference)</span></span>
+# <a name="default-c-reference"></a><span data-ttu-id="b6071-103">default (Referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="b6071-103">default (C# Reference)</span></span>
 
-<span data-ttu-id="14af5-103">Klíčové `default` slovo lze použít dvěma způsoby:</span><span class="sxs-lookup"><span data-stu-id="14af5-103">The `default` keyword can be used in two ways:</span></span>
+<span data-ttu-id="b6071-104">`default`Klíčové slovo lze použít dvěma způsoby:</span><span class="sxs-lookup"><span data-stu-id="b6071-104">The `default` keyword can be used in two ways:</span></span>
 
-- <span data-ttu-id="14af5-104">Chcete-li zadat výchozí popisek v [ `switch` příkazu](switch.md).</span><span class="sxs-lookup"><span data-stu-id="14af5-104">To specify the default label in the [`switch` statement](switch.md).</span></span>
-- <span data-ttu-id="14af5-105">Jako [výchozí operátor nebo literál](../operators/default.md) k vytvoření výchozí hodnoty typu.</span><span class="sxs-lookup"><span data-stu-id="14af5-105">As the [default operator or literal](../operators/default.md) to produce the default value of a type.</span></span>
+- <span data-ttu-id="b6071-105">K určení výchozího popisku v [ `switch` příkazu](switch.md).</span><span class="sxs-lookup"><span data-stu-id="b6071-105">To specify the default label in the [`switch` statement](switch.md).</span></span>
+- <span data-ttu-id="b6071-106">Jako [výchozí operátor nebo literál](../operators/default.md) pro vytvoření výchozí hodnoty typu.</span><span class="sxs-lookup"><span data-stu-id="b6071-106">As the [default operator or literal](../operators/default.md) to produce the default value of a type.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="14af5-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="14af5-106">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b6071-107">Viz také</span><span class="sxs-lookup"><span data-stu-id="b6071-107">See also</span></span>
 
-- [<span data-ttu-id="14af5-107">Odkaz jazyka C#</span><span class="sxs-lookup"><span data-stu-id="14af5-107">C# Reference</span></span>](../index.md)
-- [<span data-ttu-id="14af5-108">Programovací příručka jazyka C#</span><span class="sxs-lookup"><span data-stu-id="14af5-108">C# Programming Guide</span></span>](../../programming-guide/index.md)
-- [<span data-ttu-id="14af5-109">C# Klíčová slova</span><span class="sxs-lookup"><span data-stu-id="14af5-109">C# Keywords</span></span>](index.md)
+- [<span data-ttu-id="b6071-108">Reference jazyka C#</span><span class="sxs-lookup"><span data-stu-id="b6071-108">C# Reference</span></span>](../index.md)
+- [<span data-ttu-id="b6071-109">Průvodce programováním v C#</span><span class="sxs-lookup"><span data-stu-id="b6071-109">C# Programming Guide</span></span>](../../programming-guide/index.md)
+- [<span data-ttu-id="b6071-110">Klíčová slova jazyka C#</span><span class="sxs-lookup"><span data-stu-id="b6071-110">C# Keywords</span></span>](index.md)

@@ -1,42 +1,43 @@
 ---
-title: '#pragma - C# Reference'
+description: '#pragma – reference jazyka C#'
+title: '#pragma – reference jazyka C#'
 ms.date: 07/20/2015
 f1_keywords:
 - '#pragma'
 helpviewer_keywords:
 - '#pragma directive [C#]'
 ms.assetid: 5b7944cd-d402-46a1-ad8f-feffb2d83673
-ms.openlocfilehash: 3bd62364aeae0f21715711324655ef7d00d88afc
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 97d7a786c83a8be21f7fd38873061dba0f9278ae
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75712452"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89137952"
 ---
-# <a name="pragma-c-reference"></a><span data-ttu-id="3ec1c-102">#pragma (referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="3ec1c-102">#pragma (C# Reference)</span></span>
-<span data-ttu-id="3ec1c-103">`#pragma`poskytuje kompilátoru zvláštní pokyny pro kompilaci souboru, ve kterém se objeví.</span><span class="sxs-lookup"><span data-stu-id="3ec1c-103">`#pragma` gives the compiler special instructions for the compilation of the file in which it appears.</span></span> <span data-ttu-id="3ec1c-104">Pokyny musí být podporovány kompilátorem.</span><span class="sxs-lookup"><span data-stu-id="3ec1c-104">The instructions must be supported by the compiler.</span></span> <span data-ttu-id="3ec1c-105">Jinými slovy nelze `#pragma` použít k vytvoření vlastních pokynů pro předběžné zpracování.</span><span class="sxs-lookup"><span data-stu-id="3ec1c-105">In other words, you cannot use `#pragma` to create custom preprocessing instructions.</span></span> <span data-ttu-id="3ec1c-106">Kompilátor Microsoft C# podporuje `#pragma` následující dva pokyny:</span><span class="sxs-lookup"><span data-stu-id="3ec1c-106">The Microsoft C# compiler supports the following two `#pragma` instructions:</span></span>  
+# <a name="pragma-c-reference"></a><span data-ttu-id="f18f8-103">#pragma (referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="f18f8-103">#pragma (C# Reference)</span></span>
+<span data-ttu-id="f18f8-104">`#pragma` poskytne kompilátoru zvláštní pokyny pro kompilaci souboru, ve kterém se zobrazí.</span><span class="sxs-lookup"><span data-stu-id="f18f8-104">`#pragma` gives the compiler special instructions for the compilation of the file in which it appears.</span></span> <span data-ttu-id="f18f8-105">Pokyny musí kompilátor podporovat.</span><span class="sxs-lookup"><span data-stu-id="f18f8-105">The instructions must be supported by the compiler.</span></span> <span data-ttu-id="f18f8-106">Jinými slovy, nemůžete použít `#pragma` k vytvoření vlastních instrukcí pro předzpracování.</span><span class="sxs-lookup"><span data-stu-id="f18f8-106">In other words, you cannot use `#pragma` to create custom preprocessing instructions.</span></span> <span data-ttu-id="f18f8-107">Kompilátor Microsoft C# podporuje následující dvě `#pragma` pokyny:</span><span class="sxs-lookup"><span data-stu-id="f18f8-107">The Microsoft C# compiler supports the following two `#pragma` instructions:</span></span>  
   
- [<span data-ttu-id="3ec1c-107">#pragma varování</span><span class="sxs-lookup"><span data-stu-id="3ec1c-107">#pragma warning</span></span>](./preprocessor-pragma-warning.md)  
+ [<span data-ttu-id="f18f8-108">upozornění #pragma</span><span class="sxs-lookup"><span data-stu-id="f18f8-108">#pragma warning</span></span>](./preprocessor-pragma-warning.md)  
   
- [<span data-ttu-id="3ec1c-108">#pragma checksum</span><span class="sxs-lookup"><span data-stu-id="3ec1c-108">#pragma checksum</span></span>](./preprocessor-pragma-checksum.md)  
+ [<span data-ttu-id="f18f8-109">kontrolní součet #pragma</span><span class="sxs-lookup"><span data-stu-id="f18f8-109">#pragma checksum</span></span>](./preprocessor-pragma-checksum.md)  
   
-## <a name="syntax"></a><span data-ttu-id="3ec1c-109">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="3ec1c-109">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="f18f8-110">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f18f8-110">Syntax</span></span>  
   
 ```csharp
 #pragma pragma-name pragma-arguments  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="3ec1c-110">Parametry</span><span class="sxs-lookup"><span data-stu-id="3ec1c-110">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="f18f8-111">Parametry</span><span class="sxs-lookup"><span data-stu-id="f18f8-111">Parameters</span></span>  
  `pragma-name`  
- <span data-ttu-id="3ec1c-111">Jméno uznávaného pragma.</span><span class="sxs-lookup"><span data-stu-id="3ec1c-111">The name of a recognized pragma.</span></span>  
+ <span data-ttu-id="f18f8-112">Název rozpoznané direktivy pragma.</span><span class="sxs-lookup"><span data-stu-id="f18f8-112">The name of a recognized pragma.</span></span>  
   
  `pragma-arguments`  
- <span data-ttu-id="3ec1c-112">Pragma-specifické argumenty.</span><span class="sxs-lookup"><span data-stu-id="3ec1c-112">Pragma-specific arguments.</span></span>  
+ <span data-ttu-id="f18f8-113">Argumenty specifické pro direktivu pragma.</span><span class="sxs-lookup"><span data-stu-id="f18f8-113">Pragma-specific arguments.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="3ec1c-113">Viz také</span><span class="sxs-lookup"><span data-stu-id="3ec1c-113">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f18f8-114">Viz také</span><span class="sxs-lookup"><span data-stu-id="f18f8-114">See also</span></span>
 
-- [<span data-ttu-id="3ec1c-114">Odkaz jazyka C#</span><span class="sxs-lookup"><span data-stu-id="3ec1c-114">C# Reference</span></span>](../index.md)
-- [<span data-ttu-id="3ec1c-115">Programovací příručka jazyka C#</span><span class="sxs-lookup"><span data-stu-id="3ec1c-115">C# Programming Guide</span></span>](../../programming-guide/index.md)
-- [<span data-ttu-id="3ec1c-116">Direktivy preprocesoru jazyka C#</span><span class="sxs-lookup"><span data-stu-id="3ec1c-116">C# Preprocessor Directives</span></span>](./index.md)
-- [<span data-ttu-id="3ec1c-117">#pragma varování</span><span class="sxs-lookup"><span data-stu-id="3ec1c-117">#pragma warning</span></span>](./preprocessor-pragma-warning.md)
-- [<span data-ttu-id="3ec1c-118">#pragma checksum</span><span class="sxs-lookup"><span data-stu-id="3ec1c-118">#pragma checksum</span></span>](./preprocessor-pragma-checksum.md)
+- [<span data-ttu-id="f18f8-115">Reference jazyka C#</span><span class="sxs-lookup"><span data-stu-id="f18f8-115">C# Reference</span></span>](../index.md)
+- [<span data-ttu-id="f18f8-116">Průvodce programováním v C#</span><span class="sxs-lookup"><span data-stu-id="f18f8-116">C# Programming Guide</span></span>](../../programming-guide/index.md)
+- [<span data-ttu-id="f18f8-117">C# – direktivy preprocesoru</span><span class="sxs-lookup"><span data-stu-id="f18f8-117">C# Preprocessor Directives</span></span>](./index.md)
+- [<span data-ttu-id="f18f8-118">upozornění #pragma</span><span class="sxs-lookup"><span data-stu-id="f18f8-118">#pragma warning</span></span>](./preprocessor-pragma-warning.md)
+- [<span data-ttu-id="f18f8-119">kontrolní součet #pragma</span><span class="sxs-lookup"><span data-stu-id="f18f8-119">#pragma checksum</span></span>](./preprocessor-pragma-checksum.md)
