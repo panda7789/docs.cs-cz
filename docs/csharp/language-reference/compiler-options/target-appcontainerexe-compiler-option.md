@@ -1,42 +1,43 @@
 ---
-title: -target:appcontainerexe (Možnosti kompilátoru Jazyka C#)
+description: '-target: appcontainerexe (možnosti kompilátoru C#)'
+title: '-target: appcontainerexe (možnosti kompilátoru C#)'
 ms.date: 07/20/2015
 ms.assetid: e7e62229-23ea-4e53-bef5-380d951bf95f
-ms.openlocfilehash: 64661e72f9efe190606cadd93558678cb849e8cc
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8c3b85c2f5a20788bd311e9bf3b300c32967da77
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74204525"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89128579"
 ---
-# <a name="-targetappcontainerexe-c-compiler-options"></a>-target:appcontainerexe (Možnosti kompilátoru Jazyka C#)
-Pokud použijete možnost kompilátoru **-target:appcontainerexe,** kompilátor vytvoří soubor spustitelného souboru systému Windows (.exe), který musí být spuštěn v kontejneru aplikace. Tato možnost je ekvivalentní [-target:winexe,](./target-winexe-compiler-option.md) ale je určena pro aplikace pro Windows 8.x Store.  
+# <a name="-targetappcontainerexe-c-compiler-options"></a>-target: appcontainerexe (možnosti kompilátoru C#)
+Použijete-li možnost kompilátoru **-target: appcontainerexe** , kompilátor vytvoří spustitelný soubor systému Windows (. exe), který musí být spuštěn v kontejneru aplikace. Tato možnost je ekvivalentní k [cíli: winexe](./target-winexe-compiler-option.md) , ale je navržena pro aplikace Windows 8. x Store.  
   
-## <a name="syntax"></a>Syntaxe  
+## <a name="syntax"></a>Syntax  
   
 ```console  
 -target:appcontainerexe  
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Chcete-li vyžadovat, aby aplikace běžela v kontejneru aplikace, tato možnost nastaví bit v souboru [Přenosného spustitelného souboru](/windows/desktop/Debug/pe-format) (PE). Pokud je tento bit nastaven, dojde k chybě, pokud se metoda CreateProcess pokusí spustit spustitelný soubor mimo kontejner aplikace.  
+ Pokud chcete, aby aplikace běžela v kontejneru aplikace, tato možnost nastaví bit v [přenositelném spustitelném](/windows/desktop/Debug/pe-format) souboru (PE). Pokud je tento bit nastaven, dojde k chybě, pokud se metoda CreateProcess pokusí spustit spustitelný soubor mimo kontejner aplikace.  
   
- Pokud nepoužijete možnost [-out,](./out-compiler-option.md) název výstupního souboru přebírá název vstupního souboru, který obsahuje metodu [Main.](../../programming-guide/main-and-command-args/index.md)  
+ Pokud nepoužijete možnost [-out](./out-compiler-option.md) , název výstupního souboru vezme název vstupního souboru, který obsahuje metodu [Main](../../programming-guide/main-and-command-args/index.md) .  
   
- Zadáte-li tuto možnost na příkazovém řádku, budou k vytvoření spustitelného souboru použity všechny soubory až do další volby **-out** nebo **-target.**  
+ Když zadáte tuto možnost na příkazovém řádku, všechny soubory až do **Možnosti další nebo** **cíl** se použijí k vytvoření spustitelného souboru.  
   
 ### <a name="to-set-this-compiler-option-in-the-ide"></a>Nastavení této možnosti kompilátoru v integrovaném vývojovém prostředí  
   
-1. V **Průzkumníku řešení**otevřete místní nabídku projektu a pak zvolte **Vlastnosti**.  
+1. V **Průzkumník řešení**otevřete místní nabídku pro projekt a poté zvolte možnost **vlastnosti**.  
   
-2. Na kartě **Aplikace** v seznamu **Typ výstupu** zvolte **Aplikaci pro Windows Store**.  
+2. Na kartě **aplikace** v seznamu **Typ výstupu** vyberte možnost **aplikace pro Windows Store**.  
   
-     Tato možnost je dostupná jenom pro šablony aplikací pro Windows 8.x Store.  
+     Tato možnost je k dispozici pouze pro šablony aplikací Windows 8. x Store.  
   
- Informace o tom, jak nastavit tuto možnost <xref:VSLangProj80.ProjectProperties3.OutputType%2A>kompilátoru programově, naleznete v tématu .  
+ Informace o tom, jak nastavit tuto možnost kompilátoru programově, najdete v tématu <xref:VSLangProj80.ProjectProperties3.OutputType%2A> .  
   
 ## <a name="example"></a>Příklad  
- Následující příkaz se `filename.cs` zkompiluje do spustitelného souboru systému Windows, který lze spustit pouze v kontejneru aplikace.  
+ Následující příkaz se zkompiluje `filename.cs` do spustitelného souboru systému Windows, který lze spustit pouze v kontejneru aplikace.  
   
 ```console  
 csc -target:appcontainerexe filename.cs  
@@ -44,6 +45,6 @@ csc -target:appcontainerexe filename.cs
   
 ## <a name="see-also"></a>Viz také
 
-- [-target (Možnosti kompilátoru Jazyka C#)](./target-compiler-option.md)
-- [-target:winexe (Možnosti kompilátoru Jazyka C#)](./target-winexe-compiler-option.md)
-- [Možnosti kompilátoru jazyka C#](./index.md)
+- [-Target (možnosti kompilátoru C#)](./target-compiler-option.md)
+- [-target: winexe (možnosti kompilátoru C#)](./target-winexe-compiler-option.md)
+- [Možnosti kompilátoru C#](./index.md)

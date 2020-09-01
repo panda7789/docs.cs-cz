@@ -3,12 +3,12 @@ title: Dotazy v technologii LINQ to Entities
 description: Přečtěte si, jak LINQ nabízí jednoduchý a konzistentní model pro práci s daty napříč různými druhy datových zdrojů a formátů pomocí programovacích objektů.
 ms.date: 03/30/2017
 ms.assetid: c015a609-29eb-4e95-abb1-2ca721c6e2ad
-ms.openlocfilehash: eaf44cf6c995be335c6127f42d7aaec0dd98527c
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 908a4a601c075e0845ba6d1eeeaa0f4dbaa3b53d
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88063728"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89129137"
 ---
 # <a name="queries-in-linq-to-entities"></a>Dotazy v technologii LINQ to Entities
 Dotaz je výraz, který načítá data ze zdroje dat. Dotazy jsou obvykle vyjádřené ve specializovaném dotazovacím jazyce, jako je SQL pro relační databáze a XQuery pro XML. Proto se vývojářům musel naučit nový dotazovací jazyk pro každý typ zdroje dat nebo formátu dat, který dotazuje. LINQ (Language-Integrated Query) nabízí jednodušší a konzistentní model pro práci s daty napříč různými druhy datových zdrojů a formátů. V dotazu LINQ vždy pracujete s programováním objektů.  
@@ -23,7 +23,7 @@ Dotaz je výraz, který načítá data ze zdroje dat. Dotazy jsou obvykle vyjád
  Dotazy LINQ to Entities můžou být složené ve dvou různých syntaxech: syntax výrazů dotazů a syntaxe dotazů založených na metodách. Syntaxe výrazu dotazu je novinkou v C# 3,0 a Visual Basic 9,0 a skládá se z množiny klauzulí napsaných v deklarativní syntaxi, která je podobná jazyku Transact-SQL nebo XQuery. .NET Framework Common Language Runtime (CLR) ale nemůže přečíst samotný syntax výrazu dotazu. Proto v době kompilace jsou výrazy dotazu přeloženy na něco, co aplikace CLR rozumí: volání metody. Tyto metody jsou známé jako *standardní operátory dotazu*. Jako vývojář máte možnost je volat přímo pomocí syntaxe metody namísto použití syntaxe dotazu. Další informace naleznete v tématu [syntaxe dotazu a syntaxe metody v jazyce LINQ](../../../../../csharp/programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md).  
   
 ### <a name="query-expression-syntax"></a>Syntaxe výrazu dotazu  
- Výrazy dotazů jsou deklarativní syntaxí dotazu. Tato syntaxe umožňuje vývojářům psát dotazy v jazyce vysoké úrovně, který je formátován podobný jazyku Transact-SQL. Pomocí syntaxe výrazu dotazu můžete provádět i složité filtrování, řazení a seskupování operací se zdroji dat s minimálním kódem. Další informace najdete v [základních operacích dotazu (Visual Basic)](../../../../../visual-basic/programming-guide/concepts/linq/basic-query-operations.md). Příklady, které ukazují, jak použít syntaxi výrazu dotazu, najdete v následujících tématech:  
+ Výrazy dotazů jsou deklarativní syntaxí dotazu. Tato syntaxe umožňuje vývojářům psát dotazy v jazyce vysoké úrovně, který je formátován podobný jazyku Transact-SQL. Pomocí syntaxe výrazu dotazu můžete provádět i složité filtrování, řazení a seskupování operací se zdroji dat s minimálním kódem. Další informace najdete v tématu [základní operace dotazů (Visual Basic)](../../../../../visual-basic/programming-guide/concepts/linq/basic-query-operations.md). Příklady, které ukazují, jak použít syntaxi výrazu dotazu, najdete v následujících tématech:  
   
 - [Příklady syntaxe výrazů dotazů: Projekce](query-expression-syntax-examples-projection.md)  
   

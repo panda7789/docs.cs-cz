@@ -1,4 +1,5 @@
 ---
+description: -Target (možnosti kompilátoru C#)
 title: -Target (možnosti kompilátoru C#)
 ms.date: 07/20/2015
 f1_keywords:
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - assemblies [C#], compiling
 - -target compiler options [C#]
 ms.assetid: a18bbd8e-bbf7-49e7-992c-717d0eb1f76f
-ms.openlocfilehash: 80cec001b27000e71b74f380a0f33e30602c01af
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: 5bfd988e8e399273dbd3292543a3730234c022d6
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86473906"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89128553"
 ---
 # <a name="-target-c-compiler-options"></a>-Target (možnosti kompilátoru C#)
 Možnost kompilátoru **-target** lze zadat v jednom z následujících forem:  

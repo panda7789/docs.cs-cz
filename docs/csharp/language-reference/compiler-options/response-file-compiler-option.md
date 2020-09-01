@@ -1,4 +1,5 @@
 ---
+description: '@ (Možnosti kompilátoru C#)'
 title: '@ (Možnosti kompilátoru C#)'
 ms.date: 07/20/2015
 f1_keywords:
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - response files, specifying for compilation [C#]
 - '@ compiler option'
 ms.assetid: dda4fa9f-a02c-400f-8b6a-d58834e13d7f
-ms.openlocfilehash: d8e5c0ec148754c3e4cebfa32ad9f44a0bb0119e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 89a057cba6e0d23c15fc9b652e5bfbc89b6ecbaa
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "70202909"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89128644"
 ---
 # <a name="-c-compiler-options"></a>@ (Možnosti kompilátoru C#)
 Možnost @ umožňuje zadat soubor, který obsahuje možnosti kompilátoru a soubory zdrojového kódu ke kompilaci.  
@@ -25,29 +26,29 @@ Možnost @ umožňuje zadat soubor, který obsahuje možnosti kompilátoru a sou
   
 ## <a name="arguments"></a>Argumenty  
  `response_file`  
- Soubor, který obsahuje seznam možností kompilátoru nebo souborů zdrojového kódu ke kompilaci.  
+ Soubor se seznamem možností kompilátoru nebo souborů zdrojového kódu, které mají být zkompilovány.  
   
 ## <a name="remarks"></a>Poznámky  
- Možnosti kompilátoru a soubory zdrojového kódu budou zpracovány kompilátorem stejně jako v případě, že byly zadány na příkazovém řádku.  
+ Možnosti kompilátoru a soubory zdrojového kódu budou zpracovány kompilátorem stejně, jako kdyby byly zadány v příkazovém řádku.  
   
- Chcete-li v kompilaci zadat více než jeden soubor odpovědí, zadejte více možností souboru odpovědí. Například:  
+ Chcete-li v kompilaci zadat více než jeden soubor odpovědí, zadejte více možností souboru odezvy. Příklad:  
   
 ```console  
 @file1.rsp @file2.rsp  
 ```  
   
- V souboru odpovědí se na jednom řádku může objevit více možností kompilátoru a souborů zdrojového kódu. Na jednom řádku se musí objevit jedna specifikace možnosti kompilátoru (nelze přehoupnout více řádků). Soubory odpovědí mohou mít komentáře, které začínají symbolem # .  
+ V souboru odpovědí se může na jednom řádku objevit více možností kompilátoru a souborů zdrojového kódu. Jedna specifikace možnosti kompilátoru se musí vyskytovat na jednom řádku (nemůže zasahovat do více řádků). Soubory odpovědí můžou obsahovat komentáře, které začínají symbolem #.  
   
- Určení možností kompilátoru ze souboru odpovědí je stejné jako vydávání těchto příkazů na příkazovém řádku. Další informace naleznete [v tématu Vytváření z příkazového řádku.](./how-to-set-environment-variables-for-the-visual-studio-command-line.md)  
+ Zadání možností kompilátoru ze souboru odpovědí je stejně jako vydávání těchto příkazů na příkazovém řádku. Další informace naleznete v tématu [sestavování z příkazového řádku](./how-to-set-environment-variables-for-the-visual-studio-command-line.md) .  
   
- Kompilátor zpracuje možnosti příkazu tak, jak jsou zjištěny. Argumenty příkazového řádku proto mohou přepsat dříve uvedené možnosti v souborech odpovědí. Naopak možnosti v souboru odpovědí přepíší možnosti uvedené dříve na příkazovém řádku nebo v jiných souborech odpovědí.  
+ Kompilátor zpracuje možnosti příkazu, jak jsou zjištěny. Proto argumenty příkazového řádku mohou přepsat dříve uvedené možnosti v souborech odpovědí. Naopak možnosti v souboru odpovědí budou přepisovat možnosti uvedené dříve na příkazovém řádku nebo v jiných souborech odpovědí.  
   
- C# poskytuje soubor csc.rsp, který je umístěn ve stejném adresáři jako soubor csc.exe. Viz [-noconfig](./noconfig-compiler-option.md) pro více informací o csc.rsp.  
+ Jazyk C# poskytuje soubor csc. rsp, který je umístěn ve stejném adresáři jako soubor csc.exe. Další informace o souboru CSc. rsp najdete v článku o [konfiguraci](./noconfig-compiler-option.md) .  
   
- Tuto možnost kompilátoru nelze nastavit ve vývojovém prostředí sady Visual Studio, ani ji nelze programově změnit.  
+ Tuto možnost kompilátoru nelze nastavit ve vývojovém prostředí sady Visual Studio, ani jej nelze změnit programově.  
   
 ## <a name="example"></a>Příklad  
- Následuje několik řádků z ukázkového souboru odpovědí:  
+ Následuje několik řádků z ukázkového souboru odezvy:  
   
 ```console  
 # build the first output file  
@@ -56,4 +57,4 @@ Možnost @ umožňuje zadat soubor, který obsahuje možnosti kompilátoru a sou
   
 ## <a name="see-also"></a>Viz také
 
-- [Možnosti kompilátoru jazyka C#](./index.md)
+- [Možnosti kompilátoru C#](./index.md)
