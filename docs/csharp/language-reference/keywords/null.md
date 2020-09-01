@@ -1,5 +1,6 @@
 ---
-title: null klíčové slovo - C# Odkaz
+description: null – klíčové slovo – Reference jazyka C#
+title: null – klíčové slovo – Reference jazyka C#
 ms.date: 07/20/2015
 f1_keywords:
 - "null"
@@ -7,16 +8,16 @@ f1_keywords:
 helpviewer_keywords:
 - null keyword [C#]
 ms.assetid: fecb1c60-6232-4efe-87f7-9a86ba2e9119
-ms.openlocfilehash: 17e7386571e8c74d411204ade0d56ffe8a710ee8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 26cafb4ab25a0fc9514559e968cbb262fef3d0a9
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76741991"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89142372"
 ---
 # <a name="null-c-reference"></a>Null (Referenční dokumentace jazyka C#)
 
-Klíčové `null` slovo je literál, který představuje nulový odkaz, který neodkazuje na žádný objekt. `null`je výchozí hodnota proměnných referenčního typu. Kmenové typy hodnot nemohou mít hodnotu null, s výjimkou [typů hodnot s možnou hodnotou null](../builtin-types/nullable-value-types.md).
+`null`Klíčové slovo je literál, který představuje nulový odkaz, který neodkazuje na žádný objekt. `null` je výchozí hodnotou proměnných typu odkazu. Typy běžných hodnot nemohou mít hodnotu null, s výjimkou [typů s možnou hodnotou null](../builtin-types/nullable-value-types.md).
 
 Následující příklad ukazuje některé chování `null` klíčového slova:
 
@@ -30,5 +31,5 @@ Následující příklad ukazuje některé chování `null` klíčového slova:
 
 - [Referenční dokumentace k jazyku C#](../index.md)
 - [Klíčová slova jazyka C#](index.md)
-- [Výchozí hodnoty typů jazyka C#](../builtin-types/default-values.md)
+- [Výchozí hodnoty typů C#](../builtin-types/default-values.md)
 - [Nothing (Visual Basic)](../../../visual-basic/language-reference/nothing.md)

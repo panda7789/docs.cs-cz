@@ -1,5 +1,6 @@
 ---
-title: try-finally - C# Reference
+description: try-finally-reference jazyka C#
+title: try-finally-reference jazyka C#
 ms.date: 07/20/2015
 f1_keywords:
 - finally
@@ -8,44 +9,44 @@ helpviewer_keywords:
 - finally keyword [C#]
 - try-finally statement [C#]
 ms.assetid: c27623fb-7261-4464-862c-7a369d3c8f0a
-ms.openlocfilehash: 2c4c69b1e104aed968bc24bac690de83026643a0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 621c5bf1607136361b72f978681607ec2aec150f
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75713011"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89141969"
 ---
 # <a name="try-finally-c-reference"></a>try-finally (Referenční dokumentace jazyka C#)
 
-Pomocí `finally` bloku můžete vyčistit všechny prostředky, které jsou přiděleny v [bloku try,](try-catch.md) a můžete spustit `try` kód i v případě, že dojde k výjimce v bloku. Obvykle příkazy `finally` bloku spustit při ovládacíprvek `try` opustí příkaz. K převodu ovládacího prvku může dojít v důsledku `break` `continue`normálního spuštění, provedení , , `goto`nebo `return` příkazu `try` nebo šíření výjimky z příkazu.
+Pomocí `finally` bloku můžete vyčistit všechny prostředky, které jsou přiděleny v bloku [Try](try-catch.md) , a můžete kód spustit i v případě, že v bloku dojde k výjimce `try` . Obvykle jsou příkazy `finally` bloku spouštěny, když ovládací prvek opustí `try` příkaz. Přenos řízení může nastat v důsledku normálního spuštění, provedení `break` příkazu,, `continue` `goto` nebo `return` nebo šíření výjimky z `try` příkazu.
 
-V rámci zpracované výjimky je zaručeno spuštění přidruženého `finally` bloku. Pokud je však výjimka neošetřena, je spuštění `finally` bloku závislé na způsobu, jakým je spuštěna operace unwind výjimky. To zase závisí na tom, jak je počítač nastaven.
+V rámci ošetřené výjimky `finally` je zaručeno spuštění přidruženého bloku. Nicméně pokud je výjimka Neošetřená, `finally` je spuštění bloku závislé na tom, jak je spuštěna operace unwind výjimky. To znamená, že je závislý na tom, jak je počítač nastavený.
 
-Obvykle při neošetřené výjimky ukončí aplikaci, zda `finally` je či není blok je spuštěn není důležité. Však pokud máte příkazy v `finally` bloku, který musí být spuštěn i `catch` v `try` - `finally` této situaci, jedním z řešení je přidat blok do příkazu. Alternativně můžete zachytit výjimku, která může `try` být vyvolána v bloku příkazu `try` - `finally` vyšší zásobníku volání. To znamená, že můžete zachytit výjimku v metodě, která volá metodu, která obsahuje `try` - `finally` příkaz, nebo v metodě, která volá tuto metodu, nebo v libovolné metodě v zásobníku volání. Pokud výjimka není zachycena, `finally` spuštění bloku závisí na tom, zda se operační systém rozhodne aktivovat operaci unwind výjimky.
+Obvykle, pokud Neošetřená výjimka ukončí aplikaci, bez ohledu na to, zda je `finally` blok spuštěn, není důležité. Nicméně pokud máte příkazy v `finally` bloku, který musí být spuštěn dokonce i v takovém případě, jedním řešením je přidání `catch` bloku do `try` - `finally` příkazu. Alternativně můžete zachytit výjimku, která může být vyvolána v `try` bloku `try` - `finally` příkazu výše v zásobníku volání. To znamená, že výjimku můžete zachytit v metodě, která volá metodu, která obsahuje `try` - `finally` příkaz, nebo v metodě, která volá tuto metodu, nebo v jakékoli metodě v zásobníku volání. Pokud není výjimka zachycena, spuštění `finally` bloku závisí na tom, zda se rozhodne operační systém aktivovat výjimku unwind operace.
 
 ## <a name="example"></a>Příklad
 
-V následujícím příkladu neplatný příkaz `System.InvalidCastException` převodu způsobí výjimku. Výjimka není zpracována.
+V následujícím příkladu je neplatný příkaz převodu způsobil `System.InvalidCastException` výjimku. Výjimka je Neošetřená.
 
 [!code-csharp[csrefKeywordsExceptions#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsExceptions/CS/csrefKeywordsExceptions.cs#4)]
 
-V následujícím příkladu je `TryCast` výjimka z metody zachycena v metodě dále v zásobníku volání.
+V následujícím příkladu je výjimka z `TryCast` metody zachycena v metodě dále v zásobníku volání.
 
 [!code-csharp[csrefKeywordsExceptions#6](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsExceptions/CS/csrefKeywordsExceptions.cs#6)]
 
-Další informace `finally`o tématu [naleznete v tématu try-catch-finally](try-catch-finally.md).
+Další informace o `finally` naleznete v tématu [try-catch-finally](try-catch-finally.md).
 
-C# také obsahuje [using příkaz](using-statement.md), který <xref:System.IDisposable> poskytuje podobné funkce pro objekty ve vhodné syntaxi.
+Jazyk C# obsahuje také [příkaz using](using-statement.md), který poskytuje podobné funkce pro <xref:System.IDisposable> objekty ve vhodné syntaxi.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
-Další informace naleznete v části [try statement](~/_csharplang/spec/statements.md#the-try-statement) specifikace jazyka [C#](~/_csharplang/spec/introduction.md).
+Další informace naleznete v oddílu [Try příkazu](~/_csharplang/spec/statements.md#the-try-statement) [specifikace jazyka C#](~/_csharplang/spec/introduction.md).
 
 ## <a name="see-also"></a>Viz také
 
-- [Odkaz jazyka C#](../index.md)
-- [Programovací příručka jazyka C#](../../programming-guide/index.md)
-- [C# Klíčová slova](index.md)
+- [Reference jazyka C#](../index.md)
+- [Průvodce programováním v C#](../../programming-guide/index.md)
+- [Klíčová slova jazyka C#](index.md)
 - [try, throw a catch – příkazy (C++)](/cpp/cpp/try-throw-and-catch-statements-cpp)
 - [throw](throw.md)
 - [try-catch](try-catch.md)

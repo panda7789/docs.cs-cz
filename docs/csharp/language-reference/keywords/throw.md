@@ -1,4 +1,5 @@
 ---
+description: throw – reference jazyka C#
 title: throw – reference jazyka C#
 ms.date: 03/02/2015
 f1_keywords:
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - throw expression [C#]
 - throw keyword [C#]
 ms.assetid: 5ac4feef-4b1a-4c61-aeb4-61d549e5dd42
-ms.openlocfilehash: 7ed84e04dae54283e4b5f03be0600c4dbf95b4b4
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 4cad4810b89f976f92ce576917feb2398acce636
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88063117"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89142034"
 ---
 # <a name="throw-c-reference"></a>throw (Referenční dokumentace jazyka C#)
 
@@ -38,7 +39,7 @@ Volající metody pak používají `try-catch` `try-catch-finally` blok nebo pro
 
 ## <a name="re-throwing-an-exception"></a>Opětovné vyvolání výjimky
 
-`throw`lze také použít v `catch` bloku k opětovnému vyvolání výjimky zpracované v `catch` bloku.  V tomto případě `throw` nebere v úvahu operand výjimky. Je nejužitečnější, pokud metoda předává argumentu od volajícího k některé jiné metodě knihovny a metoda knihovny vyvolá výjimku, která musí být předána volajícímu. Například následující příklad znovu vyvolá výjimku <xref:System.NullReferenceException> , která je vyvolána při pokusu o načtení prvního znaku neinicializovaného řetězce.
+`throw` lze také použít v `catch` bloku k opětovnému vyvolání výjimky zpracované v `catch` bloku.  V tomto případě `throw` nebere v úvahu operand výjimky. Je nejužitečnější, pokud metoda předává argumentu od volajícího k některé jiné metodě knihovny a metoda knihovny vyvolá výjimku, která musí být předána volajícímu. Například následující příklad znovu vyvolá výjimku <xref:System.NullReferenceException> , která je vyvolána při pokusu o načtení prvního znaku neinicializovaného řetězce.
 
 [!code-csharp[csrefKeyword#3](~/samples/snippets/csharp/language-reference/keywords/throw/throw-3.cs#3)]
 
@@ -47,7 +48,7 @@ Volající metody pak používají `try-catch` `try-catch-finally` blok nebo pro
 
 ## <a name="the-throw-expression"></a>`throw`Výraz
 
-Počínaje jazykem C# 7,0 `throw` lze použít jako výraz i příkaz. To umožňuje vyvolání výjimky v kontextech, které byly dříve nepodporované. Tady jsou některé z nich:
+Počínaje jazykem C# 7,0 `throw` lze použít jako výraz i příkaz. To umožňuje vyvolání výjimky v kontextech, které byly dříve nepodporované. Zde jsou některé z nich:
 
 - [podmíněný operátor](../operators/conditional-operator.md). Následující příklad používá `throw` výraz k vyvolání, <xref:System.ArgumentException> Pokud je metoda předána prázdnému poli řetězce. Před C# 7,0 se tato logika musí objevit v `if` / `else` příkazu.
 

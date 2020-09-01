@@ -1,4 +1,5 @@
 ---
+description: Switch (Referenční dokumentace jazyka C#)
 title: Příkaz přepínače jazyka C#
 ms.date: 04/09/2019
 f1_keywords:
@@ -12,18 +13,18 @@ helpviewer_keywords:
 - case statement [C#]
 - default keyword [C#]
 ms.assetid: 44bae8b8-8841-4d85-826b-8a94277daecb
-ms.openlocfilehash: 9335399be2d4909a02fecbf2959c6f5608664732
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 20c1d9786eaa184088500cf1b37d33afc421b5e7
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84493666"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89142021"
 ---
 # <a name="switch-c-reference"></a>Switch (Referenční dokumentace jazyka C#)
 
 Tento článek se zabývá `switch` příkazem. Informace o `switch` výrazu (představené v C# 8,0) najdete v článku [ `switch` výrazy](../operators/switch-expression.md) v části [výrazy a operátory](../operators/index.md) .
 
-`switch`je příkaz výběru, který zvolí oddíl s jedním *přepínačem* , který se má provést ze seznamu kandidátů na základě porovnávání vzorů s *výrazem shody*.
+`switch` je příkaz výběru, který zvolí oddíl s jedním *přepínačem* , který se má provést ze seznamu kandidátů na základě porovnávání vzorů s *výrazem shody*.
 
 [!code-csharp[switch#1](~/samples/snippets/csharp/language-reference/keywords/switch/switch1.cs#1)]
 
@@ -199,7 +200,7 @@ Všimněte si, že `when` klauzule v příkladu, která se pokouší otestovat, 
 
 Další informace naleznete v [příkazu switch](~/_csharplang/spec/statements.md#the-switch-statement) v tématu [specifikace jazyka C#](/dotnet/csharp/language-reference/language-specification/introduction). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Reference jazyka C#](../index.md)
 - [Průvodce programováním v C#](../../programming-guide/index.md)

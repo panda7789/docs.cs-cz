@@ -1,33 +1,34 @@
 ---
-title: Klíčová slova příkazu – odkaz jazyka C#
+description: Keywords – referenční informace jazyka C#
+title: Keywords – referenční informace jazyka C#
 ms.date: 07/20/2015
 helpviewer_keywords:
 - keywords [C#], statements
 - statements [C#]
 ms.assetid: fad0c004-e282-4ec8-a127-bca7fd7a0b6f
-ms.openlocfilehash: c829414cc197b18ad0dbd9c2cf401a05f6f2fbc6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 02c6ba7095c30fb8349e4b810d296e92ecd6e416
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75715147"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89142047"
 ---
-# <a name="statement-keywords-c-reference"></a>Klíčová slova příkazu (odkaz C#
+# <a name="statement-keywords-c-reference"></a>Statement – klíčová slova (Referenční dokumentace jazyka C#)
 
-Příkazy jsou instrukce programu. S výjimkou případů popsaných v tématech uvedených v následující tabulce jsou příkazy prováděny postupně. V následující tabulce jsou uvedena klíčová slova příkazu Jazyka C#. Další informace o příkazech, které nejsou vyjádřeny žádným klíčovým slovem, naleznete v [tématu Příkazy](../../programming-guide/statements-expressions-operators/statements.md).
+Příkazy jsou pokyny pro program. S výjimkou případů popsaných v tématech, která jsou uvedena v následující tabulce, jsou příkazy spouštěny v pořadí. V následující tabulce jsou uvedena klíčová slova příkazů jazyka C#. Další informace o příkazech, které nejsou vyjádřeny klíčovým slovem any, naleznete v tématu [Statements](../../programming-guide/statements-expressions-operators/statements.md).
 
 |Kategorie|Klíčová slova jazyka C#|
 |--------------|------------------|
-|Příkazy výběru|[pokud](if-else.md), [jinak](if-else.md), [přepnout](switch.md), [případ](switch.md)|
-|Příkazy iterace|[v](do.md), [foreach](foreach-in.md), [in](foreach-in.md), [zatímco](while.md) [for](for.md)|
-|Jump – příkazy|[break](break.md), [continue](continue.md), [default](switch.md), [goto](goto.md), [return](return.md), [yield](yield.md)|
-|Příkazy zpracování výjimek|[hodit](throw.md), [try-catch](try-catch.md), [try-finally](try-finally.md), [try-catch-finally](try-catch-finally.md)|
-|[Zaškrtnuto a nezaškrtnuto](checked-and-unchecked.md)|[zaškrtnuto](checked.md), [nezaškrtnuté](unchecked.md)|
-[pevný výpis](fixed-statement.md)|[Dlouhodobého](fixed-statement.md)|
-|[příkaz lock](lock-statement.md)|[Zámek](lock-statement.md)|
+|Příkazy výběru|[if](if-else.md), [Else](if-else.md), [přepínač](switch.md), [case](switch.md)|
+|Příkazy iterace|[do](do.md), [pro](for.md), [foreach](foreach-in.md), [v](foreach-in.md), [while](while.md)|
+|Jump – příkazy|[přerušení](break.md), [pokračovat](continue.md), [výchozí](switch.md), [Přejít](goto.md), [vrátit](return.md), [Dej](yield.md)|
+|Příkazy zpracování výjimek|[throw](throw.md), [try-catch](try-catch.md), [try-finally](try-finally.md), [try-catch-finally](try-catch-finally.md)|
+|[Zaškrtnuto a nezaškrtnuto](checked-and-unchecked.md)|[zaškrtnuto](checked.md), [nezaškrtnuto](unchecked.md)|
+[příkaz fixed](fixed-statement.md)|[určí](fixed-statement.md)|
+|[příkaz Lock](lock-statement.md)|[získáte](lock-statement.md)|
 
 ## <a name="see-also"></a>Viz také
 
-- [Odkaz jazyka C#](../index.md)
+- [Reference jazyka C#](../index.md)
 - [Příkazy](../../programming-guide/statements-expressions-operators/statements.md)
-- [C# Klíčová slova](index.md)
+- [Klíčová slova jazyka C#](index.md)

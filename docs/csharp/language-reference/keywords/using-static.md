@@ -1,15 +1,16 @@
 ---
+description: použití statické direktivy – Reference jazyka C#
 title: použití statické direktivy – Reference jazyka C#
 ms.date: 03/10/2017
 helpviewer_keywords:
 - using static directive [C#]
 ms.assetid: 8b8f9e34-c75e-469b-ba85-6f2eb4090314
-ms.openlocfilehash: bffbc026e8f7937db91d42b7a06a5b7bba3bc2f8
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: a10c315a05c28bce9b5ddb65af67dde6446d031d
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396154"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89141917"
 ---
 # <a name="using-static-directive-c-reference"></a>using static – direktiva (Referenční dokumentace jazyka C#)
 
@@ -35,9 +36,9 @@ Zrušením nutnosti explicitního odkazování na <xref:System.Math> třídu pok
 
 [!code-csharp[using-static#2](~/samples/snippets/csharp/language-reference/keywords/using/using-static2.cs#1)]
 
-`using static`importuje pouze dostupné statické členy a vnořené typy deklarované v zadaném typu.  Zděděné členy nejsou naimportovány.  Můžete importovat z libovolného pojmenovaného typu pomocí statické direktivy using, včetně Visual Basicch modulů.  Pokud jsou funkce nejvyšší úrovně F # zobrazeny v metadatech jako statické členy pojmenovaného typu, jehož název je platný identifikátor jazyka C#, mohou být importovány funkce jazyka F #.
+`using static` importuje pouze dostupné statické členy a vnořené typy deklarované v zadaném typu.  Zděděné členy nejsou naimportovány.  Můžete importovat z libovolného pojmenovaného typu pomocí statické direktivy using, včetně Visual Basicch modulů.  Pokud jsou funkce nejvyšší úrovně F # zobrazeny v metadatech jako statické členy pojmenovaného typu, jehož název je platný identifikátor jazyka C#, mohou být importovány funkce jazyka F #.
 
- `using static`Zpřístupňuje metody rozšíření deklarované v zadaném typu k dispozici pro vyhledávání rozšiřující metody.  Názvy metod rozšíření však nejsou importovány do oboru pro nekvalifikované odkazy v kódu.
+ `using static` Zpřístupňuje metody rozšíření deklarované v zadaném typu k dispozici pro vyhledávání rozšiřující metody.  Názvy metod rozšíření však nejsou importovány do oboru pro nekvalifikované odkazy v kódu.
 
  Metody se stejným názvem importované z různých typů podle různých `using static` direktiv ve stejné kompilační jednotce nebo oboru názvů tvoří skupinu metod.  Rozlišení přetížení v rámci těchto skupin metod sleduje normální pravidla jazyka C#.
 
@@ -55,4 +56,4 @@ V tomto příkladu `using static` byla direktiva také použita pro <xref:System
 - [Reference jazyka C#](../index.md)
 - [Klíčová slova jazyka C#](index.md)
 - [Používání oborů názvů](../../programming-guide/namespaces/using-namespaces.md)
-- [Obory názvů](../../programming-guide/namespaces/index.md)
+- [Jmenné prostory](../../programming-guide/namespaces/index.md)

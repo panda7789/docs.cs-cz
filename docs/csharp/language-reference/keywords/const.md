@@ -1,5 +1,6 @@
 ---
-title: const klíčové slovo - C# Reference
+description: const – klíčové slovo – Reference jazyka C#
+title: const – klíčové slovo – Reference jazyka C#
 ms.date: 07/20/2015
 f1_keywords:
 - const_CSharpKeyword
@@ -7,16 +8,16 @@ f1_keywords:
 helpviewer_keywords:
 - const keyword [C#]
 ms.assetid: 79eb447c-117b-4418-933f-97c50aa472db
-ms.openlocfilehash: 812aeb331b6dd333075d19076a896246ecc5b374
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 312725c3a231f0ca766d5b99bf7d9308ddd634c4
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75713681"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89142086"
 ---
 # <a name="const-c-reference"></a>const (Referenční dokumentace jazyka C#)
 
-`const` Klíčové slovo slouží k deklarování konstantní pole nebo konstantní místní. Konstantní pole a místní jsou proměnné a nemusí být změněny. Konstantami mohou být čísla, logické hodnoty, řetězce nebo nulový odkaz. Nevytvářejte konstantu představující informace, které očekáváte, že kdykoli změníte. Nepoužívejte například konstantní pole k uložení ceny služby, čísla verze produktu nebo názvu značky společnosti. Tyto hodnoty se mohou v průběhu času měnit a protože kompilátory šíří konstanty, další kód zkompilovaný s knihovnami bude muset být znovu zkompilován, aby se zobcházely změny. Viz také klíčové slovo [jen pro čtení.](./readonly.md) Například:
+`const`Klíčové slovo lze použít k deklarování konstantního pole nebo konstanty místní. Konstantní pole a místní hodnoty nejsou proměnné a nelze je upravovat. Konstanty můžou být čísla, logické hodnoty, řetězce nebo odkazy s hodnotou null. Nevytvářejte konstantu, která bude představovat informace, které byste měli kdykoli změnit. Například nepoužívejte pole konstanty k uložení ceny služby, čísla verze produktu nebo značky společnosti. Tyto hodnoty se mohou v průběhu času měnit a vzhledem k tomu, že kompilátory šíří konstanty, je nutné znovu zkompilovat další kód kompilovaný s vašimi knihovnami, aby se změny projevily. Viz také klíčové slovo [ReadOnly](./readonly.md) . Příklad:
 
 ```csharp
 const int X = 0;
@@ -26,19 +27,19 @@ private const string ProductName = "Visual C#";
 
 ## <a name="remarks"></a>Poznámky
 
-Typ konstantní deklarace určuje typ členů, které deklarace zavádí. Inicializátor konstantní místní nebo konstantní pole musí být konstantní výraz, který lze implicitně převést na cílový typ.
+Typ deklarace konstanty určuje typ členů, které deklarace zavádí. Inicializátor konstantního místního nebo konstantního pole musí být konstantní výraz, který lze implicitně převést na cílový typ.
 
-Konstantní výraz je výraz, který lze plně vyhodnotit v době kompilace. Proto pouze možné hodnoty pro konstanty `string` typy odkazů jsou a null odkaz.
+Konstantní výraz je výraz, který lze plně vyhodnotit v době kompilace. Proto jsou jedinou možnou hodnotou konstanty typu odkazu `string` a odkazem s hodnotou null.
 
-Konstantní deklarace může deklarovat více konstant, například:
+Deklarace konstanty může deklarovat více konstant, například:
 
 ```csharp
 public const double X = 1.0, Y = 2.0, Z = 3.0;
 ```
 
-Modifikátor `static` není povolen v konstantní deklaraci.
+`static`Modifikátor není v deklaraci konstanty povolen.
 
-Konstanta se může účastnit konstantního výrazu takto:
+Konstanta se může účastnit konstantního výrazu, a to následujícím způsobem:
 
 ```csharp
 public const int C1 = 5;
@@ -46,7 +47,7 @@ public const int C2 = C1 + 100;
 ```
 
 > [!NOTE]
-> Klíčové slovo [jen pro](./readonly.md) `const` čtení se liší od klíčového slova. Pole `const` lze inicializovat pouze při deklaraci tohoto pole. Pole `readonly` lze inicializovat buď v deklaraci, nebo v konstruktoru. `readonly` Pole proto mohou mít různé hodnoty v závislosti na použitém konstruktoru. I když `const` je pole konstantou v `readonly` době kompilace, lze toto pole použít pro konstanty za běhu, jako v tomto řádku:`public static readonly uint l1 = (uint)DateTime.Now.Ticks;`
+> Klíčové slovo [ReadOnly](./readonly.md) se liší od `const` klíčového slova. `const`Pole lze inicializovat pouze v deklaraci pole. `readonly`Pole lze inicializovat buď v deklaraci, nebo v konstruktoru. Proto `readonly` pole mohou mít různé hodnoty v závislosti na použitém konstruktoru. I když `const` je pole konstanta při kompilaci, `readonly` pole lze použít pro konstanty run-time, jako v tomto řádku: `public static readonly uint l1 = (uint)DateTime.Now.Ticks;`
 
 ## <a name="example"></a>Příklad
 
@@ -54,7 +55,7 @@ public const int C2 = C1 + 100;
 
 ## <a name="example"></a>Příklad
 
-Tento příklad ukazuje, jak používat konstanty jako místní proměnné.
+Tento příklad ukazuje, jak použít konstanty jako lokální proměnné.
 
 [!code-csharp[csrefKeywordsModifiers#6](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsModifiers/CS/csrefKeywordsModifiers.cs#6)]
 
@@ -64,8 +65,8 @@ Tento příklad ukazuje, jak používat konstanty jako místní proměnné.
 
 ## <a name="see-also"></a>Viz také
 
-- [Odkaz jazyka C#](../index.md)
-- [Programovací příručka jazyka C#](../../programming-guide/index.md)
-- [C# Klíčová slova](./index.md)
+- [Reference jazyka C#](../index.md)
+- [Průvodce programováním v C#](../../programming-guide/index.md)
+- [Klíčová slova jazyka C#](./index.md)
 - [Modifikátory](index.md)
-- [Readonly](./readonly.md)
+- [readonly](./readonly.md)

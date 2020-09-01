@@ -1,5 +1,6 @@
 ---
-title: statický modifikátor - C# Reference
+description: static – modifikátor – reference jazyka C#
+title: static – modifikátor – reference jazyka C#
 ms.date: 04/22/2020
 f1_keywords:
 - static
@@ -7,57 +8,57 @@ f1_keywords:
 helpviewer_keywords:
 - static keyword [C#]
 ms.assetid: 5509e215-2183-4da3-bab4-6b7e607a4fdf
-ms.openlocfilehash: 771bcfdac4c4bf27c15da4bc374d804405317a78
-ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
+ms.openlocfilehash: f42636d1bbdf4342297f46f50ec6dfc2a70eacad
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82102057"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89142060"
 ---
 # <a name="static-c-reference"></a>static – modifikátor (Referenční dokumentace jazyka C#)
 
-Tato stránka `static` se zabývá klíčovým slovem modifikátoru. Klíčové `static` slovo je také [`using static`](using-static.md) součástí směrnice.
+Tato stránka obsahuje `static` klíčové slovo modifikátoru. `static`Klíčové slovo je také součástí [`using static`](using-static.md) direktivy.
 
-`static` Modifikátor použijte k deklarování statického člena, který patří k samotnému typu, nikoli k určitému objektu. Modifikátor `static` lze deklarovat `static` třídy. Ve třídách, rozhraních a strukturách můžete `static` přidat modifikátor do polí, metod, vlastností, operátorů, událostí a konstruktorů. Modifikátor `static` nelze použít s indexery nebo finalizačními metodami. Další informace naleznete [v tématu Statické třídy a statické členy třídy](../../programming-guide/classes-and-structs/static-classes-and-static-class-members.md).
+Použijte `static` Modifikátor k deklaraci statického člena, který patří do samotného typu, nikoli na konkrétní objekt. `static`Modifikátor lze použít k deklaraci `static` tříd. V třídách, rozhraních a strukturách můžete přidat `static` modifikátor pro pole, metody, vlastnosti, operátory, události a konstruktory. `static`Modifikátor nelze použít s indexery nebo finalizační metody. Další informace naleznete v tématu [statické třídy a statické členy třídy](../../programming-guide/classes-and-structs/static-classes-and-static-class-members.md).
 
-## <a name="example---static-class"></a>Příklad - statická třída
+## <a name="example---static-class"></a>Příklad – statická třída
 
-Následující třída je `static` deklarována jako a obsahuje pouze `static` metody:
+Následující třída je deklarována jako `static` a obsahuje pouze `static` metody:
 
 [!code-csharp[csrefKeywordsModifiers#18](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsModifiers/CS/csrefKeywordsModifiers.cs#18)]
 
-Deklarace konstanty nebo typu `static` je implicitně členem. Na `static` člena nelze odkazovat prostřednictvím instance. Místo toho je odkazováno prostřednictvím názvu typu. Zvažte například následující třídu:
+Deklarace konstanty nebo typu je implicitně `static` členem. Na `static` člena se nedá odkazovat prostřednictvím instance. Místo toho je odkazováno pomocí názvu typu. Zvažte například následující třídu:
 
 [!code-csharp[csrefKeywordsModifiers#19](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsModifiers/CS/csrefKeywordsModifiers.cs#19)]
 
-Chcete-li `static` odkazovat na člen `x`, `MyBaseC.MyStruct.x`použijte plně kvalifikovaný název , , pokud člen není přístupný ze stejného oboru:
+Chcete-li odkazovat na `static` člena `x` , použijte plně kvalifikovaný název, `MyBaseC.MyStruct.x` Pokud je člen přístupný ze stejného oboru:
 
 ```csharp
 Console.WriteLine(MyBaseC.MyStruct.x);
 ```
 
-Zatímco instance třídy obsahuje samostatnou kopii všech polí instance třídy, je `static` pouze jedna kopie každého pole.
+I když instance třídy obsahuje samostatnou kopii všech polí instance třídy, je k dispozici pouze jedna kopie každého `static` pole.
 
-Není možné použít [`this`](this.md) k referenční `static` metody nebo přístupové objekty vlastností.
+Není možné použít [`this`](this.md) k odkazování `static` metod nebo přístupových objektů vlastností.
 
-Pokud `static` je klíčové slovo použito pro třídu, musí `static`být všichni členové třídy .
+Pokud `static` je klíčové slovo použito pro třídu, musí být všichni členové třídy `static` .
 
-Třídy, rozhraní `static` a třídy mohou mít `static` konstruktory. Konstruktor `static` je volána v určitém okamžiku mezi spuštěním programu a instance třídy.
+Třídy, rozhraní a `static` třídy mohou mít `static` konstruktory. `static`Konstruktor je volán v určitém bodě mezi okamžikem spuštění programu a instancí třídy.
 
 > [!NOTE]
-> Klíčové `static` slovo má omezenější použití než v jazyce C++. Chcete-li porovnat s c++ klíčové slovo, viz [Storage třídy (C++)](/cpp/cpp/storage-classes-cpp#static).
+> `static`Klíčové slovo má více omezeného použití než v jazyce C++. Pro porovnání s klíčovým slovem jazyka C++, viz [třídy úložiště (C++)](/cpp/cpp/storage-classes-cpp#static).
 
-Chcete-li demonstrovat `static` členy, zvažte třídu, která představuje zaměstnance společnosti. Předpokládejme, že třída obsahuje metodu počítání zaměstnanců a pole pro uložení počtu zaměstnanců. Metoda i pole nepatří do žádné instance zaměstnance. Místo toho patří do třídy zaměstnanců jako celku. Měly by `static` být deklarovány jako členové třídy.
+Chcete-li předvést `static` členy, zvažte třídu, která představuje zaměstnance společnosti. Předpokládat, že třída obsahuje metodu pro počítání zaměstnanců a pole pro uložení počtu zaměstnanců. Jak metoda, tak pole nepatří do žádné z těchto instancí zaměstnanců. Místo toho patří do třídy zaměstnanci jako celek. Měly by být deklarovány jako `static` členy třídy.
 
-## <a name="example---static-field-and-method"></a>Příklad - statické pole a metoda
+## <a name="example---static-field-and-method"></a>Příklad – statické pole a metoda
 
-Tento příklad přečte jméno a ID nového zaměstnance, zintáží čítač zaměstnance o jeden a zobrazí informace o novém zaměstnanci a novém počtu zaměstnanců. Tento program čte aktuální počet zaměstnanců z klávesnice.
+Tento příklad přečte jméno a ID nového zaměstnance, zvýší čítač zaměstnanců o jednu a zobrazí informace o novém zaměstnanci a novém počtu zaměstnanců. Tento program přečte aktuální počet zaměstnanců z klávesnice.
 
 [!code-csharp[csrefKeywordsModifiers#20](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsModifiers/CS/csrefKeywordsModifiers.cs#20)]  
 
-## <a name="example---static-initialization"></a>Příklad - statická inicializace
+## <a name="example---static-initialization"></a>Příklad – Statická inicializace
 
-Tento příklad ukazuje, že můžete `static` inicializovat pole pomocí jiného `static` pole, které ještě není deklarováno. Výsledky nebudou definovány, dokud explicitně nepřiřadíte hodnotu `static` poli.
+Tento příklad ukazuje, že můžete inicializovat `static` pole pomocí jiného `static` pole, které ještě není deklarované. Výsledky budou nedefinovány, dokud explicitně nepřiřadíte hodnotu k `static` poli.
 
 [!code-csharp[csrefKeywordsModifiers#21](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsModifiers/CS/csrefKeywordsModifiers.cs#21)]  
 
@@ -67,9 +68,9 @@ Tento příklad ukazuje, že můžete `static` inicializovat pole pomocí jinéh
 
 ## <a name="see-also"></a>Viz také
 
-- [Odkaz jazyka C#](../index.md)
-- [Programovací příručka jazyka C#](../../programming-guide/index.md)
-- [C# Klíčová slova](index.md)
+- [Reference jazyka C#](../index.md)
+- [Průvodce programováním v C#](../../programming-guide/index.md)
+- [Klíčová slova jazyka C#](index.md)
 - [Modifikátory](index.md)
 - [použití statické direktivy](using-static.md)
 - [Statické třídy a jejich členové](../../programming-guide/classes-and-structs/static-classes-and-static-class-members.md)

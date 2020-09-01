@@ -1,15 +1,16 @@
 ---
+description: using – reference jazyka C#
 title: using – reference jazyka C#
 ms.date: 05/29/2020
 helpviewer_keywords:
 - using statement [C#]
 ms.assetid: afc355e6-f0b9-4240-94dd-0d93f17d9fc3
-ms.openlocfilehash: b889d2fcbdf854dbe8948744810f9b74e9f0dac2
-ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
+ms.openlocfilehash: c7f1fc4b7e911bdec3bd38ae88aa39b7f1795300
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84307043"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89141930"
 ---
 # <a name="using-statement-c-reference"></a>using – příkaz (Referenční dokumentace jazyka C#)
 
@@ -27,7 +28,7 @@ Počínaje jazykem C# 8,0 můžete použít následující alternativní syntaxi
 
 ## <a name="remarks"></a>Poznámky
 
-<xref:System.IO.File>a <xref:System.Drawing.Font> jsou příklady spravovaných typů, které přistupují k nespravovaným prostředkům (v tomto případě popisovače souborů a kontexty zařízení). Existuje mnoho dalších druhů nespravovaných prostředků a typů knihoven tříd, které je zapouzdřují. Všechny tyto typy musí implementovat <xref:System.IDisposable> rozhraní nebo <xref:System.IAsyncDisposable> rozhraní.
+<xref:System.IO.File> a <xref:System.Drawing.Font> jsou příklady spravovaných typů, které přistupují k nespravovaným prostředkům (v tomto případě popisovače souborů a kontexty zařízení). Existuje mnoho dalších druhů nespravovaných prostředků a typů knihoven tříd, které je zapouzdřují. Všechny tyto typy musí implementovat <xref:System.IDisposable> rozhraní nebo <xref:System.IAsyncDisposable> rozhraní.
 
 Pokud `IDisposable` je životnost objektu omezena na jedinou metodu, měli byste deklarovat a vytvořit jeho instanci v `using` příkazu. `using`Příkaz volá <xref:System.IDisposable.Dispose%2A> metodu na objekt správným způsobem a (při použití, jak je uvedeno výše), také způsobí, že se objekt sám vrátí do rozsahu, jakmile <xref:System.IDisposable.Dispose%2A> je volán. V rámci `using` bloku je objekt jen pro čtení a nedá se změnit ani znovu přiřadit. Pokud objekt implementuje `IAsyncDisposable` místo `IDisposable` , `using` příkaz zavolá <xref:System.IAsyncDisposable.DisposeAsync%2A> a `awaits` vrátí <xref:System.Threading.Tasks.ValueTask> . Další informace o naleznete v <xref:System.IAsyncDisposable> tématu [Implementing a DisposeAsync Method](../../../standard/garbage-collection/implementing-disposeasync.md).
 
