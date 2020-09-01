@@ -1,5 +1,6 @@
 ---
-title: veřejné klíčové slovo - C# Reference
+description: Public – klíčové slovo – Referenční dokumentace jazyka C#
+title: Public – klíčové slovo – Referenční dokumentace jazyka C#
 ms.date: 07/20/2015
 f1_keywords:
 - public
@@ -7,16 +8,16 @@ f1_keywords:
 helpviewer_keywords:
 - public keyword [C#]
 ms.assetid: 0ae45d16-a551-4b74-9845-57208de1328e
-ms.openlocfilehash: 19906d7fd0f7d41ef9e4cdaf951c77825e0bbead
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 26edaf7538d11d082a4b8863228213c3ebc46937
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75713167"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89122339"
 ---
-# <a name="public-c-reference"></a><span data-ttu-id="67f5d-102">public (Referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="67f5d-102">public (C# Reference)</span></span>
+# <a name="public-c-reference"></a><span data-ttu-id="62644-103">public (Referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="62644-103">public (C# Reference)</span></span>
 
-<span data-ttu-id="67f5d-103">Klíčové `public` slovo je modifikátor přístupu pro typy a členy typu.</span><span class="sxs-lookup"><span data-stu-id="67f5d-103">The `public` keyword is an access modifier for types and type members.</span></span> <span data-ttu-id="67f5d-104">Přístup veřejnosti je nejtolerantnější úroveň přístupu.</span><span class="sxs-lookup"><span data-stu-id="67f5d-104">Public access is the most permissive access level.</span></span> <span data-ttu-id="67f5d-105">Neexistují žádná omezení přístupu k veřejným členům, jako v tomto příkladu:</span><span class="sxs-lookup"><span data-stu-id="67f5d-105">There are no restrictions on accessing public members, as in this example:</span></span>
+<span data-ttu-id="62644-104">`public`Klíčové slovo je modifikátor přístupu pro typy a členy typů.</span><span class="sxs-lookup"><span data-stu-id="62644-104">The `public` keyword is an access modifier for types and type members.</span></span> <span data-ttu-id="62644-105">Veřejný přístup je nejpřísnější úroveň přístupu.</span><span class="sxs-lookup"><span data-stu-id="62644-105">Public access is the most permissive access level.</span></span> <span data-ttu-id="62644-106">Pro přístup k veřejným členům neexistují žádná omezení, jako v tomto příkladu:</span><span class="sxs-lookup"><span data-stu-id="62644-106">There are no restrictions on accessing public members, as in this example:</span></span>
 
 ```csharp
 class SampleClass
@@ -25,31 +26,31 @@ class SampleClass
 }
 ```
 
-<span data-ttu-id="67f5d-106">Další informace najdete [v tématu Modifikátory přístupu](../../programming-guide/classes-and-structs/access-modifiers.md) a [úrovně usnadnění.](accessibility-levels.md)</span><span class="sxs-lookup"><span data-stu-id="67f5d-106">See [Access Modifiers](../../programming-guide/classes-and-structs/access-modifiers.md) and [Accessibility Levels](accessibility-levels.md) for more information.</span></span>
+<span data-ttu-id="62644-107">Další informace najdete v tématu [modifikátory přístupu](../../programming-guide/classes-and-structs/access-modifiers.md) a [úrovně přístupnosti](accessibility-levels.md) .</span><span class="sxs-lookup"><span data-stu-id="62644-107">See [Access Modifiers](../../programming-guide/classes-and-structs/access-modifiers.md) and [Accessibility Levels](accessibility-levels.md) for more information.</span></span>
 
-## <a name="example"></a><span data-ttu-id="67f5d-107">Příklad</span><span class="sxs-lookup"><span data-stu-id="67f5d-107">Example</span></span>
+## <a name="example"></a><span data-ttu-id="62644-108">Příklad</span><span class="sxs-lookup"><span data-stu-id="62644-108">Example</span></span>
 
-<span data-ttu-id="67f5d-108">V následujícím příkladu jsou deklarovány dvě třídy `PointTest` a `MainClass`.</span><span class="sxs-lookup"><span data-stu-id="67f5d-108">In the following example, two classes are declared, `PointTest` and `MainClass`.</span></span> <span data-ttu-id="67f5d-109">Veřejnost `x` a `y` z `PointTest` nich jsou `MainClass`přístupné přímo z .</span><span class="sxs-lookup"><span data-stu-id="67f5d-109">The public members `x` and `y` of `PointTest` are accessed directly from `MainClass`.</span></span>
+<span data-ttu-id="62644-109">V následujícím příkladu jsou deklarovány dvě třídy, `PointTest` a `MainClass` .</span><span class="sxs-lookup"><span data-stu-id="62644-109">In the following example, two classes are declared, `PointTest` and `MainClass`.</span></span> <span data-ttu-id="62644-110">Veřejné členy `x` a `y` `PointTest` jsou přístupné přímo z `MainClass` .</span><span class="sxs-lookup"><span data-stu-id="62644-110">The public members `x` and `y` of `PointTest` are accessed directly from `MainClass`.</span></span>
 
 [!code-csharp[csrefKeywordsModifiers#13](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsModifiers/CS/csrefKeywordsModifiers.cs#13)]
 
-<span data-ttu-id="67f5d-110">Pokud změníte `public` úroveň přístupu na [soukromou](private.md) nebo [chráněnou](protected.md), zobrazí se chybová zpráva:</span><span class="sxs-lookup"><span data-stu-id="67f5d-110">If you change the `public` access level to [private](private.md) or [protected](protected.md), you will get the error message:</span></span>
+<span data-ttu-id="62644-111">Pokud změníte `public` úroveň přístupu na [soukromou](private.md) nebo [chráněnou](protected.md), zobrazí se chybová zpráva:</span><span class="sxs-lookup"><span data-stu-id="62644-111">If you change the `public` access level to [private](private.md) or [protected](protected.md), you will get the error message:</span></span>
 
-<span data-ttu-id="67f5d-111">'PointTest.y' je nepřístupný kvůli jeho úrovni ochrany.</span><span class="sxs-lookup"><span data-stu-id="67f5d-111">'PointTest.y' is inaccessible due to its protection level.</span></span>
+<span data-ttu-id="62644-112">' PointTest. y ' je z důvodu úrovně ochrany nedostupné.</span><span class="sxs-lookup"><span data-stu-id="62644-112">'PointTest.y' is inaccessible due to its protection level.</span></span>
 
-## <a name="c-language-specification"></a><span data-ttu-id="67f5d-112">specifikace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="67f5d-112">C# language specification</span></span>  
+## <a name="c-language-specification"></a><span data-ttu-id="62644-113">specifikace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="62644-113">C# language specification</span></span>  
 
-<span data-ttu-id="67f5d-113">For more information, see [Declared accessibility](~/_csharplang/spec/basic-concepts.md#declared-accessibility) in the [C# Language Specification](/dotnet/csharp/language-reference/language-specification/introduction).</span><span class="sxs-lookup"><span data-stu-id="67f5d-113">For more information, see [Declared accessibility](~/_csharplang/spec/basic-concepts.md#declared-accessibility) in the [C# Language Specification](/dotnet/csharp/language-reference/language-specification/introduction).</span></span> <span data-ttu-id="67f5d-114">Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.</span><span class="sxs-lookup"><span data-stu-id="67f5d-114">The language specification is the definitive source for C# syntax and usage.</span></span>
+<span data-ttu-id="62644-114">Další informace najdete v tématu [deklarovaná přístupnost](~/_csharplang/spec/basic-concepts.md#declared-accessibility) ve [specifikaci jazyka C#](/dotnet/csharp/language-reference/language-specification/introduction).</span><span class="sxs-lookup"><span data-stu-id="62644-114">For more information, see [Declared accessibility](~/_csharplang/spec/basic-concepts.md#declared-accessibility) in the [C# Language Specification](/dotnet/csharp/language-reference/language-specification/introduction).</span></span> <span data-ttu-id="62644-115">Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.</span><span class="sxs-lookup"><span data-stu-id="62644-115">The language specification is the definitive source for C# syntax and usage.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="67f5d-115">Viz také</span><span class="sxs-lookup"><span data-stu-id="67f5d-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="62644-116">Viz také</span><span class="sxs-lookup"><span data-stu-id="62644-116">See also</span></span>
 
-- [<span data-ttu-id="67f5d-116">Odkaz jazyka C#</span><span class="sxs-lookup"><span data-stu-id="67f5d-116">C# Reference</span></span>](../index.md)
-- [<span data-ttu-id="67f5d-117">Programovací příručka jazyka C#</span><span class="sxs-lookup"><span data-stu-id="67f5d-117">C# Programming Guide</span></span>](../../programming-guide/index.md)
-- [<span data-ttu-id="67f5d-118">Modifikátory přístupu</span><span class="sxs-lookup"><span data-stu-id="67f5d-118">Access Modifiers</span></span>](../../programming-guide/classes-and-structs/access-modifiers.md)
-- [<span data-ttu-id="67f5d-119">C# Klíčová slova</span><span class="sxs-lookup"><span data-stu-id="67f5d-119">C# Keywords</span></span>](index.md)
-- [<span data-ttu-id="67f5d-120">Modifikátory přístupu</span><span class="sxs-lookup"><span data-stu-id="67f5d-120">Access Modifiers</span></span>](access-modifiers.md)
-- [<span data-ttu-id="67f5d-121">Úrovně přístupnosti</span><span class="sxs-lookup"><span data-stu-id="67f5d-121">Accessibility Levels</span></span>](accessibility-levels.md)
-- [<span data-ttu-id="67f5d-122">Modifikátory</span><span class="sxs-lookup"><span data-stu-id="67f5d-122">Modifiers</span></span>](index.md)
-- [<span data-ttu-id="67f5d-123">Soukromé</span><span class="sxs-lookup"><span data-stu-id="67f5d-123">private</span></span>](private.md)
-- [<span data-ttu-id="67f5d-124">protected</span><span class="sxs-lookup"><span data-stu-id="67f5d-124">protected</span></span>](protected.md)
-- [<span data-ttu-id="67f5d-125">Vnitřní</span><span class="sxs-lookup"><span data-stu-id="67f5d-125">internal</span></span>](internal.md)
+- [<span data-ttu-id="62644-117">Reference jazyka C#</span><span class="sxs-lookup"><span data-stu-id="62644-117">C# Reference</span></span>](../index.md)
+- [<span data-ttu-id="62644-118">Průvodce programováním v C#</span><span class="sxs-lookup"><span data-stu-id="62644-118">C# Programming Guide</span></span>](../../programming-guide/index.md)
+- [<span data-ttu-id="62644-119">Modifikátory přístupu</span><span class="sxs-lookup"><span data-stu-id="62644-119">Access Modifiers</span></span>](../../programming-guide/classes-and-structs/access-modifiers.md)
+- [<span data-ttu-id="62644-120">Klíčová slova jazyka C#</span><span class="sxs-lookup"><span data-stu-id="62644-120">C# Keywords</span></span>](index.md)
+- [<span data-ttu-id="62644-121">Modifikátory přístupu</span><span class="sxs-lookup"><span data-stu-id="62644-121">Access Modifiers</span></span>](access-modifiers.md)
+- [<span data-ttu-id="62644-122">Úrovně přístupnosti</span><span class="sxs-lookup"><span data-stu-id="62644-122">Accessibility Levels</span></span>](accessibility-levels.md)
+- [<span data-ttu-id="62644-123">Modifikátory</span><span class="sxs-lookup"><span data-stu-id="62644-123">Modifiers</span></span>](index.md)
+- [<span data-ttu-id="62644-124">private</span><span class="sxs-lookup"><span data-stu-id="62644-124">private</span></span>](private.md)
+- [<span data-ttu-id="62644-125">protected</span><span class="sxs-lookup"><span data-stu-id="62644-125">protected</span></span>](protected.md)
+- [<span data-ttu-id="62644-126">internal</span><span class="sxs-lookup"><span data-stu-id="62644-126">internal</span></span>](internal.md)
