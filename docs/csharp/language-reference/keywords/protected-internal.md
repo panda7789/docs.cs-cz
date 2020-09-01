@@ -1,15 +1,16 @@
 ---
+description: Protected Internal-C# – referenční informace
 title: Protected Internal-C# – referenční informace
 ms.date: 11/15/2017
 f1_keywords:
 - protectedinternal_CSharpKeyword
 author: sputier
-ms.openlocfilehash: 4067da93bcceba0fa3e4a14aa58b4cde812412f3
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: a7537fba93c0d7145f04c6236d15c11b70f8bf98
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87301785"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89139434"
 ---
 # <a name="protected-internal-c-reference"></a>Protected Internal (Referenční dokumentace jazyka C#)
 
@@ -58,7 +59,7 @@ class DerivedClass : BaseClass
 ```
 
 Tento příklad obsahuje dva soubory, `Assembly1.cs` a `Assembly2.cs` .
-První soubor obsahuje veřejnou základní třídu, `BaseClass` a další třídu, `TestAccess` . `BaseClass`vlastní chráněný interní člen, `myValue` , který je k dispozici pro daný `TestAccess` typ.
+První soubor obsahuje veřejnou základní třídu, `BaseClass` a další třídu, `TestAccess` . `BaseClass` vlastní chráněný interní člen, `myValue` , který je k dispozici pro daný `TestAccess` typ.
 Ve druhém souboru dojde k pokusu o přístup `myValue` prostřednictvím instance aplikace k `BaseClass` chybě, zatímco přístup k tomuto členu prostřednictvím instance odvozené třídy `DerivedClass` bude úspěšný.
 
 Členy struktury nemůžou být `protected internal` zděděné, protože strukturu nejde zdědit.
@@ -67,7 +68,7 @@ Ve druhém souboru dojde k pokusu o přístup `myValue` prostřednictvím instan
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Reference jazyka C#](../index.md)
 - [Průvodce programováním v C#](../../programming-guide/index.md)
@@ -76,6 +77,6 @@ Ve druhém souboru dojde k pokusu o přístup `myValue` prostřednictvím instan
 - [Úrovně přístupnosti](accessibility-levels.md)
 - [Modifikátory](index.md)
 - [public](public.md)
-- [hlášen](private.md)
+- [private](private.md)
 - [internal](internal.md)
 - [Problémy se zabezpečením pro interní virtuální klíčová slova](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/heyd8kky(v=vs.100))

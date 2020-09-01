@@ -1,15 +1,16 @@
 ---
+description: nový modifikátor – Referenční dokumentace jazyka C#
 title: nový modifikátor – Referenční dokumentace jazyka C#
 ms.date: 07/20/2015
 helpviewer_keywords:
 - new modifier keyword [C#]
 ms.assetid: a2e20856-33b9-4620-b535-a60dbce8349b
-ms.openlocfilehash: 529d77b0a66a8a3cedfe7a400af0fb34dd653322
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: 2da0a360868250169fb16380c80bf32c4b335d7a
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82795167"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89139408"
 ---
 # <a name="new-modifier-c-reference"></a>New – modifikátor (Referenční dokumentace jazyka C#)
 
