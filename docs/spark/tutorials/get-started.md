@@ -1,19 +1,19 @@
 ---
 title: Začínáme s .NET pro Apache Spark
-description: Zjistěte, jak spustit rozhraní .NET pro Apache Spark aplikaci pomocí .NET Core ve Windows, MacOS a Ubuntu.
+description: Zjistěte, jak spustit rozhraní .NET pro Apache Spark aplikaci pomocí .NET Core ve Windows, macOS a Ubuntu.
 ms.date: 06/25/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: be150bcef0029f69136e21c35791c863220af244
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: d7297b11a2b5b21420fcb2f0f9ae823cb29b88d1
+ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85617649"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89358996"
 ---
 # <a name="tutorial-get-started-with-net-for-apache-spark"></a>Kurz: Začínáme s .NET pro Apache Spark
 
-V tomto kurzu se naučíte, jak spustit rozhraní .NET pro Apache Spark aplikaci pomocí .NET Core ve Windows, MacOS a Ubuntu.
+V tomto kurzu se naučíte, jak spustit rozhraní .NET pro Apache Spark aplikaci pomocí .NET Core ve Windows, macOS a Ubuntu.
 
 V tomto kurzu se naučíte:
 
@@ -228,7 +228,7 @@ This .NET app counts words with Apache Spark
 
 3. Po spuštění vaší aplikace se do konzoly zapíše data počtu slov *input.txt* souboru.
 
-Gratulujeme! Úspěšně jste vytvořili a spustili rozhraní .NET pro Apache Spark aplikaci.
+Blahopřejeme! Úspěšně jste vytvořili a spustili rozhraní .NET pro Apache Spark aplikaci.
 
 ## <a name="next-steps"></a>Další kroky
 

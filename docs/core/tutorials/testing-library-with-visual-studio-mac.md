@@ -2,20 +2,20 @@
 title: Otestování .NET Standard knihovny tříd pomocí .NET Core s využitím Visual Studio pro Mac
 description: Vytvoří projekt testu jednotek pro knihovnu tříd .NET Core. Ověřte, zda knihovna tříd .NET Core pracuje správně s testy jednotek.
 ms.date: 06/08/2020
-ms.openlocfilehash: a183049623df44cbb8c4abd47ce6e78d91adae12
-ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
+ms.openlocfilehash: d3c8a5e01d16047949e977f3af6a429970d996d0
+ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84713607"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89359217"
 ---
 # <a name="test-a-net-standard-class-library-with-net-core-using-visual-studio"></a>Testování knihovny tříd .NET Standard pomocí .NET Core pomocí sady Visual Studio
 
 V tomto kurzu se dozvíte, jak automatizovat testování částí přidáním testovacího projektu do řešení.
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
-- Tento kurz spolupracuje s řešením, které vytvoříte v části [Vytvoření knihovny .NET Standard v Visual Studio pro Mac](library-with-visual-studio-mac.md).
+- Tento kurz spolupracuje s řešením, které vytvoříte v části [Vytvoření knihovny .NET Standard pomocí Visual Studio pro Mac](library-with-visual-studio-mac.md).
 
 ## <a name="create-a-unit-test-project"></a>Vytvoření projektu testování částí
 
@@ -23,7 +23,7 @@ Testy jednotek poskytují automatizované softwarové testování během vývoje
 
 1. Spusťte Visual Studio pro Mac.
 
-1. Otevřete `ClassLibraryProjects` řešení, které jste vytvořili v části [vytvoření knihovny .NET Standard v Visual Studio pro Mac](library-with-visual-studio-mac.md).
+1. Otevřete `ClassLibraryProjects` řešení, které jste vytvořili v části [vytvoření knihovny .NET Standard pomocí Visual Studio pro Mac](library-with-visual-studio-mac.md).
 
 1. Na panelu **řešení** <kbd>klikněte na</kbd> `ClassLibraryProjects` řešení a vyberte **Přidat**  >  **Nový projekt**.
 
@@ -73,7 +73,7 @@ Aby projekt testu spolupracoval s `StringLibrary` třídou, přidejte odkaz na `
 
 ## <a name="add-and-run-unit-test-methods"></a>Přidat a spustit metody testování částí
 
-Když aplikace Visual Studio spustí test jednotky, provede každou metodu, která je označena <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute> atributem ve třídě, která je označena <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute> atributem. Testovací metoda končí při nalezení prvního selhání nebo po úspěšném dokončení všech testů obsažených v metodě.
+Když aplikace Visual Studio spustí test jednotky, provede každou metodu, která je označena <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute> atributem ve třídě, která je označena  <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute> atributem. Testovací metoda končí při nalezení prvního selhání nebo po úspěšném dokončení všech testů obsažených v metodě.
 
 Nejběžnější testy volají členy <xref:Microsoft.VisualStudio.TestTools.UnitTesting.Assert> třídy. Mnoho metod Assert zahrnuje nejméně dva parametry, jeden z nich je očekávaný výsledek testu a druhý z nich je skutečný výsledek testu. `Assert`V následující tabulce jsou uvedeny některé často volané metody třídy:
 

@@ -2,12 +2,12 @@
 title: Zabezpečení Azure pro Cloud – nativní aplikace
 description: Architekt cloudových nativních aplikací .NET pro Azure | Zabezpečení Azure pro nativní cloudové aplikace
 ms.date: 05/13/2020
-ms.openlocfilehash: 996c7075b252466a3b3374f1e75e64315fdd6fc7
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: 7780b005d84124f202049deeb5be876364e6c5fa
+ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88557643"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89358970"
 ---
 # <a name="azure-security-for-cloud-native-apps"></a>Zabezpečení Azure pro Cloud – nativní aplikace
 
@@ -147,7 +147,7 @@ Pravidla zamítnutí mají přednost před pravidly povolení. Nyní představuj
 
 ## <a name="checking-access"></a>Kontrola přístupu
 
-Jak je možné si představit, může mít velký počet rolí a oborů, aby bylo možné zjistit efektivní oprávnění instančního objektu poměrně obtížné. Piling pravidla odepření, která se na nich nacházejí, slouží pouze ke zvýšení složitosti. Naštěstí je k dispozici Kalkulačka oprávnění, která může zobrazit skutečná oprávnění pro libovolný instanční objekt. Obvykle se nachází na kartě IAM na portálu, jak je znázorněno na obrázku 10-3.
+Jak je možné si představit, může mít velký počet rolí a oborů, aby bylo možné zjistit efektivní oprávnění instančního objektu poměrně obtížné. Piling pravidla odepření, která se na nich nacházejí, slouží pouze ke zvýšení složitosti. Naštěstí je k dispozici [Kalkulačka oprávnění](https://docs.microsoft.com/azure/role-based-access-control/check-access) , která může zobrazit skutečná oprávnění pro libovolný instanční objekt. Obvykle se nachází na kartě IAM na portálu, jak je znázorněno na obrázku 10-3.
 
 ![Obrázek 9-4 – Kalkulačka oprávnění pro službu App Service](./media/check-rbac.png)
 

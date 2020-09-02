@@ -2,12 +2,12 @@
 title: Otestování .NET Standard knihovny tříd pomocí .NET Core s využitím Visual Studio Code
 description: Vytvoří projekt testu jednotek pro knihovnu tříd .NET Core. Ověřte, zda knihovna tříd .NET Core pracuje správně s testy jednotek.
 ms.date: 06/08/2020
-ms.openlocfilehash: b5f394b5dea2bf0b4af6e8b119df3fa0ec113dd3
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: f49974e1b918424ae5b5d7f3969f52c371e37154
+ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811714"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89359165"
 ---
 # <a name="tutorial-test-a-net-standard-class-library-with-net-core-using-visual-studio-code"></a>Kurz: testování .NET Standard knihovny tříd pomocí .NET Core pomocí Visual Studio Code
 
@@ -15,7 +15,7 @@ V tomto kurzu se dozvíte, jak automatizovat testování částí přidáním te
 
 ## <a name="prerequisites"></a>Předpoklady
 
-- Tento kurz spolupracuje s řešením, které vytvoříte v části [Vytvoření knihovny .NET Standard v Visual Studio Code](library-with-visual-studio-code.md).
+- Tento kurz spolupracuje s řešením, které vytvoříte v části [Vytvoření knihovny .NET Standard pomocí Visual Studio Code](library-with-visual-studio-code.md).
 
 ## <a name="create-a-unit-test-project"></a>Vytvoření projektu testování částí
 
@@ -23,7 +23,7 @@ Testy jednotek poskytují automatizované softwarové testování během vývoje
 
 1. Spuštění nástroje Visual Studio Code
 
-1. Otevřete `ClassLibraryProjects` řešení, které jste vytvořili v části [vytvoření knihovny .NET Standard v aplikaci Visual Studio](library-with-visual-studio.md).
+1. Otevřete `ClassLibraryProjects` řešení, které jste vytvořili v části [vytvoření knihovny .NET Standard pomocí Visual Studio Code](library-with-visual-studio-code.md).
 
 1. Vytvořte projekt testu jednotek s názvem "StringLibraryTest".
 

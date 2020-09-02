@@ -1,5 +1,5 @@
 ---
-title: Co je nového pro Visual Basic
+title: Co je nového
 ms.date: 10/24/2018
 f1_keywords:
 - VB.StartPage.WhatsNew
@@ -8,12 +8,12 @@ helpviewer_keywords:
 - what's new [Visual Basic]
 - Visual Basic, what's new
 ms.assetid: d7e97396-7f42-4873-a81c-4ebcc4b6ca02
-ms.openlocfilehash: a9bac04a7839796229a2e1c61771ca32573f8fcd
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: e9ab745a60cd9eb646bee57a9a6838c30add77c5
+ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84374509"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89359204"
 ---
 # <a name="whats-new-for-visual-basic"></a>Co je nového pro Visual Basic
 
@@ -45,7 +45,7 @@ Visual Basic/Visual Studio 2013 \
 Verze Preview .NET Compiler Platform pro technologie ("Roslyn")
 
 Visual Basic/Visual Studio 2012 \
-`Async`a `await` klíčová slova, iterátory, atributy informací o volajícím
+`Async` a `await` klíčová slova, iterátory, atributy informací o volajícím
 
 Visual Basic, Visual Studio 2010 \
 Automaticky implementované vlastnosti, inicializátory kolekce, implicitní pokračování řádku, dynamická, obecná kovariantní odchylka, globální přístup k oboru názvů
@@ -64,7 +64,7 @@ První vydání rozhraní Visual Basic .NET
 
 ## <a name="visual-basic-160"></a>Visual Basic 16,0
 
-Visual Basic 16,0 se zaměřuje na poskytnutí více funkcí modulu runtime Visual Basic (Microsoft. VisualBasic. dll) do .NET Core a je první verzí Visual Basic zaměřená na rozhraní .NET Core. Mnoho částí modulu runtime Visual Basic závisí na WinForms a ty budou přidány v novější verzi Visual Basic.
+Visual Basic 16,0 se zaměřuje na poskytnutí více funkcí modulu runtime Visual Basic (microsoft.visualbasic.dll) do .NET Core a je první verzí Visual Basic zaměřená na .NET Core. Mnoho částí modulu runtime Visual Basic závisí na WinForms a ty budou přidány v novější verzi Visual Basic.
 
 **Komentáře povolené na více místech v rámci příkazů**
 
@@ -124,7 +124,7 @@ Například následující volání metody má dva Poziční argumenty mezi pojm
 StudentInfo.Display("Mary", age:=19, #9/21/1998#)
 ```
 
-[`Private Protected`modifikátor přístupu ke členu](../language-reference/modifiers/private-protected.md)
+[`Private Protected` modifikátor přístupu ke členu](../language-reference/modifiers/private-protected.md)
 
 Tato nová kombinace klíčových slov definuje člena, ke kterému mají přístup všichni členové ve své nadřazené třídě, a také typy odvozené z nadřazené třídy, ale pouze v případě, že jsou také v nadřazeném sestavení. Protože struktury nelze zdědit, `Private Protected` lze použít pouze pro členy třídy.
 
@@ -158,7 +158,7 @@ Kompilátor příkazového řádku Visual Basic nyní podporuje možnosti kompil
 
 ## <a name="visual-basic-2017"></a>Visual Basic 2017
 
-[**N-tice**](../programming-guide/language-features/data-types/tuples.md)
+[**Řazené kolekce členů**](../programming-guide/language-features/data-types/tuples.md)
 
 Řazené kolekce členů jsou odlehčené datové struktury, které nejčastěji slouží k vracení více hodnot z jednoho volání metody. Aby bylo možné vracet více hodnot z metody, je obvykle nutné provést jednu z následujících akcí:
 
@@ -220,7 +220,7 @@ Před provedením operace přístup k členu ( `?.` ) nebo indexu () je možné 
 
 [Víceřádkové řetězcové literály](../programming-guide/language-features/strings/string-basics.md)
 
-Řetězcové literály mohou obsahovat sekvence nového řádku.  Nebudete už potřebovat používání staré práce`<xml><![CDATA[...text with newlines...]]></xml>.Value`
+Řetězcové literály mohou obsahovat sekvence nového řádku.  Nebudete už potřebovat používání staré práce `<xml><![CDATA[...text with newlines...]]></xml>.Value`
 
 **Komentáře**
 
@@ -238,11 +238,11 @@ Ve formátu RRRR-MM-DD můžete mít literály kalendářních dat `#2015-03-17 
 
 Vlastnosti rozhraní jen pro čtení můžete implementovat pomocí vlastnosti. Rozhraní garantuje minimální funkčnost a neukončí implementující třídu, která umožňuje nastavit vlastnost.
 
-[TypeOf \<expr> IsNot\<type>](../language-reference/operators/typeof-operator.md)
+[TypeOf \<expr> IsNot \<type>](../language-reference/operators/typeof-operator.md)
 
 Pro lepší čitelnost kódu můžete nyní použít `TypeOf` s `IsNot` .
 
-[Upozornění #Disable \<ID> a upozornění #Enable\<ID>](../language-reference/directives/index.md)
+[Upozornění #Disable \<ID> a upozornění #Enable \<ID>](../language-reference/directives/index.md)
 
 Můžete zakázat a povolit specifická upozornění pro oblasti v rámci zdrojového souboru.
 
@@ -292,4 +292,4 @@ Nyní kompilátor použije normální pravidla pro rozlišení přetížení k v
 ## <a name="see-also"></a>Viz také
 
 - [Co je nového v aplikaci Visual Studio 2017](/visualstudio/ide/whats-new-visual-studio-2017)
-- [Co je nového v aplikaci Visual Studio 2019](/visualstudio/ide/whats-new-visual-studio-2019)
+- [Novinky v sadě Visual Studio 2019](/visualstudio/ide/whats-new-visual-studio-2019)

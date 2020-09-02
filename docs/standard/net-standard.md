@@ -5,12 +5,12 @@ ms.date: 02/13/2020
 ms.technology: dotnet-standard
 ms.custom: updateeachrelease
 ms.assetid: c044882c-af15-45f2-96d1-534557a5ee9b
-ms.openlocfilehash: b52d69756d85e3e422b798c3ac7d53de3b538b8d
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: e96a03ca55682d3e30bc13fb20a8e443105301fc
+ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87167402"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89359308"
 ---
 # <a name="net-standard"></a>.NET Standard
 
@@ -92,7 +92,7 @@ Specifikace není v jednotném čísle, ale přírůstkově rostoucí a lineárn
 
 .NET Standard není specifické pro žádnou implementaci rozhraní .NET ani neodpovídá schématu správy verzí žádné z těchto modulů runtime.
 
-Rozhraní API přidaná do kterékoli implementace (například .NET Framework, .NET Core a mono) je možné považovat za kandidáty na přidání do specifikace, zejména v případě, že jsou považovány za zásadní. Nové [verze .NET Standard](https://github.com/dotnet/standard/blob/master/docs/versions.md) jsou vytvořeny na základě verzí implementace rozhraní .NET a umožňují zacílit nová rozhraní api z .NET Standard PCL. Mechanismy správy verzí jsou podrobněji popsány v tématu [Správa verzí .NET Core](../core/versions/index.md).
+Rozhraní API přidaná do jakékoli implementace technologie .NET (například .NET Framework, .NET Core a mono) se dají považovat za kandidáty, které se mají přidat do specifikace, zejména pokud se považují za zásadní v podstatě. Nové [verze .NET Standard](https://github.com/dotnet/standard/blob/master/docs/versions.md) jsou vytvořeny na základě verzí implementace rozhraní .NET, což umožňuje zacílit nová rozhraní api z .NET Standard přenosných knihoven tříd (PCL). Mechanismy správy verzí jsou podrobněji popsány v tématu [Správa verzí .NET Core](../core/versions/index.md).
 
 Správa verzí .NET Standard je důležitá pro použití. Vzhledem k verzi .NET Standard můžete použít knihovny, které cílí na stejnou nebo nižší verzi. Následující postup popisuje pracovní postup pro použití .NET Standard PCLs, který je specifický pro .NET Standard cílení na.
 
@@ -141,23 +141,23 @@ Rozdíly
 
 Kompatibilita PCL založená na profilech je poskytována balíčkem NuGet [Microsoft. NETCore. Portable. Compatibility](https://www.nuget.org/packages/Microsoft.NETCore.Portable.Compatibility) . Tato závislost se vyžaduje při odkazování na balíčky NuGet, které obsahují PCLs založené na profilech.
 
-PCLs na základě profilu, jak `netstandard` je to snazší, než obvykle zabalíte PCLS založenou na profilech. `netstandard`balení je kompatibilní s existujícími uživateli.
+PCLs na základě profilu, jak `netstandard` je to snazší, než obvykle zabalíte PCLS založenou na profilech. `netstandard` balení je kompatibilní s existujícími uživateli.
 
 Můžete zobrazit sadu profilů PCL, které jsou kompatibilní s .NET Standard:
 
 | Profil PCL | .NET Standard | Platformy PCL
 |:-----------:|:-------------:|------------------------------------------------------------------------------
-| Profile7    | 1.1           | .NET Framework 4,5, Windows 8
-| Profile31   | 1.0           | Windows 8.1 Windows Phone Silverlight 8,1
-| Profile32   | 1.2           | Windows 8.1 Windows Phone 8,1
-| Profile44   | 1.2           | .NET Framework 4.5.1, Windows 8.1
-| Profile49   | 1.0           | .NET Framework 4,5, Windows Phone Silverlight 8
-| Profile78   | 1.0           | .NET Framework 4,5, Windows 8, Windows Phone Silverlight 8
-| Profile84   | 1.0           | Windows Phone 8,1, Windows Phone Silverlight 8,1
-| Profile111  | 1.1           | .NET Framework 4,5, Windows 8, Windows Phone 8,1
-| Profile151  | 1.2           | .NET Framework 4.5.1, Windows 8.1 Windows Phone 8,1
-| Profile157  | 1.0           | Windows 8.1 Windows Phone 8,1 Windows Phone Silverlight 8,1
-| Profile259  | 1.0           | .NET Framework 4,5, Windows 8, Windows Phone 8,1, Windows Phone Silverlight 8
+| Profile7    | 1,1           | .NET Framework 4,5, Windows 8
+| Profile31   | 1,0           | Windows 8.1 Windows Phone Silverlight 8,1
+| Profile32   | 1,2           | Windows 8.1 Windows Phone 8,1
+| Profile44   | 1,2           | .NET Framework 4.5.1, Windows 8.1
+| Profile49   | 1,0           | .NET Framework 4,5, Windows Phone Silverlight 8
+| Profile78   | 1,0           | .NET Framework 4,5, Windows 8, Windows Phone Silverlight 8
+| Profile84   | 1,0           | Windows Phone 8,1, Windows Phone Silverlight 8,1
+| Profile111  | 1,1           | .NET Framework 4,5, Windows 8, Windows Phone 8,1
+| Profile151  | 1,2           | .NET Framework 4.5.1, Windows 8.1 Windows Phone 8,1
+| Profile157  | 1,0           | Windows 8.1 Windows Phone 8,1 Windows Phone Silverlight 8,1
+| Profile259  | 1,0           | .NET Framework 4,5, Windows 8, Windows Phone 8,1, Windows Phone Silverlight 8
 
 ## <a name="see-also"></a>Viz také
 

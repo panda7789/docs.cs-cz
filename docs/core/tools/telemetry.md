@@ -3,12 +3,12 @@ title: Telemetrie .NET Core SDK
 description: Objevte funkce telemetrie .NET Core SDK, které shromažďují informace o využití pro analýzu, shromažďovaná data a jejich zakázání.
 author: KathleenDollard
 ms.date: 08/27/2019
-ms.openlocfilehash: 0917dae23588ccd1809252aaf484c397e84561c7
-ms.sourcegitcommit: 67cf756b033c6173a1bbd1cbd5aef1fccac99e34
+ms.openlocfilehash: 01376cabc4f59f64c59a78dcff061fb6ec11e3c3
+ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86226566"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89359230"
 ---
 # <a name="net-core-sdk-telemetry"></a>Telemetrie .NET Core SDK
 
@@ -18,7 +18,7 @@ Shromážděná data jsou anonymní a publikovaná v rámci [licence Creative](h
 
 ## <a name="scope"></a>Obor
 
-`dotnet`má dvě funkce: spouštění aplikací a provádění příkazů CLI. Telemetrii *není shromažďována* při použití `dotnet` ke spuštění aplikace v následujícím formátu:
+`dotnet` má dvě funkce: spouštění aplikací a provádění příkazů CLI. Telemetrii *není shromažďována* při použití `dotnet` ke spuštění aplikace v následujícím formátu:
 
 - `dotnet [path-to-app].dll`
 
@@ -92,7 +92,7 @@ Některé příkazy odesílají další data. Podmnožina příkazů odesílá p
 
 Podmnožina příkazů odesílá vybrané možnosti, pokud jsou použity, spolu s jejich hodnotami:
 
-| Parametr                  | Příkazy                                                                                       |
+| Možnost                  | Příkazy                                                                                       |
 |-------------------------|------------------------------------------------------------------------------------------------|
 | `--verbosity`           | Všechny příkazy                                                                                   |
 | `--language`            | `dotnet new`                                                                                   |
@@ -138,5 +138,5 @@ Z tohoto důvodu by se vlastní sestavení .NET Core SDK neměla nacházet v adr
 
 ## <a name="see-also"></a>Viz také
 
-- [Data telemetrie .NET Core CLI-2019 Q2](https://dotnet.microsoft.com/platform/telemetry/dotnet-core-cli-2019q2)
+- [.NET Core CLI dat telemetrie](https://dotnet.microsoft.com/platform/telemetry)
 - [Zdroj odkazů telemetrie (úložiště dotnet/SDK)](https://github.com/dotnet/sdk/tree/master/src/Cli/dotnet/Telemetry)

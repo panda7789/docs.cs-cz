@@ -2,12 +2,12 @@
 title: Stavební kameny programů v jazyce C# "
 description: Přečtěte si o členech, výrazech a příkazech jazyka C#. Typy obsahují členy, které zapisujete. Tyto členy jsou sestaveny z příkazů a výrazů.
 ms.date: 08/06/2020
-ms.openlocfilehash: 142fe7b5a3424a8925638bfb4e4437392347f4c6
-ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
+ms.openlocfilehash: 3bdc6a4da6ae76148c7d1d5cb8ccb65d91fda61a
+ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88268137"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89358814"
 ---
 # <a name="program-building-blocks"></a>Stavební bloky programu
 
@@ -30,7 +30,7 @@ Následující seznam obsahuje přehled druhů členů, které třída může ob
 - **Finalizační metody**: akce provedené před trvalým zahozením instancí třídy
 - **Typy**: vnořené typy deklarované třídou
 
-## <a name="accessibility"></a>Přístupnost
+## <a name="accessibility"></a>Usnadnění
 
 Každý člen třídy má přidruženou přístupnost, která řídí oblasti textu programu, které mají přístup ke členu. Existuje šest možných forem usnadnění přístupu. Modifikátory přístupu jsou shrnuty níže.
 
@@ -41,7 +41,7 @@ Každý člen třídy má přidruženou přístupnost, která řídí oblasti te
 - `protected internal`: Přístup je omezen na tuto třídu, třídy odvozené z této třídy nebo třídy v rámci stejného sestavení.
 - `private protected`: Přístup je omezen na tuto třídu nebo třídy odvozené z tohoto typu v rámci stejného sestavení.
 
-## <a name="fields"></a>Fields (Pole)
+## <a name="fields"></a>Pole
 
 *Pole* je proměnná, která je přidružena ke třídě nebo s instancí třídy.
 
@@ -137,7 +137,7 @@ Pokud deklarace metody instance obsahuje `virtual` modifikátor, metoda je ozna�
 
 Když je vyvolána virtuální metoda, je *typ běhu* instance, pro kterou probíhá vyvolání, určuje vlastní implementaci metody, která má být vyvolána. V nevirtuálním volání metody je *Typ doby kompilace* instance určujícím faktorem.
 
-Virtuální metoda může být *přepsána* v odvozené třídě. Pokud deklarace metody instance obsahuje modifikátor přepsání, metoda přepíše zděděnou virtuální metodu se stejnou signaturou. AA deklarace virtuální metody zavádí novou metodu. Deklarace metody přepsání specializuje existující zděděnou virtuální metodu tím, že poskytuje novou implementaci této metody.
+Virtuální metoda může být *přepsána* v odvozené třídě. Pokud deklarace metody instance obsahuje modifikátor přepsání, metoda přepíše zděděnou virtuální metodu se stejnou signaturou. Deklarace virtuální metody zavádí novou metodu. Deklarace metody přepsání specializuje existující zděděnou virtuální metodu tím, že poskytuje novou implementaci této metody.
 
 *Abstraktní metoda* je virtuální metoda bez implementace. Abstraktní metoda je deklarována s `abstract` modifikátorem a je povolena pouze v abstraktní třídě. Abstraktní metoda musí být přepsána v každé neabstraktní odvozené třídě.
 
@@ -192,8 +192,6 @@ Na rozdíl od jiných členů nejsou konstruktory instancí děděny. Třída ne
 Vlastnost je deklarována jako pole s tím rozdílem, že deklarace končí pomocí přístupového objektu Get nebo pomocí přístupového objektu sady zapsaný mezi oddělovači `{` a `}` místo konci středníku. Vlastnost, která má přistupující objekt get i přístupový objekt set, je *vlastnost pro čtení i zápis*, vlastnost, která má pouze přistupující objekt get, je *vlastnost jen pro čtení*a vlastnost, která má pouze přístupový objekt set, je *vlastnost pouze pro zápis*.
 
 Přístupový objekt get odpovídá metodě bez parametrů s návratovou hodnotou typu vlastnosti. Přístupový objekt set odpovídá metodě s jedním parametrem s názvem Value a bez návratového typu. Přistupující objekt get vypočítá hodnotu vlastnosti. Přístupový objekt set poskytuje novou hodnotu pro vlastnost. Když je vlastnost cílem přiřazení, nebo operandem `++` nebo `--` , je vyvolána přistupující objekt set. V jiných případech, kde je odkazováno na vlastnost, je vyvolána přistupující objekt get.
-
- Když se na vlastnost odkazuje jako na cíl přiřazení nebo jako operand + + nebo--, přistupující objekt set je vyvolán s argumentem, který poskytuje novou hodnotu.
 
 `MyList<T>`Třída deklaruje dvě vlastnosti, `Count` `Capacity` které jsou jen pro čtení a pro čtení i zápis, v uvedeném pořadí. Následující kód je příkladem použití těchto vlastností:
 

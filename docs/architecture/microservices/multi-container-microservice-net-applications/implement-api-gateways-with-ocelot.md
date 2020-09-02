@@ -2,12 +2,12 @@
 title: Implementace bran rozhraní API s Ocelotem
 description: Naučte se implementovat brány API pomocí Ocelot a jak používat Ocelot v prostředí založeném na kontejnerech.
 ms.date: 03/02/2020
-ms.openlocfilehash: f103c1e394a3f829489b61fd17af749798b02f70
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 3611ffa7a163ff632ca854fafb910fcd3e228306
+ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86864095"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89358983"
 ---
 # <a name="implement-api-gateways-with-ocelot"></a>Implementace bran API pomocí Ocelot
 
@@ -15,6 +15,7 @@ ms.locfileid: "86864095"
 > Referenční [eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers) aplikace v současné době používá funkce poskytované [zástupné](https://www.envoyproxy.io/) k implementaci brány API namísto předchozího odkazovaného [Ocelot](https://github.com/ThreeMammals/Ocelot).
 > Tuto možnost jsme zvolili kvůli integrované podpoře zástupné protokolu WebSocket, kterou vyžaduje nová komunikace mezi službami gRPC implementované v eShopOnContainers.
 > Tento oddíl jsme ale v průvodci zachovali, takže můžete zvážit Ocelot jako jednoduchou, schopnou a zjednodušenou bránu API vhodnou pro scénáře produkčního prostředí.
+> Nejnovější verze Ocelot obsahuje také zásadní změnu schématu JSON. Zvažte použití Ocelot < v 16.0.0 nebo použijte klíčové trasy namísto přesměrování.
 
 ## <a name="architect-and-design-your-api-gateways"></a>Architekt a návrh vašich bran rozhraní API
 
@@ -154,7 +155,7 @@ V eShopOnContainers je jeho implementace brány API jednoduchý ASP.NET Core pro
 
 **Obrázek 6-32**. Projekt OcelotApiGw Base v eShopOnContainers
 
-Tento ASP.NET Core projekt webhost je vytvořen v podstatě pomocí dvou jednoduchých souborů: `Program.cs` a `Startup.cs` .
+Tento ASP.NET Core projekt webhost je vytvořen v podstatě pomocí dvou jednoduchých souborů:  `Program.cs` a `Startup.cs` .
 
 Program.cs potřebuje jenom vytvořit a nakonfigurovat typické ASP.NET Core BuildWebHost.
 
@@ -544,13 +545,13 @@ Mít v Kubernetes před webovými aplikacemi úroveň příchozího Nginxu a ně
 
 Kubernetes příchozí připojení funguje jako reverzní proxy server pro veškerý provoz do aplikace, včetně webových aplikací, které jsou obvykle mimo rozsah brány rozhraní API. Když nasadíte eShopOnContainers do Kubernetes, zveřejňuje se v podstatě jenom pár služeb nebo koncových _bodů, a_to v podstatě následující seznam přípon v adresách URL:
 
-- `/`pro webovou aplikaci SPA klienta
-- `/webmvc`pro klientskou webovou aplikaci MVC
-- `/webstatus`pro klientskou webovou aplikaci, která zobrazuje stav/healthchecks
-- `/webshoppingapigw`pro webové BFF a nakupování obchodních procesů
-- `/webmarketingapigw`pro webové BFF a marketingové obchodní procesy
-- `/mobileshoppingapigw`pro mobilní BFF a nákupy obchodních procesů
-- `/mobilemarketingapigw`pro mobilní BFF a marketingové obchodní procesy
+- `/` pro webovou aplikaci SPA klienta
+- `/webmvc` pro klientskou webovou aplikaci MVC
+- `/webstatus` pro klientskou webovou aplikaci, která zobrazuje stav/healthchecks
+- `/webshoppingapigw` pro webové BFF a nakupování obchodních procesů
+- `/webmarketingapigw` pro webové BFF a marketingové obchodní procesy
+- `/mobileshoppingapigw` pro mobilní BFF a nákupy obchodních procesů
+- `/mobilemarketingapigw` pro mobilní BFF a marketingové obchodní procesy
 
 Při nasazování do Kubernetes každá brána API Ocelot používá pro každý _pod_ spuštěným bránou rozhraní API jiný soubor "configuration.json". Tyto "configuration.jssoubory" jsou k dispozici připojením (původně pomocí skriptu deploy.ps1) vytvořeným svazkem, který je založený na _mapě konfigurace_ Kubernetes s názvem Ocelot. Každý kontejner připojí svůj související konfigurační soubor ve složce kontejneru s názvem `/app/configuration` .
 
