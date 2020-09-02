@@ -1,37 +1,37 @@
 ### YamlMime:Landing
-title: F#nápovědě
-summary: Naučte se vytvářet aplikace pomocí F# programovacího jazyka v .NET.
+title: Dokumentace k F#
+summary: 'Naučte se psát libovolnou aplikaci pomocí programovacího jazyka F # v .NET.'
 metadata:
-  title: F#dokumentace – Začínáme, kurzy, reference.
-  description: Naučte F# F#se programovat – vývojářům nově a zkušeným F# vývojářům a .NET
+  title: 'Dokumentace k F # – Začínáme, kurzy, reference.'
+  description: 'Naučte se programování v jazyce F # – pro vývojáře novinkou f # a zkušení vývojáři F #/.NET'
   ms.topic: landing-page
   author: cartermp
   ms.author: phcart
-  ms.date: 11/25/2019
-  ms.openlocfilehash: 113a99d75f77cba56639abf485bf646155f0ff36
-  ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+  ms.date: 08/29/2020
+  ms.openlocfilehash: 7d7f9492bcd41975616ddd4d8f552aea5217b2d7
+  ms.sourcegitcommit: e0803b8975d3eb12e735a5d07637020dd6dac5ef
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/28/2019
-  ms.locfileid: "74569490"
+  ms.lasthandoff: 09/01/2020
+  ms.locfileid: "89271851"
 landingContent:
-- title: Informace k programu vF#
+- title: 'Informace k programu v F #'
   linkLists:
   - linkListType: get-started
     links:
-    - text: Co je F#to?
+    - text: 'Co je F #?'
       url: what-is-fsharp.md
     - text: Instalace F#
       url: get-started/install-fsharp.md
-    - text: Začínáme s nástrojem F# v aplikaci Visual Studio
+    - text: 'Začínáme s F # v aplikaci Visual Studio'
       url: get-started/get-started-visual-studio.md
-    - text: Začínáme s nástrojem F# v Visual Studio Code
+    - text: 'Začínáme s F # v Visual Studio Code'
       url: get-started/get-started-vscode.md
   - linkListType: download
     links:
-    - text: Stáhnout .NET Core SDK
+    - text: Stažení sady .NET Core SDK
       url: https://dotnet.microsoft.com/download
-- title: F#Základy
+- title: 'Základní informace o jazyce F #'
   linkLists:
   - linkListType: overview
     links:
@@ -51,19 +51,19 @@ landingContent:
       url: style-guide/conventions.md
   - linkListType: tutorial
     links:
-    - text: Asynchronní programování vF#
+    - text: 'Asynchronní programování v F #'
       url: tutorials/asynchronous-and-concurrent-programming/async.md
-- title: Nové funkce vF#
+- title: 'Nové funkce v F #'
   linkLists:
   - linkListType: whats-new
     links:
-    - text: Co je nového v F# 4,7
+    - text: 'Co je nového v jazyce F # 4,7'
       url: whats-new/fsharp-47.md
-    - text: Co je nového v F# 4,6
+    - text: 'Co je nového v jazyce F # 4,6'
       url: whats-new/fsharp-46.md
-    - text: Co je nového v F# 4,5
+    - text: 'Co je nového v jazyce F # 4,5'
       url: whats-new/fsharp-45.md
-- title: F#Referenční dokumentace jazyka
+- title: Referenční dokumentace jazyka F#
   linkLists:
   - linkListType: reference
     links:
@@ -75,5 +75,11 @@ landingContent:
       url: language-reference/symbol-and-operator-reference/index.md
     - text: Funkce
       url: language-reference/functions/index.md
-    - text: F#druhy
+    - text: 'Typy F #'
       url: language-reference/fsharp-types.md
+- title: 'Referenční dokumentace základní knihovny F #'
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Reference k rozhraní API FSharp. Core
+      url: https://fsharp.github.io/fsharp-core-docs/
