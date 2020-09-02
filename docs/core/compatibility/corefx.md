@@ -2,12 +2,12 @@
 title: Přerušující změny knihovny základních tříd
 description: Obsahuje seznam nejnovějších změn v základních knihovnách .NET.
 ms.date: 07/27/2020
-ms.openlocfilehash: e0ebc054e0abccfe934b505a727060653fe313cd
-ms.sourcegitcommit: ef86c24c418439b8bb5e3e7d64bbdbe5e11c3e9c
+ms.openlocfilehash: 8b8fb9b88edf4f1e5f83ef7c21f1712af40479fd
+ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88720185"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89359130"
 ---
 # <a name="core-net-libraries-breaking-changes"></a>Základní knihovny .NET – přerušující změny
 
@@ -17,6 +17,7 @@ Na této stránce jsou popsány následující přerušující se změny:
 
 | Zásadní změna | Představená verze |
 | - | :-: |
+| [U vnořených typů se můžou u vnitřních typů lišit.](#hardware-intrinsic-issupported-checks-may-differ-for-nested-types) | 5,0 |
 | [Názvy parametrů se změnily v referenčních sestaveních.](#parameter-names-changed-in-reference-assemblies) | 5,0 |
 | [Cesty URI bez znaků, které nejsou ASCII, se v systému UNIX analyzují správně](#uri-paths-with-non-ascii-characters-parse-correctly-on-unix) | 5,0 |
 | [Rozpoznání identifikátoru URI cest UNC v systému UNIX](#uri-recognition-of-unc-paths-on-unix) | 5,0 |
@@ -50,6 +51,10 @@ Na této stránce jsou popsány následující přerušující se změny:
 | [Process. StartInfo vyvolá InvalidOperationException pro procesy, které jste nespustili.](#processstartinfo-throws-invalidoperationexception-for-processes-you-didnt-start) | 1,0 |
 
 ## <a name="net-50"></a>.NET 5,0
+
+[!INCLUDE [hardware-instrinsics-issupported-checks](../../../includes/core-changes/corefx/5.0/hardware-instrinsics-issupported-checks.md)]
+
+***
 
 [!INCLUDE [reference-assembly-parameter-names](../../../includes/core-changes/corefx/5.0/reference-assembly-parameter-names.md)]
 
