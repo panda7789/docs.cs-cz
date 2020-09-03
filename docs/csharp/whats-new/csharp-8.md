@@ -440,13 +440,13 @@ Console.WriteLine($"The last word is {words[^1]}");
 // writes "dog"
 ```
 
-Následující kód vytvoří dílčí rozsah s slovy "Rychlá", "hnědá" a "Fox". Zahrnuje `words[1]` `words[3]` . Element `words[4]` není v rozsahu.
+Následující kód vytvoří dílčí rozsah s slovy "quick", "brown" a "fox". Zahrnuje vše mezi `words[1]` `words[3]` . Element `words[4]` není v rozsahu.
 
 ```csharp
 var quickBrownFox = words[1..4];
 ```
 
-Následující kód vytvoří dílčí rozsah s "opožděným" a "pes". Zahrnuje `words[^2]` a `words[^1]` . Koncový index `words[^0]` není zahrnutý:
+Následující kód vytvoří dílčí rozsah s "lazy" a "dog". Zahrnuje vše mezi `words[^2]` a `words[^1]` . Koncový index `words[^0]` není zahrnutý:
 
 ```csharp
 var lazyDog = words[^2..^0];
